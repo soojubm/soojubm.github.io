@@ -42,6 +42,8 @@ async function fetchFilms() {
     const endpoint = `/pages/components/books/books.json`
     const response = await fetch(endpoint)
     const data = await response.json()
+
+    console.log(data)
     return data
   } catch (error) {
     console.log(error)

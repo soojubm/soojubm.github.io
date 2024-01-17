@@ -2,7 +2,6 @@
   display:flex;
   align-items:center;
   gap:var(--space-3);
-  margin: 0 -.25rem;
   position:relative;
 }
 .titlebar-background {@mixin bleeding;background-color:var(--color-background);}

@@ -159,71 +159,72 @@
   </test-group>
 
   <test-separator></test-separator>
-  <section class="comment">
-    <form variany="elevated" class="feed-make" action="">
-      <test-titlebar heading="게시물 만들기" style="margin-bottom: var(--space-4)"> </test-titlebar>
-      <test-menuitem label="수줍이" size="medium">
-        <test-avatar slot="avatar"></test-avatar>
-      </test-menuitem>
-      <div class="textfield comment-write-text" style="margin: var(--space-3) 0">
-        <!-- <label class="textfield-label" for="" aria-hidden="true">댓글</label> -->
-        <textarea
-          class="textfield-input"
-          rows="3"
-          name="comment"
-          placeholder="무슨 생각을 하고 계신가요? feed와 comment에서 사용. textarea 컴포넌트 정의. 취소 버튼의 위치. toolbar."
-          style="width: 100%; height: auto"
-        ></textarea>
-      </div>
-      <!-- <div class="textfield comment-write-name">
-        <label class="textfield-label" for="" aria-hidden="true">이름</label>
-        <input class="textfield-input js-comment-textfield" type="text" name="" id="comment-name" placeholder="이름을 입력하세요." />
-      </div>
-      <div class="textfield comment-write-password">
-        <label class="textfield-label" for="" aria-hidden="true">비밀번호</label>
-        <input class="textfield-input js-comment-textfield" type="text" name="" id="comment-password" placeholder="비밀번호을 입력하세요." />
-      </div> -->
-      <footer class="comment-write-footer">
-        <!-- ! 게시와 등록 구분-->
-        <test-button variant="secondary">댓글 게시</test-button>
-        <!-- <button class="comment-write-cancel">취소</button> -->
-      </footer>
-    </form>
-    <test-separator></test-separator>
-
-    <div class="comment-list">
-      <div class="comment-list-item">
-        <test-menuitem label="soojubm" description="1 day ago">
-          <test-avatar slot="avatar" class="comment-list-item-avatar" href="#">
-            <!-- <img src="/public/images/springsteen.jpg" /> -->
-          </test-avatar>
-          <!-- <a class="comment-list-item-author" href="#">soojubm</a>
-          <time class="comment-list-item-date" datetime="2016">1 day ago</time> -->
+  <test-card variant="elevated">
+    <section slot="entire" class="comment">
+      <form variany="elevated" class="feed-make" action="">
+        <test-titlebar heading="게시물 만들기"></test-titlebar>
+        <div style="height: 1rem"></div>
+        <test-menuitem label="수줍이" size="medium">
+          <test-avatar slot="avatar"></test-avatar>
         </test-menuitem>
-        <p class="comment-list-item-text">
-          우와 처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요.
-          우와 처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요.
-        </p>
-        <button class="comment-list-item-reply">답글 <span>7</span></button>
-        <test-chip class="comment-list-item-morevert js-toggle">
-          <span class="material-symbols-outlined"> more_vert </span>
-        </test-chip>
-        <menu class="comment-list-item-menu">
-          <button class="">수정</button>
-          <button class="">삭제</button>
-        </menu>
-      </div>
+        <div class="textfield comment-write-text" style="margin: var(--space-3) 0">
+          <!-- <label class="textfield-label" for="" aria-hidden="true">댓글</label> -->
+          <textarea
+            class="textfield-input"
+            rows="3"
+            name="comment"
+            placeholder="무슨 생각을 하고 계신가요? feed와 comment에서 사용. textarea 컴포넌트 정의. 취소 버튼의 위치. toolbar."
+            style="width: 100%; height: auto"
+          ></textarea>
+        </div>
+        <!-- <div class="textfield comment-write-name">
+          <label class="textfield-label" for="" aria-hidden="true">이름</label>
+          <input class="textfield-input js-comment-textfield" type="text" name="" id="comment-name" placeholder="이름을 입력하세요." />
+        </div>
+        <div class="textfield comment-write-password">
+          <label class="textfield-label" for="" aria-hidden="true">비밀번호</label>
+          <input class="textfield-input js-comment-textfield" type="text" name="" id="comment-password" placeholder="비밀번호을 입력하세요." />
+        </div> -->
+        <footer class="comment-write-footer">
+          <!-- ! 게시와 등록 구분-->
+          <test-button variant="secondary">댓글 게시</test-button>
+          <!-- <button class="comment-write-cancel">취소</button> -->
+        </footer>
+      </form>
+    </section>
+  </test-card>
+
+  <br />
+  <br />
+
+  <div class="comment-list">
+    <div class="comment-list-item">
+      <test-menuitem label="soojubm" description="1 day ago">
+        <test-avatar slot="avatar" class="comment-list-item-avatar" href="#">
+          <!-- <img src="/public/images/springsteen.jpg" /> -->
+        </test-avatar>
+        <!-- <a class="comment-list-item-author" href="#">soojubm</a>
+        <time class="comment-list-item-date" datetime="2016">1 day ago</time> -->
+      </test-menuitem>
+      <p class="comment-list-item-text">
+        우와 처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요. 우와
+        처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요.
+      </p>
+      <button class="comment-list-item-reply">답글 <span>7</span></button>
+      <test-chip class="comment-list-item-morevert js-toggle">
+        <span class="material-symbols-outlined"> more_vert </span>
+      </test-chip>
+      <menu class="comment-list-item-menu">
+        <button class="">수정</button>
+        <button class="">삭제</button>
+      </menu>
     </div>
-
-    <button class="item" role="menuitem" data-tile="elevated" data-size="medium">
-      <test-avatar></test-avatar>
-      <span class="item-label">샘플 유아이</span>
-      <i class="item-helper material-symbols-outlined" style="margin-left: auto">arrow_forward</i>
-    </button>
-  </section>
-
-  <br />
-  <br />
+  </div>
+  <button class="item" role="menuitem" data-tile="elevated" data-size="medium">
+    <test-avatar></test-avatar>
+    <span class="item-label">샘플 유아이</span>
+    <i class="item-helper material-symbols-outlined" style="margin-left: auto">arrow_forward</i>
+  </button>
 </main>
 
 <nav class="post-pagination">

@@ -1,592 +1,2143 @@
-						<li><time>1931</time> <cite>기러기<small>Arrowroot; 吉野葛Yoshino kuzu</small></cite>다니자키 준이치로</li>
-						<li><time>1931</time> <cite>나사의 회전<small>Arrowroot; 吉野葛Yoshino kuzu</small></cite>다니자키 준이치로</li>
-						<li><time>1931</time> <cite>유년의 뜰<small>Arrowroot; 吉野葛Yoshino kuzu</small></cite>다니자키 준이치로</li>
-						<li><time>1931</time> <cite>요시노 구즈<small>Arrowroot; 吉野葛Yoshino kuzu</small></cite>다니자키 준이치로</li>
-						<li><time>2016</time> <cite>모델<small>The Model</small></cite>조이스 캐럴 오츠</li>
-						<li><time>2016</time> <cite>홀<small>The Hole</small></cite>편혜영</li>
-						<li><time>2000</time> <cite>철콘 근크리트<small>出書房</small></cite>마츠모토 타이요</li>
-						<li><time>1982</time> <cite>비트겐슈타인의 조카<small>Wittgensteins Neffe: eine Freundschaft</small></cite>토마스 베른하르트</li>
-						<li><time>1946</time> <cite>제라늄<small>The Geranium in The Complete Stories</small>플래너리 오코너</cite></li>
-						<li><time>1927</time> <cite>눈부신 그 사람<small>The Young Glory of Him</small></cite>랭스턴 휴즈</li>
-						<li><time>1949</time> <cite>가면의 고백<small>出書房</small></cite>미시마 유키오</li>
-						<li><time>1969</time> <cite>제 5도살장<small>Slaughterhouse-Five, or The Children's Crusade: A Duty-Dance with Death</small></cite>커트 보니것</li>
+<script>
+  // document.querySelector('li') = 'none'
+  document.addEventListener('DOMContentLoaded', () => {
+    let test = []
+    document.querySelectorAll('li').forEach(item => {
+      console.log(item.childNodes)
+      test = [
+        ...test,
+        {
+          releasedate: item.querySelector('time')?.textContent || '',
+          titlekorean: item.childNodes[3]?.firstChild?.textContent || '',
+          titleenglish: item.querySelector('cite')?.querySelector('small')?.textContent || '',
+          director: item.childNodes[4]?.textContent || '',
+          country: '임시미국' || '',
+          etc: '',
+        },
+      ]
+      // test = [
+      //   ...test,
+      //   {
+      //     releasedate: item.querySelector('time').textContent || '',
+      //     titlekorean: item.querySelector('cite').textContent || '',
+      //     titleenglish: item.querySelector('cite small').textContent || '',
+      //     director: item.childNodes[4].textContent || '',
+      //     country: '임시미국' || '',
+      //     etc: '',
+      //   },
+      // ]
+    })
 
-						
-						<li><time>0000</time> <cite>그들 중 하나, 혹은 가면의 영혼<small></small></cite>장 로랭</li>
-						<li><time>0000</time> <cite>우울증<small>憂鬱症</small></cite>정인택</li>
-						<li><time>1897</time> <cite>무사시노<small>Musashino武蔵野</small></cite>구니키다 돗포</li>
-						<li><time>1925</time> <cite>댈러웨이 부인<small>Mrs. Dalloway</small></cite>버지니아 울프</li>
-						<li><time>2016</time> <cite>쇼코의 미소<small></small></cite>최은영</li>
-						<li><time>1901</time> <cite>부덴브로크가의 사람들<small>Buddenbrooks</small></cite>토마스 만</li>
-						<li><time>1946</time> <cite>백치<small>白痴</small></cite>사카구치 안고</li>
-						<li><time>1994</time> <cite>베테르부르크의 대가<small>The Master of Petersberg</small></cite>J. M 쿳시</li>
-						<li><time>1939</time> <cite>녹성당<small></small></cite>김남천</li>
-						<li><time>1959</time> <cite>굿바이 콜럼버스<small>Goodbye, Columbus</small></cite>필립 로스</li>
-						<li><time>1927</time> <cite>달빛 아래의 몸뚱이들<small>Bodies in the Moonlight</small></cite>랭스턴 휴즈</li>
-						<li><time>1954</time> <cite>슬픔이여, 안녕<small>Bonjour Tristesse</small></cite>프랑수아즈 사강</li>
-						<li><time>1928</time> <cite>도시와 유령<small>都市─幽靈</small></cite>이효석</li>
-						<li><time>1961</time> <cite>모스크바에서의 오해<small>Misunderstanding in Moscow</small></cite>시몬 드 보부아르</li>
-						<li><time>1961</time> <cite>모든 것<small>Alles in Das dreißigste Jahr</small></cite>잉게보르크 바흐만</li>
-						<li><time>1972</time> <cite class="design">다른 방식으로 보기<small>The Way of Seeing</small></cite>존 버거</li>
-						<li><time>1931</time> <cite>만<small>卍, まんじ</small></cite>다니자키 준이치로</li>
-						<li><time>1982</time> <cite>호흡<small>Der Atem</small></cite>토마스 베른하르트</li>
-						<li><time>2004</time> <cite>가수들 (일는 중)<small></small></cite>이반 투르게네프</li>
-						<li><time>2004</time> <cite>네가 길을 잃어버리지 않게<small>So You Don't Get Lost in the Neighborhood; Pour que tu ne te perdes pas dans le quartier</small></cite>파트릭 모디아노</li>
-						<li><time>1969</time> <cite>욜의 추억<small>Memories of Youghal</small></cite>윌리엄 프레버</li>
-						<li><time>1933</time> <cite>물<small></small></cite>김남천</li>
-						<li><time>1880</time> <cite>나나<small>Les Rougon-Macquart: Nana</small></cite>에밀 졸라</li>
-						<li><time>1941</time> <cite>부상관의 봄<small>扶桑館</small></cite>정인택</li>
-						<li><time>1939</time> <cite>후지 산 백경<small>ふがくひゃっけい: 富嶽百景</small></cite>다자이 오사무</li>
-						<li><time>1920</time> <cite>랜돌프 카터의 진술<small>The Statement of Randolph Carter</small></cite>하워드 필립스 러브크래프트</li>
-						<li><time>1975</time> <cite>팩토텀<small>Factotum</small></cite>찰스 부코스키</li>
-						<li><time>1923</time> <cite>배신의 거미줄<small>Zigzags of Treachery</small></cite>대실 해밋</li>
-						<li><time>1955</time> <cite>썩은 잎<small>La hojarasca</small></cite>가브리엘 가르시아 마르께스</li>
-						<li><time>1977</time> <cite>불의 강<small></small></cite>오정희</li>
-						<li><time>1851</time> <cite>모비 딕<small>Moby Dick</small></cite>허먼 멜빌</li>
-						<li><time>1925</time> <cite>오몽녀<small>五夢女</small></cite>이태준</li>
-						<li><time>1951</time> <cite>악마와 선한 신<small>Le Diable et le Bon Dieu</small></cite> 장 폴 사르트르</li>
-						<li><time>1918</time> <cite>지코쿠헹<small>地獄変</small></cite>아쿠타가와 류노스케</li>
-						<li><time>1980</time> <cite>이 글을 읽는 사람에게 영원한 저주를<small>Maldición eterna a quien lea estas páginas</small></cite>마누엘푸익</li>
-						<li><time>1949</time> <cite class="design">스기우라 고헤이 잡지 디자인 반세기<small></small></cite></li>
-						<li><time>2012</time> <cite>파라솔이 접힌 오후<small></small></cite>오한기</li>
-						<li><time>1951</time> <cite>아담, 너는 어디에 있었느냐<small>Wo Warst Du, Adam?</small></cite>하인리히 뵐</li>
-						<li><time>1980</time> <cite>핑거 스미스<small>Fingersmith</small></cite>사라 워터스 / 1부만</li>
-						<li><time>1949</time> <cite>고통스럽고 아름다운 여름<small></small></cite>하라 다미키</li>
-						<li><time>2012</time> <cite>팜비치<small></small></cite>최정화</li>
-						<li><time>1963</time> <cite>나는 입이 없다 그리고 나는 비명을 질러야 한다<small>I Have No Mouth, and I Must Scream</small></cite>할란 엘리슨</li>
-						<li><time>1941</time> <cite>유치장에서 만난 사나이<small></small></cite>김사량</li>
-						<li><time>1936</time> <cite class="design">기술복제시대의 예술작품(제 2판)<small>Das Kunstwerk im Zeitalter seiner technischen Reproduzierbarkeit</small></cite>발터 벤야민</li>
-						<li><time>1941</time> <cite>투도 - 전작중편소설 자화상 제 2화<small>偸盜</small></cite>박태원</li>
-						
-						<li><time>1983</time> <cite>마이클 K<small>The Life and Times of Michael K</small></cite>J. M. 쿳시</li>
-						<li><time>2015</time> <cite>목련정전<small>目連正傳</small></cite>최은미</li>
-						<li><time>1909</time> <cite>벤야멘타 하인학교 - 야콥 폰 군텐 이야기<small>Jakob von Gunten</small></cite>로베르트 발저</li>
-						<li><time>1964</time> <cite>진흙발의 오르페우스<small>Orpheus with Clay Feet</small></cite>필립 K. 딕</li>
-						<li><time>1905</time> <cite>나는 고양이로소이다<small>吾輩は猫である</small></cite>나쓰메 소세키</li>
-						<li><time>1897</time> <cite>죽은 자는 말이 없다<small>Die Toten schweigen</small></cite>아르투어 슈니츨러</li>
-						<li><time>2014</time> <cite class="design">한글 레터링 자료집 1950-1985<small></small></cite>프로파간다</li>
-						<li><time>2012</time> <cite class="design">헬무트 뉴튼 사진집<small>Helmut Newton Work</small></cite>헬무트 뉴튼</li>
-						<li><time>1921</time> <cite>표본실의 청개구리<small>標本室─靑─</small></cite>염상섭</li>
-						<li><time>1971</time> <cite>지금 돌아보지 마<small>Not After Midnight AKA Don't Look Now</small></cite>대프니 듀 모리에</li>
-						<li><time>1981</time> <cite class="design">이제껏 배운 그래픽 디자인 규칙은 다 잊어라. 이 책에 실린 것까지.<small>Forget All the Rules You Ever Learned About Graphic Design, Including the Ones in this Book</small></cite>밥 길 / 레이아웃보다 아이디어</li>
-						<li><time>1902</time> <cite>반도덕주의자<small>L'lmmoraliste</small></cite>앙드레 지드</li>
-						<li><time>1951</time> <cite>몰로이<small>Molloy</small></cite>사무엘 베케트</li>
-						<li><time>1978</time> <cite>사다리의 마지막 단<small>The Last Rung On The Ladder in NIGHT SHIFT</small></cite>스티븐 킹</li>
-						<li><time>2017</time> <cite class="design">한글 타이포그래피 한글 서체 디자인 전문지 2350, ISSUE #1 Oct. 2017<small></small></cite>2350press</li>
-						<li><time>1936</time> <cite>촉루<small>髑髏</small></cite>정인택</li>
-						<li><time>1989</time> <cite>울리지 않는 심금<small>If You Touched My Heart in THE STORY OF EVA LUNA</small></cite>이사벨 아옌데</li>
-						<li><time>1950</time> <cite>벽속의 아프리카<small>The Veldt: The World the Children Made</small></cite>레이 브래드버리</li>
-						<li><time>1937</time> <cite>무성격자<small>無性格者</small></cite>최명익</li>
-						<li><time>1996</time> <cite>아무도 내 이름을 몰라<small>Nobody Knows My Name in The Corn Maiden and Other Nightmares</small></cite>조이스 캐럴 오츠</li>
-						<li><time>1976</time> <cite>한없이 투명에 가까운 블루<small>限りなく透明に近いブル-</small></cite>무라카미 류</li>
-						<li><time>1951</time> <cite class="design">내 문장이 그렇게 이상한가요? - 내가 쓴 글, 내가 다듬는 법<small></small></cite>김정선</li>
-						<li><time>2005</time> <cite>영이<small></small></cite>김사과</li>
-						<li><time>1906</time> <cite>존 마틴 부인의 일기<small>The Journal of Mistress Joan Martyn</small></cite>버지니아 울프</li>
-						<li><time>1894</time> <cite>타락<small>Gefallen</small></cite>토마스 만</li>
-						<li><time>2015</time> <cite>보통의 시절<small></small></cite>김금희</li>
-						<li><time>2015</time> <cite class="design">타이포잔치 2017, 5회 국제 타이포그래피 비엔날레 - 몸과 타이포그래피<small>Typojanchi 2017, The 5th International Typography Biennale - Body and Typography</small></cite>타이포잔치</li>
-						<li><time>1958</time> <cite>우주복 있음, 출장 가능<small>Have Space Suit - Will Travel</small></cite>로버트 A. 하인리히</li>
-						<li><time>1981</time> <cite class="design">한글의 글자표현<small></small></cite>김진평</li>
-						<li><time>1877</time> <cite>순박한 마음<small>Un cœur simple or Le perroquet, A Simple Heart in Three Tales</small></cite>귀스타프 플로베르</li>
-						<li><time>2016</time> <cite class="design">모리사와 최정호 폰트: 한글 폰트의 DNA<small>Morisawa Choi Jeong-ho Fonts: DNA of Hangul Fonts</small></cite>(주) 모리사와</li>
-						<li><time>1921</time> <cite>조콘다의 미소<small>The Gioconda Smile in Mortal Coils</small></cite>올더스 헉슬리</li>
-						<li><time>1993</time> <cite>카프카를 읽는 밤<small></small></cite>구효서</li>
-						<li><time>2013</time> <cite class="design">그래픽 26호 2013.3 한글 타입과 레터링<small></small></cite>프로파간다</li>
-						<li><time>1964</time> <cite>말<small>Le Mots</small></cite>장 폴 사르트르</li>
-						<li><time>0000</time> <cite class="design">한글 디자인 교과서<small></small></cite>이용제, 안상수, 한재준 </li>
-						<li><time>1986</time> <cite>나는 신고<small>わたしは真悟: My Name is Shingo</small></cite>우메즈 카즈오</li>
-						<li><time>1966</time> <cite>1965년 어느 이발소에서</cite>이호철</li>
-						<li><time>1958</time> <cite>다르마 행려<small>The Dharma Bums</small></cite>잭 케루악</li>
-						<li><time>2005</time> <cite class="design">마이크로 타이포그래피<small>Das Detail in der Typografie</small></cite>요스트 호훌리, 워크룸 프레스 김형진</li>
-						<li><time>1958</time> <cite>잉여인간<small>剩餘人間</small></cite>손창섭</li>
-						<li><time>1942</time> <cite>곰<small>The Bear</small></cite>윌리엄 포크너</li>
-						<li><time>1967</time> <cite>아우레크<small>Jauregg</small></cite>토마스 베른하르트</li>
-						<li><time>1906</time> <cite>생도 퇴를레스의 혼란<small>Die Verwirrungen des Zöglings Törleß, The Confusions of Young Torless</small></cite>로베르트 무질</li>
-						<li><time>1961</time> <cite>우국<small>憂国</small></cite>미시마 유키오</li>
-						<li><time>1895</time> <cite>어느 가을날<small>Once in Autumn, Однажды осенью</small></cite>막심 고리끼</li>
-						<li><time>1982</time> <cite>호밀빵 햄 샌드위치<small>Ham on Rye</small></cite>찰스 부코스키</li>
-						<li><time>2007</time> <cite>모자<small></small></cite>황정은</li>
-						<li><time>2013</time> <cite>미래를 도모하는 방식 가운데<small></small></cite>김엄지</li>
-						<li><time>1888</time> <cite>환상을 쫒는 여인<small>An Imaginative Woman in WESSEX TALES</small></cite>토마스 하디</li>
-						<li><time>1922</time> <cite>싯다르타<small>Siddhartha</small></cite>헤르만 헤세</li>
-						<li><time>1999</time> <cite>잠시 동안의 일<small>A Temporary Matter in Interpreter of Maladies</small></cite>줌파 라히리</li>
-						<li><time>1977</time> <cite>서울의 달빛 0장<small></small></cite>김승옥</li>
-						<li><time>1976</time> <cite>이백살을 맞은 사나이<small>The Bicentennial Man</small></cite>아이작 아시모프</li>
-						<li><time>1971</time> <cite>당신도 내 입장이 되어 봐<small>Put Yourself in My Shoes in Will You Please Be quiet, Please?</small></cite>레이먼드 카버</li>
-						<li><time>1988</time> <cite>존재의 세 가지 거짓말 - 타인의 증거<small>La Preuve</small></cite>아고타 크리스토프</li>
-						<li><time>1914</time> <cite>애러비<small>Araby in Dubliners</small></cite>제임스 조이스</li>
-						<li><time>2014</time> <cite class="design">시각디자인: 좋은 것에 담긴 감각과 생각<small>Critica portatile al visual design. Da Gutenberg ai social network</small></cite>리카르도 팔치넬리, 윤병언</li>
-						<li><time>1960</time> <cite>영원으로 가는 긴 산책<small>Long Walk to Forever</small></cite>커트 보네거트</li>
-						<li><time>2014</time> <cite class="design">자신을 브랜딩하는 방법 - 크리에이터의 가치를 높이는 사용 설명서</cite>CA 편집부, 이지은</li>
-						<li><time>1802</time> <cite>의자 고치는 여인<small>René</small></cite>기 드 모파상</li>
-						<li><time>1802</time> <cite>르네<small>René</small></cite>프랑스와 르네 드 샤또브리앙</li>
-						<li><time>1968</time> <cite>제인 에어<small>Jane Eyre</small></cite>샬롯 브론테</li>
-						<li><time>2016</time> <cite>토요일의 특별활동<small></small></cite>정지향</li>
-						<li><time>2017</time> <cite class="design">모임꼴 2호<small></small></cite>활자공간</li>
-						<li><time>2017</time> <cite>유예<small></small></cite>이수진</li>
-						<li><time>1968</time> <cite>나의 미카엘<small>מיכאל שלי: My Michael</small></cite>아모스 오즈</li>
-						<li><time>2010</time> <cite>차가운 혀<small></small></cite>박솔뫼</li>
-						<li><time>2003</time> <cite class="design">에세이스트의 책상<small></small></cite>배수아</li>
-						<li><time>1922</time> <cite>오! 적갈색 머리카락 마녀<small>Oh Russet Witch! in Tales of the Jazz Age</small></cite>프랜시스 스콧 피츠제럴드</li>
-						<li><time>1969</time> <cite>주자<small>走者</small></cite>오정희</li>
-						<li><time>1963</time> <cite>인형<small>The Dummy (in I, etcetera)</small></cite>수잔 손택</li>
-						<li><time>2016</time> <cite class="design">섞어짜기 - 나만의 타이포그래피<small></small></cite>문장현, 정재완, 심우진, 이경수, 최성민</li>
-						<li><time>1937</time> <cite>동해<small>童骸</small></cite>이상</li>
-						<li><time>1988</time> <cite>다섯째 아이<small>The Fifth Child</small></cite>도리스 레싱</li>
-						<li><time>2016</time> <cite>여행자들의 지침서</cite>정지돈</li>
-						<li><time>1937</time> <cite>키 작은 프레데만씨<small>聖誕祭</small></cite>토마스 만</li>
-						<li><time>1937</time> <cite>성탄제<small>聖誕祭</small></cite>박태원</li>
-						<li><time>1945</time> <cite>타인의 피<small>Le Sang des Autres</small></cite>시몬 드 보부아르</li>
-						<li><time>2007</time> <cite>채식주의자<small>The Vegetarian</small></cite>한강</li>
-						<li><time>2016</time> <cite class="design">모임꼴 창간호</cite>이용제, 권진희, 최종원</li>
-						<li><time>1951</time> <cite>이 세상의 마지막 밤<small>The Last Night of the World</small></cite>레이 브래드버리</li>
-						<li><time>1989</time> <cite>한여름 낮의 꿈</cite>최윤</li>
-						<li><time>1986</time> <cite>존재의 세 가지 거짓말 - 비밀 노트<small>Le Grand Cahier</small></cite>아고타 크리스토프</li>
-						<li><time>1961</time> <cite>삼십세<small>Das dreißigste Jahr in Das dreißigste Jahr</small></cite>잉게보르크 바흐만</li>
-						<li><time>1927</time> <cite>패배를 거부하는 남자<small>The Undefeated in Men Without Women</small></cite>어니스트 헤밍웨이</li>
-						<li><time>1996</time> <cite>나는 나를 파괴할 권리가 있다<small>I Have the Right of Destroying Myself</small></cite>김영하</li>
-						<li><time>1981</time> <cite>다들 어디 있지?<small>Where is Everyone? in Beginners</small></cite>레이먼드 카버</li>
-						<li><time>1816</time> <cite>설득<small>Persuasion</small></cite>제인 오스틴</li>
-						<li><time>2010</time> <cite class="design">비넬리의 디자인 원칙<small>The Vignelli Canon</small></cite>마시모 비넬리, 박효신 / 객관화된 주관을 듣고 싶었기에 너무 고마운 책이었다.</li>
-						<li><time>1996</time> <cite>허삼관 매혈기<small>许三观卖血记</small></cite>위화</li>
-						<li><time>2011</time> <cite class="design">그래픽 디자인의 요소<small>The Elements of Graphic Design</small></cite>알렉스 화이트, 안상락, 윤지선</li>
-						<li><time>1982</time> <cite>지하실, 하나의 탈출<small>Der Keller</small></cite>토마스 베른하르트</li>
-						<li><time>2012</time> <cite class="design">로고 라이프 - 로고는 살아있다. 세계 100대 로고의 탄생과 성장 스토리<small>Logo Life</small></cite>론 판 데르  플루흐트</li>
-						<li><time>1995</time> <cite>로이가 산 한 삶 - 세상 얘기 한 자리<small></small></cite>박상륭</li>
-						<li><time>1971</time> <cite>우체국<small>Post Office</small></cite>찰스 부코스키</li>
-						<li><time>2005</time> <cite class="design">비주얼 그래머<small>Visual Grammar</small></cite>크리스티안 르보</li>
-						<li><time>1903</time> <cite>무도회가 끝난 뒤<small>После бала: After the Ball</small></cite>레프 톨스토이</li>
-						<li><time>1969</time> <cite>포트노이의 불평<small>Portnoy's Complaint</small></cite>필립 로스</li>
-						<li><time>2016</time> <cite>씬짜오, 씬짜오 (in 쇼코의 미소)<small></small></cite>최은영</li>
-						<li><time>2013</time> <cite>색채가 없는 다자키 쓰쿠루와 그가 순례를 떠난 해<small>色彩を持たない多崎つくると,彼の巡澧の年</small></cite>무라카미 하루키</li>
-						<li><time>1975</time> <cite>슬픈 빌라<small>Villa triste</small></cite>파트릭 모디아노</li>
-						<li><time>2011</time> <cite class="design">폰트의 비밀 - 브랜드의 로고는 왜 고급스러워 보일까?<small>??????????</small></cite>고바야시 아키라</li>
-						<li><time>1968</time> <cite>세상에서 제일 잘생긴 익사체<small>El ahogado más hermoso del mundo: The Handsomest Drowned Man in the World</small></cite>가브리엘 가르시아 마르께스</li>
-						<li><time>????</time> <cite>마리의 외출<small>????</small></cite>조르주 바타유</li>
-						<li><time>2015</time> <cite>전학생은 외계인</cite>귀귀</li>
-						<li><time>2015</time> <cite class="design">마이크로인터랙션, 디테일에 강한 인터랙션 디자인<small>Microinteractions</small></cite>댄 새퍼, 정승녁, 인사이트</li>
-						<li><time>1930</time> <cite>왕도로 가는 길<small>La Voie Royale</small></cite>앙드레 말로</li>
-						<li><time>0000</time> <cite>옆집 여자<small></small></cite>박태원</li>
-						<li><time>2015</time> <cite>나는 언제나 옳다<small>The Grownup</small></cite>길리언 플린</li>
-						<li><time>1939</time> <cite>심문<small>心紋</small></cite>최명익</li>
-						<li><time>1924</time> <cite>마의 산<small>Der Zauberberg</small></cite>토마스 만</li>
-						<li><time>2013</time> <cite class="design">고, 칩 키드의 그래픽 디자인 가이드<small>Go: A Kidd's Guide to Graphic Design</small></cite>칩 키드, 이종 출판사</li>
-						<li><time>1954</time> <cite>동물 농장<small>Animal Farm</small></cite>조지 오웰</li>
-						<li><time>1982</time> <cite class="design">편집 디자인<small>Editing by design, 2nd Edition</small></cite>잰 화이트</li>
-						<li><time>1835</time> <cite>웨이크필드<small>Wakefield</small></cite>너대니얼 호손</li>
-						<li><time>1958</time> <cite>모데라토 칸타빌레<small>Moderato Cantabile</small></cite>마르그리트 뒤라스 / 7장 지린다</li>
-						<li><time>2016</time> <cite>미지의 세계<small>mijinosekai</small></cite>이자혜</li>
-						<li><time>2015</time> <cite class="design">텍스트와 타이포그래피<small>Shaping Text</small></cite>얀 미덴도르프</li>
-						<li><time>19??</time> <cite>모두를 하나로<small>??</small></cite>라이너 마리아 릴케</li>
-						<li><time>197?</time> <cite>겨울의 끝</cite>기형도</li>
-						<li><time>1869</time> <cite>파리의 우울<small>Le Spleen de Paris</small></cite>샤를 피에르 보들레르</li>
-						<li><time>1957</time> <cite>나무 위의 남작<small>il Barone Rampante</small></cite>이탈로 칼비노</li>
-						<li><time>1921</time> <cite>술 권하는 사회<small>勸社會</small></cite>현진건</li>
-						<li><time>1977</time> <cite>여자의 빛<small>Clair de femme</small></cite>로맹 가리</li>
-						<li><time>1956</time> <cite>어떤 미소<small>Un Certain Sourire</small></cite>프랑수아즈 사강</li>
-						<li><time>2010</time> <cite>백의 그림자<small>白</small></cite>황정은</li>
-						<li><time>1960</time> <cite>달려라 토끼<small>Rabbit, Run</small></cite>존 업다이크</li>
-						<li><time>1936</time> <cite>봉별기<small>逢別記</small></cite>이상</li>
-						<li><time>1957</time> <cite>기묘한 아르바이트<small>奇妙な仕事: The Strange Work</small></cite>오에 겐자부로</li>
-						<li><time>1919</time> <cite>전원교향악<small>La Symphonie pastorale</small></cite>앙드레 지드</li>
-						<li><time>1994</time> <cite>페르난두 페소아의 마지막 사흘<small>Gli ultimi tre giorni di Fernando Pessoa</small></cite>안토니오 타부키</li>
-						<li><time>1968</time> <cite>완구점 여인</cite>오정희</li>
-						<li><time>1967</time> <cite>잠자는 남자<small>Un homme qui dort</small></cite>조르주 페렉</li>
-						<li><time>1934</time> <cite>내가 연주하는 블루스<small>The Blues I'm Playing</small></cite>랭스턴 휴즈</li>
-						<li><time>1844</time> <cite>도둑맞은 편지<small>The Purloined Letter</small></cite>에드가 앨런 포 / 포가 이런 거도 썼구나..</li>
-						<li><time>1930</time> <cite>적멸<small>寂滅</small></cite>박태원</li>
-						<li><time>1931</time> <cite>메마른 9월<small>Dry September</small></cite>윌리엄 포크너</li>
-						<li><time>1940</time> <cite>누구를 위하여 종은 울리나<small>For Whom The Bell Trolls</small></cite>어니스트 헤밍웨이</li>
-						<li><time>1891</time> <cite>모범적인 백만장자<small>The Model Millionaire in Lord Arther Savile's Crime and Other Stories</small></cite>오스카 와일드</li>
-						<li><time>2000</time> <cite>펭귄뉴스</cite>김중혁</li>
-						<li><time>1872</time> <cite>악령<small>Бесы</small></cite>표도르 도스토옙스키</li>
-						<li><time>1903</time> <cite>트리스탄<small>Tristan</small></cite>토마스 만</li>
-						<li><time>1898</time> <cite>들길을 가는 사내에게 건배<small>To the Man on Trail</small></cite>잭 런던</li>
-						<li><time>1934</time> <cite>그는 예전의 그가 아니다<small>He is not what he was</small></cite>다자이 오사무</li>
-						<li><time>2015</time> <cite class="design">Do it! 프런트엔드 웹 디자인 입문</cite>고경희</li>
-						<li><time>1949</time> <cite>금은탑<small>金銀塔 (조선일보 연재소설 1938 '우맹') </small></cite>박태원</li>
-						<li><time>1886</time> <cite>지킬 박사와 하이드<small>Strange Case of Dr.Jekyll and Mr.Hyde</small></cite>로버트 루이스 스티븐슨</li>
-						<li><time>1873</time> <cite>말하는 떡갈나무<small>Le Chêne Parlant in Contes d’une grand’mère Vol.2</small></cite>조르주 상드</li>
-						<li><time>1933</time> <cite>세라 브라운 양 이야기<small>The Idyll Of Miss Sarah Brown</small></cite>데이먼 러니언</li>
-						<li><time>1992</time> <cite>생의 이면</cite>이승우</li>
-						<li><time>2013</time> <cite class="design">디자이너의 서체이야기</cite>지콜론북</li>
-						<li><time>1929</time> <cite>소리와 분노<small>The Sound And The Fury</small></cite>윌리엄 포크너 / 바빠서 다 못 읽을 것 같다. 퀜틴 섹션까지만 읽도록..</li>
-						<li><time>2013</time> <cite class="design">디자인력<small>デザインセンスを身につける</small></cite>우지 도모코</li>
-						<li><time>1935</time> <cite>피로<small>疲勞</small></cite>박태원</li>
-						<li><time>1898</time> <cite>기적을 행하는 남자<small>The Man Who Could Work Miracles (in The Illustrated London News)</small></cite>허버트 조지 웰스 / 포더링게이</li>
-						<li><time>2015</time> <cite class="design">커버, 북디자이너의 표지 이야기<small>COVER</small></cite>피터 멘델선드</li>
-						<li><time>1975</time> <cite>그리고 아무 말도 하지 않았다<small></small></cite>전혜린</li>
-						<li><time>1912</time> <cite>베네치아에서의 죽음<small>Der Tod in Venedig</small></cite>토마스 만</li>
-						<li><time>1847</time> <cite>아그네스 그레이<small>Argnes Grey</small></cite>앤 브론테 / 음 좋아. 나는 참 소녀취향인가봐</li>
-						<li><time>1936</time> <cite>이런 음악회<small></small></cite>김유정</li>
-						<li><time>2014</time> <cite class="design">시작, 인포그래픽: pictogram x diagram = infographic<small>たのしい インフォグラフィック入門</small></cite>사쿠라다 준</li>
-						<li><time>1981</time> <cite>젊은날의 초상<small>Portrait Of The Days Of Youth</small></cite>이문열</li>
-						<li><time>2009</time> <cite class="design">타이포그래피 불변의 법칙 100가지<small>Typography essentials : 100 design principles for working with type</small></cite>아이나 살츠</li>
-						<li><time>1912</time> <cite>실종자<small>Der Verschollene</small></cite>프란츠 카프카</li>
-						<li><time>1882</time> <cite>왕자와 거지<small>The Prince and the Pauper</small></cite>마크 트웨인</li>
-						<li><time>2010</time> <cite class="design">타이포그래피 들여다보기<small>Thinking with type, rivised edition</small></cite>앨런 립튼 / 김성학 옮김</li>
-						<li><time>2010</time> <cite class="design">타이포그래피의 탄생<small>From Gutenberg to Opentype</small></cite>로빈 도드</li>
-						<li><time>1897</time> <cite>바아냐 아저씨<small>Дядя Ваня</small></cite>안톤 체호프</li>
-						<li><time>2010</time> <cite class="design">허브 루발린: 아트디렉터, 타이포그래피, 그래픽 디자이너<small>Herb Lubalin: Art Director, Graphic Designer and Typographer</small></cite>앨런 페콜릭</li>
-						<li><time>1906</time> <cite>도련님<small>坊っちゃん</small></cite>나쓰메 소세키</li>
-						<li><time>2014</time> <cite class="design">디자이너의 흥미로운 물건들, 취향<small>DESIGNER'S FAVORITE STUFF</small></cite>김선미, 장민</li>
-						<li><time>2009</time> <cite class="design">수전 손택의 일기와 노트<small></small></cite>수전 손택, 데이비드 리프 / 못 읽겠다. 읽다가 말았당</li>
-						<li><time>2009</time> <cite class="design">디자이너가 꼭 알아야 할 타이포그래피<small>Type rules! : the designer's guide to professional typography </small></cite>아이린 스트리즈버 / 디자인하우스</li>
-						<li><time>1934</time> <cite>밤은 부드러워<small>Tender Is The Night</small></cite>F. 스콧 피츠제럴드</li>
-						<li><time>1887</time> <cite>아서 세빌 경의 범죄<small>Lord Arthur Savile's Crime (in Lord Arthur Savile's Crime and Other Stories)</small></cite>오스카 와일드</li>
-						<li><time>2014</time> <cite class="design">인포그래픽 사용 설명서<small></small></cite>우석진</li>
-						<li><time>1968</time> <cite>작업실<small>The Office (in Dance of the Happy Shades)</small></cite>앨리스 먼로</li>
-						<li><time>2010</time> <cite>7번국도 Revisited<small></small></cite>김연수</li>
-						<li><time>2013</time> <cite class="design">크리에이터의 즐겨찾기<small>Creator's Bookmarks</small></cite>지콜론북 편집부</li>
-						<li><time>1986</time> <cite>팔월의 일요일들<small>Dimanches d'aout</small></cite>파트릭 모디아노</li>
-						<li><time>1853</time> <cite>꼬끼오! 혹은 고귀한 수탉 베네벤타노의 노래<small>Cock-A-Doodle-Doo! or, The Crowing of the Nobel Cock Beneventano</small></cite>허먼 멜빌</li>
-						<li><time>1924</time> <cite>새 드레스<small>The New Dress</small></cite>버지니아 울프</li>
-						<li><time>1939</time> <cite>딱한 사람들<small></small></cite>박태원</li>
-						<li><time>2008</time> <cite class="design">얀 치홀트, 타이포그래피의 거장. 그의 삶과 작품 그리고 유산<small>JAN TSCHICHOLD, Structure and Content for Screenwriters</small></cite>시즈 드 종, 알스톤 퍼바스, 마틴 르 콜트레, 리처드 B. 더블데이, 한스 라이하르트</li>
-						<li><time>1925</time> <cite>인생의 베일<small>The Painted Veil</small></cite>W. 서머셋 몸</li>
-						<li><time>2005</time> <cite class="design">영혼을 잃지 않는 디자이너 되기<small>How to be a graphic designer, without losing your soul</small></cite>아드리안 쇼네시 / 김형진 유진민 옮김</li>
-						<li><time>1832</time> <cite>루이 랑베르<small>Louis Lambert</small></cite>오노레 드 발자크</li>
-						<li><time>1960</time> <cite>로우랜드<small>Low-lands</small></cite>토마스 핀천 / 단편집 Slow Learner(1984) 중</li>
-						<li><time>1975</time> <cite>이 경계를 지나면 당신의 승차권은 유효하지 않다<small>Au-delà de cette limite votre ticket n'est plus valable</small></cite>로맹 가리</li>
-						<li><time>2008</time> <cite class="design">그리드<small>Grids</small></cite>개빈 앰브로즈, 폴 해리스</li>
-						<li><time>2008</time> <cite class="design">그래픽 디자인 새로운 기초<small>Graphic Design: The New Basics</small></cite>엘런 럽튼, 제니퍼 콜 필립스 / 원유홍 옮김</li>
-						<li><time>1985</time> <cite>퀴어<small>Queer</small></cite>윌리엄 S. 버로스</li>
-						<li><time>1880</time> <cite>비곗덩어리<small>Boule de suif</small></cite> 기 드 모파상</li>
-						<li><time>1896</time> <cite>행복에의 의지<small>Der Wille zum Glück</small></cite> 토마스 만</li>
-						<li><time>1948</time> <cite class="design">문장강화<small>文章講話 </small></cite> 이태준</li>
-						<li><time>1954</time> <cite>파리대왕<small>Lord of the Flies</small></cite> 윌리엄 골딩</li>
-						<li><time>2004</time> <cite class="design">타이포그래피 천일야화<small></small></cite> 원유홍, 서승연</li>
-						<li><time>1879</time> <cite>데이지 밀러<small>Daisy Miller</small></cite> 헨리 제임스</li>
-						<li><time>1869</time> <cite>백치<small>Идиот</small></cite> 도스토옙스키</li>
-						<li><time>1937</time> <cite>공포의 기록<small></small></cite>이상</li>
-						<li><time>1993</time> <cite>느림<small>La Lenteur</small></cite>밀란 쿤데라</li>
-						<li><time>1877</time> <cite>줄리엥 성인전<small>La légende de Saint-Julien l'hospitalier (in Trois Contes)</small></cite>귀스타프 플로베르</li>
-						<li><time>1930</time> <cite>나르치스와 골드문트<small>Narziß und Goldmund</small></cite>헤르만 헤세</li>
-						<li><time>1944</time> <cite>무서록<small>無序錄</small></cite> 이태준</li>
-						<li><time>1939</time> <cite>벽<small>Le Mur</small></cite>장 폴 사르트르</li>
-						<li><time>1924</time> <cite>초상화<small>The Portrait (Little Mexican)</small></cite>올더스 헉슬리</li>
-						<li><time>0000</time> <cite>여자의 빛<small></small></cite> 로맹 가리</li>
-						<li><time>1924</time> <cite>여가수 요제피네 혹은 쥐들의 종족<small>Josefine, die Sängerin oder das Volk der Mäuse</small></cite> 프란츠 카프카</li>
-						<li><time>1891</time> <cite>테스<small>Tess of the d’Urbervilles</small></cite> 토머스 하디</li>
-						<li><time>1843</time> <cite>크리스마스 캐럴<small>A Christmas Carol</small></cite> 찰스 디킨스</li>
-						<li><time>1939</time> <cite>분노의 포도<small>The Grapes of Wrath</small></cite> 존 스타인벡</li>
-						<li><time>2013</time> <cite>드라이브 마이 카<small>Drive My Car</small></cite> 무라카미 하루키</li>
-						<li><time>1936</time> <cite>비량</cite> 박태원</li>
-						<li><time>0000</time> <cite>약혼<small></small></cite> 헤르만 헤세</li>
-						<li><time>2007</time> <cite>퀴즈쇼</cite> 김영하</li>
-						<li><time>1731</time> <cite>마농 레스코<small>Manon Lescaut</small></cite> 아베 프레보/  abbé Prévost</li>
-						<li><time>1944</time> <cite>닫힌 방<small>Huis Slos</small></cite> 장 폴 사르트르</li>
-						<li><time>0000</time> <cite>목수들아, 대들보를 높이 올려라</cite> 제롬 데이비드 샐린저 // 다시 읽음. </li>
-						<li><time>2004</time> <cite>내 슬픈 창녀들의 추억<small>Memoria de mis putas triste</small></cite> 가브리엘 가르시아 마르케스</li>
-						<li><time>1941</time> <cite>천국의 열쇠<small>The Keys of the Kingdom</small></cite> A.J 크로닌</li>
-						<li><time>1888</time> <cite>선로지기 틸<small>Bahnwärter Thiel</small></cite> 게르하르트 하우프트만</li>
-						<li><time>1877</time> <cite>목로주점<small>Les Rougon-Macquart: L'Assommoir</small></cite>에밀 졸라</li>
-						<li><time>1981</time> <cite>붉은 고양이<small>Die rote Katze</small></cite> 루이제 린저</li>
-						<li><time>1952</time> <cite>센바즈루<small>千羽鶴</small></cite> 가와바타 야스나리</li>
-						<li><time>1994</time> <cite class="design">한번은, 빔 벤더스의 사진 그리고 이야기들<small>Einmal</small></cite> 빔 벤더스</li>
-						<li><time>1936</time> <cite>프랜시스 매콤버의 짧고 행복한 인생<small>The Short Happy Life of Francis Macomber</small></cite>  어니스트 헤밍웨이</li>
-						<li><time>1987</time> <cite>비둘기<small>Die Taube</small></cite>  파트리크 쥐스킨트</li>
-						<li><time>1975</time> <cite>카리아티드<small>Les Cariatides</small></cite>  로제 그르니에 / Le Miroir des eaux</li>
-						<li><time>1920</time> <cite>달걀의 승리<small>Triumph of the Egg</small></cite>  셔우드 앤더슨</li> 
-						<li><time>1936</time> <cite>행복한 죽음<small>La mort heureuse</small></cite>  알베르 까뮈</li>
-						<li><time>1941</time> <cite>달려라 메로스<small>L走れメロス</small></cite>  다자이 오사무</li>
-						<li><time>1935</time> <cite>길은 어둡고</cite>  박태원</li>
-						<li><time>1892</time> <cite>누런 벽지<small>The Yellow Wallpaper</small></cite> 샬롯 퍼킨스 길먼</li>
-						<li><time>1981</time> <cite class="design">타이포그래피<small>Typographie</small></cite>  에밀 루더</li>
-						<li><time>0000</time> <cite>인생의 어떤 노래</cite> 앙드레 도텔André Dhôtel</li>
-						<li><time>1974</time> <cite>카타리나 블룸의 잃어버린 명예<small>Die verlorene Ehre der Katharina Blum oder</small></cite>  하인리히 뵐</li>
-						<li><time>1974</time> <cite>당신들의 천국</cite> 이청준</li>
-						<li><time>1983</time> <cite>대성당<small>Cathedral</small></cite>레이먼드 카버</li>
-						<li><time>1836</time> <cite>감찰관<small>Revizor</small></cite>니콜라이 고골</li>
-						<li><time>0000</time> <cite class="design">타이포그래피 에세이<small>Stop Stealing Sheep & Find Out How Type Works</small></cite> 에릭 슈피커만 & E, M 진저</li>
-						<li><time>0000</time> <cite>고독의 피에로</cite> 피에르 키리아</li>
-						<li><time>1925</time> <cite>베이비 파티<small>The Baby Party</small> </cite> 프랜시스 스콧 피츠제럴드</li>
-						<li><time>1968</time> <cite>위기의 여자<small>La Femme Rompue</small> </cite> 시몬 드 보부아르</li>
-						<li><time>1838</time> <cite>리지아<small>Ligeia</small></cite>  에드거 앨런 포</li>
-						<li><time>1854</time> <cite>무무<small>Mumu</small></cite>  이반 투르게네프</li>
-						<li><time>1959</time> <cite>그레이(GRAY) 구락부 전말기</cite>  최인훈</li>
-						<li><time>0000</time> <cite>세월의 거품<small>L'écume des Jours</small></cite> 보리스 비앙 / 다시 읽음</li>
+    console.log(test)
+  })
+</script>
 
-						<li class="y2014"><time>1937</time> <cite>등롱<small>燈籠</small></cite> 다자이 오사무</li>
-						<li><time>1924</time> <cite>단식 광대<small>Ein Hungerkünstler</small></cite> 프란츠 카프카</li>
-						<li><time>1957</time> <cite>길 위에서<small>On the Road</small></cite> 잭 캐루악</li>
-						<li><time>0000</time> <cite>도대체 순수는 어디에<small>J'ai soif d'innocence</small></cite> 로맹 가리</li>
-						<li><time>1938</time> <cite>의사를 방문한 떼레즈<small>Thérèse chez le docteur</small></cite> 프랑수아 모리악</li>
-						<li><time>1930</time> <cite>12월 12일</cite> 이상</li>
-						<li><time>0000</time> <cite>겨울 꿈<small></small></cite> 프랜시스 스콧 피츠제럴드</li>
-						<li><time>1933</time> <cite>인간의 조건<small>La Condition Humaine</small></cite> 앙드레 말로</li>
-						<li><time>1839</time> <cite>어셔 가의 몰락<small>The Fall of the House of Usher</small></cite> 에드거 앨런 포</li>
-						<li><time>1930</time> <cite>에밀리에게 장미를<small>A Rose For Emily</small></cite> 윌리엄 포크너</li>
-						<li><time>2014</time> <cite class="design">Do it! 자바스크립트+제이쿼리 입문</cite> 정인용</li>
-						<li><time>1967</time> <cite>내가 훔친 여름</cite> 김승옥</li>
-						<li><time>1953</time> <cite>정키<small>Junkie</small></cite> 윌리엄 S. 버로스</li>
-						<li><time>1927</time> <cite>떼레즈 데께루<small>Thérèse Desqueyroux</small></cite> 프랑수아 모리악</li>
-						<li><time>2013</time> <cite class="design">Do it! HTML5 + CSS3 웹 표준의 정석</cite> 고경희</li>
-						<li><time>1925</time> <cite>벙어리 삼룡이</cite> 나도향</li>
-						<li><time>1935</time> <cite>노다지</cite> 김유정</li>
-						<li><time>0000</time> <cite>꿈</cite> 뚜르게네프</li>
-						<li><time>1929</time> <cite>자기만의 방<small>A Room of One's Own</small></cite> 버지니아 울프</li>
-						<li><time>1893</time> <cite>살로메<small>Salome</small></cite> 오스카 와일드</li>
-						<li><time>1917</time> <cite>병사의 집<small>Soldier's Home</small></cite> 어니스트 헤밍웨이</li>
-						<li><time>2010</time> <cite>어느 맑은 가을 아침 갑자기</cite> 박성원</li>
-						<li><time>0000</time> <cite>이토 준지 공포박물관 1 - 토미에1</cite></li>
-						<li><time>1933</time> <cite>세상의 빛<small>The light of the World</small></cite> 어니스트 헤밍웨이</li>
-						<li><time>1995</time> <cite>눈먼 자들의 도시<small>Ensaio sobre a cegueira</small></cite> 주제 사라마구</li>
-						<li><time>1843</time> <cite>검은 고양이<small>The Black Cat</small></cite>에드거 앨런 포</li>
-						<li><time>2002</time> <cite>인연<small>因緣</small></cite> 피천득</li>
-						<li><time>2004</time> <cite class="design">그리드 디자인: 효율적인 타이포그래피 레이아웃의 원리<small>Grid Systems: Principles of Organizing Type</small></cite> 킴벌리 일램</li>
-						<li><time>1835</time> <cite>광인일기<small>Zapiski sumasshedshevo</small></cite> 니콜라이 고골</li>
-						<li><time>2013</time> <cite>고래가 보고 싶거든</cite></li>
-						<li><time>1927</time> <cite>황야의 늑대<small>Der Steppenwolf</small></cite> 헤르만 헤세</li>
-						<li><time>1969</time> <cite>책상은 책상이다</cite> 피터 빅셀</li>
-						<li><time>1956</time> <cite>생의 한가운데<small>Mitte des Lebens</small></cite> 루이제 린저</li>
-						<li><time>0000</time> <cite>실화</cite> 이상</li>
-						<li><time>1965</time> <cite>사물들<small>Les Choses: Une histoire des années soixante</small></cite> 조르주 페렉</li>
-						<li><time>1990</time> <cite>불멸<small>I'mmortalite</small></cite> 밀란 쿤데라</li>
-						<li><time>1952</time> <cite>드 스미스 도미에의 청색시대<small>De Daumier-Smith's Blue Period</small></cite> J.D 샐린저</li>
-						<li><time>1955</time> <cite>롤리타<small>Lolita</small></cite> 블라디미르 나보코프</li>
-						<li><time>1934</time> <cite>8월<small>August</small></cite> 브루노 슐츠 / The Street of Crocodiles</li>
-						<li><time>1883</time> <cite>관리의 죽음</cite> 안톤 체홉</li>
-						<li><time>1916</time> <cite>젊은 예술가의 초상<small>A Portrait of the Artist as a Young Man</small></cite> 제임스 조이스</li>
-						<li><time>1867</time> <cite>캘레바래스 군의 명물, 뜀뛰는 개구리<small>The Celebrated Jumping Frog of Calaveras County</small></cite> 마크 트웨인 // 하하하!</li>
-						<li><time>1897</time> <cite>소형 보트<small>The Open Boat</small></cite> 스티븐 크레인</li>
-						<li><time>1977</time> <cite>어떤 솔거의 죽음</cite> 조정래</li>
-						<li><time>1971</time> <cite>타인의 방</cite> 최인호</li>
-						<li><time>2005</time> <cite>사랑을 생각하다<small>Ueber liebe und Tod</small></cite>파트리크 쥐스킨트</li>
-						<li><time>1934</time> <cite>애욕</cite> 박태원 // 생명의 세탁</li>
-						<li><time>2007</time> <cite>삼국전투기 5</cite> 최훈</li>
-						<li><time>1864</time> <cite>지하생활자의 수기<small>Zapiski iz podpol'ya</small></cite> 도스토옙스키</li>
-						<li><time>2007</time> <cite>삼국전투기 4</cite> 최훈</li>
-						<li><time>2007</time> <cite>삼국전투기 3</cite> 최훈</li>
-						<li><time>2007</time> <cite>삼국전투기 2</cite> 최훈</li>
-						<li><time>1948</time> <cite>설국<small>雪國</small></cite> 가와바타 야스나리</li>
-						<li><time>1963</time> <cite>벨 자<small>The Bell Jar</small></cite> 실비아 플라스</li>
-						<li><time>1977</time> <cite>눈길</cite> 이청준 /빚</li>
-						<li><time>1910</time> <cite>게르트루트<small>Gertrude</small></cite> 헤르만 헤세</li>
-						<li><time>1930</time> <cite>광염 소나타</cite> 김동인</li>
-						<li><time>1925</time> <cite>감자</cite> 김동인</li>
-						<li><time>1964</time> <cite>중독<small>Toxique</small></cite> 프랑수아즈 사강, 베르나르 뷔페</li>
-						<li><time>1936</time> <cite>비 오는 길</cite> 최명익</li>
-						<li><time>0000</time> <cite>어린아이</cite> 기 드 모파상</li>
-						<li><time>1935</time> <cite>소낙비</cite> 김유정</li>
-						<li><time>1899</time> <cite>스물여섯 명의 사내와 한 처녀<small>Двадцать шесть и одна</small></cite> 막심 고리키</li>
-						<li><time>1919</time> <cite>약한자의 슬픔</cite> 김동인 /표본생활 20년!</li>
-						<li><time>1932</time> <cite>발가락이 닮았다</cite> 김동인</li>
-						<li><time>1833</time> <cite>병 속에서 발견된 수기<small>MS. Found in a Bottle</small></cite> 에드거 앨런 포</li>
-						<li><time>0000</time> <cite><small>The Girl on the Bus</small></cite>윌리엄 샌섬</li>
-						<li><time>BC00</time> <cite>아이네이스<small>Aeneas</small></cite> 베르길리우스</li>
-						<li><time>1984</time> <cite>동행</cite> 임철우</li>
-						<li><time>1903</time> <cite>토니오 트뢰거<small>Tonio Kröger</small></cite> 토마스 만</li>
-						<li><time>1853</time> <cite>필경사 바틀비<small>Bartleby, The Scrivener - A Story Of Wallstreet</small></cite> 허먼 멜빌 / I would prefer not to</li>
-						<li><time>1820</time> <cite>립 밴 윙클<small>Rip Van Winkle</small></cite> 워싱턴 어빙</li>
-						<li><time>1926</time> <cite>태양은 다시 떠오른다<small>The Sun Also Rises</small></cite> 어니스트 헤밍웨이</li>
-						<li><time>1847</time> <cite>폭풍의 언덕<small>Wuthering Heights</small></cite> 에밀리 브론테</li>
-						<li><time>1920</time> <cite>주먹 네 방<small>The Four Fists</small></cite> F. 스콧 피츠제럴드 / Flappers and Philosophers</li>
-						<li><time>1891</time> <cite>비밀없는 스핑크스<small>Sphinx Without A Secret</small></cite> 오스카 와일드 / Lord Saville’s Crimes and Other Stories</li>
-						<li><time>1958</time> <cite>레이디 엘<small>Lady L</small></cite> 로맹 가리</li>
-						<li><time>0000</time> <cite>말테의 수기</cite> 라이너 마리아 릴케 / 읽다가 반납.</li>
-						<li><time>1813</time> <cite>오만과 편견<small>Pride and Prejudice</small></cite> 제인 오스틴</li>
-						<li><time>1991</time> <cite>좀머씨 이야기<small>Die Geschichte von Herrn Sommer</small></cite> 파트리크 쥐스킨트, 장 자크 상뻬</li>
-						<li><time>1892</time> <cite>진품<small>The Real Thing</small></cite> 헨리 제임스</li>
-						<li><time>1835</time> <cite>젊은 굿맨 브라운<small>Young Goodman Brown</small></cite> 너대니얼 호손</li>
-						<li><time>0000</time> <cite>지팡이 역사</cite> 이상</li>
-						<li><time>1964</time> <cite>싸게 사들이기</cite> 김승옥</li>
-						<li><time>1970</time> <cite>뫼비우스의 띠</cite> 조세희</li>
-						<li><time>1978</time> <cite>어린 여행자 몽도<small>Mondo</small></cite> J. M. G. 르 클레지오 / Mondo and Other Stories</li>
-						<li><time>1991</time> <cite>그를 만나는 깊은 봄날 저녁</cite> 윤대녕</li>
-						<li><time>1930</time> <cite>어떤 날 새벽</cite> 이태준</li>
-						<li><time>1926</time> <cite>십삼원</cite> 최서해</li>
-						<li><time>1983</time> <cite>몰락하는 자<small>Der Untergeher</small></cite> 토마스 베른하르트 / 의식의흐름, 생각, 반복</li>
-						<li><time>1938</time> <cite>소설가 구보씨의 일일</cite> 박태원</li>
-						<li><time>1931</time> <cite>고통<small>La Douleur</small></cite> 앙드레 드 리쇼</li>
-						<li><time>1930</time> <cite>수염</cite> 박태원</li>
-						<li><time>1936</time> <cite>거리</cite> 박태원</li>
-						<li><time>1984</time> <cite>연인<small>L'Amant</small></cite> 마르그리트 뒤라스</li>
-						<li><time>1947</time> <cite>세월의 거품<small>L'écume des jours</small></cite> 보리스 비앙</li>
-						<li><time>1884</time> <cite>허클베리 핀의 모험<small>Adventures of Huckleberry Finn</small></cite> 마크 트웨인 / 톰소여의원칙과모험심에실소</li>
-						<li><time>1920</time> <cite>클링조어의 마지막 여름<small>Klingsors Letzter Sommer</small></cite> 헤르만 헤세</li>
-						<li><time>1960</time> <cite>포르노그라피아<small>Pornografia</small></cite> 비톨트 곰브로비치</li>
-						<li><time>1964</time> <cite>차나 한 잔</cite> 김승옥 / 우연</li>
-						<li><time>1962</time> <cite>생명연습</cite> 김승옥 / 슬프세요? /글쎄 지금 생각주잉야 자기세게</li>
-						<li><time>1964</time> <cite>무진기행</cite> 김승옥</li>
-						<li><time>1962</time> <cite>환상수첩</cite> 김승옥</li>
-						<li><time>1959</time> <cite>브람스를 좋아하세요...<small>Aimez-vous Brahms...</small></cite> 프랑수아즈 사강</li>
-						<li><time>1965</time> <cite>서울 1964년 겨울</cite> 김승옥</li>
-						<li><time>1934</time> <cite>달밤</cite> 이태준 /그의 은근한 순정의 열매를 먹듯 한 알을 가지고도 오래 입안에 굴려보며 먹었다. /달밤은 그에게도 유감한 듯 하였다.</li>
-						<li><time>1961</time> <cite>프래니와 주이<small>Franny and Zooey</small></cite> J.D 샐린저 / you're my jesus.</li>
-						<li><time>1963</time> <cite>어느 어릿광대의 견해<small>Ansichten eines Clowns</small></cite> 하인리히 뵐</li>
-						<li><time>1903</time> <cite>야성의 부름<small>The Call of the Wild</small></cite> 잭 런던</li>
-						<li><time>1972</time> <cite>소망 없는 불행<small>Wunschloses Unglück</small></cite> 페터 한트케 / 하나도 기억안남</li>
-						<li><time>2005</time> <cite>첫 문장 못 쓰는 남자<small>L'Angoisse de la première phrase</small></cite> 베르나르 키리니</li>
-						<li><time>1987</time> <cite>세상의 모든 딸들<small>Reindeer Moon</small></cite> 엘리자베스 M. 토마스</li>
-						<li><time>1955</time> <cite>목수들아 대들보를 높이 올려라<small>Raise High the Roof-Beam Carpenters</small></cite> J.D 샐린저</li>
-						<li><time>1991</time> <cite>단순한 열정<small>Simple Passion</small></cite> 아니 에르노</li>
-						<li><time>2004</time> <cite>백년여관</cite> 임철우</li>
-						<li><time>2001</time> <cite>적의 화장법<small>Cosmétique de l'ennemi</small></cite> 아멜리 노통</li>
-						<li><time>1997</time> <cite>도라 부르더<small>Dora Bruder</small></cite> 파트릭 모디아노</li>
-						<li><time>2000</time> <cite>적<small>L'Adversaire</small></cite> 엠마뉘엘 카레르</li>
-						<li><time>1857</time> <cite>루진<small>Rudin</small></cite> 이반 세르게예비치 뚜르게네프</li>
-						<li><time>1888</time> <cite>삐에르와 장<small>Pierre et Jean</small></cite> 기 드 모파상</li>
-						<li><time>1920</time> <cite>메이데이<small>May Day</small></cite> F. 스콧 피츠제럴드 // Tales of the Jazz Age</li>
-						<li><time>1922</time> <cite>리츠칼튼호텔만 한 다이아몬드<small>The Diamond as Big as the Ritz</small></cite> F. 스콧 피츠제럴드 // Tales of the Jazz Age</li>
-						<li><time>1922</time> <cite>벤자민버튼의 시간은 거꾸러 간다<small>The Curious Case of Benjamin Button</small></cite> F. 스콧 피츠제럴드 // Tales of the Jazz Age</li>
-						<li><time>2013</time> <cite>펑크록스타일 빨대 디자인에 관한 연구</cite> 송지현 // 동아일보 신춘문예 </li>
-						<li><time>1891</time> <cite>도리언 그레이의 초상<small>The Picture of Dorian Gray</small></cite> 오스카 와일드</li>
-						<li><time>1867</time> <cite>테레즈 라캥<small>Thérèse Raquin</small></cite> 에밀 졸라</li>
-						<li><time>1933</time> <cite>파리와 런던 거리의 성자들<small>Down and Out in Paris and London</small></cite> 조지 오웰</li>
-						<li><time>1970</time> <cite>나목</cite> 박완서</li>
-						<li><time>1945</time> <cite>중요한 것은 절대 사라지지 않아 or 유럽의 교육<small>Education européenne</small></cite> 로맹 가리</li>
-						<li><time>1970</time> <cite>페널티킥 앞에 선 골키퍼의 불안<small>Die Angst des Tormanns beim Elfmeter</small></cite> 페터 한트케</li>
-						<li><time>1984</time> <cite>참을 수 없는 존재의 가벼움<small>L'insoutenable légèreté de l'être</small></cite> 밀란 쿤데라 // 1982</li>
-						<li><time>1952</time> <cite>고도를 기다리며<small>En attendant Godot</small></cite> 사무엘 베케트</li>
-						<li><time>1915</time> <cite>크눌프<small>Knulp. Drei Geschichten aus dem Leben Knulps</small></cite> 헤르만 헤세</li>
-						<li><time>1985</time> <cite>향수<small>Das Parfum</small></cite> 파트리크 쥐스킨트</li>
-						<li><time>1984</time> <cite>콘트라베이스<small>Der Kontrabass</small></cite> 파트리크 쥐스킨트</li>
-						<li><time>1929</time> <cite>무기여 잘 있거라<small>A Farewell to Arms</small></cite> 어니스트 헤밍웨이</li>
-						<li><time>1935</time> <cite class="design">타이포그라픽 디자인<small>Typographische Gestaltung</small></cite> 얀 치홀트</li>
-						<li><time>1881</time> <cite>왼손잡이<small>Левша</small></cite> 니콜라이 레스코프 // The Tale of Cross-eyed Lefty from Tula and the Steel Flea</li>
-						<li><time>0000</time> <cite>예술의 숲</cite> 오귀스트 로댕</li>
-						<li><time>1898</time> <cite>사랑에 관하여<small>О любви</small></cite> 안톤 체호프</li>
-						<li><time>1898</time> <cite>산딸기<small>рыжовник</small></cite> 안톤 체호프</li>
-						<li><time>1898</time> <cite>상자속의 사나이<small>Человек в футляре</small></cite> 안톤 체호프 // The Little Trilogy</li>
-						<li><time>1997</time> <cite>어두운 밤 나는 적막한 집을 나섰다<small>In Einer Dunklen Nacht Ging Ich Aus Meinem Stillen Haus</small></cite> 페터 한트케</li>
-						<li><time>1920</time> <cite>낙타의 뒷부분<small>The Camel's Back</small></cite> F. 스콧 피츠제럴드 // Tales of the Jazz Age</li>
-						<li><time>1920</time> <cite>얼음궁전<small>The Ice Palace</small></cite> F. 스콧 피츠제럴드 // Flappers and Philosophers</li>
-						<li><time>1920</time> <cite>댈리림플 나쁜 길로 빠지다<small>Dalyrimple Goes Wrong</small></cite> F. 스콧 피츠제럴드 // Flappers and Philosophers</li>
-						<li><time>1920</time> <cite>앞바다의 해적<small>The Offshore Pirate</small></cite> F. 스콧 피츠제럴드 // Flappers and Philosophers</li>
-						<li><time>0000</time> <cite>단발</cite> 이상</li>
-						<li><time>1953</time> <cite>테디<small>Teddy</small></cite> J.D 샐린저</li>
-						<li><time>1952</time> <cite>드 도미에 스미스의 청색 시대<small>De Daumier-Smith's Blue Period</small></cite> </li>
-						<li><time>1951</time> <cite>예쁜 입과 초록빛 나의 눈동자<small>Pretty Mouth and Green My Eyes</small></cite> </li>
-						<li><time>1950</time> <cite>에스메를 위하여, 사랑 그리고 비참함으로<small>For Esmé – with Love and Squalor</small></cite> </li>
-						<li><time>1949</time> <cite>작은 보트에서<small>Down at the Dinghy</small></cite> J.D 샐린저</li>
-						<li><time>1949</time> <cite>웃는 남자<small>The Laughing Man</small></cite> J.D 샐린저</li>
-						<li><time>1948</time> <cite>에스키모와의 전쟁 직전<small>Just Before the War with the Eskimos</small></cite> </li>
-						<li><time>1948</time> <cite>코네티컷의 비칠비칠 아저씨<small>Uncle Wiggily in Connecticu</small></cite>t </li>
-						<li><time>1948</time> <cite>바나나피시를 위한 완벽한 날<small>A Perfect Day for Bananafish</small></cite> </li>
-						<li><time>1914</time> <cite>마음<small>こゝろ</small></cite> 나쓰메 소세키</li>
-						<li><time>1920</time> <cite>컷글라스 그릇<small>The Cut-Glass Bowl</small></cite> F. 스콧 피츠제럴드 // Flappers and Philosophers</li>
-						<li><time>1916</time> <cite>코<small>鼻</small></cite> 아쿠타가와 류노스케</li>
-						<li><time>1947</time> <cite>만개한 벚꽃나무 숲 아래<small>櫻の森の滿開の下</small></cite> 사카구치 안고</li>
-						<li><time>1929</time> <cite>젊은 시인에게 보내는 편지<small>Briefe an einen jungen Dichter</small></cite> Rainer Maria Rilke</li>
-						<li><time>1943</time> <cite>반점<small>The Birth-Mark</small></cite> 너대니얼 호손 // Mosses from an Old Manse</li>
-						<li><time>1792</time> <cite>가련한 리자<small>Бедная Лиза</small></cite> 카람진</li>
-						<li><time>1922</time> <cite>젤리빈<small>The Jelly-Bean</small></cite> F. 스콧 피츠제럴드 // Tales of the Jazz Age</li>
-						<li><time>1916</time> <cite>시골의사</cite> 프란츠 카프카</li>
-						<li><time>1878</time> <cite>안나 카레니나<small>Анна Каренина</small></cite> 톨스토이</li>
-						<li><time>1936</time> <cite>날개</cite> 이상</li>
-						<li><time>1883</time> <cite>자살<small>Suicides</small></cite> 기 드 모파상</li>
-						<li><time>1884</time> <cite>목걸이<small>La Parure</small></cite> 기 드 모파상</li>
-						<li><time>1967</time> <cite>백년 동안의 고독<small>Cien años de soledad Gabriel</small></cite> Garcia Márquez</li>
-						<li><time>1932</time> <cite>비둘기 시민<small>Citoyen pigeon</small></cite> 로맹 가리</li>
-						<li><time>0000</time> <cite>새들은 페루에 가서 죽다</cite> 로맹가리</li>
-						<li><time>1997</time> <cite>정체성<small>L'Identite</small></cite> 밀란 쿤데라</li>
-						<li><time>1985</time> <cite>잃어버린 거리<small>Quartier Perdu</small></cite> 파트릭 모디아노</li>
-						<li><time>1975</time> <cite>첫사랑, 마지막 의식<small>First Love, Last Rites</small></cite> 이언 매큐언</li>
-						<li><time>1978</time> <cite>이제 우리들의 잔을</cite> 이청준</li>
-						<li><time>2001</time> <cite>작은 보석<small>La petite Bijou</small></cite> 파트릭 모디아노</li>
-						<li><time>1921</time> <cite>아Q정전<small>阿Q正傳</small></cite> 루쉰</li>
-						<li><time>1918</time> <cite>광인일기<small>狂人日記</small></cite> 루쉰</li>
-						<li><time>1999</time> <cite>신원 미상 여자<small>Des inconnues</small></cite> 파트릭 모디아노</li>
-						<li><time>2007</time> <cite>체실 비치에서<small>On Chesil Beach</small></cite> 이언 매큐언</li>
-						<li><time>2000</time> <cite>튜브의 형이상학<small>Métaphysique des tubes</small></cite> 아멜리 노통 // 이토록 아름다운 세 살</li>
-						<li><time>1999</time> <cite>두려움과 떨림<small>Stupeur et tremblements</small></cite> 아멜리 노통</li>
-						<li><time>0000</time> <cite>당연한 의심<small>War er es</small></cite> 슈테판 츠바이크1935~1940</li>
-						<li><time>1933</time> <cite>이별여행<small>Die Reise in die Vergangenheit</small></cite> 슈테판 츠바이크</li>
-						<li><time>1946</time> <cite>그리스인 조르바<small>Βίος και Πολιτεία του Αλέξη Ζορμπά</small></cite> 니코스 카잔차키스</li>
-						<li><time>1965</time> <cite>퇴원</cite> 이청준 // 등단작</li>
-						<li><time>1906</time> <cite>수레바퀴 아래서<small>Unterm Rad</small></cite> 헤르만 헤세</li>
-						<li><time>1975</time> <cite>자기 앞의 생<small>La Vie Devant Soi</small></cite> 에밀 아자르</li>
-						<li><time>1995</time> <cite>자전거를 못 타는 아이<small>une bicyclette à propos de son père</small></cite> 장 자끄 상뻬</li>
-						<li><time>1889</time> <cite>악마<small>Dyavol</small></cite> 톨스토이</li>
-						<li><time>1888</time> <cite>홀스토메르 - 어느 말의 이야기<small>Kholstomer</small></cite> 톨스토이</li>
-						<li><time>1884</time> <cite>이반 일리치의 죽음<small>Smert' Ivana Ilyicha</small></cite> 톨스토이</li>
-						<li><time>1926</time> <cite>위폐범들<small>Les Faux-Monnayeurs</small></cite> 앙드레 지드</li>
-						<li><time>1956</time> <cite>오늘을 잡아라<small>Seize the Day</small></cite> 솔 벨로</li>
-						<li><time>1946</time> <cite>면도날<small>The Razor's Edg</small></cite> W. 서머셋 몸</li>
-						<li><time>1861</time> <cite>상처받은 사람들<small>Unizhennye i oskorblyonnye</small></cite> 도스토옙스키</li>
-						<li><time>1934</time> <cite>레디메이드 인생</cite> 채만식</li>
-						<li><time>1936</time> <cite>동백꽃</cite> 김유정</li>
-						<li><time>1905</time> <cite>크리스마스 선물<small>The Gift of the Magi</small></cite> 오 헨리</li>
-						<li><time>1924</time> <cite>운수좋은 날</cite> 현진건</li>
-						<li><time>1967</time> <cite>농담<small>La Plaisanterie</small></cite> 밀란 쿤데라</li>
-						<li><time>1914</time> <cite>뜻밖의 만남<small>An Encounter in Dubliners</small></cite> 제임스 조이스</li>
-						<li><time>1959</time> <cite>소나기</cite> 황순원</li>
-						<li><time>1885</time> <cite>벨아미<small>Bel-Ami</small></cite> 기 드 모파상</li>
-						<li><time>1978</time> <cite>어두운 상점들의 거리<small>Rue des boutiques obscures</small></cite> 파트릭 모디아노</li>
-						<li><time>0000</time> <cite>사랑<small>Amor</small></cite> 앙드레 지드 // 시학사.</li>
-						<li><time>1888</time> <cite>행복한 왕자와 다른 이야기들<small>The Happy Prince and Other Tales</small></cite>오스카 와일드</li>
-						<li><time>1899</time> <cite>부활<small>Voskreseniye</small></cite> 톨스토이</li>
-						<li><time>1927</time> <cite>감정의 혼란<small>Verwirrung der Gefühle</small></cite> 슈테판 츠바이크</li>
-						<li><time>1860</time> <cite>첫사랑<small>Pervaia Liubov</small></cite> 이반 투르게네프</li>
-						<li><time>0000</time> <cite>달밤의 뒷골목<small>Die Mondscheingasse</small></cite> 슈테판 츠바이크</li>
-						<li><time>1922</time> <cite>나를 알지 못하는 당신에게<small>Brief einer Unbekannten</small></cite> 슈테판 츠바이크 // 낯선 여인의 편지</li>
-						<li><time>1876</time> <cite>톰 소여의 모험<small>The Adventures of Tom Sawyer</small></cite> 마크 트웨인</li>
-						<li><time>1880</time> <cite>까라마조프 씨네 형제들<small>Brat'ya Karamazovy</small></cite> 도스토옙스키</li>
-						<li><time>1924</time> <cite>마의 산<small>Der Zauberberg</small></cite> 토마스 만</li>
-						<li><time>1854</time> <cite>월든<small>Walden</small></cite> 헨리 데이비드 소로</li>
-						<li><time>1932</time> <cite>독을 품은 뱀<small>Le Noeud de Vipères</small></cite> 프랑수아 모리악</li>
-						<li><time>1835</time> <cite>고리오 영감<small>Le Père Goriot</small></cite> 오노레 드 발자크</li>
-						<li><time>1926</time> <cite>성<small>Das Schloss</small></cite> 프란츠 카프카</li>
-						<li><time>1966</time> <cite>절망<small>Despair</small></cite> 블라디미르 나보코프</li>
-						<li><time>1830</time> <cite>적과 흑<small>Le Rouge et le Noir</small></cite> 스탕달 // 쥘리엥 ㅠㅠ</li>
-						<li><time>2010</time> <cite>우리 기억 속의 색<small>Les couleurs de nos souvenirs</small></cite> 미셸 파스투로</li>
-						<li><time>1998</time> <cite>아득한 기억의 저편<small>Du Plus Loin de L'Oubli</small></cite> 파트릭 모디아노</li>
-						<li><time>1969</time> <cite>얼굴 빨개지는 아이<small></small></cite> 장 자크 상뻬</li>
-						<li><time>1866</time> <cite>죄와 벌<small>Prestuplenie i nakazanie</small></cite> 도스토옙스키</li>
-						<li><time>1981</time> <cite>청춘 시절<small>Une Jeunesse</small></cite> 파트릭 모디아노</li>
-						<li><time>1956</time> <cite>전락<small>La Chute</small></cite> 알베르 까뮈</li>
-						<li><time>1942</time> <cite>체스<small>SchachnovelleBuenos Aires</small></cite> 슈테판 츠바이크</li>
-						<li><time>1925</time> <cite>소송<small>Der Prozess</small></cite> 프란츠 카프카</li>
-						<li><time>1949</time> <cite>1984년<small>Nineteen Eighty-Four</small></cite> 조지 오웰</li>
-						<li><time>1948</time> <cite>인간실격<small>人間失格</small></cite> 다자이 오사무</li>
-						<li><time>1947</time> <cite>페스트<small>Le Peste</small></cite> 알베르 까뮈</li>
-						<li><time>0000</time> <cite>개를 데리고 다니는 여자<small></small></cite> 안톤 체호프</li>
-						<li><time>1787</time> <cite>미덕의 불운<small>Les Infortunes de la vertu</small></cite> 마르키 드 사드</li>
-						<li><time>1969</time> <cite>씌어지지 않은 자서전</cite> 이청준</li>
-						<li><time>1938</time> <cite>구토<small>La Nausée</small></cite> 장 폴 사르트르 // 토할뻔</li>
-						<li><time>1962</time> <cite>아우라<small>Aura</small></cite> 카를로스 푸엔테스</li>
-						<li><time>1904</time> <cite>페터 카멘친트<small>Peter Camenzind</small></cite> 헤르만 헤세</li>
-						<li><time>1919</time> <cite>달과 6펜스<small>The Moon and Sixpence</small></cite> W. 서머셋 몸</li>
-						<li><time>1932</time> <cite>파비안<small>Fabian. Die Geschichte eines Moralisten</small></cite> 에리히 캐스트너</li>
-						<li><time>1857</time> <cite>보바리 부인<small>Madame Bovary</small></cite> 귀스타프 플로베르</li>
-						<li><time>1899</time> <cite>귀여운 여인<small>Душечка</small></cite> 안톤 체호프</li>
-						<li><time>1842</time> <cite>외투<small>Шинель</small></cite> 니콜라이 고골</li>
-						<li><time>1909</time> <cite>좁은 문<small>La porte étroite</small></cite> 앙드레 지드</li>
-						<li><time>1836</time> <cite>코<small>Нос</small></cite> 니콜라이 고골</li>
-						<li><time>1987</time> <cite>상실의 시대<small>ノルウェイの森</small></cite> 무라카미 하루키</li>
-						<li><time>1994</time> <cite>공중곡예사<small>Mr. Vertigo</small></cite> 폴 오스터</li>
-						<li><time>2002</time> <cite>환상의 책<small>The Book of Illusions</small></cite> 폴 오스터</li>
-						<li><time>1956</time> <cite>사고<small>Die Panne</small></cite> 프리드리히 뒤렌마트</li>
-						<li><time>1889</time> <cite>결혼<small>Крейцерова соната</small></cite> 톨스토이</li>
-						<li><time>1774</time> <cite>젊은 베르테르의 슬픔<small>Die Leiden des jungen Werthers</small></cite> 괴테</li>
-						<li><time>1998</time> <cite>베로니카, 죽기로 결심하다<small>Veronika Decide Morrer</small></cite> 파울로 코엘료</li>
-						<li><time>1951</time> <cite>호밀 밭의 파수꾼<small>The Catcher in the Rye</small></cite> J. D. 샐린저</li>
-						<li><time>2008</time> <cite>어둠 속의 남자<small>Man in the Dark</small></cite> 폴 오스터</li>
-						<li><time>1953</time> <cite>그리고 아무 말도 하지 않았다<small>Und sagte kein einziges Wort</small></cite> 하인리히 뵐</li>
-						<li><time>1932</time> <cite>멋진 신세계<small>Brave New World</small></cite> 올더스 헉슬리</li>
-						<li><time>1991</time> <cite>프라하 거리에서 울고 다니는 여자<small>La Pleurante des rues de Prague</small></cite> 실비 제르맹</li>
-						<li><time>1952</time> <cite>노인과 바다<small>The Old Man and the Sea</small></cite> 어니스트 헤밍웨이</li>
-						<li><time>1942</time> <cite>이방인<small>L’Étranger</small></cite> 알베르 까뮈</li>
-						<li><time>1967</time> <cite>아웃사이더<small>The Outsiders</small></cite> S. E. 힌튼</li>
-						<li><time>1915</time> <cite>변신<small>Die Verwandlung</small></cite> 프란츠 카프카</li>
-						<li><time>1912</time> <cite>선고<small>Das Urteil</small></cite> 프란츠 카프카</li>
-						<li><time>1989</time> <cite>어느 작가의 오후<small>The Afternoon of a Writer</small></cite> 페터 한트케</li>
-						<li><time>1925</time> <cite>위대한 개츠비<small>The Great Gatsby</small></cite> F. 스콧 피츠제럴드</li>
-						<li><time>1862</time> <cite>아버지와 아들<small>Otzy i deti</small></cite> 투르게네프</li>
-						<li><time>1995</time> <cite>하이 피델리티<small>High Fidelity</small></cite> 닉 혼비</li>
-						<li><time>1974</time> <cite>레이스뜨는 여자<small>La Dentellière</small></cite> 파스칼 레네</li>
-						<li><time>2005</time> <cite>죽음의 중지<small>As Intermitências da Morte</small></cite> 주제 사라마구</li>
-						<li><time>1963</time> <cite>조서<small>Le Procès-Verbal</small></cite> J. M. G. 르 클레지오</li>
-						<li><time>1991</time> <cite>달콤한 내세<small>The Sweet Hereafter</small></cite> 러셀 뱅크스</li>
-						<li><time>1919</time> <cite>데미안<small>Die Geschichte von Emil Sinclairs Jugend</small></cite> 헤르만 헤세</li>
-						<li><time>1952</time> <cite>반쪼가리 자작<small>Il visconte dimezzato</small></cite> 이탈로 칼비노</li>
-						<li><time>2001</time> <cite>스무살, 도쿄<small>東京物語</small></cite> 오쿠다 히데오</li>
-						<li><time>1859</time> <cite>아저씨의 꿈<small>Dyadyushkin son</small></cite> 도스토옙스키</li>
-						<li><time>1849</time> <cite>네또츠까 네즈바노바<small>Netochka Nezvanova</small></cite> 도스토옙스키</li>
-						<li><time>1848</time> <cite>백야<small>Belye nochi</small></cite> 도스토옙스키</li>
-						<li><time>1847</time> <cite>아홉 통의 편지로 된 소설<small>Roman v devyati pis'mah</small></cite> 도스토옙스키</li>
-						<li><time>1846</time> <cite>쁘로하르친 씨<small>Gospodin Prokharchin</small></cite> 도스토옙스키</li>
-						<li><time>1846</time> <cite>분신<small>Dvoynik: Peterburgskaya poema</small></cite> 도스토옙스키</li>
-						<li><time>1846</time> <cite>가난한 사람들<small>Bednye lyudi</small></cite> 도스토옙스키</li>
-						<li><time>1931</time> <cite>대지<small>The Good Earth</small></cite> 펄 S. 벅</li>
+<li>
+  <time>1931</time> <cite>기러기<small>Arrowroot; 吉野葛Yoshino kuzu</small></cite
+  >다니자키 준이치로
+</li>
+<li>
+  <time>1931</time> <cite>나사의 회전<small>Arrowroot; 吉野葛Yoshino kuzu</small></cite
+  >다니자키 준이치로
+</li>
+<li>
+  <time>1931</time> <cite>유년의 뜰<small>Arrowroot; 吉野葛Yoshino kuzu</small></cite
+  >다니자키 준이치로
+</li>
+<li>
+  <time>1931</time> <cite>요시노 구즈<small>Arrowroot; 吉野葛Yoshino kuzu</small></cite
+  >다니자키 준이치로
+</li>
+<li>
+  <time>2016</time> <cite>모델<small>The Model</small></cite
+  >조이스 캐럴 오츠
+</li>
+<li>
+  <time>2016</time> <cite>홀<small>The Hole</small></cite
+  >편혜영
+</li>
+<li>
+  <time>2000</time> <cite>철콘 근크리트<small>出書房</small></cite
+  >마츠모토 타이요
+</li>
+<li>
+  <time>1982</time>
+  <cite>비트겐슈타인의 조카<small>Wittgensteins Neffe: eine Freundschaft</small></cite
+  >토마스 베른하르트
+</li>
+<li>
+  <time>1946</time>
+  <cite>제라늄<small>The Geranium in The Complete Stories</small>플래너리 오코너</cite>
+</li>
+<li>
+  <time>1927</time> <cite>눈부신 그 사람<small>The Young Glory of Him</small></cite
+  >랭스턴 휴즈
+</li>
+<li>
+  <time>1949</time> <cite>가면의 고백<small>出書房</small></cite
+  >미시마 유키오
+</li>
+<li>
+  <time>1969</time>
+  <cite
+    >제 5도살장<small
+      >Slaughterhouse-Five, or The Children's Crusade: A Duty-Dance with Death</small
+    ></cite
+  >커트 보니것
+</li>
+
+<li>
+  <time>0000</time> <cite>그들 중 하나, 혹은 가면의 영혼<small></small></cite>장 로랭
+</li>
+<li>
+  <time>0000</time> <cite>우울증<small>憂鬱症</small></cite
+  >정인택
+</li>
+<li>
+  <time>1897</time> <cite>무사시노<small>Musashino武蔵野</small></cite
+  >구니키다 돗포
+</li>
+<li>
+  <time>1925</time> <cite>댈러웨이 부인<small>Mrs. Dalloway</small></cite
+  >버지니아 울프
+</li>
+<li>
+  <time>2016</time> <cite>쇼코의 미소<small></small></cite>최은영
+</li>
+<li>
+  <time>1901</time> <cite>부덴브로크가의 사람들<small>Buddenbrooks</small></cite
+  >토마스 만
+</li>
+<li>
+  <time>1946</time> <cite>백치<small>白痴</small></cite
+  >사카구치 안고
+</li>
+<li>
+  <time>1994</time> <cite>베테르부르크의 대가<small>The Master of Petersberg</small></cite
+  >J. M 쿳시
+</li>
+<li>
+  <time>1939</time> <cite>녹성당<small></small></cite>김남천
+</li>
+<li>
+  <time>1959</time> <cite>굿바이 콜럼버스<small>Goodbye, Columbus</small></cite
+  >필립 로스
+</li>
+<li>
+  <time>1927</time> <cite>달빛 아래의 몸뚱이들<small>Bodies in the Moonlight</small></cite
+  >랭스턴 휴즈
+</li>
+<li>
+  <time>1954</time> <cite>슬픔이여, 안녕<small>Bonjour Tristesse</small></cite
+  >프랑수아즈 사강
+</li>
+<li>
+  <time>1928</time> <cite>도시와 유령<small>都市─幽靈</small></cite
+  >이효석
+</li>
+<li>
+  <time>1961</time> <cite>모스크바에서의 오해<small>Misunderstanding in Moscow</small></cite
+  >시몬 드 보부아르
+</li>
+<li>
+  <time>1961</time> <cite>모든 것<small>Alles in Das dreißigste Jahr</small></cite
+  >잉게보르크 바흐만
+</li>
+<li>
+  <time>1972</time> <cite class="design">다른 방식으로 보기<small>The Way of Seeing</small></cite
+  >존 버거
+</li>
+<li>
+  <time>1931</time> <cite>만<small>卍, まんじ</small></cite
+  >다니자키 준이치로
+</li>
+<li>
+  <time>1982</time> <cite>호흡<small>Der Atem</small></cite
+  >토마스 베른하르트
+</li>
+<li>
+  <time>2004</time> <cite>가수들 (일는 중)<small></small></cite>이반 투르게네프
+</li>
+<li>
+  <time>2004</time>
+  <cite
+    >네가 길을 잃어버리지 않게<small
+      >So You Don't Get Lost in the Neighborhood; Pour que tu ne te perdes pas dans le
+      quartier</small
+    ></cite
+  >파트릭 모디아노
+</li>
+<li>
+  <time>1969</time> <cite>욜의 추억<small>Memories of Youghal</small></cite
+  >윌리엄 프레버
+</li>
+<li>
+  <time>1933</time> <cite>물<small></small></cite>김남천
+</li>
+<li>
+  <time>1880</time> <cite>나나<small>Les Rougon-Macquart: Nana</small></cite
+  >에밀 졸라
+</li>
+<li>
+  <time>1941</time> <cite>부상관의 봄<small>扶桑館</small></cite
+  >정인택
+</li>
+<li>
+  <time>1939</time> <cite>후지 산 백경<small>ふがくひゃっけい: 富嶽百景</small></cite
+  >다자이 오사무
+</li>
+<li>
+  <time>1920</time> <cite>랜돌프 카터의 진술<small>The Statement of Randolph Carter</small></cite
+  >하워드 필립스 러브크래프트
+</li>
+<li>
+  <time>1975</time> <cite>팩토텀<small>Factotum</small></cite
+  >찰스 부코스키
+</li>
+<li>
+  <time>1923</time> <cite>배신의 거미줄<small>Zigzags of Treachery</small></cite
+  >대실 해밋
+</li>
+<li>
+  <time>1955</time> <cite>썩은 잎<small>La hojarasca</small></cite
+  >가브리엘 가르시아 마르께스
+</li>
+<li>
+  <time>1977</time> <cite>불의 강<small></small></cite>오정희
+</li>
+<li>
+  <time>1851</time> <cite>모비 딕<small>Moby Dick</small></cite
+  >허먼 멜빌
+</li>
+<li>
+  <time>1925</time> <cite>오몽녀<small>五夢女</small></cite
+  >이태준
+</li>
+<li>
+  <time>1951</time> <cite>악마와 선한 신<small>Le Diable et le Bon Dieu</small></cite> 장 폴
+  사르트르
+</li>
+<li>
+  <time>1918</time> <cite>지코쿠헹<small>地獄変</small></cite
+  >아쿠타가와 류노스케
+</li>
+<li>
+  <time>1980</time>
+  <cite
+    >이 글을 읽는 사람에게 영원한 저주를<small
+      >Maldición eterna a quien lea estas páginas</small
+    ></cite
+  >마누엘푸익
+</li>
+<li>
+  <time>1949</time> <cite class="design">스기우라 고헤이 잡지 디자인 반세기<small></small></cite>
+</li>
+<li>
+  <time>2012</time> <cite>파라솔이 접힌 오후<small></small></cite>오한기
+</li>
+<li>
+  <time>1951</time> <cite>아담, 너는 어디에 있었느냐<small>Wo Warst Du, Adam?</small></cite
+  >하인리히 뵐
+</li>
+<li>
+  <time>1980</time> <cite>핑거 스미스<small>Fingersmith</small></cite
+  >사라 워터스 / 1부만
+</li>
+<li>
+  <time>1949</time> <cite>고통스럽고 아름다운 여름<small></small></cite>하라 다미키
+</li>
+<li>
+  <time>2012</time> <cite>팜비치<small></small></cite>최정화
+</li>
+<li>
+  <time>1963</time>
+  <cite
+    >나는 입이 없다 그리고 나는 비명을 질러야 한다<small
+      >I Have No Mouth, and I Must Scream</small
+    ></cite
+  >할란 엘리슨
+</li>
+<li>
+  <time>1941</time> <cite>유치장에서 만난 사나이<small></small></cite>김사량
+</li>
+<li>
+  <time>1936</time>
+  <cite class="design"
+    >기술복제시대의 예술작품(제 2판)<small
+      >Das Kunstwerk im Zeitalter seiner technischen Reproduzierbarkeit</small
+    ></cite
+  >발터 벤야민
+</li>
+<li>
+  <time>1941</time> <cite>투도 - 전작중편소설 자화상 제 2화<small>偸盜</small></cite
+  >박태원
+</li>
+
+<li>
+  <time>1983</time> <cite>마이클 K<small>The Life and Times of Michael K</small></cite
+  >J. M. 쿳시
+</li>
+<li>
+  <time>2015</time> <cite>목련정전<small>目連正傳</small></cite
+  >최은미
+</li>
+<li>
+  <time>1909</time>
+  <cite>벤야멘타 하인학교 - 야콥 폰 군텐 이야기<small>Jakob von Gunten</small></cite
+  >로베르트 발저
+</li>
+<li>
+  <time>1964</time> <cite>진흙발의 오르페우스<small>Orpheus with Clay Feet</small></cite
+  >필립 K. 딕
+</li>
+<li>
+  <time>1905</time> <cite>나는 고양이로소이다<small>吾輩は猫である</small></cite
+  >나쓰메 소세키
+</li>
+<li>
+  <time>1897</time> <cite>죽은 자는 말이 없다<small>Die Toten schweigen</small></cite
+  >아르투어 슈니츨러
+</li>
+<li>
+  <time>2014</time>
+  <cite class="design">한글 레터링 자료집 1950-1985<small></small></cite>프로파간다
+</li>
+<li>
+  <time>2012</time> <cite class="design">헬무트 뉴튼 사진집<small>Helmut Newton Work</small></cite
+  >헬무트 뉴튼
+</li>
+<li>
+  <time>1921</time> <cite>표본실의 청개구리<small>標本室─靑─</small></cite
+  >염상섭
+</li>
+<li>
+  <time>1971</time> <cite>지금 돌아보지 마<small>Not After Midnight AKA Don't Look Now</small></cite
+  >대프니 듀 모리에
+</li>
+<li>
+  <time>1981</time>
+  <cite class="design"
+    >이제껏 배운 그래픽 디자인 규칙은 다 잊어라. 이 책에 실린 것까지.<small
+      >Forget All the Rules You Ever Learned About Graphic Design, Including the Ones in this
+      Book</small
+    ></cite
+  >밥 길 / 레이아웃보다 아이디어
+</li>
+<li>
+  <time>1902</time> <cite>반도덕주의자<small>L'lmmoraliste</small></cite
+  >앙드레 지드
+</li>
+<li>
+  <time>1951</time> <cite>몰로이<small>Molloy</small></cite
+  >사무엘 베케트
+</li>
+<li>
+  <time>1978</time>
+  <cite>사다리의 마지막 단<small>The Last Rung On The Ladder in NIGHT SHIFT</small></cite
+  >스티븐 킹
+</li>
+<li>
+  <time>2017</time>
+  <cite class="design"
+    >한글 타이포그래피 한글 서체 디자인 전문지 2350, ISSUE #1 Oct. 2017<small></small></cite
+  >2350press
+</li>
+<li>
+  <time>1936</time> <cite>촉루<small>髑髏</small></cite
+  >정인택
+</li>
+<li>
+  <time>1989</time>
+  <cite>울리지 않는 심금<small>If You Touched My Heart in THE STORY OF EVA LUNA</small></cite
+  >이사벨 아옌데
+</li>
+<li>
+  <time>1950</time> <cite>벽속의 아프리카<small>The Veldt: The World the Children Made</small></cite
+  >레이 브래드버리
+</li>
+<li>
+  <time>1937</time> <cite>무성격자<small>無性格者</small></cite
+  >최명익
+</li>
+<li>
+  <time>1996</time>
+  <cite
+    >아무도 내 이름을 몰라<small
+      >Nobody Knows My Name in The Corn Maiden and Other Nightmares</small
+    ></cite
+  >조이스 캐럴 오츠
+</li>
+<li>
+  <time>1976</time> <cite>한없이 투명에 가까운 블루<small>限りなく透明に近いブル-</small></cite
+  >무라카미 류
+</li>
+<li>
+  <time>1951</time>
+  <cite class="design"
+    >내 문장이 그렇게 이상한가요? - 내가 쓴 글, 내가 다듬는 법<small></small></cite
+  >김정선
+</li>
+<li>
+  <time>2005</time> <cite>영이<small></small></cite>김사과
+</li>
+<li>
+  <time>1906</time>
+  <cite>존 마틴 부인의 일기<small>The Journal of Mistress Joan Martyn</small></cite
+  >버지니아 울프
+</li>
+<li>
+  <time>1894</time> <cite>타락<small>Gefallen</small></cite
+  >토마스 만
+</li>
+<li>
+  <time>2015</time> <cite>보통의 시절<small></small></cite>김금희
+</li>
+<li>
+  <time>2015</time>
+  <cite class="design"
+    >타이포잔치 2017, 5회 국제 타이포그래피 비엔날레 - 몸과 타이포그래피<small
+      >Typojanchi 2017, The 5th International Typography Biennale - Body and Typography</small
+    ></cite
+  >타이포잔치
+</li>
+<li>
+  <time>1958</time> <cite>우주복 있음, 출장 가능<small>Have Space Suit - Will Travel</small></cite
+  >로버트 A. 하인리히
+</li>
+<li>
+  <time>1981</time> <cite class="design">한글의 글자표현<small></small></cite>김진평
+</li>
+<li>
+  <time>1877</time>
+  <cite
+    >순박한 마음<small>Un cœur simple or Le perroquet, A Simple Heart in Three Tales</small></cite
+  >귀스타프 플로베르
+</li>
+<li>
+  <time>2016</time>
+  <cite class="design"
+    >모리사와 최정호 폰트: 한글 폰트의 DNA<small
+      >Morisawa Choi Jeong-ho Fonts: DNA of Hangul Fonts</small
+    ></cite
+  >(주) 모리사와
+</li>
+<li>
+  <time>1921</time> <cite>조콘다의 미소<small>The Gioconda Smile in Mortal Coils</small></cite
+  >올더스 헉슬리
+</li>
+<li>
+  <time>1993</time> <cite>카프카를 읽는 밤<small></small></cite>구효서
+</li>
+<li>
+  <time>2013</time>
+  <cite class="design">그래픽 26호 2013.3 한글 타입과 레터링<small></small></cite>프로파간다
+</li>
+<li>
+  <time>1964</time> <cite>말<small>Le Mots</small></cite
+  >장 폴 사르트르
+</li>
+<li>
+  <time>0000</time> <cite class="design">한글 디자인 교과서<small></small></cite>이용제, 안상수,
+  한재준
+</li>
+<li>
+  <time>1986</time> <cite>나는 신고<small>わたしは真悟: My Name is Shingo</small></cite
+  >우메즈 카즈오
+</li>
+<li><time>1966</time> <cite>1965년 어느 이발소에서</cite>이호철</li>
+<li>
+  <time>1958</time> <cite>다르마 행려<small>The Dharma Bums</small></cite
+  >잭 케루악
+</li>
+<li>
+  <time>2005</time>
+  <cite class="design">마이크로 타이포그래피<small>Das Detail in der Typografie</small></cite
+  >요스트 호훌리, 워크룸 프레스 김형진
+</li>
+<li>
+  <time>1958</time> <cite>잉여인간<small>剩餘人間</small></cite
+  >손창섭
+</li>
+<li>
+  <time>1942</time> <cite>곰<small>The Bear</small></cite
+  >윌리엄 포크너
+</li>
+<li>
+  <time>1967</time> <cite>아우레크<small>Jauregg</small></cite
+  >토마스 베른하르트
+</li>
+<li>
+  <time>1906</time>
+  <cite
+    >생도 퇴를레스의 혼란<small
+      >Die Verwirrungen des Zöglings Törleß, The Confusions of Young Torless</small
+    ></cite
+  >로베르트 무질
+</li>
+<li>
+  <time>1961</time> <cite>우국<small>憂国</small></cite
+  >미시마 유키오
+</li>
+<li>
+  <time>1895</time> <cite>어느 가을날<small>Once in Autumn, Однажды осенью</small></cite
+  >막심 고리끼
+</li>
+<li>
+  <time>1982</time> <cite>호밀빵 햄 샌드위치<small>Ham on Rye</small></cite
+  >찰스 부코스키
+</li>
+<li>
+  <time>2007</time> <cite>모자<small></small></cite>황정은
+</li>
+<li>
+  <time>2013</time> <cite>미래를 도모하는 방식 가운데<small></small></cite>김엄지
+</li>
+<li>
+  <time>1888</time> <cite>환상을 쫒는 여인<small>An Imaginative Woman in WESSEX TALES</small></cite
+  >토마스 하디
+</li>
+<li>
+  <time>1922</time> <cite>싯다르타<small>Siddhartha</small></cite
+  >헤르만 헤세
+</li>
+<li>
+  <time>1999</time>
+  <cite>잠시 동안의 일<small>A Temporary Matter in Interpreter of Maladies</small></cite
+  >줌파 라히리
+</li>
+<li>
+  <time>1977</time> <cite>서울의 달빛 0장<small></small></cite>김승옥
+</li>
+<li>
+  <time>1976</time> <cite>이백살을 맞은 사나이<small>The Bicentennial Man</small></cite
+  >아이작 아시모프
+</li>
+<li>
+  <time>1971</time>
+  <cite
+    >당신도 내 입장이 되어 봐<small
+      >Put Yourself in My Shoes in Will You Please Be quiet, Please?</small
+    ></cite
+  >레이먼드 카버
+</li>
+<li>
+  <time>1988</time> <cite>존재의 세 가지 거짓말 - 타인의 증거<small>La Preuve</small></cite
+  >아고타 크리스토프
+</li>
+<li>
+  <time>1914</time> <cite>애러비<small>Araby in Dubliners</small></cite
+  >제임스 조이스
+</li>
+<li>
+  <time>2014</time>
+  <cite class="design"
+    >시각디자인: 좋은 것에 담긴 감각과 생각<small
+      >Critica portatile al visual design. Da Gutenberg ai social network</small
+    ></cite
+  >리카르도 팔치넬리, 윤병언
+</li>
+<li>
+  <time>1960</time> <cite>영원으로 가는 긴 산책<small>Long Walk to Forever</small></cite
+  >커트 보네거트
+</li>
+<li>
+  <time>2014</time>
+  <cite class="design">자신을 브랜딩하는 방법 - 크리에이터의 가치를 높이는 사용 설명서</cite>CA
+  편집부, 이지은
+</li>
+<li>
+  <time>1802</time> <cite>의자 고치는 여인<small>René</small></cite
+  >기 드 모파상
+</li>
+<li>
+  <time>1802</time> <cite>르네<small>René</small></cite
+  >프랑스와 르네 드 샤또브리앙
+</li>
+<li>
+  <time>1968</time> <cite>제인 에어<small>Jane Eyre</small></cite
+  >샬롯 브론테
+</li>
+<li>
+  <time>2016</time> <cite>토요일의 특별활동<small></small></cite>정지향
+</li>
+<li>
+  <time>2017</time> <cite class="design">모임꼴 2호<small></small></cite>활자공간
+</li>
+<li>
+  <time>2017</time> <cite>유예<small></small></cite>이수진
+</li>
+<li>
+  <time>1968</time> <cite>나의 미카엘<small>מיכאל שלי: My Michael</small></cite
+  >아모스 오즈
+</li>
+<li>
+  <time>2010</time> <cite>차가운 혀<small></small></cite>박솔뫼
+</li>
+<li>
+  <time>2003</time> <cite class="design">에세이스트의 책상<small></small></cite>배수아
+</li>
+<li>
+  <time>1922</time>
+  <cite>오! 적갈색 머리카락 마녀<small>Oh Russet Witch! in Tales of the Jazz Age</small></cite
+  >프랜시스 스콧 피츠제럴드
+</li>
+<li>
+  <time>1969</time> <cite>주자<small>走者</small></cite
+  >오정희
+</li>
+<li>
+  <time>1963</time> <cite>인형<small>The Dummy (in I, etcetera)</small></cite
+  >수잔 손택
+</li>
+<li>
+  <time>2016</time> <cite class="design">섞어짜기 - 나만의 타이포그래피<small></small></cite>문장현,
+  정재완, 심우진, 이경수, 최성민
+</li>
+<li>
+  <time>1937</time> <cite>동해<small>童骸</small></cite
+  >이상
+</li>
+<li>
+  <time>1988</time> <cite>다섯째 아이<small>The Fifth Child</small></cite
+  >도리스 레싱
+</li>
+<li><time>2016</time> <cite>여행자들의 지침서</cite>정지돈</li>
+<li>
+  <time>1937</time> <cite>키 작은 프레데만씨<small>聖誕祭</small></cite
+  >토마스 만
+</li>
+<li>
+  <time>1937</time> <cite>성탄제<small>聖誕祭</small></cite
+  >박태원
+</li>
+<li>
+  <time>1945</time> <cite>타인의 피<small>Le Sang des Autres</small></cite
+  >시몬 드 보부아르
+</li>
+<li>
+  <time>2007</time> <cite>채식주의자<small>The Vegetarian</small></cite
+  >한강
+</li>
+<li><time>2016</time> <cite class="design">모임꼴 창간호</cite>이용제, 권진희, 최종원</li>
+<li>
+  <time>1951</time> <cite>이 세상의 마지막 밤<small>The Last Night of the World</small></cite
+  >레이 브래드버리
+</li>
+<li><time>1989</time> <cite>한여름 낮의 꿈</cite>최윤</li>
+<li>
+  <time>1986</time> <cite>존재의 세 가지 거짓말 - 비밀 노트<small>Le Grand Cahier</small></cite
+  >아고타 크리스토프
+</li>
+<li>
+  <time>1961</time> <cite>삼십세<small>Das dreißigste Jahr in Das dreißigste Jahr</small></cite
+  >잉게보르크 바흐만
+</li>
+<li>
+  <time>1927</time>
+  <cite>패배를 거부하는 남자<small>The Undefeated in Men Without Women</small></cite
+  >어니스트 헤밍웨이
+</li>
+<li>
+  <time>1996</time>
+  <cite>나는 나를 파괴할 권리가 있다<small>I Have the Right of Destroying Myself</small></cite
+  >김영하
+</li>
+<li>
+  <time>1981</time> <cite>다들 어디 있지?<small>Where is Everyone? in Beginners</small></cite
+  >레이먼드 카버
+</li>
+<li>
+  <time>1816</time> <cite>설득<small>Persuasion</small></cite
+  >제인 오스틴
+</li>
+<li>
+  <time>2010</time> <cite class="design">비넬리의 디자인 원칙<small>The Vignelli Canon</small></cite
+  >마시모 비넬리, 박효신 / 객관화된 주관을 듣고 싶었기에 너무 고마운 책이었다.
+</li>
+<li>
+  <time>1996</time> <cite>허삼관 매혈기<small>许三观卖血记</small></cite
+  >위화
+</li>
+<li>
+  <time>2011</time>
+  <cite class="design">그래픽 디자인의 요소<small>The Elements of Graphic Design</small></cite
+  >알렉스 화이트, 안상락, 윤지선
+</li>
+<li>
+  <time>1982</time> <cite>지하실, 하나의 탈출<small>Der Keller</small></cite
+  >토마스 베른하르트
+</li>
+<li>
+  <time>2012</time>
+  <cite class="design"
+    >로고 라이프 - 로고는 살아있다. 세계 100대 로고의 탄생과 성장 스토리<small
+      >Logo Life</small
+    ></cite
+  >론 판 데르 플루흐트
+</li>
+<li>
+  <time>1995</time> <cite>로이가 산 한 삶 - 세상 얘기 한 자리<small></small></cite>박상륭
+</li>
+<li>
+  <time>1971</time> <cite>우체국<small>Post Office</small></cite
+  >찰스 부코스키
+</li>
+<li>
+  <time>2005</time> <cite class="design">비주얼 그래머<small>Visual Grammar</small></cite
+  >크리스티안 르보
+</li>
+<li>
+  <time>1903</time> <cite>무도회가 끝난 뒤<small>После бала: After the Ball</small></cite
+  >레프 톨스토이
+</li>
+<li>
+  <time>1969</time> <cite>포트노이의 불평<small>Portnoy's Complaint</small></cite
+  >필립 로스
+</li>
+<li>
+  <time>2016</time> <cite>씬짜오, 씬짜오 (in 쇼코의 미소)<small></small></cite>최은영
+</li>
+<li>
+  <time>2013</time>
+  <cite
+    >색채가 없는 다자키 쓰쿠루와 그가 순례를 떠난 해<small
+      >色彩を持たない多崎つくると,彼の巡澧の年</small
+    ></cite
+  >무라카미 하루키
+</li>
+<li>
+  <time>1975</time> <cite>슬픈 빌라<small>Villa triste</small></cite
+  >파트릭 모디아노
+</li>
+<li>
+  <time>2011</time>
+  <cite class="design"
+    >폰트의 비밀 - 브랜드의 로고는 왜 고급스러워 보일까?<small>??????????</small></cite
+  >고바야시 아키라
+</li>
+<li>
+  <time>1968</time>
+  <cite
+    >세상에서 제일 잘생긴 익사체<small
+      >El ahogado más hermoso del mundo: The Handsomest Drowned Man in the World</small
+    ></cite
+  >가브리엘 가르시아 마르께스
+</li>
+<li>
+  <time>????</time> <cite>마리의 외출<small>????</small></cite
+  >조르주 바타유
+</li>
+<li><time>2015</time> <cite>전학생은 외계인</cite>귀귀</li>
+<li>
+  <time>2015</time>
+  <cite class="design"
+    >마이크로인터랙션, 디테일에 강한 인터랙션 디자인<small>Microinteractions</small></cite
+  >댄 새퍼, 정승녁, 인사이트
+</li>
+<li>
+  <time>1930</time> <cite>왕도로 가는 길<small>La Voie Royale</small></cite
+  >앙드레 말로
+</li>
+<li>
+  <time>0000</time> <cite>옆집 여자<small></small></cite>박태원
+</li>
+<li>
+  <time>2015</time> <cite>나는 언제나 옳다<small>The Grownup</small></cite
+  >길리언 플린
+</li>
+<li>
+  <time>1939</time> <cite>심문<small>心紋</small></cite
+  >최명익
+</li>
+<li>
+  <time>1924</time> <cite>마의 산<small>Der Zauberberg</small></cite
+  >토마스 만
+</li>
+<li>
+  <time>2013</time>
+  <cite class="design"
+    >고, 칩 키드의 그래픽 디자인 가이드<small>Go: A Kidd's Guide to Graphic Design</small></cite
+  >칩 키드, 이종 출판사
+</li>
+<li>
+  <time>1954</time> <cite>동물 농장<small>Animal Farm</small></cite
+  >조지 오웰
+</li>
+<li>
+  <time>1982</time>
+  <cite class="design">편집 디자인<small>Editing by design, 2nd Edition</small></cite
+  >잰 화이트
+</li>
+<li>
+  <time>1835</time> <cite>웨이크필드<small>Wakefield</small></cite
+  >너대니얼 호손
+</li>
+<li>
+  <time>1958</time> <cite>모데라토 칸타빌레<small>Moderato Cantabile</small></cite
+  >마르그리트 뒤라스 / 7장 지린다
+</li>
+<li>
+  <time>2016</time> <cite>미지의 세계<small>mijinosekai</small></cite
+  >이자혜
+</li>
+<li>
+  <time>2015</time> <cite class="design">텍스트와 타이포그래피<small>Shaping Text</small></cite
+  >얀 미덴도르프
+</li>
+<li>
+  <time>19??</time> <cite>모두를 하나로<small>??</small></cite
+  >라이너 마리아 릴케
+</li>
+<li>
+  <time>197?</time> <cite>겨울의 끝<small> </small></cite>기형도
+</li>
+<li>
+  <time>1869</time> <cite>파리의 우울<small>Le Spleen de Paris</small></cite
+  >샤를 피에르 보들레르
+</li>
+<li>
+  <time>1957</time> <cite>나무 위의 남작<small>il Barone Rampante</small></cite
+  >이탈로 칼비노
+</li>
+<li>
+  <time>1921</time> <cite>술 권하는 사회<small>勸社會</small></cite
+  >현진건
+</li>
+<li>
+  <time>1977</time> <cite>여자의 빛<small>Clair de femme</small></cite
+  >로맹 가리
+</li>
+<li>
+  <time>1956</time> <cite>어떤 미소<small>Un Certain Sourire</small></cite
+  >프랑수아즈 사강
+</li>
+<li>
+  <time>2010</time> <cite>백의 그림자<small>白</small></cite
+  >황정은
+</li>
+<li>
+  <time>1960</time> <cite>달려라 토끼<small>Rabbit, Run</small></cite
+  >존 업다이크
+</li>
+<li>
+  <time>1936</time> <cite>봉별기<small>逢別記</small></cite
+  >이상
+</li>
+<li>
+  <time>1957</time> <cite>기묘한 아르바이트<small>奇妙な仕事: The Strange Work</small></cite
+  >오에 겐자부로
+</li>
+<li>
+  <time>1919</time> <cite>전원교향악<small>La Symphonie pastorale</small></cite
+  >앙드레 지드
+</li>
+<li>
+  <time>1994</time>
+  <cite>페르난두 페소아의 마지막 사흘<small>Gli ultimi tre giorni di Fernando Pessoa</small></cite
+  >안토니오 타부키
+</li>
+<li>
+  <time>1968</time> <cite>완구점 여인<small> </small></cite>오정희
+</li>
+<li>
+  <time>1967</time> <cite>잠자는 남자<small>Un homme qui dort</small></cite
+  >조르주 페렉
+</li>
+<li>
+  <time>1934</time> <cite>내가 연주하는 블루스<small>The Blues I'm Playing</small></cite
+  >랭스턴 휴즈
+</li>
+<li>
+  <time>1844</time> <cite>도둑맞은 편지<small>The Purloined Letter</small></cite
+  >에드가 앨런 포 / 포가 이런 거도 썼구나..
+</li>
+<li>
+  <time>1930</time> <cite>적멸<small>寂滅</small></cite
+  >박태원
+</li>
+<li>
+  <time>1931</time> <cite>메마른 9월<small>Dry September</small></cite
+  >윌리엄 포크너
+</li>
+<li>
+  <time>1940</time> <cite>누구를 위하여 종은 울리나<small>For Whom The Bell Trolls</small></cite
+  >어니스트 헤밍웨이
+</li>
+<li>
+  <time>1891</time>
+  <cite
+    >모범적인 백만장자<small
+      >The Model Millionaire in Lord Arther Savile's Crime and Other Stories</small
+    ></cite
+  >오스카 와일드
+</li>
+<li><time>2000</time> <cite>펭귄뉴스</cite>김중혁</li>
+<li>
+  <time>1872</time> <cite>악령<small>Бесы</small></cite
+  >표도르 도스토옙스키
+</li>
+<li>
+  <time>1903</time> <cite>트리스탄<small>Tristan</small></cite
+  >토마스 만
+</li>
+<li>
+  <time>1898</time> <cite>들길을 가는 사내에게 건배<small>To the Man on Trail</small></cite
+  >잭 런던
+</li>
+<li>
+  <time>1934</time> <cite>그는 예전의 그가 아니다<small>He is not what he was</small></cite
+  >다자이 오사무
+</li>
+<li><time>2015</time> <cite class="design">Do it! 프런트엔드 웹 디자인 입문</cite>고경희</li>
+<li>
+  <time>1949</time> <cite>금은탑<small>金銀塔 (조선일보 연재소설 1938 '우맹') </small></cite>박태원
+</li>
+<li>
+  <time>1886</time>
+  <cite>지킬 박사와 하이드<small>Strange Case of Dr.Jekyll and Mr.Hyde</small></cite
+  >로버트 루이스 스티븐슨
+</li>
+<li>
+  <time>1873</time>
+  <cite>말하는 떡갈나무<small>Le Chêne Parlant in Contes d’une grand’mère Vol.2</small></cite
+  >조르주 상드
+</li>
+<li>
+  <time>1933</time> <cite>세라 브라운 양 이야기<small>The Idyll Of Miss Sarah Brown</small></cite
+  >데이먼 러니언
+</li>
+<li><time>1992</time> <cite>생의 이면</cite>이승우</li>
+<li><time>2013</time> <cite class="design">디자이너의 서체이야기</cite>지콜론북</li>
+<li>
+  <time>1929</time> <cite>소리와 분노<small>The Sound And The Fury</small></cite
+  >윌리엄 포크너 / 바빠서 다 못 읽을 것 같다. 퀜틴 섹션까지만 읽도록..
+</li>
+<li>
+  <time>2013</time> <cite class="design">디자인력<small>デザインセンスを身につける</small></cite
+  >우지 도모코
+</li>
+<li>
+  <time>1935</time> <cite>피로<small>疲勞</small></cite
+  >박태원
+</li>
+<li>
+  <time>1898</time>
+  <cite
+    >기적을 행하는 남자<small
+      >The Man Who Could Work Miracles (in The Illustrated London News)</small
+    ></cite
+  >허버트 조지 웰스 / 포더링게이
+</li>
+<li>
+  <time>2015</time> <cite class="design">커버, 북디자이너의 표지 이야기<small>COVER</small></cite
+  >피터 멘델선드
+</li>
+<li>
+  <time>1975</time> <cite>그리고 아무 말도 하지 않았다<small></small></cite>전혜린
+</li>
+<li>
+  <time>1912</time> <cite>베네치아에서의 죽음<small>Der Tod in Venedig</small></cite
+  >토마스 만
+</li>
+<li>
+  <time>1847</time> <cite>아그네스 그레이<small>Argnes Grey</small></cite
+  >앤 브론테 / 음 좋아. 나는 참 소녀취향인가봐
+</li>
+<li>
+  <time>1936</time> <cite>이런 음악회<small></small></cite>김유정
+</li>
+<li>
+  <time>2014</time>
+  <cite class="design"
+    >시작, 인포그래픽: pictogram x diagram = infographic<small
+      >たのしい インフォグラフィック入門</small
+    ></cite
+  >사쿠라다 준
+</li>
+<li>
+  <time>1981</time> <cite>젊은날의 초상<small>Portrait Of The Days Of Youth</small></cite
+  >이문열
+</li>
+<li>
+  <time>2009</time>
+  <cite class="design"
+    >타이포그래피 불변의 법칙 100가지<small
+      >Typography essentials : 100 design principles for working with type</small
+    ></cite
+  >아이나 살츠
+</li>
+<li>
+  <time>1912</time> <cite>실종자<small>Der Verschollene</small></cite
+  >프란츠 카프카
+</li>
+<li>
+  <time>1882</time> <cite>왕자와 거지<small>The Prince and the Pauper</small></cite
+  >마크 트웨인
+</li>
+<li>
+  <time>2010</time>
+  <cite class="design"
+    >타이포그래피 들여다보기<small>Thinking with type, rivised edition</small></cite
+  >앨런 립튼 / 김성학 옮김
+</li>
+<li>
+  <time>2010</time>
+  <cite class="design">타이포그래피의 탄생<small>From Gutenberg to Opentype</small></cite
+  >로빈 도드
+</li>
+<li>
+  <time>1897</time> <cite>바아냐 아저씨<small>Дядя Ваня</small></cite
+  >안톤 체호프
+</li>
+<li>
+  <time>2010</time>
+  <cite class="design"
+    >허브 루발린: 아트디렉터, 타이포그래피, 그래픽 디자이너<small
+      >Herb Lubalin: Art Director, Graphic Designer and Typographer</small
+    ></cite
+  >앨런 페콜릭
+</li>
+<li>
+  <time>1906</time> <cite>도련님<small>坊っちゃん</small></cite
+  >나쓰메 소세키
+</li>
+<li>
+  <time>2014</time>
+  <cite class="design"
+    >디자이너의 흥미로운 물건들, 취향<small>DESIGNER'S FAVORITE STUFF</small></cite
+  >김선미, 장민
+</li>
+<li>
+  <time>2009</time> <cite class="design">수전 손택의 일기와 노트<small></small></cite>수전 손택,
+  데이비드 리프 / 못 읽겠다. 읽다가 말았당
+</li>
+<li>
+  <time>2009</time>
+  <cite class="design"
+    >디자이너가 꼭 알아야 할 타이포그래피<small
+      >Type rules! : the designer's guide to professional typography
+    </small></cite
+  >아이린 스트리즈버 / 디자인하우스
+</li>
+<li>
+  <time>1934</time> <cite>밤은 부드러워<small>Tender Is The Night</small></cite
+  >F. 스콧 피츠제럴드
+</li>
+<li>
+  <time>1887</time>
+  <cite
+    >아서 세빌 경의 범죄<small
+      >Lord Arthur Savile's Crime (in Lord Arthur Savile's Crime and Other Stories)</small
+    ></cite
+  >오스카 와일드
+</li>
+<li>
+  <time>2014</time> <cite class="design">인포그래픽 사용 설명서<small></small></cite>우석진
+</li>
+<li>
+  <time>1968</time> <cite>작업실<small>The Office (in Dance of the Happy Shades)</small></cite
+  >앨리스 먼로
+</li>
+<li>
+  <time>2010</time> <cite>7번국도 Revisited<small></small></cite>김연수
+</li>
+<li>
+  <time>2013</time>
+  <cite class="design">크리에이터의 즐겨찾기<small>Creator's Bookmarks</small></cite
+  >지콜론북 편집부
+</li>
+<li>
+  <time>1986</time> <cite>팔월의 일요일들<small>Dimanches d'aout</small></cite
+  >파트릭 모디아노
+</li>
+<li>
+  <time>1853</time>
+  <cite
+    >꼬끼오! 혹은 고귀한 수탉 베네벤타노의 노래<small
+      >Cock-A-Doodle-Doo! or, The Crowing of the Nobel Cock Beneventano</small
+    ></cite
+  >허먼 멜빌
+</li>
+<li>
+  <time>1924</time> <cite>새 드레스<small>The New Dress</small></cite
+  >버지니아 울프
+</li>
+<li>
+  <time>1939</time> <cite>딱한 사람들<small></small></cite>박태원
+</li>
+<li>
+  <time>2008</time>
+  <cite class="design"
+    >얀 치홀트, 타이포그래피의 거장. 그의 삶과 작품 그리고 유산<small
+      >JAN TSCHICHOLD, Structure and Content for Screenwriters</small
+    ></cite
+  >시즈 드 종, 알스톤 퍼바스, 마틴 르 콜트레, 리처드 B. 더블데이, 한스 라이하르트
+</li>
+<li>
+  <time>1925</time> <cite>인생의 베일<small>The Painted Veil</small></cite
+  >W. 서머셋 몸
+</li>
+<li>
+  <time>2005</time>
+  <cite class="design"
+    >영혼을 잃지 않는 디자이너 되기<small
+      >How to be a graphic designer, without losing your soul</small
+    ></cite
+  >아드리안 쇼네시 / 김형진 유진민 옮김
+</li>
+<li>
+  <time>1832</time> <cite>루이 랑베르<small>Louis Lambert</small></cite
+  >오노레 드 발자크
+</li>
+<li>
+  <time>1960</time> <cite>로우랜드<small>Low-lands</small></cite
+  >토마스 핀천 / 단편집 Slow Learner(1984) 중
+</li>
+<li>
+  <time>1975</time>
+  <cite
+    >이 경계를 지나면 당신의 승차권은 유효하지 않다<small
+      >Au-delà de cette limite votre ticket n'est plus valable</small
+    ></cite
+  >로맹 가리
+</li>
+<li>
+  <time>2008</time> <cite class="design">그리드<small>Grids</small></cite
+  >개빈 앰브로즈, 폴 해리스
+</li>
+<li>
+  <time>2008</time>
+  <cite class="design">그래픽 디자인 새로운 기초<small>Graphic Design: The New Basics</small></cite
+  >엘런 럽튼, 제니퍼 콜 필립스 / 원유홍 옮김
+</li>
+<li>
+  <time>1985</time> <cite>퀴어<small>Queer</small></cite
+  >윌리엄 S. 버로스
+</li>
+<li>
+  <time>1880</time> <cite>비곗덩어리<small>Boule de suif</small></cite> 기 드 모파상
+</li>
+<li>
+  <time>1896</time> <cite>행복에의 의지<small>Der Wille zum Glück</small></cite> 토마스 만
+</li>
+<li>
+  <time>1948</time> <cite class="design">문장강화<small>文章講話 </small></cite> 이태준
+</li>
+<li>
+  <time>1954</time> <cite>파리대왕<small>Lord of the Flies</small></cite> 윌리엄 골딩
+</li>
+<li>
+  <time>2004</time> <cite class="design">타이포그래피 천일야화<small></small></cite> 원유홍, 서승연
+</li>
+<li>
+  <time>1879</time> <cite>데이지 밀러<small>Daisy Miller</small></cite> 헨리 제임스
+</li>
+<li>
+  <time>1869</time> <cite>백치<small>Идиот</small></cite> 도스토옙스키
+</li>
+<li>
+  <time>1937</time> <cite>공포의 기록<small></small></cite>이상
+</li>
+<li>
+  <time>1993</time> <cite>느림<small>La Lenteur</small></cite
+  >밀란 쿤데라
+</li>
+<li>
+  <time>1877</time>
+  <cite>줄리엥 성인전<small>La légende de Saint-Julien l'hospitalier (in Trois Contes)</small></cite
+  >귀스타프 플로베르
+</li>
+<li>
+  <time>1930</time> <cite>나르치스와 골드문트<small>Narziß und Goldmund</small></cite
+  >헤르만 헤세
+</li>
+<li>
+  <time>1944</time> <cite>무서록<small>無序錄</small></cite> 이태준
+</li>
+<li>
+  <time>1939</time> <cite>벽<small>Le Mur</small></cite
+  >장 폴 사르트르
+</li>
+<li>
+  <time>1924</time> <cite>초상화<small>The Portrait (Little Mexican)</small></cite
+  >올더스 헉슬리
+</li>
+<li>
+  <time>0000</time> <cite>여자의 빛<small></small></cite> 로맹 가리
+</li>
+<li>
+  <time>1924</time>
+  <cite
+    >여가수 요제피네 혹은 쥐들의 종족<small
+      >Josefine, die Sängerin oder das Volk der Mäuse</small
+    ></cite
+  >
+  프란츠 카프카
+</li>
+<li>
+  <time>1891</time> <cite>테스<small>Tess of the d’Urbervilles</small></cite> 토머스 하디
+</li>
+<li>
+  <time>1843</time> <cite>크리스마스 캐럴<small>A Christmas Carol</small></cite> 찰스 디킨스
+</li>
+<li>
+  <time>1939</time> <cite>분노의 포도<small>The Grapes of Wrath</small></cite> 존 스타인벡
+</li>
+<li>
+  <time>2013</time> <cite>드라이브 마이 카<small>Drive My Car</small></cite> 무라카미 하루키
+</li>
+<li><time>1936</time> <cite>비량</cite> 박태원</li>
+<li>
+  <time>0000</time> <cite>약혼<small></small></cite> 헤르만 헤세
+</li>
+<li><time>2007</time> <cite>퀴즈쇼</cite> 김영하</li>
+<li>
+  <time>1731</time> <cite>마농 레스코<small>Manon Lescaut</small></cite> 아베 프레보/ abbé Prévost
+</li>
+<li>
+  <time>1944</time> <cite>닫힌 방<small>Huis Slos</small></cite> 장 폴 사르트르
+</li>
+<li>
+  <time>0000</time> <cite>목수들아, 대들보를 높이 올려라</cite> 제롬 데이비드 샐린저 // 다시 읽음.
+</li>
+<li>
+  <time>2004</time>
+  <cite>내 슬픈 창녀들의 추억<small>Memoria de mis putas triste</small></cite> 가브리엘 가르시아
+  마르케스
+</li>
+<li>
+  <time>1941</time> <cite>천국의 열쇠<small>The Keys of the Kingdom</small></cite> A.J 크로닌
+</li>
+<li>
+  <time>1888</time> <cite>선로지기 틸<small>Bahnwärter Thiel</small></cite> 게르하르트 하우프트만
+</li>
+<li>
+  <time>1877</time> <cite>목로주점<small>Les Rougon-Macquart: L'Assommoir</small></cite
+  >에밀 졸라
+</li>
+<li>
+  <time>1981</time> <cite>붉은 고양이<small>Die rote Katze</small></cite> 루이제 린저
+</li>
+<li>
+  <time>1952</time> <cite>센바즈루<small>千羽鶴</small></cite> 가와바타 야스나리
+</li>
+<li>
+  <time>1994</time>
+  <cite class="design">한번은, 빔 벤더스의 사진 그리고 이야기들<small>Einmal</small></cite> 빔
+  벤더스
+</li>
+<li>
+  <time>1936</time>
+  <cite
+    >프랜시스 매콤버의 짧고 행복한 인생<small>The Short Happy Life of Francis Macomber</small></cite
+  >
+  어니스트 헤밍웨이
+</li>
+<li>
+  <time>1987</time> <cite>비둘기<small>Die Taube</small></cite> 파트리크 쥐스킨트
+</li>
+<li>
+  <time>1975</time> <cite>카리아티드<small>Les Cariatides</small></cite> 로제 그르니에 / Le Miroir
+  des eaux
+</li>
+<li>
+  <time>1920</time> <cite>달걀의 승리<small>Triumph of the Egg</small></cite> 셔우드 앤더슨
+</li>
+<li>
+  <time>1936</time> <cite>행복한 죽음<small>La mort heureuse</small></cite> 알베르 까뮈
+</li>
+<li>
+  <time>1941</time> <cite>달려라 메로스<small>L走れメロス</small></cite> 다자이 오사무
+</li>
+<li><time>1935</time> <cite>길은 어둡고</cite> 박태원</li>
+<li>
+  <time>1892</time> <cite>누런 벽지<small>The Yellow Wallpaper</small></cite> 샬롯 퍼킨스 길먼
+</li>
+<li>
+  <time>1981</time> <cite class="design">타이포그래피<small>Typographie</small></cite> 에밀 루더
+</li>
+<li><time>0000</time> <cite>인생의 어떤 노래</cite> 앙드레 도텔André Dhôtel</li>
+<li>
+  <time>1974</time>
+  <cite
+    >카타리나 블룸의 잃어버린 명예<small>Die verlorene Ehre der Katharina Blum oder</small></cite
+  >
+  하인리히 뵐
+</li>
+<li><time>1974</time> <cite>당신들의 천국</cite> 이청준</li>
+<li>
+  <time>1983</time> <cite>대성당<small>Cathedral</small></cite
+  >레이먼드 카버
+</li>
+<li>
+  <time>1836</time> <cite>감찰관<small>Revizor</small></cite
+  >니콜라이 고골
+</li>
+<li>
+  <time>0000</time>
+  <cite class="design"
+    >타이포그래피 에세이<small>Stop Stealing Sheep & Find Out How Type Works</small></cite
+  >
+  에릭 슈피커만 & E, M 진저
+</li>
+<li><time>0000</time> <cite>고독의 피에로</cite> 피에르 키리아</li>
+<li>
+  <time>1925</time> <cite>베이비 파티<small>The Baby Party</small> </cite> 프랜시스 스콧 피츠제럴드
+</li>
+<li>
+  <time>1968</time> <cite>위기의 여자<small>La Femme Rompue</small> </cite> 시몬 드 보부아르
+</li>
+<li>
+  <time>1838</time> <cite>리지아<small>Ligeia</small></cite> 에드거 앨런 포
+</li>
+<li>
+  <time>1854</time> <cite>무무<small>Mumu</small></cite> 이반 투르게네프
+</li>
+<li><time>1959</time> <cite>그레이(GRAY) 구락부 전말기</cite> 최인훈</li>
+<li>
+  <time>0000</time> <cite>세월의 거품<small>L'écume des Jours</small></cite> 보리스 비앙 / 다시 읽음
+</li>
+
+<li class="y2014">
+  <time>1937</time> <cite>등롱<small>燈籠</small></cite> 다자이 오사무
+</li>
+<li>
+  <time>1924</time> <cite>단식 광대<small>Ein Hungerkünstler</small></cite> 프란츠 카프카
+</li>
+<li>
+  <time>1957</time> <cite>길 위에서<small>On the Road</small></cite> 잭 캐루악
+</li>
+<li>
+  <time>0000</time> <cite>도대체 순수는 어디에<small>J'ai soif d'innocence</small></cite> 로맹 가리
+</li>
+<li>
+  <time>1938</time> <cite>의사를 방문한 떼레즈<small>Thérèse chez le docteur</small></cite> 프랑수아
+  모리악
+</li>
+<li><time>1930</time> <cite>12월 12일</cite> 이상</li>
+<li>
+  <time>0000</time> <cite>겨울 꿈<small></small></cite> 프랜시스 스콧 피츠제럴드
+</li>
+<li>
+  <time>1933</time> <cite>인간의 조건<small>La Condition Humaine</small></cite> 앙드레 말로
+</li>
+<li>
+  <time>1839</time> <cite>어셔 가의 몰락<small>The Fall of the House of Usher</small></cite> 에드거
+  앨런 포
+</li>
+<li>
+  <time>1930</time> <cite>에밀리에게 장미를<small>A Rose For Emily</small></cite> 윌리엄 포크너
+</li>
+<li><time>2014</time> <cite class="design">Do it! 자바스크립트+제이쿼리 입문</cite> 정인용</li>
+<li><time>1967</time> <cite>내가 훔친 여름</cite> 김승옥</li>
+<li>
+  <time>1953</time> <cite>정키<small>Junkie</small></cite> 윌리엄 S. 버로스
+</li>
+<li>
+  <time>1927</time> <cite>떼레즈 데께루<small>Thérèse Desqueyroux</small></cite> 프랑수아 모리악
+</li>
+<li><time>2013</time> <cite class="design">Do it! HTML5 + CSS3 웹 표준의 정석</cite> 고경희</li>
+<li><time>1925</time> <cite>벙어리 삼룡이</cite> 나도향</li>
+<li><time>1935</time> <cite>노다지</cite> 김유정</li>
+<li><time>0000</time> <cite>꿈</cite> 뚜르게네프</li>
+<li>
+  <time>1929</time> <cite>자기만의 방<small>A Room of One's Own</small></cite> 버지니아 울프
+</li>
+<li>
+  <time>1893</time> <cite>살로메<small>Salome</small></cite> 오스카 와일드
+</li>
+<li>
+  <time>1917</time> <cite>병사의 집<small>Soldier's Home</small></cite> 어니스트 헤밍웨이
+</li>
+<li><time>2010</time> <cite>어느 맑은 가을 아침 갑자기</cite> 박성원</li>
+<li><time>0000</time> <cite>이토 준지 공포박물관 1 - 토미에1</cite></li>
+<li>
+  <time>1933</time> <cite>세상의 빛<small>The light of the World</small></cite> 어니스트 헤밍웨이
+</li>
+<li>
+  <time>1995</time> <cite>눈먼 자들의 도시<small>Ensaio sobre a cegueira</small></cite> 주제
+  사라마구
+</li>
+<li>
+  <time>1843</time> <cite>검은 고양이<small>The Black Cat</small></cite
+  >에드거 앨런 포
+</li>
+<li>
+  <time>2002</time> <cite>인연<small>因緣</small></cite> 피천득
+</li>
+<li>
+  <time>2004</time>
+  <cite class="design"
+    >그리드 디자인: 효율적인 타이포그래피 레이아웃의 원리<small
+      >Grid Systems: Principles of Organizing Type</small
+    ></cite
+  >
+  킴벌리 일램
+</li>
+<li>
+  <time>1835</time> <cite>광인일기<small>Zapiski sumasshedshevo</small></cite> 니콜라이 고골
+</li>
+<li><time>2013</time> <cite>고래가 보고 싶거든</cite></li>
+<li>
+  <time>1927</time> <cite>황야의 늑대<small>Der Steppenwolf</small></cite> 헤르만 헤세
+</li>
+<li><time>1969</time> <cite>책상은 책상이다</cite> 피터 빅셀</li>
+<li>
+  <time>1956</time> <cite>생의 한가운데<small>Mitte des Lebens</small></cite> 루이제 린저
+</li>
+<li><time>0000</time> <cite>실화</cite> 이상</li>
+<li>
+  <time>1965</time>
+  <cite>사물들<small>Les Choses: Une histoire des années soixante</small></cite> 조르주 페렉
+</li>
+<li>
+  <time>1990</time> <cite>불멸<small>I'mmortalite</small></cite> 밀란 쿤데라
+</li>
+<li>
+  <time>1952</time>
+  <cite>드 스미스 도미에의 청색시대<small>De Daumier-Smith's Blue Period</small></cite> J.D 샐린저
+</li>
+<li>
+  <time>1955</time> <cite>롤리타<small>Lolita</small></cite> 블라디미르 나보코프
+</li>
+<li>
+  <time>1934</time> <cite>8월<small>August</small></cite> 브루노 슐츠 / The Street of Crocodiles
+</li>
+<li><time>1883</time> <cite>관리의 죽음</cite> 안톤 체홉</li>
+<li>
+  <time>1916</time>
+  <cite>젊은 예술가의 초상<small>A Portrait of the Artist as a Young Man</small></cite> 제임스
+  조이스
+</li>
+<li>
+  <time>1867</time>
+  <cite
+    >캘레바래스 군의 명물, 뜀뛰는 개구리<small
+      >The Celebrated Jumping Frog of Calaveras County</small
+    ></cite
+  >
+  마크 트웨인 // 하하하!
+</li>
+<li>
+  <time>1897</time> <cite>소형 보트<small>The Open Boat</small></cite> 스티븐 크레인
+</li>
+<li><time>1977</time> <cite>어떤 솔거의 죽음</cite> 조정래</li>
+<li><time>1971</time> <cite>타인의 방</cite> 최인호</li>
+<li>
+  <time>2005</time> <cite>사랑을 생각하다<small>Ueber liebe und Tod</small></cite
+  >파트리크 쥐스킨트
+</li>
+<li><time>1934</time> <cite>애욕</cite> 박태원 // 생명의 세탁</li>
+<li><time>2007</time> <cite>삼국전투기 5</cite> 최훈</li>
+<li>
+  <time>1864</time> <cite>지하생활자의 수기<small>Zapiski iz podpol'ya</small></cite> 도스토옙스키
+</li>
+<li><time>2007</time> <cite>삼국전투기 4</cite> 최훈</li>
+<li><time>2007</time> <cite>삼국전투기 3</cite> 최훈</li>
+<li><time>2007</time> <cite>삼국전투기 2</cite> 최훈</li>
+<li>
+  <time>1948</time> <cite>설국<small>雪國</small></cite> 가와바타 야스나리
+</li>
+<li>
+  <time>1963</time> <cite>벨 자<small>The Bell Jar</small></cite> 실비아 플라스
+</li>
+<li><time>1977</time> <cite>눈길</cite> 이청준 /빚</li>
+<li>
+  <time>1910</time> <cite>게르트루트<small>Gertrude</small></cite> 헤르만 헤세
+</li>
+<li><time>1930</time> <cite>광염 소나타</cite> 김동인</li>
+<li><time>1925</time> <cite>감자</cite> 김동인</li>
+<li>
+  <time>1964</time> <cite>중독<small>Toxique</small></cite> 프랑수아즈 사강, 베르나르 뷔페
+</li>
+<li><time>1936</time> <cite>비 오는 길</cite> 최명익</li>
+<li><time>0000</time> <cite>어린아이</cite> 기 드 모파상</li>
+<li><time>1935</time> <cite>소낙비</cite> 김유정</li>
+<li>
+  <time>1899</time>
+  <cite>스물여섯 명의 사내와 한 처녀<small>Двадцать шесть и одна</small></cite> 막심 고리키
+</li>
+<li><time>1919</time> <cite>약한자의 슬픔</cite> 김동인 /표본생활 20년!</li>
+<li><time>1932</time> <cite>발가락이 닮았다</cite> 김동인</li>
+<li>
+  <time>1833</time> <cite>병 속에서 발견된 수기<small>MS. Found in a Bottle</small></cite> 에드거
+  앨런 포
+</li>
+<li>
+  <time>0000</time> <cite><small>The Girl on the Bus</small></cite
+  >윌리엄 샌섬
+</li>
+<li>
+  <time>BC00</time> <cite>아이네이스<small>Aeneas</small></cite> 베르길리우스
+</li>
+<li><time>1984</time> <cite>동행</cite> 임철우</li>
+<li>
+  <time>1903</time> <cite>토니오 트뢰거<small>Tonio Kröger</small></cite> 토마스 만
+</li>
+<li>
+  <time>1853</time>
+  <cite>필경사 바틀비<small>Bartleby, The Scrivener - A Story Of Wallstreet</small></cite> 허먼 멜빌
+  / I would prefer not to
+</li>
+<li>
+  <time>1820</time> <cite>립 밴 윙클<small>Rip Van Winkle</small></cite> 워싱턴 어빙
+</li>
+<li>
+  <time>1926</time> <cite>태양은 다시 떠오른다<small>The Sun Also Rises</small></cite> 어니스트
+  헤밍웨이
+</li>
+<li>
+  <time>1847</time> <cite>폭풍의 언덕<small>Wuthering Heights</small></cite> 에밀리 브론테
+</li>
+<li>
+  <time>1920</time> <cite>주먹 네 방<small>The Four Fists</small></cite> F. 스콧 피츠제럴드 /
+  Flappers and Philosophers
+</li>
+<li>
+  <time>1891</time> <cite>비밀없는 스핑크스<small>Sphinx Without A Secret</small></cite> 오스카
+  와일드 / Lord Saville’s Crimes and Other Stories
+</li>
+<li>
+  <time>1958</time> <cite>레이디 엘<small>Lady L</small></cite> 로맹 가리
+</li>
+<li><time>0000</time> <cite>말테의 수기</cite> 라이너 마리아 릴케 / 읽다가 반납.</li>
+<li>
+  <time>1813</time> <cite>오만과 편견<small>Pride and Prejudice</small></cite> 제인 오스틴
+</li>
+<li>
+  <time>1991</time>
+  <cite>좀머씨 이야기<small>Die Geschichte von Herrn Sommer</small></cite> 파트리크 쥐스킨트, 장
+  자크 상뻬
+</li>
+<li>
+  <time>1892</time> <cite>진품<small>The Real Thing</small></cite> 헨리 제임스
+</li>
+<li>
+  <time>1835</time> <cite>젊은 굿맨 브라운<small>Young Goodman Brown</small></cite> 너대니얼 호손
+</li>
+<li><time>0000</time> <cite>지팡이 역사</cite> 이상</li>
+<li><time>1964</time> <cite>싸게 사들이기</cite> 김승옥</li>
+<li><time>1970</time> <cite>뫼비우스의 띠</cite> 조세희</li>
+<li>
+  <time>1978</time> <cite>어린 여행자 몽도<small>Mondo</small></cite> J. M. G. 르 클레지오 / Mondo
+  and Other Stories
+</li>
+<li><time>1991</time> <cite>그를 만나는 깊은 봄날 저녁</cite> 윤대녕</li>
+<li><time>1930</time> <cite>어떤 날 새벽</cite> 이태준</li>
+<li><time>1926</time> <cite>십삼원</cite> 최서해</li>
+<li>
+  <time>1983</time> <cite>몰락하는 자<small>Der Untergeher</small></cite> 토마스 베른하르트 /
+  의식의흐름, 생각, 반복
+</li>
+<li><time>1938</time> <cite>소설가 구보씨의 일일</cite> 박태원</li>
+<li>
+  <time>1931</time> <cite>고통<small>La Douleur</small></cite> 앙드레 드 리쇼
+</li>
+<li><time>1930</time> <cite>수염</cite> 박태원</li>
+<li><time>1936</time> <cite>거리</cite> 박태원</li>
+<li>
+  <time>1984</time> <cite>연인<small>L'Amant</small></cite> 마르그리트 뒤라스
+</li>
+<li>
+  <time>1947</time> <cite>세월의 거품<small>L'écume des jours</small></cite> 보리스 비앙
+</li>
+<li>
+  <time>1884</time>
+  <cite>허클베리 핀의 모험<small>Adventures of Huckleberry Finn</small></cite> 마크 트웨인 /
+  톰소여의원칙과모험심에실소
+</li>
+<li>
+  <time>1920</time>
+  <cite>클링조어의 마지막 여름<small>Klingsors Letzter Sommer</small></cite> 헤르만 헤세
+</li>
+<li>
+  <time>1960</time> <cite>포르노그라피아<small>Pornografia</small></cite> 비톨트 곰브로비치
+</li>
+<li><time>1964</time> <cite>차나 한 잔</cite> 김승옥 / 우연</li>
+<li><time>1962</time> <cite>생명연습</cite> 김승옥 / 슬프세요? /글쎄 지금 생각주잉야 자기세게</li>
+<li><time>1964</time> <cite>무진기행</cite> 김승옥</li>
+<li><time>1962</time> <cite>환상수첩</cite> 김승옥</li>
+<li>
+  <time>1959</time>
+  <cite>브람스를 좋아하세요...<small>Aimez-vous Brahms...</small></cite> 프랑수아즈 사강
+</li>
+<li><time>1965</time> <cite>서울 1964년 겨울</cite> 김승옥</li>
+<li>
+  <time>1934</time> <cite>달밤</cite> 이태준 /그의 은근한 순정의 열매를 먹듯 한 알을 가지고도 오래
+  입안에 굴려보며 먹었다. /달밤은 그에게도 유감한 듯 하였다.
+</li>
+<li>
+  <time>1961</time> <cite>프래니와 주이<small>Franny and Zooey</small></cite> J.D 샐린저 / you're my
+  jesus.
+</li>
+<li>
+  <time>1963</time> <cite>어느 어릿광대의 견해<small>Ansichten eines Clowns</small></cite> 하인리히
+  뵐
+</li>
+<li>
+  <time>1903</time> <cite>야성의 부름<small>The Call of the Wild</small></cite> 잭 런던
+</li>
+<li>
+  <time>1972</time> <cite>소망 없는 불행<small>Wunschloses Unglück</small></cite> 페터 한트케 /
+  하나도 기억안남
+</li>
+<li>
+  <time>2005</time>
+  <cite>첫 문장 못 쓰는 남자<small>L'Angoisse de la première phrase</small></cite> 베르나르 키리니
+</li>
+<li>
+  <time>1987</time> <cite>세상의 모든 딸들<small>Reindeer Moon</small></cite> 엘리자베스 M. 토마스
+</li>
+<li>
+  <time>1955</time>
+  <cite>목수들아 대들보를 높이 올려라<small>Raise High the Roof-Beam Carpenters</small></cite> J.D
+  샐린저
+</li>
+<li>
+  <time>1991</time> <cite>단순한 열정<small>Simple Passion</small></cite> 아니 에르노
+</li>
+<li><time>2004</time> <cite>백년여관</cite> 임철우</li>
+<li>
+  <time>2001</time> <cite>적의 화장법<small>Cosmétique de l'ennemi</small></cite> 아멜리 노통
+</li>
+<li>
+  <time>1997</time> <cite>도라 부르더<small>Dora Bruder</small></cite> 파트릭 모디아노
+</li>
+<li>
+  <time>2000</time> <cite>적<small>L'Adversaire</small></cite> 엠마뉘엘 카레르
+</li>
+<li>
+  <time>1857</time> <cite>루진<small>Rudin</small></cite> 이반 세르게예비치 뚜르게네프
+</li>
+<li>
+  <time>1888</time> <cite>삐에르와 장<small>Pierre et Jean</small></cite> 기 드 모파상
+</li>
+<li>
+  <time>1920</time> <cite>메이데이<small>May Day</small></cite> F. 스콧 피츠제럴드 // Tales of the
+  Jazz Age
+</li>
+<li>
+  <time>1922</time>
+  <cite>리츠칼튼호텔만 한 다이아몬드<small>The Diamond as Big as the Ritz</small></cite> F. 스콧
+  피츠제럴드 // Tales of the Jazz Age
+</li>
+<li>
+  <time>1922</time>
+  <cite>벤자민버튼의 시간은 거꾸러 간다<small>The Curious Case of Benjamin Button</small></cite> F.
+  스콧 피츠제럴드 // Tales of the Jazz Age
+</li>
+<li>
+  <time>2013</time> <cite>펑크록스타일 빨대 디자인에 관한 연구</cite> 송지현 // 동아일보 신춘문예
+</li>
+<li>
+  <time>1891</time>
+  <cite>도리언 그레이의 초상<small>The Picture of Dorian Gray</small></cite> 오스카 와일드
+</li>
+<li>
+  <time>1867</time> <cite>테레즈 라캥<small>Thérèse Raquin</small></cite> 에밀 졸라
+</li>
+<li>
+  <time>1933</time>
+  <cite>파리와 런던 거리의 성자들<small>Down and Out in Paris and London</small></cite> 조지 오웰
+</li>
+<li><time>1970</time> <cite>나목</cite> 박완서</li>
+<li>
+  <time>1945</time>
+  <cite>중요한 것은 절대 사라지지 않아 or 유럽의 교육<small>Education européenne</small></cite> 로맹
+  가리
+</li>
+<li>
+  <time>1970</time>
+  <cite>페널티킥 앞에 선 골키퍼의 불안<small>Die Angst des Tormanns beim Elfmeter</small></cite>
+  페터 한트케
+</li>
+<li>
+  <time>1984</time>
+  <cite>참을 수 없는 존재의 가벼움<small>L'insoutenable légèreté de l'être</small></cite> 밀란
+  쿤데라 // 1982
+</li>
+<li>
+  <time>1952</time> <cite>고도를 기다리며<small>En attendant Godot</small></cite> 사무엘 베케트
+</li>
+<li>
+  <time>1915</time>
+  <cite>크눌프<small>Knulp. Drei Geschichten aus dem Leben Knulps</small></cite> 헤르만 헤세
+</li>
+<li>
+  <time>1985</time> <cite>향수<small>Das Parfum</small></cite> 파트리크 쥐스킨트
+</li>
+<li>
+  <time>1984</time> <cite>콘트라베이스<small>Der Kontrabass</small></cite> 파트리크 쥐스킨트
+</li>
+<li>
+  <time>1929</time> <cite>무기여 잘 있거라<small>A Farewell to Arms</small></cite> 어니스트 헤밍웨이
+</li>
+<li>
+  <time>1935</time>
+  <cite class="design">타이포그라픽 디자인<small>Typographische Gestaltung</small></cite> 얀 치홀트
+</li>
+<li>
+  <time>1881</time> <cite>왼손잡이<small>Левша</small></cite> 니콜라이 레스코프 // The Tale of
+  Cross-eyed Lefty from Tula and the Steel Flea
+</li>
+<li><time>0000</time> <cite>예술의 숲</cite> 오귀스트 로댕</li>
+<li>
+  <time>1898</time> <cite>사랑에 관하여<small>О любви</small></cite> 안톤 체호프
+</li>
+<li>
+  <time>1898</time> <cite>산딸기<small>рыжовник</small></cite> 안톤 체호프
+</li>
+<li>
+  <time>1898</time> <cite>상자속의 사나이<small>Человек в футляре</small></cite> 안톤 체호프 // The
+  Little Trilogy
+</li>
+<li>
+  <time>1997</time>
+  <cite
+    >어두운 밤 나는 적막한 집을 나섰다<small
+      >In Einer Dunklen Nacht Ging Ich Aus Meinem Stillen Haus</small
+    ></cite
+  >
+  페터 한트케
+</li>
+<li>
+  <time>1920</time> <cite>낙타의 뒷부분<small>The Camel's Back</small></cite> F. 스콧 피츠제럴드 //
+  Tales of the Jazz Age
+</li>
+<li>
+  <time>1920</time> <cite>얼음궁전<small>The Ice Palace</small></cite> F. 스콧 피츠제럴드 //
+  Flappers and Philosophers
+</li>
+<li>
+  <time>1920</time> <cite>댈리림플 나쁜 길로 빠지다<small>Dalyrimple Goes Wrong</small></cite> F.
+  스콧 피츠제럴드 // Flappers and Philosophers
+</li>
+<li>
+  <time>1920</time> <cite>앞바다의 해적<small>The Offshore Pirate</small></cite> F. 스콧 피츠제럴드
+  // Flappers and Philosophers
+</li>
+<li><time>0000</time> <cite>단발</cite> 이상</li>
+<li>
+  <time>1953</time> <cite>테디<small>Teddy</small></cite> J.D 샐린저
+</li>
+<li>
+  <time>1952</time>
+  <cite>드 도미에 스미스의 청색 시대<small>De Daumier-Smith's Blue Period</small></cite>
+</li>
+<li>
+  <time>1951</time>
+  <cite>예쁜 입과 초록빛 나의 눈동자<small>Pretty Mouth and Green My Eyes</small></cite>
+</li>
+<li>
+  <time>1950</time>
+  <cite
+    >에스메를 위하여, 사랑 그리고 비참함으로<small>For Esmé – with Love and Squalor</small></cite
+  >
+</li>
+<li>
+  <time>1949</time> <cite>작은 보트에서<small>Down at the Dinghy</small></cite> J.D 샐린저
+</li>
+<li>
+  <time>1949</time> <cite>웃는 남자<small>The Laughing Man</small></cite> J.D 샐린저
+</li>
+<li>
+  <time>1948</time>
+  <cite>에스키모와의 전쟁 직전<small>Just Before the War with the Eskimos</small></cite>
+</li>
+<li>
+  <time>1948</time> <cite>코네티컷의 비칠비칠 아저씨<small>Uncle Wiggily in Connecticu</small></cite
+  >t
+</li>
+<li>
+  <time>1948</time>
+  <cite>바나나피시를 위한 완벽한 날<small>A Perfect Day for Bananafish</small></cite>
+</li>
+<li>
+  <time>1914</time> <cite>마음<small>こゝろ</small></cite> 나쓰메 소세키
+</li>
+<li>
+  <time>1920</time> <cite>컷글라스 그릇<small>The Cut-Glass Bowl</small></cite> F. 스콧 피츠제럴드
+  // Flappers and Philosophers
+</li>
+<li>
+  <time>1916</time> <cite>코<small>鼻</small></cite> 아쿠타가와 류노스케
+</li>
+<li>
+  <time>1947</time> <cite>만개한 벚꽃나무 숲 아래<small>櫻の森の滿開の下</small></cite> 사카구치
+  안고
+</li>
+<li>
+  <time>1929</time>
+  <cite>젊은 시인에게 보내는 편지<small>Briefe an einen jungen Dichter</small></cite> Rainer Maria
+  Rilke
+</li>
+<li>
+  <time>1943</time> <cite>반점<small>The Birth-Mark</small></cite> 너대니얼 호손 // Mosses from an
+  Old Manse
+</li>
+<li>
+  <time>1792</time> <cite>가련한 리자<small>Бедная Лиза</small></cite> 카람진
+</li>
+<li>
+  <time>1922</time> <cite>젤리빈<small>The Jelly-Bean</small></cite> F. 스콧 피츠제럴드 // Tales of
+  the Jazz Age
+</li>
+<li><time>1916</time> <cite>시골의사</cite> 프란츠 카프카</li>
+<li>
+  <time>1878</time> <cite>안나 카레니나<small>Анна Каренина</small></cite> 톨스토이
+</li>
+<li><time>1936</time> <cite>날개</cite> 이상</li>
+<li>
+  <time>1883</time> <cite>자살<small>Suicides</small></cite> 기 드 모파상
+</li>
+<li>
+  <time>1884</time> <cite>목걸이<small>La Parure</small></cite> 기 드 모파상
+</li>
+<li>
+  <time>1967</time> <cite>백년 동안의 고독<small>Cien años de soledad Gabriel</small></cite> Garcia
+  Márquez
+</li>
+<li>
+  <time>1932</time> <cite>비둘기 시민<small>Citoyen pigeon</small></cite> 로맹 가리
+</li>
+<li><time>0000</time> <cite>새들은 페루에 가서 죽다</cite> 로맹가리</li>
+<li>
+  <time>1997</time> <cite>정체성<small>L'Identite</small></cite> 밀란 쿤데라
+</li>
+<li>
+  <time>1985</time> <cite>잃어버린 거리<small>Quartier Perdu</small></cite> 파트릭 모디아노
+</li>
+<li>
+  <time>1975</time> <cite>첫사랑, 마지막 의식<small>First Love, Last Rites</small></cite> 이언
+  매큐언
+</li>
+<li><time>1978</time> <cite>이제 우리들의 잔을</cite> 이청준</li>
+<li>
+  <time>2001</time> <cite>작은 보석<small>La petite Bijou</small></cite> 파트릭 모디아노
+</li>
+<li>
+  <time>1921</time> <cite>아Q정전<small>阿Q正傳</small></cite> 루쉰
+</li>
+<li>
+  <time>1918</time> <cite>광인일기<small>狂人日記</small></cite> 루쉰
+</li>
+<li>
+  <time>1999</time> <cite>신원 미상 여자<small>Des inconnues</small></cite> 파트릭 모디아노
+</li>
+<li>
+  <time>2007</time> <cite>체실 비치에서<small>On Chesil Beach</small></cite> 이언 매큐언
+</li>
+<li>
+  <time>2000</time> <cite>튜브의 형이상학<small>Métaphysique des tubes</small></cite> 아멜리 노통 //
+  이토록 아름다운 세 살
+</li>
+<li>
+  <time>1999</time> <cite>두려움과 떨림<small>Stupeur et tremblements</small></cite> 아멜리 노통
+</li>
+<li>
+  <time>0000</time> <cite>당연한 의심<small>War er es</small></cite> 슈테판 츠바이크1935~1940
+</li>
+<li>
+  <time>1933</time> <cite>이별여행<small>Die Reise in die Vergangenheit</small></cite> 슈테판
+  츠바이크
+</li>
+<li>
+  <time>1946</time>
+  <cite>그리스인 조르바<small>Βίος και Πολιτεία του Αλέξη Ζορμπά</small></cite> 니코스 카잔차키스
+</li>
+<li><time>1965</time> <cite>퇴원</cite> 이청준 // 등단작</li>
+<li>
+  <time>1906</time> <cite>수레바퀴 아래서<small>Unterm Rad</small></cite> 헤르만 헤세
+</li>
+<li>
+  <time>1975</time> <cite>자기 앞의 생<small>La Vie Devant Soi</small></cite> 에밀 아자르
+</li>
+<li>
+  <time>1995</time>
+  <cite>자전거를 못 타는 아이<small>une bicyclette à propos de son père</small></cite> 장 자끄 상뻬
+</li>
+<li>
+  <time>1889</time> <cite>악마<small>Dyavol</small></cite> 톨스토이
+</li>
+<li>
+  <time>1888</time> <cite>홀스토메르 - 어느 말의 이야기<small>Kholstomer</small></cite> 톨스토이
+</li>
+<li>
+  <time>1884</time> <cite>이반 일리치의 죽음<small>Smert' Ivana Ilyicha</small></cite> 톨스토이
+</li>
+<li>
+  <time>1926</time> <cite>위폐범들<small>Les Faux-Monnayeurs</small></cite> 앙드레 지드
+</li>
+<li>
+  <time>1956</time> <cite>오늘을 잡아라<small>Seize the Day</small></cite> 솔 벨로
+</li>
+<li>
+  <time>1946</time> <cite>면도날<small>The Razor's Edg</small></cite> W. 서머셋 몸
+</li>
+<li>
+  <time>1861</time>
+  <cite>상처받은 사람들<small>Unizhennye i oskorblyonnye</small></cite> 도스토옙스키
+</li>
+<li><time>1934</time> <cite>레디메이드 인생</cite> 채만식</li>
+<li><time>1936</time> <cite>동백꽃</cite> 김유정</li>
+<li>
+  <time>1905</time> <cite>크리스마스 선물<small>The Gift of the Magi</small></cite> 오 헨리
+</li>
+<li><time>1924</time> <cite>운수좋은 날</cite> 현진건</li>
+<li>
+  <time>1967</time> <cite>농담<small>La Plaisanterie</small></cite> 밀란 쿤데라
+</li>
+<li>
+  <time>1914</time> <cite>뜻밖의 만남<small>An Encounter in Dubliners</small></cite> 제임스 조이스
+</li>
+<li><time>1959</time> <cite>소나기</cite> 황순원</li>
+<li>
+  <time>1885</time> <cite>벨아미<small>Bel-Ami</small></cite> 기 드 모파상
+</li>
+<li>
+  <time>1978</time>
+  <cite>어두운 상점들의 거리<small>Rue des boutiques obscures</small></cite> 파트릭 모디아노
+</li>
+<li>
+  <time>0000</time> <cite>사랑<small>Amor</small></cite> 앙드레 지드 // 시학사.
+</li>
+<li>
+  <time>1888</time>
+  <cite>행복한 왕자와 다른 이야기들<small>The Happy Prince and Other Tales</small></cite
+  >오스카 와일드
+</li>
+<li>
+  <time>1899</time> <cite>부활<small>Voskreseniye</small></cite> 톨스토이
+</li>
+<li>
+  <time>1927</time> <cite>감정의 혼란<small>Verwirrung der Gefühle</small></cite> 슈테판 츠바이크
+</li>
+<li>
+  <time>1860</time> <cite>첫사랑<small>Pervaia Liubov</small></cite> 이반 투르게네프
+</li>
+<li>
+  <time>0000</time> <cite>달밤의 뒷골목<small>Die Mondscheingasse</small></cite> 슈테판 츠바이크
+</li>
+<li>
+  <time>1922</time>
+  <cite>나를 알지 못하는 당신에게<small>Brief einer Unbekannten</small></cite> 슈테판 츠바이크 //
+  낯선 여인의 편지
+</li>
+<li>
+  <time>1876</time> <cite>톰 소여의 모험<small>The Adventures of Tom Sawyer</small></cite> 마크
+  트웨인
+</li>
+<li>
+  <time>1880</time>
+  <cite>까라마조프 씨네 형제들<small>Brat'ya Karamazovy</small></cite> 도스토옙스키
+</li>
+<li>
+  <time>1924</time> <cite>마의 산<small>Der Zauberberg</small></cite> 토마스 만
+</li>
+<li>
+  <time>1854</time> <cite>월든<small>Walden</small></cite> 헨리 데이비드 소로
+</li>
+<li>
+  <time>1932</time> <cite>독을 품은 뱀<small>Le Noeud de Vipères</small></cite> 프랑수아 모리악
+</li>
+<li>
+  <time>1835</time> <cite>고리오 영감<small>Le Père Goriot</small></cite> 오노레 드 발자크
+</li>
+<li>
+  <time>1926</time> <cite>성<small>Das Schloss</small></cite> 프란츠 카프카
+</li>
+<li>
+  <time>1966</time> <cite>절망<small>Despair</small></cite> 블라디미르 나보코프
+</li>
+<li>
+  <time>1830</time> <cite>적과 흑<small>Le Rouge et le Noir</small></cite> 스탕달 // 쥘리엥 ㅠㅠ
+</li>
+<li>
+  <time>2010</time> <cite>우리 기억 속의 색<small>Les couleurs de nos souvenirs</small></cite> 미셸
+  파스투로
+</li>
+<li>
+  <time>1998</time> <cite>아득한 기억의 저편<small>Du Plus Loin de L'Oubli</small></cite> 파트릭
+  모디아노
+</li>
+<li>
+  <time>1969</time> <cite>얼굴 빨개지는 아이<small></small></cite> 장 자크 상뻬
+</li>
+<li>
+  <time>1866</time> <cite>죄와 벌<small>Prestuplenie i nakazanie</small></cite> 도스토옙스키
+</li>
+<li>
+  <time>1981</time> <cite>청춘 시절<small>Une Jeunesse</small></cite> 파트릭 모디아노
+</li>
+<li>
+  <time>1956</time> <cite>전락<small>La Chute</small></cite> 알베르 까뮈
+</li>
+<li>
+  <time>1942</time> <cite>체스<small>SchachnovelleBuenos Aires</small></cite> 슈테판 츠바이크
+</li>
+<li>
+  <time>1925</time> <cite>소송<small>Der Prozess</small></cite> 프란츠 카프카
+</li>
+<li>
+  <time>1949</time> <cite>1984년<small>Nineteen Eighty-Four</small></cite> 조지 오웰
+</li>
+<li>
+  <time>1948</time> <cite>인간실격<small>人間失格</small></cite> 다자이 오사무
+</li>
+<li>
+  <time>1947</time> <cite>페스트<small>Le Peste</small></cite> 알베르 까뮈
+</li>
+<li>
+  <time>0000</time> <cite>개를 데리고 다니는 여자<small></small></cite> 안톤 체호프
+</li>
+<li>
+  <time>1787</time> <cite>미덕의 불운<small>Les Infortunes de la vertu</small></cite> 마르키 드 사드
+</li>
+<li><time>1969</time> <cite>씌어지지 않은 자서전</cite> 이청준</li>
+<li>
+  <time>1938</time> <cite>구토<small>La Nausée</small></cite> 장 폴 사르트르 // 토할뻔
+</li>
+<li>
+  <time>1962</time> <cite>아우라<small>Aura</small></cite> 카를로스 푸엔테스
+</li>
+<li>
+  <time>1904</time> <cite>페터 카멘친트<small>Peter Camenzind</small></cite> 헤르만 헤세
+</li>
+<li>
+  <time>1919</time> <cite>달과 6펜스<small>The Moon and Sixpence</small></cite> W. 서머셋 몸
+</li>
+<li>
+  <time>1932</time> <cite>파비안<small>Fabian. Die Geschichte eines Moralisten</small></cite> 에리히
+  캐스트너
+</li>
+<li>
+  <time>1857</time> <cite>보바리 부인<small>Madame Bovary</small></cite> 귀스타프 플로베르
+</li>
+<li>
+  <time>1899</time> <cite>귀여운 여인<small>Душечка</small></cite> 안톤 체호프
+</li>
+<li>
+  <time>1842</time> <cite>외투<small>Шинель</small></cite> 니콜라이 고골
+</li>
+<li>
+  <time>1909</time> <cite>좁은 문<small>La porte étroite</small></cite> 앙드레 지드
+</li>
+<li>
+  <time>1836</time> <cite>코<small>Нос</small></cite> 니콜라이 고골
+</li>
+<li>
+  <time>1987</time> <cite>상실의 시대<small>ノルウェイの森</small></cite> 무라카미 하루키
+</li>
+<li>
+  <time>1994</time> <cite>공중곡예사<small>Mr. Vertigo</small></cite> 폴 오스터
+</li>
+<li>
+  <time>2002</time> <cite>환상의 책<small>The Book of Illusions</small></cite> 폴 오스터
+</li>
+<li>
+  <time>1956</time> <cite>사고<small>Die Panne</small></cite> 프리드리히 뒤렌마트
+</li>
+<li>
+  <time>1889</time> <cite>결혼<small>Крейцерова соната</small></cite> 톨스토이
+</li>
+<li>
+  <time>1774</time>
+  <cite>젊은 베르테르의 슬픔<small>Die Leiden des jungen Werthers</small></cite> 괴테
+</li>
+<li>
+  <time>1998</time>
+  <cite>베로니카, 죽기로 결심하다<small>Veronika Decide Morrer</small></cite> 파울로 코엘료
+</li>
+<li>
+  <time>1951</time> <cite>호밀 밭의 파수꾼<small>The Catcher in the Rye</small></cite> J. D. 샐린저
+</li>
+<li>
+  <time>2008</time> <cite>어둠 속의 남자<small>Man in the Dark</small></cite> 폴 오스터
+</li>
+<li>
+  <time>1953</time>
+  <cite>그리고 아무 말도 하지 않았다<small>Und sagte kein einziges Wort</small></cite> 하인리히 뵐
+</li>
+<li>
+  <time>1932</time> <cite>멋진 신세계<small>Brave New World</small></cite> 올더스 헉슬리
+</li>
+<li>
+  <time>1991</time>
+  <cite>프라하 거리에서 울고 다니는 여자<small>La Pleurante des rues de Prague</small></cite> 실비
+  제르맹
+</li>
+<li>
+  <time>1952</time> <cite>노인과 바다<small>The Old Man and the Sea</small></cite> 어니스트 헤밍웨이
+</li>
+<li>
+  <time>1942</time> <cite>이방인<small>L’Étranger</small></cite> 알베르 까뮈
+</li>
+<li>
+  <time>1967</time> <cite>아웃사이더<small>The Outsiders</small></cite> S. E. 힌튼
+</li>
+<li>
+  <time>1915</time> <cite>변신<small>Die Verwandlung</small></cite> 프란츠 카프카
+</li>
+<li>
+  <time>1912</time> <cite>선고<small>Das Urteil</small></cite> 프란츠 카프카
+</li>
+<li>
+  <time>1989</time> <cite>어느 작가의 오후<small>The Afternoon of a Writer</small></cite> 페터
+  한트케
+</li>
+<li>
+  <time>1925</time> <cite>위대한 개츠비<small>The Great Gatsby</small></cite> F. 스콧 피츠제럴드
+</li>
+<li>
+  <time>1862</time> <cite>아버지와 아들<small>Otzy i deti</small></cite> 투르게네프
+</li>
+<li>
+  <time>1995</time> <cite>하이 피델리티<small>High Fidelity</small></cite> 닉 혼비
+</li>
+<li>
+  <time>1974</time> <cite>레이스뜨는 여자<small>La Dentellière</small></cite> 파스칼 레네
+</li>
+<li>
+  <time>2005</time> <cite>죽음의 중지<small>As Intermitências da Morte</small></cite> 주제 사라마구
+</li>
+<li>
+  <time>1963</time> <cite>조서<small>Le Procès-Verbal</small></cite> J. M. G. 르 클레지오
+</li>
+<li>
+  <time>1991</time> <cite>달콤한 내세<small>The Sweet Hereafter</small></cite> 러셀 뱅크스
+</li>
+<li>
+  <time>1919</time>
+  <cite>데미안<small>Die Geschichte von Emil Sinclairs Jugend</small></cite> 헤르만 헤세
+</li>
+<li>
+  <time>1952</time> <cite>반쪼가리 자작<small>Il visconte dimezzato</small></cite> 이탈로 칼비노
+</li>
+<li>
+  <time>2001</time> <cite>스무살, 도쿄<small>東京物語</small></cite> 오쿠다 히데오
+</li>
+<li>
+  <time>1859</time> <cite>아저씨의 꿈<small>Dyadyushkin son</small></cite> 도스토옙스키
+</li>
+<li>
+  <time>1849</time> <cite>네또츠까 네즈바노바<small>Netochka Nezvanova</small></cite> 도스토옙스키
+</li>
+<li>
+  <time>1848</time> <cite>백야<small>Belye nochi</small></cite> 도스토옙스키
+</li>
+<li>
+  <time>1847</time>
+  <cite>아홉 통의 편지로 된 소설<small>Roman v devyati pis'mah</small></cite> 도스토옙스키
+</li>
+<li>
+  <time>1846</time> <cite>쁘로하르친 씨<small>Gospodin Prokharchin</small></cite> 도스토옙스키
+</li>
+<li>
+  <time>1846</time> <cite>분신<small>Dvoynik: Peterburgskaya poema</small></cite> 도스토옙스키
+</li>
+<li>
+  <time>1846</time> <cite>가난한 사람들<small>Bednye lyudi</small></cite> 도스토옙스키
+</li>
+<li>
+  <time>1931</time> <cite>대지<small>The Good Earth</small></cite> 펄 S. 벅
+</li>
