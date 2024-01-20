@@ -9,13 +9,25 @@
     </test-text>
 
     <blockquote>
-      <p>
-        MEMO: label attribute 사용하지 않기. 컴포넌트의 형태와 분리. 단 slot으로 들어간 이모지를
-        textContent가 가져옴..
-      </p>
-      <p>MEMO: slot icon / avatar의 차이. menuitem은 아바타. 모든 icon이 아바타가 될 수 있나.</p>
-      <p>MEMO: Text only는 plain이 될 수 없다.</p>
-      <p>시각보정: expandable, checkable 각각에 맞춰서 하고. TODO: slot을 따로 넣지 않기.</p>
+      <li>
+        MEMO: slot icon / avatar의 차이. 아이콘은 현재 container가 없다. 32px. 아바타가 될 수 있나.
+      </li>
+      <li>MEMO: Action Button(Text only)는 plain이 될 수 없다.</li>
+      <li>시각보정: expandable, checkable 각각에 맞춰서 하고. slot으로 아이콘을 넣으면 안 됨.</li>
+      <li>
+        TODO 선택을 클리어하는 클리어버튼을 만드는 게 좋을지도. 이건 검색필드에서 쓰는 컴포넌트와
+        같음.
+      </li>
+      <li>TODO: icon button의 레이블이 툴팁으로 되는 게 기본.</li>
+      <li>
+        menu button - dropdown trigger , listbox - allows a user to select one or more of them
+      </li>
+      <li>Markup(button vs radio,checkbox)</li>
+      <li>More. position 규칙이 필요함. 글자수 제한. 모달로 열릴 수 있어서, 드롭다운은 제거함.</li>
+      <li>
+        형태로 분류하면 결국 그냥 버튼임. 기능으로 분류하는 것이 중요함. 많은 디자인 시스템이 칩을
+        정의하지 않고 있음. 도메인에 특화된 기능 중심의 버튼 컴포넌트를 정의하는 것이 맹점.
+      </li>
     </blockquote>
     <dl class="article-aka">
       <dt>a.k.a.</dt>
@@ -24,19 +36,20 @@
       <dd>Badge</dd>
       <dd>Token</dd>
       <dd>Label</dd>
+      <dd aria-label="Adobe">Pick Button</dd>
     </dl>
 
     <section class="component-example">
-      <test-chip-group>
+      <test-group variant="chip">
         <test-chip>default</test-chip>
         <test-chip status="active">active</test-chip>
         <test-chip status="disabled" data-temp="opacity: 0.5; cursor: not-allowed">
           disabled
         </test-chip>
         <test-chip status="destructive">TODO variant: destructive</test-chip>
-      </test-chip-group>
+      </test-group>
       <test-separator></test-separator>
-      <test-chip-group>
+      <test-group variant="chip">
         <test-chip status="checked">
           <test-icon slot="prefix" name="check"></test-icon>
           checkable
@@ -49,25 +62,25 @@
           <test-icon slot="suffix" name="nav-arrow-down"></test-icon>
           expandable
         </test-chip>
-      </test-chip-group>
+      </test-group>
       <test-separator></test-separator>
-      <test-chip-group>
+      <test-group variant="chip">
         <test-chip>
           <test-icon slot="icon" name="user"></test-icon>
         </test-chip>
         <test-chip variant="plain">
           <test-icon slot="icon" name="bell"></test-icon>
         </test-chip>
-      </test-chip-group>
+      </test-group>
       <test-separator></test-separator>
-      <test-chip-group>
+      <test-group variant="chip">
         <test-chip variant="back">
           <test-icon slot="icon" name="arrow-left"></test-icon>
         </test-chip>
         <test-chip variant="back">
           <test-icon slot="icon" name="arrow-right"></test-icon>
         </test-chip>
-      </test-chip-group>
+      </test-group>
     </section>
 
     <section class="component-props">
@@ -102,30 +115,20 @@
     <section class="component-guide">
       <test-text variant="subhead">Behavior</test-text>
       <test-text variant="body">
-        하나의 칩은 하나의 액션을 합니다. splitButton이 아님. 아이콘은 단지 indicator의 역할을 하고
-        칩 자체가 하나의 클릭 액션. 아이콘이 별도의 액션을 하는 것 아님.
+        하나의 칩은 하나의 액션을 합니다. 아이콘은 단지 indicator의 역할을 하고 칩 자체가 하나의
+        클릭 액션을 담당. 아이콘이 별도의 액션을 가능케 하기 위해서는 splitButton 형태가 되어야
+        한다.
       </test-text>
+
       <test-text variant="subhead">Visual Style</test-text>
       <test-text variant="body"
         >맥락이 다른 chip을 그룹으로 제공할 수 있습니다. 이 때 단일선택, 다중선택, 삭제여부,
         펼침메뉴 등의 기표를 충분히 제공하세요.
       </test-text>
-      <test-text variant="body"
-        >목록의 재정렬을 위한 옵션 목록을 group으로 제공하지 마세요. 현재 정렬 상태만 요약 표기하고
-        확장가능한 메뉴로 정렬 목록을 제공하세요. (bad case: 2022.04 구글 지도 바뀐 것)</test-text
-      >
-      <test-text variant="body"
-        >TODO 선택을 클리어하는 클리어버튼을 만드는 게 좋을지도. 이건 검색필드에서 쓰는 컴포넌트와
-        같음.
+      <test-text variant="body">
+        목록의 재정렬을 위한 옵션 목록을 group으로 제공하지 마세요. 현재 정렬 상태만 요약 표기하고
+        확장가능한 메뉴로 정렬 목록을 제공하세요. (bad case: 2022.04 구글 지도 바뀐 것)
       </test-text>
-
-      <blockquote>
-        <test-text variant="body">adobe 드롭다운 없고 pickbutton </test-text>
-        <test-text variant="body"
-          >menu button - dropdown trigger , listbox - allows a user to select one or more of
-          them</test-text
-        >
-      </blockquote>
 
       <test-text variant="subhead">A11y</test-text>
       <test-text variant="body">
@@ -134,20 +137,12 @@
         chip value="" role="option" aria-selected="true"
       </test-text>
 
-      <test-text variant="subhead">Meta problems</test-text>
-      <test-text variant="body"
-        >안드로이드: chipGroup, HorizontalScrollView, singleLine, action/entry/filter(check
-        active)/choice</test-text
-      >
-      <test-text variant="body">
-        형태로 분류하면 결국 그냥 버튼임. 기능으로 분류하는 것이 중요함. 많은 디자인 시스템이 칩을
-        정의하지 않고 있음. 도메인에 특화된
-      </test-text>
-      <test-text variant="body">
-        More. position 규칙이 필요함. 글자수 제한. 모달로 열릴 수 있어서, 드롭다운은
-        제거함.</test-text
-      >
-      <test-text variant="body"> Markup(button vs radio,checkbox)</test-text>
+      <test-callout>
+        <test-text variant="body"
+          >안드로이드: chipGroup, HorizontalScrollView, singleLine, action/entry/filter(check
+          active)/choice</test-text
+        >
+      </test-callout>
     </section>
 
     <test-text variant="body-bold">Action Button</test-text>
@@ -155,14 +150,14 @@
     <section class="component-case">
       <test-text variant="subhead">지금 인기있는<br />이슈 키워드</test-text>
       <div style="height: 1.5rem"></div>
-      <test-chip-group>
+      <test-group variant="chip">
         <test-chip>뉴닉</test-chip>
         <test-chip>국정감사</test-chip>
         <test-chip>윤석열검찰총장</test-chip>
         <test-chip>조국</test-chip>
         <test-chip>차별금지법</test-chip>
         <test-chip>추미매법무부장관</test-chip>
-      </test-chip-group>
+      </test-group>
       <div style="height: var(--space-after-subhead)"></div>
       <test-tile variant="flat" size="small">
         <test-menuitem label="직접 검색">
@@ -177,12 +172,12 @@
 
     <test-text variant="body-bold"> Toggle Button </test-text>
     <section class="component-case">
-      <test-chip-group>
+      <test-group variant="chip">
         <test-chip status="active">팔로우</test-chip>
         <test-chip>팔로우 중</test-chip>
-      </test-chip-group>
+      </test-group>
       <test-separator></test-separator>
-      <test-chip-group>
+      <test-group variant="chip">
         <test-chip>
           <test-icon slot="prefix" name="plus"></test-icon>
           추가하기
@@ -196,7 +191,7 @@
           TODO 좋아요
           <!-- <test-badge>11</test-badge> -->
         </test-chip>
-      </test-chip-group>
+      </test-group>
     </section>
 
     <br />
@@ -299,7 +294,7 @@
 
     <address class="component-references">
       <!-- <test-text variant="label">References</test-text> -->
-      <test-chip-group>
+      <test-group variant="chip">
         <test-chip href="https://material.io/components/menus" target="_blank">
           MD menu
           <test-icon slot="suffix" name="arrow-up-right-circle-solid"></test-icon>
@@ -324,7 +319,7 @@
           MD chip group
           <test-icon slot="suffix" name="arrow-up-right-circle-solid"></test-icon>
         </test-chip>
-      </test-chip-group>
+      </test-group>
     </address>
   </article>
 </main>

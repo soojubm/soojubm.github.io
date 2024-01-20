@@ -15,7 +15,8 @@
   justify-content: center;
   height: var(--size-medium); */
 
-  position: relative;
+  /* menuitem 클릭 영ㅇ력을 위해 이거 없애야. */
+  /* position: relative; */
 }
 
 .checkbox input {
