@@ -24,7 +24,7 @@
         <test-chip slot="action">버튼</test-chip>
       </test-menuitem>
 
-      <test-menu-group>
+      <test-group alignment="vertical">
         <test-menuitem label="메뉴아이템 링크" role="menuitem">
           <test-avatar slot="avatar"></test-avatar>
         </test-menuitem>
@@ -64,7 +64,7 @@
             >Google 포토에 최대 해상도로 백업. TODO menuitem에 tile이 포함되어야 hover 상태.</small
           >
         </test-tile>
-      </test-menu-group>
+      </test-group>
     </section>
 
     <section class="component-props">
@@ -154,7 +154,7 @@
 
     <test-card variant="flat">
       <div slot="entire">
-        <test-menu-group>
+        <test-group alignment="vertical">
           <test-text variant="label" class="menu-heading">menu heading</test-text>
           <test-menuitem role="menuitem" href="#design">
             <test-icon slot="check" name="check"></test-icon>
@@ -172,7 +172,7 @@
             <span slot="check"></span>
             <span slot="text">with popover</span>
           </test-menuitem>
-        </test-menu-group>
+        </test-group>
       </menu>
     </test-card>
 
@@ -184,7 +184,7 @@
         <br />
         <test-text variant="subhead" class="share-title">가족이나 친구와<br />함께 보세요!</test-text>
         <br />
-        <test-menu-group>
+        <test-group alignment="vertical">
           <!-- <close-button></close-button> -->
           <test-menuitem class="share-facebook" label="facebook으로 공유">
             <test-avatar slot="avatar" size="medium" fallback=" " style="background-color: var(--color-facebook);color:#fff;">
@@ -201,7 +201,7 @@
               <test-icon slot="icon" name="message"></test-icon>
             </figure>
           </test-menuitem>
-        </test-menu-group>
+        </test-group>
         <test-separator></test-separator>
         <test-textfield value="https://newneek.co/post/jadebabo" placeholder="이건 사실 입력 기능이 없다 커스텀 컴포넌트." size="small" class="share-copy">
           <!-- <input class="share-copy-url textfield-input" type="text" value=" readonly /> -->
@@ -310,7 +310,7 @@
         <test-chip status="active">모두</test-chip>
         <test-chip>바보만</test-chip>
       </test-group>
-      <test-menu-group>
+      <test-group alignment="vertical">
         <test-menuitem label="Gyeongsoo I" description="유아이 디자이너">
           <test-avatar slot="avatar" class="is-secondary"></test-avatar>
           <test-chip slot="action" status="active">팔로우</test-chip>
@@ -324,7 +324,7 @@
             <test-avatar slot="avatar"></test-avatar>
           </test-menuitem>
         </test-tile>
-      </test-menu-group>
+      </test-group>
     </test-tile>
 
     <br /><br />
@@ -333,7 +333,7 @@
         <test-link slot="action">적용</test-link>
       </test-titlebar>
       <br />
-      <test-menu-group>
+      <test-group alignment="verticla">
         <test-menuitem label="수줍이 앱">
           <test-avatar slot="avatar" size="large" secondary></test-avatar>
           <test-chip slot="action">열기</test-chip>
@@ -342,7 +342,7 @@
           <test-avatar slot="avatar" size="large"></test-avatar>
           <test-chip slot="action" status="active">실행</test-chip>
         </test-menuitem>
-      </test-menu-group>
+      </test-group>
     </div>
 
   </article>

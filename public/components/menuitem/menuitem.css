@@ -2,7 +2,7 @@
 .menu-group {
   display:flex;
   flex-direction:column;
-  gap:var(--space-2);
+  /* gap:var(--space-2); */
 }
 
 .item {
@@ -15,11 +15,11 @@
 }
 .item-label {
   font-size:var(--font-size-medium);
-  line-height: 24px;
+  line-height: var(--size-medium);
   color:var(--color-text);
 }
 .item-description {
-  line-height: 24px;
+  line-height: var(--size-medium);
   color: var(--color-text-light);
 }
 

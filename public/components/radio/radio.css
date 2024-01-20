@@ -3,6 +3,7 @@
   --radio-color: var(--gray200);
   --radio-border: 1px solid var(--radio-color);
   --radio-radius: 50%;
+
 }
 
 .radio-group {
@@ -12,6 +13,11 @@
 }
 
 .radio {
+  /* todo menuitem과 통일? */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: var(--size-medium);
   position:relative;
 }
 

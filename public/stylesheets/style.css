@@ -268,24 +268,6 @@ main,
  */
 
 
-.checklist li {list-style: none;margin-left:0;padding-left: var(--space-2);position: relative;}
-.checklist li:before {
-  content: '✔️';
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: var(--size-tiny);
-  height: var(--size-tiny);
-  border-radius: 50%;
-  background-color: gold;
-  font-size: 10px;
-  color: #fff;
-  position: absolute;
-  left: -16px;
-  top: 4px;
-}
-
-
 @define-mixin image-centered {width:auto;height:auto;max-width:150%;max-height:150%;margin:auto;position:absolute;left:0;right:0;top:0;bottom:0;}
 [data-temp=bleeding] {
   margin: 0 -50vw;

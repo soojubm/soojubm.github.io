@@ -59,6 +59,15 @@
           <test-icon slot="icon" name="bell"></test-icon>
         </test-chip>
       </test-chip-group>
+      <test-separator></test-separator>
+      <test-chip-group>
+        <test-chip variant="back">
+          <test-icon slot="icon" name="arrow-left"></test-icon>
+        </test-chip>
+        <test-chip variant="back">
+          <test-icon slot="icon" name="arrow-right"></test-icon>
+        </test-chip>
+      </test-chip-group>
     </section>
 
     <section class="component-props">
@@ -236,11 +245,11 @@
             size="small"
             style="width: var(--popover-width); position: absolute"
           >
-            <test-menu-group class="dropdown-menu">
+            <test-group alignment="vertical" class="dropdown-menu">
               <test-radio name="gogo" value="">1~3명</test-radio>
               <test-radio name="gogo" value="">1~3명</test-radio>
               <test-chip>적용</test-chip>
-            </test-menu-group>
+            </test-group>
           </test-tile>
         </div>
         <div class="dropdown">
@@ -253,7 +262,7 @@
             size="small"
             style="width: var(--popover-width); position: absolute"
           >
-            <test-menu-group class="dropdown-menu">
+            <test-group alignment="vertical" class="dropdown-menu">
               <h6 class="dropdown-menu-title" hidden>Dropdown header</h6>
               <test-menuitem label="최신순" disabled>
                 <test-icon slot="check" name="check"></test-icon>
@@ -261,7 +270,7 @@
               <test-menuitem label="인기순">
                 <span slot="check"> </span>
               </test-menuitem>
-            </test-menu-group>
+            </test-group>
           </test-tile>
         </div>
         <div class="dropdown">
@@ -273,12 +282,12 @@
             size="small"
             style="width: var(--popover-width); position: absolute"
           >
-            <test-menu-group class="dropdown-menu">
+            <test-group alignment="vertical" class="dropdown-menu">
               <test-menuitem label="신고"></test-menuitem>
               <!-- TODO <hr class="dropdown-menu-divider" style="margin: 0.5rem 0" /> -->
               <test-menuitem label="수정"></test-menuitem>
               <test-menuitem label="삭제"></test-menuitem>
-            </test-menu-group>
+            </test-group>
           </test-tile>
         </div>
       </div>

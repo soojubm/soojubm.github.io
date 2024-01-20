@@ -436,3 +436,22 @@ mark {color:inherit;} mark::before {content: " [강조 시작] ";opacity:0;posit
 /* // android pattern */
 .is-focused .searchfield-input {display:block;width:calc(100% - var(--size-medium) - var(--space-after-avatar-medium));}
 .is-focused .searchfield-cancel {right:0;}
+
+
+
+
+.checklist {padding-left:0;}
+.checklist li {list-style: none;
+  margin-left:0;padding-left: 1.5rem;position: relative;}
+.checklist li:before {
+  /* content: '✔️'; */
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 3px;
+  width: 5px;
+  height: 10px;
+  border: 1px solid var(--color-primary);
+  border-width: 0 1px 1px 0;
+  transform: rotate(45deg);
+}

@@ -1,4 +1,4 @@
-import { makeStyleSheet } from './utils'
+import { makeStyleSheet } from '../../javascripts/components/utils'
 
 class Result extends HTMLElement {
   constructor() {
@@ -15,6 +15,7 @@ class Result extends HTMLElement {
     const actionSlot = document.createElement('slot')
 
     container.role = 'status'
+    container.classList.add('result')
 
     label.classList.add('result-title')
     label.innerText = this.label || ''

@@ -64,6 +64,10 @@ class Chip extends HTMLElement {
 
     host.appendChild(suffixSlot)
 
+    // TODO
+    // shadow.appendChild(container)
+    // container.append(...this.childNodes, makeStyleSheet('menuitem'))
+
     // this.addEventListener('click', e => {
     //   if (this.disabled) return
     //   this.toggleDrawer()

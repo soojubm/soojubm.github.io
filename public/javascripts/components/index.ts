@@ -29,13 +29,12 @@ import Dialog from './dialog'
 
 import Tooltip from '../../components/tooltip/tooltip'
 import TitleBar from '../../components/titlebar/titlebar'
-import MenuGroup from './menuGroup'
 import ChipGroup from './chipGroup'
 import RadioGroup from './radioGroup'
 import Icon from '../../components/icon/icon'
 import Separator from '../../components/separator/separator'
 import Card from '../../components/card/card'
-import Result from './result'
+import Result from '../../components/result/result'
 
 // class extends HTMLElement {
 //   static get observedAttributes() {
@@ -79,7 +78,6 @@ export function defineCustomElement() {
 
     customElements.define('test-avatar-group', AvatarGroup)
     customElements.define('test-chip-group', ChipGroup)
-    customElements.define('test-menu-group', MenuGroup)
     customElements.define('test-radio-group', RadioGroup)
 
     customElements.define('test-dialog', Dialog)
