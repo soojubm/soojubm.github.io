@@ -10,21 +10,21 @@
       <dd>text - icon(avatar)</dd>
     </dl>
     <section class="component-example">
-      <test-group temp="vertical">
+      <test-group variant="chip">
         <test-button variant="primary">primary</test-button>
         <test-button variant="secondary">secondary</test-button>
         <test-button variant="tertiary">tertiary</test-button>
         <test-button variant="destructive" aria-label="danger">destructive</test-button>
-        <test-button variant="text">Flat</test-button>
+        <test-button variant="text">text</test-button>
       </test-group>
       <test-separator></test-separator>
-      <test-group temp="vertical">
+      <test-group variant="chip">
         <test-button variant="tertiary" status="hover">hovered</test-button>
         <test-button variant="tertiary" status="focus">focused</test-button>
         <test-button variant="tertiary" status="disabled" disabled>disabled</test-button>
       </test-group>
       <test-separator></test-separator>
-      <test-group>
+      <test-group variant="chip">
         <test-button data-variant="tertiary">
           <!-- TODO 아이콘 하나로 제한되면 slot의 순서만 챙기고 그냥 slot='icon' 하나로? 아니면 label -->
           <test-icon slot="prefix" name="star"></test-icon>
@@ -36,7 +36,7 @@
         </test-button>
       </test-group>
       <test-separator></test-separator>
-      <test-group>
+      <test-group variant="chip">
         <test-button variant="primary" size="large">large</test-button>
         <test-button variant="tertiary">medium</test-button>
       </test-group>
@@ -109,38 +109,37 @@
         iconButton
       </test-text>
 
-      <!-- secondary 사용 빈도가 낮다. -->
-
-      <test-text variant="subhead">Groupable - Button group patterns - binary choices.</test-text>
+      <test-text variant="body-bold">Groupable - Button group patterns - binary choices.</test-text>
       <test-text variant="body">
         텍스트 버튼은 버튼 처럼 보이지 않을 수 있기 때문에 학습된? 보편적인? 약속된? 누구랑 약속?
         패턴에서 사용하세요. 이 시스템에는 정의하지 않지만 세로 정렬되는 버튼 그룹에서 text button이
         아래에 배치되는 패턴과 혼동되지 않도록 버튼의 아래 가이드 텍스트를 배치하지 않습니다. ->
-        사실은 모든 버튼에서 전환을 유도하는 텍스트를 사용하지 말아야 함.
+        사실은 모든 버튼에서 전환을 유도하는 텍스트를 사용없이 인터페이스만으로.
       </test-text>
       <section class="component-case">
-        <test-group style="max-width: 400px">
+        <test-group variant="chip">
           <test-button variant="tertiary">취소</test-button>
           <test-button variant="primary">저장</test-button>
         </test-group>
-        <test-separator></test-separator>
-        <test-group style="max-width: 400px">
+      </section>
+      <section class="component-case">
+        <test-group variant="chip">
           <test-button variant="text">건너뛰기</test-button>
           <test-button variant="secondary">다음</test-button>
         </test-group>
-        <test-separator></test-separator>
-        <test-group style="max-width: 400px">
+      </section>
+        <test-group variant="chip">
           <test-button variant="tertiary">이전</test-button>
           <test-button variant="secondary">다음</test-button>
         </test-group>
         <test-separator></test-separator>
-        <test-group style="max-width: 400px" class="hero-actions">
+        <test-group variant="chip" class="hero-actions">
           <test-button variant="primary" href="#components">지금 가입하기</test-button>
           <test-button variant="text">더 알아보기</test-button>
         </test-group>
       </section>
 
-      <test-text variant="subhead">
+      <test-text variant="body-bold">
         ShowMoreButton <span hidden>Image Button, CheckoutButton</span>
       </test-text>
       <test-text variant="body">
@@ -154,18 +153,18 @@
         </test-button>
       </test-tile>
 
-      <test-text variant="subhead">Loading Button</test-text>
+      <test-text variant="body-bold">Loading Button</test-text>
       <test-tile>
         <test-button variant="tertiary">loading/fetching</test-button>
       </test-tile>
 
-      <test-text variant="subhead">Split button</test-text>
+      <test-text variant="body-bold">Split button</test-text>
       <test-text variant="body">
         사용자에게 더 많은 작업을 표시하는 경우 작업을 선택하여 트리거할 수 있도록 선택 + 버튼
         조합을 사용. 것이 좋습니다.
       </test-text>
 
-      <test-text variant="subhead">Link Button</test-text>
+      <test-text variant="body-bold">Link Button</test-text>
       <test-text variant="body">
         버튼과 형태는 동일한 합성된 컴포넌트. Link 안에 button이 들어가면 링크 역할과 버튼의 형태를
         분리할 수 있다.

@@ -4,7 +4,6 @@
   /* sticy 위로 스크롤 하면 */
 .navbar-logo {
   width:var(--size-medium);height:var(--size-medium);
-  margin: 0 0 0 var(--space-1);
   box-shadow: 0 0 3px var(--yellow800);
   background:url('/public/images/soojubm.png') no-repeat 64% 60%;background-size:80%;background-color:var(--color-background-strong) !important;border-radius:50%;
 }

@@ -1,7 +1,7 @@
 .profile {max-width:1480px;margin:0 auto;padding:2rem var(--grid-margin) 8rem;}
 .profile::after {content:'';display:block;clear:both;}
 
-.profile-head {height:200px;margin-top:calc((2rem + var(--navbar-height)) * -1);margin-left:-100vw;margin-right:-100vw;margin-bottom:-1rem;background:darkseagreen;}
+.profile-head {height:200px;margin-top:calc((2rem + var(--navbar-height)) * -1);margin-left:-100vw;margin-right:-100vw;margin-bottom:-4rem;background:darkseagreen;}
 
 .profile-user {float:left;width:320px;position:relative;z-index:var(--zindex-default);}
 .profile-user-description {max-height:5.4em;margin:var(--space-4) 0;white-space:normal;overflow:hidden;text-overflow:ellipsis;word-wrap:break-word;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;position:relative;}

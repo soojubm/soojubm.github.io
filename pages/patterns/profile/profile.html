@@ -7,7 +7,7 @@
   <section class="profile-user">
     <test-entity label="수줍이" description="soojubm@gmail.com" description2="010 3121 7045" description="UI Designer">
       <test-avatar slot="avatar" variant="secondary" size="huge"></test-avatar>
-      <!-- <test-tag slot="tag" variant="primary" label="TODO 상태"></test-tag> -->
+      <test-tag slot="tag" variant="primary">접속 중</test-tag>
     </test-entity>
     <div style="margin:var(--space-3) 0 0 0">
       <test-group variant="chip">
@@ -19,7 +19,7 @@
       Sometimes at night, I find myself behind the computer. When I finally blink, a mess of code is drawing random structures on the screen. I spend the rest of the night staring. 유아이를 그립니다. 배경을 넣어보았다. 모바일에서 팔로우 버튼을 상단으로 조정해야 한다. 업로드 버튼과 설정 버튼.
       <test-link href="javascript:alert('유아이 패턴 샘플입니다.');">더 보기</test-link>
     </p>
-    <test-group class="user-tags">
+    <test-group variant="tag">
       <test-tag>HTML5</test-tag>
       <test-tag>VanillaJS</test-tag>
       <test-tag>ReactJS</test-tag>
@@ -29,11 +29,7 @@
       <test-tag>GoogleOptimize</test-tag>
       <test-tag>Figma</test-tag>
     </test-group>
-    <!-- <button class="profile-user-toggle js-toggle" style="display:flex;align-items:center;">
-      수줍이님이 더 궁금하신가요?
-      <test-icon name="nav-arrow-down"></test-icon>
-    </button> -->
-    <section class="profile-user-info">
+    </button>
       <div class="statistic" style="display:flex;gap:2rem;margin: var(--space-4) 0 var(--space-2)">
         <div>
           <test-text variant="label">팔로워</test-text>
@@ -46,23 +42,15 @@
         <!-- <div class="statistic-item" onclick="javascript:alert('샘플 유아이에요!')" style="width: var(--grid-column)">
           <i class="statistic-label">팔로워</i>
           <span class="statistic-value">62</span>
-        </div>
-        <div class="statistic-item" onclick="javascript:alert('샘플 유아이에요!')" style="width: var(--grid-column)">
-          <i class="statistic-label">팔로잉</i>
-          <span class="statistic-value">8</span>
         </div> -->
       </div>
-      <!-- <test-tile variant="elevated" size="small"> -->
-      <test-group style="align-items: center">
-        <test-avatar-group>
-          <test-avatar></test-avatar>
-          <test-avatar></test-avatar>
-          <test-avatar></test-avatar>
-          <test-avatar></test-avatar>
-        </test-avatar-group>
-        <span style="line-height: var(--size-medium)">Followed by 수줍이 외 4명</span>
+      <test-group variant="avatar">
+        <test-avatar></test-avatar>
+        <test-avatar></test-avatar>
+        <test-avatar></test-avatar>
+        <test-avatar></test-avatar>
+        <span style="margin-left:var(--space-2);line-height: var(--size-medium)">Followed by 수줍이 외 4명</span>
       </test-group>
-      <!-- </test-tile> -->
       <test-separator></test-separator>
       <test-group alignment="vertical" style="margin:0 0 2rem 0;">
         <h2 class="profile-user-socials-title social-title" hidden>소셜 미디어</h2>
@@ -85,15 +73,23 @@
           <test-avatar slot="avatar" fallback=" "> <test-icon slot="icon" name="instagram"></test-icon> </test-avatar>
         </test-menuitem>
       </test-group>
-    </section>
   </section>
 
   <section class="profile-body js-tab">
     <test-tablist class="tablist">
-      <test-tab slot="tab" name="project" selected="true" data-index="1"> 프로젝트 </test-tab>
-      <test-tab slot="tab" name="case-study" selected="false" data-index="2"> 두 번째 탭 </test-tab>
-      <test-tab slot="tab" name="blank" selected="false" data-index="3">빈 상태</test-tab>
-      <test-tab slot="tab" name="blank" selected="false" data-index="3">네번쨰 탭</test-tab>
+      <test-tab slot="tab" name="project" selected="true" data-index="1">
+        프로젝트
+        <test-badge>4</test-badge>
+      </test-tab>
+      <test-tab slot="tab" name="case-study" selected="false" data-index="2"> 두 번째 탭
+        <test-badge>1</test-badge>
+      </test-tab>
+      <test-tab slot="tab" name="blank" selected="false" data-index="3">빈 상태
+        <test-badge>0</test-badge>
+      </test-tab>
+      <test-tab slot="tab" name="blank" selected="false" data-index="3">네번쨰 탭
+        <test-badge>2</test-badge>
+      </test-tab>
       <i class="tablist-indicator"></i>
     </test-tablist>
 

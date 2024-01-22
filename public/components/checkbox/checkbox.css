@@ -16,7 +16,7 @@
   height: var(--size-medium); */
 
   /* menuitem 클릭 영ㅇ력을 위해 이거 없애야. */
-  /* position: relative; */
+  position: relative;
 }
 
 .checkbox input {
@@ -82,8 +82,6 @@
 .checkbox input[data-indeterminate=true] ~ label:after {display:block;width:8px;background:var(--color-primary);border:none;left:4px;top:48%;transform:rotate(0deg);}
 
 .checkbox input:disabled ~ label {opacity:.5;cursor:not-allowed;}
-.checkbox input:disabled ~ label:before {border-color:var(--gray200);}
-.checkbox input:disabled ~ label:after {border-color:var(--gray200);}
 
 .checkbox-description {display:block !important;padding-left:calc(var(--size-tiny) + var(--space-2));color:var(--color-text-light);}
 

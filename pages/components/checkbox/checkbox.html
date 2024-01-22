@@ -7,12 +7,12 @@
       <!-- a11y checkgroup not valid -->
       <!-- <legend">checkgroup</legend> -->
       <!-- TODO test-checkbox-group -->
-      <test-group>
+      <test-group variant="chip">
         <test-checkbox size="large" checked></test-checkbox>
         <test-checkbox checked></test-checkbox>
       </test-group>
       <test-separator></test-separator>
-      <test-group alignment="vertical">
+      <test-group variant="checkbox">
         <test-checkbox
           name="checkbox"
           value="value"
@@ -28,18 +28,20 @@
           placeholder="기타로 오토바이를 타자."
           hidden
         />
-
         <test-checkbox class="js-check" id="terms" name="terms">
           이용약관에 동의합니다.
           <a href="#">이용약관 바로가기</a>
         </test-checkbox>
-
-        <test-separator></test-separator>
-
-        <test-group alignment="vertical">
+        <test-group variant="checkbox">
           <test-checkbox name="checkbox" checked disabled>비활성 상태</test-checkbox>
           <test-checkbox name="checkbox" disabled>비활성 상태</test-checkbox>
         </test-group>
+        <test-separator></test-separator>
+        <test-card variant="elevated" size="small">
+          <div slot="entire" style="width: 100%">
+            <test-checkbox name="checkbox" checked> 모바일 친화적인 Tiled 형태. </test-checkbox>
+          </div>
+        </test-card>
       </test-group>
     </section>
 
@@ -71,14 +73,11 @@
       </dl>
     </section>
 
-    <section class="component-case">
-      <test-checkbox name="checkbox" checked>
-        모바일 클릭 영역을 위한 박스 형태. 체크박스를 크게 할 수도 있지만. Tiled tile 안에서 커스텀
-        체크박스 쓸 때 레이블 안 보임
-      </test-checkbox>
-    </section>
-
     <section class="component-guide">
+      <blockquote style="max-width: 720px">
+        모두 동의합니다 를 위한 하나의 컴포넌트. label을 강조하는 형태가 아니라 전체 체크박스를
+        강조하는 형태로 구성하는 것이 좋다.
+      </blockquote>
       <test-text variant="subhead">Visual style</test-text>
       <test-text variant="body">
         선택되지 않은 상태로 제공하여 사용자의 직접적인? 능동적인? 행동 .. todo
@@ -110,7 +109,7 @@
         <test-checkbox name="interest" value="other">옵션 둘</test-checkbox>
         <test-checkbox name="interest" value="other">옵션 셋</test-checkbox>
         <test-checkbox name="interest" value="other">옵셧 넷</test-checkbox>
-        <div style="height: var(--space-1)"></div>
+        <div style="height: var(--space-4)"></div>
         <test-button variant="secondary">적용</test-button>
       </test-group>
     </section>

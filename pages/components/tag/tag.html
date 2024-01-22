@@ -1,5 +1,5 @@
 <main class="component">
-  <article class="article js-observer js-scrollspy-section">
+  <article class="article">
     <test-text variant="title">Tags</test-text>
     <test-text variant="body-large">
       인접 요소나 부모 요소를 부연하는 시각 정보입니다. 상태, 카테고리, 키워드로 강조된 시각 정보는
@@ -19,7 +19,7 @@
     </dl>
 
     <section class="component-example">
-      <test-group>
+      <test-group variant="tag">
         <!--  role="listitem" -->
         <test-tag variant="primary">primary</test-tag>
         <test-tag variant="tertiary">tertiary</test-tag>
@@ -29,13 +29,13 @@
         </test-tag>
       </test-group>
       <test-separator></test-separator>
-      <test-group>
+      <test-group variant="tag">
         <test-tag variant="hashtag" role="listitem">소띠</test-tag>
         <test-tag variant="hashtag" role="listitem">85년생</test-tag>
         <test-tag variant="hashtag" role="listitem">수다</test-tag>
       </test-group>
       <test-separator></test-separator>
-      <test-group>
+      <test-group variant="tag">
         <test-tag variant="secondary">
           <test-icon slot="icon" name="graph-up"></test-icon>
           16%
@@ -46,14 +46,14 @@
         </test-tag>
       </test-group>
       <test-separator></test-separator>
-      <test-group>
+      <test-group variant="tag">
         <test-tag variant="feature1">유저리서치</test-tag>
         <test-tag variant="feature2">유저플로우</test-tag>
         <test-tag variant="feature3">유저스트</test-tag>
         <test-tag variant="feature4">A/B테스팅</test-tag>
       </test-group>
       <test-separator></test-separator>
-      <test-group>
+      <test-group variant="tag">
         <test-tag variant="secondary">depulicated secondary</test-tag>
       </test-group>
     </section>
@@ -101,35 +101,43 @@
     </section>
   </article>
 
-  <article class="article js-observer js-scrollspy-section">
-    <test-text variant="title"></test-text>
+  <article class="article">
+    <test-text variant="title">임시 Badges</test-text>
     <test-text variant="body-large">
       Badges. 사실 뱃지로 퉁치기 어려움. 아바타와 바텀 네비게이션 등 특정 컴포넌트 의존성이 있어
       통합된 형태가 아니면 뱃지 컴포넌트를 정의하지 않는 것이 좋다.. notification / status /
       informational (tag 느낌)
     </test-text>
-    <p>
+    <test-text variant="body-large">
       Badges show the count of some adjacent data. A dot badge notifies the user that something is
       new or updated without showing a count.
-    </p>
+    </test-text>
     <section class="component-guide">
-      <test-text variant="subhead"> activity bar counter (vs code) </test-text>
-      <test-text variant="subhead">Dot. New/Red badge (status)</test-text>
-      <test-text variant="subhead">Dot. Live badge (status)</test-text>
-      <test-text variant="subhead">Dot. Unread badge (status)</test-text>
-      <test-text variant="subhead">Counter badge (quantity)</test-text>
+      <test-text variant="body-bold">activity bar counter (vs code) </test-text>
+      <test-text variant="body-bold">Dot. New/Red badge (status)</test-text>
+      <test-text variant="body-bold">Dot. Live badge (status)</test-text>
+      <test-text variant="body-bold">Dot. Unread badge (status)</test-text>
+      <test-text variant="body-bold">Counter badge (quantity)</test-text>
     </section>
 
     <section class="component-example">
-      <test-group>
+      <test-group variant="tag">
+        <style>
+          .dot-badge {
+            display: inline-flex;
+            width: 0.5rem;
+            height: 0.5rem;
+            /* padding: var(--space-1); */
+            margin-right: var(--space-2);
+            background: crimson;
+            border-radius: 50%;
+          }
+        </style>
         <em class="dot-badge"></em>
-        <test-badge variant="primary"></test-badge>
+        <test-badge variant="primary">0</test-badge>
         <test-badge variant="primary">24</test-badge>
         <test-badge variant="secondary">16</test-badge>
-        <test-chip>
-          <test-badge slot="suffix">16</test-badge>
-          메뉴
-        </test-chip>
+        <test-badge>8</test-badge>
       </test-group>
     </section>
   </article>

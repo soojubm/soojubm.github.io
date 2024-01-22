@@ -10,20 +10,18 @@ class Group extends HTMLElement {
     container.role = 'group'
 
     // const align = 'vertical' || 'horizontal'
+    // TODO : alignment -> direction / align
     const alignment = this.getAttribute('alignment')
     container.dataset.alignment = alignment || ''
 
-    // TODO : alignment -> direction / align
     if (this.alignment) container.dataset.alignment = this.alignment
 
     const style = this.getAttribute('style')
     container.setAttribute('style', style || '')
 
     if (this.bleeding) this.dataset.bleeding = 'true'
-
-    container.dataset.temp = this.temp || ''
     if (this.variant) container.dataset.variant = this.variant
-    // if (this.variant) container.setAttribute('data-variant', this.variant)
+    // TODO : checkbox는 fieldset
 
     shadow.appendChild(container)
     container.append(...this.childNodes, makeStyleSheet('group'))
@@ -31,10 +29,6 @@ class Group extends HTMLElement {
 
   get variant() {
     return this.getAttribute('variant')
-  }
-
-  get temp() {
-    return this.getAttribute('temp')
   }
 
   get bleeding() {

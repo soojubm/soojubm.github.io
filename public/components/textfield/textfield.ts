@@ -32,7 +32,7 @@ class Input extends HTMLElement {
     input.setAttribute('type', this.type || 'text')
     input.setAttribute('value', this.value || '')
     input.setAttribute('placeholder', this.placeholder || '')
-    input.setAttribute('disabled', String(this.disabled))
+    if (this.disabled) input.setAttribute('disabled', String(this.disabled))
 
     const prefixSlot = document.createElement('slot')
     prefixSlot.name = 'prefix'

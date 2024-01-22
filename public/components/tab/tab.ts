@@ -3,19 +3,12 @@ import { makeStyleSheet } from '../../javascripts/components/utils'
 class Tab extends HTMLElement {
   static observedAttributes = ['aria-selected']
 
+  // TODO : constructo가 아닌 connectedCallback에서 사용하면, 스타일을 못 받아옴
+  // observed
+
   constructor() {
     super()
-  }
 
-  get value() {
-    return this.getAttribute('value')
-  }
-
-  get selected() {
-    return this.getAttribute('selected')
-  }
-
-  connectedCallback() {
     const shadow = this.attachShadow({ mode: 'open' })
 
     const container = document.createElement('button')
@@ -36,6 +29,16 @@ class Tab extends HTMLElement {
     // interoperable: works on most modern browsers, and for the cases where it doesn't, the user can still read the information.
     // accessible: I could make more efforts on this subject, but this article isn't about accessibility.
   }
+
+  get value() {
+    return this.getAttribute('value')
+  }
+
+  get selected() {
+    return this.getAttribute('selected')
+  }
+
+  connectedCallback() {}
 
   disconnectedCallback() {}
   attributeChangedCallback(name, oldValue, newValue) {

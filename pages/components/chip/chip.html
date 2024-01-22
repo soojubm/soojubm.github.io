@@ -199,7 +199,7 @@
     <test-text variant="body-bold">single selection</test-text>
     <test-text variant="body">Contents filtering</test-text>
     <section class="component-case">
-      <test-group>
+      <test-group variant="chip">
         <test-chip status="active" class="js-toggle is-active">전체</test-chip>
         <test-chip class="js-toggle">결제완료</test-chip>
       </test-group>
@@ -210,7 +210,7 @@
     <test-text variant="body-bold">Multiple selections</test-text>
     <test-text variant="body">menuitem, checkbox로 대체 가능한 selection role</test-text>
     <section class="component-case">
-      <test-group aria-multiselectable="true">
+      <test-group variant="chip" aria-multiselectable="true">
         <test-chip role="option" aria-selected="true" status="checked">
           <test-icon slot="prefix" name="check"></test-icon>
           소설
@@ -240,7 +240,7 @@
             size="small"
             style="width: var(--popover-width); position: absolute"
           >
-            <test-group alignment="vertical" class="dropdown-menu">
+            <test-group variant="radio">
               <test-radio name="gogo" value="">1~3명</test-radio>
               <test-radio name="gogo" value="">1~3명</test-radio>
               <test-chip>적용</test-chip>
@@ -257,7 +257,7 @@
             size="small"
             style="width: var(--popover-width); position: absolute"
           >
-            <test-group alignment="vertical" class="dropdown-menu">
+            <test-group variant="dropdown">
               <h6 class="dropdown-menu-title" hidden>Dropdown header</h6>
               <test-menuitem label="최신순" disabled>
                 <test-icon slot="check" name="check"></test-icon>
@@ -277,7 +277,7 @@
             size="small"
             style="width: var(--popover-width); position: absolute"
           >
-            <test-group alignment="vertical" class="dropdown-menu">
+            <test-group variant="dropdown">
               <test-menuitem label="신고"></test-menuitem>
               <!-- TODO <hr class="dropdown-menu-divider" style="margin: 0.5rem 0" /> -->
               <test-menuitem label="수정"></test-menuitem>

@@ -11,9 +11,21 @@
 /* // space-between + column width */
 
 .group[data-variant=menuitem] {
+  flex-direction: column;
   gap: var(--space-2);
 }
 
+.group[data-variant=dropdown] {
+  flex-direction: column;
+}
+
+/* .group[data-variant=avatar] {gap:var(--space-2);} */
+/* TODO : last-of-tpye은 avagtar와 label 모두에 적용됨 */
+.group[data-variant=avatar] > * + * {margin-left:-.5rem;}
+/* .group[data-variant=avatar] > *:nth-last-child(1) {margin-left:var(--space-2);} */
+
+.group[data-variant=button],
+.group[data-variant=tag],
 .group[data-variant=chip] {
   gap:var(--space-2);
 }
@@ -22,7 +34,6 @@
 .group[data-variant=checkbox] {
   flex-direction:column;
   align-items:flex-start;
-  gap: 0;
 }
 
 .group[data-alignment=vertical] {

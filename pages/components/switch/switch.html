@@ -13,10 +13,9 @@
     </dl>
 
     <section class="component-example">
-      <test-group alignment="vertical">
-        <!-- Receive weekly newsletter -->
+      <test-group variant="menuitem">
         <test-switch name="newsletter">뉴스레터 받아보기</test-switch>
-        <test-switch name="newsletter" disabled>뉴스레터 받아보기</test-switch>
+        <test-switch name="newsletter" disabled>Receive weekly newsletter</test-switch>
       </test-group>
     </section>
 
@@ -28,7 +27,7 @@
         <dd>id={props.name} props 필요 object/type 불필요</dd>
         <dt>label?</dt>
         <dd>string</dd>
-        <dd>isHiddenLabel. 동사를 포함합니다. choice보다 action에 가깝다.</dd>
+        <dd>isHiddenLabel.</dd>
         <dt>value</dt>
         <dd>boolean ? on || off</dd>
         <dd>TODO</dd>
@@ -55,8 +54,10 @@
       <test-text variant="subhead">Visual style</test-text>
       <test-text variant="body">
         on & off context. 스위치의 왼쪽과 오른쪽에 각각 레이블을 배치하여 콘텐츠 스위칭으로 사용하지
-        마세요.
+        마세요. 콘텐츠 스위칭을 위해서는 탭을 사용해야 합니다.
       </test-text>
+      <test-text variant="subhead">Content</test-text>
+      <test-text variant="body"> 레이블은 동사를 포함합니다. </test-text>
 
       <test-text variant="subhead">A11y</test-text>
       <test-text variant="body">on & off label</test-text>

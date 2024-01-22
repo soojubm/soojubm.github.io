@@ -11,7 +11,7 @@
       </test-text>
     </header>
     <section class="component-example">
-      <test-group temp="vertical">
+      <test-group variant="chip">
         <test-avatar size="huge" badge="true"></test-avatar>
         <test-avatar variant="secondary" size="huge" badge="true"></test-avatar>
         <test-avatar size="large" badge="true"></test-avatar>
@@ -68,13 +68,11 @@
       "
     >
       <test-tile variant="elevated" size="small">
-        <test-group style="align-items: center">
-          <test-avatar-group>
-            <test-avatar size="small"></test-avatar>
-            <test-avatar size="small"></test-avatar>
-            <test-avatar size="small"></test-avatar>
-            <test-avatar size="small"></test-avatar>
-          </test-avatar-group>
+        <test-group variant="avatar">
+          <test-avatar size="small"></test-avatar>
+          <test-avatar size="small"></test-avatar>
+          <test-avatar size="small"></test-avatar>
+          <test-avatar size="small"></test-avatar>
           <span class="avatargroup-label">Followed by 수줍이 외 4명</span>
         </test-group>
       </test-tile>
@@ -125,20 +123,16 @@
             </test-group>
           </div>
           <test-separator></test-separator>
-          <test-group style="align-items: center; width: 400px">
-            <test-avatar-group>
+            <test-group variant="avatar">
               <test-avatar size="small"></test-avatar>
               <test-avatar size="small"></test-avatar>
               <test-avatar size="small"></test-avatar>
               <test-avatar size="small"></test-avatar>
-            </test-avatar-group>
-            <span class="avatargroup-label">Followed by 수줍이 외 4명</span>
-          </test-group>
+              <span class="avatargroup-label">Followed by 수줍이 외 4명</span>
+            </test-group>
         </div>
       </test-card>
       <test-separator></test-separator>
-
-  
   
       <test-card variant="flat" size="medium" style="width:100%;max-width:400px;">
         <div slot="entire">

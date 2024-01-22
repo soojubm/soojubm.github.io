@@ -9,24 +9,29 @@
     </test-tablist> -->
 
     <section class="component-example">
-      <test-tablist variant="primary">
+      <!-- TODO Primary style -->
+      <!-- <test-tablist variant="primary">
         <test-tab slot="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">
           첫번째 탭
-          <em class="tablist-tab-badge badge">24</em>
+          <test-badge>24</test-badge>
         </test-tab>
         <test-tab slot="tab" aria-controls="panel-2" id="tab-2" tabindex="-1">두번째 탭</test-tab>
         <test-tab slot="tab" aria-controls="panel-3" id="tab-3" tabindex="-1">세번째 탭</test-tab>
         <i slot="indicator" class="tablist-indicator"></i>
-      </test-tablist>
-      <test-separator></test-separator>
+      </test-tablist> -->
       <!-- data-tabs='{"name": "Chris Coyier", "job": "Web Person"}' -->
       <test-tablist>
         <test-tab slot="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">
           첫번째 탭
-          <em class="tablist-tab-badge badge">24</em>
+          <test-badge slot="badge">24</test-badge>
         </test-tab>
-        <test-tab slot="tab" aria-controls="panel-2" id="tab-2" tabindex="-1">두번째 탭</test-tab>
-        <test-tab slot="tab" aria-controls="panel-3" id="tab-3" tabindex="-1">세번째 탭</test-tab>
+        <test-tab slot="tab" aria-controls="panel-2" id="tab-2" tabindex="-1">
+          두번째 탭 <test-badge slot="badge">24</test-badge>
+        </test-tab>
+        <test-tab slot="tab" aria-controls="panel-3" id="tab-3" tabindex="-1">
+          세번째 탭
+          <test-badge slot="badge">24</test-badge>
+        </test-tab>
         <i slot="indicator" class="tablist-indicator"></i>
       </test-tablist>
       <div
@@ -61,6 +66,15 @@
       >
         <p>Content for the third panel</p>
       </div>
+      <test-separator></test-separator>
+      <div style="max-width: 200px">
+        <test-tablist>
+          <test-tab slot="tab" selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">
+            Monthly
+          </test-tab>
+          <test-tab slot="tab" aria-controls="panel-2" id="tab-2" tabindex="-1">Yearly</test-tab>
+        </test-tablist>
+      </div>
     </section>
 
     <section class="component-props">
@@ -73,24 +87,38 @@
         <dd>React.Node</dd>
         <dd>TODO SPA에서 Tablist를 따로 정의해야 한다.</dd>
         <!-- <dt>indicator (active bar)</dt> -->
-        <dt>badge? counter? isUnread?</dt>
+        <dt>counterBadge slot</dt>
+        <dd>Number</dd>
         <dd></dd>
+        <dt>unreadBadge slot</dt>
+        <dd>Boolean</dd>
         <dd></dd>
       </dl>
     </section>
 
-    <section class="component-guide">
-      <section class="component-case">
-        <div style="max-width: 200px">
-          <test-tablist>
-            <test-tab selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">
-              Monthly
-            </test-tab>
-            <test-tab aria-controls="panel-2" id="tab-2" tabindex="-1">Yearly</test-tab>
-          </test-tablist>
-        </div>
-      </section>
+    <section class="" style="margin: 4rem 0 0">
+      <div class="feature-item">
+        <test-avatar variant="secondary" size="large" fallback=" ">⚒️</test-avatar>
+        <test-text variant="subhead" data-temp=" minimum viable experience">
+          이지 스캐닝
+        </test-text>
+        <sup>Easy scanning</sup>
+        <test-text variant="body"> 특징 중심으로 가이드를 하는 것은 어떨까? </test-text>
+        <test-text variant="body"> 여기서 특징이란 디자인 시스템의 파운데이션. </test-text>
+      </div>
+      <br /><br />
+      <div class="feature-item">
+        <test-avatar variant="secondary" size="large" fallback=" ">⚒️</test-avatar>
+        <test-text variant="subhead" data-temp=" minimum viable experience">
+          콘텐츠 스위칭
+        </test-text>
+        <sup>Content switching</sup>
+        <test-text variant="body"> 특징 중심으로 가이드를 하는 것은 어떨까? </test-text>
+        <test-text variant="body"> 여기서 특징이란 디자인 시스템의 파운데이션. </test-text>
+      </div>
+    </section>
 
+    <section class="component-guide">
       <test-text variant="subhead">Behavior (Content switching)</test-text>
       <test-text variant="body">
         콘텐츠 정렬 또는 콘텐츠 필터로 사용하지 마세요. 구조적으로 콘텐츠 필터의 맥락인
@@ -107,7 +135,7 @@
       <test-text variant="body">
         탭을 중첩하지 마세요. 페이지에서 수행할 수 있는 과업을 명확히. 플로우 설계.
       </test-text>
-      <test-text variant="subhead">Editorial(Easy scanning)</test-text>
+      <test-text variant="subhead">Editorial</test-text>
       <test-text variant="body">
         레이블은 최대 2단어. 페이지의 사이에 사용하지 않기. tile(paper) 내부에서는 허용됨
       </test-text>

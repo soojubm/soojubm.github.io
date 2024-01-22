@@ -117,6 +117,9 @@ input[type=search]::-webkit-search-results-decoration {display:none;}
 [data-label=false] ::slotted([slot=suffix]){
   top: 0;
 }
+[data-label=false] .textfield-input {padding-left:48px !important;}
+/* 왜 안 됨. */
+/* ::slotted([slot=prefix]) ~ .textfield-input {padding-left:48px !important;} */
 
 
 .textfield-prefix,
@@ -127,7 +130,6 @@ input[type=search]::-webkit-search-results-decoration {display:none;}
   position:absolute;top:var(--size-small);left:var(--space-4);
 }
 
-::slotted([slot=prefix]) ~ .textfield-input {padding-left:48px !important;}
 
 
 .textfield-suffix ~ .textfield-input {padding-right:4rem;}

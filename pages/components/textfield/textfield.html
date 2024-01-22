@@ -58,8 +58,9 @@
     <section class="component-example">
       <div style="display:flex;flex-direction:column;gap:1rem;max-width: 400px">
         <test-textfield
+          type="text"
           size="small"
-          placeholder="Textarea small Placeholder..."
+          placeholder="Small size..."
         ></test-textfield>
         <test-textfield
           type="text"
@@ -100,7 +101,7 @@
         <dt>name</dt>
         <dd>string</dd>
         <dd>id={props.name}</dd>
-        <dt>label<attr>?</attr></dt>
+        <dt>label</dt>
         <dd>string</dd>
         <dd><del>레이블을 쓰지 않으면 hiddenLabel 스타일.</del></dd>
         <dt>isHiddenLabel</dt>
@@ -117,6 +118,7 @@
         <dd></dd>
         <dt>helper<attr>?</attr></dt>
         <dd>string</dd>
+        <dd>validation / helper</dd>
         <dd>isInvalid = helper.length === 0</dd>
         <dt>state</dt>
         <dd>'disabled' | 'readonly' | 'focused' | 'invalid'</dd>
@@ -135,85 +137,62 @@
 
     <section class="component-guide">
 
-      <ul>
-        <li>
-          Searchfield / Commentfield / counterField / PriceField...
-        </li>
-        <li>
-          optional :: label, validation, helper
-        </li>
-        <li>fieldset variant=checkbox-group horizontal / flex=1</li>
-        <li>TODO 유틸함수 만들기. 앞자리 0 제거. 숫자만입력3자리마다콤마. 소숫점 컨트롤.</li>
-        <li>
-          url field. www 및 https://<br />
-          required indicator / optional indicator / validations / masked / validation feedback 기본
-          입력 일반 텍스트필드와 특수한? 텍스트필드 구별을 위한 시각적인 단서를 제공하세요. 예시 ::
-          검색 아이콘,
-        </li>
-        <li>
-          form 컴포넌트는 간격에 대한 구조 컴포넌트. form patterns. FormField label / TextInput 으로
-          나누는 방안. 그러면 searchField 등의 대안이 될 수 있나?
-        </li>
-        <li>
-          FormLabel checkbox-label와 input-label을 똑같이 할 수 있나? field label : fieldset legend,
-          label - input/textarea
-        </li>
-        <li>
-          helper(help message)와 feedback(feedback message)을 구분하기. aria-assertive. field feedback
-          / fieldset feedback - checkbox group, login
-        </li>
-      </ul>
+      <blockquote style="max-width:720px;">
+        <ul class="checklist">
+          <li>TODO utilities. 앞자리 0 제거. 숫자만입력3자리마다콤마. 소숫점 컨트롤.</li>
+          <li>
+            url field. www 및 https://
+          </li>
+          <li>
+            form 컴포넌트는 간격에 대한 구조 컴포넌트. form patterns. FormField label / TextInput 으로
+            나누는 방안.  groupable은 속성. 그래서 컴포넌트 이름은 form layout / fieldset / fieldgroup
+            FormLabel checkbox-label와 input-label을 똑같이 할 수 있나? field label : fieldset legend,
+            label - input/textarea 그러면 searchField 등의 대안이 될 수 있나?
+          </li>
+          <li>
+            helper(help message)와 feedback(feedback message / validation feedback)을 구분하기.
+          </li>
+          <li>field feedback / fieldset feedback(checkbox group, login)</li>
+        </ul>
+      </blockquote>
 
       <test-text variant="subhead">Visual Style</test-text>
       <test-text variant="body"> 레이블을 텍스트필드 왼쪽에 배치하지 마세요. </test-text>
       <test-text variant="body">
-        이중 레이블링하지 마세요. prefix icon은 텍싀트 레이블을 대체합니다. 추가하는 맥락에서 아이콘
-        레이블 사용. (예시 이메일로 사용자 추가).
+        이중 레이블링하지 마세요. 아이콘은 텍싀트 레이블을 대체할 수 있습니다. (아이콘 레이블을 사용하는 예시: 이메일로 사용자를 추가할 때 입력 정보를 아이콘으로 직관화)
       </test-text>
-      <test-text variant="body">
-        불필요한 정보 입력을 유도하지 마세요. 사용자 여정에 허들이 될 수 있는 불필요한 입력 필드
-        최소화. 다시말해 모든 텍스트 필드는 필수 입력이어야 한다. 사용자 정보를 제공하여 사용자 또는
-        비즈니스 이점이 명확한 경우 선택 필드를 제안할 수 있습니다. 선택 입력 필드는 '선택입력'
-        텍스트로 가이드합니다.
+      <test-text variant="body">일반 텍스트필드와 특수한? 텍스트필드 구별을 위한 시각적인 단서를 제공하세요.</test-text>
+      <test-text variant="body" data-temp="required indicator / optional indicator">
+        불필요한 정보 입력을 유도하지 마세요. 사용자 여정에 허들이 될 수 있습니다. 다시 말해 모든 텍스트필드는 필수 입력을 보장(?)합니다. 단, 사용자 정보를 수집하여 사용자 또는
+        비즈니스에 이점이 명확한 경우 선택 필드를 제안할 수 있습니다. 이 때 선택 입력 필드에 '선택입력' 텍스트로 가이드합니다.
       </test-text>
-
-      <test-text variant="subhead">Best practices</test-text>
-      <test-text variant="body">
-        넘버필드는 작은 사이즈인데 결국 두 개의 사이즈로? 수량 뿐 아니라 숫자만 입력할 수 있는 필드.
-        헬퍼 텍스트(위/아래). label :: line-height: 24px
-      </test-text>
-      <test-text>
-        groupable은 속성. 그래서 컴포넌트 이름은 form layout / fieldset / fieldgroup
-      </test-text>
-      <!--
-      <test-text variant="body"> 일반 텍스트필드와 특수한? 텍스트필드 구별을 위한 시각적인 단서를 제공하세요. 검색 아이콘 등 </test-text> -->
     </section>
 
-    <test-text variant="subhead">Fieldgroup</test-text>
-    <test-text variant="body">서비스 이용에 필수적인 필드는 그루핑 하지마요마요. ?? </test-text>
+    <test-text variant="subhead">Field group</test-text>
+    <test-text variant="body">그룹이 되는 모든 필드는 선택 입력입니다.</test-text>
     <section class="component-case">
-      <fieldset class="textfield-group" style="width: 100%; max-width: 400px">
+      <fieldset class="textfield-group" style="width: 100%; max-width: 400px; align-items: flex-end;">
         <test-textfield label="Length" placeholder="cm unit"></test-textfield>
-        <test-icon name="xmark"></test-icon>
+        <div style="display:flex;align-items:center;height:var(--size-large)"><test-icon name="xmark"></test-icon></div>
         <test-textfield label="Width" placeholder="x means"></test-textfield>
-        <test-icon name="xmark"></test-icon>
+        <div style="display:flex;align-items:center;height:var(--size-large)"><test-icon name="xmark"></test-icon></div>
         <test-textfield label="Height" placeholder="cm"></test-textfield>
       </fieldset>
     </section>
 
-    <test-text variant="subhead">PasswordField</test-text>
+    <test-text variant="body-bold">PasswordField</test-text>
     <section class="component-case">
       <test-textfield type="password" label="비밀번호">
         <test-icon slot="suffix" name="eye-empty"></test-icon>
       </test-textfield>
     </section>
 
-    <test-text variant="subhead">EmailField</test-text>
+    <test-text variant="body-bold">EmailField</test-text>
     <section class="component-case">
       <test-textfield label="서치필드 테스트"></test-textfield>
     </section>
 
-    <test-text variant="subhead">SearchField</test-text>
+    <test-text variant="body-bold">SearchField</test-text>
     <section class="component-case">
       <form class="searchfield" style="max-width: 400px">
         <label class="searchfield-prefix">
@@ -233,7 +212,7 @@
       </form>
     </section>
 
-    <test-text variant="subhead">NumberField</test-text>
+    <test-text variant="body-bold">NumberField</test-text>
     <!-- <input type="text" inputmode="numeric" pattern="[0-9]*" />
     <small id="" class="textfield-helper" aria-live="assertive">pattern="[0-9]+"</small> --></test-text>
     <section class="component-case">
@@ -245,17 +224,19 @@
         oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
       ></test-textfield>
     </section>
-    <test-text variant="subhead">DateRangeField / DateField</test-text>
+
+    <test-text variant="body-bold">DateRangeField / DateField</test-text>
     <section class="component-case">
-      <fieldset class="textfield-group" style="width: 100%; max-width: 400px">
+      <test-group style="width: 100%; max-width: 400px">
         <test-textfield type="date" name="date-start" label="체크인" placeholder="YYYY. MM. DD.">
           <test-icon slot="suffix" name="calendar"></test-icon>
         </test-textfield>
         <test-textfield type="date" name="date-end" label="체크아웃" placeholder="YYYY. MM. DD.">
           <test-icon slot="suffix" name="calendar"></test-icon>
         </test-textfield>
-      </fieldset>
+      </test-group>
     </section>
+
     <section class="component-case">
       <fieldset class="textfield-group" style="width: 100%; max-width: 400px; flex-direction:column;">
         <test-textfield type="date" name="date-start" placeholder="YYYY. MM. DD.">
@@ -266,7 +247,8 @@
         </test-textfield>
       </fieldset>
     </section>
-    <test-text variant="subhead">Counter</test-text>
+
+    <test-text variant="body-bold">Counter</test-text>
     <ul>
       <li>props: minValue, maxValue, value, onDecreseClick, onIncreseClick</li>
       <li>221021: - + 버튼에 포커스는 필요가 없다. input 키보드 위 아래로?</li>
@@ -320,7 +302,7 @@
       </test-group>
     </section>
 
-    <test-text variant="subhead">Textarea</test-text>
+    <test-text variant="body-bold">Textarea or Commentfield</test-text>
     <section class="component-case">
       <div class="textfield" style="display:block;">
         <label class="textfield-label" for="search1">레이블</label>
