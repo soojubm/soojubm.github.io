@@ -4,7 +4,6 @@
     .component-case > * {
       display: flex;
       width: 100%;
-      max-width: 400px;
       margin: 0 auto;
     }
   </style>
@@ -47,30 +46,20 @@
     <test-text variant="body-large">
       사용자가 데이터를 입력할 수 있는 인러렉티브한? 필드입니다.
     </test-text>
-
     <!-- - 콤보박스 textfield + select -->
-
     <dl class="article-aka">
       <dt>a.k.a.</dt>
       <dd>TextInput</dd>
       <dd>Input</dd>
     </dl>
     <section class="component-example">
-      <div style="display:flex;flex-direction:column;gap:1rem;max-width: 400px">
-        <test-textfield
-          type="text"
-          size="small"
-          placeholder="Small size..."
-        ></test-textfield>
-        <test-textfield
-          type="text"
-          placeholder="Default..."
-        ></test-textfield>
-        <test-textfield
-          type="text"
-          placeholder="Disabled..."
-          disabled
-        ></test-textfield>
+      <test-group variant="menuitem">
+        <test-textfield type="text" size="small" placeholder="Small size..."></test-textfield>
+        <test-textfield type="text" placeholder="Medium size... (default)"></test-textfield>
+      </test-group>
+      <test-separator></test-separator>
+      <div style="display: flex; flex-direction: column; gap: 0.75rem">
+        <test-textfield type="text" placeholder="Disabled..." disabled></test-textfield>
         <test-textfield
           type="email"
           label="Invalid"
@@ -81,15 +70,102 @@
           aria-errormessage="msgID"
           helper="이미 등록된 이메일입니다."
         ></test-textfield>
-        <test-textfield type="text" label="" labeling="false" placeholder="Placeholder...">
+      </div>
+      <test-separator></test-separator>
+      <div style="display: flex; flex-direction: column; gap: 0.75rem">
+        <form class="searchfield">
+          <label class="searchfield-prefix">
+            <test-icon name="search"></test-icon>
+          </label>
+          <input
+            class="searchfield-input"
+            type="search"
+            placeholder="궁금한 인물이나 이슈가 있나요?"
+          />
+          <button class="searchfield-clear" aria-label="clear keyword">
+            <span class="material-symbols-outlined">close</span>
+          </button>
+          <button class="searchfield-cancel" aria-label="clear keyword">
+            <span class="material-symbols-outlined">취소</span>
+          </button>
+        </form>
+        <test-textfield type="password" label="Password field">
+          <test-icon slot="suffix" name="eye-solid" aria-label="비밀번호 보기"></test-icon>
+        </test-textfield>
+        <test-textfield
+          type="number"
+          label="Number field (금액)"
+          value="20000"
+          placeholder="Textarea Placeholder..."
+        ></test-textfield>
+        <!-- oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" -->
+      </div>
+      <test-separator></test-separator>
+      <div class="textfield">
+        <label class="textfield-label" for="search1">Textarea or Commentfield</label>
+        <small class="textfield-byte"><b>0 KB</b> / 100 KB</small>
+        <textarea
+          class="textfield-input"
+          rows="3"
+          placeholder="Textarea Placeholder..."
+          style="height: auto"
+        ></textarea>
+      </div>
+      <test-separator></test-separator>
+      <div class="counter js-counter" style="max-width: 240px; display: flex; gap: 0.5rem">
+        <label for="numberfield" style="position: absolute; opacity: 0">
+          레이블 라이트하우스용
+        </label>
+        <test-chip
+          class="counter-decrement js-counter-decrement"
+          aria-controls="numberfield"
+          tabindex="-1"
+        >
+          <test-icon slot="icon" name="minus"></test-icon>
+        </test-chip>
+        <test-textfield size="small" value="20"></test-textfield>
+        <!-- <input
+          class="counter-input reset-input textfield-input js-counter-input js-number-input"
+          type="number"
+          name="counter1"
+          id="numberfield"
+          min="5"
+          max="20"
+          value="0"
+        /> -->
+        <test-chip class="counter-increment js-counter-increment" tabindex="-1">
+          <test-icon slot="icon" name="plus"></test-icon>
+        </test-chip>
+      </div>
+      <test-separator></test-separator>
+      <test-group style="align-items: center">
+        <div>
+          <p style="margin: 0"><b>1 sandbox</b></p>
+          <small style="display: block; color: var(--color-text-light)"
+            >$100.00 / addl sandbox</small
+          >
+        </div>
+        <test-group variant="chip">
+          <test-chip
+            class="counter-decrement js-counter-decrement"
+            aria-controls="numberfield"
+            tabindex="-1"
+          >
+            <test-icon slot="icon" name="minus"></test-icon>
+          </test-chip>
+          <test-chip class="counter-increment js-counter-increment" tabindex="-1">
+            <test-icon slot="icon" name="plus"></test-icon>
+          </test-chip>
+        </test-group>
+      </test-group>
+      <!-- <test-textfield type="text" label="" labeling="false" placeholder="Placeholder...">
           <test-icon slot="prefix" name="xray-view"></test-icon>
         </test-textfield>
         <test-textfield type="email" label="" labeling="false" placeholder="with Suffix...">
           <test-icon slot="suffix" name="xray-view"></test-icon>
-        </test-textfield>
-        <!-- <p>unit, choose/enter</p> -->
-        <!-- <abbr title="필수입력">*</abbr> -->
-      </div>
+        </test-textfield> -->
+      <!-- <p>unit, choose/enter</p> -->
+      <!-- <abbr title="필수입력">*</abbr> -->
     </section>
 
     <section class="component-props">
@@ -134,185 +210,70 @@
       </dl>
     </section>
 
-
     <section class="component-guide">
-
-      <blockquote style="max-width:720px;">
+      <blockquote style="max-width: 720px">
         <ul class="checklist">
           <li>TODO utilities. 앞자리 0 제거. 숫자만입력3자리마다콤마. 소숫점 컨트롤.</li>
+          <li>url field. www 및 https://</li>
           <li>
-            url field. www 및 https://
-          </li>
-          <li>
-            form 컴포넌트는 간격에 대한 구조 컴포넌트. form patterns. FormField label / TextInput 으로
-            나누는 방안.  groupable은 속성. 그래서 컴포넌트 이름은 form layout / fieldset / fieldgroup
-            FormLabel checkbox-label와 input-label을 똑같이 할 수 있나? field label : fieldset legend,
-            label - input/textarea 그러면 searchField 등의 대안이 될 수 있나?
+            form 컴포넌트는 간격에 대한 구조 컴포넌트. form patterns. FormField label / TextInput
+            으로 나누는 방안. groupable은 속성. 그래서 컴포넌트 이름은 form layout / fieldset /
+            fieldgroup FormLabel checkbox-label와 input-label을 똑같이 할 수 있나? field label :
+            fieldset legend, label - input/textarea 그러면 searchField 등의 대안이 될 수 있나?
           </li>
           <li>
             helper(help message)와 feedback(feedback message / validation feedback)을 구분하기.
           </li>
           <li>field feedback / fieldset feedback(checkbox group, login)</li>
+          <li>props: minValue, maxValue, value, onDecreseClick, onIncreseClick</li>
+          <li>221021: - + 버튼에 포커스는 필요가 없다. input 키보드 위 아래로?</li>
         </ul>
       </blockquote>
 
       <test-text variant="subhead">Visual Style</test-text>
       <test-text variant="body"> 레이블을 텍스트필드 왼쪽에 배치하지 마세요. </test-text>
       <test-text variant="body">
-        이중 레이블링하지 마세요. 아이콘은 텍싀트 레이블을 대체할 수 있습니다. (아이콘 레이블을 사용하는 예시: 이메일로 사용자를 추가할 때 입력 정보를 아이콘으로 직관화)
+        이중 레이블링하지 마세요. 아이콘은 텍싀트 레이블을 대체할 수 있습니다. (아이콘 레이블을
+        사용하는 예시: 이메일로 사용자를 추가할 때 입력 정보를 아이콘으로 직관화)
       </test-text>
-      <test-text variant="body">일반 텍스트필드와 특수한? 텍스트필드 구별을 위한 시각적인 단서를 제공하세요.</test-text>
+      <test-text variant="body"
+        >일반 텍스트필드와 특수한? 텍스트필드 구별을 위한 시각적인 단서를 제공하세요.</test-text
+      >
       <test-text variant="body" data-temp="required indicator / optional indicator">
-        불필요한 정보 입력을 유도하지 마세요. 사용자 여정에 허들이 될 수 있습니다. 다시 말해 모든 텍스트필드는 필수 입력을 보장(?)합니다. 단, 사용자 정보를 수집하여 사용자 또는
-        비즈니스에 이점이 명확한 경우 선택 필드를 제안할 수 있습니다. 이 때 선택 입력 필드에 '선택입력' 텍스트로 가이드합니다.
+        불필요한 정보 입력을 유도하지 마세요. 사용자 여정에 허들이 될 수 있습니다. 다시 말해 모든
+        텍스트필드는 필수 입력을 보장(?)합니다. 단, 사용자 정보를 수집하여 사용자 또는 비즈니스에
+        이점이 명확한 경우 선택 필드를 제안할 수 있습니다. 이 때 선택 입력 필드에 '선택입력'
+        텍스트로 가이드합니다.
       </test-text>
     </section>
 
-    <test-text variant="subhead">Field group</test-text>
-    <test-text variant="body">그룹이 되는 모든 필드는 선택 입력입니다.</test-text>
+    <test-text variant="body-bold">Field group</test-text>
+    <!-- <test-text variant="body">그룹이 되는 모든 필드는 선택 입력입니다.</test-text> -->
     <section class="component-case">
-      <fieldset class="textfield-group" style="width: 100%; max-width: 400px; align-items: flex-end;">
+      <fieldset class="textfield-group" style="width: 100%; align-items: flex-end">
         <test-textfield label="Length" placeholder="cm unit"></test-textfield>
-        <div style="display:flex;align-items:center;height:var(--size-large)"><test-icon name="xmark"></test-icon></div>
+        <div style="display: flex; align-items: center; height: var(--size-large)">
+          <test-icon name="xmark"></test-icon>
+        </div>
         <test-textfield label="Width" placeholder="x means"></test-textfield>
-        <div style="display:flex;align-items:center;height:var(--size-large)"><test-icon name="xmark"></test-icon></div>
+        <div style="display: flex; align-items: center; height: var(--size-large)">
+          <test-icon name="xmark"></test-icon>
+        </div>
         <test-textfield label="Height" placeholder="cm"></test-textfield>
       </fieldset>
     </section>
-
-    <test-text variant="body-bold">PasswordField</test-text>
     <section class="component-case">
-      <test-textfield type="password" label="비밀번호">
-        <test-icon slot="suffix" name="eye-empty"></test-icon>
-      </test-textfield>
-    </section>
-
-    <test-text variant="body-bold">EmailField</test-text>
-    <section class="component-case">
-      <test-textfield label="서치필드 테스트"></test-textfield>
-    </section>
-
-    <test-text variant="body-bold">SearchField</test-text>
-    <section class="component-case">
-      <form class="searchfield" style="max-width: 400px">
-        <label class="searchfield-prefix">
-          <test-icon name="search"></test-icon>
-        </label>
-        <input
-          class="searchfield-input"
-          type="search"
-          placeholder="궁금한 인물이나 이슈가 있나요?"
-        />
-        <button class="searchfield-clear" aria-label="clear keyword">
-          <span class="material-symbols-outlined">close</span>
-        </button>
-        <button class="searchfield-cancel" aria-label="clear keyword">
-          <span class="material-symbols-outlined">취소</span>
-        </button>
-      </form>
-    </section>
-
-    <test-text variant="body-bold">NumberField</test-text>
-    <!-- <input type="text" inputmode="numeric" pattern="[0-9]*" />
-    <small id="" class="textfield-helper" aria-live="assertive">pattern="[0-9]+"</small> --></test-text>
-    <section class="component-case">
-      <test-textfield
-        type="number"
-        label="금액"
-        value="20000"
-        placeholder="Textarea Placeholder..."
-        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
-      ></test-textfield>
-    </section>
-
-    <test-text variant="body-bold">DateRangeField / DateField</test-text>
-    <section class="component-case">
-      <test-group style="width: 100%; max-width: 400px">
-        <test-textfield type="date" name="date-start" label="체크인" placeholder="YYYY. MM. DD.">
-          <test-icon slot="suffix" name="calendar"></test-icon>
-        </test-textfield>
-        <test-textfield type="date" name="date-end" label="체크아웃" placeholder="YYYY. MM. DD.">
-          <test-icon slot="suffix" name="calendar"></test-icon>
-        </test-textfield>
-      </test-group>
-    </section>
-
-    <section class="component-case">
-      <fieldset class="textfield-group" style="width: 100%; max-width: 400px; flex-direction:column;">
-        <test-textfield type="date" name="date-start" placeholder="YYYY. MM. DD.">
-          <test-icon slot="suffix" name="calendar"></test-icon>
-        </test-textfield>
-        <test-textfield type="date" name="date-end" placeholder="YYYY. MM. DD.">
-          <test-icon slot="suffix" name="calendar"></test-icon>
-        </test-textfield>
-      </fieldset>
-    </section>
-
-    <test-text variant="body-bold">Counter</test-text>
-    <ul>
-      <li>props: minValue, maxValue, value, onDecreseClick, onIncreseClick</li>
-      <li>221021: - + 버튼에 포커스는 필요가 없다. input 키보드 위 아래로?</li>
-    </ul>
-    <section class="component-case">
-      <div class="counter js-counter" style="max-width: 240px; display: flex; gap: 0.5rem">
-        <label for="numberfield" style="position: absolute; opacity: 0">
-          레이블 라이트하우스용
-        </label>
-        <test-chip
-          class="counter-decrement js-counter-decrement"
-          aria-controls="numberfield"
-          tabindex="-1"
-        >
-          <test-icon slot="icon" name="minus"></test-icon>
-        </test-chip>
-        <test-textfield size="small" value="20"></test-textfield>
-        <!-- <input
-          class="counter-input reset-input textfield-input js-counter-input js-number-input"
-          type="number"
-          name="counter1"
-          id="numberfield"
-          min="5"
-          max="20"
-          value="0"
-        /> -->
-        <test-chip class="counter-increment js-counter-increment" tabindex="-1">
-          <test-icon slot="icon" name="plus"></test-icon>
-        </test-chip>
-      </div>
-      <test-separator></test-separator>
-      <test-group style="align-items: center">
-        <div>
-          <p style="margin: 0"><b>1 sandbox</b></p>
-          <small style="display: block; color: var(--color-text-light)"
-            >$100.00 / addl sandbox</small
-          >
+      <div style="display: flex; justify-content: space-between; gap: var(--space-3)">
+        <div style="flex: auto; width: 50%">
+          <test-textfield type="date" name="date-start" label="체크인" placeholder="YYYY. MM. DD.">
+            <test-icon slot="suffix" name="calendar"></test-icon>
+          </test-textfield>
         </div>
-        <test-group style="width: max-content; margin-left: auto">
-          <test-chip
-            class="counter-decrement js-counter-decrement"
-            aria-controls="numberfield"
-            tabindex="-1"
-          >
-            <test-icon slot="icon" name="minus"></test-icon>
-          </test-chip>
-          <test-chip class="counter-increment js-counter-increment" tabindex="-1">
-            <test-icon slot="icon" name="plus"></test-icon>
-          </test-chip>
-        </test-group>
-      </test-group>
-    </section>
-
-    <test-text variant="body-bold">Textarea or Commentfield</test-text>
-    <section class="component-case">
-      <div class="textfield" style="display:block;">
-        <label class="textfield-label" for="search1">레이블</label>
-        <small class="textfield-byte"><b>0 KB</b> / 100 KB</small>
-        <textarea
-          class="textfield-input"
-          rows="3"
-          placeholder="Textarea Placeholder..."
-          style="height: auto"
-        ></textarea>
+        <div style="flex: auto; width: 50%">
+          <test-textfield type="date" name="date-end" label="체크아웃" placeholder="YYYY. MM. DD.">
+            <test-icon slot="suffix" name="calendar"></test-icon>
+          </test-textfield>
+        </div>
       </div>
     </section>
 
@@ -321,4 +282,77 @@
       <a href="https://developer.apple.com/documentation/uikit/uisearchbar">HIG searchbar</a>
     </div>
   </article>
+
+  <article class="article">
+    <test-text variant="title">Select</test-text>
+    <test-text variant="body-large">input shape와 chip shape</test-text>
+    <dl class="article-aka">
+      <dt>a.k.a.</dt>
+      <dd title="">dropdown</dd>
+      <dd title="">Picker</dd>
+      <dd title="shopify">Choice list</dd>
+      <dd title="shopify">Action list</dd>
+    </dl>
+
+    <section class="component-example">
+      <div class="textfield">
+        <label class="textfield-label" for="select1">셀렉트 레이블</label>
+        <select class="textfield-input" id="select1">
+          <option value="option1">Choose an option</option>
+        </select>
+        <test-icon name="nav-arrow-down" class="textfield-suffix"></test-icon>
+      </div>
+    </section>
+
+    <section class="component-props">
+      <dl>
+        <dt>options</dt>
+        <dd>Option[]</dd>
+        <dd></dd>
+        <dt>label - option label과 혼동될 수도</dt>
+        <dd>string</dd>
+        <dd></dd>
+        <dt>selectedValue</dt>
+        <dd>Option.value</dd>
+        <dd></dd>
+        <dt>onChange - handleSelectChange</dt>
+        <dd>(event: React.FormEvent[HTMLSelectElement]) => void</dd>
+        <dd></dd>
+      </dl>
+    </section>
+
+    <section class="component-guide">
+      <test-callout icon="📌" heading="잠깜만!">
+        제품의 초기 단계에서는 native select와 dropdown을 함께 가져갈 필요가 있나. native select는
+        모바일 사용성이 좋고 초기 구축이 쉽다. 그러나 제품 또는 제품 개발 과정이 궤도에 올라왔을
+        때는 일정 수준의 컴포넌트가 확보되어 있을 것이기 때문. naming select / width / input
+        bar(google font)
+      </test-callout>
+      <test-text variant="subhead">Best practices</test-text>
+      <ul>
+        <li>
+          셀렉트 옵션의 텍스트 길이에 맞춰 너비가 조절된다. indicator를 position으로 넣고 옵션에
+          말줄임표를 넣어야.
+        </li>
+        <li>레이블 클릭해도 셀렉트가 열리지 않기 때문에 id prop 불필요.</li>
+        <li>
+          다중 선택(combobox)을 셀렉트로 제공하지 마세요. 가 아니라 애초에 콤보박스라는 컴포넌트
+          정의가 안 되어 있음. chip group으로 선택 옵션을 풀어서 제공하세요. 너무 많은 선택에서는
+          콤보박스가 필요. 하지만 그냥 모달 등의 새로운 뷰로 대체하는 게 모바일 친화적.
+        </li>
+        <li>
+          memo. 레이블을 포함하는 형태. select 엘리먼트가 아니라 부모 엘리먼트에 컨테이너 스타일링이
+          필요하고, 클릭 영역까지 지정해야 했다. 그리고 드롭다운으로 구현해야 한다.
+        </li>
+        <li>caret indicator</li>
+      </ul>
+      var selected = Array.from(dnd.options).filter((option) => { return option.selected;
+      }).map((option) => option.value);
+    </section>
+  </article>
 </main>
+
+<!-- <test-text variant="body-bold">NumberField</test-text> -->
+<!-- <input type="text" inputmode="numeric" pattern="[0-9]*" />
+<small id="" class="textfield-helper" aria-live="assertive">pattern="[0-9]+"</small> -->
+<!-- <test-text variant="body-bold">DateRangeField / DateField</test-text> -->

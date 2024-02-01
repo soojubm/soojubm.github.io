@@ -1,7 +1,7 @@
 <main class="component">
   <article class="article js-observer js-scrollspy-section">
-    <test-text variant="title">role=menubar</test-text>
-    <test-text variant="body-large"> toolbar / chip group </test-text>
+    <test-text variant="title">Menubar</test-text>
+    <test-text variant="body-large"> toolbar / chip group / role=menubar</test-text>
     <section class="component-example">
       <menu role="menubar" style="display: flex; align-items: center">
         <test-checkbox>28 selected</test-checkbox>
@@ -12,11 +12,14 @@
           <test-icon slot="icon" name="more-vert"></test-icon>
         </test-chip>
       </menu>
-
       <test-separator></test-separator>
-      <test-group variant="chip">
+      <test-group variant="chip" role="menubar">
         <test-textfield size="small" labeling="false" placeholder="검색꾸">
-          <test-icon slot="prefix" name="search" size="small"></test-icon>
+          <!-- TODO : prefix height vs avatar height -->
+          <!-- TODO : avatar를 쓰니까아바타 특유의 형태와 충돌하고 사이즈를 다시 정의해주어야 한다. 컴포넌트를 한 번 더 씌우면 괜찮겟지만. -->
+          <!-- <test-avatar slot="prefix" size=""> -->
+          <test-icon slot="prefix" name="search"></test-icon>
+          <!-- </test-avatar> -->
         </test-textfield>
         <test-chip name="Filter">
           <test-icon slot="suffix" name="nav-arrow-down"></test-icon>
@@ -35,8 +38,11 @@
   <article class="article js-observer js-scrollspy-section">
     <test-text variant="title">Title Bar</test-text>
     <test-text variant="body-large">
-      뒤로가기 버튼이 chip과 달라야 콘텐츠와 제목 영역의 위계가 잡힘. 그래서 슬롯 대신. 구분선이나
-      배경색도 없어서.
+      모바일 친화적인 헤더. 또는 특정 페이지 모듈(주로 반응형이 되기 쉬운 페이지)의 페이지 헤더
+      역할.
+    </test-text>
+    <test-text variant="body-large">
+      2401 뒤로가기 버튼이 chip과 달라야 콘텐츠와 제목 영역의 위계가 잡힘. 새로운 칩 추가.
     </test-text>
     <test-text variant="body-large"> 231230 backSlot 제거 </test-text>
 
@@ -54,7 +60,7 @@
       <test-separator></test-separator>
       <test-titlebar class="js-titlebar" role="navigation" data-size="large" style="padding: 0">
         <h1 class="titlebar-title js-page-title" title="page title">Large Case</h1>
-        <test-group slot="action">
+        <test-group slot="action" variant="chip">
           <test-chip>저장</test-chip>
           <test-chip class="titlebar-back" onclick="javascript:window.location.href='/';">
             <test-icon slot="icon" name="more-vert"></test-icon>
@@ -68,8 +74,8 @@
         <dt>title<attr>?</attr></dt>
         <dd>string</dd>
         <dd>
-          최대 8자로 제한합니다. 타이틀이 말줄임표로 표시되지 않아야. 하지만 화면 크기는 점점
-          작아지니(접힌 상태의 폴더블폰) 대안이 필요하다.
+          최대 8자로 제한합니다. 타이틀이 말줄임표로 표시되지 않아야. 아니구나 폴더블에서는 어쩔 수
+          없이 말줄임표.
         </dd>
         <dt>backType????<attr>?</attr></dt>
         <dd>'close' | 'back',</dd>

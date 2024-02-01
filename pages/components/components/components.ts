@@ -5,6 +5,7 @@ import main from './components.html'
 import '../components.css'
 
 import '/public/stylesheets/shared.css'
+// import '/public/stylesheets/components/pagination.css'
 import '/public/stylesheets/components/form.css'
 
 document.addEventListener('DOMContentLoaded', () => {

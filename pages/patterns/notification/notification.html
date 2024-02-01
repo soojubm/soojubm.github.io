@@ -1,38 +1,19 @@
 <main class="component notifications js-tab">
-  <article class="article">
-    <blockquote>
-      <ul>
-        <li>popover: 전체 알림 목록을 볼 수 있는 페이지 필요. 모두보기 링크 버튼 필요.</li>
-        <li>
-          modal: 전체 알림 목록을 볼 수 있는 페이지 불필요. 모달에서 infinite scroll이나 more load
-        </li>
-        <li>개별 알림 액션: 읽음-링크/삭제. 알림의 설정.</li>
-        <li>
-          MVP를 위한 팁: 전체를 하나의 클릭 영역으로 정의하고, 콘텐츠와 작성자를 분리하지 않고
-          하나의 텍스트 더미.
-        </li>
-      </ul>
-    </blockquote>
-
-    <button class="navbar-notification-trigger" aria-haspopup="true" aria-expanded="false">
-      trigger
-    </button>
-    <br />
+  <article class="article" style="max-width: 640px; margin: 0 auto">
+    <!-- <button aria-haspopup="true" aria-expanded="false">trigger</button> -->
     <test-titlebar class="js-titlebar" heading="알림"> </test-titlebar>
-
     <test-tablist>
       <button class="tablist-tab">좋아요</button>
       <button class="tablist-tab">코멘트</button>
       <i class="tablist-indicator"></i>
     </test-tablist>
-
-    <test-group class="notification-filter" style="margin: var(--space-3) 0">
+    <test-group variant="button" class="notification-filter" style="margin: var(--space-3) 0">
       <test-chip status="active">모두</test-chip>
       <test-chip>읽지않음</test-chip>
     </test-group>
 
     <!-- TODO list는 결국 row/ stack이다. -->
-    <test-group alignment="vertical">
+    <div style="display: flex; flex-direction: column; gap: 0.75rem">
       <test-tile variant="elevated" size="small">
         <test-menuitem label="응암동 주간 인기글" description="5일 전">
           <test-avatar slot="avatar"></test-avatar>
@@ -49,12 +30,25 @@
           '송명섭 막걸리 6도 750m...' 외 1개 상품이 오늘 도착예정입니다~
         </p>
       </test-tile>
-    </test-group>
+    </div>
 
     <footer style="margin: var(--space-4) 0 0 0">
       <test-link>더 보기</test-link>
     </footer>
-
     <test-result label="최근 알림 메세지가 없습니다."></test-result>
+
+    <blockquote>
+      <ul>
+        <li>popover: 전체 알림 목록을 볼 수 있는 페이지 필요. 모두보기 링크 버튼 필요.</li>
+        <li>
+          modal: 전체 알림 목록을 볼 수 있는 페이지 불필요. 모달에서 infinite scroll이나 more load
+        </li>
+        <li>개별 알림 액션: 읽음-링크/삭제. 알림의 설정.</li>
+        <li>
+          MVP를 위한 팁: 전체를 하나의 클릭 영역으로 정의하고, 콘텐츠와 작성자를 분리하지 않고
+          하나의 텍스트 더미.
+        </li>
+      </ul>
+    </blockquote>
   </article>
 </main>

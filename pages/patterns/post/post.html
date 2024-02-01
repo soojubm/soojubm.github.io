@@ -115,49 +115,44 @@
       <img src="" alt="" />
       <figcaption>iamge caption</figcaption>
     </figure>
-
     <code class="post-body-code">
       const { body } = document;
       <br />
       const bodySection = body.querySelector('section');
     </code>
   </section>
-
   <section class="post-reaction"></section>
-
-  <section class="post-hashtag">
+  <test-group variant="chip" class="post-hashtag">
     <test-chip>#Webpack</test-chip>
     <test-chip>#HTML5</test-chip>
     <test-chip>#accessibility</test-chip>
     <test-chip>#typography</test-chip>
-  </section>
+  </test-group>
 
-  <aside class="post-attract">
+  <!-- TODO RESULT COMPONENT, TOP BLUR -->
+  <aside>
     <div class="post-attract-blur"></div>
-    <test-text variant="subhead" class="post-attract-title">다음 내용이 궁금하신가요?</test-text>
-    <p class="post-attract-description">
-      한 달 동안 무료로 모든 콘텐츠를 체험해보세요.<br />
-      언제든 해지하실 수 있어요.
-    </p>
-    <li>Medium의 모든 회원 전용 스토리에 액세스하세요.</li>
-    <li>자신에게 중요한 주제에 대해 더 자세히 알아보세요.</li>
-    <li>수천 가지 질문에 답하는 심층 기사를 받아보세요.</li>
-    <li>개인적, 직업적 목표를 달성하세요</li>
-
-    <test-button variant="primary" class="post-attract-signup" href="#">
-      멤버십 가입하기
-    </test-button>
+    <test-text variant="subhead">다음 내용이 궁금하신가요?</test-text>
+    <test-text variant="body">
+      한 달 동안 무료로 모든 콘텐츠를 체험해보세요. 언제든 해지하실 수 있어요.
+    </test-text>
+    <ul>
+      <li>Medium의 모든 회원 전용 스토리에 액세스하세요.</li>
+      <li>자신에게 중요한 주제에 대해 더 자세히 알아보세요.</li>
+      <li>수천 가지 질문에 답하는 심층 기사를 받아보세요.</li>
+      <li>개인적, 직업적 목표를 달성하세요</li>
+    </ul>
+    <test-button variant="primary"> 멤버십 가입하기 </test-button>
   </aside>
 
   <test-group>
-    <test-menuitem label="192" class="js-open-comment" roloe="button">
+    <test-menuitem label="192" roloe="button">
       <test-avatar slot="avatar" fallback=" ">
         <test-icon slot="icon" name="message"></test-icon>
       </test-avatar>
     </test-menuitem>
     <section class="post-share"></section>
   </test-group>
-
   <test-separator></test-separator>
   <test-card variant="elevated">
     <section slot="entire" class="comment">
@@ -167,14 +162,14 @@
         <test-menuitem label="수줍이" size="medium">
           <test-avatar slot="avatar"></test-avatar>
         </test-menuitem>
-        <div class="textfield comment-write-text" style="margin: var(--space-3) 0">
+        <div class="textfield comment-write-text" style="max-width: 100%; margin: var(--space-3) 0">
           <!-- <label class="textfield-label" for="" aria-hidden="true">댓글</label> -->
           <textarea
             class="textfield-input"
             rows="3"
             name="comment"
             placeholder="무슨 생각을 하고 계신가요? feed와 comment에서 사용. textarea 컴포넌트 정의. 취소 버튼의 위치. toolbar."
-            style="width: 100%; height: auto"
+            style="width: 100%; height: auto; box-sizing: border-box"
           ></textarea>
         </div>
         <!-- <div class="textfield comment-write-name">
@@ -188,15 +183,11 @@
         <footer class="comment-write-footer">
           <!-- ! 게시와 등록 구분-->
           <test-button variant="secondary">댓글 게시</test-button>
-          <!-- <button class="comment-write-cancel">취소</button> -->
         </footer>
       </form>
     </section>
   </test-card>
-
   <br />
-  <br />
-
   <div class="comment-list">
     <div class="comment-list-item">
       <test-menuitem label="soojubm" description="1 day ago">
@@ -220,16 +211,11 @@
       </menu>
     </div>
   </div>
-  <button class="item" role="menuitem" data-tile="elevated" data-size="medium">
-    <test-avatar></test-avatar>
-    <span class="item-label">샘플 유아이</span>
-    <i class="item-helper material-symbols-outlined" style="margin-left: auto">arrow_forward</i>
-  </button>
 </main>
 
 <nav class="post-pagination">
   <a class="post-pagination-previous" href="#">
-    <test-avatar class="post-pagination-next-media" fallback=" ">
+    <test-avatar variant="back" class="post-pagination-next-media" fallback=" ">
       <test-icon slot="icon" name="arrow-left"></test-icon>
     </test-avatar>
     <test-text variant="subhead" class="post-pagination-previous-label" title="prev article"
@@ -238,7 +224,7 @@
     <span class="post-pagination-previous-postname">Return to all articles</span>
   </a>
   <a class="post-pagination-next" href="#">
-    <test-avatar class="post-pagination-next-media" fallback=" ">
+    <test-avatar variant="back" class="post-pagination-next-media" fallback=" ">
       <test-icon slot="icon" name="arrow-right"></test-icon>
     </test-avatar>
     <test-text variant="subhead" class="post-pagination-next-label">다음 콘텐츠</test-text>

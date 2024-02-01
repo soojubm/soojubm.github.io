@@ -27,8 +27,39 @@
       <section class="component-references">
         <a href="https://design-tokens.github.io/community-group/format">token module</a>
         <a href="https://docs.specifyapp.com/concepts/token-types">token json</a>
+        <a href="https://www.delldesignsystem.com/foundations/elevation/">dell elevation</a>
+        <a href="https://atlassian.design/components/tokens/all-tokens">test</a>
+        <a href="https://www.wedesignx.com/knowledge/design-system">test2</a>
+        <a href="https://medium.com/eightshapes-llc/size-in-design-systems-64f234aec519">test3</a>
+        <a href="https://bulma.io/documentation/form/input/">bulma variables</a>
       </section>
-      <br /><br />
+
+      <blockquote>
+        <ul>
+          <li>
+            core: give a name to a raw value to enable theming and make improve maintainability /
+            semantic / component. 개별 토큰에 디스크립션이 필요하지 않도록 명명.
+          </li>
+          <li>
+            컴포넌트 토큰은 상대적으로 변경 가능성이 높고 범용성이 낮기 때문에 컴포넌트 스코프에서만
+            정의. 컴포넌트 토큰을 정의하면 형태 기반의 컴포넌트를 정의 최소화할 수 있다.
+          </li>
+          <li>SCSS/LESS: kebab-case / JS: PascalCase / Android: snake_case / iOS: PascalCase</li>
+          <li>
+            --[namespace]-[component / category]-[attribute]-[status] 프로덕션이 아니기 때문에
+            namespace를 생략. 서드파티 라이브러리와 충돌을 방지용.
+          </li>
+          <li>
+            theme.
+            <del>
+              인버트 컬러셋을 추가로 정의하지 않습니다. 하나의 컬러셋으로 다크 테마에 대응합니다.
+              어렵고 또는 불필요한 규칙.
+            </del>
+            어차피 초기 토큰 세팅 허들을 넘으면 테마 대응은 쉬워짐.
+          </li>
+        </ul>
+      </blockquote>
+
       <test-text variant="subhead">Color</test-text>
       <test-text variant="body">background/border/text/status</test-text>
       <test-text variant="body">

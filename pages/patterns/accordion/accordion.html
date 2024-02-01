@@ -24,7 +24,7 @@
             aria-controls="1"
             aria-disable="true"
           >
-            <test-icon name="archery"></test-icon>
+            <test-icon name="expand-lines"></test-icon>
             탈퇴하고 싶어요.
           </button>
           <div class="accordion-panel">
@@ -66,35 +66,38 @@
       </section>
     </section>
 
-    <test-text variant="subhead">Best practices</test-text>
-    <test-text variant="body"
-      >사용자가 반드시 숙지해야 하는 정보를 아코디언으로 요약해서 보여주지 마세요. (참고. Tooltip과
-      같은 맥락)</test-text
-    >
+    <section class="component-guide">
+      <test-text variant="subhead">Best practices</test-text>
+      <test-text variant="body"
+        >사용자가 반드시 숙지해야 하는 정보를 아코디언으로 요약해서 보여주지 마세요. (참고.
+        Tooltip과 같은 맥락)</test-text
+      >
 
-    <test-text variant="subhead">Editorial</test-text>
-    <test-text variant="body">summary은 한 문장으로 간결하게 작성하세요.</test-text>
+      <test-text variant="subhead">Editorial</test-text>
+      <test-text variant="body">summary은 한 문장으로 간결하게 작성하세요.</test-text>
 
-    <blockquote>
-      <ul>
-        <li>
-          자주묻는질문(FAQ) 정도 외에는 잘 쓰지 않음. 교육 도매인의 커리큘럼 정도에서 보임.
-          collapsed->expanded로 전환될 때 모바일 친화적인 모달 형태가 사용될 수 있다.
-        </li>
-        <li>
-          클릭 영역의 정의. 본문을 클릭하여 닫을 수 있게 되면, 본문에 페이지 링크를 제공할 수 없음.
-        </li>
-        <li>
-          role button - space keycode를 추가하여 스페이스 키 또한 확장/축소할 수 있는 키로
-          인식되도록 합니다. a 엔터키로만동작
-        </li>
-        <li>
-          닫는 방법의 정의. 도큐먼트를 클릭하면 닫을 것인지? panel을 클릭하면 닫을 것인지? 이렇게
-          되면 내부에 링크 등의 액션을 제공할 수 없다. 다른 아코디언 아이템을 클릭했을 대 닫을
-          것인지?
-        </li>
-      </ul>
-    </blockquote>
+      <blockquote>
+        <ul>
+          <li>
+            자주묻는질문(FAQ) 정도 외에는 잘 쓰지 않음. 교육 도매인의 커리큘럼 정도에서 보임.
+            collapsed->expanded로 전환될 때 모바일 친화적인 모달 형태가 사용될 수 있다.
+          </li>
+          <li>
+            클릭 영역의 정의. 본문을 클릭하여 닫을 수 있게 되면, 본문에 페이지 링크를 제공할 수
+            없음.
+          </li>
+          <li>
+            role button - space keycode를 추가하여 스페이스 키 또한 확장/축소할 수 있는 키로
+            인식되도록 합니다. a 엔터키로만동작
+          </li>
+          <li>
+            닫는 방법의 정의. 도큐먼트를 클릭하면 닫을 것인지? panel을 클릭하면 닫을 것인지? 이렇게
+            되면 내부에 링크 등의 액션을 제공할 수 없다. 다른 아코디언 아이템을 클릭했을 대 닫을
+            것인지?
+          </li>
+        </ul>
+      </blockquote>
+    </section>
 
     <nav class="component-references">
       <test-text variant="subhead">References</test-text>

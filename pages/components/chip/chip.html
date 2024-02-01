@@ -7,28 +7,6 @@
       사용자 여정을 보조하는 액션입니다. 실행 페이지에서 사용자는 즉각적인 결과를 기대할 수
       있습니다.
     </test-text>
-
-    <blockquote>
-      <li>
-        MEMO: slot icon / avatar의 차이. 아이콘은 현재 container가 없다. 32px. 아바타가 될 수 있나.
-      </li>
-      <li>MEMO: Action Button(Text only)는 plain이 될 수 없다.</li>
-      <li>시각보정: expandable, checkable 각각에 맞춰서 하고. slot으로 아이콘을 넣으면 안 됨.</li>
-      <li>
-        TODO 선택을 클리어하는 클리어버튼을 만드는 게 좋을지도. 이건 검색필드에서 쓰는 컴포넌트와
-        같음.
-      </li>
-      <li>TODO: icon button의 레이블이 툴팁으로 되는 게 기본.</li>
-      <li>
-        menu button - dropdown trigger , listbox - allows a user to select one or more of them
-      </li>
-      <li>Markup(button vs radio,checkbox)</li>
-      <li>More. position 규칙이 필요함. 글자수 제한. 모달로 열릴 수 있어서, 드롭다운은 제거함.</li>
-      <li>
-        형태로 분류하면 결국 그냥 버튼임. 기능으로 분류하는 것이 중요함. 많은 디자인 시스템이 칩을
-        정의하지 않고 있음. 도메인에 특화된 기능 중심의 버튼 컴포넌트를 정의하는 것이 맹점.
-      </li>
-    </blockquote>
     <dl class="article-aka">
       <dt>a.k.a.</dt>
       <dd>Tag</dd>
@@ -143,6 +121,21 @@
           active)/choice</test-text
         >
       </test-callout>
+
+      <blockquote>
+        <li>
+          MEMO: slot icon / avatar의 차이. 아이콘은 현재 container가 없다. 32px. 아바타가 될 수
+          있나.
+        </li>
+        <li>MEMO: Text only는 plain variant이 될 수 없다.</li>
+        <li>TODO 선택을 클리어하는 클리어버튼을 만들어 검색필드에서 활용하는 방법도 있다.</li>
+        <li>TODO: icon chip의 label prop으로 툴팁을 만들기</li>
+        <li>
+          형태로 분류하면 결국 그냥 버튼임. 기능으로 분류하는 것이 중요함. 많은 디자인 시스템이 칩을
+          정의하지 않고 있음. 도메인에 특화된 기능 중심의 버튼 컴포넌트를 정의하는 것이 맹점.
+          slot으로 아이콘을 넣는 방식이 되면 유지 비용이 크다.
+        </li>
+      </blockquote>
     </section>
 
     <test-text variant="body-bold">Action Button</test-text>
@@ -154,15 +147,15 @@
         <test-chip>뉴닉</test-chip>
         <test-chip>국정감사</test-chip>
         <test-chip>윤석열검찰총장</test-chip>
-        <test-chip>조국</test-chip>
         <test-chip>차별금지법</test-chip>
-        <test-chip>추미매법무부장관</test-chip>
+        <test-chip>추미애법무부장관</test-chip>
+        <test-chip variant="back"> <test-icon slot="icon" name="more-horiz"></test-icon></test-chip>
       </test-group>
       <div style="height: var(--space-after-subhead)"></div>
-      <test-tile variant="flat" size="small">
+      <test-tile variant="elevated" size="small">
         <test-menuitem label="직접 검색">
-          <test-avatar slot="avatar" fallback=" ">
-            <test-icon slot="icon" name="search"></test-icon>
+          <test-avatar slot="avatar" fallback="">
+            <!-- <test-icon slot="icon" name="search"></test-icon> -->
           </test-avatar>
         </test-menuitem>
       </test-tile>

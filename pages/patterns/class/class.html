@@ -1,24 +1,23 @@
-<main class="class js-tab" style="overflow: hidden">
-  <figure class="class-media">
-    <img src="https://newneek.co/static/media/economy-thumbnail.0e2ed4c5.png" alt="" />
-  </figure>
-
+<main class="class" style="overflow: hidden">
+  <style>
+    :root {
+      --radius: 0;
+    }
+  </style>
+  <figure class="class-media"><img src="" alt="" /></figure>
   <header class="class-order">
     <div>
-      <test-tag class="order-order-eyebrow" label="">고슴이 생존기 - 경제 기본기편</test-tag>
+      <test-tag>고슴이 생존기 - 경제 기본기편</test-tag>
     </div>
-
     <div class="class-order-title">
-      <h1>고슴이와 함께<br />경제 기본기 마스터하겠슴?</h1>
+      <test-text variant="title"> 고슴이와 함께<br />경제 기본기 마스터하겠슴? </test-text>
     </div>
-
-    <div class="class-order-description">
-      <test-text variant="body-large"
-        >고슴이 에피소드 읽으면서 쉽고 재밌게<br />하루 5분으로 열흘 만에 경제 기본기를 마스터할 수
-        있어요.</test-text
-      >
+    <div class="class-order-description" style="margin-top: -1rem">
+      <test-text variant="body-large">
+        고슴이 에피소드 읽으면서 쉽고 재밌게<br />하루 5분으로 열흘 만에 경제 기본기를 마스터할 수
+        있어요.
+      </test-text>
     </div>
-
     <div class="minicards">
       <figure class="minicard">
         <span role="img" aria-label="">⏰</span>
@@ -32,23 +31,58 @@
         <span role="img" aria-label="">🗓️</span>
         <p class="minicard-value">이용기간 무제한</p>
       </figure>
-      <figure class="minicard">
+      <figure class="minicard" style="position: relative">
         <span role="img" aria-label="">🤼</span>
-        <p class="minicard-value"><del>얼리버드 500명 (마감)</del></p>
+        <p class="minicard-value"><del>얼리버드 500명</del></p>
+        <p
+          style="
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%) rotate(-3.75deg);
+          "
+        >
+          <test-tag>✨ 마감 ✨</test-tag>
+        </p>
       </figure>
     </div>
-
     <div class="class-order-price" role="suggestion">
       <del class="class-order-price-deletion" role="deletion">₩ 30,000</del>
       <b class="class-order-price-insertion" role="insertion">₩ 20,000</b>
       <em class="class-order-price-percentage">(30%)</em>
     </div>
-
     <footer class="class-order-action">
-      <button class="button" data-variant="primary" style="width: 50%">기본기 구매하기</button>
+      <!-- <test-button variant="primary" style="width: 50%">
+        기본기 구매하기
+        <div class="cta-arrow"><div class="line"></div></div
+      ></test-button> -->
+      <button
+        style="
+          font-size: inherit;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: var(--space-2);
+          height: var(--size-large);
+          padding: 0 var(--space-4) 2px;
+          /* border: var(--border); */
+          border-radius: var(--radius);
+          box-sizing: border-box;
+          background: var(--color-primary);
+          color: #fff;
+          font-weight: var(--font-weight-bold);
+          text-transform: capitalize;
+          cursor: pointer;
+          width: 50%;
+        "
+      >
+        기본기 구매하기
+        <div class="cta-arrow">
+          <div class="line" style="background-color: #fff"></div>
+        </div>
+      </button>
       <!-- <button class="button" data-variant="secondary">공유</button> -->
     </footer>
-
     <p style="border-top: var(--border)">
       더 궁금한 점이 있다면 <a href="/help" style="text-decoration: underline">👉고객센터</a>로
       문의해 주세요. 고맙슴!
@@ -73,13 +107,22 @@
     <p>🦔 고슴이: 지금부터 설명 들어가겠슴!</p>
   </section>
 
-  <section class="class-intro" style="padding-top: 2rem">
+  <section
+    class="class-intro"
+    style="display: flex; flex-direction: column; align-items: center; text-align: center"
+  >
     <test-text variant="title">
-      주식부터 환율까지 삶에서 필수적인 경제 개념들을 마스터합니다.
+      주식부터 환율까지<br />삶에서 필수적인<br />경제 개념들을 마스터합니다.
     </test-text>
     <test-text variant="body-large">
-      주제 당 5분 분량의 기사로 구성되어 있으며, 경제초보 고슴이의 성장기를 담았답니다.
+      주제 당 5분 분량의 기사로 구성되어 있으며,<br />경제초보 고슴이의 성장기를 담았답니다.
     </test-text>
+    <figure style="max-width: 480px; margin: 2rem auto; border: var(--border); border-width: 2px">
+      <img src="/public/images/cake_gosum.jpg" />
+      <figcaption style="padding: 1rem; border-top: var(--border); text-align: center">
+        🦔 고슴이: 뉴니커만 보고 달려온 2년... 점점 당이 떨어진다....
+      </figcaption>
+    </figure>
   </section>
 
   <section class="class-why">
@@ -162,7 +205,7 @@
         <h3>"경제 개론서를 사봤지만 첫 챕터에서 늘 덮게 돼!"</h3>
         <p>이미 경제 공부를 혼자 도전했지만 어렵고 지루했다면 고슴이 생존기가 정답!</p>
       </div>
-      <p>그리고 또...</p>
+      <test-text variant="body">그리고 또...</test-text>
       <ul>
         <li>경제 기본기가 아예 없는 사람</li>
         <li>경제 막 공부 시작했는데, 누가 전체적인 그림 한 번 싹 알려주면 좋겠다고 생각한 사람</li>
@@ -173,9 +216,7 @@
   </section>
 
   <section class="class-curriculum">
-    <h2 class="class-curriculum-title" style="border-top: 0">
-      에피소드 (관련 도메인에서 주로 커리큘럼)
-    </h2>
+    <test-text variant="title"> 에피소드 (관련 도메인에서 주로 커리큘럼) </test-text>
     <div class="">
       <figure></figure>
       <test-tag>물가편</test-tag>
@@ -197,6 +238,24 @@
       </p>
     </div>
   </section>
+
+  <aside class="product-quick is-visible">
+    <figure class="product-quick-head">
+      <img src="" />
+      <figcaption>
+        <h3 class="product-quick-head-title">고슴이 생존기(경제 기본기편)</h3>
+        <div class="product-quick-head-description">10개 에피소드, 평생 열람가능</div>
+      </figcaption>
+    </figure>
+    <section class="product-quick-total">
+      <span class="product-quick-total-price" style="font-size: var(--font-size-large)">
+        <del>₩ 25,000</del> <b>₩ 16,000</b> <em class="rate">(36% 할인)</em>
+      </span>
+    </section>
+    <footer class="product-quick-controls">
+      <test-button variant="primary">모두 주문하기</test-button>
+    </footer>
+  </aside>
 
   <section class="products">
     <div class="products-item">
@@ -236,38 +295,6 @@
   </article>
 
   <section class="class-refund">
-    <h2 class="class-faq-title">환불 안내</h2>
-  </section>
-
-  <section class="class-overview">
-    <span>Overview</span>
-    <h2 class="class-overview-title">고슴이 생존기 - 경제 기본기편</h2>
-    <div class="minicards">
-      <figure class="minicard">
-        <span role="img" aria-label="">⏰</span>
-        <p class="minicard-value">하루 5분</p>
-      </figure>
-      <figure class="minicard">
-        <span role="img" aria-label="">📖</span>
-        <p class="minicard-value">에피소드 10개</p>
-      </figure>
-      <figure class="minicard">
-        <span role="img" aria-label="">🗓️</span>
-        <p class="minicard-value">이용기간 무제한</p>
-      </figure>
-      <figure class="minicard">
-        <span role="img" aria-label="">🤼</span>
-        <p class="minicard-value">얼리버드 500명 (마감)</p>
-      </figure>
-    </div>
-    <div class="class-order-price" role="suggestion">
-      <del class="class-order-price-deletion" role="deletion">₩ 30,000</del>
-      <b class="class-order-price-insertion" role="insertion">₩ 20,000</b>
-      <em class="class-order-price-percentage">(30%)</em>
-    </div>
-    <footer class="class-order-action">
-      <button class="class-order-action-purchase">기본기 구매하기</button>
-      <button class="class-order-action-share">공유</button>
-    </footer>
+    <test-text variant="title">환불 안내</test-text>
   </section>
 </main>

@@ -9,6 +9,8 @@ class Group extends HTMLElement {
     container.classList.add('group')
     container.role = 'group'
 
+    // TODO radio = radiogroup role
+
     // const align = 'vertical' || 'horizontal'
     // TODO : alignment -> direction / align
     const alignment = this.getAttribute('alignment')

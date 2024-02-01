@@ -166,11 +166,7 @@ main,
   justify-content: space-between;
 }
 
-.greeting {}
-.greeting-avatar {@mixin avatar-container-large;float:right;margin:0 0 0 var(--space-4);position:relative;}
-
 /*
-
 .payment-method-list {@mixin stack;}
 .payment-method-item {
   @mixin tile-elevated-small;
@@ -224,11 +220,6 @@ main,
 
   }
 } */
-
-
-.purchase {border-radius:var(--radius);overflow:hidden;}
-.purchase-head {padding:var(--space-4);background-color: var(--color-temp1);}
-.purchase-body {padding:var(--space-4);background:var(--color-background);}
 
 .browser {
   text-align: center;

@@ -17,12 +17,6 @@
     <test-button variant="primary">Get All-Access</test-button>
   </div>
 
-  <p>
-    사용자는 디스크립션을 자세히 읽기를 원하지 않으므로, 필요한 내용을 빠르게 캐치할 수 있도록
-    간결하게 쓰는 게 좋다. 한 줄에 50자, 세 줄 이하로 쓸 것을 권장하고 있다. 텍스트를 간결하게
-    유지하고 전달할 내용을 스캐너블한 덩어리로 나누는 것은, 유저들이 그들의 이해도와 이 서비스를
-    활용하는 능력에 대해 신뢰를 갖게 만든다. (Easy scanning)
-  </p>
 
   <section class="textbox" style="margin: 4rem var(--grid-margin); position: relative">
     <test-group
@@ -69,7 +63,7 @@
     <test-text variant="body-large">작성 중.</test-text>
 
     <section class="component-example">
-      <nav class="pagination" role="navigation" aria-label="pagination">
+      <test-group variant="pagination" role="navigation" aria-label="pagination">
         <test-chip class="pagination-previous" aria-label="앞 페이지로 이동"> 이전 </test-chip>
         <test-chip class="pagination-next" aria-label="뒷 페이지로 이동">다음</test-chip>
         <test-chip class="pagination-link" aria-label="맨 앞 페이지로 이동">1</test-chip>
@@ -87,8 +81,8 @@
         <test-chip class="pagination-link" href="#" aria-label="1 페이지로 이동">9</test-chip>
         <i class="pagination-ellipsis" aria-label="맨 앞 페이지로 이동">...</i>
         <test-chip class="pagination-link" aria-label="맨 뒤 페이지로 이동">50</test-chip>
-      </nav>
-      <aside>
+      </test-group>
+      <aside role="status">
         <small>숙소 300개 이상 중 281 – 300 (airbnb)</small>
       </aside>
 
@@ -166,6 +160,22 @@
     <p>scroll-behavior: smooth</p>
     <section class="component-example">
       <section class="carousel js-carousel">
+        <test-tile>
+          <nav style="display: flex; gap: var(--space-3)" role="tablist">
+            <test-entity description="추가">
+              <test-avatar slot="avatar" size="huge" fallback="+"></test-avatar>
+            </test-entity>
+            <test-entity description="공유하기" data-index="keyword">
+              <test-avatar slot="avatar" size="huge" fallback="🌏"></test-avatar>
+            </test-entity>
+            <test-entity description="키워드목록">
+              <test-avatar slot="avatar" size="huge" fallback="💀"></test-avatar>
+            </test-entity>
+            <test-entity description="주문 아이템">
+              <test-avatar slot="avatar" size="huge" fallback="🍔"></test-avatar>
+            </test-entity>
+          </nav>
+        </test-tile>
         <test-group class="carousel-viewer js-carousel-viewer">
           <test-entity size="huge" label="폴 뉴먼" description="주연">
             <test-avatar
@@ -213,10 +223,10 @@
                 <button class="carousel-dots-dot">1</button>
               </nav> -->
         <nav class="carousel-arrows">
-          <test-chip class="carousel-arrows-prev js-carousel-prev" aria-label="이전">
+          <test-chip variant="back" class="carousel-arrows-prev js-carousel-prev" aria-label="이전">
             <test-icon slot="icon" name="arrow-left"></test-icon>
           </test-chip>
-          <test-chip class="carousel-arrows-next js-carousel-next" aria-label="다음">
+          <test-chip variant="back" class="carousel-arrows-next js-carousel-next" aria-label="다음">
             <test-icon slot="icon" name="arrow-right"></test-icon>
           </test-chip>
         </nav>
@@ -362,19 +372,24 @@
             <th scope="col">Gender</th>
           </tr>
           <tr>
-            <th scope="row">Gabriel</th>
+            <th scope="row">
+              <test-group variant="chip">
+                <test-avatar></test-avatar>
+                Gabriel
+              </test-g>
+            </th>
             <td>13</td>
-            <td>Male</td>
+            <td><test-tag>Male</test-tag></td>
           </tr>
           <tr>
             <th scope="row">Elva</th>
             <td>8</td>
-            <td>Female</td>
+            <td><test-tag>Female</test-tag></td>
           </tr>
           <tr>
             <th scope="row">Freida</th>
             <td>5</td>
-            <td>Female</td>
+            <td><test-tag>Female</test-tag></td>
           </tr>
         </table>
       </div>
@@ -498,77 +513,6 @@
       >
     </form>
 
-    <header
-      style="
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        max-width: 400px;
-        margin: 0 0 var(--space-3);
-      "
-    >
-      <h2>내 요금제</h2>
-      <button style="color: var(--color-primary); font-weight: bold; text-decoration: underline">
-        요금제 변경하기
-      </button>
-    </header>
-
-    <test-tile variant="elevated" style="max-width: 400px">
-      <test-menuitem>
-        <test-avatar slot="avatar" size="huge"></test-avatar>
-        <div slot="text">
-          <test-text variant="subhead">개인</test-text>
-          <test-text variant="body">Apple One</test-text>
-          <test-text variant="label">가족 구독</test-text>
-        </div>
-      </test-menuitem>
-      <test-separator></test-separator>
-      <test-text variant="body-bold">1개월 무료 체험</test-text>
-      <small>오늘(2023년 05월 22일)부터</small>
-      <test-text variant="subhead">14,900원/개월</test-text>
-      <test-separator></test-separator>
-
-      <div class="purchase">
-        <header class="purchase-head">
-          <h3>Premium 베이직</h3>
-          <small>Premium 베이직 계정 1개 / 클라우드 330GB (월 5,500원)</small>
-        </header>
-        <div class="add_money_area" style="padding: 1rem">
-          <div class="add_inner">
-            <p class="use_time">이용기간 23.04.09. ~ 23.05.02.</p>
-            <div class="add_money">
-              이번 달 결제금액 <em class="accent"><span id="sale_price">4,258</span>원</em>
-              <em class="num">(<span id="remainDays">24</span>일 이용요금)</em>
-            </div>
-          </div>
-        </div>
-        <div class="purchase-body">
-          <dl>
-            <dt style="width: 50%; margin: 0">오늘부터 시작</dt>
-            <dd style="width: 50%; margin: 0; text-align: right">월 8,690 KRW</dd>
-            <dt style="width: 50%; margin: 0">다음 결제일</dt>
-            <dd style="width: 50%; margin: 0; text-align: right">2023. 3. 10.</dd>
-          </dl>
-          <ul style="margin: var(--space-4) 0 0 0">
-            <li>다음 청구일은 2023. 3. 10.입니다.</li>
-            <li>언제든 해지 가능합니다. 혜택 약관이 적용됩니다.</li>
-          </ul>
-        </div>
-      </div>
-      <p>
-        약정 기간이 없습니다. 갱신일 최소 하루 전까지 설정 > Apple ID에서 언제든지 취소할 수
-        있습니다. 취소할 때까지 요금제가 자동 갱신됩니다.
-      </p>
-      <test-separator></test-separator>
-      <p style="color: var(--color-text-light)">계정: soojubm@gmail.com</p>
-    </test-tile>
-
-    <header class="greeting" data-temp="이 패턴에서 아바타는 시각 정보가 아니라 링크로 사용">
-      <test-avatar variant="" size="huge">🐶</test-avatar>
-      <test-text variant="subhead">Hello, Spring 👋</test-text>
-      <test-text variant="body">Tender is the night.</test-text>
-    </header>
-
     <test-menuitem data-size="large" style="margin-bottom: var(--space-3)">
       <test-avatar></test-avatar>
       <span class="item-description">관심사가 비슷한 사용자</span>
@@ -622,36 +566,6 @@
 
     <!-- ! flex-wrap: warp일 때 min-width가 fixed -->
     <!-- ! width:100% and max-width doesnt' work-->
-    <section style="max-width: 400px; z-index: 1">
-      <test-titlebar heading="컬렉션에 추가"> </test-titlebar>
-      <br />
-      <test-group alignment="vertical">
-        <!-- aira-checked="mixed" aria-controls="1 2" -->
-        <test-checkbox>재생 목록 1</test-checkbox>
-        <test-checkbox>재생 목록 2</test-checkbox>
-      </test-group>
-      <br />
-      <test-tile variant="elevated" size="small">
-        <test-menuitem label="새 컬렉션 만들기">
-          <test-avatar slot="avatar">+</test-avatar>
-        </test-menuitem>
-      </test-tile>
-      <test-separator></test-separator>
-      <test-button variant="primary" isfullwidth>저장</test-button>
-    </section>
-    <section style="max-width: 400px; margin-top: 2rem; z-index: 1">
-      <test-titlebar heading="컬렉션 만들기">
-        <test-chip slot="action">만들기</test-chip>
-      </test-titlebar>
-      <div style="height: 1rem"></div>
-      <test-textfield label="컬렉션 이름" placeholder="컬렉션 이름"></test-textfield>
-      <test-tile variant="elevated" size="small">
-        <test-menuitem label="사용자 및 그룹 추가">
-          <test-avatar slot="avatar">+</test-avatar>
-        </test-menuitem>
-      </test-tile>
-    </section>
-
     <br />
 
     <test-tile>
@@ -666,28 +580,6 @@
       </figcaption>
     </test-tile>
 
-    <aside
-      style="
-        position: fixed;
-        top: 6rem;
-        left: calc(50% + var(--width-sidemenu) - var(--grid-margin));
-        transform: translateX(-50%);
-        z-index: 8;
-      "
-    >
-      <button
-        style="
-          padding: 0.5rem 1rem;
-          border-radius: 50px;
-          box-shadow: var(--shadow);
-          background: var(--color-primary);
-          color: var(--color-text-weak);
-        "
-        onclick="javascript:alert('샘플 유아이')"
-      >
-        1월 1일 변경된 내용 보기
-      </button>
-    </aside>
   </article>
 
   <section style="display: flex; justify-content: center; gap: 2rem; margin: 0 var(--grid-margin)">

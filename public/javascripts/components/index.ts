@@ -5,7 +5,6 @@ import Badge from '../../components/badge/badge'
 
 import Avatar from '../../components/avatar/avatar'
 import Entity from '../../components/entity/entity'
-import AvatarGroup from './avatarGroup'
 
 import Tile from '../../components/tile/tile'
 import Textfield from '../../components/textfield/textfield'
@@ -29,7 +28,6 @@ import Dialog from './dialog'
 
 import Tooltip from '../../components/tooltip/tooltip'
 import TitleBar from '../../components/titlebar/titlebar'
-import RadioGroup from './radioGroup'
 import Icon from '../../components/icon/icon'
 import Separator from '../../components/separator/separator'
 import Card from '../../components/card/card'
@@ -74,9 +72,6 @@ export function defineCustomElement() {
     customElements.define('test-callout', Callout)
 
     customElements.define('test-menuitem', MenuItem)
-
-    customElements.define('test-avatar-group', AvatarGroup)
-    customElements.define('test-radio-group', RadioGroup)
 
     customElements.define('test-dialog', Dialog)
 

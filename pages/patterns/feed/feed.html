@@ -4,6 +4,28 @@
   aria-busy="false"
   style="max-width: 640px; margin: 0 auto"
 >
+  <aside
+    style="
+      position: fixed;
+      top: 6rem;
+      left: calc(50% + var(--width-sidemenu) - var(--grid-margin) + 1rem);
+      transform: translateX(-50%);
+      z-index: 8;
+    "
+  >
+    <button
+      style="
+        padding: 0.5rem 1rem;
+        border-radius: 50px;
+        box-shadow: var(--shadow);
+        background: var(--color-primary);
+        color: var(--color-text-weak);
+      "
+      onclick="javascript:alert('샘플 유아이')"
+    >
+      1월 1일 변경된 내용 보기
+    </button>
+  </aside>
   <article class="feed" aria-setsize="3" aria-posinset="1">
     <test-tag> 🔥 Most Popular </test-tag>
     <div style="height: 0.75rem"></div>
@@ -20,7 +42,7 @@
         restore ubiquitous partnerships vis-a-vis <a href="#feed">synergistic models</a>.
       </test-text>
       <div style="height: 0.75rem"></div>
-      <test-group>
+      <test-group variant="tag">
         <test-tag>Google</test-tag>
         <test-tag>Meta</test-tag>
         <test-tag>Nvidia</test-tag>
@@ -58,27 +80,29 @@
     </div>
   </article>
 
-  <ul style="margin: 4rem 0">
-    <li>글줄의 길이는 상대적으로 좁게 짜는 경향이 있다.</li>
-    <li>피드의 상세 페이지에서 전체 댓글 목록과 액션을 제공할 수 있다.</li>
-    <li>원활한 피드 탐색 경험을 위해 피드의 콘텐츠를 일부 생략해서 보여줄 수 있다.</li>
-    <li>
-      리액션 버튼과 리액션 수치를 각각 제공할 수 있고 따로 제공할 수 있다. 리액션한 사용자 목록을
-      어떻게 보여줄 것인가. 중복 리액션과 횟수 등 기능 정의. 리액션 => 알림. restful - put과 함께
-      공부해보기
-    </li>
-    <li>
-      피드가 노출되는 이유를 알려줄 수 있다. 또한 사용자는 보고 싶은 피드와 보고 싶지 않은 피드를
-      결정할 권리가 있다.
-    </li>
-    <li>
-      시의성이 강조되는 서비스이거나 현안을 다루는 서비스라면 스텟을 실시간으로 갱신할 수 있다.
-    </li>
-    <li>
-      피드 작성 폼의 인터페이스. 하나 이상의 이미지를 포함할 수 있다면, 하나 이상의 이미지를 볼 수
-      있는 인터페이스가 필요하다.
-    </li>
-  </ul>
+  <blockquote>
+    <ul class="checklist">
+      <li>원활한 피드 탐색 경험을 위해 피드의 콘텐츠를 일부 생략해서 보여줄 수 있다.</li>
+      <li>
+        피드가 노출되는 이유를 알려줄 수 있다. 또한 사용자는 보고 싶은 피드와 보고 싶지 않은 피드를
+        결정할 권리가 있다.
+      </li>
+      <li>글줄의 길이를 상대적으로 좁게 짜는 경향이 있다.</li>
+      <li>피드의 상세 페이지에서 전체 댓글 목록과 액션을 제공할 수 있다.</li>
+      <li>
+        리액션 버튼과 리액션 수치를 각각 제공할 수 있고 따로 제공할 수 있다. 리액션한 사용자 목록을
+        어떻게 보여줄 것인가. 중복 리액션과 횟수 등 기능 정의. 리액션 => 알림. restful - put과 함께
+        공부해보기
+      </li>
+      <li>
+        시의성이 강조되는 서비스이거나 현안을 다루는 서비스라면 스텟을 실시간으로 갱신할 수 있다.
+      </li>
+      <li>
+        피드를 작성할 때 하나 이상의 이미지를 포함할 수 있다면 하나 이상의 이미지를 볼 수 있는
+        인터페이스가 필요하다.
+      </li>
+    </ul>
+  </blockquote>
 </main>
 
 <script>

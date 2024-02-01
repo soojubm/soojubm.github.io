@@ -171,11 +171,10 @@
           >비밀번호를 잊으셨나요? <small hidden>Forgot your password?</small></test-link
         >
       </test-textfield>
-      <div style="margin: 0.25rem 0">
-        <test-checkbox
-          class="login-remember"
-          data-temp="Remember my email address"
-        >로그인 상태 유지</test-checkbox>
+      <div style="margin-top:-.5rem;">
+        <test-checkbox data-temp="Remember my email address">
+          로그인 상태 유지
+        </test-checkbox>
       </div>
     </fieldset>
 
@@ -200,7 +199,7 @@
       </p>
     </menu>
 
-    <footer style="margin-top: auto">
+    <footer>
       <p class="text-xs text-scale-900 sm:mx-auto sm:max-w-sm">
         By continuing, you agree to XXXXXXXX's
         <a class="underline hover:text-scale-1100" href="https://supabase.com/terms"
@@ -272,25 +271,27 @@
       </fieldset>
     </fieldset>
 
-    <fieldset class="authentication-fieldset signup-terms">
+    <fieldset class="authentication-fieldset">
       <legend class="signup-terms-title" hidden>약관 동의</legend>
       <strong>
         회원가입 시 <a href="#">이용약관</a>과 <a href="#">개인정보처리방침</a>에 동의하는 것으로
         간주합니다.
       </strong>
-      <test-checkbox class="js-checkall">모두 동의합니다.</test-checkbox>
-      <test-checkbox>이용약관 동의</test-checkbox>
-      <div class="signup-terms-content">
-        <p>
-          - 개인정보를 제공받는 자: 엔에이치엔페이코(주)<br />
-          - 제공항목: 광고ID, 이용자 단말기 내 설치된 어플리케이션 정보(앱 설치·실행시각 포함)<br />
-          - 제공받는 자의 개인정보 이용목적: 이용자 관심 등에 기반한 맞춤형 서비스 제공<br />
-          - 제공받는자의 개인정보 보유이용기간: 수집일로부터 2년
-        </p>
-      </div>
-      <test-checkbox>서비스이용약관과 개인정보수집에 동의</test-checkbox>
-      <test-checkbox>[선택] 광고성 정보 수신 동의</test-checkbox>
-      <test-checkbox>strong 이용약관과 개인정보처리방침에 동의합니다.</test-checkbox>
+      <test-group variant="checkbox">
+        <test-checkbox class="js-checkall">모두 동의합니다.</test-checkbox>
+        <test-checkbox>이용약관 동의</test-checkbox>
+        <div class="signup-terms-content">
+          <p>
+            - 개인정보를 제공받는 자: 엔에이치엔페이코(주)<br />
+            - 제공항목: 광고ID, 이용자 단말기 내 설치된 어플리케이션 정보(앱 설치·실행시각 포함)<br />
+            - 제공받는 자의 개인정보 이용목적: 이용자 관심 등에 기반한 맞춤형 서비스 제공<br />
+            - 제공받는자의 개인정보 보유이용기간: 수집일로부터 2년
+          </p>
+        </div>
+        <test-checkbox>서비스이용약관과 개인정보수집에 동의</test-checkbox>
+        <test-checkbox>[선택] 광고성 정보 수신 동의</test-checkbox>
+        <test-checkbox>strong 이용약관과 개인정보처리방침에 동의합니다.</test-checkbox>
+      </test-group>
     </fieldset>
 
     <footer class="authentication-foot">
@@ -323,14 +324,13 @@
       <h2 class="authentication-head-title" title="Reset Your Password">Reset Your Password</h2>
       <p
         class="authentication-head-description"
-        title="We get it, stuff happens! What's your email address?"
+        data-temp="We get it, stuff happens! What's your email address?"
       >
         비밀번호가 기억이 안 나세요? 걱정 말아요<i style="font-style: italic">!</i>
         <br />
         임시 비밀번호를 이메일로 보내드릴게요.
       </p>
-      <p>비밀번호를 재설정할 수 있는 링크를 이메일로 보내드릴게요.</p>
-      <span style="font-size: 3rem; position: absolute; right: 0; top: 0">🖐️</span>
+      <!-- <p>비밀번호를 재설정할 수 있는 링크를 이메일로 보내드릴게요.</p> -->
     </header>
 
     <fieldset class="authentication-fieldset">
@@ -349,9 +349,9 @@
 
   <form class="verify" style="max-width: 560px; margin: 0 auto; text-align: center">
     <header class="authentication-head">
-      <h1 class="authentication-head-title" title="Reset Your Password">
+      <test-text variant="title" class="authentication-head-title" title="Reset Your Password">
         Please check your email!
-      </h1>
+      </test-text>
       <p
         class="authentication-head-description"
         titl="We get it, stuff happens! What's your email address?"
@@ -360,7 +360,7 @@
         box to verify your email.
       </p>
     </header>
-    <fieldset class="authentication-fieldset textfield-group">
+    <fieldset class="authentication-fieldset">
       <!-- aria-invalid="false"  -->
       <test-textfield
         name="code1"
@@ -438,47 +438,6 @@
     </p>
     <p>이메일 재전송 버튼</p>
     <a class="password-result-login" href="#">로그인하기</a>
-  </section>
-
-  <section style="max-width: 800px; margin: 4rem auto">
-    <header class="authentication-head">
-      <h2 class="authentication-head-title">Tell us about yourself</h2>
-      <test-text variant="body-large" class="authentication-head-description">
-        Now that you're all signed up, let's personalize your experience.
-      </test-text>
-    </header>
-
-    <section class="step" data-alignment="bleeding-vertical">
-      <div class="step-item is-active">
-        <span class="step-item-icon" style="color:var(--color-priamry)">1</span>
-        <h3 class="step-item-label">I'm an engineer</h3>
-      </div>
-      <div class="step-item is-active">
-        <span class="step-item-icon" style="color:var(--color-priamry)">2</span>
-        <h3 class="step-item-label">I wnat to design from scratch</h3>
-        <!-- <p class="step-item-description">
-          1칼럼(모바일)에서 결제 버튼을 누르기 전 최종 금액을 확인할 수 있는 구조가 되려면 2칼럼에서 우측을 결제를 위한 칼럼을 배치할
-          때(체크아웃페이지의 일반적인 레이아웃) 상품&서머리&결제버튼이 같은 컨테이너로 포함되어야.
-        </p>
-        <p class="step-item-description">결제정보 - 결제방법/주문상태/주문접수일시/주문완료일시/배송비/쿠폰사용금액/결제금액</p>
-        <p class="step-item-description">주문 정보를 로컬에 저장.</p> -->
-      </div>
-      <div class="step-item">
-        <span class="step-item-icon">3</span>
-        <h3 class="step-item-label" style="color:var(--color-text);">
-          One last thing ㅡ how will you use your prototpe?
-        </h3>
-        <small>(You can pick more than one)</small>
-        <test-group variant="chip">
-          <test-chip>Share for feedback</test-chip>
-          <test-chip>Present live</test-chip>
-          <test-chip>Test with users</test-chip>
-          <test-chip>Collaborate in real time</test-chip>
-          <test-chip>Hand off to developers</test-chip>
-        </test-group>
-      </div>
-    </section>
-    <test-butto variant="primary">Start creating</test-butto>
   </section>
 
   https://support.google.com/accounts/answer/32040?visit_id=637702064644854938-965259796&p=pw_dont_reuse&hl=ko&rd=1

@@ -121,6 +121,30 @@
       <test-checkbox>다시 묻지 않기 / 일주일 동안 보지 않기don't ask again</test-checkbox>
     </section>
 
+    <section style="max-width: 400px; z-index: 1">
+      <test-titlebar heading="컬렉션에 추가">
+        <test-chip slot="action">새 컬렉션 만들기</test-chip>
+      </test-titlebar>
+      <test-group variant="checkbox">
+        <!-- aira-checked="mixed" aria-controls="1 2" -->
+        <test-checkbox>재생 목록 1</test-checkbox>
+        <test-checkbox>재생 목록 2</test-checkbox>
+      </test-group>
+    </section>
+    <section style="max-width: 400px; margin-top: 2rem; z-index: 1">
+      <test-titlebar heading="컬렉션 만들기">
+        <test-chip slot="action">완료</test-chip>
+      </test-titlebar>
+      <div style="height: 1rem"></div>
+      <test-textfield label="컬렉션 이름" placeholder="컬렉션 이름"></test-textfield>
+      <div style="height: 0.75rem"></div>
+      <test-tile variant="elevated" size="small">
+        <test-menuitem label="사용자 및 그룹 추가">
+          <test-avatar slot="avatar">+</test-avatar>
+        </test-menuitem>
+      </test-tile>
+    </section>
+
     <!-- <p>role=checkbox aria-checked=false</p> -->
   </article>
 </main>

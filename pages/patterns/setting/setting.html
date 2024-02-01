@@ -54,15 +54,11 @@
         <test-text variant="subhead">iPhone을 백업할 수 없음</test-text>
         <div style="height:var(--space-2)"> </div>
         <test-text variant="body">저장 공간이 부족하여 최근 iPhone 백업이 iCloud에 저장되지 않았습니다. 저장 공간을 추가 또는 관리하여 iPhone 백업을 유지하십시오.</test-text>
-        <div style="margin:-.25rem 0;"><test-separator></test-separator></div>
-        <div style="display:flex;justify-content:space-between;">
-          <span>레이블</span>
-          <button style="padding:0;border:0;background:#fff;font-family:inherit;font-size:inherit;color:var(--color-primary)">저장 공간 추가</button>
-        </div>
-        <button style="padding:0;border:0;background:#fff;font-family:inherit;font-size:inherit;color:var(--color-primary)">저장 공간 추가</button>
-        <br />
-        <div style="height:var(--space-2)"></div>
-        <button style="padding:0;border:0;background:#fff;font-family:inherit;font-size:inherit;color:var(--color-primary)">확인</button>
+        <div style="height:var(--space-2);"></div>
+        <test-group variant="chip">
+          <test-chip>저장 공간 추가</test-chip>
+          <test-chip>닫기</test-chip>
+        </test-group>
       </div>
     </test-tile>
   
@@ -137,7 +133,12 @@
         <test-menuitem>
           <div slot="text">
             <test-text variant="label">관심분야</test-text>
-            <test-text variant="body">문화/예술, 인권, 환경</test-text>
+            <test-group variant="tag">
+              <test-tag>문화/예술</test-tag>
+              <test-tag>인권</test-tag>
+              <test-tag>환경</test-tag>
+            </test-group>
+            <!-- <test-text variant="body">문화/예술, 인권, 환경</test-text> -->
           </div>
           <test-icon slot="action" name="arrow-right"></test-icon>
         </test-menuitem>
@@ -244,7 +245,7 @@
       <test-menuitem>
         <div slot="text">
           <test-text variant="label">계정 비활성화</test-text>
-          <test-text variant="body"><a href="">비활성화 페이지</a>에서 할 수 있습니다.</test-text>
+          <test-text variant="body"><test-link href="">비활성화 페이지</test-link>에서 할 수 있습니다.</test-text>
         </div>
         <test-chip slot="action">비활성화</test-chip>
       </test-menuitem>
@@ -266,7 +267,7 @@
           <test-text variant="subhead">어떻게<br />불러드릴까요?</test-text>
           <p style="margin: var(--space-after-subhead) 0 0 0">
             성별 정보는 Google이 사용자를 지칭하는 방식을 포함해 Google 서비스에서 맞춤설정된 환경을 제공하는 데 사용될 수 있습니다.
-            <a href="">더 알아보기</a>
+            <test-link href="">더 알아보기</test-link>
           </p>
           <br />
           <test-textfield label="닉네임" placeholder="이름이요.">
@@ -276,7 +277,7 @@
           </p>
         </form>
         <test-separator></test-separator>
-        <test-group alignment="vertical" role="radiogroup">
+        <test-group variant="radio">
           <legend hidden>radiogroup</legend>
           <test-radio name="gender">기타</test-radio>
           <test-radio name="gender">여성</test-radio>
@@ -285,12 +286,14 @@
       </div>
     </div>
   
-    <ul>
-      <li>개인정보와 프로필 정보를 구분한다.</li>
-      <li>프로필 수정은 프로필 페이지에서 진입할 수 있다.</li>
-      <li>사이드메뉴 또는 탭 vs 깊은 페이지</li>
-      <li>계정 삭제 페이지와 비밀번호 찾기 페이지는 라우팅이 필요하다.</li>
-      <p>Your name appears on your Profile page, as your byline, and in your responses. It is a required field.</p>
-    </ul>
+    <blockquote>
+      <ul class="checklist">
+        <li>개인정보와 프로필 정보를 구분한다.</li>
+        <li>프로필 수정은 프로필 페이지에서 진입할 수 있다.</li>
+        <li>사이드메뉴 또는 탭 vs 깊은 페이지</li>
+        <li>계정 삭제 페이지와 비밀번호 찾기 페이지는 라우팅이 되면 좋다.</li>
+        <li>Your name appears on your Profile page, as your byline, and in your responses. It is a required field.</li>
+      </ul>
+    </blockquote>
   </div>
 </main>

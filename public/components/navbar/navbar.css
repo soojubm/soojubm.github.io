@@ -49,7 +49,6 @@
 .navbar-backdrop {height:var(--navbar-height);}
 
 .navbar-notification {margin:0 .5rem;position:relative;}
-.navbar-notification-trigger {}
 .navbar-notification-menu {}
 .navbar-notification-menu:before {content:'';display:block;position:absolute;left:50%;right:0;top:-8px;bottom:0;}
 .navbar-notification-menu-title {}

@@ -1,153 +1,87 @@
-<nav class="breadcrumb" aria-label="breadcrumb">
-  <a class="breadcrumb-item breadcrumb-home" href="#">Home</a>
-  <i class="breadcrumb-divider">/</i>
-  <a class="breadcrumb-item breadcrumb-home" href="#">Accesory <small>173</small></a>
-  <i class="breadcrumb-divider">/</i>
-  <span class="breadcrumb-item" aria-current="page">상품명</span>
-</nav>
-
 <main class="product">
-  <!-- 헤드가 있어야 할 듯.. -->
   <header class="product-head">
     <section class="product-image" role="img" aria-labelledby="제품 이미지">
-      <img src="/public/images/product_sample.png" alt="제품 이미지" />
+      <img
+        src="/public/images/AlbumArt_{B5020207-474E-4720-B8A7-C6073790C400}_Large.jpg"
+        alt="제품 이미지"
+      />
     </section>
     <section class="product-info">
       <h1 class="product-info-name">センチメンタル通り</h1>
       <p class="product-info-byline">Album by <a href="#">Hachimitsupai</a></p>
       <div class="product-info-price" role="suggestion">
-        <del role="deletion">₩ 30,000</del> <b role="insertion">₩ 23,000</b> <em>(30%)</em>
+        <del role="deletion">₩ 30,000</del>
+        <em>(30%)</em>
+        <b role="insertion">₩ 23,000</b>
       </div>
-      <ul class="product-info-description">
+      <test-tag>460P 적립</test-tag>
+      <!-- <ul>
         <li>레이아웃 테스트. 아마존, yes24 3칼럼.</li>
         <li>배송비 2,500원</li>
         <li>제주, 도서, 산간지역 추가 배송비 3,000원</li>
-      </ul>
-      <test-tile size="small">
-        뷰티포인트 460P 적립 <i class="icon-bullet"></i> 현대카드 5% 청구할인
-      </test-tile>
-    </section>
-    <form class="product-order">
-      <div class="product-order-variant textfield">
+      </ul> -->
+
+      <form class="product-order">
+        <!-- <div class="product-order-variant textfield">
         <label class="textfield-label" for="">상품구성</label>
         <select class="textfield-input" name="" id="">
           <option value="">수량</option>
           <option value="">색상</option>
         </select>
-        <!-- <span class="textfield-suffix material-symbols-outlined">arrow_drop_down</span> -->
-      </div>
+        <span class="textfield-suffix">arrow_drop_down</span>
+      </div> -->
+        <div class="product-order-option" style="border: 2px solid var(--color-primary)">
+          <test-text>Sketching Brushes</test-text>
+          <test-text>Sketching Brushes</test-text>
+          <div style="height: var(--space-2)"></div>
+          <test-text>$ 14.99</test-text>
+        </div>
+        <div class="product-order-size">
+          <test-group variant="chip">
+            <test-chip>Small</test-chip>
+            <test-chip>Medium </test-chip>
+          </test-group>
 
-      <div class="product-order-option" style="border: 2px solid var(--color-primary)">
-        <h3 class="product-order-option-name">Sketching Brushes</h3>
-        <h3 class="product-order-option-description">Sketching Brushes</h3>
-        <b class="product-order-option-price">$ 14.99</b>
-      </div>
-
-      <div class="product-order-size">
-        <test-text variant="body">사이즈: Medium</test-text>
-        <test-group>
-          <test-chip>Small</test-chip>
-          <test-chip>Medium </test-chip>
-        </test-group>
-        <!--
           <test-text variant="body-bold">Delivery</test-text>
-          <test-chip>Tomorrow</test-chip>
-          <test-chip>Within 3 days</test-chip>
-        -->
-      </div>
+          <test-group variant="chip">
+            <test-chip>Tomorrow</test-chip>
+            <test-chip>Within 3 days</test-chip>
+          </test-group>
+        </div>
 
-      <div class="product-order-total">
-        <p class="product-order-total-label">총 상품 금액</p>
-        <div class="product-order-total-value">₩ 23,000</div>
-      </div>
-      <footer class="product-order-control">
-        <test-button variant="primary">장바구니</test-button>
-        <test-button variant="tertiary">찜</test-button>
-      </footer>
-      <!-- <a href="">환불 안내</a> -->
-      <!-- <button>사이즈 표</button> -->
-    </form>
+        <div class="product-order-total">
+          <p class="product-order-total-label">총 상품 금액</p>
+          <div class="product-order-total-value">₩ 23,000</div>
+        </div>
+        <test-group variant="button" class="product-order-control">
+          <test-button variant="tertiary">찜 reverse</test-button>
+          <test-button variant="primary">장바구니</test-button>
+        </test-group>
+        <!-- <a href="">환불 안내</a> -->
+        <!-- <button>사이즈 표</button> -->
+      </form>
+    </section>
   </header>
 
-  <test-card variant="flat" size="medium">
-    <div slot="entire">
-      <test-titlebar heading="Ratings"> </test-titlebar>
-      <br />
-      <test-card
-        variant="flat"
-        class="statistic-item"
-        aria-label="별점 5개 만점에 3.9개를 받았습니다."
-        style="text-align: center; z-index: auto"
-      >
-        <div slot="entire">
-          <span class="statistic-label">리뷰 116만개</span>
-          <span class="statistic-value" style="margin-left: -0.5rem">⭐ 4.8</span>
-        </div>
-      </test-card>
-      <div
-        style="
-          display: flex;
-          flex-direction: column;
-          gap: var(--space-2);
-          margin: var(--space-3) 0 0;
-        "
-      >
-        <div class="meter">
-          <b class="meter-label">5 Stars</b>
-          <div class="meter-track"><b class="meter-thumb" style="width: 68%"></b></div>
-          <span class="meter-value">68%</span>
-        </div>
-        <div class="meter">
-          <b class="meter-label">4 Stars</b>
-          <div class="meter-track"><b class="meter-thumb" style="width: 24%"></b></div>
-          <span class="meter-value">24%</span>
-        </div>
-        <div class="meter">
-          <b class="meter-label">3 Stars</b>
-          <div class="meter-track"><b class="meter-thumb" style="width: 0"></b></div>
-          <span class="meter-value">0%</span>
-        </div>
-        <div class="meter">
-          <b class="meter-label">2 Stars</b>
-          <div class="meter-track"><b class="meter-thumb" style="width: 2%"></b></div>
-          <span class="meter-value">2%</span>
-        </div>
-        <div class="meter">
-          <b class="meter-label">1 Star</b>
-          <div class="meter-track"><b class="meter-thumb" style="width: 6%"></b></div>
-          <span class="meter-value">6%</span>
-        </div>
-      </div>
-      <!-- <small>별 다섯개에서 점수만큼 채우는 유아이는 최근 잘 보이지 않는다.</small> -->
-    </div>
-  </test-card>
-
-  <section class="product-review">
-    <header>
-      <span class="product-review-eyebrow">리뷰</span>
-      <h1 class="product-review-title">총 83건의 리뷰가 있습니다.</h1>
-    </header>
-    <div></div>
-  </section>
-
   <section class="product-detail">
-    <section class="product-detail-intro" style="margin: 8rem 0">
+    <div class="product-detail-intro" style="margin: 8rem 0">
       <figure class="product-detail-intro-image">
         <img src="" alt="" />
       </figure>
       <figure class="product-detail-intro-image">
         <img src="" alt="" />
       </figure>
-    </section>
-
-    <h1 class="product-detail-headline">
+    </div>
+    <test-text variant="title">
       <span class="linebreak-desktop">우리의 입맛에 맞는 파스타를 엄선하여</span>
       <span class="linebreak-desktop">이탈리아 지역별 정통 파스타소스를 재현하였습니다.</span>
-    </h1>
+    </test-text>
 
-    <section class="product-detail-summary">
+    <br />
+
+    <div class="product-detail-summary">
       <test-text variant="subhead">상품상세정보 고지</test-text>
-      <dl>
+      <dl style="margin: var(--space-3) 0">
         <dt>제품명</dt>
         <dd>노멀 헤어퍼퓸</dd>
         <dt>소재</dt>
@@ -165,35 +99,14 @@
         <dt>문의전화</dt>
         <dd>02-000-2000</dd>
       </dl>
-      <ul>
-        <li>크라우드 펀딩 도메인에서 옵션을 펼치는 경향. 그리고 애플.</li>
-        <li>
-          상품 구성(옵션)을 우선적으로 정의해야 함. 하나의 상품이 여러 개의 옵션(상품)을 가질 수
-          있고, 색상 또는 사이즈 옵션을 가질 수 있다.
-        </li>
-        <li>
-          3칼럼 레이아웃은 스크롤 고정 영역을 고려해야 한다. 상품 이미지를 가운데 배치하면 상세
-          정보와 주문을 분리하기 어렵다.
-        </li>
-        <li>
-          작게 만들기. 옵션을 장바구니에서 선택. 모바일에서는 버튼 후 옵션 선택. 그 전에 단건 구매
-          위주의 주문이라면 장바구니를 없앨 수도. 장바구니는 drawer 형태가 될 수도. 쇼피파이.
-        </li>
-        <li>
-          신선식품 커머스. 유통기한, 원산지, 포장(친환경) 등이 현명한(?) 소비자의 구매 결정에 영향을
-          주는 요인으로 작용하여 최상단으로 상품 정보가 올라오는 경향. 법적으로 강제되었으나
-          상세페이지의 이미지에 포함되거나 하단에 눈에 띄지 않게 고지하는 경향이었음. 베네핏,
-          포인트, 배송 안내에 더하여 전략 배치할 수 있다.
-        </li>
-      </ul>
-    </section>
+    </div>
 
-    <section class="product-detail-gallary">
+    <!-- <section class="product-detail-gallary">
       <figure><img src="/public/images/springsteen.jpg" alt="" /></figure>
       <figure><img src="/public/images/springsteen.jpg" alt="" /></figure>
       <figure><img src="/public/images/springsteen.jpg" alt="" /></figure>
       <figure><img src="/public/images/springsteen.jpg" alt="" /></figure>
-    </section>
+    </section> -->
 
     <!-- <h3>오픈마켓</h3>
     <ul>
@@ -207,98 +120,89 @@
     <!-- <li>배송지연 시 공지 (자연재해, 내부문제 등)</li> -->
 
     <section class="product-policy">
-      <h3 class="product-policy-title" data-english="Shipping Information">배송 정책</h3>
-      <li>
-        배송지를 잘못 기재하거나 창작자에게 사전 고지 없이 배송지를 수정하여 배송사고가 발생할 경우
-        책임을 지지 않습니다 .
-      </li>
-      <h3 class="product-policy-title" data-english="Returns &Exchanges">환불 정책</h3>
-      <li>환불 완료까지 최대 영업일 기준 4일이 소요될 수 있습니다.</li>
-      고객님의 책임있는 사유로 상품 등이 멸실 또는 훼손된 경우 교환/반품이 불가능합니다. 고객님의
-      사용 또는 일부 소비에 의하여 상품의 가치가 현저히 감소한 경우 교환/반품이 불가능합니다. 시간의
-      경과에 의하여 재판매가 곤란한 정도로 상품 등의 가치가 현저히 감소한 경우 교환/반품이
-      불가능합니다.
-
-      <h3 class="product-policy-title" data-english="">교환 또는 반품(취소) 정책</h3>
-      <h4>교환/반품이 불가능한 경우가 있나요?</h4>
+      <test-text variant="body-bold" data-english="Shipping Information">배송 정책</test-text>
+      <li>미책임. 배송지를 오기재. 미고지 배송지를 수정.</li>
+      <test-text variant="body-bold" data-english="Returns &Exchanges"
+        >교환 또는 반품(취소) 정책</test-text
+      >
       <ul>
+        <li>환불 완료 영업일 기준 4일</li>
+        <li>출고 이후 환불요청 시 상품 회수 후 처리됩니다.</li>
+        <li>상품 불량인 경우는 배송비를 포함한 전액이 환불됩니다.</li>
         <li>
-          고객에게 책임이 있는 사유로 상품이 멸실되거나 훼손된 경우 (상품내용을 확인하기 위하여 포장
-          등을 훼손한 경우는 제외)
+          해당 상품 구매 시 사은품/증정품 등이 제공된 경우, 상품 교환/반품 시 함께 보내주셔야
+          합니다.
         </li>
-        <li>고객의 사용 또는 일부 소비로 상품 가치가 현저히 감소한 경우</li>
-        <li>시간이 지나 다시 판매하기 곤란할 정도로 상품 가치가 현저히 감소한 경우</li>
-        <li>복제가 가능한 상품의 포장을 훼손한 경우</li>
-        <li>
+        <li>교환/반품 불가 사유. 훼손(포장 등). 소비. 시간 경과로 인한 가치 훼손(?)</li>
+        <li>단순변심/구매착오. 상품을 받으신 날로부터 7일 이내 교환/반품이 가능합니다.</li>
+        <!-- <li>
           고객의 주문에 따라 개별적으로 생산되는 상품 또는 이와 유사한 상품에 대하여 청약 철회등을
           인정하는 경우 통신판매업자에게 회복할 수 없는 중대한 피해가 예상되는 경우로서 사전에 해당
           거래에 대하여 별도로 그 사실을 고지하고 고객의 서면(전자문서 포함)에 의한 동의를 받은 경우
-        </li>
+        </li> -->
       </ul>
 
-      <li>출고 이후 환불요청 시 상품 회수 후 처리됩니다.</li>
-      <li>상품 불량인 경우는 배송비를 포함한 전액이 환불됩니다.</li>
-      <li>
-        해당 상품 구매 시 사은품/증정품 등이 제공된 경우, 상품 교환/반품 시 함께 보내주셔야 합니다.
-      </li>
-      <dt>단순변심/구매착오</dt>
-      <dd>
-        상품을 받으신 날로부터 7일 이내 교환/반품이 가능합니다. TODO 14? 15? 일로 알고 있는데.
-      </dd>
-      <dl>
-        <dt>배송가능지역</dt>
-        <dd>전국</dd>
-        <dt>배송가능요일</dt>
-        <dd>월화수목금 (공휴일제외)</dd>
-        <dt>배송비</dt>
-        <dd>
-          기본 배송비 25,000원 / 총 결제 금액 50,000원 이상 무료배송 / 도서,산간,제주 기본 배송비
-          5,000d원(기본 배송비 2,000 + 3,000)
-        </dd>
-        <dt>배송방법</dt>
-        <dd>택배 (CJ대한통운 1588-1255)</dd>
-        <dt>예상배송시간</dt>
-        <dd>결제 완료 후를 기준할 것인지, 배송 시작 후를 기준할 것인지, 영업일 기준 1~3일</dd>
-        <p>배송비 결제 주문 시 결제</p>
-      </dl>
-
-      <dl>
-        <dt>반품배송비</dt>
-        <dd>3,000원 (부분 반품인 경우)/dd></dd>
-        <dt>교환/반품주소</dt>
-        <dd>서울시 강서구 화곡로 344-2 1404호</dd>
-        <dt>교환/반품방법</dt>
-        <dd>
-          [마이페이지>주문조회>교화/반품 신청하기] 또는 [고객센터>1:1상담] 또는
-          고객센터(080-619-8888).
-        </dd>
-
-        <dt>통신판매업자 귀책</dt>
-        다만, 공급받은 상품이 표시/광고의 내용과 다르거나 계약내용과 다르게 이행된 경우에는 상품을
-        공급받은 날부터 3개월 이내, 그 사실을 안 날 또는 알 수 있었던 날부터 30일 이내 교환/반품
-        신청을 하실 수 있습니다. (배송비 회사 부담)
-        <dd>
-          상품의 내용이 표시, 광고 내용과 다르거나 계약내용을 다르게 이행한 경우에는 재화 등을
-          공급받은 날로부터 3개월 이내, 그 사실을 안 날 또는 알 수 있었던 날로부터 30일 이내에 교환
-          및 반품이 가능합니다.
-        </dd>
-        <dt>교환/반품조건</dt>
-        <dd>상품 미훼손 및 미사용한 경우</dd>
-        <li>
-          단, 일부 제품의 경우 포장을 개봉하였거나 포장이 훼손되어 상품가치가 상실된 경우에는 교환
-          및 반품이 불가능합니다.
-        </li>
-        <li>
-          변심 반품의 경우는 왕복배송비를 차감한 금액이 환불되며, 제품 및 포장 상태가 재판매
-          가능하여야 합니다.
-        </li>
-        <li>
-          주문 취소의 경우 주문 접수 상태에서는 고객님께서 직접 취소하실 수 있습니다. 주문 접수 상태
-          이후 취소는 고객센터로 문의 바랍니다.<br />반송을 원하실 경우 주문번호, 요청사항을
-          메모하여 보내주시면 보다 신속한 처리에 도움이 됩니다.
-        </li>
-      </dl>
-      <h3 class="product-policy-title">불만처리 및 분쟁해결</h3>
+      <table>
+        <tr>
+          <th>배송가능지역</th>
+          <td>전국</td>
+        </tr>
+        <tr>
+          <th>배송가능요일</th>
+          <td>월화수목금 (공휴일제외)</td>
+        </tr>
+        <tr>
+          <th>배송비</th>
+          <td>
+            기본 배송비 25,000원 / 총 결제 금액 50,000원 이상 무료배송 / 도서,산간,제주 기본 배송비
+            5,000d원(기본 배송비 2,000 + 3,000). 배송비 결제 주문 시 결제
+            <p>
+              변심 반품의 경우는 왕복배송비를 차감한 금액이 환불되며, 제품 및 포장 상태가 재판매
+              가능하여야 합니다.
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <th>배송방법</th>
+          <td>택배 (CJ대한통운 1588-1255)</td>
+        </tr>
+        <tr>
+          <th>예상배송시간</th>
+          <td>영업일 기준 1~3일</td>
+        </tr>
+        <tr>
+          <th>반품배송비</th>
+          <td>3,000원 (부분 반품인 경우)/dd></td>
+        </tr>
+        <tr>
+          <th>교환/반품주소</th>
+          <td>서울시 강서구 화곡로 344-2 1404호</td>
+        </tr>
+        <tr>
+          <th>교환/반품방법</th>
+          <td>
+            [마이페이지>주문조회>교화/반품 신청하기] 또는 [고객센터>1:1상담] 또는
+            고객센터(080-619-8888).
+          </td>
+        </tr>
+        <tr>
+          <th>통신판매업자 귀책</th>
+          <td>
+            상품의 내용이 표시, 광고 내용과 다르거나 계약내용을 다르게 이행한 경우에는 재화 등을
+            공급받은 날로부터 3개월 이내, 그 사실을 안 날 또는 알 수 있었던 날로부터 30일 이내에
+            교환 및 반품이 가능합니다. (배송비 회사 부담)
+          </td>
+        </tr>
+        <tr>
+          <th>교환/반품조건</th>
+          <td>
+            주문 취소의 경우 주문 접수 상태에서는 고객님께서 직접 취소하실 수 있습니다. 주문 접수
+            상태 이후 취소는 고객센터로 문의 바랍니다.<br />반송을 원하실 경우 주문번호, 요청사항을
+            메모하여 보내주시면 보다 신속한 처리에 도움이 됩니다.
+          </td>
+        </tr>
+      </table>
+      <test-text variant="subhead">불만처리 및 분쟁해결</test-text>
       <p>
         상품의 품질보증 및 피해보상에 관한 사항은 관련 법률 및 공정거래위원회
         고시[소비자분쟁해결기준]에 따릅니다.
@@ -322,7 +226,7 @@
           기타 객관적으로 이에 준하는 것으로 인정되는 경우 청약철회가 제한될 수 있습니다.
         </td>
       </tr>
-      <h3 class="product-policy-title">미성년자 계약취소에 대한 안내</h3>
+      <test-text variant="body-bold">미성년자 계약취소에 대한 안내</test-text>
       미성년 고객께서 상품을 주문(계약) 하시는 경우,법정대리인(부모님 등)의 동의가 없으면 미성년자
       본인 또는 법정대리인(부모님 등)이 그 주문(계약)을 취소하실 수있습니다. 안전검사 대상 공산품을
       구매하시는 경우 품질경영 및 공산품 안전관리법에 따른 안전검사표시가 있는 제품인지 확인하시기
@@ -334,14 +238,41 @@
         통신판매업자는 미성년자와 재화등의 거래에 관한 계약을 체결할 때에는 법정대리인이 그 계약에
         동의하지 아니하면 미성년자 본인 또는 법정대리인이 그 계약을 취소할 수 있다는 내용을
         미성년자에게 고지하여야 한다.
-        <!-- 구매자가 미성년자인 경우에는 상품 구입 시 법정대리인이 동의하지 아니하면 미성년자 본인
-        또는 법정대리인이 구매취소 할 수 있습니다. -->
-      </p>
-      <p>
-        해당 상품 구매 계약자가 미성년자일 경우 법정대리인이 동의하지 아니하면 미성년자 본인 또는
-        법정대리인은 이 계약을 취소할 수 있습니다.
       </p>
     </section>
+
+    <blockquote>
+      <div>
+        <p>상품을 수거해 드릴까요?</p>
+        <p>네. 수거해주세요. 네이버페이를 통해 택배사로 요청합니다.</p>
+        <p>
+          아니오. 이미 판매자에게 발송했습니다. 송장정보를 입력하면 처리 현황을 확인할 수 있습니다.
+        </p>
+        <p>아니오. 나중에 직접 발송할게요. 판매자에게 수거 방법 확인 후 발송해주세요.</p>
+      </div>
+
+      <ul>
+        <li>크라우드 펀딩 도메인에서 옵션을 펼치는 경향. 그리고 애플.</li>
+        <li>
+          상품 구성(옵션)을 우선적으로 정의해야 함. 하나의 상품이 여러 개의 옵션(상품)을 가질 수
+          있고, 색상 또는 사이즈 옵션을 가질 수 있다.
+        </li>
+        <li>
+          3칼럼 레이아웃은 스크롤 고정 영역을 고려해야 한다. 상품 이미지를 가운데 배치하면 상세
+          정보와 주문을 분리하기 어렵다.
+        </li>
+        <li>
+          작게 만들기. 옵션을 장바구니에서 선택. 모바일에서는 버튼 후 옵션 선택. 그 전에 단건 구매
+          위주의 주문이라면 장바구니를 없앨 수도. 장바구니는 drawer 형태가 될 수도. 쇼피파이.
+        </li>
+        <li>
+          신선식품 커머스. 유통기한, 원산지, 포장(친환경) 등이 현명한(?) 소비자의 구매 결정에 영향을
+          주는 요인으로 작용하여 최상단으로 상품 정보가 올라오는 경향. 법적으로 강제되었으나
+          상세페이지의 이미지에 포함되거나 하단에 눈에 띄지 않게 고지하는 경향이었음. 베네핏,
+          포인트, 배송 안내에 더하여 전략 배치할 수 있다.
+        </li>
+      </ul>
+    </blockquote>
     <!--
 		거래조건에 관한 정보
 
@@ -395,14 +326,12 @@
         >
           <em>₩ 16,000</em>
         </div>
-        <h3 class="card-title" style="padding-top: 0.25rem">
-          가격을 강조하는 카드. 에어팟프로 블루투스 이어폰 AirPods PRO.
-        </h3>
+        <h3 class="card-title" style="padding-top: 0.25rem">가격을 강조하는 카드.</h3>
         <a
           href="#"
           style="
             display: block;
-            margin: 0 0 var(--space-4) 0;
+            margin: var(--space-3) 0;
             color: var(--gray800);
             text-decoration: underline;
           "
@@ -413,14 +342,15 @@
       </article>
     </section>
   </section>
-</main>
 
-<div>
-  <p>상품을 수거해 드릴까요?</p>
-  <p>네. 수거해주세요. 네이버페이를 통해 택배사로 요청합니다.</p>
-  <p>아니오. 이미 판매자에게 발송했습니다. 송장정보를 입력하면 처리 현황을 확인할 수 있습니다.</p>
-  <p>아니오. 나중에 직접 발송할게요. 판매자에게 수거 방법 확인 후 발송해주세요.</p>
-</div>
+  <section class="product-review">
+    <header>
+      <test-text varinat="label">리뷰</test-text>
+      <test-text variant="subhead">총 83건의 리뷰가 있습니다.</test-text>
+    </header>
+    <div></div>
+  </section>
+</main>
 
 <div style="max-width: 400px; margin: 0 auto">
   <test-titlebar heading="배송지 등록"> </test-titlebar>
@@ -535,69 +465,4 @@
       <test-button variant="primary">결제</test-button>
     </div>
   </footer>
-</main>
-
-<aside class="product-quick is-visible">
-  <figure class="product-quick-head">
-    <img src="/static/media/economy-thumbnail.0e2ed4c5.png" />
-    <figcaption>
-      <h3 class="product-quick-head-title">고슴이 생존기(경제 기본기편)</h3>
-      <div class="product-quick-head-description">10개 에피소드, 평생 열람가능</div>
-    </figcaption>
-  </figure>
-  <section class="product-quick-total">
-    <span class="product-quick-total-price" style="font-size: var(--font-size-large)">
-      <del>₩ 25,000</del> <b>₩ 16,000</b> <em class="rate">(36% 할인)</em>
-    </span>
-  </section>
-  <footer class="product-quick-controls">
-    <test-button variant="primary">모두 주문하기</test-button>
-  </footer>
-</aside>
-
-<main class="contact">
-  <header class="contact-head">
-    <div class="contact-head-background"></div>
-    <h1 class="contact-head-title">이곳으로 오십시오.</h1>
-    <div style="width: 100%; overflow: hidden">
-      <p class="contact-head-description">
-        저희가 하는 일이나 저희 팀에 궁금한 점이 있으면 언제든 연락주세요. 부끄러우니까
-        연락하지마요.
-      </p>
-      <div class="contact-head-phone">
-        대구광역시 달서구<br />
-        죽전동 268-8<br />
-        강남빌라 500호
-      </div>
-      <div class="contact-head-address">
-        <div>E. soojubm@gmail.com</div>
-        <div>T. +357 22 875996</div>
-        <div>F. +357 22 875996</div>
-      </div>
-    </div>
-
-    <br />
-
-    <test-group alignment="vertical">
-      <test-menuitem label="Email" description="hello@mantine.dev">
-        <test-avatar slot="avatar" variant="secondary" size="large"></test-avatar>
-      </test-menuitem>
-      <test-menuitem label="Phone" description="+49 (800) 335 35 35">
-        <test-avatar slot="avatar" variant="secondary" size="large"></test-avatar>
-      </test-menuitem>
-      <test-menuitem label="Address" description="844 Morris Park avenue">
-        <test-avatar slot="avatar" variant="secondary" size="large"></test-avatar>
-      </test-menuitem>
-      <test-menuitem label="Working hours" description="8 a.m. – 11 p.m.">
-        <test-avatar slot="avatar" variant="secondary" size="large"></test-avatar>
-      </test-menuitem>
-    </test-group>
-  </header>
-
-  <section class="contact-map">
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.492719612198!2d121.55932191500658!3d25.051283883964214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442ab94e6c63c77%3A0xb57fea257fc2bff2!2z7LmY7JWE642UIO2OkeumrOyImA!5e0!3m2!1sko!2skr!4v1553940621738!5m2!1sko!2skr"
-      allowfullscreen
-    ></iframe>
-  </section>
 </main>

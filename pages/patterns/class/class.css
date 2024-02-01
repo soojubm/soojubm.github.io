@@ -1,9 +1,9 @@
 .class {
+  display:flex;
+  flex-wrap:wrap;
+
   max-width: 1400px;
   margin: 0 auto;
-  
-  display:flex;flex-wrap:wrap;
-
 
   color: #000;
   --width-section: 60%;
@@ -16,14 +16,11 @@
   --color-primary: #000;
   --color-text: #000;
 }
-.class-media {width:100%;max-width:50%;border:var(--border);border-right:0;background:#000;box-sizing:border-box;}
-
+.class-media {width:100%;max-width:50%;border:var(--border);border-right:0;background:var(--color-newneek-gray);box-sizing:border-box;}
 .class-order {width:100%;max-width:50%;border:var(--border);box-sizing:border-box;background-color:#FFCE2E;background-color:var(--color-newneek);color:#000;}
-
 .class-order > * {
   padding: 1rem 1.5rem;
 }
-
 .class-order-title {border-top:var(--border);}
 .class-order-description {border-top:var(--border);}
 .class-order-price {border-top:var(--border);font-size:var(--font-size-large);}
@@ -37,7 +34,7 @@
 .minicards .minicard p {}
 
 
-.class-intro {width:100%;padding:1rem var(--section-padding);border:var(--border);border-top:0;text-align:center;}
+.class-intro {width:100%;padding:2rem var(--section-padding);border:var(--border);border-top:0;}
 
 .class-why {width:100%;padding:var(--section-padding);border:var(--border);border-top:0;background:var(--color-newneek-gray);}
 .class-why-item {}
@@ -75,10 +72,7 @@
 }
 .class-faq-item {border-top:var(--border);}
 
-.class-order.is-observed {width:320px;position:fixed;top:60px;}
-
-.class-overview {@mixin tile-flat;width:100%;max-width:360px;margin:2rem auto;padding:1rem;border:var(--border);}
-.class-overview-title {margin-bottom:0 !important;@mixin text-subhead;}
+.class-refund {width:100%;border:var(--border);border-top:0;}
 
 @media (--large) {
   .class {
@@ -91,8 +85,6 @@
   .class-why-item {width:100%;}
   .class-why-item + .class-why-item {margin:2rem 0 0 0;}
 }
-
-
 
 .products {display:flex;flex-wrap:wrap;width:100%;border-left:var(--border);}
 .products-item {width:25%;border:var(--border);border-width:0 1px 1px 0;box-sizing:border-box;}

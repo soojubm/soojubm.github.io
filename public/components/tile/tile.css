@@ -1,3 +1,11 @@
+
+/* reset  */
+figure {
+  margin: 0;
+}
+p {margin: 0;}
+img {display:block;width:100%;}
+
 .tile {
   display: block;
   padding: var(--space-4);
@@ -25,12 +33,6 @@
   padding: var(--space-2);
 }
 
-/* reset  */
-figure {
-  margin: 0;
-}
-p {margin: 0;}
-img {display:block;width:100%;}
 
 
 ::slotted([slot=action]) {
@@ -53,44 +55,7 @@ img {display:block;width:100%;}
 /* // 텍스트가 올 때 시각보정. 아이콘이 오면 아이콘에서 margin-top:.5rem?
 // hoverable. 전체가 클릭 영역일 수도 있지만 내부에 버튼이 있을 수도.
 // flat / raised / elevated / floating / lifted
-
-@define-mixin tile {
-  border: var(--border);
-  border-radius: var(--radius);
-  box-sizing: border-box;
-  background: var(--color-background);
-  position: relative;
-
-  &:hover {
-    background-color: none !important;
-  }
-}
-@define-mixin tile-flat {
-  @mixin tile;
-  margin: var(--space-3) 0;
-  padding: var(--space-3);
-}
-@define-mixin tile-flat-small {
-  @mixin tile;
-  margin: var(--space-2) 0;
-  padding: var(--space-2);
-}
-@define-mixin tile-flat-tiny {
-  @mixin tile;
-  padding: var(--space-1);
-}
-
-@define-mixin tile-elevated {@mixin tile-flat;border:0;box-shadow:var(--shadow-tile);}
-@define-mixin tile-elevated-small {@mixin tile-flat-small;border:0;box-shadow:var(--shadow-tile);}
-@define-mixin tile-elevated-tiny {@mixin tile-flat-tiny;border:0;box-shadow:var(--shadow-tile);}
-
-  
-
-.tile-flat {@mixin tile-flat;}
-.tile-flat-small {@mixin tile-flat-small;}
-.tile-elevated {@mixin tile-elevated;}
-.tile-elevated-small {@mixin tile-elevated-small;}
-.tile-elevated-tiny {@mixin tile-elevated-tiny;} */
+*/
 
 
 ::slotted([slot=thumbnail]) {
@@ -99,6 +64,11 @@ img {display:block;width:100%;}
   border-radius: var(--radius);
   box-sizing: border-box;
   overflow: hidden;
+  position: relative;
+}
+::slotted([slot=thumbnail]) img {
+  width: 75%;
+
 }
 ::slotted([slot=heading]) {
   display: block;

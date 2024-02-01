@@ -112,14 +112,14 @@
 
     <section class="tabpanel" role="tabpanel" aria-hidden="false" data-index="1">
       <test-card variant="nuded" class="js-modal" data-modal="newneek">
-        <figure slot="thumbnail">
-          <img src="/public/images/newneek/gosum-spinner.png" alt="" />
+        <figure slot="thumbnail" style="background-color: var(--color-newneek);">
+          <img src="/public/images/newneek/gosum-spinner.png" alt="" style="display:block;width:75%;margin:1rem auto 0;" />
         </figure>
         <test-text slot="heading" variant="body-bold">뉴닉</test-text>
         <p slot="body" class="card-description">description.....</p>
         <time class="card-date">2022. 02. 22.</time>
         <test-tag slot="category" variant="primary">정리중</test-tag>
-        <test-group slot="tags">
+        <test-group slot="tags" variant="tag">
           <test-tag variant="hashtag">프로젝트관리</test-tag>
           <test-tag variant="hashtag">디자인</test-tag>
           <test-tag variant="hashtag">프론트엔드개발</test-tag>
@@ -149,7 +149,7 @@
       </test-card>
       <test-card variant="nuded" class="js-modal" data-modal="lettering">
         <figure slot="thumbnail" class="card-thumbnail">
-          <img src="/public/images/budha.png" alt="" />
+          <img src="/public/images/budha.png" alt="" style="margin-top:-2rem;" />
         </figure>
         <test-text slot="heading" variant="body-bold">레터링</h3>
         <button class="card-more" hidden>

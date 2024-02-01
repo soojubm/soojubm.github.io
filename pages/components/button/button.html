@@ -79,11 +79,6 @@
     </section>
 
     <!-- 참고: 버튼 네이밍. 'link' | 'subtle' | 'primary' / 'solid' | 'outline' | 'plain' |'text' -->
-    <test-group alignment="vertical">
-      <test-tile variant="elevated">
-        <test-text variant="body-bold">Elevated Button</test-text>
-      </test-tile>
-    </test-group>
 
     <section class="component-guide">
       <test-text variant="subhead" aria-label="예측 가능해야 합니다.">Behavior</test-text>
@@ -108,67 +103,138 @@
         스타일링의 결합. 버튼이 비활성화 툴팁이 존재한다면 버튼보다 먼저 포커스하세요. tooptip ?
         iconButton
       </test-text>
+    </section>
 
-      <test-text variant="body-bold">Groupable - Button group patterns - binary choices.</test-text>
+
+
+    <test-text variant="body-bold">Groupable - Button group patterns - binary choices.</test-text>
+    <test-text variant="body">
+      텍스트 버튼은 버튼 처럼 보이지 않을 수 있기 때문에 학습된? 보편적인? 약속된? 누구랑 약속?
+      패턴에서 사용하세요. 이 시스템에는 정의하지 않지만 세로 정렬되는 버튼 그룹에서 text button이
+      아래에 배치되는 패턴과 혼동되지 않도록 버튼의 아래 가이드 텍스트를 배치하지 않습니다. ->
+      사실은 모든 버튼에서 전환을 유도하는 텍스트를 사용없이 인터페이스만으로.
+    </test-text>
+    <section class="component-case">
+      <test-group variant="chip">
+        <test-button variant="tertiary">취소</test-button>
+        <test-button variant="primary">저장</test-button>
+      </test-group>
+    </section>
+    <section class="component-case">
+      <test-group variant="chip">
+        <test-button variant="text">건너뛰기</test-button>
+        <test-button variant="secondary">다음</test-button>
+      </test-group>
+    </section>
+    <section class="component-case">
+      <test-group variant="chip">
+        <test-button variant="tertiary">이전</test-button>
+        <test-button variant="secondary">다음</test-button>
+      </test-group>
+    </section>
+    <section class="component-case">
+      <test-group variant="chip" class="hero-actions">
+        <test-button variant="primary" href="#components">지금 가입하기</test-button>
+        <test-button variant="text">더 알아보기</test-button>
+      </test-group>
+    </section>
+
+    <test-text variant="body-bold">
+      ShowMoreButton <span hidden>Image Button, CheckoutButton</span>
+    </test-text>
+    <test-text variant="body">
+      fullWidth로 사용하지 마세요. 단일 콘텐츠 또는 콘텐츠 목록의 너비와 대비를 통한 강조. TODO
+      이건 최종 액션이 아님. 칩이 되는 게 나을 수도.
+    </test-text>
+    <test-tile>
+      <test-button variant="tertiary">
+        Show more
+        <test-icon slot="suffix" name="nav-arrow-down"></test-icon>
+      </test-button>
+    </test-tile>
+
+    <test-text variant="body-bold">Loading Button</test-text>
+    <test-tile>
+      <test-button variant="tertiary">loading/fetching</test-button>
+    </test-tile>
+
+    <blockquote>
+    <test-text variant="body">
+      Split button. 사용자에게 더 많은 작업을 표시하는 경우 작업을 선택하여 트리거할 수 있도록 선택 + 버튼
+      조합을 사용. 것이 좋습니다.
       <test-text variant="body">
-        텍스트 버튼은 버튼 처럼 보이지 않을 수 있기 때문에 학습된? 보편적인? 약속된? 누구랑 약속?
-        패턴에서 사용하세요. 이 시스템에는 정의하지 않지만 세로 정렬되는 버튼 그룹에서 text button이
-        아래에 배치되는 패턴과 혼동되지 않도록 버튼의 아래 가이드 텍스트를 배치하지 않습니다. ->
-        사실은 모든 버튼에서 전환을 유도하는 텍스트를 사용없이 인터페이스만으로.
-      </test-text>
-      <section class="component-case">
-        <test-group variant="chip">
-          <test-button variant="tertiary">취소</test-button>
-          <test-button variant="primary">저장</test-button>
-        </test-group>
-      </section>
-      <section class="component-case">
-        <test-group variant="chip">
-          <test-button variant="text">건너뛰기</test-button>
-          <test-button variant="secondary">다음</test-button>
-        </test-group>
-      </section>
-        <test-group variant="chip">
-          <test-button variant="tertiary">이전</test-button>
-          <test-button variant="secondary">다음</test-button>
-        </test-group>
-        <test-separator></test-separator>
-        <test-group variant="chip" class="hero-actions">
-          <test-button variant="primary" href="#components">지금 가입하기</test-button>
-          <test-button variant="text">더 알아보기</test-button>
-        </test-group>
-      </section>
-
-      <test-text variant="body-bold">
-        ShowMoreButton <span hidden>Image Button, CheckoutButton</span>
-      </test-text>
-      <test-text variant="body">
-        fullWidth로 사용하지 마세요. 단일 콘텐츠 또는 콘텐츠 목록의 너비와 대비를 통한 강조. TODO
-        이건 최종 액션이 아님. 칩이 되는 게 나을 수도.
-      </test-text>
-      <test-tile>
-        <test-button variant="tertiary">
-          Show more
-          <test-icon slot="suffix" name="nav-arrow-down"></test-icon>
-        </test-button>
-      </test-tile>
-
-      <test-text variant="body-bold">Loading Button</test-text>
-      <test-tile>
-        <test-button variant="tertiary">loading/fetching</test-button>
-      </test-tile>
-
-      <test-text variant="body-bold">Split button</test-text>
-      <test-text variant="body">
-        사용자에게 더 많은 작업을 표시하는 경우 작업을 선택하여 트리거할 수 있도록 선택 + 버튼
-        조합을 사용. 것이 좋습니다.
-      </test-text>
-
-      <test-text variant="body-bold">Link Button</test-text>
-      <test-text variant="body">
-        버튼과 형태는 동일한 합성된 컴포넌트. Link 안에 button이 들어가면 링크 역할과 버튼의 형태를
+        Link Button. 버튼과 형태는 동일한 합성된 컴포넌트. Link 안에 button이 들어가면 링크 역할과 버튼의 형태를
         분리할 수 있다.
       </test-text>
+      <test-text variant="body">elevated button과 elevated menuitem. 후자만 정의하면 됨.</test-text>
+
+    </blockquote>
+  </article>
+
+  <article class="article">
+    <test-text variant="title">Links</test-text>
+    <test-text variant="body-large"
+      >사용자 여정 목적지. 페이지 이동. destination that can be bookmarked. 정보 확장 기능은 따로
+      정의해야 함.</test-text
+    >
+
+    <dl class="article-aka">
+      <dt>a.k.a.</dt>
+      <dd title="">Anchor</dd>
+    </dl>
+
+    <section class="component-example">
+      <p style="display: flex; flex-wrap: wrap; gap: var(--spae-2)">
+        형무소 안에서는 소장의 말이 곧 법이었으며 죄수들의 잘못과 실수는 결코 용납되지 않는다.
+        어머니의 사망 소식을 듣고 인해 2번이나 탈옥을 시도했다가 체포된
+        <test-link href="#">루크</test-link>의 발에 쇠통이 채워지며 루크는…
+        <test-link href="#">더 보기</test-link>
+      </p>
+      <br />
+      <test-group variant="tag">
+        <test-tag variant="hashtag">이것은헤시태그</test-tag>
+        <test-tag variant="hashtag">해시태그는클릭할수있다?</test-tag>
+        <test-tag variant="hashtag">해시태그를통한검색</test-tag>
+      </test-group>
+      <test-separator></test-separator>
+      <p>
+        <button
+          style="display: flex; align-items: center; gap: 0.5rem; color: var(--color-primary)"
+        >
+          View More <test-icon name="nav-arrow-down"></test-icon>
+        </button>
+        <button
+          style="display: flex; align-items: center; gap: 0.5rem; color: var(--color-primary)"
+        >
+          View Less <test-icon name="nav-arrow-up"></test-icon>
+        </button>
+      </p>
+    </section>
+
+    <section class="component-props">
+      <test-text variant="subhead">Props</test-text>
+      <dl>
+        <dt>style</dt>
+        <dd>'inside' | 'outside'</dd>
+        <dd>
+          단락 내부와 외부에서의 형태를 구분합니다. 단락 내부에서는 본문 텍스트와 대비를 높이기 위해
+          언더라인을 표시합니다. 불필요해보이는 규칙.
+        </dd>
+        <dt>href?</dt>
+        <dd>string</dd>
+        <dd>NNNNN</dd>
+        <dt>isExternal<attr>?</attr></dt>
+        <dd>boolean</dd>
+        <dd>속성들... target=_blank rel=noopener noreferrer</dd>
+      </dl>
+    </section>
+
+    <section class="component-guide">
+      <test-text variant="subhead">Use do</test-text>
+      <test-text variant="body"
+        >text button과의 차이. Link는 항상 텍스트 단락과 함께 사용합니다. 버튼은 단독으로 쓰이거나
+        버튼의 그룹으로 쓰인다.</test-text
+      >
     </section>
   </article>
 </main>

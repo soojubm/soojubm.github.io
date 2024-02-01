@@ -35,7 +35,8 @@ class Tablist extends HTMLElement {
 
         panels?.forEach(panel => {
           panel.setAttribute('aria-hidden', 'true')
-          if (panel.getAttribute('id') === eventTarget.getAttribute('aria-controls')) {
+          if (panel.getAttribute('data-index') === eventTarget.getAttribute('data-index')) {
+            // if (panel.getAttribute('data-index') === eventTarget.getAttribute('aria-controls')) {
             panel.setAttribute('aria-hidden', 'false')
           }
         })

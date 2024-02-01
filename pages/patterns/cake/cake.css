@@ -1,9 +1,8 @@
 .cake {@mixin layout-large;padding:0 var(--grid-margin);}
 
-.cake-head {padding:4rem 0 0;position:relative;}
-.cake-background {@mixin bleeding;height:100%;background:url('/public/images/springsteen.jpg') no-repeat 0 -200px fixed;background-size:cover;filter:grayscale(100%);}
-.cake-head-title {@mixin text-title;}
-.cake-head-engtitle {margin:0 0 1.5rem 0;@mixin text-subhead;}
+.cake-head {padding:2rem 0;position:relative;}
+.cake-background {@mixin bleeding;height:100%;background:url('/public/images/springsteen.jpg') no-repeat 0 -200px fixed;background-size:cover;filter:grayscale(100%);background:var(--color-background-weak);}
+.cake-head-engtitle {display:block;margin:0 0 1.5rem 0;}
 .cake-head-description {margin:1rem 0 0 0;}
 
 .cake-poster {width:50%;max-width:272px;border:var(--border);border-radius:var(--radius);overflow:hidden;position:absolute;right:0;z-index:var(--zindex-default);}

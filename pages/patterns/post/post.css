@@ -36,8 +36,6 @@
 .post-body-caption {font-size:var(--font-size-small);color:var(--color-text-light);}
 .post-body pre {margin:0;padding:0;}
 
-.post-hashtag {@mixin stack;}
-
 .post-share {margin:2rem 0;}
 .post-share-title {}
 
@@ -62,7 +60,6 @@
 .comment-list-item-menu {display:none;@mixin tile-elevated-small;width:var(--width-tiny);margin:0;padding:0;position:absolute;right:40px;top:0;z-index:var(--zindex-default);}
 .comment-list-item-menu button {display: block;width:calc(100% - 2rem);margin: 1rem;text-align:left;position: relative;z-index: 1;}
 .comment-list-item-menu button:hover {@mixin hover-item;}
-.comment-list-item-reply {margin:var(--space-2) 0 0 0;@mixin link-outside;}
 
 .is-active + .comment-list-item-menu {display:block;}
 
@@ -76,7 +73,6 @@
 .comment-write-name {display:none;width:var(--grid-column);margin:0 0 1rem 0;}
 .comment-write-password {display:none;width:var(--grid-column);margin:0 0 1rem 0;}
 .comment-write-submit {@mixin button-primary;}
-.comment-write-cancel {@mixin button-text;margin:0 auto 0 var(--space-after-button);}
 
 .is-focused .comment-write-name {display:block;}
 .is-focused .comment-write-password {display:block;}
@@ -84,15 +80,14 @@
 .post-pagination {display:flex;justify-content:space-between;padding:2rem var(--grid-margin);}
 .post-pagination-previous {width:var(--grid-column);text-align:left;color:var(--color-text);position:relative;}
 .post-pagination-previous:hover {@mixin hover-item;}
-.post-pagination-previous-media {@mixin avatar-container;margin-bottom:1rem;}
+.post-pagination-previous-media {display:block;margin-bottom:1rem;}
 .post-pagination-previous-label {margin:0 0 .25rem 0;font-size:var(--font-size-medium);font-weight:normal;color:var(--color-text-light);}
-.post-pagination-previous-postname {@mixin text-subhead;}
 .post-pagination-next {
 	display:flex;flex-direction:column;align-items:flex-end;width:var(--grid-column);text-align:right;color:var(--color-text);position:relative;}
 .post-pagination-next:hover {@mixin hover-item;}
-.post-pagination-next-media {@mixin avatar-container;margin-bottom:1rem;margin-left:auto;}
+.post-pagination-next-media {display:block;margin-bottom:1rem;margin-left:auto;}
 .post-pagination-next-label {margin:0 0 .25rem 0;font-size:var(--font-size-medium);font-weight:normal;color:var(--color-text-light);}
-.post-pagination-next-postname {@mixin text-subhead;}
+
 
 @media (--small) {
 	.post-body-image {float:none;margin-left:-5vw;margin-right:-5vw;}
@@ -103,7 +98,6 @@
 }
 
 
-.post-attract {text-align:center;position:relative;}
 .post-attract-blur {
 	height: 20rem;
 	background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,.75), rgba(255,255,255,1));
@@ -112,13 +106,6 @@
 	right: 0;
 	top: -20rem;
 }
-.post-attract-title {margin:0 0 var(--space-after-subhead) 0;@mixin text-subhead;}
-.post-attract-description {}
-.post-attract-signup {@mixin button-primary;margin:var(--space-after-description) 0;}
-
-
-
-
 .theme-dark {
 	.post-attract-blur {
 		background: linear-gradient(to bottom, rgba(37,45,41,0), rgba(37,45,41,.75), rgba(37,45,41,1));

@@ -1,7 +1,7 @@
 <main class="component">
   <article class="article js-observer js-scrollspy-section">
     <test-text variant="title" title="or Box">Tiles</test-text>
-    <test-text variant="body-large">연관 정보를 묶어 시각적으로 강조하는 컨테이너입니다</test-text>
+    <test-text variant="body-large">연관 정보를 묶어 시각적으로 강조하는 컨테이너입니다.</test-text>
     <!-- 추가 콘텐츠에 대한 티저로 사용할 수 있습니다 -->
     <dl class="article-aka">
       <dt>a.k.a.</dt>
@@ -109,12 +109,18 @@
         <img src="/public/images/springsteen.jpg" alt="" />
       </figure>
       <test-tag slot="category" variant="primary">카테고리</test-tag>
+
+      <test-menuitem slot="item" size="large" label="퓨어 오렌지 주스" description="">
+        <test-avatar slot="avatar" size="large" fallback="🍊"></test-avatar>
+        <div class="item-description"><del>₩19,000</del> ₩16,000 <em>할인율 20%</em></div>
+      </test-menuitem>
       <!-- <figure class="card-avatar">🍊</figure> -->
       <test-text slot="heading" variant="subhead">카드 유아이</test-text>
-      <test-text variant="body">
+      <test-text slot="body" variant="body">
         텍스트는 최대 두 줄 무야호 따봉 북마크 장바구니 등의 액션이 있을 수 있고 내부 외부 가이드를
         만들어야해
       </test-text>
+
       <!-- TODO: menuitem이 애매한 네이밍 -->
       <test-menuitem slot="byline" label="수줍이" description="2년 전">
         <test-avatar slot="avatar" size="small"></test-avatar>
@@ -122,16 +128,11 @@
       <test-chip slot="action">
         <test-icon slot="icon" name="more-vert"></test-icon>
       </test-chip>
-      <test-group slot="tags">
+      <test-group slot="tags" variant="tag">
         <test-tag>프로젝트관리</test-tag>
         <test-tag>프로덕트디자인</test-tag>
         <test-tag>프론트엔드개발</test-tag>
       </test-group>
-      <test-separator></test-separator>
-      <test-menuitem slot="item" size="large" label="퓨어 오렌지 주스" description="">
-        <test-avatar slot="avatar" size="large" fallback="🍊"></test-avatar>
-        <div class="item-description"><del>₩19,000</del> ₩16,000 <em>할인율 20%</em></div>
-      </test-menuitem>
       <test-tag class="card-note">마일리지 적립 200P</test-tag>
     </test-card>
 
@@ -159,8 +160,7 @@
         <test-tag style="position: absolute; left: -0.5rem; top: var(--space-3)">
           🔥 Most Popular
         </test-tag>
-        <br />
-        <br />
+        <div style="height: 2rem"></div>
         <test-text variant="subhead">Standard</test-text>
         <test-text variant="body">
           전직대통령의 신분과 예우에 관하여는 법률로 정한다. 대법원장은 국회의 동의를 얻어 대통령이
@@ -188,6 +188,65 @@
         <test-text variant="caption">Cancel anytime. No strings attached. </test-text>
       </div>
     </test-card>
+
+    <header
+      style="
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 400px;
+        margin: 0 0 var(--space-3);
+      "
+    >
+      <h2>내 요금제</h2>
+      <button style="color: var(--color-primary); font-weight: bold; text-decoration: underline">
+        요금제 변경하기
+      </button>
+    </header>
+
+    <test-tile variant="elevated" style="max-width: 400px">
+      <test-menuitem>
+        <test-avatar slot="avatar" size="huge"></test-avatar>
+        <div slot="text">
+          <test-text variant="subhead">개인</test-text>
+          <test-text variant="body">Apple One</test-text>
+          <test-text variant="label">가족 구독</test-text>
+        </div>
+      </test-menuitem>
+      <test-separator></test-separator>
+      <test-text variant="body-bold">1개월 무료 체험</test-text>
+      <small>오늘(2023년 05월 22일)부터</small>
+      <test-text variant="subhead">14,900원/개월</test-text>
+      <test-separator></test-separator>
+
+      <header>
+        <h3>Premium 베이직</h3>
+        <small>Premium 베이직 계정 1개 / 클라우드 330GB (월 5,500원)</small>
+      </header>
+      <div class="add_money_area">
+        <p>이용기간 23.04.09. ~ 23.05.02.</p>
+        <div>
+          이번 달 결제금액 4,258원
+          <em>(24일 이용요금)</em>
+        </div>
+      </div>
+      <dl>
+        <dt>오늘부터 시작</dt>
+        <dd>월 8,690 KRW</dd>
+        <dt>다음 결제일</dt>
+        <dd>2023. 3. 10.</dd>
+      </dl>
+      <ul class="checklist" style="margin: var(--space-4) 0 0 0">
+        <li>다음 청구일은 2023. 3. 10.입니다.</li>
+        <li>언제든 해지 가능합니다. 혜택 약관이 적용됩니다.</li>
+      </ul>
+      <test-text variant="caption">
+        약정 기간이 없습니다. 갱신일 최소 하루 전까지 설정 > Apple ID에서 언제든지 취소할 수
+        있습니다. 취소할 때까지 요금제가 자동 갱신됩니다.
+      </test-text>
+      <test-separator></test-separator>
+      <p style="color: var(--color-text-light)">계정: soojubm@gmail.com</p>
+    </test-tile>
 
     <br />
 

@@ -3,18 +3,20 @@
     <test-text variant="title">Texts</test-text>
     <test-text variant="body-large">작성 중.</test-text>
 
-    <test-text>message, description,</test-text>
-    <test-text>p와 ul, dl 등은 항상 텍스트.</test-text>
-    <test-text>paragraph와 name?value?(size lineheight-one line)의 variation</test-text>
+    <blockquote>
+      <test-text>p와 ul, dl 등은 항상 텍스트.</test-text>
+      <test-text>message: 사용자, description: 시스템</test-text>
+      <test-text>paragraph와 name?value?(size lineheight-one line)의 variation</test-text>
+      <test-text>a component for listing pairs of information together. You can use the component on its own, passing in an object for the list.</test-text>
+      <test-text>type: column | inline</test-text>
+    </blockquote>
     <test-text>
       dl variant: 'summary' | 'statistic' | 'suggestion', size: 'medium' | 'large' / onClick?
     </test-text>
 
     <section class="component-example">
       <test-text variant="title">heading1, title</test-text>
-      <test-text variant="subhead">
-        <p style="margin-bottom: -0.5rem">heading2, subhead</p>
-      </test-text>
+      <test-text variant="subhead">heading2, subhead</test-text>
       <test-text variant="label">heading3, label</test-text>
       <test-text variant="body-large">body1 (large)</test-text>
       <test-text variant="body">body2</test-text>
@@ -24,22 +26,19 @@
 
       <footer style="display: flex; flex-direction: column; gap: var(--space-2)">
         <div style="display: flex; align-items: center; gap: var(--space-1)">
-          <i class="iconoir-pipe-3d"></i>
-          궁금증이 해결되지 않는다면?
+          <test-icon name="pipe-3d"></test-icon>
+          <test-text variant="body">궁금증이 해결되지 않는다면?</test-text>
           <test-link>지금 문의하기</test-link>
         </div>
         <div style="display: flex; align-items: center; gap: var(--space-1)">
-          <i class="iconoir-pipe-3d"></i>
-          Something's not right?
+          <test-icon name="pipe-3d"></test-icon>
+          <test-text variant="body">Something's not right?</test-text>
           <test-link>Get in touch with us.</test-link>
         </div>
       </footer>
 
-      <br />
       <test-separator></test-separator>
 
-      <test-text>EuiDescriptionList is a component for listing pairs of information together. You can use the component on its own, passing in an object for the list.</test-text>
-      <test-text>type: column | inline</test-text>
       <section class="summary">
         <div class="summary-item">
           <div class="summary-item-label">상품 금액</div>
@@ -54,6 +53,14 @@
           <div class="summary-total-value">₩ 163,000</div>
         </div>
       </section>
+
+      <test-separator></test-separator>
+
+      <header class="greeting" data-temp="이 패턴에서 아바타는 시각 정보가 아니라 링크로 사용. hashtag 등 사실상 page head로 사용될 수 있는.">
+        <test-avatar variant="secondary" size="huge" fallback="🐶"></test-avatar>
+        <test-text variant="subhead">Hello, Spring 👋</test-text>
+        <test-text variant="body">Tender is the night.</test-text>
+      </header>
 
       <test-separator></test-separator>
 
@@ -201,7 +208,7 @@
       <test-tag>
         <test-icon slot="icon" name="nav-arrow-down"></test-icon>
       </test-tag>
-
+      </button>
       
       <test-separator></test-separator>
       <div style="padding:1rem;box-sizing:border-box;border-radius:var(--radius);background:var(--color-background-weak);text-align:center;">
@@ -385,61 +392,4 @@
       </article>
     </test-card>
   </section>
-
-  <article class="article js-observer js-scrollspy-section">
-    <test-text variant="title">Links</test-text>
-    <test-text variant="body-large"
-      >사용자 여정 목적지. 페이지 이동. destination that can be bookmarked. 정보 확장 기능은 따로
-      정의해야 함.</test-text
-    >
-
-    <dl class="article-aka">
-      <dt>a.k.a.</dt>
-      <dd title="">Anchor</dd>
-    </dl>
-
-    <section class="component-example">
-      <p style="display: flex; flex-wrap: wrap; gap: var(--spae-2)">
-        형무소 안에서는 소장의 말이 곧 법이었으며 죄수들의 잘못과 실수는 결코 용납되지 않는다.
-        어머니의 사망 소식을 듣고 인해 2번이나 탈옥을 시도했다가 체포된
-        <test-link href="#">루크</test-link>의 발에 쇠통이 채워지며 루크는…<test-link href="#"
-          >더 보기</test-link
-        >
-      </p>
-      <br />
-      <div>
-        <a href="">이것은헤시태그</a>
-        <a href="">해시태그는클릭할수있다?</a>
-        <a href="">해시태그를통한검색</a>
-      </div>
-    </section>
-
-    <section class="component-props">
-      <test-text variant="subhead">Props</test-text>
-      <dl>
-        <dt>style</dt>
-        <dd>'inside' | 'outside'</dd>
-        <dd>
-          단락 내부와 외부에서의 형태를 구분합니다. 단락 내부에서는 본문 텍스트와 대비를 높이기 위해
-          언더라인을 표시합니다. 불필요해보이는 규칙.
-        </dd>
-        <dt>href?</dt>
-        <dd>string</dd>
-        <dd>NNNNN</dd>
-        <dt>isExternal<attr>?</attr></dt>
-        <dd>boolean</dd>
-        <dd>속성들... target=_blank rel=noopener noreferrer</dd>
-      </dl>
-    </section>
-    <test-text variant="body">text button과의 차이. 항상 텍스트 단락과 함께 사용합니다.</test-text>
-
-    <p>
-      <button style="display: flex; align-items: center; gap: 0.5rem; color: var(--color-primary)">
-        View More <test-icon name="nav-arrow-down"></test-icon>
-      </button>
-      <button style="display: flex; align-items: center; gap: 0.5rem; color: var(--color-primary)">
-        View Less <test-icon name="nav-arrow-up"></test-icon>
-      </button>
-    </p>
-  </article>
 </main>

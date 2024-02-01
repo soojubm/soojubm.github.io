@@ -10,7 +10,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: var(--space-3);
-  margin: var(--space-after-subhead) 0 2.5rem 0;
+  margin: 1.25rem 0 3rem 0;
 }
 .token-item {
   padding: var(--space-3);

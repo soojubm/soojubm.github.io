@@ -8,7 +8,6 @@ class Tab extends HTMLElement {
 
   constructor() {
     super()
-
     const shadow = this.attachShadow({ mode: 'open' })
 
     const container = document.createElement('button')

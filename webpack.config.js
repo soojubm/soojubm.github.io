@@ -44,6 +44,7 @@ const patterns = [
   'notification',
   'auth',
   'product',
+  'contact',
   'checkout',
   'cake',
   'class',

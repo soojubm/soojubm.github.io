@@ -46,6 +46,7 @@ img {
 }
 .avatar[data-size=large] {
   --avatar-size: var(--size-large);
+  font-size: var(--font-size-large);
 }
 .avatar[data-size=medium] {
   --avatar-badge-size: 8px;

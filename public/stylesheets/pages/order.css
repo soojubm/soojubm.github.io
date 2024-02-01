@@ -10,8 +10,6 @@
 .order-item-head-time {margin-left: var(--space-2); color: var(--color-text-light); font-size: var(--font-size-small)}
 .order-item-head-status {margin-left: auto; font-size: var(--font-size-small);}
 
-.order-item-foot {margin:var(--space-3) 0 0 0;}
-.order-item-foot > * {flex:auto;}
 // .order-item-head-method {@mixin tag;}
 // .order-item-product {@mixin tile-elevated}
 // .order-item-product-thumbnail {@mixin avatar-huge;float:left;margin:0 var(--space-after-avatar-huge) 0 0;}
