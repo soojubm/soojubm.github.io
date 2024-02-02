@@ -30,7 +30,6 @@ import Tooltip from '../../components/tooltip/tooltip'
 import TitleBar from '../../components/titlebar/titlebar'
 import Icon from '../../components/icon/icon'
 import Separator from '../../components/separator/separator'
-import Card from '../../components/card/card'
 import Result from '../../components/result/result'
 
 // class extends HTMLElement {
@@ -61,7 +60,6 @@ export function defineCustomElement() {
     customElements.define('test-radio', Radio)
 
     customElements.define('test-tile', Tile)
-    customElements.define('test-card', Card)
     customElements.define('test-titlebar', TitleBar)
     customElements.define('test-group', Row)
     customElements.define('test-text', Text)

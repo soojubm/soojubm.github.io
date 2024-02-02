@@ -1,4 +1,4 @@
-import { makeStyleSheet } from '../../javascripts/components/utils'
+import { makeStyleSheet, setSlotElement } from '../../javascripts/components/utils'
 
 class Tile extends HTMLElement {
   constructor() {
@@ -8,24 +8,31 @@ class Tile extends HTMLElement {
     const container = document.createElement('div')
     container.classList.add('tile')
 
+    setSlotElement(container, 'entire')
+
+    setSlotElement(container, 'thumbnail')
+    setSlotElement(container, 'heading')
+    setSlotElement(container, 'body')
+    setSlotElement(container, 'tags')
+    setSlotElement(container, 'category')
+    setSlotElement(container, 'byline')
+    setSlotElement(container, 'item')
+
     const slotAction = document.createElement('slot')
-    const slotTags = document.createElement('slot')
-    const slotCategory = document.createElement('slot')
     slotAction.name = 'action'
-    slotTags.name = 'tags'
-    slotCategory.name = 'category'
+
+    const children = document.createElement('slot')
+    // children.name = 'children'
 
     const style = this.getAttribute('style')
     container.setAttribute('style', style || '')
 
     shadow.appendChild(container)
-    // console.log(...this.childNodes, ...this.children, 'this.childNodes')
 
-    container.innerHTML = this.innerHTML || ''
+    // container.innerHTML = this.innerHTML || ''
     container.appendChild(makeStyleSheet('tile'))
     container.appendChild(slotAction)
-    container.appendChild(slotTags)
-    container.appendChild(slotCategory)
+    container.appendChild(children)
 
     if (this.variant) container.setAttribute('data-variant', this.variant)
     container.setAttribute('data-size', this.size || '')

@@ -79,98 +79,92 @@
         >내가 팔로우하는 사용자 중에는 팔로워가 없습니다. (twitter)</small
       >
       <test-separator></test-separator>
-      <test-card variant="elevated">
-        <div slot="entire">
-          <test-menuitem label="수줍이" description="Youtube subscriber">
-            <test-avatar slot="avatar"></test-avatar>
-          </test-menuitem>
-          <div style="margin: var(--space-2) 0 0">
-            <test-text variant="body">Sometimes at night, I find myself behind the computer. When I finally blink, a mess of code is drawing random structures on the screen. I spend the rest of the night staring.</test-text>
-            <!-- <span class="avatargroup-label">🥺 수줍이님을 팔로우하고 있는 친구가 없습니다.</span> -->
-          </div>
-          <div
-            class="statistic"
-            data-size="small"
-            style="display: flex; gap: var(--space-2); margin: var(--space-2) 0 0 0"
-          >
-            <dl class="statistic-item" onclick="javascript:alert('샘플 유아이에요!')">
-              <dt class="statistic-label">팔로워</dt>
-              <dd class="statistic-value" style="margin:0;">62</dd>
-            </dl>
-            <i class="icon-bullet"></i>
-            <dl class="statistic-item" onclick="javascript:alert('샘플 유아이에요!')">
-              <dt class="statistic-label">팔로잉</dt>
-              <dd class="statistic-value" style="margin:0;">8</dd>
-            </dl>
-          </div>
+      <test-tile variant="elevated">
+        <test-menuitem label="수줍이" description="Youtube subscriber">
+          <test-avatar slot="avatar"></test-avatar>
+        </test-menuitem>
+        <div style="margin: var(--space-2) 0 0">
+          <test-text variant="body">Sometimes at night, I find myself behind the computer. When I finally blink, a mess of code is drawing random structures on the screen. I spend the rest of the night staring.</test-text>
+          <!-- <span class="avatargroup-label">🥺 수줍이님을 팔로우하고 있는 친구가 없습니다.</span> -->
         </div>
-      </test-card>
+        <div
+          class="statistic"
+          data-size="small"
+          style="display: flex; gap: var(--space-2); margin: var(--space-2) 0 0 0"
+        >
+          <dl class="statistic-item" onclick="javascript:alert('샘플 유아이에요!')">
+            <dt class="statistic-label">팔로워</dt>
+            <dd class="statistic-value" style="margin:0;">62</dd>
+          </dl>
+          <i class="icon-bullet"></i>
+          <dl class="statistic-item" onclick="javascript:alert('샘플 유아이에요!')">
+            <dt class="statistic-label">팔로잉</dt>
+            <dd class="statistic-value" style="margin:0;">8</dd>
+          </dl>
+        </div>
+      </test-tile>
       <test-separator></test-separator>
-      <test-card variant="elevated">
-        <div slot="entire">
-          <div style="display: flex; gap: 1rem">
-            <test-avatar size="huge" variant="secondary"></test-avatar>
-            <test-group style="flex-direction:column;gap:var(--space-2);">
-              <div>
-                <test-text variant="label">Top User</test-text>
-                <test-text variant="subhead">Bruce Springsteen</span>
-              </div>
-              <div>
-                <test-text variant="label">Daily Purchase</test-text>
-                <test-text variant="subhead">10 Items</test-text>
-              </div>
-            </test-group>
-          </div>
-          <test-separator></test-separator>
-            <test-group variant="avatar">
-              <test-avatar size="small"></test-avatar>
-              <test-avatar size="small"></test-avatar>
-              <test-avatar size="small"></test-avatar>
-              <test-avatar size="small"></test-avatar>
-              <span class="avatargroup-label">Followed by 수줍이 외 4명</span>
-            </test-group>
+      <test-tile variant="elevated">
+        <div style="display: flex; gap: 1rem">
+          <test-avatar size="huge" variant="secondary"></test-avatar>
+          <test-group style="flex-direction:column;gap:var(--space-2);">
+            <div>
+              <test-text variant="label">Top User</test-text>
+              <test-text variant="subhead">Bruce Springsteen</span>
+            </div>
+            <div>
+              <test-text variant="label">Daily Purchase</test-text>
+              <test-text variant="subhead">10 Items</test-text>
+            </div>
+          </test-group>
         </div>
-      </test-card>
+        <test-separator></test-separator>
+          <test-group variant="avatar">
+            <test-avatar size="small"></test-avatar>
+            <test-avatar size="small"></test-avatar>
+            <test-avatar size="small"></test-avatar>
+            <test-avatar size="small"></test-avatar>
+            <span class="avatargroup-label">Followed by 수줍이 외 4명</span>
+          </test-group>
+      </test-tile>
       <test-separator></test-separator>
   
-      <test-card variant="flat" size="medium" style="width:100%;max-width:400px;">
-        <div slot="entire">
-          <test-entity label="이경수" description="soojubm@gmail.com" description2="010 3121 7045" description="UI Designer">
-            <test-avatar slot="avatar" variant="secondary" size="large"></test-avatar>
-            <!-- <test-tag slot="tag" variant="primary"></test-tag> -->
-          </test-entity>
-          <div style="margin:var(--space-2) 0 0;">
-            <test-chip>내 프로필 관리</test-chip>
-          </div>
-          <!-- <div style="position:absolute;right:var(--space-4);top:var(--space-4);">
-            <test-avatar variant="secondary" size="large" fallback=" ">🐸</test-avatar>
-          </div> -->
-          <test-separator></test-separator>
-          <test-group alignment="vertical">
-            <test-menuitem label="어둡게 보기" class="js-darkmode" aria-label="change theme">
-              <test-avatar slot="avatar" variant="tertiary" fallback=" ">
-                <test-icon slot="icon" name="half-moon"></test-icon>
-              </test-avatar>
-              <test-switch slot="action"></test-switch>
-            </test-menuitem>
-            <test-menuitem label="고객센터 및 도움말">
-              <test-avatar slot="avatar" variant="tertiary" fallback=" ">
-                <test-icon slot="icon" name="megaphone"></test-icon>
-              </test-avatar>
-            </test-menuitem>
-          </test-group>
-          <test-separator></test-separator>
-          <test-menuitem label="로그아웃">
-            <test-avatar slot="avatar" variant="tertiary" fallback=" "><test-icon slot="avatar" name="log-out"></test-icon></test-avatar>
-          </test-menuitem>
-          <test-separator></test-separator>
-          <test-group class="user-footer">
-            <a href="#" style="font-size:12px;color:var(--color-text-light);">개인정보처리방침</a>
-            <i class="icon-bullet"></i>
-            <a href="#" style="font-size:12px;color:var(--color-text-light);">서비스 약관</a>
-          </test-group>
+      <test-tile variant="flat" size="medium" style="width:100%;max-width:400px;">
+        <test-entity label="이경수" description="soojubm@gmail.com" description2="010 3121 7045" description="UI Designer">
+          <test-avatar slot="avatar" variant="secondary" size="large"></test-avatar>
+          <!-- <test-tag slot="tag" variant="primary"></test-tag> -->
+        </test-entity>
+        <div style="margin:var(--space-2) 0 0;">
+          <test-chip>내 프로필 관리</test-chip>
         </div>
-      </test-card>
+        <!-- <div style="position:absolute;right:var(--space-4);top:var(--space-4);">
+          <test-avatar variant="secondary" size="large" fallback=" ">🐸</test-avatar>
+        </div> -->
+        <test-separator></test-separator>
+        <test-group alignment="vertical">
+          <test-menuitem label="어둡게 보기" class="js-darkmode" aria-label="change theme">
+            <test-avatar slot="avatar" variant="tertiary" fallback=" ">
+              <test-icon slot="icon" name="half-moon"></test-icon>
+            </test-avatar>
+            <test-switch slot="action"></test-switch>
+          </test-menuitem>
+          <test-menuitem label="고객센터 및 도움말">
+            <test-avatar slot="avatar" variant="tertiary" fallback=" ">
+              <test-icon slot="icon" name="megaphone"></test-icon>
+            </test-avatar>
+          </test-menuitem>
+        </test-group>
+        <test-separator></test-separator>
+        <test-menuitem label="로그아웃">
+          <test-avatar slot="avatar" variant="tertiary" fallback=" "><test-icon slot="avatar" name="log-out"></test-icon></test-avatar>
+        </test-menuitem>
+        <test-separator></test-separator>
+        <test-group class="user-footer">
+          <a href="#" style="font-size:12px;color:var(--color-text-light);">개인정보처리방침</a>
+          <i class="icon-bullet"></i>
+          <a href="#" style="font-size:12px;color:var(--color-text-light);">서비스 약관</a>
+        </test-group>
+      </test-tile>
     </div>
     <!-- <li>icon chip(button), icon tag, menu item avatar</li> -->
     <!-- <li>memeo. medium. 이하의 크기는 디스크립션을 제공하지 않는다. 항상 align-items:center.</li> -->

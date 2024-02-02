@@ -151,15 +151,6 @@ test-text[variant=body] + test-text[variant=subhead] {
   }
 }
 
-.quote {max-width: 400px;@mixin tile-elevated;}
-.quote-avatar {@mixin avatar-medium;}
-.quote-title {margin: var(--space-4) 0 .5rem;@mixin text-subhead;}
-.quote-body {}
-.quote-byline {display: block;margin: 1rem 0 0 0;}
-.quote-byline div {color: var(--color-text);}
-.quote-action {@mixin button-primary;width: 50%;margin: 2rem 0 0 0;}
-
-
 
 
 .album-track {}

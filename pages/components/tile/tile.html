@@ -80,7 +80,7 @@
         border-radius: var(--radius);
       "
     >
-      <h3 class="quote-title" style="color: #fff">Quote</h3>
+      <test-text variant="subhead" style="color: #fff">Quote</test-text>
       <p class="quote-body" style="color: #fff">Don't you know that God is Pooh bear?</p>
       <cite class="quote-byline">
         <div class="quote-byline-name" style="color: #fff">Jack Kerouac</div>
@@ -90,21 +90,23 @@
       <test-chip>더 알아보기</test-chip>
     </div>
 
-    <test-tile class="quote" style="padding: 1rem">
-      <figure class="quote-avatar">🥫</figure>
-      <h3 class="quote-title">Quote</h3>
+    <test-tile>
+      <test-avatar>🥫</test-avatar>
+      <test-text variant="subhead">Quote</test-text>
       <p class="quote-body">Don't you know that God is Pooh bear?</p>
       <cite class="quote-byline">
         <div class="quote-byline-name">Jack Kerouac</div>
         <div class="quote-byline-job">Poet / Novelist</div>
       </cite>
-      <test-chip>더 알아보기</test-chip>
-      <!-- <button class="quote-later">지금은 괜찮아요</button> -->
+      <test-group variant="chip">
+        <test-chip>더 알아보기</test-chip>
+        <test-chip class="quote-later">지금은 괜찮아요</test-chip>
+      </test-group>
     </test-tile>
 
     <br />
 
-    <test-card variant="nuded" role="listitem" style="max-width: 400px; z-index: 1">
+    <test-tile variant="nuded" role="listitem" style="max-width: 400px; z-index: 1">
       <figure slot="thumbnail">
         <img src="/public/images/springsteen.jpg" alt="" />
       </figure>
@@ -134,7 +136,7 @@
         <test-tag>프론트엔드개발</test-tag>
       </test-group>
       <test-tag class="card-note">마일리지 적립 200P</test-tag>
-    </test-card>
+    </test-tile>
 
     <br />
 
@@ -155,39 +157,37 @@
 
     <br />
 
-    <test-card variant="flat" size="medium" style="max-width: 400px">
-      <div slot="entire">
-        <test-tag style="position: absolute; left: -0.5rem; top: var(--space-3)">
-          🔥 Most Popular
-        </test-tag>
-        <div style="height: 2rem"></div>
-        <test-text variant="subhead">Standard</test-text>
-        <test-text variant="body">
-          전직대통령의 신분과 예우에 관하여는 법률로 정한다. 대법원장은 국회의 동의를 얻어 대통령이
-          임명한다.
-        </test-text>
-        <br />
-        <div class="pricing-item-price">
-          <span class="pricing-item-price-per">한 달에 한 번</span>
-          <test-text variant="title">₩ 6,800</test-text>
-        </div>
-        <!-- <div>
+    <test-tile variant="flat" size="medium" style="max-width: 400px">
+      <test-tag style="position: absolute; left: -0.5rem; top: var(--space-3)">
+        🔥 Most Popular
+      </test-tag>
+      <div style="height: 2rem"></div>
+      <test-text variant="subhead">Standard</test-text>
+      <test-text variant="body">
+        전직대통령의 신분과 예우에 관하여는 법률로 정한다. 대법원장은 국회의 동의를 얻어 대통령이
+        임명한다.
+      </test-text>
+      <br />
+      <div class="pricing-item-price">
+        <span class="pricing-item-price-per">한 달에 한 번</span>
+        <test-text variant="title">₩ 6,800</test-text>
+      </div>
+      <!-- <div>
           <test-text variant="subhead"><em>iCloud+</em> 50GB</test-text>
           <span>₩1,100/월 </span>
         </div> -->
-        <ul class="checklist">
-          <li>스토리지 2TB</li>
-          <li>Google 전문가와의 상담</li>
-          <li>회원을 위한 추가 혜택</li>
-        </ul>
-        <test-group>
-          <test-button variant="primary">업그레이드</test-button>
-          <test-button variant="text">And More...</test-button>
-        </test-group>
-        <div class="height:1rem;"></div>
-        <test-text variant="caption">Cancel anytime. No strings attached. </test-text>
-      </div>
-    </test-card>
+      <ul class="checklist">
+        <li>스토리지 2TB</li>
+        <li>Google 전문가와의 상담</li>
+        <li>회원을 위한 추가 혜택</li>
+      </ul>
+      <test-group>
+        <test-button variant="primary">업그레이드</test-button>
+        <test-button variant="text">And More...</test-button>
+      </test-group>
+      <div class="height:1rem;"></div>
+      <test-text variant="caption">Cancel anytime. No strings attached. </test-text>
+    </test-tile>
 
     <header
       style="

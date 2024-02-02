@@ -16,10 +16,10 @@
       <test-group variant="chip" role="menubar">
         <test-textfield size="small" labeling="false" placeholder="검색꾸">
           <!-- TODO : prefix height vs avatar height -->
-          <!-- TODO : avatar를 쓰니까아바타 특유의 형태와 충돌하고 사이즈를 다시 정의해주어야 한다. 컴포넌트를 한 번 더 씌우면 괜찮겟지만. -->
-          <!-- <test-avatar slot="prefix" size=""> -->
-          <test-icon slot="prefix" name="search"></test-icon>
-          <!-- </test-avatar> -->
+          <!-- TODO : avatar를 쓰니까아바타 특유의 형태와 충돌(outlined) 사이즈를 다시 정의해주어야 한다. 컴포넌트를 한 번 더 씌우면 괜찮겟지만. -->
+          <test-avatar slot="prefix">
+            <test-icon slot="icon" name="search"></test-icon>
+          </test-avatar>
         </test-textfield>
         <test-chip name="Filter">
           <test-icon slot="suffix" name="nav-arrow-down"></test-icon>

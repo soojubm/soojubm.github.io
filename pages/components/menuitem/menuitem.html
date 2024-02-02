@@ -148,147 +148,139 @@
     </section>
 
     <section style="width: 100%; max-width: 400px">
-      <test-card variant="flat">
-        <div slot="entire">
-          <test-group variant="dropdown">
-            <test-text variant="label">menu heading</test-text>
-            <test-menuitem role="menuitem" href="#design">
-              <test-icon slot="check" name="check"></test-icon>
-              <span slot="text">Only Text</span>
-            </test-menuitem>
-            <test-menuitem role="menuitem">
-              <span slot="check"></span>
-              <span slot="text">on popover</span>
-            </test-menuitem>
-            <test-menuitem class="dropdown-menu-item">
-              <span slot="check"></span>
-              <span slot="text">with dropdown/pulldown</span>
-            </test-menuitem>
-            <test-menuitem class="dropdown-menu-item">
-              <span slot="check"></span>
-              <span slot="text">with popover</span>
-            </test-menuitem>
-          </test-group>
-        </div>
-      </test-card>
+      <test-tile variant="flat">
+        <test-group variant="dropdown">
+          <test-text variant="label">menu heading</test-text>
+          <test-menuitem role="menuitem" href="#design">
+            <test-icon slot="check" name="check"></test-icon>
+            <span slot="text">Only Text</span>
+          </test-menuitem>
+          <test-menuitem role="menuitem">
+            <span slot="check"></span>
+            <span slot="text">on popover</span>
+          </test-menuitem>
+          <test-menuitem class="dropdown-menu-item">
+            <span slot="check"></span>
+            <span slot="text">with dropdown/pulldown</span>
+          </test-menuitem>
+          <test-menuitem class="dropdown-menu-item">
+            <span slot="check"></span>
+            <span slot="text">with popover</span>
+          </test-menuitem>
+        </test-group>
+      </test-tile>
 
       <br />
 
-      <test-card variant="flat" class="share">
-        <div slot="entire">
-          <test-titlebar heading="공유"></test-titlebar>
-          <br />
-          <test-text variant="subhead" class="share-title"
-            >가족이나 친구와<br />함께 보세요!</test-text
-          >
-          <br />
-          <test-group variant="menuitem">
-            <!-- <close-button></close-button> -->
-            <test-menuitem class="share-facebook" label="facebook으로 공유">
-              <test-avatar
-                slot="avatar"
-                size="medium"
-                fallback=" "
-                style="background-color: var(--color-facebook); color: #fff"
-              >
-                <test-icon slot="icon" name="facebook"></test-icon>
-              </test-avatar>
-            </test-menuitem>
-            <test-menuitem class="share-twitter" label="twitter로 공유">
-              <test-avatar
-                slot="avatar"
-                fallback=" "
-                style="background-color: var(--color-twitter); color: #fff"
-              >
-                <test-icon slot="icon" name="twitter"></test-icon>
-              </test-avatar>
-            </test-menuitem>
-            <test-menuitem class="share-kakao" label="kakao talk으로 공유">
-              <test-avatar slot="avatar" fallback=" " style="background-color: var(--color-kakao)">
-                <test-icon slot="icon" name="message"></test-icon>
-              </test-avatar>
-            </test-menuitem>
-          </test-group>
-          <test-separator></test-separator>
-          <test-textfield
-            value="https://newneek.co/post/jadebabo"
-            placeholder="이건 사실 입력 기능이 없다 커스텀 컴포넌트."
-            size="small"
-            class="share-copy"
-          >
-            <!-- <input class="share-copy-url textfield-input" type="text" value=" readonly /> -->
-            <button class="share-copy-button js-copy" type="button" tabindex="0">복사</button>
-          </test-textfield>
-        </div>
-      </test-card>
-
-      <br />
-
-      <test-card variant="flat">
-        <div slot="entire" class="access">
-          <test-titlebar heading="공개 대상 선택"></test-titlebar>
-          <br />
-          <test-group alignment="vertical">
-            <test-menuitem ize="large" label="전체 공개" description="Facebook 안팎의 모든 사람">
-              <test-radio slot="check" checked></test-radio>
-              <test-avatar slot="avatar" size="large" fallback=" ">
-                <test-icon slot="icon" name="group"></test-icon>
-              </test-avatar>
-            </test-menuitem>
-            <test-menuitem
-              class="is-active"
-              size="large"
-              label="친구만"
-              description="회원님의 Facebook 친구"
+      <test-tile variant="flat" class="share">
+        <test-titlebar heading="공유"></test-titlebar>
+        <br />
+        <test-text variant="subhead" class="share-title"
+          >가족이나 친구와<br />함께 보세요!</test-text
+        >
+        <br />
+        <test-group variant="menuitem">
+          <!-- <close-button></close-button> -->
+          <test-menuitem class="share-facebook" label="facebook으로 공유">
+            <test-avatar
+              slot="avatar"
+              size="medium"
+              fallback=" "
+              style="background-color: var(--color-facebook); color: #fff"
             >
-              <test-radio slot="check"></test-radio>
-              <test-avatar slot="avatar" size="large" fallback=" ">
-                <test-icon slot="icon" name="group"></test-icon>
-              </test-avatar>
-            </test-menuitem>
-            <test-menuitem data-size="large" label="나만 보기" description="부끄러우니까">
-              <test-radio slot="check"></test-radio>
-              <test-avatar slot="avatar" size="large" fallback=" ">
-                <test-icon slot="icon" name="lock"></test-icon>
-              </test-avatar>
-              <span class="item-label" style="line-height: var(--size-large)"></span>
-              <spa slot="description"></spa>
-            </test-menuitem>
-          </test-group>
-        </div>
-      </test-card>
+              <test-icon slot="icon" name="facebook"></test-icon>
+            </test-avatar>
+          </test-menuitem>
+          <test-menuitem class="share-twitter" label="twitter로 공유">
+            <test-avatar
+              slot="avatar"
+              fallback=" "
+              style="background-color: var(--color-twitter); color: #fff"
+            >
+              <test-icon slot="icon" name="twitter"></test-icon>
+            </test-avatar>
+          </test-menuitem>
+          <test-menuitem class="share-kakao" label="kakao talk으로 공유">
+            <test-avatar slot="avatar" fallback=" " style="background-color: var(--color-kakao)">
+              <test-icon slot="icon" name="message"></test-icon>
+            </test-avatar>
+          </test-menuitem>
+        </test-group>
+        <test-separator></test-separator>
+        <test-textfield
+          value="https://newneek.co/post/jadebabo"
+          placeholder="이건 사실 입력 기능이 없다 커스텀 컴포넌트."
+          size="small"
+          class="share-copy"
+        >
+          <!-- <input class="share-copy-url textfield-input" type="text" value=" readonly /> -->
+          <button class="share-copy-button js-copy" type="button" tabindex="0">복사</button>
+        </test-textfield>
+      </test-tile>
+
+      <br />
+
+      <test-tile variant="flat" class="access">
+        <test-titlebar heading="공개 대상 선택"></test-titlebar>
+        <br />
+        <test-group alignment="vertical">
+          <test-menuitem ize="large" label="전체 공개" description="Facebook 안팎의 모든 사람">
+            <test-radio slot="check" checked></test-radio>
+            <test-avatar slot="avatar" size="large" fallback=" ">
+              <test-icon slot="icon" name="group"></test-icon>
+            </test-avatar>
+          </test-menuitem>
+          <test-menuitem
+            class="is-active"
+            size="large"
+            label="친구만"
+            description="회원님의 Facebook 친구"
+          >
+            <test-radio slot="check"></test-radio>
+            <test-avatar slot="avatar" size="large" fallback=" ">
+              <test-icon slot="icon" name="group"></test-icon>
+            </test-avatar>
+          </test-menuitem>
+          <test-menuitem data-size="large" label="나만 보기" description="부끄러우니까">
+            <test-radio slot="check"></test-radio>
+            <test-avatar slot="avatar" size="large" fallback=" ">
+              <test-icon slot="icon" name="lock"></test-icon>
+            </test-avatar>
+            <span class="item-label" style="line-height: var(--size-large)"></span>
+            <spa slot="description"></spa>
+          </test-menuitem>
+        </test-group>
+      </test-tile>
 
       <br />
 
       <test-tile>
-        <div slot="entire">
-          <test-tile>
-            <b>Personal License</b>
-            <small style="display: block; color: var(--color-text-light)">1 user</small>
-            <b style="position: absolute; right: var(--space-3); top: var(--space-3)">18,800 KRW</b>
-          </test-tile>
-          <div style="margin: var(--space-3) 0">
-            <test-menuitem>
-              <test-avatar
-                slot="avatar"
-                size="large"
-                fallback="🎅🏻"
-                src="/public/images/springsteen.jpg"
-              ></test-avatar>
-              <div slot="text">
-                <b class="item-name">Widgefy iOS Widgets</b>
-                <p style="color: var(--color-text-light); line-height: 24px">떡볶이</p>
-              </div>
-              <div slot="action" style="text-align: right">
-                <p class="item-price">18,800 KRW</p>
-                <span style="color: var(--color-text-light)">6410</span>
-              </div>
-            </test-menuitem>
-          </div>
-          <footer>
-            <test-button variant="primary">Buy now</test-button>
-          </footer>
+        <test-tile>
+          <b>Personal License</b>
+          <small style="display: block; color: var(--color-text-light)">1 user</small>
+          <b style="position: absolute; right: var(--space-3); top: var(--space-3)">18,800 KRW</b>
+        </test-tile>
+        <div style="margin: var(--space-3) 0">
+          <test-menuitem>
+            <test-avatar
+              slot="avatar"
+              size="large"
+              fallback="🎅🏻"
+              src="/public/images/springsteen.jpg"
+            ></test-avatar>
+            <div slot="text">
+              <b class="item-name">Widgefy iOS Widgets</b>
+              <p style="color: var(--color-text-light); line-height: 24px">떡볶이</p>
+            </div>
+            <div slot="action" style="text-align: right">
+              <p class="item-price">18,800 KRW</p>
+              <span style="color: var(--color-text-light)">6410</span>
+            </div>
+          </test-menuitem>
         </div>
+        <footer>
+          <test-button variant="primary">Buy now</test-button>
+        </footer>
       </test-tile>
 
       <test-separator></test-separator>
