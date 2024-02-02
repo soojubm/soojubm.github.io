@@ -1,17 +1,22 @@
+/* reset */
+i {
+  font-style: normal;
+}
+
+/* host */
 .icon {
   display: flex !important;
   align-items: center;
   justify-content: center;
   font-size: 1rem !important;
+
+  --icon-size: 0;
+  --icon-font-size: 0;
 }
 
 .icon[data-size=small] {
-  font-size: 1rem !important;
 }
 
 .icon[data-size=large] {
   font-size: 1.5rem !important;
-}
-i {
-  font-style: normal;
 }

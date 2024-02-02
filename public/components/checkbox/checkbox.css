@@ -38,7 +38,6 @@
   align-items: center;
   /* TODO: 체크 박스 내부에 링크 태그가 있으면  */
   gap: var(--space-2);
-
   line-height: var(--checkbox-size);
   position: relative;
 }
@@ -69,7 +68,6 @@
 /* checked */
 .checkbox input:checked ~ label:before {
   border-color:var(--color-primary);
-  animation:ripple2 0.2s linear forwards;
 }
 .checkbox input:checked ~ label:after {
   border-color:var(--color-primary);

@@ -112,15 +112,11 @@
         ></textarea>
       </div>
       <test-separator></test-separator>
-      <div class="counter js-counter" style="max-width: 240px; display: flex; gap: 0.5rem">
+      <div class="counter js-counter" style="max-width: 200px">
         <label for="numberfield" style="position: absolute; opacity: 0">
           레이블 라이트하우스용
         </label>
-        <test-chip
-          class="counter-decrement js-counter-decrement"
-          aria-controls="numberfield"
-          tabindex="-1"
-        >
+        <test-chip class="js-counter-decrement" aria-controls="numberfield" tabindex="-1">
           <test-icon slot="icon" name="minus"></test-icon>
         </test-chip>
         <test-textfield size="small" value="20"></test-textfield>
@@ -133,7 +129,7 @@
           max="20"
           value="0"
         /> -->
-        <test-chip class="counter-increment js-counter-increment" tabindex="-1">
+        <test-chip class="js-counter-increment" tabindex="-1">
           <test-icon slot="icon" name="plus"></test-icon>
         </test-chip>
       </div>
@@ -250,7 +246,7 @@
     <test-text variant="body-bold">Field group</test-text>
     <!-- <test-text variant="body">그룹이 되는 모든 필드는 선택 입력입니다.</test-text> -->
     <section class="component-case">
-      <fieldset class="textfield-group" style="width: 100%; align-items: flex-end">
+      <test-group variant="textfield" style="width: 100%; align-items: flex-end">
         <test-textfield label="Length" placeholder="cm unit"></test-textfield>
         <div style="display: flex; align-items: center; height: var(--size-large)">
           <test-icon name="xmark"></test-icon>
@@ -260,7 +256,7 @@
           <test-icon name="xmark"></test-icon>
         </div>
         <test-textfield label="Height" placeholder="cm"></test-textfield>
-      </fieldset>
+      </test-group>
     </section>
     <section class="component-case">
       <div style="display: flex; justify-content: space-between; gap: var(--space-3)">

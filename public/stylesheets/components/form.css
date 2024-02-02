@@ -76,8 +76,6 @@ text-transform: capitalize;
 .file-attachment-item-size {color:var(--color-text-light);}
 .file-attachment-item-delete {right:.5rem;top:.5rem;}
 
-
-
 /* // button.visually-hidden:focus,
 // input[type=submit].visually-hidden:focus {
 //   position: fixed;
@@ -102,10 +100,9 @@ text-transform: capitalize;
 .price-input {}
 .number-input {}
 
-.counter {display:flex;position:relative;}
-.counter-input {width:100%;margin:0 var(--space-2);background:var(--color-background-weak);border-radius:var(--radius);text-align:center;}
 /* // radius = iOS */
-.counter-decrement {@mixin chip;}
-.counter-increment {@mixin chip;border-radius:0 var(--radius) var(--radius) 0;}
-.counter-decrement[aria-disabled=true] {opacity:.5;cursor:not-allowed;}
-.counter-increment[aria-disabled=true] {opacity:.5;cursor:not-allowed;}
+.counter {display:flex;gap: 0.5rem;position:relative;}
+.counter-input {width:100%;margin:0 var(--space-2);background:var(--color-background-weak);border-radius:var(--radius);text-align:center;}
+.counter-decrement {}
+.counter-increment {border-radius:0 var(--radius) var(--radius) 0;}
+.counter [aria-disabled=true] {opacity:.5;cursor:not-allowed;}

@@ -2,7 +2,6 @@
 .switch {
   --switch-width: 40px;
   --switch-height: var(--size-tiny);
-  
   --switch-radius: var(--radius);
 
   display:block;
@@ -22,10 +21,22 @@
   inline-size: 100%;
 }
 
-.switch input + label {display:flex;gap:var(--space-2);line-height:var(--switch-height);cursor:pointer;}
+.switch input + label {
+  display:flex;gap:var(--space-2);line-height:var(--switch-height);cursor:pointer;
+
+  /* 
+  --switch-thumb-size: 24px;
+  --switch-thumb-inset: 4px;
+  --switch-thumb-transform: calc(100% - var(--switch-thumb-inset));
+  --switch-border-color: var(--color-border-secondary);
+  --switch-border: 2px solid var(--switch-border-color);
+  */
+}
 .switch input + label:before {
-  content:'';display:block;
-  width:var(--switch-width);height:var(--switch-height);
+  content:'';
+  display:block;
+  width:var(--switch-width);
+  height:var(--switch-height);
   border-radius:var(--radius);
   box-sizing:border-box;
   background:var(--gray200);
@@ -33,7 +44,8 @@
   transition:all .25s;
 }
 .switch input + label:after {
-  content:'';display:block;
+  content:'';
+  display:block;
   width:var(--switch-height);
   height:var(--switch-height);
   border-radius:var(--radius);
@@ -41,7 +53,8 @@
   background:var(--color-background);
   box-shadow:var(--shadow);
   position:absolute;left:0;top:0;
-  transition:transform .2s;}
+  transition:transform .2s;
+}
 .switch input:checked + label {}
 .switch input:checked + label:before {content:'';background:var(--color-primary);}
 .switch input:checked + label:after {transform:translateX(calc(var(--switch-width) - 16px));}

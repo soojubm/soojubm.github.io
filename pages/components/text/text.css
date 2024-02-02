@@ -1,9 +1,4 @@
 
-.help-feedback {position:relative;}
-.help-feedback-title {}
-.help-feedback-status {display:block;margin:0 0 var(--space-4) 0;}
-.help-feedback-button {@mixin chip;margin:0 var(--space-2) 0 0;}
-
 
 .meter {
   display: flex;

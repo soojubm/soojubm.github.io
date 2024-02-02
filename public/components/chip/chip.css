@@ -46,12 +46,9 @@ em, i  {
   /* TODO donesnt using ? for chip in textfield  */
   /* gap 제거. icon only에 label 태그 때문. */
   /* 이모지 2개 나옴.. */
-
   /* outline: 2px solid var(--color-background); */
-  
 
 .chip {
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -77,18 +74,15 @@ em, i  {
 }
 
 .chip-label {
-  /* display: block;
-  line-height: var(--chip-size); */
   color: inherit;
 }
 .chip-name {
   margin: 0 var(--space-1) 0 0;
-  font-weight:var(--font-weight-normal);
   color:var(--color-text-light);}
 .chip-name:after {content:': ';}
 
 .chip[aria-selected] {
-  background: var(--color-background-strong);
+  --chip-color-background: var(--color-background-strong);
   color: var(--color-text-strong);
 }
 .chip[aria-checked=true] {
@@ -108,20 +102,12 @@ em, i  {
 ::slotted([slot=prefix]) {margin-right:var(--space-2);}
 ::slotted([slot=suffix]) {margin-left:var(--space-2);}
 
-::slotted([slot=prefix]), ::slotted([slot=suffix]) {
-  /* width: 32px;
-  height: 32px; */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 /* .chip-label ~ ::slotted([slot=icon]) {
   margin-left: -0.25rem;
 }
 .chip-label ~ ::slotted([slot=badge]) {
   margin-right: -0.25rem;
 } */
-
 
 // .chip[aria-expanded=true] {
 //   background-image: url(

@@ -1,13 +1,11 @@
 p {margin: 0;}
 
-/* form:invalid button {}
+/*
+form:invalid button {}
 fieldset:invalid ~ fieldset { display: none; }
-input:valid {}
-input:invalid {} */
+input:valid {} input:invalid {} 
+*/
 /* label height 가 있으면 아이콘 포지셔닝에 좋다. */
-
-.textfield-group {display:flex;justify-content:space-between;gap:var(--space-2);}
-.textfield-group > * {flex:auto;}
 
 .reset-input {
   background: var(--color-background-weak);
@@ -24,6 +22,7 @@ input:invalid {} */
 
 textarea {}
 textarea:focus {-webkit-appearance:none;}
+
 /* // on safari */
 input:focus-visible {outline:0;}
 input:-internal-autofill-selected {}
@@ -41,18 +40,11 @@ input[type=number]::-webkit-outer-spin-button {-webkit-appearance:none;-moz-appe
 // input[type=number] {font-family:inherit;border:0;border-radius:0;color:inherit;} */
 
 /* // for appearance on safari */
-input[type=date] {-webkit-appearance:none;}
-input[type=date] {display:block;max-height:var(--size-large);} 
 /* // 패딩으로 설정한 세로값 크롬에서 다른 텍스트 필드와 괴리. iOS displayblock */
-
-/* TODO click area */
-/* input[type="date"]::-webkit-inner-spin-button,
-input[type="date"]::-webkit-calendar-picker-indicator {
-    display: none;
-    -webkit-appearance: none;
-} */
+input[type=date] {display:block;max-height:var(--size-large);-webkit-appearance:none;}
 input[type=date]::-webkit-calendar-picker-indicator {width:100%;opacity:0;position:absolute;left:0;bottom:0;}
-input[type=date]::-webkit-inner-spin-button {display:none;}
+input[type=date]::-webkit-calendar-picker-indicator {width:100%;opacity:0;position:absolute;left:0;bottom:0;}
+input[type=date]::-webkit-inner-spin-button {display:none;-webkit-appearance: none;}
 
 input[type=password] {-webkit-appearance:none;letter-spacing:.5rem;}
 input[type=password]::placeholder {letter-spacing:0;}
@@ -65,28 +57,34 @@ input[type=search]::-webkit-search-cancel-button,
 input[type=search]::-webkit-search-results-button,
 input[type=search]::-webkit-search-results-decoration {display:none;}
 
-
 /* textfield 중복 / for select */
 .textfield {
   width: 100%;
   position:relative;
 
   --textfield-height: var(--size-large);
-  --textfield-background-color: 0;
+  --textfield-background-color: var(--color-background-weak);
   --textfield-border: var(--border);
   --textfield-radius: var(--radius);
   --textfield-text-color: 0;
+  --textfield-icon-position: var(--size-small);
 }
-.textfield-label {display:block;line-height:var(--size-small);}
-.textfield-label small {margin:0 0 0 var(--space-1);color:var(--color-text-light);}
+.textfield-label {
+  display:block;
+  line-height:var(--size-small);
+}
+.textfield-label small {
+  margin:0 0 0 var(--space-1);
+  color:var(--color-text-light);
+}
 .textfield-input {
   display:block;
   width:100%;
   height:var(--textfield-height);
   padding:var(--space-2) var(--space-4);
   box-sizing: border-box;
-  border-radius:var(--radius);
-  background:var(--color-background-weak);
+  border-radius:var(--textfield-radius);
+  background: var(--textfield-background-color);
   color: var(--color-text);
 }
 .textfield-input:focus {box-shadow:var(--status-hover);}
@@ -94,13 +92,27 @@ input[type=search]::-webkit-search-results-decoration {display:none;}
 .textfield-input:disabled {opacity:.5;cursor:not-allowed;}
 .textfield-helper {margin:var(--space-1) 0 0;color:var(--red800);}
 
-/* .inputfield[data-type=search] {} */
+.textfield-suffix ~ .textfield-input {padding-right:4rem;}
+
 /* // 오른쪽에 2개의 액션이 있는 ui가 있었음. 좋은 ui는 아님. 리빌 + 클리어. 클리어가 있는데 리빌이 필요하지 않음 */
 .textfield-reveal {font-size:var(--font-size-small);color:var(--color-text-light);}
-.textfield-check {}
-.textfield-unit {}
+.textfield-check {} .textfield-unit {}
 
-.textfield-suffix, 
+
+/* :: 조건부 append 시 slotted 안됨 */
+.textfield[data-label=false] {
+  --textfield-icon-position: 0;
+}
+[data-label=false] .textfield-input {padding-left:var(--textfield-height);}
+/* 왜 안 됨. */
+/* ::slotted([slot=prefix]) ~ .textfield-input {padding-left:48px !important;} */
+
+/* sizes */
+.textfield[data-size=small] {
+--textfield-height: var(--size-medium); 
+}
+
+/* TODO slotted에서 크기나 정렬에 대한 정의는 없어야 함. 위치. 하지만 그렇게 하려면 조금 더. */
 ::slotted([slot=suffix]) {
   display: flex;
   align-items: center;
@@ -111,28 +123,6 @@ input[type=search]::-webkit-search-results-decoration {display:none;}
   position:absolute;top:var(--size-small);right:0;
 }
 
-
-/* :: 조건부 append 시 slotted 안됨 */
-[data-label=false] ::slotted([slot=prefix]),
-[data-label=false] ::slotted([slot=suffix]){
-  top: 0;
-}
-[data-label=false] .textfield-input {padding-left:48px;}
-/* 왜 안 됨. */
-/* ::slotted([slot=prefix]) ~ .textfield-input {padding-left:48px !important;} */
-
-
-/* sizes */
-[data-size=small] ::slotted([slot=prefix]) {
-  width: var(--size-medium);
-  height:var(--size-medium);
-}
-[data-size=small] .textfield-prefix {left:var(--space-1);top:0;}
-[data-size=small][data-label=false] .textfield-input {height:var(--size-medium);padding-left:32px;
-  /* padding-left:2.25rem; */
-}
-
-.textfield-prefix,
 ::slotted([slot=prefix]) {
   display: flex;
   align-items: center;
@@ -141,13 +131,9 @@ input[type=search]::-webkit-search-results-decoration {display:none;}
   position:absolute;top:var(--size-small);left:0;
 }
 
-
-
-.textfield-suffix ~ .textfield-input {padding-right:4rem;}
-
-/* // .textfield-link {} */
 ::slotted([slot=link]) {
-  font-size:var(--font-size-small);position:absolute;right:0;top:0;
+  font-size:var(--font-size-small);
+  position:absolute;right:0;top:0;
 }
 
 .is-invalid .textfield-label {}

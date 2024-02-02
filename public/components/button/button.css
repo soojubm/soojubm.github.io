@@ -40,10 +40,13 @@
   border: var(--button-border);
   border-radius: var(--button-radius);
   box-sizing: border-box;
-
   background: var(--button-color);
-  color: var(--button-text-color);
+
+  font-size: var(--button-font-size);
   font-weight: var(--button-font-weight);
+  color: var(--button-text-color);
+
+
   text-transform: capitalize;
 
   cursor: pointer;
@@ -73,13 +76,12 @@
 /* sizes */
 .button[data-size=large] {
   --button-size: 64px;
+  --button-font-size: var(--font-size-large);
   padding-bottom: 5px;
-  font-size: var(--font-size-large);
 }
 .button[data-isfullwidth=true] {
   width: 100%;
 }
-
 
 /* states */
 .button:hover,
@@ -93,20 +95,16 @@
 }
 .button:disabled,
 .button[data-status=disabled] {opacity:.5;cursor:not-allowed;}
-
 .button[aria-pressed=true] {}
-
+.button:active:not(.a-button-disabled) {
+  background: #F0B800;
+  border-color: #008296;
+  box-shadow: 0 0 0 3px #C8F3FA, inset 0 0 0 2px #FFF;
+}
 /* button:not(:active),
 button:not(:focus) {outline:0;} */
 
 /* &:hover:not(:disabled), &.is-hover:not(:disabled) {
   box-shadow: var(--status-hover);
 }
-
-&:disabled {opacity:.5;cursor:not-allowed;} */
-
-.button:active:not(.a-button-disabled) {
-  background: #F0B800;
-  border-color: #008296;
-  box-shadow: 0 0 0 3px #C8F3FA, inset 0 0 0 2px #FFF;
-}
+*/
