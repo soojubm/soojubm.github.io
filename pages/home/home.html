@@ -72,18 +72,44 @@
     <button>12345</button> -->
     <!-- // invoice / order  구분 -->
 
+    <div
+      style="
+        height: 240px;
+        margin-top: -2rem;
+        margin-bottom: 2rem;
+        border: 1px solid #ecd5d5;
+        border-radius: var(--radius);
+        margin: 0 -1rem;
+        background-color: snow;
+      "
+    >
+      <div class="chat is-mine" style="">
+        <div
+          class="chat-bubble"
+          style="
+            margin: 0 0 var(--space-2);
+            border-radius: 1.5rem;
+            border-bottom-left-radius: var(--radius);
+          "
+        >
+          <p>감사합니다! 아바타와 닉네임 없어도 됨.</p>
+        </div>
+        <test-avatar size="large">
+          <img src="/public/images/springsteen.jpg" alt="" />
+        </test-avatar>
+      </div>
+    </div>
+
     <section class="feature">
       <header class="feature-head">
         <test-text variant="title" class="feature-head-title"
           ><span style="color: var(--color-text-light)">Key Principles</span></test-text
         >
-        <test-text variant="title" class="feature-head-title">어떤 문제를 해결합니까?</test-text>
-        <div style="max-width: 640px">
-          <test-text variant="body-large" class="feature-head-description">
-            RudderStack’s Warehouse Native CDP helps data teams collect, unify and activate customer
-            data
-          </test-text>
-        </div>
+        <test-text variant="title" class="feature-head-title">길을 잃지 않기 위한 원칙</test-text>
+        <test-text variant="body-large" class="feature-head-description">
+          의사결정의 고비가 왔을 때 언제든 이곳으로 돌아와 비교대상의 우위를 결정하세요. 취사선택.
+          가치판단.
+        </test-text>
         <!-- <test-text variant="body">The goal isn't "all or nothing".</test-text> -->
       </header>
       <div class="feature-item">
@@ -208,28 +234,9 @@
       </div> -->
     </section>
 
+    <blockquote></blockquote>
+
     <br /><br />
-
-    <!-- <section
-      style="
-        display: flex;
-        justify-content: space-between;
-        gap: 2rem;
-        padding: 4rem 0;
-        background: var(--color-background-weak);
-      "
-    >
-      <figure style="width: 50%; height: 200px; background: #fff">figure</figure>
-      <div style="width: 50%">
-        <test-text variant="title" class="feature-head-title">어떤 문제를 해결합니까?</test-text>
-        <test-text variant="body-large" class="feature-head-description">
-          RudderStack’s Warehouse Native CDP helps data teams collect, unify and activate customer
-          data
-        </test-text>
-      </div>
-    </section> -->
-
-    <test-text variant="body"></test-text>
     <!-- <div class="stamp" style="position: absolute; right: 10%; top: 12rem">
       <div class="circle" style="background: var(--color-accent)">
         <p>Under<br />Construction</p>
@@ -254,6 +261,44 @@
       }
     </style>
     <br /><br />
+
+    <div
+      style="
+        margin-top: -2rem;
+        margin-bottom: 2rem;
+        border: 1px solid #ecd5d5;
+        border-radius: var(--radius);
+        margin: 0 -1rem;
+        padding: 4rem 4rem calc(4rem + 4rem);
+        background-color: snow;
+        text-align: center;
+      "
+    >
+      <test-text variant="title" class="feature-head-title">What’s Included </test-text>
+      <!-- TODO 왜 바디는 가운데 정렬이 안 될까. -->
+      <test-text
+        variant="body-large"
+        class="feature-head-description"
+        style="margin-left: auto; margin-right: auto"
+      >
+        100+ powerful features built to help modern teams hire smarter.
+      </test-text>
+    </div>
+    <test-tile style="margin-top: -4rem; padding: 2rem">
+      <div>
+        <test-text variant="subhead">Career Page</test-text>
+        <ul class="checklist">
+          <li>Brand first design</li>
+          <li>Custom templates</li>
+          <li>Analytics & tracking</li>
+          <li>Easy job application</li>
+        </ul>
+      </div>
+    </test-tile>
+
+    <section
+      style="height: 400px; margin: 4rem 0; background: var(--color-background-strong)"
+    ></section>
 
     <test-text variant="subhead">Documentation</test-text>
     <div style="height: var(--space-4)"></div>

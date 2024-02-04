@@ -1,0 +1,119 @@
+<div class="component">
+  <main class="dashboard">
+    <style>
+      .dashboard {
+        padding: 1rem var(--grid-margin);
+      }
+
+      .dashboard-body {
+        max-width: 800px;
+        margin: 1rem auto;
+      }
+    </style>
+
+    <header
+      class="greeting"
+      data-temp="이 패턴에서 아바타는 시각 정보가 아니라 링크로 사용. hashtag 등 사실상 page head로 사용될 수 있는."
+    >
+      <test-avatar variant="secondary" size="huge" fallback="🐶"></test-avatar>
+      <div style="margin-top: 0.25rem"></div>
+      <test-text variant="subhead">Hello, Spring 👋</test-text>
+      <div></div>
+      <test-text variant="body">Tender is the night.</test-text>
+    </header>
+    <!-- <header class="dashboard-head"></header> -->
+    <br /><br />
+    <section style="display: flex; justify-content: space-between; gap: 1rem">
+      <test-tile style="width: 100%">
+        <article class="overview-item" style="width: 100%; position: relative">
+          <test-text variant="body">수신</test-text>
+          <!-- <test-tag style="position: absolute; right: 1rem; top: 0.875rem">태그</test-tag> -->
+          <test-text variant="title">
+            1,508
+            <small style="font-size: var(--font-size-medium); vertical-align: super">90%</small>
+          </test-text>
+          <test-separator></test-separator>
+          <div class="meter">
+            <div class="meter-track">
+              <b class="meter-thumb" style="width: 68%"></b>
+            </div>
+            <span class="meter-text">200GB 중 115.72GB 사용</span>
+          </div>
+        </article>
+      </test-tile>
+      <test-tile style="width: 100%">
+        <article class="overview-item" style="width: 100%; position: relative">
+          <test-text variant="body">수신</test-text>
+          <!-- <test-tag style="position: absolute; right: 1rem; top: 0.875rem">태그</test-tag> -->
+          <test-text variant="title">
+            1,508
+            <small style="font-size: var(--font-size-medium); vertical-align: super">90%</small>
+          </test-text>
+          <test-separator></test-separator>
+          <div class="meter">
+            <div class="meter-track">
+              <b class="meter-thumb" style="width: 68%"></b>
+            </div>
+            <span class="meter-text">200GB 중 115.72GB 사용</span>
+          </div>
+        </article>
+      </test-tile>
+    </section>
+    <br /><br />
+    <section style="display: flex; justify-content: space-between; gap: 1rem">
+      <div style="width: 66.6666%">
+        <header
+          style="
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 0 0 var(--space-3);
+          "
+        >
+          <test-text variant="subhead">Transactions</test-text>
+          <test-link>모두보기</test-link>
+        </header>
+        <test-group variant="menuitem" style="gap: var(--space-3)">
+          <test-tile variant="flat">
+            <test-menuitem size="large">
+              <test-avatar slot="avatar" size="large" fallback=" ">🦊</test-avatar>
+              <div slot="text">
+                <test-text variant="body">사진 및 동영상 백업</test-text>
+                <test-text variant="label">디스크립션이다</test-text>
+              </div>
+              <test-group slot="action" variant="chip">
+                <test-chip>버튼</test-chip>
+                <test-chip variant="plain">
+                  <test-icon slot="icon" name="more-vert"></test-icon>
+                </test-chip>
+              </test-group>
+            </test-menuitem>
+          </test-tile>
+          <test-tile variant="flat">
+            <test-menuitem size="large">
+              <test-avatar slot="avatar" size="large" fallback=" ">🦊</test-avatar>
+              <div slot="text">
+                <test-text variant="body">사진 및 동영상 백업</test-text>
+                <test-text variant="label">New York, NY - <b>128 Views</b></test-text>
+              </div>
+              <test-group slot="action" variant="chip">
+                <test-chip>버튼</test-chip>
+                <test-chip variant="plain">
+                  <test-icon slot="icon" name="more-vert"></test-icon>
+                </test-chip>
+              </test-group>
+            </test-menuitem>
+          </test-tile>
+        </test-group>
+      </div>
+      <div
+        style="
+          width: 33.3333%;
+          margin-top: 40px;
+          border-radius: var(--radius);
+          background: yellowgreen;
+        "
+      ></div>
+    </section>
+  </main>
+</div>

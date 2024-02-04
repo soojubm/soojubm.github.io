@@ -29,6 +29,7 @@ const HTML_TEMPLATE = './index.html'
 
 const patterns = [
   'layout',
+  'dashboard',
   'dialog',
   'result',
   'searching',

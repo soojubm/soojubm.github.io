@@ -23,10 +23,12 @@
         </div>
         <test-chip slot="action">버튼</test-chip>
       </test-menuitem>
-
+      <!-- TODO prefix / suffix -->
       <test-group alignment="vertical">
         <test-menuitem label="메뉴아이템 링크" role="menuitem">
-          <test-icon slot="avatar" name="bell"></test-icon>
+          <test-avatar slot="avatar" name="bell" fallback=" ">
+            <test-icon slot="icon"></test-icon>
+          </test-avatar>
         </test-menuitem>
         <test-menuitem role="menuitemradio" label="메뉴아이템 스위치">
           <test-avatar slot="avatar"></test-avatar>

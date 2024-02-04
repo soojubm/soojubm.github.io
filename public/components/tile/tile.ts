@@ -8,8 +8,6 @@ class Tile extends HTMLElement {
     const container = document.createElement('div')
     container.classList.add('tile')
 
-    setSlotElement(container, 'entire')
-
     setSlotElement(container, 'thumbnail')
     setSlotElement(container, 'heading')
     setSlotElement(container, 'body')
@@ -21,21 +19,21 @@ class Tile extends HTMLElement {
     const slotAction = document.createElement('slot')
     slotAction.name = 'action'
 
+    // ...rest
     const children = document.createElement('slot')
     // children.name = 'children'
+    // container.innerHTML = this.innerHTML || ''
 
     const style = this.getAttribute('style')
     container.setAttribute('style', style || '')
 
-    shadow.appendChild(container)
+    if (this.variant) container.setAttribute('data-variant', this.variant)
+    if (this.size) container.setAttribute('data-size', this.size)
 
-    // container.innerHTML = this.innerHTML || ''
+    shadow.appendChild(container)
     container.appendChild(makeStyleSheet('tile'))
     container.appendChild(slotAction)
     container.appendChild(children)
-
-    if (this.variant) container.setAttribute('data-variant', this.variant)
-    container.setAttribute('data-size', this.size || '')
   }
 
   // get size() {

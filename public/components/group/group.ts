@@ -1,5 +1,11 @@
 import { makeStyleSheet } from '../../javascripts/components/utils'
 
+type ValueType = 'checkbox' | 'radio' | 'chip' | 'button' | 'textfield' | 'menuitem'
+
+const getContainer = (value: ValueType) => {
+  if (value === 'checkbox' || value === 'radio') return 'fieldset'
+  return 'div'
+}
 class Group extends HTMLElement {
   constructor() {
     super()
