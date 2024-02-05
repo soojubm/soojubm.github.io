@@ -46,6 +46,7 @@ class Chip extends HTMLElement {
     const suffixSlot = document.createElement('slot')
     suffixSlot.name = 'suffix'
 
+    // TODO avatar와 공통
     if (this.icon) {
       const icon = document.createElement('test-icon')
       icon.setAttribute('name', this.icon)

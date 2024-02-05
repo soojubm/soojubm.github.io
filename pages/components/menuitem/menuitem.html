@@ -16,7 +16,7 @@
 
     <section class="component-example">
       <test-menuitem size="large" style="margin: 0 0 var(--space-2)">
-        <test-avatar slot="avatar" size="large" fallback=" ">🦊</test-avatar>
+        <test-avatar slot="avatar" size="large" >🦊</test-avatar>
         <div slot="text">
           <test-text variant="body">사진 및 동영상 백업</test-text>
           <test-text variant="label">디스크립션이다</test-text>
@@ -26,7 +26,7 @@
       <!-- TODO prefix / suffix -->
       <test-group alignment="vertical">
         <test-menuitem label="메뉴아이템 링크" role="menuitem">
-          <test-avatar slot="avatar" name="bell" fallback=" "> </test-avatar>
+          <test-avatar slot="avatar" name="bell" > </test-avatar>
         </test-menuitem>
         <test-menuitem role="menuitemradio" label="메뉴아이템 스위치">
           <test-avatar slot="avatar"></test-avatar>
@@ -50,7 +50,7 @@
           <test-avatar slot="avatar"></test-avatar>
           <test-group slot="action" variant="chip">
             <test-chip>with quick action</test-chip>
-            <test-avatar fallback=" ">
+            <test-avatar >
               <test-icon name="arrow-right"></test-icon>
             </test-avatar>
           </test-group>
@@ -186,24 +186,28 @@
             <test-avatar
               slot="avatar"
               size="medium"
-              fallback=" "
+              
+              icon="facebook"
               style="background-color: var(--color-facebook); color: #fff"
             >
-              <test-icon slot="icon" name="facebook"></test-icon>
             </test-avatar>
           </test-menuitem>
           <test-menuitem class="share-twitter" label="twitter로 공유">
             <test-avatar
               slot="avatar"
-              fallback=" "
+              
+              icon="twitter"
               style="background-color: var(--color-twitter); color: #fff"
             >
-              <test-icon slot="icon" name="twitter"></test-icon>
             </test-avatar>
           </test-menuitem>
           <test-menuitem class="share-kakao" label="kakao talk으로 공유">
-            <test-avatar slot="avatar" fallback=" " style="background-color: var(--color-kakao)">
-              <test-icon slot="icon" name="message"></test-icon>
+            <test-avatar
+              slot="avatar"
+              
+              icon="message"
+              style="background-color: var(--color-kakao)"
+            >
             </test-avatar>
           </test-menuitem>
         </test-group>
@@ -227,9 +231,7 @@
         <test-group alignment="vertical">
           <test-menuitem ize="large" label="전체 공개" description="Facebook 안팎의 모든 사람">
             <test-radio slot="check" checked></test-radio>
-            <test-avatar slot="avatar" size="large" fallback=" ">
-              <test-icon slot="icon" name="group"></test-icon>
-            </test-avatar>
+            <test-avatar slot="avatar" size="large" icon="group"> </test-avatar>
           </test-menuitem>
           <test-menuitem
             class="is-active"
@@ -238,15 +240,11 @@
             description="회원님의 Facebook 친구"
           >
             <test-radio slot="check"></test-radio>
-            <test-avatar slot="avatar" size="large" fallback=" ">
-              <test-icon slot="icon" name="group"></test-icon>
-            </test-avatar>
+            <test-avatar slot="avatar" size="large"  icon="group"> </test-avatar>
           </test-menuitem>
           <test-menuitem data-size="large" label="나만 보기" description="부끄러우니까">
             <test-radio slot="check"></test-radio>
-            <test-avatar slot="avatar" size="large" fallback=" ">
-              <test-icon slot="icon" name="lock"></test-icon>
-            </test-avatar>
+            <test-avatar slot="avatar" size="large"  icon="lock"> </test-avatar>
             <span class="item-label" style="line-height: var(--size-large)"></span>
             <spa slot="description"></spa>
           </test-menuitem>
@@ -384,19 +382,28 @@
           <test-avatar slot="avatar" size="huge" variant="secondary"></test-avatar>
         </test-entity>
         <test-entity description="공유 TODO bottom nav">
-          <test-avatar slot="avatar" size="large" variant="secondary" fallback=" ">
-            <test-icon slot="icon" name="share-ios" size="large"></test-icon>
+          <test-avatar slot="avatar" size="large" variant="secondary"  icon="share-ios">
           </test-avatar>
         </test-entity>
         <test-group>
           <test-menuitem alignment="vertical" label="더보기">
-            <test-avatar slot="avatar" size="large" variant="secondary" fallback=" ">
-              <test-icon slot="icon" name="more-horiz-circle" size="large"></test-icon>
+            <test-avatar
+              slot="avatar"
+              size="large"
+              variant="secondary"
+              
+              icon="more-horiz-circle"
+            >
             </test-avatar>
           </test-menuitem>
           <test-entity description="툴">
-            <test-avatar slot="avatar" size="large" variant="secondary" fallback=" ">
-              <test-icon slot="icon" name="share-ios" size="large"></test-icon>
+            <test-avatar
+              slot="avatar"
+              size="large"
+              variant="secondary"
+              
+              icon="share-ios"
+            >
             </test-avatar>
           </test-entity>
         </test-group>

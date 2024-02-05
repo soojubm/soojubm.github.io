@@ -11,9 +11,9 @@ img {
   margin: 0 !important;
   
   --avatar-size: var(--size-medium);
-  --avatar-background-color: #fff;
+  --avatar-background-color: var(--color-background-weak);
   --avatar-border: var(--border);
-
+  --avatar-radius: var(--radius);
   --avatar-badge-size: var(--size-tiny);
 
   display: flex;
@@ -21,24 +21,26 @@ img {
   justify-content: center;
   width: var(--avatar-size);
   height: var(--avatar-size);
-  background: url('/public/images/soojubm.png') no-repeat 64% 55%;
   background-size: 80%;
-  background-color: var(--color-background-weak);
-  border-radius: var(--radius);
+  background-repeat: no-repeat;
+  background-position: center;
+
+  background-color: var(--avatar-background-color);
+  border-radius: var(--avatar-radius);
   box-shadow: var(--color-background) 0px 0px 0px 1px;
   box-sizing: border-box;
   position: relative;
 
 }
-
-.avatar.no {
-  background-image: none;
+.avatar[data-default=true] {
+  background-image: url('/public/images/soojubm.png');
 }
-.avatar img {
+
+/* .avatar img {
     height: inherit;
     border-radius: var(--radius);
     object-fit: cover;
-}
+} */
 
 .avatar[data-size=huge] {
   --avatar-size: var(--size-huge);
@@ -55,12 +57,13 @@ img {
   --avatar-size:var(--size-small);
 }
 .avatar[data-variant=secondary] {
-  border:var(--border);background-color:var(--color-background);
+  border:var(--border);
+  --avatar-background-color: var(--color-background);
 }
 .avatar[data-variant=tertiary] {
-  border:none;background-color:transparent;
+  --avatar-background-color: transparent;
+  border:none;
 }
-
 
 .avatar-badge {
   display: flex;
@@ -85,8 +88,4 @@ img {
   position: absolute;
   left: var(--space-1-minus);
   top: var(--space-1-minus);
-}
-
-.entity[data-size=medium] {
-  
 }

@@ -7,6 +7,7 @@
         slot="avatar"
         size="huge"
         variant="secondary"
+        default="true"
         style="outline: 6px solid var(--color-background)"
       ></test-avatar>
       <test-chip>팔로우</test-chip>
@@ -25,26 +26,18 @@
         href="https://soojubm.notion.site/UI-Designer-9c18f4dd39eb4181b9f9c2ee76896618"
         target="_blank"
       >
-        <test-avatar slot="avatar" variant="primary" size="medium" fallback=" ">
-          <test-icon slot="icon" name="people-tag"></test-icon>
-        </test-avatar>
+        <test-avatar slot="avatar" variant="primary" size="medium" icon="people-tag"> </test-avatar>
         <test-icon slot="action" size="small" name="arrow-up-right"></test-icon>
       </test-menuitem>
       <test-menuitem label="Github" href="https://github.com/soojubm" target="_blank">
-        <test-avatar slot="avatar" variant="primary" size="medium" fallback=" ">
-          <test-icon slot="icon" name="github"></test-icon>
-        </test-avatar>
+        <test-avatar slot="avatar" variant="primary" size="medium" icon="github"> </test-avatar>
         <test-icon slot="action" size="small" name="arrow-up-right"></test-icon>
       </test-menuitem>
       <test-menuitem label="영화감상 목록" href="./films.html">
-        <test-avatar slot="avatar" variant="primary" size="medium" fallback=" ">
-          <test-icon slot="icon" name="movie"></test-icon>
-        </test-avatar>
+        <test-avatar slot="avatar" variant="primary" size="medium" icon="movie"> </test-avatar>
       </test-menuitem>
       <test-menuitem label="독서 목록" href="./books.html">
-        <test-avatar slot="avatar" variant="primary" size="medium" fallback=" ">
-          <test-icon slot="icon" name="book"></test-icon>
-        </test-avatar>
+        <test-avatar slot="avatar" variant="primary" size="medium" icon="book"> </test-avatar>
       </test-menuitem>
     </test-group>
   </div>
@@ -72,8 +65,12 @@
   <aside class="footer-scroll" style="margin: 1.5rem 0 0 0">
     <p class="footer-scroll-indicator" aria-hidden="true" hidden>스크롤</p>
     <button class="footer-scroll-bottom js-to-bottom" hidden>아래로</button>
-    <test-chip variant="back" class="footer-scroll-top js-to-top" aria-label="맨 위로">
-      <test-icon slot="icon" name="arrow-up"></test-icon>
+    <test-chip
+      variant="back"
+      class="footer-scroll-top js-to-top"
+      icon="arrow-up"
+      aria-label="맨 위로"
+    >
     </test-chip>
   </aside>
 

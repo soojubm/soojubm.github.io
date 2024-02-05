@@ -21,10 +21,18 @@ class Avatar extends HTMLElement {
     if (this.variant) container.dataset.variant = this.variant
     // container.innerHTML = this.content
 
-    // TODO
-    if (this.fallback) {
-      container.classList.add('no')
-      container.innerText = this.fallback
+    if (this.default === 'true') {
+      container.dataset.default = 'true'
+    }
+
+    // TODO chip와 공통
+    if (this.icon) {
+      const icon = document.createElement('test-icon')
+      icon.setAttribute('name', this.icon)
+
+      container.ariaLabel = this.ariaLabel
+
+      container.appendChild(icon)
     }
 
     const style = this.getAttribute('style')
@@ -55,10 +63,6 @@ class Avatar extends HTMLElement {
     return this.getAttribute('badge')
   }
 
-  // TODO fallback은 아님
-  get fallback() {
-    return this.getAttribute('fallback')
-  }
   get content() {
     return this.innerHTML
   }
@@ -67,6 +71,13 @@ class Avatar extends HTMLElement {
     return this.getAttribute('src')
   }
 
+  get icon() {
+    return this.getAttribute('icon')
+  }
+
+  get default() {
+    return this.getAttribute('default')
+  }
   connectedCallback() {}
   disconnectedCallback() {}
 }
