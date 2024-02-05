@@ -66,6 +66,7 @@
           <li>
             clickable이 아닌 모든 요소는 non-clickable이지만 disabled은 실행 불가의 명시적인 표현.
           </li>
+          <li>iOS에서 뒤로가기(이전 페이지)는 chevron.</li>
         </ul>
       </blockquote>
       <!-- <test-text variant="subhead">Indicator(Label) Icons / Decorative</test-text> -->
@@ -73,24 +74,6 @@
 
       <!-- <test-text variant="subhead">Action Icons</test-text> -->
 
-      <!-- <div class="token-item">
-          <test-chip>
-            <span class="material-symbols-outlined">public</span>
-          </test-chip>
-          <b>public</b>
-        </div>
-        <div class="token-item">
-          <test-chip>
-            <span class="material-symbols-outlined">group</span>
-          </test-chip>
-          <b>group</b>
-        </div>
-        <div class="token-item">
-          <test-chip>
-            <span class="material-symbols-outlined">lock / private</span>
-          </test-chip>
-          <b>lock</b>
-        </div> -->
       <section
         class="group"
         style="display: flex; flex-wrap: wrap; gap: var(--space-3); margin: 0 0 2rem"
@@ -150,70 +133,36 @@
             <test-icon slot="prefix" name="check"></test-icon>
           </test-avatar>
         </test-entity>
-
-        <!-- <div class="token-item">
-          <test-chip>
-            <span class="material-symbols-outlined">light_mode</span>
-          </test-chip>
-          <b>day</b>
-        </div>
-        <div class="token-item">
-          <test-chip>
-            <span class="material-symbols-outlined">nights_stay</span>
-          </test-chip>
-          <b>night</b>
-        </div>
-        <div class="token-item">
-          <test-chip>
-            <span class="material-symbols-outlined"> more_vert </span>
-          </test-chip>
-          <b>more_vert</b>
-        </div>
-        <div class="token-item">
-          <test-chip>
-            <span class="material-symbols-outlined">settings</span>
-          </test-chip>
-          <b>setting</b>
-        </div>
-        <div class="token-item">
-          <test-chip>
-            <span class="material-symbols-outlined"> content_copy </span>
-          </test-chip>
-          <b>copy</b>
-        </div>
-        <div class="token-item">
-          <test-chip>
-            <span class="material-symbols-outlined"> cached </span>
-          </test-chip>
-          <b>refresh</b>
-        </div>
-        <div class="token-item">
-          <test-chip>
-            <span class="material-symbols-outlined"> logout </span>
-          </test-chip>
-          <b>logout</b>
-        </div> -->
-        <!-- <div class="token-item">
-          <small>iOS에서 뒤로가기(이전 페이지)는 chevron.</small>
-        </div> -->
-        <!-- <div class="token-item">
-          <test-chip>
-            <i class="icon-caret" style="display: inline-block"></i>
-          </test-chip>
-          <b>Popover</b>
-        </div> -->
-        <!-- <div class="token-item">
-            <figure class="icon-indicator is-positive">
-              <span class="material-symbols-outlined">check</span>
-            </figure>
-            <b>Valid</b>
-          </div>
-          <div class="token-item">
-            <figure class="icon-indicator is-negative">
-              <span class="material-symbols-outlined">close</span>
-            </figure>
-            <b>InValid</b>
-          <div> -->
+        <test-entity size="huge" alignment="center" label="" description="Checked">
+          <test-avatar slot="avatar" variant="secondary" size="huge" fallback=" ">
+            <test-icon slot="prefix" name="lock"></test-icon>
+          </test-avatar>
+        </test-entity>
+        <test-entity size="huge" alignment="center" label="" description="Checked">
+          <test-avatar slot="avatar" variant="secondary" size="huge" fallback=" ">
+            <test-icon slot="prefix" name="more-vert"></test-icon>
+          </test-avatar>
+        </test-entity>
+        <test-entity size="huge" alignment="center" label="" description="Checked">
+          <test-avatar slot="avatar" variant="secondary" size="huge" fallback=" ">
+            <test-icon slot="prefix" name="settings"></test-icon>
+          </test-avatar>
+        </test-entity>
+        <test-entity size="huge" alignment="center" label="" description="Checked">
+          <test-avatar slot="avatar" variant="secondary" size="huge" fallback=" ">
+            <test-icon slot="prefix" name="log-out"></test-icon>
+          </test-avatar>
+        </test-entity>
+        <test-entity size="huge" alignment="center" label="" description="Checked">
+          <test-avatar slot="avatar" variant="secondary" size="huge" fallback=" ">
+            <test-icon slot="prefix" name="copy"></test-icon>
+          </test-avatar>
+        </test-entity>
+        <test-entity size="huge" alignment="center" label="" description="Checked">
+          <test-avatar slot="avatar" variant="secondary" size="huge" fallback=" ">
+            <test-icon slot="prefix" name="refresh"></test-icon>
+          </test-avatar>
+        </test-entity>
       </section>
 
       <test-text variant="subhead">Interaction states</test-text>

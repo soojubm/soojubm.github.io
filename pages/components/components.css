@@ -107,9 +107,9 @@ test-text[variant=body] + test-text[variant=body] {
   margin:var(--space-3) 0 0;
 }
 
-[variant=body] + [variant=body-bold] {
+/* [variant=body] + [variant=body-bold] {
   display:block;margin:var(--space-4) 0 0;
-}
+} */
 test-text[variant=body] + test-text[variant=subhead] {
   display: block;
   margin: 2rem 0 0 0;

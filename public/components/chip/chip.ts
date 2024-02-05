@@ -91,9 +91,9 @@ class Chip extends HTMLElement {
     if (this.status === 'checked') host.setAttribute('aria-checked', 'true')
   }
 
-  static get observedAttributes() {
-    return ['size', 'status', 'icon', 'type', 'value', 'label']
-  }
+  // static get observedAttributes() {
+  //   return ['size', 'status', 'icon', 'type', 'value', 'label']
+  // }
 
   get size() {
     return this.getAttribute('size')

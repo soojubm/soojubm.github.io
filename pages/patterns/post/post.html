@@ -1,4 +1,4 @@
-<main class="post">
+<main class="component post">
   <header class="post-head js-post-head">
     <a class="post-head-category" href="#post">Murmur</a>
     <h1
@@ -202,9 +202,7 @@
         처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요.
       </p>
       <button class="comment-list-item-reply">답글 <span>7</span></button>
-      <test-chip class="comment-list-item-morevert js-toggle">
-        <span class="material-symbols-outlined"> more_vert </span>
-      </test-chip>
+      <test-chip icon="more-vert" class="comment-list-item-morevert js-toggle"> </test-chip>
       <menu class="comment-list-item-menu">
         <button class="">수정</button>
         <button class="">삭제</button>
@@ -215,18 +213,18 @@
 
 <nav class="post-pagination">
   <a class="post-pagination-previous" href="#">
-    <test-avatar variant="back" class="post-pagination-next-media" fallback=" ">
+    <test-chip variant="back" class="post-pagination-next-media" fallback=" ">
       <test-icon slot="icon" name="arrow-left"></test-icon>
-    </test-avatar>
+    </test-chip>
     <test-text variant="subhead" class="post-pagination-previous-label" title="prev article"
       >이전 콘텐츠</test-text
     >
     <span class="post-pagination-previous-postname">Return to all articles</span>
   </a>
   <a class="post-pagination-next" href="#">
-    <test-avatar variant="back" class="post-pagination-next-media" fallback=" ">
+    <test-chip variant="back" class="post-pagination-next-media" fallback=" ">
       <test-icon slot="icon" name="arrow-right"></test-icon>
-    </test-avatar>
+    </test-chip>
     <test-text variant="subhead" class="post-pagination-next-label">다음 콘텐츠</test-text>
     <span class="post-pagination-next-postname">Avoid invisible text during font loading</span>
   </a>
