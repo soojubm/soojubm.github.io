@@ -17,12 +17,12 @@
         <test-button variant="destructive" aria-label="danger">destructive</test-button>
         <test-button variant="text">text</test-button>
       </test-group>
-      <test-separator></test-separator>
+      <!-- <test-separator></test-separator>
       <test-group variant="chip">
         <test-button variant="tertiary" status="hover">hovered</test-button>
         <test-button variant="tertiary" status="focus">focused</test-button>
         <test-button variant="tertiary" status="disabled" disabled>disabled</test-button>
-      </test-group>
+      </test-group> -->
       <test-separator></test-separator>
       <test-group variant="chip">
         <!-- TODO 아이콘 하나로 제한되면 slot의 순서만 챙기고 그냥 slot='icon' 하나로? 아니면 label -->
@@ -81,6 +81,51 @@
     <!-- 참고: 버튼 네이밍. 'link' | 'subtle' | 'primary' / 'solid' | 'outline' | 'plain' |'text' -->
 
     <section class="component-guide">
+      <div style="display: flex; gap: 1rem">
+        <div style="width: 33%">
+          <test-tile
+            style="
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 100%;
+              height: 120px;
+            "
+          >
+            <test-button variant="tertiary" status="hover">hovered</test-button>
+          </test-tile>
+          <test-text variant="subhead" style="margin: 0"></test-text>
+        </div>
+        <div style="width: 33%">
+          <test-tile
+            style="
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 100%;
+              height: 120px;
+            "
+          >
+            <test-button variant="tertiary" status="focus">focused</test-button>
+          </test-tile>
+          <test-text variant="subhead" style="margin: 0">test</test-text>
+        </div>
+        <div style="width: 33%">
+          <test-tile
+            style="
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 100%;
+              height: 120px;
+            "
+          >
+            <test-button variant="tertiary" status="disabled" disabled>disabled</test-button>
+          </test-tile>
+          <test-text variant="subhead" style="margin: 0">test</test-text>
+        </div>
+      </div>
+
       <test-text variant="subhead" aria-label="예측 가능해야 합니다.">Behavior</test-text>
       <test-text variant="body">
         버튼은 페이지 내에서 여러 번 반복될 수 없는 최종적인 인터렉션입니다. 단, 전송이 실패하는
@@ -111,30 +156,52 @@
         아래에 배치되는 패턴과 혼동되지 않도록 버튼의 아래 가이드 텍스트를 배치하지 않습니다. ->
         사실은 모든 버튼에서 전환을 유도하는 텍스트를 사용없이 인터페이스만으로.
       </test-text>
-      <section class="component-case">
-        <test-group variant="chip">
-          <test-button variant="tertiary">취소</test-button>
-          <test-button variant="primary">저장</test-button>
-        </test-group>
-      </section>
-      <section class="component-case">
-        <test-group variant="chip">
-          <test-button variant="text">건너뛰기</test-button>
-          <test-button variant="secondary">다음</test-button>
-        </test-group>
-      </section>
-      <section class="component-case">
-        <test-group variant="chip">
-          <test-button variant="tertiary">이전</test-button>
-          <test-button variant="secondary">다음</test-button>
-        </test-group>
-      </section>
-      <section class="component-case">
-        <test-group variant="chip" class="hero-actions">
-          <test-button variant="primary" href="#components">지금 가입하기</test-button>
-          <test-button variant="text">더 알아보기</test-button>
-        </test-group>
-      </section>
+      <div
+        style="
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          gap: 1rem;
+          margin: 1.5rem 0 0 0;
+        "
+      >
+        <section
+          class="component-case"
+          style="width: calc(50% - 0.5rem); margin: 0; justify-content: center"
+        >
+          <test-group variant="chip">
+            <test-button variant="tertiary">취소</test-button>
+            <test-button variant="primary">저장</test-button>
+          </test-group>
+        </section>
+        <section
+          class="component-case"
+          style="width: calc(50% - 0.5rem); margin: 0; justify-content: center"
+        >
+          <test-group variant="chip">
+            <test-button variant="text">건너뛰기</test-button>
+            <test-button variant="secondary">다음</test-button>
+          </test-group>
+        </section>
+        <section
+          class="component-case"
+          style="width: calc(50% - 0.5rem); margin: 0; justify-content: center"
+        >
+          <test-group variant="chip">
+            <test-button variant="tertiary">이전</test-button>
+            <test-button variant="secondary">다음</test-button>
+          </test-group>
+        </section>
+        <section
+          class="component-case"
+          style="width: calc(50% - 0.5rem); margin: 0; justify-content: center"
+        >
+          <test-group variant="chip" class="hero-actions">
+            <test-button variant="primary" href="#components">지금 가입하기</test-button>
+            <test-button variant="text">더 알아보기</test-button>
+          </test-group>
+        </section>
+      </div>
 
       <test-text variant="body-bold">
         ShowMoreButton <span hidden>Image Button, CheckoutButton</span>

@@ -16,7 +16,7 @@
 
     <section class="component-example">
       <test-menuitem size="large" style="margin: 0 0 var(--space-2)">
-        <test-avatar slot="avatar" size="large" >🦊</test-avatar>
+        <test-avatar slot="avatar" size="large">🦊</test-avatar>
         <div slot="text">
           <test-text variant="body">사진 및 동영상 백업</test-text>
           <test-text variant="label">디스크립션이다</test-text>
@@ -24,9 +24,9 @@
         <test-chip slot="action">버튼</test-chip>
       </test-menuitem>
       <!-- TODO prefix / suffix -->
-      <test-group alignment="vertical">
+      <test-group variant="menuitem">
         <test-menuitem label="메뉴아이템 링크" role="menuitem">
-          <test-avatar slot="avatar" name="bell" > </test-avatar>
+          <test-avatar slot="avatar" name="bell"> </test-avatar>
         </test-menuitem>
         <test-menuitem role="menuitemradio" label="메뉴아이템 스위치">
           <test-avatar slot="avatar"></test-avatar>
@@ -50,7 +50,7 @@
           <test-avatar slot="avatar"></test-avatar>
           <test-group slot="action" variant="chip">
             <test-chip>with quick action</test-chip>
-            <test-avatar >
+            <test-avatar>
               <test-icon name="arrow-right"></test-icon>
             </test-avatar>
           </test-group>
@@ -186,7 +186,6 @@
             <test-avatar
               slot="avatar"
               size="medium"
-              
               icon="facebook"
               style="background-color: var(--color-facebook); color: #fff"
             >
@@ -195,19 +194,13 @@
           <test-menuitem class="share-twitter" label="twitter로 공유">
             <test-avatar
               slot="avatar"
-              
               icon="twitter"
               style="background-color: var(--color-twitter); color: #fff"
             >
             </test-avatar>
           </test-menuitem>
           <test-menuitem class="share-kakao" label="kakao talk으로 공유">
-            <test-avatar
-              slot="avatar"
-              
-              icon="message"
-              style="background-color: var(--color-kakao)"
-            >
+            <test-avatar slot="avatar" icon="message" style="background-color: var(--color-kakao)">
             </test-avatar>
           </test-menuitem>
         </test-group>
@@ -228,7 +221,7 @@
       <test-tile variant="flat" class="access">
         <test-titlebar heading="공개 대상 선택"></test-titlebar>
         <br />
-        <test-group alignment="vertical">
+        <test-group variant="menuitem">
           <test-menuitem ize="large" label="전체 공개" description="Facebook 안팎의 모든 사람">
             <test-radio slot="check" checked></test-radio>
             <test-avatar slot="avatar" size="large" icon="group"> </test-avatar>
@@ -240,11 +233,11 @@
             description="회원님의 Facebook 친구"
           >
             <test-radio slot="check"></test-radio>
-            <test-avatar slot="avatar" size="large"  icon="group"> </test-avatar>
+            <test-avatar slot="avatar" size="large" icon="group"> </test-avatar>
           </test-menuitem>
           <test-menuitem data-size="large" label="나만 보기" description="부끄러우니까">
             <test-radio slot="check"></test-radio>
-            <test-avatar slot="avatar" size="large"  icon="lock"> </test-avatar>
+            <test-avatar slot="avatar" size="large" icon="lock"> </test-avatar>
             <span class="item-label" style="line-height: var(--size-large)"></span>
             <spa slot="description"></spa>
           </test-menuitem>
@@ -364,12 +357,11 @@
 
   <article class="article">
     <test-text variant="title">Entity</test-text>
-    <test-text variant="body-large">개체. menu item과 구별이 되나?</test-text>
-    <test-text variant="body-large"
-      >분류. bottom nav item, icon button with label, user(entity huge). icon button vertical
+    <test-text variant="body-large">
+      분류. bottom nav item, icon button with label, user(entity huge). icon button vertical
       horizontal label이 박스 위 안에 있나 밖에 있나. 슬롯을 써도 그것은 결국 컴포넌트에서
-      일회성으로 이루어지는 것이기 때문에 공통 아이콘 요소는 슬롯으로 가는 것이 어떨까.</test-text
-    >
+      일회성으로 이루어지는 것이기 때문에 공통 아이콘 요소는 슬롯으로 가는 것이 어떨까.
+    </test-text>
 
     <section class="component-example">
       <test-group alignment="vertical">
@@ -382,28 +374,16 @@
           <test-avatar slot="avatar" size="huge" variant="secondary"></test-avatar>
         </test-entity>
         <test-entity description="공유 TODO bottom nav">
-          <test-avatar slot="avatar" size="large" variant="secondary"  icon="share-ios">
+          <test-avatar slot="avatar" size="large" variant="secondary" icon="share-ios">
           </test-avatar>
         </test-entity>
-        <test-group>
-          <test-menuitem alignment="vertical" label="더보기">
-            <test-avatar
-              slot="avatar"
-              size="large"
-              variant="secondary"
-              
-              icon="more-horiz-circle"
-            >
+        <test-group variant="menuitem">
+          <test-menuitem label="더보기">
+            <test-avatar slot="avatar" size="large" variant="secondary" icon="more-horiz-circle">
             </test-avatar>
           </test-menuitem>
           <test-entity description="툴">
-            <test-avatar
-              slot="avatar"
-              size="large"
-              variant="secondary"
-              
-              icon="share-ios"
-            >
+            <test-avatar slot="avatar" size="large" variant="secondary" icon="share-ios">
             </test-avatar>
           </test-entity>
         </test-group>
