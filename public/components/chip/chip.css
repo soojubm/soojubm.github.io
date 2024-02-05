@@ -98,7 +98,8 @@ em, i  {
   color: var(--red800);
 }
 
-::slotted([slot=icon]) {margin:0 -.75rem;}
+::slotted([slot=icon]),
+.chip test-icon {margin:0 calc(var(--space-3) * -1);}
 ::slotted([slot=prefix]) {margin-right:var(--space-2);}
 ::slotted([slot=suffix]) {margin-left:var(--space-2);}
 

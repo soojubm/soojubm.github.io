@@ -36,6 +36,11 @@
   align-items:flex-start;
 }
 
+.group[data-variant=form] {
+  flex-direction:column;
+  gap:var(--space-3);
+}
+
 .group[data-alignment=vertical] {
   flex-direction:column;align-items:flex-start;gap:var(--space-2);
 }

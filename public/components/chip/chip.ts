@@ -22,7 +22,7 @@ import { importScript, makeStyleSheet } from '../../javascripts/components/utils
 
 class Chip extends HTMLElement {
   // #internals = this.attachInternals() as any
-  static observedAttributes = ['variant', 'data-variant']
+  // static observedAttributes = ['variant', 'data-variant']
 
   constructor() {
     super()
@@ -45,6 +45,15 @@ class Chip extends HTMLElement {
 
     const suffixSlot = document.createElement('slot')
     suffixSlot.name = 'suffix'
+
+    if (this.icon) {
+      const icon = document.createElement('test-icon')
+      icon.setAttribute('name', this.icon)
+
+      host.ariaLabel = this.ariaLabel
+
+      host.appendChild(icon)
+    }
 
     shadow.append(host, makeStyleSheet('chip'))
 
@@ -82,9 +91,9 @@ class Chip extends HTMLElement {
     if (this.status === 'checked') host.setAttribute('aria-checked', 'true')
   }
 
-  // static get observedAttributes() {
-  //   return ['size', 'status', 'icon', 'type', 'value', 'label']
-  // }
+  static get observedAttributes() {
+    return ['size', 'status', 'icon', 'type', 'value', 'label']
+  }
 
   get size() {
     return this.getAttribute('size')
@@ -105,6 +114,14 @@ class Chip extends HTMLElement {
   }
   get name() {
     return this.getAttribute('name')
+  }
+
+  get icon() {
+    return this.getAttribute('icon')
+  }
+
+  get ariaLabel() {
+    return this.getAttribute('aria-label')
   }
 
   connectedCallback() {}

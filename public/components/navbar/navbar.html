@@ -1,12 +1,12 @@
 <nav class="navbar js-navbar" role="navigation">
   <test-chip
     variant="plain"
+    icon="menu-scale"
     class="navbar-burger js-navbar-toggle"
     aria-label="전체메뉴"
     aria-haspopup="true"
     aria-expanded="false"
   >
-    <test-icon slot="icon" name="menu-scale"></test-icon>
   </test-chip>
   <a class="navbar-logo" href="/"></a>
 
@@ -25,14 +25,11 @@
   </div> -->
 
   <div class="navbar-user" style="overflow:hidden;">
-    <!-- <test-chip name="Theme">
-      <test-icon slot="suffix" name="nav-arrow-down"></test-icon>
+    <!-- <test-chip icon="nav-arrow-down">
       Brutal
     </test-chip> -->
     <!-- <button class="navbar-user-trigger" aria-haspopup="menu" aria-expanded="false"></button> -->
-    <!-- <test-chip>
-      <test-icon slot="icon" name="bell"></test-icon>
-    </test-chip> -->
+    <!-- <test-chip icon="bell"></test-chip> -->
     <button class="chip" variant="primary" style="display:flex;align-items:center;height:var(--size-medium);margin-right:.25rem;padding:0 .75rem;border-radius:var(--radius);background:var(--color-primary);font-weight:var(--font-weight-bold);color:#fff;">시작하기</button>
     <button class="theme-toggle js-darkmode" aria-label="change theme" style="background: none;">
       <span class="day iconoir-sun-light"></span>

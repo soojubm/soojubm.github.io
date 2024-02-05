@@ -96,11 +96,9 @@
     <!-- todo day night toggle과 동일한 패턴 -->
     <div class="profile-display" role="menubar" style="display:flex;margin:var(--space-3) 0;" title="항목을 아이콘, 목록, 계층 또는 갤러리로 보여줍니다.">
       <h5 class="profile-display-status" role="status" hidden>Viewing 1,000 Projects</h5>
-      <test-chip class="js-test-toggle" status="active" data-name="grid">
-        <test-icon slot="icon" name="view-columns-3" aria-label=""></test-icon>
+      <test-chip icon="view-columns-3" aria-label="" class="js-test-toggle" status="active" data-name="grid">
       </test-chip>
-      <test-chip variant="plain" class="js-test-toggle" data-name="list">
-        <test-icon slot="icon" name="view-grid"></test-icon>
+      <test-chip variant="plain" icon="view-grid" class="js-test-toggle" data-name="list">
       </test-chip>
       <div class="profile-sorting" style="margin-left: auto">
         <test-chip variant="plain" class="js-test-toggle" name="정렬">

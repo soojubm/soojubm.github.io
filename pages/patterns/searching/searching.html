@@ -107,9 +107,7 @@
     <test-text variant="subhead">검색 기표</test-text>
     <section class="component-case">
       <test-group>
-        <test-chip>
-          <test-icon slot="icon" name="search"></test-icon>
-        </test-chip>
+        <test-chip icon="search"> </test-chip>
         <test-chip>키워드</test-chip>
         <!-- <span>TODO :: 쓰는 곳 없음 해시태그</span> -->
       </test-group>
@@ -156,9 +154,7 @@
     <section class="component-case">
       <form class="searchfield" style="max-width: 400px">
         <div style="position: absolute; left: 0">
-          <test-chip class="searchfield-prefix">
-            <test-icon slot="icon" name="arrow-left"></test-icon>
-          </test-chip>
+          <test-chip icon="arrow-left" class="searchfield-prefix"> </test-chip>
         </div>
         <input
           class="searchfield-input"
@@ -167,9 +163,7 @@
           style="padding-left: 3rem"
         />
         <div style="position: absolute; right: var(--space-2); top: var(--space-2); z-index: 1">
-          <test-chip style="background: var(--color-background); border-radius: 50%">
-            <test-icon slot="icon" name="xmark"></test-icon>
-          </test-chip>
+          <test-chip icon="xmark"> </test-chip>
         </div>
       </form>
     </section>

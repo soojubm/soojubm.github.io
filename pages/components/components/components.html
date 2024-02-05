@@ -24,12 +24,8 @@
       class="textbox-toolbar"
       style="width: max-content; position: absolute; top: var(--space-1); left: var(--space-1)"
     >
-      <test-chip class="textbox-toolbar-bold">
-        <test-icon slot="icon" name="bold"></test-icon>
-      </test-chip>
-      <test-chip class="textbox-toolbar-italic">
-        <test-icon slot="icon" name="italic"></test-icon>
-      </test-chip>
+      <test-chip icon="bold" class="textbox-toolbar-bold"></test-chip>
+      <test-chip icon="italic" class="textbox-toolbar-italic"></test-chip>
     </test-group>
     <div
       class="textbox-view"
@@ -223,11 +219,9 @@
                 <button class="carousel-dots-dot">1</button>
               </nav> -->
         <nav class="carousel-arrows">
-          <test-chip variant="back" class="carousel-arrows-prev js-carousel-prev" aria-label="이전">
-            <test-icon slot="icon" name="arrow-left"></test-icon>
+          <test-chip variant="back" icon="arrow-left" class="carousel-arrows-prev js-carousel-prev" aria-label="이전">
           </test-chip>
-          <test-chip variant="back" class="carousel-arrows-next js-carousel-next" aria-label="다음">
-            <test-icon slot="icon" name="arrow-right"></test-icon>
+          <test-chip variant="back" icon="arrow-right" class="carousel-arrows-next js-carousel-next" aria-label="다음">
           </test-chip>
         </nav>
       </section>

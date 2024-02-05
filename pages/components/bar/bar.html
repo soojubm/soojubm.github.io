@@ -5,12 +5,8 @@
     <section class="component-example">
       <menu role="menubar" style="display: flex; align-items: center">
         <test-checkbox>28 selected</test-checkbox>
-        <test-chip style="margin-left: auto">
-          <test-icon slot="icon" name="bonfire"></test-icon>
-        </test-chip>
-        <test-chip variant="plain">
-          <test-icon slot="icon" name="more-vert"></test-icon>
-        </test-chip>
+        <test-chip icon="bonfire" style="margin-left: auto"> </test-chip>
+        <test-chip variant="plain" icon="more-vert"> </test-chip>
       </menu>
       <test-separator></test-separator>
       <test-group variant="chip" role="menubar">
@@ -48,12 +44,9 @@
 
     <section class="component-example">
       <div>
-        <test-titlebar heading="Page Title" class="js-titlebar" role="navigation">
+        <test-titlebar heading="Product" class="js-titlebar" role="navigation">
           <test-text variant="subhead">쇼핑</test-text>
-          <test-chip slot="action">
-            <test-icon slot="prefix" name="cart"></test-icon>
-            장바구니
-          </test-chip>
+          <test-chip slot="action" variant="plain" icon="cart"> </test-chip>
         </test-titlebar>
         <!-- <div class="titlebar-backdrop js-header"></div> -->
       </div>
@@ -62,8 +55,11 @@
         <h1 class="titlebar-title js-page-title" title="page title">Large Case</h1>
         <test-group slot="action" variant="chip">
           <test-chip>저장</test-chip>
-          <test-chip class="titlebar-back" onclick="javascript:window.location.href='/';">
-            <test-icon slot="icon" name="more-vert"></test-icon>
+          <test-chip
+            class="titlebar-back"
+            icon="more-vert"
+            onclick="javascript:window.location.href='/';"
+          >
           </test-chip>
         </test-group>
       </test-titlebar>

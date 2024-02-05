@@ -53,12 +53,12 @@
       <dd>Input</dd>
     </dl>
     <section class="component-example">
-      <test-group variant="menuitem">
+      <test-group variant="form">
         <test-textfield type="text" size="small" placeholder="Small size..."></test-textfield>
         <test-textfield type="text" placeholder="Medium size... (default)"></test-textfield>
       </test-group>
       <test-separator></test-separator>
-      <div style="display: flex; flex-direction: column; gap: 0.75rem">
+      <test-group variant="form">
         <test-textfield type="text" placeholder="Disabled..." disabled></test-textfield>
         <test-textfield
           type="email"
@@ -70,9 +70,9 @@
           aria-errormessage="msgID"
           helper="이미 등록된 이메일입니다."
         ></test-textfield>
-      </div>
+      </test-group>
       <test-separator></test-separator>
-      <div style="display: flex; flex-direction: column; gap: 0.75rem">
+      <div style="display: flex; flex-direction: column; gap: var(--space-3)">
         <form class="searchfield">
           <label class="searchfield-prefix">
             <test-icon name="search"></test-icon>
@@ -85,14 +85,12 @@
           <button class="searchfield-clear" aria-label="clear keyword">
             <span class="material-symbols-outlined">close</span>
           </button>
-          <button class="searchfield-cancel" aria-label="clear keyword">
+          <button class="searchfield-cancel" aria-label="back">
             <span class="material-symbols-outlined">취소</span>
           </button>
         </form>
         <test-textfield type="password" label="Password field">
-          <test-chip slot="suffix" aria-label="비밀번호 보기">
-            <test-icon slot="icon" name="eye-solid"></test-icon>
-          </test-chip>
+          <test-chip slot="suffix" icon="eye-solid" aria-label="비밀번호 보기"> </test-chip>
         </test-textfield>
         <test-textfield
           type="number"
@@ -118,8 +116,12 @@
         <label for="numberfield" style="position: absolute; opacity: 0">
           레이블 라이트하우스용
         </label>
-        <test-chip class="js-counter-decrement" aria-controls="numberfield" tabindex="-1">
-          <test-icon slot="icon" name="minus"></test-icon>
+        <test-chip
+          icon="minus"
+          class="js-counter-decrement"
+          aria-controls="numberfield"
+          tabindex="-1"
+        >
         </test-chip>
         <test-textfield size="small" value="20"></test-textfield>
         <!-- <input
@@ -131,28 +133,23 @@
           max="20"
           value="0"
         /> -->
-        <test-chip class="js-counter-increment" tabindex="-1">
-          <test-icon slot="icon" name="plus"></test-icon>
-        </test-chip>
+        <test-chip icon="plus" class="js-counter-increment" tabindex="-1"> </test-chip>
       </div>
       <test-separator></test-separator>
       <test-group style="align-items: center">
         <div>
           <p style="margin: 0"><b>1 sandbox</b></p>
-          <small style="display: block; color: var(--color-text-light)"
-            >$100.00 / addl sandbox</small
-          >
+          <small style="color: var(--color-text-light)"> $100.00 / addl sandbox </small>
         </div>
         <test-group variant="chip">
           <test-chip
+            icon="minus"
             class="counter-decrement js-counter-decrement"
             aria-controls="numberfield"
             tabindex="-1"
           >
-            <test-icon slot="icon" name="minus"></test-icon>
           </test-chip>
-          <test-chip class="counter-increment js-counter-increment" tabindex="-1">
-            <test-icon slot="icon" name="plus"></test-icon>
+          <test-chip icon="plus" class="counter-increment js-counter-increment" tabindex="-1">
           </test-chip>
         </test-group>
       </test-group>
@@ -229,7 +226,7 @@
       </blockquote>
 
       <test-text variant="subhead">Visual Style</test-text>
-      <test-text variant="body"> 레이블을 텍스트필드 왼쪽에 배치하지 마세요. </test-text>
+      <test-text variant="body"> 레이블을 텍스트필드 왼쪽에 배치하지 마세요.</test-text>
       <test-text variant="body">
         이중 레이블링하지 마세요. 아이콘은 텍싀트 레이블을 대체할 수 있습니다. (아이콘 레이블을
         사용하는 예시: 이메일로 사용자를 추가할 때 입력 정보를 아이콘으로 직관화)

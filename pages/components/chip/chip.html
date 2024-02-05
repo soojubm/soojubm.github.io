@@ -43,21 +43,13 @@
       </test-group>
       <test-separator></test-separator>
       <test-group variant="chip">
-        <test-chip>
-          <test-icon slot="icon" name="user"></test-icon>
-        </test-chip>
-        <test-chip variant="plain">
-          <test-icon slot="icon" name="bell"></test-icon>
-        </test-chip>
+        <test-chip icon="user" aria-label="사용자"></test-chip>
+        <test-chip icon="bell" aria-label=""></test-chip>
       </test-group>
       <test-separator></test-separator>
       <test-group variant="chip">
-        <test-chip variant="back">
-          <test-icon slot="icon" name="arrow-left"></test-icon>
-        </test-chip>
-        <test-chip variant="back">
-          <test-icon slot="icon" name="arrow-right"></test-icon>
-        </test-chip>
+        <test-chip variant="back" icon="arrow-left"></test-chip>
+        <test-chip variant="back" icon="arrow-right"> </test-chip>
       </test-group>
     </section>
 
@@ -149,7 +141,7 @@
         <test-chip>윤석열검찰총장</test-chip>
         <test-chip>차별금지법</test-chip>
         <test-chip>추미애법무부장관</test-chip>
-        <test-chip variant="back"> <test-icon slot="icon" name="more-horiz"></test-icon></test-chip>
+        <test-chip variant="back" icon="more-horiz"></test-chip>
       </test-group>
       <div style="height: var(--space-after-subhead)"></div>
       <test-tile variant="elevated" size="small">
@@ -262,8 +254,12 @@
           </test-tile>
         </div>
         <div class="dropdown">
-          <test-chip aria-label="more_vert" aria-haspopup="menu" aria-expanded="false">
-            <test-icon slot="icon" name="more-vert"></test-icon>
+          <test-chip
+            icon="more-vert"
+            aria-label="more_vert"
+            aria-haspopup="menu"
+            aria-expanded="false"
+          >
           </test-chip>
           <test-tile
             variant="elevated"
