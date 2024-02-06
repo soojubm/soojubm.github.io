@@ -39,14 +39,12 @@ document.addEventListener('DOMContentLoaded', () => {
   //   })
   // })
 
-  // function showCardError(event) {
-  //   let displayError = document.getElementById('card-errors')
-  //   if (event.error) {
-  //     displayError.textContent = event.error.message
-  //   } else {
-  //     displayError.textContent = ''
-  //   }
-  // }
+  // event.error.message
+  const validations = {
+    length: false,
+  }
+
+  const bodyElement = document.body
 
   const passwordTest = document.querySelector('.js-password-test')
   passwordTest?.addEventListener('keyup', validatePasswordTest)
@@ -54,68 +52,45 @@ document.addEventListener('DOMContentLoaded', () => {
   function validatePasswordTest(event) {
     const { value } = event.target
 
-    tempElement.classList.toggle('is-valid1', value.length > 12 && value.length < 18)
+    bodyElement.classList.toggle('is-valid1', value.length > 12 && value.length < 18)
     // 영문소문자/영문대문자/숫자포함
-    tempElement.classList.toggle('is-valid2', /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])/.test(value))
-    tempElement.classList.toggle(
+    bodyElement.classList.toggle('is-valid2', /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])/.test(value))
+
+    bodyElement.classList.toggle(
       'is-valid3',
       /[!?@#$%^&*():;+-=~{}<>\_\[\]\|\\\"\'\,\.\/\`\₩]/g.test(value),
     )
     // 동일한 문자 6개 연속
-    tempElement.classList.toggle(
+    bodyElement.classList.toggle(
       'is-valid4',
       /([A-Za-z0-9`~!@#\$%\^&\*\(\)\{\}\[\]\-_=\+\\|;:'"<>,\./\?])\1{5,}/g.test(value),
     )
   }
 
-  const tempElement = document.body
-  const validations = {
-    length: false,
+  document.addEventListener('click', revealPassword)
+  function revealPassword(event) {
+    const targetElement = event.target.closest('.js-view-password') as any
+    if (!targetElement) return
+
+    const inputElement = targetElement.parentNode.querySelector('input')
+    const isPasswordType = inputElement.getAttribute('type') === 'password'
+    const inputType = isPasswordType ? 'text' : 'password'
+
+    inputElement.setAttribute('type', inputType)
   }
-  // document.addEventListener('click', revealPassword)
 
-  // function revealPassword(event) {
-  //   const targetElement = event.target.closest('.js-view-password') as any
-  //   if (!targetElement) return
-
-  //   const inputElement = targetElement.parentNode.querySelector('input')
-  //   const isPasswordType = inputElement.getAttribute('type') === 'password'
-
-  //   inputElement.setAttribute('type', isPasswordType ? 'text' : 'password')
-  // }
-
-  function onChangePhoneNumberFormat(num) {
-    let update = ''
-    for (var i = 0; i < num.length; i++) {
-      var changed = num.charAt(i).replace('-', '')
-      update += changed
-    }
-    return update
-  }
-  // document.addEventListener('DOMContentLoaded', () => {
-  //   document.addEventListener(
-  //     'blur',
-  //     event => {
-  //       if (event.target.matches('.email-input')) {
-  //         if (event.target.value == '') {
-  //         }
-  //       }
-  //     },
-  //     true,
-  //   )
-  //   document.addEventListener(
-  //     'keyup',
-  //     event => {
-  //       if (event.target.matches('.email-input')) {
-  //         if (event.target.value.length < 6) {
-  //           alert('너무 짧아요')
-  //         }
-  //       }
-  //     },
-  //     true,
-  //   )
-  // })
+  // alert(formatPhoneNumber('010-3121-7045'))
 })
+
+// stripe dash
+function formatPhoneNumber(number: string) {
+  let update = ''
+  for (var i = 0; i < number.length; i++) {
+    var changed = number.charAt(i).replace('-', '')
+    update += changed
+  }
+  return update
+}
 
 // {
 //   name: 'button',
