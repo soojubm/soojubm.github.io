@@ -122,6 +122,14 @@
           </li>
           <li>TODO :: list action ( + add product )</li>
         </ul>
+
+        <ul>
+          <li>
+            크기 별로 특정 컨테이너의 주체가 나뉜다. 예를 들면 huge는 페이지 레벨의 정보 주체가 될
+            수 있음.
+          </li>
+          <li>학습이 필요없는 보편 케이스와 도메인에 종속적인 특수 케이스를 구분하기.</li>
+        </ul>
       </blockquote>
 
       <test-text variant="subhead">Anatomy</test-text>
@@ -277,33 +285,6 @@
 
       <test-separator></test-separator>
 
-      <test-menuitem size="large">
-        <test-avatar slot="avatar" size="large"></test-avatar>
-        <div
-          slot="text"
-          style="
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            height: 48px;
-            margin-top: -0.125rem;
-          "
-        >
-          <test-text variant="body-bold">사진 및 동영상 백업</test-text>
-          <test-group variant="avatar">
-            <test-avatar size="small"></test-avatar>
-            <test-avatar size="small"></test-avatar>
-            <test-avatar size="small"></test-avatar>
-            <test-avatar size="small"></test-avatar>
-            <test-text variant="label">label</test-text>
-          </test-group>
-        </div>
-        <test-text slot="description">멤바 45명</test-text>
-        <test-chip slot="action">추가</test-chip>
-      </test-menuitem>
-
-      <br /><br />
-
       <test-tile
         variant="flat"
         class="userlist"
@@ -351,6 +332,7 @@
             </div>
             <test-chip slot="action">팔로우 중</test-chip>
           </test-menuitem>
+          <div style=""></div>
           <test-tile variant="elevated" size="small">
             <test-menuitem label="더 많은 친구를 찾아보세요!" description="">
               <test-avatar slot="avatar"></test-avatar>
@@ -383,97 +365,4 @@
       </div>
     </section>
   </article>
-
-  <article class="article">
-    <test-text variant="title">Entity</test-text>
-    <test-text variant="body-large">
-      분류. bottom nav item, icon button with label, user(entity huge). icon button vertical
-      horizontal label이 박스 위 안에 있나 밖에 있나. 슬롯을 써도 그것은 결국 컴포넌트에서
-      일회성으로 이루어지는 것이기 때문에 공통 아이콘 요소는 슬롯으로 가는 것이 어떨까.
-    </test-text>
-
-    <section class="component-example">
-      <test-group alignment="vertical">
-        <test-entity
-          size="huge"
-          label="이거 subhead는 형태이고 name은 역할인데."
-          description="list로 사용할 때 maxWidth"
-          description2="description area2."
-        >
-          <test-avatar slot="avatar" size="huge" variant="secondary"></test-avatar>
-        </test-entity>
-        <test-entity description="공유 TODO bottom nav">
-          <test-avatar slot="avatar" size="large" variant="secondary" icon="share-ios">
-          </test-avatar>
-        </test-entity>
-        <test-group variant="menuitem">
-          <test-menuitem label="더보기">
-            <test-avatar slot="avatar" size="large" variant="secondary" icon="more-horiz-circle">
-            </test-avatar>
-          </test-menuitem>
-          <test-entity description="툴">
-            <test-avatar slot="avatar" size="large" variant="secondary" icon="share-ios">
-            </test-avatar>
-          </test-entity>
-        </test-group>
-        <test-menuitem size="large" label="EntityLarge" description="individual, user">
-          <test-avatar slot="avatar" size="large"></test-avatar>
-        </test-menuitem>
-        <test-menuitem label="EntityMedium" time="36.4만">
-          <test-avatar slot="avatar"></test-avatar>
-          <test-chip slot="action" class="item-delete"></test-chip>
-        </test-menuitem>
-        <test-menuitem size="small" label="EntitySmall">
-          <test-avatar slot="avatar" size="small"></test-avatar>
-        </test-menuitem>
-      </test-group>
-    </section>
-
-    <test-text variant="subhead">Best practices</test-text>
-    <ul>
-      <li>
-        크기 별로 특정 컨테이너의 주체가 나뉜다. 예를 들면 huge는 페이지 레벨의 정보 주체가 될 수
-        있음.
-      </li>
-      <li>학습이 필요없는 보편 케이스와 도메인에 종속적인 특수 케이스를 구분하기.</li>
-    </ul>
-  </article>
-
-  <section
-    style="
-      margin: 4rem 0 0;
-      padding: 2rem var(--grid-margin) 4rem;
-      background: var(--color-background-weak);
-    "
-  >
-    <test-text variant="subhead">User</test-text>
-    <test-text variant="body">
-      <mark>페이지 레벨</mark> 정보의 주체. 단독으로 사용. 클릭할 수 있는 요소가 아니라 페이지를
-      대표하는 요소, 시각 정보로만 동작한다. 왜냐하면 이미 해당 페이지의 타이틀 롤이기 때문.
-    </test-text>
-    <test-tile style="margin: 1rem 0 0 0">
-      <test-entity label="windows-emoji" description="tag page head">
-        <test-avatar slot="avatar" variant="secondary" size="huge">#</test-avatar>
-      </test-entity>
-    </test-tile>
-    <br /><br />
-    <test-text variant="subhead">User item</test-text>
-    <test-text variant="body"
-      >다수의 유저 목록을 표현. 또는 <mark>아티클 레벨</mark> 정보의 주체. 피드 등에서
-      사용하는.</test-text
-    >
-    <test-tile size="small" style="margin: 1rem 0 0 0">
-      <test-menuitem label="수줍이">
-        <test-avatar slot="avatar">
-          <i class="iconoir-github-circle"></i>
-        </test-avatar>
-        <test-chip slot="action">팔로우</test-chip>
-      </test-menuitem>
-    </test-tile>
-    <!-- class="social-link social-github"
-  role="menuitem"
-  href="https://github.com/soojubm"
-  target="_blank"
-  rel="noopener noreferrer" -->
-  </section>
 </main>

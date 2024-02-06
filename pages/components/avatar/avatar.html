@@ -57,27 +57,8 @@
 
     <!-- <test-text variant="subhead">groupable아바타 그룹</test-text> -->
     <!-- <test-text variant="subhead">Use cases</test-text> -->
-    <div
-      style="
-        margin: 0 -5vw -8rem;
-        padding: 2rem var(--grid-margin) 6rem;
-        background: var(--color-background-weak);
-      "
-    >
-      <test-tile variant="elevated" size="small">
-        <test-group variant="avatar">
-          <test-avatar size="small" default="true"></test-avatar>
-          <test-avatar size="small" default="true"></test-avatar>
-          <test-avatar size="small" default="true"></test-avatar>
-          <test-avatar size="small" default="true"></test-avatar>
-          <span class="avatargroup-label">Followed by 수줍이 외 4명</span>
-        </test-group>
-      </test-tile>
-      <small class="mutiual" style="display: block; margin: var(--space-1) 0 0"
-        >내가 팔로우하는 사용자 중에는 팔로워가 없습니다. (twitter)</small
-      >
-      <test-separator></test-separator>
-      <test-tile variant="elevated">
+    <section class="component-case">
+      <test-tile variant="elevated" style="max-width: 640px">
         <test-menuitem label="수줍이" description="Youtube subscriber">
           <test-avatar slot="avatar" default="true"></test-avatar>
         </test-menuitem>
@@ -105,8 +86,7 @@
           </dl>
         </div>
       </test-tile>
-      <test-separator></test-separator>
-      <test-tile variant="elevated">
+      <test-tile variant="elevated" style="max-width: 640px; margin: 1rem 0">
         <div style="display: flex; gap: 1rem">
           <test-avatar size="huge" variant="secondary" default="true"></test-avatar>
           <test-group style="flex-direction: column; gap: var(--space-2)">
@@ -121,17 +101,22 @@
           </test-group>
         </div>
         <test-separator></test-separator>
+        <!-- <test-tile variant="elevated" size="small"> -->
         <test-group variant="avatar">
           <test-avatar size="small" default="true"></test-avatar>
           <test-avatar size="small" default="true"></test-avatar>
           <test-avatar size="small" default="true"></test-avatar>
           <test-avatar size="small" default="true"></test-avatar>
-          <span class="avatargroup-label">Followed by 수줍이 외 4명</span>
+          <span class="avatargroup-label" style="margin-left: var(--space-2)"
+            >Followed by 수줍이 외 4명</span
+          >
         </test-group>
+        <!-- </test-tile> -->
+        <small class="mutiual" style="display: block; margin: var(--space-1) 0 0"
+          >내가 팔로우하는 사용자 중에는 팔로워가 없습니다. (twitter)</small
+        >
       </test-tile>
-      <test-separator></test-separator>
-
-      <test-tile variant="flat" size="medium" style="width: 100%; max-width: 400px">
+      <test-tile variant="flat" size="medium" style="width: 100%; max-width: 640px">
         <test-entity
           label="이경수"
           description="soojubm@gmail.com"
@@ -168,7 +153,7 @@
           <a href="#" style="font-size: 12px; color: var(--color-text-light)">서비스 약관</a>
         </test-group>
       </test-tile>
-    </div>
+    </section>
     <!-- <li>icon chip(button), icon tag, menu item avatar</li> -->
     <!-- <li>memeo. medium. 이하의 크기는 디스크립션을 제공하지 않는다. 항상 align-items:center.</li> -->
     <!-- <li>pagination item은 chip과 같은 size token을 사용하지만 chip도 avatar도 아닙니다.</li> -->

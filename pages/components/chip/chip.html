@@ -107,14 +107,11 @@
         chip value="" role="option" aria-selected="true"
       </test-text>
 
-      <test-callout>
-        <test-text variant="body"
-          >안드로이드: chipGroup, HorizontalScrollView, singleLine, action/entry/filter(check
-          active)/choice</test-text
-        >
-      </test-callout>
-
       <blockquote>
+        <li>
+          안드로이드: chipGroup, HorizontalScrollView/singleLine, action/entry/filter(check
+          active)/choice
+        </li>
         <li>
           avatar / chip with icon에서 이전 페이지 등과 같이 클릭 영역을 주어야 할 때 아바타/칩 선택
           필요.
@@ -130,31 +127,51 @@
       </blockquote>
     </section>
 
-    <test-text variant="body-bold">Action Button</test-text>
-    <test-text variant="body">keyword searching</test-text>
+    <address class="component-references">
+      <!-- <test-text variant="label">References</test-text> -->
+      <a href="https://material.io/components/menus" target="_blank"> MD menu </a>
+      <a
+        href="https://developer.apple.com/design/human-interface-guidelines/components/menus-and-actions/pull-down-buttons"
+      >
+        MD pull down button
+      </a>
+      <a
+        href="https://developer.apple.com/design/human-interface-guidelines/ios/controls/pull-down-menus/"
+        target="_blank"
+      >
+        HIG pull down menu
+      </a>
+      <a
+        href="https://developer.android.com/reference/com/google/android/material/chip/ChipGroup"
+        target="_blank"
+      >
+        MD chip group
+      </a>
+    </address>
+
+    <test-text variant="body-bold">Action Button - keyword searching</test-text>
     <section class="component-case">
-      <test-text variant="subhead">지금 인기있는<br />이슈 키워드</test-text>
-      <div style="height: 1.5rem"></div>
-      <test-group variant="chip">
-        <test-chip>뉴닉</test-chip>
-        <test-chip>국정감사</test-chip>
-        <test-chip>윤석열검찰총장</test-chip>
-        <test-chip>차별금지법</test-chip>
-        <test-chip>추미애법무부장관</test-chip>
-        <test-chip variant="back" icon="more-horiz"></test-chip>
-      </test-group>
-      <div style="height: var(--space-after-subhead)"></div>
-      <test-tile variant="elevated" size="small">
-        <test-menuitem label="직접 검색">
-          <test-avatar slot="avatar" fallback="" icon="search"> </test-avatar>
-        </test-menuitem>
+      <test-tile>
+        <test-text variant="subhead">지금 인기있는<br />이슈 키워드</test-text>
+        <div style="height: 1.5rem"></div>
+        <test-group variant="chip">
+          <test-chip>뉴닉</test-chip>
+          <test-chip>국정감사</test-chip>
+          <test-chip>윤석열검찰총장</test-chip>
+          <test-chip>차별금지법</test-chip>
+          <test-chip>추미애법무부장관</test-chip>
+          <test-chip>경제공동체</test-chip>
+          <test-chip variant="back" icon="more-horiz"></test-chip>
+        </test-group>
+        <div style="height: var(--space-after-subhead)"></div>
+        <test-tile variant="elevated" size="small">
+          <test-menuitem label="직접 검색">
+            <test-avatar slot="avatar" fallback="" icon="search"> </test-avatar>
+          </test-menuitem>
+        </test-tile>
       </test-tile>
-    </section>
 
-    <br />
-
-    <test-text variant="body-bold"> Toggle Button </test-text>
-    <section class="component-case">
+      <test-text variant="body-bold"> Toggle Button </test-text>
       <test-group variant="chip">
         <test-chip status="active">팔로우</test-chip>
         <test-chip>팔로우 중</test-chip>
@@ -175,22 +192,14 @@
           <!-- <test-badge>11</test-badge> -->
         </test-chip>
       </test-group>
-    </section>
 
-    <br />
-
-    <test-text variant="body-bold">single selection</test-text>
-    <test-text variant="body">Contents filtering</test-text>
-    <section class="component-case">
+      <test-text variant="body-bold">single selection</test-text>
+      <test-text variant="body">Contents filtering</test-text>
       <test-group variant="chip">
         <test-chip status="active" class="js-toggle is-active">전체</test-chip>
         <test-chip class="js-toggle">결제완료</test-chip>
       </test-group>
-    </section>
 
-    <br />
-
-    <section class="component-case">
       <test-group variant="chip" aria-multiselectable="true">
         <test-chip role="option" aria-selected="true" status="checked">
           <test-icon slot="prefix" name="check"></test-icon>
@@ -202,19 +211,17 @@
         </test-chip>
         <test-chip role="option" aria-selected="false">타이포그래피</test-chip>
       </test-group>
-    </section>
-    <test-text variant="body-bold">Multiple selections</test-text>
-    <test-text variant="body"
-      >menuitem, checkbox로 대체 가능한 selection role. TODO 그렇다면 언제 메뉴아이템과 체크박스를
-      사용하고 언제 칩그룹을 사용하는지 가이드가 필요하다.</test-text
-    >
+      <test-text variant="body-bold">Multiple selections</test-text>
+      <test-text variant="body"
+        >menuitem, checkbox로 대체 가능한 selection role. TODO 그렇다면 언제 메뉴아이템과 체크박스를
+        사용하고 언제 칩그룹을 사용하는지 가이드가 필요하다.</test-text
+      >
 
-    <br />
+      <br />
 
-    <test-text variant="body-bold">
-      Pick Button Expandable :: dropdown/overflow/pulldown, filter / sort
-    </test-text>
-    <section class="component-case">
+      <test-text variant="body-bold">
+        Pick Button Expandable :: dropdown/overflow/pulldown, filter / sort
+      </test-text>
       <div style="display: flex; justify-content: space-between">
         <div class="dropdown">
           <test-chip class="js-toggle" aria-expanded="true">
@@ -278,32 +285,6 @@
       </div>
     </section>
 
-    <br /><br /><br />
-
     <!-- <li>당연한 얘기... 텍스트 레이블을 생략하는 경우 관습적인 메타포의 아이콘(북마크/하트/카트 등)을 사용하고 대체 텍스트와 툴팁을 제공하세요.</li> -->
-
-    <address class="component-references">
-      <!-- <test-text variant="label">References</test-text> -->
-      <test-group variant="chip">
-        <a href="https://material.io/components/menus" target="_blank"> MD menu </a>
-        <a
-          href="https://developer.apple.com/design/human-interface-guidelines/components/menus-and-actions/pull-down-buttons"
-        >
-          MD pull down button
-        </a>
-        <a
-          href="https://developer.apple.com/design/human-interface-guidelines/ios/controls/pull-down-menus/"
-          target="_blank"
-        >
-          HIG pull down menu
-        </a>
-        <a
-          href="https://developer.android.com/reference/com/google/android/material/chip/ChipGroup"
-          target="_blank"
-        >
-          MD chip group
-        </a>
-      </test-group>
-    </address>
   </article>
 </main>

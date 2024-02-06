@@ -21,16 +21,27 @@
   max-width: var(--container-width);
 }
 .component-case {
-  max-width: var(--container-width);
+  /* max-width: var(--container-width);
   margin:var(--space-after-subhead) 0 0 0;
-  /* margin: 1rem -5vw 0; */
   padding: var(--space-4);
   box-sizing: border-box;
   border: var(--border);
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
-  border-radius: var(--radius);
-  /* background: var(--color-background-weak); */
+  border-radius: var(--radius); */
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+
+
+  margin: 0 -5vw -8rem;
+  padding: 2rem var(--grid-margin) 6rem;
+  background: var(--color-background-weak);
+  border-top-left-radius: var(--radius);
+}
+.component-case > * {
+  max-width: 640px;
 }
 
 .component-props {

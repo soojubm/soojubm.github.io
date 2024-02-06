@@ -8,6 +8,7 @@ img {display:block;width:100%;}
 
 .tile {
   display: block;
+  width: 100%;
   padding: var(--space-4);
   border: var(--border);
   border-radius: var(--radius);
