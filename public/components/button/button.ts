@@ -47,7 +47,6 @@ class Button extends HTMLElement {
     // ! boolean타입이면 속성의 값이 있는지 없는지를 체크해야함.
     if (this.isfullwidth) container.dataset.isfullwidth = 'true'
 
-    // Button.append(...this.childNodes)
     label.textContent = this.textContent || this.label
 
     shadow.append(container, makeStyleSheet('button'))

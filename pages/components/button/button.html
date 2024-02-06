@@ -23,18 +23,7 @@
         <test-button variant="tertiary" status="focus">focused</test-button>
         <test-button variant="tertiary" status="disabled" disabled>disabled</test-button>
       </test-group> -->
-      <test-separator></test-separator>
-      <test-group variant="chip">
-        <!-- TODO 아이콘 하나로 제한되면 slot의 순서만 챙기고 그냥 slot='icon' 하나로? 아니면 label -->
-        <!-- <test-button data-variant="tertiary">
-          <test-icon slot="prefix" name="star"></test-icon>
-          with prefix icon
-        </test-button> -->
-        <test-button data-variant="tertiary">
-          with suffix icon
-          <test-icon slot="suffix" name="star"></test-icon>
-        </test-button>
-      </test-group>
+
       <test-separator></test-separator>
       <test-group variant="chip">
         <test-button variant="primary" size="large">large</test-button>
@@ -94,7 +83,7 @@
           >
             <test-button variant="tertiary" status="hover">hovered</test-button>
           </test-tile>
-          <test-text variant="subhead" style="margin: 0"></test-text>
+          <test-text variant="body-bold" style="margin: 0"></test-text>
         </div>
         <div style="width: 33%">
           <test-tile
@@ -108,7 +97,7 @@
           >
             <test-button variant="tertiary" status="focus">focused</test-button>
           </test-tile>
-          <test-text variant="subhead" style="margin: 0">test</test-text>
+          <test-text variant="body-bold" style="margin: 0">test</test-text>
         </div>
         <div style="width: 33%">
           <test-tile
@@ -122,7 +111,69 @@
           >
             <test-button variant="tertiary" status="disabled" disabled>disabled</test-button>
           </test-tile>
-          <test-text variant="subhead" style="margin: 0">test</test-text>
+          <test-text variant="body-bold" style="margin: 0">test</test-text>
+        </div>
+      </div>
+
+      <br /><br />
+
+      <div style="display: flex; flex-direction: column; gap: 2rem">
+        <div>
+          <test-tile
+            style="
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 100%;
+              height: 120px;
+            "
+          >
+            <test-group variant="button">
+              <test-button variant="tertiary">
+                Show more
+                <test-icon slot="suffix" name="nav-arrow-down"></test-icon>
+              </test-button>
+              <!-- TODO 아이콘 하나로 제한되면 slot의 순서만 챙기고 그냥 slot='icon' 하나로? 아니면 label -->
+              <!-- <test-button data-variant="tertiary">
+                  <test-icon slot="prefix" name="star"></test-icon>
+                  with prefix icon
+                </test-button> -->
+              <test-button data-variant="tertiary" style="background-color: darkseagreen ;">
+                with suffix icon
+                <test-icon slot="suffix" name="star"></test-icon>
+              </test-button>
+            </test-group>
+          </test-tile>
+          <div style="height: var(--space-1)"></div>
+          <test-text variant="body-bold">
+            ShowMoreButton <span hidden>Image Button, CheckoutButton</span>
+          </test-text>
+          <test-text variant="body">
+            fullWidth로 사용하지 마세요. 단일 콘텐츠 또는 콘텐츠 목록의 너비와 대비를 통한 강조.
+            TODO 이건 최종 액션이 아님. 칩이 되는 게 나을 수도.
+          </test-text>
+        </div>
+        <div>
+          <test-tile
+            style="
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 100%;
+              height: 120px;
+            "
+          >
+            <test-button variant="tertiary">
+              <div slot="prefix" class="chat-inputing animation-chatting">
+                <span style="background-color: var(--color-background-strong)"></span>
+                <span style="background-color: var(--color-background-strong)"></span>
+                <span style="background-color: var(--color-background-strong)"></span>
+              </div>
+            </test-button>
+          </test-tile>
+          <div style="height: var(--space-1)"></div>
+          <test-text variant="body-bold">Loading/Fetching button</test-text>
+          <test-text variant="body"> </test-text>
         </div>
       </div>
 
@@ -149,13 +200,21 @@
         iconButton
       </test-text>
 
-      <test-text variant="body-bold">Groupable - Button group patterns - binary choices.</test-text>
-      <test-text variant="body">
-        텍스트 버튼은 버튼 처럼 보이지 않을 수 있기 때문에 학습된? 보편적인? 약속된? 누구랑 약속?
-        패턴에서 사용하세요. 이 시스템에는 정의하지 않지만 세로 정렬되는 버튼 그룹에서 text button이
-        아래에 배치되는 패턴과 혼동되지 않도록 버튼의 아래 가이드 텍스트를 배치하지 않습니다. ->
-        사실은 모든 버튼에서 전환을 유도하는 텍스트를 사용없이 인터페이스만으로.
-      </test-text>
+      <br /><br />
+      <div class="feature-item" style="max-width: 100%">
+        <test-avatar variant="secondary" size="large" icon="group"></test-avatar>
+        <test-text variant="subhead" data-temp=" minimum viable experience" style="margin-top: 0">
+          Groupable - binary choices
+        </test-text>
+        <sup>Groupable</sup>
+        <test-text variant="body">
+          텍스트 버튼은 버튼 처럼 보이지 않을 수 있기 때문에 학습된? 보편적인? 약속된? 누구랑 약속?
+          패턴에서 사용하세요. 이 시스템에는 정의하지 않지만 세로 정렬되는 버튼 그룹에서 text
+          button이 아래에 배치되는 패턴과 혼동되지 않도록 버튼의 아래 가이드 텍스트를 배치하지
+          않습니다. -> 사실은 모든 버튼에서 전환을 유도하는 텍스트를 사용없이 인터페이스만으로.
+        </test-text>
+      </div>
+
       <div
         style="
           display: flex;
@@ -202,25 +261,6 @@
           </test-group>
         </section>
       </div>
-
-      <test-text variant="body-bold">
-        ShowMoreButton <span hidden>Image Button, CheckoutButton</span>
-      </test-text>
-      <test-text variant="body">
-        fullWidth로 사용하지 마세요. 단일 콘텐츠 또는 콘텐츠 목록의 너비와 대비를 통한 강조. TODO
-        이건 최종 액션이 아님. 칩이 되는 게 나을 수도.
-      </test-text>
-      <test-tile>
-        <test-button variant="tertiary">
-          Show more
-          <test-icon slot="suffix" name="nav-arrow-down"></test-icon>
-        </test-button>
-      </test-tile>
-
-      <test-text variant="body-bold">Loading Button</test-text>
-      <test-tile>
-        <test-button variant="tertiary">loading/fetching</test-button>
-      </test-tile>
 
       <blockquote>
         <test-text variant="body">

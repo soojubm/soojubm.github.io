@@ -1,4 +1,4 @@
-import { makeStyleSheet } from '../../javascripts/components/utils'
+import { makeStyleSheet, inheritStyle } from '../../javascripts/components/utils'
 
 class Text extends HTMLElement {
   constructor() {
@@ -13,6 +13,10 @@ class Text extends HTMLElement {
 
     shadow.appendChild(container)
     shadow.appendChild(makeStyleSheet('text'))
+
+    // TODO
+    const style = this.getAttribute('style')
+    if (style) container.setAttribute('style', style)
 
     // TODO function
     const className = this.getAttribute('class')

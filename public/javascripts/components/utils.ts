@@ -5,6 +5,10 @@ export function makeStyleSheet(name) {
 
   return link
 }
+export function inheritStyle(shadow, container) {
+  const style = shadow.getAttribute('style')
+  container.setAttribute('style', style || '')
+}
 
 export function setSlotElement(container, name: string) {
   const slotElement = document.createElement('slot')

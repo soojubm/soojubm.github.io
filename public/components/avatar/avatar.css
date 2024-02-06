@@ -36,11 +36,11 @@ img {
   background-image: url('/public/images/soojubm.png');
 }
 
-/* .avatar img {
+.avatar img {
     height: inherit;
     border-radius: var(--radius);
     object-fit: cover;
-} */
+}
 
 .avatar[data-size=huge] {
   --avatar-size: var(--size-huge);

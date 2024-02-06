@@ -1,9 +1,4 @@
-import { makeStyleSheet } from '../../javascripts/components/utils'
-
-export function inheritStyle(shadow, container) {
-  const style = shadow.getAttribute('style')
-  container.setAttribute('style', style || '')
-}
+import { makeStyleSheet, inheritStyle } from '../../javascripts/components/utils'
 
 class Avatar extends HTMLElement {
   constructor() {

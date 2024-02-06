@@ -135,25 +135,15 @@
     action=""
     method=""
     novalidat="true"
-    style="
-      /* display: flex;
-      flex-direction: column; */
-      width: 100%;
-      max-width: 400px;
-      min-height: calc(100vh - 100px);
-      margin: auto;
-    "
+    style="width: 100%; max-width: 400px; min-height: calc(100vh - 100px); margin: auto"
   >
     <!-- 제목 중간보다 큰 폰트가 필요해서 별도 컴포넌트 -->
     <header class="authentication-head">
-      <span class="authentication-head-logo">
-        <test-avatar size="medium"></test-avatar>
-      </span>
+      <!-- <test-avatar size="medium"></test-avatar> -->
       <h2 class="authentication-head-title">로그인</h2>
-      <!-- <test-text variant="title" class="authentication-head-title">로그인</test-text> -->
-      <test-text variant="body" class="authentication-head-description"
-        >Lorem Ipsum is simply dummy text.</test-text
-      >
+      <test-text variant="body" class="authentication-head-description">
+        Lorem Ipsum is simply dummy text.
+      </test-text>
     </header>
 
     <fieldset class="authentication-fieldset">
@@ -171,16 +161,15 @@
           >비밀번호를 잊으셨나요? <small hidden>Forgot your password?</small></test-link
         >
       </test-textfield>
-      <div style="margin-top:-.5rem;">
-        <test-checkbox data-temp="Remember my email address">
-          로그인 상태 유지
-        </test-checkbox>
+      <div style="margin-top: -0.5rem">
+        <test-checkbox data-temp="Remember my email address"> 로그인 상태 유지 </test-checkbox>
       </div>
     </fieldset>
 
     <section class="authentication-feedback" role="alert" aria-live="assertive">
-      <p style="margin:1rem 0;color:var(--red800)">가입하지 않은 이메일이거나?? 잘못된 비밀번호입니다.</test-callout>
-      <!-- <test-callout variant="danger">가입하지 않은 이메일이거나?? 잘못된 비밀번호입니다.</test-callout> -->
+      <p style="margin: 1rem 0; color: var(--red800)">
+        가입하지 않은 이메일이거나?? 잘못된 비밀번호입니다.
+      </p>
     </section>
 
     <menu class="authentication-foot">
@@ -193,9 +182,7 @@
       >
       <p class="login-option" data-temp="Need an account?">
         계정이 없으신가요?
-        <a class="login-option-link" href="signup.html"
-          >지금 가입하기<small hidden>Join Soojubm for free</small></a
-        >
+        <test-link class="login-option-link" href="signup.html">지금 가입하기</test-link>
       </p>
     </menu>
 
@@ -254,7 +241,7 @@
       ></test-textfield>
     </fieldset>
 
-    <fieldset class="authentication-fieldset optional" style="margin:1rem 0 0 0;">
+    <fieldset class="authentication-fieldset optional" style="margin: 1rem 0 0 0">
       <legend hidden>선택입력</legend>
       <test-textfield label="닉네임" placeholder="수줍이" isOptional></test-textfield>
       <test-group variant="textfield">
