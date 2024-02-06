@@ -46,6 +46,20 @@ q:before {
 }
 
 table {
+  --table-radius: 0;
+  --table-space-top: 12px;
+  --table-space-bottom: 16px;
+  --table-border: 0;
+  --table-border-light: 1px solid #dde0e3;
+
+  --table-head-background: #f2f2f5;
+
+  --table-row-border: null;
+
+  --table-cell-padding: 10px 16px;
+  --table-cell-background: #fff;
+  --table-cell-background-hover: #f3f4fd;
+
   width:100%;
   border-collapse:collapse;
   border-spacing:0;

@@ -59,7 +59,7 @@
 }
 .component-props [variant=subhead] {display:none;}
 .component-props dl {margin:0 !important;}
-.component-props dl dt {font-weight:var(--font-weight-bold);color:var(--color-text);}
+.component-props dl dt {font-weight:var(--font-weight-bold);}
 .component-props dl dt:after {content:':';}
 .component-props dl dd {color:#5f9ea0;}
 .component-props dl dt + dd {font-weight: var(--font-weight-bold);}

@@ -1,4 +1,4 @@
-<main class="tokens">
+<main class="component">
   <article class="article js-scrollspy-section">
     <test-text variant="title">Texts</test-text>
     <test-text variant="body-large">작성 중.</test-text>
@@ -7,7 +7,10 @@
       <test-text>p와 ul, dl 등은 항상 텍스트.</test-text>
       <test-text>message: 사용자, description: 시스템</test-text>
       <test-text>paragraph와 name?value?(size lineheight-one line)의 variation</test-text>
-      <test-text>a component for listing pairs of information together. You can use the component on its own, passing in an object for the list.</test-text>
+      <test-text
+        >a component for listing pairs of information together. You can use the component on its
+        own, passing in an object for the list.</test-text
+      >
       <test-text>type: column | inline</test-text>
     </blockquote>
     <test-text>
@@ -15,214 +18,231 @@
     </test-text>
 
     <section class="component-example">
-      <test-text variant="title">heading1, title</test-text>
-      <test-text variant="subhead">heading2, subhead</test-text>
-      <test-text variant="label">heading3, label</test-text>
-      <test-text variant="body-large">body1 (large)</test-text>
-      <test-text variant="body">body2</test-text>
-      <test-text variant="body-bold">body bold - button & meta</test-text>
+      <div>
+        <test-text variant="title">heading1, title</test-text>
+        <test-text variant="subhead">heading2, subhead</test-text>
+        <test-text variant="label">heading3, label</test-text>
+        <test-text variant="body-large">body1 (large)</test-text>
+        <test-text variant="body">body2</test-text>
+        <test-text variant="body-bold">body bold - button & meta</test-text>
 
-      <test-separator></test-separator>
+        <test-separator></test-separator>
 
-      <footer style="display: flex; flex-direction: column; gap: var(--space-2)">
-        <div style="display: flex; align-items: center; gap: var(--space-1)">
-          <test-icon name="pipe-3d"></test-icon>
-          <test-text variant="body">궁금증이 해결되지 않는다면?</test-text>
-          <test-link>지금 문의하기</test-link>
-        </div>
-        <div style="display: flex; align-items: center; gap: var(--space-1)">
-          <test-icon name="pipe-3d"></test-icon>
-          <test-text variant="body">Something's not right?</test-text>
-          <test-link>Get in touch with us.</test-link>
-        </div>
-      </footer>
-
-      <test-separator></test-separator>
-
-      <section class="summary">
-        <div class="summary-item">
-          <div class="summary-item-label">상품 금액</div>
-          <div class="summary-item-value">₩ 160,000</div>
-        </div>
-        <div class="summary-item">
-          <div class="summary-item-label">서비스 수수료</div>
-          <div class="summary-item-value">₩ 3,000</div>
-        </div>
-        <div class="summary-total">
-          <div class="summary-total-label">총 합계 (KRW)</div>
-          <div class="summary-total-value">₩ 163,000</div>
-        </div>
-      </section>
-
-      <test-separator></test-separator>
-
-      <section class="summary">
-        <div class="summary-item">
-          <div class="summary-item-label" style="font-weight: var(--font-weight-bold)">
-            서비스 수수료
+        <footer style="display: flex; flex-direction: column; gap: var(--space-2)">
+          <div style="display: flex; align-items: center; gap: var(--space-1)">
+            <test-icon name="pipe-3d"></test-icon>
+            <test-text variant="body">궁금증이 해결되지 않는다면?</test-text>
+            <test-link>지금 문의하기</test-link>
           </div>
-          <div class="summary-item-value" style="font-weight: var(--font-weight-bold)">3,000원</div>
-        </div>
-        <div class="summary-item">
-          <div
-            class="summary-item-label"
-            style="font-weight: var(--font-weight-bold); color: var(--color-primary)"
-          >
-            서비스 수수료
+          <div style="display: flex; align-items: center; gap: var(--space-1)">
+            <test-icon name="pipe-3d"></test-icon>
+            <test-text variant="body">Something's not right?</test-text>
+            <test-link>Get in touch with us.</test-link>
           </div>
-          <div
-            class="summary-item-value"
-            style="font-weight: var(--font-weight-bold); color: var(--color-primary)"
-          >
-            ₩ 3,000
-          </div>
-        </div>
-        <footer style="margin: var(--space-4) 0 0 0">
-          <test-button variant="primary">구매 확정하고</test-button>
         </footer>
-      </section>
 
-      <test-separator></test-separator>
+        <test-separator></test-separator>
 
-      <div class="statistic">
-        <test-group>
-          <test-text variant="label">Metadata</test-text>
-          <test-text variant="body">description list</test-text>
+        <section class="summary">
+          <div class="summary-item">
+            <div class="summary-item-label">상품 금액</div>
+            <div class="summary-item-value">₩ 160,000</div>
+          </div>
+          <div class="summary-item">
+            <div class="summary-item-label">서비스 수수료</div>
+            <div class="summary-item-value">₩ 3,000</div>
+          </div>
+          <div class="summary-total">
+            <div class="summary-total-label">총 합계 (KRW)</div>
+            <div class="summary-total-value">₩ 163,000</div>
+          </div>
+        </section>
+
+        <test-separator></test-separator>
+
+        <section class="summary">
+          <div class="summary-item">
+            <div class="summary-item-label" style="font-weight: var(--font-weight-bold)">
+              서비스 수수료
+            </div>
+            <div class="summary-item-value" style="font-weight: var(--font-weight-bold)">
+              3,000원
+            </div>
+          </div>
+          <div class="summary-item">
+            <div
+              class="summary-item-label"
+              style="font-weight: var(--font-weight-bold); color: var(--color-primary)"
+            >
+              서비스 수수료
+            </div>
+            <div
+              class="summary-item-value"
+              style="font-weight: var(--font-weight-bold); color: var(--color-primary)"
+            >
+              ₩ 3,000
+            </div>
+          </div>
+          <footer style="margin: var(--space-4) 0 0 0">
+            <test-button variant="primary">구매 확정하고</test-button>
+          </footer>
+        </section>
+
+        <test-separator></test-separator>
+
+        <div class="statistic">
+          <test-group>
+            <test-text variant="label">Metadata</test-text>
+            <test-text variant="body">description list</test-text>
+          </test-group>
+          <test-group>
+            <test-text variant="label">Metadata</test-text>
+            <test-text variant="body">description list</test-text>
+          </test-group>
+          <test-group>
+            <test-text variant="label">Repository</test-text>
+            <test-text variant="body-bold">100만 이상</test-text>
+          </test-group>
+          <test-group>
+            <test-text variant="label">Size</test-text>
+            <test-text variant="body-bold">Small</test-text>
+          </test-group>
+        </div>
+
+        <test-separator></test-separator>
+
+        <div class="product-info-price" role="suggestion">
+          <del class="product-info-price-deletion" role="deletion">₩ 30,000</del>
+          <b class="product-info-price-insertion" role="insertion">₩ 20,000</b>
+          <em class="product-info-price-percentage">(30%)</em>
+        </div>
+
+        <test-separator></test-separator>
+
+        <test-group style="gap: 2rem">
+          <div>
+            <test-text variant="label">Repository</test-text>
+            <test-text variant="subhead">100만 이상</test-text>
+          </div>
+          <div>
+            <test-text variant="label">Size</test-text>
+            <test-text variant="subhead">Small</test-text>
+          </div>
+          <div>
+            <test-text variant="label">한글</test-text>
+            <test-text variant="subhead">한글로 시작</test-text>
+          </div>
         </test-group>
-        <test-group>
-          <test-text variant="label">Metadata</test-text>
-          <test-text variant="body">description list</test-text>
+
+        <test-separator></test-separator>
+
+        <test-group style="gap: 2rem">
+          <div class="statistic-item">
+            <test-text variant="label">Size</test-text>
+            <test-text variant="body-bold">Small</test-text>
+          </div>
+          <div class="statistic-item">
+            <test-text variant="label">Repository</test-text>
+            <test-text variant="body-bold">TODO with avatar. line height.</test-text>
+          </div>
         </test-group>
-        <test-group>
-          <test-text variant="label">Repository</test-text>
-          <test-text variant="body-bold">100만 이상</test-text>
-        </test-group>
-        <test-group>
-          <test-text variant="label">Size</test-text>
-          <test-text variant="body-bold">Small</test-text>
-        </test-group>
+
+        <test-separator></test-separator>
+
+        <p class="util-truncate">
+          이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에
+          부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은 침묵에 잠겼다. 그것도 모자라 다들
+          난감해하는 눈치였다. 아니, 폭풍우가 몰아치는 가운데 엄청나게 큰 고래, 그것도 생전 처음
+          보는 고래를 수줍은 기색 없이 잡아 올리고 눈도 깜빡하지 않은 채 사투를 벌여서 죽이는 용맹한
+          바닷사람들이 직업도 똑같고 취향까지 비슷한 사람들이 모여 앉은 아침 식탁에서는 그린 산맥의
+          목장을 한 번도 떠나 본 적 없는 양 떼마냥 부끄러워하며 서로를 힐끔거릴 뿐이었다. 이 얼마나
+          희한한 광경인가! 숫기 없는 곰, 소심한 전사 같은 고래잡이들이라니!
+          <button style="font-weight: var(--font-weight-bold)">더 보기</button>
+        </p>
+
+        <test-separator></test-separator>
+
+        <nav>
+          <div class="sitemap-background"></div>
+          <test-text varinat="" hidden aria-hidden="true">사이트맵</test-text>
+          <test-group alignment="vertical">
+            <test-text variant="label">사이트맵 컴포넌트</test-text>
+            <test-link href="#">사이트맵 컴포넌트 샘플</test-link>
+            <test-link href="#">사이트맵 컴포넌트 샘플</test-link>
+            <test-link href="#">사이트맵 컴포넌트 샘플</test-link>
+          </test-group>
+        </nav>
+
+        <test-separator></test-separator>
+
+        <ul style="margin: 0">
+          <li>순서가 없는 리스트</li>
+          <li>순서가 없는 리스트</li>
+        </ul>
+
+        <ol style="margin: var(--space-3) 0">
+          <li>순서가 있는 리스트</li>
+          <li>순서가 있는 리스트</li>
+        </ol>
+        <!-- <ul data-align="horizontal" style="margin: 0">
+            <li title="unordered list, level 1">순서가 없는 리스트</li>
+            <li style="margin: 0 2rem 0 1rem">가로로 정렬할 수 있어요</li>
+            <li>조건이 있어요</li>
+          </ul> -->
+        <ul>
+          <li>
+            텍스트 목록만 리스트 태그(ul, ol, dl)로 마크업하세요. 그렇지 않으면 대부분의 컨텐츠가
+            리스트로 취급될 수 있음. role=listbox/listitem
+          </li>
+          <li>
+            텍스트 목록을 2 댑스(nested)로 제공하지 마세요. 중첩된 목록은 콘텐츠를 읽기 어렵게 하며
+            작은 화면에서는 공간을 낭비.
+          </li>
+        </ul>
+
+        <button class="js-toggle" style="display: flex; gap: var(--space-3)">
+          수줍이님이 더 궁금하신가요?
+          <test-tag>
+            <test-icon slot="icon" name="nav-arrow-down"></test-icon>
+          </test-tag>
+        </button>
+
+        <test-separator></test-separator>
+        <div
+          style="
+            padding: 1rem;
+            box-sizing: border-box;
+            border-radius: var(--radius);
+            background: var(--color-background-weak);
+            text-align: center;
+          "
+        >
+          택배사에 직접 연락하지 않아도<br />영업일 기준 3일 이내에 방문합니다.
+          <small style="display: block; margin: var(--space-3) 0 0">방문 택배사 : 한진택배</small>
+        </div>
+        <ul class="checklist">
+          <li>
+            환불은 반품상품 도착 이후 결제방법에 따라 진행됩니다. 상품에 이상이 있는 경우는
+            반품처리가 되지 않을 수도 있으며, 이 경우 고객센터에서 연락을 드립니다.
+          </li>
+          <li>
+            환불은 반품상품 도착 이후 결제방법에 따라 진행됩니다. 상품에 이상이 있는 경우는
+            반품처리가 되지 않을 수도 있으며, 이 경우 고객센터에서 연락을 드립니다.
+          </li>
+        </ul>
+
+        <section class="hero" style="max-width: 560px">
+          <test-text variant="title">Hero heading</test-text>
+          <test-text variant="body-large" class="article-description">
+            이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에
+            부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은 침묵에 잠겼다.
+          </test-text>
+          <footer class="hero-actions" style="margin: 1.5rem 0 0">
+            <test-button variant="primary" href="#components">Call to action</test-button>
+            <test-button variant="text">더 알아보기</test-button>
+          </footer>
+        </section>
       </div>
-
-      <test-separator></test-separator>
-
-      <div class="product-info-price" role="suggestion">
-        <del class="product-info-price-deletion" role="deletion">₩ 30,000</del>
-        <b class="product-info-price-insertion" role="insertion">₩ 20,000</b>
-        <em class="product-info-price-percentage">(30%)</em>
-      </div>
-
-      <test-separator></test-separator>
-
-      <test-group style="gap:2rem;">
-        <div>
-          <test-text variant="label">Repository</test-text>
-          <test-text variant="subhead">100만 이상</span>
-        </div>
-        <div>
-          <test-text variant="label">Size</test-text>
-          <test-text variant="subhead">Small</test-text>
-        </div>
-        <div>
-          <test-text variant="label">한글</test-text>
-          <test-text variant="subhead">한글로 시작</test-text>
-        </div>
-      </test-group>
-
-      <test-separator></test-separator>
-
-      <test-group style="gap:2rem;">
-        <div class="statistic-item">
-          <test-text variant="label">Size</test-text>
-          <test-text variant="body-bold">Small</test-text>
-        </div>
-        <div class="statistic-item">
-          <test-text variant="label">Repository</test-text>
-          <test-text variant="body-bold">TODO with avatar. line height.</test-text>
-        </div>
-      </test-group>
-
-      <test-separator></test-separator>
-
-      <p class="util-truncate">
-        이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에
-        부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은 침묵에 잠겼다. 그것도 모자라 다들
-        난감해하는 눈치였다. 아니, 폭풍우가 몰아치는 가운데 엄청나게 큰 고래, 그것도 생전 처음 보는
-        고래를 수줍은 기색 없이 잡아 올리고 눈도 깜빡하지 않은 채 사투를 벌여서 죽이는 용맹한
-        바닷사람들이 직업도 똑같고 취향까지 비슷한 사람들이 모여 앉은 아침 식탁에서는 그린 산맥의
-        목장을 한 번도 떠나 본 적 없는 양 떼마냥 부끄러워하며 서로를 힐끔거릴 뿐이었다. 이 얼마나
-        희한한 광경인가! 숫기 없는 곰, 소심한 전사 같은 고래잡이들이라니!
-        <button style="font-weight: var(--font-weight-bold)">더 보기</button>
-      </p>
-
-      <test-separator></test-separator>
-
-      <nav>
-        <div class="sitemap-background"></div>
-        <test-text varinat="" hidden aria-hidden="true">사이트맵</test-text>
-        <test-group alignment="vertical">
-          <test-text variant="label">사이트맵 컴포넌트</test-text>
-          <test-link href="#">사이트맵 컴포넌트 샘플</test-link>
-          <test-link href="#">사이트맵 컴포넌트 샘플</test-link>
-          <test-link href="#">사이트맵 컴포넌트 샘플</test-link>
-        </test-group>
-      </nav>
-
-      <test-separator></test-separator>
-      
-      <ul style="margin: 0">
-        <li>순서가 없는 리스트</li>
-        <li>순서가 없는 리스트</li>
-      </ul>
-
-      <ol style="margin: var(--space-3) 0">
-        <li>순서가 있는 리스트</li>
-        <li>순서가 있는 리스트</li>
-      </ol>
-      <!-- <ul data-align="horizontal" style="margin: 0">
-          <li title="unordered list, level 1">순서가 없는 리스트</li>
-          <li style="margin: 0 2rem 0 1rem">가로로 정렬할 수 있어요</li>
-          <li>조건이 있어요</li>
-        </ul> -->
-      <ul>
-        <li>
-          텍스트 목록만 리스트 태그(ul, ol, dl)로 마크업하세요. 그렇지 않으면 대부분의 컨텐츠가
-          리스트로 취급될 수 있음. role=listbox/listitem
-        </li>
-        <li>
-          텍스트 목록을 2 댑스(nested)로 제공하지 마세요. 중첩된 목록은 콘텐츠를 읽기 어렵게 하며
-          작은 화면에서는 공간을 낭비.
-        </li>
-      </ul>
-
-
-      <button class="js-toggle" style="display:flex;gap:var(--space-3);">
-        수줍이님이 더 궁금하신가요?
-      <test-tag>
-        <test-icon slot="icon" name="nav-arrow-down"></test-icon>
-      </test-tag>
-      </button>
-      
-      <test-separator></test-separator>
-      <div style="padding:1rem;box-sizing:border-box;border-radius:var(--radius);background:var(--color-background-weak);text-align:center;">
-        택배사에 직접 연락하지 않아도<br />영업일 기준 3일 이내에 방문합니다.
-        <small style="display:block;margin:var(--space-3) 0 0;">방문 택배사 : 한진택배</small>
-      </div>
-      <ul class="checklist">
-        <li>환불은 반품상품 도착 이후 결제방법에 따라 진행됩니다. 상품에 이상이 있는 경우는 반품처리가 되지 않을 수도 있으며, 이 경우 고객센터에서 연락을 드립니다.</li>
-        <li>환불은 반품상품 도착 이후 결제방법에 따라 진행됩니다. 상품에 이상이 있는 경우는 반품처리가 되지 않을 수도 있으며, 이 경우 고객센터에서 연락을 드립니다.</li>
-      </ul>
-
-    <section class="hero" style="max-width: 560px">
-      <test-text variant="title">Hero heading</test-text>
-      <test-text variant="body-large" class="article-description">
-        이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에
-        부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은 침묵에 잠겼다.
-      </test-text>
-      <footer class="hero-actions" style="margin: 1.5rem 0 0">
-        <test-button variant="primary" href="#components">Call to action</test-button>
-        <test-button variant="text">더 알아보기</test-button>
-      </footer>
-    </section>
     </section>
 
     <p>sequentially-descending order</p>
@@ -298,9 +318,7 @@
 
     <aside class="tile-elevated">
       <p>이 문서가 도움이 되었나요?</p>
-      <small title="17 out of 439 found this helpful">
-        417명 중 349명이 도움을 받았어요.
-      </small>
+      <small title="17 out of 439 found this helpful"> 417명 중 349명이 도움을 받았어요. </small>
       <test-group variant="chip">
         <test-chip class="help-feedback-button">도움이 됐어요</test-chip>
         <test-chip class="help-feedback-button">부족해요</test-chip>
@@ -314,7 +332,6 @@
   </article>
 
   <section class="section-example">
-
     <div class="graph" style="border: var(--border); border-radius: var(--radius)">
       <div class="graph-title">
         1월 26일 <em>컴퓨터통신 분야</em>에서는<br /><em>7백명의 지식iN</em>들이 답변하셨습니다.

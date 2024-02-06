@@ -1,4 +1,4 @@
-<main class="pattern">
+<main class="component">
   <article class="article">
     <test-text variant="title">Signifier</test-text>
     <test-text variant="body-large">
@@ -31,26 +31,28 @@
 
     <section class="component-guide">
       <test-text variant="subhead">Clickable overview</test-text>
-      <section class="token-group">
-        <div class="token-item" style="box-shadow: var(--shadow-tile)">
-          <p>
-            <b>elevated 오브젝트</b>는 클릭할 수 있다. 또는 오브젝트 내부에 클릭할 수 있는 요소가
-            존재한다.
-          </p>
-        </div>
-        <div class="token-item" style="border: none; background: var(--color-background-weak)">
-          <p><b>연한 회색 배경의 오브젝트</b>는 클릭할 수 있다.</p>
-        </div>
-        <div class="token-item">
-          <p>
-            <b><em>브랜드 컬러 텍스트</em></b
-            >는 클릭할 수 있다.
-          </p>
-        </div>
-        <div class="token-item">
-          <p><b>❤️ 아이콘(또는 이모지)과 이미지</b>는 클릭할 수 있다.</p>
-        </div>
-      </section>
+      <div class="component-example">
+        <section class="token-group">
+          <div class="token-item" style="box-shadow: var(--shadow-tile)">
+            <p>
+              <b>elevated 오브젝트</b>는 클릭할 수 있다. 또는 오브젝트 내부에 클릭할 수 있는 요소가
+              존재한다.
+            </p>
+          </div>
+          <div class="token-item" style="border: none; background: var(--color-background-weak)">
+            <p><b>연한 회색 배경의 오브젝트</b>는 클릭할 수 있다.</p>
+          </div>
+          <div class="token-item">
+            <p>
+              <b><em>브랜드 컬러 텍스트</em></b
+              >는 클릭할 수 있다.
+            </p>
+          </div>
+          <div class="token-item">
+            <p><b>❤️ 아이콘(또는 이모지)과 이미지</b>는 클릭할 수 있다.</p>
+          </div>
+        </section>
+      </div>
 
       <test-text variant="subhead">Icons</test-text>
       <test-text variant="body"
@@ -58,6 +60,98 @@
         you are new to Figma, check out our onboarding guide, or open Figma and start designing with
         the Polaris:</test-text
       >
+
+      <div class="component-example">
+        <section
+          class="group"
+          style="display: flex; flex-wrap: wrap; gap: var(--space-3); margin: 0 0 2rem"
+        >
+          <test-entity size="huge" alignment="center" label="" description="Search">
+            <test-avatar slot="avatar" variant="secondary" size="huge">
+              <test-icon slot="prefix" name="search"></test-icon>
+            </test-avatar>
+          </test-entity>
+
+          <!-- <test-entity size="huge" alignment="center" label="">
+            description="Expandable & Collapsible (vertical)"
+            <test-avatar slot="avatar" variant="secondary" size="huge" >
+              <test-icon slot="prefix" name="search"></test-icon>
+            </test-avatar>
+          </test-entity> -->
+          <test-entity size="huge" alignment="center" label="" description="Expandable">
+            <test-avatar slot="avatar" variant="secondary" size="huge">
+              <test-icon slot="prefix" name="nav-arrow-down"></test-icon>
+            </test-avatar>
+          </test-entity>
+          <test-entity size="huge" alignment="center" label="" description="to back">
+            <test-avatar slot="avatar" variant="secondary" size="huge" icon="arrow-left">
+            </test-avatar>
+          </test-entity>
+          <test-entity size="huge" alignment="center" label="" description="Internal Link">
+            <test-avatar slot="avatar" variant="secondary" size="huge">
+              <test-icon slot="prefix" name="arrow-right"></test-icon>
+            </test-avatar>
+            <b>(ex: view all)</b>
+          </test-entity>
+          <test-entity size="huge" alignment="center" label="" description="External Link">
+            <test-avatar slot="avatar" variant="secondary" size="huge">
+              <test-icon slot="prefix" name="arrow-up-right"></test-icon>
+            </test-avatar>
+            <b>(ex: view all)</b>
+          </test-entity>
+          <test-entity size="huge" alignment="center" label="" description="Search">
+            <test-avatar slot="avatar" variant="secondary" size="huge">
+              <test-icon slot="prefix" name="search"></test-icon>
+            </test-avatar>
+          </test-entity>
+          <!-- Remove / Close / Clear -->
+          <test-entity size="huge" alignment="center" label="" description="Remove">
+            <test-avatar slot="avatar" variant="secondary" size="huge">
+              <test-icon slot="prefix" name="xmark"></test-icon>
+            </test-avatar>
+          </test-entity>
+          <test-entity size="huge" alignment="center" label="" description="Plus">
+            <test-avatar slot="avatar" variant="secondary" size="huge">
+              <test-icon slot="prefix" name="plus"></test-icon>
+            </test-avatar>
+          </test-entity>
+          <test-entity size="huge" alignment="center" label="" description="Checked">
+            <test-avatar slot="avatar" variant="secondary" size="huge">
+              <test-icon slot="prefix" name="check"></test-icon>
+            </test-avatar>
+          </test-entity>
+          <test-entity size="huge" alignment="center" label="" description="Checked">
+            <test-avatar slot="avatar" variant="secondary" size="huge">
+              <test-icon slot="prefix" name="lock"></test-icon>
+            </test-avatar>
+          </test-entity>
+          <test-entity size="huge" alignment="center" label="" description="Checked">
+            <test-avatar slot="avatar" variant="secondary" size="huge">
+              <test-icon slot="prefix" name="more-vert"></test-icon>
+            </test-avatar>
+          </test-entity>
+          <test-entity size="huge" alignment="center" label="" description="Checked">
+            <test-avatar slot="avatar" variant="secondary" size="huge">
+              <test-icon slot="prefix" name="settings"></test-icon>
+            </test-avatar>
+          </test-entity>
+          <test-entity size="huge" alignment="center" label="" description="Checked">
+            <test-avatar slot="avatar" variant="secondary" size="huge">
+              <test-icon slot="prefix" name="log-out"></test-icon>
+            </test-avatar>
+          </test-entity>
+          <test-entity size="huge" alignment="center" label="" description="Checked">
+            <test-avatar slot="avatar" variant="secondary" size="huge">
+              <test-icon slot="prefix" name="copy"></test-icon>
+            </test-avatar>
+          </test-entity>
+          <test-entity size="huge" alignment="center" label="" description="Checked">
+            <test-avatar slot="avatar" variant="secondary" size="huge">
+              <test-icon slot="prefix" name="refresh"></test-icon>
+            </test-avatar>
+          </test-entity>
+        </section>
+      </div>
       <blockquote style="margin: 1rem 0">
         <ul style="margin: 0">
           <li>Use only universally recognized icons to represent actions or options.</li>
@@ -73,96 +167,6 @@
       <!-- <test-text variant="subhead">Navigation Icons</test-text> -->
 
       <!-- <test-text variant="subhead">Action Icons</test-text> -->
-
-      <section
-        class="group"
-        style="display: flex; flex-wrap: wrap; gap: var(--space-3); margin: 0 0 2rem"
-      >
-        <test-entity size="huge" alignment="center" label="" description="Search">
-          <test-avatar slot="avatar" variant="secondary" size="huge">
-            <test-icon slot="prefix" name="search"></test-icon>
-          </test-avatar>
-        </test-entity>
-
-        <!-- <test-entity size="huge" alignment="center" label="">
-          description="Expandable & Collapsible (vertical)"
-          <test-avatar slot="avatar" variant="secondary" size="huge" >
-            <test-icon slot="prefix" name="search"></test-icon>
-          </test-avatar>
-        </test-entity> -->
-        <test-entity size="huge" alignment="center" label="" description="Expandable">
-          <test-avatar slot="avatar" variant="secondary" size="huge">
-            <test-icon slot="prefix" name="nav-arrow-down"></test-icon>
-          </test-avatar>
-        </test-entity>
-        <test-entity size="huge" alignment="center" label="" description="to back">
-          <test-avatar slot="avatar" variant="secondary" size="huge" icon="arrow-left">
-          </test-avatar>
-        </test-entity>
-        <test-entity size="huge" alignment="center" label="" description="Internal Link">
-          <test-avatar slot="avatar" variant="secondary" size="huge">
-            <test-icon slot="prefix" name="arrow-right"></test-icon>
-          </test-avatar>
-          <b>(ex: view all)</b>
-        </test-entity>
-        <test-entity size="huge" alignment="center" label="" description="External Link">
-          <test-avatar slot="avatar" variant="secondary" size="huge">
-            <test-icon slot="prefix" name="arrow-up-right"></test-icon>
-          </test-avatar>
-          <b>(ex: view all)</b>
-        </test-entity>
-        <test-entity size="huge" alignment="center" label="" description="Search">
-          <test-avatar slot="avatar" variant="secondary" size="huge">
-            <test-icon slot="prefix" name="search"></test-icon>
-          </test-avatar>
-        </test-entity>
-        <!-- Remove / Close / Clear -->
-        <test-entity size="huge" alignment="center" label="" description="Remove">
-          <test-avatar slot="avatar" variant="secondary" size="huge">
-            <test-icon slot="prefix" name="xmark"></test-icon>
-          </test-avatar>
-        </test-entity>
-        <test-entity size="huge" alignment="center" label="" description="Plus">
-          <test-avatar slot="avatar" variant="secondary" size="huge">
-            <test-icon slot="prefix" name="plus"></test-icon>
-          </test-avatar>
-        </test-entity>
-        <test-entity size="huge" alignment="center" label="" description="Checked">
-          <test-avatar slot="avatar" variant="secondary" size="huge">
-            <test-icon slot="prefix" name="check"></test-icon>
-          </test-avatar>
-        </test-entity>
-        <test-entity size="huge" alignment="center" label="" description="Checked">
-          <test-avatar slot="avatar" variant="secondary" size="huge">
-            <test-icon slot="prefix" name="lock"></test-icon>
-          </test-avatar>
-        </test-entity>
-        <test-entity size="huge" alignment="center" label="" description="Checked">
-          <test-avatar slot="avatar" variant="secondary" size="huge">
-            <test-icon slot="prefix" name="more-vert"></test-icon>
-          </test-avatar>
-        </test-entity>
-        <test-entity size="huge" alignment="center" label="" description="Checked">
-          <test-avatar slot="avatar" variant="secondary" size="huge">
-            <test-icon slot="prefix" name="settings"></test-icon>
-          </test-avatar>
-        </test-entity>
-        <test-entity size="huge" alignment="center" label="" description="Checked">
-          <test-avatar slot="avatar" variant="secondary" size="huge">
-            <test-icon slot="prefix" name="log-out"></test-icon>
-          </test-avatar>
-        </test-entity>
-        <test-entity size="huge" alignment="center" label="" description="Checked">
-          <test-avatar slot="avatar" variant="secondary" size="huge">
-            <test-icon slot="prefix" name="copy"></test-icon>
-          </test-avatar>
-        </test-entity>
-        <test-entity size="huge" alignment="center" label="" description="Checked">
-          <test-avatar slot="avatar" variant="secondary" size="huge">
-            <test-icon slot="prefix" name="refresh"></test-icon>
-          </test-avatar>
-        </test-entity>
-      </section>
 
       <test-text variant="subhead">Interaction states</test-text>
       <test-text variant="body"

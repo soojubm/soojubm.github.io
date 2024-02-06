@@ -16,25 +16,18 @@
     </dl>
 
     <section class="component-example">
-      <test-group alignment="vertical">
-        <test-tile variant="elevated">
-          <test-text variant="subhead">elevated large with subhead</test-text>
-          <p style="margin: 1rem">
-            문제: 크기에 따른 변별력이 없다. inset이 더 커진다면 모바일 등 작은 화면에서
-            미디어쿼리로 추가적인 inset 조절이 필요하기 때문에 컴포넌트의 고유성을 잃게 된다.
-            솔루션: inset이 1rem 초과할 때 콘텐츠 모듈을 가운데 정렬로 제한하여 고유성을 유지할 수
-            있다.
-          </p>
-          <p style="margin-top: var(--space-3)">이 tile은 페이지 레벨의 컴포넌트가 될 수 있다.</p>
-        </test-tile>
-        <test-tile variant="elevated">
-          <b>elevated</b>
-          <p>flat 형태와 구별이 잘 안 되어 쉐도우를 변경함.</p>
-        </test-tile>
-        <test-tile>
-          <b>flat small</b>
-        </test-tile>
-      </test-group>
+      <test-tile variant="flat">
+        <test-text variant="subhead">flatted with subhead</test-text>
+        <p style="margin: 1rem">
+          문제: 크기에 따른 변별력이 없다. inset이 더 커진다면 작은 화면에서 미디어쿼리로 inset
+          조정이 불가피하기 때문에 컴포넌트의 디바이스나 화면 크기에 컴포넌트가 의존된다. 솔루션:
+          inset이 1rem 초과할 때 콘텐츠 모듈을 가운데 정렬로 제한.
+        </p>
+      </test-tile>
+      <div style="height: var(--space-3)"></div>
+      <test-tile variant="elevated">
+        <b>elevated</b>
+      </test-tile>
     </section>
 
     <section class="component-props">
@@ -61,14 +54,21 @@
 
       <test-text variant="subhead">Visual style</test-text>
       <test-text variant="body"
+        >자식 컴포넌트에 따라 내부 간격 및 사이즈 속성이 결정됨. 이에 대한 정의.</test-text
+      >
+      <test-text variant="body"
         >타일 내부 leading, tailing 엘리먼트의 시각보정이 필요할 수 있습니다.</test-text
       >
+      <test-text variant="body">타일이 페이지 레벨의 컴포넌트가 될 수 있는 경우.</test-text>
 
       <test-text variant="subhead">Memo</test-text>
       <ul>
         <li>2:1. 블리딩 시 높이를 고정해야 한다. ??</li>
         <li>TODO: 모든 contentbox가 tile 이어야 하는가.</li>
       </ul>
+
+      <test-text variant="subhead">Changelog</test-text>
+      <test-text variant="body">flat 형태와 변별을 위해 elevated의 쉐도우를 강화.</test-text>
     </section>
 
     <div
@@ -113,7 +113,7 @@
       <test-tag slot="category" variant="primary">카테고리</test-tag>
 
       <test-menuitem slot="item" size="large" label="퓨어 오렌지 주스" description="">
-        <test-avatar slot="avatar" size="large" fallback="🍊"></test-avatar>
+        <test-avatar slot="avatar" size="large">🍊</test-avatar>
         <div class="item-description"><del>₩19,000</del> ₩16,000 <em>할인율 20%</em></div>
       </test-menuitem>
       <!-- <figure class="card-avatar">🍊</figure> -->

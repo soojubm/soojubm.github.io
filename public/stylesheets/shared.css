@@ -3,10 +3,6 @@
 @import '/public/stylesheets/shared/variables.css';
 @import '/public/stylesheets/shared/keyframes.css';
 
-/* @import '/public/components/navbar/navbar.css';
-@import '/public/components/footer/footer.css'; */
-
-
 .feature {display:flex;flex-wrap:wrap;gap:2rem;}
 
 .feature-head {width:100%;margin:0 auto 2rem;}

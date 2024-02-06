@@ -5,7 +5,6 @@
   --button-size: var(--size-large);
   --button-color: var(--color-background-weak);
 
-  /* border-width */
   --button-border: 1px solid var(--button-color);
   --button-radius: var(--radius);
 
@@ -14,7 +13,8 @@
   --button-font-size: inherit;
   --button-font-weight: var(--font-weight-bold);
 
-  /* --button-color-background
+  /*
+  --button-color-background
   --button-color-border
   --button-color-text
   --button-space-inset

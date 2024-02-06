@@ -174,12 +174,14 @@
 
       <section class="step" data-align="vertical" style="margin: 1rem 0">
         <div class="step-item is-active">
-          <span class="step-item-icon" style="color: var(--color-priamry)">1</span>
-          <h3 class="step-item-label">I'm an engineer</h3>
+          <span class="step-item-icon">1</span>
+          <test-text class="step-item-label" style="font-size: 1rem">I'm an engineer</test-text>
         </div>
         <div class="step-item is-active">
-          <span class="step-item-icon" style="color: var(--color-priamry)">2</span>
-          <h3 class="step-item-label">I wnat to design from scratch</h3>
+          <span class="step-item-icon">2</span>
+          <test-text class="step-item-label" style="font-size: 1rem"
+            >I wnat to design from scratch</test-text
+          >
           <!-- <p class="step-item-description">
           1칼럼(모바일)에서 결제 버튼을 누르기 전 최종 금액을 확인할 수 있는 구조가 되려면 2칼럼에서 우측을 결제를 위한 칼럼을 배치할
           때(체크아웃페이지의 일반적인 레이아웃) 상품&서머리&결제버튼이 같은 컨테이너로 포함되어야.
@@ -189,11 +191,11 @@
         </div>
         <div class="step-item">
           <span class="step-item-icon">3</span>
-          <h3 class="step-item-label" style="color: var(--color-text)">
+          <test-text class="step-item-label" style="font-size: 1rem; color: var(--color-text)">
             One last thing ㅡ how will you use your prototpe?
-          </h3>
+          </test-text>
           <small>(You can pick more than one)</small>
-          <test-group variant="chip">
+          <test-group variant="chip" style="margin-left: 0.75rem">
             <test-chip>Share for feedback</test-chip>
             <test-chip>Present live</test-chip>
             <test-chip>Test with users</test-chip>
@@ -202,7 +204,8 @@
           </test-group>
         </div>
       </section>
-      <test-button variant="primary">Start creating</test-button>
+      <div style="height: var(--space-4)"></div>
+      <footer><test-button variant="primary">Start creating</test-button></footer>
     </section>
 
     <!-- <p>클릭하고 싶지 않은 형태로 변경 2021.10</p> -->

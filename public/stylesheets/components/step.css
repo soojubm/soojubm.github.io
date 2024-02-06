@@ -2,6 +2,7 @@
   display: flex;
   justify-content: space-around;
   width: 100%;
+  
   --step-icon-size: var(--size-tiny);
 }
 .step-item {display:block;flex:auto;text-align:center;position:relative;}

@@ -1,0 +1,7 @@
+
+.filter {}
+.filter-title {margin:0 0 var(--space-after-title) 0;}
+.filter-fieldset {display:flex;flex-direction:column;margin:var(--space-4) 0;padding:2rem 0 0;position:relative;}
+.filter-fieldset-legend {position:absolute;top:0;}
+.filter-fieldset-description {margin:-.125rem 0 var(--space-3) 0;color:var(--color-text-light);}
+.filter-foot {display:flex;margin:2rem 0 0 0;}

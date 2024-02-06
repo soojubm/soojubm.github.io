@@ -68,6 +68,7 @@ input[type=search]::-webkit-search-results-decoration {display:none;}
   --textfield-radius: var(--radius);
   --textfield-text-color: 0;
   --textfield-icon-position: var(--size-small);
+  --textfield-placeholder-color: null;
 }
 .textfield-label {
   display:block;

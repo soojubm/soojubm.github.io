@@ -98,7 +98,8 @@
   --color-text: var(--gray800);
   --color-text-light: var(--gray400);
 
-  --color-text-weak: var(--gray0);
+  /* TODO */
+  /* --color-text-weak: var(--gray0); */
   --color-text-strong: var(--gray0);
 
   --color-gradient-from: null;
