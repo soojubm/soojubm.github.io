@@ -51,7 +51,7 @@
             <!-- <test-avatar slot="avatar" size="large" style="background: aliceblue; font-size: 1.5rem">💳</test-avatar> -->
             <test-radio slot="check" id="c1" name="c1" value="" checked></test-radio>
             <div slot="text">
-              <test-group>
+              <test-group variant="tag">
                 <test-text variant="body-bold">수줍이 집</test-text>
                 <test-tag>기본배송지</test-tag>
               </test-group>
@@ -61,7 +61,7 @@
             </div>
           </test-menuitem>
         </test-tile>
-        <div style="height: var(--space-after-subhead)"></div>
+        <div style="height: var(--space-3)"></div>
         <test-tile variant="elevated" size="small">
           <test-menuitem label="배송지 변경/추가">
             <test-avatar slot="avatar" icon="coins-swap"> </test-avatar>
@@ -122,31 +122,37 @@
               <test-radio slot="check" id="c1" name="c1" value=""></test-radio>
             </test-menuitem>
           </test-tile>
-          <!-- <test-tile>
-            <test-radio label="신용/체크카드"></test-radio>
-            <test-radio label="무통장입금" disabled>
-              <small style="color: var(--color-text)">COMING SOON<i style="font-style: italic">!</i></small>
+          <test-tile>
+            <test-radio>신용/체크카드</test-radio>
+            <test-radio disabled>
+              무통장입금
+              <small style="color: var(--color-text)"
+                >COMING SOON<i style="font-style: italic">!</i></small
+              >
             </test-radio>
-          </test-tile> -->
+          </test-tile>
         </test-group>
       </div>
       <div style="height: var(--space-after-subhead)"></div>
-      <dl style="flex-direction: column">
-        <dt>결제 안내</dt>
-        <dd>신용카드 결제만 가능합니다.</dd>
-        <dd>해외에서 발행된 카드는 이용할 수 없습니다.</dd>
-        <dt>주문취소 및 환불 안내</dt>
-        <dd>주문취소 또는 환불은 <a href="#">고객센터</a>로 문의해 주세요.</dd>
-      </dl>
+      <div>
+        <test-text variant="label">결제 안내</test-text>
+        <!-- FIXME body + body -->
+        <test-text variant="body">신용카드 결제만 가능합니다.</test-text>
+        <test-text variant="body">해외에서 발행된 카드는 이용할 수 없습니다.</test-text>
+        <test-text variant="label">주문취소 및 환불 안내</test-text>
+        <test-text variant="body"
+          >주문취소 또는 환불은 <a href="#">고객센터</a>로 문의해 주세요.</test-text
+        >
+      </div>
       <div style="height: var(--space-after-subhead)"></div>
     </section>
 
     <div style="height: 2rem"></div>
 
     <section class="checkout-">
-      <test-text variant="subhead">
-        Your Payments / Wallet<br />name on card / Card Number / Expiriation Date / CVV / billing
-        address (따로 관리 됨).
+      <test-text variant="subhead"> Your Payments / Wallet </test-text>
+      <test-text variant="body">
+        name on card / Card Number / Expiriation Date / CVV / billing address (따로 관리 됨).
       </test-text>
       <div style="height: var(--space-after-subhead)"></div>
       <test-menuitem>
@@ -154,10 +160,9 @@
           <test-tag slot="category">기본</test-tag>
         </test-avatar>
         <div slot="text">
-          <h3 class="card-title">VISA 1988 XXXX 1111</h3>
-          <time class="card-date">Expires on 10/23</time>
+          <test-text variant="subhead">VISA 1988 XXXX 1111</test-text>
+          <test-text variant="body">Expires on 10/23</time>
           <em>Edit</em>
-          <button class="card-more">more</button>
         </div>
       </test-menuitem>
       <div style="height: var(--space-after-subhead)"></div>

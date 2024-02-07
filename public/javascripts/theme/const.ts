@@ -2,8 +2,11 @@ export const DARK_THEME_CLASS = 'theme-dark'
 export const LIGHT_THEME_CLASS = ''
 export const DARKTHEME_SELECTOR = '.js-darkmode'
 
+// TODO dark variable
+
 // export const isDarkTheme = savedTheme === DARK_THEME_CLASS
-export const isDarkTheme = () => document.body.classList.contains(DARK_THEME_CLASS)
+// export const isDarkTheme = () => document.body.classList.contains(DARK_THEME_CLASS)
+export const isDarkTheme = () => document.body.dataset.theme === 'dark'
 // 3가지 body class, check attribute, local storage
 
 // export const isDarkTheme = window.matchMedia &&

@@ -1,6 +1,24 @@
 [
   {
     "id": 202402,
+    "releasedate": 1954,
+    "titlekorean": "더 블레이징 스카이",
+    "titleenglish": "The Blazing Sky",
+    "director": "유세프 샤힌",
+    "country": "이집트",
+    "etc": ""
+  },
+  {
+    "id": 202402,
+    "releasedate": 2018,
+    "titlekorean": "후미코의 발",
+    "titleenglish": "Fumiko's Legs",
+    "director": "우에다 아츠시",
+    "country": "일본",
+    "etc": ""
+  },
+  {
+    "id": 202402,
     "releasedate": 1962,
     "titlekorean": "에바",
     "titleenglish": "Eva",
@@ -10,18 +28,18 @@
   },
   {
     "id": 202401,
-    "releasedate": 2007,
-    "titlekorean": "쇠사슬을 풀어라",
-    "titleenglish": "The Tiger And The Snow",
+    "releasedate": 1971,
+    "titlekorean": "쇠사슬을 끊어라",
+    "titleenglish": "Break the Chain",
     "director": "이만희",
     "country": "한국",
     "etc": ""
   },
   {
     "id": 202401,
-    "releasedate": 2007,
-    "titlekorean": "Gimme Danger",
-    "titleenglish": "The Tiger And The Snow",
+    "releasedate": 2016,
+    "titlekorean": "김미 데인저",
+    "titleenglish": "Gimme Danger",
     "director": "짐 자무시",
     "country": "미국",
     "etc": ""

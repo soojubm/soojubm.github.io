@@ -240,40 +240,53 @@
       </test-text>
     </section>
 
+    <aside class="component-references">
+      <test-text variant="subhead">References</test-text>
+      <a href="https://developer.apple.com/documentation/uikit/uisearchbar">HIG searchbar</a>
+    </aside>
+
     <test-text variant="body-bold">Field group</test-text>
     <!-- <test-text variant="body">그룹이 되는 모든 필드는 선택 입력입니다.</test-text> -->
     <section class="component-case">
-      <test-group variant="textfield" style="width: 100%; align-items: flex-end">
-        <test-textfield label="Length" placeholder="cm unit"></test-textfield>
-        <div style="display: flex; align-items: center; height: var(--size-large)">
-          <test-icon name="xmark"></test-icon>
+      <test-tile>
+        <test-group variant="textfield" style="width: 100%; align-items: flex-end">
+          <test-textfield label="Length" placeholder="cm unit"></test-textfield>
+          <div style="display: flex; align-items: center; height: var(--size-large)">
+            <test-icon name="xmark"></test-icon>
+          </div>
+          <test-textfield label="Width" placeholder="x means"></test-textfield>
+          <div style="display: flex; align-items: center; height: var(--size-large)">
+            <test-icon name="xmark"></test-icon>
+          </div>
+          <test-textfield label="Height" placeholder="cm"></test-textfield>
+        </test-group>
+      </test-tile>
+      <div style="height: 1rem"></div>
+      <test-tile>
+        <div style="display: flex; justify-content: space-between; gap: var(--space-3)">
+          <div style="flex: auto; width: 50%">
+            <test-textfield
+              type="date"
+              name="date-start"
+              label="체크인"
+              placeholder="YYYY. MM. DD."
+            >
+              <test-icon slot="suffix" name="calendar"></test-icon>
+            </test-textfield>
+          </div>
+          <div style="flex: auto; width: 50%">
+            <test-textfield
+              type="date"
+              name="date-end"
+              label="체크아웃"
+              placeholder="YYYY. MM. DD."
+            >
+              <test-icon slot="suffix" name="calendar"></test-icon>
+            </test-textfield>
+          </div>
         </div>
-        <test-textfield label="Width" placeholder="x means"></test-textfield>
-        <div style="display: flex; align-items: center; height: var(--size-large)">
-          <test-icon name="xmark"></test-icon>
-        </div>
-        <test-textfield label="Height" placeholder="cm"></test-textfield>
-      </test-group>
+      </test-tile>
     </section>
-    <section class="component-case">
-      <div style="display: flex; justify-content: space-between; gap: var(--space-3)">
-        <div style="flex: auto; width: 50%">
-          <test-textfield type="date" name="date-start" label="체크인" placeholder="YYYY. MM. DD.">
-            <test-icon slot="suffix" name="calendar"></test-icon>
-          </test-textfield>
-        </div>
-        <div style="flex: auto; width: 50%">
-          <test-textfield type="date" name="date-end" label="체크아웃" placeholder="YYYY. MM. DD.">
-            <test-icon slot="suffix" name="calendar"></test-icon>
-          </test-textfield>
-        </div>
-      </div>
-    </section>
-
-    <div class="component-references">
-      <test-text variant="subhead">References</test-text>
-      <a href="https://developer.apple.com/documentation/uikit/uisearchbar">HIG searchbar</a>
-    </div>
   </article>
 </main>
 

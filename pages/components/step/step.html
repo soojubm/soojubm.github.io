@@ -66,148 +66,141 @@
       <ul>
         <li>타임라인과 구분. 타임라인은 히스토리 맥락으로 스텝의 역순. 확장, 링크, indentation</li>
       </ul>
+
+      <test-text variant="subhead">Changelog</test-text>
+      <test-text variant="body">클릭하고 싶지 않은 형태로 변경 2021.10</test-text>
     </section>
 
-    <test-tile flat="flat" size="medium" style="max-width: 640px">
-      <test-group class="order-item-head">
-        <test-tag class="order-item-head-type" style="width: var(--size-large)">포장</test-tag>
-        <time class="order-item-head-time">2022. 12. 05. 15:32</time>
-        <b class="order-item-head-status" style="margin-left: auto">배달완료</b>
-      </test-group>
-      <div style="height: var(--space-after-subhead)"></div>
-      <test-menuitem>
-        <test-avatar slot="avatar" size="large">
-          <span class="avatar-badge"></span>
-        </test-avatar>
-        <div slot="text" class="item-description">
-          <b>쩜순이네닭강정 요기요st</b>
-          <p style="display: flex; align-items: center; color: var(--color-text-light)">
-            <span>떡볶이</span>
-            <span style="font-size: var(--font-size-small); margin-top: -1px"> x </span>
-            <span>5</span>
-            <span> 외 1건</span>
-          </p>
+    <section class="component-case">
+      <test-tile flat="flat" size="medium" style="max-width: 640px">
+        <test-group class="order-item-head">
+          <test-tag class="order-item-head-type" style="width: var(--size-large)">포장</test-tag>
+          <time class="order-item-head-time">2022. 12. 05. 15:32</time>
+          <b class="order-item-head-status" style="margin-left: auto">배달완료</b>
+        </test-group>
+        <div style="height: var(--space-after-subhead)"></div>
+        <test-menuitem>
+          <test-avatar slot="avatar" size="large">
+            <span class="avatar-badge"></span>
+          </test-avatar>
+          <div slot="text" class="item-description">
+            <b>쩜순이네닭강정 요기요st</b>
+            <p style="display: flex; align-items: center; color: var(--color-text-light)">
+              <span>떡볶이</span>
+              <span style="font-size: var(--font-size-small); margin-top: -1px"> x </span>
+              <span>5</span>
+              <span> 외 1건</span>
+            </p>
+          </div>
+        </test-menuitem>
+        <div style="height: var(--space-4)"></div>
+        <div class="step">
+          <div class="step-item is-active">
+            <span class="step-item-icon">1</span>
+            <h3 class="step-item-label">주문확인</h3>
+          </div>
+          <div class="step-item">
+            <span class="step-item-icon">2</span>
+            <h3 class="step-item-label">조리중</h3>
+          </div>
+          <div class="step-item">
+            <span class="step-item-icon">3</span>
+            <h3 class="step-item-label">배달중</h3>
+          </div>
+          <div class="step-item">
+            <span class="step-item-icon">4</span>
+            <h3 class="step-item-label">배달완료</h3>
+          </div>
         </div>
-      </test-menuitem>
-      <div style="height: var(--space-4)"></div>
-      <div class="step">
-        <div class="step-item is-active">
-          <span class="step-item-icon">1</span>
-          <h3 class="step-item-label">주문확인</h3>
-        </div>
-        <div class="step-item">
-          <span class="step-item-icon">2</span>
-          <h3 class="step-item-label">조리중</h3>
-        </div>
-        <div class="step-item">
-          <span class="step-item-icon">3</span>
-          <h3 class="step-item-label">배달중</h3>
-        </div>
-        <div class="step-item">
-          <span class="step-item-icon">4</span>
-          <h3 class="step-item-label">배달완료</h3>
-        </div>
-      </div>
-      <div style="height: var(--space-4)"></div>
-      <test-group variant="chip">
-        <test-chip>재주문</test-chip>
-        <test-chip>후기작성</test-chip>
-      </test-group>
-      <!-- <test-tag>네이버 쇼핑은 왜 주문 내역을 숨길 수 있나?</test-tag> -->
-    </test-tile>
+        <div style="height: var(--space-4)"></div>
+        <test-group variant="chip">
+          <test-chip>재주문</test-chip>
+          <test-chip>후기작성</test-chip>
+        </test-group>
+        <!-- <test-tag>네이버 쇼핑은 왜 주문 내역을 숨길 수 있나?</test-tag> -->
+      </test-tile>
 
-    <br />
-    <nav
-      style="
-        display: flex;
-        justify-content: space-between;
-        padding: 1rem 0;
-        border-top: var(--border);
-        border-bottom: var(--border);
-      "
-    >
-      <test-menuitem>
-        <test-avatar slot="avatar" size="large"></test-avatar>
-        <div slot="text">
-          <test-text slot="" variant="caption">Step one</test-text>
-          <div style="margin-top: -0.25rem">
-            <test-text slot="" variant="body">UPLOAD 3D FILES</test-text>
+      <br />
+      <nav
+        style="
+          display: flex;
+          justify-content: space-between;
+          padding: 1rem 0;
+          border-top: var(--border);
+          border-bottom: var(--border);
+        "
+      >
+        <test-menuitem>
+          <test-avatar slot="avatar" size="medium"></test-avatar>
+          <div slot="text">
+            <test-text slot="" variant="caption">Step one</test-text>
+            <div style="margin-top: -0.25rem">
+              <test-text slot="" variant="body">UPLOAD 3D FILES</test-text>
+            </div>
           </div>
-        </div>
-      </test-menuitem>
-      <test-menuitem>
-        <test-avatar slot="avatar" size="large"></test-avatar>
-        <div slot="text">
-          <test-text slot="" variant="caption">Step one</test-text>
-          <div style="margin-top: -0.25rem">
-            <test-text slot="" variant="body">UPLOAD 3D FILES</test-text>
+        </test-menuitem>
+        <test-menuitem>
+          <test-avatar slot="avatar" size="medium"></test-avatar>
+          <div slot="text">
+            <test-text slot="" variant="caption">Step one</test-text>
+            <div style="margin-top: -0.25rem">
+              <test-text slot="" variant="body">UPLOAD 3D FILES</test-text>
+            </div>
           </div>
-        </div>
-      </test-menuitem>
-      <test-menuitem>
-        <test-avatar slot="avatar" size="large"></test-avatar>
-        <div slot="text">
-          <test-text slot="" variant="caption">Step one</test-text>
-          <div style="margin-top: -0.25rem">
-            <test-text slot="" variant="body">UPLOAD 3D FILES</test-text>
+        </test-menuitem>
+        <test-menuitem>
+          <test-avatar slot="avatar" size="medium"></test-avatar>
+          <div slot="text">
+            <test-text slot="" variant="caption">Step one</test-text>
+            <div style="margin-top: -0.25rem">
+              <test-text slot="" variant="body">UPLOAD 3D FILES</test-text>
+            </div>
           </div>
-        </div>
-      </test-menuitem>
-      <test-menuitem>
-        <test-avatar slot="avatar" size="large"></test-avatar>
-        <div slot="text">
-          <test-text slot="" variant="caption">Step one</test-text>
-          <div style="margin-top: -0.25rem">
-            <test-text slot="" variant="body">UPLOAD 3D FILES</test-text>
-          </div>
-        </div>
-      </test-menuitem>
-    </nav>
-
-    <section style="max-width: 800px; margin: 4rem auto">
-      <header class="authentication-head">
-        <h2 class="authentication-head-title">Tell us about yourself</h2>
-        <test-text variant="body-large" class="authentication-head-description">
-          Now that you're all signed up, let's personalize your experience.
-        </test-text>
-      </header>
-
-      <section class="step" data-align="vertical" style="margin: 1rem 0">
-        <div class="step-item is-active">
-          <span class="step-item-icon">1</span>
-          <test-text class="step-item-label" style="font-size: 1rem">I'm an engineer</test-text>
-        </div>
-        <div class="step-item is-active">
-          <span class="step-item-icon">2</span>
-          <test-text class="step-item-label" style="font-size: 1rem"
-            >I wnat to design from scratch</test-text
-          >
-          <!-- <p class="step-item-description">
-          1칼럼(모바일)에서 결제 버튼을 누르기 전 최종 금액을 확인할 수 있는 구조가 되려면 2칼럼에서 우측을 결제를 위한 칼럼을 배치할
-          때(체크아웃페이지의 일반적인 레이아웃) 상품&서머리&결제버튼이 같은 컨테이너로 포함되어야.
-        </p>
-        <p class="step-item-description">결제정보 - 결제방법/주문상태/주문접수일시/주문완료일시/배송비/쿠폰사용금액/결제금액</p>
-        <p class="step-item-description">주문 정보를 로컬에 저장.</p> -->
-        </div>
-        <div class="step-item">
-          <span class="step-item-icon">3</span>
-          <test-text class="step-item-label" style="font-size: 1rem; color: var(--color-text)">
-            One last thing ㅡ how will you use your prototpe?
+        </test-menuitem>
+      </nav>
+      <section>
+        <header class="authentication-head">
+          <h2 class="authentication-head-title">Tell us about yourself</h2>
+          <test-text variant="body-large" class="authentication-head-description">
+            Now that you're all signed up, let's personalize your experience.
           </test-text>
-          <small>(You can pick more than one)</small>
-          <test-group variant="chip" style="margin-left: 0.75rem">
-            <test-chip>Share for feedback</test-chip>
-            <test-chip>Present live</test-chip>
-            <test-chip>Test with users</test-chip>
-            <test-chip>Collaborate in real time</test-chip>
-            <test-chip>Hand off to developers</test-chip>
-          </test-group>
-        </div>
-      </section>
-      <div style="height: var(--space-4)"></div>
-      <footer><test-button variant="primary">Start creating</test-button></footer>
-    </section>
+        </header>
 
-    <!-- <p>클릭하고 싶지 않은 형태로 변경 2021.10</p> -->
+        <section class="step" data-align="vertical" style="margin: 1rem 0">
+          <div class="step-item is-active">
+            <span class="step-item-icon">1</span>
+            <test-text class="step-item-label" style="font-size: 1rem">I'm an engineer</test-text>
+          </div>
+          <div class="step-item is-active">
+            <span class="step-item-icon">2</span>
+            <test-text class="step-item-label" style="font-size: 1rem"
+              >I wnat to design from scratch</test-text
+            >
+            <!-- <p class="step-item-description">
+            1칼럼(모바일)에서 결제 버튼을 누르기 전 최종 금액을 확인할 수 있는 구조가 되려면 2칼럼에서 우측을 결제를 위한 칼럼을 배치할
+            때(체크아웃페이지의 일반적인 레이아웃) 상품&서머리&결제버튼이 같은 컨테이너로 포함되어야.
+          </p>
+          <p class="step-item-description">결제정보 - 결제방법/주문상태/주문접수일시/주문완료일시/배송비/쿠폰사용금액/결제금액</p>
+          <p class="step-item-description">주문 정보를 로컬에 저장.</p> -->
+          </div>
+          <div class="step-item">
+            <span class="step-item-icon">3</span>
+            <test-text class="step-item-label" style="font-size: 1rem; color: var(--color-text)">
+              One last thing ㅡ how will you use your prototpe?
+            </test-text>
+            <small>(You can pick more than one)</small>
+            <test-group variant="chip" style="margin-left: 0.75rem">
+              <test-chip>Share for feedback</test-chip>
+              <test-chip>Present live</test-chip>
+              <test-chip>Test with users</test-chip>
+              <test-chip>Collaborate in real time</test-chip>
+              <test-chip>Hand off to developers</test-chip>
+            </test-group>
+          </div>
+        </section>
+        <div style="height: var(--space-4)"></div>
+        <footer><test-button variant="primary">Start creating</test-button></footer>
+      </section>
+    </section>
   </article>
 </main>

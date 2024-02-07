@@ -24,6 +24,7 @@ class Tile extends HTMLElement {
     // children.name = 'children'
     // container.innerHTML = this.innerHTML || ''
 
+    // TODO 이게 없으면백그라운드 는 뒤에 깔림. 하지만 보더가 중복됨.
     const style = this.getAttribute('style')
     container.setAttribute('style', style || '')
 

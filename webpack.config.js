@@ -87,15 +87,6 @@ const components = [
   'components',
 ]
 
-const setPages = data =>
-  data.map(item => {
-    return new HtmlWebpackPlugin({
-      template: HTML_TEMPLATE,
-      filename: `${item}.html`,
-      chunks: [`${item}`],
-    })
-  })
-
 let test = {}
 components.forEach(item => {
   test = {
@@ -112,20 +103,28 @@ patterns.forEach(item => {
   }
 })
 
+const setPages = data =>
+  data.map(item => {
+    return new HtmlWebpackPlugin({
+      template: HTML_TEMPLATE,
+      filename: `${item}.html`,
+      chunks: [`${item}`],
+    })
+  })
+
 module.exports = {
   mode: 'development', // development, production, none
   watch: true,
   target: ['web', 'es5'],
   devtool: 'inline-source-map',
   entry: {
-    index: ['./pages/home/home.ts', './public/javascripts/common/navbar.ts', './index.ts'],
+    index: ['./index.ts'],
     ...test,
     ...test2,
   },
   output: {
     path: path.resolve(__dirname, './build'), // 기본값은 dist
     filename: '[name].bundle.js',
-    // xhtml: 'pages/tokens.html',
     chunkFilename: '[name].js',
     // publicPath: './',
   },
@@ -152,28 +151,23 @@ module.exports = {
 
   plugins: [
     new CleanWebpackPlugin(), // output path 정의되어야 한다.
+    new HtmlWebpackPlugin({
+      template: HTML_TEMPLATE,
+      filename: 'index.html',
+      chunks: ['index'],
+      //   inject: true,
+      //   main: './pages/tokens.html',
 
+      //   minify: {
+      //     collapseWhitespace: true,
+      //     removeComments: true,
+      //   },
+    }),
     new MiniCssExtractPlugin({
       linkType: false,
       filename: '[name].css',
       chunkFilename: '[id].[contenthash].css',
     }),
-    new HtmlWebpackPlugin({
-      template: HTML_TEMPLATE,
-      filename: 'index.html',
-      chunks: ['index'],
-    }),
-    // new HtmlWebpackPlugin({
-    //   template: HTML_TEMPLATE,
-    //   filename: 'components.html',
-    //   chunks: ['components'],
-    //   main: './pages/tokens.html',
-    //   inject: true,
-    //   minify: {
-    //     collapseWhitespace: true,
-    //     removeComments: true,
-    //   },
-    // }),
 
     ...setPages(patterns),
     ...setPages(components),
@@ -187,7 +181,6 @@ module.exports = {
 
   module: {
     rules: [
-      // { test: /\.handlebars$/, loader: "handlebars-loader" },
       {
         test: /\.html$/i,
         loader: 'html-loader',
@@ -195,6 +188,18 @@ module.exports = {
           sources: false,
         },
       },
+      { test: /\.ts$/, use: 'ts-loader' },
+      {
+        test: /\.m?js$/,
+        exclude: /node_modules/,
+        use: ['babel-loader'],
+      },
+      {
+        test: /\.css$/,
+        // test: /\.(sc|c)ss$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'], // 뒤부터.
+      },
+      // { test: /\.handlebars$/, loader: "handlebars-loader" },
       // {
       //   test: /\.(png|jpg|gif)$/i,
       //   dependency: { not: ['url'] },
@@ -207,17 +212,6 @@ module.exports = {
       //     },
       //   ],
       // },
-      { test: /\.ts$/, use: 'ts-loader' },
-      {
-        test: /\.m?js$/,
-        exclude: /node_modules/,
-        use: ['babel-loader'],
-      },
-      {
-        test: /\.css$/,
-        // test: /\.(sc|c)ss$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'], // 뒤부터.
-      },
       // {
       //   test: /\.(png|jpe?g|gif|svg|webp)$/i,
       //   use: ['file-loader'],

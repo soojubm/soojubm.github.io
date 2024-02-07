@@ -5,8 +5,6 @@
       사용자가 수행할 수 있는 행동 목록. 단독으로 쓸 수 있다.
     </test-text>
 
-    <!-- a11ym menu - group - menuitem -->
-
     <dl class="article-aka">
       <dt>a.k.a.</dt>
       <dd title="shopify 22 12">Action list</dd>
@@ -15,25 +13,25 @@
     </dl>
 
     <section class="component-example">
-      <test-menuitem size="large" style="margin: 0 0 var(--space-2)">
-        <test-avatar slot="avatar" size="large">🦊</test-avatar>
-        <div slot="text">
-          <test-text variant="body">사진 및 동영상 백업</test-text>
-          <test-text variant="label">디스크립션이다</test-text>
-        </div>
-        <test-chip slot="action">버튼</test-chip>
-      </test-menuitem>
       <!-- TODO prefix / suffix -->
       <test-group variant="menuitem">
+        <test-menuitem size="large">
+          <test-avatar slot="avatar" size="large">🦊</test-avatar>
+          <div slot="text">
+            <test-text variant="body" style="line-height: 24px">사진 및 동영상 백업</test-text>
+            <test-text variant="label" style="line-height: 24px">디스크립션이다</test-text>
+          </div>
+          <test-chip slot="action">버튼</test-chip>
+        </test-menuitem>
         <test-menuitem label="메뉴아이템 링크" role="menuitem">
-          <test-avatar slot="avatar" name="bell"> </test-avatar>
+          <test-avatar slot="avatar">🦊</test-avatar>
         </test-menuitem>
         <test-menuitem role="menuitemradio" label="메뉴아이템 스위치">
-          <test-avatar slot="avatar"></test-avatar>
+          <test-avatar slot="avatar">🦊</test-avatar>
           <test-switch slot="action"></test-switch>
         </test-menuitem>
         <test-menuitem label="메뉴아이템 체크박스" role="menuitemcheckbox">
-          <test-avatar slot="avatar"></test-avatar>
+          <test-avatar slot="avatar">🦊</test-avatar>
           <test-checkbox
             slot="check"
             id="check1"
@@ -43,32 +41,24 @@
           ></test-checkbox>
         </test-menuitem>
         <test-menuitem label="메뉴아이템 라디오" role="menuitemradio">
-          <test-avatar slot="avatar"></test-avatar>
+          <test-avatar slot="avatar">🦊</test-avatar>
           <test-radio slot="check" id="radio1" name="radio1" value="" checked="true"></test-radio>
-        </test-menuitem>
-        <test-menuitem label="windows 패턴">
-          <test-avatar slot="avatar"></test-avatar>
-          <test-group slot="action" variant="chip">
-            <test-chip>with quick action</test-chip>
-            <test-avatar>
-              <test-icon name="arrow-right"></test-icon>
-            </test-avatar>
-          </test-group>
         </test-menuitem>
         <test-tile variant="elevated" size="small" role="menuitemcheckbox">
           <test-menuitem label="강조된 메뉴아이템" description="리스트가 될 수 없어">
-            <test-avatar slot="avatar" style="font-size: var(--font-size-large)">🦊</test-avatar>
+            <test-avatar slot="avatar">🦊</test-avatar>
             <test-switch slot="action" role="switch"></test-switch>
           </test-menuitem>
-          <small style="display: block; margin: var(--space-2) 0 0"
-            >Google 포토에 최대 해상도로 백업. TODO menuitem에 tile이 포함되어야 hover 상태.</small
-          >
+          <div style="height: var(--space-2)"></div>
+          <small>
+            Google 포토에 최대 해상도로 백업. TODO menuitem에 tile이 포함되어야 hover 상태.
+          </small>
         </test-tile>
       </test-group>
     </section>
 
     <section class="component-props">
-      <!-- <test-text variant="subhead">Props</test-text> -->
+      <test-text variant="subhead">Props</test-text>
       <dl>
         <dt>name</dt>
         <dd>string</dd>
@@ -110,56 +100,55 @@
       </test-text>
 
       <blockquote>
-        <p>전체 액션 props, 내부 액션 slot props</p>
         <ul class="checklist" style="margin: 0">
           <li>
-            labelSlot / textSlot / contentSlot :: 사이즈에 따라 두 줄이 될 수 있는데, 세부적인
-            정의를 실무자가 암기할 필요 없어야. 캡슐화
+            textSlot :: 사이즈에 따라 두 줄이 될 수 있는데, 세부적인 정의를 실무자가 암기할 필요
+            없어야. 캡슐화
           </li>
-          <li>
-            변경하기 쉽도록 데이터 타입을 통일해야 함. 변경 가능성을 고려할 때는 받는 데이터를
-            따라갈 수도 있겠다. 뭔 말이야 확실하게 메모해놓기..
-          </li>
+          <li>내부에 2개 이상의 액션이 존재할 수 있나?</li>
           <li>TODO :: list action ( + add product )</li>
-        </ul>
-
-        <ul>
           <li>
             크기 별로 특정 컨테이너의 주체가 나뉜다. 예를 들면 huge는 페이지 레벨의 정보 주체가 될
             수 있음.
           </li>
-          <li>학습이 필요없는 보편 케이스와 도메인에 종속적인 특수 케이스를 구분하기.</li>
+          <li>
+            Menus appear when users interact with a button, action, or other control. icon buttons,
+            buttons, and text fields.
+          </li>
         </ul>
       </blockquote>
 
       <test-text variant="subhead">Anatomy</test-text>
       <ul>
-        <li>* MenuBar</li>
         <li>Menu -> MenuButton(Trigger) / MenuList - MenuItem, MenuLink</li>
         <li>MenuItemAvatar. sizes: large | medium</li>
         <li>MenuItemLabel - title(truncated)</li>
         <li>MenuItemAction. toggle | more | delete</li>
         <li>MenuHelper. role: setting-item. filter-item.</li>
-        <li>
-          Menus appear when users interact with a button, action, or other control.
-          <br />
-          They can be opened from a variety of elements, most commonly icon buttons, buttons, and
-          text fields.
-        </li>
-        <li>avatarSlot. text14px. 32px size = 24px size + 8px space</li>
       </ul>
 
       <test-text variant="body-bold">Dropdown menu</test-text>
       <test-text variant="body-bold">Sheet menu</test-text>
       <test-text variant="body-bold">Modal menu</test-text>
       <test-text variant="body-bold">Sidebar menu</test-text>
-      <test-text variant="body-bold">Navigation? menu</test-text>
+      <test-text variant="body-bold">Sitemap menu</test-text>
+      <test-text variant="body-bold">Global navigation menu??</test-text>
     </section>
 
-    <section style="width: 100%; max-width: 400px">
+    <section class="component-case">
+      <test-tile>
+        <test-menuitem label="windows 패턴">
+          <test-avatar slot="avatar"></test-avatar>
+          <test-group slot="action" variant="chip">
+            <test-chip>with quick action</test-chip>
+            <test-chip icon="arrow-right"> </test-chip>
+          </test-group>
+        </test-menuitem>
+      </test-tile>
       <test-tile variant="flat">
         <test-group variant="dropdown">
           <test-text variant="label">menu heading / gap margin left on label</test-text>
+          <div style="height: var(--space-1)"></div>
           <test-menuitem role="menuitem" href="#design">
             <test-icon slot="check" name="check"></test-icon>
             <span slot="text">Only Text</span>
@@ -178,9 +167,6 @@
           </test-menuitem>
         </test-group>
       </test-tile>
-
-      <br />
-
       <test-tile variant="flat" class="share">
         <test-titlebar heading="공유"></test-titlebar>
         <br />
@@ -218,15 +204,12 @@
           placeholder="이건 사실 입력 기능이 없다 커스텀 컴포넌트."
           size="small"
           class="share-copy"
+          label="false"
         >
-          <!-- <input class="share-copy-url textfield-input" type="text" value=" readonly /> -->
-          <button class="share-copy-button js-copy" type="button" tabindex="0">복사</button>
+          <test-chip slot="suffix" class="js-copy">복사 </test-chip>
         </test-textfield>
       </test-tile>
-
-      <br />
-
-      <test-tile variant="flat" class="access">
+      <test-tile variant="flat" name="access">
         <test-titlebar heading="공개 대상 선택"></test-titlebar>
         <br />
         <test-group variant="menuitem">
@@ -251,30 +234,32 @@
           </test-menuitem>
         </test-group>
       </test-tile>
-
-      <br />
-
       <test-tile>
-        <test-tile>
-          <b>Personal License</b>
-          <small style="display: block; color: var(--color-text-light)">1 user</small>
-          <b style="position: absolute; right: var(--space-3); top: var(--space-3)">18,800 KRW</b>
-        </test-tile>
+        <div style="margin: 0 -1.5rem">
+          <test-tile style="padding-left: 1.5rem; padding-right: 1.5rem">
+            <b>Personal License</b>
+            <small style="display: block; color: var(--color-text-light)">1 user</small>
+            <b
+              style="
+                line-height: 18px;
+                position: absolute;
+                right: var(--space-4);
+                top: var(--space-4);
+              "
+              >18,800 KRW</b
+            >
+          </test-tile>
+        </div>
         <div style="margin: var(--space-3) 0">
           <test-menuitem>
-            <test-avatar
-              slot="avatar"
-              size="large"
-              fallback="🎅🏻"
-              src="/public/images/springsteen.jpg"
-            ></test-avatar>
+            <test-avatar slot="avatar" size="large" fallback="🎅🏻"></test-avatar>
             <div slot="text">
               <b class="item-name">Widgefy iOS Widgets</b>
               <p style="color: var(--color-text-light); line-height: 24px">떡볶이</p>
             </div>
             <div slot="action" style="text-align: right">
-              <p class="item-price">18,800 KRW</p>
-              <span style="color: var(--color-text-light)">6410</span>
+              <span style="display: block; line-height: 18px">18,800 KRW</span>
+              <span style="color: var(--color-text-light); line-height: 24px">6410</span>
             </div>
           </test-menuitem>
         </div>
@@ -282,22 +267,10 @@
           <test-button variant="primary">Buy now</test-button>
         </footer>
       </test-tile>
-
-      <test-separator></test-separator>
-
-      <test-tile
-        variant="flat"
-        class="userlist"
-        style="width: 100%; max-width: 400px; overflow: hidden; z-index: 1"
-      >
+      <test-tile variant="flat">
         <test-titlebar heading="팔로우하는 사람"></test-titlebar>
         <br />
-        <!-- <a class="link-outside" href="#">모두 보기</a> -->
-        <!-- <test-group variant="chip" style="margin: 0 0 var(--space-3)">
-          <test-chip status="active">모두</test-chip>
-          <test-chip>바보만</test-chip>
-        </test-group> -->
-        <div style="max-width: 200px; margin-bottom: var(--space-3)">
+        <div style="max-width: 200px; margin: 0 -0.25rem var(--space-3)">
           <test-tablist>
             <test-tab slot="tab" selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">
               모두
@@ -345,24 +318,27 @@
           >
         </test-group>
       </test-tile>
-
-      <br /><br />
-      <div>
+      <test-tile>
         <test-titlebar heading="See this post in">
-          <test-link slot="action">적용</test-link>
+          <test-chip slot="action" variant="plain">적용</test-chip>
         </test-titlebar>
         <br />
         <test-group variant="menuitem">
           <test-menuitem label="수줍이 앱">
-            <test-avatar slot="avatar" size="large" secondary></test-avatar>
+            <test-avatar
+              slot="avatar"
+              variant="secondary"
+              size="large"
+              default="true"
+            ></test-avatar>
             <test-chip slot="action">열기</test-chip>
           </test-menuitem>
           <test-menuitem label="사파리 브라우저">
-            <test-avatar slot="avatar" size="large"></test-avatar>
+            <test-avatar slot="avatar" size="large" default="true"></test-avatar>
             <test-chip slot="action" status="active">실행</test-chip>
           </test-menuitem>
         </test-group>
-      </div>
+      </test-tile>
     </section>
   </article>
 </main>

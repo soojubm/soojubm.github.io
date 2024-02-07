@@ -10,7 +10,6 @@
 .setting-item-helper {margin:var(--space-2) 0 var(--space-3) 0;font-size:var(--font-size-small);line-height: var(--font-line-height)}
 
 .setting-item-icon {position:absolute;right:.5rem;top:50%;transform:translateY(-50%);}
-.setting-item-form {padding:1rem 0 0;cursor:default;}
 
 @media (--small) {
 }

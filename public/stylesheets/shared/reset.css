@@ -340,8 +340,8 @@ mark {color:inherit;} mark::before {content: " [강조 시작] ";opacity:0;posit
 .theme-toggle {width:var(--size-medium);height:var(--size-medium);background:var(--color-background-weak);border-radius:var(--radius);overflow:hidden;position:relative;}
 .day {display:flex;align-items:center;justify-content:center;width:100%;height:100%;position:absolute;top:0;transition:top .2s ease .3s;}
 .night {display:flex;align-items:center;justify-content:center;width:100%;height:100%;position:absolute;top:var(--size-medium);transition:top .2s ease 0s;}
-.theme-dark .day {top:var(--size-medium);transition-delay:0s;}
-.theme-dark .night {top:0;transition-delay:.3s;}
+[data-theme=dark] .day {top:var(--size-medium);transition-delay:0s;}
+[data-theme=dark] .night {top:0;transition-delay:.3s;}
 
 
 
@@ -419,7 +419,8 @@ mark {color:inherit;} mark::before {content: " [강조 시작] ";opacity:0;posit
   border-radius: var(--radius);
   background: var(--color-background-weak);
   overflow: hidden;
-  font-size: inherit;
+  /* font-size: inherit; */
+  font: inherit;
 
   transition: all .2s ease;
   position: relative;

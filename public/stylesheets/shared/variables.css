@@ -2,16 +2,17 @@
 @custom-media --small (max-width: 1080px);
 @custom-media --tiny (max-width: 880px);
 
-/* media query variables 안 됨 */
-/* 모든 surface는 border를 갖는다. */
+/*
+- 모든 surface는 border를 갖는 것이 좋다.
+- 모든 container는 position: relative를 갖는 것이 좋다.
+*/
 
 :root {
   color-scheme: light dark;
 
   /* // -apple-system === san-serif / system-ui === BlinkMacSystemFont */
-  --font-family: 'IBM Plex Sans', system-ui, sans-serif;
-  /* --font-family: 'IBM Plex Sans', 'Pretendard', system-ui, sans-serif; */
-  --font-family: 'IBM Plex Sans', 'Gothic A1', system-ui, sans-serif;
+  --font-family: 'Pretendard', system-ui, sans-serif;
+  /* --font-family: 'IBM Plex Sans', 'Gothic A1', system-ui, sans-serif; */
   --font-family-heading: null;
   --font-family-body: null;
   --font-family-caption: null;
@@ -114,12 +115,6 @@
   --size-small: 1.5rem;
   --size-tiny: 1rem;
 
-  /* --size-4: 1rem;
-  --size-6: 1.5rem;
-  --size-8: 2rem;
-  --size-12: 3rem;
-  --size-20: 5rem; */
-
   /* squished-stretched */
 
   --space-05: .125rem;
@@ -131,10 +126,6 @@
   --space-1-minus: calc(var(--space-1) * -1);
   --space-2-minus: calc(var(--space-2) * -1);
   --space-3-minus: calc(var(--space-3) * -1);
-
-  --space-inline: var(--space-2);
-  --space-inset: 0;
-  --space-stack-small: 0;
 
   --space-after-title: 1rem;
   --space-after-subhead: var(--space-3);
@@ -217,11 +208,7 @@
   }
 }
 
-
-html[date-theme=dark] {}
-
-:root 
-.theme-dark {
+:root [data-theme=dark] {
   /* // img {filter: invert(100%) hue-rotate(180deg);mix-blend-mode: screen;mix-blend-mode: multiply;} */
   /* // 같은 변수도 재할당이 필요하다. */
   --gray200: #252d29;

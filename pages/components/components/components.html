@@ -1,6 +1,4 @@
 <main class="component">
-
-
   <article class="article">
     <test-text variant="title">Entity</test-text>
     <test-text variant="body-large">
@@ -64,7 +62,6 @@
       </test-group>
     </section>
   </article>
-
 
   <article class="article">
     <test-text variant="title">Links</test-text>
@@ -174,8 +171,6 @@
     </section>
   </article>
 
-
-
   <article class="article">
     <test-text variant="title">Select</test-text>
     <test-text variant="body-large">input shape와 chip shape</test-text>
@@ -264,7 +259,6 @@
     </test-text>
     <test-button variant="primary">Get All-Access</test-button>
   </div>
-
 
   <section class="textbox" style="margin: 4rem var(--grid-margin); position: relative">
     <test-group
@@ -467,9 +461,19 @@
                 <button class="carousel-dots-dot">1</button>
               </nav> -->
         <nav class="carousel-arrows">
-          <test-chip variant="back" icon="arrow-left" class="carousel-arrows-prev js-carousel-prev" aria-label="이전">
+          <test-chip
+            variant="back"
+            icon="arrow-left"
+            class="carousel-arrows-prev js-carousel-prev"
+            aria-label="이전"
+          >
           </test-chip>
-          <test-chip variant="back" icon="arrow-right" class="carousel-arrows-next js-carousel-next" aria-label="다음">
+          <test-chip
+            variant="back"
+            icon="arrow-right"
+            class="carousel-arrows-next js-carousel-next"
+            aria-label="다음"
+          >
           </test-chip>
         </nav>
       </section>
@@ -490,73 +494,71 @@
     <section class="component-example">
       <div>
         <style>
+          [role='columnheader'],
           [role='cell'] {
             width: 25%;
             padding: var(--space-3);
           }
+          [role='row'] {
+            display: flex;
+            border-top: var(--border);
+          }
         </style>
-        <section>
-          <div
-            role="row"
-            style="
-              display: flex;
-              margin: var(--space-3) 0 0 0;
-              font-size: var(--font-size-small);
-              font-weight: var(--font-weight-bold);
-              color: var(--color-text-light);
-            "
-          >
-            <span role="cell" style="flex: auto">이름</span>
-            <span role="cell" style="flex: auto">소유자</span>
-            <span role="cell" style="flex: auto">마지막으로 수정한 날짜</span>
-            <span role="cell" style="flex: auto">파일 크기</span>
-          </div>
-          <div class="" role="row" style="display: flex; border-top: var(--border)">
-            <span role="cell" style="flex: auto">이름</span>
-            <span role="cell" style="flex: auto">소유자</span>
-            <span role="cell" style="flex: auto">2023. 05. 05</span>
-            <span role="cell" style="flex: auto">2KB</span>
-          </div>
-        </section>
 
         <br /><br />
 
-        <div class="album-track">
-          <header class="album-track-label" role="row">
-            <span class="album-track-label-item" role="columnheader">#</span>
-            <span class="album-track-label-item">제목</span>
-            <span class="album-track-label-item">Gengre</span>
-            <span class="album-track-label-item">Progress</span>
-            <span class="album-track-label-item">Status</span>
-            <span class="album-track-label-item">러닝타임</span>
-            <span class="album-track-label-item" title=" date added(sort)">Date</span>
+        <p>모든 행이 DOM에 존재하는 경우 aria-rowindex 불필요</p>
+
+        <div
+          role="table"
+          aria-label="Semantic Elements"
+          aria-describedby="semantic_elements_table_desc"
+          aria-rowcount="81"
+        >
+          <div id="semantic_elements_table_desc">
+            Semantic Elements to use instead of ARIA's roles
+          </div>
+          <header role="rowgroup">
+            <div role="row">
+              <span role="columnheader" aria-sort="none">#</span>
+              <span role="columnheader" aria-sort="none">제목</span>
+              <span role="columnheader" aria-sort="none">Gengre</span>
+              <!-- <span role="columnheader" aria-sort="none">Progress</span> -->
+              <span role="columnheader" aria-sort="none">Status</span>
+              <span role="columnheader" aria-title="date added(sort)">Date</span>
+            </div>
           </header>
-          <div class="album-track-row" role="row">
-            <span class="album-track-row-column" data-cell="number">1</span>
-            <span class="album-track-row-column">
-              <test-menu-item label="Dancing in the Dark" description="Bruce Springsteen">
-                <test-avatar slot="avatar"></test-avatar>
-              </test-menu-item>
-            </span>
-            <span class="album-track-row-column stack">
-              <test-tag>hiphop</test-tag><test-tag>rap</test-tag>
-            </span>
-            <span class="album-track-row-column">In Review --</span>
-            <span class="album-track-row-column">
-              <em
-                class="badge"
-                style="height: auto; margin-right: 0.5rem; background: gold; padding: 3px"
-              ></em>
-              Error
-            </span>
-            <span class="album-track-row-column">7 : 02</span>
+          <div role="rowgroup">
+            <div role="row" aria-rowindex="11">
+              <span role="cell">1</span>
+              <span role="cell">1</span>
+              <span role="cell">
+                <test-menu-item label="Dancing in the Dark" description="Bruce Springsteen">
+                  <test-avatar slot="avatar"></test-avatar>
+                </test-menu-item>
+              </span>
+              <span role="cell">
+                <test-group variant="tag">
+                  <test-tag>hiphop</test-tag>
+                  <test-tag>rap</test-tag>
+                </test-group>
+              </span>
+              <span role="cell">
+                <em
+                  class="badge"
+                  style="height: auto; margin-right: 0.5rem; background: gold; padding: 3px"
+                ></em>
+                Error
+              </span>
+            </div>
+            <div role="row" aria-rowindex="16">
+              <span role="cell">2</span>
+              <span role="cell"></span>
+            </div>
           </div>
         </div>
 
-        <br />
-        <br />
-
-        <table>
+        <table style="width: 100%">
           <caption>
             히라가나 오십음도
           </caption>
@@ -565,8 +567,8 @@
             <col span="2" class="batman">
             <col span="2" class="flash">
           </colgroup> -->
-          <thead role="rowgroup">
-            <tr role="row">
+          <thead>
+            <tr>
               <th role="columnheader" aria-sort="none" class="table-checkbox">
                 <test-checkbox></test-checkbox>
               </th>
@@ -578,8 +580,8 @@
               <th scope="col" class="right">숫자</th>
             </tr>
           </thead>
-          <tbody role="rowgroup">
-            <tr role="row" aria-rowindex="11">
+          <tbody>
+            <tr aria-rowindex="11">
               <td>
                 <test-checkbox></test-checkbox>
               </td>
@@ -618,7 +620,7 @@
               <test-group variant="chip">
                 <test-avatar></test-avatar>
                 Gabriel
-              </test-g>
+              </test-group>
             </th>
             <td>13</td>
             <td><test-tag>Male</test-tag></td>
@@ -638,20 +640,14 @@
 
       <br /><br />
 
-      <table style="font-size: 12px">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Description</th>
-          </tr>
-        </thead>
+      <table style="font-size: 12px; border: none">
         <tbody>
           <tr>
-            <td>container</td>
-            <td></td>
+            <th>th</th>
+            <td>td</td>
           </tr>
           <tr>
-            <td>content</td>
+            <th>th</th>
             <td>이미지, 텍스트, 아이콘, 이모지를 포함할 수 있습니다.</td>
           </tr>
         </tbody>
@@ -778,8 +774,7 @@
       </test-textfield>
       <test-tile variant="elevated" size="small">
         <test-menuitem label="Add the member" style="max-width: 50%">
-          <test-avatar slot="avatar" icon="plus">
-          </test-avatar>
+          <test-avatar slot="avatar" icon="plus"> </test-avatar>
         </test-menuitem>
       </test-tile>
     </section>
@@ -800,8 +795,7 @@
       </figure>
       <b class="file-attachment-item-name">${file.name}</b>
       <small class="file-attachment-item-size">${returnFileSize(file.size)}</small>
-      <test-chip icon="xmark" class="file-attachment-item-delete js-remove-this">
-      </test-chip>
+      <test-chip icon="xmark" class="file-attachment-item-delete js-remove-this"> </test-chip>
     </div>
 
     <!-- ! flex-wrap: warp일 때 min-width가 fixed -->
@@ -819,7 +813,6 @@
         Byline
       </figcaption>
     </test-tile>
-
   </article>
 
   <section style="display: flex; justify-content: center; gap: 2rem; margin: 0 var(--grid-margin)">

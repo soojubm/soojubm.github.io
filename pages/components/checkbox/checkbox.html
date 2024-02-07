@@ -19,7 +19,7 @@
           helper="주로 세팅 페이지에서 사용되는 디스크립션 영역. 항상 텍스트 더미인 것은 아님. 하지만 그렇다면 expanded/collapsed 맥락이 아닐까?"
           checked
         >
-          체크박스
+          체크박스 / helper를 prop으로 주지 않는 것이 좋겠다.
         </test-checkbox>
         <input
           type="text"
@@ -28,17 +28,15 @@
           placeholder="기타로 오토바이를 타자."
           hidden
         />
-        <test-checkbox class="js-check" id="terms" name="terms">
-          이용약관에 동의합니다.
-          <a href="#">이용약관 바로가기</a>
-        </test-checkbox>
         <test-group variant="checkbox">
           <test-checkbox name="checkbox" checked disabled>비활성 상태</test-checkbox>
           <test-checkbox name="checkbox" disabled>비활성 상태</test-checkbox>
         </test-group>
         <test-separator></test-separator>
-        <test-tile variant="elevated">
-          <test-checkbox name="checkbox" checked> 모바일 친화적인 Tiled 형태. </test-checkbox>
+        <test-tile variant="elevated" size="small" style="width: 100%">
+          <div style="margin: 0 var(--space-2)">
+            <test-checkbox name="checkbox" checked> 모바일 친화적인 Tiled 형태. </test-checkbox>
+          </div>
         </test-tile>
       </test-group>
     </section>
@@ -66,9 +64,9 @@
         <dd>TODO checkbox group에서 checkboxAll에 종속되는 옵션</dd>
         <dt>onChange</dt>
         <dd>(event: React.ChangeEvent[HTMLInputElement]) >] void</dd>
-        <dd>React.ChangeEventHandler[]</dd>
-        <dd>checkbox group의 prop</dd>
+        <dd>checkbox group의 prop. React.ChangeEventHandler[]</dd>
       </dl>
+      <p>role=checkbox aria-checked=false</p>
     </section>
 
     <section class="component-guide">
@@ -97,38 +95,41 @@
           >
             <em style="font-style: normal"> 모두 동의합니다 </em>
           </test-checkbox>
-          <test-checkbox name="interest" value="other"> 기타 </test-checkbox>
-          <test-checkbox name="interest" value="other"> 기타 </test-checkbox>
+          <test-checkbox class="js-check" id="terms" name="terms">
+            이용약관에 동의합니다.
+            <a href="#">이용약관 바로가기</a>
+          </test-checkbox>
         </test-group>
       </test-tile>
       <test-tile>
         <test-group variant="checkbox">
           <test-text variant="body-bold">콘텐츠 필터링</test-text>
+          <div style="height: var(--space-1)"></div>
           <test-checkbox name="interest" value="other">옵션 하나</test-checkbox>
           <test-checkbox name="interest" value="other">옵션 둘</test-checkbox>
           <test-checkbox name="interest" value="other">옵션 셋</test-checkbox>
           <test-checkbox name="interest" value="other">옵셧 넷</test-checkbox>
-          <div style="height: var(--space-4)"></div>
+          <div style="height: var(--space-3)"></div>
           <test-button variant="secondary">적용</test-button>
         </test-group>
       </test-tile>
       <test-checkbox>포토리뷰만 보기</test-checkbox>
       <!-- <test-text variant="body">쿠키 관련 util</test-text> -->
-      <test-tile style="max-width: 640px">
+      <test-tile>
         <test-checkbox>다시 묻지 않기 / 일주일 동안 보지 않기don't ask again</test-checkbox>
       </test-tile>
-      <test-tile style="max-width: 640px; z-index: 1">
+      <test-tile>
         <test-titlebar heading="컬렉션에 추가">
           <test-chip slot="action">새 컬렉션 만들기</test-chip>
         </test-titlebar>
         <br />
         <test-group variant="checkbox">
           <!-- aira-checked="mixed" aria-controls="1 2" -->
-          <test-checkbox>재생 목록 1</test-checkbox>
-          <test-checkbox>재생 목록 2</test-checkbox>
+          <test-checkbox>컬렉션 1</test-checkbox>
+          <test-checkbox>컬렉션 2</test-checkbox>
         </test-group>
       </test-tile>
-      <test-tile style="max-width: 640px; z-index: 1">
+      <test-tile>
         <test-titlebar heading="컬렉션 만들기">
           <test-chip slot="action">완료</test-chip>
         </test-titlebar>
@@ -142,6 +143,5 @@
         </test-tile>
       </test-tile>
     </section>
-    <!-- <p>role=checkbox aria-checked=false</p> -->
   </article>
 </main>

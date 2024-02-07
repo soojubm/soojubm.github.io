@@ -1,31 +1,27 @@
 <main class="component post">
   <header class="post-head js-post-head">
     <a class="post-head-category" href="#post">Murmur</a>
-    <h1
-      class="post-head-headline"
-      style="margin: var(--space-2) 0 var(--space-4); line-height: 1.4"
-    >
+    <!-- 상하단동일해야 스티키? -->
+    <test-text variant="title" style="line-height: 1.4">
       Pinterest announces industry-first body type technology to increase body representation on
       platform
-    </h1>
-    <div style="margin: var(--space-4) 0">
-      <test-text variant="body-large" class="post-head-kicker">
-        Pinterest announces industry-first body type technology to increase body representation on
-        platform
-      </test-text>
-    </div>
-    <test-menuitem label="수줍이" description="Youtube Subscriber">
-      <test-avatar slot="avatar" size="medium"></test-avatar>
-      <time class="post-head-dateline">2022년 4월 9일</time>
-      <i class="icon-bullet"></i>
-      <span class="post-head-readingtime">약 40초 분량</span>
-      <div class="post-head-progress" role="progressbar" aria-valuenow=""></div>
-    </test-menuitem>
-    <!-- <address class="post-byline">
-      <figure class="post-byline-avatar"><img src="" alt="" /></figure>
-      <span class="post-byline-name">soojubm</span>
-      <time class="post-byline-time">2018. 06. 29.</time>
-    </address> -->
+    </test-text>
+    <test-text variant="body-large" class="post-head-kicker">
+      Pinterest announces industry-first body type technology to increase body representation on
+      platform
+    </test-text>
+    <div style="height: var(--space-4)"></div>
+    <address>
+      <test-menuitem label="수줍이" description="Youtube Subscriber">
+        <test-avatar slot="avatar" size="medium" default="true"></test-avatar>
+        <div slot="text">
+          <time class="post-head-dateline">2022년 4월 9일</time>
+          <i class="icon-bullet"></i>
+          <span class="post-head-readingtime">약 40초 분량</span>
+          <div class="post-head-progress" role="progressbar" aria-valuenow=""></div>
+        </div>
+      </test-menuitem>
+    </address>
   </header>
 
   <section class="post-body">
@@ -34,9 +30,7 @@
     </figure>
 
     <nav style="display: flex; position: relative">
-      <div style="width: 200px; margin-left: -200px">
-        <test-text variant="subhead">Table of contents</test-text>
-      </div>
+      <test-text variant="subhead">Table of contents</test-text>
       <ol>
         <li><test-text variant="body-large">Decline every meeting</test-text></li>
         <li><test-text variant="body-large">Take the thrash out of feedback cycles</test-text></li>
@@ -48,7 +42,6 @@
     <p class="post-body-kicker">
       title / kicker / published date / thumbnail image / images / subhead - paragraph / text list /
       byline / share actions / comment /
-      <span class="linebreak"></span>
     </p>
 
     <q
@@ -70,30 +63,29 @@
       <address><b>Kelly Emanuelli, Head of Luxury at Pinterest</b></address>
     </q>
 
-    <h3 class="post-body-subhead">
+    <test-text variant="subhead">
       An ecosystem of content that celebrates inclusion and diversity
-    </h3>
-    <p class="post-body-paragraph">
+    </test-text>
+    <test-text variant="body-large">
       콘텐츠가 다른 플랫폼에 공유되는 횟수가 많다면 페이지의 상단에 byline을 보여주는 것이 좋다.
       byline은 상단 고정되지 않기 때문에 byline에 작성 시간과 리딩 시간 등을 포함하는 것이 좋다.
-    </p>
-    <p class="post-body-paragraph">
+    </test-text>
+    <test-text variant="body-large">
       무제한(스트리밍) / 1개 무제한(미디엄) / 여러 개 중 1개 (총 1 페이스북) / 여러 개 중 여러 개에
       각 1번 (깃허브)
-    </p>
-    <p class="post-body-paragraph">
+    </test-text>
+    <test-text variant="body-large">
       Vertical scroll progressbar 유행 지난 듯. 전체 윈도우 영영 혹은 본문 영역track, media,
       supporting text(supporter), elevated (hover), 도어메트 네비게이션, 유틸리티 링크(네비게이션)
-    </p>
+    </test-text>
 
-    <p class="post-body-paragraph">
+    <test-text variant="body-large">
       포스트를 수정하고 삭제하기 위한 버튼이 필요하다. 신고를 위한 버튼은 처음부터 필요한 기능은
       아니기 때문에 뺀다. 작성자에게만 필요한 버튼은 콘텐츠 내부가 아닌 브라우저의 구석에 눈에 띄게
       배치한다. Input zooming on iOS devices :: iOS devices will slightly zoom into the input when
       the font size is less than 16px.
-    </p>
-
-    <p class="post-body-paragraph" type="1">
+    </test-text>
+    <test-text variant="body-large" type="1">
       prefix, name, suffix는 언더스코어(_)로 구분합니다. direction / shape / status / color / size
       suffix에서는 direction, shape, status, color, size 등의 요소를 정의합니다. 2개 이상의 suffix가
       사용되는 경우 direction, shape, status, color, size의 순서로 작성합니다. suffix에서는 단어를
@@ -103,26 +95,32 @@
       경우 1x, 2x를 사용합니다. 제플린과 같이 프로그램에 의해 자동으로 suffix가 붙는 경우는 1x, 2x
       가이드를 따르지 않아도 됩니다. 이미 배포되어 적용된 에셋에서 suffix가 추가되는 경우, 기존
       에셋을 변형하지 않고 구별자를 추가합니다.
-    </p>
-    <ul class="post-body-paragraph">
-      <li>아이콘은 svg, 이미지는 png를 사용하고 png는 추가 압축으로 용량을 줄입니다.</li>
-      <li>영문 소문자와 숫자, 언더스코어로 네이밍합니다.</li>
-      <li>글로벌과 로컬을 prefix로 구분하는데, 글로벌에는 icon_, 로컬에는, parentName_</li>
-      <li>색상과 사이즈를 suffix로 구분하는데,</li>
-    </ul>
+    </test-text>
+
+    <blockquote>
+      <ul class="checklist">
+        <li>아이콘은 svg, 이미지는 png를 사용하고 png는 추가 압축으로 용량을 줄입니다.</li>
+        <li>영문 소문자와 숫자, 언더스코어로 네이밍합니다.</li>
+        <li>글로벌과 로컬을 prefix로 구분하는데, 글로벌에는 icon_, 로컬에는, parentName_</li>
+        <li>색상과 사이즈를 suffix로 구분하는데,</li>
+      </ul>
+    </blockquote>
 
     <figure>
       <img src="" alt="" />
       <figcaption>iamge caption</figcaption>
     </figure>
+
     <code class="post-body-code">
       const { body } = document;
       <br />
       const bodySection = body.querySelector('section');
     </code>
   </section>
+
   <section class="post-reaction"></section>
-  <test-group variant="chip" class="post-hashtag">
+
+  <test-group variant="chip">
     <test-chip>#Webpack</test-chip>
     <test-chip>#HTML5</test-chip>
     <test-chip>#accessibility</test-chip>
@@ -130,13 +128,14 @@
   </test-group>
 
   <!-- TODO RESULT COMPONENT, TOP BLUR -->
-  <aside>
+
+  <aside style="margin: 2rem 0">
     <div class="post-attract-blur"></div>
     <test-text variant="subhead">다음 내용이 궁금하신가요?</test-text>
     <test-text variant="body">
       한 달 동안 무료로 모든 콘텐츠를 체험해보세요. 언제든 해지하실 수 있어요.
     </test-text>
-    <ul>
+    <ul class="checklist" style="margin: 1.25rem 0">
       <li>Medium의 모든 회원 전용 스토리에 액세스하세요.</li>
       <li>자신에게 중요한 주제에 대해 더 자세히 알아보세요.</li>
       <li>수천 가지 질문에 답하는 심층 기사를 받아보세요.</li>
@@ -149,58 +148,52 @@
     <test-menuitem label="192" roloe="button">
       <test-avatar slot="avatar" icon="message"> </test-avatar>
     </test-menuitem>
-    <section class="post-share"></section>
   </test-group>
   <test-separator></test-separator>
-  <test-tile variant="elevated">
-    <section class="comment">
-      <form variany="elevated" class="feed-make" action="">
-        <test-titlebar heading="게시물 만들기"></test-titlebar>
-        <div style="height: 1rem"></div>
-        <test-menuitem label="수줍이" size="medium">
-          <test-avatar slot="avatar"></test-avatar>
-        </test-menuitem>
-        <div class="textfield comment-write-text" style="max-width: 100%; margin: var(--space-3) 0">
-          <!-- <label class="textfield-label" for="" aria-hidden="true">댓글</label> -->
-          <textarea
-            class="textfield-input"
-            rows="3"
-            name="comment"
-            placeholder="무슨 생각을 하고 계신가요? feed와 comment에서 사용. textarea 컴포넌트 정의. 취소 버튼의 위치. toolbar."
-            style="width: 100%; height: auto; box-sizing: border-box"
-          ></textarea>
-        </div>
-        <!-- <div class="textfield comment-write-name">
-          <label class="textfield-label" for="" aria-hidden="true">이름</label>
-          <input class="textfield-input js-comment-textfield" type="text" name="" id="comment-name" placeholder="이름을 입력하세요." />
-        </div>
-        <div class="textfield comment-write-password">
-          <label class="textfield-label" for="" aria-hidden="true">비밀번호</label>
-          <input class="textfield-input js-comment-textfield" type="text" name="" id="comment-password" placeholder="비밀번호을 입력하세요." />
-        </div> -->
-        <footer class="comment-write-footer">
-          <!-- ! 게시와 등록 구분-->
-          <test-button variant="secondary">댓글 게시</test-button>
-        </footer>
-      </form>
-    </section>
+  <test-tile class="comment" variant="elevated">
+    <form variany="elevated" class="feed-make" action="">
+      <test-titlebar heading="게시물 만들기"></test-titlebar>
+      <div style="height: 1rem"></div>
+      <test-menuitem label="수줍이" size="medium">
+        <test-avatar slot="avatar" default="true"></test-avatar>
+      </test-menuitem>
+      <div class="textfield comment-write-text" style="max-width: 100%; margin: var(--space-3) 0">
+        <!-- <label class="textfield-label" for="" aria-hidden="true">댓글</label> -->
+        <textarea
+          class="textfield-input"
+          rows="3"
+          name="comment"
+          placeholder="무슨 생각을 하고 계신가요? feed와 comment에서 사용. textarea 컴포넌트 정의. 취소 버튼의 위치. toolbar."
+          style="width: 100%; height: auto; box-sizing: border-box"
+        ></textarea>
+      </div>
+      <!-- <div class="textfield comment-write-name">
+        <label class="textfield-label" for="" aria-hidden="true">이름</label>
+        <input class="textfield-input js-comment-textfield" type="text" name="" id="comment-name" placeholder="이름을 입력하세요." />
+      </div>
+      <div class="textfield comment-write-password">
+        <label class="textfield-label" for="" aria-hidden="true">비밀번호</label>
+        <input class="textfield-input js-comment-textfield" type="text" name="" id="comment-password" placeholder="비밀번호을 입력하세요." />
+      </div> -->
+      <footer class="comment-write-footer">
+        <test-button variant="primary" data-temp="게시/등록">댓글 게시</test-button>
+      </footer>
+    </form>
   </test-tile>
   <br />
   <div class="comment-list">
     <div class="comment-list-item">
       <test-menuitem label="soojubm" description="1 day ago">
-        <test-avatar slot="avatar" class="comment-list-item-avatar" href="#">
-          <!-- <img src="/public/images/springsteen.jpg" /> -->
-        </test-avatar>
+        <test-avatar slot="avatar" default="true"> </test-avatar>
         <!-- <a class="comment-list-item-author" href="#">soojubm</a>
         <time class="comment-list-item-date" datetime="2016">1 day ago</time> -->
       </test-menuitem>
-      <p class="comment-list-item-text">
+      <test-text variant="body">
         우와 처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요. 우와
         처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요.
-      </p>
+      </test-text>
       <button class="comment-list-item-reply">답글 <span>7</span></button>
-      <test-chip icon="more-vert" class="comment-list-item-morevert js-toggle"> </test-chip>
+      <test-chip icon="more-vert" class="js-toggle"> </test-chip>
       <menu class="comment-list-item-menu">
         <button class="">수정</button>
         <button class="">삭제</button>
@@ -209,17 +202,17 @@
   </div>
 </main>
 
-<nav class="post-pagination">
+<nav class="post-pagination" style="margin: 4rem 0">
   <a class="post-pagination-previous" href="#">
-    <test-chip variant="back" class="post-pagination-next-media" icon="arrow-left"> </test-chip>
-    <test-text variant="subhead" class="post-pagination-previous-label" title="prev article"
-      >이전 콘텐츠</test-text
-    >
-    <span class="post-pagination-previous-postname">Return to all articles</span>
+    <test-chip variant="back" icon="arrow-left"> </test-chip>
+    <div style="height: var(--space-3)"></div>
+    <test-text variant="label" title="prev article">이전 콘텐츠</test-text>
+    <test-text variant="subhead">Return to all articles</test-text>
   </a>
   <a class="post-pagination-next" href="#">
-    <test-chip variant="back" class="post-pagination-next-media" icon="arrow-right"> </test-chip>
-    <test-text variant="subhead" class="post-pagination-next-label">다음 콘텐츠</test-text>
-    <span class="post-pagination-next-postname">Avoid invisible text during font loading</span>
+    <test-chip variant="back" icon="arrow-right"> </test-chip>
+    <div style="height: var(--space-3)"></div>
+    <test-text variant="label">다음 콘텐츠</test-text>
+    <test-text variant="subhead">Avoid invisible text during font loading</test-text>
   </a>
 </nav>

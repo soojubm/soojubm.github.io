@@ -26,11 +26,12 @@
       1월 1일 변경된 내용 보기
     </button>
   </aside>
+
   <article class="feed" aria-setsize="3" aria-posinset="1">
     <test-tag> 🔥 Most Popular </test-tag>
     <div style="height: 0.75rem"></div>
     <test-menuitem label="Elon Musk" description="2 hour" class="feed-user">
-      <test-avatar slot="avatar"></test-avatar>
+      <test-avatar slot="avatar" default="true"></test-avatar>
     </test-menuitem>
     <div variant="nuded" class="feed-content">
       <figure size="huge" class="feed-content-media">
@@ -47,35 +48,25 @@
         <test-tag>Meta</test-tag>
         <test-tag>Nvidia</test-tag>
       </test-group>
-      <div
-        style="
-          margin: 1rem 0;
-          padding: 1rem;
-          background: var(--color-background-weak);
-          border-radius: var(--radius);
-        "
-      >
+      <div style="height: var(--space-4)"></div>
+      <test-tile variant="elevated">
         <test-group alignment="vertical">
           <test-tag>3월 14일 수정됨</test-tag>
           <test-menuitem label="Kakao" description="https://www.kakaocorp.com" size="large">
-            <test-avatar slot="avatar">
-              <img src="/public/images/springsteen.jpg" alt="" />
-            </test-avatar>
+            <test-avatar slot="avatar"> </test-avatar>
           </test-menuitem>
           <test-menuitem label="Naver" description="https://www.naver.com" size="large">
-            <test-avatar slot="avatar">
-              <img src="/public/images/springsteen.jpg" alt="" />
-            </test-avatar>
+            <test-avatar slot="avatar"> </test-avatar>
           </test-menuitem>
         </test-group>
-      </div>
+      </test-tile>
+      <div style="height: var(--space-4)"></div>
       <test-group class="feed-reaction">
+        <!-- TODO Reaction Button -> menuitem / chip. 슬롯 ? -->
         <test-chip>
           <i slot="icon">💕</i>
           119
         </test-chip>
-        <!-- <figure class="post-reaction-like-icon"></figure>
-          <span class="post-reaction-like-count">119</span> -->
       </test-group>
     </div>
   </article>

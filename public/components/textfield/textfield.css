@@ -58,6 +58,7 @@ input[type=search]::-webkit-search-results-button,
 input[type=search]::-webkit-search-results-decoration {display:none;}
 
 /* textfield 중복 / for select */
+:host,
 .textfield {
   width: 100%;
   position:relative;
@@ -67,6 +68,7 @@ input[type=search]::-webkit-search-results-decoration {display:none;}
   --textfield-border: var(--border);
   --textfield-radius: var(--radius);
   --textfield-text-color: 0;
+  /* TODO icon -> addon */
   --textfield-icon-position: var(--size-small);
   --textfield-placeholder-color: null;
 }
@@ -99,29 +101,15 @@ input[type=search]::-webkit-search-results-decoration {display:none;}
 .textfield-reveal {font-size:var(--font-size-small);color:var(--color-text-light);}
 .textfield-check {} .textfield-unit {}
 
-
-/* :: 조건부 append 시 slotted 안됨 */
-.textfield[data-label=false] {
-  --textfield-icon-position: 0;
-}
-[data-label=false] .textfield-input {padding-left:var(--textfield-height);}
-/* 왜 안 됨. */
-/* ::slotted([slot=prefix]) ~ .textfield-input {padding-left:48px !important;} */
-
-/* sizes */
-.textfield[data-size=small] {
---textfield-height: var(--size-medium); 
-}
-
-/* TODO slotted에서 크기나 정렬에 대한 정의는 없어야 함. 위치. 하지만 그렇게 하려면 조금 더. */
+/* TODO slotted에서 크기나 정렬에 대한 정의만 있어야 함.. 형태는 슬롯으로 들어온 친구가 하는 것. */
 ::slotted([slot=suffix]) {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: var(--size-large);
+  /* width: var(--size-large); */
   height: var(--textfield-height);
   /* color:var(--color-primary); */
-  position:absolute;top:var(--size-small);right:0;
+  position:absolute;top:var(--textfield-icon-position);right:0;
 }
 
 ::slotted([slot=prefix]) {
@@ -135,6 +123,20 @@ input[type=search]::-webkit-search-results-decoration {display:none;}
 ::slotted([slot=link]) {
   font-size:var(--font-size-small);
   position:absolute;right:0;top:0;
+}
+
+
+/* :: 조건부 append 시 slotted 안됨 */
+.textfield[data-label=false] {
+  --textfield-icon-position: 0;
+}
+[data-label=false] .textfield-input {padding-left:var(--textfield-height);}
+/* 왜 안 됨. */
+/* ::slotted([slot=prefix]) ~ .textfield-input {padding-left:48px !important;} */
+
+/* sizes */
+.textfield[data-size=small] {
+--textfield-height: var(--size-medium); 
 }
 
 .is-invalid .textfield-label {}
