@@ -76,8 +76,6 @@ export function defineCustomElement() {
     customElements.define('test-tooltip', Tooltip)
 
     customElements.define('test-separator', Separator)
-
-    // customElements.define('close-button', CloseButton)
   }
 }
 

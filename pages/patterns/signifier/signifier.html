@@ -5,9 +5,12 @@
       예측 가능한 사용자 인터렉션으로 서비스와 사용자 사이의 신뢰 구축. 기표로 정의하지 않은
       아이콘을 단순 장식적인 용도로 사용하지 마세요.
     </test-text>
-
     <test-text variant="body-large">Keep things consistent.</test-text>
-    <!-- 성공적인 상호작용 피드백은 장식적인 것이 아니라 정보를 제공하는 것입니다. 시각적 노이즈나 강렬한 색상 변화를 유발하는 정교한 전환을 피하세요. 주의를 산만하게 하는 애니메이션은 혼란을 야기하고 인터페이스를 사용하기 불편하게 만들 수 있습니다. -->
+    <!--
+      성공적인 상호작용 피드백은 장식적인 것이 아니라 정보를 제공하는 것입니다.
+      시각적 노이즈나 강렬한 색상 변화를 유발하는 정교한 전환을 피하세요.
+      주의를 산만하게 하는 애니메이션은 혼란을 야기하고 인터페이스를 사용하기 불편하게 만들 수 있습니다.
+    -->
     <test-text variant="body-large">
       Consistent treatments for interaction feedback create recognizable patterns. If an interaction
       produces different feedback across the Shopify admin, it deteriorates the integrity of the
@@ -31,7 +34,7 @@
 
     <section class="component-guide">
       <test-text variant="subhead">Clickable overview</test-text>
-      <div class="component-example">
+      <div class="component-example" style="margin-top: 1.5rem">
         <section class="token-group">
           <div class="token-item" style="box-shadow: var(--shadow-tile)">
             <p>
@@ -55,13 +58,13 @@
       </div>
 
       <test-text variant="subhead">Icons</test-text>
-      <test-text variant="body"
-        >Shopify provides Figma community resources for Polaris components, styles, and icons. If
-        you are new to Figma, check out our onboarding guide, or open Figma and start designing with
-        the Polaris:</test-text
-      >
+      <test-text variant="body">
+        Shopify provides Figma community resources for Polaris components, styles, and icons. If you
+        are new to Figma, check out our onboarding guide, or open Figma and start designing with the
+        Polaris:
+      </test-text>
 
-      <div class="component-example">
+      <div class="component-example" style="margin-top: 1.5rem">
         <section
           class="group"
           style="display: flex; flex-wrap: wrap; gap: var(--space-3); margin: 0 0 2rem"
@@ -152,7 +155,7 @@
           </test-entity>
         </section>
       </div>
-      <blockquote style="margin: 1rem 0">
+      <blockquote>
         <ul style="margin: 0">
           <li>Use only universally recognized icons to represent actions or options.</li>
           <li>addable / expandable, done / check / positive</li>
@@ -176,76 +179,74 @@
       </test-text>
       <test-text variant="body">position - 로 주었을 때, 텍스트 링크가 짤리면 오류</test-text>
 
-      <test-text variant="body-bold">Hover states</test-text>
-      <div
-        class="tile"
-        style="display: flex; flex-direction: column; max-width: 640px; gap: 1rem; padding: 2rem"
-      >
-        <a
-          class="item is-hoverable"
-          data-size="medium"
-          style="
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            width: 100%;
-            max-width: 400px;
-            margin: 0 auto;
-          "
+      <div class="component-example" style="margin-top: 1.5rem">
+        <test-text variant="body-bold">Hover states</test-text>
+        <div
+          class="tile"
+          style="display: flex; flex-direction: column; max-width: 640px; gap: 1rem; padding: 2rem"
         >
-          <test-avatar></test-avatar>
-          <span class="item-name">Item</span>
-        </a>
+          <a
+            class="item is-hoverable"
+            data-size="medium"
+            style="
+              display: flex;
+              align-items: center;
+              gap: 0.75rem;
+              width: 100%;
+              max-width: 400px;
+              margin: 0 auto;
+            "
+          >
+            <test-avatar></test-avatar>
+            <span class="item-name">Item</span>
+          </a>
 
-        <p style="max-width: 400px; margin: 0 auto">
-          Interaction states communicate the status of an element
-          <a href="" class="is-hoverable" style="text-decoration: underline">Text Link</a> in the
-          interface.
-        </p>
-      </div>
-      <br />
-      <test-text variant="body-bold">Focus states</test-text>
-      <div
-        class="tile"
-        style="display: flex; flex-direction: column; max-width: 640px; gap: 1rem; padding: 2rem"
-      >
-        <a
-          class="item is-hoverable"
-          data-size="medium"
-          style="
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            width: 100%;
-            max-width: 400px;
-            margin: 0 auto;
-          "
-        >
-          <test-avatar></test-avatar>
-          <span class="item-name">Item</span>
-        </a>
-      </div>
-      <br />
-      <test-text variant="body-bold" style="margin: 0">Disabled state</test-text>
-      <test-tile variant="flat" style="max-width: 640px"> disabled </test-tile>
-      <br />
-      <test-text variant="body-bold" style="margin: 0">Progressing state</test-text>
-      <div class="tile" style="max-width: 640px">
-        <div class="chat-inputing animation-chatting">
-          <span style="background: var(--color-background-strong)"></span>
-          <span style="background: var(--color-background-strong)"></span>
-          <span style="background: var(--color-background-strong)"></span>
+          <p style="max-width: 400px; margin: 0 auto">
+            Interaction states communicate the status of an element
+            <a href="" class="is-hoverable" style="text-decoration: underline">Text Link</a> in the
+            interface.
+          </p>
         </div>
-      </div>
-      <!-- <p>opacity 50% (using token) / not-allowed cursor / removed elevated style</p> -->
-      <!-- <div class="token-item" style="cursor: not-allowed">
+        <test-text variant="body-bold">Focus states</test-text>
+        <div
+          class="tile"
+          style="display: flex; flex-direction: column; max-width: 640px; gap: 1rem; padding: 2rem"
+        >
+          <a
+            class="item is-hoverable"
+            data-size="medium"
+            style="
+              display: flex;
+              align-items: center;
+              gap: 0.75rem;
+              width: 100%;
+              max-width: 400px;
+              margin: 0 auto;
+            "
+          >
+            <test-avatar></test-avatar>
+            <span class="item-name">Item</span>
+          </a>
+        </div>
+        <test-text variant="body-bold" style="margin: 0">Disabled state</test-text>
+        <test-tile variant="flat" style="max-width: 640px"> disabled </test-tile>
+        <test-text variant="body-bold" style="margin: 0">Progressing state</test-text>
+        <div class="tile" style="max-width: 640px">
+          <div class="chat-inputing animation-chatting">
+            <span style="background: var(--color-background-strong)"></span>
+            <span style="background: var(--color-background-strong)"></span>
+            <span style="background: var(--color-background-strong)"></span>
+          </div>
+        </div>
+        <!-- <p>opacity 50% (using token) / not-allowed cursor / removed elevated style</p> -->
+        <!-- <div class="token-item" style="cursor: not-allowed">
         <button class="button" data-variant="primary" style="pointer-events: none; opacity: 0.5">
           주문
         </button>
       </div> -->
-      <br />
-      <test-text variant="body-bold">Pressed state</test-text>
-      <test-text variant="body-bold">Active state using ripple</test-text>
+        <test-text variant="body-bold">Pressed state</test-text>
+        <test-text variant="body-bold">Active state using ripple</test-text>
+      </div>
 
       <test-text variant="subhead">Feedbacks</test-text>
       <test-text variant="body">
@@ -253,18 +254,20 @@
         confidence once an action is taken, and suggest the ability (or inability) to interact with
         the element.
       </test-text>
-      <br /><br />
-      <test-text variant="body-bold">Global Error</test-text>
-      <ul>
-        <li>인터넷연결오류: toast + callout (blocking / detour)</li>
-      </ul>
-      <test-text variant="body-bold">Local Error</test-text>
-      <div>
+      <div class="component-example" style="margin-top: 1.5rem">
+        <br /><br />
+        <test-text variant="body-bold">Global Error</test-text>
         <ul>
-          <li>refresh - redirect</li>
-          <li>result 컴포넌트</li>
-          <li>inline error / callout error</li>
+          <li>인터넷연결오류: toast + callout (blocking / detour)</li>
         </ul>
+        <test-text variant="body-bold">Local Error</test-text>
+        <div>
+          <ul>
+            <li>refresh - redirect</li>
+            <li>result 컴포넌트</li>
+            <li>inline error / callout error</li>
+          </ul>
+        </div>
       </div>
     </section>
   </article>

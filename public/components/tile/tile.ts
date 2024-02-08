@@ -8,12 +8,13 @@ class Tile extends HTMLElement {
     const container = document.createElement('div')
     container.classList.add('tile')
 
+    // FIXME:  순서를 여기서 정의하게 되어버림
     setSlotElement(container, 'thumbnail')
+    setSlotElement(container, 'byline')
     setSlotElement(container, 'heading')
     setSlotElement(container, 'body')
     setSlotElement(container, 'tags')
     setSlotElement(container, 'category')
-    setSlotElement(container, 'byline')
     setSlotElement(container, 'item')
 
     const slotAction = document.createElement('slot')

@@ -1,12 +1,4 @@
 <main class="component">
-  <style>
-    /* TODO */
-    .component-case > * {
-      display: flex;
-      width: 100%;
-      margin: 0 auto;
-    }
-  </style>
   <!-- <form action="">
     <input type="checkbox" />
     <input type="radio" />
@@ -261,7 +253,6 @@
           <test-textfield label="Height" placeholder="cm"></test-textfield>
         </test-group>
       </test-tile>
-      <div style="height: 1rem"></div>
       <test-tile>
         <div style="display: flex; justify-content: space-between; gap: var(--space-3)">
           <div style="flex: auto; width: 50%">
@@ -285,6 +276,53 @@
             </test-textfield>
           </div>
         </div>
+      </test-tile>
+
+      <test-tile>
+        <test-titlebar heading="배송지 등록"> </test-titlebar>
+        <br />
+        <test-group variant="form">
+          <test-textfield
+            label="받는 사람"
+            stype="text"
+            name="email"
+            id="login-email"
+            placeholder="수줍이"
+          ></test-textfield>
+          <test-textfield
+            label="연락처"
+            type="text"
+            name="email"
+            id="login-email"
+            placeholder="01012345678"
+          ></test-textfield>
+          <test-textfield
+            label="주소"
+            type="text"
+            name="email"
+            id="address"
+            placeholder="클릭하여 우편번호 찾기"
+          ></test-textfield>
+          <test-textfield
+            label="상세주소"
+            type="text"
+            name="email"
+            id="address"
+            placeholder="클릭하여 우편번호 찾기"
+          ></test-textfield>
+          <!-- First name, Last Name, Country / Region, State, Zipcode" -->
+          <!-- <test-textfield label="공동현관 출입번호" type="text" isOptional name="email" id="login-email" placeholder=""></test-textfield> -->
+          <test-textfield
+            label="배송 메시지"
+            type="text"
+            isOptional
+            name="email"
+            id="login-email"
+            placeholder="직접 입력"
+          ></test-textfield>
+          <test-checkbox label="개인정보 수집 및 이용 동의(수취인정보?)"></test-checkbox>
+          <test-button variant="primary" label="배송지 등록"></test-button>
+        </test-group>
       </test-tile>
     </section>
   </article>

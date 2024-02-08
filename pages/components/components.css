@@ -131,7 +131,6 @@ test-text[variant=body] + test-text[variant=subhead] {
   margin: var(--space-after-subhead) 0 0 0;
 }
 
-[variant=subhead] + test-group,
 [variant=subhead] + test-tile {
   display: block;
   margin: var(--space-after-subhead) 0 0 0;

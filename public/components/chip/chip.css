@@ -28,7 +28,7 @@ em, i  {
 }
 
 :host([variant=back]) {
-  --chip-color-background: none;
+  --chip-color-background: var(--color-background);
   --chip-border: var(--border);
   --chip-radius: 50%;
   --chip-shadow: var(--shadow);

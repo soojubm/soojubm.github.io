@@ -25,6 +25,7 @@ class Result extends HTMLElement {
     const avatar = document.createElement('test-avatar')
     avatar.setAttribute('size', 'large')
     avatar.setAttribute('variant', 'secondary')
+    avatar.setAttribute('default', 'true')
 
     // container.classList.add('result')
 

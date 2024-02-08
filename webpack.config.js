@@ -50,6 +50,8 @@ const patterns = [
   'cake',
   'class',
 
+  'table',
+
   'signifier',
   'tokens',
 

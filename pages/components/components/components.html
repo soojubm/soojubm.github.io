@@ -21,16 +21,50 @@
         >
           <test-avatar slot="avatar" size="huge" variant="secondary"></test-avatar>
         </test-entity>
-        <test-entity description="툴" style="width: 48px; text-align: center">
-          <test-avatar
+        <p>
+          TODO ??? ICON BUTTON ??? 지금의 문제는 아이콘 버튼이 없고, 칩으로 대체하기 때문에 이걸
+          표현하기가 어렵다.
+        </p>
+        <button
+          style="
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: auto;
+            gap: var(--space-1);
+            background-color: crimson;
+            border: none;
+            font: inherit;
+          "
+        >
+          <test-icon
             slot="avatar"
             size="large"
-            variant="tertiary"
-            icon="share-ios"
+            name="share-ios"
             style="font-size: 1.5rem"
-          >
-          </test-avatar>
-        </test-entity>
+          ></test-icon>
+          <small>공유하기</small>
+        </button>
+        <button
+          style="
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: auto;
+            gap: var(--space-1);
+            background-color: crimson;
+            border: none;
+            font: inherit;
+          "
+        >
+          <test-icon
+            slot="avatar"
+            size="large"
+            name="share-ios"
+            style="font-size: 1.5rem"
+          ></test-icon>
+          <small>공유하기</small>
+        </button>
 
         <test-text variant="body">
           <mark>페이지 레벨</mark> 정보의 주체. 단독으로 사용. 클릭할 수 있는 요소가 아니라 페이지를
@@ -296,12 +330,175 @@
   <p>loading state/dfn/abbr</p>
   https://material.io/design/interaction/states.html
 
+  <article class="article js-observer">
+    <test-text variant="title">Table</test-text>
+    <test-text variant="body-large">표.</test-text>
+    <section class="component-example">
+      <div>
+        <style>
+          [role='columnheader'],
+          [role='cell'] {
+            width: 25%;
+            /* padding: var(--space-3); */
+          }
+          [role='row'] {
+            display: flex;
+            border-top: var(--border);
+          }
+        </style>
+
+        <br /><br />
+
+        <p>모든 행이 DOM에 존재하는 경우 aria-rowindex 불필요</p>
+
+        <div
+          role="table"
+          aria-label="Semantic Elements"
+          aria-describedby="semantic_elements_table_desc"
+          aria-rowcount="81"
+        >
+          <div id="semantic_elements_table_desc">
+            Semantic Elements to use instead of ARIA's roles
+          </div>
+          <header role="rowgroup">
+            <div role="row">
+              <span role="columnheader" aria-sort="none">#</span>
+              <span role="columnheader" aria-sort="none">제목</span>
+              <span role="columnheader" aria-sort="none">Gengre</span>
+              <!-- <span role="columnheader" aria-sort="none">Progress</span> -->
+              <span role="columnheader" aria-sort="none">Status</span>
+              <span role="columnheader" aria-title="date added(sort)">Date</span>
+            </div>
+          </header>
+          <div role="rowgroup">
+            <div role="row" aria-rowindex="11">
+              <span role="cell">1</span>
+              <span role="cell">1</span>
+              <span role="cell">
+                <test-menu-item label="Dancing in the Dark" description="Bruce Springsteen">
+                  <test-avatar slot="avatar"></test-avatar>
+                </test-menu-item>
+              </span>
+              <span role="cell">
+                <test-group variant="tag">
+                  <test-tag>hiphop</test-tag>
+                  <test-tag>rap</test-tag>
+                </test-group>
+              </span>
+              <span role="cell">
+                <em
+                  class="badge"
+                  style="height: auto; margin-right: 0.5rem; background: gold; padding: 3px"
+                ></em>
+                Error
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <br />
+        <br />
+
+        <header
+          style="
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: var(--space-4) 0;
+            padding: var(--space-4) 0;
+          "
+        >
+          <test-text variant="title">Products</test-text>
+          <test-group variant="chip">
+            <test-chip>
+              <test-icon slot="prefix" name="import"></test-icon>
+              가져오기
+            </test-chip>
+            <!-- <test-chip>
+              <test-icon slot="prefix" name="export"></test-icon>
+              내보내기
+            </test-chip>
+          </test-group> -->
+        </header>
+
+        <!-- TODO separator가 공간이 될 수 있고 이것이 어디에 오는지에 따른 컴포넌트가 될 수도. -->
+
+        <test-group variant="chip">
+          <test-chip status="active">All</test-chip>
+          <test-chip variant="plain">Active</test-chip>
+          <test-chip variant="plain">Draft</test-chip>
+        </test-group>
+
+        <table>
+          <caption>
+            히라가나 오십음도
+          </caption>
+          <!-- <colgroup>
+            <col>
+            <col span="2" class="batman">
+            <col span="2" class="flash">
+          </colgroup> -->
+          <thead>
+            <tr>
+              <th role="columnheader" aria-sort="none" style="width: calc(40px)">
+                <test-checkbox></test-checkbox>
+              </th>
+              <th scope="col" aria-sort="none" style="width: 25%">Name</th>
+              <th scope="col" aria-sort="none" style="width: calc(65% - 80px)">Gender</th>
+              <th scope="col" aria-sort="none" style="width: 10%;">Age</th>
+              <th scope="col" aria-sort="none" style="width: 40px"><span hidden>visually hidden</span></th>
+            </tr>
+          </thead>
+          <tr>
+            <td>
+              <test-checkbox></test-checkbox>
+            </td>
+            <th scope="row">
+              <div style="display: flex; align-items: center; gap: var(--space-2)">
+                <test-avatar default="true"></test-avatar>
+                Gabriel
+              </div>
+            </th>
+            <td>
+              <div style="display: flex; align-items: center; gap: var(--space-2)">
+                <test-tag>Male</test-tag>
+                <test-text>타이틀</test-text>
+              </div>
+            </td>
+            <td>13</td>
+            <td><test-chip variant="plain" icon="more-vert"></test-chip></td>
+          </tr>
+          <tr>
+            <td>
+              <test-checkbox checked></test-checkbox>
+            </td>
+            <th scope="row">
+              <div style="display: flex; align-items: center; gap: var(--space-2)">
+                <test-avatar default="true"></test-avatar>
+                Ella
+              </div>
+            </th>
+            <td>
+              <div style="display: flex; align-items: center; gap: var(--space-2)">
+                <test-tag>Female</test-tag>
+                <test-text>You can't compress the program...</test-text>
+              </div>
+            </td>
+            <td>8</td>
+            <td><test-chip variant="plain" icon="more-vert"></test-chip></td>
+          </tr>
+        </table>
+      </div>
+    </section>
+  </article>
+
   <article class="article js-observer js-scrollspy-section">
     <test-text variant="title">Paginations</test-text>
     <test-text variant="body-large">작성 중.</test-text>
 
     <section class="component-example">
-      <test-group variant="pagination" role="navigation" aria-label="pagination">
+      <!-- TODO variant pagination -->
+      <test-group variant="chip" aria-label="pagination">
         <test-chip class="pagination-previous" aria-label="앞 페이지로 이동"> 이전 </test-chip>
         <test-chip class="pagination-next" aria-label="뒷 페이지로 이동">다음</test-chip>
         <test-chip class="pagination-link" aria-label="맨 앞 페이지로 이동">1</test-chip>
@@ -324,10 +521,14 @@
         <small>숙소 300개 이상 중 281 – 300 (airbnb)</small>
       </aside>
 
-      <b class="pagination-current">1</b>
-      <span class="pagination-divider"> / </span>
-      <span class="pagination-all">44</span>
-      <span>page 2 of 22</span>
+      <div style="display:flex;gap:var(--space-2)">
+        <b class="pagination-current">1</b>
+        <span class="pagination-divider">/</span>
+        <span class="pagination-all">44</span>
+      </div>
+      <div style="display:flex;gap:var(--space-2);">
+        page <test-textfield size="small"></test-textfield> of 22
+      </div>
     </section>
 
     <section class="component-props">
@@ -486,173 +687,6 @@
       <li>터치 제스쳐를 지원하지 않는 환경에서는 arrow 버튼을 제공하세요.</li>
       <!-- // todo 가로 스크롤 패턴 -->
     </ul>
-  </article>
-
-  <article class="article js-observer js-scrollspy-section">
-    <test-text variant="title">Table</test-text>
-    <test-text variant="body-large">표.</test-text>
-    <section class="component-example">
-      <div>
-        <style>
-          [role='columnheader'],
-          [role='cell'] {
-            width: 25%;
-            padding: var(--space-3);
-          }
-          [role='row'] {
-            display: flex;
-            border-top: var(--border);
-          }
-        </style>
-
-        <br /><br />
-
-        <p>모든 행이 DOM에 존재하는 경우 aria-rowindex 불필요</p>
-
-        <div
-          role="table"
-          aria-label="Semantic Elements"
-          aria-describedby="semantic_elements_table_desc"
-          aria-rowcount="81"
-        >
-          <div id="semantic_elements_table_desc">
-            Semantic Elements to use instead of ARIA's roles
-          </div>
-          <header role="rowgroup">
-            <div role="row">
-              <span role="columnheader" aria-sort="none">#</span>
-              <span role="columnheader" aria-sort="none">제목</span>
-              <span role="columnheader" aria-sort="none">Gengre</span>
-              <!-- <span role="columnheader" aria-sort="none">Progress</span> -->
-              <span role="columnheader" aria-sort="none">Status</span>
-              <span role="columnheader" aria-title="date added(sort)">Date</span>
-            </div>
-          </header>
-          <div role="rowgroup">
-            <div role="row" aria-rowindex="11">
-              <span role="cell">1</span>
-              <span role="cell">1</span>
-              <span role="cell">
-                <test-menu-item label="Dancing in the Dark" description="Bruce Springsteen">
-                  <test-avatar slot="avatar"></test-avatar>
-                </test-menu-item>
-              </span>
-              <span role="cell">
-                <test-group variant="tag">
-                  <test-tag>hiphop</test-tag>
-                  <test-tag>rap</test-tag>
-                </test-group>
-              </span>
-              <span role="cell">
-                <em
-                  class="badge"
-                  style="height: auto; margin-right: 0.5rem; background: gold; padding: 3px"
-                ></em>
-                Error
-              </span>
-            </div>
-            <div role="row" aria-rowindex="16">
-              <span role="cell">2</span>
-              <span role="cell"></span>
-            </div>
-          </div>
-        </div>
-
-        <table style="width: 100%">
-          <caption>
-            히라가나 오십음도
-          </caption>
-          <!-- <colgroup>
-            <col>
-            <col span="2" class="batman">
-            <col span="2" class="flash">
-          </colgroup> -->
-          <thead>
-            <tr>
-              <th role="columnheader" aria-sort="none" class="table-checkbox">
-                <test-checkbox></test-checkbox>
-              </th>
-              <th scope="col">항목</th>
-              <th scope="col">い단</th>
-              <th scope="col">う단</th>
-              <th scope="col">え단</th>
-              <th scope="col">お단</th>
-              <th scope="col" class="right">숫자</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr aria-rowindex="11">
-              <td>
-                <test-checkbox></test-checkbox>
-              </td>
-              <td>2022년 상반기 구매회원-링크</td>
-              <td>に</td>
-              <td>ぬ</td>
-              <td>ね</td>
-              <td>の</td>
-              <td class="right">9,600</td>
-            </tr>
-            <tr>
-              <td>
-                <test-checkbox></test-checkbox>
-              </td>
-              <td>わ</td>
-              <td>ゐ wi</td>
-              <td>-</td>
-              <td>ゑ we</td>
-              <td>を wo(o)</td>
-              <td class="right">ん n/nn</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <br />
-        <br />
-
-        <table>
-          <tr>
-            <th scope="col">Name</th>
-            <th scope="col">Age</th>
-            <th scope="col">Gender</th>
-          </tr>
-          <tr>
-            <th scope="row">
-              <test-group variant="chip">
-                <test-avatar></test-avatar>
-                Gabriel
-              </test-group>
-            </th>
-            <td>13</td>
-            <td><test-tag>Male</test-tag></td>
-          </tr>
-          <tr>
-            <th scope="row">Elva</th>
-            <td>8</td>
-            <td><test-tag>Female</test-tag></td>
-          </tr>
-          <tr>
-            <th scope="row">Freida</th>
-            <td>5</td>
-            <td><test-tag>Female</test-tag></td>
-          </tr>
-        </table>
-      </div>
-
-      <br /><br />
-
-      <table style="font-size: 12px; border: none">
-        <tbody>
-          <tr>
-            <th>th</th>
-            <td>td</td>
-          </tr>
-          <tr>
-            <th>th</th>
-            <td>이미지, 텍스트, 아이콘, 이모지를 포함할 수 있습니다.</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
   </article>
 
   <article class="article">
