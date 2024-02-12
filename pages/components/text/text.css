@@ -98,6 +98,7 @@
 .graph-item-value {font-size:var(--font-size-small);text-align:center;color:var(--color-text);position:absolute;left:0;right:0;bottom:32px;}
 .graph-item-label {display:block;font-size:var(--font-size-small);text-align:center;position:absolute;left:0;right:0;bottom:-1.75rem;}
 
+
 .graph-label {
   display: block;
   width: 46px;

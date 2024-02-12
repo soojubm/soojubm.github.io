@@ -19,11 +19,13 @@
 
     <section class="component-example">
       <test-group alignment="vertical">
-        <test-callout>배너. 히어로와 콜아웃. 액션 버튼을 포함하지 않는다.</test-callout>
-        <test-tile>
-          tile과 callout의 차이. 형태는 간격 빼고 동일함.
+        <test-callout>
+          <p>
+            배너. 히어로와 콜아웃. 액션 버튼을 포함하지 않는다. tile과 callout의 차이. 형태는 간격
+            빼고 동일함.
+          </p>
           <a href="">내 활동인증 관리</a>
-        </test-tile>
+        </test-callout>
 
         <test-callout variant="success"> 좋아요 표시한 동영상에 추가됨 </test-callout>
         <test-callout variant="warning">
@@ -39,16 +41,16 @@
     <section class="component-props">
       <test-text variant="subhead">Props</test-text>
       <dl>
-        <dt>title</dt>
+        <dt>title<attr>?</attr></dt>
         <dd>string</dd>
-        <dd></dd>
-        <dt>description</dt>
+        <dd>??</dd>
+        <dt>description<attr>?</attr></dt>
         <dd>string</dd>
-        <dd></dd>
-        <dt>href</dt>
-        <dd>string</dd>
-        <dd></dd>
-        <dt>onClick</dt>
+        <dd>??</dd>
+        <dt>contentSlot</dt>
+        <dd>Node</dd>
+        <dd>TODO 슬롯을 넣을 수 있도록 하는 것이 좋다.</dd>
+        <dt>onDismissClick</dt>
         <dd>() => void</dd>
         <dd></dd>
       </dl>
@@ -60,7 +62,6 @@
         사용자 행동의 단순 피드백의 역할입니다. 닫기 또는 되돌리기 등 액션을 포함하지 마세요. 사용자
         인터렉션이 요구된다면 주목도가 높은 모달로 제공하세요.
       </test-text>
-      <test-text variant="body">TODO dismissable</test-text>
       <test-text variant="body">TODO callout / feedback</test-text>
 
       <test-text variant="subhead">Editorial</test-text>

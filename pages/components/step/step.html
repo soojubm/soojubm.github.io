@@ -158,7 +158,7 @@
           </div>
         </test-menuitem>
       </nav>
-      <section>
+      <test-tile>
         <header class="authentication-head">
           <h2 class="authentication-head-title">Tell us about yourself</h2>
           <test-text variant="body-large" class="authentication-head-description">
@@ -169,13 +169,11 @@
         <section class="step" data-align="vertical" style="margin: 1rem 0">
           <div class="step-item is-active">
             <span class="step-item-icon">1</span>
-            <test-text class="step-item-label" style="font-size: 1rem">I'm an engineer</test-text>
+            <test-text class="step-item-label">I'm an engineer</test-text>
           </div>
           <div class="step-item is-active">
             <span class="step-item-icon">2</span>
-            <test-text class="step-item-label" style="font-size: 1rem"
-              >I wnat to design from scratch</test-text
-            >
+            <test-text class="step-item-label">I wnat to design from scratch</test-text>
             <!-- <p class="step-item-description">
             1칼럼(모바일)에서 결제 버튼을 누르기 전 최종 금액을 확인할 수 있는 구조가 되려면 2칼럼에서 우측을 결제를 위한 칼럼을 배치할
             때(체크아웃페이지의 일반적인 레이아웃) 상품&서머리&결제버튼이 같은 컨테이너로 포함되어야.
@@ -185,7 +183,7 @@
           </div>
           <div class="step-item">
             <span class="step-item-icon">3</span>
-            <test-text class="step-item-label" style="font-size: 1rem; color: var(--color-text)">
+            <test-text class="step-item-label" style="color: var(--color-text)">
               One last thing ㅡ how will you use your prototpe?
             </test-text>
             <small>(You can pick more than one)</small>
@@ -198,8 +196,19 @@
             </test-group>
           </div>
         </section>
-        <div style="height: var(--space-4)"></div>
+        <div style="height: var(--space-3)"></div>
         <footer><test-button variant="primary">Start creating</test-button></footer>
+      </test-tile>
+
+      <section>
+        <div style="display: flex; align-items: center; height: 32px; gap: var(--space-3)">
+          <test-text variant="subhead">01</test-text>
+          <test-text variant="body-bold">Choose your platform</test-text>
+        </div>
+        <div style="display: flex; align-items: center; height: 32px; gap: var(--space-3)">
+          <test-text variant="subhead">02</test-text>
+          <test-text variant="body-bold">Set color theme</test-text>
+        </div>
       </section>
     </section>
   </article>

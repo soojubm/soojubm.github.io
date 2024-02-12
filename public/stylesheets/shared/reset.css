@@ -83,22 +83,14 @@ table tbody tr th {}
 table tbody tr td {
   padding:var(--table-cell-padding);
 }
+// th[scope='col'] {background: #ccc;}
+// tr:nth-child(even) {}
+// tr:nth-child(odd) {}
 table tbody tr:hover {}
 table .right {text-align:right;}
 table tbody[role=rowgroup] tr th {width:25%;}
 table tbody[role=rowgroup] tr th + th {width:auto;}
 
-/*
-// th,
-// td {
-//   padding: 10px;
-// }
-// th[scope='col'] {
-//   background: #ccc;
-// }
-// tr:nth-child(even) {}
-// tr:nth-child(odd) {}
-*/
 
 ul {padding-left:var(--space-4);}
 ul li {line-height:var(--font-line-height);}

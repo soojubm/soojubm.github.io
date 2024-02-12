@@ -88,3 +88,34 @@ export default carousel
 //     }
 // }
 // })();
+
+// function startSlider() {
+//   current = slider.querySelector('.current') || slides.firstElementChild
+//   prev = current.previousElementSibling || slides.lastElementChild
+//   next = current.nextElementSibling || slides.firstElementChild
+//   console.log({ current, prev, next })
+// }
+
+// function applyClasses() {
+//   current.classList.add('current');
+//   prev.classList.add('prev');
+//   next.classList.add('next');
+// }
+
+// prevButton.addEventListener('click', () => move('back'))
+// nextButton.addEventListener('click', move)
+// if (direction === "back") {
+//   [prev, current, next] = [
+//     // get the prev slide, if there is none, get the last slide from the entire slider for wrapping
+//     prev.previousElementSibling || slides.lastElementChild,
+//     prev,
+//     current,
+//   ];
+// } else {
+//   [prev, current, next] = [
+//     current,
+//     next,
+//     // get the next slide or if its at the end, loop around and grab the first
+//     next.nextElementSibling || slides.firstElementChild,
+//   ];
+// }

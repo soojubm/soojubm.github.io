@@ -136,6 +136,18 @@
     </section>
 
     <section class="component-case">
+      <test-tile variant="flat">
+        <test-group variant="dropdown">
+          <test-text variant="label">menu heading / line height</test-text>
+          <div style="height: var(--space-1)"></div>
+          <test-menuitem role="menuitem" href="#design">
+            <test-text slot="text" variant="subhead">Anxiety </test-text>
+          </test-menuitem>
+          <test-menuitem role="menuitem" href="#design">
+            <test-text slot="text" variant="subhead">General worry</test-text>
+          </test-menuitem>
+        </test-group>
+      </test-tile>
       <test-tile>
         <test-menuitem label="windows 패턴">
           <test-avatar slot="avatar"></test-avatar>

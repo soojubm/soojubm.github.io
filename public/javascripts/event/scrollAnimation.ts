@@ -1,5 +1,12 @@
+// var tooltips = new ClassToggler({
+//   containerClass: '.us-tooltip',
+//   $target: $('.us-tooltip__icon'),
+//   activeClass: "us-tooltip--active"
+// });
+
 const ANIMATED_CLASSNAME = 'is-observed'
 
+// is scrolled ?
 const scrollAnimation = ({ selector: selector }) => {
   if (!('IntersectionObserver' in window)) return
 
@@ -10,39 +17,26 @@ const scrollAnimation = ({ selector: selector }) => {
     threshold: [0],
   }
 
+  let observer = new IntersectionObserver(callback, options)
+  elements.forEach(element => observer.observe(element))
+
   function callback(entries: IntersectionObserverEntry[], observer) {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return
-      // const isInView = entry.intersectionRatio > 0
-
       entry.target.classList.add(ANIMATED_CLASSNAME)
-
       observer.unobserve(entry.target)
-      // entry.target.addEventListener('animationend', event => event.currentTarget.classList.remove(ANIMATED_CLASSNAME));
+
+      // entry.intersectionRatio > 0
+      //   const isScrolled = element.getBoundingClientRect().top + element.clientHeight * 0.5 - window.innerHeight <= 0
+      // entry.target.classList.toggle(ANIMATED_CLASSNAME, entry.isIntersecting)
+      // entry.target.addEventListener('animationend', event => {
+      //   entry.target.classList.remove(ANIMATED_CLASSNAME)
+      // })
     })
   }
-  let observer = new IntersectionObserver(callback, options)
-
-  elements.forEach(element => observer.observe(element))
 }
 
 export default scrollAnimation
-
-// function animateOnLoad() {
-//   const scrollElements = document.querySelectorAll('.js-load-animation')
-//   scrollElements.forEach(element => {
-//     const isObserved = element.getBoundingClientRect().top - window.innerHeight <= 0
-//     if (!isObserved) return
-
-//     element.classList.add(ANIMATED_CLASSNAME)
-//   })
-// }
-
-// window.addEventListener('scroll', throttle(animateOnScroll), false)
-// scrollElements.forEach(element => {
-//   const isScrolled = element.getBoundingClientRect().top + element.clientHeight * 0.5 - window.innerHeight <= 0
-//   element.classList.toggle(ANIMATED_CLASSNAME, isScrolled)
-// })
 
 // window.addEventListener('scroll', (event) => {
 // 	var timer;
@@ -61,52 +55,3 @@ export default scrollAnimation
 // 		}, 400);
 // 	}
 // });
-
-// const absoluteTop = window.pageYOffset + element.getBoundingClientRect().top;
-
-// function initIndicator() {
-//   const indicator = document.createElement('aside');
-
-//   indicator.classList.add('indicator');
-
-//   Array.from(document.querySelectorAll('.box')).forEach((box, index) => {
-//       const item = document.createElement('div');
-
-//       item.classList.add('indicator-item');
-//       item.dataset.index = index + 1;
-//       item.textContent = index + 1;
-
-//       item.addEventListener('animationend', event => event.currentTarget.classList.remove('pulse'));
-
-//       indicator.appendChild(item);
-//   });
-
-//   document.body.appendChild(indicator);
-// }
-
-// function updateIndicator(entries, observer) {
-//   const indicator = document.querySelector('.indicator');
-
-//   entries.forEach(entry => {
-//       const index = entry.target.textContent.replace('#', '');
-//       const el = indicator.querySelector(`[data-index="${index}"]`);
-
-//       el.classList.add('pulse');
-//       el.classList.toggle('on', entry.isIntersecting);
-//   });
-// }
-
-// function updateIndicatorByRatio(entries, observer) {
-//   const indicator = document.querySelector('.indicator');
-//   const color = 'rgba(160, 230, 0, alpha)';
-
-//   entries.forEach(entry => {
-//       const index = entry.target.textContent.replace('#', '');
-//       const el = indicator.querySelector(`[data-index="${index}"]`);
-
-//       el.classList.add('pulse');
-//       el.style.backgroundColor = color.replace('alpha', entry.intersectionRatio);
-//   });
-// }
-
-// initIndicator();

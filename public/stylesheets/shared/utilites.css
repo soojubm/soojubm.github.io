@@ -27,6 +27,26 @@
 .resize-animation-stopper * {animation: none !important;transition: none !important;}
 // accessibility-text(visually-hidden)
 
+/* aria-label의 우선순위가 content 보다 높다. */
+/* .visually-hidden:not(:focus):not(:active) {
+  clip: rect(0 0 0 0); 
+  clip-path: inset(100%); 
+  height: 1px; 
+  overflow: hidden; 
+  position: absolute; 
+  white-space: nowrap; 
+  width: 1px; 
+} */
+/* aria-labelledby="button-label" and id & hidden */
+/* [hidden] {display:none} IE polyfill */
+/* 내부 아이콘에 aria-label 하면 contents로 참조됨. 일관된 아이콘 규칙이 있으면 약간 효율 브라우저 지원 부족? */
+/* <button class="menu-trigger" >
+    <svg focusable="false" width="24" height="28" viewBox="0 0 24 28"
+            role="img" aria-labelledby="svg-title">
+        <title id="svg-title">Menu </title>
+    </svg>
+</button>  */
+
 
 .util_hidden {
   display: none !important;

@@ -11,8 +11,8 @@
   color-scheme: light dark;
 
   /* // -apple-system === san-serif / system-ui === BlinkMacSystemFont */
-  --font-family: 'Pretendard', system-ui, sans-serif;
-  /* --font-family: 'IBM Plex Sans', 'Gothic A1', system-ui, sans-serif; */
+  /* --font-family: 'Pretendard', system-ui, sans-serif; */
+  --font-family: 'IBM Plex Sans', 'Gothic A1', system-ui, sans-serif;
   --font-family-heading: null;
   --font-family-body: null;
   --font-family-caption: null;
@@ -197,6 +197,11 @@
 
   --safearea-inset-bottom1: constant(safe-area-inset-bottom);
   --safearea-inset-bottom2: env(safe-area-inset-bottom);
+
+
+  /* 
+  --filter-font-weight: null
+   */
 
   /* brutal theme */
   /* --border: 1px solid var(--gray800); */

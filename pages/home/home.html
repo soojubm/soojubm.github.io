@@ -1,5 +1,13 @@
 <main class="component">
   <article class="article" style="max-width: 1160px">
+    <!-- If everything is a component, nothing is a component -->
+    <!-- declarative, composable, reusable, extensible, interoperable and accessible -->
+
+    <!-- Badge intent="info" -->
+    <!-- 기본 line-height에서 소숫점 나옴? 최소? 24px -->
+
+    <!-- 가이드 작성 시 긍정문 고집하니까 글 쓰기 어려움 -->
+
     <!-- <p>
       every improvement you can make will help the cause of accessibility. Using clear language The
       language you use can also affect accessibility. In general, you should use clear language that
@@ -271,21 +279,21 @@
         border-radius: var(--radius);
         margin: 0 -1rem;
         padding: 3rem 4rem calc(4rem + 4rem);
-        background-color: snow;
+        background-color: rgb(152, 68, 68);
         text-align: center;
       "
     >
-      <test-text variant="title" class="feature-head-title">What’s Included </test-text>
+      <test-text variant="title" class="feature-head-title js-observer">What’s Included </test-text>
       <!-- TODO 왜 바디는 가운데 정렬이 안 될까. -->
       <test-text
         variant="body-large"
-        class="feature-head-description"
+        class="feature-head-description js-observer"
         style="margin-left: auto; margin-right: auto"
       >
         100+ powerful features built to help modern teams hire smarter.
       </test-text>
     </div>
-    <test-tile style="margin-top: -3rem; padding: 1.5rem 2rem">
+    <test-tile class="js-observer" style="margin-top: -3rem; padding: 1.5rem 2rem">
       <div style="display: flex; gap: 1rem">
         <div style="width: 25%">
           <test-text variant="subhead">Career Page</test-text>
@@ -461,6 +469,8 @@
       <a href="https://www.digitala11y.com/" target="_blank">Digital A11Y</a>
       <a href="https://www.w3.org/WAI/ARIA/apg/" target="_blank"> ARIA Authoring Practices Guide</a>
       <a href="https://en.wikipedia.org/wiki/Universal_design" target="_blank">Universal design</a>
+      <a href="https://html.spec.whatwg.org/">HTME spec</a>
+      <a href="https://webkit.org/">Webkit</a>
       <!-- https://www.sitemaps.org/protocol.html -->
     </section>
 

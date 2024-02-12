@@ -5,6 +5,9 @@
         src="/public/images/AlbumArt_{B5020207-474E-4720-B8A7-C6073790C400}_Large.jpg"
         alt="제품 이미지"
       />
+      <nav>
+        <button></button>
+      </nav>
     </section>
     <section class="product-info">
       <h1 class="product-info-name">センチメンタル通り</h1>
@@ -14,7 +17,7 @@
         <em>(30%)</em>
         <b role="insertion">₩ 23,000</b>
       </div>
-      <test-tag>460P 적립</test-tag>
+      <!-- <test-tag>460P 적립</test-tag> -->
       <!-- <ul>
         <li>레이아웃 테스트. 아마존, yes24 3칼럼.</li>
         <li>배송비 2,500원</li>
@@ -22,40 +25,39 @@
       </ul> -->
 
       <form class="product-order">
-        <!-- <div class="product-order-variant textfield">
-        <label class="textfield-label" for="">상품구성</label>
-        <select class="textfield-input" name="" id="">
-          <option value="">수량</option>
-          <option value="">색상</option>
-        </select>
-        <span class="textfield-suffix">arrow_drop_down</span>
-      </div> -->
-        <div class="product-order-option" style="border: 2px solid var(--color-primary)">
+        <!-- <div class="product-order-option" style="border: 2px solid var(--color-primary)">
           <test-text>Sketching Brushes</test-text>
           <test-text>Sketching Brushes</test-text>
           <div style="height: var(--space-2)"></div>
           <test-text>$ 14.99</test-text>
-        </div>
+        </div> -->
         <div class="product-order-size">
           <test-group variant="chip">
             <test-chip>Small</test-chip>
             <test-chip>Medium </test-chip>
           </test-group>
-
-          <test-text variant="body-bold">Delivery</test-text>
+          <!-- <test-text variant="body-bold">Delivery</test-text>
           <test-group variant="chip">
             <test-chip>Tomorrow</test-chip>
             <test-chip>Within 3 days</test-chip>
-          </test-group>
+          </test-group> -->
+        </div>
+        <div class="product-order-variant textfield">
+          <label class="textfield-label" for="">상품구성</label>
+          <select class="textfield-input" name="" id="">
+            <option value="">수량</option>
+            <option value="">색상</option>
+          </select>
+          <test-icon class="textfield-suffix" name="nav-arrow-down"></test-icon>
         </div>
 
-        <div class="product-order-total">
+        <!-- <div class="product-order-total">
           <p class="product-order-total-label">총 상품 금액</p>
           <div class="product-order-total-value">₩ 23,000</div>
-        </div>
+        </div> -->
         <test-group variant="button" class="product-order-control">
-          <test-button variant="tertiary">찜 reverse</test-button>
-          <test-button variant="primary">장바구니</test-button>
+          <!-- <test-button variant="tertiary">찜 reverse</test-button> -->
+          <test-button variant="primary" style="width: 100%">Add to Cart</test-button>
         </test-group>
         <!-- <a href="">환불 안내</a> -->
         <!-- <button>사이즈 표</button> -->

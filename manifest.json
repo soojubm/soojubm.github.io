@@ -1,3 +1,5 @@
+// https://web.dev/articles/add-manifest?hl=ko
+
 {
   "short_name": "Weather",
   "name": "Weather: Do I need an umbrella?",

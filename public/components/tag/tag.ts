@@ -1,6 +1,10 @@
 import { makeStyleSheet } from '../../javascripts/components/utils'
 
-makeStyleSheet
+// TODO참고
+// import styleTextCoral from './coral.scss'
+// const styleGreen = document.createElement('style');
+// styleGreen.type = 'text/css';
+// styleGreen.appendChild(document.createTextNode(styleTextGreen));
 
 class Tag extends HTMLElement {
   constructor() {

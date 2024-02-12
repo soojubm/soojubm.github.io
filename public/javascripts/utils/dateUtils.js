@@ -23,7 +23,20 @@ export const todayDate = {
 
 export const formatDate = timestamp => {
   const date = new Date(timestamp)
-  const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+  const months = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+  ]
   return months[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear()
 }
 
@@ -31,9 +44,14 @@ const timestamp = 9462
 const hours = Math.floor(timestamp / 60 / 60)
 const minutes = Math.floor(timestamp / 60) - hours * 60
 const seconds = timestamp % 60
-const formatted = hours.toString().padStart(2, '0') + ':' + minutes.toString().padStart(2, '0') + ':' + seconds.toString().padStart(2, '0')
+const formatted =
+  hours.toString().padStart(2, '0') +
+  ':' +
+  minutes.toString().padStart(2, '0') +
+  ':' +
+  seconds.toString().padStart(2, '0')
 
-var timeFromNow = function(time) {
+var timeFromNow = function (time) {
   // Get timestamps
   var unixTime = new Date(time).getTime()
   if (!unixTime) return
@@ -83,7 +101,7 @@ var timeFromNow = function(time) {
 // ! nextDay
 var nextDay = new Date(todayTimestamp + 1000 * 60 * 60 * 24 * 2)
 
-export var getNextDay = function(dayName) {
+export var getNextDay = function (dayName) {
   // The current day
   var date = new Date()
   var now = date.getDay()
@@ -110,9 +128,21 @@ const halloweenParty = new Date(2016, 9, 31, 19, 0) // Mon Oct 31 2016 19:00:00 
 
 new Date().valueOf() // UTC 1970년 1월 1ㅣㄹ 자정으로부터 몇 밀리초가 지났는지 나타내는 숫자
 
+date.setDate(date.getDate() + 1)
+date.setHours(date.getHours() + 1)
+date.setMinutes(date.getMinutes() + 10)
+date.setSeconds(date.getSeconds() + 10)
 
+// function formatDate(date) {
+//   return date.getFullYear() + '년 ' +
+//   (date.getMonth() + 1) + '월 ' +
+//   date.getDate() + '일 ' +
+//   date.getHours() + '시 ' +
+//   date.getMinutes() + '분';
+//   }
 
-date.setDate(date.getDate() + 1);
-date.setHours(date.getHours() + 1);
-date.setMinutes(date.getMinutes() + 10);
-date.setSeconds(date.getSeconds() + 10);
+//   var seoul = new Date(1489199400000);
+//   var ny = new Date(1489199400000 - (840 * 60 * 1000));
+
+//   formatDate(seoul); // 2017년 3월 11일 11시 30분
+//   formatDate(ny);

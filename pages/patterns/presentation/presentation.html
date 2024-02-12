@@ -1,6 +1,6 @@
 <main class="component">
   <nav class="component-navigation" role="group" data-scroll="vertical" role="menubar">
-    <test-group  variant="chip">
+    <test-group variant="chip">
       <div class="component-navigation-background"></div>
       <test-chip class="is-active js-scrollspy-trigger" href="#">Dim</test-chip>
       <test-chip class="js-scrollspy-trigger" href="#">Page</test-chip>
@@ -38,6 +38,10 @@
         콘텐츠를 모달에 표시하지 않도록 제한할 것인지, dribble, pinterest와 같이 풀페이지 모달 뷰를
         허용하여 페이지 맥락으로 접근을 허용할 것인지.
       </li>
+      <li>
+        Needed interactions :: Sheet / Dropdown popover / Dialog modal / Toast (optional - not
+        current)
+      </li>
 
       <small>md. When adapting for larger screens, a bottom sheet can become a context menu.</small>
       <small>md. Swap the bottom sheet for a side sheet in landscape layouts.</small>
@@ -62,129 +66,124 @@
       >
     </section>
 
-    <test-text variant="body-bold">Triggers :: window.load / window.resize / actions</test-text>
-    <test-text variant="body-bold"
-      >Needed interactions :: Sheet / Dropdown popover / Dialog modal / Toast (optional - not current) </test-text
-    >
-    <br /><br />
-
-    <test-text variant="subhead">Dim or Overay</test-text>
-    <test-text variant="body"
-      >useOutsideClick의 ref 의존성을 presentation 컴포넌트에서 분리하기 위해 닫기
-      인터렉션.</test-text
-    >
-
-    <br /><br />
-
-    <test-text variant="subhead">Modal</test-text>
-    <test-text variant="body">something that requires the user’s attention.</test-text>
-    <footer>
-      <test-chip variant="secondary" class="js-modal" data-modal="woolf">모달 열기</test-chip>
-    </footer>
-
-    <test-text variant="body-bold">모달의 종료</test-text>
+    <test-text variant="body-bold">Open triggers</test-text>
+    <ul>
+      <li>window.load</li>
+      <li>window.resize</li>
+      <li>actions</li>
+    </ul>
+    <test-text variant="body-bold">Close triggers</test-text>
     <ul>
       <li><b>click</b>. Dim / CloseButton(in / out) / ConfirmButton / CancelButton</li>
       <li><b>keydown</b>. escKey. enterKey. spaceBar</li>
     </ul>
+    <br /><br />
 
-    <test-text variant="body-bold">확장된 기능</test-text>
-    <ul>
-      <li>url을 통한 접근.</li>
-      <li>브라우저 히스토리.</li>
-      <li>body element의 스크롤. 스크롤의 크기 보정.</li>
-      <li><b>풀사이즈 모달</b>모바일에서 페이지처럼 보인다. with title bar. (sticky). use case. user profile의 portfolio</li>
-      <!-- <li>
-        크롬에서는 html에 overflow:hidden를 잘 주면 끝인데,
-        익스플로러에선 스크롤 제어하려면 body에 먹여야 한? html에 overflow:hidden;을주고 모달에 overflow-y를 주면(조건:모달이 윈도우창보다
-        작아질때)
-      </li> -->
-    </ul>
-
-    <test-text variant="body-bold">Other cases</test-text>
-    <ul>
-      <li>
-        <b>ibm.</b> Don’t use to display complex or large amounts of data. Don’t recreate a full app
-        or page in a dialog. 이 디자인 시스템에서는 모달은 페이지가 될 수 있는 맥락이어야.
-      </li>
-      <li><b>ibm.</b> non-modal.</li>
-      <li>
-        <b>airbnb.</b> 큰 화면에서 x 버튼. 모바일에서 페이지처럼 변하면서 arrow 버튼으로 변경됨
-      </li>
-      <li><b>pinterest.</b> onDismiss / Preventing close on outside click / layer component</li>
-    </ul>
+    <test-text variant="subhead">Dim or Overay</test-text>
+    <test-text variant="body">
+      useOutsideClick의 ref 의존성을 presentation 컴포넌트에서 분리하기 위해 닫기 인터렉션.
+    </test-text>
 
     <br /><br />
+
+    <test-text variant="subhead">Modal</test-text>
+    <div class="component-example" style="margin-top: var(--space-4)">
+      <footer>
+        <test-chip variant="secondary" class="js-modal" data-modal="woolf">모달 열기</test-chip>
+      </footer>
+
+      <test-separator></test-separator>
+      <test-text variant="body">something that requires the user’s attention.</test-text>
+
+      <test-text variant="body-bold">확장된 기능</test-text>
+      <ul>
+        <li>url을 통한 접근.</li>
+        <li>브라우저 히스토리.</li>
+        <li>body element의 스크롤. 스크롤의 크기 보정.</li>
+        <li>
+          풀사이즈 모달은 페이지의 맥락. with title bar. (sticky). use case. user profile의
+          portfolio
+        </li>
+        <!-- <li>
+          크롬에서는 html에 overflow:hidden를 잘 주면 끝인데,
+          익스플로러에선 스크롤 제어하려면 body에 먹여야 한? html에 overflow:hidden;을주고 모달에 overflow-y를 주면(조건:모달이 윈도우창보다
+          작아질때)
+        </li> -->
+      </ul>
+
+      <test-text variant="body-bold">Other cases</test-text>
+      <ul>
+        <li>
+          <b>ibm.</b> Don’t use to display complex or large amounts of data. Don’t recreate a full
+          app or page in a dialog. 이 디자인 시스템에서는 모달은 페이지가 될 수 있는 맥락이어야.
+        </li>
+        <li><b>ibm.</b> non-modal.</li>
+        <li>
+          <b>airbnb.</b> 큰 화면에서 x 버튼. 모바일에서 페이지처럼 변하면서 arrow 버튼으로 변경됨
+        </li>
+        <li><b>pinterest.</b> onDismiss / Preventing close on outside click / layer component</li>
+      </ul>
+    </div>
 
     <test-text variant="subhead">Toast</test-text>
-    <test-text variant="body" title="temporary feedback on an interaction"
-      >일시적인 피드백. 현재 사용하지 않음.</test-text
-    >
-
-    <test-chip variant="secondary" class="js-toggle">토스트 열기</test-chip>
-
-    <aside class="toast" role="alert">toast test. 사라지는 시간을 정의.</aside>
-    <test-callout>
-      <p>
-        포지셔닝에 left bottom 좌표 대신 margin을 쓰는 게 좋다. 포지셔닝을 위한 믹스인을 보존할 수
-        있고, 컴포넌트의 가로 사이즈도 보존할 수 있기 때문? left:1rem/right:1rem 이면 항상 block
-        width를 가짐.
-      </p>
-    </test-callout>
-
-    <test-text variant="body-bold">Best practices</test-text>
-    <ul>
-      <li>Don't show more than one at a time.</li>
-    </ul>
-
-    <test-text variant="body-bold">Cases</test-text>
-    <ul>
-      <li>with callout / with dialog</li>
-      <li>toast VS snackbar. action 유/무. MD 버전업과 함께 재정의 됨.</li>
-      <li>삭제 후 되돌리기. 휴지통이 있다면 대체할 수 있는 기능.</li>
-      <li>HIG에 정의되지 않음. iOS spotify 앱에서 '라이브러리에 추가되었습니다'.</li>
-      <li>온라인 오프라인</li>
-    </ul>
-
-    <br /><br />
+    <div class="component-example" style="margin-top: var(--space-4)">
+      <test-chip variant="secondary" class="js-toggle">토스트 열기</test-chip>
+      <aside class="toast" role="alert">toast test. 사라지는 시간을 정의.</aside>
+      <test-separator></test-separator>
+      <ul class="checklist">
+        <li>일시적인 피드백. 현재 사용하지 않음.</li>
+        <li>Don't show more than one at a time.</li>
+        <li>
+          포지셔닝에 left bottom 좌표 대신 margin을 쓰는 게 좋다. 포지셔닝을 위한 믹스인을 보존할 수
+          있고, 컴포넌트의 가로 사이즈도 보존할 수 있기 때문? left:1rem/right:1rem 이면 항상 block
+          width를 가짐.
+        </li>
+        <li>with callout / with dialog</li>
+        <li>toast VS snackbar. action 유/무. MD 버전업과 함께 재정의 됨.</li>
+        <li>삭제 후 되돌리기. 휴지통이 있다면 대체할 수 있는 기능.</li>
+        <li>HIG에 정의되지 않음. iOS spotify 앱에서 '라이브러리에 추가되었습니다'.</li>
+        <li>온라인 오프라인</li>
+      </ul>
+    </div>
 
     <test-text variant="subhead">Sheet</test-text>
-    <test-text variant="body">결국 drawer인데 bottom일 수 있음.</test-text>
-    <!-- <p>To allow users to view optional information or complete sub-tasks in a workflow while keeping the context of the current page, use Sheet.</p> -->
-    <test-chip variant="secondary" class="js-toggle">시트 열기</test-chip>
-    <article class="sheet js-sheet" role="presentation">
-      <button class="sheet-toggle"></button>
-      <test-text variant="subhead" class="sheet-title">Presentation - sheet</test-te>
-      <test-chip icon="xmark" class="js-sheet-close" aria-label="close sheet"></test-chip>
-      <test-menuitem data-size="medium" label="iOS 액션 시트 참고" role="menuitem">
-        <test-avatar></test-avatar>
-      </test-menuitem>
-      <test-menuitem data-size="medium" label="바텀 시트 옵션" role="menuitem">
-        <test-avatar slot="avatar"></test-avatar>
-      </test-menuitem>
-    </article>
-    <!-- <aside class="sheet-overay"></aside> -->
-
-    <br /><br />
+    <div class="component-example" style="margin-top: var(--space-4)">
+      <!-- <p>To allow users to view optional information or complete sub-tasks in a workflow while keeping the context of the current page, use Sheet.</p> -->
+      <test-chip variant="secondary" class="js-toggle">시트 열기</test-chip>
+      <test-tile variant="elevated" class="sheet js-sheet" role="presentation">
+        <button class="sheet-toggle"></button>
+        <test-text variant="subhead" class="sheet-title">Presentation - sheet</test-text>
+        <test-chip icon="xmark" class="js-sheet-close" aria-label="close sheet"></test-chip>
+        <test-menuitem data-size="medium" label="iOS 액션 시트 참고">
+          <test-avatar slot="avatar" default="true"></test-avatar>
+        </test-menuitem>
+        <test-menuitem data-size="medium" label="바텀 시트 옵션">
+          <test-avatar slot="avatar" default="true"></test-avatar>
+        </test-menuitem>
+      </test-tile>
+      <!-- <aside class="sheet-overay"></aside> -->
+      <test-separator></test-separator>
+      <test-text variant="body">결국 drawer인데 bottom일 수 있음.</test-text>
+    </div>
 
     <test-text variant="subhead">Popover</test-text>
-    <test-text variant="body">floating tiles</test-text>
-    <footer style="position: relative">
-      <test-chip variant="secondary" class="js-toggle" aria-haspopup="">팝오버 열기</test-chip>
-      <div class="popover">
-        <test-tile variant="elevated">
-          <test-titlebar heading="모달 제목"></test-titlebar>
-        </test-tile>
-      </div>
-    </footer>
-
-    <test-text variant="body-bold">memo</test-text>
-    <ul>
-      <li>tooltip과 popover의 구분</li>
-      <li>데스크탑에 최적화된 경험. 작은 화면에서 모달이나 시트로 형태가 좋다.</li>
-      <li>한 번에 하나 이상을 열 수 없다.</li>
-      <li>caret tip / tab tip - carbon design system</li>
-      <li>alignment / placement</li>
-    </ul>
+    <div class="component-example" style="margin-top: var(--space-4)">
+      <footer style="position: relative">
+        <test-chip variant="secondary" class="js-toggle" aria-haspopup="">팝오버 열기</test-chip>
+        <div class="popover">
+          <test-tile variant="elevated">
+            <test-titlebar heading="모달 제목"></test-titlebar>
+          </test-tile>
+        </div>
+      </footer>
+      <test-separator></test-separator>
+      <ul class="checklist">
+        <li>tooltip과 popover의 구분</li>
+        <li>데스크탑에 최적화된 경험. 작은 화면에서 모달이나 시트로 형태가 좋다.</li>
+        <li>한 번에 하나 이상을 열 수 없다.</li>
+        <li>caret tip / tab tip - carbon design system</li>
+        <li>alignment / placement</li>
+      </ul>
+    </div>
   </article>
 </main>

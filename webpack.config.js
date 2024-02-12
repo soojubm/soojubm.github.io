@@ -120,7 +120,7 @@ module.exports = {
   target: ['web', 'es5'],
   devtool: 'inline-source-map',
   entry: {
-    index: ['./index.ts'],
+    index: ['./pages/home/home.ts', './public/javascripts/common/navbar.ts', './index.ts'],
     ...test,
     ...test2,
   },
