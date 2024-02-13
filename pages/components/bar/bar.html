@@ -11,43 +11,31 @@
       <test-separator></test-separator>
       <test-group variant="chip" role="menubar">
         <test-textfield size="small" labeling="false" placeholder="검색꾸">
-          <!-- TODO : prefix height vs avatar height -->
           <!-- TODO : avatar를 쓰니까아바타 특유의 형태와 충돌(outlined) 사이즈를 다시 정의해주어야 한다. 컴포넌트를 한 번 더 씌우면 괜찮겟지만. -->
           <test-avatar slot="prefix" icon="search"></test-avatar>
         </test-textfield>
-        <test-chip name="Filter">
+        <test-chip variant="plain" name="Filter">
           <test-icon slot="suffix" name="nav-arrow-down"></test-icon>
           Created by anyone
         </test-chip>
-        <div style="margin-left: auto">
-          <test-chip variant="plain" name="Sort">
-            Last modified
-            <test-icon slot="suffix" name="nav-arrow-down"></test-icon>
-          </test-chip>
-        </div>
+        <test-chip variant="plain" name="Sort">
+          Last modified
+          <test-icon slot="suffix" name="nav-arrow-down"></test-icon>
+        </test-chip>
       </test-group>
     </section>
   </article>
 
   <article class="article js-observer js-scrollspy-section">
     <test-text variant="title">Title Bar</test-text>
-    <test-text variant="body-large">
-      모바일 친화적인 헤더. 또는 특정 페이지 모듈(주로 반응형이 되기 쉬운 페이지)의 페이지 헤더
-      역할.
-    </test-text>
-    <test-text variant="body-large">
-      2401 뒤로가기 버튼이 chip과 달라야 콘텐츠와 제목 영역의 위계가 잡힘. 새로운 칩 추가.
-    </test-text>
-    <test-text variant="body-large"> 231230 backSlot 제거 </test-text>
+    <test-text variant="body-large"> 모바일 친화적인 헤더. 페이지 헤더 역할.</test-text>
 
     <section class="component-example">
-      <div>
-        <test-titlebar heading="Product" class="js-titlebar" role="navigation">
-          <test-text variant="subhead">쇼핑</test-text>
-          <test-chip slot="action" variant="plain" icon="cart"> </test-chip>
-        </test-titlebar>
-        <!-- <div class="titlebar-backdrop js-header"></div> -->
-      </div>
+      <test-titlebar heading="Product" class="js-titlebar" role="navigation">
+        <test-text variant="subhead">쇼핑</test-text>
+        <test-chip slot="action" variant="plain" icon="cart"> </test-chip>
+      </test-titlebar>
+      <!-- <div class="titlebar-backdrop js-header"></div> -->
       <test-separator></test-separator>
       <test-titlebar class="js-titlebar" role="navigation" data-size="large" style="padding: 0">
         <h1 class="titlebar-title js-page-title" title="page title">Large Case</h1>
@@ -89,12 +77,19 @@
         <dd>() => void</dd>
       </dl>
     </section>
-    <div class="component-references">
+    <section class="component-guide">
+      <test-text variant="subhead">Changelog</test-text>
+      <test-text variant="body">
+        2401 뒤로가기 버튼이 chip과 달라야 콘텐츠와 제목 영역의 위계가 잡힘. 새로운 칩 추가.
+      </test-text>
+      <test-text variant="body"> 231230 backSlot 제거 </test-text>
+    </section>
+    <section class="component-references">
       <test-text variant="subhead">References</test-text>
       <a href="https://m3.material.io/components/top-app-bar/overview" target="_blank">
         MD3 top app bar
       </a>
-    </div>
+    </section>
   </article>
 
   <article class="article js-observer js-scrollspy-section">
