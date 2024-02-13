@@ -1,6 +1,6 @@
 .component {
   transition: all .4s;
-  --container-width: 640px;
+  --container-width: var(--layout-width-small);
 }
 .component-example {
   margin:3rem -5vw;
@@ -41,7 +41,7 @@
   border-top-left-radius: var(--radius);
 }
 .component-case > * {
-  max-width: 640px;
+  max-width: var(--layout-width-small);
 }
 
 .component-props {
@@ -74,7 +74,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  max-width: 640px;
+  max-width: var(--layout-width-small);
   gap: var(--space-3);
   margin: 1rem 0;
   padding: 1rem;
@@ -106,7 +106,7 @@
 .article {padding:2rem var(--grid-margin) 8rem;overflow:hidden;position:relative;}
 
 /* 전체 영역에 해당 */
-test-text[variant=body-large] {max-width: 640px;}
+test-text[variant=body-large] {max-width: var(--layout-width-small);}
 
 test-text[variant=title] + test-text[variant=body-large] {
   display: block;

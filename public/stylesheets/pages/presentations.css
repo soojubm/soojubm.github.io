@@ -57,7 +57,7 @@
 .is-opened-modal .presentation {}
 
 
-.popover {display:none;width:100%;max-width:400px;}
+.popover {display:none;width:100%;max-width:var(--width-medium);}
 .is-active + .popover {display:block;position:absolute;left:0;top:calc(var(--size-medium) + var(--space-2));}
 .sheet-close {@mixin chip;position:absolute;right:.5rem;top:.5rem;}
 

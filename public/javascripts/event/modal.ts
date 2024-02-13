@@ -42,7 +42,7 @@ function modal({ selector: trigger }: Parameter) {
 
   async function fetchData(modalId: modalId) {
     try {
-      const endpoint = `./${modalId}.html`
+      const endpoint = `/pages/patterns/profile/${modalId}.html`
       const response = await fetch(endpoint)
       const html = await response.text()
 

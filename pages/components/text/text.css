@@ -56,7 +56,7 @@
 
 .meter-legend {
   width: 100%;
-  max-width: 400px;
+  max-width: var(--width-medium);
   margin: var(--space-2) auto 0;
 }
 

@@ -21,11 +21,11 @@
             class="searchfield-input"
             type="search"
             placeholder="궁금한 인물이나 이슈가 있나요?"
-            style="width: 400px"
+            style="max-width: var(--width-medium)"
           />
         </form>
 
-        <test-tile variant="elevated" class="search-recent" style="max-width: 400px">
+        <test-tile variant="elevated" class="search-recent" style="max-width: var(--width-medium)">
           <test-group alignment="vertical">
             <test-text variant="label">최근 검색</test-text>
             <!-- <test-link>모두보기</test-link> -->
@@ -48,7 +48,7 @@
           <test-chip>아파트열쇠를빌려드립니다</test-chip>
         </test-group>
 
-        <div style="max-width: 400px">
+        <div style="max-width: var(--width-medium)">
           <test-group alignment="vertical">
             <div style="display: flex; align-items: center; gap: 0.5rem">
               <test-text variant="label">People</test-text>
@@ -103,7 +103,7 @@
     </ul>
     <br />
     <test-text variant="subhead">iOS 패턴</test-text>
-    <form class="searchfield ios" style="max-width: 400px">
+    <form class="searchfield ios" style="max-width: var(--width-medium)">
       <label class="searchfield-prefix">
         <test-icon name="search"></test-icon>
       </label>
@@ -117,7 +117,7 @@
     </form>
     <br />
     <test-text variant="subhead">Android 패턴</test-text>
-    <form class="searchfield" style="max-width: 400px">
+    <form class="searchfield" style="max-width: var(--width-medium)">
       <div style="position: absolute; left: 0">
         <test-chip icon="arrow-left" class="searchfield-prefix"> </test-chip>
       </div>
@@ -164,7 +164,7 @@
     <test-text variant="body">
       enter key로 검색할 때 한정. 입력할 때 마다 검색을 요청할 때는 항상 하나 이상의 결과
     </test-text>
-    <test-tile variant="nuded" style="max-width: 400px">
+    <test-tile variant="nuded" style="max-width: var(--width-medium)">
       <test-group variant="menuitem" class="search-suggestion">
         <test-menuitem label="자동완성">
           <test-avatar slot="avatar"></test-avatar>

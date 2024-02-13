@@ -38,12 +38,19 @@
   --layout-width-large: 1200px;
   --layout-width-small: 640px;
   --layout-width-tiny: 480px;
-  --width-huge: 1440px;
-  --width-small: 480px;
-  --width-tiny: 240px;
+  /*
+  1. dropdown
+  2. textfield/card/form
+  3. layout - layout + @ (with large body)
+  4. layout large
+  */
   --width-sidemenu: 14rem;
+  --width-medium: 400px;
+  --width-small: 240px;
 
-  --popover-width: 200px;
+  --popover-width-small: 200px;
+  --popover-width-dialog: var(--width-medium);
+  --popover-width-dropdown: var(--width-tiny);
 
   --grid-column: calc(50% - var(--space-1));
   --grid-gutter: null;

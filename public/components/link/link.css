@@ -1,22 +1,8 @@
-
-
-@define-mixin link-inner {
-  color:var(--color-primary);
-  text-decoration:underline;
-  &:hover {text-decoration:none;
-  }
-}
-@define-mixin link-outside {
-  color:var(--color-primary);
-  &:hover {text-decoration:underline;
-  }
-}
-
-.link-inner {@mixin link-inner;}
-.link-outside {@mixin link-outside;}
-
-
+/* link with icon */
 .link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
   text-decoration:underline;
   text-decoration-skip-ink:auto;
   color:var(--color-primary);

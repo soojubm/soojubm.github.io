@@ -267,7 +267,7 @@ mark {color:inherit;} mark::before {content: " [강조 시작] ";opacity:0;posit
 
 /* textfield 중복 / for select */
 .textfield {
-  max-width: 400px;
+  max-width: var(--width-medium);
   position:relative;
 
   --textfield-height: var(--size-large);
@@ -317,7 +317,7 @@ mark {color:inherit;} mark::before {content: " [강조 시작] ";opacity:0;posit
 /* common */
 .offline {
   display: none;
-  max-width: 400px;
+  max-width: var(--width-medium);
   margin: 0 auto;
   padding: .5rem 1rem;
   border-radius: var(--radius);
@@ -477,3 +477,13 @@ mark {color:inherit;} mark::before {content: " [강조 시작] ";opacity:0;posit
 .statistic[data-size=small] {}
 .statistic[data-size=small] .statistic-item {display: flex;align-items: center;}
 .statistic[data-size=small] .statistic-value {margin: 0 0 0 var(--space-1);font-size: var(--font-size-medium);}
+
+
+
+.layout {
+  --layout-width: 100%;
+  max-width: var(--layout-width);
+}
+.layout[data-size=small] {
+  --layout-width: var(--layout-width-small);
+}

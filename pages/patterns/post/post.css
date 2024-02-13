@@ -1,4 +1,4 @@
-.post {max-width:680px;margin:0 auto;padding:40px var(--grid-margin);}
+.post {max-width:var(--layout-width-small);margin:0 auto;padding:40px var(--grid-margin);}
 /* // img - margin */
 .post-head {position:relative;}
 .post-head-category {display:flex;align-items:center;@mixin link-outside;position:relative;}

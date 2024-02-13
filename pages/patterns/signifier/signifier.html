@@ -183,7 +183,13 @@
         <test-text variant="body-bold">Hover states</test-text>
         <div
           class="tile"
-          style="display: flex; flex-direction: column; max-width: 640px; gap: 1rem; padding: 2rem"
+          style="
+            display: flex;
+            flex-direction: column;
+            max-width: var(--layout-width-small);
+            gap: 1rem;
+            padding: 2rem;
+          "
         >
           <a
             class="item is-hoverable"
@@ -193,7 +199,7 @@
               align-items: center;
               gap: 0.75rem;
               width: 100%;
-              max-width: 400px;
+              max-width: var(--width-medium);
               margin: 0 auto;
             "
           >
@@ -201,7 +207,7 @@
             <span class="item-name">Item</span>
           </a>
 
-          <p style="max-width: 400px; margin: 0 auto">
+          <p style="max-width: var(--width-medium); margin: 0 auto">
             Interaction states communicate the status of an element
             <a href="" class="is-hoverable" style="text-decoration: underline">Text Link</a> in the
             interface.
@@ -210,7 +216,13 @@
         <test-text variant="body-bold">Focus states</test-text>
         <div
           class="tile"
-          style="display: flex; flex-direction: column; max-width: 640px; gap: 1rem; padding: 2rem"
+          style="
+            display: flex;
+            flex-direction: column;
+            max-width: var(--layout-width-small);
+            gap: 1rem;
+            padding: 2rem;
+          "
         >
           <a
             class="item is-hoverable"
@@ -220,7 +232,7 @@
               align-items: center;
               gap: 0.75rem;
               width: 100%;
-              max-width: 400px;
+              max-width: var(--width-medium);
               margin: 0 auto;
             "
           >
@@ -229,9 +241,12 @@
           </a>
         </div>
         <test-text variant="body-bold" style="margin: 0">Disabled state</test-text>
-        <test-tile variant="flat" style="max-width: 640px"> disabled </test-tile>
+        <test-tile variant="flat">
+          IBM example :: Component 50% opacity, Text 25% opacity, Icons 50% opacity, Hover None,
+          Cursor not-allowed / Hidden
+        </test-tile>
         <test-text variant="body-bold" style="margin: 0">Progressing state</test-text>
-        <div class="tile" style="max-width: 640px">
+        <div class="tile">
           <div class="chat-inputing animation-chatting">
             <span style="background: var(--color-background-strong)"></span>
             <span style="background: var(--color-background-strong)"></span>

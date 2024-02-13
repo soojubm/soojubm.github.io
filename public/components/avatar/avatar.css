@@ -21,7 +21,6 @@ img {
   justify-content: center;
   width: var(--avatar-size);
   height: var(--avatar-size);
-  background-size: 80%;
   background-repeat: no-repeat;
   background-position: center;
 
@@ -34,6 +33,8 @@ img {
 }
 .avatar[data-default=true] {
   background-image: url('/public/images/soojubm.png');
+  background-size: 75%;
+  background-position: 64% 55%;
 }
 
 .avatar img {

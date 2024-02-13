@@ -40,7 +40,7 @@
 
 
 @media (max-width: 800px) {
-  .profile {max-width:400px;}
+  .profile {max-width:var(--width-medium);}
   .tabpanel test-tile {
     width:100%;
   }

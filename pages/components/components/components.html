@@ -197,7 +197,6 @@
           }
         </style>
         <em class="dot-badge"></em>
-        <test-badge variant="primary">0</test-badge>
         <test-badge variant="primary">24</test-badge>
         <test-badge variant="secondary">16</test-badge>
         <test-badge>8</test-badge>
@@ -372,47 +371,37 @@
     <p>scroll-behavior: smooth</p>
     <section class="component-example">
       <section class="carousel js-carousel">
-        <test-tile>
-          <nav style="display: flex; gap: var(--space-3)" role="tablist">
-            <test-entity description="추가">
-              <test-avatar slot="avatar" size="huge" fallback="+"></test-avatar>
-            </test-entity>
-            <test-entity description="공유하기" data-index="keyword">
-              <test-avatar slot="avatar" size="huge" fallback="🌏"></test-avatar>
-            </test-entity>
-            <test-entity description="키워드목록">
-              <test-avatar slot="avatar" size="huge" fallback="💀"></test-avatar>
-            </test-entity>
-            <test-entity description="주문 아이템">
-              <test-avatar slot="avatar" size="huge" fallback="🍔"></test-avatar>
-            </test-entity>
-          </nav>
-        </test-tile>
+        <nav style="display: flex; gap: var(--space-3)" role="tablist">
+          <test-entity description="추가">
+            <test-avatar slot="avatar" size="huge" fallback="+"></test-avatar>
+          </test-entity>
+          <test-entity description="공유하기" data-index="keyword">
+            <test-avatar slot="avatar" size="huge" fallback="🌏"></test-avatar>
+          </test-entity>
+          <test-entity description="키워드목록">
+            <test-avatar slot="avatar" size="huge" fallback="💀"></test-avatar>
+          </test-entity>
+          <test-entity description="주문 아이템">
+            <test-avatar slot="avatar" size="huge" fallback="🍔"></test-avatar>
+          </test-entity>
+        </nav>
+        <nav class="carousel-arrows">
+          <test-chip
+            variant="back"
+            icon="arrow-left"
+            class="carousel-arrows-prev js-carousel-prev"
+            aria-label="이전"
+          >
+          </test-chip>
+          <test-chip
+            variant="back"
+            icon="arrow-right"
+            class="carousel-arrows-next js-carousel-next"
+            aria-label="다음"
+          >
+          </test-chip>
+        </nav>
         <test-group class="carousel-viewer js-carousel-viewer">
-          <test-entity size="huge" label="폴 뉴먼" description="주연">
-            <test-avatar
-              slot="avatar"
-              variant="tertiary"
-              size="huge"
-              src="/public/images/springsteen.jpg"
-            ></test-avatar>
-          </test-entity>
-          <test-entity size="huge" label="폴 뉴먼" description="주연">
-            <test-avatar
-              slot="avatar"
-              variant="tertiary"
-              size="huge"
-              src="/public/images/springsteen.jpg"
-            ></test-avatar>
-          </test-entity>
-          <test-entity size="huge" label="폴 뉴먼" description="주연">
-            <test-avatar
-              slot="avatar"
-              variant="tertiary"
-              size="huge"
-              src="/public/images/springsteen.jpg"
-            ></test-avatar>
-          </test-entity>
           <test-entity size="huge" label="폴 뉴먼" description="주연">
             <test-avatar
               slot="avatar"
@@ -434,24 +423,7 @@
                 <button class="carousel-dots-dot">1</button>
                 <button class="carousel-dots-dot">1</button>
               </nav> -->
-        <nav class="carousel-arrows">
-          <test-chip
-            variant="back"
-            icon="arrow-left"
-            class="carousel-arrows-prev js-carousel-prev"
-            aria-label="이전"
-          >
-          </test-chip>
-          <test-chip
-            variant="back"
-            icon="arrow-right"
-            class="carousel-arrows-next js-carousel-next"
-            aria-label="다음"
-          >
-          </test-chip>
-        </nav>
       </section>
-      <test-separator></test-separator>
       <!-- data-scroll="vertical" -->
     </section>
 
@@ -596,7 +568,7 @@
       the popup container.
     </p>
 
-    <div class="file-attachment-item" style="max-width: 400px">
+    <div class="file-attachment-item" style="max-width: var(--width-medium)">
       <figure class="file-attachment-item-image">
         <img src="/public/images/springsteen.jpg" alt="${file.name}" />
       </figure>

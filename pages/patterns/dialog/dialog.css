@@ -1,5 +1,12 @@
 /* // todo buttongroup column과 그냥 column 달르다. */
-.dialog {max-width:400px;border:var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:1rem;background:var(--color-background);box-sizing:border-box;}
+.dialog {
+  max-width:var(--popover-width-dialog);
+  padding:var(--space-4);
+  border:var(--border);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  box-sizing:border-box;
+  background:var(--color-background);}
 
 .dialog-head {display:flex;justify-content:space-between;}
 .dialog-head-title {margin:0 auto;@mixin text-subhead;}

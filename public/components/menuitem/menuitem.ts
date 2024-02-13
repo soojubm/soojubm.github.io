@@ -29,6 +29,7 @@ class MenuItem extends HTMLElement {
     text.name = 'text'
 
     container.setAttribute('href', this.href || '#')
+    container.setAttribute('target', this.target || '')
 
     description.innerText = this.description || ''
 
@@ -70,6 +71,10 @@ class MenuItem extends HTMLElement {
 
   get href() {
     return this.getAttribute('href')
+  }
+
+  get target() {
+    return this.getAttribute('target')
   }
 
   get description() {
