@@ -106,37 +106,39 @@
     <test-text variant="title">Single filter (group)</test-text>
     <test-text variant="body-large">막연한 검색</test-text>
     <section class="component-example">
-      <test-group variant="chip">
-        <test-chip class="js-toggle" aria-expanded="true">
-          <test-icon slot="suffix" name="nav-arrow-down"></test-icon>
-          예약옵션
-        </test-chip>
-        <test-chip class="js-toggle" aria-expanded="true">
-          <test-icon slot="suffix" name="nav-arrow-down"></test-icon>
-          예산
-        </test-chip>
-        <test-chip class="js-toggle" aria-expanded="true">
-          <test-icon slot="suffix" name="nav-arrow-down"></test-icon>
-          접근성 편의
-        </test-chip>
-      </test-group>
+      <div style="max-width: var(--layout-width-small)">
+        <test-group variant="chip">
+          <test-chip class="js-toggle" aria-expanded="true">
+            <test-icon slot="suffix" name="nav-arrow-down"></test-icon>
+            예약옵션
+          </test-chip>
+          <test-chip class="js-toggle" aria-expanded="true">
+            <test-icon slot="suffix" name="nav-arrow-down"></test-icon>
+            예산
+          </test-chip>
+          <test-chip class="js-toggle" aria-expanded="true">
+            <test-icon slot="suffix" name="nav-arrow-down"></test-icon>
+            접근성 편의
+          </test-chip>
+        </test-group>
 
-      <test-separator></test-separator>
+        <test-separator></test-separator>
 
-      <test-group variant="chip">
-        <test-chip status="active">오늘</test-chip>
-        <test-chip>최근 3개월</test-chip>
-        <test-chip>최근 1년</test-chip>
-        <test-chip>최근 3년</test-chip>
-      </test-group>
-      <p style="margin: 0.75rem 0" role="status">주문 내역 총 <b>3</b>건. Statusbox</p>
-      <br />
-      <test-result
-        label="최근 3개월 내 주문 내역이 없습니다."
-        description="포트폴리오를 업로드하여 수줍이님을 알려보세요."
-      >
-        <test-button slot="action" variant="primary">2022년 주문 내역 보기</test-button>
-      </test-result>
+        <test-group variant="chip">
+          <test-chip status="active">오늘</test-chip>
+          <test-chip>최근 3개월</test-chip>
+          <test-chip>최근 1년</test-chip>
+          <test-chip>최근 3년</test-chip>
+        </test-group>
+        <p style="margin: 0.75rem 0" role="status">주문 내역 총 <b>3</b>건. Statusbox</p>
+        <br />
+        <test-result
+          label="최근 3개월 내 주문 내역이 없습니다."
+          description="포트폴리오를 업로드하여 수줍이님을 알려보세요."
+        >
+          <test-button slot="action" variant="primary">2022년 주문 내역 보기</test-button>
+        </test-result>
+      </div>
     </section>
 
     <test-text variant="subhead">필터의 적용</test-text>

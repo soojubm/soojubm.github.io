@@ -1,4 +1,5 @@
 [role=tablist] {
+  --tablist-border: null;
   --tablist-background: var(--color-background-weak);
 
   --tab-radius: var(--radius);
@@ -6,18 +7,16 @@
   --tab-label-color: var(--color-text-light);
   --tab-label-weight: var(--font-weight-bold);
   --tab-label-color-actived: var(--color-text)
-  --tab-size: 48px;
+  --tab-size: var(--size-large);
 
   display: flex;
   width: fit-content;
   padding: var(--space-1);
-
-  border-radius: var(--radius);
+  border-radius: var(--tab-radius);
   background:var(--tablist-background);
   position: relative;
 }
 [role=tab] {}
-
 [role=tabpanel][aria-hidden=false] {display:block;}
 [role=tabpanel][aria-hidden=true] {display:none;}
 

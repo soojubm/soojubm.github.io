@@ -12,53 +12,62 @@
     <section class="product-info">
       <h1 class="product-info-name">センチメンタル通り</h1>
       <p class="product-info-byline">Album by <a href="#">Hachimitsupai</a></p>
-      <div class="product-info-price" role="suggestion">
-        <del role="deletion">₩ 30,000</del>
-        <em>(30%)</em>
-        <b role="insertion">₩ 23,000</b>
-      </div>
-      <!-- <test-tag>460P 적립</test-tag> -->
-      <!-- <ul>
-        <li>레이아웃 테스트. 아마존, yes24 3칼럼.</li>
-        <li>배송비 2,500원</li>
-        <li>제주, 도서, 산간지역 추가 배송비 3,000원</li>
-      </ul> -->
-
       <form class="product-order">
-        <!-- <div class="product-order-option" style="border: 2px solid var(--color-primary)">
-          <test-text>Sketching Brushes</test-text>
-          <test-text>Sketching Brushes</test-text>
-          <div style="height: var(--space-2)"></div>
-          <test-text>$ 14.99</test-text>
-        </div> -->
-        <div class="product-order-size">
-          <test-group variant="chip">
-            <test-chip>Small</test-chip>
-            <test-chip>Medium </test-chip>
-          </test-group>
-          <!-- <test-text variant="body-bold">Delivery</test-text>
+        <!-- <test-text variant="body-bold">Delivery</test-text>
           <test-group variant="chip">
             <test-chip>Tomorrow</test-chip>
             <test-chip>Within 3 days</test-chip>
           </test-group> -->
-        </div>
-        <div class="product-order-variant textfield">
+        <!-- <div class="product-order-variant textfield">
           <label class="textfield-label" for="">상품구성</label>
           <select class="textfield-input" name="" id="">
             <option value="">수량</option>
             <option value="">색상</option>
           </select>
           <test-icon class="textfield-suffix" name="nav-arrow-down"></test-icon>
-        </div>
-
-        <!-- <div class="product-order-total">
+        </div> -->
+        <test-tile variant="elevated">
+          <test-radio name="gender" id="option1" value="" checked style="margin-top: -0.5rem">
+            <div>
+              <test-text variant="body">Standard License</test-text>
+              <test-text variant="subhead">₩ 2,000</test-text>
+              <div style="margin: var(--space-2) 0 0">
+                <test-text variant="body">1개월 무료 후 14,900원 / 개월</test-text>
+                <small>현재 구독하고 있는 서비스는 체험할 수 없습니다.</small>
+              </div>
+            </div>
+          </test-radio>
+          <test-tag>460P 적립</test-tag>
+        </test-tile>
+        <test-tile variant="elevated">
+          <test-radio name="gender" id="option2" value="" style="margin-top: -0.5rem">
+            <div>
+              <test-text variant="body">Standard License</test-text>
+              <test-text variant="subhead">₩ 2,000</test-text>
+              <div style="margin: var(--space-2) 0 0">
+                <test-text variant="body">1개월 무료 후 14,900원 / 개월</test-text>
+                <small>현재 구독하고 있는 서비스는 체험할 수 없습니다.</small>
+              </div>
+            </div>
+          </test-radio>
+        </test-tile>
+        <div class="product-order-total">
           <p class="product-order-total-label">총 상품 금액</p>
           <div class="product-order-total-value">₩ 23,000</div>
-        </div> -->
-        <test-group variant="button" class="product-order-control">
+        </div>
+        <test-group variant="button">
           <!-- <test-button variant="tertiary">찜 reverse</test-button> -->
-          <test-button variant="primary" style="width: 100%">Add to Cart</test-button>
+          <test-button variant="primary" isfullwidth="true">Add to Cart</test-button>
         </test-group>
+        <ul class="checklist" style="margin: var(--space-4) 0 0">
+          <li>레이아웃 테스트. 아마존, yes24 3칼럼.</li>
+          <li>배송비 2,500원</li>
+          <li>제주, 도서, 산간지역 추가 배송비 3,000원</li>
+          <li>
+            단건의 상품 구매하는 케이스와 수량 및 옵션을 선택하는 케이스의 구별. 단건은 펀딩이나
+            온라인 상품 등.
+          </li>
+        </ul>
         <!-- <a href="">환불 안내</a> -->
         <!-- <button>사이즈 표</button> -->
       </form>
