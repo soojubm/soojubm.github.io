@@ -21,7 +21,8 @@
   max-width:calc(90% - var(--size-medium));
   padding:var(--space-3) var(--space-4);
   border:var(--chat-bubble-border);
-  border-radius:1.5rem;border-top-left-radius:var(--radius);
+  border-radius:1rem;
+  border-top-left-radius:var(--radius);
   background-color: var(--color-background);
 }
 .chat-bubble.has-image {width:85%;padding:0;background:none;overflow:hidden;}

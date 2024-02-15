@@ -120,3 +120,5 @@ class Input extends HTMLElement {
 }
 
 export default Input
+
+function drawContainer() {}

@@ -9,9 +9,8 @@
 
 .cake-meta {}
 .cake-meta dl {}
-.cake-meta-summary {max-width:640px;}
 
-.cake-info {max-width:640px;padding:2rem 0 2.25rem;position:relative;}
+.cake-info {margin:2rem 0;position:relative;}
 .cake-info h2 {margin:0 0 var(--space-after-subhead);@mixin text-subhead;}
 .cake-info footer {margin-top:var(--space-4);}
 
@@ -22,5 +21,4 @@
   .cake-poster {height:auto;margin:0 0 2rem 0;@mixin reset-position;}
   .cake-meta {padding-left:0;padding-right:0;}
   .cake-meta ul {margin-left:0;margin-right:0;padding-left:0;padding-right:0;}
-  .cake-meta-summary {padding-right:0;}
 }

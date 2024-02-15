@@ -21,9 +21,7 @@ import { importScript, makeStyleSheet } from '../../javascripts/components/utils
 // host.shadowRoot?.adoptedStyleSheets = [sheet]
 
 class Chip extends HTMLElement {
-  // #internals = this.attachInternals() as any
   // static observedAttributes = ['variant', 'data-variant']
-
   constructor() {
     super()
     const shadow = this.attachShadow({ mode: 'open' })

@@ -30,7 +30,9 @@ import Tooltip from '../../components/tooltip/tooltip'
 import TitleBar from '../../components/titlebar/titlebar'
 import Icon from '../../components/icon/icon'
 import Separator from '../../components/separator/separator'
+
 import Result from '../../components/result/result'
+import Feature from '../../components/feature/feature'
 
 // class extends HTMLElement {
 //   static get observedAttributes() {
@@ -76,6 +78,8 @@ export function defineCustomElement() {
     customElements.define('test-tooltip', Tooltip)
 
     customElements.define('test-separator', Separator)
+
+    customElements.define('test-feature', Feature)
   }
 }
 

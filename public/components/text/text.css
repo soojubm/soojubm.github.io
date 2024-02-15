@@ -47,7 +47,7 @@ h1, h2, h3, p {
 }
 
 .text[data-variant=body] {
-  line-height: 1.715;
+  line-height: var(--font-line-height-large);
 }
 
 .text[data-variant=body-bold] {

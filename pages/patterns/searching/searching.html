@@ -5,12 +5,14 @@
     <section class="component-references">
       <a href="https://material.io/design/navigation/search.html">MD search</a>
       <a href="https://developer.android.com/reference/android/widget/SearchView"
-        >android searchview</a
+        >
+        android searchview
+        </a
       >
     </section>
 
     <section class="component-example">
-      <div style="max-width: 600px">
+      <div style="max-width: 400px">
         <test-titlebar heading=""></test-titlebar>
         <div style="height: var(--space-after-subhead)"></div>
         <form class="searchfield" role="search" aria-label="Sitewide / on the page">
@@ -21,22 +23,20 @@
             class="searchfield-input"
             type="search"
             placeholder="궁금한 인물이나 이슈가 있나요?"
-            style="max-width: var(--width-medium)"
           />
         </form>
 
-        <test-tile variant="elevated" class="search-recent" style="max-width: var(--width-medium)">
+        <test-tile variant="elevated" class="search-recent">
           <test-group alignment="vertical">
             <test-text variant="label">최근 검색</test-text>
             <!-- <test-link>모두보기</test-link> -->
             <test-menuitem label="고슴이">
               <test-avatar slot="avatar" style="background: beige">🦔</test-avatar>
-              <!-- <test-chip slot=""> -->
-              <test-icon slot="action" name="xmark"></test-icon>
+              <test-chip slot="action" variant="plain" icon="xmark" aria-label="검색 내역 삭제">
             </test-menuitem>
             <test-menuitem label="개구리">
               <test-avatar slot="avatar" style="background: var(--green100)">🐸</test-avatar>
-              <test-icon slot="action" name="xmark"></test-icon>
+              <test-chip slot="action" variant="plain" icon="xmark" aria-label="검색 내역 삭제">
             </test-menuitem>
           </test-group>
         </test-tile>
@@ -48,7 +48,7 @@
           <test-chip>아파트열쇠를빌려드립니다</test-chip>
         </test-group>
 
-        <div style="max-width: var(--width-medium)">
+        <div>
           <test-group alignment="vertical">
             <div style="display: flex; align-items: center; gap: 0.5rem">
               <test-text variant="label">People</test-text>
@@ -61,9 +61,9 @@
               <test-avatar slot="avatar" default="true"></test-avatar>
             </test-menuitem>
           </test-group>
-          <div style="margin: 1.25rem 0 0 0">
+          <!-- <div style="margin: 1.25rem 0 0 0">
             <test-separator></test-separator>
-          </div>
+          </div> -->
           <test-group alignment="vertical">
             <test-text variant="label">Channels</test-text>
             <test-menuitem label="Design Thinking" description="12 Members">
@@ -77,127 +77,121 @@
       </div>
     </section>
 
-    <test-text variant="subhead">검색 기표</test-text>
-    <test-group>
-      <test-chip icon="search"> </test-chip>
-      <test-chip>키워드</test-chip>
-      <!-- <span>TODO :: 쓰는 곳 없음 해시태그</span> -->
-    </test-group>
-    <test-separator></test-separator>
-    <ul>
-      <li>추천 또는 자동완성 등 키워드로 즉시 실행 또는 키워드 입력</li>
-      <li>해시태그 또는 카테고리 등 인기/추천 키워드로 결과 페이지로 이동</li>
-      <li>searchfield를 클릭하여 검색 탭(또는 페이지)으로 이동</li>
-    </ul>
-
-    <test-text variant="body-bold">최근 검색 내역</test-text>
-    <ul>
-      <li>개별 내역의 삭제. 휘발성이 높은 정보라 편집 모듈 없이 삭제 버튼으로 제공한다.</li>
-      <li>
-        전체 내역의 삭제. 사용자 편의와 리스크가 공존한다. 서비스의 특성에 맞게(? 모호한 표현쓰지
-        않기). 검색 내역의 삭제가 개인화 콘텐츠에 영향을 주는가?
-      </li>
-      <li>
-        최근 검색 내역이 없으면 아무 것도 보여주지 않는다. 내역이 없다는 상태 컴포넌트도 필요 없다.
-      </li>
-    </ul>
-    <br />
-    <test-text variant="subhead">iOS 패턴</test-text>
-    <form class="searchfield ios" style="max-width: var(--width-medium)">
-      <label class="searchfield-prefix">
-        <test-icon name="search"></test-icon>
-      </label>
-      <input class="searchfield-input" type="search" placeholder="iOS pattern" />
-      <button class="searchfield-clear" aria-label="clear keyword">
-        <test-icon slot="icon" name="xmark"></test-icon>
-      </button>
-      <button class="searchfield-cancel" aria-label="clear keyword">
-        <span class="material-symbols-outlined">취소</span>
-      </button>
-    </form>
-    <br />
-    <test-text variant="subhead">Android 패턴</test-text>
-    <form class="searchfield" style="max-width: var(--width-medium)">
-      <div style="position: absolute; left: 0">
-        <test-chip icon="arrow-left" class="searchfield-prefix"> </test-chip>
-      </div>
-      <input
-        class="searchfield-input"
-        type="search"
-        placeholder="Android pattern"
-        style="padding-left: 3rem"
-      />
-      <div style="position: absolute; right: var(--space-2); top: var(--space-2); z-index: 1">
-        <test-chip icon="xmark"> </test-chip>
-      </div>
-    </form>
-
-    <!-- <li>tabIndex: back -> input</li> -->
-    <!-- <test-text variant="subhead">추천, 인기, 개인화 콘텐츠</test-text> -->
-
-    <!-- <li>onFocus - keyword.length === 0. 대기</li> -->
-    <br />
-    <test-text variant="body-bold">
-      검색 실행 1 - 키워드를 입력할 때 마다 : onChange event (with debouncing)
-    </test-text>
-    <ul>
-      <li>
-        결과 없음 상태를 사용하지 않는다. 일치하는 결과가 없더라도 유사 콘텐츠 또는 추천 콘텐츠로
-        대체하여 하나 이상의 결과를 항상 보여주어야 합니다. 큐레이션이 강화된 콘텐츠 플랫폼에서 이탈
-        방지를 위해 활용할 수 있지만 사용자는 명확한 결과를 기대하기 어렵습니다.
-      </li>
-    </ul>
-
-    <br />
-    <test-text variant="body-bold">
-      검색 실행 2 - 검색 버튼 클릭 또는 enter key : onSubmit event
-    </test-text>
-    <ul>
-      <li>일치하는 결과만 표시하고 새로운 검색을 유도.</li>
-      <li>
-        하나 또는 하나 이상의 명확한 결과를 요구하는 경우 사용한다. 체류시간을 확보해야 하는 콘텐츠
-        플랫폼에는 적합하지 않다. 상대적으로 개발 리소스가 적게 들기 때문에 MVP 단계에서 유용하다.
-      </li>
-    </ul>
-
-    <test-text variant="body-bold">검색어 자동완성</test-text>
-    <test-text variant="body">
-      enter key로 검색할 때 한정. 입력할 때 마다 검색을 요청할 때는 항상 하나 이상의 결과
-    </test-text>
-    <test-tile variant="nuded" style="max-width: var(--width-medium)">
-      <test-group variant="menuitem" class="search-suggestion">
-        <test-menuitem label="자동완성">
-          <test-avatar slot="avatar"></test-avatar>
-          <p class="item-name"></p>
-        </test-menuitem>
-        <test-menuitem label="자동완성유아이">
-          <test-avatar slot="avatar"></test-avatar>
-        </test-menuitem>
-        <test-tile variant="elevated" size="small">
-          <test-menuitem label="자동완(으)로 검색">
-            <test-avatar slot="avatar" icon="search"> </test-avatar>
-          </test-menuitem>
-        </test-tile>
+    <section class="component-guide">
+      <test-text variant="subhead">검색 기표</test-text>
+      <test-group variant="chip">
+        <test-chip icon="search"></test-chip>
+        <test-chip>키워드 칩</test-chip>
+        <test-tag variant="hashtag">TODO :: 쓰는 곳 없음 해시태그</test-tag>
       </test-group>
-    </test-tile>
-    <br />
-    <test-text variant="body-bold">검색 결과</test-text>
-    <test-tile variant="nuded" style="max-width: 800px">
-      <test-result label="${수줍이}와(과) 일치하는 내용이 없습니다.">
-        <test-group slot="list" variant="chip" class="search-similars">
-          <test-chip>
-            <test-avatar slot="prefix" fallback="🦔"></test-avatar>
-            검색어 제공
-          </test-chip>
-          <test-chip>
-            <test-avatar slot="prefix" fallback="🐈‍⬛"></test-avatar>
-            애옹
-          </test-chip>
-        </test-group>
-      </test-result>
-    </test-tile>
+      <test-separator></test-separator>
+      <ul>
+        <li>추천 또는 자동완성 등 키워드로 즉시 실행 또는 키워드 입력</li>
+        <li>해시태그 또는 카테고리 등 인기/추천 키워드로 결과 페이지로 이동</li>
+        <li>searchfield를 클릭하여 검색 탭(또는 페이지)으로 이동</li>
+      </ul>
+      <test-text variant="subhead">최근 검색 내역</test-text>
+      <ul>
+        <li>개별 내역의 삭제. 휘발성이 높은 정보라 편집 모듈 없이 우측 삭제 버튼으로 개별 삭제를 제공한다.</li>
+        <li>
+          전체 내역의 삭제. 사용자 편의와 리스크가 공존. 검색 내역의 삭제가 개인화 콘텐츠에 영향을 주는가?
+        </li>
+        <li>
+          최근 검색 내역이 없을 때? 구글: 인기급상승 / 네이버: 없음
+        </li>
+      </ul>
+      <!-- <li>tabIndex: back -> input</li> -->
+      <!-- <test-text variant="subhead">추천, 인기, 개인화 콘텐츠</test-text> -->
+      <!-- <li>onFocus - keyword.length === 0. 대기</li> -->
+      <test-text variant="subhead">
+        검색 실행 1 - 키워드를 입력할 때 마다 : onChange event
+      </test-text>
+      <ul>
+        <li>
+          결과 없음 상태를 사용하지 않는다. 일치하는 결과가 없더라도 유사 콘텐츠 또는 추천 콘텐츠로
+          대체하여 <mark>하나 이상의 결과를 항상 보여주어야 합니다.</mark> 큐레이션이 강화된 콘텐츠
+          플랫폼에서 이탈 방지를 위해 활용할 수 있지만 사용자는 명확한 결과를 기대하기 어렵습니다.
+        </li>
+        <li>검색어 자동 완성을 사용하지 않는다.</li>
+      </ul>
+      <test-text variant="subhead">
+        검색 실행 2 - 검색 버튼 클릭 또는 enter key : onSubmit event
+      </test-text>
+      <ul>
+        <li>일치하는 결과만 표시하고 새로운 검색을 유도.</li>
+        <li>
+          하나 또는 하나 이상의 명확한 결과를 요구하는 경우 사용한다. 체류시간을 확보해야 하는 콘텐츠
+          플랫폼에는 적합하지 않다. 상대적으로 개발 리소스가 적게 들기 때문에 MVP 단계에서 유용하다.
+        </li>
+        <li>
+          자동완성? 자동완성이 아니라 입력한 결과물 노출하는 것. 이것 또는 바로가기를 최상단에
+          노출해줄 수 있다.
+        </li>
+      </ul>
+    </section>
 
-    <br />
+    <section class="component-case">
+      <test-tile>
+        <test-text variant="body-bold">iOS 패턴</test-text>
+        <form class="searchfield ios" style="max-width: var(--width-medium)">
+          <label class="searchfield-prefix">
+            <test-icon name="search"></test-icon>
+          </label>
+          <input class="searchfield-input" type="search" placeholder="iOS pattern" />
+          <button class="searchfield-clear" aria-label="clear keyword">
+            <test-icon slot="icon" name="xmark"></test-icon>
+          </button>
+          <button class="searchfield-cancel" aria-label="clear keyword">
+            <span class="material-symbols-outlined">취소</span>
+          </button>
+        </form>
+      </test-tile>
+      <test-tile>
+        <test-text variant="body-bold">Android 패턴</test-text>
+        <form class="searchfield" style="max-width: var(--width-medium)">
+          <div style="position: absolute; left: 0">
+            <test-chip icon="arrow-left" class="searchfield-prefix"> </test-chip>
+          </div>
+          <input
+            class="searchfield-input"
+            type="search"
+            placeholder="Android pattern"
+            style="padding-left: 3rem"
+          />
+          <div style="position: absolute; right: var(--space-2); top: var(--space-2); z-index: 1">
+            <test-chip icon="xmark"> </test-chip>
+          </div>
+        </form>
+      </test-tile>
+  
+      <test-tile>
+        <test-group variant="menuitem" class="search-suggestion">
+          <test-menuitem label="자동완성">
+            <test-avatar slot="avatar" default="true"></test-avatar>
+          </test-menuitem>
+          <test-menuitem label="자동완성유아이">
+            <test-avatar slot="avatar" default="true"></test-avatar>
+          </test-menuitem>
+          <test-tile variant="elevated" size="small">
+            <test-menuitem label="자동완(으)로 검색">
+              <test-avatar slot="avatar" icon="search"> </test-avatar>
+            </test-menuitem>
+          </test-tile>
+        </test-group>
+      </test-tile>
+  
+      <test-tile>
+        <test-result label="''키워드'와(과) 일치하는 내용이 없습니다.">
+          <test-group slot="list" variant="chip" class="search-similars">
+            <test-chip> 🦔 검색어 제공 </test-chip>
+            <test-chip>
+              <test-avatar slot="prefix"></test-avatar>
+              🐈‍⬛ 애옹
+            </test-chip>
+          </test-group>
+        </test-result>
+      </test-tile>
+    </section>
 
     <blockquote>
       <ul class="checklist">
@@ -222,12 +216,12 @@
           글로벌 검색 패턴과 로컬 검색(검색 필터를 포함) 패턴의 차이. searchfield small. right
           alignment.
         </li>
+        <li>조회수(틱톡)/이카테고리에글쓰기(미디엄)/카테고리팔로우(개인화)</li>
       </ul>
     </blockquote>
 
     <div class="">
       <h1>#ThisIsTagPage</h1>
-      <p>조회수(틱톡)/이카테고리에글쓰기(미디엄)/카테고리팔로우(개인화)</p>
     </div>
 
     <table>

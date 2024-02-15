@@ -178,15 +178,7 @@ main,
   span {display:block;margin:var(--space-1) 0 0;text-align:center;font-size:var(--font-size-medium);}
 }
 
-
-
 /* // todo icon -> indicator */
-
-.uxsitemap {position:relative;}
-.uxsitemap .map {margin-left:1rem;}
-.uxsitemap .map-head {margin:1rem 0;}
-.uxsitemap .map-body {margin:1rem 1rem;}
-// .uxsitemap > section {width:8rem;height:8rem;margin:1rem 0;background:var(--green100);}
 
 .design-ticker-item {width:380px;margin:0 var(--space-3) !important;box-shadow:none !important;
   filter: grayscale(.5);

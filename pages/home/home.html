@@ -82,7 +82,7 @@
     <button>12345</button> -->
     <!-- // invoice / order  구분 -->
 
-    <div
+    <!-- <div
       style="
         height: 240px;
         border: 1px solid #ecd5d5;
@@ -92,32 +92,19 @@
         background-color: snow;
       "
     >
-      <div class="chat is-mine">
-        <div
-          class="chat-bubble"
-          style="
-            margin: 0 0 var(--space-2);
-            border-radius: 1.5rem;
-            border-bottom-left-radius: var(--radius);
-          "
-        >
-          <p>감사합니다! 아바타와 닉네임 없어도 됨.</p>
-        </div>
-        <test-avatar size="large">
-          <img src="/public/images/springsteen.jpg" alt="" />
-        </test-avatar>
-      </div>
-    </div>
+    </div> -->
 
     <section class="feature">
       <header class="feature-head">
-        <test-text variant="title" class="feature-head-title"
+        <test-text variant="title"
           ><span style="color: var(--color-text-light)">Key Principles</span></test-text
         >
-        <test-text variant="title" class="feature-head-title">길을 잃지 않기 위한 원칙</test-text>
-        <test-text variant="body-large" class="feature-head-description">
-          의사결정의 고비가 왔을 때 언제든 이곳으로 돌아와 비교대상의 우위를 결정하세요. 취사선택.
-          가치판단.
+        <test-text variant="title">Neque porro quisquam est qui dolorem ipsum.</test-text>
+        <test-text variant="body-large">
+          Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci
+          velit...
+          <!-- 의사결정의 고비가 왔을 때 언제든 이곳으로 돌아와 비교대상의 우위를 결정하세요. 취사선택.
+          가치판단. -->
         </test-text>
         <!-- <test-text variant="body">The goal isn't "all or nothing".</test-text> -->
       </header>
@@ -243,9 +230,6 @@
       </div> -->
     </section>
 
-    <blockquote></blockquote>
-
-    <br /><br />
     <!-- <div class="stamp" style="position: absolute; right: 10%; top: 12rem">
       <div class="circle" style="background: var(--color-accent)">
         <p>Under<br />Construction</p>
@@ -269,131 +253,107 @@
         color: var(--color-text-light);
       }
     </style>
-    <br /><br />
 
     <div
       style="
-        margin-top: -2rem;
-        margin-bottom: 2rem;
         border: 1px solid #ecd5d5;
         border-radius: var(--radius);
-        margin: 0 -1rem;
-        padding: 3rem 4rem calc(4rem + 4rem);
-        background-color: rgb(152, 68, 68);
+        margin: 4rem -1rem 2rem;
+        padding: 3rem 4rem calc(4rem + 2rem);
+        background-color: floralwhite;
         text-align: center;
       "
     >
-      <test-text variant="title" class="feature-head-title js-observer">What’s Included </test-text>
-      <!-- TODO 왜 바디는 가운데 정렬이 안 될까. -->
-      <test-text
-        variant="body-large"
-        class="feature-head-description js-observer"
-        style="margin-left: auto; margin-right: auto"
+      <test-text variant="title" class="feature-head-title js-observer"
+        >Documentation guide</test-text
       >
+      <!-- TODO 왜 바디는 가운데 정렬이 안 될까. -->
+      <test-text variant="body-large" style="margin-left: auto; margin-right: auto">
         100+ powerful features built to help modern teams hire smarter.
       </test-text>
+      <div class="chat is-mine" style="padding-left: 0">
+        <div
+          class="chat-bubble"
+          style="
+            margin: 0 0 var(--space-2);
+            border-radius: 1.5rem;
+            border-bottom-left-radius: var(--radius);
+          "
+        >
+          <p>감사합니다! 아바타와 닉네임 없어도 됨.</p>
+        </div>
+        <test-avatar size="large">
+          <img src="/public/images/springsteen.jpg" alt="" />
+        </test-avatar>
+      </div>
     </div>
-    <test-tile class="js-observer" style="margin-top: -3rem; padding: 1.5rem 2rem">
-      <div style="display: flex; gap: 1rem">
-        <div style="width: 25%">
-          <test-text variant="subhead">Career Page</test-text>
-          <ul class="checklist">
-            <li>Brand first design</li>
-            <li>Custom templates</li>
-            <li>Analytics & tracking</li>
-            <li>Easy job application</li>
-          </ul>
+    <test-tile class="js-observer" style="margin-top: -5rem; padding: 1.5rem 2rem">
+      <section>
+        <div style="height: var(--space-4)"></div>
+        <div class="feature test">
+          <div class="feature-item">
+            <test-avatar variant="secondary" size="medium">✋</test-avatar>
+            <test-text variant="body-bold">타겟의 명료 / Meaningful and Trustworthy</test-text>
+            <test-text variant="body"
+              >기본적인 내용을 서술하지 마세요. 이 문서를 읽는 사람은 체크박스와 라디오의 차이를
+              이해하고 있습니다.</test-text
+            >
+          </div>
+          <div class="feature-item">
+            <test-avatar variant="secondary" size="medium">✋</test-avatar>
+            <test-text variant="body-bold">용도의 분명</test-text>
+            <test-text variant="body">
+              경우에따라.상황에따라.목적에맞게 등 용도를 특정할 수 없는 사하지 마세요. 기능과 역할을
+              분명히.
+            </test-text>
+          </div>
+          <div class="feature-item">
+            <test-avatar variant="secondary" size="medium">✋</test-avatar>
+            <test-text variant="body-bold">규모의 약속</test-text>
+            <test-text variant="body">
+              모든 세부사항을 정의하지 마세요. 규칙을 정의하는 일 만큼 문제 해결을 위한 도구의
+              복잡도를 관리도 중요합니다.
+              <!-- 예를 들면, border width는 border 스코프에서 디펜던시가 있고, 일괄 변경이 쉽기 때문에 토큰을 정의하지 않는 것이 좋습니다. -->
+            </test-text>
+          </div>
+          <div class="feature-item">
+            <test-avatar variant="secondary" size="medium">✋</test-avatar>
+            <test-text variant="body-bold">내용의 간결</test-text>
+            <test-text variant="body"
+              >목록을 열거하거나 가짓수를 보충하는 등의 단순한 정보를 반복하지 마세요.</test-text
+            >
+          </div>
+          <div class="feature-item">
+            <test-avatar variant="secondary" size="medium">✋</test-avatar>
+            <test-text variant="body-bold">정보의 당위</test-text>
+            <test-text variant="body"
+              >일어날 법 하지 않는 don't 케이스를 작성하여 문서를 장황하게 만들지 마세요. 컴포넌트와
+              문서는 계속해서 개선되고 변화한다는 원칙에 연동.</test-text
+            >
+          </div>
         </div>
-        <div style="width: 25%">
-          <test-text variant="subhead">Career Page</test-text>
-          <ul class="checklist">
-            <li>Brand first design</li>
-            <li>Custom templates</li>
-            <li>Analytics & tracking</li>
-            <li>Easy job application</li>
-          </ul>
-        </div>
-        <div style="width: 25%">
-          <test-text variant="subhead">Career Page</test-text>
-          <ul class="checklist">
-            <li>Brand first design</li>
-            <li>Custom templates</li>
-            <li>Analytics & tracking</li>
-            <li>Easy job application</li>
-          </ul>
-        </div>
+      </section>
+      <test-separator></test-separator>
+      <div style="width: 25%">
+        <test-feature heading="test"></test-feature>
+        <test-text variant="subhead">Career Page</test-text>
+        <ul class="checklist">
+          <li>Brand first design</li>
+          <li>Custom templates</li>
+          <li>Analytics & tracking</li>
+          <li>Easy job application</li>
+        </ul>
       </div>
     </test-tile>
 
-    <section
+    <!-- <section
       style="
         height: 400px;
         margin: 4rem 0;
         background: var(--color-background-strong);
         border-radius: var(--radius);
       "
-    ></section>
-
-    <test-text variant="subhead">Documentation</test-text>
-    <div style="height: var(--space-4)"></div>
-    <!-- <test-text variant="subhead">A delightful experience<br />for you and your users</test-text> -->
-    <div class="feature">
-      <style>
-        .feature-item test-text[varinat='body-bold'] {
-          display: block;
-          margin: 0.75rem 0 0.5rem;
-        }
-        .test .feature-item {
-          width: calc(33.3333% - 0.75rem);
-          max-width: 500px;
-          border: var(--border);
-          padding: var(--space-4);
-          box-sizing: border-box;
-          /* background: var(--green100); */
-          border-radius: var(--radius);
-        }
-      </style>
-      <div class="feature-item">
-        <test-avatar variant="secondary" size="medium">✋</test-avatar>
-        <test-text variant="body-bold">타겟의 명료 / Meaningful and Trustworthy</test-text>
-        <test-text variant="body"
-          >기본적인 내용을 서술하지 마세요. 이 문서를 읽는 사람은 체크박스와 라디오의 차이를
-          이해하고 있습니다.</test-text
-        >
-      </div>
-      <div class="feature-item">
-        <test-avatar variant="secondary" size="medium">✋</test-avatar>
-        <test-text variant="body-bold">용도의 분명</test-text>
-        <test-text variant="body">
-          경우에따라.상황에따라.목적에맞게 등 용도를 특정할 수 없는 사하지 마세요. 기능과 역할을
-          분명히.
-        </test-text>
-      </div>
-      <div class="feature-item">
-        <test-avatar variant="secondary" size="medium">✋</test-avatar>
-        <test-text variant="body-bold">규모의 약속</test-text>
-        <test-text variant="body">
-          모든 세부사항을 정의하지 마세요. 규칙을 정의하는 일 만큼 문제 해결을 위한 도구의 복잡도를
-          관리도 중요합니다.
-          <!-- 예를 들면, border width는 border 스코프에서 디펜던시가 있고, 일괄 변경이 쉽기 때문에 토큰을 정의하지 않는 것이 좋습니다. -->
-        </test-text>
-      </div>
-      <div class="feature-item">
-        <test-avatar variant="secondary" size="medium">✋</test-avatar>
-        <test-text variant="body-bold">내용의 간결</test-text>
-        <test-text variant="body"
-          >목록을 열거하거나 가짓수를 보충하는 등의 단순한 정보를 반복하지 마세요.</test-text
-        >
-      </div>
-      <div class="feature-item">
-        <test-avatar variant="secondary" size="medium">✋</test-avatar>
-        <test-text variant="body-bold">정보의 당위</test-text>
-        <test-text variant="body"
-          >일어날 법 하지 않는 don't 케이스를 작성하여 문서를 장황하게 만들지 마세요. 컴포넌트와
-          문서는 계속해서 개선되고 변화한다는 원칙에 연동.</test-text
-        >
-      </div>
-    </div>
+    ></section> -->
     <!-- <blockquote>
       <test-text variant="caption">
         &loz; dos / don'ts 케이스는 이미지 없이 간결하게 서술합니다. 유아이는 계속 변경되는데

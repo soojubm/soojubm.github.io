@@ -126,7 +126,7 @@
         <test-group variant="checkbox">
           <!-- aira-checked="mixed" aria-controls="1 2" -->
           <test-checkbox>컬렉션 1</test-checkbox>
-          <test-checkbox>컬렉션 2</test-checkbox>
+          <test-checkbox>컬렉션 2 - 관리: 수정/삭제 등</test-checkbox>
         </test-group>
       </test-tile>
       <test-tile>
@@ -136,6 +136,11 @@
         <div style="height: 1rem"></div>
         <test-textfield label="컬렉션 이름" placeholder="컬렉션 이름"></test-textfield>
         <div style="height: 0.75rem"></div>
+        <test-group variant="radio">
+          <!-- aira-checked="mixed" aria-controls="1 2" -->
+          <test-radio>공개</test-radio>
+          <test-radio>비공개</test-radio>
+        </test-group>
         <test-tile variant="elevated" size="small">
           <test-menuitem label="사용자 및 그룹 추가">
             <test-avatar slot="avatar">+</test-avatar>
