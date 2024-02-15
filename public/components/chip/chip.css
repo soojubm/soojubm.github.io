@@ -15,7 +15,8 @@ em, i  {
   --chip-color-background: var(--color-background-weak);
   --chip-color-text: var(--color-text);
   --chip-radius: var(--radius);
-  --chip-border: 1px solid transparent;
+  --chip-border-color: transparent;
+  --chip-border: 1px solid var(--chip-border-color);
   --chip-size: var(--size-medium);
   --chip-inset: null;
   --chip-shadow: none;

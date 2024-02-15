@@ -40,7 +40,7 @@
 .is-mine .chat-inputing  {right:0;}
 
 .chat-bubble.is-primary,
-.is-mine .chat-bubble {border:none;;background:var(--color-primary);}
+.is-mine .chat-bubble {background:var(--color-primary);}
 
 
 .chat-bubble.is-primary p,

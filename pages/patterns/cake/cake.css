@@ -1,4 +1,4 @@
-.cake {padding:0 var(--grid-margin);}
+.cake {padding:0 var(--grid-margin) 4rem;}
 
 .cake-head {padding:2rem 0;position:relative;}
 .cake-background {@mixin bleeding;height:100%;background:url('/public/images/springsteen.jpg') no-repeat 0 -200px fixed;background-size:cover;filter:grayscale(100%);background:var(--color-background-weak);}

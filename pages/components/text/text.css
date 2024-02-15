@@ -161,3 +161,8 @@
 	.hero-object1 {display:none;}
 	.hero-object2 {display:none;}
 }
+
+
+.block:not(:last-child) {
+  margin-bottom: 1.5rem;
+}

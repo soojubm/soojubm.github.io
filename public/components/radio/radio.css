@@ -10,7 +10,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: var(--size-medium);
+  /* options */
+  /* height: var(--size-medium); */
   position:relative;
 }
 

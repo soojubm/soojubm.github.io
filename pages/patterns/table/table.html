@@ -131,7 +131,7 @@
         </td>
         <th scope="row">
           <div style="display: flex; align-items: center; gap: var(--space-2)">
-            <test-avatar default="true"></test-avatar>
+            <test-avatar variant="secondary" default="true"></test-avatar>
             Gabriel
           </div>
         </th>
@@ -166,7 +166,7 @@
         </td>
         <th scope="row">
           <div style="display: flex; align-items: center; gap: var(--space-2)">
-            <test-avatar default="true"></test-avatar>
+            <test-avatar variant="secondary" default="true"></test-avatar>
             Ella
           </div>
         </th>
@@ -208,7 +208,11 @@
         <test-chip variant="plain" class="pagination-previous" aria-label="앞 페이지로 이동">
           이전
         </test-chip>
-        <test-chip variant="plain" class="pagination-next" aria-label="뒷 페이지로 이동"
+        <test-chip
+          variant="plain"
+          class="pagination-next"
+          aria-label="뒷 페이지로 이동"
+          style="order: 3"
           >다음</test-chip
         >
         <test-chip variant="plain" class="pagination-link" aria-label="맨 앞 페이지로 이동"

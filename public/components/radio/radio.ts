@@ -1,4 +1,4 @@
-import { makeStyleSheet } from '../../javascripts/components/utils'
+import { makeStyleSheet, inheritStyle } from '../../javascripts/components/utils'
 
 class Radio extends HTMLElement {
   constructor() {
@@ -9,7 +9,7 @@ class Radio extends HTMLElement {
     container.classList.add('radio')
 
     const label = document.createElement('label')
-    label.textContent = this.textContent || ''
+    label.innerHTML = this.innerHTML || ''
     label.setAttribute('for', this.id_temp || '')
 
     const input = document.createElement('input')
@@ -18,6 +18,10 @@ class Radio extends HTMLElement {
     input.setAttribute('name', this.name || '')
     if (this.checked) input.setAttribute('checked', 'true')
     if (this.disabled) input.setAttribute('disabled', 'true')
+
+    // TODO : inheritStyle
+    const style = this.getAttribute('style')
+    if (style) container.setAttribute('style', style)
 
     shadow.appendChild(container)
     container.append(input, label, makeStyleSheet('radio'))

@@ -21,4 +21,4 @@
 ::slotted([slot=description]) {}
 ::slotted([slot=avatar]) {display:flex;justify-content:center;}
 ::slotted([slot=list]) {margin:var(--space-4) 0;}
-::slotted([slot=action]) {margin:1rem 0 0 0;}
+::slotted([slot=action]) {margin:1.5rem 0 0 0;}
