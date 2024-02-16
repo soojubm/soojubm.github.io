@@ -282,27 +282,6 @@ async function domEvents() {
 //   event.returnValue = '테스트'
 // })
 
-const textarea1 = document.querySelector('#ta-example-one')
-const textarea2 = document.querySelector('#ta-example-two')
-
-if (textarea1 && textarea2) {
-  textarea1.addEventListener('mouseup', onMouseUp, false)
-  textarea2.addEventListener('mouseup', onMouseUp, false)
-}
-
-function onMouseUp(e) {
-  const activeTextarea = document.activeElement as HTMLTextAreaElement
-
-  const { id, value, selectionStart, selectionEnd } = activeTextarea
-  const selection = value.substring(selectionStart, selectionEnd)
-
-  const outputElement = document.querySelector('#output-element') as HTMLElement
-  const outputText = document.querySelector('#output-text') as HTMLElement
-
-  outputElement.innerHTML = id
-  outputText.innerHTML = selection
-}
-
 // const targetElements = document.querySelectorAll<HTMLElement>('.js-parallax-test')
 // const tt = document.querySelector<HTMLElement>('.js-parallax-parent')
 // // initialize

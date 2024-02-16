@@ -6,12 +6,14 @@
   --radio-color: var(--gray200);
   --radio-border: 1px solid var(--radio-color);
   --radio-radius: 50%;
+  --radio-inset: var(--space-2);
 
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* options */
-  /* height: var(--size-medium); */
+  /* tiled radio. */
+  min-height: var(--size-medium);
+  /* padding: var(--radio-inset) 0; */
   position:relative;
 }
 

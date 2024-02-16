@@ -31,6 +31,7 @@ class Result extends HTMLElement {
 
     description.classList.add('result-description')
     description.innerText = this.description || ''
+    description.setAttribute('variant', 'body')
 
     avatarSlot.name = 'avatar'
     listSlot.name = 'list'
@@ -43,6 +44,7 @@ class Result extends HTMLElement {
   get label() {
     return this.getAttribute('label')
   }
+
   get description() {
     return this.getAttribute('description')
   }

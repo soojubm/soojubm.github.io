@@ -328,7 +328,6 @@
 
   <!-- https://story.pxd.co.kr/1451 -->
   <p>loading state/dfn/abbr</p>
-  https://material.io/design/interaction/states.html
 
   <article class="article js-observer js-scrollspy-section">
     <test-text variant="title">File Uploader</test-text>
@@ -502,51 +501,12 @@
 
   <article class="article">
     <label for="cb1-edit">레이블</label>
-    <!-- a11y combobox -->
-    <input
-      type="text"
-      aria-activedescendant="cb1-opt1"
-      aria-readonly="true"
-      aria-owns="cb1-list"
-      aria-autocomplete="list"
-      aria-label="label"
-      id="cb1-edit"
-    />
-    <ul aria-expanded="true" role="listbox" id="cb1-list">
-      <li role="option" id="cb1-opt1">Alabama</li>
-      <li role="option" id="cb1-opt2">Alaska</li>
-      <li role="option" id="cb1-opt3">American Samoa</li>
-    </ul>
-
-    <p>ID <span id="output-element"></span></p>
-    <p>텍스트 <span id="output-text"></span></p>
-    <form>
-      <label for="ta-example-one">레이블</label>
-      <textarea id="ta-example-one" rows="3" cols="40">
-  텍스트 영역 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt, lorem a porttitor molestie, odio nibh iaculis libero, et accumsan nunc orci eu dui.</textarea
-      >
-      <label for="ta-example-two">레이블</label>
-      <textarea id="ta-example-two" rows="3" cols="40">
-  텍스트 영역 2. Fusce ullamcorper, nisl ac porttitor adipiscing, urna orci egestas libero, ut accumsan orci lacus laoreet diam. Morbi sed euismod diam.</textarea
-      >
-    </form>
-
     <test-menuitem data-size="large" style="margin-bottom: var(--space-3)">
       <test-avatar></test-avatar>
       <span class="item-description">관심사가 비슷한 사용자</span>
       <h2 class="item-name">Gyeongsoo I</h2>
       <!-- <button class="item-action"><span class="item-action-label">팔로우</span></button> -->
     </test-menuitem>
-
-    <test-tile>
-      <test-text variant="subhead">Senior Front-end Developer</test-text>
-      <test-group>
-        <test-tag>Full-Time</test-tag>
-        <test-tag>Korea</test-tag>
-        <test-tag>Remote friendly</test-tag>
-      </test-group>
-      <test-chip>View Job</test-chip>
-    </test-tile>
 
     <section>
       <test-textfield label="임시" placeholder="you@gamil.com">

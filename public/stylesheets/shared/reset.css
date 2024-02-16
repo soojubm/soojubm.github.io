@@ -483,3 +483,14 @@ mark {color:inherit;} mark::before {content: " [강조 시작] ";opacity:0;posit
 .layout[data-size=small] {
   --layout-width: var(--layout-width-small);
 }
+
+
+
+
+
+/* TODO make thte com */
+.summary {display:flex;flex-direction:column;width:100%;gap:var(--space-2);}
+.summary-item {display:flex;justify-content:space-between;}
+.summary-item-label {}
+.summary-item-value {}
+.summary-total {display:flex;justify-content:space-between;font-size: var(--font-size-large);font-weight: var(--font-weight-bold);}

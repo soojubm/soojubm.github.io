@@ -46,11 +46,11 @@
   */
   --width-sidemenu: 14rem;
   --width-medium: 400px;
-  --width-small: 240px;
+  --width-small: 200px;
 
   --popover-width-small: 200px;
   --popover-width-dialog: var(--width-medium);
-  --popover-width-dropdown: var(--width-tiny);
+  --popover-width-dropdown: var(--width-small);
 
   --grid-column: calc(50% - var(--space-1));
   --grid-gutter: null;

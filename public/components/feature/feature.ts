@@ -14,10 +14,10 @@ class Feature extends HTMLElement {
 
     const heading = document.createElement('test-text')
     heading.setAttribute('variant', 'subhead')
-    heading.textContent = this.heading || ''
+    heading.innerText = this.heading || ''
 
     shadow.appendChild(container)
-    container.append(avatar, heading, makeStyleSheet('textfield'))
+    container.append(avatar, heading)
   }
 
   get type() {
@@ -29,9 +29,7 @@ class Feature extends HTMLElement {
   }
 
   connectedCallback() {}
-  disconnectedCallback() {
-    console.log('disconnected', this)
-  }
+  disconnectedCallback() {}
 }
 
 export default Feature
