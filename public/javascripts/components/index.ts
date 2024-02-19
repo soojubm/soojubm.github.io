@@ -33,6 +33,7 @@ import Separator from '../../components/separator/separator'
 
 import Result from '../../components/result/result'
 import Feature from '../../components/feature/feature'
+import Keyvalue from '../../components/keyvalue/keyvalue'
 
 // class extends HTMLElement {
 //   static get observedAttributes() {
@@ -50,10 +51,14 @@ export function defineCustomElement() {
     customElements.define('test-tag', Tag)
     customElements.define('test-badge', Badge)
 
-    customElements.define('test-avatar', Avatar)
     customElements.define('test-entity', Entity)
 
+    // 위에 있어야 넣어지네? text보다 shadow Dom
     customElements.define('test-result', Result)
+    customElements.define('test-feature', Feature)
+    customElements.define('test-keyvalue', Keyvalue)
+
+    customElements.define('test-avatar', Avatar)
 
     customElements.define('test-textfield', Textfield)
 
@@ -78,8 +83,6 @@ export function defineCustomElement() {
     customElements.define('test-tooltip', Tooltip)
 
     customElements.define('test-separator', Separator)
-
-    customElements.define('test-feature', Feature)
   }
 }
 

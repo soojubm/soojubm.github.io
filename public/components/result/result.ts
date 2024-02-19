@@ -6,17 +6,17 @@ class Result extends HTMLElement {
     const shadow = this.attachShadow({ mode: 'open' })
 
     const container = document.createElement('div')
+    container.role = 'status'
+    container.classList.add('result')
+
     // TODO title
-    const label = document.createElement('test-text')
     const description = document.createElement('test-text')
 
     const avatarSlot = document.createElement('slot')
     const listSlot = document.createElement('slot')
     const actionSlot = document.createElement('slot')
 
-    container.role = 'status'
-    container.classList.add('result')
-
+    const label = document.createElement('test-text')
     label.classList.add('result-title')
     label.innerText = this.label || ''
     label.setAttribute('variant', 'subhead')
@@ -26,8 +26,6 @@ class Result extends HTMLElement {
     avatar.setAttribute('size', 'large')
     avatar.setAttribute('variant', 'secondary')
     avatar.setAttribute('default', 'true')
-
-    // container.classList.add('result')
 
     description.classList.add('result-description')
     description.innerText = this.description || ''

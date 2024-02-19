@@ -3,20 +3,66 @@
     <test-text variant="title">Texts</test-text>
     <test-text variant="body-large">작성 중.</test-text>
 
+    <!-- summary list gov.uk -->
+    <!-- Use a summary list to summarise information, for example, a user’s responses at the end of a form. -->
+    <!-- 이걸 세팅 등 결과 값 패턴에도 쓰는 구나. -->
+    <!-- last updates :: multiple summary lists -->
+    <!-- ‘key’ that’s a description or label of a piece of information, like “Name”
+‘value’ which is the piece of information itself, such as “John Smith” -->
+
+    <!-- summary list - row / column -->
+    <!-- ally -->
+    <!-- To give more context, add visually hidden text to the links. This means a screen reader user will hear the row action and the ‘key’ label for the information it will affect, like ‘Change name’ or ‘Change date of birth’. -->
+
+    <!-- Write link text for card actions to tell the user what the card action will do and that it will apply to the entire summary card. It should also be as short as possible, usually 2 words.
+
+Example card actions include:
+
+Remove tenant
+Edit qualification
+Update issue
+Approve application
+Cancel order -->
+
+    <!-- Task List 라는 확장된 형태 -->
+    <!-- 키벨류 구조는 결국 아바타랑 쓸 수도 있는.. / mindsphere  -->
+    <!-- The value can be:
+Plain text single line
+Plain text multiline
+Array of items, for example lists, categories (tags or badges)
+Image
+Video
+Any generic entity, lists, tables or another key value pair
+3. Supporting visual
+
+The font size of a key is never bigger than the value.
+
+ -->
+
+    <!-- 사이트맵 / 메가메뉴 -->
+    <!-- expressive type  / productive type 표현 영역 -->
+
+    <!-- labels for captions and helper text, as well as legal copy -->
+
+    <!-- ibm / body / body-compact 2px 차이, Fluid heading styles-->
+
     <section class="component-example">
       <div>
         <test-text variant="title">heading1, title</test-text>
         <test-text variant="subhead">heading2, subhead</test-text>
-        <test-text variant="label">heading3, label</test-text>
+        <test-text variant="subhead">heading3, body-bold (이름 바꿔야 됨)</test-text>
         <test-separator></test-separator>
         <test-text variant="body-large">body1 (large)</test-text>
         <test-text variant="body">body2</test-text>
-        <test-text variant="body-bold">body bold - button & meta</test-text>
+        <!-- <test-text variant="body-bold">body bold - button & meta</test-text> -->
         <test-separator></test-separator>
         <test-text variant="body-bold"
           >key - value 에 사용하는 size token으로 세로값을 갖는 텍스트를 추가해야? 케이스 분리가
           필요해보이는 부분. text + text. menuitem의 content area.</test-text
         >
+        <test-separator></test-separator>
+        <test-text variant="label">heading3, label</test-text>
+        <test-text variant="body-bold">heading3, label - button meta</test-text>
 
         <test-separator></test-separator>
 
@@ -35,32 +81,16 @@
 
         <test-separator></test-separator>
 
-        <section class="summary">
-          <div class="summary-item">
-            <div class="summary-item-label">상품 금액</div>
-            <div class="summary-item-value">₩ 160,000</div>
-          </div>
-          <div class="summary-item">
-            <div class="summary-item-label">서비스 수수료</div>
-            <div class="summary-item-value">₩ 3,000</div>
-          </div>
-          <div class="summary-total">
-            <div class="summary-total-label">총 합계 (KRW)</div>
-            <div class="summary-total-value">₩ 163,000</div>
-          </div>
-        </section>
+        <test-group alignment="vertical">
+          <test-keyvalue key="상품 금액" value="₩ 160,000"> </test-keyvalue>
+          <test-keyvalue key="서비스 수수료" value="₩ 3,000"> </test-keyvalue>
+          <test-keyvalue size="large" key="총 합계 (KRW)" value="₩ 163,000"> </test-keyvalue>
+        </test-group>
 
         <test-separator></test-separator>
 
-        <section class="summary">
-          <div class="summary-item">
-            <div class="summary-item-label" style="font-weight: var(--font-weight-bold)">
-              서비스 수수료
-            </div>
-            <div class="summary-item-value" style="font-weight: var(--font-weight-bold)">
-              3,000원
-            </div>
-          </div>
+        <test-group alignment="vertical">
+          <test-keyvalue key="서비스 수수료" value="3,000원"> </test-keyvalue>
           <div class="summary-item">
             <div
               class="summary-item-label"
@@ -78,7 +108,7 @@
           <footer style="margin: var(--space-4) 0 0 0">
             <test-button variant="primary">구매 확정하고</test-button>
           </footer>
-        </section>
+        </test-group>
 
         <test-separator></test-separator>
 
@@ -90,11 +120,24 @@
 
         <test-separator></test-separator>
 
+        <dl>
+          <dt>key</dt>
+          <dd>value</dd>
+          <dt>key</dt>
+          <dd>value</dd>
+        </dl>
+        <p>
+          주문 확인 등에서는 조금 더 눈에 띄는 형태가 필요할 수 있고, 푸터나 더 중요한 정보들이 있을
+          때는 덜 강조된 형태가 필요하기도 함. 굉장히 다양하게 정의해두는 것이 좋다. 슬롯을 넣어줄
+          수도?
+        </p>
+        <p>또는 text component가 아니라 token으로 스타일링.</p>
+        <p>label / label gray / label bold</p>
+        <p>value / value bold (only bold label과 pairing) / large size</p>
+
+        <test-separator></test-separator>
+
         <test-group style="gap: 2rem">
-          <div>
-            <test-text variant="label">Repository</test-text>
-            <test-text variant="subhead">100만 이상</test-text>
-          </div>
           <div>
             <test-text variant="label">Size</test-text>
             <test-text variant="subhead">Small</test-text>
@@ -103,28 +146,9 @@
             <test-text variant="label">한글</test-text>
             <test-text variant="subhead">한글로 시작</test-text>
           </div>
-        </test-group>
-
-        <test-separator></test-separator>
-
-        <test-group style="gap: 2rem">
-          <div class="statistic-item">
-            <test-text variant="label">Size</test-text>
-            <test-text variant="body-bold">Small</test-text>
-          </div>
           <div class="statistic-item">
             <test-text variant="label">Repository</test-text>
-            <test-text variant="body-bold">TODO with avatar. line height.</test-text>
-          </div>
-          <div class="statistic">
-            <test-group>
-              <test-text variant="label">Metadata</test-text>
-              <test-text variant="body">description list</test-text>
-              <test-text variant="label">Repository</test-text>
-              <test-text variant="body-bold">100만 이상</test-text>
-              <test-text variant="label">Size</test-text>
-              <test-text variant="body-bold">Small</test-text>
-            </test-group>
+            <test-text variant="body-bold">100만 이상 TODO with avatar. line height.</test-text>
           </div>
         </test-group>
 
@@ -143,10 +167,11 @@
 
         <test-separator></test-separator>
 
-        <nav>
-          <div class="sitemap-background"></div>
-          <test-text varinat="" hidden aria-hidden="true">사이트맵</test-text>
-          <test-group alignment="vertical">
+        <nav class="sitemap-item">
+          <test-text varinat="" hidden aria-hidden="true" class="sitemap-item-level1"
+            >사이트맵</test-text
+          >
+          <test-group alignment="vertical" class="sitemap-item-level2">
             <test-text variant="label">사이트맵 컴포넌트</test-text>
             <test-link href="#">기존의 링크 컴포넌트 활용 시</test-link>
             <test-link href="#">링크나 제목에 변주가 많이 필요</test-link>
@@ -184,6 +209,9 @@
 
         <test-separator></test-separator>
 
+        <test-keyvalue key="key text" value="value text"></test-keyvalue>
+
+        <test-separator></test-separator>
         <ul style="margin: 0">
           <li>순서가 없는 리스트</li>
           <li>순서가 없는 리스트</li>
@@ -193,21 +221,18 @@
           <li>순서가 있는 리스트</li>
           <li>순서가 있는 리스트</li>
         </ol>
-        <!-- <ul data-align="horizontal" style="margin: 0">
-            <li title="unordered list, level 1">순서가 없는 리스트</li>
-            <li style="margin: 0 2rem 0 1rem">가로로 정렬할 수 있어요</li>
-            <li>조건이 있어요</li>
-          </ul> -->
-        <ul>
-          <li>
-            텍스트 목록만 리스트 태그(ul, ol, dl)로 마크업하세요. 그렇지 않으면 대부분의 컨텐츠가
-            리스트로 취급될 수 있음. role=listbox/listitem
-          </li>
-          <li>
-            텍스트 목록을 2 댑스(nested)로 제공하지 마세요. 중첩된 목록은 콘텐츠를 읽기 어렵게 하며
-            작은 화면에서는 공간을 낭비.
-          </li>
-        </ul>
+        <blockquote>
+          <ul class="checklist">
+            <li>
+              텍스트 목록만 리스트 태그(ul, ol, dl)로 마크업하세요. 그렇지 않으면 대부분의 컨텐츠가
+              리스트로 취급될 수 있음. role=listbox/listitem
+            </li>
+            <li>
+              텍스트 목록을 2 댑스(nested)로 제공하지 마세요. 중첩된 목록은 콘텐츠를 읽기 어렵게
+              하며 작은 화면에서는 공간을 낭비.
+            </li>
+          </ul>
+        </blockquote>
 
         <button class="js-toggle" style="display: flex; gap: var(--space-3)">
           수줍이님이 더 궁금하신가요?
@@ -227,7 +252,7 @@
           "
         >
           택배사에 직접 연락하지 않아도<br />영업일 기준 3일 이내에 방문합니다.
-          <small style="display: block; margin: var(--space-3) 0 0">방문 택배사 : 한진택배</small>
+          <small style="display: block; margin: var(--space-2) 0 0">방문 택배사 : 한진택배</small>
         </div>
         <ul class="checklist">
           <li>
@@ -266,7 +291,7 @@
         <test-text>sequentially-descending order</test-text>
         <test-text>
           섹션은 항상 제목을 가져야 한다. 시각적으로 숨겨지지 않은 명시적인 텍스트 노드를. 제목을
-          포함하는 섹션 컴포넌트를 활용할 수 있다.
+          포함하는 섹션 컴포넌트의 정의.
         </test-text>
         <!-- <li>프로모션 페이지의 헤드라인으로 제한적으로 사용합니다.</li> -->
       </blockquote>

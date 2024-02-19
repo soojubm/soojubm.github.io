@@ -69,28 +69,42 @@
       </test-text>
     </section>
 
-    <section class="feature">
-      <div class="feature-item">
-        <test-text variant="body-bold">유연한 그리드 시스템</test-text>
-        <test-text variant="body">
-          12 column grid 등 엄격한 그리드 시스템을 정의하지 마세요. 다양한 사용자 환경에서의
-          최적화가 어렵고 활용도도 낮다. 칼럼의 너비와 갯수를 정의하고 가로 스크롤을 활용합니다.
-        </test-text>
-      </div>
-      <div class="feature-item">
-        <test-text variant="body-bold">페이지 모듈의 대비</test-text>
-        <test-text variant="body">
-          페이지의 맥락을 구분하기 위해 레이아웃 모듈이나 배경색의 대비를 활용할 수 있습니다.
-          컨테이너 너비(비밀번호찾기와 로그인/회원가입)와 배경색(설정, 글쓰기, 소개 등).
-        </test-text>
-      </div>
-      <div class="feature-item">
-        <test-text variant="body-bold">프레젠테이션 패턴</test-text>
-        <test-text variant="body">
-          섹션, 아티클 그리고 모달, 드롭다운 등의 컴포넌트도 작은 화면에서는 페이지 맥락이 될 수
-          있음을 고려합니다. => 결국 모바일 퍼스트 foundation.
-        </test-text>
-      </div>
+    <div class="columns is-gapless is-multiline">
+      <div class="column">First column</div>
+      <div class="column">Second column</div>
+      <div class="column">Third column</div>
+      <div class="column">Fourth column</div>
+    </div>
+    <style>
+      .columns {
+        display: flex;
+        gap: var(--space-4);
+      }
+      .column {
+        flex-basis: 0;
+        flex-grow: 1;
+        /* flex-shrink: 1; */
+
+        padding: var(--space-4);
+        background-color: crimson;
+      }
+    </style>
+
+    <test-text variant="body-bold">유연한 그리드 시스템</test-text>
+    <test-text variant="body">
+      12 column grid 등 엄격한 그리드 시스템을 정의하지 마세요. 다양한 사용자 환경에서의
+      최적화가 어렵고 활용도도 낮다. 칼럼의 너비와 갯수를 정의하고 가로 스크롤을 활용합니다.
+    </test-text>
+    <test-text variant="body-bold">페이지 모듈의 대비</test-text>
+    <test-text variant="body">
+      페이지의 맥락을 구분하기 위해 레이아웃 모듈이나 배경색의 대비를 활용할 수 있습니다.
+      컨테이너 너비(비밀번호찾기와 로그인/회원가입)와 배경색(설정, 글쓰기, 소개 등).
+    </test-text>
+    <test-text variant="body-bold">프레젠테이션 패턴</test-text>
+    <test-text variant="body">
+      섹션, 아티클 그리고 모달, 드롭다운 등의 컴포넌트도 작은 화면에서는 페이지 맥락이 될 수
+      있음을 고려합니다. => 결국 모바일 퍼스트 foundation.
+    </test-text>
     </section>
   </article>
 </main>

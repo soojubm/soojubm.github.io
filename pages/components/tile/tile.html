@@ -98,6 +98,30 @@
       </div>
 
       <test-tile>
+        <test-tilebar heading="Ratings"></test-tilebar>
+        <test-tile
+          class="statistic-item"
+          aria-label="별점 5개 만점에 3.9개를 받았습니다."
+          style="text-align: center; z-index: auto"
+        >
+          <i class="statistic-label">리뷰 116만개</i>
+          <span class="statistic-value" style="margin-left: -0.5rem">⭐ 4.8</span>
+        </test-tile>
+        <div class="graph2">
+          <b class="graph-label">5 Stars</b>
+          <span class="graph-value">68%</span>
+          <progress class="progress" value="40" max="100">40%</progress>
+          <!-- <div class="graph-bar"><b style="width: 68%"></b></div> -->
+        </div>
+        <div class="graph2">
+          <b class="graph-label">4 Stars</b>
+          <span class="graph-value">24%</span>
+          <progress class="progress" value="40" max="100">40%</progress>
+        </div>
+        <small>별 다섯개에서 점수만큼 채우는 유아이는 최근 잘 보이지 않는다. 구현이 어려움.</small>
+      </test-tile>
+
+      <test-tile>
         <test-avatar>🥫</test-avatar>
         <test-text variant="subhead">Quote</test-text>
         <p class="quote-body">Don't you know that God is Pooh bear?</p>
