@@ -245,32 +245,6 @@ var renderTime = function () {
 renderTime()
 setInterval(renderTime, 1000)
 
-setTimeout(() => {
-  countUp({ selector: '.js-counter' })
-  countUp({ selector: '.js-counter2' })
-}, 2000)
-
-function countUp({ selector: selector }) {
-  let element = document.querySelector(selector)
-  if (!element) return
-
-  let number = 0
-  let elementValue = element.dataset.number || element.getAttribute('data-number')
-
-  // if (!element || !elementValue) return
-
-  let interval = setInterval(() => {
-    renderNumber()
-
-    if (number >= elementValue) clearInterval(interval)
-  }, 10)
-
-  function renderNumber() {
-    ++number
-    element.innerHTML = `${number}%`
-  }
-}
-
 function calculateReadTime() {
   const readTimeElement = document.querySelector<HTMLElement>('.post-head')
   const postContent = document.querySelector<HTMLElement>('.post-body-paragraph')
