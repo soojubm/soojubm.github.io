@@ -75,6 +75,66 @@
   </header>
 
   <section class="product-detail">
+    <style>
+      .review-item {
+        max-width: var(--layout-width-medium);
+        margin: var(--space-3) 0;
+      }
+      .review-item-title {
+        margin: 0 0 0.5rem 0;
+        font-size: var(--font-size-large);
+      }
+      .review-item-comment {
+        line-height: 1.6;
+      }
+      .review-item-byline {
+        font-size: var(--font-size-small);
+      }
+      .review-item-byline:after {
+        content: '';
+        display: inline-block;
+        width: 1px;
+        height: 7px;
+        margin: 0 6px 0 10px;
+        vertical-align: middle;
+        background: #ddd;
+      }
+      .review-item-time {
+        font-size: var(--font-size-small);
+      }
+    </style>
+    <section class="review">
+      <test-text variant="subhead">Reviews</test-text>
+
+      <test-keyvalue key="Total review" value="83">s</test-keyvalue>
+      <test-separator></test-separator>
+      <div class="review-item" style="display: flex; gap: 2rem">
+        <div>⭐⭐⭐⭐⭐</div>
+        <div>
+          <test-text variant="body"
+            >I have 2 kids so sleep is hard to come by, these have helped me to wake up feeling more
+            refreshed and ready to start the day
+          </test-text>
+          <div style="height: 1rem"></div>
+          <test-text variant="body-bold">Fleet Foxes</test-text>
+        </div>
+        <time>2020년 12월 1일 </time>
+      </div>
+      <test-separator></test-separator>
+      <div class="review-item" style="display: flex; gap: 2rem">
+        <div>⭐⭐⭐⭐⭐</div>
+        <div>
+          <test-text variant="body"
+            >I have 2 kids so sleep is hard to come by, these have helped me to wake up feeling more
+            refreshed and ready to start the day
+          </test-text>
+          <div style="height: 1rem"></div>
+          <test-text variant="body-bold">Fleet Foxes</test-text>
+        </div>
+        <time>2020년 12월 1일 </time>
+      </div>
+    </section>
+
     <div class="product-detail-intro" style="margin: 8rem 0">
       <figure class="product-detail-intro-image">
         <img src="" alt="" />
@@ -352,14 +412,6 @@
         <test-tag class="card-note">무료배송 / 200 포인트 적립</test-tag>
       </article>
     </section>
-  </section>
-
-  <section class="product-review">
-    <header>
-      <test-text varinat="label">리뷰</test-text>
-      <test-text variant="subhead">총 83건의 리뷰가 있습니다.</test-text>
-    </header>
-    <div></div>
   </section>
 </main>
 <main class="cart" style="padding: 0 var(--grid-margin)">

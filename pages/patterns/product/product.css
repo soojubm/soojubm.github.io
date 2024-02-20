@@ -73,13 +73,6 @@
 .product-detail-gallary figure:nth-of-type(3) {width:8rem;height:8rem;margin-left:15%;}
 .product-detail-gallary figure:nth-of-type(4) {width:50%;padding-bottom:25%;}
 
-.review-item {max-width:var(--layout-width-medium);margin:var(--space-3) 0;}
-.review-item-thumbnail {height:200px;margin:0 0 1rem 0;background:var(--gray800);}
-.review-item-title {margin:0 0 .5rem 0;font-size:var(--font-size-large);}
-.review-item-comment {line-height:1.6;}
-.review-item-byline {font-size:var(--font-size-small);}
-.review-item-byline:after {content:'';display:inline-block;width:1px;height:7px;margin:0 6px 0 10px;vertical-align:middle;background:#ddd;}
-.review-item-time {font-size:var(--font-size-small);}
 
 .product-quick {
   display:flex;align-items:center;
