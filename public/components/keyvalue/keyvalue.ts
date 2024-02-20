@@ -17,13 +17,13 @@ class Keyvalue extends HTMLElement {
     keyText.innerText = this.key || ''
 
     const valueText = document.createElement('test-text')
-    valueText.setAttribute('variant', this.size === 'large' ? 'body-large' : 'body')
+    valueText.setAttribute('variant', this.size === 'large' ? 'word-large' : 'word')
     valueText.innerText = this.value || ''
+
+    if (this.alignment) container.dataset.alignment = this.alignment
 
     shadow.appendChild(container)
     container.append(keyText, valueText, slot, makeStyleSheet('keyvalue'))
-
-    console.log(this.key, this.value)
   }
 
   get key() {
@@ -36,6 +36,10 @@ class Keyvalue extends HTMLElement {
 
   get size() {
     return this.getAttribute('size')
+  }
+
+  get alignment() {
+    return this.getAttribute('alignment')
   }
 
   connectedCallback() {}

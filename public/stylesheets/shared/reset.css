@@ -465,16 +465,6 @@ mark {color:inherit;} mark::before {content: " [강조 시작] ";opacity:0;posit
 .bookcard-head{padding:12rem 0 2rem;background:#ebebeb;text-align:center;position:relative}.bookcard-head .bookcard-head-media{width:180px;border:1px solid #000;position:absolute;left:50%;bottom:7.5rem;-webkit-transform:translate(-50%);transform:translate(-50%)}.bookcard-head .bookcard-head-media img{width:100%}.bookcard-head .bookcard-head-title{margin:0 0 .5rem}.bookcard-head .bookcard-head-description{color:#666}.bookcard-body{padding:2rem 3rem 5rem}.bookcard-body .bookcard-body-title{margin:0 0 1rem;font-size:var(--font-size-medium);line-height:1.8}.bookcard-body .bookcard-body-more{padding:0;margin-left:.5rem;text-decoration:underline}.bookcard-body .bookcard-body-temp{margin:0 0 .5rem;font-size:12px;color:#999}.bookcard-body .bookcard-body-link{display:block;padding:.25rem 0;text-decoration:underline}.bookcard-body div{margin:2.5rem 0 0}.bookcard-foot .bookcard-foot-apply{display:flex;align-items:center;justify-content:center;min-width:calc(100% - 6rem);height:4.5rem;border:1px solid #000;background:#000;color:#fff;box-sizing:border-box;position:absolute;left:3rem;right:3rem;bottom:-2.75rem}@media (max-width:1080px){.books .books-head .books-head-logo{width:60%;max-width:220px}.books .books-head h1{padding:0 var(--grid-margin);font-size:var(--font-size-huge)}.books .books-head h1>span{margin-top:-.5rem}.books .books-head .book-head-how ul{flex-wrap:wrap}.books .books-head .book-head-how ul li{width:100%;margin:1.5rem 0}.bookcard{max-width:100%}.bookcard-body{padding-left:1.5rem;padding-right:1.5rem}.bookcard-foot .bookcard-foot-apply{min-width:calc(100% - 3rem);left:1.5rem}}.books-form{padding:0 5%}.books-form dl{display:flex;margin:.5rem 0}.books-form dl dt{width:20%}.books-form dl dd{width:80%}.books-complete{text-align:center;padding:4rem 5% 6rem}.books-complete h1{margin:1rem 0 2rem;font-size:var(--font-size-huge)}
 
 
-.statistic {display:flex;gap:2rem;}
-.statistic-item {position: relative;}
-.statistic-item:hover {}
-.statistic-label {display: block;color: var(--color-text-light);line-height:24px;}
-.statistic-value {display: block;font-size:var(--font-size-large);font-weight:var(--font-weight-bold);}
-.statistic[data-size=small] {}
-.statistic[data-size=small] .statistic-item {display: flex;align-items: center;}
-.statistic[data-size=small] .statistic-value {margin: 0 0 0 var(--space-1);font-size: var(--font-size-medium);}
-
-
 
 .layout {
   --layout-width: 100%;

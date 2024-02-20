@@ -19,13 +19,7 @@
 
     <section class="component-example">
       <test-group alignment="vertical">
-        <test-callout>
-          <p>
-            배너. 히어로와 콜아웃. 액션 버튼을 포함하지 않는다. tile과 callout의 차이. 형태는 간격
-            빼고 동일함.
-          </p>
-          <a href="">내 활동인증 관리</a>
-        </test-callout>
+        <test-callout> 배너. 히어로와 콜아웃의 차이. 액션 버튼을 포함하지 않는다. </test-callout>
 
         <test-callout variant="success"> 좋아요 표시한 동영상에 추가됨 </test-callout>
         <test-callout variant="warning">
@@ -82,26 +76,34 @@
       </test-text>
 
       <test-text variant="subhead">Best practices</test-text>
-      <test-text variant="body"
-        >( + 게임에서 파티 탈퇴와 같이 직접 실행하지 않은, 시간을 특정하기 힘든 연속적인... 경우
-        여러 개가 필요하구나.)</test-text
-      >
-      <test-text variant="body"
-        >toast=>snackbar(withAction) - 정리하기, single line / multiple lines (head,body
-        텍스트)</test-text
-      >
-      <test-text variant="body"
-        >아이콘으로 callout의 역할을 구분할 수 있다. 따라서 아이콘이 없는 info 형태의 callout은
-        공허한 컴포넌트다. title / message</test-text
-      >
-      <test-text variant="body"
-        >역할로 구분하면 input feedback은 callout과 분리해야 한다.</test-text
-      >
-      <test-text variant="body"
-        >브라우저가 role="alert" 속성이 있는 요소를 발견하면 즉시 사용자에게 경고 내용을
-        읽습니다.</test-text
-      >
+      <test-text variant="body">
+        + 게임에서 파티 탈퇴와 같이 직접 실행하지 않은, 연속적인 결과가 발생하는 경우 여러 개가
+        필요하구나.
+      </test-text>
+      <test-text variant="body">
+        toast=>snackbar(withAction) - 정리하기, single line / multiple lines (head,body 텍스트)
+      </test-text>
+      <test-text variant="body">
+        아이콘으로 callout의 역할을 구분할 수 있다. 따라서 아이콘이 없는 info 형태의 callout은
+        공허한, 단순 Tile 컴포넌트처럼 보일 수 있다.
+      </test-text>
+      <test-text variant="body">
+        역할로 구분하면 input feedback은 callout과 분리하는 것이 좋겠다.
+      </test-text>
+      <test-text variant="body">
+        브라우저가 role="alert" 속성이 있는 요소를 발견하면 즉시 사용자에게 경고 내용을 읽습니다.
+      </test-text>
     </section>
+
+    <aside class="callout">
+      <button class="callout-close" aria-label="close"></button>
+      <p class="callout-head">This includes the <a href="#">global HTML attributes</a>.</p>
+      <p class="callout-body">
+        <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum
+        rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum
+        <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus.
+      </p>
+    </aside>
 
     <test-text variant="subhead">with Toast</test-text>
     <!-- Icon: Informs users of the kind of notification at a glance.
@@ -110,15 +112,5 @@
     Inline notification action (1optional): Ghost button that allows users to address the notification or navigates them to a page with further details.
     Close button (1optional): Closes the notification.
     Time stamp (1optional): Shows the time the toast notification was sent. -->
-
-    <!-- <aside class="alert">
-      <button class="alert-close" aria-label="close"></button>
-      <p class="alert-head">
-        This includes the <a href="#">global HTML attributes</a>.
-      </p>
-      <p class="alert-body">
-        <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus.
-      </p>
-    </aside> -->
   </article>
 </main>

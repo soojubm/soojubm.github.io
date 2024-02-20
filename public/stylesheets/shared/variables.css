@@ -11,8 +11,8 @@
   color-scheme: light dark;
 
   /* // -apple-system === san-serif / system-ui === BlinkMacSystemFont */
-  /* --font-family: 'Pretendard', system-ui, sans-serif; */
-  --font-family: 'IBM Plex Sans', 'Gothic A1', system-ui, sans-serif;
+  --font-family: 'Pretendard', system-ui, sans-serif;
+  /* --font-family: 'IBM Plex Sans', 'Gothic A1', system-ui, sans-serif; */
   --font-family-heading: null;
   --font-family-body: null;
   --font-family-caption: null;
@@ -24,7 +24,7 @@
   --font-size-small: .75rem;
 
   --font-weight-normal: 400;
-  --font-weight-bold: 700;
+  --font-weight-bold: 600;
   --font-weight-extrabold: null;
 
   --font-line-height-large: 1.715;
@@ -59,13 +59,15 @@
 
   --gray0: #fff;
   --gray100: #f5f8f5;
-  --gray100: #f4f7f4;
+  /* --gray100: #f4f7f4;
+  --gray100: #f2f5f2; */
   --gray200: #e4eae8;
   --gray200: #e4e9e7;
   --gray400: #979d9a;
   --gray800: #343c38;
 
   --green100: rgba(10, 160, 80, 0.1);
+  --green100: rgba(10, 160, 80, 0.075);
   --green800: #1b995c;
   --red100: rgba(243, 68, 97, .06);
   --red800: #f02849;

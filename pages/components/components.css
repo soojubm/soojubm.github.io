@@ -76,7 +76,7 @@
   align-items: center;
   max-width: var(--layout-width-small);
   gap: var(--space-3);
-  margin: 1rem 0;
+  margin: 2rem 0;
   padding: 1rem;
   box-sizing: border-box;
   background: var(--green100);

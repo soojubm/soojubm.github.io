@@ -1,6 +1,23 @@
 [
   {
     "releasedate": 1986,
+    "titlekorean": "거울",
+    "titleenglish": "Metzengerstein",
+    "director": "에도가와 란포",
+    "country": "일본",
+    "etc": ""
+  },
+  {
+    "releasedate": 2015,
+    "titlekorean": "복종",
+    "titleenglish": "Soumission",
+    "director": "미셸 우엘벡",
+    "country": "프랑스",
+    "etc": ""
+  },
+
+  {
+    "releasedate": 1986,
     "titlekorean": "Metzengerstein",
     "titleenglish": "Metzengerstein",
     "director": "에드가 앨런 포",

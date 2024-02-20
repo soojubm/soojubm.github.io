@@ -26,6 +26,36 @@
     <article class="article js-scrollspy-section">
       <test-text variant="title">Tokens</test-text>
       <test-text variant="body-large">내용 없음.</test-text>
+
+      <blockquote>
+        <ul style="margin: 0">
+          <li>
+            컴포넌트에서 동일한 형태를 다른 컴포넌트가 아니라 토큰으로만 대응하려고 할 때를 위해
+            컴포넌트 토큰? 또는 특수한 토큰을 활용하게 될 수 있다. box-inset-small 과 같은.
+          </li>
+          <li>
+            개별 토큰에 디스크립션이 필요하지 않도록 명명합니다. core: give a name to a raw value to
+            enable theming and make improve maintainability / semantic / component.
+          </li>
+          <li>
+            컴포넌트 토큰은 상대적으로 변경 가능성이 높고 범용성이 낮기 때문에 컴포넌트 스코프에서만
+            정의. 컴포넌트 토큰을 정의하면 형태 기반의 컴포넌트를 정의 최소화할 수 있다.
+          </li>
+          <li>
+            --[namespace]-[component / category]-[attribute]-[status] 프로덕션이 아니기 때문에
+            namespace를 생략.
+          </li>
+          <li>
+            theme.
+            <del>
+              인버트 컬러셋을 추가로 정의하지 않습니다. 하나의 컬러셋으로 다크 테마에 대응합니다.
+              어렵고 또는 불필요한 규칙. 왜냐하면 초기 토큰 세팅 허들을 넘으면 컴포넌트 토큰을
+              활용한 테마 대응이 간편해짐.
+            </del>
+          </li>
+        </ul>
+      </blockquote>
+
       <section class="component-references">
         <a href="https://design-tokens.github.io/community-group/format">token module</a>
         <a href="https://docs.specifyapp.com/concepts/token-types">token json</a>
@@ -35,32 +65,6 @@
         <a href="https://medium.com/eightshapes-llc/size-in-design-systems-64f234aec519">test3</a>
         <a href="https://bulma.io/documentation/form/input/">bulma variables</a>
       </section>
-
-      <blockquote>
-        <ul>
-          <li>
-            core: give a name to a raw value to enable theming and make improve maintainability /
-            semantic / component. 개별 토큰에 디스크립션이 필요하지 않도록 명명.
-          </li>
-          <li>
-            컴포넌트 토큰은 상대적으로 변경 가능성이 높고 범용성이 낮기 때문에 컴포넌트 스코프에서만
-            정의. 컴포넌트 토큰을 정의하면 형태 기반의 컴포넌트를 정의 최소화할 수 있다.
-          </li>
-          <li>SCSS/LESS: kebab-case / JS: PascalCase / Android: snake_case / iOS: PascalCase</li>
-          <li>
-            --[namespace]-[component / category]-[attribute]-[status] 프로덕션이 아니기 때문에
-            namespace를 생략. 서드파티 라이브러리와 충돌을 방지용.
-          </li>
-          <li>
-            theme.
-            <del>
-              인버트 컬러셋을 추가로 정의하지 않습니다. 하나의 컬러셋으로 다크 테마에 대응합니다.
-              어렵고 또는 불필요한 규칙.
-            </del>
-            어차피 초기 토큰 세팅 허들을 넘으면 테마 대응은 쉬워짐.
-          </li>
-        </ul>
-      </blockquote>
 
       <test-text variant="subhead">Color</test-text>
       <test-text variant="body">background/border/text/status</test-text>
@@ -164,7 +168,7 @@
       </div>
 
       <test-text variant="subhead">Shapes - Radius & Elevations</test-text>
-      <div style="display: flex; flex-direction: column; gap: 1rem; margin: 1.25rem 0">
+      <div style="display: flex; flex-direction: column; gap: 1rem; margin: 1rem 0">
         <test-text variant="body">
           그림자를 이용한 시각적 상승 효과로 주변 요소 대비 강조. 따라서 단일 요소에 사용하지 말 것.
           더 높은 우선순위 및 행동유도를 위한 높은 고도. 사용자는 시각적 단어로 우선순위를 인식하고
@@ -231,7 +235,7 @@
       </div>
 
       <test-text variant="subhead">Border Width</test-text>
-      <div style="display: flex; flex-direction: column; gap: 1rem; margin: 1.25rem 0">
+      <div style="display: flex; flex-direction: column; gap: 1rem; margin: 1rem 0">
         <test-text variant="body"> 테두리, 구분선 </test-text>
       </div>
       <div class="token-group">
@@ -401,9 +405,16 @@
         </div>
         <div class="token-item">
           <b>--font-line-height-large: 1.8</b>
+          <small>body / body-large에서만 사용한다.</small>
         </div>
         <div class="token-item">
-          <b>--font-line-height: 1.4</b>
+          <b>--font-line-height: 1.5</b>
+          <small>제목에서 사용</small>
+          <mark>14px 기본폰트일 때 1.5의 모호성.</mark>
+        </div>
+        <div class="token-item">
+          <b>--font-line-height: null</b>
+          <small>key / value label에서 사용. 2402 추가함. medium으로 그냥 써도 될 듯. </small>
         </div>
       </section>
 

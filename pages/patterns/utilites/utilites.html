@@ -5,15 +5,15 @@
     <test-text variant="body-large">작성 중.</test-text>
 
     <section class="component-guide">
-      <test-text variant="subhead">Date Formatting</test-text>
-      <test-text variant="body">getFormattedDate(20220610) / getFormattedCurrency(30000)</test-text>
+      <test-text variant="subhead">Data Formatting</test-text>
+      <test-text variant="label">getDateFormat(20220610)</test-text>
+      <test-text variant="bold">30,000원 / ₩ 30,000 / 30,000 won</test-text>
+      <test-text variant="label">getCurrencyFormat(30000)</test-text>
+      <test-text variant="label">getNumberFotmat(30000)</test-text>
+      <test-text variant="bold">3만 / 30K</test-text>
 
       <ul>
         <li>서비스가 출시 환경이 웹온리(웹/태블릿+모바일) 웹+모바일앱(웹+태블릿/모바일)</li>
-        <li>
-          컨테이너 컴포넌트. 리스트 컴포넌트. 형태 정보를 가질 수 있고 아이템의 간격을 갖는다.
-          그리고 기능적인 부분들.
-        </li>
         <li>naming: data-index 보다 name name을 숫자로 주면 됨.</li>
         <li>role로 스타일링 하면 수정이 어려움. aria로 상태 표현은 좋다.</li>
       </ul>
@@ -24,21 +24,9 @@
       <test-text variant="subhead">Types</test-text>
       <test-text variant="body">OptionType = { label: '', value: '' } </test-text>
 
-      <br />
-      <test-text variant="subhead">금액 표기법</test-text>
-      <test-text variant="body">30,000원 / ₩ 30,000</test-text>
-      <test-text variant="body"><del>30,000 won</del></test-text>
-
       <test-text variant="subhead">CSS</test-text>
       <test-text variant="body-bold">linebreaker-desktop / linebreaker-mobile</test-text>
       <test-text variant="body-bold">animation-stopper-resize hidden</test-text>
-
-      <test-text variant="body">
-        querySelector([aria-expanded]).addEventListener('click', (event) => {<br />
-        const controls = event.getAttribute('aria-controls') || target.ariaControls
-      </test-text>
-
-      <p>isTrue. boolean.</p>
 
       <div>
         <label for="username">Username</label>
@@ -49,7 +37,6 @@
           aria-label="Help about username"
         >
           <span aria-hidden="true">?</span>
-          test
         </button>
         <p id="username-desc" hidden>
           Your username is the name that you use to log in to this service.

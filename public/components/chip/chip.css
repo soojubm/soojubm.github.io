@@ -63,17 +63,17 @@ em, i  {
   background: var(--chip-color-background);
   color: var(--chip-color-text);
   position: relative;
+}
 
-}
-.chip:disabled {
-  opacity:.5;
-  cursor:not-allowed;
-}
 .chip:hover {
   box-shadow:var(--status-hover);
   cursor: pointer;
 }
 
+.chip:disabled:not(:hover) {
+  opacity:.5;
+  cursor:not-allowed;
+}
 .chip-label {
   color: inherit;
 }

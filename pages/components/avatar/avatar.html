@@ -50,9 +50,9 @@
       <test-text variant="body" data-temp="clickable">
         아바타 또는 아바타릂 포함하는 상위 요소(클릭을 보조하는 역할)는 항상 클릭할 수 있습니다.
       </test-text>
-      <test-text variant="body">아웃라인 형태를 클릭할 수 없는 아바타로 정의 추가.</test-text>
       <test-text variant="subhead">Visual style</test-text>
-      <!-- <test-text variant="subhead">Changelog</test-text> -->
+      <test-text variant="body">아웃라인 형태를 클릭할 수 없는 아바타로 정의 추가.</test-text>
+      <test-text variant="subhead">Changelog</test-text>
     </section>
 
     <!-- <test-text variant="subhead">groupable아바타 그룹</test-text> -->
@@ -70,32 +70,23 @@
           >
           <!-- <span class="avatargroup-label">🥺 수줍이님을 팔로우하고 있는 친구가 없습니다.</span> -->
         </div>
-        <div
-          class="statistic"
-          data-size="small"
-          style="display: flex; gap: var(--space-2); margin: var(--space-2) 0 0 0"
+        <test-group
+          style="gap: var(--space-2); margin: var(--space-2) 0 0 0"
         >
-          <dl class="statistic-item" onclick="javascript:alert('샘플 유아이에요!')">
-            <dt class="statistic-label">팔로워</dt>
-            <dd class="statistic-value" style="margin: 0">62</dd>
-          </dl>
+          <test-keyvalue key="팔로워" value="62" alignment="inline"></test-keyvalue>
           <i class="icon-bullet"></i>
-          <dl class="statistic-item" onclick="javascript:alert('샘플 유아이에요!')">
-            <dt class="statistic-label">팔로잉</dt>
-            <dd class="statistic-value" style="margin: 0">8</dd>
-          </dl>
-        </div>
-      </test-tile>
+          <test-keyvalue key="팔로잉" value="8" alignment="inline"></test-keyvalue>
+        </test-tile>
       <test-tile variant="elevated">
         <div style="display: flex; gap: 1rem">
           <test-avatar size="huge" variant="secondary" default="true"></test-avatar>
           <test-group style="flex-direction: column; gap: var(--space-2)">
             <div>
-              <test-text variant="label">Top User</test-text>
+              <test-text variant="word-weak">Top User</test-text>
               <test-text variant="subhead">Bruce Springsteen</test-text>
             </div>
             <div>
-              <test-text variant="label">Daily Purchase</test-text>
+              <test-text variant="word-weak">Daily Purchase</test-text>
               <test-text variant="subhead">10 Items</test-text>
             </div>
           </test-group>

@@ -99,14 +99,11 @@
 
       <test-tile>
         <test-tilebar heading="Ratings"></test-tilebar>
-        <test-tile
-          class="statistic-item"
-          aria-label="별점 5개 만점에 3.9개를 받았습니다."
-          style="text-align: center; z-index: auto"
-        >
-          <i class="statistic-label">리뷰 116만개</i>
-          <span class="statistic-value" style="margin-left: -0.5rem">⭐ 4.8</span>
-        </test-tile>
+        <div aria-label="별점 5개 만점에 3.9개를 받았습니다.">
+          <test-text variant="word-weak">리뷰 116만개</test-text>
+          <test-text variant="word-large">⭐ 4.8</test-text>
+        </div>
+        <test-separator></test-separator>
         <div class="graph2">
           <b class="graph-label">5 Stars</b>
           <span class="graph-value">68%</span>
@@ -211,8 +208,6 @@
           <test-button variant="primary">업그레이드</test-button>
           <test-button variant="text">And More...</test-button>
         </test-group>
-        <div class="height:1rem;"></div>
-        <test-text variant="caption">Cancel anytime. No strings attached. </test-text>
       </test-tile>
 
       <header style="display: flex; align-items: center; justify-content: space-between">
@@ -225,34 +220,22 @@
         <test-menuitem>
           <test-avatar slot="avatar" size="huge"></test-avatar>
           <div slot="text">
-            <test-text variant="subhead">개인</test-text>
+            <test-text variant="word-large">개인</test-text>
             <test-text variant="body">Apple One</test-text>
             <test-text variant="label">가족 구독</test-text>
           </div>
         </test-menuitem>
         <test-separator></test-separator>
         <test-text variant="body-bold">1개월 무료 체험</test-text>
-        <small>오늘(2023년 05월 22일)부터</small>
-        <test-text variant="subhead">14,900원/개월</test-text>
-        <test-separator></test-separator>
+        <test-text variant="word">오늘(2023년 05월 22일)부터</test-text>
+        <test-text variant="word-large">14,900원/개월</test-text>
 
-        <header>
-          <h3>Premium 베이직</h3>
-          <small>Premium 베이직 계정 1개 / 클라우드 330GB (월 5,500원)</small>
-        </header>
-        <div class="add_money_area">
-          <p>이용기간 23.04.09. ~ 23.05.02.</p>
-          <div>
-            이번 달 결제금액 4,258원
-            <em>(24일 이용요금)</em>
-          </div>
-        </div>
-        <dl>
-          <dt>오늘부터 시작</dt>
-          <dd>월 8,690 KRW</dd>
-          <dt>다음 결제일</dt>
-          <dd>2023. 3. 10.</dd>
-        </dl>
+        <test-group alignment="vertical">
+          <test-keyvalue key="이용기간" value="23.04.09. ~ 23.05.02."> </test-keyvalue>
+          <test-keyvalue key="이번 달 결제금액" value="4,258원"> </test-keyvalue>
+          <test-keyvalue key="다음 결제일" value="2023. 3. 10."> </test-keyvalue>
+        </test-group>
+
         <ul class="checklist" style="margin: var(--space-4) 0 0 0">
           <li>다음 청구일은 2023. 3. 10.입니다.</li>
           <li>언제든 해지 가능합니다. 혜택 약관이 적용됩니다.</li>
@@ -263,16 +246,6 @@
         </test-text>
         <test-separator></test-separator>
         <p style="color: var(--color-text-light)">계정: soojubm@gmail.com</p>
-      </test-tile>
-
-      <test-tile>
-        <test-text variant="subhead">Senior Front-end Developer</test-text>
-        <test-group>
-          <test-tag>Full-Time</test-tag>
-          <test-tag>Korea</test-tag>
-          <test-tag>Remote friendly</test-tag>
-        </test-group>
-        <test-chip>View Job</test-chip>
       </test-tile>
 
       <test-tile>
