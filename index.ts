@@ -46,10 +46,6 @@ document.addEventListener('click', toggleTheme)
 
 document.addEventListener('DOMContentLoaded', () => {
   stopAnimation()
-
-  // lockbody
-  // 여러 개 묶여 있음.
-  // event.positionSticky({ selector: '.js-titlebar', addClass: 'is-sticky-titlebar', isPassed: false })
 })
 
 document.addEventListener('click', closeParentElement)
@@ -132,49 +128,44 @@ async function domEvents() {
     target.classList.add('is-selected')
   })
 
-  // positionSticky({ selector: '.js-post-head', addClass: 'is-sticky-post-head', isPassed: true })
-  // passed와 바로. header / post-head
-  // todo removeEventListener
-  // todo 엘리먼트의 상단에서 또는 하단에서 sticky
-
   type Parameters = {
     selector: string
-    addClass: string
+    className: string
     isPassed: boolean
   }
 
-  // ! targetElement, position, bodyclassName을 받는 게 맞음...
-
-  const positionSticky = ({ selector, addClass, isPassed }: Parameters) => {
+  const positionSticky = ({ selector, className, isPassed }: Parameters) => {
     const element = document.querySelector<HTMLElement>(selector)
     if (!element) return
 
-    let offsetTop = getElementOffsetTop(element)
-
+    // initail element rect top
+    let elementOffsetTop = getElementOffsetTop(element)
     const elementHeight = element.offsetHeight
-    const offsetBottom = offsetTop + elementHeight
+    const offsetBottom = elementOffsetTop + elementHeight
+    let previousScrollTop = isPassed ? offsetBottom : elementOffsetTop
 
-    let previousScrollTop = isPassed ? offsetBottom : offsetTop
-
-    window.addEventListener('scroll', throttle(handleElementScroll), false)
+    window.addEventListener('scroll', throttle(handleElementSticky), false)
     window.addEventListener('resize', throttle(setElementOffsetTop), false)
 
     function setElementOffsetTop() {
-      offsetTop = getElementOffsetTop(element)
+      elementOffsetTop = getElementOffsetTop(element)
     }
 
-    function handleElementScroll() {
+    function handleElementSticky() {
       let currentScrollTop = getWindowScrollTop()
 
       const isStuck = currentScrollTop + elementHeight > previousScrollTop
 
-      document.body.classList.toggle(addClass, isStuck)
+      document.body.classList.toggle(className, isStuck)
+      // backdrop으로 대체하는 것이 좋다. 왜냐하면, 부모 엘리먼트의 형태에 영향을 주기 때문에.
       document.body.style.paddingTop = isStuck ? `${elementHeight}px` : '0'
-
-      // todo 일단.. 빠르ㅔㄱ.. navbar.....height...
-      if (selector === '.hero') document.body.style.paddingTop = '0'
     }
   }
+
+  positionSticky({ selector: '.js-post-head', className: 'is-sticky-post-head', isPassed: true })
+  // passed와 바로. header / post-head
+  // todo removeEventListener
+  // todo 엘리먼트의 상단에서 또는 하단에서 sticky
 
   scrollAnimation({ selector: '.js-observer' })
   scrollspy({ menusSelector: '.js-scrollspy-trigger', sectionsSelector: '.js-scrollspy-section' })
