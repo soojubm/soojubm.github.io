@@ -76,6 +76,7 @@ em, i  {
 }
 .chip-label {
   color: inherit;
+  text-transform: capitalize;
 }
 .chip-name {
   margin: 0 var(--space-1) 0 0;

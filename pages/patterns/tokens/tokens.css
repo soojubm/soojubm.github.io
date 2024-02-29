@@ -18,6 +18,9 @@
   border-radius: var(--radius);
   background: var(--color-background);
 }
+.token-item test-group {
+  display: none !important;
+}
 .token-item figure {
   width:var(--size-medium);
   height:var(--size-medium);

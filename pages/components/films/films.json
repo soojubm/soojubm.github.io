@@ -1,6 +1,24 @@
 [
   {
     "id": 202402,
+    "releasedate": 1986,
+    "titlekorean": "꿈꾸는 것처럼 잠들고 싶다",
+    "titleenglish": "To Sleep So As To Dream",
+    "director": "하야시 카이조",
+    "country": "일본",
+    "etc": "흑백"
+  },
+  {
+    "id": 202402,
+    "releasedate": 1990,
+    "titlekorean": "도시살성",
+    "titleenglish": "都市煞星: Point Of No Return",
+    "director": "여응취",
+    "country": "홍콩",
+    "etc": "장학우, 왕조현"
+  },
+  {
+    "id": 202402,
     "releasedate": 1953,
     "titlekorean": "덕 어먹",
     "titleenglish": "Duck Amuck",

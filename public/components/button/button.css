@@ -79,6 +79,9 @@
   --button-font-size: var(--font-size-large);
   padding-bottom: 5px;
 }
+.button[data-size=small] {
+  --button-size: 32px;
+}
 .button[data-isfullwidth=true] {
   width: 100%;
 }
