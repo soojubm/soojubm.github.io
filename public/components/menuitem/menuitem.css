@@ -76,6 +76,11 @@ a {
     z-index: -1;
   }
 }
+/* TODO reset is-focused 등 */
+.item:focus {
+  outline: 2px solid #000;
+  outline-offset: 2px;
+}
 
 /* .item .checkbox {display:flex;justify-content:flex-end;position:absolute;left:0;right:0;top:0;bottom:0;}
 .item .checkbox label {width:100%;}

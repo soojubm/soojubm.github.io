@@ -34,7 +34,7 @@ html {min-width:320px;height:100%;overflow-x:hidden;font-size:16px;line-height:v
 body {background:var(--color-background);color:var(--color-text);font-size:.875rem;}
 
 blockquote {
-  margin:2rem 0;padding:var(--space-4);background:var(--color-background-weak);border-left:4px solid var(--gray200);border-radius:var(--radius) 0 0 0;
+  margin:2rem 0;padding:var(--space-4);background:var(--color-background-weak);border-left:4px solid var(--gray200);border-radius:var(--radius) 0 0 0;box-sizing: border-box;
 }
 q {position:relative;}
 q:before {
@@ -357,17 +357,30 @@ mark {color:inherit;} mark::before {content: " [강조 시작] ";opacity:0;posit
 
 
 /* // hover-item */
-.is-hoverable {
-  box-shadow: 0 0 0 2px var(--color-background-weak); background: var(--color-background-weak); border-radius:
-        4px;
+.is-hovered {
+  box-shadow: 0 0 0 2px var(--color-background-weak);
+  background: var(--color-background-weak);
+  border-radius: 4px;
 }
-/* .is-hoverable {
+
+a:-webkit-any-link:focus-visible {
+  outline-offset: 4px !important;
+
+}
+
+/* TODO */
+.is-focused, a:focus, button:focus, menu-item:focus {
+  outline: 2px solid #000;
+  outline-offset: 2px;
+  /* box-shadow: var(--state-focus); */
+}
+/* .is-hovered {
   position: relative;
   z-index: 1;
   --hover-outline: calc(var(--space-2) / 2 * -1);
   cursor: pointer;
 }
-.is-hoverable::before {
+.is-hovered::before {
   content:'';
   display:block;
   background-color:var(--color-background-weak);
@@ -436,7 +449,6 @@ mark {color:inherit;} mark::before {content: " [강조 시작] ";opacity:0;posit
 /* // android pattern */
 .is-focused .searchfield-input {display:block;width:calc(100% - var(--size-medium) - var(--space-after-avatar-medium));}
 .is-focused .searchfield-cancel {right:0;}
-
 
 
 

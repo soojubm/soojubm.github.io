@@ -15,10 +15,13 @@
         <em class="badge"></em>
       </test-chip>
       <test-tile style="max-width: var(--layout-width-small); margin: var(--space-2) 0 0">
-        <form class="filter">
-          <test-titlebar heading="필터"></test-titlebar>
-          <fieldset class="filter-fieldset" role="radiogroup">
-            <legend class="filter-fieldset-legend">예약옵션</legend>
+        <test-titlebar heading="필터"></test-titlebar>
+        <form
+          class="filter"
+          style="max-width: 400px; height: 50vh; margin: 1rem 0 0; overflow-y: auto"
+        >
+          <fieldset class="filter-fieldset" role="radiogroup" style="margin-top: 0; padding-top: 0">
+            <!-- <legend class="filter-fieldset-legend">예약옵션</legend> -->
             <test-tile variant="elevated" size="small">
               <test-menuitem label="즉시 예약">
                 <test-avatar slot="avatar">🦊</test-avatar>
@@ -67,20 +70,18 @@
           <test-separator></test-separator>
           <fieldset class="filter-fieldset" role="radiogroup">
             <legend class="filter-fieldset-legend">릴리스 채널</legend>
-            <div class="textfield" style="max-width: 300px">
+            <p class="filter-fieldset-description">
+              참고: 이 설정은 이 컴퓨터에만 적용됩니다. 앱 업데이트를 받으려면 Slack을 다시 시작해야
+              할 수도 있습니다.
+            </p>
+            <div class="textfield">
               <label class="textfield-label" for="">레이블</label>
               <select name="" id="" class="textfield-input">
                 <option value=""></option>
               </select>
             </div>
-            <p class="filter-fieldset-description">
-              참고: 이 설정은 이 컴퓨터에만 적용됩니다. 앱 업데이트를 받으려면 Slack을 다시 시작해야
-              할 수도 있습니다.
-            </p>
           </fieldset>
-
           <test-separator></test-separator>
-
           <fieldset class="filter-fieldset" role="radiogroup">
             <legend class="filter-fieldset-legend">데스크톱에서 활성 상태가 아닌 경우...</legend>
             <test-group variant="checkbox">
@@ -93,11 +94,11 @@
               </div>
             </test-group>
           </fieldset>
-          <test-group variant="button">
-            <test-button variant="primary">적용/숙소 25개 표시 (todo fixed) </test-button>
-            <test-button variant="text">전체 해제</test-button>
-          </test-group>
         </form>
+        <test-group variant="button">
+          <test-button variant="primary">적용/숙소 25개 표시 (todo fixed) </test-button>
+          <test-button variant="text">전체 해제</test-button>
+        </test-group>
       </test-tile>
     </section>
   </article>

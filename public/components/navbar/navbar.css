@@ -113,8 +113,7 @@
   /* // z-idnex 이슈 */
   content:'';
   display:block;
-  /* background-color:var(--color-background-weak); */
-  background-color:var(--green100);
+  background-color:var(--color-background-weak);
   border-radius:var(--radius);
   position:absolute;
   left: 0; right: 0;

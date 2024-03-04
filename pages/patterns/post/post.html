@@ -2,17 +2,17 @@
   <header class="post-head js-post-head">
     <a class="post-head-category" href="#post">Murmur</a>
     <!-- 상하단동일해야 스티키? -->
-    <test-text variant="title" style="line-height: 1.4">
+    <test-text variant="title" style="line-height: 1.4; margin-left: -2px">
       Pinterest announces industry-first body type technology to increase body representation on
       platform
     </test-text>
-    <test-text variant="body-large" class="post-head-kicker">
+    <!-- <test-text variant="body-large" class="post-head-kicker">
       Pinterest announces industry-first body type technology to increase body representation on
       platform
-    </test-text>
+    </test-text> -->
     <div style="height: var(--space-4)"></div>
     <address>
-      <test-menuitem label="수줍이" description="Youtube Subscriber">
+      <test-entity label="수줍이" description="Youtube Subscriber">
         <test-avatar slot="avatar" size="medium" default="true"></test-avatar>
         <div slot="text">
           <time class="post-head-dateline">2022년 4월 9일</time>
@@ -20,7 +20,7 @@
           <span class="post-head-readingtime">약 40초 분량</span>
           <div class="post-head-progress" role="progressbar" aria-valuenow=""></div>
         </div>
-      </test-menuitem>
+      </test-entity>
     </address>
   </header>
 
@@ -29,13 +29,13 @@
       <figcaption class="post-body-caption">image caption</figcaption>
     </figure>
 
-    <nav style="display: flex; position: relative">
+    <nav>
       <test-text variant="subhead">Table of contents</test-text>
       <ol>
-        <li><test-text variant="body-large">Decline every meeting</test-text></li>
-        <li><test-text variant="body-large">Take the thrash out of feedback cycles</test-text></li>
-        <li><test-text variant="body-large">Decline every meeting</test-text></li>
-        <li><test-text variant="body-large">Decline every meeting</test-text></li>
+        <li>Decline every meeting</li>
+        <li>Take the thrash out of feedback cycles</li>
+        <li>Decline every meeting</li>
+        <li>Decline every meeting</li>
       </ol>
     </nav>
 
@@ -48,7 +48,7 @@
       style="
         display: block;
         font-style: italic;
-        margin: 0 -4rem;
+        margin: 2rem -4rem;
         font-size: var(--font-size-large);
         line-height: 2;
       "
@@ -66,6 +66,7 @@
     <test-text variant="subhead">
       An ecosystem of content that celebrates inclusion and diversity
     </test-text>
+    <div style="height: 0.75rem"></div>
     <test-text variant="body-large">
       콘텐츠가 다른 플랫폼에 공유되는 횟수가 많다면 페이지의 상단에 byline을 보여주는 것이 좋다.
       byline은 상단 고정되지 않기 때문에 byline에 작성 시간과 리딩 시간 등을 포함하는 것이 좋다.
@@ -105,17 +106,6 @@
         <li>색상과 사이즈를 suffix로 구분하는데,</li>
       </ul>
     </blockquote>
-
-    <figure>
-      <img src="" alt="" />
-      <figcaption>iamge caption</figcaption>
-    </figure>
-
-    <code class="post-body-code">
-      const { body } = document;
-      <br />
-      const bodySection = body.querySelector('section');
-    </code>
   </section>
 
   <section class="post-reaction"></section>
@@ -193,7 +183,7 @@
         처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요.
       </test-text>
       <button class="comment-list-item-reply">답글 <span>7</span></button>
-      <test-chip icon="more-vert" class="js-toggle"> </test-chip>
+      <test-chip variant="plain" icon="more-vert" class="js-toggle"> </test-chip>
       <menu class="comment-list-item-menu">
         <button class="">수정</button>
         <button class="">삭제</button>
@@ -202,7 +192,7 @@
   </div>
 </main>
 
-<nav class="post-pagination" style="margin: 4rem 0">
+<nav class="post-pagination" style="max-width: 800px; margin: 4rem auto">
   <a class="post-pagination-previous" href="#">
     <test-chip variant="back" icon="arrow-left"> </test-chip>
     <div style="height: var(--space-3)"></div>

@@ -58,13 +58,16 @@
   --grid-margin-minus: calc(var(--grid-margin) * -1);
 
   --gray0: #fff;
-  --gray100: #f5f8f5;
+  --gray100: #f5f6f5;
+  /* --gray100: #fafbfa; */
+  --gray150: #eff1ef;
   /* --gray100: #f4f7f4;
   --gray100: #f2f5f2; */
   --gray200: #e4eae8;
   --gray200: #e4e9e7;
   --gray400: #979d9a;
   --gray800: #343c38;
+  --gray800: #3d4943;
 
   --green100: rgba(10, 160, 80, 0.1);
   --green100: rgba(10, 160, 80, 0.075);
@@ -102,12 +105,17 @@
 
   --color-background: var(--gray0);
   --color-background-weak: var(--gray100);
+  /* TODO naming */
+  --color-background-weak2: var(--gray150);
   --color-background-strong: var(--gray800);
   --color-background-darkest: null;
   --color-border: var(--gray200);
   --color-border-hover: var(--gray800);
   --color-text: var(--gray800);
   --color-text-light: var(--gray400);
+
+  --color-background-interaction: null;
+  --color-background-non-interaction: null;
 
   /* TODO */
   /* --color-text-weak: var(--gray0); */

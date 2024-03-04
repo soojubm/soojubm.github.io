@@ -21,11 +21,12 @@ class Tag extends HTMLElement {
     const iconSlot = document.createElement('slot')
     iconSlot.name = 'icon'
 
-    container.textContent = this.textContent
+    // for ordering
+    const label = document.createElement('span')
+    label.textContent = this.textContent
 
-    // todo icon prefix
     shadow.append(container, makeStyleSheet('tag'))
-    container.appendChild(iconSlot)
+    container.append(iconSlot, label)
   }
 
   get variant() {

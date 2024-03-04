@@ -73,17 +73,12 @@
 
 .class-refund {width:100%;border:var(--border);border-top:0;}
 
-@media (--large) {
-  .class {
-    padding:0;
-    --section-padding: 2rem var(--grid-margin);
-  }
-  .class-media {max-width:100%;border-right:var(--border);border-bottom:0;}
-  .class-order {max-width:100%;padding:var(--section-padding);}
 
-  .class-why-item {width:100%;}
-  .class-why-item + .class-why-item {margin:2rem 0 0 0;}
-}
+.class-media {max-width:100%;border-right:var(--border);border-bottom:0;}
+.class-order {max-width:100%;padding:var(--section-padding);}
+
+.class-why-item {width:100%;}
+.class-why-item + .class-why-item {margin:2rem 0 0 0;}
 
 .products {display:flex;flex-wrap:wrap;width:100%;border-left:var(--border);}
 .products-item {width:25%;border:var(--border);border-width:0 1px 1px 0;box-sizing:border-box;}

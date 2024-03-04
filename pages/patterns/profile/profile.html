@@ -5,19 +5,27 @@
     <p class="profile-head-description"></p>
   </header> -->
   <section class="profile-user">
-    <test-entity label="수줍이" description="soojubm@gmail.com" description2="010 3121 7045" description="UI Designer">
+    <test-entity
+      label="수줍이"
+      description="soojubm@gmail.com"
+      description2="010 3121 7045"
+      description="UI Designer"
+    >
       <test-avatar slot="avatar" variant="secondary" size="huge" default="true"></test-avatar>
       <test-tag slot="tag" variant="primary">접속 중</test-tag>
     </test-entity>
-    <div style="margin:var(--space-3) 0 0 0">
+    <div style="margin: var(--space-3) 0 0 0">
       <test-group variant="chip">
         <test-chip variant="primary" status="active">팔로우</test-chip>
         <test-chip variant="tertiary">메시지</test-chip>
       </test-group>
     </div>
-    <p class="profile-user-description" style="max-width:560px;">
-      Sometimes at night, I find myself behind the computer. When I finally blink, a mess of code is drawing random structures on the screen. I spend the rest of the night staring. 유아이를 그립니다. 배경을 넣어보았다. 모바일에서 팔로우 버튼을 상단으로 조정해야 한다. 업로드 버튼과 설정 버튼.
-      <test-link href="javascript:alert('유아이 패턴 샘플입니다.');">더 보기</test-link>
+    <p class="profile-user-description" style="max-width: 560px">
+      Sometimes at night, I find myself behind the computer. When I finally blink, a mess of code is
+      drawing random structures on the screen. I spend the rest of the night staring. 유아이를
+      그립니다. 배경을 넣어보았다. 모바일에서 팔로우 버튼을 상단으로 조정해야 한다. 업로드 버튼과
+      설정 버튼.
+      <test-link href="javascript:alert('유아이 패턴 샘플입니다.')">더 보기</test-link>
     </p>
     <test-group variant="tag">
       <test-tag>HTML5</test-tag>
@@ -29,70 +37,94 @@
       <test-tag>GoogleOptimize</test-tag>
       <test-tag>Figma</test-tag>
     </test-group>
-    </button>
-      <div class="statistic" style="display:flex;gap:2rem;margin: var(--space-4) 0 var(--space-2)">
-        <div>
-          <test-text variant="word-weak">팔로워</test-text>
-          <test-text variant="subhead">621.1K</test-text>
-        </div>
-        <div>
-          <test-text variant="word-weak">팔로우 중</test-text>
-          <test-text variant="subhead">1,284</test-text>
-        </div>
+    <div
+      class="statistic"
+      style="display: flex; gap: 2rem; margin: var(--space-4) 0 var(--space-2)"
+    >
+      <div>
+        <test-text variant="word-weak">팔로워</test-text>
+        <test-text variant="subhead">621.1K</test-text>
       </div>
-      <test-group variant="avatar">
-        <test-avatar size="small" default="true"></test-avatar>
-        <test-avatar size="small" default="true"></test-avatar>
-        <test-avatar size="small" default="true"></test-avatar>
-        <test-avatar size="small" default="true"></test-avatar>
-        <span style="margin-left:var(--space-2);line-height: var(--size-small)">Followed by 수줍이 외 4명</span>
-      </test-group>
-      <test-separator></test-separator>
-      <test-group alignment="vertical" style="margin:0 0 2rem 0;">
-        <h2 class="profile-user-socials-title social-title" hidden>소셜 미디어</h2>
-        <test-menuitem class="social-github" label="github" href="https://github.com/soojubm" target="_blank" rel="noopener noreferrer">
-          <test-avatar slot="avatar"  icon="github">  </test-avatar>
-        </test-menuitem>
-        <test-menuitem
-          class="social-pinterest"
-          label="pinterest"
-          href="https://www.pinterest.co.kr/soojubm/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <test-avatar slot="avatar"  icon="pinterest">  </test-avatar>
-        </test-menuitem>
-        <test-menuitem class="social-facebook" label="facebook" href="https://www.facebook.com/soojubm/" target="_blank" rel="noopener noreferrer">
-          <test-avatar slot="avatar"  icon="facebook"> </test-avatar>
-        </test-menuitem>
-        <test-menuitem class="social-instagram" label="instagram" href="https://www.instagram.com/soojubm/" target="_blank" rel="noopener noreferrer">
-          <test-avatar slot="avatar"  icon="instagram"></test-avatar>
-        </test-menuitem>
-      </test-group>
+      <div>
+        <test-text variant="word-weak">팔로우 중</test-text>
+        <test-text variant="subhead">1,284</test-text>
+      </div>
+    </div>
+    <test-group variant="avatar">
+      <test-avatar size="small" default="true"></test-avatar>
+      <test-avatar size="small" default="true"></test-avatar>
+      <test-avatar size="small" default="true"></test-avatar>
+      <test-avatar size="small" default="true"></test-avatar>
+      <span style="margin-left: var(--space-2); line-height: var(--size-small)"
+        >Followed by 수줍이 외 4명</span
+      >
+    </test-group>
+    <test-separator></test-separator>
+    <test-group alignment="vertical" style="margin: 0 0 2rem 0">
+      <h2 class="profile-user-socials-title social-title" hidden>소셜 미디어</h2>
+      <test-menuitem
+        class="social-github"
+        label="github"
+        href="https://github.com/soojubm"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <test-avatar slot="avatar" icon="github"> </test-avatar>
+      </test-menuitem>
+      <test-menuitem
+        class="social-pinterest"
+        label="pinterest"
+        href="https://www.pinterest.co.kr/soojubm/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <test-avatar slot="avatar" icon="pinterest"> </test-avatar>
+      </test-menuitem>
+      <test-menuitem
+        class="social-facebook"
+        label="facebook"
+        href="https://www.facebook.com/soojubm/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <test-avatar slot="avatar" icon="facebook"> </test-avatar>
+      </test-menuitem>
+      <test-menuitem
+        class="social-instagram"
+        label="instagram"
+        href="https://www.instagram.com/soojubm/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <test-avatar slot="avatar" icon="instagram"></test-avatar>
+      </test-menuitem>
+    </test-group>
   </section>
 
   <section class="profile-body js-tab">
     <test-tablist class="tablist">
-      <test-tab slot="tab" name="project" selected="true" data-index="1">
-        프로젝트
-        <test-badge>4</test-badge>
-      </test-tab>
-      <test-tab slot="tab" name="case-study" selected="false" data-index="2"> 두 번째 탭
-        <test-badge>1</test-badge>
-      </test-tab>
-      <test-tab slot="tab" name="blank" selected="false" data-index="3">빈 상태
-        <test-badge>0</test-badge>
-      </test-tab>
-      <test-tab slot="tab" name="blank" selected="false" data-index="3">네번쨰 탭
-        <test-badge>2</test-badge>
-      </test-tab>
+      <test-tab slot="tab" name="project" selected="true" data-index="1"> 프로젝트 </test-tab>
+      <test-tab slot="tab" name="case-study" selected="false" data-index="2"> 두 번째 탭 </test-tab>
+      <test-tab slot="tab" name="blank" selected="false" data-index="3">빈 상태 </test-tab>
+      <test-tab slot="tab" name="blank" selected="false" data-index="3">네번쨰 탭 </test-tab>
       <i class="tablist-indicator"></i>
     </test-tablist>
 
     <!-- todo day night toggle과 동일한 패턴 -->
-    <div class="profile-display" role="menubar" style="display:flex;margin:var(--space-3) 0;" title="항목을 아이콘, 목록, 계층 또는 갤러리로 보여줍니다.">
+    <div
+      class="profile-display"
+      role="menubar"
+      style="display: flex; margin: var(--space-3) 0"
+      title="항목을 아이콘, 목록, 계층 또는 갤러리로 보여줍니다."
+    >
       <h5 class="profile-display-status" role="status" hidden>Viewing 1,000 Projects</h5>
-      <test-chip icon="view-columns-3" aria-label="" class="js-test-toggle" status="active" data-name="grid">
+      <test-chip
+        icon="view-columns-3"
+        aria-label=""
+        class="js-test-toggle"
+        status="active"
+        data-name="grid"
+      >
       </test-chip>
       <test-chip variant="plain" icon="view-grid" class="js-test-toggle" data-name="list">
       </test-chip>
@@ -106,8 +138,12 @@
 
     <section class="tabpanel" role="tabpanel" aria-hidden="false" data-index="1">
       <test-tile variant="plain" class="js-modal" data-modal="newneek">
-        <figure slot="thumbnail" style="background-color: var(--color-newneek);">
-          <img src="/public/images/newneek/gosum-spinner.png" alt="" style="display:block;width:75%;margin:1rem auto 0;" />
+        <figure slot="thumbnail" style="background-color: var(--color-newneek)">
+          <img
+            src="/public/images/newneek/gosum-spinner.png"
+            alt=""
+            style="display: block; width: 75%; margin: 1rem auto 0"
+          />
         </figure>
         <test-text slot="heading" variant="body-bold">뉴닉</test-text>
         <p slot="body">description.....</p>
@@ -132,8 +168,7 @@
         <test-text slot="heading" variant="body-bold">프리랜서</test-text>
         <p slot="body">description.....</p>
         <!-- <time class="card-date">September 12, 2017</time> -->
-        <test-chip icon="more-vert" class="card-more" hidden>
-        </test-chip>
+        <test-chip icon="more-vert" class="card-more" hidden> </test-chip>
         <test-group slot="tags">
           <test-tag variant="hashtag">프리랜서</test-tag>
           <test-tag variant="hashtag">디자인</test-tag>
@@ -142,9 +177,9 @@
       </test-tile>
       <test-tile variant="plain" class="js-modal" data-modal="lettering">
         <figure slot="thumbnail">
-          <img src="/public/images/budha.png" alt="" style="margin-top:-2rem;" />
+          <img src="/public/images/budha.png" alt="" style="margin-top: -2rem" />
         </figure>
-        <test-text slot="heading" variant="body-bold">레터링</h3>
+        <test-text slot="heading" variant="body-bold">레터링</test-text>
         <test-text slot="body" variant="body">description.....</test-text>
         <test-chip icon="more-vert" class="card-more" hidden></test-chip>
         <test-group slot="tags">
@@ -158,13 +193,16 @@
         <figure slot="thumbnail">
           <img />
         </figure>
-        <test-text slot="heading" variant="body-bold">Flat sitemap</h3>
+        <test-text slot="heading" variant="body-bold">Flat sitemap</test-text>
         <test-text slot="body" variant="body"></test-text>
       </test-tile>
     </section>
 
     <section class="tabpanel" role="tabpanel" aria-hidden="true" data-index="3">
-      <test-result label="아직 새 글이 없어요." description="포트폴리오를 업로드하여 수줍이님을 알려보세요.">
+      <test-result
+        label="아직 새 글이 없어요."
+        description="포트폴리오를 업로드하여 수줍이님을 알려보세요."
+      >
       </test-result>
     </section>
   </section>

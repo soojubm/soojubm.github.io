@@ -12,7 +12,7 @@
     <section class="product-info">
       <h1 class="product-info-name">センチメンタル通り</h1>
       <p class="product-info-byline">Album by <a href="#">Hachimitsupai</a></p>
-      <form class="product-order">
+      <form class="product-order" style="margin: 1.5rem 0 0">
         <!-- <test-text variant="body-bold">Delivery</test-text>
           <test-group variant="chip">
             <test-chip>Tomorrow</test-chip>
@@ -29,36 +29,34 @@
         <test-tile variant="elevated">
           <test-radio name="gender" id="option1" value="" checked style="margin-top: -0.5rem">
             <div>
-              <test-text variant="body">Standard License</test-text>
-              <test-text variant="subhead">₩ 2,000</test-text>
-              <div style="margin: var(--space-2) 0 0">
-                <test-text variant="body">1개월 무료 후 14,900원 / 개월</test-text>
-                <small>현재 구독하고 있는 서비스는 체험할 수 없습니다.</small>
-              </div>
+              <test-text variant="label">Standard License</test-text>
+              <test-text variant="word-large">₩ 2,000</test-text>
+              <div style="height: var(--space-2)"></div>
+              <test-tag>460P 적립</test-tag>
             </div>
           </test-radio>
-          <test-tag>460P 적립</test-tag>
         </test-tile>
         <test-tile variant="elevated">
           <test-radio name="gender" id="option2" value="" style="margin-top: -0.5rem">
             <div>
-              <test-text variant="body">Standard License</test-text>
-              <test-text variant="subhead">₩ 2,000</test-text>
-              <div style="margin: var(--space-2) 0 0">
+              <test-text variant="label">Standard License</test-text>
+              <test-text variant="word-large">₩ 2,000</test-text>
+              <!-- <div style="margin: var(--space-2) 0 0">
                 <test-text variant="body">1개월 무료 후 14,900원 / 개월</test-text>
                 <small>현재 구독하고 있는 서비스는 체험할 수 없습니다.</small>
-              </div>
+              </div> -->
             </div>
           </test-radio>
         </test-tile>
-        <div class="product-order-total">
+        <!-- <div class="product-order-total">
           <p class="product-order-total-label">총 상품 금액</p>
           <div class="product-order-total-value">₩ 23,000</div>
-        </div>
-        <test-group variant="button">
-          <!-- <test-button variant="tertiary">찜 reverse</test-button> -->
-          <test-button variant="primary" isfullwidth="true">Add to Cart</test-button>
-        </test-group>
+        </div> -->
+        <!-- FIXME fullwidth doesn't work -->
+        <!-- <test-group variant="button"> -->
+        <!-- <test-button variant="tertiary">찜 reverse</test-button> -->
+        <test-button variant="primary" isfullwidth="true">Add to Cart</test-button>
+        <!-- </test-group> -->
         <ul class="checklist" style="margin: var(--space-4) 0 0">
           <li>레이아웃 테스트. 아마존, yes24 3칼럼.</li>
           <li>배송비 2,500원</li>
@@ -74,7 +72,7 @@
     </section>
   </header>
 
-  <section class="product-detail">
+  <section class="product-detail" style="max-width: 1000px; margin: 4rem auto 0">
     <style>
       .review-item {
         max-width: var(--layout-width-medium);
