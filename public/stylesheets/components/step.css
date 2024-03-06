@@ -6,9 +6,12 @@
   --step-icon-size: var(--size-tiny);
 }
 .step-item {display:block;flex:auto;text-align:center;position:relative;}
-.step-item:before {content:'';display:block;width:100%;height:1px;background:var(--color-background-weak);position:absolute;top:7px;left:0;right:0;}
+.step-item:before {content:'';
+  display:block;width:100%;height:1px;background:var(--color-border);position:absolute;top:7px;left:0;right:0;}
 .step-item-icon {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width:var(--step-icon-size);
   height:var(--step-icon-size);
   margin: 0 auto;
@@ -30,7 +33,7 @@
 
 .step[data-align=vertical] {flex-direction: column; align-items: start;gap:var(--space-3);}
 .step[data-align=vertical] .step-item {display:flex;flex-wrap:wrap;align-items:center;gap:var(--space-2);text-align:left;}
-.step[data-align=vertical] .step-item:before {width:1px;height:calc(100% + 1.5rem);top:-.75rem;left:7px;bottom:-.75rem;}
+.step[data-align=vertical] .step-item:before {width:1px;height:calc(100% + 1.5rem);top:0;left:7px;bottom:0;}
 .step[data-align=vertical] .step-item-icon {margin:0;}
 .step[data-align=vertical] .step-item-label {margin-top:0;}
 .step[data-align=vertical] .step-item-description {width:100%;margin:0 0 0 1.5rem;}

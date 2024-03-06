@@ -30,8 +30,8 @@
       <blockquote style="max-width: var(--layout-width-small); box-sizing: border-box">
         <ul style="margin: 0">
           <li>
-            컴포넌트에서 동일한 형태를 다른 컴포넌트가 아니라 토큰으로만 대응하려고 할 때를 위해
-            컴포넌트 토큰? 또는 특수한 토큰을 활용하게 될 수 있다. box-inset-small 과 같은.
+            컴포넌트에서 동일한 형태를 토큰으로 대응할 때를 컴포넌트 토큰? 또는 특수한 토큰을
+            활용하게 될 수 있다. box-inset-small 과 같은.
           </li>
           <li>
             개별 토큰에 디스크립션이 필요하지 않도록 명명합니다. core: give a name to a raw value to
@@ -67,20 +67,17 @@
       </section>
 
       <test-text variant="subhead">Color</test-text>
-      <test-text variant="body">background/border/text/status</test-text>
+      <test-text variant="body"
+        >background/border/text/status. primary color = primary interactions, reinforce
+        brand</test-text
+      >
       <test-text variant="body">
         The use of color in an experience helps define communication, meaning, brand, and roles,
-        making it easier for users to interact, search, and differentiate elements.
+        making it easier for users to interact, search, and differentiate elements. For additional
+        guidance, refer to the component-specific guidelines.
       </test-text>
-      <test-text variant="body">
-        The primary blue swatches reinforce Dell’s brand while unifying touchpoints and
-        interactions. Blue 600 is the baseline UI color for most primary interactions. This palette
-        also includes colors for hover, focus, select, and active states. For additional guidance,
-        refer to the component-specific guidelines.
-      </test-text>
-
+      <!-- <p>A-ha :: background-weak weak2를 사용할 수 있지만 하나로 통함됨.</p> -->
       <!-- <test-text>2403 gray150 추가.</test-text> -->
-
       <div class="token-group">
         <article class="token-item is-gray000">
           <figure class="token-item-avatar"></figure>
@@ -179,10 +176,9 @@
       <test-text variant="subhead">Shapes - Radius & Elevations</test-text>
       <div style="display: flex; flex-direction: column; gap: 1rem; margin: 1rem 0">
         <test-text variant="body">
-          그림자를 이용한 시각적 상승 효과로 주변 요소 대비 강조. 따라서 단일 요소에 사용하지 말 것.
-          더 높은 우선순위 및 행동유도를 위한 높은 고도. 사용자는 시각적 단어로 우선순위를 인식하고
-          인터렉션. 시각적 우선순위는 그림자로만 줄 수 있는 것은 아님. 하지만 overay등으로
-          우선순위를 설정할 수도 있음.
+          그림자를 이용한 시각적 상승 효과로 주변 요소 대비 강조. 더 높은 우선순위 및 행동유도를
+          위한 높은 고도. 사용자는 시각적 단어로 우선순위를 인식하고 인터렉션. 시각적 우선순위는
+          그림자로만 줄 수 있는 것은 아님. overay 등으로 우선순위를 설정할 수도 있음.
         </test-text>
       </div>
       <div class="token-group">
@@ -235,7 +231,7 @@
         </article>
         <article class="token-item is-elevation" title="Surface or Elevation">
           <figure class="token-item-avatar"></figure>
-          <b>--shadow: 0 0 .5rem rgb(0 0 0 / 7.5%)</b>
+          <b>--shadow: 0 0 .5rem rgb(0 0 0 / 7.5%) // TODO</b>
           <test-group variant="hashtag">
             <test-tag variant="hashtag">tooltip</test-tag>
             <test-tag variant="hashtag">popover</test-tag>
@@ -249,7 +245,7 @@
       </div>
       <div class="token-group">
         <article class="token-item is-gray000">
-          <figure class="token-item-avatar" style="border: var(--border)"></figure>
+          <figure class="token-item-avatar" style="width: 100%; border-radius: 0"></figure>
           <b>--border-width: 1px</b>
           <b>--border-width-thick: null</b>
           <b>--border-width-thin: null</b>
@@ -261,18 +257,14 @@
       <test-text variant="body">
         요소의 너비와 높이. 브라우저 크기가 변경되어도 사이즈 토큰은 변하지 않아야 합니다.
       </test-text>
-      <test-text variant="body">
-        사이즈의 세로값과 컴포넌트의 세로값을 동일한 토큰으로 사용하낟면 컴포넌트의 사이즈 네이밍이
-        명확해진다.
-      </test-text>
+      <ul>
+        <li>사이즈의 세로값과 컴포넌트의 세로 prop을 동일하게 사용할 수 있을까?</li>
+        <li>huge size는 avatar huge에 단독으로 사용하고 있다. media 컴포넌트와 구별.</li>
+      </ul>
       <section class="token-group">
         <div class="token-item">
           <figure class="token-item-avatar size-huge"></figure>
           <b>--size-huge: 5rem</b>
-          <small
-            >아바타 huge에서만 사용하기 때문에 정의가 애매한 상태. 이것은 미디어 컴포넌트와 구별되는
-            것이 좋다.</small
-          >
           <test-group variant="hashtag">
             <test-tag variant="hashtag">avatar-huge: var(--size-large)</test-tag>
           </test-group>
@@ -316,35 +308,40 @@
       </section>
 
       <test-text variant="subhead">Spacing</test-text>
+      <test-text variant="body">요소 사이의 간격.</test-text>
+      <test-text variant="body">outset: 컴포넌트의 상하 간격</test-text>
+      <test-text variant="body">inset: 타일 내부 간격 - squish inset/stretch inset</test-text>
+      <test-text variant="body">gap: 동일한 컴포넌트 그룹의 </test-text>
       <test-text variant="body">
-        요소 사이의 간격. outset과 inset. squish inset/stretch inset.
+        display grid를 사용하면 마진과 거터를 제외한 나머지가 결국 칼럼이 됨. 또는 width 시스템으로
+        대체할 수 있다.
       </test-text>
+      <test-text variant="body"> 시각 보정을 위한 마이너스minus 간격을 사용할 수 있다. </test-text>
       <section class="token-group">
         <div class="token-item">
-          <figure style="width: var(--space-05)"></figure>
-          <b>space-05: .125rem</b>
-          <!-- <small>주로 시각보정에 사용.</small> -->
+          <figure style="width: 100%; height: var(--space-05); border-radius: 0"></figure>
+          <b>--space-05: .125rem</b>
         </div>
         <div class="token-item">
-          <figure style="width: var(--space-1)"></figure>
+          <figure style="width: 100%; height: var(--space-1); border-radius: 0"></figure>
           <b>--space-1: .25rem</b>
           <test-group variant="hashtag">
             <test-tag variant="hashtag">space-outer-item</test-tag>
           </test-group>
         </div>
         <div class="token-item">
-          <figure style="width: var(--space-2)"></figure>
+          <figure style="width: 100%; height: var(--space-2); border-radius: 0"></figure>
           <b>--space-2: .5rem</b>
           <test-group variant="hashtag">
             <test-tag variant="hashtag">space-inset-small</test-tag>
           </test-group>
         </div>
         <div class="token-item">
-          <figure style="width: var(--space-3)"></figure>
+          <figure style="width: 100%; height: var(--space-3); border-radius: 0"></figure>
           <b>space-3: .75rem</b>
         </div>
         <div class="token-item">
-          <figure style="width: var(--space-4)"></figure>
+          <figure style="width: 100%; height: var(--space-4); border-radius: 0"></figure>
           <b>--space-4: 1rem</b>
           <test-group variant="hashtag">
             <test-tag variant="hashtag">space-after-subhead</test-tag>
@@ -353,7 +350,7 @@
           </test-group>
         </div>
         <div class="token-item">
-          <figure style="width: var(--space-8)"></figure>
+          <figure style="width: 100%; height: var(--space-8); border-radius: 0"></figure>
           <b>--space-8: 2rem</b>
           <test-group variant="hashtag">
             <test-tag variant="hashtag">space-section</test-tag>
@@ -361,13 +358,8 @@
         </div>
         <div class="token-item">
           <b>--grid-margin: 5vw</b>
-        </div>
-        <!-- <div class="token-item">
-          마진과 거터를 제외한 나머지가 결국 칼럼이 됨.
-          <b>--grid-column: null</b>
-        </div> -->
-        <div class="token-item">
           <b>--grid-gutter: null</b>
+          <b>--grid-column: null</b>
         </div>
       </section>
 
@@ -410,22 +402,19 @@
           <b>--font-weight-bold: 800</b>
         </div>
         <div class="token-item">
-          <b>--font-line-height-large: 1.8</b>
-          <b>--font-line-height: 1.5</b>
+          <b>--font-line-height-large: 1.8 :: body</b>
+          <b>--font-line-height: 1.5 :: heading, word</b>
           <b>--font-line-height: null</b>
-          <test-separator></test-separator>
-          <small>제목에서 사용</small>
-          <small>body / body-large에서만 사용한다.</small>
-          <small>14px 기본폰트일 때 1.5의 모호성.</small>
-          <small>key / value label에서 사용. 2402 추가함. medium으로 그냥 써도 될 듯. </small>
+          <!-- <p>14px 기본폰트일 때 1.5의 모호성.</p> -->
         </div>
       </section>
 
       <test-text variant="subhead">Layouts - Width</test-text>
-      <test-text variant="body">
-        콘텐츠 컨테이너의 가로 크기. custom media의 max-width를 layout + @로 정의. 모든 container는
-        --small부터 max-width를 100%.
-      </test-text>
+      <test-text variant="body"> 콘텐츠 컨테이너의 가로 크기. </test-text>
+      <ul class="checklist">
+        <li>custom media의 max-width를 layout + @로 정의.</li>
+        <li>모든 container는 --small부터 max-width를 100%.</li>
+      </ul>
       <test-text>TODO width and columns</test-text>
       <!-- <test-text variant="body-bold">Media queries</test-text> -->
       <!-- <test-text variant="body-bold">Width</test-text> -->
@@ -433,29 +422,26 @@
         <div class="token-item">
           <b>@custom-media --large (max-width: null)</b>
           <b>@custom-media --small (max-width: 1080px)</b>
-        </div>
-        <div class="token-item">
           <del><b>--media-query-tiny: only screen and (max-width: 760px)</b></del>
         </div>
         <div class="token-item">
           <b>--layout-width-wide: 1200px</b>
           <b>--layout-width-medium: 640px</b>
           <b>--layout-width-narrow: 480px</b>
-          <b>TODO :: --layout-width-extra-narrow: 200</b>
+          <b>--layout-width-extra-narrow: 200px</b>
         </div>
         <div class="token-item">
-          <b>TODO @mixin group-bleeding</b>
-          <p>vertical scrolling. 다른 것과 이름으로 구별되게.</p>
+          <b data-temp="vertical scrolling">TODO @mixin group-bleeding</b>
         </div>
       </div>
       <test-text variant="subhead">Animation</test-text>
-      <test-text variant="body"
-        >작성 중. 유틸리티. 콘텐츠보다 액션이 강조되지 않도록 뷰포트 내에서 delay를 최대 3개로
-        제한합니다. inactive로 변경될 때(닫기 등) 즉시(instantly) 실행 합니다.</test-text
-      >
+      <test-text variant="body">
+        콘텐츠보다 액션이 강조되지 않도록 뷰포트 내에서 delay를 최대 3개로 제한합니다. inactive로
+        변경될 때(닫기 등) 즉시(instantly) 실행 합니다.
+      </test-text>
       <div class="token-group">
         <div class="token-item">
-          <b>--animationbazier: cubic-bezier(0.455, 0.03, 0.515, 0.955)</b>
+          <b>--animation-bazier: cubic-bezier(0.455, 0.03, 0.515, 0.955)</b>
         </div>
         <div class="token-item">
           <b>--animation-delay-first: 0s</b>
@@ -506,8 +492,8 @@
         <div class="token-item">
           <b style="margin: 0">--z-index-popover: 6</b>
           <div>
-            <p>--zindex-dropdown:</p>
-            <p>--zindex-tooltip:</p>
+            <small>--zindex-dropdown:</small><br />
+            <small>--zindex-tooltip:</small>
           </div>
         </div>
         <div class="token-item">
@@ -518,9 +504,7 @@
         </div>
         <div class="token-item">
           <b>--zindex-modal: 8</b>
-          <div>
-            <p>--zindex-modal-backdrop: 7</p>
-          </div>
+          <b>--zindex-modal-backdrop: 7</b>
         </div>
         <div class="token-item">
           <b style="margin: 0" b>--zindex-toast: 9</b>
@@ -528,7 +512,7 @@
         <div class="token-item">
           <b style="margin: 0">--zindex-skipmenu: 10</b>
           <div>
-            <p>최고 존엄</p>
+            <small>최고 존엄</small>
           </div>
         </div>
       </div>

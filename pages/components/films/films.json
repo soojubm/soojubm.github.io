@@ -1,9 +1,18 @@
 [
   {
     "id": 202402,
+    "releasedate": 2014,
+    "titlekorean": "내셔널 갤러리",
+    "titleenglish": "National Gallery",
+    "director": "프레더릭 와이즈먼",
+    "country": "미국",
+    "etc": "다큐멘터리"
+  },
+  {
+    "id": 202402,
     "releasedate": 1986,
     "titlekorean": "걸 위드 건",
-    "titleenglish": "To Sleep So As To Dream",
+    "titleenglish": "Girl with Gun",
     "director": "하야시 카이조",
     "country": "일본",
     "etc": "흑백"

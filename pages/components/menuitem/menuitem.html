@@ -18,8 +18,8 @@
         <test-menuitem size="large">
           <test-avatar slot="avatar" size="large">🦊</test-avatar>
           <div slot="text">
-            <test-text variant="body" style="line-height: 24px">사진 및 동영상 백업</test-text>
-            <test-text variant="label" style="line-height: 24px">디스크립션이다</test-text>
+            <test-text variant="word">사진 및 동영상 백업</test-text>
+            <test-text variant="word-weak">디스크립션이다</test-text>
           </div>
           <test-chip slot="action">버튼</test-chip>
         </test-menuitem>
@@ -247,34 +247,28 @@
         </test-group>
       </test-tile>
       <test-tile>
-        <div style="margin: 0 -1.5rem">
-          <test-tile style="padding-left: 1.5rem; padding-right: 1.5rem">
-            <b>Personal License</b>
-            <small style="display: block; color: var(--color-text-light)">1 user</small>
-            <b
-              style="
-                line-height: 18px;
-                position: absolute;
-                right: var(--space-4);
-                top: var(--space-4);
-              "
-              >18,800 KRW</b
-            >
-          </test-tile>
-        </div>
-        <div style="margin: var(--space-3) 0">
+        <test-tile>
+          <test-text variant="word-strong">Personal License</test-text>
+          <test-text variant="word-weak">1 user</test-text>
+          <div style="width: max-content; position: absolute; right: 0; top: 21px">
+            <test-text variant="word-strong"> 18,800 KRW </test-text>
+          </div>
+        </test-tile>
+        <div style="height: var(--space-3)"></div>
+        <test-group>
           <test-menuitem>
             <test-avatar slot="avatar" size="large" fallback="🎅🏻"></test-avatar>
             <div slot="text">
-              <b class="item-name">Widgefy iOS Widgets</b>
-              <p style="color: var(--color-text-light); line-height: 24px">떡볶이</p>
+              <test-text variant="word-strong">Widgefy iOS Widgets</test-text>
+              <test-text variant="word-weak">떡볶이</test-text>
             </div>
             <div slot="action" style="text-align: right">
               <span style="display: block; line-height: 18px">18,800 KRW</span>
-              <span style="color: var(--color-text-light); line-height: 24px">6410</span>
+              <test-text variant="word-weak">6410</test-text>
             </div>
           </test-menuitem>
-        </div>
+        </test-group>
+        <div style="height: var(--space-3)"></div>
         <footer>
           <test-button variant="primary">Buy now</test-button>
         </footer>
@@ -300,7 +294,7 @@
             ></test-avatar>
             <div slot="text">
               <test-text variant="word-strong">coffee</test-text>
-              <test-text variant="label">유아이 디자이너</test-text>
+              <test-text variant="word-weak">유아이 디자이너</test-text>
             </div>
             <test-chip slot="action" status="active">팔로우</test-chip>
           </test-menuitem>
@@ -313,7 +307,7 @@
             ></test-avatar>
             <div slot="text">
               <test-text variant="word-strong">soojubm</test-text>
-              <test-text variant="label">유투브 구독자</test-text>
+              <test-text variant="word-weak">유투브 구독자</test-text>
             </div>
             <test-chip slot="action">팔로우 중</test-chip>
           </test-menuitem>

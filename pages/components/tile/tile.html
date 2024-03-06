@@ -36,7 +36,6 @@
         <dt>variant</dt>
         <dd>'flat' | 'elevated'</dd>
         <dd>variant? surface?: none | primary | secondary ? // plain</dd>
-        <dd></dd>
         <dt>size</dt>
         <dd>'large' | 'medium' | 'small'</dd>
         <dd>TODO tiny size for tablist</dd>
@@ -121,10 +120,11 @@
       <test-tile>
         <test-avatar>🥫</test-avatar>
         <test-text variant="subhead">Quote</test-text>
-        <p class="quote-body">Don't you know that God is Pooh bear?</p>
+        <test-text variant="body">Don't you know that God is Pooh bear?</test-text>
+        <div style="height: var(--space-2)"></div>
         <cite class="quote-byline">
-          <div class="quote-byline-name">Jack Kerouac</div>
-          <div class="quote-byline-job">Poet / Novelist</div>
+          <test-text variant="word-strong">Jack Kerouac</test-text>
+          <test-text variant="word-weak">Poet / Novelist</test-text>
         </cite>
         <div style="height: 1rem"></div>
         <test-group variant="chip">
@@ -242,9 +242,6 @@
           </div>
         </test-menuitem>
         <test-separator></test-separator>
-        <test-text variant="body-bold">1개월 무료 체험</test-text>
-        <test-text variant="word">오늘(2023년 05월 22일)부터</test-text>
-        <test-text variant="word-large">14,900원/개월</test-text>
 
         <test-group alignment="vertical">
           <test-keyvalue key="이용기간" value="23.04.09. ~ 23.05.02."> </test-keyvalue>
@@ -266,12 +263,27 @@
 
       <test-tile>
         <test-text variant="subhead">Senior Front-end Developer</test-text>
-        <test-group>
-          <test-tag>Full-Time</test-tag>
-          <test-tag>Korea</test-tag>
-          <test-tag>Remote friendly</test-tag>
+        <test-group variant="hashtag">
+          <test-tag variant="hashtag">Full-Time</test-tag>
+          <test-tag variant="hashtag">Korea</test-tag>
+          <test-tag variant="hashtag">Remote friendly</test-tag>
         </test-group>
-        <test-chip>View Job</test-chip>
+        <div style="height: var(--space-3)"></div>
+        <!-- <test-chip>View Job</test-chip> -->
+        <button
+          style="
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin: 0 -1rem;
+            padding: var(--space-3) 1rem 0;
+            border-top: var(--border);
+          "
+        >
+          View Job
+          <test-icon name="arrow-right"></test-icon>
+        </button>
       </test-tile>
       <picture>
         <source

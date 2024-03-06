@@ -6,9 +6,6 @@
 .setting-item-value-username {width:100%;}
 .setting-item-value-address {width:100%;}
 .setting-item-value-phone {width:100%;}
-
-.setting-item-helper {margin:var(--space-2) 0 var(--space-3) 0;font-size:var(--font-size-small);line-height: var(--font-line-height)}
-
 .setting-item-icon {position:absolute;right:.5rem;top:50%;transform:translateY(-50%);}
 
 @media (--small) {

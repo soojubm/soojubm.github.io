@@ -1,4 +1,11 @@
 <main class="component">
+  <style>
+    test-text[variant='caption'] {
+      display: block;
+      margin: var(--space-2) 0 0 0;
+      line-height: var(--line-height);
+    }
+  </style>
   <div class="article" style="max-width: 560px">
     <header
       style="
@@ -6,7 +13,7 @@
         flex-direction: column;
         align-items: center;
         gap: var(--space-1);
-        padding: 2rem 0;
+        padding: 0 0 2rem 0;
       "
     >
       <test-avatar size="huge" variant="secondary" default="true"></test-avatar>
@@ -88,6 +95,7 @@
 
     <br /><br />
 
+    <!-- TODO :: group을 section으로 -->
     <test-group alignment="vertical">
       <test-text variant="subhead">개인정보</test-text>
       <test-tile>
@@ -115,143 +123,137 @@
     </test-group>
 
     <br /><br />
-
-    <test-text variant="subhead">프로필 정보</test-text>
     <test-group alignment="vertical">
-      <test-tile>
-        <test-menuitem>
-          <div slot="text">
-            <test-text variant="label">닉네임</test-text>
-            <test-text variant="body">수줍이</test-text>
-          </div>
-          <test-icon slot="action" name="arrow-right"></test-icon>
-        </test-menuitem>
-        <small
-          class="setting-item-helper"
-          style="display: block; margin: var(--space-2) 0 0; line-height: var(--font-line-height)"
-        >
-          soojubm 닉네임을 만드세요! 60일 동안 변경할 수 없습니다 — 취소할 수 없습니다! Twitch
-          이용규약을 위반한 닉네임은 계정이 영구정지될 수 있으니 주의하세요.
-        </small>
-      </test-tile>
-      <test-tile>
-        <test-menuitem>
-          <div slot="text">
-            <test-text variant="label">이모지</test-text>
-            <test-text variant="body">🐻</test-text>
-          </div>
-          <test-icon slot="action" name="arrow-right"></test-icon>
-        </test-menuitem>
-      </test-tile>
-      <test-tile>
-        <test-menuitem>
-          <div slot="text">
-            <test-text variant="label">관심분야</test-text>
-            <test-group variant="tag">
-              <test-tag>문화/예술</test-tag>
-              <test-tag>인권</test-tag>
-              <test-tag>환경</test-tag>
-            </test-group>
-            <!-- <test-text variant="body">문화/예술, 인권, 환경</test-text> -->
-          </div>
-          <test-icon slot="action" name="arrow-right"></test-icon>
-        </test-menuitem>
-        <small class="setting-item-helper" style="display: block; margin: var(--space-2) 0 0"
-          >관심있는 분야의 콘텐츠를 추천 받으세요.</small
-        >
-      </test-tile>
+      <test-text variant="subhead">프로필 정보</test-text>
+      <test-group alignment="vertical">
+        <test-tile>
+          <test-menuitem>
+            <div slot="text">
+              <test-text variant="label">닉네임</test-text>
+              <test-text variant="body">수줍이</test-text>
+            </div>
+            <test-icon slot="action" name="arrow-right"></test-icon>
+          </test-menuitem>
+          <test-text variant="caption">
+            soojubm 닉네임을 만드세요! 60일 동안 변경할 수 없습니다 — 취소할 수 없습니다! Twitch
+            이용규약을 위반한 닉네임은 계정이 영구정지될 수 있으니 주의하세요.
+          </test-text>
+        </test-tile>
+        <test-tile>
+          <test-menuitem>
+            <div slot="text">
+              <test-text variant="label">이모지</test-text>
+              <test-text variant="body">🐻</test-text>
+            </div>
+            <test-icon slot="action" name="arrow-right"></test-icon>
+          </test-menuitem>
+        </test-tile>
+        <test-tile>
+          <test-menuitem>
+            <div slot="text">
+              <test-text variant="label">관심분야</test-text>
+              <test-group variant="tag">
+                <test-tag>문화/예술</test-tag>
+                <test-tag>인권</test-tag>
+                <test-tag>환경</test-tag>
+              </test-group>
+              <!-- <test-text variant="body">문화/예술, 인권, 환경</test-text> -->
+            </div>
+            <test-icon slot="action" name="arrow-right"></test-icon>
+          </test-menuitem>
+          <test-text variant="caption">관심있는 분야의 콘텐츠를 추천 받으세요.</test-text>
+        </test-tile>
+      </test-group>
     </test-group>
 
     <br /><br />
-
-    <test-text variant="subhead">뉴스레터</test-text>
-    <test-tile variant="elevated" size="small">
-      <test-menuitem label="시사 뉴스레터" class="js-darkmode">
-        <test-avatar slot="avatar"> </test-avatar>
-        <test-switch slot="action" label=""></test-switch>
-      </test-menuitem>
-    </test-tile>
-    <p class="setting-item-helper">매 주 월요일, 수요일, 금요일 아침에 받아볼 수 있어요.</p>
-
-    <br /><br />
-
-    <test-text variant="subhead" title="Service sign-in / Integration"
-      >소셜 네트워크로 로그인하기</test-text
-    >
     <test-group alignment="vertical">
-      <test-tile>
-        <test-menuitem>
-          <div slot="text">
-            <test-text variant="body-bold">Facebook</test-text>
-            <test-text>사용자의 Opera와 Facebook 게정을 연결하세요.</test-text>
-          </div>
-          <test-chip slot="action">연동하기</test-chip>
-        </test-menuitem>
-      </test-tile>
-      <test-tile>
-        <test-menuitem label="soojubm@gmail.com">
+      <test-text variant="subhead">뉴스레터</test-text>
+      <test-tile variant="elevated" size="small">
+        <test-menuitem label="시사 뉴스레터" class="js-darkmode">
           <test-avatar slot="avatar"> </test-avatar>
-          <test-chip slot="action" status="disabled">Google 연동해제</test-chip>
+          <test-switch slot="action" label=""></test-switch>
         </test-menuitem>
-        <small class="setting-item-helper" style="display: block; margin: var(--space-2) 0 0 0"
-          >Opera 계정의 암호를 설정한 후 소셜 계정을 연결을 해제하세요.</small
+        <test-text variant="caption"
+          >매 주 월요일, 수요일, 금요일 아침에 받아볼 수 있어요.</test-text
         >
       </test-tile>
     </test-group>
-
     <br /><br />
-
-    <test-text variant="subhead">멤버십 가입 정보</test-text>
-    <test-tile>
-      <dl>
-        <dt>다음 결제 예정일</dt>
-        <dd>2024.04.02.</dd>
-        <dt>결제금액</dt>
-        <dd>46,800원</dd>
-        <dt>결제수단</dt>
-        <dd>현대카드 ****-****-****-7922</dd>
-      </dl>
-      <footer style="margin: 1rem 0 0 0; position: relative">
-        <test-chip>
-          결제수단변경
-          <test-icon slot="suffix" name="arrow-right"></test-icon>
-        </test-chip>
-      </footer>
-    </test-tile>
-
+    <test-group alignment="vertical">
+      <test-text variant="subhead" title="Service sign-in / Integration"
+        >소셜 네트워크로 로그인하기</test-text
+      >
+      <test-group alignment="vertical">
+        <test-tile>
+          <test-menuitem>
+            <div slot="text">
+              <test-text variant="body-bold">Facebook</test-text>
+              <test-text>사용자의 Opera와 Facebook 게정을 연결하세요.</test-text>
+            </div>
+            <test-chip slot="action">연동하기</test-chip>
+          </test-menuitem>
+        </test-tile>
+        <test-tile>
+          <test-menuitem label="soojubm@gmail.com">
+            <test-avatar slot="avatar"> </test-avatar>
+            <test-chip slot="action" status="disabled">Google 연동해제</test-chip>
+          </test-menuitem>
+          <test-text variant="caption">
+            Opera 계정의 암호를 설정한 후 소셜 계정을 연결을 해제하세요.
+          </test-text>
+        </test-tile>
+      </test-group>
+    </test-group>
     <br /><br />
-
-    <test-text variant="subhead">보안</test-text>
-    <test-tile>
-      <test-menuitem>
-        <div slot="text">
-          <test-text variant="label">비밀번호 변경</test-text>
-          <test-text variant="body">강력한 비밀번호로 보안을 강화하세요.</test-text>
-        </div>
-        <test-icon slot="action" name="arrow-right"></test-icon>
-      </test-menuitem>
-    </test-tile>
-    <p class="setting-item-helper">
-      비밀번호 변경 관련 안내를 해주어도 좋겠다. 비밀번호는 설정, 분실 시 이메일 모두 동일할 수
-      있을까.
-    </p>
-
-    <test-tile>
-      <test-menuitem>
-        <div slot="text">
-          <test-text variant="label">계정 비활성화</test-text>
-          <test-text variant="body"
-            ><test-link href="">비활성화 페이지</test-link>에서 할 수 있습니다.</test-text
-          >
-        </div>
-        <test-chip slot="action">비활성화</test-chip>
-      </test-menuitem>
-    </test-tile>
+    <test-group alignment="vertical">
+      <test-text variant="subhead">멤버십 가입 정보</test-text>
+      <test-tile>
+        <test-group alignment="vertical">
+          <test-keyvalue key="다음 결제 예정일" value="2024.04.02."></test-keyvalue>
+          <test-keyvalue key="결제금액" value="46,800원"></test-keyvalue>
+          <test-keyvalue key="결제수단" value="현대카드 ****-****-****-7922"></test-keyvalue>
+        </test-group>
+        <footer style="margin: 1rem 0 0 0; position: relative">
+          <test-chip>
+            결제수단변경
+            <test-icon slot="suffix" name="arrow-right"></test-icon>
+          </test-chip>
+        </footer>
+      </test-tile>
+    </test-group>
+    <br /><br />
+    <test-group alignment="vertical">
+      <test-text variant="subhead">보안</test-text>
+      <test-text variant="body">
+        비밀번호 변경 관련 안내를 해주어도 좋겠다. 비밀번호는 설정, 분실 시 이메일 모두 동일할 수
+        있을까.
+      </test-text>
+      <test-tile>
+        <test-menuitem>
+          <div slot="text">
+            <test-text variant="label">비밀번호 변경</test-text>
+            <test-text variant="body">강력한 비밀번호로 보안을 강화하세요.</test-text>
+          </div>
+          <test-icon slot="action" name="arrow-right"></test-icon>
+        </test-menuitem>
+      </test-tile>
+      <test-tile>
+        <test-menuitem>
+          <div slot="text">
+            <test-text variant="label">계정 비활성화</test-text>
+            <test-text variant="body"
+              ><test-link href="">비활성화 페이지</test-link>에서 할 수 있습니다.</test-text
+            >
+          </div>
+          <test-chip slot="action">비활성화</test-chip>
+        </test-menuitem>
+      </test-tile>
+    </test-group>
 
     <!-- <footer>
       <test-button variant="tertiary">로그아웃</test-button>
     </footer> -->
-    <!-- <div>설정 - 프로필 - 이름</div> -->
 
     <section style="margin: 4rem 0">
       <test-titlebar heading="닉네임 변경" role="navigation">

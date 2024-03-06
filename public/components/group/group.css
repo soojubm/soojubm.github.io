@@ -20,6 +20,7 @@
 
 /* .group[data-variant=avatar] {gap:var(--space-2);} */
 /* TODO : last-of-tpye은 avagtar와 label 모두에 적용됨 */
+.group[data-variant=avatar] {align-items: center;}
 .group[data-variant=avatar] > * + * {margin-left:-.5rem;}
 /* .group[data-variant=avatar] > *:nth-last-child(1) {margin-left:var(--space-2);} */
 
