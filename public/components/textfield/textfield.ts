@@ -21,7 +21,9 @@ class Input extends HTMLElement {
     container.classList.add('textfield')
     container.dataset.size = this.size || ''
     container.classList.toggle('is-invalid', this.isInvalid)
-    if (this.labeling) container.dataset.label = this.labeling
+    if (this.hiddenLabel) container.dataset.label = String(this.hiddenLabel)
+
+    console.log(this.hiddenLabel)
 
     const label = document.createElement('label')
     label.classList.add('textfield-label')
@@ -101,8 +103,8 @@ class Input extends HTMLElement {
     return this.hasAttribute('isOptional')
   }
 
-  get labeling() {
-    return this.getAttribute('labeling')
+  get hiddenLabel() {
+    return this.hasAttribute('hiddenLabel')
   }
 
   get disabled() {

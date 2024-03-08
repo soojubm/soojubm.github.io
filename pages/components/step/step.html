@@ -31,7 +31,7 @@
           </div>
         </section>
       </test-tile>
-      <br />
+      <div style="height: var(--space-3)"></div>
       <test-tile>
         <section class="step" data-align="vertical">
           <div class="step-item is-active" aria-current="step">
@@ -119,39 +119,31 @@
         </test-group>
         <!-- <test-tag>네이버 쇼핑은 왜 주문 내역을 숨길 수 있나?</test-tag> -->
       </test-tile>
-
-      <br />
-      <nav
-        style="
-          display: flex;
-          justify-content: space-between;
-          padding: 1rem 0;
-          border-top: var(--border);
-          border-bottom: var(--border);
-        "
-      >
-        <test-menuitem>
-          <test-avatar slot="avatar" size="medium"></test-avatar>
-          <div slot="text">
-            <test-text variant="label">Step one</test-text>
-            <test-text variant="word-strong">UPLOAD 3D FILES</test-text>
-          </div>
-        </test-menuitem>
-        <test-menuitem>
-          <test-avatar slot="avatar" size="medium"></test-avatar>
-          <div slot="text">
-            <test-text variant="label">Step one</test-text>
-            <test-text variant="word-strong">UPLOAD 3D FILES</test-text>
-          </div>
-        </test-menuitem>
-        <test-menuitem>
-          <test-avatar slot="avatar" size="medium"></test-avatar>
-          <div slot="text">
-            <test-text variant="label">Step one</test-text>
-            <test-text variant="word-strong">UPLOAD 3D FILES</test-text>
-          </div>
-        </test-menuitem>
-      </nav>
+      <test-tile>
+        <test-group>
+          <test-menuitem>
+            <test-avatar slot="avatar" size="medium"></test-avatar>
+            <div slot="text">
+              <test-text variant="label">Step 1</test-text>
+              <test-text variant="word-strong">UPLOAD 3D FILES</test-text>
+            </div>
+          </test-menuitem>
+          <test-menuitem>
+            <test-avatar slot="avatar" size="medium"></test-avatar>
+            <div slot="text">
+              <test-text variant="label">Step 2</test-text>
+              <test-text variant="word-strong">UPLOAD 3D FILES</test-text>
+            </div>
+          </test-menuitem>
+          <test-menuitem>
+            <test-avatar slot="avatar" size="medium"></test-avatar>
+            <div slot="text">
+              <test-text variant="label">Step 3</test-text>
+              <test-text variant="word-strong">UPLOAD 3D FILES</test-text>
+            </div>
+          </test-menuitem>
+        </test-group>
+      </test-tile>
       <test-tile>
         <header class="authentication-head">
           <test-text variant="subhead">Tell us about yourself</test-text>

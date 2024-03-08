@@ -3,8 +3,9 @@
   --container-width: var(--layout-width-small);
 }
 .component-example {
-  margin:3rem -5vw;
-  padding:2rem var(--grid-margin) 3rem;
+  margin:3rem calc(-5vw + 1rem);
+  padding:2rem calc(var(--grid-margin) - 1rem) 3rem;
+  
   border: var(--border);
   border-right: none;
   /* TODo make the variables */
@@ -40,6 +41,7 @@
   border:var(--border);
   border-top-left-radius: var(--radius);
   border-bottom: none;
+  border-color:var(--color-background-weak);
 }
 .component-case > * {
   max-width: var(--layout-width-small);
@@ -65,7 +67,7 @@
 /* .component-props dl dd {color:#5f9ea0;} */
 .component-props dl dd {}
 .component-props dl dt + dd {font-weight: var(--font-weight-bold);}
-.component-props dl dd + dd {width:100%;margin:var(--space-05) 0 var(--space-2);font-size:var(--font-size-small);line-height:var(--font-line-height);color:var(--color-text);}
+.component-props dl dd + dd {width:100%;margin:var(--space-05) 0 var(--space-3);font-size:var(--font-size-small);line-height:var(--font-line-height);color:var(--color-text);}
 
 .component-guide {
   max-width: var(--container-width);
@@ -126,14 +128,16 @@ test-text[variant=body] + test-text[variant=body] {
 } */
 test-text[variant=body] + test-text[variant=subhead] {
   display: block;
-  margin: 2rem 0 0 0;
+  margin: 3rem 0 0 0;
 }
 
 [variant=subhead] + [variant=body] {
   display: block;
   margin: var(--space-after-subhead) 0 0 0;
 }
-
+[variant=subhead] + ul {
+  margin: var(--space-after-subhead) 0 0 0;
+}
 [variant=subhead] + test-tile {
   display: block;
   margin: var(--space-after-subhead) 0 0 0;
@@ -147,8 +151,6 @@ test-text[variant=body] + test-text[variant=subhead] {
 
 .article-title {font-size:var(--font-size-huge);font-weight:var(--font-weight-bold);line-height:var(--font-line-height);color:var(--color-text);}
 /* .article-description {font-size:var(--font-size-large);line-height:var(--font-line-height);color:var(--color-text);} */
-.article ul {margin:var(--space-after-subhead) 0 2rem;}
-
 .article ul, .article dl {max-width: 720px;}
 
 .component-guide test-text[variant=subhead] {display:block;margin-top:3rem;}

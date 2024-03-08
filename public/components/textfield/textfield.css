@@ -103,7 +103,6 @@ input[type=search]::-webkit-search-results-decoration {display:none;}
 .textfield-reveal {font-size:var(--font-size-small);color:var(--color-text-light);}
 .textfield-check {} .textfield-unit {}
 
-/* TODO slotted에서 크기나 정렬에 대한 정의만 있어야 함.. 형태는 슬롯으로 들어온 친구가 하는 것. */
 ::slotted([slot=suffix]) {
   display: flex;
   align-items: center;
@@ -111,7 +110,7 @@ input[type=search]::-webkit-search-results-decoration {display:none;}
   /* width: var(--size-large); */
   height: var(--textfield-height);
   /* color:var(--color-primary); */
-  position:absolute;top:var(--textfield-icon-position);right:0;
+  position:absolute;top:var(--textfield-icon-position);right:var(--space-2);
 }
 
 ::slotted([slot=prefix]) {
@@ -132,6 +131,7 @@ input[type=search]::-webkit-search-results-decoration {display:none;}
 .textfield[data-label=false] {
   --textfield-icon-position: 0;
 }
+.textfield[data-label=false] .textfield-label {}
 [data-label=false] .textfield-input {padding-left:var(--textfield-height);}
 /* 왜 안 됨. */
 /* ::slotted([slot=prefix]) ~ .textfield-input {padding-left:48px !important;} */

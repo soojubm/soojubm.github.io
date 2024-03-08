@@ -65,20 +65,16 @@
       </test-group>
       <test-separator></test-separator>
       <div style="display: flex; flex-direction: column; gap: var(--space-3)">
-        <form class="searchfield">
-          <label class="searchfield-prefix">
+        <!-- TODO hiddenLabel or ariaLabel -->
+        <test-textfield type="search" hiddenLabel>
+          <label slot="prefix" class="searchfield-prefix">
             <test-icon name="search"></test-icon>
           </label>
-          <input
-            class="searchfield-input"
-            type="search"
-            placeholder="궁금한 인물이나 이슈가 있나요?"
-          />
-          <button class="searchfield-clear" aria-label="clear keyword">
-            <test-icon name="xmark"></test-icon>
+          <b<test-icon name="xmark"></test-icon>utton slot="suffix" class="searchfield-clear" aria-label="clear keyword">
+            
           </button>
           <button class="searchfield-cancel" aria-label="back">취소</button>
-        </form>
+        </test-textfield>
         <test-textfield type="password" label="Password field">
           <test-chip slot="suffix" icon="eye-solid" aria-label="비밀번호 보기"> </test-chip>
         </test-textfield>
@@ -126,10 +122,10 @@
         <test-chip icon="plus" class="js-counter-increment" tabindex="-1"> </test-chip>
       </div>
       <test-separator></test-separator>
-      <test-group style="align-items: center">
+      <div style="display: flex; align-items: center; justify-content: space-between">
         <div>
-          <p style="margin: 0"><b>1 sandbox</b></p>
-          <small style="color: var(--color-text-light)"> $100.00 / addl sandbox </small>
+          <test-text variant="word-strong">1 sandbox</test-text>
+          <test-text variant="word-weak"> $100.00 / addl sandbox </test-text>
         </div>
         <test-group variant="chip">
           <test-chip
@@ -142,11 +138,11 @@
           <test-chip icon="plus" class="counter-increment js-counter-increment" tabindex="-1">
           </test-chip>
         </test-group>
-      </test-group>
-      <!-- <test-textfield type="text" label="" labeling="false" placeholder="Placeholder...">
+      </div>
+      <!-- <test-textfield type="text" label="" hiddenLabel placeholder="Placeholder...">
           <test-icon slot="prefix" name="xray-view"></test-icon>
         </test-textfield>
-        <test-textfield type="email" label="" labeling="false" placeholder="with Suffix...">
+        <test-textfield type="email" label="" hiddenLabel placeholder="with Suffix...">
           <test-icon slot="suffix" name="xray-view"></test-icon>
         </test-textfield> -->
       <!-- <p>unit, choose/enter</p> -->
