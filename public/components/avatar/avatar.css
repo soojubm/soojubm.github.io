@@ -82,6 +82,13 @@ img {
   z-index: 1;
 }
 
+
+[slot=category] {
+  position: absolute;
+  left: -.25rem;
+  top: -.25rem;
+}
+
 .entity {}
 .entity[data-alignment=center] {text-align: center;}
 .entity-label {display:block;margin:.5rem 0 0;font-size:var(--font-size-medium);font-weight:var(--font-weight-bold);}

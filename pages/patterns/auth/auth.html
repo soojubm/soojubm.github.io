@@ -177,9 +177,13 @@
         type="submit"
         >로그인</test-button
       >
-      <p class="login-option" data-temp="Need an account?">
+      <!-- TODO: 이메일이 없으신가요? 와 동일한 패턴 -->
+      <p
+        data-temp="Need an account?"
+        style="display: flex; justify-content: center; gap: var(--space-2); margin: 1.5rem 0 0"
+      >
         계정이 없으신가요?
-        <test-link class="login-option-link" href="signup.html">지금 가입하기</test-link>
+        <test-link href="signup.html">지금 가입하기</test-link>
       </p>
     </menu>
 
@@ -300,7 +304,7 @@
     </aside>
   </form>
 
-  <form class="authentication verify" name="verify" style="max-width: 560px; text-align: center">
+  <form class="authentication verify" name="verify" style="max-width: 560px">
     <header class="authentication-head">
       <test-text variant="title" class="authentication-head-title" title="Reset Your Password">
         Please check your email!
@@ -379,8 +383,8 @@
     </footer>
   </form>
 
-  <section>
-    <h1 class="authentication-head-title">메일함을 확인하세요.</h1>
+  <section style="margin: 8rem 0">
+    <h1 class="authentication-head-title">메일함을 확인하세요. result componenet</h1>
     <p class="authentication-head-description">
       faf@faf.co으로 비밀번호 재설정 링크를 발송했습니다.
     </p>

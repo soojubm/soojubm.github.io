@@ -1,6 +1,6 @@
 import { makeStyleSheet } from '../../javascripts/components/utils'
 
-// TODO참고
+// TODO 참고
 // import styleTextCoral from './coral.scss'
 // const styleGreen = document.createElement('style');
 // styleGreen.type = 'text/css';
@@ -12,11 +12,10 @@ class Tag extends HTMLElement {
     const shadow = this.attachShadow({ mode: 'open' })
 
     // role=itemlist
-
     // tag-icon role=image
     const container = document.createElement(this.datetime ? 'time' : 'span')
     container.classList.add('tag')
-    container.setAttribute('data-variant', this.variant || '')
+    container.dataset.variant = this.variant || ''
 
     const iconSlot = document.createElement('slot')
     iconSlot.name = 'icon'
@@ -26,7 +25,8 @@ class Tag extends HTMLElement {
     label.textContent = this.textContent
 
     shadow.append(container, makeStyleSheet('tag'))
-    container.append(iconSlot, label)
+    container.appendChild(iconSlot)
+    if (this.label) container.appendChild(label)
   }
 
   get variant() {

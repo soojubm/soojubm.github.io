@@ -10,20 +10,22 @@
     </dl>
 
     <section class="component-example">
-      <test-result
-        label="주문을 확인해주세요."
-        description="헌법재판소 재판관의 임기는 6년으로 하며, 법률이 정하는 바에 의하여 연임할 수 있다. 대통령은 법률안의 일부에 대하여 또는 법률안을 수정하여 재의를 요구할 수 없다."
-      >
-        <test-avatar slot="avatar" size="huge"></test-avatar>
-        <test-group slot="list" alignment="vertical">
-          <test-keyvalue key="주문일자" value="2019-08-10"> </test-keyvalue>
-          <test-keyvalue key="결제금액" value="₩ 54,000"> </test-keyvalue>
-        </test-group>
-        <test-group slot="action" variant="button">
-          <test-button variant="tertiary">홈으로</test-button>
-          <test-button variant="primary">주문내역 보기</test-button>
-        </test-group>
-      </test-result>
+      <div style="width: 100%; max-width: 800px">
+        <test-result
+          label="주문을 확인해주세요."
+          description="헌법재판소 재판관의 임기는 6년으로 하며, 법률이 정하는 바에 의하여 연임할 수 있다. 대통령은 법률안의 일부에 대하여 또는 법률안을 수정하여 재의를 요구할 수 없다."
+        >
+          <test-avatar slot="avatar" size="huge"></test-avatar>
+          <test-group slot="list" alignment="vertical">
+            <test-keyvalue key="주문일자" value="2019-08-10"> </test-keyvalue>
+            <test-keyvalue key="결제금액" value="₩ 54,000"> </test-keyvalue>
+          </test-group>
+          <test-group slot="action" variant="button">
+            <test-button variant="tertiary">홈으로</test-button>
+            <test-button variant="primary">주문내역 보기</test-button>
+          </test-group>
+        </test-result>
+      </div>
     </section>
 
     <section class="component-props">
@@ -41,29 +43,29 @@
         <dt>actionSlot</dt>
         <dd>React.Node</dd>
         <dd>
-          FIXME :: 이렇게 사용했을 때 약속한 버튼의 순서를 어길 수 있다. { primaryText: string,
-          primaryClick: () => {} }
+          FIXME :: 이렇게 사용했을 때 약속한 버튼의 순서를 어길 가능성이 있다. { primaryText:
+          string, primaryClick: () => {} }
         </dd>
       </dl>
     </section>
 
     <section class="component-guide">
-      <test-callout variant="danger">
-        전반적인 원칙에 의거 dialog와 콘텐츠 모듈을 통일하는 것이 좋을 것. 모달이거나 논모달의
-        차이로 구별할 수도.
-      </test-callout>
-
       <test-text variant="subhead">
         페이지 레벨 또는 섹션 레벨의 empty, error, complete 상태에서 사용합니다.
       </test-text>
       <test-text variant="body">용법.</test-text>
 
-      <test-text variant="subhead">Principle 중 하나. 텍스트 모듈의 변별</test-text>
+      <test-text variant="subhead">텍스트 모듈의 변별 (상위 원칙에서 취할 수 있는 방법?)</test-text>
       <test-text variant="body"
         >왼쪽 정렬의 기본적인 텍스트 모듈과 달리 가운데 정렬로 대비를 높입니다. 콘텐츠 모듈로 콘텐츠
         간의 맥락 전환을 시각화하는 것이 foundation 중 하나.</test-text
       >
       <test-text variant="subhead">ErrorFallback - React ErrorBoundary</test-text>
+
+      <test-callout variant="danger">
+        전반적인 원칙에 의거 dialog와 콘텐츠 모듈을 통일하는 것이 좋을 것. 모달이거나 논모달의
+        차이로 구별할 수도.
+      </test-callout>
     </section>
   </article>
 </main>

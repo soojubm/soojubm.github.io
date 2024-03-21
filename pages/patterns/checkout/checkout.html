@@ -24,7 +24,7 @@
     <div style="height: 2rem"></div>
 
     <!-- 예전에 이렇게 길었다... checkout-product-item-name -->
-    <!-- <div style="height: var(--space-after-subhead)"></div> -->
+    ㄴ
     <section class="checkout-product">
       <test-text variant="subhead" aria-label="summary">주문상품</test-text>
       <div style="margin: var(--space-after-subhead) -0.5rem 0">
@@ -33,8 +33,8 @@
             <test-avatar slot="avatar" size="huge" fallback=""></test-avatar>
             <div slot="text" style="margin-left: var(--space-1)">
               <test-text variant="body-bold">뉴닉이 풀어 쓴 경제상식사전</test-text>
+              <test-text variant="">₩ 11,900</test-text>
               <test-text variant="body">평생 소장</test-text>
-              <test-text variant="label">₩ 11,900</test-text>
             </div>
           </test-menuitem>
         </test-tile>
@@ -79,7 +79,7 @@
       </test-textfield>
       <div style="height: var(--space-3)"></div>
       <test-textfield label="사용 마일리지" placeholder="0 마일리지"></test-textfield>
-      <div style="height: var(--space-2)"></div>
+      <div style="height: var(--space-3)"></div>
       <test-chip>보유 마일리지 1,186p 모두사용</test-chip>
     </section>
 
@@ -90,7 +90,7 @@
       <div style="margin: var(--space-4) -0.5rem 0">
         <test-group alignment="vertical">
           <test-tile size="small">
-            <test-menuitem label="신용카드">
+            <test-menuitem label="신용카드/체크카드">
               <test-avatar
                 slot="avatar"
                 size="large"
@@ -119,17 +119,14 @@
                 fallback="🫓"
                 style="background: antiquewhite; font-size: 1.5rem"
               ></test-avatar>
-              <test-radio slot="check" id="c1" name="c1" value=""></test-radio>
+              <test-radio disabled slot="check" id="c1" name="c1" value=""></test-radio>
+              <!-- <test-radio disabled>
+                무통장입금
+                <small style="color: var(--color-text)"
+                  >COMING SOON<i style="font-style: italic">!</i></small
+                >
+              </test-radio> -->
             </test-menuitem>
-          </test-tile>
-          <test-tile>
-            <test-radio>신용/체크카드</test-radio>
-            <test-radio disabled>
-              무통장입금
-              <small style="color: var(--color-text)"
-                >COMING SOON<i style="font-style: italic">!</i></small
-              >
-            </test-radio>
           </test-tile>
         </test-group>
       </div>
@@ -137,12 +134,12 @@
       <div>
         <test-text variant="label">결제 안내</test-text>
         <!-- FIXME body + body -->
-        <test-text variant="body">신용카드 결제만 가능합니다.</test-text>
-        <test-text variant="body">해외에서 발행된 카드는 이용할 수 없습니다.</test-text>
+        <test-text>신용카드 결제만 가능합니다.</test-text>
+        <test-text>해외에서 발행된 카드는 이용할 수 없습니다.</test-text>
         <test-text variant="label">주문취소 및 환불 안내</test-text>
-        <test-text variant="body"
-          >주문취소 또는 환불은 <a href="#">고객센터</a>로 문의해 주세요.</test-text
-        >
+        <test-text variant="body">
+          주문취소 또는 환불은 <a href="#">고객센터</a>로 문의해 주세요.
+        </test-text>
       </div>
       <div style="height: var(--space-after-subhead)"></div>
     </section>
@@ -161,7 +158,7 @@
         </test-avatar>
         <div slot="text">
           <test-text variant="subhead">VISA 1988 XXXX 1111</test-text>
-          <test-text variant="body">Expires on 10/23</time>
+          <test-text>Expires on 10/23</test-text>
           <em>Edit</em>
         </div>
       </test-menuitem>

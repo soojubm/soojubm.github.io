@@ -11,10 +11,7 @@
       <ul>
         <li>MD3의 Responsive layout. TODO : 반응하는 레이어를 위한 규칙을 어떻게 정의하면 좋을까?</li>
         <li>
-          Page Layout - Page Head 
-        </li>
-        <li>
-          컨테이너 컴포넌트. 리스트 컴포넌트. 형태 정보를 가질 수 있고 아이템의 간격을 갖는다.
+          Page Layout - Page Head / Page
         </li>
         <li>
             섹션은 항상 제목을 가져야 한다. 시각적으로 숨겨지지 않은 명시적인 텍스트 노드를. 제목을
@@ -27,7 +24,7 @@
       <test-text variant="subhead">Section level (section, aside)</test-text>
       <test-text variant="subhead">Article Level</test-text>
       <test-text variant="body">
-        변경이 자주 발생. 특수한 이름을 부여(또는 컴포넌트화)하는 커스텀 컴포넌트로 다른 컴포넌트와 낮은 의존성을 유지.
+        변경이 자주 발생하기 때문에 특수한 이름을 부여(또는 컴포넌트화)하는 커스텀 컴포넌트로 다른 컴포넌트와 낮은 의존성 유지.
       </test-text>
       <test-text variant="subhead">Group Level</test-text>
       <test-text variant="body">
@@ -36,7 +33,6 @@
       <test-text variant="subhead">
         목표. 우선순위. 중요한 문제에 집중. 비판적인 관점으로 정보 필터링.
       </test-text>
-      <br /><br />
       <test-text variant="body">
         <b>디지털 프로덕에 엄격한 그리드 시스템은 소음이다.</b> 디자인 이론에 근거한 그리드 시스템은
         디자이너에게만 유효하게 동작한다. 12칼럼 그리드는 코드 환경에서 사용자의 다양하고 예측
@@ -52,6 +48,12 @@
       <test-text variant="body">
         디자인시스템이라는 용어 자체가 소음이다. 스타일가이드, 유아이라이브러리, 유아이 키트.
       </test-text>
+
+
+      <test-text variant="body">페이지 모듈의 대비. 페이지의 맥락을 구분하기 위해 레이아웃 모듈이나 배경색의 대비를 활용할 수 있습니다.
+        컨테이너 너비(비밀번호찾기와 로그인/회원가입)와 배경색(설정, 글쓰기, 소개 등).</test-text>
+      <test-text variant="body">프레젠테이션 패턴. 섹션, 아티클 그리고 모달, 드롭다운 등의 컴포넌트도 작은 화면에서는 페이지 맥락이 될 수
+        있음을 고려합니다. => 결국 모바일 퍼스트 foundation.</test-text>
     </section>
 
     <div class="columns is-gapless is-multiline">
@@ -74,11 +76,9 @@
         background-color: crimson;
       }
     </style>
-    <test-feature title="유연한 그리드 시스템" description="12 column grid 등 엄격한 그리드 시스템을 정의하지 마세요."></test-feature>
-    <test-feature title="페이지 모듈의 대비" description="페이지의 맥락을 구분하기 위해 레이아웃 모듈이나 배경색의 대비를 활용할 수 있습니다.
-    컨테이너 너비(비밀번호찾기와 로그인/회원가입)와 배경색(설정, 글쓰기, 소개 등)."></test-feature>
-    <test-feature title="프레젠테이션 패턴" description="섹션, 아티클 그리고 모달, 드롭다운 등의 컴포넌트도 작은 화면에서는 페이지 맥락이 될 수
-    있음을 고려합니다. => 결국 모바일 퍼스트 foundation."></test-feature>
+    <test-feature 
+      title="유연한 그리드 시스템"
+      description="12 column grid 등 엄격한 그리드 시스템을 정의하지 마세요"></test-feature>
     </section>
   </article>
 </main>
