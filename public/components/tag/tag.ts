@@ -26,7 +26,9 @@ class Tag extends HTMLElement {
 
     shadow.append(container, makeStyleSheet('tag'))
     container.appendChild(iconSlot)
-    if (this.label) container.appendChild(label)
+    if (this.textContent) container.appendChild(label)
+
+    // console.log('@@@@@', this!.textContent!.length)
   }
 
   get variant() {

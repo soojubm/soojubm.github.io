@@ -43,11 +43,10 @@ em, i  {
 }
 */
 
-
-  /* TODO donesnt using ? for chip in textfield  */
-  /* gap 제거. icon only에 label 태그 때문. */
-  /* 이모지 2개 나옴.. */
-  /* outline: 2px solid var(--color-background); */
+/* TODO donesnt using ? for chip in textfield  */
+/* gap 제거. icon only에 label 태그 때문. tag에서도 */ 
+/* 이모지 2개 나옴.. */
+/* outline: 2px solid var(--color-background); */
 
 .chip {
   display: flex;

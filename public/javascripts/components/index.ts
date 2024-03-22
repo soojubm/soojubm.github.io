@@ -15,8 +15,10 @@ import Radio from '../../components/radio/radio'
 
 import Button from '../../components/button/button'
 import Link from '../../components/link/link'
-import Row from '../../components/group/group'
 import Text from '../../components/text/text'
+
+import Group from '../../components/group/group'
+import Row from '../../components/row/row'
 
 import Tablist from '../../components/tablist/tablist'
 import Tab from '../../components/tab/tab'
@@ -67,8 +69,6 @@ export function defineCustomElement() {
     customElements.define('test-radio', Radio)
 
     customElements.define('test-tile', Tile)
-    customElements.define('test-titlebar', TitleBar)
-    customElements.define('test-group', Row)
     customElements.define('test-text', Text)
 
     customElements.define('test-tablist', Tablist)
@@ -82,6 +82,9 @@ export function defineCustomElement() {
 
     customElements.define('test-tooltip', Tooltip)
 
+    customElements.define('test-titlebar', TitleBar)
+    customElements.define('test-group', Group)
+    customElements.define('test-row', Row)
     customElements.define('test-separator', Separator)
   }
 }

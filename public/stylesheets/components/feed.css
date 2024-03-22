@@ -1,7 +1,3 @@
-
-.feeds {
-}
-
 .feed {
   margin: 3rem 0;
 }
@@ -9,6 +5,7 @@
 .feed-content {
   margin: var(--space-3) 0 0 0;
 }
+
 
 .feed-content-media {
   height: 200px;

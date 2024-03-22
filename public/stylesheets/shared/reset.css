@@ -73,13 +73,16 @@ table caption {padding:.5rem 0;font-size:var(--font-size-small);text-align:left;
 table thead {}
 table thead tr th {
   padding:var(--space-1) 0;
-  /* background-color: var(--color-background-weak); */
   font-size:var(--font-size-small);
   line-height:var(--table-lineheight);
   color:var(--color-text-light);
-  text-align:left;}
+  text-align:left;
+}
 table tbody {}
-table tbody tr {border:var(--border);line-height:var(--table-lineheight);position:relative;}
+table tbody tr {
+  /* border:var(--border); */
+  border-bottom: var(--border);
+  line-height:var(--table-lineheight);position:relative;}
 table tbody tr th {}
 table tbody tr td {
   padding:var(--table-cell-padding);

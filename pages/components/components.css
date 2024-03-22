@@ -22,16 +22,9 @@
   width: 100%;
   max-width: var(--container-width);
 }
-.component-case {
-  /* max-width: var(--container-width);
-  margin:var(--space-after-subhead) 0 0 0;
-  padding: var(--space-4);
-  box-sizing: border-box;
-  border: var(--border);
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  border-radius: var(--radius); */
 
+.component-case {
+  /* TODO listBox  */
   display: flex;
   flex-direction: column;
   gap: var(--space-4);
@@ -41,7 +34,7 @@
   border:var(--border);
   border-top-left-radius: var(--radius);
   border-bottom: none;
-  border-color:var(--color-background-weak);
+  /* border-color:var(--color-background-weak); */
 }
 .component-case > * {
   max-width: var(--layout-width-small);
@@ -129,6 +122,13 @@ test-text[variant=body] + test-text[variant=body] {
 test-text[variant=body] + test-text[variant=subhead] {
   display: block;
   margin: 3rem 0 0 0;
+}
+
+
+/* 타일 안에서 사용할 때 */
+test-tile [variant=subhead] + [variant=body] {
+  display: block;
+  margin: .5rem 0 0 0;
 }
 
 [variant=subhead] + [variant=body] {

@@ -158,33 +158,34 @@
       </test-tile>
 
       <test-tile variant="" role="listitem">
-        <figure slot="thumbnail">
+        <test-tag slot="category" variant="primary">카테고리</test-tag>
+        <test-chip slot="action" icon="more-vert"> </test-chip>
+        <figure class="media">
           <img src="/public/images/springsteen.jpg" alt="" />
         </figure>
-        <test-tag slot="category" variant="primary">카테고리</test-tag>
-        <test-menuitem slot="item" size="large" label="퓨어 오렌지 주스" description="">
-          <test-avatar slot="avatar" size="large">🍊</test-avatar>
-          <div class="item-description"><del>₩19,000</del> ₩16,000 <em>할인율 20%</em></div>
-        </test-menuitem>
-        <!-- TODO: menuitem이 애매한 네이밍 -->
-        <test-menuitem slot="byline" label="수줍이" description="2년 전">
+        <div style="height: var(--space-2)"></div>
+        <test-menuitem label="수줍이" description="2년 전">
           <test-avatar slot="avatar" size="small"></test-avatar>
         </test-menuitem>
-        <!-- <figure class="card-avatar">🍊</figure> -->
-        <test-text slot="heading" variant="subhead">카드 유아이</test-text>
-        <test-text slot="body" variant="body">
+        <div style="height: var(--space-2)"></div>
+        <test-text variant="body-bold">카드 유아이</test-text>
+        <test-text variant="body">
           텍스트는 최대 두 줄 무야호 따봉 북마크 장바구니 등의 액션이 있을 수 있고 내부 외부
           가이드를 만들어야해
         </test-text>
-
-        <div style="height: var(--space-4)"></div>
-        <test-chip slot="action" icon="more-vert"> </test-chip>
-        <test-group slot="tags" variant="tag">
+        <div style="height: var(--space-3)"></div>
+        <test-group variant="tag">
           <test-tag variant="hashtag">프로젝트관리</test-tag>
           <test-tag variant="hashtag">프로덕트디자인</test-tag>
           <test-tag variant="hashtag">프론트엔드개발</test-tag>
         </test-group>
+        <div style="height: var(--space-2)"></div>
         <test-tag class="card-note">마일리지 적립 200P</test-tag>
+        <div style="height: var(--space-3)"></div>
+        <test-menuitem size="large" label="퓨어 오렌지 주스" description="">
+          <test-avatar slot="avatar" size="large">🍊</test-avatar>
+          <div><del>₩19,000</del> ₩16,000 <em>할인율 20%</em></div>
+        </test-menuitem>
       </test-tile>
 
       <test-tile variant="flat">
@@ -223,7 +224,7 @@
           <test-text variant="subhead"><em>iCloud+</em> 50GB</test-text>
           <span>₩1,100/월 </span>
         </div> -->
-        <ul class="checklist">
+        <ul class="checklist" style="margin: 0.5rem 0 1.5rem 0">
           <li>스토리지 2TB</li>
           <li>Google 전문가와의 상담</li>
           <li>회원을 위한 추가 혜택</li>

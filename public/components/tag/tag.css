@@ -2,15 +2,14 @@
   display: inline-flex;
   align-items: center;
   height: var(--size-small);
-  gap: var(--space-1);
-  padding: 0 var(--space-2) 0;
+  /* gap: var(--space-1); */
+  padding: 0 var(--space-2);
   border: var(--border);
   border-radius: var(--radius);
   box-sizing: border-box;
   background: var(--color-background);
   font-size: var(--font-size-small);
   color: var(--color-text);
-
   --tag-border: var(--border);
 }
 
