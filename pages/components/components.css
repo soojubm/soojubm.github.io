@@ -3,19 +3,24 @@
   --container-width: var(--layout-width-small);
 }
 .component-example {
-  margin:3rem calc(-5vw + 1rem);
+  margin:3rem -5vw 3rem calc(-5vw + 1rem);
   padding:2rem calc(var(--grid-margin) - 1rem) 3rem;
   
   border: var(--border);
   border-right: none;
   /* TODo make the variables */
-  border-radius: var(--radius) 0 0 2rem;
+  border-radius: var(--radius) 0 0 var(--radius);
   /* // background: #159957;
   // fallback for old browsers
   // background: -webkit-linear-gradient(to bottom, #155799, #159957);
   Chrome 10-25, Safari 5.1-6
   // background: linear-gradient(to bottom, #155799, #159957);
   W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.0125),
+  0 2px 2px hsl(0deg 0% 0% / 0.0125),
+  0 4px 4px hsl(0deg 0% 0% / 0.0125),
+  0 8px 8px hsl(0deg 0% 0% / 0.0125),
+  0 16px 16px hsl(0deg 0% 0% / 0.0125)
 }
 .component-example > * {
   display: block;

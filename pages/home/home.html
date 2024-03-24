@@ -1,4 +1,63 @@
 <main class="component">
+  <!-- const ELEVATIONS = {
+    small: `
+      0.5px 1px 1px hsl(var(--shadow-color) / 0.7)
+    `,
+    medium: `
+      1px 2px 2px hsl(var(--shadow-color) / 0.333),
+      2px 4px 4px hsl(var(--shadow-color) / 0.333),
+      3px 6px 6px hsl(var(--shadow-color) / 0.333)
+    `,
+    large: `
+      1px 2px 2px hsl(var(--shadow-color) / 0.2),
+      2px 4px 4px hsl(var(--shadow-color) / 0.2),
+      4px 8px 8px hsl(var(--shadow-color) / 0.2),
+      8px 16px 16px hsl(var(--shadow-color) / 0.2),
+      16px 32px 32px hsl(var(--shadow-color) / 0.2)
+    `
+  } -->
+  <style>
+    .first.box {
+      width: 50px;
+      height: 50px;
+      box-shadow: 0.5px 1px 1px hsl(220deg 60% 50% / 0.7);
+    }
+    .second.box {
+      width: 100px;
+      height: 100px;
+      box-shadow: 1px 2px 2px hsl(220deg 60% 50% / 0.333), 2px 4px 4px hsl(220deg 60% 50% / 0.333),
+        3px 6px 6px hsl(220deg 60% 50% / 0.333);
+    }
+    .third.box {
+      width: 150px;
+      height: 150px;
+      box-shadow: 1px 2px 2px hsl(220deg 60% 50% / 0.2), 2px 4px 4px hsl(220deg 60% 50% / 0.2),
+        4px 8px 8px hsl(220deg 60% 50% / 0.2), 8px 16px 16px hsl(220deg 60% 50% / 0.2),
+        16px 32px 32px hsl(220deg 60% 50% / 0.2);
+    }
+  </style>
+
+  <section class="wrapper">
+    <div class="first box"></div>
+    <div class="second box"></div>
+    <div class="third box"></div>
+  </section>
+  <style>
+    body {
+      background-color: hsl(220deg 100% 80%);
+    }
+    .black.box {
+      background-color: hsl(0deg 0% 0% / 0.25);
+    }
+    .darker.box {
+      background-color: hsl(220deg 100% 72%);
+    }
+  </style>
+
+  <section class="wrapper">
+    <div class="black box"></div>
+    <div class="darker box"></div>
+  </section>
   <article class="article" style="max-width: 1160px">
     <!-- The aim is to reduce “decision fatigue -->
     <!-- A design system Ops manager must be someone experienced with design and development. They must understand both processes to identify and fix problems effectively. -->

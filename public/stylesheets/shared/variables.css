@@ -174,6 +174,13 @@
   --radius-sharp: null;
   --radius-soft: null;
 
+  /* 여기서 2배로 하면 다른 모든 곳에서도 두 배로 가져간다. */
+  /* As an element gets closer to the user, the offset should increase, the blur radius should increase, and the shadow's opacity should decrease. */
+  /* You can skip some of these calculations by using our intuition. */
+
+  --shadow-vertical-offset: 4px;
+  --shadow-horizontal-offset: 2px;
+
   --shadow: 0 0 0.5rem rgba(0,0,0,.05);
   --shadow-tile: 0 2px 0.3125rem rgba(23,24,24,.05),0 0.0625rem 0.125rem rgba(0,0,0,.15);
   --shadow-active: null;
