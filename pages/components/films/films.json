@@ -1,5 +1,14 @@
 [
   {
+    "id": 202403,
+    "releasedate": 2002,
+    "titlekorean": "레지던트 이블",
+    "titleenglish": "Resident Evil",
+    "director": "폴 앤더슨",
+    "country": "영국",
+    "etc": "SF"
+  },
+  {
     "id": 202402,
     "releasedate": 2014,
     "titlekorean": "내셔널 갤러리",
@@ -12,10 +21,10 @@
     "id": 202402,
     "releasedate": 1986,
     "titlekorean": "걸 위드 건",
-    "titleenglish": "Girl with Gun",
-    "director": "하야시 카이조",
-    "country": "일본",
-    "etc": "흑백"
+    "titleenglish": "Ruthless",
+    "director": "피오트르 아담스키",
+    "country": "폴란드",
+    "etc": ""
   },
   {
     "id": 202402,

@@ -45,3 +45,6 @@ export function importScript(url) {
 
   document.body.appendChild(script)
 }
+
+// 단점. 빌드마다 새로운 문자열이 생성됨. eodks slugify
+const uniq = Math.random().toString(36).substr(2, 9)

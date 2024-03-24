@@ -10,50 +10,59 @@ import '/public/stylesheets/components/form.css'
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelector('main')!.innerHTML = navbar + main + footer
 
-  // TODO: 여러번 반복해서 올렸을 때 filelist 누적되는지?
-  // TODO: 동일한 파일을 업로드 했을 때 체크, 삭제했을 때 fileList에서 삭제, fileInput.files는 쌓이지 않음.
+  // TODO: 반복해서 올렸을 때 filelist의 누적 또는 리셋
+  // TODO: 동일한 파일의 업로드
+  // 삭제했을 때 fileList에서 삭제
+  // fileInput.files는 쌓이지 않음.
+
+  let fileList = {}
+
   const attachFile = () => {
     const fileInput = document.querySelector<HTMLInputElement>('.js-file-input')
     if (!fileInput) return
-    // const fileSubmit = document.querySelector('.js-file-submit');
-    fileInput.addEventListener('change', () => attach(fileInput))
-  }
 
+    fileInput.addEventListener('change', event => {
+      renderAttachments(fileInput.files)
+
+      fileList = { ...fileList, ...fileInput.files }
+
+      console.log('fileList:', { ...fileList }, { ...fileInput.files })
+    })
+  }
   attachFile()
 
-  function attach(fileInput: HTMLInputElement) {
-    const { files } = fileInput
+  function renderAttachments(files: any) {
     const attachmentList = document.querySelector<HTMLElement>('.js-file-attachment-list')
     const attachmentHelper = document.querySelector<HTMLElement>('.js-file-attachment-helper')
     if (!files || !attachmentList || !attachmentHelper) return
 
-    attachmentHelper.style.display = files.length !== 0 ? 'none' : 'block'
+    attachmentHelper.style.display = files.length === 0 ? 'block' : 'none'
 
-    Array.from(files).forEach(file => {
+    Array.from(files).forEach((file: any) => {
       if (!validFileType(file)) return alert('파일타입 jpeg pjpeg png 중 하나가 아니야~')
 
       const fileTemplate = `
-			<div class="file-attachment-item">
-				<figure class="file-attachment-item-image"><img src=${window.URL.createObjectURL(file)} alt=${
-        file.name
-      }></figure>
-				<b class="file-attachment-item-name">${file.name}</b>
-				<small class="file-attachment-item-size" >${returnFileSize(file.size)}</small>
-				<button class="file-attachment-item-delete js-remove-this"><span class="material-symbols-outlined">close</span></button>
-			</div>`
-
+        <div style="width:100px">
+          <figure>
+            <img src=${window.URL.createObjectURL(file)} alt=${file.name}>
+          </figure>
+          <b">${file.name}</b>
+          <small>${returnFileSize(file.size)}</small>
+          <button class="js-remove-this">close</button>
+        </div>
+      `
       attachmentList.innerHTML += fileTemplate
     })
   }
 
   function validFileType(file) {
     const fileTypes = ['image/jpeg', 'image/gif', 'image/png']
-    const isValid = fileTypes.indexOf(file.type) > -1
+    const isValid = fileTypes.includes(file.type)
 
     return isValid
   }
 
-  function returnFileSize(size) {
+  function returnFileSize(size: number) {
     const isBytes = size < 1024
     const isKiloBytes = size >= 1024 && size < 1048576
 
@@ -64,10 +73,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // fileSubmit.addEventListener('submit', (event) => {
   // 	event.preventDefault();
-  // 	fileList.forEach(file => {
-  // 		sendFile(file);
-  // 	});
-  // });
+  // 	fileList.forEach(file => sendFile(file))
+  // }
 
   // function validFileSize(file) {
   // 	attachedfiles = file.files;

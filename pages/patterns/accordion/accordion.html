@@ -13,17 +13,24 @@
     </dl>
 
     <section class="component-example">
+      <div style="width: 16px">
+        <svg viewBox="0 0 10 10">
+          <rect height="8" width="2" y="1" x="4" />
+          <rect height="2" width="8" y="4" x="1" />
+        </svg>
+      </div>
       <test-text variant="subhead">
         자주 묻는 질문
         <abbr title="Frequently asked questions" hidden>FAQ</abbr>
       </test-text>
       <section class="tile-flat" style="margin: var(--space-after-subhead) 0 0">
         <article class="accordion js-accordion is-active">
+          <h2></h2>
           <button
             class="accordion-title"
+            aria-expanded="false"
             role="heading"
             aria-label="3"
-            aria-expanded="false"
             aria-controls="1"
             aria-disable="true"
           >
@@ -32,13 +39,31 @@
           </button>
           <div class="accordion-panel">
             <p>
-              모든 국민은 건강하고 쾌적한 환경에서 생활할 권리를 가지며, 국가와 국민은 환경보전을
-              위하여 노력하여야 한다.
+              Tying state and its visual representation together is a very good thing. It ensures
+              that state changes are communicated interoperably. Do not listen to those who advocate
+              the absolute separation of HTML semantics and CSS styles. Form should follow function,
+              and directly is most reliable.
             </p>
+            <p>[aria-expanded] rect { fill: currentColor; }</p>
+            <p>toggle-section open="false"s</p>
             <p>
-              제1항의 지시를 받은 당해 행정기관은 이에 응하여야 한다. 국회의원은 법률이 정하는 직을
-              겸할 수 없다. 대통령의 임기연장 또는 중임변경을 위한 헌법개정은 그 헌법개정 제안
-              당시의 대통령에 대하여는 효력이 없다.
+              <pre>
+                (function() {
+                  const headings = document.querySelectorAll('h2')
+                
+                  Array.prototype.forEach.call(headings, heading => {
+                    let btn = heading.querySelector('button')
+                    let target = heading.nextElementSibling
+                
+                    btn.onclick = () => {
+                      let expanded = btn.getAttribute('aria-expanded') === 'true' || false
+                
+                      btn.setAttribute('aria-expanded', !expanded)
+                      target.hidden = expanded    
+                    }
+                  })
+                })()
+              </pre>
             </p>
             <footer class="faq-item-reaction">
               <p class="faq-reaction-title reaction-prompt">이 답변이 도움이 되었나요?</p>

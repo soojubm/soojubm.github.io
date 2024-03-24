@@ -8,8 +8,12 @@ class Text extends HTMLElement {
     const container = document.createElement('p')
     container.classList.add('text')
 
-    if (this.variant) container.setAttribute('data-variant', this.variant)
+    if (this.variant) container.dataset.variant = this.variant
     container.innerHTML = this.content
+
+    // TODO 이거
+    console.log(this.truncated, typeof this.truncated)
+    if (this.truncated !== null) container.dataset.truncated = ''
 
     shadow.appendChild(container)
     shadow.appendChild(makeStyleSheet('text'))
@@ -25,6 +29,9 @@ class Text extends HTMLElement {
 
   get variant() {
     return this.getAttribute('variant')
+  }
+  get truncated() {
+    return this.getAttribute('truncated')
   }
   get content() {
     return this.innerHTML

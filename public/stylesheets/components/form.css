@@ -40,7 +40,6 @@ input[type=file] + label:after {display:none;}
 
 
 .file {}
-.file-title {}
 .file-helper {margin:.25rem 0 0;}
 .file-input {}
 .file-label {
@@ -66,14 +65,6 @@ text-transform: capitalize;
 .file-attachment {margin:2rem 0 0;}
 .file-attachment-title {margin:.5rem 0;@mixin text-label;}
 .file-attachment-helper {}
-.file-attachment-list:after {content:'';display:block;clear:both;}
-.file-attachment-item {@mixin tile-elevated;max-width:300px;}
-.file-attachment-item:not(:first-child) {margin-top:.5rem;}
-.file-attachment-item-image {width:var(--size-huge);height:var(--size-huge);border-radius:var(--radius);overflow:hidden;position:relative;}
-.file-attachment-item-image img {width:xo;height:auto;max-width:auto;min-height:var(--size-huge);max-height:100px;margin:auto;position:absolute;left:0;right:0;top:0;bottom:0;}
-.file-attachment-item-name {display:block;margin:.25rem 0 -.25rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.file-attachment-item-size {color:var(--color-text-light);}
-.file-attachment-item-delete {right:.5rem;top:.5rem;}
 
 /* // button.visually-hidden:focus,
 // input[type=submit].visually-hidden:focus {

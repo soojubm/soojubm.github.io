@@ -141,21 +141,24 @@
         </test-group>
       </test-tile>
 
-      <test-tile variant="" role="listitem">
-        <test-text variant="subhead">2022년 3월</test-text>
-        <test-text variant="body">
-          텍스트는 최대 두 줄 무야호 따봉 북마크 장바구니 등의 액션이 있을 수 있고 내부 외부
-          가이드를 만들어야해
-        </test-text>
-        <div style="height: var(--space-3)"></div>
-        <test-link>자세히 알아보기</test-link>
-        <br />
-        <figure
-          style="border-radius: var(--radius); height: 120px; margin: 1rem 0 0; overflow: hidden"
-        >
-          <img src="/public/images/springsteen.jpg" alt="" />
-        </figure>
-      </test-tile>
+      <div style="max-width: 340px">
+        <test-tile variant="" role="listitem">
+          <test-text variant="subhead">2022년 3월</test-text>
+          <!-- FIXME:: tile 안에서의 subhead와 body -->
+          <div style="margin-top: 0.5rem">
+            <test-text variant="body" truncated="true">
+              텍스트는 최대 두 줄 무야호 따봉 북마크 장바구니 등의 액션이 있을 수 있고 내부 외부
+              가이드를 만들어야해
+            </test-text>
+          </div>
+          <div style="height: var(--space-3)"></div>
+          <test-link>자세히 알아보기</test-link>
+          <div style="height: var(--space-3)"></div>
+          <figure style="border-radius: var(--radius); height: 120px; overflow: hidden">
+            <img src="/public/images/springsteen.jpg" alt="" />
+          </figure>
+        </test-tile>
+      </div>
 
       <test-tile variant="" role="listitem">
         <test-tag slot="category" variant="primary">카테고리</test-tag>
@@ -187,6 +190,40 @@
           <div><del>₩19,000</del> ₩16,000 <em>할인율 20%</em></div>
         </test-menuitem>
       </test-tile>
+      <!-- TODO: menuitem이 애매한 네이밍 -->
+      <!-- avatar with bold text -->
+      <div style="max-width: 340px">
+        <test-tile variant="" role="listitem">
+          <test-tag slot="category" variant="primary">카테고리</test-tag>
+          <test-chip slot="action" icon="more-vert"> </test-chip>
+          <!-- todo figure -->
+          <figure style="border-radius: var(--radius)">
+            <img src="/public/images/springsteen.jpg" alt="" />
+          </figure>
+          <div style="height: var(--space-2)"></div>
+          <test-menuitem label="수줍이" description="2년 전">
+            <test-avatar slot="avatar" size="small" default="true"></test-avatar>
+          </test-menuitem>
+          <div style="height: var(--space-1)"></div>
+          <test-text variant="body" truncated>
+            텍스트는 최대 두 줄 무야호 따봉 북마크 장바구니 등의 액션이 있을 수 있고 내부 외부
+            가이드를 만들어야해
+          </test-text>
+          <div style="height: var(--space-3)"></div>
+          <test-group variant="tag">
+            <test-tag variant="hashtag">프로젝트관리</test-tag>
+            <test-tag variant="hashtag">프로덕트디자인</test-tag>
+            <test-tag variant="hashtag">프론트엔드개발</test-tag>
+          </test-group>
+          <test-separator></test-separator>
+          <test-menuitem size="large" label="퓨어 오렌지 주스" description="">
+            <test-avatar slot="avatar" size="large">🍊</test-avatar>
+            <div class="item-description"><del>₩19,000</del> ₩16,000 <em>할인율 20%</em></div>
+          </test-menuitem>
+          <div style="height: var(--space-3)"></div>
+          <test-tag class="card-note">마일리지 적립 200P</test-tag>
+        </test-tile>
+      </div>
 
       <test-tile variant="flat">
         <test-avatar style="background: aliceblue">

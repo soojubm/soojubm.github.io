@@ -34,7 +34,7 @@ h1, h2, h3, p {
 .text[data-variant=subhead] {
   /* // 단독으로 쓰이지 않음 */
   /* TODO 단독으로 쓰일 때 아바타의 이름 */
-  line-height: var(--line-height);
+  line-height: var(--font-line-height);
   font-size:var(--font-size-large);
   font-weight:var(--font-weight-bold);
   color: var(--color-text);
@@ -97,6 +97,13 @@ h1, h2, h3, p {
 
 .util-truncate {
     height:3rem;
+  white-space:normal;word-wrap:break-word;
+  overflow:hidden;text-overflow:ellipsis;display: -webkit-box;-webkit-line-clamp:2;-webkit-box-orient: vertical;
+}
+
+
+.text[data-variant=body][data-truncated] {
+  height:3rem;
   white-space:normal;word-wrap:break-word;
   overflow:hidden;text-overflow:ellipsis;display: -webkit-box;-webkit-line-clamp:2;-webkit-box-orient: vertical;
 }
