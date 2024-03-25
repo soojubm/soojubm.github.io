@@ -7,60 +7,50 @@
         <style>
           [role='columnheader'],
           [role='cell'] {
-            width: 25%;
-            /* padding: var(--space-3); */
+            /* width: 25%; */
           }
           [role='row'] {
             display: flex;
             border-top: var(--border);
           }
         </style>
+      </div>
 
-        <br /><br />
-
-        <p>모든 행이 DOM에 존재하는 경우 aria-rowindex 불필요</p>
-
-        <div
-          role="table"
-          aria-label="Semantic Elements"
-          aria-describedby="semantic_elements_table_desc"
-          aria-rowcount="81"
-        >
-          <div id="semantic_elements_table_desc">
-            Semantic Elements to use instead of ARIA's roles
+      <div
+        role="table"
+        aria-label="Semantic Elements"
+        aria-describedby="semantic_elements_table_desc"
+        aria-rowcount="81"
+      >
+        <header role="rowgroup">
+          <div role="row">
+            <span role="columnheader" aria-sort="none">#</span>
+            <span role="columnheader" aria-sort="none">Gengre</span>
+            <!-- <span role="columnheader" aria-sort="none">Progress</span> -->
+            <span role="columnheader" aria-sort="none">Status</span>
+            <span role="columnheader" aria-title="date added(sort)">Date</span>
           </div>
-          <header role="rowgroup">
-            <div role="row">
-              <span role="columnheader" aria-sort="none">#</span>
-              <span role="columnheader" aria-sort="none">제목</span>
-              <span role="columnheader" aria-sort="none">Gengre</span>
-              <!-- <span role="columnheader" aria-sort="none">Progress</span> -->
-              <span role="columnheader" aria-sort="none">Status</span>
-              <span role="columnheader" aria-title="date added(sort)">Date</span>
+        </header>
+        <div role="rowgroup">
+          <div role="row" aria-rowindex="11">
+            <div role="cell">1</div>
+            <div role="cell">
+              <test-menuitem label="Dancing in the Dark" description="Bruce Springsteen">
+                <test-avatar slot="avatar"></test-avatar>
+              </test-menuitem>
             </div>
-          </header>
-          <div role="rowgroup">
-            <div role="row" aria-rowindex="11">
-              <span role="cell">1</span>
-              <span role="cell">1</span>
-              <span role="cell">
-                <test-menu-item label="Dancing in the Dark" description="Bruce Springsteen">
-                  <test-avatar slot="avatar"></test-avatar>
-                </test-menu-item>
-              </span>
-              <span role="cell">
-                <test-group variant="tag">
-                  <test-tag>hiphop</test-tag>
-                  <test-tag>rap</test-tag>
-                </test-group>
-              </span>
-              <span role="cell">
-                <em
-                  class="badge"
-                  style="height: auto; margin-right: 0.5rem; background: gold; padding: 3px"
-                ></em>
-                Error
-              </span>
+            <div role="cell">
+              <test-group variant="tag">
+                <test-tag>hiphop</test-tag>
+                <test-tag>rap</test-tag>
+              </test-group>
+            </div>
+            <div role="cell">
+              <em
+                class="badge"
+                style="height: auto; margin-right: 0.5rem; background: gold; padding: 3px"
+              ></em>
+              Error
             </div>
           </div>
         </div>
@@ -76,7 +66,7 @@
         padding: var(--space-4) 0;
       "
     >
-      <test-text variant="title">Products</test-text>
+      <test-text variant="subhead">Products</test-text>
       <test-group variant="chip">
         <test-chip>
           <test-icon slot="prefix" name="import"></test-icon>
@@ -85,26 +75,22 @@
         <test-chip status="active"> 추가하기 </test-chip>
       </test-group>
     </header>
-
     <!-- TODO separator가 공간이 될 수 있고 이것이 어디에 오는지에 따른 컴포넌트가 될 수도. -->
-
     <test-group variant="chip">
       <test-chip status="active">All</test-chip>
       <test-chip variant="plain">Active</test-chip>
       <test-chip variant="plain">Draft</test-chip>
     </test-group>
-
     <div style="height: var(--space-3)"></div>
-
     <table>
       <caption hidden>
         히라가나 오십음도
       </caption>
       <!-- <colgroup>
-            <col>
-            <col span="2" class="batman">
-            <col span="2" class="flash">
-          </colgroup> -->
+        <col>
+        <col span="2" class="batman">
+        <col span="2" class="flash">
+      </colgroup> -->
       <thead>
         <tr>
           <th role="columnheader" aria-sort="none" style="width: calc(40px)">
@@ -200,7 +186,7 @@
 
   <article class="article js-observer js-scrollspy-section">
     <test-text variant="title">Paginations</test-text>
-    <test-text variant="body-large">작성 중.</test-text>
+    <test-text variant="body-large">페이지네이션</test-text>
 
     <section class="component-example">
       <!-- TODO variant pagination -->
@@ -213,18 +199,19 @@
           class="pagination-next"
           aria-label="뒷 페이지로 이동"
           style="order: 3"
-          >다음</test-chip
         >
+          다음
+        </test-chip>
         <test-chip variant="plain" class="pagination-link" aria-label="맨 앞 페이지로 이동"
           >1</test-chip
         >
         <i class="pagination-ellipsis" aria-label="맨 앞 페이지로 이동">...</i>
-        <test-chip variant="plain" class="pagination-link" href="#" aria-label="1 페이지로 이동"
-          >5</test-chip
-        >
-        <test-chip variant="plain" class="pagination-link" href="#" aria-label="1 페이지로 이동"
-          >6</test-chip
-        >
+        <test-chip variant="plain" class="pagination-link" href="#" aria-label="1 페이지로 이동">
+          5
+        </test-chip>
+        <test-chip variant="plain" class="pagination-link" href="#" aria-label="1 페이지로 이동">
+          6
+        </test-chip>
         <test-chip
           variant="plain"
           status="active"
@@ -234,16 +221,16 @@
         >
           7
         </test-chip>
-        <test-chip variant="plain" class="pagination-link" href="#" aria-label="1 페이지로 이동"
-          >8</test-chip
-        >
-        <test-chip variant="plain" class="pagination-link" href="#" aria-label="1 페이지로 이동"
-          >9</test-chip
-        >
+        <test-chip variant="plain" class="pagination-link" href="#" aria-label="1 페이지로 이동">
+          8
+        </test-chip>
+        <test-chip variant="plain" class="pagination-link" href="#" aria-label="1 페이지로 이동">
+          9
+        </test-chip>
         <i class="pagination-ellipsis" aria-label="맨 앞 페이지로 이동">...</i>
-        <test-chip variant="plain" class="pagination-link" aria-label="맨 뒤 페이지로 이동"
-          >50</test-chip
-        >
+        <test-chip variant="plain" class="pagination-link" aria-label="맨 뒤 페이지로 이동">
+          50
+        </test-chip>
       </test-group>
       <aside role="status">
         <small>숙소 300개 이상 중 281 – 300 (airbnb)</small>
@@ -272,6 +259,7 @@
             <dd>number</dd> -->
         <dt>initialPageNumber? selecedPageNumber?</dt>
         <dd>number</dd>
+        <dd></dd>
         <dt>lastPageNumber</dt>
         <dd>number</dd>
         <dd>서버에서 받는다.</dd>
@@ -279,13 +267,19 @@
     </section>
 
     <section class="component-guide">
+      <test-text varinat="subhead">Best practices</test-text>
       <test-text variant="body">
         첫 페이지와 마지막 페이지에 더블 화살표 아이콘을 사용하지 않습니다. 최초와 최종 페이지
         넘버로 사용자가 대략적인 콘텐츠 수량을 파악할 수 있도록 도와주세요.
       </test-text>
 
-      <test-text variant="subhead">메모</test-text>
-      <test-text variant="body">서버에서 offset을 0으로 줄 수도 있고 1로 줄 수도 있다.</test-text>
+      <blockquote>
+        <test-text variant="body-bold">Notes</test-text>
+        <test-text variant="body"
+          >서버에서 offset을 0으로 줄 때도 있었고 1로 줄 때도 있다.</test-text
+        >
+        <p>모든 행이 DOM에 존재하는 경우 aria-rowindex 불필요</p>
+      </blockquote>
       <!-- <p>pagination vs more load vs infinite scroll. 느린 탐색 경험이 필요할 때. 게시판이나 상품 목록의 탐색에서 이전에 탐색한 상품의 위치를 찾기 편리함. 최근 본 목록이나 섬네일에서 북마크를
               제공한다면?</p> -->
     </section>

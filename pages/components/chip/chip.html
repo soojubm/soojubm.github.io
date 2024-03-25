@@ -18,21 +18,6 @@
       <dd aria-label="Adobe">Pick Button</dd>
     </dl>
 
-    <blockquote>
-      <test-text variant="body">
-        TODO : searhField avatar를 쓰니까 아바타 특유의 형태와 충돌(outlined) 사이즈를 다시
-        정의해주어야 한다. 컴포넌트 합성하면 사실 이걸 그렇게 고민할 내용은 아니게 됨.
-      </test-text>
-      <test-text variant="body">
-        아이콘 vs 아이콘 버튼 vs 아바타 :: 아이콘과 아이콘 버튼(아바타에 가까움)을 구분. 16px
-        아이콘을 32 안에 넣으면
-      </test-text>
-      <test-text variant="body">
-        장식적인 검색 아이콘과 clickable한 액션. prefix는 장식. suffix는 액션? suffix에 유닛이 있을
-        수도
-      </test-text>
-    </blockquote>
-
     <section class="component-example">
       <test-group variant="chip">
         <test-chip>default</test-chip>
@@ -124,6 +109,18 @@
       </test-text>
 
       <blockquote>
+        <test-text variant="body">
+          TODO : searhField avatar를 쓰니까 아바타 특유의 형태와 충돌(outlined) 사이즈를 다시
+          정의해주어야 한다. 컴포넌트 합성하면 사실 이걸 그렇게 고민할 내용은 아니게 됨.
+        </test-text>
+        <test-text variant="body">
+          아이콘 vs 아이콘 버튼 vs 아바타 :: 아이콘과 아이콘 버튼(아바타에 가까움)을 구분. 16px
+          아이콘을 32 안에 넣으면
+        </test-text>
+        <test-text variant="body">
+          장식적인 검색 아이콘과 clickable한 액션. prefix는 장식. suffix는 액션? suffix에 유닛이
+          있을 수도
+        </test-text>
         <ul>
           <li>
             안드로이드: chipGroup, HorizontalScrollView/singleLine, action/entry/filter(check
@@ -168,17 +165,15 @@
       </a>
     </address>
     <section class="component-case">
-      <test-text variant="body-bold">Action Button - keyword searching</test-text>
       <test-tile>
         <test-text variant="subhead">지금 인기있는<br />이슈 키워드</test-text>
-        <div style="height: 1.5rem"></div>
+        <div style="height: var(--space-4)"></div>
         <test-group variant="chip">
           <test-chip>뉴닉</test-chip>
           <test-chip>국정감사</test-chip>
           <test-chip>윤석열검찰총장</test-chip>
           <test-chip>차별금지법</test-chip>
           <test-chip>추미애법무부장관</test-chip>
-          <test-chip>경제공동체</test-chip>
           <test-chip variant="back" icon="more-horiz"></test-chip>
         </test-group>
         <div style="height: var(--space-after-subhead)"></div>
@@ -189,12 +184,19 @@
         </test-tile>
       </test-tile>
 
-      <test-text variant="body-bold"> Toggle Button </test-text>
       <test-tile>
+        <test-text variant="body-bold"> Toggle Button - Follow Button </test-text>
         <test-group variant="chip">
           <test-chip status="active">팔로우</test-chip>
           <test-chip>팔로우 중</test-chip>
         </test-group>
+        <test-separator></test-separator>
+        <test-text variant="body-bold"> Toggle Button - Like Button </test-text>
+        <test-chip status="active">
+          <test-icon slot="prefix" name="heart"></test-icon>
+          좋아요
+          <test-badge>11</test-badge>
+        </test-chip>
         <test-separator></test-separator>
         <test-group variant="chip">
           <test-chip>
@@ -205,22 +207,20 @@
             <test-icon slot="prefix" name="check"></test-icon>
             추가됨
           </test-chip>
-          <test-chip status="active">
-            <test-icon slot="prefix" name="heart"></test-icon>
-            TODO 좋아요
-            <!-- <test-badge>11</test-badge> -->
-          </test-chip>
         </test-group>
       </test-tile>
-
-      <test-text variant="body-bold">single selection</test-text>
-      <test-text variant="body">Contents filtering</test-text>
       <test-tile>
+        <test-text variant="body-bold">single selection for contents filtering</test-text>
         <test-group variant="chip">
           <test-chip status="active" class="js-toggle is-active">전체</test-chip>
           <test-chip class="js-toggle">결제완료</test-chip>
         </test-group>
         <test-separator></test-separator>
+        <test-text variant="body-bold">Multiple selections</test-text>
+        <test-text variant="body">
+          menuitem, checkbox로 대체 가능한 selection role. TODO 그렇다면 언제 메뉴아이템과
+          체크박스를 사용하고 언제 칩그룹을 사용하는지 가이드가 필요하다.
+        </test-text>
         <test-group variant="chip" aria-multiselectable="true">
           <test-chip role="option" aria-selected="true" status="checked">
             <test-icon slot="prefix" name="check"></test-icon>
@@ -233,17 +233,10 @@
           <test-chip role="option" aria-selected="false">타이포그래피</test-chip>
         </test-group>
       </test-tile>
-      <test-text variant="body-bold">Multiple selections</test-text>
-      <test-text variant="body">
-        menuitem, checkbox로 대체 가능한 selection role. TODO 그렇다면 언제 메뉴아이템과 체크박스를
-        사용하고 언제 칩그룹을 사용하는지 가이드가 필요하다.
-      </test-text>
-      <br />
-
-      <test-text variant="body-bold">
-        Pick Button Expandable :: dropdown/overflow/pulldown, filter / sort
-      </test-text>
       <test-tile>
+        <test-text variant="body-bold">
+          Pick Button Expandable :: dropdown/overflow/pulldown, filter / sort
+        </test-text>
         <div style="display: flex; justify-content: space-between">
           <div class="dropdown">
             <test-chip class="js-toggle" aria-expanded="true">

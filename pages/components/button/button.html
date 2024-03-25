@@ -91,7 +91,7 @@
                   <test-icon slot="prefix" name="star"></test-icon>
                   with prefix icon
                 </test-button> -->
-              <test-button data-variant="tertiary" style="background-color: darkseagreen">
+              <test-button data-variant="tertiary">
                 with suffix icon
                 <test-icon slot="suffix" name="star"></test-icon>
               </test-button>
@@ -174,30 +174,62 @@
           margin: 1.5rem 0 0 0;
         "
       >
-        <section>
+        <test-tile
+          style="
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 120px;
+          "
+        >
           <test-group variant="chip">
             <test-button variant="tertiary">취소</test-button>
             <test-button variant="primary">저장</test-button>
           </test-group>
-        </section>
-        <section>
+        </test-tile>
+        <test-tile
+          style="
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 120px;
+          "
+        >
           <test-group variant="chip">
             <test-button variant="text">건너뛰기</test-button>
             <test-button variant="secondary">다음</test-button>
           </test-group>
-        </section>
-        <section>
+        </test-tile>
+        <test-tile
+          style="
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 120px;
+          "
+        >
           <test-group variant="chip">
             <test-button variant="tertiary">이전</test-button>
             <test-button variant="secondary">다음</test-button>
           </test-group>
-        </section>
-        <section>
+        </test-tile>
+        <test-tile
+          style="
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 120px;
+          "
+        >
           <test-group variant="chip" class="hero-actions">
             <test-button variant="primary" href="#components">지금 가입하기</test-button>
             <test-button variant="text">더 알아보기</test-button>
           </test-group>
-        </section>
+        </test-tile>
       </div>
 
       <blockquote>

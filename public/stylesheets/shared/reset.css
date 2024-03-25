@@ -42,8 +42,8 @@ q:before {
   content: "“";
   display: block;
   font-size: 48px;
-  font-weight: 800;
-  line-height: 48px;
+  font-weight: var(--font-weight-bold);
+  line-height: 1rem;
 }
 
 table {

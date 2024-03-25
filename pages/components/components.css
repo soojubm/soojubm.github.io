@@ -32,17 +32,27 @@
   /* TODO listBox  */
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
+  align-content: start;
+  max-height: 800px;
   gap: var(--space-4);
 
-  margin: 0 -5vw -8rem;
-  padding: 2rem var(--grid-margin) 6rem;
-  border:var(--border);
+  /* TODO -8rem */
+  margin:6rem -5vw -8rem calc(-5vw + 1rem);
+  padding:2rem calc(var(--grid-margin) - 1rem) 6rem;
   border-top-left-radius: var(--radius);
-  border-bottom: none;
-  /* border-color:var(--color-background-weak); */
+
+  background: var(--color-background-strong);
+
+  box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.0125),
+  0 2px 2px hsl(0deg 0% 0% / 0.0125),
+  0 4px 4px hsl(0deg 0% 0% / 0.0125),
+  0 8px 8px hsl(0deg 0% 0% / 0.0125),
+  0 16px 16px hsl(0deg 0% 0% / 0.0125)
 }
 .component-case > * {
-  max-width: var(--layout-width-small);
+  width: 100%;
+  max-width: 400px;
 }
 
 .component-props {
@@ -63,9 +73,8 @@
 .component-props dl dt {font-weight:var(--font-weight-bold);}
 .component-props dl dt:after {content:':';}
 /* .component-props dl dd {color:#5f9ea0;} */
-.component-props dl dd {}
 .component-props dl dt + dd {font-weight: var(--font-weight-bold);}
-.component-props dl dd + dd {width:100%;margin:var(--space-05) 0 var(--space-3);font-size:var(--font-size-small);line-height:var(--font-line-height);color:var(--color-text);}
+.component-props dl dd + dd {width:100%;margin-top:var(--space-05);margin-bottom:var(--space-3);font-size:var(--font-size-small);line-height:var(--font-line-height);color:var(--color-text);}
 
 .component-guide {
   max-width: var(--container-width);
@@ -156,7 +165,7 @@ test-tile [variant=subhead] + [variant=body] {
 
 .article-title {font-size:var(--font-size-huge);font-weight:var(--font-weight-bold);line-height:var(--font-line-height);color:var(--color-text);}
 /* .article-description {font-size:var(--font-size-large);line-height:var(--font-line-height);color:var(--color-text);} */
-.article ul, .article dl {max-width: 720px;}
+.article ul, .article dl {max-width: var(--layout-width-small);}
 
 .component-guide test-text[variant=subhead] {display:block;margin-top:3rem;}
 

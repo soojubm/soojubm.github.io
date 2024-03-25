@@ -27,35 +27,6 @@
       <test-text variant="title">Tokens</test-text>
       <test-text variant="body-large">내용 없음.</test-text>
 
-      <blockquote style="max-width: var(--layout-width-small); box-sizing: border-box">
-        <ul style="margin: 0">
-          <li>
-            컴포넌트에서 동일한 형태를 토큰으로 대응할 때를 컴포넌트 토큰? 또는 특수한 토큰을
-            활용하게 될 수 있다. box-inset-small 과 같은.
-          </li>
-          <li>
-            개별 토큰에 디스크립션이 필요하지 않도록 명명합니다. core: give a name to a raw value to
-            enable theming and make improve maintainability / semantic / component.
-          </li>
-          <li>
-            컴포넌트 토큰은 상대적으로 변경 가능성이 높고 범용성이 낮기 때문에 컴포넌트 스코프에서만
-            정의. 컴포넌트 토큰을 정의하면 형태 기반의 컴포넌트를 정의 최소화할 수 있다.
-          </li>
-          <li>
-            --[namespace]-[component / category]-[attribute]-[status] 프로덕션이 아니기 때문에
-            namespace를 생략.
-          </li>
-          <li>
-            theme.
-            <del>
-              인버트 컬러셋을 추가로 정의하지 않습니다. 하나의 컬러셋으로 다크 테마에 대응합니다.
-              어렵고 또는 불필요한 규칙. 왜냐하면 초기 토큰 세팅 허들을 넘으면 컴포넌트 토큰을
-              활용한 테마 대응이 간편해짐.
-            </del>
-          </li>
-        </ul>
-      </blockquote>
-
       <section class="component-references">
         <a href="https://design-tokens.github.io/community-group/format">token module</a>
         <a href="https://docs.specifyapp.com/concepts/token-types">token json</a>
@@ -66,6 +37,7 @@
         <a href="https://bulma.io/documentation/form/input/">bulma variables</a>
       </section>
 
+      <div style="height: 4rem"></div>
       <test-text variant="subhead">Color</test-text>
       <test-text variant="body"
         >background/border/text/status. primary color = primary interactions, reinforce
@@ -94,13 +66,6 @@
             <!-- <p>--button-border-color</p> -->
           </test-group>
         </article>
-        <!-- <article class="token-item is-gray150">
-          <figure
-            class="token-item-avatar"
-            style="background-color: var(--color-background-weak2)"
-          ></figure>
-          <b>--gray150: #f5f8f5 TODO</b>
-        </article> -->
         <article class="token-item is-gray200">
           <figure class="token-item-avatar"></figure>
           <b>--gray200: #e0e2e1</b>
@@ -165,22 +130,15 @@
         </article>
         <article class="token-item">
           <figure class="token-item-avatar color-skeleton"></figure>
-          <b>Skeleton sample</b>
+          <b>TODO Skeleton</b>
         </article>
         <article class="token-item">
           <figure class="token-item-avatar"></figure>
-          <b>todo Transparent gradient</b>
+          <b>TODO Transparent gradient</b>
         </article>
       </div>
 
       <test-text variant="subhead">Shapes - Radius & Elevations</test-text>
-      <div style="display: flex; flex-direction: column; gap: 1rem; margin: 1rem 0">
-        <test-text variant="body">
-          그림자를 이용한 시각적 상승 효과로 주변 요소 대비 강조. 더 높은 우선순위 및 행동유도를
-          위한 높은 고도. 사용자는 시각적 단어로 우선순위를 인식하고 인터렉션. 시각적 우선순위는
-          그림자로만 줄 수 있는 것은 아님. overay 등으로 우선순위를 설정할 수도 있음.
-        </test-text>
-      </div>
       <div class="token-group">
         <article class="token-item is-gray000">
           <figure
@@ -211,7 +169,8 @@
           ></em> -->
           </figure>
           <b>--radius: 6px</b>
-          <small>tiny size에서는 4px</small>
+          <b>--radius-small: 4px</b>
+          <small>radius small tokens은 tiny size token 페어링</small>
         </article>
         <article class="token-item is-gray000">
           <figure
@@ -230,7 +189,9 @@
           <b>--radius-circle: 50%</b>
         </article>
         <article class="token-item is-elevation" title="Surface or Elevation">
-          <figure class="token-item-avatar"></figure>
+          <figure class="token-item-avatar" style="box-shadow: var(--shadow)"></figure>
+          <b>--shadow: 0 0 .5rem rgb(0 0 0 / 7.5%) // TODO</b>
+          <b>--shadow: 0 0 .5rem rgb(0 0 0 / 7.5%) // TODO</b>
           <b>--shadow: 0 0 .5rem rgb(0 0 0 / 7.5%) // TODO</b>
           <test-group variant="hashtag">
             <test-tag variant="hashtag">tooltip</test-tag>
@@ -240,12 +201,12 @@
       </div>
 
       <test-text variant="subhead">Border</test-text>
-      <div style="display: flex; flex-direction: column; gap: 1rem; margin: 1rem 0">
-        <test-text variant="body"> 테두리, 구분선 </test-text>
-      </div>
       <div class="token-group">
         <article class="token-item is-gray000">
-          <figure class="token-item-avatar" style="width: 100%; border-radius: 0"></figure>
+          <figure
+            class="token-item-avatar"
+            style="width: 100%; height: 1px; border-radius: 0"
+          ></figure>
           <b>--border-width: 1px</b>
           <b>--border-width-thick: null</b>
           <b>--border-width-thin: null</b>
@@ -254,17 +215,14 @@
       </div>
 
       <test-text variant="subhead">Sizing</test-text>
-      <test-text variant="body">
+      <!-- <test-text variant="body">
         요소의 너비와 높이. 브라우저 크기가 변경되어도 사이즈 토큰은 변하지 않아야 합니다.
-      </test-text>
-      <ul>
-        <li>사이즈의 세로값과 컴포넌트의 세로 prop을 동일하게 사용할 수 있을까?</li>
-        <li>huge size는 avatar huge에 단독으로 사용하고 있다. media 컴포넌트와 구별.</li>
-      </ul>
+      </test-text> -->
       <section class="token-group">
         <div class="token-item">
           <figure class="token-item-avatar size-huge"></figure>
           <b>--size-huge: 5rem</b>
+          <small>huge size는 avatar huge에 단독으로 사용하고 있다. media 컴포넌트와 구별.</small>
           <test-group variant="hashtag">
             <test-tag variant="hashtag">avatar-huge: var(--size-large)</test-tag>
           </test-group>
@@ -308,15 +266,7 @@
       </section>
 
       <test-text variant="subhead">Spacing</test-text>
-      <test-text variant="body">요소 사이의 간격.</test-text>
-      <test-text variant="body">outset: 컴포넌트의 상하 간격</test-text>
-      <test-text variant="body">inset: 타일 내부 간격 - squish inset/stretch inset</test-text>
-      <test-text variant="body">gap: 동일한 컴포넌트 그룹의 </test-text>
-      <test-text variant="body">
-        display grid를 사용하면 마진과 거터를 제외한 나머지가 결국 칼럼이 됨. 또는 width 시스템으로
-        대체할 수 있다.
-      </test-text>
-      <test-text variant="body"> 시각 보정을 위한 마이너스minus 간격을 사용할 수 있다. </test-text>
+      <!-- <test-text variant="body">요소 사이의 간격.</test-text> -->
       <section class="token-group">
         <div class="token-item">
           <figure style="width: 100%; height: var(--space-05); border-radius: 0"></figure>
@@ -370,11 +320,7 @@
       <p>switch height: 20px</p> -->
 
       <test-text variant="subhead">Text</test-text>
-      <test-text variant="body"> 활자의 위계와 배치. 정보 계층. </test-text>
-      <test-text variant="body">
-        폰트가 변경되면 폰트마다 baseline이 달라서 텍스트의 상하 간격이 안 맞을 수 있다.
-        텍스트노드(레이블 역할)의 패딩용 변수를 활용.
-      </test-text>
+      <!-- <test-text variant="body"> 활자의 위계와 배치. 정보 계층. </test-text> -->
 
       <!-- <test-tile variant="elevated" size="small">
         <test-menuitem label="시스템 폰트로 보기" class="js-default-font">
@@ -410,12 +356,6 @@
       </section>
 
       <test-text variant="subhead">Layouts - Width</test-text>
-      <test-text variant="body"> 콘텐츠 컨테이너의 가로 크기. </test-text>
-      <ul class="checklist">
-        <li>custom media의 max-width를 layout + @로 정의.</li>
-        <li>모든 container는 --small부터 max-width를 100%.</li>
-      </ul>
-      <test-text>TODO width and columns</test-text>
       <!-- <test-text variant="body-bold">Media queries</test-text> -->
       <!-- <test-text variant="body-bold">Width</test-text> -->
       <div class="token-group">
@@ -423,6 +363,7 @@
           <b>@custom-media --large (max-width: null)</b>
           <b>@custom-media --small (max-width: 1080px)</b>
           <del><b>--media-query-tiny: only screen and (max-width: 760px)</b></del>
+          <small>모든 container는 --small부터 max-width를 100%.</small>
         </div>
         <div class="token-item">
           <b>--layout-width-wide: 1200px</b>
@@ -435,10 +376,6 @@
         </div>
       </div>
       <test-text variant="subhead">Animation</test-text>
-      <test-text variant="body">
-        콘텐츠보다 액션이 강조되지 않도록 뷰포트 내에서 delay를 최대 3개로 제한합니다. inactive로
-        변경될 때(닫기 등) 즉시(instantly) 실행 합니다.
-      </test-text>
       <div class="token-group">
         <div class="token-item">
           <b>--animation-bazier: cubic-bezier(0.455, 0.03, 0.515, 0.955)</b>
@@ -481,7 +418,6 @@
       <!-- <test-text variant="body-bold">Duration</test-text> -->
       <!-- <test-text variant="body-bold">Keyframes (utility)</test-text> -->
       <test-text variant="subhead">Z-index</test-text>
-      <test-text variant="body">엘리먼트는 어떻게 쌓이는가.</test-text>
       <div class="token-group">
         <div class="token-item">
           <b style="margin: 0">--zindex-deepdive: -1</b>
@@ -516,6 +452,62 @@
           </div>
         </div>
       </div>
+
+      <blockquote>
+        <test-text variant="subhead">Notes</test-text>
+        <ul>
+          <li>콘텐츠 컨테이너의 가로 크기. custom media의 max-width를 layout + @로 정의.</li>
+          <li>
+            폰트가 변경되면 폰트마다 baseline이 달라서 텍스트의 상하 간격이 안 맞을 수 있다.
+            텍스트노드(레이블 역할)의 패딩용 변수를 활용.
+          </li>
+          <li>
+            animation :: 콘텐츠보다 액션이 강조되지 않도록 뷰포트 내에서 delay를 최대 3개로
+            제한합니다. inactive로 변경될 때(닫기 등) 즉시(instantly) 실행 합니다.
+          </li>
+          <li>spacing ::</li>
+          <li>
+            outset: 컴포넌트의 상하 간격. 시각 보정을 위해 마이너스minus 간격을 사용할 수 있다.
+          </li>
+          <li>inset: 타일 내부 간격 - squish inset/stretch inset</li>
+          <li>gap: 동일한 컴포넌트 그룹의</li>
+          <li>
+            display grid를 사용하면 마진과 거터를 제외한 나머지가 결국 칼럼이 됨. 또는 width
+            시스템으로 대체할 수 있다.
+          </li>
+          <li>사이즈의 세로값과 컴포넌트의 세로 prop을 동일하게 사용할 수 있을까?</li>
+          <li>
+            그림자를 이용한 시각적 상승 효과로 주변 요소 대비 강조. 더 높은 우선순위 및 행동유도를
+            위한 높은 고도. 사용자는 시각적 단어로 우선순위를 인식하고 인터렉션. 시각적 우선순위는
+            그림자로만 줄 수 있는 것은 아님. overay 등으로 우선순위를 설정할 수도 있음.
+          </li>
+
+          <li>
+            컴포넌트에서 동일한 형태를 토큰으로 대응할 때를 컴포넌트 토큰? 또는 특수한 토큰을
+            활용하게 될 수 있다. box-inset-small 과 같은.
+          </li>
+          <li>
+            개별 토큰에 디스크립션이 필요하지 않도록 명명합니다. core: give a name to a raw value to
+            enable theming and make improve maintainability / semantic / component.
+          </li>
+          <li>
+            컴포넌트 토큰은 상대적으로 변경 가능성이 높고 범용성이 낮기 때문에 컴포넌트 스코프에서만
+            정의. 컴포넌트 토큰을 정의하면 형태 기반의 컴포넌트를 정의 최소화할 수 있다.
+          </li>
+          <li>
+            --[namespace]-[component / category]-[attribute]-[status] 프로덕션이 아니기 때문에
+            namespace를 생략.
+          </li>
+          <li>
+            theme.
+            <del>
+              인버트 컬러셋을 추가로 정의하지 않습니다. 하나의 컬러셋으로 다크 테마에 대응합니다.
+              어렵고 또는 불필요한 규칙. 왜냐하면 초기 토큰 세팅 허들을 넘으면 컴포넌트 토큰을
+              활용한 테마 대응이 간편해짐.
+            </del>
+          </li>
+        </ul>
+      </blockquote>
     </article>
 
     <!-- <article class="article js-scrollspy-section">

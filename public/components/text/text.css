@@ -50,6 +50,7 @@ h1, h2, h3, p {
 }
 
 .text[data-variant=body] {
+  max-width: var(--layout-width-small);
   line-height: var(--font-line-height-large);
 }
 

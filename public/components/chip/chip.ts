@@ -32,7 +32,7 @@ class Chip extends HTMLElement {
     const label = document.createElement('span')
     label.classList.add('chip-label')
 
-    const name = document.createElement('b')
+    const name = document.createElement('span')
     name.classList.add('chip-name')
 
     const iconSlot = document.createElement('slot')

@@ -181,11 +181,10 @@
   </article>
 
   <article class="article">
-    <test-text variant="title">임시 Badges</test-text>
+    <test-text variant="title">Badges</test-text>
     <test-text variant="body-large">
-      Badges. 사실 뱃지로 퉁치기 어려움. 아바타와 바텀 네비게이션 등 특정 컴포넌트 의존성이 있어
-      통합된 형태가 아니면 뱃지 컴포넌트를 정의하지 않는 것이 좋다.. notification / status /
-      informational (tag 느낌)
+      Badges. 사실 뱃지로 퉁치기 어려움. 아바타와 바텀 네비게이션, 탭 등에서 일관되게 사용되는
+      형태가 있을 때 정의하는 것이 좋다. notification / status / informational (tag 느낌)
     </test-text>
     <test-text variant="body-large">
       Badges show the count of some adjacent data. A dot badge notifies the user that something is
@@ -375,15 +374,7 @@
   <article class="article js-observer js-scrollspy-section">
     <test-text variant="title">Carousel</test-text>
     <test-text variant="body-large">작성 중.</test-text>
-    <p>aka. carousel, slider</p>
-    <p>
-      -webkit-appearance: slider-vertical slider<br />CSS 속성에서 사용하기 때문에 slider보다
-      carousel로 명명하는 것이 더 좋음. input type="range" 형태를 slider 또는 stepper로 명명하기도.
-    </p>
-    <p>https://web.dev/carousel-best-practices/</p>
-    <p><b>block</b> -> inline / font-size: 0</p>
-    <p><b>flex</b> -> block + min-width</p>
-    <p>scroll-behavior: smooth</p>
+    <p>aka. carousel, slider, stepper</p>
     <section class="component-example">
       <section class="carousel js-carousel">
         <nav style="display: flex; gap: var(--space-3)" role="tablist">
@@ -434,9 +425,25 @@
       </section>
     </section>
 
+    <section class="component-guide">
+      <test-text variant="subhead">Behavior</test-text>
+      <test-text variant="body">
+        터치 제스쳐를 지원하지 않는 환경에서는 arrow 버튼을 제공하세요.
+      </test-text>
+    </section>
+
+    <blockquote>
+      <p>
+        -webkit-appearance: slider-vertical slider<br />
+        native css에서의 slider와 구별하기 위하여 carousel가 더 좋은 명명법. input type="range"
+        형태를 slider 또는 stepper로 명명하는 케이스도 있다.
+      </p>
+      <p>https://web.dev/carousel-best-practices/</p>
+      <p><b>block</b> -> inline / font-size: 0</p>
+      <p><b>flex</b> -> block + min-width</p>
+      <p>scroll-behavior: smooth</p>
+    </blockquote>
     <ul>
-      <li>서드파티 라이브러리를 사용하지 마세요.</li>
-      <li>터치 제스쳐를 지원하지 않는 환경에서는 arrow 버튼을 제공하세요.</li>
       <!-- // todo 가로 스크롤 패턴 -->
     </ul>
   </article>

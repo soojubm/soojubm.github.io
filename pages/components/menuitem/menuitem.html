@@ -75,48 +75,24 @@
         <dt>tag<attr>?</attr></dt>
         <dd>React.ReactNode</dd>
         <dd></dd>
-        <dd></dd>
-        <dt>tile ???</dt>
-        <dd>elevated | none</dd>
       </dl>
     </section>
 
     <section class="component-guide">
       <test-text variant="subhead">Behavior</test-text>
-      <test-text variant="body">
-        모든 menuitem container가 clickable은 아니다. 액션 버튼이 따로 존재할 수도 있어야 한다.
-        하지만 이 케이스는 팔로우 팔로잉. 또는 전체 영역이 팔로우. 이 정보가 중요한 이유 hover 상태
-        표현을 위해.
-      </test-text>
-      <test-text variant="body"> <b>맥락.</b> 스위치는 설정 메뉴, 체크박스는 선택 메뉴. </test-text>
 
       <test-text variant="subhead">Visual style</test-text>
-      <test-text variant="body">
-        <b>메뉴 아이템의 우측(action) 슬롯에는 액션 또는 액션 인티케이터가 위치합니다.</b> 정보를
-        보충하는 맥락의 태그 컴포넌트('new' 등)를 배치하지 마세요. (case 토스. 우측 new)
+      <div style="height: var(--space-3)"></div>
+      <test-text variant="body-bold">
+        메뉴 아이템의 우측(action) 슬롯에는 액션 또는 액션 인티케이터가 위치합니다.
       </test-text>
       <test-text variant="body">
-        <b>목록.</b> elevated menu item은 강조를 위해 하나만 사용할 수 있습니다.
+        정보를 보충하는 맥락의 태그 컴포넌트('new' 등)를 배치하지 마세요. (case 토스. 우측 new)
       </test-text>
-
-      <blockquote>
-        <ul class="checklist" style="margin: 0">
-          <li>
-            textSlot :: 사이즈에 따라 두 줄이 될 수 있는데, 세부적인 정의를 실무자가 암기할 필요
-            없어야. 캡슐화
-          </li>
-          <li>내부에 2개 이상의 액션이 존재할 수 있나?</li>
-          <li>TODO :: list action ( + add product )</li>
-          <li>
-            크기 별로 특정 컨테이너의 주체가 나뉜다. 예를 들면 huge는 페이지 레벨의 정보 주체가 될
-            수 있음.
-          </li>
-          <li>
-            Menus appear when users interact with a button, action, or other control. icon buttons,
-            buttons, and text fields.
-          </li>
-        </ul>
-      </blockquote>
+      <test-text variant="body">
+        elevated menu item은 리스트와 별개로 구성되어야 하며, 하나의 리스트에 두 개 이상 사용할 수
+        있습니다.
+      </test-text>
 
       <test-text variant="subhead">Anatomy</test-text>
       <ul>
@@ -127,12 +103,33 @@
         <li>MenuHelper. role: setting-item. filter-item.</li>
       </ul>
 
+      <test-text variant="subhead">Cases</test-text>
       <test-text variant="body-bold">Dropdown menu</test-text>
       <test-text variant="body-bold">Sheet menu</test-text>
       <test-text variant="body-bold">Modal menu</test-text>
       <test-text variant="body-bold">Sidebar menu</test-text>
       <test-text variant="body-bold">Sitemap menu</test-text>
-      <test-text variant="body-bold">Global navigation menu??</test-text>
+      <test-text variant="body-bold">Global navigation menu</test-text>
+
+      <blockquote>
+        <ul class="checklist" style="margin: 0">
+          <li>
+            textSlot :: 사이즈에 따라 두 줄이 될 수 있는데, 세부적인 정의를 실무자가 암기할 필요
+            없어야. 캡슐화
+          </li>
+          <li>메뉴 아이템에 2가지 이상의 액션을 허용할 것인가?</li>
+          <li>
+            크기 별로 특정 컨테이너의 주체가 나뉜다. 예를 들면 huge는 페이지 레벨의 정보 주체가 될
+            수 있음.
+          </li>
+          <li>
+            모든 menuitem container가 clickable은 아니다. 액션 버튼이 따로 존재할 수도 있어야 한다.
+            이 정보가 중요한 이유 hover 상태 표현을 위해. 케이스. 팔로우 팔로잉. 또는 전체 영역이
+            팔로우.
+          </li>
+          <li>맥락. 스위치는 설정 메뉴, 체크박스는 선택 메뉴.</li>
+        </ul>
+      </blockquote>
     </section>
 
     <section class="component-case">
@@ -181,11 +178,11 @@
       </test-tile>
       <test-tile variant="flat" class="share">
         <test-titlebar heading="공유"></test-titlebar>
-        <br />
+        <div style="height: var(--space-3)"></div>
         <test-text variant="subhead" class="share-title"
           >가족이나 친구와<br />함께 보세요!</test-text
         >
-        <br />
+        <div style="height: var(--space-3)"></div>
         <test-group variant="menuitem">
           <!-- <close-button></close-button> -->
           <test-menuitem class="share-facebook" label="facebook으로 공유">
@@ -325,9 +322,7 @@
         </test-group>
       </test-tile>
       <test-tile>
-        <test-titlebar heading="See this post in">
-          <test-chip slot="action" variant="plain">적용</test-chip>
-        </test-titlebar>
+        <test-titlebar heading="See this post in"> </test-titlebar>
         <br />
         <test-group variant="menuitem">
           <test-menuitem label="수줍이 앱">

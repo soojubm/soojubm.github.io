@@ -6,29 +6,28 @@
       margin: 2rem 0 0;
     }
   </style>
-  <header class="post-head js-post-head">
+  <header class="post-head">
     <!-- <header class="post-head js-post-head"> -->
     <a class="post-head-category" href="#post">Murmur</a>
-    <!-- 상하단동일해야 스티키? -->
     <test-text variant="title" style="line-height: 1.4; margin-left: -2px">
       Pinterest announces industry-first body type technology to increase body representation on
       platform
     </test-text>
-    <!-- <test-text variant="body" class="post-head-kicker">
+    <test-text variant="body-large" class="post-head-kicker">
       Pinterest announces industry-first body type technology to increase body representation on
       platform
-    </test-text> -->
-    <div style="height: var(--space-4)"></div>
+    </test-text>
+    <div style="height: 2rem"></div>
     <address>
       <test-entity label="수줍이" description="Youtube Subscriber">
         <test-avatar slot="avatar" size="medium" default="true"></test-avatar>
-        <div slot="text">
-          <time class="post-head-dateline">2022년 4월 9일</time>
-          <i class="icon-bullet"></i>
-          <span class="post-head-readingtime">약 40초 분량</span>
-          <div class="post-head-progress" role="progressbar" aria-valuenow=""></div>
-        </div>
       </test-entity>
+      <div slot="text">
+        <time class="post-head-dateline">2022년 4월 9일</time>
+        <i class="icon-bullet"></i>
+        <span class="post-head-readingtime">약 40초 분량</span>
+        <div class="post-head-progress" role="progressbar" aria-valuenow=""></div>
+      </div>
     </address>
   </header>
 
@@ -37,7 +36,7 @@
       <figcaption class="post-body-caption">image caption</figcaption>
     </figure>
 
-    <nav>
+    <!-- <nav>
       <test-text variant="subhead">Table of contents</test-text>
       <ol>
         <li>Decline every meeting</li>
@@ -45,18 +44,35 @@
         <li>Decline every meeting</li>
         <li>Decline every meeting</li>
       </ol>
-    </nav>
+    </nav> -->
 
     <p class="post-body-kicker">
       title / kicker / published date / thumbnail image / images / subhead - paragraph / text list /
       byline / share actions / comment /
     </p>
 
+    <test-text variant="subhead">
+      An ecosystem of content that celebrates inclusion and diversity
+    </test-text>
+    <div style="height: 0.75rem"></div>
+    <test-text variant="body-large">
+      콘텐츠가 다른 플랫폼에 공유되는 횟수가 많다면 페이지의 상단에 byline을 보여주는 것이 좋다.
+      byline은 상단 고정되지 않기 때문에 byline에 작성 시간과 리딩 시간 등을 포함하는 것이 좋다.
+    </test-text>
+    <test-text variant="body-large">
+      무제한(스트리밍) / 1개 무제한(미디엄) / 여러 개 중 1개 (총 1 페이스북) / 여러 개 중 여러 개에
+      각 1번 (깃허브)
+    </test-text>
+    <test-text variant="body-large">
+      Vertical scroll progressbar 유행 지난 듯. 전체 윈도우 영영 혹은 본문 영역track, media,
+      supporting text(supporter), elevated (hover), 도어메트 네비게이션, 유틸리티 링크(네비게이션)
+    </test-text>
+
     <q
       style="
         display: block;
         font-style: italic;
-        margin: 2rem -4rem;
+        margin: 4rem -6rem;
         font-size: var(--font-size-large);
         line-height: 2;
       "
@@ -71,30 +87,13 @@
       <address><b>Kelly Emanuelli, Head of Luxury at Pinterest</b></address>
     </q>
 
-    <test-text variant="subhead">
-      An ecosystem of content that celebrates inclusion and diversity
-    </test-text>
-    <div style="height: 0.75rem"></div>
-    <test-text variant="body">
-      콘텐츠가 다른 플랫폼에 공유되는 횟수가 많다면 페이지의 상단에 byline을 보여주는 것이 좋다.
-      byline은 상단 고정되지 않기 때문에 byline에 작성 시간과 리딩 시간 등을 포함하는 것이 좋다.
-    </test-text>
-    <test-text variant="body">
-      무제한(스트리밍) / 1개 무제한(미디엄) / 여러 개 중 1개 (총 1 페이스북) / 여러 개 중 여러 개에
-      각 1번 (깃허브)
-    </test-text>
-    <test-text variant="body">
-      Vertical scroll progressbar 유행 지난 듯. 전체 윈도우 영영 혹은 본문 영역track, media,
-      supporting text(supporter), elevated (hover), 도어메트 네비게이션, 유틸리티 링크(네비게이션)
-    </test-text>
-
-    <test-text variant="body">
+    <test-text variant="body-large">
       포스트를 수정하고 삭제하기 위한 버튼이 필요하다. 신고를 위한 버튼은 처음부터 필요한 기능은
       아니기 때문에 뺀다. 작성자에게만 필요한 버튼은 콘텐츠 내부가 아닌 브라우저의 구석에 눈에 띄게
       배치한다. Input zooming on iOS devices :: iOS devices will slightly zoom into the input when
       the font size is less than 16px.
     </test-text>
-    <test-text variant="body" type="1">
+    <test-text variant="body-large" type="1">
       prefix, name, suffix는 언더스코어(_)로 구분합니다. direction / shape / status / color / size
       suffix에서는 direction, shape, status, color, size 등의 요소를 정의합니다. 2개 이상의 suffix가
       사용되는 경우 direction, shape, status, color, size의 순서로 작성합니다. suffix에서는 단어를
@@ -116,37 +115,18 @@
     </blockquote>
   </section>
 
-  <section class="post-reaction"></section>
-
   <test-group variant="chip">
     <test-chip>#Webpack</test-chip>
     <test-chip>#HTML5</test-chip>
     <test-chip>#accessibility</test-chip>
     <test-chip>#typography</test-chip>
   </test-group>
-
-  <!-- TODO RESULT COMPONENT, TOP BLUR -->
-
-  <aside style="margin: 2rem 0">
-    <div class="post-attract-blur"></div>
-    <test-text variant="subhead">다음 내용이 궁금하신가요?</test-text>
-    <test-text variant="body">
-      한 달 동안 무료로 모든 콘텐츠를 체험해보세요. 언제든 해지하실 수 있어요.
-    </test-text>
-    <ul class="checklist" style="margin: 1.25rem 0">
-      <li>Medium의 모든 회원 전용 스토리에 액세스하세요.</li>
-      <li>자신에게 중요한 주제에 대해 더 자세히 알아보세요.</li>
-      <li>수천 가지 질문에 답하는 심층 기사를 받아보세요.</li>
-      <li>개인적, 직업적 목표를 달성하세요</li>
-    </ul>
-    <test-button variant="primary"> 멤버십 가입하기 </test-button>
-  </aside>
-
-  <test-group>
+  <test-separator></test-separator>
+  <section class="post-reaction">
     <test-menuitem label="192" roloe="button">
       <test-avatar slot="avatar" icon="message"> </test-avatar>
     </test-menuitem>
-  </test-group>
+  </section>
   <test-separator></test-separator>
   <test-tile class="comment" variant="elevated">
     <form variany="elevated" class="feed-make" action="">
@@ -161,7 +141,7 @@
           class="textfield-input"
           rows="3"
           name="comment"
-          placeholder="무슨 생각을 하고 계신가요? feed와 comment에서 사용. textarea 컴포넌트 정의. 취소 버튼의 위치. toolbar."
+          placeholder="무슨 생각을 하고 계신가요? feed와 comment에서 사용."
           style="width: 100%; height: auto; box-sizing: border-box"
         ></textarea>
       </div>
@@ -190,17 +170,37 @@
         우와 처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요. 우와
         처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요.
       </test-text>
-      <button class="comment-list-item-reply">답글 <span>7</span></button>
-      <test-chip variant="plain" icon="more-vert" class="js-toggle"> </test-chip>
-      <menu class="comment-list-item-menu">
-        <button class="">수정</button>
-        <button class="">삭제</button>
-      </menu>
+      <button class="comment-list-item-reply" style="margin: var(--space-1) 0 0">
+        답글 7개 더보기
+      </button>
+      <div style="position: absolute; right: 0; top: 0">
+        <test-chip variant="plain" icon="more-vert" class="js-toggle"> </test-chip>
+        <menu class="comment-list-item-menu">
+          <button class="">수정</button>
+          <button class="">삭제</button>
+        </menu>
+      </div>
     </div>
   </div>
+
+  <aside style="margin: 2rem 0">
+    <!-- TODO RESULT COMPONENT, TOP BLUR -->
+    <div class="post-attract-blur"></div>
+    <test-text variant="subhead">다음 내용이 궁금하신가요?</test-text>
+    <test-text variant="body">
+      한 달 동안 무료로 모든 콘텐츠를 체험해보세요. 언제든 해지하실 수 있어요.
+    </test-text>
+    <ul class="checklist" style="margin: 1.25rem 0">
+      <li>Medium의 모든 회원 전용 스토리에 액세스하세요.</li>
+      <li>자신에게 중요한 주제에 대해 더 자세히 알아보세요.</li>
+      <li>수천 가지 질문에 답하는 심층 기사를 받아보세요.</li>
+      <li>개인적, 직업적 목표를 달성하세요</li>
+    </ul>
+    <test-button variant="primary"> 멤버십 가입하기 </test-button>
+  </aside>
 </main>
 
-<nav class="post-pagination" style="max-width: 800px; margin: 4rem auto">
+<nav class="post-pagination" style="margin: 2rem 0">
   <a class="post-pagination-previous" href="#">
     <test-chip variant="back" icon="arrow-left"> </test-chip>
     <div style="height: var(--space-3)"></div>

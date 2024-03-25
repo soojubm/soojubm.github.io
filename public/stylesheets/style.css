@@ -1,15 +1,11 @@
 /* @charset 'utf-8'; */
-
 @import 'shared/webfonts.css';
 @import 'shared/variables.css';
 @import 'shared/reset.css';
-
 @import 'layout/navbar.css';
-
 @import 'pages/component.css';
 
 /*
-
 .scroll {position: fixed;bottom: 1rem;right: 1rem;z-index: var(--z-index-default);}
 .scroll-indicator {}
 .scroll-indicator i {
@@ -25,11 +21,6 @@
   @mixin avatar-medium;
   box-shadow: 1px 1px 1rem rgba(0, 0, 0, .1)
 }
-
-
-
-
-
 .carousel {position: relative;}
 .carousel-viewer {}
 .carousel-viewer-slide {}
@@ -60,28 +51,11 @@ main,
 .footer {
   transition: all .6s ease;
 }
-
-
-/* .dictoinary-item {
-  padding: .5rem var(--grid-margin);
-  display: flex;
-  font-size: var(--font-size-large);
-
-  b {
-    margin-right: 1rem;
-    font-weight: var(--font-weight-normal);
-  }
-
-  span {
-    width: 60%;
-  }
-} */
-
+ */
 
 .iconoir-nav-arrow-down {
   margin-top: -1px;
 }
-
 
 .bookitem-cover {
   padding-top: 50%;
@@ -103,8 +77,6 @@ main,
   bottom: -.5rem;
   transition: all .4s;
 }
-
-
 
 .stamp {
   /* // position: absolute;
@@ -141,16 +113,7 @@ main,
 .stamp .circle span:nth-of-type(4) {transform: rotate(50deg);}
 .stamp .circle span:nth-of-type(5) {transform: rotate(16deg);}
 
-/* .userlist {@mixin tile-elevated;}
-.userlist .profile-user:hover {@mixin hover-item;}
-.userlist-cta {@mixin button-tertiary;}
-
-.jobitem {@mixin tile-elevated;}
-.jobitem-name {margin:var(--space-leading-subhead) 0 var(--space-2) 0;@mixin text-subhead;}
-.jobitem-tags {@mixin stack;}
-.jobitem-tags .tag {}
-.jobitem-view {@mixin chip;margin:var(--space-4) 0 0 0;}
-
+/* 
 .textbox {}
 .textbox-toolbar {@mixin tile-elevated-small;display:flex;}
 .textbox-toolbar-bold {@mixin avatar-medium;margin:0 .5rem 0 0;}
@@ -166,20 +129,7 @@ main,
   justify-content: space-between;
 }
 
-/*
-.payment-method-list {@mixin stack;}
-.payment-method-item {
-  @mixin tile-elevated-small;
-  figure {
-    @mixin avatar-huge;
-    height:var(--size-large);
-  font-size:var(--font-size-huge);
-  }
-  span {display:block;margin:var(--space-1) 0 0;text-align:center;font-size:var(--font-size-medium);}
-}
-
 /* // todo icon -> indicator */
-
 .design-ticker-item {width:380px;margin:0 var(--space-3) !important;box-shadow:none !important;
   filter: grayscale(.5);
 }
@@ -195,19 +145,10 @@ main,
 	background: linear-gradient(to bottom, rgba(31,35,33,0), rgba(31,35,33,.5), rgba(31,35,33,1));
 }
 
-.principle {padding:0 0 0 50%;position:relative;}
-.principle-head {width:50%;height:100vh;padding:4rem var(--grid-margin);box-sizing:border-box;background:var(--green800);position:absolute;left:0;top:0;}
-
-.principle {padding:0 var(--grid-margin);position:relative;}
-.principle-head {padding:4rem 0;}
-.principle-head-title {}
-.principle-head-description {margin:var(--space-after-subhead) 0 0 0;}
-
 /* [data-theme=dark] .design-ticker-item {
   filter: grayscale(0);
   > * {
     filter: grayscale(.875);
-
   }
 } */
 
@@ -222,26 +163,6 @@ main,
   bottom: 0;
   z-index: var(--zindex-modal);
 }
-
-/*
-.user {display:block;color:var(--color-text);position:relative;@mixin clearfix;}
-.user-name {display:block;@mixin text-subhead;margin:var(--space-2) 0 0 0;}
-.user-id {margin:-.125rem 0 0 0;}
-.user-footer a {font-size:var(--font-size-small);color:var(--color-text-light);}
-
-.notification-item-avatar {@mixin avatar-large;position:absolute;left:0;top:0;}
-.notification-item-avatar + p {margin-bottom:var(--space-05);}
-.notification-item-user {font-size:var(--font-size-medium);}
-.notification-item-content {@mixin truncate-multi;}
-.notification-item-content b {font-weight:var(--font-weight-normal);}
-.notification-item-date {margin:0 0 0 var(--space-1);font-size:var(--font-size-small);color:var(--color-text-light);}
-
-.search {}
-.search-form-close {@mixin avatar-medium;position:absolute;left:1rem;top:14px;transform:rotate(180deg);}
-.search-form-title {margin:0 auto 1rem;font-size:var(--font-size-large);}
-.search-suggestion {}
- */
-
 
 @define-mixin image-centered {width:auto;height:auto;max-width:150%;max-height:150%;margin:auto;position:absolute;left:0;right:0;top:0;bottom:0;}
 [data-temp=bleeding] {
@@ -276,7 +197,6 @@ main,
   figure {box-shadow:var(--shadow) !important;}
 }
 
-
 /* @define-mixin position-left-top {position:absolute;left:var(--space-1);top:var(--space-1);}
 @define-mixin position-right-top {position:absolute;right:var(--space-2);top:var(--space-2);}
 @define-mixin position-bottom {position:fixed;left:0;right:0;bottom:0;z-index:var(--zindex-menu);}
@@ -298,13 +218,21 @@ main,
 // } */
 
 
-/* // todo 자식이 elevated일 때...
-@mixin stack {
-  display:flex;flex-wrap:wrap;align-items:center;margin:var(--space-1-minus);
-  > * {
-    margin:var(--space-1);
-  }
+
+.browser {
+  text-align: center;
+  padding: 2rem;
+  background: var(--red800);
+  background: var(--color-background);
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: var(--zindex-modal);
 }
+
+
+
 
 // todo flex일 대 min-width가 필수가 된다.. margin/padding은 container에 의존
 @mixin stack-vertical-scroll {
@@ -316,9 +244,7 @@ main,
   scroll-behavior: smooth;
   > * {min-width:auto;}
   &::-webkit-scrollbar {display:none;}
-} */
-
-
+}
 
 .bookitem-cover {
   padding-top: 50%;
@@ -345,43 +271,6 @@ main,
 
 
 
-.browser {
-  text-align: center;
-  padding: 2rem;
-  background: var(--red800);
-  background: var(--color-background);
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: var(--zindex-modal);
-}
-
-.sorting-group {display:flex;align-items:center;position:relative;}
-.sorting-title {margin:0 var(--space-2) 0 0;}
-.sorting-item {display:flex;align-items:center;}
-
-.scroll {position: fixed;bottom: 1rem;right: 1rem;z-index: var(--z-index-default);}
-.scroll-indicator {}
-.scroll-indicator i {
-  width: 2px;
-  height: 8px;
-  background: var(--gray800);
-  margin: 8px auto 0;
-  animation: bounce 0.5s infinite alternate;
-  transform: rotate(90deg);
-}
-
-
-
-
-
-
-
-
-
-
-
 @keyframes fade-in {
   from { opacity: 0 }
 }
@@ -401,12 +290,11 @@ main,
 //   inset-block-end: 0;
 //   inset-inline: 0;
 //   padding-block-end: 5vh;
-// }
-// .gui-toast-group {
 //   display: grid;
 //   justify-items: center;
 //   justify-content: center;
 //   gap: 1vh;
+//   pointer-events: none;
 // }
 // .gui-toast {
 //   max-inline-size: min(25ch, 90vw);
@@ -416,7 +304,6 @@ main,
 //   font-size: 1rem;
 // }
 // .gui-toast-group {
-//   pointer-events: none;
 // }
 // .gui-toast {
 //   --_bg-lightness: 90%;

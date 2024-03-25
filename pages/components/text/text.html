@@ -93,10 +93,14 @@ The font size of a key is never bigger than the value.
         <test-group alignment="vertical">
           <test-keyvalue key="상품 금액" value="₩ 160,000"> </test-keyvalue>
           <test-keyvalue key="서비스 수수료" value="₩ 3,000"> </test-keyvalue>
-          <test-keyvalue size="large" key="총 합계 (KRW)" value="₩ 163,000"> </test-keyvalue>
+          <div style="display: flex; justify-content: space-between">
+            <test-text variant="subhead">총 합계 (KRW)</test-text>
+            <test-text variant="subhead">₩ 163,000</test-text>
+          </div>
+          <!-- <test-keyvalue size="large" key="총 합계 (KRW)" value="₩ 163,000"> </test-keyvalue> -->
         </test-group>
         <footer style="margin: var(--space-4) 0 0 0">
-          <test-button variant="primary">구매 확정하고</test-button>
+          <test-button variant="primary" isfullwidth="true">구매 확정하고</test-button>
         </footer>
 
         <test-separator></test-separator>

@@ -3,16 +3,15 @@
 @custom-media --tiny (max-width: 880px);
 
 /*
-- 모든 surface는 border를 갖는 것이 좋다.
-- 모든 container는 position: relative를 갖는 것이 좋다.
+- 모든 surface는 border transparent를 갖는 것이 좋은가.
+- 모든 container는 position: relative를 갖는 것이 좋은가.
 */
 
 :root {
   color-scheme: light dark;
-
   /* // -apple-system === san-serif / system-ui === BlinkMacSystemFont */
-  /* --font-family: 'Pretendard', system-ui, sans-serif; */
-  --font-family: 'IBM Plex Sans', 'Gothic A1', system-ui, sans-serif;
+  --font-family: 'IBM Plex Sans', 'Pretendard', system-ui, sans-serif;
+  /* --font-family: 'IBM Plex Sans', 'Gothic A1', system-ui, sans-serif; */
   --font-family-heading: null;
   --font-family-body: null;
   --font-family-caption: null;
@@ -105,8 +104,6 @@
 
   --color-background: var(--gray0);
   --color-background-weak: var(--gray100);
-  /* TODO naming */
-  --color-background-weak2: var(--gray150);
   --color-background-strong: var(--gray800);
   --color-background-darkest: null;
   --color-border: var(--gray200);
@@ -134,7 +131,6 @@
   --size-tiny: 1rem;
 
   /* squished-stretched */
-
   --space-05: .125rem;
   --space-1: .25rem;
   --space-2: .5rem;
@@ -154,9 +150,6 @@
   --space-after-avatar-large: var(--space-2);
   --space-after-avatar-medium: var(--space-2);
   --space-after-avatar-small: var(--space-2);
-  --space-after-item: var(--space-3);
-  --space-before-tag: var(--space-05);
-  --space-before-tag-minus: calc(var(--space-before-tag) * -1);
 
   --space-leading-title: -.25rem;
   --space-leading-subhead: -.125rem;
@@ -223,11 +216,6 @@
   --safearea-inset-bottom1: constant(safe-area-inset-bottom);
   --safearea-inset-bottom2: env(safe-area-inset-bottom);
 
-
-  /* 
-  --filter-font-weight: null
-   */
-
   /* brutal theme */
   /* --border: 1px solid var(--gray800); */
 }
@@ -266,12 +254,7 @@
   --gradient: linear-gradient(to bottom, var(--gray400), var(--gray800));
 }
 
-
 /* // $p-breakpoints-lg-only: '(min-width: 65em) and (max-width: 89.9975em)'; */
 
 @media (prefers-color-scheme: light) {}
 @media (prefers-color-scheme: dark) {}
-
-
-
-

@@ -191,7 +191,24 @@
     </section>
 
     <section class="component-guide">
-      <blockquote style="max-width: 720px">
+      <test-text variant="subhead">Visual Style</test-text>
+      <test-text variant="body"> 레이블을 텍스트필드 왼쪽에 배치하지 마세요.</test-text>
+      <test-text variant="body">
+        이중 레이블링하지 마세요. 아이콘은 텍싀트 레이블을 대체할 수 있습니다. (아이콘 레이블을
+        사용하는 예시: 이메일로 사용자를 추가할 때 입력 정보를 아이콘으로 직관화)
+      </test-text>
+      <test-text variant="body">
+        일반 텍스트필드와 특수한? 텍스트필드 구별을 위한 시각적인 단서를 제공하세요.
+      </test-text>
+      <test-text variant="body" data-temp="required indicator / optional indicator">
+        불필요한 정보 입력을 유도하지 마세요. 사용자 여정에 허들이 될 수 있습니다. 다시 말해 모든
+        텍스트필드는 필수 입력을 보장(?)합니다. 단, 사용자 정보를 수집하여 사용자 또는 비즈니스에
+        이점이 명확한 경우 선택 필드를 제안할 수 있습니다. 이 때 선택 입력 필드에 '선택입력'
+        텍스트로 가이드합니다.
+      </test-text>
+
+      <blockquote>
+        <test-text variant="body-bold">Notes</test-text>
         <ul class="checklist">
           <li>TODO utilities. 앞자리 0 제거. 숫자만입력3자리마다콤마. 소숫점 컨트롤.</li>
           <li>url field. www 및 https://</li>
@@ -209,22 +226,6 @@
           <li>221021: - + 버튼에 포커스는 필요가 없다. input 키보드 위 아래로?</li>
         </ul>
       </blockquote>
-
-      <test-text variant="subhead">Visual Style</test-text>
-      <test-text variant="body"> 레이블을 텍스트필드 왼쪽에 배치하지 마세요.</test-text>
-      <test-text variant="body">
-        이중 레이블링하지 마세요. 아이콘은 텍싀트 레이블을 대체할 수 있습니다. (아이콘 레이블을
-        사용하는 예시: 이메일로 사용자를 추가할 때 입력 정보를 아이콘으로 직관화)
-      </test-text>
-      <test-text variant="body"
-        >일반 텍스트필드와 특수한? 텍스트필드 구별을 위한 시각적인 단서를 제공하세요.</test-text
-      >
-      <test-text variant="body" data-temp="required indicator / optional indicator">
-        불필요한 정보 입력을 유도하지 마세요. 사용자 여정에 허들이 될 수 있습니다. 다시 말해 모든
-        텍스트필드는 필수 입력을 보장(?)합니다. 단, 사용자 정보를 수집하여 사용자 또는 비즈니스에
-        이점이 명확한 경우 선택 필드를 제안할 수 있습니다. 이 때 선택 입력 필드에 '선택입력'
-        텍스트로 가이드합니다.
-      </test-text>
     </section>
 
     <aside class="component-references">
@@ -232,10 +233,13 @@
       <a href="https://developer.apple.com/documentation/uikit/uisearchbar">HIG searchbar</a>
     </aside>
 
-    <!-- <test-text variant="body">그룹이 되는 모든 필드는 선택 입력입니다.</test-text> -->
     <section class="component-case">
-      <test-text variant="body-bold">Field group</test-text>
       <test-tile>
+        <test-text variant="body-bold">Field group</test-text>
+        <test-text variant="body"
+          >그룹이 되는 모든 필드는 선택 입력입니다. 다시말해 필수 입력 필드를 그룹으로 제공하지
+          마세요.</test-text
+        >
         <test-group variant="textfield" style="width: 100%; align-items: flex-end">
           <test-textfield label="Length" placeholder="cm unit"></test-textfield>
           <div style="display: flex; align-items: center; height: var(--size-large)">
@@ -318,6 +322,100 @@
           <test-checkbox label="개인정보 수집 및 이용 동의(수취인정보?)"></test-checkbox>
           <test-button variant="primary" label="배송지 등록"></test-button>
         </test-group>
+      </test-tile>
+
+      <test-tile>
+        <test-titlebar heading="장바구니"> </test-titlebar>
+        <div style="height: var(--space-3)"></div>
+        <test-menuitem>
+          <test-avatar slot="avatar" size="huge"">
+            <img src="/public/images/product_sample.png" alt="" />
+          </test-avatar>
+          <div slot="text">
+            <test-text variant="word-strong"> 폰타나 베네치아 로스티드 쉬림프 크림 </test-text>
+            <test-text variant="word-weak">Brown, 3개</test-text>
+            <test-text variant="word-large">₩ 22,500</test-text>
+          </div>
+          <!-- <div class="cart-item-name">
+            <span>product</span>
+            <b> 폰타나 베네치아 로스티드 쉬림프 크림 </b>
+          </div>
+          <div class="cart-item-color">
+            <span>color</span>
+            <b>Brown</b>
+          </div>
+          <div class="cart-item-qty">
+            <span>qty</span>
+            <b>3</b>
+          </div>
+          <div class="cart-item-price">
+            <span>price</span>
+            <b>₩ 22,500</b>
+          </div> -->
+
+          <test-chip>수량/옵션 변경</test-chip>
+
+          <test-chip>close</test-chip>
+
+          <test-group variant="chip" class="counter js-counter" style="max-width: 200px">
+            <test-chip
+              icon="minus"
+              class="js-counter-decrement"
+              aria-controls="numberfield"
+              tabindex="-1"
+            ></test-chip>
+            <test-textfield size="small" value="20"></test-textfield>
+            <!-- <input class="quantity-input js-quantity-input" type="number" value="1" /> -->
+            <test-chip icon="plus" class="js-counter-increment" tabindex="-1"> </test-chip>
+          </test-group>
+
+          <div class="counter js-counter" style="max-width: 200px">
+            <label for="numberfield" style="position: absolute; opacity: 0">
+              레이블 라이트하우스용
+            </label>
+            <!-- <input
+              class="counter-input reset-input textfield-input js-counter-input js-number-input"
+              type="number"
+              name="counter1"
+              id="numberfield"
+              min="5"
+              max="20"
+              value="0"
+            /> -->
+          </div>
+
+          <div class="cart-item-addition">
+            <b class="cart-item-addition-title">AppleCare+ for Macbook/MacBook Air</b>
+            <p class="cart-item-addition-description">
+              Automatically registered width your Apple hardware.
+            </p>
+            <span class="cart-item-addition-price">₩ 20,000</span>
+          </div>
+        </test-menuitem>
+
+        <test-separator></test-separator>
+
+        <footer class="cart-summary">
+          <div class="cart-summary-subtotal">
+            <span class="cart-summary-label">총 상품금액</span>
+            <span class="cart-summary-value">₩ 30,000</span>
+          </div>
+          <div class="cart-summary-shipping">
+            <span class="cart-summary-label">배송료</span>
+            <span class="cart-summary-value">₩ 3,000</span>
+          </div>
+          <div class="cart-summary-shipping">
+            <span class="cart-summary-label">할인</span>
+            <span class="cart-summary-value"><span hidden>(-)</span> ₩ 2,000</span>
+          </div>
+          <div class="cart-summary-total">
+            <span class="cart-summary-label">최종 결제 금액</span>
+            <b class="cart-summary-value">₩ 37,000</b>
+          </div>
+          <div class="cart-summary-controls">
+            <test-button variant="primary" isfullwidth="true">결제</test-button>
+          </div>
+        </footer>
       </test-tile>
     </section>
   </article>

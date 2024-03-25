@@ -100,13 +100,6 @@
     <button class="textfield-reveal js-view-password" type="button">비밀번호 보기</button>
   </div>
 
-  <footer>
-    <p>
-      ©2001–2021 All Rights Reserved. Mailchimp® is a registered trademark of The Rocket Science
-      Group. Cookie Preferences, Privacy, and Terms.
-    </p>
-  </footer>
-
   <style>
     .validation-item {
       display: flex;
@@ -306,9 +299,9 @@
 
   <form class="authentication verify" name="verify" style="max-width: 560px">
     <header class="authentication-head">
-      <test-text variant="title" class="authentication-head-title" title="Reset Your Password">
+      <h1 class="authentication-head-title" title="Reset Your Password">
         Please check your email!
-      </test-text>
+      </h1>
       <test-text variant="body-large" titl="We get it, stuff happens! What's your email address?">
         We have emailed a 6-digit confirmation code to acb@domain, please enter the code in below
         box to verify your email.
@@ -317,32 +310,26 @@
     <test-group variant="chip">
       <!-- aria-invalid="false"  -->
       <test-textfield
+        type="number"
         name="code1"
-        type="number"
         maxlength="1"
         style="width: var(--size-large)"
       ></test-textfield>
       <test-textfield
-        name="code2"
         type="number"
+        name="code1"
         maxlength="1"
         style="width: var(--size-large)"
       ></test-textfield>
       <test-textfield
-        name="code3"
         type="number"
+        name="code1"
         maxlength="1"
         style="width: var(--size-large)"
       ></test-textfield>
       <test-textfield
-        name="code4"
         type="number"
-        maxlength="1"
-        style="width: var(--size-large)"
-      ></test-textfield>
-      <test-textfield
-        name="code5"
-        type="number"
+        name="code1"
         maxlength="1"
         style="width: var(--size-large)"
       ></test-textfield>
@@ -352,6 +339,7 @@
         재설정 메일 받기
       </test-button>
     </footer>
+    <div style="height: var(--space-3)"></div>
     <span class="password-foot-back password-link" title="">
       <a href="signin.html">인증번호 재전송</a>
     </span>
@@ -359,7 +347,7 @@
 
   <form class="authentication" name="password-2" style="max-width: 560px" action="">
     <header class="authentication-head">
-      <h1 class="authentication-head-title">비밀번호 재설정</h1>
+      <h1 variant="title" class="authentication-head-title">비밀번호 재설정</h1>
       <p class="authentication-head-description">
         안전한 비밀번호를 만들고 같은 비밀번호를 다른 계정에 사용하지 마세요.
       </p>
