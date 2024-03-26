@@ -110,7 +110,7 @@
           <test-icon slot="action" name="arrow-right"></test-icon>
         </test-menuitem>
       </test-tile>
-      <test-tile size="small">
+      <test-tile>
         <test-menuitem>
           <div slot="text">
             <em class="avatar-badge"></em>
@@ -134,10 +134,19 @@
             </div>
             <test-icon slot="action" name="arrow-right"></test-icon>
           </test-menuitem>
-          <test-text variant="caption">
-            soojubm 닉네임을 만드세요! 60일 동안 변경할 수 없습니다 — 취소할 수 없습니다! Twitch
-            이용규약을 위반한 닉네임은 계정이 영구정지될 수 있으니 주의하세요.
-          </test-text>
+          <div
+            style="
+              border-radius: var(--radius);
+              background-color: var(--color-background-weak);
+              margin: var(--space-2) 0 0;
+              padding: var(--space-2);
+            "
+          >
+            <test-text variant="caption">
+              soojubm 닉네임을 만드세요! 60일 동안 변경할 수 없습니다 — 취소할 수 없습니다! Twitch
+              이용규약을 위반한 닉네임은 계정이 영구정지될 수 있으니 주의하세요.
+            </test-text>
+          </div>
         </test-tile>
         <test-tile>
           <test-menuitem>
@@ -151,13 +160,8 @@
         <test-tile>
           <test-menuitem>
             <div slot="text">
-              <test-text variant="label">관심분야</test-text>
-              <test-group variant="tag">
-                <test-tag>문화/예술</test-tag>
-                <test-tag>인권</test-tag>
-                <test-tag>환경</test-tag>
-              </test-group>
-              <!-- <test-text variant="body">문화/예술, 인권, 환경</test-text> -->
+              <test-text variant="word-weak">관심분야</test-text>
+              <test-text variant="word">문화/예술, 인권, 경제</test-text>
             </div>
             <test-icon slot="action" name="arrow-right"></test-icon>
           </test-menuitem>
@@ -169,14 +173,14 @@
     <br /><br />
     <test-group alignment="vertical">
       <test-text variant="subhead">뉴스레터</test-text>
-      <test-tile variant="elevated" size="small">
+      <test-tile variant="">
         <test-menuitem label="시사 뉴스레터" class="js-darkmode">
           <test-avatar slot="avatar"> </test-avatar>
           <test-switch slot="action" label=""></test-switch>
         </test-menuitem>
-        <test-text variant="caption"
-          >매 주 월요일, 수요일, 금요일 아침에 받아볼 수 있어요.</test-text
-        >
+        <test-text variant="caption">
+          매 주 월요일, 수요일, 금요일 아침에 받아볼 수 있어요.
+        </test-text>
       </test-tile>
     </test-group>
     <br /><br />
@@ -188,8 +192,8 @@
         <test-tile>
           <test-menuitem>
             <div slot="text">
-              <test-text variant="body-bold">Facebook</test-text>
-              <test-text>사용자의 Opera와 Facebook 게정을 연결하세요.</test-text>
+              <test-text variant="word-strong">Facebook</test-text>
+              <test-text variant="word">사용자의 Opera와 Facebook 게정을 연결하세요.</test-text>
             </div>
             <test-chip slot="action">연동하기</test-chip>
           </test-menuitem>
@@ -228,8 +232,8 @@
       <test-tile>
         <test-menuitem>
           <div slot="text">
-            <test-text variant="label">비밀번호 변경</test-text>
-            <test-text variant="body">강력한 비밀번호로 보안을 강화하세요.</test-text>
+            <test-text variant="word-weak">비밀번호 변경</test-text>
+            <test-text variant="word">강력한 비밀번호로 보안을 강화하세요.</test-text>
           </div>
           <test-icon slot="action" name="arrow-right"></test-icon>
         </test-menuitem>
@@ -237,8 +241,8 @@
       <test-tile>
         <test-menuitem>
           <div slot="text">
-            <test-text variant="label">계정 비활성화</test-text>
-            <test-text variant="body"
+            <test-text variant="word-weak">계정 비활성화</test-text>
+            <test-text variant="word"
               ><test-link href="">비활성화 페이지</test-link>에서 할 수 있습니다.</test-text
             >
           </div>
