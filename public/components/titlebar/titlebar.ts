@@ -16,14 +16,15 @@ class TitleBar extends HTMLElement {
 
     const back = document.createElement('test-chip')
     back.setAttribute('variant', 'back')
-    // back.setAttribute('icon', 'arrow-left')
-    // if (!back.ariaLabel) back.ariaLabel = '이전 페이지로'
-    // ariaLabel 때문에 쉐도우돔을 그리지 못 함.
 
     const icon = document.createElement('test-icon')
     icon.setAttribute('slot', 'icon')
     icon.setAttribute('name', 'arrow-left')
     back.append(icon)
+
+    // back.setAttribute('icon', 'arrow-left')
+    // if (!back.ariaLabel) back.ariaLabel = '이전 페이지로'
+    // ariaLabel 때문에 쉐도우돔을 그리지 못 함.
 
     const actionSlot = document.createElement('slot')
     actionSlot.name = 'action'
@@ -38,9 +39,6 @@ class TitleBar extends HTMLElement {
 
   get heading() {
     return this.getAttribute('heading')
-  }
-  get value() {
-    return this.getAttribute('value')
   }
 
   connectedCallback() {}

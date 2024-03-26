@@ -33,8 +33,8 @@ img {
 }
 .avatar[data-default=true] {
   background-image: url('/public/images/soojubm.png');
-  background-size: 90%;
-  background-position: 90% 55%;
+  background-size: 75%;
+  background-position: 75% 55%;
 }
 
 .avatar img {

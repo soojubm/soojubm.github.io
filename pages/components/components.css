@@ -164,7 +164,6 @@ test-tile [variant=subhead] + [variant=body] {
 
 
 .article-title {font-size:var(--font-size-huge);font-weight:var(--font-weight-bold);line-height:var(--font-line-height);color:var(--color-text);}
-/* .article-description {font-size:var(--font-size-large);line-height:var(--font-line-height);color:var(--color-text);} */
 .article ul, .article dl {max-width: var(--layout-width-small);}
 
 .component-guide test-text[variant=subhead] {display:block;margin-top:3rem;}

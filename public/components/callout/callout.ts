@@ -30,14 +30,16 @@ class Callout extends HTMLElement {
 
     const text = document.createElement('p')
     text.classList.add('callout-text')
-    text.innerText = this.text || this.innerHTML || ''
+    text.innerText = this.text || ''
 
     const icon = document.createElement('test-icon')
     icon.setAttribute('name', 'warning-triangle')
     icon.classList.add('callout-icon')
 
+    const rest = document.createElement('slot')
+
     shadow.append(container, makeStyleSheet('callout'))
-    container.append(icon, text)
+    container.append(icon, text, rest)
   }
   disconnectedCallback() {}
 }

@@ -1,3 +1,4 @@
+<!-- MEMO :: 너무 많은 슬롯으로 재활용이 어려우졌다. -->
 <main class="component profile">
   <!-- <header class="profile-head" style="padding:0 var(--grid-margin);border-radius:var(--radius);">
     <div class="profile-head-background"></div>
@@ -106,11 +107,10 @@
       <test-tab slot="tab" name="project" selected="true" data-index="1"> 프로젝트 </test-tab>
       <test-tab slot="tab" name="case-study" selected="false" data-index="2"> 두 번째 탭 </test-tab>
       <test-tab slot="tab" name="blank" selected="false" data-index="3">빈 상태 </test-tab>
-      <test-tab slot="tab" name="blank" selected="false" data-index="3">네번쨰 탭 </test-tab>
       <i class="tablist-indicator"></i>
     </test-tablist>
 
-    <!-- todo day night toggle과 동일한 패턴 -->
+    <!-- todo day night toggle과 동일한 패턴, tab과도 형태기능적으로 유사.  -->
     <div
       class="profile-display"
       role="menubar"
@@ -139,6 +139,7 @@
     <section class="tabpanel" role="tabpanel" aria-hidden="false" data-index="1">
       <test-tile variant="plain" class="js-modal" data-modal="newneek">
         <test-tag slot="category" variant="primary">정리중</test-tag>
+        <button slot="" class="card-more" hidden></button>
         <figure style="background-color: var(--color-newneek); border-radius: var(--radius)">
           <img
             src="/public/images/newneek/gosum-spinner.png"
@@ -147,42 +148,42 @@
           />
         </figure>
         <test-text variant="body-bold">뉴닉</test-text>
-        <test-text>description.....</test-text>
+        <test-text variant="body">description.....</test-text>
         <!-- <time class="card-date">2022. 02. 22.</time> -->
         <test-group variant="tag">
           <test-tag variant="hashtag">프로젝트관리</test-tag>
           <test-tag variant="hashtag">디자인</test-tag>
           <test-tag variant="hashtag">프론트엔드개발</test-tag>
         </test-group>
-        <!-- TODO slots -->
-        <!-- <div class="card-byline">
-          <figure class="card-byline-avatar"><img src="/public/images/springsteen.jpg" alt="" /></figure>
-          <span class="card-byline-name">수줍이</span>
-        </div> -->
-        <!-- <button slot="" class="card-more" hidden></button> -->
       </test-tile>
+
       <test-tile variant="plain" class="js-modal" data-modal="etc-works">
-        <figure slot="thumbnail">
-          <img src="/public/images/work-studium.jpg" alt="" />
+        <figure style="border-radius: var(--radius)">
+          <img src="/public/images/work-studium.jpg" alt="" style="display: block; width: 75%" />
         </figure>
-        <test-text slot="heading" variant="body-bold">프리랜서</test-text>
+        <test-text variant="body-bold">프리랜서</test-text>
         <p slot="body">description.....</p>
         <!-- <time class="card-date">September 12, 2017</time> -->
         <test-chip icon="more-vert" class="card-more" hidden> </test-chip>
-        <test-group slot="tags">
+        <test-group>
           <test-tag variant="hashtag">프리랜서</test-tag>
           <test-tag variant="hashtag">디자인</test-tag>
           <test-tag variant="hashtag">워드프레스</test-tag>
         </test-group>
       </test-tile>
+
       <test-tile variant="plain" class="js-modal" data-modal="lettering">
-        <figure slot="thumbnail">
-          <img src="/public/images/budha.png" alt="" style="margin-top: -2rem" />
+        <figure style="bborder-radius: var(--radius)">
+          <img
+            src="/public/images/budha.png"
+            alt=""
+            style="display: block; width: 75%; margin-top: -2rem"
+          />
         </figure>
-        <test-text slot="heading" variant="body-bold">레터링</test-text>
-        <test-text slot="body" variant="body">description.....</test-text>
+        <test-text variant="body-bold">레터링</test-text>
+        <test-text variant="body">description.....</test-text>
         <test-chip icon="more-vert" class="card-more" hidden></test-chip>
-        <test-group slot="tags">
+        <test-group>
           <test-tag>레터링</test-tag>
         </test-group>
       </test-tile>
@@ -190,11 +191,11 @@
 
     <section class="tabpanel" role="tabpanel" aria-hidden="true" data-index="2">
       <test-tile variant="plain" class="js-modal" data-modal="flat_sitemap">
-        <figure slot="thumbnail">
+        <figure>
           <img />
         </figure>
-        <test-text slot="heading" variant="body-bold">Flat sitemap</test-text>
-        <test-text slot="body" variant="body"></test-text>
+        <test-text variant="body-bold">Flat sitemap</test-text>
+        <test-text variant="body"></test-text>
       </test-tile>
     </section>
 
