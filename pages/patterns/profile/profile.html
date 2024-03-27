@@ -140,16 +140,17 @@
       <test-tile variant="plain" class="js-modal" data-modal="newneek">
         <test-tag slot="category" variant="primary">정리중</test-tag>
         <button slot="" class="card-more" hidden></button>
-        <figure style="background-color: var(--color-newneek); border-radius: var(--radius)">
-          <img
-            src="/public/images/newneek/gosum-spinner.png"
-            alt=""
-            style="display: block; width: 75%"
-          />
-        </figure>
+
+        <test-media
+          src="/public/images/newneek/gosum-spinner.png"
+          alt=""
+          style="background: var(--color-newneek)"
+        ></test-media>
+        <div style="height: var(--space-2)"></div>
         <test-text variant="body-bold">뉴닉</test-text>
         <test-text variant="body">description.....</test-text>
         <!-- <time class="card-date">2022. 02. 22.</time> -->
+        <div style="height: var(--space-2)"></div>
         <test-group variant="tag">
           <test-tag variant="hashtag">프로젝트관리</test-tag>
           <test-tag variant="hashtag">디자인</test-tag>
@@ -158,14 +159,14 @@
       </test-tile>
 
       <test-tile variant="plain" class="js-modal" data-modal="etc-works">
-        <figure style="border-radius: var(--radius)">
-          <img src="/public/images/work-studium.jpg" alt="" style="display: block; width: 75%" />
-        </figure>
+        <test-media src="/public/images/work-studium.jpg" alt=""></test-media>
+        <div style="height: var(--space-2)"></div>
         <test-text variant="body-bold">프리랜서</test-text>
-        <p slot="body">description.....</p>
+        <test-text variant="body">description.....</test-text>
         <!-- <time class="card-date">September 12, 2017</time> -->
         <test-chip icon="more-vert" class="card-more" hidden> </test-chip>
-        <test-group>
+        <div style="height: var(--space-2)"></div>
+        <test-group variant="tag">
           <test-tag variant="hashtag">프리랜서</test-tag>
           <test-tag variant="hashtag">디자인</test-tag>
           <test-tag variant="hashtag">워드프레스</test-tag>
@@ -173,18 +174,15 @@
       </test-tile>
 
       <test-tile variant="plain" class="js-modal" data-modal="lettering">
-        <figure style="bborder-radius: var(--radius)">
-          <img
-            src="/public/images/budha.png"
-            alt=""
-            style="display: block; width: 75%; margin-top: -2rem"
-          />
-        </figure>
+        <test-chip icon="more-vert" class="card-more" hidden></test-chip>
+        <test-media src="/public/images/budha.png" alt="" style="margin-top: -2rem"></test-media>
+        <div style="height: var(--space-2)"></div>
         <test-text variant="body-bold">레터링</test-text>
         <test-text variant="body">description.....</test-text>
-        <test-chip icon="more-vert" class="card-more" hidden></test-chip>
-        <test-group>
-          <test-tag>레터링</test-tag>
+        <div style="height: var(--space-2)"></div>
+        <test-group variant="tag">
+          <test-tag variant="hashtag">취미생활</test-tag>
+          <test-tag variant="hashtag">레터링</test-tag>
         </test-group>
       </test-tile>
     </section>

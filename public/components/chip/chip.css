@@ -117,24 +117,3 @@ em, i  {
 //   background-size: 14px;
 //   background-position: 90% 50%;
 // }
-
-
-
-
-.group[data-segmented] {
-  gap: 0;
-}
-.group[data-segmented] .button {
-  border: 0;
-  border-radius: 0;
-}
-.group[data-segmented] .button[data-selected] {
-  background: var(--color-primary);
-  color: #fff;
-}
-.group[data-segmented] .button:nth-of-type(1) {
-  border-radius: var(--radius) 0 0 var(--radius);
-}
-.group[data-segmented] .button:nth-last-of-type(1) {
-  border-radius: 0 var(--radius) var(--radius) 0;
-}

@@ -20,7 +20,6 @@
       <test-chip class="js-scrollspy-trigger">Animation</test-chip>
       <test-chip class="js-scrollspy-trigger">Optical Adjustment</test-chip>
     </test-group> -->
-
     <!-- classification / category -->
 
     <article class="article js-scrollspy-section">
@@ -39,10 +38,9 @@
 
       <div style="height: 4rem"></div>
       <test-text variant="subhead">Color</test-text>
-      <test-text variant="body"
-        >background/border/text/status. primary color = primary interactions, reinforce
-        brand</test-text
-      >
+      <test-text variant="body">
+        background/border/text/status. primary color = primary interactions, reinforce brand
+      </test-text>
       <test-text variant="body">
         The use of color in an experience helps define communication, meaning, brand, and roles,
         making it easier for users to interact, search, and differentiate elements. For additional
@@ -51,61 +49,64 @@
       <!-- <p>A-ha :: background-weak weak2를 사용할 수 있지만 하나로 통함됨.</p> -->
       <!-- <test-text>2403 gray150 추가.</test-text> -->
       <div class="token-group">
-        <article class="token-item is-gray000">
-          <figure class="token-item-avatar"></figure>
+        <article class="token-item">
+          <!-- <figure class="token-item-avatar"></figure> -->
           <b>--gray0: #fff</b>
           <test-group variant="hashtag">
             <test-tag variant="hashtag">color-background</test-tag>
           </test-group>
         </article>
-        <article class="token-item is-gray100">
-          <figure class="token-item-avatar"></figure>
+        <article class="token-item" style="border: 0; background: var(--gray100)">
+          <!-- <figure class="token-item-avatar"></figure> -->
           <b>--gray100: #f5f8f5 TODO</b>
           <test-group variant="hashtag">
             <test-tag variant="hashtag">color-background-weak</test-tag>
             <!-- <p>--button-border-color</p> -->
           </test-group>
         </article>
-        <article class="token-item is-gray200">
-          <figure class="token-item-avatar"></figure>
+        <article class="token-item is-gray200" style="border: 0; background: var(--gray200)">
+          <!-- <figure class="token-item-avatar"></figure> -->
           <b>--gray200: #e0e2e1</b>
           <test-group variant="hashtag">
             <test-tag variant="hashtag">color-border</test-tag>
             <!-- <p>--color-hover-background: var(--gray200)</p> -->
           </test-group>
         </article>
-        <article class="token-item is-gray400">
-          <figure class="token-item-avatar"></figure>
-          <b>--gray400: #979d9a</b>
+        <article class="token-item is-gray400" style="border: 0; background: var(--gray400)">
+          <!-- <figure class="token-item-avatar"></figure> -->
+          <b style="color: #fff">--gray400: #979d9a</b>
           <test-group variant="hashtag">
             <test-tag variant="hashtag">color-text-light</test-tag>
             <!-- <p>--color-text-disabled</p> -->
           </test-group>
         </article>
-        <article class="token-item is-gray800">
-          <figure class="token-item-avatar"></figure>
-          <b>--gray800: #343c38</b>
+        <article class="token-item" style="border: 0; background: var(--gray800)">
+          <!-- <figure class="token-item-avatar"></figure> -->
+          <b style="color: #fff">--gray800: #343c38</b>
           <test-group variant="hashtag">
             <test-tag variant="hashtag">color-text</test-tag>
             <test-tag variant="hashtag">color-background-strong</test-tag>
           </test-group>
         </article>
-        <article class="token-item is-primary100">
-          <figure class="token-item-avatar"></figure>
+        <article class="token-item" style="border: 0; background-color: var(--green100)">
+          <!-- <figure class="token-item-avatar"></figure> -->
           <b>--green100: rgba(10, 160, 80, 0.1)</b>
           <test-group variant="hashtag">
             <test-tag variant="hashtag">color-primary-light</test-tag>
           </test-group>
         </article>
-        <article class="token-item is-primary200">
-          <figure class="token-item-avatar"></figure>
-          <b>--green800: #1b995c</b>
+        <article
+          class="token-item is-primary200"
+          style="border: 0; background-color: var(--green800)"
+        >
+          <!-- <figure class="token-item-avatar"></figure> -->
+          <b style="color: #fff">--green800: #1b995c</b>
           <test-group variant="hashtag">
             <test-tag variant="hashtag">color-primary</test-tag>
           </test-group>
         </article>
-        <article class="token-item is-red800">
-          <figure class="token-item-avatar" style="background: rgba(243, 68, 97, 0.06)"></figure>
+        <article class="token-item" style="border: 0; background-color: var(--red100)">
+          <!-- <figure class="token-item-avatar" style="background: rgba(243, 68, 97, 0.06)"></figure> -->
           <b>--red100: rgba(243, 68, 97, .06)</b>
           <test-group variant="hashtag">
             <test-tag variant="hashtag">color-danger-light</test-tag>
@@ -113,15 +114,15 @@
             <test-tag variant="hashtag">color-border-danger/error</test-tag>
           </test-group>
         </article>
-        <article class="token-item is-red800">
-          <figure class="token-item-avatar"></figure>
-          <b>--red800: #f02849</b>
+        <article class="token-item" style="background-color: var(--red800)">
+          <!-- <figure class="token-item-avatar"></figure> -->
+          <b style="color: #fff">--red800: #f02849</b>
           <test-group variant="hashtag">
             <test-tag variant="hashtag">color-danger</test-tag>
           </test-group>
         </article>
-        <article class="token-item">
-          <figure class="token-item-avatar" style="background: var(--color-accent)"></figure>
+        <article class="token-item" style="background: var(--color-accent)">
+          <!-- <figure class="token-item-avatar"></figure> -->
           <b>--yellow800: gold</b>
           <test-group variant="hashtag">
             <test-tag variant="hashtag">color-accent??</test-tag>

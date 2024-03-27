@@ -1,6 +1,15 @@
 [
   {
     "id": 202403,
+    "releasedate": 2022,
+    "titlekorean": "보통의 카스미",
+    "titleenglish": "",
+    "director": "",
+    "country": "일본",
+    "etc": ""
+  },
+  {
+    "id": 202403,
     "releasedate": 2002,
     "titlekorean": "레지던트 이블",
     "titleenglish": "Resident Evil",

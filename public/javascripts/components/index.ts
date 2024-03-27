@@ -37,6 +37,8 @@ import Result from '../../components/result/result'
 import Feature from '../../components/feature/feature'
 import Keyvalue from '../../components/keyvalue/keyvalue'
 
+import Media from '../../components/media/media'
+
 // class extends HTMLElement {
 //   static get observedAttributes() {
 //     return ['value']
@@ -79,6 +81,7 @@ export function defineCustomElement() {
     customElements.define('test-menuitem', MenuItem)
 
     customElements.define('test-dialog', Dialog)
+    customElements.define('test-media', Media)
 
     customElements.define('test-tooltip', Tooltip)
 

@@ -117,16 +117,6 @@
 .cart-item-option-value {@mixin text-subhead;}
 
 .cart-summary {position:relative;}
-.cart-summary-subtotal {margin:.5rem 0;}
-.cart-summary-discount {margin:.5rem 0;}
-.cart-summary-shipping {margin:.5rem 0;}
-.cart-summary-label {}
-.cart-summary-value {float:right;}
-.cart-summary-total {margin:var(--space-2) 0 var(--space-4);@mixin text-subhead;}
-.cart-summary-total .cart-summary-label {}
-.cart-summary-total .cart-summary-value {}
-.cart-summary-controls {}
-.cart-summary-checkout {@mixin button-primary;width:100%;}
 
 
 @media (--small) {

@@ -48,6 +48,7 @@
   display:block;
   width:var(--switch-height);
   height:var(--switch-height);
+  border:  var(--border);
   border-radius:var(--radius);
   box-sizing:border-box;
   background:var(--color-background);

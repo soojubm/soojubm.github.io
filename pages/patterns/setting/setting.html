@@ -1,11 +1,4 @@
 <main class="component">
-  <style>
-    test-text[variant='caption'] {
-      display: block;
-      margin: var(--space-2) 0 0 0;
-      line-height: var(--line-height);
-    }
-  </style>
   <div class="article" style="max-width: 560px">
     <header
       style="
@@ -48,7 +41,8 @@
     <test-tile variant="elevated" size="small">
       <test-menuitem label="Premium 개인" description="월간 구독">
         <test-avatar slot="avatar" size="large" default="true"></test-avatar>
-        <test-icon slot="action" name="arrow-right" aria-label="자세히보기"></test-icon>
+        <!-- <test-icon slot="action" name="arrow-right" aria-label="자세히보기"></test-icon> -->
+        <test-chip slot="action" aria-label="자세히보기">구독 관리</test-chip>
       </test-menuitem>
     </test-tile>
     <p style="margin: var(--space-3) 0 0; line-height: 1.4">
@@ -76,55 +70,38 @@
 
     <br /><br />
 
-    <test-text variant="subhead">프로필 사진</test-text>
-    <test-tile class="setting-item">
-      <test-avatar size="huge" default="true"></test-avatar>
-      <div style="height: var(--space-2)"></div>
-      <test-group variant="chip">
-        <test-chip>프로필 사진 추가 / 업데이트</test-chip>
-        <test-chip>기본 이미지로 변경</test-chip>
-      </test-group>
-      <div style="height: var(--space-2)"></div>
-      <p>10MB 이내의 JPEG, PNG, GIF 형식이어야 합니다.</p>
-
-      <test-callout variant="success">
-        프로필 사진을 업데이트했습니다. 멋져 보이네요, soojubm님!
-      </test-callout>
-      <test-callout variant="danger"> 프로필 사진을 삭제했습니다. </test-callout>
-    </test-tile>
-
-    <br /><br />
-
-    <!-- TODO :: group을 section으로 -->
     <test-group alignment="vertical">
-      <test-text variant="subhead">개인정보</test-text>
-      <test-tile size="small">
+      <!-- <test-text variant="subhead">프로필 정보</test-text> -->
+      <test-text variant="subhead">프로필</test-text>
+      <test-tile class="setting-item">
         <test-menuitem>
           <test-avatar slot="avatar" size="large" default="true"></test-avatar>
           <div slot="text">
-            <em class="avatar-badge"></em>
-            <test-text variant="word-weak">이메일 주소</test-text>
-            <test-text variant="word">soojubm@gmail.com</test-text>
+            <test-text variant="word-weak">프로필 사진</test-text>
+            <test-text variant="word">10MB 이내의 JPEG, PNG, GIF 형식이어야 합니다.</test-text>
           </div>
-          <div></div>
-          <test-icon slot="action" name="arrow-right"></test-icon>
         </test-menuitem>
+        <div style="height: var(--space-2)"></div>
+        <test-group variant="chip">
+          <test-chip>프로필 사진 추가 / 업데이트</test-chip>
+          <!-- <test-chip>기본 이미지로 변경</test-chip> -->
+        </test-group>
+        <div style="height: var(--space-2)"></div>
+        <!-- <div
+        style="
+          border-radius: var(--radius);
+          background-color: var(--color-background-weak);
+          margin: var(--space-2) -0.5rem 0.5rem;
+          padding: var(--space-2);
+        "
+      >
+        <test-text variant="caption"> 10MB 이내의 JPEG, PNG, GIF 형식이어야 합니다. </test-text>
+      </div> -->
+        <test-callout variant="success">
+          프로필 사진을 업데이트했습니다. 멋져 보이네요, soojubm님!
+        </test-callout>
+        <!-- <test-callout variant="danger"> 프로필 사진을 삭제했습니다. </test-callout> -->
       </test-tile>
-      <test-tile>
-        <test-menuitem>
-          <div slot="text">
-            <em class="avatar-badge"></em>
-            <test-text variant="label">배송지</test-text>
-            <test-text variant="word">배송지를 관리하고 기본 배송지를 설정하세요.</test-text>
-          </div>
-          <test-icon slot="action" name="arrow-right"></test-icon>
-        </test-menuitem>
-      </test-tile>
-    </test-group>
-
-    <br /><br />
-    <test-group alignment="vertical">
-      <test-text variant="subhead">프로필 정보</test-text>
       <test-group alignment="vertical">
         <test-tile>
           <test-menuitem>
@@ -138,7 +115,7 @@
             style="
               border-radius: var(--radius);
               background-color: var(--color-background-weak);
-              margin: var(--space-2) 0 0;
+              margin: var(--space-2) -0.5rem -0.5rem;
               padding: var(--space-2);
             "
           >
@@ -165,10 +142,49 @@
             </div>
             <test-icon slot="action" name="arrow-right"></test-icon>
           </test-menuitem>
-          <test-text variant="caption">관심있는 분야의 콘텐츠를 추천 받으세요.</test-text>
+          <div
+            style="
+              border-radius: var(--radius);
+              background-color: var(--color-background-weak);
+              margin: var(--space-2) -0.5rem -0.5rem;
+              padding: var(--space-2);
+            "
+          >
+            <test-text variant="caption">관심있는 분야의 콘텐츠를 추천 받으세요.</test-text>
+          </div>
         </test-tile>
       </test-group>
     </test-group>
+
+    <br /><br />
+
+    <!-- TODO :: group을 section으로 -->
+    <test-group alignment="vertical">
+      <test-text variant="subhead">개인정보</test-text>
+      <test-tile>
+        <test-menuitem>
+          <div slot="text">
+            <em class="avatar-badge"></em>
+            <test-text variant="word-weak">이메일 주소</test-text>
+            <test-text variant="word">soojubm@gmail.com</test-text>
+          </div>
+          <test-chip slot="action">Update email</test-chip>
+          <!-- <test-icon slot="action" name="arrow-right"></test-icon> -->
+        </test-menuitem>
+      </test-tile>
+      <test-tile>
+        <test-menuitem>
+          <div slot="text">
+            <em class="avatar-badge"></em>
+            <test-text variant="label">배송지</test-text>
+            <test-text variant="word">배송지를 관리하고 기본 배송지를 설정하세요.</test-text>
+          </div>
+          <test-icon slot="action" name="arrow-right"></test-icon>
+        </test-menuitem>
+      </test-tile>
+    </test-group>
+
+    <br /><br />
 
     <br /><br />
     <test-group alignment="vertical">
@@ -178,9 +194,18 @@
           <test-avatar slot="avatar"> </test-avatar>
           <test-switch slot="action" label=""></test-switch>
         </test-menuitem>
-        <test-text variant="caption">
-          매 주 월요일, 수요일, 금요일 아침에 받아볼 수 있어요.
-        </test-text>
+        <div
+          style="
+            border-radius: var(--radius);
+            background-color: var(--color-background-weak);
+            margin: var(--space-2) -0.5rem 0;
+            padding: var(--space-2);
+          "
+        >
+          <test-text variant="caption">
+            매 주 월요일, 수요일, 금요일 아침에 받아볼 수 있어요.
+          </test-text>
+        </div>
       </test-tile>
     </test-group>
     <br /><br />
@@ -203,9 +228,18 @@
             <test-avatar slot="avatar"> </test-avatar>
             <test-chip slot="action" status="disabled">Google 연동해제</test-chip>
           </test-menuitem>
-          <test-text variant="caption">
-            Opera 계정의 암호를 설정한 후 소셜 계정을 연결을 해제하세요.
-          </test-text>
+          <div
+            style="
+              border-radius: var(--radius);
+              background-color: var(--color-background-weak);
+              margin: var(--space-2) -0.5rem -0.5rem;
+              padding: var(--space-2);
+            "
+          >
+            <test-text variant="caption">
+              계정의 비밀번호를 설정한 후 소셜 계정을 연결을 해제하세요.
+            </test-text>
+          </div>
         </test-tile>
       </test-group>
     </test-group>
@@ -232,10 +266,10 @@
       <test-tile>
         <test-menuitem>
           <div slot="text">
-            <test-text variant="word-weak">비밀번호 변경</test-text>
+            <test-text variant="word-weak">비밀번호</test-text>
             <test-text variant="word">강력한 비밀번호로 보안을 강화하세요.</test-text>
           </div>
-          <test-icon slot="action" name="arrow-right"></test-icon>
+          <test-icon slot="action" name="arrow-right">비밀번호 변경</test-icon>
         </test-menuitem>
       </test-tile>
       <test-tile>
@@ -246,7 +280,7 @@
               ><test-link href="">비활성화 페이지</test-link>에서 할 수 있습니다.</test-text
             >
           </div>
-          <test-chip slot="action">비활성화</test-chip>
+          <test-chip slot="action" variant="danger">비활성화</test-chip>
         </test-menuitem>
       </test-tile>
     </test-group>

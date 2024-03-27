@@ -235,12 +235,18 @@
 
     <section class="component-case">
       <test-tile>
-        <test-text variant="body-bold">Field group</test-text>
-        <test-text variant="body"
-          >그룹이 되는 모든 필드는 선택 입력입니다. 다시말해 필수 입력 필드를 그룹으로 제공하지
-          마세요.</test-text
+        <test-titlebar heading="Field group"></test-titlebar>
+        <div style="height: var(--space-3)"></div>
+        <test-text variant="body-bold"></test-text>
+        <test-text variant="body">
+          그룹이 되는 모든 필드는 선택 입력입니다. 다시말해 필수 입력 필드를 그룹으로 제공하지
+          마세요.
+        </test-text>
+        <div style="height: var(--space-3)"></div>
+        <test-group
+          variant="textfield"
+          style="width: 100%; flex-wrap: nowrap; align-items: flex-end"
         >
-        <test-group variant="textfield" style="width: 100%; align-items: flex-end">
           <test-textfield label="Length" placeholder="cm unit"></test-textfield>
           <div style="display: flex; align-items: center; height: var(--size-large)">
             <test-icon name="xmark"></test-icon>
@@ -328,7 +334,7 @@
         <test-titlebar heading="장바구니"> </test-titlebar>
         <div style="height: var(--space-3)"></div>
         <test-menuitem>
-          <test-avatar slot="avatar" size="huge"">
+          <test-avatar slot="avatar" size="huge">
             <img src="/public/images/product_sample.png" alt="" />
           </test-avatar>
           <div slot="text">
@@ -396,22 +402,11 @@
         <test-separator></test-separator>
 
         <footer class="cart-summary">
-          <div class="cart-summary-subtotal">
-            <span class="cart-summary-label">총 상품금액</span>
-            <span class="cart-summary-value">₩ 30,000</span>
-          </div>
-          <div class="cart-summary-shipping">
-            <span class="cart-summary-label">배송료</span>
-            <span class="cart-summary-value">₩ 3,000</span>
-          </div>
-          <div class="cart-summary-shipping">
-            <span class="cart-summary-label">할인</span>
-            <span class="cart-summary-value"><span hidden>(-)</span> ₩ 2,000</span>
-          </div>
-          <div class="cart-summary-total">
-            <span class="cart-summary-label">최종 결제 금액</span>
-            <b class="cart-summary-value">₩ 37,000</b>
-          </div>
+          <test-keyvalue key="총 상품금액" value="₩ 30,000"></test-keyvalue>
+          <test-keyvalue key="배송료" value="₩ 3,000"></test-keyvalue>
+          <test-keyvalue key="할인" value="₩ 2,000"></test-keyvalue>
+          <test-keyvalue key="최종 결제 금액" value="₩ 37,000"></test-keyvalue>
+          <div style="height: var(--space-3)"></div>
           <div class="cart-summary-controls">
             <test-button variant="primary" isfullwidth="true">결제</test-button>
           </div>
@@ -421,7 +416,6 @@
   </article>
 </main>
 
-<!-- <test-text variant="body-bold">NumberField</test-text> -->
 <!-- <input type="text" inputmode="numeric" pattern="[0-9]*" />
 <small id="" class="textfield-helper" aria-live="assertive">pattern="[0-9]+"</small> -->
 <!-- <test-text variant="body-bold">DateRangeField / DateField</test-text> -->

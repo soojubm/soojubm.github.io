@@ -1,6 +1,24 @@
 <main class="component">
-  <!-- 아이콘버튼은 아바타가 아니라 칩/버튼 액션이다. -->
-
+  <style>
+    .group[data-segmented] {
+      display: flex;
+      gap: 0;
+    }
+    .group[data-segmented] test-chip {
+      border: 0;
+      border-radius: 0;
+    }
+    .group[data-segmented] .button[data-selected] {
+      background: var(--color-primary);
+      color: #fff;
+    }
+    .group[data-segmented] test-chip:nth-of-type(1) {
+      border-radius: var(--radius) 0 0 var(--radius);
+    }
+    .group[data-segmented] test-chip:nth-last-of-type(1) {
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+  </style>
   <article class="article js-observer js-scrollspy-section">
     <test-text variant="title">Chips</test-text>
     <test-text variant="body-large">
@@ -42,6 +60,12 @@
           expandable
         </test-chip>
       </test-group>
+      <!-- <test-separator></test-separator>
+      <div class="group" data-segmented="true">
+        <test-chip>사용자1</test-chip>
+        <test-chip>사용자1</test-chip>
+        <test-chip>사용자1</test-chip>
+      </div> -->
       <test-separator></test-separator>
       <test-group variant="chip">
         <test-chip icon="user" aria-label="사용자"></test-chip>
@@ -114,8 +138,8 @@
           정의해주어야 한다. 컴포넌트 합성하면 사실 이걸 그렇게 고민할 내용은 아니게 됨.
         </test-text>
         <test-text variant="body">
-          아이콘 vs 아이콘 버튼 vs 아바타 :: 아이콘과 아이콘 버튼(아바타에 가까움)을 구분. 16px
-          아이콘을 32 안에 넣으면
+          아이콘 vs 아이콘 버튼(아바타가 아니라 칩/버튼 액션이다) vs 아바타 :: 아이콘과 아이콘
+          버튼(아바타에 가까움)을 구분. 16px 아이콘을 32 안에 넣으면
         </test-text>
         <test-text variant="body">
           장식적인 검색 아이콘과 clickable한 액션. prefix는 장식. suffix는 액션? suffix에 유닛이
@@ -183,7 +207,7 @@
           </test-menuitem>
         </test-tile>
       </test-tile>
-
+      <br />
       <test-tile>
         <test-text variant="body-bold"> Toggle Button - Follow Button </test-text>
         <test-group variant="chip">
@@ -214,7 +238,9 @@
         <div style="height: var(--space-2)"></div>
         <test-group variant="chip">
           <test-chip status="active" class="js-toggle is-active">전체</test-chip>
+          <test-chip class="js-toggle">입금확인</test-chip>
           <test-chip class="js-toggle">결제완료</test-chip>
+          <test-chip class="js-toggle">배송중</test-chip>
         </test-group>
         <test-separator></test-separator>
         <test-text variant="body-bold">Multiple selections</test-text>

@@ -20,6 +20,12 @@
         <i slot="indicator" class="tablist-indicator"></i>
       </test-tablist> -->
       <!-- data-tabs='{"name": "Chris Coyier", "job": "Web Person"}' -->
+      <div style="display: flex; gap: 1rem">
+        <test-text variant="title">첫번째 탭</test-text>
+        <test-text variant="title" style="opacity: 0.5">두번째 탭</test-text>
+        <test-text variant="title" style="opacity: 0.5">세번째 탭</test-text>
+      </div>
+      <test-separator></test-separator>
       <test-tablist>
         <test-tab slot="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">
           첫번째 탭
@@ -84,9 +90,6 @@
         <!-- <dt>indicator (active bar)</dt> -->
         <dt>counterBadge slot</dt>
         <dd>Number</dd>
-        <dd></dd>
-        <dt>unreadBadge slot</dt>
-        <dd>Boolean</dd>
         <dd></dd>
       </dl>
     </section>
