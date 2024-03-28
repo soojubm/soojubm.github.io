@@ -1,22 +1,23 @@
-@custom-media --large (max-width: 1560px);
-@custom-media --small (max-width: 1080px);
-@custom-media --tiny (max-width: 880px);
-
 /*
 - 모든 surface는 border transparent를 갖는 것이 좋은가.
 - 모든 container는 position: relative를 갖는 것이 좋은가.
 */
 
+@custom-media --large (max-width: 1560px);
+@custom-media --small (max-width: 1080px);
+@custom-media --tiny (max-width: 880px);
+
 :root {
   color-scheme: light dark;
   /* // -apple-system === san-serif / system-ui === BlinkMacSystemFont */
-  /* --font-family: 'Pretendard', system-ui, sans-serif; */
-  --font-family: 'IBM Plex Sans', 'Gothic A1', system-ui, sans-serif;
+  --font-family: 'Pretendard', system-ui, sans-serif;
+  /* --font-family: 'IBM Plex Sans', 'Gothic A1', system-ui, sans-serif; */
   --font-family-heading: null;
   --font-family-body: null;
   --font-family-caption: null;
   --font-family-code: null;
 
+  /* font-size-heading / font-size-body  */
   --font-size-huge: 2rem;
   --font-size-large: 1.125rem; 
   --font-size-medium: .875rem;
@@ -60,8 +61,7 @@
   --gray100: #f5f6f5;
   /* --gray100: #fafbfa; */
   --gray150: #eff1ef;
-  /* --gray100: #f4f7f4;
-  --gray100: #f2f5f2; */
+  /* --gray100: #f2f5f2; */
   --gray200: #e4eae8;
   --gray200: #e4e9e7;
   --gray400: #979d9a;
@@ -75,21 +75,16 @@
   --red800: #f02849;
   --yellow800: gold;
 
+
+  --color-white: var(--gray0);
+  --color-black: #000;
+
   --color-primary: var(--green800);
   --color-primary-light: null;
   --color-secondary: var(--yellow800);
   --color-accent: var(--yellow800);
   --color-warning: var(--red800);
   --color-danger: var(--red800);
-
-  --color-temp1: cadetblue;
-  --color-temp2: darkseagreen;
-  --color-temp3: lightsalmon;
-  --color-temp4: rosybrown;
-  --color-temp1: aliceblue;
-  --color-temp2: #edf8ed;
-  --color-temp3: antiquewhite;
-  --color-temp4: #f6edf6;
 
   --color-google: #fff;
   --color-facebook: hsl(214, 89%, 52%);
@@ -100,7 +95,16 @@
   --color-newneek-gray: #ebebeb;
   --color-pinterest: #e60023;
   --color-github: #000;
-  --color-instagram: #333;
+  --color-instagram: #1c1e21;
+
+  --color-temp1: cadetblue;
+  --color-temp2: darkseagreen;
+  --color-temp3: lightsalmon;
+  --color-temp4: rosybrown;
+  --color-temp1: aliceblue;
+  --color-temp2: #edf8ed;
+  --color-temp3: antiquewhite;
+  --color-temp4: #f6edf6;
 
   --color-background: var(--gray0);
   --color-background-weak: var(--gray100);
@@ -162,8 +166,9 @@
   --border-thin: null;
   --border-thick: null;
 
+  /* // radius-round / radius-pill */
   --radius: 6px;
-  --radius-round: 50%;
+  --radius-round: 50%; 
   --radius-sharp: null;
   --radius-soft: null;
 
@@ -177,12 +182,11 @@
   --shadow: 0 0 0.5rem rgba(0,0,0,.05);
   --shadow-tile: 0 2px 0.3125rem rgba(23,24,24,.05),0 0.0625rem 0.125rem rgba(0,0,0,.15);
   --shadow-active: null;
-  --shadow-tile: 0px 0px 1rem rgba(0, 0, 0, 0.05);
 
-  /* --shadow: 0 0 .25rem rgb(0 0 0 / 7.5%); */
-  /* --shadow-tile: 0 0 0 1px rgb(0 0 0/5%),0 2px 2px rgb(0 0 0/4%); */
+  --shadow: 0 0 .25rem rgb(0 0 0 / 7.5%);
+  --shadow-tile: 0 0 0 1px rgb(0 0 0/5%),0 2px 2px rgb(0 0 0/4%);
 
-  --state-focus: 0 0 0 2px var(--color-border-hover);
+  --status-focus: 0 0 0 2px var(--color-border-hover);
   --status-hover: 0 0 0 2px rgba(0,0,0,.1);
 
   --duration: .4s;
@@ -245,7 +249,7 @@
 
   --border: 1px solid var(--color-border);
 
-  --state-focus: 0 0 0 2px var(--color-border-hover);
+  --status-focus: 0 0 0 2px var(--color-border-hover);
   --status-hover: 0 0 0 2px rgba(255,255,255,.25);
 
   --shadow: 0px 0px 2rem rgba(0, 0, 0, 0.25);

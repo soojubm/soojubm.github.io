@@ -5,8 +5,8 @@ export function makeStyleSheet(name) {
 
   return link
 }
-export function inheritStyle(shadow, container) {
-  const style = shadow.getAttribute('style')
+export function inheritStyle(this, container) {
+  const style = this.getAttribute('style')
   container.setAttribute('style', style || '')
 }
 

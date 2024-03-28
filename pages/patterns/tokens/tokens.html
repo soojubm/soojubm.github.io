@@ -335,6 +335,20 @@
       </test-text>
       <test-text variant="body-bold">Weights <sup>2</sup></test-text> -->
 
+      <div>
+        <test-text variant="title">Title</test-text>
+        <div class="space" style="height: var(--space-after-title)">
+          <span>space-after-title</span>
+        </div>
+        <test-text variant="body-large">kicker</test-text>
+        <test-separator></test-separator>
+        <test-text variant="subhead">subhead</test-text>
+        <div class="space" style="height: var(--space-after-subhead)">
+          <span>space-after-subhead</span>
+        </div>
+        <test-text variant="body">body</test-text>
+      </div>
+
       <section class="token-group">
         <div class="token-item">
           <b>--font-family: 'IBM Plex San', 'Gothic A1', sans-serif;</b>
@@ -457,6 +471,7 @@
       <blockquote>
         <test-text variant="subhead">Notes</test-text>
         <ul>
+          <li>https://www.delldesignsystem.com/foundations/typography/</li>
           <li>콘텐츠 컨테이너의 가로 크기. custom media의 max-width를 layout + @로 정의.</li>
           <li>
             폰트가 변경되면 폰트마다 baseline이 달라서 텍스트의 상하 간격이 안 맞을 수 있다.
@@ -672,17 +687,4 @@
             <span class="">var(--space-after-description)</span>
           </div>
           <time class="typography-caption">10 January, 2020 (버튼 그룹이 올 수 있습니다.)</time>
-        </div> -->
-<!-- <div>
-          <test-text variant="title">Title</test-text>
-          <div class="space" style="height: var(--space-after-title)">
-            <span>space-after-title</span>
-          </div>
-          <test-text variant="body-large">kicker</test-text>
-          <test-separator></test-separator>
-          <test-text variant="subhead">subhead</test-text>
-          <div class="space" style="height: var(--space-after-subhead)">
-            <span>space-after-subhead</span>
-          </div>
-          <test-text variant="body">body</test-text>
         </div> -->

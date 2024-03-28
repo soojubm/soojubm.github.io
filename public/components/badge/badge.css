@@ -11,7 +11,7 @@
   min-width: var(--size-tiny);
   height:var(--size-tiny);
   padding:0 var(--space-1);
-  border-radius: var(--radius);
+  border-radius: 4px;
   box-sizing: border-box;
   background-color: var(--color-background-weak);
   background:var(--green100);

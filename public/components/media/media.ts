@@ -12,10 +12,11 @@ class Media extends HTMLElement {
     if (this.src) image.src = this.src
     if (this.alt) image.alt = this.alt
 
-    const style = shadow.getAttribute('style')
+    shadow.appendChild(container)
+
+    const style = this.getAttribute('style')
     container.setAttribute('style', style || '')
 
-    shadow.appendChild(container)
     container.appendChild(makeStyleSheet('media'))
     container.appendChild(image)
 

@@ -364,7 +364,6 @@ mark {color:inherit;} mark::before {content: " [강조 시작] ";opacity:0;posit
 .is-focused, a:focus-visible, button:focus-visible, menu-item:focus-visible {
   outline: 2px solid #000;
   outline-offset: 2px;
-  /* box-shadow: var(--state-focus); */
 }
 
 /* .is-hovered {
