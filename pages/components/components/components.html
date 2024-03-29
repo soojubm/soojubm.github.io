@@ -21,14 +21,20 @@
 
     <section class="component-example">
       <test-group alignment="vertical">
-        <test-entity
-          size="huge"
-          label="이거 subhead는 형태이고 name은 역할인데."
-          description="list로 사용할 때 maxWidth"
-          description2="description area2."
-        >
-          <test-avatar slot="avatar" size="huge" variant="secondary"></test-avatar>
-        </test-entity>
+        <test-text variant="body">
+          <mark>페이지 레벨</mark> 정보의 주체. 단독으로 사용. 클릭할 수 있는 요소가 아니라 페이지를
+          대표하는 요소, 시각 정보로만 동작한다. 왜냐하면 이미 해당 페이지의 타이틀 롤이기 때문.
+        </test-text>
+        <test-tile>
+          <test-entity
+            label="windows-emoji"
+            description="tag page head"
+            description2="description area2."
+          >
+            <test-avatar slot="avatar" variant="secondary" size="huge">#</test-avatar>
+          </test-entity>
+        </test-tile>
+
         <p>
           TODO ??? ICON BUTTON ??? 지금의 문제는 아이콘 버튼이 없고, 칩으로 대체하기 때문에 이걸
           표현하기가 어렵다.
@@ -70,16 +76,6 @@
           ></test-icon>
           <small>공유하기</small>
         </button>
-
-        <test-text variant="body">
-          <mark>페이지 레벨</mark> 정보의 주체. 단독으로 사용. 클릭할 수 있는 요소가 아니라 페이지를
-          대표하는 요소, 시각 정보로만 동작한다. 왜냐하면 이미 해당 페이지의 타이틀 롤이기 때문.
-        </test-text>
-        <test-tile>
-          <test-entity label="windows-emoji" description="tag page head">
-            <test-avatar slot="avatar" variant="secondary" size="huge">#</test-avatar>
-          </test-entity>
-        </test-tile>
         <br /><br />
         <test-text variant="body-bold">바이라인Byline</test-text>
         <test-text variant="body"

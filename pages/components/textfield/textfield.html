@@ -77,12 +77,6 @@
         <test-textfield type="password" label="Password field">
           <test-chip slot="suffix" icon="eye-solid" aria-label="비밀번호 보기"> </test-chip>
         </test-textfield>
-        <test-textfield
-          type="number"
-          label="Number field (금액)"
-          value="20000"
-          placeholder="Textarea Placeholder..."
-        ></test-textfield>
         <!-- oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" -->
       </div>
       <test-separator></test-separator>
@@ -95,48 +89,6 @@
           placeholder="Textarea Placeholder..."
           style="height: auto"
         ></textarea>
-      </div>
-      <test-separator></test-separator>
-      <div class="counter js-counter" style="max-width: 200px">
-        <label for="numberfield" style="position: absolute; opacity: 0">
-          레이블 라이트하우스용
-        </label>
-        <test-chip
-          icon="minus"
-          class="js-counter-decrement"
-          aria-controls="numberfield"
-          tabindex="-1"
-        >
-        </test-chip>
-        <test-textfield size="small" value="20"></test-textfield>
-        <!-- <input
-          class="counter-input reset-input textfield-input js-counter-input js-number-input"
-          type="number"
-          name="counter1"
-          id="numberfield"
-          min="5"
-          max="20"
-          value="0"
-        /> -->
-        <test-chip icon="plus" class="js-counter-increment" tabindex="-1"> </test-chip>
-      </div>
-      <test-separator></test-separator>
-      <div style="display: flex; align-items: center; justify-content: space-between">
-        <div>
-          <test-text variant="word-strong">1 sandbox</test-text>
-          <test-text variant="word-weak"> $100.00 / addl sandbox </test-text>
-        </div>
-        <test-group variant="chip">
-          <test-chip
-            icon="minus"
-            class="counter-decrement js-counter-decrement"
-            aria-controls="numberfield"
-            tabindex="-1"
-          >
-          </test-chip>
-          <test-chip icon="plus" class="counter-increment js-counter-increment" tabindex="-1">
-          </test-chip>
-        </test-group>
       </div>
       <!-- <test-textfield type="text" label="" hiddenLabel placeholder="Placeholder...">
           <test-icon slot="prefix" name="xray-view"></test-icon>
@@ -174,8 +126,7 @@
         <dd></dd>
         <dt>helper<attr>?</attr></dt>
         <dd>string</dd>
-        <dd>validation / helper</dd>
-        <dd>isInvalid = helper.length === 0</dd>
+        <dd>validation / helper. isInvalid = helper.length === 0</dd>
         <dt>state</dt>
         <dd>'disabled' | 'readonly' | 'focused' | 'invalid'</dd>
         <dd></dd>
@@ -191,6 +142,73 @@
     </section>
 
     <section class="component-guide">
+      <test-tile style="display: flex; align-items: center; justify-content: center">
+        <div style="display: flex; align-items: center; justify-content: space-between">
+          <div class="counter js-counter" style="max-width: 200px">
+            <label for="numberfield" style="position: absolute; opacity: 0">
+              레이블 라이트하우스용
+            </label>
+            <test-chip
+              icon="minus"
+              class="js-counter-decrement"
+              aria-controls="numberfield"
+              tabindex="-1"
+            >
+            </test-chip>
+            <test-textfield size="small" value="20"></test-textfield>
+            <!-- <input
+              class="counter-input reset-input textfield-input js-counter-input js-number-input"
+              type="number"
+              name="counter1"
+              id="numberfield"
+              min="5"
+              max="20"
+              value="0"
+            /> -->
+            <test-chip icon="plus" class="js-counter-increment" tabindex="-1"> </test-chip>
+          </div>
+        </div>
+      </test-tile>
+      <div style="height: var(--space-3)"></div>
+      <test-tile style="display: flex; justify-content: center">
+        <div
+          style="display: flex; align-items: center; justify-content: space-between; width: 100%"
+        >
+          <div>
+            <test-text variant="word-strong">1 sandbox</test-text>
+            <test-text variant="word-weak"> $100.00 / addl sandbox </test-text>
+          </div>
+          <test-group variant="chip">
+            <test-chip
+              icon="minus"
+              class="counter-decrement js-counter-decrement"
+              aria-controls="numberfield"
+              tabindex="-1"
+            >
+            </test-chip>
+            <test-chip icon="plus" class="counter-increment js-counter-increment" tabindex="-1">
+            </test-chip>
+          </test-group>
+        </div>
+      </test-tile>
+
+      <br /><br />
+
+      <test-tile style="display: flex; justify-content: center">
+        <test-textfield
+          type="number"
+          label="Number field (금액)"
+          value="20000"
+          placeholder="Textarea Placeholder..."
+        ></test-textfield>
+      </test-tile>
+      <div style="height: var(--space-1)"></div>
+      <test-text variant="body-bold">
+        ShowMoreButton <span hidden>Image Button, CheckoutButton</span>
+      </test-text>
+
+      <test-separator></test-separator>
+
       <test-text variant="subhead">Visual Style</test-text>
       <test-text variant="body"> 레이블을 텍스트필드 왼쪽에 배치하지 마세요.</test-text>
       <test-text variant="body">

@@ -6,35 +6,43 @@
 
     <section class="component-guide">
       <test-text variant="subhead">Data Formatting</test-text>
-      <test-text variant="label">getDateFormat(20220610)</test-text>
-      <test-text variant="bold">30,000원 / ₩ 30,000 / 30,000 won</test-text>
-      <test-text variant="label">getCurrencyFormat(30000)</test-text>
-      <test-text variant="label">getNumberFotmat(30000)</test-text>
-      <test-text variant="bold">3만 / 30K</test-text>
+      <div style="height: var(--space-2)"></div>
+      <div style="display: flex; flex-direction: column; gap: var(--space-2)">
+        <test-menuitem>
+          <test-avatar slot="avatar"></test-avatar>
+          <div slot="text">
+            <test-text variant="word-bold">getDateFormat(20220610)</test-text>
+            <test-text variant="word-weak">test</test-text>
+          </div>
+        </test-menuitem>
+        <test-menuitem>
+          <test-avatar slot="avatar"></test-avatar>
+          <div slot="text">
+            <test-text variant="word-bold">getCurrencyFormat(30000)</test-text>
+            <test-text variant="word-weak">30,000원 / ₩ 30,000 / 30,000 won</test-text>
+          </div>
+        </test-menuitem>
+        <test-menuitem>
+          <test-avatar slot="avatar"></test-avatar>
+          <div slot="text">
+            <test-text variant="word-bold">getNumberFotmat(30000)</test-text>
+            <test-text variant="word-weak">3만 / 30K</test-text>
+          </div>
+        </test-menuitem>
+      </div>
 
-      <blockquote>
-        <ul class="checklist">
-          <li>
-            slotted은 정렬, 위치 대한 정의만 있어야 함.. 형태는 슬롯으로 들어온 친구가 하는 것.
-          </li>
-        </ul>
-      </blockquote>
+      <test-text variant="subhead">Event handler naming.</test-text>
 
-      <ul>
-        <li>서비스가 출시 환경이 웹온리(웹/태블릿+모바일) 웹+모바일앱(웹+태블릿/모바일)</li>
-        <li>naming: data-index 보다 name name을 숫자로 주면 됨.</li>
-        <li>role로 스타일링 하면 수정이 어려움. aria로 상태 표현은 좋다.</li>
-      </ul>
-
-      <test-text variant="body-bold">event handler naming.</test-text>
-      <test-text variant="body-bold">early return.</test-text>
+      <test-text variant="subhead">Early return.</test-text>
 
       <test-text variant="subhead">Types</test-text>
       <test-text variant="body">OptionType = { label: '', value: '' } </test-text>
 
       <test-text variant="subhead">CSS</test-text>
       <test-text variant="body-bold">linebreaker-desktop / linebreaker-mobile</test-text>
-      <test-text variant="body-bold">animation-stopper-resize hidden</test-text>
+      <test-text variant="body-bold">animation-stopper-resize / hidden</test-text>
+
+      <test-text variant="subhead">Attention required</test-text>
 
       <div>
         <label for="username">Username</label>
@@ -50,6 +58,16 @@
           Your username is the name that you use to log in to this service.
         </p>
       </div>
+
+      <blockquote>
+        <test-text variant="body-bold">Notes</test-text>
+        <ul class="checklist">
+          <li>slotted은 정렬, 위치만을 명세. 형태는 슬롯으로 들어온 친구가 하는 것.</li>
+          <li>서비스가 출시 환경이 웹온리(웹/태블릿+모바일) 웹+모바일앱(웹+태블릿/모바일)</li>
+          <li>naming: data-index 보다 name name을 숫자로 주면 됨.</li>
+          <li>role로 스타일링 하면 수정이 어려움. aria로 상태 표현은 좋다.</li>
+        </ul>
+      </blockquote>
     </section>
   </article>
 </main>

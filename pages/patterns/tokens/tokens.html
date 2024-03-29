@@ -114,14 +114,14 @@
             <test-tag variant="hashtag">color-border-danger/error</test-tag>
           </test-group>
         </article>
-        <article class="token-item" style="background-color: var(--red800)">
+        <article class="token-item" style="border: 0; background-color: var(--red800)">
           <!-- <figure class="token-item-avatar"></figure> -->
           <b style="color: #fff">--red800: #f02849</b>
           <test-group variant="hashtag">
             <test-tag variant="hashtag">color-danger</test-tag>
           </test-group>
         </article>
-        <article class="token-item" style="background: var(--color-accent)">
+        <article class="token-item" style="border: 0; background: var(--color-accent)">
           <!-- <figure class="token-item-avatar"></figure> -->
           <b>--yellow800: gold</b>
           <test-group variant="hashtag">
@@ -130,11 +130,9 @@
           </test-group>
         </article>
         <article class="token-item">
-          <figure class="token-item-avatar color-skeleton"></figure>
           <b>TODO Skeleton</b>
         </article>
         <article class="token-item">
-          <figure class="token-item-avatar"></figure>
           <b>TODO Transparent gradient</b>
         </article>
       </div>
@@ -191,8 +189,6 @@
         </article>
         <article class="token-item is-elevation" title="Surface or Elevation">
           <figure class="token-item-avatar" style="box-shadow: var(--shadow)"></figure>
-          <b>--shadow: 0 0 .5rem rgb(0 0 0 / 7.5%) // TODO</b>
-          <b>--shadow: 0 0 .5rem rgb(0 0 0 / 7.5%) // TODO</b>
           <b>--shadow: 0 0 .5rem rgb(0 0 0 / 7.5%) // TODO</b>
           <test-group variant="hashtag">
             <test-tag variant="hashtag">tooltip</test-tag>
@@ -314,41 +310,25 @@
         </div>
       </section>
 
-      <!-- <test-text variant="subhead">사이즈 토큰으로 추상화하지 않는 케이스</test-text>
-      <p>--navbar-height: <del>var(--size-huge)</del>5rem</p>
-      <p>--sidenav-width: null;</p> -->
-      <!-- <test-text variant="subhead">예외 케이스</test-text>
-      <p>switch height: 20px</p> -->
-
       <test-text variant="subhead">Text</test-text>
       <!-- <test-text variant="body"> 활자의 위계와 배치. 정보 계층. </test-text> -->
-
-      <!-- <test-tile variant="elevated" size="small">
+      <test-tile variant="elevated" size="small">
         <test-menuitem label="시스템 폰트로 보기" class="js-default-font">
           <test-avatar slot="avatar" icon="font-question"></test-avatar>
         </test-menuitem>
-      </test-tile> -->
-
+      </test-tile>
       <!-- <test-text variant="body-bold">Typefaces <sup>2</sup></test-text>
       <test-text variant="body-bold">
         Sizes <sup><del>5</del> 3</sup>
       </test-text>
       <test-text variant="body-bold">Weights <sup>2</sup></test-text> -->
-
-      <div>
-        <test-text variant="title">Title</test-text>
-        <div class="space" style="height: var(--space-after-title)">
-          <span>space-after-title</span>
-        </div>
-        <test-text variant="body-large">kicker</test-text>
-        <test-separator></test-separator>
+      <!-- <div>
         <test-text variant="subhead">subhead</test-text>
         <div class="space" style="height: var(--space-after-subhead)">
           <span>space-after-subhead</span>
         </div>
         <test-text variant="body">body</test-text>
-      </div>
-
+      </div> -->
       <section class="token-group">
         <div class="token-item">
           <b>--font-family: 'IBM Plex San', 'Gothic A1', sans-serif;</b>
@@ -367,6 +347,11 @@
           <b>--font-line-height: 1.5 :: heading, word</b>
           <b>--font-line-height: null</b>
           <!-- <p>14px 기본폰트일 때 1.5의 모호성.</p> -->
+        </div>
+        <div class="token-item">
+          <test-text variant="body-bold">사이즈 토큰으로 추상화하지 않는 케이스</test-text>
+          <b>--navbar-height: <del>var(--size-huge)</del>5rem</b>
+          <b>--sidenav-width: null;</b>
         </div>
       </section>
 
@@ -481,12 +466,13 @@
             animation :: 콘텐츠보다 액션이 강조되지 않도록 뷰포트 내에서 delay를 최대 3개로
             제한합니다. inactive로 변경될 때(닫기 등) 즉시(instantly) 실행 합니다.
           </li>
-          <li>spacing ::</li>
           <li>
             outset: 컴포넌트의 상하 간격. 시각 보정을 위해 마이너스minus 간격을 사용할 수 있다.
           </li>
-          <li>inset: 타일 내부 간격 - squish inset/stretch inset</li>
-          <li>gap: 동일한 컴포넌트 그룹의</li>
+          <li>
+            inset: 타일 내부 간격 - squish inset/stretch inset 를 정의할 수도 있고 타일 내부 제목
+            영역의 line-height 고려한 시각보정이 필요할 수 있다리.
+          </li>
           <li>
             display grid를 사용하면 마진과 거터를 제외한 나머지가 결국 칼럼이 됨. 또는 width
             시스템으로 대체할 수 있다.
@@ -497,7 +483,6 @@
             위한 높은 고도. 사용자는 시각적 단어로 우선순위를 인식하고 인터렉션. 시각적 우선순위는
             그림자로만 줄 수 있는 것은 아님. overay 등으로 우선순위를 설정할 수도 있음.
           </li>
-
           <li>
             컴포넌트에서 동일한 형태를 토큰으로 대응할 때를 컴포넌트 토큰? 또는 특수한 토큰을
             활용하게 될 수 있다. box-inset-small 과 같은.
@@ -526,8 +511,7 @@
       </blockquote>
     </article>
 
-    <!-- <article class="article js-scrollspy-section">
-      <test-text variant="title">Positioning 이거 Utility</test-text>
+    <!-- <test-text variant="title">Positioning 이거 Utility</test-text>
       <test-text variant="body-large">
         동일 역할을 동일 위치 원칙이 있다. 도메인이나 서비스 특수성이 있을 수 있지만 상당 보편적인 경험에 기반한다. 그래서 right top 같은 이름보다
         역할 기반 이름을 달아 줄 필요. 아니면 그냥 컴포넌트 토큰?
@@ -548,143 +532,11 @@
           <b>@mixin position-root-bottom</b>
         </div>
       </div>
-    </article> -->
-
-    <!-- <test-text variant="title">Opacity</test-text>
+      
+      <test-text variant="title">Opacity</test-text>
       <test-text variant="body-large">요소의 투명도.</p>
       <div class="token-group">
         <div class="token-item"><test-avatar></test-avatar><b>overay / underlay</b></div>
       </div> -->
   </section>
 </main>
-
-<!-- <div
-          style="
-            display: flex;
-            align-items: center;
-            width: 100%;
-            height: 10rem;
-            text-align: center;
-            font-size: var(--font-size-small);
-            padding: 0;
-            position: relative;
-          "
-        >
-          <div
-            class="space"
-            style="width: 5%; margin: 0; writing-mode: vertical-rl; color: var(--color-text)"
-          >
-            <span class="">var(--grid-margin)</span>
-          </div>
-          <div
-            style="
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              width: calc(50% - 5% - 0.5rem);
-              height: 100%;
-              color: var(--color-text);
-            "
-          >
-            column<br />var(--grid-column)
-          </div>
-          <div
-            class="space"
-            style="width: 1rem; writing-mode: vertical-rl; color: var(--color-text)"
-          >
-            <span class="">var(--grid-gutter)</span>
-          </div>
-          <div
-            style="
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              width: calc(50% - 5% - 0.5rem);
-              height: 100%;
-              color: var(--color-text);
-            "
-          >
-            colum<br />var(--grid-column)
-          </div>
-          <div
-            class="space"
-            style="width: 5%; margin: 0; writing-mode: vertical-rl; color: var(--color-text)"
-          >
-            <span class="">var(--grid-margin)</span>
-          </div>
-        </div> -->
-<!-- <div class="spacing-card">
-          <div
-            class="space"
-            style="
-              height: var(--space-inset-tile);
-              position: absolute;
-              left: 0;
-              right: 0;
-              top: -1px;
-            "
-          >
-            <span class="">var(--space-inset-tile)</span>
-          </div>
-          <div
-            class="space"
-            style="
-              height: var(--space-inset-tile);
-              position: absolute;
-              left: 0;
-              right: 0;
-              bottom: -1px;
-              z-index: 0;
-            "
-          >
-            <span class="">var(--space-inset-tile)</span>
-          </div>
-          <div
-            class="space"
-            style="
-              width: var(--space-inset-tile);
-              height: 100%;
-              writing-mode: vertical-lr;
-              position: absolute;
-              left: 0;
-              top: 0;
-              bottom: 0;
-              z-index: 0;
-            "
-          >
-            <span class="">var(--space-inset-tile)</span>
-          </div>
-          <div
-            class="space"
-            style="
-              width: var(--space-inset-tile);
-              height: 100%;
-              writing-mode: vertical-lr;
-              position: absolute;
-              right: 0;
-              top: 0;
-              bottom: 0;
-              z-index: 0;
-            "
-          >
-            <span class="">var(--space-inset-tile)</span>
-          </div>
-          <test-avatar size="huge"></test-avatar>
-          <div class="space" style="height: var(--space-after-avatar)">
-            <span class="">var(--space-after-avatar)</span>
-          </div>
-          <h4 style="font-size: var(--font-size-large)">
-            선약이 있어서 ✋ <span style="display: block">자아실현은 못할 것 같아요.</span>
-          </h4>
-          <div class="space" style="height: var(--space-after-subhead)">
-            <span class="">var(--space-after-subhead)</span>
-          </div>
-          <p class="typography-paragraph">
-            서브헤드와 디스크립션 혹은 패러그라프는 이렇게 작성하세요. 타이틀의 행간이 조정되었기
-            때문에 시각보정이 필요할 수도 있어요. 또는 line-height 조절이 필요할 수 있어요.
-          </p>
-          <div class="space" style="height: var(--space-after-description)">
-            <span class="">var(--space-after-description)</span>
-          </div>
-          <time class="typography-caption">10 January, 2020 (버튼 그룹이 올 수 있습니다.)</time>
-        </div> -->

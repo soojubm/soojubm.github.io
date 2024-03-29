@@ -60,7 +60,7 @@ input[type=search]::-webkit-search-results-decoration {display:none;}
 /* textfield 중복 / for select */
 :host,
 .textfield {
-  width: 100%;
+  /* width: 100%; */
   position:relative;
 
   --textfield-height: var(--size-large);
