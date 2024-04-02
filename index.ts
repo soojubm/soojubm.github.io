@@ -36,20 +36,11 @@ window.addEventListener('load', detectLoad)
 document.addEventListener('DOMContentLoaded', domEvents)
 // window.addEventListener('hashchange', domEvents)
 
-// ! 여기까지 리팩토링 완료...
-
 document.addEventListener('DOMContentLoaded', () => {
   stopAnimation()
 })
 
 document.addEventListener('click', closeParentElement)
-function closeParentElement(event) {
-  const targetElement = event.target.closest('.js-close')
-  if (!targetElement) return
-
-  targetElement.parentNode.hidden = true
-}
-
 const setDocumentTitle = title => (document.title = `이경수 ${title}`)
 
 async function domEvents() {
@@ -144,13 +135,6 @@ async function domEvents() {
 // 	else return findClassRecursive(element.parentNode, className, depth + 1);
 // };
 
-// var getClosest = (elem, selector) => {
-// 	for (; elem && elem !== document; elem = elem.parentNode) {
-// 		if (elem.matches(selector)) return elem;
-// 	}
-// 	return null;
-// };
-
 // document.addEventListener('input', event => {
 // const helpers = document.querySelectorAll('.textfield-helper');
 // helpers.forEach(helper => helper.style.display = 'none');
@@ -196,19 +180,6 @@ async function domEvents() {
 // 	});
 // 	if(i === images.length) i = 0;
 // }, 5000);
-
-// function bustCache() {
-//   const linkElements = document.querySelectorAll('link')
-//   linkElements.forEach(element => {
-//     const isStylesheet = element.getAttribute('rel') === 'stylesheet'
-//     if (!isStylesheet) return
-
-//     const href = element.getAttribute('href')
-//     const timestamp = new Date().getTime()
-//     const cacheBuster = `${href}?cacheBuster=${timestamp}`
-//     element.setAttribute('href', cacheBuster)
-//   })
-// }
 
 // function addToPendingWork(promise) {
 //   busyspinner.hidden = false
@@ -295,3 +266,10 @@ async function domEvents() {
 //   },
 // }
 // const companyName = company?.['name'] ?? 'default value'
+
+function closeParentElement(event) {
+  const targetElement = event.target.closest('.js-close')
+  if (!targetElement) return
+
+  targetElement.parentNode.hidden = true
+}
