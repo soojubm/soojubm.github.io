@@ -6,6 +6,11 @@ import '../components.css'
 
 import '/public/stylesheets/shared.css'
 import '/public/stylesheets/components/form.css'
+// import carousel from '/public/javascripts/event/carousel'
+
+// document.addEventListener('DOMContentLoaded', () => {
+//   carousel()
+// })
 
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelector('main')!.innerHTML = navbar + main + footer

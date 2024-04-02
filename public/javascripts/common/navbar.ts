@@ -17,54 +17,46 @@ export function initializeNavbar() {
 }
 
 export function toggleNavbarMenu(event) {
-  const trigger = (event.target as HTMLElement).closest('.js-navbar-toggle')
+  const trigger = event.target.closest('.js-navbar-toggle')
   if (!trigger) return
 
   const menuElement = trigger.nextElementSibling
 
   document.body.classList.toggle(OPENED_MENU_CLASSNAME, !isOpendNavbarMenu())
 
-  trigger?.setAttribute('aria-expanded', String(isOpendNavbarMenu()))
-  menuElement?.setAttribute('aria-hidden', String(!isOpendNavbarMenu()))
+  trigger.setAttribute('aria-expanded', String(isOpendNavbarMenu()))
+  menuElement.setAttribute('aria-hidden', String(!isOpendNavbarMenu()))
 
   const tabIndex = String(isOpendNavbarMenu() ? '0' : '-1')
 
-  menuElement?.querySelectorAll('a').forEach(element => {
+  menuElement.querySelectorAll('a').forEach(element => {
     element.setAttribute('tabindex', tabIndex)
   })
 
-  function toggleAria(ariaType, force) {
-    // Element.prototype
-  }
-  // navbarMenu?.addEventListener('click', event => event.stopPropagation())
+  function toggleAria(ariaType, force) {}
 }
 
-// todo refactoring
 document.addEventListener('click', toggleDarkTheme)
-
 document.addEventListener('click', toggleNavbarMenu)
 
 document.addEventListener('DOMContentLoaded', () => {
   // lazyLoading()
   detectTheme()
-  const { pathname } = window.location
 
   document.querySelectorAll('.sidebar-menu a').forEach(item => {
+    // if (pathname.includes(item.getAttribute('href') || '')) {
+    //   item.setAttribute('aria-current', 'page')
+    // }
     let temp = 0
-    if (pathname.includes(item.getAttribute('href') || '')) {
-      item.setAttribute('aria-current', 'page')
-    }
-
     const a = document.querySelector('.sidebar-menu')
+
+    console.log(a?.scrollTop)
 
     item.addEventListener('click', () => {
       localStorage.setItem('tttt', String(a?.scrollTop))
     })
 
-    if (a) {
-      // a.scrollTo(0, document.querySelector('[aria-current=page')?.clientTop || 0)
-      a.scrollTo(0, Number(localStorage.getItem('tttt')))
-    }
+    a?.scrollTo(0, Number(localStorage.getItem('tttt')))
   })
 
   function lazyLoading() {
@@ -107,8 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
       } catch (error) {}
     }
   }
-
-  //     document.addEventListener('scroll', lazyload)
-  //     window.addEventListener('resize', lazyload)
-  //     window.addEventListener('orientationChange', lazyload)
+  // document.addEventListener('scroll', lazyload)
+  // window.addEventListener('resize', lazyload)
+  // window.addEventListener('orientationChange', lazyload)
 })

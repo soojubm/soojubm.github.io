@@ -2,9 +2,7 @@
 
 // import { copyClipboard } from './javascripts/utils/formatUtils.js'
 // import detectOnline from './public/javascripts/common'
-// import './public/stylesheets/style.css'
 // import input from './public/javascripts/input/index'
-
 // import routePage from './public/javascripts/router'
 import { stopAnimation } from './public/javascripts/utils/optimizationUtils'
 
@@ -15,8 +13,6 @@ import toggleElement from './public/javascripts/event/toggleElement'
 import tab from './public/javascripts/event/tab'
 import scrollspy from './public/javascripts/event/scrollspy'
 import scrollAnimation from './public/javascripts/event/scrollAnimation'
-
-import toggleTheme from './public/javascripts/theme/toggleTheme'
 
 import { initializeNavbar } from './public/javascripts/common/navbar'
 
@@ -40,8 +36,6 @@ window.addEventListener('load', detectLoad)
 document.addEventListener('DOMContentLoaded', domEvents)
 // window.addEventListener('hashchange', domEvents)
 
-document.addEventListener('click', toggleTheme)
-
 // ! 여기까지 리팩토링 완료...
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -56,19 +50,14 @@ function closeParentElement(event) {
   targetElement.parentNode.hidden = true
 }
 
-// common 요소는 1번 이벤트..
-// ! hashchange 마다 cn 생성하는 것이 문제.
-// document.addEventListener('DOMContentLoaded', () => {
-//   carousel()
-// })
-
 const setDocumentTitle = title => (document.title = `이경수 ${title}`)
 
 async function domEvents() {
   modal({ selector: '.js-modal' })
   tab()
 
-  const hash = window.location.hash.substring(1)
+  // const hash = window.location.hash.substring(1)
+  const hash = window.location.pathname.substring(1)
   setDocumentTitle(hash)
 
   // todo
@@ -82,20 +71,13 @@ async function domEvents() {
   changeMedia(mediaSizeSmall)
 
   // await routePage()
-
   // const page = routes.find(route => route.path.substring(1) === hash)
-  // const pageTitleElement = document.querySelector('.js-page-title')
-  // pageTitleElement?.textContent = page?.name || '페이지타이틀'
 
   // loadLazyImages()
 
   // function format(command, value) {
   //   document.execCommand(command, false, value);
   // }
-
-  // input.checkbox({ checkAllSelector: '.js-checkall', checkSelector: '.js-check' })
-  // input.textarea()
-  // input.counter()
 
   toggleElement({ selector: '.js-toggle' })
 
@@ -104,29 +86,6 @@ async function domEvents() {
   // get toggle trigger name  dataset.toggle
   // set toggle classname on body trigger name
   // styling
-
-  document.querySelectorAll('.js-test-toggle').forEach(item => {
-    item.addEventListener('click', event => {
-      const target = event.target as any
-      console.log('ttttt', target)
-    })
-  })
-
-  document.addEventListener('click', event => {
-    // console.log(event.target)
-    const target = event.target as any
-    if (!target.closest('.js-test-toggle')) return
-
-    alert()
-
-    const containerElement = target.closest('.profile-body')
-    const siblingElements = [...target.parentElement.children]
-
-    containerElement.classList.toggle('list', target.dataset.name === 'list')
-
-    siblingElements.forEach(siblingElement => siblingElement.classList.remove('is-selected'))
-    target.classList.add('is-selected')
-  })
 
   type Parameters = {
     selector: string
@@ -173,7 +132,6 @@ async function domEvents() {
   // element should be replaced with the actual target element on which you have applied scroll, use window in case of no target element.
   // document.addEventListener('scroll', throttle(test))
 
-  carousel()
   // countDownClock(20, 'days')
 }
 
