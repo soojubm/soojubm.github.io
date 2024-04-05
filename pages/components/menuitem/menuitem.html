@@ -128,6 +128,7 @@
             팔로우.
           </li>
           <li>맥락. 스위치는 설정 메뉴, 체크박스는 선택 메뉴.</li>
+          <li>Action Menu. vs Dropdown Menu. 모든 메뉴가 액션이다.</li>
         </ul>
       </blockquote>
     </section>
@@ -222,34 +223,43 @@
         <test-titlebar heading="공개 대상 선택"></test-titlebar>
         <br />
         <test-group variant="menuitem">
-          <test-menuitem ize="large" label="전체 공개" description="Facebook 안팎의 모든 사람">
+          <test-menuitem size="large">
             <test-radio slot="check" checked></test-radio>
             <test-avatar slot="avatar" size="large" icon="group"> </test-avatar>
+            <div slot="text">
+              <test-text variant="word-strong">전체 공개</test-text>
+              <test-text variant="word-weak">Facebook 안팎의 모든 사람</test-text>
+            </div>
           </test-menuitem>
-          <test-menuitem
-            class="is-active"
-            size="large"
-            label="친구만"
-            description="회원님의 Facebook 친구"
-          >
+          <test-menuitem size="large">
             <test-radio slot="check"></test-radio>
             <test-avatar slot="avatar" size="large" icon="group"> </test-avatar>
+            <div slot="text">
+              <test-text variant="word-strong">친구만</test-text>
+              <test-text variant="word-weak">회원님의 Facebook 친구</test-text>
+            </div>
           </test-menuitem>
-          <test-menuitem data-size="large" label="나만 보기" description="부끄러우니까">
+          <test-menuitem data-size="large">
             <test-radio slot="check"></test-radio>
             <test-avatar slot="avatar" size="large" icon="lock"> </test-avatar>
-            <span class="item-label" style="line-height: var(--size-large)"></span>
-            <spa slot="description"></spa>
+            <div slot="text">
+              <test-text variant="word-strong">나만 보기</test-text>
+              <test-text variant="word-weak">부끄러우니까</test-text>
+            </div>
           </test-menuitem>
         </test-group>
       </test-tile>
       <test-tile>
         <test-tile>
-          <test-text variant="word-strong">Personal License</test-text>
-          <test-text variant="word-weak">1 user</test-text>
-          <div style="width: max-content; position: absolute; right: 0; top: 21px">
-            <test-text variant="word-strong"> 18,800 KRW </test-text>
-          </div>
+          <test-menuitem>
+            <div slot="text">
+              <test-text variant="word-strong">Personal License</test-text>
+              <test-text variant="word-weak">1 user</test-text>
+            </div>
+            <div slot="action">
+              <test-text variant="word-strong"> 18,800 KRW </test-text>
+            </div>
+          </test-menuitem>
         </test-tile>
         <div style="height: var(--space-3)"></div>
         <test-group>
@@ -314,10 +324,10 @@
               <test-avatar slot="avatar"></test-avatar>
             </test-menuitem>
           </test-tile>
-          <div style="height: var(--space-2)"></div>
+          <div style="height: var(--space-1)"></div>
           <test-text variant="label"
-            >칩 그룹으로 필터링을 제공하니 팔로우 버튼과 위계가 안 맞다. 아바타도 너무 작아서 유저
-            사이의 간격이 좁아 콘텐츠 분리가 안 된다.</test-text
+            >칩 그룹으로 필터링을 제공하니 팔로우 버튼과 위계 충돌. 아바타가 작아서 콘텐츠 분리가 안
+            된다.</test-text
           >
         </test-group>
       </test-tile>

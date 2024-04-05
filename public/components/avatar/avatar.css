@@ -29,7 +29,6 @@ img {
   box-shadow: var(--color-background) 0px 0px 0px 2px;
   box-sizing: border-box;
   position: relative;
-
 }
 .avatar[data-default=true] {
   background-image: url('/public/images/soojubm.png');

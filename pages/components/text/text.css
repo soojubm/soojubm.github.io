@@ -112,7 +112,7 @@
   position:relative;
   z-index:var(--zindex-default);
 }
-.hero-background {@mixin bleeding;background:inherit;}
+.hero-background {background:inherit;}
 .hero-eyebrow {display:block;margin:0 0 var(--space-2) 0;font-weight:var(--font-weight-bold);color:var(--color-primary);}
 .hero-title {@mixin text-title;}
 .hero-description {margin:var(--space-after-title) 0 0 0;@mixin text-body-large;}

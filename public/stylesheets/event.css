@@ -92,7 +92,6 @@
   position: relative;
 }
 .event-note-background {
-  /* @mixin bleeding; */
   background: var(--color-background-weak);
 }
 .event-note-title {

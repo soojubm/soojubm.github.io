@@ -31,7 +31,14 @@
     <test-text variant="body-large"> 모바일 친화적인 헤더. 페이지 헤더 역할.</test-text>
 
     <section class="component-example">
-      <test-titlebar heading="Product" class="js-titlebar" role="navigation">
+      <test-titlebar heading="수줍이님 뒤로가기 아이콘이 없는 형태가 필요" role="navigation">
+        <test-group slot="action" variant="chip">
+          <test-chip variant="plain" icon="cart"> </test-chip>
+          <test-chip variant="plain" icon="cart"> </test-chip>
+        </test-group>
+      </test-titlebar>
+      <test-separator></test-separator>
+      <test-titlebar heading="Product" role="navigation">
         <test-chip slot="action" variant="plain" icon="cart"> </test-chip>
       </test-titlebar>
       <!-- <div class="titlebar-backdrop js-header"></div> -->
@@ -137,6 +144,7 @@
           bottom navigation의 label은 예외적으로 10px입니다. 예외 케이스는 어디에서 정의해야 하는가.
           => 컴포넌트 스코프 + 관련 패턴 페이지
         </li>
+        <li>Global Navigation. top and bottom.</li>
       </ul>
     </section>
 

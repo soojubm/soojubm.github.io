@@ -28,6 +28,7 @@ const path = require('path')
 const HTML_TEMPLATE = './index.html'
 
 const patterns = [
+  'mobile',
   'layout',
   'dashboard',
   'dialog',

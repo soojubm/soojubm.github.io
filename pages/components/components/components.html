@@ -106,26 +106,19 @@
       정의해야 함.</test-text
     >
 
-    <blockquote>
-      <p>
-        Link가 문단과 함께 사용되면 line-height-large가 되어야 한다. 링크가 word와 함께 사용될 수
-        있는가? 블라블라? + ~하기 패턴.
-      </p>
-    </blockquote>
-
     <dl class="article-aka">
       <dt>a.k.a.</dt>
       <dd title="">Anchor</dd>
     </dl>
 
     <section class="component-example">
-      <p style="display: flex; flex-wrap: wrap; gap: var(--spae-2)">
+      <p>
         형무소 안에서는 소장의 말이 곧 법이었으며 죄수들의 잘못과 실수는 결코 용납되지 않는다.
         어머니의 사망 소식을 듣고 인해 2번이나 탈옥을 시도했다가 체포된
         <test-link href="#">루크</test-link>의 발에 쇠통이 채워지며 루크는…
         <test-link href="#">더 보기</test-link>
       </p>
-      <br />
+      <div style="height: var(--space-3)"></div>
       <test-group variant="tag">
         <test-tag variant="hashtag">이것은헤시태그</test-tag>
         <test-tag variant="hashtag">해시태그는클릭할수있다?</test-tag>
@@ -144,12 +137,14 @@
           View Less <test-icon name="nav-arrow-up"></test-icon>
         </button>
       </p>
+      <test-separator></test-separator>
+      <a href="#" style="color: var(--color-text); font-weight: bold">더보기</a>
     </section>
 
     <section class="component-props">
       <test-text variant="subhead">Props</test-text>
       <dl>
-        <dt>style</dt>
+        <dt>variant</dt>
         <dd>'inside' | 'outside'</dd>
         <dd>
           단락 내부와 외부에서의 형태를 구분합니다. 단락 내부에서는 본문 텍스트와 대비를 높이기 위해
@@ -165,6 +160,14 @@
     </section>
 
     <section class="component-guide">
+      <blockquote>
+        <ul class="checklist">
+          <li>
+            Link가 문단과 함께 사용되면 line-height-large가 되어야 한다. 링크가 word와 함께 사용될
+            수 있는가? 블라블라? + ~하기 패턴.
+          </li>
+        </ul>
+      </blockquote>
       <test-text variant="subhead">Use do</test-text>
       <test-text variant="body"
         >text button과의 차이. Link는 항상 텍스트 단락과 함께 사용합니다. 버튼은 단독으로 쓰이거나
