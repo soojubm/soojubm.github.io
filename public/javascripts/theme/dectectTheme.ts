@@ -1,8 +1,6 @@
 import { DARKTHEME_SELECTOR, DARK_THEME_CLASS } from './const'
 
 // todo 바로 swithc 셀렉터로
-// todo 같은 기능의 버튼이 여러 군데에 있을 때.
-
 function detectTheme() {
   const savedTheme = localStorage.getItem('theme')
   if (!savedTheme) return

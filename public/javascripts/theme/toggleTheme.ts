@@ -4,16 +4,19 @@ import { DARKTHEME_SELECTOR, DARK_THEME_CLASS, LIGHT_THEME_CLASS, isDarkTheme } 
 function toggleDarkTheme(event) {
   if (!event.target.closest(DARKTHEME_SELECTOR)) return
 
-  document.body.dataset.theme = document.body.dataset.theme === 'dark' ? '' : 'dark'
+  document.body.dataset.theme = document.body.dataset.theme === 'dark' ? 'light' : 'dark'
+
+  localStorage.setItem('theme', isDarkTheme() ? DARK_THEME_CLASS : LIGHT_THEME_CLASS)
 
   const darkThemeTriggers = document.querySelectorAll(DARKTHEME_SELECTOR)
   darkThemeTriggers?.forEach((element: any) => {
-    // todo toggle과 switch 2종류..
-    element.querySelector('input').checked = isDarkTheme()
+    // TODO 트기거가 스위치인 경우에만.
+    if (element.querySelector('[type=checkbox]')) {
+      element.querySelector('[type=checkbox]').checked = isDarkTheme()
+    }
   })
 
   // saveTheme
-  localStorage.setItem('theme', isDarkTheme() ? DARK_THEME_CLASS : LIGHT_THEME_CLASS)
 }
 
 // function toggleTheme() {
