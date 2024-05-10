@@ -17,7 +17,7 @@
 
 .post-body {position:relative;} /* graident 때문에 아래요소에서 마진값주기 */
 .post-body-kicker {margin:2rem 0 2.5rem 0;font-size:var(--font-size-large);position:relative;}
-.post-body-image {height:240px;overflow:hidden;margin:3rem -10rem 3.5rem;border-radius:var(--radius);background-color: var(--color-background-strong);}
+.post-body-image {height:240px;overflow:hidden;margin:3rem -5vw 3.5rem;border-radius:var(--radius);background-color: var(--color-background-strong);}
 
 .post-body-paragraph:first-line {}
 .post-body-paragraph:not(:nth-of-type(1))::first-letter {padding-left:0;}
@@ -66,8 +66,6 @@
 
 
 @media (--small) {
-	.post-body-image {float:none;margin-left:-5vw;margin-right:-5vw;}
-
 	.post-pagination {flex-wrap:wrap;flex-direction:column-reverse;}
 	.post-pagination-previous {width:100%;margin-top: 0;}
 	.post-pagination-next {width:100%;margin:0 0 var(--space-4) 0;}

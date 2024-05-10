@@ -52,6 +52,87 @@
 
     <!-- CSS Reset : BEGIN -->
     <style>
+      /* What it does: Tells the email client that only light styles are provided but the client can transform them to dark. A duplicate of meta color-scheme meta tag above. */
+      :root {
+        color-scheme: light;
+        supported-color-schemes: light;
+      }
+
+      /* What it does: Remove spaces around the email design added by some email clients. */
+      /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+      html,
+      body {
+        margin: 0 auto !important;
+        padding: 0 !important;
+        height: 100% !important;
+        width: 100% !important;
+      }
+
+      /* What it does: Stops email clients resizing small text. */
+      * {
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+      }
+
+      /* What it does: Centers email on Android 4.4 */
+      div[style*='margin: 16px 0'] {
+        margin: 0 !important;
+      }
+      /* What it does: forces Samsung Android mail clients to use the entire viewport */
+      #MessageViewBody,
+      #MessageWebViewDiv {
+        width: 100% !important;
+      }
+
+      /* What it does: Stops Outlook from adding extra spacing to tables. */
+      table,
+      td {
+        mso-table-lspace: 0pt !important;
+        mso-table-rspace: 0pt !important;
+      }
+
+      /* What it does: Fixes webkit padding issue. */
+      table {
+        border-spacing: 0 !important;
+        border-collapse: collapse !important;
+        table-layout: fixed !important;
+        margin: 0 auto !important;
+      }
+
+      /* What it does: Uses a better rendering method when resizing images in IE. */
+      img {
+        -ms-interpolation-mode: bicubic;
+      }
+
+      /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+      a {
+        text-decoration: none;
+      }
+
+      /* What it does: A work-around for email clients meddling in triggered links. */
+      a[x-apple-data-detectors],  /* iOS */
+        .unstyle-auto-detected-links a,
+        .aBn {
+        border-bottom: 0 !important;
+        cursor: default !important;
+        color: inherit !important;
+        text-decoration: none !important;
+        font-size: inherit !important;
+        font-family: inherit !important;
+        font-weight: inherit !important;
+        line-height: inherit !important;
+      }
+
+      /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+      .a6S {
+        display: none !important;
+        opacity: 0.01 !important;
+      }
+      /* If the above doesn't work, add a .g-img class to any image in question. */
+      img.g-img + div {
+        display: none !important;
+      }
+
       /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
       /* Create one of these media queries for each additional viewport size you'd like to fix */
 
@@ -105,7 +186,6 @@
         }
       }
     </style>
-    <!-- Progressive Enhancements : END -->
   </head>
   <!--
 	The email background color (#222222) is defined in three places:
@@ -408,7 +488,7 @@
           <!-- 2 Even Columns : END -->
         </table>
 
-        <!-- <table
+        <table
           role="presentation"
           cellspacing="0"
           cellpadding="0"
@@ -416,12 +496,57 @@
           width="100%"
           style="margin: auto"
         >
+          <!-- hr : BEGIN -->
           <tr>
             <td style="background-color: #ffffff; padding: 40px 10%">
               <hr />
             </td>
           </tr>
-        </table> -->
+          <!-- hr : END -->
+        </table>
+
+        <table
+          role="presentation"
+          cellspacing="0"
+          cellpadding="0"
+          border="0"
+          width="100%"
+          style="margin: auto"
+        >
+          <!-- 1 Column Text BEGIN -->
+          <tr>
+            <td style="background-color: #ffffff">
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                <tr>
+                  <td
+                    style="
+                      text-align: center;
+                      padding: 1em;
+                      font-family: sans-serif;
+                      font-size: 15px;
+                      line-height: 20px;
+                      color: #555555;
+                    "
+                  >
+                    <h1
+                      style="
+                        margin: 0 auto;
+                        font-size: 19px;
+                        line-height: 30px;
+                        color: #1b1b1b;
+                        font-weight: bold;
+                        font-family: Helvetica;
+                      "
+                    >
+                      NIHIL OPIBUS PASCEBANTUR VIATORUM LYCAONIAM.
+                    </h1>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <!-- 1 Column Text END -->
+        </table>
 
         <table
           role="presentation"
@@ -439,13 +564,14 @@
               style="font-size: 0; padding: 10px; background-color: #ffffff"
             >
               <!--[if mso]>
-                <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="600">
-                <tr>
-                <td valign="top" width="180">
-              <![endif]-->
+                        <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="600">
+                        <tr>
+                        <td valign="top" width="180">
+                        <![endif]-->
               <div
                 style="
                   display: inline-block;
+                  margin: 0 -1px;
                   max-width: 180px;
                   min-width: 160px;
                   vertical-align: top;
@@ -462,7 +588,7 @@
                         cellpadding="0"
                         border="0"
                         width="100%"
-                        style="text-align: center"
+                        style="font-size: 14px; text-align: center"
                       >
                         <tr>
                           <td>
@@ -472,20 +598,106 @@
                               height=""
                               border="0"
                               alt="alt_text"
-                              style="width: 100%; max-width: 126px; height: auto"
+                              style="
+                                width: 100%;
+                                max-width: 126px;
+                                height: auto;
+                                background: white;
+                                font-family: sans-serif;
+                                font-size: 15px;
+                                line-height: 20px;
+                                color: #555555;
+                              "
                               class="center-on-narrow"
                             />
                           </td>
                         </tr>
                         <tr>
                           <td
-                            style="text-align: center; padding-top: 10px"
+                            style="
+                              text-align: center;
+                              font-family: Helvetica, sans-serif;
+                              font-size: 13px;
+                              font-weight: bold;
+                              line-height: 20px;
+                              color: #1b1b1b;
+                              padding-top: 10px;
+                            "
                             class="stack-column-center"
                           >
                             <p style="margin: 0 0 1em">LLOREM<br />EST AFRICANI</p>
                           </td>
                         </tr>
                         <tr></tr>
+                        <tr>
+                          <!--[if mso]>
+                            <table
+                              align="center"
+                              role="presentation"
+                              cellspacing="0"
+                              cellpadding="0"
+                              border="0"
+                              style="margin: auto"
+                            >
+                              <tr>
+                                <td
+                                  class="button-td button-td-primary"
+                                  style="margin: .5em; padding 2px; border-radius: 0; background: #C62128;"
+                                >
+                                  <a
+                                    class="button-a button-a-primary"
+                                    href="#"
+                                    style="
+                                      background: #c62128;
+                                      border: 1px solid #c62128;
+                                      font-family: Helvetica, sans-serif;
+                                      font-size: 13px;
+                                      line-height: 15px;
+                                      font-weight: bold;
+                                      text-decoration: none;
+                                      padding: 6px 12px;
+                                      color: #ffffff;
+                                      display: block;
+                                      border-radius: 0;
+                                    "
+                                    >BUTTON</a
+                                  >
+                                </td>
+                              </tr>
+                            </table>
+                          <![endif]-->
+
+                          <!--[if !mso]><!-->
+                          <td
+                            class="button-td button-td-primary"
+                            style="
+                              margin: 0.5em;
+                              padding: 0 2em;
+                              border-radius: 0;
+                              background: white;
+                            "
+                          >
+                            <a
+                              class="button-a button-a-primary"
+                              href="#"
+                              style="
+                                background: #c62128;
+                                border: 1px solid #c62128;
+                                font-family: Helvetica, sans-serif;
+                                font-size: 13px;
+                                line-height: 15px;
+                                font-weight: bold;
+                                text-decoration: none;
+                                padding: 6px 12px;
+                                color: #ffffff;
+                                display: block;
+                                border-radius: 0;
+                              "
+                              >BUTTON</a
+                            >
+                          </td>
+                          <!-- <![endif]-->
+                        </tr>
                       </table>
                     </td>
                   </tr>
@@ -525,19 +737,105 @@
                               height=""
                               border="0"
                               alt="alt_text"
-                              style="width: 100%; max-width: 126px; height: auto"
+                              style="
+                                width: 100%;
+                                max-width: 126px;
+                                height: auto;
+                                background: white;
+                                font-family: sans-serif;
+                                font-size: 15px;
+                                line-height: 20px;
+                                color: #555555;
+                              "
                               class="center-on-narrow"
                             />
                           </td>
                         </tr>
                         <tr>
                           <td
-                            style="text-align: center; padding-top: 10px"
+                            style="
+                              text-align: center;
+                              font-family: Helvetica, sans-serif;
+                              font-size: 13px;
+                              font-weight: bold;
+                              line-height: 20px;
+                              color: #1b1b1b;
+                              padding-top: 10px;
+                            "
                             class="stack-column-center"
                           >
                             <p style="margin: 0 0 1em">LATUS URBIS<br />OBSEQUERIORUM</p>
                           </td>
                         </tr>
+                        <tr>
+                          <!--[if mso]>
+                            <table
+                              align="center"
+                              role="presentation"
+                              cellspacing="0"
+                              cellpadding="0"
+                              border="0"
+                              style="margin: auto"
+                            >
+                              <tr>
+                                <td
+                                  class="button-td button-td-primary"
+                                  style="margin: .5em; padding 2px; border-radius: 0; background: #C62128;"
+                                >
+                                  <a
+                                    class="button-a button-a-primary"
+                                    href="#"
+                                    style="
+                                      background: #c62128;
+                                      border: 1px solid #c62128;
+                                      font-family: Helvetica, sans-serif;
+                                      font-size: 13px;
+                                      line-height: 15px;
+                                      font-weight: bold;
+                                      text-decoration: none;
+                                      padding: 6px 12px;
+                                      color: #ffffff;
+                                      display: block;
+                                      border-radius: 0;
+                                    "
+                                    >BUTTON</a
+                                  >
+                                </td>
+                              </tr>
+                            </table>
+                          <![endif]-->
+
+                          <!--[if !mso]><!-->
+                          <td
+                            class="button-td button-td-primary"
+                            style="
+                              margin: 0.5em;
+                              padding: 0 2em;
+                              border-radius: 0;
+                              background: white;
+                            "
+                          >
+                            <a
+                              class="button-a button-a-primary"
+                              href="#"
+                              style="
+                                background: #c62128;
+                                border: 1px solid #c62128;
+                                font-family: Helvetica, sans-serif;
+                                font-size: 13px;
+                                line-height: 15px;
+                                font-weight: bold;
+                                text-decoration: none;
+                                padding: 6px 12px;
+                                color: #ffffff;
+                                display: block;
+                                border-radius: 0;
+                              "
+                              >BUTTON</a
+                            >
+                          </td>
+                          <!-- <![endif]-->
+                        </tr>
                       </table>
                     </td>
                   </tr>
@@ -577,18 +875,104 @@
                               height=""
                               border="0"
                               alt="alt_text"
-                              style="width: 100%; max-width: 126px; height: auto"
+                              style="
+                                width: 100%;
+                                max-width: 126px;
+                                height: auto;
+                                background: white;
+                                font-family: sans-serif;
+                                font-size: 15px;
+                                line-height: 20px;
+                                color: #555555;
+                              "
                               class="center-on-narrow"
                             />
                           </td>
                         </tr>
                         <tr>
                           <td
-                            style="text-align: center; padding-top: 10px"
+                            style="
+                              text-align: center;
+                              font-family: Helvetica, sans-serif;
+                              font-size: 13px;
+                              font-weight: bold;
+                              line-height: 20px;
+                              color: #1b1b1b;
+                              padding-top: 10px;
+                            "
                             class="stack-column-center"
                           >
                             <p style="margin: 0 0 1em">AD PROPE<br />INITIUM AD BREVI</p>
                           </td>
+                        </tr>
+                        <tr>
+                          <!--[if mso]>
+                            <table
+                              align="center"
+                              role="presentation"
+                              cellspacing="0"
+                              cellpadding="0"
+                              border="0"
+                              style="margin: auto"
+                            >
+                              <tr>
+                                <td
+                                  class="button-td button-td-primary"
+                                  style="margin: .5em; padding 2px; border-radius: 0; background: #C62128;"
+                                >
+                                  <a
+                                    class="button-a button-a-primary"
+                                    href="#"
+                                    style="
+                                      background: #c62128;
+                                      border: 1px solid #c62128;
+                                      font-family: Helvetica, sans-serif;
+                                      font-size: 13px;
+                                      line-height: 15px;
+                                      font-weight: bold;
+                                      text-decoration: none;
+                                      padding: 6px 12px;
+                                      color: #ffffff;
+                                      display: block;
+                                      border-radius: 0;
+                                    "
+                                    >BUTTON</a
+                                  >
+                                </td>
+                              </tr>
+                            </table>
+                          <![endif]-->
+
+                          <!--[if !mso]><!-->
+                          <td
+                            class="button-td button-td-primary"
+                            style="
+                              margin: 0.5em;
+                              padding: 0px 2em;
+                              border-radius: 0;
+                              background: white;
+                            "
+                          >
+                            <a
+                              class="button-a button-a-primary"
+                              href="#"
+                              style="
+                                background: #c62128;
+                                border: 1px solid #c62128;
+                                font-family: Helvetica, sans-serif;
+                                font-size: 13px;
+                                line-height: 15px;
+                                font-weight: bold;
+                                text-decoration: none;
+                                padding: 6px 12px;
+                                color: #ffffff;
+                                display: block;
+                                border-radius: 0;
+                              "
+                              >BUTTON</a
+                            >
+                          </td>
+                          <!-- <![endif]-->
                         </tr>
                       </table>
                     </td>

@@ -22,6 +22,103 @@
           display: block !important;
         }
       }
+
+      .two-column {
+        font-size: 0;
+      }
+      .two-column .space {
+        display: inline-block;
+        width: 24px;
+      }
+      .two-column .section {
+        width: 100%;
+        max-width: 333px;
+        display: inline-block;
+        vertical-align: top;
+      }
+      .two-column .content {
+        font-size: 16px;
+        line-height: 20px;
+        /* text-align: justify; */
+      }
+      .two-column img {
+        width: 100%;
+        max-width: 333px;
+        height: auto;
+      }
+
+      .three-column {
+        font-size: 0;
+      }
+      .three-column .space {
+        display: inline-block;
+        width: 15px;
+      }
+      .three-column .section {
+        width: 100%;
+        max-width: 220px;
+        display: inline-block;
+        vertical-align: top;
+      }
+
+      .four-column {
+        font-size: 0;
+      }
+      .four-column .space {
+        display: inline-block;
+        width: 16px;
+      }
+      .four-column .section {
+        width: 100%;
+        max-width: 160px;
+        display: inline-block;
+        vertical-align: top;
+      }
+
+      @media screen and (max-width: 400px) {
+        .two-column .column,
+        .three-column .column {
+          max-width: 100% !important;
+        }
+        .two-column img {
+          width: 100% !important;
+        }
+        /* .three-column img {
+          max-width: 60% !important;
+        } */
+      }
+      @media screen and (min-width: 401px) and (max-width: 400px) {
+        .two-column .column {
+          max-width: 50% !important;
+        }
+        /* .three-column .column {
+          max-width: 33% !important;
+        } */
+      }
+      @media screen and (max-width: 768px) {
+        .two-column .section,
+        .three-column .section,
+        .four-column .section {
+          width: 100% !important;
+          max-width: 100% !important;
+          display: inline-block;
+          vertical-align: top;
+        }
+
+        .two-column img {
+          width: 100% !important;
+          height: auto !important;
+        }
+        img.img-responsive {
+          width: 100% !important;
+          height: auto !important;
+          max-width: 100% !important;
+        }
+        .content {
+          width: 100%;
+          padding-top: 0px !important;
+        }
+      }
     </style>
   </head>
 
@@ -164,46 +261,87 @@
                       상세화면으로 이동합니다.
                     </td>
                   </tr>
+
+                  <tr>
+                    <td class="two-column">
+                      <div class="section">
+                        <table border="0" align="" cellpadding="0" cellspacing="0" width="100%">
+                          <tr>
+                            <td>
+                              <table
+                                class="content"
+                                border="0"
+                                align=""
+                                cellpadding="0"
+                                cellspacing="0"
+                                width="100%"
+                              >
+                                <tr>
+                                  <td
+                                    align="center"
+                                    valign="cener"
+                                    style="border: 1px solid #e3e3ec; border-radius: 8px"
+                                  >
+                                    <a
+                                      href="https://responsivehtmlemail.com/html-email-course/"
+                                      target="_blank"
+                                      ><img src="" class="img-responsive"
+                                    /></a>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td align="center" style="font-size: 10px; color: #8287a1">
+                                    출처 : 메인화면 > 월 비용트렌드
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                      <div class="space"></div>
+                      <div class="section">
+                        <table border="0" align="" cellpadding="0" cellspacing="0" width="100%">
+                          <tr>
+                            <td>
+                              <table
+                                class="content"
+                                border="0"
+                                align=""
+                                cellpadding="0"
+                                cellspacing="0"
+                                width="100%"
+                              >
+                                <tr>
+                                  <td
+                                    align="center"
+                                    valign="cener"
+                                    style="border: 1px solid #e3e3ec; border-radius: 8px"
+                                  >
+                                    <a
+                                      href="https://responsivehtmlemail.com/html-email-course/"
+                                      target="_blank"
+                                      ><img src="" class="img-responsive"
+                                    /></a>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td align="center" style="font-size: 10px; color: #8287a1">
+                                    출처 : 메인화면 > 월 비용트렌드
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </td>
+                  </tr>
+
                   <tr>
                     <td>
-                      <!-- <div style="display: inline-block; width: 333px">이 방법도 있는데 어느 쪽이 호환성이 높을지? 스티비는 이렇게. 사실 이 정도도 충분하 ㄹ듯.</div> -->
-                      <!-- margin: 0px; */
-                        /* vertical-align: top; */
-                        /* border-collapse: collapse; */
-                        /* padding: 0px 0px 0px 0px;
-                      -->
-                      <!-- td style="text-align: center;
-                        overflow: hidden;
-                        clear: both;
-                        /* padding: 0 5px; */
-                        font-size: 0;"
-                      -->
                       <table border="0" align="" cellpadding="0" cellspacing="0" width="100%">
                         <tr>
-                          <td width="333" class="responsive-column">
-                            <table border="0" align="" cellpadding="0" cellspacing="0" width="100%">
-                              <!-- 시작 :: spacing for responsible -->
-                              <tr>
-                                <td style="font-size: 0; line-height: 0" height="16">&nbsp;</td>
-                              </tr>
-                              <!-- 끝 ::  spacing for responsible -->
-                              <tr>
-                                <td
-                                  align="center"
-                                  valign="cener"
-                                  style="border: 1px solid #e3e3ec; border-radius: 8px"
-                                >
-                                  chart image
-                                </td>
-                              </tr>
-                              <tr>
-                                <td align="center" style="font-size: 10px; color: #8287a1">
-                                  출처 : 메인화면 > 월 비용트렌드
-                                </td>
-                              </tr>
-                            </table>
-                          </td>
-                          <td width="24" class="responsive-column"></td>
                           <td width="333" class="responsive-column">
                             <table border="0" align="" cellpadding="0" cellspacing="0" width="100%">
                               <!-- 시작 :: spacing for responsible -->
@@ -305,34 +443,54 @@
                   </tr>
                   <!-- 시작 :: 우측 이미지 좌측 텍스트 -->
                   <tr>
-                    <td>
-                      <table border="0" align="" cellpadding="0" cellspacing="0" width="100%">
-                        <tr>
-                          <td valign="top" width="50%" class="responsive-column">
-                            chart image chart image chart image chart image chart image chart image
-                            chart image chart image chart image chart image chart image
-                          </td>
-                          <td width="24" class="responsive-column"></td>
-                          <td valign="top" width="50%" class="responsive-column">
-                            <table border="0" align="" cellpadding="0" cellspacing="0" width="100%">
-                              <tr>
-                                <td
-                                  align="center"
-                                  valign="cener"
-                                  style="border: 1px solid #e3e3ec; border-radius: 8px"
-                                >
-                                  chart image
-                                </td>
-                              </tr>
-                              <tr>
-                                <td align="center" style="font-size: 10px; color: #8287a1">
-                                  출처 : 메인화면 > 월 비용트렌드
-                                </td>
-                              </tr>
-                            </table>
-                          </td>
-                        </tr>
-                      </table>
+                    <td class="two-column">
+                      <div class="section">
+                        <table border="0" align="" cellpadding="0" cellspacing="0" width="100%">
+                          <tr>
+                            <td style="font-size: 14px">
+                              텍스트 영역 텍스트 영역 텍스트 영역 텍스트 영역 텍스트 영역 텍스트
+                              영역 텍스트 영역 텍스트 영역 텍스트 영역 텍스트 영역 텍스트 영역
+                              텍스트 영역
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                      <div class="space"></div>
+                      <div class="section">
+                        <table border="0" align="" cellpadding="0" cellspacing="0" width="100%">
+                          <tr>
+                            <td>
+                              <table
+                                class="content"
+                                border="0"
+                                align=""
+                                cellpadding="0"
+                                cellspacing="0"
+                                width="100%"
+                              >
+                                <tr>
+                                  <td
+                                    align="center"
+                                    valign="cener"
+                                    style="border: 1px solid #e3e3ec; border-radius: 8px"
+                                  >
+                                    <a
+                                      href="https://responsivehtmlemail.com/html-email-course/"
+                                      target="_blank"
+                                      ><img src="" class="img-responsive"
+                                    /></a>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td align="center" style="font-size: 10px; color: #8287a1">
+                                    출처 : 메인화면 > 월 비용트렌드
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
                     </td>
                   </tr>
                   <!-- 끝 :: 우측 이미지 좌측 텍스트 -->
@@ -341,33 +499,55 @@
                   </tr>
                   <!-- 시작 :: 좌측 이미지 우측 텍스트 -->
                   <tr>
-                    <td>
-                      <table border="0" align="" cellpadding="0" cellspacing="0" width="100%">
-                        <tr>
-                          <td valign="top" width="50%" class="responsive-column">
-                            <table border="0" align="" cellpadding="0" cellspacing="0" width="100%">
-                              <tr>
-                                <td
-                                  align="center"
-                                  valign="cener"
-                                  style="border: 1px solid #e3e3ec; border-radius: 8px"
-                                >
-                                  chart image
-                                </td>
-                              </tr>
-                              <tr>
-                                <td align="center" style="font-size: 10px; color: #8287a1">
-                                  출처 : 메인화면 > 월 비용트렌드
-                                </td>
-                              </tr>
-                            </table>
-                          </td>
-                          <td valign="top" width="50%" class="responsive-column">
-                            chart image chart image chart image chart image chart image chart image
-                            chart image chart image chart image chart image chart image
-                          </td>
-                        </tr>
-                      </table>
+                    <td class="two-column">
+                      <div class="section">
+                        <table border="0" align="" cellpadding="0" cellspacing="0" width="100%">
+                          <tr>
+                            <td>
+                              <table
+                                class="content"
+                                border="0"
+                                align=""
+                                cellpadding="0"
+                                cellspacing="0"
+                                width="100%"
+                              >
+                                <tr>
+                                  <td
+                                    align="center"
+                                    valign="cener"
+                                    style="border: 1px solid #e3e3ec; border-radius: 8px"
+                                  >
+                                    <a
+                                      href="https://responsivehtmlemail.com/html-email-course/"
+                                      target="_blank"
+                                      ><img src="" class="img-responsive"
+                                    /></a>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td align="center" style="font-size: 10px; color: #8287a1">
+                                    출처 : 메인화면 > 월 비용트렌드
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                      <div class="space"></div>
+
+                      <div class="section">
+                        <table border="0" align="" cellpadding="0" cellspacing="0" width="100%">
+                          <tr>
+                            <td style="font-size: 14px">
+                              텍스트 영역 텍스트 영역 텍스트 영역 텍스트 영역 텍스트 영역 텍스트
+                              영역 텍스트 영역 텍스트 영역 텍스트 영역 텍스트 영역 텍스트 영역
+                              텍스트 영역
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
                     </td>
                   </tr>
                   <!-- 끝 :: 좌측 이미지 우측 텍스트 -->
@@ -410,7 +590,155 @@
                     <td style="font-size: 0; line-height: 0" height="16">&nbsp;</td>
                   </tr> -->
                   <!-- 시작 :: 4칼럼 레이아웃  -->
-                  <!-- <tr>
+                  <tr>
+                    <td class="four-column">
+                      <div class="section">
+                        <table border="0" align="" cellpadding="0" cellspacing="0" width="100%">
+                          <tr>
+                            <td>
+                              <table
+                                class="content"
+                                border="0"
+                                align=""
+                                cellpadding="0"
+                                cellspacing="0"
+                                width="100%"
+                              >
+                                <tr>
+                                  <td
+                                    align="center"
+                                    valign="cener"
+                                    style="border: 1px solid #e3e3ec; border-radius: 8px"
+                                  >
+                                    <a
+                                      href="https://responsivehtmlemail.com/html-email-course/"
+                                      target="_blank"
+                                      ><img src="" class="img-responsive"
+                                    /></a>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td align="center" style="font-size: 10px; color: #8287a1">
+                                    출처 : 메인화면 > 월 비용트렌드
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                      <div class="space"></div>
+                      <div class="section">
+                        <table border="0" align="" cellpadding="0" cellspacing="0" width="100%">
+                          <tr>
+                            <td>
+                              <table
+                                class="content"
+                                border="0"
+                                align=""
+                                cellpadding="0"
+                                cellspacing="0"
+                                width="100%"
+                              >
+                                <tr>
+                                  <td
+                                    align="center"
+                                    valign="cener"
+                                    style="border: 1px solid #e3e3ec; border-radius: 8px"
+                                  >
+                                    <a
+                                      href="https://responsivehtmlemail.com/html-email-course/"
+                                      target="_blank"
+                                      ><img src="" class="img-responsive"
+                                    /></a>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td align="center" style="font-size: 10px; color: #8287a1">
+                                    출처 : 메인화면 > 월 비용트렌드
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                      <div class="space"></div>
+                      <div class="section">
+                        <table border="0" align="" cellpadding="0" cellspacing="0" width="100%">
+                          <tr>
+                            <td>
+                              <table
+                                class="content"
+                                border="0"
+                                align=""
+                                cellpadding="0"
+                                cellspacing="0"
+                                width="100%"
+                              >
+                                <tr>
+                                  <td
+                                    align="center"
+                                    valign="cener"
+                                    style="border: 1px solid #e3e3ec; border-radius: 8px"
+                                  >
+                                    <a
+                                      href="https://responsivehtmlemail.com/html-email-course/"
+                                      target="_blank"
+                                      ><img src="" class="img-responsive"
+                                    /></a>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td align="center" style="font-size: 10px; color: #8287a1">
+                                    출처 : 메인화면 > 월 비용트렌드
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                      <div class="space"></div>
+                      <div class="section">
+                        <table border="0" align="" cellpadding="0" cellspacing="0" width="100%">
+                          <tr>
+                            <td>
+                              <table
+                                class="content"
+                                border="0"
+                                align=""
+                                cellpadding="0"
+                                cellspacing="0"
+                                width="100%"
+                              >
+                                <tr>
+                                  <td
+                                    align="center"
+                                    valign="cener"
+                                    style="border: 1px solid #e3e3ec; border-radius: 8px"
+                                  >
+                                    <a
+                                      href="https://responsivehtmlemail.com/html-email-course/"
+                                      target="_blank"
+                                      ><img src="" class="img-responsive"
+                                    /></a>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td align="center" style="font-size: 10px; color: #8287a1">
+                                    출처 : 메인화면 > 월 비용트렌드
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <tr>
                     <td>
                       <table border="0" align="" cellpadding="0" cellspacing="0" width="100%">
                         <tr>
@@ -521,7 +849,7 @@
                         </tr>
                       </table>
                     </td>
-                  </tr> -->
+                  </tr>
                   <!-- 끝 :: 4칼럼 레이아웃  -->
                   <tr>
                     <td style="font-size: 0; line-height: 0" height="32">&nbsp;</td>
@@ -535,172 +863,113 @@
                   </tr>
                   <!-- 시작 :: 3칼럼 레이아웃  -->
                   <tr>
-                    <td style="text-align: center; font-size: 0">
-                      <div
-                        style="
-                          max-width: 315px;
-                          width: 100% !important;
-                          margin: 0;
-                          vertical-align: top;
-                          border-collapse: collapse;
-                          box-sizing: border-box;
-                          font-size: unset;
-                          display: inline-block;
-                        "
-                      >
-                        <div>
-                          <table border="0" cellpadding="0" cellspacing="0" style="width: 100%">
-                            <tbody>
-                              <tr>
-                                <td
-                                  style="
-                                    padding: 15px 15px 15px 15px;
-                                    padding-bottom: 0;
-                                    text-align: justify;
-                                    font-size: 0;
-                                    border: 0;
-                                    line-height: 0;
-                                    width: 100%;
-                                    box-sizing: border-box;
-                                  "
-                                >
-                                  <a target="_blank"
-                                    ><img
-                                      src="https://ci3.googleusercontent.com/meips/ADKq_NbTgKaUvuqwMTV19_78CduhOkkGe_P2Sk-9mbzt4NjFLVkZT8CkmszAOPpW-aEppKJSU3AIr4ngowI31ICN_i0=s0-d-e1-ft#https://img.stibee.com/8888_1693899353.jpg"
-                                      style="
-                                        width: 285px;
-                                        display: inline;
-                                        vertical-align: bottom;
-                                        text-align: justify;
-                                        max-width: 100%;
-                                        height: auto;
-                                        border: 0;
-                                      "
-                                      width="285"
-                                      data-bit="iit"
-                                  /></a>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-                        <div
-                          style="
-                            text-align: left;
-                            margin: 0px;
-                            line-height: 1.7;
-                            word-break: break-word;
-                            font-size: 14px;
-                            color: #333333;
-                            clear: both;
-                            border: 0;
-                          "
-                        >
-                          <table border="0" cellpadding="0" cellspacing="0" style="width: 100%">
-                            <tbody>
-                              <tr>
-                                <td
-                                  style="
-                                    padding: 15px 15px 15px 15px;
-                                    padding-top: 20px;
-                                    font-size: 14px;
-                                    line-height: 1.7;
-                                    word-break: break-word;
-                                    color: #333333;
-                                    border: 0;
-                                    width: 100%;
-                                  "
-                                >
-                                  <div style="text-align: center">
-                                    <div style="text-align: center">
-                                      <img
-                                        data-emoji="🏡"
-                                        class="an1"
-                                        alt="🏡"
-                                        aria-label="🏡"
-                                        draggable="false"
-                                        src="https://fonts.gstatic.com/s/e/notoemoji/15.0/1f3e1/32.png"
-                                        loading="lazy"
-                                      /><img
-                                        data-emoji="🚛"
-                                        class="an1"
-                                        alt="🚛"
-                                        aria-label="🚛"
-                                        draggable="false"
-                                        src="https://fonts.gstatic.com/s/e/notoemoji/15.0/1f69b/32.png"
-                                        loading="lazy"
-                                      /><img data-emoji="💨" class="an1" alt="💨" aria-label="💨"
-                                      draggable="false"
-                                      src="https://fonts.gstatic.com/s/e/notoemoji/15.0/1f4a8/32.png"
-                                      loading="lazy"
-                                    </div>
-                                  </div>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
+                    <td class="three-column">
+                      <div class="section">
+                        <table border="0" align="" cellpadding="0" cellspacing="0" width="100%">
+                          <tr>
+                            <td>
+                              <table
+                                class="content"
+                                border="0"
+                                align=""
+                                cellpadding="0"
+                                cellspacing="0"
+                                width="100%"
+                              >
+                                <tr>
+                                  <td
+                                    align="center"
+                                    valign="cener"
+                                    style="border: 1px solid #e3e3ec; border-radius: 8px"
+                                  >
+                                    <a
+                                      href="https://responsivehtmlemail.com/html-email-course/"
+                                      target="_blank"
+                                      ><img src="" class="img-responsive"
+                                    /></a>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td align="center" style="font-size: 10px; color: #8287a1">
+                                    출처 : 메인화면 > 월 비용트렌드
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
                       </div>
-                      <div
-                        style="
-                          max-width: 315px;
-                          width: 100% !important;
-                          margin: 0;
-                          vertical-align: top;
-                          border-collapse: collapse;
-                          box-sizing: border-box;
-                          font-size: unset;
-                          display: inline-block;
-                        "
-                      >
-                        <div
-                          style="
-                            text-align: justify;
-                            margin: 0px;
-                            width: 100%;
-                            box-sizing: border-box;
-                            clear: both;
-                          "
-                        >
-                          <table border="0" cellpadding="0" cellspacing="0" style="width: 100%">
-                            <tbody>
-                              <tr>
-                                <td>
-                                  <a
-                                    href="https://event.stibee.com/v2/click/MTYzMDYvMTc0NjIzMi83MzAv/aHR0cHM6Ly9mb3Jtcy5nbGUvRW5mbW44UzdCTHVZZmQ3MTY"
-                                    ><img
-                                      src="https://ci3.googleusercontent.com/meips/ADKq_NbydGOX3rmeJ1m_EUrZdEj3qhOwa9kTr2BDxxfoPrqfRXCGjgmsRKZxSCUgW73ixL-dU6EDWqRK0IfsRApF4fE=s0-d-e1-ft#https://img.stibee.com/8888_1693291112.jpg"
-                                      style="
-                                        width: 305px;
-                                        display: inline;
-                                        vertical-align: bottom;
-                                        text-align: justify;
-                                        max-width: 100%;
-                                        height: auto;
-                                        border: 0;
-                                      "
-                                      width="285"
-                                      class="m_-8018987256277112487stb-justify CToWUd"
-                                      data-bit="iit"
-                                  /></a>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-                        <div>
-                          <table border="0" cellpadding="0" cellspacing="0" style="width: 100%">
-                            <tbody>
-                              <tr>
-                                <td>
-                                  나누기 소모임 " 쫑긋”은 회원들이 모여 이야기를 나누는 공간입니다.
-                                  부담없이 편하게 오고 싶을 때 올 수 있는 모임이예요. 오래된 회원,
-                                  처음 온 회원 모두 환영합니다.&nbsp;
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
+                      <div class="space"></div>
+                      <div class="section">
+                        <table border="0" align="" cellpadding="0" cellspacing="0" width="100%">
+                          <tr>
+                            <td>
+                              <table
+                                class="content"
+                                border="0"
+                                align=""
+                                cellpadding="0"
+                                cellspacing="0"
+                                width="100%"
+                              >
+                                <tr>
+                                  <td
+                                    align="center"
+                                    valign="cener"
+                                    style="border: 1px solid #e3e3ec; border-radius: 8px"
+                                  >
+                                    <a
+                                      href="https://responsivehtmlemail.com/html-email-course/"
+                                      target="_blank"
+                                      ><img src="" class="img-responsive"
+                                    /></a>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td align="center" style="font-size: 10px; color: #8287a1">
+                                    출처 : 메인화면 > 월 비용트렌드
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                      <div class="space"></div>
+                      <div class="section">
+                        <table border="0" align="" cellpadding="0" cellspacing="0" width="100%">
+                          <tr>
+                            <td>
+                              <table
+                                class="content"
+                                border="0"
+                                align=""
+                                cellpadding="0"
+                                cellspacing="0"
+                                width="100%"
+                              >
+                                <tr>
+                                  <td
+                                    align="center"
+                                    valign="cener"
+                                    style="border: 1px solid #e3e3ec; border-radius: 8px"
+                                  >
+                                    <a
+                                      href="https://responsivehtmlemail.com/html-email-course/"
+                                      target="_blank"
+                                      ><img src="" class="img-responsive"
+                                    /></a>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td align="center" style="font-size: 10px; color: #8287a1">
+                                    출처 : 메인화면 > 월 비용트렌드
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
                       </div>
                     </td>
                   </tr>

@@ -6,7 +6,7 @@
 .badge {
   /* reset */
   font-style: normal;
-
+  
   display:flex;align-items:center;justify-content:center;
   min-width: var(--size-tiny);
   height:var(--size-tiny);
@@ -14,14 +14,10 @@
   border-radius: 4px;
   box-sizing: border-box;
   background-color: var(--color-background-weak);
-  background:var(--green100);
   color:var(--color-primary);
   font-weight: var(--font-weight-normal);
   font-size:var(--font-size-small);
   line-height: 1;
-
-
-  /* border: var(--border); */
   font-size: 10px;
   color: var(--color-text);
 }

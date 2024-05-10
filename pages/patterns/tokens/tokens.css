@@ -31,6 +31,7 @@
 /* .token-item-avatar {@mixin avatar-large;width:100%;} */
 .token-item b {
   display:block;
+  font-family: var(--font-family-monospace);
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-small);
 }
@@ -47,12 +48,6 @@
 .animation-marquee {animation:marquee 4s var(--bazier) infinite;}
 .delay-second {animation-delay:var(--animation-delay-second);}
 .delay-third {animation-delay:var(--animation-delay-third);}
-
-.token-item .size-huge {height:var(--size-huge);}
-.token-item .size-large {height:var(--size-large)}
-.token-item .size-medium {height:var(--size-medium);}
-.token-item .size-small {height:var(--size-small);}
-.token-item .size-tiny {height:var(--size-tiny);}
 
 .token-item .color-group {display:flex;flex-wrap:wrap;justify-content:space-between;}
 /* .token-item .color-item {@mixin tile-flat-small;width:100%;} */

@@ -12,3 +12,11 @@
 .separator:after {content:'';width:4rem;line-height:24px;background:var(--color-background);font-size:var(--font-size-small);color:var(--color-text-light);position:absolute;left:50%;top:0;transform:translateX(-50%);}
 
 hr[role=separator] {}
+
+::slotted([slot=text]) {
+  width:4rem;line-height:24px;background:var(--color-background);font-size:var(--font-size-small);color:var(--color-text-light);position:absolute;left:50%;top:0;transform:translateX(-50%);  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--textfield-height);
+  position:absolute;top:var(--textfield-icon-position);right:var(--space-2);
+}

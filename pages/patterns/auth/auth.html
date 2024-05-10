@@ -154,7 +154,7 @@
           페이스북으로 시작
         </test-button>
       </div>
-      <test-separator style="margin: 0">또는</test-separator>
+      <test-separator>또는</test-separator>
       <test-textfield type="email" label="이메일" placeholder="soojubm@gmail.com"></test-textfield>
       <!-- <small class="textfield-helper" id="name-hint" role="alert" data-english="Enter an email address.">이메일을 입력하세요.</small> -->
 
@@ -163,8 +163,10 @@
           >비밀번호를 잊으셨나요? <small hidden>Forgot your password?</small></test-link
         >
       </test-textfield>
-      <div style="margin-top: -0.5rem">
-        <test-checkbox data-temp="Remember my email address"> 로그인 상태 유지 </test-checkbox>
+      <div style="margin-top: -0.25rem">
+        <test-checkbox name="checkbox" data-temp="Remember my email address">
+          로그인 상태 유지
+        </test-checkbox>
       </div>
     </fieldset>
 
@@ -214,7 +216,9 @@
           페이스북으로 시작
         </test-button>
       </div>
-      <test-separator>또는</test-separator>
+      <test-separator>
+        <test-text slot="text" variant="body">또는</test-text>
+      </test-separator>
       <test-textfield type="email" label="이메일" placeholder="soojubm@gmail.com"></test-textfield>
       <test-textfield
         type="password"

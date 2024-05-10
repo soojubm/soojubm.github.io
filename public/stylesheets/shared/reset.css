@@ -47,9 +47,13 @@ q:before {
 }
 
 table {
-  --table-radius: 0;
-  --table-space-top: 12px;
-  --table-space-bottom: 16px;
+  --table-radius: null;
+
+  --table-space-top: null;
+  --table-space-bottom: null;
+
+  --table-lineheight: 1.6;
+
   --table-border: 0;
   --table-border-light: 1px solid #dde0e3;
 
@@ -60,6 +64,7 @@ table {
   --table-cell-padding: var(--space-2) 0 ;
   --table-cell-background: #fff;
   --table-cell-background-hover: #f3f4fd;
+  --table-cell-background-selected: null;
 
   width:100%;
   border-collapse:collapse;
@@ -67,7 +72,6 @@ table {
   border-left-style:hidden;
   border-right-style:hidden;
   font-size: inherit;
-  --table-lineheight: 1.6;
 }
 table caption {padding:.5rem 0;font-size:var(--font-size-small);text-align:left;}
 table thead {}
@@ -454,7 +458,7 @@ mark {color:inherit;} mark::before {content: " [강조 시작] ";opacity:0;posit
   left: 3px;
   width: 4px;
   height: 9px;
-  border: 1px solid var(--color-primary);
+  border: 1px solid var(--color-background-strong);
   border-width: 0 1px 1px 0;
   transform: rotate(37.5deg);
 }

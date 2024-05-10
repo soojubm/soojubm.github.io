@@ -1,10 +1,12 @@
 .profile {max-width:1480px;margin:0 auto;padding:2rem var(--grid-margin) 8rem;}
 .profile::after {content:'';display:block;clear:both;}
 
-.profile-head {height:200px;
-  margin-top: -2rem;
+.profile-head {
+  height:200px;
+  margin: -2rem -5vw 2rem;
   /* margin-top:calc((2rem + var(--navbar-height)) * -1); */
-  margin-left:-1rem;margin-right:-1rem;margin-bottom:-4rem;background:darkseagreen;}
+  border-radius: 12px;
+  background:rgb(53, 54, 53);}
 
 .profile-user {float:left;width:320px;position:relative;z-index:var(--zindex-default);}
 .profile-user-description {max-height:5.4em;margin:var(--space-4) 0;white-space:normal;overflow:hidden;text-overflow:ellipsis;word-wrap:break-word;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;position:relative;}
