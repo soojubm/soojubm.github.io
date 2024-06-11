@@ -63,6 +63,14 @@ input[type=search]::-webkit-search-results-decoration {display:none;}
   /* width: 100%; */
   position:relative;
 
+  --textfield-padding: null;
+  --textfield-color-border: null; // for state
+  --textfield-color-border-hover: null; 
+
+  --textfield-color-background: null;
+  --textfield-background-color: null; // color first / background first
+  --textfield-border-width: null; // color, border
+
   --textfield-height: var(--size-large);
   --textfield-background-color: var(--color-background-weak);
   --textfield-border: var(--border);

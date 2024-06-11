@@ -2,16 +2,37 @@
 .button,
 :host {
   --button-min-width: 5rem;
-  --button-size: var(--size-large);
+
+  --button-size: var(--size-large); // button-height
+
+  --button-padding-vertical: null;
+  --button-padding-horizontal: null;
+
   --button-color: var(--color-background-weak);
 
   --button-border: 1px solid var(--button-color);
   --button-radius: var(--radius);
 
-  /* TODO font / text */
+  /* CONTAINER */
+  /* 토큰의 카테고리로 네이밍되어 있네. */
+  --button-container-height: null;
+  --button-container-shape: null; // radius
+  --button-container-elevation: null; //
+  --button-container-shadow-color: null;
+  --button-container-color: null; // background가 아님
+
+  /* TEXT */
   --button-text-color: 0;
-  --button-font-size: inherit;
-  --button-font-weight: var(--font-weight-bold);
+  --button-text-size: inherit;
+  --button-text-weight: var(--font-weight-bold);
+
+  /* MD3 */
+  /* --button-container-height */
+  /* --button-label-size  */
+
+  --button-focus-border-color: null;
+
+  /* button-text-size 토큰이 없는 이유. 테마에 대응하기 위해 필요한 게 아님. */
 
   /*
   --button-color-background
@@ -42,8 +63,8 @@
   box-sizing: border-box;
   background: var(--button-color);
 
-  font-size: var(--button-font-size);
-  font-weight: var(--button-font-weight);
+  font-size: var(--button-text-size);
+  font-weight: var(--button-text-weight);
   color: var(--button-text-color);
 
 
@@ -76,7 +97,7 @@
 /* sizes */
 .button[data-size=large] {
   --button-size: 64px;
-  --button-font-size: var(--font-size-large);
+  --button-text-size: var(--font-size-large);
   padding-bottom: 5px;
 }
 .button[data-size=small] {
