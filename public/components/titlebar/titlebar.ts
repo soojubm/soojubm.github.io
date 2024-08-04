@@ -9,6 +9,7 @@ class TitleBar extends HTMLElement {
 
     const container = document.createElement('header')
     container.classList.add('titlebar')
+    // container.role='banner' | 'navigation'
 
     const title = document.createElement('span')
     title.classList.add('titlebar-title')
@@ -22,6 +23,8 @@ class TitleBar extends HTMLElement {
     icon.setAttribute('name', 'arrow-left')
     back.append(icon)
 
+    // if (this.hiddenBack) back.hidden = true
+
     // back.setAttribute('icon', 'arrow-left')
     // if (!back.ariaLabel) back.ariaLabel = '이전 페이지로'
     // ariaLabel 때문에 쉐도우돔을 그리지 못 함.
@@ -30,12 +33,16 @@ class TitleBar extends HTMLElement {
     actionSlot.name = 'action'
 
     shadow.appendChild(container)
-    container.append(back, title, actionSlot, makeStyleSheet('titlebar'))
+    if (!this.hiddenBack) container.appendChild(back)
+    container.append(title, actionSlot, makeStyleSheet('titlebar'))
   }
 
   // get hasBack() {
   //   return this.getAttribute('hasBack')
   // }
+  get hiddenBack() {
+    return this.getAttribute('hiddenBack')
+  }
 
   get heading() {
     return this.getAttribute('heading')

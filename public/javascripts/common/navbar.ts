@@ -44,9 +44,10 @@ document.addEventListener('DOMContentLoaded', () => {
   detectTheme()
 
   document.querySelectorAll('.sidebar-menu a').forEach(item => {
-    // if (pathname.includes(item.getAttribute('href') || '')) {
-    //   item.setAttribute('aria-current', 'page')
-    // }
+    const { pathname } = window.location
+    if (pathname.includes(item.getAttribute('href') || '')) {
+      item.setAttribute('aria-current', 'page')
+    }
     let temp = 0
     const a = document.querySelector('.sidebar-menu')
 

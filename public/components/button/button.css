@@ -94,7 +94,7 @@
 .button:focus,
 .button[data-status=focus] {
   outline: 0;
-  box-shadow: var(--state-focus);
+  box-shadow: var(--status-focus);
 }
 .button:disabled,
 .button[data-status=disabled] {opacity:.5;cursor:not-allowed;}

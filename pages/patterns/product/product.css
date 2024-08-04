@@ -116,9 +116,6 @@
 .cart-item-option-label {display:none;color:var(--color-text-light);}
 .cart-item-option-value {@mixin text-subhead;}
 
-.cart-summary {position:relative;}
-
-
 @media (--small) {
   .cart {}
   .cart-item-thumbnail {float:none;width:100%;margin:0 0 1rem 0;}
@@ -129,5 +126,4 @@
   .cart-item-more {padding:0;}
   .cart-item-coupon {width:100%;margin:0;}
 
-  .cart-summary {max-width:100%;}
 }

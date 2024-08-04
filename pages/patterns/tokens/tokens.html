@@ -36,6 +36,28 @@
         making it easier for users to interact, search, and differentiate elements. For additional
         guidance, refer to the component-specific guidelines.
       </test-text>
+      <blockquote>
+        <test-text variant="body-bold">Checklist</test-text>
+        <ul class="checklist">
+          <li>color-icon / color-text 가 동일한가</li>
+          <li>color-text-accent-yellow</li>
+          <li>
+            color-text-disabled // input / button 마다 다르며, 일반 text에 disabled가 필요없다.
+            인터렉션의 유무.
+          </li>
+          <li>
+            color-text-warning // 과도한 추상화처럼 보이기도 함. color-warning /
+            color-warning-strong 정도면 충분함.
+          </li>
+          <li>color-background-discovery // status</li>
+          <li>Blanket // atlassian</li>
+          <li>color-chart-categorical-1 // TODO category</li>
+          <li>
+            elevation.surface / overay, raised, sunken // atlassian 동일한데 왜 나눠놨지. //
+            elevation-surface/shadow
+          </li>
+        </ul>
+      </blockquote>
       <!-- <p>A-ha :: background-weak weak2를 사용할 수 있지만 하나로 통함됨.</p> -->
       <!-- <test-text>2403 gray150 추가.</test-text> -->
       <div class="token-group">
@@ -285,7 +307,7 @@
       </section>
 
       <test-text variant="subhead">Spacing</test-text>
-      <!-- <test-text variant="body">요소 사이의 간격.</test-text> -->
+      <test-text variant="body">요소 사이의 간격.</test-text>
       <section class="token-group">
         <div class="token-item">
           <!-- <figure style="width: 100%; height: var(--space-05); border-radius: 0"></figure> -->
@@ -324,6 +346,10 @@
           <b>--grid-margin: 5vw</b>
           <b>--grid-gutter: null</b>
           <b>--grid-column: null</b>
+        </div>
+        <div class="token-item">
+          <figure style="width: 100%; height: var(--space-05); border-radius: 0"></figure>
+          <b>--space-negative-1: calc(var(--space-1) * -1)</b>
         </div>
       </section>
 
@@ -538,6 +564,14 @@
       </section>
     </article>
 
+
+    <test-text variant="title">Opacity</test-text>
+    <test-text variant="body-large">요소의 투명도.</p>
+    <div class="token-group">
+      <div class="token-item"><test-avatar></test-avatar><b>opacity-disabled</b></div>
+      <div class="token-item"><test-avatar></test-avatar><b>opacity-overay/underlay</b></div>
+    </div>
+
     <!-- <test-text variant="title">Positioning 이거 Utility</test-text>
       <test-text variant="body-large">
         동일 역할을 동일 위치 원칙이 있다. 도메인이나 서비스 특수성이 있을 수 있지만 상당 보편적인 경험에 기반한다. 그래서 right top 같은 이름보다
@@ -559,11 +593,6 @@
           <b>@mixin position-root-bottom</b>
         </div>
       </div>
-      
-      <test-text variant="title">Opacity</test-text>
-      <test-text variant="body-large">요소의 투명도.</p>
-      <div class="token-group">
-        <div class="token-item"><test-avatar></test-avatar><b>overay / underlay</b></div>
-      </div> -->
+    -->
   </section>
 </main>

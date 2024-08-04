@@ -34,7 +34,7 @@ class Avatar extends HTMLElement {
     if (style) container.setAttribute('style', style)
 
     if (this.src) {
-      const image = document.createElement('image')
+      const image = document.createElement('img')
       image.setAttribute('src', this.src)
       container.appendChild(image)
     }

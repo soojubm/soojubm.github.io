@@ -1,11 +1,64 @@
 [
   {
-    "id": 202403,
-    "releasedate": 2022,
-    "titlekorean": "보통의 카스미",
-    "titleenglish": "",
-    "director": "",
+    "id": 202404212,
+    "releasedate": 1973,
+    "titlekorean": "거울의 예술",
+    "titleenglish": "The Art of Mirrors",
+    "director": "데릭 저먼",
+    "country": "영국",
+    "etc": "단편"
+  },
+  {
+    "id": 20240421,
+    "releasedate": 2023,
+    "titlekorean": "콘크리트 유토피아",
+    "titleenglish": "Concrete Utopia",
+    "director": "엄태화",
+    "country": "한국",
+    "etc": ""
+  },
+  {
+    "id": 202404,
+    "releasedate": 1933,
+    "titlekorean": "남자의 목",
+    "director": "줄리앙 뒤비비에르",
+    "country": "프랑스",
+    "etc": "조르주 심농"
+  },
+  {
+    "id": 202404,
+    "releasedate": 2013,
+    "titlekorean": "노란 코끼리",
+    "titleenglish": "Yellow Elephant",
+    "director": "히로키 류이치",
     "country": "일본",
+    "etc": ""
+  },
+  {
+    "id": 202404,
+    "releasedate": 1964,
+    "titlekorean": "게르트루드",
+    "titleenglish": "Gertrud",
+    "director": "칼 테오도르 드레이어",
+    "country": "덴마크",
+    "etc": ""
+  },
+  {
+    "id": 202403,
+    "releasedate": 2023,
+    "titlekorean": "보통의 카스미",
+    "titleenglish": "I Am What I Am",
+    "director": "다마다 신야",
+    "country": "일본",
+    "etc": ""
+  },
+  {
+    "id": 202403,
+    "releasedate": 1943,
+    "titlekorean": "여인숙에서 생긴 일",
+    "titleenglish": "It Happened at the Inn",
+    "director": "자크 베케르",
+    "country": "프랑스",
     "etc": ""
   },
   {

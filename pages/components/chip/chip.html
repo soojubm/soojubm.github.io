@@ -43,7 +43,7 @@
         <test-chip status="disabled" data-temp="opacity: 0.5; cursor: not-allowed">
           disabled
         </test-chip>
-        <test-chip status="destructive">TODO variant: destructive</test-chip>
+        <test-chip variant="destructive">destructive</test-chip>
       </test-group>
       <test-separator></test-separator>
       <test-group variant="chip">
@@ -53,7 +53,7 @@
         </test-chip>
         <test-chip status="checked">
           <test-icon slot="suffix" name="xmark"></test-icon>
-          removable / clearable
+          removable / clearable / dismissed
         </test-chip>
         <test-chip aria-expanded="true">
           <test-icon slot="suffix" name="nav-arrow-down"></test-icon>
@@ -108,6 +108,17 @@
     </section>
 
     <section class="component-guide">
+      <blockquote>
+        <ul class="checklist">
+          <li>
+            button과 통합 하느냐 tag와 통합하느냐. 버튼 쪽이 유리하기는 함. 정의할 때 인터렉션을
+            기준할 수 있기 때문. 하지만 selected 상태에 관한 스타일은 chip의 고유.
+          </li>
+          <li>하나의 서비스에 버튼이 2가지 이상이 필요한 경우는 없다고 봐야 함.</li>
+          <li>아이콘 버튼.</li>
+        </ul>
+      </blockquote>
+
       <test-text variant="subhead">Behavior</test-text>
       <test-text variant="body">
         하나의 칩은 하나의 액션을 합니다. 아이콘은 단지 indicator의 역할을 하고 칩 자체가 하나의

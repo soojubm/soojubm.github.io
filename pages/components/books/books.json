@@ -9,9 +9,9 @@
   },
 
   {
-    "releasedate": 1986,
-    "titlekorean": "거울",
-    "titleenglish": "Metzengerstein",
+    "releasedate": 1926,
+    "titlekorean": "거울지옥",
+    "titleenglish": "",
     "director": "에도가와 란포",
     "country": "일본",
     "etc": ""
@@ -27,8 +27,8 @@
 
   {
     "releasedate": 1986,
-    "titlekorean": "Metzengerstein",
-    "titleenglish": "Metzengerstein",
+    "titlekorean": "메첸거슈타인",
+    "titleenglish": "Metzengerstein: A Tale in Imitation of the German",
     "director": "에드가 앨런 포",
     "country": "미국",
     "etc": "단편"
@@ -42,9 +42,9 @@
     "etc": ""
   },
   {
-    "releasedate": 1986,
+    "releasedate": 2012,
     "titlekorean": "점심의 연애",
-    "titleenglish": "The Assistant",
+    "titleenglish": "",
     "director": "신주희",
     "country": "한국",
     "etc": "단편"
@@ -74,17 +74,17 @@
     "etc": ""
   },
   {
-    "releasedate": 1986,
+    "releasedate": 1937,
     "titlekorean": "여행자와 달빛",
-    "titleenglish": "The Assistant",
+    "titleenglish": "Journey by Moonlight",
     "director": "세브르 언털",
     "country": "한국",
     "etc": "에세이"
   },
   {
-    "releasedate": 1986,
+    "releasedate": "",
     "titlekorean": "하지 않는 삶",
-    "titleenglish": "The Assistant",
+    "titleenglish": "",
     "director": "히조",
     "country": "한국",
     "etc": "에세이"
@@ -121,7 +121,7 @@
   {
     "releasedate": 1830,
     "titlekorean": "사라진",
-    "titleenglish": "",
+    "titleenglish": "Sarrasine",
     "director": "오노레 드 발자크",
     "country": "미국"
   },
@@ -177,13 +177,16 @@
     "country": "체코"
   },
   {
-    "releasedate": 0,
+    "releasedate": 1993,
     "titlekorean": "개 신랑 들이기",
-    "director": "다와다 요코"
+    "titleenglish": "犬婿入り",
+    "director": "다와다 요코",
+    "country": "일본"
   },
   {
-    "releasedate": 0,
+    "releasedate": 1936,
     "titlekorean": "눈먼 부엉이",
+    "titleenglish": "The Blind Owl",
     "director": "사데크 헤다야트",
     "country": "이란"
   },
@@ -203,12 +206,12 @@
     "etc": "단편"
   },
   {
-    "releasedate": 0,
+    "releasedate": 1931,
     "titlekorean": "모든 열정이 다하고",
-    "titleenglish": 0,
+    "titleenglish": "All Passion Spent",
     "director": "비타 색빌웨스트",
-    "country": "일본",
-    "etc": "여기맞나"
+    "country": "영국",
+    "etc": ""
   },
   {
     "releasedate": 1925,
@@ -5285,7 +5288,7 @@
     "releasedate": "1867",
     "titlekorean": "테레즈 라캥",
     "titleenglish": "Thérèse Raquin",
-    "director": " 에밀 졸라\n",
+    "director": " 에밀 졸라",
     "country": "임시미국",
     "etc": ""
   },
@@ -5293,16 +5296,16 @@
     "releasedate": "1933",
     "titlekorean": "파리와 런던 거리의 성자들",
     "titleenglish": "Down and Out in Paris and London",
-    "director": " 조지 오웰\n",
+    "director": " 조지 오웰",
     "country": "임시미국",
     "etc": ""
   },
   {
     "releasedate": "1970",
-    "titlekorean": "",
+    "titlekorean": "나목",
     "titleenglish": "",
-    "director": "",
-    "country": "임시미국",
+    "director": "박완서",
+    "country": "한국",
     "etc": ""
   },
   {

@@ -112,7 +112,7 @@
         <dt>label</dt>
         <dd>string</dd>
         <dd><del>레이블을 쓰지 않으면 hiddenLabel 스타일.</del></dd>
-        <dt>isHiddenLabel</dt>
+        <dt>isHiddenLabel<attr>?</attr></dt>
         <dd>boolean</dd>
         <dd>
           labelHidden 형태라도 label prop 은 필수. 스크린리더. 시각적으로 숨기기 위한 옵셔널 prop.
@@ -127,7 +127,7 @@
         <dt>helper<attr>?</attr></dt>
         <dd>string</dd>
         <dd>validation / helper. isInvalid = helper.length === 0</dd>
-        <dt>state</dt>
+        <dt>status???</dt>
         <dd>'disabled' | 'readonly' | 'focused' | 'invalid'</dd>
         <dd></dd>
         <dt>isAutoFocus<attr>?</attr></dt>
@@ -202,10 +202,6 @@
           placeholder="Textarea Placeholder..."
         ></test-textfield>
       </test-tile>
-      <div style="height: var(--space-1)"></div>
-      <test-text variant="body-bold">
-        ShowMoreButton <span hidden>Image Button, CheckoutButton</span>
-      </test-text>
 
       <test-separator></test-separator>
 
@@ -419,15 +415,13 @@
 
         <test-separator></test-separator>
 
-        <footer class="cart-summary">
+        <footer>
           <test-keyvalue key="총 상품금액" value="₩ 30,000"></test-keyvalue>
           <test-keyvalue key="배송료" value="₩ 3,000"></test-keyvalue>
           <test-keyvalue key="할인" value="₩ 2,000"></test-keyvalue>
           <test-keyvalue key="최종 결제 금액" value="₩ 37,000"></test-keyvalue>
           <div style="height: var(--space-3)"></div>
-          <div class="cart-summary-controls">
-            <test-button variant="primary" isfullwidth="true">결제</test-button>
-          </div>
+          <test-button variant="primary" isfullwidth="true">결제</test-button>
         </footer>
       </test-tile>
     </section>

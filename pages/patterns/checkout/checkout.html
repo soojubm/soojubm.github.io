@@ -1,11 +1,19 @@
 <main class="component">
   <div class="article" style="max-width: var(--layout-width-small)">
-    <header class="checkout-head">
+    <test-titlebar heading="주문/결제" hiddenBack> </test-titlebar>
+
+    <nav class="breadcrumb" aria-label="breadcrumb">
+      <a class="breadcrumb-item breadcrumb-home" href="/">홈</a>
+      <i class="breadcrumb-divider" aria-hidden="true">/</i>
+      <a class="breadcrumb-item" href="#">페이지 이름</a>
+      <i class="breadcrumb-divider" aria-hidden="true">/</i>
+      <span class="breadcrumb-item" aria-current="page">현재 페이지</span>
+    </nav>
+    <!-- <header class="checkout-head">
       <test-text variant="subhead">
         주문정보를 확인하세요<i style="font-style: italic">!</i>
       </test-text>
     </header>
-    <br />
     <section class="checkout-step step">
       <div class="step-item is-active">
         <span class="step-item-icon">1</span>
@@ -19,27 +27,7 @@
         <span class="step-item-icon">3</span>
         <h3 class="step-item-label">주문완료</h3>
       </div>
-    </section>
-
-    <div style="height: 2rem"></div>
-
-    <!-- 예전에 이렇게 길었다... checkout-product-item-name -->
-    ㄴ
-    <section class="checkout-product">
-      <test-text variant="subhead" aria-label="summary">주문상품</test-text>
-      <div style="margin: var(--space-after-subhead) -0.5rem 0">
-        <test-tile size="small">
-          <test-menuitem>
-            <test-avatar slot="avatar" size="huge" fallback=""></test-avatar>
-            <div slot="text" style="margin-left: var(--space-1)">
-              <test-text variant="body-bold">뉴닉이 풀어 쓴 경제상식사전</test-text>
-              <test-text variant="">₩ 11,900</test-text>
-              <test-text variant="body">평생 소장</test-text>
-            </div>
-          </test-menuitem>
-        </test-tile>
-      </div>
-    </section>
+    </section> -->
 
     <div style="height: 2rem"></div>
 
@@ -72,6 +60,28 @@
 
     <div style="height: 2rem"></div>
 
+    <section class="checkout-product">
+      <test-text variant="subhead" aria-label="summary">주문상품</test-text>
+      <div style="margin: var(--space-after-subhead) -0.5rem 0">
+        <test-tile size="small">
+          <test-menuitem>
+            <test-avatar
+              slot="avatar"
+              size="huge"
+              src="/public/images/cake_gosum.jpg"
+            ></test-avatar>
+            <div slot="text" style="margin-left: var(--space-1)">
+              <test-text variant="word-strong">뉴닉이 풀어 쓴 경제상식사전</test-text>
+              <test-text variant="word">₩ 11,900</test-text>
+              <test-text variant="word-weak">평생 소장</test-text>
+            </div>
+          </test-menuitem>
+        </test-tile>
+      </div>
+    </section>
+
+    <div style="height: 2rem"></div>
+
     <section class="checkout-discount">
       <test-text variant="subhead">쿠폰 마일리지 할인</test-text>
       <div style="height: var(--space-after-subhead)"></div>
@@ -85,6 +95,8 @@
 
     <div style="height: 2rem"></div>
 
+    <!-- <div>현금영수증 신청/미신청, 개인정보제공동의</div> -->
+
     <section class="checkout-payment">
       <test-text variant="subhead" data-temp="매장과 구매자 차이.">Select payment method</test-text>
       <div style="margin: var(--space-4) -0.5rem 0">
@@ -97,6 +109,7 @@
                 fallback="💳"
                 style="background: aliceblue; font-size: 1.5rem"
               ></test-avatar>
+              <test-text>개인/법인/카드사선택</test-text>
               <test-radio slot="check" id="c1" name="c1" value="" checked="true"></test-radio>
             </test-menuitem>
           </test-tile>
@@ -147,6 +160,18 @@
 
     <div style="height: 2rem"></div>
 
+    <section class="checkout-discount">
+      <div style="display: flex; justify-content: space-between">
+        <test-text variant="subhead">결제상세</test-text>
+        <test-text variant="subhead">13,980원</test-text>
+      </div>
+      <div style="height: var(--space-after-subhead)"></div>
+      <test-keyvalue key="마일리지 사용" value="980원"></test-keyvalue>
+      <test-keyvalue key="카드 결제" value="12,980원"></test-keyvalue>
+    </section>
+
+    <div style="height: 2rem"></div>
+
     <section class="checkout-">
       <test-text variant="subhead"> Your Payments / Wallet </test-text>
       <test-text variant="body">
@@ -169,6 +194,71 @@
           <test-avatar slot="avatar" icon="plus"> </test-avatar>
         </test-menuitem>
       </test-tile>
+    </section>
+
+    <br /><br />
+
+    <section class="order-complete">
+      <test-text variant="subhead"
+        >주문완료 되었습니다. 24년 4월 네이버 리뉴얼 따라 그려봄.</test-text
+      >
+      <test-tile>
+        <header>
+          <test-text variant="body-bold">주문번호</test-text>
+          <test-link>2024040436292081</test-link>
+        </header>
+        <test-separator></test-separator>
+        <div>
+          <test-text variant="body-bold">수줍이</test-text>
+          <test-text variant="body">서울특별시 중구 퇴계로27길 49 (저동2가, 센트럴에쓰)</test-text>
+          <test-text variant="word">2층 (04555), 010-3121-7045</test-text>
+        </div>
+        <test-separator></test-separator>
+        <div>
+          <test-text variant="body-bold">주문상품 1건 </test-text>
+          <test-text variant="body">13:00 까지 결제 시 오늘 발송</test-text>
+          <div style="height: var(--space-2)"></div>
+          <test-menuitem>
+            <test-avatar
+              slot="avatar"
+              size="large"
+              src="/public/images/cake_gosum.jpg"
+            ></test-avatar>
+            <div slot="text" style="margin-left: var(--space-1)">
+              <test-text variant="word-strong">뉴닉이 풀어 쓴 경제상식사전 (평생 소장)</test-text>
+              <test-text variant="word">₩ 11,900</test-text>
+            </div>
+          </test-menuitem>
+        </div>
+        <test-separator></test-separator>
+        <footer>
+          <div style="display: flex; justify-content: space-between">
+            <test-text variant="body-bold">주문금액</test-text>
+            <test-text variant="body-bold">13,980원</test-text>
+          </div>
+          <div style="height: var(--space-2)"></div>
+          <test-keyvalue key="상품금액" value="30,000원"></test-keyvalue>
+          <div style="height: var(--space-1)"></div>
+          <test-keyvalue key="배송료" value="3,000원"></test-keyvalue>
+          <div style="height: var(--space-1)"></div>
+          <test-keyvalue key="할인" value="2,000원"></test-keyvalue>
+          <test-separator></test-separator>
+          <test-text variant="body-bold">결제상세</test-text>
+          <test-text>카드 간편결제</test-text>
+          <div style="height: var(--space-4)"></div>
+          <test-button variant="secondary" isfullwidth="true">주문 상세 보기</test-button>
+        </footer>
+      </test-tile>
+      <div style="height: var(--space-4)"></div>
+      <test-tile>
+        <test-text variant="body-bold">포인트 헤택</test-text>
+        <test-text variant="body-bold">최대 1,147</test-text>
+      </test-tile>
+      <div style="height: var(--space-4)"></div>
+      <div style="display: flex; gap: var(--space-4)">
+        <test-tile variant="elevated"> section </test-tile>
+        <test-tile variant="elevated"> section </test-tile>
+      </div>
     </section>
   </div>
 </main>
