@@ -10,8 +10,8 @@
 :root {
   color-scheme: light dark;
   /* // -apple-system === san-serif / system-ui === BlinkMacSystemFont */
-  --font-family: 'Pretendard', system-ui, sans-serif;
-  /* --font-family: 'IBM Plex Sans', 'Gothic A1', system-ui, sans-serif; */
+  /* --font-family: 'Pretendard', system-ui, sans-serif; */
+  --font-family: 'IBM Plex Sans', 'Gothic A1', system-ui, sans-serif;
   --font-family-heading: null;
   --font-family-body: null;
   --font-family-caption: null;
@@ -36,7 +36,8 @@
   --navbar-height: calc(32px + 1.5rem);
   --titlebar-height: calc(32px + 1.5rem);
 
-  --layout-width-large: 1200px;
+  --layout-width-wide: 1280px;
+  --layout-width-narrow: 400px;
   --layout-width-small: 640px;
   --layout-width-tiny: 480px;
   /*
@@ -46,7 +47,7 @@
   4. layout large
   */
   --width-sidemenu: 14rem;
-  --width-medium: 400px;
+  --width-medium: 25rem;
   --width-small: 200px;
 
   --popover-width-small: 200px;
@@ -63,8 +64,8 @@
   /* --gray100: #fafbfa; */
   --gray150: #eff1ef;
   /* --gray100: #f2f5f2; */
-  --gray200: #e4eae8;
   --gray200: #e4e9e7;
+  
   --gray400: #979d9a;
   --gray800: #343c38;
   --gray800: #3d4943;
@@ -114,6 +115,7 @@
   --color-border: var(--gray200);
   --color-border-hover: var(--gray800);
   --color-text: var(--gray800);
+  /* --color-text: #1e1e23; */
   --color-text-light: var(--gray400);
 
   --color-background-interaction: null;

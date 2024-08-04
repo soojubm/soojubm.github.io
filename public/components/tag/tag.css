@@ -10,6 +10,7 @@
   background: var(--color-background);
   font-size: var(--font-size-small);
   color: var(--color-text);
+  text-transform: capitalize;
   --tag-border: var(--border);
 }
 

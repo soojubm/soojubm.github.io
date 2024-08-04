@@ -86,7 +86,9 @@ table tbody {}
 table tbody tr {
   /* border:var(--border); */
   border-bottom: var(--border);
-  line-height:var(--table-lineheight);position:relative;}
+  line-height:var(--table-lineheight);position:relative;
+}
+table tbody tr:hover {background-color:#f7f8f9;}
 table tbody tr th {}
 table tbody tr td {
   padding:var(--table-cell-padding);

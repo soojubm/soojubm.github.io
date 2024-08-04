@@ -1,16 +1,21 @@
 import footer from '/public/components/footer/footer.html'
 import navbar from '/public/components/navbar/navbar.html'
 
+// import sidemenu from '/public/components/sidemenu/sidemenu.html'
+import '/public/components/sidemenu/sidemenu.css'
+
 import tokens from './tokens.html'
 
 import '/public/stylesheets/shared.css'
-
 import '/pages/components/components.css'
 import './tokens.css'
 
 document.addEventListener('DOMContentLoaded', () => {
   // document.querySelector('body')!.insertBefore(navbar, );
-  document.querySelector('main')!.innerHTML = navbar + tokens + footer
+  document.querySelector('body')!.innerHTML = navbar + tokens + footer
+
+  // renderSidemenu
+  // document.querySelector('.page')!.insertAdjacentHTML('afterbegin', sidemenu)
 
   // // ! 디자인시스템에 추가한 거 임시
   document

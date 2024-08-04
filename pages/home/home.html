@@ -1,4 +1,4 @@
-<main class="component">
+<main class="page">
   <!-- const ELEVATIONS = {
     small: `
       0.5px 1px 1px hsl(var(--shadow-color) / 0.7)
@@ -60,6 +60,7 @@
 
   <article class="article" style="max-width: 1160px">
     <p>TODO DISMISS PATTERN</p>
+    <p>조너선 아이브였나요. 그 양반이 추천하는 behavior, visual style 등으로 나누어 보았다가, foundation 의 feature? 중심으로 설명하고 그것에 따라 인덱스를 제공하는 것이 더 좋다는 판단.</p>
     <!-- The aim is to reduce “decision fatigue -->
     <!-- A design system Ops manager must be someone experienced with design and development. They must understand both processes to identify and fix problems effectively. -->
     <!-- Design system knowledge and experience are also essential. An Ops manager cannot optimize the operations without a fundamental understanding of building, managing and scaling a design system. -->
@@ -109,8 +110,6 @@
       우리 제품의 당면한 문제인가?
     </p> -->
 
-    <!-- <li>학습이 필요없는 보편 케이스와 도메인에 종속적인 특수 케이스를 구분하기.</li> -->
-
     <style>
       input:focus {
         background-color: blue;
@@ -151,11 +150,9 @@
               border: 1px solid red;
             } */
     </style>
-    <!-- <input type="text" />
-    <button>12345</button> -->
     <!-- // invoice / order  구분 -->
 
-    <!-- <div
+    <div
       style="
         height: 240px;
         border: 1px solid #ecd5d5;
@@ -164,23 +161,20 @@
         padding: 2rem 1rem;
         background-color: snow;
       "
-    >
-    </div> -->
+    ></div>
 
     <section class="feature">
       <header class="feature-head">
         <test-text variant="title">
           <span style="color: var(--color-text-light)">Let us guide</span>
-          <!-- <span style="color: var(--color-text-light)">Key Principles</span> -->
         </test-text>
         <test-text variant="title">Neque porro quisquam est qui dolorem ipsum.</test-text>
         <test-text variant="body-large">
           Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci
           velit...
-          <!-- 의사결정의 고비가 왔을 때 언제든 이곳으로 돌아와 비교대상의 우위를 결정하세요. 취사선택.
+          <!-- The goal isn't "all or nothing". 의사결정의 고비가 왔을 때 언제든 이곳으로 돌아와 비교대상의 우위를 결정하세요. 취사선택.
           가치판단. -->
         </test-text>
-        <!-- <test-text variant="body">The goal isn't "all or nothing".</test-text> -->
       </header>
       <test-feature
         icon="✋"
@@ -189,14 +183,12 @@
         description="모두를 위한 서비스, 접속 환경 등의 제약없이 없이. 우리가 궁극적으로 해결하려는 문제는 유저
         인터페이스가 아니다."
       ></test-feature>
-      <!-- <div class="feature-item">
-        <figure class="feature-item-avatar">🐏</figure>
-        <test-text variant="subhead" class="feature-item-title">Single source of truth</test-text>
-        <test-text class="feature-item-description"
-          >디자인 툴이 SSOT가 될 수 없다. 그것은 단순 스타일 가이드.</test-text
-        >
-        <test-link class="feature-item-link" href="#">숙소 등록</test-link>
-      </div> -->
+      <test-feature
+        icon="⚒️🐏"
+        titleText="Single source of truth"
+        subtitle="Progressive enhancement minimum viable experience"
+        description="디자인 툴이 SSOT가 될 수 없다. 그것은 단순 스타일 가이드."
+      ></test-feature>
       <test-feature
         icon="⚒️"
         titleText="점진적인 향상"
@@ -207,30 +199,10 @@
       <test-feature
         icon="🚦"
         titleText="예측가능한 경험"
-        subtitle="Trustworthy Visual cue"
+        subtitle="Trustworthy cue"
         description="UI는 사용자의 추가적인 학습을 최소화할 정도로 보편타당해야. 제품 스코프에서도 친숙하고
         신뢰할 수 있는 서비스 경험을 위해 예측 가능하고 일관된 기표."
       ></test-feature>
-      <!-- <div class="tile">
-        <test-text variant="subhead">Principles :: Trustworthy cue</test-text>
-        <div style="height: var(--space-2)"></div>
-
-        <test-text variant="body-bold">Easy to read</test-text>
-        <test-text variant="body">
-          나이, 성별, 연령, 학습 수준에 구애없이 누구나 읽을 수 있어야 한다. 두괄식. 외국어 지양.
-          간결한 문장.
-        </test-text>
-        <test-text variant="body">
-          디바이스나 브라우저 등 접속 환경에 종속되지 않는 일관된 시각 경험. 유연성flexibility -
-          지속 가능성 - 단순성 의 삼위일체 (?!)
-        </test-text>
-        <test-text variant="caption">
-          &loz; 우리의 제품에 이렇게 많은 컬러 쉐이드가 필요한가요?</test-text
-        >
-        <test-text variant="caption">
-          &loz; 다이얼로그에서 버튼 그룹을 두 가지 방식으로 정렬할 필요가 있나요?</test-text
-        >
-      </div> -->
     </section>
 
     <!-- <div class="tile" style="margin: 1rem 0 0">
@@ -281,14 +253,6 @@
             </div>
           </test-menuitem>
 
-          <test-separator></test-separator>
-
-          <test-text variant="caption">
-            &loz; 우리의 제품에 이렇게 많은 컬러 쉐이드가 필요한가요?
-          </test-text>
-          <test-text variant="caption">
-            &loz; 다이얼로그에서 버튼 그룹을 두 가지 방식으로 정렬할 필요가 있나요?
-          </test-text>
         </div> -->
 
     <!-- <div class="stamp" style="position: absolute; right: 10%; top: 12rem">
@@ -303,11 +267,7 @@
       </div>
     </div> -->
 
-    <!-- <li>
-      radius. pill과 non-pill은 양자택일. 인물 아바타를 특정하기 위해 circle은 허용할 수 있다.
-    </li> -->
-
-    <div
+    <!-- <div
       style="
         border: 1px solid #ecd5d5;
         border-radius: var(--radius);
@@ -317,13 +277,6 @@
         text-align: center;
       "
     >
-      <test-text variant="title" class="feature-head-title js-observer"
-        >Documentation guide</test-text
-      >
-      <!-- TODO 왜 바디는 가운데 정렬이 안 될까. -->
-      <test-text variant="body-large" style="margin-left: auto; margin-right: auto">
-        100+ powerful features built to help modern teams hire smarter.
-      </test-text>
       <div class="chat is-mine" style="padding-left: 0">
         <div
           class="chat-bubble"
@@ -340,6 +293,7 @@
         </test-avatar>
       </div>
     </div>
+
     <test-tile class="js-observer" style="margin-top: -5rem; padding: 1.5rem 2rem">
       <section>
         <div style="height: var(--space-4)"></div>
@@ -360,9 +314,8 @@
             icon="✋"
             titleText="규모의 약속"
             description="모든 세부사항을 정의하지 마세요. 규칙을 정의하는 일 만큼 문제 해결을 위한 도구의
-            복잡도를 관리도 중요합니다."
+            복잡도를 관리도 중요합니다. 예를 들면, border width는 border 스코프에서 디펜던시가 있고, 일괄 변경이 쉽기 때문에 토큰을 정의하지 않는 것이 좋습니다."
           ></test-feature>
-          <!-- 예를 들면, border width는 border 스코프에서 디펜던시가 있고, 일괄 변경이 쉽기 때문에 토큰을 정의하지 않는 것이 좋습니다. -->
           <test-feature
             icon="✋"
             titleText="내용의 간결"
@@ -377,27 +330,14 @@
         </div>
       </section>
       <test-separator></test-separator>
-      <div style="width: 25%">
-        <test-feature heading="test"></test-feature>
-        <test-text variant="subhead">Career Page</test-text>
-        <ul class="checklist">
-          <li>Brand first design</li>
-          <li>Custom templates</li>
-          <li>Analytics & tracking</li>
-          <li>Easy job application</li>
-        </ul>
-      </div>
-    </test-tile>
+    </test-tile> -->
 
-    <!-- <section
-      style="
-        height: 400px;
-        margin: 4rem 0;
-        background: var(--color-background-strong);
-        border-radius: var(--radius);
-      "
-    ></section> -->
-    <!-- <blockquote>
+    <blockquote>
+      <test-text variant="caption">
+        &loz; 우리의 제품에 이렇게 많은 컬러 쉐이드가 필요한가요?</test-text
+      >
+      <test-text variant="caption">
+        &loz; 다
       <test-text variant="caption">
         &loz; dos / don'ts 케이스는 이미지 없이 간결하게 서술합니다. 유아이는 계속 변경되는데
         이미지로 인한 문서 관리 비용을 관리.
@@ -410,9 +350,25 @@
       <test-text variant="caption">
         &loz; 일어날 법 하지 않는 don't 케이스를 가정하고 있지는 않나요?
       </test-text>
-    </blockquote> -->
+      <test-text variant="caption">
+        &loz; 우리의 제품에 이렇게 많은 컬러 쉐이드가 필요한가요?
+      </test-text>
+      <test-text variant="caption">
+        &loz; 다이얼로그에서 버튼 그룹을 두 가지 방식으로 정렬할 필요가 있나요?
+      </test-text>
 
-    <!-- <test-text variant="subhead">Dictionary / Content guide</test-text>
+      <test-text variant="body-bold">Easy to read</test-text>
+      <test-text variant="body">
+        나이, 성별, 연령, 학습 수준에 구애없이 누구나 읽을 수 있어야 한다. 두괄식. 외국어 지양.
+        간결한 문장.
+      </test-text>
+      <test-text variant="body">
+        디바이스나 브라우저 등 접속 환경에 종속되지 않는 일관된 시각 경험. 유연성flexibility -
+        지속 가능성 - 단순성 의 삼위일체 (?!)
+      </test-text>
+    </blockquote>
+
+    <test-text variant="subhead">Dictionary / Content guide</test-text>
     <ul class="checklist">
       <li>
         이상 혹은 이하를 표기할 때 >를 사용하지 않습니다. 액션 인디케이터와 혼동이 될 수 있어서.
@@ -425,13 +381,12 @@
       <li>'여기', '클릭', '확장' 등 시각에 의존한 어휘로 작성하지 마세요.</li>
       <li>동일한 행동에 대해 하나의 단어를 사용하고 있는가.</li>
       <li>하기 / 취소 / 다음에</li>
-    </ul>
-    <ul>
+
+
       <li>모든 시각정보는 non-clickable. 모든 인터렉션은 clickable.</li>
       <li>2회 이상 사용할 때 규칙으로 만든다.</li>
-    </ul> -->
-
-    <!-- <test-text variant="subhead">Styling</test-text>
+    </ul>
+    <test-text variant="subhead">Styling</test-text>
     <ul>
       <li>초기 선언은 항상 margin:0 0 0 0. 재할당의 암시를 위해 방향을 풀어서 margin-left.</li>
       <li>position fixed. z-index 보전을 위해 static이 아닌 relative로 초기화하세요.</li>
@@ -440,9 +395,8 @@
         Styling hooks follows a specific naming convention to promote predictability and
         consistency.
       </li>
-    </ul> -->
-
-    <!-- <test-text variant="subhead">Naming conventions</test-text>
+    </ul>
+    <test-text variant="subhead">Naming conventions</test-text>
     <ul>
       <li>특정 형태를 유추할 수 있는 클래스 네이밍하지 마세요.</li>
       <li>
@@ -458,13 +412,13 @@
         있는 추상화 및 기타 이점이 무효화. 값을 조정하기 쉽도록 추상화.. 1 unit을 .25rem으로 모두
         네이밍 할 수 있나.
       </li>
-    </ul> -->
+    </ul>
 
     <!-- Apple은 탄소 중립을 실천합니다. 그리고 같은 기준을 2030년까지 모든 제품에 대해서도 적용할
     예정입니다. 모든 Apple 제품과 포장재에 100% 재활용 및 재생 가능 소재만이 사용되는 그날을 위해 헌신적인 노력을 기울이고 있습니다. 또한, 모든
     제품을 탄소 발자국을 남기지 않고 청정 에너지로 생산할 예정이죠. -->
 
-    <section class="component-references" style="max-width: 100%; margin-top: 4rem">
+    <!-- <section class="component-references" style="max-width: 100%; margin-top: 4rem">
       <a href="https://developer.apple.com/documentation/technologies" target="_blank">
         Apple technologies
       </a>
@@ -474,8 +428,8 @@
       <a href="https://en.wikipedia.org/wiki/Universal_design" target="_blank">Universal design</a>
       <a href="https://html.spec.whatwg.org/">HTME spec</a>
       <a href="https://webkit.org/">Webkit</a>
-      <!-- https://www.sitemaps.org/protocol.html -->
-    </section>
+      https://www.sitemaps.org/protocol.html
+    </section> -->
 
     <!-- <section class="component-references">
       <a href="https://cube.fyi/" target="_blank">CUBE CSS</a>

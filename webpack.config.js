@@ -37,6 +37,8 @@ const patterns = [
   'presentation',
   'filtering',
   'chat',
+  'carousel',
+
   'setting',
   'post',
   'accordion',

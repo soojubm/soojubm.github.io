@@ -24,6 +24,9 @@ class MenuItem extends HTMLElement {
     check.classList.add('item-check')
     // action.classList.add('item-action')
 
+    // TODO
+    if (this.current && this.current?.length > 0) container.ariaCurrent = this.current
+
     check.name = 'check'
     avatar.name = 'avatar'
     action.name = 'action'
@@ -84,6 +87,10 @@ class MenuItem extends HTMLElement {
 
   get label() {
     return this.getAttribute('label')
+  }
+
+  get current() {
+    return this.ariaCurrent
   }
 
   render() {}

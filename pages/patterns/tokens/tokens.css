@@ -1,5 +1,5 @@
 
-.tokens {
+main {
   --item-width: 20%;
 }
 
@@ -54,7 +54,7 @@
 .token-item .color-item + .color-item {margin:var(--space-2) 0 0 0;}
 
 @media (max-width: 1200px) {
-  .tokens {
+  main {
     --item-width: 33.3333%;
   }
   .token-group {  grid-template-columns: repeat(2, 1fr);}

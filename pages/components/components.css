@@ -74,8 +74,8 @@
 .component-props dl dt:after {content:':';}
 /* .component-props dl dd {color:#5f9ea0;} */
 .component-props dl dt + dd {font-weight: var(--font-weight-bold);}
-.component-props dl dd + dd {width:100%;margin-top:var(--space-05);margin-bottom:var(--space-3);font-size:var(--font-size-small);line-height:var(--font-line-height);color:var(--color-text);}
-
+.component-props dl dd + dd {width:100%;margin-top:var(--space-05);margin-bottom:var(--space-2);font-size:var(--font-size-small);line-height:var(--font-line-height);color:var(--color-text);}
+/* .component-props dl dd + dd + dt {margin-top:var(--space-3);} */
 .component-guide {
   max-width: var(--container-width);
   margin:3.5rem 0 4rem;
@@ -113,8 +113,6 @@
   position: absolute;
   display: none;
 }
-  
-.article {padding:2rem var(--grid-margin) 8rem;overflow:hidden;position:relative;}
 
 /* 전체 영역에 해당 */
 test-text[variant=body-large] {max-width: var(--layout-width-small);}
@@ -144,6 +142,7 @@ test-tile [variant=subhead] + [variant=body] {
   margin: .5rem 0 0 0;
 }
 
+[variant=subhead] + [variant=body], [variant=subhead] + [variant=body-bold],
 [variant=subhead] + [variant=body] {
   display: block;
   margin: var(--space-after-subhead) 0 0 0;
@@ -176,35 +175,6 @@ test-tile [variant=subhead] + [variant=body] {
   .component-example {
     margin-top:2rem;margin-bottom:2rem;padding-top:1rem;padding-bottom:1rem;border-radius:0;
   }
-}
-
-
-
-
-
-
-.carousel {position: relative;}
-.carousel-viewer {}
-.carousel-viewer-slide {}
-.carousel-viewer-slide:hover {}
-.carousel-viewer-slide-media {}
-.carousel-viewer-slide-name {}
-.carousel-dots {display: flex;align-items: center;}
-.carousel-dots-dot {width: 10px;height: 10px;margin: 0px 4px;border-radius: 50%;background: rgba(0, 0, 0, 1);cursor: pointer;}
-.carousel-dots-dot:hover {opacity: .5;}
-.carousel-arrows {}
-.carousel-arrows-prev {position: absolute;left:-.5rem;top:2rem;z-index: var(--zindex-default);}
-.carousel-arrows-next {position: absolute;right:-.5rem;top:2rem;z-index: var(--zindex-default);}
-.carousel-arrows button.is-disabled {opacity: .2;}
-@media (--small) {
-  .scroll {
-    display: none
-  }
-
-  .carousel-arrows {
-    display: none;
-  }
-  .carousel:hover .carousel-arrows {display: block;}
 }
 
 

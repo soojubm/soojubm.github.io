@@ -5,7 +5,8 @@ export const isMacBrowser = /Mac|iPod|iPhone|iPad/.test(navigator.platform)
 
 export function backHistory() {}
 
-export const isScrollEnd = () => window.innerHeight + window.pageYOffset >= document.body.offsetHeight
+export const isScrollEnd = () =>
+  window.innerHeight + window.pageYOffset >= document.body.offsetHeight
 export const isViewportSmall = () => window.matchMedia('(min-width:888px)').matches
 
 function getCookie(name) {
@@ -67,3 +68,10 @@ const throttle2 = (callback, delay) => {
     )
   }
 }
+
+// export function renderSidemenu() {
+//   const container = document.querySelector('.page')
+//   if (!container) return
+
+//   container.insertAdjacentHTML('afterbegin', sidemenu)
+// }

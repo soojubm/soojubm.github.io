@@ -8,7 +8,6 @@ import { stopAnimation } from './public/javascripts/utils/optimizationUtils'
 
 import { detectLoad, lockBodyElement, unlockBodyElement } from './public/javascripts/load'
 
-import carousel from './public/javascripts/event/carousel'
 import toggleElement from './public/javascripts/event/toggleElement'
 import tab from './public/javascripts/event/tab'
 import scrollspy from './public/javascripts/event/scrollspy'

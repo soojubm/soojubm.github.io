@@ -100,6 +100,7 @@ input[type=search]::-webkit-search-results-decoration {display:none;}
 
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 0px 0px;
 }
+.textfield-input:hover {border-color:var(--color-primary);}
 .textfield-input:focus {box-shadow:var(--status-hover);}
 .textfield-input:read-only {color:var(--color-text-light);cursor:default;}
 .textfield-input:disabled {opacity:.5;cursor:not-allowed;}
