@@ -74,8 +74,8 @@
 .component-props dl dt:after {content:':';}
 /* .component-props dl dd {color:#5f9ea0;} */
 .component-props dl dt + dd {font-weight: var(--font-weight-bold);}
-.component-props dl dd + dd {width:100%;margin-top:var(--space-05);margin-bottom:var(--space-3);font-size:var(--font-size-small);line-height:var(--font-line-height);color:var(--color-text);}
-
+.component-props dl dd + dd {width:100%;margin-top:var(--space-05);margin-bottom:var(--space-2);font-size:var(--font-size-small);line-height:var(--font-line-height);color:var(--color-text);}
+/* .component-props dl dd + dd + dt {margin-top:var(--space-3);} */
 .component-guide {
   max-width: var(--container-width);
   margin:3.5rem 0 4rem;
@@ -113,8 +113,6 @@
   position: absolute;
   display: none;
 }
-  
-.article {padding:2rem var(--grid-margin) 8rem;overflow:hidden;position:relative;}
 
 /* 전체 영역에 해당 */
 test-text[variant=body-large] {max-width: var(--layout-width-small);}

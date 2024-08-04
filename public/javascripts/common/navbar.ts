@@ -43,21 +43,21 @@ document.addEventListener('DOMContentLoaded', () => {
   // lazyLoading()
   detectTheme()
 
-  document.querySelectorAll('.sidebar-menu a').forEach(item => {
+  // detectPage
+  document.querySelectorAll('.sidebar-menu a, .sidebar-menu test-menuitem').forEach(item => {
     const { pathname } = window.location
+    console.log(pathname, item.getAttribute('href'))
     if (pathname.includes(item.getAttribute('href') || '')) {
       item.setAttribute('aria-current', 'page')
     }
-    let temp = 0
-    const a = document.querySelector('.sidebar-menu')
 
-    console.log(a?.scrollTop)
+    // const a = document.querySelector('.sidebar-menu')
 
-    item.addEventListener('click', () => {
-      localStorage.setItem('tttt', String(a?.scrollTop))
-    })
+    // item.addEventListener('click', () => {
+    //   localStorage.setItem('tttt', String(a?.scrollTop))
+    // })
 
-    a?.scrollTo(0, Number(localStorage.getItem('tttt')))
+    // a?.scrollTo(0, Number(localStorage.getItem('tttt')))
   })
 
   function lazyLoading() {

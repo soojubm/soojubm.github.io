@@ -77,6 +77,24 @@ a {
   }
 }
 
+/* TODO navbar detect current page */
+.item[aria-current=page] {
+  --hover-outline: calc(var(--space-2) / 2 * -1);
+  --hover-outline: 0;
+  cursor: pointer;
+  &:before {
+    /* // z-idnex 이슈 */
+    content:'';
+    display:block;
+    background-color:var(--green100);
+    border-radius:var(--radius);
+    position:absolute;
+    left:var(--hover-outline);right:var(--hover-outline);top:var(--hover-outline);bottom:var(--hover-outline);
+    z-index: -1;
+  }
+}
+
+
 /* .item .checkbox {display:flex;justify-content:flex-end;position:absolute;left:0;right:0;top:0;bottom:0;}
 .item .checkbox label {width:100%;}
 .item .checkbox label:before {display:none;left:auto;right:0;top:4px;}

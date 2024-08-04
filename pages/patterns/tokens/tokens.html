@@ -1,4 +1,4 @@
-<main class="tokens">
+<main class="page" data-size="fluid">
   <style>
     .token-item test-group,
     .token-item > div {
@@ -6,21 +6,19 @@
       margin: var(--space-1) 0 0;
     }
   </style>
-
-  <section class="tokens-body">
-    <!-- <test-group variant="hashtag">
-      <test-chip class="js-scrollspy-trigger" status="active">Palette</test-chip>
-      <test-chip class="js-scrollspy-trigger">Text</test-chip>
-      <test-chip class="js-scrollspy-trigger">Sizing</test-chip>
-      <test-chip class="js-scrollspy-trigger">Spacing</test-chip>
-      <test-chip class="js-scrollspy-trigger">Layouts</test-chip>
-      <test-chip class="js-scrollspy-trigger">Positioning</test-chip>
-      <test-chip class="js-scrollspy-trigger">Z-index</test-chip>
-      <test-chip class="js-scrollspy-trigger">Opacity</test-chip>
-      <test-chip class="js-scrollspy-trigger">Animation</test-chip>
-      <test-chip class="js-scrollspy-trigger">Optical Adjustment</test-chip>
-    </test-group> -->
-    <!-- classification / category -->
+  <!-- <test-group variant="hashtag">
+    <test-chip class="js-scrollspy-trigger" status="active">Palette</test-chip>
+    <test-chip class="js-scrollspy-trigger">Text</test-chip>
+    <test-chip class="js-scrollspy-trigger">Sizing</test-chip>
+    <test-chip class="js-scrollspy-trigger">Spacing</test-chip>
+    <test-chip class="js-scrollspy-trigger">Layouts</test-chip>
+    <test-chip class="js-scrollspy-trigger">Positioning</test-chip>
+    <test-chip class="js-scrollspy-trigger">Z-index</test-chip>
+    <test-chip class="js-scrollspy-trigger">Opacity</test-chip>
+    <test-chip class="js-scrollspy-trigger">Animation</test-chip>
+    <test-chip class="js-scrollspy-trigger">Optical Adjustment</test-chip>
+  </test-group> -->
+  <!-- classification / category -->
 
     <article class="article js-scrollspy-section">
       <test-text variant="title">Tokens</test-text>
@@ -37,7 +35,6 @@
         guidance, refer to the component-specific guidelines.
       </test-text>
       <blockquote>
-        <test-text variant="body-bold">Checklist</test-text>
         <ul class="checklist">
           <li>color-icon / color-text 가 동일한가</li>
           <li>color-text-accent-yellow</li>
@@ -356,9 +353,10 @@
       <test-text variant="subhead">Text</test-text>
       <!-- <test-text variant="body"> 활자의 위계와 배치. 정보 계층. </test-text> -->
       <test-tile variant="elevated" size="small">
-        <test-menuitem label="시스템 폰트로 보기" class="js-default-font">
+        <button  class="js-default-font">
           <test-avatar slot="avatar" icon="font-question"></test-avatar>
-        </test-menuitem>
+          시스템 폰트로 보기
+        </button>
       </test-tile>
       <!-- <test-text variant="body-bold">Typefaces <sup>2</sup></test-text>
       <test-text variant="body-bold">
@@ -562,15 +560,14 @@
         <a href="https://medium.com/eightshapes-llc/size-in-design-systems-64f234aec519">test3</a>
         <a href="https://bulma.io/documentation/form/input/">bulma variables</a>
       </section>
+
+      <test-text variant="title">Opacity</test-text>
+      <test-text variant="body-large">요소의 투명도.</p>
+      <div class="token-group">
+        <div class="token-item"><test-avatar></test-avatar><b>opacity-disabled</b></div>
+        <div class="token-item"><test-avatar></test-avatar><b>opacity-overay/underlay</b></div>
+      </div>
     </article>
-
-
-    <test-text variant="title">Opacity</test-text>
-    <test-text variant="body-large">요소의 투명도.</p>
-    <div class="token-group">
-      <div class="token-item"><test-avatar></test-avatar><b>opacity-disabled</b></div>
-      <div class="token-item"><test-avatar></test-avatar><b>opacity-overay/underlay</b></div>
-    </div>
 
     <!-- <test-text variant="title">Positioning 이거 Utility</test-text>
       <test-text variant="body-large">
@@ -594,5 +591,4 @@
         </div>
       </div>
     -->
-  </section>
 </main>

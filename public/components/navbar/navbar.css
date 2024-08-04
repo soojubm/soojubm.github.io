@@ -1,5 +1,9 @@
 .navbar {
-  display:flex;align-items: center;height:var(--navbar-height);padding:var(--space-3) var(--grid-margin);box-sizing:border-box;background:var(--color-background);
+  display:flex;align-items: center;
+  height:var(--navbar-height);
+  margin:0 auto;
+  padding:var(--space-3) var(--grid-margin);
+  box-sizing:border-box;background:var(--color-background);
   position:fixed;top:0;left:0;right:0;z-index:var(--zindex-menu);}
   /* sticy 위로 스크롤 하면 */
 .navbar-logo {
@@ -68,19 +72,52 @@
 // .is-active .navbar-menu-item menu a {opacity:1;}
 // .is-darktheme .navbar-menu-item {color:var(--gray0);} */
 
+
+
+/* PAGE COMPONENT */
+/* page에 패딩을 줄 수 있고, articleㅇ에 패딩을 줄 수 있다. 마이너스 마진을 줄 수도 있다. */
+/* ReactNative safeAreaView, scrollView */
+.page {max-width:var(--layout-width-wide);margin:0 auto;
+  padding:0 var(--grid-margin);
+  box-sizing: border-box;
+  position:relative;
+}
+
+/* fluid or with sidemenu */
+.page[data-size=fluid] {
+  max-width: 100%;
+  padding: 0 0 8rem;
+}
+
+/* 1. with sidemenu */
+/* 2. navbar with sidebar fluid layout */
+.page[data-size=wide] {
+  display: flex;
+  justify-content: space-between;
+}
+.page[data-size=narrow] {}
+
 .sidebar-menu {
   display:block;
   width: 100%;
   max-width: var(--width-sidemenu);
-  margin:0;
-  padding:var(--space-4) var(--space-4) 0 calc(var(--grid-margin));
+  height: calc(100vh - var(--navbar-height));
+  padding: 0 var(--space-4) 0 calc(var(--grid-margin));
+  /* padding: 0 var(--space-4) 0 0; */
+  /* margin:var(--space-4) 0; */
   background:var(--color-background);
-  position:fixed;left:0px;top:calc(var(--navbar-height));bottom:0px;z-index:var(--zindex-menu);
+  position:sticky;
+  left:0px;
+  top:calc(var(--navbar-height));
+  bottom:0px;
+  z-index:var(--zindex-menu);
   transition:transform var(--duration-slowly) cubic-bezier(.165,.84,.44,1);
   transform:translateX(-120%);
+
+  position: fixed;
 }
 .sidebar-menu span {}
-.sidebar-menu menu {display:flex;flex-direction: column;margin:2rem 0;
+.sidebar-menu menu {display:flex;flex-direction: column;margin:2rem 0 0 0;
 }
 .sidebar-menu test-menuitem {margin:0 0 var(--space-1) 0;}
 .sidebar-menu menu a {
@@ -129,13 +166,9 @@
   overscroll-behavior:contain;
 }
 
-.is-opened-menu .design,
-.is-opened-menu .component,
-.is-opened-menu .tokens,
-.is-opened-menu .pattern,
-.is-opened-menu .foundation {
-  padding-left: calc(var(--width-sidemenu) + var(--grid-margin) + 1rem);
-}
+/* .is-opened-menu .page {
+  padding-left: calc(var(--width-sidemenu) + 1rem);
+} */
 
 .is-opened-menu .navbar-logo {
   z-index: 8;
@@ -143,14 +176,9 @@
 
 /* --small */
 @media (max-width:1080px) {
-  .is-opened-menu .design,
-  .is-opened-menu .component,
-  .is-opened-menu .tokens,
-  .is-opened-menu .pattern,
-  .is-opened-menu .foundation {
+  .is-opened-menu .page {
     padding-left: var(--grid-margin);
   }
-
 }
 
 .menu {position:relative;z-index:1;}
