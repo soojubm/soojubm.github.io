@@ -1,7 +1,7 @@
 import footer from '/public/components/footer/footer.html'
 import navbar from '/public/components/navbar/navbar.html'
 
-import home from './home.html'
+import main from './home.html'
 
 import '/public/stylesheets/shared.css'
 import '/public/stylesheets/components/chat.css'
@@ -9,7 +9,9 @@ import '/public/stylesheets/components/chat.css'
 import '/pages/components/components.css'
 
 document.addEventListener('DOMContentLoaded', () => {
-  document.querySelector('main')!.innerHTML = navbar + home + footer
+  document.body.insertAdjacentHTML('beforeend', navbar)
+  document.body.insertAdjacentHTML('beforeend', main)
+  document.body.insertAdjacentHTML('beforeend', footer)
 })
 
 // {

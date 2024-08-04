@@ -4,13 +4,14 @@ import navbar from '/public/components/navbar/navbar.html'
 import main from './accordion.html'
 
 import '/public/stylesheets/shared.css'
+import '/pages/components/components.css'
 
 import '/public/stylesheets/components/accordion.css'
 
-import '/pages/components/components.css'
-
 document.addEventListener('DOMContentLoaded', () => {
-  document.querySelector('main')!.innerHTML = navbar + main + footer
+  document.body.insertAdjacentHTML('beforeend', navbar)
+  document.body.insertAdjacentHTML('beforeend', main)
+  document.body.insertAdjacentHTML('beforeend', footer)
 
   document.addEventListener('click', toggleDetails)
 
@@ -33,15 +34,3 @@ document.addEventListener('DOMContentLoaded', () => {
     // targetElement.classList.toggle('is-active')
   }
 })
-
-// {
-//   name: 'button',
-//   role: action',
-//   description: '',
-//   aka: ['string', 'string'],
-//   features: [],
-//   bestPractices: [],
-//   props: { name: '', size: ''}
-//   relatedComponents: [],
-//   useCases: [],
-// }

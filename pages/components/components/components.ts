@@ -8,7 +8,9 @@ import '/public/stylesheets/shared.css'
 import '/public/stylesheets/components/form.css'
 
 document.addEventListener('DOMContentLoaded', () => {
-  document.querySelector('main')!.innerHTML = navbar + main + footer
+  document.body.insertAdjacentHTML('beforeend', navbar)
+  document.body.insertAdjacentHTML('beforeend', main)
+  document.body.insertAdjacentHTML('beforeend', footer)
 
   // TODO: 반복해서 올렸을 때 filelist의 누적 또는 리셋
   // TODO: 동일한 파일의 업로드

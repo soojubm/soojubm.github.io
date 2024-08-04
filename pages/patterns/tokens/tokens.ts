@@ -4,7 +4,7 @@ import navbar from '/public/components/navbar/navbar.html'
 // import sidemenu from '/public/components/sidemenu/sidemenu.html'
 import '/public/components/sidemenu/sidemenu.css'
 
-import tokens from './tokens.html'
+import main from './tokens.html'
 
 import '/public/stylesheets/shared.css'
 import '/pages/components/components.css'
@@ -12,8 +12,9 @@ import './tokens.css'
 
 document.addEventListener('DOMContentLoaded', () => {
   // document.querySelector('body')!.insertBefore(navbar, );
-  document.querySelector('body')!.innerHTML = navbar + tokens + footer
-
+  document.body.insertAdjacentHTML('beforeend', navbar)
+  document.body.insertAdjacentHTML('beforeend', main)
+  document.body.insertAdjacentHTML('beforeend', footer)
   // renderSidemenu
   // document.querySelector('.page')!.insertAdjacentHTML('afterbegin', sidemenu)
 

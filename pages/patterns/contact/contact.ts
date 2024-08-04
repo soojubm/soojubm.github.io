@@ -9,5 +9,7 @@ import '/public/stylesheets/components/step.css'
 import '/pages/components/components.css'
 
 document.addEventListener('DOMContentLoaded', () => {
-  document.querySelector('main')!.innerHTML = navbar + main + footer
+  document.body.insertAdjacentHTML('beforeend', navbar)
+  document.body.insertAdjacentHTML('beforeend', main)
+  document.body.insertAdjacentHTML('beforeend', footer)
 })
