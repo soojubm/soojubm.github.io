@@ -7,7 +7,7 @@ class Badge extends HTMLElement {
 
     const container = document.createElement('em')
     container.classList.add('badge')
-    container.setAttribute('data-variant', this.variant || '')
+    container.dataset.variant = this.variant || ''
 
     shadow.appendChild(container)
     shadow.appendChild(makeStyleSheet('badge'))
