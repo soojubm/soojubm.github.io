@@ -1,8 +1,10 @@
 <main class="page">
-  <test-text variant="title">Buttons</test-text>
-  <test-text variant="body-large"
-    >페이지 이동이나 양식 제출 등 사용자 여정의 핵심과업을 수행하기 위한 액션입니다.</test-text
-  >
+  <header class="page-header">
+    <test-text variant="title">Buttons</test-text>
+    <test-text variant="body-large">
+      페이지 이동이나 양식 제출 등 사용자 여정의 핵심과업을 수행하기 위한 액션입니다.
+    </test-text>
+  </header>
   <dl class="article-aka">
     <dt>a.k.a</dt>
     <dd>button</dd>
@@ -13,20 +15,19 @@
       <test-button variant="primary">primary</test-button>
       <test-button variant="secondary">secondary</test-button>
       <test-button variant="tertiary">tertiary</test-button>
-      <test-button variant="destructive" aria-label="danger">destructive</test-button>
-      <test-button variant="text">text</test-button>
+      <!-- <test-button variant="destructive" aria-label="danger">destructive</test-button> -->
+      <!-- <test-button variant="text">text</test-button> -->
     </test-group>
-    <test-separator></test-separator>
-    <test-group variant="button">
+    <!-- <test-group variant="chip">
+      <test-button variant="primary" size="large">large</test-button>
+      <test-button variant="tertiary">medium</test-button>
+    </test-group> -->
+  </section>
+  <section class="component-example" style="margin-top: -3rem">
+    <test-group variant="chip">
       <test-button variant="tertiary" status="hover">hovered</test-button>
       <test-button variant="tertiary" status="focus">focused</test-button>
       <test-button variant="tertiary" status="disabled" disabled>disabled</test-button>
-    </test-group>
-
-    <test-separator></test-separator>
-    <test-group variant="chip">
-      <!-- <test-button variant="primary" size="large">large</test-button> -->
-      <test-button variant="tertiary">medium</test-button>
     </test-group>
   </section>
 
@@ -66,43 +67,40 @@
     </dl>
   </section>
 
-  <!-- 참고: 버튼 네이밍. 'link' | 'subtle' | 'primary' / 'solid' | 'outline' | 'plain' |'text' -->
+  <!-- <test-button data-variant="tertiary">
+    with suffix icon
+    <test-icon slot="suffix" name="star"></test-icon>
+  </test-button> -->
 
+  <!-- 참고: 버튼 네이밍. 'link' | 'subtle' | 'primary' / 'solid' | 'outline' | 'plain' |'text' -->
   <section class="component-guide">
-    <div style="display: flex; flex-direction: column; gap: 2rem">
-      <div>
-        <test-tile
-          style="display: flex; align-items: center; justify-content: center; height: 120px"
-        >
+    <div style="display: flex; gap: 1rem">
+      <!-- TODO 아이콘 하나로 제한되면 slot의 순서만 챙기고 그냥 slot='icon' 하나로? 아니면 label -->
+      <!-- <test-button data-variant="tertiary">
+                      <test-icon slot="prefix" name="star"></test-icon>
+                      with prefix icon
+                    </test-button> -->
+      <div style="width: 50%">
+        <test-tile>
           <test-group variant="button">
             <test-button variant="tertiary">
               Show more
               <test-icon slot="suffix" name="nav-arrow-down"></test-icon>
             </test-button>
-            <!-- TODO 아이콘 하나로 제한되면 slot의 순서만 챙기고 그냥 slot='icon' 하나로? 아니면 label -->
-            <!-- <test-button data-variant="tertiary">
-                  <test-icon slot="prefix" name="star"></test-icon>
-                  with prefix icon
-                </test-button> -->
-            <test-button data-variant="tertiary">
-              with suffix icon
-              <test-icon slot="suffix" name="star"></test-icon>
-            </test-button>
           </test-group>
         </test-tile>
-        <div style="height: var(--space-1)"></div>
+        <div style="height: var(--space-2)"></div>
         <test-text variant="body-bold">
           ShowMoreButton <span hidden>Image Button, CheckoutButton</span>
         </test-text>
+        <div style="height: var(--space-1)"></div>
         <test-text variant="body">
           fullWidth로 사용하지 마세요. 단일 콘텐츠 또는 콘텐츠 목록의 너비와 대비를 통한 강조. TODO
           이건 최종 액션이 아님. 칩이 되는 게 나을 수도.
         </test-text>
       </div>
-      <div>
-        <test-tile
-          style="display: flex; align-items: center; justify-content: center; height: 120px"
-        >
+      <div style="width: 50%">
+        <test-tile>
           <test-button variant="tertiary">
             <div slot="prefix" class="chat-inputing animation-chatting">
               <span style="background-color: var(--color-background-strong)"></span>
@@ -111,9 +109,8 @@
             </div>
           </test-button>
         </test-tile>
-        <div style="height: var(--space-1)"></div>
-        <test-text variant="body-bold">Loading/Fetching button</test-text>
-        <test-text variant="body"> </test-text>
+        <div style="height: var(--space-2)"></div>
+        <test-text variant="body-bold">Loading/Fetching</test-text>
       </div>
     </div>
 
@@ -228,7 +225,6 @@
         Link Button. 버튼과 형태는 동일한 합성된 컴포넌트. Link 안에 button이 들어가면 링크 역할과
         버튼의 형태를 분리할 수 있다.
       </test-text>
-      <test-text variant="body">elevated button과 elevated menuitem. 후자만 정의하면 됨.</test-text>
     </blockquote>
   </section>
 </main>

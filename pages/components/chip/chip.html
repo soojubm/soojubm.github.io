@@ -207,11 +207,149 @@
         <test-chip>추미애법무부장관</test-chip>
         <test-chip variant="back" icon="more-horiz"></test-chip>
       </test-group>
-      <div style="height: var(--space-after-subhead)"></div>
-      <test-tile variant="elevated" size="small">
-        <test-menuitem label="직접 검색">
-          <test-avatar slot="avatar" fallback="" icon="search"> </test-avatar>
-        </test-menuitem>
+      <test-separator></test-separator>
+      <test-group variant="chip">
+        <test-chip variant="back" icon="arrow-left"></test-chip>
+        <test-chip variant="back" icon="arrow-right"> </test-chip>
+      </test-group>
+    </section>
+
+    <section class="component-props">
+      <test-text variant="subhead">Props</test-text>
+      <dl>
+        <dt>name</dt>
+        <dd>string</dd>
+        <dd></dd>
+        <dt>label</dt>
+        <dd>string</dd>
+        <dd>하나의 단어 또는 복합명사</dd>
+        <dt>isChecked<attr>?</attr></dt>
+        <dd>boolean</dd>
+        <dd>with ariaSelected. toggle or single active. 링크로 쓰지 않는다.</dd>
+        <dt>onClick</dt>
+        <dd>() => void</dd>
+        <dd>TODO checked 의존</dd>
+        <dt>onRemoveClick<attr>?</attr></dt>
+        <dd>() => void</dd>
+        <dd>TODO 합성 컴포넌트를 만드는 게 좋다. isRemovable과 통합</dd>
+        <dt>aria???</dt>
+        <dd>'checked' | 'expanded' | 'selected' | 'pressed'</dd>
+        <dd>TODO onRemoveClick와 설명과 같은 맥락</dd>
+        <dt>ariaHaspopup<attr>?</attr></dt>
+        <dd>null</dd>
+        <dd>TODO</dd>
+        <dt>slot</dt>
+        <dd>'icon' | 'prefix' | 'suffix'</dd>
+      </dl>
+    </section>
+
+    <section class="component-guide">
+      <div class="group" data-alignment="bleeding-vertical">
+        <test-chip>블리딩1234</test-chip>
+        <test-chip>블리딩4564</test-chip>
+        <test-chip>블리딩1234</test-chip>
+        <test-chip>블리딩4564</test-chip>
+        <test-chip>블리딩1234</test-chip>
+      </div>
+
+      <test-text variant="subhead">Behavior</test-text>
+      <test-text variant="body">
+        하나의 칩은 하나의 액션을 합니다. 아이콘은 단지 indicator의 역할을 하고 칩 자체가 하나의
+        클릭 액션을 담당. 아이콘이 별도의 액션을 가능케 하기 위해서는 splitButton 형태가 되어야
+        한다.
+      </test-text>
+
+      <test-text variant="subhead">Visual Style</test-text>
+      <test-text variant="body"
+        >맥락이 다른 chip을 그룹으로 제공할 수 있습니다. 이 때 단일선택, 다중선택, 삭제여부,
+        펼침메뉴 등의 기표를 충분히 제공하세요.
+      </test-text>
+      <test-text variant="body">
+        목록의 재정렬을 위한 옵션 목록을 group으로 제공하지 마세요. 현재 정렬 상태만 요약 표기하고
+        확장가능한 메뉴로 정렬 목록을 제공하세요. (bad case: 2022.04 구글 지도 바뀐 것)
+      </test-text>
+
+      <test-text variant="subhead">A11y</test-text>
+      <test-text variant="body">
+        chipGroup selected=[] role=listbox aria-orientation="vertical"
+        aria-multiselectable="true"<br />
+        chip value="" role="option" aria-selected="true"
+      </test-text>
+
+      <blockquote>
+        <test-text variant="body">
+          TODO : searhField avatar를 쓰니까 아바타 특유의 형태와 충돌(outlined) 사이즈를 다시
+          정의해주어야 한다. 컴포넌트 합성하면 사실 이걸 그렇게 고민할 내용은 아니게 됨.
+        </test-text>
+        <test-text variant="body">
+          아이콘 vs 아이콘 버튼(아바타가 아니라 칩/버튼 액션이다) vs 아바타 :: 아이콘과 아이콘
+          버튼(아바타에 가까움)을 구분. 16px 아이콘을 32 안에 넣으면
+        </test-text>
+        <test-text variant="body">
+          장식적인 검색 아이콘과 clickable한 액션. prefix는 장식. suffix는 액션? suffix에 유닛이
+          있을 수도
+        </test-text>
+        <ul>
+          <li>
+            안드로이드: chipGroup, HorizontalScrollView/singleLine, action/entry/filter(check
+            active)/choice
+          </li>
+          <li>
+            avatar / chip with icon에서 이전 페이지 등과 같이 클릭 영역을 주어야 할 때 아바타/칩
+            선택 필요.
+          </li>
+          <li>MEMO: Text only는 plain variant이 될 수 없다.</li>
+          <li>TODO 선택을 클리어하는 클리어버튼을 만들어 검색필드에서 활용하는 방법도 있다.</li>
+          <li>TODO: icon chip의 label prop으로 툴팁을 만들기</li>
+          <li>
+            형태로 분류하면 결국 그냥 버튼임. 기능으로 분류하는 것이 중요함. 많은 디자인 시스템이
+            칩을 정의하지 않고 있음. 도메인에 특화된 기능 중심의 버튼 컴포넌트를 정의하는 것이 맹점.
+            slot으로 아이콘을 넣는 방식이 되면 유지 비용이 크다.
+          </li>
+          <li>아이콘이 아니라 이모지가 들어갈 때. 여기서 searching 왼쪽 아바타.</li>
+        </ul>
+      </blockquote>
+    </section>
+
+    <address class="component-references">
+      <!-- <test-text variant="label">References</test-text> -->
+      <a href="https://material.io/components/menus" target="_blank"> MD menu </a>
+      <a
+        href="https://developer.apple.com/design/human-interface-guidelines/components/menus-and-actions/pull-down-buttons"
+      >
+        MD pull down button
+      </a>
+      <a
+        href="https://developer.apple.com/design/human-interface-guidelines/ios/controls/pull-down-menus/"
+        target="_blank"
+      >
+        HIG pull down menu
+      </a>
+      <a
+        href="https://developer.android.com/reference/com/google/android/material/chip/ChipGroup"
+        target="_blank"
+      >
+        MD chip group
+      </a>
+    </address>
+    <section class="component-case">
+      <test-tile>
+        <test-text variant="subhead">지금 인기있는<br />이슈 키워드</test-text>
+        <div style="height: var(--space-4)"></div>
+        <test-group variant="chip">
+          <test-chip>뉴닉</test-chip>
+          <test-chip>국정감사</test-chip>
+          <test-chip>윤석열검찰총장</test-chip>
+          <test-chip>차별금지법</test-chip>
+          <test-chip>추미애법무부장관</test-chip>
+          <test-chip variant="back" icon="more-horiz"></test-chip>
+        </test-group>
+        <div style="height: var(--space-after-subhead)"></div>
+        <test-tile variant="elevated" size="small">
+          <test-menuitem label="직접 검색">
+            <test-avatar slot="avatar" fallback="" icon="search"> </test-avatar>
+          </test-menuitem>
+        </test-tile>
       </test-tile>
     </test-tile>
     <br />

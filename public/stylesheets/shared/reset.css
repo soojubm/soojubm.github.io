@@ -109,12 +109,6 @@ ul li::marker {}
 
 ol {padding-left:var(--space-4)}
 
-/* TODO props와 일반 그리고 description list, summary list (정렬의 차이일 뿐. term,description */
-dl {display:flex !important;flex-wrap:wrap;}
-dl dt {margin:0 var(--space-2) 0 0;color:var(--color-text-light);}
-dl dt attr {}
-dl dd {margin:0 var(--space-4) 0 0;}
-
 /* ::selection {background:var(--gray800);color:var(--gray0);} */
 ::placeholder {color:var(--color-text-light);}
 

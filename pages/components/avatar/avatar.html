@@ -42,37 +42,101 @@
 
   <section class="component-guide">
     <test-text variant="subhead">Behavior</test-text>
-    <test-text variant="body" data-temp="clickable">
-      아바타 또는 아바타릂 포함하는 상위 요소(클릭을 보조하는 역할)는 항상 클릭할 수 있습니다.
-    </test-text>
+    <test-text variant="body" data-temp="clickable"> </test-text>
     <test-text variant="subhead">Visual style</test-text>
-    <test-text variant="body">아웃라인 형태를 클릭할 수 없는 아바타로 정의</test-text>
-    <test-text variant="subhead">Changelog</test-text>
+    <!-- <test-text variant="body">아웃라인 형태를 클릭할 수 없는 아바타로 정의</test-text> -->
   </section>
 
   <!-- <test-text variant="subhead">groupable아바타 그룹</test-text> -->
   <!-- <test-text variant="subhead">Use cases</test-text> -->
-  <section class="component-case">
-    <test-tile variant="elevated">
-      <test-menuitem label="수줍이" description="Youtube subscriber">
-        <test-avatar slot="avatar" default="true"></test-avatar>
-      </test-menuitem>
-      <div style="margin: var(--space-2) 0 0">
-        <test-text variant="body">
-          Sometimes at night, I find myself behind the computer. When I finally blink, a mess of
-          code is drawing random structures on the screen. I spend the rest of the night staring.
-        </test-text>
-        <!-- <span class="avatargroup-label">🥺 수줍이님을 팔로우하고 있는 친구가 없습니다.</span> -->
-      </div>
-      <test-group style="gap: var(--space-2); margin: var(--space-2) 0 0 0">
-        <test-tile>
+  <!-- <section class="component-case">
+      <test-tile variant="elevated">
+        <test-menuitem label="수줍이" description="Youtube subscriber">
+          <test-avatar slot="avatar" default="true"></test-avatar>
+        </test-menuitem>
+        <div style="margin: var(--space-2) 0 0">
+          <test-text variant="body"
+            >Sometimes at night, I find myself behind the computer. When I finally blink, a mess of
+            code is drawing random structures on the screen. I spend the rest of the night
+            staring.</test-text
+          >
+          <span class="avatargroup-label">🥺 수줍이님을 팔로우하고 있는 친구가 없습니다.</span>
+        </div>
+        <test-group
+          style="gap: var(--space-2); margin: var(--space-2) 0 0 0"
+        >
           <test-keyvalue key="팔로워" value="62" alignment="inline"></test-keyvalue>
           <i class="icon-bullet"></i>
           <test-keyvalue key="팔로잉" value="8" alignment="inline"></test-keyvalue>
         </test-tile>
-      </test-group>
-    </test-tile>
-  </section>
+      <test-tile variant="elevated">
+        <div style="display: flex; gap: 1rem">
+          <test-avatar size="huge" variant="secondary" default="true"></test-avatar>
+          <test-group style="flex-direction: column; gap: var(--space-2)">
+            <div>
+              <test-text variant="word-weak">Top User</test-text>
+              <test-text variant="subhead">Bruce Springsteen</test-text>
+            </div>
+            <div>
+              <test-text variant="word-weak">Daily Purchase</test-text>
+              <test-text variant="subhead">10 Items</test-text>
+            </div>
+          </test-group>
+        </div>
+        <test-separator></test-separator>
+        <test-tile variant="elevated" size="small">
+        <test-group variant="avatar">
+          <test-avatar size="small" default="true"></test-avatar>
+          <test-avatar size="small" default="true"></test-avatar>
+          <test-avatar size="small" default="true"></test-avatar>
+          <test-avatar size="small" default="true"></test-avatar>
+          <span class="avatargroup-label" style="margin-left: var(--space-2)"
+            >Followed by 수줍이 외 4명</span
+          >
+        </test-group>
+        </test-tile>
+        <small class="mutiual" style="display: block; margin: var(--space-1) 0 0"
+          >내가 팔로우하는 사용자 중에는 팔로워가 없습니다. (twitter)</small
+        >
+      </test-tile>
+      <test-tile variant="flat" size="medium">
+        <test-entity
+          label="이경수"
+          description="soojubm@gmail.com"
+          description2="010 3121 7045"
+          description="UI Designer"
+        >
+          <test-avatar slot="avatar" variant="secondary" size="large" default="true"></test-avatar>
+          <test-tag slot="tag" variant="primary"></test-tag>
+        </test-entity>
+        <div style="margin: var(--space-2) 0 0">
+          <test-chip>내 프로필 관리</test-chip>
+        </div>
+        <div style="position:absolute;right:var(--space-4);top:var(--space-4);">
+          <test-avatar variant="secondary" size="large" >🐸</test-avatar>
+        </div>
+        <test-separator></test-separator>
+        <test-group variant="menuitem">
+          <test-menuitem label="어둡게 보기" class="js-darkmode" aria-label="change theme">
+            <test-avatar slot="avatar" variant="tertiary" icon="half-moon"> </test-avatar>
+            <test-switch slot="action"></test-switch>
+          </test-menuitem>
+          <test-menuitem label="고객센터 및 도움말">
+            <test-avatar slot="avatar" variant="tertiary" icon="megaphone"> </test-avatar>
+          </test-menuitem>
+        </test-group>
+        <test-separator></test-separator>
+        <test-menuitem label="로그아웃">
+          <test-avatar slot="avatar" variant="tertiary" icon="log-out"></test-avatar>
+        </test-menuitem>
+        <test-separator></test-separator>
+        <test-group>
+          <a href="#" style="font-size: 12px; color: var(--color-text-light)">개인정보처리방침</a>
+          <i class="icon-bullet"></i>
+          <a href="#" style="font-size: 12px; color: var(--color-text-light)">서비스 약관</a>
+        </test-group>
+      </test-tile>
+    </section> -->
   <!-- <li>icon chip(button), icon tag, menu item avatar</li> -->
   <!-- <li>memeo. medium. 이하의 크기는 디스크립션을 제공하지 않는다. 항상 align-items:center.</li> -->
   <!-- <li>pagination item은 chip과 같은 size token을 사용하지만 chip도 avatar도 아닙니다.</li> -->

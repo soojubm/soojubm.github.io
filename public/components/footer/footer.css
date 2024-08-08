@@ -1,6 +1,5 @@
 .footer {
-	/* margin:4rem 0 0 0; */
-	padding:2rem var(--grid-margin);position:relative;z-index:var(--zindex-default);transition:all .4s;}
+	padding:2rem var(--grid-margin);position:relative;transition:all .4s;}
 .footer-background {
 	margin: 0 -50vw;
 	position: absolute;

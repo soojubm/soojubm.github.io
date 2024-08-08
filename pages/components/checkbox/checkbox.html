@@ -1,7 +1,9 @@
 <main class="page">
   <article class="article js-observer js-scrollspy-section">
     <test-text variant="title" title="or Box">Checkboxes</test-text>
-    <test-text variant="body-large">옵션 목록에서 하나 이상의 옵션을 선택합니다.</test-text>
+    <test-text variant="body-large"
+      >옵션 목록에서 하나 이상의 옵션을 선택합니다. 작은 거 없앨까.</test-text
+    >
 
     <section class="component-example">
       <!-- a11y checkgroup not valid -->
@@ -16,6 +18,7 @@
         <test-checkbox
           name="checkbox"
           value="value"
+          size="large"
           helper="주로 세팅 페이지에서 사용되는 디스크립션 영역. 항상 텍스트 더미인 것은 아님. 하지만 그렇다면 expanded/collapsed 맥락이 아닐까?"
           checked
         >
@@ -29,13 +32,15 @@
           hidden
         />
         <test-group variant="checkbox">
-          <test-checkbox name="checkbox" checked disabled>비활성 상태</test-checkbox>
-          <test-checkbox name="checkbox" disabled>비활성 상태</test-checkbox>
+          <test-checkbox name="checkbox" size="large" checked disabled>비활성 상태</test-checkbox>
+          <test-checkbox name="checkbox" size="large" disabled>비활성 상태</test-checkbox>
         </test-group>
         <test-separator></test-separator>
         <test-tile variant="elevated" size="small" style="width: 100%">
           <div style="margin: 0 var(--space-2)">
-            <test-checkbox name="checkbox" checked> 모바일 친화적인 Tiled 형태. </test-checkbox>
+            <test-checkbox name="checkbox" size="large" checked>
+              모바일 친화적인 Tiled 형태.
+            </test-checkbox>
           </div>
         </test-tile>
       </test-group>
@@ -71,15 +76,11 @@
 
     <section class="component-guide">
       <test-text variant="subhead">Visual style</test-text>
-      <test-text variant="body">
-        선택되지 않은 상태로 제공하여 사용자의 직접적인? 능동적인? 행동 .. todo
-      </test-text>
+      <test-text variant="body"> 선택되지 않은 상태로 제공하세요. </test-text>
       <test-text variant="body"> 체크박스를 가로로 정렬하지 마세요. </test-text>
-
-      <test-text variant="subhead">Notes</test-text>
       <test-text variant="body">
-        label을 강조하는 것이 아니라 체크박스 전체를 강조한다면 컴포넌트를 독립적으로 유지할 수
-        있다.
+        상대적으로 강조를 위해 체크박스의 label text를 강조하지 마세요. 체크박스의 크기나 컨테이너를
+        강조하여 컴포넌트를 독립적으로 유지하세요.
       </test-text>
     </section>
 

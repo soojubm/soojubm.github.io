@@ -50,8 +50,9 @@ h1, h2, h3, p {
 }
 
 .text[data-variant=body] {
-  max-width: var(--layout-width-small);
+  max-width: 540px;
   line-height: var(--font-line-height-large);
+  font-weight: var(--font-weight-normal);
 }
 
 .text[data-variant=body-bold] {
@@ -60,7 +61,8 @@ h1, h2, h3, p {
 
 .text[data-variant=body-large] {
   font-size:var(--font-size-large);
-  line-height: 32px;
+  line-height: var(--font-line-height-large);
+  font-weight: var(--font-weight-normal);
 }
 
 .text[data-variant=label] {

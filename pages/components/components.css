@@ -4,7 +4,7 @@
 }
 .component-example {
   margin:3rem -5vw 3rem calc(-5vw + 1rem);
-  padding:2rem calc(var(--grid-margin) - 1rem) 3rem;
+  padding:2rem calc(var(--grid-margin) - 1rem);
   
   border: var(--border);
   border-right: none;
@@ -25,7 +25,8 @@
 .component-example > * {
   display: block;
   width: 100%;
-  max-width: var(--container-width);
+  /* max-width: var(--container-width); */
+  max-width: 480px;
 }
 
 .component-case {
@@ -38,7 +39,7 @@
   gap: var(--space-4);
 
   /* TODO -8rem */
-  margin:6rem -5vw -8rem calc(-5vw + 1rem);
+  margin:6rem -5vw 0 calc(-5vw + 1rem);
   padding:2rem calc(var(--grid-margin) - 1rem) 6rem;
   border-top-left-radius: var(--radius);
 
@@ -56,6 +57,7 @@
 }
 
 .component-props {
+  display: none;
   max-width: var(--container-width);
   margin:-4rem 0 1rem;
   padding:var(--space-4);
@@ -69,12 +71,13 @@
   outline: 6px solid var(--color-background);
 }
 .component-props [variant=subhead] {display:none;}
-.component-props dl {margin:0 !important;}
-.component-props dl dt {font-weight:var(--font-weight-bold);}
-.component-props dl dt:after {content:':';}
+.component-props dl {display:flex;flex-wrap:wrap;}
+.component-props dl dt {width:6rem;}
+.component-props dl dd {width:calc(100% - 6rem);}
+/* .component-props dl dt:after {content:':';} */
 /* .component-props dl dd {color:#5f9ea0;} */
 .component-props dl dt + dd {font-weight: var(--font-weight-bold);}
-.component-props dl dd + dd {width:100%;margin-top:var(--space-05);margin-bottom:var(--space-2);font-size:var(--font-size-small);line-height:var(--font-line-height);color:var(--color-text);}
+.component-props dl dd + dd {display:none;width:100%;margin-top:var(--space-05);margin-bottom:var(--space-2);font-size:var(--font-size-small);line-height:var(--font-line-height);color:var(--color-text);}
 /* .component-props dl dd + dd + dt {margin-top:var(--space-3);} */
 .component-guide {
   max-width: var(--container-width);
@@ -156,7 +159,7 @@ test-tile [variant=subhead] + [variant=body] {
 }
 
 
-.article-aka {gap:var(--space-3);margin:2rem 0 0 0;}
+.article-aka {display:none;gap:var(--space-3);margin:2rem 0 0 0;}
 .article-aka dt {margin: 0;}
 .article-aka dd {margin: 0;}
 

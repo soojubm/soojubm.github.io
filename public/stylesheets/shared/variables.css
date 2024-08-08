@@ -36,6 +36,8 @@
   --navbar-height: calc(32px + 1.5rem);
   --titlebar-height: calc(32px + 1.5rem);
 
+  --textfield-height: var(--size-large);
+
   --layout-width-wide: 1280px;
   --layout-width-narrow: 400px;
   --layout-width-small: 640px;
@@ -46,7 +48,7 @@
   3. layout - layout + @ (with large body)
   4. layout large
   */
-  --width-sidemenu: 14rem;
+  --width-sidemenu: 16rem;
   --width-medium: 25rem;
   --width-small: 200px;
 

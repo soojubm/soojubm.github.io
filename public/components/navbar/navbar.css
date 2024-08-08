@@ -73,12 +73,13 @@
 // .is-darktheme .navbar-menu-item {color:var(--gray0);} */
 
 
-
 /* PAGE COMPONENT */
 /* page에 패딩을 줄 수 있고, articleㅇ에 패딩을 줄 수 있다. 마이너스 마진을 줄 수도 있다. */
+/* Page container. 컨테이너의 특정 섹션은 또 사이즈가 달라질 수 있다. */
 /* ReactNative safeAreaView, scrollView */
-.page {max-width:var(--layout-width-wide);margin:0 auto;
-  padding:0 var(--grid-margin);
+.page {
+  margin: 0 auto;
+  padding: 0 var(--grid-margin) 4rem;
   box-sizing: border-box;
   position:relative;
 }
