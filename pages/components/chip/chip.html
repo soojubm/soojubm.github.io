@@ -19,326 +19,321 @@
       border-radius: 0 var(--radius) var(--radius) 0;
     }
   </style>
-  <article class="article js-observer js-scrollspy-section">
-    <test-text variant="title">Chips</test-text>
-    <test-text variant="body-large">
-      사용자 여정을 보조하는 액션입니다. 실행 페이지에서 사용자는 즉각적인 결과를 기대할 수
-      있습니다.
-    </test-text>
+  <test-text variant="title">Chips</test-text>
+  <test-text variant="body-large">
+    사용자 여정을 보조하는 액션입니다. 실행 페이지에서 사용자는 즉각적인 결과를 기대할 수 있습니다.
+  </test-text>
 
-    <dl class="article-aka">
-      <dt>a.k.a.</dt>
-      <dd>Tag</dd>
-      <dd>Pill</dd>
-      <dd>Badge</dd>
-      <dd>Token</dd>
-      <dd>Label</dd>
-      <dd aria-label="Adobe">Pick Button</dd>
-    </dl>
+  <dl class="article-aka">
+    <dt>a.k.a.</dt>
+    <dd>Tag</dd>
+    <dd>Pill</dd>
+    <dd>Badge</dd>
+    <dd>Token</dd>
+    <dd>Label</dd>
+    <dd aria-label="Adobe">Pick Button</dd>
+  </dl>
 
-    <section class="component-example">
-      <test-group variant="chip">
-        <test-chip>default</test-chip>
-        <test-chip status="active">active</test-chip>
-        <test-chip status="disabled" data-temp="opacity: 0.5; cursor: not-allowed">
-          disabled
-        </test-chip>
-        <test-chip variant="destructive">destructive</test-chip>
-      </test-group>
-      <test-separator></test-separator>
-      <test-group variant="chip">
-        <test-chip status="checked">
-          <test-icon slot="prefix" name="check"></test-icon>
-          checkable
-        </test-chip>
-        <test-chip status="checked">
-          <test-icon slot="suffix" name="xmark"></test-icon>
-          removable / clearable / dismissed
-        </test-chip>
-        <test-chip aria-expanded="true">
-          <test-icon slot="suffix" name="nav-arrow-down"></test-icon>
-          expandable
-        </test-chip>
-      </test-group>
-      <!-- <test-separator></test-separator>
+  <section class="component-example">
+    <test-group variant="chip">
+      <test-chip>default</test-chip>
+      <test-chip status="active">active</test-chip>
+      <test-chip status="disabled" data-temp="opacity: 0.5; cursor: not-allowed">
+        disabled
+      </test-chip>
+      <test-chip variant="destructive">destructive</test-chip>
+    </test-group>
+    <test-separator></test-separator>
+    <test-group variant="chip">
+      <test-chip status="checked">
+        <test-icon slot="prefix" name="check"></test-icon>
+        checkable
+      </test-chip>
+      <test-chip status="checked">
+        <test-icon slot="suffix" name="xmark"></test-icon>
+        removable / clearable / dismissed
+      </test-chip>
+      <test-chip aria-expanded="true">
+        <test-icon slot="suffix" name="nav-arrow-down"></test-icon>
+        expandable
+      </test-chip>
+    </test-group>
+    <!-- <test-separator></test-separator>
       <div class="group" data-segmented="true">
         <test-chip>사용자1</test-chip>
         <test-chip>사용자1</test-chip>
         <test-chip>사용자1</test-chip>
       </div> -->
-      <test-separator></test-separator>
+    <test-separator></test-separator>
+    <test-group variant="chip">
+      <test-chip icon="user" aria-label="사용자"></test-chip>
+      <test-chip icon="bell" aria-label=""></test-chip>
+    </test-group>
+    <test-separator></test-separator>
+    <test-group variant="chip">
+      <test-chip variant="back" icon="arrow-left"></test-chip>
+      <test-chip variant="back" icon="arrow-right"> </test-chip>
+    </test-group>
+  </section>
+
+  <section class="component-props">
+    <test-text variant="subhead">Props</test-text>
+    <dl>
+      <dt>name</dt>
+      <dd>string</dd>
+      <dd></dd>
+      <dt>label</dt>
+      <dd>string</dd>
+      <dd>하나의 단어 또는 복합명사</dd>
+      <dt>isChecked<attr>?</attr></dt>
+      <dd>boolean</dd>
+      <dd>with ariaSelected. toggle or single active. 링크로 쓰지 않는다.</dd>
+      <dt>onClick</dt>
+      <dd>() => void</dd>
+      <dd>TODO checked 의존</dd>
+      <dt>onRemoveClick<attr>?</attr></dt>
+      <dd>() => void</dd>
+      <dd>TODO 합성 컴포넌트를 만드는 게 좋다. isRemovable과 통합</dd>
+      <dt>aria???</dt>
+      <dd>'checked' | 'expanded' | 'selected' | 'pressed'</dd>
+      <dd>TODO onRemoveClick와 설명과 같은 맥락</dd>
+      <dt>ariaHaspopup<attr>?</attr></dt>
+      <dd>null</dd>
+      <dd>TODO</dd>
+      <dt>slot</dt>
+      <dd>'icon' | 'prefix' | 'suffix'</dd>
+    </dl>
+  </section>
+
+  <section class="component-guide">
+    <blockquote>
+      <ul class="checklist">
+        <li>
+          button과 통합 하느냐 tag와 통합하느냐. 버튼 쪽이 유리하기는 함. 정의할 때 인터렉션을
+          기준할 수 있기 때문. 하지만 selected 상태에 관한 스타일은 chip의 고유.
+        </li>
+        <li>하나의 서비스에 버튼이 2가지 이상이 필요한 경우는 없다고 봐야 함.</li>
+        <li>아이콘 버튼.</li>
+      </ul>
+    </blockquote>
+
+    <test-text variant="subhead">Behavior</test-text>
+    <test-text variant="body">
+      하나의 칩은 하나의 액션을 합니다. 아이콘은 단지 indicator의 역할을 하고 칩 자체가 하나의 클릭
+      액션을 담당. 아이콘이 별도의 액션을 가능케 하기 위해서는 splitButton 형태가 되어야 한다.
+    </test-text>
+
+    <test-text variant="subhead">Visual Style</test-text>
+    <test-text variant="body"
+      >맥락이 다른 chip을 그룹으로 제공할 수 있습니다. 이 때 단일선택, 다중선택, 삭제여부, 펼침메뉴
+      등의 기표를 충분히 제공하세요.
+    </test-text>
+    <test-text variant="body">
+      목록의 재정렬을 위한 옵션 목록을 group으로 제공하지 마세요. 현재 정렬 상태만 요약 표기하고
+      확장가능한 메뉴로 정렬 목록을 제공하세요. (bad case: 2022.04 구글 지도 바뀐 것)
+    </test-text>
+
+    <test-text variant="subhead">A11y</test-text>
+    <test-text variant="body">
+      chipGroup selected=[] role=listbox aria-orientation="vertical" aria-multiselectable="true"<br />
+      chip value="" role="option" aria-selected="true"
+    </test-text>
+
+    <blockquote>
+      <test-text variant="body">
+        TODO : searhField avatar를 쓰니까 아바타 특유의 형태와 충돌(outlined) 사이즈를 다시
+        정의해주어야 한다. 컴포넌트 합성하면 사실 이걸 그렇게 고민할 내용은 아니게 됨.
+      </test-text>
+      <test-text variant="body">
+        아이콘 vs 아이콘 버튼(아바타가 아니라 칩/버튼 액션이다) vs 아바타 :: 아이콘과 아이콘
+        버튼(아바타에 가까움)을 구분. 16px 아이콘을 32 안에 넣으면
+      </test-text>
+      <test-text variant="body">
+        장식적인 검색 아이콘과 clickable한 액션. prefix는 장식. suffix는 액션? suffix에 유닛이 있을
+        수도
+      </test-text>
+      <ul>
+        <li>
+          안드로이드: chipGroup, HorizontalScrollView/singleLine, action/entry/filter(check
+          active)/choice
+        </li>
+        <li>
+          avatar / chip with icon에서 이전 페이지 등과 같이 클릭 영역을 주어야 할 때 아바타/칩 선택
+          필요.
+        </li>
+        <li>MEMO: Text only는 plain variant이 될 수 없다.</li>
+        <li>TODO 선택을 클리어하는 클리어버튼을 만들어 검색필드에서 활용하는 방법도 있다.</li>
+        <li>TODO: icon chip의 label prop으로 툴팁을 만들기</li>
+        <li>
+          형태로 분류하면 결국 그냥 버튼임. 기능으로 분류하는 것이 중요함. 많은 디자인 시스템이 칩을
+          정의하지 않고 있음. 도메인에 특화된 기능 중심의 버튼 컴포넌트를 정의하는 것이 맹점.
+          slot으로 아이콘을 넣는 방식이 되면 유지 비용이 크다.
+        </li>
+        <li>아이콘이 아니라 이모지가 들어갈 때. 여기서 searching 왼쪽 아바타.</li>
+      </ul>
+    </blockquote>
+  </section>
+
+  <address class="component-references">
+    <!-- <test-text variant="label">References</test-text> -->
+    <a href="https://material.io/components/menus" target="_blank"> MD menu </a>
+    <a
+      href="https://developer.apple.com/design/human-interface-guidelines/components/menus-and-actions/pull-down-buttons"
+    >
+      MD pull down button
+    </a>
+    <a
+      href="https://developer.apple.com/design/human-interface-guidelines/ios/controls/pull-down-menus/"
+      target="_blank"
+    >
+      HIG pull down menu
+    </a>
+    <a
+      href="https://developer.android.com/reference/com/google/android/material/chip/ChipGroup"
+      target="_blank"
+    >
+      MD chip group
+    </a>
+  </address>
+  <section class="component-case">
+    <test-tile>
+      <test-text variant="subhead">지금 인기있는<br />이슈 키워드</test-text>
+      <div style="height: var(--space-4)"></div>
       <test-group variant="chip">
-        <test-chip icon="user" aria-label="사용자"></test-chip>
-        <test-chip icon="bell" aria-label=""></test-chip>
+        <test-chip>뉴닉</test-chip>
+        <test-chip>국정감사</test-chip>
+        <test-chip>윤석열검찰총장</test-chip>
+        <test-chip>차별금지법</test-chip>
+        <test-chip>추미애법무부장관</test-chip>
+        <test-chip variant="back" icon="more-horiz"></test-chip>
       </test-group>
-      <test-separator></test-separator>
-      <test-group variant="chip">
-        <test-chip variant="back" icon="arrow-left"></test-chip>
-        <test-chip variant="back" icon="arrow-right"> </test-chip>
-      </test-group>
-    </section>
-
-    <section class="component-props">
-      <test-text variant="subhead">Props</test-text>
-      <dl>
-        <dt>name</dt>
-        <dd>string</dd>
-        <dd></dd>
-        <dt>label</dt>
-        <dd>string</dd>
-        <dd>하나의 단어 또는 복합명사</dd>
-        <dt>isChecked<attr>?</attr></dt>
-        <dd>boolean</dd>
-        <dd>with ariaSelected. toggle or single active. 링크로 쓰지 않는다.</dd>
-        <dt>onClick</dt>
-        <dd>() => void</dd>
-        <dd>TODO checked 의존</dd>
-        <dt>onRemoveClick<attr>?</attr></dt>
-        <dd>() => void</dd>
-        <dd>TODO 합성 컴포넌트를 만드는 게 좋다. isRemovable과 통합</dd>
-        <dt>aria???</dt>
-        <dd>'checked' | 'expanded' | 'selected' | 'pressed'</dd>
-        <dd>TODO onRemoveClick와 설명과 같은 맥락</dd>
-        <dt>ariaHaspopup<attr>?</attr></dt>
-        <dd>null</dd>
-        <dd>TODO</dd>
-        <dt>slot</dt>
-        <dd>'icon' | 'prefix' | 'suffix'</dd>
-      </dl>
-    </section>
-
-    <section class="component-guide">
-      <blockquote>
-        <ul class="checklist">
-          <li>
-            button과 통합 하느냐 tag와 통합하느냐. 버튼 쪽이 유리하기는 함. 정의할 때 인터렉션을
-            기준할 수 있기 때문. 하지만 selected 상태에 관한 스타일은 chip의 고유.
-          </li>
-          <li>하나의 서비스에 버튼이 2가지 이상이 필요한 경우는 없다고 봐야 함.</li>
-          <li>아이콘 버튼.</li>
-        </ul>
-      </blockquote>
-
-      <test-text variant="subhead">Behavior</test-text>
-      <test-text variant="body">
-        하나의 칩은 하나의 액션을 합니다. 아이콘은 단지 indicator의 역할을 하고 칩 자체가 하나의
-        클릭 액션을 담당. 아이콘이 별도의 액션을 가능케 하기 위해서는 splitButton 형태가 되어야
-        한다.
-      </test-text>
-
-      <test-text variant="subhead">Visual Style</test-text>
-      <test-text variant="body"
-        >맥락이 다른 chip을 그룹으로 제공할 수 있습니다. 이 때 단일선택, 다중선택, 삭제여부,
-        펼침메뉴 등의 기표를 충분히 제공하세요.
-      </test-text>
-      <test-text variant="body">
-        목록의 재정렬을 위한 옵션 목록을 group으로 제공하지 마세요. 현재 정렬 상태만 요약 표기하고
-        확장가능한 메뉴로 정렬 목록을 제공하세요. (bad case: 2022.04 구글 지도 바뀐 것)
-      </test-text>
-
-      <test-text variant="subhead">A11y</test-text>
-      <test-text variant="body">
-        chipGroup selected=[] role=listbox aria-orientation="vertical"
-        aria-multiselectable="true"<br />
-        chip value="" role="option" aria-selected="true"
-      </test-text>
-
-      <blockquote>
-        <test-text variant="body">
-          TODO : searhField avatar를 쓰니까 아바타 특유의 형태와 충돌(outlined) 사이즈를 다시
-          정의해주어야 한다. 컴포넌트 합성하면 사실 이걸 그렇게 고민할 내용은 아니게 됨.
-        </test-text>
-        <test-text variant="body">
-          아이콘 vs 아이콘 버튼(아바타가 아니라 칩/버튼 액션이다) vs 아바타 :: 아이콘과 아이콘
-          버튼(아바타에 가까움)을 구분. 16px 아이콘을 32 안에 넣으면
-        </test-text>
-        <test-text variant="body">
-          장식적인 검색 아이콘과 clickable한 액션. prefix는 장식. suffix는 액션? suffix에 유닛이
-          있을 수도
-        </test-text>
-        <ul>
-          <li>
-            안드로이드: chipGroup, HorizontalScrollView/singleLine, action/entry/filter(check
-            active)/choice
-          </li>
-          <li>
-            avatar / chip with icon에서 이전 페이지 등과 같이 클릭 영역을 주어야 할 때 아바타/칩
-            선택 필요.
-          </li>
-          <li>MEMO: Text only는 plain variant이 될 수 없다.</li>
-          <li>TODO 선택을 클리어하는 클리어버튼을 만들어 검색필드에서 활용하는 방법도 있다.</li>
-          <li>TODO: icon chip의 label prop으로 툴팁을 만들기</li>
-          <li>
-            형태로 분류하면 결국 그냥 버튼임. 기능으로 분류하는 것이 중요함. 많은 디자인 시스템이
-            칩을 정의하지 않고 있음. 도메인에 특화된 기능 중심의 버튼 컴포넌트를 정의하는 것이 맹점.
-            slot으로 아이콘을 넣는 방식이 되면 유지 비용이 크다.
-          </li>
-          <li>아이콘이 아니라 이모지가 들어갈 때. 여기서 searching 왼쪽 아바타.</li>
-        </ul>
-      </blockquote>
-    </section>
-
-    <address class="component-references">
-      <!-- <test-text variant="label">References</test-text> -->
-      <a href="https://material.io/components/menus" target="_blank"> MD menu </a>
-      <a
-        href="https://developer.apple.com/design/human-interface-guidelines/components/menus-and-actions/pull-down-buttons"
-      >
-        MD pull down button
-      </a>
-      <a
-        href="https://developer.apple.com/design/human-interface-guidelines/ios/controls/pull-down-menus/"
-        target="_blank"
-      >
-        HIG pull down menu
-      </a>
-      <a
-        href="https://developer.android.com/reference/com/google/android/material/chip/ChipGroup"
-        target="_blank"
-      >
-        MD chip group
-      </a>
-    </address>
-    <section class="component-case">
-      <test-tile>
-        <test-text variant="subhead">지금 인기있는<br />이슈 키워드</test-text>
-        <div style="height: var(--space-4)"></div>
-        <test-group variant="chip">
-          <test-chip>뉴닉</test-chip>
-          <test-chip>국정감사</test-chip>
-          <test-chip>윤석열검찰총장</test-chip>
-          <test-chip>차별금지법</test-chip>
-          <test-chip>추미애법무부장관</test-chip>
-          <test-chip variant="back" icon="more-horiz"></test-chip>
-        </test-group>
-        <div style="height: var(--space-after-subhead)"></div>
-        <test-tile variant="elevated" size="small">
-          <test-menuitem label="직접 검색">
-            <test-avatar slot="avatar" fallback="" icon="search"> </test-avatar>
-          </test-menuitem>
-        </test-tile>
+      <div style="height: var(--space-after-subhead)"></div>
+      <test-tile variant="elevated" size="small">
+        <test-menuitem label="직접 검색">
+          <test-avatar slot="avatar" fallback="" icon="search"> </test-avatar>
+        </test-menuitem>
       </test-tile>
-      <br />
-      <test-tile>
-        <test-text variant="body-bold"> Toggle Button - Follow Button </test-text>
-        <test-group variant="chip">
-          <test-chip status="active">팔로우</test-chip>
-          <test-chip>팔로우 중</test-chip>
-        </test-group>
-        <test-separator></test-separator>
-        <test-text variant="body-bold"> Toggle Button - Like Button </test-text>
-        <test-chip status="active">
-          <test-icon slot="prefix" name="heart"></test-icon>
-          좋아요
-          <test-badge>11</test-badge>
+    </test-tile>
+    <br />
+    <test-tile>
+      <test-text variant="body-bold"> Toggle Button - Follow Button </test-text>
+      <test-group variant="chip">
+        <test-chip status="active">팔로우</test-chip>
+        <test-chip>팔로우 중</test-chip>
+      </test-group>
+      <test-separator></test-separator>
+      <test-text variant="body-bold"> Toggle Button - Like Button </test-text>
+      <test-chip status="active">
+        <test-icon slot="prefix" name="heart"></test-icon>
+        좋아요
+        <test-badge>11</test-badge>
+      </test-chip>
+      <test-separator></test-separator>
+      <test-group variant="chip">
+        <test-chip>
+          <test-icon slot="prefix" name="plus"></test-icon>
+          추가하기
         </test-chip>
-        <test-separator></test-separator>
-        <test-group variant="chip">
-          <test-chip>
-            <test-icon slot="prefix" name="plus"></test-icon>
-            추가하기
+        <test-chip status="checked">
+          <test-icon slot="prefix" name="check"></test-icon>
+          추가됨
+        </test-chip>
+      </test-group>
+    </test-tile>
+    <test-tile>
+      <test-text variant="body-bold">single selection for contents filtering</test-text>
+      <div style="height: var(--space-2)"></div>
+      <test-group variant="chip">
+        <test-chip status="active" class="js-toggle is-active">전체</test-chip>
+        <test-chip class="js-toggle">입금확인</test-chip>
+        <test-chip class="js-toggle">결제완료</test-chip>
+        <test-chip class="js-toggle">배송중</test-chip>
+      </test-group>
+      <test-separator></test-separator>
+      <test-text variant="body-bold">Multiple selections</test-text>
+      <test-text variant="body">
+        menuitem, checkbox로 대체 가능한 selection role. TODO 그렇다면 언제 메뉴아이템과 체크박스를
+        사용하고 언제 칩그룹을 사용하는지 가이드가 필요하다.
+      </test-text>
+      <div style="height: var(--space-2)"></div>
+      <test-group variant="chip" aria-multiselectable="true">
+        <test-chip role="option" aria-selected="true" status="checked">
+          <test-icon slot="prefix" name="check"></test-icon>
+          소설
+        </test-chip>
+        <test-chip role="option" aria-selected="false" status="checked">
+          <test-icon slot="prefix" name="check"></test-icon>
+          영화
+        </test-chip>
+        <test-chip role="option" aria-selected="false">타이포그래피</test-chip>
+      </test-group>
+    </test-tile>
+    <test-tile>
+      <test-text variant="body-bold">
+        Pick Button Expandable :: dropdown/overflow/pulldown, filter / sort
+      </test-text>
+      <div style="display: flex; justify-content: space-between">
+        <div class="dropdown">
+          <test-chip class="js-toggle" aria-expanded="true">
+            <test-icon slot="prefix" name="filter"></test-icon>
+            필터
           </test-chip>
-          <test-chip status="checked">
-            <test-icon slot="prefix" name="check"></test-icon>
-            추가됨
-          </test-chip>
-        </test-group>
-      </test-tile>
-      <test-tile>
-        <test-text variant="body-bold">single selection for contents filtering</test-text>
-        <div style="height: var(--space-2)"></div>
-        <test-group variant="chip">
-          <test-chip status="active" class="js-toggle is-active">전체</test-chip>
-          <test-chip class="js-toggle">입금확인</test-chip>
-          <test-chip class="js-toggle">결제완료</test-chip>
-          <test-chip class="js-toggle">배송중</test-chip>
-        </test-group>
-        <test-separator></test-separator>
-        <test-text variant="body-bold">Multiple selections</test-text>
-        <test-text variant="body">
-          menuitem, checkbox로 대체 가능한 selection role. TODO 그렇다면 언제 메뉴아이템과
-          체크박스를 사용하고 언제 칩그룹을 사용하는지 가이드가 필요하다.
-        </test-text>
-        <div style="height: var(--space-2)"></div>
-        <test-group variant="chip" aria-multiselectable="true">
-          <test-chip role="option" aria-selected="true" status="checked">
-            <test-icon slot="prefix" name="check"></test-icon>
-            소설
-          </test-chip>
-          <test-chip role="option" aria-selected="false" status="checked">
-            <test-icon slot="prefix" name="check"></test-icon>
-            영화
-          </test-chip>
-          <test-chip role="option" aria-selected="false">타이포그래피</test-chip>
-        </test-group>
-      </test-tile>
-      <test-tile>
-        <test-text variant="body-bold">
-          Pick Button Expandable :: dropdown/overflow/pulldown, filter / sort
-        </test-text>
-        <div style="display: flex; justify-content: space-between">
-          <div class="dropdown">
-            <test-chip class="js-toggle" aria-expanded="true">
-              <test-icon slot="prefix" name="filter"></test-icon>
-              필터
-            </test-chip>
-            <test-tile
-              variant="elevated"
-              size="small"
-              style="width: var(--popover-width-dropdown); position: absolute"
-            >
-              <test-group variant="radio">
-                <test-radio name="gogo" value="">1~3명</test-radio>
-                <test-radio name="gogo" value="">1~3명</test-radio>
-                <test-chip>적용</test-chip>
-              </test-group>
-            </test-tile>
-          </div>
-          <div class="dropdown">
-            <test-chip aria-expanded="true">
-              <test-icon slot="suffix" name="nav-arrow-up"></test-icon>
-              최신순
-            </test-chip>
-            <test-tile
-              variant="elevated"
-              size="small"
-              style="width: var(--popover-width-dropdown); position: absolute"
-            >
-              <test-group variant="dropdown">
-                <h6 class="dropdown-menu-title" hidden>Dropdown header</h6>
-                <test-menuitem label="최신순" disabled>
-                  <test-icon slot="check" name="check"></test-icon>
-                </test-menuitem>
-                <test-menuitem label="인기순">
-                  <span slot="check"> </span>
-                </test-menuitem>
-              </test-group>
-            </test-tile>
-          </div>
-          <div class="dropdown">
-            <test-chip
-              icon="more-vert"
-              aria-label="more_vert"
-              aria-haspopup="menu"
-              aria-expanded="false"
-            >
-            </test-chip>
-            <test-tile
-              variant="elevated"
-              size="small"
-              style="width: var(--popover-width-dropdown); position: absolute"
-            >
-              <test-group variant="dropdown">
-                <test-menuitem label="신고"></test-menuitem>
-                <!-- TODO <hr class="dropdown-menu-divider" style="margin: 0.5rem 0" /> -->
-                <test-menuitem label="수정"></test-menuitem>
-                <test-menuitem label="삭제"></test-menuitem>
-              </test-group>
-            </test-tile>
-          </div>
+          <test-tile
+            variant="elevated"
+            size="small"
+            style="width: var(--popover-width-dropdown); position: absolute"
+          >
+            <test-group variant="radio">
+              <test-radio name="gogo" value="">1~3명</test-radio>
+              <test-radio name="gogo" value="">1~3명</test-radio>
+              <test-chip>적용</test-chip>
+            </test-group>
+          </test-tile>
         </div>
-      </test-tile>
-    </section>
-    <!-- <li>당연한 얘기... 텍스트 레이블을 생략하는 경우 관습적인 메타포의 아이콘(북마크/하트/카트 등)을 사용하고 대체 텍스트와 툴팁을 제공하세요.</li> -->
-  </article>
+        <div class="dropdown">
+          <test-chip aria-expanded="true">
+            <test-icon slot="suffix" name="nav-arrow-up"></test-icon>
+            최신순
+          </test-chip>
+          <test-tile
+            variant="elevated"
+            size="small"
+            style="width: var(--popover-width-dropdown); position: absolute"
+          >
+            <test-group variant="dropdown">
+              <h6 class="dropdown-menu-title" hidden>Dropdown header</h6>
+              <test-menuitem label="최신순" disabled>
+                <test-icon slot="check" name="check"></test-icon>
+              </test-menuitem>
+              <test-menuitem label="인기순">
+                <span slot="check"> </span>
+              </test-menuitem>
+            </test-group>
+          </test-tile>
+        </div>
+        <div class="dropdown">
+          <test-chip
+            icon="more-vert"
+            aria-label="more_vert"
+            aria-haspopup="menu"
+            aria-expanded="false"
+          >
+          </test-chip>
+          <test-tile
+            variant="elevated"
+            size="small"
+            style="width: var(--popover-width-dropdown); position: absolute"
+          >
+            <test-group variant="dropdown">
+              <test-menuitem label="신고"></test-menuitem>
+              <!-- TODO <hr class="dropdown-menu-divider" style="margin: 0.5rem 0" /> -->
+              <test-menuitem label="수정"></test-menuitem>
+              <test-menuitem label="삭제"></test-menuitem>
+            </test-group>
+          </test-tile>
+        </div>
+      </div>
+    </test-tile>
+  </section>
+  <!-- <li>당연한 얘기... 텍스트 레이블을 생략하는 경우 관습적인 메타포의 아이콘(북마크/하트/카트 등)을 사용하고 대체 텍스트와 툴팁을 제공하세요.</li> -->
 </main>

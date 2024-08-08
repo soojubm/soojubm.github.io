@@ -1,238 +1,234 @@
 <main class="page">
-  <article class="article js-observer js-scrollspy-section">
-    <test-text variant="title">Buttons</test-text>
-    <test-text variant="body-large"
-      >페이지 이동이나 양식 제출 등 사용자 여정의 핵심과업을 수행하기 위한 액션입니다.</test-text
-    >
-    <dl class="article-aka">
-      <dt>a.k.a</dt>
-      <dd>button</dd>
-      <dd>text - icon(avatar)</dd>
-    </dl>
-    <section class="component-example">
-      <test-group variant="chip">
-        <test-button variant="primary">primary</test-button>
-        <test-button variant="secondary">secondary</test-button>
-        <test-button variant="tertiary">tertiary</test-button>
-        <test-button variant="destructive" aria-label="danger">destructive</test-button>
-        <test-button variant="text">text</test-button>
-      </test-group>
-      <test-separator></test-separator>
-      <test-group variant="button">
-        <test-button variant="tertiary" status="hover">hovered</test-button>
-        <test-button variant="tertiary" status="focus">focused</test-button>
-        <test-button variant="tertiary" status="disabled" disabled>disabled</test-button>
-      </test-group>
+  <test-text variant="title">Buttons</test-text>
+  <test-text variant="body-large"
+    >페이지 이동이나 양식 제출 등 사용자 여정의 핵심과업을 수행하기 위한 액션입니다.</test-text
+  >
+  <dl class="article-aka">
+    <dt>a.k.a</dt>
+    <dd>button</dd>
+    <dd>text - icon(avatar)</dd>
+  </dl>
+  <section class="component-example">
+    <test-group variant="chip">
+      <test-button variant="primary">primary</test-button>
+      <test-button variant="secondary">secondary</test-button>
+      <test-button variant="tertiary">tertiary</test-button>
+      <test-button variant="destructive" aria-label="danger">destructive</test-button>
+      <test-button variant="text">text</test-button>
+    </test-group>
+    <test-separator></test-separator>
+    <test-group variant="button">
+      <test-button variant="tertiary" status="hover">hovered</test-button>
+      <test-button variant="tertiary" status="focus">focused</test-button>
+      <test-button variant="tertiary" status="disabled" disabled>disabled</test-button>
+    </test-group>
 
-      <test-separator></test-separator>
-      <test-group variant="chip">
-        <!-- <test-button variant="primary" size="large">large</test-button> -->
-        <test-button variant="tertiary">medium</test-button>
-      </test-group>
-    </section>
+    <test-separator></test-separator>
+    <test-group variant="chip">
+      <!-- <test-button variant="primary" size="large">large</test-button> -->
+      <test-button variant="tertiary">medium</test-button>
+    </test-group>
+  </section>
 
-    <section class="component-props">
-      <test-text variant="subhead">Props</test-text>
-      <dl>
-        <dt>variant</dt>
-        <dd>'primary' | 'secondary' | 'tertiary'</dd>
-        <dd></dd>
-        <dt>name</dt>
-        <dd>string</dd>
-        <dd></dd>
-        <dt>label</dt>
-        <dd>string</dd>
-        <dd>
-          동사가 포함된 2자 ~ 8자 한글(!). 레이블 줄임?(truncated) 불가. 사용자 시점 (ex 보내기 =>
-          받기).
-        </dd>
-        <dt>size<attr>?</attr></dt>
-        <dd><del>'large'</del> | 'medium'</dd>
-        <dd>large size는 프로모션 페이지의 call to action로 제한됩니다.</dd>
-        <dt>isDisabled?</dt>
-        <dd>boolean</dd>
-        <dd></dd>
-        <dt>isFullwidth<attr>?</attr></dt>
-        <dd>boolean</dd>
-        <dd>TODO button 보다 button group의 props로 정의하는 것이 적합. isFluid</dd>
-        <dt>href<attr>?</attr></dt>
-        <dd>string</dd>
-        <dd>LinkButton</dd>
-        <dt>onClick<attr>?</attr></dt>
-        <dd>event: React.MouseEvent[HTMLButtonElement]) => void</dd>
-        <dd>TODO onClick는 href와 구분. LinkButton 컴포넌트의 필요성.</dd>
-        <!-- <dt><del>aria-expanded</del><attr>?</attr></dt>
+  <section class="component-props">
+    <test-text variant="subhead">Props</test-text>
+    <dl>
+      <dt>variant</dt>
+      <dd>'primary' | 'secondary' | 'tertiary'</dd>
+      <dd></dd>
+      <dt>name</dt>
+      <dd>string</dd>
+      <dd></dd>
+      <dt>label</dt>
+      <dd>string</dd>
+      <dd>
+        동사가 포함된 2자 ~ 8자 한글(!). 레이블 줄임?(truncated) 불가. 사용자 시점 (ex 보내기 =>
+        받기).
+      </dd>
+      <dt>size<attr>?</attr></dt>
+      <dd><del>'large'</del> | 'medium'</dd>
+      <dd>large size는 프로모션 페이지의 call to action로 제한됩니다.</dd>
+      <dt>isDisabled?</dt>
+      <dd>boolean</dd>
+      <dd></dd>
+      <dt>isFullwidth<attr>?</attr></dt>
+      <dd>boolean</dd>
+      <dd>TODO button 보다 button group의 props로 정의하는 것이 적합. isFluid</dd>
+      <dt>href<attr>?</attr></dt>
+      <dd>string</dd>
+      <dd>LinkButton</dd>
+      <dt>onClick<attr>?</attr></dt>
+      <dd>event: React.MouseEvent[HTMLButtonElement]) => void</dd>
+      <dd>TODO onClick는 href와 구분. LinkButton 컴포넌트의 필요성.</dd>
+      <!-- <dt><del>aria-expanded</del><attr>?</attr></dt>
           <dd>null</dd>
           <dd>TODO 버튼을 타겟 확장의 용도로 사용할 수 없기 때문에 제거하기</dd> -->
-      </dl>
-    </section>
+    </dl>
+  </section>
 
-    <!-- 참고: 버튼 네이밍. 'link' | 'subtle' | 'primary' / 'solid' | 'outline' | 'plain' |'text' -->
+  <!-- 참고: 버튼 네이밍. 'link' | 'subtle' | 'primary' / 'solid' | 'outline' | 'plain' |'text' -->
 
-    <section class="component-guide">
-      <div style="display: flex; flex-direction: column; gap: 2rem">
-        <div>
-          <test-tile
-            style="display: flex; align-items: center; justify-content: center; height: 120px"
-          >
-            <test-group variant="button">
-              <test-button variant="tertiary">
-                Show more
-                <test-icon slot="suffix" name="nav-arrow-down"></test-icon>
-              </test-button>
-              <!-- TODO 아이콘 하나로 제한되면 slot의 순서만 챙기고 그냥 slot='icon' 하나로? 아니면 label -->
-              <!-- <test-button data-variant="tertiary">
+  <section class="component-guide">
+    <div style="display: flex; flex-direction: column; gap: 2rem">
+      <div>
+        <test-tile
+          style="display: flex; align-items: center; justify-content: center; height: 120px"
+        >
+          <test-group variant="button">
+            <test-button variant="tertiary">
+              Show more
+              <test-icon slot="suffix" name="nav-arrow-down"></test-icon>
+            </test-button>
+            <!-- TODO 아이콘 하나로 제한되면 slot의 순서만 챙기고 그냥 slot='icon' 하나로? 아니면 label -->
+            <!-- <test-button data-variant="tertiary">
                   <test-icon slot="prefix" name="star"></test-icon>
                   with prefix icon
                 </test-button> -->
-              <test-button data-variant="tertiary">
-                with suffix icon
-                <test-icon slot="suffix" name="star"></test-icon>
-              </test-button>
-            </test-group>
-          </test-tile>
-          <div style="height: var(--space-1)"></div>
-          <test-text variant="body-bold">
-            ShowMoreButton <span hidden>Image Button, CheckoutButton</span>
-          </test-text>
-          <test-text variant="body">
-            fullWidth로 사용하지 마세요. 단일 콘텐츠 또는 콘텐츠 목록의 너비와 대비를 통한 강조.
-            TODO 이건 최종 액션이 아님. 칩이 되는 게 나을 수도.
-          </test-text>
-        </div>
-        <div>
-          <test-tile
-            style="display: flex; align-items: center; justify-content: center; height: 120px"
-          >
-            <test-button variant="tertiary">
-              <div slot="prefix" class="chat-inputing animation-chatting">
-                <span style="background-color: var(--color-background-strong)"></span>
-                <span style="background-color: var(--color-background-strong)"></span>
-                <span style="background-color: var(--color-background-strong)"></span>
-              </div>
+            <test-button data-variant="tertiary">
+              with suffix icon
+              <test-icon slot="suffix" name="star"></test-icon>
             </test-button>
-          </test-tile>
-          <div style="height: var(--space-1)"></div>
-          <test-text variant="body-bold">Loading/Fetching button</test-text>
-          <test-text variant="body"> </test-text>
-        </div>
+          </test-group>
+        </test-tile>
+        <div style="height: var(--space-1)"></div>
+        <test-text variant="body-bold">
+          ShowMoreButton <span hidden>Image Button, CheckoutButton</span>
+        </test-text>
+        <test-text variant="body">
+          fullWidth로 사용하지 마세요. 단일 콘텐츠 또는 콘텐츠 목록의 너비와 대비를 통한 강조. TODO
+          이건 최종 액션이 아님. 칩이 되는 게 나을 수도.
+        </test-text>
       </div>
+      <div>
+        <test-tile
+          style="display: flex; align-items: center; justify-content: center; height: 120px"
+        >
+          <test-button variant="tertiary">
+            <div slot="prefix" class="chat-inputing animation-chatting">
+              <span style="background-color: var(--color-background-strong)"></span>
+              <span style="background-color: var(--color-background-strong)"></span>
+              <span style="background-color: var(--color-background-strong)"></span>
+            </div>
+          </test-button>
+        </test-tile>
+        <div style="height: var(--space-1)"></div>
+        <test-text variant="body-bold">Loading/Fetching button</test-text>
+        <test-text variant="body"> </test-text>
+      </div>
+    </div>
 
-      <test-text variant="subhead" aria-label="예측 가능해야 합니다.">Behavior</test-text>
-      <test-text variant="body">
-        버튼은 페이지 내에서 여러 번 반복될 수 없는 최종적인 인터렉션입니다. 단, 전송이 실패하는
-        경우에는 여러 번 반복해서 실행할 수 있습니다.
-      </test-text>
-      <test-text variant="body">
-        feedback needed. 물리적인 인터페이스의 출현 뿐 아니라 예측할 수 있는 페이지 이동이나 페이지
-        새로고침, 정보 구조의 변화도 피드백으로 취급될 수 있습니다. (ex bad case: 인스타그램 앱에서
-        로그인되었다는 toast. 홈으로 이동과 피드 노출만으로 로그인 상태를 인지할 수 있다.)
-      </test-text>
-      <!-- <test-text variant="body">모든 액션에 피드백할 필요는 없습니다.</test-text> -->
-      <test-text variant="subhead" aria-label="예측 가능해야 합니다.">Editorial</test-text>
-      <test-text variant="body">
-        작성하세요 보다는 사용자 그리고 경험에 맞는 동사. 에측 가능한 레이블을 작성하세요. 툴팁으로
-        부연하거나, 보조 텍스트로 실행 유도나 실행 결과를 가이드할 필요가 없어야 합니다.
-      </test-text>
-      <test-text variant="subhead">A11y</test-text>
-      <test-text variant="body">
-        버튼 그룹에서 primary action에 먼저 포커싱하세요. tabindex 속성은 대신 마크업 순서와 정렬
-        스타일링의 결합. 버튼이 비활성화 툴팁이 존재한다면 버튼보다 먼저 포커스하세요. tooptip ?
-        iconButton
-      </test-text>
+    <test-text variant="subhead" aria-label="예측 가능해야 합니다.">Behavior</test-text>
+    <test-text variant="body">
+      버튼은 페이지 내에서 여러 번 반복될 수 없는 최종적인 인터렉션입니다. 단, 전송이 실패하는
+      경우에는 여러 번 반복해서 실행할 수 있습니다.
+    </test-text>
+    <test-text variant="body">
+      feedback needed. 물리적인 인터페이스의 출현 뿐 아니라 예측할 수 있는 페이지 이동이나 페이지
+      새로고침, 정보 구조의 변화도 피드백으로 취급될 수 있습니다. (ex bad case: 인스타그램 앱에서
+      로그인되었다는 toast. 홈으로 이동과 피드 노출만으로 로그인 상태를 인지할 수 있다.)
+    </test-text>
+    <!-- <test-text variant="body">모든 액션에 피드백할 필요는 없습니다.</test-text> -->
+    <test-text variant="subhead" aria-label="예측 가능해야 합니다.">Editorial</test-text>
+    <test-text variant="body">
+      작성하세요 보다는 사용자 그리고 경험에 맞는 동사. 에측 가능한 레이블을 작성하세요. 툴팁으로
+      부연하거나, 보조 텍스트로 실행 유도나 실행 결과를 가이드할 필요가 없어야 합니다.
+    </test-text>
+    <test-text variant="subhead">A11y</test-text>
+    <test-text variant="body">
+      버튼 그룹에서 primary action에 먼저 포커싱하세요. tabindex 속성은 대신 마크업 순서와 정렬
+      스타일링의 결합. 버튼이 비활성화 툴팁이 존재한다면 버튼보다 먼저 포커스하세요. tooptip ?
+      iconButton
+    </test-text>
 
-      <br /><br />
+    <br /><br />
 
-      <test-text variant="subhead" data-temp=" minimum viable experience" style="margin-top: 0">
-        Group patterns - binary choices / 목록 버튼
-      </test-text>
-      <test-text variant="body">
-        텍스트 버튼은 버튼 처럼 보이지 않을 수 있기 때문에 학습된? 보편적인? 약속된? 누구랑 약속?
-        패턴에서 사용하세요. 이 시스템에는 정의하지 않지만 세로 정렬되는 버튼 그룹에서 text button이
-        아래에 배치되는 패턴과 혼동되지 않도록 버튼의 아래 가이드 텍스트를 배치하지 않습니다. ->
-        사실은 모든 버튼에서 전환을 유도하는 텍스트를 사용없이 인터페이스만으로.
-      </test-text>
+    <test-text variant="subhead" data-temp=" minimum viable experience" style="margin-top: 0">
+      Group patterns - binary choices / 목록 버튼
+    </test-text>
+    <test-text variant="body">
+      텍스트 버튼은 버튼 처럼 보이지 않을 수 있기 때문에 학습된? 보편적인? 약속된? 누구랑 약속?
+      패턴에서 사용하세요. 이 시스템에는 정의하지 않지만 세로 정렬되는 버튼 그룹에서 text button이
+      아래에 배치되는 패턴과 혼동되지 않도록 버튼의 아래 가이드 텍스트를 배치하지 않습니다. ->
+      사실은 모든 버튼에서 전환을 유도하는 텍스트를 사용없이 인터페이스만으로.
+    </test-text>
 
-      <div
+    <div
+      style="
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 1rem;
+        margin: 1.5rem 0 0 0;
+      "
+    >
+      <test-tile
         style="
           display: flex;
-          flex-wrap: wrap;
-          justify-content: space-between;
-          gap: 1rem;
-          margin: 1.5rem 0 0 0;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          height: 120px;
         "
       >
-        <test-tile
-          style="
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            height: 120px;
-          "
-        >
-          <test-group variant="chip">
-            <test-button variant="tertiary">취소</test-button>
-            <test-button variant="primary">저장</test-button>
-          </test-group>
-        </test-tile>
-        <test-tile
-          style="
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            height: 120px;
-          "
-        >
-          <test-group variant="chip">
-            <test-button variant="text">건너뛰기</test-button>
-            <test-button variant="secondary">다음</test-button>
-          </test-group>
-        </test-tile>
-        <test-tile
-          style="
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            height: 120px;
-          "
-        >
-          <test-group variant="chip">
-            <test-button variant="tertiary">이전</test-button>
-            <test-button variant="secondary">다음</test-button>
-          </test-group>
-        </test-tile>
-        <test-tile
-          style="
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            height: 120px;
-          "
-        >
-          <test-group variant="chip" class="hero-actions">
-            <test-button variant="primary" href="#components">지금 가입하기</test-button>
-            <test-button variant="text">더 알아보기</test-button>
-          </test-group>
-        </test-tile>
-      </div>
+        <test-group variant="chip">
+          <test-button variant="tertiary">취소</test-button>
+          <test-button variant="primary">저장</test-button>
+        </test-group>
+      </test-tile>
+      <test-tile
+        style="
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          height: 120px;
+        "
+      >
+        <test-group variant="chip">
+          <test-button variant="text">건너뛰기</test-button>
+          <test-button variant="secondary">다음</test-button>
+        </test-group>
+      </test-tile>
+      <test-tile
+        style="
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          height: 120px;
+        "
+      >
+        <test-group variant="chip">
+          <test-button variant="tertiary">이전</test-button>
+          <test-button variant="secondary">다음</test-button>
+        </test-group>
+      </test-tile>
+      <test-tile
+        style="
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          height: 120px;
+        "
+      >
+        <test-group variant="chip" class="hero-actions">
+          <test-button variant="primary" href="#components">지금 가입하기</test-button>
+          <test-button variant="text">더 알아보기</test-button>
+        </test-group>
+      </test-tile>
+    </div>
 
-      <blockquote>
-        <test-text variant="body">
-          Split button. 사용자에게 더 많은 작업을 표시하는 경우 작업을 선택하여 트리거할 수 있도록
-          선택 + 버튼 조합을 사용. 것이 좋습니다.</test-text
-        >
-        <test-text variant="body">
-          Link Button. 버튼과 형태는 동일한 합성된 컴포넌트. Link 안에 button이 들어가면 링크 역할과
-          버튼의 형태를 분리할 수 있다.
-        </test-text>
-        <test-text variant="body"
-          >elevated button과 elevated menuitem. 후자만 정의하면 됨.</test-text
-        >
-      </blockquote>
-    </section>
-  </article>
+    <blockquote>
+      <test-text variant="body">
+        Split button. 사용자에게 더 많은 작업을 표시하는 경우 작업을 선택하여 트리거할 수 있도록
+        선택 + 버튼 조합을 사용. 것이 좋습니다.</test-text
+      >
+      <test-text variant="body">
+        Link Button. 버튼과 형태는 동일한 합성된 컴포넌트. Link 안에 button이 들어가면 링크 역할과
+        버튼의 형태를 분리할 수 있다.
+      </test-text>
+      <test-text variant="body">elevated button과 elevated menuitem. 후자만 정의하면 됨.</test-text>
+    </blockquote>
+  </section>
 </main>

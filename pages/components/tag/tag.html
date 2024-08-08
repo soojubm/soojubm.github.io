@@ -1,106 +1,104 @@
 <main class="page">
-  <article class="article">
-    <test-text variant="title">Tags</test-text>
-    <test-text variant="body-large">
-      인접 요소나 부모 요소를 부연하는 시각 정보입니다. 상태, 카테고리, 키워드로 강조된 시각 정보는
-      사용자가 복잡한 정보 더미에서 중요한 정보를 우선적으로 파악하도록 돕습니다.
-    </test-text>
-    <!-- <test-text variant="body-large">
-      post 페이지에서 태그와 컴포넌트에서의 태그. hashtag는 tag 컴포넌트와 역할이 다르기 때문에 별도의 컴포넌트로 만들어주어야 한다. 현재
-      hashtag(keyword)는 chip으로 대체. todo. 댑스가 2이상 인 케이스.
-    </p> -->
+  <test-text variant="title">Tags</test-text>
+  <test-text variant="body-large">
+    인접 요소나 부모 요소를 부연하는 시각 정보입니다. 상태, 카테고리, 키워드로 강조된 시각 정보는
+    사용자가 복잡한 정보 더미에서 중요한 정보를 우선적으로 파악하도록 돕습니다.
+  </test-text>
+  <!-- <test-text variant="body-large">
+    post 페이지에서 태그와 컴포넌트에서의 태그. hashtag는 tag 컴포넌트와 역할이 다르기 때문에 별도의 컴포넌트로 만들어주어야 한다. 현재
+    hashtag(keyword)는 chip으로 대체. todo. 댑스가 2이상 인 케이스.
+  </p> -->
 
-    <dl class="article-aka">
-      <dt>a.k.a.</dt>
-      <dd>Badge</dd>
-      <dd>Label</dd>
-      <dd>Keyword</dd>
-      <dd>Flag</dd>
+  <dl class="article-aka">
+    <dt>a.k.a.</dt>
+    <dd>Badge</dd>
+    <dd>Label</dd>
+    <dd>Keyword</dd>
+    <dd>Flag</dd>
+  </dl>
+
+  <section class="component-example">
+    <test-group variant="tag">
+      <test-tag variant="primary">primary</test-tag>
+      <test-tag variant="tertiary">tertiary</test-tag>
+      <test-tag variant="indicator" role="listitem">
+        <test-icon slot="icon" name="nav-arrow-down"></test-icon>
+      </test-tag>
+    </test-group>
+    <test-separator></test-separator>
+    <test-group variant="tag">
+      <test-tag variant="secondary">
+        <test-icon slot="icon" name="graph-up"></test-icon>
+        16%
+      </test-tag>
+      <test-tag variant="destructive">
+        <test-icon slot="icon" name="graph-down"></test-icon>
+        16%
+      </test-tag>
+    </test-group>
+    <test-separator></test-separator>
+    <test-group variant="tag">
+      <test-tag variant="feature1">유저리서치</test-tag>
+      <test-tag variant="feature2">유저플로우</test-tag>
+      <test-tag variant="feature3">유저스트</test-tag>
+      <test-tag variant="feature4">A/B테스팅</test-tag>
+    </test-group>
+    <test-separator></test-separator>
+    <test-group variant="tag">
+      <test-tag variant="hashtag" role="listitem">소띠</test-tag>
+      <test-tag variant="hashtag" role="listitem">85년생</test-tag>
+      <test-tag variant="hashtag" role="listitem">수다</test-tag>
+    </test-group>
+    <!-- <test-tag variant="secondary">depulicated secondary</test-tag> -->
+  </section>
+
+  <section class="component-props">
+    <test-text variant="subhead" hidden>Props</test-text>
+    <dl>
+      <dt>variant</dt>
+      <dd>'primary' | <del>'secondary'</del> | 'tertiary' | 'indicator' | 'hashtag'</dd>
+      <dd>TODO 값의 이름 정리</dd>
+      <dt>children</dt>
+      <dd>React.ReactNode</dd>
+      <dd>2단어 이하의 형용사 또는 명사</dd>
+      <dt>color?</dt>
+      <dt>iconSlot</dt>
+      <dd>React.ReactNode</dd>
+      <dd>태그는 왼쪽에만 아이콘을 넣을 수 있기 때문에 iconSlot으로 명명</dd>
+      <dd>string</dd>
+      <dd>for categories / status</dd>
     </dl>
+  </section>
 
-    <section class="component-example">
-      <test-group variant="tag">
-        <test-tag variant="primary">primary</test-tag>
-        <test-tag variant="tertiary">tertiary</test-tag>
-        <test-tag variant="indicator" role="listitem">
-          <test-icon slot="icon" name="nav-arrow-down"></test-icon>
-        </test-tag>
-      </test-group>
-      <test-separator></test-separator>
-      <test-group variant="tag">
-        <test-tag variant="secondary">
-          <test-icon slot="icon" name="graph-up"></test-icon>
-          16%
-        </test-tag>
-        <test-tag variant="destructive">
-          <test-icon slot="icon" name="graph-down"></test-icon>
-          16%
-        </test-tag>
-      </test-group>
-      <test-separator></test-separator>
-      <test-group variant="tag">
-        <test-tag variant="feature1">유저리서치</test-tag>
-        <test-tag variant="feature2">유저플로우</test-tag>
-        <test-tag variant="feature3">유저스트</test-tag>
-        <test-tag variant="feature4">A/B테스팅</test-tag>
-      </test-group>
-      <test-separator></test-separator>
-      <test-group variant="tag">
-        <test-tag variant="hashtag" role="listitem">소띠</test-tag>
-        <test-tag variant="hashtag" role="listitem">85년생</test-tag>
-        <test-tag variant="hashtag" role="listitem">수다</test-tag>
-      </test-group>
-      <!-- <test-tag variant="secondary">depulicated secondary</test-tag> -->
-    </section>
+  <section class="component-guide">
+    <test-text variant="subhead">Non-clickable? Non-interactive?</test-text>
+    <test-text variant="body">정보 강조, 요약</test-text>
+    <test-text variant="body">
+      <del>액션의 기표로 사용할 수 있다. 인접 요소 또는 부모 요소가 클릭할 수 있음을 보조.</del>
+      이렇게 되면 태그의 정의가 복잡해짐. 이걸 다른 컴포넌트로 정의해야.
+    </test-text>
+    <!-- <div style="display: flex; flex-direction: column; gap: 0.5rem"> -->
+    <test-text variant="subhead">Groupable</test-text>
+    <test-text variant="body-bold"> 태그 그룹은 최대 4개의 태그를 표시합니다.</test-text>
+    <test-text variant="body">
+      너무 많은 태그 목록으로 사용자의 콘텐츠 탐색을 방해하지 마세요.
+    </test-text>
+    <div style="height: var(--space-4)"></div>
+    <test-text variant="body-bold"
+      >그룹에서 primary tag는 최대 1개만 포함할 수 있습니다.</test-text
+    >
 
-    <section class="component-props">
-      <test-text variant="subhead" hidden>Props</test-text>
-      <dl>
-        <dt>variant</dt>
-        <dd>'primary' | <del>'secondary'</del> | 'tertiary' | 'indicator' | 'hashtag'</dd>
-        <dd>TODO 값의 이름 정리</dd>
-        <dt>children</dt>
-        <dd>React.ReactNode</dd>
-        <dd>2단어 이하의 형용사 또는 명사</dd>
-        <dt>color?</dt>
-        <dt>iconSlot</dt>
-        <dd>React.ReactNode</dd>
-        <dd>태그는 왼쪽에만 아이콘을 넣을 수 있기 때문에 iconSlot으로 명명</dd>
-        <dd>string</dd>
-        <dd>for categories / status</dd>
-      </dl>
-    </section>
-
-    <section class="component-guide">
-      <test-text variant="subhead">Non-clickable? Non-interactive?</test-text>
-      <test-text variant="body">정보 강조, 요약</test-text>
-      <test-text variant="body">
-        <del>액션의 기표로 사용할 수 있다. 인접 요소 또는 부모 요소가 클릭할 수 있음을 보조.</del>
-        이렇게 되면 태그의 정의가 복잡해짐. 이걸 다른 컴포넌트로 정의해야.
-      </test-text>
-      <!-- <div style="display: flex; flex-direction: column; gap: 0.5rem"> -->
-      <test-text variant="subhead">Groupable</test-text>
-      <test-text variant="body-bold"> 태그 그룹은 최대 4개의 태그를 표시합니다.</test-text>
-      <test-text variant="body">
-        너무 많은 태그 목록으로 사용자의 콘텐츠 탐색을 방해하지 마세요.
-      </test-text>
-      <div style="height: var(--space-4)"></div>
-      <test-text variant="body-bold"
-        >그룹에서 primary tag는 최대 1개만 포함할 수 있습니다.</test-text
-      >
-
-      <div style="height: var(--space-4)"></div>
-      <test-text variant="body-bold">예외 케이스.</test-text>
-      <test-text variant="body">
-        태그의 목록이 페이지 전체를 관통하는 경우 탐색을 보조하는 역할이 아니라 정보를 보충하는
-        맥락이기 때문에 4개 이상이 허용된다. 유저 프로필 페이지에서 유저를 보충할 때가 적절한 예시.
-      </test-text>
-      <!-- </div> -->
-      <test-text variant="subhead">Easy scanning</test-text>
-      <test-text variant="body">
-        <b>Use short labels for easy scanning.</b> 중요한 정보를 빠르게 파악할 수 있는 짧은 단어의
-        조합.
-      </test-text>
-    </section>
-  </article>
+    <div style="height: var(--space-4)"></div>
+    <test-text variant="body-bold">예외 케이스.</test-text>
+    <test-text variant="body">
+      태그의 목록이 페이지 전체를 관통하는 경우 탐색을 보조하는 역할이 아니라 정보를 보충하는
+      맥락이기 때문에 4개 이상이 허용된다. 유저 프로필 페이지에서 유저를 보충할 때가 적절한 예시.
+    </test-text>
+    <!-- </div> -->
+    <test-text variant="subhead">Easy scanning</test-text>
+    <test-text variant="body">
+      <b>Use short labels for easy scanning.</b> 중요한 정보를 빠르게 파악할 수 있는 짧은 단어의
+      조합.
+    </test-text>
+  </section>
 </main>

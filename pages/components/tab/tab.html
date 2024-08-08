@@ -1,16 +1,15 @@
-<main class="page">
-  <article class="article js-observer js-scrollspy-section js-tab">
-    <test-text variant="title">Tab</test-text>
-    <test-text variant="body-large">같은 맥락의 콘텐츠를 주제별로 분류합니다.</test-text>
+<main class="page js-tab">
+  <test-text variant="title">Tab</test-text>
+  <test-text variant="body-large">같은 맥락의 콘텐츠를 주제별로 분류합니다.</test-text>
 
-    <!-- <test-tablist>
+  <!-- <test-tablist>
       <test-tab slot="tab" selected="true" aria-controls="panel-1" id="tab-1" tabindex="0"> Monthly </test-tab>
       <test-tab slot="tab" aria-controls="panel-2" id="tab-2" tabindex="-1">Yearly</test-tab>
     </test-tablist> -->
 
-    <section class="component-example">
-      <!-- TODO Primary style -->
-      <!-- <test-tablist variant="primary">
+  <section class="component-example">
+    <!-- TODO Primary style -->
+    <!-- <test-tablist variant="primary">
         <test-tab slot="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">
           첫번째 탭
           <test-badge>24</test-badge>
@@ -19,138 +18,137 @@
         <test-tab slot="tab" aria-controls="panel-3" id="tab-3" tabindex="-1">세번째 탭</test-tab>
         <i slot="indicator" class="tablist-indicator"></i>
       </test-tablist> -->
-      <!-- data-tabs='{"name": "Chris Coyier", "job": "Web Person"}' -->
-      <div style="display: flex; gap: 1rem">
-        <test-text variant="title">첫번째 탭</test-text>
-        <test-text variant="title" style="opacity: 0.5">두번째 탭</test-text>
-        <test-text variant="title" style="opacity: 0.5">세번째 탭</test-text>
-      </div>
-      <test-separator></test-separator>
+    <!-- data-tabs='{"name": "Chris Coyier", "job": "Web Person"}' -->
+    <div style="display: flex; gap: 1rem">
+      <test-text variant="title">첫번째 탭</test-text>
+      <test-text variant="title" style="opacity: 0.5">두번째 탭</test-text>
+      <test-text variant="title" style="opacity: 0.5">세번째 탭</test-text>
+    </div>
+    <test-separator></test-separator>
+    <test-tablist>
+      <test-tab slot="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">
+        첫번째 탭
+        <!-- <test-badge slot="badge">24</test-badge> -->
+      </test-tab>
+      <test-tab slot="tab" aria-controls="panel-2" id="tab-2" tabindex="-1"> 두번째 탭 </test-tab>
+      <test-tab slot="tab" aria-controls="panel-3" id="tab-3" tabindex="-1"> 세번째 탭 </test-tab>
+      <i slot="indicator" class="tablist-indicator"></i>
+    </test-tablist>
+    <div
+      class="tabpanel"
+      id="panel-1"
+      role="tabpanel"
+      tabindex="0"
+      aria-labelledby="tab-1"
+      style="margin: 1rem 0 0"
+    >
+      <p>Content for the first panel.</p>
+    </div>
+    <div
+      class="tabpanel"
+      id="panel-2"
+      role="tabpanel"
+      tabindex="0"
+      aria-labelledby="tab-2"
+      aria-hidden="true"
+      style="margin: 0.5rem 0 0"
+    >
+      <p>Content for the second panel</p>
+    </div>
+    <div
+      class="tabpanel"
+      id="panel-3"
+      role="tabpanel"
+      tabindex="0"
+      aria-labelledby="tab-3"
+      aria-hidden="true"
+      style="margin: 1rem 0 0"
+    >
+      <p>Content for the third panel</p>
+    </div>
+    <test-separator></test-separator>
+    <div style="max-width: 200px">
       <test-tablist>
-        <test-tab slot="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">
-          첫번째 탭
-          <!-- <test-badge slot="badge">24</test-badge> -->
+        <test-tab slot="tab" selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">
+          Monthly
         </test-tab>
-        <test-tab slot="tab" aria-controls="panel-2" id="tab-2" tabindex="-1"> 두번째 탭 </test-tab>
-        <test-tab slot="tab" aria-controls="panel-3" id="tab-3" tabindex="-1"> 세번째 탭 </test-tab>
-        <i slot="indicator" class="tablist-indicator"></i>
+        <test-tab slot="tab" aria-controls="panel-2" id="tab-2" tabindex="-1">Yearly</test-tab>
       </test-tablist>
-      <div
-        class="tabpanel"
-        id="panel-1"
-        role="tabpanel"
-        tabindex="0"
-        aria-labelledby="tab-1"
-        style="margin: 1rem 0 0"
-      >
-        <p>Content for the first panel.</p>
-      </div>
-      <div
-        class="tabpanel"
-        id="panel-2"
-        role="tabpanel"
-        tabindex="0"
-        aria-labelledby="tab-2"
-        aria-hidden="true"
-        style="margin: 0.5rem 0 0"
-      >
-        <p>Content for the second panel</p>
-      </div>
-      <div
-        class="tabpanel"
-        id="panel-3"
-        role="tabpanel"
-        tabindex="0"
-        aria-labelledby="tab-3"
-        aria-hidden="true"
-        style="margin: 1rem 0 0"
-      >
-        <p>Content for the third panel</p>
-      </div>
-      <test-separator></test-separator>
-      <div style="max-width: 200px">
-        <test-tablist>
-          <test-tab slot="tab" selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">
-            Monthly
-          </test-tab>
-          <test-tab slot="tab" aria-controls="panel-2" id="tab-2" tabindex="-1">Yearly</test-tab>
-        </test-tablist>
-      </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="component-props">
-      <!-- <test-text variant="subhead">Props</test-text> -->
-      <dl>
-        <dt>tablist</dt>
-        <dd><del>OptionType[]</del>TabType[]</dd>
-        <dd></dd>
-        <dt>tabPanel</dt>
-        <dd>React.Node</dd>
-        <dd></dd>
-        <!-- <dt>indicator (active bar)</dt> -->
-        <dt>counterBadge slot</dt>
-        <dd>Number</dd>
-        <dd></dd>
-      </dl>
-    </section>
+  <section class="component-props">
+    <!-- <test-text variant="subhead">Props</test-text> -->
+    <dl>
+      <dt>tablist</dt>
+      <dd><del>OptionType[]</del>TabType[]</dd>
+      <dd></dd>
+      <dt>tabPanel</dt>
+      <dd>React.Node</dd>
+      <dd></dd>
+      <!-- <dt>indicator (active bar)</dt> -->
+      <dt>counterBadge slot</dt>
+      <dd>Number</dd>
+      <dd></dd>
+    </dl>
+  </section>
 
-    <section class="component-guide">
-      <test-text variant="subhead">Behavior - Content switching</test-text>
-      <test-text variant="body">
-        콘텐츠 정렬 또는 콘텐츠 필터로 사용하지 마세요. 구조적으로 콘텐츠 필터의 맥락인
-        탭투스크롤로는 사용할 수 없습니다.
-      </test-text>
-      <test-text variant="body">
-        <del>페이지 링크로 사용하지 마세요.</del> SPA에서 페이지 링크의 개념이 모호하지만 탭을 클릭
-        후의 뷰에서 탭 바는 유지되어야 합니다.
-      </test-text>
-      <test-text variant="body">
-        Make sure the controls within a pane affect content only in the same pane. Panes are
-        mutually exclusive, so ensure they’re fully self-contained.
-      </test-text>
-      <test-text variant="body">
-        탭을 중첩하지 마세요. 페이지에서 수행할 수 있는 과업을 명확히. 플로우 설계.
-      </test-text>
-      <test-text variant="subhead">Editorial - Easy Scanning</test-text>
-      <test-text variant="body">
-        레이블은 최대 2단어. 페이지의 사이에 사용하지 않기. tile(paper) 내부에서는 허용됨
-      </test-text>
-      <test-text variant="body">
-        레이블이 두 줄이 되면 안 됨. 말줄임표도 안 됨. 탭의 최대 갯수를 제한하거나 가로 스크롤
-        규칙을 정의. 갯수를 제한하면 스크롤이 불필요.
-      </test-text>
+  <section class="component-guide">
+    <test-text variant="subhead">Behavior - Content switching</test-text>
+    <test-text variant="body">
+      콘텐츠 정렬 또는 콘텐츠 필터로 사용하지 마세요. 구조적으로 콘텐츠 필터의 맥락인 탭투스크롤로는
+      사용할 수 없습니다.
+    </test-text>
+    <test-text variant="body">
+      <del>페이지 링크로 사용하지 마세요.</del> SPA에서 페이지 링크의 개념이 모호하지만 탭을 클릭
+      후의 뷰에서 탭 바는 유지되어야 합니다.
+    </test-text>
+    <test-text variant="body">
+      Make sure the controls within a pane affect content only in the same pane. Panes are mutually
+      exclusive, so ensure they’re fully self-contained.
+    </test-text>
+    <test-text variant="body">
+      탭을 중첩하지 마세요. 페이지에서 수행할 수 있는 과업을 명확히. 플로우 설계.
+    </test-text>
+    <test-text variant="subhead">Editorial - Easy Scanning</test-text>
+    <test-text variant="body">
+      레이블은 최대 2단어. 페이지의 사이에 사용하지 않기. tile(paper) 내부에서는 허용됨
+    </test-text>
+    <test-text variant="body">
+      레이블이 두 줄이 되면 안 됨. 말줄임표도 안 됨. 탭의 최대 갯수를 제한하거나 가로 스크롤 규칙을
+      정의. 갯수를 제한하면 스크롤이 불필요.
+    </test-text>
 
-      <test-text variant="subhead">A11y</test-text>
-      <test-text variant="body">키보드 접근성. 방향키 </test-text>
+    <test-text variant="subhead">A11y</test-text>
+    <test-text variant="body">키보드 접근성. 방향키 </test-text>
 
-      <test-text variant="subhead">Notes</test-text>
-      <ul>
-        <li>브라우저 히스토리 (?tab=projects). SearchParams</li>
-        <li>Material 3에서 primary tabs / secondary tabs</li>
-        <li>
-          글로벌 네비게이션 패턴인 햄버거 메뉴와 탭(바텀네비게이션, 탭바)을 함께 사용할 수 있는가?
-        </li>
-      </ul>
-    </section>
+    <test-text variant="subhead">Notes</test-text>
+    <ul>
+      <li>브라우저 히스토리 (?tab=projects). SearchParams</li>
+      <li>Material 3에서 primary tabs / secondary tabs</li>
+      <li>
+        글로벌 네비게이션 패턴인 햄버거 메뉴와 탭(바텀네비게이션, 탭바)을 함께 사용할 수 있는가?
+      </li>
+    </ul>
+  </section>
 
-    <!--  segmented control -->
-    <!-- Use a segmented control to provide closely related choices that affect an object, state, or view. For example, a segmented control can help people
+  <!--  segmented control -->
+  <!-- Use a segmented control to provide closely related choices that affect an object, state, or view. For example, a segmented control can help people
     switch between views in a toolbar. Avoid using a segmented control to offer actions, such as adding, removing, or editing content. -->
 
-    <div class="component-references">
-      <test-text variant="subhead">References</test-text>
-      <a
-        href="https://developer.apple.com/design/human-interface-guidelines/components/layout-and-organization/tab-views"
-        target="_blank"
-      >
-        HIG tab views
-      </a>
-      <a
-        href="https://developer.apple.com/design/human-interface-guidelines/components/selection-and-input/segmented-controls/"
-      >
-        HIG Segmented controls
-      </a>
-      <a href="https://material.io/components/tabs">MD Tabs</a>
-    </div>
-  </article>
+  <div class="component-references">
+    <test-text variant="subhead">References</test-text>
+    <a
+      href="https://developer.apple.com/design/human-interface-guidelines/components/layout-and-organization/tab-views"
+      target="_blank"
+    >
+      HIG tab views
+    </a>
+    <a
+      href="https://developer.apple.com/design/human-interface-guidelines/components/selection-and-input/segmented-controls/"
+    >
+      HIG Segmented controls
+    </a>
+    <a href="https://material.io/components/tabs">MD Tabs</a>
+  </div>
 </main>
