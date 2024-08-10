@@ -178,8 +178,8 @@ const article = [
 //   article.forEach(item => {
 //     const articleSample = `
 //       <article class="article js-scrollspy-section">
-//         <test-text variant="title">${item.title}</test-text>
-//         <test-text variant="body-large">
+//         <mm-text variant="title">${item.title}</mm-text>
+//         <mm-text variant="body-large">
 //         ${item.kicker}
 //         </p>
 //         <p style="margin:2rem 0">${item.description}</p>

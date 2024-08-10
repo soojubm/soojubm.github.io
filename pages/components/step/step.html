@@ -1,6 +1,6 @@
 <main class="page">
-  <test-text variant="title">Step / Workflow</test-text>
-  <test-text variant="body-large">내용 없음.</test-text>
+  <mm-text variant="title">Step / Workflow</mm-text>
+  <mm-text variant="body-large">내용 없음.</mm-text>
 
   <dl class="article-aka">
     <dt>a.k.a.</dt>
@@ -60,22 +60,22 @@
     <ul>
       <li>타임라인과 구분. 타임라인은 히스토리 맥락으로 스텝의 역순. 확장, 링크, indentation</li>
     </ul>
-    <test-text variant="subhead">Changelog</test-text>
-    <test-text variant="body">클릭하고 싶지 않은 형태로 변경 2021.10</test-text>
+    <mm-text variant="subhead">Changelog</mm-text>
+    <mm-text variant="body">클릭하고 싶지 않은 형태로 변경 2021.10</mm-text>
   </section>
 
   <section class="component-case">
-    <test-tile flat="flat" size="medium">
-      <test-group class="order-item-head">
-        <test-tag class="order-item-head-type" style="width: var(--size-large)">포장</test-tag>
+    <mm-tile flat="flat" size="medium">
+      <mm-group class="order-item-head">
+        <mm-tag class="order-item-head-type" style="width: var(--size-large)">포장</mm-tag>
         <time class="order-item-head-time">2022. 12. 05. 15:32</time>
         <b class="order-item-head-status" style="margin-left: auto">배달완료</b>
-      </test-group>
+      </mm-group>
       <div style="height: var(--space-after-subhead)"></div>
-      <test-menuitem>
-        <test-avatar slot="avatar" size="large">
+      <mm-menuitem>
+        <mm-avatar slot="avatar" size="large">
           <span class="avatar-badge"></span>
-        </test-avatar>
+        </mm-avatar>
         <div slot="text" class="item-description">
           <b>쩜순이네닭강정 요기요st</b>
           <p style="display: flex; align-items: center; color: var(--color-text-light)">
@@ -85,7 +85,7 @@
             <span> 외 1건</span>
           </p>
         </div>
-      </test-menuitem>
+      </mm-menuitem>
       <div style="height: var(--space-4)"></div>
       <div class="step">
         <div class="step-item is-active">
@@ -106,46 +106,46 @@
         </div>
       </div>
       <div style="height: var(--space-4)"></div>
-      <test-group variant="chip">
-        <test-chip style="width: 100%">재주문</test-chip>
-        <test-chip>후기작성</test-chip>
-      </test-group>
-      <!-- <test-tag>네이버 쇼핑은 왜 주문 내역을 숨길 수 있나?</test-tag> -->
-    </test-tile>
-    <test-tile>
-      <test-group>
-        <test-menuitem>
-          <test-avatar slot="avatar" size="medium"></test-avatar>
+      <mm-group variant="chip">
+        <mm-chip style="width: 100%">재주문</mm-chip>
+        <mm-chip>후기작성</mm-chip>
+      </mm-group>
+      <!-- <mm-tag>네이버 쇼핑은 왜 주문 내역을 숨길 수 있나?</mm-tag> -->
+    </mm-tile>
+    <mm-tile>
+      <mm-group>
+        <mm-menuitem>
+          <mm-avatar slot="avatar" size="medium"></mm-avatar>
           <div slot="text">
-            <test-text variant="label">Step 1</test-text>
-            <test-text variant="word-strong">UPLOAD 3D FILES</test-text>
+            <mm-text variant="label">Step 1</mm-text>
+            <mm-text variant="word-strong">UPLOAD 3D FILES</mm-text>
           </div>
-        </test-menuitem>
-        <test-menuitem>
-          <test-avatar slot="avatar" size="medium"></test-avatar>
+        </mm-menuitem>
+        <mm-menuitem>
+          <mm-avatar slot="avatar" size="medium"></mm-avatar>
           <div slot="text">
-            <test-text variant="label">Step 2</test-text>
-            <test-text variant="word-strong">UPLOAD 3D FILES</test-text>
+            <mm-text variant="label">Step 2</mm-text>
+            <mm-text variant="word-strong">UPLOAD 3D FILES</mm-text>
           </div>
-        </test-menuitem>
-      </test-group>
-    </test-tile>
-    <test-tile>
+        </mm-menuitem>
+      </mm-group>
+    </mm-tile>
+    <mm-tile>
       <header class="authentication-head">
-        <test-text variant="subhead">Tell us about yourself</test-text>
-        <test-text variant="body" class="authentication-head-description">
+        <mm-text variant="subhead">Tell us about yourself</mm-text>
+        <mm-text variant="body" class="authentication-head-description">
           Now that you're all signed up, let's personalize your experience.
-        </test-text>
+        </mm-text>
       </header>
 
       <section class="step" data-align="vertical" style="margin: 1rem 0">
         <div class="step-item is-active">
           <span class="step-item-icon" style="color: #fff">1</span>
-          <test-text class="step-item-label">I'm an engineer</test-text>
+          <mm-text class="step-item-label">I'm an engineer</mm-text>
         </div>
         <div class="step-item is-active">
           <span class="step-item-icon" style="color: #fff">2</span>
-          <test-text class="step-item-label">I want to design from scratch</test-text>
+          <mm-text class="step-item-label">I want to design from scratch</mm-text>
           <!-- <p class="step-item-description">
             1칼럼(모바일)에서 결제 버튼을 누르기 전 최종 금액을 확인할 수 있는 구조가 되려면 2칼럼에서 우측을 결제를 위한 칼럼을 배치할
             때(체크아웃페이지의 일반적인 레이아웃) 상품&서머리&결제버튼이 같은 컨테이너로 포함되어야.
@@ -155,31 +155,31 @@
         </div>
         <div class="step-item">
           <span class="step-item-icon" style="font-size: var(--font-size-small)">3</span>
-          <test-text class="step-item-label" style="color: var(--color-text)">
+          <mm-text class="step-item-label" style="color: var(--color-text)">
             One last thing ㅡ how will you use your prototpe?
-          </test-text>
+          </mm-text>
           <small>(You can pick more than one)</small>
           <div style="height: var(--space-3)"></div>
-          <test-group variant="chip" style="margin-left: 0.75rem">
-            <test-chip>Share for feedback</test-chip>
-            <test-chip>Present live</test-chip>
-            <test-chip>Test with users</test-chip>
-            <test-chip>Collaborate in real time</test-chip>
-            <test-chip>Hand off to developers</test-chip>
-          </test-group>
+          <mm-group variant="chip" style="margin-left: 0.75rem">
+            <mm-chip>Share for feedback</mm-chip>
+            <mm-chip>Present live</mm-chip>
+            <mm-chip>Test with users</mm-chip>
+            <mm-chip>Collaborate in real time</mm-chip>
+            <mm-chip>Hand off to developers</mm-chip>
+          </mm-group>
         </div>
       </section>
-      <footer><test-button variant="primary">Start creating</test-button></footer>
-    </test-tile>
-    <test-tile>
+      <footer><mm-button variant="primary">Start creating</mm-button></footer>
+    </mm-tile>
+    <mm-tile>
       <div style="display: flex; align-items: center; height: 32px; gap: var(--space-3)">
-        <test-text variant="subhead">01</test-text>
-        <test-text variant="body-bold">Choose your platform</test-text>
+        <mm-text variant="subhead">01</mm-text>
+        <mm-text variant="body-bold">Choose your platform</mm-text>
       </div>
       <div style="display: flex; align-items: center; height: 32px; gap: var(--space-3)">
-        <test-text variant="subhead">02</test-text>
-        <test-text variant="body-bold">Set color theme</test-text>
+        <mm-text variant="subhead">02</mm-text>
+        <mm-text variant="body-bold">Set color theme</mm-text>
       </div>
-    </test-tile>
+    </mm-tile>
   </section>
 </main>

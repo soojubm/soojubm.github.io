@@ -120,7 +120,7 @@
 .sidebar-menu span {}
 .sidebar-menu menu {display:flex;flex-direction: column;margin:2rem 0 0 0;
 }
-.sidebar-menu test-menuitem {margin:0 0 var(--space-1) 0;}
+.sidebar-menu mm-menuitem {margin:0 0 var(--space-1) 0;}
 .sidebar-menu menu a {
   display:flex;align-items:center;
   height: var(--size-medium);

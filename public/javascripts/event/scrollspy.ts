@@ -24,7 +24,7 @@ const scrollspy = ({ menusSelector: menusClass, sectionsSelector: sectionsClass 
 
   window.addEventListener('scroll', throttle(detectSection), false)
 
-  // <test-chip><chip></chip></test-chip>
+  // <mm-chip><chip></chip></mm-chip>
   function activeItem(item) {
     item.classList.add('is-active')
     item.setAttribute('aria-selected', 'true')

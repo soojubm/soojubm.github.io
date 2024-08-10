@@ -60,7 +60,7 @@
   max-width: var(--width-medium);
   margin: 0 auto;
 }
-.meter-legend test-text[variant=word] {margin-left:auto}
+.meter-legend mm-text[variant=word] {margin-left:auto}
 .meter-legend-item {
   display: flex;
   align-items: center;

@@ -1,6 +1,6 @@
 <main class="page">
-  <test-text variant="title">Radioes</test-text>
-  <test-text variant="body-large">옵션 목록에서 하나의 옵션을 선택합니다.</test-text>
+  <mm-text variant="title">Radioes</mm-text>
+  <mm-text variant="body-large">옵션 목록에서 하나의 옵션을 선택합니다.</mm-text>
   <dl class="article-aka">
     <dt>a.k.a.</dt>
     <dd aria-label="">Radio group</dd>
@@ -9,18 +9,18 @@
   <section class="component-example">
     <fieldset role="radiogroup">
       <legend hidden>radiogroup</legend>
-      <test-group variant="checkbox">
-        <test-radio id="gender-man" name="gender" value="">Man</test-radio>
-        <test-radio id="gender-woman" name="gender" value="">Woman</test-radio>
+      <mm-group variant="checkbox">
+        <mm-radio id="gender-man" name="gender" value="">Man</mm-radio>
+        <mm-radio id="gender-woman" name="gender" value="">Woman</mm-radio>
         <!-- <p class="radio-helper">선택한 옵션의 보조 텍스트 영역입니다. 좁은 화면에서 충분한 공간 확보를 위해 들여쓰지 않습니다.</p> -->
-        <test-radio id="gender-etc" name="gender" value="" checked disabled>
+        <mm-radio id="gender-etc" name="gender" value="" checked disabled>
           Video Killed the Radio Button
-        </test-radio>
-      </test-group>
+        </mm-radio>
+      </mm-group>
     </fieldset>
   </section>
   <section class="component-props">
-    <!-- <test-text variant="subhead">Props</test-text> -->
+    <!-- <mm-text variant="subhead">Props</mm-text> -->
     <dl>
       <dt>name</dt>
       <dd>string</dd>
@@ -44,30 +44,30 @@
 
   <!-- TODO 단락의 구조도 컨테이너가 있어야 변경이 쉽다. -->
   <section class="component-guide">
-    <test-text variant="subhead">Visual Style</test-text>
-    <test-text variant="body">
+    <mm-text variant="subhead">Visual Style</mm-text>
+    <mm-text variant="body">
       옵션 목록은 최대 5개로 유지하세요.5개 이상의 옵션 목록은 select나 chip group으로 제공하세요.
-    </test-text>
-    <test-text variant="body">
+    </mm-text>
+    <mm-text variant="body">
       최상단의 옵션을 기본 선택으로 제공합니다. 설정 등에서 사용자가 직접 선택한 이력이 있는 경우는
       기선택 옵션을. default value
-    </test-text>
-    <test-text variant="body">
+    </mm-text>
+    <mm-text variant="body">
       항상 세로 정렬하세요. 이게 조금 더 강조되어야 하는 내용인데, 어떤 방식으로 말하면 좋을지.
       부정어를 사용하여 가로로 정렬하지 마세요. 가 조금 더 나을지.
-    </test-text>
+    </mm-text>
 
-    <test-text variant="subhead">Editorial</test-text>
+    <mm-text variant="subhead">Editorial</mm-text>
   </section>
 
   <section class="component-case">
-    <test-tile variant="elevated">
-      <test-radio name="gender" value="" checked style="margin-top: -0.5rem">
+    <mm-tile variant="elevated">
+      <mm-radio name="gender" value="" checked style="margin-top: -0.5rem">
         <b>₩ 2,000</b>
         개인
-      </test-radio>
+      </mm-radio>
       <div style="margin: 0 0 var(--space-2) 0">
-        <test-text variant="body">1개월 무료 후 14,900원 / 개월</test-text>
+        <mm-text variant="body">1개월 무료 후 14,900원 / 개월</mm-text>
         <small>현재 구독하고 있는 서비스는 체험할 수 없습니다.</small>
       </div>
       <figure
@@ -80,10 +80,10 @@
         기존 라디오 컴포넌트의 형태를 유지할 수 있는 디자인. props로 checked 상태만 갖는
         radio/checkbox 뭔말?
       </figure>
-    </test-tile>
+    </mm-tile>
   </section>
 
-  <!-- <test-text variant="body-large">Use cases</test-text>
+  <!-- <mm-text variant="body-large">Use cases</mm-text>
       <ul>
         <li>기본 배송지 선택</li>
       </ul> -->

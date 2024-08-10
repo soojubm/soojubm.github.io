@@ -1,51 +1,51 @@
 <main class="page" aria-label="site">
   <!-- // Chris said Marcus replied -->
   <article class="article">
-    <test-text variant="title">Carousel</test-text>
-    <test-text variant="body-large">작성 중.</test-text>
+    <mm-text variant="title">Carousel</mm-text>
+    <mm-text variant="body-large">작성 중.</mm-text>
     <p>aka. carousel, slider, stepper</p>
     <section class="component-example">
       <section class="carousel js-carousel">
         <nav style="display: flex; gap: var(--space-3)" role="tablist">
-          <test-entity description="추가">
-            <test-avatar slot="avatar" size="huge" fallback="+"></test-avatar>
-          </test-entity>
-          <test-entity description="공유하기" data-index="keyword">
-            <test-avatar slot="avatar" size="huge" fallback="🌏"></test-avatar>
-          </test-entity>
-          <test-entity description="키워드목록">
-            <test-avatar slot="avatar" size="huge" fallback="💀"></test-avatar>
-          </test-entity>
-          <test-entity description="주문 아이템">
-            <test-avatar slot="avatar" size="huge" fallback="🍔"></test-avatar>
-          </test-entity>
+          <mm-entity description="추가">
+            <mm-avatar slot="avatar" size="huge" fallback="+"></mm-avatar>
+          </mm-entity>
+          <mm-entity description="공유하기" data-index="keyword">
+            <mm-avatar slot="avatar" size="huge" fallback="🌏"></mm-avatar>
+          </mm-entity>
+          <mm-entity description="키워드목록">
+            <mm-avatar slot="avatar" size="huge" fallback="💀"></mm-avatar>
+          </mm-entity>
+          <mm-entity description="주문 아이템">
+            <mm-avatar slot="avatar" size="huge" fallback="🍔"></mm-avatar>
+          </mm-entity>
         </nav>
         <nav class="carousel-arrows">
-          <test-chip
+          <mm-chip
             variant="back"
             icon="arrow-left"
             class="carousel-arrows-prev js-carousel-prev"
             aria-label="이전"
           >
-          </test-chip>
-          <test-chip
+          </mm-chip>
+          <mm-chip
             variant="back"
             icon="arrow-right"
             class="carousel-arrows-next js-carousel-next"
             aria-label="다음"
           >
-          </test-chip>
+          </mm-chip>
         </nav>
-        <test-group class="carousel-viewer js-carousel-viewer">
-          <test-entity size="huge" label="폴 뉴먼" description="주연">
-            <test-avatar
+        <mm-group class="carousel-viewer js-carousel-viewer">
+          <mm-entity size="huge" label="폴 뉴먼" description="주연">
+            <mm-avatar
               slot="avatar"
               variant="tertiary"
               size="huge"
               src="/public/images/springsteen.jpg"
-            ></test-avatar>
-          </test-entity>
-        </test-group>
+            ></mm-avatar>
+          </mm-entity>
+        </mm-group>
         <!-- <nav class="carousel-dots">
           <button class="carousel-dots-dot">1</button>
           <button class="carousel-dots-dot">1</button>
@@ -55,10 +55,10 @@
     </section>
 
     <section class="component-guide">
-      <test-text variant="subhead">Behavior</test-text>
-      <test-text variant="body">
+      <mm-text variant="subhead">Behavior</mm-text>
+      <mm-text variant="body">
         터치 제스쳐를 지원하지 않는 환경에서는 arrow 버튼을 제공하세요.
-      </test-text>
+      </mm-text>
     </section>
 
     <blockquote>

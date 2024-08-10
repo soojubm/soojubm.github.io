@@ -1,8 +1,6 @@
 <main class="page">
-  <test-text variant="title">MenuItem</test-text>
-  <test-text variant="body-large">
-    사용자가 수행할 수 있는 행동 목록. 단독으로 쓸 수 있다.
-  </test-text>
+  <mm-text variant="title">MenuItem</mm-text>
+  <mm-text variant="body-large"> 사용자가 수행할 수 있는 행동 목록. 단독으로 쓸 수 있다. </mm-text>
 
   <dl class="article-aka">
     <dt>a.k.a.</dt>
@@ -13,51 +11,45 @@
 
   <section class="component-example">
     <!-- TODO prefix / suffix -->
-    <test-group variant="menuitem">
-      <test-menuitem size="large">
-        <test-avatar slot="avatar" size="large">🦊</test-avatar>
+    <mm-group variant="menuitem">
+      <mm-menuitem size="large">
+        <mm-avatar slot="avatar" size="large">🦊</mm-avatar>
         <div slot="text">
-          <test-text variant="word-strong">사진 및 동영상 백업</test-text>
-          <test-text variant="word-weak">디스크립션이다</test-text>
+          <mm-text variant="word-strong">사진 및 동영상 백업</mm-text>
+          <mm-text variant="word-weak">디스크립션이다</mm-text>
         </div>
-        <test-chip slot="action">버튼</test-chip>
-      </test-menuitem>
-      <test-menuitem label="메뉴아이템 링크" role="menuitem">
-        <test-avatar slot="avatar">🦊</test-avatar>
-      </test-menuitem>
-      <test-menuitem role="menuitemradio" label="메뉴아이템 스위치">
-        <test-avatar slot="avatar">🦊</test-avatar>
-        <test-switch slot="action"></test-switch>
-      </test-menuitem>
-      <test-menuitem label="메뉴아이템 체크박스" role="menuitemcheckbox">
-        <test-avatar slot="avatar">🦊</test-avatar>
-        <test-checkbox
-          slot="check"
-          id="check1"
-          name="check1"
-          value=""
-          checked="true"
-        ></test-checkbox>
-      </test-menuitem>
-      <test-menuitem label="메뉴아이템 라디오" role="menuitemradio">
-        <test-avatar slot="avatar">🦊</test-avatar>
-        <test-radio slot="check" id="radio1" name="radio1" value="" checked="true"></test-radio>
-      </test-menuitem>
-      <test-tile variant="elevated" size="small" role="menuitemcheckbox">
-        <test-menuitem label="강조된 메뉴아이템" description="리스트가 될 수 없어">
-          <test-avatar slot="avatar">🦊</test-avatar>
-          <test-switch slot="action" role="switch"></test-switch>
-        </test-menuitem>
+        <mm-chip slot="action">버튼</mm-chip>
+      </mm-menuitem>
+      <mm-menuitem label="메뉴아이템 링크" role="menuitem">
+        <mm-avatar slot="avatar">🦊</mm-avatar>
+      </mm-menuitem>
+      <mm-menuitem role="menuitemradio" label="메뉴아이템 스위치">
+        <mm-avatar slot="avatar">🦊</mm-avatar>
+        <mm-switch slot="action"></mm-switch>
+      </mm-menuitem>
+      <mm-menuitem label="메뉴아이템 체크박스" role="menuitemcheckbox">
+        <mm-avatar slot="avatar">🦊</mm-avatar>
+        <mm-checkbox slot="check" id="check1" name="check1" value="" checked="true"></mm-checkbox>
+      </mm-menuitem>
+      <mm-menuitem label="메뉴아이템 라디오" role="menuitemradio">
+        <mm-avatar slot="avatar">🦊</mm-avatar>
+        <mm-radio slot="check" id="radio1" name="radio1" value="" checked="true"></mm-radio>
+      </mm-menuitem>
+      <mm-tile variant="elevated" size="small" role="menuitemcheckbox">
+        <mm-menuitem label="강조된 메뉴아이템" description="리스트가 될 수 없어">
+          <mm-avatar slot="avatar">🦊</mm-avatar>
+          <mm-switch slot="action" role="switch"></mm-switch>
+        </mm-menuitem>
         <div style="height: var(--space-1)"></div>
         <small>
           Google 포토에 최대 해상도로 백업. TODO menuitem에 tile이 포함되어야 hover 상태.
         </small>
-      </test-tile>
-    </test-group>
+      </mm-tile>
+    </mm-group>
   </section>
 
   <section class="component-props">
-    <test-text variant="subhead">Props</test-text>
+    <mm-text variant="subhead">Props</mm-text>
     <dl>
       <dt>name</dt>
       <dd>string</dd>
@@ -78,22 +70,22 @@
   </section>
 
   <section class="component-guide">
-    <test-text variant="subhead">Behavior</test-text>
+    <mm-text variant="subhead">Behavior</mm-text>
 
-    <test-text variant="subhead">Visual style</test-text>
+    <mm-text variant="subhead">Visual style</mm-text>
     <div style="height: var(--space-3)"></div>
-    <test-text variant="body-bold">
+    <mm-text variant="body-bold">
       메뉴 아이템의 우측(action) 슬롯에는 액션 또는 액션 인티케이터가 위치합니다.
-    </test-text>
-    <test-text variant="body">
+    </mm-text>
+    <mm-text variant="body">
       정보를 보충하는 맥락의 태그 컴포넌트('new' 등)를 배치하지 마세요. (case 토스. 우측 new)
-    </test-text>
-    <test-text variant="body">
+    </mm-text>
+    <mm-text variant="body">
       elevated menu item은 리스트와 별개로 구성되어야 하며, 하나의 리스트에 두 개 이상 사용할 수
       있습니다.
-    </test-text>
+    </mm-text>
 
-    <test-text variant="subhead">Anatomy</test-text>
+    <mm-text variant="subhead">Anatomy</mm-text>
     <ul>
       <li>Menu -> MenuButton(Trigger) / MenuList - MenuItem, MenuLink</li>
       <li>MenuItemAvatar. sizes: large | medium</li>
@@ -102,13 +94,13 @@
       <li>MenuHelper. role: setting-item. filter-item.</li>
     </ul>
 
-    <test-text variant="subhead">Cases</test-text>
-    <test-text variant="body-bold">Dropdown menu</test-text>
-    <test-text variant="body-bold">Sheet menu</test-text>
-    <test-text variant="body-bold">Modal menu</test-text>
-    <test-text variant="body-bold">Sidebar menu</test-text>
-    <test-text variant="body-bold">Sitemap menu</test-text>
-    <test-text variant="body-bold">Global navigation menu</test-text>
+    <mm-text variant="subhead">Cases</mm-text>
+    <mm-text variant="body-bold">Dropdown menu</mm-text>
+    <mm-text variant="body-bold">Sheet menu</mm-text>
+    <mm-text variant="body-bold">Modal menu</mm-text>
+    <mm-text variant="body-bold">Sidebar menu</mm-text>
+    <mm-text variant="body-bold">Sitemap menu</mm-text>
+    <mm-text variant="body-bold">Global navigation menu</mm-text>
 
     <blockquote>
       <ul class="checklist" style="margin: 0">
@@ -133,214 +125,214 @@
   </section>
 
   <section class="component-case">
-    <test-tile variant="flat">
-      <test-group variant="dropdown">
-        <test-text variant="label">menu heading / line height</test-text>
+    <mm-tile variant="flat">
+      <mm-group variant="dropdown">
+        <mm-text variant="label">menu heading / line height</mm-text>
         <div style="height: var(--space-1)"></div>
-        <test-menuitem role="menuitem" href="#design">
-          <test-text slot="text" variant="subhead">Anxiety </test-text>
-        </test-menuitem>
-        <test-menuitem role="menuitem" href="#design">
-          <test-text slot="text" variant="subhead">General worry</test-text>
-        </test-menuitem>
-      </test-group>
-    </test-tile>
-    <test-tile>
-      <test-menuitem label="windows 패턴">
-        <test-avatar slot="avatar"></test-avatar>
-        <test-group slot="action" variant="chip">
-          <test-chip>퀵 액션</test-chip>
-          <test-chip icon="arrow-right"> </test-chip>
-        </test-group>
-      </test-menuitem>
-    </test-tile>
-    <test-tile variant="flat">
-      <test-group variant="dropdown">
-        <test-text variant="label">menu heading / gap margin left on label</test-text>
+        <mm-menuitem role="menuitem" href="#design">
+          <mm-text slot="text" variant="subhead">Anxiety </mm-text>
+        </mm-menuitem>
+        <mm-menuitem role="menuitem" href="#design">
+          <mm-text slot="text" variant="subhead">General worry</mm-text>
+        </mm-menuitem>
+      </mm-group>
+    </mm-tile>
+    <mm-tile>
+      <mm-menuitem label="windows 패턴">
+        <mm-avatar slot="avatar"></mm-avatar>
+        <mm-group slot="action" variant="chip">
+          <mm-chip>퀵 액션</mm-chip>
+          <mm-chip icon="arrow-right"> </mm-chip>
+        </mm-group>
+      </mm-menuitem>
+    </mm-tile>
+    <mm-tile variant="flat">
+      <mm-group variant="dropdown">
+        <mm-text variant="label">menu heading / gap margin left on label</mm-text>
         <div style="height: var(--space-1)"></div>
-        <test-menuitem role="menuitem" href="#design">
-          <test-icon slot="check" name="check"></test-icon>
+        <mm-menuitem role="menuitem" href="#design">
+          <mm-icon slot="check" name="check"></mm-icon>
           <span slot="text">Only Text</span>
-        </test-menuitem>
-        <test-menuitem role="menuitem">
+        </mm-menuitem>
+        <mm-menuitem role="menuitem">
           <span slot="check"></span>
           <span slot="text">on popover</span>
-        </test-menuitem>
-        <test-menuitem class="dropdown-menu-item">
+        </mm-menuitem>
+        <mm-menuitem class="dropdown-menu-item">
           <span slot="check"></span>
           <span slot="text">with dropdown/pulldown</span>
-        </test-menuitem>
-        <test-menuitem class="dropdown-menu-item">
+        </mm-menuitem>
+        <mm-menuitem class="dropdown-menu-item">
           <span slot="check"></span>
           <span slot="text">with popover</span>
-        </test-menuitem>
-      </test-group>
-    </test-tile>
-    <test-tile variant="flat" class="share">
-      <test-titlebar heading="공유"></test-titlebar>
+        </mm-menuitem>
+      </mm-group>
+    </mm-tile>
+    <mm-tile variant="flat" class="share">
+      <mm-titlebar heading="공유"></mm-titlebar>
       <div style="height: var(--space-3)"></div>
-      <test-text variant="subhead" class="share-title">가족이나 친구와<br />함께 보세요!</test-text>
+      <mm-text variant="subhead" class="share-title">가족이나 친구와<br />함께 보세요!</mm-text>
       <div style="height: var(--space-3)"></div>
-      <test-group variant="menuitem">
+      <mm-group variant="menuitem">
         <!-- <close-button></close-button> -->
-        <test-menuitem class="share-facebook" label="facebook으로 공유">
-          <test-avatar
+        <mm-menuitem class="share-facebook" label="facebook으로 공유">
+          <mm-avatar
             slot="avatar"
             size="medium"
             icon="facebook"
             style="background-color: var(--color-facebook); color: #fff"
           >
-          </test-avatar>
-        </test-menuitem>
-        <test-menuitem class="share-twitter" label="twitter로 공유">
-          <test-avatar
+          </mm-avatar>
+        </mm-menuitem>
+        <mm-menuitem class="share-twitter" label="twitter로 공유">
+          <mm-avatar
             slot="avatar"
             icon="twitter"
             style="background-color: var(--color-twitter); color: #fff"
           >
-          </test-avatar>
-        </test-menuitem>
-        <test-menuitem class="share-kakao" label="kakao talk으로 공유">
-          <test-avatar slot="avatar" icon="message" style="background-color: var(--color-kakao)">
-          </test-avatar>
-        </test-menuitem>
-      </test-group>
-      <test-separator></test-separator>
-      <test-textfield
+          </mm-avatar>
+        </mm-menuitem>
+        <mm-menuitem class="share-kakao" label="kakao talk으로 공유">
+          <mm-avatar slot="avatar" icon="message" style="background-color: var(--color-kakao)">
+          </mm-avatar>
+        </mm-menuitem>
+      </mm-group>
+      <mm-separator></mm-separator>
+      <mm-textfield
         value="https://newneek.co/post/jadebabo"
         placeholder="이건 사실 입력 기능이 없다 커스텀 컴포넌트."
         size="small"
         class="share-copy"
         hiddenLabel
       >
-        <test-chip slot="suffix" class="js-copy">복사 </test-chip>
-      </test-textfield>
-    </test-tile>
-    <test-tile variant="flat" name="access">
-      <test-titlebar heading="공개 대상 선택"></test-titlebar>
+        <mm-chip slot="suffix" class="js-copy">복사 </mm-chip>
+      </mm-textfield>
+    </mm-tile>
+    <mm-tile variant="flat" name="access">
+      <mm-titlebar heading="공개 대상 선택"></mm-titlebar>
       <br />
-      <test-group variant="menuitem">
-        <test-menuitem size="large">
-          <test-radio slot="check" checked></test-radio>
-          <test-avatar slot="avatar" size="large" icon="group"> </test-avatar>
+      <mm-group variant="menuitem">
+        <mm-menuitem size="large">
+          <mm-radio slot="check" checked></mm-radio>
+          <mm-avatar slot="avatar" size="large" icon="group"> </mm-avatar>
           <div slot="text">
-            <test-text variant="word-strong">사진 및 동영상 백업</test-text>
-            <test-text variant="word-weak">우측 액션은 사실 그냥 시각 정보인데.</test-text>
+            <mm-text variant="word-strong">사진 및 동영상 백업</mm-text>
+            <mm-text variant="word-weak">우측 액션은 사실 그냥 시각 정보인데.</mm-text>
           </div>
-        </test-menuitem>
-        <test-menuitem size="large">
-          <test-radio slot="check"></test-radio>
-          <test-avatar slot="avatar" size="large" icon="group"> </test-avatar>
+        </mm-menuitem>
+        <mm-menuitem size="large">
+          <mm-radio slot="check"></mm-radio>
+          <mm-avatar slot="avatar" size="large" icon="group"> </mm-avatar>
           <div slot="text">
-            <test-text variant="word-strong">친구만</test-text>
-            <test-text variant="word-weak">회원님의 Facebook 친구</test-text>
+            <mm-text variant="word-strong">친구만</mm-text>
+            <mm-text variant="word-weak">회원님의 Facebook 친구</mm-text>
           </div>
-        </test-menuitem>
-        <test-menuitem data-size="large">
-          <test-radio slot="check"></test-radio>
-          <test-avatar slot="avatar" size="large" icon="lock"> </test-avatar>
+        </mm-menuitem>
+        <mm-menuitem data-size="large">
+          <mm-radio slot="check"></mm-radio>
+          <mm-avatar slot="avatar" size="large" icon="lock"> </mm-avatar>
           <div slot="text">
-            <test-text variant="word-strong">나만 보기</test-text>
-            <test-text variant="word-weak">부끄러우니까</test-text>
+            <mm-text variant="word-strong">나만 보기</mm-text>
+            <mm-text variant="word-weak">부끄러우니까</mm-text>
           </div>
-        </test-menuitem>
-      </test-group>
-    </test-tile>
-    <test-tile>
-      <test-tile>
-        <test-menuitem>
+        </mm-menuitem>
+      </mm-group>
+    </mm-tile>
+    <mm-tile>
+      <mm-tile>
+        <mm-menuitem>
           <div slot="text">
-            <test-text variant="word-strong">Personal License</test-text>
-            <test-text variant="word-weak">1 user</test-text>
+            <mm-text variant="word-strong">Personal License</mm-text>
+            <mm-text variant="word-weak">1 user</mm-text>
           </div>
           <div slot="action">
-            <test-text variant="word-strong"> 18,800 KRW </test-text>
+            <mm-text variant="word-strong"> 18,800 KRW </mm-text>
           </div>
-        </test-menuitem>
-      </test-tile>
+        </mm-menuitem>
+      </mm-tile>
       <div style="height: var(--space-3)"></div>
-      <test-group>
-        <test-menuitem>
-          <test-avatar slot="avatar" size="large" fallback="🎅🏻"></test-avatar>
+      <mm-group>
+        <mm-menuitem>
+          <mm-avatar slot="avatar" size="large" fallback="🎅🏻"></mm-avatar>
           <div slot="text">
-            <test-text variant="word-strong">Widgefy iOS Widgets</test-text>
-            <test-text variant="word-weak">떡볶이</test-text>
+            <mm-text variant="word-strong">Widgefy iOS Widgets</mm-text>
+            <mm-text variant="word-weak">떡볶이</mm-text>
           </div>
           <div slot="action" style="text-align: right">
             <span style="display: block; line-height: 18px">18,800 KRW</span>
-            <test-text variant="word-weak">6410</test-text>
+            <mm-text variant="word-weak">6410</mm-text>
           </div>
-        </test-menuitem>
-      </test-group>
+        </mm-menuitem>
+      </mm-group>
       <div style="height: var(--space-3)"></div>
       <footer>
-        <test-button variant="primary">Buy now</test-button>
+        <mm-button variant="primary">Buy now</mm-button>
       </footer>
-    </test-tile>
-    <test-tile variant="flat">
-      <test-titlebar heading="팔로우하는 사람"></test-titlebar>
+    </mm-tile>
+    <mm-tile variant="flat">
+      <mm-titlebar heading="팔로우하는 사람"></mm-titlebar>
       <br />
       <div style="max-width: 200px; margin: 0 -0.25rem var(--space-3)">
-        <test-tablist>
-          <test-tab slot="tab" selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">
+        <mm-tablist>
+          <mm-tab slot="tab" selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">
             모두
-          </test-tab>
-          <test-tab slot="tab" aria-controls="panel-2" id="tab-2" tabindex="-1">바보만</test-tab>
-        </test-tablist>
+          </mm-tab>
+          <mm-tab slot="tab" aria-controls="panel-2" id="tab-2" tabindex="-1">바보만</mm-tab>
+        </mm-tablist>
       </div>
-      <test-group variant="menuitem">
-        <test-menuitem size="large">
-          <test-avatar
+      <mm-group variant="menuitem">
+        <mm-menuitem size="large">
+          <mm-avatar
             slot="avatar"
             size="large"
             default="true"
             style="background-color: yellowgreen"
-          ></test-avatar>
+          ></mm-avatar>
           <div slot="text">
-            <test-text variant="word-strong">coffee</test-text>
-            <test-text variant="word-weak">유아이 디자이너</test-text>
+            <mm-text variant="word-strong">coffee</mm-text>
+            <mm-text variant="word-weak">유아이 디자이너</mm-text>
           </div>
-          <test-chip slot="action" status="active">팔로우</test-chip>
-        </test-menuitem>
-        <test-menuitem size="large">
-          <test-avatar
+          <mm-chip slot="action" status="active">팔로우</mm-chip>
+        </mm-menuitem>
+        <mm-menuitem size="large">
+          <mm-avatar
             slot="avatar"
             size="large"
             default="true"
             style="background-color: blueviolet"
-          ></test-avatar>
+          ></mm-avatar>
           <div slot="text">
-            <test-text variant="word-strong">soojubm</test-text>
-            <test-text variant="word-weak">유투브 구독자</test-text>
+            <mm-text variant="word-strong">soojubm</mm-text>
+            <mm-text variant="word-weak">유투브 구독자</mm-text>
           </div>
-          <test-chip slot="action">팔로우 중</test-chip>
-        </test-menuitem>
+          <mm-chip slot="action">팔로우 중</mm-chip>
+        </mm-menuitem>
         <div style=""></div>
-        <test-tile variant="elevated" size="small">
-          <test-menuitem label="더 많은 친구를 찾아보세요!" description="">
-            <test-avatar slot="avatar"></test-avatar>
-          </test-menuitem>
-        </test-tile>
+        <mm-tile variant="elevated" size="small">
+          <mm-menuitem label="더 많은 친구를 찾아보세요!" description="">
+            <mm-avatar slot="avatar"></mm-avatar>
+          </mm-menuitem>
+        </mm-tile>
         <div style="height: var(--space-1)"></div>
-        <test-text variant="label"
+        <mm-text variant="label"
           >칩 그룹으로 필터링을 제공하니 팔로우 버튼과 위계 충돌. 아바타가 작아서 콘텐츠 분리가 안
-          된다.</test-text
+          된다.</mm-text
         >
-      </test-group>
-    </test-tile>
-    <test-tile>
-      <test-titlebar heading="See this post in"> </test-titlebar>
+      </mm-group>
+    </mm-tile>
+    <mm-tile>
+      <mm-titlebar heading="See this post in"> </mm-titlebar>
       <br />
-      <test-group variant="menuitem">
-        <test-menuitem label="수줍이 앱">
-          <test-avatar slot="avatar" variant="secondary" size="large" default="true"></test-avatar>
-          <test-chip slot="action">열기</test-chip>
-        </test-menuitem>
-        <test-menuitem label="사파리 브라우저">
-          <test-avatar slot="avatar" size="large" default="true"></test-avatar>
-          <test-chip slot="action" status="active">실행</test-chip>
-        </test-menuitem>
-      </test-group>
-    </test-tile>
+      <mm-group variant="menuitem">
+        <mm-menuitem label="수줍이 앱">
+          <mm-avatar slot="avatar" variant="secondary" size="large" default="true"></mm-avatar>
+          <mm-chip slot="action">열기</mm-chip>
+        </mm-menuitem>
+        <mm-menuitem label="사파리 브라우저">
+          <mm-avatar slot="avatar" size="large" default="true"></mm-avatar>
+          <mm-chip slot="action" status="active">실행</mm-chip>
+        </mm-menuitem>
+      </mm-group>
+    </mm-tile>
   </section>
 </main>

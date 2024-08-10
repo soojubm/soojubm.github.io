@@ -20,11 +20,11 @@ class Entity extends HTMLElement {
     const container = document.createElement('div')
     const avatarSlot = document.createElement('slot')
     const tagSlot = document.createElement('slot')
-    // const avatar = document.createElement('test-avatar')
-    const labelElement = document.createElement('test-text')
-    const description = document.createElement('test-text')
-    const description2 = document.createElement('test-text')
-    const description3 = document.createElement('test-text')
+    // const avatar = document.createElement('mm-avatar')
+    const labelElement = document.createElement('mm-text')
+    const description = document.createElement('mm-text')
+    const description2 = document.createElement('mm-text')
+    const description3 = document.createElement('mm-text')
 
     container.classList.add('entity')
     avatarSlot.name = 'avatar'

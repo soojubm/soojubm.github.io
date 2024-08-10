@@ -1,9 +1,9 @@
 <main class="page">
-  <test-text variant="title">Text</test-text>
-  <test-text variant="body-large"
+  <mm-text variant="title">Text</mm-text>
+  <mm-text variant="body-large"
     >Typography helps establish hierarchy and communicate important content by creating clear visual
     patterns.
-  </test-text>
+  </mm-text>
 
   <!-- Truncate for secondary text that isn’t essential to a user’s comprehension of steps to take. Examples include dynamic data ad IDs in tables, lists of user names, and Pin titles that come from outside sources. Use an ellipsis or a link that indicates there is more content available. -->
 
@@ -53,59 +53,59 @@ The font size of a key is never bigger than the value.
   <section class="component-example">
     <div>
       <div class="js-counter" data-number="234">234</div>
-      <test-text variant="body-bold">display1</test-text>
-      <test-separator></test-separator>
-      <test-text variant="title">heading1, huge, title</test-text>
-      <test-text variant="subhead">heading2, large, `subhead</test-text>
-      <test-text variant="body-bold">heading3, medium</test-text>
-      <test-separator></test-separator>
-      <test-text variant="body">body2</test-text>
-      <test-text variant="body-large">body1 (large) - paragraph</test-text>
-      <!-- <test-text variant="body-bold">body bold - button & meta</test-text> -->
-      <test-separator></test-separator>
-      <test-text variant="label">label, light</test-text>
-      <test-separator></test-separator>
-      <test-text variant="word">word</test-text>
-      <test-text variant="word-weak">word-weak</test-text>
-      <test-text variant="word-strong">word-strong</test-text>
-      <test-text variant="word-large">word-large</test-text>
-      <test-separator></test-separator>
+      <mm-text variant="body-bold">display1</mm-text>
+      <mm-separator></mm-separator>
+      <mm-text variant="title">heading1, huge, title</mm-text>
+      <mm-text variant="subhead">heading2, large, `subhead</mm-text>
+      <mm-text variant="body-bold">heading3, medium</mm-text>
+      <mm-separator></mm-separator>
+      <mm-text variant="body">body2</mm-text>
+      <mm-text variant="body-large">body1 (large) - paragraph</mm-text>
+      <!-- <mm-text variant="body-bold">body bold - button & meta</mm-text> -->
+      <mm-separator></mm-separator>
+      <mm-text variant="label">label, light</mm-text>
+      <mm-separator></mm-separator>
+      <mm-text variant="word">word</mm-text>
+      <mm-text variant="word-weak">word-weak</mm-text>
+      <mm-text variant="word-strong">word-strong</mm-text>
+      <mm-text variant="word-large">word-large</mm-text>
+      <mm-separator></mm-separator>
 
       <footer style="display: flex; flex-direction: column; gap: var(--space-2)">
-        <test-row gap="var(--space-1)">
-          <test-icon name="pipe-3d"></test-icon>
-          <test-text variant="body">궁금증이 해결되지 않는다면?</test-text>
-          <test-link>지금 문의하기</test-link>
-        </test-row>
-        <test-row>
-          <test-icon name="pipe-3d"></test-icon>
-          <test-text variant="body">Something's not right?</test-text>
-          <test-link>Get in touch with us.</test-link>
-        </test-row>
+        <mm-row gap="var(--space-1)">
+          <mm-icon name="pipe-3d"></mm-icon>
+          <mm-text variant="body">궁금증이 해결되지 않는다면?</mm-text>
+          <mm-link>지금 문의하기</mm-link>
+        </mm-row>
+        <mm-row>
+          <mm-icon name="pipe-3d"></mm-icon>
+          <mm-text variant="body">Something's not right?</mm-text>
+          <mm-link>Get in touch with us.</mm-link>
+        </mm-row>
         <button class="js-toggle" style="display: flex; align-items: center; gap: var(--space-2)">
-          <test-text>수줍이님이 더 궁금하신가요?</test-text>
-          <test-tag variant="indicator">
-            <test-icon slot="icon" name="nav-arrow-down"></test-icon>
-          </test-tag>
+          <mm-text>수줍이님이 더 궁금하신가요?</mm-text>
+          <mm-tag variant="indicator">
+            <mm-icon slot="icon" name="nav-arrow-down"></mm-icon>
+          </mm-tag>
         </button>
       </footer>
 
-      <test-separator></test-separator>
+      <mm-separator></mm-separator>
 
-      <test-group alignment="vertical">
-        <test-keyvalue key="상품 금액" value="₩ 160,000"> </test-keyvalue>
-        <test-keyvalue key="서비스 수수료" value="₩ 3,000"> </test-keyvalue>
+      <mm-group alignment="vertical">
+        <mm-keyvalue key="상품 금액" value="₩ 160,000"> </mm-keyvalue>
+        <mm-keyvalue key="서비스 수수료" value="₩ 3,000"> </mm-keyvalue>
         <div style="display: flex; justify-content: space-between">
-          <test-text variant="subhead">총 합계 (KRW)</test-text>
-          <test-text variant="subhead">₩ 163,000</test-text>
+          <mm-text variant="subhead">총 합계 (KRW)</mm-text>
+          <mm-text variant="subhead">₩ 163,000</mm-text>
         </div>
-        <!-- <test-keyvalue size="large" key="총 합계 (KRW)" value="₩ 163,000"> </test-keyvalue> -->
-      </test-group>
+        <!-- <mm-keyvalue size="large" key="총 합계 (KRW)" value="₩ 163,000"> </mm-keyvalue> -->
+      </mm-group>
       <footer style="margin: var(--space-4) 0 0 0">
-        <test-button variant="primary" isfullwidth="true">구매 확정하고</test-button>
+        <mm-button variant="primary" isfullwidth="true">구매 확정하고</mm-button>
       </footer>
 
-      <test-separator></test-separator>
+      <mm-separator></mm-separator>
 
       <div class="product-info-price" role="suggestion">
         <del class="product-info-price-deletion" role="deletion">₩ 30,000</del>
@@ -113,26 +113,26 @@ The font size of a key is never bigger than the value.
         <em class="product-info-price-percentage">(30%)</em>
       </div>
 
-      <test-separator></test-separator>
+      <mm-separator></mm-separator>
 
-      <test-group style="gap: var(--space-4)">
-        <test-keyvalue key="key" value="value" alignment="inline"></test-keyvalue>
-        <test-keyvalue key="key" value="value" alignment="inline"></test-keyvalue>
-        <test-keyvalue key="key" value="value"></test-keyvalue>
-      </test-group>
-      <test-separator></test-separator>
-      <test-group style="gap: 2rem">
+      <mm-group style="gap: var(--space-4)">
+        <mm-keyvalue key="key" value="value" alignment="inline"></mm-keyvalue>
+        <mm-keyvalue key="key" value="value" alignment="inline"></mm-keyvalue>
+        <mm-keyvalue key="key" value="value"></mm-keyvalue>
+      </mm-group>
+      <mm-separator></mm-separator>
+      <mm-group style="gap: 2rem">
         <div>
-          <test-text variant="label">Size</test-text>
-          <test-text variant="word-large">보통</test-text>
+          <mm-text variant="label">Size</mm-text>
+          <mm-text variant="word-large">보통</mm-text>
         </div>
         <div>
-          <test-text variant="label">한글</test-text>
-          <test-text variant="word-large">작은 거 필요하나</test-text>
+          <mm-text variant="label">한글</mm-text>
+          <mm-text variant="word-large">작은 거 필요하나</mm-text>
         </div>
-      </test-group>
+      </mm-group>
 
-      <test-separator></test-separator>
+      <mm-separator></mm-separator>
 
       <p class="util-truncate">
         이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에
@@ -145,49 +145,47 @@ The font size of a key is never bigger than the value.
         <button style="font-weight: var(--font-weight-bold)">더 보기</button>
       </p>
 
-      <test-separator></test-separator>
+      <mm-separator></mm-separator>
 
       <nav class="sitemap-item">
-        <test-text varinat="" hidden aria-hidden="true" class="sitemap-item-level1"
-          >사이트맵</test-text
-        >
-        <test-group alignment="vertical" class="sitemap-item-level2">
-          <test-text variant="label">사이트맵 컴포넌트</test-text>
-          <test-link href="#">기존의 링크 컴포넌트 활용 시</test-link>
-          <test-link href="#">링크나 제목에 변주가 많이 필요</test-link>
-        </test-group>
+        <mm-text varinat="" hidden aria-hidden="true" class="sitemap-item-level1">사이트맵</mm-text>
+        <mm-group alignment="vertical" class="sitemap-item-level2">
+          <mm-text variant="label">사이트맵 컴포넌트</mm-text>
+          <mm-link href="#">기존의 링크 컴포넌트 활용 시</mm-link>
+          <mm-link href="#">링크나 제목에 변주가 많이 필요</mm-link>
+        </mm-group>
       </nav>
 
-      <test-separator></test-separator>
+      <mm-separator></mm-separator>
 
       <nav style="display: flex; gap: 4rem">
-        <test-text varinat="" hidden aria-hidden="true">사이트맵</test-text>
-        <test-group alignment="vertical">
-          <test-text variant="subhead">사이트맵 컴포넌트</test-text>
-          <test-text variant="label" href="#">샘플</test-text>
-          <test-text variant="label" href="#">사이트맵 </test-text>
-          <test-text variant="label" href="#">사이트맵 샘플</test-text>
-          <test-text variant="label" href="#">사이트맵 컴포넌트 샘플</test-text>
-        </test-group>
-        <test-group alignment="vertical">
-          <test-text variant="subhead">level attr=1</test-text>
-          <test-text variant="label" href="#">level attr=2</test-text>
-          <test-text variant="label" href="#">level attr=2</test-text>
-          <test-text variant="label" href="#">level attr=2</test-text>
-          <test-text variant="label" href="#">level attr=2</test-text>
-        </test-group>
-        <test-group alignment="vertical">
-          <test-text variant="subhead">클릭가능하지만</test-text>
-          <test-text variant="subhead">클릭할 수 있게 </test-text>
-          <test-text variant="subhead">생기지 않았다</test-text>
-        </test-group>
-        <test-group alignment="vertical">
-          <test-text variant="subhead">꺼이꺼이</test-text>
-          <test-text variant="subhead">호이호이</test-text>
-        </test-group>
+        <mm-text varinat="" hidden aria-hidden="true">사이트맵</mm-text>
+        <mm-group alignment="vertical">
+          <mm-text variant="subhead">사이트맵 컴포넌트</mm-text>
+          <mm-text variant="label" href="#">샘플</mm-text>
+          <mm-text variant="label" href="#">사이트맵 </mm-text>
+          <mm-text variant="label" href="#">사이트맵 샘플</mm-text>
+          <mm-text variant="label" href="#">사이트맵 컴포넌트 샘플</mm-text>
+        </mm-group>
+        <mm-group alignment="vertical">
+          <mm-text variant="subhead">level attr=1</mm-text>
+          <mm-text variant="label" href="#">level attr=2</mm-text>
+          <mm-text variant="label" href="#">level attr=2</mm-text>
+          <mm-text variant="label" href="#">level attr=2</mm-text>
+          <mm-text variant="label" href="#">level attr=2</mm-text>
+        </mm-group>
+        <mm-group alignment="vertical">
+          <mm-text variant="subhead">클릭가능하지만</mm-text>
+          <mm-text variant="subhead">클릭할 수 있게 </mm-text>
+          <mm-text variant="subhead">생기지 않았다</mm-text>
+        </mm-group>
+        <mm-group alignment="vertical">
+          <mm-text variant="subhead">꺼이꺼이</mm-text>
+          <mm-text variant="subhead">호이호이</mm-text>
+        </mm-group>
       </nav>
 
-      <test-separator></test-separator>
+      <mm-separator></mm-separator>
       <ul style="margin: 0">
         <li>순서가 없는 리스트</li>
         <li>순서가 없는 리스트</li>
@@ -226,13 +224,13 @@ The font size of a key is never bigger than the value.
       </blockquote>
 
       <header style="display: flex; align-items: center; justify-content: space-between">
-        <test-text variant="subhead">내 요금제</test-text>
+        <mm-text variant="subhead">내 요금제</mm-text>
         <button style="color: var(--color-primary); font-weight: bold; text-decoration: underline">
           요금제 변경하기
         </button>
       </header>
 
-      <test-tile>
+      <mm-tile>
         <div
           style="
             padding: 1rem;
@@ -251,37 +249,37 @@ The font size of a key is never bigger than the value.
             반품처리가 되지 않을 수도 있으며, 이 경우 고객센터에서 연락을 드립니다.
           </li>
         </ul>
-      </test-tile>
+      </mm-tile>
     </div>
 
     <br /><br />
 
     <section class="hero">
-      <test-text variant="title">Hero heading</test-text>
-      <test-text variant="body-large">
+      <mm-text variant="title">Hero heading</mm-text>
+      <mm-text variant="body-large">
         이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에
         부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은 침묵에 잠겼다.
-      </test-text>
+      </mm-text>
       <footer class="hero-actions" style="margin: 2rem 0 0">
-        <test-button variant="primary" href="#components">Call to action</test-button>
-        <test-button variant="text">더 알아보기</test-button>
+        <mm-button variant="primary" href="#components">Call to action</mm-button>
+        <mm-button variant="text">더 알아보기</mm-button>
       </footer>
     </section>
   </section>
 
   <section class="component-guide">
-    <test-text variant="subhead">용어 정의 및 분류</test-text>
+    <mm-text variant="subhead">용어 정의 및 분류</mm-text>
     <ul>
       <li>제목 heading - title / subtitle / subhead / caption (label)</li>
       <li>본문 body</li>
       <li>kicker/overline/eyebrow</li>
     </ul>
 
-    <test-text variant="subhead">Utilities. - Truncated.</test-text>
-    <test-text variant="body"> long-form content. truncate-multiple은 항상 2줄.</test-text>
-    <test-text variant="body">제목을 자르는 것을 허용할 것인가? 허용하지 않을 것인가?</test-text>
+    <mm-text variant="subhead">Utilities. - Truncated.</mm-text>
+    <mm-text variant="body"> long-form content. truncate-multiple은 항상 2줄.</mm-text>
+    <mm-text variant="body">제목을 자르는 것을 허용할 것인가? 허용하지 않을 것인가?</mm-text>
 
-    <test-text variant="subhead">디지털 환경의<br />타이포그래피 규칙</test-text>
+    <mm-text variant="subhead">디지털 환경의<br />타이포그래피 규칙</mm-text>
     <ul>
       <li>
         폰트마다 기준선이 다르기 때문에 섞어짤 때 또는 폰트를 변경할 때 주변 요소와 부모 요소에 맞춰
@@ -295,48 +293,48 @@ The font size of a key is never bigger than the value.
       </li>
     </ul>
 
-    <test-text variant="subhead">텍스트 모듈</test-text>
-    <test-text variant="body">
+    <mm-text variant="subhead">텍스트 모듈</mm-text>
+    <mm-text variant="body">
       본문은 왼끝 맞추기(오른끝 흘리기). 사용자의 주목을 요할 때, 또는 맥락의 전환을 표현하기 위해
       콘텐츠 모듈을 가운데 정렬할 수 있다. ex) result component
-    </test-text>
+    </mm-text>
 
-    <test-text variant="subhead">들여쓰기</test-text>
-    <test-text variant="body">
+    <mm-text variant="subhead">들여쓰기</mm-text>
+    <mm-text variant="body">
       단락의 위 아래 간격을 활용합니다. 작은 화면에서 공간 활용을 위해 좌측 들여쓰기 하지 않습니다.
       TODO 그렇다면, 이 간격은 어떻게 정의할 것인가?
-    </test-text>
+    </mm-text>
 
     <div style="display: flex; flex-direction: column; gap: 0.75rem">
-      <test-text variant="subhead">텍스트의 강조</test-text>
-      <test-text variant="body-bold">형태적 강조 :: mark, u, em, b</test-text>
-      <test-text variant="body-bold">의미론적 강조 ::strong - 개인정보처리방침 등</test-text>
-      <test-text variant="body">
+      <mm-text variant="subhead">텍스트의 강조</mm-text>
+      <mm-text variant="body-bold">형태적 강조 :: mark, u, em, b</mm-text>
+      <mm-text variant="body-bold">의미론적 강조 ::strong - 개인정보처리방침 등</mm-text>
+      <mm-text variant="body">
         단락에 포함된 단어나 구문을 underline, <del>bold</del>, primary color로 강조하지 않습니다.
         우리는 underlined와 pirmary colored text를 <mark>clickable</mark>로 엄격하게 정의하고
         있습니다.
-      </test-text>
+      </mm-text>
     </div>
 
-    <test-text variant="subhead">Stat과 Summary의 차이</test-text>
+    <mm-text variant="subhead">Stat과 Summary의 차이</mm-text>
     <ul>
       <li>clickable / non-clickable</li>
     </ul>
 
     <br />
 
-    <test-tile>
+    <mm-tile>
       <p>이 문서가 도움이 되었나요?</p>
       <small title="17 out of 439 found this helpful"> 417명 중 349명이 도움을 받았어요. </small>
-      <test-group variant="chip">
-        <test-chip>도움이 됐어요</test-chip>
-        <test-chip>부족해요</test-chip>
-      </test-group>
-    </test-tile>
+      <mm-group variant="chip">
+        <mm-chip>도움이 됐어요</mm-chip>
+        <mm-chip>부족해요</mm-chip>
+      </mm-group>
+    </mm-tile>
 
     <blockquote>
-      <test-text>p와 ul, dl 등은 항상 텍스트.</test-text>
-      <test-text>message: 사용자, description: 시스템</test-text>
+      <mm-text>p와 ul, dl 등은 항상 텍스트.</mm-text>
+      <mm-text>message: 사용자, description: 시스템</mm-text>
       <!-- <li>프로모션 페이지의 헤드라인으로 제한적으로 사용합니다.</li> -->
     </blockquote>
   </section>
@@ -370,7 +368,7 @@ The font size of a key is never bigger than the value.
         <span class="graph-item-label">40대</span>
       </div>
     </div>
-    <test-tile>
+    <mm-tile>
       <article class="meter">
         <h1 class="meter-title">200 GB 중 187.23 GB 사용됨</h1>
         <div class="meter-graph">
@@ -381,22 +379,22 @@ The font size of a key is never bigger than the value.
         <div class="meter-legend">
           <div class="meter-legend-item">
             <i class="meter-legend-item-color" data-type="facebook"></i>
-            <test-text variant="label">페이스북</test-text>
-            <test-text variant="word">800,000원</test-text>
+            <mm-text variant="label">페이스북</mm-text>
+            <mm-text variant="word">800,000원</mm-text>
           </div>
           <div class="meter-legend-item">
             <i class="meter-legend-item-color" data-type="twitter"></i>
-            <test-text variant="label">트위터</test-text>
-            <test-text variant="word">800,000원</test-text>
+            <mm-text variant="label">트위터</mm-text>
+            <mm-text variant="word">800,000원</mm-text>
           </div>
           <div class="meter-legend-item">
             <i class="meter-legend-item-color" data-type="instagram"></i>
-            <test-text variant="label">핀터레스트</test-text>
-            <test-text variant="word">800,000원</test-text>
+            <mm-text variant="label">핀터레스트</mm-text>
+            <mm-text variant="word">800,000원</mm-text>
           </div>
         </div>
       </article>
-    </test-tile>
+    </mm-tile>
 
     <div
       style="
@@ -410,8 +408,8 @@ The font size of a key is never bigger than the value.
         width: 160px;
       "
     >
-      <test-text variant="title">266</test-text>
-      <div style="margin-top: -0.75rem"><test-text variant="body">NETWORKS</test-text></div>
+      <mm-text variant="title">266</mm-text>
+      <div style="margin-top: -0.75rem"><mm-text variant="body">NETWORKS</mm-text></div>
     </div>
     <progress class="progress is-normal" value="40" max="100">40%</progress>
   </section>

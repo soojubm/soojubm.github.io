@@ -1,23 +1,23 @@
 <main class="page">
   <header>
-    <test-text variant="title">Avatars</test-text>
-    <test-text variant="body-large">
+    <mm-text variant="title">Avatars</mm-text>
+    <mm-text variant="body-large">
       개체(유저, 회사, 프로젝트 등)를 대표하는 시각 정보입니다. 정보 더미의 주체로서 인접한 정보
       더미 중 최상위 위계<span hidden>(시각적인 위계가 아님)</span>를 갖습니다.
-    </test-text>
+    </mm-text>
   </header>
   <section class="component-example">
-    <test-group variant="chip">
-      <test-avatar size="huge" default="true" badge="true"></test-avatar>
-      <test-avatar variant="secondary" size="huge" default="true" badge="true"></test-avatar>
-      <test-avatar size="large" default="true" default="true" badge="true"></test-avatar>
-      <test-avatar size="medium" default="true" fallback="수" badge="true"></test-avatar>
-      <test-avatar size="small" default="true"> </test-avatar>
-    </test-group>
+    <mm-group variant="chip">
+      <mm-avatar size="huge" default="true" badge="true"></mm-avatar>
+      <mm-avatar variant="secondary" size="huge" default="true" badge="true"></mm-avatar>
+      <mm-avatar size="large" default="true" default="true" badge="true"></mm-avatar>
+      <mm-avatar size="medium" default="true" fallback="수" badge="true"></mm-avatar>
+      <mm-avatar size="small" default="true"> </mm-avatar>
+    </mm-group>
   </section>
 
   <section class="component-props">
-    <!-- <test-text variant="body-large" style="margin-top: 0">Props</test-text> -->
+    <!-- <mm-text variant="body-large" style="margin-top: 0">Props</mm-text> -->
     <dl>
       <dt>variant</dt>
       <dd>'primary' | 'secondary'</dd>
@@ -41,101 +41,101 @@
   </section>
 
   <section class="component-guide">
-    <test-text variant="subhead">Behavior</test-text>
-    <test-text variant="body" data-temp="clickable"> </test-text>
-    <test-text variant="subhead">Visual style</test-text>
-    <!-- <test-text variant="body">아웃라인 형태를 클릭할 수 없는 아바타로 정의</test-text> -->
+    <mm-text variant="subhead">Behavior</mm-text>
+    <mm-text variant="body" data-temp="clickable"> </mm-text>
+    <mm-text variant="subhead">Visual style</mm-text>
+    <!-- <mm-text variant="body">아웃라인 형태를 클릭할 수 없는 아바타로 정의</mm-text> -->
   </section>
 
-  <!-- <test-text variant="subhead">groupable아바타 그룹</test-text> -->
-  <!-- <test-text variant="subhead">Use cases</test-text> -->
+  <!-- <mm-text variant="subhead">groupable아바타 그룹</mm-text> -->
+  <!-- <mm-text variant="subhead">Use cases</mm-text> -->
   <!-- <section class="component-case">
-      <test-tile variant="elevated">
-        <test-menuitem label="수줍이" description="Youtube subscriber">
-          <test-avatar slot="avatar" default="true"></test-avatar>
-        </test-menuitem>
+      <mm-tile variant="elevated">
+        <mm-menuitem label="수줍이" description="Youtube subscriber">
+          <mm-avatar slot="avatar" default="true"></mm-avatar>
+        </mm-menuitem>
         <div style="margin: var(--space-2) 0 0">
-          <test-text variant="body"
+          <mm-text variant="body"
             >Sometimes at night, I find myself behind the computer. When I finally blink, a mess of
             code is drawing random structures on the screen. I spend the rest of the night
-            staring.</test-text
+            staring.</mm-text
           >
           <span class="avatargroup-label">🥺 수줍이님을 팔로우하고 있는 친구가 없습니다.</span>
         </div>
-        <test-group
+        <mm-group
           style="gap: var(--space-2); margin: var(--space-2) 0 0 0"
         >
-          <test-keyvalue key="팔로워" value="62" alignment="inline"></test-keyvalue>
+          <mm-keyvalue key="팔로워" value="62" alignment="inline"></mm-keyvalue>
           <i class="icon-bullet"></i>
-          <test-keyvalue key="팔로잉" value="8" alignment="inline"></test-keyvalue>
-        </test-tile>
-      <test-tile variant="elevated">
+          <mm-keyvalue key="팔로잉" value="8" alignment="inline"></mm-keyvalue>
+        </mm-tile>
+      <mm-tile variant="elevated">
         <div style="display: flex; gap: 1rem">
-          <test-avatar size="huge" variant="secondary" default="true"></test-avatar>
-          <test-group style="flex-direction: column; gap: var(--space-2)">
+          <mm-avatar size="huge" variant="secondary" default="true"></mm-avatar>
+          <mm-group style="flex-direction: column; gap: var(--space-2)">
             <div>
-              <test-text variant="word-weak">Top User</test-text>
-              <test-text variant="subhead">Bruce Springsteen</test-text>
+              <mm-text variant="word-weak">Top User</mm-text>
+              <mm-text variant="subhead">Bruce Springsteen</mm-text>
             </div>
             <div>
-              <test-text variant="word-weak">Daily Purchase</test-text>
-              <test-text variant="subhead">10 Items</test-text>
+              <mm-text variant="word-weak">Daily Purchase</mm-text>
+              <mm-text variant="subhead">10 Items</mm-text>
             </div>
-          </test-group>
+          </mm-group>
         </div>
-        <test-separator></test-separator>
-        <test-tile variant="elevated" size="small">
-        <test-group variant="avatar">
-          <test-avatar size="small" default="true"></test-avatar>
-          <test-avatar size="small" default="true"></test-avatar>
-          <test-avatar size="small" default="true"></test-avatar>
-          <test-avatar size="small" default="true"></test-avatar>
+        <mm-separator></mm-separator>
+        <mm-tile variant="elevated" size="small">
+        <mm-group variant="avatar">
+          <mm-avatar size="small" default="true"></mm-avatar>
+          <mm-avatar size="small" default="true"></mm-avatar>
+          <mm-avatar size="small" default="true"></mm-avatar>
+          <mm-avatar size="small" default="true"></mm-avatar>
           <span class="avatargroup-label" style="margin-left: var(--space-2)"
             >Followed by 수줍이 외 4명</span
           >
-        </test-group>
-        </test-tile>
+        </mm-group>
+        </mm-tile>
         <small class="mutiual" style="display: block; margin: var(--space-1) 0 0"
           >내가 팔로우하는 사용자 중에는 팔로워가 없습니다. (twitter)</small
         >
-      </test-tile>
-      <test-tile variant="flat" size="medium">
-        <test-entity
+      </mm-tile>
+      <mm-tile variant="flat" size="medium">
+        <mm-entity
           label="이경수"
           description="soojubm@gmail.com"
           description2="010 3121 7045"
           description="UI Designer"
         >
-          <test-avatar slot="avatar" variant="secondary" size="large" default="true"></test-avatar>
-          <test-tag slot="tag" variant="primary"></test-tag>
-        </test-entity>
+          <mm-avatar slot="avatar" variant="secondary" size="large" default="true"></mm-avatar>
+          <mm-tag slot="tag" variant="primary"></mm-tag>
+        </mm-entity>
         <div style="margin: var(--space-2) 0 0">
-          <test-chip>내 프로필 관리</test-chip>
+          <mm-chip>내 프로필 관리</mm-chip>
         </div>
         <div style="position:absolute;right:var(--space-4);top:var(--space-4);">
-          <test-avatar variant="secondary" size="large" >🐸</test-avatar>
+          <mm-avatar variant="secondary" size="large" >🐸</mm-avatar>
         </div>
-        <test-separator></test-separator>
-        <test-group variant="menuitem">
-          <test-menuitem label="어둡게 보기" class="js-darkmode" aria-label="change theme">
-            <test-avatar slot="avatar" variant="tertiary" icon="half-moon"> </test-avatar>
-            <test-switch slot="action"></test-switch>
-          </test-menuitem>
-          <test-menuitem label="고객센터 및 도움말">
-            <test-avatar slot="avatar" variant="tertiary" icon="megaphone"> </test-avatar>
-          </test-menuitem>
-        </test-group>
-        <test-separator></test-separator>
-        <test-menuitem label="로그아웃">
-          <test-avatar slot="avatar" variant="tertiary" icon="log-out"></test-avatar>
-        </test-menuitem>
-        <test-separator></test-separator>
-        <test-group>
+        <mm-separator></mm-separator>
+        <mm-group variant="menuitem">
+          <mm-menuitem label="어둡게 보기" class="js-darkmode" aria-label="change theme">
+            <mm-avatar slot="avatar" variant="tertiary" icon="half-moon"> </mm-avatar>
+            <mm-switch slot="action"></mm-switch>
+          </mm-menuitem>
+          <mm-menuitem label="고객센터 및 도움말">
+            <mm-avatar slot="avatar" variant="tertiary" icon="megaphone"> </mm-avatar>
+          </mm-menuitem>
+        </mm-group>
+        <mm-separator></mm-separator>
+        <mm-menuitem label="로그아웃">
+          <mm-avatar slot="avatar" variant="tertiary" icon="log-out"></mm-avatar>
+        </mm-menuitem>
+        <mm-separator></mm-separator>
+        <mm-group>
           <a href="#" style="font-size: 12px; color: var(--color-text-light)">개인정보처리방침</a>
           <i class="icon-bullet"></i>
           <a href="#" style="font-size: 12px; color: var(--color-text-light)">서비스 약관</a>
-        </test-group>
-      </test-tile>
+        </mm-group>
+      </mm-tile>
     </section> -->
   <!-- <li>icon chip(button), icon tag, menu item avatar</li> -->
   <!-- <li>memeo. medium. 이하의 크기는 디스크립션을 제공하지 않는다. 항상 align-items:center.</li> -->

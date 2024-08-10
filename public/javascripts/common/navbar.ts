@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
   detectTheme()
 
   // detectPage
-  // document.querySelectorAll('.sidebar-menu a, .sidebar-menu test-menuitem').forEach(item => {
+  // document.querySelectorAll('.sidebar-menu a, .sidebar-menu mm-menuitem').forEach(item => {
   document.querySelectorAll('.sidebar-menu a').forEach(item => {
     const { pathname } = window.location
     console.log(pathname, item.getAttribute('href'))

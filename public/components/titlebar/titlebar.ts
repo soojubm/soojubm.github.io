@@ -15,10 +15,10 @@ class TitleBar extends HTMLElement {
     title.classList.add('titlebar-title')
     title.innerText = this.heading || ''
 
-    const back = document.createElement('test-chip')
+    const back = document.createElement('mm-chip')
     back.setAttribute('variant', 'back')
 
-    const icon = document.createElement('test-icon')
+    const icon = document.createElement('mm-icon')
     icon.setAttribute('slot', 'icon')
     icon.setAttribute('name', 'arrow-left')
     back.append(icon)
@@ -51,7 +51,7 @@ class TitleBar extends HTMLElement {
   connectedCallback() {}
   disconnectedCallback() {}
   attributeChangedCallback(name, oldValue, newValue) {
-    this.shadowRoot?.querySelector('test-chip button')?.setAttribute('data-variant', newValue)
+    this.shadowRoot?.querySelector('mm-chip button')?.setAttribute('data-variant', newValue)
   }
 }
 

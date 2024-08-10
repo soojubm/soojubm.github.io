@@ -1,6 +1,6 @@
 <main class="page">
   <div class="article" style="max-width: var(--layout-width-small)">
-    <test-titlebar heading="주문/결제" hiddenBack> </test-titlebar>
+    <mm-titlebar heading="주문/결제" hiddenBack> </mm-titlebar>
 
     <nav class="breadcrumb" aria-label="breadcrumb">
       <a class="breadcrumb-item breadcrumb-home" href="/">홈</a>
@@ -10,9 +10,9 @@
       <span class="breadcrumb-item" aria-current="page">현재 페이지</span>
     </nav>
     <!-- <header class="checkout-head">
-      <test-text variant="subhead">
+      <mm-text variant="subhead">
         주문정보를 확인하세요<i style="font-style: italic">!</i>
-      </test-text>
+      </mm-text>
     </header>
     <section class="checkout-step step">
       <div class="step-item is-active">
@@ -32,65 +32,61 @@
     <div style="height: 2rem"></div>
 
     <section class="checkout-shipping">
-      <test-text variant="subhead">배송지</test-text>
+      <mm-text variant="subhead">배송지</mm-text>
       <div style="margin: var(--space-after-subhead) -0.5rem 0">
-        <test-tile size="small">
-          <test-menuitem>
-            <!-- <test-avatar slot="avatar" size="large" style="background: aliceblue; font-size: 1.5rem">💳</test-avatar> -->
-            <test-radio slot="check" id="c1" name="c1" value="" checked></test-radio>
+        <mm-tile size="small">
+          <mm-menuitem>
+            <!-- <mm-avatar slot="avatar" size="large" style="background: aliceblue; font-size: 1.5rem">💳</mm-avatar> -->
+            <mm-radio slot="check" id="c1" name="c1" value="" checked></mm-radio>
             <div slot="text">
-              <test-group variant="tag">
-                <test-text variant="body-bold">수줍이 집</test-text>
-                <test-tag>기본배송지</test-tag>
-              </test-group>
+              <mm-group variant="tag">
+                <mm-text variant="body-bold">수줍이 집</mm-text>
+                <mm-tag>기본배송지</mm-tag>
+              </mm-group>
               <div style="height: var(--space-1)"></div>
-              <test-text variant="body">[07655] 서울특별시 강서구 까치산로 182 1202호</test-text>
-              <test-text variant="label">010-3121-7045</test-text>
+              <mm-text variant="body">[07655] 서울특별시 강서구 까치산로 182 1202호</mm-text>
+              <mm-text variant="label">010-3121-7045</mm-text>
             </div>
-          </test-menuitem>
-        </test-tile>
+          </mm-menuitem>
+        </mm-tile>
         <div style="height: var(--space-3)"></div>
-        <test-tile variant="elevated" size="small">
-          <test-menuitem label="배송지 변경/추가">
-            <test-avatar slot="avatar" icon="coins-swap"> </test-avatar>
-          </test-menuitem>
-        </test-tile>
+        <mm-tile variant="elevated" size="small">
+          <mm-menuitem label="배송지 변경/추가">
+            <mm-avatar slot="avatar" icon="coins-swap"> </mm-avatar>
+          </mm-menuitem>
+        </mm-tile>
       </div>
     </section>
 
     <div style="height: 2rem"></div>
 
     <section class="checkout-product">
-      <test-text variant="subhead" aria-label="summary">주문상품</test-text>
+      <mm-text variant="subhead" aria-label="summary">주문상품</mm-text>
       <div style="margin: var(--space-after-subhead) -0.5rem 0">
-        <test-tile size="small">
-          <test-menuitem>
-            <test-avatar
-              slot="avatar"
-              size="huge"
-              src="/public/images/cake_gosum.jpg"
-            ></test-avatar>
+        <mm-tile size="small">
+          <mm-menuitem>
+            <mm-avatar slot="avatar" size="huge" src="/public/images/cake_gosum.jpg"></mm-avatar>
             <div slot="text" style="margin-left: var(--space-1)">
-              <test-text variant="word-strong">뉴닉이 풀어 쓴 경제상식사전</test-text>
-              <test-text variant="word">₩ 11,900</test-text>
-              <test-text variant="word-weak">평생 소장</test-text>
+              <mm-text variant="word-strong">뉴닉이 풀어 쓴 경제상식사전</mm-text>
+              <mm-text variant="word">₩ 11,900</mm-text>
+              <mm-text variant="word-weak">평생 소장</mm-text>
             </div>
-          </test-menuitem>
-        </test-tile>
+          </mm-menuitem>
+        </mm-tile>
       </div>
     </section>
 
     <div style="height: 2rem"></div>
 
     <section class="checkout-discount">
-      <test-text variant="subhead">쿠폰 마일리지 할인</test-text>
+      <mm-text variant="subhead">쿠폰 마일리지 할인</mm-text>
       <div style="height: var(--space-after-subhead)"></div>
-      <test-textfield label="보너스 쿠폰" placeholder="사용 가능한 쿠폰이 없습니다." disabled>
-      </test-textfield>
+      <mm-textfield label="보너스 쿠폰" placeholder="사용 가능한 쿠폰이 없습니다." disabled>
+      </mm-textfield>
       <div style="height: var(--space-3)"></div>
-      <test-textfield label="사용 마일리지" placeholder="0 마일리지"></test-textfield>
+      <mm-textfield label="사용 마일리지" placeholder="0 마일리지"></mm-textfield>
       <div style="height: var(--space-3)"></div>
-      <test-chip>보유 마일리지 1,186p 모두사용</test-chip>
+      <mm-chip>보유 마일리지 1,186p 모두사용</mm-chip>
     </section>
 
     <div style="height: 2rem"></div>
@@ -98,62 +94,62 @@
     <!-- <div>현금영수증 신청/미신청, 개인정보제공동의</div> -->
 
     <section class="checkout-payment">
-      <test-text variant="subhead" data-temp="매장과 구매자 차이.">Select payment method</test-text>
+      <mm-text variant="subhead" data-temp="매장과 구매자 차이.">Select payment method</mm-text>
       <div style="margin: var(--space-4) -0.5rem 0">
-        <test-group alignment="vertical">
-          <test-tile size="small">
-            <test-menuitem label="신용카드/체크카드">
-              <test-avatar
+        <mm-group alignment="vertical">
+          <mm-tile size="small">
+            <mm-menuitem label="신용카드/체크카드">
+              <mm-avatar
                 slot="avatar"
                 size="large"
                 fallback="💳"
                 style="background: aliceblue; font-size: 1.5rem"
-              ></test-avatar>
-              <test-text>개인/법인/카드사선택</test-text>
-              <test-radio slot="check" id="c1" name="c1" value="" checked="true"></test-radio>
-            </test-menuitem>
-          </test-tile>
-          <test-tile size="small">
-            <test-menuitem label="현금">
-              <test-avatar
+              ></mm-avatar>
+              <mm-text>개인/법인/카드사선택</mm-text>
+              <mm-radio slot="check" id="c1" name="c1" value="" checked="true"></mm-radio>
+            </mm-menuitem>
+          </mm-tile>
+          <mm-tile size="small">
+            <mm-menuitem label="현금">
+              <mm-avatar
                 slot="avatar"
                 size="large"
                 fallback="💵"
                 style="background: #defade; font-size: 1.5rem"
-              ></test-avatar>
-              <test-radio slot="check" id="c1" name="c1" value=""></test-radio>
-            </test-menuitem>
-          </test-tile>
-          <test-tile size="small">
-            <test-menuitem label="무통장입금">
-              <test-avatar
+              ></mm-avatar>
+              <mm-radio slot="check" id="c1" name="c1" value=""></mm-radio>
+            </mm-menuitem>
+          </mm-tile>
+          <mm-tile size="small">
+            <mm-menuitem label="무통장입금">
+              <mm-avatar
                 slot="avatar"
                 size="large"
                 fallback="🫓"
                 style="background: antiquewhite; font-size: 1.5rem"
-              ></test-avatar>
-              <test-radio disabled slot="check" id="c1" name="c1" value=""></test-radio>
-              <!-- <test-radio disabled>
+              ></mm-avatar>
+              <mm-radio disabled slot="check" id="c1" name="c1" value=""></mm-radio>
+              <!-- <mm-radio disabled>
                 무통장입금
                 <small style="color: var(--color-text)"
                   >COMING SOON<i style="font-style: italic">!</i></small
                 >
-              </test-radio> -->
-            </test-menuitem>
-          </test-tile>
-        </test-group>
+              </mm-radio> -->
+            </mm-menuitem>
+          </mm-tile>
+        </mm-group>
       </div>
       <div style="height: var(--space-after-subhead)"></div>
       <div>
-        <test-text variant="label">결제 안내</test-text>
+        <mm-text variant="label">결제 안내</mm-text>
         <!-- FIXME body + body -->
-        <test-text>신용카드 결제만 가능합니다.</test-text>
-        <test-text>해외에서 발행된 카드는 이용할 수 없습니다.</test-text>
+        <mm-text>신용카드 결제만 가능합니다.</mm-text>
+        <mm-text>해외에서 발행된 카드는 이용할 수 없습니다.</mm-text>
         <br />
-        <test-text variant="label">주문취소 및 환불 안내</test-text>
-        <test-text variant="body">
+        <mm-text variant="label">주문취소 및 환불 안내</mm-text>
+        <mm-text variant="body">
           주문취소 또는 환불은 <a href="#">고객센터</a>로 문의해 주세요.
-        </test-text>
+        </mm-text>
       </div>
       <div style="height: var(--space-after-subhead)"></div>
     </section>
@@ -162,103 +158,92 @@
 
     <section class="checkout-discount">
       <div style="display: flex; justify-content: space-between">
-        <test-text variant="subhead">결제상세</test-text>
-        <test-text variant="subhead">13,980원</test-text>
+        <mm-text variant="subhead">결제상세</mm-text>
+        <mm-text variant="subhead">13,980원</mm-text>
       </div>
       <div style="height: var(--space-after-subhead)"></div>
-      <test-keyvalue key="마일리지 사용" value="980원"></test-keyvalue>
-      <test-keyvalue key="카드 결제" value="12,980원"></test-keyvalue>
+      <mm-keyvalue key="마일리지 사용" value="980원"></mm-keyvalue>
+      <mm-keyvalue key="카드 결제" value="12,980원"></mm-keyvalue>
     </section>
 
     <div style="height: 2rem"></div>
 
     <section class="checkout-">
-      <test-text variant="subhead"> Your Payments / Wallet </test-text>
-      <test-text variant="body">
+      <mm-text variant="subhead"> Your Payments / Wallet </mm-text>
+      <mm-text variant="body">
         name on card / Card Number / Expiriation Date / CVV / billing address (따로 관리 됨).
-      </test-text>
+      </mm-text>
       <div style="height: var(--space-after-subhead)"></div>
-      <test-menuitem>
-        <test-avatar slot="avatar" size="huge">
-          <test-tag slot="category">기본</test-tag>
-        </test-avatar>
+      <mm-menuitem>
+        <mm-avatar slot="avatar" size="huge">
+          <mm-tag slot="category">기본</mm-tag>
+        </mm-avatar>
         <div slot="text">
-          <test-text variant="subhead">VISA 1988 XXXX 1111</test-text>
-          <test-text>Expires on 10/23</test-text>
+          <mm-text variant="subhead">VISA 1988 XXXX 1111</mm-text>
+          <mm-text>Expires on 10/23</mm-text>
           <em>Edit</em>
         </div>
-      </test-menuitem>
+      </mm-menuitem>
       <div style="height: var(--space-after-subhead)"></div>
-      <test-tile variant="elevated" size="small">
-        <test-menuitem label="Add a payment method">
-          <test-avatar slot="avatar" icon="plus"> </test-avatar>
-        </test-menuitem>
-      </test-tile>
+      <mm-tile variant="elevated" size="small">
+        <mm-menuitem label="Add a payment method">
+          <mm-avatar slot="avatar" icon="plus"> </mm-avatar>
+        </mm-menuitem>
+      </mm-tile>
     </section>
 
     <br /><br />
 
     <section class="order-complete">
-      <test-text variant="subhead"
-        >주문완료 되었습니다. 24년 4월 네이버 리뉴얼 따라 그려봄.</test-text
-      >
-      <test-tile>
+      <mm-text variant="subhead">주문완료 되었습니다. 24년 4월 네이버 리뉴얼 따라 그려봄.</mm-text>
+      <mm-tile>
         <header>
-          <test-text variant="body-bold">주문번호</test-text>
-          <test-link>2024040436292081</test-link>
+          <mm-text variant="body-bold">주문번호</mm-text>
+          <mm-link>2024040436292081</mm-link>
         </header>
-        <test-separator></test-separator>
+        <mm-separator></mm-separator>
         <div>
-          <test-text variant="body-bold">수줍이</test-text>
-          <test-text variant="body">서울특별시 중구 퇴계로27길 49 (저동2가, 센트럴에쓰)</test-text>
-          <test-text variant="word">2층 (04555), 010-3121-7045</test-text>
+          <mm-text variant="body-bold">수줍이</mm-text>
+          <mm-text variant="body">서울특별시 중구 퇴계로27길 49 (저동2가, 센트럴에쓰)</mm-text>
+          <mm-text variant="word">2층 (04555), 010-3121-7045</mm-text>
         </div>
-        <test-separator></test-separator>
+        <mm-separator></mm-separator>
         <div>
-          <test-text variant="body-bold">주문상품 1건 </test-text>
-          <test-text variant="body">13:00 까지 결제 시 오늘 발송</test-text>
+          <mm-text variant="body-bold">주문상품 1건 </mm-text>
+          <mm-text variant="body">13:00 까지 결제 시 오늘 발송</mm-text>
           <div style="height: var(--space-2)"></div>
-          <test-menuitem>
-            <test-avatar
-              slot="avatar"
-              size="large"
-              src="/public/images/cake_gosum.jpg"
-            ></test-avatar>
+          <mm-menuitem>
+            <mm-avatar slot="avatar" size="large" src="/public/images/cake_gosum.jpg"></mm-avatar>
             <div slot="text" style="margin-left: var(--space-1)">
-              <test-text variant="word-strong">뉴닉이 풀어 쓴 경제상식사전 (평생 소장)</test-text>
-              <test-text variant="word">₩ 11,900</test-text>
+              <mm-text variant="word-strong">뉴닉이 풀어 쓴 경제상식사전 (평생 소장)</mm-text>
+              <mm-text variant="word">₩ 11,900</mm-text>
             </div>
-          </test-menuitem>
+          </mm-menuitem>
         </div>
-        <test-separator></test-separator>
+        <mm-separator></mm-separator>
         <footer>
           <div style="display: flex; justify-content: space-between">
-            <test-text variant="body-bold">주문금액</test-text>
-            <test-text variant="body-bold">13,980원</test-text>
+            <mm-text variant="body-bold">주문금액</mm-text>
+            <mm-text variant="body-bold">13,980원</mm-text>
           </div>
           <div style="height: var(--space-2)"></div>
-          <test-keyvalue key="상품금액" value="30,000원"></test-keyvalue>
+          <mm-keyvalue key="상품금액" value="30,000원"></mm-keyvalue>
           <div style="height: var(--space-1)"></div>
-          <test-keyvalue key="배송료" value="3,000원"></test-keyvalue>
+          <mm-keyvalue key="배송료" value="3,000원"></mm-keyvalue>
           <div style="height: var(--space-1)"></div>
-          <test-keyvalue key="할인" value="2,000원"></test-keyvalue>
-          <test-separator></test-separator>
-          <test-text variant="body-bold">결제상세</test-text>
-          <test-text>카드 간편결제</test-text>
+          <mm-keyvalue key="할인" value="2,000원"></mm-keyvalue>
+          <mm-separator></mm-separator>
+          <mm-text variant="body-bold">결제상세</mm-text>
+          <mm-text>카드 간편결제</mm-text>
           <div style="height: var(--space-4)"></div>
-          <test-button variant="secondary" isfullwidth="true">주문 상세 보기</test-button>
+          <mm-button variant="secondary" isfullwidth="true">주문 상세 보기</mm-button>
         </footer>
-      </test-tile>
+      </mm-tile>
       <div style="height: var(--space-4)"></div>
-      <test-tile>
-        <test-text variant="body-bold">포인트 헤택</test-text>
-        <test-text variant="body-bold">최대 1,147</test-text>
-      </test-tile>
-      <div style="height: var(--space-4)"></div>
-      <div style="display: flex; gap: var(--space-4)">
-        <test-tile variant="elevated"> section </test-tile>
-        <test-tile variant="elevated"> section </test-tile>
-      </div>
+      <mm-tile>
+        <mm-text variant="body-bold">포인트 헤택</mm-text>
+        <mm-text variant="body-bold">최대 1,147</mm-text>
+      </mm-tile>
     </section>
   </div>
 </main>

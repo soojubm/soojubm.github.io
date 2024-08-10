@@ -97,7 +97,7 @@
   box-sizing: border-box;
   border-radius: var(--radius);
 }
-.component-references test-text[variant=subhead] {
+.component-references mm-text[variant=subhead] {
   display: none;
 }
 .component-references a {
@@ -118,14 +118,14 @@
 }
 
 /* 전체 영역에 해당 */
-test-text[variant=body-large] {max-width: var(--layout-width-small);}
+mm-text[variant=body-large] {max-width: var(--layout-width-small);}
 
-test-text[variant=title] + test-text[variant=body-large] {
+mm-text[variant=title] + mm-text[variant=body-large] {
   display: block;
   margin: var(--space-after-title) 0 0;
 }
 
-test-text[variant=body] + test-text[variant=body] {
+mm-text[variant=body] + mm-text[variant=body] {
   display:block;
   margin:var(--space-3) 0 0;
 }
@@ -133,14 +133,14 @@ test-text[variant=body] + test-text[variant=body] {
 /* [variant=body] + [variant=body-bold] {
   display:block;margin:var(--space-4) 0 0;
 } */
-test-text[variant=body] + test-text[variant=subhead] {
+mm-text[variant=body] + mm-text[variant=subhead] {
   display: block;
   margin: 3rem 0 0 0;
 }
 
 
 /* 타일 안에서 사용할 때 */
-test-tile [variant=subhead] + [variant=body] {
+mm-tile [variant=subhead] + [variant=body] {
   display: block;
   margin: .5rem 0 0 0;
 }
@@ -153,7 +153,7 @@ test-tile [variant=subhead] + [variant=body] {
 [variant=subhead] + ul {
   margin: var(--space-after-subhead) 0 0 0;
 }
-[variant=subhead] + test-tile {
+[variant=subhead] + mm-tile {
   display: block;
   margin: var(--space-after-subhead) 0 0 0;
 }
@@ -167,7 +167,7 @@ test-tile [variant=subhead] + [variant=body] {
 .article-title {font-size:var(--font-size-huge);font-weight:var(--font-weight-bold);line-height:var(--font-line-height);color:var(--color-text);}
 .article ul, .article dl {max-width: var(--layout-width-small);}
 
-.component-guide test-text[variant=subhead] {display:block;margin-top:3rem;}
+.component-guide mm-text[variant=subhead] {display:block;margin-top:3rem;}
 
 .spacing-card {padding:var(--space-inset-tile);overflow:hidden;position:relative;}
 .space {display:flex;align-items:center;justify-content:center;height:100%;border-radius:var(--radius);background:var(--green100);position:relative;}

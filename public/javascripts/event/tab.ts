@@ -9,7 +9,7 @@ function tab() {
   const tabElement = document.querySelector<HTMLElement>('.js-tab')
   if (!tabElement) return
 
-  // document.querySelector('test-tablist').shadowRoot.querySelector('button')
+  // document.querySelector('mm-tablist').shadowRoot.querySelector('button')
   const tabs = tabElement.querySelectorAll('[role=tab]')
   const panels = tabElement.querySelectorAll('[role=tabpanel]')
 

@@ -47,48 +47,48 @@ import Media from '../../components/media/media'
 
 export function defineCustomElement() {
   if ('customElements' in window) {
-    customElements.define('test-icon', Icon)
-    customElements.define('test-button', Button)
-    customElements.define('test-link', Link)
-    customElements.define('test-chip', Chip)
+    customElements.define('mm-icon', Icon)
+    customElements.define('mm-button', Button)
+    customElements.define('mm-link', Link)
+    customElements.define('mm-chip', Chip)
 
-    customElements.define('test-tag', Tag)
-    customElements.define('test-badge', Badge)
+    customElements.define('mm-tag', Tag)
+    customElements.define('mm-badge', Badge)
 
-    customElements.define('test-entity', Entity)
+    customElements.define('mm-entity', Entity)
 
     // 위에 있어야 넣어지네? text보다 shadow Dom
-    customElements.define('test-result', Result)
-    customElements.define('test-feature', Feature)
-    customElements.define('test-keyvalue', Keyvalue)
+    customElements.define('mm-result', Result)
+    customElements.define('mm-feature', Feature)
+    customElements.define('mm-keyvalue', Keyvalue)
 
-    customElements.define('test-avatar', Avatar)
+    customElements.define('mm-avatar', Avatar)
 
-    customElements.define('test-textfield', Textfield)
+    customElements.define('mm-textfield', Textfield)
 
-    customElements.define('test-checkbox', Checkbox)
-    customElements.define('test-switch', Switch)
-    customElements.define('test-radio', Radio)
+    customElements.define('mm-checkbox', Checkbox)
+    customElements.define('mm-switch', Switch)
+    customElements.define('mm-radio', Radio)
 
-    customElements.define('test-tile', Tile)
-    customElements.define('test-text', Text)
+    customElements.define('mm-tile', Tile)
+    customElements.define('mm-text', Text)
 
-    customElements.define('test-tablist', Tablist)
-    customElements.define('test-tab', Tab)
+    customElements.define('mm-tablist', Tablist)
+    customElements.define('mm-tab', Tab)
 
-    customElements.define('test-callout', Callout)
+    customElements.define('mm-callout', Callout)
 
-    customElements.define('test-menuitem', MenuItem)
+    customElements.define('mm-menuitem', MenuItem)
 
-    customElements.define('test-dialog', Dialog)
-    customElements.define('test-media', Media)
+    customElements.define('mm-dialog', Dialog)
+    customElements.define('mm-media', Media)
 
-    customElements.define('test-tooltip', Tooltip)
+    customElements.define('mm-tooltip', Tooltip)
 
-    customElements.define('test-titlebar', TitleBar)
-    customElements.define('test-group', Group)
-    customElements.define('test-row', Row)
-    customElements.define('test-separator', Separator)
+    customElements.define('mm-titlebar', TitleBar)
+    customElements.define('mm-group', Group)
+    customElements.define('mm-row', Row)
+    customElements.define('mm-separator', Separator)
   }
 }
 

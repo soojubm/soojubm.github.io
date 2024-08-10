@@ -1,36 +1,36 @@
 <main class="component js-tab">
   <article class="article" style="max-width: var(--layout-width-small)">
     <!-- <button aria-haspopup="true" aria-expanded="false">trigger</button> -->
-    <test-titlebar class="js-titlebar" heading="알림"> </test-titlebar>
-    <test-group variant="button" class="notification-filter" style="margin: var(--space-4) 0">
-      <test-chip status="active">모두</test-chip>
-      <test-chip>읽지않음</test-chip>
-    </test-group>
+    <mm-titlebar class="js-titlebar" heading="알림"> </mm-titlebar>
+    <mm-group variant="button" class="notification-filter" style="margin: var(--space-4) 0">
+      <mm-chip status="active">모두</mm-chip>
+      <mm-chip>읽지않음</mm-chip>
+    </mm-group>
 
     <!-- TODO list는 결국 row/ stack이다. -->
     <div style="display: flex; flex-direction: column; gap: 0.75rem">
-      <test-tile variant="elevated" size="small">
-        <test-menuitem label="응암동 주간 인기글" description="5일 전">
-          <test-avatar slot="avatar" default="true"></test-avatar>
-        </test-menuitem>
+      <mm-tile variant="elevated" size="small">
+        <mm-menuitem label="응암동 주간 인기글" description="5일 전">
+          <mm-avatar slot="avatar" default="true"></mm-avatar>
+        </mm-menuitem>
         <p style="width: 100%; margin: var(--space-2) 0 0; line-height: var(--font-line-height)">
           '송명섭 막걸리 6도 750m...' 외 1개 상품이 오늘 도착예정입니다~
         </p>
-      </test-tile>
-      <test-tile variant="elevated" size="small">
-        <test-menuitem label="오늘의 주요 종목 종가">
-          <test-avatar slot="avatar" default="true"></test-avatar>
-        </test-menuitem>
+      </mm-tile>
+      <mm-tile variant="elevated" size="small">
+        <mm-menuitem label="오늘의 주요 종목 종가">
+          <mm-avatar slot="avatar" default="true"></mm-avatar>
+        </mm-menuitem>
         <p style="width: 100%; margin: var(--space-2) 0 0; line-height: var(--font-line-height)">
           '송명섭 막걸리 6도 750m...' 외 1개 상품이 오늘 도착예정입니다~
         </p>
-      </test-tile>
+      </mm-tile>
     </div>
 
     <footer style="margin: var(--space-4) 0 0 0">
-      <test-link>더 보기</test-link>
+      <mm-link>더 보기</mm-link>
     </footer>
-    <test-result label="최근 알림 메세지가 없습니다."></test-result>
+    <mm-result label="최근 알림 메세지가 없습니다."></mm-result>
 
     <blockquote>
       <ul>

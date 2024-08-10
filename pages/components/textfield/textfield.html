@@ -2,7 +2,7 @@
   <!-- <form action="">
     <input type="checkbox" />
     <input type="radio" />
-    <test-separator></test-separator>
+    <mm-separator></mm-separator>
     <select name="" id="">
       <option value=""></option>
     </select>
@@ -33,10 +33,10 @@
     Place destructive actions at the bottom
   -->
 
-  <test-text variant="title">Textfields</test-text>
-  <test-text variant="body-large">
+  <mm-text variant="title">Textfields</mm-text>
+  <mm-text variant="body-large">
     사용자가 데이터를 입력할 수 있는 인러렉티브한? 필드입니다.
-  </test-text>
+  </mm-text>
   <!-- - 콤보박스 textfield + select -->
   <dl class="article-aka">
     <dt>a.k.a.</dt>
@@ -44,14 +44,14 @@
     <dd>Input</dd>
   </dl>
   <section class="component-example">
-    <test-group variant="form">
-      <test-textfield type="text" size="small" placeholder="Small size..."></test-textfield>
-      <test-textfield type="text" placeholder="Medium size... (default)"></test-textfield>
-    </test-group>
-    <test-separator></test-separator>
-    <test-group variant="form">
-      <test-textfield type="text" placeholder="Disabled..." disabled></test-textfield>
-      <test-textfield
+    <mm-group variant="form">
+      <mm-textfield type="text" size="small" placeholder="Small size..."></mm-textfield>
+      <mm-textfield type="text" placeholder="Medium size... (default)"></mm-textfield>
+    </mm-group>
+    <mm-separator></mm-separator>
+    <mm-group variant="form">
+      <mm-textfield type="text" placeholder="Disabled..." disabled></mm-textfield>
+      <mm-textfield
         type="email"
         label="Invalid"
         value="soojubm@gmail.com"
@@ -60,25 +60,25 @@
         aria-describedby="error"
         aria-errormessage="msgID"
         helper="이미 등록된 이메일입니다."
-      ></test-textfield>
-    </test-group>
-    <test-separator></test-separator>
+      ></mm-textfield>
+    </mm-group>
+    <mm-separator></mm-separator>
     <div style="display: flex; flex-direction: column; gap: var(--space-3)">
       <!-- TODO hiddenLabel or ariaLabel -->
-      <test-textfield type="search" hiddenLabel>
+      <mm-textfield type="search" hiddenLabel>
         <label slot="prefix" class="searchfield-prefix">
-          <test-icon name="search"></test-icon>
+          <mm-icon name="search"></mm-icon>
         </label>
-        <test-icon name="xmark"></test-icon>
+        <mm-icon name="xmark"></mm-icon>
         <!-- button slot="suffix" class="searchfield-clear" aria-label="clear keyword"></button> -->
         <button class="searchfield-cancel" aria-label="back">취소</button>
-      </test-textfield>
-      <test-textfield type="password" label="Password field">
-        <test-chip slot="suffix" icon="eye-solid" aria-label="비밀번호 보기"> </test-chip>
-      </test-textfield>
+      </mm-textfield>
+      <mm-textfield type="password" label="Password field">
+        <mm-chip slot="suffix" icon="eye-solid" aria-label="비밀번호 보기"> </mm-chip>
+      </mm-textfield>
       <!-- oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" -->
     </div>
-    <test-separator></test-separator>
+    <mm-separator></mm-separator>
     <div class="textfield">
       <label class="textfield-label" for="search1">Textarea or Commentfield</label>
       <small class="textfield-byte"><b>0 KB</b> / 100 KB</small>
@@ -89,18 +89,18 @@
         style="height: auto"
       ></textarea>
     </div>
-    <!-- <test-textfield type="text" label="" hiddenLabel placeholder="Placeholder...">
-          <test-icon slot="prefix" name="xray-view"></test-icon>
-        </test-textfield>
-        <test-textfield type="email" label="" hiddenLabel placeholder="with Suffix...">
-          <test-icon slot="suffix" name="xray-view"></test-icon>
-        </test-textfield> -->
+    <!-- <mm-textfield type="text" label="" hiddenLabel placeholder="Placeholder...">
+          <mm-icon slot="prefix" name="xray-view"></mm-icon>
+        </mm-textfield>
+        <mm-textfield type="email" label="" hiddenLabel placeholder="with Suffix...">
+          <mm-icon slot="suffix" name="xray-view"></mm-icon>
+        </mm-textfield> -->
     <!-- <p>unit, choose/enter</p> -->
     <!-- <abbr title="필수입력">*</abbr> -->
   </section>
 
   <section class="component-props">
-    <test-text variant="subhead">Props</test-text>
+    <mm-text variant="subhead">Props</mm-text>
     <dl>
       <dt>type</dt>
       <dd>HTMLInputTypeAttribute? | 'search' | "text" | "number" | "tel" | "textarea"</dd>
@@ -141,20 +141,20 @@
   </section>
 
   <section class="component-guide">
-    <test-tile style="display: flex; align-items: center; justify-content: center">
+    <mm-tile style="display: flex; align-items: center; justify-content: center">
       <div style="display: flex; align-items: center; justify-content: space-between">
         <div class="counter js-counter" style="max-width: 200px">
           <label for="numberfield" style="position: absolute; opacity: 0">
             레이블 라이트하우스용
           </label>
-          <test-chip
+          <mm-chip
             icon="minus"
             class="js-counter-decrement"
             aria-controls="numberfield"
             tabindex="-1"
           >
-          </test-chip>
-          <test-textfield size="small" value="20"></test-textfield>
+          </mm-chip>
+          <mm-textfield size="small" value="20"></mm-textfield>
           <!-- <input
               class="counter-input reset-input textfield-input js-counter-input js-number-input"
               type="number"
@@ -164,62 +164,62 @@
               max="20"
               value="0"
             /> -->
-          <test-chip icon="plus" class="js-counter-increment" tabindex="-1"> </test-chip>
+          <mm-chip icon="plus" class="js-counter-increment" tabindex="-1"> </mm-chip>
         </div>
       </div>
-    </test-tile>
+    </mm-tile>
     <div style="height: var(--space-3)"></div>
-    <test-tile style="display: flex; justify-content: center">
+    <mm-tile style="display: flex; justify-content: center">
       <div style="display: flex; align-items: center; justify-content: space-between; width: 100%">
         <div>
-          <test-text variant="word-strong">1 sandbox</test-text>
-          <test-text variant="word-weak"> $100.00 / addl sandbox </test-text>
+          <mm-text variant="word-strong">1 sandbox</mm-text>
+          <mm-text variant="word-weak"> $100.00 / addl sandbox </mm-text>
         </div>
-        <test-group variant="chip">
-          <test-chip
+        <mm-group variant="chip">
+          <mm-chip
             icon="minus"
             class="counter-decrement js-counter-decrement"
             aria-controls="numberfield"
             tabindex="-1"
           >
-          </test-chip>
-          <test-chip icon="plus" class="counter-increment js-counter-increment" tabindex="-1">
-          </test-chip>
-        </test-group>
+          </mm-chip>
+          <mm-chip icon="plus" class="counter-increment js-counter-increment" tabindex="-1">
+          </mm-chip>
+        </mm-group>
       </div>
-    </test-tile>
+    </mm-tile>
 
     <br /><br />
 
-    <test-tile style="display: flex; justify-content: center">
-      <test-textfield
+    <mm-tile style="display: flex; justify-content: center">
+      <mm-textfield
         type="number"
         label="Number field (금액)"
         value="20000"
         placeholder="Textarea Placeholder..."
-      ></test-textfield>
-    </test-tile>
+      ></mm-textfield>
+    </mm-tile>
 
-    <test-separator></test-separator>
+    <mm-separator></mm-separator>
 
-    <test-text variant="subhead">Visual Style</test-text>
-    <test-text variant="body"> 레이블을 텍스트필드 왼쪽에 배치하지 마세요.</test-text>
-    <test-text variant="body">
+    <mm-text variant="subhead">Visual Style</mm-text>
+    <mm-text variant="body"> 레이블을 텍스트필드 왼쪽에 배치하지 마세요.</mm-text>
+    <mm-text variant="body">
       이중 레이블링하지 마세요. 아이콘은 텍싀트 레이블을 대체할 수 있습니다. (아이콘 레이블을
       사용하는 예시: 이메일로 사용자를 추가할 때 입력 정보를 아이콘으로 직관화)
-    </test-text>
-    <test-text variant="body">
+    </mm-text>
+    <mm-text variant="body">
       일반 텍스트필드와 특수한? 텍스트필드 구별을 위한 시각적인 단서를 제공하세요.
-    </test-text>
-    <test-text variant="body" data-temp="required indicator / optional indicator">
+    </mm-text>
+    <mm-text variant="body" data-temp="required indicator / optional indicator">
       불필요한 정보 입력을 유도하지 마세요. 사용자 여정에 허들이 될 수 있습니다. 다시 말해 모든
       텍스트필드는 필수 입력을 보장(?)합니다. 단, 사용자 정보를 수집하여 사용자 또는 비즈니스에
       이점이 명확한 경우 선택 필드를 제안할 수 있습니다. 이 때 선택 입력 필드에 '선택입력' 텍스트로
       가이드합니다.
-    </test-text>
+    </mm-text>
 
     <blockquote>
-      <test-text variant="body-bold">Notes</test-text>
+      <mm-text variant="body-bold">Notes</mm-text>
       <ul class="checklist">
         <li>TODO utilities. 앞자리 0 제거. 숫자만입력3자리마다콤마. 소숫점 컨트롤.</li>
         <li>url field. www 및 https://</li>
@@ -238,148 +238,148 @@
   </section>
 
   <aside class="component-references">
-    <test-text variant="subhead">References</test-text>
+    <mm-text variant="subhead">References</mm-text>
     <a href="https://developer.apple.com/documentation/uikit/uisearchbar">HIG searchbar</a>
   </aside>
 
   <section class="component-case">
-    <test-tile>
-      <test-titlebar heading="Field group"></test-titlebar>
+    <mm-tile>
+      <mm-titlebar heading="Field group"></mm-titlebar>
       <div style="height: var(--space-3)"></div>
-      <test-text variant="body-bold"></test-text>
-      <test-text variant="body">
+      <mm-text variant="body-bold"></mm-text>
+      <mm-text variant="body">
         그룹이 되는 모든 필드는 선택 입력입니다. 다시말해 필수 입력 필드를 그룹으로 제공하지 마세요.
-      </test-text>
+      </mm-text>
       <div style="height: var(--space-3)"></div>
-      <test-group variant="textfield" style="width: 100%; flex-wrap: nowrap; align-items: flex-end">
-        <test-textfield label="Length" placeholder="cm unit"></test-textfield>
+      <mm-group variant="textfield" style="width: 100%; flex-wrap: nowrap; align-items: flex-end">
+        <mm-textfield label="Length" placeholder="cm unit"></mm-textfield>
         <div style="display: flex; align-items: center; height: var(--size-large)">
-          <test-icon name="xmark"></test-icon>
+          <mm-icon name="xmark"></mm-icon>
         </div>
-        <test-textfield label="Width" placeholder="x means"></test-textfield>
+        <mm-textfield label="Width" placeholder="x means"></mm-textfield>
         <div style="display: flex; align-items: center; height: var(--size-large)">
-          <test-icon name="xmark"></test-icon>
+          <mm-icon name="xmark"></mm-icon>
         </div>
-        <test-textfield label="Height" placeholder="cm"></test-textfield>
-      </test-group>
-    </test-tile>
-    <test-tile>
+        <mm-textfield label="Height" placeholder="cm"></mm-textfield>
+      </mm-group>
+    </mm-tile>
+    <mm-tile>
       <div style="display: flex; justify-content: space-between; gap: var(--space-3)">
         <div style="flex: auto; width: 50%">
-          <test-textfield type="date" name="date-start" label="체크인" placeholder="YYYY. MM. DD.">
-            <test-icon slot="suffix" name="calendar"></test-icon>
-          </test-textfield>
+          <mm-textfield type="date" name="date-start" label="체크인" placeholder="YYYY. MM. DD.">
+            <mm-icon slot="suffix" name="calendar"></mm-icon>
+          </mm-textfield>
         </div>
         <div style="flex: auto; width: 50%">
-          <test-textfield type="date" name="date-end" label="체크아웃" placeholder="YYYY. MM. DD.">
-            <test-icon slot="suffix" name="calendar"></test-icon>
-          </test-textfield>
+          <mm-textfield type="date" name="date-end" label="체크아웃" placeholder="YYYY. MM. DD.">
+            <mm-icon slot="suffix" name="calendar"></mm-icon>
+          </mm-textfield>
         </div>
       </div>
-    </test-tile>
+    </mm-tile>
 
-    <test-tile>
-      <test-titlebar heading="배송지 등록"> </test-titlebar>
+    <mm-tile>
+      <mm-titlebar heading="배송지 등록"> </mm-titlebar>
       <br />
-      <test-group variant="form">
-        <test-textfield
+      <mm-group variant="form">
+        <mm-textfield
           label="받는 사람"
           stype="text"
           name="email"
           id="login-email"
           placeholder="수줍이"
-        ></test-textfield>
-        <test-textfield
+        ></mm-textfield>
+        <mm-textfield
           label="연락처"
           type="text"
           name="email"
           id="login-email"
           placeholder="01012345678"
-        ></test-textfield>
-        <test-textfield
+        ></mm-textfield>
+        <mm-textfield
           label="주소"
           type="text"
           name="email"
           id="address"
           placeholder="클릭하여 우편번호 찾기"
-        ></test-textfield>
-        <test-textfield
+        ></mm-textfield>
+        <mm-textfield
           label="상세주소"
           type="text"
           name="email"
           id="address"
           placeholder="클릭하여 우편번호 찾기"
-        ></test-textfield>
+        ></mm-textfield>
         <!-- First name, Last Name, Country / Region, State, Zipcode" -->
-        <!-- <test-textfield label="공동현관 출입번호" type="text" isOptional name="email" id="login-email" placeholder=""></test-textfield> -->
-        <test-textfield
+        <!-- <mm-textfield label="공동현관 출입번호" type="text" isOptional name="email" id="login-email" placeholder=""></mm-textfield> -->
+        <mm-textfield
           label="배송 메시지"
           type="text"
           isOptional
           name="email"
           id="login-email"
           placeholder="직접 입력"
-        ></test-textfield>
-        <test-checkbox label="개인정보 수집 및 이용 동의(수취인정보?)"></test-checkbox>
-        <test-button variant="primary" label="배송지 등록"></test-button>
-      </test-group>
-    </test-tile>
+        ></mm-textfield>
+        <mm-checkbox label="개인정보 수집 및 이용 동의(수취인정보?)"></mm-checkbox>
+        <mm-button variant="primary" label="배송지 등록"></mm-button>
+      </mm-group>
+    </mm-tile>
 
-    <test-tile>
-      <test-titlebar heading="Field group"></test-titlebar>
+    <mm-tile>
+      <mm-titlebar heading="Field group"></mm-titlebar>
       <div style="height: var(--space-3)"></div>
-      <test-text variant="body-bold"></test-text>
-      <test-text variant="body">
+      <mm-text variant="body-bold"></mm-text>
+      <mm-text variant="body">
         그룹이 되는 모든 필드는 선택 입력입니다. 다시말해 필수 입력 필드를 그룹으로 제공하지 마세요.
-      </test-text>
+      </mm-text>
       <div style="height: var(--space-3)"></div>
-      <test-group variant="textfield" style="width: 100%; flex-wrap: nowrap; align-items: flex-end">
-        <test-textfield label="Length" placeholder="cm unit"></test-textfield>
+      <mm-group variant="textfield" style="width: 100%; flex-wrap: nowrap; align-items: flex-end">
+        <mm-textfield label="Length" placeholder="cm unit"></mm-textfield>
         <div style="display: flex; align-items: center; height: var(--size-large)">
-          <test-icon name="xmark"></test-icon>
+          <mm-icon name="xmark"></mm-icon>
         </div>
-        <test-textfield label="Width" placeholder="x means"></test-textfield>
+        <mm-textfield label="Width" placeholder="x means"></mm-textfield>
         <div style="display: flex; align-items: center; height: var(--size-large)">
-          <test-icon name="xmark"></test-icon>
+          <mm-icon name="xmark"></mm-icon>
         </div>
-        <test-textfield label="Height" placeholder="cm"></test-textfield>
-      </test-group>
-    </test-tile>
-    <test-tile>
+        <mm-textfield label="Height" placeholder="cm"></mm-textfield>
+      </mm-group>
+    </mm-tile>
+    <mm-tile>
       <div style="display: flex; justify-content: space-between; gap: var(--space-3)">
         <div style="flex: auto; width: 50%">
-          <test-textfield type="date" name="date-start" label="체크인" placeholder="YYYY. MM. DD.">
-            <test-icon slot="suffix" name="calendar"></test-icon>
-          </test-textfield>
+          <mm-textfield type="date" name="date-start" label="체크인" placeholder="YYYY. MM. DD.">
+            <mm-icon slot="suffix" name="calendar"></mm-icon>
+          </mm-textfield>
         </div>
         <div style="flex: auto; width: 50%">
-          <test-textfield type="date" name="date-end" label="체크아웃" placeholder="YYYY. MM. DD.">
-            <test-icon slot="suffix" name="calendar"></test-icon>
-          </test-textfield>
+          <mm-textfield type="date" name="date-end" label="체크아웃" placeholder="YYYY. MM. DD.">
+            <mm-icon slot="suffix" name="calendar"></mm-icon>
+          </mm-textfield>
         </div>
       </div>
-    </test-tile>
+    </mm-tile>
 
-    <test-separator></test-separator>
+    <mm-separator></mm-separator>
 
-    <test-text variant="subhead">Visual Style</test-text>
-    <test-text variant="body"> 레이블을 텍스트필드 왼쪽에 배치하지 마세요.</test-text>
-    <test-text variant="body">
+    <mm-text variant="subhead">Visual Style</mm-text>
+    <mm-text variant="body"> 레이블을 텍스트필드 왼쪽에 배치하지 마세요.</mm-text>
+    <mm-text variant="body">
       이중 레이블링하지 마세요. 아이콘은 텍싀트 레이블을 대체할 수 있습니다. (아이콘 레이블을
       사용하는 예시: 이메일로 사용자를 추가할 때 입력 정보를 아이콘으로 직관화)
-    </test-text>
-    <test-text variant="body">
+    </mm-text>
+    <mm-text variant="body">
       일반 텍스트필드와 특수한? 텍스트필드 구별을 위한 시각적인 단서를 제공하세요.
-    </test-text>
-    <test-text variant="body" data-temp="required indicator / optional indicator">
+    </mm-text>
+    <mm-text variant="body" data-temp="required indicator / optional indicator">
       불필요한 정보 입력을 유도하지 마세요. 사용자 여정에 허들이 될 수 있습니다. 다시 말해 모든
       텍스트필드는 필수 입력을 보장(?)합니다. 단, 사용자 정보를 수집하여 사용자 또는 비즈니스에
       이점이 명확한 경우 선택 필드를 제안할 수 있습니다. 이 때 선택 입력 필드에 '선택입력' 텍스트로
       가이드합니다.
-    </test-text>
+    </mm-text>
 
     <blockquote>
-      <test-text variant="body-bold">Notes</test-text>
+      <mm-text variant="body-bold">Notes</mm-text>
       <ul class="checklist">
         <li>TODO utilities. 앞자리 0 제거. 숫자만입력3자리마다콤마. 소숫점 컨트롤.</li>
         <li>url field. www 및 https://</li>
@@ -398,69 +398,69 @@
   </section>
 
   <aside class="component-references">
-    <test-text variant="subhead">References</test-text>
+    <mm-text variant="subhead">References</mm-text>
     <a href="https://developer.apple.com/documentation/uikit/uisearchbar">HIG searchbar</a>
   </aside>
 
   <section class="component-case">
-    <test-tile>
-      <test-titlebar heading="배송지 등록"> </test-titlebar>
+    <mm-tile>
+      <mm-titlebar heading="배송지 등록"> </mm-titlebar>
       <br />
-      <test-group variant="form">
-        <test-textfield
+      <mm-group variant="form">
+        <mm-textfield
           label="받는 사람"
           stype="text"
           name="email"
           id="login-email"
           placeholder="수줍이"
-        ></test-textfield>
-        <test-textfield
+        ></mm-textfield>
+        <mm-textfield
           label="연락처"
           type="text"
           name="email"
           id="login-email"
           placeholder="01012345678"
-        ></test-textfield>
-        <test-textfield
+        ></mm-textfield>
+        <mm-textfield
           label="주소"
           type="text"
           name="email"
           id="address"
           placeholder="클릭하여 우편번호 찾기"
-        ></test-textfield>
-        <test-textfield
+        ></mm-textfield>
+        <mm-textfield
           label="상세주소"
           type="text"
           name="email"
           id="address"
           placeholder="클릭하여 우편번호 찾기"
-        ></test-textfield>
+        ></mm-textfield>
         <!-- First name, Last Name, Country / Region, State, Zipcode" -->
-        <!-- <test-textfield label="공동현관 출입번호" type="text" isOptional name="email" id="login-email" placeholder=""></test-textfield> -->
-        <test-textfield
+        <!-- <mm-textfield label="공동현관 출입번호" type="text" isOptional name="email" id="login-email" placeholder=""></mm-textfield> -->
+        <mm-textfield
           label="배송 메시지"
           type="text"
           isOptional
           name="email"
           id="login-email"
           placeholder="직접 입력"
-        ></test-textfield>
-        <test-checkbox label="개인정보 수집 및 이용 동의(수취인정보?)"></test-checkbox>
-        <test-button variant="primary" label="배송지 등록"></test-button>
-      </test-group>
-    </test-tile>
+        ></mm-textfield>
+        <mm-checkbox label="개인정보 수집 및 이용 동의(수취인정보?)"></mm-checkbox>
+        <mm-button variant="primary" label="배송지 등록"></mm-button>
+      </mm-group>
+    </mm-tile>
 
-    <test-tile>
-      <test-titlebar heading="장바구니"> </test-titlebar>
+    <mm-tile>
+      <mm-titlebar heading="장바구니"> </mm-titlebar>
       <div style="height: var(--space-3)"></div>
-      <test-menuitem>
-        <test-avatar slot="avatar" size="huge">
+      <mm-menuitem>
+        <mm-avatar slot="avatar" size="huge">
           <img src="/public/images/product_sample.png" alt="" />
-        </test-avatar>
+        </mm-avatar>
         <div slot="text">
-          <test-text variant="word-strong"> 폰타나 베네치아 로스티드 쉬림프 크림 </test-text>
-          <test-text variant="word-weak">Brown, 3개</test-text>
-          <test-text variant="word-large">₩ 22,500</test-text>
+          <mm-text variant="word-strong"> 폰타나 베네치아 로스티드 쉬림프 크림 </mm-text>
+          <mm-text variant="word-weak">Brown, 3개</mm-text>
+          <mm-text variant="word-large">₩ 22,500</mm-text>
         </div>
         <!-- <div class="cart-item-name">
             <span>product</span>
@@ -479,21 +479,21 @@
             <b>₩ 22,500</b>
           </div> -->
 
-        <test-chip>수량/옵션 변경</test-chip>
+        <mm-chip>수량/옵션 변경</mm-chip>
 
-        <test-chip>close</test-chip>
+        <mm-chip>close</mm-chip>
 
-        <test-group variant="chip" class="counter js-counter" style="max-width: 200px">
-          <test-chip
+        <mm-group variant="chip" class="counter js-counter" style="max-width: 200px">
+          <mm-chip
             icon="minus"
             class="js-counter-decrement"
             aria-controls="numberfield"
             tabindex="-1"
-          ></test-chip>
-          <test-textfield size="small" value="20"></test-textfield>
+          ></mm-chip>
+          <mm-textfield size="small" value="20"></mm-textfield>
           <!-- <input class="quantity-input js-quantity-input" type="number" value="1" /> -->
-          <test-chip icon="plus" class="js-counter-increment" tabindex="-1"> </test-chip>
-        </test-group>
+          <mm-chip icon="plus" class="js-counter-increment" tabindex="-1"> </mm-chip>
+        </mm-group>
 
         <div class="counter js-counter" style="max-width: 200px">
           <label for="numberfield" style="position: absolute; opacity: 0">
@@ -517,22 +517,22 @@
           </p>
           <span class="cart-item-addition-price">₩ 20,000</span>
         </div>
-      </test-menuitem>
+      </mm-menuitem>
 
-      <test-separator></test-separator>
+      <mm-separator></mm-separator>
 
       <footer>
-        <test-keyvalue key="총 상품금액" value="₩ 30,000"></test-keyvalue>
-        <test-keyvalue key="배송료" value="₩ 3,000"></test-keyvalue>
-        <test-keyvalue key="할인" value="₩ 2,000"></test-keyvalue>
-        <test-keyvalue key="최종 결제 금액" value="₩ 37,000"></test-keyvalue>
+        <mm-keyvalue key="총 상품금액" value="₩ 30,000"></mm-keyvalue>
+        <mm-keyvalue key="배송료" value="₩ 3,000"></mm-keyvalue>
+        <mm-keyvalue key="할인" value="₩ 2,000"></mm-keyvalue>
+        <mm-keyvalue key="최종 결제 금액" value="₩ 37,000"></mm-keyvalue>
         <div style="height: var(--space-3)"></div>
-        <test-button variant="primary" isfullwidth="true">결제</test-button>
+        <mm-button variant="primary" isfullwidth="true">결제</mm-button>
       </footer>
-    </test-tile>
+    </mm-tile>
   </section>
 </main>
 
 <!-- <input type="text" inputmode="numeric" pattern="[0-9]*" />
 <small id="" class="textfield-helper" aria-live="assertive">pattern="[0-9]+"</small> -->
-<!-- <test-text variant="body-bold">DateRangeField / DateField</test-text> -->
+<!-- <mm-text variant="body-bold">DateRangeField / DateField</mm-text> -->

@@ -1,24 +1,24 @@
 <main class="page">
   <!-- <nav class="component-navigation" role="group" data-scroll="vertical" role="menubar">
-    <test-group variant="chip">
+    <mm-group variant="chip">
       <div class="component-navigation-background"></div>
-      <test-chip class="is-active js-scrollspy-trigger" href="#">Dim</test-chip>
-      <test-chip class="js-scrollspy-trigger" href="#">Page</test-chip>
-      <test-chip class="js-scrollspy-trigger" href="#">Modal</test-chip>
-      <test-chip class="js-scrollspy-trigger" href="#">Toast</test-chip>
-      <test-chip class="js-scrollspy-trigger" href="#">Sheet</test-chip>
-      <test-chip class="js-scrollspy-trigger" href="#">Popover</test-chip>
-      <test-chip class="js-scrollspy-trigger" href="#">Drawer(todo)</test-chip>
-    </test-group>
+      <mm-chip class="is-active js-scrollspy-trigger" href="#">Dim</mm-chip>
+      <mm-chip class="js-scrollspy-trigger" href="#">Page</mm-chip>
+      <mm-chip class="js-scrollspy-trigger" href="#">Modal</mm-chip>
+      <mm-chip class="js-scrollspy-trigger" href="#">Toast</mm-chip>
+      <mm-chip class="js-scrollspy-trigger" href="#">Sheet</mm-chip>
+      <mm-chip class="js-scrollspy-trigger" href="#">Popover</mm-chip>
+      <mm-chip class="js-scrollspy-trigger" href="#">Drawer(todo)</mm-chip>
+    </mm-group>
   </nav> -->
 
   <article class="article">
-    <test-text variant="title">Popovers</test-text>
-    <test-text variant="body-large">
+    <mm-text variant="title">Popovers</mm-text>
+    <mm-text variant="body-large">
       Popover API에서 네이밍 규칙을 따옴. 모달은 닫기 전에 다른 요소와 인터렉션을 하지 못 함.
       비모달은 할 수 있음. 구조적으로는 main tag의 형제 엘리먼트. 루트 엘리먼트가 상태 클래스를
       가짐. popovertarget
-    </test-text>
+    </mm-text>
     <blockquote>
       <ul>
         <li>
@@ -66,35 +66,35 @@
       >
     </section>
 
-    <test-text variant="body-bold">Open triggers</test-text>
+    <mm-text variant="body-bold">Open triggers</mm-text>
     <ul>
       <li>window.load</li>
       <li>window.resize</li>
       <li>actions</li>
     </ul>
     <br />
-    <test-text variant="body-bold">Close triggers</test-text>
+    <mm-text variant="body-bold">Close triggers</mm-text>
     <ul>
       <li><b>click</b>. Dim / CloseButton(in / out) / ConfirmButton / CancelButton</li>
       <li><b>keydown</b>. escKey. enterKey. spaceBar</li>
     </ul>
     <br /><br />
 
-    <test-text variant="subhead">Backdrop(a.k.a. dim, overay)</test-text>
-    <test-text variant="body">
+    <mm-text variant="subhead">Backdrop(a.k.a. dim, overay)</mm-text>
+    <mm-text variant="body">
       useOutsideClick의 ref 의존성을 presentation 컴포넌트에서 분리하기 위해 닫기 인터렉션.
-    </test-text>
+    </mm-text>
 
     <br /><br />
 
-    <test-text variant="subhead">Modal</test-text>
+    <mm-text variant="subhead">Modal</mm-text>
     <div class="component-example" style="margin-top: var(--space-4)">
       <footer>
-        <test-chip variant="secondary" class="js-modal" data-modal="woolf">모달 열기</test-chip>
+        <mm-chip variant="secondary" class="js-modal" data-modal="woolf">모달 열기</mm-chip>
       </footer>
 
-      <test-separator></test-separator>
-      <test-text variant="body">something that requires the user’s attention.</test-text>
+      <mm-separator></mm-separator>
+      <mm-text variant="body">something that requires the user’s attention.</mm-text>
 
       <ul>
         <li>url을 통한 접근.</li>
@@ -107,7 +107,7 @@
         </li> -->
       </ul>
 
-      <test-text variant="body-bold">Other cases</test-text>
+      <mm-text variant="body-bold">Other cases</mm-text>
       <ul>
         <li>
           <b>ibm.</b> Don’t use to display complex or large amounts of data. Don’t recreate a full
@@ -120,11 +120,11 @@
       </ul>
     </div>
 
-    <test-text variant="subhead">Toast</test-text>
+    <mm-text variant="subhead">Toast</mm-text>
     <div class="component-example" style="margin-top: var(--space-4)">
-      <test-chip variant="secondary" class="js-toggle">토스트 열기</test-chip>
+      <mm-chip variant="secondary" class="js-toggle">토스트 열기</mm-chip>
       <aside class="toast" role="alert">toast test. 사라지는 시간을 정의.</aside>
-      <test-separator></test-separator>
+      <mm-separator></mm-separator>
       <ul class="checklist">
         <li>일시적인 피드백. 현재 사용하지 않음.</li>
         <li>
@@ -138,43 +138,43 @@
       </ul>
     </div>
 
-    <test-text variant="subhead">Sheet</test-text>
+    <mm-text variant="subhead">Sheet</mm-text>
     <div class="component-example" style="margin-top: var(--space-4)">
       <!-- <p>To allow users to view optional information or complete sub-tasks in a workflow while keeping the context of the current page, use Sheet.</p> -->
-      <test-chip variant="secondary" class="js-toggle">시트 열기</test-chip>
-      <test-tile variant="elevated" class="sheet js-sheet" role="presentation">
+      <mm-chip variant="secondary" class="js-toggle">시트 열기</mm-chip>
+      <mm-tile variant="elevated" class="sheet js-sheet" role="presentation">
         <button class="sheet-toggle"></button>
-        <test-text variant="subhead" class="sheet-title">Presentation - sheet</test-text>
-        <test-chip icon="xmark" class="js-sheet-close" aria-label="close sheet"></test-chip>
-        <test-group variant="menuitem">
-          <test-menuitem data-size="medium" label="iOS 액션 시트 참고">
-            <test-avatar slot="avatar" default="true"></test-avatar>
-          </test-menuitem>
-          <test-menuitem data-size="medium" label="바텀 시트 옵션">
-            <test-avatar slot="avatar" default="true"></test-avatar>
-          </test-menuitem>
-        </test-group>
-      </test-tile>
+        <mm-text variant="subhead" class="sheet-title">Presentation - sheet</mm-text>
+        <mm-chip icon="xmark" class="js-sheet-close" aria-label="close sheet"></mm-chip>
+        <mm-group variant="menuitem">
+          <mm-menuitem data-size="medium" label="iOS 액션 시트 참고">
+            <mm-avatar slot="avatar" default="true"></mm-avatar>
+          </mm-menuitem>
+          <mm-menuitem data-size="medium" label="바텀 시트 옵션">
+            <mm-avatar slot="avatar" default="true"></mm-avatar>
+          </mm-menuitem>
+        </mm-group>
+      </mm-tile>
       <!-- <aside class="sheet-overay"></aside> -->
-      <test-separator></test-separator>
-      <test-text variant="body">결국 drawer인데 bottom일 수 있음.</test-text>
+      <mm-separator></mm-separator>
+      <mm-text variant="body">결국 drawer인데 bottom일 수 있음.</mm-text>
     </div>
 
-    <test-text variant="subhead">Dropdown</test-text>
+    <mm-text variant="subhead">Dropdown</mm-text>
     <div class="component-example" style="margin-top: var(--space-4)">
       <footer style="position: relative">
-        <test-chip variant="secondary" class="js-toggle" aria-haspopup="">팝오버 열기</test-chip>
-        <test-tile variant="elevated" class="popover">
-          <test-titlebar heading="모달 제목"></test-titlebar>
-        </test-tile>
+        <mm-chip variant="secondary" class="js-toggle" aria-haspopup="">팝오버 열기</mm-chip>
+        <mm-tile variant="elevated" class="popover">
+          <mm-titlebar heading="모달 제목"></mm-titlebar>
+        </mm-tile>
       </footer>
-      <test-separator></test-separator>
+      <mm-separator></mm-separator>
       <ul class="checklist">
         <li>데스크탑에 최적화된 경험. 작은 화면에서 모달이나 시트로 형태가 좋다.</li>
         <li>alignment / placement</li>
       </ul>
     </div>
 
-    <test-text variant="subhead">Tooltip</test-text>
+    <mm-text variant="subhead">Tooltip</mm-text>
   </article>
 </main>

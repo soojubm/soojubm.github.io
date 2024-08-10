@@ -1,15 +1,15 @@
 <main class="page">
   <article class="article">
-    <test-text variant="title">Entity</test-text>
-    <test-text variant="body-large">
+    <mm-text variant="title">Entity</mm-text>
+    <mm-text variant="body-large">
       분류. bottom nav item, icon button with label, user(entity huge). icon button vertical
       horizontal label이 박스 위 안에 있나 밖에 있나. 슬롯을 써도 그것은 결국 컴포넌트에서
       일회성으로 이루어지는 것이기 때문에 공통 아이콘 요소는 슬롯으로 가는 것이 어떨까.
-    </test-text>
-    <test-text variant="body-large">
+    </mm-text>
+    <mm-text variant="body-large">
       icon button과 칩을 분리. 아이콘 버튼이 variant를 갖고 레이블이 노출된 형태. 하지만 이건
       person/story랑은 또 구별되네
-    </test-text>
+    </mm-text>
 
     <blockquote>
       이걸 제품이 없는 상황에서 미리 정의해두려는 시도 자체가 바보같은 짓. 도메인에 맞게 작은 단위의
@@ -20,20 +20,20 @@
     <!-- TODO categoryButton / personItem 이것은 결국 칩으로 퉁치기에는 강조될 필요가 있는 것. 칩을 고집하지말기. -->
 
     <section class="component-example">
-      <test-group alignment="vertical">
-        <test-text variant="body">
+      <mm-group alignment="vertical">
+        <mm-text variant="body">
           <mark>페이지 레벨</mark> 정보의 주체. 단독으로 사용. 클릭할 수 있는 요소가 아니라 페이지를
           대표하는 요소, 시각 정보로만 동작한다. 왜냐하면 이미 해당 페이지의 타이틀 롤이기 때문.
-        </test-text>
-        <test-tile>
-          <test-entity
+        </mm-text>
+        <mm-tile>
+          <mm-entity
             label="windows-emoji"
             description="tag page head"
             description2="description area2."
           >
-            <test-avatar slot="avatar" variant="secondary" size="huge">#</test-avatar>
-          </test-entity>
-        </test-tile>
+            <mm-avatar slot="avatar" variant="secondary" size="huge">#</mm-avatar>
+          </mm-entity>
+        </mm-tile>
 
         <p>
           TODO ??? ICON BUTTON ??? 지금의 문제는 아이콘 버튼이 없고, 칩으로 대체하기 때문에 이걸
@@ -51,7 +51,7 @@
             font: inherit;
           "
         >
-          <test-avatar slot="avatar" size="large" icon="share-ios"></test-avatar>
+          <mm-avatar slot="avatar" size="large" icon="share-ios"></mm-avatar>
           <small>공유하기</small>
         </button>
         <button
@@ -68,42 +68,37 @@
             font: inherit;
           "
         >
-          <test-icon
-            slot="avatar"
-            size="large"
-            name="share-ios"
-            style="font-size: 1.5rem"
-          ></test-icon>
+          <mm-icon slot="avatar" size="large" name="share-ios" style="font-size: 1.5rem"></mm-icon>
           <small>공유하기</small>
         </button>
         <br /><br />
-        <test-text variant="body-bold">바이라인Byline</test-text>
-        <test-text variant="body"
+        <mm-text variant="body-bold">바이라인Byline</mm-text>
+        <mm-text variant="body"
           >다수의 유저 목록을 표현. 또는 <mark>아티클 레벨</mark> 정보의 주체. 피드 등에서
-          사용하는.</test-text
+          사용하는.</mm-text
         >
-        <test-tile size="small">
-          <test-menuitem label="수줍이">
-            <test-avatar slot="avatar">
+        <mm-tile size="small">
+          <mm-menuitem label="수줍이">
+            <mm-avatar slot="avatar">
               <i class="iconoir-github-circle"></i>
-            </test-avatar>
-            <test-chip slot="action">팔로우</test-chip>
-          </test-menuitem>
-        </test-tile>
+            </mm-avatar>
+            <mm-chip slot="action">팔로우</mm-chip>
+          </mm-menuitem>
+        </mm-tile>
         <!-- class="social-link social-github"
   role="menuitem"
   href="https://github.com/soojubm"
   target="_blank"
   rel="noopener noreferrer" -->
-      </test-group>
+      </mm-group>
     </section>
   </article>
 
   <article class="article">
-    <test-text variant="title">Links</test-text>
-    <test-text variant="body-large"
+    <mm-text variant="title">Links</mm-text>
+    <mm-text variant="body-large"
       >사용자 여정 목적지. 페이지 이동. destination that can be bookmarked. 정보 확장 기능은 따로
-      정의해야 함.</test-text
+      정의해야 함.</mm-text
     >
 
     <dl class="article-aka">
@@ -115,34 +110,34 @@
       <p>
         형무소 안에서는 소장의 말이 곧 법이었으며 죄수들의 잘못과 실수는 결코 용납되지 않는다.
         어머니의 사망 소식을 듣고 인해 2번이나 탈옥을 시도했다가 체포된
-        <test-link href="#">루크</test-link>의 발에 쇠통이 채워지며 루크는…
-        <test-link href="#">더 보기</test-link>
+        <mm-link href="#">루크</mm-link>의 발에 쇠통이 채워지며 루크는…
+        <mm-link href="#">더 보기</mm-link>
       </p>
       <div style="height: var(--space-3)"></div>
-      <test-group variant="tag">
-        <test-tag variant="hashtag">이것은헤시태그</test-tag>
-        <test-tag variant="hashtag">해시태그는클릭할수있다?</test-tag>
-        <test-tag variant="hashtag">해시태그를통한검색</test-tag>
-      </test-group>
-      <test-separator></test-separator>
+      <mm-group variant="tag">
+        <mm-tag variant="hashtag">이것은헤시태그</mm-tag>
+        <mm-tag variant="hashtag">해시태그는클릭할수있다?</mm-tag>
+        <mm-tag variant="hashtag">해시태그를통한검색</mm-tag>
+      </mm-group>
+      <mm-separator></mm-separator>
       <p>
         <button
           style="display: flex; align-items: center; gap: 0.5rem; color: var(--color-primary)"
         >
-          View More <test-icon name="nav-arrow-down"></test-icon>
+          View More <mm-icon name="nav-arrow-down"></mm-icon>
         </button>
         <button
           style="display: flex; align-items: center; gap: 0.5rem; color: var(--color-primary)"
         >
-          View Less <test-icon name="nav-arrow-up"></test-icon>
+          View Less <mm-icon name="nav-arrow-up"></mm-icon>
         </button>
       </p>
-      <test-separator></test-separator>
+      <mm-separator></mm-separator>
       <a href="#" style="color: var(--color-text); font-weight: bold">더보기</a>
     </section>
 
     <section class="component-props">
-      <test-text variant="subhead">Props</test-text>
+      <mm-text variant="subhead">Props</mm-text>
       <dl>
         <dt>variant</dt>
         <dd>'inside' | 'outside'</dd>
@@ -168,17 +163,17 @@
           </li>
         </ul>
       </blockquote>
-      <test-text variant="subhead">Use do</test-text>
-      <test-text variant="body"
+      <mm-text variant="subhead">Use do</mm-text>
+      <mm-text variant="body"
         >text button과의 차이. Link는 항상 텍스트 단락과 함께 사용합니다. 버튼은 단독으로 쓰이거나
-        버튼의 그룹으로 쓰인다.</test-text
+        버튼의 그룹으로 쓰인다.</mm-text
       >
     </section>
   </article>
 
   <article class="article">
-    <test-text variant="title">Select</test-text>
-    <test-text variant="body-large">input shape와 chip shape</test-text>
+    <mm-text variant="title">Select</mm-text>
+    <mm-text variant="body-large">input shape와 chip shape</mm-text>
     <dl class="article-aka">
       <dt>a.k.a.</dt>
       <dd title="">dropdown</dd>
@@ -193,7 +188,7 @@
         <select class="textfield-input" id="select1">
           <option value="option1">Choose an option</option>
         </select>
-        <test-icon name="nav-arrow-down" class="textfield-suffix"></test-icon>
+        <mm-icon name="nav-arrow-down" class="textfield-suffix"></mm-icon>
       </div>
     </section>
 
@@ -226,7 +221,7 @@
           <li>레이블 클릭해도 셀렉트가 열리지 않기 때문에 id prop 불필요.</li>
         </ul>
       </blockquote>
-      <test-text variant="subhead">Best practices</test-text>
+      <mm-text variant="subhead">Best practices</mm-text>
       <ul>
         <li>
           셀렉트 옵션의 텍스트 길이에 맞춰 너비가 조절된다. indicator를 position으로 넣고 옵션에
@@ -259,21 +254,19 @@
     "
   >
     <figure style="width: 48px; height: 48px; border-radius: 50%; border: var(--border)"></figure>
-    <test-text variant="subhead">
-      You can download this product with the All-Access Pass.
-    </test-text>
-    <test-button variant="primary">Get All-Access</test-button>
+    <mm-text variant="subhead"> You can download this product with the All-Access Pass. </mm-text>
+    <mm-button variant="primary">Get All-Access</mm-button>
   </div>
 
   <section class="textbox" style="margin: 4rem var(--grid-margin); position: relative">
-    <test-group
+    <mm-group
       data-e="menu"
       class="textbox-toolbar"
       style="width: max-content; position: absolute; top: var(--space-1); left: var(--space-1)"
     >
-      <test-chip icon="bold" class="textbox-toolbar-bold"></test-chip>
-      <test-chip icon="italic" class="textbox-toolbar-italic"></test-chip>
-    </test-group>
+      <mm-chip icon="bold" class="textbox-toolbar-bold"></mm-chip>
+      <mm-chip icon="italic" class="textbox-toolbar-italic"></mm-chip>
+    </mm-group>
     <div
       class="textbox-view"
       role="textbox"
@@ -301,13 +294,13 @@
   <p>loading state/dfn/abbr</p>
 
   <article class="article js-observer js-scrollspy-section">
-    <test-text variant="title">File Uploader</test-text>
-    <test-text variant="body-large">프로필 사진 또는 이미지 업로드.</test-text>
+    <mm-text variant="title">File Uploader</mm-text>
+    <mm-text variant="body-large">프로필 사진 또는 이미지 업로드.</mm-text>
     <section class="component-example">
       <form class="file" method="" enctype="multipart/form-data">
-        <test-text variant="body">프로필 사진</test-text>
+        <mm-text variant="body">프로필 사진</mm-text>
         <div class="file-upload">
-          <test-button variant="primary">사진 업로드. 여기로 드래그 하셔도 되어요.</test-button>
+          <mm-button variant="primary">사진 업로드. 여기로 드래그 하셔도 되어요.</mm-button>
           <!-- //  accept=".jpg,.png" capture="camera" -->
           <input class="file-input js-file-input visually-hidden" type="file" id="file2" multiple />
           <label class="file-label visually-hidden" for="file2"
@@ -327,8 +320,8 @@
   </article>
 
   <article class="article">
-    <test-text variant="title">Range</test-text>
-    <test-text variant="body-large"></test-text>
+    <mm-text variant="title">Range</mm-text>
+    <mm-text variant="body-large"></mm-text>
     <section class="component-example">
       <div class="range">
         <label for="">숙박 인원</label>
@@ -342,8 +335,8 @@
   </article>
 
   <article class="article">
-    <test-text variant="title">Calendar</test-text>
-    <test-text variant="body-large"></test-text>
+    <mm-text variant="title">Calendar</mm-text>
+    <mm-text variant="body-large"></mm-text>
     <section class="component-example">
       <div class="calendar">
         <b>2020년 12월</b>
@@ -393,20 +386,20 @@
 
   <article class="article">
     <label for="cb1-edit">레이블</label>
-    <test-menuitem data-size="large" style="margin-bottom: var(--space-3)">
-      <test-avatar></test-avatar>
+    <mm-menuitem data-size="large" style="margin-bottom: var(--space-3)">
+      <mm-avatar></mm-avatar>
       <span class="item-description">관심사가 비슷한 사용자</span>
       <h2 class="item-name">Gyeongsoo I</h2>
       <!-- <button class="item-action"><span class="item-action-label">팔로우</span></button> -->
-    </test-menuitem>
+    </mm-menuitem>
 
     <section>
-      <test-textfield label="임시" placeholder="you@gamil.com">
-        <test-icon slot="prefix" name="mail"></test-icon>
-      </test-textfield>
+      <mm-textfield label="임시" placeholder="you@gamil.com">
+        <mm-icon slot="prefix" name="mail"></mm-icon>
+      </mm-textfield>
     </section>
 
-    <test-separator></test-separator>
+    <mm-separator></mm-separator>
 
     <p>TeeVee</p>
     <p>icon-indicator (textfield-check/select indicator) - inline or float: right</p>
@@ -422,14 +415,14 @@
       </figure>
       <b class="file-attachment-item-name">${file.name}</b>
       <small class="file-attachment-item-size">${returnFileSize(file.size)}</small>
-      <test-chip icon="xmark" class="file-attachment-item-delete js-remove-this"> </test-chip>
+      <mm-chip icon="xmark" class="file-attachment-item-delete js-remove-this"> </mm-chip>
     </div>
 
     <!-- ! flex-wrap: warp일 때 min-width가 fixed -->
     <!-- ! width:100% and max-width doesnt' work-->
     <br />
 
-    <test-tile>
+    <mm-tile>
       <q>
         I'm impressed by how GitHub Copilot seems to know exactly what I want to type next. GitHub
         Copilot is particularly helpful when working on React components, where it makes eerily
@@ -439,7 +432,7 @@
       <figcaption style="margin: var(--space-3) 0 0 0; color: var(--color-text-light)">
         Byline
       </figcaption>
-    </test-tile>
+    </mm-tile>
   </article>
 
   <section style="display: flex; justify-content: center; gap: 2rem; margin: 0 var(--grid-margin)">

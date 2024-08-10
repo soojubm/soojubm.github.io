@@ -1,6 +1,6 @@
 <main class="page">
-  <test-text variant="title" title="or Box">Tiles</test-text>
-  <test-text variant="body-large">연관 정보를 묶어 시각적으로 강조하는 컨테이너입니다.</test-text>
+  <mm-text variant="title" title="or Box">Tiles</mm-text>
+  <mm-text variant="body-large">연관 정보를 묶어 시각적으로 강조하는 컨테이너입니다.</mm-text>
   <!-- 추가 콘텐츠에 대한 티저로 사용할 수 있습니다 -->
   <dl class="article-aka">
     <dt>a.k.a.</dt>
@@ -17,18 +17,18 @@
   </dl>
 
   <section class="component-example">
-    <test-tile variant="flat">
-      <test-text variant="subhead">flatted with subhead</test-text>
+    <mm-tile variant="flat">
+      <mm-text variant="subhead">flatted with subhead</mm-text>
       <p style="margin: 1rem">
         문제: 크기에 따른 변별력이 없다. inset이 더 커진다면 작은 화면에서 미디어쿼리로 inset 조정이
         불가피하기 때문에 컴포넌트의 디바이스나 화면 크기에 컴포넌트가 의존된다. 솔루션: inset이
         1rem 초과할 때 콘텐츠 모듈을 가운데 정렬로 제한.
       </p>
-    </test-tile>
+    </mm-tile>
     <div style="height: var(--space-3)"></div>
-    <test-tile variant="elevated">
+    <mm-tile variant="elevated">
       <b>elevated</b>
-    </test-tile>
+    </mm-tile>
   </section>
 
   <section class="component-props">
@@ -68,74 +68,74 @@
         </li>
       </ul>
     </blockquote>
-    <test-text variant="subhead">Behavior</test-text>
-    <test-text variant="body"> flat 형태는 non-clickable. </test-text>
-    <test-text variant="body">
+    <mm-text variant="subhead">Behavior</mm-text>
+    <mm-text variant="body"> flat 형태는 non-clickable. </mm-text>
+    <mm-text variant="body">
       '클릭할 수 있음'의 기표로 elevated 스타일을 사용합니다. 타일 전체가 하나의 클릭 가능한 요소일
       수 있지만 타일 내부에 클릭 가능한 요소를 포함할 수도 있습니다.
-    </test-text>
+    </mm-text>
 
-    <test-text variant="subhead">Visual style</test-text>
-    <test-text variant="body">
+    <mm-text variant="subhead">Visual style</mm-text>
+    <mm-text variant="body">
       자식 컴포넌트에 따라 내부 간격 및 사이즈 속성이 결정됨. 이에 대한 정의. 내부에 아바타가 있을
       때 보통 small, space-2를 사용함.
-    </test-text>
-    <test-text variant="body"
-      >타일 내부 leading, tailing 엘리먼트의 시각보정이 필요할 수 있습니다.</test-text
+    </mm-text>
+    <mm-text variant="body"
+      >타일 내부 leading, tailing 엘리먼트의 시각보정이 필요할 수 있습니다.</mm-text
     >
-    <test-text variant="body">페이지 레벨의 컴포넌트의 타일을 허용할 것인가?</test-text>
+    <mm-text variant="body">페이지 레벨의 컴포넌트의 타일을 허용할 것인가?</mm-text>
 
-    <test-text variant="subhead">Changelog</test-text>
-    <test-text variant="body">flat 형태와 변별을 위해 elevated의 쉐도우를 강화.</test-text>
+    <mm-text variant="subhead">Changelog</mm-text>
+    <mm-text variant="body">flat 형태와 변별을 위해 elevated의 쉐도우를 강화.</mm-text>
 
     <br /><br />
   </section>
 
   <div style="max-width: 400px">
-    <!-- <test-menuitem size="large"> -->
+    <!-- <mm-menuitem size="large"> -->
     <!-- TODO menuitem이 불필요 내부 요소들이 컴포넌트. 그러면 메뉴아이템 자체가 불필요할 수도 있다. 이것은 합성된 역할 컴포넌트. -->
     <div style="display: flex; gap: var(--space-4); margin-bottom: 1rem">
-      <test-avatar size="huge" src="/public/images/springsteen.jpg"> </test-avatar>
+      <mm-avatar size="huge" src="/public/images/springsteen.jpg"> </mm-avatar>
       <div>
-        <test-text variant="subhead" style="margin-top: 0">전체 공개</test-text>
-        <test-text variant="word">Facebook 안팎의 모든 사람</test-text>
+        <mm-text variant="subhead" style="margin-top: 0">전체 공개</mm-text>
+        <mm-text variant="word">Facebook 안팎의 모든 사람</mm-text>
         <div style="height: var(--space-2)"></div>
-        <test-group variant="chip">
-          <test-chip variant="">React</test-chip>
-          <test-chip variant="">Java</test-chip>
-          <test-chip variant="">Phython</test-chip>
-        </test-group>
+        <mm-group variant="chip">
+          <mm-chip variant="">React</mm-chip>
+          <mm-chip variant="">Java</mm-chip>
+          <mm-chip variant="">Phython</mm-chip>
+        </mm-group>
       </div>
     </div>
-    <test-tile variant="elevated">
-      <test-avatar size="large" src="/public/images/springsteen.jpg"> </test-avatar>
+    <mm-tile variant="elevated">
+      <mm-avatar size="large" src="/public/images/springsteen.jpg"> </mm-avatar>
       <div style="height: var(--space-2)"></div>
-      <test-text variant="word-strong">Bruce Springsteen</test-text>
-      <test-text variant="word">Product Design Intern @soojubm</test-text>
+      <mm-text variant="word-strong">Bruce Springsteen</mm-text>
+      <mm-text variant="word">Product Design Intern @soojubm</mm-text>
       <div style="position: absolute; right: 1rem; top: 1rem">
-        <test-chip status="active">Follow</test-chip>
+        <mm-chip status="active">Follow</mm-chip>
       </div>
-    </test-tile>
+    </mm-tile>
     <div style="height: var(--space-4)"></div>
-    <test-tile variant="elevated">
-      <test-avatar size="large" src="/public/images/springsteen.jpg"> </test-avatar>
+    <mm-tile variant="elevated">
+      <mm-avatar size="large" src="/public/images/springsteen.jpg"> </mm-avatar>
       <div style="height: var(--space-2)"></div>
-      <test-text variant="word-strong">Bruce Springsteen</test-text>
-      <test-text variant="word">Product Design Intern @soojubm</test-text>
+      <mm-text variant="word-strong">Bruce Springsteen</mm-text>
+      <mm-text variant="word">Product Design Intern @soojubm</mm-text>
       <div style="position: absolute; right: 1rem; top: 1rem">
-        <test-chip status="active">Follow</test-chip>
+        <mm-chip status="active">Follow</mm-chip>
       </div>
-    </test-tile>
+    </mm-tile>
     <div style="height: var(--space-4)"></div>
-    <test-tile variant="elevated">
-      <test-avatar size="large" src="/public/images/springsteen.jpg"> </test-avatar>
+    <mm-tile variant="elevated">
+      <mm-avatar size="large" src="/public/images/springsteen.jpg"> </mm-avatar>
       <div style="height: var(--space-2)"></div>
-      <test-text variant="word-strong">Bruce Springsteen</test-text>
-      <test-text variant="word">Product Design Intern @soojubm</test-text>
+      <mm-text variant="word-strong">Bruce Springsteen</mm-text>
+      <mm-text variant="word">Product Design Intern @soojubm</mm-text>
       <div style="position: absolute; right: 1rem; top: 1rem">
-        <test-chip status="active">Follow</test-chip>
+        <mm-chip status="active">Follow</mm-chip>
       </div>
-    </test-tile>
+    </mm-tile>
   </div>
 
   <section class="component-case">
@@ -149,23 +149,23 @@
         border-radius: var(--radius);
       "
     >
-      <test-text variant="subhead" style="color: #fff">Quote</test-text>
+      <mm-text variant="subhead" style="color: #fff">Quote</mm-text>
       <p class="quote-body" style="color: #fff">Don't you know that God is Pooh bear?</p>
       <cite class="quote-byline">
         <div class="quote-byline-name" style="color: #fff">Jack Kerouac</div>
         <div class="quote-byline-job">Musician</div>
       </cite>
       <div style="height: 1rem"></div>
-      <test-chip>더 알아보기</test-chip>
+      <mm-chip>더 알아보기</mm-chip>
     </div>
 
-    <test-tile>
-      <test-tilebar heading="Ratings"></test-tilebar>
+    <mm-tile>
+      <mm-tilebar heading="Ratings"></mm-tilebar>
       <div aria-label="별점 5개 만점에 3.9개를 받았습니다.">
-        <test-text variant="word-weak">리뷰 116만개</test-text>
-        <test-text variant="word-large">⭐ 4.8</test-text>
+        <mm-text variant="word-weak">리뷰 116만개</mm-text>
+        <mm-text variant="word-large">⭐ 4.8</mm-text>
       </div>
-      <test-separator></test-separator>
+      <mm-separator></mm-separator>
       <div class="graph2">
         <b class="graph-label">5 Stars</b>
         <span class="graph-value">68%</span>
@@ -178,105 +178,105 @@
         <progress class="progress" value="40" max="100">40%</progress>
       </div>
       <small>별 다섯개에서 점수만큼 채우는 유아이는 최근 잘 보이지 않는다. 구현이 어려움.</small>
-    </test-tile>
+    </mm-tile>
 
-    <test-tile>
-      <test-avatar>🥫</test-avatar>
-      <test-text variant="subhead">Quote</test-text>
-      <test-text variant="body">Don't you know that God is Pooh bear?</test-text>
+    <mm-tile>
+      <mm-avatar>🥫</mm-avatar>
+      <mm-text variant="subhead">Quote</mm-text>
+      <mm-text variant="body">Don't you know that God is Pooh bear?</mm-text>
       <div style="height: var(--space-2)"></div>
       <cite class="quote-byline">
-        <test-text variant="word-strong">Jack Kerouac</test-text>
-        <test-text variant="word-weak">Poet / Novelist</test-text>
+        <mm-text variant="word-strong">Jack Kerouac</mm-text>
+        <mm-text variant="word-weak">Poet / Novelist</mm-text>
       </cite>
       <div style="height: 1rem"></div>
-      <test-group variant="chip">
-        <test-chip>더 알아보기</test-chip>
-        <test-chip class="quote-later">지금은 괜찮아요</test-chip>
-      </test-group>
-    </test-tile>
+      <mm-group variant="chip">
+        <mm-chip>더 알아보기</mm-chip>
+        <mm-chip class="quote-later">지금은 괜찮아요</mm-chip>
+      </mm-group>
+    </mm-tile>
 
-    <test-tile variant="" role="listitem">
-      <div style="margin-top: -0.125rem"><test-text variant="subhead">2022년 3월</test-text></div>
+    <mm-tile variant="" role="listitem">
+      <div style="margin-top: -0.125rem"><mm-text variant="subhead">2022년 3월</mm-text></div>
       <!-- FIXME:: tile 안에서의 subhead와 body -->
       <div style="margin-top: 0.5rem">
-        <test-text variant="body" truncated="true">
+        <mm-text variant="body" truncated="true">
           텍스트는 최대 두 줄 무야호 따봉 북마크 장바구니 등의 액션이 있을 수 있고 내부 외부
           가이드를 만들어야해
-        </test-text>
+        </mm-text>
       </div>
       <div style="height: var(--space-3)"></div>
-      <test-link>자세히 알아보기</test-link>
+      <mm-link>자세히 알아보기</mm-link>
       <div style="height: var(--space-3)"></div>
       <figure style="border-radius: var(--radius); height: 120px; overflow: hidden">
         <img src="/public/images/springsteen.jpg" alt="" />
       </figure>
-    </test-tile>
+    </mm-tile>
 
-    <test-tile variant="" role="listitem">
-      <test-tag slot="category" variant="primary">카테고리</test-tag>
-      <test-chip slot="action" icon="more-vert"> </test-chip>
+    <mm-tile variant="" role="listitem">
+      <mm-tag slot="category" variant="primary">카테고리</mm-tag>
+      <mm-chip slot="action" icon="more-vert"> </mm-chip>
       <figure class="media">
         <img src="/public/images/springsteen.jpg" alt="" />
       </figure>
       <div style="height: var(--space-2)"></div>
-      <test-menuitem label="수줍이" description="2년 전">
-        <test-avatar slot="avatar" size="small"></test-avatar>
-      </test-menuitem>
+      <mm-menuitem label="수줍이" description="2년 전">
+        <mm-avatar slot="avatar" size="small"></mm-avatar>
+      </mm-menuitem>
       <div style="height: var(--space-2)"></div>
-      <test-text variant="body-bold">카드 유아이</test-text>
-      <test-text variant="body">
+      <mm-text variant="body-bold">카드 유아이</mm-text>
+      <mm-text variant="body">
         텍스트는 최대 두 줄 무야호 따봉 북마크 장바구니 등의 액션이 있을 수 있고 내부 외부 가이드를
         만들어야해
-      </test-text>
+      </mm-text>
       <div style="height: var(--space-3)"></div>
-      <test-group variant="tag">
-        <test-tag variant="hashtag">프로젝트관리</test-tag>
-        <test-tag variant="hashtag">프로덕트디자인</test-tag>
-        <test-tag variant="hashtag">프론트엔드개발</test-tag>
-      </test-group>
+      <mm-group variant="tag">
+        <mm-tag variant="hashtag">프로젝트관리</mm-tag>
+        <mm-tag variant="hashtag">프로덕트디자인</mm-tag>
+        <mm-tag variant="hashtag">프론트엔드개발</mm-tag>
+      </mm-group>
       <div style="height: var(--space-2)"></div>
-      <test-tag class="card-note">마일리지 적립 200P</test-tag>
+      <mm-tag class="card-note">마일리지 적립 200P</mm-tag>
       <div style="height: var(--space-3)"></div>
-      <test-menuitem size="large" label="퓨어 오렌지 주스" description="">
-        <test-avatar slot="avatar" size="large">🍊</test-avatar>
+      <mm-menuitem size="large" label="퓨어 오렌지 주스" description="">
+        <mm-avatar slot="avatar" size="large">🍊</mm-avatar>
         <div><del>₩19,000</del> ₩16,000 <em>할인율 20%</em></div>
-      </test-menuitem>
-    </test-tile>
+      </mm-menuitem>
+    </mm-tile>
     <!-- TODO: menuitem이 애매한 네이밍 -->
     <!-- avatar with bold text -->
-    <test-tile variant="flat">
-      <test-avatar style="background: aliceblue">
-        <test-icon name="graph-up"></test-icon>
-      </test-avatar>
+    <mm-tile variant="flat">
+      <mm-avatar style="background: aliceblue">
+        <mm-icon name="graph-up"></mm-icon>
+      </mm-avatar>
       <div style="height: var(--space-3)"></div>
       <b class="item-name">상해종합주가지수</b>
       <p class="item-description" style="margin: 0 0 0.5rem">2999.55p</p>
-      <test-tag variant="up">4.33% 상승</test-tag>
+      <mm-tag variant="up">4.33% 상승</mm-tag>
       <div style="margin-top: 0.5rem; color: var(--color-text-light); line-height: 1.2">
         <small>10분 지연. live</small>
         <br />
         <small>현지 시간 기준 10.27. 01:27</small>
       </div>
-    </test-tile>
+    </mm-tile>
 
-    <test-tile variant="flat">
-      <test-tag style="position: absolute; left: -0.25rem; top: var(--space-3)">
+    <mm-tile variant="flat">
+      <mm-tag style="position: absolute; left: -0.25rem; top: var(--space-3)">
         🔥 Most Popular
-      </test-tag>
+      </mm-tag>
       <div style="height: 2rem"></div>
-      <test-text variant="subhead">Standard</test-text>
-      <test-text variant="body">
+      <mm-text variant="subhead">Standard</mm-text>
+      <mm-text variant="body">
         전직대통령의 신분과 예우에 관하여는 법률로 정한다. 대법원장은 국회의 동의를 얻어 대통령이
         임명한다.
-      </test-text>
+      </mm-text>
       <br />
       <div class="pricing-item-price">
         <span class="pricing-item-price-per">한 달에 한 번</span>
-        <test-text variant="title">₩ 6,800</test-text>
+        <mm-text variant="title">₩ 6,800</mm-text>
       </div>
       <!-- <div>
-          <test-text variant="subhead"><em>iCloud+</em> 50GB</test-text>
+          <mm-text variant="subhead"><em>iCloud+</em> 50GB</mm-text>
           <span>₩1,100/월 </span>
         </div> -->
       <ul class="checklist" style="margin: 0.5rem 0 1.5rem 0">
@@ -284,52 +284,52 @@
         <li>Google 전문가와의 상담</li>
         <li>회원을 위한 추가 혜택</li>
       </ul>
-      <test-group>
-        <test-button variant="primary">업그레이드</test-button>
-        <test-button variant="text">And More...</test-button>
-      </test-group>
-    </test-tile>
+      <mm-group>
+        <mm-button variant="primary">업그레이드</mm-button>
+        <mm-button variant="text">And More...</mm-button>
+      </mm-group>
+    </mm-tile>
 
-    <test-tile>
-      <test-tile variant="elevated">
-        <test-menuitem>
-          <test-avatar slot="avatar" size="huge"></test-avatar>
+    <mm-tile>
+      <mm-tile variant="elevated">
+        <mm-menuitem>
+          <mm-avatar slot="avatar" size="huge"></mm-avatar>
           <div slot="text">
-            <test-text variant="word-large">개인</test-text>
-            <test-text variant="body">Apple One</test-text>
-            <test-text variant="label">가족 구독</test-text>
+            <mm-text variant="word-large">개인</mm-text>
+            <mm-text variant="body">Apple One</mm-text>
+            <mm-text variant="label">가족 구독</mm-text>
           </div>
-        </test-menuitem>
-        <test-separator></test-separator>
+        </mm-menuitem>
+        <mm-separator></mm-separator>
 
-        <test-group alignment="vertical">
-          <test-keyvalue key="이용기간" value="23.04.09. ~ 23.05.02."> </test-keyvalue>
-          <test-keyvalue key="이번 달 결제금액" value="4,258원"> </test-keyvalue>
-          <test-keyvalue key="다음 결제일" value="2023. 3. 10."> </test-keyvalue>
-        </test-group>
+        <mm-group alignment="vertical">
+          <mm-keyvalue key="이용기간" value="23.04.09. ~ 23.05.02."> </mm-keyvalue>
+          <mm-keyvalue key="이번 달 결제금액" value="4,258원"> </mm-keyvalue>
+          <mm-keyvalue key="다음 결제일" value="2023. 3. 10."> </mm-keyvalue>
+        </mm-group>
 
         <ul class="checklist" style="margin: var(--space-4) 0 0 0">
           <li>다음 청구일은 2023. 3. 10.입니다.</li>
           <li>언제든 해지 가능합니다. 혜택 약관이 적용됩니다.</li>
         </ul>
-        <test-text variant="caption">
+        <mm-text variant="caption">
           약정 기간이 없습니다. 갱신일 최소 하루 전까지 설정 > Apple ID에서 언제든지 취소할 수
           있습니다. 취소할 때까지 요금제가 자동 갱신됩니다.
-        </test-text>
-        <test-separator></test-separator>
+        </mm-text>
+        <mm-separator></mm-separator>
         <p style="color: var(--color-text-light)">계정: soojubm@gmail.com</p>
-      </test-tile>
-    </test-tile>
+      </mm-tile>
+    </mm-tile>
 
-    <test-tile>
-      <test-text variant="subhead">Senior Front-end Developer</test-text>
-      <test-group variant="hashtag">
-        <test-tag variant="hashtag">Full-Time</test-tag>
-        <test-tag variant="hashtag">Korea</test-tag>
-        <test-tag variant="hashtag">Remote friendly</test-tag>
-      </test-group>
+    <mm-tile>
+      <mm-text variant="subhead">Senior Front-end Developer</mm-text>
+      <mm-group variant="hashtag">
+        <mm-tag variant="hashtag">Full-Time</mm-tag>
+        <mm-tag variant="hashtag">Korea</mm-tag>
+        <mm-tag variant="hashtag">Remote friendly</mm-tag>
+      </mm-group>
       <div style="height: var(--space-3)"></div>
-      <!-- <test-chip>View Job</test-chip> -->
+      <!-- <mm-chip>View Job</mm-chip> -->
       <button
         style="
           display: flex;
@@ -342,9 +342,9 @@
         "
       >
         View Job
-        <test-icon name="arrow-right"></test-icon>
+        <mm-icon name="arrow-right"></mm-icon>
       </button>
-    </test-tile>
+    </mm-tile>
     <picture>
       <source
         srcset="photo-light.png"

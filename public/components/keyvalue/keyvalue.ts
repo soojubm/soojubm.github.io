@@ -12,11 +12,11 @@ class Keyvalue extends HTMLElement {
     const slot = document.createElement('slot')
     slot.name = 'slot'
 
-    const keyText = document.createElement('test-text')
+    const keyText = document.createElement('mm-text')
     keyText.setAttribute('variant', 'label')
     keyText.innerText = this.key || ''
 
-    const valueText = document.createElement('test-text')
+    const valueText = document.createElement('mm-text')
     valueText.setAttribute('variant', this.size === 'large' ? 'word-large' : 'word')
     valueText.innerText = this.value || ''
 

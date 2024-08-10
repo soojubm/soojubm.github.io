@@ -19,15 +19,15 @@
           background: linear-gradient(to top, rgb(32, 33, 36) 0, rgba(0, 0, 0, 0) 56%);
         "
       ></div> -->
-    <test-group variant="tag">
-      <test-tag variant="primary">개봉예정 D-12</test-tag>
-      <test-tag>액션</test-tag>
-      <test-tag>모험</test-tag>
-      <test-tag>범죄</test-tag>
-    </test-group>
+    <mm-group variant="tag">
+      <mm-tag variant="primary">개봉예정 D-12</mm-tag>
+      <mm-tag>액션</mm-tag>
+      <mm-tag>모험</mm-tag>
+      <mm-tag>범죄</mm-tag>
+    </mm-group>
     <div style="height: var(--space-4)"></div>
-    <test-text variant="title">쿨 핸드 루크</test-text>
-    <test-text variant="subhead">Cool Hand Luke</test-text>
+    <mm-text variant="title">쿨 핸드 루크</mm-text>
+    <mm-text variant="subhead">Cool Hand Luke</mm-text>
     <div style="height: var(--space-4)"></div>
     <section class="cake-meta">
       <!-- // todo naming :: time / byline -->
@@ -54,76 +54,76 @@
           루크 잭슨은 술이 취한 상태에서 물건을 부수는 바람에 흉악범이 아님에도 불구하고 중노동형을
           선고 받는다.죄수들의 리더는 새로 들어온 신입죄수 루크의 요령피우는 태도가 눈에 거슬려
           루크에게 싸움을 건다. 모두들 리더와 도라의 압도적인 승리로 끝나리라 예상한다.
-          <test-link href="#" style="margin-left: var(--space-2)">더 보기</test-link>
+          <mm-link href="#" style="margin-left: var(--space-2)">더 보기</mm-link>
         </dd>
       </dl>
 
-      <test-group style="gap: 2rem; margin: 1.5rem 0 var(--space-1) 0">
+      <mm-group style="gap: 2rem; margin: 1.5rem 0 var(--space-1) 0">
         <div>
-          <test-text variant="word-weak">리뷰 116개</test-text>
-          <test-text variant="word-large">⭐ 4.8</test-text>
+          <mm-text variant="word-weak">리뷰 116개</mm-text>
+          <mm-text variant="word-large">⭐ 4.8</mm-text>
         </div>
         <div>
-          <test-text variant="word-weak">Tomatometer</test-text>
-          <test-text variant="word-large">🍅 97%</test-text>
+          <mm-text variant="word-weak">Tomatometer</mm-text>
+          <mm-text variant="word-large">🍅 97%</mm-text>
         </div>
         <div>
-          <test-text variant="word-weak">등급</test-text>
-          <test-text variant="word-large">18세 이상</test-text>
+          <mm-text variant="word-weak">등급</mm-text>
+          <mm-text variant="word-large">18세 이상</mm-text>
         </div>
-      </test-group>
+      </mm-group>
     </section>
     <div style="height: 2rem"></div>
-    <test-group variant="button">
-      <test-button variant="primary">에피소드 1 보기</test-button>
-      <test-button variant="tertiary"> 관심이 </test-button>
-    </test-group>
+    <mm-group variant="button">
+      <mm-button variant="primary">에피소드 1 보기</mm-button>
+      <mm-button variant="tertiary"> 관심이 </mm-button>
+    </mm-group>
   </header>
 
-  <test-separator></test-separator>
+  <mm-separator></mm-separator>
 
-  <test-tablist class="tablist">
-    <test-tab slot="tab" name="project" selected="true" data-index="1"> 주요정보 </test-tab>
-    <test-tab slot="tab" name="case-study" selected="false" data-index="2"> 안주요정보 </test-tab>
-    <test-tab slot="tab" name="blank" selected="false" data-index="3">평가 </test-tab>
+  <mm-tablist class="tablist">
+    <mm-tab slot="tab" name="project" selected="true" data-index="1"> 주요정보 </mm-tab>
+    <mm-tab slot="tab" name="case-study" selected="false" data-index="2"> 안주요정보 </mm-tab>
+    <mm-tab slot="tab" name="blank" selected="false" data-index="3">평가 </mm-tab>
     <i class="tablist-indicator"></i>
-  </test-tablist>
+  </mm-tablist>
 
   <section class="cake-info" aria-hidden="false" data-index="1">
-    <test-text variant="subhead">출연진. 엔티티가 아니라 카드이어야.</test-text>
-    <test-text variant="body"></test-text>
-    <test-group variant="chip">
-      <test-entity label="수줍이" description="감독">
-        <test-avatar slot="avatar" variant="secondary" size="huge"></test-avatar>
-      </test-entity>
-      <test-entity size="huge" label="스튜어트 로젠버그" description="주연">
-        <test-avatar
+    <mm-text variant="subhead">출연진. 엔티티가 아니라 카드이어야.</mm-text>
+    <mm-text variant="body"></mm-text>
+    <mm-group variant="chip">
+      <mm-entity label="수줍이" description="감독">
+        <mm-avatar slot="avatar" variant="secondary" size="huge"></mm-avatar>
+      </mm-entity>
+      <mm-entity size="huge" label="스튜어트 로젠버그" description="주연">
+        <mm-avatar
           slot="avatar"
           size="huge"
           variant="secondary"
           src="/public/images/springsteen.jpg"
-        ></test-avatar>
-        <test-tag slot="badge">Director</test-tag>
-      </test-entity>
-      <test-entity size="huge" label="폴 뉴먼" description="주연">
-        <test-avatar slot="avatar" size="huge"></test-avatar>
-      </test-entity>
-      <test-entity size="huge" label="폴 뉴먼" description="주연">
-        <test-avatar slot="avatar" size="huge"></test-avatar>
-      </test-entity>
-    </test-group>
+        ></mm-avatar>
+        <mm-tag slot="badge">Director</mm-tag>
+      </mm-entity>
+      <mm-entity size="huge" label="폴 뉴먼" description="주연">
+        <mm-avatar slot="avatar" size="huge"></mm-avatar>
+      </mm-entity>
+      <mm-entity size="huge" label="폴 뉴먼" description="주연">
+        <mm-avatar slot="avatar" size="huge"></mm-avatar>
+      </mm-entity>
+    </mm-group>
   </section>
   <section class="cake-info">
-    <test-text variant="subhead">수상내역</test-text>
+    <mm-text variant="subhead">수상내역</mm-text>
     <div style="height: var(--space-3)"></div>
     <div>
-      <test-text variant="label">Academy Awards</test-text>
-      <test-text variant="body">Best Actor</test-text>
-      <test-text variant="body">Best Supporting Actor</test-text>
-      <test-text variant="body">Best Screenplay – Based on Material from Another Medium</test-text>
-      <test-text variant="body">Best Original Music Score</test-text>
+      <mm-text variant="label">Academy Awards</mm-text>
+      <mm-text variant="body">Best Actor</mm-text>
+      <mm-text variant="body">Best Supporting Actor</mm-text>
+      <mm-text variant="body">Best Screenplay – Based on Material from Another Medium</mm-text>
+      <mm-text variant="body">Best Original Music Score</mm-text>
       <br />
-      <test-text variant="label">포켓 와이파이</test-text>
+      <mm-text variant="label">포켓 와이파이</mm-text>
       <p>데이터 요금 폭탄 걱정없이 전세계 어디서나 와이파이를 이용하세요.</p>
       <p>일반 문의 09:00-22:00</p>
       <p>실시간 항공권 문의 09:00-18:00</p>
@@ -133,7 +133,7 @@
     </div>
   </section>
   <section class="cake-info">
-    <test-text variant="subhead">리뷰</test-text>
+    <mm-text variant="subhead">리뷰</mm-text>
     <div style="height: var(--space-3)"></div>
     <p>
       이 호텔에는 레스토랑, 사우나, 셀프 주차(요금 별도) 등이 마련되어 있습니다. 공용 장소에서의
@@ -141,7 +141,7 @@
       시설 내에 마련되어 있습니다.
     </p>
     <footer>
-      <test-link href="#">Read More Reviews</test-link>
+      <mm-link href="#">Read More Reviews</mm-link>
     </footer>
   </section>
 </main>

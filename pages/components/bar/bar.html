@@ -1,62 +1,62 @@
 <main class="page">
   <article class="article js-observer js-scrollspy-section">
-    <test-text variant="title">Menubar</test-text>
-    <test-text variant="body-large"> toolbar / chip group / role=menubar</test-text>
+    <mm-text variant="title">Menubar</mm-text>
+    <mm-text variant="body-large"> toolbar / chip group / role=menubar</mm-text>
     <section class="component-example">
       <menu role="menubar" style="display: flex; align-items: center">
-        <test-checkbox>28 selected</test-checkbox>
-        <test-chip icon="bonfire" style="margin-left: auto"> </test-chip>
-        <test-chip variant="plain" icon="more-vert"> </test-chip>
+        <mm-checkbox>28 selected</mm-checkbox>
+        <mm-chip icon="bonfire" style="margin-left: auto"> </mm-chip>
+        <mm-chip variant="plain" icon="more-vert"> </mm-chip>
       </menu>
-      <test-separator></test-separator>
-      <test-group variant="chip" role="menubar">
-        <test-textfield size="small" hiddenLabel="false" placeholder="검색꾸">
-          <!-- <test-avatar slot="prefix" icon="search"></test-avatar> -->
-          <test-icon slot="prefix" name="search"></test-icon>
-        </test-textfield>
-        <test-chip variant="" name="Filter">
-          <test-icon slot="suffix" name="nav-arrow-down"></test-icon>
+      <mm-separator></mm-separator>
+      <mm-group variant="chip" role="menubar">
+        <mm-textfield size="small" hiddenLabel="false" placeholder="검색꾸">
+          <!-- <mm-avatar slot="prefix" icon="search"></mm-avatar> -->
+          <mm-icon slot="prefix" name="search"></mm-icon>
+        </mm-textfield>
+        <mm-chip variant="" name="Filter">
+          <mm-icon slot="suffix" name="nav-arrow-down"></mm-icon>
           Created by anyone
-        </test-chip>
-        <test-chip variant="" name="Sort">
+        </mm-chip>
+        <mm-chip variant="" name="Sort">
           Last modified
-          <test-icon slot="suffix" name="nav-arrow-down"></test-icon>
-        </test-chip>
-      </test-group>
+          <mm-icon slot="suffix" name="nav-arrow-down"></mm-icon>
+        </mm-chip>
+      </mm-group>
     </section>
   </article>
 
   <article class="article js-observer js-scrollspy-section">
-    <test-text variant="title">Title bar / Page header / TopAppBar(md)</test-text>
-    <test-text variant="body-large"> 모바일 친화적인 헤더. 페이지 헤더 역할.</test-text>
+    <mm-text variant="title">Title bar / Page header / TopAppBar(md)</mm-text>
+    <mm-text variant="body-large"> 모바일 친화적인 헤더. 페이지 헤더 역할.</mm-text>
 
     <section class="component-example">
-      <test-titlebar heading="수줍이님 뒤로가기 아이콘이 없는 형태가 필요" role="navigation">
-        <test-group slot="action" variant="chip">
-          <test-chip variant="plain" icon="cart"> </test-chip>
-          <test-chip variant="plain" icon="cart"> </test-chip>
-        </test-group>
-      </test-titlebar>
-      <test-separator></test-separator>
-      <test-titlebar heading="Product" role="navigation">
-        <test-chip slot="action" variant="plain" icon="cart"> </test-chip>
-      </test-titlebar>
+      <mm-titlebar heading="수줍이님 뒤로가기 아이콘이 없는 형태가 필요" role="navigation">
+        <mm-group slot="action" variant="chip">
+          <mm-chip variant="plain" icon="cart"> </mm-chip>
+          <mm-chip variant="plain" icon="cart"> </mm-chip>
+        </mm-group>
+      </mm-titlebar>
+      <mm-separator></mm-separator>
+      <mm-titlebar heading="Product" role="navigation">
+        <mm-chip slot="action" variant="plain" icon="cart"> </mm-chip>
+      </mm-titlebar>
       <!-- <div class="titlebar-backdrop js-header"></div> -->
-      <test-separator></test-separator>
-      <test-titlebar class="js-titlebar" role="navigation" data-size="large">
-        <test-group slot="action" variant="chip">
-          <test-chip>저장</test-chip>
-          <test-chip
+      <mm-separator></mm-separator>
+      <mm-titlebar class="js-titlebar" role="navigation" data-size="large">
+        <mm-group slot="action" variant="chip">
+          <mm-chip>저장</mm-chip>
+          <mm-chip
             class="titlebar-back"
             icon="more-vert"
             onclick="javascript:window.location.href='/';"
           >
-          </test-chip>
-        </test-group>
-      </test-titlebar>
+          </mm-chip>
+        </mm-group>
+      </mm-titlebar>
     </section>
     <section class="component-props">
-      <test-text variant="subhead">Props</test-text>
+      <mm-text variant="subhead">Props</mm-text>
       <dl>
         <dt>title<attr>?</attr></dt>
         <dd>string</dd>
@@ -83,14 +83,14 @@
       </dl>
     </section>
     <section class="component-guide">
-      <test-text variant="subhead">Changelog</test-text>
-      <test-text variant="body">
+      <mm-text variant="subhead">Changelog</mm-text>
+      <mm-text variant="body">
         2401 뒤로가기 버튼이 chip과 달라야 콘텐츠와 제목 영역의 위계가 잡힘. 새로운 칩 추가.
-      </test-text>
-      <test-text variant="body"> 231230 backSlot 제거 </test-text>
+      </mm-text>
+      <mm-text variant="body"> 231230 backSlot 제거 </mm-text>
     </section>
     <section class="component-references">
-      <test-text variant="subhead">References</test-text>
+      <mm-text variant="subhead">References</mm-text>
       <a href="https://m3.material.io/components/top-app-bar/overview" target="_blank">
         MD3 top app bar
       </a>
@@ -98,8 +98,8 @@
   </article>
 
   <article class="article js-observer js-scrollspy-section">
-    <test-text variant="title">Bottom Bar / Bottom Navigation</test-text>
-    <test-text variant="body-large">모바일 환경의 글로벌 네비게이션.</test-text>
+    <mm-text variant="title">Bottom Bar / Bottom Navigation</mm-text>
+    <mm-text variant="body-large">모바일 환경의 글로벌 네비게이션.</mm-text>
 
     <dl class="article-aka">
       <dt>a.k.a.</dt>
@@ -109,23 +109,23 @@
     <section class="component-example">
       <nav class="bottombar">
         <a href="#" class="bottombar-item is-active">
-          <test-avatar variant="tertiary" icon="air-conditioner"> </test-avatar>
+          <mm-avatar variant="tertiary" icon="air-conditioner"> </mm-avatar>
           <span class="bottombar-item-label">홈</span>
           <em></em>
         </a>
         <a href="#" class="bottombar-item">
-          <test-avatar variant="tertiary" icon="air-conditioner"> </test-avatar>
+          <mm-avatar variant="tertiary" icon="air-conditioner"> </mm-avatar>
           <span class="bottombar-item-label">카테고리</span>
         </a>
         <a href="#" class="bottombar-item">
-          <test-avatar variant="tertiary" icon="air-conditioner"> </test-avatar>
+          <mm-avatar variant="tertiary" icon="air-conditioner"> </mm-avatar>
           <span class="bottombar-item-label">설정</span>
         </a>
       </nav>
     </section>
 
     <section class="component-props">
-      <test-text variant="subhead">Props</test-text>
+      <mm-text variant="subhead">Props</mm-text>
       <dl>
         <dt>test<attr>?</attr></dt>
         <dd>test</dd>
@@ -149,7 +149,7 @@
     </section>
 
     <div class="component-references">
-      <test-text variant="subhead">References</test-text>
+      <mm-text variant="subhead">References</mm-text>
       <a href="https://m2.material.io/components/bottom-navigation" target="_blank"
         >M2 Bottom Navigation</a
       >

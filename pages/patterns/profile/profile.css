@@ -29,7 +29,7 @@
 .profile-body {padding:0 0 64px calc(320px + var(--size-large));box-sizing:border-box;position:relative;}
 
 .tabpanel {display:flex;flex-wrap:wrap;justify-content:space-between;}
-.tabpanel test-tile {width:calc(33.3333% - .75rem);}
+.tabpanel mm-tile {width:calc(33.3333% - .75rem);}
 
 @media (max-width: 1320px) {
   .profile {max-width:1000px;}
@@ -43,7 +43,7 @@
 
 @media (max-width: 800px) {
   .profile {max-width:var(--width-medium);}
-  .tabpanel test-tile {
+  .tabpanel mm-tile {
     width:100%;
   }
 }

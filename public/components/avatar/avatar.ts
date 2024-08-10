@@ -22,7 +22,7 @@ class Avatar extends HTMLElement {
 
     // TODO chip와 공통
     if (this.icon) {
-      const icon = document.createElement('test-icon')
+      const icon = document.createElement('mm-icon')
       icon.setAttribute('name', this.icon)
 
       container.ariaLabel = this.ariaLabel

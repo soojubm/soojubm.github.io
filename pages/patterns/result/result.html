@@ -1,8 +1,8 @@
 <main class="page">
   <article class="article">
-    <test-text variant="title">Result</test-text>
-    <test-text variant="body-large"
-      >실행 결과. 완료Complete. 오류Error. 내용없음Result. 비공개.</test-text
+    <mm-text variant="title">Result</mm-text>
+    <mm-text variant="body-large"
+      >실행 결과. 완료Complete. 오류Error. 내용없음Result. 비공개.</mm-text
     >
 
     <dl class="article-aka">
@@ -13,27 +13,27 @@
 
     <section class="component-example">
       <div style="width: 100%; max-width: 800px">
-        <test-result
+        <mm-result
           label="주문을 확인해주세요."
           description="헌법재판소 재판관의 임기는 6년으로 하며, 법률이 정하는 바에 의하여 연임할 수 있다. 대통령은 법률안의 일부에 대하여 또는 법률안을 수정하여 재의를 요구할 수 없다."
         >
-          <test-avatar slot="avatar" size="huge"></test-avatar>
-          <test-group slot="list" alignment="vertical">
-            <test-keyvalue key="주문일자" value="2019-08-10"> </test-keyvalue>
-            <test-keyvalue key="결제금액" value="₩ 54,000"> </test-keyvalue>
-          </test-group>
-          <test-group slot="action" variant="button">
-            <test-button variant="tertiary">홈으로</test-button>
-            <test-button variant="primary">주문내역 보기</test-button>
-          </test-group>
-        </test-result>
-        <test-separator></test-separator>
+          <mm-avatar slot="avatar" size="huge"></mm-avatar>
+          <mm-group slot="list" alignment="vertical">
+            <mm-keyvalue key="주문일자" value="2019-08-10"> </mm-keyvalue>
+            <mm-keyvalue key="결제금액" value="₩ 54,000"> </mm-keyvalue>
+          </mm-group>
+          <mm-group slot="action" variant="button">
+            <mm-button variant="tertiary">홈으로</mm-button>
+            <mm-button variant="primary">주문내역 보기</mm-button>
+          </mm-group>
+        </mm-result>
+        <mm-separator></mm-separator>
         <!-- TODO list -->
-        <test-result
+        <mm-result
           label="페이지를 찾지 못했습니다."
           description="아래 내용을 다시 한 번 확인해 주세요."
         >
-          <test-avatar slot="avatar" size="huge"></test-avatar>
+          <mm-avatar slot="avatar" size="huge"></mm-avatar>
           <div slot="list">
             <blockquote>
               <ul class="checklist">
@@ -44,16 +44,16 @@
             </blockquote>
             <p>그래도 문제가 해결되지 않으신다면, 고객센터를 통해 문의 부탁드립니다.</p>
           </div>
-          <test-group slot="action" variant="button">
-            <test-button variant="tertiary">홈으로</test-button>
-            <test-button variant="primary">고객선테 문의</test-button>
-          </test-group>
-        </test-result>
+          <mm-group slot="action" variant="button">
+            <mm-button variant="tertiary">홈으로</mm-button>
+            <mm-button variant="primary">고객선테 문의</mm-button>
+          </mm-group>
+        </mm-result>
       </div>
     </section>
 
     <section class="component-props">
-      <test-text variant="subhead">Props</test-text>
+      <mm-text variant="subhead">Props</mm-text>
       <dl>
         <dt>title<abbr>?</abbr></dt>
         <dd>string</dd>
@@ -74,22 +74,22 @@
     </section>
 
     <section class="component-guide">
-      <test-text variant="subhead">
+      <mm-text variant="subhead">
         페이지 레벨 또는 섹션 레벨의 empty, error, complete 상태에서 사용합니다.
-      </test-text>
-      <test-text variant="body">용법.</test-text>
+      </mm-text>
+      <mm-text variant="body">용법.</mm-text>
 
-      <test-text variant="subhead">텍스트 모듈의 변별 (상위 원칙에서 취할 수 있는 방법?)</test-text>
-      <test-text variant="body"
+      <mm-text variant="subhead">텍스트 모듈의 변별 (상위 원칙에서 취할 수 있는 방법?)</mm-text>
+      <mm-text variant="body"
         >왼쪽 정렬의 기본적인 텍스트 모듈과 달리 가운데 정렬로 대비를 높입니다. 콘텐츠 모듈로 콘텐츠
-        간의 맥락 전환을 시각화하는 것이 foundation 중 하나.</test-text
+        간의 맥락 전환을 시각화하는 것이 foundation 중 하나.</mm-text
       >
-      <test-text variant="subhead">ErrorFallback</test-text>
+      <mm-text variant="subhead">ErrorFallback</mm-text>
 
-      <test-callout variant="danger">
+      <mm-callout variant="danger">
         전반적인 원칙에 의거 dialog와 콘텐츠 모듈을 통일하는 것이 좋을 것. 모달이거나 논모달의
         차이로 구별할 수도.
-      </test-callout>
+      </mm-callout>
     </section>
   </article>
 </main>

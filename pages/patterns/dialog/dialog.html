@@ -1,10 +1,10 @@
 <main class="page" role="" aria-label="site">
   <article class="article js-observer js-scrollspy-section">
-    <test-text variant="title">Dialog</test-text>
-    <test-text variant="body-large">
+    <mm-text variant="title">Dialog</mm-text>
+    <mm-text variant="body-large">
       사용자의 정보나 재산의 변경 또는 삭제 확인. 사용자는 모달 형태의 집중된 환경에서 리스크를
       관리할 수 있습니다.
-    </test-text>
+    </mm-text>
 
     <dl class="article-aka">
       <dt>a.k.a.</dt>
@@ -23,12 +23,12 @@
           aria-describedby="dialog-description2"
         >
           <div role="document" tabindex="0">
-            <test-text variant="subhead">AlertDialg</test-text>
-            <!-- <test-text variant="subhead" class="dialog-title" id="dialog-title1"></test-text> -->
+            <mm-text variant="subhead">AlertDialg</mm-text>
+            <!-- <mm-text variant="subhead" class="dialog-title" id="dialog-title1"></mm-text> -->
             <p class="dialog-description" id="dialog-description1">부끄러우니까 보지마요!</p>
             <button class="dialog-close js-close" aria-label="delete"></button>
             <footer class="dialog-foot">
-              <test-button variant="primary">확인</test-button>
+              <mm-button variant="primary">확인</mm-button>
             </footer>
           </div>
         </aside>
@@ -42,7 +42,7 @@
         >
           <header class="dialog-head">
             <!-- <h1 class="dialog-title" id="dialog-title">페이지를 나가시겠어요?</h1> -->
-            <test-text variant="subhead" class="dialog-title">페이지를 나가시겠어요?</test-text>
+            <mm-text variant="subhead" class="dialog-title">페이지를 나가시겠어요?</mm-text>
             <button class="dialog-close js-close" aria-label="delete"></button>
           </header>
           <div class="dialog-body">
@@ -52,18 +52,18 @@
             <!-- <p class="dialog-description" id="dialog-description">
               아직 게시물을 공유하지 않았습니다. 게시하지 않고 나가시겠어요?
             </p> -->
-            <!-- <test-text variant="subhead" class="dialog-title" id="dialog-title2"></test-text> -->
+            <!-- <mm-text variant="subhead" class="dialog-title" id="dialog-title2"></mm-text> -->
           </div>
-          <test-group variant="button" class="dialog-foot">
-            <test-button variant="tertiary">계속 수정하기</test-button>
-            <test-button variant="primary">나가기</test-button>
-          </test-group>
+          <mm-group variant="button" class="dialog-foot">
+            <mm-button variant="tertiary">계속 수정하기</mm-button>
+            <mm-button variant="primary">나가기</mm-button>
+          </mm-group>
         </aside>
       </div>
     </section>
 
     <section class="component-props">
-      <test-text variant="subhead">Props</test-text>
+      <mm-text variant="subhead">Props</mm-text>
       <dl>
         <dt>title</dt>
         <dd>string</dd>
@@ -85,25 +85,25 @@
     </section>
 
     <section class="component-guide">
-      <test-text variant="subhead">Best practices</test-text>
-      <test-text variant="body">
+      <mm-text variant="subhead">Best practices</mm-text>
+      <mm-text variant="body">
         단순 다이얼로그는 복잡한 구조가 필요없다. 모달리티 컨텐츠 뷰에서 head/body/foot 구조가
         필요한데, 이것은 페이지 모듈과 동일하다.
-      </test-text>
-      <test-text variant="body">
+      </mm-text>
+      <mm-text variant="body">
         레이어를 2개 이상 쌓지 마세요. 풀스크린 모달에서 다이얼로그를 띄울 수 있어야 할까? 인풋
         모달을 닫았을 때 데이터 손실 확인 다이얼로그를 띄우지 않는 방법. 닫고 나서 입력 정보를
         로컬에서 가지고 있어야.
-      </test-text>
+      </mm-text>
       <!-- <li>buttonGroup type="unary(confirm) | binary(cancel/confirm). 이런 정의는 불필요하다.</li> -->
 
-      <test-text variant="subhead">Contents</test-text>
-      <test-text variant="body"
+      <mm-text variant="subhead">Contents</mm-text>
+      <mm-text variant="body"
         >프라이머리 버튼의 레이블은 다이얼로그 제목의 동사와 페어링되어야 한다. 부정어로 묻지 말
-        것.</test-text
+        것.</mm-text
       >
 
-      <test-text variant="subhead">A11y</test-text>
+      <mm-text variant="subhead">A11y</mm-text>
       <ul>
         <li>다이얼로그를 닫기 전에는 이전 콘텐츠로 포커스 불가능.</li>
         <li>다이얼로그(또는 모달)를 닫은 후 열기 버튼으로 포커스.</li>
@@ -111,8 +111,8 @@
     </section>
 
     <blockquote>
-      <test-text variant="body-bold">Notes</test-text>
-      <test-text>Titlebar를 합성할 수도 있고, Result를 합성할 수도 있을 것.</test-text>
+      <mm-text variant="body-bold">Notes</mm-text>
+      <mm-text>Titlebar를 합성할 수도 있고, Result를 합성할 수도 있을 것.</mm-text>
     </blockquote>
   </article>
 </main>

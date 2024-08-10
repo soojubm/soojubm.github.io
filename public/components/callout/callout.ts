@@ -32,7 +32,7 @@ class Callout extends HTMLElement {
     text.classList.add('callout-text')
     text.innerText = this.text || ''
 
-    const icon = document.createElement('test-icon')
+    const icon = document.createElement('mm-icon')
     icon.setAttribute('name', 'warning-triangle')
     icon.classList.add('callout-icon')
 

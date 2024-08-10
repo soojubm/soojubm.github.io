@@ -10,19 +10,19 @@ class Result extends HTMLElement {
     container.classList.add('result')
 
     // TODO title
-    const description = document.createElement('test-text')
+    const description = document.createElement('mm-text')
 
     const avatarSlot = document.createElement('slot')
     const listSlot = document.createElement('slot')
     const actionSlot = document.createElement('slot')
 
-    const label = document.createElement('test-text')
+    const label = document.createElement('mm-text')
     label.classList.add('result-title')
     label.innerText = this.label || ''
     label.setAttribute('variant', 'subhead')
 
     // TODO slot 아니면 이렇게 상속이 안 되는 것 같다.
-    const avatar = document.createElement('test-avatar')
+    const avatar = document.createElement('mm-avatar')
     avatar.setAttribute('size', 'large')
     avatar.setAttribute('variant', 'secondary')
     avatar.setAttribute('default', 'true')

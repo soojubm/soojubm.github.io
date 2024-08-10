@@ -8,12 +8,12 @@ class Feature extends HTMLElement {
     const container = document.createElement('div')
     container.classList.add('feature-item')
 
-    const avatar = document.createElement('test-avatar')
+    const avatar = document.createElement('mm-avatar')
     avatar.setAttribute('size', 'large')
     avatar.innerText = this.icon || ''
     avatar.classList.add('feature-item-avatar')
 
-    const heading = document.createElement('test-text')
+    const heading = document.createElement('mm-text')
     heading.setAttribute('variant', 'subhead')
     heading.innerText = this.titleText || ''
     heading.classList.add('feature-item-title')
@@ -21,7 +21,7 @@ class Feature extends HTMLElement {
     const subtitle = document.createElement('sup')
     subtitle.innerText = this.subtitle || ''
 
-    const description = document.createElement('test-text')
+    const description = document.createElement('mm-text')
     description.setAttribute('variant', 'body')
     description.innerText = this.description || ''
     description.classList.add('feature-item-description')

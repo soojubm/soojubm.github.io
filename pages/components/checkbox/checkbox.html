@@ -1,21 +1,21 @@
 <main class="page">
   <article class="article js-observer js-scrollspy-section">
-    <test-text variant="title" title="or Box">Checkboxes</test-text>
-    <test-text variant="body-large"
-      >옵션 목록에서 하나 이상의 옵션을 선택합니다. 작은 거 없앨까.</test-text
+    <mm-text variant="title" title="or Box">Checkboxes</mm-text>
+    <mm-text variant="body-large"
+      >옵션 목록에서 하나 이상의 옵션을 선택합니다. 작은 거 없앨까.</mm-text
     >
 
     <section class="component-example">
       <!-- a11y checkgroup not valid -->
       <!-- <legend">checkgroup</legend> -->
-      <!-- TODO test-checkbox-group -->
-      <test-group variant="chip">
-        <test-checkbox size="large" checked></test-checkbox>
-        <test-checkbox checked></test-checkbox>
-      </test-group>
-      <test-separator></test-separator>
-      <test-group variant="checkbox">
-        <test-checkbox
+      <!-- TODO mm-checkbox-group -->
+      <mm-group variant="chip">
+        <mm-checkbox size="large" checked></mm-checkbox>
+        <mm-checkbox checked></mm-checkbox>
+      </mm-group>
+      <mm-separator></mm-separator>
+      <mm-group variant="checkbox">
+        <mm-checkbox
           name="checkbox"
           value="value"
           size="large"
@@ -23,7 +23,7 @@
           checked
         >
           체크박스 / helper를 prop으로 주지 않는 것이 좋겠다.
-        </test-checkbox>
+        </mm-checkbox>
         <input
           type="text"
           name="other-more"
@@ -31,23 +31,23 @@
           placeholder="기타로 오토바이를 타자."
           hidden
         />
-        <test-group variant="checkbox">
-          <test-checkbox name="checkbox" size="large" checked disabled>비활성 상태</test-checkbox>
-          <test-checkbox name="checkbox" size="large" disabled>비활성 상태</test-checkbox>
-        </test-group>
-        <test-separator></test-separator>
-        <test-tile variant="elevated" size="small" style="width: 100%">
+        <mm-group variant="checkbox">
+          <mm-checkbox name="checkbox" size="large" checked disabled>비활성 상태</mm-checkbox>
+          <mm-checkbox name="checkbox" size="large" disabled>비활성 상태</mm-checkbox>
+        </mm-group>
+        <mm-separator></mm-separator>
+        <mm-tile variant="elevated" size="small" style="width: 100%">
           <div style="margin: 0 var(--space-2)">
-            <test-checkbox name="checkbox" size="large" checked>
+            <mm-checkbox name="checkbox" size="large" checked>
               모바일 친화적인 Tiled 형태.
-            </test-checkbox>
+            </mm-checkbox>
           </div>
-        </test-tile>
-      </test-group>
+        </mm-tile>
+      </mm-group>
     </section>
 
     <section class="component-props">
-      <!-- <test-text variant="subhead" hidden>Props</test-text> -->
+      <!-- <mm-text variant="subhead" hidden>Props</mm-text> -->
       <dl>
         <!-- <dt>name</dt>
         <dd>string</dd>
@@ -75,19 +75,19 @@
     </section>
 
     <section class="component-guide">
-      <test-text variant="subhead">Visual style</test-text>
-      <test-text variant="body"> 선택되지 않은 상태로 제공하세요. </test-text>
-      <test-text variant="body"> 체크박스를 가로로 정렬하지 마세요. </test-text>
-      <test-text variant="body">
+      <mm-text variant="subhead">Visual style</mm-text>
+      <mm-text variant="body"> 선택되지 않은 상태로 제공하세요. </mm-text>
+      <mm-text variant="body"> 체크박스를 가로로 정렬하지 마세요. </mm-text>
+      <mm-text variant="body">
         상대적으로 강조를 위해 체크박스의 label text를 강조하지 마세요. 체크박스의 크기나 컨테이너를
         강조하여 컴포넌트를 독립적으로 유지하세요.
-      </test-text>
+      </mm-text>
     </section>
 
     <section class="component-case">
-      <test-tile>
-        <test-group variant="checkbox">
-          <test-checkbox
+      <mm-tile>
+        <mm-group variant="checkbox">
+          <mm-checkbox
             size="medium"
             class="js-checkall"
             aira-checked="mixed"
@@ -96,60 +96,60 @@
             indeterminate
           >
             <em style="font-style: normal"> 모두 동의합니다 </em>
-          </test-checkbox>
-          <test-checkbox class="js-check" id="terms" name="terms">
+          </mm-checkbox>
+          <mm-checkbox class="js-check" id="terms" name="terms">
             이용약관에 동의합니다.
             <a href="#">이용약관 바로가기</a>
-          </test-checkbox>
-        </test-group>
-      </test-tile>
-      <test-tile>
-        <test-group variant="checkbox">
-          <test-text variant="body-bold">콘텐츠 필터링</test-text>
+          </mm-checkbox>
+        </mm-group>
+      </mm-tile>
+      <mm-tile>
+        <mm-group variant="checkbox">
+          <mm-text variant="body-bold">콘텐츠 필터링</mm-text>
           <div style="height: var(--space-1)"></div>
-          <test-checkbox name="interest" value="other">옵션 하나</test-checkbox>
-          <test-checkbox name="interest" value="other">옵션 둘</test-checkbox>
-          <test-checkbox name="interest" value="other">옵션 셋</test-checkbox>
-          <test-checkbox name="interest" value="other">옵셧 넷</test-checkbox>
+          <mm-checkbox name="interest" value="other">옵션 하나</mm-checkbox>
+          <mm-checkbox name="interest" value="other">옵션 둘</mm-checkbox>
+          <mm-checkbox name="interest" value="other">옵션 셋</mm-checkbox>
+          <mm-checkbox name="interest" value="other">옵셧 넷</mm-checkbox>
           <div style="height: var(--space-3)"></div>
-          <test-button variant="secondary">적용</test-button>
-        </test-group>
-      </test-tile>
-      <test-tile><test-checkbox>포토리뷰만 보기</test-checkbox></test-tile>
-      <!-- <test-text variant="body">쿠키 관련 util</test-text> -->
-      <test-tile>
-        <test-checkbox>다시 묻지 않기 / 일주일 동안 보지 않기don't ask again</test-checkbox>
-      </test-tile>
-      <test-tile>
-        <test-titlebar heading="컬렉션에 추가"></test-titlebar>
+          <mm-button variant="secondary">적용</mm-button>
+        </mm-group>
+      </mm-tile>
+      <mm-tile><mm-checkbox>포토리뷰만 보기</mm-checkbox></mm-tile>
+      <!-- <mm-text variant="body">쿠키 관련 util</mm-text> -->
+      <mm-tile>
+        <mm-checkbox>다시 묻지 않기 / 일주일 동안 보지 않기don't ask again</mm-checkbox>
+      </mm-tile>
+      <mm-tile>
+        <mm-titlebar heading="컬렉션에 추가"></mm-titlebar>
         <br />
-        <test-tile variant="elevated" size="small">
-          <test-menuitem label="새 컬렉션 만들기">
-            <test-avatar slot="avatar">
-              <test-icon slot="icon" name="plus"></test-icon>
-            </test-avatar>
-          </test-menuitem>
-        </test-tile>
+        <mm-tile variant="elevated" size="small">
+          <mm-menuitem label="새 컬렉션 만들기">
+            <mm-avatar slot="avatar">
+              <mm-icon slot="icon" name="plus"></mm-icon>
+            </mm-avatar>
+          </mm-menuitem>
+        </mm-tile>
         <div style="height: var(--space-3)"></div>
-        <test-group variant="checkbox">
+        <mm-group variant="checkbox">
           <!-- aira-checked="mixed" aria-controls="1 2" -->
-          <test-checkbox>컬렉션 1</test-checkbox>
-          <test-checkbox>컬렉션 2 - 관리: 수정/삭제 등</test-checkbox>
-        </test-group>
-      </test-tile>
-      <test-tile>
-        <test-titlebar heading="컬렉션 만들기">
-          <test-chip slot="action">완료</test-chip>
-        </test-titlebar>
+          <mm-checkbox>컬렉션 1</mm-checkbox>
+          <mm-checkbox>컬렉션 2 - 관리: 수정/삭제 등</mm-checkbox>
+        </mm-group>
+      </mm-tile>
+      <mm-tile>
+        <mm-titlebar heading="컬렉션 만들기">
+          <mm-chip slot="action">완료</mm-chip>
+        </mm-titlebar>
         <div style="height: 1rem"></div>
-        <test-textfield label="컬렉션 이름" placeholder="컬렉션 이름"></test-textfield>
+        <mm-textfield label="컬렉션 이름" placeholder="컬렉션 이름"></mm-textfield>
         <div style="height: 0.75rem"></div>
-        <test-group variant="radio">
+        <mm-group variant="radio">
           <!-- aira-checked="mixed" aria-controls="1 2" -->
-          <test-radio>공개</test-radio>
-          <test-radio>비공개</test-radio>
-        </test-group>
-      </test-tile>
+          <mm-radio>공개</mm-radio>
+          <mm-radio>비공개</mm-radio>
+        </mm-group>
+      </mm-tile>
     </section>
   </article>
 </main>

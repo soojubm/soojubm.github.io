@@ -1,7 +1,7 @@
 <main class="page" aria-label="site">
   <article class="article js-observer">
-    <test-text variant="title">Table</test-text>
-    <test-text variant="body-large">표.</test-text>
+    <mm-text variant="title">Table</mm-text>
+    <mm-text variant="body-large">표.</mm-text>
     <section class="component-example">
       <div>
         <style>
@@ -35,15 +35,15 @@
           <div role="row" aria-rowindex="11">
             <div role="cell">1</div>
             <div role="cell">
-              <test-menuitem label="Dancing in the Dark" description="Bruce Springsteen">
-                <test-avatar slot="avatar"></test-avatar>
-              </test-menuitem>
+              <mm-menuitem label="Dancing in the Dark" description="Bruce Springsteen">
+                <mm-avatar slot="avatar"></mm-avatar>
+              </mm-menuitem>
             </div>
             <div role="cell">
-              <test-group variant="tag">
-                <test-tag>hiphop</test-tag>
-                <test-tag>rap</test-tag>
-              </test-group>
+              <mm-group variant="tag">
+                <mm-tag>hiphop</mm-tag>
+                <mm-tag>rap</mm-tag>
+              </mm-group>
             </div>
             <div role="cell">
               <em
@@ -66,21 +66,21 @@
         padding: var(--space-4) 0;
       "
     >
-      <test-text variant="subhead">Products</test-text>
-      <test-group variant="chip">
-        <test-chip>
-          <test-icon slot="prefix" name="import"></test-icon>
+      <mm-text variant="subhead">Products</mm-text>
+      <mm-group variant="chip">
+        <mm-chip>
+          <mm-icon slot="prefix" name="import"></mm-icon>
           가져오기
-        </test-chip>
-        <test-chip status="active"> 추가하기 </test-chip>
-      </test-group>
+        </mm-chip>
+        <mm-chip status="active"> 추가하기 </mm-chip>
+      </mm-group>
     </header>
     <!-- TODO separator가 공간이 될 수 있고 이것이 어디에 오는지에 따른 컴포넌트가 될 수도. -->
-    <test-group variant="chip">
-      <test-chip status="active">All</test-chip>
-      <test-chip>Active</test-chip>
-      <test-chip>Draft</test-chip>
-    </test-group>
+    <mm-group variant="chip">
+      <mm-chip status="active">All</mm-chip>
+      <mm-chip>Active</mm-chip>
+      <mm-chip>Draft</mm-chip>
+    </mm-group>
     <div style="height: var(--space-3)"></div>
     <table>
       <caption hidden>
@@ -94,12 +94,12 @@
       <thead>
         <tr>
           <th role="columnheader" aria-sort="none" style="width: calc(40px)">
-            <test-checkbox></test-checkbox>
+            <mm-checkbox></mm-checkbox>
           </th>
           <th scope="col" aria-sort="none" style="width: 15%">
             <div style="display: flex; align-items: center; gap: var(--space-2)">
               Name
-              <test-icon name="arrow-separate-vertical" size="small"></test-icon>
+              <mm-icon name="arrow-separate-vertical" size="small"></mm-icon>
             </div>
           </th>
           <th scope="col" aria-sort="none" style="width: calc(65% - 80px)">Title</th>
@@ -113,72 +113,72 @@
       </thead>
       <tr>
         <td>
-          <test-checkbox></test-checkbox>
+          <mm-checkbox></mm-checkbox>
         </td>
         <th scope="row">
           <div style="display: flex; align-items: center; gap: var(--space-2)">
-            <test-avatar variant="secondary" default="true"></test-avatar>
+            <mm-avatar variant="secondary" default="true"></mm-avatar>
             Gabriel
           </div>
         </th>
         <td>
           <div style="display: flex; align-items: center; gap: var(--space-2)">
-            <test-tag>Male</test-tag>
-            <test-text>타이틀</test-text>
+            <mm-tag>Male</mm-tag>
+            <mm-text>타이틀</mm-text>
           </div>
         </td>
         <td>
-          <test-link>
+          <mm-link>
             External link
-            <test-icon size="small" name="arrow-up-right"></test-icon>
-          </test-link>
+            <mm-icon size="small" name="arrow-up-right"></mm-icon>
+          </mm-link>
         </td>
         <td>
-          <test-group variant="tag">
-            <test-tag variant="feature1">유저리서치</test-tag>
-          </test-group>
+          <mm-group variant="tag">
+            <mm-tag variant="feature1">유저리서치</mm-tag>
+          </mm-group>
         </td>
         <td style="text-align: right">13</td>
         <td>
-          <test-group variant="chip" style="justify-content: flex-end">
-            <test-chip>액션</test-chip>
-            <test-chip variant="plain" icon="more-vert"></test-chip>
-          </test-group>
+          <mm-group variant="chip" style="justify-content: flex-end">
+            <mm-chip>액션</mm-chip>
+            <mm-chip variant="plain" icon="more-vert"></mm-chip>
+          </mm-group>
         </td>
       </tr>
       <tr>
         <td>
-          <test-checkbox checked></test-checkbox>
+          <mm-checkbox checked></mm-checkbox>
         </td>
         <th scope="row">
           <div style="display: flex; align-items: center; gap: var(--space-2)">
-            <test-avatar variant="secondary" default="true"></test-avatar>
+            <mm-avatar variant="secondary" default="true"></mm-avatar>
             Ella
           </div>
         </th>
         <td>
           <div style="display: flex; align-items: center; gap: var(--space-2)">
-            <test-tag>Female</test-tag>
-            <test-text>You can't compress the program...</test-text>
+            <mm-tag>Female</mm-tag>
+            <mm-text>You can't compress the program...</mm-text>
           </div>
         </td>
         <td>
-          <test-link>
+          <mm-link>
             External link
-            <test-icon size="small" name="arrow-up-right"></test-icon>
-          </test-link>
+            <mm-icon size="small" name="arrow-up-right"></mm-icon>
+          </mm-link>
         </td>
         <td>
-          <test-group variant="tag">
-            <test-tag variant="feature2">유저플로우</test-tag>
-          </test-group>
+          <mm-group variant="tag">
+            <mm-tag variant="feature2">유저플로우</mm-tag>
+          </mm-group>
         </td>
         <td style="text-align: right">8</td>
         <td>
-          <test-group variant="chip" style="justify-content: flex-end">
-            <test-chip>액션</test-chip>
-            <test-chip variant="plain" icon="more-vert"></test-chip>
-          </test-group>
+          <mm-group variant="chip" style="justify-content: flex-end">
+            <mm-chip>액션</mm-chip>
+            <mm-chip variant="plain" icon="more-vert"></mm-chip>
+          </mm-group>
         </td>
       </tr>
     </table>
@@ -187,34 +187,34 @@
   <br /><br /><br />
 
   <article class="article js-observer js-scrollspy-section">
-    <test-text variant="title">Paginations</test-text>
-    <test-text variant="body-large">페이지네이션</test-text>
+    <mm-text variant="title">Paginations</mm-text>
+    <mm-text variant="body-large">페이지네이션</mm-text>
 
     <section class="component-example">
       <!-- TODO variant pagination -->
-      <test-group variant="chip" aria-label="pagination">
-        <test-chip variant="plain" class="pagination-previous" aria-label="앞 페이지로 이동">
+      <mm-group variant="chip" aria-label="pagination">
+        <mm-chip variant="plain" class="pagination-previous" aria-label="앞 페이지로 이동">
           이전
-        </test-chip>
-        <test-chip
+        </mm-chip>
+        <mm-chip
           variant="plain"
           class="pagination-next"
           aria-label="뒷 페이지로 이동"
           style="order: 3"
         >
           다음
-        </test-chip>
-        <test-chip variant="plain" class="pagination-link" aria-label="맨 앞 페이지로 이동"
-          >1</test-chip
+        </mm-chip>
+        <mm-chip variant="plain" class="pagination-link" aria-label="맨 앞 페이지로 이동"
+          >1</mm-chip
         >
         <i class="pagination-ellipsis" aria-label="맨 앞 페이지로 이동">...</i>
-        <test-chip variant="plain" class="pagination-link" href="#" aria-label="1 페이지로 이동">
+        <mm-chip variant="plain" class="pagination-link" href="#" aria-label="1 페이지로 이동">
           5
-        </test-chip>
-        <test-chip variant="plain" class="pagination-link" href="#" aria-label="1 페이지로 이동">
+        </mm-chip>
+        <mm-chip variant="plain" class="pagination-link" href="#" aria-label="1 페이지로 이동">
           6
-        </test-chip>
-        <test-chip
+        </mm-chip>
+        <mm-chip
           variant="plain"
           status="active"
           class="pagination-link is-current"
@@ -222,18 +222,18 @@
           aria-current="true"
         >
           7
-        </test-chip>
-        <test-chip variant="plain" class="pagination-link" href="#" aria-label="1 페이지로 이동">
+        </mm-chip>
+        <mm-chip variant="plain" class="pagination-link" href="#" aria-label="1 페이지로 이동">
           8
-        </test-chip>
-        <test-chip variant="plain" class="pagination-link" href="#" aria-label="1 페이지로 이동">
+        </mm-chip>
+        <mm-chip variant="plain" class="pagination-link" href="#" aria-label="1 페이지로 이동">
           9
-        </test-chip>
+        </mm-chip>
         <i class="pagination-ellipsis" aria-label="맨 앞 페이지로 이동">...</i>
-        <test-chip variant="plain" class="pagination-link" aria-label="맨 뒤 페이지로 이동">
+        <mm-chip variant="plain" class="pagination-link" aria-label="맨 뒤 페이지로 이동">
           50
-        </test-chip>
-      </test-group>
+        </mm-chip>
+      </mm-group>
       <aside role="status">
         <small>숙소 300개 이상 중 281 – 300 (airbnb)</small>
       </aside>
@@ -243,19 +243,19 @@
         <span class="pagination-divider">/</span>
         <span class="pagination-all">44</span>
       </div>
-      <test-separator></test-separator>
+      <mm-separator></mm-separator>
       <div style="display: flex; align-items: center; gap: var(--space-2)">
         page
-        <test-chip size="small">
+        <mm-chip size="small">
           18
-          <test-icon slot="suffix" name="nav-arrow-down"></test-icon>
-        </test-chip>
+          <mm-icon slot="suffix" name="nav-arrow-down"></mm-icon>
+        </mm-chip>
         of 22
       </div>
     </section>
 
     <section class="component-props">
-      <test-text variant="subhead">Props</test-text>
+      <mm-text variant="subhead">Props</mm-text>
       <dl>
         <!-- <dt>offset</dt>
             <dd>number</dd> -->
@@ -269,17 +269,15 @@
     </section>
 
     <section class="component-guide">
-      <test-text varinat="subhead">Best practices</test-text>
-      <test-text variant="body">
+      <mm-text varinat="subhead">Best practices</mm-text>
+      <mm-text variant="body">
         첫 페이지와 마지막 페이지에 더블 화살표 아이콘을 사용하지 않습니다. 최초와 최종 페이지
         넘버로 사용자가 대략적인 콘텐츠 수량을 파악할 수 있도록 도와주세요.
-      </test-text>
+      </mm-text>
 
       <blockquote>
-        <test-text variant="body-bold">Notes</test-text>
-        <test-text variant="body"
-          >서버에서 offset을 0으로 줄 때도 있었고 1로 줄 때도 있다.</test-text
-        >
+        <mm-text variant="body-bold">Notes</mm-text>
+        <mm-text variant="body">서버에서 offset을 0으로 줄 때도 있었고 1로 줄 때도 있다.</mm-text>
         <p>모든 행이 DOM에 존재하는 경우 aria-rowindex 불필요</p>
       </blockquote>
       <!-- <p>pagination vs more load vs infinite scroll. 느린 탐색 경험이 필요할 때. 게시판이나 상품 목록의 탐색에서 이전에 탐색한 상품의 위치를 찾기 편리함. 최근 본 목록이나 섬네일에서 북마크를

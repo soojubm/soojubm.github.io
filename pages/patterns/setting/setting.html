@@ -9,83 +9,80 @@
         padding: 0 0 2rem 0;
       "
     >
-      <test-avatar size="huge" variant="secondary" default="true"></test-avatar>
-      <test-text variant="subhead">
-        수줍이님, 어서와요<i style="font-style: italic">!</i>
-      </test-text>
+      <mm-avatar size="huge" variant="secondary" default="true"></mm-avatar>
+      <mm-text variant="subhead"> 수줍이님, 어서와요<i style="font-style: italic">!</i> </mm-text>
     </header>
-    <test-group variant="menuitem">
-      <test-menuitem label="사용자 정보" description="전자 메일, 일정, 연락처에서 사용하는 계정">
-        <test-avatar slot="avatar" size="large" variant="secondary" default="true"></test-avatar>
-      </test-menuitem>
-      <test-menuitem label="soojubm@gmail.com">
-        <test-avatar slot="avatar" icon="mail"> </test-avatar>
-        <test-icon slot="action" name="arrow-right" aria-label=""></test-icon>
-      </test-menuitem>
-      <test-menuitem label="비밀번호 변경">
-        <test-avatar slot="avatar" icon="lock"> </test-avatar>
-        <test-icon slot="action" name="arrow-right" aria-label=""></test-icon>
-      </test-menuitem>
-    </test-group>
-    <test-separator></test-separator>
-    <test-group variant="menuitem">
-      <test-menuitem label="소셜 네트워크로 로그인" description="간편">
-        <test-avatar slot="avatar" size="large" variant="secondary" default="true"></test-avatar>
-      </test-menuitem>
-      <test-menuitem label="구글로 로그인">
-        <test-avatar slot="avatar" icon="mail"> </test-avatar>
-        <test-icon slot="action" name="arrow-right" aria-label="연동해제"></test-icon>
-      </test-menuitem>
-    </test-group>
-    <test-separator></test-separator>
-    <test-tile variant="elevated" size="small">
-      <test-menuitem label="Premium 개인" description="월간 구독">
-        <test-avatar slot="avatar" size="large" default="true"></test-avatar>
-        <!-- <test-icon slot="action" name="arrow-right" aria-label="자세히보기"></test-icon> -->
-        <test-chip slot="action" aria-label="자세히보기">구독 관리</test-chip>
-      </test-menuitem>
-    </test-tile>
+    <mm-group variant="menuitem">
+      <mm-menuitem label="사용자 정보" description="전자 메일, 일정, 연락처에서 사용하는 계정">
+        <mm-avatar slot="avatar" size="large" variant="secondary" default="true"></mm-avatar>
+      </mm-menuitem>
+      <mm-menuitem label="soojubm@gmail.com">
+        <mm-avatar slot="avatar" icon="mail"> </mm-avatar>
+        <mm-icon slot="action" name="arrow-right" aria-label=""></mm-icon>
+      </mm-menuitem>
+      <mm-menuitem label="비밀번호 변경">
+        <mm-avatar slot="avatar" icon="lock"> </mm-avatar>
+        <mm-icon slot="action" name="arrow-right" aria-label=""></mm-icon>
+      </mm-menuitem>
+    </mm-group>
+    <mm-separator></mm-separator>
+    <mm-group variant="menuitem">
+      <mm-menuitem label="소셜 네트워크로 로그인" description="간편">
+        <mm-avatar slot="avatar" size="large" variant="secondary" default="true"></mm-avatar>
+      </mm-menuitem>
+      <mm-menuitem label="구글로 로그인">
+        <mm-avatar slot="avatar" icon="mail"> </mm-avatar>
+        <mm-icon slot="action" name="arrow-right" aria-label="연동해제"></mm-icon>
+      </mm-menuitem>
+    </mm-group>
+    <mm-separator></mm-separator>
+    <mm-tile variant="elevated" size="small">
+      <mm-menuitem label="Premium 개인" description="월간 구독">
+        <mm-avatar slot="avatar" size="large" default="true"></mm-avatar>
+        <!-- <mm-icon slot="action" name="arrow-right" aria-label="자세히보기"></mm-icon> -->
+        <mm-chip slot="action" aria-label="자세히보기">구독 관리</mm-chip>
+      </mm-menuitem>
+    </mm-tile>
     <p style="margin: var(--space-3) 0 0; line-height: 1.4">
       To delete your account permanently,
-      <test-link href="#">tap here to visit our support page</test-link> to close your account
-      yourself.
+      <mm-link href="#">tap here to visit our support page</mm-link> to close your account yourself.
     </p>
 
     <br /><br />
 
-    <test-tile>
+    <mm-tile>
       <div style="margin-top: -0.125rem">
-        <test-text variant="word-strong">iPhone을 백업할 수 없음</test-text>
+        <mm-text variant="word-strong">iPhone을 백업할 수 없음</mm-text>
       </div>
       <div style="height: var(--space-2)"></div>
-      <test-text variant="body"
+      <mm-text variant="body"
         >저장 공간이 부족하여 최근 iPhone 백업이 iCloud에 저장되지 않았습니다. 저장 공간을 추가 또는
-        관리하여 iPhone 백업을 유지하십시오.</test-text
+        관리하여 iPhone 백업을 유지하십시오.</mm-text
       >
       <div style="height: var(--space-4)"></div>
-      <test-group variant="chip">
-        <test-chip>저장 공간 추가</test-chip>
-      </test-group>
-    </test-tile>
+      <mm-group variant="chip">
+        <mm-chip>저장 공간 추가</mm-chip>
+      </mm-group>
+    </mm-tile>
 
     <br /><br />
 
-    <test-group alignment="vertical">
-      <!-- <test-text variant="subhead">프로필 정보</test-text> -->
-      <test-text variant="subhead">프로필</test-text>
-      <test-tile class="setting-item">
-        <test-menuitem>
-          <test-avatar slot="avatar" size="large" default="true"></test-avatar>
+    <mm-group alignment="vertical">
+      <!-- <mm-text variant="subhead">프로필 정보</mm-text> -->
+      <mm-text variant="subhead">프로필</mm-text>
+      <mm-tile class="setting-item">
+        <mm-menuitem>
+          <mm-avatar slot="avatar" size="large" default="true"></mm-avatar>
           <div slot="text">
-            <test-text variant="word-weak">프로필 사진</test-text>
-            <test-text variant="word">10MB 이내의 JPEG, PNG, GIF 형식이어야 합니다.</test-text>
+            <mm-text variant="word-weak">프로필 사진</mm-text>
+            <mm-text variant="word">10MB 이내의 JPEG, PNG, GIF 형식이어야 합니다.</mm-text>
           </div>
-        </test-menuitem>
+        </mm-menuitem>
         <div style="height: var(--space-2)"></div>
-        <test-group variant="chip">
-          <test-chip>프로필 사진 추가 / 업데이트</test-chip>
-          <!-- <test-chip>기본 이미지로 변경</test-chip> -->
-        </test-group>
+        <mm-group variant="chip">
+          <mm-chip>프로필 사진 추가 / 업데이트</mm-chip>
+          <!-- <mm-chip>기본 이미지로 변경</mm-chip> -->
+        </mm-group>
         <div style="height: var(--space-2)"></div>
         <!-- <div
         style="
@@ -95,22 +92,22 @@
           padding: var(--space-2);
         "
       >
-        <test-text variant="caption"> 10MB 이내의 JPEG, PNG, GIF 형식이어야 합니다. </test-text>
+        <mm-text variant="caption"> 10MB 이내의 JPEG, PNG, GIF 형식이어야 합니다. </mm-text>
       </div> -->
-        <test-callout variant="success">
+        <mm-callout variant="success">
           프로필 사진을 업데이트했습니다. 멋져 보이네요, soojubm님!
-        </test-callout>
-        <!-- <test-callout variant="danger"> 프로필 사진을 삭제했습니다. </test-callout> -->
-      </test-tile>
-      <test-group alignment="vertical">
-        <test-tile>
-          <test-menuitem>
+        </mm-callout>
+        <!-- <mm-callout variant="danger"> 프로필 사진을 삭제했습니다. </mm-callout> -->
+      </mm-tile>
+      <mm-group alignment="vertical">
+        <mm-tile>
+          <mm-menuitem>
             <div slot="text">
-              <test-text variant="label">닉네임</test-text>
-              <test-text variant="body">수줍이</test-text>
+              <mm-text variant="label">닉네임</mm-text>
+              <mm-text variant="body">수줍이</mm-text>
             </div>
-            <test-icon slot="action" name="arrow-right"></test-icon>
-          </test-menuitem>
+            <mm-icon slot="action" name="arrow-right"></mm-icon>
+          </mm-menuitem>
           <div
             style="
               border-radius: var(--radius);
@@ -119,29 +116,29 @@
               padding: var(--space-2);
             "
           >
-            <test-text variant="caption">
+            <mm-text variant="caption">
               soojubm 닉네임을 만드세요! 60일 동안 변경할 수 없습니다 — 취소할 수 없습니다! Twitch
               이용규약을 위반한 닉네임은 계정이 영구정지될 수 있으니 주의하세요.
-            </test-text>
+            </mm-text>
           </div>
-        </test-tile>
-        <test-tile>
-          <test-menuitem>
+        </mm-tile>
+        <mm-tile>
+          <mm-menuitem>
             <div slot="text">
-              <test-text variant="label">이모지</test-text>
-              <test-text variant="body">🐻</test-text>
+              <mm-text variant="label">이모지</mm-text>
+              <mm-text variant="body">🐻</mm-text>
             </div>
-            <test-icon slot="action" name="arrow-right"></test-icon>
-          </test-menuitem>
-        </test-tile>
-        <test-tile>
-          <test-menuitem>
+            <mm-icon slot="action" name="arrow-right"></mm-icon>
+          </mm-menuitem>
+        </mm-tile>
+        <mm-tile>
+          <mm-menuitem>
             <div slot="text">
-              <test-text variant="word-weak">관심분야</test-text>
-              <test-text variant="word">문화/예술, 인권, 경제</test-text>
+              <mm-text variant="word-weak">관심분야</mm-text>
+              <mm-text variant="word">문화/예술, 인권, 경제</mm-text>
             </div>
-            <test-icon slot="action" name="arrow-right"></test-icon>
-          </test-menuitem>
+            <mm-icon slot="action" name="arrow-right"></mm-icon>
+          </mm-menuitem>
           <div
             style="
               border-radius: var(--radius);
@@ -150,50 +147,50 @@
               padding: var(--space-2);
             "
           >
-            <test-text variant="caption">관심있는 분야의 콘텐츠를 추천 받으세요.</test-text>
+            <mm-text variant="caption">관심있는 분야의 콘텐츠를 추천 받으세요.</mm-text>
           </div>
-        </test-tile>
-      </test-group>
-    </test-group>
+        </mm-tile>
+      </mm-group>
+    </mm-group>
 
     <br /><br />
 
     <!-- TODO :: group을 section으로 -->
-    <test-group alignment="vertical">
-      <test-text variant="subhead">개인정보</test-text>
-      <test-tile>
-        <test-menuitem>
+    <mm-group alignment="vertical">
+      <mm-text variant="subhead">개인정보</mm-text>
+      <mm-tile>
+        <mm-menuitem>
           <div slot="text">
             <em class="avatar-badge"></em>
-            <test-text variant="word-weak">이메일 주소</test-text>
-            <test-text variant="word">soojubm@gmail.com</test-text>
+            <mm-text variant="word-weak">이메일 주소</mm-text>
+            <mm-text variant="word">soojubm@gmail.com</mm-text>
           </div>
-          <test-chip slot="action">Update email</test-chip>
-          <!-- <test-icon slot="action" name="arrow-right"></test-icon> -->
-        </test-menuitem>
-      </test-tile>
-      <test-tile>
-        <test-menuitem>
+          <mm-chip slot="action">Update email</mm-chip>
+          <!-- <mm-icon slot="action" name="arrow-right"></mm-icon> -->
+        </mm-menuitem>
+      </mm-tile>
+      <mm-tile>
+        <mm-menuitem>
           <div slot="text">
             <em class="avatar-badge"></em>
-            <test-text variant="label">배송지</test-text>
-            <test-text variant="word">배송지를 관리하고 기본 배송지를 설정하세요.</test-text>
+            <mm-text variant="label">배송지</mm-text>
+            <mm-text variant="word">배송지를 관리하고 기본 배송지를 설정하세요.</mm-text>
           </div>
-          <test-icon slot="action" name="arrow-right"></test-icon>
-        </test-menuitem>
-      </test-tile>
-    </test-group>
+          <mm-icon slot="action" name="arrow-right"></mm-icon>
+        </mm-menuitem>
+      </mm-tile>
+    </mm-group>
 
     <br /><br />
 
     <br /><br />
-    <test-group alignment="vertical">
-      <test-text variant="subhead">뉴스레터</test-text>
-      <test-tile variant="">
-        <test-menuitem label="시사 뉴스레터" class="js-darkmode">
-          <test-avatar slot="avatar"> </test-avatar>
-          <test-switch slot="action" label=""></test-switch>
-        </test-menuitem>
+    <mm-group alignment="vertical">
+      <mm-text variant="subhead">뉴스레터</mm-text>
+      <mm-tile variant="">
+        <mm-menuitem label="시사 뉴스레터" class="js-darkmode">
+          <mm-avatar slot="avatar"> </mm-avatar>
+          <mm-switch slot="action" label=""></mm-switch>
+        </mm-menuitem>
         <div
           style="
             border-radius: var(--radius);
@@ -202,32 +199,32 @@
             padding: var(--space-2);
           "
         >
-          <test-text variant="caption">
+          <mm-text variant="caption">
             매 주 월요일, 수요일, 금요일 아침에 받아볼 수 있어요.
-          </test-text>
+          </mm-text>
         </div>
-      </test-tile>
-    </test-group>
+      </mm-tile>
+    </mm-group>
     <br /><br />
-    <test-group alignment="vertical">
-      <test-text variant="subhead" title="Service sign-in / Integration"
-        >소셜 네트워크로 로그인하기</test-text
+    <mm-group alignment="vertical">
+      <mm-text variant="subhead" title="Service sign-in / Integration"
+        >소셜 네트워크로 로그인하기</mm-text
       >
-      <test-group alignment="vertical">
-        <test-tile>
-          <test-menuitem>
+      <mm-group alignment="vertical">
+        <mm-tile>
+          <mm-menuitem>
             <div slot="text">
-              <test-text variant="word-strong">Facebook</test-text>
-              <test-text variant="word">사용자의 Opera와 Facebook 게정을 연결하세요.</test-text>
+              <mm-text variant="word-strong">Facebook</mm-text>
+              <mm-text variant="word">사용자의 Opera와 Facebook 게정을 연결하세요.</mm-text>
             </div>
-            <test-chip slot="action">연동하기</test-chip>
-          </test-menuitem>
-        </test-tile>
-        <test-tile>
-          <test-menuitem label="soojubm@gmail.com">
-            <test-avatar slot="avatar"> </test-avatar>
-            <test-chip slot="action" status="disabled">Google 연동해제</test-chip>
-          </test-menuitem>
+            <mm-chip slot="action">연동하기</mm-chip>
+          </mm-menuitem>
+        </mm-tile>
+        <mm-tile>
+          <mm-menuitem label="soojubm@gmail.com">
+            <mm-avatar slot="avatar"> </mm-avatar>
+            <mm-chip slot="action" status="disabled">Google 연동해제</mm-chip>
+          </mm-menuitem>
           <div
             style="
               border-radius: var(--radius);
@@ -236,82 +233,82 @@
               padding: var(--space-2);
             "
           >
-            <test-text variant="caption">
+            <mm-text variant="caption">
               계정의 비밀번호를 설정한 후 소셜 계정을 연결을 해제하세요.
-            </test-text>
+            </mm-text>
           </div>
-        </test-tile>
-      </test-group>
-    </test-group>
+        </mm-tile>
+      </mm-group>
+    </mm-group>
     <br /><br />
-    <test-group alignment="vertical">
-      <test-text variant="subhead">멤버십 가입 정보</test-text>
-      <test-tile>
-        <test-group alignment="vertical">
-          <test-keyvalue key="다음 결제 예정일" value="2024.04.02."></test-keyvalue>
-          <test-keyvalue key="결제금액" value="46,800원"></test-keyvalue>
-          <test-keyvalue key="결제수단" value="현대카드 ****-****-****-7922"></test-keyvalue>
-        </test-group>
+    <mm-group alignment="vertical">
+      <mm-text variant="subhead">멤버십 가입 정보</mm-text>
+      <mm-tile>
+        <mm-group alignment="vertical">
+          <mm-keyvalue key="다음 결제 예정일" value="2024.04.02."></mm-keyvalue>
+          <mm-keyvalue key="결제금액" value="46,800원"></mm-keyvalue>
+          <mm-keyvalue key="결제수단" value="현대카드 ****-****-****-7922"></mm-keyvalue>
+        </mm-group>
         <footer style="margin: 1rem 0 0 0; position: relative">
-          <test-chip>
+          <mm-chip>
             결제수단변경
-            <test-icon slot="suffix" name="arrow-right"></test-icon>
-          </test-chip>
+            <mm-icon slot="suffix" name="arrow-right"></mm-icon>
+          </mm-chip>
         </footer>
-      </test-tile>
-    </test-group>
+      </mm-tile>
+    </mm-group>
     <br /><br />
-    <test-group alignment="vertical">
-      <test-text variant="subhead">보안</test-text>
-      <test-tile>
-        <test-menuitem>
+    <mm-group alignment="vertical">
+      <mm-text variant="subhead">보안</mm-text>
+      <mm-tile>
+        <mm-menuitem>
           <div slot="text">
-            <test-text variant="word-weak">비밀번호</test-text>
-            <test-text variant="word">강력한 비밀번호로 보안을 강화하세요.</test-text>
+            <mm-text variant="word-weak">비밀번호</mm-text>
+            <mm-text variant="word">강력한 비밀번호로 보안을 강화하세요.</mm-text>
           </div>
-          <test-icon slot="action" name="arrow-right">비밀번호 변경</test-icon>
-        </test-menuitem>
-      </test-tile>
-      <test-tile>
-        <test-menuitem>
+          <mm-icon slot="action" name="arrow-right">비밀번호 변경</mm-icon>
+        </mm-menuitem>
+      </mm-tile>
+      <mm-tile>
+        <mm-menuitem>
           <div slot="text">
-            <test-text variant="word-weak">계정 비활성화</test-text>
-            <test-text variant="word"
-              ><test-link href="">비활성화 페이지</test-link>에서 할 수 있습니다.</test-text
+            <mm-text variant="word-weak">계정 비활성화</mm-text>
+            <mm-text variant="word"
+              ><mm-link href="">비활성화 페이지</mm-link>에서 할 수 있습니다.</mm-text
             >
           </div>
-          <test-chip slot="action" variant="danger">비활성화</test-chip>
-        </test-menuitem>
-      </test-tile>
-    </test-group>
+          <mm-chip slot="action" variant="danger">비활성화</mm-chip>
+        </mm-menuitem>
+      </mm-tile>
+    </mm-group>
 
     <!-- <footer>
-      <test-button variant="tertiary">로그아웃</test-button>
+      <mm-button variant="tertiary">로그아웃</mm-button>
     </footer> -->
 
     <section style="margin: 4rem 0">
-      <test-titlebar heading="닉네임 변경" role="navigation">
+      <mm-titlebar heading="닉네임 변경" role="navigation">
         <button slot="action" class="titlebar-action" style="color: var(--color-primary)">
           <span class="titlebar-action-label">저장</span>
         </button>
-      </test-titlebar>
+      </mm-titlebar>
       <br />
       <form>
-        <test-text variant="subhead">어떻게<br />불러드릴까요?</test-text>
+        <mm-text variant="subhead">어떻게<br />불러드릴까요?</mm-text>
         <p style="margin: var(--space-after-subhead) 0 0 0">
           성별 정보는 Google이 사용자를 지칭하는 방식을 포함해 Google 서비스에서 맞춤설정된 환경을
           제공하는 데 사용될 수 있습니다.
-          <test-link href="">더 알아보기</test-link>
+          <mm-link href="">더 알아보기</mm-link>
         </p>
         <br />
-        <test-textfield label="닉네임" placeholder="이름이요."></test-textfield>
-        <test-separator></test-separator>
-        <test-group variant="radio">
+        <mm-textfield label="닉네임" placeholder="이름이요."></mm-textfield>
+        <mm-separator></mm-separator>
+        <mm-group variant="radio">
           <legend hidden>radiogroup</legend>
-          <test-radio name="gender">기타</test-radio>
-          <test-radio name="gender">여성</test-radio>
-          <test-radio name="gender">남성</test-radio>
-        </test-group>
+          <mm-radio name="gender">기타</mm-radio>
+          <mm-radio name="gender">여성</mm-radio>
+          <mm-radio name="gender">남성</mm-radio>
+        </mm-group>
       </form>
     </section>
 

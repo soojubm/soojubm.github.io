@@ -46,7 +46,7 @@ class Chip extends HTMLElement {
 
     // TODO avatar와 공통
     if (this.icon) {
-      const icon = document.createElement('test-icon')
+      const icon = document.createElement('mm-icon')
       icon.setAttribute('name', this.icon)
 
       host.ariaLabel = this.ariaLabel
