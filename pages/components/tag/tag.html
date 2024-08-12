@@ -71,6 +71,55 @@
   </section>
 
   <section class="component-guide">
+    <mm-text variant="subhead">Meta Problems</mm-text>
+    <mm-text variant="body-bold">KEYWORDS. notification / status / informational</mm-text>
+
+    <mm-text variant="body">
+      Tag가 Chip의 차이. Tag가 Chip의 역할. Badge가 인터렉션이 없는 요소로 정의된다.
+    </mm-text>
+
+    <mm-text variant="body">
+      아바타와 바텀 네비게이션, 탭 등에서 일관되게 사용하는 패턴이 있을 때 정의하는 것이 좋다.
+      그렇지 않으면, 탭에서 탭 카운터 등으로 정의하는 게 좋을 지도 모르겠다리.
+    </mm-text>
+    <mm-text variant="body">
+      Badges show the count of some adjacent data. A dot badge notifies the user that something is
+      new or updated without showing a count.
+    </mm-text>
+
+    <dl class="article-aka">
+      <dt>a.k.a.</dt>
+      <dd aria-label="elastic UI">Health</dd>
+      <dd aria-label="md3">Status Pill</dd>
+    </dl>
+
+    <section class="component-guide">
+      <mm-text variant="body-bold">activity bar counter (vs code) </mm-text>
+      <mm-text variant="body-bold">Dot. New/Red badge (status)</mm-text>
+      <mm-text variant="body-bold">Dot. Live badge (status)</mm-text>
+      <mm-text variant="body-bold">Dot. Unread badge (status)</mm-text>
+      <mm-text variant="body-bold">Counter badge (quantity)</mm-text>
+    </section>
+    <section class="component-example">
+      <mm-group variant="tag">
+        <style>
+          .dot-badge {
+            display: inline-flex;
+            width: 0.5rem;
+            height: 0.5rem;
+            /* padding: var(--space-1); */
+            margin-right: var(--space-2);
+            background: crimson;
+            border-radius: 50%;
+          }
+        </style>
+        <em class="dot-badge"></em>
+        <mm-badge variant="primary">24</mm-badge>
+        <mm-badge variant="secondary">16</mm-badge>
+        <mm-badge>8</mm-badge>
+      </mm-group>
+    </section>
+
     <mm-text variant="subhead">Non-clickable? Non-interactive?</mm-text>
     <mm-text variant="body">정보 강조, 요약</mm-text>
     <mm-text variant="body">
@@ -79,6 +128,7 @@
     </mm-text>
     <!-- <div style="display: flex; flex-direction: column; gap: 0.5rem"> -->
     <mm-text variant="subhead">Groupable</mm-text>
+    <<<<<<< HEAD
     <mm-text variant="body-bold"> 태그 그룹은 최대 4개의 태그를 표시합니다.</mm-text>
     <mm-text variant="body">
       너무 많은 태그 목록으로 사용자의 콘텐츠 탐색을 방해하지 마세요.
@@ -145,5 +195,12 @@
       <mm-badge variant="secondary">16</mm-badge>
       <mm-badge>8</mm-badge>
     </mm-group>
+    =======
+    <mm-text variant="body">
+      너무 많은 태그 목록으로 사용자의 콘텐츠 탐색을 방해하지 마세요. 태그 그룹은 최대 4개의 태그를
+      표시합니다.
+    </mm-text>
+    <mm-text variant="body">그룹에서 primary tag는 최대 1개만 포함할 수 있습니다.</mm-text>
+    >>>>>>> refs/remotes/origin/main
   </section>
 </main>
