@@ -46,43 +46,40 @@
   <section class="component-guide">
     <mm-text variant="subhead">Visual Style</mm-text>
     <mm-text variant="body">
-      옵션 목록은 최대 5개로 유지하세요.5개 이상의 옵션 목록은 select나 chip group으로 제공하세요.
+      최대 5개의 목록을 옵션으로 제공하세요. 6개 이상의 옵션 목록은 셀렉트Select 또는 가로
+      스크롤되는 칩Chip으로 제공하세요.
     </mm-text>
     <mm-text variant="body">
       최상단의 옵션을 기본 선택으로 제공합니다. 설정 등에서 사용자가 직접 선택한 이력이 있는 경우는
       기선택 옵션을. default value
     </mm-text>
-    <mm-text variant="body">
-      항상 세로 정렬하세요. 이게 조금 더 강조되어야 하는 내용인데, 어떤 방식으로 말하면 좋을지.
-      부정어를 사용하여 가로로 정렬하지 마세요. 가 조금 더 나을지.
-    </mm-text>
+
+    <mm-text variant="subhead">Groupable</mm-text>
+    <mm-text variant="body"> 가로로 정렬하지 마세요. </mm-text>
 
     <mm-text variant="subhead">Editorial</mm-text>
   </section>
 
-  <section class="component-case">
-    <mm-tile variant="elevated">
-      <mm-radio name="gender" value="" checked style="margin-top: -0.5rem">
-        <b>₩ 2,000</b>
-        개인
-      </mm-radio>
-      <div style="margin: 0 0 var(--space-2) 0">
-        <mm-text variant="body">1개월 무료 후 14,900원 / 개월</mm-text>
-        <small>현재 구독하고 있는 서비스는 체험할 수 없습니다.</small>
-      </div>
-      <figure
-        style="
-          padding: 0.75rem;
-          background: var(--color-background-weak);
-          border-radius: var(--radius);
-        "
-      >
-        기존 라디오 컴포넌트의 형태를 유지할 수 있는 디자인. props로 checked 상태만 갖는
-        radio/checkbox 뭔말?
-      </figure>
-    </mm-tile>
-  </section>
-
+  <mm-tile variant="elevated">
+    <mm-radio name="gender" value="" checked style="margin-top: -0.5rem">
+      <b>₩ 2,000</b>
+      개인
+    </mm-radio>
+    <div style="margin: 0 0 var(--space-2) 0">
+      <mm-text variant="body">1개월 무료 후 14,900원 / 개월</mm-text>
+      <small>현재 구독하고 있는 서비스는 체험할 수 없습니다.</small>
+    </div>
+    <figure
+      style="
+        padding: 0.75rem;
+        background: var(--color-background-weak);
+        border-radius: var(--radius);
+      "
+    >
+      기존 라디오 컴포넌트의 형태를 유지할 수 있는 디자인. props로 checked 상태만 갖는
+      radio/checkbox 뭔말?
+    </figure>
+  </mm-tile>
   <!-- <mm-text variant="body-large">Use cases</mm-text>
       <ul>
         <li>기본 배송지 선택</li>

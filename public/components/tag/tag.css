@@ -3,7 +3,8 @@
   align-items: center;
   height: var(--size-small);
   padding: 0 var(--space-2);
-  border: 1px solid transparent;
+  /* border: 1px solid transparent; */
+  border: var(--border);
   border-radius: var(--radius);
   box-sizing: border-box;
   background: var(--color-background);
