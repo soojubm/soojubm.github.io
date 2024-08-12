@@ -3,13 +3,14 @@
   --container-width: var(--layout-width-small);
 }
 .component-example {
-  margin:3rem -5vw 3rem calc(-5vw + 1rem);
+  margin: 2rem -5vw 3rem calc(-5vw + 1rem);
   padding:2rem calc(var(--grid-margin) - 1rem);
   
   border: var(--border);
   border-right: none;
   /* TODo make the variables */
   border-radius: var(--radius) 0 0 var(--radius);
+  background: seagreen;
   /* // background: #159957;
   // fallback for old browsers
   // background: -webkit-linear-gradient(to bottom, #155799, #159957);

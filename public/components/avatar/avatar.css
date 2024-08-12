@@ -26,20 +26,20 @@ img {
 
   background-color: var(--avatar-background-color);
   border-radius: var(--avatar-radius);
-  box-shadow: var(--color-background) 0px 0px 0px 2px;
+  /* box-shadow: var(--color-background) 0px 0px 0px 2px; */
   box-sizing: border-box;
   position: relative;
+  & img {
+    height: inherit;
+    border-radius: var(--radius);
+    object-fit: cover;
+  }
 }
+
 .avatar[data-default=true] {
   background-image: url('/public/images/soojubm.png');
   background-size: 75%;
   background-position: 75% 55%;
-}
-
-.avatar img {
-    height: inherit;
-    border-radius: var(--radius);
-    object-fit: cover;
 }
 
 .avatar[data-size=huge] {

@@ -1,155 +1,153 @@
 <main class="page">
-  <article class="article js-observer js-scrollspy-section">
-    <mm-text variant="title" title="or Box">Checkboxes</mm-text>
-    <mm-text variant="body-large"
-      >옵션 목록에서 하나 이상의 옵션을 선택합니다. 작은 거 없앨까.</mm-text
-    >
+  <mm-text variant="title" title="or Box">Checkboxes</mm-text>
+  <mm-text variant="body-large">
+    옵션 목록에서 하나 이상의 옵션을 선택합니다. 작은 거 없앨까.
+  </mm-text>
 
-    <section class="component-example">
-      <!-- a11y checkgroup not valid -->
-      <!-- <legend">checkgroup</legend> -->
-      <!-- TODO mm-checkbox-group -->
-      <mm-group variant="chip">
-        <mm-checkbox size="large" checked></mm-checkbox>
-        <mm-checkbox checked></mm-checkbox>
+  <section class="component-example">
+    <!-- a11y checkgroup not valid -->
+    <!-- <legend">checkgroup</legend> -->
+    <!-- TODO mm-checkbox-group -->
+    <mm-group variant="chip">
+      <mm-checkbox size="large" checked></mm-checkbox>
+      <mm-checkbox checked></mm-checkbox>
+    </mm-group>
+    <mm-separator></mm-separator>
+    <mm-group variant="checkbox">
+      <mm-checkbox
+        name="checkbox"
+        value="value"
+        size="large"
+        helper="주로 세팅 페이지에서 사용되는 디스크립션 영역. 항상 텍스트 더미인 것은 아님. 하지만 그렇다면 expanded/collapsed 맥락이 아닐까?"
+        checked
+      >
+        체크박스 / helper를 prop으로 주지 않는 것이 좋겠다.
+      </mm-checkbox>
+      <input
+        type="text"
+        name="other-more"
+        class="textfield-input"
+        placeholder="기타로 오토바이를 타자."
+        hidden
+      />
+      <mm-group variant="checkbox">
+        <mm-checkbox name="checkbox" size="large" disabled>비활성 상태</mm-checkbox>
+        <mm-checkbox name="checkbox" size="large" checked disabled>비활성 체크 상태</mm-checkbox>
       </mm-group>
       <mm-separator></mm-separator>
-      <mm-group variant="checkbox">
-        <mm-checkbox
-          name="checkbox"
-          value="value"
-          size="large"
-          helper="주로 세팅 페이지에서 사용되는 디스크립션 영역. 항상 텍스트 더미인 것은 아님. 하지만 그렇다면 expanded/collapsed 맥락이 아닐까?"
-          checked
-        >
-          체크박스 / helper를 prop으로 주지 않는 것이 좋겠다.
-        </mm-checkbox>
-        <input
-          type="text"
-          name="other-more"
-          class="textfield-input"
-          placeholder="기타로 오토바이를 타자."
-          hidden
-        />
-        <mm-group variant="checkbox">
-          <mm-checkbox name="checkbox" size="large" checked disabled>비활성 상태</mm-checkbox>
-          <mm-checkbox name="checkbox" size="large" disabled>비활성 상태</mm-checkbox>
-        </mm-group>
-        <mm-separator></mm-separator>
-        <mm-tile variant="elevated" size="small" style="width: 100%">
-          <div style="margin: 0 var(--space-2)">
-            <mm-checkbox name="checkbox" size="large" checked>
-              모바일 친화적인 Tiled 형태.
-            </mm-checkbox>
-          </div>
-        </mm-tile>
-      </mm-group>
-    </section>
+      <mm-tile variant="elevated" size="small" style="width: 100%">
+        <div style="margin: 0 var(--space-2)">
+          <mm-checkbox name="checkbox" size="large" checked>
+            모바일 친화적인 Tiled 형태.
+          </mm-checkbox>
+        </div>
+      </mm-tile>
+    </mm-group>
+  </section>
 
-    <section class="component-props">
-      <!-- <mm-text variant="subhead" hidden>Props</mm-text> -->
-      <dl>
-        <!-- <dt>name</dt>
+  <section class="component-props">
+    <!-- <mm-text variant="subhead" hidden>Props</mm-text> -->
+    <dl>
+      <!-- <dt>name</dt>
         <dd>string</dd>
         <dd>unique. 없어도 되지 않을까. radio에서도 직접 입력 id={props.name}</dd> -->
-        <dt>value</dt>
-        <dd>string</dd>
-        <dd>unique</dd>
-        <dt>label? - labelHidden</dt>
-        <dd>string</dd>
-        <dd>동사를 포함하는 최대 2단어. choice보다 action에 가깝다.</dd>
-        <dt>isChecked<attr>?</attr></dt>
-        <dd>boolean</dd>
-        <dd>checkbox group이 가지는 추세.</dd>
-        <dt>isDisabled<attr>?</attr></dt>
-        <dd>boolean</dd>
-        <dd></dd>
-        <dt>isIndeterminated<attr>?</attr></dt>
-        <dd>boolean</dd>
-        <dd>TODO checkbox group에서 checkboxAll에 종속되는 옵션</dd>
-        <dt>onChange</dt>
-        <dd>(event: React.ChangeEvent[HTMLInputElement]) >] void</dd>
-        <dd>checkbox group의 prop. React.ChangeEventHandler[]</dd>
-      </dl>
-      <p>role=checkbox aria-checked=false</p>
-    </section>
+      <dt>value</dt>
+      <dd>string</dd>
+      <dd>unique</dd>
+      <dt>label? - labelHidden</dt>
+      <dd>string</dd>
+      <dd>동사를 포함하는 최대 2단어. choice보다 action에 가깝다.</dd>
+      <dt>isChecked<attr>?</attr></dt>
+      <dd>boolean</dd>
+      <dd>checkbox group이 가지는 추세.</dd>
+      <dt>isDisabled<attr>?</attr></dt>
+      <dd>boolean</dd>
+      <dd></dd>
+      <dt>isIndeterminated<attr>?</attr></dt>
+      <dd>boolean</dd>
+      <dd>TODO checkbox group에서 checkboxAll에 종속되는 옵션</dd>
+      <dt>onChange</dt>
+      <dd>(event: React.ChangeEvent[HTMLInputElement]) >] void</dd>
+      <dd>checkbox group의 prop. React.ChangeEventHandler[]</dd>
+    </dl>
+    <p>role=checkbox aria-checked=false</p>
+  </section>
 
-    <section class="component-guide">
-      <mm-text variant="subhead">Visual style</mm-text>
-      <mm-text variant="body"> 선택되지 않은 상태로 제공하세요. </mm-text>
-      <mm-text variant="body"> 체크박스를 가로로 정렬하지 마세요. </mm-text>
-      <mm-text variant="body">
-        상대적으로 강조를 위해 체크박스의 label text를 강조하지 마세요. 체크박스의 크기나 컨테이너를
-        강조하여 컴포넌트를 독립적으로 유지하세요.
-      </mm-text>
-    </section>
+  <section class="component-guide">
+    <mm-text variant="subhead">Visual style</mm-text>
+    <mm-text variant="body"> 선택되지 않은 상태로 제공하세요. </mm-text>
+    <mm-text variant="body"> 체크박스를 가로로 정렬하지 마세요. </mm-text>
+    <mm-text variant="body">
+      상대적으로 강조를 위해 체크박스의 label text를 강조하지 마세요. 체크박스의 크기나 컨테이너를
+      강조하여 컴포넌트를 독립적으로 유지하세요.
+    </mm-text>
+  </section>
 
-    <section class="component-case">
-      <mm-tile>
-        <mm-group variant="checkbox">
-          <mm-checkbox
-            size="medium"
-            class="js-checkall"
-            aira-checked="mixed"
-            aria-controls="1 2"
-            data-indeterminate="true"
-            indeterminate
-          >
-            <em style="font-style: normal"> 모두 동의합니다 </em>
-          </mm-checkbox>
-          <mm-checkbox class="js-check" id="terms" name="terms">
-            이용약관에 동의합니다.
-            <a href="#">이용약관 바로가기</a>
-          </mm-checkbox>
-        </mm-group>
-      </mm-tile>
-      <mm-tile>
-        <mm-group variant="checkbox">
-          <mm-text variant="body-bold">콘텐츠 필터링</mm-text>
-          <div style="height: var(--space-1)"></div>
-          <mm-checkbox name="interest" value="other">옵션 하나</mm-checkbox>
-          <mm-checkbox name="interest" value="other">옵션 둘</mm-checkbox>
-          <mm-checkbox name="interest" value="other">옵션 셋</mm-checkbox>
-          <mm-checkbox name="interest" value="other">옵셧 넷</mm-checkbox>
-          <div style="height: var(--space-3)"></div>
-          <mm-button variant="secondary">적용</mm-button>
-        </mm-group>
-      </mm-tile>
-      <mm-tile><mm-checkbox>포토리뷰만 보기</mm-checkbox></mm-tile>
-      <!-- <mm-text variant="body">쿠키 관련 util</mm-text> -->
-      <mm-tile>
-        <mm-checkbox>다시 묻지 않기 / 일주일 동안 보지 않기don't ask again</mm-checkbox>
-      </mm-tile>
-      <mm-tile>
-        <mm-titlebar heading="컬렉션에 추가"></mm-titlebar>
-        <br />
-        <mm-tile variant="elevated" size="small">
-          <mm-menuitem label="새 컬렉션 만들기">
-            <mm-avatar slot="avatar">
-              <mm-icon slot="icon" name="plus"></mm-icon>
-            </mm-avatar>
-          </mm-menuitem>
-        </mm-tile>
+  <section class="component-case">
+    <mm-tile>
+      <mm-group variant="checkbox">
+        <mm-checkbox
+          size="medium"
+          class="js-checkall"
+          aira-checked="mixed"
+          aria-controls="1 2"
+          data-indeterminate="true"
+          indeterminate
+        >
+          <em style="font-style: normal"> 모두 동의합니다 </em>
+        </mm-checkbox>
+        <mm-checkbox class="js-check" id="terms" name="terms">
+          이용약관에 동의합니다.
+          <a href="#">이용약관 바로가기</a>
+        </mm-checkbox>
+      </mm-group>
+    </mm-tile>
+    <mm-tile>
+      <mm-group variant="checkbox">
+        <mm-text variant="body-bold">콘텐츠 필터링</mm-text>
+        <div style="height: var(--space-1)"></div>
+        <mm-checkbox name="interest" value="other">옵션 하나</mm-checkbox>
+        <mm-checkbox name="interest" value="other">옵션 둘</mm-checkbox>
+        <mm-checkbox name="interest" value="other">옵션 셋</mm-checkbox>
+        <mm-checkbox name="interest" value="other">옵셧 넷</mm-checkbox>
         <div style="height: var(--space-3)"></div>
-        <mm-group variant="checkbox">
-          <!-- aira-checked="mixed" aria-controls="1 2" -->
-          <mm-checkbox>컬렉션 1</mm-checkbox>
-          <mm-checkbox>컬렉션 2 - 관리: 수정/삭제 등</mm-checkbox>
-        </mm-group>
+        <mm-button variant="secondary">적용</mm-button>
+      </mm-group>
+    </mm-tile>
+    <mm-tile><mm-checkbox>포토리뷰만 보기</mm-checkbox></mm-tile>
+    <!-- <mm-text variant="body">쿠키 관련 util</mm-text> -->
+    <mm-tile>
+      <mm-checkbox>다시 묻지 않기 / 일주일 동안 보지 않기don't ask again</mm-checkbox>
+    </mm-tile>
+    <mm-tile>
+      <mm-titlebar heading="컬렉션에 추가"></mm-titlebar>
+      <br />
+      <mm-tile variant="elevated" size="small">
+        <mm-menuitem label="새 컬렉션 만들기">
+          <mm-avatar slot="avatar">
+            <mm-icon slot="icon" name="plus"></mm-icon>
+          </mm-avatar>
+        </mm-menuitem>
       </mm-tile>
-      <mm-tile>
-        <mm-titlebar heading="컬렉션 만들기">
-          <mm-chip slot="action">완료</mm-chip>
-        </mm-titlebar>
-        <div style="height: 1rem"></div>
-        <mm-textfield label="컬렉션 이름" placeholder="컬렉션 이름"></mm-textfield>
-        <div style="height: 0.75rem"></div>
-        <mm-group variant="radio">
-          <!-- aira-checked="mixed" aria-controls="1 2" -->
-          <mm-radio>공개</mm-radio>
-          <mm-radio>비공개</mm-radio>
-        </mm-group>
-      </mm-tile>
-    </section>
-  </article>
+      <div style="height: var(--space-3)"></div>
+      <mm-group variant="checkbox">
+        <!-- aira-checked="mixed" aria-controls="1 2" -->
+        <mm-checkbox size="large">컬렉션 1</mm-checkbox>
+        <mm-checkbox size="large">컬렉션 2 - 관리: 수정/삭제 등</mm-checkbox>
+      </mm-group>
+    </mm-tile>
+    <mm-tile>
+      <mm-titlebar heading="컬렉션 만들기">
+        <mm-chip slot="action">완료</mm-chip>
+      </mm-titlebar>
+      <div style="height: 1rem"></div>
+      <mm-textfield label="컬렉션 이름" placeholder="컬렉션 이름"></mm-textfield>
+      <div style="height: 0.75rem"></div>
+      <mm-group variant="radio">
+        <!-- aira-checked="mixed" aria-controls="1 2" -->
+        <mm-radio>공개</mm-radio>
+        <mm-radio>비공개</mm-radio>
+      </mm-group>
+    </mm-tile>
+  </section>
 </main>
