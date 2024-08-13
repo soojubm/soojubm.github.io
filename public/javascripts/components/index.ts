@@ -53,7 +53,6 @@ export function defineCustomElement() {
     customElements.define('mm-chip', Chip)
 
     customElements.define('mm-tag', Tag)
-    customElements.define('mm-badge', Badge)
 
     customElements.define('mm-entity', Entity)
 
