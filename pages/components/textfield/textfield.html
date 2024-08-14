@@ -393,10 +393,12 @@
       <mm-separator></mm-separator>
 
       <footer>
-        <mm-keyvalue key="총 상품금액" value="₩ 30,000"></mm-keyvalue>
-        <mm-keyvalue key="배송료" value="₩ 3,000"></mm-keyvalue>
-        <mm-keyvalue key="할인" value="₩ 2,000"></mm-keyvalue>
-        <mm-keyvalue key="최종 결제 금액" value="₩ 37,000"></mm-keyvalue>
+        <mm-group variant="menuitem">
+          <mm-keyvalue key="총 상품금액" value="₩ 30,000"></mm-keyvalue>
+          <mm-keyvalue key="배송료" value="₩ 3,000"></mm-keyvalue>
+          <mm-keyvalue key="할인" value="₩ 2,000"></mm-keyvalue>
+          <mm-keyvalue key="최종 결제 금액" value="₩ 37,000"></mm-keyvalue>
+        </mm-group>
         <div style="height: var(--space-3)"></div>
         <mm-button variant="primary" isfullwidth="true">결제</mm-button>
       </footer>

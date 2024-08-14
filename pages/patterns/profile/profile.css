@@ -11,16 +11,6 @@
 .profile-user {float:left;width:320px;position:relative;z-index:var(--zindex-default);}
 .profile-user-description {max-height:5.4em;margin:var(--space-4) 0;white-space:normal;overflow:hidden;text-overflow:ellipsis;word-wrap:break-word;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;position:relative;}
 
-
-.social {}
-.social-link {display:flex;align-items:center;position:relative;}
-.social-link-icon {background-image:none;}
-.social-link-label {color:var(--color-text);}
-.social-facebook figure {background-color:var(--color-facebook);}
-.social-pinterest figure {background-color:var(--color-pinterest);}
-.social-instagram figure {background-color:var(--color-instagram);}
-.social-github figure {background-color:var(--color-github);}
-
 /* // todo active state
 // 텍스트(아바타를 제외한 엘리먼트)에 마진레프트를 주면 아이콘 버튼으로 사용할 ㅜㅅ 잇지만 코드가 많아짐. 어차피 토큰을 사용하면 문제 없음.
 // 여기서 변하는 값은 item height 뿐임.
@@ -42,7 +32,6 @@
 
 
 @media (max-width: 800px) {
-  .profile {max-width:var(--width-medium);}
   .tabpanel mm-tile {
     width:100%;
   }
