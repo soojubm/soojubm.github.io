@@ -25,11 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const expanded = targetElement.getAttribute('aria-expanded') === 'true' ? 'false' : 'true'
 
-    console.log(
-      targetElement,
-      targetElement.getAttribute('aria-expanded'),
-      targetElement.getAttribute('aria-expanded') === 'true',
-    )
     targetElement.setAttribute('aria-expanded', expanded)
     // targetElement.classList.toggle('is-active')
   }

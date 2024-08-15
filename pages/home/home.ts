@@ -1,11 +1,9 @@
 import footer from '/public/components/footer/footer.html'
 import navbar from '/public/components/navbar/navbar.html'
-
 import main from './home.html'
 
 import '/public/stylesheets/shared.css'
 import '/public/stylesheets/components/chat.css'
-
 import '/pages/components/components.css'
 
 document.addEventListener('DOMContentLoaded', () => {

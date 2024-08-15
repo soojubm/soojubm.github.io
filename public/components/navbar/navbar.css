@@ -79,7 +79,7 @@
 /* ReactNative safeAreaView, scrollView */
 .page {
   margin: 0 auto;
-  padding: 1rem var(--grid-margin) 4rem;
+  padding: 2rem var(--grid-margin) 4rem;
   box-sizing: border-box;
   position:relative;
 }

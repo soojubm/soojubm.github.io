@@ -23,14 +23,6 @@
   font-size: 12px;
 }
 
-/* .meter-title {
-  margin: 0 0 var(--space-1) 0;
-  @mixin text-subhead;
-}
-
-.meter-status {
-  @mixin text-title;
-} */
 
 .meter-graph {
   display: flex;

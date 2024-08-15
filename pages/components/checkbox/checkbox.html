@@ -1,13 +1,11 @@
 <main class="page">
-  <mm-text variant="title" title="or Box">Checkboxes</mm-text>
+  <mm-text variant="title">Checkboxes</mm-text>
   <mm-text variant="body-large">
     옵션 목록에서 하나 이상의 옵션을 선택합니다. 작은 거 없앨까.
   </mm-text>
-
   <section class="component-example">
     <!-- a11y checkgroup not valid -->
     <!-- <legend">checkgroup</legend> -->
-    <!-- TODO mm-checkbox-group -->
     <mm-group variant="chip">
       <mm-checkbox size="large" checked></mm-checkbox>
       <mm-checkbox checked></mm-checkbox>
@@ -18,10 +16,10 @@
         name="checkbox"
         value="value"
         size="large"
-        helper="주로 세팅 페이지에서 사용되는 디스크립션 영역. 항상 텍스트 더미인 것은 아님. 하지만 그렇다면 expanded/collapsed 맥락이 아닐까?"
+        aria-helper="주로 세팅 페이지에서 사용되는 디스크립션 영역. 항상 텍스트 더미인 것은 아님. 하지만 그렇다면 expanded/collapsed 맥락이 아닐까?"
         checked
       >
-        체크박스 / helper를 prop으로 주지 않는 것이 좋겠다.
+        체크박스 / helper와 validation messgage 구분
       </mm-checkbox>
       <input
         type="text"
@@ -30,18 +28,8 @@
         placeholder="기타로 오토바이를 타자."
         hidden
       />
-      <mm-group variant="checkbox">
-        <mm-checkbox name="checkbox" size="large" disabled>비활성 상태</mm-checkbox>
-        <mm-checkbox name="checkbox" size="large" checked disabled>비활성 체크 상태</mm-checkbox>
-      </mm-group>
-      <mm-separator></mm-separator>
-      <mm-tile variant="elevated" size="small" style="width: 100%">
-        <div style="margin: 0 var(--space-2)">
-          <mm-checkbox name="checkbox" size="large" checked>
-            모바일 친화적인 Tiled 형태.
-          </mm-checkbox>
-        </div>
-      </mm-tile>
+      <mm-checkbox name="checkbox" size="large" disabled>비활성 상태</mm-checkbox>
+      <mm-checkbox name="checkbox" size="large" checked disabled>비활성 체크 상태</mm-checkbox>
     </mm-group>
   </section>
 
@@ -80,15 +68,26 @@
       내부를 독립적으로 유지하세요.
     </mm-text>
 
+    <mm-text variant="subhead">Selection</mm-text>
+    <mm-text variant="body"> 체크박스를 가로로 정렬하지 마세요. </mm-text>
+
     <mm-text variant="subhead">Groupable</mm-text>
     <mm-text variant="body"> 체크박스를 가로로 정렬하지 마세요. </mm-text>
+  </section>
+
+  <section class="component-example">
+    <mm-tile variant="elevated" size="small" style="width: 100%">
+      <div style="margin: 0 var(--space-2)">
+        <mm-checkbox name="checkbox" size="large" checked> in tile 형태. </mm-checkbox>
+      </div>
+    </mm-tile>
   </section>
 
   <section class="component-case">
     <mm-tile>
       <mm-group variant="checkbox">
         <mm-checkbox
-          size="medium"
+          size="large"
           class="js-checkall"
           aira-checked="mixed"
           aria-controls="1 2"
@@ -101,18 +100,6 @@
           이용약관에 동의합니다.
           <a href="#">이용약관 바로가기</a>
         </mm-checkbox>
-      </mm-group>
-    </mm-tile>
-    <mm-tile>
-      <mm-group variant="checkbox">
-        <mm-text variant="body-bold">콘텐츠 필터링</mm-text>
-        <div style="height: var(--space-1)"></div>
-        <mm-checkbox name="interest" value="other">옵션 하나</mm-checkbox>
-        <mm-checkbox name="interest" value="other">옵션 둘</mm-checkbox>
-        <mm-checkbox name="interest" value="other">옵션 셋</mm-checkbox>
-        <mm-checkbox name="interest" value="other">옵셧 넷</mm-checkbox>
-        <div style="height: var(--space-3)"></div>
-        <mm-button variant="secondary">적용</mm-button>
       </mm-group>
     </mm-tile>
     <mm-tile><mm-checkbox>포토리뷰만 보기</mm-checkbox></mm-tile>

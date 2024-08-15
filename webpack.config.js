@@ -171,6 +171,7 @@ module.exports = {
       linkType: false,
       filename: '[name].css',
       chunkFilename: '[id].[contenthash].css',
+      ignoreOrder: true,
     }),
 
     ...setPages(patterns),

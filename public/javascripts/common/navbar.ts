@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // document.querySelectorAll('.sidebar-menu a, .sidebar-menu mm-menuitem').forEach(item => {
   document.querySelectorAll('.sidebar-menu a').forEach(item => {
     const { pathname } = window.location
-    console.log(pathname, item.getAttribute('href'))
+    // console.log(pathname, item.getAttribute('href'))
     if (pathname.includes(item.getAttribute('href') || '')) {
       item.setAttribute('aria-current', 'page')
     }

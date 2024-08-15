@@ -21,16 +21,7 @@
   @mixin avatar-medium;
   box-shadow: 1px 1px 1rem rgba(0, 0, 0, .1)
 }
-main,
-.footer {
-  transition: all .6s ease;
-}
  */
-
-.iconoir-nav-arrow-down {
-  margin-top: -1px;
-}
-
 .bookitem-cover {
   padding-top: 50%;
   background: var(--gray100);

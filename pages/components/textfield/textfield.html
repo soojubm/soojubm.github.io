@@ -242,11 +242,6 @@
     <mm-tile>
       <mm-titlebar heading="Field group"></mm-titlebar>
       <div style="height: var(--space-3)"></div>
-      <mm-text variant="body-bold"></mm-text>
-      <mm-text variant="body">
-        그룹이 되는 모든 필드는 선택 입력입니다. 다시말해 필수 입력 필드를 그룹으로 제공하지 마세요.
-      </mm-text>
-      <div style="height: var(--space-3)"></div>
       <mm-group variant="textfield" style="width: 100%; flex-wrap: nowrap; align-items: flex-end">
         <mm-textfield label="Length" placeholder="cm unit"></mm-textfield>
         <div style="display: flex; align-items: center; height: var(--size-large)">
@@ -258,66 +253,17 @@
         </div>
         <mm-textfield label="Height" placeholder="cm"></mm-textfield>
       </mm-group>
-    </mm-tile>
-    <mm-tile>
-      <div style="display: flex; justify-content: space-between; gap: var(--space-3)">
-        <div style="flex: auto; width: 50%">
+      <mm-group variant="chip">
+        <div style="flex: 1">
           <mm-textfield type="date" name="date-start" label="체크인" placeholder="YYYY. MM. DD.">
             <mm-icon slot="suffix" name="calendar"></mm-icon>
           </mm-textfield>
         </div>
-        <div style="flex: auto; width: 50%">
+        <div style="flex: 1">
           <mm-textfield type="date" name="date-end" label="체크아웃" placeholder="YYYY. MM. DD.">
             <mm-icon slot="suffix" name="calendar"></mm-icon>
           </mm-textfield>
         </div>
-      </div>
-    </mm-tile>
-
-    <mm-tile>
-      <mm-titlebar heading="배송지 등록"> </mm-titlebar>
-      <br />
-      <mm-group variant="form">
-        <mm-textfield
-          label="받는 사람"
-          stype="text"
-          name="email"
-          id="login-email"
-          placeholder="수줍이"
-        ></mm-textfield>
-        <mm-textfield
-          label="연락처"
-          type="text"
-          name="email"
-          id="login-email"
-          placeholder="01012345678"
-        ></mm-textfield>
-        <mm-textfield
-          label="주소"
-          type="text"
-          name="email"
-          id="address"
-          placeholder="클릭하여 우편번호 찾기"
-        ></mm-textfield>
-        <mm-textfield
-          label="상세주소"
-          type="text"
-          name="email"
-          id="address"
-          placeholder="클릭하여 우편번호 찾기"
-        ></mm-textfield>
-        <!-- First name, Last Name, Country / Region, State, Zipcode" -->
-        <!-- <mm-textfield label="공동현관 출입번호" type="text" isOptional name="email" id="login-email" placeholder=""></mm-textfield> -->
-        <mm-textfield
-          label="배송 메시지"
-          type="text"
-          isOptional
-          name="email"
-          id="login-email"
-          placeholder="직접 입력"
-        ></mm-textfield>
-        <mm-checkbox label="개인정보 수집 및 이용 동의(수취인정보?)"></mm-checkbox>
-        <mm-button variant="primary" label="배송지 등록"></mm-button>
       </mm-group>
     </mm-tile>
 
@@ -389,9 +335,7 @@
           <span class="cart-item-addition-price">₩ 20,000</span>
         </div>
       </mm-menuitem>
-
       <mm-separator></mm-separator>
-
       <footer>
         <mm-keyvalue key="총 상품금액" value="₩ 30,000"></mm-keyvalue>
         <mm-keyvalue key="배송료" value="₩ 3,000"></mm-keyvalue>
@@ -400,6 +344,52 @@
         <div style="height: var(--space-3)"></div>
         <mm-button variant="primary" isfullwidth="true">결제</mm-button>
       </footer>
+    </mm-tile>
+    <mm-tile>
+      <mm-titlebar heading="배송지 등록"> </mm-titlebar>
+      <br />
+      <mm-group variant="form">
+        <mm-textfield
+          label="받는 사람"
+          stype="text"
+          name="email"
+          id="login-email"
+          placeholder="수줍이"
+        ></mm-textfield>
+        <mm-textfield
+          label="연락처"
+          type="text"
+          name="email"
+          id="login-email"
+          placeholder="01012345678"
+        ></mm-textfield>
+        <mm-textfield
+          label="주소"
+          type="text"
+          name="email"
+          id="address"
+          placeholder="클릭하여 우편번호 찾기"
+        ></mm-textfield>
+        <mm-textfield
+          label="상세주소"
+          type="text"
+          name="email"
+          id="address"
+          placeholder="클릭하여 우편번호 찾기"
+        ></mm-textfield>
+        <!-- First name, Last Name, Country / Region, State, Zipcode" -->
+        <!-- <mm-textfield label="공동현관 출입번호" type="text" isOptional name="email" id="login-email" placeholder=""></mm-textfield> -->
+        <mm-textfield
+          label="배송 메시지"
+          type="text"
+          isOptional
+          name="email"
+          id="login-email"
+          placeholder="직접 입력"
+        ></mm-textfield>
+        <mm-checkbox label="개인정보 수집 및 이용 동의(수취인정보?)"></mm-checkbox>
+        <mm-button variant="primary" label="배송지 등록"></mm-button>
+      </mm-group>
     </mm-tile>
   </section>
 </main>

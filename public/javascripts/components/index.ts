@@ -1,7 +1,6 @@
 import Chip from '../../components/chip/chip'
 
 import Tag from '../../components/tag/tag'
-import Badge from '../../components/badge/badge'
 
 import Avatar from '../../components/avatar/avatar'
 import Entity from '../../components/entity/entity'

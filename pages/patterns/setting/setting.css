@@ -1,12 +1,8 @@
-.setting {@mixin layout-medium;}
-
+.setting {}
 .setting-item {margin:0 0 1.5rem 0;}
-.setting-item-label {@mixin text-label;}
+.setting-item-label {}
 .setting-item-value {}
 .setting-item-value-username {width:100%;}
 .setting-item-value-address {width:100%;}
 .setting-item-value-phone {width:100%;}
 .setting-item-icon {position:absolute;right:.5rem;top:50%;transform:translateY(-50%);}
-
-@media (--small) {
-}

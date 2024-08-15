@@ -6,14 +6,15 @@
 @custom-media --large (max-width: 1560px);
 @custom-media --small (max-width: 1080px);
 @custom-media --tiny (max-width: 880px);
+body{background:skyblue}
 
 :root {
   color-scheme: light dark;
   /* // -apple-system === san-serif / system-ui === BlinkMacSystemFont */
   /* --font-family: 'Pretendard', system-ui, sans-serif; */
-  /* --font-family: 'IBM Plex Sans', 'Gothic A1', system-ui, sans-serif; */
-  --font-family: 'Noto Serif KR', 'Gothic A1', system-ui, sans-serif;
-  --font-family-heading: null;
+  --font-family: 'IBM Plex Sans', 'Gothic A1', system-ui, sans-serif;
+  /* --font-family: 'Noto Serif KR', 'Gothic A1', system-ui, sans-serif; */
+--font-family-heading: null;
   --font-family-body: null;
   --font-family-caption: null;
   --font-family-code: null;
@@ -27,7 +28,7 @@
   --font-size-small: .75rem;
 
   --font-weight-normal: 400;
-  --font-weight-bold: 900;
+  --font-weight-bold: 700;
   --font-weight-extrabold: null;
 
   --font-line-height-large: 1.715;
@@ -74,6 +75,8 @@
   --gray800: #343c38;
   --gray800: #3d4943;
 
+  --gray900: #000;
+
   --green100: rgba(10, 160, 80, 0.1);
   --green100: rgba(10, 160, 80, 0.075);
   --green800: #1b995c;
@@ -119,7 +122,8 @@
   --color-border: var(--gray200);
   --color-border-hover: var(--gray800);
   --color-text: var(--gray800);
-  /* --color-text: #1e1e23; */
+  --color-text: #1e1e23;
+  --color-text: var(--gray900);
   --color-text-light: var(--gray400);
 
   --color-background-interaction: null;
