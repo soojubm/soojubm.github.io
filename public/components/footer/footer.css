@@ -32,7 +32,7 @@
 	/* background:gold;transition:all .8 ease; */
 }
 
-@media (--small) {
+@media (max-width: 1100px) {
 
 	.is-opened-menu .footer {margin-left:0;}
 }

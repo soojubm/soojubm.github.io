@@ -8,7 +8,10 @@ class CustomHTMLElement extends HTMLElement {
 
 class Checkbox extends CustomHTMLElement {
   static formAssociated = true
-  static observedAttributes = ['checked']
+  static observedAttributes = ['checked', 'disabled']
+  // static get observedAttributes() {
+  //   return ['checked', 'disabled']
+  // }
 
   constructor() {
     super()

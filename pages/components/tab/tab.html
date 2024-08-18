@@ -2,28 +2,19 @@
   <mm-text variant="title">Tab</mm-text>
   <mm-text variant="body-large">같은 맥락의 콘텐츠를 주제별로 분류합니다.</mm-text>
 
-  <!-- <mm-tablist>
-      <mm-tab slot="tab" selected="true" aria-controls="panel-1" id="tab-1" tabindex="0"> Monthly </mm-tab>
-      <mm-tab slot="tab" aria-controls="panel-2" id="tab-2" tabindex="-1">Yearly</mm-tab>
-    </mm-tablist> -->
-
   <section class="component-example">
-    <!-- TODO Primary style -->
     <!-- <mm-tablist variant="primary">
-        <mm-tab slot="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">
-          첫번째 탭
-        </mm-tab>
-        <mm-tab slot="tab" aria-controls="panel-2" id="tab-2" tabindex="-1">두번째 탭</mm-tab>
-        <mm-tab slot="tab" aria-controls="panel-3" id="tab-3" tabindex="-1">세번째 탭</mm-tab>
-        <i slot="indicator" class="tablist-indicator"></i>
-      </mm-tablist> -->
-    <!-- data-tabs='{"name": "Chris Coyier", "job": "Web Person"}' -->
-    <div style="display: flex; gap: 1rem">
+      <mm-tab slot="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">
+        첫번째 탭
+      </mm-tab>
+      <mm-tab slot="tab" aria-controls="panel-2" id="tab-2" tabindex="-1">두번째 탭</mm-tab>
+      <i slot="indicator" class="tablist-indicator"></i>
+    </mm-tablist> -->
+    <!-- <div style="display: flex; gap: 1rem">
       <mm-text variant="title">첫번째 탭</mm-text>
       <mm-text variant="title" style="opacity: 0.5">두번째 탭</mm-text>
       <mm-text variant="title" style="opacity: 0.5">세번째 탭</mm-text>
-    </div>
-    <mm-separator></mm-separator>
+    </div> -->
     <mm-tablist>
       <mm-tab slot="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">
         첫번째 탭
@@ -52,17 +43,6 @@
       style="margin: 0.5rem 0 0"
     >
       <p>Content for the second panel</p>
-    </div>
-    <div
-      class="tabpanel"
-      id="panel-3"
-      role="tabpanel"
-      tabindex="0"
-      aria-labelledby="tab-3"
-      aria-hidden="true"
-      style="margin: 1rem 0 0"
-    >
-      <p>Content for the third panel</p>
     </div>
     <mm-separator></mm-separator>
     <div style="max-width: 200px">
@@ -106,7 +86,7 @@
       exclusive, so ensure they’re fully self-contained.
     </mm-text>
     <mm-text variant="body">
-      탭을 중첩하지 마세요. 페이지에서 수행할 수 있는 과업을 명확히. 플로우 설계.
+      탭을 중첩하지 마세요. 페이지에서 수행하는 과업 중심 플로우 설계.
     </mm-text>
     <mm-text variant="subhead">Editorial - Easy Scanning</mm-text>
     <mm-text variant="body">
@@ -117,11 +97,7 @@
       정의. 갯수를 제한하면 스크롤이 불필요.
     </mm-text>
 
-    <mm-text variant="subhead">A11y</mm-text>
-    <mm-text variant="body">키보드 접근성. 방향키 </mm-text>
-
-    <mm-text variant="subhead">Notes</mm-text>
-    <ul>
+    <ul class="checklist">
       <li>브라우저 히스토리 (?tab=projects). SearchParams</li>
       <li>Material 3에서 primary tabs / secondary tabs</li>
       <li>

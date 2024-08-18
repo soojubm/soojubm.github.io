@@ -6,10 +6,9 @@
 } */
 
 
-.separator {width:100%;height:1px;margin:var(--space-4) 0;text-align:center;position:relative;z-index:var(--zindex-default);}
-.separator:before {content:'';display:block;width:100%;height:1px;background:var(--color-border);position:absolute;top:50%;transform:translateY(-1px);}
+.separator {width:100%;border-top:var(--border);margin:var(--space-4) 0;position:relative;z-index:var(--zindex-default);}
 /* .separator:after {content:'또는';width:4rem;line-height:24px;background:var(--color-background);font-size:var(--font-size-small);color:var(--color-text-light);position:absolute;left:50%;top:0;transform:translateX(-50%);} */
-.separator:after {content:'';width:4rem;line-height:24px;background:var(--color-background);font-size:var(--font-size-small);color:var(--color-text-light);position:absolute;left:50%;top:0;transform:translateX(-50%);}
+.separator:after {content:'';width:4rem;line-height:24px;background:var(--color-background);font-size:var(--font-size-small);color:var(--color-text-light);text-align:center;position:absolute;left:50%;top:0;transform:translateX(-50%);}
 
 hr[role=separator] {}
 

@@ -1,34 +1,57 @@
-<main class="page">
+<main class="page js-tab">
   <header class="page-header">
     <mm-text variant="title">Buttons</mm-text>
     <mm-text variant="body-large">
-      페이지 이동이나 양식 제출 등 사용자 여정의 핵심과업을 수행하기 위한 액션입니다.
+      페이지 이동이나 양식 제출 등 사용자 여정의 핵심과업을 수행할 수 있습니다. 페이지에서
+      제한적으로 사용하여 사용자의 과업을 돕습니다.
     </mm-text>
+    <dl class="article-aka">
+      <dt>a.k.a</dt>
+      <dd>button</dd>
+      <dd>text - icon(avatar)</dd>
+    </dl>
   </header>
-  <dl class="article-aka">
-    <dt>a.k.a</dt>
-    <dd>button</dd>
-    <dd>text - icon(avatar)</dd>
-  </dl>
+
+  <div style="margin-top: 2rem; margin-bottom: -2rem">
+    <mm-tablist class="tablist">
+      <mm-tab slot="tab" role="tab" name="project" selected="true" data-index="1">
+        베리언트
+      </mm-tab>
+      <mm-tab slot="tab" role="tab" name="case-study" selected="false" data-index="2">
+        상태
+      </mm-tab>
+      <mm-tab slot="tab" role="tab" name="blank" selected="false" data-index="3"> 크기 </mm-tab>
+      <i class="tablist-indicator"></i>
+    </mm-tablist>
+  </div>
   <section class="component-example">
-    <mm-group variant="chip">
-      <mm-button variant="primary">primary</mm-button>
-      <mm-button variant="secondary">secondary</mm-button>
-      <mm-button variant="tertiary">tertiary</mm-button>
-      <!-- <mm-button variant="destructive" aria-label="danger">destructive</mm-button> -->
-      <!-- <mm-button variant="text">text</mm-button> -->
-    </mm-group>
-    <!-- <mm-group variant="chip">
+    <mm-tabpanel role="tabpanel" aria-hidden="false" data-index="1">
+      <mm-group variant="chip">
+        <mm-button variant="primary">primary</mm-button>
+        <mm-button variant="secondary">secondary</mm-button>
+        <mm-button variant="tertiary">tertiary</mm-button>
+        <!-- <mm-button variant="destructive" aria-label="danger">destructive</mm-button> -->
+        <!-- <mm-button variant="text">text</mm-button> -->
+      </mm-group>
+      <!-- <mm-group variant="chip">
       <mm-button variant="primary" size="large">large</mm-button>
       <mm-button variant="tertiary">medium</mm-button>
     </mm-group> -->
-  </section>
-  <section class="component-example" style="margin-top: -3rem">
-    <mm-group variant="chip">
-      <mm-button variant="tertiary" status="hover">hovered</mm-button>
-      <mm-button variant="tertiary" status="focus">focused</mm-button>
-      <mm-button variant="tertiary" status="disabled" disabled>disabled</mm-button>
-    </mm-group>
+    </mm-tabpanel>
+    <mm-tabpanel aria-hidden="false" data-index="2">
+      <mm-group variant="chip">
+        <mm-button variant="tertiary" status="hover">hovered</mm-button>
+        <mm-button variant="tertiary" status="focus">focused</mm-button>
+        <mm-button variant="tertiary" status="disabled" disabled>disabled</mm-button>
+        <mm-button variant="tertiary">
+          <div slot="prefix" class="chat-inputing animation-chatting">
+            <span style="background-color: var(--color-background-strong)"></span>
+            <span style="background-color: var(--color-background-strong)"></span>
+            <span style="background-color: var(--color-background-strong)"></span>
+          </div>
+        </mm-button>
+      </mm-group>
+    </mm-tabpanel>
   </section>
 
   <section class="component-props">
@@ -72,61 +95,46 @@
   <!-- 참고: 버튼 네이밍. 'link' | 'subtle' | 'primary' / 'solid' | 'outline' | 'plain' |'text' -->
   <section class="component-guide">
     <mm-text>pressed 상태로 toggle acitve를 대체할 수 있음. shopify</mm-text>
-    <div style="display: flex; gap: 1rem">
-      <!-- TODO 아이콘 하나로 제한되면 slot의 순서만 챙기고 그냥 slot='icon' 하나로? 아니면 label -->
-      <!-- <mm-button data-variant="tertiary">
+
+    <!-- TODO 아이콘 하나로 제한되면 slot의 순서만 챙기고 그냥 slot='icon' 하나로? 아니면 label -->
+    <!-- <mm-button data-variant="tertiary">
                       <mm-icon slot="prefix" name="star"></mm-icon>
                       with prefix icon
                     </mm-button> -->
-      <div style="width: 50%">
-        <mm-tile>
-          <mm-group variant="button">
-            <mm-button variant="tertiary">
-              Show more
-              <mm-icon slot="suffix" name="nav-arrow-down"></mm-icon>
-            </mm-button>
-          </mm-group>
-        </mm-tile>
-        <div style="height: var(--space-2)"></div>
-        <mm-text variant="body-bold">
-          ShowMoreButton <span hidden>Image Button, CheckoutButton</span>
-        </mm-text>
-        <div style="height: var(--space-1)"></div>
-        <mm-text variant="body">
-          fullWidth로 사용하지 마세요. 단일 콘텐츠 또는 콘텐츠 목록의 너비와 대비를 통한 강조. TODO
-          이건 최종 액션이 아님. 칩이 되는 게 나을 수도.
-        </mm-text>
-      </div>
-      <div style="width: 50%">
-        <mm-tile>
-          <mm-button variant="tertiary">
-            <div slot="prefix" class="chat-inputing animation-chatting">
-              <span style="background-color: var(--color-background-strong)"></span>
-              <span style="background-color: var(--color-background-strong)"></span>
-              <span style="background-color: var(--color-background-strong)"></span>
-            </div>
-          </mm-button>
-        </mm-tile>
-        <div style="height: var(--space-2)"></div>
-        <mm-text variant="body-bold">Loading/Fetching</mm-text>
-      </div>
-    </div>
+
+    <mm-text variant="subhead">Composing components</mm-text>
+    <section class="component-example">
+      <mm-button variant="tertiary">
+        Show more
+        <mm-icon slot="suffix" name="nav-arrow-down"></mm-icon>
+      </mm-button>
+      <mm-text variant="body-bold">
+        ShowMoreButton <span hidden>Image Button, CheckoutButton</span>
+      </mm-text>
+      <div style="height: var(--space-1)"></div>
+      <mm-text variant="body">
+        fullWidth로 사용하지 마세요. 단일 콘텐츠 또는 콘텐츠 목록의 너비와 대비를 통한 강조. TODO
+        이건 최종 액션이 아님. 칩이 되는 게 나을 수도.
+      </mm-text>
+    </section>
 
     <mm-text variant="subhead" aria-label="예측 가능해야 합니다.">Behavior</mm-text>
     <mm-text variant="body">
       버튼은 페이지 내에서 여러 번 반복될 수 없는 최종적인 인터렉션입니다. 단, 전송이 실패하는
       경우에는 여러 번 반복해서 실행할 수 있습니다.
     </mm-text>
+    <mm-text variant="subhead">Feedback needed</mm-text>
     <mm-text variant="body">
-      feedback needed. 물리적인 인터페이스의 출현 뿐 아니라 예측할 수 있는 페이지 이동이나 페이지
-      새로고침, 정보 구조의 변화도 피드백으로 취급될 수 있습니다. (ex bad case: 인스타그램 앱에서
-      로그인되었다는 toast. 홈으로 이동과 피드 노출만으로 로그인 상태를 인지할 수 있다.)
+      물리적인 인터페이스의 출현만이 수행 결과를 피드백하는 것이 아닙니다. 예측할 수 있는 페이지
+      이동이나 페이지 새로고침, 정보 구조의 변화도 피드백으로 취급될 수 있습니다. (ex bad case:
+      인스타그램 앱에서 로그인되었다는 toast. 홈으로 이동과 피드 노출만으로 로그인 상태를 인지할 수
+      있다.)
     </mm-text>
     <!-- <mm-text variant="body">모든 액션에 피드백할 필요는 없습니다.</mm-text> -->
     <mm-text variant="subhead" aria-label="예측 가능해야 합니다.">Editorial</mm-text>
     <mm-text variant="body">
-      작성하세요 보다는 사용자 그리고 경험에 맞는 동사. 에측 가능한 레이블을 작성하세요. 툴팁으로
-      부연하거나, 보조 텍스트로 실행 유도나 실행 결과를 가이드할 필요가 없어야 합니다.
+      에측 가능한 레이블 텍스트를 작성하세요. 툴팁으로 부연하거나, 실행을 유도하는 보조 텍스트 또는
+      실행 결과를 보충하는 보조 텍스트로 버튼 이외의 가이드가 필요하지 않습니다.
     </mm-text>
     <mm-text variant="subhead">A11y</mm-text>
     <mm-text variant="body">
@@ -146,73 +154,33 @@
       아래에 배치되는 패턴과 혼동되지 않도록 버튼의 아래 가이드 텍스트를 배치하지 않습니다. ->
       사실은 모든 버튼에서 전환을 유도하는 텍스트를 사용없이 인터페이스만으로.
     </mm-text>
-
-    <div
-      style="
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        gap: 1rem;
-        margin: 1.5rem 0 0 0;
-      "
-    >
-      <mm-tile
-        style="
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 100%;
-          height: 120px;
-        "
-      >
+    <div style="height: 2rem"></div>
+    <mm-group variant="chip">
+      <mm-tile size="small">
         <mm-group variant="chip">
           <mm-button variant="tertiary">취소</mm-button>
           <mm-button variant="primary">저장</mm-button>
         </mm-group>
       </mm-tile>
-      <mm-tile
-        style="
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 100%;
-          height: 120px;
-        "
-      >
+      <mm-tile size="small">
         <mm-group variant="chip">
           <mm-button variant="text">건너뛰기</mm-button>
           <mm-button variant="secondary">다음</mm-button>
         </mm-group>
       </mm-tile>
-      <mm-tile
-        style="
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 100%;
-          height: 120px;
-        "
-      >
+      <mm-tile size="small">
         <mm-group variant="chip">
           <mm-button variant="tertiary">이전</mm-button>
           <mm-button variant="secondary">다음</mm-button>
         </mm-group>
       </mm-tile>
-      <mm-tile
-        style="
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 100%;
-          height: 120px;
-        "
-      >
+      <mm-tile size="small">
         <mm-group variant="chip" class="hero-actions">
           <mm-button variant="primary" href="#components">지금 가입하기</mm-button>
           <mm-button variant="text">더 알아보기</mm-button>
         </mm-group>
       </mm-tile>
-    </div>
+    </mm-group>
 
     <blockquote>
       <mm-text variant="body">
@@ -223,6 +191,12 @@
         Link Button. 버튼과 형태는 동일한 합성된 컴포넌트. Link 안에 button이 들어가면 링크 역할과
         버튼의 형태를 분리할 수 있다.
       </mm-text>
+      <ul class="checklist">
+        <li>
+          빈 버튼이 필요. 리액트에서 포커싱이 가능한 전체 영역의 버튼. 도는 버튼 내부에서
+          포지셔닝되는 버튼
+        </li>
+      </ul>
     </blockquote>
   </section>
 </main>

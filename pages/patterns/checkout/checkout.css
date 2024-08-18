@@ -7,7 +7,7 @@
 .checkout-product-item-text {color:var(--color-text-light);}
 .checkout-product-item-price {@mixin text-subhead;}
 
-@media (--small) {
+@media (max-width: 1100px) {
   /* // .checkout-foot {
   //   margin: 0;
   //   padding: 1rem 1rem calc(constant(safe-area-inset-bottom) + 1rem);

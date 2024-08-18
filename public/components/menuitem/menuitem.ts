@@ -1,48 +1,40 @@
 import { makeStyleSheet } from '../../javascripts/components/utils'
 
-const HOST_CLASS_NAME = null
-
 class MenuItem extends HTMLElement {
   constructor() {
     super()
-    // TODO a
+    const shadow = this.attachShadow({ mode: 'open' })
+
     const container = document.createElement('a')
+    container.classList.add('item')
+    container.role = 'menuitem'
+    container.setAttribute('href', this.href || '#')
+    container.setAttribute('target', this.target || '')
+    if (this.alignment) container.dataset.alignment = this.alignment
+
     const check = document.createElement('slot')
+    check.name = 'check'
+    check.classList.add('item-check')
+
     const avatar = document.createElement('slot')
+    avatar.name = 'avatar'
+
     const action = document.createElement('slot')
+    action.name = 'action'
+
     const text = document.createElement('slot')
+    text.name = 'text'
 
     const label = document.createElement('span')
-    const description = document.createElement(this.description === 'description' ? 'span' : 'time')
-
-    container.role = 'menuitem'
-
-    container.classList.add('item')
-    if (this.alignment) container.dataset.alignment = this.alignment
     label.classList.add('item-label')
+    label.innerText = this.label || ''
+
+    const description = document.createElement(this.description === 'description' ? 'span' : 'time')
+    description.innerText = this.description || ''
     description.classList.add('item-description')
-    check.classList.add('item-check')
-    // action.classList.add('item-action')
 
     // TODO
     if (this.current && this.current?.length > 0) container.ariaCurrent = this.current
-
-    check.name = 'check'
-    avatar.name = 'avatar'
-    action.name = 'action'
-    text.name = 'text'
-
-    container.setAttribute('href', this.href || '#')
-    container.setAttribute('target', this.target || '')
-
-    description.innerText = this.description || ''
-
-    label.innerText = this.label || ''
-
-    const shadow = this.attachShadow({ mode: 'open' })
-
-    // shadow.appendChild(avatar)
-    // shadow.appendChild(button)
 
     shadow.append(container, makeStyleSheet('menuitem'))
     container.append(check, avatar, text, label, description, action)
@@ -93,33 +85,7 @@ class MenuItem extends HTMLElement {
     return this.ariaCurrent
   }
 
-  render() {}
-
-  getTemplate() {
-    return `
-        <a href="/chapter3.html">
-            // <img class="icon" src="></img>
-        </a>
-        <h1 class="heading">${this.title}</h1>
-
-        <slot name="slot-avatar"></slot>
-        <span></span>
-
-
-        <style>
-        :host {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: var(--space-3);
-        }
-        </style>
-    `
-  }
-
-  connectedCallback() {
-    this.render()
-  }
+  connectedCallback() {}
   disconnectedCallback() {}
 }
 

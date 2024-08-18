@@ -135,16 +135,15 @@
 // .is-observed .hero-obj3 {animation:scaleout .4s ease 1.2s both;}
 // .is-observed .hero-obj4 {animation:scaleout .4s ease 1s both;} */
 
-@media (--small) {
+@media (max-width: 1100px) {
   .hero-obj1, .hero-obj2, .hero-obj3, .hero-obj4 {display:none;}
   .hero-obj4 {top:-18rem;right:-2rem;}
-}
 
-@media (--small) {
 	/* // .hero {max-width:1080px;margin:0 auto;} */
 	.hero-object1 {display:none;}
 	.hero-object2 {display:none;}
 }
+
 
 
 .block:not(:last-child) {

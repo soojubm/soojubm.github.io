@@ -1,12 +1,10 @@
-/*
-- 모든 surface는 border transparent를 갖는 것이 좋은가.
-- 모든 container는 position: relative를 갖는 것이 좋은가.
-*/
 
 @custom-media --large (max-width: 1560px);
-@custom-media --small (max-width: 1080px);
+@custom-media --small (max-width: 1100px);
 @custom-media --tiny (max-width: 880px);
-body{background:skyblue}
+
+@media (prefers-color-scheme: light) {}
+@media (prefers-color-scheme: dark) {}
 
 :root {
   color-scheme: light dark;
@@ -239,7 +237,7 @@ body{background:skyblue}
   /* --border: 1px solid var(--gray800); */
 }
 
-@media (--small) {
+@media (max-width: 1100px) {
   :root {
     --font-size-huge: 1.5rem;
   }
@@ -275,5 +273,4 @@ body{background:skyblue}
 
 /* // $p-breakpoints-lg-only: '(min-width: 65em) and (max-width: 89.9975em)'; */
 
-@media (prefers-color-scheme: light) {}
-@media (prefers-color-scheme: dark) {}
+

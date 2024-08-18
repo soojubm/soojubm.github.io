@@ -9,7 +9,7 @@
 .contact-map {height:320px;overflow:hidden;margin:4rem auto 20rem;position:relative;}
 .contact-map iframe {height:320px;border-radius:var(--radius);box-shadow:0px 1px 4px rgba(0,0,0,.1);}
 
-@media (--small) {
+@media (max-width: 1100px) {
   .contact-head {padding:80px 0px;}
   .contact-head-background {}
   .contact-head-title {margin-bottom:1rem;}
