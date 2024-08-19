@@ -1,11 +1,11 @@
 
-.checkout {@mixin layout-medium;max-width:var(--width-medium);margin:0 auto;padding:0 var(--grid-margin);}
+.checkout {max-width:var(--width-medium);margin:0 auto;padding:0 var(--grid-margin);}
 .checkout-product {}
-.checkout-product-title {margin:0 0 var(--space-3) 0;@mixin text-subhead;}
+.checkout-product-title {margin:0 0 var(--space-3) 0;}
 .checkout-product-item {height:var(--size-huge);position:relative;}
 .checkout-product-item-name {font-size:var(--font-size-medium);font-weight:var(--font-weight-normal);}
 .checkout-product-item-text {color:var(--color-text-light);}
-.checkout-product-item-price {@mixin text-subhead;}
+.checkout-product-item-price {}
 
 @media (--small) {
   /* // .checkout-foot {

@@ -3,7 +3,6 @@ import navbar from '/public/components/navbar/navbar.html'
 import main from './chip.html'
 
 import '/public/stylesheets/shared.css'
-import '/public/stylesheets/shared/variables.css'
 
 import '/pages/components/components.css'
 

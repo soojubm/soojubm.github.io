@@ -189,7 +189,7 @@ mark {color:inherit;} mark::before {content: " [강조 시작] ";opacity:0;posit
 // 비효율 position:relative;z-index:1; */
 .dropdown {position:relative;}
 .dropdown-trigger {}
-/* .dropdown-menu {@mixin tile-elevated;min-width:var(--width-tiny);position:absolute;transform:scale(0);transform-origin:left top;} */
+/* .dropdown-menu {min-width:var(--width-tiny);position:absolute;transform:scale(0);transform-origin:left top;} */
 .dropdown-menu-title {}
 .dropdown-menu-item {display:block;margin:0 -.25rem;padding:0 .25rem;line-height:var(--size-medium);color:var(--color-text);position:relative;z-index:var(--zindex-default);}
 .dropdown-menu-item:hover {border-radius:var(--radius);background:var(--color-background-weak);}
@@ -213,7 +213,7 @@ mark {color:inherit;} mark::before {content: " [강조 시작] ";opacity:0;posit
   opacity: 1;
   pointer-events: all;
 } */
-.modal {@mixin overay;
+.modal {
   overflow:auto;
   background:rgba(0,0,0,.6);
   position:fixed;left:0;top:0;right:0;bottom:0;

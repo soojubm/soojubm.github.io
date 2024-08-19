@@ -27,7 +27,6 @@
 .class-order-description {border-top:var(--border);}
 .class-order-price {border-top:var(--border);font-size:var(--font-size-large);}
 .class-order-action {border-top:var(--border);}
-.class-order-action-purchase {@mixin button-primary;width:100%;border:var(--border);border-bottom-width:4px;border-right-width:4px;}
 .class-order-action-share {}
 
 .minicards {display:flex;padding:0;border-top:var(--border);}
@@ -86,5 +85,5 @@
 .products-item {width:25%;border:var(--border);border-width:0 1px 1px 0;box-sizing:border-box;}
 .products-item-thumbnail {height:320px;border-bottom:var(--border);}
 .products-item-brand {display:block;margin:1rem 1.5rem 0;}
-.products-item-name {margin:.5rem 1.5rem 1rem;@mixin text-subhead;}
+.products-item-name {margin:.5rem 1.5rem 1rem;}
 .products-item-price {display:block;margin:1rem 1.5rem;}

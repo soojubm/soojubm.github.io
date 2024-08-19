@@ -63,7 +63,7 @@ font-weight: var(--button-font-weight);
 text-transform: capitalize;
 }
 .file-attachment {margin:2rem 0 0;}
-.file-attachment-title {margin:.5rem 0;@mixin text-label;}
+.file-attachment-title {margin:.5rem 0;}
 .file-attachment-helper {}
 
 /* // button.visually-hidden:focus,
