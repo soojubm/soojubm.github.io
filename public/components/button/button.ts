@@ -66,9 +66,6 @@ class Button extends HTMLElement {
   get size() {
     return this.getAttribute('size')
   }
-  // set size(value) {
-  //   if (value) this.setAttribute('data-size', value)
-  // }
 
   get label() {
     return this.getAttribute('label')

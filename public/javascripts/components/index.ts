@@ -37,6 +37,7 @@ import Feature from '../../components/feature/feature'
 import Keyvalue from '../../components/keyvalue/keyvalue'
 
 import Media from '../../components/media/media'
+import TabPanel from '../../components/tabpanel/tabpanel'
 
 // class extends HTMLElement {
 //   static get observedAttributes() {
@@ -73,6 +74,7 @@ export function defineCustomElement() {
 
     customElements.define('mm-tablist', Tablist)
     customElements.define('mm-tab', Tab)
+    customElements.define('mm-tabpanel', TabPanel)
 
     customElements.define('mm-callout', Callout)
 

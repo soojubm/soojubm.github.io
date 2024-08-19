@@ -61,6 +61,6 @@
 }
 .is-active + .toast {transform:translateX(0);}
 
-@media (--small) {
+@media (max-width: 1100px) {
   .toast {bottom:calc(constant(safe-area-inset-bottom) + 0);bottom:calc(env(safe-area-inset-bottom) + 0);}
 }

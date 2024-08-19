@@ -19,12 +19,9 @@
 
   <section class="component-example">
     <mm-group variant="tag">
-      <mm-tag variant="tertiary">default</mm-tag>
-      <mm-tag variant="primary">emphasis</mm-tag>
-    </mm-group>
-  </section>
-  <section class="component-example">
-    <mm-group variant="tag">
+      <mm-tag variant="tertiary">기본태그</mm-tag>
+      <mm-tag variant="primary">강조태그</mm-tag>
+
       <mm-tag variant="feature2">
         <mm-icon slot="icon" name="graph-up"></mm-icon>
         16%
@@ -44,6 +41,23 @@
       <mm-tag variant="hashtag" role="listitem">소띠</mm-tag>
       <mm-tag variant="hashtag" role="listitem">85년생</mm-tag>
       <mm-tag variant="hashtag" role="listitem">수다</mm-tag>
+    </mm-group>
+  </section>
+
+  <section class="component-example">
+    <mm-group variant="tag">
+      <style>
+        .dot-badge {
+          display: inline-flex;
+          width: 0.5rem;
+          height: 0.5rem;
+          /* padding: var(--space-1); */
+          margin-right: var(--space-2);
+          background: crimson;
+          border-radius: 50%;
+        }
+      </style>
+      <em class="dot-badge"></em>
     </mm-group>
   </section>
 
@@ -70,7 +84,8 @@
     <dl>
       <dt>color?</dt>
       <dt>iconSlot</dt>
-      <dd>React.ReactNode</dd> : 
+      <dd>React.ReactNode</dd>
+      :
       <dd>태그는 왼쪽에만 아이콘을 넣을 수 있기 때문에 iconSlot으로 명명</dd>
       <dd>for categories / status</dd>
     </dl>
@@ -99,28 +114,14 @@
       <dd aria-label="md3">Status Pill</dd>
     </dl>
 
+    <!-- tone="success"2 -->
+
     <section class="component-guide">
       <mm-text variant="body-bold">activity bar counter (vs code) </mm-text>
       <mm-text variant="body-bold">Dot. New/Red badge (status)</mm-text>
       <mm-text variant="body-bold">Dot. Live badge (status)</mm-text>
       <mm-text variant="body-bold">Dot. Unread badge (status)</mm-text>
       <mm-text variant="body-bold">Counter badge (quantity)</mm-text>
-    </section>
-    <section class="component-example">
-      <mm-group variant="tag">
-        <style>
-          .dot-badge {
-            display: inline-flex;
-            width: 0.5rem;
-            height: 0.5rem;
-            /* padding: var(--space-1); */
-            margin-right: var(--space-2);
-            background: crimson;
-            border-radius: 50%;
-          }
-        </style>
-        <em class="dot-badge"></em>
-      </mm-group>
     </section>
 
     <mm-text variant="subhead">Non-clickable? Non-interactive?</mm-text>
@@ -155,16 +156,5 @@
     <mm-text variant="body">
       240813 - indicator 제거. 카테고라이징이나 상태 등의 뱃징이 아님.
     </mm-text>
-  </section>
-
-    <code
-      ><Badge
-        tone="success"
-        progress="complete"
-        toneAndProgressLabelOverride="Status: Published. Your online store is visible."
-      >
-        Published
-      </Badge></code
-    >
   </section>
 </main>

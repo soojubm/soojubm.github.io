@@ -1,22 +1,22 @@
 // const isProduction = process.env.NODE_ENV === 'production';
-const postcss = require('postcss')
-const postcssPresetEnv = require('postcss-preset-env')
-const postcssCustomMedia = require('postcss-custom-media')
-const postcssGlobalData = require('@csstools/postcss-global-data')
-
-postcss([
-  postcssGlobalData({
-    files: ['/public/stylesheets/shared/variables.css'],
-  }),
-  postcssCustomMedia({ preserve: true }),
-]).process()
 
 const config = {
   plugins: [
+    require('cssnano')({
+      preset: 'default',
+    }),
     // require('postcss-import'),
-    // postcssCustomProperties({
-    //   preserve: false,
+    // require('postcss-custom-media'), // 해당 파일에서만 가능.
+    // postcssPresetEnv({
+    //   features: {
+    //     'postcss-custom-media': true,
+    //   },
     // }),
+    // postcssPresetEnv({
+    //   /* pluginOptions */
+    //   features: {},
+    // }),
+    // require('postcss-import'),
     // require('postcss-simple-vars'), // mixin dependency $ 안됨
     // require('postcss-nested'), // mixin dependency / preset-env
     // require('postcss-mixins'),
@@ -24,14 +24,6 @@ const config = {
     // require('postcss-custom-properties'),
     // require('postcss-flexbugs-fixes'),
     // require('autoprefixer'),
-    // require('cssnano')({
-    //   preset: 'default',
-    // }),
-    // require('postcss-custom-media'),
-    // postcssPresetEnv({
-    //   /* pluginOptions */
-    //   features: {},
-    // }),
   ],
 }
 

@@ -1,14 +1,6 @@
 <main class="page">
   <div class="article" style="max-width: var(--layout-width-small)">
     <mm-titlebar heading="주문/결제" hiddenBack> </mm-titlebar>
-
-    <nav class="breadcrumb" aria-label="breadcrumb">
-      <a class="breadcrumb-item breadcrumb-home" href="/">홈</a>
-      <i class="breadcrumb-divider" aria-hidden="true">/</i>
-      <a class="breadcrumb-item" href="#">페이지 이름</a>
-      <i class="breadcrumb-divider" aria-hidden="true">/</i>
-      <span class="breadcrumb-item" aria-current="page">현재 페이지</span>
-    </nav>
     <!-- <header class="checkout-head">
       <mm-text variant="subhead">
         주문정보를 확인하세요<i style="font-style: italic">!</i>
@@ -28,7 +20,6 @@
         <h3 class="step-item-label">주문완료</h3>
       </div>
     </section> -->
-
     <div style="height: 2rem"></div>
 
     <section class="checkout-shipping">
@@ -94,7 +85,9 @@
     <!-- <div>현금영수증 신청/미신청, 개인정보제공동의</div> -->
 
     <section class="checkout-payment">
-      <mm-text variant="subhead" data-temp="매장과 구매자 차이.">Select payment method</mm-text>
+      <mm-text variant="subhead" data-temp="매장과 구매자 차이. Select payment method"
+        >결제수단</mm-text
+      >
       <div style="margin: var(--space-4) -0.5rem 0">
         <mm-group alignment="vertical">
           <mm-tile size="small">
@@ -174,9 +167,15 @@
         name on card / Card Number / Expiriation Date / CVV / billing address (따로 관리 됨).
       </mm-text>
       <div style="height: var(--space-after-subhead)"></div>
+      <mm-tile variant="elevated" size="small">
+        <mm-menuitem label="Add a payment method">
+          <mm-avatar slot="avatar" icon="plus"> </mm-avatar>
+        </mm-menuitem>
+      </mm-tile>
+      <div style="height: var(--space-after-subhead)"></div>
       <mm-menuitem>
         <mm-avatar slot="avatar" size="huge">
-          <mm-tag slot="category">기본</mm-tag>
+          <mm-tag slot="badge">기본</mm-tag>
         </mm-avatar>
         <div slot="text">
           <mm-text variant="subhead">VISA 1988 XXXX 1111</mm-text>
@@ -184,18 +183,16 @@
           <em>Edit</em>
         </div>
       </mm-menuitem>
-      <div style="height: var(--space-after-subhead)"></div>
-      <mm-tile variant="elevated" size="small">
-        <mm-menuitem label="Add a payment method">
-          <mm-avatar slot="avatar" icon="plus"> </mm-avatar>
-        </mm-menuitem>
-      </mm-tile>
     </section>
 
     <br /><br />
 
     <section class="order-complete">
-      <mm-text variant="subhead">주문완료 되었습니다. 24년 4월 네이버 리뉴얼 따라 그려봄.</mm-text>
+      <header style="text-align: center; margin: 1.5rem 0">
+        <mm-text variant="subhead" data-temp="24년 4월 네이버 리뉴얼 따라 그려봄."
+          >주문완료 되었습니다.</mm-text
+        >
+      </header>
       <mm-tile>
         <header>
           <mm-text variant="body-bold">주문번호</mm-text>
@@ -224,7 +221,7 @@
         <footer>
           <div style="display: flex; justify-content: space-between">
             <mm-text variant="body-bold">주문금액</mm-text>
-            <mm-text variant="body-bold">13,980원</mm-text>
+            <mm-text variant="body-bold" style="color: var(--color-primary)">13,980원</mm-text>
           </div>
           <div style="height: var(--space-2)"></div>
           <mm-keyvalue key="상품금액" value="30,000원"></mm-keyvalue>

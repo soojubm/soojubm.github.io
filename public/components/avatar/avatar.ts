@@ -9,12 +9,14 @@ class Avatar extends HTMLElement {
     container.classList.add('avatar')
     container.role = 'img'
 
+    const badgeSlot = document.createElement('slot')
+    badgeSlot.name = 'badge'
+
     const badge = document.createElement('span')
     badge.classList.add('avatar-badge')
 
     if (this.size) container.dataset.size = this.size
     if (this.variant) container.dataset.variant = this.variant
-    // container.innerHTML = this.content
 
     if (this.default === 'true') {
       container.dataset.default = 'true'
@@ -24,9 +26,7 @@ class Avatar extends HTMLElement {
     if (this.icon) {
       const icon = document.createElement('mm-icon')
       icon.setAttribute('name', this.icon)
-
       container.ariaLabel = this.ariaLabel
-
       container.appendChild(icon)
     }
 
@@ -39,9 +39,7 @@ class Avatar extends HTMLElement {
       container.appendChild(image)
     }
 
-    shadow.appendChild(container)
-    shadow.appendChild(makeStyleSheet('avatar'))
-    // TODO childNodes => iconSlot
+    shadow.append(container, makeStyleSheet('avatar'))
     container.append(...this.childNodes)
     if (this.badge) container.appendChild(badge)
   }

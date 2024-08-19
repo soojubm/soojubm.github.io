@@ -65,24 +65,8 @@ img {
   border:none;
 }
 
-.avatar-badge {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: var(--avatar-badge-size);
-  height: var(--avatar-badge-size);
-  border: 2px solid var(--color-background);
-  border-radius: var(--radius);
-  background: var(--color-accent);
-  font-size: 10px;
-  position: absolute;
-  left: -.25rem;
-  top: -.25rem;
-  z-index: 1;
-}
 
-
-[slot=category] {
+[slot=badge] {
   position: absolute;
   left: -.25rem;
   top: -.25rem;

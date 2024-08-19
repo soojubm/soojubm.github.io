@@ -5,13 +5,14 @@ import { getElementWidth } from '../utils/elementUtils'
 
 function tab() {
   // console.log(tabElement)
-
   const tabElement = document.querySelector<HTMLElement>('.js-tab')
   if (!tabElement) return
 
   // document.querySelector('mm-tablist').shadowRoot.querySelector('button')
   const tabs = tabElement.querySelectorAll('[role=tab]')
   const panels = tabElement.querySelectorAll('[role=tabpanel]')
+
+  console.log(tabs, panels)
 
   let selectedTabIndex = 0
   let selectedTab = tabs[selectedTabIndex] as HTMLElement

@@ -206,10 +206,11 @@
     <ul class="checklist">
       <li>
         button과 통합 하느냐 tag와 통합하느냐. 버튼 쪽이 유리하기는 함. 정의할 때 인터렉션을 기준할
-        수 있기 때문. 하지만 selected 상태에 관한 스타일은 chip의 고유.
+        수 있기 때문. 하지만 selected 상태에 관한 스타일은 chip의 고유. 형태로 분류하면 결국 그냥
+        버튼임. 기능으로 분류하는 것이 중요함. 태그를 뱃지로, 칩을 태그로 정의하는 경우도 많음.
+        도메인에 특화된 기능 중심의 버튼 컴포넌트를 정의하는 것이 맹점. slot으로 아이콘을 넣는
+        방식이 되면 유지 비용이 크다.
       </li>
-      <li>하나의 서비스에 버튼이 2가지 이상이 필요한 경우는 없다고 봐야 함.</li>
-      <li>아이콘 버튼.</li>
       <li>
         안드로이드: chipGroup, HorizontalScrollView/singleLine, action/entry/filter(check
         active)/choice
@@ -221,11 +222,6 @@
       <li>MEMO: Text only는 plain variant이 될 수 없다.</li>
       <li>TODO 선택을 클리어하는 클리어버튼을 만들어 검색필드에서 활용하는 방법도 있다.</li>
       <li>TODO: icon chip의 label prop으로 툴팁을 만들기</li>
-      <li>
-        형태로 분류하면 결국 그냥 버튼임. 기능으로 분류하는 것이 중요함. 많은 디자인 시스템이 칩을
-        정의하지 않고 있음. 도메인에 특화된 기능 중심의 버튼 컴포넌트를 정의하는 것이 맹점. slot으로
-        아이콘을 넣는 방식이 되면 유지 비용이 크다.
-      </li>
       <li>아이콘이 아니라 이모지가 들어갈 때. 여기서 searching 왼쪽 아바타.</li>
     </ul>
   </blockquote>

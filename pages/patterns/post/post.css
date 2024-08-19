@@ -64,7 +64,7 @@
 .post-pagination-next-label {margin:0 0 .25rem 0;font-size:var(--font-size-medium);font-weight:normal;color:var(--color-text-light);}
 
 
-@media (--small) {
+@media (max-width: 1100px) {
 	.post-pagination {flex-wrap:wrap;flex-direction:column-reverse;}
 	.post-pagination-previous {width:100%;margin-top: 0;}
 	.post-pagination-next {width:100%;margin:0 0 var(--space-4) 0;}
