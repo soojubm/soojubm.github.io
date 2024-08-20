@@ -31,11 +31,11 @@
 .comment-list-item {display:flex;flex-direction:column;gap:var(--space-2);position:relative;}
 .comment-list-item-author {font-weight:var(--font-weight-bold);color:var(--color-text);}
 .comment-list-item-date {display:block;margin-top:-.25rem;color:var(--color-text-light);font-size:var(--font-size-small);}
-.comment-list-item-morevert {@mixin avatar-medium;position:absolute;right:0;top:0;}
+.comment-list-item-morevert {position:absolute;right:0;top:0;}
 .comment-list-item-morevert:hover {}
-.comment-list-item-menu {display:none;@mixin tile-elevated-small;width:var(--width-tiny);margin:0;padding:0;position:absolute;right:40px;top:0;z-index:var(--zindex-default);}
+.comment-list-item-menu {display:none;width:var(--width-tiny);margin:0;padding:0;position:absolute;right:40px;top:0;z-index:var(--zindex-default);}
 .comment-list-item-menu button {display: block;width:calc(100% - 2rem);margin: 1rem;text-align:left;position: relative;z-index: 1;}
-.comment-list-item-menu button:hover {@mixin hover-item;}
+.comment-list-item-menu button:hover {}
 
 .is-active + .comment-list-item-menu {display:block;}
 
@@ -48,7 +48,6 @@
 /* // line-height 때무네 space로 간격을 주지 않고 1rem을 줌. */
 .comment-write-name {display:none;width:var(--grid-column);margin:0 0 1rem 0;}
 .comment-write-password {display:none;width:var(--grid-column);margin:0 0 1rem 0;}
-.comment-write-submit {@mixin button-primary;}
 
 .is-focused .comment-write-name {display:block;}
 .is-focused .comment-write-password {display:block;}

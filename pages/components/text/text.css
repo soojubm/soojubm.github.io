@@ -104,13 +104,10 @@
 }
 .hero-background {background:inherit;}
 .hero-eyebrow {display:block;margin:0 0 var(--space-2) 0;font-weight:var(--font-weight-bold);color:var(--color-primary);}
-.hero-title {@mixin text-title;}
-.hero-description {margin:var(--space-after-title) 0 0 0;@mixin text-body-large;}
-.hero-actions {@mixin hero-actions;}
+.hero-title {}
+.hero-description {margin:var(--space-after-title) 0 0 0;}
+.hero-actions {}
 .hero-action {display:flex;}
-.hero-action-primary {@mixin hero-actions-primary;}
-.hero-action-secondary {@mixin hero-actions-secondary;}
-
 .hero-object1 {
   width:160px;height:160px;overflow:hidden;
   background:url('/public/images/me-min_800x.png') center;background-size:cover;

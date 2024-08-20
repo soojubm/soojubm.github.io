@@ -11,14 +11,14 @@
 .cake-meta dl {}
 
 .cake-info {margin:2rem 0;position:relative;}
-.cake-info h2 {margin:0 0 var(--space-after-subhead);@mixin text-subhead;}
+.cake-info h2 {margin:0 0 var(--space-after-subhead);}
 .cake-info footer {margin-top:var(--space-4);}
 
 .cake .tablist {margin-top:6rem;}
 
 
 @media (max-width: 1100px) {
-  .cake-poster {height:auto;margin:0 0 2rem 0;@mixin reset-position;}
+  .cake-poster {height:auto;margin:0 0 2rem 0;}
   .cake-meta {padding-left:0;padding-right:0;}
   .cake-meta ul {margin-left:0;margin-right:0;padding-left:0;padding-right:0;}
 }

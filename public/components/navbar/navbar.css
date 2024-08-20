@@ -60,7 +60,7 @@
 .is-active + .navbar-notification-menu {height:auto;transform:scale(1);}
 
 .navbar-user {display:flex;align-items:center;margin:0 0 0 auto;position:relative;}
-/* .navbar-user-card {max-width:var(--width-medium);height:0;@mixin tile-elevated;position:absolute;top:32px;right:0;z-index:var(--zindex-popover);transform:scale(0);} */
+/* .navbar-user-card {max-width:var(--width-medium);height:0;position:absolute;top:32px;right:0;z-index:var(--zindex-popover);transform:scale(0);} */
 
 /* // .is-active .navbar-logo {z-index:calc(var(--zindex-menu) + 2);z-index:5;}
 // .is-active .navbar-user {z-index:calc(var(--zindex-menu) + 2);z-index:5;}

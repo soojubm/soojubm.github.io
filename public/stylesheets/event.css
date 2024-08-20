@@ -115,7 +115,6 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  /* @mixin button-primary; */
   height: 56px;
   box-shadow: var(--shadow);
   font-size: var(--font-size-large);

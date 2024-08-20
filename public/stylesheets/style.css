@@ -18,7 +18,6 @@
 }
 
 .scroll-top {
-  @mixin avatar-medium;
   box-shadow: 1px 1px 1rem rgba(0, 0, 0, .1)
 }
  */
@@ -77,16 +76,6 @@
 .stamp .circle span:nth-of-type(3) {transform: rotate(45deg);}
 .stamp .circle span:nth-of-type(4) {transform: rotate(50deg);}
 .stamp .circle span:nth-of-type(5) {transform: rotate(16deg);}
-
-/* 
-.textbox {}
-.textbox-toolbar {@mixin tile-elevated-small;display:flex;}
-.textbox-toolbar-bold {@mixin avatar-medium;margin:0 .5rem 0 0;}
-.textbox-toolbar-italic {@mixin avatar-medium;}
-.textbox-view {@mixin tile-flat;margin:var(--space-4) 0;}
-.textbox-footer {margin:var(--space-4) 0 0 0;}
-.textbox-footer-publish {@mixin button-primary;}
-.textbox-footer-back {}
 
 @define-mixin group-button {
   display: flex;
@@ -198,7 +187,7 @@
 
 
 
-
+/* 
 // todo flex일 대 min-width가 필수가 된다.. margin/padding은 container에 의존
 @mixin stack-vertical-scroll {
   display:flex; // 중복
@@ -209,7 +198,7 @@
   scroll-behavior: smooth;
   > * {min-width:auto;}
   &::-webkit-scrollbar {display:none;}
-}
+} */
 
 .bookitem-cover {
   padding-top: 50%;
@@ -249,7 +238,7 @@
 }
 
 
-// .gui-toast-group {
+/* // .gui-toast-group {
 //   position: fixed;
 //   z-index: 1;
 //   inset-block-end: 0;
@@ -299,7 +288,7 @@
 //   .gui-toast {
 //     --_travel-distance: 5vh;
 //   }
-// }
+// } */
 
 
 

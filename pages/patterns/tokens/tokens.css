@@ -28,7 +28,6 @@ main {
   margin:0 0 var(--space-1) 0;
   border-radius:var(--radius);
 }
-/* .token-item-avatar {@mixin avatar-large;width:100%;} */
 .token-item b {
   display:block;
   font-family: var(--font-family-monospace);
@@ -50,7 +49,6 @@ main {
 .delay-third {animation-delay:var(--animation-delay-third);}
 
 .token-item .color-group {display:flex;flex-wrap:wrap;justify-content:space-between;}
-/* .token-item .color-item {@mixin tile-flat-small;width:100%;} */
 .token-item .color-item + .color-item {margin:var(--space-2) 0 0 0;}
 
 @media (max-width: 1200px) {
