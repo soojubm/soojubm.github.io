@@ -33,13 +33,16 @@ class TabPanel extends HTMLElement {
   disconnectedCallback() {}
   attributeChangedCallback(name, oldValue, newValue) {
     if (oldValue === newValue) return
+
+    // this.setAttribute('aria-hidden', newValue) // assign doesn't work
+    this.shadowRoot?.querySelector('section')?.setAttribute(name, newValue)
+
     // if (name === 'checked') this.checked = newValue
     // switch (name) {
     //   case 'greeting-name':
     //     this.p.textContent = `Hello ${newVal || 'world'}!`
     //     break
     // }
-    console.log(name, oldValue, newValue)
   }
 }
 

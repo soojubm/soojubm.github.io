@@ -11,19 +11,14 @@
       <dd>text - icon(avatar)</dd>
     </dl>
   </header>
-
-  <div style="margin-top: 2rem; margin-bottom: -2rem">
-    <mm-tablist class="tablist">
-      <mm-tab slot="tab" role="tab" name="project" selected="true" data-index="1">
-        베리언트
-      </mm-tab>
-      <mm-tab slot="tab" role="tab" name="case-study" selected="false" data-index="2">
-        상태
-      </mm-tab>
-      <mm-tab slot="tab" role="tab" name="blank" selected="false" data-index="3"> 크기 </mm-tab>
-      <i class="tablist-indicator"></i>
-    </mm-tablist>
-  </div>
+  <div style="margin-top: 2rem"></div>
+  <mm-tablist class="tablist">
+    <mm-tab slot="tab" name="" selected="true" data-index="1"> 베리언트 </mm-tab>
+    <mm-tab slot="tab" name="" selected="false" data-index="2"> 상태 </mm-tab>
+    <mm-tab slot="tab" name="" selected="false" data-index="3"> 크기 </mm-tab>
+    <i class="tablist-indicator"></i>
+  </mm-tablist>
+  <div style="margin-bottom: -1rem"></div>
   <section class="component-example">
     <mm-tabpanel role="tabpanel" aria-hidden="false" data-index="1">
       <mm-group variant="chip">
@@ -38,7 +33,7 @@
       <mm-button variant="tertiary">medium</mm-button>
     </mm-group> -->
     </mm-tabpanel>
-    <mm-tabpanel aria-hidden="false" data-index="2">
+    <mm-tabpanel role="tabpanel" aria-hidden="true" data-index="2">
       <mm-group variant="chip">
         <mm-button variant="tertiary" status="hover">hovered</mm-button>
         <mm-button variant="tertiary" status="focus">focused</mm-button>
@@ -94,8 +89,6 @@
 
   <!-- 참고: 버튼 네이밍. 'link' | 'subtle' | 'primary' / 'solid' | 'outline' | 'plain' |'text' -->
   <section class="component-guide">
-    <mm-text>pressed 상태로 toggle acitve를 대체할 수 있음. shopify</mm-text>
-
     <!-- TODO 아이콘 하나로 제한되면 slot의 순서만 챙기고 그냥 slot='icon' 하나로? 아니면 label -->
     <!-- <mm-button data-variant="tertiary">
                       <mm-icon slot="prefix" name="star"></mm-icon>
@@ -182,21 +175,19 @@
       </mm-tile>
     </mm-group>
 
-    <blockquote>
-      <mm-text variant="body">
+    <ul class="checklist" style="margin: 2rem 0 0">
+      <li>
         Split button. 사용자에게 더 많은 작업을 표시하는 경우 작업을 선택하여 트리거할 수 있도록
-        선택 + 버튼 조합을 사용. 것이 좋습니다.</mm-text
-      >
-      <mm-text variant="body">
+        선택 + 버튼 조합을 사용. 것이 좋습니다.
+      </li>
+      <li>
         Link Button. 버튼과 형태는 동일한 합성된 컴포넌트. Link 안에 button이 들어가면 링크 역할과
         버튼의 형태를 분리할 수 있다.
-      </mm-text>
-      <ul class="checklist">
-        <li>
-          빈 버튼이 필요. 리액트에서 포커싱이 가능한 전체 영역의 버튼. 도는 버튼 내부에서
-          포지셔닝되는 버튼
-        </li>
-      </ul>
-    </blockquote>
+      </li>
+      <li>
+        빈 버튼이 필요. 리액트에서 포커싱이 가능한 전체 영역의 버튼. 도는 버튼 내부에서 포지셔닝되는
+        버튼
+      </li>
+    </ul>
   </section>
 </main>
