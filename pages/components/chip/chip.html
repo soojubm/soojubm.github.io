@@ -36,25 +36,18 @@
 
   <section class="component-example">
     <mm-group variant="chip">
-      <mm-chip>default</mm-chip>
-      <mm-chip status="active">active</mm-chip>
-      <mm-chip status="disabled" data-temp="opacity: 0.5; cursor: not-allowed"> disabled </mm-chip>
-      <mm-chip variant="destructive">destructive</mm-chip>
+      <mm-button size="small">기본</mm-button>
+      <mm-button size="small" status="disabled">비활성</mm-button>
+      <mm-button size="small" icon="user" aria-label="사용자"></mm-button>
+      <mm-button size="small" icon="bell" aria-label=""></mm-button>
+      <!-- <mm-chip status="active">active</mm-chip>
+      <mm-chip variant="destructive">destructive</mm-chip> -->
     </mm-group>
     <mm-separator></mm-separator>
     <mm-group variant="chip">
-      <mm-chip status="checked">
-        <mm-icon slot="prefix" name="check"></mm-icon>
-        checkable
-      </mm-chip>
-      <mm-chip status="checked">
-        <mm-icon slot="suffix" name="xmark"></mm-icon>
-        removable / clearable / dismissed
-      </mm-chip>
-      <mm-chip aria-expanded="true">
-        <mm-icon slot="suffix" name="nav-arrow-down"></mm-icon>
-        expandable
-      </mm-chip>
+      <mm-button size="small" icon="check" status="checked"> checkable </mm-button>
+      <mm-button size="small" status="checked" icon="xmark"> dismiss </mm-button>
+      <mm-button size="small" aria-expanded="true" icon="nav-arrow-down"> expandable </mm-button>
     </mm-group>
     <!-- <mm-separator></mm-separator>
       <div class="group" data-segmented="true">
@@ -64,8 +57,6 @@
       </div> -->
     <mm-separator></mm-separator>
     <mm-group variant="chip">
-      <mm-chip icon="user" aria-label="사용자"></mm-chip>
-      <mm-chip icon="bell" aria-label=""></mm-chip>
       <mm-chip variant="back" icon="arrow-left"></mm-chip>
       <mm-chip variant="back" icon="arrow-right"> </mm-chip>
     </mm-group>
@@ -102,21 +93,15 @@
 
   <section class="component-guide">
     <mm-text variant="subhead">Behavior</mm-text>
-    <mm-text variant="body">
-      하나의 칩은 하나의 액션을 합니다. 아이콘은 단지 indicator의 역할을 하고 칩 자체가 하나의 클릭
-      액션을 담당. 아이콘이 별도의 액션을 가능케 하기 위해서는 splitButton 형태가 되어야 한다.
-    </mm-text>
+    <mm-text variant="body">스몰 사이즈의 버튼은 비활성 상태를 갖지 않는 듯.</mm-text>
 
     <mm-text variant="subhead">Visual Style</mm-text>
-    <mm-text variant="body-bold">dismissable</mm-text>
-    <mm-text variant="body-bold">expandable</mm-text>
-    <mm-text variant="body-bold">disabled 필요한가? 칩인데.</mm-text>
-    <mm-text variant="body"
-      >맥락이 다른 chip을 그룹으로 제공할 수 있습니다. 이 때 단일선택, 다중선택, 삭제여부, 펼침메뉴
+    <mm-text variant="body">
+      맥락이 다른 액션을 그룹으로 제공할 수 있습니다. 이 때 단일선택, 다중선택, 삭제여부, 펼침메뉴
       등의 기표를 충분히 제공하세요.
     </mm-text>
     <mm-text variant="body">
-      목록의 재정렬을 위한 옵션 목록을 group으로 제공하지 마세요. 현재 정렬 상태만 요약 표기하고
+      목록의 재정렬Sort을 위한 옵션 목록을 group으로 제공하지 마세요. 현재 정렬 상태만 요약 표기하고
       확장가능한 메뉴로 정렬 목록을 제공하세요. (bad case: 2022.04 구글 지도 바뀐 것)
     </mm-text>
 
@@ -124,20 +109,23 @@
     <mm-text variant="body">
       chipGroup selected=[] role=listbox aria-orientation="vertical" aria-multiselectable="true"<br />
       chip value="" role="option" aria-selected="true"
+      <p>ariaChecked</p>
     </mm-text>
   </section>
 
-  <mm-text variant="body-bold">Single selection for contents filtering</mm-text>
+  <mm-text variant="subhead">
+    Single selection for contents filtering. togglebuttonGroup mui
+  </mm-text>
   <section class="component-example" style="margin-top: 1rem">
     <mm-group variant="chip">
-      <mm-chip status="active" class="js-toggle is-active">전체</mm-chip>
-      <mm-chip class="js-toggle">입금확인</mm-chip>
-      <mm-chip class="js-toggle">결제완료</mm-chip>
-      <mm-chip class="js-toggle">배송중</mm-chip>
+      <mm-button size="small" status="checked" class="js-toggle is-active">전체</mm-button>
+      <mm-button size="small" class="js-toggle">입금확인</mm-button>
+      <mm-button size="small" class="js-toggle">결제완료</mm-button>
+      <mm-button size="small" class="js-toggle">배송중</mm-button>
     </mm-group>
   </section>
 
-  <mm-text variant="body-bold">Multiple selections</mm-text>
+  <mm-text variant="subhead">Multiple selections</mm-text>
   <div style="height: var(--space-1)"></div>
   <mm-text variant="body">
     menuitem, checkbox로 대체 가능한 selection role. TODO 그렇다면 언제 메뉴아이템과 체크박스를
@@ -145,28 +133,61 @@
   </mm-text>
   <section class="component-example" style="margin-top: 1rem">
     <mm-group variant="chip" aria-multiselectable="true">
-      <mm-chip role="option" aria-selected="true" status="checked">
-        <mm-icon slot="prefix" name="check"></mm-icon>
+      <mm-button size="small" role="option" name="check" aria-selected="true" status="checked">
         소설
-      </mm-chip>
-      <mm-chip role="option" aria-selected="false" status="checked">
+      </mm-button>
+      <mm-button size="small" role="option" aria-selected="false" status="checked">
         <mm-icon slot="prefix" name="check"></mm-icon>
         영화
-      </mm-chip>
-      <mm-chip role="option" aria-selected="false">타이포그래피</mm-chip>
+      </mm-button>
+      <mm-button size="small" role="option" aria-selected="false">타이포그래피</mm-button>
     </mm-group>
   </section>
 
-  <mm-text variant="body-bold">Bleeding</mm-text>
+  <mm-text variant="subhead">Bleeding</mm-text>
   <section class="component-example" style="margin-top: 1rem">
     <div class="group" data-alignment="bleeding-vertical">
-      <mm-chip>블리딩1234</mm-chip>
-      <mm-chip>블리딩4564</mm-chip>
-      <mm-chip>블리딩1234</mm-chip>
-      <mm-chip>블리딩4564</mm-chip>
-      <mm-chip>블리딩1234</mm-chip>
+      <mm-button size="small">블리딩1234</mm-button>
+      <mm-button size="small">블리딩4564</mm-button>
+      <mm-button size="small">블리딩1234</mm-button>
+      <mm-button size="small">블리딩4564</mm-button>
+      <mm-button size="small">블리딩1234</mm-button>
     </div>
   </section>
+
+  <ul class="checklist">
+    <li>
+      TODO : searhField avatar를 쓰니까 아바타 특유의 형태와 충돌(outlined) 사이즈를 다시
+      정의해주어야 한다. 컴포넌트 합성하면 사실 이걸 그렇게 고민할 내용은 아니게 됨.
+    </li>
+    <li>
+      아이콘 vs 아이콘 버튼(아바타가 아니라 칩/버튼 액션이다) vs 아바타 :: 아이콘과 아이콘
+      버튼(아바타에 가까움)을 구분. 16px 아이콘을 32 안에 넣으면
+    </li>
+    <li>
+      장식적인 검색 아이콘과 clickable한 액션. prefix는 장식. suffix는 액션? suffix에 유닛이 있을
+      수도
+    </li>
+    <li>
+      button과 통합 하느냐 tag와 통합하느냐. 버튼 쪽이 유리하기는 함. 정의할 때 인터렉션을 기준할 수
+      있기 때문. 하지만 selected 상태에 관한 스타일은 chip의 고유. 형태로 분류하면 결국 그냥 버튼임.
+      기능으로 분류하는 것이 중요함. 태그를 뱃지로, 칩을 태그로 정의하는 경우도 많음. 도메인에
+      특화된 기능 중심의 버튼 컴포넌트를 정의하는 것이 맹점. slot으로 아이콘을 넣는 방식이 되면 유지
+      비용이 크다.
+    </li>
+    <li>
+      안드로이드: chipGroup, HorizontalScrollView/singleLine, action/entry/filter(check
+      active)/choice
+    </li>
+    <li>
+      avatar / chip with icon에서 이전 페이지 등과 같이 클릭 영역을 주어야 할 때 아바타/칩 선택
+      필요.
+    </li>
+    <li>MEMO: Text only는 plain variant이 될 수 없다.</li>
+    <li>TODO 선택을 클리어하는 클리어버튼을 만들어 검색필드에서 활용하는 방법도 있다.</li>
+    <li>TODO: icon chip의 label prop으로 툴팁을 만들기</li>
+    <li>아이콘이 아니라 이모지가 들어갈 때. 여기서 searching 왼쪽 아바타.</li>
+  </ul>
 
   <address class="component-references">
     <!-- <mm-text variant="label">References</mm-text> -->
@@ -190,42 +211,6 @@
     </a>
   </address>
 
-  <blockquote>
-    <mm-text variant="body">
-      TODO : searhField avatar를 쓰니까 아바타 특유의 형태와 충돌(outlined) 사이즈를 다시
-      정의해주어야 한다. 컴포넌트 합성하면 사실 이걸 그렇게 고민할 내용은 아니게 됨.
-    </mm-text>
-    <mm-text variant="body">
-      아이콘 vs 아이콘 버튼(아바타가 아니라 칩/버튼 액션이다) vs 아바타 :: 아이콘과 아이콘
-      버튼(아바타에 가까움)을 구분. 16px 아이콘을 32 안에 넣으면
-    </mm-text>
-    <mm-text variant="body">
-      장식적인 검색 아이콘과 clickable한 액션. prefix는 장식. suffix는 액션? suffix에 유닛이 있을
-      수도
-    </mm-text>
-    <ul class="checklist">
-      <li>
-        button과 통합 하느냐 tag와 통합하느냐. 버튼 쪽이 유리하기는 함. 정의할 때 인터렉션을 기준할
-        수 있기 때문. 하지만 selected 상태에 관한 스타일은 chip의 고유. 형태로 분류하면 결국 그냥
-        버튼임. 기능으로 분류하는 것이 중요함. 태그를 뱃지로, 칩을 태그로 정의하는 경우도 많음.
-        도메인에 특화된 기능 중심의 버튼 컴포넌트를 정의하는 것이 맹점. slot으로 아이콘을 넣는
-        방식이 되면 유지 비용이 크다.
-      </li>
-      <li>
-        안드로이드: chipGroup, HorizontalScrollView/singleLine, action/entry/filter(check
-        active)/choice
-      </li>
-      <li>
-        avatar / chip with icon에서 이전 페이지 등과 같이 클릭 영역을 주어야 할 때 아바타/칩 선택
-        필요.
-      </li>
-      <li>MEMO: Text only는 plain variant이 될 수 없다.</li>
-      <li>TODO 선택을 클리어하는 클리어버튼을 만들어 검색필드에서 활용하는 방법도 있다.</li>
-      <li>TODO: icon chip의 label prop으로 툴팁을 만들기</li>
-      <li>아이콘이 아니라 이모지가 들어갈 때. 여기서 searching 왼쪽 아바타.</li>
-    </ul>
-  </blockquote>
-
   <section class="component-case">
     <mm-tile>
       <mm-text variant="subhead">지금 인기있는<br />이슈 키워드</mm-text>
@@ -244,80 +229,6 @@
           <mm-avatar slot="avatar" fallback="" icon="search"> </mm-avatar>
         </mm-menuitem>
       </mm-tile>
-    </mm-tile>
-    <br />
-    <mm-tile>
-      <mm-text variant="body-bold"> Toggle Button - Follow Button </mm-text>
-      <mm-group variant="chip">
-        <mm-chip status="active">팔로우</mm-chip>
-        <mm-chip>팔로우 중</mm-chip>
-      </mm-group>
-      <mm-separator></mm-separator>
-      <mm-text variant="body-bold"> Toggle Button - Like Button </mm-text>
-      <mm-chip status="active">
-        <mm-icon slot="prefix" name="heart"></mm-icon>
-        좋아요
-      </mm-chip>
-      <mm-separator></mm-separator>
-      <mm-group variant="chip">
-        <mm-chip>
-          <mm-icon slot="prefix" name="plus"></mm-icon>
-          추가하기
-        </mm-chip>
-        <mm-chip status="checked">
-          <mm-icon slot="prefix" name="check"></mm-icon>
-          추가됨
-        </mm-chip>
-      </mm-group>
-    </mm-tile>
-    <mm-tile>
-      <mm-text variant="body-bold">
-        Pick Button Expandable :: dropdown/overflow/pulldown, filter / sort
-      </mm-text>
-      <div style="display: flex">
-        <div class="dropdown">
-          <mm-chip aria-expanded="true">
-            <mm-icon slot="suffix" name="nav-arrow-up"></mm-icon>
-            최신순
-          </mm-chip>
-          <mm-tile
-            variant="elevated"
-            size="small"
-            style="width: var(--popover-width-dropdown); position: absolute"
-          >
-            <mm-group variant="dropdown">
-              <h6 class="dropdown-menu-title" hidden>Dropdown header</h6>
-              <mm-menuitem label="최신순" disabled>
-                <mm-icon slot="check" name="check"></mm-icon>
-              </mm-menuitem>
-              <mm-menuitem label="인기순">
-                <span slot="check"> </span>
-              </mm-menuitem>
-            </mm-group>
-          </mm-tile>
-        </div>
-        <div class="dropdown">
-          <mm-chip
-            icon="more-vert"
-            aria-label="more_vert"
-            aria-haspopup="menu"
-            aria-expanded="false"
-          >
-          </mm-chip>
-          <mm-tile
-            variant="elevated"
-            size="small"
-            style="width: var(--popover-width-dropdown); position: absolute"
-          >
-            <mm-group variant="dropdown">
-              <mm-menuitem label="신고"></mm-menuitem>
-              <!-- TODO <hr class="dropdown-menu-divider" style="margin: 0.5rem 0" /> -->
-              <mm-menuitem label="수정"></mm-menuitem>
-              <mm-menuitem label="삭제"></mm-menuitem>
-            </mm-group>
-          </mm-tile>
-        </div>
-      </div>
     </mm-tile>
   </section>
   <!-- <li>당연한 얘기... 텍스트 레이블을 생략하는 경우 관습적인 메타포의 아이콘(북마크/하트/카트 등)을 사용하고 대체 텍스트와 툴팁을 제공하세요.</li> -->

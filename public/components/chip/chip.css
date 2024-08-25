@@ -65,7 +65,7 @@ em, i  {
 }
 
 .chip:hover {
-  box-shadow:var(--status-hover);
+  box-shadow:var(--hover);
   cursor: pointer;
 }
 .chip:disabled:not(:hover) {
@@ -73,6 +73,7 @@ em, i  {
   cursor:not-allowed;
 }
 .chip-label {
+  line-height: 1;
   color: inherit;
   text-transform: capitalize;
 }

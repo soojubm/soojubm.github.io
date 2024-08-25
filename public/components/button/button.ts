@@ -30,29 +30,46 @@ class Button extends HTMLElement {
     // })
     const shadow = this.attachShadow({ mode: 'open' })
 
-    const container = document.createElement('button')
-    container.classList.add('button')
-    container.dataset.variant = this.variant || ''
-    container.dataset.size = this.size || ''
-    container.dataset.status = this.status || ''
+    const host = document.createElement('button')
+    host.classList.add('button')
+    host.dataset.variant = this.variant || ''
+    host.dataset.size = this.size || ''
+    host.dataset.status = this.status || ''
 
     const prefixSlot = document.createElement('slot')
     prefixSlot.name = 'prefix'
 
     const label = document.createElement('label')
+    label.classList.add('button-label')
 
     const suffixSlot = document.createElement('slot')
     suffixSlot.name = 'suffix'
 
+    const iconSlot = document.createElement('slot')
+    iconSlot.name = 'icon'
+
     // ! boolean타입이면 속성의 값이 있는지 없는지를 체크해야함.
-    if (this.isfullwidth) container.dataset.isfullwidth = 'true'
+    if (this.isfullwidth) host.dataset.isfullwidth = 'true'
 
     label.textContent = this.textContent || this.label
 
-    shadow.append(container, makeStyleSheet('button'))
-    container.appendChild(prefixSlot)
-    container.appendChild(label)
-    container.appendChild(suffixSlot)
+    shadow.append(host, makeStyleSheet('button'))
+    host.appendChild(prefixSlot)
+    if (label && label.textContent!.length > 0) host.appendChild(label)
+
+    if (this.icon) {
+      const icon = document.createElement('mm-icon')
+      icon.setAttribute('name', this.icon)
+      host.ariaLabel = this.ariaLabel
+
+      host.appendChild(icon)
+    }
+
+    if (this.status === 'active') host.setAttribute('aria-selected', 'true')
+    if (this.status === 'disabled') host.setAttribute('disabled', 'true')
+    if (this.status === 'checked') host.setAttribute('aria-checked', 'true')
+
+    host.appendChild(suffixSlot)
   }
 
   get variant() {
@@ -77,6 +94,11 @@ class Button extends HTMLElement {
 
   get disabled() {
     return this.hasAttribute('disabled')
+  }
+
+  // 아이콘
+  get icon() {
+    return this.getAttribute('icon')
   }
 
   // get type() {}

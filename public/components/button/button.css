@@ -5,8 +5,8 @@
 
   --button-size: var(--size-large); // button-height
 
-  --button-padding-vertical: null;
-  --button-padding-horizontal: null;
+  --button-padding-block: 0;
+  --button-padding-inline: var(--space-4);
 
   --button-color: var(--color-background-weak);
 
@@ -56,8 +56,7 @@
   gap: var(--space-2);
   min-width: var(--button-min-width);
   height: var(--button-size);
-  padding: 0 var(--space-4) 2px;
-  padding-bottom: 0;
+  padding: 0 var(--button-padding-inline);
   border: var(--button-border);
   border-radius: var(--button-radius);
   box-sizing: border-box;
@@ -95,17 +94,31 @@
 }
 
 /* sizes */
-.button[data-size=large] {
+.button[data-size=huge] {
   --button-size: 64px;
   --button-text-size: var(--font-size-large);
   padding-bottom: 5px;
 }
+
 .button[data-size=small] {
-  --button-size: 32px;
+  --button-min-width: var(--size-medium);
+  --button-size: var(--size-medium);
+  --button-padding-inline: var(--space-3);
+  line-height: 1; // TODO
 }
 .button[data-isfullwidth=true] {
   width: 100%;
 }
+
+
+.button[aria-selected] {
+  --chip-color-background: var(--color-background-strong);
+  color: var(--color-text-strong);
+}
+.button[aria-checked=true] {
+  border: 1px solid var(--color-background-strong);
+}
+
 
 /* states */
 .button:hover,

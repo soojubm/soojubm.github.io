@@ -52,60 +52,53 @@
   </mm-tablist>
   <div style="margin-bottom: -1rem"></div>
   <section class="component-example">
-    <mm-group variant="form">
-      <mm-textfield type="text" size="small" placeholder="Small size..."></mm-textfield>
-      <mm-textfield type="text" placeholder="Medium size... (default)"></mm-textfield>
-    </mm-group>
-    <mm-separator></mm-separator>
-    <mm-group variant="form">
-      <mm-textfield type="text" placeholder="Disabled..." disabled></mm-textfield>
-      <mm-textfield
-        type="email"
-        label="Invalid"
-        value="soojubm@gmail.com"
-        placeholder="Placeholder..."
-        aria-invalid="true"
-        aria-describedby="error"
-        aria-errormessage="msgID"
-        helper="이미 등록된 이메일입니다."
-      ></mm-textfield>
-    </mm-group>
-    <mm-separator></mm-separator>
-    <div style="display: flex; flex-direction: column; gap: var(--space-3)">
-      <!-- TODO hiddenLabel or ariaLabel -->
-      <mm-textfield type="search" hiddenLabel>
-        <label slot="prefix" class="searchfield-prefix">
-          <mm-icon name="search"></mm-icon>
-        </label>
-        <mm-icon name="xmark"></mm-icon>
-        <!-- button slot="suffix" class="searchfield-clear" aria-label="clear keyword"></button> -->
-        <button class="searchfield-cancel" aria-label="back">취소</button>
-      </mm-textfield>
-      <mm-textfield type="password" label="Password field">
-        <mm-chip slot="suffix" icon="eye-solid" aria-label="비밀번호 보기"> </mm-chip>
-      </mm-textfield>
-      <!-- oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" -->
-    </div>
-    <mm-separator></mm-separator>
-    <div class="textfield">
-      <label class="textfield-label" for="search1">Textarea/Commentfield</label>
-      <small class="textfield-byte"><b>0 KB</b> / 100 KB</small>
-      <textarea
-        class="textfield-input"
-        rows="3"
-        placeholder="Textarea Placeholder..."
-        style="height: auto"
-      ></textarea>
-    </div>
-    <!-- <mm-textfield type="text" label="" hiddenLabel placeholder="Placeholder...">
-          <mm-icon slot="prefix" name="xray-view"></mm-icon>
+    <mm-tabpanel role="tabpanel" aria-hidden="false" data-index="1">
+      <mm-group variant="form">
+        <mm-textfield type="text" size="small" placeholder="medium size..."></mm-textfield>
+        <mm-textfield type="text" placeholder="large size... (default)"></mm-textfield>
+      </mm-group>
+      <mm-separator></mm-separator>
+      <div style="display: flex; flex-direction: column; gap: var(--space-3)">
+        <!-- TODO hiddenLabel or ariaLabel -->
+        <mm-textfield type="search" hiddenLabel>
+          <label slot="prefix" class="searchfield-prefix">
+            <mm-icon name="search"></mm-icon>
+          </label>
+          <mm-icon name="xmark"></mm-icon>
+          <!-- button slot="suffix" class="searchfield-clear" aria-label="clear keyword"></button> -->
+          <button class="searchfield-cancel" aria-label="back">취소</button>
         </mm-textfield>
-        <mm-textfield type="email" label="" hiddenLabel placeholder="with Suffix...">
-          <mm-icon slot="suffix" name="xray-view"></mm-icon>
-        </mm-textfield> -->
-    <!-- <p>unit, choose/enter</p> -->
-    <!-- <abbr title="필수입력">*</abbr> -->
+        <mm-textfield type="password" label="Password field">
+          <mm-chip slot="suffix" icon="eye-solid" aria-label="비밀번호 보기"> </mm-chip>
+        </mm-textfield>
+        <!-- oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" -->
+      </div>
+    </mm-tabpanel>
+    <mm-tabpanel role="tabpanel" aria-hidden="true" data-index="2">
+      <mm-group variant="form">
+        <mm-textfield type="text" placeholder="Disabled..." disabled></mm-textfield>
+        <mm-textfield
+          type="email"
+          label="Invalid"
+          value="soojubm@gmail.com"
+          placeholder="Placeholder..."
+          aria-invalid="true"
+          aria-describedby="error"
+          aria-errormessage="msgID"
+          helper="이미 등록된 이메일입니다."
+        ></mm-textfield>
+      </mm-group>
+    </mm-tabpanel>
   </section>
+
+  <!-- <mm-textfield type="text" label="" hiddenLabel placeholder="Placeholder...">
+            <mm-icon slot="prefix" name="xray-view"></mm-icon>
+          </mm-textfield>
+          <mm-textfield type="email" label="" hiddenLabel placeholder="with Suffix...">
+            <mm-icon slot="suffix" name="xray-view"></mm-icon>
+          </mm-textfield> -->
+  <!-- <p>unit, choose/enter</p> -->
+  <!-- <abbr title="필수입력">*</abbr> -->
 
   <section class="component-props">
     <mm-text variant="subhead">Props</mm-text>
@@ -147,6 +140,17 @@
       <dd>(event: KeyboardEvent[HTMLButtonElement]) => void</dd>
     </dl>
   </section>
+
+  <div class="textfield">
+    <label class="textfield-label" for="search1">Textarea/Commentfield</label>
+    <small class="textfield-byte"><b>0 KB</b> / 100 KB</small>
+    <textarea
+      class="textfield-input"
+      rows="3"
+      placeholder="Textarea Placeholder..."
+      style="height: auto"
+    ></textarea>
+  </div>
 
   <section class="component-guide">
     <mm-tile style="display: flex; align-items: center; justify-content: center">

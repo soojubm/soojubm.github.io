@@ -144,6 +144,7 @@
   --size-tiny: 1rem;
 
   /* squished-stretched */
+  --space-0: 0;
   --space-05: .125rem;
   --space-1: .25rem;
   --space-2: .5rem;

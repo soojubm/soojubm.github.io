@@ -20,165 +20,165 @@
   </mm-group> -->
   <!-- classification / category -->
 
-    <article class="article js-scrollspy-section">
-      <mm-text variant="title">Tokens</mm-text>
-      <mm-text variant="body-large">내용 없음.</mm-text>
+  <article class="article js-scrollspy-section">
+    <mm-text variant="title">Tokens</mm-text>
+    <mm-text variant="body-large">내용 없음.</mm-text>
 
-      <div style="height: 4rem"></div>
-      <mm-text variant="subhead">Color</mm-text>
-      <mm-text variant="body">
-        background/border/text/status. primary color = primary interactions, reinforce brand
-      </mm-text>
-      <mm-text variant="body">
-        The use of color in an experience helps define communication, meaning, brand, and roles,
-        making it easier for users to interact, search, and differentiate elements. For additional
-        guidance, refer to the component-specific guidelines.
-      </mm-text>
-      <blockquote>
-        <ul class="checklist">
-          <li>color-icon / color-text 가 동일한가</li>
-          <li>color-text-accent-yellow</li>
-          <li>
-            color-text-disabled // input / button 마다 다르며, 일반 text에 disabled가 필요없다.
-            인터렉션의 유무.
-          </li>
-          <li>
-            color-text-warning // 과도한 추상화처럼 보이기도 함. color-warning /
-            color-warning-strong 정도면 충분함.
-          </li>
-          <li>color-background-discovery // status</li>
-          <li>Blanket // atlassian</li>
-          <li>color-chart-categorical-1 // TODO category</li>
-          <li>
-            elevation.surface / overay, raised, sunken // atlassian 동일한데 왜 나눠놨지. //
-            elevation-surface/shadow
-          </li>
-        </ul>
-      </blockquote>
-      <!-- <p>A-ha :: background-weak weak2를 사용할 수 있지만 하나로 통함됨.</p> -->
-      <!-- <mm-text>2403 gray150 추가.</mm-text> -->
-      <div class="token-group">
-        <article class="token-item">
-          <!-- <figure class="token-item-avatar"></figure> -->
-          <b>--gray0: #fff</b>
-          <mm-group variant="hashtag">
-            <mm-tag variant="hashtag">color-background</mm-tag>
-          </mm-group>
-        </article>
-        <article class="token-item" style="border: 0; background: var(--gray100)">
-          <!-- <figure class="token-item-avatar"></figure> -->
-          <b>--gray100: #f5f8f5 TODO</b>
-          <mm-group variant="hashtag">
-            <mm-tag variant="hashtag">color-background-weak</mm-tag>
-            <!-- <p>--button-border-color</p> -->
-          </mm-group>
-        </article>
-        <article class="token-item is-gray200" style="border: 0; background: var(--gray200)">
-          <!-- <figure class="token-item-avatar"></figure> -->
-          <b>--gray200: #e0e2e1</b>
-          <mm-group variant="hashtag">
-            <mm-tag variant="hashtag">color-border</mm-tag>
-            <!-- <p>--color-hover-background: var(--gray200)</p> -->
-          </mm-group>
-        </article>
-        <article class="token-item is-gray400" style="border: 0; background: var(--gray400)">
-          <!-- <figure class="token-item-avatar"></figure> -->
-          <b style="color: #fff">--gray400: #979d9a</b>
-          <mm-group variant="hashtag">
-            <mm-tag variant="hashtag">color-text-light</mm-tag>
-            <!-- <p>--color-text-disabled</p> -->
-          </mm-group>
-        </article>
-        <article class="token-item" style="border: 0; background: var(--gray800)">
-          <!-- <figure class="token-item-avatar"></figure> -->
-          <b style="color: #fff">--gray800: #343c38</b>
-          <mm-group variant="hashtag">
-            <mm-tag variant="hashtag">color-text</mm-tag>
-            <mm-tag variant="hashtag">color-background-strong</mm-tag>
-          </mm-group>
-        </article>
-        <article class="token-item" style="border: 0; background-color: var(--green100)">
-          <!-- <figure class="token-item-avatar"></figure> -->
-          <b>--green100: rgba(10, 160, 80, 0.1)</b>
-          <mm-group variant="hashtag">
-            <mm-tag variant="hashtag">color-primary-light</mm-tag>
-          </mm-group>
-        </article>
-        <article
-          class="token-item is-primary200"
-          style="border: 0; background-color: var(--green800)"
-        >
-          <!-- <figure class="token-item-avatar"></figure> -->
-          <b style="color: #fff">--green800: #1b995c</b>
-          <mm-group variant="hashtag">
-            <mm-tag variant="hashtag">color-primary</mm-tag>
-          </mm-group>
-        </article>
-        <article class="token-item" style="border: 0; background-color: var(--red100)">
-          <!-- <figure class="token-item-avatar" style="background: rgba(243, 68, 97, 0.06)"></figure> -->
-          <b>--red100: rgba(243, 68, 97, .06)</b>
-          <mm-group variant="hashtag">
-            <mm-tag variant="hashtag">color-danger-light</mm-tag>
-            <mm-tag variant="hashtag">color-text-danger/error</mm-tag>
-            <mm-tag variant="hashtag">color-border-danger/error</mm-tag>
-          </mm-group>
-        </article>
-        <article class="token-item" style="border: 0; background-color: var(--red800)">
-          <!-- <figure class="token-item-avatar"></figure> -->
-          <b style="color: #fff">--red800: #f02849</b>
-          <mm-group variant="hashtag">
-            <mm-tag variant="hashtag">color-danger</mm-tag>
-          </mm-group>
-        </article>
-        <article class="token-item" style="border: 0; background: var(--color-accent)">
-          <!-- <figure class="token-item-avatar"></figure> -->
-          <b>--yellow800: gold</b>
-          <mm-group variant="hashtag">
-            <mm-tag variant="hashtag">color-accent??</mm-tag>
-            <mm-tag variant="hashtag">color-status-accent??</mm-tag>
-          </mm-group>
-        </article>
-        <article class="token-item">
-          <b>TODO Skeleton</b>
-        </article>
-        <article class="token-item">
-          <b>TODO Transparent gradient</b>
-        </article>
-      </div>
-      <article
-        class="token-item"
-        style="display: flex; gap: 2rem; width: 100%; margin-top: -3rem; margin-bottom: 4rem"
-      >
-        <div style="margin-top: 0">
-          <mm-text variant="subhead">수줍음</mm-text>
-          <span style="font-family: 'Courier New', Courier, monospace; font-size: 12px"
-            >--color-text</span
-          >
-        </div>
-        <div style="margin-top: 0">
-          <mm-text variant="subhead" style="color: var(--color-text-light)">수줍음</mm-text>
-          <span style="font-family: 'Courier New', Courier, monospace; font-size: 12px"
-            >--color-text-light</span
-          >
-        </div>
+    <div style="height: 4rem"></div>
+    <mm-text variant="subhead">Color</mm-text>
+    <mm-text variant="body">
+      background/border/text/status. primary color = primary interactions, reinforce brand
+    </mm-text>
+    <mm-text variant="body">
+      The use of color in an experience helps define communication, meaning, brand, and roles,
+      making it easier for users to interact, search, and differentiate elements. For additional
+      guidance, refer to the component-specific guidelines.
+    </mm-text>
+    <blockquote>
+      <ul class="checklist">
+        <li>color-icon / color-text 가 동일한가</li>
+        <li>color-text-accent-yellow</li>
+        <li>
+          color-text-disabled // input / button 마다 다르며, 일반 text에 disabled가 필요없다.
+          인터렉션의 유무.
+        </li>
+        <li>
+          color-text-warning // 과도한 추상화처럼 보이기도 함. color-warning / color-warning-strong
+          정도면 충분함.
+        </li>
+        <li>color-background-discovery // status</li>
+        <li>Blanket // atlassian</li>
+        <li>color-chart-categorical-1 // TODO category</li>
+        <li>
+          elevation.surface / overay, raised, sunken // atlassian 동일한데 왜 나눠놨지. //
+          elevation-surface/shadow
+        </li>
+      </ul>
+    </blockquote>
+    <!-- <p>A-ha :: background-weak weak2를 사용할 수 있지만 하나로 통함됨.</p> -->
+    <!-- <mm-text>2403 gray150 추가.</mm-text> -->
+    <div class="token-group">
+      <article class="token-item">
+        <!-- <figure class="token-item-avatar"></figure> -->
+        <b>--gray0: #fff</b>
+        <mm-group variant="hashtag">
+          <mm-tag variant="hashtag">color-background</mm-tag>
+        </mm-group>
       </article>
+      <article class="token-item" style="border: 0; background: var(--gray100)">
+        <!-- <figure class="token-item-avatar"></figure> -->
+        <b>--gray100: #f5f8f5 TODO</b>
+        <mm-group variant="hashtag">
+          <mm-tag variant="hashtag">color-background-weak</mm-tag>
+          <!-- <p>--button-border-color</p> -->
+        </mm-group>
+      </article>
+      <article class="token-item is-gray200" style="border: 0; background: var(--gray200)">
+        <!-- <figure class="token-item-avatar"></figure> -->
+        <b>--gray200: #e0e2e1</b>
+        <mm-group variant="hashtag">
+          <mm-tag variant="hashtag">color-border</mm-tag>
+          <!-- <p>--color-hover-background: var(--gray200)</p> -->
+        </mm-group>
+      </article>
+      <article class="token-item is-gray400" style="border: 0; background: var(--gray400)">
+        <!-- <figure class="token-item-avatar"></figure> -->
+        <b style="color: #fff">--gray400: #979d9a</b>
+        <mm-group variant="hashtag">
+          <mm-tag variant="hashtag">color-text-light</mm-tag>
+          <!-- <p>--color-text-disabled</p> -->
+        </mm-group>
+      </article>
+      <article class="token-item" style="border: 0; background: var(--gray800)">
+        <!-- <figure class="token-item-avatar"></figure> -->
+        <b style="color: #fff">--gray800: #343c38</b>
+        <mm-group variant="hashtag">
+          <mm-tag variant="hashtag">color-text</mm-tag>
+          <mm-tag variant="hashtag">color-background-strong</mm-tag>
+        </mm-group>
+      </article>
+      <article class="token-item" style="border: 0; background-color: var(--green100)">
+        <!-- <figure class="token-item-avatar"></figure> -->
+        <b>--green100: rgba(10, 160, 80, 0.1)</b>
+        <mm-group variant="hashtag">
+          <mm-tag variant="hashtag">color-primary-light</mm-tag>
+        </mm-group>
+      </article>
+      <article
+        class="token-item is-primary200"
+        style="border: 0; background-color: var(--green800)"
+      >
+        <!-- <figure class="token-item-avatar"></figure> -->
+        <b style="color: #fff">--green800: #1b995c</b>
+        <mm-group variant="hashtag">
+          <mm-tag variant="hashtag">color-primary</mm-tag>
+        </mm-group>
+      </article>
+      <article class="token-item" style="border: 0; background-color: var(--red100)">
+        <!-- <figure class="token-item-avatar" style="background: rgba(243, 68, 97, 0.06)"></figure> -->
+        <b>--red100: rgba(243, 68, 97, .06)</b>
+        <mm-group variant="hashtag">
+          <mm-tag variant="hashtag">color-danger-light</mm-tag>
+          <mm-tag variant="hashtag">color-text-danger/error</mm-tag>
+          <mm-tag variant="hashtag">color-border-danger/error</mm-tag>
+        </mm-group>
+      </article>
+      <article class="token-item" style="border: 0; background-color: var(--red800)">
+        <!-- <figure class="token-item-avatar"></figure> -->
+        <b style="color: #fff">--red800: #f02849</b>
+        <mm-group variant="hashtag">
+          <mm-tag variant="hashtag">color-danger</mm-tag>
+        </mm-group>
+      </article>
+      <article class="token-item" style="border: 0; background: var(--color-accent)">
+        <!-- <figure class="token-item-avatar"></figure> -->
+        <b>--yellow800: gold</b>
+        <mm-group variant="hashtag">
+          <mm-tag variant="hashtag">color-accent??</mm-tag>
+          <mm-tag variant="hashtag">color-status-accent??</mm-tag>
+        </mm-group>
+      </article>
+      <article class="token-item">
+        <b>TODO Skeleton</b>
+      </article>
+      <article class="token-item">
+        <b>TODO Transparent gradient</b>
+      </article>
+    </div>
+    <article
+      class="token-item"
+      style="display: flex; gap: 2rem; width: 100%; margin-top: -3rem; margin-bottom: 4rem"
+    >
+      <div style="margin-top: 0">
+        <mm-text variant="subhead">수줍음</mm-text>
+        <span style="font-family: 'Courier New', Courier, monospace; font-size: 12px"
+          >--color-text</span
+        >
+      </div>
+      <div style="margin-top: 0">
+        <mm-text variant="subhead" style="color: var(--color-text-light)">수줍음</mm-text>
+        <span style="font-family: 'Courier New', Courier, monospace; font-size: 12px"
+          >--color-text-light</span
+        >
+      </div>
+    </article>
 
-      <mm-text variant="subhead">Shapes - Radius & Elevations</mm-text>
-      <div class="token-group">
-        <article class="token-item is-gray000">
-          <figure
-            class="token-item-avatar"
-            style="
-              background-color: transparent;
-              border: 4px solid var(--color-text-light);
-              border-bottom-right-radius: 0;
-              border-bottom-left-radius: 0;
-              border-top-right-radius: 0;
-              border-right: var(--border);
-              border-bottom: var(--border);
-            "
-          >
-            <!-- <em
+    <mm-text variant="subhead">Shapes - Radius & Elevations</mm-text>
+    <div class="token-group">
+      <article class="token-item is-gray000">
+        <figure
+          class="token-item-avatar"
+          style="
+            background-color: transparent;
+            border: 4px solid var(--color-text-light);
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+            border-top-right-radius: 0;
+            border-right: var(--border);
+            border-bottom: var(--border);
+          "
+        >
+          <!-- <em
             style="
               width: 1rem;
               height: 1rem;
@@ -193,383 +193,364 @@
               border-bottom-left-radius: 0;
             "
           ></em> -->
-          </figure>
-          <b>--radius: 6px</b>
-          <b>--radius-small: 4px</b>
-          <small>radius small tokens은 tiny size token 페어링</small>
-        </article>
-        <article class="token-item is-gray000">
-          <figure
-            class="token-item-avatar"
-            style="
-              background-color: transparent;
-              border: 4px solid var(--color-text-light);
-              border-bottom-right-radius: 0;
-              border-bottom-left-radius: 0;
-              border-top-right-radius: 0;
-              border-right: var(--border);
-              border-bottom: var(--border);
-              border-radius: 50%;
-            "
-          ></figure>
-          <b>--radius-circle: 50%</b>
-        </article>
-        <article class="token-item is-elevation" title="Surface or Elevation">
-          <figure class="token-item-avatar" style="box-shadow: var(--shadow)"></figure>
-          <b>--shadow: 0 0 .5rem rgb(0 0 0 / 7.5%) // TODO</b>
-          <mm-group variant="hashtag">
-            <mm-tag variant="hashtag">tooltip</mm-tag>
-            <mm-tag variant="hashtag">popover</mm-tag>
-          </mm-group>
-        </article>
-      </div>
+        </figure>
+        <b>--radius: 6px</b>
+        <b>--radius-small: 4px</b>
+        <small>radius small tokens은 tiny size token 페어링</small>
+      </article>
+      <article class="token-item is-gray000">
+        <figure
+          class="token-item-avatar"
+          style="
+            background-color: transparent;
+            border: 4px solid var(--color-text-light);
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+            border-top-right-radius: 0;
+            border-right: var(--border);
+            border-bottom: var(--border);
+            border-radius: 50%;
+          "
+        ></figure>
+        <b>--radius-circle: 50%</b>
+      </article>
+      <article class="token-item is-elevation" title="Surface or Elevation">
+        <figure class="token-item-avatar" style="box-shadow: var(--shadow)"></figure>
+        <b>--shadow: 0 0 .5rem rgb(0 0 0 / 7.5%) // TODO</b>
+        <mm-group variant="hashtag">
+          <mm-tag variant="hashtag">tooltip</mm-tag>
+          <mm-tag variant="hashtag">popover</mm-tag>
+        </mm-group>
+      </article>
+    </div>
 
-      <mm-text variant="subhead">Border</mm-text>
-      <div class="token-group">
-        <article class="token-item is-gray000">
-          <figure
-            class="token-item-avatar"
-            style="width: 100%; height: 1px; border-radius: 0"
-          ></figure>
-          <b>--border-width: 1px</b>
-          <b>--border-width-thick: null</b>
-          <b>--border-width-thin: null</b>
-          <b>--border: var(--border-width) solid var(--border-color)</b>
-        </article>
-      </div>
+    <mm-text variant="subhead">Border</mm-text>
+    <div class="token-group">
+      <article class="token-item is-gray000">
+        <figure
+          class="token-item-avatar"
+          style="width: 100%; height: 1px; border-radius: 0"
+        ></figure>
+        <b>--border-width: 1px</b>
+        <b>--border-width-thick: null</b>
+        <b>--border-width-thin: null</b>
+        <b>--border: var(--border-width) solid var(--border-color)</b>
+      </article>
+    </div>
 
-      <mm-text variant="subhead">Sizing</mm-text>
-      <!-- <mm-text variant="body">
+    <mm-text variant="subhead">Sizing</mm-text>
+    <!-- <mm-text variant="body">
         요소의 너비와 높이. 브라우저 크기가 변경되어도 사이즈 토큰은 변하지 않아야 합니다.
       </mm-text> -->
-      <mm-text variant="body">
-        huge size는 avatar huge에 단독으로 사용하고 있다. media 컴포넌트와 구별.
-      </mm-text>
-      <section class="token-group">
-        <div class="token-item">
-          <figure
-            class="token-item-avatar"
-            style="width: var(--size-huge); height: var(--size-huge)"
-          ></figure>
-          <b>--size-huge: 5rem</b>
-          <mm-group variant="hashtag">
-            <mm-tag variant="hashtag">avatar-huge: var(--size-large)</mm-tag>
-          </mm-group>
-        </div>
-        <div class="token-item">
-          <figure
-            class="token-item-avatar"
-            style="width: var(--size-large); height: var(--size-large)"
-          ></figure>
-          <b>--size-large: 3rem / 48px</b>
-          <mm-group variant="hashtag">
-            <mm-tag variant="hashtag">avatar-large</mm-tag>
-            <mm-tag variant="hashtag">button-height</mm-tag>
-            <mm-tag variant="hashtag">textfield-height</mm-tag>
-          </mm-group>
-        </div>
-        <div class="token-item">
-          <figure class="token-item-avatar"></figure>
-          <b>--size-medium: 2rem / 32px</b>
-          <mm-group variant="hashtag">
-            <mm-tag variant="hashtag">avatar-medium</mm-tag>
-            <mm-tag variant="hashtag">chip-height</mm-tag>
-          </mm-group>
-        </div>
-        <div class="token-item">
-          <figure
-            class="token-item-avatar"
-            style="width: var(--size-small); height: var(--size-small)"
-          ></figure>
-          <b>--size-small: 1.5rem /24px</b>
-          <mm-group variant="hashtag">
-            <mm-tag variant="hashtag">avatar-small</mm-tag>
-            <mm-tag variant="hashtag">tag-height</mm-tag>
-            <mm-tag variant="hashtag">indicator-height</mm-tag>
-          </mm-group>
-        </div>
-        <div class="token-item">
-          <figure
-            class="token-item-avatar"
-            style="width: var(--size-tiny); height: var(--size-tiny)"
-          ></figure>
-          <b>--size-tiny: 1rem</b>
-          <mm-group variant="hashtag">
-            <mm-tag variant="hashtag">avatar-tiny</mm-tag>
-            <mm-tag variant="hashtag">checkbox-height</mm-tag>
-            <mm-tag variant="hashtag">radio-height</mm-tag>
-            <mm-tag variant="hashtag">switch-height</mm-tag>
-          </mm-group>
-        </div>
-      </section>
+    <mm-text variant="body">
+      huge size는 avatar huge에 단독으로 사용하고 있다. media 컴포넌트와 구별.
+    </mm-text>
+    <section class="token-group">
+      <div class="token-item">
+        <figure
+          class="token-item-avatar"
+          style="width: var(--size-huge); height: var(--size-huge)"
+        ></figure>
+        <b>--size-huge: 5rem</b>
+        <mm-group variant="hashtag">
+          <mm-tag variant="hashtag">avatar-huge: var(--size-large)</mm-tag>
+        </mm-group>
+      </div>
+      <div class="token-item">
+        <figure
+          class="token-item-avatar"
+          style="width: var(--size-large); height: var(--size-large)"
+        ></figure>
+        <b>--size-large: 3rem / 48px</b>
+        <mm-group variant="hashtag">
+          <mm-tag variant="hashtag">avatar-large</mm-tag>
+          <mm-tag variant="hashtag">button-height</mm-tag>
+          <mm-tag variant="hashtag">textfield-height</mm-tag>
+        </mm-group>
+      </div>
+      <div class="token-item">
+        <figure class="token-item-avatar"></figure>
+        <b>--size-medium: 2rem / 32px</b>
+        <mm-group variant="hashtag">
+          <mm-tag variant="hashtag">avatar-medium</mm-tag>
+          <mm-tag variant="hashtag">chip-height</mm-tag>
+        </mm-group>
+      </div>
+      <div class="token-item">
+        <figure
+          class="token-item-avatar"
+          style="width: var(--size-small); height: var(--size-small)"
+        ></figure>
+        <b>--size-small: 1.5rem /24px</b>
+        <mm-group variant="hashtag">
+          <mm-tag variant="hashtag">avatar-small</mm-tag>
+          <mm-tag variant="hashtag">tag-height</mm-tag>
+          <mm-tag variant="hashtag">indicator-height</mm-tag>
+        </mm-group>
+      </div>
+      <div class="token-item">
+        <figure
+          class="token-item-avatar"
+          style="width: var(--size-tiny); height: var(--size-tiny)"
+        ></figure>
+        <b>--size-tiny: 1rem</b>
+        <mm-group variant="hashtag">
+          <mm-tag variant="hashtag">avatar-tiny</mm-tag>
+          <mm-tag variant="hashtag">checkbox-height</mm-tag>
+          <mm-tag variant="hashtag">radio-height</mm-tag>
+          <mm-tag variant="hashtag">switch-height</mm-tag>
+        </mm-group>
+      </div>
+    </section>
 
-      <mm-text variant="subhead">Spacing</mm-text>
-      <mm-text variant="body">요소 사이의 간격.</mm-text>
-      <section class="token-group">
-        <div class="token-item">
-          <!-- <figure style="width: 100%; height: var(--space-05); border-radius: 0"></figure> -->
-          <b>--space-05: .125rem</b>
-        </div>
-        <div class="token-item">
-          <b>--space-1: .25rem</b>
-          <mm-group variant="hashtag">
-            <mm-tag variant="hashtag">space-outer-item</mm-tag>
-          </mm-group>
-        </div>
-        <div class="token-item">
-          <b>--space-2: .5rem</b>
-          <mm-group variant="hashtag">
-            <mm-tag variant="hashtag">space-inset-small</mm-tag>
-          </mm-group>
-        </div>
-        <div class="token-item">
-          <b>space-3: .75rem</b>
-        </div>
-        <div class="token-item">
-          <b>--space-4: 1rem</b>
-          <mm-group variant="hashtag">
-            <mm-tag variant="hashtag">space-after-subhead</mm-tag>
-            <mm-tag variant="hashtag">space-after-description</mm-tag>
-            <mm-tag variant="hashtag">space-inset</mm-tag>
-          </mm-group>
-        </div>
-        <div class="token-item">
-          <b>--space-8: 2rem</b>
-          <mm-group variant="hashtag">
-            <mm-tag variant="hashtag">space-section</mm-tag>
-          </mm-group>
-        </div>
-        <div class="token-item">
-          <b>--grid-margin: 5vw</b>
-          <b>--grid-gutter: null</b>
-          <b>--grid-column: null</b>
-        </div>
-        <div class="token-item">
-          <figure style="width: 100%; height: var(--space-05); border-radius: 0"></figure>
-          <b>--space-negative-1: calc(var(--space-1) * -1)</b>
-        </div>
-      </section>
+    <mm-text variant="subhead">Spacing</mm-text>
+    <mm-text variant="body">요소 사이의 간격.</mm-text>
+    <section class="token-group">
+      <div class="token-item">
+        <!-- <figure style="width: 100%; height: var(--space-05); border-radius: 0"></figure> -->
+        <b>--space-05: .125rem</b>
+      </div>
+      <div class="token-item">
+        <b>--space-1: .25rem</b>
+        <mm-group variant="hashtag">
+          <mm-tag variant="hashtag">space-outer-item</mm-tag>
+        </mm-group>
+      </div>
+      <div class="token-item">
+        <b>--space-2: .5rem</b>
+        <mm-group variant="hashtag">
+          <mm-tag variant="hashtag">space-inset-small</mm-tag>
+        </mm-group>
+      </div>
+      <div class="token-item">
+        <b>space-3: .75rem</b>
+      </div>
+      <div class="token-item">
+        <b>--space-4: 1rem</b>
+        <mm-group variant="hashtag">
+          <mm-tag variant="hashtag">space-after-subhead</mm-tag>
+          <mm-tag variant="hashtag">space-after-description</mm-tag>
+          <mm-tag variant="hashtag">space-inset</mm-tag>
+        </mm-group>
+      </div>
+      <div class="token-item">
+        <b>--space-8: 2rem</b>
+        <mm-group variant="hashtag">
+          <mm-tag variant="hashtag">space-section</mm-tag>
+        </mm-group>
+      </div>
+      <div class="token-item">
+        <b>--grid-margin: 5vw</b>
+        <b>--grid-gutter: null</b>
+        <b>--grid-column: null</b>
+      </div>
+      <div class="token-item">
+        <figure style="width: 100%; height: var(--space-05); border-radius: 0"></figure>
+        <b>--space-negative-1: calc(var(--space-1) * -1)</b>
+      </div>
+    </section>
 
-      <mm-text variant="subhead">Text</mm-text>
-      <!-- <mm-text variant="body"> 활자의 위계와 배치. 정보 계층. </mm-text> -->
-      <mm-tile variant="elevated" size="small">
-        <button  class="js-default-font">
-          <mm-avatar slot="avatar" icon="font-question"></mm-avatar>
-          시스템 폰트로 보기
-        </button>
-      </mm-tile>
-      <!-- <mm-text variant="body-bold">Typefaces <sup>2</sup></mm-text>
+    <mm-text variant="subhead">Text</mm-text>
+    <!-- <mm-text variant="body"> 활자의 위계와 배치. 정보 계층. </mm-text> -->
+    <mm-tile variant="elevated" size="small">
+      <button class="js-default-font">
+        <mm-avatar slot="avatar" icon="font-question"></mm-avatar>
+        시스템 폰트로 보기
+      </button>
+    </mm-tile>
+    <!-- <mm-text variant="body-bold">Typefaces <sup>2</sup></mm-text>
       <mm-text variant="body-bold">
         Sizes <sup><del>5</del> 3</sup>
       </mm-text>
       <mm-text variant="body-bold">Weights <sup>2</sup></mm-text> -->
-      <!-- <div>
+    <!-- <div>
         <mm-text variant="subhead">subhead</mm-text>
         <div class="space" style="height: var(--space-after-subhead)">
           <span>space-after-subhead</span>
         </div>
         <mm-text variant="body">body</mm-text>
       </div> -->
-      <section class="token-group">
-        <div class="token-item">
-          <b>--font-family: 'IBM Plex San', 'Gothic A1', sans-serif;</b>
-        </div>
-        <div class="token-item">
-          <b>--font-size-huge: 2rem</b>
-          <b>--font-size-large: 1.125rem</b>
-          <b>--font-size-medium: .875rem</b>
-        </div>
-        <div class="token-item">
-          <b>--font-weight-normal: 400</b>
-          <b>--font-weight-bold: 800</b>
-        </div>
-        <div class="token-item">
-          <b>--font-line-height-large: 1.8 :: body</b>
-          <b>--font-line-height: 1.5 :: heading, word</b>
-          <b>--font-line-height: null</b>
-          <!-- <p>14px 기본폰트일 때 1.5의 모호성.</p> -->
-        </div>
-        <div class="token-item">
-          <mm-text variant="body-bold">사이즈 토큰으로 추상화하지 않는 케이스</mm-text>
-          <b>--navbar-height: <del>var(--size-huge)</del>5rem</b>
-          <b>--sidenav-width: null;</b>
-        </div>
-      </section>
-
-      <mm-text variant="subhead">Layouts - Width</mm-text>
-      <!-- <mm-text variant="body-bold">Media queries</mm-text> -->
-      <!-- <mm-text variant="body-bold">Width</mm-text> -->
-      <div class="token-group">
-        <div class="token-item">
-          <b>@custom-media --large (max-width: null)</b>
-          <b>@custom-media --small (max-width: 1080px)</b>
-          <del><b>--media-query-tiny: only screen and (max-width: 760px)</b></del>
-          <small>모든 container는 --small부터 max-width를 100%.</small>
-        </div>
-        <div class="token-item">
-          <b>--layout-width-wide: 1200px</b>
-          <b>--layout-width-medium: 640px</b>
-          <b>--layout-width-narrow: 480px</b>
-          <b>--layout-width-extra-narrow: 200px</b>
-        </div>
-        <div class="token-item">
-          <b data-temp="vertical scrolling">TODO @mixin group-bleeding</b>
-        </div>
+    <section class="token-group">
+      <div class="token-item">
+        <b>--font-family: 'IBM Plex San', 'Gothic A1', sans-serif;</b>
       </div>
-      <mm-text variant="subhead">Animation</mm-text>
-      <div class="token-group">
-        <div class="token-item">
-          <b>--animation-bazier: cubic-bezier(0.455, 0.03, 0.515, 0.955)</b>
-        </div>
-        <div class="token-item">
-          <b>--animation-delay-first: 0s</b>
-          <b>--animation-delay-second: .2s</b>
-          <b>--animation-delay-third: .4s</b>
-          <div style="display: flex; gap: var(--space-2)">
-            <figure class="animation-fadeup"></figure>
-            <figure class="animation-fadeup delay-second"></figure>
-            <figure class="animation-fadeup delay-third"></figure>
-          </div>
-        </div>
-        <div class="token-item" style="overflow: auto">
-          <b>--animation-duration: .4s</b>
-          <b>--animation-duration-quick: .2s. todo quickly</b>
-          <b>--animation-duration-slow: .8s</b>
-          <b>--animation-duration-instant: 0s</b>
-        </div>
-        <div class="token-item">
+      <div class="token-item">
+        <b>--font-size-huge: 2rem</b>
+        <b>--font-size-large: 1.125rem</b>
+        <b>--font-size-medium: .875rem</b>
+      </div>
+      <div class="token-item">
+        <b>--font-weight-normal: 400</b>
+        <b>--font-weight-bold: 800</b>
+      </div>
+      <div class="token-item">
+        <b>--font-line-height-large: 1.8 :: body</b>
+        <b>--font-line-height: 1.5 :: heading, word</b>
+        <b>--font-line-height: null</b>
+        <!-- <p>14px 기본폰트일 때 1.5의 모호성.</p> -->
+      </div>
+      <div class="token-item">
+        <mm-text variant="body-bold">사이즈 토큰으로 추상화하지 않는 케이스</mm-text>
+        <b>--navbar-height: <del>var(--size-huge)</del>5rem</b>
+        <b>--sidenav-width: null;</b>
+      </div>
+    </section>
+
+    <mm-text variant="subhead">Layouts - Width</mm-text>
+    <!-- <mm-text variant="body-bold">Media queries</mm-text> -->
+    <!-- <mm-text variant="body-bold">Width</mm-text> -->
+    <div class="token-group">
+      <div class="token-item">
+        <b>@custom-media --large (max-width: null)</b>
+        <b>@custom-media --small (max-width: 1080px)</b>
+        <del><b>--media-query-tiny: only screen and (max-width: 760px)</b></del>
+        <small>모든 container는 --small부터 max-width를 100%.</small>
+      </div>
+      <div class="token-item">
+        <b>--layout-width-wide: 1200px</b>
+        <b>--layout-width-medium: 640px</b>
+        <b>--layout-width-narrow: 480px</b>
+        <b>--layout-width-extra-narrow: 200px</b>
+      </div>
+      <div class="token-item">
+        <b data-temp="vertical scrolling">TODO @mixin group-bleeding</b>
+      </div>
+    </div>
+    <mm-text variant="subhead">Animation</mm-text>
+    <div class="token-group">
+      <div class="token-item">
+        <b>--animation-bazier: cubic-bezier(0.455, 0.03, 0.515, 0.955)</b>
+      </div>
+      <div class="token-item">
+        <b>--animation-delay-first: 0s</b>
+        <b>--animation-delay-second: .2s</b>
+        <b>--animation-delay-third: .4s</b>
+        <div style="display: flex; gap: var(--space-2)">
           <figure class="animation-fadeup"></figure>
-          <b>@keyframes fadeup</b>
-        </div>
-        <div class="token-item">
-          <figure class="animation-rotation" style="float: none"></figure>
-          <b>@keyframes rotation</b>
-        </div>
-        <div class="token-item">
-          <figure class="animation-marquee" style="float: none"></figure>
-          <b>@keyframes marquee</b>
-        </div>
-        <div class="token-item">
-          <figure></figure>
-          <b>@keyframes pop</b>
+          <figure class="animation-fadeup delay-second"></figure>
+          <figure class="animation-fadeup delay-third"></figure>
         </div>
       </div>
-      <!-- <mm-text variant="body-bold">Style</mm-text> -->
-      <!-- <mm-text variant="body-bold">Delay</mm-text> -->
-      <!-- <mm-text variant="body-bold">Duration</mm-text> -->
-      <!-- <mm-text variant="body-bold">Keyframes (utility)</mm-text> -->
-      <mm-text variant="subhead">Z-index</mm-text>
-      <div class="token-group">
-        <div class="token-item">
-          <b style="margin: 0">--zindex-deepdive: -1</b>
-        </div>
-        <div class="token-item">
-          <b style="margin: 0">--zindex-default: 1</b>
-        </div>
-        <div class="token-item">
-          <b style="margin: 0">--z-index-popover: 6</b>
-          <div>
-            <small>--zindex-dropdown:</small><br />
-            <small>--zindex-tooltip:</small>
-          </div>
-        </div>
-        <div class="token-item">
-          <b style="margin: 0">--zindex-sticky: 7</b>
-        </div>
-        <div class="token-item">
-          <b style="margin: 0">--zindex-navigation: 7</b>
-        </div>
-        <div class="token-item">
-          <b>--zindex-modal: 8</b>
-          <b>--zindex-modal-backdrop: 7</b>
-        </div>
-        <div class="token-item">
-          <b style="margin: 0" b>--zindex-toast: 9</b>
-        </div>
-        <div class="token-item">
-          <b style="margin: 0">--zindex-skipmenu: 10</b>
-          <div>
-            <small>최고 존엄</small>
-          </div>
+      <div class="token-item" style="overflow: auto">
+        <b>--animation-duration: .4s</b>
+        <b>--animation-duration-quick: .2s. todo quickly</b>
+        <b>--animation-duration-slow: .8s</b>
+        <b>--animation-duration-instant: 0s</b>
+      </div>
+      <div class="token-item">
+        <figure class="animation-fadeup"></figure>
+        <b>@keyframes fadeup</b>
+      </div>
+      <div class="token-item">
+        <figure class="animation-rotation" style="float: none"></figure>
+        <b>@keyframes rotation</b>
+      </div>
+      <div class="token-item">
+        <figure class="animation-marquee" style="float: none"></figure>
+        <b>@keyframes marquee</b>
+      </div>
+      <div class="token-item">
+        <figure></figure>
+        <b>@keyframes pop</b>
+      </div>
+    </div>
+    <!-- <mm-text variant="body-bold">Style</mm-text> -->
+    <!-- <mm-text variant="body-bold">Delay</mm-text> -->
+    <!-- <mm-text variant="body-bold">Duration</mm-text> -->
+    <!-- <mm-text variant="body-bold">Keyframes (utility)</mm-text> -->
+    <mm-text variant="subhead">Z-index</mm-text>
+    <div class="token-group">
+      <div class="token-item">
+        <b style="margin: 0">--zindex-deepdive: -1</b>
+      </div>
+      <div class="token-item">
+        <b style="margin: 0">--zindex-default: 1</b>
+      </div>
+      <div class="token-item">
+        <b style="margin: 0">--z-index-popover: 6</b>
+        <div>
+          <small>--zindex-dropdown:</small><br />
+          <small>--zindex-tooltip:</small>
         </div>
       </div>
-
-      <blockquote>
-        <mm-text variant="subhead">Notes</mm-text>
-        <ul>
-          <li>https://www.delldesignsystem.com/foundations/typography/</li>
-          <li>콘텐츠 컨테이너의 가로 크기. custom media의 max-width를 layout + @로 정의.</li>
-          <li>
-            폰트가 변경되면 폰트마다 baseline이 달라서 텍스트의 상하 간격이 안 맞을 수 있다.
-            텍스트노드(레이블 역할)의 패딩용 변수를 활용.
-          </li>
-          <li>
-            animation :: 콘텐츠보다 액션이 강조되지 않도록 뷰포트 내에서 delay를 최대 3개로
-            제한합니다. inactive로 변경될 때(닫기 등) 즉시(instantly) 실행 합니다.
-          </li>
-          <li>
-            outset: 컴포넌트의 상하 간격. 시각 보정을 위해 마이너스minus 간격을 사용할 수 있다.
-          </li>
-          <li>
-            inset: 타일 내부 간격 - squish inset/stretch inset 를 정의할 수도 있고 타일 내부 제목
-            영역의 line-height 고려한 시각보정이 필요할 수 있다리.
-          </li>
-          <li>
-            display grid를 사용하면 마진과 거터를 제외한 나머지가 결국 칼럼이 됨. 또는 width
-            시스템으로 대체할 수 있다.
-          </li>
-          <li>사이즈의 세로값과 컴포넌트의 세로 prop을 동일하게 사용할 수 있을까?</li>
-          <li>
-            그림자를 이용한 시각적 상승 효과로 주변 요소 대비 강조. 더 높은 우선순위 및 행동유도를
-            위한 높은 고도. 사용자는 시각적 단어로 우선순위를 인식하고 인터렉션. 시각적 우선순위는
-            그림자로만 줄 수 있는 것은 아님. overay 등으로 우선순위를 설정할 수도 있음.
-          </li>
-          <li>
-            컴포넌트에서 동일한 형태를 토큰으로 대응할 때를 컴포넌트 토큰? 또는 특수한 토큰을
-            활용하게 될 수 있다. box-inset-small 과 같은.
-          </li>
-          <li>
-            개별 토큰에 디스크립션이 필요하지 않도록 명명합니다. core: give a name to a raw value to
-            enable theming and make improve maintainability / semantic / component.
-          </li>
-          <li>
-            컴포넌트 토큰은 상대적으로 변경 가능성이 높고 범용성이 낮기 때문에 컴포넌트 스코프에서만
-            정의. 컴포넌트 토큰을 정의하면 형태 기반의 컴포넌트를 정의 최소화할 수 있다.
-          </li>
-          <li>
-            --[namespace]-[component / category]-[attribute]-[status] 프로덕션이 아니기 때문에
-            namespace를 생략.
-          </li>
-          <li>
-            theme.
-            <del>
-              인버트 컬러셋을 추가로 정의하지 않습니다. 하나의 컬러셋으로 다크 테마에 대응합니다.
-              어렵고 또는 불필요한 규칙. 왜냐하면 초기 토큰 세팅 허들을 넘으면 컴포넌트 토큰을
-              활용한 테마 대응이 간편해짐.
-            </del>
-          </li>
-        </ul>
-      </blockquote>
-
-      <section class="component-references">
-        <a href="https://design-tokens.github.io/community-group/format">token module</a>
-        <a href="https://docs.specifyapp.com/concepts/token-types">token json</a>
-        <a href="https://www.delldesignsystem.com/foundations/elevation/">dell elevation</a>
-        <a href="https://atlassian.design/components/tokens/all-tokens">test</a>
-        <a href="https://www.wedesignx.com/knowledge/design-system">test2</a>
-        <a href="https://medium.com/eightshapes-llc/size-in-design-systems-64f234aec519">test3</a>
-        <a href="https://bulma.io/documentation/form/input/">bulma variables</a>
-      </section>
-
-      <mm-text variant="title">Opacity</mm-text>
-      <mm-text variant="body-large">요소의 투명도.</p>
-      <div class="token-group">
-        <div class="token-item"><mm-avatar></mm-avatar><b>opacity-disabled</b></div>
-        <div class="token-item"><mm-avatar></mm-avatar><b>opacity-overay/underlay</b></div>
+      <div class="token-item">
+        <b style="margin: 0">--zindex-sticky: 7</b>
       </div>
-    </article>
+      <div class="token-item">
+        <b style="margin: 0">--zindex-navigation: 7</b>
+      </div>
+      <div class="token-item">
+        <b>--zindex-modal: 8</b>
+        <b>--zindex-modal-backdrop: 7</b>
+      </div>
+      <div class="token-item">
+        <b style="margin: 0" b>--zindex-toast: 9</b>
+      </div>
+      <div class="token-item">
+        <b style="margin: 0">--zindex-skipmenu: 10</b>
+        <div>
+          <small>최고 존엄</small>
+        </div>
+      </div>
+    </div>
 
-    <!-- <mm-text variant="title">Positioning 이거 Utility</mm-text>
+    <blockquote>
+      <mm-text variant="subhead">Notes</mm-text>
+      <ul>
+        <li>https://www.delldesignsystem.com/foundations/typography/</li>
+        <li>콘텐츠 컨테이너의 가로 크기. custom media의 max-width를 layout + @로 정의.</li>
+        <li>
+          폰트가 변경되면 폰트마다 baseline이 달라서 텍스트의 상하 간격이 안 맞을 수 있다.
+          텍스트노드(레이블 역할)의 패딩용 변수를 활용.
+        </li>
+        <li>
+          animation :: 콘텐츠보다 액션이 강조되지 않도록 뷰포트 내에서 delay를 최대 3개로
+          제한합니다. inactive로 변경될 때(닫기 등) 즉시(instantly) 실행 합니다.
+        </li>
+        <li>
+          display grid를 사용하면 마진과 거터를 제외한 나머지가 결국 칼럼이 됨. 또는 width
+          시스템으로 대체할 수 있다.
+        </li>
+        <li>
+          그림자를 이용한 시각적 상승 효과로 주변 요소 대비 강조. 더 높은 우선순위 및 행동유도를
+          위한 높은 고도. 사용자는 시각적 단어로 우선순위를 인식하고 인터렉션. 시각적 우선순위는
+          그림자로만 줄 수 있는 것은 아님. overay 등으로 우선순위를 설정할 수도 있음.
+        </li>
+        <li>
+          개별 토큰에 디스크립션이 필요하지 않도록 명명합니다. core: give a name to a raw value to
+          enable theming and make improve maintainability
+        </li>
+        <li>
+          컴포넌트 토큰은 상대적으로 변경 가능성이 높고 범용성이 낮기 때문에 컴포넌트 스코프에서만
+          정의. 컴포넌트 토큰을 정의하면 형태 기반의 컴포넌트를 정의 최소화할 수 있다.
+        </li>
+        <li>
+          --[namespace]-[component / category]-[attribute]-[status] 프로덕션이 아니기 때문에
+          namespace를 생략.
+        </li>
+        <li>
+          theme.
+          <del>
+            인버트 컬러셋을 추가로 정의하지 않습니다. 하나의 컬러셋으로 다크 테마에 대응합니다.
+            어렵고 또는 불필요한 규칙. 왜냐하면 초기 토큰 세팅 허들을 넘으면 컴포넌트 토큰을 활용한
+            테마 대응이 간편해짐.
+          </del>
+        </li>
+      </ul>
+    </blockquote>
+
+    <section class="component-references">
+      <a href="https://design-tokens.github.io/community-group/format">token module</a>
+      <a href="https://docs.specifyapp.com/concepts/token-types">token json</a>
+      <a href="https://www.delldesignsystem.com/foundations/elevation/">dell elevation</a>
+      <a href="https://atlassian.design/components/tokens/all-tokens">test</a>
+      <a href="https://www.wedesignx.com/knowledge/design-system">test2</a>
+      <a href="https://medium.com/eightshapes-llc/size-in-design-systems-64f234aec519">test3</a>
+      <a href="https://bulma.io/documentation/form/input/">bulma variables</a>
+    </section>
+  </article>
+
+  <!-- <mm-text variant="title">Positioning 이거 Utility</mm-text>
       <mm-text variant="body-large">
         동일 역할을 동일 위치 원칙이 있다. 도메인이나 서비스 특수성이 있을 수 있지만 상당 보편적인 경험에 기반한다. 그래서 right top 같은 이름보다
         역할 기반 이름을 달아 줄 필요. 아니면 그냥 컴포넌트 토큰?
