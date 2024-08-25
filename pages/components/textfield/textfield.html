@@ -43,6 +43,14 @@
     <dd>TextInput</dd>
     <dd>Input</dd>
   </dl>
+  <div style="margin-top: 2rem"></div>
+  <mm-tablist class="tablist">
+    <mm-tab slot="tab" name="" selected="true" data-index="1"> 베리언트 </mm-tab>
+    <mm-tab slot="tab" name="" selected="false" data-index="2"> 상태 </mm-tab>
+    <mm-tab slot="tab" name="" selected="false" data-index="3"> 크기 </mm-tab>
+    <i class="tablist-indicator"></i>
+  </mm-tablist>
+  <div style="margin-bottom: -1rem"></div>
   <section class="component-example">
     <mm-group variant="form">
       <mm-textfield type="text" size="small" placeholder="Small size..."></mm-textfield>
@@ -80,7 +88,7 @@
     </div>
     <mm-separator></mm-separator>
     <div class="textfield">
-      <label class="textfield-label" for="search1">Textarea or Commentfield</label>
+      <label class="textfield-label" for="search1">Textarea/Commentfield</label>
       <small class="textfield-byte"><b>0 KB</b> / 100 KB</small>
       <textarea
         class="textfield-input"
@@ -214,23 +222,20 @@
       가이드합니다.
     </mm-text>
 
-    <blockquote>
-      <mm-text variant="body-bold">Notes</mm-text>
-      <ul class="checklist">
-        <li>TODO utilities. 앞자리 0 제거. 숫자만입력3자리마다콤마. 소숫점 컨트롤.</li>
-        <li>url field. www 및 https://</li>
-        <li>
-          form 컴포넌트는 간격에 대한 구조 컴포넌트. form patterns. FormField label / TextInput 으로
-          나누는 방안. groupable은 속성. 그래서 컴포넌트 이름은 form layout / fieldset / fieldgroup
-          FormLabel checkbox-label와 input-label을 똑같이 할 수 있나? field label : fieldset legend,
-          label - input/textarea 그러면 searchField 등의 대안이 될 수 있나?
-        </li>
-        <li>helper(help message)와 feedback(feedback message / validation feedback)을 구분하기.</li>
-        <li>field feedback / fieldset feedback(checkbox group, login)</li>
-        <li>props: minValue, maxValue, value, onDecreseClick, onIncreseClick</li>
-        <li>221021: - + 버튼에 포커스는 필요가 없다. input 키보드 위 아래로?</li>
-      </ul>
-    </blockquote>
+    <ul class="checklist">
+      <li>TODO utilities. 앞자리 0 제거. 숫자만입력3자리마다콤마. 소숫점 컨트롤.</li>
+      <li>url field. www 및 https://</li>
+      <li>
+        form 컴포넌트는 간격에 대한 구조 컴포넌트. form patterns. FormField label / TextInput 으로
+        나누는 방안. groupable은 속성. 그래서 컴포넌트 이름은 form layout / fieldset / fieldgroup
+        FormLabel checkbox-label와 input-label을 똑같이 할 수 있나? field label : fieldset legend,
+        label - input/textarea 그러면 searchField 등의 대안이 될 수 있나?
+      </li>
+      <li>helper(help message)와 feedback(feedback message / validation feedback)을 구분하기.</li>
+      <li>field feedback / fieldset feedback(checkbox group, login)</li>
+      <li>props: minValue, maxValue, value, onDecreseClick, onIncreseClick</li>
+      <li>221021: - + 버튼에 포커스는 필요가 없다. input 키보드 위 아래로?</li>
+    </ul>
   </section>
 
   <aside class="component-references">

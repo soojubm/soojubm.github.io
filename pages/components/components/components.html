@@ -73,10 +73,7 @@
         </button>
         <br /><br />
         <mm-text variant="body-bold">바이라인Byline</mm-text>
-        <mm-text variant="body"
-          >다수의 유저 목록을 표현. 또는 <mark>아티클 레벨</mark> 정보의 주체. 피드 등에서
-          사용하는.</mm-text
-        >
+        <mm-text variant="body">다수의 유저 목록을 표현. 피드 등에서 사용하는.</mm-text>
         <mm-tile size="small">
           <mm-menuitem label="수줍이">
             <mm-avatar slot="avatar">
@@ -168,77 +165,6 @@
         >text button과의 차이. Link는 항상 텍스트 단락과 함께 사용합니다. 버튼은 단독으로 쓰이거나
         버튼의 그룹으로 쓰인다.</mm-text
       >
-    </section>
-  </article>
-
-  <article class="article">
-    <mm-text variant="title">Select</mm-text>
-    <mm-text variant="body-large">input shape와 chip shape</mm-text>
-    <dl class="article-aka">
-      <dt>a.k.a.</dt>
-      <dd title="">dropdown</dd>
-      <dd title="">Picker</dd>
-      <dd title="shopify">Choice list</dd>
-      <dd title="shopify">Action list</dd>
-    </dl>
-
-    <section class="component-example">
-      <div class="textfield">
-        <label class="textfield-label" for="select1">셀렉트 레이블</label>
-        <select class="textfield-input" id="select1">
-          <option value="option1">Choose an option</option>
-        </select>
-        <mm-icon name="nav-arrow-down" class="textfield-suffix"></mm-icon>
-      </div>
-    </section>
-
-    <section class="component-props">
-      <dl>
-        <dt>options</dt>
-        <dd>Option[]</dd>
-        <dd></dd>
-        <dt>label - option label과 혼동될 수도</dt>
-        <dd>string</dd>
-        <dd></dd>
-        <dt>selectedValue</dt>
-        <dd>Option.value</dd>
-        <dd></dd>
-        <dt>onChange - handleSelectChange</dt>
-        <dd>(event: React.FormEvent[HTMLSelectElement]) => void</dd>
-        <dd></dd>
-      </dl>
-    </section>
-
-    <section class="component-guide">
-      <blockquote>
-        <ul>
-          <li>
-            제품의 초기 단계에서는 native select와 dropdown을 함께 가져갈 필요가 있나. native
-            select는 모바일 사용성이 좋고 초기 구축이 쉽다. 그러나 제품 또는 제품 개발 과정이 궤도에
-            올라왔을 때는 일정 수준의 컴포넌트가 확보되어 있을 것이기 때문. naming select / width /
-            input bar(google font)
-          </li>
-          <li>레이블 클릭해도 셀렉트가 열리지 않기 때문에 id prop 불필요.</li>
-        </ul>
-      </blockquote>
-      <mm-text variant="subhead">Best practices</mm-text>
-      <ul>
-        <li>
-          셀렉트 옵션의 텍스트 길이에 맞춰 너비가 조절된다. indicator를 position으로 넣고 옵션에
-          말줄임표를 넣어야.
-        </li>
-        <li>
-          다중 선택(combobox)을 셀렉트로 제공하지 마세요. 가 아니라 애초에 콤보박스라는 컴포넌트
-          정의가 안 되어 있음. chip group으로 선택 옵션을 풀어서 제공하세요. 너무 많은 선택에서는
-          콤보박스가 필요. 하지만 그냥 모달 등의 새로운 뷰로 대체하는 게 모바일 친화적.
-        </li>
-        <li>
-          memo. 레이블을 포함하는 형태. select 엘리먼트가 아니라 부모 엘리먼트에 컨테이너 스타일링이
-          필요하고, 클릭 영역까지 지정해야 했다. 그리고 드롭다운으로 구현해야 한다.
-        </li>
-      </ul>
-      var selected = Array.from(dnd.options).filter((option) => { return option.selected;
-      }).map((option) => option.value);
     </section>
   </article>
 

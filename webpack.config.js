@@ -70,6 +70,7 @@ const components = [
   'checkbox',
   'radio',
   'textfield',
+  'select',
 
   'tab',
   'bar',
