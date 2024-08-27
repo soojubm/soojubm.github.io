@@ -64,12 +64,12 @@ input[type=search]::-webkit-search-results-decoration {display:none;}
   position:relative;
 
   --textfield-padding: null;
-  --textfield-color-border: null; // for state
+  --textfield-color-border: null; 
   --textfield-color-border-hover: null; 
 
   --textfield-color-background: null;
-  --textfield-background-color: null; // color first / background first
-  --textfield-border-width: null; // color, border
+  --textfield-background-color: null;
+  --textfield-border-width: null; 
 
   --textfield-height: var(--size-large);
   --textfield-background-color: var(--color-background-weak);
@@ -98,7 +98,7 @@ input[type=search]::-webkit-search-results-decoration {display:none;}
   background: var(--textfield-background-color);
   color: var(--color-text);
 
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 0px 0px;
+  /* box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 0px 0px; */
 }
 .textfield-input:hover {border-color:var(--color-primary);}
 .textfield-input:focus {box-shadow:var(--status-hover);}

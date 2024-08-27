@@ -50,17 +50,15 @@
     }
   </style>
 
-  <section class="wrapper" style="display: flex; gap: 0.5rem">
+  <!-- <section class="wrapper" style="display: flex; gap: 0.5rem">
     <div class="first box"></div>
     <div class="second box"></div>
     <div class="third box"></div>
     <div class="black box"></div>
     <div class="darker box"></div>
-  </section>
+  </section> -->
 
-  <article class="article" style="max-width: 1160px">
-    <p>TODO DISMISS PATTERN</p>
-    <p>조너선 아이브였나요. 그 양반이 추천하는 behavior, visual style 등으로 나누어 보았다가, foundation 의 feature? 중심으로 설명하고 그것에 따라 인덱스를 제공하는 것이 더 좋다는 판단.</p>
+  <article class="article">
     <!-- The aim is to reduce “decision fatigue -->
     <!-- A design system Ops manager must be someone experienced with design and development. They must understand both processes to identify and fix problems effectively. -->
     <!-- Design system knowledge and experience are also essential. An Ops manager cannot optimize the operations without a fundamental understanding of building, managing and scaling a design system. -->
@@ -152,17 +150,6 @@
     </style>
     <!-- // invoice / order  구분 -->
 
-    <div
-      style="
-        height: 240px;
-        border: 1px solid #ecd5d5;
-        border-radius: var(--radius);
-        margin: -2rem -1rem 2rem;
-        padding: 2rem 1rem;
-        background-color: snow;
-      "
-    ></div>
-
     <section class="feature">
       <header class="feature-head">
         <mm-text variant="title">
@@ -176,6 +163,9 @@
           가치판단. -->
         </mm-text>
       </header>
+    </section>
+
+    <section>
       <mm-feature
         icon="✋"
         titleText="한계를 설정하기"
@@ -183,12 +173,57 @@
         description="모두를 위한 서비스, 접속 환경 등의 제약없이 없이. 우리가 궁극적으로 해결하려는 문제는 유저
         인터페이스가 아니다."
       ></mm-feature>
-      <mm-feature
-        icon="⚒️🐏"
-        titleText="Single source of truth"
-        subtitle="Progressive enhancement minimum viable experience"
-        description="디자인 툴이 SSOT가 될 수 없다. 그것은 단순 스타일 가이드."
-      ></mm-feature>
+
+      <div class="tile" style="margin: 1rem 0 0">
+        <mm-text variant="subhead">Principles :: Make a Constraints</mm-text>
+        <mm-menuitem>
+          <mm-avatar slot="avatar" variant="secondary"></mm-avatar>
+          <div slot="text">
+            <mm-text variant="body-bold">not-yet-completed</mm-text>
+            <mm-text variant="body"
+              >규칙 최소화. 크기와 비례해서 radius와 shadow 조정이 필요하지만 규칙을
+              최소화.</mm-text
+            >
+            <mm-text variant="body">
+              Signifiy. 상태를 표현하는 시각 언어는 일부 컴포넌트에 종속되지 않고 제품 전체에
+              일관됩니다.
+            </mm-text>
+            <mm-text variant="body">
+              제품으로서의 디자인 시스템 문서. 가능한 모든 경우의 수를 나열하지 마세요. 디자인
+              시스템은 유아이 라이브러리UI Library나 유아이 키트UI Kits가 아닙니다.
+            </mm-text>
+          </div>
+        </mm-menuitem>
+
+        <mm-menuitem>
+          <mm-avatar slot="avatar" variant="secondary"></mm-avatar>
+          <div slot="text">
+            <mm-text variant="body-bold">A11y</mm-text>
+            <mm-text variant="body"> 접근성으로 결정을 도와라. </mm-text>
+            <mm-text variant="body">
+              시각 이상자를 위한 형태. 크기, 깊이, 테두리의 제한된 규칙(제약Constraints)은 오히려
+              제품 개발 속도를 높일 수 있습니다.
+            </mm-text>
+            <mm-text variant="body"
+              >색각 이상자를 위해 색상 외의 시각 언어로 상태 정보를 표현하세요.</mm-text
+            >
+          </div>
+        </mm-menuitem>
+        <mm-menuitem>
+          <mm-avatar slot="avatar" variant="secondary"></mm-avatar>
+          <div slot="text">
+            <mm-text variant="body-bold">Mobile First</mm-text>
+            <mm-text variant="body">
+              디바이스나 브라우저 등 접속 환경에 종속되지 않는 일관된 시각 경험. 크로스 플랫폼.
+              서비스 확장과 유지 보수. 데스크탑 환경에서나 유효한 hover 형태를 디자인하는 데에 많은
+              시간을 들일 필요가 없습니다.
+            </mm-text>
+          </div>
+        </mm-menuitem>
+      </div>
+    </section>
+
+    <section>
       <mm-feature
         icon="⚒️"
         titleText="점진적인 향상"
@@ -196,64 +231,7 @@
         description="시각 언어를 확장해가며 디자인 디테일을 높이고 코드 환경에서 유효한 최적의 컴포넌트 사례를
         만듭니다."
       ></mm-feature>
-      <mm-feature
-        icon="🚦"
-        titleText="예측가능한 경험"
-        subtitle="Trustworthy cue"
-        description="UI는 사용자의 추가적인 학습을 최소화할 정도로 보편타당해야. 제품 스코프에서도 친숙하고
-        신뢰할 수 있는 서비스 경험을 위해 예측 가능하고 일관된 기표."
-      ></mm-feature>
     </section>
-
-    <!-- <div class="tile" style="margin: 1rem 0 0">
-          <mm-text variant="subhead">Principles :: Make a Constraints</mm-text>
-          <mm-menuitem>
-            <mm-avatar slot="avatar" variant="secondary"></mm-avatar>
-            <div slot="text">
-              <mm-text variant="body-bold">not-yet-completed</mm-text>
-              <mm-text variant="body"
-                >규칙 최소화. 크기와 비례해서 radius와 shadow 조정이 필요하지만 규칙을
-                최소화.</mm-text
-              >
-              <mm-text variant="body">
-                Signifiy. 상태를 표현하는 시각 언어는 일부 컴포넌트에 종속되지 않고 제품 전체에
-                일관됩니다.
-              </mm-text>
-              <mm-text variant="body">
-                제품으로서의 디자인 시스템 문서. 가능한 모든 경우의 수를 나열하지 마세요. 디자인
-                시스템은 유아이 라이브러리UI Library나 유아이 키트UI Kits가 아닙니다.
-              </mm-text>
-            </div>
-          </mm-menuitem>
-
-          <mm-menuitem>
-            <mm-avatar slot="avatar" variant="secondary"></mm-avatar>
-            <div slot="text">
-              <mm-text variant="body-bold">A11y</mm-text>
-              <mm-text variant="body"> 접근성으로 결정을 도와라. </mm-text>
-              <mm-text variant="body">
-                시각 이상자를 위한 형태. 크기, 깊이, 테두리의 제한된 규칙(제약Constraints)은 오히려
-                제품 개발 속도를 높일 수 있습니다.
-              </mm-text>
-              <mm-text variant="body"
-                >색각 이상자를 위해 색상 외의 시각 언어로 상태 정보를 표현하세요.</mm-text
-              >
-            </div>
-          </mm-menuitem>
-
-          <mm-menuitem>
-            <mm-avatar slot="avatar" variant="secondary"></mm-avatar>
-            <div slot="text">
-              <mm-text variant="body-bold">Mobile First</mm-text>
-              <mm-text variant="body">
-                디바이스나 브라우저 등 접속 환경에 종속되지 않는 일관된 시각 경험. 크로스 플랫폼.
-                서비스 확장과 유지 보수. 데스크탑 환경에서나 유효한 hover 형태를 디자인하는 데에
-                많은 시간을 들일 필요가 없습니다.
-              </mm-text>
-            </div>
-          </mm-menuitem>
-
-        </div> -->
 
     <!-- <div class="stamp" style="position: absolute; right: 10%; top: 12rem">
       <div class="circle" style="background: var(--color-accent)">
@@ -266,33 +244,6 @@
         </p>
       </div>
     </div> -->
-
-    <!-- <div
-      style="
-        border: 1px solid #ecd5d5;
-        border-radius: var(--radius);
-        margin: 4rem -1rem 2rem;
-        padding: 3rem 4rem calc(4rem + 2rem);
-        background-color: floralwhite;
-        text-align: center;
-      "
-    >
-      <div class="chat is-mine" style="padding-left: 0">
-        <div
-          class="chat-bubble"
-          style="
-            margin: 0 0 var(--space-2);
-            border-radius: 1.5rem;
-            border-bottom-left-radius: var(--radius);
-          "
-        >
-          <p>감사합니다! 아바타와 닉네임 없어도 됨.</p>
-        </div>
-        <mm-avatar size="large">
-          <img src="/public/images/springsteen.jpg" alt="" />
-        </mm-avatar>
-      </div>
-    </div>
 
     <mm-tile class="js-observer" style="margin-top: -5rem; padding: 1.5rem 2rem">
       <section>
@@ -330,14 +281,18 @@
         </div>
       </section>
       <mm-separator></mm-separator>
-    </mm-tile> -->
+    </mm-tile>
+
+    <p>TODO DISMISS PATTERN</p>
+    <p>
+      조너선 아이브였나요. 그 양반이 추천하는 behavior, visual style 등으로 나누어 보았다가,
+      foundation 의 feature? 중심으로 설명하고 그것에 따라 인덱스를 제공하는 것이 더 좋다는 판단.
+    </p>
 
     <blockquote>
       <mm-text variant="caption">
         &loz; 우리의 제품에 이렇게 많은 컬러 쉐이드가 필요한가요?</mm-text
       >
-      <mm-text variant="caption">
-        &loz; 다
       <mm-text variant="caption">
         &loz; dos / don'ts 케이스는 이미지 없이 간결하게 서술합니다. 유아이는 계속 변경되는데
         이미지로 인한 문서 관리 비용을 관리.
@@ -363,8 +318,8 @@
         간결한 문장.
       </mm-text>
       <mm-text variant="body">
-        디바이스나 브라우저 등 접속 환경에 종속되지 않는 일관된 시각 경험. 유연성flexibility -
-        지속 가능성 - 단순성 의 삼위일체 (?!)
+        디바이스나 브라우저 등 접속 환경에 종속되지 않는 일관된 시각 경험. 유연성flexibility - 지속
+        가능성 - 단순성 의 삼위일체 (?!)
       </mm-text>
     </blockquote>
 
@@ -382,12 +337,11 @@
       <li>동일한 행동에 대해 하나의 단어를 사용하고 있는가.</li>
       <li>하기 / 취소 / 다음에</li>
 
-
       <li>모든 시각정보는 non-clickable. 모든 인터렉션은 clickable.</li>
       <li>2회 이상 사용할 때 규칙으로 만든다.</li>
     </ul>
     <mm-text variant="subhead">Styling</mm-text>
-    <ul>
+    <ul class="checklist">
       <li>초기 선언은 항상 margin:0 0 0 0. 재할당의 암시를 위해 방향을 풀어서 margin-left.</li>
       <li>position fixed. z-index 보전을 위해 static이 아닌 relative로 초기화하세요.</li>
       <li>반응형 이미지 사용법. 일단 그냥 2배수로 크기 조절. 가장 간단.</li>
@@ -397,10 +351,11 @@
       </li>
     </ul>
     <mm-text variant="subhead">Naming conventions</mm-text>
-    <ul>
-      <li>특정 형태를 유추할 수 있는 클래스 네이밍하지 마세요.</li>
+    <ul class="checklist">
+      <li>형태를 유추할 수 있는 클래스 네이밍하지 마세요.</li>
       <li>
-        방향(left, right)으로 명명하지 마세요. 레이아웃은 변경 가능성이 높은 인터페이스 요소입니다.
+        레이아웃을 방향(left, right)을 포함하여 명명하지 마세요. 레이아웃은 변경 가능성이 높은
+        인터페이스 요소입니다. 역할에 기반하여 명명하세요.
       </li>
       <li>naming: -s vs - list / action vs control vs foot</li>
       <li>
@@ -408,9 +363,8 @@
         아이템의 아래에 모두보기 버튼을 배치. 가로 스크롤인 경우 스크롤의 가장 우측에 배치할 수도.
       </li>
       <li>
-        값을 직접적으로 이름에 포함하지 마세요. 20 - 20px. tailwind의 단점. 디자인 토큰에서 얻을 수
-        있는 추상화 및 기타 이점이 무효화. 값을 조정하기 쉽도록 추상화.. 1 unit을 .25rem으로 모두
-        네이밍 할 수 있나.
+        값을 직접적으로 포함하지 마세요. 디자인 토큰에서 얻을 수 있는 추상화 및 기타 이점이 무효화.
+        값을 조정하기 쉽도록 추상화.. 1 unit을 .25rem으로 모두 네이밍 할 수 있나.
       </li>
     </ul>
 
@@ -471,6 +425,7 @@
     ></div>
     <div
       class="circle"
+      
       style="
         width: 6rem;
         height: 6rem;
@@ -516,4 +471,18 @@
     <br />
     <mm-button variant="secondary" type="submit">뉴스레터 구독</mm-button>
   </form> -->
+
+  <mm-feature
+    icon="🐏"
+    titleText="Single source of truth"
+    subtitle="Progressive enhancement minimum viable experience"
+    description="디자인 툴이 SSOT가 될 수 없다. 그것은 단순 스타일 가이드."
+  ></mm-feature>
+  <mm-feature
+    icon="🚦"
+    titleText="예측가능한 경험"
+    subtitle="Trustworthy cue"
+    description="UI는 사용자의 추가적인 학습을 최소화할 정도로 보편타당해야. 제품 스코프에서도 친숙하고
+  신뢰할 수 있는 서비스 경험을 위해 예측 가능하고 일관된 기표."
+  ></mm-feature>
 </main>

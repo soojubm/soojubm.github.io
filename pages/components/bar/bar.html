@@ -1,5 +1,5 @@
 <main class="page">
-  <article class="article js-observer js-scrollspy-section">
+  <article class="article">
     <mm-text variant="title">Menubar</mm-text>
     <mm-text variant="body-large"> toolbar / chip group / role=menubar</mm-text>
     <section class="component-example">
@@ -14,10 +14,6 @@
           <!-- <mm-avatar slot="prefix" icon="search"></mm-avatar> -->
           <mm-icon slot="prefix" name="search"></mm-icon>
         </mm-textfield>
-        <mm-chip variant="" name="Filter">
-          <mm-icon slot="suffix" name="nav-arrow-down"></mm-icon>
-          Created by anyone
-        </mm-chip>
         <mm-chip variant="" name="Sort">
           Last modified
           <mm-icon slot="suffix" name="nav-arrow-down"></mm-icon>
@@ -26,23 +22,20 @@
     </section>
   </article>
 
-  <article class="article js-observer js-scrollspy-section">
-    <mm-text variant="title">Title bar / Page header / TopAppBar(md)</mm-text>
+  <article class="article">
+    <mm-text variant="title">Title bar / TopAppBar(md)</mm-text>
     <mm-text variant="body-large"> 페이지 헤더 .</mm-text>
 
     <section class="component-example">
-      <mm-titlebar heading="수줍이님 뒤로가기 아이콘이 없는 형태가 필요" role="navigation">
+      <mm-titlebar heading="수줍이님" role="navigation">
         <mm-group slot="action" variant="chip">
-          <mm-chip variant="plain" icon="cart"> </mm-chip>
           <mm-chip variant="plain" icon="cart"> </mm-chip>
         </mm-group>
       </mm-titlebar>
-      <mm-separator></mm-separator>
-      <mm-titlebar heading="Product" role="navigation">
+      <mm-titlebar heading="Product 뒤로가기 없는 패턴 추가하기" role="navigation">
         <mm-chip slot="action" variant="plain" icon="cart"> </mm-chip>
       </mm-titlebar>
       <!-- <div class="titlebar-backdrop js-header"></div> -->
-      <mm-separator></mm-separator>
       <mm-titlebar class="js-titlebar" role="navigation" data-size="large">
         <mm-group slot="action" variant="chip">
           <mm-chip>저장</mm-chip>
@@ -97,7 +90,7 @@
     </section>
   </article>
 
-  <article class="article js-observer js-scrollspy-section">
+  <article class="article">
     <mm-text variant="title">Bottom Bar / Bottom Navigation</mm-text>
     <mm-text variant="body-large">모바일 환경의 글로벌 네비게이션.</mm-text>
 
@@ -129,22 +122,19 @@
       <dl>
         <dt>test<attr>?</attr></dt>
         <dd>test</dd>
-        <dd>TODO</dd>
       </dl>
     </section>
 
     <section class="component-guide">
-      <ul>
-        <li>TODO 바텀 네비게이션과 햄버거 메뉴를 혼용할 수 있는 패턴을 정의.</li>
+      <ul class="checklist">
         <li>
-          바텀 네비게이션의 메뉴로 햄버거 아이콘을 사용하는 케이스: 커머스 도매인에서 카테고리 메뉴.
-          주로 왼쪽에 배치.
+          언제 바텀 네비게이션과 햄버거 메뉴를 혼용할 수 있나요? Global Navigation. top and bottom.
         </li>
+        <li>커머스 도매인에서 카테고리 메뉴.</li>
         <li>
           bottom navigation의 label은 예외적으로 10px입니다. 예외 케이스는 어디에서 정의해야 하는가.
           => 컴포넌트 스코프 + 관련 패턴 페이지
         </li>
-        <li>Global Navigation. top and bottom.</li>
       </ul>
     </section>
 
