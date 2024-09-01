@@ -68,24 +68,16 @@
 }
 
 .component-props {
-  display: none;
-  max-width: var(--container-width);
-  margin:-4rem 0 1rem;
-  padding:var(--space-4);
-  box-sizing: border-box;
-  /* background: var(--color-background-strong); */
-  /* background: var(--gray800); */
   background-color: var(--color-background);
-  border: var(--border);
-  border-radius: var(--radius);
   position:relative;
-  outline: 6px solid var(--color-background);
 }
-.component-props [variant=subhead] {display:none;}
-.component-props dl {display:flex;flex-wrap:wrap;}
+.component-props [variant=subhead] {}
+.component-props dl {}
 .component-props dl dt + dd {font-weight: var(--font-weight-bold);}
-.component-props dl dd + dd {width:100%;margin-top:var(--space-05);margin-bottom:var(--space-2);font-size:var(--font-size-small);line-height:var(--font-line-height);color:var(--color-text);}
-/* .component-props dl dd + dd + dt {margin-top:var(--space-3);} */
+.component-props dl dd + dt {margin-top:var(--space-3);}
+.component-props dl dd + dd {width:100%;margin-top:var(--space-05);font-size:var(--font-size-small);
+  line-height:var(--font-line-height);color:var(--color-text);}
+
 .component-guide {
   max-width: var(--container-width);
   margin:3.5rem 0 4rem;
@@ -144,7 +136,7 @@ mm-text[variant=body] + mm-text[variant=subhead] {
 /* 타일 안에서 사용할 때 */
 mm-tile [variant=subhead] + [variant=body] {
   display: block;
-  margin: .5rem 0 0 0;
+  margin: .25rem 0 0 0;
 }
 
 [variant=subhead] + [variant=body], [variant=subhead] + [variant=body-bold],

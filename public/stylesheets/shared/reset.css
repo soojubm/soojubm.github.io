@@ -171,7 +171,6 @@ mark {color:inherit;} mark::before {content: " [강조 시작] ";opacity:0;posit
   /* // width: 50%; */
   /* gap or margin쓰면 안 됨. */
   padding: 1rem;
-  font-size: var(--font-size-medium);
   white-space: nowrap;
   animation: marquee 4s linear infinite;
   animation-play-state: running;
@@ -259,10 +258,6 @@ mark {color:inherit;} mark::before {content: " [강조 시작] ";opacity:0;posit
 /* TODO golobal */
 [role=tabpanel][aria-hidden=false] {display:flex;}
 [role=tabpanel][aria-hidden=true] {display:none;}
-
-
-.pricing-item-price-unit {}
-.pricing-item-price-per {display: block;margin-bottom:-.125rem;font-size:var(--font-size-medium);font-weight:var(--font-weight-normal);color: var(--color-text-light);}
 
 
 /* textfield 중복 / for select */

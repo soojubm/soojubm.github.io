@@ -150,28 +150,42 @@
     </style>
     <!-- // invoice / order  구분 -->
 
-    <section class="feature">
-      <header class="feature-head">
+    <header class="" style="display: flex; justify-content: space-between">
+      <div style="width: 40%">
         <mm-text variant="title">
           <span style="color: var(--color-text-light)">Let us guide</span>
         </mm-text>
         <mm-text variant="title">Neque porro quisquam est qui dolorem ipsum.</mm-text>
+      </div>
+      <div style="width: 50%">
         <mm-text variant="body-large">
           Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci
-          velit...
+          velit... Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur,
+          adipisci velit...
           <!-- The goal isn't "all or nothing". 의사결정의 고비가 왔을 때 언제든 이곳으로 돌아와 비교대상의 우위를 결정하세요. 취사선택.
-          가치판단. -->
+            가치판단. -->
         </mm-text>
-      </header>
+      </div>
+    </header>
+
+    <!-- 같은 글씨 마퀴일 때만. -->
+    <section class="marquee" style="width: 100%; margin: 3rem 0; font-size: 2.5rem">
+      <p>🦔 고슴이: 지금부터 설명 들어가겠슴!</p>
+      <p>🦔 고슴이: 지금부터 설명 들어가겠슴!</p>
+      <p>🦔 고슴이: 지금부터 설명 들어가겠슴!</p>
+      <p>🦔 고슴이: 지금부터 설명 들어가겠슴!</p>
+      <p>🦔 고슴이: 지금부터 설명 들어가겠슴!</p>
+      <p>🦔 고슴이: 지금부터 설명 들어가겠슴!</p>
+      <p>🦔 고슴이: 지금부터 설명 들어가겠슴!</p>
     </section>
 
-    <section>
+    <section style="margin: 0 -2rem">
       <mm-feature
         icon="✋"
         titleText="한계를 설정하기"
         subtitle="Make a Constraints"
         description="모두를 위한 서비스, 접속 환경 등의 제약없이 없이. 우리가 궁극적으로 해결하려는 문제는 유저
-        인터페이스가 아니다."
+          인터페이스가 아니다."
       ></mm-feature>
 
       <div class="tile" style="margin: 1rem 0 0">
@@ -398,7 +412,58 @@
 
     <!-- To simplify is to clarify -->
     <!-- overall consistency and design and development efficiency -->
+
+    <mm-feature
+      icon="🐏"
+      titleText="Single source of truth"
+      subtitle="Progressive enhancement minimum viable experience"
+      description="디자인 툴이 SSOT가 될 수 없다. 그것은 단순 스타일 가이드."
+    ></mm-feature>
+    <mm-feature
+      icon="🚦"
+      titleText="예측가능한 경험"
+      subtitle="Trustworthy cue"
+      description="UI는 사용자의 추가적인 학습을 최소화할 정도로 보편타당해야. 제품 스코프에서도 친숙하고
+신뢰할 수 있는 서비스 경험을 위해 예측 가능하고 일관된 기표."
+    ></mm-feature>
+
+    <br /><br />
   </article>
+
+  <section style="margin: 8rem 0">
+    <header style="margin: 2rem 0; text-align: center">
+      <h1 style="font-size: 2rem; margin-bottom: var(--space-1)">Pricing</h1>
+      <mm-text variant="body-large">
+        overall consistency and design and development efficiency
+      </mm-text>
+    </header>
+    <div style="display: flex; justify-content: center">
+      <mm-tile variant="flat" style="max-width: 18rem">
+        <mm-tag style="position: absolute; left: -0.25rem; top: var(--space-3)">
+          🔥 Most Popular
+        </mm-tag>
+        <div style="height: 1.75rem"></div>
+        <mm-text variant="subhead">Standard</mm-text>
+        <mm-text variant="body"> 대법원장은 국회의 동의를 얻어 대통령이 임명한다. </mm-text>
+        <div style="margin: var(--space-2) 0 var(--space-3) 0">
+          <mm-text variant="title">₩ 6,800</mm-text>
+          <mm-text variant="word-weak">한 달에 한 번</mm-text>
+        </div>
+        <mm-group>
+          <mm-button variant="primary" isfullwidth="true">업그레이드</mm-button>
+        </mm-group>
+        <!-- <div>
+          <mm-text variant="subhead"><em>iCloud+</em> 50GB</mm-text>
+          <span>₩1,100/월 </span>
+        </div> -->
+        <ul class="checklist" style="margin: 1rem 0 0 0">
+          <li>스토리지 2TB</li>
+          <li>Google 전문가와의 상담</li>
+          <li>회원을 위한 추가 혜택</li>
+        </ul>
+      </mm-tile>
+    </div>
+  </section>
 
   <!-- <div class="hero-obj">
     <div class="hero-obj1"></div>
@@ -471,18 +536,4 @@
     <br />
     <mm-button variant="secondary" type="submit">뉴스레터 구독</mm-button>
   </form> -->
-
-  <mm-feature
-    icon="🐏"
-    titleText="Single source of truth"
-    subtitle="Progressive enhancement minimum viable experience"
-    description="디자인 툴이 SSOT가 될 수 없다. 그것은 단순 스타일 가이드."
-  ></mm-feature>
-  <mm-feature
-    icon="🚦"
-    titleText="예측가능한 경험"
-    subtitle="Trustworthy cue"
-    description="UI는 사용자의 추가적인 학습을 최소화할 정도로 보편타당해야. 제품 스코프에서도 친숙하고
-  신뢰할 수 있는 서비스 경험을 위해 예측 가능하고 일관된 기표."
-  ></mm-feature>
 </main>

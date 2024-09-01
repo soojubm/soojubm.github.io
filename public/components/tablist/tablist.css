@@ -17,6 +17,7 @@
   position: relative;
 }
 [role=tab] {}
+[role=tabpanel]{width:100%;;}
 [role=tabpanel][aria-hidden=false] {display:block;}
 [role=tabpanel][aria-hidden=true] {display:none;}
 

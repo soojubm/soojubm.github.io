@@ -17,9 +17,20 @@
         </mm-radio>
       </mm-group>
     </fieldset>
+
+    <mm-tile variant="elevated">
+      <mm-radio name="gender" id="option1" value="" checked style="margin-top: -0.5rem">
+        <div>
+          <mm-text variant="label">Standard License</mm-text>
+          <mm-text variant="word-large">₩ 2,000</mm-text>
+          <div style="height: var(--space-2)"></div>
+          <mm-tag>460P 적립</mm-tag>
+        </div>
+      </mm-radio>
+    </mm-tile>
   </section>
   <section class="component-props">
-    <!-- <mm-text variant="subhead">Props</mm-text> -->
+    <mm-text variant="subhead">Props</mm-text>
     <dl>
       <dt>name</dt>
       <dd>string</dd>
@@ -37,7 +48,7 @@
       <dd>boolean</dd>
       <dd>RadioGroup에서</dd>
       <dt>onChange</dt>
-      <dd>(event: React.ChangeEvent[HTMLInputElement>) => void</dd>
+      <dd>(event: React.ChangeEvent&lt;HTMLInputElement&gt;) => void</dd>
     </dl>
   </section>
 

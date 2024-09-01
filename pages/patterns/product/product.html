@@ -9,129 +9,105 @@
         <button></button>
       </nav>
     </section>
+
     <section class="product-info">
+      <p
+        class="product-info-byline"
+        style="
+          display: inline-flex;
+          width: fit-content;
+          margin: 0 0 var(--space-2);
+          background: #f8f5ff;
+          padding: var(--space-1) var(--space-4);
+          border-radius: 50px;
+        "
+      >
+        <a href="#" style="color: #2a348b">Hachimitsupai</a>
+      </p>
       <h1 class="product-info-name">センチメンタル通り</h1>
-      <p class="product-info-byline">Album by <a href="#">Hachimitsupai</a></p>
+      <p class="product-info-price">20,000원</p>
+
       <form class="product-order" style="margin: 1.5rem 0 0">
-        <!-- <mm-text variant="body-bold">Delivery</mm-text>
-          <mm-group variant="chip">
-            <mm-chip>Tomorrow</mm-chip>
-            <mm-chip>Within 3 days</mm-chip>
-          </mm-group> -->
-        <!-- <div class="product-order-variant textfield">
+        <div class="product-order-variant textfield">
           <label class="textfield-label" for="">상품구성</label>
           <select class="textfield-input" name="" id="">
             <option value="">수량</option>
             <option value="">색상</option>
           </select>
           <mm-icon class="textfield-suffix" name="nav-arrow-down"></mm-icon>
-        </div> -->
-        <mm-tile variant="elevated">
-          <mm-radio name="gender" id="option1" value="" checked style="margin-top: -0.5rem">
-            <div>
-              <mm-text variant="label">Standard License</mm-text>
-              <mm-text variant="word-large">₩ 2,000</mm-text>
-              <div style="height: var(--space-2)"></div>
-              <mm-tag>460P 적립</mm-tag>
-            </div>
-          </mm-radio>
-        </mm-tile>
-        <mm-tile variant="elevated">
-          <mm-radio name="gender" id="option2" value="" style="margin-top: -0.5rem">
-            <div>
-              <mm-text variant="label">Standard License</mm-text>
-              <mm-text variant="word-large">₩ 2,000</mm-text>
-              <!-- <div style="margin: var(--space-2) 0 0">
-                <mm-text variant="body">1개월 무료 후 14,900원 / 개월</mm-text>
-                <small>현재 구독하고 있는 서비스는 체험할 수 없습니다.</small>
-              </div> -->
-            </div>
-          </mm-radio>
-        </mm-tile>
-        <!-- <div class="product-order-total">
-          <p class="product-order-total-label">총 상품 금액</p>
-          <div class="product-order-total-value">₩ 23,000</div>
-        </div> -->
+        </div>
+
+        <mm-row justifyContent="space-between">
+          <mm-text variant="subhead">총 상품금액</mm-text>
+          <mm-text variant="subhead">₩ 163,000</mm-text>
+        </mm-row>
         <!-- FIXME fullwidth doesn't work -->
         <!-- <mm-group variant="button"> -->
         <!-- <mm-button variant="tertiary">찜 reverse</mm-button> -->
-        <mm-button variant="primary" isfullwidth="true">Add to Cart</mm-button>
+        <footer style="margin-top: var(--space4)">
+          <mm-button variant="primary" isfullwidth="true">Add to Cart</mm-button>
+        </footer>
         <!-- </mm-group> -->
         <ul class="checklist" style="margin: var(--space-4) 0 0">
-          <li>레이아웃 테스트. 아마존, yes24 3칼럼.</li>
           <li>배송비 2,500원</li>
-          <li>제주, 도서, 산간지역 추가 배송비 3,000원</li>
           <li>
-            단건의 상품 구매하는 케이스와 수량 및 옵션을 선택하는 케이스의 구별. 단건은 펀딩이나
-            온라인 상품 등.
+            단건의 상품 구매하는 케이스와 수량 및 옵션을 선택하는 케이스의 구별. 펀딩이나. 구매ㅐ=.
+            장바구니.
           </li>
         </ul>
-        <!-- <a href="">환불 안내</a> -->
-        <!-- <button>사이즈 표</button> -->
       </form>
     </section>
   </header>
 
   <section class="product-detail" style="max-width: 1000px; margin: 4rem auto 0">
-    <style>
-      .review-item {
-        max-width: var(--layout-width-medium);
-        margin: var(--space-3) 0;
-      }
-      .review-item-title {
-        margin: 0 0 0.5rem 0;
-        font-size: var(--font-size-large);
-      }
-      .review-item-comment {
-        line-height: 1.6;
-      }
-      .review-item-byline {
-        font-size: var(--font-size-small);
-      }
-      .review-item-byline:after {
-        content: '';
-        display: inline-block;
-        width: 1px;
-        height: 7px;
-        margin: 0 6px 0 10px;
-        vertical-align: middle;
-        background: #ddd;
-      }
-      .review-item-time {
-        font-size: var(--font-size-small);
-      }
-    </style>
     <section class="review">
       <mm-text variant="subhead">Reviews</mm-text>
-
       <mm-keyvalue key="Total review" value="83">s</mm-keyvalue>
-      <mm-separator></mm-separator>
-      <div class="review-item" style="display: flex; gap: 2rem">
-        <div>⭐⭐⭐⭐⭐</div>
-        <div>
-          <mm-text variant="body"
-            >I have 2 kids so sleep is hard to come by, these have helped me to wake up feeling more
-            refreshed and ready to start the day
-          </mm-text>
-          <div style="height: 1rem"></div>
-          <mm-text variant="body-bold">Fleet Foxes</mm-text>
-        </div>
-        <time>2020년 12월 1일 </time>
-      </div>
-      <mm-separator></mm-separator>
-      <div class="review-item" style="display: flex; gap: 2rem">
-        <div>⭐⭐⭐⭐⭐</div>
-        <div>
-          <mm-text variant="body"
-            >I have 2 kids so sleep is hard to come by, these have helped me to wake up feeling more
-            refreshed and ready to start the day
-          </mm-text>
-          <div style="height: 1rem"></div>
-          <mm-text variant="body-bold">Fleet Foxes</mm-text>
-        </div>
-        <time>2020년 12월 1일 </time>
+      <div stlye="display:flex;gap:var(--space-4);margin-top:var(--space-4);">
+        <mm-tile variant="elevated">
+          <div>⭐⭐⭐⭐⭐</div>
+          <div>
+            <mm-text variant="body"
+              >I have 2 kids so sleep is hard to come by, these have helped me to wake up feeling
+              more refreshed and ready to start the day
+            </mm-text>
+            <div style="height: 1rem"></div>
+            <mm-text variant="body-bold">Fleet Foxes</mm-text>
+          </div>
+          <time>2020년 12월 1일 </time>
+        </mm-tile>
+        <mm-tile variant="elevated">
+          <div>⭐⭐⭐⭐⭐</div>
+          <div>
+            <mm-text variant="body"
+              >I have 2 kids so sleep is hard to come by, these have helped me to wake up feeling
+              more refreshed and ready to start the day
+            </mm-text>
+            <div style="height: 1rem"></div>
+            <mm-text variant="body-bold">Fleet Foxes</mm-text>
+          </div>
+          <time>2020년 12월 1일 </time>
+        </mm-tile>
       </div>
     </section>
+
+    <aside class="product-quick is-visible">
+      <figure class="product-quick-head">
+        <img src="" />
+        <figcaption>
+          <h3 class="product-quick-head-title">고슴이 생존기(경제 기본기편)</h3>
+          <div class="product-quick-head-description">10개 에피소드, 평생 열람가능</div>
+        </figcaption>
+      </figure>
+      <section class="product-quick-total">
+        <span class="product-quick-total-price" style="font-size: var(--font-size-large)">
+          <del>₩ 25,000</del> <b>₩ 16,000</b> <em class="rate">(36% 할인)</em>
+        </span>
+      </section>
+      <footer class="product-quick-controls">
+        <mm-button variant="primary">주문하기</mm-button>
+      </footer>
+    </aside>
 
     <div class="product-detail-intro" style="margin: 8rem 0">
       <figure class="product-detail-intro-image">

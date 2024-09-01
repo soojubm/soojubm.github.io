@@ -7,6 +7,7 @@ class Row extends HTMLElement {
 
     const container = document.createElement('div')
     container.classList.add('row')
+    container.dataset.justifyContent = this.justifyContent || ''
 
     shadow.appendChild(container)
     container.append(...this.childNodes, makeStyleSheet('row'))
