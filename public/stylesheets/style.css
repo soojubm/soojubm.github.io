@@ -99,13 +99,6 @@
 	background: linear-gradient(to bottom, rgba(31,35,33,0), rgba(31,35,33,.5), rgba(31,35,33,1));
 }
 
-/* [data-theme=dark] .design-ticker-item {
-  filter: grayscale(0);
-  > * {
-    filter: grayscale(.875);
-  }
-} */
-
 .browser {
   text-align: center;
   padding: 2rem;

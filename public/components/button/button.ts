@@ -1,38 +1,20 @@
 import { makeStyleSheet } from '../../javascripts/components/utils'
 
 class Button extends HTMLElement {
-  // static observedAttributes = ['disabled']
+  static get observedAttributes() {
+    return ['disabled']
+  }
+
   constructor() {
     super()
-    // this._internals = this.attachInternals()
-    // this._internals.role = 'button'
+    const shadowRoot = this.attachShadow({ mode: 'open' })
 
-    // this.addEventListener('keydown', e => {
-    //   if (e.code === 'Enter' || e.code === 'space') {
-    //     this.dispatchEvent(
-    //       new PointerEvent('click', {
-    //         bubbles: true,
-    //         cancelable: true,
-    //       }),
-    //     )
-    //   }
-    // })
-
-    // this.addEventListener('click', e => {
-    //   if (this.disabled) {
-    //     e.preventDefault()
-    //     e.stopImmediatePropagation()
-    //   }
-    // })
-
-    // this._observer = new MutationObserver(() => {
-    //   this._internals.ariaLabel = this.textContent
-    // })
-    const shadow = this.attachShadow({ mode: 'open' })
+    const variant = this.getAttribute('variant')
+    // shadowRoot.appendChild()
 
     const host = document.createElement('button')
     host.classList.add('button')
-    host.dataset.variant = this.variant || ''
+    host.dataset.variant = variant || ''
     host.dataset.size = this.size || ''
     host.dataset.status = this.status || ''
 
@@ -53,7 +35,7 @@ class Button extends HTMLElement {
 
     label.textContent = this.textContent || this.label
 
-    shadow.append(host, makeStyleSheet('button'))
+    shadowRoot?.append(host, makeStyleSheet('button'))
     host.appendChild(prefixSlot)
     if (label && label.textContent!.length > 0) host.appendChild(label)
 
@@ -72,9 +54,9 @@ class Button extends HTMLElement {
     host.appendChild(suffixSlot)
   }
 
-  get variant() {
-    return this.getAttribute('variant')
-  }
+  // get variant() {
+  //   return this.getAttribute('variant')
+  // }
 
   get isfullwidth() {
     return this.getAttribute('isfullwidth')
@@ -96,15 +78,9 @@ class Button extends HTMLElement {
     return this.hasAttribute('disabled')
   }
 
-  // 아이콘
   get icon() {
     return this.getAttribute('icon')
   }
-
-  // get type() {}
-  // set disabled(flag) {
-  //   this.toggleAttribute('disabled', Boolean(flag))
-  // }
 
   // attributeChangedCallback(name, oldValue, newValue) {
   //   if(this.disabled) {
@@ -116,6 +92,7 @@ class Button extends HTMLElement {
   // }
 
   connectedCallback() {}
+  attributeChangedCallback() {}
   disconnectedCallback() {}
 }
 
@@ -140,3 +117,28 @@ export default Button
 //   disconnectedCallback() {...}
 // }
 // window.customElements.define('blue-buy', BlueBuy);
+
+// this._internals = this.attachInternals()
+// this._internals.role = 'button'
+
+// this.addEventListener('keydown', e => {
+//   if (e.code === 'Enter' || e.code === 'space') {
+//     this.dispatchEvent(
+//       new PointerEvent('click', {
+//         bubbles: true,
+//         cancelable: true,
+//       }),
+//     )
+//   }
+// })
+
+// this.addEventListener('click', e => {
+//   if (this.disabled) {
+//     e.preventDefault()
+//     e.stopImmediatePropagation()
+//   }
+// })
+
+// this._observer = new MutationObserver(() => {
+//   this._internals.ariaLabel = this.textContent
+// })

@@ -1,4 +1,12 @@
 {
+  // "exclude": ["./node_modules"],
+  //   "compilerOptions": {
+  //     "baseUrl": ".",
+  //     "paths": {
+  //       "@/*": ["./src/*"]
+  //     }
+  //   }
+
   "compilerOptions": {
     /* Basic Options */
     // "incremental": true,                   /* Enable incremental compilation */

@@ -127,7 +127,7 @@ input[type=search]::-webkit-search-results-decoration {display:none;}
   align-items: center;
   justify-content: center;
   height: var(--textfield-height);
-  position:absolute;top:var(----textfield-icon-position);left:0;
+  position:absolute;top:var(--textfield-icon-position);left:0;
 }
 
 ::slotted([slot=link]) {

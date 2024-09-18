@@ -44,6 +44,13 @@
   */
 }
 
+
+:host {}
+:host(.primary) {}
+:host([variant="primary"]) .button {
+  --button-color: var(--color-primary);
+  --button-text-color: var(--gray0);}
+
 .button {
   /* // reset */
   font-family: inherit;
@@ -74,8 +81,6 @@
 
 /* variants */
 .button[data-variant=primary] {
-  --button-color: var(--color-primary);
-  --button-text-color: var(--gray0);
 }
 .button[data-variant=secondary] {
   --button-color: var(--green100);

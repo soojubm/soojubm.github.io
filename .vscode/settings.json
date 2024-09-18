@@ -1,7 +1,19 @@
 {
   "typescript.tsdk": "node_modules/typescript/lib",
   "liveServer.settings.port": 5501,
-  "eslint.validate": [{ "language": "javascript" }, { "language": "html" }]
+  "eslint.validate": [
+    {
+      "language": "javascript"
+    },
+    {
+      "language": "html"
+    }
+  ],
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#480F67",
+    "titleBar.activeBackground": "#651590",
+    "titleBar.activeForeground": "#FDFAFE"
+  }
   //   // Set the default
   // "editor.formatOnSave": false,
   // // Enable per-language

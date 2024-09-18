@@ -1,13 +1,11 @@
-export const DARK_THEME_CLASS = 'theme-dark'
+export const DARK_THEME_CLASS = 'dark'
 export const LIGHT_THEME_CLASS = ''
 export const DARKTHEME_SELECTOR = '.js-darkmode'
 
 // TODO dark variable
 
 // export const isDarkTheme = savedTheme === DARK_THEME_CLASS
-// export const isDarkTheme = () => document.body.classList.contains(DARK_THEME_CLASS)
 export const isDarkTheme = () => document.body.dataset.theme === 'dark'
-// 3가지 body class, check attribute, local storage
 
 // export const isDarkTheme = window.matchMedia &&
 //   window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -22,13 +20,11 @@ export const isDarkTheme = () => document.body.dataset.theme === 'dark'
 //   const newTheme = currentTheme === 'dark' ? 'light' : 'dark'
 
 //   // 최상위 엘리먼트에 설정, 로컬 스토리지에 설정을 저장
-//   document.documentElement.setAttribute('data-style', newTheme)
+//   document.body.setAttribute('data-style', newTheme)
 //   localStorage.setItem('theme', newTheme)
 // }
 
 // document.documentElement.classList.add('color-theme-in-transition')
-// document.documentElement.setAttribute('data-style', theme)
-
 // window.setTimeout(function() {
 //   document.documentElement.classList.remove('color-theme-in-transition')
 // }, 1000)

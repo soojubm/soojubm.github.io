@@ -12,8 +12,6 @@ function tab() {
   const tabs = tabElement.querySelectorAll('[role=tab]')
   const panels = tabElement.querySelectorAll('[role=tabpanel]')
 
-  console.log(tabs, panels)
-
   let selectedTabIndex = 0
   let selectedTab = tabs[selectedTabIndex] as HTMLElement
 

@@ -272,6 +272,9 @@
   --gradient: linear-gradient(to bottom, var(--gray400), var(--gray800));
 }
 
+:root [data-theme=newneek] {
+}
+
 /* // $p-breakpoints-lg-only: '(min-width: 65em) and (max-width: 89.9975em)'; */
 
 

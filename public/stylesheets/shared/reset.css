@@ -13,6 +13,7 @@ abbr,ins {text-decoration:none;}
 a {text-decoration:none;
   /* text-decoration-skip-ink:auto;color:var(--color-primary); */
 }
+pre {margin-block:0;background-color:#fff;}
 a:link,a:visited {} a:hover,a:focus {} a:active {}
 
 code {display:block;background:var(--color-background-weak);border-radius:var(--radius);font-family:var(--font-family-code);font-size:var(--font-size-small);letter-spacing:.0125rem;}
@@ -89,7 +90,7 @@ table tbody tr {
   line-height:var(--table-lineheight);position:relative;
 }
 table tbody tr:hover {background-color:#f7f8f9;}
-table tbody tr th {}
+table tbody tr th {text-align: left;}
 table tbody tr td {
   padding:var(--table-cell-padding);
 }

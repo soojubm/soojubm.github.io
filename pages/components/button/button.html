@@ -5,7 +5,6 @@
       페이지 이동이나 양식 제출 등 사용자 여정의 핵심과업을 수행할 수 있습니다. 페이지에서
       제한적으로 사용하여 사용자의 과업을 돕습니다.
     </mm-text>
-    <mm-text variant="body-large"> 사실 secondary 몇 번 사용하지도 않는다. </mm-text>
     <dl class="article-aka">
       <dt>a.k.a</dt>
       <dd>button</dd>
@@ -51,27 +50,19 @@
   </section>
 
   <section class="component-props">
-    <mm-text variant="subhead">Props</mm-text>
+    <!-- <mm-text variant="subhead">Props</mm-text> -->
     <dl>
       <dt>variant</dt>
       <dd>'primary' | 'secondary' | 'tertiary'</dd>
-      <dd></dd>
       <dt>name</dt>
       <dd>string</dd>
-      <dd></dd>
       <dt>label</dt>
       <dd>string</dd>
-      <dd>
-        동사가 포함된 2자 ~ 8자 한글(!). 레이블 줄임?(truncated) 불가. 사용자 시점 (ex 보내기 =>
-        받기).
-      </dd>
       <dt>size<attr>?</attr></dt>
       <dd><del>'large'</del> | 'medium'</dd>
-      <dd>large size는 프로모션 페이지의 call to action로 제한됩니다.</dd>
       <dt>isDisabled?</dt>
       <dd>boolean</dd>
-      <dd></dd>
-      <dt>isFullwidth<attr>?</attr> ?? fluid</dt>
+      <dt>isFullwidth<attr>?</attr></dt>
       <dd>boolean</dd>
       <dt>href<attr>?</attr></dt>
       <dd>string</dd>
@@ -96,29 +87,13 @@
                       with prefix icon
                     </mm-button> -->
 
-    <mm-text variant="subhead">Composing components</mm-text>
-    <section class="component-example">
-      <mm-button variant="tertiary">
-        Show more
-        <mm-icon slot="suffix" name="nav-arrow-down"></mm-icon>
-      </mm-button>
-      <mm-text variant="body-bold">
-        ShowMoreButton <span hidden>Image Button, CheckoutButton</span>
-      </mm-text>
-      <div style="height: var(--space-1)"></div>
-      <mm-text variant="body">
-        fullWidth로 사용하지 마세요. 단일 콘텐츠 또는 콘텐츠 목록의 너비와 대비를 통한 강조. TODO
-        이건 최종 액션이 아님. 칩이 되는 게 나을 수도.
-      </mm-text>
-    </section>
-
     <mm-text variant="subhead" aria-label="예측 가능해야 합니다.">Behavior</mm-text>
-    <mm-text variant="body">
+    <mm-text variant="body-large">
       버튼은 페이지 내에서 여러 번 반복될 수 없는 최종적인 인터렉션입니다. 단, 전송이 실패하는
       경우에는 여러 번 반복해서 실행할 수 있습니다.
     </mm-text>
     <mm-text variant="subhead">Feedback needed</mm-text>
-    <mm-text variant="body">
+    <mm-text variant="body-large">
       물리적인 인터페이스의 출현만이 수행 결과를 피드백하는 것이 아닙니다. 예측할 수 있는 페이지
       이동이나 페이지 새로고침, 정보 구조의 변화도 피드백으로 취급될 수 있습니다. (ex bad case:
       인스타그램 앱에서 로그인되었다는 toast. 홈으로 이동과 피드 노출만으로 로그인 상태를 인지할 수
@@ -129,6 +104,10 @@
     <mm-text variant="body">
       에측 가능한 레이블 텍스트를 작성하세요. 툴팁으로 부연하거나, 실행을 유도하는 보조 텍스트 또는
       실행 결과를 보충하는 보조 텍스트로 버튼 이외의 가이드가 필요하지 않습니다.
+    </mm-text>
+    <mm-text variant="body">
+      동사가 포함된 2자 ~ 8자 한글(!). 레이블 줄임?(truncated) 불가. 사용자 시점 (ex 보내기 =>
+      받기).
     </mm-text>
     <mm-text variant="subhead">A11y</mm-text>
     <mm-text variant="body">
@@ -175,6 +154,22 @@
         </mm-group>
       </mm-tile>
     </mm-group>
+
+    <mm-text variant="subhead">Composing components</mm-text>
+    <section class="component-example">
+      <mm-button variant="tertiary">
+        Show more
+        <mm-icon slot="suffix" name="nav-arrow-down"></mm-icon>
+      </mm-button>
+      <mm-text variant="body-bold">
+        ShowMoreButton <span hidden>Image Button, CheckoutButton</span>
+      </mm-text>
+      <div style="height: var(--space-1)"></div>
+      <mm-text variant="body">
+        fullWidth로 사용하지 마세요. 단일 콘텐츠 또는 콘텐츠 목록의 너비와 대비를 통한 강조. TODO
+        이건 최종 액션이 아님. 칩이 되는 게 나을 수도.
+      </mm-text>
+    </section>
 
     <ul class="checklist" style="margin: 2rem 0 0">
       <li>
