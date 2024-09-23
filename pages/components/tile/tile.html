@@ -33,17 +33,10 @@
 
   <section class="component-props">
     <dl>
-      <dt>variant</dt>
-      <dd>'flat' | 'elevated'</dd>
-      <dd>
-        variant? surface?: none | primary | secondary ? // plain. 일반적으로는연한 배경색, 보더,
-        그림자 등 다양한 형태를 사용함.
-      </dd>
+      <dt>variant? surface?</dt>
+      <dd>'flat' | 'elevated' | 'plain? soft?'</dd>
       <dt>size</dt>
       <dd>'large' | 'medium' | 'small'</dd>
-      <dd>
-        TODO tiny size for tablist. 사이즈라기 보다는 내부 간격의 표현이라 애매한 구석이 있다.
-      </dd>
       <dt>children</dt>
       <dd>React.Node</dd>
     </dl>
@@ -53,15 +46,15 @@
     <blockquote>
       <ul class="checklist">
         <li>
-          transparent tile 을 정의한다면, row 컴포넌트와 어떤 차이가 있을까? row는 레이아웃
-          컴포넌트이고 tile은 형태 컴포넌트이다. bar는 역할 컴포넌트로 볼 수 있을 것이다.
+          모든 contentbox가 tile 이어야 하는가.transparent tile 을 정의한다면, row 컴포넌트와 어떤
+          차이가 있을까? row는 레이아웃 컴포넌트이고 tile은 형태 컴포넌트이다. bar는 역할 컴포넌트로
+          볼 수 있을 것이다.
         </li>
         <li>
           이 컴포넌트는 조금 더 유연한 유틸리티 성격을 띄어도 되겠다. padding: 1 | 2 | 3 | 4 를
           받고, 1 2 3 4는 spacing token의 suffix와 페어링
         </li>
         <li>2:1. 블리딩 시 높이를 고정해야 한다. ??</li>
-        <li>Q: 모든 contentbox가 tile 이어야 하는가.</li>
         <li>
           content area with padding. 또는 마이너스 마진을 가지는 컨텐츠 영역을 별도로 정의하는 것은
           어떤지. 정렬을 변경할 때의 대응.
@@ -83,8 +76,6 @@
     <mm-text variant="body"
       >타일 내부 leading, tailing 엘리먼트의 시각보정이 필요할 수 있습니다.</mm-text
     >
-    <mm-text variant="body">페이지 레벨의 컴포넌트의 타일을 허용할 것인가?</mm-text>
-
     <mm-text variant="subhead">Changelog</mm-text>
     <mm-text variant="body">flat 형태와 변별을 위해 elevated의 쉐도우를 강화.</mm-text>
 
@@ -126,6 +117,22 @@
         <mm-chip status="active">팔로우</mm-chip>
       </div>
     </mm-tile>
+  </div>
+
+  <div
+    style="
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 2rem 0;
+      padding: 0.5rem 2rem;
+      border: var(--border);
+      border-radius: 50px;
+    "
+  >
+    <figure style="width: 48px; height: 48px; border-radius: 50%; border: var(--border)"></figure>
+    <mm-text variant="subhead"> You can download this product with the All-Access Pass. </mm-text>
+    <mm-button variant="primary">Get All-Access</mm-button>
   </div>
 
   <section class="component-case">

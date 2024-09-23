@@ -5,7 +5,6 @@
     patterns.
     <div class="js-counter" data-number="234">234</div>
   </mm-text>
-
   <!-- Truncate for secondary text that isn’t essential to a user’s comprehension of steps to take. Examples include dynamic data ad IDs in tables, lists of user names, and Pin titles that come from outside sources. Use an ellipsis or a link that indicates there is more content available. -->
 
   <!-- summary list gov.uk -->
@@ -14,7 +13,6 @@
   <!-- last updates :: multiple summary lists -->
   <!-- ‘key’ that’s a description or label of a piece of information, like “Name”
 ‘value’ which is the piece of information itself, such as “John Smith” -->
-
   <!-- summary list - row / column -->
   <!-- ally -->
   <!-- To give more context, add visually hidden text to the links. This means a screen reader user will hear the row action and the ‘key’ label for the information it will affect, like ‘Change name’ or ‘Change date of birth’. -->
@@ -41,36 +39,31 @@ Any generic entity, lists, tables or another key value pair
 3. Supporting visual
 
 The font size of a key is never bigger than the value.
-
  -->
-
   <!-- 사이트맵 / 메가메뉴 -->
   <!-- expressive type  / productive type 표현 영역 -->
 
   <!-- labels for captions and helper text, as well as legal copy -->
-
   <!-- ibm / body / body-compact 2px 차이, Fluid heading styles-->
 
   <section class="component-example">
     <div>
-      <mm-separator></mm-separator>
-      <mm-text variant="title">heading1, huge, title</mm-text>
-      <mm-text variant="subhead">heading2, large, `subhead</mm-text>
-      <mm-text variant="body-bold">heading3, medium</mm-text>
-      <mm-separator></mm-separator>
-      <mm-text variant="body">body2</mm-text>
-      <mm-text variant="body-large">body1 (large) - paragraph</mm-text>
-      <!-- <mm-text variant="body-bold">body bold - button & meta</mm-text> -->
-      <mm-separator></mm-separator>
+      <mm-text variant="title">heading1, title</mm-text>
+      <mm-text variant="subhead">heading2, subhead</mm-text>
+      <mm-text variant="body-bold">heading3</mm-text>
       <mm-text variant="label">label, light</mm-text>
+      <mm-separator></mm-separator>
+      <mm-text variant="body">body</mm-text>
+      <mm-text variant="body-large">body large</mm-text>
+      <mm-text variant="body-bold">body bold - button & meta</mm-text>
       <mm-separator></mm-separator>
       <mm-text variant="word">word</mm-text>
       <mm-text variant="word-weak">word-weak</mm-text>
       <mm-text variant="word-strong">word-strong</mm-text>
       <mm-text variant="word-large">word-large</mm-text>
       <mm-separator></mm-separator>
-
-      <footer style="display: flex; flex-direction: column; gap: var(--space-2)">
+      <!-- TODO link 가 아니라 button -->
+      <section style="display: flex; flex-direction: column; gap: var(--space-2)">
         <mm-row gap="var(--space-1)">
           <mm-icon name="pipe-3d"></mm-icon>
           <mm-text variant="body">궁금증이 해결되지 않는다면?</mm-text>
@@ -87,22 +80,7 @@ The font size of a key is never bigger than the value.
             <mm-icon slot="icon" name="nav-arrow-down"></mm-icon>
           </mm-tag>
         </button>
-      </footer>
-
-      <mm-separator></mm-separator>
-
-      <mm-group alignment="vertical">
-        <mm-keyvalue key="상품 금액" value="₩ 160,000"> </mm-keyvalue>
-        <mm-keyvalue key="서비스 수수료" value="₩ 3,000"> </mm-keyvalue>
-        <mm-row justifyContent="space-between">
-          <mm-text variant="subhead">총 합계 (KRW)</mm-text>
-          <mm-text variant="subhead">₩ 163,000</mm-text>
-        </mm-row>
-        <!-- <mm-keyvalue size="large" key="총 합계 (KRW)" value="₩ 163,000"> </mm-keyvalue> -->
-      </mm-group>
-      <footer style="margin: var(--space-4) 0 0 0">
-        <mm-button variant="primary" isfullwidth="true">구매 확정하고</mm-button>
-      </footer>
+      </section>
 
       <mm-separator></mm-separator>
 
@@ -118,17 +96,6 @@ The font size of a key is never bigger than the value.
         <mm-keyvalue key="key" value="value" alignment="inline"></mm-keyvalue>
         <mm-keyvalue key="key" value="value" alignment="inline"></mm-keyvalue>
         <mm-keyvalue key="key" value="value"></mm-keyvalue>
-      </mm-group>
-      <mm-separator></mm-separator>
-      <mm-group style="gap: 2rem">
-        <div>
-          <mm-text variant="label">Size</mm-text>
-          <mm-text variant="word-large">보통</mm-text>
-        </div>
-        <div>
-          <mm-text variant="label">한글</mm-text>
-          <mm-text variant="word-large">작은 거 필요하나</mm-text>
-        </div>
       </mm-group>
 
       <mm-separator></mm-separator>
@@ -194,41 +161,74 @@ The font size of a key is never bigger than the value.
         <li>순서가 있는 리스트</li>
         <li>순서가 있는 리스트</li>
       </ol>
+    </div>
+  </section>
+  <section class="component-props">
+    <dl>
+      <dt>variant ?? level</dt>
+      <dd>'title' | 'subhead' | 'body' | 'body-large'</dd>
+      <dt>lineHeight</dt>
+      <dd>'small' | 'medium'</dd>
+      <dt>truncatedLine<attr>?</attr></dt>
+      <dd>'single' | 'multi'</dd>
+    </dl>
+  </section>
 
-      <blockquote>
-        <ul class="checklist">
-          <li>
-            텍스트 목록만 리스트 태그(ul, ol, dl)로 마크업하세요. 그렇지 않으면 대부분의 컨텐츠가
-            리스트로 취급될 수 있음. role=listbox/listitem
-          </li>
-          <li>
-            텍스트 목록을 2 댑스(nested)로 제공하지 마세요. 중첩된 목록은 콘텐츠를 읽기 어렵게 하며
-            작은 화면에서는 공간을 낭비.
-          </li>
-          <li>
-            지금보다 주문 확인 등에서는 조금 더 눈에 띄는 형태가 필요하며, 푸터 등에서는 덜 강조된
-            형태가 필요하다. 굉장히 다양하게 정의해두는 것이 좋도 있겠지만 제약을 해 봄. 특정
-            페이지에서 사용한다면 슬롯을 넣어줄 수도? 또는 토큰으로 스타일링.
-          </li>
-          <li>
-            text size="" weight="" lineHeight="" 등으로 베리에이션을 해두고 pageTitle, sectionTitle,
-            formLabel 등으로 한 번 더?
-          </li>
-          <li>text dense, help text :: Form fields, metadata, secondary info</li>
-          <li>type: column | inline / group의 type.</li>
-          <li>description list - set :: term / description</li>
-          <li>heading / body -- paragraph / label, help text</li>
-          <li>text group이 있으면 좋다. paragraph group. TextStack, TextBox</li>
-        </ul>
-      </blockquote>
+  <section class="component-guide">
+    <mm-tile>
+      <section class="hero">
+        <mm-text variant="title">히어로 섹션 제목</mm-text>
+        <mm-text variant="body-large">
+          이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에
+          부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은 침묵에 잠겼다.
+        </mm-text>
+        <footer class="hero-actions" style="margin: 2rem 0 0">
+          <mm-button variant="primary" href="#components">Call to action</mm-button>
+          <mm-button variant="text">더 알아보기</mm-button>
+        </footer>
+      </section>
+    </mm-tile>
+    <mm-tile>
+      <mm-group style="gap: 2rem">
+        <div style="display: flex; flex-direction: column-reverse">
+          <mm-text variant="label">사이즈</mm-text>
+          <mm-text variant="word-large">보통</mm-text>
+        </div>
+        <div style="display: flex; flex-direction: column-reverse">
+          <mm-text variant="label">한글</mm-text>
+          <mm-text variant="word-large">작은 거 필요하나</mm-text>
+        </div>
+      </mm-group>
+    </mm-tile>
+    <mm-tile>
+      <mm-group alignment="vertical">
+        <mm-keyvalue key="상품 금액" value="₩ 160,000"></mm-keyvalue>
+        <mm-keyvalue key="서비스 수수료" value="₩ 3,000"></mm-keyvalue>
+        <mm-row justifyContent="space-between">
+          <mm-text variant="subhead">총 합계 (KRW)</mm-text>
+          <mm-text variant="subhead">₩ 163,000</mm-text>
+        </mm-row>
+        <!-- <mm-keyvalue size="large" key="총 합계 (KRW)" value="₩ 163,000"> </mm-keyvalue> -->
+      </mm-group>
+      <footer style="margin: var(--space-4) 0 0 0">
+        <mm-button variant="primary" isfullwidth="true">구매 확정하고</mm-button>
+      </footer>
+    </mm-tile>
 
-      <header style="display: flex; align-items: center; justify-content: space-between">
+    <mm-tile>
+      <header
+        style="
+          height: var(--size-large);
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        "
+      >
         <mm-text variant="subhead">내 요금제</mm-text>
         <button style="color: var(--color-primary); font-weight: bold; text-decoration: underline">
           요금제 변경하기
         </button>
       </header>
-
       <mm-tile>
         <div
           style="
@@ -249,24 +249,36 @@ The font size of a key is never bigger than the value.
           </li>
         </ul>
       </mm-tile>
-    </div>
+    </mm-tile>
 
-    <br /><br />
+    <blockquote>
+      <ul class="checklist">
+        <li>heading / subheading / body</li>
+        <li>
+          텍스트 목록만 리스트 태그(ul, ol, dl)로 마크업하세요. 그렇지 않으면 대부분의 컨텐츠가
+          리스트로 취급될 수 있음. role=listbox/listitem
+        </li>
+        <li>
+          텍스트 목록을 2 댑스(nested)로 제공하지 마세요. 중첩된 목록은 콘텐츠를 읽기 어렵게 하며
+          작은 화면에서는 공간을 낭비.
+        </li>
+        <li>
+          지금보다 주문 확인 등에서는 조금 더 눈에 띄는 형태가 필요하며, 푸터 등에서는 덜 강조된
+          형태가 필요하다. 굉장히 다양하게 정의해두는 것이 좋도 있겠지만 제약을 해 봄. 특정
+          페이지에서 사용한다면 슬롯을 넣어줄 수도? 또는 토큰으로 스타일링.
+        </li>
+        <li>
+          text size="" weight="" lineHeight="" 등으로 베리에이션을 해두고 pageTitle, sectionTitle,
+          formLabel 등으로 한 번 더?
+        </li>
+        <li>text dense, help text :: Form fields, metadata, secondary info</li>
+        <li>type: column | inline / group의 type.</li>
+        <li>description list - set :: term / description</li>
+        <li>heading / body -- paragraph / label, help text</li>
+        <li>text group이 있으면 좋다. paragraph group. TextStack, TextBox</li>
+      </ul>
+    </blockquote>
 
-    <section class="hero">
-      <mm-text variant="title">Hero heading</mm-text>
-      <mm-text variant="body-large">
-        이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에
-        부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은 침묵에 잠겼다.
-      </mm-text>
-      <footer class="hero-actions" style="margin: 2rem 0 0">
-        <mm-button variant="primary" href="#components">Call to action</mm-button>
-        <mm-button variant="text">더 알아보기</mm-button>
-      </footer>
-    </section>
-  </section>
-
-  <section class="component-guide">
     <mm-text variant="subhead">용어 정의 및 분류</mm-text>
     <ul>
       <li>제목 heading - title / subtitle / subhead / caption (label)</li>

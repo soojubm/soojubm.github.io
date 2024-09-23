@@ -65,17 +65,10 @@
       <dd>string</dd>
       <dt>description<abbr>?</abbr></dt>
       <dd>string</dd>
-      <dd></dd>
-      <dt>actions</dt>
-      <dd>actionType</dd>
-      <dd>[{primaryLabel: '', primaryFunction: ''}]</dd>
-      <dt>primaryActionLabel<abbr>?</abbr></dt>
-      <dd>string</dd>
-      <dd></dd>
-      <dt>secondaryActionLabel<abbr>?</abbr></dt>
-      <dd>string | '취소?'</dd>
-      <dd>샘플</dd>
-      <dt>onCancelClick / onConfirmClick</dt>
+      <dt>primaryAction<abbr>?</abbr></dt>
+      <dd>{label: string, onClick: () => void}</dd>
+      <dt>secondaryAction<abbr>?</abbr></dt>
+      <dd>{label: string, onClick: () => void}</dd>
     </dl>
   </section>
 

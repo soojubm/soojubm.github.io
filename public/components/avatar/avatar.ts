@@ -12,15 +12,13 @@ class Avatar extends HTMLElement {
     const badgeSlot = document.createElement('slot')
     badgeSlot.name = 'badge'
 
-    const badge = document.createElement('span')
-    badge.classList.add('avatar-badge')
+    const badge = document.createElement('mm-badge')
+    // badge.classList.add('avatar-badge')
 
     if (this.size) container.dataset.size = this.size
     if (this.variant) container.dataset.variant = this.variant
 
-    if (this.default === 'true') {
-      container.dataset.default = 'true'
-    }
+    if (this.default) container.dataset.default = 'true'
 
     // TODO chip와 공통
     if (this.icon) {
@@ -33,14 +31,13 @@ class Avatar extends HTMLElement {
     const style = this.getAttribute('style')
     if (style) container.setAttribute('style', style)
 
+    shadow.append(container, makeStyleSheet('avatar'))
+    container.append(...this.childNodes)
     if (this.src) {
       const image = document.createElement('img')
       image.setAttribute('src', this.src)
       container.appendChild(image)
     }
-
-    shadow.append(container, makeStyleSheet('avatar'))
-    container.append(...this.childNodes)
     if (this.badge) container.appendChild(badge)
   }
 

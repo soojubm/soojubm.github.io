@@ -1,4 +1,6 @@
 <main class="product">
+  <mm-button>Back to Home</mm-button>
+
   <header class="product-head">
     <section class="product-image" role="img" aria-labelledby="제품 이미지">
       <img
@@ -20,14 +22,22 @@
           background: #f8f5ff;
           padding: var(--space-1) var(--space-4);
           border-radius: 50px;
+          font-weight: var(--font-weight-bold);
         "
       >
         <a href="#" style="color: #2a348b">Hachimitsupai</a>
       </p>
-      <h1 class="product-info-name">センチメンタル通り</h1>
-      <p class="product-info-price">20,000원</p>
+      <mm-text variant="title" data-temp="センチメンタル通り">センチメンタル通り</mm-text>
+      <span class="product-quick-total-price" style="font-size: var(--font-size-large)">
+        <del>₩ 25,000</del> <b>₩ 16,000</b> <em class="rate">(36% 할인)</em>
+      </span>
 
-      <form class="product-order" style="margin: 1.5rem 0 0">
+      <mm-text variant="body">
+        I have 2 kids so sleep is hard to come by, these have helped me to wake up feeling more
+        refreshed and ready to start the day
+      </mm-text>
+
+      <form class="product-order" style="margin: 1.5rem 0 1rem">
         <div class="product-order-variant textfield">
           <label class="textfield-label" for="">상품구성</label>
           <select class="textfield-input" name="" id="">
@@ -38,7 +48,7 @@
         </div>
 
         <mm-row justifyContent="space-between">
-          <mm-text variant="subhead">총 상품금액</mm-text>
+          <mm-text variant="body-bold">총 상품금액</mm-text>
           <mm-text variant="subhead">₩ 163,000</mm-text>
         </mm-row>
         <!-- FIXME fullwidth doesn't work -->

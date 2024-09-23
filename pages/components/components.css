@@ -23,14 +23,6 @@
   background: var(--color-background);
 }
 
-@media (max-width: 1100px) {
-  .component-example {
-    margin-inline: calc(var(--grid-margin) * -1);
-    padding-inline: var(--grid-margin);
-    border-inline: 0;
-    border-radius: 0;
-  }
-}
 
 [data-theme=dark] .component-example {
   box-shadow: 0 1px 1px hsla(0, 0%, 100%, 0.013),
@@ -164,9 +156,8 @@ mm-tile [variant=subhead] + [variant=body] {
 .article-aka dt {margin: 0;}
 .article-aka dd {margin: 0;}
 
-.article ul, .article dl {max-width: var(--layout-width-small);}
-
 .component-guide mm-text[variant=subhead] {display:block;margin-top:3rem;}
+.component-guide ul, .component-guide dl {max-width: var(--layout-width-small);}
 
 .spacing-card {padding:var(--space-inset-tile);overflow:hidden;position:relative;}
 .space {display:flex;align-items:center;justify-content:center;height:100%;border-radius:var(--radius);background:var(--green100);position:relative;}
@@ -213,5 +204,23 @@ mm-tile [variant=subhead] + [variant=body] {
   &:hover {
     background: var(--color-primary);
     color: var(--gray0);
+  }
+}
+
+
+
+@media (max-width: 1100px) {
+  .component-example {
+    margin-inline: calc(var(--grid-margin) * -1);
+    padding-inline: var(--grid-margin);
+    border-inline: 0;
+    border-radius: 0;
+  }
+
+  .component-props {
+    margin-inline: calc(var(--grid-margin) * -1);
+    padding-inline: var(--grid-margin);
+    border-inline: 0;
+    border-radius: 0;
   }
 }

@@ -105,40 +105,33 @@
     <mm-text variant="subhead">Props</mm-text>
     <dl>
       <dt>type</dt>
-      <dd>HTMLInputTypeAttribute? | 'search' | "text" | "number" | "tel" | "textarea"</dd>
-      <dd>TODO</dd>
+      <dd>HTMLInputTypeAttribute? | 'search' | "text" | "number"</dd>
       <dt>name</dt>
       <dd>string</dd>
-      <dd>id={props.name}</dd>
       <dt>label</dt>
       <dd>string</dd>
-      <dd><del>레이블을 쓰지 않으면 hiddenLabel 스타일.</del></dd>
       <dt>isHiddenLabel<attr>?</attr></dt>
       <dd>boolean</dd>
-      <dd>
-        labelHidden 형태라도 label prop 은 필수. 스크린리더. 시각적으로 숨기기 위한 옵셔널 prop.
-        aria-invalid
-      </dd>
+      <dd>aria-invalid</dd>
       <dt>value</dt>
       <dd>string</dd>
-      <dd></dd>
       <dt>placeholder</dt>
       <dd>string</dd>
-      <dd></dd>
       <dt>helper<attr>?</attr></dt>
       <dd>string</dd>
-      <dd>validation / helper. isInvalid = helper.length === 0</dd>
-      <dt>status???</dt>
-      <dd>'disabled' | 'readonly' | 'focused' | 'invalid'</dd>
-      <dd></dd>
+      <dd>isInvalid = helper.length === 0 ? red colored</dd>
+      <dt>isDisabled<attr>?</attr></dt>
+      <dd>boolean</dd>
+      <dt>isReadOnly<attr>?</attr></dt>
+      <dd>boolean</dd>
       <dt>isAutoFocus<attr>?</attr></dt>
       <dd>boolean</dd>
-      <dd></dd>
-      <dt>onChange</dt>
+      <dt>onChange<attr>?</attr></dt>
       <dd>(event: React.ChangeEvent&lt;HTMLInputElement&gt;) => void</dd>
+      <dt>onKeyDown<attr>?</attr></dt>
+      <dd>(event: KeyboardEvent&lt;HTMLInputElement&gt;) => void</dd>
+      <dt>onFocus<attr>?</attr></dt>
       <dd></dd>
-      <dt>onKeyDown</dt>
-      <dd>(event: KeyboardEvent&lt;HTMLButtonElement&gt;) => void</dd>
     </dl>
   </section>
 
@@ -388,6 +381,248 @@
         <mm-button variant="primary" label="배송지 등록"></mm-button>
       </mm-group>
     </mm-tile>
+
+    <section class="textbox" style="margin: 4rem var(--grid-margin); position: relative">
+      <mm-group
+        data-e="menu"
+        class="textbox-toolbar"
+        style="width: max-content; position: absolute; top: var(--space-1); left: var(--space-1)"
+      >
+        <mm-chip icon="bold" class="textbox-toolbar-bold"></mm-chip>
+        <mm-chip icon="italic" class="textbox-toolbar-italic"></mm-chip>
+      </mm-group>
+      <div
+        class="textbox-view"
+        role="textbox"
+        contenteditable="true"
+        aria-placeholder=""
+        aria-labelledby=""
+        style="padding: 48px var(--space-2) var(--space-1)"
+      >
+        <h1
+          class="textbox-view-heading"
+          style="margin: 0 0 var(--space-4) 0; color: var(--color-text-light)"
+        >
+          제목
+        </h1>
+        <div class="textbox-view-bdoy" style="color: var(--color-text-light)">
+          제목 / 내용 선택 영역에 is-selected
+        </div>
+      </div>
+      <footer class="textbox-footer">
+        <button class="textbox-footer-publish">게시</button>
+      </footer>
+    </section>
+
+    <!-- https://story.pxd.co.kr/1451 -->
+    <p>loading state/</p>
+
+    <article class="article">
+      <mm-text variant="title">Range</mm-text>
+      <mm-text variant="body-large"></mm-text>
+      <section class="component-example">
+        <div class="range">
+          <label for="">숙박 인원</label>
+          <input type="range" min="1" max="10" value="2" step="any" list="tickmarks" id="myRange" />
+          <datalist id="tickmarks">
+            <option value="0" label="0"></option>
+            <option value="5" label="5"></option>
+          </datalist>
+        </div>
+      </section>
+    </article>
+
+    <article class="article">
+      <mm-text variant="title">Calendar</mm-text>
+      <mm-text variant="body-large"></mm-text>
+      <section class="component-example">
+        <div class="calendar">
+          <b>2020년 12월</b>
+          <nav class="calendar-navigation">
+            <button class="calendar-navigation-prev" aria-label="앞으로">
+              <i class="icon-caret is-left"></i>
+            </button>
+            <button class="calendar-navigation-next" aria-label="뒤로">
+              <i class="icon-caret is-right"></i>
+            </button>
+          </nav>
+          <div class="calendar-head">
+            <div>일</div>
+            <div>월</div>
+            <div>화</div>
+            <div>수</div>
+            <div>목</div>
+            <div>금</div>
+            <div>토</div>
+          </div>
+          <div class="calendar-body">
+            <div class="calendar-body-column">1</div>
+            <div class="calendar-body-column">2</div>
+            <div class="calendar-body-column">3</div>
+            <div class="calendar-body-column">4</div>
+            <div class="calendar-body-column">5</div>
+            <div class="calendar-body-column">6</div>
+            <div class="calendar-body-column">7</div>
+            <div class="calendar-body-column">1</div>
+            <div class="calendar-body-column">2</div>
+            <div class="calendar-body-column">3</div>
+            <div class="calendar-body-column">4</div>
+            <div class="calendar-body-column">5</div>
+            <div class="calendar-body-column">6</div>
+            <div class="calendar-body-column">7</div>
+            <div class="calendar-body-column">1</div>
+            <div class="calendar-body-column">2</div>
+            <div class="calendar-body-column">3</div>
+            <div class="calendar-body-column">4</div>
+            <div class="calendar-body-column">5</div>
+            <div class="calendar-body-column">6</div>
+            <div class="calendar-body-column">7</div>
+          </div>
+        </div>
+      </section>
+    </article>
+
+    <article class="article">
+      <label for="cb1-edit">레이블</label>
+      <mm-menuitem data-size="large" style="margin-bottom: var(--space-3)">
+        <mm-avatar></mm-avatar>
+        <span class="item-description">관심사가 비슷한 사용자</span>
+        <h2 class="item-name">Gyeongsoo I</h2>
+        <!-- <button class="item-action"><span class="item-action-label">팔로우</span></button> -->
+      </mm-menuitem>
+
+      <section>
+        <mm-textfield label="임시" placeholder="you@gamil.com">
+          <mm-icon slot="prefix" name="mail"></mm-icon>
+        </mm-textfield>
+      </section>
+
+      <p>TeeVee</p>
+      <p>icon-indicator (textfield-check/select indicator) - inline or float: right</p>
+      <p>
+        Note: Make sure the role of the element that serves as the container for the popup content
+        is a menu, listbox, tree, grid or dialog and that the value of aria-haspopup matches the
+        role of the popup container.
+      </p>
+      <!-- ! flex-wrap: warp일 때 min-width가 fixed -->
+      <!-- ! width:100% and max-width doesnt' work-->
+
+      <mm-tile>
+        <q>
+          I'm impressed by how GitHub Copilot seems to know exactly what I want to type next. GitHub
+          Copilot is particularly helpful when working on React components, where it makes eerily
+          accurate predictions. GitHub Copilot has become an indispensable part of my programmer
+          toolbelt.
+        </q>
+        <figcaption style="margin: var(--space-3) 0 0 0; color: var(--color-text-light)">
+          Byline
+        </figcaption>
+      </mm-tile>
+    </article>
+
+    <section
+      style="display: flex; justify-content: center; gap: 2rem; margin: 0 var(--grid-margin)"
+    >
+      <div
+        class=""
+        style="
+          width: 20rem;
+          height: 20rem;
+          border-radius: 50%;
+          background-image: url('../../../public/images/springsteen.jpg');
+          background-size: cover;
+          position: relative;
+        "
+      >
+        <h3
+          class="quote-title"
+          style="
+            color: #fff;
+            background: #000;
+            display: inline-block;
+            color: #fff;
+            position: relative;
+            z-index: 1;
+          "
+        >
+          Cool Hand Luke
+        </h3>
+        <br />
+        <cite
+          class="quote-byline"
+          style="
+            color: #fff;
+            background: #000;
+            display: inline-block;
+            margin-top: 0;
+            position: relative;
+            z-index: 1;
+          "
+        >
+          <div class="quote-byline-name" style="color: #fff; position: relative">
+            Bruce Springsteen
+          </div>
+          <time class="quote-byline-job" style="color: #fff; position: relative">1967</time>
+        </cite>
+        <div
+          style="
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+              to bottom,
+              rgba(0, 0, 0, 0),
+              rgba(0, 0, 0, 0.5),
+              rgb(0, 0, 0.75)
+            );
+            height: 128px;
+            z-index: 0;
+            border-radius: var(--radius);
+          "
+        ></div>
+      </div>
+
+      <div
+        style="
+          width: 20rem;
+          height: 20rem;
+          border-radius: 50%;
+          background-image: url('../public/images/prometheus.jpg');
+          background-size: cover;
+          position: relative;
+        "
+      >
+        <h3
+          class="quote-title"
+          style="
+            color: #fff;
+            background: #000;
+            display: inline-block;
+            color: #fff;
+            position: relative;
+            z-index: 1;
+          "
+        >
+          프로메테우스
+        </h3>
+        <br />
+        <cite
+          class="quote-byline"
+          style="
+            color: #fff;
+            background: #000;
+            display: inline-block;
+            margin-top: 0;
+            position: relative;
+            z-index: 1;
+          "
+        >
+          <div class="quote-byline-name" style="color: #fff; position: relative">리들리 스콧</div>
+          <time class="quote-byline-job" style="color: #fff; position: relative">2012, 미국</time>
+        </cite>
+      </div>
+    </section>
   </section>
 </main>
 

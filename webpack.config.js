@@ -88,8 +88,6 @@ const components = [
 
   'films',
   'books',
-
-  'components',
 ]
 
 let test = {}

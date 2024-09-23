@@ -8,7 +8,7 @@
   </header>
   <section class="component-example">
     <mm-group variant="chip">
-      <mm-avatar size="huge" default="true" badge="true"></mm-avatar>
+      <mm-avatar size="huge" default="true" badge="true" badge></mm-avatar>
       <mm-avatar variant="secondary" size="huge" default="true" badge="true"></mm-avatar>
       <mm-avatar size="large" default="true" default="true" badge="true"></mm-avatar>
       <mm-avatar size="medium" default="true" fallback="수" badge="true"></mm-avatar>
@@ -21,8 +21,6 @@
     <dl>
       <dt>variant</dt>
       <dd>'primary' | 'secondary'</dd>
-      <dt>name</dt>
-      <dd>string</dd>
       <dt>src<abbr>?</abbr></dt>
       <dd>string</dd>
       <dt>size</dt>
@@ -42,44 +40,55 @@
     <!-- <mm-text variant="body">아웃라인 형태를 클릭할 수 없는 아바타로 정의</mm-text> -->
   </section>
 
-  <!-- <mm-text variant="subhead">groupable아바타 그룹</mm-text> -->
-  <!-- <mm-text variant="subhead">Use cases</mm-text> -->
-  <!-- <section class="component-case">
-      <mm-tile variant="elevated">
-        <mm-menuitem label="수줍이" description="Youtube subscriber">
-          <mm-avatar slot="avatar" default="true"></mm-avatar>
-        </mm-menuitem>
-        <div style="margin: var(--space-2) 0 0">
-          <mm-text variant="body"
-            >Sometimes at night, I find myself behind the computer. When I finally blink, a mess of
-            code is drawing random structures on the screen. I spend the rest of the night
-            staring.</mm-text
-          >
-          <span class="avatargroup-label">🥺 수줍이님을 팔로우하고 있는 친구가 없습니다.</span>
-        </div>
-        <mm-group
-          style="gap: var(--space-2); margin: var(--space-2) 0 0 0"
-        >
-          <mm-keyvalue key="팔로워" value="62" alignment="inline"></mm-keyvalue>
-          <i class="icon-bullet"></i>
-          <mm-keyvalue key="팔로잉" value="8" alignment="inline"></mm-keyvalue>
-        </mm-tile>
-      <mm-tile variant="elevated">
-        <div style="display: flex; gap: 1rem">
-          <mm-avatar size="huge" variant="secondary" default="true"></mm-avatar>
-          <mm-group style="flex-direction: column; gap: var(--space-2)">
-            <div>
-              <mm-text variant="word-weak">Top User</mm-text>
-              <mm-text variant="subhead">Bruce Springsteen</mm-text>
-            </div>
-            <div>
-              <mm-text variant="word-weak">Daily Purchase</mm-text>
-              <mm-text variant="subhead">10 Items</mm-text>
-            </div>
-          </mm-group>
-        </div>
-        <mm-separator></mm-separator>
-        <mm-tile variant="elevated" size="small">
+  <mm-text variant="body-bold">바이라인Byline</mm-text>
+  <mm-text variant="body">다수의 유저 목록을 표현. 피드 등에서 사용하는.</mm-text>
+  <mm-tile size="small">
+    <mm-menuitem label="수줍이">
+      <mm-avatar slot="avatar">
+        <i class="iconoir-github-circle"></i>
+      </mm-avatar>
+      <mm-chip slot="action">팔로우</mm-chip>
+    </mm-menuitem>
+  </mm-tile>
+
+  <mm-text variant="subhead">groupable아바타 그룹</mm-text>
+  <section class="component-case">
+    <mm-tile>
+      <mm-menuitem label="수줍이" description="Youtube subscriber">
+        <mm-avatar slot="avatar" default="true"></mm-avatar>
+      </mm-menuitem>
+      <div style="margin: var(--space-2) 0 0">
+        <mm-text variant="body">
+          Sometimes at night, I find myself behind the computer. When I finally blink, a mess of
+          code is drawing random structures on the screen. I spend the rest of the night staring.
+        </mm-text>
+        <span class="avatargroup-label">🥺 수줍이님을 팔로우하고 있는 친구가 없습니다.</span>
+      </div>
+      <mm-group>
+        <mm-keyvalue key="팔로워" value="62" alignment="inline"></mm-keyvalue>
+        <i class="icon-bullet"></i>
+        <mm-keyvalue key="팔로잉" value="8" alignment="inline"></mm-keyvalue>
+      </mm-group>
+    </mm-tile>
+    <mm-tile variant="elevated">
+      <div style="display: flex; gap: 1rem">
+        <!-- TODO style -->
+        <mm-avatar size="huge" variant="secondary" default="true"></mm-avatar>
+        <mm-group style="flex-direction: column; gap: var(--space-2)">
+          <div>
+            <mm-text variant="word-weak">Top User</mm-text>
+            <mm-text variant="subhead">Bruce Springsteen</mm-text>
+          </div>
+          <div>
+            <mm-text variant="word-weak">Daily Purchase</mm-text>
+            <mm-text variant="subhead">10 Items</mm-text>
+          </div>
+        </mm-group>
+      </div>
+      <mm-separator></mm-separator>
+      <mm-keyvalue key="Total New Users" value="5.9K" alignment="vertical"></mm-keyvalue>
+      <span>8.2% 상승</span>
+      <mm-tile variant="elevated" size="small">
         <mm-group variant="avatar">
           <mm-avatar size="small" default="true"></mm-avatar>
           <mm-avatar size="small" default="true"></mm-avatar>
@@ -89,51 +98,118 @@
             >Followed by 수줍이 외 4명</span
           >
         </mm-group>
-        </mm-tile>
-        <small class="mutiual" style="display: block; margin: var(--space-1) 0 0"
-          >내가 팔로우하는 사용자 중에는 팔로워가 없습니다. (twitter)</small
-        >
       </mm-tile>
-      <mm-tile variant="flat" size="medium">
-        <mm-entity
-          label="이경수"
-          description="soojubm@gmail.com"
-          description2="010 3121 7045"
-          description="UI Designer"
-        >
-          <mm-avatar slot="avatar" variant="secondary" size="large" default="true"></mm-avatar>
-          <mm-tag slot="tag" variant="primary"></mm-tag>
-        </mm-entity>
-        <div style="margin: var(--space-2) 0 0">
-          <mm-chip>내 프로필 관리</mm-chip>
-        </div>
-        <div style="position:absolute;right:var(--space-4);top:var(--space-4);">
-          <mm-avatar variant="secondary" size="large" >🐸</mm-avatar>
-        </div>
-        <mm-separator></mm-separator>
-        <mm-group variant="menuitem">
-          <mm-menuitem label="어둡게 보기" class="js-darkmode" aria-label="change theme">
-            <mm-avatar slot="avatar" variant="tertiary" icon="half-moon"> </mm-avatar>
-            <mm-switch slot="action"></mm-switch>
-          </mm-menuitem>
-          <mm-menuitem label="고객센터 및 도움말">
-            <mm-avatar slot="avatar" variant="tertiary" icon="megaphone"> </mm-avatar>
-          </mm-menuitem>
-        </mm-group>
-        <mm-separator></mm-separator>
-        <mm-menuitem label="로그아웃">
-          <mm-avatar slot="avatar" variant="tertiary" icon="log-out"></mm-avatar>
+      <small class="mutiual" style="display: block; margin: var(--space-1) 0 0"
+        >내가 팔로우하는 사용자 중에는 팔로워가 없습니다. (twitter)</small
+      >
+    </mm-tile>
+    <mm-tile variant="flat" size="medium">
+      <mm-entity
+        label="이경수"
+        description="soojubm@gmail.com"
+        description2="010 3121 7045"
+        description="UI Designer"
+      >
+        <mm-avatar slot="avatar" variant="secondary" size="large" default="true"></mm-avatar>
+        <mm-tag slot="tag" variant="primary"></mm-tag>
+      </mm-entity>
+      <div style="margin: var(--space-2) 0 0">
+        <mm-chip>내 프로필 관리</mm-chip>
+      </div>
+      <div style="position: absolute; right: var(--space-4); top: var(--space-4)">
+        <mm-avatar variant="secondary" size="large">🐸</mm-avatar>
+      </div>
+      <mm-separator></mm-separator>
+      <mm-group variant="menuitem">
+        <mm-menuitem label="어둡게 보기" class="js-darkmode" aria-label="change theme">
+          <mm-avatar slot="avatar" variant="tertiary" icon="half-moon"> </mm-avatar>
+          <mm-switch slot="action"></mm-switch>
         </mm-menuitem>
-        <mm-separator></mm-separator>
-        <mm-group>
-          <a href="#" style="font-size: 12px; color: var(--color-text-light)">개인정보처리방침</a>
-          <i class="icon-bullet"></i>
-          <a href="#" style="font-size: 12px; color: var(--color-text-light)">서비스 약관</a>
-        </mm-group>
-      </mm-tile>
-    </section> -->
-  <!-- <li>icon chip(button), icon tag, menu item avatar</li> -->
-  <!-- <li>memeo. medium. 이하의 크기는 디스크립션을 제공하지 않는다. 항상 align-items:center.</li> -->
-  <!-- <li>pagination item은 chip과 같은 size token을 사용하지만 chip도 avatar도 아닙니다.</li> -->
-  <!-- <p>아바타만 단독으로 사용하는 케이스. space-after-avatar가 필요하지 않음.</p> -->
+        <mm-menuitem label="고객센터 및 도움말">
+          <mm-avatar slot="avatar" variant="tertiary" icon="megaphone"> </mm-avatar>
+        </mm-menuitem>
+      </mm-group>
+      <mm-separator></mm-separator>
+      <mm-menuitem label="로그아웃">
+        <mm-avatar slot="avatar" variant="tertiary" icon="log-out"></mm-avatar>
+      </mm-menuitem>
+      <mm-separator></mm-separator>
+      <mm-group>
+        <a href="#" style="font-size: 12px; color: var(--color-text-light)">개인정보처리방침</a>
+        <i class="icon-bullet"></i>
+        <a href="#" style="font-size: 12px; color: var(--color-text-light)">서비스 약관</a>
+      </mm-group>
+    </mm-tile>
+  </section>
+  <ul class="checklist">
+    <li>icon chip(button), icon tag, menu item avatar</li>
+    <li>memeo. medium. 이하의 크기는 디스크립션을 제공하지 않는다. 항상 align-items:center.</li>
+    <li>pagination item은 chip과 같은 size token을 사용하지만 chip도 avatar도 아닙니다.</li>
+    <li>아바타만 단독으로 사용하는 케이스. space-after-avatar가 필요하지 않음.</li>
+  </ul>
+
+  <article class="article">
+    <mm-text variant="title">Entry</mm-text>
+    <mm-text variant="body-large"> 분류. </mm-text>
+    <mm-text variant="body-large">
+      bottom nav item, icon button with label, user(entity huge). ICON BUTTON ??? 지금의 문제는
+      아이콘 버튼이 없고, 칩으로 대체하기 때문에 이걸 표현하기가 어렵다. icon button과 칩을 분리.
+      아이콘 버튼이 variant를 갖고 레이블이 노출된 형태. 하지만 이건 person/story랑은 또 구별되네
+    </mm-text>
+    <blockquote>
+      이걸 제품이 없는 상황에서 미리 정의해두려는 시도 자체가 바보같은 짓. 도메인에 맞게 작은 단위의
+      컴포넌트를 조합해서 쓰면 됨. 하지만 세로 형태의 아이콘과 레이블 조합된 컴포넌트는 정의해면
+      좋겠다. 칩과 아이콘 버튼과 중복되는 역할.
+    </blockquote>
+    <section class="component-example">
+      <mm-group alignment="vertical">
+        <mm-text variant="body">
+          페이지 레벨 정보의 주체. 단독으로 사용. 클릭할 수 있는 요소가 아니라 페이지를 대표하는
+          요소, 시각 정보로만 동작한다. 왜냐하면 이미 해당 페이지의 타이틀 롤이기 때문. - 이렇게 쓸
+          거면 페이지 타이틀이라는 컴포넌트로 정의하는 게 맞음.
+        </mm-text>
+        <mm-tile>
+          <mm-entity
+            label="windows-emoji"
+            description="tag page head"
+            description2="description area2."
+          >
+            <mm-avatar slot="avatar" variant="secondary" size="huge">#</mm-avatar>
+          </mm-entity>
+        </mm-tile>
+        <button
+          style="
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: auto;
+            gap: var(--space-1);
+            border: none;
+            background-color: #fff;
+            font: inherit;
+          "
+        >
+          <mm-avatar slot="avatar" size="large" icon="share-ios"></mm-avatar>
+          <small>공유하기</small>
+        </button>
+        <button
+          style="
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: auto;
+            gap: var(--space-1);
+            padding: var(--space-1) var(--space-3);
+            border: var(--border);
+            border-radius: var(--radius);
+            background-color: transparent;
+            font: inherit;
+          "
+        >
+          <mm-icon slot="avatar" size="large" name="share-ios" style="font-size: 1.5rem"></mm-icon>
+          <small>공유하기</small>
+        </button>
+      </mm-group>
+    </section>
+  </article>
 </main>

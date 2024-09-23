@@ -19,9 +19,11 @@
 
   <section class="component-example">
     <mm-group variant="tag">
-      <mm-tag variant="tertiary">기본태그</mm-tag>
       <mm-tag variant="primary">강조태그</mm-tag>
-
+      <mm-tag variant="secondary">기본태그</mm-tag>
+      <mm-tag variant="tertiary">기본태그</mm-tag>
+      <mm-tag variant="tertiary">기본태그</mm-tag>
+      <mm-tag variant="tertiary">기본태그</mm-tag>
       <mm-tag variant="feature2">
         <mm-icon slot="icon" name="graph-up"></mm-icon>
         16%
@@ -60,29 +62,13 @@
 
   <section class="component-props">
     <mm-text variant="subhead" hidden>Props</mm-text>
-    <table>
-      <thead>
-        <tr>
-          <th>Prop</th>
-          <th>Type</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>variant</td>
-          <td>'primary' | <del>'secondary'</del> | 'tertiary' | 'indicator' | 'hashtag'</td>
-        </tr>
-        <tr>
-          <td>children</td>
-          <td>React.ReactNode : 2단어 이하의 형용사 또는 명사</td>
-        </tr>
-      </tbody>
-    </table>
     <dl>
-      <dt>color?</dt>
+      <dt>variant</dt>
+      <dd>'primary' | <del>'secondary'</del> | 'tertiary' | 'indicator' | 'hashtag'</dd>
+      <dt>children</dt>
+      <dd>React.ReactNode</dd>
       <dt>iconSlot</dt>
       <dd>React.ReactNode</dd>
-      :
       <dd>태그는 왼쪽에만 아이콘을 넣을 수 있기 때문에 iconSlot으로 명명</dd>
       <dd>for categories / status</dd>
     </dl>
