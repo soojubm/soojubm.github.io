@@ -42,11 +42,13 @@
       </div>
       <mm-separator></mm-separator>
       <div class="textfield">
-        <label class="textfield-label" for="select1">셀렉트 레이블</label>
-        <select class="textfield-input" id="select1">
+        <label class="textfield-label" for="select2">셀렉트 레이블</label>
+        <select class="textfield-input" id="select2">
           <option value="option1">Choose an option</option>
         </select>
-        <mm-icon name="nav-arrow-down" class="textfield-suffix"></mm-icon>
+        <div style="pointer-events: none" class="textfield-suffix">
+          <mm-icon name="nav-arrow-down"></mm-icon>
+        </div>
       </div>
     </section>
 
@@ -62,6 +64,13 @@
     </section>
 
     <section class="component-guide">
+      <mm-text variant="subhead">Hidden native select</mm-text>
+      <mm-text variant="body">네이티브 셀렉트</mm-text>
+      <mm-text variant="subhead">Trigger button styling</mm-text>
+      <mm-text variant="body">
+        var selected = Array.from(dnd.options).filter((option) => { return option.selected;
+        }).map((option) => option.value);
+      </mm-text>
       <mm-text variant="subhead">Best practices</mm-text>
       <ul>
         <li>
@@ -77,16 +86,8 @@
           memo. 레이블을 포함하는 형태. select 엘리먼트가 아니라 부모 엘리먼트에 컨테이너 스타일링이
           필요하고, 클릭 영역까지 지정해야 했다. 그리고 드롭다운으로 구현해야 한다.
         </li>
-        <li>
-          제품의 초기 단계에서는 native select와 dropdown을 함께 가져갈 필요가 있나. native select는
-          모바일 사용성이 좋고 초기 구축이 쉽다. 그러나 제품 또는 제품 개발 과정이 궤도에 올라왔을
-          때는 일정 수준의 컴포넌트가 확보되어 있을 것이기 때문. naming select / width / input
-          bar(google font)
-        </li>
-        <li>레이블 클릭해도 셀렉트가 열리지 않기 때문에 id prop 불필요.</li>
+        <li>label 클릭 시 옵션을 열지 않고 포커싱만 된다.</li>
       </ul>
-      var selected = Array.from(dnd.options).filter((option) => { return option.selected;
-      }).map((option) => option.value);
     </section>
   </article>
 </main>

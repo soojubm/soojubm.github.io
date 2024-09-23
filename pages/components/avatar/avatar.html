@@ -34,24 +34,29 @@
   </section>
 
   <section class="component-guide">
-    <mm-text variant="subhead">Behavior</mm-text>
-    <mm-text variant="body" data-temp="clickable"> </mm-text>
-    <mm-text variant="subhead">Visual style</mm-text>
-    <!-- <mm-text variant="body">아웃라인 형태를 클릭할 수 없는 아바타로 정의</mm-text> -->
+    <mm-text variant="subhead">Clickable</mm-text>
+    <mm-text variant="body">아웃라인 형태를 클릭할 수 없는 아바타로 정의</mm-text>
+
+    <mm-text variant="subhead">Groupable</mm-text>
+    <mm-group variant="avatar">
+      <mm-avatar size="medium" default="true"></mm-avatar>
+      <mm-avatar size="medium" default="true"></mm-avatar>
+      <mm-avatar size="medium" default="true"></mm-avatar>
+      <mm-avatar size="medium">+3</mm-avatar>
+    </mm-group>
+
+    <mm-text variant="subhead">바이라인Byline</mm-text>
+    <mm-text variant="body">다수의 유저 목록을 표현. 피드 등에서 사용하는.</mm-text>
+    <mm-tile size="small">
+      <mm-menuitem label="수줍이">
+        <mm-avatar slot="avatar">
+          <i class="iconoir-github-circle"></i>
+        </mm-avatar>
+        <mm-chip slot="action">팔로우</mm-chip>
+      </mm-menuitem>
+    </mm-tile>
   </section>
 
-  <mm-text variant="body-bold">바이라인Byline</mm-text>
-  <mm-text variant="body">다수의 유저 목록을 표현. 피드 등에서 사용하는.</mm-text>
-  <mm-tile size="small">
-    <mm-menuitem label="수줍이">
-      <mm-avatar slot="avatar">
-        <i class="iconoir-github-circle"></i>
-      </mm-avatar>
-      <mm-chip slot="action">팔로우</mm-chip>
-    </mm-menuitem>
-  </mm-tile>
-
-  <mm-text variant="subhead">groupable아바타 그룹</mm-text>
   <section class="component-case">
     <mm-tile>
       <mm-menuitem label="수줍이" description="Youtube subscriber">
@@ -62,17 +67,16 @@
           Sometimes at night, I find myself behind the computer. When I finally blink, a mess of
           code is drawing random structures on the screen. I spend the rest of the night staring.
         </mm-text>
-        <span class="avatargroup-label">🥺 수줍이님을 팔로우하고 있는 친구가 없습니다.</span>
       </div>
       <mm-group>
         <mm-keyvalue key="팔로워" value="62" alignment="inline"></mm-keyvalue>
         <i class="icon-bullet"></i>
         <mm-keyvalue key="팔로잉" value="8" alignment="inline"></mm-keyvalue>
       </mm-group>
+      <mm-text>🥺 수줍이님을 팔로우하고 있는 친구가 없습니다.</mm-text>
     </mm-tile>
     <mm-tile variant="elevated">
       <div style="display: flex; gap: 1rem">
-        <!-- TODO style -->
         <mm-avatar size="huge" variant="secondary" default="true"></mm-avatar>
         <mm-group style="flex-direction: column; gap: var(--space-2)">
           <div>
@@ -94,14 +98,12 @@
           <mm-avatar size="small" default="true"></mm-avatar>
           <mm-avatar size="small" default="true"></mm-avatar>
           <mm-avatar size="small" default="true"></mm-avatar>
-          <span class="avatargroup-label" style="margin-left: var(--space-2)"
-            >Followed by 수줍이 외 4명</span
-          >
+          <mm-text style="margin-left: var(--space-2)"> Followed by 수줍이 외 4명 </mm-text>
         </mm-group>
       </mm-tile>
-      <small class="mutiual" style="display: block; margin: var(--space-1) 0 0"
-        >내가 팔로우하는 사용자 중에는 팔로워가 없습니다. (twitter)</small
-      >
+      <mm-text class="mutiual">
+        내가 팔로우하는 사용자 중에는 팔로워가 없습니다. (twitter)
+      </mm-text>
     </mm-tile>
     <mm-tile variant="flat" size="medium">
       <mm-entity
@@ -135,9 +137,9 @@
       </mm-menuitem>
       <mm-separator></mm-separator>
       <mm-group>
-        <a href="#" style="font-size: 12px; color: var(--color-text-light)">개인정보처리방침</a>
+        <mm-link href="#">개인정보처리방침</mm-link>
         <i class="icon-bullet"></i>
-        <a href="#" style="font-size: 12px; color: var(--color-text-light)">서비스 약관</a>
+        <mm-link href="#">서비스 약관</mm-link>
       </mm-group>
     </mm-tile>
   </section>

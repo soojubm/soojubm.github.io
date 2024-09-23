@@ -17,35 +17,38 @@
   </dl>
 
   <section class="component-example">
-    <mm-group alignment="vertical">
-      <mm-callout>
-        <mm-text variant="body">배너. 히어로와 콜아웃의 차이. action</mm-text>
-      </mm-callout>
+    <div style="max-width: 480px">
+      <mm-group alignment="vertical">
+        <mm-callout>
+          <mm-text variant="body">배너. 히어로와 콜아웃의 차이.</mm-text>
+          <div style="margin-left: auto">
+            <mm-chip variant="back" icon="xmark"></mm-chip>
+          </div>
+        </mm-callout>
 
-      <mm-callout variant="success"> 좋아요 표시한 동영상에 추가됨 </mm-callout>
-      <mm-callout variant="warning">
-        바시니의 작품은 페라라 부르주아사회의 유대인 박해라는 깊은 상처에 기인한다는 점에서
-        정치적이다.
-      </mm-callout>
-      <mm-callout variant="danger"> 인터넷에 연결되어 있지 않습니다. </mm-callout>
-    </mm-group>
+        <mm-callout variant="success"> 좋아요 표시한 동영상에 추가됨 </mm-callout>
+        <mm-callout variant="warning">
+          바시니의 작품은 페라라 부르주아사회의 유대인 박해라는 깊은 상처에 기인한다는 점에서
+          정치적이다.
+        </mm-callout>
+        <mm-callout variant="danger"> 인터넷에 연결되어 있지 않습니다. </mm-callout>
+      </mm-group>
+    </div>
   </section>
 
   <section class="component-props">
     <mm-text variant="subhead">Props</mm-text>
     <dl>
+      <dt>variant</dt>
+      <dd>'warning' | 'danger' | string</dd>
       <dt>title<attr>?</attr></dt>
       <dd>string</dd>
-      <dd>??</dd>
       <dt>description<attr>?</attr></dt>
       <dd>string</dd>
-      <dd>??</dd>
-      <dt>contentSlot</dt>
-      <dd>Node</dd>
-      <dd>TODO 슬롯을 넣을 수 있도록 하는 것이 좋다.</dd>
       <dt>onDismissClick<attr>?</attr></dt>
       <dd>() => void</dd>
-      <dd>있으면 닫기 아이콘 랜더링</dd>
+      <dt>children</dt>
+      <dd>React.ReactNode</dd>
     </dl>
   </section>
 
@@ -53,7 +56,7 @@
     <mm-text variant="subhead">Behavior</mm-text>
     <mm-text variant="body">
       사용자 행동의 단순 피드백의 역할입니다. 닫기 또는 되돌리기 등 액션을 포함하지 마세요. 사용자
-      인터렉션이 요구된다면 주목도가 높은 모달로 제공하세요.
+      인터렉션을 요구하는 경우, 주목도가 높은 모달로 제공하세요.
     </mm-text>
 
     <mm-text variant="subhead">Editorial</mm-text>
@@ -66,20 +69,15 @@
       잘못한 것처럼 느끼지 않도록 하세요.
     </mm-text>
     <mm-text variant="body">
-      유저가 중요한 액션을 수행했을 경우, 완료 메시지를 전달하기 위해 한 화면 전체를 사용하는 경우가
-      있다. 이때는 유저가 집중할 수 있는 정보가 하나뿐이어서 맥락이 복잡하지 않으므로, \"이미지가
-      담긴 포스팅이 완료되었습니다.\" 등의 문장형으로 길게 설명할 필요 없이, \"제출 완료!\"같은 단일
-      단어로 대체할 수 있다.
+      * 이 규칙이 굉장히 인사이트풀. 유저가 중요한 액션을 수행했을 경우, 완료 메시지를 전달하기 위해
+      한 화면 전체를 사용하는 경우가 있다. 이때는 유저가 집중할 수 있는 정보가 하나뿐이어서 맥락이
+      복잡하지 않으므로, \"이미지가 담긴 포스팅이 완료되었습니다.\" 등의 문장형으로 길게 설명할 필요
+      없이, \"제출 완료!\"같은 단일 단어로 대체할 수 있다.
     </mm-text>
 
     <mm-text variant="subhead">Best practices</mm-text>
     <mm-text variant="body">
       브라우저가 role="alert" 속성이 있는 요소를 발견하면 즉시 사용자에게 경고 내용을 읽습니다.
-    </mm-text>
-    <mm-text variant="body"> single line / multiple lines (head,body 텍스트) </mm-text>
-    <mm-text variant="body">
-      아이콘으로 callout의 역할을 구분할 수 있다. 따라서 아이콘이 없는 info 형태의 callout은 공허한,
-      단순 Tile 컴포넌트처럼 보일 수 있다.
     </mm-text>
   </section>
 
@@ -94,16 +92,15 @@
     -->
 
   <ul class="checklist">
-    <li>링크를 제공할 것인가?</li>
+    <li>링크를 제공할 것인가? 정의에 따르면 하지 않는 것이 맞다.</li>
     <li>
       게임에서 파티 탈퇴와 같이 직접 실행하지 않은, 연속적인 결과가 발생하는 경우 여러 개가
       필요하구나.
     </li>
     <li>역할로 구분하면 input feedback은 callout과 다른 컴포넌트로 정의하여야 한다.</li>
     <li>
-      <p role="alert" style="color: var(--red800)">
-        비밀번호가 일치하지 않습니다. This is a textfield feedback.
-      </p>
+      아이콘으로 callout의 맥락을 구분할 수 있다. 따라서 아이콘이 없는 형태의 callout은 공허한, 단순
+      Tile 컴포넌트처럼 보일 수 있다.
     </li>
   </ul>
 </main>

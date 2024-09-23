@@ -1,12 +1,10 @@
-/* // ! text-heading-medium / text-heading-small */
-
 /* // utilities */
-@define-mixin truncate {white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-@define-mixin truncate-multi {
+/* @define-mixin truncate {white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+@define-mixin truncate-multi { */
   /* // height:3rem;
   // white-space:normal;word-wrap:break-word; */
   /* overflow:hidden;text-overflow:ellipsis;display: -webkit-box;-webkit-line-clamp:2;-webkit-box-orient: vertical; */
-}
+/* } */
 
 /* reset */
 h1, h2, h3, p {
@@ -15,7 +13,6 @@ h1, h2, h3, p {
 }
 
 .text {
-  /* color for toggling theme */
   color: var(--color-text);
 }
 
@@ -66,11 +63,9 @@ h1, h2, h3, p {
 }
 
 .text[data-variant=label] {
-  /* text-transform: uppercase;
-  letter-spacing: .5px; */
+  /* text-transform: uppercase; */
   font-size:var(--font-size-medium);
   font-weight:var(--font-weight-normal);
-  /* line-height: var(--size-small); */
   line-height: var(--font-line-height);
   color:var(--color-text-light);
 }
@@ -98,15 +93,12 @@ h1, h2, h3, p {
   line-height: var(--font-line-height);
 }
 
-.util-truncate {
-    height:3rem;
-  white-space:normal;word-wrap:break-word;
-  overflow:hidden;text-overflow:ellipsis;display: -webkit-box;-webkit-line-clamp:2;-webkit-box-orient: vertical;
+.text[data-truncated="true"] {
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
 }
 
-
-.text[data-variant=body][data-truncated] {
+.util-truncate {
   height:3rem;
-  white-space:normal;word-wrap:break-word;
-  overflow:hidden;text-overflow:ellipsis;display: -webkit-box;-webkit-line-clamp:2;-webkit-box-orient: vertical;
+white-space:normal;word-wrap:break-word;
+overflow:hidden;text-overflow:ellipsis;display: -webkit-box;-webkit-line-clamp:2;-webkit-box-orient: vertical;
 }

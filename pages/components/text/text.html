@@ -175,19 +175,17 @@ The font size of a key is never bigger than the value.
   </section>
 
   <section class="component-guide">
-    <mm-tile>
-      <section class="hero">
-        <mm-text variant="title">히어로 섹션 제목</mm-text>
-        <mm-text variant="body-large">
-          이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에
-          부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은 침묵에 잠겼다.
-        </mm-text>
-        <footer class="hero-actions" style="margin: 2rem 0 0">
-          <mm-button variant="primary" href="#components">Call to action</mm-button>
-          <mm-button variant="text">더 알아보기</mm-button>
-        </footer>
-      </section>
-    </mm-tile>
+    <section class="hero">
+      <mm-text variant="title">히어로 섹션 제목</mm-text>
+      <mm-text variant="body-large" truncated="true">
+        이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에
+        부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은 침묵에 잠겼다.
+      </mm-text>
+      <footer class="hero-actions" style="margin: 2rem 0 0">
+        <mm-button variant="primary" href="#components">Call to action</mm-button>
+        <mm-button variant="text">더 알아보기</mm-button>
+      </footer>
+    </section>
     <mm-tile>
       <mm-group style="gap: 2rem">
         <div style="display: flex; flex-direction: column-reverse">
@@ -253,7 +251,6 @@ The font size of a key is never bigger than the value.
 
     <blockquote>
       <ul class="checklist">
-        <li>heading / subheading / body</li>
         <li>
           텍스트 목록만 리스트 태그(ul, ol, dl)로 마크업하세요. 그렇지 않으면 대부분의 컨텐츠가
           리스트로 취급될 수 있음. role=listbox/listitem
@@ -264,25 +261,21 @@ The font size of a key is never bigger than the value.
         </li>
         <li>
           지금보다 주문 확인 등에서는 조금 더 눈에 띄는 형태가 필요하며, 푸터 등에서는 덜 강조된
-          형태가 필요하다. 굉장히 다양하게 정의해두는 것이 좋도 있겠지만 제약을 해 봄. 특정
-          페이지에서 사용한다면 슬롯을 넣어줄 수도? 또는 토큰으로 스타일링.
-        </li>
-        <li>
-          text size="" weight="" lineHeight="" 등으로 베리에이션을 해두고 pageTitle, sectionTitle,
-          formLabel 등으로 한 번 더?
+          형태가 필요하다. 굉장히 다양하게 정의해두는 것이 좋도 있겠지만 제약을 해 봄.
         </li>
         <li>text dense, help text :: Form fields, metadata, secondary info</li>
-        <li>type: column | inline / group의 type.</li>
         <li>description list - set :: term / description</li>
-        <li>heading / body -- paragraph / label, help text</li>
         <li>text group이 있으면 좋다. paragraph group. TextStack, TextBox</li>
+        <li>Nested</li>
+        <li>Title and Body</li>
       </ul>
     </blockquote>
 
     <mm-text variant="subhead">용어 정의 및 분류</mm-text>
     <ul>
       <li>제목 heading - title / subtitle / subhead / caption (label)</li>
-      <li>본문 body</li>
+      <li>subheading</li>
+      <li>본문 body - paragraph / label, help text</li>
       <li>kicker/overline/eyebrow</li>
     </ul>
 
