@@ -22,6 +22,7 @@
   <mm-text variant="title">Chips</mm-text>
   <mm-text variant="body-large">
     사용자 여정을 보조하는 액션입니다. 실행 페이지에서 사용자는 즉각적인 결과를 기대할 수 있습니다.
+    TODO. icon button with tooltip, icon only chip
   </mm-text>
 
   <dl class="article-aka">
@@ -36,18 +37,18 @@
 
   <section class="component-example">
     <mm-group variant="chip">
-      <mm-button size="small">기본</mm-button>
-      <mm-button size="small" status="disabled">비활성</mm-button>
-      <mm-button size="small" icon="user" aria-label="사용자"></mm-button>
-      <mm-button size="small" icon="bell" aria-label=""></mm-button>
+      <mm-chip>기본</mm-chip>
+      <mm-chip status="disabled">비활성</mm-chip>
+      <mm-chip icon="user" aria-label="사용자"></mm-chip>
+      <mm-chip icon="bell" aria-label=""></mm-chip>
       <!-- <mm-chip status="active">active</mm-chip>
       <mm-chip variant="destructive">destructive</mm-chip> -->
     </mm-group>
     <mm-separator></mm-separator>
     <mm-group variant="chip">
-      <mm-button size="small" icon="check" status="checked"> checkable </mm-button>
-      <mm-button size="small" status="checked" icon="xmark"> dismiss </mm-button>
-      <mm-button size="small" aria-expanded="true" icon="nav-arrow-down"> expandable </mm-button>
+      <mm-chip icon="check" status="checked"> checkable </mm-chip>
+      <mm-chip icon="xmark" status="checked"> dismiss </mm-chip>
+      <mm-chip icon="nav-arrow-down" aria-expanded="true"> expandable </mm-chip>
     </mm-group>
     <!-- <mm-separator></mm-separator>
       <div class="group" data-segmented="true">
@@ -58,7 +59,7 @@
     <mm-separator></mm-separator>
     <mm-group variant="chip">
       <mm-chip variant="back" icon="arrow-left"></mm-chip>
-      <mm-chip variant="back" icon="arrow-right"> </mm-chip>
+      <mm-chip variant="back" icon="arrow-right"></mm-chip>
     </mm-group>
   </section>
 
@@ -80,9 +81,9 @@
       <dd>TODO onRemoveClick와 설명과 같은 맥락</dd>
       <dt>ariaHaspopup<attr>?</attr></dt>
       <dd>null</dd>
-      <dd>TODO</dd>
-      <dt>slot</dt>
-      <dd>'icon' | 'prefix' | 'suffix'</dd>
+      <dt>iconSlot</dt>
+      <dd>React.ReactNode</dd>
+      <dd>아이콘은 텍스트 레이블의 우측에 표시</dd>
     </dl>
   </section>
 
@@ -113,10 +114,10 @@
   </mm-text>
   <section class="component-example" style="margin-top: 1rem">
     <mm-group variant="chip">
-      <mm-button size="small" status="checked" class="js-toggle is-active">전체</mm-button>
-      <mm-button size="small" class="js-toggle">입금확인</mm-button>
-      <mm-button size="small" class="js-toggle">결제완료</mm-button>
-      <mm-button size="small" class="js-toggle">배송중</mm-button>
+      <mm-chip status="checked" class="js-toggle is-active">전체</mm-chip>
+      <mm-chip class="js-toggle">입금확인</mm-chip>
+      <mm-chip class="js-toggle">결제완료</mm-chip>
+      <mm-chip class="js-toggle">배송중</mm-chip>
     </mm-group>
   </section>
 
@@ -128,25 +129,20 @@
   </mm-text>
   <section class="component-example" style="margin-top: 1rem">
     <mm-group variant="chip" aria-multiselectable="true">
-      <mm-button size="small" role="option" name="check" aria-selected="true" status="checked">
-        소설
-      </mm-button>
-      <mm-button size="small" role="option" aria-selected="false" status="checked">
-        <mm-icon slot="prefix" name="check"></mm-icon>
-        영화
-      </mm-button>
-      <mm-button size="small" role="option" aria-selected="false">타이포그래피</mm-button>
+      <mm-chip role="option" name="check" aria-selected="true" status="checked">소설</mm-chip>
+      <mm-chip role="option" icon="check" aria-selected="false" status="checked"> 영화</mm-chip>
+      <mm-chip role="option" aria-selected="false">타이포그래피</mm-chip>
     </mm-group>
   </section>
 
   <mm-text variant="subhead">Bleeding</mm-text>
   <section class="component-example" style="margin-top: 1rem">
     <div class="group" data-alignment="bleeding-vertical">
-      <mm-button size="small">블리딩1234</mm-button>
-      <mm-button size="small">블리딩4564</mm-button>
-      <mm-button size="small">블리딩1234</mm-button>
-      <mm-button size="small">블리딩4564</mm-button>
-      <mm-button size="small">블리딩1234</mm-button>
+      <mm-chip>블리딩1234</mm-chip>
+      <mm-chip>블리딩4564</mm-chip>
+      <mm-chip>블리딩1234</mm-chip>
+      <mm-chip>블리딩4564</mm-chip>
+      <mm-chip>블리딩1234</mm-chip>
     </div>
   </section>
 

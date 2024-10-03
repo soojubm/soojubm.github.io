@@ -35,42 +35,26 @@ class Chip extends HTMLElement {
     const name = document.createElement('span')
     name.classList.add('chip-name')
 
-    const iconSlot = document.createElement('slot')
-    iconSlot.name = 'icon'
+    // 순서
+    if (Boolean(this.textContent)) {
+      label.innerText = this.textContent || ''
+      host.appendChild(label)
+    }
 
-    const prefixSlot = document.createElement('slot')
-    prefixSlot.name = 'prefix'
-
-    const suffixSlot = document.createElement('slot')
-    suffixSlot.name = 'suffix'
-
-    // TODO avatar와 공통
+    // TODO avatar와 공통?? iconSlot 대신
     if (this.icon) {
       const icon = document.createElement('mm-icon')
       icon.setAttribute('name', this.icon)
-
-      host.ariaLabel = this.ariaLabel
-
       host.appendChild(icon)
+      // host.ariaLabel = this.ariaLabel
     }
-
-    shadow.append(host, makeStyleSheet('chip'))
 
     if (this.name) {
       name.innerText = this.name || ''
       host.appendChild(name)
     }
 
-    // append 순서로 slot 순서를 결정할 수 있다.
-    host.appendChild(iconSlot)
-    host.appendChild(prefixSlot)
-
-    // TODO label tag
-    // if (this.textContent && this.textContent.length > 0) {}
-    label.innerText = this.textContent || ''
-    host.appendChild(label)
-
-    host.appendChild(suffixSlot)
+    shadow.append(host, makeStyleSheet('chip'))
 
     // TODO
     // shadow.appendChild(container)
@@ -84,7 +68,6 @@ class Chip extends HTMLElement {
     // b.append(...this.childNodes)
 
     if (this.variant) host.dataset.variant = this.variant
-
     if (this.status === 'active') host.setAttribute('aria-selected', 'true')
     if (this.status === 'disabled') host.setAttribute('disabled', 'true')
     if (this.status === 'checked') host.setAttribute('aria-checked', 'true')

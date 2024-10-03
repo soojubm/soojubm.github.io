@@ -61,7 +61,7 @@
 
 .component-props {
   margin: 2rem 0 3rem calc(-5vw + 1rem);
-  padding: 1.5rem calc(var(--grid-margin) - 1rem);
+  padding: 1.75rem calc(var(--grid-margin) - 1rem) 1.875rem;
   margin-top: -3rem;
   border-radius: 0 0 var(--radius) var(--radius);
   background-color: var(--color-background-weak);
@@ -69,7 +69,7 @@
 }
 .component-props mm-text {display:none}
 .component-props dl {display:flex;flex-wrap:wrap;column-gap:var(--space-1);font-size:16px;}
-.component-props dl dt {font-weight: var(--font-weight-bold);}
+.component-props dl dt {font-weight:500;}
 .component-props dl dt::after {content:':'}
 .component-props dl dd {margin-right:var(--space-3);font-weight: var(--font-weight-bold);font-style:italic;;color:rgb(29, 161, 242)}
 .component-props dl dd + dd {font-size:var(--font-size-small);color:var(--color-text);}

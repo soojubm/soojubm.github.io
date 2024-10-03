@@ -44,7 +44,6 @@ em, i  {
 */
 
 /* TODO donesnt using ? for chip in textfield  */
-/* gap 제거. icon only에 label 태그 때문. tag에서도 */ 
 /* 이모지 2개 나옴.. */
 /* outline: 2px solid var(--color-background); */
 
@@ -54,8 +53,6 @@ em, i  {
   justify-content: center;
   min-width: var(--size-medium);
   height: var(--chip-size);
-  /* gap: var(--space-2); */
-  padding: 0 var(--space-3);
   border: var(--chip-border);
   border-radius: var(--chip-radius);
   box-shadow: var(--chip-shadow);
@@ -64,22 +61,23 @@ em, i  {
   position: relative;
 }
 
-.chip:hover {
+.chip:hover:not(:disabled) {
   box-shadow:var(--hover);
   cursor: pointer;
 }
-.chip:disabled:not(:hover) {
+.chip:disabled {
   opacity:.5;
   cursor:not-allowed;
 }
 .chip-label {
+  padding: 0 var(--space-3);
   line-height: 1;
   color: inherit;
-  text-transform: capitalize;
 }
 .chip-name {
   margin: 0 var(--space-1) 0 0;
-  color:var(--color-text-light);}
+  color:var(--color-text-light);
+}
 .chip-name:after {content:': ';}
 
 .chip[aria-selected] {
@@ -98,18 +96,8 @@ em, i  {
   background-color: var(--red100);
   color: var(--red800);
 }
+.chip-label + mm-icon {margin-left: var(--space-1-minus);margin-right:var(--space-2)}
 
-::slotted([slot=icon]),
-.chip mm-icon {margin:0 calc(var(--space-3) * -1);}
-::slotted([slot=prefix]) {margin-right:var(--space-2);}
-::slotted([slot=suffix]) {margin-left:var(--space-2);}
-
-/* .chip-label ~ ::slotted([slot=icon]) {
-  margin-left: -0.25rem;
-}
-.chip-label ~ ::slotted([slot=badge]) {
-  margin-right: -0.25rem;
-} */
 
 // .chip[aria-expanded=true] {
 //   background-image: url(

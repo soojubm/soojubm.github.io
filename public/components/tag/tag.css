@@ -17,7 +17,9 @@
 
 .tag[data-variant=primary] {
   border-color: transparent;
-  border-color:var(--color-accent);background-color:var(--color-accent);color:var(--gray800);
+  border-color:var(--color-accent);
+  background-color:var(--color-accent);
+  color:var(--gray800);
 }
 .tag[data-variant=secondary] {
   background-color: var(--color-background-weak);
