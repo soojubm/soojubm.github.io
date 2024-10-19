@@ -11,12 +11,17 @@ class Separator extends HTMLElement {
     const container = document.createElement('div')
     container.role = 'separator'
     container.classList.add('separator')
+    container.dataset.spacing = this.spacing || ''
 
     const textSlot = document.createElement('slot')
     textSlot.name = 'text'
 
     shadow.append(container, makeStyleSheet('separator'))
     container.appendChild(textSlot)
+  }
+
+  get spacing() {
+    return this.getAttribute('spacing')
   }
   disconnectedCallback() {}
 }

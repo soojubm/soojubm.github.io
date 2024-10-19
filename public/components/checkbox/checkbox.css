@@ -30,7 +30,9 @@
 }
 
 .checkbox:focus-within label {
-  box-shadow: var(--status-hover);
+  /* box-shadow: var(--status-hover); */
+  outline: 3px solid #007185;
+  outline-offset: 2px;
 }
 
 .checkbox input ~ label {

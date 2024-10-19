@@ -10,22 +10,14 @@ class Button extends HTMLElement {
     const shadowRoot = this.attachShadow({ mode: 'open' })
 
     const variant = this.getAttribute('variant')
-    // shadowRoot.appendChild()
 
     const host = document.createElement('button')
     host.classList.add('button')
     host.dataset.variant = variant || ''
     host.dataset.size = this.size || ''
     host.dataset.status = this.status || ''
-
-    const prefixSlot = document.createElement('slot')
-    prefixSlot.name = 'prefix'
-
     const label = document.createElement('label')
     label.classList.add('button-label')
-
-    const suffixSlot = document.createElement('slot')
-    suffixSlot.name = 'suffix'
 
     const iconSlot = document.createElement('slot')
     iconSlot.name = 'icon'
@@ -36,7 +28,6 @@ class Button extends HTMLElement {
     label.textContent = this.textContent || this.label
 
     shadowRoot?.append(host, makeStyleSheet('button'))
-    host.appendChild(prefixSlot)
     if (label && label.textContent!.length > 0) host.appendChild(label)
 
     if (this.icon) {
@@ -50,8 +41,6 @@ class Button extends HTMLElement {
     if (this.status === 'active') host.setAttribute('aria-selected', 'true')
     if (this.status === 'disabled') host.setAttribute('disabled', 'true')
     if (this.status === 'checked') host.setAttribute('aria-checked', 'true')
-
-    host.appendChild(suffixSlot)
   }
 
   // get variant() {

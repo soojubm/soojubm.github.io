@@ -27,6 +27,12 @@ img {display:block;width:100%;}
   background: none;
 }
 
+.tile[data-variant=tinted] {
+  border-color: transparent;
+  background-color: var(--color-background-weak);
+}
+
+
 .tile[data-variant=elevated] {
   /* box-shadow:var(--shadow-tile); */
   box-shadow:var(--shadow);

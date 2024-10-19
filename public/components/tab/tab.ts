@@ -1,8 +1,6 @@
 import { makeStyleSheet } from '../../javascripts/components/utils'
 
 class Tab extends HTMLElement {
-  static observedAttributes = ['aria-selected']
-
   // TODO : constructo가 아닌 connectedCallback에서 사용하면, 스타일을 못 받아옴
   // observed
 
@@ -20,6 +18,33 @@ class Tab extends HTMLElement {
 
     shadow.appendChild(container)
     container.append(...this.childNodes, makeStyleSheet('tablist'))
+
+    // TRACKING THE URL
+    // connectedCallback() {
+    //   if (window.location.hash.substr(1) === this.heading.id) {
+    //     this.setAttribute('open', 'true')
+    //     this.btn.focus()
+    //   }
+    // }
+    // this.btn.onclick = () => {
+    //   let open = this.getAttribute('open') === 'true' || false
+    //   this.setAttribute('open', open ? 'false' : 'true')
+
+    //   if (this.heading.id && !open) {
+    //     history.pushState(null, null, '#' + this.heading.id)
+    //   }
+    // }
+
+    // attributeChangedCallback(name) {
+    //   if (name === 'open') {
+    //     this.switchState()
+    //   }
+    // }
+    // this.switchState = () => {
+    //   let expanded = this.getAttribute('open') === 'true' || false
+    //   this.btn.setAttribute('aria-expanded', expanded)
+    //   this.shadowRoot.querySelector('.content').hidden = !expanded
+    // }
 
     // declarative: The component only requires a clear trigger; the script manages everything under the hood.
     // composable: you can use it within or with any other component.
@@ -46,10 +71,6 @@ class Tab extends HTMLElement {
 }
 
 export default Tab
-
-// static get observedAttributes() {
-//   return ["color", "size"];
-// }
 
 // this.shadowRoot.appendChild(template.content);
 

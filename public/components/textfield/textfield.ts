@@ -1,17 +1,5 @@
 import { makeStyleSheet } from '../../javascripts/components/utils'
 
-// size = "large";
-
-// constructor() {
-//   super();
-//   this.value = "";
-// }
-
-// static get observedAttributes() {
-//   return ["placeholder"];
-// }
-// this.innerHTML = `<button class="chip"></button>`
-
 class Input extends HTMLElement {
   constructor() {
     super()

@@ -1,8 +1,6 @@
 import { makeStyleSheet } from '../../javascripts/components/utils'
 
 class TabPanel extends HTMLElement {
-  static observedAttributes = ['aria-hidden']
-
   constructor() {
     super()
     const shadow = this.attachShadow({ mode: 'open' })
@@ -47,10 +45,6 @@ class TabPanel extends HTMLElement {
 }
 
 export default TabPanel
-
-// static get observedAttributes() {
-//   return ["color", "size"];
-// }
 
 // this.shadowRoot.appendChild(template.content);
 

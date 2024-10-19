@@ -10,8 +10,11 @@
 
   <section class="component-example">
     <mm-group variant="chip">
-      <mm-tooltip content="로그인" class="is-icon">
-        <mm-chip slot="trigger" icon="user"> </mm-chip>
+      <mm-tooltip content="로그인" align="center">
+        <mm-chip slot="trigger" icon="user"></mm-chip>
+      </mm-tooltip>
+      <mm-tooltip content="로그인" align="right">
+        <mm-chip slot="trigger" icon="user"></mm-chip>
       </mm-tooltip>
       <mm-tooltip
         content="제1항의 해임건의는 국회재적의원 3분의 1 이상의 발의에 의하여 국회재적의원 과반수의 찬성이 있어야 한다."
@@ -22,7 +25,7 @@
     </mm-group>
     <mm-separator></mm-separator>
     <span
-      class="tooltip"
+      class="tooltip has-tooltip-fade"
       data-tooltip="Just like this one."
       style="display: inline; width: auto; position: relative"
     >
@@ -30,17 +33,13 @@
     </span>
   </section>
   <style>
-    [data-tooltip]:not([disabled]).has-tooltip-fade:after,
     [data-tooltip]:not([disabled]).has-tooltip-fade:before {
       transition: opacity 0.15s linear, visibility 0.15s linear;
     }
-    [data-tooltip]:not([disabled]):hover:after,
     [data-tooltip]:not([disabled]):hover:before {
       opacity: 1;
       visibility: visible;
     }
-    [data-tooltip]:not(.is-disabled):before,
-    [data-tooltip]:not(.is-loading):before,
     [data-tooltip]:not([disabled]):before {
       display: inline-block;
       /* hyphens: auto; */
@@ -77,9 +76,8 @@
       <dt>content</dt>
       <dd>string</dd>
       <dd>short text, long form text</dd>
-      <dt>direction</dt>
-      <dd>left | right | center</dd>
-      <dd>test</dd>
+      <dt>align</dt>
+      <dd>'left' | 'right' | 'center'</dd>
     </dl>
   </section>
 

@@ -132,22 +132,21 @@ mm-text[variant=body] + mm-text[variant=subhead] {
   margin: 3rem 0 0 0;
 }
 
-
 /* 타일 안에서 사용할 때 */
 mm-tile [variant=subhead] + [variant=body] {
   display: block;
   margin: .25rem 0 0 0;
 }
 
-[variant=subhead] + [variant=body], [variant=subhead] + [variant=body-bold],
-[variant=subhead] + [variant=body-large] {
+.component-guide [variant=subhead] + [variant=body], .component-guide [variant=subhead] + [variant=body-bold],
+.component-guide [variant=subhead] + [variant=body-large] {
   display: block;
   margin: var(--space-after-subhead) 0 0 0;
 }
-[variant=subhead] + ul {
+.component-guide [variant=subhead] + ul {
   margin: var(--space-after-subhead) 0 0 0;
 }
-[variant=subhead] + mm-tile {
+.component-guide [variant=subhead] + mm-tile {
   display: block;
   margin: var(--space-after-subhead) 0 0 0;
 }

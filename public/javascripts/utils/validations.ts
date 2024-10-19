@@ -25,18 +25,6 @@ const validationMessages = [
   },
 ]
 
-function getValidationMessage(valueType, pattern) {
-  const result = validationMessages.find(item => {
-    if (item.value === valueType) return item[pattern]
-
-    return null
-  })
-
-  return result
-}
-
-function getValidationMessageUsername() {}
-
 export function getValidationUsername(value: string) {
   const isTooShort = value.length < 4
   const isTooLong = value.length > 16
@@ -50,46 +38,36 @@ export function getValidationUsername(value: string) {
   return ''
 }
 
-export function validateEmail(value: string) {
-  const regex = /^[가-힣a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[가-힣A-Z0-9.-]+\.[A-Z]{2,}$/i
-  const isEmail = regex.test(value.toLowerCase())
+export const validateRequired = value => {
+  return value && value.trim() !== ''
+}
 
-  if (!isEmail) return '이메일이 아님.'
+// export const validateEmail = (email) => {
+//   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+//   return emailPattern.test(email);
+// };
+
+// 자릿수가 안 맞을 때, 특수문자가 포함되었을 때. 등
+export function validateEmail(email) {
+  const emailPattern = /^[가-힣a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[가-힣A-Z0-9.-]+\.[A-Z]{2,}$/i
+  const isValid = emailPattern.test(email.toLowerCase())
+
+  if (!isValid) return '이메일이 아님.'
 
   return ''
 }
+export const validatePassword = password => {
+  const minLength = 6 // 최소 길이
+  // const isTooShort = value.length < 8
+  const hasUpperCase = /[A-Z]/.test(password) // 대문자 포함
+  const hasLowerCase = /[a-z]/.test(password) // 소문자 포함
+  const hasNumber = /\d/.test(password) // 숫자 포함
 
-export function validatePassword(value: string) {
-  const isTooShort = value.length < 8
-
-  if (isTooShort) return '8자 이상.'
-
-  return ''
-}
-
-// 자릿수가 안 맞을 때 리턴하는 값이 다르고, 특수문자가 포함되었을 때 리턴하는 값이 다름.
-export function isValidEmail(value: string) {
-  const regex = /^[가-힣a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[가-힣A-Z0-9.-]+\.[A-Z]{2,}$/i
-
-  return regex.test(value.toLowerCase())
-}
-
-export function isValidPassword(value: string) {
-  return value.length >= 8
-}
-
-export function isValidUsername(value: string) {
-  // 특수문자 제외, 스페이스 허용 /^[a-zA-Zㄱ-힣0-9|s]*$/;
-  const regex = /^[a-zA-Zㄱ-힣0-9]*$/
-  const isValidLength = value.length >= 4 && value.length <= 16
-
-  return regex.test(value) && isValidLength
+  return password.length >= minLength && hasUpperCase && hasLowerCase && hasNumber
 }
 
 export const validityState = {
-  isRequired(value) {
-    return value === '' || value === null || value === undefined || (value !== null && typeof value === 'object' && !Object.keys(value).length)
-  },
+  isRequired(value) {},
   isNumeric(value) {
     return /[0-9]/g.test(value)
   },
@@ -203,7 +181,8 @@ function validate(e) {
 function createLink(testItem) {
   const listItem = document.createElement('li')
   const anchor = document.createElement('a')
-  anchor.textContent = testItem.input.name + ' field is empty: fill in your ' + testItem.input.name + '.'
+  anchor.textContent =
+    testItem.input.name + ' field is empty: fill in your ' + testItem.input.name + '.'
   anchor.href = '#' + testItem.input.name
   anchor.onclick = () => testItem.input.focus()
 

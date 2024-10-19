@@ -57,6 +57,7 @@
         <mm-chip>사용자1</mm-chip>
       </div> -->
     <mm-separator></mm-separator>
+    <mm-text>이게 텍스트?</mm-text>
     <mm-group variant="chip">
       <mm-chip variant="back" icon="arrow-left"></mm-chip>
       <mm-chip variant="back" icon="arrow-right"></mm-chip>
@@ -152,14 +153,6 @@
       정의해주어야 한다. 컴포넌트 합성하면 사실 이걸 그렇게 고민할 내용은 아니게 됨.
     </li>
     <li>
-      아이콘 vs 아이콘 버튼(아바타가 아니라 칩/버튼 액션이다) vs 아바타 :: 아이콘과 아이콘
-      버튼(아바타에 가까움)을 구분. 16px 아이콘을 32 안에 넣으면
-    </li>
-    <li>
-      장식적인 검색 아이콘과 clickable한 액션. prefix는 장식. suffix는 액션? suffix에 유닛이 있을
-      수도
-    </li>
-    <li>
       button과 통합 하느냐 tag와 통합하느냐. 버튼 쪽이 유리하기는 함. 정의할 때 인터렉션을 기준할 수
       있기 때문. 하지만 selected 상태에 관한 스타일은 chip의 고유. 형태로 분류하면 결국 그냥 버튼임.
       기능으로 분류하는 것이 중요함. 태그를 뱃지로, 칩을 태그로 정의하는 경우도 많음. 도메인에
@@ -176,7 +169,6 @@
     </li>
     <li>MEMO: Text only는 plain variant이 될 수 없다.</li>
     <li>TODO 선택을 클리어하는 클리어버튼을 만들어 검색필드에서 활용하는 방법도 있다.</li>
-    <li>TODO: icon chip의 label prop으로 툴팁을 만들기</li>
     <li>아이콘이 아니라 이모지가 들어갈 때. 여기서 searching 왼쪽 아바타.</li>
   </ul>
 

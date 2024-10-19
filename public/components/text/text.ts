@@ -6,7 +6,6 @@ class Text extends HTMLElement {
     const shadow = this.attachShadow({ mode: 'open' })
 
     const container = document.createElement('p')
-
     container.classList.add('text')
     container.innerHTML = this.content
 

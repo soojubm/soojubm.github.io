@@ -39,12 +39,6 @@ import Keyvalue from '../../components/keyvalue/keyvalue'
 import Media from '../../components/media/media'
 import TabPanel from '../../components/tabpanel/tabpanel'
 
-// class extends HTMLElement {
-//   static get observedAttributes() {
-//     return ['value']
-//   }
-// }
-
 export function defineCustomElement() {
   if ('customElements' in window) {
     customElements.define('mm-icon', Icon)
@@ -137,5 +131,3 @@ export function defineCustomElement() {
 //     this.shadowRoot.addEventListener('slotchange', event => console.log(event))
 //   }
 // }
-
-// customElements.define('x-component', XComponent)

@@ -56,6 +56,8 @@ The font size of a key is never bigger than the value.
       <mm-text variant="body">body</mm-text>
       <mm-text variant="body-large">body large</mm-text>
       <mm-text variant="body-bold">body bold - button & meta</mm-text>
+      <p>title은 도큐먼트의 타이틀 또는 타이틀 속성과 구분하기 위해 사용하지 않기. heading,</p>
+      <p>sentence, caption, tagline</p>
       <mm-separator></mm-separator>
       <mm-text variant="word">word</mm-text>
       <mm-text variant="word-weak">word-weak</mm-text>
@@ -174,81 +176,85 @@ The font size of a key is never bigger than the value.
     </dl>
   </section>
 
-  <section class="component-guide">
-    <section class="hero">
-      <mm-text variant="title">히어로 섹션 제목</mm-text>
-      <mm-text variant="body-large" truncated="true">
-        이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에
-        부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은 침묵에 잠겼다.
-      </mm-text>
-      <footer class="hero-actions" style="margin: 2rem 0 0">
-        <mm-button variant="primary" href="#components">Call to action</mm-button>
-        <mm-button variant="text">더 알아보기</mm-button>
-      </footer>
-    </section>
-    <mm-tile>
-      <mm-group style="gap: 2rem">
-        <div style="display: flex; flex-direction: column-reverse">
-          <mm-text variant="label">사이즈</mm-text>
-          <mm-text variant="word-large">보통</mm-text>
-        </div>
-        <div style="display: flex; flex-direction: column-reverse">
-          <mm-text variant="label">한글</mm-text>
-          <mm-text variant="word-large">작은 거 필요하나</mm-text>
-        </div>
-      </mm-group>
-    </mm-tile>
-    <mm-tile>
-      <mm-group alignment="vertical">
-        <mm-keyvalue key="상품 금액" value="₩ 160,000"></mm-keyvalue>
-        <mm-keyvalue key="서비스 수수료" value="₩ 3,000"></mm-keyvalue>
-        <mm-row justifyContent="space-between">
-          <mm-text variant="subhead">총 합계 (KRW)</mm-text>
-          <mm-text variant="subhead">₩ 163,000</mm-text>
-        </mm-row>
-        <!-- <mm-keyvalue size="large" key="총 합계 (KRW)" value="₩ 163,000"> </mm-keyvalue> -->
-      </mm-group>
-      <footer style="margin: var(--space-4) 0 0 0">
-        <mm-button variant="primary" isfullwidth="true">구매 확정하고</mm-button>
-      </footer>
-    </mm-tile>
+  <section class="hero">
+    <mm-text variant="title">히어로 섹션 제목</mm-text>
+    <mm-text variant="body-large" truncated="true">
+      이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에
+      부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은 침묵에 잠겼다.
+    </mm-text>
+    <footer class="hero-actions" style="margin: 2rem 0 0">
+      <mm-button variant="primary" href="#components">Call to action</mm-button>
+      <mm-button variant="text">더 알아보기</mm-button>
+    </footer>
+  </section>
+  <mm-tile>
+    <mm-group style="gap: 2rem">
+      <div style="">
+        <mm-text variant="label">사이즈</mm-text>
+        <mm-text variant="word-large">보통</mm-text>
+      </div>
+      <div style="">
+        <mm-text variant="label">한글</mm-text>
+        <mm-text variant="subhead">작은 거 필요하나</mm-text>
+      </div>
+      <div style="">
+        <mm-text variant="label">Move</mm-text>
+        <mm-text variant="title">562 kcal</mm-text>
+      </div>
+    </mm-group>
+  </mm-tile>
+  <mm-tile>
+    <mm-group alignment="vertical">
+      <mm-keyvalue key="상품 금액" value="₩ 160,000"></mm-keyvalue>
+      <mm-keyvalue key="서비스 수수료" value="₩ 3,000"></mm-keyvalue>
+      <mm-row justifyContent="space-between">
+        <mm-text variant="subhead">총 합계 (KRW)</mm-text>
+        <mm-text variant="subhead">₩ 163,000</mm-text>
+      </mm-row>
+      <!-- <mm-keyvalue size="large" key="총 합계 (KRW)" value="₩ 163,000"> </mm-keyvalue> -->
+    </mm-group>
+    <footer style="margin: var(--space-4) 0 0 0">
+      <mm-button variant="primary" isfullwidth="true">구매 확정하고</mm-button>
+    </footer>
+  </mm-tile>
 
+  <mm-tile>
+    <header
+      style="
+        height: var(--size-large);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      "
+    >
+      <mm-text variant="subhead">내 요금제</mm-text>
+      <button style="color: var(--color-primary); font-weight: bold; text-decoration: underline">
+        요금제 변경하기
+      </button>
+    </header>
     <mm-tile>
-      <header
+      <div
         style="
-          height: var(--size-large);
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
+          padding: 1rem;
+          box-sizing: border-box;
+          border-radius: var(--radius);
+          background: var(--color-background-weak);
+          text-align: center;
         "
       >
-        <mm-text variant="subhead">내 요금제</mm-text>
-        <button style="color: var(--color-primary); font-weight: bold; text-decoration: underline">
-          요금제 변경하기
-        </button>
-      </header>
-      <mm-tile>
-        <div
-          style="
-            padding: 1rem;
-            box-sizing: border-box;
-            border-radius: var(--radius);
-            background: var(--color-background-weak);
-            text-align: center;
-          "
-        >
-          택배사에 직접 연락하지 않아도<br />영업일 기준 3일 이내에 방문합니다.
-          <small style="display: block; margin: var(--space-2) 0 0">방문 택배사 : 한진택배</small>
-        </div>
-        <ul class="checklist" style="margin: 1rem 0 0">
-          <li>
-            환불은 반품상품 도착 이후 결제방법에 따라 진행됩니다. 상품에 이상이 있는 경우는
-            반품처리가 되지 않을 수도 있으며, 이 경우 고객센터에서 연락을 드립니다.
-          </li>
-        </ul>
-      </mm-tile>
+        택배사에 직접 연락하지 않아도<br />영업일 기준 3일 이내에 방문합니다.
+        <small style="display: block; margin: var(--space-2) 0 0">방문 택배사 : 한진택배</small>
+      </div>
+      <ul class="checklist" style="margin: 1rem 0 0">
+        <li>
+          환불은 반품상품 도착 이후 결제방법에 따라 진행됩니다. 상품에 이상이 있는 경우는 반품처리가
+          되지 않을 수도 있으며, 이 경우 고객센터에서 연락을 드립니다.
+        </li>
+      </ul>
     </mm-tile>
+  </mm-tile>
 
+  <section class="component-guide">
     <blockquote>
       <ul class="checklist">
         <li>

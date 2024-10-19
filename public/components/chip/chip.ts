@@ -21,7 +21,9 @@ import { importScript, makeStyleSheet } from '../../javascripts/components/utils
 // host.shadowRoot?.adoptedStyleSheets = [sheet]
 
 class Chip extends HTMLElement {
-  // static observedAttributes = ['variant', 'data-variant']
+  // static get observedAttributes() {
+  //   return ['size', 'status', 'icon', 'type', 'value', 'label']
+  // }
   constructor() {
     super()
     const shadow = this.attachShadow({ mode: 'open' })
@@ -72,10 +74,6 @@ class Chip extends HTMLElement {
     if (this.status === 'disabled') host.setAttribute('disabled', 'true')
     if (this.status === 'checked') host.setAttribute('aria-checked', 'true')
   }
-
-  // static get observedAttributes() {
-  //   return ['size', 'status', 'icon', 'type', 'value', 'label']
-  // }
 
   get size() {
     return this.getAttribute('size')

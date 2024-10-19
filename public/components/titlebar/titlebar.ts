@@ -1,15 +1,12 @@
 import { makeStyleSheet } from '../../javascripts/components/utils'
 
 class TitleBar extends HTMLElement {
-  static observedAttributes = ['status']
-
   constructor() {
     super()
     const shadow = this.attachShadow({ mode: 'open' })
 
     const container = document.createElement('header')
     container.classList.add('titlebar')
-    // container.role='banner' | 'navigation'
 
     const title = document.createElement('span')
     title.classList.add('titlebar-title')
@@ -21,7 +18,8 @@ class TitleBar extends HTMLElement {
     const icon = document.createElement('mm-icon')
     icon.setAttribute('slot', 'icon')
     icon.setAttribute('name', 'arrow-left')
-    back.append(icon)
+
+    back.appendChild(icon)
 
     // if (this.hiddenBack) back.hidden = true
 
@@ -51,7 +49,7 @@ class TitleBar extends HTMLElement {
   connectedCallback() {}
   disconnectedCallback() {}
   attributeChangedCallback(name, oldValue, newValue) {
-    this.shadowRoot?.querySelector('mm-chip button')?.setAttribute('data-variant', newValue)
+    // this.shadowRoot?.querySelector('mm-chip button')?.setAttribute('data-variant', newValue)
   }
 }
 

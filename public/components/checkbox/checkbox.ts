@@ -1,5 +1,6 @@
 import { makeStyleSheet } from '../../javascripts/components/utils'
 
+// TODO
 class CustomHTMLElement extends HTMLElement {
   constructor() {
     super()
@@ -8,10 +9,9 @@ class CustomHTMLElement extends HTMLElement {
 
 class Checkbox extends CustomHTMLElement {
   static formAssociated = true
-  static observedAttributes = ['checked', 'disabled']
-  // static get observedAttributes() {
-  //   return ['checked', 'disabled']
-  // }
+  static get observedAttributes() {
+    return ['checked', 'disabled']
+  }
 
   constructor() {
     super()

@@ -152,7 +152,9 @@
       <div class="login-social oauth">
         <mm-button isfullwidth="true" class="login-social-facebook"> 페이스북으로 시작 </mm-button>
       </div>
-      <mm-separator>또는</mm-separator>
+      <mm-separator spacing="small">
+        <mm-text slot="text" variant="body">또는</mm-text>
+      </mm-separator>
       <mm-textfield type="email" label="이메일" placeholder="soojubm@gmail.com"></mm-textfield>
       <!-- <small class="textfield-helper" id="name-hint" role="alert" data-english="Enter an email address.">이메일을 입력하세요.</small> -->
 
@@ -271,7 +273,7 @@
     </footer>
   </form>
 
-  <form class="authentication" name="password" action="" method="">
+  <form class="authentication" name="password" action="" method="" style="max-width: 560px">
     <header class="authentication-head">
       <h2 class="authentication-head-title" title="Reset Your Password">Reset Your Password</h2>
       <p
@@ -297,6 +299,23 @@
     <aside class="" style="margin-top: 1.5rem">
       <p>이메일을 받지 못하셨나요? <a href="">알아보기</a></p>
     </aside>
+  </form>
+
+  <form class="authentication" name="password-2" style="max-width: 560px" action="">
+    <header class="authentication-head">
+      <h1 variant="title" class="authentication-head-title">비밀번호 재설정</h1>
+      <p class="authentication-head-description">
+        Enter your email to receive a password reset link
+      </p>
+    </header>
+    <fieldset class="authentication-fieldset">
+      <mm-textfield label="새 비밀번호" placeholder="soojubm@gmail.com" autofocus></mm-textfield>
+      <p role="alert" class="textfield-helper" hidden>이메일 형식이 아니에요.</p>
+      <mm-textfield label="새 비밀번호 확인" placeholder="soojubm@gmail.com"></mm-textfield>
+    </fieldset>
+    <footer class="authentication-foot">
+      <mm-button type="submit" variant="primary">비밀번호 변경</mm-button>
+    </footer>
   </form>
 
   <form class="authentication verify" name="verify" style="max-width: 560px">
@@ -345,28 +364,6 @@
     <span class="password-foot-back password-link" title="">
       <a href="signin.html">인증번호 재전송</a>
     </span>
-  </form>
-
-  <form class="authentication" name="password-2" style="max-width: 560px" action="">
-    <header class="authentication-head">
-      <h1 variant="title" class="authentication-head-title">비밀번호 재설정</h1>
-      <p class="authentication-head-description">
-        안전한 비밀번호를 만들고 같은 비밀번호를 다른 계정에 사용하지 마세요.
-      </p>
-      <p>
-        8자 이상 입력하세요. 다른 사이트에서 쓰는 비밀번호나 애완동물의 이름처럼 추측하기 쉬운
-        이름은 사용하지 마세요.
-      </p>
-      <p>비밀번호를 변경하면 기기에서 로그아웃되지만, 일부 예외가 있습니다.</p>
-    </header>
-    <fieldset class="authentication-fieldset">
-      <mm-textfield label="새 비밀번호" placeholder="soojubm@gmail.com" autofocus></mm-textfield>
-      <p role="alert" class="textfield-helper" hidden>이메일 형식이 아니에요.</p>
-      <mm-textfield label="새 비밀번호 확인" placeholder="soojubm@gmail.com"></mm-textfield>
-    </fieldset>
-    <footer class="authentication-foot">
-      <mm-button type="submit" variant="primary">비밀번호 변경</mm-button>
-    </footer>
   </form>
 
   <section style="margin: 8rem 0">

@@ -74,13 +74,6 @@ class Avatar extends HTMLElement {
 
 export default Avatar
 
-// static get observedAttributes() {
-//   return ['variant', 'size', 'badge']
-// }
-// attributeChangedCallback(attrName, oldVal, newVal) {
-//   this[attrName] = newVal
-// }
-
 // Attach the created elements to the shadow dom
 // <span class="avatar-badge"></span>
 // container.appendChild(label)

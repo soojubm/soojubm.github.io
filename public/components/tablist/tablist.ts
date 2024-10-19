@@ -1,6 +1,9 @@
 import { makeStyleSheet } from '../../javascripts/components/utils'
 
 class Tablist extends HTMLElement {
+  static get observedAttributes() {
+    return ['aria-selected']
+  }
   constructor() {
     super()
     const shadow = this.attachShadow({ mode: 'open' })
@@ -58,9 +61,6 @@ class Tablist extends HTMLElement {
   }
   get variant() {
     return this.getAttribute('variant')
-  }
-  static get observedAttributes() {
-    return ['aria-selected']
   }
   connectedCallback() {}
   disconnectedCallback() {}
