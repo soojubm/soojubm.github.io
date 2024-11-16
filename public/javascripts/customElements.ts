@@ -2,7 +2,7 @@ class CloseButton extends HTMLElement {
   constructor() {
     super()
     this.innerHTML = `
-      <button class="chip">
+      <button class="">
         <span class="material-symbols-outlined">close</span>
       </butt>
     `

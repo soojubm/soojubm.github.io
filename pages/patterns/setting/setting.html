@@ -40,7 +40,7 @@
       <mm-menuitem label="Premium 개인" description="월간 구독">
         <mm-avatar slot="avatar" size="large" default="true"></mm-avatar>
         <!-- <mm-icon slot="action" name="arrow-right" aria-label="자세히보기"></mm-icon> -->
-        <mm-chip slot="action" aria-label="자세히보기">구독 관리</mm-chip>
+        <mm-button slot="action" aria-label="자세히보기">구독 관리</mm-button>
       </mm-menuitem>
     </mm-tile>
     <p style="margin: var(--space-3) 0 0; line-height: 1.4">
@@ -60,9 +60,7 @@
         관리하여 iPhone 백업을 유지하십시오.</mm-text
       >
       <div style="height: var(--space-4)"></div>
-      <mm-group variant="chip">
-        <mm-chip>저장 공간 추가</mm-chip>
-      </mm-group>
+      <mm-button>저장 공간 추가</mm-button>
     </mm-tile>
 
     <br /><br />
@@ -80,8 +78,8 @@
         </mm-menuitem>
         <div style="height: var(--space-2)"></div>
         <mm-group variant="chip">
-          <mm-chip>프로필 사진 추가 / 업데이트</mm-chip>
-          <!-- <mm-chip>기본 이미지로 변경</mm-chip> -->
+          <mm-button>프로필 사진 추가 / 업데이트</mm-button>
+          <!-- <mm-button>기본 이미지로 변경</mm-button> -->
         </mm-group>
         <div style="height: var(--space-2)"></div>
         <!-- <div
@@ -125,15 +123,6 @@
         <mm-tile>
           <mm-menuitem>
             <div slot="text">
-              <mm-text variant="label">이모지</mm-text>
-              <mm-text variant="body">🐻</mm-text>
-            </div>
-            <mm-icon slot="action" name="arrow-right"></mm-icon>
-          </mm-menuitem>
-        </mm-tile>
-        <mm-tile>
-          <mm-menuitem>
-            <div slot="text">
               <mm-text variant="word-weak">관심분야</mm-text>
               <mm-text variant="word">문화/예술, 인권, 경제</mm-text>
             </div>
@@ -165,7 +154,7 @@
             <mm-text variant="word-weak">이메일 주소</mm-text>
             <mm-text variant="word">soojubm@gmail.com</mm-text>
           </div>
-          <mm-chip slot="action">Update email</mm-chip>
+          <mm-button slot="action">Update email</mm-button>
           <!-- <mm-icon slot="action" name="arrow-right"></mm-icon> -->
         </mm-menuitem>
       </mm-tile>
@@ -183,7 +172,6 @@
 
     <br /><br />
 
-    <br /><br />
     <mm-group alignment="vertical">
       <mm-text variant="subhead">뉴스레터</mm-text>
       <mm-tile variant="">
@@ -217,13 +205,13 @@
               <mm-text variant="word-strong">Facebook</mm-text>
               <mm-text variant="word">사용자의 Opera와 Facebook 게정을 연결하세요.</mm-text>
             </div>
-            <mm-chip slot="action">연동하기</mm-chip>
+            <mm-button slot="action">연동하기</mm-button>
           </mm-menuitem>
         </mm-tile>
         <mm-tile>
           <mm-menuitem label="soojubm@gmail.com">
             <mm-avatar slot="avatar"> </mm-avatar>
-            <mm-chip slot="action" status="disabled">Google 연동해제</mm-chip>
+            <mm-button slot="action" status="disabled">Google 연동해제</mm-button>
           </mm-menuitem>
           <div
             style="
@@ -250,10 +238,10 @@
           <mm-keyvalue key="결제수단" value="현대카드 ****-****-****-7922"></mm-keyvalue>
         </mm-group>
         <footer style="margin: 1rem 0 0 0; position: relative">
-          <mm-chip>
+          <mm-button>
             결제수단변경
             <mm-icon slot="suffix" name="arrow-right"></mm-icon>
-          </mm-chip>
+          </mm-button>
         </footer>
       </mm-tile>
     </mm-group>
@@ -277,7 +265,7 @@
               ><mm-link href="">비활성화 페이지</mm-link>에서 할 수 있습니다.</mm-text
             >
           </div>
-          <mm-chip slot="action" variant="danger">비활성화</mm-chip>
+          <mm-button slot="action" variant="danger">비활성화</mm-button>
         </mm-menuitem>
       </mm-tile>
     </mm-group>

@@ -31,7 +31,6 @@ class Checkbox extends CustomHTMLElement {
     input.setAttribute('name', this.name || '')
 
     input.addEventListener('change', () => {
-      alert()
       // 타겟이 check all 일 때
       if (this.disabled) return
     })

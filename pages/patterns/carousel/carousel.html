@@ -1,6 +1,6 @@
 <main class="page" aria-label="site">
   <!-- // Chris said Marcus replied -->
-  <article class="article">
+  <article class="article js-observer">
     <mm-text variant="title">Carousel</mm-text>
     <mm-text variant="body-large">작성 중.</mm-text>
     <p>aka. carousel, slider, stepper</p>
@@ -21,20 +21,20 @@
           </mm-entity>
         </nav>
         <nav class="carousel-arrows">
-          <mm-chip
+          <mm-button
             variant="back"
             icon="arrow-left"
             class="carousel-arrows-prev js-carousel-prev"
             aria-label="이전"
           >
-          </mm-chip>
-          <mm-chip
+          </mm-button>
+          <mm-button
             variant="back"
             icon="arrow-right"
             class="carousel-arrows-next js-carousel-next"
             aria-label="다음"
           >
-          </mm-chip>
+          </mm-button>
         </nav>
         <mm-group class="carousel-viewer js-carousel-viewer">
           <mm-entity size="huge" label="폴 뉴먼" description="주연">
@@ -54,7 +54,8 @@
       </section>
     </section>
 
-    <section class="component-guide">
+    <section class="component-guide js-observer">
+      <p class="js-observer">test</p>
       <mm-text variant="subhead">Behavior</mm-text>
       <mm-text variant="body">
         터치 제스쳐를 지원하지 않는 환경에서는 arrow 버튼을 제공하세요.

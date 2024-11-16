@@ -116,10 +116,10 @@
   </section>
 
   <mm-group variant="chip">
-    <mm-chip>#Webpack</mm-chip>
-    <mm-chip>#HTML5</mm-chip>
-    <mm-chip>#accessibility</mm-chip>
-    <mm-chip>#typography</mm-chip>
+    <mm-button>#Webpack</mm-button>
+    <mm-button>#HTML5</mm-button>
+    <mm-button>#accessibility</mm-button>
+    <mm-button>#typography</mm-button>
   </mm-group>
   <mm-separator></mm-separator>
   <section class="post-reaction">
@@ -154,7 +154,7 @@
         <input class="textfield-input js-comment-textfield" type="text" name="" id="comment-password" placeholder="비밀번호을 입력하세요." />
       </div> -->
       <footer class="comment-write-footer">
-        <mm-button variant="primary" data-temp="게시/등록">댓글 게시</mm-button>
+        <mm-button variant="primary" size="large" data-temp="게시/등록">댓글 게시</mm-button>
       </footer>
     </form>
   </mm-tile>
@@ -174,7 +174,7 @@
         답글 7개 더보기
       </button>
       <div style="position: absolute; right: 0; top: 0">
-        <mm-chip variant="plain" icon="more-vert" class="js-toggle"> </mm-chip>
+        <mm-button variant="plain" icon="more-vert" class="js-toggle"> </mm-button>
         <menu class="comment-list-item-menu">
           <button class="">수정</button>
           <button class="">삭제</button>
@@ -196,19 +196,19 @@
       <li>수천 가지 질문에 답하는 심층 기사를 받아보세요.</li>
       <li>개인적, 직업적 목표를 달성하세요</li>
     </ul>
-    <mm-button variant="primary"> 멤버십 가입하기 </mm-button>
+    <mm-button variant="primary" size="large"> 멤버십 가입하기 </mm-button>
   </aside>
 </main>
 
 <nav class="post-pagination" style="margin: 2rem 0">
   <a class="post-pagination-previous" href="#">
-    <mm-chip variant="back" icon="arrow-left"> </mm-chip>
+    <mm-button variant="back" icon="arrow-left"> </mm-button>
     <div style="height: var(--space-3)"></div>
     <mm-text variant="label" title="prev article">이전 콘텐츠</mm-text>
     <mm-text variant="subhead">Return to all articles</mm-text>
   </a>
   <a class="post-pagination-next" href="#">
-    <mm-chip variant="back" icon="arrow-right"> </mm-chip>
+    <mm-button variant="back" icon="arrow-right"> </mm-button>
     <div style="height: var(--space-3)"></div>
     <mm-text variant="label">다음 콘텐츠</mm-text>
     <mm-text variant="subhead">Avoid invisible text during font loading</mm-text>

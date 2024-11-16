@@ -65,7 +65,6 @@ const components = [
   'avatar',
 
   'button',
-  'chip',
   'tag',
   'checkbox',
   'radio',
@@ -76,7 +75,6 @@ const components = [
   'bar',
 
   'tile',
-  'panel',
   'menuitem',
   'switch',
   'tooltip',

@@ -3,7 +3,7 @@
 :host {
   --button-min-width: 5rem;
 
-  --button-size: var(--size-large); // button-height
+  --button-size: var(--size-medium); // button-height
 
   --button-padding-block: 0;
   --button-padding-inline: var(--space-4);
@@ -49,7 +49,24 @@
 :host(.primary) {}
 :host([variant="primary"]) .button {
   --button-color: var(--color-primary);
-  --button-text-color: var(--gray0);}
+  --button-text-color: var(--gray0);
+}
+
+
+.icon-button {
+  /* // reset */
+  font-family: inherit;
+  font-family: var(--font-family);
+  font-size: inherit;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width:  var(--button-size);
+  height: var(--button-size);
+  border-radius: var(--button-radius);
+  background: var(--button-color);
+}
 
 .button {
   /* // reset */
@@ -61,7 +78,6 @@
   align-items: center;
   justify-content: center;
   gap: var(--space-2);
-  min-width: var(--button-min-width);
   height: var(--button-size);
   padding: 0 var(--button-padding-inline);
   border: var(--button-border);
@@ -108,16 +124,15 @@
   padding-bottom: 5px;
 }
 
-.button[data-size=small] {
-  --button-min-width: var(--size-medium);
-  --button-size: var(--size-medium);
-  --button-padding-inline: var(--space-3);
-  line-height: 1; // TODO
+.button[data-size=large] {
+  --button-size: var(--size-large);
+  min-width: var(--button-min-width);
+
 }
+
 .button[data-isfullwidth=true] {
   width: 100%;
 }
-
 
 .button[aria-selected] {
   --chip-color-background: var(--color-background-strong);
@@ -153,3 +168,125 @@ button:not(:focus) {outline:0;} */
   box-shadow: var(--status-hover);
 }
 */
+
+
+
+
+
+
+
+/* reset */
+button {
+  padding: 0;
+  border: 0;
+  font-family: var(--font-family);
+  font-size: inherit;
+}
+em, i  {
+  font-style: normal;
+}
+
+:host {
+  --chip-color-border: 0;
+  --chip-color-background: var(--color-background-weak);
+  --chip-color-text: var(--color-text);
+  --chip-radius: var(--radius);
+  --chip-border-color: transparent;
+  --chip-border: 1px solid var(--chip-border-color);
+  --chip-size: var(--size-medium);
+  --chip-inset: null;
+  --chip-shadow: none;
+}
+
+/* TODO 요거 .chip */
+:host([variant=plain]) {
+  --chip-color-background: none;
+  --chip-color-border: 0;
+}
+
+:host([variant=back]) {
+  --chip-color-background: var(--color-background);
+  --chip-border: var(--border);
+  --chip-radius: 50%;
+  --chip-shadow: var(--shadow);
+}
+/* 아래는 안됨. 상속을 못 함 data attr */
+.chip[data-variant=back] {
+}
+
+/* @media (hover) and (pointer: fine) {
+  &:hover {box-shadow:var(--status-hover);}
+}
+*/
+
+/* TODO donesnt using ? for chip in textfield  */
+/* gap 제거. icon only에 label 태그 때문. tag에서도 */ 
+/* 이모지 2개 나옴.. */
+/* outline: 2px solid var(--color-background); */
+
+.chip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--size-medium);
+  height: var(--chip-size);
+  gap: var(--space-2);
+  padding: 0 var(--space-3);
+  border: var(--chip-border);
+  border-radius: var(--chip-radius);
+  box-shadow: var(--chip-shadow);
+  background: var(--chip-color-background);
+  color: var(--chip-color-text);
+  position: relative;
+  &:hover {
+    box-shadow:var(--hover);
+    cursor: pointer;
+  }
+}
+
+.chip:disabled:not(:hover) {
+  opacity:.5;
+  cursor:not-allowed;
+}
+.chip-label {
+  line-height: 1;
+  color: inherit;
+  text-transform: capitalize;
+}
+.chip-name {
+  margin: 0 var(--space-1) 0 0;
+  color:var(--color-text-light);}
+.chip-name:after {content:': ';}
+
+.chip[aria-selected] {
+  --chip-color-background: var(--color-background-strong);
+  color: var(--color-text-strong);
+}
+.chip[aria-checked=true] {
+  border: 1px solid var(--color-background-strong);
+}
+
+.chip[aria-expanded] {}
+.chip[aria-pressed] {}
+.chip[aria-haspopup] {}
+
+.chip[data-variant=destructive] {
+  background-color: var(--red100);
+  color: var(--red800);
+}
+
+::slotted([slot=prefix]) {margin-right:var(--space-2);}
+::slotted([slot=suffix]) {margin-left:var(--space-2);}
+
+/*
+.chip-label ~ ::slotted([slot=badge]) {
+  margin-right: -0.25rem;
+} */
+
+// .chip[aria-expanded=true] {
+//   background-image: url(
+//     'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48"><path d="M480 696 280 497h400L480 696Z"/></svg>');
+//   background-repeat: no-repeat;
+//   background-size: 14px;
+//   background-position: 90% 50%;
+// }

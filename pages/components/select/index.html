@@ -15,7 +15,7 @@
 
     <section class="component-example">
       <div class="select" style="width: fit-content; position: relative">
-        <mm-chip>칩 형태 셀렉트</mm-chip>
+        <mm-button>칩 형태 셀렉트</mm-button>
         <select
           id="select1"
           style="opacity: 0; position: absolute; left: 0; right: 0; top: 0; bottom: 0"
@@ -24,7 +24,7 @@
         </select>
       </div>
       <mm-separator></mm-separator>
-      <div class="select" style="position: relative">
+      <div class="select" style="max-width: 300px; position: relative">
         <label class="textfield-label" for="select1">셀렉트 레이블</label>
         <div
           class="textfield-input"
@@ -64,8 +64,6 @@
     </section>
 
     <section class="component-guide">
-      <mm-text variant="subhead">Hidden native select</mm-text>
-      <mm-text variant="body">네이티브 셀렉트</mm-text>
       <mm-text variant="subhead">Trigger button styling</mm-text>
       <mm-text variant="body">
         var selected = Array.from(dnd.options).filter((option) => { return option.selected;

@@ -26,7 +26,7 @@ class Icon extends HTMLElement {
     const shadow = this.attachShadow({ mode: 'open' })
 
     const container = document.createElement('i')
-    container.role = 'img'
+    // container.role = 'img'
     container.classList.add('icon', ICON_CLASSNAME)
     if (this.size) container.dataset.size = this.size
 

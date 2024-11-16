@@ -5,16 +5,16 @@
 .component-example {
   margin: 2rem -5vw 3rem calc(-5vw + 1rem);
   padding: 2rem calc(var(--grid-margin) - 1rem);
-  border-radius: var(--radius) 0 0 var(--radius);
+  border-radius: var(--radius) var(--radius) 0 0;
   margin: 2rem 0 3rem calc(-5vw + 1rem);
   border: var(--border);
+  border-bottom: 0;
   /* 
   // fallback for old browsers
   // background: -webkit-linear-gradient(to bottom, #155799, #159957);
   Chrome 10-25, Safari 5.1-6
   // background: linear-gradient(to bottom, #155799, #159957);
   W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  box-shadow: var(--shadow);
   /* box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.0125),
   0 2px 2px hsl(0deg 0% 0% / 0.0125),
   0 4px 4px hsl(0deg 0% 0% / 0.0125),
@@ -24,13 +24,13 @@
 }
 
 
-[data-theme=dark] .component-example {
+/* [data-theme=dark] .component-example {
   box-shadow: 0 1px 1px hsla(0, 0%, 100%, 0.013),
   0 2px 2px hsla(0, 0%, 100%, 0.0125),
   0 4px 4px hsla(0, 0%, 100%, 0.0125),
   0 8px 8px hsla(0, 0%, 100%, 0.0125),
   0 16px 16px hsla(0, 0%, 100%, 0.0125)
-}
+} */
 
 .component-case {
   /* TODO listBox  */
@@ -68,7 +68,7 @@
   position:relative;
 }
 .component-props mm-text {display:none}
-.component-props dl {display:flex;flex-wrap:wrap;column-gap:var(--space-1);font-size:16px;}
+.component-props dl {display:flex;flex-wrap:wrap;column-gap:var(--space-1);}
 .component-props dl dt {font-weight:500;}
 .component-props dl dt::after {content:':'}
 .component-props dl dd {margin-right:var(--space-3);font-weight: var(--font-weight-bold);font-style:italic;;color:rgb(29, 161, 242)}

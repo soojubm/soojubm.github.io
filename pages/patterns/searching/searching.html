@@ -23,20 +23,20 @@
             <!-- <mm-link>모두보기</mm-link> -->
             <mm-menuitem label="고슴이">
               <mm-avatar slot="avatar" style="background: beige">🦔</mm-avatar>
-              <mm-chip slot="action" variant="plain" icon="xmark" aria-label="검색 내역 삭제">
+              <mm-button slot="action" variant="plain" icon="xmark" aria-label="검색 내역 삭제">
             </mm-menuitem>
             <mm-menuitem label="개구리">
               <mm-avatar slot="avatar" style="background: var(--green100)">🐸</mm-avatar>
-              <mm-chip slot="action" variant="plain" icon="xmark" aria-label="검색 내역 삭제">
+              <mm-button slot="action" variant="plain" icon="xmark" aria-label="검색 내역 삭제">
             </mm-menuitem>
           </mm-group>
         </mm-tile>
 
         <mm-group variant="chip" style="margin: var(--space-3) 0 1.5rem">
-          <mm-chip>아파트열쇠를빌려드립니다</mm-chip>
-          <mm-chip>로얄테넌바움</mm-chip>
-          <mm-chip>소매치기</mm-chip>
-          <mm-chip>이탈리아여행</mm-chip>
+          <mm-button>아파트열쇠를빌려드립니다</mm-button>
+          <mm-button>로얄테넌바움</mm-button>
+          <mm-button>소매치기</mm-button>
+          <mm-button>이탈리아여행</mm-button>
         </mm-group>
 
         <mm-group alignment="vertical">
@@ -183,7 +183,7 @@
         <mm-text variant="body-bold">Android 패턴</mm-text>
         <form class="searchfield" style="max-width: var(--width-medium)">
           <div style="position: absolute; left: 0">
-            <mm-chip icon="arrow-left" class="searchfield-prefix"> </mm-chip>
+            <mm-button icon="arrow-left" class="searchfield-prefix"> </mm-button>
           </div>
           <input
             class="searchfield-input"
@@ -192,7 +192,7 @@
             style="padding-left: 3rem"
           />
           <div style="position: absolute; right: var(--space-2); top: var(--space-2); z-index: 1">
-            <mm-chip icon="xmark"> </mm-chip>
+            <mm-button icon="xmark"> </mm-button>
           </div>
         </form>
       </mm-tile>
@@ -216,8 +216,8 @@
       <mm-tile>
         <mm-result label="''키워드'와(과) 일치하는 내용이 없습니다.">
           <mm-group slot="list" variant="chip">
-            <mm-chip> 🦔 검색어 제공 </mm-chip>
-            <mm-chip>🐈‍⬛ 애옹</mm-chip>
+            <mm-button> 🦔 검색어 제공 </mm-button>
+            <mm-button>🐈‍⬛ 애옹</mm-button>
           </mm-group>
         </mm-result>
       </mm-tile>

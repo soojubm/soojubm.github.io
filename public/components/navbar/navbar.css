@@ -162,22 +162,22 @@
   z-index: -1;
 }
 
-.is-opened-menu .sidebar-menu {
+.is-menu-opened .sidebar-menu {
   transform:translateX(0);overflow-y:auto;
   overscroll-behavior:contain;
 }
 
-/* .is-opened-menu .page {
+/* .is-menu-opened .page {
   padding-left: calc(var(--width-sidemenu) + 1rem);
 } */
 
-.is-opened-menu .navbar-logo {
+.is-menu-opened .navbar-logo {
   z-index: 8;
 }
 
 /* --small */
 @media (max-width:1080px) {
-  .is-opened-menu .page {
+  .is-menu-opened .page {
     padding-left: var(--grid-margin);
   }
 }

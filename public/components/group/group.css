@@ -5,6 +5,7 @@
 .group {
   display:flex;
   flex-wrap:wrap;
+  gap: var(--space-2);
 }
 /* .stack[data-scroll=vertical] {@include stack-vertical-scroll;} */
 /* // space-between + column width */
@@ -20,14 +21,13 @@
 
 /* .group[data-variant=avatar] {gap:var(--space-2);} */
 /* TODO : last-of-tpye은 avagtar와 label 모두에 적용됨 */
-.group[data-variant=avatar] {align-items: center;}
+.group[data-variant=avatar] {align-items: center;gap:0;}
 .group[data-variant=avatar] > * + * {margin-left:-.5rem;}
 /* .group[data-variant=avatar] > *:nth-last-child(1) {margin-left:var(--space-2);} */
 
 /* 6px spacing */
 .group[data-variant=tag] {gap:6px}
-.group[data-variant=button],
-.group[data-variant=chip] {
+.group[data-variant=button] {
   gap:var(--space-2);
 }
 

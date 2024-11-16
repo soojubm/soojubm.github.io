@@ -3,7 +3,6 @@ import { makeStyleSheet } from '../../javascripts/components/utils'
 class Switch extends HTMLElement {
   constructor() {
     super()
-    // this.innerHTML = `<button class="chip"></button>`
     const shadow = this.attachShadow({ mode: 'open' })
 
     const container = document.createElement('div')

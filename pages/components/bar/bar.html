@@ -5,19 +5,18 @@
     <section class="component-example">
       <menu role="menubar" style="display: flex; align-items: center">
         <mm-checkbox>28 selected</mm-checkbox>
-        <mm-chip icon="bonfire" style="margin-left: auto"> </mm-chip>
-        <mm-chip variant="plain" icon="more-vert"> </mm-chip>
+        <mm-button icon="bonfire" style="margin-left: auto"> </mm-button>
+        <mm-button variant="plain" icon="more-vert"> </mm-button>
       </menu>
       <mm-separator></mm-separator>
       <mm-group variant="chip" role="menubar">
         <mm-textfield size="small" hiddenLabel="false" placeholder="검색꾸">
-          <!-- <mm-avatar slot="prefix" icon="search"></mm-avatar> -->
           <mm-icon slot="prefix" name="search"></mm-icon>
         </mm-textfield>
-        <mm-chip variant="" name="Sort">
+        <mm-button variant="" name="Sort">
           Last modified
           <mm-icon slot="suffix" name="nav-arrow-down"></mm-icon>
-        </mm-chip>
+        </mm-button>
       </mm-group>
     </section>
   </article>
@@ -27,24 +26,24 @@
     <mm-text variant="body-large"> 페이지 헤더 .</mm-text>
 
     <section class="component-example">
-      <mm-titlebar heading="수줍이님" role="navigation">
+      <mm-titlebar heading="수줍이님">
         <mm-group slot="action" variant="chip">
-          <mm-chip variant="plain" icon="cart"> </mm-chip>
+          <mm-button variant="plain" icon="cart"> </mm-button>
         </mm-group>
       </mm-titlebar>
-      <mm-titlebar heading="Product 뒤로가기 없는 패턴 추가하기" role="navigation">
-        <mm-chip slot="action" variant="plain" icon="cart"> </mm-chip>
+      <mm-titlebar heading="Product 뒤로가기 없는 패턴 추가하기">
+        <mm-button slot="action" variant="plain" icon="cart"> </mm-button>
       </mm-titlebar>
       <!-- <div class="titlebar-backdrop js-header"></div> -->
-      <mm-titlebar class="js-titlebar" role="navigation" data-size="large">
+      <mm-titlebar class="js-titlebar" data-size="large">
         <mm-group slot="action" variant="chip">
-          <mm-chip>저장</mm-chip>
-          <mm-chip
+          <mm-button>저장</mm-button>
+          <mm-button
             class="titlebar-back"
             icon="more-vert"
             onclick="javascript:window.location.href='/';"
           >
-          </mm-chip>
+          </mm-button>
         </mm-group>
       </mm-titlebar>
     </section>

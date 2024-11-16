@@ -58,21 +58,19 @@
   </section>
 
   <section class="component-guide">
-    <!-- <mm-text variant="subhead">Visual style</mm-text> -->
+    <mm-text variant="subhead">Meta problems</mm-text>
     <mm-text variant="body">
       label text로 체크박스를 강조하지 마세요. 체크박스의 크기 또는 컨테이너를 강조하여 컴포넌트의
       내부를 독립적으로 유지하세요.
     </mm-text>
     <mm-text variant="body">
-      더 강조된 형태의 체크박스 :: 약관. 전체동의 체크박스와 개별 체크박스. 개별 체크박스는 약관
-      보기 버튼을 포함해야 하기 때문에 tiled로 제공하는 방법도 있다.
+      더 강조된 형태의 체크박스 :: 약관 동의를 위한 패턴에서 전체동의 체크박스와 개별 체크박스를
+      하나의 TermsCheckboxGroup으로 정의할 수 있다. 이 때 개별 체크박스는 약관보기를 위한 링크를
+      포함한다.
     </mm-text>
 
     <mm-text variant="subhead">Groupable</mm-text>
     <mm-text variant="body"> 체크박스를 가로로 정렬하지 마세요. </mm-text>
-
-    <mm-text variant="subhead">A11y</mm-text>
-    <mm-text variant="body">role=checkbox aria-checked=false</mm-text>
 
     <mm-text variant="subhead">Editorial</mm-text>
     <mm-text variant="body">동사를 포함하는 최대 2단어. choice보다 action에 가깝다.</mm-text>
@@ -129,7 +127,7 @@
     </mm-tile>
     <mm-tile>
       <mm-titlebar heading="컬렉션 만들기">
-        <mm-chip slot="action">완료</mm-chip>
+        <mm-button slot="action">완료</mm-button>
       </mm-titlebar>
       <div style="height: 1rem"></div>
       <mm-textfield label="컬렉션 이름" placeholder="컬렉션 이름"></mm-textfield>

@@ -6,11 +6,24 @@
 
 const ANIMATED_CLASSNAME = 'is-observed'
 
-// is scrolled ?
 const scrollAnimation = ({ selector: selector }) => {
   if (!('IntersectionObserver' in window)) return
 
-  const elements = Array.from(document.querySelectorAll(selector))
+  // handleObserver
+  let callback = (entries: IntersectionObserverEntry[], observer) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return
+
+      // entry.target.classList.add(ANIMATED_CLASSNAME)
+      // observer.unobserve(entry.target)
+
+      // entry.intersectionRatio > 0
+      entry.target.classList.toggle(ANIMATED_CLASSNAME, entry.isIntersecting)
+      // entry.target.addEventListener('animationend', event => {
+      //   entry.target.classList.remove(ANIMATED_CLASSNAME)
+      // })
+    })
+  }
   const options: IntersectionObserverInit = {
     root: null,
     rootMargin: '-100px 0px',
@@ -18,22 +31,9 @@ const scrollAnimation = ({ selector: selector }) => {
   }
 
   let observer = new IntersectionObserver(callback, options)
-  elements.forEach(element => observer.observe(element))
 
-  function callback(entries: IntersectionObserverEntry[], observer) {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return
-      entry.target.classList.add(ANIMATED_CLASSNAME)
-      observer.unobserve(entry.target)
-
-      // entry.intersectionRatio > 0
-      //   const isScrolled = element.getBoundingClientRect().top + element.clientHeight * 0.5 - window.innerHeight <= 0
-      // entry.target.classList.toggle(ANIMATED_CLASSNAME, entry.isIntersecting)
-      // entry.target.addEventListener('animationend', event => {
-      //   entry.target.classList.remove(ANIMATED_CLASSNAME)
-      // })
-    })
-  }
+  const targets = Array.from(document.querySelectorAll(selector))
+  targets.forEach(target => observer.observe(target))
 }
 
 export default scrollAnimation

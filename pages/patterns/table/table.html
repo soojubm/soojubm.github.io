@@ -68,18 +68,18 @@
     >
       <mm-text variant="subhead">Products</mm-text>
       <mm-group variant="chip">
-        <mm-chip>
+        <mm-button>
           <mm-icon slot="prefix" name="import"></mm-icon>
           가져오기
-        </mm-chip>
-        <mm-chip status="active"> 추가하기 </mm-chip>
+        </mm-button>
+        <mm-button status="active"> 추가하기 </mm-button>
       </mm-group>
     </header>
     <!-- TODO separator가 공간이 될 수 있고 이것이 어디에 오는지에 따른 컴포넌트가 될 수도. -->
     <mm-group variant="chip">
-      <mm-chip status="active">All</mm-chip>
-      <mm-chip>Active</mm-chip>
-      <mm-chip>Draft</mm-chip>
+      <mm-button status="active">All</mm-button>
+      <mm-button>Active</mm-button>
+      <mm-button>Draft</mm-button>
     </mm-group>
     <div style="height: var(--space-3)"></div>
     <table>
@@ -141,8 +141,8 @@
         <td style="text-align: right">13</td>
         <td>
           <mm-group variant="chip" style="justify-content: flex-end">
-            <mm-chip>액션</mm-chip>
-            <mm-chip variant="plain" icon="more-vert"></mm-chip>
+            <mm-button>액션</mm-button>
+            <mm-button variant="plain" icon="more-vert"></mm-button>
           </mm-group>
         </td>
       </tr>
@@ -176,8 +176,8 @@
         <td style="text-align: right">8</td>
         <td>
           <mm-group variant="chip" style="justify-content: flex-end">
-            <mm-chip>액션</mm-chip>
-            <mm-chip variant="plain" icon="more-vert"></mm-chip>
+            <mm-button>액션</mm-button>
+            <mm-button variant="plain" icon="more-vert"></mm-button>
           </mm-group>
         </td>
       </tr>
@@ -193,28 +193,28 @@
     <section class="component-example">
       <!-- TODO variant pagination -->
       <mm-group variant="chip" aria-label="pagination">
-        <mm-chip variant="plain" class="pagination-previous" aria-label="앞 페이지로 이동">
+        <mm-button variant="plain" class="pagination-previous" aria-label="앞 페이지로 이동">
           이전
-        </mm-chip>
-        <mm-chip
+        </mm-button>
+        <mm-button
           variant="plain"
           class="pagination-next"
           aria-label="뒷 페이지로 이동"
           style="order: 3"
         >
           다음
-        </mm-chip>
-        <mm-chip variant="plain" class="pagination-link" aria-label="맨 앞 페이지로 이동"
-          >1</mm-chip
+        </mm-button>
+        <mm-button variant="plain" class="pagination-link" aria-label="맨 앞 페이지로 이동"
+          >1</mm-button
         >
         <i class="pagination-ellipsis" aria-label="맨 앞 페이지로 이동">...</i>
-        <mm-chip variant="plain" class="pagination-link" href="#" aria-label="1 페이지로 이동">
+        <mm-button variant="plain" class="pagination-link" href="#" aria-label="1 페이지로 이동">
           5
-        </mm-chip>
-        <mm-chip variant="plain" class="pagination-link" href="#" aria-label="1 페이지로 이동">
+        </mm-button>
+        <mm-button variant="plain" class="pagination-link" href="#" aria-label="1 페이지로 이동">
           6
-        </mm-chip>
-        <mm-chip
+        </mm-button>
+        <mm-button
           variant="plain"
           status="active"
           class="pagination-link is-current"
@@ -222,17 +222,17 @@
           aria-current="true"
         >
           7
-        </mm-chip>
-        <mm-chip variant="plain" class="pagination-link" href="#" aria-label="1 페이지로 이동">
+        </mm-button>
+        <mm-button variant="plain" class="pagination-link" href="#" aria-label="1 페이지로 이동">
           8
-        </mm-chip>
-        <mm-chip variant="plain" class="pagination-link" href="#" aria-label="1 페이지로 이동">
+        </mm-button>
+        <mm-button variant="plain" class="pagination-link" href="#" aria-label="1 페이지로 이동">
           9
-        </mm-chip>
+        </mm-button>
         <i class="pagination-ellipsis" aria-label="맨 앞 페이지로 이동">...</i>
-        <mm-chip variant="plain" class="pagination-link" aria-label="맨 뒤 페이지로 이동">
+        <mm-button variant="plain" class="pagination-link" aria-label="맨 뒤 페이지로 이동">
           50
-        </mm-chip>
+        </mm-button>
       </mm-group>
       <aside role="status">
         <small>숙소 300개 이상 중 281 – 300 (airbnb)</small>
@@ -246,10 +246,10 @@
       <mm-separator></mm-separator>
       <div style="display: flex; align-items: center; gap: var(--space-2)">
         page
-        <mm-chip size="small">
+        <mm-button size="small">
           18
           <mm-icon slot="suffix" name="nav-arrow-down"></mm-icon>
-        </mm-chip>
+        </mm-button>
         of 22
       </div>
     </section>

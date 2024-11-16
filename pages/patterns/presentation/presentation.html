@@ -2,13 +2,13 @@
   <nav class="component-navigation" role="group" data-scroll="vertical" role="menubar">
     <mm-group variant="chip">
       <div class="component-navigation-background"></div>
-      <mm-chip class="is-active js-scrollspy-trigger" href="#">Dim</mm-chip>
-      <mm-chip class="js-scrollspy-trigger" href="#">Page</mm-chip>
-      <mm-chip class="js-scrollspy-trigger" href="#">Modal</mm-chip>
-      <mm-chip class="js-scrollspy-trigger" href="#">Toast</mm-chip>
-      <mm-chip class="js-scrollspy-trigger" href="#">Sheet</mm-chip>
-      <mm-chip class="js-scrollspy-trigger" href="#">Popover</mm-chip>
-      <mm-chip class="js-scrollspy-trigger" href="#">Drawer(todo)</mm-chip>
+      <mm-button class="is-active js-scrollspy-trigger" href="#">Dim</mm-button>
+      <mm-button class="js-scrollspy-trigger" href="#">Page</mm-button>
+      <mm-button class="js-scrollspy-trigger" href="#">Modal</mm-button>
+      <mm-button class="js-scrollspy-trigger" href="#">Toast</mm-button>
+      <mm-button class="js-scrollspy-trigger" href="#">Sheet</mm-button>
+      <mm-button class="js-scrollspy-trigger" href="#">Popover</mm-button>
+      <mm-button class="js-scrollspy-trigger" href="#">Drawer(todo)</mm-button>
     </mm-group>
   </nav>
 
@@ -73,7 +73,7 @@
     <mm-text variant="subhead">Modal</mm-text>
     <div class="component-example" style="margin-top: var(--space-4)">
       <footer>
-        <mm-chip variant="secondary" class="js-modal" data-modal="woolf">모달 열기</mm-chip>
+        <mm-button variant="secondary" class="js-modal" data-modal="woolf">모달 열기</mm-button>
       </footer>
 
       <mm-separator></mm-separator>
@@ -103,7 +103,7 @@
 
     <mm-text variant="subhead">Toast</mm-text>
     <div class="component-example" style="margin-top: var(--space-4)">
-      <mm-chip variant="secondary" class="js-toggle">토스트 열기</mm-chip>
+      <mm-button variant="secondary" class="js-toggle">토스트 열기</mm-button>
       <aside class="toast" role="alert">toast test. 사라지는 시간을 정의.</aside>
       <mm-separator></mm-separator>
       <ul class="checklist">
@@ -123,11 +123,11 @@
     <mm-text variant="body">sheet or drawer</mm-text>
     <div class="component-example" style="margin-top: var(--space-4)">
       <!-- <p>To allow users to view optional information or complete sub-tasks in a workflow while keeping the context of the current page, use Sheet.</p> -->
-      <mm-chip variant="secondary" class="js-toggle">시트 열기</mm-chip>
+      <mm-button variant="secondary" class="js-toggle">시트 열기</mm-button>
       <mm-tile variant="elevated" class="sheet js-sheet" role="presentation">
         <button class="sheet-toggle"></button>
         <mm-text variant="subhead" class="sheet-title">Presentation - sheet</mm-text>
-        <mm-chip icon="xmark" class="js-sheet-close" aria-label="close sheet"></mm-chip>
+        <mm-button icon="xmark" class="js-sheet-close" aria-label="close sheet"></mm-button>
         <mm-group variant="menuitem">
           <mm-menuitem data-size="medium" label="iOS 액션 시트 참고">
             <mm-avatar slot="avatar" default="true"></mm-avatar>
@@ -147,7 +147,7 @@
     </ul>
     <div class="component-example" style="margin-top: var(--space-4)">
       <footer style="position: relative">
-        <mm-chip variant="secondary" class="js-toggle" aria-haspopup="">팝오버 열기</mm-chip>
+        <mm-button variant="secondary" class="js-toggle" aria-haspopup="">팝오버 열기</mm-button>
         <mm-tile variant="elevated" class="popover"> 내용 </mm-tile>
       </footer>
     </div>

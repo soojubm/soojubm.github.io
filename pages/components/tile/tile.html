@@ -2,7 +2,7 @@
   <mm-text variant="title" title="or Box">Tiles</mm-text>
   <mm-text variant="body-large">연관 정보를 묶어 시각적으로 강조하는 컨테이너입니다.</mm-text>
   <!-- 추가 콘텐츠에 대한 티저로 사용할 수 있습니다 -->
-   <!-- 세로값을 지정하지 않으면, border-width 만큼 세로 값이 더해진다. -->
+  <!-- 세로값을 지정하지 않으면, border-width 만큼 세로 값이 더해진다. -->
   <dl class="article-aka">
     <dt>a.k.a.</dt>
     <dd title="protocol mozilla">EmphasisBox</dd>
@@ -44,24 +44,18 @@
   </section>
 
   <section class="component-guide">
-    <blockquote>
-      <ul class="checklist">
-        <li>
-          모든 contentbox가 tile 이어야 하는가.transparent tile 을 정의한다면, row 컴포넌트와 어떤
-          차이가 있을까? row는 레이아웃 컴포넌트이고 tile은 형태 컴포넌트이다. bar는 역할 컴포넌트로
-          볼 수 있을 것이다.
-        </li>
-        <li>
-          이 컴포넌트는 조금 더 유연한 유틸리티 성격을 띄어도 되겠다. padding: 1 | 2 | 3 | 4 를
-          받고, 1 2 3 4는 spacing token의 suffix와 페어링
-        </li>
-        <li>2:1. 블리딩 시 높이를 고정해야 한다. ??</li>
-        <li>
-          content area with padding. 또는 마이너스 마진을 가지는 컨텐츠 영역을 별도로 정의하는 것은
-          어떤지. 정렬을 변경할 때의 대응.
-        </li>
-      </ul>
-    </blockquote>
+    <mm-text variant="subhead">Meta problems</mm-text>
+    <ul class="checklist">
+      <li>
+        모든 contentbox가 tile인 것은 어떤가? transparent tile 을 정의한다면, 빈 태그나 빈
+        컴포넌트(Box, Row)와는 어떤 변별이 있나? row는 레이아웃 컴포넌트, tile은 형태 컴포넌트이다.
+      </li>
+      <li>이 컴포넌트는 조금 더 유연한 방식이 되어도 좋겠다. inset을 nuber 타입으로 정의하는.</li>
+      <li>
+        content area with padding. 또는 마이너스 마진을 가지는 컨텐츠 영역을 별도로 정의하는 것은
+        어떤지. 정렬을 변경할 때의 대응.
+      </li>
+    </ul>
     <mm-text variant="subhead">Behavior</mm-text>
     <mm-text variant="body"> flat 형태는 non-clickable. </mm-text>
     <mm-text variant="body">
@@ -105,7 +99,7 @@
       <mm-text variant="word-strong">Bruce Springsteen</mm-text>
       <mm-text variant="word">Product Design Intern @soojubm</mm-text>
       <div style="position: absolute; right: 1rem; top: 1rem">
-        <mm-chip status="active">팔로우</mm-chip>
+        <mm-button status="active">팔로우</mm-button>
       </div>
     </mm-tile>
   </div>
@@ -144,7 +138,7 @@
         <div class="quote-byline-job">Musician</div>
       </cite>
       <div style="height: 1rem"></div>
-      <mm-chip>더 알아보기</mm-chip>
+      <mm-button>더 알아보기</mm-button>
     </div>
 
     <mm-tile>
@@ -168,22 +162,6 @@
       <small>별 다섯개에서 점수만큼 채우는 유아이는 최근 잘 보이지 않는다. 구현이 어려움.</small>
     </mm-tile>
 
-    <mm-tile>
-      <mm-avatar>🥫</mm-avatar>
-      <mm-text variant="subhead">Quote</mm-text>
-      <mm-text variant="body">Don't you know that God is Pooh bear?</mm-text>
-      <div style="height: var(--space-2)"></div>
-      <cite class="quote-byline">
-        <mm-text variant="word-strong">Jack Kerouac</mm-text>
-        <mm-text variant="word-weak">Poet / Novelist</mm-text>
-      </cite>
-      <div style="height: 1rem"></div>
-      <mm-group variant="chip">
-        <mm-chip>더 알아보기</mm-chip>
-        <mm-chip class="quote-later">지금은 괜찮아요</mm-chip>
-      </mm-group>
-    </mm-tile>
-
     <mm-tile variant="" role="listitem">
       <div style="margin-top: -0.125rem"><mm-text variant="subhead">2022년 3월</mm-text></div>
       <!-- FIXME:: tile 안에서의 subhead와 body -->
@@ -203,7 +181,7 @@
 
     <mm-tile variant="" role="listitem">
       <mm-tag slot="category" variant="primary">카테고리</mm-tag>
-      <mm-chip slot="action" icon="more-vert"> </mm-chip>
+      <mm-button slot="action" icon="more-vert"> </mm-button>
       <figure class="media">
         <img src="/public/images/springsteen.jpg" alt="" />
       </figure>
@@ -248,35 +226,33 @@
       </div>
     </mm-tile>
 
-    <mm-tile>
-      <mm-tile variant="elevated">
-        <mm-menuitem>
-          <mm-avatar slot="avatar" size="huge"></mm-avatar>
-          <div slot="text">
-            <mm-text variant="word-large">개인</mm-text>
-            <mm-text variant="body">Apple One</mm-text>
-            <mm-text variant="label">가족 구독</mm-text>
-          </div>
-        </mm-menuitem>
-        <mm-separator></mm-separator>
-        <mm-group alignment="vertical">
-          <mm-keyvalue key="이용기간" value="23.04.09. ~ 23.05.02."> </mm-keyvalue>
-          <mm-keyvalue key="이번 달 결제금액" value="4,258원"> </mm-keyvalue>
-          <mm-keyvalue key="다음 결제일" value="2023. 3. 10."> </mm-keyvalue>
-        </mm-group>
-        <ul class="checklist" style="margin: var(--space-4) 0 0 0">
-          <li>다음 청구일은 2023. 3. 10.입니다.</li>
-          <li>언제든 해지 가능합니다. 혜택 약관이 적용됩니다.</li>
-        </ul>
-        <mm-tile size="small">
-          <mm-text variant="caption">
-            약정 기간이 없습니다. 갱신일 최소 하루 전까지 설정 > Apple ID에서 언제든지 취소할 수
-            있습니다. 취소할 때까지 요금제가 자동 갱신됩니다.
-          </mm-text>
-        </mm-tile>
-        <mm-separator></mm-separator>
-        <mm-text variant="">계정: soojubm@gmail.com</mm-text>
+    <mm-tile variant="elevated">
+      <mm-menuitem>
+        <mm-avatar slot="avatar" size="huge"></mm-avatar>
+        <div slot="text">
+          <mm-text variant="word-large">개인</mm-text>
+          <mm-text variant="body">Apple One</mm-text>
+          <mm-text variant="label">가족 구독</mm-text>
+        </div>
+      </mm-menuitem>
+      <mm-separator></mm-separator>
+      <mm-group alignment="vertical">
+        <mm-keyvalue key="이용기간" value="23.04.09. ~ 23.05.02."> </mm-keyvalue>
+        <mm-keyvalue key="이번 달 결제금액" value="4,258원"> </mm-keyvalue>
+        <mm-keyvalue key="다음 결제일" value="2023. 3. 10."> </mm-keyvalue>
+      </mm-group>
+      <ul class="checklist" style="margin: var(--space-4) 0 0 0">
+        <li>다음 청구일은 2023. 3. 10.입니다.</li>
+        <li>언제든 해지 가능합니다. 혜택 약관이 적용됩니다.</li>
+      </ul>
+      <mm-tile size="small">
+        <mm-text variant="caption">
+          약정 기간이 없습니다. 갱신일 최소 하루 전까지 설정 > Apple ID에서 언제든지 취소할 수
+          있습니다. 취소할 때까지 요금제가 자동 갱신됩니다.
+        </mm-text>
       </mm-tile>
+      <mm-separator></mm-separator>
+      <mm-text variant="">계정: soojubm@gmail.com</mm-text>
     </mm-tile>
 
     <mm-tile>
@@ -287,7 +263,7 @@
         <mm-tag variant="hashtag">Remote friendly</mm-tag>
       </mm-group>
       <div style="height: var(--space-3)"></div>
-      <!-- <mm-chip>View Job</mm-chip> -->
+      <!-- <mm-button>View Job</mm-button> -->
       <button
         style="
           display: flex;

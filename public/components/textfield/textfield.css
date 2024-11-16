@@ -126,8 +126,11 @@ input[type=search]::-webkit-search-results-decoration {display:none;}
   display: flex;
   align-items: center;
   justify-content: center;
+  width: var(--textfield-height); // TODO
   height: var(--textfield-height);
-  position:absolute;top:var(--textfield-icon-position);left:0;
+  position:absolute;
+  top:var(--textfield-icon-position);
+  left:0;
 }
 
 ::slotted([slot=link]) {

@@ -7,7 +7,7 @@
     <p>setting item과 filter item은 비슷한 패턴이지만 역할이 다르기 때문에 분리</p>
     <p>옵션 레이블 2단어 이하, 옵션 갯수 5개 이하 칩그룹을 사용한다.</p>
     <section class="component-example">
-      <mm-chip icon="filter"></mm-chip>
+      <mm-button icon="filter"></mm-button>
       <mm-tile style=" margin: var(--space-2) 0 0">
         <mm-titlebar heading="필터"></mm-titlebar>
         <form class="filter" style="height: 50vh; overflow-y: auto">
@@ -41,9 +41,9 @@
           <fieldset class="filter-fieldset" role="radiogroup">
             <legend class="filter-fieldset-legend">평수</legend>
             <mm-group variant="chip">
-              <mm-chip>10평 미만</mm-chip>
-              <mm-chip>20평</mm-chip>
-              <mm-chip>30평</mm-chip>
+              <mm-button>10평 미만</mm-button>
+              <mm-button>20평</mm-button>
+              <mm-button>30평</mm-button>
             </mm-group>
           </fieldset>
           <mm-separator></mm-separator>
@@ -87,8 +87,8 @@
           </fieldset>
         </form>
         <mm-group variant="button">
-          <mm-button variant="primary">적용/숙소 25개 표시 (todo fixed) </mm-button>
-          <mm-button variant="text">전체 해제</mm-button>
+          <mm-button variant="primary" size="large">적용/숙소 25개 표시 (todo fixed) </mm-button>
+          <mm-button variant="text" size="large">전체 해제</mm-button>
         </mm-group>
       </mm-tile>
     </section>
@@ -100,27 +100,27 @@
     <section class="component-example">
       <div style="max-width: var(--layout-width-small)">
         <mm-group variant="chip">
-          <mm-chip class="js-toggle" aria-expanded="true">
+          <mm-button class="js-toggle" aria-expanded="true">
             <mm-icon slot="suffix" name="nav-arrow-down"></mm-icon>
             예약옵션
-          </mm-chip>
-          <mm-chip class="js-toggle" aria-expanded="true">
+          </mm-button>
+          <mm-button class="js-toggle" aria-expanded="true">
             <mm-icon slot="suffix" name="nav-arrow-down"></mm-icon>
             예산
-          </mm-chip>
-          <mm-chip class="js-toggle" aria-expanded="true">
+          </mm-button>
+          <mm-button class="js-toggle" aria-expanded="true">
             <mm-icon slot="suffix" name="nav-arrow-down"></mm-icon>
             접근성 편의
-          </mm-chip>
+          </mm-button>
         </mm-group>
 
         <mm-separator></mm-separator>
 
         <mm-group variant="chip">
-          <mm-chip status="active">오늘</mm-chip>
-          <mm-chip>최근 3개월</mm-chip>
-          <mm-chip>최근 1년</mm-chip>
-          <mm-chip>최근 3년</mm-chip>
+          <mm-button status="active">오늘</mm-button>
+          <mm-button>최근 3개월</mm-button>
+          <mm-button>최근 1년</mm-button>
+          <mm-button>최근 3년</mm-button>
         </mm-group>
         <p style="margin: 0.75rem 0" role="status">주문 내역 총 <b>3</b>건. Statusbox</p>
         <br />
@@ -128,7 +128,7 @@
           label="최근 3개월 내 주문 내역이 없습니다."
           description="포트폴리오를 업로드하여 수줍이님을 알려보세요."
         >
-          <mm-button slot="action" variant="primary">2022년 주문 내역 보기</mm-button>
+          <mm-button slot="action" size="large" variant="primary">2022년 주문 내역 보기</mm-button>
         </mm-result>
       </div>
     </section>

@@ -4,7 +4,7 @@ import toggleDarkTheme from '../theme/toggleTheme'
 import '/public/components/navbar/navbar.css'
 import '/public/components/footer/footer.css'
 
-const OPENED_MENU_CLASSNAME = 'is-opened-menu'
+const OPENED_MENU_CLASSNAME = 'is-menu-opened'
 const isOpendNavbarMenu = () => document.body.classList.contains(OPENED_MENU_CLASSNAME)
 
 export function initializeNavbar() {

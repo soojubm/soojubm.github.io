@@ -27,8 +27,8 @@
 .footer-scroll-bottom {display:none;}
 
 /* article is main TODO */
-.is-opened-menu .page {margin-left:calc(var(--width-sidemenu) + var(--grid-margin) + 1rem);}
-.is-opened-menu .footer {margin-left:calc(var(--width-sidemenu) + var(--grid-margin) + 1rem);}
+.is-menu-opened .page {margin-left:calc(var(--width-sidemenu) + var(--grid-margin) + 1rem);}
+.is-menu-opened .footer {margin-left:calc(var(--width-sidemenu) + var(--grid-margin) + 1rem);}
 
 .footer.is-observed {
 	/* background:gold;transition:all .8 ease; */
@@ -36,7 +36,7 @@
 
 @media (max-width: 1100px) {
 
-	.is-opened-menu .footer {margin-left:0;}
+	.is-menu-opened .footer {margin-left:0;}
 }
 
 .footer-temp {

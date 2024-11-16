@@ -16,7 +16,7 @@ import scrollAnimation from './public/javascripts/event/scrollAnimation'
 import { initializeNavbar } from './public/javascripts/common/navbar'
 
 import { defineCustomElement } from './public/javascripts/components'
-import modal from './public/javascripts/event/modal'
+import setupModal from './public/javascripts/event/modal'
 
 import { throttle } from './public/javascripts/utils/optimizationUtils'
 import { getWindowScrollTop, getElementOffsetTop } from './public/javascripts/utils/elementUtils'
@@ -43,7 +43,7 @@ document.addEventListener('click', closeParentElement)
 const setDocumentTitle = title => (document.title = `이경수 ${title}`)
 
 async function domEvents() {
-  modal({ selector: '.js-modal' })
+  setupModal({ selector: '.js-modal' })
   tab()
 
   // const hash = window.location.hash.substring(1)

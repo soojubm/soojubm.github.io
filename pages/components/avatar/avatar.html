@@ -7,7 +7,7 @@
     </mm-text>
   </header>
   <section class="component-example">
-    <mm-group variant="chip">
+    <mm-group variant="">
       <mm-avatar size="huge" default="true" badge="true" badge></mm-avatar>
       <mm-avatar variant="secondary" size="huge" default="true" badge="true"></mm-avatar>
       <mm-avatar size="large" default="true" default="true" badge="true"></mm-avatar>
@@ -24,37 +24,93 @@
       <dt>src<abbr>?</abbr></dt>
       <dd>string</dd>
       <dt>size</dt>
-      <dd>"huge" | "large" | "medium" | "small"</dd>
+      <dd>'huge' | 'large' | 'medium' | 'small'</dd>
       <dt>badge<abbr>?</abbr></dt>
-      <dd>"unread" | "new" | "live"</dd>
+      <dd>'unread' | 'new' | 'live'</dd>
       <!-- <dd>TODO. 합성 컴포넌트에서 상세하게 정의 ?? badgeSlot ?? badge에 숫자가 포함될 수도.</dd> -->
       <!-- <dt>fallback?</dt>
         <dd>예시. 유저 닉네임의 첫 알파벳. 달걀 이미지. 기본값을 정의.</dd> -->
     </dl>
   </section>
 
+  <ul class="checklist">
+    <li>icon chip(button), icon tag, menu item avatar</li>
+    <li>memeo. medium. 이하의 크기는 디스크립션을 제공하지 않는다. 항상 align-items:center.</li>
+    <li>pagination button은 chip인가? chip과 같은 size token을 사용하지만 chip이 아니다.</li>
+    <li>
+      bottom nav item, icon button with label, user(entity huge). ICON BUTTON ??? 지금의 문제는
+      아이콘 버튼이 없고, 칩으로 대체하기 때문에 이걸 표현하기가 어렵다. icon button과 칩을 분리.
+      아이콘 버튼이 variant를 갖고 레이블이 노출된 형태. 하지만 이건 person/story랑은 또 구별되네
+    </li>
+    <li>
+      이걸 제품이 없는 상황에서 미리 정의해두려는 시도 자체가 바보같은 짓. 도메인에 맞게 작은 단위의
+      컴포넌트를 조합해서 쓰면 됨. 하지만 세로 형태의 아이콘과 레이블 조합된 컴포넌트는 정의해면
+      좋겠다. 칩과 아이콘 버튼과 중복되는 역할.
+    </li>
+    <li>
+      Entry. 페이지 레벨 정보의 주체. 단독으로 사용. 클릭할 수 있는 요소가 아니라 페이지를 대표하는
+      요소, 시각 정보로만 동작한다. 왜냐하면 이미 해당 페이지의 타이틀 롤이기 때문. - 이렇게 쓸 거면
+      페이지 타이틀이라는 컴포넌트로 정의하는 게 맞음.
+    </li>
+    <li>아웃라인 형태를 클릭할 수 없는 아바타로 정의</li>
+  </ul>
+
   <section class="component-guide">
     <mm-text variant="subhead">Clickable</mm-text>
-    <mm-text variant="body">아웃라인 형태를 클릭할 수 없는 아바타로 정의</mm-text>
+    <button
+      style="
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: auto;
+        gap: var(--space-1);
+        border: none;
+        background-color: #fff;
+        font: inherit;
+      "
+    >
+      <mm-avatar slot="avatar" size="large" icon="share-ios"></mm-avatar>
+      <small>공유하기</small>
+    </button>
+    <button
+      style="
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: auto;
+        gap: var(--space-1);
+        padding: var(--space-1) var(--space-3);
+        border: var(--border);
+        border-radius: var(--radius);
+        background-color: transparent;
+        font: inherit;
+      "
+    >
+      <mm-icon slot="avatar" size="large" name="share-ios" style="font-size: 1.5rem"></mm-icon>
+      <small>공유하기</small>
+    </button>
 
     <mm-text variant="subhead">Groupable</mm-text>
-    <mm-group variant="avatar">
-      <mm-avatar size="medium" default="true"></mm-avatar>
-      <mm-avatar size="medium" default="true"></mm-avatar>
-      <mm-avatar size="medium" default="true"></mm-avatar>
-      <mm-avatar size="medium">+3</mm-avatar>
-    </mm-group>
-
-    <mm-text variant="subhead">바이라인Byline</mm-text>
-    <mm-text variant="body">다수의 유저 목록을 표현. 피드 등에서 사용하는.</mm-text>
-    <mm-tile size="small">
-      <mm-menuitem label="수줍이">
-        <mm-avatar slot="avatar">
-          <i class="iconoir-github-circle"></i>
-        </mm-avatar>
-        <mm-chip slot="action">팔로우</mm-chip>
-      </mm-menuitem>
+    <mm-tile>
+      <mm-group variant="avatar">
+        <mm-avatar size="medium" default="true"></mm-avatar>
+        <mm-avatar size="medium" default="true"></mm-avatar>
+        <mm-avatar size="medium" default="true"></mm-avatar>
+        <mm-avatar size="medium">+3</mm-avatar>
+      </mm-group>
     </mm-tile>
+
+    <mm-group alignment="vertical">
+      <mm-tile>
+        <mm-entity
+          label="windows-emoji"
+          description="tag page head"
+          description2="description area2."
+        >
+          <mm-avatar slot="avatar" variant="secondary" size="huge">#</mm-avatar>
+        </mm-entity>
+      </mm-tile>
+    </mm-group>
   </section>
 
   <section class="component-case">
@@ -68,12 +124,16 @@
           code is drawing random structures on the screen. I spend the rest of the night staring.
         </mm-text>
       </div>
-      <mm-group>
-        <mm-keyvalue key="팔로워" value="62" alignment="inline"></mm-keyvalue>
-        <i class="icon-bullet"></i>
-        <mm-keyvalue key="팔로잉" value="8" alignment="inline"></mm-keyvalue>
-      </mm-group>
-      <mm-text>🥺 수줍이님을 팔로우하고 있는 친구가 없습니다.</mm-text>
+      <div style="margin-block: 1rem">
+        <mm-group variant="button">
+          <mm-keyvalue key="팔로워" value="62" alignment="inline"></mm-keyvalue>
+          <i class="icon-bullet"></i>
+          <mm-keyvalue key="팔로잉" value="8" alignment="inline"></mm-keyvalue>
+        </mm-group>
+      </div>
+      <mm-tile variant="tile" size="small">
+        <mm-text>🥺 수줍이님을 팔로우하고 있는 친구가 없습니다.</mm-text>
+      </mm-tile>
     </mm-tile>
     <mm-tile variant="elevated">
       <div style="display: flex; gap: 1rem">
@@ -107,16 +167,17 @@
     </mm-tile>
     <mm-tile variant="flat" size="medium">
       <mm-entity
-        label="이경수"
+        label="수줍이"
         description="soojubm@gmail.com"
         description2="010 3121 7045"
         description="UI Designer"
       >
         <mm-avatar slot="avatar" variant="secondary" size="large" default="true"></mm-avatar>
-        <mm-tag slot="tag" variant="primary"></mm-tag>
+        <!-- // TODO slot -->
+        <!-- <mm-tag slot="tag" variant="primary"></mm-tag> -->
       </mm-entity>
       <div style="margin: var(--space-2) 0 0">
-        <mm-chip>내 프로필 관리</mm-chip>
+        <mm-button>내 프로필 관리</mm-button>
       </div>
       <div style="position: absolute; right: var(--space-4); top: var(--space-4)">
         <mm-avatar variant="secondary" size="large">🐸</mm-avatar>
@@ -143,75 +204,4 @@
       </mm-group>
     </mm-tile>
   </section>
-  <ul class="checklist">
-    <li>icon chip(button), icon tag, menu item avatar</li>
-    <li>memeo. medium. 이하의 크기는 디스크립션을 제공하지 않는다. 항상 align-items:center.</li>
-    <li>pagination item은 chip과 같은 size token을 사용하지만 chip도 avatar도 아닙니다.</li>
-    <li>아바타만 단독으로 사용하는 케이스. space-after-avatar가 필요하지 않음.</li>
-  </ul>
-
-  <article class="article">
-    <mm-text variant="title">Entry</mm-text>
-    <mm-text variant="body-large"> 분류. </mm-text>
-    <mm-text variant="body-large">
-      bottom nav item, icon button with label, user(entity huge). ICON BUTTON ??? 지금의 문제는
-      아이콘 버튼이 없고, 칩으로 대체하기 때문에 이걸 표현하기가 어렵다. icon button과 칩을 분리.
-      아이콘 버튼이 variant를 갖고 레이블이 노출된 형태. 하지만 이건 person/story랑은 또 구별되네
-    </mm-text>
-    <blockquote>
-      이걸 제품이 없는 상황에서 미리 정의해두려는 시도 자체가 바보같은 짓. 도메인에 맞게 작은 단위의
-      컴포넌트를 조합해서 쓰면 됨. 하지만 세로 형태의 아이콘과 레이블 조합된 컴포넌트는 정의해면
-      좋겠다. 칩과 아이콘 버튼과 중복되는 역할.
-    </blockquote>
-    <section class="component-example">
-      <mm-group alignment="vertical">
-        <mm-text variant="body">
-          페이지 레벨 정보의 주체. 단독으로 사용. 클릭할 수 있는 요소가 아니라 페이지를 대표하는
-          요소, 시각 정보로만 동작한다. 왜냐하면 이미 해당 페이지의 타이틀 롤이기 때문. - 이렇게 쓸
-          거면 페이지 타이틀이라는 컴포넌트로 정의하는 게 맞음.
-        </mm-text>
-        <mm-tile>
-          <mm-entity
-            label="windows-emoji"
-            description="tag page head"
-            description2="description area2."
-          >
-            <mm-avatar slot="avatar" variant="secondary" size="huge">#</mm-avatar>
-          </mm-entity>
-        </mm-tile>
-        <button
-          style="
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: auto;
-            gap: var(--space-1);
-            border: none;
-            background-color: #fff;
-            font: inherit;
-          "
-        >
-          <mm-avatar slot="avatar" size="large" icon="share-ios"></mm-avatar>
-          <small>공유하기</small>
-        </button>
-        <button
-          style="
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: auto;
-            gap: var(--space-1);
-            padding: var(--space-1) var(--space-3);
-            border: var(--border);
-            border-radius: var(--radius);
-            background-color: transparent;
-            font: inherit;
-          "
-        >
-          <mm-icon slot="avatar" size="large" name="share-ios" style="font-size: 1.5rem"></mm-icon>
-          <small>공유하기</small>
-        </button>
-      </mm-group>
-    </section>
-  </article>
 </main>

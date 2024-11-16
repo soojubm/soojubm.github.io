@@ -76,12 +76,6 @@ The font size of a key is never bigger than the value.
           <mm-text variant="body">Something's not right?</mm-text>
           <mm-link>Get in touch with us.</mm-link>
         </mm-row>
-        <button class="js-toggle" style="display: flex; align-items: center; gap: var(--space-2)">
-          <mm-text>수줍이님이 더 궁금하신가요?</mm-text>
-          <mm-tag variant="indicator">
-            <mm-icon slot="icon" name="nav-arrow-down"></mm-icon>
-          </mm-tag>
-        </button>
       </section>
 
       <mm-separator></mm-separator>
@@ -94,8 +88,7 @@ The font size of a key is never bigger than the value.
 
       <mm-separator></mm-separator>
 
-      <mm-group style="gap: var(--space-4)">
-        <mm-keyvalue key="key" value="value" alignment="inline"></mm-keyvalue>
+      <mm-group>
         <mm-keyvalue key="key" value="value" alignment="inline"></mm-keyvalue>
         <mm-keyvalue key="key" value="value"></mm-keyvalue>
       </mm-group>
@@ -255,27 +248,23 @@ The font size of a key is never bigger than the value.
   </mm-tile>
 
   <section class="component-guide">
-    <blockquote>
-      <ul class="checklist">
-        <li>
-          텍스트 목록만 리스트 태그(ul, ol, dl)로 마크업하세요. 그렇지 않으면 대부분의 컨텐츠가
-          리스트로 취급될 수 있음. role=listbox/listitem
-        </li>
-        <li>
-          텍스트 목록을 2 댑스(nested)로 제공하지 마세요. 중첩된 목록은 콘텐츠를 읽기 어렵게 하며
-          작은 화면에서는 공간을 낭비.
-        </li>
-        <li>
-          지금보다 주문 확인 등에서는 조금 더 눈에 띄는 형태가 필요하며, 푸터 등에서는 덜 강조된
-          형태가 필요하다. 굉장히 다양하게 정의해두는 것이 좋도 있겠지만 제약을 해 봄.
-        </li>
-        <li>text dense, help text :: Form fields, metadata, secondary info</li>
-        <li>description list - set :: term / description</li>
-        <li>text group이 있으면 좋다. paragraph group. TextStack, TextBox</li>
-        <li>Nested</li>
-        <li>Title and Body</li>
-      </ul>
-    </blockquote>
+    <ul class="checklist">
+      <li>
+        텍스트 목록만 리스트 태그(ul, ol, dl)로 마크업하세요. 그렇지 않으면 대부분의 컨텐츠가
+        리스트로 취급될 수 있음. role=listbox/listitem
+      </li>
+      <li>
+        텍스트 목록을 2 댑스(nested)로 제공하지 마세요. 중첩된 목록은 콘텐츠를 읽기 어렵게 하며 작은
+        화면에서는 공간을 낭비.
+      </li>
+      <li>
+        지금보다 주문 확인 등에서는 조금 더 눈에 띄는 형태가 필요하며, 푸터 등에서는 덜 강조된
+        형태가 필요하다. 굉장히 다양하게 정의해두는 것이 좋도 있겠지만 제약을 해 봄.
+      </li>
+      <li>text dense, help text :: Form fields, metadata, secondary info</li>
+      <li>description list - set :: term / description</li>
+      <li>text group이 있으면 좋다. paragraph group.</li>
+    </ul>
 
     <mm-text variant="subhead">용어 정의 및 분류</mm-text>
     <ul>
@@ -337,9 +326,9 @@ The font size of a key is never bigger than the value.
     <mm-tile>
       <p>이 문서가 도움이 되었나요?</p>
       <small title="17 out of 439 found this helpful"> 417명 중 349명이 도움을 받았어요. </small>
-      <mm-group variant="chip">
-        <mm-chip>도움이 됐어요</mm-chip>
-        <mm-chip>부족해요</mm-chip>
+      <mm-group variant="">
+        <mm-button>도움이 됐어요</mm-button>
+        <mm-button>부족해요</mm-button>
       </mm-group>
     </mm-tile>
 

@@ -19,49 +19,52 @@ type modalId = 'newneek' | 'woolf' | 'lettering' | 'etc-works' | any
 // TODO 다이얼로그 안에서만 탭이 돌아야
 // TODO 지금 라우팅에서 history를 저장할 때의 문제.
 
-function modal({ selector: trigger }: Parameter) {
+function setupModal({ selector: trigger }: Parameter) {
   const modalTriggers = document.querySelectorAll<HTMLElement>(trigger)
   const modalContainer = document.querySelector<HTMLElement>('#modal')
   // const modalDialog = modalContainer.querySelector('.modal-dialog')
   // const closeElement = modalContainer.querySelector('.js-modal-close')
-  let previousActiveElement
-  let previousPageYOffset
+  let previousActiveElement: HTMLElement | null
+  let previousPageYOffset: number | null
 
   // const isOpened = document.body.classList.contains('is-modal-visible')
   //const isOutside = !event.target.closest('.modal-inner');
 
   modalTriggers.forEach(trigger => trigger.addEventListener('click', handleTriggerClick))
 
-  function handleTriggerClick(event) {
+  function handleTriggerClick(event: MouseEvent) {
     event.preventDefault()
-    const modalId = event.currentTarget.dataset.modal
+    const modalId = (event.currentTarget as HTMLElement).dataset.modal
 
     openModal()
-    fetchData(modalId)
+    fetchModalContent(modalId)
   }
 
-  async function fetchData(modalId: modalId) {
+  async function fetchModalContent(modalId: modalId) {
     try {
       const endpoint = `/pages/patterns/profile/${modalId}.html`
       const response = await fetch(endpoint)
       const html = await response.text()
 
       modalContainer!.innerHTML = html
-      previousActiveElement = document.activeElement
+      previousActiveElement = document.activeElement as HTMLElement
       // pushBrowserHistory({}, '', `/#profile/modal/${modalId}`)
       // modalContainer.querySelector('button').focus()
     } catch (error) {
-      throw 'Something went wrong.'
+      console.error('Error fetching modal data:', error)
+      // throw 'Something went wrong.'
     }
   }
 
-  function closeModalTemp(event) {
+  function closeModalTemp(event: MouseEvent) {
     const target = event.target as HTMLElement
-    const isCloseElement =
-      target.classList.contains('modal') || target.classList.contains('js-modal-close')
-    // if (isCloseElement) backHistory()
 
-    if (isCloseElement) closeModal()
+    const isClickOutsideModal = target.classList.contains('modal') // 모달 외부 클릭 여부
+    const isModalCloseElement = target.classList.contains('js-modal-close') // 닫기 버튼 클릭 여부
+
+    if (isClickOutsideModal || isModalCloseElement) {
+      closeModal() // 모달 닫기 함수 호출
+    }
   }
 
   function openModal() {
@@ -75,44 +78,24 @@ function modal({ selector: trigger }: Parameter) {
 
   function closeModal() {
     document.body.classList.remove('is-modal-visible', 'lock-scroll')
-    window.scrollTo(0, previousPageYOffset)
+    if (previousPageYOffset !== null) {
+      window.scrollTo(0, previousPageYOffset)
+    }
     modalContainer!.innerHTML = ''
 
-    previousActiveElement.focus()
+    previousActiveElement?.focus()
 
     document.removeEventListener('keydown', handleKeyDown)
     modalContainer?.removeEventListener('click', closeModalTemp)
   }
-  function handleKeyDown(event) {
-    const isKeyEsc = event.keyCode === 27 // Escape
-    if (isKeyEsc) backHistory()
+  function handleKeyDown(event: KeyboardEvent) {
+    if (event.key === 'Escape') {
+      closeModal()
+    }
   }
 }
 
-export default modal
-
-const getOptions = data => {
-  return {
-    method: 'POST',
-    body: JSON.stringify(data || {}),
-    headers: {
-      'Content-type': 'application/json; charset=UTF-8',
-    },
-  }
-}
-
-const getData = (url, data) => {
-  return fetch(url, {
-    method: 'POST',
-    body: JSON.stringify(data),
-    headers: {
-      'Content-type': 'application/json; charset=UTF-8',
-    },
-  }).then(response => {
-    if (response.ok) return response.json()
-    return Promise.reject(response)
-  })
-}
+export default setupModal
 
 // <fieldset role="dialog" aria-labelledby="dialog1Title" aria-describedby="dialog1Desc">
 //   <legend>
@@ -139,12 +122,7 @@ const getData = (url, data) => {
 //   modalOuter.classList.add('open');
 // }
 
-// modalOuter.addEventListener('click', function (event) {
 //   const isOutside = !event.target.closest('.modal-inner')
-//   if (isOutside) {
-//     closeModal()
-//   }
-// })
 
 // <div class="modal">
 //   <div class="modalInner">

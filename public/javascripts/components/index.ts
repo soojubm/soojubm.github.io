@@ -1,5 +1,3 @@
-import Chip from '../../components/chip/chip'
-
 import Tag from '../../components/tag/tag'
 
 import Avatar from '../../components/avatar/avatar'
@@ -38,13 +36,16 @@ import Keyvalue from '../../components/keyvalue/keyvalue'
 
 import Media from '../../components/media/media'
 import TabPanel from '../../components/tabpanel/tabpanel'
+import IconButton from '../../components/button/iconButton'
 
 export function defineCustomElement() {
   if ('customElements' in window) {
     customElements.define('mm-icon', Icon)
+
     customElements.define('mm-button', Button)
+    customElements.define('mm-icon-button', IconButton)
+
     customElements.define('mm-link', Link)
-    customElements.define('mm-chip', Chip)
 
     customElements.define('mm-tag', Tag)
 

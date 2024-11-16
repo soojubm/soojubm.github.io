@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.body.insertAdjacentHTML('beforeend', footer)
 
   // TODO function
-  document.body.classList.remove('is-opened-menu')
+  document.body.classList.remove('is-menu-opened')
 
   document.addEventListener('click', event => {
     const target = event.target as any

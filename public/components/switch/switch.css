@@ -1,64 +1,58 @@
 
 .switch {
-  --switch-width: 40px;
-  --switch-height: var(--size-tiny);
+  --switch-width: 48px;
+  --switch-height: var(--size-small);
   --switch-radius: var(--radius);
 
-  display:block;
-  height: var(--switch-height);
-  position:relative;
-}
-
-.switch input {
-  opacity: 0;
-  inline-size: 100%;
-  position: absolute;
-  left: -.5rem;
-  right: -.5rem;
-  top: -.5rem;
-  bottom: -.5rem;
-
-  inline-size: 100%;
-}
-
-.switch input + label {
-  display:flex;gap:var(--space-2);line-height:var(--switch-height);cursor:pointer;
-
-  /* 
+    /* 
   --switch-thumb-size: 24px;
   --switch-thumb-inset: 4px;
   --switch-thumb-transform: calc(100% - var(--switch-thumb-inset));
   --switch-border-color: var(--color-border-secondary);
   --switch-border: 2px solid var(--switch-border-color);
   */
+
+  display:flex;
+  align-items: center;
+  gap: var(--space-2);
+  height: var(--switch-height);
+  position:relative;
 }
-.switch input + label:before {
-  content:'';
-  display:block;
-  width:var(--switch-width);
-  height:var(--switch-height);
-  border-radius:var(--radius);
-  box-sizing:border-box;
-  background:var(--gray200);
-  transition:background-color .125s;
-  transition:all .25s;
+
+.switch input {
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  /* flex-shrink: 0; */
+  --b1: 100% 0 0;
+  --bc: 27.8078% .029596 256.847952;
+  --tglbg: oklch(var(--b1) / 1);
+  --handleoffset: 1.5rem;
+  --handleoffsetcalculator: calc(var(--handleoffset)* -1);
+  --togglehandleborder: 0 0;
+
+  --padding: 0 0 0 2px var(--tglbg) inset;
+  
+  height: var(--switch-height);
+  width: var(--switch-width);
+  border-radius: var(--switch-radius);
+  border: var(--border);
+  background-color: var(--color-background-weak);
+  color: black;
+  transition: background, box-shadow .2s ease-out;
+  /* box-shadow: var(--handleoffsetcalculator) 0 0 2px var(--tglbg) inset, 0 0 0 2px var(--tglbg) inset, var(--togglehandleborder); */
+  box-shadow: var(--handleoffsetcalculator) 0 0 2px var(--tglbg) inset, var(--padding);
 }
-.switch input + label:after {
-  content:'';
-  display:block;
-  width:var(--switch-height);
-  height:var(--switch-height);
-  border:  var(--border);
-  border-radius:var(--radius);
-  box-sizing:border-box;
-  background:var(--color-background);
-  box-shadow:var(--shadow);
-  position:absolute;left:0;top:0;
-  transition:transform .2s;
+
+.switch input:checked {
+  background-image: none;
+  --handleoffsetcalculator: var(--handleoffset);
+  --tw-text-opacity: 1;
+  /* color: black; */
+  background-color: var(--color-primary);
 }
-.switch input:checked + label {}
-.switch input:checked + label:before {content:'';background:var(--color-primary);}
-.switch input:checked + label:after {transform:translateX(calc(var(--switch-width) - 16px));}
 .switch input:disabled {}
 .switch input:disabled + label {cursor:not-allowed;opacity:.5;}
 .switch:focus-within label:before {

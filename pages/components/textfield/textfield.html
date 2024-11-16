@@ -70,7 +70,7 @@
           <button class="searchfield-cancel" aria-label="back">취소</button>
         </mm-textfield>
         <mm-textfield type="password" label="Password field">
-          <mm-chip slot="suffix" icon="eye-solid" aria-label="비밀번호 보기"> </mm-chip>
+          <mm-button slot="suffix" icon="eye-solid" aria-label="비밀번호 보기"> </mm-button>
         </mm-textfield>
         <!-- oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" -->
       </div>
@@ -153,18 +153,18 @@
           <mm-text variant="word-strong">1 sandbox</mm-text>
           <mm-text variant="word-weak"> $100.00 / addl sandbox </mm-text>
         </div>
-        <mm-group variant="chip">
+        <mm-group>
           <!-- <div class="counter js-counter" style="max-width: 160px"> -->
           <label for="numberfield" style="position: absolute; opacity: 0">
             레이블 라이트하우스용
           </label>
-          <mm-chip
+          <mm-icon-button
             icon="minus"
             class="js-counter-decrement"
             aria-controls="numberfield"
             tabindex="-1"
           >
-          </mm-chip>
+          </mm-icon-button>
           <mm-textfield size="small" value="20"></mm-textfield>
           <!-- <input
             class="counter-input js-counter-input js-number-input"
@@ -175,7 +175,7 @@
             max="20"
             value="0"
           /> -->
-          <mm-chip icon="plus" class="js-counter-increment" tabindex="-1"> </mm-chip>
+          <mm-icon-button icon="plus" class="js-counter-increment" tabindex="-1"> </mm-icon-button>
           <!-- </div> -->
         </mm-group>
       </div>
@@ -288,20 +288,20 @@
             <b>₩ 22,500</b>
           </div> -->
 
-        <mm-chip>수량/옵션 변경</mm-chip>
+        <mm-button>수량/옵션 변경</mm-button>
 
-        <mm-chip>close</mm-chip>
+        <mm-button>close</mm-button>
 
         <mm-group variant="chip" class="counter js-counter" style="max-width: 200px">
-          <mm-chip
+          <mm-button
             icon="minus"
             class="js-counter-decrement"
             aria-controls="numberfield"
             tabindex="-1"
-          ></mm-chip>
+          ></mm-button>
           <mm-textfield size="small" value="20"></mm-textfield>
           <!-- <input class="quantity-input js-quantity-input" type="number" value="1" /> -->
-          <mm-chip icon="plus" class="js-counter-increment" tabindex="-1"> </mm-chip>
+          <mm-button icon="plus" class="js-counter-increment" tabindex="-1"> </mm-button>
         </mm-group>
 
         <div class="counter js-counter" style="max-width: 200px">
@@ -395,8 +395,8 @@
         class="textbox-toolbar"
         style="width: max-content; position: absolute; top: var(--space-1); left: var(--space-1)"
       >
-        <mm-chip icon="bold" class="textbox-toolbar-bold"></mm-chip>
-        <mm-chip icon="italic" class="textbox-toolbar-italic"></mm-chip>
+        <mm-button icon="bold" class="textbox-toolbar-bold"></mm-button>
+        <mm-button icon="italic" class="textbox-toolbar-italic"></mm-button>
       </mm-group>
       <div
         class="textbox-view"

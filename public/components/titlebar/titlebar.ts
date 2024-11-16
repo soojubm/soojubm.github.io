@@ -1,29 +1,33 @@
 import { makeStyleSheet } from '../../javascripts/components/utils'
 
+// todo appbar
+
 class TitleBar extends HTMLElement {
   constructor() {
     super()
     const shadow = this.attachShadow({ mode: 'open' })
 
     const container = document.createElement('header')
+    container.role = 'navigation'
     container.classList.add('titlebar')
 
     const title = document.createElement('span')
     title.classList.add('titlebar-title')
     title.innerText = this.heading || ''
 
-    const back = document.createElement('mm-chip')
-    back.setAttribute('variant', 'back')
+    if (!this.hiddenBack) {
+      const backButton = document.createElement('mm-button')
+      backButton.setAttribute('variant', 'back')
 
-    const icon = document.createElement('mm-icon')
-    icon.setAttribute('slot', 'icon')
-    icon.setAttribute('name', 'arrow-left')
+      const icon = document.createElement('mm-icon')
+      icon.setAttribute('name', 'arrow-left')
 
-    back.appendChild(icon)
+      backButton.appendChild(icon)
+      container.append(backButton)
+    }
 
     // if (this.hiddenBack) back.hidden = true
 
-    // back.setAttribute('icon', 'arrow-left')
     // if (!back.ariaLabel) back.ariaLabel = '이전 페이지로'
     // ariaLabel 때문에 쉐도우돔을 그리지 못 함.
 
@@ -31,13 +35,13 @@ class TitleBar extends HTMLElement {
     actionSlot.name = 'action'
 
     shadow.appendChild(container)
-    if (!this.hiddenBack) container.appendChild(back)
     container.append(title, actionSlot, makeStyleSheet('titlebar'))
   }
 
   // get hasBack() {
   //   return this.getAttribute('hasBack')
   // }
+
   get hiddenBack() {
     return this.getAttribute('hiddenBack')
   }
@@ -46,10 +50,16 @@ class TitleBar extends HTMLElement {
     return this.getAttribute('heading')
   }
 
+  // attributeChangedCallback(name, oldValue, newValue) {
+  //   if (name === 'icon') {
+  //     alert()
+  //   }
+  // }
+
   connectedCallback() {}
   disconnectedCallback() {}
   attributeChangedCallback(name, oldValue, newValue) {
-    // this.shadowRoot?.querySelector('mm-chip button')?.setAttribute('data-variant', newValue)
+    this.shadowRoot?.querySelector('mm-button button')?.setAttribute('data-variant', newValue)
   }
 }
 

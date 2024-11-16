@@ -17,8 +17,8 @@
     </mm-entity>
     <div style="margin: var(--space-3) 0 0 0">
       <mm-group variant="chip">
-        <mm-chip variant="primary" status="active">팔로우</mm-chip>
-        <mm-chip variant="tertiary">메시지</mm-chip>
+        <mm-button variant="primary" status="active">팔로우</mm-button>
+        <mm-button variant="tertiary">메시지</mm-button>
       </mm-group>
     </div>
     <p class="profile-user-description" style="max-width: 560px">
@@ -118,20 +118,21 @@
       title="항목을 아이콘, 목록, 계층 또는 갤러리로 보여줍니다."
     >
       <h5 class="profile-display-status" role="status" hidden>Viewing 1,000 Projects</h5>
-      <mm-chip
+      <mm-button
         icon="view-columns-3"
         aria-label=""
         class="js-test-toggle"
         status="active"
         data-name="grid"
       >
-      </mm-chip>
-      <mm-chip variant="plain" icon="view-grid" class="js-test-toggle" data-name="list"> </mm-chip>
+      </mm-button>
+      <mm-button variant="plain" icon="view-grid" class="js-test-toggle" data-name="list">
+      </mm-button>
       <div class="profile-sorting" style="margin-left: auto">
-        <mm-chip variant="" class="js-test-toggle" name="정렬">
+        <mm-button variant="" class="js-test-toggle" name="정렬">
           <mm-icon slot="suffix" name="nav-arrow-down"></mm-icon>
           최신순
-        </mm-chip>
+        </mm-button>
       </div>
     </div>
     <!-- MEMO: mm-tabpanel 일 때 mm-tile 사이즈 스타일 -->
@@ -163,7 +164,7 @@
         <mm-text variant="body-bold">프리랜서</mm-text>
         <mm-text variant="body">선별된 일부 작업들</mm-text>
         <!-- <time class="card-date">September 12, 2017</time> -->
-        <mm-chip icon="more-vert" class="card-more" hidden> </mm-chip>
+        <mm-button icon="more-vert" class="card-more" hidden> </mm-button>
         <div style="height: var(--space-2)"></div>
         <mm-group variant="tag">
           <mm-tag variant="hashtag">프리랜서</mm-tag>
@@ -173,7 +174,7 @@
       </mm-tile>
 
       <mm-tile variant="plain" class="js-modal" data-modal="lettering">
-        <mm-chip icon="more-vert" class="card-more" hidden></mm-chip>
+        <mm-button icon="more-vert" class="card-more" hidden></mm-button>
         <mm-media src="/public/images/budha.png" alt=""></mm-media>
         <div style="height: var(--space-2)"></div>
         <mm-text variant="body-bold">레터링</mm-text>

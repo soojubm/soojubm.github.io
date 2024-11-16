@@ -19,8 +19,6 @@ class Avatar extends HTMLElement {
     if (this.variant) container.dataset.variant = this.variant
 
     if (this.default) container.dataset.default = 'true'
-
-    // TODO chip와 공통
     if (this.icon) {
       const icon = document.createElement('mm-icon')
       icon.setAttribute('name', this.icon)

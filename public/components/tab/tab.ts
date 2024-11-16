@@ -2,7 +2,8 @@ import { makeStyleSheet } from '../../javascripts/components/utils'
 
 class Tab extends HTMLElement {
   // TODO : constructo가 아닌 connectedCallback에서 사용하면, 스타일을 못 받아옴
-  // observed
+
+  static observedAttributes = ['aria-selected'] // TODO
 
   constructor() {
     super()
@@ -63,7 +64,6 @@ class Tab extends HTMLElement {
   }
 
   connectedCallback() {}
-
   disconnectedCallback() {}
   attributeChangedCallback(name, oldValue, newValue) {
     this.shadowRoot?.querySelector('button')?.setAttribute('aria-selected', newValue || 'false')
