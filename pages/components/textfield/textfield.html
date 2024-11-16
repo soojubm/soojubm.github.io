@@ -72,6 +72,62 @@
         <mm-textfield type="password" label="Password field">
           <mm-button slot="suffix" icon="eye-solid" aria-label="비밀번호 보기"> </mm-button>
         </mm-textfield>
+
+        <mm-textfield label="임시" placeholder="you@gamil.com">
+          <mm-icon slot="prefix" name="mail"></mm-icon>
+        </mm-textfield>
+
+        <div class="textfield">
+          <label class="textfield-label" for="search1">Textarea/Commentfield</label>
+          <small class="textfield-byte"><b>0 KB</b> / 100 KB</small>
+          <textarea
+            class="textfield-input"
+            rows="3"
+            placeholder="Textarea Placeholder..."
+            style="height: auto"
+          ></textarea>
+        </div>
+
+        <mm-textfield
+          type="number"
+          label="Number field (금액)"
+          value="20000"
+          placeholder="Textarea Placeholder..."
+        ></mm-textfield>
+
+        <div
+          style="display: flex; align-items: center; justify-content: space-between; width: 100%"
+        >
+          <div>
+            <mm-text variant="word-strong">1 sandbox</mm-text>
+            <mm-text variant="word-weak"> $100.00 / addl sandbox </mm-text>
+          </div>
+          <mm-group>
+            <!-- <div class="counter js-counter" style="max-width: 160px"> -->
+            <label for="numberfield" style="position: absolute; opacity: 0">
+              레이블 라이트하우스용
+            </label>
+            <mm-icon-button
+              icon="minus"
+              class="js-counter-decrement"
+              aria-controls="numberfield"
+            ></mm-icon-button>
+            <mm-textfield size="small" value="20"></mm-textfield>
+            <!-- <input
+            class="counter-input js-counter-input js-number-input"
+            type="number"
+            name="counter1"
+            id="numberfield"
+            min="5"
+            max="20"
+            value="0"
+          /> -->
+            <mm-icon-button icon="plus" class="js-counter-increment" tabindex="-1">
+            </mm-icon-button>
+            <!-- </div> -->
+          </mm-group>
+        </div>
+
         <!-- oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" -->
       </div>
     </mm-tabpanel>
@@ -135,61 +191,7 @@
     </dl>
   </section>
 
-  <div class="textfield">
-    <label class="textfield-label" for="search1">Textarea/Commentfield</label>
-    <small class="textfield-byte"><b>0 KB</b> / 100 KB</small>
-    <textarea
-      class="textfield-input"
-      rows="3"
-      placeholder="Textarea Placeholder..."
-      style="height: auto"
-    ></textarea>
-  </div>
-
   <section class="component-guide">
-    <mm-tile style="display: flex; justify-content: center">
-      <div style="display: flex; align-items: center; justify-content: space-between; width: 100%">
-        <div>
-          <mm-text variant="word-strong">1 sandbox</mm-text>
-          <mm-text variant="word-weak"> $100.00 / addl sandbox </mm-text>
-        </div>
-        <mm-group>
-          <!-- <div class="counter js-counter" style="max-width: 160px"> -->
-          <label for="numberfield" style="position: absolute; opacity: 0">
-            레이블 라이트하우스용
-          </label>
-          <mm-icon-button
-            icon="minus"
-            class="js-counter-decrement"
-            aria-controls="numberfield"
-            tabindex="-1"
-          >
-          </mm-icon-button>
-          <mm-textfield size="small" value="20"></mm-textfield>
-          <!-- <input
-            class="counter-input js-counter-input js-number-input"
-            type="number"
-            name="counter1"
-            id="numberfield"
-            min="5"
-            max="20"
-            value="0"
-          /> -->
-          <mm-icon-button icon="plus" class="js-counter-increment" tabindex="-1"> </mm-icon-button>
-          <!-- </div> -->
-        </mm-group>
-      </div>
-    </mm-tile>
-
-    <mm-tile style="display: flex; justify-content: center">
-      <mm-textfield
-        type="number"
-        label="Number field (금액)"
-        value="20000"
-        placeholder="Textarea Placeholder..."
-      ></mm-textfield>
-    </mm-tile>
-
     <mm-text variant="subhead">Visual Style</mm-text>
     <mm-text variant="body"> 레이블을 텍스트필드 왼쪽에 배치하지 마세요.</mm-text>
     <mm-text variant="body">
@@ -223,12 +225,11 @@
         수도
       </li>
     </ul>
+    <aside class="component-references">
+      <mm-text variant="subhead">References</mm-text>
+      <a href="https://developer.apple.com/documentation/uikit/uisearchbar">HIG searchbar</a>
+    </aside>
   </section>
-
-  <aside class="component-references">
-    <mm-text variant="subhead">References</mm-text>
-    <a href="https://developer.apple.com/documentation/uikit/uisearchbar">HIG searchbar</a>
-  </aside>
 
   <section class="component-case">
     <mm-tile>
@@ -497,14 +498,6 @@
         <h2 class="item-name">Gyeongsoo I</h2>
         <!-- <button class="item-action"><span class="item-action-label">팔로우</span></button> -->
       </mm-menuitem>
-
-      <section>
-        <mm-textfield label="임시" placeholder="you@gamil.com">
-          <mm-icon slot="prefix" name="mail"></mm-icon>
-        </mm-textfield>
-      </section>
-
-      <p>TeeVee</p>
       <p>icon-indicator (textfield-check/select indicator) - inline or float: right</p>
       <p>
         Note: Make sure the role of the element that serves as the container for the popup content
@@ -513,18 +506,6 @@
       </p>
       <!-- ! flex-wrap: warp일 때 min-width가 fixed -->
       <!-- ! width:100% and max-width doesnt' work-->
-
-      <mm-tile>
-        <q>
-          I'm impressed by how GitHub Copilot seems to know exactly what I want to type next. GitHub
-          Copilot is particularly helpful when working on React components, where it makes eerily
-          accurate predictions. GitHub Copilot has become an indispensable part of my programmer
-          toolbelt.
-        </q>
-        <figcaption style="margin: var(--space-3) 0 0 0; color: var(--color-text-light)">
-          Byline
-        </figcaption>
-      </mm-tile>
     </article>
 
     <section

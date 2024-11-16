@@ -1,144 +1,106 @@
 <main class="page">
-  <article class="article">
-    <mm-text variant="title">Menubar</mm-text>
-    <mm-text variant="body-large"> toolbar / chip group / role=menubar</mm-text>
-    <section class="component-example">
-      <menu role="menubar" style="display: flex; align-items: center">
-        <mm-checkbox>28 selected</mm-checkbox>
-        <mm-button icon="bonfire" style="margin-left: auto"> </mm-button>
-        <mm-button variant="plain" icon="more-vert"> </mm-button>
-      </menu>
-      <mm-separator></mm-separator>
-      <mm-group variant="chip" role="menubar">
-        <mm-textfield size="small" hiddenLabel="false" placeholder="검색꾸">
-          <mm-icon slot="prefix" name="search"></mm-icon>
-        </mm-textfield>
-        <mm-button variant="" name="Sort">
-          Last modified
-          <mm-icon slot="suffix" name="nav-arrow-down"></mm-icon>
+  <mm-text variant="title">Bars</mm-text>
+  <mm-text variant="body-large"> 페이지 헤더 .</mm-text>
+
+  <section class="component-example">
+    <nav class="bottombar">
+      <a href="#" class="bottombar-item is-active">
+        <mm-avatar variant="tertiary" icon="air-conditioner"> </mm-avatar>
+        <span class="bottombar-item-label">홈</span>
+        <em></em>
+      </a>
+      <a href="#" class="bottombar-item">
+        <mm-avatar variant="tertiary" icon="air-conditioner"> </mm-avatar>
+        <span class="bottombar-item-label">카테고리</span>
+      </a>
+      <a href="#" class="bottombar-item">
+        <mm-avatar variant="tertiary" icon="air-conditioner"> </mm-avatar>
+        <span class="bottombar-item-label">설정</span>
+      </a>
+    </nav>
+    <mm-separator></mm-separator>
+    <menu role="menubar" style="display: flex">
+      <mm-textfield size="small" hiddenLabel="false" placeholder="검색꾸">
+        <mm-icon slot="prefix" name="search"></mm-icon>
+      </mm-textfield>
+      <mm-checkbox>28 selected</mm-checkbox>
+      <mm-group>
+        <mm-icon-button icon="bonfire"> </mm-icon-button>
+        <mm-icon-button icon="more-vert"> </mm-icon-button>
+      </mm-group>
+      <mm-button name="Sort">
+        Last modified
+        <mm-icon-button name="nav-arrow-down"></mm-icon-button>
+      </mm-button>
+    </menu>
+    <mm-separator></mm-separator>
+    <mm-titlebar heading="수줍이님">
+      <mm-group slot="action">
+        <mm-button>저장</mm-button>
+        <mm-button
+          class="titlebar-back"
+          icon="more-vert"
+          onclick="javascript:window.location.href='/';"
+        >
         </mm-button>
       </mm-group>
-    </section>
-  </article>
+    </mm-titlebar>
+    <mm-titlebar heading="Product 뒤로가기 없는 패턴 추가하기">
+      <mm-icon-button slot="action" icon="cart"> </mm-icon-button>
+    </mm-titlebar>
+  </section>
 
-  <article class="article">
-    <mm-text variant="title">Title bar / TopAppBar(md)</mm-text>
-    <mm-text variant="body-large"> 페이지 헤더 .</mm-text>
-
-    <section class="component-example">
-      <mm-titlebar heading="수줍이님">
-        <mm-group slot="action" variant="chip">
-          <mm-button variant="plain" icon="cart"> </mm-button>
-        </mm-group>
-      </mm-titlebar>
-      <mm-titlebar heading="Product 뒤로가기 없는 패턴 추가하기">
-        <mm-button slot="action" variant="plain" icon="cart"> </mm-button>
-      </mm-titlebar>
-      <!-- <div class="titlebar-backdrop js-header"></div> -->
-      <mm-titlebar class="js-titlebar" data-size="large">
-        <mm-group slot="action" variant="chip">
-          <mm-button>저장</mm-button>
-          <mm-button
-            class="titlebar-back"
-            icon="more-vert"
-            onclick="javascript:window.location.href='/';"
-          >
-          </mm-button>
-        </mm-group>
-      </mm-titlebar>
-    </section>
-    <section class="component-props">
-      <mm-text variant="subhead">Props</mm-text>
-      <dl>
-        <dt>title<attr>?</attr></dt>
-        <dd>string</dd>
-        <dd>
-          최대 8자로 제한합니다. 타이틀이 말줄임표로 표시되지 않아야. 아니구나 폴더블에서는 어쩔 수
-          없이 말줄임표.
-        </dd>
-        <dt>backType????<attr>?</attr></dt>
-        <dd>'close' | 'back',</dd>
-        <dd>
-          TODO 패턴 정의. 탭 바로 접근하는 경우 등. close에서는 우측 액션을 제한해야 할 지도.
-          closeButton ==> TitleBar component의 자식으로 항상 함께 사용되기 때문에
-          titlebarBackbutton으로 추상화할 필요는 없다.
-        </dd>
-        <dt>actions</dt>
-        <dd>React.Node</dd>
-        <dd>todo 우측 actions. 갯수 제한. md에서 최대 3개. hamberger case.</dd>
-        <!-- <dt>hasNext<attr>?</attr></th>
+  <section class="component-props">
+    <mm-text variant="subhead">Props</mm-text>
+    <dl>
+      <dt>title<attr>?</attr></dt>
+      <dd>string</dd>
+      <dt>backType????<attr>?</attr></dt>
+      <dd>'close' | 'back',</dd>
+      <dd>
+        TODO 패턴 정의. 탭 바로 접근하는 경우 등. close에서는 우측 액션을 제한해야 할 지도.
+        closeButton ==> TitleBar component의 자식으로 항상 함께 사용되기 때문에
+        titlebarBackbutton으로 추상화할 필요는 없다.
+      </dd>
+      <dt>actions</dt>
+      <dd>React.Node</dd>
+      <dd>todo 우측 actions. 갯수 제한. md에서 최대 3개. hamberger case.</dd>
+      <!-- <dt>hasNext<attr>?</attr></th>
           <dd>
             boolean / 함수만 넘겨줘서 next 액션을 랜더링하는 방법이 나을 지도.
           </dd> -->
-        <dt>onComplete(?) / onCancel<attr>?</attr></dt>
-        <dd>() => void</dd>
-      </dl>
-    </section>
-    <section class="component-guide">
-      <mm-text variant="subhead">Changelog</mm-text>
-      <mm-text variant="body">
-        2401 뒤로가기 버튼이 chip과 달라야 콘텐츠와 제목 영역의 위계가 잡힘. 새로운 칩 추가.
-      </mm-text>
-      <mm-text variant="body"> 231230 backSlot 제거 </mm-text>
-    </section>
-    <section class="component-references">
+      <dt>onComplete(?) / onCancel<attr>?</attr></dt>
+      <dd>() => void</dd>
+    </dl>
+  </section>
+
+  <section class="component-guide">
+    <ul class="checklist">
+      <li>
+        언제 바텀 네비게이션과 햄버거 메뉴를 혼용할 수 있나요? Global Navigation. top and bottom.
+      </li>
+      <li>커머스에서 카테고리.</li>
+      <li>
+        bottom navigation의 label은 예외적으로 10px. 예외 케이스는 어디에서 정의해야 하는가.
+        컴포넌트 스코프?
+      </li>
+    </ul>
+
+    <mm-text variant="subhead">Editorial</mm-text>
+    <mm-text variant="body">
+      최대 8자. 그런데 워치나 폴더블, 브라우저 폰트 확대하면 말줄임표는 생기겠네..
+    </mm-text>
+    <mm-text variant="subhead">Changelog</mm-text>
+    <mm-text variant="body">
+      2401 뒤로가기 버튼이 chip과 달라야 콘텐츠와 제목 영역의 위계가 잡힘. 새로운 칩 추가.
+    </mm-text>
+    <mm-text variant="body"> 231230 backSlot 제거 </mm-text>
+
+    <div class="component-references">
       <mm-text variant="subhead">References</mm-text>
       <a href="https://m3.material.io/components/top-app-bar/overview" target="_blank">
         MD3 top app bar
       </a>
-    </section>
-  </article>
-
-  <article class="article">
-    <mm-text variant="title">Bottom Bar / Bottom Navigation</mm-text>
-    <mm-text variant="body-large">모바일 환경의 글로벌 네비게이션.</mm-text>
-
-    <dl class="article-aka">
-      <dt>a.k.a.</dt>
-      <dd title="google">Navigation Bar</dd>
-    </dl>
-
-    <section class="component-example">
-      <nav class="bottombar">
-        <a href="#" class="bottombar-item is-active">
-          <mm-avatar variant="tertiary" icon="air-conditioner"> </mm-avatar>
-          <span class="bottombar-item-label">홈</span>
-          <em></em>
-        </a>
-        <a href="#" class="bottombar-item">
-          <mm-avatar variant="tertiary" icon="air-conditioner"> </mm-avatar>
-          <span class="bottombar-item-label">카테고리</span>
-        </a>
-        <a href="#" class="bottombar-item">
-          <mm-avatar variant="tertiary" icon="air-conditioner"> </mm-avatar>
-          <span class="bottombar-item-label">설정</span>
-        </a>
-      </nav>
-    </section>
-
-    <section class="component-props">
-      <mm-text variant="subhead">Props</mm-text>
-      <dl>
-        <dt>test<attr>?</attr></dt>
-        <dd>test</dd>
-      </dl>
-    </section>
-
-    <section class="component-guide">
-      <ul class="checklist">
-        <li>
-          언제 바텀 네비게이션과 햄버거 메뉴를 혼용할 수 있나요? Global Navigation. top and bottom.
-        </li>
-        <li>커머스 도매인에서 카테고리 메뉴.</li>
-        <li>
-          bottom navigation의 label은 예외적으로 10px입니다. 예외 케이스는 어디에서 정의해야 하는가.
-          => 컴포넌트 스코프 + 관련 패턴 페이지
-        </li>
-      </ul>
-    </section>
-
-    <div class="component-references">
-      <mm-text variant="subhead">References</mm-text>
       <a href="https://m2.material.io/components/bottom-navigation" target="_blank"
         >M2 Bottom Navigation</a
       >
@@ -151,6 +113,6 @@
         >HIG Tab bars</a
       >
     </div>
-    <!-- // iOS isTranslucent: Bool -->
-  </article>
+  </section>
+  <!-- // iOS isTranslucent: Bool -->
 </main>

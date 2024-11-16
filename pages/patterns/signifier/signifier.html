@@ -303,6 +303,74 @@
       </mm-text>
     </div>
 
+    <mm-text variant="subhead">Layout and structure</mm-text>
+    <mm-text variant="body-large">
+      사용자의 화면 크기를 한정하지 마세요. 새로운 플랫폼이나 새로운 디바이스가 출시되더라도 빠르게
+      대응할 수 있어야 합니다. 특정 디바이스에 최적화하거나 종속되지 않고 어떠한 환경에서도 일관된
+      경험과 인터페이스를 설계한다는 태도가 필요합니다.
+    </mm-text>
+
+    <section class="component-guide">
+      <mm-text variant="subhead">
+        목표. 우선순위. 중요한 문제에 집중. 비판적인 관점으로 정보 필터링.
+      </mm-text>
+      <mm-text variant="body">
+        <b>디지털 프로덕에 엄격한 그리드 시스템은 소음이다.</b> 디자인 이론에 근거한 그리드 시스템은
+        디자이너에게만 유효하게 동작한다. 12칼럼 그리드는 코드 환경에서 사용자의 다양하고 예측
+        불가능한 화면 크기에 대응하기 어렵다. 2~4개의 칼럼을 가지는 레이아웃 케이스 또는 간격
+        시스템을 정의하고 가로 스크롤을 활용합니다.
+      </mm-text>
+      <mm-text variant="body">
+        <b>왜 디자이너들은 작업판의 크기 정의를 어려워 하는가?</b> 375px 등의 고정된 가로 크기는
+        편의상의 정의. 이것은 엄밀히 말하면, 실제 사용자의 문제를 해결하거나 사용자의 화면을
+        아름답고 편리하게 만드는 작업과 디자이너 본인이 디자인 툴을 사용하는 행위를 구분하자. 디자인
+        툴에서 자동으로 말줄임표를 만든다거나... 등등 이것이 무슨 문제를 해결하는가? 말줄임표가
+        발생하면 레이블의 의미를 전달하지 못 하기 때문에 또 다른 솔루션의 필요해질 수 있는데 이에
+        대한 정의는 분명한가? 엄격한 writing 가이드가 유아이 툴의 자동화보다 우선하여야 한다.
+      </mm-text>
+      <mm-text variant="body">
+        디자인시스템이라는 용어 자체가 소음이다. 스타일가이드, 유아이라이브러리, 유아이 키트.
+      </mm-text>
+    </section>
+
+    <blockquote>
+      <ul>
+        <li>
+          MD3의 Responsive layout. TODO : 반응하는 레이어를 위한 규칙을 어떻게 정의하면 좋을까?
+          프레젠테이션 패턴. 섹션, 아티클 그리고 모달, 드롭다운 등의 컴포넌트도 작은 화면에서는
+          페이지 맥락이 될 수 있음을 고려합니다. => 결국 모바일 퍼스트 foundation.
+        </li>
+        <li>Page Layout - Page Head / Page (background, full-bleed)</li>
+        <li>Page Section title=""</li>
+        <li>
+          페이지 모듈의 대비. 페이지의 맥락을 구분하기 위해 레이아웃 모듈이나 배경색의 대비를 활용할
+          수 있습니다. 컨테이너 너비(비밀번호찾기와 로그인/회원가입)와 배경색(설정, 글쓰기, 소개
+          등).
+        </li>
+      </ul>
+    </blockquote>
+
+    <div class="columns is-multiline">
+      <div class="column">First column</div>
+      <div class="column">Second column</div>
+      <div class="column">Third column</div>
+      <div class="column">Fourth column</div>
+    </div>
+    <style>
+      .columns {
+        display: flex;
+        gap: var(--space-4);
+      }
+      .column {
+        flex-basis: 0;
+        flex-grow: 1;
+        /* flex-shrink: 1; */
+
+        padding: var(--space-4);
+        background-color: crimson;
+      }
+    </style>
+
     <blockquote>
       <mm-text variant="body-bold">Notes</mm-text>
       <ul style="margin: 0">

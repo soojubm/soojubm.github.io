@@ -1,228 +1,223 @@
 <main class="page" role="" aria-label="site">
-    <mm-text variant="title">Searching</mm-text>
-    <mm-text variant="body-large">현재 일반적인 검색 패턴 위주로 정리.</mm-text>
+  <mm-text variant="title">Searching</mm-text>
+  <mm-text variant="body-large">현재 일반적인 검색 패턴 위주로 정리.</mm-text>
 
-    <section class="component-example">
-      <div style="max-width: 400px">
-        <mm-titlebar heading=""></mm-titlebar>
-        <div style="height: var(--space-after-subhead)"></div>
-        <form class="searchfield" role="search" aria-label="Sitewide / on the page">
-          <label class="searchfield-prefix">
-            <mm-icon name="search"></mm-icon>
-          </label>
-          <input
-            class="searchfield-input"
-            type="search"
-            placeholder="궁금한 인물이나 이슈가 있나요?"
-          />
-        </form>
+  <ul class="checklist">
+    <li>검색의 범위? 규모?를 우선 정의해야 한다.</li>
+    <li>
+      검색 인지 (또는 탐색 중 검색) -> 검색어 입력 대기 -> 검색어 입력 중(검색 결과) -> 검색 요청 ->
+      검색 결과
+    </li>
+    <li>placeholder의 작성 가이드</li>
+    <li>모바일 키보드의 높이를 고려한 쿼리의 적정 갯수는?</li>
+    <li>결과 페이지의 공유를 허용할 것인가?</li>
+    <li>검색 페이지가 탐색을 역할을 겸하는가?</li>
+    <li>검색 데이터는 어떻게 수집하는가.</li>
+    <li>비회원의 검색 내역을 저장할 것인가? (로컬에 저장)</li>
+    <li>검색 내역 삭제와 검색 히스토리 삭제를 구분.</li>
+    <li>전체 검색 내역과 최근 검색 내역. 활동 로그. (facebook. 나만 보기)</li>
+    <li>
+      searchfield와 textfield는 validation의 유무. 레이블의 유무. icon indicator의 유무로 구분된다
+    </li>
+    <li>
+      글로벌 검색 패턴과 로컬 검색(검색 필터를 포함) 패턴의 차이. searchfield small. right
+      alignment.
+    </li>
+    <li>조회수(틱톡)/이카테고리에글쓰기(미디엄)/카테고리팔로우(개인화)</li>
+  </ul>
 
-        <mm-tile variant="elevated" class="search-recent">
-          <mm-group alignment="vertical">
-            <mm-text variant="label">최근 검색</mm-text>
-            <!-- <mm-link>모두보기</mm-link> -->
-            <mm-menuitem label="고슴이">
-              <mm-avatar slot="avatar" style="background: beige">🦔</mm-avatar>
-              <mm-button slot="action" variant="plain" icon="xmark" aria-label="검색 내역 삭제">
-            </mm-menuitem>
-            <mm-menuitem label="개구리">
-              <mm-avatar slot="avatar" style="background: var(--green100)">🐸</mm-avatar>
-              <mm-button slot="action" variant="plain" icon="xmark" aria-label="검색 내역 삭제">
-            </mm-menuitem>
-          </mm-group>
-        </mm-tile>
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 10rem">-</th>
+        <th>키워드를 입력할 때 마다 검색</th>
+        <th>검색 버튼 클릭 또는 enter key 검색</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>결과없음 상태</th>
+        <td>x</td>
+        <td>o</td>
+      </tr>
+      <tr>
+        <th>검색어 자동완성</th>
+        <td>x</td>
+        <td>o</td>
+      </tr>
+    </tbody>
+  </table>
 
-        <mm-group variant="chip" style="margin: var(--space-3) 0 1.5rem">
-          <mm-button>아파트열쇠를빌려드립니다</mm-button>
-          <mm-button>로얄테넌바움</mm-button>
-          <mm-button>소매치기</mm-button>
-          <mm-button>이탈리아여행</mm-button>
-        </mm-group>
-
+  <section class="component-example">
+    <div style="max-width: 400px">
+      <form class="searchfield" role="search" aria-label="sitewide / on the page">
+        <label class="searchfield-prefix">
+          <mm-icon name="search"></mm-icon>
+        </label>
+        <input
+          class="searchfield-input"
+          type="search"
+          placeholder="궁금한 인물이나 이슈가 있나요?"
+        />
+      </form>
+      <div style="height: var(--space-2)"></div>
+      <mm-tile variant="elevated" class="search-recent">
         <mm-group alignment="vertical">
-          <div style="display: flex; align-items: center; gap: 0.5rem">
-            <mm-text variant="label">People</mm-text>
-          </div>
-          <mm-menuitem label="수줍이" time="Yesterday">
-            <mm-avatar slot="avatar" default="true"></mm-avatar>
+          <mm-text variant="label">최근 검색</mm-text>
+          <!-- <mm-link>모두보기</mm-link> -->
+          <mm-menuitem label="고슴이">
+            <mm-avatar slot="avatar" style="background: beige">🦔</mm-avatar>
+            <mm-icon-button slot="action" icon="xmark" aria-label="검색 내역 삭제"></mm-icon-button>
           </mm-menuitem>
-          <mm-menuitem label="W. G. 제발트" time="April 4, 2022">
-            <mm-avatar slot="avatar" default="true"></mm-avatar>
+          <mm-menuitem label="개구리">
+            <mm-avatar slot="avatar" style="background: var(--green100)">🐸</mm-avatar>
+            <mm-icon-button slot="action" icon="xmark" aria-label="검색 내역 삭제"></mm-icon-button>
           </mm-menuitem>
         </mm-group>
-        <div style="margin: 1.25rem 0 0 0">
-          <mm-separator></mm-separator>
+      </mm-tile>
+
+      <mm-group bleeding="true" style="margin: var(--space-3) 0 1.5rem">
+        <mm-button>아파트열쇠를빌려드립니다</mm-button>
+        <mm-button>로얄테넌바움</mm-button>
+        <mm-button>소매치기</mm-button>
+        <mm-button>이탈리아여행</mm-button>
+      </mm-group>
+
+      <mm-group alignment="vertical">
+        <div style="display: flex; align-items: center; gap: 0.5rem">
+          <mm-text variant="label">People</mm-text>
         </div>
-        <mm-group alignment="vertical">
-          <mm-text variant="label">Channels</mm-text>
-          <mm-menuitem label="Design Thinking" description="12 Members">
-            <mm-avatar slot="avatar">#</mm-avatar>
-          </mm-menuitem>
-          <mm-menuitem label="Frontend Group" description="24 Members">
-            <mm-avatar slot="avatar">#</mm-avatar>
-          </mm-menuitem>
-        </mm-group>
+        <mm-menuitem label="수줍이" time="Yesterday">
+          <mm-avatar slot="avatar" default="true"></mm-avatar>
+        </mm-menuitem>
+        <mm-menuitem label="W. G. 제발트" time="April 4, 2022">
+          <mm-avatar slot="avatar" default="true"></mm-avatar>
+        </mm-menuitem>
+      </mm-group>
+
+      <div style="margin: 1.25rem 0 0 0">
+        <mm-separator></mm-separator>
       </div>
-    </section>
 
-    <section class="component-guide">
-      <mm-text variant="subhead">검색 기표</mm-text>
-      <ul>
-        <li>추천 또는 자동완성 등 키워드로 즉시 실행 또는 키워드 입력</li>
-        <li>해시태그 또는 카테고리 등 인기/추천 키워드로 결과 페이지로 이동</li>
-        <li>searchfield를 클릭하여 검색 탭(또는 페이지)으로 이동</li>
-      </ul>
-      <mm-text variant="subhead">최근 검색 내역</mm-text>
-      <ul>
-        <li>개별 내역의 삭제. 휘발성이 높은 정보라 편집 모듈 없이 우측 삭제 버튼으로 개별 삭제를 제공한다.</li>
-        <li>
-          전체 내역의 삭제. 사용자 편의와 리스크가 공존. 검색 내역의 삭제가 개인화 콘텐츠에 영향을 주는가?
-        </li>
-        <li>
-          최근 검색 내역이 없을 때? 구글: 인기급상승 / 네이버: 없음
-        </li>
-      </ul>
-      <!-- <li>tabIndex: back -> input</li> -->
-      <!-- <mm-text variant="subhead">추천, 인기, 개인화 콘텐츠</mm-text> -->
-      <!-- <li>onFocus - keyword.length === 0. 대기</li> -->
-      <mm-text variant="subhead">
-        검색 실행 1 - 키워드를 입력할 때 마다 : onChange event
-      </mm-text>
-      <ul>
-        <li>
-          결과 없음 상태를 사용하지 않는다. 일치하는 결과가 없더라도 유사 콘텐츠 또는 추천 콘텐츠로
-          대체하여 <mark>하나 이상의 결과를 항상 보여주어야 합니다.</mark> 큐레이션이 강화된 콘텐츠
-          플랫폼에서 이탈 방지를 위해 활용할 수 있지만 사용자는 명확한 결과를 기대하기 어렵습니다.
-        </li>
-        <li>검색어 자동 완성을 사용하지 않는다.</li>
-      </ul>
-      <mm-text variant="subhead">
-        검색 실행 2 - 검색 버튼 클릭 또는 enter key : onSubmit event
-      </mm-text>
-      <ul>
-        <li>일치하는 결과만 표시하고 새로운 검색을 유도.</li>
-        <li>
-          하나 또는 하나 이상의 명확한 결과를 요구하는 경우 사용한다. 체류시간을 확보해야 하는 콘텐츠
-          플랫폼에는 적합하지 않다. 상대적으로 개발 리소스가 적게 들기 때문에 MVP 단계에서 유용하다.
-        </li>
-        <li>
-          자동완성? 자동완성이 아니라 입력한 결과물 노출하는 것. 이것 또는 바로가기를 최상단에
-          노출해줄 수 있다.
-        </li>
-      </ul>
-    </section>
+      <mm-group alignment="vertical">
+        <mm-text variant="label">Channels</mm-text>
+        <mm-menuitem label="Design Thinking" description="12 Members">
+          <mm-avatar slot="avatar">#</mm-avatar>
+        </mm-menuitem>
+        <mm-menuitem label="Frontend Group" description="24 Members">
+          <mm-avatar slot="avatar">#</mm-avatar>
+        </mm-menuitem>
+      </mm-group>
+    </div>
+  </section>
 
-    
-    <blockquote>
-      <mm-text variant="body-bold">Notes</mm-text>
-      <ul class="checklist">
-        <li>검색의 범위? 규모?를 우선 정의해야 한다.</li>
-        <li>
-          검색 인지 (또는 탐색 중 검색) -> 검색어 입력 대기 -> 검색어 입력 중(검색 결과) -> 검색
-          요청 -> 검색 결과
-        </li>
-        <li>placeholder의 작성 가이드</li>
-        <li>모바일 키보드의 높이를 고려한 쿼리의 적정 갯수는?</li>
-        <li>결과 페이지의 공유를 허용할 것인가?</li>
-        <li>검색 페이지가 탐색을 역할을 겸하는가?</li>
-        <li>검색 데이터는 어떻게 수집하는가.</li>
-        <li>비회원의 검색 내역을 저장할 것인가? (로컬에 저장)</li>
-        <li>검색 내역 삭제와 검색 히스토리 삭제를 구분.</li>
-        <li>전체 검색 내역과 최근 검색 내역. 활동 로그. (facebook. 나만 보기)</li>
-        <li>
-          searchfield와 textfield는 validation의 유무. 레이블의 유무. icon indicator의 유무로
-          구분된다
-        </li>
-        <li>
-          글로벌 검색 패턴과 로컬 검색(검색 필터를 포함) 패턴의 차이. searchfield small. right
-          alignment.
-        </li>
-        <li>조회수(틱톡)/이카테고리에글쓰기(미디엄)/카테고리팔로우(개인화)</li>
-      </ul>
-    </blockquote>
+  <section class="component-guide">
+    <mm-text variant="subhead">검색 기표</mm-text>
+    <ul>
+      <li>추천 또는 자동완성 등 키워드로 즉시 실행 또는 키워드 입력</li>
+      <li>해시태그 또는 카테고리 등 인기/추천 키워드로 결과 페이지로 이동</li>
+      <li>searchfield를 클릭하여 검색 탭(또는 페이지)으로 이동</li>
+    </ul>
+    <mm-text variant="subhead">최근 검색 내역</mm-text>
+    <ul>
+      <li>
+        개별 내역의 삭제. 휘발성이 높은 정보라 편집 모듈 없이 우측 삭제 버튼으로 개별 삭제를
+        제공한다.
+      </li>
+      <li>
+        전체 내역의 삭제. 사용자 편의와 리스크가 공존. 검색 내역의 삭제가 개인화 콘텐츠에 영향을
+        주는가?
+      </li>
+      <li>최근 검색 내역이 없을 때? 구글: 인기급상승 / 네이버: 없음</li>
+    </ul>
+    <!-- <li>tabIndex: back -> input</li> -->
+    <!-- <mm-text variant="subhead">추천, 인기, 개인화 콘텐츠</mm-text> -->
+    <!-- <li>onFocus - keyword.length === 0. 대기</li> -->
+    <mm-text variant="subhead"> 검색 실행 1 - 키워드를 입력할 때 마다 : onChange event </mm-text>
+    <ul>
+      <li>
+        결과 없음 상태를 사용하지 않는다. 일치하는 결과가 없더라도 유사 콘텐츠 또는 추천 콘텐츠로
+        대체하여 <mark>하나 이상의 결과를 항상 보여주어야 합니다.</mark> 큐레이션이 강화된 콘텐츠
+        플랫폼에서 이탈 방지를 위해 활용할 수 있지만 사용자는 명확한 결과를 기대하기 어렵습니다.
+      </li>
+      <li>검색어 자동 완성을 사용하지 않는다.</li>
+    </ul>
+    <mm-text variant="subhead">
+      검색 실행 2 - 검색 버튼 클릭 또는 enter key : onSubmit event
+    </mm-text>
+    <ul>
+      <li>일치하는 결과만 표시하고 새로운 검색을 유도.</li>
+      <li>
+        하나 또는 하나 이상의 명확한 결과를 요구하는 경우 사용한다. 체류시간을 확보해야 하는 콘텐츠
+        플랫폼에는 적합하지 않다. 상대적으로 개발 리소스가 적게 들기 때문에 MVP 단계에서 유용하다.
+      </li>
+      <li>
+        자동완성? 자동완성이 아니라 입력한 결과물 노출하는 것. 이것 또는 바로가기를 최상단에
+        노출해줄 수 있다.
+      </li>
+    </ul>
+  </section>
 
-    <table>
-      <thead>
-        <tr>
-          <th style="width: 10rem">-</th>
-          <th>키워드를 입력할 때 마다 검색</th>
-          <th>검색 버튼 클릭 또는 enter key 검색</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th>결과없음 상태</th>
-          <td>x</td>
-          <td>o</td>
-        </tr>
-        <tr>
-          <th>검색어 자동완성</th>
-          <td>x</td>
-          <td>o</td>
-        </tr>
-      </tbody>
-    </table>
+  <section class="component-case">
+    <mm-tile>
+      <mm-text variant="body-bold">iOS 패턴</mm-text>
+      <form class="searchfield ios" style="max-width: var(--width-medium)">
+        <label class="searchfield-prefix">
+          <mm-icon name="search"></mm-icon>
+        </label>
+        <input class="searchfield-input" type="search" placeholder="iOS pattern" />
+        <button class="searchfield-clear" aria-label="clear keyword">
+          <mm-icon slot="icon" name="xmark"></mm-icon>
+        </button>
+        <button class="searchfield-cancel" aria-label="clear keyword">
+          <span class="material-symbols-outlined">취소</span>
+        </button>
+      </form>
+    </mm-tile>
+    <mm-tile>
+      <mm-text variant="body-bold">Android 패턴</mm-text>
+      <form class="searchfield" style="max-width: var(--width-medium)">
+        <div style="position: absolute; left: 0">
+          <mm-button icon="arrow-left" class="searchfield-prefix"> </mm-button>
+        </div>
+        <!-- TODO clear button -->
+        <input
+          class="searchfield-input"
+          type="search"
+          placeholder="Android pattern"
+          style="padding-left: 3rem"
+        />
+        <div style="position: absolute; right: var(--space-2); top: var(--space-2); z-index: 1">
+          <mm-icon-button icon="xmark"> </mm-icon-button>
+        </div>
+      </form>
+    </mm-tile>
 
-    <section class="component-case">
-      <mm-tile>
-        <mm-text variant="body-bold">iOS 패턴</mm-text>
-        <form class="searchfield ios" style="max-width: var(--width-medium)">
-          <label class="searchfield-prefix">
-            <mm-icon name="search"></mm-icon>
-          </label>
-          <input class="searchfield-input" type="search" placeholder="iOS pattern" />
-          <button class="searchfield-clear" aria-label="clear keyword">
-            <mm-icon slot="icon" name="xmark"></mm-icon>
-          </button>
-          <button class="searchfield-cancel" aria-label="clear keyword">
-            <span class="material-symbols-outlined">취소</span>
-          </button>
-        </form>
-      </mm-tile>
-      <mm-tile>
-        <mm-text variant="body-bold">Android 패턴</mm-text>
-        <form class="searchfield" style="max-width: var(--width-medium)">
-          <div style="position: absolute; left: 0">
-            <mm-button icon="arrow-left" class="searchfield-prefix"> </mm-button>
-          </div>
-          <input
-            class="searchfield-input"
-            type="search"
-            placeholder="Android pattern"
-            style="padding-left: 3rem"
-          />
-          <div style="position: absolute; right: var(--space-2); top: var(--space-2); z-index: 1">
-            <mm-button icon="xmark"> </mm-button>
-          </div>
-        </form>
-      </mm-tile>
-  
-      <mm-tile>
-        <mm-group variant="menuitem" class="search-suggestion">
-          <mm-menuitem label="자동완성">
-            <mm-avatar slot="avatar" default="true"></mm-avatar>
+    <mm-tile>
+      <mm-group variant="menuitem" class="search-suggestion">
+        <mm-menuitem label="자동완성">
+          <mm-avatar slot="avatar" default="true"></mm-avatar>
+        </mm-menuitem>
+        <mm-menuitem label="자동완성유아이">
+          <mm-avatar slot="avatar" default="true"></mm-avatar>
+        </mm-menuitem>
+        <mm-tile variant="elevated" size="small">
+          <mm-menuitem label="자동완(으)로 검색">
+            <mm-avatar slot="avatar" icon="search"> </mm-avatar>
           </mm-menuitem>
-          <mm-menuitem label="자동완성유아이">
-            <mm-avatar slot="avatar" default="true"></mm-avatar>
-          </mm-menuitem>
-          <mm-tile variant="elevated" size="small">
-            <mm-menuitem label="자동완(으)로 검색">
-              <mm-avatar slot="avatar" icon="search"> </mm-avatar>
-            </mm-menuitem>
-          </mm-tile>
+        </mm-tile>
+      </mm-group>
+    </mm-tile>
+
+    <mm-tile>
+      <mm-result label="''키워드'와(과) 일치하는 내용이 없습니다.">
+        <mm-group slot="list" justifyContent="center">
+          <mm-button> 🦔 검색어 제공 </mm-button>
+          <mm-button>🐈‍⬛ 애옹</mm-button>
         </mm-group>
-      </mm-tile>
-  
-      <mm-tile>
-        <mm-result label="''키워드'와(과) 일치하는 내용이 없습니다.">
-          <mm-group slot="list" variant="chip">
-            <mm-button> 🦔 검색어 제공 </mm-button>
-            <mm-button>🐈‍⬛ 애옹</mm-button>
-          </mm-group>
-        </mm-result>
-      </mm-tile>
-    </section>
-
+      </mm-result>
+    </mm-tile>
+  </section>
 
   <section class="component-references">
     <a href="https://material.io/design/navigation/search.html">MD search</a>

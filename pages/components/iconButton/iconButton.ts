@@ -1,9 +1,13 @@
 import footer from '/public/components/footer/footer.html'
 import navbar from '/public/components/navbar/navbar.html'
+import main from './iconButton.html'
 
-import main from './layout.html'
+// import '/public/stylesheets/shared.css'
+import '/public/stylesheets/shared/webfonts.css'
+import '/public/stylesheets/shared/reset.css'
+import '/public/stylesheets/shared/keyframes.css'
+import '/public/stylesheets/shared/variables.css'
 
-import '/public/stylesheets/shared.css'
 import '/pages/components/components.css'
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -11,15 +15,3 @@ document.addEventListener('DOMContentLoaded', () => {
   document.body.insertAdjacentHTML('beforeend', main)
   document.body.insertAdjacentHTML('beforeend', footer)
 })
-
-// {
-//   name: 'button',
-//   role: action',
-//   description: '',
-//   aka: ['string', 'string'],
-//   features: [],
-//   bestPractices: [],
-//   props: { name: '', size: ''}
-//   relatedComponents: [],
-//   useCases: [],
-// }

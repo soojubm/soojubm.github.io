@@ -118,16 +118,17 @@
       title="항목을 아이콘, 목록, 계층 또는 갤러리로 보여줍니다."
     >
       <h5 class="profile-display-status" role="status" hidden>Viewing 1,000 Projects</h5>
-      <mm-button
-        icon="view-columns-3"
-        aria-label=""
-        class="js-test-toggle"
-        status="active"
-        data-name="grid"
-      >
-      </mm-button>
-      <mm-button variant="plain" icon="view-grid" class="js-test-toggle" data-name="list">
-      </mm-button>
+      <mm-group>
+        <mm-icon-button
+          icon="view-columns-3"
+          aria-label=""
+          class="js-test-toggle"
+          status="active"
+          data-name="grid"
+        >
+        </mm-icon-button>
+        <mm-icon-button icon="view-grid" class="js-test-toggle" data-name="list"> </mm-icon-button>
+      </mm-group>
       <div class="profile-sorting" style="margin-left: auto">
         <mm-button variant="" class="js-test-toggle" name="정렬">
           <mm-icon slot="suffix" name="nav-arrow-down"></mm-icon>

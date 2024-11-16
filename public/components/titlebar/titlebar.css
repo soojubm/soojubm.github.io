@@ -2,7 +2,6 @@
 .titlebar {
   display:flex;
   align-items:center;
-  padding: var(--space-3) 0;
   gap:var(--space-3);
   position:relative;
 }

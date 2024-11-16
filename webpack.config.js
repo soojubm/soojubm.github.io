@@ -28,7 +28,6 @@ const path = require('path')
 const HTML_TEMPLATE = './index.html'
 
 const patterns = [
-  'layout',
   'dashboard',
   'dialog',
   'result',
@@ -65,6 +64,8 @@ const components = [
   'avatar',
 
   'button',
+  'iconButton',
+
   'tag',
   'checkbox',
   'radio',

@@ -79,7 +79,7 @@
 /* ReactNative safeAreaView, scrollView */
 .page {
   margin: 0 auto;
-  padding: 2rem var(--grid-margin) 4rem;
+  padding: 0 var(--grid-margin) 4rem;
   box-sizing: border-box;
   position:relative;
 }
@@ -177,6 +177,9 @@
 
 /* --small */
 @media (max-width:1080px) {
+  .page {
+    padding-top: 2rem;
+  }
   .is-menu-opened .page {
     padding-left: var(--grid-margin);
   }

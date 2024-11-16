@@ -7,11 +7,6 @@
 .carousel-dots {display: flex;align-items: center;}
 .carousel-dots-dot {width: 10px;height: 10px;margin: 0px 4px;border-radius: 50%;background: rgba(0, 0, 0, 1);cursor: pointer;}
 .carousel-dots-dot:hover {opacity: .5;}
-.carousel-arrows {}
-.carousel-arrows-prev {box-shadow:var(--shadow);position: absolute;left:-.5rem;top: 50%;z-index: var(--zindex-default);transform:translateY(-50%);}
-.carousel-arrows-prev:hover {}
-.carousel-arrows-next {box-shadow:var(--shadow);position: absolute;right:-.5rem;top: 50%;z-index: var(--zindex-default);transform:translateY(-50%);}
-.carousel-arrows-next:hover {}
 .carousel-arrows button.is-disabled {opacity: .2;}
 @media (max-width: 1100px) {
 

@@ -93,6 +93,21 @@ The font size of a key is never bigger than the value.
         <mm-keyvalue key="key" value="value"></mm-keyvalue>
       </mm-group>
 
+      <mm-group style="gap: 2rem">
+        <div style="">
+          <mm-text variant="label">사이즈</mm-text>
+          <mm-text variant="word-large">보통</mm-text>
+        </div>
+        <div style="">
+          <mm-text variant="label">한글</mm-text>
+          <mm-text variant="subhead">작은 거 필요하나</mm-text>
+        </div>
+        <div style="">
+          <mm-text variant="label">Move</mm-text>
+          <mm-text variant="title">562 kcal</mm-text>
+        </div>
+      </mm-group>
+
       <mm-separator></mm-separator>
 
       <p class="util-truncate">
@@ -109,7 +124,7 @@ The font size of a key is never bigger than the value.
       <mm-separator></mm-separator>
 
       <nav class="sitemap-item">
-        <mm-text varinat="" hidden aria-hidden="true" class="sitemap-item-level1">사이트맵</mm-text>
+        <mm-text variant="" hidden aria-hidden="true" class="sitemap-item-level1">사이트맵</mm-text>
         <mm-group alignment="vertical" class="sitemap-item-level2">
           <mm-text variant="label">사이트맵 컴포넌트</mm-text>
           <mm-link href="#">기존의 링크 컴포넌트 활용 시</mm-link>
@@ -120,7 +135,7 @@ The font size of a key is never bigger than the value.
       <mm-separator></mm-separator>
 
       <nav style="display: flex; gap: 4rem">
-        <mm-text varinat="" hidden aria-hidden="true">사이트맵</mm-text>
+        <mm-text variant="" hidden aria-hidden="true">사이트맵</mm-text>
         <mm-group alignment="vertical">
           <mm-text variant="subhead">사이트맵 컴포넌트</mm-text>
           <mm-text variant="label" href="#">샘플</mm-text>
@@ -169,49 +184,19 @@ The font size of a key is never bigger than the value.
     </dl>
   </section>
 
-  <section class="hero">
-    <mm-text variant="title">히어로 섹션 제목</mm-text>
-    <mm-text variant="body-large" truncated="true">
-      이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에
-      부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은 침묵에 잠겼다.
-    </mm-text>
-    <footer class="hero-actions" style="margin: 2rem 0 0">
-      <mm-button variant="primary" href="#components">Call to action</mm-button>
-      <mm-button variant="text">더 알아보기</mm-button>
-    </footer>
-  </section>
   <mm-tile>
-    <mm-group style="gap: 2rem">
-      <div style="">
-        <mm-text variant="label">사이즈</mm-text>
-        <mm-text variant="word-large">보통</mm-text>
-      </div>
-      <div style="">
-        <mm-text variant="label">한글</mm-text>
-        <mm-text variant="subhead">작은 거 필요하나</mm-text>
-      </div>
-      <div style="">
-        <mm-text variant="label">Move</mm-text>
-        <mm-text variant="title">562 kcal</mm-text>
-      </div>
-    </mm-group>
-  </mm-tile>
-  <mm-tile>
-    <mm-group alignment="vertical">
-      <mm-keyvalue key="상품 금액" value="₩ 160,000"></mm-keyvalue>
-      <mm-keyvalue key="서비스 수수료" value="₩ 3,000"></mm-keyvalue>
-      <mm-row justifyContent="space-between">
-        <mm-text variant="subhead">총 합계 (KRW)</mm-text>
-        <mm-text variant="subhead">₩ 163,000</mm-text>
-      </mm-row>
-      <!-- <mm-keyvalue size="large" key="총 합계 (KRW)" value="₩ 163,000"> </mm-keyvalue> -->
-    </mm-group>
-    <footer style="margin: var(--space-4) 0 0 0">
-      <mm-button variant="primary" isfullwidth="true">구매 확정하고</mm-button>
-    </footer>
-  </mm-tile>
-
-  <mm-tile>
+    <section class="hero">
+      <mm-text variant="title">히어로 섹션 제목</mm-text>
+      <mm-text variant="body-large" truncated="true">
+        이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에
+        부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은 침묵에 잠겼다.
+      </mm-text>
+      <footer class="hero-actions" style="margin: 2rem 0 0">
+        <mm-button variant="primary" size="large">콜 투 액션</mm-button>
+        <mm-button variant="text" size="large">더 알아보기</mm-button>
+      </footer>
+    </section>
+    <br /><br />
     <header
       style="
         height: var(--size-large);
@@ -291,6 +276,8 @@ The font size of a key is never bigger than the value.
         태그라인은 작은 화면에서도 임팩트를 줄 수 있도록 작성 단계에서 행갈이를 고려하세요. 글자의
         수와 단어의 수를 제한하고 개행 조건을 정의하세요.
       </li>
+      <li>message: 사용자, description: 시스템</li>
+      <!-- <li>프로모션 페이지의 헤드라인으로 제한적으로 사용합니다.</li> -->
     </ul>
 
     <mm-text variant="subhead">텍스트 모듈</mm-text>
@@ -331,12 +318,6 @@ The font size of a key is never bigger than the value.
         <mm-button>부족해요</mm-button>
       </mm-group>
     </mm-tile>
-
-    <blockquote>
-      <mm-text>p와 ul, dl 등은 항상 텍스트.</mm-text>
-      <mm-text>message: 사용자, description: 시스템</mm-text>
-      <!-- <li>프로모션 페이지의 헤드라인으로 제한적으로 사용합니다.</li> -->
-    </blockquote>
   </section>
 
   <section class="component-case">

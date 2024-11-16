@@ -25,34 +25,10 @@
         <header role="rowgroup">
           <div role="row">
             <span role="columnheader" aria-sort="none">#</span>
-            <span role="columnheader" aria-sort="none">Gengre</span>
-            <!-- <span role="columnheader" aria-sort="none">Progress</span> -->
-            <span role="columnheader" aria-sort="none">Status</span>
-            <span role="columnheader" aria-title="date added(sort)">Date</span>
           </div>
         </header>
         <div role="rowgroup">
-          <div role="row" aria-rowindex="11">
-            <div role="cell">1</div>
-            <div role="cell">
-              <mm-menuitem label="Dancing in the Dark" description="Bruce Springsteen">
-                <mm-avatar slot="avatar"></mm-avatar>
-              </mm-menuitem>
-            </div>
-            <div role="cell">
-              <mm-group variant="tag">
-                <mm-tag>hiphop</mm-tag>
-                <mm-tag>rap</mm-tag>
-              </mm-group>
-            </div>
-            <div role="cell">
-              <em
-                class="badge"
-                style="height: auto; margin-right: 0.5rem; background: gold; padding: 3px"
-              ></em>
-              Error
-            </div>
-          </div>
+          <div role="row" aria-rowindex="11"></div>
         </div>
       </div>
     </section>
@@ -72,11 +48,11 @@
           <mm-icon slot="prefix" name="import"></mm-icon>
           가져오기
         </mm-button>
-        <mm-button status="active"> 추가하기 </mm-button>
+        <mm-button variant="secondary"> 추가하기 </mm-button>
       </mm-group>
     </header>
-    <!-- TODO separator가 공간이 될 수 있고 이것이 어디에 오는지에 따른 컴포넌트가 될 수도. -->
     <mm-group variant="chip">
+      <!-- TODO status -->
       <mm-button status="active">All</mm-button>
       <mm-button>Active</mm-button>
       <mm-button>Draft</mm-button>
@@ -142,7 +118,7 @@
         <td>
           <mm-group variant="chip" style="justify-content: flex-end">
             <mm-button>액션</mm-button>
-            <mm-button variant="plain" icon="more-vert"></mm-button>
+            <mm-icon-button icon="more-vert"></mm-icon-button>
           </mm-group>
         </td>
       </tr>
@@ -177,82 +153,77 @@
         <td>
           <mm-group variant="chip" style="justify-content: flex-end">
             <mm-button>액션</mm-button>
-            <mm-button variant="plain" icon="more-vert"></mm-button>
+            <mm-icon-button icon="more-vert"></mm-icon-button>
           </mm-group>
         </td>
       </tr>
     </table>
+
+    <!-- TODO variant pagination -->
+    <mm-group variant="chip" aria-label="pagination">
+      <mm-icon-button variant="navigator" class="pagination-previous" aria-label="앞 페이지로 이동">
+        이전
+      </mm-icon-button>
+      <mm-icon-button
+        variant="navigator"
+        class="pagination-next"
+        aria-label="뒷 페이지로 이동"
+        style="order: 3"
+      >
+        다음
+      </mm-icon-button>
+      <mm-icon-button variant="navigator" class="pagination-link" aria-label="맨 앞 페이지로 이동"
+        >1</mm-icon-button
+      >
+      <i class="pagination-ellipsis" aria-label="맨 앞 페이지로 이동">...</i>
+      <mm-icon-button
+        variant="navigator"
+        class="pagination-link"
+        href="#"
+        aria-label="1 페이지로 이동"
+      >
+        5
+      </mm-icon-button>
+      <mm-icon-button class="pagination-link" href="#" aria-label="1 페이지로 이동">
+        6
+      </mm-icon-button>
+      <mm-icon-button
+        status="active"
+        class="pagination-link is-current"
+        aria-label="1 페이지로 이동"
+        aria-current="true"
+      >
+        7
+      </mm-icon-button>
+      <mm-icon-button class="pagination-link" href="#" aria-label="1 페이지로 이동">
+        8
+      </mm-icon-button>
+      <mm-icon-button class="pagination-link" href="#" aria-label="1 페이지로 이동">
+        9
+      </mm-icon-button>
+      <i class="pagination-ellipsis" aria-label="맨 앞 페이지로 이동">...</i>
+      <mm-icon-button class="pagination-link" aria-label="맨 뒤 페이지로 이동"> 50 </mm-icon-button>
+    </mm-group>
+    <aside role="status">
+      <small>숙소 300개 이상 중 281 – 300 (airbnb)</small>
+    </aside>
+
+    <div style="display: flex; gap: var(--space-2)">
+      <b class="pagination-current">1</b>
+      <span class="pagination-divider">/</span>
+      <span class="pagination-all">44</span>
+    </div>
+    <mm-separator></mm-separator>
+    <div style="display: flex; align-items: center; gap: var(--space-2)">
+      page
+      <mm-button size="small">
+        18
+        <mm-icon slot="suffix" name="nav-arrow-down"></mm-icon>
+      </mm-button>
+      of 22
+    </div>
   </article>
 
-  <br /><br />
-
-  <article class="article js-observer js-scrollspy-section">
-    <mm-text variant="title">Paginations</mm-text>
-    <mm-text variant="body-large">페이지네이션</mm-text>
-
-    <section class="component-example">
-      <!-- TODO variant pagination -->
-      <mm-group variant="chip" aria-label="pagination">
-        <mm-button variant="plain" class="pagination-previous" aria-label="앞 페이지로 이동">
-          이전
-        </mm-button>
-        <mm-button
-          variant="plain"
-          class="pagination-next"
-          aria-label="뒷 페이지로 이동"
-          style="order: 3"
-        >
-          다음
-        </mm-button>
-        <mm-button variant="plain" class="pagination-link" aria-label="맨 앞 페이지로 이동"
-          >1</mm-button
-        >
-        <i class="pagination-ellipsis" aria-label="맨 앞 페이지로 이동">...</i>
-        <mm-button variant="plain" class="pagination-link" href="#" aria-label="1 페이지로 이동">
-          5
-        </mm-button>
-        <mm-button variant="plain" class="pagination-link" href="#" aria-label="1 페이지로 이동">
-          6
-        </mm-button>
-        <mm-button
-          variant="plain"
-          status="active"
-          class="pagination-link is-current"
-          aria-label="1 페이지로 이동"
-          aria-current="true"
-        >
-          7
-        </mm-button>
-        <mm-button variant="plain" class="pagination-link" href="#" aria-label="1 페이지로 이동">
-          8
-        </mm-button>
-        <mm-button variant="plain" class="pagination-link" href="#" aria-label="1 페이지로 이동">
-          9
-        </mm-button>
-        <i class="pagination-ellipsis" aria-label="맨 앞 페이지로 이동">...</i>
-        <mm-button variant="plain" class="pagination-link" aria-label="맨 뒤 페이지로 이동">
-          50
-        </mm-button>
-      </mm-group>
-      <aside role="status">
-        <small>숙소 300개 이상 중 281 – 300 (airbnb)</small>
-      </aside>
-
-      <div style="display: flex; gap: var(--space-2)">
-        <b class="pagination-current">1</b>
-        <span class="pagination-divider">/</span>
-        <span class="pagination-all">44</span>
-      </div>
-      <mm-separator></mm-separator>
-      <div style="display: flex; align-items: center; gap: var(--space-2)">
-        page
-        <mm-button size="small">
-          18
-          <mm-icon slot="suffix" name="nav-arrow-down"></mm-icon>
-        </mm-button>
-        of 22
-      </div>
-    </section>
 
     <section class="component-props">
       <mm-text variant="subhead">Props</mm-text>
@@ -269,299 +240,18 @@
     </section>
 
     <section class="component-guide">
-      <mm-text varinat="subhead">Best practices</mm-text>
+      <mm-text variant="subhead">Best practices</mm-text>
       <mm-text variant="body">
         첫 페이지와 마지막 페이지에 더블 화살표 아이콘을 사용하지 않습니다. 최초와 최종 페이지
         넘버로 사용자가 대략적인 콘텐츠 수량을 파악할 수 있도록 도와주세요.
       </mm-text>
 
-      <blockquote>
-        <mm-text variant="body-bold">Notes</mm-text>
-        <mm-text variant="body">서버에서 offset을 0으로 줄 때도 있었고 1로 줄 때도 있다.</mm-text>
-        <p>모든 행이 DOM에 존재하는 경우 aria-rowindex 불필요</p>
-      </blockquote>
-      <!-- <p>pagination vs more load vs infinite scroll. 느린 탐색 경험이 필요할 때. 게시판이나 상품 목록의 탐색에서 이전에 탐색한 상품의 위치를 찾기 편리함. 최근 본 목록이나 섬네일에서 북마크를
-              제공한다면?</p> -->
-    </section>
+      <ul class="checklist">
+        <li>서버에서 offset을 0으로 줄 때도 있었고 1로 줄 때도 있다.</li>
+        <li>모든 행이 DOM에 존재하는 경우 aria-rowindex 불필요</li>
+      </ul>
+      <!-- <p>pagination vs more load vs infinite scroll. 느린 탐색 경험이 필요할 때. 게시판이나 상품 목록의 탐색에서 이전에 탐색한 상품의 위치를 찾기 편리함. 최근 본 목록이나 섬네일에서 북마크를 제공한다면?</p> -->
 
-    <!-- 이메일폼 400 / 18px /. Padding: 15 -->
     <!-- 초기화 width: auto; image-->
-    <!-- <table
-      border="0"
-      cellspacing="0"
-      cellpadding="0"
-      align="center"
-      id="m_4417347001254136807email_table"
-      style="border-collapse: collapse; width: auto"
-    >
-      <tbody>
-        <tr>
-          <td
-            id="m_4417347001254136807email_content"
-            style="
-              font-family: Helvetica Neue, Helvetica, Lucida Grande, tahoma, verdana, arial,
-                sans-serif;
-              background: #ffffff;
-            "
-          >
-            <table
-              border="0"
-              width="100%"
-              cellspacing="0"
-              cellpadding="0"
-              style="border-collapse: collapse"
-            >
-              <tbody>
-                <tr>
-                  <td height="20" style="line-height: 20px" colspan="3">&nbsp;</td>
-                </tr>
-                <tr>
-                  <td height="1" colspan="3" style="line-height: 1px">
-                    <span style="color: #ffffff; font-size: 1px"><span></span></span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div style="padding: 0px; padding-bottom: 4px; margin: 0px; width: 100%">
-                      <table
-                        border="0"
-                        cellspacing="0"
-                        cellpadding="0"
-                        style="border-collapse: collapse; margin: 0 auto"
-                      >
-                        <tbody>
-                          <tr>
-                            <td>
-                              <table
-                                border="0"
-                                cellspacing="0"
-                                cellpadding="0"
-                                style="border-collapse: collapse"
-                              >
-                                <tbody>
-                                  <tr>
-                                    <td style="width: 339px !important">
-                                      <a
-                                        href="https://www.instagram.com/_n/mainfeed?utm_campaign=template_platform&amp;target_user_id=4568583578&amp;click_source=header_icon&amp;utm_source=instagram&amp;utm_medium=email"
-                                        style="color: #1b74e4; text-decoration: none"
-                                        target="_blank"
-                                        data-saferedirecturl="https://www.google.com/url?q=https://www.instagram.com/_n/mainfeed?utm_campaign%3Dtemplate_platform%26target_user_id%3D4568583578%26click_source%3Dheader_icon%26utm_source%3Dinstagram%26utm_medium%3Demail&amp;source=gmail&amp;ust=1696831528607000&amp;usg=AOvVaw3ucjtdEmOFWawYrnAAnZSQ"
-                                        ><img
-                                          width="30"
-                                          src="https://ci5.googleusercontent.com/proxy/qAdlO-zeKGxEgRoX28djVGuXJR47JFY_szSefz7Rgy35HactvgbYJe1lboRUSYE8H7X8vnER8nN8LoAJ9sb9RmyGi6OnnTKGrGs1XmnSFkKFzYyHfxXfULRfp6HLVdo3SIHAyvxCjXhxyM7cF6FHfOSWpe3m=s0-d-e1-ft#https://www.instagram.com/static/images/bloks/assets/email/email_header_glyph.png/422cb62a79a1.png"
-                                          height="30"
-                                          style="border: 0"
-                                          class="CToWUd"
-                                          data-bit="iit"
-                                      /></a>
-                                    </td>
-                                    <td style="width: 36px !important">
-                                      <a
-                                        href="https://www.instagram.com/_n/user?username=soojubm&amp;utm_campaign=template_platform&amp;target_user_id=4568583578&amp;click_source=header_profile&amp;utm_source=instagram&amp;utm_medium=email"
-                                        style="color: #1b74e4; text-decoration: none"
-                                        target="_blank"
-                                        data-saferedirecturl="https://www.google.com/url?q=https://www.instagram.com/_n/user?username%3Dsoojubm%26utm_campaign%3Dtemplate_platform%26target_user_id%3D4568583578%26click_source%3Dheader_profile%26utm_source%3Dinstagram%26utm_medium%3Demail&amp;source=gmail&amp;ust=1696831528608000&amp;usg=AOvVaw3VDMSVHJ1hB6nzT4XGKIC_"
-                                        ><img
-                                          style="border: 0; border-radius: 36px"
-                                          src="https://ci6.googleusercontent.com/proxy/h9aVWg1jrNifuRs0W-2mue2ZVzPXkKx9TuA68nDSYHnBgIAzvSEo3LBmchmmbe3z7O1CZM6GjXWc29WHjMTDoUfHuWttqsHzgBcmpKWy-RfE5g-kbgY73qUHs9aKAX-BjT3ImP6Wcx17LAXllfBIhskMJWSKBPKd8miel4wdm-hc5rQ6gRaeegeQa3JtpDnNGazVd5bYt8Q355J1k_ppur9qcCDOkX-X2ULSGtzmcsAG378lpJbCBEpGaEUbrNo5JDf_GmPERR-sse8GMvQbhbRIMwcHhT8Nx2d_NabtehGe4clmqeWhZHDgpg9kuTIaHBxl0udv3iVh2aAyiR3CtYHjRWlJecFEqPesTFZlGqyx6Bno2Sl0E15TT4PFm0yaP9REDdY7E7_dog2S7Aqan1Mws9rzJ4Cc0BimGSzsKhn084HjJY23en8QLE_Zqr5gLGLRurrdTmUceOEmzCQVlOEnrUUHUqM=s0-d-e1-ft#https://scontent-ams4-1.cdninstagram.com/v/t51.2885-19/44884218_345707102882519_2446069589734326272_n.jpg?_nc_ht=scontent-ams4-1.cdninstagram.com&amp;_nc_cat=1&amp;_nc_ohc=HAahVpYjX1UAX82XHQU&amp;edm=AAAAAAABAAAA&amp;ccb=7-5&amp;ig_cache_key=YW5vbnltb3VzX3Byb2ZpbGVfcGlj.2-ccb7-5&amp;oh=00_AfA-sQWChByb2dmYDloZ00GinAC5SDjsAHrsPq8tWpcsxQ&amp;oe=6526050F&amp;_nc_sid=000000"
-                                          height="36"
-                                          class="CToWUd"
-                                          data-bit="iit"
-                                      /></a>
-                                    </td>
-                                  </tr>
-                                </tbody>
-                              </table>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                      <table
-                        border="0"
-                        width="396px"
-                        cellspacing="0"
-                        cellpadding="0"
-                        style="
-                          border-collapse: collapse;
-                          margin-top: 35px;
-                          margin-bottom: 10px;
-                          margin-left: 15px;
-                          margin-right: 15px;
-                        "
-                      >
-                        <tbody>
-                          <tr>
-                            <td>
-                              <span
-                                ><span
-                                  style="
-                                    display: inline;
-                                    font-size: 18px;
-                                    font-family: SFUIText-Regular, Roboto, Segoe, Helvetica Neue,
-                                      Helvetica, Arial, sans-serif, SF Pro Text;
-                                    color: #262626;
-                                  "
-                                  >soojubm님, 안녕하세요.</span
-                                ></span
-                              >
-                            </td>
-                          </tr>
-                          <tr>
-                            <td style="height: 30px; width: 100%"></td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <span
-                                ><span
-                                  style="
-                                    display: inline;
-                                    font-size: 18px;
-                                    font-family: SFUIText-Regular, Roboto, Segoe, Helvetica Neue,
-                                      Helvetica, Arial, sans-serif, SF Pro Text;
-                                    color: #262626;
-                                  "
-                                  >최근에 Instagram 계정을 비공개에서 전체 공개로 변경하셨습니다.
-                                  이제 누구나 회원님의 사진과 동영상을 볼 수 있으며 더 이상 새
-                                  팔로워를 승인하지 않아도 됩니다.</span
-                                ></span
-                              >
-                            </td>
-                          </tr>
-                          <tr>
-                            <td style="height: 30px; width: 100%"></td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <span
-                                ><span
-                                  style="
-                                    display: inline;
-                                    font-size: 18px;
-                                    font-family: SFUIText-Regular, Roboto, Segoe, Helvetica Neue,
-                                      Helvetica, Arial, sans-serif, SF Pro Text;
-                                    color: #262626;
-                                  "
-                                  >승인된 팔로워만 회원님이 공유하는 콘텐츠를 볼 수 있도록 하려면
-                                  언제든지 Instagram 설정에서 계정을 다시 비공개로 설정할 수
-                                  있습니다.</span
-                                ></span
-                              >
-                            </td>
-                          </tr>
-                          <tr>
-                            <td style="height: 30px; width: 100%"></td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <span
-                                ><span
-                                  style="
-                                    display: inline;
-                                    font-size: 18px;
-                                    font-family: SFUIText-Regular, Roboto, Segoe, Helvetica Neue,
-                                      Helvetica, Arial, sans-serif, SF Pro Text;
-                                    color: #262626;
-                                  "
-                                  >감사합니다.</span
-                                ></span
-                              >
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <span
-                                ><span
-                                  style="
-                                    display: inline;
-                                    font-size: 18px;
-                                    font-family: SFUIText-Regular, Roboto, Segoe, Helvetica Neue,
-                                      Helvetica, Arial, sans-serif, SF Pro Text;
-                                    color: #262626;
-                                  "
-                                  >-Instagram 팀</span
-                                ></span
-                              >
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <table
-                      border="0"
-                      width="394px"
-                      cellspacing="0"
-                      cellpadding="0"
-                      style="border-collapse: collapse; margin: 0 auto 0 auto; width: 394px"
-                    >
-                      <tbody>
-                        <tr>
-                          <td height="30" style="line-height: 30px" colspan="3">&nbsp;</td>
-                        </tr>
-                        <tr align="left">
-                          <td width="0" style="display: block; width: 0px">&nbsp;&nbsp;&nbsp;</td>
-                          <td style="text-align: center">
-                            <div style="padding-top: 10px">
-                              <img
-                                src="https://ci4.googleusercontent.com/proxy/EJZbh4o__ilxW-Qeu9CLvNAN7DS93sdYd0ZWHbRbsuZTMeA01I_dPjJ8ksrB2zX5CDoDyOrShH2RhVZy5cghftAAEMZI0T10gEk20cA2OA=s0-d-e1-ft#https://static.xx.fbcdn.net/rsrc.php/v3/y3/r/Bqo9-L659wB.png"
-                                height="26"
-                                width="52"
-                                alt="Meta Logo"
-                                class="CToWUd"
-                                data-bit="iit"
-                              />
-                            </div>
-                            <div style="height: 10px"></div>
-                            <div style="color: #abadae; font-size: 11px; margin: 0 auto 5px auto">
-                              © Instagram. Meta Platforms, Inc., 1601 Willow Road, Menlo Park, CA
-                              94025
-                            </div>
-                            <div style="color: #abadae; font-size: 11px; margin: 0 auto 5px auto">
-                              soojubm님에게 Instagram의 최신 소식에 대해 알려드리기 위해
-                              <a style="color: #abadae; text-decoration: underline"
-                                >soojubm@gmail.com</a
-                              >
-                              주소로 전송된 메시지입니다. 이러한 소식을 원치 않는 경우 언제든지
-                              <a
-                                href="https://instagram.com/emails/unsubscribe/support_email?user_id=4568583578&amp;sig=AU8dM_9IU0tbXVPV&amp;notification_type=182"
-                                style="color: #abadae; text-decoration: underline"
-                                target="_blank"
-                                data-saferedirecturl="https://www.google.com/url?q=https://instagram.com/emails/unsubscribe/support_email?user_id%3D4568583578%26sig%3DAU8dM_9IU0tbXVPV%26notification_type%3D182&amp;source=gmail&amp;ust=1696831528608000&amp;usg=AOvVaw3HEEYp6hFIWmy-z7UrzE--"
-                                >수신을 거부</a
-                              >할 수 있습니다. 회원님의 계정이 아니라면 soojubm 계정에서
-                              <a
-                                href="https://instagram.com/accounts/remove/revoke_wrong_email/?uidb36=23k0lne&amp;token=6ey-0866802fca901be4ff6b78b808d8b4b6&amp;nonce=ofby5ExD&amp;encoded_email=c29vanVibUBnbWFpbC5jb20"
-                                style="color: #abadae; text-decoration: underline"
-                                target="_blank"
-                                data-saferedirecturl="https://www.google.com/url?q=https://instagram.com/accounts/remove/revoke_wrong_email/?uidb36%3D23k0lne%26token%3D6ey-0866802fca901be4ff6b78b808d8b4b6%26nonce%3Dofby5ExD%26encoded_email%3Dc29vanVibUBnbWFpbC5jb20&amp;source=gmail&amp;ust=1696831528608000&amp;usg=AOvVaw1K8Zr-VpqiMNkGnNcK0BGE"
-                                >회원님의 이메일을 삭제하세요</a
-                              >.<br />
-                            </div>
-                          </td>
-                          <td width="0" style="display: block; width: 0px">&nbsp;&nbsp;&nbsp;</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                </tr>
-                <tr>
-                  <td height="20" style="line-height: 20px" colspan="3">&nbsp;</td>
-                </tr>
-              </tbody>
-            </table>
-            <span
-              ><img
-                src="https://ci3.googleusercontent.com/proxy/onP7dCk-StSLOihwtVX7zE-DDuQapUrfELEhpX8YP3nb6nU1DsKcZExWB1adn1098FpAf25Golpo10kZfJoYlJHA341NRkKT5Exfbv5LS25e2RlL2B2f8WoBrMn3lWDm2mXvkPo3qnauPWzjvn7ukJg0dhFd1eeur8J3RYH_Y1syGB_EV0jvQlfF4qyRu0I=s0-d-e1-ft#https://www.facebook.com/email_open_log_pic.php?mid=6071b92c79cbfG24bc2deb494d9aG6071bdc5d9f93G37d7&amp;ig_notification_type=182"
-                style="border: 0; width: 1px; height: 1px"
-                class="CToWUd"
-                data-bit="iit"
-            /></span>
-          </td>
-        </tr>
-      </tbody>
-    </table> -->
   </article>
 </main>

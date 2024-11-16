@@ -33,29 +33,18 @@
     </dl>
   </section>
 
-  <ul class="checklist">
-    <li>icon chip(button), icon tag, menu item avatar</li>
-    <li>memeo. medium. 이하의 크기는 디스크립션을 제공하지 않는다. 항상 align-items:center.</li>
-    <li>pagination button은 chip인가? chip과 같은 size token을 사용하지만 chip이 아니다.</li>
-    <li>
-      bottom nav item, icon button with label, user(entity huge). ICON BUTTON ??? 지금의 문제는
-      아이콘 버튼이 없고, 칩으로 대체하기 때문에 이걸 표현하기가 어렵다. icon button과 칩을 분리.
-      아이콘 버튼이 variant를 갖고 레이블이 노출된 형태. 하지만 이건 person/story랑은 또 구별되네
-    </li>
-    <li>
-      이걸 제품이 없는 상황에서 미리 정의해두려는 시도 자체가 바보같은 짓. 도메인에 맞게 작은 단위의
-      컴포넌트를 조합해서 쓰면 됨. 하지만 세로 형태의 아이콘과 레이블 조합된 컴포넌트는 정의해면
-      좋겠다. 칩과 아이콘 버튼과 중복되는 역할.
-    </li>
-    <li>
-      Entry. 페이지 레벨 정보의 주체. 단독으로 사용. 클릭할 수 있는 요소가 아니라 페이지를 대표하는
-      요소, 시각 정보로만 동작한다. 왜냐하면 이미 해당 페이지의 타이틀 롤이기 때문. - 이렇게 쓸 거면
-      페이지 타이틀이라는 컴포넌트로 정의하는 게 맞음.
-    </li>
-    <li>아웃라인 형태를 클릭할 수 없는 아바타로 정의</li>
-  </ul>
-
   <section class="component-guide">
+    <ul class="checklist">
+      <li>
+        medium과 small은 두 줄의 텍스트 노드와 함께 사용할 수 없다. align-items:center 로 정렬된다.
+      </li>
+      <li>아웃라인 아바타는 클릭할 수 없다.</li>
+      <li>
+        제품이 없는데 디테일을 정의하려 하지 말자. 도메인에 맞게 작은 단위의 컴포넌트를 조합해야
+        한다.
+      </li>
+    </ul>
+
     <mm-text variant="subhead">Clickable</mm-text>
     <button
       style="

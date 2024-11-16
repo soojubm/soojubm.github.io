@@ -150,7 +150,7 @@
 
     <fieldset class="authentication-fieldset">
       <div class="login-social oauth">
-        <mm-button isfullwidth="true" class="login-social-facebook"> 페이스북으로 시작 </mm-button>
+        <mm-button size="large" isfullwidth="true"> 페이스북으로 시작 </mm-button>
       </div>
       <mm-separator spacing="small">
         <mm-text slot="text" variant="body">또는</mm-text>
@@ -177,13 +177,7 @@
     </section>
 
     <menu class="authentication-foot">
-      <mm-button
-        variant="primary"
-        isfullwidth="true"
-        class="authentication-foot-submit"
-        type="submit"
-        >로그인</mm-button
-      >
+      <mm-button variant="primary" size="large" isfullwidth="true" type="submit">로그인</mm-button>
       <!-- TODO: 이메일이 없으신가요? 와 동일한 패턴 -->
       <p
         data-temp="Need an account?"
@@ -267,9 +261,7 @@
     </fieldset>
 
     <footer class="authentication-foot">
-      <mm-button variant="primary" class="authentication-foot-submit" type="submit" disabled>
-        이메일 주소로 가입
-      </mm-button>
+      <mm-button variant="primary" type="submit" disabled> 이메일 주소로 가입 </mm-button>
     </footer>
   </form>
 
@@ -291,9 +283,7 @@
       <mm-textfield label="이메일 주소" placeholder="soojubm@gmail.com"></mm-textfield>
     </fieldset>
     <footer class="authentication-foot">
-      <mm-button variant="primary" type="submit" class="authentication-foot-submit"
-        >재설정 메일 받기</mm-button
-      >
+      <mm-button variant="primary" type="submit">재설정 메일 받기</mm-button>
       <!-- <span class="password-foot-back password-link" title="Remember your password after all?">이메일이 기억 안 나세요? <a href="signin.html">가입하기</a></span> -->
     </footer>
     <aside class="" style="margin-top: 1.5rem">
@@ -356,9 +346,7 @@
       ></mm-textfield>
     </mm-group>
     <footer class="authentication-foot">
-      <mm-button variant="primary" type="submit" class="authentication-foot-submit">
-        재설정 메일 받기
-      </mm-button>
+      <mm-button variant="primary" type="submit"> 재설정 메일 받기 </mm-button>
     </footer>
     <div style="height: var(--space-3)"></div>
     <span class="password-foot-back password-link" title="">

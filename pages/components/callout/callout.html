@@ -22,7 +22,7 @@
         <mm-callout>
           <mm-text variant="body">배너. 히어로와 콜아웃의 차이.</mm-text>
           <div style="margin-left: auto">
-            <mm-button variant="back" icon="xmark"></mm-button>
+            <mm-icon-button variant="navigator" icon="xmark"></mm-icon-button>
           </div>
         </mm-callout>
 
@@ -79,10 +79,9 @@
     <mm-text variant="body">
       브라우저가 role="alert" 속성이 있는 요소를 발견하면 즉시 사용자에게 경고 내용을 읽습니다.
     </mm-text>
-  </section>
 
-  <mm-text variant="subhead">with Toast. toast=>snackbar(withAction)</mm-text>
-  <!--
+    <mm-text variant="subhead">with Toast. toast=>snackbar(withAction)</mm-text>
+    <!--
     Icon: Informs users of the kind of notification at a glance.
     Title: Gives users a quick overview of the notification.
     Message (1optional): Provides additional detail and actionable steps for the user to take.
@@ -91,16 +90,17 @@
     Time stamp (1optional): Shows the time the toast notification was sent.
     -->
 
-  <ul class="checklist">
-    <li>링크를 제공할 것인가? 정의에 따르면 하지 않는 것이 맞다.</li>
-    <li>
-      게임에서 파티 탈퇴와 같이 직접 실행하지 않은, 연속적인 결과가 발생하는 경우 여러 개가
-      필요하구나.
-    </li>
-    <li>역할로 구분하면 input feedback은 callout과 다른 컴포넌트로 정의하여야 한다.</li>
-    <li>
-      아이콘으로 callout의 맥락을 구분할 수 있다. 따라서 아이콘이 없는 형태의 callout은 공허한, 단순
-      Tile 컴포넌트처럼 보일 수 있다.
-    </li>
-  </ul>
+    <ul class="checklist">
+      <li>링크를 제공할 것인가? 정의에 따르면 하지 않는 것이 맞다.</li>
+      <li>
+        게임에서 파티 탈퇴와 같이 직접 실행하지 않은, 연속적인 결과가 발생하는 경우 여러 개가
+        필요하구나.
+      </li>
+      <li>역할로 구분하면 input feedback은 callout과 다른 컴포넌트로 정의하여야 한다.</li>
+      <li>
+        아이콘으로 callout의 맥락을 구분할 수 있다. 따라서 아이콘이 없는 형태의 callout은 공허한,
+        단순 Tile 컴포넌트처럼 보일 수 있다.
+      </li>
+    </ul>
+  </section>
 </main>

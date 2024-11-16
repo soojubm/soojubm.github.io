@@ -2,8 +2,8 @@
   <header class="page-header">
     <mm-text variant="title">Buttons</mm-text>
     <mm-text variant="body-large">
-      페이지 이동이나 양식 제출 등 사용자 여정의 핵심과업을 수행할 수 있습니다. 페이지에서
-      제한적으로 사용하여 사용자의 과업을 돕습니다.
+      페이지 이동이나 양식 제출 등 사용자 여정의 핵심과업을 수행합니다. 제한적으로 사용하여 사용자의
+      과업을 돕습니다.
     </mm-text>
     <mm-text variant="body-large">
       2411. 칩과 통합하고 사이즈 토큰과 동일한 사이즈 프로토콜을 사용한다. 추후 선택 또는 필터링에
@@ -24,16 +24,17 @@
   <div style="margin-bottom: -1rem"></div>
   <section class="component-example">
     <mm-tabpanel role="tabpanel" aria-hidden="false" data-index="1">
-      <mm-group variant="chip">
+      <mm-group>
         <mm-button variant="primary" size="large">primary</mm-button>
         <mm-button variant="secondary" size="large">secondary</mm-button>
         <mm-button variant="tertiary" size="large">tertiary</mm-button>
         <mm-button variant="destructive" aria-label="danger">destructive</mm-button>
         <mm-button variant="text">text</mm-button>
       </mm-group>
-      <mm-group variant="chip">
-        <mm-button variant="primary" size="large">large</mm-button>
-        <mm-button variant="tertiary">medium</mm-button>`
+      <mm-separator></mm-separator>
+      <mm-group>
+        <mm-button variant="primary">action</mm-button>
+        <mm-button variant="tertiary">action</mm-button>`
       </mm-group>
     </mm-tabpanel>
     <mm-tabpanel role="tabpanel" aria-hidden="true" data-index="2">
@@ -57,10 +58,14 @@
     <dl>
       <dt>variant</dt>
       <dd>'primary' | 'secondary' | 'tertiary'</dd>
+      <dt>size<attr>?</attr></dt>
+      <dd>'large' | 'medium'</dd>
+
       <dt>name</dt>
       <dd>string</dd>
-      <dt>size<attr>?</attr></dt>
-      <dd><del>'large'</del> | 'medium'</dd>
+      <dt>value</dt>
+      <dd>string</dd>
+
       <dt>isDisabled?</dt>
       <dd>boolean</dd>
       <dt>isFullwidth<attr>?</attr></dt>
@@ -68,25 +73,15 @@
       <dt>href<attr>?</attr></dt>
       <dd>string</dd>
       <dt>onClick<attr>?</attr></dt>
-      <dd>event:(React.MouseEvent&lt;HTMLButtonElement&gt;) => void</dd>
-      <!-- <dt><del>aria-expanded</del><attr>?</attr></dt>
-          <dd>null</dd>
-          <dd>TODO 버튼을 타겟 확장의 용도로 사용할 수 없기 때문에 제거하기</dd> -->
+      <dd>event: (React.MouseEvent&lt;HTMLButtonElement&gt;) => void</dd>
     </dl>
   </section>
-
-  <!-- <mm-button data-variant="tertiary">
-    with suffix icon
-    <mm-icon slot="suffix" name="star"></mm-icon>
-  </mm-button> -->
-
   <!-- 참고: 버튼 네이밍. 'link' | 'subtle' | 'primary' / 'solid' | 'outline' | 'plain' |'text' -->
   <section class="component-guide">
     <!-- TODO 아이콘 하나로 제한되면 slot의 순서만 챙기고 그냥 slot='icon' 하나로? 아니면 label -->
-    <!-- <mm-button data-variant="tertiary">
-                      <mm-icon slot="prefix" name="star"></mm-icon>
-                      with prefix icon
-                    </mm-button> -->
+    <ul class="checklist">
+      <li>Dropdown은 버튼과 목록을 포함한 합성된 컴포넌트임. 최근 바텀 셀렉트 시트 같은 느낌.</li>
+    </ul>
 
     <mm-text variant="subhead" aria-label="예측 가능해야 합니다.">Behavior</mm-text>
     <mm-text variant="body-large">
@@ -120,7 +115,7 @@
     <br /><br />
 
     <mm-text variant="subhead" data-temp=" minimum viable experience" style="margin-top: 0">
-      Group patterns - binary choices / 목록 버튼
+      ButtonGroup - binary choices
     </mm-text>
     <mm-text variant="body">
       텍스트 버튼은 버튼 처럼 보이지 않을 수 있기 때문에 학습된? 보편적인? 약속된? 누구랑 약속?
@@ -156,34 +151,32 @@
       </mm-tile>
     </mm-group>
 
-    <mm-text variant="subhead">Composing components</mm-text>
-    <section class="component-example">
+    <mm-text variant="subhead">
+      ShowMoreButton <span hidden>Image Button, CheckoutButton</span>
+    </mm-text>
+    <mm-text variant="body">
+      fullWidth로 사용하지 마세요. 단일 콘텐츠 또는 콘텐츠 목록의 너비와 대비를 통한 강조. TODO 이건
+      최종 액션이 아님. 칩이 되는 게 나을 수도.
+    </mm-text>
+    <mm-tile size="small">
       <mm-button variant="tertiary">
         Show more
         <mm-icon slot="suffix" name="nav-arrow-down"></mm-icon>
       </mm-button>
-      <mm-text variant="body-bold">
-        ShowMoreButton <span hidden>Image Button, CheckoutButton</span>
-      </mm-text>
-      <div style="height: var(--space-1)"></div>
-      <mm-text variant="body">
-        fullWidth로 사용하지 마세요. 단일 콘텐츠 또는 콘텐츠 목록의 너비와 대비를 통한 강조. TODO
-        이건 최종 액션이 아님. 칩이 되는 게 나을 수도.
-      </mm-text>
-    </section>
+    </mm-tile>
 
     <ul class="checklist" style="margin: 2rem 0 0">
       <li>
-        Split button. 사용자에게 더 많은 작업을 표시하는 경우 작업을 선택하여 트리거할 수 있도록
+        Split button이란? 사용자에게 더 많은 작업을 표시하는 경우 작업을 선택하여 트리거할 수 있도록
         선택 + 버튼 조합을 사용. 것이 좋습니다.
       </li>
       <li>
-        Link Button. 버튼과 형태는 동일한 합성된 컴포넌트. Link 안에 button이 들어가면 링크 역할과
-        버튼의 형태를 분리할 수 있다.
+        Link Button. next에서 Link를 사용하면 관련 페이지를 미리 가져오기 때문에 성능 이점이 있다.
+        버튼과 형태는 동일하다. Link 안에 button의 형태를 포함하도록 하는 방법은?
       </li>
       <li>
-        빈 버튼이 필요. 리액트에서 포커싱이 가능한 전체 영역의 버튼. 도는 버튼 내부에서 포지셔닝되는
-        버튼
+        빈 버튼이 필요한가? 리액트에서 포커싱이 가능한 전체 영역의 버튼. 도는 버튼 내부에서
+        포지셔닝되는 버튼
       </li>
     </ul>
   </section>
@@ -260,9 +253,31 @@
       </mm-text>
 
       <mm-text variant="subhead">Avoid disabled buttons</mm-text>
-      <mm-text variant="body"
-        >Let the user send incomplete form and use error messages to explain what is wrong.</mm-text
-      >
+      <mm-text variant="body">
+        Let the user send incomplete form and use error messages to explain what is wrong.
+      </mm-text>
+
+      <address class="component-references">
+        <!-- <mm-text variant="label">References</mm-text> -->
+        <a href="https://material.io/components/menus" target="_blank"> MD menu </a>
+        <a
+          href="https://developer.apple.com/design/human-interface-guidelines/components/menus-and-actions/pull-down-buttons"
+        >
+          MD pull down button
+        </a>
+        <a
+          href="https://developer.apple.com/design/human-interface-guidelines/ios/controls/pull-down-menus/"
+          target="_blank"
+        >
+          HIG pull down menu
+        </a>
+        <a
+          href="https://developer.android.com/reference/com/google/android/material/chip/ChipGroup"
+          target="_blank"
+        >
+          MD chip group
+        </a>
+      </address>
     </section>
 
     <section class="component-case">
@@ -275,7 +290,7 @@
           <mm-button>윤석열검찰총장</mm-button>
           <mm-button>차별금지법</mm-button>
           <mm-button>추미애법무부장관</mm-button>
-          <mm-button variant="back" icon="more-horiz"></mm-button>
+          <mm-icon-button variant="navigator" icon="more-horiz"></mm-icon-button>
         </mm-group>
         <div style="height: var(--space-after-subhead)"></div>
         <mm-tile variant="elevated" size="small">
@@ -290,7 +305,7 @@
 
   <article class="article js-observer js-scrollspy-section">
     <mm-text variant="title">File Uploader</mm-text>
-    <mm-text variant="body-large">프로필 사진 또는 이미지 업로드.</mm-text>
+    <mm-text variant="body-large">파일 업로드. 이미지 업로드와 파일 업로드 구분.</mm-text>
     <section class="component-example">
       <form class="file" method="" enctype="multipart/form-data">
         <mm-text variant="body">프로필 사진</mm-text>
@@ -382,12 +397,6 @@
         <mm-button>사용자1</mm-button>
         <mm-button>사용자1</mm-button>
       </div> -->
-    <mm-separator></mm-separator>
-    <mm-text>이게 텍스트?</mm-text>
-    <mm-group variant="chip">
-      <mm-button variant="back" icon="arrow-left"></mm-button>
-      <mm-button variant="back" icon="arrow-right"></mm-button>
-    </mm-group>
   </section>
 
   <section class="component-props">
@@ -497,26 +506,4 @@
     <li>TODO 선택을 클리어하는 클리어버튼을 만들어 검색필드에서 활용하는 방법도 있다.</li>
     <li>아이콘이 아니라 이모지가 들어갈 때. 여기서 searching 왼쪽 아바타.</li>
   </ul>
-
-  <address class="component-references">
-    <!-- <mm-text variant="label">References</mm-text> -->
-    <a href="https://material.io/components/menus" target="_blank"> MD menu </a>
-    <a
-      href="https://developer.apple.com/design/human-interface-guidelines/components/menus-and-actions/pull-down-buttons"
-    >
-      MD pull down button
-    </a>
-    <a
-      href="https://developer.apple.com/design/human-interface-guidelines/ios/controls/pull-down-menus/"
-      target="_blank"
-    >
-      HIG pull down menu
-    </a>
-    <a
-      href="https://developer.android.com/reference/com/google/android/material/chip/ChipGroup"
-      target="_blank"
-    >
-      MD chip group
-    </a>
-  </address>
 </main>

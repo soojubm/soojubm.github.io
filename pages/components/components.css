@@ -3,7 +3,7 @@
   --container-width: var(--layout-width-small);
 }
 .component-example {
-  margin: 2rem -5vw 3rem calc(-5vw + 1rem);
+  margin: 2rem -5vw 0 calc(-5vw + 1rem);
   padding: 2rem calc(var(--grid-margin) - 1rem);
   border-radius: var(--radius) var(--radius) 0 0;
   margin: 2rem 0 3rem calc(-5vw + 1rem);
@@ -23,27 +23,39 @@
   background: var(--color-background);
 }
 
+.component-props {
+  margin: 2rem 0 0 calc(-5vw + 1rem);
+  padding: 1.75rem calc(var(--grid-margin) - 1rem) 1.875rem;
+  margin-top: -3rem;
+  border-radius: 0 0 var(--radius) var(--radius);
+  background-color: var(--color-background-weak);
+  position:relative;
+}
 
-/* [data-theme=dark] .component-example {
-  box-shadow: 0 1px 1px hsla(0, 0%, 100%, 0.013),
-  0 2px 2px hsla(0, 0%, 100%, 0.0125),
-  0 4px 4px hsla(0, 0%, 100%, 0.0125),
-  0 8px 8px hsla(0, 0%, 100%, 0.0125),
-  0 16px 16px hsla(0, 0%, 100%, 0.0125)
-} */
+.component-guide {
+  margin: 1rem 0 0 calc(-5vw + 1rem);
+  padding: 0 calc(var(--grid-margin) - 1rem) 4rem;
+  border-radius: var(--radius);
+  border: var(--border);
+  /* max-width: var(--container-width);
+  margin:3.5rem 0 4rem; */
+}
+
+.component-guide .checklist {
+  margin: 2rem 0 0;
+}
 
 .component-case {
   /* TODO listBox  */
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  align-content: flex-start;
+  align-content: center;
   max-height: 800px;
   gap: var(--space-4);
 
-  /* TODO -8rem */
-  margin:6rem -5vw 0 calc(-5vw + 1rem);
-  padding:2rem calc(var(--grid-margin) - 1rem) 6rem;
+  margin:1rem -4vw -5rem calc(-5vw + 1rem);
+  padding:4rem calc(var(--grid-margin) - 1rem) 6rem;
   border-top-left-radius: var(--radius);
 
   background: var(--color-background-strong);
@@ -59,29 +71,12 @@
   max-width: 400px;
 }
 
-.component-props {
-  margin: 2rem 0 3rem calc(-5vw + 1rem);
-  padding: 1.75rem calc(var(--grid-margin) - 1rem) 1.875rem;
-  margin-top: -3rem;
-  border-radius: 0 0 var(--radius) var(--radius);
-  background-color: var(--color-background-weak);
-  position:relative;
-}
 .component-props mm-text {display:none}
 .component-props dl {display:flex;flex-wrap:wrap;column-gap:var(--space-1);}
 .component-props dl dt {font-weight:500;}
 .component-props dl dt::after {content:':'}
 .component-props dl dd {margin-right:var(--space-3);font-weight: var(--font-weight-bold);font-style:italic;;color:rgb(29, 161, 242)}
 .component-props dl dd + dd {font-size:var(--font-size-small);color:var(--color-text);}
-
-.component-guide {
-  max-width: var(--container-width);
-  margin:3.5rem 0 4rem;
-}
-
-.component-guide .checklist {
-  margin: 2rem 0 0;
-}
 
 .component-references {
   display: flex;

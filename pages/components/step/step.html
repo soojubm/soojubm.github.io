@@ -61,7 +61,7 @@
       <li>타임라인과 구분. 타임라인은 히스토리 맥락으로 스텝의 역순. 확장, 링크, indentation</li>
     </ul>
     <mm-text variant="subhead">Changelog</mm-text>
-    <mm-text variant="body">클릭하고 싶지 않은 형태로 변경 2021.10</mm-text>
+    <mm-text variant="body">non-clickable 로 변경 2021.10</mm-text>
   </section>
 
   <section class="component-case">
@@ -106,8 +106,8 @@
         </div>
       </div>
       <div style="height: var(--space-4)"></div>
-      <mm-group variant="">
-        <mm-button style="width: 100%">재주문</mm-button>
+      <mm-group>
+        <mm-button>재주문</mm-button>
         <mm-button>후기작성</mm-button>
       </mm-group>
       <!-- <mm-tag>네이버 쇼핑은 왜 주문 내역을 숨길 수 있나?</mm-tag> -->
@@ -117,17 +117,27 @@
         <mm-menuitem>
           <mm-avatar slot="avatar" size="medium"></mm-avatar>
           <div slot="text">
-            <mm-text variant="label">Step 1</mm-text>
+            <mm-text variant="word-weak">Step 1</mm-text>
             <mm-text variant="word-strong">UPLOAD 3D FILES</mm-text>
           </div>
         </mm-menuitem>
         <mm-menuitem>
           <mm-avatar slot="avatar" size="medium"></mm-avatar>
           <div slot="text">
-            <mm-text variant="label">Step 2</mm-text>
+            <mm-text variant="word-weak">Step 2</mm-text>
             <mm-text variant="word-strong">UPLOAD 3D FILES</mm-text>
           </div>
         </mm-menuitem>
+        <div>
+          <div style="display: flex; align-items: center; height: 32px; gap: var(--space-3)">
+            <mm-text variant="subhead">01</mm-text>
+            <mm-text variant="body-bold">Choose your platform</mm-text>
+          </div>
+          <div style="display: flex; align-items: center; height: 32px; gap: var(--space-3)">
+            <mm-text variant="subhead">02</mm-text>
+            <mm-text variant="body-bold">Set color theme</mm-text>
+          </div>
+        </div>
       </mm-group>
     </mm-tile>
     <mm-tile>
@@ -170,16 +180,6 @@
         </div>
       </section>
       <footer><mm-button variant="primary">Start creating</mm-button></footer>
-    </mm-tile>
-    <mm-tile>
-      <div style="display: flex; align-items: center; height: 32px; gap: var(--space-3)">
-        <mm-text variant="subhead">01</mm-text>
-        <mm-text variant="body-bold">Choose your platform</mm-text>
-      </div>
-      <div style="display: flex; align-items: center; height: 32px; gap: var(--space-3)">
-        <mm-text variant="subhead">02</mm-text>
-        <mm-text variant="body-bold">Set color theme</mm-text>
-      </div>
     </mm-tile>
   </section>
 </main>
