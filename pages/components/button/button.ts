@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
           </figure>
           <b">${file.name}</b>
           <small>${returnFileSize(file.size)}</small>
-          <button class="js-remove-this">close</button>
+          <mm-icon-button icon="xmark class="js-remove-this">close</mm-icon-button>
         </div>
       `
       attachmentList.innerHTML += fileTemplate

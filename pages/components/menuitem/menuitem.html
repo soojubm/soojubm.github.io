@@ -14,7 +14,7 @@
   <section class="component-example">
     <!-- TODO prefix / suffix -->
     <mm-group variant="menuitem">
-      <mm-menuitem size="large">
+      <mm-menuitem>
         <mm-avatar slot="avatar" size="large">🦊</mm-avatar>
         <div slot="text">
           <mm-text variant="body-bold">사진 및 동영상 백업</mm-text>
@@ -31,11 +31,11 @@
       </mm-menuitem>
       <mm-menuitem label="메뉴아이템 체크박스" role="menuitemcheckbox">
         <mm-avatar slot="avatar">🦊</mm-avatar>
-        <mm-checkbox slot="check" id="check1" name="check1" value="" checked="true"></mm-checkbox>
+        <mm-checkbox slot="action" id="check1" name="check1" value="" checked="true"></mm-checkbox>
       </mm-menuitem>
       <mm-menuitem label="메뉴아이템 라디오" role="menuitemradio">
         <mm-avatar slot="avatar">🦊</mm-avatar>
-        <mm-radio slot="check" id="radio1" name="radio1" value="" checked="true"></mm-radio>
+        <mm-radio slot="action" id="radio1" name="radio1" value="" checked="true"></mm-radio>
       </mm-menuitem>
       <mm-tile variant="elevated" size="small" role="menuitemcheckbox">
         <mm-menuitem label="강조된 메뉴아이템" description="리스트가 될 수 없어">
@@ -120,7 +120,6 @@
     <mm-tile variant="flat">
       <mm-group variant="dropdown">
         <mm-text variant="label">menu heading / line height</mm-text>
-        <div style="height: var(--space-1)"></div>
         <mm-menuitem role="menuitem" href="#design">
           <mm-text slot="text" variant="subhead">Anxiety </mm-text>
         </mm-menuitem>
@@ -134,14 +133,13 @@
         <mm-avatar slot="avatar"></mm-avatar>
         <mm-group slot="action" variant="chip">
           <mm-button>퀵 액션</mm-button>
-          <mm-button icon="arrow-right"> </mm-button>
+          <mm-icon-button icon="arrow-right"> </mm-icon-button>
         </mm-group>
       </mm-menuitem>
     </mm-tile>
     <mm-tile variant="flat">
       <mm-group variant="dropdown">
         <mm-text variant="label">menu heading / gap margin left on label</mm-text>
-        <div style="height: var(--space-1)"></div>
         <mm-menuitem role="menuitem" href="#design">
           <mm-icon slot="check" name="check"></mm-icon>
           <span slot="text">Only Text</span>
@@ -195,6 +193,7 @@
         placeholder="이건 사실 입력 기능이 없다 커스텀 컴포넌트."
         size="small"
         class="share-copy"
+        label=""
         hiddenLabel
       >
         <mm-button slot="suffix" class="js-copy">복사 </mm-button>
@@ -204,25 +203,25 @@
       <mm-titlebar heading="공개 대상 선택"></mm-titlebar>
       <br />
       <mm-group variant="menuitem">
-        <mm-menuitem size="large">
+        <mm-menuitem>
           <mm-radio slot="check" checked></mm-radio>
-          <mm-avatar slot="avatar" size="large" icon="group"> </mm-avatar>
+          <mm-avatar slot="avatar" icon="group"> </mm-avatar>
           <div slot="text">
             <mm-text variant="word-strong">사진 및 동영상 백업</mm-text>
             <mm-text variant="word-weak">우측 액션은 사실 그냥 시각 정보인데.</mm-text>
           </div>
         </mm-menuitem>
-        <mm-menuitem size="large">
+        <mm-menuitem>
           <mm-radio slot="check"></mm-radio>
-          <mm-avatar slot="avatar" size="large" icon="group"> </mm-avatar>
+          <mm-avatar slot="avatar" icon="group"> </mm-avatar>
           <div slot="text">
             <mm-text variant="word-strong">친구만</mm-text>
             <mm-text variant="word-weak">회원님의 Facebook 친구</mm-text>
           </div>
         </mm-menuitem>
-        <mm-menuitem data-size="large">
+        <mm-menuitem data->
           <mm-radio slot="check"></mm-radio>
-          <mm-avatar slot="avatar" size="large" icon="lock"> </mm-avatar>
+          <mm-avatar slot="avatar" icon="lock"> </mm-avatar>
           <div slot="text">
             <mm-text variant="word-strong">나만 보기</mm-text>
             <mm-text variant="word-weak">부끄러우니까</mm-text>
@@ -245,7 +244,7 @@
       <div style="height: var(--space-3)"></div>
       <mm-group>
         <mm-menuitem>
-          <mm-avatar slot="avatar" size="large" fallback="🎅🏻"></mm-avatar>
+          <mm-avatar slot="avatar" fallback="🎅🏻"></mm-avatar>
           <div slot="text">
             <mm-text variant="word-strong">Widgefy iOS Widgets</mm-text>
             <mm-text variant="word-weak">떡볶이</mm-text>
@@ -258,7 +257,7 @@
       </mm-group>
       <div style="height: var(--space-3)"></div>
       <footer>
-        <mm-button variant="primary">Buy now</mm-button>
+        <mm-button variant="primary" size="large">Buy now</mm-button>
       </footer>
     </mm-tile>
     <mm-tile variant="flat">
@@ -273,26 +272,16 @@
         </mm-tablist>
       </div>
       <mm-group variant="menuitem">
-        <mm-menuitem size="large">
-          <mm-avatar
-            slot="avatar"
-            size="large"
-            default="true"
-            style="background-color: yellowgreen"
-          ></mm-avatar>
+        <mm-menuitem>
+          <mm-avatar slot="avatar" default="true" style="background-color: yellowgreen"></mm-avatar>
           <div slot="text">
             <mm-text variant="word-strong">coffee</mm-text>
             <mm-text variant="word-weak">유아이 디자이너</mm-text>
           </div>
-          <mm-button slot="action" status="active">팔로우</mm-button>
+          <mm-button slot="action" variant="secondary">팔로우</mm-button>
         </mm-menuitem>
-        <mm-menuitem size="large">
-          <mm-avatar
-            slot="avatar"
-            size="large"
-            default="true"
-            style="background-color: blueviolet"
-          ></mm-avatar>
+        <mm-menuitem>
+          <mm-avatar slot="avatar" default="true" style="background-color: blueviolet"></mm-avatar>
           <div slot="text">
             <mm-text variant="word-strong">soojubm</mm-text>
             <mm-text variant="word-weak">유투브 구독자</mm-text>
@@ -317,11 +306,11 @@
       <br />
       <mm-group variant="menuitem">
         <mm-menuitem label="수줍이 앱">
-          <mm-avatar slot="avatar" variant="secondary" size="large" default="true"></mm-avatar>
+          <mm-avatar slot="avatar" variant="secondary" default="true"></mm-avatar>
           <mm-button slot="action">열기</mm-button>
         </mm-menuitem>
         <mm-menuitem label="사파리 브라우저">
-          <mm-avatar slot="avatar" size="large" default="true"></mm-avatar>
+          <mm-avatar slot="avatar" default="true"></mm-avatar>
           <mm-button slot="action" status="active">실행</mm-button>
         </mm-menuitem>
       </mm-group>

@@ -100,6 +100,10 @@ input[type=search]::-webkit-search-results-decoration {display:none;}
 
   /* box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 0px 0px; */
 }
+/* TODO */
+textarea.textfield-input {
+  height: auto;
+}
 .textfield-input:hover {border-color:var(--color-primary);}
 .textfield-input:focus {box-shadow:var(--status-hover);}
 .textfield-input:read-only {color:var(--color-text-light);cursor:default;}
@@ -126,7 +130,7 @@ input[type=search]::-webkit-search-results-decoration {display:none;}
   display: flex;
   align-items: center;
   justify-content: center;
-  width: var(--textfield-height); // TODO
+  width: var(--textfield-height);
   height: var(--textfield-height);
   position:absolute;
   top:var(--textfield-icon-position);

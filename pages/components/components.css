@@ -46,7 +46,6 @@
 }
 
 .component-case {
-  /* TODO listBox  */
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -86,7 +85,8 @@
   padding: 2rem 0 0;
   border-top: 4px dotted var(--color-border);
   & mm-text[variant=subhead] {
-    display: none;
+    display: none !important;
+   
   }
   & a {
     color: var(--color-primary);

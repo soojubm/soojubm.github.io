@@ -78,7 +78,6 @@
   </section>
   <!-- 참고: 버튼 네이밍. 'link' | 'subtle' | 'primary' / 'solid' | 'outline' | 'plain' |'text' -->
   <section class="component-guide">
-    <!-- TODO 아이콘 하나로 제한되면 slot의 순서만 챙기고 그냥 slot='icon' 하나로? 아니면 label -->
     <ul class="checklist">
       <li>Dropdown은 버튼과 목록을 포함한 합성된 컴포넌트임. 최근 바텀 셀렉트 시트 같은 느낌.</li>
     </ul>
@@ -328,13 +327,13 @@
       </form>
     </section>
 
-    <div class="file-attachment-item" style="max-width: var(--width-medium)">
-      <figure class="file-attachment-item-image">
-        <img src="/public/images/springsteen.jpg" alt="${file.name}" />
+    <div class="file-attachment-item" style="width: 100px">
+      <figure>
+        <img src="${window.URL.createObjectURL(file)}" alt="${file.name}" />
       </figure>
-      <b class="file-attachment-item-name">${file.name}</b>
-      <small class="file-attachment-item-size">${returnFileSize(file.size)}</small>
-      <mm-button icon="xmark" class="file-attachment-item-delete js-remove-this"> </mm-button>
+      <b>${file.name}</b>
+      <small>${returnFileSize(file.size)}</small>
+      <mm-icon-button icon="xmark" class="js-remove-this">close</mm-icon-button>
     </div>
   </article>
 </main>
@@ -448,14 +447,14 @@
   <mm-text variant="subhead">
     Single selection for contents filtering. togglebuttonGroup mui
   </mm-text>
-  <section class="component-example" style="margin-top: 1rem">
+  <mm-tile size="small">
     <mm-group variant="chip">
       <mm-button status="checked" class="js-toggle is-active">전체</mm-button>
       <mm-button class="js-toggle">입금확인</mm-button>
       <mm-button class="js-toggle">결제완료</mm-button>
       <mm-button class="js-toggle">배송중</mm-button>
     </mm-group>
-  </section>
+  </mm-tile>
 
   <mm-text variant="subhead">Multiple selections</mm-text>
   <div style="height: var(--space-1)"></div>

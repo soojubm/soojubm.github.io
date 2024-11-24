@@ -1,5 +1,5 @@
-<main class="page" style="background-color: var(--color-background-weak)">
-  <div class="article" style="max-width: 560px">
+<main class="page">
+  <div class="article" style="max-width: 560px; margin: 0 auto">
     <header
       style="
         display: flex;
@@ -144,10 +144,17 @@
 
     <br /><br />
 
-    <!-- TODO :: group을 section으로 -->
+    <!-- TODO :: group을 section -->
     <mm-group alignment="vertical">
       <mm-text variant="subhead">개인정보</mm-text>
-      <mm-tile>
+      <div
+        style="
+          display: flex;
+          flex-direction: column;
+          gap: var(--space-4);
+          margin-top: var(--space-2);
+        "
+      >
         <mm-menuitem>
           <div slot="text">
             <em class="avatar-badge"></em>
@@ -157,8 +164,6 @@
           <mm-button slot="action">Update email</mm-button>
           <!-- <mm-icon slot="action" name="arrow-right"></mm-icon> -->
         </mm-menuitem>
-      </mm-tile>
-      <mm-tile>
         <mm-menuitem>
           <div slot="text">
             <em class="avatar-badge"></em>
@@ -167,6 +172,30 @@
           </div>
           <mm-icon slot="action" name="arrow-right"></mm-icon>
         </mm-menuitem>
+      </div>
+    </mm-group>
+
+    <mm-group alignment="vertical">
+      <mm-text variant="subhead">보안</mm-text>
+      <mm-tile>
+        <mm-menuitem>
+          <div slot="text">
+            <mm-text variant="word-weak">비밀번호</mm-text>
+            <mm-text variant="word">강력한 비밀번호로 보안을 강화하세요.</mm-text>
+          </div>
+          <mm-icon slot="action" name="arrow-right">비밀번호 변경</mm-icon>
+        </mm-menuitem>
+      </mm-tile>
+      <mm-tile>
+        <mm-menuitem>
+          <div slot="text">
+            <mm-text variant="word-weak">계정 비활성화</mm-text>
+            <mm-text variant="word"
+              ><mm-link href="">비활성화 페이지</mm-link>에서 할 수 있습니다.</mm-text
+            >
+          </div>
+          <mm-button slot="action" variant="danger">비활성화</mm-button>
+        </mm-menuitem>
       </mm-tile>
     </mm-group>
 
@@ -174,24 +203,13 @@
 
     <mm-group alignment="vertical">
       <mm-text variant="subhead">뉴스레터</mm-text>
-      <mm-tile variant="">
-        <mm-menuitem label="시사 뉴스레터" class="js-darkmode">
-          <mm-avatar slot="avatar"> </mm-avatar>
-          <mm-switch slot="action" label=""></mm-switch>
-        </mm-menuitem>
-        <div
-          style="
-            border-radius: var(--radius);
-            background-color: var(--color-background-weak);
-            margin: var(--space-2) -0.5rem 0;
-            padding: var(--space-2);
-          "
-        >
-          <mm-text variant="caption">
-            매 주 월요일, 수요일, 금요일 아침에 받아볼 수 있어요.
-          </mm-text>
-        </div>
-      </mm-tile>
+      <mm-menuitem label="시사 뉴스레터" class="js-darkmode">
+        <mm-avatar slot="avatar"> </mm-avatar>
+        <mm-switch slot="action"></mm-switch>
+      </mm-menuitem>
+      <div style="border: var(--border); border-radius: var(--radius); padding: var(--space-2)">
+        <mm-text variant="caption"> 매 주 월요일, 수요일, 금요일 아침에 받아볼 수 있어요. </mm-text>
+      </div>
     </mm-group>
     <br /><br />
     <mm-group alignment="vertical">
@@ -243,30 +261,6 @@
             <mm-icon slot="suffix" name="arrow-right"></mm-icon>
           </mm-button>
         </footer>
-      </mm-tile>
-    </mm-group>
-    <br /><br />
-    <mm-group alignment="vertical">
-      <mm-text variant="subhead">보안</mm-text>
-      <mm-tile>
-        <mm-menuitem>
-          <div slot="text">
-            <mm-text variant="word-weak">비밀번호</mm-text>
-            <mm-text variant="word">강력한 비밀번호로 보안을 강화하세요.</mm-text>
-          </div>
-          <mm-icon slot="action" name="arrow-right">비밀번호 변경</mm-icon>
-        </mm-menuitem>
-      </mm-tile>
-      <mm-tile>
-        <mm-menuitem>
-          <div slot="text">
-            <mm-text variant="word-weak">계정 비활성화</mm-text>
-            <mm-text variant="word"
-              ><mm-link href="">비활성화 페이지</mm-link>에서 할 수 있습니다.</mm-text
-            >
-          </div>
-          <mm-button slot="action" variant="danger">비활성화</mm-button>
-        </mm-menuitem>
       </mm-tile>
     </mm-group>
 

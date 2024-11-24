@@ -3,16 +3,17 @@
     <mm-text variant="title">Avatars</mm-text>
     <mm-text variant="body-large">
       개체(유저, 회사, 프로젝트 등)를 대표하는 시각 정보입니다. 정보 더미의 주체로서 인접한 정보
-      더미 중 최상위 위계<span hidden>(시각적인 위계가 아님)</span>를 갖습니다.
+      더미 중 최상위 위계<span hidden>(시각적인 위계가 아님)</span>를 갖습니다. 때문에 클릭할 수
+      있으며 상세 페이지로 접근??
     </mm-text>
   </header>
   <section class="component-example">
     <mm-group variant="">
       <mm-avatar size="huge" default="true" badge="true" badge></mm-avatar>
-      <mm-avatar variant="secondary" size="huge" default="true" badge="true"></mm-avatar>
       <mm-avatar size="large" default="true" default="true" badge="true"></mm-avatar>
       <mm-avatar size="medium" default="true" fallback="수" badge="true"></mm-avatar>
       <mm-avatar size="small" default="true"> </mm-avatar>
+      <mm-avatar variant="secondary" size="huge" default="true" badge="true"></mm-avatar>
     </mm-group>
   </section>
 
@@ -28,13 +29,15 @@
       <dt>badge<abbr>?</abbr></dt>
       <dd>'unread' | 'new' | 'live'</dd>
       <!-- <dd>TODO. 합성 컴포넌트에서 상세하게 정의 ?? badgeSlot ?? badge에 숫자가 포함될 수도.</dd> -->
-      <!-- <dt>fallback?</dt>
-        <dd>예시. 유저 닉네임의 첫 알파벳. 달걀 이미지. 기본값을 정의.</dd> -->
     </dl>
   </section>
 
   <section class="component-guide">
     <ul class="checklist">
+      <li>
+        단독으로 쓰일 때는 aria-label이 필요할 수 있고, 텍스트와 함께 쓰일 때의 menuitem 같은
+        컴포넌트.
+      </li>
       <li>
         medium과 small은 두 줄의 텍스트 노드와 함께 사용할 수 없다. align-items:center 로 정렬된다.
       </li>
@@ -43,6 +46,7 @@
         제품이 없는데 디테일을 정의하려 하지 말자. 도메인에 맞게 작은 단위의 컴포넌트를 조합해야
         한다.
       </li>
+      <li>fallback 정의</li>
     </ul>
 
     <mm-text variant="subhead">Clickable</mm-text>
@@ -80,12 +84,13 @@
     </button>
 
     <mm-text variant="subhead">Groupable</mm-text>
+
     <mm-tile>
       <mm-group variant="avatar">
-        <mm-avatar size="medium" default="true"></mm-avatar>
-        <mm-avatar size="medium" default="true"></mm-avatar>
-        <mm-avatar size="medium" default="true"></mm-avatar>
-        <mm-avatar size="medium">+3</mm-avatar>
+        <mm-avatar size="small" default="true"></mm-avatar>
+        <mm-avatar size="small" default="true"></mm-avatar>
+        <mm-avatar size="small" default="true"></mm-avatar>
+        <mm-avatar size="small">+3</mm-avatar>
       </mm-group>
     </mm-tile>
 
@@ -162,7 +167,6 @@
         description="UI Designer"
       >
         <mm-avatar slot="avatar" variant="secondary" size="large" default="true"></mm-avatar>
-        <!-- // TODO slot -->
         <!-- <mm-tag slot="tag" variant="primary"></mm-tag> -->
       </mm-entity>
       <div style="margin: var(--space-2) 0 0">

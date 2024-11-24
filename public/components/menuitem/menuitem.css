@@ -49,11 +49,6 @@ a {
 ::slotted([slot=text]) {}
 ::slotted([slot=text]) p {line-height:24px;}
 
-[data-size=large] {}
-[data-size=large] .item-label {}
-[data-size=large] .item-description {}
-
-
 [data-alignment=vertical] {flex-direction:column;gap:0;}
 
 

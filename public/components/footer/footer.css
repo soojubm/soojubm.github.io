@@ -26,8 +26,7 @@
 .footer-scroll-indicator i {width:2px;height:8px;background:var(--gray800);margin:8px auto 0;animation:bounce 0.5s infinite alternate;transform:rotate(90deg);}
 .footer-scroll-bottom {display:none;}
 
-/* article is main TODO */
-.is-menu-opened .page {margin-left:calc(var(--width-sidemenu) + var(--grid-margin) + 1rem);}
+.is-menu-opened .page,
 .is-menu-opened .footer {margin-left:calc(var(--width-sidemenu) + var(--grid-margin) + 1rem);}
 
 .footer.is-observed {

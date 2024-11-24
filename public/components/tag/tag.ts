@@ -1,6 +1,5 @@
 import { makeStyleSheet } from '../../javascripts/components/utils'
 
-// TODO 참고
 // import styleTextCoral from './coral.scss'
 // const styleGreen = document.createElement('style');
 // styleGreen.type = 'text/css';

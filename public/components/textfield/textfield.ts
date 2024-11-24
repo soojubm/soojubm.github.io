@@ -7,11 +7,9 @@ class Input extends HTMLElement {
 
     const container = document.createElement('div')
     container.classList.add('textfield')
-    container.dataset.size = this.size || ''
     container.classList.toggle('is-invalid', this.isInvalid)
+    container.dataset.size = this.size || ''
     if (this.hiddenLabel) container.dataset.label = String(this.hiddenLabel)
-
-    console.log(this.hiddenLabel)
 
     const label = document.createElement('label')
     label.classList.add('textfield-label')
@@ -33,21 +31,18 @@ class Input extends HTMLElement {
     const linkSlot = document.createElement('slot')
     linkSlot.name = 'link'
 
-    if (this.isOptional) {
-      const small = document.createElement('small')
-      small.textContent = '선택입력'
-      label.appendChild(small)
-    }
+    const small = document.createElement('small')
+    small.textContent = '선택입력'
 
-    shadow.appendChild(container)
+    const p = document.createElement('p')
+    p.classList.add('textfield-helper')
+    p.textContent = this.helper
+
+    shadow.append(container, makeStyleSheet('textfield'))
     if (this.label) container.appendChild(label)
-    container.append(prefixSlot, input, suffixSlot, linkSlot, makeStyleSheet('textfield'))
-    if (this.helper) {
-      const p = document.createElement('p')
-      p.classList.add('textfield-helper')
-      p.textContent = this.helper
-      container.appendChild(p)
-    }
+    if (this.isOptional) label.appendChild(small)
+    container.append(prefixSlot, input, suffixSlot, linkSlot)
+    if (this.helper) container.appendChild(p)
   }
 
   get type() {

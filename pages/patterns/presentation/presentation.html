@@ -18,8 +18,8 @@
     <mm-text variant="title">Popovers</mm-text>
     <mm-text variant="body-large">
       사용자는 모달 형태의 집중된 환경에서 리스크를 관리할 수 있습니다. Popover API에서 네이밍
-      규칙을 따옴. 모달은 닫기 전에 다른 요소와 인터렉션을 하지 못 함. 비모달은 할 수 있음.
-      구조적으로는 main tag의 형제 엘리먼트. 루트 엘리먼트가 상태 클래스를 가짐. popovertarget
+      규칙을 따옴. 구조적으로는 main tag의 형제 엘리먼트. 루트 엘리먼트가 상태 클래스를 가짐.
+      popovertarget
     </mm-text>
     <blockquote>
       <ul>
@@ -107,14 +107,14 @@
       <aside class="toast" role="alert">toast test. 사라지는 시간을 정의.</aside>
       <mm-separator></mm-separator>
       <ul class="checklist">
-        <li>일시적인 피드백. 현재 사용하지 않음.</li>
+        <li>일시적인 피드백.</li>
+        <li>액션이 포함될 수 있나? 예시. 삭제 후 되돌리기 액션. 하지만 휴지통이 있다면?</li>
         <li>
           포지셔닝에 left bottom 좌표 대신 margin을 쓰는 게 좋다. 포지셔닝을 위한 믹스인을 보존할 수
           있고, 컴포넌트의 가로 사이즈도 보존할 수 있기 때문? left:1rem/right:1rem 이면 항상 block
           width를 가짐.
         </li>
         <li>toast VS snackbar. action 유/무. MD 버전업과 함께 재정의 됨.</li>
-        <li>삭제 후 되돌리기. 휴지통이 있다면 대체할 수 있는 기능.</li>
         <li>HIG에 정의되지 않음. iOS spotify 앱에서 '라이브러리에 추가되었습니다'.</li>
       </ul>
     </div>
@@ -127,7 +127,11 @@
       <mm-tile variant="elevated" class="sheet js-sheet" role="presentation">
         <button class="sheet-toggle"></button>
         <mm-text variant="subhead" class="sheet-title">Presentation - sheet</mm-text>
-        <mm-button icon="xmark" class="js-sheet-close" aria-label="close sheet"></mm-button>
+        <mm-icon-button
+          icon="xmark"
+          class="js-sheet-close"
+          aria-label="close sheet"
+        ></mm-icon-button>
         <mm-group variant="menuitem">
           <mm-menuitem data-size="medium" label="iOS 액션 시트 참고">
             <mm-avatar slot="avatar" default="true"></mm-avatar>

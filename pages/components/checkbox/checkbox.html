@@ -36,24 +36,20 @@
     <dl>
       <!-- <dt>name</dt>
         <dd>string</dd>
-        <dd>unique. 없어도 되지 않을까. radio에서도 직접 입력 id={props.name}</dd> -->
+        <dd>radio에서도 직접 입력 id={props.name}</dd> -->
       <dt>value</dt>
       <dd>string</dd>
-      <dd>unique</dd>
-      <dt>label? - labelHidden</dt>
+      <dt>label? - ariaLabel?</dt>
       <dd>string</dd>
       <dt>isChecked<attr>?</attr></dt>
       <dd>boolean</dd>
-      <dd>checkbox group이 가지는 추세.</dd>
+      <dd>group?</dd>
       <dt>isDisabled<attr>?</attr></dt>
       <dd>boolean</dd>
-      <dd></dd>
-      <dt>isIndeterminated<attr>?</attr></dt>
-      <dd>boolean</dd>
-      <dd>TODO checkbox group에서 checkboxAll에 종속되는 옵션</dd>
+      <dd>group?</dd>
       <dt>onChange</dt>
       <dd>(event: React.ChangeEvent&lt;HTMLInputElement&gt;) => void</dd>
-      <dd>checkbox group의 prop. React.ChangeEventHandler[]</dd>
+      <dd>group?</dd>
     </dl>
   </section>
 
@@ -74,6 +70,13 @@
 
     <mm-text variant="subhead">Editorial</mm-text>
     <mm-text variant="body">동사를 포함하는 최대 2단어. choice보다 action에 가깝다.</mm-text>
+
+    <mm-text variant="subhead">TermsCheckbox </mm-text>
+    <mm-text variant="subhead"
+      >CheckboxGroup and MasterCheckbox
+      <dt>isIndeterminated<attr>?</attr></dt>
+      <dd>boolean</dd></mm-text
+    >
   </section>
 
   <section class="component-case">

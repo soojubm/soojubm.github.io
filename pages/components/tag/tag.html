@@ -8,6 +8,7 @@
       post 페이지에서 태그와 컴포넌트에서의 태그. hashtag는 tag 컴포넌트와 역할이 다르기 때문에 별도의 컴포넌트로 만들어주어야 한다. 현재
       hashtag(keyword)는 chip으로 대체. todo. 댑스가 2이상 인 케이스.
     </p> -->
+  <!-- Badge intent="info" -->
 
   <dl class="article-aka">
     <dt>a.k.a.</dt>
@@ -73,35 +74,30 @@
     </dl>
   </section>
 
+  <dl class="article-aka">
+    <dt>a.k.a.</dt>
+    <dd aria-label="elastic UI">Health</dd>
+    <dd aria-label="md3">Status Pill</dd>
+  </dl>
+
   <section class="component-guide">
     <mm-text variant="subhead">Meta Problems</mm-text>
     <mm-text variant="body-bold">KEYWORDS. notification / status / informational</mm-text>
-    <mm-text variant="body">
-      Tag/Chip/Badge/Label:: 인터렉션의 유무 등에 따라 탄력적으로 정의됨.
-    </mm-text>
-    <mm-text variant="body">
-      아바타와 바텀 네비게이션, 탭 등에서 일관되게 사용하는 패턴이 있을 때 정의하는 것이 좋다.
-      그렇지 않으면, 탭에서 탭 카운터 등으로 정의하는 게 좋을 지도 모르겠다리.
-    </mm-text>
-    <mm-text variant="body">
-      Badges show the count of some adjacent data. A dot badge notifies the user that something is
-      new or updated without showing a count.
-    </mm-text>
 
-    <dl class="article-aka">
-      <dt>a.k.a.</dt>
-      <dd aria-label="elastic UI">Health</dd>
-      <dd aria-label="md3">Status Pill</dd>
-    </dl>
-
-    <mm-text variant="body-bold">activity bar counter (vs code). Counter badge (quantity)</mm-text>
-    <mm-text variant="body-bold">Dot(status). New/Unread, Live </mm-text>
+    <mm-text variant="body-bold"
+      >activity bar counter (vs code). Counter badge (quantity). Badges show the count of some
+      adjacent data.
+    </mm-text>
+    <mm-text variant="body-bold"
+      >Dot(status). New/Unread, Live. A dot badge notifies the user that something is new or updated
+      without showing a count.
+    </mm-text>
 
     <mm-text variant="subhead">Non-clickable? Non-interactive?</mm-text>
-    <mm-text variant="body">정보 강조, 요약</mm-text>
+    <mm-text variant="body">탐색을 보조하기 위한 정보 강조 또는 요약, 정보를 단순 보충</mm-text>
     <mm-text variant="body">
       <del>액션의 기표로 사용할 수 있다. 인접 요소 또는 부모 요소가 클릭할 수 있음을 보조.</del>
-      이렇게 되면 태그의 정의가 복잡해짐. 이걸 다른 컴포넌트로 정의해야.
+      이렇게 되면 태그의 정의가 복잡해짐. 이건 그냥 합성된 컴포넌트, 슬ㄹ롯의 개념에 가까워서.
     </mm-text>
     <!-- <div style="display: flex; flex-direction: column; gap: 0.5rem"> -->
     <mm-text variant="subhead">Groupable</mm-text>
@@ -129,5 +125,9 @@
     <mm-text variant="body">
       240813 - indicator 제거. 카테고라이징이나 상태 등의 뱃징이 아님.
     </mm-text>
+
+    <ul class="checklist">
+      <li>아바타, 바텀 네비게이션, 탭에서 일관되게 사용되는가?</li>
+    </ul>
   </section>
 </main>

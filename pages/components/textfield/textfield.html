@@ -56,7 +56,12 @@
     <mm-tabpanel role="tabpanel" aria-hidden="false" data-index="1">
       <mm-group variant="form">
         <mm-textfield type="text" size="small" placeholder="medium size..."></mm-textfield>
-        <mm-textfield type="text" placeholder="large size... (default)"></mm-textfield>
+        <mm-textfield
+          type="text"
+          placeholder="large size... (default)"
+          label="label text"
+          helper="helper sample"
+        ></mm-textfield>
       </mm-group>
       <mm-separator></mm-separator>
       <div style="display: flex; flex-direction: column; gap: var(--space-3)">
@@ -80,12 +85,7 @@
         <div class="textfield">
           <label class="textfield-label" for="search1">Textarea/Commentfield</label>
           <small class="textfield-byte"><b>0 KB</b> / 100 KB</small>
-          <textarea
-            class="textfield-input"
-            rows="3"
-            placeholder="Textarea Placeholder..."
-            style="height: auto"
-          ></textarea>
+          <mm-textarea placeholder="Textarea Placeholder... rows는 기본값"></mm-textarea>
         </div>
 
         <mm-textfield

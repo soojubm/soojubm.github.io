@@ -78,7 +78,6 @@
   </section>
 
   <div style="max-width: 400px">
-    <!-- <mm-menuitem size="large"> -->
     <!-- TODO menuitem이 불필요 내부 요소들이 컴포넌트. 그러면 메뉴아이템 자체가 불필요할 수도 있다. 이것은 합성된 역할 컴포넌트. -->
     <div style="display: flex; gap: var(--space-4); margin-bottom: 1rem">
       <mm-avatar size="huge" src="/public/images/springsteen.jpg"> </mm-avatar>
@@ -94,7 +93,7 @@
       </div>
     </div>
     <mm-tile variant="elevated">
-      <mm-avatar size="large" src="/public/images/springsteen.jpg"> </mm-avatar>
+      <mm-avatar src="/public/images/springsteen.jpg"> </mm-avatar>
       <div style="height: var(--space-2)"></div>
       <mm-text variant="word-strong">Bruce Springsteen</mm-text>
       <mm-text variant="word">Product Design Intern @soojubm</mm-text>
@@ -204,13 +203,12 @@
       <div style="height: var(--space-2)"></div>
       <mm-tag class="card-note">마일리지 적립 200P</mm-tag>
       <div style="height: var(--space-3)"></div>
-      <mm-menuitem size="large" label="퓨어 오렌지 주스" description="">
-        <mm-avatar slot="avatar" size="large">🍊</mm-avatar>
+      <mm-menuitem label="퓨어 오렌지 주스" description="">
+        <mm-avatar slot="avatar">🍊</mm-avatar>
         <div><del>₩19,000</del> ₩16,000 <em>할인율 20%</em></div>
       </mm-menuitem>
     </mm-tile>
-    <!-- TODO: menuitem이 애매한 네이밍 -->
-    <!-- avatar with bold text -->
+    <!-- TODO: menuitem이 애매한 네이밍 . avatar with bold text -->
     <mm-tile variant="flat">
       <mm-avatar style="background: aliceblue">
         <mm-icon name="graph-up"></mm-icon>
