@@ -31,11 +31,11 @@
       </mm-menuitem>
       <mm-menuitem label="메뉴아이템 체크박스" role="menuitemcheckbox">
         <mm-avatar slot="avatar">🦊</mm-avatar>
-        <mm-checkbox slot="action" id="check1" name="check1" value="" checked="true"></mm-checkbox>
+        <mm-checkbox slot="check" id="check1" name="check1" value="" checked="true"></mm-checkbox>
       </mm-menuitem>
       <mm-menuitem label="메뉴아이템 라디오" role="menuitemradio">
         <mm-avatar slot="avatar">🦊</mm-avatar>
-        <mm-radio slot="action" id="radio1" name="radio1" value="" checked="true"></mm-radio>
+        <mm-radio slot="check" id="radio1" name="radio1" value="" checked="true"></mm-radio>
       </mm-menuitem>
       <mm-tile variant="elevated" size="small" role="menuitemcheckbox">
         <mm-menuitem label="강조된 메뉴아이템" description="리스트가 될 수 없어">
@@ -61,7 +61,6 @@
       <dd>text 크기의 차이. large는 without avatar</dd>
       <dt>action</dt>
       <dd>'checkbox' | 'radio' | 'switch' | 'link (default)'</dd>
-      <dd>actionSlot :: checkbox / radio / switch</dd>
       <dt>avatar?</dt>
       <dd>React.ReactNode</dd>
       <dd>avatarSlot => leadingSlot (leadingVisual)</dd>
@@ -99,21 +98,19 @@
     <mm-text variant="body-bold">Sitemap menu</mm-text>
     <mm-text variant="body-bold">Global navigation menu</mm-text>
 
-    <blockquote>
-      <ul class="checklist" style="margin: 0">
-        <li>align-items: center가 없어도 되는. border가 있고 내부 간격이 있으면.</li>
-        <li>
-          textSlot :: 사이즈에 따라 두 줄이 될 수 있는데, 세부적인 정의를 실무자가 암기할 필요
-          없어야. 캡슐화
-        </li>
-        <li>메뉴 아이템에 2가지 이상의 액션을 허용할 것인가?</li>
-        <li>
-          모든 menuitem container가 clickable은 아니다. 액션 버튼이 따로 존재할 수도 있어야 한다. 이
-          정보가 중요한 이유 hover 상태 표현을 위해. 케이스. 팔로우 팔로잉. 또는 전체 영역이 팔로우.
-        </li>
-        <li>맥락. 스위치는 설정 메뉴, 체크박스는 선택 메뉴.</li>
-      </ul>
-    </blockquote>
+    <ul class="checklist">
+      <li>align-items: center가 없어도 되는. border가 있고 내부 간격이 있으면.</li>
+      <li>
+        textSlot :: 사이즈에 따라 두 줄이 될 수 있는데, 세부적인 정의를 실무자가 암기할 필요 없어야.
+        캡슐화
+      </li>
+      <li>메뉴 아이템에 2가지 이상의 액션을 허용할 것인가?</li>
+      <li>
+        모든 menuitem container가 clickable은 아니다. 액션 버튼이 따로 존재할 수도 있어야 한다. 이
+        정보가 중요한 이유 hover 상태 표현을 위해. 케이스. 팔로우 팔로잉. 또는 전체 영역이 팔로우.
+      </li>
+      <li>맥락. 스위치는 설정 메뉴, 체크박스는 선택 메뉴.</li>
+    </ul>
   </section>
 
   <section class="component-case">
@@ -205,7 +202,7 @@
       <mm-group variant="menuitem">
         <mm-menuitem>
           <mm-radio slot="check" checked></mm-radio>
-          <mm-avatar slot="avatar" icon="group"> </mm-avatar>
+          <mm-avatar slot="avatar" size="large" icon="group"> </mm-avatar>
           <div slot="text">
             <mm-text variant="word-strong">사진 및 동영상 백업</mm-text>
             <mm-text variant="word-weak">우측 액션은 사실 그냥 시각 정보인데.</mm-text>
@@ -213,7 +210,7 @@
         </mm-menuitem>
         <mm-menuitem>
           <mm-radio slot="check"></mm-radio>
-          <mm-avatar slot="avatar" icon="group"> </mm-avatar>
+          <mm-avatar slot="avatar" size="large" icon="group"> </mm-avatar>
           <div slot="text">
             <mm-text variant="word-strong">친구만</mm-text>
             <mm-text variant="word-weak">회원님의 Facebook 친구</mm-text>
@@ -221,7 +218,7 @@
         </mm-menuitem>
         <mm-menuitem data->
           <mm-radio slot="check"></mm-radio>
-          <mm-avatar slot="avatar" icon="lock"> </mm-avatar>
+          <mm-avatar slot="avatar" size="large" icon="lock"> </mm-avatar>
           <div slot="text">
             <mm-text variant="word-strong">나만 보기</mm-text>
             <mm-text variant="word-weak">부끄러우니까</mm-text>
@@ -273,7 +270,12 @@
       </div>
       <mm-group variant="menuitem">
         <mm-menuitem>
-          <mm-avatar slot="avatar" default="true" style="background-color: yellowgreen"></mm-avatar>
+          <mm-avatar
+            slot="avatar"
+            size="large"
+            default="true"
+            style="background-color: yellowgreen"
+          ></mm-avatar>
           <div slot="text">
             <mm-text variant="word-strong">coffee</mm-text>
             <mm-text variant="word-weak">유아이 디자이너</mm-text>
@@ -281,7 +283,12 @@
           <mm-button slot="action" variant="secondary">팔로우</mm-button>
         </mm-menuitem>
         <mm-menuitem>
-          <mm-avatar slot="avatar" default="true" style="background-color: blueviolet"></mm-avatar>
+          <mm-avatar
+            slot="avatar"
+            size="large"
+            default="true"
+            style="background-color: blueviolet"
+          ></mm-avatar>
           <div slot="text">
             <mm-text variant="word-strong">soojubm</mm-text>
             <mm-text variant="word-weak">유투브 구독자</mm-text>
@@ -306,11 +313,11 @@
       <br />
       <mm-group variant="menuitem">
         <mm-menuitem label="수줍이 앱">
-          <mm-avatar slot="avatar" variant="secondary" default="true"></mm-avatar>
+          <mm-avatar slot="avatar" variant="secondary" size="large" default="true"></mm-avatar>
           <mm-button slot="action">열기</mm-button>
         </mm-menuitem>
         <mm-menuitem label="사파리 브라우저">
-          <mm-avatar slot="avatar" default="true"></mm-avatar>
+          <mm-avatar slot="avatar" size="large" default="true"></mm-avatar>
           <mm-button slot="action" status="active">실행</mm-button>
         </mm-menuitem>
       </mm-group>

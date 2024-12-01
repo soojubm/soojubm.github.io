@@ -3,6 +3,10 @@ import { makeStyleSheet } from '../../javascripts/components/utils'
 // todo appbar
 
 class TitleBar extends HTMLElement {
+  static get observedAttributes() {
+    return ['variant']
+  }
+
   constructor() {
     super()
     const shadow = this.attachShadow({ mode: 'open' })
@@ -16,8 +20,8 @@ class TitleBar extends HTMLElement {
     title.innerText = this.heading || ''
 
     if (!this.hiddenBack) {
-      const backButton = document.createElement('mm-button')
-      backButton.setAttribute('variant', 'back')
+      const backButton = document.createElement('mm-icon-button')
+      backButton.setAttribute('variant', 'navigator')
 
       const icon = document.createElement('mm-icon')
       icon.setAttribute('name', 'arrow-left')
@@ -36,6 +40,8 @@ class TitleBar extends HTMLElement {
 
     shadow.appendChild(container)
     container.append(title, actionSlot, makeStyleSheet('titlebar'))
+
+    console.log('@', this.shadowRoot?.querySelector('mm-icon-button'))
   }
 
   // get hasBack() {
@@ -43,23 +49,26 @@ class TitleBar extends HTMLElement {
   // }
 
   get hiddenBack() {
-    return this.getAttribute('hiddenBack')
+    return this.hasAttribute('hiddenBack')
   }
 
   get heading() {
     return this.getAttribute('heading')
   }
 
-  // attributeChangedCallback(name, oldValue, newValue) {
-  //   if (name === 'icon') {
-  //     alert()
-  //   }
-  // }
-
-  connectedCallback() {}
+  connectedCallback() {
+    const backButton = this.shadowRoot?.querySelector('mm-icon-button')
+    if (backButton) {
+      backButton.setAttribute('variant', this.getAttribute('variant') || 'default')
+    }
+  }
   disconnectedCallback() {}
   attributeChangedCallback(name, oldValue, newValue) {
-    this.shadowRoot?.querySelector('mm-button button')?.setAttribute('data-variant', newValue)
+    const backButton = this.shadowRoot?.querySelector('mm-icon-button')
+    if (backButton) {
+      backButton.setAttribute('variant', newValue)
+    }
+    // this.shadowRoot?.querySelector('mm-icon-button')?.setAttribute('variant', newValue)
   }
 }
 

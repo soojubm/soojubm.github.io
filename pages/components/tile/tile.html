@@ -68,14 +68,38 @@
       자식 컴포넌트에 따라 내부 간격 및 사이즈 속성이 결정됨. 이에 대한 정의. 내부에 아바타가 있을
       때 보통 small, space-2를 사용함.
     </mm-text>
-    <mm-text variant="body"
-      >타일 내부 leading, tailing 엘리먼트의 시각보정이 필요할 수 있습니다.</mm-text
-    >
-    <mm-text variant="subhead">Changelog</mm-text>
-    <mm-text variant="body">flat 형태와 변별을 위해 elevated의 쉐도우를 강화.</mm-text>
+    <mm-text variant="body">
+      타일 내부 leading, tailing 엘리먼트의 시각보정이 필요할 수 있습니다.
+    </mm-text>
 
-    <br /><br />
+    <br />
+
+    <mm-tile variant="elevated">
+      <mm-avatar src="/public/images/springsteen.jpg"> </mm-avatar>
+      <div style="height: var(--space-2)"></div>
+      <mm-text variant="word-strong">Bruce Springsteen</mm-text>
+      <mm-text variant="word">Product Design Intern @soojubm</mm-text>
+      <div style="position: absolute; right: 1rem; top: 1rem">
+        <mm-button>팔로우</mm-button>
+      </div>
+    </mm-tile>
   </section>
+
+  <aside
+    style="
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 2rem 0;
+      padding: 0.5rem 2rem;
+      border: var(--border);
+      border-radius: var(--radius);
+    "
+  >
+    <mm-avatar size="large" default="true"></mm-avatar>
+    <mm-text variant="subhead"> You can download this product with the All-Access Pass. </mm-text>
+    <mm-button variant="primary">Get All-Access</mm-button>
+  </aside>
 
   <div style="max-width: 400px">
     <!-- TODO menuitem이 불필요 내부 요소들이 컴포넌트. 그러면 메뉴아이템 자체가 불필요할 수도 있다. 이것은 합성된 역할 컴포넌트. -->
@@ -92,31 +116,6 @@
         </mm-group>
       </div>
     </div>
-    <mm-tile variant="elevated">
-      <mm-avatar src="/public/images/springsteen.jpg"> </mm-avatar>
-      <div style="height: var(--space-2)"></div>
-      <mm-text variant="word-strong">Bruce Springsteen</mm-text>
-      <mm-text variant="word">Product Design Intern @soojubm</mm-text>
-      <div style="position: absolute; right: 1rem; top: 1rem">
-        <mm-button status="active">팔로우</mm-button>
-      </div>
-    </mm-tile>
-  </div>
-
-  <div
-    style="
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin: 2rem 0;
-      padding: 0.5rem 2rem;
-      border: var(--border);
-      border-radius: 50px;
-    "
-  >
-    <figure style="width: 48px; height: 48px; border-radius: 50%; border: var(--border)"></figure>
-    <mm-text variant="subhead"> You can download this product with the All-Access Pass. </mm-text>
-    <mm-button variant="primary">Get All-Access</mm-button>
   </div>
 
   <section class="component-case">
@@ -289,6 +288,32 @@
         <mm-icon name="arrow-right"></mm-icon>
       </button>
     </mm-tile>
+
+    <mm-tile variant="flat" style="width: 100%; max-width: 24rem">
+      <mm-tag style="position: absolute; left: -0.25rem; top: var(--space-3)">
+        🔥 Most Popular
+      </mm-tag>
+      <div style="height: 1.75rem"></div>
+      <mm-text variant="subhead">Standard</mm-text>
+      <!-- <mm-text variant="body"> 대법원장은 국회의 동의를 얻어 대통령이 임명한다. </mm-text> -->
+      <div style="margin: var(--space-2) 0 var(--space-3) 0">
+        <mm-text variant="title">₩ 6,800</mm-text>
+        <mm-text variant="word-weak">한 달에 한 번</mm-text>
+      </div>
+      <mm-group>
+        <mm-button variant="primary" isfullwidth="true">업그레이드</mm-button>
+      </mm-group>
+      <!-- <div>
+        <mm-text variant="subhead"><em>iCloud+</em> 50GB</mm-text>
+        <span>₩1,100/월 </span>
+      </div> -->
+      <ul class="checklist" style="margin: 1rem 0 0 0">
+        <li>스토리지 2TB</li>
+        <li>Google 전문가와의 상담</li>
+        <li>회원을 위한 추가 혜택</li>
+      </ul>
+    </mm-tile>
+
     <picture>
       <source
         srcset="photo-light.png"

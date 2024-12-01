@@ -37,16 +37,8 @@
     <mm-titlebar heading="수줍이님">
       <mm-group slot="action">
         <mm-button>저장</mm-button>
-        <mm-button
-          class="titlebar-back"
-          icon="more-vert"
-          onclick="javascript:window.location.href='/';"
-        >
-        </mm-button>
+        <mm-icon-button icon="more-vert"></mm-icon-button>
       </mm-group>
-    </mm-titlebar>
-    <mm-titlebar heading="Product 뒤로가기 없는 패턴 추가하기">
-      <mm-icon-button slot="action" icon="cart"> </mm-icon-button>
     </mm-titlebar>
   </section>
 
@@ -57,11 +49,7 @@
       <dd>string</dd>
       <dt>backType????<attr>?</attr></dt>
       <dd>'close' | 'back',</dd>
-      <dd>
-        TODO 패턴 정의. 탭 바로 접근하는 경우 등. close에서는 우측 액션을 제한해야 할 지도.
-        closeButton ==> TitleBar component의 자식으로 항상 함께 사용되기 때문에
-        titlebarBackbutton으로 추상화할 필요는 없다.
-      </dd>
+      <dd>TODO 닫기만 있을 때.</dd>
       <dt>actions</dt>
       <dd>React.Node</dd>
       <dd>todo 우측 actions. 갯수 제한. md에서 최대 3개. hamberger case.</dd>
@@ -81,14 +69,13 @@
       </li>
       <li>커머스에서 카테고리.</li>
       <li>
-        bottom navigation의 label은 예외적으로 10px. 예외 케이스는 어디에서 정의해야 하는가.
-        컴포넌트 스코프?
+        bottom navigation의 label은 예외적으로 10px. 예외 케이스는 어디에서 정의하는 것이 좋을까?
       </li>
     </ul>
 
     <mm-text variant="subhead">Editorial</mm-text>
     <mm-text variant="body">
-      최대 8자. 그런데 워치나 폴더블, 브라우저 폰트 확대하면 말줄임표는 생기겠네..
+      <del>최대 8자.</del> 워치나 폴더블, 브라우저 폰트 확대하면 말줄임표 생길 수 밖에 없음.
     </mm-text>
     <mm-text variant="subhead">Changelog</mm-text>
     <mm-text variant="body">

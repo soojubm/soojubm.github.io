@@ -53,7 +53,10 @@
   </section>
 
   <section class="component-guide">
-    <mm-text variant="subhead">Behavior</mm-text>
+    <mm-text variant="subhead">Best practices</mm-text>
+    <mm-text variant="body">
+      브라우저가 role="alert" 속성이 있는 요소를 발견하면 즉시 사용자에게 경고 내용을 읽습니다.
+    </mm-text>
     <mm-text variant="body">
       사용자 행동의 단순 피드백의 역할입니다. 닫기 또는 되돌리기 등 액션을 포함하지 마세요. 사용자
       인터렉션을 요구하는 경우, 주목도가 높은 모달로 제공하세요.
@@ -75,11 +78,6 @@
       없이, \"제출 완료!\"같은 단일 단어로 대체할 수 있다.
     </mm-text>
 
-    <mm-text variant="subhead">Best practices</mm-text>
-    <mm-text variant="body">
-      브라우저가 role="alert" 속성이 있는 요소를 발견하면 즉시 사용자에게 경고 내용을 읽습니다.
-    </mm-text>
-
     <mm-text variant="subhead">with Toast. toast=>snackbar(withAction)</mm-text>
     <!--
     Icon: Informs users of the kind of notification at a glance.
@@ -91,15 +89,14 @@
     -->
 
     <ul class="checklist">
-      <li>링크를 제공할 것인가? 정의에 따르면 하지 않는 것이 맞다.</li>
+      <li>링크를 제공할 것인가?</li>
       <li>
-        게임에서 파티 탈퇴와 같이 직접 실행하지 않은, 연속적인 결과가 발생하는 경우 여러 개가
-        필요하구나.
+        게임에서 파티 탈퇴와 같이 직접 실행하지 않은, 연속적인 결과가 발생하는 경우 여러 개가 필요.
       </li>
-      <li>역할로 구분하면 input feedback은 callout과 다른 컴포넌트로 정의하여야 한다.</li>
+      <li>역할에 따라 input feedback과 callout을 분리해야 한다.</li>
       <li>
-        아이콘으로 callout의 맥락을 구분할 수 있다. 따라서 아이콘이 없는 형태의 callout은 공허한,
-        단순 Tile 컴포넌트처럼 보일 수 있다.
+        아이콘으로 callout의 맥락을 구분할 수 있다. 아이콘이 없는 callout은 단순 Tile 컴포넌트처럼
+        보일 수 있다.
       </li>
     </ul>
   </section>

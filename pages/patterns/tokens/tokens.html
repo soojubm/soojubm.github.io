@@ -38,11 +38,8 @@
       <ul class="checklist">
         <li>color-icon와 color-text는 항상 동일한가요? 네</li>
         <li>color-text-accent-yellow</li>
-        <li>
-          color-text-disabled // input / button 마다 다르며, 일반 text에 disabled가 필요없다.
-          인터렉션의 유무.
-        </li>
-        <li>color-text-warning // 과한가? color-warning, color-warning-strong</li>
+        <li>color-text-disabled // input / button 마다 다르다. 인터렉션이 필요한 컴포넌트.</li>
+        <li>color-text-warning // color-warning, color-warning-strong</li>
         <li>color-background-discovery // status</li>
         <li>color-chart-categorical-1 // TODO category</li>
         <li>
@@ -495,10 +492,7 @@
       <ul>
         <li>https://www.delldesignsystem.com/foundations/typography/</li>
         <li>콘텐츠 컨테이너의 가로 크기. custom media의 max-width를 layout + @로 정의.</li>
-        <li>
-          폰트가 변경되면 폰트마다 baseline이 달라서 텍스트의 상하 간격이 안 맞을 수 있다.
-          텍스트노드(레이블 역할)의 패딩용 변수를 활용.
-        </li>
+        <li>폰트의 baseline이 달라서 텍스트의 상하 간격이 안 맞을 수 있다.</li>
         <li>
           animation :: 콘텐츠보다 액션이 강조되지 않도록 뷰포트 내에서 delay를 최대 3개로
           제한합니다. inactive로 변경될 때(닫기 등) 즉시(instantly) 실행 합니다.
@@ -514,7 +508,7 @@
         </li>
         <li>
           컴포넌트 토큰은 상대적으로 변경 가능성이 높고 범용성이 낮기 때문에 컴포넌트 스코프에서만
-          정의. 컴포넌트 토큰을 정의하면 형태 기반의 컴포넌트를 정의 최소화할 수 있다.
+          정의.
         </li>
         <li>
           --[namespace]-[component / category]-[attribute]-[status] 프로덕션이 아니기 때문에

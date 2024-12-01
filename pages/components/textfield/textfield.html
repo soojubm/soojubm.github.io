@@ -34,10 +34,7 @@
   -->
 
   <mm-text variant="title">Textfields</mm-text>
-  <mm-text variant="body-large">
-    사용자가 데이터를 입력할 수 있는 인러렉티브한? 필드입니다. TODO. FormField, FormLabel,
-    FormControl
-  </mm-text>
+  <mm-text variant="body-large"> 사용자가 데이터를 입력할 수 </mm-text>
   <!-- - 콤보박스 textfield + select -->
   <dl class="article-aka">
     <dt>a.k.a.</dt>
@@ -60,7 +57,7 @@
           type="text"
           placeholder="large size... (default)"
           label="label text"
-          helper="helper sample"
+          helper="helper와 validation messgage를 어떻게 구분. mui에서는 error"
         ></mm-textfield>
       </mm-group>
       <mm-separator></mm-separator>
@@ -75,18 +72,13 @@
           <button class="searchfield-cancel" aria-label="back">취소</button>
         </mm-textfield>
         <mm-textfield type="password" label="Password field">
-          <mm-button slot="suffix" icon="eye-solid" aria-label="비밀번호 보기"> </mm-button>
+          <mm-icon-button slot="suffix" icon="eye-solid" aria-label="비밀번호 보기">
+          </mm-icon-button>
         </mm-textfield>
 
         <mm-textfield label="임시" placeholder="you@gamil.com">
           <mm-icon slot="prefix" name="mail"></mm-icon>
         </mm-textfield>
-
-        <div class="textfield">
-          <label class="textfield-label" for="search1">Textarea/Commentfield</label>
-          <small class="textfield-byte"><b>0 KB</b> / 100 KB</small>
-          <mm-textarea placeholder="Textarea Placeholder... rows는 기본값"></mm-textarea>
-        </div>
 
         <mm-textfield
           type="number"
@@ -94,39 +86,6 @@
           value="20000"
           placeholder="Textarea Placeholder..."
         ></mm-textfield>
-
-        <div
-          style="display: flex; align-items: center; justify-content: space-between; width: 100%"
-        >
-          <div>
-            <mm-text variant="word-strong">1 sandbox</mm-text>
-            <mm-text variant="word-weak"> $100.00 / addl sandbox </mm-text>
-          </div>
-          <mm-group>
-            <!-- <div class="counter js-counter" style="max-width: 160px"> -->
-            <label for="numberfield" style="position: absolute; opacity: 0">
-              레이블 라이트하우스용
-            </label>
-            <mm-icon-button
-              icon="minus"
-              class="js-counter-decrement"
-              aria-controls="numberfield"
-            ></mm-icon-button>
-            <mm-textfield size="small" value="20"></mm-textfield>
-            <!-- <input
-            class="counter-input js-counter-input js-number-input"
-            type="number"
-            name="counter1"
-            id="numberfield"
-            min="5"
-            max="20"
-            value="0"
-          /> -->
-            <mm-icon-button icon="plus" class="js-counter-increment" tabindex="-1">
-            </mm-icon-button>
-            <!-- </div> -->
-          </mm-group>
-        </div>
 
         <!-- oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" -->
       </div>
@@ -211,10 +170,11 @@
       <li>TODO utilities. 앞자리 0 제거. 숫자만입력3자리마다콤마. 소숫점 컨트롤.</li>
       <li>url field. www 및 https://</li>
       <li>
-        form 컴포넌트는 간격에 대한 구조 컴포넌트. form patterns. FormField label / TextInput 으로
-        나누는 방안. groupable은 속성. 그래서 컴포넌트 이름은 form layout / fieldset / fieldgroup
-        FormLabel checkbox-label와 input-label을 똑같이 할 수 있나? field label : fieldset legend,
-        label - input/textarea 그러면 searchField 등의 대안이 될 수 있나?
+        form 컴포넌트는 간격에 대한 구조 컴포넌트. TODO. FormField, FormLabel, FormControl. form
+        patterns. FormField label / TextInput 으로 나누는 방안. groupable은 속성. 그래서 컴포넌트
+        이름은 form layout / fieldset / fieldgroup FormLabel checkbox-label와 input-label을 똑같이
+        할 수 있나? field label : fieldset legend, label - input/textarea 그러면 searchField 등의
+        대안이 될 수 있나?
       </li>
       <li>helper(help message)와 feedback(feedback message / validation feedback)을 구분하기.</li>
       <li>field feedback / fieldset feedback(checkbox group, login)</li>
@@ -225,6 +185,50 @@
         수도
       </li>
     </ul>
+
+    <br />
+
+    <mm-tile>
+      <mm-textarea
+        label="Textarea / commentfield"
+        placeholder="Textarea Placeholder... rows는 기본값"
+      ></mm-textarea>
+      <small class="textfield-byte"><b>0 KB</b> / 100 KB</small>
+    </mm-tile>
+
+    <br />
+    <mm-tile>
+      <mm-row justify-content="space-between">
+        <div>
+          <mm-text variant="word-strong">1 sandbox</mm-text>
+          <mm-text variant="word-weak"> $100.00 / addl sandbox </mm-text>
+        </div>
+        <mm-group>
+          <!-- <div class="counter js-counter" style="max-width: 160px"> -->
+          <label for="numberfield" style="position: absolute; opacity: 0">
+            레이블 라이트하우스용
+          </label>
+          <mm-icon-button
+            icon="minus"
+            class="js-counter-decrement"
+            aria-controls="numberfield"
+          ></mm-icon-button>
+          <mm-textfield size="small" value="20"></mm-textfield>
+          <!-- <input
+          class="counter-input js-counter-input js-number-input"
+          type="number"
+          name="counter1"
+          id="numberfield"
+          min="5"
+          max="20"
+          value="0"
+        /> -->
+          <mm-icon-button icon="plus" class="js-counter-increment" tabindex="-1"> </mm-icon-button>
+          <!-- </div> -->
+        </mm-group>
+      </mm-row>
+    </mm-tile>
+
     <aside class="component-references">
       <mm-text variant="subhead">References</mm-text>
       <a href="https://developer.apple.com/documentation/uikit/uisearchbar">HIG searchbar</a>
@@ -372,8 +376,8 @@
           label="상세주소"
           type="text"
           name="email"
-          id="address"
-          placeholder="클릭하여 우편번호 찾기"
+          placeholder=""
+          isOptional
         ></mm-textfield>
         <!-- First name, Last Name, Country / Region, State, Zipcode" -->
         <!-- <mm-textfield label="공동현관 출입번호" type="text" isOptional name="email" id="login-email" placeholder=""></mm-textfield> -->
@@ -425,70 +429,58 @@
     <!-- https://story.pxd.co.kr/1451 -->
     <p>loading state/</p>
 
-    <article class="article">
-      <mm-text variant="title">Range</mm-text>
-      <mm-text variant="body-large"></mm-text>
-      <section class="component-example">
-        <div class="range">
-          <label for="">숙박 인원</label>
-          <input type="range" min="1" max="10" value="2" step="any" list="tickmarks" id="myRange" />
-          <datalist id="tickmarks">
-            <option value="0" label="0"></option>
-            <option value="5" label="5"></option>
-          </datalist>
-        </div>
-      </section>
-    </article>
+    <div class="range">
+      <label for="">숙박 인원</label>
+      <input type="range" min="1" max="10" value="2" step="any" list="tickmarks" id="myRange" />
+      <datalist id="tickmarks">
+        <option value="0" label="0"></option>
+        <option value="5" label="5"></option>
+      </datalist>
+    </div>
 
-    <article class="article">
-      <mm-text variant="title">Calendar</mm-text>
-      <mm-text variant="body-large"></mm-text>
-      <section class="component-example">
-        <div class="calendar">
-          <b>2020년 12월</b>
-          <nav class="calendar-navigation">
-            <button class="calendar-navigation-prev" aria-label="앞으로">
-              <i class="icon-caret is-left"></i>
-            </button>
-            <button class="calendar-navigation-next" aria-label="뒤로">
-              <i class="icon-caret is-right"></i>
-            </button>
-          </nav>
-          <div class="calendar-head">
-            <div>일</div>
-            <div>월</div>
-            <div>화</div>
-            <div>수</div>
-            <div>목</div>
-            <div>금</div>
-            <div>토</div>
-          </div>
-          <div class="calendar-body">
-            <div class="calendar-body-column">1</div>
-            <div class="calendar-body-column">2</div>
-            <div class="calendar-body-column">3</div>
-            <div class="calendar-body-column">4</div>
-            <div class="calendar-body-column">5</div>
-            <div class="calendar-body-column">6</div>
-            <div class="calendar-body-column">7</div>
-            <div class="calendar-body-column">1</div>
-            <div class="calendar-body-column">2</div>
-            <div class="calendar-body-column">3</div>
-            <div class="calendar-body-column">4</div>
-            <div class="calendar-body-column">5</div>
-            <div class="calendar-body-column">6</div>
-            <div class="calendar-body-column">7</div>
-            <div class="calendar-body-column">1</div>
-            <div class="calendar-body-column">2</div>
-            <div class="calendar-body-column">3</div>
-            <div class="calendar-body-column">4</div>
-            <div class="calendar-body-column">5</div>
-            <div class="calendar-body-column">6</div>
-            <div class="calendar-body-column">7</div>
-          </div>
-        </div>
-      </section>
-    </article>
+    <div class="calendar">
+      <b>2020년 12월</b>
+      <nav class="calendar-navigation">
+        <button class="calendar-navigation-prev" aria-label="앞으로">
+          <i class="icon-caret is-left"></i>
+        </button>
+        <button class="calendar-navigation-next" aria-label="뒤로">
+          <i class="icon-caret is-right"></i>
+        </button>
+      </nav>
+      <div class="calendar-head">
+        <div>일</div>
+        <div>월</div>
+        <div>화</div>
+        <div>수</div>
+        <div>목</div>
+        <div>금</div>
+        <div>토</div>
+      </div>
+      <div class="calendar-body">
+        <div class="calendar-body-column">1</div>
+        <div class="calendar-body-column">2</div>
+        <div class="calendar-body-column">3</div>
+        <div class="calendar-body-column">4</div>
+        <div class="calendar-body-column">5</div>
+        <div class="calendar-body-column">6</div>
+        <div class="calendar-body-column">7</div>
+        <div class="calendar-body-column">1</div>
+        <div class="calendar-body-column">2</div>
+        <div class="calendar-body-column">3</div>
+        <div class="calendar-body-column">4</div>
+        <div class="calendar-body-column">5</div>
+        <div class="calendar-body-column">6</div>
+        <div class="calendar-body-column">7</div>
+        <div class="calendar-body-column">1</div>
+        <div class="calendar-body-column">2</div>
+        <div class="calendar-body-column">3</div>
+        <div class="calendar-body-column">4</div>
+        <div class="calendar-body-column">5</div>
+        <div class="calendar-body-column">6</div>
+        <div class="calendar-body-column">7</div>
+      </div>
+    </div>
 
     <article class="article">
       <label for="cb1-edit">레이블</label>

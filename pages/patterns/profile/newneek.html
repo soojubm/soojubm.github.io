@@ -1,66 +1,54 @@
 <style>
+  :root {
+    --chat-bubble-border: 1px solid #000;
+    --border-color: #000;
+    --color-primary: var(--color-newneek);
+    --button-background: #000;
+    --radius: 0;
+    --chip-border-color: #000;
+  }
 
-:root {
-  --chat-bubble-border: 1px solid #000;
-  --border-color: #000;
-  --color-primary: var(--color-newneek);
-  --button-background: #000;
-  --radius: 0;
-  --chip-border-color: #000;
-}
+  .chat-bubble {
+    border-color: var(--border-color);
+  }
 
-.chat-bubble {border-color:var(--border-color);}
-
-.intro-head {
-  overflow: hidden;
-  position: relative
-}
-
-.intro-head-description {
-  padding: 2rem 0 3rem;
-  background: #fb7800;
-  box-sizing: border-box
-}
-
-.intro-head-description p {
-  max-width: 560px;
-  font-size: var(--font-size-large);
-}
-
-.intro-head-description .textfield-input {
-  margin: 0 0 .5rem 0;
-  border-radius: 0;
-  border-color: #000;
-  background: #fff;
-}
-
-.intro-footer {
-  padding: 2rem 0;
-  background: #ebebeb;
-  position: relative
-}
-
-.intro-subscribe {
-  max-width: var(--width-medium);
-  margin: 1.5rem 0 0;
-  box-sizing: border-box;
-  position: relative;
-  z-index: 1;
-}
-
-@media (max-width:1080px) {
+  .intro-head {
+    overflow: hidden;
+    position: relative;
+  }
 
   .intro-head-description {
-    position: relative;
-    z-index: 7
+    padding: 2rem 0 3rem;
+    background: #fb7800;
+    box-sizing: border-box;
   }
 
   .intro-footer {
-    padding: 2rem 0 2.5rem
+    padding: 2rem 0;
+    background: #ebebeb;
+    position: relative;
   }
-}
 
-/* // :root {
+  .intro-subscribe {
+    max-width: var(--width-medium);
+    margin: 1.5rem 0 0;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+  }
+
+  @media (max-width: 1080px) {
+    .intro-head-description {
+      position: relative;
+      z-index: 7;
+    }
+
+    .intro-footer {
+      padding: 2rem 0 2.5rem;
+    }
+  }
+
+  /* // :root {
 //   --zigzag-size: 1rem;
 // }
 // .zigzag {background:var(--color-newneek);position:relative;}
@@ -80,72 +68,68 @@
 //   transform: rotateX(180deg);
 // } */
 
-
-
-.home-mangrove {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-top: 2px solid #000;
-  background: var(--color-newneek);
-  position: relative;
-
-  .mangrove1 {
-    display: block;
-    max-width: 240px;
-    margin-top: -140px;
-    margin-bottom: 110px;
-    transition: all 0.4s;
-  }
-
-  .mangrove2 {
-    display: block;
-    max-width: 230px;
-    margin-left: 2rem;
-    position: absolute;
-    bottom: 2rem;
-    transition: all 0.4s ease 0.05s;
-  }
-
-  .mangrove-foot {
+  .home-mangrove {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    width: 100%;
-    padding: .5rem 0;
-    border-top: 1px solid #000;
-    border-bottom: 2px solid #000;
-    background: #fff;
+    border-top: 2px solid #000;
+    background: var(--color-newneek);
     position: relative;
-    z-index: 1;
 
-    span {
-      font-size: 16px;
-      color: #000;
+    &.mangrove1 {
+      display: block;
+      max-width: 240px;
+      margin-top: -140px;
+      margin-bottom: 110px;
+      transition: all 0.4s;
+    }
+
+    &.mangrove2 {
+      display: block;
+      max-width: 230px;
+      margin-left: 2rem;
+      position: absolute;
+      bottom: 2rem;
+      transition: all 0.4s ease 0.05s;
+    }
+
+    &.mangrove-foot {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      width: 100%;
+      padding: 0.5rem 0;
+      border-top: 1px solid #000;
+      border-bottom: 2px solid #000;
+      background: #fff;
+      position: relative;
+      z-index: 1;
+
+      span {
+        font-size: 16px;
+        color: #000;
+      }
+    }
+
+    &:hover {
+      .mangrove1 {
+        transform: translateY(-1.5rem);
+      }
+
+      .mangrove2 {
+        transform: translateY(-1.05rem);
+      }
     }
   }
 
-  &:hover {
-    .mangrove1 {
-      transform: translateY(-1.5rem);
-    }
-
-    .mangrove2 {
-      transform: translateY(-1.05rem);
-    }
+  .today-poll {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 4rem auto;
   }
-}
-
-
-
-.today-poll {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin: 4rem auto;
-  }
-.today-poll h2 {
+  /* .today-poll h2 {
     width: 100%;
     margin: 0 0 2rem 0;
     text-align: center;
@@ -154,13 +138,14 @@
     margin: 0 0.5rem;
     background: var(--color-background);
     text-align: center;
-
     }
 
     .today-poll div figure {
       border: 2px solid #000;
       border-bottom-width: 1px;
-      span {
+    }
+
+    .today-poll div figure span {
         display: block;
         margin-top: -3rem;
         padding: 1.5rem 1.5rem 0.5rem;
@@ -176,20 +161,19 @@
       background: var(--gray100);
       font-size: var(--font-size-large);
       font-weight: bold;
-    }
+    } */
 </style>
 
 <aside class="modal newneek" role="presentation">
-
   <article class="modal-dialog" role="dialog">
     <header class="modal-head">
       <mm-titlebar heading="모달 제목"></mm-titlebar>
     </header>
 
     <section class="modal-body">
-      <section style="max-width:480px;margin:0 auto;">
+      <section style="max-width: 480px; margin: 0 auto">
         <div class="chat">
-          <figure class="chat-avatar">🧔</figure class="chat-avatar">
+          <figure class="chat-avatar">🧔</figure>
           <div>
             <h5 class="chat-username">신규방문자</h5>
             <!-- <time class="chat-time">12:00 am</time> -->
@@ -206,22 +190,18 @@
         </div>
 
         <div class="chat">
-          <figure class="chat-avatar">
-            🧔
-          </figure class="chat-avatar">
+          <figure class="chat-avatar">🧔</figure>
           <div>
             <h5 class="chat-username">뉴스레터 구독자</h5>
             <!-- <time class="chat-time">12:00 am</time> -->
           </div>
           <div class="chat-bubble">
-            <p>
-              예전에 비슷한 이슈가 있었던 것 같은데... 
-            </p>
+            <p>예전에 비슷한 이슈가 있었던 것 같은데...</p>
           </div>
           <div class="chat-bubble">
             <p>뉴닉이 어떻게 쉽고 재미있게 풀어줬더라?</p>
           </div>
-          <div style="height:var(--space-4);"></div>
+          <div style="height: var(--space-4)"></div>
           <mm-group variant="chip">
             <mm-button>최신 콘텐츠 탐색</mm-button>
             <mm-button>관심 분야로 탐색</mm-button>
@@ -234,52 +214,46 @@
 
       <mm-separator></mm-separator>
 
-      <section style="max-width:480px;margin:0 auto;">
+      <section style="max-width: 480px; margin: 0 auto">
         <div class="chat is-mine">
           <figure class="chat-avatar" hidden>
             <img src="/public/images/springsteen.jpg" alt="" />
-          </figure class="chat-avatar">
+          </figure>
           <div class="chat-bubble">
-            <p style="color:#000;">
-              뉴닉하면 어떤 색이 떠올라요?
-            </p>
+            <p style="color: #000">뉴닉하면 어떤 색이 떠올라요?</p>
           </div>
         </div>
-        
+
         <div class="chat">
-          <figure class="chat-avatar">
-            🧔
-          </figure class="chat-avatar">
+          <figure class="chat-avatar">🧔</figure>
           <div>
             <h5 class="chat-username">찐뉴니커</h5>
-            <!-- <time class="chat-time">12:00 am</time> -->
+            <time class="chat-time">12:00 am</time>
           </div>
           <div class="chat-bubble">
-            <p>
-              후후.. 역시 뉴닉은 회색이죠! 네? 주황색은 본 적이 없는데...
-            </p>
+            <p>후후.. 역시 뉴닉은 회색이죠! 네? 주황색은 본 적이 없는데...</p>
           </div>
         </div>
 
         <div class="chat is-mine">
           <figure class="chat-avatar" hidden>
             <img src="/public/images/springsteen.jpg" alt="" />
-          </figure class="chat-avatar">
+          </figure>
 
           <div class="chat-bubble">
-            <p style="color:#000;">
-              As-is 주황을 버튼에만 사용
-            </p>
+            <p style="color: #000">As-is 주황을 버튼에만 사용</p>
           </div>
           <div class="chat-bubble">
-            <p style="color:#000;">
-              To-be 주황을 배경색으로 넓게 사용하여 브랜드 아이덴티티를 강화하고 주황색 배경에 검정색 버튼의 고대비로 주목도를 높이자.
+            <p style="color: #000">
+              To-be 주황을 배경색으로 넓게 사용하여 브랜드 아이덴티티를 강화하고 주황색 배경에
+              검정색 버튼의 고대비로 주목도를 높이자.
             </p>
           </div>
         </div>
       </section>
-      <div style="max-width:800px;margin:0 auto;">
-        <section class="newneek-orange" style="padding:10rem 0 0;">
+
+      <div style="max-width: 800px; margin: 0 auto">
+        <section class="newneek-orange" style="padding: 10rem 0 0">
           <div class="home-mangrove">
             <div class="home-mangrove-object">
               <img class="mangrove1" src="/public/images/newneek/home-mangrove1.png" alt="" />
@@ -295,43 +269,59 @@
 
       <br /><br />
 
-      <section class="subscribe-gosum">
-        <img src="https://newneek.co/static/media/gosum-home.7b7f5b6b.png" alt=""></section>
+      <section class="subscribe-gosum" style="margin: 0 -5rem">
+        <img src="https://newneek.co/static/media/gosum-home.7b7f5b6b.png" alt="" />
         <mm-text variant="title" class="intro-head-title">
-          특보! <span role="img" aria-label="">🗞️</span> 우리가 시간이 없지, <span class="mobile-block">세상이 안 궁금하냐!</span>
+          특보! <span role="img" aria-label="">🗞️</span> 우리가 시간이 없지,
+          <span class="mobile-block">세상이 안 궁금하냐!</span>
         </mm-text>
         <div class="intro-head-description">
-          <mm-text variant="body"><span role="img">🚀</span> 지금 구독하면 <b>내일 아침</b>에 읽을 수 있어요!</mm-text>
+          <mm-text variant="body"
+            ><span role="img">🚀</span> 지금 구독하면 <b>내일 아침</b>에 읽을 수 있어요!</mm-text
+          >
           <mm-text variant="body">✨<b>305,408명</b>이 뉴닉을 읽고 있어요.</mm-text>
           <br />
           <mm-text variant="body">
-            세상 돌아가는 소식, 알고는 싶지만 신문 볼 새 없이 바쁜 게 우리 탓은 아니잖아요!&nbsp;<span class="linebreak-desktop">월/수/금 아침마다 세상 돌아가는 소식을 메일로 받아보세요.</span>
+            세상 돌아가는 소식, 알고는 싶지만 신문 볼 새 없이 바쁜 게 우리 탓은
+            아니잖아요!&nbsp;<span class="linebreak-desktop"
+              >월/수/금 아침마다 세상 돌아가는 소식을 메일로 받아보세요.</span
+            >
           </mm-text>
           <mm-textfield placeholder="이메일 주소"></mm-textfield>
           <mm-textfield placeholder="닉네임"></mm-textfield>
-          <div style="margin: 0.5rem 0px 0px;"></div>
+          <div style="margin: 0.5rem 0px 0px"></div>
           <mm-checkbox>
-            <a rel="noopener noreferrer" style="display: inline; position: static; left: auto; cursor: pointer;color:inherit;text-decoration:underline;">
-            개인정보 수집·이용</a>에 동의합니다</label>
+            <a
+              rel="noopener noreferrer"
+              style="
+                display: inline;
+                position: static;
+                left: auto;
+                cursor: pointer;
+                color: inherit;
+                text-decoration: underline;
+              "
+            >
+              개인정보 수집·이용</a
+            >에 동의합니다
           </mm-checkbox>
           <mm-button variant="primary">뉴스레터 무료로 구독하기</mm-button>
         </div>
+      </section>
 
-      <section style="max-width:480px;margin:4rem auto;">
+      <section style="max-width: 480px; margin: 4rem auto">
         <div class="chat is-mine">
           <figure class="chat-avatar" hidden>
             <img src="/public/images/springsteen.jpg" alt="" />
-          </figure class="chat-avatar">
+          </figure>
 
           <div class="chat-bubble">
-            <p style="color:#000;">
-              어떻게 뉴스레터 구독자를 웹사이트로 랜딩시킬 수 있을까?
-            </p>
+            <p style="color: #000">어떻게 뉴스레터 구독자를 웹사이트로 랜딩시킬 수 있을까?</p>
           </div>
         </div>
-        
+
         <div class="chat">
-          <figure class="chat-avatar">🦔</figure class="chat-avatar">
+          <figure class="chat-avatar">🦔</figure>
           <div>
             <h5 class="chat-username">고슴이</h5>
           </div>
@@ -355,31 +345,37 @@
         <div class="chat is-mine">
           <figure class="chat-avatar" hidden>
             <img src="/public/images/springsteen.jpg" alt="" />
-          </figure class="chat-avatar">
+          </figure>
 
           <div class="chat-bubble">
-            <p style="color:#000;">
-              브랜드 경험에 대한 고민: 클릭율이 잘 나오도록 자극적인 단어를 활용 등이 대안 언론의 저널리즘?
+            <p style="color: #000">
+              브랜드 경험에 대한 고민: 클릭율이 잘 나오도록 자극적인 단어를 활용 등이 대안 언론의
+              저널리즘?
             </p>
           </div>
           <div class="chat-bubble">
-            <p style="color:#000;">
+            <p style="color: #000">
               내일 뉴스레터를 받아볼 수 있다고 알려주면 구독 전환에 도움이 될까?
             </p>
           </div>
           <div class="chat-bubble">
-            <p style="color:#000;">
-              어떻게 하면 뉴스레터 구독자가 웹사이트에 가입할까?
-            </p>
+            <p style="color: #000">어떻게 하면 뉴스레터 구독자가 웹사이트에 가입할까?</p>
           </div>
         </div>
       </section>
 
-      <p style="text-align:left;">2. 콘텐츠 말미 관련 콘텐츠를 추천하며 웹사이트로 랜딩. 콘텐츠 내부의 주황 링크보다 콘텐츠의 마지막에 관련 콘텐츠를 추천함으로써 콘텐츠를 읽는 흐름을 유지할 수 있었고, 본문에 포함된 링크보다 클릭율이 상대적으로 높다.</p>
-      <p>너무 많은 링크(하나의 콘텐츠에 10개..)의 문제. 콘텐츠 작성 리소스 과다. 외부로 트래픽 전송.  쉽게 풀어준다는 브랜드 가치와 상충.</p>
-`
-      <div style="max-width:800px;margin:4rem 0;">
-        <img src="/public/images/newneek-book.png" alt="">
+      <p style="text-align: left">
+        2. 콘텐츠 말미 관련 콘텐츠를 추천하며 웹사이트로 랜딩. 콘텐츠 내부의 주황 링크보다 콘텐츠의
+        마지막에 관련 콘텐츠를 추천함으로써 콘텐츠를 읽는 흐름을 유지할 수 있었고, 본문에 포함된
+        링크보다 클릭율이 상대적으로 높다.
+      </p>
+      <p>
+        너무 많은 링크(하나의 콘텐츠에 10개..)의 문제. 콘텐츠 작성 리소스 과다. 외부로 트래픽 전송.
+        쉽게 풀어준다는 브랜드 가치와 상충.
+      </p>
+      `
+      <div style="max-width: 800px; margin: 4rem 0">
+        <img src="/public/images/newneek-book.png" alt="" />
       </div>
 
       <!-- 푸터 유틸리티 네비게이션에 서비스 피드백 링크를 배치(높은 접근성). 뉴스레터 피드백은 이미 뉴스레터에서 수집하고 있는데 웹사이트 피드백을 위한 링크에서 대부분의 피드백의 뉴스레터에 대한 피드백. 피드백 창구 일원화를 위해 웹사이트를 적극적으로 활용하는 사용자를 대상으로 피드백을 수집하기 위해 마이페이지로 옮겨서 필터링. -->
@@ -406,8 +402,10 @@
       <p>전환에 차이가 없었다. 개인정보 부담을 낮추기 위해 닉네임으로 레이블을 변경하고, 데이터 정제 비용이 발생하는 직업 주관식을 우선 제외하여 심리적 허들을 낮춤. 기존 데이터 기반의 직업 리스트를 생성</p> -->
 
       <section class="today-poll">
-        <h2 style="margin:0;">오늘 기분 어때요?</h2>
-        <p style="width:100%;margin:var(--space-3) 0 3rem 0;text-align:center;">🦔고슴이: 고슴이는...!</p>
+        <h2 style="margin: 0">오늘 기분 어때요?</h2>
+        <p style="width: 100%; margin: var(--space-3) 0 3rem 0; text-align: center">
+          🦔고슴이: 고슴이는...!
+        </p>
         <br /><br />
         <div>
           <figure><span>🧒</span></figure>
@@ -423,46 +421,129 @@
         </div>
       </section>
 
-      <article class="bookcard">
+      <div class="bookcard">
         <header class="bookcard-head">
           <figure class="bookcard-head-media">
-            <img src="https://newneek-image.s3.ap-northeast-2.amazonaws.com/image/gosumbook/살리는일" alt="살리는 일">
+            <img
+              src="https://newneek-image.s3.ap-northeast-2.amazonaws.com/image/gosumbook/살리는일"
+              alt="살리는 일"
+            />
           </figure>
-          <h3 class="bookcard-head-title">
-            <span role="img" aria-label="">📙</span> 살리는 일</h3>
-            <p class="bookcard-head-description">박소영 / 무제</p></header><div class="bookcard-body"><h3 class="bookcard-body-title"><span role="img" aria-label="">🦔고슴이</span>: 더 많은 동물 친구들이 안전하고 자유롭기를!</h3><p class="bookcard-body-description">
-        지난 2019년, 고양이를 잔혹하게 살해한 학대범에게 6개월의 징역형이 선고됐어요. 동물보호법이 제정된 지 28년 만에 처음으로 실형이 내려진건데요. 하지만 동물보호법은 여전히 제자리에서...
-        <span hidden>‘멈춤’ 상태. 게다가 동물이라고 해서 다 같은 상황에 있는 게 아니라는 문제도 있어요. 호화로운 돌봄 서비스를 받는 동물이 있는 반면, 추위에 떨며 길을 누비는 동물도 있으니까요. 작가는 10여 곳의 길고양이 급식소를 운영하며, 밤새 어둠 속에 몸을 숨긴 동물들에게 화해의 손길을 내밀고 있어요. ‘반려동물’과 ‘동물보호법 안의 동물’은 같은 생명의 무게를 가질까요? 작가는 책을 통해 조금은 서글픈 질문을 정면으로 마주봐요. 그리고 우리에겐 모종의 의무가 있다는 결론에 다가서요. 동물권이라는 단어가 아직 조금은 낯설고 어려워도 우리에겐 이를 지켜내야 하는 의무가 있다고요. 인간 역시 함께 살아가는, 같은 ‘동물’이니까요.</span>
-      </p><div>
-          <h4 class="bookcard-body-temp"><span role="img" aria-label="">🗞️</span> 함께 읽으면 좋은 뉴닉 콘텐츠</h4><a class="bookcard-body-link" href="/post/fDigGI">전 세계 조별과제 잔혹사: 생물다양성 영역 🌏</a></div></div><footer class="bookcard-foot"><button class="bookcard-foot-apply cta-button" disabled="">이 책은 마감되었어요</button></footer></article>
+          <h3 class="bookcard-head-title"><span role="img" aria-label="">📙</span> 살리는 일</h3>
+          <p class="bookcard-head-description">박소영 / 무제</p>
+        </header>
+        <div class="bookcard-body">
+          <h3 class="bookcard-body-title">
+            <span role="img" aria-label="">🦔고슴이</span>: 더 많은 동물 친구들이 안전하고
+            자유롭기를!
+          </h3>
+          <p class="bookcard-body-description">
+            지난 2019년, 고양이를 잔혹하게 살해한 학대범에게 6개월의 징역형이 선고됐어요.
+            동물보호법이 제정된 지 28년 만에 처음으로 실형이 내려진건데요. 하지만 동물보호법은
+            여전히 제자리에서...
+            <span hidden
+              >‘멈춤’ 상태. 게다가 동물이라고 해서 다 같은 상황에 있는 게 아니라는 문제도 있어요.
+              호화로운 돌봄 서비스를 받는 동물이 있는 반면, 추위에 떨며 길을 누비는 동물도
+              있으니까요. 작가는 10여 곳의 길고양이 급식소를 운영하며, 밤새 어둠 속에 몸을 숨긴
+              동물들에게 화해의 손길을 내밀고 있어요. ‘반려동물’과 ‘동물보호법 안의 동물’은 같은
+              생명의 무게를 가질까요? 작가는 책을 통해 조금은 서글픈 질문을 정면으로 마주봐요.
+              그리고 우리에겐 모종의 의무가 있다는 결론에 다가서요. 동물권이라는 단어가 아직 조금은
+              낯설고 어려워도 우리에겐 이를 지켜내야 하는 의무가 있다고요. 인간 역시 함께 살아가는,
+              같은 ‘동물’이니까요.</span
+            >
+          </p>
+          <div>
+            <h4 class="bookcard-body-temp">
+              <span role="img" aria-label="">🗞️</span> 함께 읽으면 좋은 뉴닉 콘텐츠
+            </h4>
+            <a class="bookcard-body-link" href="/post/fDigGI"
+              >전 세계 조별과제 잔혹사: 생물다양성 영역 🌏</a
+            >
+          </div>
+        </div>
+        <footer class="bookcard-foot">
+          <button class="bookcard-foot-apply cta-button" disabled="">이 책은 마감되었어요</button>
+        </footer>
+      </div>
 
-          
-    <section class="faq-contact">
-      <mm-text variant="subhead">개인정보 수집·이용에 대한 안내</mm-text>
-      <mm-text variant="body">
-        문의를 접수하고 회신하기 위해 최소한의 개인정보(이메일과 문의내용)를 수집하며 후속조치를
-        위해 1년간 보관합니다. 개인정보 수집·이용을 거부할 수 있으며, 이 경우 답변이 제한됩니다.
-        자세한 내용은 개인정보처리방침을 참고하시기 바랍니다.
-      </mm-text>
-      <mm-text variant="body">
-        <strong>
-          목적 : 고객문의 및 상담요청에 대한 회신 / 상담을 위한 서비스 이용기록 조회
-        </strong>
-      </mm-text>
-      <mm-checkbox label="동의합니다"></mm-checkbox>
-      <footer>
-        <mm-button variant="secondary" size="large">문의하기</mm-button>
-      </footer>
+      <section class="faq-contact">
+        <mm-text variant="subhead">개인정보 수집·이용에 대한 안내</mm-text>
+        <mm-text variant="body">
+          문의를 접수하고 회신하기 위해 최소한의 개인정보(이메일과 문의내용)를 수집하며 후속조치를
+          위해 1년간 보관합니다. 개인정보 수집·이용을 거부할 수 있으며, 이 경우 답변이 제한됩니다.
+          자세한 내용은 개인정보처리방침을 참고하시기 바랍니다.
+        </mm-text>
+        <mm-text variant="body">
+          <strong>
+            목적 : 고객문의 및 상담요청에 대한 회신 / 상담을 위한 서비스 이용기록 조회
+          </strong>
+        </mm-text>
+        <mm-checkbox label="동의합니다"></mm-checkbox>
+        <footer>
+          <mm-button variant="secondary" size="large">문의하기</mm-button>
+        </footer>
+      </section>
+
+      <main class="today">
+        <div class="today-topbar">
+          <div class="innerbox">
+            <span>today</span>
+            <a class="today-user" href="/mobile/setting">
+              <span role="img" aria-label="">🦔</span></a
+            >
+          </div>
+        </div>
+        <div class="today-topbar-backdrop">today</div>
+        <header class="today-head">
+          <div class="innerbox">
+            <span
+              style='display: block; margin: 0px 0px 0.25rem; font-size:var(--font-size-large); font-family: "Chelsea Market" letter-spacing: 0.05rem;'
+              >2021/03/01 Mon</span
+            >
+            <h1 class="today-head-title">1231 뉴니커, <br />좋은 하루!</h1>
+          </div>
+        </header>
+        <section class="today-body">
+          <br /><br />
+          <div class="zigzag-wrap"><div class="zigzag2"></div></div>
+          <a class="today-newsletter" href="/today/newsletter/210208"
+            ><h1>오늘의 뉴닉</h1>
+            <p>🦔판사, 중립과 중립 사이</p>
+            <figure>
+              <img
+                src="https://newneek-image.s3.ap-northeast-2.amazonaws.com/image/article/thumbnail/MHUrdK"
+                alt=""
+              /></figure
+          ></a>
+          <section class="today-timeline">
+            <span class="today-timeline-eyebrow">editor's pick</span>
+            <h2 class="today-timeline-heading">뉴닉이 쉽고 재미있게<br />정리한 이슈 타임라인</h2>
+            <a class="today-timeline-item" href="/today/newsletter/post/lJRosm"
+              ><span class="today-timeline-item-media">🚑</span>
+              <h3 class="today-timeline-item-title">공공의료의 (거의) 모든 것</h3>
+              <time class="today-timeline-item-time">2020/09/15</time></a
+            ><a class="today-timeline-item" href="/today/newsletter/post/IX1g09"
+              ><span class="today-timeline-item-media">⚖️</span>
+              <h3 class="today-timeline-item-title">검경수사권, 다 알려줄게📃</h3>
+              <time class="today-timeline-item-time">2020/09/01</time></a
+            ><a class="today-timeline-item" href="/today/newsletter/post/9a49d"
+              ><span class="today-timeline-item-media">💸</span>
+              <h3 class="today-timeline-item-title">한국형 뉴딜에 대한 (거의) 모든 것</h3>
+              <time class="today-timeline-item-time">2020/07/21</time></a
+            >
+          </section>
+        </section>
+      </main>
     </section>
-
   </article>
 </aside>
-      <!-- <p>뉴스레터 내 광고(브랜디드 컨텐츠)의 비중을 줄여갈 예정이었으나 더 스킴이나 모닝브루 등의 해외 뉴스레터 서비스는 이메일 광고 BM을 유지하고 있었으나, </p> -->
-      <!--
+
+<!-- <p>뉴스레터 내 광고(브랜디드 컨텐츠)의 비중을 줄여갈 예정이었으나 더 스킴이나 모닝브루 등의 해외 뉴스레터 서비스는 이메일 광고 BM을 유지하고 있었음. 왜 그랬을까? 결국 뉴닉도 브랜디드 컨텐츠를 완전히 버리지 못함. </p> -->
+<!--
         <p>마케팅 없이 구독자가 증가하는 뉴닉 뉴스레터. 매체, 커뮤니티, 지인 등 입소문을 통해 뉴스레터 서비스로 각인되어 있음. 따라서 홈에서 콘텐츠 큐레이션하는 플로우는 곤란. 구독하기 위해서 이미 방문. (데이터가 없어서 방문자의 몇 퍼센트가 전환되는지 정확히 몰라. 심각한 문제!!)</p>
         <p>6개의 최근 뉴스레터만 공개되어 있기 때문에 사용자들의 꾸준한 요구가 있었다. 이것을 이제 우리가 해결해줄게 하며 오픈.</p>
       -->
-      <!--
+<!--
         회원 가입을 제공하되 적극적으로 유도하지 않음.
         일반사용자: 타임라인 컨텐츠(로그인 권한 필요).
         히스토리 저장.
@@ -473,16 +554,14 @@
         솔루션: 검색 경험 유도하고 적극적으로 가입 유도하지 않음. 내부에서 가입을 유도하기 위한 기능 위주의 커뮤니케이션 발생하고 일정 및 리소스 대비 큰 목표.
       -->
 
-      <!--
+<!--
         <h3>스티비</h3>
       <p>✋문제: 이탈 측정이 어렵다</p>
       <p>✋문제: 오픈율에 영향을 미치는 요소 측정이 어렵다.</p>
       <p>✋문제: 회사 이메일을 사용하는 사용자들의 내부 망 사 사용에 따라 발생하는 이슈와 이직</p>
       <p>솔루션: 구독 이메일 주소 변경 기능을 제공</p> -->
 
-      <!-- <main class="today"><div class="today-topbar"><div class="innerbox"><span>today</span><a class="today-user" href="/mobile/setting"><span role="img" aria-label="">🦔</span></a></div></div><div class="today-topbar-backdrop">today</div><header class="today-head"><div class="innerbox"><span style="display: block; margin: 0px 0px 0.25rem; font-size:var(--font-size-large); font-family: &quot;Chelsea Market&quot; letter-spacing: 0.05rem;">2021/03/01 Mon</span><h1 class="today-head-title">1231 뉴니커, <br>좋은 하루!</h1></div></header><section class="today-body"><br><br><div class="zigzag-wrap"><div class="zigzag2"></div></div><a class="today-newsletter" href="/today/newsletter/210208"><h1>오늘의 뉴닉</h1><p>🦔판사, 중립과 중립 사이</p><figure><img src="https://newneek-image.s3.ap-northeast-2.amazonaws.com/image/article/thumbnail/MHUrdK" alt=""></figure></a><section class="today-timeline"><span class="today-timeline-eyebrow">editor's pick</span><h2 class="today-timeline-heading">뉴닉이 쉽고 재미있게<br>정리한 이슈 타임라인</h2><a class="today-timeline-item" href="/today/newsletter/post/lJRosm"><span class="today-timeline-item-media">🚑</span><h3 class="today-timeline-item-title">공공의료의 (거의) 모든 것</h3><time class="today-timeline-item-time">2020/09/15</time></a><a class="today-timeline-item" href="/today/newsletter/post/IX1g09"><span class="today-timeline-item-media">⚖️</span><h3 class="today-timeline-item-title">검경수사권, 다 알려줄게📃</h3><time class="today-timeline-item-time">2020/09/01</time></a><a class="today-timeline-item" href="/today/newsletter/post/9a49d"><span class="today-timeline-item-media">💸</span><h3 class="today-timeline-item-title">한국형 뉴딜에 대한 (거의) 모든 것</h3><time class="today-timeline-item-time">2020/07/21</time></a></section></section></main> -->
-
-      <!-- <p>실험 :: 레터에서 요약 => 웹사이트에서 전문 (부정적 피드백 80%) inbox에서 콘텐츠 소비하는 경험에 너무너무 익숙함 => 나가리됨</p>
+<!-- <p>실험 :: 레터에서 요약 => 웹사이트에서 전문 (부정적 피드백 80%) inbox에서 콘텐츠 소비하는 경험에 너무너무 익숙함 => 나가리됨</p>
 
       <p>MVP 완성 후 미출시</p>
       <p>react-native-webview</p>
@@ -509,7 +588,4 @@
         </li>
       </ol>
       <p>수집한 데이터의 한계 :: 뉴니커 일반이 아닌 독서를 좋아하는 사용자에 한정된 데이터</p>
-
-
-
-      
+    -->

@@ -1,7 +1,7 @@
 
 .switch {
-  --switch-width: 48px;
-  --switch-height: var(--size-small);
+  --switch-width: 40px;
+  --switch-height: 20px;
   --switch-radius: var(--radius);
 
     /* 
@@ -29,7 +29,8 @@
   --b1: 100% 0 0;
   --bc: 27.8078% .029596 256.847952;
   --tglbg: oklch(var(--b1) / 1);
-  --handleoffset: 1.5rem;
+  /* offset height */
+  --handleoffset: var(--switch-height);
   --handleoffsetcalculator: calc(var(--handleoffset)* -1);
   --togglehandleborder: 0 0;
 

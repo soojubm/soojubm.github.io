@@ -1,6 +1,14 @@
-<main class="page">
+<main class="page" style="height: 80vh">
+  <p style="max-width: 560px">
+    주의. 이 프로젝트는 공유나 공개를 목적으로 만들어진 것이 아니며, 코드 베이스에서 유효한 디자인
+    시스템과 디자인 시스템 문서의 best practices를 찾는 실험의 과정이라 완결성이나 완성도가 떨어질
+    수 있습니다. 이 문서는 특정 제품(서비스)을 위한 디자인 시스템을 기술하지도 않습니다. 몇 가지
+    원칙을 기반으로 기술하고 있지만, 절대로 디자인 시스템 자체의 보편성을 담보하는 것도 아닙니다.
+    브랜드, 제품의 규모, 팀의 구성, 구성원의 숙련도 등을 충분히 고려하여 점진적으로 확장하세요. 이
+    문서 또한, 정의와 재정의, 무수한 번복으로 만들어지고 있습니다.
+  </p>
   <!-- <p>
-    조너선 아이브였나요. 그 양반이 추천하는 behavior, visual style 등으로 나누어 보았다가,
+    . 그 양반이 추천하는 behavior, visual style 등으로 나누어 보았다가,
     foundation 의 feature? 중심으로 설명하고 그것에 따라 인덱스를 제공하는 것이 더 좋다는 판단.
   </p> -->
 
@@ -69,7 +77,7 @@
       우리 제품의 당면한 문제인가?
     </p> -->
 
-    <input type="text" />
+    <!-- <input type="text" /> -->
     <style>
       input:focus {
         background-color: blue;
@@ -112,7 +120,7 @@
     </style>
     <!-- // invoice / order  구분 -->
 
-    <header class="" style="display: flex; justify-content: space-between">
+    <!-- <header class="" style="display: flex; justify-content: space-between">
       <div style="width: 40%">
         <mm-text variant="title">
           <span style="color: var(--color-text-light)">Let us guide</span>
@@ -123,9 +131,8 @@
         <mm-text variant="body-large">
           Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci
           velit 유연성flexibility과 재사용성, 지속 가능성과 같은 기본 개념은 여기에서 이야기하지
-          않기.
-          <!-- The goal isn't "all or nothing". 의사결정의 고비가 왔을 때 언제든 이곳으로 돌아와 비교대상의 우위를 결정하세요. 취사선택.
-            가치판단. -->
+          않기. The goal isn't "all or nothing". 의사결정의 고비가 왔을 때 언제든 이곳으로 돌아와
+          비교대상의 우위를 결정하세요. 취사선택. 가치판단.
         </mm-text>
       </div>
     </header>
@@ -136,13 +143,11 @@
         <mm-text variant="title">한계를 설정하기</mm-text>
 
         <br />
-        <mm-text variant="body-bold"
-          >A11y. 접근성으로 결정을 도와라. 접근성에 충족하지 않는 디자인을 하기 위한 시간을 낭비하지
-          마세요.
-        </mm-text>
+        <mm-text variant="body-bold">A11y. </mm-text>
         <mm-text variant="body">
-          시각 이상자를 위한 형태. 크기, 깊이, 테두리의 제한된 규칙(제약Constraints)은 오히려 제품
-          개발 속도를 높일 수 있습니다.
+          접근성으로 결정을 도와라. 접근성에 충족하지 않는 디자인을 하기 위한 시간을 낭비하지
+          마세요. 시각 이상자를 위한 형태. 크기, 깊이, 테두리의 제한된 규칙(제약Constraints)은
+          오히려 제품 개발 속도를 높일 수 있습니다.
         </mm-text>
         <mm-text variant="body"
           >색각 이상자를 위해 색상 외의 시각 언어로 상태 정보를 표현하세요.</mm-text
@@ -157,7 +162,9 @@
       </section>
 
       <section style="border: var(--border); padding: 4rem; border-radius: 2rem">
-        <mm-text variant="subhead">Progressive enhancement minimum viable experience</mm-text>
+        <mm-text variant="subhead" data-temp=" minimum viable experience"
+          >Progressive enhancement</mm-text
+        >
         <mm-text variant="title">점진적으로 향상하기</mm-text>
 
         <br />
@@ -195,12 +202,14 @@
       </section>
     </section>
 
-    <mm-feature
-      icon="✋"
-      titleText="한계를 설정하기"
-      subtitle="Make a Constraints"
-      description="모두를 위한 서비스, 접속 환경 등의 제약없이 없이. 궁극적으로 해결하려는 문제는 유저 인터페이스가 아니다."
-    ></mm-feature>
+    <mm-tile>
+      <mm-feature
+        icon="✋"
+        titleText="한계를 설정하기"
+        subtitle="Make a Constraints"
+        description="모두를 위한 서비스, 접속 환경 등의 제약없이 없이. 궁극적으로 해결하려는 문제는 유저 인터페이스가 아니다."
+      ></mm-feature>
+    </mm-tile> -->
 
     <!-- <div class="stamp" style="position: absolute; right: 10%; top: 12rem">
       <div class="circle" style="background: var(--color-accent)">
@@ -303,59 +312,23 @@
     <!-- <p>https://w3c.github.io/wcag/understanding/target-size-minimum.html / 24px 이상 desktop</p> -->
   </article>
 
-  <section style="margin: 8rem 0">
-    <header style="margin: 2rem 0; text-align: center">
-      <h1 style="font-size: 2rem; margin-bottom: var(--space-1)">Pricing</h1>
-      <mm-text variant="body-large">
-        overall consistency and design and development efficiency
-      </mm-text>
-    </header>
-    <div style="display: flex; justify-content: center">
-      <mm-tile variant="flat" style="width: 100%; max-width: 24rem">
-        <mm-tag style="position: absolute; left: -0.25rem; top: var(--space-3)">
-          🔥 Most Popular
-        </mm-tag>
-        <div style="height: 1.75rem"></div>
-        <mm-text variant="subhead">Standard</mm-text>
-        <!-- <mm-text variant="body"> 대법원장은 국회의 동의를 얻어 대통령이 임명한다. </mm-text> -->
-        <div style="margin: var(--space-2) 0 var(--space-3) 0">
-          <mm-text variant="title">₩ 6,800</mm-text>
-          <mm-text variant="word-weak">한 달에 한 번</mm-text>
-        </div>
-        <mm-group>
-          <mm-button variant="primary" isfullwidth="true">업그레이드</mm-button>
-        </mm-group>
-        <!-- <div>
-          <mm-text variant="subhead"><em>iCloud+</em> 50GB</mm-text>
-          <span>₩1,100/월 </span>
-        </div> -->
-        <ul class="checklist" style="margin: 1rem 0 0 0">
-          <li>스토리지 2TB</li>
-          <li>Google 전문가와의 상담</li>
-          <li>회원을 위한 추가 혜택</li>
-        </ul>
-      </mm-tile>
-    </div>
-  </section>
-
-  <mm-text variant="subhead">Content guide for designer</mm-text>
+  <!-- <mm-text variant="subhead">Content guide for designer</mm-text>
   <ul class="checklist">
     <li>
       이상 혹은 이하를 표기할 때 >를 사용하지 않습니다. 액션 인디케이터와 혼동이 될 수 있어서. 이상,
       이하 한글로 명확하게 전달하시오!
     </li>
-    <li>긍정조. 명령조나 부정적인 어조를 사용하지 마세요. 한자어 지양.</li>
+    <li>긍정조. 명령조나 부정적인 어조, 한자어 지양.</li>
     <li>-두 개 ----- 2개</li>
     <li>-적 '-때', '경우', '사용' 을 대체할 수 없나</li>
-    <li>하세요와 할 수 있습니다 / 합니다 입니다.</li>
     <li>'여기', '클릭', '확장' 등 시각에 의존한 어휘로 작성하지 마세요.</li>
     <li>동일한 행동에 대해 하나의 단어를 사용하고 있는가.</li>
     <li>하기 / 취소 / 다음에</li>
     <li>모든 시각정보는 non-clickable. 모든 인터렉션은 clickable.</li>
     <li>2회 이상 사용할 때 규칙으로 만든다.</li>
-  </ul>
+  </ul> -->
 
-  <mm-text variant="subhead">Style guide for developer</mm-text>
+  <!-- <mm-text variant="subhead">Style guide for developer</mm-text>
   <ul class="checklist">
     <li>
       Styling hooks follows a specific naming convention to promote predictability and consistency.
@@ -376,7 +349,7 @@
       값을 조정하기 쉽도록 추상화.. 1 unit을 .25rem으로 모두 네이밍 할 수 있나.
     </li>
     <li>이미지 가이드.반응형 이미지 사용법. 일단 그냥 2배수로 크기 조절. 가장 간단.</li>
-  </ul>
+  </ul> -->
 
   <!-- <div class="hero-obj">
     <div class="hero-obj1"></div>

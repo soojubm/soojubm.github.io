@@ -1,51 +1,50 @@
 <main class="page" aria-label="site">
-    <mm-text variant="title">Accordions - Collapsed/Expanded</mm-text>
-    <mm-text variant="body-large">
-      사용자의 필요에 따라 취사선택할 수 있도록 정보 목록을 요약합니다. 반드시 숙지해야 하는
-      중요 정보를 collapsed로 제공하지 않아야 합니다.
-    </mm-text>
+  <mm-text variant="title">Accordions - Collapsed/Expanded</mm-text>
+  <mm-text variant="body-large">
+    사용자의 필요에 따라 취사선택할 수 있도록 정보 목록을 요약합니다. 반드시 숙지해야 하는 중요
+    정보를 collapsed로 제공하지 않아야 합니다.
+  </mm-text>
 
-    <dl class="article-aka">
-      <dt>a.k.a.</dt>
-      <dd title="">disclosure/expanded</dd>
-      <dd title="">expanded/collapsed</dd>
-    </dl>
+  <dl class="article-aka">
+    <dt>a.k.a.</dt>
+    <dd title="">disclosure/expanded</dd>
+    <dd title="">expanded/collapsed</dd>
+  </dl>
 
-    <section class="component-example">
-      <!-- <div style="width: 14px">
+  <section class="component-example">
+    <!-- <div style="width: 14px">
         <svg viewBox="0 0 10 10">
           <rect height="7" width="1" y="1" x="4" />
           <rect height="1" width="7" y="4" x="1" />
         </svg>
       </div> -->
-      <mm-text variant="subhead">
-        Frequently asked questions
-        <abbr title="Frequently asked questions" hidden>FAQ</abbr>
-      </mm-text>
-      <section class="tile-flat" style="margin: var(--space-after-subhead) 0 0">
-        <article class="accordion js-accordion is-active">
-          <button
-            class="accordion-title"
-            aria-expanded="false"
-            role="heading"
-            aria-label="3"
-            aria-controls="1"
-            aria-disable="true"
-          >
-            <mm-icon name="arrow-separate-vertical"></mm-icon>
-            탈퇴하고 싶어요.
-          </button>
-          <div class="accordion-panel">
-            <p>
-              Tying state and its visual representation together is a very good thing. It ensures
-              that state changes are communicated interoperably. Do not listen to those who advocate
-              the absolute separation of HTML semantics and CSS styles. Form should follow function,
-              and directly is most reliable.
-            </p>
-            <p>[aria-expanded] rect { fill: currentColor; }</p>
-            <p>toggle-section open="false"s</p>
-            <p>
-              <pre>
+    <mm-text variant="subhead">
+      Frequently asked questions
+      <abbr title="Frequently asked questions" hidden>FAQ</abbr>
+    </mm-text>
+    <section class="tile-flat" style="margin: var(--space-after-subhead) 0 0">
+      <article class="accordion js-accordion is-active">
+        <button
+          class="accordion-title"
+          aria-expanded="false"
+          role="heading"
+          aria-label="3"
+          aria-controls="1"
+          aria-disable="true"
+        >
+          <mm-icon name="arrow-separate-vertical"></mm-icon>
+          탈퇴하고 싶어요.
+        </button>
+        <div class="accordion-panel">
+          <p>
+            Tying state and its visual representation together is a very good thing. It ensures that
+            state changes are communicated interoperably. Do not listen to those who advocate the
+            absolute separation of HTML semantics and CSS styles. Form should follow function, and
+            directly is most reliable.
+          </p>
+          <p>[aria-expanded] rect { fill: currentColor; }</p>
+          <p>toggle-section open="false"s</p>
+          <pre>
                 (function() {
                   const headings = document.querySelectorAll('h2')
                 
@@ -61,74 +60,84 @@
                     }
                   })
                 })()
-              </pre>
-            </p>
-            <footer class="faq-item-reaction">
-              <p class="faq-reaction-title reaction-prompt">이 답변이 도움이 되었나요?</p>
-            </footer>
-          </div>
-        </article>
-        <article
-          class="accordion js-accordion is-active"
-          role="region"
-          aria-labelledby="region-heading"
-        >
-          <button class="accordion-title" role="heading" id="region-heading" aria-expanded="false">
-            <mm-icon name="arrow-right-circle-solid"></mm-icon>
-            임시 아이콘입니다.
-          </button>
-          <div class="accordion-panel">
-            <p>
-              모든 국민은 건강하고 쾌적한 환경에서 생활할 권리를 가지며, 국가와 국민은 환경보전을
-              위하여 노력하여야 한다.
-            </p>
-          </div>
-        </article>
-      </section>
+              </pre
+          >
+          <footer class="faq-item-reaction">
+            <p class="faq-reaction-title reaction-prompt">이 답변이 도움이 되었나요?</p>
+          </footer>
+        </div>
+      </article>
+      <article
+        class="accordion js-accordion is-active"
+        role="region"
+        aria-labelledby="region-heading"
+      >
+        <button class="accordion-title" role="heading" id="region-heading" aria-expanded="false">
+          <mm-icon name="arrow-right-circle-solid"></mm-icon>
+          임시 아이콘입니다.
+        </button>
+        <div class="accordion-panel">
+          <p>
+            모든 국민은 건강하고 쾌적한 환경에서 생활할 권리를 가지며, 국가와 국민은 환경보전을
+            위하여 노력하여야 한다.
+          </p>
+        </div>
+      </article>
     </section>
+  </section>
 
-    <section class="component-guide">
-      <!-- <mm-tile>
+  <section class="component-props">
+    <mm-text variant="subhead">Props</mm-text>
+    <dl>
+      <dt>TODO</dt>
+      <dd></dd>
+    </dl>
+  </section>
+
+  <section class="component-guide">
+    <!-- <mm-tile>
         <details>
           <summary>native details / summary</summary>
           <p>example</p>
         </details>
       </mm-tile> -->
-      <mm-text variant="subhead">Best practices</mm-text>
-      <mm-text variant="body">
-        사용자가 반드시 숙지해야 하는 정보를 아코디언으로 요약해서 보여주지 마세요. (참고.
-        Tooltip과 같은 맥락)
-        </mm-text>
+    <mm-text variant="subhead">Best practices</mm-text>
+    <mm-text variant="body">
+      사용자가 반드시 숙지해야 하는 정보를 아코디언으로 요약해서 보여주지 마세요. (참고. Tooltip과
+      같은 맥락)
+    </mm-text>
+    <mm-text variant="body"
+      >한글의 각 글자에서 낱자는 주변 낱자와의 관계에 따라 모양이 조금씩 달라지고, 이런 현상은
+      한자와 가나에서도 나타납니다. 따라서 한글을 바르게 표시하기 위해서는</mm-text
+    >
+    <mm-text variant="body">요약된 타이틀summary은 한 문장으로 간결하게 작성하세요.</mm-text>
+    <mm-text variant="body">
+      닫는 방법의 정의. 도큐먼트를 클릭하면 닫을 것인지? panel을 클릭하면 닫을 것인지? 이렇게 되면
+      내부에 링크 등의 액션을 제공할 수 없다. 다른 아코디언 아이템을 클릭했을 대 닫을 것인지? 본문을
+      클릭하여 닫을 수 있게 되면, 본문에 페이지 링크를 제공할 수 없음.</mm-text
+    >
 
-      <mm-text variant="body">한글의 각 글자에서 낱자는 주변 낱자와의 관계에 따라 모양이 조금씩 달라지고, 이런 현상은 한자와 가나에서도 나타납니다. 따라서 한글을 바르게 표시하기 위해서는</mm-text>
-      <mm-text variant="subhead">Editorial</mm-text>
-      <mm-text variant="body">요약된 타이틀summary은 한 문장으로 간결하게 작성하세요.</mm-text>
-
-      <!-- <blockquote>
+    <!-- 
         <ul>
           <li>
             자주묻는질문(FAQ) 정도 외에는 잘 쓰지 않음. 교육 도매인의 커리큘럼 정도에서 보임.
             collapsed->expanded로 전환될 때 모바일 친화적인 모달 형태가 사용될 수 있다.
           </li>
           <li>
-            클릭 영역의 정의. 본문을 클릭하여 닫을 수 있게 되면, 본문에 페이지 링크를 제공할 수
-            없음.
+           
           </li>
           <li>
             role button - space keycode를 추가하여 스페이스 키 또한 확장/축소할 수 있는 키로
             인식되도록 합니다. a 엔터키로만동작
           </li>
           <li>
-            닫는 방법의 정의. 도큐먼트를 클릭하면 닫을 것인지? panel을 클릭하면 닫을 것인지? 이렇게
-            되면 내부에 링크 등의 액션을 제공할 수 없다. 다른 아코디언 아이템을 클릭했을 대 닫을
-            것인지?
+          
           </li>
         </ul>
-      </blockquote> -->
-    </section>
-
+      -->
     <nav class="component-references">
       <mm-text variant="subhead">References</mm-text>
       <a href="https://nuli.navercorp.com/community/article/1132889">nuli</a>
     </nav>
+  </section>
 </main>

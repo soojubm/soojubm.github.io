@@ -3,17 +3,16 @@
     <mm-text variant="title">Avatars</mm-text>
     <mm-text variant="body-large">
       개체(유저, 회사, 프로젝트 등)를 대표하는 시각 정보입니다. 정보 더미의 주체로서 인접한 정보
-      더미 중 최상위 위계<span hidden>(시각적인 위계가 아님)</span>를 갖습니다. 때문에 클릭할 수
-      있으며 상세 페이지로 접근??
+      더미 중 최상위 위계<span hidden>(시각적인 위계가 아님)</span>를 갖습니다.
     </mm-text>
   </header>
   <section class="component-example">
     <mm-group variant="">
+      <mm-avatar variant="secondary" size="huge" default="true" badge="true"></mm-avatar>
       <mm-avatar size="huge" default="true" badge="true" badge></mm-avatar>
       <mm-avatar size="large" default="true" default="true" badge="true"></mm-avatar>
       <mm-avatar size="medium" default="true" fallback="수" badge="true"></mm-avatar>
       <mm-avatar size="small" default="true"> </mm-avatar>
-      <mm-avatar variant="secondary" size="huge" default="true" badge="true"></mm-avatar>
     </mm-group>
   </section>
 
@@ -49,62 +48,53 @@
       <li>fallback 정의</li>
     </ul>
 
-    <mm-text variant="subhead">Clickable</mm-text>
-    <button
-      style="
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: auto;
-        gap: var(--space-1);
-        border: none;
-        background-color: #fff;
-        font: inherit;
-      "
-    >
-      <mm-avatar slot="avatar" size="large" icon="share-ios"></mm-avatar>
-      <small>공유하기</small>
-    </button>
-    <button
-      style="
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: auto;
-        gap: var(--space-1);
-        padding: var(--space-1) var(--space-3);
-        border: var(--border);
-        border-radius: var(--radius);
-        background-color: transparent;
-        font: inherit;
-      "
-    >
-      <mm-icon slot="avatar" size="large" name="share-ios" style="font-size: 1.5rem"></mm-icon>
-      <small>공유하기</small>
-    </button>
-
-    <mm-text variant="subhead">Groupable</mm-text>
-
     <mm-tile>
-      <mm-group variant="avatar">
-        <mm-avatar size="small" default="true"></mm-avatar>
-        <mm-avatar size="small" default="true"></mm-avatar>
-        <mm-avatar size="small" default="true"></mm-avatar>
-        <mm-avatar size="small">+3</mm-avatar>
+      <mm-group>
+        <button
+          style="
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: auto;
+            gap: var(--space-1);
+            border: none;
+            background-color: #fff;
+            font: inherit;
+          "
+        >
+          <mm-avatar slot="avatar" size="large" icon="share-ios"></mm-avatar>
+          <small>공유하기</small>
+        </button>
+        <button
+          style="
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: var(--size-huge);
+            height: var(--size-huge);
+            gap: var(--space-1);
+            padding: var(--space-1) var(--space-3);
+            border: var(--border);
+            border-radius: var(--radius);
+            background-color: transparent;
+            font: inherit;
+          "
+        >
+          <mm-icon slot="avatar" size="large" name="share-ios" style="font-size: 1.5rem"></mm-icon>
+          <small>공유하기</small>
+        </button>
       </mm-group>
     </mm-tile>
 
-    <mm-group alignment="vertical">
-      <mm-tile>
-        <mm-entity
-          label="windows-emoji"
-          description="tag page head"
-          description2="description area2."
-        >
-          <mm-avatar slot="avatar" variant="secondary" size="huge">#</mm-avatar>
-        </mm-entity>
-      </mm-tile>
-    </mm-group>
+    <mm-tile>
+      <mm-group variant="avatar">
+        <mm-avatar size="medium" default="true"></mm-avatar>
+        <mm-avatar size="medium" default="true"></mm-avatar>
+        <mm-avatar size="medium" default="true"></mm-avatar>
+        <mm-avatar size="medium">+3</mm-avatar>
+      </mm-group>
+    </mm-tile>
   </section>
 
   <section class="component-case">

@@ -39,33 +39,6 @@ input[type=file] + label {}
 input[type=file] + label:after {display:none;}
 
 
-.file {}
-.file-helper {margin:.25rem 0 0;}
-.file-input {}
-.file-label {
-font-family: inherit;
-font-family: var(--font-family);
-font-size: inherit;
-
-display: inline-flex;
-align-items: center;
-justify-content: center;
-min-width: var(--button-min-width);
-height: var(--button-size);
-padding: 0 var(--space-4) 2px;
-border: var(--button-border);
-border-radius: var(--button-radius);
-box-sizing: border-box;
-
-background: var(--button-color);
-color: var(--button-text-color);
-font-weight: var(--button-font-weight);
-text-transform: capitalize;
-}
-.file-attachment {margin:2rem 0 0;}
-.file-attachment-title {margin:.5rem 0;}
-.file-attachment-helper {}
-
 /* // button.visually-hidden:focus,
 // input[type=submit].visually-hidden:focus {
 //   position: fixed;

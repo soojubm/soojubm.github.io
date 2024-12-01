@@ -31,6 +31,8 @@
 .chat-bubble p, .chat-bubble li {
   line-height: 1.6;
 }
+
+.chat + .chat {margin-top:var(--space-4);}
 .chat-bubble + .chat-bubble {margin-top:var(--space-2);}
 
 .chat.is-mine {text-align:right;}

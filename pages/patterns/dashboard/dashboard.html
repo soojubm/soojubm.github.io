@@ -1,149 +1,162 @@
-<div class="page">
-  <main class="dashboard">
-    <style>
-      .dashboard {
-        padding: 1rem var(--grid-margin) 8rem;
-      }
+<main class="page">
+  <style>
+    .dashboard-body {
+      max-width: 800px;
+      margin: 1rem auto;
+    }
+  </style>
+  <mm-entity
+    class="greeting"
+    label="windows-emoji 👋"
+    description="Tender is the night"
+    description2="description area2."
+    data-temp="이 패턴에서 아바타는 시각 정보가 아니라 링크로 사용. hashtag 등 사실상 page head로 사용될 수 있는."
+  >
+    <mm-avatar slot="avatar" variant="secondary" size="huge">#</mm-avatar>
+  </mm-entity>
+  <br />
 
-      .dashboard-body {
-        max-width: 800px;
-        margin: 1rem auto;
-      }
-    </style>
-
-    <header
-      class="greeting"
-      data-temp="이 패턴에서 아바타는 시각 정보가 아니라 링크로 사용. hashtag 등 사실상 page head로 사용될 수 있는."
-    >
-      <mm-avatar variant="secondary" size="huge" fallback="🐶"></mm-avatar>
-      <div style="margin-top: 0.25rem"></div>
-      <mm-text variant="subhead">Hello, Spring 👋</mm-text>
-      <div></div>
-      <mm-text variant="body">Tender is the night.</mm-text>
-    </header>
-    <!-- <header class="dashboard-head"></header> -->
-    <br /><br />
-    <section style="display: flex; justify-content: space-between; gap: 1rem">
-      <mm-tile style="width: 100%">
-        <article class="overview-item" style="width: 100%; position: relative">
-          <mm-text variant="body">수신</mm-text>
-          <!-- <mm-tag style="position: absolute; right: 1rem; top: 0.875rem">태그</mm-tag> -->
-          <mm-text variant="title">
-            1,508
-            <small style="font-size: var(--font-size-medium); vertical-align: super">90%</small>
-          </mm-text>
-          <mm-separator></mm-separator>
-          <div class="meter">
-            <div class="meter-track">
-              <b class="meter-thumb" style="width: 68%"></b>
-            </div>
-            <span class="meter-text">200GB 중 115.72GB 사용</span>
+  <mm-tile style="margin-bottom: 1rem">
+    <mm-row justifyContent="space-between">
+      <mm-menuitem style="width: 33%">
+        <mm-avatar slot="avatar" size="large">🦊</mm-avatar>
+        <div slot="text">
+          <mm-text variant="word-weak">주문배송</mm-text>
+          <mm-text variant="subhead">7</mm-text>
+        </div>
+      </mm-menuitem>
+      <mm-menuitem style="width: 33%">
+        <mm-avatar slot="avatar" size="large">🦊</mm-avatar>
+        <div slot="text">
+          <mm-text variant="word-weak">구매확정</mm-text>
+          <mm-text variant="subhead">54</mm-text>
+        </div>
+      </mm-menuitem>
+      <mm-menuitem style="width: 33%">
+        <mm-avatar slot="avatar" size="large">🦊</mm-avatar>
+        <div slot="text">
+          <mm-text variant="word-weak">찜</mm-text>
+          <mm-text variant="subhead">108</mm-text>
+        </div>
+      </mm-menuitem>
+    </mm-row>
+  </mm-tile>
+  <!-- <header class="dashboard-head"></header> -->
+  <section style="display: flex; justify-content: space-between; gap: 1rem">
+    <mm-tile style="width: 100%">
+      <article class="overview-item" style="width: 100%; position: relative">
+        <mm-text variant="body">수신</mm-text>
+        <!-- <mm-tag style="position: absolute; right: 1rem; top: 0.875rem">태그</mm-tag> -->
+        <mm-text variant="title">
+          1,508
+          <small style="font-size: var(--font-size-medium); vertical-align: super">90%</small>
+        </mm-text>
+        <mm-separator></mm-separator>
+        <div class="meter">
+          <div class="meter-track">
+            <b class="meter-thumb" style="width: 68%"></b>
           </div>
-        </article>
-      </mm-tile>
-      <mm-tile style="width: 100%">
-        <article class="overview-item" style="width: 100%; position: relative">
-          <mm-text variant="body">수신</mm-text>
-          <!-- <mm-tag style="position: absolute; right: 1rem; top: 0.875rem">태그</mm-tag> -->
-          <mm-text variant="title">
-            1,508
-            <small style="font-size: var(--font-size-medium); vertical-align: super">90%</small>
-          </mm-text>
-          <mm-separator></mm-separator>
-          <div class="meter">
-            <div class="meter-track">
-              <b class="meter-thumb" style="width: 68%"></b>
-            </div>
-            <span class="meter-text">200GB 중 115.72GB 사용</span>
+          <span class="meter-text">200GB 중 115.72GB 사용</span>
+        </div>
+      </article>
+    </mm-tile>
+    <mm-tile style="width: 100%">
+      <article class="overview-item" style="width: 100%; position: relative">
+        <mm-text variant="body">수신</mm-text>
+        <!-- <mm-tag style="position: absolute; right: 1rem; top: 0.875rem">태그</mm-tag> -->
+        <mm-text variant="title">
+          1,508
+          <small style="font-size: var(--font-size-medium); vertical-align: super">90%</small>
+        </mm-text>
+        <mm-separator></mm-separator>
+        <div class="meter">
+          <div class="meter-track">
+            <b class="meter-thumb" style="width: 68%"></b>
           </div>
-        </article>
-      </mm-tile>
-      <mm-tile style="width: 100%">
-        <article class="overview-item" style="width: 100%; position: relative">
-          <mm-text variant="body">수신</mm-text>
-          <!-- <mm-tag style="position: absolute; right: 1rem; top: 0.875rem">태그</mm-tag> -->
-          <mm-text variant="title">
-            1,508
-            <small style="font-size: var(--font-size-medium); vertical-align: super">90%</small>
-          </mm-text>
-          <mm-separator></mm-separator>
-          <div class="meter">
-            <div class="meter-track">
-              <b class="meter-thumb" style="width: 68%"></b>
-            </div>
-            <span class="meter-text">200GB 중 115.72GB 사용</span>
+          <span class="meter-text">200GB 중 115.72GB 사용</span>
+        </div>
+      </article>
+    </mm-tile>
+    <mm-tile style="width: 100%">
+      <article class="overview-item" style="width: 100%; position: relative">
+        <mm-text variant="body">수신</mm-text>
+        <!-- <mm-tag style="position: absolute; right: 1rem; top: 0.875rem">태그</mm-tag> -->
+        <mm-text variant="title">
+          1,508
+          <small style="font-size: var(--font-size-medium); vertical-align: super">90%</small>
+        </mm-text>
+        <mm-separator></mm-separator>
+        <div class="meter">
+          <div class="meter-track">
+            <b class="meter-thumb" style="width: 68%"></b>
           </div>
-        </article>
-      </mm-tile>
-      <mm-tile style="width: 100%">
-        <article class="overview-item" style="width: 100%; position: relative">
-          <mm-text variant="body">수신</mm-text>
-          <!-- <mm-tag style="position: absolute; right: 1rem; top: 0.875rem">태그</mm-tag> -->
-          <mm-text variant="title">
-            1,508
-            <small style="font-size: var(--font-size-medium); vertical-align: super">90%</small>
-          </mm-text>
-          <mm-separator></mm-separator>
-          <div class="meter">
-            <div class="meter-track">
-              <b class="meter-thumb" style="width: 68%"></b>
-            </div>
-            <span class="meter-text">200GB 중 115.72GB 사용</span>
+          <span class="meter-text">200GB 중 115.72GB 사용</span>
+        </div>
+      </article>
+    </mm-tile>
+    <mm-tile style="width: 100%">
+      <article class="overview-item" style="width: 100%; position: relative">
+        <mm-text variant="body">수신</mm-text>
+        <!-- <mm-tag style="position: absolute; right: 1rem; top: 0.875rem">태그</mm-tag> -->
+        <mm-text variant="title">
+          1,508
+          <small style="font-size: var(--font-size-medium); vertical-align: super">90%</small>
+        </mm-text>
+        <mm-separator></mm-separator>
+        <div class="meter">
+          <div class="meter-track">
+            <b class="meter-thumb" style="width: 68%"></b>
           </div>
-        </article>
-      </mm-tile>
-    </section>
-    <br /><br />
-    <section style="display: flex; justify-content: space-between; gap: 1rem">
-      <div style="width: 66.6666%">
-        <header
-          style="
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin: 0 0 var(--space-3);
-          "
-        >
-          <mm-text variant="subhead">Transactions</mm-text>
-          <mm-link>View all</mm-link>
-        </header>
-        <mm-group variant="menuitem" style="gap: var(--space-3)">
-          <mm-tile variant="flat">
-            <mm-menuitem>
-              <mm-avatar slot="avatar">🦊</mm-avatar>
-              <div slot="text">
-                <mm-text variant="word">사진 및 동영상 백업</mm-text>
-                <mm-text variant="word-light">디스크립션이다</mm-text>
-              </div>
-              <mm-group slot="action" variant="chip">
-                <mm-button>버튼</mm-button>
-                <mm-icon-button icon="more-vert"> </mm-icon-button>
-              </mm-group>
-            </mm-menuitem>
-          </mm-tile>
-          <mm-tile variant="flat">
-            <mm-menuitem>
-              <mm-avatar slot="avatar">🦊</mm-avatar>
-              <div slot="text">
-                <mm-text variant="body">사진 및 동영상 백업</mm-text>
-                <mm-text variant="label">New York, NY - <b>128 Views</b></mm-text>
-              </div>
-              <mm-group slot="action" variant="chip">
-                <mm-button>버튼</mm-button>
-                <mm-icon-button icon="more-vert"> </mm-icon-button>
-              </mm-group>
-            </mm-menuitem>
-          </mm-tile>
-        </mm-group>
-      </div>
-      <div
+          <span class="meter-text">200GB 중 115.72GB 사용</span>
+        </div>
+      </article>
+    </mm-tile>
+  </section>
+  <br /><br />
+  <section style="display: flex; justify-content: space-between; gap: 1rem">
+    <div style="width: 66.6666%">
+      <header
         style="
-          width: 33.3333%;
-          margin-top: 40px;
-          border-radius: var(--radius);
-          background: yellowgreen;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin: 0 0 var(--space-3);
         "
-      ></div>
-    </section>
-  </main>
-</div>
+      >
+        <mm-text variant="subhead">Transactions</mm-text>
+        <mm-link>View all</mm-link>
+      </header>
+      <mm-group variant="menuitem" style="gap: var(--space-3)">
+        <mm-tile variant="flat">
+          <mm-menuitem>
+            <mm-avatar slot="avatar" size="large">🦊</mm-avatar>
+            <div slot="text">
+              <mm-text variant="word-strong">사진 및 동영상 백업</mm-text>
+              <mm-text variant="word-light">디스크립션이다</mm-text>
+            </div>
+            <mm-group slot="action" variant="chip">
+              <mm-button>버튼</mm-button>
+              <mm-icon-button variant="transparent" icon="more-vert"> </mm-icon-button>
+            </mm-group>
+          </mm-menuitem>
+        </mm-tile>
+        <mm-tile variant="flat">
+          <mm-menuitem>
+            <mm-avatar slot="avatar" size="large">🦊</mm-avatar>
+            <div slot="text">
+              <mm-text variant="body-bo">사진 및 동영상 백업</mm-text>
+              <mm-text variant="label">New York, NY - <b>128 Views</b></mm-text>
+            </div>
+            <mm-group slot="action" variant="chip">
+              <mm-button>버튼</mm-button>
+              <mm-icon-button icon="more-vert"> </mm-icon-button>
+            </mm-group>
+          </mm-menuitem>
+        </mm-tile>
+      </mm-group>
+    </div>
+    <div
+      style="width: 33.3333%; margin-top: 40px; border-radius: var(--radius); background: gold"
+    ></div>
+  </section>
+</main>

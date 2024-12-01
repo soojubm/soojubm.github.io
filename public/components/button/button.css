@@ -81,7 +81,12 @@
   height: var(--button-size);
   border-radius: var(--button-radius);
   background: var(--button-color);
+
+  cursor: pointer;
+  /* 왜 커서 넣어야 되지? */
+
   &[data-variant='navigator'] {
+    border: var(--border);
     border-radius: 50%;
     box-shadow: var(--shadow);
     background-color: var(--color-background);

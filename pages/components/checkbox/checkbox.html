@@ -17,7 +17,7 @@
         aria-helper="주로 세팅 페이지에서 사용되는 디스크립션 영역. 항상 텍스트 더미인 것은 아님. 하지만 그렇다면 expanded/collapsed 맥락이 아닐까?"
         checked
       >
-        체크박스 / helper와 validation messgage 구분
+        체크박스
       </mm-checkbox>
       <input
         type="text"
@@ -64,22 +64,12 @@
       하나의 TermsCheckboxGroup으로 정의할 수 있다. 이 때 개별 체크박스는 약관보기를 위한 링크를
       포함한다.
     </mm-text>
-
-    <mm-text variant="subhead">Groupable</mm-text>
     <mm-text variant="body"> 체크박스를 가로로 정렬하지 마세요. </mm-text>
-
-    <mm-text variant="subhead">Editorial</mm-text>
     <mm-text variant="body">동사를 포함하는 최대 2단어. choice보다 action에 가깝다.</mm-text>
 
-    <mm-text variant="subhead">TermsCheckbox </mm-text>
-    <mm-text variant="subhead"
-      >CheckboxGroup and MasterCheckbox
-      <dt>isIndeterminated<attr>?</attr></dt>
-      <dd>boolean</dd></mm-text
-    >
-  </section>
+    <mm-tag>groupable</mm-tag>
 
-  <section class="component-case">
+    <mm-text variant="subhead">CheckboxGroup and MasterCheckbox :: TermsCheckbox</mm-text>
     <mm-tile variant="tinted">
       <mm-checkbox
         class="js-checkall"
@@ -91,20 +81,29 @@
         모두 동의합니다
       </mm-checkbox>
       <mm-separator spacing="small"></mm-separator>
-      <mm-row justifyContent="space-between">
-        <mm-checkbox class="js-check" id="terms" name="terms"> 이용약관에 동의합니다. </mm-checkbox>
-        <mm-link href="#">이용약관 바로가기</mm-link>
-      </mm-row>
-      <mm-separator spacing="small"></mm-separator>
-      <mm-row justifyContent="space-between">
-        <mm-checkbox class="js-check" id="terms" name="terms"> 이용약관에 동의합니다. </mm-checkbox>
-        <mm-link href="#">이용약관 바로가기</mm-link>
-      </mm-row>
-      <mm-separator spacing="small"></mm-separator>
-      <mm-row justifyContent="space-between">
-        <mm-checkbox class="js-check" id="terms" name="terms"> 이용약관에 동의합니다. </mm-checkbox>
-      </mm-row>
+      <mm-group variant="checkbox">
+        <mm-row justifyContent="space-between">
+          <mm-checkbox class="js-check" id="terms" name="terms">
+            이용약관에 동의합니다.
+          </mm-checkbox>
+          <mm-link href="#">이용약관 바로가기</mm-link>
+        </mm-row>
+        <mm-row justifyContent="space-between">
+          <mm-checkbox class="js-check" id="terms" name="terms">
+            이용약관에 동의합니다.
+          </mm-checkbox>
+          <mm-link href="#">이용약관 바로가기</mm-link>
+        </mm-row>
+        <mm-row justifyContent="space-between">
+          <mm-checkbox class="js-check" id="terms" name="terms">
+            이용약관에 동의합니다.
+          </mm-checkbox>
+        </mm-row>
+      </mm-group>
     </mm-tile>
+  </section>
+
+  <section class="component-case">
     <mm-tile><mm-checkbox>포토리뷰만 보기</mm-checkbox></mm-tile>
     <!-- <mm-text variant="body">쿠키 관련 util</mm-text> -->
     <mm-tile>

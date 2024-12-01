@@ -65,6 +65,7 @@ const components = [
 
   'button',
   'iconButton',
+  'link',
 
   'tag',
   'checkbox',

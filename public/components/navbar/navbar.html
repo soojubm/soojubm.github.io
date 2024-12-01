@@ -1,6 +1,6 @@
 <nav class="navbar js-navbar" role="navigation">
   <mm-icon-button
-    variant="navigator"
+    variant=""
     icon="menu-scale"
     class="navbar-burger js-navbar-toggle"
     aria-label="전체메뉴"
@@ -8,7 +8,7 @@
     aria-expanded="false"
   >
   </mm-icon-button>
-  <a class="navbar-logo" href="/"></a>
+  <a class="navbar-logo" href="./index.html"></a>
   <!-- <div class="navbar-menu">
     <a href="index.html"> Home </a>
     <a href="tokens.html">
@@ -53,15 +53,22 @@
     </mm-menuitem> -->
   </mm-group>
   <menu>
-    <mm-menuitem label="Components">
+    <div style="display: flex; align-items: center; gap: 0.5rem">
+      <mm-avatar slot="avatar" variant="tertiary">
+        <mm-icon slot="icon" name="building"></mm-icon>
+      </mm-avatar>
+      <mm-text variant="body">Components</mm-text>
+    </div>
+    <!-- <mm-menuitem label="컴포넌트">
       <mm-avatar slot="avatar" variant="tertiary" size="medium" icon="building"> </mm-avatar>
-    </mm-menuitem>
+    </mm-menuitem> -->
     <!-- // TODO components mapping -->
     <a href="text.html"> text </a>
     <a href="avatar.html">avatar </a>
     <a href="breadcrumb.html"> breadcrumb </a>
     <a href="button.html"> button </a>
     <a href="iconButton.html"> icon button </a>
+    <a href="link.html"> link </a>
     <a href="menuitem.html">menu item</a>
     <a href="checkbox.html">checkbox</a>
     <a href="radio.html">radio</a>

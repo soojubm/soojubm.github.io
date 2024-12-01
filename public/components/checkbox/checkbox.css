@@ -44,6 +44,8 @@
 }
 
 .checkbox input {
+  /* reset */
+  margin: 0; 
 
   display:block;
   width: var(--checkbox-size);
