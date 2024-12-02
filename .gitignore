@@ -6,6 +6,6 @@ yarn-debug.log*
 yarn-error.log*
 
 # Folders
-build/
+# build/
 node_modules/
 *.DS_Store
