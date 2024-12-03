@@ -2,52 +2,6 @@
   <mm-text variant="title">Searching</mm-text>
   <mm-text variant="body-large">현재 일반적인 검색 패턴 위주로 정리.</mm-text>
 
-  <ul class="checklist">
-    <li>검색의 범위? 규모?를 우선 정의해야 한다.</li>
-    <li>
-      검색 인지 (또는 탐색 중 검색) -> 검색어 입력 대기 -> 검색어 입력 중(검색 결과) -> 검색 요청 ->
-      검색 결과
-    </li>
-    <li>placeholder의 작성 가이드</li>
-    <li>모바일 키보드의 높이를 고려한 쿼리의 적정 갯수는?</li>
-    <li>결과 페이지의 공유를 허용할 것인가?</li>
-    <li>검색 페이지가 탐색을 역할을 겸하는가?</li>
-    <li>검색 데이터는 어떻게 수집하는가.</li>
-    <li>비회원의 검색 내역을 저장할 것인가? (로컬에 저장)</li>
-    <li>검색 내역 삭제와 검색 히스토리 삭제를 구분.</li>
-    <li>전체 검색 내역과 최근 검색 내역. 활동 로그. (facebook. 나만 보기)</li>
-    <li>
-      searchfield와 textfield는 validation의 유무. 레이블의 유무. icon indicator의 유무로 구분된다
-    </li>
-    <li>
-      글로벌 검색 패턴과 로컬 검색(검색 필터를 포함) 패턴의 차이. searchfield small. right
-      alignment.
-    </li>
-    <li>조회수(틱톡)/이카테고리에글쓰기(미디엄)/카테고리팔로우(개인화)</li>
-  </ul>
-
-  <table>
-    <thead>
-      <tr>
-        <th style="width: 10rem">-</th>
-        <th>키워드를 입력할 때 마다 검색</th>
-        <th>검색 버튼 클릭 또는 enter key 검색</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th>결과없음 상태</th>
-        <td>x</td>
-        <td>o</td>
-      </tr>
-      <tr>
-        <th>검색어 자동완성</th>
-        <td>x</td>
-        <td>o</td>
-      </tr>
-    </tbody>
-  </table>
-
   <section class="component-example">
     <div style="max-width: 400px">
       <form class="searchfield" role="search" aria-label="sitewide / on the page">
@@ -64,7 +18,6 @@
       <mm-tile variant="elevated" class="search-recent">
         <mm-group alignment="vertical">
           <mm-text variant="label">최근 검색</mm-text>
-          <!-- <mm-link>모두보기</mm-link> -->
           <mm-menuitem label="고슴이">
             <mm-avatar slot="avatar" style="background: beige">🦔</mm-avatar>
             <mm-icon-button slot="action" icon="xmark" aria-label="검색 내역 삭제"></mm-icon-button>
@@ -76,7 +29,7 @@
         </mm-group>
       </mm-tile>
 
-      <mm-group bleeding="true" style="margin: var(--space-3) 0 1.5rem">
+      <mm-group alignment="bleeding-vertical" style="margin: var(--space-3) 0 1.5rem">
         <mm-button>아파트열쇠를빌려드립니다</mm-button>
         <mm-button>로얄테넌바움</mm-button>
         <mm-button>소매치기</mm-button>
@@ -112,6 +65,51 @@
   </section>
 
   <section class="component-guide">
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 10rem">-</th>
+          <th>키워드를 입력할 때 마다 검색</th>
+          <th>검색 버튼 클릭 또는 enter key 검색</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>결과없음 상태</th>
+          <td>x</td>
+          <td>o</td>
+        </tr>
+        <tr>
+          <th>검색어 자동완성</th>
+          <td>x</td>
+          <td>o</td>
+        </tr>
+      </tbody>
+    </table>
+    <ul class="checklist">
+      <li>검색의 범위? 규모?를 우선 정의해야 한다.</li>
+      <li>
+        검색 인지 (또는 탐색 중 검색) -> 검색어 입력 대기 -> 검색어 입력 중(검색 결과) -> 검색 요청
+        -> 검색 결과
+      </li>
+      <li>placeholder의 작성 가이드</li>
+      <li>모바일 키보드의 높이를 고려한 쿼리의 적정 갯수는?</li>
+      <li>결과 페이지의 공유를 허용할 것인가?</li>
+      <li>검색 페이지가 탐색을 역할을 겸하는가?</li>
+      <li>검색 데이터는 어떻게 수집하는가.</li>
+      <li>비회원의 검색 내역을 저장할 것인가? (로컬에 저장)</li>
+      <li>검색 내역 삭제와 검색 히스토리 삭제를 구분.</li>
+      <li>전체 검색 내역과 최근 검색 내역. 활동 로그. (facebook. 나만 보기)</li>
+      <li>
+        searchfield와 textfield는 validation의 유무. 레이블의 유무. icon indicator의 유무로 구분된다
+      </li>
+      <li>
+        글로벌 검색 패턴과 로컬 검색(검색 필터를 포함) 패턴의 차이. searchfield small. right
+        alignment.
+      </li>
+      <li>조회수(틱톡)/이카테고리에글쓰기(미디엄)/카테고리팔로우(개인화)</li>
+    </ul>
+
     <mm-text variant="subhead">검색 기표</mm-text>
     <ul>
       <li>추천 또는 자동완성 등 키워드로 즉시 실행 또는 키워드 입력</li>
@@ -156,13 +154,13 @@
         노출해줄 수 있다.
       </li>
     </ul>
-  </section>
 
-  <section class="component-references">
-    <a href="https://material.io/design/navigation/search.html">MD search</a>
-    <a href="https://developer.android.com/reference/android/widget/SearchView">
-      android searchview
-    </a>
+    <address class="component-references">
+      <a href="https://material.io/design/navigation/search.html">MD search</a>
+      <a href="https://developer.android.com/reference/android/widget/SearchView">
+        android searchview
+      </a>
+    </address>
   </section>
 
   <section class="component-case">
@@ -185,7 +183,7 @@
       <mm-text variant="body-bold">Android 패턴</mm-text>
       <form class="searchfield" style="max-width: var(--width-medium)">
         <div style="position: absolute; left: 0">
-          <mm-button icon="arrow-left" class="searchfield-prefix"> </mm-button>
+          <mm-icon-button icon="arrow-left" class="searchfield-prefix"> </mm-icon-button>
         </div>
         <!-- TODO clear button -->
         <input

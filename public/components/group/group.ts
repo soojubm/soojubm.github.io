@@ -21,17 +21,13 @@ class Group extends HTMLElement {
 
     // TODO radio = radiogroup role
 
-    // const align = 'vertical' || 'horizontal'
-    // TODO : alignment -> direction / align
-    const alignment = this.getAttribute('alignment')
-    container.dataset.alignment = alignment || ''
+    container.dataset.alignment = this.alignment || ''
 
     if (this.alignment) container.dataset.alignment = this.alignment
 
     const style = this.getAttribute('style')
     container.setAttribute('style', style || '')
 
-    if (this.bleeding) this.dataset.bleeding = 'true'
     if (this.variant) container.dataset.variant = this.variant
     // TODO : checkbox는 fieldset
 
@@ -41,10 +37,6 @@ class Group extends HTMLElement {
 
   get variant() {
     return this.getAttribute('variant')
-  }
-
-  get bleeding() {
-    return this.getAttribute('bleeding')
   }
 
   get alignment() {

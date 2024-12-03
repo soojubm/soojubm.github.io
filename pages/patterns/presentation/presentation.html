@@ -11,145 +11,167 @@
       <mm-button class="js-scrollspy-trigger" href="#">Drawer(todo)</mm-button>
     </mm-group>
   </nav> -->
-
   <mm-text variant="title">Popovers</mm-text>
   <mm-text variant="body-large">
     사용자는 모달 형태의 집중된 환경에서 리스크를 관리할 수 있습니다. Popover API에서 네이밍 규칙을
     따옴. 구조적으로는 main tag의 형제 엘리먼트. 루트 엘리먼트가 상태 클래스를 가짐. popovertarget
   </mm-text>
-  <ul class="checklist">
-    <li>인터렉션의 유무.</li>
-    <li>
-      사용자 인터렉션을 요구할 때 modal로 주의를 집중 시킵니다. non interactions is non modal. 이
-      규칙이라면 non-modal dialog는 허용될 수 없다. modal은 배경을 클릭해서 닫는 기능은 중요도가
-      낮은 수행에서만 허용한다. 중요도가 낮은 작업이란?
-    </li>
-    <li>iOS에서 modality/dialog는 버튼으로 닫는다.</li>
-    <li>모든 레이어는 모달(다이얼로그)이 대체 가능하다.</li>
-    <li>딤(오버레이) - 팝오버 - 모달 - 팝오버 - 토스트 - 시트.</li>
-    <li>Don't show more than one at a time.</li>
-    <li>
-      <b>사용자 워크플로 중심으로 용법을 정의.</b> 토스트 식빵처럼 튀어나오는 것을 toast로 정의할
-      수도 특정 위치(왼쪽 아래)에 위치하는 맥락으로 toast를 정의할 수도 있는 것. 너무 많은 콘텐츠를
-      모달에 표시하지 않도록 제한할 것인지, dribble, pinterest와 같이 풀페이지 모달 뷰를 허용하여
-      페이지 맥락으로 접근을 허용할 것인지.
-    </li>
-    <li>
-      popover no tip / caret tip / tab tip - carbon design system + toggletip,tooltip으로 구분
-    </li>
 
-    <li>md. When adapting for larger screens, a bottom sheet can become a context menu.</li>
-    <li>md. Swap the bottom sheet for a side sheet in landscape layouts.</li>
-  </ul>
+  <section class="component-example">
+    <mm-tile variant="elevated">
+      <mm-text variant="subhead">Modal</mm-text>
+      <mm-text variant="body">something that requires the user’s attention.</mm-text>
+      <footer style="margin-top: 1rem">
+        <mm-button variant="tertiary" class="js-modal" data-modal="woolf">모달 열기</mm-button>
+      </footer>
+    </mm-tile>
+    <mm-tile variant="elevated">
+      <mm-text variant="subhead">Sheet</mm-text>
+      <mm-text variant="body"
+        >sheet or drawer. something that requires the user’s attention.</mm-text
+      >
+      <!-- <p>To allow users to view optional information or complete sub-tasks in a workflow while keeping the context of the current page, use Sheet.</p> -->
+      <!-- <aside class="sheet-overay"></aside> -->
+      <footer style="margin-top: 1rem">
+        <mm-button variant="tertiary" class="js-toggle">시트 열기</mm-button>
+        <mm-tile variant="elevated" class="sheet js-sheet" role="presentation">
+          <button class="sheet-toggle"></button>
+          <mm-row justifyContent="space-between">
+            <mm-text variant="subhead" class="sheet-title">Presentation - sheet</mm-text>
+            <mm-icon-button
+              icon="xmark"
+              class="js-sheet-close"
+              aria-label="close sheet"
+            ></mm-icon-button>
+          </mm-row>
+          <mm-group variant="menuitem">
+            <mm-menuitem data-size="medium" label="iOS 액션 시트 참고">
+              <mm-avatar slot="avatar" default="true"></mm-avatar>
+            </mm-menuitem>
+            <mm-menuitem data-size="medium" label="바텀 시트 옵션">
+              <mm-avatar slot="avatar" default="true"></mm-avatar>
+            </mm-menuitem>
+          </mm-group>
+        </mm-tile>
+      </footer>
+    </mm-tile>
+    <mm-tile variant="elevated">
+      <mm-text variant="subhead">Dropdown</mm-text>
+      <ul class="checklist">
+        <li>데스크탑에 최적화된 경험. alignment / placement</li>
+      </ul>
+      <footer style="margin-top: 1rem">
+        <mm-button variant="tertiary" class="js-toggle" aria-haspopup="">팝오버 열기</mm-button>
+        <mm-tile variant="elevated" class="popover"> 내용 </mm-tile>
+      </footer>
+    </mm-tile>
+    <mm-tile variant="elevated">
+      <mm-text variant="subhead">Toast</mm-text>
+      <ul class="checklist">
+        <li>데스크탑에 최적화된 경험. alignment / placement</li>
+      </ul>
+      <footer style="margin-top: 1rem">
+        <mm-button variant="tertiary" class="js-toggle">토스트 열기</mm-button>
+        <aside class="toast" role="alert">toast test. 사라지는 시간을 정의.</aside>
+      </footer>
+    </mm-tile>
+  </section>
 
-  <mm-text variant="body-bold">Open triggers</mm-text>
-  <ul>
-    <li>window.load</li>
-    <li>window.resize</li>
-    <li>actions</li>
-  </ul>
-  <br />
-  <mm-text variant="body-bold">Close triggers</mm-text>
-  <ul>
-    <li>
-      <b>click</b>. Dim / CloseButton(in / out) / ConfirmButton / CancelButton / Backdrop/dim/overay
-    </li>
-    <li><b>keydown</b>. escKey. enterKey. spaceBar</li>
-  </ul>
+  <section class="component-guide">
+    <mm-text variant="subhead">Other cases</mm-text>
+    <ul>
+      <li>
+        <b>ibm.</b> Don’t use to display complex or large amounts of data. Don’t recreate a full app
+        or page in a dialog.
+      </li>
+      <li>
+        <b>airbnb.</b> 큰 화면에서 x 버튼. 모바일에서 페이지처럼 변하면서 arrow 버튼으로 변경됨
+      </li>
+      <li><b>pinterest.</b> onDismiss / Preventing close on outside click / layer component</li>
+    </ul>
+    <ul class="checklist">
+      <li>일시적인 피드백.</li>
+      <li>액션이 포함될 수 있나? 예시. 삭제 후 되돌리기 액션. 하지만 휴지통이 있다면?</li>
+      <li>
+        포지셔닝에 left bottom 좌표 대신 margin을 쓰는 게 좋다. 포지셔닝을 위한 믹스인을 보존할 수
+        있고, 컴포넌트의 가로 사이즈도 보존할 수 있기 때문? left:1rem/right:1rem 이면 항상 block
+        width를 가짐.
+      </li>
+      <li>toast VS snackbar. action 유/무. MD 버전업과 함께 재정의 됨.</li>
+      <li>HIG에 정의되지 않음. iOS spotify 앱에서 '라이브러리에 추가되었습니다'.</li>
+    </ul>
 
-  <br /><br />
+    <ul>
+      <li>브라우저 히스토리. url을 통한 접근.</li>
+      <li>
+        body element의 스크롤. 스크롤의 크기 보정. 크롬에서는 html에 overflow:hidden를 잘 주면
+        끝인데, 익스플로러에선 스크롤 제어하려면 body에 먹여야 한? html에 overflow:hidden;을주고
+        모달에 overflow-y를 주면(조건:모달이 윈도우창보다 작아질때)
+      </li>
+    </ul>
 
-  <mm-text variant="subhead">Modal</mm-text>
-  <footer>
-    <mm-button variant="secondary" class="js-modal" data-modal="woolf">모달 열기</mm-button>
-  </footer>
+    <ul class="checklist">
+      <li>인터렉션의 유무.</li>
+      <li>
+        사용자 인터렉션을 요구할 때 modal로 주의를 집중 시킵니다. non interactions is non modal. 이
+        규칙이라면 non-modal dialog는 허용될 수 없다. modal은 배경을 클릭해서 닫는 기능은 중요도가
+        낮은 수행에서만 허용한다. 중요도가 낮은 작업이란?
+      </li>
+      <li>iOS에서 modality/dialog는 버튼으로 닫는다.</li>
+      <li>모든 레이어는 모달(다이얼로그)이 대체 가능하다.</li>
+      <li>딤(오버레이) - 팝오버 - 모달 - 팝오버 - 토스트 - 시트.</li>
+      <li>Don't show more than one at a time.</li>
+      <li>
+        <b>사용자 워크플로 중심으로 용법을 정의.</b> 토스트 식빵처럼 튀어나오는 것을 toast로 정의할
+        수도 특정 위치(왼쪽 아래)에 위치하는 맥락으로 toast를 정의할 수도 있는 것. 너무 많은
+        콘텐츠를 모달에 표시하지 않도록 제한할 것인지, dribble, pinterest와 같이 풀페이지 모달 뷰를
+        허용하여 페이지 맥락으로 접근을 허용할 것인지.
+      </li>
+      <li>
+        popover no tip / caret tip / tab tip - carbon design system + toggletip,tooltip으로 구분
+      </li>
 
-  <mm-separator></mm-separator>
-  <mm-text variant="body">something that requires the user’s attention.</mm-text>
+      <li>md. When adapting for larger screens, a bottom sheet can become a context menu.</li>
+      <li>md. Swap the bottom sheet for a side sheet in landscape layouts.</li>
+    </ul>
 
-  <ul>
-    <li>브라우저 히스토리. url을 통한 접근.</li>
-    <li>
-      body element의 스크롤. 스크롤의 크기 보정. 크롬에서는 html에 overflow:hidden를 잘 주면 끝인데,
-      익스플로러에선 스크롤 제어하려면 body에 먹여야 한? html에 overflow:hidden;을주고 모달에
-      overflow-y를 주면(조건:모달이 윈도우창보다 작아질때)
-    </li>
-  </ul>
+    <mm-text variant="subhead">Open triggers</mm-text>
+    <ul>
+      <li>window.load</li>
+      <li>window.resize</li>
+      <li>actions</li>
+    </ul>
+    <br />
+    <mm-text variant="subhead">Close triggers</mm-text>
+    <ul>
+      <li>
+        <b>click</b>. Dim / CloseButton(in / out) / ConfirmButton / CancelButton /
+        Backdrop/dim/overay
+      </li>
+      <li><b>keydown</b>. escKey. enterKey. spaceBar</li>
+    </ul>
 
-  <mm-text variant="body-bold">Other cases</mm-text>
-  <ul>
-    <li>
-      <b>ibm.</b> Don’t use to display complex or large amounts of data. Don’t recreate a full app
-      or page in a dialog.
-    </li>
-    <li><b>airbnb.</b> 큰 화면에서 x 버튼. 모바일에서 페이지처럼 변하면서 arrow 버튼으로 변경됨</li>
-    <li><b>pinterest.</b> onDismiss / Preventing close on outside click / layer component</li>
-  </ul>
-
-  <mm-text variant="subhead">Toast</mm-text>
-  <mm-button variant="secondary" class="js-toggle">토스트 열기</mm-button>
-  <aside class="toast" role="alert">toast test. 사라지는 시간을 정의.</aside>
-  <mm-separator></mm-separator>
-  <ul class="checklist">
-    <li>일시적인 피드백.</li>
-    <li>액션이 포함될 수 있나? 예시. 삭제 후 되돌리기 액션. 하지만 휴지통이 있다면?</li>
-    <li>
-      포지셔닝에 left bottom 좌표 대신 margin을 쓰는 게 좋다. 포지셔닝을 위한 믹스인을 보존할 수
-      있고, 컴포넌트의 가로 사이즈도 보존할 수 있기 때문? left:1rem/right:1rem 이면 항상 block
-      width를 가짐.
-    </li>
-    <li>toast VS snackbar. action 유/무. MD 버전업과 함께 재정의 됨.</li>
-    <li>HIG에 정의되지 않음. iOS spotify 앱에서 '라이브러리에 추가되었습니다'.</li>
-  </ul>
-
-  <mm-text variant="subhead">Sheet</mm-text>
-  <mm-text variant="body">sheet or drawer</mm-text>
-  <!-- <p>To allow users to view optional information or complete sub-tasks in a workflow while keeping the context of the current page, use Sheet.</p> -->
-  <mm-button variant="secondary" class="js-toggle">시트 열기</mm-button>
-  <mm-tile variant="elevated" class="sheet js-sheet" role="presentation">
-    <button class="sheet-toggle"></button>
-    <mm-row justifyContent="space-between">
-      <mm-text variant="subhead" class="sheet-title">Presentation - sheet</mm-text>
-      <mm-icon-button icon="xmark" class="js-sheet-close" aria-label="close sheet"></mm-icon-button>
-    </mm-row>
-    <mm-group variant="menuitem">
-      <mm-menuitem data-size="medium" label="iOS 액션 시트 참고">
-        <mm-avatar slot="avatar" default="true"></mm-avatar>
-      </mm-menuitem>
-      <mm-menuitem data-size="medium" label="바텀 시트 옵션">
-        <mm-avatar slot="avatar" default="true"></mm-avatar>
-      </mm-menuitem>
-    </mm-group>
-  </mm-tile>
-  <!-- <aside class="sheet-overay"></aside> -->
-
-  <mm-text variant="subhead">Dropdown</mm-text>
-  <ul class="checklist">
-    <li>데스크탑에 최적화된 경험. alignment / placement</li>
-  </ul>
-  <footer style="position: relative">
-    <mm-button variant="secondary" class="js-toggle" aria-haspopup="">팝오버 열기</mm-button>
-    <mm-tile variant="elevated" class="popover"> 내용 </mm-tile>
-  </footer>
-
-  <mm-text variant="subhead">Tooltip</mm-text>
-  <section class="component-references">
-    <a
-      href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/presentation_role"
-      target="_blank"
-    >
-      ARIA: presentation role
-    </a>
-    <a
-      href="https://developer.apple.com/design/human-interface-guidelines/components/presentation/action-sheets"
-      target="_blank"
-    >
-      HIG action-sheets
-    </a>
-    <a
-      href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alertdialog_role"
-    >
-      alertdialog role
-    </a>
+    <address class="component-references">
+      <a href="https://developer.mozilla.org/ko/docs/Web/API/Popover_API" target="_blank"
+        >Mozilla Popover API</a
+      >
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/presentation_role"
+        target="_blank"
+      >
+        ARIA: presentation role
+      </a>
+      <a
+        href="https://developer.apple.com/design/human-interface-guidelines/components/presentation/action-sheets"
+        target="_blank"
+      >
+        HIG action-sheets
+      </a>
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alertdialog_role"
+      >
+        alertdialog role
+      </a>
+    </address>
   </section>
 </main>

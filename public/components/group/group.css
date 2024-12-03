@@ -62,44 +62,25 @@
 
 .group[data-direction=row] {}
 .group[data-direction=column] {}
+
 .group[data-alignment=right] {}
-.group[data-alignment=bleeding-vertical] {
-  /* display:flex; */
-  /* flex-wrap: nowrap; */
-  white-space:nowrap;
-  /* overflow:auto; */
-
-  margin: var(--space-3-minus);
-  padding: var(--space-3);
-
-  scroll-behavior: smooth;
-  > * {min-width:auto;}
-  &::-webkit-scrollbar {display:none;}
-}
-
-
 
 .group[data-alignment='bleeding-vertical'] {
-  display: flex;
-  /* flex-wrap: nowrap; */
-  /* overflow:auto; */
-
-  width: 100%;
   white-space: nowrap;
-  overflow: auto;
-  /* text-align: center; */
-  /* margin: 2rem 0; */
-  gap: 0.5rem;
-  /* margin: var(--space-3-minus); */
+
   padding: var(--space-3) 0;
 
-  scroll-behavior: smooth;
-  > * {
+  display: flex;          /* Flexbox로 아이템들을 수평으로 배치 */
+  flex-wrap: nowrap;      /* 아이템들이 한 줄로만 배치되도록 설정 */
+  overflow-x: auto;       /* 수평 스크롤 활성화 */
+
+  /* scroll-behavior: smooth; */
+  /* > * {
     min-width: auto;
-  }
-  &::-webkit-scrollbar {
+  } */
+  /* &::-webkit-scrollbar {
     display: none;
-  }
+  } */
 }
 
 /* .group[data-alignment='bleeding-vertical']::-webkit-scrollbar-button {

@@ -31,8 +31,10 @@
 
   display: flex;
   align-items: center;
+  min-height: var(--size-medium);
   gap: var(--space-2);
-  line-height: var(--checkbox-size);
+  /* line-height: var(--checkbox-size); */
+
   /* 2줄 TODO:  minHeight */
   /* display: flex;
   flex-direction: column;
