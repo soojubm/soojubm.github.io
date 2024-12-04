@@ -136,6 +136,9 @@ textarea.textfield-input {
   top:var(--textfield-icon-position);
   left:0;
 }
+::slotted([slot=prefix]) ~ .textfield-input {
+  padding-left: 48px;
+}
 
 ::slotted([slot=link]) {
   font-size:var(--font-size-small);
