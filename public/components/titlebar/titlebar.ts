@@ -38,10 +38,8 @@ class TitleBar extends HTMLElement {
     const actionSlot = document.createElement('slot')
     actionSlot.name = 'action'
 
-    shadow.appendChild(container)
-    container.append(title, actionSlot, makeStyleSheet('titlebar'))
-
-    console.log('@', this.shadowRoot?.querySelector('mm-icon-button'))
+    shadow.append(container, makeStyleSheet('titlebar'))
+    container.append(title, actionSlot)
   }
 
   // get hasBack() {
@@ -56,15 +54,10 @@ class TitleBar extends HTMLElement {
     return this.getAttribute('heading')
   }
 
-  connectedCallback() {
-    const backButton = this.shadowRoot?.querySelector('mm-icon-button')
-    if (backButton) {
-      backButton.setAttribute('variant', this.getAttribute('variant') || 'default')
-    }
-  }
+  connectedCallback() {}
   disconnectedCallback() {}
   attributeChangedCallback(name, oldValue, newValue) {
-    const backButton = this.shadowRoot?.querySelector('mm-icon-button')
+    const backButton = this.shadowRoot?.querySelector('mm-icon-button button')
     if (backButton) {
       backButton.setAttribute('variant', newValue)
     }

@@ -4,7 +4,7 @@
   --switch-height: 20px;
   --switch-radius: var(--radius);
 
-    /* 
+  /* 
   --switch-thumb-size: 24px;
   --switch-thumb-inset: 4px;
   --switch-thumb-transform: calc(100% - var(--switch-thumb-inset));
@@ -25,6 +25,8 @@
   -moz-appearance: none;
   appearance: none;
 
+  margin: 0;
+
   /* flex-shrink: 0; */
   --b1: 100% 0 0;
   --bc: 27.8078% .029596 256.847952;
@@ -33,11 +35,10 @@
   --handleoffset: var(--switch-height);
   --handleoffsetcalculator: calc(var(--handleoffset)* -1);
   --togglehandleborder: 0 0;
-
   --padding: 0 0 0 2px var(--tglbg) inset;
   
-  height: var(--switch-height);
   width: var(--switch-width);
+  height: var(--switch-height);
   border-radius: var(--switch-radius);
   border: var(--border);
   background-color: var(--color-background-weak);
