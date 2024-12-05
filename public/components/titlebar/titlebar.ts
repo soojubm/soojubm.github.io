@@ -1,7 +1,5 @@
 import { makeStyleSheet } from '../../javascripts/components/utils'
 
-// todo appbar
-
 class TitleBar extends HTMLElement {
   static get observedAttributes() {
     return ['variant']
@@ -19,16 +17,11 @@ class TitleBar extends HTMLElement {
     title.classList.add('titlebar-title')
     title.innerText = this.heading || ''
 
-    if (!this.hiddenBack) {
-      const backButton = document.createElement('mm-icon-button')
-      backButton.setAttribute('variant', 'navigator')
+    const backButton = document.createElement('mm-icon-button')
+    backButton.setAttribute('variant', 'navigator')
+    backButton.setAttribute('icon', 'arrow-left')
 
-      const icon = document.createElement('mm-icon')
-      icon.setAttribute('name', 'arrow-left')
-
-      backButton.appendChild(icon)
-      container.append(backButton)
-    }
+    if (!this.hiddenBack) container.append(backButton)
 
     // if (this.hiddenBack) back.hidden = true
 
@@ -57,10 +50,10 @@ class TitleBar extends HTMLElement {
   connectedCallback() {}
   disconnectedCallback() {}
   attributeChangedCallback(name, oldValue, newValue) {
-    const backButton = this.shadowRoot?.querySelector('mm-icon-button button')
-    if (backButton) {
-      backButton.setAttribute('variant', newValue)
-    }
+    // const backButton = this.shadowRoot?.querySelector('mm-icon-button button')
+    // if (backButton) {
+    //   backButton.setAttribute('variant', newValue)
+    // }
     // this.shadowRoot?.querySelector('mm-icon-button')?.setAttribute('variant', newValue)
   }
 }

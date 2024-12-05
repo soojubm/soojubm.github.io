@@ -38,6 +38,7 @@ import Media from '../../components/media/media'
 import TabPanel from '../../components/tabpanel/tabpanel'
 import IconButton from '../../components/button/iconButton'
 import Textarea from '../../components/textfield/textarea'
+import ClearButton from '../../components/button/clearButton'
 
 export function defineCustomElement() {
   if ('customElements' in window) {
@@ -45,6 +46,7 @@ export function defineCustomElement() {
 
     customElements.define('mm-button', Button)
     customElements.define('mm-icon-button', IconButton)
+    customElements.define('mm-clear-button', ClearButton)
 
     customElements.define('mm-link', Link)
 

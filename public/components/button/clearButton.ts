@@ -1,13 +1,6 @@
 import { makeStyleSheet } from '../../javascripts/components/utils'
 
-// TODO Tooltip
-// aria label
-
-class IconButton extends HTMLElement {
-  static get observedAttributes() {
-    return ['disabled']
-  }
-
+class ClearButton extends HTMLElement {
   constructor() {
     super()
   }
@@ -29,11 +22,10 @@ class IconButton extends HTMLElement {
 
     const host = document.createElement('button')
     host.classList.add('icon-button')
-    host.dataset.variant = this.variant || ''
-    // host.ariaLabel = this.ariaLabel
+    host.dataset.variant = 'clear' || ''
 
     const icon = document.createElement('mm-icon')
-    icon.setAttribute('name', this.icon || '')
+    icon.setAttribute('name', 'xmark')
 
     shadowRoot?.append(host, makeStyleSheet('button'))
     host.appendChild(icon)
@@ -42,4 +34,4 @@ class IconButton extends HTMLElement {
   disconnectedCallback() {}
 }
 
-export default IconButton
+export default ClearButton
