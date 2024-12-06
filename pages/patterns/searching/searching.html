@@ -4,27 +4,22 @@
 
   <section class="component-example">
     <div style="max-width: 400px">
-      <form class="searchfield" role="search" aria-label="sitewide / on the page">
-        <label class="searchfield-prefix">
-          <mm-icon name="search"></mm-icon>
-        </label>
-        <input
-          class="searchfield-input"
-          type="search"
-          placeholder="궁금한 인물이나 이슈가 있나요?"
-        />
-      </form>
+      <mm-searchfield placeholder="궁금한 인물이나 이슈가 있나요?"></mm-searchfield>
       <div style="height: var(--space-2)"></div>
       <mm-tile variant="elevated" class="search-recent">
         <mm-group alignment="vertical">
           <mm-text variant="label">최근 검색</mm-text>
           <mm-menuitem label="고슴이">
             <mm-avatar slot="avatar" style="background: beige">🦔</mm-avatar>
-            <mm-clear-button slot="action" aria-label="검색 내역 삭제"></mm-clear-button>
+            <mm-clear-button slot="action" aria-label="고슴이 검색 내역 삭제"></mm-clear-button>
           </mm-menuitem>
           <mm-menuitem label="개구리">
             <mm-avatar slot="avatar" style="background: var(--green100)">🐸</mm-avatar>
-            <mm-icon-button slot="action" icon="xmark" aria-label="검색 내역 삭제"></mm-icon-button>
+            <mm-clear-button
+              slot="action"
+              icon="xmark"
+              aria-label="개구리 검색 내역 삭제"
+            ></mm-clear-button>
           </mm-menuitem>
         </mm-group>
       </mm-tile>
@@ -192,8 +187,8 @@
           placeholder="Android pattern"
           style="padding-left: 3rem"
         />
-        <div style="position: absolute; right: var(--space-2); top: var(--space-2); z-index: 1">
-          <mm-icon-button icon="xmark"> </mm-icon-button>
+        <div style="position: absolute; right: var(--space-3); top: var(--space-3); z-index: 1">
+          <mm-clear-button> </mm-clear-button>
         </div>
       </form>
     </mm-tile>
@@ -217,8 +212,8 @@
     <mm-tile>
       <mm-result label="''키워드'와(과) 일치하는 내용이 없습니다.">
         <mm-group slot="list" justifyContent="center">
-          <mm-button> 🦔 검색어 제공 </mm-button>
-          <mm-button>🐈‍⬛ 애옹</mm-button>
+          <mm-button>🦔 검색어 제공 </mm-button>
+          <mm-button>🐈‍ 애옹</mm-button>
         </mm-group>
       </mm-result>
     </mm-tile>

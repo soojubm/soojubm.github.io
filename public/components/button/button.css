@@ -134,6 +134,7 @@
 .button[data-variant=primary] {
 }
 .button[data-variant=secondary] {
+  border-color: transparent;
   --button-color: var(--green100);
   --button-text-color: var(--color-primary);
 }

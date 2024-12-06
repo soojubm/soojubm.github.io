@@ -49,24 +49,24 @@
   }
 
   /* // :root {
-//   --zigzag-size: 1rem;
-// }
-// .zigzag {background:var(--color-newneek);position:relative;}
-// .zigzag:before {
-//   content: "";
-//   width: 100%;
-//   height: var(--zigzag-size);
-//   position: absolute;
-//   left: 0;
-//   top: calc(var(--zigzag-size) * -1);
-//   background-image:
-//     linear-gradient(-45deg, transparent var(--zigzag-size), var(--color-newneek) 0),
-//     linear-gradient(45deg, transparent var(--zigzag-size), var(--color-newneek) 0);
-//   background-size: var(--zigzag-size) var(--zigzag-size);
-//   background-repeat: repeat-x;
-//   background-position: -3px 0;
-//   transform: rotateX(180deg);
-// } */
+  //   --zigzag-size: 1rem;
+  // }
+  // .zigzag {background:var(--color-newneek);position:relative;}
+  // .zigzag:before {
+  //   content: "";
+  //   width: 100%;
+  //   height: var(--zigzag-size);
+  //   position: absolute;
+  //   left: 0;
+  //   top: calc(var(--zigzag-size) * -1);
+  //   background-image:
+  //     linear-gradient(-45deg, transparent var(--zigzag-size), var(--color-newneek) 0),
+  //     linear-gradient(45deg, transparent var(--zigzag-size), var(--color-newneek) 0);
+  //   background-size: var(--zigzag-size) var(--zigzag-size);
+  //   background-repeat: repeat-x;
+  //   background-position: -3px 0;
+  //   transform: rotateX(180deg);
+  // } */
 
   .home-mangrove {
     display: flex;
@@ -75,52 +75,49 @@
     border-top: 2px solid #000;
     background: var(--color-newneek);
     position: relative;
+  }
 
-    &.mangrove1 {
-      display: block;
-      max-width: 240px;
-      margin-top: -140px;
-      margin-bottom: 110px;
-      transition: all 0.4s;
+  .mangrove1 {
+    display: block;
+    max-width: 240px;
+    margin-top: -140px;
+    margin-bottom: 110px;
+    transition: all 0.4s;
+  }
+
+  .mangrove2 {
+    display: block;
+    max-width: 230px;
+    margin-left: 2rem;
+    position: absolute;
+    bottom: 2rem;
+    transition: all 0.4s ease 0.05s;
+  }
+
+  .mangrove-foot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+    padding: 0.5rem 0;
+    border-top: 1px solid #000;
+    border-bottom: 2px solid #000;
+    background: #fff;
+    position: relative;
+    z-index: 1;
+
+    span {
+      font-size: 16px;
+      color: #000;
     }
+  }
 
-    &.mangrove2 {
-      display: block;
-      max-width: 230px;
-      margin-left: 2rem;
-      position: absolute;
-      bottom: 2rem;
-      transition: all 0.4s ease 0.05s;
-    }
-
-    &.mangrove-foot {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
-      width: 100%;
-      padding: 0.5rem 0;
-      border-top: 1px solid #000;
-      border-bottom: 2px solid #000;
-      background: #fff;
-      position: relative;
-      z-index: 1;
-
-      span {
-        font-size: 16px;
-        color: #000;
-      }
-    }
-
-    &:hover {
-      .mangrove1 {
-        transform: translateY(-1.5rem);
-      }
-
-      .mangrove2 {
-        transform: translateY(-1.05rem);
-      }
-    }
+  .home-mangrove:hover .mangrove1 {
+    transform: translateY(-1.5rem);
+  }
+  .home-mangrove:hover .mangrove2 {
+    transform: translateY(-1.05rem);
   }
 
   .today-poll {
@@ -129,39 +126,39 @@
     flex-wrap: wrap;
     margin: 4rem auto;
   }
-  /* .today-poll h2 {
+  .today-poll h2 {
     width: 100%;
     margin: 0 0 2rem 0;
     text-align: center;
   }
-  .today-poll  div {
+  .today-poll div {
     margin: 0 0.5rem;
     background: var(--color-background);
     text-align: center;
-    }
+  }
 
-    .today-poll div figure {
-      border: 2px solid #000;
-      border-bottom-width: 1px;
-    }
+  .today-poll div figure {
+    border: 2px solid #000;
+    border-bottom-width: 1px;
+  }
 
-    .today-poll div figure span {
-        display: block;
-        margin-top: -3rem;
-        padding: 1.5rem 1.5rem 0.5rem;
-        font-size: 3.5rem;
-        line-height: 1.2;
-      }
+  .today-poll div figure span {
+    display: block;
+    margin-top: -3rem;
+    padding: 1.5rem 1.5rem 0.5rem;
+    font-size: 3.5rem;
+    line-height: 1.2;
+  }
 
-      .today-poll .label {
-      display: block;
-      padding: 0.25rem 0;
-      border: 2px solid #000;
-      border-top: 0;
-      background: var(--gray100);
-      font-size: var(--font-size-large);
-      font-weight: bold;
-    } */
+  .today-poll .label {
+    display: block;
+    padding: 0.25rem 0;
+    border: 2px solid #000;
+    border-top: 0;
+    background: var(--gray100);
+    font-size: var(--font-size-large);
+    font-weight: bold;
+  }
 </style>
 
 <aside class="modal newneek" role="presentation">
@@ -171,6 +168,19 @@
     </header>
 
     <section class="modal-body">
+      <div style="max-width: 800px; margin: 4rem auto">
+        <div class="home-mangrove">
+          <div class="home-mangrove-object">
+            <img class="mangrove1" src="/public/images/newneek/home-mangrove1.png" alt="" />
+            <img class="mangrove2" src="/public/images/newneek/home-mangrove2.png" alt="" />
+          </div>
+          <div class="mangrove-foot">
+            <b>고슴이는 집을 찾을 수 있을까요? </b>
+            <div class="cta-arrow"><div class="line"></div></div>
+          </div>
+        </div>
+      </div>
+
       <section style="max-width: 480px; margin: 0 auto">
         <div class="chat">
           <figure class="chat-avatar">🧔</figure>
@@ -201,7 +211,7 @@
           <div class="chat-bubble">
             <p>뉴닉이 어떻게 쉽고 재미있게 풀어줬더라?</p>
           </div>
-          <div style="height: var(--space-4)"></div>
+          <div style="height: var(--space-2)"></div>
           <mm-group variant="chip">
             <mm-button>최신 콘텐츠 탐색</mm-button>
             <mm-button>관심 분야로 탐색</mm-button>
@@ -251,21 +261,6 @@
           </div>
         </div>
       </section>
-
-      <div style="max-width: 800px; margin: 0 auto">
-        <section class="newneek-orange" style="padding: 10rem 0 0">
-          <div class="home-mangrove">
-            <div class="home-mangrove-object">
-              <img class="mangrove1" src="/public/images/newneek/home-mangrove1.png" alt="" />
-              <img class="mangrove2" src="/public/images/newneek/home-mangrove2.png" alt="" />
-            </div>
-            <div class="mangrove-foot">
-              <b>고슴이는 집을 찾을 수 있을까요? </b>
-              <div class="cta-arrow"><div class="line"></div></div>
-            </div>
-          </div>
-        </section>
-      </div>
 
       <br /><br />
 

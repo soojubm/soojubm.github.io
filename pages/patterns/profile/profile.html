@@ -111,91 +111,90 @@
     </mm-tablist>
 
     <!-- todo day night toggle과 동일한 패턴, tab과도 형태기능적으로 유사.  -->
-    <div
+    <!-- list/grid, gallery/card view -->
+    <menu
       class="profile-display"
       role="menubar"
-      style="display: flex; margin: var(--space-3) 0"
+      style="display: flex; align-items: center; margin: var(--space-3) 0"
       title="항목을 아이콘, 목록, 계층 또는 갤러리로 보여줍니다."
     >
       <h5 class="profile-display-status" role="status" hidden>Viewing 1,000 Projects</h5>
-      <mm-group>
+      <div style="display: flex; gap: var(--space-2)">
         <mm-icon-button
           icon="view-columns-3"
           aria-label=""
           class="js-test-toggle"
           status="active"
-          data-name="grid"
+          data-name="list"
         >
         </mm-icon-button>
-        <mm-icon-button icon="view-grid" class="js-test-toggle" data-name="list"> </mm-icon-button>
-      </mm-group>
-      <div class="profile-sorting" style="margin-left: auto">
-        <mm-button variant="" class="js-test-toggle" name="정렬">
-          <mm-icon slot="suffix" name="nav-arrow-down"></mm-icon>
-          최신순 TODO sortingTrigger
-        </mm-button>
+        <mm-icon-button icon="view-grid" class="js-test-toggle" data-name="grid"> </mm-icon-button>
       </div>
-    </div>
+      <div class="profile-sorting" style="margin-left: auto">
+        <button
+          variant="text"
+          class="js-test-toggle"
+          style="display: flex; align-items: center; gap: var(--space-2)"
+        >
+          최신순
+          <mm-icon name="arrow-up"></mm-icon>
+        </button>
+      </div>
+    </menu>
+
     <!-- MEMO: mm-tabpanel 일 때 mm-tile 사이즈 스타일 -->
     <section class="tabpanel" role="tabpanel" aria-hidden="false" data-index="1">
-      <mm-tile variant="plain" class="js-modal" data-modal="newneek">
-        <mm-tag slot="category" variant="primary">정리중</mm-tag>
-        <button slot="" class="card-more" hidden></button>
-
+      <div class="card js-modal" data-modal="newneek">
+        <mm-tag variant="primary">정리중</mm-tag>
+        <mm-icon-button icon="more-vert"></mm-icon-button>
         <mm-media
           src="/public/images/newneek/gosum-spinner.png"
           alt=""
           style="background: var(--color-newneek)"
         ></mm-media>
-        <div style="height: var(--space-2)"></div>
         <mm-text variant="body-bold">뉴닉</mm-text>
         <mm-text variant="body">디스크립션...</mm-text>
         <!-- <time class="card-date">2022. 02. 22.</time> -->
-        <div style="height: var(--space-2)"></div>
         <mm-group variant="tag">
           <mm-tag variant="hashtag">프로젝트관리</mm-tag>
           <mm-tag variant="hashtag">디자인</mm-tag>
           <mm-tag variant="hashtag">프론트엔드개발</mm-tag>
         </mm-group>
-      </mm-tile>
+      </div>
 
-      <mm-tile variant="plain" class="js-modal" data-modal="etc-works">
+      <div class="card js-modal" data-modal="etc-works">
         <mm-media src="/public/images/work-studium.jpg" alt=""></mm-media>
-        <div style="height: var(--space-2)"></div>
         <mm-text variant="body-bold">프리랜서</mm-text>
         <mm-text variant="body">선별된...</mm-text>
         <!-- <time class="card-date">September 12, 2017</time> -->
         <mm-button icon="more-vert" class="card-more" hidden> </mm-button>
-        <div style="height: var(--space-2)"></div>
         <mm-group variant="tag">
           <mm-tag variant="hashtag">프리랜서</mm-tag>
           <mm-tag variant="hashtag">디자인</mm-tag>
           <mm-tag variant="hashtag">워드프레스</mm-tag>
         </mm-group>
-      </mm-tile>
+      </div>
 
-      <mm-tile variant="plain" class="js-modal" data-modal="lettering">
-        <mm-button icon="more-vert" class="card-more" hidden></mm-button>
+      <div class="card js-modal" data-modal="lettering">
+        <mm-icon-button icon="more-vert"></mm-icon-button>
         <mm-media src="/public/images/budha.png" alt=""></mm-media>
-        <div style="height: var(--space-2)"></div>
         <mm-text variant="body-bold">레터링</mm-text>
         <mm-text variant="body">취미생활? </mm-text>
-        <div style="height: var(--space-2)"></div>
         <mm-group variant="tag">
           <mm-tag variant="hashtag">취미생활</mm-tag>
           <mm-tag variant="hashtag">레터링</mm-tag>
         </mm-group>
-      </mm-tile>
+      </div>
     </section>
 
     <section class="tabpanel" role="tabpanel" aria-hidden="true" data-index="2">
-      <mm-tile variant="plain" class="js-modal" data-modal="flat_sitemap">
+      <div class="card js-modal" data-modal="flat_sitemap">
         <figure>
           <img />
         </figure>
         <mm-text variant="body-bold">Flat sitemap</mm-text>
         <mm-text variant="body"></mm-text>
-      </mm-tile>
+      </div>
     </section>
 
     <section class="tabpanel" role="tabpanel" aria-hidden="true" data-index="3">

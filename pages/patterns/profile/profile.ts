@@ -16,9 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.addEventListener('click', event => {
     const target = event.target as any
-    if (!target.closest('.js-test-toggle')) return
 
-    alert()
+    if (!target.closest('.js-test-toggle')) return
 
     const containerElement = target.closest('.profile-body')
     const siblingElements = [...target.parentElement.children]

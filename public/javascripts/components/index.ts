@@ -39,6 +39,7 @@ import TabPanel from '../../components/tabpanel/tabpanel'
 import IconButton from '../../components/button/iconButton'
 import Textarea from '../../components/textfield/textarea'
 import ClearButton from '../../components/button/clearButton'
+import SearchField from '../../components/textfield/searchfield'
 
 export function defineCustomElement() {
   if ('customElements' in window) {
@@ -62,6 +63,7 @@ export function defineCustomElement() {
     customElements.define('mm-avatar', Avatar)
 
     customElements.define('mm-textfield', Textfield)
+    customElements.define('mm-searchfield', SearchField)
     customElements.define('mm-textarea', Textarea)
 
     customElements.define('mm-checkbox', Checkbox)

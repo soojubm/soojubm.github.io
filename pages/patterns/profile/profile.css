@@ -6,7 +6,8 @@
   margin: -2rem -5vw 2rem;
   /* margin-top:calc((2rem + var(--navbar-height)) * -1); */
   border-radius: 12px;
-  background:rgb(53, 54, 53);}
+  background:rgb(53, 54, 53);
+}
 
 .profile-user {float:left;width:320px;position:relative;z-index:var(--zindex-default);}
 .profile-user-description {max-height:5.4em;margin:var(--space-4) 0;white-space:normal;overflow:hidden;text-overflow:ellipsis;word-wrap:break-word;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;position:relative;}
@@ -19,7 +20,27 @@
 .profile-body {padding:0 0 64px calc(320px + var(--size-large));box-sizing:border-box;position:relative;}
 
 .tabpanel {display:flex;flex-wrap:wrap;justify-content:space-between;}
-.tabpanel mm-tile {width:calc(33.3333% - .75rem);}
+.tabpanel > * {width:calc(33.3333% - .75rem);}
+
+.card {
+  display:flex;
+  flex-direction:column;
+  gap:var(--space-1);
+  position:relative; 
+}
+.card mm-tag {
+  position: absolute;
+  left: var(--space-2);
+  top: var(--space-2);
+  z-index: 1;
+}
+.card mm-icon-button {
+  position: absolute;
+  right: var(--space-2);
+  top: var(--space-2);
+  z-index: 1;
+}
+
 
 @media (max-width: 1320px) {
   .profile {max-width:1000px;}
@@ -49,3 +70,9 @@
 /* mouse, touch pad */
 @media (hover: hover) and (pointer: fine) {
 }
+
+
+.list .card {float:none;display:block;width:100% !important;margin-bottom: var(--space-3);}
+.list mm-media {float:left;width:var(--size-huge);height:var(--size-huge);margin-right:var(--space-after-avatar-huge);padding-top:0;}
+.list mm-media img {max-width:150%;}
+.list .card-byline {margin-top:.5rem;margin-bottom:.5rem;}
