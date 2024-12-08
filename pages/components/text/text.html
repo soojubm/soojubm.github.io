@@ -123,17 +123,6 @@ The font size of a key is never bigger than the value.
 
       <mm-separator></mm-separator>
 
-      <nav class="sitemap-item">
-        <mm-text variant="" hidden aria-hidden="true" class="sitemap-item-level1">사이트맵</mm-text>
-        <mm-group alignment="vertical" class="sitemap-item-level2">
-          <mm-text variant="label">사이트맵 컴포넌트</mm-text>
-          <mm-link href="#">기존의 링크 컴포넌트 활용 시</mm-link>
-          <mm-link href="#">링크나 제목에 변주가 많이 필요</mm-link>
-        </mm-group>
-      </nav>
-
-      <mm-separator></mm-separator>
-
       <nav style="display: flex; gap: 4rem">
         <mm-text variant="" hidden aria-hidden="true">사이트맵</mm-text>
         <mm-group alignment="vertical">
@@ -149,11 +138,6 @@ The font size of a key is never bigger than the value.
           <mm-text variant="label" href="#">level attr=2</mm-text>
           <mm-text variant="label" href="#">level attr=2</mm-text>
           <mm-text variant="label" href="#">level attr=2</mm-text>
-        </mm-group>
-        <mm-group alignment="vertical">
-          <mm-text variant="subhead">클릭가능하지만</mm-text>
-          <mm-text variant="subhead">클릭할 수 있게 </mm-text>
-          <mm-text variant="subhead">생기지 않았다</mm-text>
         </mm-group>
         <mm-group alignment="vertical">
           <mm-text variant="subhead">꺼이꺼이</mm-text>
@@ -172,7 +156,7 @@ The font size of a key is never bigger than the value.
         <li>순서가 있는 리스트</li>
       </ol>
 
-      <mm-text-list texts="['mm-text-list 1', 'mm-text-list 1',]"> </mm-text-list>
+      <mm-text-list texts='["mm-text-list 1", "mm-text-list 1"]'> </mm-text-list>
     </div>
   </section>
   <section class="component-props">
@@ -215,7 +199,6 @@ The font size of a key is never bigger than the value.
         <li>subheading</li>
         <li>본문 body - paragraph / label, help text</li>
         <li>kicker/overline/eyebrow</li>
-        <li>strong, h1</li>
       </ul>
     </mm-text-group>
 
@@ -230,11 +213,11 @@ The font size of a key is never bigger than the value.
     </mm-text-group>
 
     <mm-text-list
-      texts="[
-    '폰트마다 기준선이 다르기 때문에 섞어짤 때 또는 폰트를 변경할 때 주변 요소와 부모 요소에 맞춰 시각보정이 필요할 수 있다. 텍스트는 주변의 엘리먼트에 강하게 영향을 받기 때문에 주변 요소와 연동해서 추상화 변수를 활용할 수 있다.',
-    '블로그, 뉴스 기사 등 텍스트 기반의 콘텐츠 페이지를 위한 body 폰트 크기가 필요하다.',
-    'message: 사용자, description: 시스템',
-  ]"
+      texts='[
+    "폰트마다 기준선이 다르기 때문에 섞어짤 때 또는 폰트를 변경할 때 주변 요소와 부모 요소에 맞춰 시각보정이 필요할 수 있다. 텍스트는 주변의 엘리먼트에 강하게 영향을 받기 때문에 주변 요소와 연동해서 추상화 변수를 활용할 수 있다.",
+    "블로그, 뉴스 기사 등 텍스트 기반의 콘텐츠 페이지를 위한 body 폰트 크기가 필요하다.",
+    "message: 사용자, description: 시스템",
+  ]'
     >
     </mm-text-list>
     <mm-text-group>

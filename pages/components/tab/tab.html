@@ -12,11 +12,6 @@
       <mm-tab slot="tab" aria-controls="panel-2" id="tab-2" tabindex="-1">두번째 탭</mm-tab>
       <i slot="indicator" class="tablist-indicator"></i>
     </mm-tablist> -->
-    <!-- <div style="display: flex; gap: 1rem">
-      <mm-text variant="title">첫번째 탭</mm-text>
-      <mm-text variant="title" style="opacity: 0.5">두번째 탭</mm-text>
-      <mm-text variant="title" style="opacity: 0.5">세번째 탭</mm-text>
-    </div> -->
     <mm-tablist>
       <mm-tab slot="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">
         첫번째 탭
@@ -25,14 +20,8 @@
       <mm-tab slot="tab" aria-controls="panel-3" id="tab-3" tabindex="-1"> 세번째 탭 </mm-tab>
       <i slot="indicator" class="tablist-indicator"></i>
     </mm-tablist>
-    <div
-      class="tabpanel"
-      id="panel-1"
-      role="tabpanel"
-      tabindex="0"
-      aria-labelledby="tab-1"
-      style="margin: 1rem 0 0"
-    >
+    <div style="height: var(--space-4)"></div>
+    <div class="tabpanel" id="panel-1" role="tabpanel" tabindex="0" aria-labelledby="tab-1">
       <p>Content for the first panel.</p>
     </div>
     <div
@@ -42,7 +31,6 @@
       tabindex="0"
       aria-labelledby="tab-2"
       aria-hidden="true"
-      style="margin: 0.5rem 0 0"
     >
       <p>Content for the second panel</p>
     </div>

@@ -16,6 +16,14 @@
   <section class="component-example">
     <!-- TODO prefix / suffix -->
     <mm-group variant="menuitem">
+      <mm-menuitem size="medium">
+        <mm-avatar slot="avatar" variant="tertiary" size="medium" icon="group"> </mm-avatar>
+        <div slot="text">
+          <mm-text variant="word-strong">사진 및 동영상 백업</mm-text>
+          <mm-text variant="word-weak">우측 액션은 사실 그냥 시각 정보인데.</mm-text>
+        </div>
+      </mm-menuitem>
+      <mm-separator></mm-separator>
       <mm-menuitem>
         <mm-avatar slot="avatar" size="large">🦊</mm-avatar>
         <div slot="text">
@@ -216,14 +224,6 @@
       <br />
       <mm-group variant="menuitem">
         <mm-menuitem>
-          <mm-radio slot="check" checked></mm-radio>
-          <mm-avatar slot="avatar" size="large" icon="group"> </mm-avatar>
-          <div slot="text">
-            <mm-text variant="word-strong">사진 및 동영상 백업</mm-text>
-            <mm-text variant="word-weak">우측 액션은 사실 그냥 시각 정보인데.</mm-text>
-          </div>
-        </mm-menuitem>
-        <mm-menuitem>
           <mm-radio slot="check"></mm-radio>
           <mm-avatar slot="avatar" size="large" icon="group"> </mm-avatar>
           <div slot="text">
@@ -256,7 +256,7 @@
       <div style="height: var(--space-3)"></div>
       <mm-group>
         <mm-menuitem>
-          <mm-avatar slot="avatar" fallback="🎅🏻"></mm-avatar>
+          <mm-avatar slot="avatar" size="large" fallback="🎅🏻"></mm-avatar>
           <div slot="text">
             <mm-text variant="word-strong">Widgefy iOS Widgets</mm-text>
             <mm-text variant="word-weak">떡볶이</mm-text>

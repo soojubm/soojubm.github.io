@@ -70,8 +70,8 @@
     </section>
     <div style="height: 2rem"></div>
     <mm-group variant="button">
-      <mm-button variant="primary">에피소드 1 보기</mm-button>
-      <mm-button variant="tertiary"> 관심이 </mm-button>
+      <mm-button variant="primary" size="large">에피소드 1 보기</mm-button>
+      <mm-button variant="tertiary" size="large">관심이</mm-button>
     </mm-group>
   </header>
 
@@ -109,32 +109,34 @@
     </mm-group>
   </section>
   <section class="cake-info">
-    <mm-text variant="subhead">수상내역</mm-text>
-    <div style="height: var(--space-3)"></div>
-    <mm-text variant="label">Academy Awards</mm-text>
-    <mm-text variant="word">Best Actor</mm-text>
-    <mm-text variant="word">Best Supporting Actor</mm-text>
-    <mm-text variant="word">Best Screenplay – Based on Material from Another Medium</mm-text>
-    <mm-text variant="word">Best Original Music Score</mm-text>
-    <br />
-    <mm-text variant="label">포켓 와이파이</mm-text>
-    <p>데이터 요금 폭탄 걱정없이 전세계 어디서나 와이파이를 이용하세요.</p>
-    <p>일반 문의 09:00-22:00</p>
-    <p>실시간 항공권 문의 09:00-18:00</p>
-    <p>연중무휴 / 점심 12:00-13:00</p>
-
+    <mm-text-group>
+      <mm-text variant="subhead">수상내역</mm-text>
+      <mm-text variant="label">Academy Awards</mm-text>
+      <mm-text variant="word">Best Actor</mm-text>
+      <mm-text variant="word">Best Supporting Actor</mm-text>
+      <mm-text variant="word">Best Screenplay – Based on Material from Another Medium</mm-text>
+      <mm-text variant="word">Best Original Music Score</mm-text>
+      <br />
+      <mm-text variant="label">포켓 와이파이</mm-text>
+      <p>데이터 요금 폭탄 걱정없이 전세계 어디서나 와이파이를 이용하세요.</p>
+      <p>일반 문의 09:00-22:00</p>
+      <p>실시간 항공권 문의 09:00-18:00</p>
+      <p>연중무휴 / 점심 12:00-13:00</p>
+    </mm-text-group>
     <!-- TODO 불릿이 없는 텍스트 리스트 -->
   </section>
   <section class="cake-info">
-    <mm-text variant="subhead">리뷰</mm-text>
-    <div style="height: var(--space-3)"></div>
-    <p>
-      이 호텔에는 레스토랑, 사우나, 셀프 주차(요금 별도) 등이 마련되어 있습니다. 공용 장소에서의
-      WiFi의 경우 무료입니다. 이 밖에 24시간 운영 프런트 데스크 및 프런트 데스크의 귀중품 보관함도
-      시설 내에 마련되어 있습니다.
-    </p>
-    <footer>
-      <mm-button variant="tertiary">Read More Reviews</mm-button>
-    </footer>
+    <!-- TODO text-group -->
+    <mm-text-group>
+      <mm-text variant="subhead">리뷰</mm-text>
+      <p>
+        이 호텔에는 레스토랑, 사우나, 셀프 주차(요금 별도) 등이 마련되어 있습니다. 공용 장소에서의
+        WiFi의 경우 무료입니다. 이 밖에 24시간 운영 프런트 데스크 및 프런트 데스크의 귀중품 보관함도
+        시설 내에 마련되어 있습니다.
+      </p>
+      <footer>
+        <mm-button variant="tertiary">Read More Reviews</mm-button>
+      </footer>
+    </mm-text-group>
   </section>
 </main>

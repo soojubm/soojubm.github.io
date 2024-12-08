@@ -1,7 +1,55 @@
-<main class="page">
-  <div class="article" style="max-width: var(--layout-width-small)">
-    <mm-titlebar heading="주문/결제" hiddenBack> </mm-titlebar>
-    <!-- <header class="checkout-head">
+<main class="page" style="max-width: var(--layout-width-small)">
+  <mm-tile>
+    <mm-titlebar heading="배송지 등록"> </mm-titlebar>
+    <br />
+    <mm-group variant="form">
+      <mm-textfield
+        label="받는 사람"
+        stype="text"
+        name="email"
+        id="login-email"
+        placeholder="수줍이"
+      ></mm-textfield>
+      <mm-textfield
+        label="연락처"
+        type="text"
+        name="email"
+        id="login-email"
+        placeholder="01012345678"
+      ></mm-textfield>
+      <mm-textfield
+        label="주소"
+        type="text"
+        name="email"
+        id="address"
+        placeholder="클릭하여 우편번호 찾기"
+      ></mm-textfield>
+      <mm-textfield
+        label="상세주소"
+        type="text"
+        name="email"
+        placeholder=""
+        isOptional
+      ></mm-textfield>
+      <!-- First name, Last Name, Country / Region, State, Zipcode" -->
+      <!-- <mm-textfield label="공동현관 출입번호" type="text" isOptional name="email" id="login-email" placeholder=""></mm-textfield> -->
+      <mm-textfield
+        label="배송 메시지"
+        type="text"
+        isOptional
+        name="email"
+        id="login-email"
+        placeholder="직접 입력"
+      ></mm-textfield>
+      <mm-checkbox label="개인정보 수집 및 이용 동의(수취인정보?)"></mm-checkbox>
+      <mm-button variant="primary" label="배송지 등록"></mm-button>
+    </mm-group>
+  </mm-tile>
+
+  <br /><br />
+
+  <mm-titlebar heading="주문/결제"> </mm-titlebar>
+  <!-- <header class="checkout-head">
       <mm-text variant="subhead">
         주문정보를 확인하세요<i style="font-style: italic">!</i>
       </mm-text>
@@ -20,246 +68,247 @@
         <h3 class="step-item-label">주문완료</h3>
       </div>
     </section> -->
-    <div style="height: 2rem"></div>
+  <div style="height: 2rem"></div>
 
-    <section class="checkout-shipping">
-      <mm-text variant="subhead">배송지</mm-text>
-      <div style="margin: var(--space-after-subhead) -0.5rem 0">
-        <mm-tile size="small">
-          <mm-menuitem>
-            <!-- <mm-avatar slot="avatar" size="large" style="background: aliceblue; font-size: 1.5rem">💳</mm-avatar> -->
-            <mm-radio slot="check" id="c1" name="c1" value="" checked></mm-radio>
-            <div slot="text">
-              <mm-group variant="tag">
-                <mm-text variant="body-bold">수줍이 집</mm-text>
-                <mm-tag>기본배송지</mm-tag>
-              </mm-group>
-              <div style="height: var(--space-1)"></div>
-              <mm-text variant="body">[07655] 서울특별시 강서구 까치산로 182 1202호</mm-text>
-              <mm-text variant="label">010-3121-7045</mm-text>
-            </div>
-          </mm-menuitem>
-        </mm-tile>
-        <div style="height: var(--space-3)"></div>
-        <mm-tile variant="elevated" size="small">
-          <mm-menuitem label="배송지 변경/추가">
-            <mm-avatar slot="avatar" icon="coins-swap"> </mm-avatar>
-          </mm-menuitem>
-        </mm-tile>
-      </div>
-    </section>
-
-    <div style="height: 2rem"></div>
-
-    <section class="checkout-product">
-      <mm-text variant="subhead" aria-label="summary">주문상품</mm-text>
-      <div style="margin: var(--space-after-subhead) -0.5rem 0">
-        <mm-tile size="small">
-          <mm-menuitem>
-            <mm-avatar slot="avatar" size="huge" src="/public/images/cake_gosum.jpg"></mm-avatar>
-            <div slot="text" style="margin-left: var(--space-1)">
-              <mm-text variant="word-strong">뉴닉이 풀어 쓴 경제상식사전</mm-text>
-              <mm-text variant="word">₩ 11,900</mm-text>
-              <mm-text variant="word-weak">평생 소장</mm-text>
-            </div>
-          </mm-menuitem>
-        </mm-tile>
-      </div>
-    </section>
-
-    <div style="height: 2rem"></div>
-
-    <section class="checkout-discount">
-      <mm-text variant="subhead">쿠폰 마일리지 할인</mm-text>
-      <div style="height: var(--space-after-subhead)"></div>
-      <mm-textfield label="보너스 쿠폰" placeholder="사용 가능한 쿠폰이 없습니다." disabled>
-      </mm-textfield>
+  <section class="checkout-shipping">
+    <mm-text variant="subhead">배송지</mm-text>
+    <div style="margin: var(--space-after-subhead) -0.5rem 0">
+      <mm-tile size="small">
+        <mm-menuitem>
+          <!-- <mm-avatar slot="avatar" size="large" style="background: aliceblue; font-size: 1.5rem">💳</mm-avatar> -->
+          <mm-radio slot="check" id="c1" name="c1" value="" checked></mm-radio>
+          <div slot="text">
+            <mm-group variant="tag">
+              <mm-text variant="body-bold">수줍이 집</mm-text>
+              <mm-tag>기본배송지</mm-tag>
+            </mm-group>
+            <div style="height: var(--space-1)"></div>
+            <mm-text variant="body">[07655] 서울특별시 강서구 까치산로 182 1202호</mm-text>
+            <mm-text variant="label">010-3121-7045</mm-text>
+          </div>
+        </mm-menuitem>
+      </mm-tile>
       <div style="height: var(--space-3)"></div>
-      <mm-textfield label="사용 마일리지" placeholder="0 마일리지"></mm-textfield>
-      <div style="height: var(--space-3)"></div>
-      <mm-button>보유 마일리지 1,186p 모두사용</mm-button>
-    </section>
+      <mm-tile variant="elevated" size="small">
+        <mm-menuitem label="배송지 변경/추가">
+          <mm-avatar slot="avatar" icon="coins-swap"> </mm-avatar>
+        </mm-menuitem>
+      </mm-tile>
+    </div>
+  </section>
 
-    <div style="height: 2rem"></div>
+  <div style="height: 2rem"></div>
 
-    <!-- <div>현금영수증 신청/미신청, 개인정보제공동의</div> -->
+  <section class="checkout-product">
+    <mm-text variant="subhead" aria-label="summary">주문상품</mm-text>
+    <div style="margin: var(--space-after-subhead) -0.5rem 0">
+      <mm-tile size="small">
+        <mm-menuitem>
+          <mm-avatar slot="avatar" size="huge" src="/public/images/cake_gosum.jpg"></mm-avatar>
+          <div slot="text" style="margin-left: var(--space-1)">
+            <mm-text variant="word-strong">뉴닉이 풀어 쓴 경제상식사전</mm-text>
+            <mm-text variant="word">₩ 11,900</mm-text>
+            <mm-text variant="word-weak">평생 소장</mm-text>
+          </div>
+        </mm-menuitem>
+      </mm-tile>
+    </div>
+  </section>
 
-    <section class="checkout-payment">
-      <mm-text variant="subhead" data-temp="매장과 구매자 차이. Select payment method"
-        >결제수단</mm-text
-      >
-      <div style="margin: var(--space-4) -0.5rem 0">
-        <mm-group alignment="vertical">
-          <mm-tile size="small">
-            <mm-menuitem label="신용카드/체크카드">
-              <mm-avatar
-                slot="avatar"
-                size="large"
-                fallback="💳"
-                style="background: aliceblue; font-size: 1.5rem"
-              ></mm-avatar>
-              <mm-text>개인/법인/카드사선택</mm-text>
-              <mm-radio slot="check" id="c1" name="c1" value="" checked="true"></mm-radio>
-            </mm-menuitem>
-          </mm-tile>
-          <mm-tile size="small">
-            <mm-menuitem label="현금">
-              <mm-avatar
-                slot="avatar"
-                size="large"
-                fallback="💵"
-                style="background: #defade; font-size: 1.5rem"
-              ></mm-avatar>
-              <mm-radio slot="check" id="c1" name="c1" value=""></mm-radio>
-            </mm-menuitem>
-          </mm-tile>
-          <mm-tile size="small">
-            <mm-menuitem label="무통장입금">
-              <mm-avatar
-                slot="avatar"
-                size="large"
-                fallback="🫓"
-                style="background: antiquewhite; font-size: 1.5rem"
-              ></mm-avatar>
-              <mm-radio disabled slot="check" id="c1" name="c1" value=""></mm-radio>
-              <!-- <mm-radio disabled>
+  <div style="height: 2rem"></div>
+
+  <section class="checkout-discount">
+    <mm-text variant="subhead">쿠폰 마일리지 할인</mm-text>
+    <div style="height: var(--space-after-subhead)"></div>
+    <mm-textfield label="보너스 쿠폰" placeholder="사용 가능한 쿠폰이 없습니다." disabled>
+    </mm-textfield>
+    <div style="height: var(--space-3)"></div>
+    <mm-textfield label="사용 마일리지" placeholder="0 마일리지"></mm-textfield>
+    <div style="height: var(--space-3)"></div>
+    <mm-button>보유 마일리지 1,186p 모두사용</mm-button>
+  </section>
+
+  <div style="height: 2rem"></div>
+
+  <!-- <div>현금영수증 신청/미신청, 개인정보제공동의</div> -->
+
+  <section class="checkout-payment">
+    <mm-text variant="subhead" data-temp="매장과 구매자 차이. Select payment method"
+      >결제수단</mm-text
+    >
+    <div style="margin: var(--space-4) -0.5rem 0">
+      <mm-group alignment="vertical">
+        <mm-tile size="small">
+          <mm-menuitem label="신용카드/체크카드">
+            <mm-avatar
+              slot="avatar"
+              size="large"
+              fallback="💳"
+              style="background: aliceblue; font-size: 1.5rem"
+            ></mm-avatar>
+            <mm-text>개인/법인/카드사선택</mm-text>
+            <mm-radio slot="check" id="c1" name="c1" value="" checked="true"></mm-radio>
+          </mm-menuitem>
+        </mm-tile>
+        <mm-tile size="small">
+          <mm-menuitem label="현금">
+            <mm-avatar
+              slot="avatar"
+              size="large"
+              fallback="💵"
+              style="background: #defade; font-size: 1.5rem"
+            ></mm-avatar>
+            <mm-radio slot="check" id="c1" name="c1" value=""></mm-radio>
+          </mm-menuitem>
+        </mm-tile>
+        <mm-tile size="small">
+          <mm-menuitem label="무통장입금">
+            <mm-avatar
+              slot="avatar"
+              size="large"
+              fallback="🫓"
+              style="background: antiquewhite; font-size: 1.5rem"
+            ></mm-avatar>
+            <mm-radio disabled slot="check" id="c1" name="c1" value=""></mm-radio>
+            <!-- <mm-radio disabled>
                 무통장입금
                 <small style="color: var(--color-text)"
                   >COMING SOON<i style="font-style: italic">!</i></small
                 >
               </mm-radio> -->
-            </mm-menuitem>
-          </mm-tile>
-        </mm-group>
-      </div>
-      <div style="height: var(--space-after-subhead)"></div>
-      <div>
-        <mm-text variant="label">결제 안내</mm-text>
-        <!-- FIXME body + body -->
-        <mm-text>신용카드 결제만 가능합니다.</mm-text>
-        <mm-text>해외에서 발행된 카드는 이용할 수 없습니다.</mm-text>
-        <br />
-        <mm-text variant="label">주문취소 및 환불 안내</mm-text>
-        <mm-text variant="body">
-          주문취소 또는 환불은 <a href="#">고객센터</a>로 문의해 주세요.
-        </mm-text>
-      </div>
-      <div style="height: var(--space-after-subhead)"></div>
-    </section>
+          </mm-menuitem>
+        </mm-tile>
+      </mm-group>
+    </div>
+    <div style="height: var(--space-after-subhead)"></div>
+    <div>
+      <mm-text variant="label">결제 안내</mm-text>
+      <!-- FIXME body + body -->
+      <mm-text>신용카드 결제만 가능합니다.</mm-text>
+      <mm-text>해외에서 발행된 카드는 이용할 수 없습니다.</mm-text>
+      <br />
+      <mm-text variant="label">주문취소 및 환불 안내</mm-text>
+      <mm-text variant="body">
+        주문취소 또는 환불은 <a href="#">고객센터</a>로 문의해 주세요.
+      </mm-text>
+    </div>
+    <div style="height: var(--space-after-subhead)"></div>
+  </section>
 
-    <div style="height: 2rem"></div>
+  <div style="height: 2rem"></div>
 
-    <section class="checkout-discount">
-      <div style="display: flex; justify-content: space-between">
-        <mm-text variant="subhead">결제상세</mm-text>
-        <mm-text variant="subhead">13,980원</mm-text>
-      </div>
-      <div style="height: var(--space-after-subhead)"></div>
-      <mm-keyvalue key="마일리지 사용" value="980원"></mm-keyvalue>
-      <mm-keyvalue key="카드 결제" value="12,980원"></mm-keyvalue>
-      <mm-tile>
-        <mm-group alignment="vertical">
-          <mm-keyvalue key="상품 금액" value="₩ 160,000"></mm-keyvalue>
-          <mm-keyvalue key="서비스 수수료" value="₩ 3,000"></mm-keyvalue>
-          <mm-row justifyContent="space-between">
-            <mm-text variant="subhead">총 합계 (KRW)</mm-text>
-            <mm-text variant="subhead">₩ 163,000</mm-text>
-          </mm-row>
-          <!-- <mm-keyvalue size="large" key="총 합계 (KRW)" value="₩ 163,000"> </mm-keyvalue> -->
-        </mm-group>
-        <footer style="margin: var(--space-4) 0 0 0">
-          <mm-button variant="primary" size="large" isfullwidth="true">구매 확정</mm-button>
-        </footer>
-      </mm-tile>
-    </section>
+  <section class="checkout-discount">
+    <div style="display: flex; justify-content: space-between">
+      <mm-text variant="subhead">결제상세</mm-text>
+      <mm-text variant="subhead">13,980원</mm-text>
+    </div>
+    <div style="height: var(--space-after-subhead)"></div>
+    <mm-keyvalue key="마일리지 사용" value="980원"></mm-keyvalue>
+    <mm-keyvalue key="카드 결제" value="12,980원"></mm-keyvalue>
+    <mm-tile>
+      <mm-group alignment="vertical">
+        <mm-keyvalue key="상품 금액" value="₩ 160,000"></mm-keyvalue>
+        <mm-keyvalue key="서비스 수수료" value="₩ 3,000"></mm-keyvalue>
+        <mm-row justifyContent="space-between">
+          <mm-text variant="subhead">총 합계 (KRW)</mm-text>
+          <mm-text variant="subhead">₩ 163,000</mm-text>
+        </mm-row>
+        <!-- <mm-keyvalue size="large" key="총 합계 (KRW)" value="₩ 163,000"> </mm-keyvalue> -->
+      </mm-group>
+      <footer style="margin: var(--space-4) 0 0 0">
+        <mm-button variant="primary" size="large" isfullwidth="true">구매 확정</mm-button>
+      </footer>
+    </mm-tile>
+  </section>
 
-    <div style="height: 2rem"></div>
+  <div style="height: 2rem"></div>
 
-    <section class="checkout-">
+  <section class="checkout-">
+    <mm-text-group>
       <mm-text variant="subhead"> Your Payments / Wallet </mm-text>
       <mm-text variant="body">
         name on card / Card Number / Expiriation Date / CVV / billing address (따로 관리 됨).
       </mm-text>
-      <div style="height: var(--space-after-subhead)"></div>
-      <mm-tile variant="elevated" size="small">
-        <mm-menuitem label="Add a payment method">
-          <mm-avatar slot="avatar" icon="plus"> </mm-avatar>
-        </mm-menuitem>
-      </mm-tile>
-      <div style="height: var(--space-after-subhead)"></div>
-      <mm-menuitem>
-        <mm-avatar slot="avatar" size="huge">
-          <mm-tag slot="badge">기본</mm-tag>
-        </mm-avatar>
-        <div slot="text">
-          <mm-text variant="subhead">VISA 1988 XXXX 1111</mm-text>
-          <mm-text>Expires on 10/23</mm-text>
-          <em>Edit</em>
-        </div>
+    </mm-text-group>
+    <div style="height: var(--space-after-subhead)"></div>
+    <mm-tile variant="elevated" size="small">
+      <mm-menuitem label="Add a payment method">
+        <mm-avatar slot="avatar" icon="plus"> </mm-avatar>
       </mm-menuitem>
-    </section>
+    </mm-tile>
+    <div style="height: var(--space-after-subhead)"></div>
+    <mm-menuitem>
+      <mm-avatar slot="avatar" size="huge">
+        <mm-tag slot="badge">기본</mm-tag>
+      </mm-avatar>
+      <div slot="text">
+        <mm-text variant="subhead">VISA 1988 XXXX 1111</mm-text>
+        <mm-text>Expires on 10/23</mm-text>
+        <em>Edit</em>
+      </div>
+    </mm-menuitem>
+  </section>
 
-    <br /><br />
+  <br /><br />
 
-    <!-- 주문완료 주문상세 구분. 영수증. 거래명세서, 주문혜택. 주문상태에 따라 취소/반품요청/배송조회/구매확정 -->
-    <section class="order-complete">
-      <header style="text-align: center; margin: 1.5rem 0">
-        <mm-text variant="subhead" data-temp="24년 4월 네이버 리뉴얼 따라 그려봄.">
-          주문완료 되었습니다.
-        </mm-text>
-        <mm-text variant="subhead" data-temp="24년 4월 네이버 리뉴얼 따라 그려봄.">
-          2024.08.19 23:55
-        </mm-text>
-        <!-- <mm-button>주문취소</mm-button> -->
+  <!-- 주문완료 주문상세 구분. 영수증. 거래명세서, 주문혜택. 주문상태에 따라 취소/반품요청/배송조회/구매확정 -->
+  <section class="order-complete">
+    <header style="text-align: center; margin: 1.5rem 0">
+      <mm-text variant="subhead" data-temp="24년 4월 네이버 리뉴얼 따라 그려봄.">
+        주문완료 되었습니다.
+      </mm-text>
+      <mm-text variant="subhead" data-temp="24년 4월 네이버 리뉴얼 따라 그려봄.">
+        2024.08.19 23:55
+      </mm-text>
+      <!-- <mm-button>주문취소</mm-button> -->
+    </header>
+    <mm-tile>
+      <header>
+        <mm-text variant="body-bold">주문번호</mm-text>
+        <mm-link>2024040436292081</mm-link>
       </header>
-      <mm-tile>
-        <header>
-          <mm-text variant="body-bold">주문번호</mm-text>
-          <mm-link>2024040436292081</mm-link>
-        </header>
-        <mm-separator></mm-separator>
-        <div>
-          <mm-text variant="body-bold">수줍이</mm-text>
-          <mm-text variant="body">서울특별시 중구 퇴계로27길 49 (저동2가, 센트럴에쓰)</mm-text>
-          <mm-text variant="word">2층 (04555), 010-3121-7045</mm-text>
-        </div>
-        <mm-separator></mm-separator>
-        <div>
-          <mm-text variant="body-bold">주문상품 1건 </mm-text>
-          <mm-text variant="body">13:00 까지 결제 시 오늘 발송</mm-text>
-          <div style="height: var(--space-2)"></div>
-          <mm-menuitem>
-            <mm-avatar slot="avatar" size="large" src="/public/images/cake_gosum.jpg"></mm-avatar>
-            <div slot="text" style="margin-left: var(--space-1)">
-              <mm-text variant="word-strong">뉴닉이 풀어 쓴 경제상식사전 (평생 소장)</mm-text>
-              <mm-text variant="word">₩ 11,900</mm-text>
-            </div>
-          </mm-menuitem>
-        </div>
-        <mm-separator></mm-separator>
-        <footer>
-          <div style="display: flex; justify-content: space-between">
-            <mm-text variant="body-bold">주문금액</mm-text>
-            <mm-text variant="body-bold" style="color: var(--color-primary)">13,980원</mm-text>
+      <mm-separator></mm-separator>
+      <div>
+        <mm-text variant="body-bold">수줍이</mm-text>
+        <mm-text variant="body">서울특별시 중구 퇴계로27길 49 (저동2가, 센트럴에쓰)</mm-text>
+        <mm-text variant="word">2층 (04555), 010-3121-7045</mm-text>
+      </div>
+      <mm-separator></mm-separator>
+      <div>
+        <mm-text variant="body-bold">주문상품 1건 </mm-text>
+        <mm-text variant="body">13:00 까지 결제 시 오늘 발송</mm-text>
+        <div style="height: var(--space-2)"></div>
+        <mm-menuitem>
+          <mm-avatar slot="avatar" size="large" src="/public/images/cake_gosum.jpg"></mm-avatar>
+          <div slot="text" style="margin-left: var(--space-1)">
+            <mm-text variant="word-strong">뉴닉이 풀어 쓴 경제상식사전 (평생 소장)</mm-text>
+            <mm-text variant="word">₩ 11,900</mm-text>
           </div>
-          <div style="height: var(--space-2)"></div>
-          <mm-keyvalue key="상품금액" value="30,000원"></mm-keyvalue>
-          <div style="height: var(--space-1)"></div>
-          <mm-keyvalue key="배송료" value="3,000원"></mm-keyvalue>
-          <div style="height: var(--space-1)"></div>
-          <mm-keyvalue key="할인" value="2,000원"></mm-keyvalue>
-          <mm-separator></mm-separator>
-          <mm-text variant="body-bold">결제상세</mm-text>
-          <mm-text>카드 간편결제</mm-text>
-          <div style="height: var(--space-4)"></div>
-          <mm-button variant="secondary" isfullwidth="true">주문 상세 보기</mm-button>
-        </footer>
-      </mm-tile>
-      <div style="height: var(--space-4)"></div>
-      <mm-tile>
-        <mm-text variant="body-bold">포인트 헤택</mm-text>
-        <mm-text variant="body-bold">최대 1,147원</mm-text>
-      </mm-tile>
-    </section>
-  </div>
+        </mm-menuitem>
+      </div>
+      <mm-separator></mm-separator>
+      <footer>
+        <div style="display: flex; justify-content: space-between">
+          <mm-text variant="body-bold">주문금액</mm-text>
+          <mm-text variant="body-bold" style="color: var(--color-primary)">13,980원</mm-text>
+        </div>
+        <div style="height: var(--space-2)"></div>
+        <mm-keyvalue key="상품금액" value="30,000원"></mm-keyvalue>
+        <div style="height: var(--space-1)"></div>
+        <mm-keyvalue key="배송료" value="3,000원"></mm-keyvalue>
+        <div style="height: var(--space-1)"></div>
+        <mm-keyvalue key="할인" value="2,000원"></mm-keyvalue>
+        <mm-separator></mm-separator>
+        <mm-text variant="body-bold">결제상세</mm-text>
+        <mm-text>카드 간편결제</mm-text>
+        <div style="height: var(--space-4)"></div>
+        <mm-button variant="secondary" isfullwidth="true">주문 상세 보기</mm-button>
+      </footer>
+    </mm-tile>
+    <div style="height: var(--space-4)"></div>
+    <mm-tile>
+      <mm-text variant="body-bold">포인트 헤택</mm-text>
+      <mm-text variant="body-bold">최대 1,147원</mm-text>
+    </mm-tile>
+  </section>
 </main>

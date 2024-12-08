@@ -11,8 +11,110 @@
   <!-- <p>stack 컴포넌트의 과도한 책임으로 중복 코드를 줄일 수는 있으나, 사용자(개발자)가 사용 목적을 직관적으로 이해하기 어려울 수 있다. 그리고 컴포넌틔의 역할이 확대되면 복잡하고 관리가 어려워진다. 코드 가독성이 떨어진다. 결국 Stack 컴포넌트의 책임이 너무 커진다. 이게 말이 안 되는 게 결국 라디오그룹, 체크박스그룹이 가져야 하는 로직이 있음. variant보다 더 추상적인 layout.</p> -->
 
   <div style="display:flex;gap:1rem;">
+
+  <!-- <section class="timeline">
+    <style>
+      .timeline {position:relative;}
+      .timeline:before {
+        content: "";
+        display: block;
+        width: 1px;
+        background: var(--gray200);
+        position: absolute;
+        bottom: 0;
+        left: 15px;
+        top: 0;
+        z-index: -1;
+      }
+      .timeline-item-panel {margin:1rem 0 0 0;padding:1.5rem;border:var(--border);border-radius:var(--radius);background:var(--color-background);position:relative;}
+      .timeline-item-panel.is-expanded {height:auto;overflow:auto;}
+    </style>
+    <mm-tag datetime="">2022. 11. 4.</mm-tag>
+    <mm-menuitem>
+      <mm-avatar slot="avatar">🐺</mm-avatar>
+      <div slot="text">
+        <span>폰트 디자인</span>
+        <span>이도타입 / 한동훈</span>
+      </div>
+    </mm-menuitem>
+    <mm-tag>2020. 02. - 2021. 02</mm-tag>
+    <mm-menuitem>
+      <mm-avatar slot="avatar">🦔</mm-avatar>
+      <div slot="text">
+        <span>뉴닉, 프로덕트 디자이너</span>
+        <ul>
+          <li>MVP / Feature 일정 산정 및 스펙 정의</li>
+          <li>이슈 트래킹, 우선순위 관리를 위한 백로그 구축</li>
+          <li>온라인 리서치, VOC 분석을 통한 문제 정의</li>
+          <li>프로덕트 디자인 (Userflow / UI / GUI)</li>
+          <li>프론트엔드 개발 (react/mobx/typescript)</li>
+          <li>데이터 트래킹 및 분석 (hotjar, google analytics, google optimize)</li>
+        </ul>
+      </div>
+    </mm-menuitem>
+    <mm-tag>2020</mm-tag>
+    <mm-menuitem>
+      <mm-avatar slot="avatar">🔢</mm-avatar>
+      <div slot="text">
+        <span>그로스해킹 - 데이터와 실험을 통해 성장하는 서비스를 만드는 방법</span>
+        <span>인프런 양승화</span>
+      </div>
+    </mm-menuitem>
+    <mm-tag>2019</mm-tag>
+    <mm-menuitem>
+      <mm-avatar slot="avatar">🔢</mm-avatar>
+      <div slot="text">
+        <span>FE CONF2020 프론트엔드 컨퍼런스</span>
+        <span>롯데타워</span>
+      </div>
+    </mm-menuitem>
+    <mm-tag>2018.07 ~ 2018.09</mm-tag>
+    <mm-menuitem>
+      <mm-avatar slot="avatar">🐺</mm-avatar>
+      <div slot="text">
+        <span>자바스크립트 기본</span>
+        <span>양재동코드랩 / 서울창업허브 세미나실 3 김영보</span>
+      </div>
+    </mm-menuitem>
+    <mm-tag>2017.07 ~ 2017.09</mm-tag>
+    <mm-menuitem>
+      <mm-avatar slot="avatar">🔢</mm-avatar>
+      <div slot="text">
+        <span>글자, 그리고 표현</span>
+        <span>한글타이포그래피학교 현승재</span>
+      </div>
+    </mm-menuitem>
+    <mm-menuitem>
+      <mm-avatar slot="avatar">🐺</mm-avatar>
+      <div slot="text">
+        <span>GUI 디자인</span>
+        <span>SK 상생협력센터 T아카데미</span>
+      </div>
+    </mm-menuitem>
+    <mm-menuitem>
+      <mm-avatar slot="avatar">🐺</mm-avatar>
+      <div slot="text">
+        <span>크로스브라우징 디지털 퍼블리싱 4기</span>
+        <span>경원직업전문학교</span>
+      </div>
+      <ul>
+        <li>
+          21-07-28 chip-label 엘리먼트 항상 사용. space-chip-inset 레이블에 패딩을 주면 아이콘
+          컨트롤이 쉬워짐.
+        </li>
+        <li>20223.04 select indicator를 unfolded 로 교체.</li>
+        <li>
+          2022. 12. 17.. line-height 기본값 역전. 단락을 제외하면 모든 케이스에서
+          line-height-small을 선언해야 하기 때문에 defalt / small을 defalt / large로 변경.
+        </li>
+        <li>add stack component. chip-group과 tag-group 제거하고 stack으로 통합.</li>
+        <li>button small 삭제. chip과 형태의 변별력이 없고 용법이 중복.</li>
+        <li>color gray600 삭제. 본문용으로 야외나 밝은 조명 아래서 가시성이 떨어짐.</li>
+      </ul>
+    </mm-menuitem>
+  </section> -->
     <section class="feeds" role="feed" aria-busy="false" style="max-width: 400px">
-      <aside
+      <!-- <aside
         style="
           position: fixed;
           top: 6rem;
@@ -33,7 +135,7 @@
         >
           1월 1일 변경된 내용 보기
         </button>
-      </aside>
+      </aside> -->
     
       <mm-tile>
         <article class="feed" aria-setsize="3" aria-posinset="1">
@@ -46,21 +148,20 @@
             <figure size="huge" class="feed-content-media">
               <img src="/public/images/springsteen.jpg" alt="" />
             </figure>
-            <mm-text variant="body" class="feed-content-paragraph">
+            <mm-text variant="body">
               Monotonectally productivate progressive human capital without user friendly portals.
               Globally benchmark top-line ideas with distributed catalysts for change. Authoritatively
-              restore ubiquitous partnerships vis-a-vis <a href="#feed">synergistic models</a>.
+              restore ubiquitous partnerships vis-a-vis <mm-link href="#feed">synergistic models</ㅡ>.
             </mm-text>
-      
             <mm-text-list texts='[
             "원활한 피드 탐색 경험을 위해 피드의 콘텐츠를 일부 생략해서 보여줄 수 있다.",
-            "피드가 노출되는 이유를 알려줄 수 있다. 또한 사용자는 보고 싶은 피드와 보고 싶지 않은 피드를 결정할 권리가 있다."
+            "피드가 노출되는 이유를 알려줄 수 있다. 또한 사용자는 보고 싶은 피드와 보고 싶지 않은 피드를 결정할 권리가 있다.",
             "글줄의 길이를 상대적으로 좁게 짜는 경향이 있다.",
             "피드의 상세 페이지에서 전체 댓글 목록과 액션을 제공할 수 있다.",
             "리액션 버튼과 리액션 수치를 각각 제공할 수 있고 따로 제공할 수 있다. 리액션한 사용자 목록을 어떻게 보여줄 것인가. 중복 리액션과 횟수 등 기능 정의. 리액션 => 알림. restful - put과 함께 공부해보기",
             "시의성이 강조되는 서비스이거나 현안을 다루는 서비스라면 스텟을 실시간으로 갱신할 수 있다.",
             "피드를 작성할 때 하나 이상의 이미지를 포함할 수 있다면 하나 이상의 이미지를 볼 수 있는 인터페이스가 필요하다."
-            ]' style="margin: 1rem 0">
+            ]'>
             </mm-text-list>
             <div style="height: 0.75rem"></div>
             <mm-group variant="tag">
@@ -71,7 +172,7 @@
             <div style="height: var(--space-4)"></div>
             <mm-tile variant="elevated">
               <mm-tag>3월 14일 수정됨</mm-tag>
-              <div style="height: var(--space-4)"></div>
+              <div style="height: var(--space-3)"></div>
               <mm-group alignment="vertical">
                 <mm-menuitem label="Kakao" description="https://www.kakaocorp.com" size="large">
                   <mm-avatar slot="avatar"> </mm-avatar>
@@ -83,7 +184,7 @@
             </mm-tile>
             <div style="height: var(--space-4)"></div>
             <mm-group class="feed-reaction">
-              <!-- TODO reactions -->
+              <!-- TODO  -->
               <mm-button> 💕 119 </mm-button>
             </mm-group>
           </div>
@@ -106,11 +207,6 @@
     overflow: hidden;
     object-fit: cover;
     border-radius: var(--radius);
-  }
-  
-  .feed-content-paragraph {
-    margin: 0 0 var(--space-3) 0;
-    line-height: 1.6;
   }
   
   .feed-reaction {

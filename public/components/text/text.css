@@ -35,7 +35,12 @@ ul {
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
+
+  &[data-variant=title] {
+    gap: var(--space-4);
+  }
 }
+
 
 .text {
   color: var(--color-text);

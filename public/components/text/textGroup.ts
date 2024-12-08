@@ -8,9 +8,14 @@ class TextGroup extends HTMLElement {
     const container = document.createElement('div')
     container.role = 'group'
     container.classList.add('text-group')
+    container.dataset.variant = this.variant
 
     shadow.append(container, makeStyleSheet('text'))
     container.append(...this.childNodes)
+  }
+
+  get variant() {
+    return this.getAttribute('variant') || ''
   }
 
   connectedCallback() {}
