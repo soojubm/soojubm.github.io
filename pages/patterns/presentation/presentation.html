@@ -57,9 +57,11 @@
     </mm-tile>
     <mm-tile variant="elevated">
       <mm-text variant="subhead">Dropdown</mm-text>
-      <ul class="checklist">
-        <li>데스크탑에 최적화된 경험. alignment / placement</li>
-      </ul>
+      <mm-text-list
+        texts="[
+      '데스크탑에 최적화된 경험. alignment / placement']"
+      >
+      </mm-text-list>
       <footer style="margin-top: 1rem">
         <mm-button variant="tertiary" class="js-toggle" aria-haspopup="">팝오버 열기</mm-button>
         <mm-tile variant="elevated" class="popover"> 내용 </mm-tile>
@@ -67,9 +69,12 @@
     </mm-tile>
     <mm-tile variant="elevated">
       <mm-text variant="subhead">Toast</mm-text>
-      <ul class="checklist">
-        <li>데스크탑에 최적화된 경험. alignment / placement</li>
-      </ul>
+      <mm-text-list
+        texts='[
+      "데스크탑에 최적화된 경험. alignment / placement"
+      ]'
+      >
+      </mm-text-list>
       <footer style="margin-top: 1rem">
         <mm-button variant="tertiary" class="js-toggle">토스트 열기</mm-button>
         <aside class="toast" role="alert">toast test. 사라지는 시간을 정의.</aside>
@@ -89,7 +94,7 @@
       </li>
       <li><b>pinterest.</b> onDismiss / Preventing close on outside click / layer component</li>
     </ul>
-    <ul class="checklist">
+    <mm-text-list texts="[]">
       <li>일시적인 피드백.</li>
       <li>액션이 포함될 수 있나? 예시. 삭제 후 되돌리기 액션. 하지만 휴지통이 있다면?</li>
       <li>
@@ -99,7 +104,7 @@
       </li>
       <li>toast VS snackbar. action 유/무. MD 버전업과 함께 재정의 됨.</li>
       <li>HIG에 정의되지 않음. iOS spotify 앱에서 '라이브러리에 추가되었습니다'.</li>
-    </ul>
+    </mm-text-list>
 
     <ul>
       <li>브라우저 히스토리. url을 통한 접근.</li>
@@ -110,7 +115,7 @@
       </li>
     </ul>
 
-    <ul class="checklist">
+    <mm-text-list texts="[]">
       <li>인터렉션의 유무.</li>
       <li>
         사용자 인터렉션을 요구할 때 modal로 주의를 집중 시킵니다. non interactions is non modal. 이
@@ -133,7 +138,7 @@
 
       <li>md. When adapting for larger screens, a bottom sheet can become a context menu.</li>
       <li>md. Swap the bottom sheet for a side sheet in landscape layouts.</li>
-    </ul>
+    </mm-text-list>
 
     <mm-text variant="subhead">Open triggers</mm-text>
     <ul>

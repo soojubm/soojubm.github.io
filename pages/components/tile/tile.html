@@ -1,6 +1,8 @@
 <main class="page">
-  <mm-text variant="title" title="or Box">Tiles</mm-text>
-  <mm-text variant="body-large">연관 정보를 묶어 시각적으로 강조하는 컨테이너입니다.</mm-text>
+  <mm-text-group variant="title">
+    <mm-text variant="title" title="or Box">Tiles</mm-text>
+    <mm-text variant="body-large">연관 정보를 묶어 시각적으로 강조하는 컨테이너입니다.</mm-text>
+  </mm-text-group>
   <!-- 추가 콘텐츠에 대한 티저로 사용할 수 있습니다 -->
   <!-- 세로값을 지정하지 않으면, border-width 만큼 세로 값이 더해진다. -->
   <dl class="article-aka">
@@ -44,35 +46,40 @@
   </section>
 
   <section class="component-guide">
-    <mm-text variant="subhead">Meta problems</mm-text>
-    <ul class="checklist">
-      <li>
-        모든 contentbox가 tile인 것은 어떤가? transparent tile 을 정의한다면, 빈 태그나 빈
-        컴포넌트(Box, Row)와는 어떤 변별이 있나? row는 레이아웃 컴포넌트, tile은 형태 컴포넌트이다.
-      </li>
-      <li>이 컴포넌트는 조금 더 유연한 방식이 되어도 좋겠다. inset을 nuber 타입으로 정의하는.</li>
-      <li>
-        content area with padding. 또는 마이너스 마진을 가지는 컨텐츠 영역을 별도로 정의하는 것은
-        어떤지. 정렬을 변경할 때의 대응.
-      </li>
-    </ul>
-    <mm-text variant="subhead">Behavior</mm-text>
-    <mm-text variant="body"> flat 형태는 non-clickable. </mm-text>
-    <mm-text variant="body">
-      '클릭할 수 있음'의 기표로 elevated 스타일을 사용합니다. 타일 전체가 하나의 클릭 가능한 요소일
-      수 있지만 타일 내부에 클릭 가능한 요소를 포함할 수도 있습니다.
-    </mm-text>
+    <mm-text-group>
+      <mm-text variant="subhead">Meta problems</mm-text>
+      <mm-text-list texts="[]">
+        <li>
+          모든 contentbox가 tile인 것은 어떤가? transparent tile 을 정의한다면, 빈 태그나 빈
+          컴포넌트(Box, Row)와는 어떤 변별이 있나? row는 레이아웃 컴포넌트, tile은 형태
+          컴포넌트이다.
+        </li>
+        <li>이 컴포넌트는 조금 더 유연한 방식이 되어도 좋겠다. inset을 nuber 타입으로 정의하는.</li>
+        <li>
+          content area with padding. 또는 마이너스 마진을 가지는 컨텐츠 영역을 별도로 정의하는 것은
+          어떤지. 정렬을 변경할 때의 대응.
+        </li>
+      </mm-text-list>
+    </mm-text-group>
+    <mm-text-group>
+      <mm-text variant="subhead">Behavior</mm-text>
+      <mm-text variant="body"> flat 형태는 non-clickable. </mm-text>
+      <mm-text variant="body">
+        '클릭할 수 있음'의 기표로 elevated 스타일을 사용합니다. 타일 전체가 하나의 클릭 가능한
+        요소일 수 있지만 타일 내부에 클릭 가능한 요소를 포함할 수도 있습니다.
+      </mm-text>
+    </mm-text-group>
 
-    <mm-text variant="subhead">Visual style</mm-text>
-    <mm-text variant="body">
-      자식 컴포넌트에 따라 내부 간격 및 사이즈 속성이 결정됨. 이에 대한 정의. 내부에 아바타가 있을
-      때 보통 small, space-2를 사용함.
-    </mm-text>
-    <mm-text variant="body">
-      타일 내부 leading, tailing 엘리먼트의 시각보정이 필요할 수 있습니다.
-    </mm-text>
-
-    <br />
+    <mm-text-group>
+      <mm-text variant="subhead">Visual style</mm-text>
+      <mm-text variant="body">
+        자식 컴포넌트에 따라 내부 간격 및 사이즈 속성이 결정됨. 이에 대한 정의. 내부에 아바타가 있을
+        때 보통 small, space-2를 사용함.
+      </mm-text>
+      <mm-text variant="body">
+        타일 내부 leading, tailing 엘리먼트의 시각보정이 필요할 수 있습니다.
+      </mm-text>
+    </mm-text-group>
 
     <mm-tile variant="elevated">
       <mm-avatar src="/public/images/springsteen.jpg"> </mm-avatar>
@@ -250,10 +257,10 @@
         <mm-keyvalue key="이번 달 결제금액" value="4,258원"> </mm-keyvalue>
         <mm-keyvalue key="다음 결제일" value="2023. 3. 10."> </mm-keyvalue>
       </mm-group>
-      <ul class="checklist" style="margin: var(--space-4) 0 0 0">
+      <mm-text-list texts="[]">
         <li>다음 청구일은 2023. 3. 10.입니다.</li>
         <li>언제든 해지 가능합니다. 혜택 약관이 적용됩니다.</li>
-      </ul>
+      </mm-text-list>
       <mm-tile size="small">
         <mm-text variant="caption">
           약정 기간이 없습니다. 갱신일 최소 하루 전까지 설정 > Apple ID에서 언제든지 취소할 수
@@ -307,11 +314,14 @@
         <mm-text variant="subhead"><em>iCloud+</em> 50GB</mm-text>
         <span>₩1,100/월 </span>
       </div> -->
-      <ul class="checklist" style="margin: 1rem 0 0 0">
-        <li>스토리지 2TB</li>
-        <li>Google 전문가와의 상담</li>
-        <li>회원을 위한 추가 혜택</li>
-      </ul>
+      <mm-text-list
+        texts="[
+        '스토리지 2TB',
+        'Google 전문가와의 상담',
+        '회원을 위한 추가 혜택'
+        ]"
+      >
+      </mm-text-list>
     </mm-tile>
 
     <picture>

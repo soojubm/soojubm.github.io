@@ -1,80 +1,78 @@
 <main class="page" aria-label="site">
   <!-- // Chris said Marcus replied -->
-  <article class="article js-observer">
-    <mm-text variant="title">Carousel</mm-text>
-    <mm-text variant="body-large">작성 중.</mm-text>
-    <p>aka. carousel, slider, stepper</p>
-    <section class="component-example">
-      <section class="carousel js-carousel">
-        <nav style="display: flex; gap: var(--space-3)" role="tablist">
-          <mm-entity description="추가">
-            <mm-avatar slot="avatar" size="huge" fallback="+"></mm-avatar>
-          </mm-entity>
-          <mm-entity description="공유하기" data-index="keyword">
-            <mm-avatar slot="avatar" size="huge" fallback="🌏"></mm-avatar>
-          </mm-entity>
-          <mm-entity description="키워드목록">
-            <mm-avatar slot="avatar" size="huge" fallback="💀"></mm-avatar>
-          </mm-entity>
-          <mm-entity description="주문 아이템">
-            <mm-avatar slot="avatar" size="huge" fallback="🍔"></mm-avatar>
-          </mm-entity>
-        </nav>
-        <nav class="carousel-arrows">
-          <mm-icon-button
-            variant="navigator"
-            icon="arrow-left"
-            class="js-carousel-prev"
-            aria-label="이전"
-          >
-          </mm-icon-button>
-          <mm-icon-button
-            variant="navigator"
-            icon="arrow-right"
-            class="js-carousel-next"
-            aria-label="다음"
-          >
-          </mm-icon-button>
-        </nav>
-        <mm-group class="carousel-viewer js-carousel-viewer">
-          <mm-entity size="huge" label="폴 뉴먼" description="주연">
-            <mm-avatar
-              slot="avatar"
-              variant="tertiary"
-              size="huge"
-              src="/public/images/springsteen.jpg"
-            ></mm-avatar>
-          </mm-entity>
-        </mm-group>
-        <!-- <nav class="carousel-dots">
+  <mm-text variant="title">Carousel</mm-text>
+  <mm-text variant="body-large">작성 중.</mm-text>
+  <p>aka. carousel, slider, stepper</p>
+  <section class="component-example">
+    <section class="carousel js-carousel">
+      <nav style="display: flex; gap: var(--space-3)" role="tablist">
+        <mm-entity description="추가">
+          <mm-avatar slot="avatar" size="huge" fallback="+"></mm-avatar>
+        </mm-entity>
+        <mm-entity description="공유하기" data-index="keyword">
+          <mm-avatar slot="avatar" size="huge" fallback="🌏"></mm-avatar>
+        </mm-entity>
+        <mm-entity description="키워드목록">
+          <mm-avatar slot="avatar" size="huge" fallback="💀"></mm-avatar>
+        </mm-entity>
+        <mm-entity description="주문 아이템">
+          <mm-avatar slot="avatar" size="huge" fallback="🍔"></mm-avatar>
+        </mm-entity>
+      </nav>
+      <nav class="carousel-arrows">
+        <mm-icon-button
+          variant="navigator"
+          icon="arrow-left"
+          class="js-carousel-prev"
+          aria-label="이전"
+        >
+        </mm-icon-button>
+        <mm-icon-button
+          variant="navigator"
+          icon="arrow-right"
+          class="js-carousel-next"
+          aria-label="다음"
+        >
+        </mm-icon-button>
+      </nav>
+      <mm-group class="carousel-viewer js-carousel-viewer">
+        <mm-entity size="huge" label="폴 뉴먼" description="주연">
+          <mm-avatar
+            slot="avatar"
+            variant="tertiary"
+            size="huge"
+            src="/public/images/springsteen.jpg"
+          ></mm-avatar>
+        </mm-entity>
+      </mm-group>
+      <!-- <nav class="carousel-dots">
           <button class="carousel-dots-dot">1</button>
           <button class="carousel-dots-dot">1</button>
           <button class="carousel-dots-dot">1</button>
         </nav> -->
-      </section>
     </section>
+  </section>
 
-    <section class="component-guide js-observer">
-      <p class="js-observer">test</p>
-      <mm-text variant="subhead">Behavior</mm-text>
-      <mm-text variant="body">
-        터치 제스쳐를 지원하지 않는 환경에서는 arrow 버튼을 제공하세요.
-      </mm-text>
-    </section>
+  <section class="component-guide js-observer">
+    <p class="js-observer">test</p>
+    <mm-text variant="subhead">Behavior</mm-text>
+    <mm-text variant="body">
+      터치 제스쳐를 지원하지 않는 환경에서는 arrow 버튼을 제공하세요.
+    </mm-text>
+  </section>
 
-    <blockquote>
-      <p>
-        -webkit-appearance: slider-vertical slider<br />
-        native css에서의 slider와 구별하기 위하여 carousel가 더 좋은 명명법. input type="range"
-        형태를 slider 또는 stepper로 명명하는 케이스도 있다.
-      </p>
-      <p>https://web.dev/carousel-best-practices/</p>
-      <p><b>block</b> -> inline / font-size: 0</p>
-      <p><b>flex</b> -> block + min-width</p>
-      <p>scroll-behavior: smooth</p>
-    </blockquote>
-    <ul>
-      <!-- // todo 가로 스크롤 패턴 -->
-    </ul>
-  </article>
+  <blockquote>
+    <p>
+      -webkit-appearance: slider-vertical slider<br />
+      native css에서의 slider와 구별하기 위하여 carousel가 더 좋은 명명법. input type="range" 형태를
+      slider 또는 stepper로 명명하는 케이스도 있다.
+    </p>
+    <p>https://web.dev/carousel-best-practices/</p>
+    <p><b>block</b> -> inline / font-size: 0</p>
+    <p><b>flex</b> -> block + min-width</p>
+    <p>scroll-behavior: smooth</p>
+  </blockquote>
+  <ul>
+    <!-- // todo 가로 스크롤 패턴 -->
+  </ul>
 </main>

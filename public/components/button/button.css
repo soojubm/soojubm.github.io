@@ -85,6 +85,11 @@
   cursor: pointer;
   /* 왜 커서 넣어야 되지? */
 
+  &[data-variant='plain'] {
+    background-color: transparent;
+    border: none;
+  }
+
   &[data-variant='navigator'] {
     border: var(--border);
     border-radius: 50%;

@@ -9,6 +9,7 @@ class Link extends HTMLElement {
     container.classList.add('link')
     container.href = this.href || ''
     container.target = this.target || '_blank'
+    container.dataset.variant = this.variant || 'primary'
 
     shadow.appendChild(container)
     container.append(...this.childNodes, makeStyleSheet('link'))

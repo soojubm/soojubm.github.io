@@ -1,11 +1,15 @@
 <main class="page">
-  <mm-text variant="title">Text</mm-text>
-  <mm-text variant="body-large">
-    Typography helps establish hierarchy and communicate important content by creating clear visual
-    patterns.
-    <div class="js-counter" data-number="234">234</div>
-    단어(word)" → "구(phrase)" → "문장(sentence)" → "문단(paragraph)"
-  </mm-text>
+  <mm-text-group variant="title">
+    <mm-text variant="title">Text</mm-text>
+    <mm-text variant="body-large">
+      Typography helps establish hierarchy and communicate important content by creating clear
+      visual patterns.
+      <div class="js-counter" data-number="234">234</div>
+      단어(word)" → "구(phrase)" → "문장(sentence)" → "문단(paragraph)"
+      <p>TextGroup, ContentGroup, TextStack</p>
+      <p>subhead는 단독으로 쓰이지 않음</p>
+    </mm-text>
+  </mm-text-group>
   <!-- Truncate for secondary text that isn’t essential to a user’s comprehension of steps to take. Examples include dynamic data ad IDs in tables, lists of user names, and Pin titles that come from outside sources. Use an ellipsis or a link that indicates there is more content available. -->
 
   <!-- summary list gov.uk -->
@@ -167,6 +171,8 @@ The font size of a key is never bigger than the value.
         <li>순서가 있는 리스트</li>
         <li>순서가 있는 리스트</li>
       </ol>
+
+      <mm-text-list texts="['mm-text-list 1', 'mm-text-list 1',]"> </mm-text-list>
     </div>
   </section>
   <section class="component-props">
@@ -182,7 +188,7 @@ The font size of a key is never bigger than the value.
   </section>
 
   <section class="component-guide">
-    <ul class="checklist">
+    <mm-text-list texts="[]">
       <li>
         텍스트 목록만 리스트 태그(ul, ol, dl)로 마크업하세요. 그렇지 않으면 대부분의 컨텐츠가
         리스트로 취급될 수 있음. role=listbox/listitem
@@ -198,50 +204,56 @@ The font size of a key is never bigger than the value.
       <li>text dense, help text :: Form fields, metadata, secondary info</li>
       <li>description list - set :: term / description</li>
       <li>text group이 있으면 좋다. paragraph group.</li>
-    </ul>
+      ' 태그라인은 작은 화면에서도 임팩트를 줄 수 있도록 작성 단계에서 행갈이를 고려하세요. 글자의
+      수와 단어의 수를 제한하고 개행 조건을 정의하세요.'
+    </mm-text-list>
 
-    <mm-text variant="subhead">용어 정의 및 분류</mm-text>
-    <ul>
-      <li>제목 heading - title / subtitle / subhead / caption (label)</li>
-      <li>subheading</li>
-      <li>본문 body - paragraph / label, help text</li>
-      <li>kicker/overline/eyebrow</li>
-      <li>strong, h1</li>
-    </ul>
+    <mm-text-group>
+      <mm-text variant="subhead">용어 정의 및 분류</mm-text>
+      <ul>
+        <li>제목 heading - title / subtitle / subhead / caption (label)</li>
+        <li>subheading</li>
+        <li>본문 body - paragraph / label, help text</li>
+        <li>kicker/overline/eyebrow</li>
+        <li>strong, h1</li>
+      </ul>
+    </mm-text-group>
 
-    <mm-text variant="subhead">Utilities. - Truncated.</mm-text>
-    <mm-text variant="body"> long-form content. truncate-multiple은 항상 2줄.</mm-text>
-    <mm-text variant="body">제목을 자르는 것을 허용할 것인가? 허용하지 않을 것인가?</mm-text>
+    <mm-text-group>
+      <mm-text variant="subhead">Utilities. - Truncated.</mm-text>
+      <mm-text variant="body"> long-form content. truncate-multiple은 항상 2줄.</mm-text>
+      <mm-text variant="body">제목을 자르는 것을 허용할 것인가? 허용하지 않을 것인가?</mm-text>
+    </mm-text-group>
 
-    <mm-text variant="subhead">디지털 환경의<br />타이포그래피 규칙</mm-text>
-    <ul>
-      <li>
-        폰트마다 기준선이 다르기 때문에 섞어짤 때 또는 폰트를 변경할 때 주변 요소와 부모 요소에 맞춰
-        시각보정이 필요할 수 있다. 텍스트는 주변의 엘리먼트에 강하게 영향을 받기 때문에 주변 요소와
-        연동해서 추상화 변수를 활용할 수 있다.
-      </li>
-      <li>블로그, 뉴스 기사 등 텍스트 기반의 콘텐츠 페이지를 위한 body 폰트 크기가 필요하다.</li>
-      <li>
-        태그라인은 작은 화면에서도 임팩트를 줄 수 있도록 작성 단계에서 행갈이를 고려하세요. 글자의
-        수와 단어의 수를 제한하고 개행 조건을 정의하세요.
-      </li>
-      <li>message: 사용자, description: 시스템</li>
-      <!-- <li>프로모션 페이지의 헤드라인으로 제한적으로 사용합니다.</li> -->
-    </ul>
+    <mm-text-group>
+      <mm-text variant="subhead">디지털 환경의<br />타이포그래피 규칙</mm-text>
+    </mm-text-group>
 
-    <mm-text variant="subhead">텍스트 모듈</mm-text>
-    <mm-text variant="body">
-      본문은 왼끝 맞추기(오른끝 흘리기). 사용자의 주목을 요할 때, 또는 맥락의 전환을 표현하기 위해
-      콘텐츠 모듈을 가운데 정렬할 수 있다. ex) result component
-    </mm-text>
+    <mm-text-list
+      texts="[
+    '폰트마다 기준선이 다르기 때문에 섞어짤 때 또는 폰트를 변경할 때 주변 요소와 부모 요소에 맞춰 시각보정이 필요할 수 있다. 텍스트는 주변의 엘리먼트에 강하게 영향을 받기 때문에 주변 요소와 연동해서 추상화 변수를 활용할 수 있다.',
+    '블로그, 뉴스 기사 등 텍스트 기반의 콘텐츠 페이지를 위한 body 폰트 크기가 필요하다.',
+    'message: 사용자, description: 시스템',
+  ]"
+    >
+    </mm-text-list>
+    <mm-text-group>
+      <mm-text variant="subhead">텍스트 모듈</mm-text>
+      <mm-text variant="body">
+        본문은 왼끝 맞추기(오른끝 흘리기). 사용자의 주목을 요할 때, 또는 맥락의 전환을 표현하기 위해
+        콘텐츠 모듈을 가운데 정렬할 수 있다. ex) result component
+      </mm-text>
+    </mm-text-group>
 
-    <mm-text variant="subhead">들여쓰기</mm-text>
-    <mm-text variant="body">
-      단락의 위 아래 간격을 활용합니다. 작은 화면에서 공간 활용을 위해 좌측 들여쓰기 하지 않습니다.
-      TODO 그렇다면, 이 간격은 어떻게 정의할 것인가?
-    </mm-text>
+    <mm-text-group>
+      <mm-text variant="subhead">들여쓰기</mm-text>
+      <mm-text variant="body">
+        단락의 위 아래 간격을 활용합니다. 작은 화면에서 공간 활용을 위해 좌측 들여쓰기 하지
+        않습니다. TODO 그렇다면, 이 간격은 어떻게 정의할 것인가?
+      </mm-text>
+    </mm-text-group>
 
-    <div style="display: flex; flex-direction: column; gap: 0.75rem">
+    <mm-text-group>
       <mm-text variant="subhead">텍스트의 강조</mm-text>
       <mm-text variant="body-bold">형태적 강조 :: mark, u, em, b</mm-text>
       <mm-text variant="body-bold">의미론적 강조 ::strong - 개인정보처리방침 등</mm-text>
@@ -250,14 +262,14 @@ The font size of a key is never bigger than the value.
         우리는 underlined와 pirmary colored text를 <mark>clickable</mark>로 엄격하게 정의하고
         있습니다.
       </mm-text>
-    </div>
+    </mm-text-group>
 
-    <mm-text variant="subhead">Stat과 Summary의 차이</mm-text>
-    <ul>
-      <li>clickable / non-clickable</li>
-    </ul>
-
-    <br />
+    <mm-text-group>
+      <mm-text variant="subhead">Stat과 Summary의 차이</mm-text>
+      <ul>
+        <li>clickable / non-clickable</li>
+      </ul>
+    </mm-text-group>
 
     <mm-tile>
       <p>이 문서가 도움이 되었나요?</p>
@@ -311,12 +323,12 @@ The font size of a key is never bigger than the value.
           택배사에 직접 연락하지 않아도<br />영업일 기준 3일 이내에 방문합니다.
           <small style="display: block; margin: var(--space-2) 0 0">방문 택배사 : 한진택배</small>
         </div>
-        <ul class="checklist" style="margin: 1rem 0 0">
+        <mm-text-list texts="[]">
           <li>
             환불은 반품상품 도착 이후 결제방법에 따라 진행됩니다. 상품에 이상이 있는 경우는
             반품처리가 되지 않을 수도 있으며, 이 경우 고객센터에서 연락을 드립니다.
           </li>
-        </ul>
+        </mm-text-list>
       </mm-tile>
     </mm-tile>
 

@@ -1,17 +1,17 @@
 <main class="page">
-  <mm-text variant="title">Signifier</mm-text>
-  <mm-text variant="body-large">
-    예측 가능한 사용자 인터렉션으로 서비스와 사용자 사이의 신뢰 구축.
-  </mm-text>
-  <p>TODO DISMISS PATTERN</p>
-  <li>
-    아이템이 3개 이하일 때 제목 우측에 모두보기 버튼을 위치할 수 있지만, 아이템이 4개 이상이라면
-    아이템의 아래에 모두보기 버튼을 배치. 가로 스크롤인 경우 스크롤의 가장 우측에 배치할 수도.
-  </li>
+  <mm-text-group variant="title">
+    <mm-text variant="title">Signifier</mm-text>
+    <mm-text variant="body-large">
+      예측 가능한 사용자 인터렉션으로 서비스와 사용자 사이의 신뢰 구축.
+    </mm-text>
+    <p>TODO DISMISS PATTERN</p>
+    " 아이템이 3개 이하일 때 제목 우측에 모두보기 버튼을 위치할 수 있지만, 아이템이 4개 이상이라면
+    아이템의 아래에 모두보기 버튼을 배치. 가로 스크롤인 경우 스크롤의 가장 우측에 배치할 수도. "
 
-  <mm-text variant="body">
-    상태를 표현하는 시각 언어는 일부 컴포넌트에 종속되지 않고 제품 전체에 일관됩니다.
-  </mm-text>
+    <mm-text variant="body">
+      상태를 표현하는 시각 언어는 일부 컴포넌트에 종속되지 않고 제품 전체에 일관됩니다.
+    </mm-text>
+  </mm-text-group>
   <!--
       성공적인 상호작용 피드백은 장식적인 것이 아니라 정보를 제공하는 것입니다.
       시각적 노이즈나 강렬한 색상 변화를 유발하는 정교한 전환을 피하세요.
@@ -275,26 +275,15 @@
   </section>
 
   <blockquote>
-    <ul class="checklist">
-      <li>
-        MD3의 Responsive layout. TODO : 반응하는 레이어를 위한 규칙을 어떻게 정의하면 좋을까?
-        프레젠테이션 패턴. 섹션, 아티클 그리고 모달, 드롭다운 등의 컴포넌트도 작은 화면에서는 페이지
-        맥락이 될 수 있음을 고려합니다. => 결국 모바일 퍼스트 foundation.
-      </li>
-      <li>Page Layout - Page Head / Page (background, full-bleed)</li>
-      <li>
-        페이지 모듈의 대비. 페이지의 맥락을 구분하기 위해 레이아웃 모듈이나 배경색의 대비를 활용할
-        수 있습니다. 컨테이너 너비(비밀번호찾기와 로그인/회원가입)와 배경색(설정, 글쓰기, 소개 등).
-      </li>
-
-      <li>Use only universally recognized icons to represent actions or options.</li>
-      <li>addable / expandable, done / check / positive</li>
-      <li>bold text를 clickable로 사용? (단락 더 보기 등에서 사용되는 패턴)</li>
-      <li>
-        clickable이 아닌 모든 요소는 non-clickable이지만 disabled은 실행 불가의 명시적인 표현.
-      </li>
-      <li>iOS에서 뒤로가기(이전 페이지)는 chevron.</li>
-    </ul>
+    <mm-text-list
+      texts='[
+    "MD3의 Responsive layout. TODO : 반응하는 레이어를 위한 규칙을 어떻게 정의하면 좋을까? 프레젠테이션 패턴. 섹션, 아티클 그리고 모달, 드롭다운 등의 컴포넌트도 작은 화면에서는 페이지 맥락이 될 수 있음을 고려합니다.  결국 모바일 퍼스트 foundation.",
+    "페이지 모듈의 대비. 페이지의 맥락을 구분하기 위해 레이아웃 모듈이나 배경색의 대비를 활용할 수 있습니다. 컨테이너 너비(비밀번호찾기와 로그인/회원가입)와 배경색(설정, 글쓰기, 소개 등).",
+    "Use only universally recognized icons to represent actions or options.",
+    "addable / expandable, done / check / positive" "bold text를 clickable로 사용? (단락 더 보기 등에서 사용되는 패턴)" "iOS에서 뒤로가기(이전 페이지)는 chevron."
+    ]'
+    >
+    </mm-text-list>
   </blockquote>
 
   <div class="columns is-multiline">

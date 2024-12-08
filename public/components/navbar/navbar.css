@@ -217,3 +217,19 @@ li {
   }
 }
 } */
+
+
+
+/* TODO */
+.navbar-user-trigger + * {
+  width: 100%;
+  min-width: 320px;
+  max-width: 320px;
+  position: absolute;
+  right: 0;
+  top: 40px;
+
+}
+.navbar-user-trigger.is-active + * {
+  display: block;
+}

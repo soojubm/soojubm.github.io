@@ -1,9 +1,11 @@
 <main class="page">
-  <mm-text variant="title">태그Tags</mm-text>
-  <mm-text variant="body-large">
-    인접 요소나 부모 요소를 부연하는 시각 정보입니다. 상태, 카테고리, 키워드로 강조된 시각 정보는
-    사용자가 복잡한 정보 더미에서 중요한 정보를 우선적으로 파악하도록 돕습니다.
-  </mm-text>
+  <mm-text-group variant="title">
+    <mm-text variant="title">태그Tags</mm-text>
+    <mm-text variant="body-large">
+      인접 요소나 부모 요소를 부연하는 시각 정보입니다. 상태, 카테고리, 키워드로 강조된 시각 정보는
+      사용자가 복잡한 정보 더미에서 중요한 정보를 우선적으로 파악하도록 돕습니다.
+    </mm-text>
+  </mm-text-group>
   <!-- <mm-text variant="body-large">
       post 페이지에서 태그와 컴포넌트에서의 태그. hashtag는 tag 컴포넌트와 역할이 다르기 때문에 별도의 컴포넌트로 만들어주어야 한다. 현재
       hashtag(keyword)는 chip으로 대체. todo. 댑스가 2이상 인 케이스.
@@ -23,20 +25,14 @@
       <mm-tag variant="primary">강조태그</mm-tag>
       <mm-tag variant="secondary">기본태그</mm-tag>
       <mm-tag variant="tertiary">기본태그</mm-tag>
-      <mm-tag variant="tertiary">기본태그</mm-tag>
-      <mm-tag variant="tertiary">기본태그</mm-tag>
-      <mm-tag variant="feature2">
-        <mm-icon slot="icon" name="graph-up"></mm-icon>
-        16%
-      </mm-tag>
-      <mm-tag variant="feature4">
-        <mm-icon slot="icon" name="graph-down"></mm-icon>
-        16%
-      </mm-tag>
       <mm-tag variant="feature1">유저리서치</mm-tag>
       <mm-tag variant="feature2">유저플로우</mm-tag>
       <mm-tag variant="feature3">유저스트</mm-tag>
       <mm-tag variant="feature4">A/B테스팅</mm-tag>
+      <mm-tag variant="feature2">
+        <mm-icon slot="icon" name="graph-up"></mm-icon>
+        16%
+      </mm-tag>
     </mm-group>
     <mm-separator></mm-separator>
     <mm-group variant="tag">
@@ -81,53 +77,58 @@
   </dl>
 
   <section class="component-guide">
-    <mm-text variant="subhead">Meta Problems</mm-text>
-    <mm-text variant="body-bold">KEYWORDS. notification / status / informational</mm-text>
+    <mm-text-group>
+      <mm-text variant="subhead">Meta Problems</mm-text>
+      <mm-text variant="body-bold">KEYWORDS. notification / status / informational</mm-text>
+      <mm-text variant="body-bold"
+        >activity bar counter (vs code). Counter badge (quantity). Badges show the count of some
+        adjacent data.
+      </mm-text>
+      <mm-text variant="body-bold"
+        >Dot(status). New/Unread, Live. A dot badge notifies the user that something is new or
+        updated without showing a count.
+      </mm-text>
+    </mm-text-group>
 
-    <mm-text variant="body-bold"
-      >activity bar counter (vs code). Counter badge (quantity). Badges show the count of some
-      adjacent data.
-    </mm-text>
-    <mm-text variant="body-bold"
-      >Dot(status). New/Unread, Live. A dot badge notifies the user that something is new or updated
-      without showing a count.
-    </mm-text>
+    <mm-text-group>
+      <mm-text variant="subhead">Non-clickable? Non-interactive?</mm-text>
+      <mm-text variant="body">탐색을 보조하기 위한 정보 강조 또는 요약, 정보를 단순 보충</mm-text>
+      <mm-text variant="body">
+        <del>액션의 기표로 사용할 수 있다. 인접 요소 또는 부모 요소가 클릭할 수 있음을 보조.</del>
+        이렇게 되면 태그의 정의가 복잡해짐. 이건 그냥 합성된 컴포넌트, 슬ㄹ롯의 개념에 가까워서.
+      </mm-text>
+      <!-- <div style="display: flex; flex-direction: column; gap: 0.5rem"> -->
+    </mm-text-group>
 
-    <mm-text variant="subhead">Non-clickable? Non-interactive?</mm-text>
-    <mm-text variant="body">탐색을 보조하기 위한 정보 강조 또는 요약, 정보를 단순 보충</mm-text>
-    <mm-text variant="body">
-      <del>액션의 기표로 사용할 수 있다. 인접 요소 또는 부모 요소가 클릭할 수 있음을 보조.</del>
-      이렇게 되면 태그의 정의가 복잡해짐. 이건 그냥 합성된 컴포넌트, 슬ㄹ롯의 개념에 가까워서.
-    </mm-text>
-    <!-- <div style="display: flex; flex-direction: column; gap: 0.5rem"> -->
-    <mm-text variant="subhead">Groupable</mm-text>
-    <mm-text variant="body-bold"> 태그 그룹은 최대 4개의 태그를 표시합니다.</mm-text>
-    <mm-text variant="body">
-      너무 많은 태그 목록으로 사용자의 콘텐츠 탐색을 방해하지 마세요.
-    </mm-text>
-    <div style="height: var(--space-4)"></div>
-    <mm-text variant="body-bold">그룹에서 primary tag는 최대 1개만 포함할 수 있습니다.</mm-text>
+    <mm-text-group>
+      <mm-text variant="subhead">Groupable</mm-text>
+      <mm-text variant="body-bold"> 태그 그룹은 최대 4개의 태그를 표시합니다.</mm-text>
+      <mm-text variant="body">
+        너무 많은 태그 목록으로 사용자의 콘텐츠 탐색을 방해하지 마세요.
+      </mm-text>
+      <mm-text variant="body-bold">그룹에서 primary tag는 최대 1개만 포함할 수 있습니다.</mm-text>
+      <mm-text variant="body-bold">예외 케이스.</mm-text>
+      <mm-text variant="body">
+        태그의 목록이 페이지 전체를 관통하는 경우 탐색을 보조하는 역할이 아니라 정보를 보충하는
+        맥락이기 때문에 4개 이상이 허용된다. 유저 프로필 페이지에서 유저를 보충할 때가 적절한 예시.
+      </mm-text>
+    </mm-text-group>
 
-    <div style="height: var(--space-4)"></div>
-    <mm-text variant="body-bold">예외 케이스.</mm-text>
-    <mm-text variant="body">
-      태그의 목록이 페이지 전체를 관통하는 경우 탐색을 보조하는 역할이 아니라 정보를 보충하는
-      맥락이기 때문에 4개 이상이 허용된다. 유저 프로필 페이지에서 유저를 보충할 때가 적절한 예시.
-    </mm-text>
-    <!-- </div> -->
-    <mm-text variant="subhead">Easy scanning</mm-text>
-    <mm-text variant="body">
-      <b>Use short labels for easy scanning.</b> 중요한 정보를 빠르게 파악할 수 있는 짧은 단어의
-      조합.
-    </mm-text>
+    <mm-text-group>
+      <mm-text variant="subhead">Easy scanning</mm-text>
+      <mm-text variant="body">
+        <b>Use short labels for easy scanning.</b> 중요한 정보를 빠르게 파악할 수 있는 짧은 단어의
+        조합.
+      </mm-text>
+    </mm-text-group>
 
-    <mm-text variant="subhead">Changelog</mm-text>
-    <mm-text variant="body">
-      240813 - indicator 제거. 카테고라이징이나 상태 등의 뱃징이 아님.
-    </mm-text>
+    <mm-text-group>
+      <mm-text variant="subhead">Changelog</mm-text>
+      <mm-text variant="body">
+        240813 - indicator 제거. 카테고라이징이나 상태 등의 뱃징이 아님.
+      </mm-text>
+    </mm-text-group>
 
-    <ul class="checklist">
-      <li>아바타, 바텀 네비게이션, 탭에서 일관되게 사용되는가?</li>
-    </ul>
+    <mm-text-list texts='["아바타, 바텀 네비게이션, 탭에서 일관되게 사용되는가?"]''></mm-text-list>
   </section>
 </main>

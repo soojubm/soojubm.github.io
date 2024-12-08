@@ -1,6 +1,6 @@
 <nav class="navbar js-navbar" role="navigation">
   <mm-icon-button
-    variant=""
+    variant="plain"
     icon="menu-scale"
     class="navbar-burger js-navbar-toggle"
     aria-label="전체메뉴"
@@ -23,14 +23,60 @@
     <a href="signifier.html">Signifier</a>
   </div> -->
 
-  <div class="navbar-user">
-    <!-- <button class="navbar-user-trigger" aria-haspopup="menu" aria-expanded="false"></button> -->
+  <div class="navbar-user" style="display: flex; gap: var(--space-2)">
     <!-- <mm-button icon="bell"></mm-button> -->
     <!-- <button class="chip" variant="primary" style="display:flex;align-items:center;height:var(--size-medium);margin-right:.25rem;padding:0 .75rem;border-radius:var(--radius);background:var(--color-primary);font-weight:var(--font-weight-bold);color:#fff;">시작하기</button> -->
     <button class="theme-toggle js-darkmode" aria-label="change theme">
       <span class="day iconoir-sun-light"></span>
       <span class="night iconoir-half-moon"></span>
     </button>
+    <div style="position: relative">
+      <mm-icon-button
+        icon="profile-circle"
+        class="navbar-user-trigger js-toggle"
+        aria-haspopup="menu"
+        aria-expanded="false"
+      ></mm-icon-button>
+      <mm-tile variant="elevated" size="medium" hidden>
+        <mm-entity
+          label="수줍이"
+          description="soojubm@gmail.com"
+          description2="010 3121 7045"
+          description="UI Designer"
+        >
+          <mm-avatar slot="avatar" variant="secondary" size="large" default="true"></mm-avatar>
+          <!-- <mm-tag slot="tag" variant="primary"></mm-tag> -->
+        </mm-entity>
+        <div style="margin: var(--space-2) 0 0">
+          <mm-button>내 프로필 관리</mm-button>
+        </div>
+        <div style="position: absolute; right: var(--space-4); top: var(--space-4)">
+          <mm-tag variant="primary" size="large">샘플 유아이</mm-tag>
+        </div>
+        <mm-separator></mm-separator>
+        <mm-group variant="menuitem">
+          <mm-menuitem label="어둡게 보기" class="js-darkmode" aria-label="change theme">
+            <mm-avatar slot="avatar" variant="tertiary" icon="half-moon"> </mm-avatar>
+            <mm-switch slot="action"></mm-switch>
+          </mm-menuitem>
+          <mm-menuitem label="고객센터 및 도움말">
+            <mm-avatar slot="avatar" variant="tertiary" icon="megaphone"> </mm-avatar>
+          </mm-menuitem>
+        </mm-group>
+        <mm-separator></mm-separator>
+        <mm-menuitem label="로그아웃">
+          <mm-avatar slot="avatar" variant="tertiary" icon="log-out"></mm-avatar>
+        </mm-menuitem>
+        <mm-separator></mm-separator>
+        <div style="margin-top: -0.25rem">
+          <mm-group>
+            <mm-link variant="secondary" href="#">개인정보처리방침</mm-link>
+            <i class="icon-bullet"></i>
+            <mm-link variant="secondary" href="#">서비스 약관</mm-link>
+          </mm-group>
+        </div>
+      </mm-tile>
+    </div>
   </div>
 </nav>
 <div class="navbar-backdrop"></div>
@@ -74,7 +120,6 @@
     <a href="radio.html">radio</a>
     <a href="switch.html"> switch </a>
     <a href="textfield.html"> textfield </a>
-    <a href="searchfield.html"> searchfield </a>
     <a href="select.html">select</a>
     <a href="tag.html"> tag </a>
     <a href="tile.html"> tile </a>
@@ -93,15 +138,12 @@
       <mm-avatar slot="avatar" variant="tertiary" icon="city"></mm-avatar>
       <mm-icon slot="icon" name="plus"></mm-icon>
     </mm-menuitem>
-    <a href="feed.html">feed</a>
+    <a href="dashboard.html">dashboard</a>
     <a href="timeline.html">timeline</a>
     <a href="table.html">table</a>
-    <a href="notification.html">notifications</a>
-    <a href="chat.html"> chat </a>
     <a href="auth.html">auth</a>
     <!-- <a href="dialog.html">collapsed/expanded</a>
     <a href="dialog.html">haspopup</a> -->
-    <a href="searching.html"> searching </a>
     <a href="filtering.html"> filtering</a>
     <a href="presentation.html">layers</a>
     <a href="profile.html">user profile 🔥</a>

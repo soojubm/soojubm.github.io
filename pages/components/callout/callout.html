@@ -1,8 +1,10 @@
 <main class="page">
-  <mm-text variant="title">Callouts</mm-text>
-  <mm-text variant="body-large"
-    >시스템이나 브라우저의 상태 이상, 사용자의 행동에 피드백합니다.</mm-text
-  >
+  <mm-text-group variant="title">
+    <mm-text variant="title">Callouts</mm-text>
+    <mm-text variant="body-large"
+      >시스템이나 브라우저의 상태 이상, 사용자의 행동에 피드백합니다.</mm-text
+    >
+  </mm-text-group>
 
   <dl class="article-aka">
     <dt>a.k.a.</dt>
@@ -53,51 +55,55 @@
   </section>
 
   <section class="component-guide">
-    <mm-text variant="subhead">Best practices</mm-text>
-    <mm-text variant="body">
-      브라우저가 role="alert" 속성이 있는 요소를 발견하면 즉시 사용자에게 경고 내용을 읽습니다.
-    </mm-text>
-    <mm-text variant="body">
-      사용자 행동의 단순 피드백의 역할입니다. 닫기 또는 되돌리기 등 액션을 포함하지 마세요. 사용자
-      인터렉션을 요구하는 경우, 주목도가 높은 모달로 제공하세요.
-    </mm-text>
+    <mm-text-group>
+      <mm-text variant="subhead">Best practices</mm-text>
+      <mm-text variant="body">
+        브라우저가 role="alert" 속성이 있는 요소를 발견하면 즉시 사용자에게 경고 내용을 읽습니다.
+      </mm-text>
+      <mm-text variant="body">
+        사용자 행동의 단순 피드백의 역할입니다. 닫기 또는 되돌리기 등 액션을 포함하지 마세요. 사용자
+        인터렉션을 요구하는 경우, 주목도가 높은 모달로 제공하세요.
+      </mm-text>
+    </mm-text-group>
 
-    <mm-text variant="subhead">Editorial</mm-text>
-    <mm-text variant="body">
-      알림은 언제나 유저에게 베네핏을 주거나, 긴급한 메시지이거나, 적어도 적절한 타이밍의 내용이어야
-      한다. 똑같은 텍스트가 각각의 컴포넌트에 쓰였을 때 어떤 맥락으로 유저에게 닿을 수 있는지를.
-    </mm-text>
-    <mm-text variant="body">
-      사용자의 귀책이 아닌 경우, 단순 "오류" 대신 "시스템 오류"와 같은 용어를 사용하여 사용자가
-      잘못한 것처럼 느끼지 않도록 하세요.
-    </mm-text>
-    <mm-text variant="body">
-      * 이 규칙이 굉장히 인사이트풀. 유저가 중요한 액션을 수행했을 경우, 완료 메시지를 전달하기 위해
-      한 화면 전체를 사용하는 경우가 있다. 이때는 유저가 집중할 수 있는 정보가 하나뿐이어서 맥락이
-      복잡하지 않으므로, \"이미지가 담긴 포스팅이 완료되었습니다.\" 등의 문장형으로 길게 설명할 필요
-      없이, \"제출 완료!\"같은 단일 단어로 대체할 수 있다.
-    </mm-text>
+    <mm-text-group>
+      <mm-text variant="subhead">Editorial</mm-text>
+      <mm-text variant="body">
+        알림은 언제나 유저에게 베네핏을 주거나, 긴급한 메시지이거나, 적어도 적절한 타이밍의
+        내용이어야 한다. 똑같은 텍스트가 각각의 컴포넌트에 쓰였을 때 어떤 맥락으로 유저에게 닿을 수
+        있는지를.
+      </mm-text>
+      <mm-text variant="body">
+        사용자의 귀책이 아닌 경우, 단순 "오류" 대신 "시스템 오류"와 같은 용어를 사용하여 사용자가
+        잘못한 것처럼 느끼지 않도록 하세요.
+      </mm-text>
+      <mm-text variant="body">
+        * 이 규칙이 굉장히 인사이트풀. 유저가 중요한 액션을 수행했을 경우, 완료 메시지를 전달하기
+        위해 한 화면 전체를 사용하는 경우가 있다. 이때는 유저가 집중할 수 있는 정보가 하나뿐이어서
+        맥락이 복잡하지 않으므로, \"이미지가 담긴 포스팅이 완료되었습니다.\" 등의 문장형으로 길게
+        설명할 필요 없이, \"제출 완료!\"같은 단일 단어로 대체할 수 있다.
+      </mm-text>
+    </mm-text-group>
 
-    <mm-text variant="subhead">with Toast. toast=>snackbar(withAction)</mm-text>
-    <!--
-    Icon: Informs users of the kind of notification at a glance.
-    Title: Gives users a quick overview of the notification.
-    Message (1optional): Provides additional detail and actionable steps for the user to take.
-    Inline notification action (1optional): Ghost button that allows users to address the notification or navigates them to a page with further details.
-    Close button (1optional): Closes the notification.
-    Time stamp (1optional): Shows the time the toast notification was sent.
-    -->
-
-    <ul class="checklist">
-      <li>링크를 제공할 것인가?</li>
-      <li>
-        게임에서 파티 탈퇴와 같이 직접 실행하지 않은, 연속적인 결과가 발생하는 경우 여러 개가 필요.
-      </li>
-      <li>역할에 따라 input feedback과 callout을 분리해야 한다.</li>
-      <li>
-        아이콘으로 callout의 맥락을 구분할 수 있다. 아이콘이 없는 callout은 단순 Tile 컴포넌트처럼
-        보일 수 있다.
-      </li>
-    </ul>
+    <mm-text-group>
+      <mm-text variant="subhead">with Toast. toast=>snackbar(withAction)</mm-text>
+      <!--
+      Icon: Informs users of the kind of notification at a glance.
+      Title: Gives users a quick overview of the notification.
+      Message (1optional): Provides additional detail and actionable steps for the user to take.
+      Inline notification action (1optional): Ghost button that allows users to address the notification or navigates them to a page with further details.
+      Close button (1optional): Closes the notification.
+      Time stamp (1optional): Shows the time the toast notification was sent.
+      -->
+    </mm-text-group>
+    <mm-text-list
+      texts='[
+  "링크를 제공할 것인가?",
+  "게임에서 파티 탈퇴와 같이 직접 실행하지 않은, 연속적인 결과가 발생하는 경우 여러 개가 필요.",
+  "역할에 따라 input feedback과 callout을 분리해야 한다.",
+  "아이콘으로 callout의 맥락을 구분할 수 있다. 아이콘이 없는 callout은 단순 Tile 컴포넌트처럼 보일 수 있다."
+  ]'
+    >
+    </mm-text-list>
   </section>
 </main>

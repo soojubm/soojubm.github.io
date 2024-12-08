@@ -1,6 +1,8 @@
 <main class="page">
-  <mm-text variant="title">Tooltip</mm-text>
-  <mm-text variant="body-large">용어를 설명하거나 정보의 근거를 보충합니다.</mm-text>
+  <mm-text-group>
+    <mm-text variant="title">Tooltip</mm-text>
+    <mm-text variant="body-large">용어를 설명하거나 정보의 근거를 보충합니다.</mm-text>
+  </mm-text-group>
 
   <dl class="article-aka">
     <dt>a.k.a.</dt>
@@ -81,25 +83,30 @@
   </section>
 
   <section class="component-guide">
-    <mm-text variant="subhead">Use when / Don't use when</mm-text>
-    <mm-text variant="body">툴팁의 트리거를 페이지 링크로 사용하지 마세요.</mm-text>
-    <mm-text variant="subhead">Behavior - supportive / not interactive</mm-text>
-    <mm-text variant="body">
-      사용자가 반드시 숙지해야 하는 중요한 정보를 툴팁으로 제공하지 마세요. 정보를 보충하는 비슷한
-      맥락. 아코디언. 행동을 유도하는 가이드로 사용하지 마세요. 중요한 액션에는 cognitive?
-      button이나 text link 등 충분히 강조된 컴포넌트를 사용.
-    </mm-text>
-    <mm-text variant="body">
-      페이지 로딩 시점에 열려 있는 인터페이스는 엄밀히 말하면 툴팁은 아님. doorhanger/pointing
-      arrow가 필요하며 행동을 유도하는 목적으로 사용이 되고 있는데, 이것을 좋은 경험이라 보고 있지
-      않음.
-    </mm-text>
-    <ul class="checklist">
-      <li>클릭할 수 없는 버튼은 툴팁이 필요 없다.</li>
-      <li>
-        모바일에서는 모달로 제공하는 것이 좋다. 또는 툴팁 텍스트의 굴자수를 제하는 가이드가 필요.
-      </li>
-      <li>MD3 rich tooltip(title, description, actions-link/button) / plain tooltip</li>
-    </ul>
+    <mm-text-group>
+      <mm-text variant="subhead">Use when / Don't use when</mm-text>
+      <mm-text variant="body">툴팁의 트리거를 페이지 링크로 사용하지 마세요.</mm-text>
+    </mm-text-group>
+    <mm-text-group>
+      <mm-text variant="subhead">Behavior - supportive / not interactive</mm-text>
+      <mm-text variant="body">
+        사용자가 반드시 숙지해야 하는 중요한 정보를 툴팁으로 제공하지 마세요. 정보를 보충하는 비슷한
+        맥락. 아코디언. 행동을 유도하는 가이드로 사용하지 마세요. 중요한 액션에는 cognitive?
+        button이나 text link 등 충분히 강조된 컴포넌트를 사용.
+      </mm-text>
+      <mm-text variant="body">
+        페이지 로딩 시점에 열려 있는 인터페이스는 엄밀히 말하면 툴팁은 아님. doorhanger/pointing
+        arrow가 필요하며 행동을 유도하는 목적으로 사용이 되고 있는데, 이것을 좋은 경험이라 보고 있지
+        않음.
+      </mm-text>
+      <mm-text-list
+        texts='[
+      "클릭할 수 없는 버튼은 툴팁이 필요 없다.",
+      "모바일에서는 모달로 제공하는 것이 좋다. 또는 툴팁 텍스트의 굴자수를 제하는 가이드가 필요.",
+      "MD3 rich tooltip(title, description, actions-link/button) / plain tooltip"
+      ]'
+      >
+      </mm-text-list>
+    </mm-text-group>
   </section>
 </main>

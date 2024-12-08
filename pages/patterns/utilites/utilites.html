@@ -1,73 +1,70 @@
 <main class="page">
   <!-- ChangeEvent / FormEvent -->
-  <article class="article js-scrollspy-section">
-    <mm-text variant="title">Utilities</mm-text>
-    <mm-text variant="body-large">작성 중.</mm-text>
+  <mm-text variant="title">Utilities</mm-text>
+  <mm-text variant="body-large">작성 중.</mm-text>
 
-    <section class="component-guide">
-      <mm-text variant="subhead">Data Formatting</mm-text>
-      <div style="height: var(--space-2)"></div>
-      <div style="display: flex; flex-direction: column; gap: var(--space-2)">
-        <mm-menuitem>
-          <mm-avatar slot="avatar"></mm-avatar>
-          <div slot="text">
-            <mm-text variant="word-bold">getDateFormat(20220610)</mm-text>
-            <mm-text variant="word-weak">test</mm-text>
-          </div>
-        </mm-menuitem>
-        <mm-menuitem>
-          <mm-avatar slot="avatar"></mm-avatar>
-          <div slot="text">
-            <mm-text variant="word-bold">getCurrencyFormat(30000)</mm-text>
-            <mm-text variant="word-weak">30,000원 / ₩ 30,000 / 30,000 won</mm-text>
-          </div>
-        </mm-menuitem>
-        <mm-menuitem>
-          <mm-avatar slot="avatar"></mm-avatar>
-          <div slot="text">
-            <mm-text variant="word-bold">getNumberFotmat(30000)</mm-text>
-            <mm-text variant="word-weak">3만 / 30K</mm-text>
-          </div>
-        </mm-menuitem>
-      </div>
+  <section class="component-guide">
+    <mm-text variant="subhead">Data Formatting</mm-text>
+    <div style="height: var(--space-2)"></div>
+    <div style="display: flex; flex-direction: column; gap: var(--space-2)">
+      <mm-menuitem>
+        <mm-avatar slot="avatar"></mm-avatar>
+        <div slot="text">
+          <mm-text variant="word-bold">getDateFormat(20220610)</mm-text>
+          <mm-text variant="word-weak">test</mm-text>
+        </div>
+      </mm-menuitem>
+      <mm-menuitem>
+        <mm-avatar slot="avatar"></mm-avatar>
+        <div slot="text">
+          <mm-text variant="word-bold">getCurrencyFormat(30000)</mm-text>
+          <mm-text variant="word-weak">30,000원 / ₩ 30,000 / 30,000 won</mm-text>
+        </div>
+      </mm-menuitem>
+      <mm-menuitem>
+        <mm-avatar slot="avatar"></mm-avatar>
+        <div slot="text">
+          <mm-text variant="word-bold">getNumberFotmat(30000)</mm-text>
+          <mm-text variant="word-weak">3만 / 30K</mm-text>
+        </div>
+      </mm-menuitem>
+    </div>
 
-      <mm-text variant="subhead">Event handler naming.</mm-text>
+    <mm-text variant="subhead">Event handler naming.</mm-text>
 
-      <mm-text variant="subhead">Early return.</mm-text>
+    <mm-text variant="subhead">Early return.</mm-text>
 
-      <mm-text variant="subhead">Types</mm-text>
-      <mm-text variant="body">OptionType = { label: '', value: '' } </mm-text>
+    <mm-text variant="subhead">Types</mm-text>
+    <mm-text variant="body">OptionType = { label: '', value: '' } </mm-text>
 
-      <mm-text variant="subhead">CSS</mm-text>
-      <mm-text variant="body-bold">linebreaker-desktop / linebreaker-mobile</mm-text>
-      <mm-text variant="body-bold">animation-stopper-resize / hidden</mm-text>
+    <mm-text variant="subhead">CSS</mm-text>
+    <mm-text variant="body-bold">linebreaker-desktop / linebreaker-mobile</mm-text>
+    <mm-text variant="body-bold">animation-stopper-resize / hidden</mm-text>
 
-      <mm-text variant="subhead">Attention required</mm-text>
+    <mm-text variant="subhead">Attention required</mm-text>
 
-      <div>
-        <label for="username">Username</label>
-        <input id="username" name="username" aria-describedby="username-desc" />
-        <button
-          aria-expanded="false"
-          aria-controls="username-desc"
-          aria-label="Help about username"
-        >
-          <span aria-hidden="true">?</span>
-        </button>
-        <p id="username-desc" hidden>
-          Your username is the name that you use to log in to this service.
-        </p>
-      </div>
+    <div>
+      <label for="username">Username</label>
+      <input id="username" name="username" aria-describedby="username-desc" />
+      <button aria-expanded="false" aria-controls="username-desc" aria-label="Help about username">
+        <span aria-hidden="true">?</span>
+      </button>
+      <p id="username-desc" hidden>
+        Your username is the name that you use to log in to this service.
+      </p>
+    </div>
 
-      <blockquote>
-        <mm-text variant="body-bold">Notes</mm-text>
-        <ul class="checklist">
-          <li>slotted은 정렬, 위치만을 명세. 형태는 슬롯으로 들어온 친구가 하는 것.</li>
-          <li>서비스가 출시 환경이 웹온리(웹/태블릿+모바일) 웹+모바일앱(웹+태블릿/모바일)</li>
-          <li>naming: data-index 보다 name name을 숫자로 주면 됨.</li>
-          <li>role로 스타일링 하면 수정이 어려움. aria로 상태 표현은 좋다.</li>
-        </ul>
-      </blockquote>
-    </section>
-  </article>
+    <blockquote>
+      <mm-text variant="body-bold">Notes</mm-text>
+      <mm-text-list
+        texts='[
+        "slotted은 정렬, 위치만을 명세. 형태는 슬롯으로 들어온 친구가 하는 것.",
+        "서비스가 출시 환경이 웹온리(웹/태블릿+모바일) 웹+모바일앱(웹+태블릿/모바일)",
+        "naming: data-index 보다 name name을 숫자로 주면 됨.",
+        "role로 스타일링 하면 수정이 어려움. aria로 상태 표현은 좋다."
+        ]'
+      >
+      </mm-text-list>
+    </blockquote>
+  </section>
 </main>

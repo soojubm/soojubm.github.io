@@ -8,3 +8,9 @@
   line-height: inherit;
   color: var(--color-primary);
 }
+
+.link[data-variant=secondary] {
+  font-size: var(--font-size-small);
+  color: var(--color-text-light);
+  text-decoration: none;
+}

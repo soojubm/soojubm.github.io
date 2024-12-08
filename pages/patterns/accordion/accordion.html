@@ -1,9 +1,11 @@
 <main class="page" aria-label="site">
-  <mm-text variant="title">Accordions - Collapsed/Expanded</mm-text>
-  <mm-text variant="body-large">
-    사용자의 필요에 따라 취사선택할 수 있도록 정보 목록을 요약합니다. 반드시 숙지해야 하는 중요
-    정보를 collapsed로 제공하지 않아야 합니다.
-  </mm-text>
+  <mm-text-group variant="title">
+    <mm-text variant="title">Accordions - Collapsed/Expanded</mm-text>
+    <mm-text variant="body-large">
+      사용자의 필요에 따라 취사선택할 수 있도록 정보 목록을 요약합니다. 반드시 숙지해야 하는 중요
+      정보를 collapsed로 제공하지 않아야 합니다.
+    </mm-text>
+  </mm-text-group>
 
   <dl class="article-aka">
     <dt>a.k.a.</dt>
@@ -101,21 +103,23 @@
           <p>example</p>
         </details>
        -->
-    <mm-text variant="subhead">Best practices</mm-text>
-    <mm-text variant="body">
-      사용자가 반드시 숙지해야 하는 정보를 아코디언으로 요약해서 보여주지 마세요. (참고. Tooltip과
-      같은 맥락)
-    </mm-text>
-    <mm-text variant="body"
-      >한글의 각 글자에서 낱자는 주변 낱자와의 관계에 따라 모양이 조금씩 달라지고, 이런 현상은
-      한자와 가나에서도 나타납니다. 따라서 한글을 바르게 표시하기 위해서는</mm-text
-    >
-    <mm-text variant="body">요약된 타이틀summary은 한 문장으로 간결하게 작성하세요.</mm-text>
-    <mm-text variant="body">
-      닫는 방법의 정의. 도큐먼트를 클릭하면 닫을 것인지? panel을 클릭하면 닫을 것인지? 이렇게 되면
-      내부에 링크 등의 액션을 제공할 수 없다. 다른 아코디언 아이템을 클릭했을 대 닫을 것인지? 본문을
-      클릭하여 닫을 수 있게 되면, 본문에 페이지 링크를 제공할 수 없음.</mm-text
-    >
+    <mm-text-group>
+      <mm-text variant="subhead">Best practices</mm-text>
+      <mm-text variant="body">
+        사용자가 반드시 숙지해야 하는 정보를 아코디언으로 요약해서 보여주지 마세요. (참고. Tooltip과
+        같은 맥락)
+      </mm-text>
+      <mm-text variant="body"
+        >한글의 각 글자에서 낱자는 주변 낱자와의 관계에 따라 모양이 조금씩 달라지고, 이런 현상은
+        한자와 가나에서도 나타납니다. 따라서 한글을 바르게 표시하기 위해서는</mm-text
+      >
+      <mm-text variant="body">요약된 타이틀summary은 한 문장으로 간결하게 작성하세요.</mm-text>
+      <mm-text variant="body">
+        닫는 방법의 정의. 도큐먼트를 클릭하면 닫을 것인지? panel을 클릭하면 닫을 것인지? 이렇게 되면
+        내부에 링크 등의 액션을 제공할 수 없다. 다른 아코디언 아이템을 클릭했을 대 닫을 것인지?
+        본문을 클릭하여 닫을 수 있게 되면, 본문에 페이지 링크를 제공할 수 없음.</mm-text
+      >
+    </mm-text-group>
 
     <!-- 
         <ul>

@@ -1,6 +1,8 @@
 <main class="page">
-  <mm-text variant="title">Checkboxes</mm-text>
-  <mm-text variant="body-large"> 옵션 목록에서 하나 이상의 옵션을 선택합니다. </mm-text>
+  <mm-text-group variant="title">
+    <mm-text variant="title">Checkboxes</mm-text>
+    <mm-text variant="body-large"> 옵션 목록에서 하나 이상의 옵션을 선택합니다. </mm-text>
+  </mm-text-group>
   <section class="component-example">
     <!-- a11y checkgroup not valid -->
     <!-- <legend">checkgroup</legend> -->
@@ -54,53 +56,57 @@
   </section>
 
   <section class="component-guide">
-    <mm-text variant="subhead">Meta problems</mm-text>
-    <mm-text variant="body">
-      label text로 체크박스를 강조하지 마세요. 체크박스의 크기 또는 컨테이너를 강조하여 컴포넌트의
-      내부를 독립적으로 유지하세요.
-    </mm-text>
-    <mm-text variant="body">
-      더 강조된 형태의 체크박스 :: 약관 동의를 위한 패턴에서 전체동의 체크박스와 개별 체크박스를
-      하나의 TermsCheckboxGroup으로 정의할 수 있다. 이 때 개별 체크박스는 약관보기를 위한 링크를
-      포함한다.
-    </mm-text>
-    <mm-text variant="body"> 체크박스를 가로로 정렬하지 마세요. </mm-text>
-    <mm-text variant="body">동사를 포함하는 최대 2단어. choice보다 action에 가깝다.</mm-text>
+    <mm-text-group>
+      <mm-text variant="subhead">Meta problems</mm-text>
+      <mm-text variant="body">
+        label text로 체크박스를 강조하지 마세요. 체크박스의 크기 또는 컨테이너를 강조하여 컴포넌트의
+        내부를 독립적으로 유지하세요.
+      </mm-text>
+      <mm-text variant="body">
+        더 강조된 형태의 체크박스 :: 약관 동의를 위한 패턴에서 전체동의 체크박스와 개별 체크박스를
+        하나의 TermsCheckboxGroup으로 정의할 수 있다. 이 때 개별 체크박스는 약관보기를 위한 링크를
+        포함한다.
+      </mm-text>
 
-    <mm-tag>groupable</mm-tag>
+      <mm-text variant="body"> 체크박스를 가로로 정렬하지 마세요. </mm-text>
+      <mm-text variant="body">동사를 포함하는 최대 2단어. choice보다 action에 가깝다.</mm-text>
+    </mm-text-group>
 
-    <mm-text variant="subhead">CheckboxGroup and MasterCheckbox :: TermsCheckbox</mm-text>
-    <mm-tile variant="tinted">
-      <mm-checkbox
-        class="js-checkall"
-        aira-checked="mixed"
-        aria-controls="1 2"
-        data-indeterminate="true"
-        indeterminate
-      >
-        모두 동의합니다
-      </mm-checkbox>
-      <mm-separator spacing="small"></mm-separator>
-      <mm-group variant="checkbox">
-        <mm-row justifyContent="space-between">
-          <mm-checkbox class="js-check" id="terms" name="terms">
-            이용약관에 동의합니다.
-          </mm-checkbox>
-          <mm-link href="#">이용약관 바로가기</mm-link>
-        </mm-row>
-        <mm-row justifyContent="space-between">
-          <mm-checkbox class="js-check" id="terms" name="terms">
-            이용약관에 동의합니다.
-          </mm-checkbox>
-          <mm-link href="#">이용약관 바로가기</mm-link>
-        </mm-row>
-        <mm-row justifyContent="space-between">
-          <mm-checkbox class="js-check" id="terms" name="terms">
-            이용약관에 동의합니다.
-          </mm-checkbox>
-        </mm-row>
-      </mm-group>
-    </mm-tile>
+    <!-- 임시 text-group -->
+    <mm-text-group>
+      <mm-text variant="subhead">CheckboxGroup and MasterCheckbox :: TermsCheckbox</mm-text>
+      <mm-tile variant="tinted">
+        <mm-checkbox
+          class="js-checkall"
+          aira-checked="mixed"
+          aria-controls="1 2"
+          data-indeterminate="true"
+          indeterminate
+        >
+          모두 동의합니다
+        </mm-checkbox>
+        <mm-separator spacing="small"></mm-separator>
+        <mm-group variant="checkbox">
+          <mm-row justifyContent="space-between">
+            <mm-checkbox class="js-check" id="terms" name="terms">
+              이용약관에 동의합니다.
+            </mm-checkbox>
+            <mm-link href="#">이용약관 바로가기</mm-link>
+          </mm-row>
+          <mm-row justifyContent="space-between">
+            <mm-checkbox class="js-check" id="terms" name="terms">
+              이용약관에 동의합니다.
+            </mm-checkbox>
+            <mm-link href="#">이용약관 바로가기</mm-link>
+          </mm-row>
+          <mm-row justifyContent="space-between">
+            <mm-checkbox class="js-check" id="terms" name="terms">
+              이용약관에 동의합니다.
+            </mm-checkbox>
+          </mm-row>
+        </mm-group>
+      </mm-tile>
+    </mm-text-group>
   </section>
 
   <section class="component-case">

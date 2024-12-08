@@ -40,6 +40,8 @@ import IconButton from '../../components/button/iconButton'
 import Textarea from '../../components/textfield/textarea'
 import ClearButton from '../../components/button/clearButton'
 import SearchField from '../../components/textfield/searchfield'
+import TextGroup from '../../components/text/textGroup'
+import TextList from '../../components/text/textList'
 
 export function defineCustomElement() {
   if ('customElements' in window) {
@@ -71,7 +73,10 @@ export function defineCustomElement() {
     customElements.define('mm-radio', Radio)
 
     customElements.define('mm-tile', Tile)
+
     customElements.define('mm-text', Text)
+    customElements.define('mm-text-group', TextGroup)
+    customElements.define('mm-text-list', TextList)
 
     customElements.define('mm-tablist', Tablist)
     customElements.define('mm-tab', Tab)

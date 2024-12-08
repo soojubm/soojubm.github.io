@@ -1,11 +1,11 @@
 <main class="page">
-  <header>
+  <mm-text-group variant="title">
     <mm-text variant="title">Avatars</mm-text>
     <mm-text variant="body-large">
       개체(유저, 회사, 프로젝트 등)를 대표하는 시각 정보입니다. 정보 더미의 주체로서 인접한 정보
       더미 중 최상위 위계<span hidden>(시각적인 위계가 아님)</span>를 갖습니다.
     </mm-text>
-  </header>
+  </mm-text-group>
   <section class="component-example">
     <mm-group variant="">
       <mm-avatar variant="secondary" size="huge" default="true" badge="true"></mm-avatar>
@@ -32,21 +32,15 @@
   </section>
 
   <section class="component-guide">
-    <ul class="checklist">
-      <li>
-        단독으로 쓰일 때는 aria-label이 필요할 수 있고, 텍스트와 함께 쓰일 때의 menuitem 같은
-        컴포넌트.
-      </li>
-      <li>
-        medium과 small은 두 줄의 텍스트 노드와 함께 사용할 수 없다. align-items:center 로 정렬된다.
-      </li>
-      <li>아웃라인 아바타는 클릭할 수 없다.</li>
-      <li>
-        제품이 없는데 디테일을 정의하려 하지 말자. 도메인에 맞게 작은 단위의 컴포넌트를 조합해야
-        한다.
-      </li>
-      <li>fallback 정의</li>
-    </ul>
+    <mm-text-list
+      texts='[
+        "단독으로 쓰일 때는 aria-label이 필요할 수 있고, 텍스트와 함께 쓰일 때의 menuitem 같은 컴포넌트.,
+        "medium과 small은 두 줄의 텍스트 노드와 함께 사용할 수 없다. align-items:center 로 정렬된다.",
+        "아웃라인 아바타는 클릭할 수 없다.",
+        "제품이 없는데 디테일을 정의하려 하지 말자. 도메인에 맞게 작은 단위의 컴포넌트를 조합해야 한다.",
+        "fallback 정의"
+      ]'
+    ></mm-text-list>
 
     <mm-tile>
       <mm-group>
@@ -148,43 +142,6 @@
       <mm-text class="mutiual">
         내가 팔로우하는 사용자 중에는 팔로워가 없습니다. (twitter)
       </mm-text>
-    </mm-tile>
-    <mm-tile variant="flat" size="medium">
-      <mm-entity
-        label="수줍이"
-        description="soojubm@gmail.com"
-        description2="010 3121 7045"
-        description="UI Designer"
-      >
-        <mm-avatar slot="avatar" variant="secondary" size="large" default="true"></mm-avatar>
-        <!-- <mm-tag slot="tag" variant="primary"></mm-tag> -->
-      </mm-entity>
-      <div style="margin: var(--space-2) 0 0">
-        <mm-button>내 프로필 관리</mm-button>
-      </div>
-      <div style="position: absolute; right: var(--space-4); top: var(--space-4)">
-        <mm-avatar variant="secondary" size="large">🐸</mm-avatar>
-      </div>
-      <mm-separator></mm-separator>
-      <mm-group variant="menuitem">
-        <mm-menuitem label="어둡게 보기" class="js-darkmode" aria-label="change theme">
-          <mm-avatar slot="avatar" variant="tertiary" icon="half-moon"> </mm-avatar>
-          <mm-switch slot="action"></mm-switch>
-        </mm-menuitem>
-        <mm-menuitem label="고객센터 및 도움말">
-          <mm-avatar slot="avatar" variant="tertiary" icon="megaphone"> </mm-avatar>
-        </mm-menuitem>
-      </mm-group>
-      <mm-separator></mm-separator>
-      <mm-menuitem label="로그아웃">
-        <mm-avatar slot="avatar" variant="tertiary" icon="log-out"></mm-avatar>
-      </mm-menuitem>
-      <mm-separator></mm-separator>
-      <mm-group>
-        <mm-link href="#">개인정보처리방침</mm-link>
-        <i class="icon-bullet"></i>
-        <mm-link href="#">서비스 약관</mm-link>
-      </mm-group>
     </mm-tile>
   </section>
 </main>

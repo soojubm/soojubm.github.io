@@ -1,6 +1,8 @@
 <main class="page">
-  <mm-text variant="title">Bars</mm-text>
-  <mm-text variant="body-large"> 페이지 헤더 .</mm-text>
+  <mm-text-group variant="title">
+    <mm-text variant="title">Bars</mm-text>
+    <mm-text variant="body-large"> 페이지 헤더 .</mm-text>
+  </mm-text-group>
 
   <section class="component-example">
     <nav class="bottombar">
@@ -63,25 +65,28 @@
   </section>
 
   <section class="component-guide">
-    <ul class="checklist">
-      <li>
-        언제 바텀 네비게이션과 햄버거 메뉴를 혼용할 수 있나요? Global Navigation. top and bottom.
-      </li>
-      <li>커머스에서 카테고리.</li>
-      <li>
-        bottom navigation의 label은 예외적으로 10px. 예외 케이스는 어디에서 정의하는 것이 좋을까?
-      </li>
-    </ul>
+    <mm-text-group>
+      <mm-text variant="subhead">Editorial</mm-text>
+      <mm-text variant="body">
+        <del>최대 8자.</del> 워치나 폴더블, 브라우저 폰트 확대하면 말줄임표 생길 수 밖에 없음.
+      </mm-text>
+    </mm-text-group>
+    <mm-text-group>
+      <mm-text variant="subhead">Changelog</mm-text>
+      <mm-text variant="body">
+        2401 뒤로가기 버튼이 chip과 달라야 콘텐츠와 제목 영역의 위계가 잡힘. 새로운 칩 추가.
+      </mm-text>
+      <mm-text variant="body"> 231230 backSlot 제거 </mm-text>
+    </mm-text-group>
 
-    <mm-text variant="subhead">Editorial</mm-text>
-    <mm-text variant="body">
-      <del>최대 8자.</del> 워치나 폴더블, 브라우저 폰트 확대하면 말줄임표 생길 수 밖에 없음.
-    </mm-text>
-    <mm-text variant="subhead">Changelog</mm-text>
-    <mm-text variant="body">
-      2401 뒤로가기 버튼이 chip과 달라야 콘텐츠와 제목 영역의 위계가 잡힘. 새로운 칩 추가.
-    </mm-text>
-    <mm-text variant="body"> 231230 backSlot 제거 </mm-text>
+    <mm-text-list
+      texts='[
+    "언제 바텀 네비게이션과 햄버거 메뉴를 혼용할 수 있나요? Global Navigation. top and bottom.",
+    "커머스에서 카테고리.",
+    "bottom navigation의 label은 예외적으로 10px. 예외 케이스는 어디에서 정의하는 것이 좋을까?"
+    ]'
+    >
+    </mm-text-list>
 
     <div class="component-references">
       <mm-text variant="subhead">References</mm-text>

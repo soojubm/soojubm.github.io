@@ -1,9 +1,11 @@
 <main class="page">
-  <mm-text variant="title">Links</mm-text>
-  <mm-text variant="body-large"
-    >사용자 여정 목적지. 페이지 이동. destination that can be bookmarked. 정보 확장 기능은 따로
-    정의해야 함.</mm-text
-  >
+  <mm-text-group variant="title">
+    <mm-text variant="title">Links</mm-text>
+    <mm-text variant="body-large"
+      >사용자 여정 목적지. 페이지 이동. destination that can be bookmarked. 정보 확장 기능은 따로
+      정의해야 함.</mm-text
+    >
+  </mm-text-group>
 
   <dl class="article-aka">
     <dt>a.k.a.</dt>
@@ -52,17 +54,19 @@
   </section>
 
   <section class="component-guide">
-    <ul class="checklist">
+    <mm-text-list texts="[]">
       <li>
         Link가 문단과 함께 사용되면 line-height-large가 되어야 한다. 링크가 word와 함께 사용될 수
         있는가? 블라블라? + ~하기 패턴.
       </li>
       <li>text button과의 차이. Link는 항상 텍스트 단락과 함께 사용합니다.</li>
-    </ul>
+    </mm-text-list>
 
-    <mm-text variant="subhead">Avoid disabled buttons</mm-text>
-    <mm-text variant="body">
-      Let the user send incomplete form and use error messages to explain what is wrong.
-    </mm-text>
+    <mm-text-list>
+      <mm-text variant="subhead">Avoid disabled buttons</mm-text>
+      <mm-text variant="body">
+        Let the user send incomplete form and use error messages to explain what is wrong.
+      </mm-text>
+    </mm-text-list>
   </section>
 </main>

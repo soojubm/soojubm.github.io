@@ -331,7 +331,7 @@ mark {color:inherit;} mark::before {content: " [강조 시작] ";opacity:0;posit
 .skip-link:focus {display:block;height:50px;line-height:50px;font-size:14px;}
 
 /* // box-shadow:inset 0 1px 2px #F3F6F9,0 1px 0.5px rgba(229, 234, 242, 0.6); */
-.theme-toggle {width:var(--size-medium);height:var(--size-medium);background:var(--color-background-weak);border-radius:var(--radius);overflow:hidden;position:relative;}
+.theme-toggle {width:var(--size-medium);height:var(--size-medium);overflow:hidden;position:relative;}
 .day {display:flex;align-items:center;justify-content:center;width:100%;height:100%;position:absolute;top:0;transition:top .2s ease .3s;}
 .night {display:flex;align-items:center;justify-content:center;width:100%;height:100%;position:absolute;top:var(--size-medium);transition:top .2s ease 0s;}
 [data-theme=dark] .day {top:var(--size-medium);transition-delay:0s;}
@@ -399,25 +399,6 @@ mark {color:inherit;} mark::before {content: " [강조 시작] ";opacity:0;posit
   50% {transform:translateY(.125rem)}
   100% {transform:translateY(0)}
 }
-
-
-.checklist {padding-left:0;}
-.checklist li {list-style: none;
-  margin-left:0;padding-left: 1.125rem;position: relative;}
-.checklist li:before {
-  content: '';
-  position: absolute;
-  top: 6px;
-  left: 3px;
-  width: 4px;
-  height: 9px;
-  border: 1px solid var(--color-background-strong);
-  border-width: 0 1px 1px 0;
-  transform: rotate(37.5deg);
-}
-
-
-
 
 
 /* newneek */
