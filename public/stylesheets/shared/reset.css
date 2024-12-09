@@ -338,16 +338,6 @@ mark {color:inherit;} mark::before {content: " [강조 시작] ";opacity:0;posit
 [data-theme=dark] .night {top:0;transition-delay:.3s;}
 
 
-/* TODO temp */
-.tile {
-  display: block;
-  padding: var(--space-4);
-  border: var(--border);
-  border-radius: var(--radius);
-  box-sizing: border-box;
-  background: var(--color-background);
-  position: relative;
-}
 
 /* // hover-item */
 .is-hovered {
@@ -418,3 +408,22 @@ mark {color:inherit;} mark::before {content: " [강조 시작] ";opacity:0;posit
 
 
 
+
+
+
+.columns {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 기본 4개의 칼럼 */
+  gap: var(--space-4);
+}
+@media (max-width: 1200px) {
+  .columns {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .columns {
+    grid-template-columns: 1fr;
+  }
+}

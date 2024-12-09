@@ -8,26 +8,28 @@
   </style>
   <header class="post-head">
     <!-- <header class="post-head js-post-head"> -->
-    <a class="post-head-category" href="#post">Murmur</a>
-    <mm-text variant="title" style="line-height: 1.4; margin-left: -2px">
-      Pinterest announces industry-first body type technology to increase body representation on
-      platform
-    </mm-text>
-    <mm-text variant="body-large" class="post-head-kicker">
-      Pinterest announces industry-first body type technology to increase body representation on
-      platform
-    </mm-text>
-    <div style="height: 2rem"></div>
-    <address>
-      <mm-menuitem label="수줍이" description="Youtube Subscriber">
-        <mm-avatar slot="avatar" size="medium" default="true"></mm-avatar>
-      </mm-menuitem>
-      <!-- <div slot="text">
+    <mm-text-group variant="title">
+      <mm-link href="#post">Murmur</mm-link>
+      <mm-text variant="title" style="margin-left: -2px">
+        Pinterest announces industry-first body type technology to increase body representation on
+        platform
+      </mm-text>
+      <mm-text variant="body-large" class="post-head-kicker">
+        Pinterest announces industry-first body type technology to increase body representation on
+        platform
+      </mm-text>
+      <div>
         <time class="post-head-dateline">2022년 4월 9일</time>
         <i class="icon-bullet"></i>
         <span class="post-head-readingtime">약 40초 분량</span>
         <div class="post-head-progress" role="progressbar" aria-valuenow=""></div>
-      </div> -->
+      </div>
+    </mm-text-group>
+    <div style="height: 2rem"></div>
+    <address>
+      <mm-menuitem label="수줍이" description="Youtube Subscriber">
+        <mm-avatar slot="avatar" size="large" default="true"></mm-avatar>
+      </mm-menuitem>
     </address>
   </header>
 
@@ -105,17 +107,15 @@
       에셋을 변형하지 않고 구별자를 추가합니다.
     </mm-text>
 
-    <blockquote>
       <mm-text-list
-        texts="[
-        '아이콘은 svg, 이미지는 png를 사용하고 png는 추가 압축으로 용량을 줄입니다.',
-        '영문 소문자와 숫자, 언더스코어로 네이밍합니다.',
-        '글로벌과 로컬을 prefix로 구분하는데, 글로벌에는 icon_, 로컬에는, parentName_',
-        '색상과 사이즈를 suffix로 구분하는데,'
-      ]"
+        texts='[
+        "아이콘은 svg, 이미지는 png를 사용하고 png는 추가 압축으로 용량을 줄입니다.",
+        "영문 소문자와 숫자, 언더스코어로 네이밍합니다.",
+        "글로벌과 로컬을 prefix로 구분하는데, 글로벌에는 icon_, 로컬에는, parentName_",
+        "색상과 사이즈를 suffix로 구분하는데,"
+      ]'
       >
       </mm-text-list>
-    </blockquote>
   </section>
 
   <mm-group variant="chip">
@@ -194,12 +194,12 @@
       한 달 동안 무료로 모든 콘텐츠를 체험해보세요. 언제든 해지하실 수 있어요.
     </mm-text>
     <mm-text-list
-      texts="[
-        'Medium의 모든 회원 전용 스토리에 액세스하세요.',
-        '자신에게 중요한 주제에 대해 더 자세히 알아보세요.',
-        '수천 가지 질문에 답하는 심층 기사를 받아보세요.',
-        '개인적, 직업적 목표를 달성하세요'
-      ]"
+      texts='[
+        "Medium의 모든 회원 전용 스토리에 액세스하세요.",
+        "자신에게 중요한 주제에 대해 더 자세히 알아보세요.",
+        "수천 가지 질문에 답하는 심층 기사를 받아보세요.",
+        "개인적, 직업적 목표를 달성하세요"
+      ]'
     >
     </mm-text-list>
     <mm-button variant="primary" size="large"> 멤버십 가입하기 </mm-button>

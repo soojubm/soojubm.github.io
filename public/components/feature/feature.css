@@ -1,5 +1,5 @@
 
-.feature-item {display:flex;flex-direction:column;width:100%;max-width:320px;position:relative;z-index:1;}
+.feature-item {display:flex;flex-direction:column;width:100%;position:relative;z-index:1;}
 .feature-item-avatar {display:block;margin:0 0 var(--space-2) 0;font-size:2rem;position:relative;}
 /* .feature-item-title {margin: 0 0 var(--space-3);} */
 .feature-item-description {margin: var(--space-2) 0 ;}

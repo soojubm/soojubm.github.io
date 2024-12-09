@@ -2,7 +2,6 @@
 // line-heght로 리셋스타일에 종속되지 않도록 함. + block
 // height 테이블 내에서 세로 정렬에 필요. 2줄 이상 레이블
 // nextjs + css module에서 type selector 이슈 */
-  /* TODO: 체크 박스 내부에 링크 태그가 있으면  */
 
 
 
@@ -35,7 +34,6 @@
   gap: var(--space-2);
   /* line-height: var(--checkbox-size); */
 
-  /* 2줄 TODO:  minHeight */
   /* display: flex;
   flex-direction: column;
   justify-content: center;

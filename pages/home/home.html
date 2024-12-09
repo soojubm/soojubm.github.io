@@ -3,9 +3,9 @@
     주의. 이 프로젝트는 공유나 공개를 목적으로 만들어진 것이 아니며, 코드 베이스에서 유효한 디자인
     시스템과 디자인 시스템 문서의 best practices를 찾는 실험의 과정이라 완결성이나 완성도가 떨어질
     수 있습니다. 이 문서는 특정 제품(서비스)을 위한 디자인 시스템을 기술하지도 않습니다. 몇 가지
-    원칙을 기반으로 기술하고 있지만, 절대로 디자인 시스템 자체의 보편성을 담보하는 것도 아닙니다.
+    원칙을 기반으로 기술하고 있지만 디자인 시스템 보편성을 담보하는 것도 아닙니다.
     브랜드, 제품의 규모, 팀의 구성, 구성원의 숙련도 등을 충분히 고려하여 점진적으로 확장하세요. 이
-    문서 또한, 정의와 재정의, 무수한 번복으로 만들어지고 있습니다.
+    문서는, 정의와 재정의, 무수한 번복으로 만들어지고 있습니다.
   </p>
   <!-- <p>책임 과도화, 사용 혼란, 의도 불명확</p> -->
   <!-- <p>stack 컴포넌트의 과도한 책임으로 중복 코드를 줄일 수는 있으나, 사용자(개발자)가 사용 목적을 직관적으로 이해하기 어려울 수 있다. 그리고 컴포넌틔의 역할이 확대되면 복잡하고 관리가 어려워진다. 코드 가독성이 떨어진다. 결국 Stack 컴포넌트의 책임이 너무 커진다. 이게 말이 안 되는 게 결국 라디오그룹, 체크박스그룹이 가져야 하는 로직이 있음. variant보다 더 추상적인 layout.</p> -->
@@ -113,6 +113,7 @@
       </ul>
     </mm-menuitem>
   </section> -->
+  <div class="columns">
     <section class="feeds" role="feed" aria-busy="false" style="max-width: 400px">
       <!-- <aside
         style="
@@ -151,7 +152,7 @@
             <mm-text variant="body">
               Monotonectally productivate progressive human capital without user friendly portals.
               Globally benchmark top-line ideas with distributed catalysts for change. Authoritatively
-              restore ubiquitous partnerships vis-a-vis <mm-link href="#feed">synergistic models</ㅡ>.
+              restore ubiquitous partnerships vis-a-vis <mm-link href="#feed">synergistic models</mm-link>.
             </mm-text>
             <mm-text-list texts='[
             "원활한 피드 탐색 경험을 위해 피드의 콘텐츠를 일부 생략해서 보여줄 수 있다.",
@@ -184,8 +185,9 @@
             </mm-tile>
             <div style="height: var(--space-4)"></div>
             <mm-group class="feed-reaction">
-              <!-- TODO  -->
-              <mm-button> 💕 119 </mm-button>
+              <mm-menuitem label="192" roloe="button">
+                <mm-avatar slot="avatar" icon="heart"> </mm-avatar>
+              </mm-menuitem>
             </mm-group>
           </div>
         </article>
@@ -297,56 +299,48 @@
       </mm-tile>
     </section>
 
+    <section style="max-width: 400px">
+      <mm-titlebar class="js-titlebar" heading="알림"> </mm-titlebar>
+      <mm-group
+        variant="button"
+        class="notification-filter"
+        style="margin: var(--space-4) 0 var(--space-3)"
+      >
+        <mm-button status="active">모두</mm-button>
+        <mm-button>읽지않음</mm-button>
+      </mm-group>
 
-  <!-- <button aria-haspopup="true" aria-expanded="false">trigger</button> -->
-  <section style="max-width: 400px">
-    <mm-titlebar class="js-titlebar" heading="알림"> </mm-titlebar>
-    <mm-group
-      variant="button"
-      class="notification-filter"
-      style="margin: var(--space-4) 0 var(--space-3)"
-    >
-      <mm-button status="active">모두</mm-button>
-      <mm-button>읽지않음</mm-button>
-    </mm-group>
+      <div style="display: flex; flex-direction: column; gap: 0.75rem">
+        <mm-tile variant="elevated" size="small">
+          <mm-menuitem label="응암동 주간 인기글" description="5일 전">
+            <mm-avatar slot="avatar" default="true"></mm-avatar>
+          </mm-menuitem>
+          <mm-text truncated="true">
+            '송명섭 막걸리 6도 750m...' 외 1개 상품이 오늘 도착예정입니다~
+          </mm-text>
+        </mm-tile>
+        <mm-tile variant="elevated" size="small">
+          <mm-menuitem label="오늘의 주요 종목 종가">
+            <mm-avatar slot="avatar" default="true"></mm-avatar>
+          </mm-menuitem>
+          <mm-text> '송명섭 막걸리 6도 750m...' 외 1개 상품이 오늘 도착예정입니다~ </mm-text>
+          <mm-text-list texts='[
+            "popover: 전체 알림 목록을 볼 수 있는 페이지 필요. 모두보기 링크 버튼 필요.",
+            "modal: 전체 알림 목록을 볼 수 있는 페이지 불필요. 모달에서 infinite scroll이나 more load"
+            "개별 알림 액션: 읽음-링크/삭제. 알림의 설정.",
+            "MVP를 위한 팁: 전체를 하나의 클릭 영역으로 정의하고, 콘텐츠와 작성자를 분리하지 않고 하나의 텍스트 더미."
+          ]'>
+          </mm-text-list>
+        </mm-tile>
+      </div>
 
-    <!-- TODO list는 결국 stack이다. -->
-    <div style="display: flex; flex-direction: column; gap: 0.75rem">
-      <mm-tile variant="elevated" size="small">
-        <mm-menuitem label="응암동 주간 인기글" description="5일 전">
-          <mm-avatar slot="avatar" default="true"></mm-avatar>
-        </mm-menuitem>
-        <mm-text truncated="true">
-          '송명섭 막걸리 6도 750m...' 외 1개 상품이 오늘 도착예정입니다~
-        </mm-text>
-      </mm-tile>
-      <mm-tile variant="elevated" size="small">
-        <mm-menuitem label="오늘의 주요 종목 종가">
-          <mm-avatar slot="avatar" default="true"></mm-avatar>
-        </mm-menuitem>
-        <mm-text> '송명섭 막걸리 6도 750m...' 외 1개 상품이 오늘 도착예정입니다~ </mm-text>
-        <mm-text-list texts='[
-          "popover: 전체 알림 목록을 볼 수 있는 페이지 필요. 모두보기 링크 버튼 필요.",
-          "modal: 전체 알림 목록을 볼 수 있는 페이지 불필요. 모달에서 infinite scroll이나 more load"
-          "개별 알림 액션: 읽음-링크/삭제. 알림의 설정.",
-          "MVP를 위한 팁: 전체를 하나의 클릭 영역으로 정의하고, 콘텐츠와 작성자를 분리하지 않고 하나의 텍스트 더미."
-        ]'>
-        </mm-text-list>
-      </mm-tile>
-    </div>
-
-    <footer style="margin: var(--space-4) 0 0 0">
-      <mm-link>더 보기</mm-link>
-    </footer>
-    <!-- <mm-result label="최근 알림 메세지가 없습니다."></mm-result> -->
-  </section>
+      <footer style="margin: var(--space-4) 0 0 0">
+        <mm-link>더 보기</mm-link>
+      </footer>
+      <!-- <mm-result label="최근 알림 메세지가 없습니다."></mm-result> -->
+    </section>
   </div>
 
-
-  <!-- <p>
-    . 그 양반이 추천하는 behavior, visual style 등으로 나누어 보았다가,
-    foundation 의 feature? 중심으로 설명하고 그것에 따라 인덱스를 제공하는 것이 더 좋다는 판단.
-  </p> -->
 
   <!-- To simplify is to clarify -->
   <!-- overall consistency and design and development efficiency -->
@@ -687,11 +681,7 @@
     <li>이미지 가이드.반응형 이미지 사용법. 일단 그냥 2배수로 크기 조절. 가장 간단.</li>
   </ul> -->
 
-  <!-- <div class="hero-obj">
-    <div class="hero-obj1"></div>
-    <div class="hero-obj2"></div>
-    <div class="hero-obj3"></div>
-  </div> -->
+
   <!-- <div style="position: relative">
     <div
       class="circle"

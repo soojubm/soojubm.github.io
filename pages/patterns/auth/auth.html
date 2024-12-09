@@ -1,147 +1,7 @@
 <main class="page">
-  <blockquote>
-    <mm-text>cta bottom fixed 키패드 이슈. 입력 필드가 많아지고 키보드가 올라올 때</mm-text>
-    <mm-text
-      >비밀번호 확인 필드가 없는 경우 시각적인 벨리데이션이 조금 더 유효. 모바일에서는 보여주기도
-      힘듬.</mm-text
-    >
-
-    <!-- <mm-text>
-      이전 인증번호는 유효하지 않기 때문에 최신 인증번호를 알려줄 수 있으면 살짝 좋겠지만 중요하진
-      않은 듯...
-    </mm-text> -->
-  </blockquote>
-
-  <section class="component-references">
-    <mm-link
-      href="https://support.google.com/accounts/answer/32040?visit_id=637702064644854938-965259796&p=pw_dont_reuse&hl=ko&rd=1"
-    >
-      구글의 비밀번호 만들기 팁꾸
-    </mm-link>
-  </section>
-
-  <section>
-    <div class="validation-item validation1">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1.5"
-        viewBox="0 0 24 24"
-        style="width: 20px; height: 20px"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"
-        ></path>
-      </svg>
-      <span class="text-sm">8 - 12 characters / 8 characters minimum</span>
-    </div>
-    <div class="validation-item validation2">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1.5"
-        viewBox="0 0 24 24"
-        style="width: 20px; height: 20px"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"
-        ></path>
-      </svg>
-      <span class="text-sm">One lowercase character / One uppercase character / One Number</span>
-    </div>
-    <div class="validation-item validation3">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="currentColor"
-        viewBox="0 0 24 24"
-        style="width: 20px; height: 20px"
-      >
-        <path
-          d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
-          fill-rule="evenodd"
-          clip-rule="evenodd"
-        ></path>
-      </svg>
-      <span class="text-sm">One special character</span>
-    </div>
-    <div class="validation-item validation4">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1.5"
-        viewBox="0 0 24 24"
-        style="width: 20px; height: 20px"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"
-        ></path>
-      </svg>
-      <span class="text-sm">동일한 문자 6개 연속</span>
-    </div>
-  </section>
-  <div class="textfield">
-    <label class="textfield-label" for="signup-password-confirm">비밀번호 확인</label>
-    <input
-      class="textfield-input js-password-test"
-      type="password"
-      id="signup-password-confirm"
-      placeholder="6자리 이상"
-    />
-    <!-- reveal button / password field 한정? 또는 icon button의 확장 -->
-    <button class="textfield-reveal js-view-password" type="button">비밀번호 보기</button>
-  </div>
-
-  <footer>
-    <p class="text-xs text-scale-900 sm:mx-auto sm:max-w-sm">
-      By continuing, you agree to XXXXXXXX's
-      <mm-link class="underline hover:text-scale-1100" href="https://supabase.com/terms"
-        >Terms of Service</mm-link
-      >
-      and
-      <mm-link class="underline hover:text-scale-1100" href="https://supabase.com/privacy"
-        >Privacy Policy</mm-link
-      >, and to receive periodic emails with updates.
-    </p>
-  </footer>
-  <style>
-    .validation-item {
-      display: flex;
-      align-items: center;
-      gap: var(--space-2);
-    }
-  </style>
-
-  <style>
-    .is-valid1 .validation1 {
-      color: red;
-    }
-    .is-valid2 .validation2 {
-      color: red;
-    }
-    .is-valid3 .validation3 {
-      color: red;
-    }
-    .is-valid4 .validation4 {
-      color: red;
-    }
-    .is-valid5 .validation5 {
-      color: red;
-    }
-  </style>
-
   <form class="authentication" name="login" action="" method="" novalidat="true">
     <!-- 제목 중간보다 큰 폰트가 필요해서 별도 컴포넌트 -->
     <header class="authentication-head">
-      <!-- <mm-avatar size="medium"></mm-avatar> -->
       <h2 class="authentication-head-title">로그인</h2>
       <mm-text variant="body" class="authentication-head-description">
         Lorem Ipsum is simply dummy text.
@@ -176,7 +36,6 @@
 
     <menu class="authentication-foot">
       <mm-button variant="primary" size="large" isfullwidth="true" type="submit">로그인</mm-button>
-      <!-- TODO: 이메일이 없으신가요? 와 동일한 패턴 -->
       <p
         data-temp="Need an account?"
         style="display: flex; justify-content: center; gap: var(--space-2); margin: 1.5rem 0 0"
@@ -237,6 +96,7 @@
 
     <fieldset class="authentication-fieldset">
       <legend class="signup-terms-title" hidden>약관 동의</legend>
+      <div style="height: var(--space-2)"></div>
       <strong>
         회원가입 시 <mm-link href="#">이용약관</mm-link>과
         <mm-link href="#">개인정보처리방침</mm-link>에 동의하는 것으로 간주합니다.

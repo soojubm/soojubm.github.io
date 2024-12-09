@@ -14,39 +14,32 @@
   </dl>
 
   <section class="component-example">
-    <!-- <div style="width: 14px">
-        <svg viewBox="0 0 10 10">
-          <rect height="7" width="1" y="1" x="4" />
-          <rect height="1" width="7" y="4" x="1" />
-        </svg>
-      </div> -->
     <mm-text variant="subhead">
       Frequently asked questions
       <abbr title="Frequently asked questions" hidden>FAQ</abbr>
     </mm-text>
-    <section class="tile-flat" style="margin: var(--space-after-subhead) 0 0">
-      <article class="accordion js-accordion is-active">
-        <button
-          class="accordion-title"
-          aria-expanded="false"
-          role="heading"
-          aria-label="3"
-          aria-controls="1"
-          aria-disable="true"
-        >
-          <mm-icon name="arrow-separate-vertical"></mm-icon>
-          탈퇴하고 싶어요.
-        </button>
-        <div class="accordion-panel">
-          <p>
-            Tying state and its visual representation together is a very good thing. It ensures that
-            state changes are communicated interoperably. Do not listen to those who advocate the
-            absolute separation of HTML semantics and CSS styles. Form should follow function, and
-            directly is most reliable.
-          </p>
-          <p>[aria-expanded] rect { fill: currentColor; }</p>
-          <p>toggle-section open="false"s</p>
-          <pre>
+    <article class="accordion js-accordion is-active">
+      <button
+        class="accordion-title"
+        aria-expanded="false"
+        role="heading"
+        aria-label="3"
+        aria-controls="1"
+        aria-disable="true"
+      >
+        <mm-icon name="arrow-separate-vertical"></mm-icon>
+        탈퇴하고 싶어요.
+      </button>
+      <div class="accordion-panel">
+        <p>
+          Tying state and its visual representation together is a very good thing. It ensures that
+          state changes are communicated interoperably. Do not listen to those who advocate the
+          absolute separation of HTML semantics and CSS styles. Form should follow function, and
+          directly is most reliable.
+        </p>
+        <p>[aria-expanded] rect { fill: currentColor; }</p>
+        <p>toggle-section open="false"s</p>
+        <pre>
                 (function() {
                   const headings = document.querySelectorAll('h2')
                 
@@ -63,35 +56,36 @@
                   })
                 })()
               </pre
-          >
-          <footer class="faq-item-reaction">
-            <p class="faq-reaction-title reaction-prompt">이 답변이 도움이 되었나요?</p>
-          </footer>
-        </div>
-      </article>
-      <article
-        class="accordion js-accordion is-active"
-        role="region"
-        aria-labelledby="region-heading"
-      >
-        <button class="accordion-title" role="heading" id="region-heading" aria-expanded="false">
-          <mm-icon name="arrow-right-circle-solid"></mm-icon>
-          임시 아이콘입니다.
-        </button>
-        <div class="accordion-panel">
-          <p>
-            모든 국민은 건강하고 쾌적한 환경에서 생활할 권리를 가지며, 국가와 국민은 환경보전을
-            위하여 노력하여야 한다.
-          </p>
-        </div>
-      </article>
-    </section>
+        >
+        <footer class="faq-item-reaction">
+          <p class="faq-reaction-title reaction-prompt">이 답변이 도움이 되었나요?</p>
+        </footer>
+      </div>
+    </article>
+    <article
+      class="accordion js-accordion is-active"
+      role="region"
+      aria-labelledby="region-heading"
+    >
+      <button class="accordion-title" role="heading" id="region-heading" aria-expanded="false">
+        <mm-icon name="arrow-right-circle-solid"></mm-icon>
+        임시 아이콘입니다.
+      </button>
+      <div class="accordion-panel">
+        <p>
+          모든 국민은 건강하고 쾌적한 환경에서 생활할 권리를 가지며, 국가와 국민은 환경보전을 위하여
+          노력하여야 한다.
+        </p>
+      </div>
+    </article>
   </section>
 
   <section class="component-props">
     <mm-text variant="subhead">Props</mm-text>
     <dl>
       <dt>summary</dt>
+      <dd>string</dd>
+      <dt>content</dt>
       <dd>string</dd>
     </dl>
   </section>

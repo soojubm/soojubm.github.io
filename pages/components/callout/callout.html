@@ -83,11 +83,19 @@
         맥락이 복잡하지 않으므로, \"이미지가 담긴 포스팅이 완료되었습니다.\" 등의 문장형으로 길게
         설명할 필요 없이, \"제출 완료!\"같은 단일 단어로 대체할 수 있다.
       </mm-text>
+      <mm-text-list
+        texts='[
+  "with Toast. toast=>snackbar(withAction)",
+  "링크를 제공할 것인가?",
+  "게임에서 파티 탈퇴와 같이 직접 실행하지 않은, 연속적인 결과가 발생하는 경우 여러 개가 필요.",
+  "역할에 따라 input feedback과 callout을 분리해야 한다.",
+  "아이콘으로 callout의 맥락을 구분할 수 있다. 아이콘이 없는 callout은 단순 Tile 컴포넌트처럼 보일 수 있다."
+  ]'
+      >
+      </mm-text-list>
     </mm-text-group>
 
-    <mm-text-group>
-      <mm-text variant="subhead">with Toast. toast=>snackbar(withAction)</mm-text>
-      <!--
+    <!--
       Icon: Informs users of the kind of notification at a glance.
       Title: Gives users a quick overview of the notification.
       Message (1optional): Provides additional detail and actionable steps for the user to take.
@@ -95,15 +103,5 @@
       Close button (1optional): Closes the notification.
       Time stamp (1optional): Shows the time the toast notification was sent.
       -->
-    </mm-text-group>
-    <mm-text-list
-      texts='[
-  "링크를 제공할 것인가?",
-  "게임에서 파티 탈퇴와 같이 직접 실행하지 않은, 연속적인 결과가 발생하는 경우 여러 개가 필요.",
-  "역할에 따라 input feedback과 callout을 분리해야 한다.",
-  "아이콘으로 callout의 맥락을 구분할 수 있다. 아이콘이 없는 callout은 단순 Tile 컴포넌트처럼 보일 수 있다."
-  ]'
-    >
-    </mm-text-list>
   </section>
 </main>

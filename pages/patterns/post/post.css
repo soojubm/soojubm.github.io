@@ -1,7 +1,6 @@
 .post {padding:40px var(--grid-margin);}
 /* // img - margin */
 .post-head {position:relative;}
-.post-head-category {display:flex;align-items:center;position:relative;}
 .post-head-dateline {}
 .post-head-readingtime {}
 .post-head-progress {display:none;height:2px;background:var(--color-primary);border-radius:var(--radius);position:absolute;bottom:0;}

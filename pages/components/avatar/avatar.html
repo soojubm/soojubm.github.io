@@ -32,13 +32,21 @@
   </section>
 
   <section class="component-guide">
+    <mm-text-group>
+      <mm-text variant="subhead">Meta problems</mm-text>
+      <mm-text variant="body"> fallback </mm-text>
+    </mm-text-group>
+    <mm-text-group>
+      <mm-text variant="subhead">Platform problems</mm-text>
+      <mm-text variant="body">아웃라인 아바타는 클릭할 수 없다.</mm-text>
+      <mm-text variant="body">
+        medium과 small은 두 줄의 텍스트 노드와 함께 사용할 수 없다. align-items:center 로 정렬된다.
+      </mm-text>
+    </mm-text-group>
     <mm-text-list
       texts='[
         "단독으로 쓰일 때는 aria-label이 필요할 수 있고, 텍스트와 함께 쓰일 때의 menuitem 같은 컴포넌트.,
-        "medium과 small은 두 줄의 텍스트 노드와 함께 사용할 수 없다. align-items:center 로 정렬된다.",
-        "아웃라인 아바타는 클릭할 수 없다.",
-        "제품이 없는데 디테일을 정의하려 하지 말자. 도메인에 맞게 작은 단위의 컴포넌트를 조합해야 한다.",
-        "fallback 정의"
+        "제품이 없는 상황에서 디테일을 정의하려 하지 말자. 실무에서는 도메인에 맞게 작은 단위의 컴포넌트를 조합하는 도메인 컴포넌트가 필요하다.",
       ]'
     ></mm-text-list>
 

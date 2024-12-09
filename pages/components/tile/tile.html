@@ -48,39 +48,27 @@
   <section class="component-guide">
     <mm-text-group>
       <mm-text variant="subhead">Meta problems</mm-text>
-      <mm-text-list texts="[]">
-        <li>
-          모든 contentbox가 tile인 것은 어떤가? transparent tile 을 정의한다면, 빈 태그나 빈
-          컴포넌트(Box, Row)와는 어떤 변별이 있나? row는 레이아웃 컴포넌트, tile은 형태
-          컴포넌트이다.
-        </li>
-        <li>이 컴포넌트는 조금 더 유연한 방식이 되어도 좋겠다. inset을 nuber 타입으로 정의하는.</li>
-        <li>
-          content area with padding. 또는 마이너스 마진을 가지는 컨텐츠 영역을 별도로 정의하는 것은
-          어떤지. 정렬을 변경할 때의 대응.
-        </li>
-      </mm-text-list>
+      <mm-text variant="body">
+        Visual style. 시각보정에 관하여. 타일 내부 leading, tailing 엘리먼트의 시각보정이 필요할 수
+        있습니다. 가장 먼저 아바타가 나올 때.
+      </mm-text>
     </mm-text-group>
     <mm-text-group>
-      <mm-text variant="subhead">Behavior</mm-text>
-      <mm-text variant="body"> flat 형태는 non-clickable. </mm-text>
+      <mm-text variant="subhead">Platform problems</mm-text>
       <mm-text variant="body">
         '클릭할 수 있음'의 기표로 elevated 스타일을 사용합니다. 타일 전체가 하나의 클릭 가능한
-        요소일 수 있지만 타일 내부에 클릭 가능한 요소를 포함할 수도 있습니다.
+        요소일 수 있지만 타일 내부에 클릭 가능한 요소를 포함할 수도 있습니다. flat 형태는
+        non-clickable.
       </mm-text>
+      <mm-text-list
+        texts='[
+        "모든 contentbox가 tile인 것은 어떤가? transparent tile 을 정의한다면, 빈 태그나 빈 컴포넌트(Box, Row)와는 어떤 변별이 있나? row는 레이아웃 컴포넌트, tile은 형태컴포넌트이다.",
+        "이 컴포넌트는 조금 더 유연한 방식이 되어도 좋겠다. inset을 nuber 타입으로 정의하는.",
+        "content area with padding. 또는 마이너스 마진을 가지는 컨텐츠 영역을 별도로 정의하는 것은 어떤지. 정렬을 변경할 때의 대응."
+      ]'
+      >
+      </mm-text-list>
     </mm-text-group>
-
-    <mm-text-group>
-      <mm-text variant="subhead">Visual style</mm-text>
-      <mm-text variant="body">
-        자식 컴포넌트에 따라 내부 간격 및 사이즈 속성이 결정됨. 이에 대한 정의. 내부에 아바타가 있을
-        때 보통 small, space-2를 사용함.
-      </mm-text>
-      <mm-text variant="body">
-        타일 내부 leading, tailing 엘리먼트의 시각보정이 필요할 수 있습니다.
-      </mm-text>
-    </mm-text-group>
-
     <mm-tile variant="elevated">
       <mm-avatar src="/public/images/springsteen.jpg"> </mm-avatar>
       <div style="height: var(--space-2)"></div>
@@ -90,40 +78,36 @@
         <mm-button>팔로우</mm-button>
       </div>
     </mm-tile>
-  </section>
 
-  <aside
-    style="
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin: 2rem 0;
-      padding: 0.5rem 2rem;
-      border: var(--border);
-      border-radius: var(--radius);
-    "
-  >
-    <mm-avatar size="large" default="true"></mm-avatar>
-    <mm-text variant="subhead"> You can download this product with the All-Access Pass. </mm-text>
-    <mm-button variant="primary">Get All-Access</mm-button>
-  </aside>
+    <aside
+      style="
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 2rem 0;
+        padding: 0.5rem 2rem;
+        border: var(--border);
+        border-radius: 50px;
+      "
+    >
+      <mm-avatar size="large" default="true"></mm-avatar>
+      <mm-text variant="subhead"> You can download this product with the All-Access Pass. </mm-text>
+      <mm-button variant="primary">Get All-Access</mm-button>
+    </aside>
 
-  <div style="max-width: 400px">
-    <!-- TODO menuitem이 불필요 내부 요소들이 컴포넌트. 그러면 메뉴아이템 자체가 불필요할 수도 있다. 이것은 합성된 역할 컴포넌트. -->
-    <div style="display: flex; gap: var(--space-4); margin-bottom: 1rem">
+    <div style="display: flex; gap: var(--space-4)">
       <mm-avatar size="huge" src="/public/images/springsteen.jpg"> </mm-avatar>
-      <div>
-        <mm-text variant="subhead" style="margin-top: 0">제목의 영역</mm-text>
+      <mm-text-group variant="small">
+        <mm-text variant="subhead">제목의 영역</mm-text>
         <mm-text variant="word">Facebook 안팎의 모든 사람</mm-text>
-        <div style="height: var(--space-1)"></div>
         <mm-group variant="chip">
           <mm-tag variant="hashtag">React</mm-tag>
           <mm-tag variant="hashtag">Java</mm-tag>
           <mm-tag variant="hashtag">Phython</mm-tag>
         </mm-group>
-      </div>
+      </mm-text-group>
     </div>
-  </div>
+  </section>
 
   <section class="component-case">
     <div
@@ -214,7 +198,6 @@
         <div><del>₩19,000</del> ₩16,000 <em>할인율 20%</em></div>
       </mm-menuitem>
     </mm-tile>
-    <!-- TODO: menuitem이 애매한 네이밍 . avatar with bold text -->
     <mm-tile variant="flat">
       <mm-avatar style="background: aliceblue">
         <mm-icon name="graph-up"></mm-icon>

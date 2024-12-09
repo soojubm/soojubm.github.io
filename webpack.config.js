@@ -34,7 +34,6 @@ const patterns = [
   'searching',
   'presentation',
   'filtering',
-  'chat',
   'carousel',
 
   'setting',
@@ -42,7 +41,6 @@ const patterns = [
   'accordion',
   'profile',
   'feed',
-  'timeline',
   'notification',
   'auth',
   'product',

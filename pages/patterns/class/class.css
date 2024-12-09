@@ -41,28 +41,24 @@
 .class-why-item {}
 
 .class-feature {display:flex;width:100%;}
-
-.class-feature > div, .class-who > div {
+.class-feature > div {
   width: 50%;
   margin-top:-1px;
   padding:var(--section-padding);
   border:var(--border);
   box-sizing: border-box;
 }
-.class-feature > div:nth-of-type(1), .class-who > div:nth-of-type(1) {
+.class-feature > div:nth-of-type(1) {
   background: #000;
 }
 
-
-.class-who {display:flex;width:100%;}
-.class-who-item {margin:2rem 0;}
 
 .class-curriculum {width:100%;border:var(--border);border-top:0;background:var(--color-newneek-gray);}
 .class-curriculum > * {
   padding: 2rem var(--section-padding);
   border-top:var(--border);
 }
-.class-curriculum div figure {float:left;width:200px;height:120px;margin:0 1.25rem 0 0;background:var(--color-newneek);}
+.class-curriculum div figure {width:200px;height:120px;margin:0 1.25rem 0 0;background:var(--color-newneek);}
 .class-curriculum div h3 {margin:var(--space-2) 0;}
 
 .class-faq {width:100%;border:var(--border);border-top:0;background-color:var(--color-newneek-gray);}
