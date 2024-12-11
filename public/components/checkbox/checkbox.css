@@ -68,6 +68,10 @@
   background: var(--color-primary);
 }
 
+.checkbox label {
+  line-height: 1;
+}
+
 .checkbox:focus-within label {
 }
 

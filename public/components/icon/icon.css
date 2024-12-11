@@ -3,7 +3,6 @@ i {
   font-style: normal;
 }
 
-/* host */
 .icon {
   display: flex !important;
   align-items: center;
@@ -13,11 +12,11 @@ i {
 
   --icon-size: 0;
   --icon-font-size: 0;
-}
 
-.icon[data-size=small] {
-}
-
-.icon[data-size=large] {
-  font-size: 1.5rem !important;
+  &[data-size=small] {
+    font-size: .875rem !important
+  }
+  &[data-size=large] {
+    font-size: 1.5rem !important;
+  }
 }

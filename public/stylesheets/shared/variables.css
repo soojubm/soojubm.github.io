@@ -9,7 +9,7 @@
 :root {
   color-scheme: light dark;
   /* // -apple-system === san-serif / system-ui === BlinkMacSystemFont */
-  --font-family: 'Pretendard', system-ui, sans-serif;
+  --font-family: 'IBM Plex Sans', 'Pretendard', system-ui, sans-serif;
   /* --font-family: 'Noto Serif KR', 'IBM Plex Sans', 'Gothic A1', system-ui, sans-serif; */
   /* --font-family: 'Noto Serif KR', 'Gothic A1', system-ui, sans-serif; */
 --font-family-heading: null;
@@ -26,7 +26,7 @@
   --font-size-small: .75rem;
 
   --font-weight-normal: 400;
-  --font-weight-bold: 700;
+  --font-weight-bold: 600;
   --font-weight-extrabold: null;
 
   --font-line-height-large: 1.715;

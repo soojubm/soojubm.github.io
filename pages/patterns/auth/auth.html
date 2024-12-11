@@ -1,216 +1,229 @@
-<main class="page">
-  <form class="authentication" name="login" action="" method="" novalidat="true">
-    <!-- 제목 중간보다 큰 폰트가 필요해서 별도 컴포넌트 -->
-    <header class="authentication-head">
-      <h2 class="authentication-head-title">로그인</h2>
-      <mm-text variant="body" class="authentication-head-description">
-        Lorem Ipsum is simply dummy text.
-      </mm-text>
-    </header>
+<main class="page" style="display: flex">
+  <section
+    style="
+      width: 200px;
+      height: 100vh;
+      background-color: goldenrod;
+      border-radius: 12px;
+      position: sticky;
+    "
+  ></section>
+  <div>
+    <form class="authentication" name="login" action="" method="" novalidat="true">
+      <!-- 제목 중간보다 큰 폰트가 필요해서 별도 컴포넌트 -->
+      <header class="authentication-head">
+        <h2 class="authentication-head-title">로그인</h2>
+        <mm-text variant="body" class="authentication-head-description">
+          Lorem Ipsum is simply dummy text.
+        </mm-text>
+      </header>
 
-    <fieldset class="authentication-fieldset">
-      <mm-button size="large" isfullwidth="true"> 페이스북으로 시작 </mm-button>
-      <mm-separator spacing="small">
-        <mm-text slot="text" variant="body">또는</mm-text>
-      </mm-separator>
-      <mm-textfield type="email" label="이메일" placeholder="soojubm@gmail.com"></mm-textfield>
-      <!-- <small class="textfield-helper" id="name-hint" role="alert" data-english="Enter an email address.">이메일을 입력하세요.</small> -->
+      <fieldset class="authentication-fieldset">
+        <mm-button size="large" isfullwidth="true"> 페이스북으로 시작 </mm-button>
+        <mm-separator spacing="small">
+          <mm-text slot="text" variant="body">또는</mm-text>
+        </mm-separator>
+        <mm-textfield type="email" label="이메일" placeholder="soojubm@gmail.com"></mm-textfield>
+        <!-- <small class="textfield-helper" id="name-hint" role="alert" data-english="Enter an email address.">이메일을 입력하세요.</small> -->
 
-      <mm-textfield type="password" label="비밀번호" placeholder="Enter a password. 8자리 이상.">
-        <mm-link slot="link" class="textfield-link" href="forgot.html"
-          >비밀번호를 잊으셨나요? <small hidden>Forgot your password?</small></mm-link
-        >
-      </mm-textfield>
-      <div style="margin-top: -0.25rem">
-        <mm-checkbox name="checkbox" data-temp="Remember my email address">
-          로그인 상태 유지
-        </mm-checkbox>
-      </div>
-    </fieldset>
-
-    <section class="authentication-feedback" role="alert" aria-live="assertive">
-      <p style="margin: 1rem 0; color: var(--red800)">
-        가입하지 않은 이메일이거나?? 잘못된 비밀번호입니다.
-      </p>
-    </section>
-
-    <menu class="authentication-foot">
-      <mm-button variant="primary" size="large" isfullwidth="true" type="submit">로그인</mm-button>
-      <p
-        data-temp="Need an account?"
-        style="display: flex; justify-content: center; gap: var(--space-2); margin: 1.5rem 0 0"
-      >
-        계정이 없으신가요?
-        <mm-link href="signup.html">지금 가입하기</mm-link>
-      </p>
-    </menu>
-  </form>
-
-  <form class="authentication" name="signup">
-    <header class="authentication-head">
-      <h2 class="authentication-head-title">Welcome<i style="font-style: italic">!</i></h2>
-      <mm-text variant="body" class="authentication-head-description">
-        Find your people. Engage your customers. Build your brand. Do it all with Mailchimp’s
-        Marketing Platform. Already have an account?
-        <mm-link href="#">Log in</mm-link>
-      </mm-text>
-    </header>
-
-    <fieldset class="authentication-fieldset required">
-      <legend hidden>필수입력</legend>
-      <mm-button
-        class="login-social-facebook"
-        size="large"
-        isfullwidth="true"
-        data-english="Sign in with Facebook"
-      >
-        페이스북으로 시작
-      </mm-button>
-      <mm-separator>
-        <mm-text slot="text" variant="body">또는</mm-text>
-      </mm-separator>
-      <mm-textfield type="email" label="이메일" placeholder="soojubm@gmail.com"></mm-textfield>
-      <mm-textfield
-        type="password"
-        label="비밀번호"
-        placeholder="Enter a password. 8자리 이상."
-      ></mm-textfield>
-    </fieldset>
-
-    <fieldset class="authentication-fieldset optional" style="margin: 1rem 0 0 0">
-      <legend hidden>선택입력</legend>
-      <mm-textfield label="닉네임" placeholder="수줍이" isOptional></mm-textfield>
-      <mm-group variant="textfield">
-        <mm-textfield label="출생년도" placeholder="출생년도" isOptional></mm-textfield>
-        <div class="textfield">
-          <label class="textfield-label" for="signup-gender">성별 <small>선택입력</small></label>
-          <select class="textfield-input" id="signup-gender">
-            <option value="other">기타</option>
-            <option value="women">여성</option>
-            <option value="man">남성</option>
-          </select>
-          <mm-icon class="textfield-suffix" name="nav-arrow-down"></mm-icon>
+        <mm-textfield type="password" label="비밀번호" placeholder="Enter a password. 8자리 이상.">
+          <mm-link slot="link" class="textfield-link" href="forgot.html"
+            >비밀번호를 잊으셨나요? <small hidden>Forgot your password?</small></mm-link
+          >
+        </mm-textfield>
+        <div style="margin-top: -0.25rem">
+          <mm-checkbox name="checkbox" data-temp="Remember my email address">
+            로그인 상태 유지
+          </mm-checkbox>
         </div>
+      </fieldset>
+
+      <section class="authentication-feedback" role="alert" aria-live="assertive">
+        <p style="margin: 1rem 0; color: var(--red800)">
+          가입하지 않은 이메일이거나?? 잘못된 비밀번호입니다.
+        </p>
+      </section>
+
+      <menu class="authentication-foot">
+        <mm-button variant="primary" size="large" isfullwidth="true" type="submit"
+          >로그인</mm-button
+        >
+        <p
+          data-temp="Need an account?"
+          style="display: flex; justify-content: center; gap: var(--space-2); margin: 1.5rem 0 0"
+        >
+          계정이 없으신가요?
+          <mm-link href="signup.html">지금 가입하기</mm-link>
+        </p>
+      </menu>
+    </form>
+
+    <form class="authentication" name="signup">
+      <header class="authentication-head">
+        <h2 class="authentication-head-title">Welcome<i style="font-style: italic">!</i></h2>
+        <mm-text variant="body" class="authentication-head-description">
+          Find your people. Engage your customers. Build your brand. Do it all with Mailchimp’s
+          Marketing Platform. Already have an account?
+          <mm-link href="#">Log in</mm-link>
+        </mm-text>
+      </header>
+
+      <fieldset class="authentication-fieldset required">
+        <legend hidden>필수입력</legend>
+        <mm-button
+          class="login-social-facebook"
+          size="large"
+          isfullwidth="true"
+          data-english="Sign in with Facebook"
+        >
+          페이스북으로 시작
+        </mm-button>
+        <mm-separator>
+          <mm-text slot="text" variant="body">또는</mm-text>
+        </mm-separator>
+        <mm-textfield type="email" label="이메일" placeholder="soojubm@gmail.com"></mm-textfield>
+        <mm-textfield
+          type="password"
+          label="비밀번호"
+          placeholder="Enter a password. 8자리 이상."
+        ></mm-textfield>
+      </fieldset>
+
+      <fieldset class="authentication-fieldset optional" style="margin: 1rem 0 0 0">
+        <legend hidden>선택입력</legend>
+        <mm-textfield label="닉네임" placeholder="수줍이" isOptional></mm-textfield>
+        <mm-group variant="textfield">
+          <mm-textfield label="출생년도" placeholder="출생년도" isOptional></mm-textfield>
+          <div class="textfield">
+            <label class="textfield-label" for="signup-gender">성별 <small>선택입력</small></label>
+            <select class="textfield-input" id="signup-gender">
+              <option value="other">기타</option>
+              <option value="women">여성</option>
+              <option value="man">남성</option>
+            </select>
+            <mm-icon class="textfield-suffix" name="nav-arrow-down"></mm-icon>
+          </div>
+        </mm-group>
+      </fieldset>
+
+      <fieldset class="authentication-fieldset">
+        <legend class="signup-terms-title" hidden>약관 동의</legend>
+        <div style="height: var(--space-2)"></div>
+        <strong>
+          회원가입 시 <mm-link href="#">이용약관</mm-link>과
+          <mm-link href="#">개인정보처리방침</mm-link>에 동의하는 것으로 간주합니다.
+        </strong>
+        <mm-group variant="checkbox">
+          <mm-checkbox class="js-checkall">모두 동의합니다.</mm-checkbox>
+          <mm-checkbox>이용약관 동의</mm-checkbox>
+          <mm-checkbox>strong 개인정보처리방침에 동의합니다.</mm-checkbox>
+          <mm-checkbox>[선택] 광고성 정보 수신 동의</mm-checkbox>
+        </mm-group>
+      </fieldset>
+
+      <footer class="authentication-foot">
+        <mm-button variant="primary" type="submit" disabled> 이메일 주소로 가입 </mm-button>
+      </footer>
+    </form>
+
+    <form class="authentication" name="password" action="" method="" style="max-width: 560px">
+      <header class="authentication-head">
+        <h2 class="authentication-head-title" title="Reset Your Password">Reset Your Password</h2>
+        <p
+          class="authentication-head-description"
+          data-temp="We get it, stuff happens! What's your email address?"
+        >
+          비밀번호가 기억이 안 나세요? 걱정 말아요<i style="font-style: italic">!</i>
+          <br />
+          임시 비밀번호를 이메일로 보내드릴게요.
+        </p>
+        <!-- <p>비밀번호를 재설정할 수 있는 링크를 이메일로 보내드릴게요.</p> -->
+      </header>
+
+      <fieldset class="authentication-fieldset">
+        <mm-textfield label="이메일 주소" placeholder="soojubm@gmail.com"></mm-textfield>
+      </fieldset>
+      <footer class="authentication-foot">
+        <mm-button variant="primary" type="submit">재설정 메일 받기</mm-button>
+        <!-- <span class="password-foot-back password-link" title="Remember your password after all?">이메일이 기억 안 나세요? <a href="signin.html">가입하기</a></span> -->
+      </footer>
+      <aside class="" style="margin-top: 1.5rem">
+        <p>이메일을 받지 못하셨나요? <mm-link href="">알아보기</mm-link></p>
+      </aside>
+    </form>
+
+    <form class="authentication" name="password-2" style="max-width: 560px" action="">
+      <header class="authentication-head">
+        <h1 variant="title" class="authentication-head-title">비밀번호 재설정</h1>
+        <p class="authentication-head-description">
+          Enter your email to receive a password reset link
+        </p>
+      </header>
+      <fieldset class="authentication-fieldset">
+        <mm-textfield label="새 비밀번호" placeholder="soojubm@gmail.com" autofocus></mm-textfield>
+        <p role="alert" class="textfield-helper" hidden>이메일 형식이 아니에요.</p>
+        <mm-textfield label="새 비밀번호 확인" placeholder="soojubm@gmail.com"></mm-textfield>
+      </fieldset>
+      <footer class="authentication-foot">
+        <mm-button type="submit" variant="primary">비밀번호 변경</mm-button>
+      </footer>
+    </form>
+
+    <form class="authentication verify" name="verify" style="max-width: 560px">
+      <header class="authentication-head">
+        <h1 class="authentication-head-title" title="Reset Your Password">
+          Please check your email!
+        </h1>
+        <mm-text variant="body-large" titl="We get it, stuff happens! What's your email address?">
+          We have emailed a 6-digit confirmation code to acb@domain, please enter the code in below
+          box to verify your email.
+        </mm-text>
+      </header>
+      <mm-group variant="chip">
+        <!-- aria-invalid="false"  -->
+        <mm-textfield
+          type="number"
+          name="code1"
+          maxlength="1"
+          style="width: var(--size-large)"
+        ></mm-textfield>
+        <mm-textfield
+          type="number"
+          name="code1"
+          maxlength="1"
+          style="width: var(--size-large)"
+        ></mm-textfield>
+        <mm-textfield
+          type="number"
+          name="code1"
+          maxlength="1"
+          style="width: var(--size-large)"
+        ></mm-textfield>
+        <mm-textfield
+          type="number"
+          name="code1"
+          maxlength="1"
+          style="width: var(--size-large)"
+        ></mm-textfield>
       </mm-group>
-    </fieldset>
+      <footer class="authentication-foot">
+        <mm-button variant="primary" type="submit"> 재설정 메일 받기 </mm-button>
+      </footer>
+      <div style="height: var(--space-3)"></div>
+      <span class="password-foot-back password-link" title="">
+        <mm-link href="signin.html">인증번호 재전송</mm-link>
+      </span>
+    </form>
 
-    <fieldset class="authentication-fieldset">
-      <legend class="signup-terms-title" hidden>약관 동의</legend>
-      <div style="height: var(--space-2)"></div>
-      <strong>
-        회원가입 시 <mm-link href="#">이용약관</mm-link>과
-        <mm-link href="#">개인정보처리방침</mm-link>에 동의하는 것으로 간주합니다.
-      </strong>
-      <mm-group variant="checkbox">
-        <mm-checkbox class="js-checkall">모두 동의합니다.</mm-checkbox>
-        <mm-checkbox>이용약관 동의</mm-checkbox>
-        <mm-checkbox>strong 개인정보처리방침에 동의합니다.</mm-checkbox>
-        <mm-checkbox>[선택] 광고성 정보 수신 동의</mm-checkbox>
-      </mm-group>
-    </fieldset>
-
-    <footer class="authentication-foot">
-      <mm-button variant="primary" type="submit" disabled> 이메일 주소로 가입 </mm-button>
-    </footer>
-  </form>
-
-  <form class="authentication" name="password" action="" method="" style="max-width: 560px">
-    <header class="authentication-head">
-      <h2 class="authentication-head-title" title="Reset Your Password">Reset Your Password</h2>
-      <p
-        class="authentication-head-description"
-        data-temp="We get it, stuff happens! What's your email address?"
-      >
-        비밀번호가 기억이 안 나세요? 걱정 말아요<i style="font-style: italic">!</i>
-        <br />
-        임시 비밀번호를 이메일로 보내드릴게요.
-      </p>
-      <!-- <p>비밀번호를 재설정할 수 있는 링크를 이메일로 보내드릴게요.</p> -->
-    </header>
-
-    <fieldset class="authentication-fieldset">
-      <mm-textfield label="이메일 주소" placeholder="soojubm@gmail.com"></mm-textfield>
-    </fieldset>
-    <footer class="authentication-foot">
-      <mm-button variant="primary" type="submit">재설정 메일 받기</mm-button>
-      <!-- <span class="password-foot-back password-link" title="Remember your password after all?">이메일이 기억 안 나세요? <a href="signin.html">가입하기</a></span> -->
-    </footer>
-    <aside class="" style="margin-top: 1.5rem">
-      <p>이메일을 받지 못하셨나요? <mm-link href="">알아보기</mm-link></p>
-    </aside>
-  </form>
-
-  <form class="authentication" name="password-2" style="max-width: 560px" action="">
-    <header class="authentication-head">
-      <h1 variant="title" class="authentication-head-title">비밀번호 재설정</h1>
+    <section style="margin: 8rem 0">
+      <h1 class="authentication-head-title">메일함을 확인하세요.</h1>
       <p class="authentication-head-description">
-        Enter your email to receive a password reset link
+        faf@faf.co으로 비밀번호 재설정 링크를 발송했습니다.
       </p>
-    </header>
-    <fieldset class="authentication-fieldset">
-      <mm-textfield label="새 비밀번호" placeholder="soojubm@gmail.com" autofocus></mm-textfield>
-      <p role="alert" class="textfield-helper" hidden>이메일 형식이 아니에요.</p>
-      <mm-textfield label="새 비밀번호 확인" placeholder="soojubm@gmail.com"></mm-textfield>
-    </fieldset>
-    <footer class="authentication-foot">
-      <mm-button type="submit" variant="primary">비밀번호 변경</mm-button>
-    </footer>
-  </form>
-
-  <form class="authentication verify" name="verify" style="max-width: 560px">
-    <header class="authentication-head">
-      <h1 class="authentication-head-title" title="Reset Your Password">
-        Please check your email!
-      </h1>
-      <mm-text variant="body-large" titl="We get it, stuff happens! What's your email address?">
-        We have emailed a 6-digit confirmation code to acb@domain, please enter the code in below
-        box to verify your email.
-      </mm-text>
-    </header>
-    <mm-group variant="chip">
-      <!-- aria-invalid="false"  -->
-      <mm-textfield
-        type="number"
-        name="code1"
-        maxlength="1"
-        style="width: var(--size-large)"
-      ></mm-textfield>
-      <mm-textfield
-        type="number"
-        name="code1"
-        maxlength="1"
-        style="width: var(--size-large)"
-      ></mm-textfield>
-      <mm-textfield
-        type="number"
-        name="code1"
-        maxlength="1"
-        style="width: var(--size-large)"
-      ></mm-textfield>
-      <mm-textfield
-        type="number"
-        name="code1"
-        maxlength="1"
-        style="width: var(--size-large)"
-      ></mm-textfield>
-    </mm-group>
-    <footer class="authentication-foot">
-      <mm-button variant="primary" type="submit"> 재설정 메일 받기 </mm-button>
-    </footer>
-    <div style="height: var(--space-3)"></div>
-    <span class="password-foot-back password-link" title="">
-      <mm-link href="signin.html">인증번호 재전송</mm-link>
-    </span>
-  </form>
-
-  <section style="margin: 8rem 0">
-    <h1 class="authentication-head-title">메일함을 확인하세요.</h1>
-    <p class="authentication-head-description">
-      faf@faf.co으로 비밀번호 재설정 링크를 발송했습니다.
-    </p>
-    <mm-group>
-      <mm-button>이메일 재전송 버튼</mm-button>
-      <mm-button href="#">로그인하기</mm-button>
-    </mm-group>
-  </section>
+      <mm-group>
+        <mm-button>이메일 재전송 버튼</mm-button>
+        <mm-button href="#">로그인하기</mm-button>
+      </mm-group>
+    </section>
+  </div>
 </main>

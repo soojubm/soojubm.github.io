@@ -113,7 +113,6 @@ textarea.textfield-input {
 .textfield-suffix ~ .textfield-input {padding-right:4rem;}
 
 /* // 오른쪽에 2개의 액션이 있는 ui가 있었음. 좋은 ui는 아님. 리빌 + 클리어. 클리어가 있는데 리빌이 필요하지 않음 */
-.textfield-reveal {font-size:var(--font-size-small);color:var(--color-text-light);}
 .textfield-check {} .textfield-unit {}
 
 ::slotted([slot=suffix]) {

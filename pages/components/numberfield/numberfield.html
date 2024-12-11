@@ -1,0 +1,73 @@
+<main class="page">
+  <mm-text-group>
+    <mm-text variant="title">PasswordField</mm-text>
+    <mm-text variant="body-large">TODO</mm-text>
+  </mm-text-group>
+
+  <section class="component-example">
+    <div style="max-width: 600px">
+      <mm-row justify-content="space-between">
+        <div>
+          <mm-text variant="word-strong">1 sandbox</mm-text>
+          <mm-text variant="word-weak"> $100.00 / addl sandbox </mm-text>
+        </div>
+        <mm-group>
+          <!-- <div class="counter js-counter" style="max-width: 160px"> -->
+          <label for="numberfield" style="position: absolute; opacity: 0">
+            레이블 라이트하우스용
+          </label>
+          <mm-icon-button
+            icon="minus"
+            class="js-counter-decrement"
+            aria-controls="numberfield"
+          ></mm-icon-button>
+          <mm-textfield size="small" value="20"></mm-textfield>
+          <!-- <input
+          class="counter-input js-counter-input js-number-input"
+          type="number"
+          name="counter1"
+          id="numberfield"
+          min="5"
+          max="20"
+          value="0"
+        /> -->
+          <mm-icon-button icon="plus" class="js-counter-increment" tabindex="-1"> </mm-icon-button>
+          <!-- </div> -->
+        </mm-group>
+      </mm-row>
+    </div>
+  </section>
+
+  <section class="component-props">
+    <mm-text variant="subhead">Props</mm-text>
+    <dl>
+      <dt>name</dt>
+      <dd>string</dd>
+      <dt>label</dt>
+      <dd>string</dd>
+      <dt>isHiddenLabel<attr>?</attr></dt>
+      <dd>boolean</dd>
+      <dt>value</dt>
+      <dd>string</dd>
+      <dt>placeholder</dt>
+      <dd>string</dd>
+      <dt>isAutoFocus<attr>?</attr></dt>
+      <dd>boolean</dd>
+      <dt>onChange<attr>?</attr></dt>
+      <dd>(event: React.ChangeEvent&lt;HTMLInputElement&gt;) => void</dd>
+      <dt>onKeyDown<attr>?</attr></dt>
+      <dd>(event: KeyboardEvent&lt;HTMLInputElement&gt;) => void</dd>
+      <dt>onFocus<attr>?</attr></dt>
+    </dl>
+  </section>
+
+  <section class="component-guide">
+    <mm-text-group>
+      <mm-text variant="subhead">Meta problems</mm-text>
+    </mm-text-group>
+
+    <address class="component-references"></address>
+  </section>
+
+  <section class="component-case"></section>
+</main>

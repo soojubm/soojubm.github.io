@@ -43,60 +43,25 @@
         medium과 small은 두 줄의 텍스트 노드와 함께 사용할 수 없다. align-items:center 로 정렬된다.
       </mm-text>
     </mm-text-group>
+    <mm-text-group>
+      <mm-text variant="subhead">AvatarGroup</mm-text>
+      <mm-text variant="body">maximum avatar</mm-text>
+
+      <mm-tile>
+        <mm-group variant="avatar">
+          <mm-avatar size="medium" default="true"></mm-avatar>
+          <mm-avatar size="medium" default="true"></mm-avatar>
+          <mm-avatar size="medium" default="true"></mm-avatar>
+          <mm-avatar size="medium">+3</mm-avatar>
+        </mm-group>
+      </mm-tile>
+    </mm-text-group>
     <mm-text-list
       texts='[
         "단독으로 쓰일 때는 aria-label이 필요할 수 있고, 텍스트와 함께 쓰일 때의 menuitem 같은 컴포넌트.,
         "제품이 없는 상황에서 디테일을 정의하려 하지 말자. 실무에서는 도메인에 맞게 작은 단위의 컴포넌트를 조합하는 도메인 컴포넌트가 필요하다.",
       ]'
     ></mm-text-list>
-
-    <mm-tile>
-      <mm-group>
-        <button
-          style="
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: auto;
-            gap: var(--space-1);
-            border: none;
-            background-color: #fff;
-            font: inherit;
-          "
-        >
-          <mm-avatar slot="avatar" size="large" icon="share-ios"></mm-avatar>
-          <small>공유하기</small>
-        </button>
-        <button
-          style="
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            width: var(--size-huge);
-            height: var(--size-huge);
-            gap: var(--space-1);
-            padding: var(--space-1) var(--space-3);
-            border: var(--border);
-            border-radius: var(--radius);
-            background-color: transparent;
-            font: inherit;
-          "
-        >
-          <mm-icon slot="avatar" size="large" name="share-ios" style="font-size: 1.5rem"></mm-icon>
-          <small>공유하기</small>
-        </button>
-      </mm-group>
-    </mm-tile>
-
-    <mm-tile>
-      <mm-group variant="avatar">
-        <mm-avatar size="medium" default="true"></mm-avatar>
-        <mm-avatar size="medium" default="true"></mm-avatar>
-        <mm-avatar size="medium" default="true"></mm-avatar>
-        <mm-avatar size="medium">+3</mm-avatar>
-      </mm-group>
-    </mm-tile>
   </section>
 
   <section class="component-case">
