@@ -108,6 +108,14 @@
       <mm-text variant="body-bold">Sidebar menu</mm-text>
       <mm-text variant="body-bold">Sitemap menu</mm-text>
       <mm-text variant="body-bold">Global navigation menu</mm-text>
+
+      <mm-menuitem label="windows 패턴">
+        <mm-avatar slot="avatar"></mm-avatar>
+        <mm-group slot="action" variant="chip">
+          <mm-button>퀵 액션</mm-button>
+          <mm-icon-button icon="arrow-right"> </mm-icon-button>
+        </mm-group>
+      </mm-menuitem>
     </mm-text-group>
 
     <mm-text-list texts="[]">
@@ -148,15 +156,6 @@
         </mm-menuitem>
       </mm-group>
     </mm-tile>
-    <mm-tile>
-      <mm-menuitem label="windows 패턴">
-        <mm-avatar slot="avatar"></mm-avatar>
-        <mm-group slot="action" variant="chip">
-          <mm-button>퀵 액션</mm-button>
-          <mm-icon-button icon="arrow-right"> </mm-icon-button>
-        </mm-group>
-      </mm-menuitem>
-    </mm-tile>
     <mm-tile variant="flat">
       <mm-group variant="dropdown">
         <mm-text variant="label">menu heading / gap margin left on label</mm-text>
@@ -175,69 +174,6 @@
         <mm-menuitem class="dropdown-menu-item">
           <span slot="check"></span>
           <span slot="text">with popover</span>
-        </mm-menuitem>
-      </mm-group>
-    </mm-tile>
-    <mm-tile variant="flat" class="share">
-      <mm-titlebar heading="공유"></mm-titlebar>
-      <div style="height: var(--space-3)"></div>
-      <mm-text variant="subhead" class="share-title">가족이나 친구와<br />함께 보세요!</mm-text>
-      <div style="height: var(--space-3)"></div>
-      <mm-group variant="menuitem">
-        <!-- <close-button></close-button> -->
-        <mm-menuitem class="share-facebook" label="facebook으로 공유">
-          <mm-avatar
-            slot="avatar"
-            size="medium"
-            icon="facebook"
-            style="background-color: var(--color-facebook); color: #fff"
-          >
-          </mm-avatar>
-        </mm-menuitem>
-        <mm-menuitem class="share-twitter" label="twitter로 공유">
-          <mm-avatar
-            slot="avatar"
-            icon="twitter"
-            style="background-color: var(--color-twitter); color: #fff"
-          >
-          </mm-avatar>
-        </mm-menuitem>
-        <mm-menuitem class="share-kakao" label="kakao talk으로 공유">
-          <mm-avatar slot="avatar" icon="message" style="background-color: var(--color-kakao)">
-          </mm-avatar>
-        </mm-menuitem>
-      </mm-group>
-      <mm-separator></mm-separator>
-      <mm-textfield
-        value="https://newneek.co/post/jadebabo"
-        placeholder="이건 사실 입력 기능이 없다 커스텀 컴포넌트."
-        size="small"
-        class="share-copy"
-        label=""
-        hiddenLabel
-      >
-        <mm-button slot="suffix" class="js-copy">복사 </mm-button>
-      </mm-textfield>
-    </mm-tile>
-    <mm-tile variant="flat" name="access">
-      <mm-titlebar heading="공개 대상 선택"></mm-titlebar>
-      <br />
-      <mm-group variant="menuitem">
-        <mm-menuitem>
-          <mm-radio slot="check"></mm-radio>
-          <mm-avatar slot="avatar" size="large" icon="group"> </mm-avatar>
-          <div slot="text">
-            <mm-text variant="word-strong">친구만</mm-text>
-            <mm-text variant="word-weak">회원님의 Facebook 친구</mm-text>
-          </div>
-        </mm-menuitem>
-        <mm-menuitem data->
-          <mm-radio slot="check"></mm-radio>
-          <mm-avatar slot="avatar" size="large" icon="lock"> </mm-avatar>
-          <div slot="text">
-            <mm-text variant="word-strong">나만 보기</mm-text>
-            <mm-text variant="word-weak">부끄러우니까</mm-text>
-          </div>
         </mm-menuitem>
       </mm-group>
     </mm-tile>
@@ -271,57 +207,6 @@
       <footer>
         <mm-button variant="primary" size="large">Buy now</mm-button>
       </footer>
-    </mm-tile>
-    <mm-tile variant="flat">
-      <mm-titlebar heading="팔로우하는 사람"></mm-titlebar>
-      <br />
-      <div style="max-width: 200px; margin: 0 -0.25rem var(--space-3)">
-        <mm-tablist>
-          <mm-tab slot="tab" selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">
-            모두
-          </mm-tab>
-          <mm-tab slot="tab" aria-controls="panel-2" id="tab-2" tabindex="-1">바보만</mm-tab>
-        </mm-tablist>
-      </div>
-      <mm-group variant="menuitem">
-        <mm-menuitem>
-          <mm-avatar
-            slot="avatar"
-            size="large"
-            default="true"
-            style="background-color: yellowgreen"
-          ></mm-avatar>
-          <div slot="text">
-            <mm-text variant="word-strong">수줍이</mm-text>
-            <mm-text variant="word-weak">유아이 디자이너</mm-text>
-          </div>
-          <mm-button slot="action" variant="secondary">팔로우</mm-button>
-        </mm-menuitem>
-        <mm-menuitem>
-          <mm-avatar
-            slot="avatar"
-            size="large"
-            default="true"
-            style="background-color: blueviolet"
-          ></mm-avatar>
-          <div slot="text">
-            <mm-text variant="word-strong">진짜수줍이</mm-text>
-            <mm-text variant="word-weak">유투브 구독자</mm-text>
-          </div>
-          <mm-button slot="action">팔로우 중</mm-button>
-        </mm-menuitem>
-        <div style=""></div>
-        <mm-tile variant="elevated" size="small">
-          <mm-menuitem label="더 많은 친구를 찾아보세요!" description="">
-            <mm-avatar slot="avatar"></mm-avatar>
-          </mm-menuitem>
-        </mm-tile>
-        <div style="height: var(--space-1)"></div>
-        <mm-text variant="label"
-          >칩 그룹으로 필터링을 제공하니 팔로우 버튼과 위계 충돌. 아바타가 작아서 콘텐츠 분리가 안
-          된다.</mm-text
-        >
-      </mm-group>
     </mm-tile>
     <mm-tile>
       <mm-titlebar heading="See this post in"> </mm-titlebar>

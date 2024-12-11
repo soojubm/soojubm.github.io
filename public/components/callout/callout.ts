@@ -35,11 +35,11 @@ class Callout extends HTMLElement {
     const icon = document.createElement('mm-icon')
     icon.setAttribute('name', 'warning-triangle')
     icon.classList.add('callout-icon')
-
-    const rest = document.createElement('slot')
+    // TODO color
+    // icon.setAttribute('color', 'red')
 
     shadow.append(container, makeStyleSheet('callout'))
-    container.append(icon, text, rest)
+    container.append(icon, text, ...this.childNodes)
   }
   disconnectedCallback() {}
 }

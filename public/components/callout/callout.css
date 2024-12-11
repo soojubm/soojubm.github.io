@@ -15,6 +15,12 @@
 .callout-text {}
 .callout-close {position:absolute;right:.5rem;top:.5rem;}
 
+:host {
+  &.icon {
+    color: red;
+  }
+}
+
 .callout[data-variant=success] {
   --callout-text-color: var(--green800);
   border:none;background:var(--green100);

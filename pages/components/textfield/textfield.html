@@ -44,63 +44,49 @@
     <dd>Input</dd>
   </dl>
   <div style="margin-top: 2rem"></div>
-  <mm-tablist class="tablist">
-    <mm-tab slot="tab" name="" selected="true" data-index="1"> 베리언트 </mm-tab>
-    <mm-tab slot="tab" name="" selected="false" data-index="2"> 상태 </mm-tab>
-    <mm-tab slot="tab" name="" selected="false" data-index="3"> 크기 </mm-tab>
-    <i class="tablist-indicator"></i>
-  </mm-tablist>
   <div style="margin-bottom: -1rem"></div>
   <section class="component-example">
-    <mm-tabpanel role="tabpanel" aria-hidden="false" data-index="1">
-      <mm-group variant="form">
-        <mm-textfield type="text" size="small" placeholder="medium size..."></mm-textfield>
-        <mm-textfield
-          type="text"
-          placeholder="large size... (default)"
-          label="label text"
-          helper="helper와 validation messgage를 어떻게 구분. mui에서는 error"
-        ></mm-textfield>
-      </mm-group>
-      <mm-separator></mm-separator>
-      <div style="display: flex; flex-direction: column; gap: var(--space-3)">
-        <mm-textfield type="password" label="Password field">
-          <mm-icon-button
-            slot="suffix"
-            icon="eye-solid"
-            aria-label="비밀번호 보기"
-          ></mm-icon-button>
-        </mm-textfield>
+    <mm-group variant="form">
+      <mm-textfield type="text" size="small" placeholder="medium size..."></mm-textfield>
+      <mm-textfield
+        type="text"
+        placeholder="large size... (default)"
+        label="label text"
+        helper="helper와 validation messgage를 어떻게 구분. mui에서는 error"
+      ></mm-textfield>
+    </mm-group>
+    <mm-separator></mm-separator>
+    <div style="display: flex; flex-direction: column; gap: var(--space-3)">
+      <mm-textfield type="password" label="Password field">
+        <mm-icon-button slot="suffix" icon="eye-solid" aria-label="비밀번호 보기"></mm-icon-button>
+      </mm-textfield>
 
-        <mm-textfield label="임시" placeholder="you@gamil.com">
-          <mm-icon slot="prefix" name="mail"></mm-icon>
-        </mm-textfield>
+      <mm-textfield placeholder="you@gamil.com">
+        <mm-icon slot="prefix" name="mail"></mm-icon>
+      </mm-textfield>
 
-        <mm-textfield
-          type="number"
-          label="Number field (금액)"
-          value="20000"
-          placeholder="Textarea Placeholder..."
-        ></mm-textfield>
+      <mm-textfield
+        type="number"
+        label="Number field (금액)"
+        value="20000"
+        placeholder="Textarea Placeholder..."
+      ></mm-textfield>
 
-        <!-- oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" -->
-      </div>
-    </mm-tabpanel>
-    <mm-tabpanel role="tabpanel" aria-hidden="true" data-index="2">
-      <mm-group variant="form">
-        <mm-textfield type="text" placeholder="Disabled..." disabled></mm-textfield>
-        <mm-textfield
-          type="email"
-          label="Invalid"
-          value="soojubm@gmail.com"
-          placeholder="Placeholder..."
-          aria-invalid="true"
-          aria-describedby="error"
-          aria-errormessage="msgID"
-          helper="이미 등록된 이메일입니다."
-        ></mm-textfield>
-      </mm-group>
-    </mm-tabpanel>
+      <!-- oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" -->
+    </div>
+    <mm-group variant="form">
+      <mm-textfield type="text" placeholder="Disabled..." disabled></mm-textfield>
+      <mm-textfield
+        type="email"
+        label="Invalid"
+        value="soojubm@gmail.com"
+        placeholder="Placeholder..."
+        aria-invalid="true"
+        aria-describedby="error"
+        aria-errormessage="msgID"
+        helper="이미 등록된 이메일입니다."
+      ></mm-textfield>
+    </mm-group>
   </section>
 
   <!-- <mm-textfield type="text" label="" hiddenLabel placeholder="Placeholder...">
@@ -115,22 +101,20 @@
   <section class="component-props">
     <mm-text variant="subhead">Props</mm-text>
     <dl>
-      <dt>type</dt>
-      <dd>HTMLInputTypeAttribute? | 'search' | "text" | "number"</dd>
+      <dt><del>type - to be deprecated</del></dt>
+      <dd><del>HTMLInputTypeAttribute? | "text" | "number"</del></dd>
       <dt>name</dt>
       <dd>string</dd>
       <dt>label</dt>
       <dd>string</dd>
       <dt>isHiddenLabel<attr>?</attr></dt>
       <dd>boolean</dd>
-      <dd>aria-invalid</dd>
       <dt>value</dt>
       <dd>string</dd>
       <dt>placeholder</dt>
       <dd>string</dd>
       <dt>helper<attr>?</attr></dt>
       <dd>string</dd>
-      <dd>isInvalid = helper.length === 0 ? red colored</dd>
       <dt>isDisabled<attr>?</attr></dt>
       <dd>boolean</dd>
       <dt>isReadOnly<attr>?</attr></dt>

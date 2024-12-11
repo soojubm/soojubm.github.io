@@ -14,6 +14,10 @@ class Icon extends HTMLElement {
   get size() {
     return this.getAttribute('size')
   }
+
+  get color() {
+    return this.getAttribute('color')
+  }
   // set size(value) {
   //   // TODO TS2339: Property 'dataset' does not exist on type 'ChildNode'
   //   const node = this.shadowRoot!.lastChild as HTMLElement
@@ -29,6 +33,7 @@ class Icon extends HTMLElement {
     // container.role = 'img'
     container.classList.add('icon', ICON_CLASSNAME)
     if (this.size) container.dataset.size = this.size
+    if (this.color) container.style.color = this.color
 
     const pretty = document.createElement('link')
     pretty.href = 'https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css'

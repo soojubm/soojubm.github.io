@@ -40,6 +40,7 @@
 .group[data-variant=checkbox] {
   flex-direction:column;
   align-items:flex-start;
+  gap: 0;
 }
 
 .group[data-variant=form] {
