@@ -92,6 +92,9 @@ input[type=radio]:checked + label + *,
 input[type=checkbox]:checked + label + * {display:block;}
 
 /* // size */
+.checkbox[data-size=large] {
+  gap: var(--space-3);
+}
 .checkbox[data-size=large] input {
   --checkbox-size: var(--size-small);
 }

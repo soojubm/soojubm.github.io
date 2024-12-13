@@ -69,6 +69,10 @@ const components = [
   'checkbox',
   'radio',
   'textfield',
+  'searchfield',
+  'passwordfield',
+  'numberfield',
+  'textarea',
   'select',
 
   'tab',
