@@ -16,8 +16,15 @@ class Radio extends HTMLElement {
     input.setAttribute('type', 'radio')
     input.setAttribute('id', this.id_temp || '')
     input.setAttribute('name', this.name || '')
+
     if (this.checked) input.setAttribute('checked', 'true')
     if (this.disabled) input.setAttribute('disabled', 'true')
+
+    // if (this.checked) {
+    //   input.setAttribute('checked', 'true')
+    // } else {
+    //   input.removeAttribute('checked')
+    // }
 
     // TODO : inheritStyle
     const style = this.getAttribute('style')
@@ -25,6 +32,8 @@ class Radio extends HTMLElement {
 
     shadow.appendChild(container)
     container.append(input, label, makeStyleSheet('radio'))
+
+    console.log(this.checked)
 
     if (this.helper) {
       const helper = document.createElement('p')
@@ -51,12 +60,16 @@ class Radio extends HTMLElement {
   }
 
   get checked() {
-    return this.getAttribute('checked')
+    return this.hasAttribute('checked')
   }
 
   get disabled() {
-    return this.getAttribute('disabled')
+    return this.hasAttribute('disabled')
   }
+
+  // static get observedAttributes() {
+  //   return ['checked', 'disabled']
+  // }
 
   connectedCallback() {}
   disconnectedCallback() {}

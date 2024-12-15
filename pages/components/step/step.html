@@ -59,13 +59,15 @@
   </section>
 
   <section class="component-guide">
-    <mm-text-list
-      texts='[
-    "타임라인과 구분. 타임라인은 히스토리 맥락으로 스텝의 역순. 확장, 링크, indentation",
-    "Changelog. non-clickable 로 변경 2021.10"
-    ]'
-    >
-    </mm-text-list>
+    <mm-text-group>
+      <mm-text-list
+        texts='[
+      "타임라인과 구분. 타임라인은 히스토리 맥락으로 스텝의 역순. 확장, 링크, indentation",
+      "Changelog. non-clickable 로 변경 2021.10"
+      ]'
+      >
+      </mm-text-list>
+    </mm-text-group>
   </section>
 
   <section class="component-case">
@@ -121,14 +123,14 @@
         <mm-menuitem>
           <mm-avatar slot="avatar" size="medium"></mm-avatar>
           <div slot="text">
-            <mm-text variant="word-weak">Step 1</mm-text>
-            <mm-text variant="word-strong">UPLOAD 3D FILES</mm-text>
+            <mm-text variant="label">Step 1</mm-text>
+            <mm-text variant="">UPLOAD 3D FILES</mm-text>
           </div>
         </mm-menuitem>
         <mm-menuitem>
           <mm-avatar slot="avatar" size="medium"></mm-avatar>
           <div slot="text">
-            <mm-text variant="word-weak">Step 2</mm-text>
+            <mm-text variant="label">Step 2</mm-text>
             <mm-text variant="word-strong">UPLOAD 3D FILES</mm-text>
           </div>
         </mm-menuitem>

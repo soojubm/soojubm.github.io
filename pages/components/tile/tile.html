@@ -21,17 +21,14 @@
 
   <section class="component-example">
     <mm-tile variant="flat">
-      <mm-text variant="subhead">flatted with subhead</mm-text>
-      <p style="margin: 1rem">
-        문제: 크기에 따른 변별력이 없다. inset이 더 커진다면 작은 화면에서 미디어쿼리로 inset 조정이
-        불가피하기 때문에 컴포넌트의 디바이스나 화면 크기에 컴포넌트가 의존된다. 솔루션: inset이
-        1rem 초과할 때 콘텐츠 모듈을 가운데 정렬로 제한.
-      </p>
+      <mm-text variant="subhead">flat</mm-text>
     </mm-tile>
     <div style="height: var(--space-3)"></div>
     <mm-tile variant="elevated">
-      <b>elevated</b>
+      <mm-text variant="subhead">elevated</mm-text>
     </mm-tile>
+    <div style="height: var(--space-3)"></div>
+    <mm-tile variant="elevated" size="small"> small size </mm-tile>
   </section>
 
   <section class="component-props">
@@ -59,6 +56,11 @@
         '클릭할 수 있음'의 기표로 elevated 스타일을 사용합니다. 타일 전체가 하나의 클릭 가능한
         요소일 수 있지만 타일 내부에 클릭 가능한 요소를 포함할 수도 있습니다. flat 형태는
         non-clickable.
+      </mm-text>
+      <mm-text variant="body">
+        문제: 크기에 따른 변별력이 없다. inset이 더 커진다면 작은 화면에서 미디어쿼리로 inset 조정이
+        불가피하기 때문에 컴포넌트의 디바이스나 화면 크기에 컴포넌트가 의존된다. ? inset이 1rem
+        초과할 때 콘텐츠 모듈을 가운데 정렬로 제한.
       </mm-text>
       <mm-text-list
         texts='[
@@ -97,7 +99,7 @@
 
     <div style="display: flex; gap: var(--space-4)">
       <mm-avatar size="huge" src="/public/images/springsteen.jpg"> </mm-avatar>
-      <mm-text-group variant="small">
+      <mm-test-group>
         <mm-text variant="subhead">제목의 영역</mm-text>
         <mm-text variant="word">Facebook 안팎의 모든 사람</mm-text>
         <mm-group variant="chip">
@@ -105,36 +107,16 @@
           <mm-tag variant="hashtag">Java</mm-tag>
           <mm-tag variant="hashtag">Phython</mm-tag>
         </mm-group>
-      </mm-text-group>
+      </mm-test-group>
     </div>
   </section>
 
   <section class="component-case">
-    <div
-      class="quote"
-      style="
-        background-image: url('../public/images/springsteen.jpg');
-        background-size: cover;
-        padding: 8rem 1rem 1rem;
-        box-sizing: border-box;
-        border-radius: var(--radius);
-      "
-    >
-      <mm-text variant="subhead" style="color: #fff">Quote</mm-text>
-      <p class="quote-body" style="color: #fff">Don't you know that God is Pooh bear?</p>
-      <cite class="quote-byline">
-        <div class="quote-byline-name" style="color: #fff">Jack Kerouac</div>
-        <div class="quote-byline-job">Musician</div>
-      </cite>
-      <div style="height: 1rem"></div>
-      <mm-button>더 알아보기</mm-button>
-    </div>
-
     <mm-tile>
       <mm-tilebar heading="Ratings"></mm-tilebar>
       <div aria-label="별점 5개 만점에 3.9개를 받았습니다." style="text-align: center">
-        <mm-text variant="word-weak">리뷰 116만개</mm-text>
-        <mm-text variant="word-large">⭐ 4.8</mm-text>
+        <mm-text variant="label">리뷰 116만개</mm-text>
+        <mm-text variant="subhead">⭐ 4.8</mm-text>
       </div>
       <mm-separator></mm-separator>
       <div class="graph2">
@@ -169,7 +151,7 @@
     </mm-tile>
 
     <mm-tile variant="" role="listitem">
-      <mm-tag slot="category" variant="primary">카테고리</mm-tag>
+      <mm-tag variant="primary">카테고리</mm-tag>
       <mm-button slot="action" icon="more-vert"> </mm-button>
       <figure class="media">
         <img src="/public/images/springsteen.jpg" alt="" />
@@ -226,15 +208,6 @@
     </mm-tile>
 
     <mm-tile variant="elevated">
-      <mm-menuitem>
-        <mm-avatar slot="avatar" size="huge"></mm-avatar>
-        <div slot="text">
-          <mm-text variant="word-large">개인</mm-text>
-          <mm-text variant="body">Apple One</mm-text>
-          <mm-text variant="label">가족 구독</mm-text>
-        </div>
-      </mm-menuitem>
-      <mm-separator></mm-separator>
       <mm-group alignment="vertical">
         <mm-keyvalue key="이용기간" value="23.04.09. ~ 23.05.02."> </mm-keyvalue>
         <mm-keyvalue key="이번 달 결제금액" value="4,258원"> </mm-keyvalue>
@@ -244,14 +217,12 @@
         <li>다음 청구일은 2023. 3. 10.입니다.</li>
         <li>언제든 해지 가능합니다. 혜택 약관이 적용됩니다.</li>
       </mm-text-list>
-      <mm-tile size="small">
+      <mm-tile size="small" style="margin-top: 1rem">
         <mm-text variant="caption">
           약정 기간이 없습니다. 갱신일 최소 하루 전까지 설정 > Apple ID에서 언제든지 취소할 수
           있습니다. 취소할 때까지 요금제가 자동 갱신됩니다.
         </mm-text>
       </mm-tile>
-      <mm-separator></mm-separator>
-      <mm-text variant="">계정: soojubm@gmail.com</mm-text>
     </mm-tile>
 
     <mm-tile>
@@ -288,15 +259,12 @@
       <!-- <mm-text variant="body"> 대법원장은 국회의 동의를 얻어 대통령이 임명한다. </mm-text> -->
       <div style="margin: var(--space-2) 0 var(--space-3) 0">
         <mm-text variant="title">₩ 6,800</mm-text>
-        <mm-text variant="word-weak">한 달에 한 번</mm-text>
+        <mm-text variant="label">한 달에 한 번</mm-text>
       </div>
       <mm-group>
-        <mm-button variant="primary" isfullwidth="true">업그레이드</mm-button>
+        <mm-button variant="primary" size="large" isfullwidth="true">업그레이드</mm-button>
       </mm-group>
-      <!-- <div>
-        <mm-text variant="subhead"><em>iCloud+</em> 50GB</mm-text>
-        <span>₩1,100/월 </span>
-      </div> -->
+      <br />
       <mm-text-list
         texts='[
         "스토리지 2TB",

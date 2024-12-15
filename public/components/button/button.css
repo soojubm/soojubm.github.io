@@ -47,10 +47,10 @@
 
 :host {}
 :host(.primary) {}
-:host([variant="primary"]) .button {
+/* :host([variant="primary"]) .button {
   --button-color: var(--color-primary);
   --button-text-color: var(--gray0);
-}
+} */
 
 
 
@@ -139,6 +139,9 @@
 
 /* variants */
 .button[data-variant=primary] {
+  border-color: transparent;
+  background-color: var(--color-primary);
+  --button-text-color: #fff;
 }
 .button[data-variant=secondary] {
   border-color: transparent;
@@ -175,7 +178,7 @@
 }
 
 .button[aria-selected] {
-  --chip-color-background: var(--color-background-strong);
+  background-color: var(--color-background-strong);
   color: var(--color-text-strong);
 }
 .button[aria-checked=true] {

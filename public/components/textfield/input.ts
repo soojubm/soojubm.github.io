@@ -49,9 +49,6 @@ class Input extends HTMLElement {
   get type() {
     return this.getAttribute('type')
   }
-  set type(value) {
-    if (value) this.setAttribute('type', value)
-  }
 
   get value() {
     return this.getAttribute('value')
@@ -59,9 +56,6 @@ class Input extends HTMLElement {
 
   get size() {
     return this.getAttribute('size')
-  }
-  set size(value) {
-    if (value) this.setAttribute('size', value)
   }
 
   get name() {
@@ -71,16 +65,10 @@ class Input extends HTMLElement {
   get placeholder() {
     return this.getAttribute('placeholder')
   }
-  set placeholder(value) {
-    if (value) this.setAttribute('placeholder', value)
-  }
 
   get label() {
     return this.getAttribute('label')
   }
-  // set label(value) {
-  //   if (value) this.setAttribute('label', value)
-  // }
 
   get helper() {
     return this.getAttribute('helper')

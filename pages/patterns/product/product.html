@@ -1,7 +1,7 @@
 <main class="product">
   <mm-button>Back to Home</mm-button>
 
-  <header class="product-head">
+  <header class="product-head" style="margin-top: var(--space-4)">
     <section class="product-image" role="img" aria-labelledby="제품 이미지">
       <img
         src="/public/images/AlbumArt_{B5020207-474E-4720-B8A7-C6073790C400}_Large.jpg"
@@ -13,13 +13,12 @@
     </section>
 
     <section class="product-info">
-      <mm-text-group>
+      <div style="display: flex; flex-direction: column; gap: var(--space-3)">
         <p
           class="product-info-byline"
           style="
             display: inline-flex;
             width: fit-content;
-            margin: 0 0 var(--space-2);
             background: #f8f5ff;
             padding: var(--space-1) var(--space-4);
             border-radius: 50px;
@@ -36,7 +35,7 @@
           I have 2 kids so sleep is hard to come by, these have helped me to wake up feeling more
           refreshed and ready to start the day
         </mm-text>
-      </mm-text-group>
+      </div>
 
       <form class="product-order" style="margin: 1.5rem 0 1rem">
         <div class="product-order-variant textfield">
@@ -48,6 +47,7 @@
           <mm-icon class="textfield-suffix" name="nav-arrow-down"></mm-icon>
         </div>
 
+        <br />
         <mm-row justifyContent="space-between">
           <mm-text variant="body-bold">총 상품금액</mm-text>
           <mm-text variant="subhead">₩ 163,000</mm-text>
@@ -71,29 +71,31 @@
 
   <section class="product-detail" style="max-width: 1000px; margin: 4rem auto 0">
     <section class="review">
-      <mm-text variant="subhead">Reviews</mm-text>
-      <mm-keyvalue key="Total review" value="83">s</mm-keyvalue>
+      <mm-text-group>
+        <mm-text variant="subhead">Reviews</mm-text>
+        <mm-keyvalue key="Total review" value="83"></mm-keyvalue>
+      </mm-text-group>
       <div stlye="display:flex;gap:var(--space-4);margin-top:var(--space-4);">
         <mm-tile variant="elevated">
           <div>⭐⭐⭐⭐⭐</div>
-          <div>
+          <div style="margin-top: var(--space-3)">
             <mm-text variant="body"
               >I have 2 kids so sleep is hard to come by, these have helped me to wake up feeling
               more refreshed and ready to start the day
             </mm-text>
-            <div style="height: 1rem"></div>
+            <div style="height: var(--space-3)"></div>
             <mm-text variant="body-bold">Fleet Foxes</mm-text>
           </div>
           <time>2020년 12월 1일 </time>
         </mm-tile>
         <mm-tile variant="elevated">
           <div>⭐⭐⭐⭐⭐</div>
-          <div>
+          <div style="margin-top: var(--space-3)">
             <mm-text variant="body"
               >I have 2 kids so sleep is hard to come by, these have helped me to wake up feeling
               more refreshed and ready to start the day
             </mm-text>
-            <div style="height: 1rem"></div>
+            <div style="height: var(--space-3)"></div>
             <mm-text variant="body-bold">Fleet Foxes</mm-text>
           </div>
           <time>2020년 12월 1일 </time>
@@ -392,8 +394,10 @@
           "
           >애플</a
         >
-        <mm-tag class="card-category">인기있는</mm-tag>
-        <mm-tag class="card-note">무료배송 / 200 포인트 적립</mm-tag>
+        <mm-group>
+          <mm-tag class="card-category">인기있는</mm-tag>
+          <mm-tag class="card-note">무료배송 / 200 포인트 적립</mm-tag>
+        </mm-group>
       </article>
     </section>
   </section>
