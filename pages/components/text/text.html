@@ -17,6 +17,11 @@
         결쿡, 역할로 하는 네이밍은 한계가 뚜렷함. 형태 중심으로 variation하는 것이 좋음. 또는 color,
         lineHeight, weight를 prop으로 받을 수도 있는데.
       </p>
+      <p>heading level, body size</p>
+
+      <p>KeyValuePair :: Key와 Value가 동일한 위계를 갖는다. 리스트 형태이다. alignment/size</p>
+      <p>LabelWithDescription :: Label이 강조된다. size?</p>
+      <p>예: ProfileKeyValuePair, FeatureLabelWithDescription.</p>
     </mm-text>
   </mm-text-group>
   <!-- Truncate for secondary text that isn’t essential to a user’s comprehension of steps to take. Examples include dynamic data ad IDs in tables, lists of user names, and Pin titles that come from outside sources. Use an ellipsis or a link that indicates there is more content available. -->
@@ -73,6 +78,11 @@ The font size of a key is never bigger than the value.
       <p>title은 도큐먼트의 타이틀 또는 타이틀 속성과 구분하기 위해 사용하지 않기. heading,</p>
       <p>sentence, caption, tagline</p>
       <mm-separator></mm-separator>
+      <mm-keyvalue key="textpair label text" value="textpair description text"></mm-keyvalue>
+      <mm-text-pair
+        labelText="textpair label text"
+        descriptionText="textpair description text"
+      ></mm-text-pair>
       <mm-text variant="word">word</mm-text>
       <mm-text variant="word-weak">word-weak</mm-text>
       <mm-text variant="word-strong">word-strong</mm-text>
@@ -172,6 +182,8 @@ The font size of a key is never bigger than the value.
     <dl>
       <dt>variant ?? level</dt>
       <dd>'title' | 'subhead' | 'body' | 'body-large'</dd>
+      <dt>color</dt>
+      <dd>'primary' | 'secondary'</dd>
       <dt>lineHeight</dt>
       <dd>'small' | 'medium'</dd>
       <dd>TODO. 단어나 구문용을 추가하는 것이 좋을지.</dd>

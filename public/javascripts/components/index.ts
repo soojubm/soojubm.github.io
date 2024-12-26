@@ -42,6 +42,7 @@ import ClearButton from '../../components/button/clearButton'
 import SearchField from '../../components/textfield/searchfield'
 import TextGroup from '../../components/text/textGroup'
 import TextList from '../../components/text/textList'
+import TextPair from '../../components/textpair/textpair'
 
 export function defineCustomElement() {
   if ('customElements' in window) {
@@ -60,7 +61,6 @@ export function defineCustomElement() {
     // 위에 있어야 넣어지네? text보다 shadow Dom
     customElements.define('mm-result', Result)
     customElements.define('mm-feature', Feature)
-    customElements.define('mm-keyvalue', Keyvalue)
 
     customElements.define('mm-avatar', Avatar)
 
@@ -74,10 +74,14 @@ export function defineCustomElement() {
 
     customElements.define('mm-tile', Tile)
 
+    // 순서 왜 이렇게 해야 하는지..
+    customElements.define('mm-text-pair', TextPair)
+    customElements.define('mm-keyvalue', Keyvalue)
+
     customElements.define('mm-text', Text)
+
     customElements.define('mm-text-group', TextGroup)
     customElements.define('mm-text-list', TextList)
-
     customElements.define('mm-tablist', Tablist)
     customElements.define('mm-tab', Tab)
     customElements.define('mm-tabpanel', TabPanel)
