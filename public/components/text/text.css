@@ -118,11 +118,6 @@ ul {
   font-weight: var(--font-weight-bold);
   line-height: var(--font-line-height);
 }
-.text[data-variant=word-weak] {
-  font-size: var(--font-size-medium);
-  line-height: var(--font-line-height);
-  color: var(--color-text-light);
-}
 .text[data-variant=word-large] {
   font-size: var(--font-size-large);
   line-height: var(--font-line-height);

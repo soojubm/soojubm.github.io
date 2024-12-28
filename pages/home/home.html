@@ -58,18 +58,20 @@
           <mm-menuitem>
             <mm-radio slot="check"></mm-radio>
             <mm-avatar slot="avatar" size="large" icon="group"> </mm-avatar>
-            <div slot="text">
-              <mm-text variant="word-strong">친구만</mm-text>
-              <mm-text variant="word-weak">회원님의 Facebook 친구</mm-text>
-            </div>
+            <mm-text-pair
+              slot="text"
+              labelText="친구만"
+              descriptionText="회원님의 Facebook 친구"
+            ></mm-text-pair>
           </mm-menuitem>
           <mm-menuitem data->
             <mm-radio slot="check"></mm-radio>
             <mm-avatar slot="avatar" size="large" icon="lock"> </mm-avatar>
-            <div slot="text">
-              <mm-text variant="word-strong">나만 보기</mm-text>
-              <mm-text variant="word-weak">부끄러우니까</mm-text>
-            </div>
+            <mm-text-pair
+              slot="text"
+              labelText="나만 보기"
+              descriptionText="부끄러우니까"
+            ></mm-text-pair>
           </mm-menuitem>
         </mm-group>
       </mm-tile>
@@ -152,10 +154,11 @@
               default="true"
               style="background-color: yellowgreen"
             ></mm-avatar>
-            <div slot="text">
-              <mm-text variant="word-strong">수줍이</mm-text>
-              <mm-text variant="word-weak">유아이 디자이너</mm-text>
-            </div>
+            <mm-text-pair
+              slot="text"
+              labelText="수줍이"
+              descriptionText="유아이 디자이너"
+            ></mm-text-pair>
             <mm-button slot="action" variant="secondary">팔로우</mm-button>
           </mm-menuitem>
           <mm-menuitem>
@@ -167,7 +170,7 @@
             ></mm-avatar>
             <div slot="text">
               <mm-text variant="word-strong">진짜수줍이</mm-text>
-              <mm-text variant="word-weak">유투브 구독자</mm-text>
+              <mm-text variant="label">유투브 구독자</mm-text>
             </div>
             <mm-button slot="action">팔로우 중</mm-button>
           </mm-menuitem>

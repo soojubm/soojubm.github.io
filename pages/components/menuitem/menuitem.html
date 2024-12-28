@@ -28,10 +28,8 @@
       <mm-separator></mm-separator>
       <mm-menuitem>
         <mm-avatar slot="avatar" size="large">🦊</mm-avatar>
-        <div slot="text">
-          <mm-text variant="body-bold">사진 및 동영상 백업</mm-text>
-          <mm-text variant="body">디스크립션이다</mm-text>
-        </div>
+        <mm-text-pair slot="text" labelText="사진 및 동영상 백업" descriptionText="디스크립션이다">
+        </mm-text-pair>
         <mm-button slot="action">버튼</mm-button>
       </mm-menuitem>
       <mm-menuitem label="메뉴아이템 링크" role="menuitem">
@@ -146,7 +144,7 @@
         <div>
           <mm-text variant="subhead">Strictly Necessary</mm-text>
           <div style="height: 0.5rem"></div>
-          <mm-text variant="word-weak">
+          <mm-text variant="body">
             These cookies are essential in order to use the website and use its features.
           </mm-text>
         </div>
@@ -188,10 +186,11 @@
     <mm-tile>
       <mm-tile>
         <mm-menuitem>
-          <div slot="text">
-            <mm-text variant="word-strong">Personal License</mm-text>
-            <mm-text variant="word-weak">1 user</mm-text>
-          </div>
+          <mm-text-pair
+            slot="text"
+            labelText="Personal License"
+            descriptionText="1 user"
+          ></mm-text-pair>
           <div slot="action">
             <mm-text variant="word-strong"> 18,800 KRW </mm-text>
           </div>
@@ -201,13 +200,14 @@
       <mm-group>
         <mm-menuitem>
           <mm-avatar slot="avatar" size="large" fallback="🎅🏻"></mm-avatar>
-          <div slot="text">
-            <mm-text variant="word-strong">Widgefy iOS Widgets</mm-text>
-            <mm-text variant="word-weak">떡볶이</mm-text>
-          </div>
+          <mm-text-pair
+            slot="text"
+            labelText="Widgefy iOS Widgets"
+            descriptionText="떢볶이"
+          ></mm-text-pair>
           <div slot="action" style="text-align: right">
             <span style="display: block; line-height: 18px">18,800 KRW</span>
-            <mm-text variant="word-weak">6410</mm-text>
+            <mm-text variant="label">6410</mm-text>
           </div>
         </mm-menuitem>
       </mm-group>
