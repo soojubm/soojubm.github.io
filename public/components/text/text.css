@@ -106,10 +106,6 @@ ul {
   font-size: var(--font-size-small);
 }
 
-.text[data-variant=word-large] {
-  font-size: var(--font-size-large);
-  line-height: var(--font-line-height);
-}
 
 .text[data-truncated="true"] {
   white-space:nowrap;overflow:hidden;text-overflow:ellipsis;

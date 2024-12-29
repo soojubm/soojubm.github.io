@@ -17,7 +17,7 @@ class Keyvalue extends HTMLElement {
     keyText.innerText = this.key || ''
 
     const valueText = document.createElement('mm-text')
-    valueText.setAttribute('variant', this.size === 'large' ? 'word-large' : 'word')
+    valueText.setAttribute('variant', this.size === 'large' ? 'subhead' : 'word')
     valueText.innerText = this.value || ''
 
     if (this.alignment) container.dataset.alignment = this.alignment
