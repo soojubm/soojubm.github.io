@@ -3,7 +3,6 @@ import navbar from '/public/components/navbar/navbar.html'
 
 import main from './text.html'
 import '/pages/components/components.css'
-import './text.css'
 
 import '/public/stylesheets/shared.css'
 

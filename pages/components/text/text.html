@@ -65,18 +65,128 @@ The font size of a key is never bigger than the value.
   <!-- labels for captions and helper text, as well as legal copy -->
   <!-- ibm / body / body-compact 2px 차이, Fluid heading styles-->
 
+  <style>
+    .hero {
+      /* padding:4rem var(--grid-margin) 6rem; */
+      position: relative;
+      z-index: var(--zindex-default);
+    }
+    .hero-background {
+      background: inherit;
+    }
+    .hero-eyebrow {
+      display: block;
+      margin: 0 0 var(--space-2) 0;
+      font-weight: var(--font-weight-bold);
+      color: var(--color-primary);
+    }
+    .hero-title {
+    }
+    .hero-description {
+      margin: var(--space-after-title) 0 0 0;
+    }
+
+    .hero-object1 {
+      width: 160px;
+      height: 160px;
+      overflow: hidden;
+      background: url('/public/images/me-min_800x.png') center;
+      background-size: cover;
+      border-radius: var(--radius);
+      filter: grayscale(1);
+    }
+    .hero-object2 {
+      width: 100%;
+      max-width: 360px;
+      z-index: 1;
+      position: absolute;
+      right: calc(var(--grid-margin) + 5rem);
+      top: 3rem;
+      pointer-events: none;
+    }
+    .is-observed .hero-eyebrow {
+      animation: fadeup var(--animation-duration) 0.1s backwards;
+    }
+    .is-observed .hero-title {
+      animation: fadeup var(--animation-duration) var(--animation-delay-first) backwards;
+    }
+    .is-observed .hero-description {
+      animation: fadeup var(--animation-duration) var(--animation-delay-second) backwards;
+    }
+    .is-observed .hero-actions {
+      animation: fadeup var(--animation-duration) var(--animation-delay-third) backwards;
+    }
+    .is-observed .hero-object1 {
+      animation: bounceY 2s ease infinite alternate;
+    }
+    .is-observed .hero-object2 {
+      animation: bounceY 4s ease infinite alternate;
+    }
+
+    .hero-obj1 {
+      position: absolute;
+      right: -1rem;
+      top: 1rem;
+      width: 40px;
+      height: 40px;
+      background: var(--color-accent);
+      border-radius: 50%;
+    }
+    .hero-obj2 {
+      position: absolute;
+      right: 480px;
+      bottom: -2rem;
+      width: 80px;
+      height: 80px;
+      background: var(--color-accent);
+      border-radius: 50%;
+    }
+    .hero-obj3 {
+      position: absolute;
+      right: 420px;
+      top: 24px;
+      width: 16px;
+      height: 16px;
+      background: #0057ff;
+      border-radius: 50%;
+    }
+    .hero-obj4 {
+      position: absolute;
+      right: 0;
+      top: -9rem;
+      width: 32rem;
+      transform: scale(0);
+    }
+    .is-observed .hero-obj1 {
+      animation: scaleout 0.4s ease 0.8s both;
+    }
+    .is-observed .hero-obj2 {
+      animation: scaleout 0.4s ease 1.4s both;
+    }
+    .is-observed .hero-obj3 {
+      animation: scaleout 0.4s ease 1.2s both;
+    }
+    .is-observed .hero-obj4 {
+      animation: scaleout 0.4s ease 1s both;
+    }
+
+    @media (max-width: 1100px) {
+    }
+
+    .block:not(:last-child) {
+      margin-bottom: 1.5rem;
+    }
+  </style>
+
   <section class="component-example">
     <div>
       <mm-text variant="title">heading1, title</mm-text>
       <mm-text variant="subhead">heading2, subhead</mm-text>
-      <mm-text variant="body-bold">heading3</mm-text>
+      <mm-text variant="label-strong">heading3</mm-text>
       <mm-text variant="label">label, light</mm-text>
       <mm-separator></mm-separator>
       <mm-text variant="body">body</mm-text>
       <mm-text variant="body-large">body large</mm-text>
-      <mm-text variant="body-bold">body bold - button & meta</mm-text>
-      <p>title은 도큐먼트의 타이틀 또는 타이틀 속성과 구분하기 위해 사용하지 않기. heading,</p>
-      <p>sentence, caption, tagline</p>
       <mm-separator></mm-separator>
       <mm-keyvalue key="keyvalue key text" value="keyvalue value text"></mm-keyvalue>
       <mm-separator></mm-separator>
@@ -258,8 +368,8 @@ The font size of a key is never bigger than the value.
 
     <mm-text-group>
       <mm-text variant="subhead">텍스트의 강조</mm-text>
-      <mm-text variant="body-bold">형태적 강조 :: mark, u, em, b</mm-text>
-      <mm-text variant="body-bold">의미론적 강조 ::strong - 개인정보처리방침 등</mm-text>
+      <mm-text variant="label-strong">형태적 강조 :: mark, u, em, b</mm-text>
+      <mm-text variant="label-strong">의미론적 강조 ::strong - 개인정보처리방침 등</mm-text>
       <mm-text variant="body">
         단락에 포함된 단어나 구문을 underline, <del>bold</del>, primary color로 강조하지 마세요.
         우리는 underlined와 pirmary colored text를 <mark>clickable</mark>로 엄격하게 정의하고
