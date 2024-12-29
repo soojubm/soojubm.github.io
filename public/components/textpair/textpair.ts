@@ -6,7 +6,7 @@ class TextPair extends HTMLElement {
     const container = document.createElement('div')
 
     const labelTextElement = document.createElement('mm-text')
-    labelTextElement.setAttribute('variant', 'word-strong')
+    labelTextElement.setAttribute('variant', 'label-strong')
     labelTextElement.innerText = this.labelText || ''
 
     const descriptionElement = document.createElement('mm-text')

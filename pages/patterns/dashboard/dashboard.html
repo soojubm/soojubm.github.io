@@ -50,20 +50,21 @@
         <div class="meter-graph-item" data-type="instagram" style="width: 7%"></div>
       </div>
       <div class="meter-legend">
+        <!-- TODO Avatar -->
         <div class="meter-legend-item">
           <i class="meter-legend-item-color" data-type="facebook"></i>
           <mm-text variant="label">페이스북</mm-text>
-          <mm-text variant="word">800,000원</mm-text>
+          <mm-text variant="body" style="margin-left: auto">800,000원</mm-text>
         </div>
         <div class="meter-legend-item">
           <i class="meter-legend-item-color" data-type="twitter"></i>
           <mm-text variant="label">트위터</mm-text>
-          <mm-text variant="word">800,000원</mm-text>
+          <mm-text variant="body" style="margin-left: auto">800,000원</mm-text>
         </div>
         <div class="meter-legend-item">
           <i class="meter-legend-item-color" data-type="instagram"></i>
           <mm-text variant="label">핀터레스트</mm-text>
-          <mm-text variant="word">800,000원</mm-text>
+          <mm-text variant="body" style="margin-left: auto">800,000원</mm-text>
         </div>
       </div>
     </article>
@@ -106,7 +107,6 @@
           1,508
           <small style="font-size: var(--font-size-medium); vertical-align: super">90%</small>
         </mm-text>
-        <mm-separator></mm-separator>
         <div class="meter">
           <div class="meter-track">
             <b class="meter-thumb" style="width: 68%"></b>
@@ -123,7 +123,6 @@
           1,508
           <small style="font-size: var(--font-size-medium); vertical-align: super">90%</small>
         </mm-text>
-        <mm-separator></mm-separator>
         <div class="meter">
           <div class="meter-track">
             <b class="meter-thumb" style="width: 68%"></b>
@@ -140,7 +139,6 @@
           1,508
           <small style="font-size: var(--font-size-medium); vertical-align: super">90%</small>
         </mm-text>
-        <mm-separator></mm-separator>
         <div class="meter">
           <div class="meter-track">
             <b class="meter-thumb" style="width: 68%"></b>
@@ -157,7 +155,6 @@
           1,508
           <small style="font-size: var(--font-size-medium); vertical-align: super">90%</small>
         </mm-text>
-        <mm-separator></mm-separator>
         <div class="meter">
           <div class="meter-track">
             <b class="meter-thumb" style="width: 68%"></b>
@@ -185,10 +182,12 @@
         <mm-tile variant="flat">
           <mm-menuitem>
             <mm-avatar slot="avatar" size="large">🦊</mm-avatar>
-            <div slot="text">
-              <mm-text variant="word-strong">사진 및 동영상 백업</mm-text>
-              <mm-text variant="word-light">디스크립션이다</mm-text>
-            </div>
+            <mm-text-pair
+              slot="text"
+              labelText="사진 및 동영상 백업"
+              descriptionText="디스크립션이다"
+            >
+            </mm-text-pair>
             <mm-group slot="action" variant="chip">
               <mm-button>버튼</mm-button>
               <mm-icon-button variant="transparent" icon="more-vert"> </mm-icon-button>

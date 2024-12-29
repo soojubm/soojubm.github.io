@@ -74,8 +74,10 @@
     <mm-tile variant="elevated">
       <mm-avatar src="/public/images/springsteen.jpg"> </mm-avatar>
       <div style="height: var(--space-2)"></div>
-      <mm-text variant="word-strong">Bruce Springsteen</mm-text>
-      <mm-text variant="word">Product Design Intern @soojubm</mm-text>
+      <mm-text-pair
+        labelText="Bruce Springsteen"
+        descriptionText="Product Design Intern @soojubm"
+      ></mm-text-pair>
       <div style="position: absolute; right: 1rem; top: 1rem">
         <mm-button>팔로우</mm-button>
       </div>
@@ -101,7 +103,7 @@
       <mm-avatar size="huge" src="/public/images/springsteen.jpg"> </mm-avatar>
       <mm-test-group>
         <mm-text variant="subhead">제목의 영역</mm-text>
-        <mm-text variant="word">Facebook 안팎의 모든 사람</mm-text>
+        <mm-text variant="body">Facebook 안팎의 모든 사람</mm-text>
         <mm-group variant="chip">
           <mm-tag variant="hashtag">React</mm-tag>
           <mm-tag variant="hashtag">Java</mm-tag>

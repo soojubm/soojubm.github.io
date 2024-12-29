@@ -105,19 +105,16 @@ ul {
   color:var(--color-text-light);
 }
 
-.text[data-variant=caption] {
-  font-size: var(--font-size-small);
-}
-
-.text[data-variant=word] {
-  font-size: var(--font-size-medium);
-  line-height: var(--font-line-height);
-}
-.text[data-variant=word-strong] {
+.text[data-variant=label-strong] {
   font-size: var(--font-size-medium);
   font-weight: var(--font-weight-bold);
   line-height: var(--font-line-height);
 }
+
+.text[data-variant=caption] {
+  font-size: var(--font-size-small);
+}
+
 .text[data-variant=word-large] {
   font-size: var(--font-size-large);
   line-height: var(--font-line-height);
