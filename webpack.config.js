@@ -31,7 +31,6 @@ const patterns = [
   'dashboard',
   'dialog',
   'result',
-  'searching',
   'presentation',
   'filtering',
   'carousel',
@@ -83,7 +82,10 @@ const components = [
   'switch',
   'tooltip',
   'callout',
+
   'text',
+  'textPair',
+
   'separator',
 
   'step',

@@ -15,7 +15,7 @@ class TitleBar extends HTMLElement {
 
     const title = document.createElement('span')
     title.classList.add('titlebar-title')
-    title.innerText = this.heading || ''
+    title.innerText = this.titleText || ''
 
     const backButton = document.createElement('mm-icon-button')
     backButton.setAttribute('variant', 'navigator')
@@ -43,8 +43,8 @@ class TitleBar extends HTMLElement {
     return this.hasAttribute('hiddenBack')
   }
 
-  get heading() {
-    return this.getAttribute('heading')
+  get titleText() {
+    return this.getAttribute('titleText')
   }
 
   connectedCallback() {}

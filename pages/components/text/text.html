@@ -7,21 +7,8 @@
       <div class="js-counter" data-number="234">234</div>
       단어(word)" → "구(phrase)" → "문장(sentence)" → "문단(paragraph)"
       <p>TextGroup, ContentGroup, TextStack</p>
-      <p>subhead는 단독으로 쓰이지 않음</p>
-      <p>
-        단순하게, 타이틀의 line-height만 small로 하는 경우. label도 small. 또는 paragraph 즉 문단에
-        한하여만 line height를 large로 정의하는 것이 좋을 수도. keyvalue 에서 value가 subhead의
-        형태는 가질 수 있으나 그 역할은 아님. keyvalue는 추상화ㅏ된 컴포넌트이긴 함.
-      </p>
-      <p>
-        결쿡, 역할로 하는 네이밍은 한계가 뚜렷함. 형태 중심으로 variation하는 것이 좋음. 또는 color,
-        lineHeight, weight를 prop으로 받을 수도 있는데.
-      </p>
+      <p>subhead, label, label-strong은 단독으로 쓰지 않음</p>
       <p>heading level, body size</p>
-
-      <p>KeyValuePair :: Key와 Value가 동일한 위계를 갖는다. 리스트 형태이다. alignment/size</p>
-      <p>LabelWithDescription :: Label이 강조된다. size?</p>
-      <p>예: ProfileKeyValuePair, FeatureLabelWithDescription.</p>
     </mm-text>
   </mm-text-group>
   <!-- Truncate for secondary text that isn’t essential to a user’s comprehension of steps to take. Examples include dynamic data ad IDs in tables, lists of user names, and Pin titles that come from outside sources. Use an ellipsis or a link that indicates there is more content available. -->
@@ -182,18 +169,12 @@ The font size of a key is never bigger than the value.
     <div>
       <mm-text variant="title">heading1, title</mm-text>
       <mm-text variant="subhead">heading2, subhead</mm-text>
-      <mm-text variant="label-strong">heading3</mm-text>
-      <mm-text variant="label">label, light</mm-text>
+      <mm-separator></mm-separator>
+      <mm-text variant="label">label</mm-text>
+      <mm-text variant="label-strong">label, strong</mm-text>
       <mm-separator></mm-separator>
       <mm-text variant="body">body</mm-text>
       <mm-text variant="body-large">body large</mm-text>
-      <mm-separator></mm-separator>
-      <mm-keyvalue key="keyvalue key text" value="keyvalue value text"></mm-keyvalue>
-      <mm-separator></mm-separator>
-      <mm-text-pair
-        labelText="textpair label text"
-        descriptionText="textpair description text"
-      ></mm-text-pair>
       <mm-separator></mm-separator>
       <!-- TODO link, text button일 수도 있다. -->
       <section style="display: flex; flex-direction: column; gap: var(--space-2)">
@@ -216,23 +197,6 @@ The font size of a key is never bigger than the value.
         <b class="product-info-price-insertion" role="insertion">₩ 20,000</b>
         <em class="product-info-price-percentage">(30%)</em>
       </div>
-
-      <mm-separator></mm-separator>
-
-      <mm-group style="gap: 2rem">
-        <div style="">
-          <mm-text variant="label">사이즈</mm-text>
-          <mm-text variant="subhead">보통</mm-text>
-        </div>
-        <div style="">
-          <mm-text variant="label">한글</mm-text>
-          <mm-text variant="subhead">작은 거 필요하나</mm-text>
-        </div>
-        <div style="">
-          <mm-text variant="label">Move</mm-text>
-          <mm-text variant="title">562 kcal</mm-text>
-        </div>
-      </mm-group>
 
       <mm-separator></mm-separator>
 
@@ -259,13 +223,6 @@ The font size of a key is never bigger than the value.
           <mm-text variant="label" href="#">사이트맵 컴포넌트 샘플</mm-text>
         </mm-group>
         <mm-group alignment="vertical">
-          <mm-text variant="subhead">level attr=1</mm-text>
-          <mm-text variant="label" href="#">level attr=2</mm-text>
-          <mm-text variant="label" href="#">level attr=2</mm-text>
-          <mm-text variant="label" href="#">level attr=2</mm-text>
-          <mm-text variant="label" href="#">level attr=2</mm-text>
-        </mm-group>
-        <mm-group alignment="vertical">
           <mm-text variant="subhead">꺼이꺼이</mm-text>
           <mm-text variant="subhead">호이호이</mm-text>
         </mm-group>
@@ -288,7 +245,7 @@ The font size of a key is never bigger than the value.
   <section class="component-props">
     <dl>
       <dt>variant ?? level</dt>
-      <dd>'title' | 'subhead' | 'body' | 'body-large'</dd>
+      <dd>'title' | 'subhead' | 'label' | 'label-strong', 'body' | 'body-large'</dd>
       <dt>color</dt>
       <dd>'primary' | 'secondary'</dd>
       <dt>lineHeight</dt>
