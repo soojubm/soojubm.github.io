@@ -43,6 +43,7 @@ import SearchField from '../../components/textfield/searchfield'
 import TextGroup from '../../components/text/textGroup'
 import TextList from '../../components/text/textList'
 import TextPair from '../../components/textpair/textpair'
+import Dropdown from '../../components/textfield/dropdown'
 
 export function defineCustomElement() {
   if ('customElements' in window) {
@@ -71,6 +72,8 @@ export function defineCustomElement() {
     customElements.define('mm-checkbox', Checkbox)
     customElements.define('mm-switch', Switch)
     customElements.define('mm-radio', Radio)
+
+    customElements.define('mm-dropdown', Dropdown)
 
     customElements.define('mm-tile', Tile)
 
