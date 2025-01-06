@@ -6,7 +6,6 @@
 .feature {display:flex;flex-wrap:wrap;gap:2rem;}
 .feature-head {width:100%;margin:0 auto 2rem;}
 .feature-head-title {word-break:keep-all;}
-.feature-title {width:100%;margin:0 0 var(--space-after-title) 0;}
 
 .page,
 .footer {

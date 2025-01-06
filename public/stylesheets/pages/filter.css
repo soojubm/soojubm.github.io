@@ -6,7 +6,7 @@
 .filter::-webkit-scrollbar-thumb {margin:.125rem;background:var(--color-background-strong);border-radius:var(--radius);}
 .filter::-webkit-scrollbar-button {display:none;background-color:inherit;}
 .filter::-webkit-scrollbar-corner {background-color:inherit;}
-.filter-title {margin:0 0 var(--space-after-title) 0;}
+.filter-title {margin:0 0 1rem 0;}
 .filter-fieldset {display:flex;flex-direction:column;margin:var(--space-4) 0;padding:2rem 0 0;position:relative;}
 .filter-fieldset-legend {position:absolute;top:0;}
 .filter-fieldset-description {margin:-.125rem 0 var(--space-3) 0;color:var(--color-text-light);}

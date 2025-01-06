@@ -11,7 +11,7 @@
   background: var(--color-background-weak);
   border-radius: var(--radius);
   position:absolute;left:0rem;top:0;z-index:-1;}
-.feature-item-link {display:block;margin:var(--space-after-description) 0 0 0;} */
+.feature-item-link {display:block;margin:2rem 0 0 0;} */
 
 .feature-item[data-variant=simple] {
   padding: 2rem;

@@ -43,7 +43,6 @@
 .comment-list-item .comment-list-item:before {content:'';display:block;width:2px;height:100%;background-color:var(--color-border);position:absolute;left:0;top:0;}
 
 .comment-write {display:flex;flex-wrap:wrap;justify-content:space-between;}
-.comment-write-text {width:100%;margin:0 0 var(--space-after-button) 0;}
 /* // line-height 때무네 space로 간격을 주지 않고 1rem을 줌. */
 .comment-write-name {display:none;width:var(--grid-column);margin:0 0 1rem 0;}
 .comment-write-password {display:none;width:var(--grid-column);margin:0 0 1rem 0;}
