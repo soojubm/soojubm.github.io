@@ -25,11 +25,13 @@ function displayFilms(data) {
     item =>
       `
       <article style="min-width:100px;border:var(--border);padding:var(--space-3);border-radius:12px;position:relative">
-        <small style="display:block;line-height:18px;"><time>${item.releasedate}</time></small>
+        <div style="display:flex;justify-content:space-between;gap:1rem;">
+          <small style="display:block;line-height:18px;"><time>${item.releasedate}</time></small>
+          <small>${item.country}</small>
+        </div>
         <p style="margin:var(--space-1) 0 0 0"><b>${item.titlekorean}</b></p>
         <p style="margin-top:-.25rem;"><small>${item.titleenglish}</small></p>
         <p style="margin-top:var(--space-1);">${item.director}</p>
-        <small style="position:absolute;right:var(--space-3);top:var(--space-3);">${item.country}</small>
       </article>
     `,
   )
