@@ -138,24 +138,11 @@
       <mm-menuitem label="수줍이" size="medium">
         <mm-avatar slot="avatar" default="true"></mm-avatar>
       </mm-menuitem>
-      <div class="textfield comment-write-text" style="max-width: 100%; margin: var(--space-3) 0">
-        <!-- <label class="textfield-label" for="" aria-hidden="true">댓글</label> -->
-        <textarea
-          class="textfield-input"
-          rows="3"
-          name="comment"
-          placeholder="무슨 생각을 하고 계신가요? feed와 comment에서 사용."
-          style="width: 100%; height: auto; box-sizing: border-box"
-        ></textarea>
+      <mm-textarea
+        name="comment"
+        placeholder="무슨 생각을 하고 계신가요? feed와 comment에서 사용."
+      ></mm-textarea>
       </div>
-      <!-- <div class="textfield comment-write-name">
-        <label class="textfield-label" for="" aria-hidden="true">이름</label>
-        <input class="textfield-input js-comment-textfield" type="text" name="" id="comment-name" placeholder="이름을 입력하세요." />
-      </div>
-      <div class="textfield comment-write-password">
-        <label class="textfield-label" for="" aria-hidden="true">비밀번호</label>
-        <input class="textfield-input js-comment-textfield" type="text" name="" id="comment-password" placeholder="비밀번호을 입력하세요." />
-      </div> -->
       <footer class="comment-write-footer">
         <mm-button variant="primary" size="large" data-temp="게시/등록">댓글 게시</mm-button>
       </footer>

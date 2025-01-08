@@ -1,21 +1,11 @@
 .cake {padding:0 var(--grid-margin) 4rem;}
 
-.cake-head {padding:2rem 0;position:relative;}
+.cake-head {position:relative;}
 .cake-background {height:100%;background:url('/public/images/springsteen.jpg') no-repeat 0 -200px fixed;background-size:cover;filter:grayscale(100%);background:var(--color-background-weak);}
 .cake-head-description {margin:1rem 0 0 0;}
 
 .cake-poster {width:50%;max-width:272px;border:var(--border);border-radius:var(--radius);overflow:hidden;position:absolute;right:0;z-index:var(--zindex-default);}
 .cake-poster img {display:block;}
-
-.cake-meta {}
-.cake-meta dl {}
-
-.cake-info {margin:2rem 0;position:relative;}
-.cake-info h2 {margin:0 0 var(--space-after-subhead);}
-.cake-info footer {margin-top:var(--space-4);}
-
-.cake .tablist {margin-top:6rem;}
-
 
 @media (max-width: 1100px) {
   .cake-poster {height:auto;margin:0 0 2rem 0;}

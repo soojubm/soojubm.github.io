@@ -29,7 +29,10 @@ textarea {border:0 none;font-family:inherit;font-size:inherit;}
 
 button {
   padding:0;border:none;background:none;text-align:left;font:inherit;color:inherit;cursor:pointer;
-  /* > * {pointer-events:none;} // for 이벤트 캡쳐} */
+}
+
+button:focus-visible {
+  outline: none;
 }
 
 html {min-width:320px;height:100%;overflow-x:hidden;font-size:16px;line-height:var(--font-line-height);font-family: var(--font-family);-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overscroll-behavior:contain;}
@@ -163,8 +166,6 @@ mark {color:inherit;} mark::before {content: " [강조 시작] ";opacity:0;posit
 // ol li ol li:before {content: counter(sub-list-item,lower-alpha) '.';}
 */
 
-
-
 .marquee {
   display: flex;
 }
@@ -187,13 +188,13 @@ mark {color:inherit;} mark::before {content: " [강조 시작] ";opacity:0;posit
 
 /* // ! width inherit ::::: for button element
 // 비효율 position:relative;z-index:1; */
+/* // 드롭다운이 항상 칩은 아니다. */
 .dropdown {position:relative;}
 .dropdown-trigger {}
-/* .dropdown-menu {min-width:var(--width-tiny);position:absolute;transform:scale(0);transform-origin:left top;} */
+.dropdown-menu {min-width:var(--width-tiny);position:absolute;transform:scale(0);transform-origin:left top;}
 .dropdown-menu-title {}
 .dropdown-menu-item {display:block;margin:0 -.25rem;padding:0 .25rem;line-height:var(--size-medium);color:var(--color-text);position:relative;z-index:var(--zindex-default);}
 .dropdown-menu-item:hover {border-radius:var(--radius);background:var(--color-background-weak);}
-/* // 드롭다운이 항상 칩은 아니다. */
 .is-active + .dropdown-menu {transform:scale(1);top:calc(var(--size-medium));z-index:var(--zindex-popover);}
 
 
@@ -259,56 +260,6 @@ mark {color:inherit;} mark::before {content: " [강조 시작] ";opacity:0;posit
 /* TODO golobal */
 [role=tabpanel][aria-hidden=false] {display:flex;}
 [role=tabpanel][aria-hidden=true] {display:none;}
-
-
-/* textfield 중복 / for select */
-.textfield {
-  max-width: var(--width-medium);
-  position:relative;
-
-  --textfield-height: var(--size-large);
-  --textfield-background-color: 0;
-  --textfield-border: var(--border);
-  --textfield-radius: var(--radius);
-  --textfield-text-color: 0;
-}
-.textfield-label {display:block;line-height:var(--size-small);}
-.textfield-label small {margin:0 0 0 var(--space-1);color:var(--color-text-light);}
-.textfield-input {
-  display:block;
-  width:100%;
-  height:var(--textfield-height);
-  padding:var(--space-2) var(--space-4);
-  box-sizing: border-box;
-  border-radius:var(--radius);
-  background:var(--color-background-weak);
-  color: var(--color-text);
-}
-.textfield-input:focus {box-shadow:var(--status-hover);}
-.textfield-input:read-only {color:var(--color-text-light);cursor:default;}
-.textfield-input:disabled {opacity:.5;cursor:not-allowed;}
-.textfield-helper {margin:var(--space-1) 0 0;color:var(--red800);}
-
-
-.textfield-suffix, 
-::slotted([slot=icon]) {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: var(--size-large);
-  height: var(--textfield-height);
-  /* color:var(--color-primary); */
-  position:absolute;top:var(--size-small);right:0;
-}
-
-.textfield-prefix,
-::slotted([slot=leading]) {
-  display: flex;
-  align-items: center;
-  height: var(--textfield-height);
-  position:absolute;top:var(--size-small);left:var(--space-4);
-}
-
 
 /* common */
 .offline {
@@ -405,9 +356,6 @@ mark {color:inherit;} mark::before {content: " [강조 시작] ";opacity:0;posit
 .layout[data-size=small] {
   --layout-width: var(--layout-width-small);
 }
-
-
-
 
 
 

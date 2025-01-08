@@ -2,18 +2,20 @@
   <mm-tile>
     <mm-titlebar titletext="장바구니"> </mm-titlebar>
     <div style="height: var(--space-3)"></div>
-    <mm-menuitem>
-      <mm-avatar slot="avatar" size="huge">
-        <img src="/public/images/product_sample.png" alt="" />
-      </mm-avatar>
+    <div style="position: relative">
       <div slot="text">
+        <mm-avatar size="huge">
+          <img src="/public/images/product_sample.png" alt="" />
+        </mm-avatar>
         <mm-text-pair
           labelText="폰타나 베네치아 로스티드 쉬림프 크림"
           descriptionText="Brown, 3개"
         ></mm-text-pair>
         <mm-text variant="subhead">₩ 22,500</mm-text>
+        <mm-clear-button style="position: absolute; right: 0; top: 0"></mm-clear-button>
+        <p>TODO clearButton, quantity</p>
       </div>
-      <!-- <div class="cart-item-name">
+      <div class="cart-item-name">
         <span>product</span>
         <b> 폰타나 베네치아 로스티드 쉬림프 크림 </b>
       </div>
@@ -28,11 +30,8 @@
       <div class="cart-item-price">
         <span>price</span>
         <b>₩ 22,500</b>
-      </div> -->
-
+      </div>
       <mm-button>수량/옵션 변경</mm-button>
-
-      <mm-button>close</mm-button>
 
       <mm-group variant="chip" class="counter js-counter" style="max-width: 200px">
         <mm-button
@@ -68,7 +67,7 @@
         </p>
         <span class="cart-item-addition-price">₩ 20,000</span>
       </div>
-    </mm-menuitem>
+    </div>
     <mm-separator></mm-separator>
     <footer>
       <mm-group variant="menuitem">

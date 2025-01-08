@@ -72,12 +72,13 @@
 // .is-active .navbar-menu-item menu a {opacity:1;}
 // .is-darktheme .navbar-menu-item {color:var(--gray0);} */
 
-
 /* PAGE COMPONENT */
 /* page에 패딩을 줄 수 있고, articleㅇ에 패딩을 줄 수 있다. 마이너스 마진을 줄 수도 있다. */
 /* Page container. 컨테이너의 특정 섹션은 또 사이즈가 달라질 수 있다. */
 /* ReactNative safeAreaView, scrollView */
+
 .page {
+  /* margin: 0 auto 때문에 모션이 안 됨 */
   margin: 0 auto;
   padding: 0 var(--grid-margin) 4rem;
   box-sizing: border-box;
@@ -167,30 +168,15 @@
   overscroll-behavior:contain;
 }
 
-/* .is-menu-opened .page {
-  padding-left: calc(var(--width-sidemenu) + 1rem);
-} */
+.is-menu-opened .page,
+.is-menu-opened .footer {margin-left:calc(var(--width-sidemenu) + var(--grid-margin) + 1rem);}
 
-.is-menu-opened .navbar-logo {
-  z-index: 8;
-}
 
 /* --small */
 @media (max-width:1080px) {
-  .page {
-    padding-top: 2rem;
-  }
-  .is-menu-opened .page {
-    padding-left: var(--grid-margin);
-  }
+  .is-menu-opened .page,
+  .is-menu-opened .footer {margin-left: 0;}
 }
-
-.menu {position:relative;z-index:1;}
-.menu-heading {}
-.menu-link {display:flex;align-items:center;height:var(--size-medium);margin:var(--space-2) 0;}
-
-
-
 
 /* prioriy navigation patterns */
 /* ul {

@@ -49,7 +49,7 @@
           루크 잭슨은 술이 취한 상태에서 물건을 부수는 바람에 흉악범이 아님에도 불구하고 중노동형을
           선고 받는다.죄수들의 리더는 새로 들어온 신입죄수 루크의 요령피우는 태도가 눈에 거슬려
           루크에게 싸움을 건다. 모두들 리더와 도라의 압도적인 승리로 끝나리라 예상한다.
-          <mm-link href="#" style="margin-left: var(--space-2)">더 보기</mm-link>
+          <button style="font-weight: var(--font-weight-bold)">더 보기</button>
         </dd>
       </dl>
 
@@ -75,58 +75,51 @@
     </mm-group>
   </header>
 
-  <mm-separator></mm-separator>
-
-  <mm-tablist class="tablist">
-    <mm-tab slot="tab" name="project" selected="true" data-index="1"> 주요정보 </mm-tab>
-    <mm-tab slot="tab" name="case-study" selected="false" data-index="2"> 안주요정보 </mm-tab>
-    <mm-tab slot="tab" name="blank" selected="false" data-index="3">평가 </mm-tab>
-    <i class="tablist-indicator"></i>
-  </mm-tablist>
-
-  <section class="cake-info" aria-hidden="false" data-index="1">
-    <mm-text variant="subhead">출연진</mm-text>
-    <div style="height: 1rem"></div>
-    <mm-group variant="">
-      <mm-entity label="수줍이" description="감독">
-        <mm-avatar slot="avatar" variant="secondary" size="huge"></mm-avatar>
-      </mm-entity>
-      <mm-entity size="huge" label="스튜어트 로젠버그" description="주연">
-        <mm-avatar
-          slot="avatar"
-          size="huge"
-          variant="secondary"
-          src="/public/images/springsteen.jpg"
-        ></mm-avatar>
-        <mm-tag slot="badge">Director</mm-tag>
-      </mm-entity>
-      <mm-entity size="huge" label="폴 뉴먼" description="주연">
-        <mm-avatar slot="avatar" size="huge"></mm-avatar>
-      </mm-entity>
-      <mm-entity size="huge" label="폴 뉴먼" description="주연">
-        <mm-avatar slot="avatar" size="huge"></mm-avatar>
-      </mm-entity>
-    </mm-group>
-  </section>
-  <section class="cake-info">
+  <section style="display: flex; flex-direction: column; gap: 2rem; margin-top: 4rem">
+    <mm-text-group>
+      <mm-text variant="subhead">출연진</mm-text>
+      <mm-group variant="">
+        <mm-menuitem>
+          <mm-avatar
+            slot="avatar"
+            size="huge"
+            variant="secondary"
+            src="/public/images/springsteen.jpg"
+          ></mm-avatar>
+          <mm-text-pair
+            slot="text"
+            labelText="스튜어트 로젠버그"
+            descriptionText="감독"
+          ></mm-text-pair>
+        </mm-menuitem>
+        <mm-menuitem>
+          <mm-avatar
+            slot="avatar"
+            size="huge"
+            variant="secondary"
+            src="/public/images/prometheus.jpg"
+          ></mm-avatar>
+          <mm-text-pair slot="text" labelText="폴 뉴먼" descriptionText="주연"></mm-text-pair>
+        </mm-menuitem>
+      </mm-group>
+    </mm-text-group>
     <mm-text-group>
       <mm-text variant="subhead">수상내역</mm-text>
       <mm-text variant="label">Academy Awards</mm-text>
-      <mm-text variant="body">Best Actor</mm-text>
-      <mm-text variant="body">Best Supporting Actor</mm-text>
-      <mm-text variant="body">Best Screenplay – Based on Material from Another Medium</mm-text>
-      <mm-text variant="body">Best Original Music Score</mm-text>
-      <br />
-      <mm-text variant="label">포켓 와이파이</mm-text>
+      <mm-text-list
+        texts='[
+          "Best Actor",
+          "Best Supporting Actor",
+          "Best Screenplay – Based on Material from Another Medium",
+          "Best Original Music Score"
+        ]'
+      ></mm-text-list>
+      <!-- <mm-text variant="label">포켓 와이파이</mm-text>
       <p>데이터 요금 폭탄 걱정없이 전세계 어디서나 와이파이를 이용하세요.</p>
       <p>일반 문의 09:00-22:00</p>
       <p>실시간 항공권 문의 09:00-18:00</p>
-      <p>연중무휴 / 점심 12:00-13:00</p>
+      <p>연중무휴 / 점심 12:00-13:00</p> -->
     </mm-text-group>
-    <!-- TODO 불릿이 없는 텍스트 리스트 -->
-  </section>
-  <section class="cake-info">
-    <!-- TODO text-group -->
     <mm-text-group>
       <mm-text variant="subhead">리뷰</mm-text>
       <p>
