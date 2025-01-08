@@ -5,10 +5,6 @@
       Typography helps establish hierarchy and communicate important content by creating clear
       visual patterns.
       <div class="js-counter" data-number="234">234</div>
-      단어(word)" → "구(phrase)" → "문장(sentence)" → "문단(paragraph)"
-      <p>TextGroup, ContentGroup, TextStack</p>
-      <p>subhead, label, label-strong은 단독으로 쓰지 않음</p>
-      <p>heading level, body size</p>
     </mm-text>
   </mm-text-group>
   <!-- Truncate for secondary text that isn’t essential to a user’s comprehension of steps to take. Examples include dynamic data ad IDs in tables, lists of user names, and Pin titles that come from outside sources. Use an ellipsis or a link that indicates there is more content available. -->
@@ -170,11 +166,11 @@ The font size of a key is never bigger than the value.
       <mm-text variant="title">heading1, title</mm-text>
       <mm-text variant="subhead">heading2, subhead</mm-text>
       <mm-separator></mm-separator>
-      <mm-text variant="label">label</mm-text>
-      <mm-text variant="label-strong">label, strong</mm-text>
-      <mm-separator></mm-separator>
-      <mm-text variant="body">body</mm-text>
       <mm-text variant="body-large">body large</mm-text>
+      <mm-text variant="body">body</mm-text>
+      <mm-separator></mm-separator>
+      <mm-text variant="label-strong">label, strong</mm-text>
+      <mm-text variant="label">label</mm-text>
       <mm-separator></mm-separator>
       <!-- TODO link, text button일 수도 있다. -->
       <section style="display: flex; flex-direction: column; gap: var(--space-2)">
@@ -244,8 +240,8 @@ The font size of a key is never bigger than the value.
   </section>
   <section class="component-props">
     <dl>
-      <dt>variant ?? level</dt>
-      <dd>'title' | 'subhead' | 'label' | 'label-strong', 'body' | 'body-large'</dd>
+      <dt>variant</dt>
+      <dd>'title' | 'subhead' | 'label' | 'label-strong' | 'body' | 'body-large'</dd>
       <dt>color</dt>
       <dd>'primary' | 'secondary'</dd>
       <dt>lineHeight</dt>
@@ -278,95 +274,89 @@ The font size of a key is never bigger than the value.
     </mm-text-list>
 
     <mm-text-group>
-      <mm-text variant="subhead">용어 정의 및 분류</mm-text>
-      <ul>
-        <li>제목 heading - title / subtitle / subhead / caption (label)</li>
-        <li>subheading</li>
-        <li>본문 body - paragraph / label, help text</li>
-        <li>kicker/overline/eyebrow</li>
-      </ul>
+      <mm-text variant="subhead">Meta problems</mm-text>
+      <mm-text variant="body">
+        폰트마다 기준선이 다르기 때문에 섞어짤 때 또는 폰트를 변경할 때 주변 요소와 부모 요소에 맞춰
+        시각보정이 필요할 수 있다. 텍스트는 주변의 엘리먼트에 강하게 영향을 받기 때문에 주변 요소와
+        연동해서 추상화 변수를 활용할 수 있다.
+      </mm-text>
+      <mm-text variant="body">
+        블로그, 뉴스 기사 등 텍스트 기반의 콘텐츠 페이지를 위한 body 폰트 크기가 필요하다.
+      </mm-text>
+      <mm-text variant="body">message: 사용자, description: 시스템</mm-text>
     </mm-text-group>
 
     <mm-text-group>
-      <mm-text variant="subhead">Utilities. - Truncated.</mm-text>
+      <mm-text variant="subhead">Platform problems</mm-text>
+      <mm-text variant="label-strong">Utilities. - Truncated.</mm-text>
       <mm-text variant="body"> long-form content. truncate-multiple은 항상 2줄.</mm-text>
       <mm-text variant="body">제목을 자르는 것을 허용할 것인가? 허용하지 않을 것인가?</mm-text>
+      <mm-text variant="body">Stat과 Summary의 차이. clickable, non-clickable ?</mm-text>
+      <p>단어(word)" → "구(phrase)" → "문장(sentence)" → "문단(paragraph)"</p>
+      <p>TextGroup, ContentGroup, TextStack</p>
+      <p>subhead, label, label-strong은 단독으로 쓰지 않음</p>
+      <p>heading level, body size</p>
     </mm-text-group>
 
     <mm-text-group>
-      <mm-text variant="subhead">디지털 환경의<br />타이포그래피 규칙</mm-text>
-    </mm-text-group>
-
-    <mm-text-list
-      texts='[
-    "폰트마다 기준선이 다르기 때문에 섞어짤 때 또는 폰트를 변경할 때 주변 요소와 부모 요소에 맞춰 시각보정이 필요할 수 있다. 텍스트는 주변의 엘리먼트에 강하게 영향을 받기 때문에 주변 요소와 연동해서 추상화 변수를 활용할 수 있다.",
-    "블로그, 뉴스 기사 등 텍스트 기반의 콘텐츠 페이지를 위한 body 폰트 크기가 필요하다.",
-    "message: 사용자, description: 시스템",
-  ]'
-    >
-    </mm-text-list>
-    <mm-text-group>
-      <mm-text variant="subhead">텍스트 모듈</mm-text>
+      <mm-text variant="subhead">디지털 환경의 타이포그래피 규칙</mm-text>
+      <mm-text variant="label-strong">텍스트 모듈</mm-text>
       <mm-text variant="body">
         본문은 왼끝 맞추기(오른끝 흘리기). 사용자의 주목을 요할 때, 또는 맥락의 전환을 표현하기 위해
         콘텐츠 모듈을 가운데 정렬할 수 있다. ex) result component
       </mm-text>
-    </mm-text-group>
-
-    <mm-text-group>
-      <mm-text variant="subhead">들여쓰기</mm-text>
+      <mm-text variant="label-strong">들여쓰기</mm-text>
       <mm-text variant="body">
         단락의 위 아래 간격을 활용합니다. 작은 화면에서 공간 활용을 위해 좌측 들여쓰기 하지
         않습니다. TODO 그렇다면, 이 간격은 어떻게 정의할 것인가?
       </mm-text>
-    </mm-text-group>
-
-    <mm-text-group>
-      <mm-text variant="subhead">텍스트의 강조</mm-text>
-      <mm-text variant="label-strong">형태적 강조 :: mark, u, em, b</mm-text>
-      <mm-text variant="label-strong">의미론적 강조 ::strong - 개인정보처리방침 등</mm-text>
+      <mm-text variant="label-strong">텍스트의 강조</mm-text>
+      <mm-text variant="body">형태적 강조 :: mark, u, em, b</mm-text>
+      <mm-text variant="body">의미론적 강조 ::strong - 개인정보처리방침 등</mm-text>
       <mm-text variant="body">
         단락에 포함된 단어나 구문을 underline, <del>bold</del>, primary color로 강조하지 마세요.
         우리는 underlined와 pirmary colored text를 <mark>clickable</mark>로 엄격하게 정의하고
         있습니다.
       </mm-text>
-    </mm-text-group>
 
-    <mm-text-group>
-      <mm-text variant="subhead">Stat과 Summary의 차이</mm-text>
-      <ul>
-        <li>clickable / non-clickable</li>
-      </ul>
+      <mm-text variant="subhead">용어 정의 및 분류</mm-text>
+      <mm-text variant="body"
+        >제목 heading - title / subtitle / subhead(subheading) / caption (label)</mm-text
+      >
+      <mm-text variant="body"
+        >본문 body - paragraph / label, help text / kicker/overline/eyebrow</mm-text
+      >
     </mm-text-group>
+  </section>
 
+  <section class="component-case">
+    <section class="hero">
+      <div class="hero-obj">
+        <div class="hero-obj1"></div>
+        <div class="hero-obj2"></div>
+        <div class="hero-obj3"></div>
+      </div>
+      <mm-text-group variant="title">
+        <mm-text variant="title">히어로 섹션 제목</mm-text>
+        <mm-text variant="body-large" truncated="true">
+          이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에
+          부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은 침묵에 잠겼다.
+        </mm-text>
+        <footer class="hero-actions" style="margin: 1.5rem 0 0">
+          <mm-button variant="primary" size="large">콜 투 액션</mm-button>
+          <mm-button variant="text" size="large">더 알아보기</mm-button>
+        </footer>
+      </mm-text-group>
+    </section>
     <mm-tile>
-      <p>이 문서가 도움이 되었나요?</p>
+      <mm-text variant="label-strong">이 문서가 도움이 되었나요?</mm-text>
       <small title="17 out of 439 found this helpful"> 417명 중 349명이 도움을 받았어요. </small>
+      <div style="height: 1rem"></div>
       <mm-group variant="">
         <mm-button>도움이 됐어요</mm-button>
         <mm-button>부족해요</mm-button>
       </mm-group>
     </mm-tile>
-  </section>
-
-  <section class="hero">
-    <div class="hero-obj">
-      <div class="hero-obj1"></div>
-      <div class="hero-obj2"></div>
-      <div class="hero-obj3"></div>
-    </div>
-    <mm-text variant="title">히어로 섹션 제목</mm-text>
-    <mm-text variant="body-large" truncated="true">
-      이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에
-      부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은 침묵에 잠겼다.
-    </mm-text>
-    <footer class="hero-actions" style="margin: 2rem 0 0">
-      <mm-button variant="primary" size="large">콜 투 액션</mm-button>
-      <mm-button variant="text" size="large">더 알아보기</mm-button>
-    </footer>
-  </section>
-
-  <section class="component-case">
     <mm-tile>
       <header
         style="

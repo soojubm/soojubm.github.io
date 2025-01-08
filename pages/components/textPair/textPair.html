@@ -2,13 +2,6 @@
   <mm-text-group variant="title">
     <mm-text variant="title">TextPair</mm-text>
     <mm-text variant="body-large"> 텍스트의 쌍 </mm-text>
-    <p>KeyValuePair :: Key와 Value가 동일한 위계를 갖는다. 리스트 형태이다. alignment/size</p>
-    <p>LabelWithDescription :: Label이 강조된다. size?</p>
-    <p>예: ProfileKeyValuePair, FeatureLabelWithDescription.</p>
-    <p>
-      keyvalue 에서 value가 subhead의 형태는 가질 수 있으나 그 역할은 아님. keyvalue는 추상화ㅏ된
-      컴포넌트이긴 함.
-    </p>
   </mm-text-group>
   <section class="component-example">
     <mm-keyvalue key="keyvalue key text" value="keyvalue value text"></mm-keyvalue>
@@ -44,6 +37,16 @@
     </dl>
   </section>
   <section class="component-guide">
-    <mm-text-group><mm-text variant="subhead">menuItem. with Avatar.</mm-text></mm-text-group>
+    <mm-text-group>
+      <mm-text variant="subhead">menuItem. with Avatar.</mm-text>
+      <p>예: ProfileKeyValuePair, FeatureLabelWithDescription.</p>
+      <p>KeyValuePair :: Key와 Value가 동일한 위계를 갖는다. 리스트 형태이다. alignment/size</p>
+      <p>LabelWithDescription :: Label이 강조된다. size?</p>
+
+      <p>
+        keyvalue 에서 value가 subhead의 형태는 가질 수 있으나 그 역할은 아님. keyvalue는 추상화ㅏ된
+        컴포넌트이긴 함.
+      </p>
+    </mm-text-group>
   </section>
 </main>

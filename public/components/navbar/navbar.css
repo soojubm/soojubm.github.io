@@ -79,7 +79,7 @@
 /* ReactNative safeAreaView, scrollView */
 .page {
   margin: 0 auto;
-  padding: 0 var(--grid-margin) 4rem;
+  padding: var(--space-4) var(--grid-margin) 4rem;
   box-sizing: border-box;
   position:relative;
 }
@@ -102,20 +102,17 @@
   display:block;
   width: 100%;
   max-width: var(--width-sidemenu);
-  height: calc(100vh - var(--navbar-height));
-  padding: 0 var(--space-4) 0 calc(var(--grid-margin));
-  /* padding: 0 var(--space-4) 0 0; */
-  /* margin:var(--space-4) 0; */
+  /* height: calc(100vh - var(--navbar-height)); */
+  padding: var(--space-4) var(--space-4) var(--space-4) calc(var(--grid-margin));
   background:var(--color-background);
-  position:sticky;
+  transition:transform var(--duration-slowly) cubic-bezier(.165,.84,.44,1);
+  transform:translateX(-120%);
+  position: fixed;
   left:0px;
   top:calc(var(--navbar-height));
   bottom:0px;
   z-index:var(--zindex-menu);
-  transition:transform var(--duration-slowly) cubic-bezier(.165,.84,.44,1);
-  transform:translateX(-120%);
 
-  position: fixed;
 }
 .sidebar-menu span {}
 .sidebar-menu menu {display:flex;flex-direction: column;margin:2rem 0 0 0;

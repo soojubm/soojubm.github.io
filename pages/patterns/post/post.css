@@ -9,7 +9,6 @@
 .is-sticky-post-head .post-head-category {display:none;}
 .is-sticky-post-head .post-head-headline {padding:var(--space-4) var(--grid-margin) 1rem;box-sizing:border-box;font-size:var(--font-size-large);line-height:32px;text-align:center;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;}
 .is-sticky-post-head .post-head-dateline {display:none;}
-.is-sticky-post-head .post-head-kicker {display:none;}
 .is-sticky-post-head .post-head-readingtime {display:none;}
 .is-sticky-post-head .post-head-dateline + .icon-bullet {display:none;}
 .is-sticky-post-head .post-head-progress {display:block;}
