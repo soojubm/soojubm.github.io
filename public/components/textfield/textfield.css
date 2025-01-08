@@ -192,12 +192,12 @@ textarea.textfield-input {
   display:flex;align-items:center;justify-content:center;width:var(--size-large);height:var(--size-large);
   /* height:46px; */
   position:absolute;left:0;top:0;z-index:2;}
-.searchfield-prefix ~ .searchfield-input {padding-left:calc(var(--size-medium) + var(--space-after-avatar-medium) + .5rem);}
+.searchfield-prefix ~ .searchfield-input {padding-left:calc(var(--size-medium) + var(var(--space-2)) + .5rem);}
 .searchfield-clear {display:flex;align-items:center;justify-content:center;width:var(--size-large);height:var(--size-large);position:absolute;right:0;top:0;z-index:1;display:none;}
 .searchfield-input:focus + .searchfield-clear {display:flex;}
 /* 임시 */
-.searchfield-cancel {right:calc(var(--size-medium) + var(--space-after-avatar-medium) + var(--space-3));height:var(--size-large);position:absolute;right:var(--size-large);top:0;transition:all .2s ease;}
+.searchfield-cancel {right:calc(var(--size-medium) + var(var(--space-2)) + var(--space-3));height:var(--size-large);position:absolute;right:var(--size-large);top:0;transition:all .2s ease;}
 
 /* // android pattern */
-.is-focused .searchfield-input {display:block;width:calc(100% - var(--size-medium) - var(--space-after-avatar-medium));}
+.is-focused .searchfield-input {display:block;width:calc(100% - var(--size-medium) - var(var(--space-2)));}
 .is-focused .searchfield-cancel {right:0;}

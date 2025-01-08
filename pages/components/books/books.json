@@ -1,5 +1,181 @@
 [
   {
+    "releasedate": 1938,
+    "titlekorean": "와이오밍 와인",
+    "titleenglish": "Wine of Wyoming",
+    "director": "어니스트 헤밍웨이",
+    "country": "미국",
+    "etc": ""
+  },
+  {
+    "releasedate": 1835,
+    "titlekorean": "야망이 큰 손님",
+    "titleenglish": "The Ambitious Guest",
+    "director": "너대니얼 호손",
+    "country": "미국",
+    "etc": ""
+  },
+  {
+    "releasedate": 1965,
+    "titlekorean": "콜차크, 엉겅퀴에 대하여",
+    "titleenglish": "Kolchak, the Thistle",
+    "director": "미하일 숄로호프",
+    "country": "",
+    "etc": ""
+  },
+  {
+    "releasedate": 1111,
+    "titlekorean": "그의 외롭고 쓸쓸한 밤",
+    "titleenglish": "",
+    "director": "박완서",
+    "country": "한국",
+    "etc": ""
+  },
+  {
+    "releasedate": 1922,
+    "titlekorean": "보은기",
+    "titleenglish": "",
+    "director": "아쿠타가와 류노스케",
+    "country": "일본",
+    "etc": ""
+  },
+  {
+    "releasedate": 1938,
+    "titlekorean": "메마른 삶",
+    "titleenglish": "Vidas secas",
+    "director": "그라실리아누 하무스",
+    "country": "",
+    "etc": "휴머니스트"
+  },
+  {
+    "releasedate": 1908,
+    "titlekorean": "요정들의 선물",
+    "titleenglish": "Le Don des fées / The Gift of the Fairies",
+    "director": "마르셸 프루스트",
+    "country": "",
+    "etc": ""
+  },
+  {
+    "releasedate": 1952,
+    "titlekorean": "민턴가의 일요일",
+    "titleenglish": "",
+    "director": "실비아 플라스",
+    "country": "",
+    "etc": ""
+  },
+  {
+    "releasedate": 2009,
+    "titlekorean": "자가 수술을 위한 구부러진 공간에서",
+    "titleenglish": "",
+    "director": "정지돈",
+    "country": "한국",
+    "etc": ""
+  },
+  {
+    "releasedate": 1930,
+    "titlekorean": "토비아스 민더니켈",
+    "titleenglish": "Tobias Mindernickel",
+    "director": "토마스 만",
+    "country": "독일",
+    "etc": ""
+  },
+  {
+    "releasedate": 1952,
+    "titlekorean": "새",
+    "titleenglish": "The Birds",
+    "director": "대프니 듀 모리에",
+    "country": "미국",
+    "etc": "The Apple Tree"
+  },
+  {
+    "releasedate": 1932,
+    "titlekorean": "미친 일요일",
+    "titleenglish": "Crazy Sunday",
+    "director": "프랜시스 스콧 피츠제럴드",
+    "country": "미국",
+    "etc": ""
+  },
+  {
+    "releasedate": 1924,
+    "titlekorean": "선원, 빌리버드",
+    "titleenglish": "Billy Budd, Sailor",
+    "director": "허먼 멜빌",
+    "country": "중편?",
+    "etc": ""
+  },
+  {
+    "releasedate": 1960,
+    "titlekorean": "9월까지, 퍼트로넬라",
+    "titleenglish": "Till Septemper Petronella",
+    "director": "진 리스",
+    "country": "",
+    "etc": "London Magazine"
+  },
+  {
+    "releasedate": 1931,
+    "titlekorean": "메인의 죽음",
+    "titleenglish": "The Main Death",
+    "director": "대실 해밋",
+    "country": "미국",
+    "etc": "The Continental Op"
+  },
+  {
+    "releasedate": 1957,
+    "titlekorean": "남의 다리",
+    "titleenglish": "他人の足Someone Else's Feet",
+    "director": "오에 겐자부로",
+    "country": "일본",
+    "etc": ""
+  },
+  {
+    "releasedate": 2024,
+    "titlekorean": "킨츠키",
+    "titleenglish": "",
+    "director": "이사 와타나베",
+    "country": "일본",
+    "etc": "그림책, 2024 볼로냐 라가치상 대상"
+  },
+  {
+    "releasedate": 1111,
+    "titlekorean": "혼자 살기 시작했습니다",
+    "titleenglish": "",
+    "director": "정현정",
+    "country": "한국",
+    "etc": "에세이"
+  },
+  {
+    "releasedate": 1946,
+    "titlekorean": "천둥과 장미",
+    "titleenglish": "Thunder and Roses",
+    "director": "시어도어 스터전",
+    "country": "",
+    "etc": "SF"
+  },
+  {
+    "releasedate": 2014,
+    "titlekorean": "예스터데이",
+    "titleenglish": "Yesterday",
+    "director": "무라카미 하루키",
+    "country": "일본",
+    "etc": ""
+  },
+  {
+    "releasedate": 1936,
+    "titlekorean": "가마귀",
+    "titleenglish": "",
+    "director": "이태준",
+    "country": "한국",
+    "etc": ""
+  },
+  {
+    "releasedate": 1950,
+    "titlekorean": "화성 연대기",
+    "titleenglish": "The Martian Chronicles",
+    "director": "레이 브래드버리",
+    "country": "",
+    "etc": ""
+  },
+  {
     "releasedate": 1971,
     "titlekorean": "떠오르는 아프리카",
     "titleenglish": "Africa Emergent",
@@ -7,7 +183,14 @@
     "country": "남아프리카공화국",
     "etc": ""
   },
-
+  {
+    "releasedate": 1929,
+    "titlekorean": "보이지 않는 소장품",
+    "titleenglish": "Das unsichtbare Sammlung",
+    "director": "슈테판 츠바이크",
+    "country": "독일",
+    "etc": ""
+  },
   {
     "releasedate": 1926,
     "titlekorean": "거울지옥",
@@ -15,6 +198,14 @@
     "director": "에도가와 란포",
     "country": "일본",
     "etc": ""
+  },
+  {
+    "releasedate": 1941,
+    "titlekorean": "에이프릴의 고양이",
+    "titleenglish": "",
+    "director": "클레어 티레이 뉴베리",
+    "country": "",
+    "etc": "그림책"
   },
   {
     "releasedate": 2015,
@@ -294,8 +485,9 @@
     "titlekorean": "퇴근 후, 카페여행"
   },
   {
+    "releasedate": 1996,
     "titlekorean": "세계가 시작되는 곳",
-    "titleenglish": "The Early Stories of Truman Capote ",
+    "titleenglish": "The Early Stories of Truman Capote",
     "director": "트루먼 카포티",
     "country": "미국"
   },
@@ -341,6 +533,7 @@
   {
     "releasedate": 2000,
     "titlekorean": "칠레의 밤",
+    "titleenglish": "Nocturno de Chile",
     "director": "로베르토 볼라뇨",
     "country": "칠레"
   },
@@ -395,9 +588,11 @@
     "etc": "SF"
   },
   {
+    "releasedate": 1981,
     "titlekorean": "본능의 기쁨",
     "titleenglish": "Les joies de la nature",
-    "director": "로맹 가리"
+    "director": "로맹 가리",
+    "country": "프랑스"
   },
   {
     "releasedate": 1924,
@@ -483,7 +678,8 @@
     "titlekorean": "잃어버린 심장",
     "titleenglish": "전에 참사회읽은",
     "director": "몬데규 로즈 제임스",
-    "country": 220610
+    "country": "",
+    "etc": "220610"
   },
   {
     "releasedate": 1958,
@@ -511,7 +707,9 @@
     "country": "한국"
   },
   {
-    "titlekorean": "영생의 묘약 ",
+    "releasedate": 1834,
+    "titlekorean": "영생의 묘약",
+    "titleenglish": "La Recherche de l'Absolu",
     "director": "오노레 드 발자크",
     "country": "프랑스"
   },
@@ -657,7 +855,9 @@
   {
     "releasedate": 1977,
     "titlekorean": "100만 번 산 고양이",
-    "director": "사노 요코"
+    "titleenglish": "The Cat Who Lived a Million Times",
+    "director": "사노 요코",
+    "country": "일본"
   },
   {
     "titlekorean": "인조 검둥이",
@@ -979,6 +1179,7 @@
     "country": "한국"
   },
   {
+    "releasedate": 1934,
     "titlekorean": "저 너머에서",
     "titleenglish": "From Beyond",
     "director": "하워드 필립스 러브크래프트"

@@ -4,7 +4,7 @@
 
   --chat-avatar-border: 1px solid transparent;
 
-  padding:0 0 0 calc(var(--size-medium) + var(--space-after-avatar-medium));
+  padding:0 0 0 calc(var(--size-medium) + var(var(--space-2)));
   box-sizing:border-box;
   position:relative;
 }

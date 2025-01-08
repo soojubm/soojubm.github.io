@@ -10,7 +10,7 @@
 
 .authentication {width: 100%;max-width:var(--width-medium);margin:0 auto;}
 .authentication-head {display:flex;flex-direction:column;gap:var(--space-2);padding:2rem 0;position:relative;}
-.authentication-head-logo {margin:0 0 var(--space-after-avatar-medium) 0;}
+.authentication-head-logo {margin:0 0 var(var(--space-2)) 0;}
 .authentication-head-description {
     /* margin:var(--space-after-subhead) 0 0 0; */
 }
@@ -21,7 +21,6 @@
 .authentication-fieldset {
 display: flex; flex-direction: column; gap: 0.75rem
 }
-.authentication-fieldset .textfield {margin:var(--space-after-textfield) 0;}
 
 /* // actions */
 .authentication-foot {margin:var(--space-3) 0;position:relative;}

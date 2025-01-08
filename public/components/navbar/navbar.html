@@ -100,7 +100,7 @@
     </mm-menuitem> -->
   </mm-group>
   <menu>
-    <div style="display: flex; align-items: center; gap: 0.5rem">
+    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: var(--space-1)">
       <mm-avatar slot="avatar" variant="tertiary">
         <mm-icon slot="icon" name="building"></mm-icon>
       </mm-avatar>
@@ -141,10 +141,12 @@
     <a href="result.html">result</a>
   </menu>
   <menu>
-    <mm-menuitem label="Patterns" role="heading">
-      <mm-avatar slot="avatar" variant="tertiary" icon="city"></mm-avatar>
-      <mm-icon slot="icon" name="plus"></mm-icon>
-    </mm-menuitem>
+    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: var(--space-1)">
+      <mm-avatar slot="avatar" variant="tertiary">
+        <mm-icon slot="icon" name="city"></mm-icon>
+      </mm-avatar>
+      <mm-text variant="body">Patterns</mm-text>
+    </div>
     <a href="dashboard.html">dashboard</a>
 
     <a href="auth.html">auth</a>

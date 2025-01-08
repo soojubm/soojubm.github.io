@@ -76,7 +76,7 @@
 }
 /* .product-quick:before {content:'';display:block;height:inherit;background:inherit;border-top:var(--border);position:fixed;left:0;right:0;bottom:0;} */
 .product-quick-head {width:35%;position:relative;}
-.product-quick-head-image {float:left;margin:0 var(--space-after-avatar-large) 0 0;}
+.product-quick-head-image {float:left;}
 .product-quick-head-title {}
 .product-quick-head-description {}
 .product-quick-total {margin:0 2rem 0 auto;text-align:right;position:relative;}
