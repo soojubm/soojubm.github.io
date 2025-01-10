@@ -14,8 +14,9 @@
   </dl>
 
   <section class="component-example">
-    <mm-text variant="subhead">
-      Frequently asked questions
+    <mm-text variant="title">
+      자주 묻는 질문
+      <span hidden>FAQ</span>
       <abbr title="Frequently asked questions" hidden>FAQ</abbr>
     </mm-text>
     <article class="accordion js-accordion is-active">
@@ -40,23 +41,22 @@
         <p>[aria-expanded] rect { fill: currentColor; }</p>
         <p>toggle-section open="false"s</p>
         <pre>
-                (function() {
-                  const headings = document.querySelectorAll('h2')
-                
-                  Array.prototype.forEach.call(headings, heading => {
-                    let btn = heading.querySelector('button')
-                    let target = heading.nextElementSibling
-                
-                    btn.onclick = () => {
-                      let expanded = btn.getAttribute('aria-expanded') === 'true' || false
-                
-                      btn.setAttribute('aria-expanded', !expanded)
-                      target.hidden = expanded    
-                    }
-                  })
-                })()
-              </pre
-        >
+          (function() {
+            const headings = document.querySelectorAll('h2')
+          
+            Array.prototype.forEach.call(headings, heading => {
+              let btn = heading.querySelector('button')
+              let target = heading.nextElementSibling
+          
+              btn.onclick = () => {
+                let expanded = btn.getAttribute('aria-expanded') === 'true' || false
+          
+                btn.setAttribute('aria-expanded', !expanded)
+                target.hidden = expanded    
+              }
+            })
+          })()
+        </pre>
         <footer class="faq-item-reaction">
           <p class="faq-reaction-title reaction-prompt">이 답변이 도움이 되었나요?</p>
         </footer>

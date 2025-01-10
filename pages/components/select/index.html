@@ -16,6 +16,31 @@
   </dl>
 
   <section class="component-example">
+    <button-list-component
+      id="button-list"
+      options='[
+        {"label": "Apple", "value": "apple"},
+        {"label": "Banana", "value": "banana"},
+        {"label": "Cherry", "value": "cherry"}
+      ]'
+    ></button-list-component>
+
+    <script>
+      const buttonList = document.getElementById('button-list')
+
+      buttonList.addEventListener('optionChange', event => {
+        console.log('Selected value:', event.detail.value)
+      })
+
+      buttonList.setAttribute(
+        'options',
+        JSON.stringify([
+          { label: 'Orange', value: 'orange' },
+          { label: 'Grapes', value: 'grapes' },
+        ]),
+      )
+    </script>
+
     <mm-dropdown>
       <option value="1">Option 1</option>
       <option value="2">Option 2</option>

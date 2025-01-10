@@ -29,6 +29,7 @@
         <mm-button variant="tertiary" size="large">tertiary</mm-button>
         <!-- <mm-button variant="destructive" aria-label="danger">destructive</mm-button> -->
         <mm-button variant="text" size="large">text</mm-button>
+        <mm-button variant="text" size="large" disabled>text</mm-button>
       </mm-group>
       <mm-separator></mm-separator>
       <mm-group>
@@ -40,7 +41,7 @@
       <mm-group variant="chip">
         <mm-button variant="tertiary" status="hover">hovered</mm-button>
         <mm-button variant="tertiary" status="focus">focused</mm-button>
-        <mm-button variant="`tertiary" status="disabled" disabled>disabled</mm-button>
+        <mm-button variant="`tertiary" disabled>disabled</mm-button>
         <mm-button variant="tertiary">
           <div slot="prefix" class="chat-inputing animation-chatting">
             <span style="background-color: var(--color-background-strong)"></span>
@@ -79,22 +80,20 @@
   <section class="component-guide">
     <mm-text-group>
       <mm-text variant="subhead" aria-label="예측 가능해야 합니다.">Behavior</mm-text>
-      <mm-text variant="body-large">
+      <mm-text variant="body">
         버튼은 페이지 내에서 여러 번 반복될 수 없는 최종적인 인터렉션입니다. 단, 전송이 실패하는
         경우에는 여러 번 반복해서 실행할 수 있습니다.
       </mm-text>
     </mm-text-group>
-
     <mm-text-group>
       <mm-text variant="subhead">Feedback needed</mm-text>
-      <mm-text variant="body-large">
+      <mm-text variant="body">
         물리적인 인터페이스의 출현만이 수행 결과를 피드백하는 것이 아닙니다. 예측할 수 있는 페이지
         이동이나 페이지 새로고침, 정보 구조의 변화도 피드백으로 취급될 수 있습니다. (ex bad case:
         인스타그램 앱에서 로그인되었다는 toast. 홈으로 이동과 피드 노출만으로 로그인 상태를 인지할
         수 있다.)
       </mm-text>
     </mm-text-group>
-
     <!-- <mm-text variant="body">모든 액션에 피드백할 필요는 없습니다.</mm-text> -->
     <mm-text-group>
       <mm-text variant="subhead" aria-label="예측 가능해야 합니다.">Editorial</mm-text>
@@ -291,7 +290,7 @@
   <section class="component-example">
     <mm-group variant="chip">
       <mm-button>기본</mm-button>
-      <mm-button status="disabled">비활성</mm-button>
+      <mm-button disabled>비활성</mm-button>
       <mm-button icon="user" aria-label="사용자"></mm-button>
       <mm-button icon="bell" aria-label=""></mm-button>
       <!-- <mm-button status="active">active</mm-button>

@@ -44,10 +44,13 @@ import TextGroup from '../../components/text/textGroup'
 import TextList from '../../components/text/textList'
 import TextPair from '../../components/textpair/textpair'
 import Dropdown from '../../components/textfield/dropdown'
+import ButtonListComponent from '../../components/buttonList/buttonList'
 
 export function defineCustomElement() {
   if ('customElements' in window) {
     customElements.define('mm-icon', Icon)
+
+    customElements.define('button-list-component', ButtonListComponent)
 
     customElements.define('mm-button', Button)
     customElements.define('mm-icon-button', IconButton)

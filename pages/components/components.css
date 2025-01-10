@@ -35,8 +35,6 @@
 .component-guide {
   margin: 1rem 0 0 calc(-5vw + 1rem);
   padding: 0 calc(var(--grid-margin) - 1rem) 4rem;
-  border-radius: var(--radius);
-  border: var(--border);
   /* max-width: var(--container-width);
   margin:3.5rem 0 4rem; */
 }
@@ -67,7 +65,7 @@
 
 .component-props mm-text {display:none}
 .component-props dl {display:flex;flex-wrap:wrap;column-gap:var(--space-1);}
-.component-props dl dt {font-weight:500;}
+.component-props dl dt {font-weight:var(--font-weight-normal);}
 .component-props dl dt::after {content:':'}
 .component-props dl dd {margin-right:var(--space-3);font-weight: var(--font-weight-bold);font-style:italic;;color:rgb(29, 161, 242)}
 .component-props dl dd + dd {font-size:var(--font-size-small);color:var(--color-text);}

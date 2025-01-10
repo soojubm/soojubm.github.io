@@ -1,5 +1,15 @@
 [
   {
+    "id": 2025,
+    "releasedate": 1972,
+    "titlekorean": "로마",
+    "titleenglish": "Roma",
+    "director": "페데리코 펠리니",
+    "country": "이탈리아",
+    "etc": ""
+  },
+
+  {
     "id": 202404212,
     "releasedate": 1973,
     "titlekorean": "거울의 예술",
@@ -120,8 +130,8 @@
     "releasedate": 1982,
     "titlekorean": "돌팔이",
     "titleenglish": "The Quack",
-    "director": "",
-    "country": "",
+    "director": "예르지 호프만",
+    "country": "폴란드",
     "etc": ""
   },
   {

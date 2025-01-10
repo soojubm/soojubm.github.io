@@ -1,31 +1,33 @@
 import { makeStyleSheet } from '../../javascripts/components/utils'
 
+// : 'title' | 'subhead' | 'body' | 'body-large' | 'label' | 'label-strong'
+
 class Text extends HTMLElement {
+  private hostElement: HTMLParagraphElement
+
   constructor() {
     super()
-    const shadow = this.attachShadow({ mode: 'open' })
+    const shadowRoot = this.attachShadow({ mode: 'open' })
+    this.hostElement = document.createElement('p')
+  }
+  connectedCallback() {
+    const { shadowRoot, hostElement } = this
 
-    const container = document.createElement('p')
-    container.classList.add('text')
-    container.innerHTML = this.content
+    hostElement.classList.add('text')
+    hostElement.dataset.variant = this.variant
+    hostElement.dataset.truncated = this.truncated.toString()
+    hostElement.innerHTML = this.innerHTML
 
-    if (this.variant) container.dataset.variant = this.variant || ''
-    if (this.truncated) container.dataset.truncated = 'true' || ''
-
-    shadow.append(container, makeStyleSheet('text'))
+    shadowRoot!.append(hostElement, makeStyleSheet('text'))
   }
 
   get variant() {
-    return this.getAttribute('variant')
+    return this.getAttribute('variant') || 'body'
   }
   get truncated() {
-    return this.getAttribute('truncated')
-  }
-  get content() {
-    return this.innerHTML
+    return this.hasAttribute('truncated')
   }
 
-  connectedCallback() {}
   disconnectedCallback() {}
 }
 

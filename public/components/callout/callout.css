@@ -23,17 +23,16 @@
 
 .callout[data-variant=success] {
   --callout-text-color: var(--green800);
-  border:none;background:var(--green100);
+  border: 1px solid;
 }
 .callout[data-variant=danger] {
   --callout-text-color: var(--red800);
-  border:none;background:var(--red100);
+  border: 1px solid;
 }
 
 .callout[data-variant=warning] {
   --callout-text-color: sienna;
-  border:none;
-  background:cornsilk;
+  border: 1px solid;
 }
 
 figure {margin: 0;padding:0;}

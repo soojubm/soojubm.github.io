@@ -11,39 +11,38 @@ const getContainer = (value: ValueType) => {
   return 'div'
 }
 class Group extends HTMLElement {
+  private hostElement: HTMLDivElement
   constructor() {
     super()
-    const shadow = this.attachShadow({ mode: 'open' })
+    this.attachShadow({ mode: 'open' })
+    this.hostElement = document.createElement('div')
+  }
+  connectedCallback() {
+    const { shadowRoot, hostElement } = this
+    hostElement.classList.add('group')
+    hostElement.role = 'group'
 
-    const container = document.createElement('div')
-    container.classList.add('group')
-    container.role = 'group'
+    hostElement.dataset.alignment = this.alignment
 
-    // TODO radio = radiogroup role
-
-    container.dataset.alignment = this.alignment || ''
-
-    if (this.alignment) container.dataset.alignment = this.alignment
+    if (this.alignment) hostElement.dataset.alignment = this.alignment
 
     const style = this.getAttribute('style')
-    container.setAttribute('style', style || '')
+    hostElement.setAttribute('style', style || '')
 
-    if (this.variant) container.dataset.variant = this.variant
-    // TODO : checkbox는 fieldset
+    if (this.variant) hostElement.dataset.variant = this.variant
 
-    shadow.appendChild(container)
-    container.append(...this.childNodes, makeStyleSheet('group'))
+    shadowRoot!.appendChild(hostElement)
+    hostElement.append(...this.childNodes, makeStyleSheet('group'))
   }
 
   get variant() {
-    return this.getAttribute('variant')
+    return this.getAttribute('variant') || ''
   }
 
   get alignment() {
-    return this.getAttribute('alignment')
+    return this.getAttribute('alignment') || ''
   }
 
-  connectedCallback() {}
   disconnectedCallback() {}
 }
 

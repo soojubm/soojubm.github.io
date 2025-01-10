@@ -4,41 +4,49 @@ import { makeStyleSheet } from '../../javascripts/components/utils'
 // aria label
 
 class IconButton extends HTMLElement {
+  private hostElement: HTMLButtonElement
+  private iconElement: HTMLElement
+
   static get observedAttributes() {
-    return ['disabled']
+    return ['disabled', 'icon', 'variant', 'label']
   }
 
   constructor() {
     super()
+    const shadowRoot = this.attachShadow({ mode: 'open' })
+    this.hostElement = document.createElement('button')
+    this.iconElement = document.createElement('mm-icon')
   }
 
   get icon() {
-    return this.getAttribute('icon')
+    return this.getAttribute('icon') || ''
   }
 
   get variant() {
-    return this.getAttribute('variant')
+    return this.getAttribute('variant') || ''
   }
 
   get label() {
-    return this.getAttribute('label')
+    return this.getAttribute('label') || ''
   }
 
   connectedCallback() {
-    const shadowRoot = this.attachShadow({ mode: 'open' })
+    const { shadowRoot, hostElement, iconElement } = this
 
-    const host = document.createElement('button')
-    host.classList.add('icon-button')
-    host.dataset.variant = this.variant || ''
-    // host.ariaLabel = this.ariaLabel
+    hostElement.classList.add('icon-button')
+    hostElement.dataset.variant = this.variant
 
-    const icon = document.createElement('mm-icon')
-    icon.setAttribute('name', this.icon || '')
+    iconElement.setAttribute('name', this.icon)
 
-    shadowRoot?.append(host, makeStyleSheet('button'))
-    host.appendChild(icon)
+    hostElement.appendChild(this.iconElement)
+
+    shadowRoot!.append(this.hostElement, makeStyleSheet('button'))
   }
-  attributeChangedCallback() {}
+  // attributeChangedCallback(name: string, oldValue: string, newValue: string): void {
+  //   if (oldValue !== newValue) {
+  //     this.render();
+  //   }
+  // }
   disconnectedCallback() {}
 }
 

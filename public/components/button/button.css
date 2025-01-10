@@ -1,5 +1,15 @@
+/* reset */
+button {
+  padding: 0;
+  border: 0;
+  font-family: var(--font-family);
+  font-size: inherit;
+}
+em, i  {
+  font-style: normal;
+}
+
 /* host에서 정의하면 커스텀 엘리먼트가 아닐 .class로 사용할 때 못 가져온다. */
-.button,
 :host {
   --button-min-width: 5rem;
 
@@ -33,7 +43,6 @@
   --button-focus-border-color: null;
 
   /* button-text-size 토큰이 없는 이유. 테마에 대응하기 위해 필요한 게 아님. */
-
   /*
   --button-color-background
   --button-color-border
@@ -47,26 +56,13 @@
 
 :host {}
 :host(.primary) {}
+/* 이렇게 하면 일단 프로젝트에 어려움. */
 /* :host([variant="primary"]) .button {
   --button-color: var(--color-primary);
   --button-text-color: var(--gray0);
 } */
 
 
-
-
-/* TODO 요거 .chip */
-:host([variant=plain]) {
-  --chip-color-background: none;
-  --chip-color-border: 0;
-}
-
-:host([variant=back]) {
-  --chip-color-background: var(--color-background);
-  --chip-border: var(--border);
-  --chip-radius: 50%;
-  --chip-shadow: var(--shadow);
-}
 
 
 /* IconButton */
@@ -152,6 +148,7 @@
   --button-text-color: var(--color-text);
 }
 .button[data-variant=text] {
+  border-color: transparent;
   --button-color: var(--color-background);
   --button-text-color: var(--color-primary);
 }
@@ -185,51 +182,26 @@
   border: 1px solid var(--color-background-strong);
 }
 
-
 /* states */
-.button:hover,
-.button[data-status=hover] {
+.button:disabled {
+  opacity:.5;
+  cursor:not-allowed;
+  /* pointer-events: none; */
+}
+.button:not(:disabled):hover {
   box-shadow: var(--status-hover);
 }
-.button:focus,
-.button[data-status=focus] {
+.button:not(:disabled):focus {
   outline: 3px solid #007185;
   outline-offset: 2px;
 }
-.button:disabled,
-.button[data-status=disabled] {opacity:.5;cursor:not-allowed;}
-.button[aria-pressed=true] {}
-.button:active:not(.a-button-disabled) {
+.button:not(:disabled):active {
   background: #F0B800;
   border-color: #008296;
   box-shadow: 0 0 0 3px #C8F3FA, inset 0 0 0 2px #FFF;
 }
-/* button:not(:active),
-button:not(:focus) {outline:0;} */
 
-/* &:hover:not(:disabled), &.is-hover:not(:disabled) {
-  box-shadow: var(--status-hover);
-}
-*/
-
-
-
-
-
-
-
-/* reset */
-button {
-  padding: 0;
-  border: 0;
-  font-family: var(--font-family);
-  font-size: inherit;
-}
-em, i  {
-  font-style: normal;
-}
-
-:host {
+/* :host {
   --chip-color-border: 0;
   --chip-color-background: var(--color-background-weak);
   --chip-color-text: var(--color-text);
@@ -239,14 +211,12 @@ em, i  {
   --chip-size: var(--size-medium);
   --chip-inset: null;
   --chip-shadow: none;
-}
+} */
 
 /* @media (hover) and (pointer: fine) {
   &:hover {box-shadow:var(--status-hover);}
 }
 */
-
-/* 이모지 2개 나옴.. */
 /* outline: 2px solid var(--color-background); */
 
 .chip {
@@ -315,3 +285,16 @@ em, i  {
 //   background-size: 14px;
 //   background-position: 90% 50%;
 // }
+
+/* TODO 요거 .chip */
+:host([variant=plain]) {
+  --chip-color-background: none;
+  --chip-color-border: 0;
+}
+
+:host([variant=back]) {
+  --chip-color-background: var(--color-background);
+  --chip-border: var(--border);
+  --chip-radius: 50%;
+  --chip-shadow: var(--shadow);
+}
