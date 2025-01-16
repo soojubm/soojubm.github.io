@@ -4,9 +4,8 @@
   justify-content: space-around;
   padding: var(--space-1) 0 calc(constant(safe-area-inset-bottom) + var(--space-2));
   padding: var(--space-2) 0 calc(env(safe-area-inset-bottom) + var(--space-2));
-  border-radius: var(--radius);
+  border-top: var(--border);
   background: var(--color-background);
-  box-shadow: var(--shadow);
 }
 
 .bottombar-item {

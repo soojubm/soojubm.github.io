@@ -69,7 +69,7 @@
   --gray400: #979d9a;
   --gray800: #343c38;
   --gray800: #3d4943;
-  --gray900: #000;
+  --gray900: #1e2321;
 
   --green100: rgba(10, 160, 80, 0.1);
   --green100: rgba(10, 160, 80, 0.075);
@@ -118,7 +118,7 @@
   --color-border: var(--gray200);
   --color-border-hover: var(--gray800);
 
-  --color-text: #1e1e23;
+  --color-text: var(--gray900);
   --color-text-light: var(--gray400);
   --color-text-strong: var(--gray0);
 
@@ -141,12 +141,10 @@
   --space-2: .5rem;
   --space-3: .75rem;
   --space-4: 1rem;
-  --space-8: 2rem;
+  /* --space-8: 2rem; */
   --space-1-minus: calc(var(--space-1) * -1);
   --space-2-minus: calc(var(--space-2) * -1);
   --space-3-minus: calc(var(--space-3) * -1);
-
-  --space-after-subhead: var(--space-3);
 
   --border-width: 1px;
   --border: var(--border-width) solid var(--color-border);
@@ -156,6 +154,7 @@
 
   /* // radius-round / radius-pill */
   --radius: 6px;
+  --radius-large: 1rem;
   --radius-round: 50%; 
   --radius-sharp: null;
   --radius-soft: null;

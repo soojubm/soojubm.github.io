@@ -71,11 +71,6 @@ ul {
   color: var(--color-text);
 }
 
-.text[data-variant=subhead] + .text[data-variant=body] {
-  display: block;
-  margin: var(--space-after-subhead) 0 0;
-}
-
 .text[data-variant=body] {
   max-width: 520px;
   line-height: var(--font-line-height-large);

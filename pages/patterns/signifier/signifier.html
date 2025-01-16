@@ -168,61 +168,59 @@
     <mm-text variant="body">position - 로 주었을 때, 텍스트 링크가 짤리면 오류</mm-text>
   </mm-text-group>
 
-  <mm-group>
+  <div>
+    <mm-text variant="label-strong">Hover states</mm-text>
+    <mm-tile>
+      <a
+        class="item is-hovered"
+        data-size="medium"
+        style="display: flex; align-items: center; gap: 0.75rem; width: 100%; margin: 0 auto"
+      >
+        <mm-avatar default="true"></mm-avatar>
+        <span class="item-name">Item</span>
+      </a>
+      <p style="max-width: var(--width-medium); margin: 0 auto">
+        Interaction states communicate the status of an element
+        <a href="" class="is-hovered" style="text-decoration: underline">Text Link</a> in the
+        interface.
+      </p>
+    </mm-tile>
     <div>
-      <mm-text variant="label-strong">Hover states</mm-text>
+      <mm-text variant="label-strong">Focus states</mm-text>
       <mm-tile>
         <a
-          class="item is-hovered"
+          class="item is-focused"
           data-size="medium"
-          style="display: flex; align-items: center; gap: 0.75rem; width: 100%; margin: 0 auto"
+          style="
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            width: 100%;
+            max-width: var(--width-medium);
+            margin: 0 auto;
+          "
         >
           <mm-avatar default="true"></mm-avatar>
           <span class="item-name">Item</span>
         </a>
-        <p style="max-width: var(--width-medium); margin: 0 auto">
-          Interaction states communicate the status of an element
-          <a href="" class="is-hovered" style="text-decoration: underline">Text Link</a> in the
-          interface.
-        </p>
-      </mm-tile>
-      <div>
-        <mm-text variant="label-strong">Focus states</mm-text>
-        <mm-tile>
-          <a
-            class="item is-focused"
-            data-size="medium"
-            style="
-              display: flex;
-              align-items: center;
-              gap: 0.75rem;
-              width: 100%;
-              max-width: var(--width-medium);
-              margin: 0 auto;
-            "
-          >
-            <mm-avatar default="true"></mm-avatar>
-            <span class="item-name">Item</span>
-          </a>
-        </mm-tile>
-      </div>
-    </div>
-    <div>
-      <mm-text variant="label-strong" style="margin: 0">Disabled state</mm-text>
-      <mm-tile>
-        <b>IBM example</b>
-        <mm-text>Component 50% opacity</mm-text>
-        <mm-text>Text 25% opacity</mm-text><mm-text>Icons 50% opacity</mm-text>
-        <mm-text>Hover None, Cursor</mm-text>
-        <mm-text>not-allowed / Hidden</mm-text>
-        <!-- <p>opacity 50% (using token) / not-allowed cursor / removed elevated style</p> -->
       </mm-tile>
     </div>
-    <div>
-      <mm-text variant="label-strong">Pressed state / Active state</mm-text>
-      <mm-tile> TODO </mm-tile>
-    </div>
-  </mm-group>
+  </div>
+  <div>
+    <mm-text variant="label-strong" style="margin: 0">Disabled state</mm-text>
+    <mm-tile>
+      <b>IBM example</b>
+      <mm-text>Component 50% opacity</mm-text>
+      <mm-text>Text 25% opacity</mm-text><mm-text>Icons 50% opacity</mm-text>
+      <mm-text>Hover None, Cursor</mm-text>
+      <mm-text>not-allowed / Hidden</mm-text>
+      <!-- <p>opacity 50% (using token) / not-allowed cursor / removed elevated style</p> -->
+    </mm-tile>
+  </div>
+  <div>
+    <mm-text variant="label-strong">Pressed state / Active state</mm-text>
+    <mm-tile> TODO </mm-tile>
+  </div>
   <div>
     <mm-text variant="label-strong">Progressing state</mm-text>
     <div class="chat-inputing animation-chatting" style="justify-content: center">

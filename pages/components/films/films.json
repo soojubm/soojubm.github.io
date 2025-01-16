@@ -8,6 +8,160 @@
     "country": "이탈리아",
     "etc": ""
   },
+  {
+    "id": 2024,
+    "releasedate": 1974,
+    "titlekorean": "히미코",
+    "titleenglish": "Himiko",
+    "director": "시노다 마사히로",
+    "country": "일본",
+    "etc": ""
+  },
+
+  {
+    "id": 2024,
+    "releasedate": "2016",
+    "titlekorean": "부산행",
+    "titleenglish": "Train to Busan",
+    "director": "연상호",
+    "country": "한국",
+    "etc": ""
+  },
+  {
+    "id": 2024,
+    "releasedate": "1973",
+    "titlekorean": "아메리카의 밤",
+    "titleenglish": "La Nuit Americaine / Day for Night",
+    "director": "프랑수아 트뤼포",
+    "country": "프랑스",
+    "etc": "good"
+  },
+  {
+    "id": 2024,
+    "releasedate": "2000",
+    "titlekorean": "글래디에이터",
+    "titleenglish": "Gladiator",
+    "director": "리들리 스콧",
+    "country": "미국",
+    "etc": ""
+  },
+  {
+    "id": 2024,
+    "releasedate": "2008",
+    "titlekorean": "엽문",
+    "titleenglish": "葉問The Legend Of Ip Man",
+    "director": "엽위신",
+    "country": "중국?",
+    "etc": ""
+  },
+  {
+    "id": 2024,
+    "releasedate": "1959",
+    "titlekorean": "마리-옥토브르",
+    "titleenglish": "Marie-Octobre",
+    "director": "줄리앙 뒤비비에",
+    "country": "프랑스",
+    "etc": ""
+  },
+  {
+    "id": 2024,
+    "releasedate": "2023",
+    "titlekorean": "오펜하이머",
+    "titleenglish": "Oppenheimer",
+    "director": "크리스토퍼 놀란",
+    "country": "미국",
+    "etc": ""
+  },
+  {
+    "id": 2024,
+    "releasedate": "1971",
+    "titlekorean": "벽 뒤에서",
+    "titleenglish": "Behind the Wall",
+    "director": "크지스토프 자누시",
+    "country": "폴란드",
+    "etc": ""
+  },
+  {
+    "id": 2024,
+    "releasedate": "2023",
+    "titlekorean": "서울의 봄",
+    "titleenglish": "12.12: THE DAY",
+    "director": "김성수",
+    "country": "한국",
+    "etc": ""
+  },
+  {
+    "id": 2024,
+    "releasedate": "1916",
+    "titlekorean": "방랑자",
+    "titleenglish": "The Vegabond",
+    "director": "찰리 채플린",
+    "country": "미국",
+    "etc": "무성, 단편"
+  },
+  {
+    "id": 2024,
+    "releasedate": "2021",
+    "titlekorean": "호문쿨루스",
+    "titleenglish": "HOMUNCULUS",
+    "director": "시미즈 다카시",
+    "country": "일본",
+    "etc": ""
+  },
+  {
+    "id": 2024,
+    "releasedate": "2016",
+    "titlekorean": "삼인행: 생존 게임",
+    "titleenglish": "Three",
+    "director": "두기봉",
+    "country": "홍콩",
+    "etc": ""
+  },
+  {
+    "id": 2024,
+    "releasedate": "2017",
+    "titlekorean": "핵소 고지",
+    "titleenglish": "Hacksaw Ridge",
+    "director": "멜 깁슨",
+    "country": "미국",
+    "etc": ""
+  },
+  {
+    "id": 2024,
+    "releasedate": "2001",
+    "titlekorean": "당신의 숨겨진 미소는 어디에?",
+    "titleenglish": "Where Does Your Hidden Smile Lie?",
+    "director": "페드로 코스타",
+    "country": "포르투갈",
+    "etc": "장-마리와 위예"
+  },
+  {
+    "id": 2024,
+    "releasedate": "1969",
+    "titlekorean": "사랑의 섬 고토",
+    "titleenglish": "Goto, Island of Love",
+    "director": "발레리안 브로브츠크",
+    "country": "폴란드",
+    "etc": ""
+  },
+  {
+    "id": 2024,
+    "releasedate": "2024",
+    "titlekorean": "전, 란",
+    "titleenglish": "Uprising",
+    "director": "김상만",
+    "country": "한국",
+    "etc": ""
+  },
+  {
+    "id": 2024,
+    "releasedate": "1997",
+    "titlekorean": "타이타닉",
+    "titleenglish": "Titanic",
+    "director": "제임스 카메론",
+    "country": "미국",
+    "etc": ""
+  },
 
   {
     "id": 202404212,
@@ -16313,7 +16467,7 @@
     "releasedate": "2002",
     "titlekorean": "펀치 드렁크 러브",
     "titleenglish": "Punch Drunk Love",
-    "director": "폴 토마스 앤더슨 / 아주 좋았다",
+    "director": "폴 토마스 앤더슨",
     "country": "미국",
     "etc": ""
   },
@@ -16321,17 +16475,17 @@
     "releasedate": "1982",
     "titlekorean": "남쪽",
     "titleenglish": "El Sur",
-    "director": "빅토르 에리세 / 영화사실아니래",
+    "director": "빅토르 에리세",
     "country": "임시미국",
-    "etc": ""
+    "etc": "영화사실아니래"
   },
   {
     "releasedate": "1940",
     "titlekorean": "애수",
     "titleenglish": "Waterloo Bridge",
-    "director": "머빈 르로이 / every parting from you is like a little eternity.",
-    "country": "임시미국",
-    "etc": ""
+    "director": "머빈 르로이",
+    "country": "미국",
+    "etc": "every parting from you is like a little eternity."
   },
   {
     "releasedate": "2005",

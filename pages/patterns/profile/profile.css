@@ -43,7 +43,7 @@
 
 
 @media (max-width: 1320px) {
-  .profile {max-width:1000px;}
+  .profile {max-width:640px;}
   .profile-user {float:none;width:100%;box-sizing:border-box;}
   
   .profile-body {padding-left:0;}

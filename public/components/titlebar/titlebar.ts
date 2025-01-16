@@ -13,8 +13,8 @@ class TitleBar extends HTMLElement {
     container.role = 'navigation'
     container.classList.add('titlebar')
 
-    const title = document.createElement('span')
-    title.classList.add('titlebar-title')
+    const title = document.createElement('mm-text')
+    title.setAttribute('variant', 'subhead')
     title.innerText = this.titleText || ''
 
     const backButton = document.createElement('mm-icon-button')
@@ -22,8 +22,6 @@ class TitleBar extends HTMLElement {
     backButton.setAttribute('icon', 'arrow-left')
 
     if (!this.hiddenBack) container.append(backButton)
-
-    // if (this.hiddenBack) back.hidden = true
 
     // if (!back.ariaLabel) back.ariaLabel = '이전 페이지로'
     // ariaLabel 때문에 쉐도우돔을 그리지 못 함.

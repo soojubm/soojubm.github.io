@@ -10,6 +10,7 @@
 .summary-item[data-alignment=column] {
   flex-direction: column;
   gap: var(--space-0);
+  font-family: 'consolas';
 }
 
 .statistic {display:flex;gap:2rem;}

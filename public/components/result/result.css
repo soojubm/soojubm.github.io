@@ -13,7 +13,7 @@
   margin:var(--space-4) 0 0 0;
 }
 .result-description {
-  margin:var(--space-after-subhead) 0 0;
+  margin:var(--space-3) 0 0;
 }
 
 ::slotted([slot=title]) {}
