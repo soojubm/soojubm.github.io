@@ -11,13 +11,31 @@ document.addEventListener('DOMContentLoaded', () => {
   document.body.insertAdjacentHTML('beforeend', main)
   document.body.insertAdjacentHTML('beforeend', footer)
 
-  fetchAndDisplay()
+  fetchAndDisplay('')
+
+  const myButtons = document.querySelectorAll('.js-button')
+
+  myButtons.forEach(item => {
+    console.log(item, 'button')
+
+    item!.addEventListener('click', event => {
+      const target = event.target as HTMLElement
+      console.log(target.dataset.value)
+
+      fetchAndDisplay(target.dataset.value)
+    })
+  })
 })
 
-async function fetchAndDisplay() {
+async function fetchAndDisplay(value) {
   const films = await fetchFilms()
 
-  displayFilms(films)
+  const uniqueCountries = [...new Set(films.map(item => item.country))]
+  console.log(uniqueCountries)
+
+  const data = films.filter(item => item.country === value)
+
+  displayFilms(value.length > 0 ? data : films)
 }
 
 function displayFilms(data) {
@@ -25,11 +43,13 @@ function displayFilms(data) {
     item =>
       `
       <article style="min-width:100px;border:var(--border);padding:var(--space-3);border-radius:12px;position:relative">
-        <small style="display:block;line-height:18px;"><time>${item.releasedate}</time></small>
+        <div style="display:flex;justify-content:space-between;gap:1rem;">
+          <time style="font-size:var(--font-size-small);">${item.releasedate}</time>
+          <small>${item.country}</small>
+        </div>
         <p style="margin:var(--space-1) 0 0 0"><b>${item.titlekorean}</b></p>
-        <p style="margin-top:-.25rem;"><small>${item.titleenglish}</small></p>
-        <p style="margin-top:var(--space-1);">${item.director}</p>
-        <small style="position:absolute;right:var(--space-3);top:var(--space-3);">${item.country}</small>
+        <small style="display:block;">${item.titleenglish}</small>
+        <p style="margin-top:var(--space-2);">${item.director}</p>
       </article>
     `,
   )

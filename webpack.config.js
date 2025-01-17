@@ -52,8 +52,6 @@ const patterns = [
 
   'signifier',
   'tokens',
-
-  'utilites',
 ]
 const components = [
   'breadcrumb',

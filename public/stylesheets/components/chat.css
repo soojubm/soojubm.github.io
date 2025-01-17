@@ -29,7 +29,7 @@
 .chat-bubble figure {}
 
 .chat-bubble p, .chat-bubble li {
-  line-height: 1.6;
+  line-height: var(--font-line-height);
 }
 
 .chat + .chat {margin-top:var(--space-4);}

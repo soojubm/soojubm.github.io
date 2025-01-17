@@ -41,6 +41,7 @@
   height: var(--switch-height);
   border-radius: var(--switch-radius);
   border: var(--border);
+  border-color: var(--color-border-stronger);
   background-color: var(--color-background-weak);
   color: black;
   transition: background, box-shadow .2s ease-out;

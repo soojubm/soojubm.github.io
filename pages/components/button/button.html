@@ -6,13 +6,6 @@
         페이지 이동이나 양식 제출 등 사용자 여정의 핵심과업을 수행합니다. 제한적으로 사용하여
         사용자의 과업을 돕습니다.
       </mm-text>
-      <mm-text variant="body-large">
-        Chip을 제거한 이유. 형태에 기반한 액션이라는 것은 둘 다 동일. 게다가 새로운 역할을 부여 받는
-        버튼은 어차피 새로운 컴포넌트로 정의되어야 하는데, filterButton이 filterChip이 되어야 하는
-        이유를 못 찾겠음. 결론적으로 버튼의 형태, 이것은 input과 textfield도 마찬가지로 적용이
-        되는데, 버튼의 형태는 고유한 프리미티브 컴포넌트가 갖고 역할를 갖는 새로운 컴포넌트를 별도
-        정의한다.
-      </mm-text>
     </mm-text-group>
 
     <dl class="article-aka">
@@ -86,24 +79,27 @@
   <!-- 참고: 버튼 네이밍. 'link' | 'subtle' | 'primary' / 'solid' | 'outline' | 'plain' |'text' -->
   <section class="component-guide">
     <mm-text-group>
-      <mm-text variant="subhead" aria-label="예측 가능해야 합니다.">Behavior</mm-text>
+      <mm-text variant="subhead">Meta problems</mm-text>
+      <mm-text variant="body">
+        버튼 그룹에서 primary action에 먼저 포커싱하세요. tabindex 속성은 대신 마크업 순서와 정렬
+        스타일링의 결합.
+      </mm-text>
+    </mm-text-group>
+    <mm-text-group>
+      <mm-text variant="subhead">Platform problems</mm-text>
+      <mm-text variant="label-strong" aria-label="예측 가능해야 합니다.">Behavior</mm-text>
       <mm-text variant="body">
         버튼은 페이지 내에서 여러 번 반복될 수 없는 최종적인 인터렉션입니다. 단, 전송이 실패하는
         경우에는 여러 번 반복해서 실행할 수 있습니다.
       </mm-text>
-    </mm-text-group>
-    <mm-text-group>
-      <mm-text variant="subhead">Feedback needed</mm-text>
+      <mm-text variant="label-strong">Feedback needed</mm-text>
       <mm-text variant="body">
         물리적인 인터페이스의 출현만이 수행 결과를 피드백하는 것이 아닙니다. 예측할 수 있는 페이지
         이동이나 페이지 새로고침, 정보 구조의 변화도 피드백으로 취급될 수 있습니다. (ex bad case:
         인스타그램 앱에서 로그인되었다는 toast. 홈으로 이동과 피드 노출만으로 로그인 상태를 인지할
         수 있다.)
       </mm-text>
-    </mm-text-group>
-    <!-- <mm-text variant="body">모든 액션에 피드백할 필요는 없습니다.</mm-text> -->
-    <mm-text-group>
-      <mm-text variant="subhead" aria-label="예측 가능해야 합니다.">Editorial</mm-text>
+      <mm-text variant="label-strong">Editorial</mm-text>
       <mm-text variant="body">
         에측 가능한 레이블 텍스트를 작성하세요. 툴팁으로 부연하거나, 실행을 유도하는 보조 텍스트
         또는 실행 결과를 보충하는 보조 텍스트로 버튼 이외의 가이드가 필요하지 않습니다.
@@ -112,15 +108,18 @@
         동사가 포함된 2자 ~ 8자 한글(!). 레이블 줄임?(truncated) 불가. 사용자 시점 (ex 보내기 =>
         받기).
       </mm-text>
-    </mm-text-group>
-
-    <mm-text-group>
-      <mm-text variant="subhead">A11y</mm-text>
       <mm-text variant="body">
-        버튼 그룹에서 primary action에 먼저 포커싱하세요. tabindex 속성은 대신 마크업 순서와 정렬
-        스타일링의 결합.
+        2411. 칩과 통합하고 사이즈 토큰과 동일한 사이즈 프로토콜을 사용한다. 추후 선택 또는 필터링에
+        따른 기능 버튼을 추가한다. 문제. 아이콘 버튼이 필요. 간격. Chip을 제거한 이유. 형태에 기반한
+        액션이라는 것은 둘 다 동일. 게다가 새로운 역할을 부여 받는 버튼은 어차피 새로운 컴포넌트로
+        정의되어야 하는데, filterButton이 filterChip이 되어야 하는 이유를 못 찾겠음. 결론적으로
+        버튼의 형태, 이것은 input과 textfield도 마찬가지로 적용이 되는데, 버튼의 형태는 고유한
+        프리미티브 컴포넌트가 갖고, 도메인에 맞게 역할를 갖는 새로운 컴포넌트를 별도 정의한다.
+        ButtonPrimitive (orbit)
       </mm-text>
     </mm-text-group>
+
+    <!-- <mm-text variant="body">모든 액션에 피드백할 필요는 없습니다.</mm-text> -->
 
     <mm-text-group>
       <mm-text variant="subhead" data-temp=" minimum viable experience" style="margin-top: 0">
@@ -182,13 +181,6 @@
       <mm-text-list
         texts='["Split button이란? 사용자에게 더 많은 작업을 표시하는 경우 작업을 선택하여 트리거할 수 있도록 선택 + 버튼 조합을 사용. 것이 좋습니다.", "Link Button. next에서 Link를 사용하면 관련 페이지를 미리 가져오기 때문에 성능 이점이 있다. 버튼과 형태는 동일하다. Link 안에 button의 형태를 포함하도록 하는 방법은?", "빈 버튼이 필요한가? 리액트에서 포커싱이 가능한 전체 영역의 버튼. 도는 버튼 내부에서포지셔닝되는 버튼", "Dropdown은 버튼과 목록을 포함한 합성된 컴포넌트임. 최근 바텀 셀렉트 시트 같은 느낌."]'
       ></mm-text-list>
-    </mm-text-group>
-
-    <mm-text-group>
-      <mm-text variant="body-large">
-        2411. 칩과 통합하고 사이즈 토큰과 동일한 사이즈 프로토콜을 사용한다. 추후 선택 또는 필터링에
-        따른 기능 버튼을 추가한다. 문제. 아이콘 버튼이 필요. 간격.
-      </mm-text>
     </mm-text-group>
 
     <br />

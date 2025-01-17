@@ -1,5 +1,15 @@
 <main class="page">
   <style>
+    /* .token-group {
+      gap: 0;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: var(--border);
+    }
+    .token-group .token-item {
+      margin: -1px;
+      border-radius: 0;
+    } */
     section + section {
       margin-top: 8rem;
     }
@@ -22,7 +32,6 @@
       <!-- <mm-text variant="title">Tokens</mm-text>
       <mm-text variant="body-large">정리 중.</mm-text> -->
       <ul class="checklist">
-        <li>콘텐츠 컨테이너의 가로 크기. custom media의 max-width를 layout + @로 정의.</li>
         <li>폰트의 baseline이 달라서 텍스트의 상하 간격이 안 맞을 수 있다.</li>
         <li>
           그림자를 이용한 시각적 상승 효과로 주변 요소 대비 강조. 더 높은 우선순위 및 행동유도를
@@ -78,7 +87,7 @@
       <mm-text variant="label-strong">Primitives</mm-text>
     </mm-text-group>
     <div class="token-group">
-      <article class="token-item">
+      <article class="token-item" style="border: 0">
         <mm-keyvalue alignment="column" key="--gray0:" value="#fff"></mm-keyvalue>
         <mm-group variant="hashtag">
           <mm-tag variant="hashtag">color-background</mm-tag>
@@ -102,6 +111,16 @@
           <mm-tag variant="hashtag">color-border</mm-tag>
           <!-- <p>--color-hover-background: var(--gray200)</p> -->
         </mm-group>
+      </article>
+      <article class="token-item is-gray200" style="border: 0; background: var(--gray300)">
+        <mm-keyvalue
+          alignment="column"
+          key="--gray300:"
+          value="#c1c3c2
+        
+        
+        "
+        ></mm-keyvalue>
       </article>
       <article class="token-item is-gray400" style="border: 0; background: var(--gray400)">
         <b style="color: #fff">--gray400: #979d9a</b>
@@ -159,10 +178,6 @@
       </article>
       <article class="token-item" style="border: 0; background: var(--color-accent)">
         <b>--yellow800: gold</b>
-        <mm-group variant="hashtag">
-          <mm-tag variant="hashtag">color-accent??</mm-tag>
-          <mm-tag variant="hashtag">color-status-accent??</mm-tag>
-        </mm-group>
       </article>
       <article class="token-item">
         <b>TODO Skeleton</b>
@@ -179,21 +194,25 @@
       <mm-text variant="label-strong">Border</mm-text>
     </mm-text-group>
     <mm-text-group>
-      <mm-text variant="label-strong">Text</mm-text>
-    </mm-text-group>
-    <mm-text-group>
       <mm-text variant="label-strong">Status</mm-text>
       <mm-text>color-text-warning // color-warning, color-warning-strong</mm-text>
     </mm-text-group>
-    <article class="token-item" style="display: flex; gap: 2rem; margin: 4rem 0">
-      <div>
-        <mm-text variant="subhead">수줍음</mm-text>
+
+    <br /><br />
+    <mm-text-group>
+      <mm-text variant="label-strong">Text</mm-text>
+    </mm-text-group>
+    <article class="token-item" style="flex-direction: row; gap: 2rem">
+      <div style="margin: 0">
+        <mm-text variant="body-large">수줍음</mm-text>
         <span style="font-family: 'Courier New', Courier, monospace; font-size: 12px">
           --color-text
         </span>
       </div>
-      <div>
-        <mm-text variant="subhead" style="color: var(--color-text-light)">수줍음</mm-text>
+      <div style="margin: 0">
+        <mm-text variant="body-large">
+          <span style="color: var(--color-text-light)">수줍음</span>
+        </mm-text>
         <span style="font-family: 'Courier New', Courier, monospace; font-size: 12px">
           --color-text-light
         </span>
@@ -207,7 +226,7 @@
       <mm-group variant="hashtag">
         <mm-tag variant="hashtag">avatar-huge: var(--size-large)</mm-tag>
       </mm-group>
-      <mm-text variant="body">
+      <mm-text variant="body-large">
         요소의 너비와 높이입니다. 뷰포트의 크기가 변경되어도 사이즈 토큰은 변하지 않습니다. huge
         size는 avatar huge에 단독으로 사용하고 있다. media 컴포넌트와 구별.
       </mm-text>
@@ -307,8 +326,8 @@
 
   <section>
     <mm-text-group>
-      <mm-text variant="subhead">Space</mm-text>
-      <mm-text variant="body">요소 사이의 간격. 현재 섹션 사이의 정의하고 있지 않음.</mm-text>
+      <mm-text variant="title">Space</mm-text>
+      <mm-text variant="body-large">요소 사이의 간격. 현재 섹션 사이의 정의하고 있지 않음.</mm-text>
     </mm-text-group>
     <section class="token-group">
       <div class="token-item">
@@ -355,7 +374,7 @@
   <section>
     <mm-text-group>
       <mm-text variant="title">Text</mm-text>
-      <mm-text variant="body">
+      <mm-text variant="body-large">
         활자의 위계와 배치. 정보 계층. 14px 기본폰트일 때 1.5의 모호성.
       </mm-text>
     </mm-text-group>
@@ -422,7 +441,7 @@
   <section>
     <mm-text-group>
       <mm-text variant="title">Layouts - Width</mm-text>
-      <mm-text variant="body">모든 container는 --small부터 max-width를 100%.</mm-text>
+      <mm-text variant="body-large">모든 container는 --small부터 max-width를 100%.</mm-text>
     </mm-text-group>
     <div class="token-group">
       <div class="token-item">
@@ -461,9 +480,9 @@
   <section>
     <mm-text-group>
       <mm-text variant="title">Animation</mm-text>
-      <mm-text variant="">
-        animation :: 콘텐츠보다 액션이 강조되지 않도록 뷰포트 내에서 delay를 최대 3개로 제한합니다.
-        inactive로 변경될 때(닫기 등) 즉시(instantly) 실행합니다.
+      <mm-text variant="body-large">
+        콘텐츠보다 액션이 강조되지 않도록 뷰포트 내에서 delay를 최대 3개로 제한합니다. inactive로
+        변경될 때(닫기 등) 즉시(instantly) 실행합니다.
       </mm-text>
     </mm-text-group>
 
@@ -569,8 +588,11 @@
         <mm-keyvalue alignment="column" key="--zindex-toast:" value="9"></mm-keyvalue>
       </div>
       <div class="token-item">
-        <mm-keyvalue alignment="column" key="--zindex-skipmenu:" value="10"></mm-keyvalue>
-        <small>최고 존엄</small>
+        <mm-keyvalue
+          alignment="column"
+          key="--zindex-skipmenu: (최고 존엄)"
+          value="10"
+        ></mm-keyvalue>
       </div>
     </div>
   </section>

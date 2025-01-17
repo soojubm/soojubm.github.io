@@ -10,7 +10,7 @@ main {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-3);
-  margin: var(--space-3) 0 4rem;
+  margin: var(--space-3) 0;
 }
 .token-item {
   display: flex;

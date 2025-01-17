@@ -3,7 +3,7 @@
 
 .radio {
   --radio-size: var(--size-tiny);
-  --radio-color: var(--gray200);
+  --radio-color: var(--color-border-stronger);
   --radio-border: 1px solid var(--radio-color);
   --radio-radius: 50%;
   --radio-inset: var(--space-2);
@@ -30,6 +30,7 @@
   height:var(--radio-size);
   border:var(--radio-border);
   border-radius: var(--radio-radius);
+  box-shadow: var(--shadow);
   box-sizing:border-box;
   /* animation:ripple2 0.2s linear forwards; */
 
@@ -45,8 +46,9 @@
   border-color: var(--color-primary);
 
   animation: radiomark var(--animation-input, .2s) ease-out;
-  /* box-shadow: 0 0 0 1px var(--radio-color) inset, 0 0 0 4px #fff inset;  */
-  box-shadow: 0 0 0 4px #fff inset; 
+  box-shadow:
+    /* 0 0 0 1px var(--radio-color) inset, */
+    0 0 0 4px #fff inset; 
 
 }
 

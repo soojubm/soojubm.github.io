@@ -155,12 +155,399 @@
   },
   {
     "id": 2024,
-    "releasedate": "1997",
+    "releasedate": "1999",
     "titlekorean": "타이타닉",
     "titleenglish": "Titanic",
     "director": "제임스 카메론",
     "country": "미국",
     "etc": ""
+  },
+  {
+    "id": 2024,
+    "releasedate": "1997",
+    "titlekorean": "외부공간",
+    "titleenglish": "Outer Space",
+    "director": "피터 체르카스키",
+    "country": "미국",
+    "etc": ""
+  },
+  {
+    "id": 2024,
+    "releasedate": "2024",
+    "titlekorean": "파묘",
+    "titleenglish": "Exhuma",
+    "director": "장재현",
+    "country": "한국",
+    "etc": "대한민국 만세"
+  },
+  {
+    "id": 2024,
+    "releasedate": "1995",
+    "titlekorean": "물 속의 8월",
+    "titleenglish": "水の中の八月",
+    "director": "이시이 가쿠류",
+    "country": "일본",
+    "etc": "대한민국 만세"
+  },
+  {
+    "id": 2024,
+    "releasedate": "1927",
+    "titlekorean": "영원한 사랑",
+    "titleenglish": "Eternal Love",
+    "director": "에른스트 루비치",
+    "country": "TODO",
+    "etc": ""
+  },
+  {
+    "id": 2024,
+    "releasedate": "2015",
+    "titlekorean": "베테랑",
+    "titleenglish": "Veteran",
+    "director": "류승완",
+    "country": "한국",
+    "etc": ""
+  },
+  {
+    "id": 2024,
+    "releasedate": "1966",
+    "titlekorean": "붉은 천사",
+    "titleenglish": "赤い天使, Red Angel",
+    "director": "마스무라 야스조",
+    "country": "일본",
+    "etc": ""
+  },
+  {
+    "id": 2024,
+    "releasedate": "1990",
+    "titlekorean": "장군의 아들",
+    "titleenglish": "The General's Son",
+    "director": "임권택",
+    "country": "한국",
+    "etc": ""
+  },
+  {
+    "id": 2024,
+    "releasedate": "1967",
+    "titlekorean": "중국 여인",
+    "titleenglish": "La Chinoise",
+    "director": "장 뤽 고다르",
+    "country": "프랑스",
+    "etc": ""
+  },
+  {
+    "id": 2024,
+    "releasedate": "1952",
+    "titlekorean": "이웃",
+    "titleenglish": "Neighbours",
+    "director": "노먼 맥라렌",
+    "country": "캐나다",
+    "etc": "단편"
+  },
+  {
+    "id": 2024,
+    "releasedate": "2000",
+    "titlekorean": "데스티네이션",
+    "titleenglish": "Final Destination",
+    "director": "제임스 왕",
+    "country": "미국",
+    "etc": ""
+  },
+  {
+    "id": 2024,
+    "releasedate": "1952",
+    "titlekorean": "익스프레스",
+    "titleenglish": "The Narrow Margin",
+    "director": "리처드 플레이셔",
+    "country": "미국",
+    "etc": ""
+  },
+  {
+    "id": 2024,
+    "releasedate": "2023",
+    "titlekorean": "괴물",
+    "titleenglish": "怪物MONSTER",
+    "director": "고레에다 히로카즈",
+    "country": "일본",
+    "etc": "관객이 스스로를 괴물로 여기게 만드는 이러한 연출은 나는 촌스럽고 쓸모없는 기교롶본다. 따라서 러닝타임은 쓸데없이 길어지고 이게 하마구치 류스케가 더 뛰어난 메이커가 아닐까 생각하게 만드는 지점 같다. 둘 다 내 스타일은 아니지만. 괴물의 후반부에 트랜디한 재료로 한 번 더 버무리는데 진짜 과하다 싶었다."
+  },
+  {
+    "id": 2024,
+    "releasedate": "1921",
+    "titlekorean": "하이 사인",
+    "titleenglish": "High Sighn",
+    "director": "버스터 키튼",
+    "country": "미국",
+    "etc": "단편"
+  },
+  {
+    "id": 2024,
+    "releasedate": "1935",
+    "titlekorean": "단게 사젠 이야기: 백만냥의 항아리",
+    "titleenglish": "Tange Sazen and the Pot Worth a Million Ryo",
+    "director": "야마나카 사다오",
+    "country": "일본",
+    "etc": ""
+  },
+  {
+    "id": 2024,
+    "releasedate": "2023",
+    "titlekorean": "슬픔의 삼각형",
+    "titleenglish": "Triangle of Sadness",
+    "director": "루벤 외스틀룬드",
+    "country": "스웨덴",
+    "etc": ""
+  },
+  {
+    "id": 2024,
+    "releasedate": "2023",
+    "titlekorean": "톡 투 미",
+    "titleenglish": "Talk to Me",
+    "director": "대니 필로포우",
+    "country": "오스트레일리아",
+    "etc": "호러, 브뤼셀 판타스틱 영화제 황금까마귀상"
+  },
+  {
+    "id": 2024,
+    "releasedate": "2004",
+    "titlekorean": "본 슈프리머시",
+    "titleenglish": "The Bourne Supremacy",
+    "director": "폴 그린그래스",
+    "country": "미국",
+    "etc": ""
+  },
+  {
+    "id": 2024,
+    "releasedate": "1958",
+    "titlekorean": "올가미",
+    "titleenglish": "The Noose",
+    "director": "보이체크 하스",
+    "country": "폴란드",
+    "etc": ""
+  },
+  {
+    "id": 2024,
+    "releasedate": "1976",
+    "titlekorean": "바람의 체스",
+    "titleenglish": "Chess of the Wind",
+    "director": "모하마드 레자 아슬라니",
+    "country": "이란",
+    "etc": "끝장나게 세련됨. 미장센, 스타일, 은유, 빠른 전개,"
+  },
+  {
+    "id": 202406,
+    "releasedate": "1941",
+    "titlekorean": "작은 여우들",
+    "titleenglish": "The Little Foxes",
+    "director": "윌리엄 와일러",
+    "country": "미국",
+    "etc": ""
+  },
+  {
+    "id": 202406,
+    "releasedate": "1977",
+    "titlekorean": "아람브리스타!",
+    "titleenglish": "Alambrista!",
+    "director": "로버트 M. 영",
+    "country": "미국",
+    "etc": "멕시코?"
+  },
+  {
+    "id": 202406,
+    "releasedate": "2013",
+    "titlekorean": "더 퍼지",
+    "titleenglish": "The Purge",
+    "director": "제임스 디모너코",
+    "country": "미국",
+    "etc": ""
+  },
+  {
+    "id": 202406,
+    "releasedate": "1990",
+    "titlekorean": "물 위를 걷는 여자",
+    "titleenglish": "The Woman Who Walks on Water",
+    "director": "김철수",
+    "country": "한국",
+    "etc": "누벨 이마주의 우라까이인가 싶었는데 중반 이후에서 스릴러로, 특히 지알로 문법으로 잠깐 넘어가는 거 보고 꽤 신선하게 봄. 아. 학생부군신위의 그 감독이구나."
+  },
+  {
+    "id": 202406,
+    "releasedate": "2022",
+    "titlekorean": "스즈메의 문단속",
+    "titleenglish": "TODO",
+    "director": "신카이 마코토",
+    "country": "일본",
+    "etc": "애니메이션"
+  },
+  {
+    "id": 202406,
+    "releasedate": "1952",
+    "titlekorean": "군중 속의 이방인",
+    "titleenglish": "Hunted / The Stranger In Between",
+    "director": "찰스 크릭톤",
+    "country": "영국",
+    "etc": ""
+  },
+  {
+    "id": 202406,
+    "releasedate": "1989",
+    "titlekorean": "도시의 아이들",
+    "titleenglish": "City Kids",
+    "director": "반문걸",
+    "country": "홍콩",
+    "etc": "사피. 초삼. 너와 헤어질 때 울지도 모르겠다."
+  },
+  {
+    "id": 202406,
+    "releasedate": "1974",
+    "titlekorean": "에피 브리스트",
+    "titleenglish": "Fontane Effie Briest",
+    "director": "라이너 베르너 파스빈더",
+    "country": "독일",
+    "etc": "1:20 얼굴"
+  },
+  {
+    "id": 202406,
+    "releasedate": "2009",
+    "titlekorean": "인스턴트 늪",
+    "titleenglish": "Instant Swampインスタント沼",
+    "director": "미키 사토시",
+    "country": "일본",
+    "etc": ""
+  },
+  {
+    "id": 202405,
+    "releasedate": "1957",
+    "titlekorean": "쓰디쓴 승리",
+    "titleenglish": "Bitter Victory",
+    "director": "니콜라스 레이",
+    "country": "미국",
+    "etc": "리처드 버튼, 시네마스코프, 군인"
+  },
+  {
+    "id": 202405,
+    "releasedate": "1951",
+    "titlekorean": "초여름",
+    "titleenglish": "Early Summer",
+    "director": "오즈 야스지로",
+    "country": "일본",
+    "etc": ""
+  },
+  {
+    "id": 202405,
+    "releasedate": "2015",
+    "titlekorean": "매드 맥스: 분노의 도로",
+    "titleenglish": "Mad Max: Fury Road",
+    "director": "조지 밀러",
+    "country": "미국",
+    "etc": ""
+  },
+  {
+    "id": 202405,
+    "releasedate": "1957",
+    "titlekorean": "아데바",
+    "titleenglish": "Adebar",
+    "director": "피터 쿠벨카",
+    "country": "TODO",
+    "etc": "Metric Cinema"
+  },
+  {
+    "id": 202405,
+    "releasedate": "2019",
+    "titlekorean": "로비 로버트슨과 더 밴드의 신화",
+    "titleenglish": "Once Were Brothers: Robbie Robertson and The Band",
+    "director": "다니엘 로허",
+    "country": "미국",
+    "etc": ""
+  },
+  {
+    "id": 202405,
+    "releasedate": "1999",
+    "titlekorean": "해피엔드",
+    "titleenglish": "Happy End",
+    "director": "정지우",
+    "country": "한국",
+    "etc": ""
+  },
+  {
+    "id": 202405,
+    "releasedate": "1954",
+    "titlekorean": "중역실",
+    "titleenglish": "Executive Suite",
+    "director": "로버트 와이즈",
+    "country": "미국",
+    "etc": ""
+  },
+  {
+    "id": 202405,
+    "releasedate": "1954",
+    "titlekorean": "카메라 광",
+    "titleenglish": "Camera Buff, Amator",
+    "director": "크쥐시토프 키에슬로브스키",
+    "country": "폴란드",
+    "etc": "그리고 삶은 계속된다. 5월까지 현재까지 올해의 영화."
+  },
+  {
+    "id": 202405,
+    "releasedate": "2018",
+    "titlekorean": "아름다운 별",
+    "titleenglish": "A Beautiful Star",
+    "director": "요시다 다이이치",
+    "country": "일본",
+    "etc": ""
+  },
+  {
+    "id": 202405,
+    "releasedate": "1943",
+    "titlekorean": "표범 인간",
+    "titleenglish": "The Leopard Man",
+    "director": "자크 투르뇌르",
+    "country": "프랑스, 일본",
+    "etc": ""
+  },
+  {
+    "id": 202405,
+    "releasedate": "1958",
+    "titlekorean": "여자의 일생",
+    "titleenglish": "Une Vie",
+    "director": "알렉상드르 아스트뤽",
+    "country": "프랑스",
+    "etc": ""
+  },
+  {
+    "id": 202405,
+    "releasedate": "2011",
+    "titlekorean": "트루맛쇼",
+    "titleenglish": "The True-taste Show",
+    "director": "김재환",
+    "country": "한국",
+    "etc": ""
+  },
+  {
+    "id": 202405,
+    "releasedate": "2000",
+    "titlekorean": "우연히 나는 아름다움의 섬광을 보았다",
+    "titleenglish": "As I Was Moving Ahead Occasionally I Saw Brief Glimpses of Beauty",
+    "director": "요나스 메카스",
+    "country": "미국",
+    "etc": "챕터가 지날수록, 특히 10? 11? 에서 나이든 요나스 매카스가 등장하고, 외롭고, 누구의 추억인가. 마지막에는 울었다."
+  },
+  {
+    "id": 202405,
+    "releasedate": "1968",
+    "titlekorean": "업타이트",
+    "titleenglish": "Uptight",
+    "director": "줄스 다신",
+    "country": "미국",
+    "etc": "대구"
+  },
+  {
+    "id": 202405,
+    "releasedate": "1973",
+    "titlekorean": "눈이라 불리는 사나이",
+    "titleenglish": "THe Man Called Noon",
+    "director": "피터 콜린슨",
+    "country": "미국",
+    "etc": "대구"
   },
 
   {
@@ -8227,520 +8614,285 @@
     "director": "아벨 페라라",
     "country": "미국"
   },
+
   {
-    "releasedate": 1982,
+    "releasedate": "1982",
     "titlekorean": "피츠카랄도",
     "titleenglish": "Fitzcarraldo",
     "director": "베르너 헤어조크",
-    "country": "독일"
+    "country": "독일",
+    "etc": ""
   },
   {
-    "releasedate": 2017,
+    "releasedate": "2018",
     "titlekorean": "풀잎들",
     "titleenglish": "Grass",
     "director": "홍상수",
-    "country": "한국"
+    "country": "한국",
+    "etc": ""
   },
   {
-    "releasedate": 2014,
+    "releasedate": "2014",
     "titlekorean": "그곳에서만 빛난다",
-    "titleenglish": "The Light Shines Only There",
+    "titleenglish": "そこのみにて光輝くThe Light Shines Only There",
     "director": "오미보",
-    "country": "일본"
+    "country": "일본",
+    "etc": ""
   },
   {
-    "releasedate": 1959,
+    "releasedate": "1959",
     "titlekorean": "사랑과 희망의 거리",
-    "titleenglish": "A Town of Love and Hope",
-    "director": "오오시마 나기사",
-    "country": "일본"
+    "titleenglish": "愛と希望の街, Ai to kibō no machi",
+    "director": "오시마 나기사",
+    "country": "일본",
+    "etc": "쇼치쿠, 데뷰작"
   },
   {
-    "releasedate": 1978,
-    "titlekorean": "사망유희",
-    "titleenglish": "Game of Death",
-    "director": "로버트 클루즈",
-    "country": "홍콩"
+    "releasedate": "1978",
+    "titlekorean": "사망유희 디 오리지널",
+    "titleenglish": "死亡遊戱, Game of Death",
+    "director": "로버트 클라우즈",
+    "country": "홍콩",
+    "etc": ""
   },
   {
-    "releasedate": 1983,
+    "releasedate": "1983",
     "titlekorean": "나쁜 버릇",
-    "titleenglish": "Dark Habits",
+    "titleenglish": "Dark Habits, Entre tinieblas",
     "director": "페드로 알모도바르",
-    "country": "스페인"
+    "country": "스페인",
+    "etc": ""
   },
   {
-    "releasedate": 1952,
+    "releasedate": "1952",
     "titlekorean": "황금 투구",
-    "titleenglish": "Golden Helmet",
+    "titleenglish": "Casque D'Or, Golden Helmet",
     "director": "자크 베케르",
-    "country": "프랑스"
+    "country": "프랑스",
+    "etc": ""
   },
   {
-    "releasedate": 1996,
+    "releasedate": "1996",
     "titlekorean": "비욘드 사일런스",
-    "titleenglish": "Beyond Silence",
+    "titleenglish": "Jenseits Der Stille, Beyond Silence",
     "director": "카롤리네 링크",
-    "country": "독일"
+    "country": "독일",
+    "etc": ""
   },
   {
-    "releasedate": 1963,
+    "releasedate": "1963",
     "titlekorean": "겨울 빛",
-    "titleenglish": "Winter Light",
+    "titleenglish": "Winter Light, Nattvardsgasterna",
     "director": "잉마르 베리만",
     "country": "스웨덴",
-    "etc": "두어 달 되었으려나요? 기실 그 분 또한 아무것도 확신할 수 없다고 제게 넌지시 전해왔습니다요."
+    "etc": ""
   },
   {
-    "releasedate": 2006,
+    "releasedate": "2006",
     "titlekorean": "천하장사 마돈나",
-    "titleenglish": "Like a Virgin",
-    "director": "이해준",
-    "country": "한국"
+    "titleenglish": "Like A Virgin",
+    "director": "이해영, 이해준",
+    "country": "한국",
+    "etc": ""
   },
   {
-    "releasedate": 2014,
+    "releasedate": "2015",
     "titlekorean": "종이 달",
     "titleenglish": "Pale Moon",
     "director": "요시다 다이하치",
-    "country": "일본"
+    "country": "일본",
+    "etc": ""
   },
   {
-    "releasedate": 2012,
-    "titlekorean": "지슬 - 끝나지 않은 세월 2",
+    "releasedate": "2013",
+    "titlekorean": "지슬 - 끝나지 않은 세월2",
     "titleenglish": "Jiseul",
     "director": "오멸",
-    "country": "한국"
+    "country": "한국",
+    "etc": ""
   },
   {
-    "releasedate": 1995,
+    "releasedate": "1995",
     "titlekorean": "언더그라운드",
     "titleenglish": "Underground",
     "director": "에밀 쿠스트리차",
-    "country": "유고슬라비아"
+    "country": "세르비아",
+    "etc": ""
   },
   {
-    "releasedate": 1947,
+    "releasedate": "1947",
     "titlekorean": "유령과 뮈어 부인",
     "titleenglish": "The Ghost and Mrs. Muir",
     "director": "조셉 L. 맨키위즈",
-    "country": "미국"
+    "country": "임시미국",
+    "etc": ""
   },
   {
-    "releasedate": 2015,
+    "releasedate": "2016",
     "titlekorean": "유스",
     "titleenglish": "Youth",
-    "director": "파울로 소렌티노",
-    "country": "이탈리아"
+    "director": "파올로 소렌티노",
+    "country": "이탈리아",
+    "etc": ""
   },
   {
-    "releasedate": 2017,
+    "releasedate": "2018",
     "titlekorean": "카메라를 멈추면 안 돼!",
-    "titleenglish": "One Cut of the Dead",
+    "titleenglish": "カメラを止めるな！One Cut of the Dead",
     "director": "우에다 신이치로",
-    "country": "일본"
+    "country": "일본",
+    "etc": ""
   },
   {
-    "releasedate": 1922,
-    "titlekorean": "마마보이 헤롤드",
-    "titleenglish": "Grandma's Boy",
-    "director": "프레드 C. 뉴마이어",
-    "country": "미국"
+    "releasedate": "1922",
+    "titlekorean": "마마보이 해롤드",
+    "titleenglish": "Grandma’s Boy",
+    "director": "해롤드 로이드",
+    "country": "미국",
+    "etc": "무성, 단편"
   },
   {
-    "releasedate": 1974,
+    "releasedate": "1974",
     "titlekorean": "라콤 루시앙",
-    "titleenglish": "Lacombe Lucien",
+    "titleenglish": "Lacombe, Lucien",
     "director": "루이 말",
-    "country": "프랑스"
+    "country": "프랑스",
+    "etc": ""
   },
   {
-    "releasedate": 1994,
+    "releasedate": "1981",
     "titlekorean": "에드 우드",
-    "titleenglish": "Ed Wood",
+    "titleenglish": "Hell Night",
     "director": "팀 버튼",
-    "country": "미국"
+    "country": "미국",
+    "etc": ""
   },
   {
-    "releasedate": 1975,
+    "releasedate": "1975",
     "titlekorean": "거울",
-    "titleenglish": "The Mirror",
+    "titleenglish": "Zerkalo",
     "director": "안드레이 타르코프스키",
-    "country": "러시아"
+    "country": "러시아",
+    "etc": ""
   },
   {
-    "releasedate": 1973,
+    "releasedate": "1972",
     "titlekorean": "시스터스",
     "titleenglish": "Sisters",
     "director": "브라이언 드 팔마",
     "country": "미국",
-    "etc": "살인 자체 부정"
+    "etc": "공포"
   },
   {
-    "releasedate": 2005,
-    "titlekorean": "거북이는 의외로 빨리 달린다",
-    "titleenglish": "Turtles Swim Faster than Expected",
+    "releasedate": "2005",
+    "titlekorean": "거북이는 의외로 빨리 헤엄친다",
+    "titleenglish": "Turtles Swim Faster Than Expected",
     "director": "미키 사토시",
-    "country": "일본"
+    "country": "일본",
+    "etc": ""
   },
   {
-    "releasedate": 1987,
-    "titlekorean": "가을 날의 동화",
-    "titleenglish": "An Autumn's Tale",
-    "director": "장완정",
-    "country": "홍콩"
+    "releasedate": "1987",
+    "titlekorean": "가을날의 동화",
+    "titleenglish": "秋天的童話: An Autumn's Tale",
+    "director": "마벨 청",
+    "country": "홍콩",
+    "etc": ""
   },
   {
-    "releasedate": 2018,
+    "releasedate": "2019",
     "titlekorean": "행복한 라짜로",
     "titleenglish": "Happy as Lazzaro",
-    "director": "앨리스 로르바케르",
-    "country": "이탈리아"
+    "director": "알리체 로르와커",
+    "country": "이탈리아",
+    "etc": ""
   },
   {
-    "releasedate": 1954,
+    "releasedate": "1954",
     "titlekorean": "산쇼다유",
     "titleenglish": "Sansho The Bailiff",
-    "director": "미조구치 겐지",
-    "country": "일본"
+    "director": "미조구치 켄지",
+    "country": "일본",
+    "etc": ""
   },
   {
-    "releasedate": 1926,
+    "releasedate": "1981",
     "titlekorean": "족장의 아들",
-    "titleenglish": "The Son of the Sheik",
-    "director": "조지 피츠모리스",
-    "country": "미국"
+    "titleenglish": "Hell Night",
+    "director": "톰 드 시몬",
+    "country": "임시미국",
+    "etc": ""
   },
   {
-    "releasedate": 1996,
+    "releasedate": "1996",
     "titlekorean": "학생부군신위",
-    "titleenglish": "Farewell My Darling",
+    "titleenglish": "學生府君神位Farewell My Darling",
     "director": "박철수",
-    "country": "한국"
+    "country": "한국",
+    "etc": ""
   },
   {
-    "releasedate": 2007,
+    "releasedate": "2017",
     "titlekorean": "아이, 토냐",
     "titleenglish": "I, Tonya",
-    "director": "크레이그 질레스피",
-    "country": "미국"
+    "director": "크레이그 길레스피",
+    "country": "미국",
+    "etc": ""
   },
   {
-    "releasedate": 2015,
+    "releasedate": "2015",
     "titlekorean": "마음이 외치고 싶어해",
-    "titleenglish": "The Anthem of the Heart",
+    "titleenglish": "Beautiful Word Beautiful World心が叫びたがってるんだ。",
     "director": "나가이 타츠유키",
-    "country": "일본"
+    "country": "일본",
+    "etc": "애니메이션"
   },
   {
     "releasedate": 1980,
     "titlekorean": "매니악",
     "titleenglish": "Maniac",
     "director": "윌리엄 러스티그",
-    "country": "미국"
-  },
-  {
-    "releasedate": 1979,
-    "titlekorean": "텐",
-    "titleenglish": "Ten",
-    "director": "블레이크 에드워즈",
-    "country": "미국"
-  },
-  {
-    "releasedate": 1951,
-    "titlekorean": "시합날",
-    "titleenglish": "Day of the Fight",
-    "director": "스탠리 큐브릭",
     "country": "미국",
-    "etc": "단편"
+    "etc": ""
   },
   {
-    "releasedate": 2018,
+    "releasedate": "1981",
+    "titlekorean": "텐",
+    "titleenglish": "Hell Night",
+    "director": "톰 드 시몬",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "1981",
+    "titlekorean": "시합날",
+    "titleenglish": "Hell Night",
+    "director": "톰 드 시몬",
+    "country": "임시미국",
+    "etc": ""
+  },
+  {
+    "releasedate": "2018",
     "titlekorean": "로마",
     "titleenglish": "Roma",
     "director": "알폰소 쿠아론",
     "country": "멕시코",
-    "etc": "new"
-  },
-
-  {
-    "releasedate": "1981",
-    "titlekorean": "피츠카랄도",
-    "titleenglish": "Hell Night",
-    "director": "조셉 L. 맨키위즈",
-    "country": "임시미국",
     "etc": ""
   },
   {
-    "releasedate": "1981",
-    "titlekorean": "풀잎들",
-    "titleenglish": "Hell Night",
-    "director": "조셉 L. 맨키위즈",
-    "country": "임시미국",
-    "etc": ""
-  },
-  {
-    "releasedate": "1981",
-    "titlekorean": "그곳에서만 빛난다",
-    "titleenglish": "Hell Night",
-    "director": "조셉 L. 맨키위즈",
-    "country": "임시미국",
-    "etc": ""
-  },
-  {
-    "releasedate": "1981",
-    "titlekorean": "사랑과 희망의 거리",
-    "titleenglish": "Hell Night",
-    "director": "조셉 L. 맨키위즈",
-    "country": "임시미국",
-    "etc": ""
-  },
-  {
-    "releasedate": "1981",
-    "titlekorean": "사망유희 디 오리지널",
-    "titleenglish": "Hell Night",
-    "director": "조셉 L. 맨키위즈",
-    "country": "임시미국",
-    "etc": ""
-  },
-  {
-    "releasedate": "1981",
-    "titlekorean": "나쁜 버릇",
-    "titleenglish": "Hell Night",
-    "director": "조셉 L. 맨키위즈",
-    "country": "임시미국",
-    "etc": ""
-  },
-  {
-    "releasedate": "1981",
-    "titlekorean": "황금 투구",
-    "titleenglish": "Hell Night",
-    "director": "조셉 L. 맨키위즈",
-    "country": "임시미국",
-    "etc": ""
-  },
-  {
-    "releasedate": "1981",
-    "titlekorean": "비욘드 사일런스",
-    "titleenglish": "Hell Night",
-    "director": "조셉 L. 맨키위즈",
-    "country": "임시미국",
-    "etc": ""
-  },
-  {
-    "releasedate": "1981",
-    "titlekorean": "겨울 빛",
-    "titleenglish": "Hell Night",
-    "director": "조셉 L. 맨키위즈",
-    "country": "임시미국",
-    "etc": ""
-  },
-  {
-    "releasedate": "1981",
-    "titlekorean": "천하장사 마돈나",
-    "titleenglish": "Hell Night",
-    "director": "조셉 L. 맨키위즈",
-    "country": "임시미국",
-    "etc": ""
-  },
-  {
-    "releasedate": "1981",
-    "titlekorean": "종이 달",
-    "titleenglish": "Hell Night",
-    "director": "조셉 L. 맨키위즈",
-    "country": "임시미국",
-    "etc": ""
-  },
-  {
-    "releasedate": "1981",
-    "titlekorean": "지슬 - 끝나지 않은 세월2",
-    "titleenglish": "Hell Night",
-    "director": "조셉 L. 맨키위즈",
-    "country": "임시미국",
-    "etc": ""
-  },
-  {
-    "releasedate": "1981",
-    "titlekorean": "언더그라운드",
-    "titleenglish": "Hell Night",
-    "director": "조셉 L. 맨키위즈",
-    "country": "임시미국",
-    "etc": ""
-  },
-  {
-    "releasedate": "1981",
-    "titlekorean": "유령과 뮈어 부인",
-    "titleenglish": "Hell Night",
-    "director": "조셉 L. 맨키위즈",
-    "country": "임시미국",
-    "etc": ""
-  },
-  {
-    "releasedate": "1981",
-    "titlekorean": "유스",
-    "titleenglish": "Hell Night",
-    "director": "파올로 소렌티노",
-    "country": "임시미국",
-    "etc": ""
-  },
-  {
-    "releasedate": "1981",
-    "titlekorean": "카메라를 멈추면 안 돼!",
-    "titleenglish": "Hell Night",
-    "director": "미조구치 켄지",
-    "country": "임시미국",
-    "etc": ""
-  },
-  {
-    "releasedate": "1981",
-    "titlekorean": "마마보이 해롤드",
-    "titleenglish": "Hell Night",
-    "director": "미조구치 켄지",
-    "country": "임시미국",
-    "etc": ""
-  },
-  {
-    "releasedate": "1981",
-    "titlekorean": "라콤 루시앙",
-    "titleenglish": "Hell Night",
-    "director": "미조구치 켄지",
-    "country": "임시미국",
-    "etc": ""
-  },
-  {
-    "releasedate": "1981",
-    "titlekorean": "에드 우드",
-    "titleenglish": "Hell Night",
-    "director": "팀 버튼",
-    "country": "임시미국",
-    "etc": ""
-  },
-  {
-    "releasedate": "1981",
-    "titlekorean": "거울",
-    "titleenglish": "Hell Night",
-    "director": "안드레이 타르코프스키",
-    "country": "임시미국",
-    "etc": ""
-  },
-  {
-    "releasedate": "1981",
-    "titlekorean": "시스터스",
-    "titleenglish": "Hell Night",
-    "director": "브라이언 드 팔마",
-    "country": "임시미국",
-    "etc": ""
-  },
-  {
-    "releasedate": "1981",
-    "titlekorean": "거북이는 의외로 빨리 달린다",
-    "titleenglish": "Hell Night",
-    "director": "미조구치 켄지",
-    "country": "임시미국",
-    "etc": ""
-  },
-  {
-    "releasedate": "1981",
-    "titlekorean": "가을날의 동화",
-    "titleenglish": "Hell Night",
-    "director": "미조구치 켄지",
-    "country": "임시미국",
-    "etc": ""
-  },
-  {
-    "releasedate": "1981",
-    "titlekorean": "행복한 라짜로",
-    "titleenglish": "Hell Night",
-    "director": "미조구치 켄지",
-    "country": "임시미국",
-    "etc": ""
-  },
-  {
-    "releasedate": "1981",
-    "titlekorean": "산쇼다유",
-    "titleenglish": "Hell Night",
-    "director": "미조구치 켄지",
-    "country": "임시미국",
-    "etc": ""
-  },
-  {
-    "releasedate": "1981",
-    "titlekorean": "족장의 아들",
-    "titleenglish": "Hell Night",
-    "director": "톰 드 시몬",
-    "country": "임시미국",
-    "etc": ""
-  },
-  {
-    "releasedate": "1981",
-    "titlekorean": "학생부군신위",
-    "titleenglish": "Hell Night",
-    "director": "톰 드 시몬",
-    "country": "임시미국",
-    "etc": ""
-  },
-  {
-    "releasedate": "1981",
-    "titlekorean": "아이, 토냐",
-    "titleenglish": "Hell Night",
-    "director": "톰 드 시몬",
-    "country": "임시미국",
-    "etc": ""
-  },
-  {
-    "releasedate": "1981",
-    "titlekorean": "마음이 외치고 싶어해",
-    "titleenglish": "Hell Night",
-    "director": "톰 드 시몬",
-    "country": "임시미국",
-    "etc": ""
-  },
-  {
-    "releasedate": "1981",
-    "titlekorean": "매니악",
-    "titleenglish": "Hell Night",
-    "director": "톰 드 시몬",
-    "country": "임시미국",
-    "etc": ""
-  },
-  {
-    "releasedate": "1981",
-    "titlekorean": "텐",
-    "titleenglish": "Hell Night",
-    "director": "톰 드 시몬",
-    "country": "임시미국",
-    "etc": ""
-  },
-  {
-    "releasedate": "1981",
-    "titlekorean": "시합날",
-    "titleenglish": "Hell Night",
-    "director": "톰 드 시몬",
-    "country": "임시미국",
-    "etc": ""
-  },
-  {
-    "releasedate": "1981",
-    "titlekorean": "로마",
-    "titleenglish": "Hell Night",
-    "director": "톰 드 시몬",
-    "country": "임시미국",
-    "etc": ""
-  },
-  {
-    "releasedate": "1981",
+    "releasedate": "2017",
     "titlekorean": "소공녀",
-    "titleenglish": "Hell Night",
-    "director": "톰 드 시몬",
-    "country": "임시미국",
+    "titleenglish": "Microhabitat",
+    "director": "전고운",
+    "country": "한국",
     "etc": ""
   },
   {
-    "releasedate": "1981",
+    "releasedate": "1985",
     "titlekorean": "빽 투 더 퓨쳐",
-    "titleenglish": "Hell Night",
-    "director": "톰 드 시몬",
-    "country": "임시미국",
+    "titleenglish": "Back to the Future",
+    "director": "로버트 저메키스",
+    "country": "미국",
     "etc": ""
   },
   {
@@ -8752,27 +8904,27 @@
     "etc": ""
   },
   {
-    "releasedate": "1981",
+    "releasedate": "1957",
     "titlekorean": "막말태양전",
-    "titleenglish": "Hell Night",
-    "director": "톰 드 시몬",
-    "country": "임시미국",
+    "titleenglish": "Sun in the Last Days of the Shogunate",
+    "director": "가와시마 유조",
+    "country": "일본",
     "etc": ""
   },
   {
-    "releasedate": "1981",
+    "releasedate": "1966",
     "titlekorean": "젊은 토르레스",
-    "titleenglish": "Hell Night",
-    "director": "톰 드 시몬",
-    "country": "임시미국",
+    "titleenglish": "Der Junge Torless, Young Torless",
+    "director": "폴커 슐렌도르프",
+    "country": "프랑스",
     "etc": ""
   },
   {
-    "releasedate": "1981",
+    "releasedate": "1976",
     "titlekorean": "차이니즈 부키의 죽음",
-    "titleenglish": "Hell Night",
-    "director": "톰 드 시몬",
-    "country": "임시미국",
+    "titleenglish": "The Killing of a Chinese Bookie",
+    "director": "존 카사베츠",
+    "country": "미국",
     "etc": ""
   },
   {
@@ -8788,7 +8940,7 @@
     "titlekorean": "헬 나이트",
     "titleenglish": "Hell Night",
     "director": "톰 드 시몬",
-    "country": "임시미국",
+    "country": "미국",
     "etc": ""
   },
   {
@@ -9476,7 +9628,7 @@
     "titlekorean": "마리아 브라운의 결혼",
     "titleenglish": "The Marriage of Maria Braun",
     "director": "라이너 베르너 파스빈더",
-    "country": "임시미국",
+    "country": "독일",
     "etc": ""
   },
   {
@@ -9484,7 +9636,7 @@
     "titlekorean": "24시티",
     "titleenglish": "24 City",
     "director": "지아 장 커",
-    "country": "임시미국",
+    "country": "홍콩",
     "etc": ""
   },
   {
@@ -9492,7 +9644,7 @@
     "titlekorean": "개선문",
     "titleenglish": "Arch of Triumph",
     "director": "루이스 마일스톤",
-    "country": "임시미국",
+    "country": "미국",
     "etc": ""
   },
   {
@@ -9500,7 +9652,7 @@
     "titlekorean": "헝거",
     "titleenglish": "Hunger",
     "director": "스티브 맥퀸",
-    "country": "임시미국",
+    "country": "미국",
     "etc": ""
   },
   {
@@ -9508,7 +9660,7 @@
     "titlekorean": "산책하는 침략자",
     "titleenglish": "Before We Vanish",
     "director": "구로사와 기요시",
-    "country": "임시미국",
+    "country": "일본",
     "etc": ""
   },
   {
@@ -9524,7 +9676,7 @@
     "titlekorean": "인정 종이풍선",
     "titleenglish": "Humanity and Paper Balloons 人情紙風船",
     "director": "야마나카 사다오",
-    "country": "임시미국",
+    "country": "일본",
     "etc": ""
   },
   {
@@ -9532,7 +9684,7 @@
     "titlekorean": "저주의 카메라",
     "titleenglish": "Peeping Tom",
     "director": "마이클 포웰",
-    "country": "임시미국",
+    "country": "미국",
     "etc": ""
   },
   {
@@ -9540,7 +9692,7 @@
     "titlekorean": "바람꽃",
     "titleenglish": "Kaze-hana 風花",
     "director": "소마이 신지",
-    "country": "임시미국",
+    "country": "일본",
     "etc": ""
   },
   {
@@ -9556,7 +9708,7 @@
     "titlekorean": "밤",
     "titleenglish": "La Notte",
     "director": "미켈란젤로 안토니오니",
-    "country": "임시미국",
+    "country": "이탈리아",
     "etc": ""
   },
   {
@@ -9564,7 +9716,7 @@
     "titlekorean": "썸머 타임머신 블루스",
     "titleenglish": "Summer Time Machine Blues: サマータイムマシン・ブルース",
     "director": "모토히로 카즈유키",
-    "country": "임시미국",
+    "country": "일본",
     "etc": ""
   },
   {
@@ -9580,7 +9732,7 @@
     "titlekorean": "첩혈쌍웅",
     "titleenglish": "The Killer: 喋血雙雄",
     "director": "오우삼",
-    "country": "임시미국",
+    "country": "홍콩",
     "etc": ""
   },
   {
@@ -9588,7 +9740,7 @@
     "titlekorean": "나라야마 부시코",
     "titleenglish": "Ballad of the Narayama: 楢山節考 Narayama-bushi Kō",
     "director": "키노시타 케이스케",
-    "country": "임시미국",
+    "country": "일본",
     "etc": ""
   },
   {
@@ -9612,7 +9764,7 @@
     "titlekorean": "그들도 우리처럼",
     "titleenglish": "Black Republic",
     "director": "박광수",
-    "country": "임시미국",
+    "country": "한국",
     "etc": ""
   },
   {
@@ -9620,7 +9772,7 @@
     "titlekorean": "카게무샤",
     "titleenglish": "Kagemus: かげむしゃ",
     "director": "구로사와 아키라",
-    "country": "임시미국",
+    "country": "일본",
     "etc": ""
   },
   {
@@ -9636,7 +9788,7 @@
     "titlekorean": "킬링 디어",
     "titleenglish": "The Killing of a Sacred Deer",
     "director": "요르고스 란티모스",
-    "country": "임시미국",
+    "country": "그리스",
     "etc": ""
   },
   {
@@ -9644,7 +9796,7 @@
     "titlekorean": "석류의 빛깔",
     "titleenglish": "The Color of Pomegranates: Նռան գույնը",
     "director": "세르게이 파라자노프",
-    "country": "임시미국",
+    "country": "이란",
     "etc": ""
   },
   {
@@ -9652,7 +9804,7 @@
     "titlekorean": "8월의 달을 위한 다섯 인형들",
     "titleenglish": "Five Dolls for an August Moon: 5 bambole per la luna d'agosto",
     "director": "마리오 바바",
-    "country": "임시미국",
+    "country": "이탈리아",
     "etc": ""
   },
   {
@@ -9692,7 +9844,7 @@
     "titlekorean": "콩쥐 팥쥐",
     "titleenglish": "Kongjui & Patchui",
     "director": "강태웅",
-    "country": "임시미국",
+    "country": "한국",
     "etc": ""
   },
   {
@@ -9700,7 +9852,7 @@
     "titlekorean": "브레드레스",
     "titleenglish": "Breathless",
     "director": "오즈 야스지로",
-    "country": "임시미국",
+    "country": "일본",
     "etc": ""
   },
   {
@@ -9708,7 +9860,7 @@
     "titlekorean": "하나 그리고 둘",
     "titleenglish": "A One and a Two: Yi Yi",
     "director": "에드워드 양",
-    "country": "임시미국",
+    "country": "대만",
     "etc": ""
   },
   {
@@ -9716,7 +9868,7 @@
     "titlekorean": "광열의 계절",
     "titleenglish": "The Warped Ones",
     "director": "쿠라하라 코레요시",
-    "country": "임시미국",
+    "country": "일본",
     "etc": ""
   },
   {
@@ -9732,7 +9884,7 @@
     "titlekorean": "역마차",
     "titleenglish": "Stagecoach",
     "director": "존 포드",
-    "country": "임시미국",
+    "country": "미국",
     "etc": ""
   },
   {
@@ -9772,7 +9924,7 @@
     "titlekorean": "워커힐에서 만납시다",
     "titleenglish": "Let's Meet at Walkerhill",
     "director": "한형모",
-    "country": "임시미국",
+    "country": "한국",
     "etc": ""
   },
   {
@@ -9780,7 +9932,7 @@
     "titlekorean": "초 여름",
     "titleenglish": "Early Summer",
     "director": "오즈 야스지로",
-    "country": "임시미국",
+    "country": "일본",
     "etc": ""
   },
   {
@@ -9788,7 +9940,7 @@
     "titlekorean": "플로리다 프로젝트",
     "titleenglish": "The Florida Project",
     "director": "션 베이커",
-    "country": "임시미국",
+    "country": "미국",
     "etc": ""
   },
   {
@@ -9796,7 +9948,7 @@
     "titlekorean": "청춘의 살인자",
     "titleenglish": "The Youth Killer",
     "director": "하세가와 카즈히코",
-    "country": "임시미국",
+    "country": "일본",
     "etc": ""
   },
   {
@@ -9804,7 +9956,7 @@
     "titlekorean": "그의 연인 프라이데이",
     "titleenglish": "His Girl Friday",
     "director": "하워드 혹스",
-    "country": "임시미국",
+    "country": "미국",
     "etc": ""
   },
   {
@@ -9844,7 +9996,7 @@
     "titlekorean": "야행",
     "titleenglish": "Night Voyage",
     "director": "김수용",
-    "country": "임시미국",
+    "country": "한국",
     "etc": ""
   },
   {
@@ -9852,7 +10004,7 @@
     "titlekorean": "8 마일",
     "titleenglish": "8 Mile",
     "director": "커티스 핸슨",
-    "country": "임시미국",
+    "country": "미국",
     "etc": ""
   },
   {
@@ -9860,7 +10012,7 @@
     "titlekorean": "누군가의 시선",
     "titleenglish": "Crazed Fruit",
     "director": "신카이 마코토",
-    "country": "임시미국",
+    "country": "일본",
     "etc": ""
   },
   {
@@ -9868,7 +10020,7 @@
     "titlekorean": "미친 과실",
     "titleenglish": "Crazed Fruit",
     "director": "나카히라 코우",
-    "country": "임시미국",
+    "country": "일본",
     "etc": ""
   },
   {
@@ -9876,7 +10028,7 @@
     "titlekorean": "럼블 피쉬",
     "titleenglish": "Rumble Fish",
     "director": "프란시스 포드 코폴라",
-    "country": "임시미국",
+    "country": "미국",
     "etc": ""
   },
   {
@@ -9884,7 +10036,7 @@
     "titlekorean": "용호풍운",
     "titleenglish": "City on Fire",
     "director": "임영동",
-    "country": "임시미국",
+    "country": "홍콩",
     "etc": ""
   },
   {
@@ -9900,7 +10052,7 @@
     "titlekorean": "호피와 차돌바위",
     "titleenglish": "Hopi and Chadol Bawi",
     "director": "신동헌",
-    "country": "임시미국",
+    "country": "한국",
     "etc": ""
   },
   {
@@ -9908,7 +10060,7 @@
     "titlekorean": "로마여 영원하라",
     "titleenglish": "Massacre in Rome",
     "director": "조지 P. 코스마토스",
-    "country": "임시미국",
+    "country": "이탈리아",
     "etc": ""
   },
   {
@@ -9916,7 +10068,7 @@
     "titlekorean": "용순, 열 여덟 번째 여름",
     "titleenglish": "Inferno of Torture",
     "director": "신준",
-    "country": "임시미국",
+    "country": "한국",
     "etc": ""
   },
   {
@@ -9924,7 +10076,7 @@
     "titlekorean": "고문지옥",
     "titleenglish": "Inferno of Torture",
     "director": "이시이 테루오",
-    "country": "임시미국",
+    "country": "일본",
     "etc": ""
   },
   {
@@ -9940,7 +10092,7 @@
     "titlekorean": "게임의 법칙",
     "titleenglish": "The Rules of the Game",
     "director": "장현수",
-    "country": "임시미국",
+    "country": "한국",
     "etc": ""
   },
   {
@@ -9948,7 +10100,7 @@
     "titlekorean": "러브 & 팝",
     "titleenglish": "Love & Pop",
     "director": "안도 히데아키",
-    "country": "임시미국",
+    "country": "일본",
     "etc": ""
   },
   {
@@ -9956,7 +10108,7 @@
     "titlekorean": "겟 아웃",
     "titleenglish": "Get Out",
     "director": "조던 필레",
-    "country": "임시미국",
+    "country": "미국",
     "etc": ""
   },
   {
@@ -9972,7 +10124,7 @@
     "titlekorean": "안녕, 용문객잔",
     "titleenglish": "Good Bye, Dragon Inn",
     "director": "차이밍 량",
-    "country": "임시미국",
+    "country": "대만",
     "etc": ""
   },
   {
@@ -9980,7 +10132,7 @@
     "titlekorean": "창녀고문지옥",
     "titleenglish": "The Hell-Fated Courtesan",
     "director": "타나카 노보루",
-    "country": "임시미국",
+    "country": "일본",
     "etc": ""
   },
   {
@@ -10004,7 +10156,7 @@
     "titlekorean": "가시를 삼킨 장미",
     "titleenglish": "The Rose that Swallowed Thorn",
     "director": "정진우",
-    "country": "임시미국",
+    "country": "한국",
     "etc": ""
   },
   {
@@ -10012,7 +10164,7 @@
     "titlekorean": "상처 뿐인 영광",
     "titleenglish": "Somebody Up There Likes Me",
     "director": "로버트 와이즈",
-    "country": "임시미국",
+    "country": "미국",
     "etc": ""
   },
   {
@@ -10028,7 +10180,7 @@
     "titlekorean": "피오릴레",
     "titleenglish": "Fiorile",
     "director": "파올로 타비아니, 비토리오 타비아니",
-    "country": "임시미국",
+    "country": "이탈리아",
     "etc": ""
   },
   {
@@ -10036,7 +10188,7 @@
     "titlekorean": "눈먼 짐승",
     "titleenglish": "Blind Beast",
     "director": "마스무라 야스조",
-    "country": "임시미국",
+    "country": "일본",
     "etc": ""
   },
   {
@@ -10044,7 +10196,7 @@
     "titlekorean": "레이디 버드",
     "titleenglish": "Lady Bird",
     "director": "그레타 거윅",
-    "country": "임시미국",
+    "country": "미국",
     "etc": ""
   },
   {
@@ -10052,7 +10204,7 @@
     "titlekorean": "썸머 워즈",
     "titleenglish": "Summer Wars: サマーウォーズ Samâ uôzu",
     "director": "호소다 마모루",
-    "country": "임시미국",
+    "country": "일본",
     "etc": ""
   },
   {
@@ -10060,7 +10212,7 @@
     "titlekorean": "화분",
     "titleenglish": "The Pollen of Flowers",
     "director": "하길종",
-    "country": "임시미국",
+    "country": "한국",
     "etc": ""
   },
   {
@@ -10076,7 +10228,7 @@
     "titlekorean": "들불",
     "titleenglish": "Fires on the Plain: 野火;Nobi",
     "director": "이치카와 곤",
-    "country": "임시미국",
+    "country": "일본",
     "etc": ""
   },
   {
@@ -10100,7 +10252,7 @@
     "titlekorean": "깁스 걸",
     "titleenglish": "Gips",
     "director": "시오타 아키히코",
-    "country": "임시미국",
+    "country": "일본",
     "etc": ""
   },
   {
@@ -10116,7 +10268,7 @@
     "titlekorean": "소년",
     "titleenglish": "Boy: ",
     "director": "오오시마 나기사",
-    "country": "임시미국",
+    "country": "일본",
     "etc": ""
   },
   {
@@ -10124,7 +10276,7 @@
     "titlekorean": "천녀유혼",
     "titleenglish": "A Chinese Ghost Story",
     "director": "정소동",
-    "country": "임시미국",
+    "country": "홍콩",
     "etc": ""
   },
   {
@@ -10132,7 +10284,7 @@
     "titlekorean": "씨민과 나데르의 별거",
     "titleenglish": "Nader and Simin, a Separation",
     "director": "아쉬가르 파르하디",
-    "country": "임시미국",
+    "country": "대만",
     "etc": ""
   },
   {
@@ -10140,7 +10292,7 @@
     "titlekorean": "팜 비치 스토리",
     "titleenglish": "The Palm Beach Story",
     "director": "프레스턴 스터지스",
-    "country": "임시미국",
+    "country": "미국",
     "etc": ""
   },
   {
@@ -10156,7 +10308,7 @@
     "titlekorean": "안조가의 무도회",
     "titleenglish": "A Ball at the Anjo House",
     "director": "요시무라 코사부로",
-    "country": "임시미국",
+    "country": "일본",
     "etc": ""
   },
   {
@@ -10164,7 +10316,7 @@
     "titlekorean": "암살자",
     "titleenglish": "Heathers",
     "director": "이만희",
-    "country": "임시미국",
+    "country": "한국",
     "etc": ""
   },
   {
@@ -10180,7 +10332,7 @@
     "titlekorean": "누가 버지니아 울프를 두려워하랴?",
     "titleenglish": "Who's Afraid of Virginia Wolf?",
     "director": "마이크 니콜스",
-    "country": "임시미국",
+    "country": "미국",
     "etc": ""
   },
   {
@@ -10188,7 +10340,7 @@
     "titlekorean": "일본해방전선, 산리츠카의 여름",
     "titleenglish": "Summer in Narita: Nihon Kaiho sensen: Sanrizuka no natsu",
     "director": "오가와 신스케",
-    "country": "임시미국",
+    "country": "일본",
     "etc": ""
   },
   {
@@ -10196,7 +10348,7 @@
     "titlekorean": "살롱 키티",
     "titleenglish": "Salon Kitty",
     "director": "틴토 브라스",
-    "country": "임시미국",
+    "country": "이탈리아",
     "etc": ""
   },
   {
@@ -10212,7 +10364,7 @@
     "titlekorean": "적선지대",
     "titleenglish": "Street of Shame",
     "director": "미조구치 켄지",
-    "country": "임시미국",
+    "country": "일본",
     "etc": ""
   },
   {
@@ -10228,7 +10380,7 @@
     "titlekorean": "고지라",
     "titleenglish": "Gojira",
     "director": "혼다 이시로",
-    "country": "임시미국",
+    "country": "일본",
     "etc": ""
   },
   {
@@ -10244,7 +10396,7 @@
     "titlekorean": "자유 결혼",
     "titleenglish": "The Love Marriage",
     "director": "이병일",
-    "country": "임시미국",
+    "country": "한국",
     "etc": ""
   },
   {
@@ -10252,7 +10404,7 @@
     "titlekorean": "할로윈",
     "titleenglish": "Halloween",
     "director": "존 카펜터",
-    "country": "임시미국",
+    "country": "미국",
     "etc": ""
   },
   {
@@ -10260,7 +10412,7 @@
     "titlekorean": "용문객잔",
     "titleenglish": "Dragon Gate Inn: 龍門客棧",
     "director": "호금전",
-    "country": "임시미국",
+    "country": "대만",
     "etc": ""
   },
   {
@@ -10268,7 +10420,7 @@
     "titlekorean": "달과 체리",
     "titleenglish": "Moon & Cherry 月とチェリ",
     "director": "타나카 유키",
-    "country": "임시미국",
+    "country": "일본",
     "etc": ""
   },
   {
@@ -10276,7 +10428,7 @@
     "titlekorean": "노래하는 여자, 노래하지 않는 여자",
     "titleenglish": "One Sings, The Other Doesn't",
     "director": "아녜스 바르다",
-    "country": "임시미국",
+    "country": "프랑스",
     "etc": ""
   },
   {
@@ -10292,7 +10444,7 @@
     "titlekorean": "팻 걸",
     "titleenglish": "Fat Girl",
     "director": "까트린 브레야",
-    "country": "임시미국",
+    "country": "프랑스",
     "etc": ""
   },
   {
@@ -10300,7 +10452,7 @@
     "titlekorean": "야수의 청춘",
     "titleenglish": "Youth of the Beast",
     "director": "스즈키 세이준",
-    "country": "임시미국",
+    "country": "일본",
     "etc": ""
   },
   {
@@ -10308,7 +10460,7 @@
     "titlekorean": "버드",
     "titleenglish": "Bird",
     "director": "클린트 이스트우드",
-    "country": "임시미국",
+    "country": "미국",
     "etc": ""
   },
   {
@@ -10316,7 +10468,7 @@
     "titlekorean": "여사장",
     "titleenglish": "A Female Boss",
     "director": "한형모",
-    "country": "임시미국",
+    "country": "한국",
     "etc": ""
   },
   {
@@ -10324,7 +10476,7 @@
     "titlekorean": "고",
     "titleenglish": "Go",
     "director": "유키사다 이사오",
-    "country": "임시미국",
+    "country": "일본",
     "etc": ""
   },
   {
@@ -10332,7 +10484,7 @@
     "titlekorean": "더 벨벳 언더그라운드 앤 니코",
     "titleenglish": "The Velvet Underground and Nico",
     "director": "앤디 워홀",
-    "country": "임시미국",
+    "country": "미국",
     "etc": ""
   },
   {
@@ -10340,7 +10492,7 @@
     "titlekorean": "흙꼭두장군",
     "titleenglish": "",
     "director": "김성칠",
-    "country": "임시미국",
+    "country": "한국",
     "etc": ""
   },
   {
@@ -10356,7 +10508,7 @@
     "titlekorean": "당신자신과 당신의 것",
     "titleenglish": "Yourself and Yours",
     "director": "홍상수",
-    "country": "임시미국",
+    "country": "한국",
     "etc": ""
   },
   {
@@ -10372,7 +10524,7 @@
     "titlekorean": "도성사",
     "titleenglish": "Dojoji Temple",
     "director": "가와모토 기하치로",
-    "country": "임시미국",
+    "country": "일본",
     "etc": ""
   },
   {
@@ -10388,7 +10540,7 @@
     "titlekorean": "007 북경특급",
     "titleenglish": "From Beijing with Love: 國産凌凌漆",
     "director": "주성치, 이력지",
-    "country": "임시미국",
+    "country": "홍콩",
     "etc": ""
   },
   {
@@ -10396,7 +10548,7 @@
     "titlekorean": "키즈 리턴",
     "titleenglish": "Kids Return: キッズ・リターン Kizzu Ritān",
     "director": "기타노 다케시",
-    "country": "임시미국",
+    "country": "일본",
     "etc": ""
   },
   {
@@ -10404,7 +10556,7 @@
     "titlekorean": "수성못",
     "titleenglish": "Duck Town",
     "director": "유지영",
-    "country": "임시미국",
+    "country": "한국",
     "etc": ""
   },
   {
@@ -10420,7 +10572,7 @@
     "titlekorean": "토마토 케첩 황제",
     "titleenglish": "Emperor Tomato Ketchup: トマトケチャップ皇帝 Tomato Kechappu Kōtei",
     "director": "테라야마 슈지",
-    "country": "임시미국",
+    "country": "일본",
     "etc": ""
   },
   {
@@ -10428,7 +10580,7 @@
     "titlekorean": "황토지",
     "titleenglish": "Yellow Earth",
     "director": "첸 카이거",
-    "country": "임시미국",
+    "country": "대만",
     "etc": ""
   },
   {
@@ -10436,7 +10588,7 @@
     "titlekorean": "장마",
     "titleenglish": "Rainy Season",
     "director": "유현목",
-    "country": "임시미국",
+    "country": "한국",
     "etc": ""
   },
   {
@@ -10452,7 +10604,7 @@
     "titlekorean": "천국과 지옥",
     "titleenglish": "High and Low:天国と地獄 Tengoku to Jigoku",
     "director": "구로사와 아키라",
-    "country": "임시미국",
+    "country": "일본",
     "etc": ""
   },
   {
@@ -10484,7 +10636,7 @@
     "titlekorean": "추하고 더럽고 미천한",
     "titleenglish": "Ugly, Dirty and Bad: Brutti, sporchi e cattivi",
     "director": "에토르 스콜라",
-    "country": "임시미국",
+    "country": "이탈리아",
     "etc": ""
   },
   {
@@ -10508,7 +10660,7 @@
     "titlekorean": "미친 한 페이지",
     "titleenglish": "A Page of Madness: 狂つた一頁",
     "director": "기누가사 데이노스케",
-    "country": "임시미국",
+    "country": "일본",
     "etc": ""
   },
   {
@@ -10516,7 +10668,7 @@
     "titlekorean": "증기기관차와 바이올린",
     "titleenglish": "The Streamroller and the Violin",
     "director": "안드레이 타르코프스키",
-    "country": "임시미국",
+    "country": "러시아",
     "etc": ""
   },
   {
@@ -10532,7 +10684,7 @@
     "titlekorean": "숏 컷",
     "titleenglish": "Short Cuts",
     "director": "로버트 알트만",
-    "country": "임시미국",
+    "country": "미국",
     "etc": ""
   },
   {
@@ -10556,7 +10708,7 @@
     "titlekorean": "고양이의 사생활",
     "titleenglish": "The Private Life of a Cat",
     "director": "마야 데렌",
-    "country": "임시미국",
+    "country": "미국",
     "etc": ""
   },
   {
@@ -10572,7 +10724,7 @@
     "titlekorean": "수정 깃털의 새",
     "titleenglish": "The Bird with the Crystal Plumage",
     "director": "다리오 아르젠토",
-    "country": "임시미국",
+    "country": "이탈리아",
     "etc": ""
   },
   {
@@ -10604,7 +10756,7 @@
     "titlekorean": "복수",
     "titleenglish": "報仇: Vengeance!",
     "director": "장철",
-    "country": "임시미국",
+    "country": "중국",
     "etc": ""
   },
   {
@@ -10620,7 +10772,7 @@
     "titlekorean": "바람이 우리를 데려다 주리라",
     "titleenglish": "The Wind Will Carry Us",
     "director": "압바스 키아로스타미",
-    "country": "임시미국",
+    "country": "이란",
     "etc": ""
   },
   {
@@ -10628,7 +10780,7 @@
     "titlekorean": "아들을 동반한 검객",
     "titleenglish": "Lone Wolf and Cub: Sword of Vengeance",
     "director": "미스미 켄지",
-    "country": "임시미국",
+    "country": "일본",
     "etc": ""
   },
   {
@@ -10636,7 +10788,7 @@
     "titlekorean": "초속 5센티미터",
     "titleenglish": "5 Centimeters Per Second 秒速 5センチメ-トル",
     "director": "신카이 마코토",
-    "country": "임시미국",
+    "country": "일본",
     "etc": ""
   },
   {
@@ -10644,7 +10796,7 @@
     "titlekorean": "거긴 지금 몇시니?",
     "titleenglish": "What Time Is It There?",
     "director": "차이 밍 량",
-    "country": "임시미국",
+    "country": "대만",
     "etc": ""
   },
   {
@@ -10652,7 +10804,7 @@
     "titlekorean": "여자 친구들",
     "titleenglish": "Le Amiche",
     "director": "미켈란젤로 안토니오니",
-    "country": "임시미국",
+    "country": "이탈리아",
     "etc": ""
   },
   {
@@ -10668,7 +10820,7 @@
     "titlekorean": "레네트와 미라벨의 네가지 모험",
     "titleenglish": "Four Adventures of Reinette and Mirabelle",
     "director": "에릭 로메르",
-    "country": "임시미국",
+    "country": "프랑스",
     "etc": ""
   },
   {
@@ -10684,7 +10836,7 @@
     "titlekorean": "코르들리에 박사의 유언",
     "titleenglish": "The Testament of Doctor Cordelier: Das testament des dr. cordelier",
     "director": "장 루느아르",
-    "country": "임시미국",
+    "country": "프랑스",
     "etc": ""
   },
   {
@@ -10700,7 +10852,7 @@
     "titlekorean": "행복 목욕탕",
     "titleenglish": "Her Love Boils Bathwater",
     "director": "나카노 료타",
-    "country": "임시미국",
+    "country": "일본",
     "etc": ""
   },
   {
@@ -10708,7 +10860,7 @@
     "titlekorean": "마부",
     "titleenglish": "A Coachman",
     "director": "강대진",
-    "country": "임시미국",
+    "country": "한국",
     "etc": ""
   },
   {
@@ -10724,7 +10876,7 @@
     "titlekorean": "교사형",
     "titleenglish": "Death by Hanging, Kôshikei",
     "director": "오오시마 나기사",
-    "country": "임시미국",
+    "country": "일본",
     "etc": ""
   },
   {
@@ -10732,7 +10884,7 @@
     "titlekorean": "라이프 오브 파이",
     "titleenglish": "Life of Pi",
     "director": "이 안",
-    "country": "임시미국",
+    "country": "대만",
     "etc": ""
   },
   {
@@ -10740,7 +10892,7 @@
     "titlekorean": "사랑은 죽음보다 차갑다",
     "titleenglish": "Liebe Ist Kalter Als Tod",
     "director": "라이너 베르너 파스빈더",
-    "country": "임시미국",
+    "country": "독일",
     "etc": ""
   },
   {
@@ -10764,7 +10916,7 @@
     "titlekorean": "두 여인",
     "titleenglish": "Two Woman, La ciociara",
     "director": "비토리오 데 시카",
-    "country": "임시미국",
+    "country": "이탈리아",
     "etc": ""
   },
   {
@@ -10772,7 +10924,7 @@
     "titlekorean": "유도용호방柔道龍虎榜",
     "titleenglish": "Throw Down",
     "director": "두기봉",
-    "country": "임시미국",
+    "country": "홍콩",
     "etc": ""
   },
   {
@@ -10780,7 +10932,7 @@
     "titlekorean": "날개 달린 사자",
     "titleenglish": "Le Lion Volatin",
     "director": "아녜스 바르다",
-    "country": "임시미국",
+    "country": "프랑스",
     "etc": ""
   },
   {
@@ -10796,7 +10948,7 @@
     "titlekorean": "얼굴들",
     "titleenglish": "Faces",
     "director": "존 카사베츠",
-    "country": "임시미국",
+    "country": "미국",
     "etc": ""
   },
   {
@@ -10804,7 +10956,7 @@
     "titlekorean": "모험",
     "titleenglish": "The Adventurer",
     "director": "찰리 채플린",
-    "country": "임시미국",
+    "country": "미국",
     "etc": ""
   },
   {
@@ -10812,7 +10964,7 @@
     "titlekorean": "바람 불어 좋은 날",
     "titleenglish": "Good Windy Day",
     "director": "이장호",
-    "country": "임시미국",
+    "country": "한국",
     "etc": ""
   },
   {
@@ -10820,7 +10972,7 @@
     "titlekorean": "줄리에타",
     "titleenglish": "Julieta",
     "director": "페드로 알모도바르",
-    "country": "임시미국",
+    "country": "스페인",
     "etc": ""
   },
   {
@@ -10828,7 +10980,7 @@
     "titlekorean": "동반 자살心中天網島",
     "titleenglish": "Double Suicide",
     "director": "시노다 마사히로",
-    "country": "임시미국",
+    "country": "일본",
     "etc": ""
   },
   {
@@ -10836,7 +10988,7 @@
     "titlekorean": "펑꾸이에서 온 소년風柜来的人",
     "titleenglish": "The Boys from Fengkuei",
     "director": "허 샤오시엔",
-    "country": "임시미국",
+    "country": "대만",
     "etc": ""
   },
   {

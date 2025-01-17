@@ -41,6 +41,7 @@
 
   /* menuitem 클릭 영ㅇ력을 위해 이거 없애야. */
   position: relative;
+
 }
 
 .checkbox input {
@@ -51,9 +52,13 @@
   width: var(--checkbox-size);
   height: var(--checkbox-size);
   border: var(--border);
+  border-color: var(--color-border-stronger);
+  /* TODO border-color12 */
   border-radius: var(--checkbox-radius);
   background: var(--color-background);
   box-sizing: border-box;
+
+  position: relative;
 
   /* opacity: 0;
   inline-size: 100%; */
@@ -64,8 +69,40 @@
 }
 
 .checkbox input:checked {
-  border-color: var(--color-primary);
-  background: var(--color-primary);
+  /* border-color: var(--color-primary);
+  background: var(--color-primary); */
+
+  /* --chkfg: #fff;
+  --chkbg: #000;
+  border: 0;
+  background-image:
+  linear-gradient(-45deg, transparent 65%, var(--chkbg) 65.99%),
+  linear-gradient(45deg, transparent 75%, var(--chkbg) 75.99%),
+  linear-gradient(-45deg, var(--chkbg) 40%, transparent 40.99%),
+  linear-gradient(45deg, var(--chkbg) 30%, var(--chkfg) 30.99%, var(--chkfg) 40%, transparent 40.99%),
+  linear-gradient(-45deg, var(--chkfg) 50%, var(--chkbg) 50.99%); */
+}
+
+.checkbox input:after {
+  content:'';
+  width:7px;
+  height:2px;
+  border-left:1px solid;
+  border-bottom:1px solid;
+  border-color:var(--gray200);
+  position:absolute;
+  left:4px;
+  top:5px;
+  transform:rotate(-50deg) scale(0);
+}
+
+/* checked */
+.checkbox input {
+  box-shadow: var(--shadow);
+}
+.checkbox input:checked:after {
+  border-color:var(--color-primary);
+  transform: rotate(-50deg) scale(1);
 }
 
 .checkbox label {
@@ -97,4 +134,22 @@ input[type=checkbox]:checked + label + * {display:block;}
 }
 .checkbox[data-size=large] input {
   --checkbox-size: var(--size-small);
+}
+
+.checkbox[data-size=large] input:checked:after {
+  left:7px;
+  top:8px;
+  transform:rotate(-50deg) scale(1.5);
+}
+
+@keyframes checkmark {
+  0% {
+    background-position-y: 5px;
+  }
+  50% {
+    background-position-y: -2px;
+  }
+  100% {
+    background-position-y: 0;
+  }
 }

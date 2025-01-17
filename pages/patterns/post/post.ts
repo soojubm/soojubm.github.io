@@ -12,6 +12,9 @@ document.addEventListener('DOMContentLoaded', () => {
   document.body.insertAdjacentHTML('beforeend', main)
   document.body.insertAdjacentHTML('beforeend', footer)
 
+  // TODO
+  document.body.classList.remove('is-menu-opened')
+
   function scrollProgress() {
     const containerElement = document.querySelector<HTMLElement>('.post')
     const progressBar = document.querySelector<HTMLElement>('.post-head-progress')

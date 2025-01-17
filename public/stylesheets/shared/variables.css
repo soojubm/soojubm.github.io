@@ -66,6 +66,7 @@
   --gray150: #eff1ef;
   /* --gray100: #f2f5f2; */
   --gray200: #e4e9e7;
+  --gray300: #c1c3c2;
   --gray400: #979d9a;
   --gray800: #343c38;
   --gray800: #3d4943;
@@ -116,6 +117,7 @@
   --color-background-non-interaction: null;
 
   --color-border: var(--gray200);
+  --color-border-stronger: var(--gray300);
   --color-border-hover: var(--gray800);
 
   --color-text: var(--gray900);

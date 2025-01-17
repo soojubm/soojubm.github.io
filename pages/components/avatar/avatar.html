@@ -27,6 +27,10 @@
       <dd>'huge' | 'large' | 'medium' | 'small'</dd>
       <dt>badge<abbr>?</abbr></dt>
       <dd>'unread' | 'new' | 'live'</dd>
+      <dt>icon</dt>
+      <dd>iconNameType?</dd>
+      <dt>src</dt>
+      <dd>string</dd>
       <!-- <dd>TODO. 합성 컴포넌트에서 상세하게 정의 ?? badgeSlot ?? badge에 숫자가 포함될 수도.</dd> -->
     </dl>
   </section>
@@ -36,6 +40,10 @@
       <mm-text variant="subhead">Meta problems</mm-text>
       <mm-text variant="body"> fallback 정의 </mm-text>
       <mm-text variant="body"> 텍스트의 정렬 정의</mm-text>
+      <mm-text variant="body"> border color. rgba</mm-text>
+      <mm-text variant="body">
+        variant. user와 company 등 다른 개체를 대표하는 아바타를 radius로 구분하는 방법.</mm-text
+      >
     </mm-text-group>
     <mm-text-group>
       <mm-text variant="subhead">Platform problems</mm-text>
@@ -63,6 +71,18 @@
   </section>
 
   <section class="component-case">
+    <div style="display: flex; gap: var(--space-4)">
+      <mm-avatar size="huge" src="/public/images/springsteen.jpg"> </mm-avatar>
+      <mm-test-group>
+        <mm-text variant="subhead">제목의 영역</mm-text>
+        <mm-text variant="body">Facebook 안팎의 모든 사람</mm-text>
+        <mm-group variant="chip">
+          <mm-tag variant="hashtag">React</mm-tag>
+          <mm-tag variant="hashtag">Java</mm-tag>
+          <mm-tag variant="hashtag">Phython</mm-tag>
+        </mm-group>
+      </mm-test-group>
+    </div>
     <mm-tile>
       <mm-menuitem label="수줍이" description="Youtube subscriber">
         <mm-avatar slot="avatar" default="true"></mm-avatar>

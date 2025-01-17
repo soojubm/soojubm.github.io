@@ -78,8 +78,6 @@ ul {
 }
 
 .text[data-variant=body-large] {
-  /* TODO max width */
-  max-width: 640px;
   font-size:var(--font-size-large);
   line-height: var(--font-line-height-large);
   font-weight: var(--font-weight-normal);

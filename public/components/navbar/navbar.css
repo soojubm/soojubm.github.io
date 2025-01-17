@@ -104,8 +104,10 @@
   width: 100%;
   max-width: var(--width-sidemenu);
   /* height: calc(100vh - var(--navbar-height)); */
-  padding: var(--space-4) var(--space-4) var(--space-4) calc(var(--grid-margin));
+  /* 1.25rem is scroll */
+  padding: var(--space-4) 1.25rem var(--space-4) calc(var(--grid-margin));
   background:var(--color-background);
+  scrollbar-gutter: stable;
   transition:transform var(--duration-slowly) cubic-bezier(.165,.84,.44,1);
   transform:translateX(-120%);
   position: fixed;

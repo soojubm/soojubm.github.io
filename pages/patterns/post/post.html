@@ -1,4 +1,4 @@
-<main class="page post">
+<main class="post">
   <style>
     mm-text[variant='subhead'] + mm-text[variant='body-large'],
     mm-text[variant='body-large'] + mm-text[variant='body-large'] {
@@ -9,10 +9,9 @@
   <header class="post-head">
     <!-- <header class="post-head js-post-head"> -->
     <mm-text-group variant="title">
-      <mm-link href="#post">Murmur</mm-link>
+      <!-- <mm-link href="#post">Murmur</mm-link> -->
       <mm-text variant="title">
-        Pinterest announces industry-first body type technology to increase body representation on
-        platform
+        Runway enables next-generation content creation with AI and Vercel
       </mm-text>
       <mm-text variant="body-large" hidden>
         Pinterest announces industry-first body type technology to increase body representation on
@@ -135,13 +134,14 @@
       <mm-menuitem label="수줍이" size="medium">
         <mm-avatar slot="avatar" default="true"></mm-avatar>
       </mm-menuitem>
+      <div style="height: var(--space-2)"></div>
       <mm-textarea
         name="comment"
         placeholder="무슨 생각을 하고 계신가요? feed와 comment에서 사용."
       ></mm-textarea>
-      </div>
-      <footer class="comment-write-footer">
-        <mm-button variant="primary" size="large" data-temp="게시/등록">댓글 게시</mm-button>
+
+      <footer class="comment-write-footer" style="margin-top: var(--space-2)">
+        <mm-button variant="secondary" size="large">댓글 게시</mm-button>
       </footer>
     </form>
   </mm-tile>

@@ -25,7 +25,7 @@ class Button extends HTMLElement {
     hostElement.dataset.size = this.size
     hostElement.dataset.status = this.status
 
-    hostElement.dataset.isfullwidth = this.isfullwidth ? 'true' : 'false'
+    hostElement.dataset.isfullwidth = this.isfullwidth === 'true' ? 'true' : 'false'
 
     labelElement.classList.add('button-label')
     labelElement.textContent = this.textContent
