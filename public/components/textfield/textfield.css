@@ -76,7 +76,6 @@ input[type=search]::-webkit-search-results-decoration {display:none;}
   --textfield-border: var(--border);
   --textfield-radius: var(--radius);
   --textfield-text-color: 0;
-  /* TODO icon -> addon */
   --textfield-icon-position: var(--size-small);
   --textfield-placeholder-color: null;
 }
@@ -100,6 +99,7 @@ input[type=search]::-webkit-search-results-decoration {display:none;}
 
   /* box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 0px 0px; */
 }
+
 /* TODO */
 textarea.textfield-input {
   height: auto;
@@ -162,8 +162,6 @@ textarea.textfield-input {
 .is-invalid .textfield-label {}
 .is-invalid .textfield-input {border-color:var(--color-danger);}
 /* .is-invalid .textfield-byte {color:var(--red800);} */
-
-
 
 /* searchfield */
 

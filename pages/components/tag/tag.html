@@ -27,7 +27,7 @@
   <section class="component-example">
     <mm-group variant="tag">
       <mm-tag variant="primary">강조태그</mm-tag>
-      <mm-tag variant="secondary">기본태그</mm-tag>
+      <!-- <mm-tag variant="secondary">기본태그</mm-tag> -->
       <mm-tag variant="tertiary">기본태그</mm-tag>
       <mm-tag variant="feature1">유저리서치</mm-tag>
       <mm-tag variant="feature2">유저플로우</mm-tag>
@@ -37,27 +37,6 @@
         <mm-icon slot="icon" name="graph-up"></mm-icon>
         16%
       </mm-tag>
-    </mm-group>
-    <mm-separator></mm-separator>
-    <mm-group variant="tag">
-      <mm-tag variant="hashtag" role="listitem">소띠</mm-tag>
-      <mm-tag variant="hashtag" role="listitem">85년생</mm-tag>
-      <mm-tag variant="hashtag" role="listitem">수다</mm-tag>
-    </mm-group>
-    <mm-separator></mm-separator>
-    <mm-group variant="tag">
-      <style>
-        .dot-badge {
-          display: inline-flex;
-          width: 0.5rem;
-          height: 0.5rem;
-          /* padding: var(--space-1); */
-          margin-right: var(--space-2);
-          background: crimson;
-          border-radius: 50%;
-        }
-      </style>
-      <em class="dot-badge"></em>
     </mm-group>
   </section>
 
@@ -77,9 +56,13 @@
   <section class="component-guide">
     <mm-text-group>
       <mm-text variant="subhead">Meta Problems</mm-text>
+      <mm-text variant="body">
+        버튼이나 다른 클릭할 수 있는 컴포넌트와 혼동되지 않아야 합니다. 상태나 카테고라이징에
+        사용하는 경우
+      </mm-text>
       <mm-text variant="label">KEYWORDS. notification / status / informational</mm-text>
-      <mm-text variant="label"
-        >Dot(status). New/Unread, Live. A dot badge notifies the user that something is new or
+      <mm-text variant="label">
+        Dot(status). New/Unread, Live. A dot badge notifies the user that something is new or
         updated without showing a count.
       </mm-text>
     </mm-text-group>
@@ -118,5 +101,27 @@
         240813 - indicator 제거. 카테고라이징이나 상태 등의 뱃징이 아님.
       </mm-text>
     </mm-text-group>
+
+    <mm-separator></mm-separator>
+    <mm-group variant="tag">
+      <mm-tag variant="hashtag" role="listitem">소띠</mm-tag>
+      <mm-tag variant="hashtag" role="listitem">85년생</mm-tag>
+      <mm-tag variant="hashtag" role="listitem">수다</mm-tag>
+    </mm-group>
+    <mm-separator></mm-separator>
+    <mm-group variant="tag">
+      <style>
+        .dot-badge {
+          display: inline-flex;
+          width: 0.5rem;
+          height: 0.5rem;
+          /* padding: var(--space-1); */
+          margin-right: var(--space-2);
+          background: crimson;
+          border-radius: 50%;
+        }
+      </style>
+      <em class="dot-badge"></em>
+    </mm-group>
   </section>
 </main>

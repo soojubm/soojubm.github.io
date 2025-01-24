@@ -1,6 +1,5 @@
 import { makeStyleSheet } from '../../javascripts/components/utils'
 
-// TODO Tooltip
 // aria label
 
 class IconButton extends HTMLElement {
@@ -28,6 +27,10 @@ class IconButton extends HTMLElement {
 
   get label() {
     return this.getAttribute('label') || ''
+  }
+
+  get tooltip() {
+    return this.getAttribute('tooltip') || ''
   }
 
   connectedCallback() {

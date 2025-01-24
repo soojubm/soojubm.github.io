@@ -23,6 +23,8 @@
   <section class="component-props">
     <mm-text variant="subhead">Props</mm-text>
     <dl>
+      <dt>legend<attr>?</attr></dt>
+      <dd>string</dd>
       <dt>options</dt>
       <dd>Option{label: string, value: string}[]</dd>
       <dt>value</dt>
@@ -38,13 +40,12 @@
     <mm-text-group>
       <mm-text variant="subhead">Meta problems</mm-text>
       <mm-text variant="body">
-        최상단의 옵션을 기본 선택으로 제공합니다. 설정 등에서 사용자가 직접 선택한 이력이 있는
-        경우는 기선택 옵션을. default value
+        default value. 편향된 데이터를 수집할 의향이 있습니다. 기본값으로 값을 설정하면 경험이 편향되거나 변경되어 데이터가 왜곡될 수 있습니다. 미리 선택된 값을 적용하는 경우 첫 번째 옵션을 기본 옵션으로.
       </mm-text>
     </mm-text-group>
     <mm-text-group>
       <mm-text variant="subhead">Platform problems</mm-text>
-      <mm-text variant="body">가로로 정렬하지 마세요.</mm-text>
+      <mm-text variant="body">수평 정렬은 옵션 목록을 스캔하기 어렵기 때문에 항상 수직 정렬합니다.</mm-text>
       <mm-text variant="body">
         최대 5개의 목록을 옵션으로 제공하세요. 6개 이상의 옵션 목록은 셀렉트Select 또는 가로
         스크롤되는 칩Chip으로 제공하세요.
@@ -53,14 +54,16 @@
 
     <br />
 
-    <mm-tile variant="elevated">
-      <mm-radio name="gender" id="option1" value="" style="margin-top: -0.5rem">
-        <mm-text variant="label">Standard License</mm-text>
-        <mm-text variant="label-strong">₩ 2,000</mm-text>
-        <div style="height: var(--space-2)"></div>
-        <mm-tag>460P 적립</mm-tag>
-      </mm-radio>
-    </mm-tile>
+    <div style="max-width:520px;">
+      <mm-tile variant="elevated">
+        <mm-radio name="gender" id="option1" value="" style="margin-top: -0.25rem">
+          <mm-text variant="label">Standard License</mm-text>
+          <mm-text variant="label-strong">₩ 2,000</mm-text>
+          <div style="height: var(--space-2)"></div>
+          <mm-tag>460P 적립</mm-tag>
+        </mm-radio>
+      </mm-tile>
+    </얖>
     <!-- (리액트에서 id  이슈 input in label.) -->
   </section>
 </main>

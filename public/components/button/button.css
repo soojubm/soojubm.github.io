@@ -53,7 +53,6 @@ em, i  {
   */
 }
 
-
 :host {}
 :host(.primary) {}
 /* 이렇게 하면 일단 프로젝트에 어려움. */
@@ -61,8 +60,6 @@ em, i  {
   --button-color: var(--color-primary);
   --button-text-color: var(--gray0);
 } */
-
-
 
 
 /* IconButton */
@@ -175,8 +172,6 @@ em, i  {
 }
 
 .button[aria-selected] {
-  background-color: var(--color-background-strong);
-  color: var(--color-text-strong);
 }
 .button[aria-checked=true] {
   border: 1px solid var(--color-background-strong);
@@ -253,10 +248,7 @@ em, i  {
   color:var(--color-text-light);}
 .chip-name:after {content:': ';}
 
-.chip[aria-selected] {
-  --chip-color-background: var(--color-background-strong);
-  color: var(--color-text-strong);
-}
+
 .chip[aria-checked=true] {
   border: 1px solid var(--color-background-strong);
 }
@@ -285,16 +277,3 @@ em, i  {
 //   background-size: 14px;
 //   background-position: 90% 50%;
 // }
-
-/* TODO 요거 .chip */
-:host([variant=plain]) {
-  --chip-color-background: none;
-  --chip-color-border: 0;
-}
-
-:host([variant=back]) {
-  --chip-color-background: var(--color-background);
-  --chip-border: var(--border);
-  --chip-radius: 50%;
-  --chip-shadow: var(--shadow);
-}

@@ -60,14 +60,14 @@
 
     <mm-text-group>
       <mm-text variant="subhead">Platform problems</mm-text>
+      <mm-text variant="body"> 체크박스는 항상 수직 정렬합니다.</mm-text>
       <mm-text variant="body">
-        레이블 텍스트의 변형으로 체크박스를 강조하지 마세요. 체크박스의 크기 또는 컨테이너를
-        강조하여 컴포넌트의 내부를 독립적으로 유지해야 합니다.
+        체크박스를 강조하기 위해 레이블 텍스트를 변형하지 마세요. 체크박스의 크기 또는 컨테이너를
+        강조하고, 체크박스 컴포넌트는 독립적인 책임을 유지해야 합니다.
       </mm-text>
-      <mm-text variant="body"> 체크박스를 가로로 정렬하지 마세요.</mm-text>
       <mm-text variant="body">
-        레이블은 동사를 포함하는 최대 2단어. choice냐 action이냐. choice일 때는 동사를 포함하지
-        않아도 된다.
+        레이블은 최대 2단어로 작성합니다. choice냐 action option(?)이냐. action option일 때는 동사를
+        포함하여 작성합니다.
       </mm-text>
     </mm-text-group>
 
@@ -138,7 +138,7 @@
       <div style="height: 1rem"></div>
       <mm-textfield label="컬렉션 이름" placeholder="컬렉션 이름"></mm-textfield>
       <div style="height: 0.75rem"></div>
-      <mm-group variant="radio">
+      <mm-group>
         <!-- aira-checked="mixed" aria-controls="1 2" -->
         <mm-radio>공개</mm-radio>
         <mm-radio>비공개</mm-radio>

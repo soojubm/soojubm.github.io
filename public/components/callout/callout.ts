@@ -35,7 +35,6 @@ class Callout extends HTMLElement {
     const icon = document.createElement('mm-icon')
     icon.setAttribute('name', 'warning-triangle')
     icon.classList.add('callout-icon')
-    // TODO color
     // icon.setAttribute('color', 'red')
 
     shadow.append(container, makeStyleSheet('callout'))

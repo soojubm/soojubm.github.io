@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
   document.body.insertAdjacentHTML('beforeend', main)
   document.body.insertAdjacentHTML('beforeend', footer)
 
-  // todo
   const sheetElement = document.querySelector('.js-sheet')
   const sheetCloseElement = sheetElement?.querySelector('.js-sheet-close')
 

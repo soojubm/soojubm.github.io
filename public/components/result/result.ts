@@ -31,6 +31,9 @@ class Result extends HTMLElement {
     description.innerText = this.description || ''
     description.setAttribute('variant', 'body')
 
+    const style = this.getAttribute('style')
+    container.setAttribute('style', style || '')
+
     avatarSlot.name = 'avatar'
     listSlot.name = 'list'
     actionSlot.name = 'action'

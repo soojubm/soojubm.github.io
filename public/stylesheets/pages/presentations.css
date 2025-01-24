@@ -30,11 +30,10 @@
   margin-left: auto;
   margin-right: auto;
   margin-bottom: var(--space-2);
-  /* // todo include position-sheet */
+
   position: fixed;
   left: var(--space-2);
   right: var(--space-2);
-  /* // todo outset */
   bottom:calc(constant(safe-area-inset-bottom));
   bottom:calc(env(safe-area-inset-bottom));
   z-index: var(--zindex-bottombar);

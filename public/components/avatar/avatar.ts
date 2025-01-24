@@ -21,7 +21,9 @@ class Avatar extends HTMLElement {
     if (this.default) container.dataset.default = 'true'
     if (this.icon) {
       const icon = document.createElement('mm-icon')
+      const isLargeIcon = this.size === 'large' || this.size === 'huge'
       icon.setAttribute('name', this.icon)
+      icon.setAttribute('size', isLargeIcon ? 'large' : 'medium')
       container.ariaLabel = this.ariaLabel
       container.appendChild(icon)
     }
@@ -62,6 +64,10 @@ class Avatar extends HTMLElement {
   get icon() {
     return this.getAttribute('icon')
   }
+
+  // get iconSize() {
+  //   return this.getAttribute('iconSize') || 'medium'
+  // }
 
   get default() {
     return this.getAttribute('default')

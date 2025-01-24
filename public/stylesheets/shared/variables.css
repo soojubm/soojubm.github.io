@@ -89,6 +89,8 @@
   --color-warning: var(--red800);
   --color-danger: var(--red800);
 
+  /* --color-status / --color-classification */
+
   --color-google: #fff;
   --color-facebook: hsl(214, 89%, 52%);
   --color-twitter: rgb(29, 161, 242);
@@ -122,7 +124,6 @@
 
   --color-text: var(--gray900);
   --color-text-light: var(--gray400);
-  --color-text-strong: var(--gray0);
 
   --color-gradient-from: null;
   --color-gradient-to: null;
@@ -150,6 +151,7 @@
 
   --border-width: 1px;
   --border: var(--border-width) solid var(--color-border);
+  --border-stronger: var(--border-width) solid var(var(--color-border-stronger));
   --border-active: 1px solid var(--color-primary);
   --border-thin: null;
   --border-thick: null;
@@ -228,7 +230,6 @@
   --color-text: #d3d4d5;
   --color-text-weak: var(--gray800);
   --color-text-light: var(--gray400);
-  --color-text-strong: var(--gray800);
 
   --color-background: rgb(31, 35, 33);
   --color-background-weak: #292f2c;

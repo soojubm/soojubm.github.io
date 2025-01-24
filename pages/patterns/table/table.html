@@ -32,7 +32,7 @@
       style="display: flex; align-items: center; margin: var(--space-3) 0; gap: 1rem"
     >
       <mm-searchfield size="small" hiddenLabel="false" placeholder="검색꾸"> </mm-searchfield>
-      <mm-checkbox>28 selected</mm-checkbox>
+      <mm-checkbox name="test1">28 selected</mm-checkbox>
     </menu>
     <table>
       <caption hidden>
@@ -133,8 +133,7 @@
       </tr>
     </table>
 
-    <!-- TODO variant pagination -->
-    <div class="pagination" aria-label="pagination" style="margin:1rem 0">
+    <nav class="pagination" aria-label="pagination" style="margin:1rem 0">
       <button variant="navigator" class="pagination-previous" aria-label="앞 페이지로 이동">
         이전
       </button>
@@ -177,13 +176,13 @@
       </button>
       <i class="pagination-ellipsis" aria-label="맨 앞 페이지로 이동">...</i>
       <button class="pagination-link" aria-label="맨 뒤 페이지로 이동"> 50 </button>
+    </nav>
+
+    <div role="status">
+      <small>숙소 300개 이상 중 <b>281 – 300</b> (airbnb)</small>
     </div>
 
-    <aside role="status">
-      <small>숙소 300개 이상 중 281 – 300 (airbnb)</small>
-    </aside>
-
-    <mm-group alig>
+    <mm-group>
       <mm-text>page</mm-text>
       <mm-button size="small">
         18

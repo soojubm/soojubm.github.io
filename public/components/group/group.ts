@@ -1,13 +1,9 @@
 import { makeStyleSheet } from '../../javascripts/components/utils'
 
-// TODO group / stack (layout, form layout은 스텍을 포함하는 형태. 고로 스텍은 dialog layout 같은)
-
-// role = group | menu
-
-type ValueType = 'checkbox' | 'radio' | 'chip' | 'button' | 'textfield' | 'menuitem'
+type ValueType = 'checkbox' | 'chip' | 'button' | 'textfield' | 'menuitem'
 
 const getContainer = (value: ValueType) => {
-  if (value === 'checkbox' || value === 'radio') return 'fieldset'
+  if (value === 'checkbox') return 'fieldset'
   return 'div'
 }
 class Group extends HTMLElement {

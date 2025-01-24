@@ -34,16 +34,12 @@
     <dl>
       <dt>title<attr>?</attr></dt>
       <dd>string</dd>
-      <dt>backType????<attr>?</attr></dt>
-      <dd>'close' | 'back',</dd>
-      <dd>TODO 닫기만 있을 때.</dd>
+      <dt>backType?<attr>?</attr></dt>
+      <dd>'close' | 'back'</dd>
       <dt>actions</dt>
       <dd>React.Node</dd>
-      <dd>todo 우측 actions. 갯수 제한. md에서 최대 3개. hamberger case.</dd>
-      <!-- <dt>hasNext<attr>?</attr></th>
-          <dd>
-            boolean / 함수만 넘겨줘서 next 액션을 랜더링하는 방법이 나을 지도.
-          </dd> -->
+      <dt>onNext<attr>?</attr></dt>
+      <dd>() => void</dd>
       <dt>onComplete(?) / onCancel<attr>?</attr></dt>
       <dd>() => void</dd>
     </dl>
@@ -55,6 +51,14 @@
       <mm-text variant="body">
         <del>최대 8자.</del> 워치나 폴더블, 브라우저 폰트 확대하면 말줄임표 생길 수 밖에 없음.
       </mm-text>
+      <mm-text variant="body">
+        bottom navigation의 label은 예외적으로 10px. 예외 케이스는 어디에서 정의하는 것이 좋을까?
+      </mm-text>
+      <mm-text variant="body">
+        언제 바텀 네비게이션과 햄버거 메뉴를 혼용할 수 있나요? Global Navigation. top and bottom.
+        커머스에서 카테고리.
+      </mm-text>
+      <mm-text variant="body"> 우측 actions. 갯수 제한. md에서 최대 3개. hamberger case. </mm-text>
     </mm-text-group>
     <mm-text-group>
       <mm-text variant="subhead">Changelog</mm-text>
@@ -64,31 +68,23 @@
       <mm-text variant="body"> 231230 backSlot 제거 </mm-text>
     </mm-text-group>
 
-    <mm-text-list
-      texts='[
-    "언제 바텀 네비게이션과 햄버거 메뉴를 혼용할 수 있나요? Global Navigation. top and bottom.",
-    "커머스에서 카테고리.",
-    "bottom navigation의 label은 예외적으로 10px. 예외 케이스는 어디에서 정의하는 것이 좋을까?"
-    ]'
-    >
-    </mm-text-list>
-
     <div class="component-references">
       <mm-text variant="subhead">References</mm-text>
       <a href="https://m3.material.io/components/top-app-bar/overview" target="_blank">
         MD3 top app bar
       </a>
-      <a href="https://m2.material.io/components/bottom-navigation" target="_blank"
-        >M2 Bottom Navigation</a
-      >
-      <a href="https://m3.material.io/components/navigation-bar/overview" target="_blank"
-        >M3 Navigation Bar</a
-      >
+      <a href="https://m2.material.io/components/bottom-navigation" target="_blank">
+        M2 Bottom Navigation
+      </a>
+      <a href="https://m3.material.io/components/navigation-bar/overview" target="_blank">
+        M3 Navigation Bar
+      </a>
       <a
         href="https://developer.apple.com/design/human-interface-guidelines/components/navigation-and-search/tab-bars"
         target="_blank"
-        >HIG Tab bars</a
       >
+        HIG Tab bars
+      </a>
     </div>
   </section>
   <!-- // iOS isTranslucent: Bool -->

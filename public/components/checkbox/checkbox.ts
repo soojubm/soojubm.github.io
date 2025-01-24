@@ -1,7 +1,6 @@
 import { makeStyleSheet } from '../../javascripts/components/utils'
 
-// TODO
-class CustomHTMLElement extends HTMLElement {
+export class CustomHTMLElement extends HTMLElement {
   constructor() {
     super()
   }

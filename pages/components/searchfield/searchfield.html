@@ -5,8 +5,22 @@
   </mm-text-group>
 
   <section class="component-example">
-    <div style="max-width: 400px">
+    <div style="max-width: 400px; position: relative">
       <mm-searchfield placeholder="궁금한 인물이나 이슈가 있나요?"></mm-searchfield>
+      <button
+        style="
+          background-color: var(--color-primary);
+          width: var(--size-small);
+          height: var(--size-small);
+          border-radius: var(--radius);
+          position: absolute;
+          right: 0.75rem;
+          top: 0.75rem;
+          z-index: 1;
+        "
+      >
+        <mm-icon name="arrow-right" color="#fff"></mm-icon>
+      </button>
       <div style="height: var(--space-2)"></div>
       <mm-tile variant="elevated" class="search-recent">
         <mm-group alignment="vertical">
@@ -96,6 +110,7 @@
       <dt>onKeyDown<attr>?</attr></dt>
       <dd>(event: KeyboardEvent&lt;HTMLInputElement&gt;) => void</dd>
       <dt>onFocus<attr>?</attr></dt>
+      <dd>(event: React.FocusEvent&lt;HTMLInputElement&gt;) => void</dd>
     </dl>
   </section>
 
@@ -121,74 +136,80 @@
         </tr>
       </tbody>
     </table>
-    <mm-text-list texts="[]">
-      <li>검색의 범위? 규모?를 우선 정의해야 한다.</li>
-      <li>
-        검색 인지 (또는 탐색 중 검색) -> 검색어 입력 대기 -> 검색어 입력 중(검색 결과) -> 검색 요청
-        -> 검색 결과
-      </li>
-      <li>placeholder의 작성 가이드</li>
-      <li>모바일 키보드의 높이를 고려한 쿼리의 적정 갯수는?</li>
-      <li>결과 페이지의 공유를 허용할 것인가?</li>
-      <li>검색 페이지가 탐색을 역할을 겸하는가?</li>
-      <li>검색 데이터는 어떻게 수집하는가.</li>
-      <li>비회원의 검색 내역을 저장할 것인가? (로컬에 저장)</li>
-      <li>검색 내역 삭제와 검색 히스토리 삭제를 구분.</li>
-      <li>전체 검색 내역과 최근 검색 내역. 활동 로그. (facebook. 나만 보기)</li>
-      <li>
-        searchfield와 textfield는 validation의 유무. 레이블의 유무. icon indicator의 유무로 구분된다
-      </li>
-      <li>
-        글로벌 검색 패턴과 로컬 검색(검색 필터를 포함) 패턴의 차이. searchfield small. right
-        alignment.
-      </li>
-      <li>조회수(틱톡)/이카테고리에글쓰기(미디엄)/카테고리팔로우(개인화)</li>
-    </mm-text-list>
 
-    <mm-text variant="subhead">검색 기표</mm-text>
-    <ul>
-      <li>추천 또는 자동완성 등 키워드로 즉시 실행 또는 키워드 입력</li>
-      <li>해시태그 또는 카테고리 등 인기/추천 키워드로 결과 페이지로 이동</li>
-      <li>searchfield를 클릭하여 검색 탭(또는 페이지)으로 이동</li>
-    </ul>
-    <mm-text variant="subhead">최근 검색 내역</mm-text>
-    <ul>
-      <li>
-        개별 내역의 삭제. 휘발성이 높은 정보라 편집 모듈 없이 우측 삭제 버튼으로 개별 삭제를
-        제공한다.
-      </li>
-      <li>
-        전체 내역의 삭제. 사용자 편의와 리스크가 공존. 검색 내역의 삭제가 개인화 콘텐츠에 영향을
-        주는가?
-      </li>
-      <li>최근 검색 내역이 없을 때? 구글: 인기급상승 / 네이버: 없음</li>
-    </ul>
-    <!-- <li>tabIndex: back -> input</li> -->
-    <!-- <mm-text variant="subhead">추천, 인기, 개인화 콘텐츠</mm-text> -->
-    <!-- <li>onFocus - keyword.length === 0. 대기</li> -->
-    <mm-text variant="subhead"> 검색 실행 1 - 키워드를 입력할 때 마다 : onChange event </mm-text>
-    <ul>
-      <li>
-        결과 없음 상태를 사용하지 않는다. 일치하는 결과가 없더라도 유사 콘텐츠 또는 추천 콘텐츠로
-        대체하여 <mark>하나 이상의 결과를 항상 보여주어야 합니다.</mark> 큐레이션이 강화된 콘텐츠
-        플랫폼에서 이탈 방지를 위해 활용할 수 있지만 사용자는 명확한 결과를 기대하기 어렵습니다.
-      </li>
-      <li>검색어 자동 완성을 사용하지 않는다.</li>
-    </ul>
-    <mm-text variant="subhead">
-      검색 실행 2 - 검색 버튼 클릭 또는 enter key : onSubmit event
-    </mm-text>
-    <ul>
-      <li>일치하는 결과만 표시하고 새로운 검색을 유도.</li>
-      <li>
-        하나 또는 하나 이상의 명확한 결과를 요구하는 경우 사용한다. 체류시간을 확보해야 하는 콘텐츠
-        플랫폼에는 적합하지 않다. 상대적으로 개발 리소스가 적게 들기 때문에 MVP 단계에서 유용하다.
-      </li>
-      <li>
-        자동완성? 자동완성이 아니라 입력한 결과물 노출하는 것. 이것 또는 바로가기를 최상단에
-        노출해줄 수 있다.
-      </li>
-    </ul>
+    <mm-text-group>
+      <mm-text variant="subhead">Checklist</mm-text>
+
+      <ul>
+        <li>검색의 범위? 규모?를 우선 정의해야 한다.</li>
+        <li>
+          검색 인지 (또는 탐색 중 검색) -> 검색어 입력 대기 -> 검색어 입력 중(검색 결과) -> 검색
+          요청 -> 검색 결과
+        </li>
+        <li>placeholder의 작성 가이드</li>
+        <li>모바일 키보드의 높이를 고려한 쿼리의 적정 갯수는?</li>
+        <li>결과 페이지의 공유를 허용할 것인가?</li>
+        <li>검색 페이지가 탐색을 역할을 겸하는가?</li>
+        <li>검색 데이터는 어떻게 수집하는가.</li>
+        <li>비회원의 검색 내역을 저장할 것인가? (로컬에 저장)</li>
+        <li>검색 내역 삭제와 검색 히스토리 삭제를 구분.</li>
+        <li>전체 검색 내역과 최근 검색 내역. 활동 로그. (facebook. 나만 보기)</li>
+        <li>
+          searchfield와 textfield는 validation의 유무. 레이블의 유무. icon indicator의 유무로
+          구분된다
+        </li>
+        <li>
+          글로벌 검색 패턴과 로컬 검색(검색 필터를 포함) 패턴의 차이. searchfield small. right
+          alignment.
+        </li>
+        <li>조회수(틱톡)/이카테고리에글쓰기(미디엄)/카테고리팔로우(개인화)</li>
+      </ul>
+      <mm-text variant="subhead">검색 기표</mm-text>
+      <ul>
+        <li>추천 또는 자동완성 등 키워드로 즉시 실행 또는 키워드 입력</li>
+        <li>해시태그 또는 카테고리 등 인기/추천 키워드로 결과 페이지로 이동</li>
+        <li>searchfield를 클릭하여 검색 탭(또는 페이지)으로 이동</li>
+      </ul>
+      <mm-text variant="subhead">최근 검색 내역</mm-text>
+      <ul>
+        <li>
+          개별 내역의 삭제. 휘발성이 높은 정보라 편집 모듈 없이 우측 삭제 버튼으로 개별 삭제를
+          제공한다.
+        </li>
+        <li>
+          전체 내역의 삭제. 사용자 편의와 리스크가 공존. 검색 내역의 삭제가 개인화 콘텐츠에 영향을
+          주는가?
+        </li>
+        <li>최근 검색 내역이 없을 때? 구글: 인기급상승 / 네이버: 없음</li>
+      </ul>
+      <!-- <li>tabIndex: back -> input</li> -->
+      <!-- <mm-text variant="subhead">추천, 인기, 개인화 콘텐츠</mm-text> -->
+      <!-- <li>onFocus - keyword.length === 0. 대기</li> -->
+      <mm-text variant="subhead"> 검색 실행 1 - 키워드를 입력할 때 마다 : onChange event </mm-text>
+      <ul>
+        <li>
+          결과 없음 상태를 사용하지 않는다. 일치하는 결과가 없더라도 유사 콘텐츠 또는 추천 콘텐츠로
+          대체하여 <mark>하나 이상의 결과를 항상 보여주어야 합니다.</mark> 큐레이션이 강화된 콘텐츠
+          플랫폼에서 이탈 방지를 위해 활용할 수 있지만 사용자는 명확한 결과를 기대하기 어렵습니다.
+        </li>
+        <li>검색어 자동 완성을 사용하지 않는다.</li>
+      </ul>
+      <mm-text variant="subhead">
+        검색 실행 2 - 검색 버튼 클릭 또는 enter key : onSubmit event
+      </mm-text>
+      <ul>
+        <li>일치하는 결과만 표시하고 새로운 검색을 유도.</li>
+        <li>
+          하나 또는 하나 이상의 명확한 결과를 요구하는 경우 사용한다. 체류시간을 확보해야 하는
+          콘텐츠 플랫폼에는 적합하지 않다. 상대적으로 개발 리소스가 적게 들기 때문에 MVP 단계에서
+          유용하다.
+        </li>
+        <li>
+          자동완성? 자동완성이 아니라 입력한 결과물 노출하는 것. 이것 또는 바로가기를 최상단에
+          노출해줄 수 있다.
+        </li>
+      </ul>
+    </mm-text-group>
 
     <address class="component-references">
       <a href="https://developer.apple.com/documentation/uikit/uisearchbar" target="_blank"
@@ -219,12 +240,11 @@
       </form>
     </mm-tile>
     <mm-tile>
-      <mm-titlebar titletext="Android 패턴"></mm-titlebar>
+      <mm-titlebar titletext="Android 패턴 "></mm-titlebar>
       <form class="searchfield" style="max-width: var(--width-medium)">
         <div style="position: absolute; left: 0">
           <mm-icon-button icon="arrow-left" class="searchfield-prefix"> </mm-icon-button>
         </div>
-        <!-- TODO clear button -->
         <input
           class="searchfield-input"
           type="search"

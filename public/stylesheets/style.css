@@ -16,82 +16,16 @@
   animation: bounce 0.5s infinite alternate;
   transform: rotate(90deg);
 }
-
-.scroll-top {
-  box-shadow: 1px 1px 1rem rgba(0, 0, 0, .1)
-}
  */
-.bookitem-cover {
-  padding-top: 50%;
-  background: var(--gray100);
-  border-radius: var(--radius);
-  position: relative;
-}
-
-.bookitem-cover img {
-  width: auto;
-  height: auto;
-  max-width: 8rem;
-  max-height: 100%;
-  margin: auto;
-  box-shadow: var(--shadow);
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -.5rem;
-  transition: all .4s;
-}
-
-.stamp {
-  /* // position: absolute;
-  // right: 6vmax;
-  // top: 6vmax; */
-  z-index: 2;
-}
-.stamp p {
-  font-size: var(--font-size-large);
-  font-weight: bold;
-  margin: 0;
-  --tt: 15deg
-}
-.stamp .circle {
-  display: block;
-  width: 1px;
-  height: 1px;
-  background-color: transparent;
-  animation: rotation 9.5s linear infinite;
-}
-.stamp .circle span {
-  height: 4vmax;
-  position: absolute;
-  display: inline-block;
-  left: 0;
-  bottom: 0;
-  transform-origin: bottom center;
-}
-
-
-.stamp .circle span:nth-of-type(1) {transform: rotate(15deg);}
-.stamp .circle span:nth-of-type(2) {transform: rotate(35deg);}
-.stamp .circle span:nth-of-type(3) {transform: rotate(45deg);}
-.stamp .circle span:nth-of-type(4) {transform: rotate(50deg);}
-.stamp .circle span:nth-of-type(5) {transform: rotate(16deg);}
-
-@define-mixin group-button {
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-between;
-}
 
 /* // todo icon -> indicator */
-.design-ticker-item {width:380px;margin:0 var(--space-3) !important;box-shadow:none !important;
+.design-ticker-item {
+  width:380px;
   filter: grayscale(.5);
 }
 .design-ticker-overay {
-  /* // position: absolute;left:0;right:0;top:0;bottom:0; */
   height: inherit;
   background: linear-gradient(to bottom, rgba(255,255,255,.25),rgba(255,255,255,.25),rgba(255,255,255,.25),rgba(255,255,255,1));
-  /* @mixin bleeding; */
   z-index: 0;
   top: auto;
 }
@@ -100,17 +34,7 @@
 	background: linear-gradient(to bottom, rgba(31,35,33,0), rgba(31,35,33,.5), rgba(31,35,33,1));
 }
 
-.browser {
-  text-align: center;
-  padding: 2rem;
-  background: var(--red800);
-  background: var(--color-background);
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: var(--zindex-modal);
-}
+
 
 @define-mixin image-centered {width:auto;height:auto;max-width:150%;max-height:150%;margin:auto;position:absolute;left:0;right:0;top:0;bottom:0;}
 [data-temp=bleeding] {
@@ -145,18 +69,6 @@
   figure {box-shadow:var(--shadow) !important;}
 }
 
-/* @define-mixin position-left-top {position:absolute;left:var(--space-1);top:var(--space-1);}
-@define-mixin position-right-top {position:absolute;right:var(--space-2);top:var(--space-2);}
-@define-mixin position-bottom {position:fixed;left:0;right:0;bottom:0;z-index:var(--zindex-menu);}
-@define-mixin reset-position {
-  position: relative;
-  left: auto;
-  right: auto;
-  top: auto;
-  bottom: auto;
-  transform: none;
-} */
-
 /* // @media (prefers-color-scheme: dark) {
 //   :root {
 //     // --title-color: #EFEFEF;
@@ -164,8 +76,6 @@
 //   }
 //   // img {filter: brightness(.8) contrast(1.2);}
 // } */
-
-
 
 .browser {
   text-align: center;
@@ -179,8 +89,6 @@
   z-index: var(--zindex-modal);
 }
 
-
-
 /* 
 // todo flex일 대 min-width가 필수가 된다.. margin/padding은 container에 의존
 @mixin stack-vertical-scroll {
@@ -193,97 +101,4 @@
   > * {min-width:auto;}
   &::-webkit-scrollbar {display:none;}
 } */
-
-.bookitem-cover {
-  padding-top: 50%;
-  background: var(--gray100);
-  border-radius: var(--radius);
-  position: relative;
-}
-
-.bookitem-cover img {
-  width: auto;
-  height: auto;
-  max-width: 8rem;
-  max-height: 100%;
-  margin: auto;
-  box-shadow: var(--shadow);
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -.5rem;
-  transition: all .4s;
-}
-
-
-
-@keyframes fade-in {
-  from { opacity: 0 }
-}
-
-@keyframes fade-out {
-  to { opacity: 0 }
-}
-
-@keyframes slide-in {
-  from { transform: translateY(var(--_travel-distance, 10px)) }
-}
-
-
-/* // .gui-toast-group {
-//   position: fixed;
-//   z-index: 1;
-//   inset-block-end: 0;
-//   inset-inline: 0;
-//   padding-block-end: 5vh;
-//   display: grid;
-//   justify-items: center;
-//   justify-content: center;
-//   gap: 1vh;
-//   pointer-events: none;
-// }
-// .gui-toast {
-//   max-inline-size: min(25ch, 90vw);
-//   padding-block: .5ch;
-//   padding-inline: 1ch;
-//   border-radius: 3px;
-//   font-size: 1rem;
-// }
-// .gui-toast-group {
-// }
-// .gui-toast {
-//   --_bg-lightness: 90%;
-
-//   color: black;
-//   background: hsl(0 0% var(--_bg-lightness) / 90%);
-// }
-
-// @media (prefers-color-scheme: dark) {
-//   .gui-toast {
-//     color: white;
-//     --_bg-lightness: 20%;
-//   }
-// }
-
-// .gui-toast {
-//   --_duration: 3s;
-//   --_travel-distance: 0;
-
-//   will-change: transform;
-//   animation: 
-//     fade-in .3s ease,
-//     slide-in .3s ease,
-//     fade-out .3s ease var(--_duration);
-// }
-
-// @media (prefers-reduced-motion: no-preference) {
-//   .gui-toast {
-//     --_travel-distance: 5vh;
-//   }
-// } */
-
-
-
-
-
 

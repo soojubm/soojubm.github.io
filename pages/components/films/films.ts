@@ -6,21 +6,21 @@ import '/pages/components/components.css'
 
 import '/public/stylesheets/shared.css'
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
   document.body.insertAdjacentHTML('beforeend', navbar)
   document.body.insertAdjacentHTML('beforeend', main)
   document.body.insertAdjacentHTML('beforeend', footer)
 
-  fetchAndDisplay('')
+  await fetchAndDisplay('')
 
-  const myButtons = document.querySelectorAll('.js-button')
-
-  myButtons.forEach(item => {
+  const filterButtons = document.querySelectorAll('.js-button')
+  filterButtons.forEach(item => {
     console.log(item, 'button')
 
     item!.addEventListener('click', event => {
       const target = event.target as HTMLElement
-      console.log(target.dataset.value)
+
+      alert()
 
       fetchAndDisplay(target.dataset.value)
     })
@@ -31,7 +31,14 @@ async function fetchAndDisplay(value) {
   const films = await fetchFilms()
 
   const uniqueCountries = [...new Set(films.map(item => item.country))]
-  console.log(uniqueCountries)
+
+  const html = uniqueCountries.map(item => {
+    return `
+      <button class="js-button" data-value=${item}>${item}</button>
+    `
+  })
+
+  document.querySelector('.js-filter')!.innerHTML = html.join(' ')
 
   const data = films.filter(item => item.country === value)
 

@@ -25,11 +25,9 @@
   <section class="component-example">
     <div style="max-width: 400px">
       <mm-group variant="form">
-        <mm-textfield type="text" size="small" placeholder="medium size..."></mm-textfield>
-        <mm-textfield type="text" placeholder="large size... (default)"></mm-textfield>
-        <mm-textfield type="text" placeholder="Disabled..." disabled></mm-textfield>
+        <mm-textfield placeholder="Placeholder"></mm-textfield>
+        <mm-textfield placeholder="Disabled" disabled></mm-textfield>
         <mm-textfield
-          type="email"
           value="Invalid"
           placeholder="Placeholder..."
           aria-invalid="true"
@@ -37,7 +35,7 @@
           aria-errormessage="msgID"
           helper="이미 등록된 이메일입니다."
         ></mm-textfield>
-        <mm-textfield label="with label" placeholder="Disabled..."></mm-textfield>
+        <mm-textfield label="with label" placeholder="Label"></mm-textfield>
       </mm-group>
       <br />
       <mm-group variant="textfield">
@@ -52,7 +50,7 @@
           </mm-textfield>
         </div>
       </mm-group>
-
+      <br />
       <mm-tile>
         <mm-titlebar titletext="Field group"></mm-titlebar>
         <div style="height: var(--space-3)"></div>
@@ -108,7 +106,7 @@
       <dt>onKeyDown<attr>?</attr></dt>
       <dd>(event: KeyboardEvent&lt;HTMLInputElement&gt;) => void</dd>
       <dt>onFocus<attr>?</attr></dt>
-      <dd></dd>
+      <dd>(event: React.FocusEvent&lt;HTMLInputElement&gt;) => void</dd>
     </dl>
   </section>
 

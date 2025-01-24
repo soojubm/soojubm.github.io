@@ -1,4 +1,3 @@
-// todo function
 export function lockBodyElement() {
   document.body.classList.add('lock-scroll')
 }

@@ -6,14 +6,14 @@ import './post.css'
 
 import '/public/stylesheets/shared.css'
 import '/pages/components/components.css'
+import { hideNavbar } from '../../../public/javascripts/common/navbar'
 
 document.addEventListener('DOMContentLoaded', () => {
   document.body.insertAdjacentHTML('beforeend', navbar)
   document.body.insertAdjacentHTML('beforeend', main)
   document.body.insertAdjacentHTML('beforeend', footer)
 
-  // TODO
-  document.body.classList.remove('is-menu-opened')
+  hideNavbar()
 
   function scrollProgress() {
     const containerElement = document.querySelector<HTMLElement>('.post')

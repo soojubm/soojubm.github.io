@@ -5,14 +5,14 @@ import './profile.css'
 import '/public/stylesheets/shared.css'
 import '/pages/components/components.css'
 import '/public/stylesheets/components/chat.css'
+import { hideNavbar } from '../../../public/javascripts/common/navbar'
 
 document.addEventListener('DOMContentLoaded', () => {
   document.body.insertAdjacentHTML('beforeend', navbar)
   document.body.insertAdjacentHTML('beforeend', main)
   document.body.insertAdjacentHTML('beforeend', footer)
 
-  // TODO function
-  document.body.classList.remove('is-menu-opened')
+  hideNavbar()
 
   document.addEventListener('click', event => {
     const target = event.target as any

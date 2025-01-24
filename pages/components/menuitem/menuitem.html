@@ -2,7 +2,10 @@
   <mm-text-group variant="title">
     <mm-text variant="title">MenuItem</mm-text>
     <mm-text variant="body-large">
-      사용자가 수행할 수 있는 행동 목록. 선택과는 다른 맥락. 단독으로 쓸 수 있다.
+      사용자가 수행할 수 있는 행동 목록. 선택과는 다른 맥락. 단독으로 쓸 수 있다. TODO
+      role=listbox/menu는 항목 선택과 명령 실행 차이. 자식으로 option, menuitemcheckbox 등을 가지는
+      것이 차이. select와의 차이는 이미지를 포함할 수 있다고. 사용 맥락 또한 listbox는 폼이나 입력.
+      aria-orientation값을 갖습니다 vertical. 드롭다운은 패턴. 사용자 인터렉션 방식에 가까움.
     </mm-text>
   </mm-text-group>
 
@@ -14,10 +17,9 @@
   </dl>
 
   <section class="component-example">
-    <!-- TODO prefix / suffix -->
     <mm-group variant="menuitem">
       <mm-menuitem size="medium">
-        <mm-avatar slot="avatar" variant="tertiary" size="medium" icon="group"> </mm-avatar>
+        <mm-avatar slot="avatar" variant="tertiary" size="large" icon="group"></mm-avatar>
         <mm-text-pair
           slot="text"
           labelText="사진 및 동영상 백업"
@@ -28,16 +30,15 @@
       <mm-separator></mm-separator>
       <mm-menuitem>
         <mm-avatar slot="avatar" size="large">🦊</mm-avatar>
-        <mm-text-pair slot="text" labelText="사진 및 동영상 백업" descriptionText="디스크립션이다">
-        </mm-text-pair>
+        <mm-text-pair
+          slot="text"
+          labelText="사진 및 동영상 백업"
+          descriptionText="디스크립션이다"
+        ></mm-text-pair>
         <mm-button slot="action">버튼</mm-button>
       </mm-menuitem>
       <mm-menuitem label="메뉴아이템 링크" role="menuitem">
         <mm-avatar slot="avatar">🦊</mm-avatar>
-      </mm-menuitem>
-      <mm-menuitem role="menuitemradio" label="메뉴아이템 스위치">
-        <mm-avatar slot="avatar">🦊</mm-avatar>
-        <mm-switch slot="action"></mm-switch>
       </mm-menuitem>
       <mm-menuitem label="메뉴아이템 체크박스" role="menuitemcheckbox">
         <mm-avatar slot="avatar">🦊</mm-avatar>
@@ -70,9 +71,8 @@
       <dd>'large' | 'medium'</dd>
       <dt>action</dt>
       <dd>'checkbox' | 'radio' | 'switch' | 'link (default)'</dd>
-      <dt>avatar?</dt>
+      <dt>avatar? avatarProps?</dt>
       <dd>React.ReactNode</dd>
-      <dd>avatarSlot => leadingSlot (leadingVisual)</dd>
       <dt>tag<attr>?</attr></dt>
       <dd>React.ReactNode</dd>
       <dd></dd>
@@ -82,7 +82,18 @@
   <section class="component-guide">
     <mm-text-group>
       <mm-text variant="subhead">Meta problems</mm-text>
-      <mm-text variant="body"></mm-text>
+      <mm-text variant="body">
+        align-items: center가 없어도 되는. border가 있고 내부 간격이 있으면.
+      </mm-text>
+      <mm-text variant="body">
+        textSlot :: 사이즈에 따라 두 줄이 될 수 있는데, 세부적인 정의를 실무자가 암기할 필요 없어야.
+        캡슐화
+      </mm-text>
+      <mm-text variant="body">메뉴 아이템에 2가지 이상의 액션을 허용할 것인가?</mm-text>
+      <mm-text variant="body">
+        모든 menuitem container가 clickable은 아니다. 액션 버튼이 따로 존재할 수도 있어야 한다. 이
+        정보가 중요한 이유 hover 상태 표현을 위해. 케이스. 팔로우 팔로잉. 또는 전체 영역이 팔로우.
+      </mm-text>
     </mm-text-group>
 
     <mm-text-group>
@@ -108,12 +119,8 @@
     </mm-text-group>
 
     <mm-text-group>
-      <mm-text variant="subhead">Cases</mm-text>
-      <mm-text variant="label-strong">Dropdown menu.</mm-text>
-      <mm-text variant="label-strong">Sheet menu / Modal menu : size</mm-text>
-      <mm-text variant="label-strong">Sidebar menu</mm-text>
-      <mm-text variant="label-strong">Sitemap menu</mm-text>
-      <mm-text variant="label-strong">Global navigation menu</mm-text>
+      <mm-text variant="subhead">UI Patterns</mm-text>
+      <mm-text variant="label-strong">Dropdown / Sheet / Modal / Sidebar / Sitemap / GNB</mm-text>
 
       <mm-menuitem label="windows 패턴">
         <mm-avatar slot="avatar"></mm-avatar>
@@ -123,19 +130,6 @@
         </mm-group>
       </mm-menuitem>
     </mm-text-group>
-
-    <mm-text-list texts="[]">
-      <li>align-items: center가 없어도 되는. border가 있고 내부 간격이 있으면.</li>
-      <li>
-        textSlot :: 사이즈에 따라 두 줄이 될 수 있는데, 세부적인 정의를 실무자가 암기할 필요 없어야.
-        캡슐화
-      </li>
-      <li>메뉴 아이템에 2가지 이상의 액션을 허용할 것인가?</li>
-      <li>
-        모든 menuitem container가 clickable은 아니다. 액션 버튼이 따로 존재할 수도 있어야 한다. 이
-        정보가 중요한 이유 hover 상태 표현을 위해. 케이스. 팔로우 팔로잉. 또는 전체 영역이 팔로우.
-      </li>
-    </mm-text-list>
   </section>
 
   <section class="component-case">
@@ -153,9 +147,10 @@
     </mm-tile>
     <mm-tile variant="flat">
       <mm-group variant="dropdown">
-        <mm-text variant="label">menu heading / line height</mm-text>
+        <mm-text variant="label">menuline height</mm-text>
+        <div style="height: var(--space-1)"></div>
         <mm-menuitem role="menuitem" href="#design">
-          <mm-text slot="text" variant="subhead">Anxiety </mm-text>
+          <mm-text slot="text" variant="subhead">Anxiety</mm-text>
         </mm-menuitem>
         <mm-menuitem role="menuitem" href="#design">
           <mm-text slot="text" variant="subhead">General worry</mm-text>
@@ -164,7 +159,8 @@
     </mm-tile>
     <mm-tile variant="flat">
       <mm-group variant="dropdown">
-        <mm-text variant="label">menu heading / gap margin left on label</mm-text>
+        <mm-text variant="label">listbox / gap margin left on label</mm-text>
+        <div style="height: var(--space-1)"></div>
         <mm-menuitem role="menuitem" href="#design">
           <mm-icon slot="check" name="check"></mm-icon>
           <span slot="text">Only Text</span>

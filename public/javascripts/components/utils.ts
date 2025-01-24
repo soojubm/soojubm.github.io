@@ -17,8 +17,6 @@ export function setSlotElement(container, name: string) {
   container.appendChild(slotElement)
 }
 
-// TODO 8.23 여기까지 사용 중.
-
 export function importStyle(url) {
   var pretty = document.createElement('link')
   pretty.href = url

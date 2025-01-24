@@ -18,8 +18,8 @@
 }
 
 [role=tab] {}
-[role=tabpanel]{width:100%;;}
-[role=tabpanel][aria-hidden=false] {display:block;}
+[role=tabpanel]{width:100%;}
+[role=tabpanel][aria-hidden=false] {display:block;gap:var(--space-4);}
 [role=tabpanel][aria-hidden=true] {display:none;}
 
 [role=tablist][data-variant=primary] {
@@ -45,7 +45,10 @@ button {
   font-weight: var(--font-weight-bold);
   position:relative;
   z-index:var(--zindex-default);
-
+  cursor: pointer;
+  &:hover {
+    color: var(--color-text)
+  }
 }
 .tab[aria-selected=true] {
   /* border: var(--border); */

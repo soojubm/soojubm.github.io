@@ -1,6 +1,7 @@
 import { makeStyleSheet, inheritStyle } from '../../javascripts/components/utils'
+import { CustomHTMLElement } from '../checkbox/checkbox'
 
-class Radio extends HTMLElement {
+class Radio extends CustomHTMLElement {
   constructor() {
     super()
     const shadow = this.attachShadow({ mode: 'open' })
@@ -25,10 +26,6 @@ class Radio extends HTMLElement {
     // } else {
     //   input.removeAttribute('checked')
     // }
-
-    // TODO : inheritStyle
-    const style = this.getAttribute('style')
-    if (style) container.setAttribute('style', style)
 
     shadow.appendChild(container)
     container.append(input, label, makeStyleSheet('radio'))

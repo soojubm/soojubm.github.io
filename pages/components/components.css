@@ -25,7 +25,7 @@
 
 .component-props {
   margin: 2rem 0 0 calc(-5vw + 1rem);
-  padding: 1.75rem calc(var(--grid-margin) - 1rem) 1.875rem;
+  padding: 1.5rem calc(var(--grid-margin) - 1rem) 1.75rem;
   margin-top: -3rem;
   border: var(--border);
   border-radius: 0 0 var(--radius-large) var(--radius-large);
@@ -33,30 +33,20 @@
 }
 
 .component-guide {
-  margin: 1rem 0 0 calc(-5vw + 1rem);
-  padding: 0 calc(var(--grid-margin) - 1rem) 4rem;
-  /* max-width: var(--container-width);
-  margin:3.5rem 0 4rem; */
+  margin: 0 0 0 calc(-5vw + 1rem);
+  padding: 0 calc(var(--grid-margin) - 1rem);
 }
 
 .component-case {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  max-height: 800px;
   gap: var(--space-4);
 
-  margin:1rem -4vw -5rem calc(-5vw + 1rem);
-  padding:4rem calc(var(--grid-margin) - 1rem) 6rem;
-  border-top-left-radius: var(--radius);
-
+  margin: 0 0 0 calc(-5vw + 1rem);
+  padding: 4rem calc(var(--grid-margin) - 1rem) ;
+  border-radius: var(--radius-large);
   background: var(--color-background-strong);
-
-  box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.0125),
-  0 2px 2px hsl(0deg 0% 0% / 0.0125),
-  0 4px 4px hsl(0deg 0% 0% / 0.0125),
-  0 8px 8px hsl(0deg 0% 0% / 0.0125),
-  0 16px 16px hsl(0deg 0% 0% / 0.0125)
 }
 .component-case > * {
   width: 100%;
@@ -114,7 +104,7 @@ mm-tile [variant=subhead] + [variant=body] {
 .article-aka dt {margin: 0;}
 .article-aka dd {margin: 0;}
 
-.component-guide mm-text-group {display:block;margin-top:3rem;}
+.component-guide mm-text-group {display:block;margin-top:2rem;}
 .component-guide ul, .component-guide dl {max-width: var(--layout-width-small);}
 
 .spacing-card {padding:var(--space-inset-tile);overflow:hidden;position:relative;}

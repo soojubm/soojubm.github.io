@@ -1,4 +1,25 @@
 <style>
+  .bookitem-cover {
+    padding-top: 50%;
+    background: var(--gray100);
+    border-radius: var(--radius);
+    position: relative;
+  }
+
+  .bookitem-cover img {
+    width: auto;
+    height: auto;
+    max-width: 8rem;
+    max-height: 100%;
+    margin: auto;
+    box-shadow: var(--shadow);
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -0.5rem;
+    transition: all 0.4s;
+  }
+
   :root {
     --chat-bubble-border: 1px solid #000;
     --border-color: #000;

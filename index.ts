@@ -114,7 +114,6 @@ async function domEvents() {
   positionSticky({ selector: '.js-post-head', className: 'is-sticky-post-head', isPassed: true })
   // passed와 바로. header / post-head
   // todo removeEventListener
-  // todo 엘리먼트의 상단에서 또는 하단에서 sticky
 
   scrollAnimation({ selector: '.js-observer' })
   scrollspy({ menusSelector: '.js-scrollspy-trigger', sectionsSelector: '.js-scrollspy-section' })

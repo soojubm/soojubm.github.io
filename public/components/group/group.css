@@ -1,6 +1,4 @@
 /* TODO 가운데 정렬된 목록의 가로 스크롤 방법 */
-/* // stack과 grid */
-/* group과 row */
 
 .group {
   display:flex;
@@ -17,15 +15,13 @@
 
 .group[data-variant=dropdown] {
   flex-direction: column;
+  gap: 0;
 }
 
-/* .group[data-variant=avatar] {gap:var(--space-2);} */
-/* TODO : last-of-tpye은 avagtar와 label 모두에 적용됨 */
-.group[data-variant=avatar] {align-items: center;gap:0;}
+.group[data-variant=avatar] {align-items:center;gap:0;}
 .group[data-variant=avatar] > * + * {margin-left:-.5rem;}
-/* .group[data-variant=avatar] > *:nth-last-child(1) {margin-left:var(--space-2);} */
 
-/* 6px spacing */
+/* 6px spacing 예외케이스 */
 .group[data-variant=tag] {gap:6px}
 .group[data-variant=button] {
   gap:var(--space-2);

@@ -14,7 +14,7 @@ class TitleBar extends HTMLElement {
     container.classList.add('titlebar')
 
     const title = document.createElement('mm-text')
-    title.setAttribute('variant', 'subhead')
+    title.setAttribute('variant', 'label-strong')
     title.innerText = this.titleText || ''
 
     const backButton = document.createElement('mm-icon-button')

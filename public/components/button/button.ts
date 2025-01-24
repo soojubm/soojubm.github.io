@@ -231,7 +231,6 @@ export default Button
 //       host.appendChild(name)
 //     }
 
-//     // TODO label tag
 //     // // 예시로 textContent 설정
 //     // const text = this.textContent.trim();
 
@@ -276,7 +275,6 @@ export default Button
 //   //     this.setAttribute('tabindex', '0')
 //   //     this.setAttribute('aria-disabled', 'false')
 //   //   }
-//   //   // TODO: also react to the open attribute changing.
 //   // }
 // }
 

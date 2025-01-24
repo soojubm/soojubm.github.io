@@ -100,7 +100,6 @@ table tbody tr td {
 /* // th[scope='col'] {background: #ccc;}
 // tr:nth-child(even) {}
 // tr:nth-child(odd) {} */
-table tbody tr:hover {}
 table .right {text-align:right;}
 table tbody[role=rowgroup] tr th {width:25%;}
 table tbody[role=rowgroup] tr th + th {width:auto;}
@@ -257,9 +256,6 @@ mark {color:inherit;} mark::before {content: " [강조 시작] ";opacity:0;posit
 
 .is-active .modal {display:block;}
 
-/* TODO golobal */
-[role=tabpanel][aria-hidden=false] {display:flex;}
-[role=tabpanel][aria-hidden=true] {display:none;}
 
 /* common */
 .offline {

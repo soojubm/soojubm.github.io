@@ -31,7 +31,8 @@
       <dd>iconNameType?</dd>
       <dt>src</dt>
       <dd>string</dd>
-      <!-- <dd>TODO. 합성 컴포넌트에서 상세하게 정의 ?? badgeSlot ?? badge에 숫자가 포함될 수도.</dd> -->
+      <dt>badge<attr>?</attr></dt>
+      <dd>TODO</dd>
     </dl>
   </section>
 
@@ -61,6 +62,11 @@
           <mm-avatar size="medium">+3</mm-avatar>
         </mm-group>
       </mm-tile>
+    </mm-text-group>
+    <mm-text-group>
+      <mm-text variant="subhead">User</mm-text>
+      <mm-text variant="body">composed component</mm-text>
+      <mm-tile> User name={} description={string | React.ReactNode} avatarProps={} </mm-tile>
     </mm-text-group>
     <mm-text-list
       texts='[
@@ -120,8 +126,8 @@
       </div>
       <mm-separator></mm-separator>
       <mm-keyvalue key="Total New Users" value="5.9K" alignment="vertical"></mm-keyvalue>
-      <span>8.2% 상승</span>
-      <mm-tile variant="elevated" size="small">
+      <mm-tag>8.2% 상승</mm-tag>
+      <mm-tile variant="elevated" size="small" style="margin: 1rem 0">
         <mm-group variant="avatar">
           <mm-avatar size="small" default="true"></mm-avatar>
           <mm-avatar size="small" default="true"></mm-avatar>

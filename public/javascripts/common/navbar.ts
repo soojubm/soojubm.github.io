@@ -7,6 +7,10 @@ import '/public/components/footer/footer.css'
 const OPENED_MENU_CLASSNAME = 'is-menu-opened'
 const isOpendNavbarMenu = () => document.body.classList.contains(OPENED_MENU_CLASSNAME)
 
+export function hideNavbar() {
+  document.body.classList.remove('is-menu-opened')
+}
+
 export function initializeNavbar() {
   const navigationTrigger = document.querySelector<HTMLElement>('.js-navbar-toggle')
   if (!document.body.classList.contains(OPENED_MENU_CLASSNAME)) return
