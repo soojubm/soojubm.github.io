@@ -2,7 +2,11 @@ export const DARK_THEME_CLASS = 'dark'
 export const LIGHT_THEME_CLASS = ''
 export const DARKTHEME_SELECTOR = '.js-darkmode'
 
-export const isDarkTheme = () => document.body.dataset.theme === DARK_THEME_CLASS
+const savedTheme = localStorage.getItem('theme')
+
+export const isDarkTheme = () => localStorage.getItem('theme') === exports.DARK_THEME_CLASS
+
+// export const isDarkTheme = () => savedTheme === DARK_THEME_CLASS
 
 // export const isDarkTheme = window.matchMedia &&
 //   window.matchMedia('(prefers-color-scheme: dark)').matches;

@@ -1,18 +1,38 @@
-import { DARKTHEME_SELECTOR, DARK_THEME_CLASS } from './const'
+import { DARKTHEME_SELECTOR, DARK_THEME_CLASS, LIGHT_THEME_CLASS, isDarkTheme } from './const'
 
 function detectTheme() {
-  const savedTheme = localStorage.getItem('theme')
-  if (!savedTheme) return
+  // const savedTheme = localStorage.getItem('theme')
+  // if (!savedTheme) return
 
-  if (savedTheme === DARK_THEME_CLASS) {
-    document.body.dataset.theme = 'dark'
-  }
+  document.body.dataset.theme = isDarkTheme() ? DARK_THEME_CLASS : LIGHT_THEME_CLASS
 
-  // 모든 인터페이스에 다크 테마용
-  // todo 바로 swithc 셀렉터로
-  const darkThemeTriggers = document.querySelectorAll(DARKTHEME_SELECTOR)
-  darkThemeTriggers?.forEach((element: any) => {
-    element.querySelector('input').checked = true
+  // TODO switch & toggle
+  const themeTriggers = document.querySelectorAll(DARKTHEME_SELECTOR)
+  themeTriggers?.forEach((element: HTMLElement | any) => {
+    window.addEventListener('DOMContentLoaded', () => {
+      const checkboxElement = element.shadowRoot
+        ?.querySelector('slot[name=action]')
+        .assignedNodes()[0]
+        .shadowRoot?.querySelector('input')
+
+      if (!checkboxElement) return
+
+      // console.log(checkboxElement, isDarkTheme(), checkboxElement.checked)
+
+      // switch
+      checkboxElement.addEventListener('change', event => {
+        const currentTheme = isDarkTheme() ? LIGHT_THEME_CLASS : DARK_THEME_CLASS
+        localStorage.setItem('theme', currentTheme)
+
+        document.body.dataset.theme = isDarkTheme() ? DARK_THEME_CLASS : LIGHT_THEME_CLASS
+      })
+
+      if (isDarkTheme()) {
+        checkboxElement.setAttribute('checked', true)
+      } else {
+        checkboxElement.removeAttribute('checked')
+      }
+    })
   })
 }
 
