@@ -354,16 +354,16 @@
     <p>loading state/</p>
 
     <div class="range">
-      <label for="">숙박 인원</label>
+      <label for="myRange">숙박 인원</label>
       <input type="range" min="1" max="10" value="2" step="any" list="tickmarks" id="myRange" />
-      <datalist id="tickmarks">
+      <datalist id="tickmarks_temp">
         <option value="0" label="0"></option>
         <option value="5" label="5"></option>
       </datalist>
     </div>
 
     <article class="article">
-      <label for="cb1-edit">레이블</label>
+      <label for="">레이블</label>
       <mm-menuitem data-size="large" style="margin-bottom: var(--space-3)">
         <mm-avatar></mm-avatar>
         <span class="item-description">관심사가 비슷한 사용자</span>
@@ -389,7 +389,7 @@
           width: 20rem;
           height: 20rem;
           border-radius: 50%;
-          background-image: url('../../../public/images/springsteen.jpg');
+          background-image: url('/public/images/springsteen.jpg');
           background-size: cover;
           position: relative;
         "

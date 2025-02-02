@@ -18,11 +18,13 @@ class ClearButton extends HTMLElement {
   }
 
   connectedCallback() {
+    if (this.shadowRoot) return
+
     const shadowRoot = this.attachShadow({ mode: 'open' })
 
     const host = document.createElement('button')
     host.classList.add('icon-button')
-    host.dataset.variant = 'clear' || ''
+    host.dataset.variant = 'clear'
 
     const icon = document.createElement('mm-icon')
     icon.setAttribute('name', 'xmark')

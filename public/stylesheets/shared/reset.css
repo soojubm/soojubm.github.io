@@ -293,8 +293,11 @@ mark {color:inherit;} mark::before {content: " [강조 시작] ";opacity:0;posit
   border-radius: 4px;
 }
 
-/* TODO reset is-focused 등 */
-.is-focused, a:focus-visible, button:focus-visible, menu-item:focus-visible {
+/* TODO reset focus styles 등 */
+.is-focused,
+a:focus-visible,
+button:focus-visible,
+menu-item:focus-visible {
   outline: 2px solid #000;
   outline-offset: 2px;
 }
@@ -325,7 +328,7 @@ mark {color:inherit;} mark::before {content: " [강조 시작] ";opacity:0;posit
 	width: 4px;
 	height:4px;
 	border-radius: 50%;
-	background: #fff;
+	background: var(--color-background);
   animation: chatting .6s 0s ease infinite;
 }
 .animation-chatting span:nth-of-type(1) {}

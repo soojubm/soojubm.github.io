@@ -46,7 +46,7 @@ input[type=date]::-webkit-calendar-picker-indicator {width:100%;opacity:0;positi
 input[type=date]::-webkit-calendar-picker-indicator {width:100%;opacity:0;position:absolute;left:0;bottom:0;}
 input[type=date]::-webkit-inner-spin-button {display:none;-webkit-appearance: none;}
 
-input[type=password] {-webkit-appearance:none;letter-spacing:.5rem;}
+input[type=password] {-webkit-appearance:none;letter-spacing:.25rem;}
 input[type=password]::placeholder {letter-spacing:0;}
 
 /* // for corner rounded on sarafri */

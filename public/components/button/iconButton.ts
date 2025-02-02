@@ -17,6 +17,29 @@ class IconButton extends HTMLElement {
     this.iconElement = document.createElement('mm-icon')
   }
 
+  connectedCallback() {
+    const { shadowRoot, hostElement, iconElement } = this
+
+    hostElement.classList.add('icon-button')
+    hostElement.dataset.variant = this.variant
+
+    iconElement.setAttribute('name', this.icon)
+
+    hostElement.appendChild(this.iconElement)
+
+    // 이것도 안 됨..
+    // hostElement.innerHTML = `
+    //   <mm-icon name=${this.icon}></mm-icon>
+    // `
+
+    shadowRoot!.append(this.hostElement, makeStyleSheet('button'))
+  }
+  // attributeChangedCallback(name: string, oldValue: string, newValue: string): void {
+  //   if (oldValue !== newValue) {
+  //     this.render();
+  //   }
+  // }
+
   get icon() {
     return this.getAttribute('icon') || ''
   }
@@ -32,24 +55,6 @@ class IconButton extends HTMLElement {
   get tooltip() {
     return this.getAttribute('tooltip') || ''
   }
-
-  connectedCallback() {
-    const { shadowRoot, hostElement, iconElement } = this
-
-    hostElement.classList.add('icon-button')
-    hostElement.dataset.variant = this.variant
-
-    iconElement.setAttribute('name', this.icon)
-
-    hostElement.appendChild(this.iconElement)
-
-    shadowRoot!.append(this.hostElement, makeStyleSheet('button'))
-  }
-  // attributeChangedCallback(name: string, oldValue: string, newValue: string): void {
-  //   if (oldValue !== newValue) {
-  //     this.render();
-  //   }
-  // }
   disconnectedCallback() {}
 }
 

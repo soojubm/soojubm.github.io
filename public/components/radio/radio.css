@@ -22,8 +22,7 @@
 .radio input {
   /* // reset */
   margin: 0;
-  background-color: #fff;
-
+  background-color: var(--color-background);
 
   display: block;
   width:var(--radio-size);
@@ -34,7 +33,9 @@
   box-sizing:border-box;
   /* animation:ripple2 0.2s linear forwards; */
 
-  cursor: pointer;
+  /* TODO pointer cursor on radio container */
+  /* cursor: pointer; */
+
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -47,8 +48,7 @@
 
   animation: radiomark var(--animation-input, .2s) ease-out;
   box-shadow:
-    /* 0 0 0 1px var(--radio-color) inset, */
-    0 0 0 4px #fff inset; 
+    0 0 0 4px var(--color-background) inset; 
 
 }
 

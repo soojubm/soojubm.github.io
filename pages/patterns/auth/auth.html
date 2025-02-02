@@ -122,7 +122,9 @@
       </fieldset>
 
       <footer class="authentication-foot">
-        <mm-button variant="primary" type="submit" disabled> 이메일 주소로 가입 </mm-button>
+        <mm-button variant="primary" size="large" type="submit" disabled>
+          이메일 주소로 가입
+        </mm-button>
       </footer>
     </form>
 
@@ -144,7 +146,7 @@
         <mm-textfield label="이메일 주소" placeholder="soojubm@gmail.com"></mm-textfield>
       </fieldset>
       <footer class="authentication-foot">
-        <mm-button variant="primary" type="submit">재설정 메일 받기</mm-button>
+        <mm-button type="submit" variant="primary" size="large">재설정 메일 받기</mm-button>
         <!-- <span class="password-foot-back password-link" title="Remember your password after all?">이메일이 기억 안 나세요? <a href="signin.html">가입하기</a></span> -->
       </footer>
       <aside class="" style="margin-top: 1.5rem">
@@ -165,7 +167,7 @@
         <mm-textfield label="새 비밀번호 확인" placeholder=""></mm-textfield>
       </fieldset>
       <footer class="authentication-foot">
-        <mm-button type="submit" variant="primary">비밀번호 변경</mm-button>
+        <mm-button type="submit" variant="primary" size="large">비밀번호 변경</mm-button>
       </footer>
     </form>
 
@@ -178,6 +180,9 @@
           We have emailed a 6-digit confirmation code to acb@domain, please enter the code in below
           box to verify your email.
         </mm-text>
+        <span class="password-foot-back password-link" title="">
+          <mm-link href="signin.html">인증번호 재전송</mm-link>
+        </span>
       </header>
       <mm-group variant="chip">
         <!-- aria-invalid="false"  -->
@@ -206,13 +211,9 @@
           style="width: var(--size-large)"
         ></mm-textfield>
       </mm-group>
-      <footer class="authentication-foot">
-        <mm-button variant="primary" type="submit"> 재설정 메일 받기 </mm-button>
-      </footer>
-      <div style="height: var(--space-3)"></div>
-      <span class="password-foot-back password-link" title="">
-        <mm-link href="signin.html">인증번호 재전송</mm-link>
-      </span>
+      <!-- <footer class="authentication-foot">
+        <mm-button variant="primary" size="large" type="submit"> 재설정 메일 받기 </mm-button>
+      </footer> -->
     </form>
 
     <section style="margin: 8rem 0">

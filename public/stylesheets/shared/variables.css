@@ -10,7 +10,7 @@
   color-scheme: light dark;
   /* // -apple-system === san-serif / system-ui === BlinkMacSystemFont */
   --font-family: 'Pretendard', system-ui, sans-serif;
-  /* --font-family: 'Malgun Gothic', 'IBM Plex Sans', 'Gothic A1', system-ui, sans-serif; */
+  --font-family: 'Pretendard','Malgun Gothic', 'IBM Plex Sans', 'Gothic A1', system-ui, sans-serif;
   --font-family-heading: null;
   --font-family-body: null;
   --font-family-caption: null;

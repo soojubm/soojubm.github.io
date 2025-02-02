@@ -1,7 +1,14 @@
 <main class="page" style="min-height: 80vh">
+  <p>
+    A form field element has neither an id nor a name attribute. This might prevent the browser from
+    correctly autofilling the form. To fix this issue, add a unique id or name attribute to a form
+    field. This is not strictly needed, but still recommended even if you have an autocomplete
+    attribute on the same element.
+  </p>
   <style>
     .browserWindow_my1Q {
       border: 3px solid #ebedf0;
+      border-radius: var(--radius-large);
     }
     .browserWindowHeader_jXSR {
       background: #ebedf0;
@@ -412,7 +419,7 @@
             <mm-text-list
               texts='[
             "popover: 전체 알림 목록을 볼 수 있는 페이지 필요. 모두보기 링크 버튼 필요.",
-            "modal: 전체 알림 목록을 볼 수 있는 페이지 불필요. 모달에서 infinite scroll이나 more load"
+            "modal: 전체 알림 목록을 볼 수 있는 페이지 불필요. 모달에서 infinite scroll이나 more load",
             "개별 알림 액션: 읽음-링크/삭제. 알림의 설정.",
             "MVP를 위한 팁: 전체를 하나의 클릭 영역으로 정의하고, 콘텐츠와 작성자를 분리하지 않고 하나의 텍스트 더미."
           ]'
@@ -660,18 +667,18 @@
         transform: rotate(0deg);
       }
       .stamp .circle span:nth-of-type(2) {
-        transform: rotate(30deg);
+        transform: rotate(20deg);
       }
       .stamp .circle span:nth-of-type(3) {
-        transform: rotate(60deg);
+        transform: rotate(40deg);
       }
       .stamp .circle span:nth-of-type(4) {
-        transform: rotate(90deg);
+        transform: rotate(60deg);
       }
     </style>
     <div class="stamp">
       <div class="circle">
-        <p style="font-size: 12px">Under<br />Construction</p>
+        <p style="font-size: 12px">test</p>
         <p>
           <span class="char1">U</span>
           <span class="char2">N</span>

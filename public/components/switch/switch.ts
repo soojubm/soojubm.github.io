@@ -22,8 +22,6 @@ class Switch extends HTMLElement {
     if (this.checked) input.setAttribute('checked', 'true')
     if (this.disabled) input.setAttribute('disabled', 'true')
 
-    // TODO 순서. shadow와 container? host?
-    // shadow.appendChild()
     shadow.appendChild(container)
     container.append(input, label, makeStyleSheet('switch'))
   }

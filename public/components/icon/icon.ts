@@ -7,24 +7,9 @@ class Icon extends HTMLElement {
     super()
   }
 
-  get name() {
-    return this.getAttribute('name')
-  }
-
-  get size() {
-    return this.getAttribute('size')
-  }
-
-  get color() {
-    return this.getAttribute('color')
-  }
-  // set size(value) {
-  //   // TODO TS2339: Property 'dataset' does not exist on type 'ChildNode'
-  //   const node = this.shadowRoot!.lastChild as HTMLElement
-  //   if (value) node.dataset.size = value
-  // }
-
   connectedCallback() {
+    if (this.shadowRoot) return
+
     const ICON_CLASSNAME = `iconoir-${this.name}`
 
     const shadow = this.attachShadow({ mode: 'open' })
@@ -42,6 +27,23 @@ class Icon extends HTMLElement {
     shadow.append(makeStyleSheet('icon'), pretty, container)
   }
   disconnectedCallback() {}
+
+  get name() {
+    return this.getAttribute('name')
+  }
+
+  get size() {
+    return this.getAttribute('size')
+  }
+
+  get color() {
+    return this.getAttribute('color')
+  }
+  // set size(value) {
+  //   // TODO TS2339: Property 'dataset' does not exist on type 'ChildNode'
+  //   const node = this.shadowRoot!.lastChild as HTMLElement
+  //   if (value) node.dataset.size = value
+  // }
 }
 
 export default Icon

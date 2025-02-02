@@ -1,6 +1,15 @@
 [
   {
     "id": 2025,
+    "releasedate": 1964,
+    "titlekorean": "아코",
+    "titleenglish": "Ako / White Morning",
+    "director": "테시가하라 히로시",
+    "country": "일본",
+    "etc": "단편"
+  },
+  {
+    "id": 2025,
     "releasedate": 1968,
     "titlekorean": "둘이 추는 춤",
     "titleenglish": "Pas de deux",
@@ -571,6 +580,15 @@
   {
     "id": 20240421,
     "releasedate": 2023,
+    "titlekorean": "사랑의 난파선 TODO",
+    "titleenglish": "Concrete Utopia",
+    "director": "엄태화",
+    "country": "한국",
+    "etc": ""
+  },
+  {
+    "id": 20240421,
+    "releasedate": 2023,
     "titlekorean": "콘크리트 유토피아",
     "titleenglish": "Concrete Utopia",
     "director": "엄태화",
@@ -600,6 +618,15 @@
     "titlekorean": "게르트루드",
     "titleenglish": "Gertrud",
     "director": "칼 테오도르 드레이어",
+    "country": "덴마크",
+    "etc": ""
+  },
+  {
+    "id": 202404,
+    "releasedate": 1963,
+    "titlekorean": "생명의 빛 TODO",
+    "titleenglish": "Mothlight",
+    "director": "스탠 브리키지",
     "country": "덴마크",
     "etc": ""
   },
@@ -687,8 +714,8 @@
   {
     "id": 202402,
     "releasedate": 1954,
-    "titlekorean": "더 블레이징 스카이",
-    "titleenglish": "The Blazing Sky",
+    "titlekorean": "불타는 태양",
+    "titleenglish": "The Blazing Sun",
     "director": "유세프 샤힌",
     "country": "이집트",
     "etc": ""
@@ -1884,7 +1911,7 @@
     "releasedate": 1969,
     "titlekorean": "수정의 구조",
     "titleenglish": "The Structure of Crystal, Struktura Kryształu",
-    "director": "크지스토프 자누쉬",
+    "director": "크지스토프 자누시",
     "country": "폴란드"
   },
   {
@@ -3476,7 +3503,7 @@
     "titlekorean": "마티아스와 막심",
     "titleenglish": "Matthias and Maxime, Matthias et Maxime",
     "director": "자비에 돌란",
-    "country": "캐나다 프랑스"
+    "country": "캐나다"
   },
   {
     "id": 128,
@@ -5952,7 +5979,8 @@
     "titlekorean": "고독한 추적",
     "titleenglish": "Mr. Klein",
     "director": "조셉 로지",
-    "country": "프랑스 미국"
+    "country": "미국",
+    "etc": "알랭 들롱"
   },
   {
     "id": 20200105,

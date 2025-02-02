@@ -1,10 +1,13 @@
-//TODO: 모달 밖의 컨텐츠에 aria-hidden 모달의 위치는 바디 안에?
 //var abc = window.innerWidth - document.body.clientWidth;
 
 import { pushBrowserHistory, backHistory } from '../utils/browserUtils'
 
 type Parameter = {
   selector: string
+}
+
+export function isKeyEsc(event: KeyboardEvent): boolean {
+  return event.key === 'Escape'
 }
 
 // 각각에 이벤트를 건다면, forEach로 걸기?
@@ -92,10 +95,8 @@ function modal({ selector: trigger }: Parameter) {
     }
   }
 
-  function enterEscKey(event) {
-    // todo utils iskeyesc
-    const isKeyEsc = event.keyCode === 27
-    if (isKeyEsc) backHistory()
+  function enterEscKey(event: KeyboardEvent) {
+    if (isKeyEsc(event)) backHistory()
   }
 }
 

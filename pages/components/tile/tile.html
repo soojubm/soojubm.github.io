@@ -20,21 +20,25 @@
   </dl>
 
   <section class="component-example">
-    <mm-group>
-      <mm-tile variant="flat">
-        <mm-text variant="subhead">flat</mm-text>
-      </mm-tile>
-      <mm-tile variant="elevated">
-        <mm-text variant="subhead">elevated</mm-text>
-      </mm-tile>
-      <div style="height: var(--space-3)"></div>
-      <mm-tile variant="elevated" size="small">
-        <mm-text variant="subhead">small</mm-text>
-      </mm-tile>
-      <mm-tile variant="elevated" size="medium">
-        <mm-text variant="subhead">medium</mm-text>
-      </mm-tile>
-    </mm-group>
+    <div style="max-width: 400px">
+      <mm-group>
+        <mm-tile variant="flat">
+          <mm-text variant="subhead">flat style</mm-text>
+        </mm-tile>
+        <mm-tile variant="elevated">
+          <mm-text variant="subhead">elevated style</mm-text>
+        </mm-tile>
+      </mm-group>
+      <mm-separator></mm-separator>
+      <mm-group>
+        <mm-tile variant="elevated" size="small">
+          <mm-text variant="body">small tile</mm-text>
+        </mm-tile>
+        <mm-tile variant="elevated" size="medium">
+          <mm-text variant="body">medium tile</mm-text>
+        </mm-tile>
+      </mm-group>
+    </div>
   </section>
 
   <section class="component-props">
@@ -104,6 +108,25 @@
   </section>
 
   <section class="component-case">
+    <picture>
+      <source
+        srcset="photo-light.png"
+        media="(prefers-color-scheme: light) or (prefers-color-scheme: no-preference)"
+      />
+      <source srcset="photo-dark.png" media="(prefers-color-scheme: dark)" />
+      <source type="image/svg+xml" srcset="pyramid.svg" />
+      <source type="image/webp" srcset="pyramid.webp" />
+      <source media="(max-width: 799px)" srcset="elva-480w-close-portrait.jpg" />
+      <source media="(min-width: 800px)" srcset="elva-800w.jpg" />
+      <img src="elva-800w.jpg" alt="딸 엘바를 안고 서 있는 크리스" />
+    </picture>
+    <img
+      srcset="elva-fairy-320w.jpg 320w, elva-fairy-480w.jpg 480w, elva-fairy-640w.jpg 2x, elva-fairy-800w.jpg 800w"
+      sizes="(max-width: 320px) 280px, (max-width: 480px) 440px, 800px"
+      src="elva-fairy-800w.jpg"
+      alt="요정 옷을 입은 엘바"
+    />
+
     <mm-tile variant="elevated">
       <mm-avatar src="/public/images/springsteen.jpg"> </mm-avatar>
       <div style="height: var(--space-2)"></div>
@@ -277,24 +300,5 @@
       >
       </mm-text-list>
     </mm-tile>
-
-    <picture>
-      <source
-        srcset="photo-light.png"
-        media="(prefers-color-scheme: light) or (prefers-color-scheme: no-preference)"
-      />
-      <source srcset="photo-dark.png" media="(prefers-color-scheme: dark)" />
-      <source type="image/svg+xml" srcset="pyramid.svg" />
-      <source type="image/webp" srcset="pyramid.webp" />
-      <source media="(max-width: 799px)" srcset="elva-480w-close-portrait.jpg" />
-      <source media="(min-width: 800px)" srcset="elva-800w.jpg" />
-      <img src="elva-800w.jpg" alt="딸 엘바를 안고 서 있는 크리스" />
-    </picture>
-    <img
-      srcset="elva-fairy-320w.jpg 320w, elva-fairy-480w.jpg 480w, elva-fairy-640w.jpg 2x, elva-fairy-800w.jpg 800w"
-      sizes="(max-width: 320px) 280px, (max-width: 480px) 440px, 800px"
-      src="elva-fairy-800w.jpg"
-      alt="요정 옷을 입은 엘바"
-    />
   </section>
 </main>
