@@ -27,10 +27,11 @@ class Radio extends CustomHTMLElement {
     //   input.removeAttribute('checked')
     // }
 
-    shadow.appendChild(container)
-    container.append(input, label, makeStyleSheet('radio'))
-
-    console.log(this.checked)
+    shadow.append(container, makeStyleSheet('radio'))
+    container.appendChild(input)
+    if (this.textContent && this.textContent.length > 0) {
+      container.appendChild(label)
+    }
 
     if (this.helper) {
       const helper = document.createElement('p')

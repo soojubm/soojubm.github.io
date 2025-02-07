@@ -7,6 +7,7 @@
       것이 차이. select와의 차이는 이미지를 포함할 수 있다고. 사용 맥락 또한 listbox는 폼이나 입력.
       aria-orientation값을 갖습니다 vertical. 드롭다운은 패턴. 사용자 인터렉션 방식에 가까움.
     </mm-text>
+    <p>listbox는 기본적으로 드롭다운 목록을 제공하지 않는다.</p>
   </mm-text-group>
 
   <dl class="article-aka">
@@ -66,7 +67,6 @@
     <dl>
       <dt>name</dt>
       <dd>string</dd>
-      <dd></dd>
       <dt>size</dt>
       <dd>'large' | 'medium'</dd>
       <dt>action</dt>
@@ -75,7 +75,6 @@
       <dd>React.ReactNode</dd>
       <dt>tag<attr>?</attr></dt>
       <dd>React.ReactNode</dd>
-      <dd></dd>
     </dl>
   </section>
 
@@ -223,6 +222,64 @@
         <mm-menuitem label="사파리 브라우저">
           <mm-avatar slot="avatar" size="large" default="true"></mm-avatar>
           <mm-button slot="action" status="active">실행</mm-button>
+        </mm-menuitem>
+      </mm-group>
+    </mm-tile>
+
+    <mm-tile variant="flat" name="access">
+      <mm-titlebar titletext="공개 대상 선택"></mm-titlebar>
+      <br />
+      <mm-group variant="menuitem">
+        <mm-menuitem>
+          <mm-radio slot="check"></mm-radio>
+          <mm-avatar slot="avatar" size="large" icon="group"> </mm-avatar>
+          <mm-text-pair
+            slot="text"
+            labelText="친구만"
+            descriptionText="회원님의 Facebook 친구"
+          ></mm-text-pair>
+        </mm-menuitem>
+        <mm-menuitem data->
+          <mm-radio slot="check"></mm-radio>
+          <mm-avatar slot="avatar" size="large" icon="lock"> </mm-avatar>
+          <mm-text-pair
+            slot="text"
+            labelText="나만 보기"
+            descriptionText="부끄러우니까"
+          ></mm-text-pair>
+        </mm-menuitem>
+      </mm-group>
+    </mm-tile>
+
+    <mm-tile variant="flat" class="share">
+      <mm-titlebar titletext="공유"></mm-titlebar>
+      <div style="height: var(--space-3)"></div>
+      <mm-text variant="subhead" class="share-title">가족이나 친구와<br />함께 보세요!</mm-text>
+      <div style="height: var(--space-3)"></div>
+      <mm-group variant="menuitem">
+        <mm-menuitem class="share-facebook" label="facebook으로 공유">
+          <mm-avatar
+            slot="avatar"
+            size="medium"
+            icon="facebook"
+            style="background-color: var(--color-facebook); color: #fff"
+          >
+          </mm-avatar>
+        </mm-menuitem>
+        <mm-menuitem class="share-twitter" label="twitter로 공유">
+          <mm-avatar
+            slot="avatar"
+            icon="twitter"
+            style="background-color: var(--color-twitter); color: #fff"
+          >
+          </mm-avatar>
+        </mm-menuitem>
+        <mm-menuitem class="share-kakao" label="kakao talk으로 공유">
+          <mm-avatar slot="avatar" icon="message" style="background-color: var(--color-kakao)">
+          </mm-avatar>
+        </mm-menuitem>
+        <mm-menuitem class="share-kakao" label="링크 복사">
+          <mm-avatar slot="avatar" icon="copy"> </mm-avatar>
         </mm-menuitem>
       </mm-group>
     </mm-tile>

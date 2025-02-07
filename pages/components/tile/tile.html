@@ -20,13 +20,16 @@
   </dl>
 
   <section class="component-example">
-    <div style="max-width: 400px">
+    <div style="max-width: 600px">
       <mm-group>
         <mm-tile variant="flat">
           <mm-text variant="subhead">flat style</mm-text>
         </mm-tile>
         <mm-tile variant="elevated">
           <mm-text variant="subhead">elevated style</mm-text>
+        </mm-tile>
+        <mm-tile variant="tinted">
+          <mm-text variant="subhead">tinted style</mm-text>
         </mm-tile>
       </mm-group>
       <mm-separator></mm-separator>
@@ -287,10 +290,6 @@
         <mm-text variant="title">₩ 6,800</mm-text>
         <mm-text variant="label">한 달에 한 번</mm-text>
       </div>
-      <mm-group>
-        <mm-button variant="primary" size="large" isfullwidth="true">업그레이드</mm-button>
-      </mm-group>
-      <br />
       <mm-text-list
         texts='[
         "스토리지 2TB",
@@ -299,6 +298,10 @@
         ]'
       >
       </mm-text-list>
+      <br />
+      <mm-group>
+        <mm-button variant="primary" size="large" isfullwidth="true">업그레이드</mm-button>
+      </mm-group>
     </mm-tile>
   </section>
 </main>

@@ -1,6 +1,7 @@
 //var abc = window.innerWidth - document.body.clientWidth;
 
 import { pushBrowserHistory, backHistory } from '../utils/browserUtils'
+import { KEYCODE } from '../utils/keycodes'
 
 type Parameter = {
   selector: string
@@ -96,7 +97,7 @@ function modal({ selector: trigger }: Parameter) {
   }
 
   function enterEscKey(event: KeyboardEvent) {
-    if (isKeyEsc(event)) backHistory()
+    if (event.key === String(KEYCODE.ENTER)) backHistory()
   }
 }
 

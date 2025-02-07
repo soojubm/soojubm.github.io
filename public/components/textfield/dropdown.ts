@@ -1,7 +1,8 @@
 class Dropdown extends HTMLElement {
-  private isOpen: boolean = false
+  // private isOpen: boolean = false
   private _dropdownButton: HTMLButtonElement
   private _dropdownList: HTMLElement
+  private _indicatorIcon: any
   private _options: HTMLOptionElement[] = []
 
   constructor() {
@@ -14,12 +15,19 @@ class Dropdown extends HTMLElement {
     this._dropdownButton = document.createElement('button')
     this._dropdownButton.classList.add('dropdown-button')
     this._dropdownButton.textContent = 'Select an option (this is web component)'
+    this._dropdownButton.setAttribute('haspopup', 'listbox')
+    this._dropdownButton.setAttribute('aria-pressed', 'false')
 
     this._dropdownList = document.createElement('div')
     this._dropdownList.classList.add('dropdown-list')
 
+    this._indicatorIcon = document.createElement('mm-icon')
+    this._indicatorIcon.setAttribute('name', 'nav-arrow-down')
+    this._indicatorIcon.setAttribute('size', 'small')
+
     dropdown.appendChild(this._dropdownButton)
     dropdown.appendChild(this._dropdownList)
+    this._dropdownButton.appendChild(this._indicatorIcon)
 
     this.shadowRoot?.appendChild(dropdown)
 
@@ -27,46 +35,61 @@ class Dropdown extends HTMLElement {
     style.textContent = `
       .dropdown {
         position: relative;
-        width: 200px;
-        font-size: 16px;
       }
       .dropdown-button {
+        display: flex;
+        justify-content: space-between;
         width: 100%;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        background-color: white;
+        padding: 10px var(--space-3);
+        border: var(--border-stronger);
+        border-radius: var(--radius);
+        background-color: var(--color-background);
+        color: var(--color-text);
         cursor: pointer;
         text-align: left;
+        font-family: inherit;
       }
+      .dropdown-button[aria-pressed=true] mm-icon {
+        transform: rotate(180deg);
+      }
+      .dropdown-button[aria-pressed=true] + .dropdown-list {
+        display: block;
+      }
+
       .dropdown-list {
+        display: none;
+        max-height: 200px;
+        overflow-y: auto;
+        border: var(--border-stronger);
+        border-radius: var(--radius);
+        border-top: none;
+        background-color: var(--color-background);
+        box-shadow: var(--shadow);
         position: absolute;
         top: 100%;
         left: 0;
         right: 0;
-        max-height: 200px;
-        overflow-y: auto;
-        border: 1px solid #ccc;
-        border-top: none;
-        background-color: white;
-        display: none;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         z-index: 10;
       }
-      .dropdown-list.open {
-        display: block;
-      }
       .dropdown-item {
-        padding: 8px;
+        padding: 8px var(--space-3);
+        font-size: var(--font-size-small);
         cursor: pointer;
       }
       .dropdown-item:hover {
-        background-color: #f0f0f0;
+        background-color: var(--color-background-weak);
+      }
+
+      @media (max-width: 800px) {
+        .dropdown-list {
+          position: fixed;
+          top: auto;
+          bottom: 0; 
+        }
       }
     `
     this.shadowRoot?.appendChild(style)
 
-    // 이벤트 리스너 설정
     this._dropdownButton.addEventListener('click', this.openDropdown.bind(this))
   }
 
@@ -87,7 +110,6 @@ class Dropdown extends HTMLElement {
   }
 
   disconnectedCallback() {
-    // 컴포넌트가 DOM에서 제거될 때 이벤트 리스너를 정리합니다.
     document.removeEventListener('click', this.handleDocumentClick.bind(this))
   }
 
@@ -97,13 +119,11 @@ class Dropdown extends HTMLElement {
   // }
 
   openDropdown() {
-    this.isOpen = true
-    this._dropdownList.classList.add('open')
+    this._dropdownButton.setAttribute('aria-pressed', 'true')
   }
 
   closeDropdown() {
-    this.isOpen = false
-    this._dropdownList.classList.remove('open')
+    this._dropdownButton.setAttribute('aria-pressed', 'false')
   }
 
   onOptionClick(event: Event) {

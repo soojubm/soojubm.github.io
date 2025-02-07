@@ -151,7 +151,7 @@
 
   --border-width: 1px;
   --border: var(--border-width) solid var(--color-border);
-  --border-stronger: var(--border-width) solid var(var(--color-border-stronger));
+  --border-stronger: var(--border-width) solid var(--color-border-stronger);
   --border-active: 1px solid var(--color-primary);
   --border-thin: null;
   --border-thick: null;
@@ -236,9 +236,11 @@
   --color-background-strong: var(--gray0);
 
   --color-border: var(--gray800);
+  --color-border-stronger: #5f6964;
   --color-border-hover: var(--gray0);
 
   --border: 1px solid var(--color-border);
+  --border-stronger: var(--border-width) solid var(--color-border-stronger);
 
   --status-focus: 0 0 0 2px var(--color-border-hover);
   --status-hover: 0 0 0 2px rgba(255,255,255,.25);

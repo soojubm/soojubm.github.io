@@ -9,6 +9,7 @@
   box-sizing: border-box;
   background: var(--color-background);
   font-size: var(--font-size-small);
+  line-height: var(--size-small);
   color: var(--color-text);
 
   --tag-border: var(--border);

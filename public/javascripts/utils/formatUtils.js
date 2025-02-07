@@ -28,13 +28,13 @@ export function stringByteLength(str) {
 //   return len;
 // };
 
-var stringToHTML = function(str) {
+var stringToHTML = function (str) {
   var parser = new DOMParser()
   var doc = parser.parseFromString(str, 'text/html')
   return doc.body
 }
 
-var getElementHeight = function(element) {
+var getElementHeight = function (element) {
   element.style.display = 'block'
   const height = element.scrollHeight + 'px'
 
@@ -63,7 +63,7 @@ const maskedNumber = last4Digits.padStart(fullNumber.length, '*')
 	}
 */
 
-const randomNumber = function(min, max) {
+const randomNumber = function (min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
@@ -160,7 +160,10 @@ export function copyClipboard(text) {
   // }
 }
 
-function randomString(length = 10, allowed = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789') {
+function randomString(
+  length = 10,
+  allowed = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789',
+) {
   let result = ''
   for (let i = 0; i < length; i++) {
     result += allowed.charAt(Math.floor(Math.random() * allowed.length))
@@ -178,18 +181,23 @@ function serializeSearch(search) {
   return result2
 }
 
-var serializeSearchTEMP = function(form) {
+var serializeSearchTEMP = function (form) {
   var arr = []
 
   // Loop through each field in the form
-  Array.prototype.slice.call(form.elements).forEach(function(field) {
+  Array.prototype.slice.call(form.elements).forEach(function (field) {
     // Skip some fields we don't need
-    if (!field.name || field.disabled || ['file', 'reset', 'submit', 'button'].indexOf(field.type) > -1) return
+    if (
+      !field.name ||
+      field.disabled ||
+      ['file', 'reset', 'submit', 'button'].indexOf(field.type) > -1
+    )
+      return
 
     // Handle multi-select fields
     if (field.type === 'select-multiple') {
       // Loop through the options and add selected ones
-      Array.prototype.slice.call(field.options).forEach(function(option) {
+      Array.prototype.slice.call(field.options).forEach(function (option) {
         if (!option.selected) return
         options.push(encodeURIComponent(field.name) + '=' + encodeURIComponent(option.value))
       })
@@ -251,26 +259,6 @@ if (validatedEmail instanceof Error) {
   console.log(`Valid email: ${validatedEmail}`)
 }
 
-function getMobileOperatingSystem() {
-  var userAgent = navigator.userAgent || navigator.vendor || window.opera
-
-  // Windows Phone must come first because its UA also contains "Android"
-  if (/windows phone/i.test(userAgent)) {
-    return 'Windows Phone'
-  }
-
-  if (/android/i.test(userAgent)) {
-    return 'Android'
-  }
-
-  // iOS detection from: http://stackoverflow.com/a/9039885/177710
-  if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-    return 'iOS'
-  }
-
-  return 'unknown'
-}
-
 const monthCompare = (a, b) => {
   const months = {
     January: 0,
@@ -292,8 +280,8 @@ const monthCompare = (a, b) => {
 ;['November', 'January', 'August'].sort(monthCompare)
 //["January", "August", "November"]
 
-var sanitizeHTML = function(str) {
-  return str.replace(/[^\w. ]/gi, function(c) {
+var sanitizeHTML = function (str) {
+  return str.replace(/[^\w. ]/gi, function (c) {
     return '&#' + c.charCodeAt(0) + ';'
   })
 }

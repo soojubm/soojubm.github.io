@@ -1,10 +1,88 @@
 <main class="page" style="min-height: 80vh">
-  <p>
-    A form field element has neither an id nor a name attribute. This might prevent the browser from
-    correctly autofilling the form. To fix this issue, add a unique id or name attribute to a form
-    field. This is not strictly needed, but still recommended even if you have an autocomplete
-    attribute on the same element.
-  </p>
+  <header class="" style="display: flex; justify-content: space-between">
+    <div style="width: 40%">
+      <mm-text variant="title">
+        <span style="color: var(--color-text-light)">Let us guide</span>
+      </mm-text>
+      <mm-text variant="title"> The aim is to reduce “decision fatigue" </mm-text>
+    </div>
+    <div style="width: 50%">
+      <mm-text variant="body-large">
+        Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit
+        유연성flexibility과 재사용성, 지속 가능성과 같은 기본 개념은 여기에서 이야기하지 않기. The
+        goal isn't "all or nothing". 의사결정의 고비가 왔을 때 언제든 이곳으로 돌아와 비교대상의
+        우위를 결정하세요. 취사선택. 가치판단.
+      </mm-text>
+    </div>
+  </header>
+  <section style="margin: 4rem -4rem; display: flex; gap: 1rem">
+    <section style="border: var(--border); padding: 3rem; border-radius: 2rem">
+      <mm-text variant="subhead">Make a Constraints</mm-text>
+      <mm-text variant="title">한계를 설정하기</mm-text>
+      <br />
+      <mm-text variant="body-large">
+        모두를 위한 서비스, 접속 환경 등의 제약없이 없이. 궁극적으로 해결하려는 문제는 유저
+        인터페이스가 아니다.
+      </mm-text>
+      <br />
+      <mm-text variant="label-strong">A11y. </mm-text>
+      <mm-text variant="body">
+        접근성으로 결정을 도와라. 접근성에 충족하지 않는 디자인을 하기 위한 시간을 낭비하지 마세요.
+        시각 이상자를 위한 형태. 크기, 깊이, 테두리의 제한된 규칙(제약Constraints)은 오히려 제품
+        개발 속도를 높일 수 있습니다.
+      </mm-text>
+      <mm-text variant="body">
+        색각 이상자를 위해 색상 외의 시각 언어로 상태 정보를 표현하세요.
+      </mm-text>
+
+      <mm-text variant="label-strong">Mobile First</mm-text>
+      <mm-text variant="body">
+        디바이스나 브라우저 등 접속 환경에 종속되지 않는 일관된 시각 경험. 크로스 플랫폼. 서비스
+        확장과 유지 보수. 데스크탑 환경에서나 유효한 hover 형태를 디자인하는 데에 많은 시간을 들일
+        필요가 없습니다.
+      </mm-text>
+    </section>
+
+    <section style="border: var(--border); padding: 3rem; border-radius: 2rem">
+      <mm-text variant="subhead" data-temp=" minimum viable experience"
+        >Progressive enhancement</mm-text
+      >
+      <mm-text variant="title">점진적으로 향상하기</mm-text>
+
+      <br />
+
+      <div>
+        <mm-text variant="body">
+          처음부터 너무 많은 약속 하지 않기. 시각 언어를 확장해가며 디테일을 높이세요. 중요한 것은
+          코드 환경에서 유효한 최적의 컴포넌트 사례를 만드는 일입니다.
+        </mm-text>
+        <mm-text variant="label-strong">not-yet-completed</mm-text>
+        <mm-text variant="body">
+          규칙 최소화. 크기와 비례해서 radius와 shadow 조정이 필요하지만 규칙을 최소화.
+        </mm-text>
+
+        <mm-text variant="label-strong">제품으로서의 디자인 시스템 문서.</mm-text>
+        <mm-text variant="body">
+          디자인 시스템은 유아이 라이브러리UI Library나 유아이 키트UI Kits가 아닙니다. 가능한 모든
+          경우의 수를 나열하지 마세요.
+        </mm-text>
+      </div>
+    </section>
+
+    <section style="border: var(--border); padding: 3rem; border-radius: 2rem">
+      <mm-text variant="subhead">Make a Constraints</mm-text>
+      <mm-text variant="title">예측 가능한 설계하기</mm-text>
+
+      <br />
+      <mm-text variant="body">
+        UI는 사용자의 추가적인 학습을 최소화할 정도로 보편타당해야. 제품 스코프에서도 친숙하고
+        신뢰할 수 있는 서비스 경험을 위해 예측 가능하고 일관된 기표.
+      </mm-text>
+      <mm-text variant="body">
+        디바이스나 브라우저 등 접속 환경에 종속되지 않는 일관된 시각 경험.
+      </mm-text>
+    </section>
+  </section>
   <style>
     .browserWindow_my1Q {
       border: 3px solid #ebedf0;
@@ -92,180 +170,123 @@
   <!-- <p>책임 과도화, 사용 혼란, 의도 불명확</p> -->
   <!-- <p>stack 컴포넌트의 과도한 책임으로 중복 코드를 줄일 수는 있으나, 사용자(개발자)가 사용 목적을 직관적으로 이해하기 어려울 수 있다. 그리고 컴포넌틔의 역할이 확대되면 복잡하고 관리가 어려워진다. 코드 가독성이 떨어진다. 결국 Stack 컴포넌트의 책임이 너무 커진다. 이게 말이 안 되는 게 결국 라디오그룹, 체크박스그룹이 가져야 하는 로직이 있음. variant보다 더 추상적인 layout.</p> -->
 
-  <div style="display: flex; gap: 1rem"></div>
+  <section style="max-width: 400px; display: flex; flex-direction: column; gap: 1rem">
+    <mm-tile>
+      <div
+        style="
+          display: flex;
+          flex-direction: column;
+          gap: 1.5rem;
+          max-width: var(--layout-width-small);
+          padding-top: 1rem;
+        "
+      >
+        <div class="chat-date">
+          <mm-tag>2022년 5월 17일</mm-tag>
+        </div>
 
-  <div class="columns">
-    <div class="column" style="display: flex; flex-direction: column; gap: var(--space-4)">
-      <mm-tile variant="flat" class="share">
-        <mm-titlebar titletext="공유"></mm-titlebar>
-        <div style="height: var(--space-3)"></div>
-        <mm-text variant="subhead" class="share-title">가족이나 친구와<br />함께 보세요!</mm-text>
-        <div style="height: var(--space-3)"></div>
-        <mm-group variant="menuitem">
-          <mm-menuitem class="share-facebook" label="facebook으로 공유">
-            <mm-avatar
-              slot="avatar"
-              size="medium"
-              icon="facebook"
-              style="background-color: var(--color-facebook); color: #fff"
-            >
-            </mm-avatar>
-          </mm-menuitem>
-          <mm-menuitem class="share-twitter" label="twitter로 공유">
-            <mm-avatar
-              slot="avatar"
-              icon="twitter"
-              style="background-color: var(--color-twitter); color: #fff"
-            >
-            </mm-avatar>
-          </mm-menuitem>
-          <mm-menuitem class="share-kakao" label="kakao talk으로 공유">
-            <mm-avatar slot="avatar" icon="message" style="background-color: var(--color-kakao)">
-            </mm-avatar>
-          </mm-menuitem>
-          <mm-menuitem class="share-kakao" label="링크 복사">
-            <mm-avatar slot="avatar" icon="copy"> </mm-avatar>
-          </mm-menuitem>
-        </mm-group>
-      </mm-tile>
-      <mm-tile variant="flat" name="access">
-        <mm-titlebar titletext="공개 대상 선택"></mm-titlebar>
-        <br />
-        <mm-group variant="menuitem">
-          <mm-menuitem>
-            <mm-radio slot="check"></mm-radio>
-            <mm-avatar slot="avatar" size="large" icon="group"> </mm-avatar>
-            <mm-text-pair
-              slot="text"
-              labelText="친구만"
-              descriptionText="회원님의 Facebook 친구"
-            ></mm-text-pair>
-          </mm-menuitem>
-          <mm-menuitem data->
-            <mm-radio slot="check"></mm-radio>
-            <mm-avatar slot="avatar" size="large" icon="lock"> </mm-avatar>
-            <mm-text-pair
-              slot="text"
-              labelText="나만 보기"
-              descriptionText="부끄러우니까"
-            ></mm-text-pair>
-          </mm-menuitem>
-        </mm-group>
-      </mm-tile>
-
-      <mm-tile>
-        <div
-          style="
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            max-width: var(--layout-width-small);
-            padding-top: 1rem;
-          "
-        >
-          <div class="chat-date">
-            <mm-tag>2022년 5월 17일</mm-tag>
+        <div class="chat">
+          <mm-avatar class="chat-avatar" default="true"></mm-avatar>
+          <div>
+            <h5 class="chat-username">수좁이</h5>
           </div>
-
-          <div class="chat">
-            <mm-avatar class="chat-avatar" default="true"></mm-avatar>
-            <div>
-              <h5 class="chat-username">수좁이</h5>
-            </div>
-            <div class="chat-bubble">
-              <p>
-                날짜는 버블 밖으로 나와야한다.리얼타임. 버블의 전송 상태. reaction. iMessage에서
-                날짜는 터치 제스쳐. 1:1대화 / 1:n 대화. 버블은 규칙을 깨도 좋은 컴포넌트. 범용성이
-                떨어지기 때문. 버블의 radius는 글로벌 토큰으로 정의할 필요는 없고 컴포넌트 토큰으로
-                충분.
-              </p>
-            </div>
-            <div class="chat-bubble">
-              <p>짧은 내용일 때.</p>
-            </div>
-            <div class="chat-bubble has-image">
-              <figure>
-                <img src="/public/images/springsteen.jpg" alt="" />
-              </figure>
-              <time class="chat-time">12:00 am</time>
-            </div>
+          <div class="chat-bubble">
+            <p>
+              날짜는 버블 밖으로 나와야한다.리얼타임. 버블의 전송 상태. reaction. iMessage에서
+              날짜는 터치 제스쳐. 1:1대화 / 1:n 대화. 버블은 규칙을 깨도 좋은 컴포넌트. 범용성이
+              떨어지기 때문. 버블의 radius는 글로벌 토큰으로 정의할 필요는 없고 컴포넌트 토큰으로
+              충분.
+            </p>
           </div>
-
-          <div class="chat is-mine" style="margin-bottom: 2rem">
-            <mm-avatar class="chat-avatar" hidden>
+          <div class="chat-bubble">
+            <p>짧은 내용일 때.</p>
+          </div>
+          <div class="chat-bubble has-image">
+            <figure>
               <img src="/public/images/springsteen.jpg" alt="" />
-            </mm-avatar>
-            <h5 class="chat-username" hidden>수줍이</h5>
-            <div class="chat-bubble">
-              <p>감사합니다! 아바타와 닉네임 불필요. 전송 순서 중요.</p>
-              <small class="chat-time chat-bubble-status" role="status">전송됨</small>
-            </div>
-            <div class="chat-bubble">
-              <div class="chat-inputing animation-chatting">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
+            </figure>
+            <time class="chat-time">12:00 am</time>
+          </div>
+        </div>
+
+        <div class="chat is-mine" style="margin-bottom: 2rem">
+          <mm-avatar class="chat-avatar" hidden>
+            <img src="/public/images/springsteen.jpg" alt="" />
+          </mm-avatar>
+          <h5 class="chat-username" hidden>수줍이</h5>
+          <div class="chat-bubble">
+            <p>감사합니다! 아바타와 닉네임 불필요. 전송 순서 중요.</p>
+            <small class="chat-time chat-bubble-status" role="status">전송됨</small>
+          </div>
+          <div class="chat-bubble">
+            <div class="chat-inputing animation-chatting">
+              <span></span>
+              <span></span>
+              <span></span>
             </div>
           </div>
         </div>
-      </mm-tile>
-    </div>
-    <div class="column" style="display: flex; flex-direction: column; gap: var(--space-4)">
-      <mm-tile variant="flat">
-        <mm-titlebar titletext="팔로우하는 사람"></mm-titlebar>
-        <br />
-        <div style="max-width: 200px; margin: 0 -0.25rem var(--space-3)">
-          <mm-tablist>
-            <mm-tab slot="tab" selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">
-              모두
-            </mm-tab>
-            <mm-tab slot="tab" aria-controls="panel-2" id="tab-2" tabindex="-1">바보만</mm-tab>
-          </mm-tablist>
-        </div>
-        <mm-group variant="menuitem">
-          <mm-menuitem>
-            <mm-avatar
-              slot="avatar"
-              size="large"
-              default="true"
-              style="background-color: yellowgreen"
-            ></mm-avatar>
-            <mm-text-pair
-              slot="text"
-              labelText="수줍이"
-              descriptionText="유아이 디자이너"
-            ></mm-text-pair>
-            <mm-button slot="action" variant="secondary">팔로우</mm-button>
+      </div>
+    </mm-tile>
+    <mm-tile variant="flat">
+      <mm-titlebar titletext="팔로우하는 사람"></mm-titlebar>
+      <br />
+      <!-- <div style="max-width: 200px; margin: 0 -0.25rem var(--space-3)">
+        <mm-tablist>
+          <mm-tab slot="tab" selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">
+            모두
+          </mm-tab>
+          <mm-tab slot="tab" aria-controls="panel-2" id="tab-2" tabindex="-1">바보만</mm-tab>
+        </mm-tablist>
+      </div> -->
+      <div style="max-width: 140px; margin: 0 0 var(--space-3)">
+        <button-list-component
+          id="button-list"
+          options='[
+            {"label": "모두", "value": "apple"},
+            {"label": "바보만", "value": "banana"}
+          ]'
+        ></button-list-component>
+      </div>
+      <mm-group variant="menuitem">
+        <mm-menuitem>
+          <mm-avatar
+            slot="avatar"
+            size="large"
+            default="true"
+            style="background-color: yellowgreen"
+          ></mm-avatar>
+          <mm-text-pair
+            slot="text"
+            labelText="수줍이"
+            descriptionText="유아이 디자이너"
+          ></mm-text-pair>
+          <mm-button slot="action" variant="secondary">팔로우</mm-button>
+        </mm-menuitem>
+        <mm-menuitem>
+          <mm-avatar
+            slot="avatar"
+            size="large"
+            default="true"
+            style="background-color: blueviolet"
+          ></mm-avatar>
+          <mm-text-pair
+            slot="text"
+            labelText="진짜수줍이"
+            descriptionText="유투브 구독자"
+          ></mm-text-pair>
+          <mm-button slot="action">팔로우 중</mm-button>
+        </mm-menuitem>
+        <mm-tile variant="elevated" size="small" style="margin-top: var(--space-1)">
+          <mm-menuitem label="더 많은 친구를 찾아보세요!" description="">
+            <mm-avatar slot="avatar" variant="primary" icon="search"></mm-avatar>
           </mm-menuitem>
-          <mm-menuitem>
-            <mm-avatar
-              slot="avatar"
-              size="large"
-              default="true"
-              style="background-color: blueviolet"
-            ></mm-avatar>
-            <mm-text-pair
-              slot="text"
-              labelText="진짜수줍이"
-              descriptionText="유투브 구독자"
-            ></mm-text-pair>
-            <mm-button slot="action">팔로우 중</mm-button>
-          </mm-menuitem>
-          <div style=""></div>
-          <mm-tile variant="elevated" size="small">
-            <mm-menuitem label="더 많은 친구를 찾아보세요!" description="">
-              <mm-avatar slot="avatar"></mm-avatar>
-            </mm-menuitem>
-          </mm-tile>
-          <!-- <mm-text variant="label">
-          칩 그룹으로 필터링을 제공하니 팔로우 버튼과 위계 충돌. 아바타가 작아서 콘텐츠 분리가 안
-          된다.
-        </mm-text> -->
-        </mm-group>
-      </mm-tile>
-      <section class="feeds" role="feed" aria-busy="false">
-        <!-- <aside
+        </mm-tile>
+        <!-- 칩 그룹으로 필터링을 제공하니 팔로우 버튼과 위계 충돌. 아바타가 작아서 콘텐츠 분리가 안 된다. -->
+      </mm-group>
+    </mm-tile>
+    <section class="feeds" role="feed" aria-busy="false">
+      <!-- <aside
         style="
           position: fixed;
           top: 6rem;
@@ -286,24 +307,24 @@
           1월 1일 변경된 내용 보기
         </button>
       </aside> -->
-        <mm-tile>
-          <article class="feed" aria-setsize="3" aria-posinset="1">
-            <mm-tag> 🔥 Most Popular </mm-tag>
-            <div style="height: 0.75rem"></div>
-            <mm-menuitem label="수줍이" description="2 hour" class="feed-user">
-              <mm-avatar slot="avatar" default="true"></mm-avatar>
-            </mm-menuitem>
-            <div class="feed-content">
-              <figure size="huge" class="feed-content-media">
-                <img src="/public/images/springsteen.jpg" alt="" />
-              </figure>
-              <mm-text variant="body">
-                Monotonectally productivate progressive human capital without user friendly portals.
-                Globally benchmark top-line ideas with distributed catalysts for change.
-                Authoritatively restore ubiquitous partnerships vis-a-vis
-                <mm-link href="#feed">synergistic models</mm-link>.
-              </mm-text>
-              <!-- <mm-text-list
+      <mm-tile>
+        <article class="feed" aria-setsize="3" aria-posinset="1">
+          <mm-tag> 🔥 Most Popular </mm-tag>
+          <div style="height: 0.75rem"></div>
+          <mm-menuitem label="수줍이" description="2 hour" class="feed-user">
+            <mm-avatar slot="avatar" default="true"></mm-avatar>
+          </mm-menuitem>
+          <div class="feed-content">
+            <figure size="huge" class="feed-content-media">
+              <img src="/public/images/springsteen.jpg" alt="" />
+            </figure>
+            <mm-text variant="body">
+              Monotonectally productivate progressive human capital without user friendly portals.
+              Globally benchmark top-line ideas with distributed catalysts for change.
+              Authoritatively restore ubiquitous partnerships vis-a-vis
+              <mm-link href="#feed">synergistic models</mm-link>.
+            </mm-text>
+            <!-- <mm-text-list
               texts='[
             "원활한 피드 탐색 경험을 위해 모든 피드를 보여주지 않는 것이 좋을 수 있다. 너무 많은 피드 콘텐츠.",
             "피드가 노출되는 이유를 알려줄 수 있다. 또한 사용자는 보고 싶은 피드와 보고 싶지 않은 피드를 결정할 권리가 있다.",
@@ -315,125 +336,117 @@
             ]'
             >
             </mm-text-list> -->
+            <div style="height: var(--space-3)"></div>
+            <mm-group variant="tag">
+              <mm-tag>Google</mm-tag>
+              <mm-tag>Meta</mm-tag>
+              <mm-tag>Nvidia</mm-tag>
+            </mm-group>
+            <div style="height: var(--space-4)"></div>
+            <mm-tile variant="elevated">
+              <mm-tag>3월 14일 수정됨</mm-tag>
               <div style="height: var(--space-3)"></div>
-              <mm-group variant="tag">
-                <mm-tag>Google</mm-tag>
-                <mm-tag>Meta</mm-tag>
-                <mm-tag>Nvidia</mm-tag>
-              </mm-group>
-              <div style="height: var(--space-3)"></div>
-              <mm-tile variant="elevated">
-                <mm-tag>3월 14일 수정됨</mm-tag>
-                <div style="height: var(--space-3)"></div>
-                <mm-group alignment="vertical">
-                  <mm-menuitem label="Kakao" description="https://www.kakaocorp.com" size="large">
-                    <mm-avatar slot="avatar"> </mm-avatar>
-                  </mm-menuitem>
-                  <mm-menuitem label="Naver" description="https://www.naver.com" size="large">
-                    <mm-avatar slot="avatar"> </mm-avatar>
-                  </mm-menuitem>
-                </mm-group>
-              </mm-tile>
-              <div style="height: var(--space-3)"></div>
-              <mm-group class="feed-reaction">
-                <mm-menuitem label="192" roloe="button">
-                  <mm-avatar slot="avatar" icon="heart"> </mm-avatar>
+              <mm-group alignment="vertical">
+                <mm-menuitem label="Kakao" description="https://www.kakaocorp.com" size="large">
+                  <mm-avatar slot="avatar"> </mm-avatar>
+                </mm-menuitem>
+                <mm-menuitem label="Naver" description="https://www.naver.com" size="large">
+                  <mm-avatar slot="avatar"> </mm-avatar>
                 </mm-menuitem>
               </mm-group>
+            </mm-tile>
+            <div style="height: var(--space-3)"></div>
+            <mm-group class="feed-reaction">
+              <mm-menuitem label="192" roloe="button">
+                <mm-avatar slot="avatar" variant="tertiary" icon="heart"> </mm-avatar>
+              </mm-menuitem>
+            </mm-group>
+          </div>
+        </article>
+      </mm-tile>
+
+      <style>
+        .feed {
+          /* margin: 3rem 0; */
+        }
+
+        .feed-content {
+          margin: var(--space-3) 0 0 0;
+        }
+
+        .feed-content-media {
+          margin: 0 0 var(--space-3) 0;
+          overflow: hidden;
+          object-fit: cover;
+          border-radius: var(--radius);
+        }
+
+        .feed-reaction {
+          margin: var(--space-4) 0 0 0;
+          position: relative;
+          z-index: 1;
+        }
+
+        .feed-reaction-icon {
+          width: 24px;
+          height: 24px;
+          font-size: var(--font-size-small);
+        }
+
+        .feed-user {
+          margin: var(--space-3) 0;
+        }
+      </style>
+
+      <script>
+        var form = document.getElementById('subscription-form')
+        form.addEventListener('submit', event => {
+          event.preventDefault()
+          const latestInvoicePaymentIntentStatus = localStorage.getItem(
+            'latestInvoicePaymentIntentStatus',
+          )
+
+          if (latestInvoicePaymentIntentStatus === 'requires_payment_method') {
+            const invoiceId = localStorage.getItem('latestInvoiceId')
+            const isPaymentRetry = true
+          }
+        })
+      </script>
+    </section>
+    <mm-tile>
+      <mm-titlebar class="js-titlebar" heading="알림"> </mm-titlebar>
+      <mm-group variant="button" style="margin: var(--space-4) 0 var(--space-3)">
+        <mm-button status="active">모두</mm-button>
+        <mm-button>읽지않음</mm-button>
+      </mm-group>
+      <div style="display: flex; flex-direction: column; gap: var(--space-3)">
+        <div style="display: flex; align-items: center; gap: var(--space-2)">
+          <mm-avatar slot="avatar" default="true"></mm-avatar>
+          <div>
+            <div style="display: flex; align-items: center; gap: var(--space-2)">
+              <!-- TODO 세로 정렬 -->
+              <mm-text variant="body">응암동 주간 인기글</mm-text>
+              <mm-text variant="label">5일 전</mm-text>
             </div>
-          </article>
-        </mm-tile>
-
-        <style>
-          .feed {
-            /* margin: 3rem 0; */
-          }
-
-          .feed-content {
-            margin: var(--space-3) 0 0 0;
-          }
-
-          .feed-content-media {
-            margin: 0 0 var(--space-3) 0;
-            overflow: hidden;
-            object-fit: cover;
-            border-radius: var(--radius);
-          }
-
-          .feed-reaction {
-            margin: var(--space-4) 0 0 0;
-            position: relative;
-            z-index: 1;
-          }
-
-          .feed-reaction-icon {
-            width: 24px;
-            height: 24px;
-            font-size: var(--font-size-small);
-          }
-
-          .feed-user {
-            margin: var(--space-3) 0;
-          }
-        </style>
-
-        <script>
-          var form = document.getElementById('subscription-form')
-          form.addEventListener('submit', event => {
-            event.preventDefault()
-            const latestInvoicePaymentIntentStatus = localStorage.getItem(
-              'latestInvoicePaymentIntentStatus',
-            )
-
-            if (latestInvoicePaymentIntentStatus === 'requires_payment_method') {
-              const invoiceId = localStorage.getItem('latestInvoiceId')
-              const isPaymentRetry = true
-            }
-          })
-        </script>
-      </section>
-      <mm-tile>
-        <mm-titlebar class="js-titlebar" heading="알림"> </mm-titlebar>
-        <mm-group
-          variant="button"
-          class="notification-filter"
-          style="margin: var(--space-4) 0 var(--space-3)"
-        >
-          <mm-button status="active">모두</mm-button>
-          <mm-button>읽지않음</mm-button>
-        </mm-group>
-        <div style="display: flex; flex-direction: column; gap: 0.75rem">
-          <mm-tile variant="elevated" size="small">
-            <mm-menuitem label="응암동 주간 인기글" description="5일 전">
-              <mm-avatar slot="avatar" default="true"></mm-avatar>
-            </mm-menuitem>
             <mm-text truncated="true">
               '송명섭 막걸리 6도 750m...' 외 1개 상품이 오늘 도착예정입니다~
             </mm-text>
-          </mm-tile>
-          <mm-tile variant="elevated" size="small">
-            <mm-menuitem label="오늘의 주요 종목 종가">
-              <mm-avatar slot="avatar" default="true"></mm-avatar>
-            </mm-menuitem>
-            <mm-text> '송명섭 막걸리 6도 750m...' 외 1개 상품이 오늘 도착예정입니다~ </mm-text>
-            <mm-text-list
-              texts='[
-            "popover: 전체 알림 목록을 볼 수 있는 페이지 필요. 모두보기 링크 버튼 필요.",
-            "modal: 전체 알림 목록을 볼 수 있는 페이지 불필요. 모달에서 infinite scroll이나 more load",
-            "개별 알림 액션: 읽음-링크/삭제. 알림의 설정.",
-            "MVP를 위한 팁: 전체를 하나의 클릭 영역으로 정의하고, 콘텐츠와 작성자를 분리하지 않고 하나의 텍스트 더미."
-          ]'
-            >
-            </mm-text-list>
-          </mm-tile>
+          </div>
         </div>
-        <footer style="margin: var(--space-4) 0 0 0">
-          <mm-link>더 보기</mm-link>
-        </footer>
-        <!-- <mm-result label="최근 알림 메세지가 없습니다."></mm-result> -->
-      </mm-tile>
-    </div>
-  </div>
+      </div>
+      <mm-text-list
+        texts='[
+          "popover: 간이 전체 알림. 전체보기기 링크 버튼 필요.", "modal: 전체 알림 페이지를 대체할 수 있다. infinite scroll을 통한 페이지를 대체"
+          "클릭 영역 정의, 개별 알림 액션: 읽음-링크/삭제. 알림의 설정.",
+        ]'
+      >
+      </mm-text-list>
+      <footer style="margin: var(--space-4) 0 0 0">
+        <mm-link>더 보기</mm-link>
+      </footer>
+      <!-- <mm-result label="최근 알림 메세지가 없습니다."></mm-result> -->
+    </mm-tile>
+  </section>
 
   <!-- To simplify is to clarify -->
   <!-- overall consistency and design and development efficiency -->
@@ -543,97 +556,6 @@
     </style>
     <!-- // invoice / order  구분 -->
 
-    <!-- <header class="" style="display: flex; justify-content: space-between">
-      <div style="width: 40%">
-        <mm-text variant="title">
-          <span style="color: var(--color-text-light)">Let us guide</span>
-        </mm-text>
-        <mm-text variant="title"> The aim is to reduce “decision fatigue" </mm-text>
-      </div>
-      <div style="width: 50%">
-        <mm-text variant="body-large">
-          Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci
-          velit 유연성flexibility과 재사용성, 지속 가능성과 같은 기본 개념은 여기에서 이야기하지
-          않기. The goal isn't "all or nothing". 의사결정의 고비가 왔을 때 언제든 이곳으로 돌아와
-          비교대상의 우위를 결정하세요. 취사선택. 가치판단.
-        </mm-text>
-      </div>
-    </header>
-
-    <section style="margin: 4rem -4rem; display: flex; flex-direction: column; gap: 1rem">
-      <section style="border: var(--border); padding: 4rem; border-radius: 2rem">
-        <mm-text variant="subhead">Make a Constraints</mm-text>
-        <mm-text variant="title">한계를 설정하기</mm-text>
-
-        <br />
-        <mm-text variant="label-strong">A11y. </mm-text>
-        <mm-text variant="body">
-          접근성으로 결정을 도와라. 접근성에 충족하지 않는 디자인을 하기 위한 시간을 낭비하지
-          마세요. 시각 이상자를 위한 형태. 크기, 깊이, 테두리의 제한된 규칙(제약Constraints)은
-          오히려 제품 개발 속도를 높일 수 있습니다.
-        </mm-text>
-        <mm-text variant="body"
-          >색각 이상자를 위해 색상 외의 시각 언어로 상태 정보를 표현하세요.</mm-text
-        >
-
-        <mm-text variant="label-strong">Mobile First</mm-text>
-        <mm-text variant="body">
-          디바이스나 브라우저 등 접속 환경에 종속되지 않는 일관된 시각 경험. 크로스 플랫폼. 서비스
-          확장과 유지 보수. 데스크탑 환경에서나 유효한 hover 형태를 디자인하는 데에 많은 시간을 들일
-          필요가 없습니다.
-        </mm-text>
-      </section>
-
-      <section style="border: var(--border); padding: 4rem; border-radius: 2rem">
-        <mm-text variant="subhead" data-temp=" minimum viable experience"
-          >Progressive enhancement</mm-text
-        >
-        <mm-text variant="title">점진적으로 향상하기</mm-text>
-
-        <br />
-
-        <div>
-          <mm-text variant="body">
-            처음부터 너무 많은 약속 하지 않기. 시각 언어를 확장해가며 디테일을 높이세요. 중요한 것은
-            코드 환경에서 유효한 최적의 컴포넌트 사례를 만드는 일입니다.
-          </mm-text>
-          <mm-text variant="label-strong">not-yet-completed</mm-text>
-          <mm-text variant="body"
-            >규칙 최소화. 크기와 비례해서 radius와 shadow 조정이 필요하지만 규칙을 최소화.</mm-text
-          >
-
-          <mm-text variant="label-strong">제품으로서의 디자인 시스템 문서.</mm-text>
-          <mm-text variant="body">
-            디자인 시스템은 유아이 라이브러리UI Library나 유아이 키트UI Kits가 아닙니다. 가능한 모든
-            경우의 수를 나열하지 마세요.
-          </mm-text>
-        </div>
-      </section>
-
-      <section style="border: var(--border); padding: 4rem; border-radius: 2rem">
-        <mm-text variant="subhead">Make a Constraints</mm-text>
-        <mm-text variant="title">예측 가능한 설계하기</mm-text>
-
-        <br />
-        <mm-text variant="body">
-          UI는 사용자의 추가적인 학습을 최소화할 정도로 보편타당해야. 제품 스코프에서도 친숙하고
-          신뢰할 수 있는 서비스 경험을 위해 예측 가능하고 일관된 기표.
-        </mm-text>
-        <mm-text variant="body">
-          디바이스나 브라우저 등 접속 환경에 종속되지 않는 일관된 시각 경험.
-        </mm-text>
-      </section>
-    </section>
-
-    <mm-tile>
-      <mm-feature
-        icon="✋"
-        titleText="한계를 설정하기"
-        subtitle="Make a Constraints"
-        description="모두를 위한 서비스, 접속 환경 등의 제약없이 없이. 궁극적으로 해결하려는 문제는 유저 인터페이스가 아니다."
-      ></mm-feature>
-    </mm-tile> -->
-
     <style>
       .stamp {
         position: absolute;
@@ -716,7 +638,8 @@
     <mm-text variant="caption">
       &loz; 다이얼로그에서 버튼 그룹을 두 가지 방식으로 정렬할 필요가 있나요?
     </mm-text> -->
-    <!-- <div class="feature">
+
+    <div class="feature">
       <mm-feature
         icon="✋"
         titleText="타겟의 명료 / Meaningful and Trustworthy"
@@ -746,13 +669,14 @@
         description="일어날 법 하지 않는 don't 케이스를 작성하여 문서를 장황하게 만들지 마세요. 컴포넌트와
         문서는 계속해서 개선되고 변화한다는 원칙에 연동."
       ></mm-feature>
-    </div> -->
+    </div>
 
     <!-- Apple은 탄소 중립을 실천합니다. 그리고 같은 기준을 2030년까지 모든 제품에 대해서도 적용할
-    예정입니다. 모든 Apple 제품과 포장재에 100% 재활용 및 재생 가능 소재만이 사용되는 그날을 위해 헌신적인 노력을 기울이고 있습니다. 또한, 모든
-    제품을 탄소 발자국을 남기지 않고 청정 에너지로 생산할 예정이죠. -->
+    예정입니다. 모든 Apple 제품과 포장재에 100% 재활용 및 재생 가능 소재만이 사용되는 그날을 위해
+    헌신적인 노력을 기울이고 있습니다. 또한, 모든 제품을 탄소 발자국을 남기지 않고 청정 에너지로
+    생산할 예정이죠. -->
 
-    <!-- <section class="component-references" style="max-width: 100%; margin-top: 4rem">
+    <section class="component-references" style="max-width: 100%; margin-top: 4rem">
       <a href="https://developer.apple.com/documentation/technologies" target="_blank">
         Apple technologies
       </a>
@@ -762,23 +686,19 @@
       <a href="https://en.wikipedia.org/wiki/Universal_design" target="_blank">Universal design</a>
       <a href="https://html.spec.whatwg.org/">HTME spec</a>
       <a href="https://webkit.org/">Webkit</a>
-      https://www.sitemaps.org/protocol.html
-    </section> -->
-
-    <!-- <section class="component-references">
+      <a href="https://www.sitemaps.org/protocol.html">sitemaps.org/protocol</a>
       <a href="https://cube.fyi/" target="_blank">CUBE CSS</a>
       <a href="https://www.radix-ui.com/themes/playground">radix playground</a>
       <a href="https://library.relume.io/components">relumle library</a>
       <a href="https://ui.shadcn.com/examples/cards">shadcn library</a>
       <a href="https://ui8.net/">ui8</a>
-    </section> -->
+    </section>
 
-    <!-- https://www.w3.org/WAI/standards-guidelines/wcag/ -->
-    <!-- <p>https://w3c.github.io/wcag/understanding/target-size-minimum.html / 24px 이상 desktop</p> -->
+    <p>https://w3c.github.io/wcag/understanding/target-size-minimum.html / 24px 이상 desktop</p>
   </article>
 
-  <!-- <mm-text variant="subhead">Content guide for designer</mm-text>
-  <mm-text-list texts='[]'>
+  <mm-text variant="subhead">Content guide for designer</mm-text>
+  <ul>
     <li>
       이상 혹은 이하를 표기할 때 >를 사용하지 않습니다. 액션 인디케이터와 혼동이 될 수 있어서. 이상,
       이하 한글로 명확하게 전달하시오!
@@ -791,10 +711,10 @@
     <li>하기 / 취소 / 다음에</li>
     <li>모든 시각정보는 non-clickable. 모든 인터렉션은 clickable.</li>
     <li>2회 이상 사용할 때 규칙으로 만든다.</li>
-  </ul> -->
+  </ul>
 
-  <!-- <mm-text variant="subhead">Style guide for developer</mm-text>
-  <mm-text-list texts='[]'>
+  <mm-text variant="subhead">Style guide for developer</mm-text>
+  <ul>
     <li>
       Styling hooks follows a specific naming convention to promote predictability and consistency.
     </li>
@@ -814,9 +734,9 @@
       값을 조정하기 쉽도록 추상화.. 1 unit을 .25rem으로 모두 네이밍 할 수 있나.
     </li>
     <li>이미지 가이드.반응형 이미지 사용법. 일단 그냥 2배수로 크기 조절. 가장 간단.</li>
-  </ul> -->
+  </ul>
 
-  <!-- <div style="position: relative">
+  <div style="position: relative">
     <div
       class="circle"
       style="width: 20rem; height: 20rem; background: red; border-radius: 50%"
@@ -836,7 +756,6 @@
     ></div>
     <div
       class="circle"
-      
       style="
         width: 6rem;
         height: 6rem;
@@ -859,27 +778,31 @@
         top: 14rem;
       "
     ></div>
-  </div> -->
-  <!-- <form class="subscribe">
-    <mm-text variant="subhead">수줍이 뉴스레터</mm-text>
-    <mm-text variant="body">
-      섭스크라이브 유아이 콤포넌트 입니다. <br />두 줄 단락을 위해 쓰고 있습니다.
-    </mm-text>
-    <br />
-    <mm-textfield placeholder="Enter Your Email..">
-      <mm-icon slot="leading" name="mail"></mm-icon>
-    </mm-textfield>
+  </div>
+
+  <form class="subscribe">
+    <mm-text-group>
+      <mm-text variant="subhead">수줍이 뉴스레터</mm-text>
+      <mm-text variant="body">
+        섭스크라이브 유아이 콤포넌트 입니다. <br />두 줄 단락을 위해 쓰고 있습니다.
+      </mm-text>
+      <mm-textfield placeholder="Enter Your Email..">
+        <mm-icon slot="leading" name="mail"></mm-icon>
+      </mm-textfield>
+    </mm-text-group>
+
     <mm-checkbox>
       본인은 Google의 <a href="" rel="noopener" target="_blank">이용 약관</a>에 동의하며 본인의
       정보가 Google의 <a href="" rel="noopener" target="_blank">개인정보보호 정책</a>에 따라
       이용된다는 것을 인정합니다.
     </mm-checkbox>
+    <br />
     <mm-text variant="caption">
       걱정하지 마세요. 스팸은 없습니다! 귀하의 정보는 web.dev 및 Chrome 관련 업데이트에만 사용되며
       당사에서 보내는 이메일은 일반적으로 한 달에 1-2회를 넘지 않습니다. 언제든지 구독을 취소할 수
       있습니다.
     </mm-text>
     <br />
-    <mm-button variant="secondary" type="submit">뉴스레터 구독</mm-button>
-  </form> -->
+    <mm-button type="submit" variant="secondary" size="large">뉴스레터 구독</mm-button>
+  </form>
 </main>

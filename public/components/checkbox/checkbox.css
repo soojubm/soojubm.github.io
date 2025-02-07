@@ -3,8 +3,6 @@
 // height 테이블 내에서 세로 정렬에 필요. 2줄 이상 레이블
 // nextjs + css module에서 type selector 이슈 */
 
-
-
 /* .checkbox:checked{
   background: linear-gradient(140deg, #ff6a6a 0%, #e6ff59 40%, #41c4fc 98%);
 }
@@ -25,6 +23,7 @@
 
 .checkbox {
   --checkbox-size: var(--size-tiny);
+  --checkbox-gap: calc(var(--checkbox-size) + var(--space-2));
   --checkbox-radius: 4px;
   --checkbox-inset: var(--space-2);
 
@@ -84,13 +83,13 @@
 
 .checkbox input:after {
   content:'';
-  width:7px;
+  width:6px;
   height:2px;
   border-left:1px solid;
   border-bottom:1px solid;
   border-color:var(--gray200);
   position:absolute;
-  left:3px;
+  left:4px;
   top:5px;
   transform:rotate(-50deg) scale(0);
 }
@@ -106,11 +105,18 @@
 
 .checkbox label {
   line-height: 1;
+  /* display: flex;
+  align-items: center;
+  min-width: max-content;
+  padding: 0 0 0 2rem;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0; */
 }
 
-.checkbox:focus-within label {
-}
-
+.checkbox:focus-within label {}
 
 .checkbox input[indeterminate=true] ~ label:before,
 .checkbox input[data-indeterminate=true] ~ label:before {border-color:var(--green800);background:var(--green100);}
@@ -129,10 +135,8 @@ input[type=checkbox]:checked + label + * {display:block;}
 
 /* // size */
 .checkbox[data-size=large] {
-  gap: var(--space-3);
-}
-.checkbox[data-size=large] input {
   --checkbox-size: var(--size-small);
+  gap: var(--space-3);
 }
 
 .checkbox[data-size=large] input:checked:after {

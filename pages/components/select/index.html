@@ -1,11 +1,7 @@
 <main class="page">
   <mm-text-group>
     <mm-text variant="title">Select</mm-text>
-    <mm-text variant="body-large">
-      input shape와 chip shape. select를 직접 스타일링 하지 않고, 시각적으로 숨겨서 사용하라. 형태를
-      갖는 컴포넌트는 시각적으로 나타나며 이것을 variantion
-    </mm-text>
-    <p>TODO mm-select. class="textfield</p>
+    <mm-text variant="body-large">-</mm-text>
   </mm-text-group>
   <dl class="article-aka">
     <dt>a.k.a.</dt>
@@ -14,17 +10,17 @@
     <dd title="shopify">Choice list</dd>
     <dd title="shopify">Action list</dd>
   </dl>
-
   <section class="component-example">
-    <button-list-component
-      id="button-list"
-      options='[
-        {"label": "Apple", "value": "apple"},
-        {"label": "Banana", "value": "banana"},
-        {"label": "Cherry", "value": "cherry"}
-      ]'
-    ></button-list-component>
-
+    <div style="width: 400px">
+      <button-list-component
+        id="button-list"
+        options='[
+          {"label": "Apple", "value": "apple"},
+          {"label": "Banana", "value": "banana"},
+          {"label": "Cherry", "value": "cherry"}
+        ]'
+      ></button-list-component>
+    </div>
     <script>
       const buttonList = document.getElementById('button-list')
 
@@ -40,48 +36,21 @@
         ]),
       )
     </script>
-
-    <mm-dropdown>
-      <option value="1">Option 1</option>
-      <option value="2">Option 2</option>
-      <option value="3">Option 3</option>
-    </mm-dropdown>
-
-    <div class="select" style="width: fit-content; position: relative">
-      <mm-button>칩 형태 셀렉트</mm-button>
-      <select
-        id="select1"
-        style="opacity: 0; position: absolute; left: 0; right: 0; top: 0; bottom: 0"
-      >
-        <option value="option1">Choose an option</option>
-      </select>
+    <mm-separator></mm-separator>
+    <div style="max-width: 400px">
+      <mm-dropdown>
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+        <option value="3">Option 3</option>
+      </mm-dropdown>
     </div>
     <mm-separator></mm-separator>
-    <div class="select" style="max-width: 300px; position: relative">
+    <div class="select">
       <label class="textfield-label" for="select1">셀렉트 레이블</label>
-      <div
-        class="textfield-input"
-        data-temp="의미론적으로 숨겨야"
-        style="display: flex; align-items: center; color: inherit"
-      >
-        인풋 셀렉트
-      </div>
-      <select
-        id="select2"
-        style="opacity: 0; position: absolute; left: 0; right: 0; top: 0; bottom: 0"
-      >
-        <option value="option2">Choose an option</option>
+      <select class="textfield-input" id="select2">
+        <option value="option2">Choose an option1</option>
+        <option value="option2">Choose an option2</option>
       </select>
-    </div>
-    <mm-separator></mm-separator>
-    <div class="textfield">
-      <label class="textfield-label" for="select3">셀렉트 레이블</label>
-      <select class="textfield-input" id="select3">
-        <option value="option1">Choose an option</option>
-      </select>
-      <div style="pointer-events: none" class="textfield-suffix">
-        <mm-icon name="nav-arrow-down"></mm-icon>
-      </div>
     </div>
   </section>
 
@@ -98,26 +67,38 @@
 
   <section class="component-guide">
     <mm-text-group>
+      <mm-text variant="subhead">Meta problems</mm-text>
+      <mm-text variant="body">
+        250203 label + select 패턴이 모던 웹에서 필요할까까? 네이티브 셀렉트를 시각적으로 숨겨서
+        사용하는 것도 선택된 값을 input의 value로 넣어주는 과정이 필요하다. 그럴 거면 커스텀된
+        디자인을 사용. native select를 사용하려면, 그대로 사용하기 위해서, 또는 최초의 제품에서.",
+        "셀렉트 옵션의 텍스트 길이에 맞춰 너비가 조절된다. indicator를 position으로 넣고 옵션에
+        말줄임표를 넣어야.
+      </mm-text>
+      <mm-text variant="body">label 클릭 시 옵션을 열지 않고 포커싱만 된다.</mm-text>
+      <mm-text variant="body">
+        다중 선택(combobox)을 셀렉트로 제공하지 마세요. 가 아니라 애초에 콤보박스라는 컴포넌트
+        정의가 안 되어 있음. toggle button group으로 선택 옵션을 풀어서 제공하세요. 하지만 선택
+        옵션이 많은 경우 콤보박스가 필요. 그러나 모달이나 바텀 시트 등의 새로운 뷰로 대체하는 게
+        모바일 친화적.
+      </mm-text>
       <mm-text variant="body">
         var selected = Array.from(dnd.options).filter((option) => { return option.selected;
         }).map((option) => option.value);
       </mm-text>
     </mm-text-group>
     <mm-text-group>
-      <mm-text variant="subhead">Best practices</mm-text>
-      <mm-text-list
-        texts='[
-        "셀렉트 옵션의 텍스트 길이에 맞춰 너비가 조절된다. indicator를 position으로 넣고 옵션에 말줄임표를 넣어야.",
-        "label 클릭 시 옵션을 열지 않고 포커싱만 된다.",
-        "memo. 레이블을 포함하는 형태. select 엘리먼트가 아니라 부모 엘리먼트에 컨테이너 스타일링이 필요하고, 클릭 영역까지 지정해야 했다. 그리고 드롭다운으로 구현해야 한다.",
-        "다중 선택(combobox)을 셀렉트로 제공하지 마세요. 가 아니라 애초에 콤보박스라는 컴포넌트 정의가 안 되어 있음. chip group으로 선택 옵션을 풀어서 제공하세요. 너무 많은 선택에서는 콤보박스가 필요. 하지만 그냥 모달 등의 새로운 뷰로 대체하는 게 모바일 친화적."
-      ]'
-      >
-      </mm-text-list>
+      <mm-text variant="subhead">Platform problems</mm-text>
+      <mm-text variant="body">
+        select는 선택 값을 보여줘야 한다. 액션 메뉴만 보여주는 경우 선택 값을 보여줄 필요가 없다.
+      </mm-text>
+    </mm-text-group>
+    <mm-text-group>
+      <mm-text variant="subhead">Changelog</mm-text>
     </mm-text-group>
   </section>
 </main>
 
-<!-- <input type="text" inputmode="numeric" pattern="[0-9]*" />
-<small id="" class="textfield-helper" aria-live="assertive">pattern="[0-9]+"</small> -->
-<!-- <mm-text variant="label-strong">DateRangeField / DateField</mm-text> -->
+<input type="text" inputmode="numeric" pattern="[0-9]*" />
+<small id="" class="textfield-helper" aria-live="assertive">pattern="[0-9]+"</small>
+<mm-text variant="label-strong">DateRangeField / DateField</mm-text>

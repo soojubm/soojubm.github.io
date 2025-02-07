@@ -8,21 +8,38 @@ const styles = `
 
   .button-list {
     display: flex;
-    gap: 4px;
+    // width: fit-content;
+    overflow:hidden;
+    // gap: var(--space-2);
+    border: var(--border-stronger);
+    border-radius: var(--radius);
   }
 
-  .button {
+  button {
+    border: 0;
+    background: transparent;
+
+    flex: 1;
     padding: 8px 16px;
     cursor: pointer;
     transition: background 0.3s, border-color 0.3s;
+
+    // background: var(--color-background);
+    // border: var(--border-stronger);
+    // border-radius: var(--radius);
+    font-family: inherit;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text);
   }
 
-  .button:hover {
-    background: gold;
+  button:hover {
+    outline: 2px solid var(--color-border);
   }
 
-  .button.selected {
-    background: #007bff;
+  button.selected {
+    background: var(--color-background-weak);
+    border-color: var(--color-primary);
+    color: var(--color-primary);
   }
 `
 
@@ -62,9 +79,9 @@ class ButtonListComponent extends HTMLElement {
   private updateButtons(options: OptionItem[]) {
     this.container.innerHTML = ''
 
-    options.forEach(option => {
+    options.forEach((option, index) => {
       const button = document.createElement('button')
-      button.classList.add('button')
+      button.classList.toggle('selected', index === 0)
       button.textContent = option.label
       button.dataset.value = option.value
 
@@ -75,7 +92,7 @@ class ButtonListComponent extends HTMLElement {
   }
 
   private onButtonClick(targetButton: HTMLButtonElement) {
-    const selectedButton = this.container.querySelector('.button.selected')
+    const selectedButton = this.container.querySelector('button.selected')
     selectedButton?.classList.remove('selected')
     targetButton.classList.add('selected')
 

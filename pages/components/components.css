@@ -25,7 +25,7 @@
 
 .component-props {
   margin: 2rem 0 0 calc(-5vw + 1rem);
-  padding: 1.5rem calc(var(--grid-margin) - 1rem) 1.75rem;
+  padding: 1.5rem calc(var(--grid-margin) - 1rem);
   margin-top: -3rem;
   border: var(--border);
   border-radius: 0 0 var(--radius-large) var(--radius-large);

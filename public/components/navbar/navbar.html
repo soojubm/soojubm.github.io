@@ -6,27 +6,25 @@
     aria-label="전체메뉴"
     aria-haspopup="true"
     aria-expanded="false"
-    style="margin-left: -0.5rem"
   >
   </mm-icon-button>
   <a class="navbar-logo" href="./index.html"></a>
-  <!-- <div class="navbar-menu">
+
+  <!-- main-menu / primary-menu / global-menu / navigation-menu / top-menu -->
+  <!-- <div class="navbar-appmenu">
     <a href="index.html"> Home </a>
     <a href="tokens.html">
       Tokens
       <mm-icon name="nav-arrow-down"></mm-icon>
     </a>
     <menu>
-      <a href="index.html"> 홈 </a>
       <a href="tokens.html"> Tokens </a>
       <a href="signifier.html">Signifier</a>
     </menu>
     <a href="signifier.html">Signifier</a>
   </div> -->
 
-  <div class="navbar-user" style="display: flex; gap: var(--space-2)">
-    <!-- <mm-button icon="bell"></mm-button> -->
-    <!-- <button class="chip" variant="primary" style="display:flex;align-items:center;height:var(--size-medium);margin-right:.25rem;padding:0 .75rem;border-radius:var(--radius);background:var(--color-primary);font-weight:var(--font-weight-bold);color:#fff;">시작하기</button> -->
+  <div class="navbar-user">
     <button class="theme-toggle js-darkmode" aria-label="change theme">
       <span class="day iconoir-sun-light"></span>
       <span class="night iconoir-half-moon"></span>
@@ -46,7 +44,6 @@
           description="UI Designer"
         >
           <mm-avatar slot="avatar" variant="secondary" size="large" default="true"></mm-avatar>
-          <!-- <mm-tag slot="tag" variant="primary"></mm-tag> -->
         </mm-entity>
         <div style="margin: var(--space-2) 0 0">
           <mm-button>내 프로필 관리</mm-button>
@@ -69,44 +66,39 @@
           <mm-avatar slot="avatar" variant="tertiary" icon="log-out"></mm-avatar>
         </mm-menuitem>
         <mm-separator></mm-separator>
-        <div style="margin-top: -0.25rem">
-          <mm-group>
-            <mm-link variant="secondary" href="#">개인정보처리방침</mm-link>
-            <i class="icon-bullet"></i>
-            <mm-link variant="secondary" href="#">서비스 약관</mm-link>
-          </mm-group>
-        </div>
+        <mm-group style="margin-top: -0.25rem">
+          <mm-link variant="secondary" href="#">개인정보처리방침</mm-link>
+          <i class="icon-bullet"></i>
+          <mm-link variant="secondary" href="#">서비스 약관</mm-link>
+        </mm-group>
       </mm-tile>
     </div>
   </div>
 </nav>
 <div class="navbar-backdrop"></div>
 
-<div class="sidebar-menu">
+<nav class="sidebar-menu">
+  <mm-group alignment="vertical">
+    <mm-menuitem href="index.html">
+      <mm-avatar slot="avatar" variant="tertiary" icon="home-simple-door" aria-label="홈">
+      </mm-avatar>
+    </mm-menuitem>
+    <mm-menuitem label="Tokens" href="tokens.html">
+      <mm-avatar slot="avatar" variant="tertiary" size="medium" icon="palette"> </mm-avatar>
+    </mm-menuitem>
+    <mm-menuitem label="Signifier" href="signifier.html">
+      <mm-avatar slot="avatar" variant="tertiary" size="medium" icon="design-pencil"> </mm-avatar>
+    </mm-menuitem>
+  </mm-group>
   <div>
-    <mm-group alignment="vertical">
-      <mm-menuitem href="index.html">
-        <mm-avatar slot="avatar" variant="tertiary" icon="home-simple-door" aria-label="홈">
-        </mm-avatar>
-      </mm-menuitem>
-      <mm-menuitem label="Tokens" href="tokens.html">
-        <mm-avatar slot="avatar" variant="tertiary" size="medium" icon="palette"> </mm-avatar>
-      </mm-menuitem>
-      <mm-menuitem label="Signifier" href="signifier.html">
-        <mm-avatar slot="avatar" variant="tertiary" size="medium" icon="design-pencil"> </mm-avatar>
-      </mm-menuitem>
-    </mm-group>
-
-    <menu>
-      <button
-        style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: var(--space-1)"
-      >
-        <mm-avatar slot="avatar" variant="tertiary">
-          <mm-icon slot="icon" name="flower"></mm-icon>
-        </mm-avatar>
-        <mm-text variant="body">Visual Information</mm-text>
-        <div style="margin-left: auto"><mm-icon name="nav-arrow-down"></mm-icon></div>
-      </button>
+    <button aria-haspopup="menu" aria-controls="" class="is-open">
+      <mm-avatar slot="avatar" variant="tertiary">
+        <mm-icon slot="icon" name="flower"></mm-icon>
+      </mm-avatar>
+      <mm-text variant="body">Visual Information</mm-text>
+      <div style="margin-left: auto"><mm-icon name="nav-arrow-down"></mm-icon></div>
+    </button>
+    <menu id="" aria-labelledby="">
       <a href="text.html"> text </a>
       <a href="textPair.html"> TextPair </a>
       <a href="avatar.html">avatar </a>
@@ -115,34 +107,32 @@
       <a href="separator.html"> separator </a>
       <a href="step.html">step</a>
     </menu>
-
-    <menu>
-      <button
-        style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: var(--space-1)"
-      >
-        <mm-avatar slot="avatar" variant="tertiary">
-          <mm-icon slot="icon" name="mouse-button-left"></mm-icon>
-        </mm-avatar>
-        <mm-text variant="body">Actions</mm-text>
-        <div style="margin-left: auto"><mm-icon name="nav-arrow-down"></mm-icon></div>
-      </button>
+  </div>
+  <div>
+    <button aria-haspopup="menu" aria-controls="actions menu" class="is-open">
+      <mm-avatar slot="avatar" variant="tertiary">
+        <mm-icon slot="icon" name="mouse-button-left"></mm-icon>
+      </mm-avatar>
+      <mm-text variant="body">Actions</mm-text>
+      <div style="margin-left: auto"><mm-icon name="nav-arrow-down"></mm-icon></div>
+    </button>
+    <menu id="actions menu" aria-labelledby="actions menu">
       <a href="button.html"> button </a>
       <a href="iconButton.html"> icon button </a>
       <a href="menuitem.html">menu item</a>
       <a href="link.html"> link </a>
       <a href="tab.html"> tab </a>
     </menu>
-
-    <menu>
-      <button
-        style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: var(--space-1)"
-      >
-        <mm-avatar slot="avatar" variant="tertiary">
-          <mm-icon slot="icon" name="input-field"></mm-icon>
-        </mm-avatar>
-        <mm-text variant="body">Forms</mm-text>
-        <div style="margin-left: auto"><mm-icon name="nav-arrow-down"></mm-icon></div>
-      </button>
+  </div>
+  <div>
+    <button aria-haspopup="menu" aria-controls="" class="is-open">
+      <mm-avatar slot="avatar" variant="tertiary">
+        <mm-icon slot="icon" name="input-field"></mm-icon>
+      </mm-avatar>
+      <mm-text variant="body">Forms</mm-text>
+      <div style="margin-left: auto"><mm-icon name="nav-arrow-down"></mm-icon></div>
+    </button>
+    <menu id="" aria-labelledby="">
       <a href="select.html">select</a>
       <a href="checkbox.html">checkbox</a>
       <a href="radio.html">radio</a>
@@ -153,20 +143,19 @@
       <a href="numberfield.html"> NumberField </a>
       <a href="textarea.html"> textarea </a>
     </menu>
-
-    <menu>
-      <button
-        style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: var(--space-1)"
-      >
-        <mm-avatar slot="avatar" variant="tertiary">
-          <mm-icon slot="icon" name="building"></mm-icon>
-        </mm-avatar>
-        <mm-text variant="body">Components</mm-text>
-        <div style="margin-left: auto"><mm-icon name="nav-arrow-down"></mm-icon></div>
-      </button>
-      <!-- <mm-menuitem label="컴포넌트">
+  </div>
+  <div>
+    <button aria-haspopup="menu" aria-controls="" class="is-open">
+      <mm-avatar slot="avatar" variant="tertiary">
+        <mm-icon slot="icon" name="building"></mm-icon>
+      </mm-avatar>
+      <mm-text variant="body">Components</mm-text>
+      <div style="margin-left: auto"><mm-icon name="nav-arrow-down"></mm-icon></div>
+    </button>
+    <!-- <mm-menuitem label="컴포넌트">
         <mm-avatar slot="avatar" variant="tertiary" size="medium" icon="building"> </mm-avatar>
       </mm-menuitem> -->
+    <menu id="" aria-labelledby="">
       <a href="breadcrumb.html"> breadcrumb </a>
       <a href="tooltip.html"> tooltip </a>
       <a href="callout.html"> callout </a>
@@ -175,17 +164,16 @@
       <a href="table.html">table</a>
       <a href="result.html">result</a>
     </menu>
-
-    <menu>
-      <button
-        style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: var(--space-1)"
-      >
-        <mm-avatar slot="avatar" variant="tertiary">
-          <mm-icon slot="icon" name="city"></mm-icon>
-        </mm-avatar>
-        <mm-text variant="body">Patterns</mm-text>
-      </button>
-
+  </div>
+  <div>
+    <button aria-haspopup="menu" aria-controls="" class="is-open">
+      <mm-avatar slot="avatar" variant="tertiary">
+        <mm-icon slot="icon" name="city"></mm-icon>
+      </mm-avatar>
+      <mm-text variant="body">Patterns</mm-text>
+      <div style="margin-left: auto"><mm-icon name="nav-arrow-down"></mm-icon></div>
+    </button>
+    <menu id="" aria-labelledby="">
       <a href="accordion.html">accordion</a>
       <a href="presentation.html">layers</a>
       <a href="dashboard.html">dashboard</a>
@@ -202,17 +190,15 @@
       <!-- messaging / feedback -->
     </menu>
   </div>
-</div>
+</nav>
 
-<!-- <nav aria-label="On this page">
+<!--
+<nav aria-label="On this page">
   <div>On this page</div>
-  
   <a href="#skip">Skip to content link</a>
-  
   <a href="#toc">Table of contents</a>
-  
   <a href="#bc">Page breadcrumbs</a>
-  
   <a href="#ln">Local navigation</a>
-  
-  <a href="#global">Global navigation</a> -->
+  <a href="#global">Global navigation</a>
+</nav>
+ -->

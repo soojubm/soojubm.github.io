@@ -10,12 +10,15 @@
 }
 
 .profile-user {float:left;width:320px;position:relative;z-index:var(--zindex-default);}
-.profile-user-description {max-height:5.4em;margin:var(--space-4) 0;white-space:normal;overflow:hidden;text-overflow:ellipsis;word-wrap:break-word;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;position:relative;}
+.profile-user-description {max-height:3.4em;margin:var(--space-4) 0;white-space:normal;overflow:hidden;text-overflow:ellipsis;word-wrap:break-word;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;position:relative;}
 
 .profile-body {padding:0 0 64px calc(320px + var(--size-large));box-sizing:border-box;position:relative;}
 
-.tabpanel {display:flex;flex-wrap:wrap;justify-content:space-between;}
-.tabpanel > * {width:calc(33.3333% - .75rem);}
+[role=tab] {}
+[role=tabpanel]{display:flex;flex-wrap:wrap;justify-content:space-between;width:100%;}
+[role=tabpanel] > * {width:calc(33.3333% - .75rem);}
+[role=tabpanel][aria-hidden=false] {display:flex;gap:var(--space-4);}
+[role=tabpanel][aria-hidden=true] {display:none;}
 
 .card {
   display:flex;

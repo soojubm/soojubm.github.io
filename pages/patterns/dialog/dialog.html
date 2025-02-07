@@ -39,7 +39,6 @@
         aria-describedby="dialog-description2"
       >
         <header class="dialog-head">
-          <!-- <h1 class="dialog-title" id="dialog-title">페이지를 나가시겠어요?</h1> -->
           <mm-text variant="subhead" class="dialog-title">페이지를 나가시겠어요?</mm-text>
           <button class="dialog-close js-close" aria-label="delete"></button>
         </header>
@@ -47,14 +46,35 @@
           <p class="dialog-description" id="dialog-description2">
             저장되지 않은 변경 사항이 있습니다. 이 페이지에서 나가면 변경 사항이 취소됩니다.
           </p>
-          <!-- <p class="dialog-description" id="dialog-description">
-              아직 게시물을 공유하지 않았습니다. 게시하지 않고 나가시겠어요?
-            </p> -->
-          <!-- <mm-text variant="subhead" class="dialog-title" id="dialog-title2"></mm-text> -->
         </div>
         <mm-group variant="button" class="dialog-foot">
           <mm-button variant="tertiary" size="large">계속 수정하기</mm-button>
           <mm-button variant="primary" size="large">나가기</mm-button>
+        </mm-group>
+      </aside>
+      <br />
+      <aside
+        class="dialog"
+        role="alertdialog"
+        aria-modal="true"
+        aria-labelledby="dialog-title2"
+        aria-describedby="dialog-description2"
+      >
+        <header class="dialog-head">
+          <!-- <mm-text variant="subhead" class="dialog-title">페이지를 나가시겠어요?</mm-text> -->
+          <mm-clear-button></mm-clear-button>
+          <!-- <button class="dialog-close js-close" aria-label="delete"></button> -->
+        </header>
+        <div class="dialog-body">
+          <p class="dialog-description" id="dialog-description2">
+            By clicking “Accept Cookies”, you agree to the storing of cookies on your device to
+            enhance site navigation, analyze site usage, and assist in our marketing efforts. View
+            our Cookie Policy for more information.
+          </p>
+        </div>
+        <mm-group variant="button" class="dialog-foot">
+          <mm-button variant="tertiary" size="large">Cookie Settings</mm-button>
+          <mm-button variant="primary" size="large">Accept Cookie</mm-button>
         </mm-group>
       </aside>
     </div>

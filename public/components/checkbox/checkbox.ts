@@ -23,6 +23,8 @@ class Checkbox extends CustomHTMLElement {
 
     const label = document.createElement('label')
     label.setAttribute('for', this.name || '')
+    // label.append(...this.childNodes)
+    label.append(this.textContent || '')
 
     const input = document.createElement('input')
     input.setAttribute('type', 'checkbox')
@@ -36,12 +38,9 @@ class Checkbox extends CustomHTMLElement {
 
     shadow.appendChild(container)
     container.appendChild(input)
-    container.appendChild(label)
 
-    if (this.label) {
-      label.textContent = this.textContent || this.label
-    } else {
-      label.append(...this.childNodes)
+    if (this.textContent && this.textContent.length > 0) {
+      container.appendChild(label)
     }
 
     if (this.checked) input.setAttribute('checked', 'true')
@@ -55,7 +54,6 @@ class Checkbox extends CustomHTMLElement {
     }
 
     // 임시
-    // container.append(...this.childNodes)
     shadow.appendChild(makeStyleSheet('checkbox'))
   }
 
@@ -69,10 +67,6 @@ class Checkbox extends CustomHTMLElement {
 
   get helper() {
     return this.getAttribute('helper')
-  }
-
-  get label() {
-    return this.getAttribute('label')
   }
 
   get value() {

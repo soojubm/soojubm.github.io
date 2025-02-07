@@ -9,7 +9,7 @@
   </dl>
 
   <section class="component-example">
-    <fieldset role="radiogroup">
+    <fieldset role="radiogroup" style="max-width: 520px">
       <legend hidden>radiogroup</legend>
       <mm-group variant="checkbox">
         <mm-radio id="gender-man" name="gender" value="">Video Killed the Radio Button</mm-radio>
@@ -19,16 +19,14 @@
           checked and disabled
         </mm-radio>
         <mm-separator></mm-separator>
-        <div style="width: 100%; max-width: 520px">
-          <mm-tile variant="elevated">
-            <mm-radio name="gender" id="option1" value="" style="margin-top: -0.25rem">
-              <mm-text variant="label">Standard License</mm-text>
-              <mm-text variant="label-strong">₩ 2,000</mm-text>
-              <div style="height: var(--space-2)"></div>
-              <mm-tag>460P 적립</mm-tag>
-            </mm-radio>
-          </mm-tile>
-        </div>
+        <mm-tile variant="elevated" style="width: 100%">
+          <mm-radio name="gender" id="option1" value="" style="margin-top: -0.25rem">
+            <mm-text variant="label">Standard License</mm-text>
+            <mm-text variant="label-strong">₩ 2,000</mm-text>
+            <div style="height: var(--space-2)"></div>
+            <mm-tag>460P 적립</mm-tag>
+          </mm-radio>
+        </mm-tile>
       </mm-group>
     </fieldset>
   </section>

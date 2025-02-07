@@ -8,22 +8,23 @@ class Separator extends HTMLElement {
     const shadow = this.attachShadow({ mode: 'open' })
 
     // ! hr 태그는 innerText 안 됨.
-    const container = document.createElement('div')
+    const container = document.createElement('hr')
     container.role = 'separator'
-    container.classList.add('separator')
     container.dataset.spacing = this.spacing || ''
 
     const textSlot = document.createElement('slot')
     textSlot.name = 'text'
 
-    shadow.append(container, makeStyleSheet('separator'))
-    container.appendChild(textSlot)
+    shadow.append(container)
+    shadow.append(makeStyleSheet('separator'))
+    container.append(textSlot)
   }
+
+  disconnectedCallback() {}
 
   get spacing() {
     return this.getAttribute('spacing')
   }
-  disconnectedCallback() {}
 }
 
 export default Separator
