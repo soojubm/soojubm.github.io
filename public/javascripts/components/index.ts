@@ -45,6 +45,7 @@ import TextList from '../../components/text/textList'
 import TextPair from '../../components/textpair/textpair'
 import Dropdown from '../../components/textfield/dropdown'
 import ButtonListComponent from '../../components/buttonList/buttonList'
+import PageHeader from '../../components/pageheader/pageheader'
 
 export function defineCustomElement() {
   if ('customElements' in window) {
@@ -105,6 +106,8 @@ export function defineCustomElement() {
     customElements.define('mm-group', Group)
     customElements.define('mm-row', Row)
     customElements.define('mm-separator', Separator)
+
+    customElements.define('mm-pageheader', PageHeader)
   }
 }
 

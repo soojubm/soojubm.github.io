@@ -1,11 +1,9 @@
 <main class="page">
-  <mm-text-group variant="title">
-    <mm-text variant="title">Tags</mm-text>
-    <mm-text variant="body-large">
-      인접 요소나 부모 요소를 부연하는 시각 정보입니다. 상태, 카테고리, 키워드로 강조된 시각 정보는
-      사용자가 복잡한 정보 더미에서 중요한 정보를 우선적으로 파악하도록 돕습니다.
-    </mm-text>
-  </mm-text-group>
+  <mm-pageheader
+    title="Tags"
+    description="인접 요소나 부모 요소를 부연하는 시각 정보입니다. 상태, 카테고리, 키워드로 강조된 시각 정보는
+    사용자가 복잡한 정보 더미에서 중요한 정보를 우선적으로 파악하도록 돕습니다."
+  ></mm-pageheader>
   <!-- <mm-text variant="body-large">
       post 페이지에서 태그와 컴포넌트에서의 태그. hashtag는 tag 컴포넌트와 역할이 다르기 때문에 별도의 컴포넌트로 만들어주어야 한다. 현재
       hashtag(keyword)는 chip으로 대체. todo. 댑스가 2이상 인 케이스.
@@ -55,6 +53,9 @@
 
   <section class="component-guide">
     <mm-text-group>
+      <div
+        style="width: 8px; height: 8px; background: #000; text-align: center; border-radius: 50%"
+      ></div>
       <mm-text variant="subhead">Meta Problems</mm-text>
       <mm-text variant="body">
         버튼이나 다른 클릭할 수 있는 컴포넌트와 혼동되지 않아야 합니다. 상태나 카테고라이징에
@@ -68,6 +69,9 @@
     </mm-text-group>
 
     <mm-text-group>
+      <div
+        style="width: 8px; height: 8px; background: #000; text-align: center; border-radius: 50%"
+      ></div>
       <mm-text variant="subhead">Platform Problems</mm-text>
       <mm-text variant="label-strong">Non-clickable? Non-interactive?</mm-text>
       <mm-text variant="body">탐색을 보조하기 위한 정보 강조 또는 요약, 정보를 단순 보충</mm-text>

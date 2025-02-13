@@ -1,6 +1,15 @@
 [
   {
     "id": 2025,
+    "releasedate": 1998,
+    "titlekorean": "라이언 일병 구하기",
+    "titleenglish": "Saving Private Ryan",
+    "director": "스티븐 스필버그그",
+    "country": "미국",
+    "etc": ""
+  },
+  {
+    "id": 2025,
     "releasedate": 1972,
     "titlekorean": "마테이 사건",
     "titleenglish": "The Mattei Affair",

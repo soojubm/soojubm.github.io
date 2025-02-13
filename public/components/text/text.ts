@@ -1,4 +1,4 @@
-import { makeStyleSheet } from '../../javascripts/components/utils'
+ import { makeStyleSheet } from '../../javascripts/components/utils'
 
 // : 'title' | 'subhead' | 'body' | 'body-large' | 'label' | 'label-strong'
 

@@ -1,11 +1,9 @@
 <main class="page">
-  <mm-text-group variant="title">
-    <mm-text variant="title">Avatar</mm-text>
-    <mm-text variant="body-large">
-      개체(유저, 회사, 프로젝트 등)를 대표하는 시각 정보입니다. 정보 더미의 주체로서 인접한 정보
-      더미 중 최상위 위계<span hidden>(시각적인 위계가 아님)</span>를 갖습니다.
-    </mm-text>
-  </mm-text-group>
+  <mm-pageheader
+    title="Avatar"
+    description="개체(유저, 회사, 프로젝트 등)를 대표하는 시각 정보입니다. 정보 더미의 주체로서 인접한 정보
+  더미 중 최상위 위계(시각적인 위계가 아님)를 갖습니다."
+  ></mm-pageheader>
 
   <section class="component-example">
     <mm-group variant="">
@@ -34,79 +32,6 @@
       <dd>string</dd>
     </dl>
   </section>
-
-  <section class="browserWindow_my1Q" style="margin: 2rem 0">
-    <header class="browserWindowHeader_jXSR">
-      <div class="dots">
-        <span class="dot_giz1" style="background: rgb(242, 95, 88)"></span>
-        <span class="dot_giz1" style="background: rgb(251, 190, 60)"></span>
-        <span class="dot_giz1" style="background: rgb(88, 203, 66)"></span>
-      </div>
-      <div class="browserWindowAddressBar_Pd8y text--truncate">
-        <font style="vertical-align: inherit">http://로컬호스트:3000</font>
-      </div>
-      <div class="browserWindowMenuIcon_Vhuh">
-        <span class="bar_rrRL"></span>
-        <span class="bar_rrRL"></span>
-        <span class="bar_rrRL"></span>
-      </div>
-    </header>
-    <article class="browserWindowBody_Idgs" style="padding: 2rem">
-      <mm-group variant="">
-        <mm-avatar variant="secondary" size="huge" default="true" badge="true"></mm-avatar>
-        <mm-avatar size="huge" default="true" badge="true" badge></mm-avatar>
-        <mm-avatar size="large" default="true" default="true" badge="true"></mm-avatar>
-        <mm-avatar size="medium" default="true" fallback="수" badge="true"></mm-avatar>
-        <mm-avatar size="small" default="true"> </mm-avatar>
-      </mm-group>
-    </article>
-  </section>
-
-  <style>
-    .browserWindow_my1Q {
-      border: 3px solid #ebedf0;
-      border-radius: var(--radius-large);
-    }
-    .browserWindowHeader_jXSR {
-      background: #ebedf0;
-      align-items: center;
-      padding: 0.5rem 1rem;
-      display: flex;
-    }
-    .dots {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .dot_giz1 {
-      background-color: rgb(187, 187, 187);
-      border-radius: 50%;
-      width: 12px;
-      height: 12px;
-    }
-    .browserWindowAddressBar_Pd8y {
-      background-color: #fff;
-      user-select: none;
-      border-radius: 12.5px;
-      flex: 1 0 0%;
-      margin: 0px 1rem;
-      padding: 5px 15px;
-      font: 400 13px Arial, sans-serif;
-    }
-    .browserWindowBody_Idgs {
-      padding: 1rem;
-    }
-    .browserWindowMenuIcon_Vhuh {
-      margin-left: auto;
-    }
-    .bar_rrRL {
-      background-color: rgb(170, 170, 170);
-      width: 17px;
-      height: 3px;
-      margin: 3px 0px;
-      display: block;
-    }
-  </style>
 
   <section class="component-guide">
     <mm-text-group>
