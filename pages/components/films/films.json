@@ -1,10 +1,28 @@
 [
   {
     "id": 2025,
+    "releasedate": 2004,
+    "titlekorean": "나비효과",
+    "titleenglish": "The Butterfly Effect",
+    "director": "에릭 브레스, J. 매키 그루버",
+    "country": "미국",
+    "etc": ""
+  },
+  {
+    "id": 2025,
+    "releasedate": 1933,
+    "titlekorean": "매일 밤의 꿈",
+    "titleenglish": "Every-Night Dreams",
+    "director": "나루세 미키오",
+    "country": "일본",
+    "etc": ""
+  },
+  {
+    "id": 2025,
     "releasedate": 1998,
     "titlekorean": "라이언 일병 구하기",
     "titleenglish": "Saving Private Ryan",
-    "director": "스티븐 스필버그그",
+    "director": "스티븐 스필버그",
     "country": "미국",
     "etc": ""
   },

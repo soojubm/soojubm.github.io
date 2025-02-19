@@ -20,7 +20,7 @@ function detectTheme() {
       // console.log(checkboxElement, isDarkTheme(), checkboxElement.checked)
 
       // switch
-      checkboxElement.addEventListener('change', event => {
+      checkboxElement.addEventListener('change', () => {
         const currentTheme = isDarkTheme() ? LIGHT_THEME_CLASS : DARK_THEME_CLASS
         localStorage.setItem('theme', currentTheme)
 

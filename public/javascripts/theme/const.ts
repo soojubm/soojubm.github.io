@@ -1,12 +1,12 @@
 export const DARK_THEME_CLASS = 'dark'
-export const LIGHT_THEME_CLASS = ''
+export const LIGHT_THEME_CLASS = 'light'
+export const BRUTAL_THEME_CLASS = 'brutal'
 export const DARKTHEME_SELECTOR = '.js-darkmode'
 
 const savedTheme = localStorage.getItem('theme')
 
+// TODO getSavedTheme
 export const isDarkTheme = () => localStorage.getItem('theme') === exports.DARK_THEME_CLASS
-
-// export const isDarkTheme = () => savedTheme === DARK_THEME_CLASS
 
 // export const isDarkTheme = window.matchMedia &&
 //   window.matchMedia('(prefers-color-scheme: dark)').matches;
