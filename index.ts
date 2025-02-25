@@ -30,6 +30,17 @@ import { getWindowScrollTop, getElementOffsetTop } from './public/javascripts/ut
 // document.addEventListener('DOMContentLoaded', lockBodyElement)
 document.addEventListener('DOMContentLoaded', defineCustomElement)
 
+// TODO 윈도우에서 폰트
+document.addEventListener('DOMContentLoaded', () => {
+  const setWindowsFont = () => {
+    if (/Windows/i.test(navigator.platform)) {
+      document.documentElement.style.setProperty('--font-family', "'Pretendard', sans-serif")
+    }
+  }
+
+  setWindowsFont()
+})
+
 window.addEventListener('load', detectLoad)
 
 document.addEventListener('DOMContentLoaded', domEvents)

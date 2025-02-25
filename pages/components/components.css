@@ -3,6 +3,7 @@
   --container-width: var(--layout-width-small);
 }
 .component-example {
+  /* max-width: 50%; */
   margin: 2rem -5vw 0 calc(-5vw + 1rem);
   padding: 2rem calc(var(--grid-margin) - 1rem);
   border-radius: var(--radius-large) var(--radius-large) 0 0;
@@ -24,6 +25,7 @@
 }
 
 .component-props {
+  /* max-width: 50%; */
   margin: 2rem 0 0 calc(-5vw + 1rem);
   padding: 1.5rem calc(var(--grid-margin) - 1rem);
   margin-top: -3rem;
@@ -35,6 +37,11 @@
 .component-guide {
   margin: 0 0 0 calc(-5vw + 1rem);
   padding: 0 calc(var(--grid-margin) - 1rem);
+
+  /* max-width: 35%;
+  position: absolute;
+  right: 0;
+  top: 7rem; */
 }
 
 .component-case {
@@ -57,7 +64,7 @@
 .component-props dl {display:flex;flex-wrap:wrap;column-gap:var(--space-1);}
 .component-props dl dt {}
 .component-props dl dt::after {content:':'}
-.component-props dl dd {margin-right:var(--space-3);font-weight: var(--font-weight-bold);font-style:italic;;color:rgb(29, 161, 242)}
+.component-props dl dd {margin-right:var(--space-3);font-weight: var(--font-weight-bold);font-style:italic;;color:rgb(29, 161, 242);color:#f57a2e;}
 .component-props dl dd + dd {font-size:var(--font-size-small);color:var(--color-text);}
 
 .component-references {
@@ -77,18 +84,6 @@
   }
 }
 
-.component-navigation {
-  width:calc(100% + .25rem);
-  box-sizing: border-box;
-  background:var(--color-background);
-  position:sticky;top:calc(var(--navbar-height));z-index:7;padding:var(--space-2) var(--grid-margin) !important;
-  scroll-behavior: smooth;
-}
-.component-navigation-background {
-  position: absolute;
-  display: none;
-}
-
 /* 타일 안에서 사용할 때 */
 mm-tile [variant=subhead] + [variant=body] {
   display: block;
@@ -105,26 +100,30 @@ mm-tile [variant=subhead] + [variant=body] {
 .article-aka dd {margin: 0;}
 
 .component-guide mm-text-group {display:block;margin-top:2rem;}
-.component-guide ul, .component-guide dl {max-width: var(--layout-width-small);}
 
 .spacing-card {padding:var(--space-inset-tile);overflow:hidden;position:relative;}
 .space {display:flex;align-items:center;justify-content:center;height:100%;border-radius:var(--radius);background:var(--green100);position:relative;}
 .space span {font-size:10px;}
 
-
-
 @media (max-width: 1100px) {
   .component-example {
+    max-width: 100%;
     margin-inline: calc(var(--grid-margin) * -1);
     padding-inline: var(--grid-margin);
     border-inline: 0;
     border-radius: 0;
   }
-
   .component-props {
+    max-width: 100%;
     margin-inline: calc(var(--grid-margin) * -1);
     padding-inline: var(--grid-margin);
     border-inline: 0;
     border-radius: 0;
+  }
+  .component-guide {
+    max-width: 100%;
+    position: relative;
+    top: auto;
   }
 }
+

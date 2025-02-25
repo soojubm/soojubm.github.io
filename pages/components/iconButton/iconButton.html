@@ -28,9 +28,7 @@
   <section class="component-guide">
     <mm-text-group>
       <mm-text variant="subhead">Meta problems</mm-text>
-      <mm-text variant="body">
-        익숙한 메타포로 보편성이 확보된 아이콘에 한정하여 사용하세요.
-      </mm-text>
+      <mm-text variant="body"> 보편성이 확보된 메타포로 한정하여 사용하세요. </mm-text>
     </mm-text-group>
 
     <mm-text-group>
@@ -58,8 +56,9 @@
             width: auto;
             gap: var(--space-1);
             border: none;
-            background-color: #fff;
+            background-color: var(--color-background);
             font: inherit;
+            color: var(--color-text);
           "
         >
           <mm-avatar slot="avatar" size="large" icon="share-ios"></mm-avatar>
@@ -79,6 +78,7 @@
             border-radius: var(--radius);
             background-color: transparent;
             font: inherit;
+            color: var(--color-text);
           "
         >
           <mm-icon slot="avatar" size="large" name="share-ios" style="font-size: 1.5rem"></mm-icon>

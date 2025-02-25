@@ -328,7 +328,7 @@ menu-item:focus-visible {
 	width: 4px;
 	height:4px;
 	border-radius: 50%;
-	background: var(--color-background);
+	background: var(--color-text);
   animation: chatting .6s 0s ease infinite;
 }
 .animation-chatting span:nth-of-type(1) {}

@@ -29,8 +29,8 @@
       </mm-group>
       <mm-separator></mm-separator>
       <mm-group>
-        <mm-button variant="primary">action</mm-button>
-        <mm-button variant="tertiary">action</mm-button>`
+        <mm-button variant="primary">small</mm-button>
+        <mm-button variant="tertiary">small</mm-button>`
       </mm-group>
     </mm-tabpanel>
     <mm-tabpanel role="tabpanel" aria-hidden="true" data-index="2">
@@ -38,8 +38,8 @@
         <mm-button variant="tertiary" status="hover">hovered</mm-button>
         <mm-button variant="tertiary" status="focus">focused</mm-button>
         <mm-button variant="`tertiary" disabled>disabled</mm-button>
-        <mm-button variant="tertiary">
-          <div slot="prefix" class="chat-inputing animation-chatting">
+        <mm-button variant="primary">
+          <div class="chat-inputing animation-chatting">
             <span style="background-color: var(--color-background-strong)"></span>
             <span style="background-color: var(--color-background-strong)"></span>
             <span style="background-color: var(--color-background-strong)"></span>
@@ -119,7 +119,7 @@
 
     <mm-text-group>
       <mm-text variant="subhead" data-temp=" minimum viable experience" style="margin-top: 0">
-        Toggle buttons / Segmented? tab?
+        Toggle buttons / Segmented Button(MD) / Segmented controls(HIG)
       </mm-text>
       <mm-link href="https://www.w3.org/WAI/ARIA/apg/patterns/listbox/"> WAI listbox</mm-link>
       <mm-text>ButtonGroup variant='toggle' size='sm'</mm-text>
@@ -365,8 +365,6 @@
   </section>
 
   <section class="component-guide">
-    <mm-text-list texts='["스몰 사이즈의 버튼은 비활성 상태가 필요할까?"]'> </mm-text-list>
-
     <mm-text variant="subhead">Visual Style</mm-text>
     <mm-text variant="body">
       맥락이 다른 액션을 그룹으로 제공할 수 있습니다. 이 때 단일선택, 다중선택, 삭제여부, 펼침메뉴

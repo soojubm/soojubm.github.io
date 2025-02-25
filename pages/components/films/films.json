@@ -2,6 +2,24 @@
   {
     "id": 2025,
     "releasedate": 2004,
+    "titlekorean": "퍼펙트 데이즈",
+    "titleenglish": "The Butterfly Effect",
+    "director": "웨스 앤더슨",
+    "country": "독일",
+    "etc": "일본"
+  },
+  {
+    "id": 2025,
+    "releasedate": 2004,
+    "titlekorean": "퍼펙트 데이즈",
+    "titleenglish": "The Butterfly Effect",
+    "director": "빔 벤더스",
+    "country": "독일",
+    "etc": "일본"
+  },
+  {
+    "id": 2025,
+    "releasedate": 2004,
     "titlekorean": "나비효과",
     "titleenglish": "The Butterfly Effect",
     "director": "에릭 브레스, J. 매키 그루버",
@@ -47,6 +65,15 @@
   {
     "id": 2025,
     "releasedate": 1964,
+    "titlekorean": "신용쌍매",
+    "titleenglish": "TODO",
+    "director": "테시가하라 히로시",
+    "country": "일본",
+    "etc": "단편"
+  },
+  {
+    "id": 2025,
+    "releasedate": 1964,
     "titlekorean": "아코",
     "titleenglish": "Ako / White Morning",
     "director": "테시가하라 히로시",
@@ -60,6 +87,15 @@
     "titleenglish": "One Fine Spring Day",
     "director": "허진호",
     "country": "한국",
+    "etc": ""
+  },
+  {
+    "id": 2025,
+    "releasedate": 1968,
+    "titlekorean": "11동의 폭동",
+    "titleenglish": "TODO",
+    "director": "",
+    "country": "",
     "etc": ""
   },
   {

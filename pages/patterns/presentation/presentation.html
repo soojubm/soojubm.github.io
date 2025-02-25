@@ -9,7 +9,23 @@
       <mm-button class="js-scrollspy-trigger" href="#">Sheet</mm-button>
       <mm-button class="js-scrollspy-trigger" href="#">Popover</mm-button>
     </mm-group>
-  </nav> -->
+  </nav>
+  <style>
+
+.component-navigation {
+  width:calc(100% + .25rem);
+  box-sizing: border-box;
+  background:var(--color-background);
+  position:sticky;top:calc(var(--navbar-height));z-index:7;padding:var(--space-2) var(--grid-margin) !important;
+  scroll-behavior: smooth;
+}
+.component-navigation-background {
+  position: absolute;
+  display: none;
+}
+  </style>
+  -->
+
   <mm-text variant="title">Popovers</mm-text>
 
   <section class="component-example">
