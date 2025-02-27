@@ -1,7 +1,10 @@
 import { makeStyleSheet } from '../../javascripts/components/utils'
 
 class Input extends HTMLElement {
-  // private hostElement: HTMLDivElement
+  private hostElement: HTMLDivElement
+  private labelElement: HTMLLabelElement
+  private inputElement: HTMLInputElement
+  private helperElement: HTMLParagraphElement
 
   static get observedAttributes() {
     return ['type', 'placeholder', 'value', 'disabled']
@@ -9,23 +12,36 @@ class Input extends HTMLElement {
 
   constructor() {
     super()
-    const shadowRoot = this.attachShadow({ mode: 'open' })
+    this.attachShadow({ mode: 'open' })
+    this.hostElement = document.createElement('div')
+    this.labelElement = document.createElement('label')
+    this.inputElement = document.createElement('input')
+    this.helperElement = document.createElement('p')
+  }
 
-    const hostElement = document.createElement('div')
+  connectedCallback() {
+    const { shadowRoot, hostElement, labelElement, inputElement, helperElement } = this
+
     hostElement.classList.add('textfield')
     hostElement.classList.toggle('is-invalid', this.isInvalid)
+    hostElement.dataset.label = String(this.hiddenLabel)
     if (this.hiddenLabel) hostElement.dataset.label = String(this.hiddenLabel)
 
-    const labelElement = document.createElement('label')
     labelElement.classList.add('textfield-label')
     labelElement.textContent = this.label
 
-    const inputElement = document.createElement('input')
     inputElement.classList.add('reset-input', 'textfield-input')
     inputElement.setAttribute('type', this.type)
     inputElement.setAttribute('value', this.value)
     inputElement.setAttribute('placeholder', this.placeholder)
     if (this.disabled) inputElement.setAttribute('disabled', String(this.disabled))
+    // inputElement.setAttribute('disabled', String(this.disabled))
+
+    const small = document.createElement('small')
+    small.textContent = '선택입력'
+
+    helperElement.classList.add('textfield-helper')
+    helperElement.textContent = this.helper
 
     const prefixSlot = document.createElement('slot')
     prefixSlot.name = 'prefix'
@@ -36,21 +52,12 @@ class Input extends HTMLElement {
     const linkSlot = document.createElement('slot')
     linkSlot.name = 'link'
 
-    const small = document.createElement('small')
-    small.textContent = '선택입력'
-
-    const p = document.createElement('p')
-    p.classList.add('textfield-helper')
-    p.textContent = this.helper
-
     shadowRoot!.append(hostElement, makeStyleSheet('textfield'))
     if (this.label) hostElement.appendChild(labelElement)
     if (this.isOptional) labelElement.appendChild(small)
     hostElement.append(prefixSlot, inputElement, suffixSlot, linkSlot)
-    if (this.helper) hostElement.appendChild(p)
+    if (this.helper) hostElement.appendChild(helperElement)
   }
-
-  connectedCallback() {}
   disconnectedCallback() {}
 
   get type() {

@@ -104,7 +104,7 @@ input[type=search]::-webkit-search-results-decoration {display:none;}
 textarea.textfield-input {
   height: auto;
 }
-.textfield-input:hover {border-color:var(--color-primary);}
+/* .textfield-input:hover {border-color:var(--color-primary);} */
 .textfield-input:focus {box-shadow:var(--status-hover);}
 .textfield-input:read-only {color:var(--color-text-light);cursor:default;}
 .textfield-input:disabled {opacity:.5;cursor:not-allowed;}
@@ -150,7 +150,7 @@ textarea.textfield-input {
   --textfield-icon-position: 0;
 }
 .textfield[data-label=false] .textfield-label {}
-[data-label=false] .textfield-input {padding-left:var(--textfield-height);}
+/* [data-label=false] .textfield-input {padding-left:var(--textfield-height);} */
 /* 왜 안 됨. */
 /* ::slotted([slot=prefix]) ~ .textfield-input {padding-left:48px !important;} */
 
