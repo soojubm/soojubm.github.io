@@ -1,18 +1,27 @@
 [
   {
     "id": 2025,
-    "releasedate": 2004,
-    "titlekorean": "퍼펙트 데이즈",
-    "titleenglish": "The Butterfly Effect",
-    "director": "웨스 앤더슨",
-    "country": "독일",
-    "etc": "일본"
+    "releasedate": 2017,
+    "titlekorean": "제럴드의 게임",
+    "titleenglish": "Gerald's Game",
+    "director": "마이크 플래너건",
+    "country": "미국",
+    "etc": "스티븐 킹킹"
   },
   {
     "id": 2025,
-    "releasedate": 2004,
+    "releasedate": 2023,
+    "titlekorean": "기상천외한 헨리 슈거 이야기",
+    "titleenglish": "The Wonderful Story of Henry Sugar",
+    "director": "웨스 앤더슨",
+    "country": "미국",
+    "etc": ""
+  },
+  {
+    "id": 2025,
+    "releasedate": 2023,
     "titlekorean": "퍼펙트 데이즈",
-    "titleenglish": "The Butterfly Effect",
+    "titleenglish": "Perfect Days",
     "director": "빔 벤더스",
     "country": "독일",
     "etc": "일본"
@@ -33,7 +42,7 @@
     "titleenglish": "Every-Night Dreams",
     "director": "나루세 미키오",
     "country": "일본",
-    "etc": ""
+    "etc": "무성"
   },
   {
     "id": 2025,
@@ -64,12 +73,12 @@
   },
   {
     "id": 2025,
-    "releasedate": 1964,
+    "releasedate": 1989,
     "titlekorean": "신용쌍매",
-    "titleenglish": "TODO",
-    "director": "테시가하라 히로시",
-    "country": "일본",
-    "etc": "단편"
+    "titleenglish": "Doubles Cause Troubles",
+    "director": "왕정",
+    "country": "홍콩",
+    "etc": ""
   },
   {
     "id": 2025,
@@ -91,11 +100,11 @@
   },
   {
     "id": 2025,
-    "releasedate": 1968,
+    "releasedate": 1954,
     "titlekorean": "11동의 폭동",
-    "titleenglish": "TODO",
-    "director": "",
-    "country": "",
+    "titleenglish": "Riot in Cell Block 11",
+    "director": "돈 시겔",
+    "country": "미국",
     "etc": ""
   },
   {
@@ -669,11 +678,11 @@
   },
   {
     "id": 20240421,
-    "releasedate": 2023,
-    "titlekorean": "사랑의 난파선 TODO",
-    "titleenglish": "Concrete Utopia",
-    "director": "엄태화",
-    "country": "한국",
+    "releasedate": 1989,
+    "titlekorean": "사랑의 난파선",
+    "titleenglish": "再見王老五The Bachelor's Swan Song",
+    "director": "이동승",
+    "country": "홍콩",
     "etc": ""
   },
   {

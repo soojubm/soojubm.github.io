@@ -5,7 +5,7 @@ class PageHeader extends HTMLElement {
 
   constructor() {
     super()
-    const shadowRoot = this.attachShadow({ mode: 'open' })
+    this.attachShadow({ mode: 'open' })
     this.hostElement = document.createElement('mm-text-group')
     this.titleElement = document.createElement('mm-text')
     this.descriptionElement = document.createElement('mm-text')

@@ -112,11 +112,23 @@
         label="상세주소"
         type="text"
         name="email"
-        placeholder=""
+        placeholder="동 호수"
         isOptional
       ></mm-textfield>
       <!-- First name, Last Name, Country / Region, State, Zipcode" -->
       <!-- <mm-textfield label="공동현관 출입번호" type="text" isOptional name="email" id="login-email" placeholder=""></mm-textfield> -->
+
+      <div style="background-color: var(--color-background-weak); border-radius: var(--radius)">
+        <mm-textfield
+          label="상세주소"
+          type="text"
+          name="email"
+          placeholder="서울시 용산구"
+          isOptional
+        ></mm-textfield>
+        <mm-textfield label="" type="text" name="email" placeholder="동, 호수 등"></mm-textfield>
+      </div>
+
       <mm-textfield
         label="배송 메시지"
         type="text"
@@ -126,7 +138,7 @@
         placeholder="직접 입력"
       ></mm-textfield>
       <mm-checkbox>개인정보 수집 및 이용 동의(수취인정보?)</mm-checkbox>
-      <mm-button variant="primary" label="배송지 등록"></mm-button>
+      <mm-button variant="primary" size="large">배송지 등록</mm-button>
     </mm-group>
   </mm-tile>
 
