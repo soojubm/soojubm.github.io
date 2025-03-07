@@ -1,12 +1,21 @@
 [
   {
     "id": 2025,
+    "releasedate": 2000,
+    "titlekorean": "배틀 로얄",
+    "titleenglish": "Battle Royale",
+    "director": "후카사쿠 킨지",
+    "country": "일본",
+    "etc": ""
+  },
+  {
+    "id": 2025,
     "releasedate": 2017,
     "titlekorean": "제럴드의 게임",
     "titleenglish": "Gerald's Game",
     "director": "마이크 플래너건",
     "country": "미국",
-    "etc": "스티븐 킹킹"
+    "etc": "스티븐 킹"
   },
   {
     "id": 2025,
@@ -9156,7 +9165,7 @@
     "titlekorean": "녹차의 맛",
     "titleenglish": "The Taste of Tea",
     "director": "이시이 카츠히토",
-    "country": "일본본",
+    "country": "일본",
     "etc": ""
   },
   {
@@ -9228,7 +9237,7 @@
     "titlekorean": "자토이치",
     "titleenglish": "Zatoichi: Life and Opinion of Masseur Ichi",
     "director": "미스미 켄지",
-    "country": "일본본",
+    "country": "일본",
     "etc": ""
   },
   {
@@ -9260,7 +9269,7 @@
     "titlekorean": "불한당: 나쁜 놈들의 세상",
     "titleenglish": "The Merciless",
     "director": "변성현",
-    "country": "한국국",
+    "country": "한국",
     "etc": ""
   },
   {
@@ -9276,7 +9285,7 @@
     "titlekorean": "착한자매",
     "titleenglish": "Beautiful Sisters:Seduced",
     "director": "니시무라 쇼고로",
-    "country": "일본본",
+    "country": "일본",
     "etc": ""
   },
   {
@@ -9284,7 +9293,7 @@
     "titlekorean": "대결투",
     "titleenglish": "The Duel",
     "director": "장철",
-    "country": "홍콩콩",
+    "country": "홍콩",
     "etc": ""
   },
   {
@@ -9292,7 +9301,7 @@
     "titlekorean": "취우",
     "titleenglish": "Sudden Rain",
     "director": "나루세 미키오",
-    "country": "일본본",
+    "country": "일본",
     "etc": ""
   },
   {
@@ -9372,7 +9381,7 @@
     "titlekorean": "선라이즈",
     "titleenglish": "Sunrise: A Song of Two Humans",
     "director": "F. W 무르나우",
-    "country": "독일일",
+    "country": "독일",
     "etc": ""
   },
   {
@@ -9380,7 +9389,7 @@
     "titlekorean": "내시",
     "titleenglish": "Eunuch",
     "director": "신상옥",
-    "country": "한국국",
+    "country": "한국",
     "etc": ""
   },
   {
@@ -9484,7 +9493,7 @@
     "titlekorean": "포스트맨 블루스",
     "titleenglish": "Postman Blues",
     "director": "다나카 히로유키",
-    "country": "일본본",
+    "country": "일본",
     "etc": ""
   },
   {

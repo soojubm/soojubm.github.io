@@ -1,7 +1,7 @@
 .navbar {
-  display:flex;align-items: center;
+  display:flex;
+  align-items: center;
   height:var(--navbar-height);
-  margin:0 auto;
   padding:var(--space-3) var(--grid-margin);
   box-sizing:border-box;background:var(--color-background);
   position:fixed;top:0;left:0;right:0;z-index:var(--zindex-menu);}
@@ -77,9 +77,11 @@
 /* ReactNative safeAreaView, scrollView */
 
 .page {
-  /* margin: 0 auto 때문에 모션이 안 됨 */
+  /* max-width: var(--layout-width-wide); */
+  /* margin: 0 auto; */
+  /* padding: var(--space-4) var(--grid-margin) 6rem calc(var(--grid-margin) + var(--width-sidemenu)); */
   padding: var(--space-4) var(--grid-margin) 6rem;
-  box-sizing: border-box;
+  box-sizing: border-box; 
   position: relative;
 }
 
@@ -89,13 +91,16 @@
   padding: 0 0 8rem;
 }
 
-/* 1. with sidemenu */
 /* 2. navbar with sidebar fluid layout */
 .page[data-size=wide] {
   display: flex;
   justify-content: space-between;
 }
 .page[data-size=narrow] {}
+
+.footer {
+  padding: 0 var(--grid-margin);
+}
 
 .sidebar-menu {
   display: flex;
@@ -174,10 +179,16 @@
   overscroll-behavior:contain;
 }
 .is-menu-opened .page,
-.is-menu-opened .footer {margin-left:calc(var(--width-sidemenu) + var(--grid-margin) + 1rem);}
+.is-menu-opened .footer {
+  padding-left:calc(var(--width-sidemenu) + var(--grid-margin) + var(--grid-margin) + 1rem);
+  /* transform: translateX(calc(var(--grid-margin) + var(--width-sidemenu))); */
+}
 
 /* --small */
 @media (max-width:1080px) {
-  .is-menu-opened .page,
-  .is-menu-opened .footer {margin-left: 0;}
+  .page {
+  }
+  .is-menu-opened .footer {
+    transform: translateX(0);
+  }
 }

@@ -87,16 +87,3 @@
   bottom: 0;
   z-index: var(--zindex-modal);
 }
-
-/* 
-// todo flex일 대 min-width가 필수가 된다.. margin/padding은 container에 의존
-@mixin stack-vertical-scroll {
-  display:flex; // 중복
-  flex-wrap: nowrap;
-  white-space:nowrap;
-  overflow:auto;
-
-  scroll-behavior: smooth;
-  > * {min-width:auto;}
-  &::-webkit-scrollbar {display:none;}
-} */

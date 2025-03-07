@@ -10,11 +10,11 @@
     ></mm-text-pair>
     <mm-separator></mm-separator>
     <mm-group style="gap: 2rem">
-      <div style="">
+      <div>
         <mm-text variant="label">사이즈</mm-text>
         <mm-text variant="subhead">보통</mm-text>
       </div>
-      <div style="">
+      <div>
         <mm-text variant="label">한글</mm-text>
         <mm-text variant="subhead">작은 거 필요하나</mm-text>
       </div>
@@ -37,14 +37,9 @@
   <section class="component-guide">
     <mm-text-group>
       <mm-text variant="subhead">menuItem. with Avatar.</mm-text>
-      <p>예: ProfileKeyValuePair, FeatureLabelWithDescription.</p>
-      <p>KeyValuePair :: Key와 Value가 동일한 위계를 갖는다. 리스트 형태이다. alignment/size</p>
-      <p>LabelWithDescription :: Label이 강조된다. size?</p>
-
-      <p>
-        keyvalue 에서 value가 subhead의 형태는 가질 수 있으나 그 역할은 아님. keyvalue는 추상화ㅏ된
-        컴포넌트이긴 함.
-      </p>
+      <mm-text-list
+        texts='["예: ProfileKeyValuePair, FeatureLabelWithDescription.", "KeyValuePair :: Key와 Value가 동일한 위계를 갖는다. 리스트 형태이다. alignment/size", "LabelWithDescription :: Label이 강조된다. size?", "keyvalue 에서 value가 subhead의 형태는 가질 수 있으나 그 역할은 아님. keyvalue는 추상화ㅏ된 컴포넌트이긴 함."]'
+      ></mm-text-list>
     </mm-text-group>
   </section>
 </main>

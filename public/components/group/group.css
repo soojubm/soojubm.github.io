@@ -1,12 +1,20 @@
 /* TODO 가운데 정렬된 목록의 가로 스크롤 방법 */
 
-.group {
+/* 
+// todo flex일 대 min-width가 필수가 된다.. margin/padding은 container에 의존
+@mixin stack-vertical-scroll {
   display:flex;
-  flex-wrap:wrap;
+  flex-wrap: nowrap;
+  white-space:nowrap;
+  overflow:auto;
+  > * {min-width:auto;}
+} */
+
+.group {
+  display: flex;
+  flex-wrap: wrap;
   gap: var(--space-2);
 }
-/* .stack[data-scroll=vertical] {@include stack-vertical-scroll;} */
-/* // space-between + column width */
 
 .group[data-variant=menuitem] {
   flex-direction: column;
@@ -46,10 +54,9 @@
 
 .group[data-alignment=vertical] {
   flex-direction:column;align-items:flex-start;gap:var(--space-2);
-}
-/* .row[data-direction=column] > * {width:100%;} */
-.group[data-alignment=vertical] > * {
-  width: 100%;
+  & > * {
+    width: 100%;
+  }
 }
 
 /* TODO: align 은 네이티브 값과 충돌할 수 있어서? 빨갛게 뜸? */
@@ -59,38 +66,23 @@
 
 .group[data-direction=row] {}
 .group[data-direction=column] {}
-
 .group[data-alignment=right] {}
 
 .group[data-alignment='bleeding-vertical'] {
+  display: flex;
+  flex-wrap: nowrap;  /* 아이템들이 한 줄로만 배치되도록 설정 */
   white-space: nowrap;
+  padding: var(--space-3) 0 var(--space-0);
+  overflow-x: auto;   /* 수평 스크롤 활성화 */
 
-  padding: var(--space-3) 0;
-
-  display: flex;          /* Flexbox로 아이템들을 수평으로 배치 */
-  flex-wrap: nowrap;      /* 아이템들이 한 줄로만 배치되도록 설정 */
-  overflow-x: auto;       /* 수평 스크롤 활성화 */
-
-  /* scroll-behavior: smooth; */
-  /* > * {
-    min-width: auto;
-  } */
+  scroll-behavior: smooth;
+  /* > * { min-width: auto; } */
   /* &::-webkit-scrollbar {
     display: none;
+  }
+  &:hover {
+    &::-webkit-scrollbar {
+      display: block;
+    }
   } */
 }
-
-/* .group[data-alignment='bleeding-vertical']::-webkit-scrollbar-button {
-  width: 5vw;
-  background: #fff;
-} */
-/* // ::-webkit-scrollbar {
-//   display: none;
-// }
-
-
-// &:hover {
-//   ::-webkit-scrollbar {
-//     display: block;
-//   }
-// } */

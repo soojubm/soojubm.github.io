@@ -28,24 +28,81 @@
       </div>
     </section>
     <div style="height: var(--space-4)"></div>
-    <section class="step" data-align="vertical">
-      <div class="step-item is-active" aria-current="step">
-        <span class="step-item-icon">1</span>
-        <b class="step-item-label">장바구니</b>
-        <p class="step-item-description">
-          대통령은 국가의 원수이며, 외국에 대하여 국가를 대표한다. 국가원로자문회의의 조직·직무범위
-          기타 필요한 사항은 법률로 정한다. 국가는 대외무역을 육성하며, 이를 규제·조정할 수 있다.
-        </p>
+    <mm-tile>
+      <header class="authentication-head">
+        <mm-text variant="subhead">Tell us about yourself</mm-text>
+        <mm-text variant="body" class="authentication-head-description">
+          Now that you're all signed up, let's personalize your experience.
+        </mm-text>
+      </header>
+
+      <section class="step" data-align="vertical" style="margin: 1rem 0">
+        <div class="step-item is-active">
+          <span class="step-item-icon" style="color: #fff">1</span>
+          <mm-text class="step-item-label">I'm an engineer</mm-text>
+          <p class="step-item-description">
+            대통령은 국가의 원수이며, 외국에 대하여 국가를 대표한다. 국가원로자문회의의
+            조직·직무범위 기타 필요한 사항은 법률로 정한다. 국가는 대외무역을 육성하며, 이를
+            규제·조정할 수 있다.
+          </p>
+        </div>
+        <div class="step-item is-active">
+          <span class="step-item-icon" style="color: #fff">2</span>
+          <mm-text class="step-item-label">I want to design from scratch</mm-text>
+          <!-- <p class="step-item-description">
+            1칼럼(모바일)에서 결제 버튼을 누르기 전 최종 금액을 확인할 수 있는 구조가 되려면 2칼럼에서 우측을 결제를 위한 칼럼을 배치할
+            때(체크아웃페이지의 일반적인 레이아웃) 상품&서머리&결제버튼이 같은 컨테이너로 포함되어야.
+          </p>
+          <p class="step-item-description">결제정보 - 결제방법/주문상태/주문접수일시/주문완료일시/배송비/쿠폰사용금액/결제금액</p>
+          <p class="step-item-description">주문 정보를 로컬에 저장.</p> -->
+        </div>
+        <div class="step-item">
+          <span class="step-item-icon" style="font-size: var(--font-size-small)">3</span>
+          <mm-text class="step-item-label" style="color: var(--color-text)">
+            One last thing ㅡ how will you use your prototpe?
+          </mm-text>
+          <small>(You can pick more than one)</small>
+          <div style="height: var(--space-3)"></div>
+          <mm-group variant="" style="margin-left: 0.75rem">
+            <mm-button>Share for feedback</mm-button>
+            <mm-button>Present live</mm-button>
+            <mm-button>Test with users</mm-button>
+            <mm-button>Collaborate in real time</mm-button>
+            <mm-button>Hand off to developers</mm-button>
+          </mm-group>
+        </div>
+      </section>
+      <footer><mm-button variant="primary">Start creating</mm-button></footer>
+    </mm-tile>
+
+    <mm-separator></mm-separator>
+    <div>
+      <div style="display: flex; align-items: center; height: 32px; gap: var(--space-3)">
+        <mm-text variant="subhead">01</mm-text>
+        <mm-text variant="label-strong">Choose your platform</mm-text>
       </div>
-      <div class="step-item">
-        <span class="step-item-icon">2</span>
-        <b class="step-item-label">결제</b>
+      <div style="display: flex; align-items: center; height: 32px; gap: var(--space-3)">
+        <mm-text variant="subhead">02</mm-text>
+        <mm-text variant="label-strong">Set color theme</mm-text>
       </div>
-      <div class="step-item">
-        <span class="step-item-icon">3</span>
-        <b class="step-item-label">주문완료</b>
-      </div>
-    </section>
+    </div>
+    <mm-separator></mm-separator>
+    <mm-group>
+      <mm-menuitem>
+        <mm-avatar slot="avatar" size="medium"></mm-avatar>
+        <div slot="text">
+          <mm-text variant="label">Step 1</mm-text>
+          <mm-text variant="body">UPLOAD 3D FILES</mm-text>
+        </div>
+      </mm-menuitem>
+      <mm-menuitem>
+        <mm-avatar slot="avatar" size="medium"></mm-avatar>
+        <div slot="text">
+          <mm-text variant="label">Step 2</mm-text>
+          <mm-text variant="body">UPLOAD 3D FILES</mm-text>
+        </div>
+      </mm-menuitem>
+    </mm-group>
   </section>
 
   <section class="component-props">
@@ -177,20 +234,10 @@
       <li>add stack component. chip-group과 tag-group 제거하고 stack으로 통합.</li>
       <li>button small 삭제. chip과 형태의 변별력이 없고 용법이 중복.</li>
       <li>color gray600 삭제. 본문용으로 야외나 밝은 조명 아래서 가시성이 떨어짐.</li>
+      <li>타임라인과 구분. 타임라인은 히스토리 맥락으로 스텝의 역순. 확장, 링크, indentation</li>
+      <li>Changelog. non-clickable 로 변경 2021.10</li>
     </ul>
 
-    <mm-text-group>
-      <mm-text-list
-        texts='[
-      "타임라인과 구분. 타임라인은 히스토리 맥락으로 스텝의 역순. 확장, 링크, indentation",
-      "Changelog. non-clickable 로 변경 2021.10"
-      ]'
-      >
-      </mm-text-list>
-    </mm-text-group>
-  </section>
-
-  <section class="component-case">
     <mm-tile flat="flat" size="medium">
       <mm-group class="order-item-head">
         <mm-tag class="order-item-head-type" style="width: var(--size-large)">포장</mm-tag>
@@ -238,75 +285,7 @@
       </mm-group>
       <!-- <mm-tag>네이버 쇼핑은 왜 주문 내역을 숨길 수 있나?</mm-tag> -->
     </mm-tile>
-    <mm-tile>
-      <mm-group>
-        <mm-menuitem>
-          <mm-avatar slot="avatar" size="medium"></mm-avatar>
-          <div slot="text">
-            <mm-text variant="label">Step 1</mm-text>
-            <mm-text variant="body">UPLOAD 3D FILES</mm-text>
-          </div>
-        </mm-menuitem>
-        <mm-menuitem>
-          <mm-avatar slot="avatar" size="medium"></mm-avatar>
-          <div slot="text">
-            <mm-text variant="label">Step 2</mm-text>
-            <mm-text variant="body">UPLOAD 3D FILES</mm-text>
-          </div>
-        </mm-menuitem>
-        <mm-separator></mm-separator>
-        <div>
-          <div style="display: flex; align-items: center; height: 32px; gap: var(--space-3)">
-            <mm-text variant="subhead">01</mm-text>
-            <mm-text variant="label-strong">Choose your platform</mm-text>
-          </div>
-          <div style="display: flex; align-items: center; height: 32px; gap: var(--space-3)">
-            <mm-text variant="subhead">02</mm-text>
-            <mm-text variant="label-strong">Set color theme</mm-text>
-          </div>
-        </div>
-      </mm-group>
-    </mm-tile>
-    <mm-tile>
-      <header class="authentication-head">
-        <mm-text variant="subhead">Tell us about yourself</mm-text>
-        <mm-text variant="body" class="authentication-head-description">
-          Now that you're all signed up, let's personalize your experience.
-        </mm-text>
-      </header>
-
-      <section class="step" data-align="vertical" style="margin: 1rem 0">
-        <div class="step-item is-active">
-          <span class="step-item-icon" style="color: #fff">1</span>
-          <mm-text class="step-item-label">I'm an engineer</mm-text>
-        </div>
-        <div class="step-item is-active">
-          <span class="step-item-icon" style="color: #fff">2</span>
-          <mm-text class="step-item-label">I want to design from scratch</mm-text>
-          <!-- <p class="step-item-description">
-            1칼럼(모바일)에서 결제 버튼을 누르기 전 최종 금액을 확인할 수 있는 구조가 되려면 2칼럼에서 우측을 결제를 위한 칼럼을 배치할
-            때(체크아웃페이지의 일반적인 레이아웃) 상품&서머리&결제버튼이 같은 컨테이너로 포함되어야.
-          </p>
-          <p class="step-item-description">결제정보 - 결제방법/주문상태/주문접수일시/주문완료일시/배송비/쿠폰사용금액/결제금액</p>
-          <p class="step-item-description">주문 정보를 로컬에 저장.</p> -->
-        </div>
-        <div class="step-item">
-          <span class="step-item-icon" style="font-size: var(--font-size-small)">3</span>
-          <mm-text class="step-item-label" style="color: var(--color-text)">
-            One last thing ㅡ how will you use your prototpe?
-          </mm-text>
-          <small>(You can pick more than one)</small>
-          <div style="height: var(--space-3)"></div>
-          <mm-group variant="" style="margin-left: 0.75rem">
-            <mm-button>Share for feedback</mm-button>
-            <mm-button>Present live</mm-button>
-            <mm-button>Test with users</mm-button>
-            <mm-button>Collaborate in real time</mm-button>
-            <mm-button>Hand off to developers</mm-button>
-          </mm-group>
-        </div>
-      </section>
-      <footer><mm-button variant="primary">Start creating</mm-button></footer>
-    </mm-tile>
   </section>
+
+  <section class="component-case"></section>
 </main>

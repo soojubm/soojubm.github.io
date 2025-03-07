@@ -9,6 +9,7 @@ class Feature extends HTMLElement {
     container.classList.add('feature-item')
 
     const avatar = document.createElement('mm-avatar')
+    avatar.setAttribute('variant', 'secondary')
     avatar.setAttribute('size', 'large')
     avatar.innerText = this.icon || ''
     avatar.classList.add('feature-item-avatar')

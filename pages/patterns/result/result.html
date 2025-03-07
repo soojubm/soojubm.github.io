@@ -1,9 +1,10 @@
 <main class="page">
   <mm-text-group variant="title">
     <mm-text variant="title">Result</mm-text>
-    <mm-text variant="body-large"
-      >실행 결과. 완료Complete. 오류Error. 내용없음Result. 비공개.</mm-text
-    >
+    <mm-text variant="body-large">
+      실행 결과를 피드백하는 섹션 또는 페이지 단위의 컴포넌트. 완료Complete. 오류Error. 빈
+      데이터Empty Data. 비공개.
+    </mm-text>
   </mm-text-group>
 
   <dl class="article-aka">
@@ -33,12 +34,15 @@
   <section class="component-props">
     <mm-text variant="subhead">Props</mm-text>
     <dl>
-      <dt>title<abbr>?</abbr></dt>
+      <dt>iconName<abbr>?</abbr></dt>
+      <dd>string</dd>
+      <dt>title</dt>
       <dd>string</dd>
       <dt>description<abbr>?</abbr></dt>
       <dd>string</dd>
-      <dt>listSlot</dt>
+      <dt>children<abbr>?</abbr></dt>
       <dd>React.Node</dd>
+      <dd>extra elements</dd>
       <dt>primaryAction<abbr>?</abbr></dt>
       <dd>{label: string, onClick: () => void}</dd>
       <dt>secondaryAction<abbr>?</abbr></dt>

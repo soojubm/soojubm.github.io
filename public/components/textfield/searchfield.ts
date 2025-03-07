@@ -31,7 +31,9 @@ class SearchField extends Input {
     textfield?.append(searchIndicator, clearButton)
   }
 
-  connectedCallback() {}
+  connectedCallback() {
+    super.connectedCallback()
+  }
   disconnectedCallback() {}
 }
 

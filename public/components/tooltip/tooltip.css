@@ -9,7 +9,7 @@
   background:var(--color-background-strong);
   box-shadow:var(--shadow);
   font-size: var(--font-size-small);
-  color: var(--color-text);
+  color: var(--color-text-light);
   /* // align left */
   position:absolute;
   left:0;

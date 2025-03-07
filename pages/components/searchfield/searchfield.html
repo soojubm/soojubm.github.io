@@ -7,6 +7,22 @@
   <section class="component-example">
     <div style="max-width: 400px; position: relative">
       <mm-searchfield placeholder="궁금한 인물이나 이슈가 있나요?"></mm-searchfield>
+
+      <mm-group
+        alignment="bleeding-vertical"
+        class="suggestions"
+        style="
+          width: calc(100vw - var(--grid-margin) - var(--grid-margin));
+          padding-inline: var(--grid-margin);
+          margin: -1.25rem calc(var(--grid-margin) * -1) 0;
+        "
+      >
+        <mm-button>아파트열쇠를빌려드립니다</mm-button>
+        <mm-button>로얄테넌바움</mm-button>
+        <mm-button>소매치기</mm-button>
+        <mm-button>이탈리아여행</mm-button>
+      </mm-group>
+
       <button
         style="
           background-color: var(--color-primary);
@@ -21,48 +37,41 @@
       >
         <mm-icon name="arrow-right" color="#fff"></mm-icon>
       </button>
-      <div style="height: var(--space-2)"></div>
-      <mm-tile variant="elevated" class="search-recent">
-        <mm-group alignment="vertical">
-          <mm-text variant="label">최근 검색</mm-text>
-          <mm-menuitem label="고슴이">
-            <mm-avatar slot="avatar" style="background: beige">🦔</mm-avatar>
-            <mm-clear-button slot="action" aria-label="고슴이 검색 내역 삭제"></mm-clear-button>
-          </mm-menuitem>
-          <mm-menuitem label="개구리">
-            <mm-avatar slot="avatar" style="background: var(--green100)">🐸</mm-avatar>
-            <mm-clear-button
-              slot="action"
-              icon="xmark"
-              aria-label="개구리 검색 내역 삭제"
-            ></mm-clear-button>
-          </mm-menuitem>
-        </mm-group>
-      </mm-tile>
       <div style="height: var(--space-3)"></div>
-      <mm-tile variant="elevated">
-        <mm-group variant="menuitem" class="search-suggestion">
-          <mm-tile variant="elevated" size="small">
-            <mm-menuitem label="자동완(으)로 검색">
-              <mm-avatar slot="avatar" icon="search"> </mm-avatar>
-            </mm-menuitem>
-          </mm-tile>
-          <mm-menuitem label="자동완성">
-            <mm-avatar slot="avatar" icon="search"></mm-avatar>
+      <mm-group variant="menuitem" class="search-suggestion">
+        <mm-tile variant="elevated" size="small">
+          <mm-menuitem label="자동완(으)로 검색">
+            <mm-avatar slot="avatar" icon="search"> </mm-avatar>
           </mm-menuitem>
-          <mm-menuitem label="자동완성유아이">
-            <mm-avatar slot="avatar" icon="search"></mm-avatar>
-          </mm-menuitem>
-        </mm-group>
-      </mm-tile>
-
-      <mm-group alignment="bleeding-vertical" style="margin: var(--space-0) 0 1.5rem">
-        <mm-button>아파트열쇠를빌려드립니다</mm-button>
-        <mm-button>로얄테넌바움</mm-button>
-        <mm-button>소매치기</mm-button>
-        <mm-button>이탈리아여행</mm-button>
+        </mm-tile>
+        <mm-menuitem label="자동완성">
+          <mm-avatar slot="avatar" icon="search"></mm-avatar>
+        </mm-menuitem>
+        <mm-menuitem label="자동완성유아이">
+          <mm-avatar slot="avatar" icon="search"></mm-avatar>
+        </mm-menuitem>
       </mm-group>
 
+      <div style="margin: 1.25rem 0 0 0">
+        <mm-separator></mm-separator>
+      </div>
+
+      <mm-group alignment="vertical">
+        <mm-text variant="label">최근 검색</mm-text>
+        <mm-menuitem label="고슴이">
+          <mm-avatar slot="avatar" style="background: beige">🦔</mm-avatar>
+          <mm-clear-button slot="action" aria-label="고슴이 검색 내역 삭제"></mm-clear-button>
+        </mm-menuitem>
+        <mm-menuitem label="개구리">
+          <mm-avatar slot="avatar" style="background: var(--green100)">🐸</mm-avatar>
+          <mm-clear-button
+            slot="action"
+            icon="xmark"
+            aria-label="개구리 검색 내역 삭제"
+          ></mm-clear-button>
+        </mm-menuitem>
+      </mm-group>
+      <div style="height: var(--space-3)"></div>
       <mm-group alignment="vertical">
         <div style="display: flex; align-items: center; gap: 0.5rem">
           <mm-text variant="label">People</mm-text>
@@ -75,9 +84,7 @@
         </mm-menuitem>
       </mm-group>
 
-      <div style="margin: 1.25rem 0 0 0">
-        <mm-separator></mm-separator>
-      </div>
+      <div style="height: var(--space-3)"></div>
 
       <mm-group alignment="vertical">
         <mm-text variant="label">Channels</mm-text>

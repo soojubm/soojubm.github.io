@@ -1,11 +1,5 @@
 <main class="page">
-  <mm-pageheader
-    title="MenuItem"
-    description="사용자가 수행할 수 있는 행동 목록. 선택과는 다른 맥락. 단독으로 쓸 수 있다. TODO
-    role=listbox/menu는 항목 선택과 명령 실행 차이. 자식으로 option, menuitemcheckbox 등을 가지는
-    것이 차이. select와의 차이는 이미지를 포함할 수 있다고. 사용 맥락 또한 listbox는 폼이나 입력.
-    aria-orientation값을 갖습니다 vertical. 드롭다운은 패턴. 사용자 인터렉션 방식에 가까움. listbox는 기본적으로 드롭다운 목록을 제공하지 않는다."
-  ></mm-pageheader>
+  <mm-pageheader title="MenuItem" description="사용자가 수행할 수 있는 행동 목록."></mm-pageheader>
 
   <dl class="article-aka">
     <dt>a.k.a.</dt>
@@ -78,6 +72,13 @@
   <section class="component-guide">
     <mm-text-group>
       <mm-text variant="subhead">Meta problems</mm-text>
+      <mm-text variant="body">
+        선택과는 다른 맥락. 단독으로 쓸 수 있다. TODO role=listbox/menu는 항목 선택과 명령 실행
+        차이. 자식으로 option, menuitemcheckbox 등을 가지는 것이 차이. select와의 차이는 이미지를
+        포함할 수 있다고. 사용 맥락 또한 listbox는 폼이나 입력. aria-orientation값을 갖습니다
+        vertical. 드롭다운은 패턴. 사용자 인터렉션 방식에 가까움. listbox는 기본적으로 드롭다운
+        목록을 제공하지 않는다."
+      </mm-text>
       <mm-text variant="body">
         align-items: center가 없어도 되는. border가 있고 내부 간격이 있으면.
       </mm-text>
@@ -155,8 +156,6 @@
     </mm-tile>
     <mm-tile variant="flat">
       <mm-group variant="dropdown">
-        <mm-text variant="label">listbox / gap margin left on label</mm-text>
-        <div style="height: var(--space-1)"></div>
         <mm-menuitem role="menuitem" href="#design">
           <mm-icon slot="check" name="check"></mm-icon>
           <span slot="text">Only Text</span>
