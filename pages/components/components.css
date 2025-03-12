@@ -4,10 +4,9 @@
 }
 .component-example {
   /* max-width: 50%; */
-  margin: 2rem -5vw 0 calc(-5vw + 1rem);
   padding: 2rem calc(var(--grid-margin) - 1rem);
   border-radius: var(--radius-large) var(--radius-large) 0 0;
-  margin: 2rem 0 3rem calc(-5vw + 1rem);
+  margin: 2.5rem 0 3rem calc(-5vw + 1rem);
   border: var(--border);
   border-bottom: 0;
   /* 
@@ -64,11 +63,11 @@
 }
 
 .component-props mm-text {display:none}
-.component-props dl {display:flex;flex-wrap:wrap;column-gap:var(--space-1);}
+.component-props dl {display:flex;flex-wrap:wrap;column-gap:var(--space-1);font-size:var(--font-size-small);}
 .component-props dl dt {}
 .component-props dl dt::after {content:':'}
 .component-props dl dd {margin-right:var(--space-3);font-weight: var(--font-weight-bold);font-style:italic;color:rgb(29, 161, 242);}
-.component-props dl dd + dd {font-size:var(--font-size-small);color:var(--color-text);}
+.component-props dl dd + dd {color:var(--color-text);}
 
 .component-references {
   display: flex;
@@ -102,7 +101,7 @@ mm-tile [variant=subhead] + [variant=body] {
 .article-aka dt {margin: 0;}
 .article-aka dd {margin: 0;}
 
-.component-guide mm-text-group {display:block;margin-top:2rem;}
+.component-guide mm-text-group {display:block;margin-top:2.5rem;}
 
 .spacing-card {padding:var(--space-inset-tile);overflow:hidden;position:relative;}
 .space {display:flex;align-items:center;justify-content:center;height:100%;border-radius:var(--radius);background:var(--green100);position:relative;}

@@ -1,4 +1,4 @@
-<main class="page" style="min-height: 80vh">
+<main class="page" style="max-width:1600px;margin:0 auto;">
   <header class="" style="display: flex; justify-content: space-between">
     <div style="width: 40%">
       <mm-text variant="title">
@@ -16,11 +16,14 @@
     </div>
   </header>
   <section style="margin: 4rem -4rem; display: flex; gap: 1rem">
-    <section style="border: var(--border); padding: 3rem; border-radius: 2rem">
-      <mm-text variant="body-large">Make a Constraints</mm-text>
-      <mm-text variant="title">한계를 설정하기</mm-text>
+    <article style="border: var(--border); padding: 2rem; border-radius: 2rem; border: 2px solid transparent;
+    background-image: linear-gradient(#fff, #fff), linear-gradient(to right, #231557 0%, #44107A 29%, #FF1361 67%, #FFF800 100%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;">
+      <mm-text variant="label">Make a Constraints</mm-text>
+      <mm-text variant="subhead">한계를 설정하기</mm-text>
       <br />
-      <mm-text variant="body-large">
+      <mm-text variant="body">
         모두를 위한 서비스, 접속 환경 등의 제약없이 없이. 궁극적으로 해결하려는 문제는 유저
         인터페이스가 아니다.
       </mm-text>
@@ -41,15 +44,13 @@
         확장과 유지 보수. 데스크탑 환경에서나 유효한 hover 형태를 디자인하는 데에 많은 시간을 들일
         필요가 없습니다.
       </mm-text>
-    </section>
+    </article>
 
-    <section style="border: var(--border); padding: 3rem; border-radius: 2rem">
-      <mm-text variant="body-large" data-temp=" minimum viable experience"
-        >
+    <article style="border: var(--border); padding: 2rem; border-radius: 2rem">
+      <mm-text variant="label" data-temp=" minimum viable experience">
         Progressive enhancement
-        </mm-text
-      >
-      <mm-text variant="title">점진적으로 향상하기</mm-text>
+        </mm-text>
+      <mm-text variant="subhead">점진적으로 향상하기</mm-text>
       <br />
       <mm-text variant="body-large">
         처음부터 너무 많은 약속 하지 않기. 시각 언어를 확장해가며 디테일을 높이세요. 중요한 것은
@@ -66,11 +67,11 @@
         디자인 시스템은 유아이 라이브러리UI Library나 유아이 키트UI Kits가 아닙니다. 가능한 모든
         경우의 수를 나열하지 마세요.
       </mm-text>
-    </section>
+    </article>
 
-    <section style="border: var(--border); padding: 3rem; border-radius: 2rem">
-      <mm-text variant="body-large">Make a Constraints</mm-text>
-      <mm-text variant="title">예측 가능한 설계하기</mm-text>
+    <article style="border: var(--border); padding: 2rem; border-radius: 2rem">
+      <mm-text variant="label">Make a Constraints</mm-text>
+      <mm-text variant="subhead">예측 가능한 설계하기</mm-text>
       <br />
       <mm-text variant="body-large">
         UI는 사용자의 추가적인 학습을 최소화할 정도로 보편타당해야. 제품 스코프에서도 친숙하고
@@ -80,7 +81,7 @@
       <mm-text variant="body">
         디바이스나 브라우저 등 접속 환경에 종속되지 않는 일관된 시각 경험.
       </mm-text>
-    </section>
+    </article>
   </section>
   <style>
     .browserWindow_my1Q {
@@ -364,6 +365,9 @@
         </article>
       </mm-tile>
 
+
+      
+
       <style>
         .feed {
           /* margin: 3rem 0; */
@@ -433,6 +437,9 @@
           </div>
         </div>
       </div>
+
+
+      
       <mm-text-list
         texts='[
           "popover: 간이 전체 알림. 전체보기기 링크 버튼 필요.", "modal: 전체 알림 페이지를 대체할 수 있다. infinite scroll을 통한 페이지를 대체"
@@ -444,6 +451,132 @@
         <mm-link>더 보기</mm-link>
       </footer>
       <!-- <mm-result label="최근 알림 메세지가 없습니다."></mm-result> -->
+    </mm-tile>
+
+    <mm-tile>
+      <mm-menuitem label="수줍이" description="Youtube subscriber">
+        <mm-avatar slot="avatar" default="true"></mm-avatar>
+      </mm-menuitem>
+      <div style="margin: var(--space-2) 0 0">
+        <mm-text variant="body">
+          Sometimes at night, I find myself behind the computer. When I finally blink, a mess of code
+          is drawing random structures on the screen. I spend the rest of the night staring.
+        </mm-text>
+      </div>
+      <div style="margin-block: var(--space-3)">
+        <mm-group variant="button">
+          <mm-keyvalue key="팔로워" value="62" alignment="inline"></mm-keyvalue>
+          <i class="icon-bullet"></i>
+          <mm-keyvalue key="팔로잉" value="8" alignment="inline"></mm-keyvalue>
+        </mm-group>
+      </div>
+      <mm-tile variant="tile" size="small">
+        <mm-text>🥺 수줍이님을 팔로우하고 있는 친구가 없습니다.</mm-text>
+      </mm-tile>
+    </mm-tile>
+    <mm-tile variant="flat">
+      <div style="display: flex; gap: 1rem">
+        <mm-avatar size="huge" variant="secondary" default="true"></mm-avatar>
+        <mm-group style="flex-direction: column; gap: var(--space-2)">
+          <div>
+            <mm-text variant="label">Top User</mm-text>
+            <mm-text variant="subhead">수줍이</mm-text>
+          </div>
+          <div>
+            <mm-text variant="label">Daily Purchase</mm-text>
+            <mm-text variant="subhead">10 Items</mm-text>
+          </div>
+        </mm-group>
+      </div>
+      <mm-separator></mm-separator>
+      <mm-keyvalue key="Total New Users" value="5.9K" alignment="vertical"></mm-keyvalue>
+      <mm-tag>8.2% 상승</mm-tag>
+      <mm-tile variant="elevated" size="small" style="margin: var(--space-3) 0 0">
+        <mm-group variant="avatar">
+          <mm-avatar size="small" default="true"></mm-avatar>
+          <mm-avatar size="small" default="true"></mm-avatar>
+          <mm-avatar size="small" default="true"></mm-avatar>
+          <mm-avatar size="small" default="true"></mm-avatar>
+          <mm-text style="margin-left: var(--space-2)"> Followed by 수줍이 외 4명 </mm-text>
+        </mm-group>
+      </mm-tile>
+      <!-- <mm-text class="mutiual"> 내가 팔로우하는 사용자 중에는 팔로워가 없습니다. (twitter) </mm-text> -->
+    </mm-tile>
+
+
+
+    
+    <mm-tile>
+      <mm-titlebar titletext="See this post in"> </mm-titlebar>
+      <br />
+      <mm-group variant="menuitem">
+        <mm-menuitem label="수줍이 앱">
+          <mm-avatar slot="avatar" variant="secondary" size="large" default="true"></mm-avatar>
+          <mm-button slot="action">열기</mm-button>
+        </mm-menuitem>
+        <mm-menuitem label="사파리 브라우저">
+          <mm-avatar slot="avatar" size="large" default="true"></mm-avatar>
+          <mm-button slot="action" status="active">실행</mm-button>
+        </mm-menuitem>
+      </mm-group>
+    </mm-tile>
+
+    <mm-tile variant="flat" name="access">
+      <mm-titlebar titletext="공개 대상 선택"></mm-titlebar>
+      <br />
+      <mm-group variant="menuitem">
+        <mm-menuitem>
+          <mm-radio slot="check"></mm-radio>
+          <mm-avatar slot="avatar" size="large" icon="group"> </mm-avatar>
+          <mm-text-pair
+            slot="text"
+            labelText="친구만"
+            descriptionText="회원님의 Facebook 친구"
+          ></mm-text-pair>
+        </mm-menuitem>
+        <mm-menuitem data->
+          <mm-radio slot="check"></mm-radio>
+          <mm-avatar slot="avatar" size="large" icon="lock"> </mm-avatar>
+          <mm-text-pair
+            slot="text"
+            labelText="나만 보기"
+            descriptionText="부끄러우니까"
+          ></mm-text-pair>
+        </mm-menuitem>
+      </mm-group>
+    </mm-tile>
+
+    <mm-tile variant="flat" class="share">
+      <mm-titlebar titletext="공유"></mm-titlebar>
+      <div style="height: var(--space-3)"></div>
+      <mm-text variant="subhead" class="share-title">가족이나 친구와<br />함께 보세요!</mm-text>
+      <div style="height: var(--space-3)"></div>
+      <mm-group variant="menuitem">
+        <mm-menuitem class="share-facebook" label="facebook으로 공유">
+          <mm-avatar
+            slot="avatar"
+            size="medium"
+            icon="facebook"
+            style="background-color: var(--color-facebook); color: #fff"
+          >
+          </mm-avatar>
+        </mm-menuitem>
+        <mm-menuitem class="share-twitter" label="twitter로 공유">
+          <mm-avatar
+            slot="avatar"
+            icon="twitter"
+            style="background-color: var(--color-twitter); color: #fff"
+          >
+          </mm-avatar>
+        </mm-menuitem>
+        <mm-menuitem class="share-kakao" label="kakao talk으로 공유">
+          <mm-avatar slot="avatar" icon="message" style="background-color: var(--color-kakao)">
+          </mm-avatar>
+        </mm-menuitem>
+        <mm-menuitem class="share-kakao" label="링크 복사">
+          <mm-avatar slot="avatar" icon="copy"> </mm-avatar>
+        </mm-menuitem>
+      </mm-group>
     </mm-tile>
   </section>
 

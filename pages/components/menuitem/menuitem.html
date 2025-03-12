@@ -40,6 +40,13 @@
         <mm-avatar slot="avatar">🦊</mm-avatar>
         <mm-radio slot="check" id="radio1" name="radio1" value="" checked="true"></mm-radio>
       </mm-menuitem>
+      <mm-menuitem label="windows 패턴">
+        <mm-avatar slot="avatar"></mm-avatar>
+        <mm-group slot="action" variant="chip">
+          <mm-button>퀵 액션</mm-button>
+          <mm-icon-button icon="arrow-right"> </mm-icon-button>
+        </mm-group>
+      </mm-menuitem>
       <mm-tile variant="elevated" size="small" role="menuitemcheckbox">
         <mm-menuitem label="강조된 메뉴아이템" description="리스트가 될 수 없어">
           <mm-avatar slot="avatar">🦊</mm-avatar>
@@ -91,6 +98,7 @@
         모든 menuitem container가 clickable은 아니다. 액션 버튼이 따로 존재할 수도 있어야 한다. 이
         정보가 중요한 이유 hover 상태 표현을 위해. 케이스. 팔로우 팔로잉. 또는 전체 영역이 팔로우.
       </mm-text>
+      <mm-text variant="label-strong">Dropdown / Sheet / Modal / Sidebar / Sitemap / GNB</mm-text>
     </mm-text-group>
 
     <mm-text-group>
@@ -113,19 +121,6 @@
         <li>MenuItemAction. toggle | more | delete</li>
         <li>MenuHelper. setting-item. filter-item.</li>
       </ul>
-    </mm-text-group>
-
-    <mm-text-group>
-      <mm-text variant="subhead">UI Patterns</mm-text>
-      <mm-text variant="label-strong">Dropdown / Sheet / Modal / Sidebar / Sitemap / GNB</mm-text>
-
-      <mm-menuitem label="windows 패턴">
-        <mm-avatar slot="avatar"></mm-avatar>
-        <mm-group slot="action" variant="chip">
-          <mm-button>퀵 액션</mm-button>
-          <mm-icon-button icon="arrow-right"> </mm-icon-button>
-        </mm-group>
-      </mm-menuitem>
     </mm-text-group>
   </section>
 
@@ -206,78 +201,6 @@
       <footer>
         <mm-button variant="primary" size="large">Buy now</mm-button>
       </footer>
-    </mm-tile>
-    <mm-tile>
-      <mm-titlebar titletext="See this post in"> </mm-titlebar>
-      <br />
-      <mm-group variant="menuitem">
-        <mm-menuitem label="수줍이 앱">
-          <mm-avatar slot="avatar" variant="secondary" size="large" default="true"></mm-avatar>
-          <mm-button slot="action">열기</mm-button>
-        </mm-menuitem>
-        <mm-menuitem label="사파리 브라우저">
-          <mm-avatar slot="avatar" size="large" default="true"></mm-avatar>
-          <mm-button slot="action" status="active">실행</mm-button>
-        </mm-menuitem>
-      </mm-group>
-    </mm-tile>
-
-    <mm-tile variant="flat" name="access">
-      <mm-titlebar titletext="공개 대상 선택"></mm-titlebar>
-      <br />
-      <mm-group variant="menuitem">
-        <mm-menuitem>
-          <mm-radio slot="check"></mm-radio>
-          <mm-avatar slot="avatar" size="large" icon="group"> </mm-avatar>
-          <mm-text-pair
-            slot="text"
-            labelText="친구만"
-            descriptionText="회원님의 Facebook 친구"
-          ></mm-text-pair>
-        </mm-menuitem>
-        <mm-menuitem data->
-          <mm-radio slot="check"></mm-radio>
-          <mm-avatar slot="avatar" size="large" icon="lock"> </mm-avatar>
-          <mm-text-pair
-            slot="text"
-            labelText="나만 보기"
-            descriptionText="부끄러우니까"
-          ></mm-text-pair>
-        </mm-menuitem>
-      </mm-group>
-    </mm-tile>
-
-    <mm-tile variant="flat" class="share">
-      <mm-titlebar titletext="공유"></mm-titlebar>
-      <div style="height: var(--space-3)"></div>
-      <mm-text variant="subhead" class="share-title">가족이나 친구와<br />함께 보세요!</mm-text>
-      <div style="height: var(--space-3)"></div>
-      <mm-group variant="menuitem">
-        <mm-menuitem class="share-facebook" label="facebook으로 공유">
-          <mm-avatar
-            slot="avatar"
-            size="medium"
-            icon="facebook"
-            style="background-color: var(--color-facebook); color: #fff"
-          >
-          </mm-avatar>
-        </mm-menuitem>
-        <mm-menuitem class="share-twitter" label="twitter로 공유">
-          <mm-avatar
-            slot="avatar"
-            icon="twitter"
-            style="background-color: var(--color-twitter); color: #fff"
-          >
-          </mm-avatar>
-        </mm-menuitem>
-        <mm-menuitem class="share-kakao" label="kakao talk으로 공유">
-          <mm-avatar slot="avatar" icon="message" style="background-color: var(--color-kakao)">
-          </mm-avatar>
-        </mm-menuitem>
-        <mm-menuitem class="share-kakao" label="링크 복사">
-          <mm-avatar slot="avatar" icon="copy"> </mm-avatar>
-        </mm-menuitem>
-      </mm-group>
     </mm-tile>
   </section>
 </main>

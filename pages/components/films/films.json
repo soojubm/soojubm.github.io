@@ -1,6 +1,42 @@
 [
   {
     "id": 2025,
+    "releasedate": 2001,
+    "titlekorean": "써스펙트",
+    "titleenglish": "Baby Driver",
+    "director": "애드거 라이트",
+    "country": "미국",
+    "etc": ""
+  },
+  {
+    "id": 2025,
+    "releasedate": 2017,
+    "titlekorean": "베이비 드라이버",
+    "titleenglish": "Baby Driver",
+    "director": "애드거 라이트",
+    "country": "미국",
+    "etc": ""
+  },
+  {
+    "id": 2025,
+    "releasedate": 1965,
+    "titlekorean": "겁쟁이",
+    "titleenglish": "The Coward",
+    "director": "사티야지트 레이",
+    "country": "인도",
+    "etc": ""
+  },
+  {
+    "id": 2025,
+    "releasedate": 2003,
+    "titlekorean": "살인의 추억",
+    "titleenglish": "Memories of Murder",
+    "director": "봉준호",
+    "country": "한국",
+    "etc": ""
+  },
+  {
+    "id": 2025,
     "releasedate": 2000,
     "titlekorean": "배틀 로얄",
     "titleenglish": "Battle Royale",
@@ -2734,7 +2770,7 @@
   {
     "id": 24,
     "releasedate": 1992,
-    "titlekorean": "금지된 사랑",
+    "titlekorean": "겨울의 심장 / ..금지된 사랑",
     "titleenglish": "A Heart In Winter, Un Coeur En Hiver",
     "director": "클로드 소테",
     "country": "프랑스"

@@ -77,6 +77,7 @@
 /* ReactNative safeAreaView, scrollView */
 
 .page {
+  min-height: calc(100vh - var(--navbar-height));
   /* max-width: var(--layout-width-wide); */
   /* margin: 0 auto; */
   /* padding: var(--space-4) var(--grid-margin) 6rem calc(var(--grid-margin) + var(--width-sidemenu)); */

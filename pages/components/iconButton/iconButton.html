@@ -14,6 +14,46 @@
       <mm-icon-button variant="navigator" icon="star"></mm-icon-button>
       <mm-clear-button></mm-clear-button>
     </mm-group>
+    <mm-separator></mm-separator>
+    <mm-group>
+      <button
+        style="
+          padding: 0;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: auto;
+          gap: var(--space-1);
+          border: none;
+          background-color: var(--color-background);
+          font: inherit;
+          color: var(--color-text);
+        "
+      >
+        <mm-avatar slot="avatar" size="large" icon="share-ios"></mm-avatar>
+        <small>공유하기</small>
+      </button>
+      <button
+        style="
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          width: var(--size-huge);
+          height: var(--size-huge);
+          gap: var(--space-1);
+          padding: var(--space-1) var(--space-3);
+          border: var(--border);
+          border-radius: var(--radius);
+          background-color: transparent;
+          font: inherit;
+          color: var(--color-text);
+        "
+      >
+        <mm-icon slot="avatar" size="large" name="share-ios" style="font-size: 1.5rem"></mm-icon>
+        <small>공유하기</small>
+      </button>
+    </mm-group>
   </section>
   <section class="component-props">
     <dl>
@@ -35,56 +75,9 @@
       <mm-text variant="subhead">Platform problems</mm-text>
       <mm-text variant="body">
         버튼이나 칩으로 아이콘 버튼을 대체한다면? 레이블로 인해 내부 간격을 정의하는 코드가 복잡해질
-        수 있고, 툴팁 포함 여부에 따른 조건이 필요할 수 있다.
+        수 있다. 또한, 아이콘 버튼에서만 사용되는 툴팁이 버튼에서의 옵셔널 정의가 불필요하다.
       </mm-text>
-      <mm-text variant="body">툴팁 포함. selectable? - togglabl</mm-text>
-    </mm-text-group>
-
-    <mm-text-group>
-      <mm-text variant="subhead">A11y</mm-text>
-      <mm-text variant="body">툴팁이나 대체레이블aria-label.</mm-text>
-    </mm-text-group>
-
-    <mm-text-group>
-      <mm-text variant="subhead">Playground</mm-text>
-      <mm-group>
-        <button
-          style="
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: auto;
-            gap: var(--space-1);
-            border: none;
-            background-color: var(--color-background);
-            font: inherit;
-            color: var(--color-text);
-          "
-        >
-          <mm-avatar slot="avatar" size="large" icon="share-ios"></mm-avatar>
-          <small>공유하기</small>
-        </button>
-        <button
-          style="
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            width: var(--size-huge);
-            height: var(--size-huge);
-            gap: var(--space-1);
-            padding: var(--space-1) var(--space-3);
-            border: var(--border);
-            border-radius: var(--radius);
-            background-color: transparent;
-            font: inherit;
-            color: var(--color-text);
-          "
-        >
-          <mm-icon slot="avatar" size="large" name="share-ios" style="font-size: 1.5rem"></mm-icon>
-          <small>공유하기</small>
-        </button>
-      </mm-group>
+      <mm-text variant="body">툴팁, 대체레이블aria-label. /selectable?</mm-text>
     </mm-text-group>
   </section>
 </main>
