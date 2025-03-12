@@ -61,6 +61,7 @@
   --grid-margin-minus: calc(var(--grid-margin) * -1);
 
   --gray0: #fff;
+  --gray50: #fcfdfc;
   --gray100: #f5f6f5;
   /* --gray100: #fafbfa; */
   --gray150: #eff1ef;
@@ -114,6 +115,7 @@
 
   --color-background: var(--gray0);
   --color-background-weak: var(--gray100);
+  --color-background-weaker: var(--gray50);
   --color-background-strong: var(--gray800);
   --color-background-interaction: null;
   --color-background-non-interaction: null;
@@ -123,6 +125,7 @@
   --color-border-hover: var(--gray800);
 
   --color-text: var(--gray900);
+  --color-text: #444b48;
   --color-text-light: var(--gray400);
 
   --color-gradient-from: null;
