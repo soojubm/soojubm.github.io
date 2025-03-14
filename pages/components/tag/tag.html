@@ -36,6 +36,27 @@
         16%
       </mm-tag>
     </mm-group>
+    <mm-separator></mm-separator>
+    <mm-group variant="tag">
+      <mm-tag variant="hashtag" role="listitem">소띠</mm-tag>
+      <mm-tag variant="hashtag" role="listitem">85년생</mm-tag>
+      <mm-tag variant="hashtag" role="listitem">수다</mm-tag>
+    </mm-group>
+    <mm-separator></mm-separator>
+    <mm-group variant="tag">
+      <style>
+        .dot-badge {
+          display: inline-flex;
+          width: 0.5rem;
+          height: 0.5rem;
+          /* padding: var(--space-1); */
+          margin-right: var(--space-2);
+          background: crimson;
+          border-radius: 50%;
+        }
+      </style>
+      <em class="dot-badge"></em>
+    </mm-group>
   </section>
 
   <section class="component-props">
@@ -72,6 +93,7 @@
         style="width: 8px; height: 8px; background: #000; text-align: center; border-radius: 50%"
       ></div>
       <mm-text variant="subhead">Platform Problems</mm-text>
+      <mm-text> 240813 - indicator 제거. 카테고라이징이나 상태 등의 뱃징이 아님.</mm-text>
       <mm-text variant="label-strong">Non-clickable? Non-interactive?</mm-text>
       <mm-text variant="body">탐색을 보조하기 위한 정보 강조 또는 요약, 정보를 단순 보충</mm-text>
       <mm-text variant="body">
@@ -97,34 +119,5 @@
 
       <mm-text variant="body"> "아바타, 바텀 네비게이션, 탭에서 일관되게 사용되는가?" </mm-text>
     </mm-text-group>
-
-    <mm-text-group>
-      <mm-text variant="subhead">Changelog</mm-text>
-      <mm-text variant="body">
-        240813 - indicator 제거. 카테고라이징이나 상태 등의 뱃징이 아님.
-      </mm-text>
-    </mm-text-group>
-
-    <mm-separator></mm-separator>
-    <mm-group variant="tag">
-      <mm-tag variant="hashtag" role="listitem">소띠</mm-tag>
-      <mm-tag variant="hashtag" role="listitem">85년생</mm-tag>
-      <mm-tag variant="hashtag" role="listitem">수다</mm-tag>
-    </mm-group>
-    <mm-separator></mm-separator>
-    <mm-group variant="tag">
-      <style>
-        .dot-badge {
-          display: inline-flex;
-          width: 0.5rem;
-          height: 0.5rem;
-          /* padding: var(--space-1); */
-          margin-right: var(--space-2);
-          background: crimson;
-          border-radius: 50%;
-        }
-      </style>
-      <em class="dot-badge"></em>
-    </mm-group>
   </section>
 </main>

@@ -21,28 +21,26 @@
   </dl>
 
   <section class="component-example">
-    <div style="max-width: 600px">
-      <mm-group>
-        <mm-tile variant="flat">
-          <mm-text variant="subhead">flat style</mm-text>
-        </mm-tile>
-        <mm-tile variant="elevated">
-          <mm-text variant="subhead">elevated style</mm-text>
-        </mm-tile>
-        <mm-tile variant="tinted">
-          <mm-text variant="subhead">tinted style</mm-text>
-        </mm-tile>
-      </mm-group>
-      <mm-separator></mm-separator>
-      <mm-group>
-        <mm-tile variant="elevated" size="small">
-          <mm-text variant="body">small tile</mm-text>
-        </mm-tile>
-        <mm-tile variant="elevated" size="medium">
-          <mm-text variant="body">medium tile</mm-text>
-        </mm-tile>
-      </mm-group>
-    </div>
+    <mm-group>
+      <mm-tile variant="flat">
+        <mm-text variant="subhead">flat variant</mm-text>
+      </mm-tile>
+      <mm-tile variant="tinted">
+        <mm-text variant="subhead">tinted variant</mm-text>
+      </mm-tile>
+      <mm-tile variant="elevated">
+        <mm-text variant="subhead">elevated variant</mm-text>
+      </mm-tile>
+    </mm-group>
+    <mm-separator></mm-separator>
+    <mm-group>
+      <mm-tile variant="elevated" size="small">
+        <mm-text variant="body">small size</mm-text>
+      </mm-tile>
+      <mm-tile variant="elevated" size="medium">
+        <mm-text variant="body">medium size</mm-text>
+      </mm-tile>
+    </mm-group>
   </section>
 
   <section class="component-props">
@@ -72,237 +70,211 @@
     </mm-text-group>
     <mm-text-group>
       <mm-text variant="subhead">Platform problems</mm-text>
+      <mm-text>bakcground-weak와 사용할 때 흰색의 tile이 필요할 수 있다.</mm-text>
+      <mm-text>flat 형태는 '클릭할 수 없는non-clickable' 단순 구획을 의미합니다.</mm-text>
       <mm-text variant="body">
         '클릭할 수 있음clickable'의 기표로 elevated 스타일을 사용합니다. 타일 전체가 하나의 클릭
-        가능한 컴포넌트일 수 있고, 타일 내부에 클릭 가능한 컴포넌트를 포함할 수도 있습니다. flat
-        형태는 '클릭할 수 없는non-clickable' 단순 구획을 의미합니다.
+        가능한 컴포넌트일 수 있고, 타일 내부에 클릭 가능한 컴포넌트를 포함할 수도 있습니다.
       </mm-text>
-      <div style="max-width: 520px">
-        <mm-text-list
-          texts='[
+      <mm-text-list
+        texts='[
           "transparented tile 을 정의하여 모든 contentbox가 tile이 되는 것은 어떤가? 이것은 빈 태그나 빈 컴포넌트(Box, Row)와는 어떤 변별이 있나? row는 레이아웃 컴포넌트, tile은 형태 컴포넌트이다. 고차원의 컴포넌트는 어차피 생성할 것인데 그 컴포넌트에게 책임을 위임하는 것이 맞지, tile이 모든 책임을 가질 필요는 없을 듯.",
-          "size를 number로 정의하는 유연한 방식이 되어도 좋겠다."
+          "size를 number로 정의하는 유연한 방식이 되어도 좋겠다.",
+          "문제: 크기에 따른 변별력이 없다. inset이 더 커진다면 작은 화면에서 미디어쿼리로 inset           조정이 불가피하기 때문에 컴포넌트의 디바이스나 화면 크기에 컴포넌트가 의존된다. ? inset이           1rem 초과할 때 콘텐츠 모듈을 가운데 정렬로 제한."
         ]'
-        >
-        </mm-text-list>
-        <div style="height: var(--space-3)"></div>
-        <mm-callout>
-          문제: 크기에 따른 변별력이 없다. inset이 더 커진다면 작은 화면에서 미디어쿼리로 inset
-          조정이 불가피하기 때문에 컴포넌트의 디바이스나 화면 크기에 컴포넌트가 의존된다. ? inset이
-          1rem 초과할 때 콘텐츠 모듈을 가운데 정렬로 제한.
-        </mm-callout>
-      </div>
+      >
+      </mm-text-list>
     </mm-text-group>
-
-    <aside
-      style="
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin: 2rem 0;
-        padding: 0.5rem 2rem;
-        border: var(--border);
-        border-radius: 50px;
-      "
-    >
-      <mm-avatar size="large" default="true"></mm-avatar>
-      <mm-text variant="subhead"> You can download this product with the All-Access Pass. </mm-text>
-      <mm-button variant="primary">Get All-Access</mm-button>
-    </aside>
   </section>
 
-  <section class="component-case">
-    <picture>
-      <source
-        srcset="photo-light.png"
-        media="(prefers-color-scheme: light) or (prefers-color-scheme: no-preference)"
-      />
-      <source srcset="photo-dark.png" media="(prefers-color-scheme: dark)" />
-      <source type="image/svg+xml" srcset="pyramid.svg" />
-      <source type="image/webp" srcset="pyramid.webp" />
-      <source media="(max-width: 799px)" srcset="elva-480w-close-portrait.jpg" />
-      <source media="(min-width: 800px)" srcset="elva-800w.jpg" />
-      <img src="elva-800w.jpg" alt="딸 엘바를 안고 서 있는 크리스" />
-    </picture>
-    <img
-      srcset="elva-fairy-320w.jpg 320w, elva-fairy-480w.jpg 480w, elva-fairy-640w.jpg 2x, elva-fairy-800w.jpg 800w"
-      sizes="(max-width: 320px) 280px, (max-width: 480px) 440px, 800px"
-      src="elva-fairy-800w.jpg"
-      alt="요정 옷을 입은 엘바"
+  <aside
+    style="
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 2rem 0;
+      padding: 0.5rem 2rem;
+      border: var(--border);
+      border-radius: 50px;
+    "
+  >
+    <mm-avatar size="large" default="true"></mm-avatar>
+    <mm-text variant="subhead"> You can download this product with the All-Access Pass. </mm-text>
+    <mm-button variant="primary">Get All-Access</mm-button>
+  </aside>
+
+  <picture>
+    <source
+      srcset="photo-light.png"
+      media="(prefers-color-scheme: light) or (prefers-color-scheme: no-preference)"
     />
+    <source srcset="photo-dark.png" media="(prefers-color-scheme: dark)" />
+    <source type="image/svg+xml" srcset="pyramid.svg" />
+    <source type="image/webp" srcset="pyramid.webp" />
+    <source media="(max-width: 799px)" srcset="elva-480w-close-portrait.jpg" />
+    <source media="(min-width: 800px)" srcset="elva-800w.jpg" />
+    <img src="elva-800w.jpg" alt="딸 엘바를 안고 서 있는 크리스" />
+  </picture>
+  <img
+    srcset="elva-fairy-320w.jpg 320w, elva-fairy-480w.jpg 480w, elva-fairy-640w.jpg 2x, elva-fairy-800w.jpg 800w"
+    sizes="(max-width: 320px) 280px, (max-width: 480px) 440px, 800px"
+    src="elva-fairy-800w.jpg"
+    alt="요정 옷을 입은 엘바"
+  />
 
-    <mm-tile variant="elevated">
-      <mm-avatar src="/public/images/springsteen.jpg"> </mm-avatar>
-      <div style="height: var(--space-2)"></div>
-      <mm-text-pair
-        labelText="Bruce Springsteen"
-        descriptionText="Product Design Intern @soojubm"
-      ></mm-text-pair>
-      <div style="position: absolute; right: 1rem; top: 1rem">
-        <mm-button>팔로우</mm-button>
-      </div>
-    </mm-tile>
-    <mm-tile>
-      <mm-tilebar heading="Ratings"></mm-tilebar>
-      <div aria-label="별점 5개 만점에 3.9개를 받았습니다." style="text-align: center">
-        <mm-text variant="label">리뷰 116만개</mm-text>
-        <mm-text variant="subhead">⭐ 4.8</mm-text>
-      </div>
-      <mm-separator></mm-separator>
-      <div class="graph2">
-        <b class="graph-label">5 Stars</b>
-        <span class="graph-value">68%</span>
-        <progress class="progress" value="40" max="100">40%</progress>
-        <!-- <div class="graph-bar"><b style="width: 68%"></b></div> -->
-      </div>
-      <div class="graph2">
-        <b class="graph-label">4 Stars</b>
-        <span class="graph-value">24%</span>
-        <progress class="progress" value="40" max="100">40%</progress>
-      </div>
-      <small>별 다섯개에서 점수만큼 채우는 유아이는 최근 잘 보이지 않는다. 구현이 어려움.</small>
-    </mm-tile>
+  <mm-tile variant="elevated">
+    <mm-avatar src="/public/images/springsteen.jpg"> </mm-avatar>
+    <div style="height: var(--space-2)"></div>
+    <mm-text-pair
+      labelText="Bruce Springsteen"
+      descriptionText="Product Design Intern @soojubm"
+    ></mm-text-pair>
+    <div style="position: absolute; right: 1rem; top: 1rem">
+      <mm-button>팔로우</mm-button>
+    </div>
+  </mm-tile>
+  <mm-tile>
+    <mm-tilebar heading="Ratings"></mm-tilebar>
+    <div aria-label="별점 5개 만점에 3.9개를 받았습니다." style="text-align: center">
+      <mm-text variant="label">리뷰 116만개</mm-text>
+      <mm-text variant="subhead">⭐ 4.8</mm-text>
+    </div>
+    <mm-separator></mm-separator>
+    <div class="graph2">
+      <b class="graph-label">5 Stars</b>
+      <span class="graph-value">68%</span>
+      <progress class="progress" value="40" max="100">40%</progress>
+      <!-- <div class="graph-bar"><b style="width: 68%"></b></div> -->
+    </div>
+    <div class="graph2">
+      <b class="graph-label">4 Stars</b>
+      <span class="graph-value">24%</span>
+      <progress class="progress" value="40" max="100">40%</progress>
+    </div>
+    <small>별 다섯개에서 점수만큼 채우는 유아이는 최근 잘 보이지 않는다. 구현이 어려움.</small>
+  </mm-tile>
 
-    <mm-tile variant="" role="listitem">
-      <div style="margin-top: -0.125rem"><mm-text variant="subhead">2022년 3월</mm-text></div>
-      <!-- FIXME:: tile 안에서의 subhead와 body -->
-      <div style="margin-top: 0.5rem">
-        <mm-text variant="body" truncated="true">
-          텍스트는 최대 두 줄 무야호 따봉 북마크 장바구니 등의 액션이 있을 수 있고 내부 외부
-          가이드를 만들어야해
-        </mm-text>
-      </div>
-      <div style="height: var(--space-3)"></div>
-      <mm-link>자세히 알아보기</mm-link>
-      <div style="height: var(--space-3)"></div>
-      <figure style="border-radius: var(--radius); height: 120px; overflow: hidden">
-        <img src="/public/images/springsteen.jpg" alt="" />
-      </figure>
-    </mm-tile>
-
-    <mm-tile variant="" role="listitem">
-      <mm-tag variant="primary">카테고리</mm-tag>
-      <mm-button slot="action" icon="more-vert"> </mm-button>
-      <figure class="media">
-        <img src="/public/images/springsteen.jpg" alt="" />
-      </figure>
-      <div style="height: var(--space-2)"></div>
-      <mm-menuitem label="수줍이" description="2년 전">
-        <mm-avatar slot="avatar" size="small"></mm-avatar>
-      </mm-menuitem>
-      <div style="height: var(--space-2)"></div>
-      <mm-text variant="subhead">카드 유아이</mm-text>
-      <mm-text variant="body">
+  <mm-tile variant="" role="listitem">
+    <div style="margin-top: -0.125rem"><mm-text variant="subhead">2022년 3월</mm-text></div>
+    <!-- FIXME:: tile 안에서의 subhead와 body -->
+    <div style="margin-top: 0.5rem">
+      <mm-text variant="body" truncated="true">
         텍스트는 최대 두 줄 무야호 따봉 북마크 장바구니 등의 액션이 있을 수 있고 내부 외부 가이드를
         만들어야해
       </mm-text>
-      <div style="height: var(--space-3)"></div>
-      <mm-group variant="tag">
-        <mm-tag variant="hashtag">프로젝트관리</mm-tag>
-        <mm-tag variant="hashtag">프로덕트디자인</mm-tag>
-        <mm-tag variant="hashtag">프론트엔드개발</mm-tag>
-      </mm-group>
-      <div style="height: var(--space-2)"></div>
-      <mm-tag class="card-note">마일리지 적립 200P</mm-tag>
-      <div style="height: var(--space-3)"></div>
-      <mm-menuitem label="퓨어 오렌지 주스" description="">
-        <mm-avatar slot="avatar">🍊</mm-avatar>
-        <div><del>₩19,000</del> ₩16,000 <em>할인율 20%</em></div>
-      </mm-menuitem>
-    </mm-tile>
-    <mm-tile variant="flat">
-      <mm-avatar style="background: aliceblue">
-        <mm-icon name="graph-up"></mm-icon>
-      </mm-avatar>
-      <div style="height: var(--space-3)"></div>
-      <b class="item-name">상해종합주가지수</b>
-      <p class="item-description" style="margin: 0 0 0.5rem">2999.55p</p>
-      <mm-tag variant="up">4.33% 상승</mm-tag>
-      <div style="margin-top: 0.5rem; color: var(--color-text-light); line-height: 1.2">
-        <small>10분 지연. live</small>
-        <br />
-        <small>현지 시간 기준 10.27. 01:27</small>
-      </div>
-    </mm-tile>
+    </div>
+    <div style="height: var(--space-3)"></div>
+    <mm-link>자세히 알아보기</mm-link>
+    <div style="height: var(--space-3)"></div>
+    <figure style="border-radius: var(--radius); height: 120px; overflow: hidden">
+      <img src="/public/images/springsteen.jpg" alt="" />
+    </figure>
+  </mm-tile>
 
-    <mm-tile>
-      <q style="margin-top: 1rem">
-        I'm impressed by how GitHub Copilot seems to know exactly what I want to type next. GitHub
-        Copilot is particularly helpful when working on React components, where it makes eerily
-        accurate predictions. GitHub Copilot has become an indispensable part of my programmer
-        toolbelt.
-      </q>
-      <figcaption style="margin: var(--space-3) 0 0 0; color: var(--color-text-light)">
-        Byline
-      </figcaption>
-    </mm-tile>
-
-    <mm-tile variant="elevated">
-      <mm-group alignment="vertical">
-        <mm-keyvalue key="이용기간" value="23.04.09. ~ 23.05.02."> </mm-keyvalue>
-        <mm-keyvalue key="이번 달 결제금액" value="4,258원"> </mm-keyvalue>
-        <mm-keyvalue key="다음 결제일" value="2023. 3. 10."> </mm-keyvalue>
-      </mm-group>
-      <mm-text-list texts="[]">
-        <li>다음 청구일은 2023. 3. 10.입니다.</li>
-        <li>언제든 해지 가능합니다. 혜택 약관이 적용됩니다.</li>
-      </mm-text-list>
-      <mm-tile size="small" style="margin-top: 1rem">
-        <mm-text variant="caption">
-          약정 기간이 없습니다. 갱신일 최소 하루 전까지 설정 > Apple ID에서 언제든지 취소할 수
-          있습니다. 취소할 때까지 요금제가 자동 갱신됩니다.
-        </mm-text>
-      </mm-tile>
-    </mm-tile>
-
-    <mm-tile>
-      <mm-text variant="subhead">Senior Front-end Developer</mm-text>
-      <mm-group variant="hashtag">
-        <mm-tag variant="hashtag">Full-Time</mm-tag>
-        <mm-tag variant="hashtag">Korea</mm-tag>
-        <mm-tag variant="hashtag">Remote friendly</mm-tag>
-      </mm-group>
-      <div style="height: var(--space-3)"></div>
-      <!-- <mm-button>View Job</mm-button> -->
-      <button
-        style="
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 100%;
-          gap: 0.5rem;
-          padding: var(--space-3) 1rem 0;
-          border-top: var(--border);
-        "
-      >
-        View Job
-        <mm-icon name="arrow-right"></mm-icon>
-      </button>
-    </mm-tile>
-
-    <mm-tile variant="flat" style="width: 100%; max-width: 24rem">
-      <mm-tag style="position: absolute; left: -0.25rem; top: var(--space-3)">
-        🔥 Most Popular
-      </mm-tag>
-      <div style="height: 1.75rem"></div>
-      <mm-text variant="subhead">Standard</mm-text>
-      <!-- <mm-text variant="body"> 대법원장은 국회의 동의를 얻어 대통령이 임명한다. </mm-text> -->
-      <div style="margin: var(--space-2) 0 var(--space-3) 0">
-        <mm-text variant="title">₩ 6,800</mm-text>
-        <mm-text variant="label">한 달에 한 번</mm-text>
-      </div>
-      <mm-text-list
-        texts='[
-        "스토리지 2TB",
-        "Google 전문가와의 상담",
-        "회원을 위한 추가 혜택"
-        ]'
-      >
-      </mm-text-list>
+  <mm-tile variant="" role="listitem">
+    <mm-tag variant="primary">카테고리</mm-tag>
+    <mm-button slot="action" icon="more-vert"> </mm-button>
+    <figure class="media">
+      <img src="/public/images/springsteen.jpg" alt="" />
+    </figure>
+    <div style="height: var(--space-2)"></div>
+    <mm-menuitem label="수줍이" description="2년 전">
+      <mm-avatar slot="avatar" size="small"></mm-avatar>
+    </mm-menuitem>
+    <div style="height: var(--space-2)"></div>
+    <mm-text variant="subhead">카드 유아이</mm-text>
+    <mm-text variant="body">
+      텍스트는 최대 두 줄 무야호 따봉 북마크 장바구니 등의 액션이 있을 수 있고 내부 외부 가이드를
+      만들어야해
+    </mm-text>
+    <div style="height: var(--space-3)"></div>
+    <mm-group variant="tag">
+      <mm-tag variant="hashtag">프로젝트관리</mm-tag>
+      <mm-tag variant="hashtag">프로덕트디자인</mm-tag>
+      <mm-tag variant="hashtag">프론트엔드개발</mm-tag>
+    </mm-group>
+    <div style="height: var(--space-2)"></div>
+    <mm-tag class="card-note">마일리지 적립 200P</mm-tag>
+    <div style="height: var(--space-3)"></div>
+    <mm-menuitem label="퓨어 오렌지 주스" description="">
+      <mm-avatar slot="avatar" size="large">🍊</mm-avatar>
+      <div><del>₩19,000</del> ₩16,000 <em>할인율 20%</em></div>
+    </mm-menuitem>
+  </mm-tile>
+  <mm-tile variant="flat">
+    <mm-avatar style="background: aliceblue">
+      <mm-icon name="graph-up"></mm-icon>
+    </mm-avatar>
+    <div style="height: var(--space-3)"></div>
+    <b class="item-name">상해종합주가지수</b>
+    <p class="item-description" style="margin: 0 0 0.5rem">2999.55p</p>
+    <mm-tag variant="up">4.33% 상승</mm-tag>
+    <div style="margin-top: 0.5rem; color: var(--color-text-light); line-height: 1.2">
+      <small>10분 지연. live</small>
       <br />
-      <mm-group>
-        <mm-button variant="primary" size="large" isfullwidth="true">업그레이드</mm-button>
-      </mm-group>
-    </mm-tile>
-  </section>
+      <small>현지 시간 기준 10.27. 01:27</small>
+    </div>
+  </mm-tile>
+
+  <mm-tile>
+    <q style="margin-top: 1rem">
+      I'm impressed by how GitHub Copilot seems to know exactly what I want to type next. GitHub
+      Copilot is particularly helpful when working on React components, where it makes eerily
+      accurate predictions. GitHub Copilot has become an indispensable part of my programmer
+      toolbelt.
+    </q>
+    <figcaption style="margin: var(--space-3) 0 0 0; color: var(--color-text-light)">
+      Byline
+    </figcaption>
+  </mm-tile>
+
+  <mm-tile>
+    <mm-text variant="subhead">Senior Front-end Developer</mm-text>
+    <mm-group variant="hashtag">
+      <mm-tag variant="hashtag">Full-Time</mm-tag>
+      <mm-tag variant="hashtag">Korea</mm-tag>
+      <mm-tag variant="hashtag">Remote friendly</mm-tag>
+    </mm-group>
+    <div style="height: var(--space-3)"></div>
+    <!-- <mm-button>View Job</mm-button> -->
+    <button
+      style="
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        gap: 0.5rem;
+        padding: var(--space-3) 1rem 0;
+        border-top: var(--border);
+      "
+    >
+      View Job
+      <mm-icon name="arrow-right"></mm-icon>
+    </button>
+  </mm-tile>
+
+  <mm-tile variant="flat" style="width: 100%; max-width: 24rem">
+    <mm-tag style="position: absolute; left: -0.25rem; top: var(--space-3)">
+      🔥 Most Popular
+    </mm-tag>
+    <div style="height: 1.75rem"></div>
+    <mm-text variant="subhead">Standard</mm-text>
+    <!-- <mm-text variant="body"> 대법원장은 국회의 동의를 얻어 대통령이 임명한다. </mm-text> -->
+    <div style="margin: var(--space-2) 0 var(--space-4) 0">
+      <mm-text variant="title">₩ 6,800</mm-text>
+      <mm-text variant="label">한 달에 한 번</mm-text>
+    </div>
+    <mm-text-list
+      texts='[
+      "스토리지 2TB",
+      "Google 전문가와의 상담",
+      "회원을 위한 추가 혜택"
+      ]'
+    >
+    </mm-text-list>
+    <br />
+    <mm-group>
+      <mm-button variant="primary" size="large" isfullwidth="true">업그레이드</mm-button>
+    </mm-group>
+  </mm-tile>
 </main>

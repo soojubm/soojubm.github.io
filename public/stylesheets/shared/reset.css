@@ -22,6 +22,7 @@ p, li, dt, dd {line-height:var(--font-line-height-large);}
 
 /* // for appearance on safari */
 select {-webkit-appearance:none;background:none;border:none;font:inherit;color:var(--color-text);}
+select:focus {border:1px solid;}
 select:focus-visible {outline:none;}
 select::-ms-expand {display:none;}
 

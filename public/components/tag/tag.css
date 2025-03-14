@@ -6,6 +6,7 @@
   /* border: 1px solid transparent; */
   border: var(--tag-border);
   border-radius: var(--radius);
+  outline: 2px solid var(--color-background);
   box-sizing: border-box;
   background: var(--color-background);
   font-size: var(--font-size-small);

@@ -36,16 +36,20 @@
   <section class="component-guide">
     <mm-text-group>
       <mm-text variant="subhead">Meta problems</mm-text>
-      <mm-text variant="body"> fallback 정의 </mm-text>
-      <mm-text variant="body"> border color. rgba</mm-text>
-      <mm-text variant="body">
-        variant. user와 company 등 다른 개체를 대표하는 아바타를 radius로 구분하는 방법.</mm-text
-      >
+      <mm-text variant="body"> TODO. fallback, border color. rgba</mm-text>
+      <mm-text variant="body"> variant. user와 company를 구별하는 아바타 형태.</mm-text>
     </mm-text-group>
     <mm-text-group>
       <mm-text variant="subhead">Platform problems</mm-text>
+      <mm-text>
+        단독으로 쓰일 때는 aria-label이 필요할 수 있고, 텍스트와 함께 쓰일 때의 menuitem 같은
+        컴포넌트
+      </mm-text>
       <mm-text variant="body">아웃라인 아바타는 클릭할 수 없다.</mm-text>
-      <mm-text variant="body"> medium과 small은 두 줄의 TextPair와 함께 사용할 수 없다. </mm-text>
+      <mm-text variant="body">
+        medium, small 사이즈는 최대 한 줄의 텍스트와 함께 쓸 수 있어요. TextPair와 사용할 수 없다.
+        없다.
+      </mm-text>
     </mm-text-group>
     <mm-text-group>
       <mm-text variant="subhead">AvatarGroup</mm-text>
@@ -58,30 +62,19 @@
           <mm-avatar size="medium">+3</mm-avatar>
         </mm-group>
       </mm-tile>
-    </mm-text-group>
-    <mm-text-group>
-      <mm-text variant="subhead">User</mm-text>
-      <mm-text variant="body">composed component</mm-text>
+      <div style="display: flex; gap: var(--space-4)">
+        <mm-avatar size="huge" src="/public/images/springsteen.jpg"> </mm-avatar>
+        <mm-test-group>
+          <mm-text variant="subhead">제목의 영역</mm-text>
+          <mm-text variant="body">Facebook 안팎의 모든 사람</mm-text>
+          <mm-group variant="chip">
+            <mm-tag variant="hashtag">React</mm-tag>
+            <mm-tag variant="hashtag">Java</mm-tag>
+            <mm-tag variant="hashtag">Phython</mm-tag>
+          </mm-group>
+        </mm-test-group>
+      </div>
       <mm-tile> User name={} description={string | React.ReactNode} avatarProps={} </mm-tile>
     </mm-text-group>
-    <mm-text-list
-      texts='[
-        "단독으로 쓰일 때는 aria-label이 필요할 수 있고, 텍스트와 함께 쓰일 때의 menuitem 같은 컴포넌트.,
-        "제품이 없는 상황에서 디테일을 정의하려 하지 말자. 실무에서는 도메인에 맞게 작은 단위의 컴포넌트를 조합하는 도메인 컴포넌트가 필요하다.",
-      ]'
-    ></mm-text-list>
   </section>
-
-  <div style="display: flex; gap: var(--space-4)">
-    <mm-avatar size="huge" src="/public/images/springsteen.jpg"> </mm-avatar>
-    <mm-test-group>
-      <mm-text variant="subhead">제목의 영역</mm-text>
-      <mm-text variant="body">Facebook 안팎의 모든 사람</mm-text>
-      <mm-group variant="chip">
-        <mm-tag variant="hashtag">React</mm-tag>
-        <mm-tag variant="hashtag">Java</mm-tag>
-        <mm-tag variant="hashtag">Phython</mm-tag>
-      </mm-group>
-    </mm-test-group>
-  </div>
 </main>
