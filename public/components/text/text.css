@@ -34,9 +34,12 @@ ul {
 .text-group {
   display: flex;
   flex-direction: column;
+  /* TODO width */
+  max-width: 560px;
   gap: var(--space-3);
 
   &[data-variant=title] {
+
     gap: var(--space-4);
   }
 

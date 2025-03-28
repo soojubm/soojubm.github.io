@@ -35,12 +35,16 @@
 }
 
 .component-guide {
-  display: grid;
+  /* display: grid;
   gap: 2rem;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr); */
   margin: 0 0 0 calc(-5vw + 1rem);
   padding: 0 calc(var(--grid-margin) - 1rem);
 }
+/* .component-guide mm-text-group > * {
+  display: block;
+  border-bottom: var(--border);
+} */
 
 .component-case {
   display: flex;

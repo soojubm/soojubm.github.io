@@ -19,13 +19,28 @@
     <mm-text-group>
       <!-- <mm-text variant="title">Tokens</mm-text>
       <mm-text variant="body-large">정리 중.</mm-text> -->
+      <mm-text variant="subhead">Checklist</mm-text>
       <ul class="checklist">
+        <li>color-icon와 color-text는 항상 동일한가요?</li>
+        <li>
+          color-text-disabled, color-input-disabled, color-button-disabled는 항상 같은 것은 아니다.
+        </li>
+        <li>color-chart-categorical-1</li>
+        <li>
+          elevation.surface / overay, raised, sunken // atlassian 동일한데 왜 나눠놨지. //
+          elevation-surface/shadow
+        </li>
+        <li>
+          250116 연한 회색 배경 하나로 하니 부족. 배경도 마찬가지임. 이제 최소한의 정의로 하는
+          실험을 종료할 단계인 듯. 200, 50 추가.
+        </li>
+        <li>A-ha :: background-weak weak2를 사용할 수 있지만 하나로 통함됨.</li>
         <li>text, icon, chat 등에서 배경 안에서 쓰는 엘리먼트의 색상 이름.</li>
         <li>폰트의 baseline이 달라서 텍스트의 상하 간격이 안 맞을 수 있다.</li>
         <li>
           그림자를 이용한 시각적 상승 효과로 주변 요소 대비 강조. 더 높은 우선순위 및 행동유도를
           위한 높은 고도. 사용자는 시각적 단어로 우선순위를 인식하고 인터렉션. 그러나 시각적
-          우선순위는 그림자로만 줄 수 있는 것은 아님. overay 등으로 우선순위를 설정할 수도 있음.
+          우선순위는 그림자로만 줄 수 있는 것은 아님. 레이어를 활용할 수도 있다.
         </li>
         <li>
           개별 토큰에 디스크립션이 필요하지 않도록 명명합니다. core: give a name to a raw value to
@@ -42,6 +57,7 @@
             테마 대응이 간편해짐.
           </del>
         </li>
+        <li>color-warning, color-warning-weak / color-text-warning</li>
       </ul>
     </mm-text-group>
 
@@ -55,22 +71,7 @@
         guidance, refer to the component-specific guidelines.
       </mm-text>
     </mm-text-group>
-
-    <ul>
-      <li>color-icon와 color-text는 항상 동일한가요?</li>
-      <li>color-text-disabled // input / button 마다 다르다. 인터렉션이 필요한 컴포넌트.</li>
-      <li>color-chart-categorical-1</li>
-      <li>
-        elevation.surface / overay, raised, sunken // atlassian 동일한데 왜 나눠놨지. //
-        elevation-surface/shadow
-      </li>
-      <li>
-        250116 연한 회색 배경 하나로 하니 부족. 배경도 마찬가지임. 이제 최소한의 정의로 하는 실험을
-        종료할 단계인 듯. 200, 50 추가.
-      </li>
-    </ul>
-    <p>A-ha :: background-weak weak2를 사용할 수 있지만 하나로 통함됨.</p>
-    <div style="margin-top: 2rem"></div>
+    <br /><br />
     <mm-text-group>
       <mm-text variant="label-strong">Primitives</mm-text>
     </mm-text-group>
@@ -101,14 +102,7 @@
         </mm-group>
       </article>
       <article class="token-item is-gray200" style="border: 0; background: var(--gray300)">
-        <mm-keyvalue
-          alignment="column"
-          key="--gray300:"
-          value="#c1c3c2
-        
-        
-        "
-        ></mm-keyvalue>
+        <mm-keyvalue alignment="column" key="--gray300:" value="#c1c3c2"></mm-keyvalue>
       </article>
       <article class="token-item is-gray400" style="border: 0; background: var(--gray400)">
         <b style="color: #fff">--gray400: #979d9a</b>
@@ -183,10 +177,7 @@
     </mm-text-group>
     <mm-text-group>
       <mm-text variant="label-strong">Status</mm-text>
-      <mm-text>color-text-warning // color-warning, color-warning-strong</mm-text>
     </mm-text-group>
-
-    <br /><br />
     <mm-text-group>
       <mm-text variant="label-strong">Text</mm-text>
     </mm-text-group>
@@ -431,7 +422,6 @@
   <section>
     <mm-text-group>
       <mm-text variant="title">Layouts - Width</mm-text>
-      <mm-text variant="body-large">모든 container는 --small부터 max-width를 100%.</mm-text>
       <mm-text variant="body-large">모든 container는 --small부터 max-width를 100%.</mm-text>
     </mm-text-group>
     <div style="display: flex; gap: 1rem">

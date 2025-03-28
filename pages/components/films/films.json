@@ -1,6 +1,33 @@
 [
   {
     "id": 2025,
+    "releasedate": 1967,
+    "titlekorean": "해피 집시",
+    "titleenglish": "I Even Met Happy Gypsies",
+    "director": "알렉산다르 페트로비치",
+    "country": "유고슬라비아",
+    "etc": ""
+  },
+  {
+    "id": 2025,
+    "releasedate": 2010,
+    "titlekorean": "황해",
+    "titleenglish": "The Yellow Sea",
+    "director": "나홍진",
+    "country": "한국",
+    "etc": ""
+  },
+  {
+    "id": 2025,
+    "releasedate": 2002,
+    "titlekorean": "주온",
+    "titleenglish": "呪怨The Grudge",
+    "director": "시미즈 다카시",
+    "country": "미국",
+    "etc": "호러"
+  },
+  {
+    "id": 2025,
     "releasedate": 2001,
     "titlekorean": "써스펙트",
     "titleenglish": "The Pledge",
