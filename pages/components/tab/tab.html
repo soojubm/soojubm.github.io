@@ -49,52 +49,55 @@
 
   <section class="component-guide">
     <mm-text-group>
+      <mm-text variant="subhead">Considerations</mm-text>
+      <mm-group>
+        <mm-tag>Behavior - Content switching </mm-tag>
+        <mm-tag>Editorial - Easy Scanning</mm-tag>
+      </mm-group>
+    </mm-text-group>
+    <mm-text-group>
       <mm-text variant="subhead">Meta problems</mm-text>
       <mm-text
         >flutter. Scaffold - AppBar - bottom: TabBar - tabs - Tab / Scaffold - body -
         TabBarView</mm-text
       >
       <mm-text variant="body">Human Interface Guidelins. Tab은 없지만 Tab Views는 있음.</mm-text>
+      <mm-text>
+        Make sure the controls within a pane affect content only in the same pane. Panes are
+        mutually exclusive, so ensure they’re fully self-contained. Use a segmented control to
+        provide closely related choices that affect an object, state, or view. For example, a
+        segmented control can help people switch between views in a toolbar. Avoid using a segmented
+        control to offer actions, such as adding, removing, or editing content.
+      </mm-text>
       <mm-text variant="body">
         <del>페이지 링크로 사용하지 마세요.</del> SPA에서 페이지 링크의 개념이 모호. 탭을 클릭하면
-        탭 패널만 변경되어야 한다. Make sure the controls within a pane affect content only in the
-        same pane. Panes are mutually exclusive, so ensure they’re fully self-contained.
+        탭 패널만 변경되어야 한다.
       </mm-text>
-      <mm-text variant="body">
-        SearchParams과 브라우저 히스토리를 활용할 것인가? (?tab=projects)
-      </mm-text>
-      <mm-text variant="body">
-        글로벌 네비게이션 패턴인 햄버거 메뉴와 탭(바텀네비게이션, 탭바)을 함께 사용할 수 있는가?
-      </mm-text>
-      <mm-text variant="body">
-        Use a segmented control to provide closely related choices that affect an object, state, or
-        view. For example, a segmented control can help people switch between views in a toolbar.
-        Avoid using a segmented control to offer actions, such as adding, removing, or editing
-        content.
-      </mm-text>
+
+      <mm-text-list
+        texts='[
+          "SearchParams과 브라우저 히스토리를 활용할 것인가? (?tab=projects)",
+          "글로벌 네비게이션 패턴인 햄버거 메뉴와 탭(바텀네비게이션, 탭바)을 함께 사용할 수 있는가?"
+        ]'
+      >
+      </mm-text-list>
     </mm-text-group>
     <mm-text-group>
       <mm-text variant="subhead">Platform problems</mm-text>
       <mm-text variant="body">
-        탭을 중첩하지 마세요. 페이지에서 수행하는 과업 중심 플로우 설계. 중첩을 허용한다면, Material
-        3의 primary tabs / secondary tabs 분류 등 참고.
+        탭을 중첩하지 마세요. 페이지에서 수행하는 과업 중심 플로우 설계. 중첩을 허용한다면 탭의 중첩
+        패턴을 정의해야 함. Material 3의 primary tabs / secondary tabs 분류 등 참고. 또는 네이버
+        쇼핑의 4단계 5단계 탭.
       </mm-text>
       <mm-text variant="body">
-        페이지의 중간에서(?) 사용하지 않는다. tile(paper) 등 섹션의 구획이 명확하다면 허용.
+        콘텐츠 정렬, 콘텐츠 필터 또는 탭투스크롤로 사용하지 마세요.
       </mm-text>
-      <mm-text variant="label-strong">Behavior - Content switching</mm-text>
-      <mm-text variant="body">
-        콘텐츠 정렬 또는 콘텐츠 필터로 사용하지 마세요. 구조적으로 콘텐츠 필터의 맥락인
-        탭투스크롤로는 사용하지 않는다. ?? 뭔 말이야?
-      </mm-text>
-
-      <mm-text variant="label-strong">Editorial - Easy Scanning</mm-text>
       <mm-text variant="body">
         레이블은 1줄로 사용하고 최대 2단어로 작성합니다.
-        <del
-          >말줄임표도 안 됨. 말줄임표 관련된 모든 내용은 폴더블과 같은 더 작은 화면에 대한 고려가
-          없기 때문.</del
-        >
+        <del>
+          말줄임표도 안 됨. 말줄임표 관련된 모든 내용은 폴더블과 같은 더 작은 화면에 대한 고려가
+          없기 때문.
+        </del>
         탭의 최대 갯수를 제한하거나 가로 스크롤 규칙을 정의. 갯수를 제한하면 스크롤이 불필요.
       </mm-text>
     </mm-text-group>
@@ -111,9 +114,9 @@
 
     <div class="component-references">
       <mm-text variant="subhead" hidden>References</mm-text>
-      <a href="https://developer.apple.com/documentation/swiftui/navigationstack"
-        >swiftui navigationstack</a
-      >
+      <a href="https://developer.apple.com/documentation/swiftui/navigationstack">
+        swiftui navigationstack
+      </a>
       <a
         href="https://developer.apple.com/design/human-interface-guidelines/components/layout-and-organization/tab-views"
         target="_blank"

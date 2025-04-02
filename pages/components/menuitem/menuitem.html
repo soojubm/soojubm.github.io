@@ -111,12 +111,10 @@
 
     <mm-text-group>
       <mm-text variant="subhead">Platform problems</mm-text>
-      <mm-text variant="body">text 크기의 차이. large는 without avatar</mm-text>
       <mm-text variant="body">
-        메뉴 아이템의 우측(action) 슬롯에는 액션 또는 액션 인티케이터가 위치합니다.
-      </mm-text>
-      <mm-text variant="body">
-        정보를 보충하는 시각 정보 컴포넌트, 예를 들면 태그 컴포넌트('new' 등)를 배치하지 마세요.
+        메뉴 아이템의 우측(action) 슬롯에는 액션 인티케이터(버튼, 스위치, 체크박스, 라디오)가
+        위치합니다. 정보를 보충하는 시각 정보 컴포넌트, 예를 들면 태그 컴포넌트('new' 등)를 우측에
+        배치하지 마세요.
       </mm-text>
     </mm-text-group>
 
@@ -132,83 +130,89 @@
     </mm-text-group>
   </section>
 
-  <section class="component-case">
+  <mm-tile>
+    <mm-row justifyContent="space-between">
+      <div>
+        <mm-text variant="body-bold">Strictly Necessary</mm-text>
+        <mm-text variant="body">
+          These cookies are essential in order to use the website and use its features.
+        </mm-text>
+      </div>
+      <mm-switch></mm-switch>
+    </mm-row>
+  </mm-tile>
+  <mm-tile variant="flat">
+    <mm-group variant="dropdown">
+      <mm-text variant="label">menuline height</mm-text>
+      <div style="height: var(--space-1)"></div>
+      <mm-menuitem role="menuitem" href="#design">
+        <mm-text slot="text" variant="subhead">Anxiety</mm-text>
+      </mm-menuitem>
+      <mm-menuitem role="menuitem" href="#design">
+        <mm-text slot="text" variant="subhead">General worry</mm-text>
+      </mm-menuitem>
+    </mm-group>
+  </mm-tile>
+  <mm-tile variant="flat">
+    <mm-group variant="dropdown">
+      <mm-menuitem role="menuitem" href="#design">
+        <mm-icon slot="check" name="check"></mm-icon>
+        <span slot="text">Only Text</span>
+      </mm-menuitem>
+      <mm-menuitem role="menuitem">
+        <span slot="check"></span>
+        <span slot="text">on popover</span>
+      </mm-menuitem>
+      <mm-menuitem class="dropdown-menu-item">
+        <span slot="check"></span>
+        <span slot="text">with dropdown/pulldown</span>
+      </mm-menuitem>
+      <mm-menuitem class="dropdown-menu-item">
+        <span slot="check"></span>
+        <span slot="text">with popover</span>
+      </mm-menuitem>
+    </mm-group>
+  </mm-tile>
+  <mm-tile>
     <mm-tile>
-      <mm-row justifyContent="space-between">
-        <div>
-          <mm-text variant="subhead">Strictly Necessary</mm-text>
-          <div style="height: 0.5rem"></div>
-          <mm-text variant="body">
-            These cookies are essential in order to use the website and use its features.
-          </mm-text>
+      <mm-menuitem>
+        <mm-text-pair
+          slot="text"
+          labelText="Personal License"
+          descriptionText="1 user"
+        ></mm-text-pair>
+        <div slot="action">
+          <mm-text variant="subhead"> 18,800 KRW </mm-text>
         </div>
-        <mm-switch></mm-switch>
-      </mm-row>
+      </mm-menuitem>
     </mm-tile>
-    <mm-tile variant="flat">
-      <mm-group variant="dropdown">
-        <mm-text variant="label">menuline height</mm-text>
-        <div style="height: var(--space-1)"></div>
-        <mm-menuitem role="menuitem" href="#design">
-          <mm-text slot="text" variant="subhead">Anxiety</mm-text>
-        </mm-menuitem>
-        <mm-menuitem role="menuitem" href="#design">
-          <mm-text slot="text" variant="subhead">General worry</mm-text>
-        </mm-menuitem>
-      </mm-group>
-    </mm-tile>
-    <mm-tile variant="flat">
-      <mm-group variant="dropdown">
-        <mm-menuitem role="menuitem" href="#design">
-          <mm-icon slot="check" name="check"></mm-icon>
-          <span slot="text">Only Text</span>
-        </mm-menuitem>
-        <mm-menuitem role="menuitem">
-          <span slot="check"></span>
-          <span slot="text">on popover</span>
-        </mm-menuitem>
-        <mm-menuitem class="dropdown-menu-item">
-          <span slot="check"></span>
-          <span slot="text">with dropdown/pulldown</span>
-        </mm-menuitem>
-        <mm-menuitem class="dropdown-menu-item">
-          <span slot="check"></span>
-          <span slot="text">with popover</span>
-        </mm-menuitem>
-      </mm-group>
-    </mm-tile>
-    <mm-tile>
-      <mm-tile>
-        <mm-menuitem>
-          <mm-text-pair
-            slot="text"
-            labelText="Personal License"
-            descriptionText="1 user"
-          ></mm-text-pair>
-          <div slot="action">
-            <mm-text variant="subhead"> 18,800 KRW </mm-text>
-          </div>
-        </mm-menuitem>
-      </mm-tile>
-      <div style="height: var(--space-3)"></div>
-      <mm-group>
-        <mm-menuitem>
-          <mm-avatar slot="avatar" size="large" fallback="🎅🏻"></mm-avatar>
-          <mm-text-pair
-            slot="text"
-            labelText="Widgefy iOS Widgets"
-            descriptionText="떢볶이"
-          ></mm-text-pair>
-          <div slot="action" style="text-align: right">
-            <span style="display: block; line-height: 18px">18,800 KRW</span>
-            <mm-text variant="label">6410</mm-text>
-          </div>
-        </mm-menuitem>
-      </mm-group>
-      <div style="height: var(--space-3)"></div>
-      <footer>
-        <mm-button variant="primary" size="large">Buy now</mm-button>
-      </footer>
-    </mm-tile>
-  </section>
+    <div style="height: var(--space-3)"></div>
+    <mm-group>
+      <mm-menuitem>
+        <mm-avatar slot="avatar" size="large" fallback="🎅🏻"></mm-avatar>
+        <mm-text-pair
+          slot="text"
+          labelText="Widgefy iOS Widgets"
+          descriptionText="떢볶이"
+        ></mm-text-pair>
+        <div slot="action" style="text-align: right">
+          <span style="display: block; line-height: 18px">18,800 KRW</span>
+          <mm-text variant="label">6410</mm-text>
+        </div>
+      </mm-menuitem>
+    </mm-group>
+    <div style="height: var(--space-3)"></div>
+    <footer>
+      <mm-button variant="primary" size="large">Buy now</mm-button>
+    </footer>
+  </mm-tile>
 </main>
+
+<!-- <nav aria-label="On this page">
+  <div>On this page</div>
+  <a href="#skip">Skip to content link</a>
+  <a href="#toc">Table of contents</a>
+  <a href="#bc">Page breadcrumbs</a>
+  <a href="#ln">Local navigation</a>
+  <a href="#global">Global navigation</a>
+</nav> -->

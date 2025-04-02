@@ -4,12 +4,6 @@
     description="용어를 설명하거나 정보의 근거를 보충합니다."
   ></mm-pageheader>
 
-  <dl class="article-aka">
-    <dt>a.k.a.</dt>
-    <dd>Popover</dd>
-    <dd>Coachmark</dd>
-  </dl>
-
   <section class="component-example">
     <mm-group variant="button">
       <mm-tooltip content="로그인" align="center">
@@ -84,28 +78,38 @@
 
   <section class="component-guide">
     <mm-text-group>
+      <mm-text variant="subhead">Considerations</mm-text>
+      <mm-group>
+        <mm-tag>Behavior - supportive / not interactive</mm-tag>
+        <mm-tag>Clickable</mm-tag>
+      </mm-group>
+      <dl class="article-aka">
+        <dt>a.k.a.</dt>
+        <dd>Popover</dd>
+        <dd>Coachmark</dd>
+      </dl>
+    </mm-text-group>
+    <mm-text-group>
       <mm-text variant="subhead">Meta problems</mm-text>
       <mm-text variant="body">
-        툴팁의 트리거를 페이지 링크로 사용하지 마세요. 대안. coachmark와 명확한 구분이 필요.
-      </mm-text>
-      <mm-text variant="body">
-        페이지 로딩 시점에 열려 있는 인터페이스는 엄밀히 말하면 툴팁은 아님. doorhanger/pointing
-        arrow가 필요하며 새로운 기능을 가이드하는 역할.
+        툴팁의 트리거를 페이지 링크로 사용하지 마세요. 대안. coachmark와 명확한 구분이 필요. 페이지
+        로딩 시점에 열려 있는 인터페이스는 엄밀히 말하면 툴팁은 아님. 새로운 컴포넌트로 정의해야
+        한다. 이 경우 doorhanger/pointing arrow가 필요하며 사용자의 행동을 적극적으로 유도하기 위해
+        사용된다.
       </mm-text>
       <mm-text variant="body">
         작은 화면에서 바텀 시트나 모달 또는 논모달로 제공해야 한다.
       </mm-text>
       <mm-text variant="body"
-        >"MD3 rich tooltip(title, description, actions-link/button) / plain tooltip"</mm-text
+        >MD3 rich tooltip(title, description, actions-link/button) / plain tooltip"</mm-text
       >
     </mm-text-group>
     <mm-text-group>
       <mm-text variant="subhead">Platform problems</mm-text>
       <mm-text variant="body">
-        Behavior - supportive / not interactive. 사용자가 반드시 숙지해야 하는 중요한 정보를
-        툴팁으로 제공하지 마세요. 정보를 보충하여 설명하는 맥락. 아코디언도 마찬가지. 행동을
-        유도하는 가이드로 사용하지 마세요. 중요한 액션을 요할 때는 cognitive? button이나 text link
-        등 충분히 강조되고 눈에 띄는 컴포넌트를 사용.
+        사용자가 반드시 숙지해야 하는 중요한 정보를 툴팁으로 제공하지 마세요. 정보를 보충하여
+        설명하는 맥락. 아코디언도 마찬가지. 행동을 유도하는 가이드로 사용하지 마세요. 중요한 액션을
+        요할 때는 cognitive? button이나 text link 등 충분히 강조되고 눈에 띄는 컴포넌트를 사용.
       </mm-text>
     </mm-text-group>
   </section>

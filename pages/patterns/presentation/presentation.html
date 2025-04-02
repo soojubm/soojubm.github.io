@@ -26,6 +26,104 @@
   </style>
   -->
 
+  <aside class="loader js-loader">
+    <div class="spinner">
+      <div class="double-bounce1"></div>
+      <div class="double-bounce2"></div>
+    </div>
+    <div class="loader-spinner" hidden></div>
+  </aside>
+  <style>
+    .loader {
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background: var(--color-background-weak);
+      z-index: var(--zindex-loader);
+    }
+    .loader-spinner {
+      width: 2rem;
+      height: 2rem;
+      background: var(--color-primary);
+      border-radius: 50%;
+      position: fixed;
+      left: 50%;
+      top: 50%;
+      z-index: var(--zindex-loader);
+      transform: translate(-50%, -50%);
+      animation: scaleout 0.8s infinite ease;
+    }
+
+    /* // .loader.is-hidden {opacity:0;visibility:hidden;z-index:-1;}
+
+    @keyframes spinAround {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(359deg);
+      }
+    }
+    // .spinner {
+    //   content: "";
+    //   display: block;
+    //   width: 1em;
+    //   height: 1em;
+    //   animation: spinAround .8s linear infinite;
+    //   border-radius: 50%;
+    //   border-color: transparent transparent #dfdbe3 #dfdbe3;
+    //   border-style: solid;
+    //   border-width: 2px;
+
+    //   border-color: rgba(67,47,101,.1) rgba(67,47,101,.1) var(--font-size-large) var(--font-size-large);
+    //   position: relative;
+    // } */
+
+    .spinner {
+      width: var(--size-large);
+      height: var(--size-large);
+
+      position: absolute;
+      left: 50%;
+      top: 47.5%;
+      transform: translate(-50%, -50%);
+    }
+
+    .double-bounce1,
+    .double-bounce2 {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background-color: var(--color-primary);
+      opacity: 0.6;
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      -webkit-animation: sk-bounce 2s infinite ease-in-out;
+      animation: sk-bounce 2s infinite ease-in-out;
+    }
+
+    .double-bounce2 {
+      -webkit-animation-delay: -1s;
+      animation-delay: -1s;
+    }
+
+    @keyframes sk-bounce {
+      0%,
+      100% {
+        transform: scale(0);
+        -webkit-transform: scale(0);
+      }
+      50% {
+        transform: scale(1);
+        -webkit-transform: scale(1);
+      }
+    }
+  </style>
+
   <mm-text variant="title">Popovers</mm-text>
 
   <section class="component-example">

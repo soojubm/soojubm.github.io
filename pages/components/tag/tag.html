@@ -2,7 +2,7 @@
   <mm-pageheader
     title="Tags"
     description="인접 요소나 부모 요소를 부연하는 시각 정보입니다. 상태, 카테고리, 키워드로 강조된 시각 정보는
-    사용자가 복잡한 정보 더미에서 중요한 정보를 우선적으로 파악하도록 돕습니다."
+    사용자가 복잡한 정보 더미에서 중요한 정보를 우선적으로 파악하도록 돕습니다. 탐색을 보조하기 위한 정보 강조 또는 요약, 정보를 단순 보충"
   ></mm-pageheader>
   <!-- <mm-text variant="body-large">
       post 페이지에서 태그와 컴포넌트에서의 태그. hashtag는 tag 컴포넌트와 역할이 다르기 때문에 별도의 컴포넌트로 만들어주어야 한다. 현재
@@ -74,14 +74,20 @@
 
   <section class="component-guide">
     <mm-text-group>
+      <mm-text variant="subhead">Considerations</mm-text>
+      <mm-group>
+        <mm-tag variant="primary">Non-interactive</mm-tag>
+        <mm-tag>notification</mm-tag>
+        <mm-tag>status</mm-tag>
+        <mm-tag>informational</mm-tag>
+      </mm-group>
+    </mm-text-group>
+    <mm-text-group>
       <div
         style="width: 8px; height: 8px; background: #000; text-align: center; border-radius: 50%"
       ></div>
       <mm-text variant="subhead">Meta Problems</mm-text>
-      <mm-text variant="body">
-        상태나 카테고라이징에 사용하는 경우, 인터렉션이 가능한 것처럼 보이지 않아야 합니다.
-      </mm-text>
-      <mm-text variant="body">notification / status / informational</mm-text>
+      <mm-text variant="body"> 인터렉션이 가능한 것처럼 보이지 않아야 합니다. </mm-text>
       <mm-text variant="body">
         Dot(status). New/Unread, Live. A dot badge notifies the user that something is new or
         updated without showing a count.
@@ -93,31 +99,37 @@
         style="width: 8px; height: 8px; background: #000; text-align: center; border-radius: 50%"
       ></div>
       <mm-text variant="subhead">Platform Problems</mm-text>
-      <mm-text> 240813 - indicator 제거. 카테고라이징이나 상태 등의 뱃징이 아님.</mm-text>
-      <mm-text variant="label-strong">Non-clickable? Non-interactive?</mm-text>
-      <mm-text variant="body">탐색을 보조하기 위한 정보 강조 또는 요약, 정보를 단순 보충</mm-text>
-      <mm-text variant="body">
-        <del>액션의 기표로 사용할 수 있다. 인접 요소 또는 부모 요소가 클릭할 수 있음을 보조.</del>
-        이렇게 되면 태그의 정의가 복잡해짐. 이 정의는 합성된 컴포넌트가 가져야 함..
-      </mm-text>
+
       <mm-text variant="label-strong">Groupable</mm-text>
       <mm-text variant="body">
         태그 그룹은 최대 4개의 태그를 표시합니다. 너무 많은 태그 목록으로 사용자의 콘텐츠 탐색을
-        방해하지 마세요.
-      </mm-text>
-      <mm-text variant="body">그룹에서 primary tag는 최대 1개만 포함할 수 있습니다.</mm-text>
-      <mm-text variant="body">
-        예외 케이스. 태그의 목록이 페이지 전체를 관통하는 경우 탐색을 보조하는 역할이 아니라 정보를
-        보충하는 맥락이기 때문에 4개 이상이 허용된다. 유저 프로필 페이지에서 유저를 보충할 때가
-        적절한 예시.
+        방해하지 마세요. 예외 케이스. 태그의 목록이 페이지 전체를 관통하는 경우 탐색을 보조하는
+        역할이 아니라 정보를 보충하는 맥락이기 때문에 4개 이상이 허용된다. 유저 프로필 페이지에서
+        유저를 보충할 때가 적절한 예시. 그룹에서 primary tag는 그룹을 대표하는 맥락으로 1개만 포함할
+        수 있습니다.
       </mm-text>
 
       <mm-text variant="label-strong">Easy scanning</mm-text>
       <mm-text variant="body">
         Use short labels for easy scanning. 중요한 정보를 빠르게 파악할 수 있는 짧은 단어의 조합.
       </mm-text>
+      <mm-text variant="body"> 아바타, 바텀 네비게이션, 탭에서 일관되게 사용되는가? </mm-text>
+    </mm-text-group>
 
-      <mm-text variant="body"> "아바타, 바텀 네비게이션, 탭에서 일관되게 사용되는가?" </mm-text>
+    <mm-text-group>
+      <mm-text variant="subhead">Changelog</mm-text>
+      <table>
+        <tr>
+          <th>240813</th>
+          <td>
+            indicator 제거. 카테고라이징이나 상태 등의 뱃징이 아님.
+            <del>
+              액션의 기표로 사용할 수 있다. 인접 요소 또는 부모 요소가 클릭할 수 있음을 보조.
+            </del>
+            이렇게 되면 태그의 정의가 복잡해짐. 이 정의는 합성된 컴포넌트가 가져야 함..
+          </td>
+        </tr>
+      </table>
     </mm-text-group>
   </section>
 </main>

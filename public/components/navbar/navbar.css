@@ -1,10 +1,14 @@
 .navbar {
   display:flex;
   align-items: center;
+  width: 100%;
   height:var(--navbar-height);
   padding:var(--space-3) var(--grid-margin);
   box-sizing:border-box;background:var(--color-background);
-  position:fixed;top:0;left:0;right:0;z-index:var(--zindex-menu);}
+  position:sticky;
+  top: 0;
+  z-index:var(--zindex-menu);
+}
   /* sticy 위로 스크롤 하면 */
 .navbar-logo {
   width:var(--size-medium);height:var(--size-medium);
@@ -17,7 +21,7 @@
   display: flex;
   align-items: center;
   margin: 0 0 0 1.5rem;
-  position:relative;
+  position: relative;
 }
 .navbar-menu > a {
   display: flex;
@@ -35,12 +39,11 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 60px;
   gap:var(--space-4);
   padding-bottom: 2rem;
   background: var(--color-background);
-  position:fixed;
-  left:0;right:0;top:-100px;
+  position:sticky;
+  top:-100px;
   z-index: 0;
   transition:var(--transition-base);
 }
@@ -78,11 +81,9 @@
 
 .page {
   min-height: calc(100vh - var(--navbar-height));
-  /* max-width: var(--layout-width-wide); */
-  /* margin: 0 auto; */
-  /* padding: var(--space-4) var(--grid-margin) 6rem calc(var(--grid-margin) + var(--width-sidemenu)); */
+  /* max-width: var(--layout-width-wide);
+  margin: 0 auto; */
   padding: var(--space-4) var(--grid-margin) 6rem;
-  box-sizing: border-box; 
   position: relative;
 }
 
@@ -103,22 +104,20 @@
   padding: 0 var(--grid-margin);
 }
 
+/* height를 명시적으로 지정하지 않으면, unpositioning 시 문제 */
 .sidebar-menu {
   display: flex;
   flex-direction: column;
-  gap: .5rem;
   width: 100%;
+  height: calc(100vh - var(--navbar-height) - var(--space-4) - var(--space-4));
   max-width: var(--width-sidemenu);
-  /* height: calc(100vh - var(--navbar-height)); */
+  gap: .5rem;
   padding: var(--space-4) var(--space-3) var(--space-4) calc(var(--grid-margin));
   background: var(--color-background);
   scrollbar-gutter: stable;
   transition: transform var(--duration-slowly) cubic-bezier(.165,.84,.44,1);
   transform: translateX(-120%);
   position: fixed;
-  left: 0px;
-  top: calc(var(--navbar-height));
-  bottom: 0px;
   z-index: var(--zindex-menu);
 
   &::-webkit-scrollbar {width:.5rem;height:auto;padding:.125rem;opacity:0;}

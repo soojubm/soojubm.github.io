@@ -34,7 +34,10 @@ document.addEventListener('DOMContentLoaded', defineCustomElement)
 document.addEventListener('DOMContentLoaded', () => {
   const setWindowsFont = () => {
     if (/Windows/i.test(navigator.userAgent)) {
-      document.documentElement.style.setProperty('--font-family', "'Pretendard', sans-serif")
+      document.documentElement.style.setProperty(
+        '--font-family',
+        "'IBM Plex Sans', 'Pretendard', sans-serif",
+      )
     }
   }
 

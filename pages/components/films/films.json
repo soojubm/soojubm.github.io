@@ -1,6 +1,15 @@
 [
   {
     "id": 2025,
+    "releasedate": 1978,
+    "titlekorean": "그들이 왔다",
+    "titleenglish": "Bambaru Avith",
+    "director": "달마세나 파티라자",
+    "country": "스리랑카",
+    "etc": ""
+  },
+  {
+    "id": 2025,
     "releasedate": 1967,
     "titlekorean": "해피 집시",
     "titleenglish": "I Even Met Happy Gypsies",

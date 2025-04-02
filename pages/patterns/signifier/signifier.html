@@ -29,7 +29,9 @@
     <a
       href="https://developer.apple.com/design/human-interface-guidelines/components/layout-and-organization/disclosure-controls"
       target="_blank"
-      >disclosure-controls</a
+      >
+      disclosure-controls
+      </a
     >
     <a href="https://developer.apple.com/kr/design/tips/" target="_blank">UI 디자인 기본 원칙</a>
     <a href="https://m3.material.io/foundations/interaction-states" target="_blank"
@@ -62,6 +64,8 @@
       <p><b>❤️ 아이콘(또는 이모지)과 이미지</b>는 클릭할 수 있다.</p>
     </div>
   </section>
+
+  <br /><br />
 
   <mm-text-group>
     <mm-text variant="subhead">Icons</mm-text>
@@ -155,7 +159,7 @@
     </mm-entity>
   </mm-group>
 
-  <br /><br /><br />
+  <br /><br />
 
   <mm-text-group>
     <mm-text variant="subhead">Interaction states</mm-text>
@@ -222,12 +226,16 @@
   </div>
   <div>
     <mm-text variant="label-strong">Progressing state</mm-text>
-    <div class="chat-inputing animation-chatting" style="justify-content: center">
-      <span style="background: var(--color-background-strong)"></span>
-      <span style="background: var(--color-background-strong)"></span>
-      <span style="background: var(--color-background-strong)"></span>
-    </div>
+    <mm-tile>
+      <div class="chat-inputing animation-chatting" style="justify-content: center">
+        <span style="background: var(--color-background-strong)"></span>
+        <span style="background: var(--color-background-strong)"></span>
+        <span style="background: var(--color-background-strong)"></span>
+      </div>
+    </mm-tile>
   </div>
+
+  <br /><br />
 
   <mm-text-group>
     <mm-text variant="subhead">Feedbacks</mm-text>
@@ -253,6 +261,8 @@
       descriptionText="refresh - redirect / result 컴포넌트 / inline error, callout error"
     ></mm-text-pair>
   </div>
+
+  <br /><br />
 
   <mm-text-group>
     <mm-text variant="subhead">Layout and structure</mm-text>

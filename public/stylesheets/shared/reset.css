@@ -260,13 +260,14 @@ mark {color:inherit;} mark::before {content: " [강조 시작] ";opacity:0;posit
 
 /* common */
 .offline {
-  display: none;
   max-width: var(--width-medium);
   margin: 0 auto;
   padding: .5rem 1rem;
   border-radius: var(--radius);
   background: var(--red800);
+  color: var(--color-text);
   text-align: center;
+  
   position: fixed;
   left: 10%;
   right: 10%;

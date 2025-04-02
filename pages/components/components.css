@@ -38,28 +38,10 @@
   /* display: grid;
   gap: 2rem;
   grid-template-columns: repeat(2, 1fr); */
-  margin: 0 0 0 calc(-5vw + 1rem);
-  padding: 0 calc(var(--grid-margin) - 1rem);
 }
-/* .component-guide mm-text-group > * {
+.component-guide mm-text-group::part(mm-text) {
   display: block;
   border-bottom: var(--border);
-} */
-
-.component-case {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  gap: var(--space-4);
-
-  margin: 0 0 0 calc(-5vw + 1rem);
-  padding: 4rem calc(var(--grid-margin) - 1rem) ;
-  border-radius: var(--radius-large);
-  background: var(--color-background-strong);
-}
-.component-case > * {
-  width: 100%;
-  max-width: 400px;
 }
 
 .component-props mm-text {display:none}

@@ -75,15 +75,3 @@
 //   }
 //   // img {filter: brightness(.8) contrast(1.2);}
 // } */
-
-.browser {
-  text-align: center;
-  padding: 2rem;
-  background: var(--red800);
-  background: var(--color-background);
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: var(--zindex-modal);
-}

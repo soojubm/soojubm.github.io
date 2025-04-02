@@ -123,23 +123,24 @@
     </mm-text-group>
     <mm-text-group>
       <mm-text variant="subhead">Platform problems</mm-text>
-      <mm-text variant="body">
-        helper(help message)와 feedback(feedback message / validation feedback)을 구분하기.
-        mui에서는 error prop.
+      <mm-text variant="body" data-temp="required indicator / optional indicator">
+        사용자 여정에 허들이 될 수 있는 불필요한 정보 입력을 유도하지 마세요. 다시 말해 모든
+        텍스트필드는 필수 입력입니다. 사용자 정보를 수집하여 사용자 또는 비즈니스에 명확한 이점이
+        있는 경우 선택 필드를 제안할 수 있습니다. 이 때 선택 입력 필드는 '선택입력' 텍스트로
+        가이드합니다.
       </mm-text>
       <mm-text variant="body"> 레이블을 텍스트필드 왼쪽에 배치하지 마세요.</mm-text>
       <mm-text variant="body">
-        이중 레이블링하지 마세요. 아이콘은 텍싀트 레이블을 대체할 수 있습니다. (아이콘 레이블을
-        사용하는 예시: 이메일로 사용자를 추가할 때 입력 정보를 아이콘으로 직관화)
+        이중 레이블링하지 마세요. 아이콘은 텍싀트 레이블을 대체할 수 있습니다. 텍스트 레이블 대신
+        아이콘 레이블을 사용하는 예시. 이메일 주소로 사용자를 추가하는 케이스에서 입력 정보를
+        아이콘으로 단순화 및 직관화
       </mm-text>
       <mm-text variant="body">
         일반 텍스트필드와 특수한? 텍스트필드 구별을 위한 시각적인 단서를 제공하세요.
       </mm-text>
-      <mm-text variant="body" data-temp="required indicator / optional indicator">
-        불필요한 정보 입력을 유도하지 마세요. 사용자 여정에 허들이 될 수 있습니다. 다시 말해 모든
-        텍스트필드는 필수 입력입니다. 사용자 정보를 수집하여 사용자 또는 비즈니스에 이점이 명확한
-        경우 선택 필드를 제안할 수 있습니다. 이 때 선택 입력 필드에 '선택입력' 텍스트로
-        가이드합니다.
+      <mm-text variant="body">
+        helper(help message)와 feedback(feedback message / validation feedback)을 구분하기.
+        mui에서는 error prop.
       </mm-text>
     </mm-text-group>
 
@@ -180,7 +181,6 @@
 
       <div class="calendar">
         <style>
-          /* // date */
           .calendar {
             width: 250px;
             --date-width: 32px;
@@ -241,7 +241,7 @@
             border-radius: var(--radius);
             font-size: var(--font-size-small);
             cursor: pointer;
-            &:hover {
+            &::hover {
               background: var(--color-primary);
               color: var(--gray0);
             }
@@ -311,7 +311,7 @@
     </mm-text-list>
 
     <!-- https://story.pxd.co.kr/1451 -->
-    <p>loading state/</p>
+    <p>loading state</p>
 
     <div class="range">
       <label for="myRange">숙박 인원</label>

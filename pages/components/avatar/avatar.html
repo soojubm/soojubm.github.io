@@ -35,26 +35,39 @@
 
   <section class="component-guide">
     <mm-text-group>
+      <mm-text variant="subhead">Considerations</mm-text>
+      <mm-group>
+        <mm-tag>Representative</mm-tag>
+        <mm-tag>Interactive</mm-tag>
+        <mm-tag>Supportive</mm-tag>
+      </mm-group>
+    </mm-text-group>
+    <mm-text-group>
       <mm-text variant="subhead">Meta problems</mm-text>
       <mm-text variant="body"> TODO. fallback, border color. rgba</mm-text>
-      <mm-text variant="body"> variant. user와 company를 구별하는 아바타 형태.</mm-text>
+      <mm-text variant="body">
+        variant. user와 company가 공존하면 시각적으로 구별되는 테두리 형태를 제공하세요.
+      </mm-text>
+      <mm-text variant="body"
+        >User name={} description={string | React.ReactNode} avatarProps={}
+      </mm-text>
     </mm-text-group>
     <mm-text-group>
       <mm-text variant="subhead">Platform problems</mm-text>
       <mm-text>
-        단독으로 쓰일 때는 aria-label이 필요할 수 있고, 텍스트와 함께 쓰일 때의 menuitem 같은
-        컴포넌트
+        단독으로 링크와 함께 쓰이는 경우 aria-label이 필요하다. 텍스트와 함께 쓰일 때의 menuitem
+        같은 컴포넌트를 사용하도록 가이드.
       </mm-text>
-      <mm-text variant="body">아웃라인 아바타는 클릭할 수 없다.</mm-text>
+      <mm-text variant="body">아웃라인 아바타는 클릭할 수 없다. 대원칙에 의거.</mm-text>
       <mm-text variant="body">
-        medium, small 사이즈는 최대 한 줄의 텍스트와 함께 쓸 수 있어요. TextPair와 사용할 수 없다.
-        없다.
+        medium, small 사이즈는 최대 한 줄의 텍스트와 함께 쓸 수 있어요. 즉, TextPair와 사용할 수
+        없다. 디스크립션이 필요하면 large, huge 사이즈를 사용.
       </mm-text>
     </mm-text-group>
     <mm-text-group>
       <mm-text variant="subhead">AvatarGroup</mm-text>
-      <mm-text variant="body">maximum avatar</mm-text>
-      <mm-tile>
+      <mm-text variant="body">maximum avatar length</mm-text>
+      <mm-tile size="small">
         <mm-group variant="avatar">
           <mm-avatar size="medium" default="true"></mm-avatar>
           <mm-avatar size="medium" default="true"></mm-avatar>
@@ -74,7 +87,6 @@
           </mm-group>
         </mm-test-group>
       </div>
-      <mm-tile> User name={} description={string | React.ReactNode} avatarProps={} </mm-tile>
     </mm-text-group>
   </section>
 </main>
