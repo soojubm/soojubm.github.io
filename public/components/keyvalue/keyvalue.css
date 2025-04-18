@@ -9,7 +9,7 @@
 .summary-item[data-alignment=column] {
   flex-direction: column;
   gap: var(--space-0);
-  font-family: 'Courier New', consolas;
+  /* font-family: 'Courier New', consolas; */
 }
 
 .statistic {display:flex;gap:2rem;}

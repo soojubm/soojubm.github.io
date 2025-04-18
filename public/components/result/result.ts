@@ -39,7 +39,8 @@ class Result extends HTMLElement {
     actionSlot.name = 'action'
 
     shadow.appendChild(container)
-    container.append(avatarSlot, label, description, listSlot, actionSlot, makeStyleSheet('result'))
+    if (this.description) container.appendChild(description)
+    container.append(avatarSlot, label, listSlot, actionSlot, makeStyleSheet('result'))
   }
 
   get label() {

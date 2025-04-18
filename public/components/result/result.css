@@ -7,18 +7,18 @@
   width: 100%;
   max-width: var(--layout-width-tiny);
   max-width: 400px;
+  gap: var(--space-4);
   margin: 0 auto;
 }
 .result-title {
-  margin:var(--space-4) 0 0 0;
 }
 .result-description {
-  margin:var(--space-3) 0 0;
+  margin-top: -.25rem;
 }
 
 ::slotted([slot=title]) {}
 ::slotted([slot=description]) {}
 ::slotted([slot=avatar]) {}
-::slotted([slot=list]) {width:100%;margin:var(--space-3) 0 0;}
+::slotted([slot=list]) {width:100%;}
 /* width가 왜 필요하지? */
-::slotted([slot=action]) {margin:1.5rem 0 0 0;}
+::slotted([slot=action]) {margin:1.25rem 0 0 0;}

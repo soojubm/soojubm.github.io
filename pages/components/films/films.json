@@ -1,6 +1,15 @@
 [
   {
     "id": 2025,
+    "releasedate": 2006,
+    "titlekorean": "인사이드 맨",
+    "titleenglish": "Inside Man",
+    "director": "스파이크 리",
+    "country": "미국",
+    "etc": ""
+  },
+  {
+    "id": 2025,
     "releasedate": 1978,
     "titlekorean": "그들이 왔다",
     "titleenglish": "Bambaru Avith",

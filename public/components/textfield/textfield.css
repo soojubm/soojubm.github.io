@@ -164,10 +164,9 @@ textarea.textfield-input {
 /* .is-invalid .textfield-byte {color:var(--red800);} */
 
 /* searchfield */
-
 /* // 검색필드는 레이블이 없다. label ~로 하면 되긴 함. */
 .searchfield {position:relative;}
-.searchfield-input {
+.searchfield input {
   width: 100%;
   height:var(--size-large);
   padding:var(--space-2) var(--size-large);
@@ -182,16 +181,14 @@ textarea.textfield-input {
   position: relative;
   z-index: 1;
 }
-.ios .searchfield-input:focus {
-  width: 90%;
-}
+
 .searchfield-input:focus ~ .searchfield-cancel {right: 0;}
 .searchfield-prefix {
   display:flex;align-items:center;justify-content:center;width:var(--size-large);height:var(--size-large);
   /* height:46px; */
   position:absolute;left:0;top:0;z-index:2;}
 .searchfield-prefix ~ .searchfield-input {padding-left:calc(var(--size-medium) + var(var(--space-2)) + .5rem);}
-.searchfield-clear {display:flex;align-items:center;justify-content:center;width:var(--size-large);height:var(--size-large);position:absolute;right:0;top:0;z-index:1;display:none;}
+.searchfield-clear {display:flex;align-items:center;justify-content:center;width:var(--size-large);height:var(--size-large);position:absolute;right:32px;top:0;z-index:1;}
 .searchfield-input:focus + .searchfield-clear {display:flex;}
 /* 임시 */
 .searchfield-cancel {right:calc(var(--size-medium) + var(var(--space-2)) + var(--space-3));height:var(--size-large);position:absolute;right:var(--size-large);top:0;transition:all .2s ease;}

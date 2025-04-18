@@ -10,7 +10,7 @@ class TextPair extends HTMLElement {
     labelTextElement.innerText = this.labelText || ''
 
     const descriptionElement = document.createElement('mm-text')
-    descriptionElement.setAttribute('variant', 'body')
+    descriptionElement.setAttribute('variant', 'label')
     descriptionElement.innerText = this.descriptionText || ''
 
     shadow.appendChild(container)

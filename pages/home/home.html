@@ -1,4 +1,86 @@
+<div class="scroll-outer">
+  <div class="scroll-inner">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+    <div class="item">Item 4</div>
+    <div class="item">Item 5</div>
+    <div class="item">Item 6</div>
+    <div class="item">Item 6</div>
+    <div class="item">Item 6</div>
+    <div class="item">Item 6</div>
+    <div class="item">Item 6</div>
+    <div class="item">Item 6</div>
+    <!-- 계속 추가 가능 -->
+  </div>
+</div>
+
+
+
+
+
+<style>:root {
+  --layout-max-width: 1200px;
+  --layout-side-padding: calc((100vw - var(--layout-max-width)) / 2);
+  --item-min-width: 240px;
+  --item-gap: 20px;
+}
+
+.scroll-outer {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory; /* 🧲 scroll snap 적용 */
+  -webkit-overflow-scrolling: touch; /* iOS 부드러운 스크롤 */
+}
+
+.scroll-inner {
+  display: flex;
+  gap: var(--item-gap);
+  padding: 20px 0;
+  padding-left: var(--layout-side-padding);
+  padding-right: var(--layout-side-padding);
+  min-width: 100vw;
+}
+
+.item {
+  min-width: var(--item-min-width);
+  height: 150px;
+  background: #eee;
+  flex-shrink: 0;
+  scroll-snap-align: start; /* 🧲 아이템이 스냅에 맞춰짐 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+/* 반응형 대응 */
+@media (max-width: 1200px) {
+  :root {
+    --layout-side-padding: 16px;
+    --item-min-width: 200px;
+    --item-gap: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --layout-side-padding: 12px;
+    --item-min-width: 180px;
+    --item-gap: 12px;
+  }
+
+  .item {
+    height: 120px;
+    font-size: 14px;
+  }
+}
+
+</style>
+
 <main class="page" style="max-width:1600px;margin:0 auto;">
+
+
   <header class="" style="display: flex; justify-content: space-between">
     <div style="width: 40%">
       <mm-text variant="title">
@@ -277,11 +359,11 @@
           ></mm-text-pair>
           <mm-button slot="action">팔로우 중</mm-button>
         </mm-menuitem>
-        <mm-tile variant="elevated" size="small" style="margin-top: var(--space-1)">
+        <!-- <mm-tile variant="elevated" size="small" style="margin-top: var(--space-1)">
           <mm-menuitem label="더 많은 친구를 찾아보세요!" description="">
             <mm-avatar slot="avatar" variant="primary" icon="search"></mm-avatar>
           </mm-menuitem>
-        </mm-tile>
+        </mm-tile> -->
         <!-- 칩 그룹으로 필터링을 제공하니 팔로우 버튼과 위계 충돌. 아바타가 작아서 콘텐츠 분리가 안 된다. -->
       </mm-group>
     </mm-tile>
@@ -771,7 +853,7 @@
       &loz; 다이얼로그에서 버튼 그룹을 두 가지 방식으로 정렬할 필요가 있나요?
     </mm-text> -->
 
-    <div class="feature columns">
+    <!-- <div class="feature columns">
       <mm-feature
         icon="✋"
         titleText="타겟의 명료 / Meaningful and Trustworthy"
@@ -801,7 +883,7 @@
         description="일어날 법 하지 않는 don't 케이스를 작성하여 문서를 장황하게 만들지 마세요. 컴포넌트와
         문서는 계속해서 개선되고 변화한다는 원칙에 연동."
       ></mm-feature>
-    </div>
+    </div> -->
 
     <!-- Apple은 탄소 중립을 실천합니다. 그리고 같은 기준을 2030년까지 모든 제품에 대해서도 적용할
     예정입니다. 모든 Apple 제품과 포장재에 100% 재활용 및 재생 가능 소재만이 사용되는 그날을 위해
@@ -914,7 +996,7 @@
     ></div>
   </div>
 
-  <form class="subscribe">
+  <!-- <form class="subscribe">
     <mm-text-group>
       <mm-text variant="subhead">수줍이 뉴스레터</mm-text>
       <mm-text variant="body">
@@ -938,7 +1020,7 @@
     </mm-text>
     <br />
     <mm-button type="submit" variant="secondary" size="large">뉴스레터 구독</mm-button>
-  </form>
+  </form> -->
 </main>
 
 
