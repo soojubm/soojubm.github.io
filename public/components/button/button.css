@@ -53,14 +53,12 @@ em, i  {
   */
 }
 
-:host {}
 :host(.primary) {}
 /* 이렇게 하면 일단 프로젝트에 어려움. */
 /* :host([variant="primary"]) .button {
   --button-color: var(--color-primary);
   --button-text-color: var(--gray0);
 } */
-
 
 /* IconButton */
 .icon-button {

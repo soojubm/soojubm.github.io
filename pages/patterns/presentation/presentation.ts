@@ -8,6 +8,7 @@ import '/public/stylesheets/shared.css'
 import '/public/stylesheets/pages/presentations.css'
 // import '/pages/patterns/dialog.css'
 import '/pages/components/components.css'
+import '/pages/patterns/table/pagination.css'
 
 document.addEventListener('DOMContentLoaded', () => {
   document.body.insertAdjacentHTML('beforeend', navbar)

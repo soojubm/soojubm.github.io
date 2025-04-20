@@ -84,6 +84,7 @@
   /* max-width: var(--layout-width-wide);
   margin: 0 auto; */
   padding: var(--space-4) var(--grid-margin) 6rem;
+  /* box-sizing: border-box;  */
   position: relative;
 }
 
