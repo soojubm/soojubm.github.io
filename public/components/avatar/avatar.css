@@ -35,7 +35,7 @@ img {
     object-fit: cover;
   }
 }
-
+/* .avatar:not([data-size]) {} */
 .avatar[data-default=true] {
   background-image: url('/public/images/soojubm.png');
   background-size: 87.5%;

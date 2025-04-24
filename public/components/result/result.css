@@ -10,15 +10,13 @@
   gap: var(--space-4);
   margin: 0 auto;
 }
-.result-title {
-}
 .result-description {
   margin-top: -.25rem;
 }
 
+::slotted([slot=avatar]) {}
 ::slotted([slot=title]) {}
 ::slotted([slot=description]) {}
-::slotted([slot=avatar]) {}
 ::slotted([slot=list]) {width:100%;}
-/* width가 왜 필요하지? */
+/* TODO width가 왜 필요하지? */
 ::slotted([slot=action]) {margin:1.25rem 0 0 0;}

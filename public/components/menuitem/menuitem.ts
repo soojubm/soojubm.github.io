@@ -34,7 +34,9 @@ class MenuItem extends HTMLElement {
     description.classList.add('item-description')
 
     // TODO
-    if (this.current && this.current?.length > 0) container.ariaCurrent = this.current
+    if (this.current && this.current?.length > 0) {
+      container.ariaCurrent = this.current
+    }
 
     shadow.append(container, makeStyleSheet('menuitem'))
     container.append(check, avatar, text, label, description, action)

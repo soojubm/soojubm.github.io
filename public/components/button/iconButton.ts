@@ -41,7 +41,7 @@ class IconButton extends HTMLElement {
   // }
 
   get icon() {
-    return this.getAttribute('icon') || ''
+    return this.getAttribute('icon') ?? ''
   }
 
   get variant() {

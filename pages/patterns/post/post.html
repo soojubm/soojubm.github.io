@@ -131,9 +131,9 @@
     <form variany="elevated" class="feed-make" action="">
       <mm-titlebar titletext="게시물 만들기"></mm-titlebar>
       <div style="height: 1rem"></div>
-      <mm-menuitem label="수줍이" size="medium">
+      <!-- <mm-menuitem label="수줍이" size="medium">
         <mm-avatar slot="avatar" default="true"></mm-avatar>
-      </mm-menuitem>
+      </mm-menuitem> -->
       <div style="height: var(--space-2)"></div>
       <mm-textarea
         name="comment"
@@ -146,47 +146,66 @@
     </form>
   </mm-tile>
   <br />
-  <div class="comment-list">
-    <div class="comment-list-item">
-      <mm-menuitem label="soojubm" description="1 day ago">
-        <mm-avatar slot="avatar" default="true"> </mm-avatar>
+  <mm-tile style="max-width:400px;">
+    <mm-titlebar titletext="댓글 2개"></mm-titlebar>
+
+    <div class="comment-list" style="margin-top:1rem;">
+      <div class="comment-list-item">
+        <div style="display: flex; align-items: center; gap: var(--space-3)">
+          <mm-avatar default="true"> </mm-avatar>
+          <div>
+            <mm-text variant="label-strong">수줍이</mm-text>
+            <mm-text variant="caption">1 day ago</mm-text>
+          </div>
+        </div>
         <!-- <a class="comment-list-item-author" href="#">soojubm</a>
-        <time class="comment-list-item-date" datetime="2016">1 day ago</time> -->
-      </mm-menuitem>
-      <mm-text variant="body">
-        우와 처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요. 우와
-        처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요.
-      </mm-text>
-      <button class="comment-list-item-reply" style="margin: var(--space-1) 0 0">
-        답글 7개 더보기
-      </button>
-      <div style="position: absolute; right: 0; top: 0">
-        <mm-icon-button icon="more-vert" class="js-toggle"> </mm-icon-button>
-        <menu class="comment-list-item-menu">
-          <button class="">수정</button>
-          <button class="">삭제</button>
-        </menu>
+          <time class="comment-list-item-date" datetime="2016">1 day ago</time> -->
+        <mm-text variant="body">
+          우와 처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요. 우와
+          처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요.
+        </mm-text>
+        <button class="comment-list-item-reply">답글 10개</button>
+        <div style="position: absolute; right: 0; top: 0">
+          <mm-icon-button variant="navigator" icon="more-vert" class="js-toggle"> </mm-icon-button>
+          <menu class="comment-list-item-menu">
+            <button class="">수정</button>
+            <button class="">삭제</button>
+          </menu>
+        </div>
+      </div>
+      <div class="comment-list-item">
+        <div style="display: flex; align-items: center; gap: var(--space-3)">
+          <mm-avatar default="true"> </mm-avatar>
+          <div>
+            <mm-text variant="label-strong">수줍이</mm-text>
+            <mm-text variant="caption">1 day ago</mm-text>
+          </div>
+        </div>
+        <!-- <a class="comment-list-item-author" href="#">soojubm</a>
+          <time class="comment-list-item-date" datetime="2016">1 day ago</time> -->
+        <mm-text variant="body">
+          우와 처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요. 우와
+          처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요.
+        </mm-text>
+        <button class="comment-list-item-reply">답글</button>
+        </div>
       </div>
     </div>
-  </div>
+  </mm-tile>
 
   <aside style="margin: 2rem 0">
-    <!-- TODO RESULT COMPONENT, TOP BLUR -->
-    <div class="post-attract-blur"></div>
-    <mm-text variant="subhead">다음 내용이 궁금하신가요?</mm-text>
-    <mm-text variant="body">
-      한 달 동안 무료로 모든 콘텐츠를 체험해보세요. 언제든 해지하실 수 있어요.
-    </mm-text>
-    <mm-text-list
+    <!-- TODO  TOP BLUR -->
+    <mm-result title="다음 내용이 궁금하신가요?" description="한 달 동안 무료로 모든 콘텐츠를 체험해보세요. 언제든 해지하실 수 있어요.">
+      <mm-text-list
       texts='[
         "Medium의 모든 회원 전용 스토리에 액세스하세요.",
         "자신에게 중요한 주제에 대해 더 자세히 알아보세요.",
         "수천 가지 질문에 답하는 심층 기사를 받아보세요.",
         "개인적, 직업적 목표를 달성하세요"
-      ]'
-    >
-    </mm-text-list>
-    <mm-button variant="primary" size="large"> 멤버십 가입하기 </mm-button>
+      ]'></mm-text-list>
+      <mm-button variant="primary" size="large"> 멤버십 가입하기 </mm-button>
+    </mm-result>
+    <div class="post-attract-blur"></div>
   </aside>
 </main>
 

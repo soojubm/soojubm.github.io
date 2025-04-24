@@ -36,18 +36,11 @@ TerserPlugin > uglifyjs-webpack-plugin: 번들링 속도가 빠르다. 유지보
 - ('./myFile')
 - '[hash].[ext]' ext: 현재 확장자 그대로 사용
 
-## ?
-
-- TODO 웹팩으로 코드 스플리팅 하기
-- 캐쉬 갱신
-
 ## eslint
 
 tslint duplicated
 
 ## stylelint
-
-npm run dev
 
 eslint-config-prettier
 eslint-config-prettier is a config that disables rules that conflict with Prettier

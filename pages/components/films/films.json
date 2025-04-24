@@ -1,6 +1,24 @@
 [
   {
     "id": 2025,
+    "releasedate": 1955,
+    "titlekorean": "원더 링",
+    "titleenglish": "The Wonder Ring",
+    "director": "스탠 브리키지",
+    "country": "미국",
+    "etc": "단편, 실험ㅋ"
+  },
+  {
+    "id": 2025,
+    "releasedate": 1994,
+    "titlekorean": "여름 정원",
+    "titleenglish": "The Friends 夏の庭",
+    "director": "소마이 신지",
+    "country": "일본",
+    "etc": ""
+  },
+  {
+    "id": 2025,
     "releasedate": 2006,
     "titlekorean": "인사이드 맨",
     "titleenglish": "Inside Man",
@@ -813,9 +831,9 @@
   {
     "id": 202404,
     "releasedate": 1963,
-    "titlekorean": "생명의 빛 TODO",
+    "titlekorean": "생명의 빛",
     "titleenglish": "Mothlight",
-    "director": "스탠 브리키지",
+    "director": "스탠 브래키지",
     "country": "덴마크",
     "etc": ""
   },

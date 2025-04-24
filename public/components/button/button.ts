@@ -71,7 +71,6 @@ class Button extends HTMLElement {
     return this.getAttribute('status') || ''
   }
 
-  // todo type check boolean? string?
   get disabled(): boolean {
     return this.hasAttribute('disabled')
   }

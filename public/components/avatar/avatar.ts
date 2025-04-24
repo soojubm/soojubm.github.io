@@ -3,28 +3,30 @@ import { makeStyleSheet, inheritStyle } from '../../javascripts/components/utils
 class Avatar extends HTMLElement {
   constructor() {
     super()
-    const shadow = this.attachShadow({ mode: 'open' })
+    this.attachShadow({ mode: 'open' })
+  }
+
+  connectedCallback() {
+    const shadow = this.shadowRoot!
+
+    // 이미 렌더링 되어 있으면 중복 생성 방지. 왜 여기서만?
+    if (shadow.querySelector('.avatar')) return
 
     const container = document.createElement('figure')
     container.classList.add('avatar')
     container.role = 'img'
-
-    const badgeSlot = document.createElement('slot')
-    badgeSlot.name = 'badge'
+    container.dataset.size = this.size
+    container.dataset.variant = this.variant
+    container.ariaLabel = this.ariaLabel
+    container.dataset.default = this.default
 
     const badge = document.createElement('mm-badge')
-    // badge.classList.add('avatar-badge')
 
-    if (this.size) container.dataset.size = this.size
-    if (this.variant) container.dataset.variant = this.variant
-
-    if (this.default) container.dataset.default = 'true'
     if (this.icon) {
       const icon = document.createElement('mm-icon')
       const isLargeIcon = this.size === 'large' || this.size === 'huge'
       icon.setAttribute('name', this.icon)
       icon.setAttribute('size', isLargeIcon ? 'large' : 'medium')
-      container.ariaLabel = this.ariaLabel
       container.appendChild(icon)
     }
 
@@ -32,7 +34,6 @@ class Avatar extends HTMLElement {
     if (style) container.setAttribute('style', style)
 
     shadow.append(container, makeStyleSheet('avatar'))
-    container.append(...this.childNodes)
     if (this.src) {
       const image = document.createElement('img')
       image.setAttribute('src', this.src)
@@ -42,19 +43,15 @@ class Avatar extends HTMLElement {
   }
 
   get variant() {
-    return this.getAttribute('variant')
+    return this.getAttribute('variant') ?? 'primary'
   }
 
   get size() {
-    return this.getAttribute('size')
+    return this.getAttribute('size') ?? 'medium'
   }
 
   get badge() {
     return this.getAttribute('badge')
-  }
-
-  get content() {
-    return this.innerHTML
   }
 
   get src() {
@@ -65,15 +62,9 @@ class Avatar extends HTMLElement {
     return this.getAttribute('icon')
   }
 
-  // get iconSize() {
-  //   return this.getAttribute('iconSize') || 'medium'
-  // }
-
   get default() {
-    return this.getAttribute('default')
+    return this.getAttribute('default') ?? 'false'
   }
-  connectedCallback() {}
-  disconnectedCallback() {}
 }
 
 export default Avatar

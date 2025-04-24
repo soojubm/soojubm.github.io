@@ -1,4 +1,42 @@
 <main class="page">
+  <style>
+    .test {
+      position: relative;
+    }
+    .test:after {
+      animation: spinAround 0.5s linear infinite;
+      border-bottom: 2px solid #000;
+      border-left: 2px solid #000;
+      border-radius: var(--bulma-radius-rounded);
+      border-right: 2px solid transparent;
+      border-top: 2px solid transparent;
+      content: '';
+      display: block;
+      height: 1em;
+      position: relative;
+      width: 1em;
+
+      inset-inline-end: 0.75em;
+      position: absolute !important;
+      top: 0.75em;
+      z-index: 4;
+    }
+
+    @keyframes spinAround {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(359deg);
+      }
+    }
+  </style>
+  <fieldset disabled>
+    <input type="text" />
+    <input type="text" />
+  </fieldset>
+  <input type="text" />
+  <div class="test"></div>
   <!-- Dropdown(*Menu, Contextual Menu)*
     displays a list of actions, options or links.
     It is triggered when a user interacts with a Button, Textfield or other control.

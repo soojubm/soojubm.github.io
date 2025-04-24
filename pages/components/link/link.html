@@ -1,6 +1,6 @@
 <main class="page">
   <mm-pageheader
-    title="Links"
+    title="Links todo Expansion Button"
     description="사용자 여정 목적지. 페이지 이동. destination that can be bookmarked. 정보 확장 기능은 따로
   정의해야 함."
   ></mm-pageheader>
@@ -37,6 +37,19 @@
         View Less <mm-icon name="nav-arrow-up"></mm-icon>
       </button>
     </mm-group>
+    <!-- TODO link, text button일 수도 있다. -->
+    <section style="display: flex; flex-direction: column; gap: var(--space-2)">
+      <mm-row gap="var(--space-1)">
+        <mm-icon name="pipe-3d"></mm-icon>
+        <mm-text variant="body">궁금증이 해결되지 않는다면?</mm-text>
+        <mm-link>지금 문의하기</mm-link>
+      </mm-row>
+      <mm-row>
+        <mm-icon name="pipe-3d"></mm-icon>
+        <mm-text variant="body">Something's not right?</mm-text>
+        <mm-link>Get in touch with us.</mm-link>
+      </mm-row>
+    </section>
   </section>
 
   <section class="component-props">
