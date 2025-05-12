@@ -17,52 +17,6 @@
 
   <section>
     <mm-text-group>
-      <!-- <mm-text variant="title">Tokens</mm-text>
-      <mm-text variant="body-large">정리 중.</mm-text> -->
-      <mm-text variant="subhead">Checklist</mm-text>
-      <ul class="checklist">
-        <li>color-icon와 color-text는 항상 동일한가요?</li>
-        <li>
-          color-text-disabled, color-input-disabled, color-button-disabled는 항상 같은 것은 아니다.
-        </li>
-        <li>color-chart-categorical-1</li>
-        <li>
-          elevation.surface / overay, raised, sunken // atlassian 동일한데 왜 나눠놨지. //
-          elevation-surface/shadow
-        </li>
-        <li>
-          250116 연한 회색 배경 하나로 하니 부족. 배경도 마찬가지임. 이제 최소한의 정의로 하는
-          실험을 종료할 단계인 듯. 200, 50 추가.
-        </li>
-        <li>A-ha :: background-weak weak2를 사용할 수 있지만 하나로 통함됨.</li>
-        <li>text, icon, chat 등에서 배경 안에서 쓰는 엘리먼트의 색상 이름.</li>
-        <li>폰트의 baseline이 달라서 텍스트의 상하 간격이 안 맞을 수 있다.</li>
-        <li>
-          그림자를 이용한 시각적 상승 효과로 주변 요소 대비 강조. 더 높은 우선순위 및 행동유도를
-          위한 높은 고도. 사용자는 시각적 단어로 우선순위를 인식하고 인터렉션. 그러나 시각적
-          우선순위는 그림자로만 줄 수 있는 것은 아님. 레이어를 활용할 수도 있다.
-        </li>
-        <li>
-          개별 토큰에 디스크립션이 필요하지 않도록 명명합니다. core: give a name to a raw value to
-          enable theming and make improve maintainability
-        </li>
-        <li>
-          --[namespace]-[component / category]-[attribute]-[status] 프로덕션이 아니기 때문에
-          namespace를 생략.
-        </li>
-        <li>
-          <del>
-            인버트 컬러셋을 추가로 정의하지 않습니다. 하나의 컬러셋으로 다크 테마에 대응합니다.
-            어렵고 또는 불필요한 규칙. 왜냐하면 초기 토큰 세팅 허들을 넘으면 컴포넌트 토큰을 활용한
-            테마 대응이 간편해짐.
-          </del>
-        </li>
-        <li>color-warning, color-warning-weak / color-text-warning</li>
-      </ul>
-    </mm-text-group>
-
-    <div style="height: 4rem"></div>
-    <mm-text-group>
       <mm-text variant="title">Color</mm-text>
       <mm-text variant="body"> primary color = primary interactions, reinforce brand </mm-text>
       <mm-text variant="body">
@@ -76,7 +30,7 @@
       <mm-text variant="label-strong">Primitives</mm-text>
     </mm-text-group>
     <div class="token-group">
-      <article class="token-item" style="border: 0">
+      <article class="token-item">
         <mm-keyvalue alignment="column" key="--gray0:" value="#fff"></mm-keyvalue>
         <mm-group variant="hashtag">
           <mm-tag variant="hashtag">color-background</mm-tag>
@@ -356,7 +310,8 @@
     <mm-text-group>
       <mm-text variant="title">Text</mm-text>
       <mm-text variant="body-large">
-        활자의 위계와 배치. 정보 계층. 14px 기본폰트일 때 1.5의 모호성.
+        활자의 위계와 배치. 정보 계층. 14px 기본폰트일 때 1.5의 모호성. 명확하게 고정값으로 지정하는
+        것이 좋다.
       </mm-text>
     </mm-text-group>
     <button
@@ -373,10 +328,6 @@
     </blockquote>
 
     <mm-text variant="label-strong">Typefaces <sup>2</sup></mm-text>
-    <mm-text variant="body">
-      Sizes <sup><del>5</del> 3</sup>
-    </mm-text>
-    <mm-text variant="body">Weights <sup>2</sup></mm-text>
 
     <section class="token-group">
       <div class="token-item">
@@ -724,4 +675,49 @@
       </div>
     </div>
   </div>
+
+  <mm-text-group>
+    <!-- <mm-text variant="title">Tokens</mm-text>
+  <mm-text variant="body-large">정리 중.</mm-text> -->
+    <mm-text variant="subhead">Checklist</mm-text>
+    <ul class="checklist">
+      <li>color-icon와 color-text는 항상 동일한가요?</li>
+      <li>
+        color-text-disabled, color-input-disabled, color-button-disabled는 항상 같은 것은 아니다.
+      </li>
+      <li>color-chart-categorical-1</li>
+      <li>
+        elevation.surface / overay, raised, sunken // atlassian 동일한데 왜 나눠놨지. //
+        elevation-surface/shadow
+      </li>
+      <li>
+        250116 연한 회색 배경 하나로 하니 부족. 배경도 마찬가지임. 이제 최소한의 정의로 하는 실험을
+        종료할 단계인 듯. 200, 50 추가.
+      </li>
+      <li>A-ha :: background-weak weak2를 사용할 수 있지만 하나로 통함됨.</li>
+      <li>text, icon, chat 등에서 배경 안에서 쓰는 엘리먼트의 색상 이름.</li>
+      <li>폰트의 baseline이 달라서 텍스트의 상하 간격이 안 맞을 수 있다.</li>
+      <li>
+        그림자를 이용한 시각적 상승 효과로 주변 요소 대비 강조. 더 높은 우선순위 및 행동유도를 위한
+        높은 고도. 사용자는 시각적 단어로 우선순위를 인식하고 인터렉션. 그러나 시각적 우선순위는
+        그림자로만 줄 수 있는 것은 아님. 레이어를 활용할 수도 있다.
+      </li>
+      <li>
+        개별 토큰에 디스크립션이 필요하지 않도록 명명합니다. core: give a name to a raw value to
+        enable theming and make improve maintainability
+      </li>
+      <li>
+        --[namespace]-[component / category]-[attribute]-[status] 프로덕션이 아니기 때문에
+        namespace를 생략.
+      </li>
+      <li>
+        <del>
+          인버트 컬러셋을 추가로 정의하지 않습니다. 하나의 컬러셋으로 다크 테마에 대응합니다. 어렵고
+          또는 불필요한 규칙. 왜냐하면 초기 토큰 세팅 허들을 넘으면 컴포넌트 토큰을 활용한 테마
+          대응이 간편해짐.
+        </del>
+      </li>
+      <li>color-warning, color-warning-weak / color-text-warning</li>
+    </ul>
+  </mm-text-group>
 </main>

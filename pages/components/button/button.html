@@ -25,12 +25,12 @@
         <mm-button variant="tertiary" size="large">tertiary</mm-button>
         <!-- <mm-button variant="destructive" aria-label="danger">destructive</mm-button> -->
         <mm-button variant="text" size="large">text</mm-button>
-        <mm-button variant="text" size="large" disabled>text</mm-button>
+        <!-- <mm-button variant="text" size="large" disabled>text</mm-button> -->
       </mm-group>
       <mm-separator></mm-separator>
       <mm-group>
         <mm-button variant="primary">small</mm-button>
-        <mm-button variant="tertiary">small</mm-button>`
+        <mm-button variant="primary" size="large">large</mm-button>`
       </mm-group>
     </mm-tabpanel>
     <mm-separator></mm-separator>
@@ -70,10 +70,6 @@
   <section class="component-guide">
     <mm-text-group>
       <mm-text variant="subhead">Meta problems</mm-text>
-      <mm-text variant="body">
-        버튼 그룹에서 primary action에 먼저 포커싱하세요. tabindex 속성은 대신 마크업 순서와 정렬
-        스타일링의 결합.
-      </mm-text>
       <!-- <mm-text>
         Split button이란? 사용자에게 더 많은 작업을 표시하는 경우 작업을 선택하여 트리거할 수 있도록
         선택 + 버튼 조합을 사용. 것이 좋습니다.
@@ -83,15 +79,15 @@
         버튼과 형태는 동일하다. Link 안에 button의 형태를 합성?
       </mm-text> -->
       <!-- <mm-text variant="body">모든 액션에 피드백할 필요는 없습니다.</mm-text> -->
-      <mm-text variant="body-bold">Material3 Chips. AssistChip(action), FilterChip(choice), InputChip(dismissable), SuggestionChip</mm-text>
-      <mm-text>MM2 ROUNDED CHOICE, INPUT</mm-text>
       <mm-text variant="body">
-        Flutter. Chip, RawChip, FilterChip(multiple select Filter chip, deletable),
-        ChoiceChip(single select), ActionChip(togglable), InputChip M2
+        M2/Flutter. Chip, RawChip, FilterChip(multiple select Filter chip, deletable),
+        ChoiceChip(단일선택/라디오버튼 같은), ActionChip(togglable), InputChip(삭제아이콘포함,), ROUNDED CHOICE, INPUT
       </mm-text>
+      <mm-text variant="body-bold">Material3 Chips. 구ActionChip(AssistChip(action)/SuggestionChip) FilterChip(choice), InputChip(dismissable), </mm-text>
       <mm-text variant="body">
         ChoiceChip. 단독으로 사용하는 경우는 없다. 항상 그룹이기 때문에 단일 CustomChip이 필수적인가?
       </mm-text>
+      <mm-text>group과 sets 차이. 머티리얼 칩스에서 구분해서 사용함. 그룹은 순서나 구조가 있는.</mm-text>
     </mm-text-group>
     <mm-text-group>
       <mm-text variant="subhead">Platform problems</mm-text>
@@ -185,45 +181,6 @@
         </button>
       </div>
     </mm-tile>
-
-    <mm-text-group>
-      <mm-text variant="subhead" data-temp=" minimum viable experience" style="margin-top: 0">
-        ButtonGroup - binary choices
-      </mm-text>
-      <mm-text variant="body">
-        텍스트 버튼은 버튼 처럼 보이지 않을 수 있기 때문에 학습된? 보편적인? 약속된? 누구랑 약속?
-        패턴에서 사용하세요. 이 시스템에는 정의하지 않지만 세로 정렬되는 버튼 그룹에서 text button이
-        아래에 배치되는 패턴과 혼동되지 않도록 버튼의 아래 가이드 텍스트를 배치하지 않습니다. ->
-        사실은 모든 버튼에서 전환을 유도하는 텍스트를 사용없이 인터페이스만으로.
-      </mm-text>
-    </mm-text-group>
-    <br />
-    <mm-group variant="chip">
-      <mm-tile size="small">
-        <mm-group variant="chip">
-          <mm-button variant="tertiary">취소</mm-button>
-          <mm-button variant="primary">저장</mm-button>
-        </mm-group>
-      </mm-tile>
-      <mm-tile size="small">
-        <mm-group variant="chip">
-          <mm-button variant="text">건너뛰기</mm-button>
-          <mm-button variant="secondary">다음</mm-button>
-        </mm-group>
-      </mm-tile>
-      <mm-tile size="small">
-        <mm-group variant="chip">
-          <mm-button variant="tertiary">이전</mm-button>
-          <mm-button variant="secondary">다음</mm-button>
-        </mm-group>
-      </mm-tile>
-      <mm-tile size="small">
-        <mm-group variant="chip" class="hero-actions">
-          <mm-button variant="primary" href="#components">지금 가입하기</mm-button>
-          <mm-button variant="text">더 알아보기</mm-button>
-        </mm-group>
-      </mm-tile>
-    </mm-group>
 
     <mm-text-group>
       <mm-text variant="subhead"> FilterButton/FilterTrigger, FilterOption </mm-text>

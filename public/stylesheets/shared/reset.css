@@ -112,7 +112,7 @@ table tbody[role=rowgroup] tr th + th {width:auto;}
 ul {padding-left:var(--space-4);}
 ul li {}
 ul li:not(:first-child) {margin: var(--space-1) 0 0;}
-ul li::marker {}
+ul li::marker {font-size:var(--font-size-small);}
 
 ol {padding-left:var(--space-4)}
 
