@@ -15,6 +15,8 @@
     }
   </style>
 
+  <p>opacity.state.hover 4% opacity.state.focus 4% opacity.state.press 8% opacity.state.active</p>
+
   <section>
     <mm-text-group>
       <mm-text variant="title">Color</mm-text>
@@ -24,6 +26,15 @@
         making it easier for users to interact, search, and differentiate elements. For additional
         guidance, refer to the component-specific guidelines.
       </mm-text>
+      <mm-text variant="body"> warning과 danger를 구분할 필요가 있을까. attention. (ebay) </mm-text>
+      <mm-text variant="body">
+        foreground. primary/secondary. 지금 light로 쓰는 것 보다 이렇게 변경하기.
+      </mm-text>
+      <mm-text variant="body">
+        strong/subtle 맥락: 강도나 무게, 농도를 말할 때 적절함. vs 감정, 표현, 인상 등을 말할 때
+        적절함
+      </mm-text>
+      <mm-text variant="body"> state layer </mm-text>
     </mm-text-group>
     <br /><br />
     <mm-text-group>
@@ -163,6 +174,9 @@
         요소의 너비와 높이입니다. 뷰포트의 크기가 변경되어도 사이즈 토큰은 변하지 않습니다. huge
         size는 avatar huge에 단독으로 사용하고 있다. media 컴포넌트와 구별.
       </mm-text>
+      <mm-text variant="body">
+        Dimension. dimension.action.height.small / icon / dimension.tapTargetMinimum
+      </mm-text>
     </mm-text-group>
     <section class="token-group">
       <div class="token-item">
@@ -210,6 +224,7 @@
 
   <section>
     <mm-text variant="subhead">Shapes - Radius & Elevations</mm-text>
+    <mm-text variant="body">radius.formInput/photoSmall</mm-text>
     <div class="token-group">
       <article class="token-item is-gray000">
         <figure></figure>
@@ -263,6 +278,11 @@
     <mm-text-group>
       <mm-text variant="title">Space</mm-text>
       <mm-text variant="body-large">요소 사이의 간격. 현재 섹션 사이의 정의하고 있지 않음.</mm-text>
+      <mm-text variant="body-large">spacing.page.grid.margin / spacing.page.grid.gutter</mm-text>
+      <mm-text variant="body-large">
+        👉 "무엇이 있는 공간", 또는 "무엇이 차지하는 물리적 영역" 을 가리킬 때 씁니다. 👉 간격을
+        조절하는 방법이나 그 패턴, 디자인 또는 인쇄에서 간격 조절 등을 말할 때 주로 사용됩니다.
+      </mm-text>
     </mm-text-group>
     <section class="token-group">
       <div class="token-item">
@@ -374,6 +394,9 @@
     <mm-text-group>
       <mm-text variant="title">Layouts - Width</mm-text>
       <mm-text variant="body-large">모든 container는 --small부터 max-width를 100%.</mm-text>
+      <mm-text variant="body-large"
+        >TODO breakpoint.medium. breakpoint.android.compact/expanded</mm-text
+      >
     </mm-text-group>
     <div style="display: flex; gap: 1rem">
       <mm-tile><mm-tag variant="primary">narrow</mm-tag></mm-tile>
