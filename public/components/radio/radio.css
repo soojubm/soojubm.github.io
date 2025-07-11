@@ -16,6 +16,7 @@
 }
 
 .radio label {
+  padding: 0 0 0 calc(var(--radio-size) + var(--radio-inset));
   line-height: var(--radio-size);
 }
 
@@ -39,6 +40,9 @@
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+
+  position: absolute;
+  left: 0;
 }
 .radio input:checked {
   --b1: 25.3267% .015896 252.417568;

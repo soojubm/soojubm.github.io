@@ -80,7 +80,8 @@
 /* ReactNative safeAreaView, scrollView */
 
 .page {
-  min-height: calc(100vh - var(--navbar-height));
+  /* TODO minus footer height */
+  min-height: calc(100vh - var(--navbar-height) - 200px);
   /* max-width: var(--layout-width-wide);
   margin: 0 auto; */
   padding: var(--space-4) var(--grid-margin) 6rem;

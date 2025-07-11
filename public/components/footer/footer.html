@@ -1,7 +1,7 @@
 <footer class="footer js-observer" id="footer" role="contentinfo">
   <div class="footer-background"></div>
   <figure class="footer-logo" hidden></figure>
-  <div style="margin-top: -3rem; z-index: 5">
+  <div style="margin-top: -4rem; z-index: 5">
     <mm-entity label="수줍이" description="soojubm@gmail.com" description2="82 10 3121 7045">
       <mm-avatar slot="avatar" size="large" variant="secondary" default="true"></mm-avatar>
       <mm-button>팔로우</mm-button>
@@ -28,12 +28,18 @@
         <mm-avatar slot="avatar" variant="primary" size="medium" icon="github"> </mm-avatar>
         <mm-icon slot="action" size="small" name="arrow-up-right"></mm-icon>
       </mm-menuitem>
-      <mm-menuitem label="영화감상 목록" href="./films.html">
-        <mm-avatar slot="avatar" variant="primary" size="medium" icon="movie"> </mm-avatar>
-      </mm-menuitem>
-      <mm-menuitem label="독서 기록" href="./books.html">
-        <mm-avatar slot="avatar" variant="primary" size="medium" icon="book"> </mm-avatar>
-      </mm-menuitem>
+      <div style="display: flex; gap: var(--space-2); margin: var(--space-4) 0 0 0">
+        <a
+          href="./films.html"
+          style="font-style: normal; font-weight: var(--font-weight-bold); color: var(--color-text)"
+          >영화감상 목록
+        </a>
+        <a
+          href="./books.html"
+          style="font-style: normal; font-weight: var(--font-weight-bold); color: var(--color-text)"
+          >독서 목록
+        </a>
+      </div>
     </mm-group>
   </div>
 

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flutter WebView Input</title>
+    <script type="text/javascript">
+      function sendInputValue(value) {
+        JavaBridge.postMessage(value)
+      }
+
+      function setInputValueFromFlutter(value) {
+        document.getElementById('myInput').value = value
+      }
+
+      function getInputValue() {
+        return document.getElementById('myInput').value
+      }
+    </script>
+  </head>
+  <body>
+    <h2>Flutter WebView Input Example</h2>
+    <input id="myInput" type="text" oninput="sendInputValue(this.value)" />
+
+    <section class="visual">
+      <div class="content">
+        <span>2025년 신년 감사 선물</span>
+        <h3>수분 톡톡, 아벨라 수분크림</h3>
+        <p id="inputValue">#촉촉보습 #올리브영 수분크림 부문 1위</p>
+      </div>
+      <div class="image">
+        <img src="" alt="" />
+      </div>
+    </section>
+
+    <section class="content-section">
+      <header class="section-head">
+        <span class="sub-copoy">서브카피 입력</span>
+        <p class="main-copy">메인카피를 입력해주세요.</p>
+        <ul>
+          <li>
+            <em>1</em>
+            <span>연인에게</span>
+            <p>특별 선물을 하고 싶은 사람</p>
+          </li>
+          <li>
+            <em>2</em>
+            <span>연인에게</span>
+            <p>특별 선물을 하고 싶은 사람</p>
+          </li>
+          <li>
+            <em>3</em>
+            <span>연인에게</span>
+            <p>특별 선물을 하고 싶은 사람</p>
+          </li>
+          <li>
+            <em>4</em>
+            <span>연인에게</span>
+            <p>특별 선물을 하고 싶은 사람</p>
+          </li>
+        </ul>
+      </header>
+    </section>
+
+    <section class="faq-section">
+      <header class="section-head">
+        <span class="sub-copoy">서브카피 입력</span>
+        <p class="main-copy">자주 묻는 질문</p>
+        <ul>
+          <li>
+            <em>Q</em>
+            <span>와인은 어떻게 보관하나요?</span>
+            <p>통풍이 잘 되고 빛의 영향을 받지 않는 서늘한 곳에 보관하세요.</p>
+          </li>
+          <li>
+            <em>Q</em>
+            <span>와인은 어떻게 보관하나요?</span>
+            <p>통풍이 잘 되고 빛의 영향을 받지 않는 서늘한 곳에 보관하세요.</p>
+          </li>
+          <li>
+            <em>Q</em>
+            <span>와인은 어떻게 보관하나요?</span>
+            <p>통풍이 잘 되고 빛의 영향을 받지 않는 서늘한 곳에 보관하세요.</p>
+          </li>
+          <li>
+            <em>Q</em>
+            <span>와인은 어떻게 보관하나요?</span>
+            <p>통풍이 잘 되고 빛의 영향을 받지 않는 서늘한 곳에 보관하세요.</p>
+          </li>
+          <li>
+            <em>Q</em>
+            <span>와인은 어떻게 보관하나요?</span>
+            <p>통풍이 잘 되고 빛의 영향을 받지 않는 서늘한 곳에 보관하세요.</p>
+          </li>
+        </ul>
+      </header>
+    </section>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .visual {
+        height: 50vh;
+        padding: 0 20px;
+        background-color: red;
+        position: relative;
+      }
+      span {
+        font-size: 16px;
+      }
+      h3 {
+        font-size: 24px;
+      }
+      p {
+        font-size: 16px;
+      }
+      .text-align-center {
+        text-align: center;
+      }
+
+      .content-section {
+        padding: 0 20px;
+      }
+      .content-section ul {
+        list-style: none;
+        padding: 0;
+      }
+      .content-section li {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 20px;
+        text-align: left;
+      }
+      .content-section li em {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 24px;
+        background-color: #333;
+        border-radius: 50%;
+        color: #fff;
+        font-size: 14px;
+      }
+      .content-section li span {
+        font-size: 18px;
+        font-weight: bold;
+      }
+      .content-section li p {
+        width: 100%;
+        font-size: 14px;
+        color: #666;
+        margin-top: 5px;
+      }
+
+      /* faq section */
+      .faq-section {
+        padding: 0 20px;
+      }
+      .faq-section ul {
+        list-style: none;
+        padding: 0;
+      }
+      .faq-section li {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 20px;
+        text-align: left;
+      }
+      .faq-section li em {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 24px;
+        background-color: #333;
+        border-radius: 50%;
+        color: #fff;
+        font-size: 14px;
+      }
+      .faq-section li span {
+        font-size: 18px;
+        font-weight: bold;
+      }
+      .faq-section li p {
+        width: 100%;
+        font-size: 14px;
+        color: #666;
+        margin-top: 5px;
+      }
+
+      .section-head {
+        text-align: center;
+      }
+      .section-head .main-copy {
+        font-size: 36px;
+        font-weight: bold;
+        color: #333;
+      }
+      .section-head .sub-copoy {
+        font-size: 16px;
+        color: #666;
+      }
+    </style>
+  </body>
+</html>

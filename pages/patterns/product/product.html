@@ -37,70 +37,73 @@
         </mm-text>
       </div>
 
-      <form class="product-order" style="margin: 1.5rem 0 1rem">
-        <div class="product-order-variant textfield">
+      <form style="margin: 2rem 0 1rem">
+        <!-- <div class="textfield">
           <label class="textfield-label" for="">상품구성</label>
           <select class="textfield-input" name="" id="">
             <option value="">수량</option>
             <option value="">색상</option>
           </select>
           <mm-icon class="textfield-suffix" name="nav-arrow-down"></mm-icon>
-        </div>
+        </div> -->
 
-        <br />
+        <!-- FIXME fullwidth doesn't work -->
+        <!-- <mm-group variant="button"> -->
+        <!-- <mm-button variant="tertiary">찜 reverse</mm-button> -->
+        <div
+          class="counter js-counter"
+          style="display: flex; align-items: center; max-width: 10rem; gap: var(--space-2)"
+        >
+          <label for="numberfield" style="position: absolute; opacity: 0">
+            레이블 라이트하우스용
+          </label>
+          <mm-icon-button
+            variant="navigator"
+            icon="minus"
+            class="js-counter-decrement"
+            aria-controls="numberfield"
+          ></mm-icon-button>
+          <mm-textfield size="small" value="20"></mm-textfield>
+          <!-- <input
+            class="counter-input js-counter-input js-number-input"
+            type="number"
+            name="counter1"
+            id="numberfield"
+            min="5"
+            max="20"
+            value="0"
+          /> -->
+          <mm-icon-button
+            variant="navigator"
+            icon="plus"
+            class="js-counter-increment"
+            tabindex="-1"
+          >
+          </mm-icon-button>
+        </div>
         <mm-row justifyContent="space-between">
           <mm-text variant="label-strong">총 상품금액</mm-text>
           <mm-text variant="subhead">₩ 163,000</mm-text>
         </mm-row>
-        <!-- FIXME fullwidth doesn't work -->
-        <!-- <mm-group variant="button"> -->
-        <!-- <mm-button variant="tertiary">찜 reverse</mm-button> -->
-        <footer style="margin-top: var(--space4)">
+
+        <footer style="margin: var(--space-2) 0">
           <mm-button variant="primary" size="large" isfullwidth="true">Add to Cart</mm-button>
         </footer>
         <!-- </mm-group> -->
-        <mm-text-list
-          texts='[
-        "단건의 상품 구매하는 케이스와 수량 및 옵션을 선택하는 케이스의 구별. 펀딩이나. 구매ㅐ=. 장바구니."
-        ]'
-        >
-        </mm-text-list>
+
+        <mm-row gap="var(--space-1)">
+          <mm-icon name="pipe-3d"></mm-icon>
+          <mm-text variant="body">Free shipping on all U.S. orders of $40+</mm-text>
+        </mm-row>
+        <mm-row gap="var(--space-1)">
+          <mm-icon name="pipe-3d"></mm-icon>
+          <mm-text variant="body">Free returns and exchanges</mm-text>
+        </mm-row>
       </form>
     </section>
   </header>
 
-  <section class="product-detail" style="max-width: 1000px; margin: 4rem auto 0">
-    <section class="review">
-      <mm-text-group>
-        <mm-text variant="subhead">Reviews</mm-text>
-        <mm-keyvalue key="Total review" value="83"></mm-keyvalue>
-      </mm-text-group>
-      <div stlye="display:flex;gap:var(--space-4);margin-top:var(--space-4);">
-        <mm-tile variant="elevated">
-          <div>⭐⭐⭐⭐⭐</div>
-          <div style="margin-top: var(--space-3)">
-            <mm-text variant="body"
-              >I have 2 kids so sleep is hard to come by, these have helped me to wake up feeling
-              more refreshed and ready to start the day
-            </mm-text>
-          </div>
-          <div style="height: var(--space-3)"></div>
-          <mm-text-pair labelText="Fleet Foxes" descriptionText="2020년 12월 1일"></mm-text-pair>
-        </mm-tile>
-        <mm-tile variant="elevated">
-          <div>⭐⭐⭐⭐⭐</div>
-          <div style="margin-top: var(--space-3)">
-            <mm-text variant="body"
-              >I have 2 kids so sleep is hard to come by, these have helped me to wake up feeling
-              more refreshed and ready to start the day
-            </mm-text>
-            <div style="height: var(--space-3)"></div>
-          </div>
-          <mm-text-pair labelText="Fleet Foxes" descriptionText="2020년 12월 1일"></mm-text-pair>
-        </mm-tile>
-      </div>
-    </section>
-
+  <section class="product-detail" style="margin: 4rem auto 0">
     <aside class="product-quick is-visible">
       <figure class="product-quick-head">
         <img src="" />
@@ -119,21 +122,216 @@
       </footer>
     </aside>
 
-    <div class="product-detail-intro" style="margin: 8rem 0">
+    <!-- <div class="product-detail-intro" style="max-width: 1000px; margin: 8rem auto">
       <figure class="product-detail-intro-image">
         <img src="" alt="" />
       </figure>
       <figure class="product-detail-intro-image">
         <img src="" alt="" />
       </figure>
-    </div>
-    <mm-text variant="title">
-      <span class="linebreak-desktop">우리의 입맛에 맞는 파스타를 엄선하여</span>
-      <span class="linebreak-desktop">이탈리아 지역별 정통 파스타소스를 재현하였습니다.</span>
-    </mm-text>
+      <mm-text variant="title">
+        <span class="linebreak-desktop">우리의 입맛에 맞는 파스타를 엄선하여</span>
+        <span class="linebreak-desktop">이탈리아 지역별 정통 파스타소스를 재현하였습니다.</span>
+      </mm-text>
+    </div> -->
 
     <br />
 
+    <section
+      style="
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        gap: 2rem;
+        max-width: 1000px;
+        margin: 0 auto;
+      "
+    >
+      <div
+        style="width: 560px; height: 780px; border-radius: var(--radius-large); background: #2a348b"
+      ></div>
+      <div style="display: flex; flex-direction: column; flex: 1; gap: var(--space-4)">
+        <mm-tag variant="temp1">Why prebiotics?</mm-tag>
+        <mm-text variant="title"> Prebiotics are fibers that feed good bacteria </mm-text>
+        <mm-text variant="description">
+          And good bacteria creates a healthy oral environment. In addition to positively impacting
+          the things you can taste and feel, like fresher breath and less sensitive teeth, a
+          balanced oral environment is directly linked to cardiovascular, respiratory, and immune
+          health.
+        </mm-text>
+      </div>
+    </section>
+
+    <section style="padding: 2rem 0 0 0; max-width: 1000px; margin: 5rem auto 0">
+      <!-- <div
+        style="width: 560px; height: 780px; border-radius: var(--radius-large); background: #2a348b"
+      ></div> -->
+      <div
+        style="
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 100%;
+          gap: var(--space-4);
+          text-align: center;
+          margin: 0 auto;
+        "
+      >
+        <mm-tag variant="temp1">Why prebiotics?</mm-tag>
+        <mm-text variant="title"> Prebiotics are fibers that feed good bacteria </mm-text>
+        <mm-text variant="description">
+          And good bacteria creates a healthy oral environment. In addition to positively impacting
+          the things you can taste and feel, like fresher breath and less sensitive teeth, a
+          balanced oral environment is directly linked to cardiovascular, respiratory, and immune
+          health.
+        </mm-text>
+      </div>
+      <div class="feature columns" style="max-width: 1000px; margin: 2rem auto 0; gap: 1.5rem">
+        <mm-feature
+          icon="✋"
+          titleText="Tangerine Oil"
+          description="A microbial substrate that has a positive impact on the oral environment"
+        ></mm-feature>
+        <mm-feature
+          icon="✋"
+          titleText="Tangerine Oil"
+          description="A microbial substrate that has a positive impact on the oral environment"
+        ></mm-feature>
+        <mm-feature
+          icon="✋"
+          titleText="Tangerine Oil"
+          description="A microbial substrate that has a positive impact on the oral environment"
+        ></mm-feature>
+        <mm-feature
+          icon="✋"
+          titleText="Tangerine Oil"
+          description="A microbial substrate that has a positive impact on the oral environment"
+        ></mm-feature>
+      </div>
+    </section>
+
+    <section
+      style="
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+        padding: 2rem 0 0 0;
+        margin: 5rem 0 0 0;
+      "
+    >
+      <!-- <div
+        style="width: 560px; height: 780px; border-radius: var(--radius-large); background: #2a348b"
+      ></div> -->
+      <div
+        style="
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: var(--space-4);
+          padding: 4rem;
+          text-align: center;
+          background-color: #f7f5f1;
+        "
+      >
+        <mm-tag variant="temp1">Why prebiotics?</mm-tag>
+        <mm-text variant="title"> Prebiotics are fibers that feed good bacteria </mm-text>
+        <mm-text variant="description">
+          And good bacteria creates a healthy oral environment. In addition to positively impacting
+          the things you can taste and feel, like fresher breath and less sensitive teeth, a
+          balanced oral environment is directly linked to cardiovascular, respiratory, and immune
+          health.
+        </mm-text>
+        <div class="feature columns" style="max-width: 1000px; margin: 2rem auto; gap: 1.5rem">
+          <mm-feature
+            icon="✋"
+            titleText="Tangerine Oil"
+            description="A microbial substrate that has a positive impact on the oral environment"
+          ></mm-feature>
+          <mm-feature
+            icon="✋"
+            titleText="Tangerine Oil"
+            description="A microbial substrate that has a positive impact on the oral environment"
+          ></mm-feature>
+          <mm-feature
+            icon="✋"
+            titleText="Tangerine Oil"
+            description="A microbial substrate that has a positive impact on the oral environment"
+          ></mm-feature>
+          <mm-feature
+            icon="✋"
+            titleText="Tangerine Oil"
+            description="A microbial substrate that has a positive impact on the oral environment"
+          ></mm-feature>
+        </div>
+      </div>
+    </section>
+
+    <section
+      style="display: flex; align-items: center; gap: 4rem; max-width: 1000px; margin: 5rem auto 0"
+    >
+      <div
+        style="width: 560px; height: 780px; border-radius: var(--radius-large); background: #2a348b"
+      ></div>
+      <div style="display: flex; flex-direction: column; flex: 1; gap: var(--space-4)">
+        <mm-tag variant="temp1">Why prebiotics?</mm-tag>
+        <mm-text variant="title"> Prebiotics are fibers that feed good bacteria </mm-text>
+        <mm-text variant="description">
+          And good bacteria creates a healthy oral environment. In addition to positively impacting
+          the things you can taste and feel, like fresher breath and less sensitive teeth, a
+          balanced oral environment is directly linked to cardiovascular, respiratory, and immune
+          health.
+        </mm-text>
+      </div>
+    </section>
+
+    <section
+      class="review"
+      style="
+        background-color: #f7eede;
+        margin: 5rem 0;
+        padding: 2rem 4rem;
+        box-sizing: border-box;
+        border-radius: var(--radius-large);
+        max-width: 1000px;
+        margin: 5rem auto 0;
+      "
+    >
+      <mm-text-group>
+        <mm-text variant="subhead">Loved By Over +70,000 Smiles!</mm-text>
+        <mm-text variant="body">
+          Toothpaste so good, you’ll actually look forward to brushing —just ask our customers.
+        </mm-text>
+        <div style="height: var(--space-1)"></div>
+        <!-- <mm-keyvalue key="Total review" value="83"></mm-keyvalue> -->
+      </mm-text-group>
+      <div style="display: flex; gap: var(--space-4); margin-top: var(--space-4)">
+        <mm-tile variant="flat">
+          <div>⭐⭐⭐⭐⭐</div>
+          <div style="margin-top: var(--space-3)">
+            <mm-text variant="body"
+              >I have 2 kids so sleep is hard to come by, these have helped me to wake up feeling
+              more refreshed and ready to start the day
+            </mm-text>
+          </div>
+          <div style="height: var(--space-4)"></div>
+          <mm-text-pair labelText="Fleet Foxes" descriptionText="2020년 12월 1일"></mm-text-pair>
+        </mm-tile>
+        <mm-tile variant="flat">
+          <div>⭐⭐⭐⭐⭐</div>
+          <div style="margin-top: var(--space-3)">
+            <mm-text variant="body"
+              >I have 2 kids so sleep is hard to come by, these have helped me to wake up feeling
+              more refreshed and ready to start the day
+            </mm-text>
+            <div style="height: var(--space-4)"></div>
+          </div>
+          <mm-text-pair labelText="Fleet Foxes" descriptionText="2020년 12월 1일"></mm-text-pair>
+        </mm-tile>
+      </div>
+    </section>
+
+    <br /><br /><br /><br /><br />
     <div class="product-detail-summary">
       <mm-text variant="subhead">상품상세정보 고지</mm-text>
       <dl style="margin: var(--space-3) 0">
@@ -325,6 +523,18 @@
           주는 요인으로 작용하여 최상단으로 상품 정보가 올라오는 경향. 법적으로 강제되었으나
           상세페이지의 이미지에 포함되거나 하단에 눈에 띄지 않게 고지하는 경향이었음. 베네핏,
           포인트, 배송 안내에 더하여 전략 배치할 수 있다.
+        </li>
+        <li>
+          상품 상세 정보는 소비자가 이해하기 쉬운 용어로 작성되어야 하며, 부득이 외국어나 전문용어가
+          사용되는 경우에는 해당 용어의 의미를 쉽게 이해할 수 있도록 주석 등을 통해 부기해야 한다.
+        </li>
+        <li>
+          상품 소개 및 판매 방송을 하는 경우 제조자, 원산지 등 상품 등의 정보를 소비자가 알아보기
+          쉽도록 반복적 또는 지속적으로 명확하게 제공해야 한다.
+        </li>
+        <li>
+          단건의 상품 구매하는 케이스와 수량 및 옵션을 선택하는 케이스의 구별. 펀딩이나. 구매ㅐ=.
+          장바구니.
         </li>
       </ul>
     </blockquote>

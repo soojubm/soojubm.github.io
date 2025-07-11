@@ -73,42 +73,15 @@
         ></mm-textfield>
         <mm-textfield label="with label" placeholder="Label"></mm-textfield>
       </mm-group>
-      <br />
-      <mm-group variant="textfield">
-        <div style="flex: 1">
-          <mm-textfield type="date" name="date-start" label="체크인" placeholder="YYYY. MM. DD.">
-            <mm-icon slot="suffix" name="calendar"></mm-icon>
-          </mm-textfield>
-        </div>
-        <div style="flex: 1">
-          <mm-textfield type="date" name="date-end" label="체크아웃" placeholder="YYYY. MM. DD.">
-            <mm-icon slot="suffix" name="calendar"></mm-icon>
-          </mm-textfield>
-        </div>
-      </mm-group>
-      <br />
-      <mm-tile>
-        <mm-group variant="textfield" style="width: 100%; flex-wrap: nowrap; align-items: flex-end">
-          <mm-textfield label="Length" placeholder="cm unit"></mm-textfield>
-          <div style="display: flex; align-items: center; height: var(--size-large)">
-            <mm-icon name="xmark"></mm-icon>
-          </div>
-          <mm-textfield label="Width" placeholder="x means"></mm-textfield>
-          <div style="display: flex; align-items: center; height: var(--size-large)">
-            <mm-icon name="xmark"></mm-icon>
-          </div>
-          <mm-textfield label="Height" placeholder="cm"></mm-textfield>
-        </mm-group>
-      </mm-tile>
     </div>
   </section>
 
   <!-- <mm-textfield type="text" label="" hiddenLabel placeholder="Placeholder...">
-            <mm-icon slot="prefix" name="xray-view"></mm-icon>
-          </mm-textfield>
-          <mm-textfield type="email" label="" hiddenLabel placeholder="with Suffix...">
-            <mm-icon slot="suffix" name="xray-view"></mm-icon>
-          </mm-textfield> -->
+    <mm-icon slot="prefix" name="xray-view"></mm-icon>
+  </mm-textfield>
+  <mm-textfield type="email" label="" hiddenLabel placeholder="with Suffix...">
+    <mm-icon slot="suffix" name="xray-view"></mm-icon>
+  </mm-textfield> -->
   <!-- <p>unit, choose/enter</p> -->
   <!-- <abbr title="필수입력">*</abbr> -->
 
@@ -167,12 +140,12 @@
       </mm-text>
       <mm-text variant="body"> 레이블을 텍스트필드 왼쪽에 배치하지 마세요.</mm-text>
       <mm-text variant="body">
-        이중 레이블링하지 마세요. 아이콘은 텍싀트 레이블을 대체할 수 있습니다. 텍스트 레이블 대신
-        아이콘 레이블을 사용하는 예시. 이메일 주소로 사용자를 추가하는 케이스에서 입력 정보를
-        아이콘으로 단순화 및 직관화
+        아이콘은 텍스트 레이블을 대체할 수 있습니다. 텍스트 레이블 대신 아이콘 레이블을 사용하는
+        예시. 이메일 주소로 사용자를 추가하는 케이스에서 입력 정보를 아이콘으로 단순화 및 직관화
       </mm-text>
       <mm-text variant="body">
-        일반 텍스트필드와 특수한? 텍스트필드 구별을 위한 시각적인 단서를 제공하세요.
+        이메일, 패스워드 등의 특수한 텍스트필드 타입은 기본 텍스트필드와의 구별을 위해 시각적인
+        단서를 추가로 제공하세요.
       </mm-text>
       <mm-text variant="body">
         helper(help message)와 feedback(feedback message / validation feedback)을 구분하기.
@@ -324,6 +297,37 @@
           <div class="calendar-body-column">6</div>
           <div class="calendar-body-column">7</div>
         </div>
+
+        <br />
+        <mm-group variant="textfield">
+          <div style="flex: 1">
+            <mm-textfield type="date" name="date-start" label="체크인" placeholder="YYYY. MM. DD.">
+              <mm-icon slot="suffix" name="calendar"></mm-icon>
+            </mm-textfield>
+          </div>
+          <div style="flex: 1">
+            <mm-textfield type="date" name="date-end" label="체크아웃" placeholder="YYYY. MM. DD.">
+              <mm-icon slot="suffix" name="calendar"></mm-icon>
+            </mm-textfield>
+          </div>
+        </mm-group>
+        <br />
+        <mm-tile>
+          <mm-group
+            variant="textfield"
+            style="width: 100%; flex-wrap: nowrap; align-items: flex-end"
+          >
+            <mm-textfield label="Length" placeholder="cm unit"></mm-textfield>
+            <div style="display: flex; align-items: center; height: var(--size-large)">
+              <mm-icon name="xmark"></mm-icon>
+            </div>
+            <mm-textfield label="Width" placeholder="x means"></mm-textfield>
+            <div style="display: flex; align-items: center; height: var(--size-large)">
+              <mm-icon name="xmark"></mm-icon>
+            </div>
+            <mm-textfield label="Height" placeholder="cm"></mm-textfield>
+          </mm-group>
+        </mm-tile>
       </div>
     </mm-text-group>
 

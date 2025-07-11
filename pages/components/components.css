@@ -26,7 +26,7 @@
 .component-props {
   /* max-width: 50%; */
   margin: 2rem 0 0 calc(-5vw + 1rem);
-  padding: 1.5rem calc(var(--grid-margin) - 1rem);
+  padding: 1.5rem calc(var(--grid-margin) - 1rem) 1.75rem;
   margin-top: -3rem;
   border: var(--border-stronger);
   border-top-color: var(--color-border);
@@ -38,14 +38,28 @@
   /* display: grid;
   gap: 2rem;
   grid-template-columns: repeat(2, 1fr); */
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: 1rem 0 0 calc(var(--grid-margin) - 1rem);
+  margin: 0 0 0 calc(-5vw + 1rem);
 }
+
+.component-guide mm-text-group {
+  /* padding: 1.5rem 2rem; */
+  border: var(--border);
+  border-radius: var(--radius-large);
+  margin: 0 0 0 calc(-5vw + 1rem);
+  padding: 1.5rem calc(var(--grid-margin) - 1rem) 1.75rem;
+}
+
 .component-guide mm-text-group::part(mm-text) {
   display: block;
   border-bottom: var(--border);
 }
 
 .component-props mm-text {display:none}
-.component-props dl {display:flex;flex-wrap:wrap;column-gap:var(--space-1);font-size:var(--font-size-small);}
+.component-props dl {display:flex;flex-wrap:wrap;column-gap:var(--space-1);}
 .component-props dl dt {}
 .component-props dl dt::after {content:':'}
 .component-props dl dd {margin-right:var(--space-3);font-weight: var(--font-weight-bold);font-style:italic;color:rgb(29, 161, 242);}
@@ -83,7 +97,6 @@ mm-tile [variant=subhead] + [variant=body] {
 .article-aka dt {margin: 0;}
 .article-aka dd {margin: 0;}
 
-.component-guide mm-text-group {display:block;margin-top:2.5rem;}
 .component-guide [variant=label-strong] {
   display: block;
   margin-top: var(--space-2);

@@ -43,9 +43,7 @@
 @media (max-width: 1320px) {
   .profile {max-width:640px;}
   .profile-user {float:none;width:100%;box-sizing:border-box;}
-  
   .profile-body {padding-left:0;}
-
   .tabpanel .card {width: 100%;}
 }
 
@@ -69,8 +67,5 @@
 @media (hover: hover) and (pointer: fine) {
 }
 
-
-.list .card {float:none;display:block;width:100% !important;margin-bottom: var(--space-3);}
-.list mm-media {float:left;width:var(--size-huge);height:var(--size-huge);margin-right:var(--space-after-avatar-huge);padding-top:0;}
-.list mm-media img {max-width:150%;}
-.list .card-byline {margin-top:.5rem;margin-bottom:.5rem;}
+.list .card {flex-direction:row;width:100%;}
+.list mm-media {width: 120px;height:var(--size-huge);}

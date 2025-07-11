@@ -1,5 +1,105 @@
 [
   {
+    "id": 202507,
+    "releasedate": 1931,
+    "titlekorean": "패스트 라이브즈",
+    "titleenglish": "Past Lives",
+    "director": "셀린 송",
+    "country": "한국",
+    "etc": "뉴욕. 바에서 존 케일 음악 나옴."
+  },
+  {
+    "id": 202507,
+    "releasedate": 1931,
+    "titlekorean": "스벤갈리",
+    "titleenglish": "Svengali",
+    "director": "아치 마요",
+    "country": "미국",
+    "etc": ""
+  },
+  {
+    "id": 202506,
+    "releasedate": 1983,
+    "titlekorean": "오징어게임3",
+    "titleenglish": "Squid Game 3",
+    "director": "",
+    "country": "일본",
+    "etc": ""
+  },
+  {
+    "id": 202506,
+    "releasedate": 1983,
+    "titlekorean": "팬텀",
+    "titleenglish": "DES FANTÔMES",
+    "director": "히구치 나오후미",
+    "country": "일본",
+    "etc": "발목. 손목. 목. 과외. 또한 약 50년에 가까운 긴 역사를 자랑하는 피아영화제(PIA Film Festival)와의 협력으로 1980~90년대 자주(自主)영화의 성취를 확인할 수 있는 섹션도 마련하였습니다. <여름날의 피구>, <팬텀> 등 8mm 혹은 16mm로 작업한 이 작품들은 제도권 바깥에서 만들어진 새로운 영화의 기묘하고 불온한 에너지를 보여줍니다. "
+  },
+  {
+    "id": 202506,
+    "releasedate": 2019,
+    "titlekorean": "결혼 이야기",
+    "titleenglish": "Marriage Story",
+    "director": "노아 바움백",
+    "country": "미국",
+    "etc": ""
+  },
+  {
+    "id": 202506,
+    "releasedate": 2021,
+    "titlekorean": "습도 다소 높음",
+    "titleenglish": "The Rain Comes Soon",
+    "director": "고봉수",
+    "country": "한국",
+    "etc": ""
+  },
+  {
+    "id": 202506,
+    "releasedate": 1936,
+    "titlekorean": "빅 브라운 아이즈",
+    "titleenglish": "Big Brown Eyes",
+    "director": "라울 월시",
+    "country": "미국",
+    "etc": ""
+  },
+
+  {
+    "id": 202506,
+    "releasedate": 2021,
+    "titlekorean": "그린 나이트",
+    "titleenglish": "The Green Knight",
+    "director": "데이빗 로워리",
+    "country": "미국",
+    "etc": ""
+  },
+  {
+    "id": 202506,
+    "releasedate": 1967,
+    "titlekorean": "짧은 만남",
+    "titleenglish": "Brief Encounters",
+    "director": "키라 무라토바",
+    "country": "우크라이나",
+    "etc": ""
+  },
+  {
+    "id": 202505,
+    "releasedate": 2025,
+    "titlekorean": "승부",
+    "titleenglish": "The Match",
+    "director": "김형주",
+    "country": "한국",
+    "etc": ""
+  },
+  {
+    "id": 2025,
+    "releasedate": 1916,
+    "titlekorean": "링크",
+    "titleenglish": "The Rink",
+    "director": "찰리 채플린",
+    "country": "미국",
+    "etc": "단편, 무성"
+  },
+  {
     "id": 2025,
     "releasedate": 1955,
     "titlekorean": "원더 링",
@@ -59,7 +159,7 @@
     "titlekorean": "주온",
     "titleenglish": "呪怨The Grudge",
     "director": "시미즈 다카시",
-    "country": "미국",
+    "country": "일본",
     "etc": "호러"
   },
   {

@@ -1,49 +1,133 @@
 import { makeStyleSheet } from '../../javascripts/components/utils'
 
 class Switch extends HTMLElement {
+  private _input: HTMLInputElement | null = null
+  private _label: HTMLLabelElement | null = null
+
+  static get observedAttributes() {
+    return ['checked', 'disabled', 'name']
+  }
+
   constructor() {
     super()
     const shadow = this.attachShadow({ mode: 'open' })
 
     const container = document.createElement('div')
-    const label = document.createElement('label')
-    const input = document.createElement('input')
 
     container.classList.add('switch')
 
-    input.setAttribute('type', 'checkbox')
-    input.role = 'switch'
+    this._input = document.createElement('input')
+    this._label = document.createElement('label')
 
-    label.textContent = this.textContent || ''
-    label.setAttribute('for', this.name || '')
-    input.setAttribute('id', this.name || '')
-    input.setAttribute('name', this.name || '')
+    this._input.setAttribute('type', 'checkbox')
+    this._input.role = 'switch'
 
-    if (this.checked) input.setAttribute('checked', 'true')
-    if (this.disabled) input.setAttribute('disabled', 'true')
+    // Initial rendering with attributes
+    this._updateInputAttributes()
 
     shadow.appendChild(container)
-    container.append(input, label, makeStyleSheet('switch'))
+    container.append(this._input, this._label, makeStyleSheet('switch'))
   }
 
-  get name() {
+  attributeChangedCallback(name: string, oldValue: string | null, newValue: string | null) {
+    if (oldValue !== newValue) {
+      this._updateInputAttributes()
+    }
+  }
+
+  private _updateInputAttributes() {
+    // Check for null before using, though TypeScript should now understand they're assigned
+    if (!this._input || !this._label) return
+
+    const name = this.getAttribute('name')
+    if (name) {
+      this._input.setAttribute('id', name)
+      this._input.setAttribute('name', name)
+      this._label.setAttribute('for', name)
+    } else {
+      this._input.removeAttribute('id')
+      this._input.removeAttribute('name')
+      this._label.removeAttribute('for')
+    }
+
+    if (this.hasAttribute('checked')) {
+      this._input.checked = true
+      this._input.setAttribute('checked', '')
+    } else {
+      this._input.checked = false
+      this._input.removeAttribute('checked')
+    }
+
+    if (this.hasAttribute('disabled')) {
+      this._input.disabled = true
+      this._input.setAttribute('disabled', '')
+    } else {
+      this._input.disabled = false
+      this._input.removeAttribute('disabled')
+    }
+
+    if (!this._label.textContent) {
+      this._label.textContent = this.textContent || ''
+    }
+  }
+
+  get name(): string | null {
     return this.getAttribute('name')
   }
 
-  get size() {
+  get size(): string | null {
     return this.getAttribute('size')
   }
 
-  get checked() {
-    return this.getAttribute('checked')
+  get checked(): boolean {
+    return this.hasAttribute('checked')
   }
 
-  get disabled() {
-    return this.getAttribute('disabled')
+  set checked(value: boolean) {
+    if (Boolean(value)) {
+      this.setAttribute('checked', '')
+    } else {
+      this.removeAttribute('checked')
+    }
   }
 
-  connectedCallback() {}
-  disconnectedCallback() {}
+  get disabled(): boolean {
+    return this.hasAttribute('disabled')
+  }
+
+  set disabled(value: boolean) {
+    if (Boolean(value)) {
+      this.setAttribute('disabled', '')
+    } else {
+      this.removeAttribute('disabled')
+    }
+  }
+
+  connectedCallback() {
+    if (this._input) {
+      // Ensure _input exists before adding listener
+      this._input.addEventListener('change', this._handleInputChange.bind(this))
+    }
+  }
+
+  disconnectedCallback() {
+    if (this._input) {
+      // Ensure _input exists before removing listener
+      this._input.removeEventListener('change', this._handleInputChange.bind(this))
+    }
+  }
+
+  private _handleInputChange() {
+    if (this._input) {
+      // Ensure _input exists
+      if (this._input.checked) {
+        this.setAttribute('checked', '')
+      } else {
+        this.removeAttribute('checked')
+      }
+      this.dispatchEvent(new Event('change', { bubbles: true, composed: true }))
+    }
+  }
 }
 
 export default Switch

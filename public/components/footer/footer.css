@@ -1,6 +1,10 @@
 .footer {
-	padding:2rem var(--grid-margin);position:relative;}
+  border-top: var(--border);
+	padding:2rem var(--grid-margin);
+  position:relative;
+}
 .footer-background {
+	display: none;
 	margin: 0 -50vw;
 	position: absolute;
 	left: 50%;
@@ -8,7 +12,8 @@
 	top: 0;
 	bottom: 0;
 	z-index: -1;
-	border-top:var(--border);}
+	border-top:var(--border);
+}
 .footer-address {}
 .footer-address-logo {display:block;font-size:var(--font-size-large);filter:grayscale(100%);opacity:.5;}
 .footer-address-slogan {margin:var(--space-4) 0;font-size:var(--font-size-large);letter-spacing:.5px;}

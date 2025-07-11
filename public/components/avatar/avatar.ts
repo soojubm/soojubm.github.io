@@ -19,6 +19,7 @@ class Avatar extends HTMLElement {
     container.dataset.variant = this.variant
     container.ariaLabel = this.ariaLabel
     container.dataset.default = this.default
+    container.innerHTML = this.innerHTML
 
     const badge = document.createElement('mm-badge')
 

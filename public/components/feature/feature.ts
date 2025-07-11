@@ -19,8 +19,8 @@ class Feature extends HTMLElement {
     heading.innerText = this.titleText || ''
     heading.classList.add('feature-item-title')
 
-    const subtitle = document.createElement('sup')
-    subtitle.innerText = this.subtitle || ''
+    // const subtitle = document.createElement('sup')
+    // subtitle.innerText = this.subtitle || ''
 
     const description = document.createElement('mm-text')
     description.setAttribute('variant', 'body')
@@ -28,7 +28,7 @@ class Feature extends HTMLElement {
     description.classList.add('feature-item-description')
 
     shadow.appendChild(container)
-    container.append(avatar, heading, subtitle, description, makeStyleSheet('feature'))
+    container.append(avatar, heading, description, makeStyleSheet('feature'))
   }
 
   get type() {

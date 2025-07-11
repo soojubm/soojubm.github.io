@@ -16,7 +16,7 @@
   display: block;
   width: 90%;
   height: inherit;
-  background: var(--color-accent);
+  background: var(--color-background-strong);
 }
 .meter-text {
   display: block;

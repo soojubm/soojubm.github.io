@@ -7,11 +7,10 @@
   <section class="component-example">
     <!-- a11y checkgroup not valid -->
     <!-- <legend">checkgroup</legend> -->
-    <mm-group>
-      <mm-checkbox size="large" checked></mm-checkbox>
-      <mm-checkbox checked></mm-checkbox>
-    </mm-group>
-    <mm-separator></mm-separator>
+    <!-- <mm-group>
+      <mm-checkbox name="checkbox" size="large" checked> 체크박스</mm-checkbox>
+      <mm-checkbox name="checkbox" checked> </mm-checkbox>
+    </mm-group> -->
     <mm-group variant="checkbox">
       <mm-checkbox
         name="checkbox"
@@ -54,6 +53,9 @@
         TermsCheckboxGroup으로 정의할 수 있다. 약관보기 버튼을 포함해야 하며, 시각적으로 강조된
         형태의 체크박스이다.
       </mm-text>
+      <mm-text>
+        특히 오래된 브라우저나 특정 OS에서는 일부 CSS 속성이 제대로 적용되지 않을 수 있습니다.
+      </mm-text>
     </mm-text-group>
 
     <mm-text-group>
@@ -69,77 +71,76 @@
       </mm-text>
     </mm-text-group>
   </section>
+  <br />
   <mm-text-group>
     <mm-text variant="subhead">CheckboxGroup and MasterCheckbox :: TermsCheckbox</mm-text>
-  </mm-text-group>
-  <div
-    style="display: flex; flex-direction: column; gap: var(--space-3); margin: var(--space-4) 0 0 0"
-  >
-    <mm-tile variant="tinted">
-      <mm-checkbox
-        class="js-checkall"
-        aira-checked="mixed"
-        aria-controls="1 2"
-        data-indeterminate="true"
-        indeterminate
-      >
-        모두 동의합니다
-      </mm-checkbox>
-      <mm-separator spacing="small"></mm-separator>
-      <mm-group variant="checkbox">
-        <mm-row justifyContent="space-between">
-          <mm-checkbox class="js-check" id="terms" name="terms">
-            이용약관에 동의합니다.
-            <mm-link href="#">이용약관 바로가기</mm-link>
-          </mm-checkbox>
-        </mm-row>
-        <mm-row justifyContent="space-between">
-          <mm-checkbox class="js-check" id="terms" name="terms">
-            이용약관에 동의합니다.
-            <mm-link href="#">이용약관 바로가기</mm-link>
-          </mm-checkbox>
-        </mm-row>
-        <mm-row justifyContent="space-between">
-          <mm-checkbox class="js-check" id="terms" name="terms">
-            이용약관에 동의합니다.
-          </mm-checkbox>
-        </mm-row>
-      </mm-group>
-    </mm-tile>
-    <!-- <mm-text variant="body">쿠키 관련 util</mm-text> -->
-    <mm-tile>
-      <mm-checkbox>다시 묻지 않기 Don't ask again</mm-checkbox>
-    </mm-tile>
-    <mm-tile>
-      <mm-titlebar titletext="컬렉션에 추가"></mm-titlebar>
-      <br />
-      <mm-tile variant="elevated" size="small">
-        <mm-menuitem label="새 컬렉션 만들기">
-          <mm-avatar slot="avatar" icon="plus"> </mm-avatar>
-        </mm-menuitem>
+    <div style="display: flex; flex-direction: column; gap: var(--space-3)">
+      <mm-tile variant="tinted">
+        <mm-checkbox
+          class="js-checkall"
+          aira-checked="mixed"
+          aria-controls="1 2"
+          data-indeterminate="true"
+          indeterminate
+        >
+          모두 동의합니다
+        </mm-checkbox>
+        <mm-separator spacing="small"></mm-separator>
+        <mm-group variant="checkbox">
+          <mm-row justifyContent="space-between">
+            <mm-checkbox class="js-check" id="terms" name="terms">
+              이용약관에 동의합니다.
+              <mm-link href="#">이용약관 바로가기</mm-link>
+            </mm-checkbox>
+          </mm-row>
+          <mm-row justifyContent="space-between">
+            <mm-checkbox class="js-check" id="terms" name="terms">
+              이용약관에 동의합니다.
+              <mm-link href="#">이용약관 바로가기</mm-link>
+            </mm-checkbox>
+          </mm-row>
+          <mm-row justifyContent="space-between">
+            <mm-checkbox class="js-check" id="terms" name="terms">
+              이용약관에 동의합니다.
+            </mm-checkbox>
+          </mm-row>
+        </mm-group>
       </mm-tile>
-      <div style="height: var(--space-3)"></div>
-      <mm-group variant="checkbox">
+      <!-- <mm-text variant="body">쿠키 관련 util</mm-text> -->
+      <mm-tile>
+        <mm-checkbox>다시 묻지 않기 Don't ask again</mm-checkbox>
+      </mm-tile>
+      <mm-tile>
+        <mm-titlebar titletext="컬렉션에 추가"></mm-titlebar>
+        <br />
+        <mm-tile variant="elevated" size="small">
+          <mm-menuitem label="새 컬렉션 만들기">
+            <mm-avatar slot="avatar" icon="plus"> </mm-avatar>
+          </mm-menuitem>
+        </mm-tile>
+        <div style="height: var(--space-3)"></div>
+        <mm-group variant="checkbox">
+          <!-- aira-checked="mixed" aria-controls="1 2" -->
+          <mm-checkbox size="large">컬렉션 1</mm-checkbox>
+          <mm-checkbox size="large">컬렉션 2 - 관리: 수정/삭제 등</mm-checkbox>
+        </mm-group>
+      </mm-tile>
+      <mm-tile>
+        <mm-titlebar titletext="컬렉션 만들기">
+          <mm-button slot="action" variant="text">완료</mm-button>
+        </mm-titlebar>
+        <div style="height: 1rem"></div>
+        <mm-textfield label="컬렉션 이름" placeholder="컬렉션 이름"></mm-textfield>
+        <div style="height: 0.75rem"></div>
         <!-- aira-checked="mixed" aria-controls="1 2" -->
-        <mm-checkbox size="large">컬렉션 1</mm-checkbox>
-        <mm-checkbox size="large">컬렉션 2 - 관리: 수정/삭제 등</mm-checkbox>
-      </mm-group>
-    </mm-tile>
-    <mm-tile>
-      <mm-titlebar titletext="컬렉션 만들기">
-        <mm-button slot="action" variant="text">완료</mm-button>
-      </mm-titlebar>
-      <div style="height: 1rem"></div>
-      <mm-textfield label="컬렉션 이름" placeholder="컬렉션 이름"></mm-textfield>
-      <div style="height: 0.75rem"></div>
-      <!-- aira-checked="mixed" aria-controls="1 2" -->
-      <button-list-component
-        id="button-list"
-        options='[
+        <button-list-component
+          id="button-list"
+          options='[
           {"label": "공개", "value": "apple"},
           {"label": "비공개", "value": "banana"}
         ]'
-      ></button-list-component>
-    </mm-tile>
-  </div>
+        ></button-list-component>
+      </mm-tile>
+    </div>
+  </mm-text-group>
 </main>

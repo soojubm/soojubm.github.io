@@ -38,6 +38,33 @@
     </mm-text-group>
     <br /><br />
     <mm-text-group>
+      <mm-text variant="label-strong">ddddddd</mm-text>
+    </mm-text-group>
+    <article class="token-item is-primary200" style="border: 0; background-color: var(--green800)">
+      <b style="color: #fff">--green800: #1b995c</b>
+      <mm-group variant="hashtag">
+        <mm-tag variant="hashtag">color-primary</mm-tag>
+      </mm-group>
+    </article>
+    <article class="token-item" style="border: 0; background-color: var(--red100)">
+      <mm-keyvalue alignment="column" key="--red100:" value="rgba(243, 68, 97, .06)"></mm-keyvalue>
+      <mm-group variant="hashtag">
+        <mm-tag variant="hashtag">color-danger-light</mm-tag>
+        <mm-tag variant="hashtag">color-text-danger/error</mm-tag>
+        <mm-tag variant="hashtag">color-border-danger/error</mm-tag>
+      </mm-group>
+    </article>
+    <article class="token-item" style="border: 0; background-color: var(--red800)">
+      <b style="color: #fff">--red800: #f02849</b>
+      <mm-group variant="hashtag">
+        <mm-tag variant="hashtag">color-danger</mm-tag>
+      </mm-group>
+    </article>
+    <article class="token-item" style="border: 0; background: var(--color-accent)">
+      <b>--yellow800: gold</b>
+    </article>
+
+    <mm-text-group>
       <mm-text variant="label-strong">Primitives</mm-text>
     </mm-text-group>
     <div class="token-group">
@@ -96,36 +123,7 @@
           <mm-tag variant="hashtag">color-primary-light</mm-tag>
         </mm-group>
       </article>
-      <article
-        class="token-item is-primary200"
-        style="border: 0; background-color: var(--green800)"
-      >
-        <b style="color: #fff">--green800: #1b995c</b>
-        <mm-group variant="hashtag">
-          <mm-tag variant="hashtag">color-primary</mm-tag>
-        </mm-group>
-      </article>
-      <article class="token-item" style="border: 0; background-color: var(--red100)">
-        <mm-keyvalue
-          alignment="column"
-          key="--red100:"
-          value="rgba(243, 68, 97, .06)"
-        ></mm-keyvalue>
-        <mm-group variant="hashtag">
-          <mm-tag variant="hashtag">color-danger-light</mm-tag>
-          <mm-tag variant="hashtag">color-text-danger/error</mm-tag>
-          <mm-tag variant="hashtag">color-border-danger/error</mm-tag>
-        </mm-group>
-      </article>
-      <article class="token-item" style="border: 0; background-color: var(--red800)">
-        <b style="color: #fff">--red800: #f02849</b>
-        <mm-group variant="hashtag">
-          <mm-tag variant="hashtag">color-danger</mm-tag>
-        </mm-group>
-      </article>
-      <article class="token-item" style="border: 0; background: var(--color-accent)">
-        <b>--yellow800: gold</b>
-      </article>
+
       <article class="token-item">
         <b>TODO Skeleton</b>
       </article>
@@ -333,6 +331,8 @@
         활자의 위계와 배치. 정보 계층. 14px 기본폰트일 때 1.5의 모호성. 명확하게 고정값으로 지정하는
         것이 좋다.
       </mm-text>
+      <p>font.letterSpacing.display1. 결국 토큰에서 정의해야 하는.</p>
+      <p>font.size.giant1 / font.size.large1</p>
     </mm-text-group>
     <button
       class="js-default-font"

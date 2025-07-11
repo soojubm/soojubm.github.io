@@ -114,9 +114,7 @@
     </mm-text-group>
     <mm-text-group>
       <mm-text variant="subhead">Changelog</mm-text>
-    </mm-text-group>
-    <div style="height: var(--space-3);"></div>
-    <table class="table">
+          <table class="table">
       <tbody>
         <tr>
           <th>21-07-28</th>
@@ -144,14 +142,14 @@
         </tr>
       </tbody>
     </table>
+    </mm-text-group>
 
     <mm-text-group>
       <mm-text variant="subhead" data-temp=" minimum viable experience">
         Toggle buttons / Segmented Button(MD) / Segmented controls(HIG)
       </mm-text>
       <mm-link href="https://www.w3.org/WAI/ARIA/apg/patterns/listbox/"> WAI listbox</mm-link>
-    </mm-text-group>
-    <mm-tile size="small">
+
       <div style="display: flex; gap: var(--space-0)">
         <style>
           button mm-icon {
@@ -180,12 +178,12 @@
           <mm-icon name="view-columns-3"></mm-icon>
         </button>
       </div>
-    </mm-tile>
+    </mm-text-group>
+   
 
     <mm-text-group>
       <mm-text variant="subhead"> FilterButton/FilterTrigger, FilterOption </mm-text>
       <mm-text variant="body"> filterChip?. but single selection </mm-text>
-      <mm-text variant="subhead"> SortButton </mm-text>
     </mm-text-group>
 
     <mm-text-group>
@@ -197,12 +195,10 @@
         이건 최종 액션이 아님. 칩이 되는 게 나을 수도.
       </mm-text>
       <mm-group>
-        <mm-tile size="small">
-          <mm-button variant="tertiary">
-            Show more
-            <mm-icon slot="suffix" name="nav-arrow-down"></mm-icon>
-          </mm-button>
-        </mm-tile>
+        <mm-button variant="tertiary">
+          Show more
+          <mm-icon slot="suffix" name="nav-arrow-down"></mm-icon>
+        </mm-button>
       </mm-group>
     </mm-text-group>
 
@@ -213,10 +209,9 @@
       ></mm-text-list>
     </mm-text-group>
 
-    <br />
-    <mm-text-group>
+    <div>
       <mm-text variant="subhead"> FileUploadButton </mm-text>
-      <mm-text variant="body">이미지 업로드와 파일 업로드 구분이 필요한가</mm-text>
+      <mm-text variant="body">이미지 업로드와 파일 업로드 구분</mm-text>
       <form class="file" method="" enctype="multipart/form-data">
         <mm-text variant="body">프로필 사진</mm-text>
         <div>
@@ -254,22 +249,22 @@
         </div>
         <mm-text variant="body">Only .jpg and .png files. 500kb max file size.</mm-text>
       </form>
-    </mm-text-group>
-    <mm-separator></mm-separator>
-    <mm-text variant="label">첨부한 파일</mm-text>
-    <mm-text variant="body" role="status" class="js-file-attachment-helper">
-      No files currently selected for upload.
-    </mm-text>
-    <section class="file-attachment-list js-file-attachment-list">
-      <figure style="width: 100px;padding:var(--space-3);border-radius:var(--radius);background-color:var(--color-background-weak);border-radius:var(--radius);position:relative;">
-        <img src="/public/images/springsteen.jpg" alt="${file.name}" style="border-radius:var(--radius);" />
-        <figcaption style="display:flex;flex-direction: column;gap:var(--space-1);margin-top:var(--space-2);">
-          <mm-text variant="body-bold">${file.name}</b>
-          <mm-text variant="caption">${returnFileSize(file.size)}</mm-text>
-        </figcaption>
-        <div style="position:absolute;right:var(--space-1);top:var(--space-1);"><mm-clear-button class="js-remove-this">close</mm-clear-button></div>
-      </figure>
-    </section>
+      <mm-separator></mm-separator>
+      <mm-text variant="label">첨부한 파일</mm-text>
+      <mm-text variant="body" role="status" class="js-file-attachment-helper">
+        No files currently selected for upload.
+      </mm-text>
+      <section class="file-attachment-list js-file-attachment-list">
+        <figure style="width: 100px;padding:var(--space-3);border-radius:var(--radius);background-color:var(--color-background-weak);border-radius:var(--radius);position:relative;">
+          <img src="/public/images/springsteen.jpg" alt="${file.name}" style="border-radius:var(--radius);" />
+          <figcaption style="display:flex;flex-direction: column;gap:var(--space-1);margin-top:var(--space-2);">
+            <mm-text variant="body-bold">${file.name}</b>
+            <mm-text variant="caption">${returnFileSize(file.size)}</mm-text>
+          </figcaption>
+          <div style="position:absolute;right:var(--space-1);top:var(--space-1);"><mm-clear-button class="js-remove-this">close</mm-clear-button></div>
+        </figure>
+      </section>
+    </div>
   </section>
 
   <address class="component-references">
