@@ -45,27 +45,31 @@
 
   <section class="component-props">
     <dl>
-      <dt>variant? surface?</dt>
-      <dd>'flat' | 'elevated' | 'plain? soft?'</dd>
+      <dt>variant?</dt>
+      <dd>'flat ? outlined' | 'elevated' | 'plain? soft?' | 'white'</dd>
       <dt>size</dt>
       <dd>'medium' | 'small'</dd>
       <dt>children</dt>
       <dd>React.Node</dd>
     </dl>
-  </section>
 
-  <section class="component-guide">
+    <div class="feature columns" style="margin: 2rem 0; gap: 1.5rem">
+      <mm-feature icon="box-iso" titleText="컨테이너" description="ㅅㄷㄴㅅ"></mm-feature>
+      <mm-feature icon="box-iso" titleText="컨테이너 역할" description="ㅅㄷㄴㅅ"></mm-feature>
+      <mm-feature icon="box-iso" titleText="컨테이너 역할" description="ㅅㄷㄴㅅ"></mm-feature>
+      <mm-feature icon="box-iso" titleText="컨테이너 역할" description="ㅅㄷㄴㅅ"></mm-feature>
+    </div>
     <mm-text-group>
-      <mm-text variant="subhead">Considerations</mm-text>
-      <mm-group>
-        <mm-tag>Container</mm-tag>
-      </mm-group>
-    </mm-text-group>
-    <mm-text-group>
-      <mm-text variant="subhead">Meta problems</mm-text>
-      <mm-text variant="body">
-        타일 내부 leading, tailing 컴포넌트에 따라 시각보정이 필요할 수 있습니다.
-      </mm-text>
+      <mm-text-list
+        texts='[
+          "타일 내부 leading, tailing 컴포넌트에 따라 시각보정이 필요할 수 있습니다.",
+          "transparented tile 을 정의하여 모든 contentbox가 tile이 되는 것은 어떤가? 비어있는 컴포넌트(Box, Row, div)와는 어떤 차이가 있나? row는 레이아웃 컴포넌트, tile은 형태 컴포넌트이다. 고차원의 컴포넌트는 어차피 생성할 것인데 그 컴포넌트에게 책임을 위임하는 것이 맞지, tile이 모든 책임을 가질 필요는 없을 듯.",
+          "size를 number로 정의하는 유연한 방식이 되어도 좋겠다. 여기에서 number의 타입은 spacing token과 동일하다.",
+          "inset이 더 커진다면 작은 화면에서 미디어쿼리로 inset 조정이 불가피하기 때문에 컴포넌트의 디바이스나 화면 크기에 컴포넌트가 의존된다. ? inset이 1rem 초과할 때 콘텐츠 모듈을 가운데 정렬로 제한.",
+          "flat 형태는 단순 구획을 표현하기 때문에 클릭할 수 없는 카드에 사용합니다. elevated 형태는 클릭할 수 있음clickable의 기표로 정의하고 있기 때문에, 타일 전체가 하나의 클릭 가능한 컴포넌트일 수 있고, 타일 내부에 클릭 가능한 컴포넌트를 포함할 수도 있습니다."
+        ]'
+      >
+      </mm-text-list>
       <mm-text variant="body">
         At its core, Card is a Box with specific styling attributes and more explicit use cases that
         you can find in Examples. If you find yourself limited by the default styling and
@@ -73,23 +77,6 @@
         problem you are trying to solve to Design System Office Hours to see if another component or
         pattern could fit your needs.
       </mm-text>
-    </mm-text-group>
-    <mm-text-group>
-      <mm-text variant="subhead">Platform problems</mm-text>
-      <mm-text
-        >flat 형태는 단순 구획을 표현하기 때문에 클릭할 수 없는 카드에 사용합니다. elevated 형태는
-        '클릭할 수 있음clickable'의 기표로 사용하며, 타일 전체가 하나의 클릭 가능한 컴포넌트일 수
-        있고, 타일 내부에 클릭 가능한 컴포넌트를 포함할 수도 있습니다.
-      </mm-text>
-      <mm-text-list
-        texts='[
-          "transparented tile 을 정의하여 모든 contentbox가 tile이 되는 것은 어떤가? 이것은 빈 태그나 빈 컴포넌트(Box, Row)와는 어떤 변별이 있나? row는 레이아웃 컴포넌트, tile은 형태 컴포넌트이다. 고차원의 컴포넌트는 어차피 생성할 것인데 그 컴포넌트에게 책임을 위임하는 것이 맞지, tile이 모든 책임을 가질 필요는 없을 듯.",
-          "size를 number로 정의하는 유연한 방식이 되어도 좋겠다. 여기에서 number의 타입은 spacing token과 동일하다.",
-          "문제: 크기에 따른 변별력이 없다. inset이 더 커진다면 작은 화면에서 미디어쿼리로 inset 조정이 불가피하기 때문에 컴포넌트의 디바이스나 화면 크기에 컴포넌트가 의존된다. ? inset이 1rem 초과할 때 콘텐츠 모듈을 가운데 정렬로 제한.",
-          "bakcground-weak와 사용할 때 흰색의 tile이 필요할 수 있다."
-        ]'
-      >
-      </mm-text-list>
 
       <aside
         style="

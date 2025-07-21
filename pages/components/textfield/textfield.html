@@ -63,15 +63,6 @@
       <mm-group variant="form">
         <mm-textfield placeholder="Placeholder"></mm-textfield>
         <mm-textfield placeholder="Disabled" disabled></mm-textfield>
-        <mm-textfield
-          value="Invalid"
-          placeholder="Placeholder..."
-          aria-invalid="true"
-          aria-describedby="error"
-          aria-errormessage="msgID"
-          helper="이미 등록된 이메일입니다."
-        ></mm-textfield>
-        <mm-textfield label="with label" placeholder="Label"></mm-textfield>
       </mm-group>
     </div>
   </section>
@@ -115,6 +106,36 @@
       <dt>onFocus<attr>?</attr></dt>
       <dd>(event: React.FocusEvent&lt;HTMLInputElement&gt;) => void</dd>
     </dl>
+
+    <section class="feature columns-3">
+      <mm-feature
+        icon="cursor-pointer"
+        titleText="Interactive - choice"
+        subtitle="Easy scanning"
+        description="미리 선택된 기본값을 제공하는 것은 편향된 데이터를 수집할 위험이 있습니다. 데이터가 왜곡될
+        수 있습니다. 만약 미리 선택된 값을 적용하는 경우 첫 번째 옵션을 기본 옵션으로."
+      >
+      </mm-feature>
+      <mm-feature
+        icon="task-list"
+        titleText="Easy scanning"
+        subtitle="Easy scanning"
+        description="수직 정렬로 옵션 목록을 파악하기 쉽게. 체크박스를 강조가 필요한 경우 체크박스의 크기 또는 컨테이너를 강조하고, 체크박스 컴포넌트는 독립적인 형태를 유지합니다. 근데 이런 제약은 일단 하지 않는 것이 좋음. 초기의 최소한의 정의 라는 foundation의 시효 소멸.."
+      >
+      </mm-feature>
+    </section>
+
+    <div style="max-width: 400px">
+      <mm-textfield
+        value="Invalid"
+        placeholder="Placeholder..."
+        aria-invalid="true"
+        aria-describedby="error"
+        aria-errormessage="msgID"
+        helper="이미 등록된 이메일입니다."
+      ></mm-textfield>
+      <mm-textfield label="with label" placeholder="Label"></mm-textfield>
+    </div>
   </section>
 
   <section class="component-guide">
@@ -131,22 +152,18 @@
       >
     </mm-text-group>
     <mm-text-group>
-      <mm-text variant="subhead">Platform problems</mm-text>
       <mm-text variant="body" data-temp="required indicator / optional indicator">
         사용자 여정에 허들이 될 수 있는 불필요한 정보 입력을 유도하지 마세요. 다시 말해 모든
         텍스트필드는 필수 입력입니다. 사용자 정보를 수집하여 사용자 또는 비즈니스에 명확한 이점이
         있는 경우 선택 필드를 제안할 수 있습니다. 이 때 선택 입력 필드는 '선택입력' 텍스트로
         가이드합니다.
       </mm-text>
-      <mm-text variant="body"> 레이블을 텍스트필드 왼쪽에 배치하지 마세요.</mm-text>
       <mm-text variant="body">
-        아이콘은 텍스트 레이블을 대체할 수 있습니다. 텍스트 레이블 대신 아이콘 레이블을 사용하는
-        예시. 이메일 주소로 사용자를 추가하는 케이스에서 입력 정보를 아이콘으로 단순화 및 직관화
-      </mm-text>
-      <mm-text variant="body">
-        이메일, 패스워드 등의 특수한 텍스트필드 타입은 기본 텍스트필드와의 구별을 위해 시각적인
-        단서를 추가로 제공하세요.
-      </mm-text>
+        레이블을 텍스트필드 왼쪽에 배치하지 마세요. 아이콘은 텍스트 레이블을 대체할 수 있습니다.
+        텍스트 레이블 대신 아이콘 레이블을 사용하는 예시. 이메일 주소로 사용자를 추가하는 케이스에서
+        입력 정보를 아이콘으로 단순화 및 직관화. 이메일, 패스워드 등의 특수한 텍스트필드 타입은 기본
+        텍스트필드와의 구별을 위해 시각적인 단서를 추가로 제공하세요.</mm-text
+      >
       <mm-text variant="body">
         helper(help message)와 feedback(feedback message / validation feedback)을 구분하기.
         mui에서는 error prop.
@@ -154,8 +171,6 @@
     </mm-text-group>
 
     <mm-text-group>
-      <mm-text variant="subhead">Playground</mm-text>
-
       <section class="textbox" style="position: relative">
         <mm-group
           data-e="menu"

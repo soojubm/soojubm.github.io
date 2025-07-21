@@ -34,8 +34,14 @@
         <dd>radio에서도 직접 입력 id={props.name}</dd> -->
       <dt>value</dt>
       <dd>string</dd>
-      <dt>label? - ariaLabel?</dt>
+      <dt>label?</dt>
       <dd>string</dd>
+      <div style="width: 100%; margin: var(--space-2) 0 var(--space-3)">
+        <mm-text variant="body">
+          레이블은 최대 2단어로 작성합니다. choice냐 action option(?)이냐. action option일 때는
+          동사를 포함하여 작성합니다.
+        </mm-text>
+      </div>
       <dt>isChecked<attr>?</attr></dt>
       <dd>boolean</dd>
       <dt>isDisabled<attr>?</attr></dt>
@@ -43,38 +49,32 @@
       <dt>onChange</dt>
       <dd>(event: React.ChangeEvent&lt;HTMLInputElement&gt;) => void</dd>
     </dl>
-  </section>
 
-  <section class="component-guide">
-    <mm-text-group>
-      <mm-text variant="subhead">Meta problems</mm-text>
-      <mm-text variant="body">
-        모바일 사용성을 위한 약관 동의를 위한 패턴에서 전체동의 체크박스와 개별 체크박스를 하나의
-        TermsCheckboxGroup으로 정의할 수 있다. 약관보기 버튼을 포함해야 하며, 시각적으로 강조된
-        형태의 체크박스이다.
-      </mm-text>
-      <mm-text>
-        특히 오래된 브라우저나 특정 OS에서는 일부 CSS 속성이 제대로 적용되지 않을 수 있습니다.
-      </mm-text>
-    </mm-text-group>
+    <section class="feature columns-3">
+      <mm-feature
+        icon="cursor-pointer"
+        titleText="Interactive - choice"
+        subtitle="Easy scanning"
+        description="미리 선택된 기본값을 제공하는 것은 편향된 데이터를 수집할 위험이 있습니다. 데이터가 왜곡될
+        수 있습니다. 만약 미리 선택된 값을 적용하는 경우 첫 번째 옵션을 기본 옵션으로."
+      >
+      </mm-feature>
+      <mm-feature
+        icon="task-list"
+        titleText="Easy scanning"
+        subtitle="Easy scanning"
+        description="수직 정렬로 옵션 목록을 파악하기 쉽게. 체크박스를 강조가 필요한 경우 체크박스의 크기 또는 컨테이너를 강조하고, 체크박스 컴포넌트는 독립적인 형태를 유지합니다. 근데 이런 제약은 일단 하지 않는 것이 좋음. 초기의 최소한의 정의 라는 foundation의 시효 소멸.."
+      >
+      </mm-feature>
+    </section>
 
-    <mm-text-group>
-      <mm-text variant="subhead">Platform problems</mm-text>
-      <mm-text variant="body"> 체크박스는 항상 수직 정렬합니다.</mm-text>
-      <mm-text variant="body">
-        체크박스를 강조하기 위해 레이블 텍스트를 변형하지 마세요. 체크박스의 크기 또는 컨테이너를
-        강조하고, 체크박스 컴포넌트는 독립적인 책임을 유지해야 합니다.
-      </mm-text>
-      <mm-text variant="body">
-        레이블은 최대 2단어로 작성합니다. choice냐 action option(?)이냐. action option일 때는 동사를
-        포함하여 작성합니다.
-      </mm-text>
-    </mm-text-group>
-  </section>
-  <br />
-  <mm-text-group>
-    <mm-text variant="subhead">CheckboxGroup and MasterCheckbox :: TermsCheckbox</mm-text>
-    <div style="display: flex; flex-direction: column; gap: var(--space-3)">
+    <mm-feature
+      icon="component"
+      titleText="MasterCheckbox / TermsCheckbox / CheckboxGroup"
+      description="모바일 사용성을 위한 약관 동의를 위한 패턴에서 전체동의 체크박스와 개별 체크박스를 하나의
+      TermsCheckboxGroup으로 정의할 수 있다. 약관보기 버튼을 포함해야 하며, 시각적으로 강조된 형태의
+      체크박스이다."
+    >
       <mm-tile variant="tinted">
         <mm-checkbox
           class="js-checkall"
@@ -106,10 +106,15 @@
           </mm-row>
         </mm-group>
       </mm-tile>
-      <!-- <mm-text variant="body">쿠키 관련 util</mm-text> -->
-      <mm-tile>
-        <mm-checkbox>다시 묻지 않기 Don't ask again</mm-checkbox>
-      </mm-tile>
+    </mm-feature>
+    <br />
+    <mm-feature icon="component" titleText="다시 묻지 않기" description="내용 없음">
+      <mm-checkbox>다시 묻지 않기 Don't ask again</mm-checkbox>
+    </mm-feature>
+  </section>
+
+  <mm-text-group>
+    <div style="display: flex; flex-direction: column; gap: var(--space-3)">
       <mm-tile>
         <mm-titlebar titletext="컬렉션에 추가"></mm-titlebar>
         <br />

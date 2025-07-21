@@ -5,7 +5,6 @@
     visual patterns."
   ></mm-pageheader>
 
-  <div class="js-counter" data-number="234">234</div>
   <!-- Truncate for secondary text that isn’t essential to a user’s comprehension of steps to take. Examples include dynamic data ad IDs in tables, lists of user names, and Pin titles that come from outside sources. Use an ellipsis or a link that indicates there is more content available. -->
 
   <!-- summary list gov.uk -->
@@ -161,16 +160,17 @@ The font size of a key is never bigger than the value.
 
   <section class="component-example">
     <div>
-      <mm-text variant="title">heading1, title</mm-text>
-      <mm-text variant="subhead">heading2, subhead</mm-text>
+      <mm-text variant="title">heading1, page title</mm-text>
+      <mm-text variant="subhead">heading2, section title</mm-text>
       <mm-separator></mm-separator>
       <mm-text variant="body-large">body large</mm-text>
       <mm-text variant="body">body</mm-text>
       <mm-separator></mm-separator>
+      <!-- <mm-text variant="caption">caption</mm-text>
+      <mm-separator></mm-separator> -->
+
       <mm-text variant="label-strong">label, strong</mm-text>
       <mm-text variant="label">label</mm-text>
-      <mm-separator></mm-separator>
-      <mm-text variant="caption">caption</mm-text>
     </div>
   </section>
   <section class="component-props">
@@ -187,32 +187,64 @@ The font size of a key is never bigger than the value.
   </section>
 
   <section class="component-guide">
+    <div class="js-counter" data-number="234">234</div>
+
+    <ul style="margin: 0">
+      <li>순서가 없는 리스트</li>
+      <li>순서가 없는 리스트</li>
+    </ul>
+
+    <mm-separator></mm-separator>
+
+    <ol style="margin: var(--space-3) 0">
+      <li>순서가 있는 리스트</li>
+      <li>순서가 있는 리스트</li>
+    </ol>
     <mm-text-group>
       <mm-text variant="subhead">Meta problems</mm-text>
       <mm-text variant="body">
         폰트마다 기준선이 다르기 때문에 섞어짤 때 또는 폰트를 변경할 때 주변 요소와 부모 요소에 맞춰
-        시각보정이 필요할 수 있다. 텍스트는 주변의 엘리먼트에 강하게 영향을 받기 때문에 주변 요소와
-        연동해서 추상화 변수를 활용할 수 있다.
+        시각보정이 필요하다. 특히 텍스트를 쌓을 때.
       </mm-text>
       <mm-text variant="body">
-        블로그, 뉴스 기사 등 텍스트 기반의 콘텐츠 페이지를 위한 larger body font.
+        블로그, 뉴스 기사 등 텍스트 중심의 콘텐츠 페이지를 위한 larger body가 필요하다. 텍스트가
+        굵거나 진하여 낱자의 속 공간이 좁을수록, 더 넓은 줄 간격이 필요하다.
       </mm-text>
-      <mm-text variant="body">message: 사용자, description: 시스템</mm-text>
+      <mm-text variant="body">message: 사용자의 관점, description: 시스템이 주체</mm-text>
+      <mm-text variant="body">caption, brief description의 차이</mm-text>
+      <mm-text variant="body">
+        headingText, bodyBody. bodyText의 lineHeight를 따로 설정할까. 1에 가까운 값, 기본값,
+        넓은값(large 저용). label이 기본적으로 좁은 line height를 갖는다면 컨터이네가 공간을 갖는
+        역할을 위임 받아야 함. 이 컨테이너는 비어 있을 수도 았고 text stack의 간격을 정의할 수 있다.
+      </mm-text>
     </mm-text-group>
 
     <mm-text-group>
       <mm-text variant="subhead">Platform problems</mm-text>
       <mm-text variant="label-strong">
+        normal, body 두 가지 두께는 조금 부족함. 400을 normal로 한다면 메뉴의 텍스트가 400이면
+        맥아리 없다. 버튼도 마찬가지. 결국 body text의 weight와 line height, color를 prop으로 받는
+        게 훨씬 나을 수 있다.
+      </mm-text>
+      <mm-text variant="label-strong">
         Utilities. - Truncated. long-form content. truncate-multiple은 항상 2줄.
       </mm-text>
-      <mm-text variant="body"
-        >제목을 자르는 것을 허용할 것인가? 허용하지 않을 것인가? 종국에는 잘릴 수 밖에 없긴 함.
-        폴더블, 와치 등의 작은 화면에서.</mm-text
-      >
+      <mm-text variant="body">
+        제목을 자르는 것을 허용할 것인가? 허용하지 않을 것인가? 종국에는 모든 텍스트는 잘릴 수
+        있음을 염두해야 한다. 폴더블, 와치
+      </mm-text>
       <mm-text variant="body">Stat과 Summary의 차이. clickable, non-clickable ?</mm-text>
       <p>단어(word)" → "구(phrase)" → "문장(sentence)" → "문단(paragraph)"</p>
-      <p>subhead, label, label-strong은 단독으로 쓰지 않음</p>
-      <p>heading level, body size</p>
+      <p>
+        단독으로 쓰는 텍스트와 항상 함께 쓰이는 텍스트를 구분해야 한다. 일반적으로 subheading,
+        label, caption은 단독으로 쓰지 않는다.
+      </p>
+      <p>heading level="", body size=""</p>
+    </mm-text-group>
+
+    <mm-text-group>
+      <mm-text variant="subhead">Changelog</mm-text>
+      <mm-text variant="label-strong"> 2507 캡션 제거 </mm-text>
     </mm-text-group>
 
     <mm-text-group>

@@ -96,6 +96,36 @@ em, i  {
     box-shadow: var(--shadow);
     background-color: var(--color-background);
   }
+
+  /* 버튼과 아이콘 버튼의 상태 동일 */
+  /* TODO pending */
+  &:hover {
+    box-shadow: var(--status-hover);
+  }
+  &:focus {
+    outline: 3px solid #007185;
+    outline-offset: 2px;
+  }
+  &:active {
+    background: #F0B800;
+    border-color: #008296;
+    box-shadow: 0 0 0 3px #C8F3FA, inset 0 0 0 2px #FFF;
+  }
+  &:disabled {
+    opacity: .5;
+    cursor: not-allowed;
+  }
+  &:disabled:hover {
+    box-shadow: none;
+  }
+  &:disabled:focus {
+    outline: none;
+  }
+  &:disabled:active {
+    background: var(--button-color);
+    border-color: var(--button-color);
+    box-shadow: none;
+  }
 }
 
 .button {

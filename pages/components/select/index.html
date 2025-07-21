@@ -1,5 +1,8 @@
 <main class="page">
-  <mm-pageheader title="Select" description="-"></mm-pageheader>
+  <mm-pageheader
+    title="Select"
+    description="셀렉트와 드롭다운, 세그먼트 컨트롤을 어떤게 분류할 것인가"
+  ></mm-pageheader>
 
   <dl class="article-aka">
     <dt>a.k.a.</dt>
@@ -83,9 +86,6 @@
         var selected = Array.from(dnd.options).filter((option) => { return option.selected;
         }).map((option) => option.value);
       </mm-text>
-    </mm-text-group>
-    <mm-text-group>
-      <mm-text variant="subhead">Platform problems</mm-text>
     </mm-text-group>
     <mm-text-group>
       <mm-text variant="subhead">Changelog</mm-text>

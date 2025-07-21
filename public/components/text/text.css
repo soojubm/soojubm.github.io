@@ -46,7 +46,7 @@ ul {
   display: flex;
   flex-direction: column;
   /* TODO width */
-  max-width: 640px;
+  /* max-width: 640px; */
   gap: var(--space-3);
 
   &[data-variant=title] {
@@ -115,7 +115,6 @@ ul {
   font-size: var(--font-size-small);
   line-height: 16px;
 }
-
 
 .text[data-truncated="true"] {
   white-space:nowrap;overflow:hidden;text-overflow:ellipsis;

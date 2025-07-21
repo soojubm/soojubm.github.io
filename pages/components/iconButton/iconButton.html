@@ -1,7 +1,7 @@
 <main class="page js-tab">
   <mm-pageheader
     title="Icon Button"
-    description="레이블이 없는 아이콘 버튼. 반드시 보편적인 메타포를 적용하여 특정 형태만 제공. 버튼과의 차이는 접근성을 위한 대체 텍스트를 제공하는 것입니다."
+    description="레이블 없이 보편적으로 학습된 메타포의 아이콘으로 간결한 액션"
   ></mm-pageheader>
 
   <section class="component-example">
@@ -54,6 +54,10 @@
         <small>공유하기</small>
       </button>
     </mm-group>
+    <mm-separator></mm-separator>
+    <mm-tooltip content="로그인" align="center">
+      <mm-icon-button slot="trigger" icon="user"></mm-icon-button>
+    </mm-tooltip>
   </section>
   <section class="component-props">
     <dl>
@@ -64,20 +68,18 @@
       <dt>onClick<attr>?</attr></dt>
       <dd>event:(React.MouseEvent&lt;HTMLButtonElement&gt;) => void</dd>
     </dl>
-  </section>
-  <section class="component-guide">
+    <mm-separator></mm-separator>
     <mm-text-group>
-      <mm-text variant="subhead">Meta problems</mm-text>
-      <mm-text variant="body"> 보편성으로 사용하는 메타포로 아이콘 버튼을 만드세요. </mm-text>
-    </mm-text-group>
-
-    <mm-text-group>
-      <mm-text variant="subhead">Platform problems</mm-text>
       <mm-text variant="body">
-        버튼이나 칩으로 아이콘 버튼을 대체한다면? 레이블로 인해 내부 간격을 정의하는 코드가 복잡해질
-        수 있다. 또한, 아이콘 버튼에서만 사용되는 툴팁이 버튼에서의 옵셔널 정의가 불필요하다.
+        버튼으로 아이콘 버튼을 대체하기 어렵다. 레이블과 함께 사용될 때 내부 간격의 조절이
+        불가피하다. 아이콘 버튼은 레이블 대신 대체 텍스트나 툴팁을 제공해야 하는데 옵셔널한 값으로
+        버튼의 책임이 불필요하게 커질 수 있다.
       </mm-text>
-      <mm-text variant="body">툴팁, 대체레이블aria-label. /selectable?</mm-text>
+      <mm-text variant="body"
+        >Toggled states. Buttons can swap icons based on data states. There are several icons within
+        our library that have a “Filled” counterpart to indicate whether a state is toggled on. The
+        “Outlined” version indicates it is toggled off.
+      </mm-text>
     </mm-text-group>
   </section>
 </main>

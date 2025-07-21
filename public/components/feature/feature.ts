@@ -11,8 +11,13 @@ class Feature extends HTMLElement {
     const avatar = document.createElement('mm-avatar')
     avatar.setAttribute('variant', 'secondary')
     avatar.setAttribute('size', 'large')
-    avatar.innerText = this.icon || ''
+
+    const icon = document.createElement('mm-icon')
+    icon.setAttribute('name', this.icon || '')
+    icon.setAttribute('size', 'large')
+
     avatar.classList.add('feature-item-avatar')
+    avatar.appendChild(icon)
 
     const heading = document.createElement('mm-text')
     heading.setAttribute('variant', 'subhead')
@@ -28,7 +33,9 @@ class Feature extends HTMLElement {
     description.classList.add('feature-item-description')
 
     shadow.appendChild(container)
+
     container.append(avatar, heading, description, makeStyleSheet('feature'))
+    container.append(...this.childNodes)
   }
 
   get type() {

@@ -22,6 +22,26 @@ class PageHeader extends HTMLElement {
     hostElement.append(titleElement, descriptionElement)
 
     shadowRoot!.append(hostElement)
+
+    const style = document.createElement('style')
+    style.textContent = `
+      :host {
+        display: block; /* Custom Element는 기본적으로 display: inline 이므로 블록 요소로 변경 */
+        max-width: 50%;
+      }
+      // mm-text-group[variant="title"] {
+      //   margin-bottom: 10px;
+      // }
+      // mm-text[variant="title"] {
+      //   font-size: 2em;
+      //   color: #333;
+      // }
+      // mm-text[variant="body-large"] {
+      //   font-size: 1.2em;
+      //   color: #666;
+      // }
+    `
+    shadowRoot!.append(style)
   }
 
   get title() {

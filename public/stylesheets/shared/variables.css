@@ -126,7 +126,6 @@
   --color-border-hover: var(--gray800);
 
   --color-text: var(--gray900);
-  --color-text: #444b48;
   --color-text-light: var(--gray400);
 
   --color-gradient-from: null;
@@ -222,7 +221,7 @@
 
 @media (max-width: 1100px) {
   :root {
-    --font-size-huge: 1.5rem;
+    /* --font-size-huge: 1.5rem; */
   }
 }
 
