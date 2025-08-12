@@ -51,12 +51,7 @@
   --handleoffsetcalculator: var(--handleoffset);
   --tw-text-opacity: 1;
   background-color: var(--color-primary);
-}
-.switch input:disabled {}
-.switch input:disabled + label {cursor:not-allowed;opacity:.5;}
-.switch:focus-within label:before {
-  outline: 3px solid var(--color-point);
-} */
+}*/
 
 
 .switch {
@@ -114,3 +109,9 @@
 .switch input:checked + label {}
 .switch input:checked + label:before {content:'';background:var(--color-primary);}
 .switch input:checked + label:after {transform:translateX(calc(var(--switch-width) - 16px));}
+
+.switch input:disabled {}
+.switch input:disabled + label {cursor:not-allowed;opacity:.5;}
+.switch:focus-within label:before {
+  outline: 3px solid var(--color-point);
+} 

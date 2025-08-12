@@ -21,8 +21,6 @@
       >
         체크박스 레이블
       </mm-checkbox>
-      <mm-checkbox name="checkbox" size="large" disabled>체크박스 비활성</mm-checkbox>
-      <mm-checkbox name="checkbox" size="large" checked disabled>체크박스 비활성 체크</mm-checkbox>
     </mm-group>
   </section>
 
@@ -36,12 +34,6 @@
       <dd>string</dd>
       <dt>label?</dt>
       <dd>string</dd>
-      <div style="width: 100%; margin: var(--space-2) 0 var(--space-3)">
-        <mm-text variant="body">
-          레이블은 최대 2단어로 작성합니다. choice냐 action option(?)이냐. action option일 때는
-          동사를 포함하여 작성합니다.
-        </mm-text>
-      </div>
       <dt>isChecked<attr>?</attr></dt>
       <dd>boolean</dd>
       <dt>isDisabled<attr>?</attr></dt>
@@ -49,6 +41,12 @@
       <dt>onChange</dt>
       <dd>(event: React.ChangeEvent&lt;HTMLInputElement&gt;) => void</dd>
     </dl>
+
+    <mm-text variant="subhead">Attributes</mm-text>
+    <mm-tile>
+      <mm-checkbox name="checkbox" size="large" disabled>체크박스 비활성</mm-checkbox>
+      <mm-checkbox name="checkbox" size="large" checked disabled>체크박스 비활성 체크</mm-checkbox>
+    </mm-tile>
 
     <section class="feature columns-3">
       <mm-feature
@@ -65,6 +63,10 @@
         subtitle="Easy scanning"
         description="수직 정렬로 옵션 목록을 파악하기 쉽게. 체크박스를 강조가 필요한 경우 체크박스의 크기 또는 컨테이너를 강조하고, 체크박스 컴포넌트는 독립적인 형태를 유지합니다. 근데 이런 제약은 일단 하지 않는 것이 좋음. 초기의 최소한의 정의 라는 foundation의 시효 소멸.."
       >
+        <mm-text variant="body">
+          레이블은 최대 2단어로 작성합니다. choice냐 action option(?)이냐. action option일 때는
+          동사를 포함하여 작성합니다.
+        </mm-text>
       </mm-feature>
     </section>
 

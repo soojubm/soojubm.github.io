@@ -388,7 +388,6 @@ menu-item:focus-visible {
 }
 
 .component-props .columns-3 {
-    background: var(--color-background-weak);
     padding: 2rem calc(var(--grid-margin) - 1rem);
     margin: 2rem calc(var(--grid-margin) * -1 + 1rem);
 }

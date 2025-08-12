@@ -57,8 +57,8 @@
 .component-props mm-text[variant=subhead] {display:none}
 .component-props dl {
   column-gap:var(--space-1);}
-.component-props dl dt {color:var(--color-text-light);font-style:italic;line-height:1.25;position:relative}
-.component-props dl dt::before {content:'\2669';display:block;position:absolute;left:-.75rem;top:0;font-size: 12px;color:var(--color-text);font-style:normal;font-weight: bold;;}
+.component-props dl dt {color:var(--color-text-light);line-height:1.25;position:relative}
+.component-props dl dt::before {content:'\2669';display:block;font-size: 12px;color:var(--color-text);font-style:normal;font-weight: bold;;}
 .component-props dl dt::after {content:':'}
 .component-props dl dd {font-style:italic;}
 .component-props dl dd + dt {margin-top:var(--space-3);}
@@ -70,19 +70,26 @@
   column-gap: var(--space-4);
   /* column-gap: 2rem !important; row-gap: 0 !important; */
 }
+.component-props dl dt {
+  display: flex;
+  align-items: center;
+}
 .component-props dl dt::before {
   display: none;
 }
 .component-props dl dt::after {
     content: "";
-    width: calc(100% - 7.5rem);
+    display: block;
+    width: 100%;
+    /* width: calc(100% - 7.5rem);
     left: 100px;
     right: 2rem;
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
-    height: 0.5px;
-    background: var(--color-border-stronger);
+    transform: translateY(-50%); */
+    height: 1px;
+    margin-left: var(--space-4);
+    background: var(--color-border);
 }
 .component-props dl dt {
   width: 33%;
@@ -113,6 +120,11 @@
     color: var(--color-primary);
     font-weight: var(--font-weight-bold);
   }
+}
+
+
+.component-temp {
+  margin: 2rem 0;
 }
 
 .article-aka {display:none;gap:var(--space-3);margin:2rem 0 0 0;}

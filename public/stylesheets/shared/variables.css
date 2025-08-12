@@ -238,6 +238,14 @@
   --color-background-weak: #292f2c;
   --color-background-strong: var(--gray0);
 
+  --color-background-page: null;
+  --color-background-surface-1: null;
+  --color-background-surface-2: null;
+
+  --color-tile-container: var(--color-background-surface-1);
+  --color-tile-on-container: var(--color-text);
+
+
   --color-border: var(--gray800);
   --color-border-stronger: #5f6964;
   --color-border-hover: var(--gray0);
