@@ -48,37 +48,39 @@
       <mm-checkbox name="checkbox" size="large" checked disabled>체크박스 비활성 체크</mm-checkbox>
     </mm-tile>
 
-    <section class="feature columns-3">
-      <mm-feature
-        icon="cursor-pointer"
-        titleText="Interactive - choice"
-        subtitle="Easy scanning"
-        description="미리 선택된 기본값을 제공하는 것은 편향된 데이터를 수집할 위험이 있습니다. 데이터가 왜곡될
-        수 있습니다. 만약 미리 선택된 값을 적용하는 경우 첫 번째 옵션을 기본 옵션으로."
-      >
-      </mm-feature>
-      <mm-feature
-        icon="task-list"
-        titleText="Easy scanning"
-        subtitle="Easy scanning"
-        description="수직 정렬로 옵션 목록을 파악하기 쉽게. 체크박스를 강조가 필요한 경우 체크박스의 크기 또는 컨테이너를 강조하고, 체크박스 컴포넌트는 독립적인 형태를 유지합니다. 근데 이런 제약은 일단 하지 않는 것이 좋음. 초기의 최소한의 정의 라는 foundation의 시효 소멸.."
-      >
-        <mm-text variant="body">
-          레이블은 최대 2단어로 작성합니다. choice냐 action option(?)이냐. action option일 때는
-          동사를 포함하여 작성합니다.
-        </mm-text>
-      </mm-feature>
-    </section>
-
+    <!-- <section class="feature columns-3"> -->
+    <br />
+    <mm-feature
+      icon="cursor-pointer"
+      titleText="Interactive - choice"
+      subtitle="Easy scanning"
+      description="미리 선택된 기본값을 제공하는 것은 편향된 데이터를 수집할 위험이 있습니다.만약 미리 선택된 값을 적용하는 경우 첫 번째 옵션을 기본 옵션으로."
+    >
+    </mm-feature>
+    <br />
+    <mm-feature
+      icon="task-list"
+      titleText="Easy scanning"
+      subtitle="Easy scanning"
+      description="옵션 목록을 파악하기 쉽게 수직 정렬합니다. 강조가 필요한 경우 체크박스 컴포넌트는 독립적인 형태를 유지하고 체크박스의 크기 또는 컨테이너를 강조하고... 근데 이런 제약은 너무 과하다. 초기의 최소한의 정의 라는 foundation의 시효 소멸.."
+    >
+      <mm-text variant="body">
+        레이블은 최대 2단어로 작성합니다. choice냐 action option(?)이냐. action option일 때는 동사를
+        포함하여 작성합니다.
+      </mm-text>
+    </mm-feature>
+    <!-- </section> -->
+    <br />
     <mm-feature
       icon="component"
-      titleText="MasterCheckbox / TermsCheckbox / CheckboxGroup"
+      titleText="MasterCheckbox / TermsCheckbox"
       description="모바일 사용성을 위한 약관 동의를 위한 패턴에서 전체동의 체크박스와 개별 체크박스를 하나의
       TermsCheckboxGroup으로 정의할 수 있다. 약관보기 버튼을 포함해야 하며, 시각적으로 강조된 형태의
       체크박스이다."
     >
       <mm-tile variant="tinted">
         <mm-checkbox
+          size="large"
           class="js-checkall"
           aira-checked="mixed"
           aria-controls="1 2"
@@ -90,19 +92,19 @@
         <mm-separator spacing="small"></mm-separator>
         <mm-group variant="checkbox">
           <mm-row justifyContent="space-between">
-            <mm-checkbox class="js-check" id="terms" name="terms">
+            <mm-checkbox size="large" class="js-check" id="terms" name="terms">
               이용약관에 동의합니다.
               <mm-link href="#">이용약관 바로가기</mm-link>
             </mm-checkbox>
           </mm-row>
           <mm-row justifyContent="space-between">
-            <mm-checkbox class="js-check" id="terms" name="terms">
+            <mm-checkbox size="large" class="js-check" id="terms" name="terms">
               이용약관에 동의합니다.
               <mm-link href="#">이용약관 바로가기</mm-link>
             </mm-checkbox>
           </mm-row>
           <mm-row justifyContent="space-between">
-            <mm-checkbox class="js-check" id="terms" name="terms">
+            <mm-checkbox size="large" class="js-check" id="terms" name="terms">
               이용약관에 동의합니다.
             </mm-checkbox>
           </mm-row>

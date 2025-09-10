@@ -28,6 +28,20 @@
     </div>
 
     <mm-text-list texts='["mm-text-list 1", "mm-text-list 1"]'> </mm-text-list>
+
+    <div class="js-counter" data-number="234">234</div>
+
+    <ul style="margin: 0">
+      <li>순서가 없는 리스트</li>
+      <li>순서가 없는 리스트</li>
+    </ul>
+
+    <mm-separator></mm-separator>
+
+    <ol style="margin: var(--space-3) 0">
+      <li>순서가 있는 리스트</li>
+      <li>순서가 있는 리스트</li>
+    </ol>
   </section>
   <section class="component-props">
     <dl>
@@ -40,20 +54,18 @@
       <dt>alignment<attr>?</attr></dt>
       <dd>inline.......</dd>
     </dl>
-  </section>
-  <section class="component-guide">
+
     <mm-text-group>
       <mm-text variant="subhead">Meta problems</mm-text>
       <mm-text-list
         texts='["TextGroup, ContentGroup, TextList, TextStack, TextPair", "Label-Description Pair (라벨-설명 쌍) :: 메타 정보를 보여주는 방식. 그러니까 UI패턴.", "Question-Answer Pair, Translation Pair, Dialogue Pair"]'
       ></mm-text-list>
       <dd>TODO. keyvalue를 포함할 것인지.</dd>
-    </mm-text-group>
-    <mm-text-group>
       <mm-text variant="subhead">menuItem. with Avatar.</mm-text>
       <mm-text-list
         texts='["예: ProfileKeyValuePair, FeatureLabelWithDescription.", "KeyValuePair :: Key와 Value가 동일한 위계를 갖는다. 리스트 형태이다. alignment/size", "LabelWithDescription :: Label이 강조된다. size?", "keyvalue 에서 value가 subhead의 형태는 가질 수 있으나 그 역할은 아님. keyvalue는 추상화ㅏ된 컴포넌트이긴 함."]'
       ></mm-text-list>
     </mm-text-group>
   </section>
+  <section class="component-guide"></section>
 </main>

@@ -18,9 +18,6 @@ main {
   border-radius: var(--radius);
   background: var(--color-background);
 }
-.token-item mm-group {
-  display: none !important;
-}
 .token-item figure {
   width:var(--size-large);
   height:var(--size-large);

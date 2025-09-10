@@ -184,56 +184,28 @@ The font size of a key is never bigger than the value.
       <dt>truncatedLine<attr>?</attr></dt>
       <dd>'single' | 'multi'</dd>
     </dl>
-  </section>
-
-  <section class="component-guide">
-    <div class="js-counter" data-number="234">234</div>
-
-    <ul style="margin: 0">
-      <li>순서가 없는 리스트</li>
-      <li>순서가 없는 리스트</li>
-    </ul>
-
-    <mm-separator></mm-separator>
-
-    <ol style="margin: var(--space-3) 0">
-      <li>순서가 있는 리스트</li>
-      <li>순서가 있는 리스트</li>
-    </ol>
-    <mm-text-group>
-      <mm-text variant="subhead">Meta problems</mm-text>
-      <mm-text variant="body">
-        폰트마다 기준선이 다르기 때문에 섞어짤 때 또는 폰트를 변경할 때 주변 요소와 부모 요소에 맞춰
-        시각보정이 필요하다. 특히 텍스트를 쌓을 때.
-      </mm-text>
-      <mm-text variant="body">
-        블로그, 뉴스 기사 등 텍스트 중심의 콘텐츠 페이지를 위한 larger body가 필요하다. 텍스트가
-        굵거나 진하여 낱자의 속 공간이 좁을수록, 더 넓은 줄 간격이 필요하다.
-      </mm-text>
-      <mm-text variant="body">message: 사용자의 관점, description: 시스템이 주체</mm-text>
-      <mm-text variant="body">caption, brief description의 차이</mm-text>
-      <mm-text variant="body">
-        headingText, bodyBody. bodyText의 lineHeight를 따로 설정할까. 1에 가까운 값, 기본값,
-        넓은값(large 저용). label이 기본적으로 좁은 line height를 갖는다면 컨터이네가 공간을 갖는
-        역할을 위임 받아야 함. 이 컨테이너는 비어 있을 수도 았고 text stack의 간격을 정의할 수 있다.
-      </mm-text>
-    </mm-text-group>
 
     <mm-text-group>
+      <mm-text variant="label-strong">텍스트의 강조</mm-text>
+      <mm-text variant="body">형태적 강조 :: mark, u, em, b</mm-text>
+      <mm-text variant="body">의미론적 강조 ::strong - 개인정보처리방침 등</mm-text>
+      <mm-text variant="body">
+        단락에 포함된 단어나 구문을 underline, primary color로 강조하지 마세요. 우리는 underlined와
+        pirmary colored text를 <mark>clickable</mark>로 엄격하게 정의하고 있습니다.
+      </mm-text>
       <mm-text variant="subhead">Platform problems</mm-text>
       <mm-text variant="label-strong">
-        normal, body 두 가지 두께는 조금 부족함. 400을 normal로 한다면 메뉴의 텍스트가 400이면
-        맥아리 없다. 버튼도 마찬가지. 결국 body text의 weight와 line height, color를 prop으로 받는
-        게 훨씬 나을 수 있다.
+        normal, body 두 가지로는 한계가 보인다. 400을 normal로 한다면 메뉴의 텍스트가 400은 약간
+        부족하다. 버튼 레이블도 그렇게 보일 수 있다. body text는 weight와 line height, color를
+        prop으로 받는 게 훨씬 나을 수 있다.
       </mm-text>
       <mm-text variant="label-strong">
         Utilities. - Truncated. long-form content. truncate-multiple은 항상 2줄.
       </mm-text>
       <mm-text variant="body">
-        제목을 자르는 것을 허용할 것인가? 허용하지 않을 것인가? 종국에는 모든 텍스트는 잘릴 수
-        있음을 염두해야 한다. 폴더블, 와치
+        <del>제목을 자르는 것을 허용할 것인가? 허용하지 않을 것인가?</del> 종국에는 모든 텍스트는
+        잘릴 수 있음을 염두해야 한다. 점점 더 작은 스크린에 대응할 수 있어야 한다. 폴더블, 와치
       </mm-text>
-      <mm-text variant="body">Stat과 Summary의 차이. clickable, non-clickable ?</mm-text>
       <p>단어(word)" → "구(phrase)" → "문장(sentence)" → "문단(paragraph)"</p>
       <p>
         단독으로 쓰는 텍스트와 항상 함께 쓰이는 텍스트를 구분해야 한다. 일반적으로 subheading,
@@ -241,11 +213,34 @@ The font size of a key is never bigger than the value.
       </p>
       <p>heading level="", body size=""</p>
     </mm-text-group>
+  </section>
 
+  <section class="component-guide">
     <mm-text-group>
-      <mm-text variant="subhead">Changelog</mm-text>
-      <mm-text variant="label-strong"> 2507 캡션 제거 </mm-text>
+      <mm-text variant="subhead">Meta problems</mm-text>
+      <mm-text variant="body">
+        폰트마다 기준선이 다르기 때문에 섞어짤 때 또는 폰트를 변경할 때 주변 요소와 부모 요소에 맞춰
+        시각보정이 필요하다. 특히 텍스트를 쌓을 때.
+      </mm-text>
+      <mm-text variant="body">message: 사용자의 관점, description: 시스템이 주체</mm-text>
+      <mm-text
+        >line-height 와 별개로 모든 텍스트는 텍스트를 감싸는 컨테이너로 세로값을 주는 게 좋을 수
+        있다. 디자이너의 의도에 따라 조정이 필요하다.</mm-text
+      >
+      <mm-text variant="body">
+        headingText, bodyText의 lineHeight를 따로 설정할까. 1에 가까운 값(x-height), 기본값,
+        넓은값(large 저용). label이 기본적으로 좁은 line height를 갖는다면 컨터이네가 공간을 갖는
+        역할을 위임 받아야 함. 이 컨테이너는 비어 있을 수도 았고 text stack의 간격을 정의할 수 있다.
+      </mm-text>
     </mm-text-group>
+
+    <!-- 
+      # Note
+      caption, brief description의 차이
+      블로그, 뉴스 기사 등 텍스트 중심의 콘텐츠 페이지를 위한 larger body가 필요하다. 텍스트가 굵거나 진하여 낱자의 속 공간이 좁을수록, 더 넓은 줄 간격이 필요하다.
+      2507 캡션 제거
+      Stat과 Summary의 차이. clickable, non-clickable ?
+    -->
 
     <mm-text-group>
       <mm-text variant="subhead">디지털 환경의 타이포그래피 규칙</mm-text>
@@ -258,14 +253,6 @@ The font size of a key is never bigger than the value.
       <mm-text variant="body">
         단락의 위 아래 간격을 활용합니다. 작은 화면에서 공간 활용을 위해 좌측 들여쓰기 하지
         않습니다.
-      </mm-text>
-      <mm-text variant="label-strong">텍스트의 강조</mm-text>
-      <mm-text variant="body">형태적 강조 :: mark, u, em, b</mm-text>
-      <mm-text variant="body">의미론적 강조 ::strong - 개인정보처리방침 등</mm-text>
-      <mm-text variant="body">
-        단락에 포함된 단어나 구문을 underline, <del>bold</del>, primary color로 강조하지 마세요.
-        우리는 underlined와 pirmary colored text를 <mark>clickable</mark>로 엄격하게 정의하고
-        있습니다.
       </mm-text>
     </mm-text-group>
 

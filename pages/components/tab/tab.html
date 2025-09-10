@@ -1,6 +1,6 @@
 <main class="page js-tab">
   <mm-pageheader
-    title="Tab"
+    title="Tabs"
     description="페이지 내에서 같은 맥락으로 분류된 콘텐츠 뷰를 전환합니다."
   ></mm-pageheader>
 
@@ -45,18 +45,12 @@
       <dd>React.Node</dd>
       <!-- <dt>indicator (active bar)</dt> -->
     </dl>
-  </section>
 
-  <section class="component-guide">
     <mm-text-group>
-      <mm-text variant="subhead">Considerations</mm-text>
       <mm-group>
         <mm-tag>Behavior - Content switching </mm-tag>
         <mm-tag>Editorial - Easy Scanning</mm-tag>
       </mm-group>
-    </mm-text-group>
-    <mm-text-group>
-      <mm-text variant="subhead">Meta problems</mm-text>
       <mm-text
         >flutter. Scaffold - AppBar - bottom: TabBar - tabs - Tab / Scaffold - body -
         TabBarView</mm-text
@@ -81,9 +75,6 @@
         ]'
       >
       </mm-text-list>
-    </mm-text-group>
-    <mm-text-group>
-      <mm-text variant="subhead">Platform problems</mm-text>
       <mm-text variant="body">
         탭을 중첩하지 마세요. 페이지에서 수행하는 과업 중심 플로우 설계. 중첩을 허용한다면 탭의 중첩
         패턴을 정의해야 함. Material 3의 primary tabs / secondary tabs 분류 등 참고. 또는 네이버
@@ -101,9 +92,7 @@
         탭의 최대 갯수를 제한하거나 가로 스크롤 규칙을 정의. 갯수를 제한하면 스크롤이 불필요.
       </mm-text>
     </mm-text-group>
-
-    <!-- 
-    <div style="max-width: 200px">
+    <!-- <div style="max-width: 200px">
       <mm-tablist>
         <mm-tab slot="tab" selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">
           Monthly
@@ -111,25 +100,28 @@
         <mm-tab slot="tab" aria-controls="panel-2" id="tab-2" tabindex="-1">Yearly</mm-tab>
       </mm-tablist>
     </div> -->
-
-    <div class="component-references">
-      <mm-text variant="subhead" hidden>References</mm-text>
-      <a href="https://developer.apple.com/documentation/swiftui/navigationstack">
-        swiftui navigationstack
-      </a>
-      <a
-        href="https://developer.apple.com/design/human-interface-guidelines/components/layout-and-organization/tab-views"
-        target="_blank"
-      >
-        HIG tab views
-      </a>
-      <a
-        href="https://developer.apple.com/design/human-interface-guidelines/components/selection-and-input/segmented-controls/"
-        target="_blank"
-      >
-        HIG Segmented controls
-      </a>
-      <a href="https://material.io/components/tabs" target="_blank">MD Tabs</a>
-    </div>
   </section>
+
+  <div class="component-references">
+    <mm-text variant="subhead" hidden>References</mm-text>
+    <a href="https://developer.apple.com/documentation/swiftui/navigationstack">
+      swiftui navigationstack
+    </a>
+    <a
+      href="https://developer.apple.com/design/human-interface-guidelines/components/layout-and-organization/tab-views"
+      target="_blank"
+    >
+      HIG tab views
+    </a>
+    <a
+      href="https://developer.apple.com/design/human-interface-guidelines/components/selection-and-input/segmented-controls/"
+      target="_blank"
+    >
+      HIG Segmented controls
+    </a>
+    <a href="https://material.io/components/tabs" target="_blank">MD Tabs</a>
+  </div>
+
+  <!-- <section class="component-guide">
+  </section> -->
 </main>

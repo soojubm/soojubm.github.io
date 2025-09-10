@@ -105,6 +105,35 @@
   margin-top: 0;
 }
 
+
+
+
+
+.component-props dl {
+    column-gap: var(--space-1);
+    display: block;
+    /* flex-wrap: wrap; */
+    /* font-size: var(--font-size-large); */
+    background: var(--color-background-weak);
+    border-radius: var(--radius-large);
+    padding: 1.25rem 2rem;
+    margin: 0 0 2rem;
+    & dt:after {
+      display: none;
+    }
+}
+.component-props dl dt {
+  padding: 0;
+}
+.component-props dl dd {
+  padding: 0;
+  margin-right: var(--space-4);
+  font-weight: var(--font-weight-bold);
+}
+.component-props dl dd + dt {
+  margin-top: var(--space-3);
+}
+
 .component-references {
   display: flex;
   flex-direction: column;

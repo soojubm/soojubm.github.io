@@ -14,9 +14,18 @@
       margin-top: 8rem;
     }
   </style>
-<p>TODO color-text라고 하는 경우 border, icon 등</p>
-  <p>opacity.state.hover 4% opacity.state.focus 4% opacity.state.press 8% opacity.state.active</p>
-
+  <div>
+    <p>TODO color-text라고 하는 경우 border, icon 등</p>
+    <p>opacity.state.hover 4% opacity.state.focus 4% opacity.state.press 8% opacity.state.active</p>
+    <mm-text variant="body">
+      warning과 danger가 모두 필요하지 않을 수도 있다. attention. (ebay)
+    </mm-text>
+    <mm-text variant="body">
+      foreground. primary/secondary. 지금 light로 쓰는 것 보다 이렇게 변경하기.
+    </mm-text>
+    <mm-text variant="body"> strong: 강도나 무게, 농도/subtle: 감정, 표현, 인상 </mm-text>
+    <mm-text variant="body"> state layer </mm-text>
+  </div>
   <section>
     <mm-text-group>
       <mm-text variant="title">Color</mm-text>
@@ -26,104 +35,61 @@
         making it easier for users to interact, search, and differentiate elements. For additional
         guidance, refer to the component-specific guidelines.
       </mm-text>
-      <mm-text variant="body"> warning과 danger를 구분할 필요가 있을까. attention. (ebay) </mm-text>
-      <mm-text variant="body">
-        foreground. primary/secondary. 지금 light로 쓰는 것 보다 이렇게 변경하기.
-      </mm-text>
-      <mm-text variant="body">
-        strong/subtle 맥락: 강도나 무게, 농도를 말할 때 적절함. vs 감정, 표현, 인상 등을 말할 때
-        적절함
-      </mm-text>
-      <mm-text variant="body"> state layer </mm-text>
     </mm-text-group>
     <br /><br />
-    <mm-text-group>
-      <mm-text variant="label-strong">ddddddd</mm-text>
-    </mm-text-group>
-    <article class="token-item is-primary200" style="border: 0; background-color: var(--green800)">
-      <b style="color: #fff">--green800: #1b995c</b>
-      <mm-group variant="hashtag">
-        <mm-tag variant="hashtag">color-primary</mm-tag>
-      </mm-group>
-    </article>
-    <article class="token-item" style="border: 0; background-color: var(--red100)">
-      <mm-keyvalue alignment="column" key="--red100:" value="rgba(243, 68, 97, .06)"></mm-keyvalue>
-      <mm-group variant="hashtag">
-        <mm-tag variant="hashtag">color-danger-light</mm-tag>
-        <mm-tag variant="hashtag">color-text-danger/error</mm-tag>
-        <mm-tag variant="hashtag">color-border-danger/error</mm-tag>
-      </mm-group>
-    </article>
-    <article class="token-item" style="border: 0; background-color: var(--red800)">
-      <b style="color: #fff">--red800: #f02849</b>
-      <mm-group variant="hashtag">
-        <mm-tag variant="hashtag">color-danger</mm-tag>
-      </mm-group>
-    </article>
-    <article class="token-item" style="border: 0; background: var(--color-accent)">
-      <b>--yellow800: gold</b>
-    </article>
 
     <mm-text-group>
       <mm-text variant="label-strong">Primitives</mm-text>
     </mm-text-group>
     <div class="token-group">
+      <article class="token-item" style="border: 0; background-color: var(--green100)">
+        <b>--green100: rgba(10, 160, 80, 0.1)</b>
+      </article>
+      <article
+        class="token-item is-primary200"
+        style="border: 0; background-color: var(--green800)"
+      >
+        <b style="color: #fff">--green800: #1b995c</b>
+      </article>
+      <article class="token-item" style="border: 0; background-color: var(--red100)">
+        <b style="color: var(--color-text)">--red100: rgba(243, 68, 97, .06)</b>
+      </article>
+      <article class="token-item" style="border: 0; background-color: var(--red800)">
+        <b style="color: #fff">--red800: #f02849</b>
+      </article>
+      <article class="token-item" style="border: 0; background: var(--color-accent)">
+        <b>--yellow800: gold</b>
+      </article>
+    </div>
+    <mm-separator></mm-separator>
+    <div class="token-group">
       <article class="token-item">
-        <mm-keyvalue alignment="column" key="--gray0:" value="#fff"></mm-keyvalue>
-        <mm-group variant="hashtag">
-          <mm-tag variant="hashtag">color-background</mm-tag>
-        </mm-group>
+        <b style="color: var(--color-text)">--gray0: #fff</b>
       </article>
       <article class="token-item" style="border: 0; background: #fcfdfc">
-        <mm-keyvalue alignment="column" key="--gray50:" value="#fcfdfc"></mm-keyvalue>
-        <mm-group variant="hashtag">
-          <mm-tag variant="hashtag">color-background-weak</mm-tag>
-        </mm-group>
+        <b>--gray50: #fcfdfc</b>
       </article>
       <article class="token-item" style="border: 0; background: var(--gray100)">
-        <mm-keyvalue alignment="column" key="--gray100:" value="#f5f8f5"></mm-keyvalue>
-        <mm-group variant="hashtag">
-          <mm-tag variant="hashtag">color-background-weak</mm-tag>
-        </mm-group>
+        <b>--gray100: #f5f8f5</b>
       </article>
       <article class="token-item is-gray200" style="border: 0; background: var(--gray200)">
-        <mm-keyvalue alignment="column" key="--gray200:" value="#e0e2e1"></mm-keyvalue>
-        <mm-group variant="hashtag">
-          <mm-tag variant="hashtag">color-border</mm-tag>
-          <!-- <p>--color-hover-background: var(--gray200)</p> -->
-        </mm-group>
+        <b>--gray200: #e0e2e1</b>
       </article>
       <article class="token-item is-gray200" style="border: 0; background: var(--gray300)">
-        <mm-keyvalue alignment="column" key="--gray300:" value="#c1c3c2"></mm-keyvalue>
+        <b>--gray300: #c1c3c2</b>
       </article>
       <article class="token-item is-gray400" style="border: 0; background: var(--gray400)">
         <b style="color: #fff">--gray400: #979d9a</b>
-        <mm-group variant="hashtag">
-          <mm-tag variant="hashtag">color-text-light</mm-tag>
-          <!-- <p>--color-text-disabled</p> -->
-        </mm-group>
       </article>
       <article class="token-item" style="border: 0; background: var(--gray800)">
         <b style="color: #fff">--gray800: #343c38</b>
       </article>
       <article class="token-item" style="border: 0; background: var(--gray900)">
         <b style="color: #fff">--gray900: #1e2321</b>
-        <mm-group variant="hashtag">
-          <mm-tag variant="hashtag">color-text</mm-tag>
-          <mm-tag variant="hashtag">color-background-strong</mm-tag>
-        </mm-group>
       </article>
-      <article class="token-item" style="border: 0; background-color: var(--green100)">
-        <mm-keyvalue
-          alignment="column"
-          key="--green100:"
-          value="rgba(10, 160, 80, 0.1)"
-        ></mm-keyvalue>
-        <mm-group variant="hashtag">
-          <mm-tag variant="hashtag">color-primary-light</mm-tag>
-        </mm-group>
-      </article>
-
+    </div>
+    <mm-separator></mm-separator>
+    <div class="token-group">
       <article class="token-item">
         <b>TODO Skeleton</b>
       </article>
@@ -145,13 +111,13 @@
       <mm-text variant="label-strong">Text</mm-text>
     </mm-text-group>
     <article class="token-item" style="flex-direction: row; gap: 2rem">
-      <div style="margin: 0">
+      <div>
         <mm-text variant="body-large">수줍음</mm-text>
         <span style="font-family: 'Courier New', Courier, monospace; font-size: 12px">
           --color-text
         </span>
       </div>
-      <div style="margin: 0">
+      <div>
         <mm-text variant="body-large">
           <span style="color: var(--color-text-light)">수줍음</span>
         </mm-text>
@@ -165,12 +131,8 @@
   <section>
     <mm-text-group>
       <mm-text variant="title">Size</mm-text>
-      <mm-group variant="hashtag">
-        <mm-tag variant="hashtag">avatar-huge: var(--size-large)</mm-tag>
-      </mm-group>
       <mm-text variant="body-large">
-        요소의 너비와 높이입니다. 뷰포트의 크기가 변경되어도 사이즈 토큰은 변하지 않습니다. huge
-        size는 avatar huge에 단독으로 사용하고 있다. media 컴포넌트와 구별.
+        요소의 너비와 높이입니다. 뷰포트의 크기가 변경되어도 사이즈 토큰은 변하지 않습니다.
       </mm-text>
       <mm-text variant="body">
         Dimension. dimension.action.height.small / icon / dimension.tapTargetMinimum
@@ -179,45 +141,29 @@
     <section class="token-group">
       <div class="token-item">
         <figure style="width: var(--size-huge); height: var(--size-huge)"></figure>
-        <mm-keyvalue alignment="column" key="--size-huge:" value="5rem"></mm-keyvalue>
+        <b>--size-huge: 5rem</b>
       </div>
       <div class="token-item">
         <figure style="width: var(--size-large); height: var(--size-large)"></figure>
-        <mm-keyvalue alignment="column" key="--size-large:" value="3rem"></mm-keyvalue>
-        <mm-group variant="hashtag">
-          <mm-tag variant="hashtag">avatar-large</mm-tag>
-          <mm-tag variant="hashtag">button-height</mm-tag>
-          <mm-tag variant="hashtag">textfield-height</mm-tag>
-        </mm-group>
+        <b>--size-large: 3rem</b>
       </div>
       <div class="token-item">
         <figure style="width: var(--size-medium); height: var(--size-medium)"></figure>
-        <mm-keyvalue alignment="column" key="--size-medium:" value="2rem"></mm-keyvalue>
-        <mm-group variant="hashtag">
-          <mm-tag variant="hashtag">avatar-medium</mm-tag>
-          <mm-tag variant="hashtag">chip-height</mm-tag>
-        </mm-group>
+        <b>--size-medium: 2rem</b>
       </div>
       <div class="token-item">
         <figure style="width: var(--size-small); height: var(--size-small)"></figure>
-        <mm-keyvalue alignment="column" key="--size-small:" value="1.5rem"></mm-keyvalue>
-        <mm-group variant="hashtag">
-          <mm-tag variant="hashtag">avatar-small</mm-tag>
-          <mm-tag variant="hashtag">tag-height</mm-tag>
-          <mm-tag variant="hashtag">indicator-height</mm-tag>
-        </mm-group>
+        <b>--size-small: 1.5rem</b>
       </div>
       <div class="token-item">
         <figure style="width: var(--size-tiny); height: var(--size-tiny)"></figure>
-        <mm-keyvalue alignment="column" key="--size-tiny:" value="1rem"></mm-keyvalue>
-        <mm-group variant="hashtag">
-          <mm-tag variant="hashtag">avatar-tiny</mm-tag>
-          <mm-tag variant="hashtag">checkbox-height</mm-tag>
-          <mm-tag variant="hashtag">radio-height</mm-tag>
-          <mm-tag variant="hashtag">switch-height</mm-tag>
-        </mm-group>
+        <b>--size-tiny: 1rem</b>
       </div>
     </section>
+    <mm-separator></mm-separator>
+    <div class="token-item">
+      <b>--avatar-huge: var(--size-huge)</b>
+    </div>
   </section>
 
   <section>
@@ -226,28 +172,20 @@
     <div class="token-group">
       <article class="token-item is-gray000">
         <figure></figure>
-        <mm-keyvalue alignment="column" key="--radius:" value="6px"></mm-keyvalue>
+        <b>--radius: 6px</b>
       </article>
       <article class="token-item is-gray000">
         <figure style="border-radius: var(--radius-large)"></figure>
-        <mm-keyvalue alignment="column" key="--radius-large:" value="1rem"></mm-keyvalue>
+        <b>--radius-large: 1rem</b>
       </article>
       <article class="token-item is-gray000">
         <figure style="border-radius: 50%"></figure>
-        <mm-keyvalue alignment="column" key="--radius-circle:" value="50%"></mm-keyvalue>
+        <b>--radius-circle: 50%</b>
         <!-- <span>radio, icon button</span> -->
       </article>
       <article class="token-item is-elevation" title="Surface or Elevation">
         <figure style="box-shadow: var(--shadow)"></figure>
-        <mm-keyvalue
-          alignment="column"
-          key="--shadow:"
-          value="0 0 .5rem rgb(0 0 0 / 7.5%)"
-        ></mm-keyvalue>
-        <mm-group variant="hashtag">
-          <mm-tag variant="hashtag">tooltip</mm-tag>
-          <mm-tag variant="hashtag">popover</mm-tag>
-        </mm-group>
+        <b>--shadow: 0 0 .5rem rgb(0 0 0 / 7.5%)</b>
       </article>
     </div>
   </section>
@@ -275,51 +213,42 @@
   <section>
     <mm-text-group>
       <mm-text variant="title">Space</mm-text>
-      <mm-text variant="body-large">요소 사이의 간격. 현재 섹션 사이의 정의하고 있지 않음.</mm-text>
-      <mm-text variant="body-large">spacing.page.grid.margin / spacing.page.grid.gutter</mm-text>
       <mm-text variant="body-large">
-        👉 "무엇이 있는 공간", 또는 "무엇이 차지하는 물리적 영역" 을 가리킬 때 씁니다. 👉 간격을
-        조절하는 방법이나 그 패턴, 디자인 또는 인쇄에서 간격 조절 등을 말할 때 주로 사용됩니다.
+        요소 사이의 간격. 현재 섹션 레벨의 간격은 정의하고 있지 않음.
       </mm-text>
+      <mm-text variant="body-large">spacing.page.grid.margin / spacing.page.grid.gutter</mm-text>
     </mm-text-group>
     <section class="token-group">
       <div class="token-item">
         <!-- <figure style="width: 100%; height: var(--space-05); border-radius: 0"></figure> -->
-        <mm-keyvalue alignment="column" key="--space-05:" value=".125rem"></mm-keyvalue>
+        <b>--space-05: .125rem</b>
       </div>
       <div class="token-item">
-        <mm-keyvalue alignment="column" key="--space-1:" value=".25rem"></mm-keyvalue>
-        <mm-group variant="hashtag">
-          <mm-tag variant="hashtag">space-outer-item</mm-tag>
-        </mm-group>
+        <b>--space-1: .25rem</b>
       </div>
       <div class="token-item">
-        <mm-keyvalue alignment="column" key="--space-2:" value=".5rem"></mm-keyvalue>
-        <mm-group variant="hashtag">
-          <mm-tag variant="hashtag">space-inset-small</mm-tag>
-        </mm-group>
+        <b>--space-2: .5rem</b>
       </div>
       <div class="token-item">
-        <mm-keyvalue alignment="column" key="--space-3:" value=".75rem"></mm-keyvalue>
+        <b>--space-3: .75rem</b>
       </div>
       <div class="token-item">
-        <mm-keyvalue alignment="column" key="--space-4:" value="1rem"></mm-keyvalue>
+        <b>--space-4: 1rem</b>
       </div>
       <div class="token-item">
-        <mm-keyvalue
-          alignment="column"
-          key="--space-1-negative:"
-          value="calc(var(--space-1) * -1)"
-        ></mm-keyvalue>
+        <b>--space-1-negative: calc(var(--space-1) * -1)</b>
+      </div>
+    </section>
+    <mm-separator></mm-separator>
+    <section class="token-group">
+      <div class="token-item">
+        <b>--grid-margin: 5vw</b>
       </div>
       <div class="token-item">
-        <mm-keyvalue alignment="column" key="--grid-margin:" value="5vw"></mm-keyvalue>
+        <b>--grid-gutter: 1rem</b>
       </div>
       <div class="token-item">
-        <mm-keyvalue alignment="column" key="--grid-gutter:" value="null"></mm-keyvalue>
-      </div>
-      <div class="token-item">
-        <mm-keyvalue alignment="column" key="--grid-column:" value="null"></mm-keyvalue>
+        <b>--grid-column: null</b>
       </div>
     </section>
   </section>
@@ -327,10 +256,15 @@
   <section>
     <mm-text-group>
       <mm-text variant="title">Text</mm-text>
-      <mm-text variant="body-large">
-        활자의 위계와 배치. 정보 계층. 14px 기본폰트일 때 1.5의 모호성. 명확하게 고정값으로 지정하는
-        것이 좋다.
-      </mm-text>
+      <mm-text variant="body-large"> 활자의 위계와 배치. 정보 계층. </mm-text>
+      <p>
+        line-height: 비율보다 명확하게 고정값으로 지정하는 것이 좋다. 기본 폰트에 따라 가변적인
+        line-height는 토큰화 어렵다.
+      </p>
+      <p>
+        피그마에서 140% line-height를 주면 소숫점 반올림을 해서 표현해줌. 그런데 브라우저는 소수점
+        그대로 표현하기 때문에 안 맞는다.
+      </p>
       <p>font.letterSpacing.display1. 결국 토큰에서 정의해야 하는.</p>
       <p>font.size.giant1 / font.size.large1</p>
     </mm-text-group>
@@ -341,67 +275,59 @@
       <mm-avatar slot="avatar" icon="font-question"></mm-avatar>
       시스템 폰트로 보기
     </button>
-    <blockquote style="margin: var(--space-3) 0">
-      <mm-text variant="label-strong">사이즈 토큰으로 추상화하지 않는 케이스</mm-text>
-      <p>--navbar-height: <del>var(--size-huge)</del>5rem</p>
-      <p>--sidenav-width: null;</p>
-    </blockquote>
 
-    <mm-text variant="label-strong">Typefaces <sup>2</sup></mm-text>
-
+    <!-- <mm-text variant="label-strong">Typefaces <sup>2</sup></mm-text> -->
     <section class="token-group">
       <div class="token-item">
-        <mm-keyvalue
-          alignment="column"
-          key="--font-family:"
-          value="'IBM Plex San', 'Gothic A1', sans-serif"
-        ></mm-keyvalue>
+        <b>--font-family: 'IBM Plex San', 'Gothic A1', sans-serif</b>
       </div>
       <div class="token-item">
-        <mm-keyvalue alignment="column" key="--font-size-huge:" value="2rem"></mm-keyvalue>
+        <b>--font-size-huge: 2rem</b>
       </div>
       <div class="token-item">
-        <mm-keyvalue alignment="column" key="--font-size-large:" value="1.125rem"></mm-keyvalue>
+        <b>--font-size-large: 1.125rem</b>
       </div>
       <div class="token-item" style="background-color: var(--color-background-weak)">
-        <mm-keyvalue alignment="column" key="--font-size-medium:" value=".875rem"></mm-keyvalue>
+        <b>--font-size-medium: .875rem</b>
+      </div>
+    </section>
+    <mm-separator></mm-separator>
+    <section class="token-group">
+      <div class="token-item">
+        <b>--font-weight-normal: 400</b>
       </div>
       <div class="token-item">
-        <mm-keyvalue alignment="column" key="--font-weight-normal:" value="400"></mm-keyvalue>
+        <b>--font-weight-bold: 800</b>
       </div>
-      <div class="token-item">
-        <mm-keyvalue alignment="column" key="--font-weight-bold:" value="800"></mm-keyvalue>
-      </div>
+    </section>
+    <mm-separator></mm-separator>
+    <section class="token-group">
       <div class="token-item">
         <!-- :: heading, word. -->
-        <mm-keyvalue alignment="column" key="--font-line-height:" value="150%"></mm-keyvalue>
+        <b>--font-line-height: 150% TODO</b>
       </div>
       <div class="token-item">
-        <mm-keyvalue alignment="column" key="--font-line-height-large:" value="180%"></mm-keyvalue>
+        <b>--font-line-height-large: 180% TODO</b>
       </div>
     </section>
 
-    <mm-tile>
+    <!-- <mm-tile>
       <mm-text variant="subhead">subhead</mm-text>
       <div class="space" style="height: var(--space-3)">
         <span>space-after-subhead</span>
       </div>
       <mm-text variant="body">body</mm-text>
-    </mm-tile>
+    </mm-tile> -->
   </section>
 
   <section>
     <mm-text-group>
       <mm-text variant="title">Layouts - Width</mm-text>
       <mm-text variant="body-large">모든 container는 --small부터 max-width를 100%.</mm-text>
-      <mm-text variant="body-large"
-        >TODO breakpoint.medium. breakpoint.android.compact/expanded</mm-text
-      >
+      <mm-text variant="body-large">
+        TODO breakpoint.medium. breakpoint.android.compact/expanded
+      </mm-text>
     </mm-text-group>
-    <div style="display: flex; gap: 1rem">
-      <mm-tile><mm-tag variant="primary">narrow</mm-tag></mm-tile>
-      <mm-tile><mm-tag variant="primary">regular</mm-tag></mm-tile>
-    </div>
 
     <section class="browserWindow_my1Q" style="width: 480px; margin: 2rem 0">
       <header class="browserWindowHeader_jXSR">
@@ -623,6 +549,7 @@
   <section>
     <mm-text-group>
       <mm-text variant="title">Z-index</mm-text>
+      <p>한 자릿수로 사용하면 서드 파티 라이브러리를 사용할 때 문제</p>
     </mm-text-group>
     <div class="token-group">
       <div class="token-item">

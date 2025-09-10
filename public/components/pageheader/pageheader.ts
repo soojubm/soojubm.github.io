@@ -25,10 +25,17 @@ class PageHeader extends HTMLElement {
 
     const style = document.createElement('style')
     style.textContent = `
-      :host {
-        display: block; /* Custom Element는 기본적으로 display: inline 이므로 블록 요소로 변경 */
-        max-width: 50%;
-      }
+      // :host {
+      //   display: block; /* Custom Element는 기본적으로 display: inline 이므로 블록 요소로 변경 */
+      //   max-width: 50%;
+      // }
+
+      // @media (max-width: 1080px) {
+      //   :host {
+      //     max-width: 100%;
+      //   }
+      // }
+
       // mm-text-group[variant="title"] {
       //   margin-bottom: 10px;
       // }

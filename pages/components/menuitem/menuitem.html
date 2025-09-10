@@ -75,53 +75,46 @@
       <dt>tag<attr>?</attr></dt>
       <dd>React.ReactNode</dd>
     </dl>
-  </section>
 
-  <section class="component-guide">
-    <mm-text-group>
-      <mm-text variant="subhead">Meta problems</mm-text>
-      <mm-text>
-        flutter. ListView. 스크롤 가능한 뷰 컨테이너. 동적으로 데이터를 랜더링하는 책임까지 포함되어
-        있다. 그렇다면 스크롤이 필요한 모든 컨텐츠 뷰는 리스트인가? itemBuilder: (context, index) {}
-        / controller: ScrollController(). ListView - SwitchListTile / RadioListTile / 클릭 영역을
-        타일 전체로 지정하고 있다. 2가지 이상의 액션을 허용할 것인가?
-      </mm-text>
-      <mm-text variant="body">
-        모든 menuitem container가 clickable은 아니다. 액션 버튼이 따로 존재할 수도 있어야 한다. 이
-        정보가 중요한 이유 hover 상태 표현을 위해. 케이스. 팔로우 팔로잉. 또는 전체 영역이 팔로우.
-      </mm-text>
-      <mm-text variant="body">
-        선택과는 다른 맥락. 단독으로 쓸 수 있다. TODO role=listbox/menu는 항목 선택과 명령 실행
-        차이. 자식으로 option, menuitemcheckbox 등을 가지는 것이 차이. select와의 차이는 이미지를
-        포함할 수 있다고. 사용 맥락 또한 listbox는 폼이나 입력. aria-orientation값을 갖습니다
-        vertical. 드롭다운은 패턴. 사용자 인터렉션 방식에 가까움. listbox는 기본적으로 드롭다운
-        목록을 제공하지 않는다."
-      </mm-text>
-      <mm-text variant="body">
-        textSlot :: 사이즈에 따라 두 줄이 될 수 있는데, 세부적인 정의를 실무자가 암기할 필요 없어야.
-        캡슐화
-      </mm-text>
-    </mm-text-group>
+    <mm-text variant="body">
+      메뉴 아이템의 우측(action) 슬롯에는 액션 인티케이터(버튼, 스위치, 체크박스, 라디오)가
+      위치합니다. 정보를 보충하는 시각 정보 컴포넌트, 예를 들면 태그 컴포넌트('new' 등)를 우측에
+      배치하지 마세요.
+    </mm-text>
 
-    <mm-text-group>
-      <mm-text variant="subhead">Platform problems</mm-text>
-      <mm-text variant="body">
-        메뉴 아이템의 우측(action) 슬롯에는 액션 인티케이터(버튼, 스위치, 체크박스, 라디오)가
-        위치합니다. 정보를 보충하는 시각 정보 컴포넌트, 예를 들면 태그 컴포넌트('new' 등)를 우측에
-        배치하지 마세요.
-      </mm-text>
-    </mm-text-group>
+    <ul>
+      <li>Menu -> MenuButton(Trigger) / MenuList - MenuItem, MenuLink</li>
+      <li>MenuItemAvatar. sizes: large | medium</li>
+      <li>MenuItemLabel - title(truncated)</li>
+      <li>MenuItemAction. toggle | more | delete</li>
+      <li>MenuHelper. setting-item. filter-item.</li>
+    </ul>
 
-    <mm-text-group>
-      <mm-text variant="subhead">Anatomy</mm-text>
-      <ul>
-        <li>Menu -> MenuButton(Trigger) / MenuList - MenuItem, MenuLink</li>
-        <li>MenuItemAvatar. sizes: large | medium</li>
-        <li>MenuItemLabel - title(truncated)</li>
-        <li>MenuItemAction. toggle | more | delete</li>
-        <li>MenuHelper. setting-item. filter-item.</li>
-      </ul>
-    </mm-text-group>
+    <div style="height: var(--space-3)"></div>
+
+    <mm-text>
+      flutter. ListView. 스크롤 가능한 뷰 컨테이너. 동적으로 데이터를 랜더링하는 책임까지 포함되어
+      있다. 그렇다면 스크롤이 필요한 모든 컨텐츠 뷰는 리스트인가? itemBuilder: (context, index) {} /
+      controller: ScrollController(). ListView - SwitchListTile / RadioListTile / 클릭 영역을 타일
+      전체로 지정하고 있다. 2가지 이상의 액션을 허용할 것인가?
+    </mm-text>
+    <mm-text variant="body">
+      모든 menuitem container가 clickable은 아니다. 액션 버튼이 따로 존재할 수도 있어야 한다. 이
+      정보가 중요한 이유 hover 상태 표현을 위해. 케이스. 팔로우 팔로잉. 또는 전체 영역이 팔로우.
+    </mm-text>
+    <mm-text variant="body">
+      선택과는 다른 맥락. 단독으로 쓸 수 있다. TODO role=listbox/menu는 항목 선택과 명령 실행 차이.
+      자식으로 option, menuitemcheckbox 등을 가지는 것이 차이. select와의 차이는 이미지를 포함할 수
+      있다고. 사용 맥락 또한 listbox는 폼이나 입력. aria-orientation값을 갖습니다 vertical.
+      드롭다운은 패턴. 사용자 인터렉션 방식에 가까움. listbox는 기본적으로 드롭다운 목록을 제공하지
+      않는다."
+    </mm-text>
+    <mm-text variant="body">
+      textSlot :: 사이즈에 따라 두 줄이 될 수 있는데, 세부적인 정의를 실무자가 암기할 필요 없어야.
+      캡슐화
+    </mm-text>
+
+    <div style="height: var(--space-3)"></div>
 
     <mm-tile>
       <mm-row justifyContent="space-between">
@@ -134,6 +127,9 @@
         <mm-switch></mm-switch>
       </mm-row>
     </mm-tile>
+
+    <div style="height: var(--space-3)"></div>
+
     <mm-tile variant="flat">
       <mm-group variant="dropdown">
         <mm-menuitem role="menuitem" href="#design">
@@ -154,6 +150,9 @@
         </mm-menuitem>
       </mm-group>
     </mm-tile>
+  </section>
+
+  <section class="component-guide">
     <mm-tile>
       <mm-tile>
         <mm-menuitem>

@@ -20,8 +20,9 @@
   </header> -->
   <section class="component-example">
     <mm-group variant="">
-      <mm-avatar variant="secondary" size="huge" default="true" badge="true"></mm-avatar>
-      <mm-avatar variant="secondary" size="huge" src="/public/images/springsteen.jpg"></mm-avatar>
+      <mm-avatar variant="primary" size="large" default="true" badge="true"></mm-avatar>
+      <mm-avatar variant="secondary" size="large" badge="true"></mm-avatar>
+      <mm-avatar variant="tertiary" size="large" badge="true"></mm-avatar>
     </mm-group>
   </section>
 
@@ -29,7 +30,7 @@
     <mm-text variant="subhead">interface Props</mm-text>
     <dl>
       <dt>variant</dt>
-      <dd>'primary' | 'secondary'</dd>
+      <dd>'primary' | 'secondary' | 'tertiary'</dd>
       <dt>src<abbr>?</abbr></dt>
       <dd>string</dd>
       <dt>size</dt>
@@ -42,11 +43,11 @@
     <br />
     <mm-text-list
       texts='[
-      "아웃라인 아바타는 클릭할 수 없다. foundations 으로 정의 되어 있음.",
-      "variant. user, company 등 두 가지 이상의 아바타 유형이 필요할 때 테두리 형태의 차이로 시각적으로 구별.",
-      "medium, small 사이즈는 최대 한 줄의 텍스트만 가질 수 있다. 즉, TextPair와 사용할 수 없다. 디스크립션이 필요하면 large, huge 사이즈를 사용한다.",
-      "fallback 정의. 달걀 또는 이니셜.",
-      "UserAvatar name={} description={string | React.ReactNode} avatarProps={}"
+      "foundations :: 아웃라인 아바타는 클릭할 수 없다.",
+      "fallback :: icon-noir name=people-tag",
+      "variant. user, company 등 두 가지 이상의 아바타 유형이 필요할 때 radius token의 값을 변경하여 구분한다.",
+      "UserAvatar name={} description={string | React.ReactNode} avatarProps={} / CompanyAvatar name={}",
+      "medium, small 사이즈는 최대 한 줄의 텍스트만 가질 수 있다. 즉, TextPair와 사용할 수 없다. 디스크립션이 필요하면 large, huge 사이즈를 사용한다."
     ]'
     ></mm-text-list>
 
@@ -82,7 +83,6 @@
         <mm-avatar size="medium" default="true"></mm-avatar>
         <mm-avatar size="medium" default="true"></mm-avatar>
         <mm-avatar size="medium" default="true"></mm-avatar>
-        <mm-avatar size="medium">+3</mm-avatar>
       </mm-group>
     </mm-tile>
 

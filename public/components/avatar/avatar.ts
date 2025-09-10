@@ -31,6 +31,15 @@ class Avatar extends HTMLElement {
       container.appendChild(icon)
     }
 
+    // for fallback TODO
+    if (this.src === null && !this.default && this.icon === null && this.childNodes.length) {
+      const defaultIcon = document.createElement('mm-icon')
+      const isLargeIcon = this.size === 'large' || this.size === 'huge'
+      defaultIcon.setAttribute('name', 'people-tag')
+      defaultIcon.setAttribute('size', isLargeIcon ? 'large' : 'medium')
+      container.appendChild(defaultIcon)
+    }
+
     const style = this.getAttribute('style')
     if (style) container.setAttribute('style', style)
 
