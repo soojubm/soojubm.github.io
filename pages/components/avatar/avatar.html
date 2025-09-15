@@ -21,8 +21,8 @@
   <section class="component-example">
     <mm-group variant="">
       <mm-avatar variant="primary" size="large" default="true" badge="true"></mm-avatar>
-      <mm-avatar variant="secondary" size="large" badge="true"></mm-avatar>
-      <mm-avatar variant="tertiary" size="large" badge="true"></mm-avatar>
+      <mm-avatar variant="secondary" size="large" default="true" badge="true"></mm-avatar>
+      <mm-avatar variant="tertiary" size="large" default="true" badge="true"></mm-avatar>
     </mm-group>
   </section>
 
@@ -40,7 +40,6 @@
       <!-- <dt>icon</dt>
       <dd>iconNameType?</dd> -->
     </dl>
-    <br />
     <mm-text-list
       texts='[
       "foundations :: 아웃라인 아바타는 클릭할 수 없다.",
@@ -50,6 +49,35 @@
       "medium, small 사이즈는 최대 한 줄의 텍스트만 가질 수 있다. 즉, TextPair와 사용할 수 없다. 디스크립션이 필요하면 large, huge 사이즈를 사용한다."
     ]'
     ></mm-text-list>
+
+    <!-- React 코드 -->
+    <br />
+    <section class="example">
+      <div id="button-demo"></div>
+      <div id="card-demo"></div>
+    </section>
+
+    <script type="text/babel">
+      function Button({ label }) {
+        return <button style={{ padding: '8px 16px', borderRadius: '8px' }}>{label}</button>
+      }
+
+      function Card({ title, content }) {
+        return (
+          <div style={{ border: '1px solid #ddd', padding: '16px', borderRadius: '12px' }}>
+            <h3>{title}</h3>
+            <p>{content}</p>
+          </div>
+        )
+      }
+
+      ReactDOM.createRoot(document.getElementById('button-demo')).render(
+        <Button label="가이드 버튼" />,
+      )
+      ReactDOM.createRoot(document.getElementById('card-demo')).render(
+        <Card title="가이드 카드" content="이것은 React 컴포넌트 가이드 예시입니다." />,
+      )
+    </script>
 
     <br />
 

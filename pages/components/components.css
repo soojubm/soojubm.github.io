@@ -4,7 +4,7 @@
 }
 .component-example {
   /* max-width: 50%; */
-  padding: 2rem calc(var(--grid-margin) - 1rem);
+  padding: 3rem calc(var(--grid-margin) - 1rem);
   border-radius: var(--radius-large) var(--radius-large) 0 0;
   margin: 2.5rem 0 3rem calc(-5vw + 1rem);
   border: var(--border-stronger);
@@ -37,7 +37,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-4);
-  padding: 1rem 0 0 calc(var(--grid-margin) - 1rem);
+  padding: 2.5rem 0 2.5rem calc(var(--grid-margin) - 1rem);
   margin: 0 0 0 calc(-5vw + 1rem);
 }
 
@@ -56,13 +56,44 @@
 
 .component-props mm-text[variant=subhead] {display:none}
 .component-props dl {
-  column-gap:var(--space-1);}
+  height: 11rem;
+  column-gap:var(--space-1);
+  border: 1px solid transparent;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+
+  &:hover {
+  }
+  
+  &:after {
+    content: '...더보기';
+    display: block;
+    padding: .75rem 2rem 1rem;
+    font-weight: bold;
+    background-color: inherit;
+    /* background: linear-gradient(to bottom, rgba(255,255,255,0), var(--color-background-weak), var(--color-background-weak)); */
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+  }
+}
 .component-props dl dt {color:var(--color-text-light);line-height:1.25;position:relative}
 .component-props dl dt::before {content:'\2669';display:block;font-size: 12px;color:var(--color-text);font-style:normal;font-weight: bold;;}
 .component-props dl dt::after {content:':'}
 .component-props dl dd {font-style:italic;}
 .component-props dl dd + dt {margin-top:var(--space-3);}
 .component-props dl dd + dd {margin:0 0 var(--space-1) 0;font-style:normal;font-weight:var(--font-weight-normal);font-size:var(--font-size-medium)}
+
+.component-props.is-opened dl {
+  height: auto;
+
+  &:after {
+    display: none;
+  }
+}
 
 .component-props dl {
   display: flex;
@@ -105,10 +136,6 @@
   margin-top: 0;
 }
 
-
-
-
-
 .component-props dl {
     column-gap: var(--space-1);
     display: block;
@@ -116,8 +143,8 @@
     /* font-size: var(--font-size-large); */
     background: var(--color-background-weak);
     border-radius: var(--radius-large);
+    margin: 0 -2rem 2rem;
     padding: 1.25rem 2rem;
-    margin: 0 0 2rem;
     & dt:after {
       display: none;
     }

@@ -34,10 +34,7 @@ document.addEventListener('DOMContentLoaded', defineCustomElement)
 document.addEventListener('DOMContentLoaded', () => {
   const setWindowsFont = () => {
     if (/Windows/i.test(navigator.userAgent)) {
-      document.documentElement.style.setProperty(
-        '--font-family',
-        "'IBM Plex Sans', 'Pretendard', sans-serif",
-      )
+      document.documentElement.style.setProperty('--font-family', "'Pretendard', sans-serif")
     }
   }
 
@@ -57,6 +54,12 @@ document.addEventListener('click', closeParentElement)
 const setDocumentTitle = title => (document.title = `이경수 ${title}`)
 
 async function domEvents() {
+  // test
+  const prop = document.querySelector('.component-props')
+  prop?.addEventListener('click', event => {
+    prop.classList.toggle('is-opened')
+  })
+
   setupModal({ selector: '.js-modal' })
   tab()
 

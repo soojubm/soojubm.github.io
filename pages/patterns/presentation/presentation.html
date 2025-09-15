@@ -127,20 +127,22 @@
   <mm-text variant="title">Popovers</mm-text>
 
   <section class="component-example">
-    <mm-tile variant="elevated">
+    <mm-tile variant="flat">
       <mm-text variant="subhead">Modal</mm-text>
       <mm-text variant="body">something that requires the user’s attention.</mm-text>
       <footer style="margin-top: 1rem">
         <mm-button variant="tertiary" class="js-modal" data-modal="woolf">모달 열기</mm-button>
       </footer>
     </mm-tile>
-    <mm-tile variant="elevated">
+    <mm-tile variant="flat">
       <mm-text variant="subhead">Sheet</mm-text>
-      <mm-text variant="body"
-        >sheet or drawer. something that requires the user’s attention.</mm-text
-      >
-      <!-- <p>To allow users to view optional information or complete sub-tasks in a workflow while keeping the context of the current page, use Sheet.</p> -->
-      <!-- <aside class="sheet-overay"></aside> -->
+      <mm-text variant="body">
+        sheet or drawer. something that requires the user’s attention.
+      </mm-text>
+      <p>
+        To allow users to view optional information or complete sub-tasks in a workflow while
+        keeping the context of the current page, use Sheet.
+      </p>
       <footer style="margin-top: 1rem">
         <mm-button variant="tertiary" class="js-toggle">시트 열기</mm-button>
         <mm-tile variant="elevated" class="sheet js-sheet" role="presentation">
@@ -165,7 +167,7 @@
         </mm-tile>
       </footer>
     </mm-tile>
-    <mm-tile variant="elevated">
+    <mm-tile variant="tile">
       <mm-text variant="subhead">Dropdown</mm-text>
       <mm-text-list
         texts="[
@@ -177,7 +179,7 @@
         <mm-tile variant="elevated" class="popover"> 내용 </mm-tile>
       </footer>
     </mm-tile>
-    <mm-tile variant="elevated">
+    <mm-tile variant="tile">
       <mm-text variant="subhead">Toast</mm-text>
       <footer style="margin-top: 1rem">
         <mm-button variant="tertiary" class="js-toggle">토스트 열기</mm-button>
