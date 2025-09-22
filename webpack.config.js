@@ -68,8 +68,6 @@ const components = [
   'radio',
   'textfield',
   'searchfield',
-  'passwordfield',
-  'numberfield',
   'textarea',
   'select',
 

@@ -18,13 +18,9 @@
     <p>TODO color-text라고 하는 경우 border, icon 등</p>
     <p>opacity.state.hover 4% opacity.state.focus 4% opacity.state.press 8% opacity.state.active</p>
     <mm-text variant="body">
-      warning과 danger가 모두 필요하지 않을 수도 있다. attention. (ebay)
-    </mm-text>
-    <mm-text variant="body">
       foreground. primary/secondary. 지금 light로 쓰는 것 보다 이렇게 변경하기.
     </mm-text>
     <mm-text variant="body"> strong: 강도나 무게, 농도/subtle: 감정, 표현, 인상 </mm-text>
-    <mm-text variant="body"> state layer </mm-text>
   </div>
   <section>
     <mm-text-group>
@@ -96,35 +92,76 @@
       <article class="token-item">
         <b>TODO Transparent gradient</b>
       </article>
+      <article class="token-item">
+        <b>--color-categorical-1: null TODO</b>
+      </article>
+    </div>
+    <mm-separator></mm-separator>
+    <div class="token-group">
+      <article class="token-item">
+        <b>--color-attention-text: null TODO</b>
+      </article>
+      <article class="token-item">
+        <b>--color-attention-background: null TODO</b>
+      </article>
+      <article class="token-item">
+        <b>--color-attention-border: null TODO</b>
+      </article>
     </div>
 
-    <mm-text-group>
-      <mm-text variant="label-strong">Background / Surface</mm-text>
-    </mm-text-group>
-    <mm-text-group>
-      <mm-text variant="label-strong">Border</mm-text>
-    </mm-text-group>
-    <mm-text-group>
-      <mm-text variant="label-strong">Status</mm-text>
-    </mm-text-group>
-    <mm-text-group>
-      <mm-text variant="label-strong">Text</mm-text>
-    </mm-text-group>
-    <article class="token-item" style="flex-direction: row; gap: 2rem">
-      <div>
-        <mm-text variant="body-large">수줍음</mm-text>
-        <span style="font-family: 'Courier New', Courier, monospace; font-size: 12px">
-          --color-text
-        </span>
-      </div>
-      <div>
-        <mm-text variant="body-large">
-          <span style="color: var(--color-text-light)">수줍음</span>
-        </mm-text>
-        <span style="font-family: 'Courier New', Courier, monospace; font-size: 12px">
-          --color-text-light
-        </span>
-      </div>
+    <br />
+    <mm-text variant="label-strong">Background / Surface</mm-text>
+    <div class="token-group">
+      <article class="token-item" style="border: 0; background: var(--gray100)">
+        <b>--color-background-weak: var(--gray100);</b>
+      </article>
+      <article class="token-item" style="border: 0; background: var(--gray800)">
+        <b style="color: #fff">--color-background-strong: var(--gray800)</b>
+      </article>
+    </div>
+
+    <br />
+
+    <mm-text variant="label-strong">Border</mm-text>
+    <div class="token-group">
+      <article class="token-item" style="border: 0; background: var(--gray100)">
+        <b>--color-border: var(--gray100);</b>
+      </article>
+      <article class="token-item" style="border: 0; background: var(--gray200)">
+        <b>--color-border-strong: var(--gray200)</b>
+      </article>
+    </div>
+
+    <br />
+
+    <mm-text variant="label-strong">Status</mm-text>
+    <div class="token-group">
+      <article class="token-item" style="border: 0; background: var(--yellow800)">
+        <b>--color-state-attention: var(--gray800)</b>
+      </article>
+    </div>
+
+    <br />
+
+    <mm-text variant="label-strong">Text</mm-text>
+    <div class="token-group">
+      <article class="token-item" style="border: 0; background: var(--gray100)">
+        <b>--color-text-weak: var(--gray100);</b>
+      </article>
+      <article class="token-item" style="border: 0; background: var(--gray800)">
+        <b style="color: #fff">--color-text-strong: var(--gray800)</b>
+      </article>
+    </div>
+
+    <article class="token-item">
+      <mm-text variant="body-large">수줍음</mm-text>
+      <b>--color-text</b>
+    </article>
+    <article class="token-item">
+      <mm-text variant="body-large">
+        <span style="color: var(--color-text-light)">수줍음</span>
+      </mm-text>
+      <b>--color-text-light</b>
     </article>
   </section>
 
@@ -133,9 +170,6 @@
       <mm-text variant="title">Size</mm-text>
       <mm-text variant="body-large">
         요소의 너비와 높이입니다. 뷰포트의 크기가 변경되어도 사이즈 토큰은 변하지 않습니다.
-      </mm-text>
-      <mm-text variant="body">
-        Dimension. dimension.action.height.small / icon / dimension.tapTargetMinimum
       </mm-text>
     </mm-text-group>
     <section class="token-group">
@@ -163,6 +197,24 @@
     <mm-separator></mm-separator>
     <div class="token-item">
       <b>--avatar-huge: var(--size-huge)</b>
+    </div>
+    <mm-separator></mm-separator>
+    <div class="token-group">
+      <div class="token-item">
+        <b>--icon-size-medium: null;</b>
+      </div>
+      <div class="token-item">
+        <b>--icon-size-medium: null;</b>
+      </div>
+    </div>
+    <mm-separator></mm-separator>
+    <div class="token-group">
+      <div class="token-item">
+        <b>--size-tapTarget-minimum: null</b>
+      </div>
+      <div class="token-item">
+        <b>--size-action-small: null</b>
+      </div>
     </div>
   </section>
 
@@ -195,18 +247,15 @@
       <mm-text variant="subhead">Border</mm-text>
     </mm-text-group>
     <div class="token-group">
-      <article class="token-item is-gray000" style="border-top-color: var(--color-text)">
-        <mm-keyvalue alignment="column" key="--border-width:" value="1px"></mm-keyvalue>
-      </article>
-      <article
-        class="token-item is-gray000"
-        style="border-top-width: 2px; border-top-color: var(--color-text)"
-      >
-        <mm-keyvalue alignment="column" key="--border-width-thick:" value="null"></mm-keyvalue>
-      </article>
-      <article class="token-item is-gray000">
-        <mm-keyvalue alignment="column" key="--border-width-thin:" value="null"></mm-keyvalue>
-      </article>
+      <div class="token-item">
+        <b>--border-width: 1px</b>
+      </div>
+      <div class="token-item">
+        <b>--border-width-thick: null</b>
+      </div>
+      <div class="token-item">
+        <b>--border-width-thin: null</b>
+      </div>
     </div>
   </section>
 
@@ -216,7 +265,6 @@
       <mm-text variant="body-large">
         요소 사이의 간격. 현재 섹션 레벨의 간격은 정의하고 있지 않음.
       </mm-text>
-      <mm-text variant="body-large">spacing.page.grid.margin / spacing.page.grid.gutter</mm-text>
     </mm-text-group>
     <section class="token-group">
       <div class="token-item">
@@ -242,13 +290,13 @@
     <mm-separator></mm-separator>
     <section class="token-group">
       <div class="token-item">
-        <b>--grid-margin: 5vw</b>
+        <b>--space-page-grid-margin: 5vw</b>
       </div>
       <div class="token-item">
-        <b>--grid-gutter: 1rem</b>
+        <b>--space-page-grid-gutter: 1rem</b>
       </div>
       <div class="token-item">
-        <b>--grid-column: null</b>
+        <b>--space-page-grid-column: null</b>
       </div>
     </section>
   </section>
@@ -258,15 +306,10 @@
       <mm-text variant="title">Text</mm-text>
       <mm-text variant="body-large"> 활자의 위계와 배치. 정보 계층. </mm-text>
       <p>
-        line-height: 비율보다 명확하게 고정값으로 지정하는 것이 좋다. 기본 폰트에 따라 가변적인
+        피그마에서 140% line-height를 주면 소숫점 반올림을 해서 표현해줌. 그런데 브라우저는 소수점
+        그대로 표현하기 때문에 안 맞는다. TODO. 고정값으로 표현. 기본 폰트에 따라 가변적인
         line-height는 토큰화 어렵다.
       </p>
-      <p>
-        피그마에서 140% line-height를 주면 소숫점 반올림을 해서 표현해줌. 그런데 브라우저는 소수점
-        그대로 표현하기 때문에 안 맞는다.
-      </p>
-      <p>font.letterSpacing.display1. 결국 토큰에서 정의해야 하는.</p>
-      <p>font.size.giant1 / font.size.large1</p>
     </mm-text-group>
     <button
       class="js-default-font"
@@ -308,6 +351,13 @@
       </div>
       <div class="token-item">
         <b>--font-line-height-large: 180% TODO</b>
+      </div>
+    </section>
+    <mm-separator></mm-separator>
+    <section class="token-group">
+      <div class="token-item">
+        <!-- :: heading, word. -->
+        <b>--font-letter-spacing-title: null TODO</b>
       </div>
     </section>
 
@@ -429,38 +479,40 @@
     </style>
     <div class="token-group">
       <div class="token-item">
-        <mm-keyvalue
-          alignment="column"
-          key="@custom-media --small"
-          value="(max-width: 1080px)"
-        ></mm-keyvalue>
+        <b>@custom-media --large (max-width: 1080px)</b>
       </div>
       <div class="token-item">
-        <mm-keyvalue
-          alignment="column"
-          key="@custom-media --large"
-          value="(max-width: null)"
-        ></mm-keyvalue>
+        <b>@custom-media --medium (max-width: 640px)</b>
+      </div>
+    </div>
+    <mm-separator></mm-separator>
+    <div class="token-group">
+      <div class="token-item">
+        <b>--layout-width-wide: 1200px</b>
       </div>
       <div class="token-item">
-        <mm-keyvalue alignment="column" key="--layout-width-wide:" value="1200px"></mm-keyvalue>
+        <b>--layout-width-regular: 640px</b>
       </div>
       <div class="token-item">
-        <mm-keyvalue alignment="column" key="--layout-width-regular:" value="640px"></mm-keyvalue>
+        <b>--layout-width-narrow: 480px</b>
       </div>
       <div class="token-item">
-        <mm-keyvalue alignment="column" key="--layout-width-narrow:" value="480px"></mm-keyvalue>
+        <b>--layout-width-extra-narrow: 200px TODO</b>
+      </div>
+    </div>
+    <mm-separator></mm-separator>
+    <div class="token-group">
+      <div class="token-item">
+        <b>--layout-width-extra-narrow: 200px TODO</b>
+      </div>
+    </div>
+    <mm-separator></mm-separator>
+    <div class="token-group">
+      <div class="token-item">
+        <b>--layout-dialog: 480px</b>
       </div>
       <div class="token-item">
-        <mm-keyvalue
-          alignment="column"
-          key="--layout-width-extra-narrow:"
-          value="200px"
-        ></mm-keyvalue>
-      </div>
-
-      <div class="token-item">
-        <mm-keyvalue alignment="column" key="--width-sidemenu" value="TODO"></mm-keyvalue>
+        <b>--layout-dialog-large: 640px</b>
       </div>
     </div>
   </section>
@@ -474,7 +526,6 @@
       </mm-text>
     </mm-text-group>
 
-    <mm-tile><mm-text variant="label-strong">Delay</mm-text></mm-tile>
     <div class="token-group">
       <div class="token-item">
         <figure class="animation-fadeup"></figure>
@@ -490,7 +541,6 @@
       </div>
     </div>
 
-    <mm-tile><mm-text variant="label-strong">timing function</mm-text></mm-tile>
     <div class="token-group">
       <div class="token-item">
         <mm-keyvalue
@@ -501,7 +551,6 @@
       </div>
     </div>
 
-    <mm-tile><mm-text variant="label-strong">Duration</mm-text></mm-tile>
     <div class="token-group">
       <div class="token-item">
         <figure class="animation-fadeup"></figure>
@@ -553,35 +602,31 @@
     </mm-text-group>
     <div class="token-group">
       <div class="token-item">
-        <mm-keyvalue alignment="column" key="--zindex-deepdive:" value="-1"></mm-keyvalue>
+        <b>--zindex-deepdive: -1</b>
       </div>
       <div class="token-item">
-        <mm-keyvalue alignment="column" key="--zindex-default:" value="1"></mm-keyvalue>
+        <b>--zindex-default: 1</b>
       </div>
       <div class="token-item">
-        <mm-keyvalue alignment="column" key="--zindex-sticky:" value="7"></mm-keyvalue>
+        <b>--zindex-sticky: 7</b>
       </div>
       <div class="token-item">
-        <mm-keyvalue alignment="column" key="--zindex-navigation:" value="7"></mm-keyvalue>
+        <b>--zindex-navigation: 7</b>
       </div>
       <div class="token-item">
-        <mm-keyvalue alignment="column" key="--zindex-popover:" value="6"></mm-keyvalue>
+        <b>--zindex-popover: 6</b>
       </div>
       <div class="token-item">
-        <mm-keyvalue alignment="column" key="--zindex-modal:" value="8"></mm-keyvalue>
+        <b>--zindex-modal: 8</b>
       </div>
       <div class="token-item">
-        <mm-keyvalue alignment="column" key="--zindex-backdrop:" value="7"></mm-keyvalue>
+        <b>--zindex-backdrop: 7</b>
       </div>
       <div class="token-item">
-        <mm-keyvalue alignment="column" key="--zindex-toast:" value="9"></mm-keyvalue>
+        <b>--zindex-toast: 9</b>
       </div>
       <div class="token-item">
-        <mm-keyvalue
-          alignment="column"
-          key="--zindex-skipmenu: (최고 존엄)"
-          value="10"
-        ></mm-keyvalue>
+        <b>--zindex-skipmenu: 10</b>
       </div>
     </div>
   </section>
@@ -607,35 +652,16 @@
     <a href="https://bulma.io/documentation/form/input/" target="_blank">bulma variables</a>
   </section>
 
-  <mm-text variant="body-large">
-    동일 역할을 동일 위치 원칙이 있다. 도메인이나 서비스 특수성이 있을 수 있지만 상당 보편적인
-    경험에 기반한다. 그래서 right top 같은 이름보다 역할 기반 이름을 달아 줄 필요. 아니면 그냥
-    컴포넌트 토큰?
-  </mm-text>
-
-  <div class="token-group">
-    <div class="token-item">
-      <b>@mixin position-reset</b>
-    </div>
-    <div class="token-item">
-      <b>@mixin position-outside/inside-right-top/</b>
-      <div>
-        <p>tag in tile</p>
-        <p>close button in dialog</p>
-      </div>
-    </div>
-  </div>
-
   <mm-text-group>
     <!-- <mm-text variant="title">Tokens</mm-text>
   <mm-text variant="body-large">정리 중.</mm-text> -->
     <mm-text variant="subhead">Checklist</mm-text>
     <ul class="checklist">
+      <li>warning과 danger를 반드시 제공해야 하나. attention 하나로 할 수 없나.</li>
       <li>color-icon와 color-text는 항상 동일한가요?</li>
       <li>
         color-text-disabled, color-input-disabled, color-button-disabled는 항상 같은 것은 아니다.
       </li>
-      <li>color-chart-categorical-1</li>
       <li>
         elevation.surface / overay, raised, sunken // atlassian 동일한데 왜 나눠놨지. //
         elevation-surface/shadow
@@ -644,7 +670,6 @@
         250116 연한 회색 배경 하나로 하니 부족. 배경도 마찬가지임. 이제 최소한의 정의로 하는 실험을
         종료할 단계인 듯. 200, 50 추가.
       </li>
-      <li>A-ha :: background-weak weak2를 사용할 수 있지만 하나로 통함됨.</li>
       <li>text, icon, chat 등에서 배경 안에서 쓰는 엘리먼트의 색상 이름.</li>
       <li>폰트의 baseline이 달라서 텍스트의 상하 간격이 안 맞을 수 있다.</li>
       <li>
@@ -656,10 +681,7 @@
         개별 토큰에 디스크립션이 필요하지 않도록 명명합니다. core: give a name to a raw value to
         enable theming and make improve maintainability
       </li>
-      <li>
-        --[namespace]-[component / category]-[attribute]-[status] 프로덕션이 아니기 때문에
-        namespace를 생략.
-      </li>
+      <li>--[namespace]-[component / category]-[attribute]-[status]</li>
       <li>
         <del>
           인버트 컬러셋을 추가로 정의하지 않습니다. 하나의 컬러셋으로 다크 테마에 대응합니다. 어렵고
@@ -667,7 +689,6 @@
           대응이 간편해짐.
         </del>
       </li>
-      <li>color-warning, color-warning-weak / color-text-warning</li>
     </ul>
   </mm-text-group>
 </main>

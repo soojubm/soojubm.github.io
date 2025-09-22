@@ -184,16 +184,10 @@ The font size of a key is never bigger than the value.
       <dt>truncatedLine<attr>?</attr></dt>
       <dd>'single' | 'multi'</dd>
     </dl>
+  </section>
 
+  <section class="component-guide">
     <mm-text-group>
-      <mm-text variant="label-strong">텍스트의 강조</mm-text>
-      <mm-text variant="body">형태적 강조 :: mark, u, em, b</mm-text>
-      <mm-text variant="body">의미론적 강조 ::strong - 개인정보처리방침 등</mm-text>
-      <mm-text variant="body">
-        단락에 포함된 단어나 구문을 underline, primary color로 강조하지 마세요. 우리는 underlined와
-        pirmary colored text를 <mark>clickable</mark>로 엄격하게 정의하고 있습니다.
-      </mm-text>
-      <mm-text variant="subhead">Platform problems</mm-text>
       <mm-text variant="label-strong">
         normal, body 두 가지로는 한계가 보인다. 400을 normal로 한다면 메뉴의 텍스트가 400은 약간
         부족하다. 버튼 레이블도 그렇게 보일 수 있다. body text는 weight와 line height, color를
@@ -202,26 +196,14 @@ The font size of a key is never bigger than the value.
       <mm-text variant="label-strong">
         Utilities. - Truncated. long-form content. truncate-multiple은 항상 2줄.
       </mm-text>
-      <mm-text variant="body">
-        <del>제목을 자르는 것을 허용할 것인가? 허용하지 않을 것인가?</del> 종국에는 모든 텍스트는
-        잘릴 수 있음을 염두해야 한다. 점점 더 작은 스크린에 대응할 수 있어야 한다. 폴더블, 와치
-      </mm-text>
-      <p>단어(word)" → "구(phrase)" → "문장(sentence)" → "문단(paragraph)"</p>
       <p>
         단독으로 쓰는 텍스트와 항상 함께 쓰이는 텍스트를 구분해야 한다. 일반적으로 subheading,
         label, caption은 단독으로 쓰지 않는다.
       </p>
       <p>heading level="", body size=""</p>
     </mm-text-group>
-  </section>
 
-  <section class="component-guide">
     <mm-text-group>
-      <mm-text variant="subhead">Meta problems</mm-text>
-      <mm-text variant="body">
-        폰트마다 기준선이 다르기 때문에 섞어짤 때 또는 폰트를 변경할 때 주변 요소와 부모 요소에 맞춰
-        시각보정이 필요하다. 특히 텍스트를 쌓을 때.
-      </mm-text>
       <mm-text variant="body">message: 사용자의 관점, description: 시스템이 주체</mm-text>
       <mm-text
         >line-height 와 별개로 모든 텍스트는 텍스트를 감싸는 컨테이너로 세로값을 주는 게 좋을 수
@@ -254,6 +236,22 @@ The font size of a key is never bigger than the value.
         단락의 위 아래 간격을 활용합니다. 작은 화면에서 공간 활용을 위해 좌측 들여쓰기 하지
         않습니다.
       </mm-text>
+      <mm-text variant="label-strong">시각보정</mm-text>
+      <mm-text variant="body">
+        개별 폰트의 기준선이 다르기 때문에 주변 요소나 부모 요소에 맞춰 시각보정이 필요하다.
+      </mm-text>
+      <mm-text variant="label-strong">제목의 생략</mm-text>
+      <mm-text variant="body">
+        <del>제목을 자르는 것을 허용할 것인가? 허용하지 않을 것인가?</del> 종국에는 모든 텍스트는
+        잘릴 수 있음을 염두해야 한다. 점점 더 작은 스크린에 대응할 수 있어야 한다. 폴더블, 와치
+      </mm-text>
+      <mm-text variant="label-strong">텍스트의 강조</mm-text>
+      <mm-text variant="body">형태적 강조 :: mark, u, em, b</mm-text>
+      <mm-text variant="body">의미론적 강조 ::strong - 개인정보처리방침 등</mm-text>
+      <mm-text variant="body">
+        단락에 포함된 단어나 구문을 underline, primary color로 강조하지 마세요. 우리는 underlined와
+        pirmary colored text를 <mark>clickable</mark>로 엄격하게 정의하고 있습니다.
+      </mm-text>
     </mm-text-group>
 
     <mm-text-list
@@ -277,6 +275,9 @@ The font size of a key is never bigger than the value.
       <mm-text variant="body">
         본문 body - paragraph / label, help text / kicker/overline/eyebrow
       </mm-text>
+      <mm-text variant="body">
+        단어(word)" → "구(phrase)" → "문장(sentence)" → "문단(paragraph)"
+      </mm-text>
     </mm-text-group>
   </section>
 
@@ -290,10 +291,16 @@ The font size of a key is never bigger than the value.
     </div>
     <mm-text-group variant="title">
       <mm-text variant="title">히어로 섹션 제목</mm-text>
-      <mm-text variant="body-large" truncated="true">
-        이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에
-        부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은 침묵에 잠겼다.
-      </mm-text>
+      <div style="max-width: 640px">
+        <mm-text variant="body-large">
+          이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에
+          부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은 침묵에 잠겼다.
+        </mm-text>
+        <!-- <mm-text variant="body-large" truncated="true">
+          이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에
+          부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은 침묵에 잠겼다.
+        </mm-text> -->
+      </div>
       <footer class="hero-actions" style="margin: 1.5rem 0 0">
         <mm-button variant="primary" size="large">콜 투 액션</mm-button>
         <mm-button variant="text" size="large">더 알아보기</mm-button>

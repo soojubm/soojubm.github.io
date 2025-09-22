@@ -5,67 +5,31 @@
   ></mm-pageheader>
 
   <section class="component-example">
-    <mm-group>
+    <div style="display: flex; align-items: center; gap: var(--space-2)">
       <mm-icon-button variant="" icon="heart"></mm-icon-button>
-      <mm-icon-button variant="navigator" icon="xmark"></mm-icon-button>
+      <mm-tooltip content="로그인">
+        <mm-icon-button slot="trigger" icon="user"></mm-icon-button>
+      </mm-tooltip>
+    </div>
+    <mm-separator></mm-separator>
+    <mm-group>
       <mm-icon-button variant="navigator" icon="arrow-left"></mm-icon-button>
       <mm-icon-button variant="navigator" icon="arrow-right" color="gold"></mm-icon-button>
       <mm-icon-button variant="navigator" icon="star-solid"></mm-icon-button>
       <mm-icon-button variant="navigator" icon="star"></mm-icon-button>
+      <mm-icon-button variant="navigator" icon="xmark"></mm-icon-button>
       <mm-clear-button></mm-clear-button>
     </mm-group>
-    <mm-separator></mm-separator>
-    <mm-group>
-      <button
-        style="
-          padding: 0;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          width: auto;
-          gap: var(--space-1);
-          border: none;
-          background-color: var(--color-background);
-          font: inherit;
-          color: var(--color-text);
-        "
-      >
-        <mm-avatar slot="avatar" size="large" icon="share-ios"></mm-avatar>
-        <small>공유하기</small>
-      </button>
-      <button
-        style="
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          width: var(--size-huge);
-          height: var(--size-huge);
-          gap: var(--space-1);
-          padding: var(--space-1) var(--space-3);
-          border: var(--border);
-          border-radius: var(--radius);
-          background-color: transparent;
-          font: inherit;
-          color: var(--color-text);
-        "
-      >
-        <mm-icon slot="avatar" size="large" name="share-ios" style="font-size: 1.5rem"></mm-icon>
-        <small>공유하기</small>
-      </button>
-    </mm-group>
-    <mm-separator></mm-separator>
-    <mm-tooltip content="로그인" align="center">
-      <mm-icon-button slot="trigger" icon="user"></mm-icon-button>
-    </mm-tooltip>
   </section>
   <section class="component-props">
     <dl>
+      <dt>name</dt>
+      <dd>iconNameType</dd>
       <dt>variant</dt>
       <dd>'default?' | 'navigator'</dd>
       <dt>ariaLabel</dt>
       <dd>string</dd>
-      <dt>onClick<attr>?</attr></dt>
+      <dt>onClick</dt>
       <dd>event:(React.MouseEvent&lt;HTMLButtonElement&gt;) => void</dd>
     </dl>
     <!-- <mm-text-group>

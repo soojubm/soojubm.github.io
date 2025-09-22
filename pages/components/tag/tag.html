@@ -76,54 +76,34 @@
       <dd>for categories / status</dd> -->
     </dl>
 
-    <section class="feature columns-2">
+    <!-- <section class="feature columns-2">
       <mm-feature
         icon="database-script-plus"
         titleText="정보 보충"
         subtitle="Easy scanning"
         description="탐색을 보조하기 위한 정보 강조 또는 요약, 정보를 단순 보충"
       >
-        <mm-text-list
-          slot="children"
-          texts='[
-          "인터렉션이 가능한 것처럼 보이지 않아야 합니다.",
-          "Use short labels for easy scanning. 중요한 정보를 빠르게 파악할 수 있는 짧은 단어의 조합."
-        ]'
-        ></mm-text-list>
       </mm-feature>
-      <mm-feature
-        icon="database-script-plus"
-        titleText="Groupable"
-        subtitle="Groupable"
-        description="태그 그룹은 최대 4개의 태그를 표시합니다. 너무 많은 태그 목록으로 사용자의 콘텐츠 탐색을 방해하지 마세요. 예외 케이스. 태그의 목록이 페이지 전체를 관통하는 경우 탐색을 보조하는 역할이 아니라 정보를 보충하는 맥락이기 때문에 4개 이상이 허용된다. 유저 프로필 페이지에서 유저를 보충할 때가 적절한 예시. 그룹에서 primary tag는 그룹을 대표하는 맥락으로 1개만 포함할 수 있습니다."
-      >
-      </mm-feature>
-    </section>
-
-    <mm-text variant="body-large">CategoryTag</mm-text>
-    <mm-text variant="body">
-      Dot(status). New/Unread, Live. A dot badge notifies the user that something is new or updated
-      without showing a count. "아바타, 바텀 네비게이션, 탭에서 일관되게 사용되는가?"
-    </mm-text>
-    <div style="height: 1rem"></div>
-    <mm-tile size="small">
-      <div style="display: flex; flex-direction: column; gap: var(--space-2)">
-        <mm-group variant="tag">
-          <mm-tag variant="tertiary">기본태그</mm-tag>
-          <mm-tag variant="tertiary">기본태그</mm-tag>
-          <mm-tag variant="tertiary">기본태그</mm-tag>
-          <mm-tag variant="tertiary">기본태그</mm-tag>
-        </mm-group>
-      </div>
-    </mm-tile>
+    </section> -->
   </section>
 
   <section class="component-guide">
+    <mm-text-list
+      slot="children"
+      texts='[
+          "인터렉션이 가능한 것처럼 보이지 않아야 합니다.",
+          "Use short labels for easy scanning. 중요한 정보를 빠르게 파악할 수 있는 짧은 단어의 조합.",
+          "그룹에서 primary tag는 그룹을 대표하는 맥락으로 1개만 포함",
+          "태그 그룹은 최대 4개의 태그를 표시. 너무 많은 태그 목록으로 사용자의 콘텐츠 탐색을 방해하지 마세요. 예외 케이스. 태그의 목록이 페이지 전체를 관통하는 경우 탐색을 보조하는 역할이 아니라 정보를 보충하는 맥락이기 때문에 4개 이상을 허용합니다. 그런데 이것은 platform problem.",
+          "Dot(status). New/Unread, Live. A dot badge notifies the user that something is new or updated without showing a count."
+        ]'
+    ></mm-text-list>
+    <!-- <mm-text variant="body">"아바타, 바텀 네비게이션, 탭에서 일관되게 사용되는가?"</mm-text> -->
     <!-- <mm-text-group>
       <mm-text variant="subhead">Considerations</mm-text>
       <mm-group>
         <mm-tag variant="primary">Non-interactive</mm-tag>
-      without showing a count. "아바타, 바텀 네비게이션, 탭에서 일관되게 사용되는가?"  <mm-tag>notification</mm-tag>
+      without showing a count. <mm-tag>notification</mm-tag>
         <mm-tag>status</mm-tag>
         <mm-tag>informational</mm-tag>
       </mm-group>

@@ -27,7 +27,7 @@
 }
 
 .group[data-variant=avatar] {align-items:center;gap:0;}
-.group[data-variant=avatar] > * + * {margin-left:-.5rem;}
+.group[data-variant=avatar] > * + * {margin-left:-.25rem;}
 
 /* 6px spacing 예외케이스 */
 .group[data-variant=tag] {gap:6px}

@@ -20,9 +20,22 @@
   </header> -->
   <section class="component-example">
     <mm-group variant="">
+      <mm-avatar size="huge" default="true" badge="true" badge></mm-avatar>
+      <mm-avatar size="large" default="true" default="true" badge="true"></mm-avatar>
+      <mm-avatar size="medium" default="true" fallback="수" badge="true"></mm-avatar>
+      <mm-avatar size="small" default="true"> </mm-avatar>
+    </mm-group>
+    <mm-separator></mm-separator>
+    <mm-group variant="">
       <mm-avatar variant="primary" size="large" default="true" badge="true"></mm-avatar>
       <mm-avatar variant="secondary" size="large" default="true" badge="true"></mm-avatar>
       <mm-avatar variant="tertiary" size="large" default="true" badge="true"></mm-avatar>
+    </mm-group>
+    <mm-separator></mm-separator>
+    <mm-group variant="avatar">
+      <mm-avatar size="medium" default="true"></mm-avatar>
+      <mm-avatar size="medium" default="true"></mm-avatar>
+      <mm-avatar size="medium" default="true"></mm-avatar>
     </mm-group>
   </section>
 
@@ -40,22 +53,20 @@
       <!-- <dt>icon</dt>
       <dd>iconNameType?</dd> -->
     </dl>
+  </section>
+  <section class="component-guide">
     <mm-text-list
       texts='[
       "foundations :: 아웃라인 아바타는 클릭할 수 없다.",
       "fallback :: icon-noir name=people-tag",
       "variant. user, company 등 두 가지 이상의 아바타 유형이 필요할 때 radius token의 값을 변경하여 구분한다.",
       "UserAvatar name={} description={string | React.ReactNode} avatarProps={} / CompanyAvatar name={}",
-      "medium, small 사이즈는 최대 한 줄의 텍스트만 가질 수 있다. 즉, TextPair와 사용할 수 없다. 디스크립션이 필요하면 large, huge 사이즈를 사용한다."
+      "medium, small 사이즈는 최대 한 줄의 텍스트만 가질 수 있다. 즉, TextPair와 사용할 수 없다. 디스크립션이 필요하면 large, huge 사이즈를 사용한다.",
+      "AvatarGroup. maximum avatar length 3"
     ]'
     ></mm-text-list>
-
     <!-- React 코드 -->
-    <br />
-    <section class="example">
-      <div id="button-demo"></div>
-      <div id="card-demo"></div>
-    </section>
+    <section class="example"></section>
 
     <script type="text/babel">
       function Button({ label }) {
@@ -70,26 +81,14 @@
           </div>
         )
       }
-
-      ReactDOM.createRoot(document.getElementById('button-demo')).render(
-        <Button label="가이드 버튼" />,
-      )
-      ReactDOM.createRoot(document.getElementById('card-demo')).render(
-        <Card title="가이드 카드" content="이것은 React 컴포넌트 가이드 예시입니다." />,
+      ReactDOM.createRoot(document.getElementById('example')).render(
+        <>
+          <Card title="가이드 카드" content="이것은 React 컴포넌트 가이드 예시입니다." />
+          <Button label="가이드 버튼" />,
+        </>,
       )
     </script>
 
-    <br />
-
-    <mm-tile>
-      <mm-group variant="">
-        <mm-avatar size="huge" default="true" badge="true" badge></mm-avatar>
-        <mm-avatar size="large" default="true" default="true" badge="true"></mm-avatar>
-        <mm-avatar size="medium" default="true" fallback="수" badge="true"></mm-avatar>
-        <mm-avatar size="small" default="true"> </mm-avatar>
-      </mm-group>
-    </mm-tile>
-    <div style="height: 1rem"></div>
     <mm-tile>
       <div style="display: flex; gap: var(--space-3)">
         <mm-avatar size="huge" src="/public/images/springsteen.jpg"> </mm-avatar>
@@ -103,15 +102,6 @@
           </mm-group>
         </div>
       </div>
-    </mm-tile>
-    <div style="height: 1rem"></div>
-    <!-- <mm-text variant="body-bold"> AvatarGroup. maximum avatar length </mm-text> -->
-    <mm-tile size="small">
-      <mm-group variant="avatar">
-        <mm-avatar size="medium" default="true"></mm-avatar>
-        <mm-avatar size="medium" default="true"></mm-avatar>
-        <mm-avatar size="medium" default="true"></mm-avatar>
-      </mm-group>
     </mm-tile>
 
     <!-- <mm-text-group>

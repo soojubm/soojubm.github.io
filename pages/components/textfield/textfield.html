@@ -53,7 +53,7 @@
   </dl>
 
   <section class="component-example">
-    <div style="max-width: 50%">
+    <div style="max-width: 400px">
       <mm-group variant="form">
         <mm-textfield placeholder="Placeholder"></mm-textfield>
         <mm-textfield placeholder="Disabled" disabled></mm-textfield>
@@ -65,8 +65,100 @@
           aria-errormessage="msgID"
           helper="이미 등록된 이메일입니다."
         ></mm-textfield>
+        <mm-separator spacing="small"></mm-separator>
         <mm-textfield label="with label" placeholder="Label"></mm-textfield>
+        <mm-separator spacing="small"></mm-separator>
+        <!-- <div>
+          <mm-text variant="">1 sandbox</mm-text>
+          <mm-text variant=""> $100.00 / addl sandbox </mm-text>
+        </div> -->
+        <!-- TODO field width -->
+        <div
+          class="counter js-counter"
+          style="display: flex; align-items: center; max-width: 10rem; gap: var(--space-2)"
+        >
+          <label for="numberfield" style="position: absolute; opacity: 0">
+            레이블 라이트하우스용 price, quantity(step/count). 우측 정렬. suffix(unit)
+          </label>
+          <mm-icon-button
+            variant="navigator"
+            icon="minus"
+            class="js-counter-decrement"
+            aria-controls="numberfield"
+          ></mm-icon-button>
+          <mm-textfield value="20"></mm-textfield>
+          <!-- <input
+            class="counter-input js-counter-input js-number-input"
+            type="number"
+            name="counter1"
+            id="numberfield"
+            min="5"
+            max="20"
+            value="0"
+          /> -->
+          <mm-icon-button
+            variant="navigator"
+            icon="plus"
+            class="js-counter-increment"
+            tabindex="-1"
+          >
+          </mm-icon-button>
+        </div>
+
+        <mm-textfield type="password">
+          <mm-icon-button
+            slot="suffix"
+            icon="eye-solid"
+            aria-label="비밀번호 보기"
+          ></mm-icon-button>
+        </mm-textfield>
       </mm-group>
+
+      <mm-separator></mm-separator>
+
+      <section>
+        <div class="validation-item validation1">8 - 12 characters / 8 characters minimum</div>
+        <div class="validation-item validation2">
+          One lowercase character / One uppercase character / One Number
+        </div>
+        <div class="validation-item validation3">One special character</div>
+        <div class="validation-item validation4">동일한 문자 6개 연속</div>
+      </section>
+      <div class="textfield">
+        <label class="textfield-label" for="signup-password-confirm">비밀번호 확인</label>
+        <input
+          class="textfield-input js-password-test"
+          type="password"
+          id="signup-password-confirm"
+          placeholder="6자리 이상"
+        />
+        <mm-button variant="tertiary" class="js-view-password" type="button"
+          >비밀번호 보기</mm-button
+        >
+      </div>
+
+      <style>
+        .validation-item {
+          display: flex;
+          align-items: center;
+          gap: var(--space-2);
+        }
+        .is-valid1 .validation1 {
+          color: red;
+        }
+        .is-valid2 .validation2 {
+          color: red;
+        }
+        .is-valid3 .validation3 {
+          color: red;
+        }
+        .is-valid4 .validation4 {
+          color: red;
+        }
+        .is-valid5 .validation5 {
+          color: red;
+        }
+      </style>
     </div>
   </section>
 
@@ -112,36 +204,22 @@
   </section>
 
   <section class="component-guide">
-    <section class="feature columns-3">
-      <mm-feature
-        icon="cursor-pointer"
-        titleText="Interactive - choice"
-        subtitle="Easy scanning"
-        description="미리 선택된 기본값을 제공하는 것은 편향된 데이터를 수집할 위험이 있습니다. 만약 미리 선택된 값을 적용하는 경우 첫 번째 옵션을 기본 옵션으로."
-      >
-      </mm-feature>
-      <mm-feature
-        icon="task-list"
-        titleText="Easy scanning"
-        subtitle="Easy scanning"
-        description="수직 정렬로 옵션 목록을 파악하기 쉽게. 체크박스를 강조가 필요한 경우 체크박스의 크기 또는 컨테이너를 강조하고, 체크박스 컴포넌트는 독립적인 형태를 유지합니다. 근데 이런 제약은 일단 하지 않는 것이 좋음. 초기의 최소한의 정의 라는 foundation의 시효 소멸.."
-      >
-      </mm-feature>
-    </section>
-
     <mm-text-group>
       <mm-text variant="subhead">Meta problems</mm-text>
-      <mm-text variant="body">
-        cta bottom fixed 키패드 이슈. 입력 필드가 많아지고 키보드가 올라올 때
-      </mm-text>
+      <mm-text variant="body"
+        >RevealButton. 리빌 버튼은 회원가입 프로세스에서 비밀번호 확인 필드가 존재하는 경우에는
+        제공할 필요가 없다. 비밀번호 확인 필드를 제공하지 않는 것은 국내 서비스에는 익숙하지 않은
+        경험. 비밀번호 입력 필드가 1개만 존재하는 경우 리빌 버튼을 제공할 수 있다</mm-text
+      >
+      <mm-text variant="body">카드번호, 주민등록번호 뒷자리 등의 마스킹 처리가 필요한 필드</mm-text>
+      <mm-text variant="body">input password의 native reset button</mm-text>
+
       <mm-text variant="body">
         A form field element has neither an id nor a name attribute. This might prevent the browser
         from correctly autofilling the form. To fix this issue, add a unique id or name attribute to
         a form field. This is not strictly needed, but still recommended even if you have an
         autocomplete attribute on the same element.</mm-text
       >
-    </mm-text-group>
-    <mm-text-group>
       <mm-text variant="body" data-temp="required indicator / optional indicator">
         사용자 여정에 허들이 될 수 있는 불필요한 정보 입력을 유도하지 마세요. 다시 말해 모든
         텍스트필드는 필수 입력입니다. 사용자 정보를 수집하여 사용자 또는 비즈니스에 명확한 이점이
@@ -160,8 +238,24 @@
       </mm-text>
     </mm-text-group>
 
-    <mm-text-group>
-      <section class="textbox" style="position: relative">
+    <section class="feature columns-3">
+      <mm-feature
+        icon="cursor-pointer"
+        titleText="Interactive - choice"
+        subtitle="Easy scanning"
+        description="미리 선택된 기본값을 제공하는 것은 편향된 데이터를 수집할 위험이 있습니다. 만약 미리 선택된 값을 적용하는 경우 첫 번째 옵션을 기본 옵션으로."
+      >
+      </mm-feature>
+      <mm-feature
+        icon="task-list"
+        titleText="Easy scanning"
+        subtitle="Easy scanning"
+        description="수직 정렬로 옵션 목록을 파악하기 쉽게. 체크박스를 강조가 필요한 경우 체크박스의 크기 또는 컨테이너를 강조하고, 체크박스 컴포넌트는 독립적인 형태를 유지합니다. 근데 이런 제약은 일단 하지 않는 것이 좋음. 초기의 최소한의 정의 라는 foundation의 시효 소멸.."
+      >
+      </mm-feature>
+    </section>
+
+    <!-- <section class="textbox" style="position: relative">
         <mm-group
           data-e="menu"
           class="textbox-toolbar"
@@ -191,150 +285,146 @@
         <footer>
           <mm-button>게시</mm-button>
         </footer>
-      </section>
+      </section> -->
 
-      <div class="calendar">
-        <style>
-          .calendar {
-            width: 250px;
-            --date-width: 32px;
-            --date-height: 32px;
-            --date-background: #eee;
-            position: relative;
+    <!-- <div class="calendar">
+      <style>
+        .calendar {
+          width: 250px;
+          --date-width: 32px;
+          --date-height: 32px;
+          --date-background: #eee;
+          position: relative;
+        }
+        .calendar h3 {
+          font-size: 1rem;
+          line-height: 32px;
+        }
+        .calendar-navigation {
+          display: flex;
+          position: absolute;
+          right: 0;
+          top: 0;
+          font-size: var(--font-size-small);
+        }
+        .calendar-navigation-prev {
+          width: var(--date-width);
+          height: var(--date-width);
+          margin-right: 4px;
+          background: var(--date-background);
+          border-radius: var(--radius);
+        }
+        .calendar-navigation-next {
+          width: var(--date-width);
+          height: var(--date-width);
+          background: var(--date-background);
+          border-radius: var(--radius);
+        }
+        .calendar-head {
+          margin-top: 0.5rem !important;
+          display: grid !important;
+          grid-template-columns: repeat(7, 1fr) !important;
+          gap: 4px !important;
+          font-size: var(--font-size-small);
+        }
+        .calendar-head div {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: var(--date-width);
+          height: var(--date-width);
+          border-radius: var(--radius);
+        }
+        .calendar-body {
+          display: grid !important;
+          grid-template-columns: repeat(7, 1fr) !important;
+          gap: 4px !important;
+        }
+        .calendar-body-column {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: var(--date-width);
+          height: var(--date-width);
+          border-radius: var(--radius);
+          font-size: var(--font-size-small);
+          cursor: pointer;
+          &::hover {
+            background: var(--color-primary);
+            color: var(--gray0);
           }
-          .calendar h3 {
-            font-size: 1rem;
-            line-height: 32px;
-          }
-          .calendar-navigation {
-            display: flex;
-            position: absolute;
-            right: 0;
-            top: 0;
-            font-size: var(--font-size-small);
-          }
-          .calendar-navigation-prev {
-            width: var(--date-width);
-            height: var(--date-width);
-            margin-right: 4px;
-            background: var(--date-background);
-            border-radius: var(--radius);
-          }
-          .calendar-navigation-next {
-            width: var(--date-width);
-            height: var(--date-width);
-            background: var(--date-background);
-            border-radius: var(--radius);
-          }
-          .calendar-head {
-            margin-top: 0.5rem !important;
-            display: grid !important;
-            grid-template-columns: repeat(7, 1fr) !important;
-            gap: 4px !important;
-            font-size: var(--font-size-small);
-          }
-          .calendar-head div {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: var(--date-width);
-            height: var(--date-width);
-            border-radius: var(--radius);
-          }
-          .calendar-body {
-            display: grid !important;
-            grid-template-columns: repeat(7, 1fr) !important;
-            gap: 4px !important;
-          }
-          .calendar-body-column {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: var(--date-width);
-            height: var(--date-width);
-            border-radius: var(--radius);
-            font-size: var(--font-size-small);
-            cursor: pointer;
-            &::hover {
-              background: var(--color-primary);
-              color: var(--gray0);
-            }
-          }
-        </style>
-        <b>2020년 12월</b>
-        <nav class="calendar-navigation">
-          <button class="calendar-navigation-prev" aria-label="앞으로">
-            <i class="icon-caret is-left"></i>
-          </button>
-          <button class="calendar-navigation-next" aria-label="뒤로">
-            <i class="icon-caret is-right"></i>
-          </button>
-        </nav>
-        <div class="calendar-head">
-          <div>일</div>
-          <div>월</div>
-          <div>화</div>
-          <div>수</div>
-          <div>목</div>
-          <div>금</div>
-          <div>토</div>
-        </div>
-        <div class="calendar-body">
-          <div class="calendar-body-column">1</div>
-          <div class="calendar-body-column">2</div>
-          <div class="calendar-body-column">3</div>
-          <div class="calendar-body-column">4</div>
-          <div class="calendar-body-column">5</div>
-          <div class="calendar-body-column">6</div>
-          <div class="calendar-body-column">7</div>
-          <div class="calendar-body-column">1</div>
-          <div class="calendar-body-column">2</div>
-          <div class="calendar-body-column">3</div>
-          <div class="calendar-body-column">4</div>
-          <div class="calendar-body-column">5</div>
-          <div class="calendar-body-column">6</div>
-          <div class="calendar-body-column">7</div>
-          <div class="calendar-body-column">1</div>
-          <div class="calendar-body-column">2</div>
-          <div class="calendar-body-column">3</div>
-          <div class="calendar-body-column">4</div>
-          <div class="calendar-body-column">5</div>
-          <div class="calendar-body-column">6</div>
-          <div class="calendar-body-column">7</div>
-        </div>
-
-        <br />
-        <mm-group variant="textfield">
-          <div style="flex: 1">
-            <mm-textfield type="date" name="date-start" label="체크인" placeholder="YYYY. MM. DD.">
-              <mm-icon slot="suffix" name="calendar"></mm-icon>
-            </mm-textfield>
-          </div>
-          <div style="flex: 1">
-            <mm-textfield type="date" name="date-end" label="체크아웃" placeholder="YYYY. MM. DD.">
-              <mm-icon slot="suffix" name="calendar"></mm-icon>
-            </mm-textfield>
-          </div>
-        </mm-group>
-        <br />
-        <mm-tile>
-          <mm-group
-            variant="textfield"
-            style="width: 100%; flex-wrap: nowrap; align-items: flex-end"
-          >
-            <mm-textfield label="Length" placeholder="cm unit"></mm-textfield>
-            <div style="display: flex; align-items: center; height: var(--size-large)">
-              <mm-icon name="xmark"></mm-icon>
-            </div>
-            <mm-textfield label="Width" placeholder="x means"></mm-textfield>
-            <div style="display: flex; align-items: center; height: var(--size-large)">
-              <mm-icon name="xmark"></mm-icon>
-            </div>
-            <mm-textfield label="Height" placeholder="cm"></mm-textfield>
-          </mm-group>
-        </mm-tile>
+        }
+      </style>
+      <b>2020년 12월</b>
+      <nav class="calendar-navigation">
+        <button class="calendar-navigation-prev" aria-label="앞으로">
+          <i class="icon-caret is-left"></i>
+        </button>
+        <button class="calendar-navigation-next" aria-label="뒤로">
+          <i class="icon-caret is-right"></i>
+        </button>
+      </nav>
+      <div class="calendar-head">
+        <div>일</div>
+        <div>월</div>
+        <div>화</div>
+        <div>수</div>
+        <div>목</div>
+        <div>금</div>
+        <div>토</div>
       </div>
-    </mm-text-group>
+      <div class="calendar-body">
+        <div class="calendar-body-column">1</div>
+        <div class="calendar-body-column">2</div>
+        <div class="calendar-body-column">3</div>
+        <div class="calendar-body-column">4</div>
+        <div class="calendar-body-column">5</div>
+        <div class="calendar-body-column">6</div>
+        <div class="calendar-body-column">7</div>
+        <div class="calendar-body-column">1</div>
+        <div class="calendar-body-column">2</div>
+        <div class="calendar-body-column">3</div>
+        <div class="calendar-body-column">4</div>
+        <div class="calendar-body-column">5</div>
+        <div class="calendar-body-column">6</div>
+        <div class="calendar-body-column">7</div>
+        <div class="calendar-body-column">1</div>
+        <div class="calendar-body-column">2</div>
+        <div class="calendar-body-column">3</div>
+        <div class="calendar-body-column">4</div>
+        <div class="calendar-body-column">5</div>
+        <div class="calendar-body-column">6</div>
+        <div class="calendar-body-column">7</div>
+      </div>
+
+      <br />
+      <mm-group variant="textfield">
+        <div style="flex: 1">
+          <mm-textfield type="date" name="date-start" label="체크인" placeholder="YYYY. MM. DD.">
+            <mm-icon slot="suffix" name="calendar"></mm-icon>
+          </mm-textfield>
+        </div>
+        <div style="flex: 1">
+          <mm-textfield type="date" name="date-end" label="체크아웃" placeholder="YYYY. MM. DD.">
+            <mm-icon slot="suffix" name="calendar"></mm-icon>
+          </mm-textfield>
+        </div>
+      </mm-group>
+      <br />
+      <mm-tile>
+        <mm-group variant="textfield" style="width: 100%; flex-wrap: nowrap; align-items: flex-end">
+          <mm-textfield label="Length" placeholder="cm unit"></mm-textfield>
+          <div style="display: flex; align-items: center; height: var(--size-large)">
+            <mm-icon name="xmark"></mm-icon>
+          </div>
+          <mm-textfield label="Width" placeholder="x means"></mm-textfield>
+          <div style="display: flex; align-items: center; height: var(--size-large)">
+            <mm-icon name="xmark"></mm-icon>
+          </div>
+          <mm-textfield label="Height" placeholder="cm"></mm-textfield>
+        </mm-group>
+      </mm-tile>
+    </div> -->
 
     <mm-text-list texts="[]">
       <li>TODO utilities. 앞자리 0 제거. 숫자만입력3자리마다콤마. 소숫점 컨트롤.</li>
@@ -491,6 +581,11 @@
 
     <aside class="component-references">
       <mm-text variant="subhead">References</mm-text>
+      <mm-link
+        href="https://support.google.com/accounts/answer/32040?visit_id=637702064644854938-965259796&p=pw_dont_reuse&hl=ko&rd=1"
+      >
+        구글의 비밀번호 만들기 팁꾸
+      </mm-link>
     </aside>
   </section>
 

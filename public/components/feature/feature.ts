@@ -10,11 +10,11 @@ class Feature extends HTMLElement {
 
     const avatar = document.createElement('mm-avatar')
     avatar.setAttribute('variant', 'secondary')
-    avatar.setAttribute('size', 'large')
+    avatar.setAttribute('size', 'medium')
 
     const icon = document.createElement('mm-icon')
     icon.setAttribute('name', this.icon || '')
-    icon.setAttribute('size', 'large')
+    icon.setAttribute('size', 'medium')
 
     avatar.classList.add('feature-item-avatar')
     avatar.appendChild(icon)

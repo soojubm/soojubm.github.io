@@ -45,53 +45,30 @@
       <dd>React.Node</dd>
       <!-- <dt>indicator (active bar)</dt> -->
     </dl>
+  </section>
 
-    <mm-text-group>
-      <mm-group>
-        <mm-tag>Behavior - Content switching </mm-tag>
-        <mm-tag>Editorial - Easy Scanning</mm-tag>
-      </mm-group>
-      <mm-text
-        >flutter. Scaffold - AppBar - bottom: TabBar - tabs - Tab / Scaffold - body -
-        TabBarView</mm-text
-      >
-      <mm-text variant="body">Human Interface Guidelins. Tab은 없지만 Tab Views는 있음.</mm-text>
-      <mm-text>
-        Make sure the controls within a pane affect content only in the same pane. Panes are
-        mutually exclusive, so ensure they’re fully self-contained. Use a segmented control to
-        provide closely related choices that affect an object, state, or view. For example, a
-        segmented control can help people switch between views in a toolbar. Avoid using a segmented
-        control to offer actions, such as adding, removing, or editing content.
-      </mm-text>
-      <mm-text variant="body">
-        <del>페이지 링크로 사용하지 마세요.</del> SPA에서 페이지 링크의 개념이 모호. 탭을 클릭하면
-        탭 패널만 변경되어야 한다.
-      </mm-text>
+  <section class="component-guide">
+    <mm-text>
+      Make sure the controls within a pane affect content only in the same pane. Panes are mutually
+      exclusive, so ensure they’re fully self-contained. Use a segmented control to provide closely
+      related choices that affect an object, state, or view. For example, a segmented control can
+      help people switch between views in a toolbar. Avoid using a segmented control to offer
+      actions, such as adding, removing, or editing content.
+    </mm-text>
 
-      <mm-text-list
-        texts='[
+    <mm-text-list
+      texts='[
+          "콘텐츠 스위칭 맥락. 따라서 페이지 링크, 콘텐츠 정렬, 콘텐츠 필터 또는 탭투스크롤로 사용하지 마세요.",
           "SearchParams과 브라우저 히스토리를 활용할 것인가? (?tab=projects)",
-          "글로벌 네비게이션 패턴인 햄버거 메뉴와 탭(바텀네비게이션, 탭바)을 함께 사용할 수 있는가?"
+          "글로벌 네비게이션 패턴인 햄버거 메뉴와 탭(바텀네비게이션, 탭바)을 함께 사용할 수 있는가?",
+          "탭의 가로 스크롤. MDI 패턴. 탭의 최대 갯수를 제한할 수도 있다.",
+          "레이블은 1줄로 사용하고 최대 2단어로 작성합니다. 2줄이 되면 Easy scanning이 어려워진다. easy scanning principle",
+          "레이블의 말줄임표와 관련. 워치, 폴더블과 같은 더 작은 화면에 대한 고려가 없을 때나 유효. 말 줄임표 또는 두 줄 레이블은 허용되어야 할 수 있음. 대신 엄격한 글자 수 제한.",
+          "탭의 중첩. 페이지에서 수행하는 과업 중심 플로우 설계. 중첩을 허용한다면 탭의 중첩 패턴을 정의해야 함. Material 3의 primary tabs / secondary tabs 분류 등 참고. 또는 네이버 쇼핑의 4단계 5단계 탭.",
+          "flutter. Scaffold - AppBar - bottom: TabBar - tabs - Tab / Scaffold - body - TabBarView"
         ]'
-      >
-      </mm-text-list>
-      <mm-text variant="body">
-        탭을 중첩하지 마세요. 페이지에서 수행하는 과업 중심 플로우 설계. 중첩을 허용한다면 탭의 중첩
-        패턴을 정의해야 함. Material 3의 primary tabs / secondary tabs 분류 등 참고. 또는 네이버
-        쇼핑의 4단계 5단계 탭.
-      </mm-text>
-      <mm-text variant="body">
-        Interactive - content switching. 콘텐츠 정렬, 콘텐츠 필터 또는 탭투스크롤로 사용하지 마세요.
-      </mm-text>
-      <mm-text variant="body">
-        레이블은 1줄로 사용하고 최대 2단어로 작성합니다.
-        <del>
-          말줄임표도 안 됨. 말줄임표 관련된 모든 내용은 폴더블과 같은 더 작은 화면에 대한 고려가
-          없기 때문.
-        </del>
-        탭의 최대 갯수를 제한하거나 가로 스크롤 규칙을 정의. 갯수를 제한하면 스크롤이 불필요.
-      </mm-text>
-    </mm-text-group>
+    >
+    </mm-text-list>
     <!-- <div style="max-width: 200px">
       <mm-tablist>
         <mm-tab slot="tab" selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">
@@ -102,13 +79,13 @@
     </div> -->
   </section>
 
-  <div class="component-references">
+  <section class="component-references">
     <mm-text variant="subhead" hidden>References</mm-text>
     <a href="https://developer.apple.com/documentation/swiftui/navigationstack">
       swiftui navigationstack
     </a>
     <a
-      href="https://developer.apple.com/design/human-interface-guidelines/components/layout-and-organization/tab-views"
+      href="https://developer.apple.com/design/human-interface-guidelines/tab-views"
       target="_blank"
     >
       HIG tab views
@@ -120,7 +97,7 @@
       HIG Segmented controls
     </a>
     <a href="https://material.io/components/tabs" target="_blank">MD Tabs</a>
-  </div>
+  </section>
 
   <!-- <section class="component-guide">
   </section> -->

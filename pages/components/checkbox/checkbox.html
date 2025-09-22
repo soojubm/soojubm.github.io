@@ -21,6 +21,8 @@
       >
         체크박스 레이블
       </mm-checkbox>
+      <mm-checkbox name="checkbox" size="large" disabled>체크박스 비활성</mm-checkbox>
+      <mm-checkbox name="checkbox" size="large" checked disabled>체크박스 비활성 체크</mm-checkbox>
     </mm-group>
   </section>
 
@@ -41,83 +43,51 @@
       <dt>onChange</dt>
       <dd>(event: React.ChangeEvent&lt;HTMLInputElement&gt;) => void</dd>
     </dl>
-
-    <mm-text variant="subhead">Attributes</mm-text>
-    <mm-tile>
-      <mm-checkbox name="checkbox" size="large" disabled>체크박스 비활성</mm-checkbox>
-      <mm-checkbox name="checkbox" size="large" checked disabled>체크박스 비활성 체크</mm-checkbox>
-    </mm-tile>
-
-    <!-- <section class="feature columns-3"> -->
-    <br />
-    <mm-feature
-      icon="cursor-pointer"
-      titleText="Interactive - choice"
-      subtitle="Easy scanning"
-      description="미리 선택된 기본값을 제공하는 것은 편향된 데이터를 수집할 위험이 있습니다.만약 미리 선택된 값을 적용하는 경우 첫 번째 옵션을 기본 옵션으로."
-    >
-    </mm-feature>
-    <br />
-    <mm-feature
-      icon="task-list"
-      titleText="Easy scanning"
-      subtitle="Easy scanning"
-      description="옵션 목록을 파악하기 쉽게 수직 정렬합니다. 강조가 필요한 경우 체크박스 컴포넌트는 독립적인 형태를 유지하고 체크박스의 크기 또는 컨테이너를 강조하고... 근데 이런 제약은 너무 과하다. 초기의 최소한의 정의 라는 foundation의 시효 소멸.."
-    >
-      <mm-text variant="body">
-        레이블은 최대 2단어로 작성합니다. choice냐 action option(?)이냐. action option일 때는 동사를
-        포함하여 작성합니다.
-      </mm-text>
-    </mm-feature>
-    <!-- </section> -->
-    <br />
-    <mm-feature
-      icon="component"
-      titleText="MasterCheckbox / TermsCheckbox"
-      description="모바일 사용성을 위한 약관 동의를 위한 패턴에서 전체동의 체크박스와 개별 체크박스를 하나의
-      TermsCheckboxGroup으로 정의할 수 있다. 약관보기 버튼을 포함해야 하며, 시각적으로 강조된 형태의
-      체크박스이다."
-    >
-      <mm-tile variant="tinted">
-        <mm-checkbox
-          size="large"
-          class="js-checkall"
-          aira-checked="mixed"
-          aria-controls="1 2"
-          data-indeterminate="true"
-          indeterminate
-        >
-          모두 동의합니다
-        </mm-checkbox>
-        <mm-separator spacing="small"></mm-separator>
-        <mm-group variant="checkbox">
-          <mm-row justifyContent="space-between">
-            <mm-checkbox size="large" class="js-check" id="terms" name="terms">
-              이용약관에 동의합니다.
-              <mm-link href="#">이용약관 바로가기</mm-link>
-            </mm-checkbox>
-          </mm-row>
-          <mm-row justifyContent="space-between">
-            <mm-checkbox size="large" class="js-check" id="terms" name="terms">
-              이용약관에 동의합니다.
-              <mm-link href="#">이용약관 바로가기</mm-link>
-            </mm-checkbox>
-          </mm-row>
-          <mm-row justifyContent="space-between">
-            <mm-checkbox size="large" class="js-check" id="terms" name="terms">
-              이용약관에 동의합니다.
-            </mm-checkbox>
-          </mm-row>
-        </mm-group>
-      </mm-tile>
-    </mm-feature>
-    <br />
-    <mm-feature icon="component" titleText="다시 묻지 않기" description="내용 없음">
-      <mm-checkbox>다시 묻지 않기 Don't ask again</mm-checkbox>
-    </mm-feature>
   </section>
 
-  <mm-text-group>
+  <section class="component-guide">
+    <mm-text-list
+      texts='[
+        "미리 선택된 기본값을 제공하는 것은 편향된 데이터를 수집할 위험이 있습니다.",
+        "체크박스 그룹은 관련된 옵션들을 함께 묶어 사용자에게 제공할 수 있습니다. 이 경우, 그룹의 제목(legend)을 명확하게 표시하여 사용자가 옵션들의 맥락을 이해할 수 있도록 합니다.",
+        "레이블은 최대 2단어로 작성합니다. choice냐 action option(?)이냐. action option일 때는 동사를 포함하여 작성합니다.",
+        "옵션 목록을 파악하기 쉽게 수직 정렬합니다. 강조가 필요한 경우 체크박스 컴포넌트는 독립적인 형태를 유지하고 체크박스의 크기 또는 컨테이너를 강조하고... 근데 이런 제약은 너무 과하다. 초기의 최소한의 정의 라는 foundation의 시효 소멸..",
+        "MasterCheckbox / TermsCheckbox / TermsCheckboxGroup"
+      ]'
+    ></mm-text-list>
+    <mm-tile variant="tinted">
+      <mm-checkbox
+        size="large"
+        class="js-checkall"
+        aira-checked="mixed"
+        aria-controls="1 2"
+        data-indeterminate="true"
+        indeterminate
+      >
+        모두 동의합니다
+      </mm-checkbox>
+      <mm-separator spacing="small"></mm-separator>
+      <mm-group variant="checkbox">
+        <mm-row justifyContent="space-between">
+          <mm-checkbox size="large" class="js-check" id="terms5" name="terms">
+            이용약관에 동의합니다.
+            <mm-link href="#">이용약관 바로가기</mm-link>
+          </mm-checkbox>
+        </mm-row>
+        <mm-row justifyContent="space-between">
+          <mm-checkbox size="large" class="js-check" id="terms6" name="terms">
+            이용약관에 동의합니다.
+            <mm-link href="#">이용약관 바로가기</mm-link>
+          </mm-checkbox>
+        </mm-row>
+        <mm-row justifyContent="space-between">
+          <mm-checkbox size="large" class="js-check" id="terms7" name="terms">
+            이용약관에 동의합니다.
+          </mm-checkbox>
+        </mm-row>
+      </mm-group>
+    </mm-tile>
+
     <div style="display: flex; flex-direction: column; gap: var(--space-3)">
       <mm-tile>
         <mm-titlebar titletext="컬렉션에 추가"></mm-titlebar>
@@ -151,5 +121,5 @@
         ></button-list-component>
       </mm-tile>
     </div>
-  </mm-text-group>
+  </section>
 </main>

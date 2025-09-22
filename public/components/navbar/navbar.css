@@ -3,13 +3,12 @@
   align-items: center;
   width: 100%;
 
-  max-width: var(--layout-width-wide);
+  /* max-width: var(--layout-width-wide);
   margin: 0 auto;
-  padding:var(--space-3) 0;
-
+  padding:var(--space-3) 0; */
 
   height:var(--navbar-height);
-  /* padding:var(--space-3) var(--grid-margin); */
+  padding:var(--space-3) var(--grid-margin);
   box-sizing:border-box;background:var(--color-background);
   position:sticky;
   top: 0;
@@ -86,17 +85,16 @@
 /* ReactNative safeAreaView, scrollView */
 
 .page {
+  /* width: calc(var(--layout-width-wide) - var(--width-sidemenu) - var(--grid-margin)); */
+  /* margin: 0 auto; */
 
-  width: calc(var(--layout-width-wide) - var(--width-sidemenu) - var(--grid-margin));
-  margin: 0 auto;
   /* TODO minus footer height */
   min-height: calc(100vh - var(--navbar-height) - 200px);
- 
-  padding: var(--space-4) 0 6rem;
-  padding-left: calc(var(--width-sidemenu) + var(--grid-margin));
+  padding: var(--space-4) var(--grid-margin) 6rem;
+  /* padding: var(--space-4) 0 6rem; */
+  /* padding-left: calc(var(--width-sidemenu) + var(--grid-margin)); */
   position: relative;
 }
-
 
 /* fluid or with sidemenu */
 .page[data-size=fluid] {
@@ -123,21 +121,23 @@
   height: calc(100vh - var(--navbar-height) - var(--space-4) - var(--space-4));
   max-width: var(--width-sidemenu);
   gap: .5rem;
-  padding: var(--space-4) var(--space-3) var(--space-4) 0;
+  padding: var(--space-4) var(--space-3) var(--space-4) calc(var(--grid-margin));
+  background: var(--color-background);
+
   /* 스크롤 ㄷ할 때 navbar와 충돌 */
-  /* background: var(--color-background); */
+  background: var(--color-background);
   scrollbar-gutter: stable;
   transition: transform var(--duration-slowly) cubic-bezier(.165,.84,.44,1);
   transform: translateX(-120%);
   position: fixed;
-  left: 50%;
+  /* left: 50%;
   width: var(--width-sidemenu);
-  height: 100%;
+  height: 100%; */
 
   overflow-y: auto;
 
   /* 1200px 전체 중앙 정렬 안에서 왼쪽에 붙이기 */
-  transform: translateX(calc(-1 * var(--layout-width-wide) / 2));
+  /* transform: translateX(calc(-1 * var(--layout-width-wide) / 2)); */
   z-index: var(--zindex-menu);
 
   &::-webkit-scrollbar {width:.5rem;height:auto;padding:.125rem;opacity:0;}
@@ -196,13 +196,13 @@
 }
 
 
-/* .is-menu-opened .sidebar-menu {
+.is-menu-opened .sidebar-menu {
   transform:translateX(0);overflow-y:auto;
   overscroll-behavior:contain;
-} */
+}
 .is-menu-opened .page,
 .is-menu-opened .footer {
-  /* padding-left:calc(var(--width-sidemenu) + var(--grid-margin) + var(--grid-margin) + 1rem); */
+  padding-left:calc(var(--width-sidemenu) + var(--grid-margin) + var(--grid-margin) + 1rem);
   /* transform: translateX(calc(var(--grid-margin) + var(--width-sidemenu))); */
 }
 

@@ -21,11 +21,23 @@
         <mm-button variant="primary"> 추가하기 </mm-button>
       </mm-group>
     </header>
-    <mm-group variant="chip">
+
+    <div style="width: 320px">
+      <button-list-component
+        id="button-list"
+        options='[
+            {"label": "All", "value": "apple"},
+            {"label": "Draft", "value": "banana"},
+            {"label": "Cherry", "value": "cherry"}
+          ]'
+      ></button-list-component>
+    </div>
+
+    <!-- <mm-group variant="chip">
       <mm-button status="active">All</mm-button>
       <mm-button>Active</mm-button>
       <mm-button>Draft</mm-button>
-    </mm-group>
+    </mm-group> -->
 
     <menu
       role="menubar"
@@ -49,15 +61,15 @@
             <mm-checkbox></mm-checkbox>
           </th>
           <th scope="col" aria-sort="none" style="width: 15%">
-            <div style="display: flex; align-items: center; gap: var(--space-2)">
+            <div style="display: flex; align-items: center; gap: var(--space-)">
               Name
               <mm-icon name="arrow-separate-vertical" size="small"></mm-icon>
             </div>
           </th>
           <th scope="col" aria-sort="none" style="width: calc(65% - 80px)">Title</th>
-          <th scope="col" aria-sort="none">Link</th>
+          <th scope="col" aria-sort="none" style="width: 128px">Link</th>
           <th scope="col" aria-sort="none" style="width: auto">Status</th>
-          <th scope="col" aria-sort="none" style="width: 10%; text-align: right">Age</th>
+          <th scope="col" aria-sort="none" style="width: 8%; text-align: right">Age</th>
           <th scope="col" aria-sort="none" style="width: 140px">
             <span hidden>visually hidden</span>
           </th>
@@ -127,7 +139,7 @@
         <td>
           <mm-group variant="chip" style="justify-content: flex-end">
             <mm-button>액션</mm-button>
-            <mm-icon-button icon="more-vert"></mm-icon-button>
+            <mm-icon-button variant="navigator" icon="more-vert"></mm-icon-button>
           </mm-group>
         </td>
       </tr>
