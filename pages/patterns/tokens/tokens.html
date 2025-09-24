@@ -14,14 +14,6 @@
       margin-top: 8rem;
     }
   </style>
-  <div>
-    <p>TODO color-text라고 하는 경우 border, icon 등</p>
-    <p>opacity.state.hover 4% opacity.state.focus 4% opacity.state.press 8% opacity.state.active</p>
-    <mm-text variant="body">
-      foreground. primary/secondary. 지금 light로 쓰는 것 보다 이렇게 변경하기.
-    </mm-text>
-    <mm-text variant="body"> strong: 강도나 무게, 농도/subtle: 감정, 표현, 인상 </mm-text>
-  </div>
   <section>
     <mm-text-group>
       <mm-text variant="title">Color</mm-text>
@@ -219,8 +211,11 @@
   </section>
 
   <section>
-    <mm-text variant="subhead">Shapes - Radius & Elevations</mm-text>
-    <mm-text variant="body">radius.formInput/photoSmall</mm-text>
+    <mm-title-with-description
+      level="1"
+      title="Shapes - Radius & Elevations"
+      description="radius.formInput/photoSmall"
+    ></mm-title-with-description>
     <div class="token-group">
       <article class="token-item is-gray000">
         <figure></figure>
@@ -243,9 +238,11 @@
   </section>
 
   <section>
-    <mm-text-group>
-      <mm-text variant="subhead">Border</mm-text>
-    </mm-text-group>
+    <mm-title-with-description
+      level="1"
+      title="Border"
+      description="내용 없음."
+    ></mm-title-with-description>
     <div class="token-group">
       <div class="token-item">
         <b>--border-width: 1px</b>
@@ -260,12 +257,11 @@
   </section>
 
   <section>
-    <mm-text-group>
-      <mm-text variant="title">Space</mm-text>
-      <mm-text variant="body-large">
-        요소 사이의 간격. 현재 섹션 레벨의 간격은 정의하고 있지 않음.
-      </mm-text>
-    </mm-text-group>
+    <mm-title-with-description
+      level="1"
+      title="Space"
+      description="요소 사이의 간격. 현재 섹션 레벨의 간격은 정의하고 있지 않음."
+    ></mm-title-with-description>
     <section class="token-group">
       <div class="token-item">
         <!-- <figure style="width: 100%; height: var(--space-05); border-radius: 0"></figure> -->
@@ -302,15 +298,14 @@
   </section>
 
   <section>
-    <mm-text-group>
-      <mm-text variant="title">Text</mm-text>
-      <mm-text variant="body-large"> 활자의 위계와 배치. 정보 계층. </mm-text>
-      <p>
-        피그마에서 140% line-height를 주면 소숫점 반올림을 해서 표현해줌. 그런데 브라우저는 소수점
+    <mm-title-with-description
+      level="1"
+      title="Text"
+      description="활자의 위계와 배치. 정보 계층. 피그마에서 140% line-height를 주면 소숫점 반올림을 해서 표현해줌. 그런데 브라우저는 소수점
         그대로 표현하기 때문에 안 맞는다. TODO. 고정값으로 표현. 기본 폰트에 따라 가변적인
-        line-height는 토큰화 어렵다.
-      </p>
-    </mm-text-group>
+        line-height는 토큰화 어렵다."
+    ></mm-title-with-description>
+
     <button
       class="js-default-font"
       style="display: flex; align-items: center; gap: var(--space-2); margin: var(--space-3) 0"
@@ -371,13 +366,11 @@
   </section>
 
   <section>
-    <mm-text-group>
-      <mm-text variant="title">Layouts - Width</mm-text>
-      <mm-text variant="body-large">모든 container는 --small부터 max-width를 100%.</mm-text>
-      <mm-text variant="body-large">
-        TODO breakpoint.medium. breakpoint.android.compact/expanded
-      </mm-text>
-    </mm-text-group>
+    <mm-title-with-description
+      level="1"
+      title="Layouts - Width"
+      description="모든 container는 --small부터 max-width를 100%. TODO breakpoint.medium. breakpoint.android.compact/expanded"
+    ></mm-title-with-description>
 
     <section class="browserWindow_my1Q" style="width: 480px; margin: 2rem 0">
       <header class="browserWindowHeader_jXSR">
@@ -518,88 +511,79 @@
   </section>
 
   <section>
-    <mm-text-group>
-      <mm-text variant="title">Animation</mm-text>
-      <mm-text variant="body-large">
-        콘텐츠보다 액션이 강조되지 않도록 뷰포트 내에서 delay를 최대 3개로 제한합니다. inactive로
-        변경될 때(닫기 등) 즉시(instantly) 실행합니다.
-      </mm-text>
-    </mm-text-group>
-
+    <mm-title-with-description
+      level="1"
+      title="Animation"
+      description="콘텐츠보다 액션이 강조되지 않도록 뷰포트 내에서 delay를 최대 3개로 제한합니다. inactive로
+        변경될 때(닫기 등) 즉시(instantly) 실행합니다."
+    ></mm-title-with-description>
     <div class="token-group">
       <div class="token-item">
         <figure class="animation-fadeup"></figure>
-        <mm-keyvalue alignment="column" key="--animation-delay-first:" value="0s"></mm-keyvalue>
+        <b>--animation-delay-first: 0s</b>
       </div>
       <div class="token-item">
         <figure class="animation-fadeup delay-second"></figure>
-        <mm-keyvalue alignment="column" key="--animation-delay-second:" value=".2s"></mm-keyvalue>
+        <b>--animation-delay-second: .2s</b>
       </div>
       <div class="token-item">
         <figure class="animation-fadeup delay-third"></figure>
-        <mm-keyvalue alignment="column" key="--animation-delay-third:" value=".4s"></mm-keyvalue>
+        <b>--animation-delay-third: .4s</b>
       </div>
     </div>
-
+    <mm-separator></mm-separator>
     <div class="token-group">
       <div class="token-item">
-        <mm-keyvalue
-          alignment="column"
-          key="--animation-timing-function:"
-          value="cubic-bezier(0.455, 0.03, 0.515, 0.955)"
-        ></mm-keyvalue>
+        <mm-keyvalue alignment="column" key="" value=""></mm-keyvalue>
+        <b>--animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955)</b>
       </div>
     </div>
-
+    <mm-separator></mm-separator>
     <div class="token-group">
       <div class="token-item">
         <figure class="animation-fadeup"></figure>
-        <mm-keyvalue alignment="column" key="--animation-duration:" value=".4s"></mm-keyvalue>
+        <b>--animation-duration: .4s</b>
       </div>
       <div class="token-item">
         <figure class="animation-fadeup delay-second"></figure>
-        <mm-keyvalue
-          alignment="column"
-          key="--animation-duration-quick/quickly:"
-          value=".2s"
-        ></mm-keyvalue>
+        <b>--animation-duration-quick/quickly: .2s</b>
       </div>
       <div class="token-item">
         <figure class="animation-fadeup delay-third"></figure>
-        <mm-keyvalue alignment="column" key="--animation-duration-slow:" value=".8s"></mm-keyvalue>
+        <b>--animation-duration-slow: .8s</b>
       </div>
       <div class="token-item">
         <figure class="animation-fadeup delay-third"></figure>
-        <mm-keyvalue alignment="column" key="--animation-duration-instant:" value="0"></mm-keyvalue>
+        <b>--animation-duration-instant: 0</b>
       </div>
     </div>
-
-    <mm-tile><mm-text variant="label-strong">Keyframes (utility)</mm-text></mm-tile>
+    <mm-separator></mm-separator>
     <div class="token-group">
       <div class="token-item">
         <figure class="animation-fadeup"></figure>
-        <mm-keyvalue alignment="column" key="@keyframes fadeup" value=""></mm-keyvalue>
+        <b>@keyframes fadeup</b>
       </div>
       <div class="token-item">
         <figure class="animation-rotation"></figure>
-        <mm-keyvalue alignment="column" key="@keyframes rotation" value=""></mm-keyvalue>
+        <b>@keyframes rotation</b>
       </div>
       <div class="token-item">
         <figure class="animation-marquee"></figure>
-        <mm-keyvalue alignment="column" key="@keyframes marquee" value=""></mm-keyvalue>
+        <b>@keyframes marquee</b>
       </div>
       <div class="token-item">
         <figure></figure>
-        <mm-keyvalue alignment="column" key="@keyframes pop" value=""></mm-keyvalue>
+        <b>@keyframes pop</b>
       </div>
     </div>
   </section>
 
   <section>
-    <mm-text-group>
-      <mm-text variant="title">Z-index</mm-text>
-      <p>한 자릿수로 사용하면 서드 파티 라이브러리를 사용할 때 문제</p>
-    </mm-text-group>
+    <mm-title-with-description
+      level="1"
+      title="Z-index"
+      description="한 자릿수로 사용하면 서드 파티 라이브러리를 사용할 때 문제"
+    ></mm-title-with-description>
     <div class="token-group">
       <div class="token-item">
         <b>--zindex-deepdive: -1</b>
@@ -689,6 +673,16 @@
           대응이 간편해짐.
         </del>
       </li>
+      <div>
+        <p>TODO color-text라고 하는 경우 border, icon 등</p>
+        <p>
+          opacity.state.hover 4% opacity.state.focus 4% opacity.state.press 8% opacity.state.active
+        </p>
+        <mm-text variant="body">
+          foreground. primary/secondary. 지금 light로 쓰는 것 보다 이렇게 변경하기.
+        </mm-text>
+        <mm-text variant="body"> strong: 강도나 무게, 농도/subtle: 감정, 표현, 인상 </mm-text>
+      </div>
     </ul>
   </mm-text-group>
 </main>

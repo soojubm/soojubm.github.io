@@ -19,22 +19,18 @@ class Feature extends HTMLElement {
     avatar.classList.add('feature-item-avatar')
     avatar.appendChild(icon)
 
-    const heading = document.createElement('mm-text')
-    heading.setAttribute('variant', 'subhead')
-    heading.innerText = this.titleText || ''
-    heading.classList.add('feature-item-title')
+    const titleWithDescription = document.createElement('mm-title-with-description')
+    titleWithDescription.setAttribute('level', '2')
+    titleWithDescription.setAttribute('title', this.titleText || '')
+    titleWithDescription.setAttribute('description', this.description || '')
+    titleWithDescription.classList.add('feature-item-header')
 
     // const subtitle = document.createElement('sup')
     // subtitle.innerText = this.subtitle || ''
 
-    const description = document.createElement('mm-text')
-    description.setAttribute('variant', 'body')
-    description.innerText = this.description || ''
-    description.classList.add('feature-item-description')
-
     shadow.appendChild(container)
 
-    container.append(avatar, heading, description, makeStyleSheet('feature'))
+    container.append(avatar, titleWithDescription, makeStyleSheet('feature'))
     container.append(...this.childNodes)
   }
 
