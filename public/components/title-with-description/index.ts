@@ -18,6 +18,16 @@ class TitleWithDescription extends HTMLElement {
       description: 'body',
       gap: 'var(--space-1)',
     },
+    '2-narrow': {
+      title: 'subhead',
+      description: 'body',
+      gap: 'var(--space-0)',
+    },
+    '3': {
+      title: 'label-strong',
+      description: 'body',
+      gap: 0,
+    },
   }
 
   constructor() {
@@ -48,7 +58,7 @@ class TitleWithDescription extends HTMLElement {
       :host > div {
         display: flex;
         flex-direction: column;
-        gap: ${variant?.gap || '12px'};
+        gap: ${variant?.gap ?? '12px'};
       }
     `
     shadowRoot!.append(style)

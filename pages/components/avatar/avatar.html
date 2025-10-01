@@ -2,22 +2,9 @@
   <mm-title-with-description
     title="Avatar"
     description="사용자나 회사 등 개체를 대표하는 시각 정보입니다. 정보 더미의 주체로서 인접한 정보
-  더미 중 최상위 위계(시각적인 위계가 아님)를 갖습니다."
+  더미 중 최상위 위계를 갖습니다."
   ></mm-title-with-description>
-  <!-- <header class="" style="display: flex">
-    <div style="width: 348px">
-      <mm-text variant="title">
-        <span style="color: var(--color-text-light)"></span>
-      </mm-text>
-      <mm-text variant="title"> Avatar </mm-text>
-    </div>
-    <div style="width: 50%">
-      <mm-text variant="body-large">
-        사용자나 회사 등 개체를 대표하는 시각 정보입니다. 정보 더미의 주체로서 인접한 정보 더미 중
-        최상위 위계(시각적인 위계가 아님)를 갖습니다.
-      </mm-text>
-    </div>
-  </header> -->
+
   <section class="component-example">
     <mm-group variant="">
       <mm-avatar size="huge" default="true" badge="true" badge></mm-avatar>
@@ -59,9 +46,10 @@
       texts='[
       "foundations :: 아웃라인 아바타는 클릭할 수 없다.",
       "fallback :: icon-noir name=people-tag",
-      "variant. user, company 등 두 가지 이상의 아바타 유형이 필요할 때 radius token의 값을 변경하여 구분한다.",
       "UserAvatar name={} description={string | React.ReactNode} avatarProps={} / CompanyAvatar name={}",
-      "medium, small 사이즈는 최대 한 줄의 텍스트만 가질 수 있다. 즉, TextPair와 사용할 수 없다. 디스크립션이 필요하면 large, huge 사이즈를 사용한다.",
+      "Abstract추상 레벨(패턴 또는 파운데이션) →Semantic시멘틱 레벨(도메인 최적화) → Concrete구체 레벨(맥락화, Implementation)",
+      "구체 레벨 :: user, company 등 두 가지 이상의 아바타 유형이 필요할 때 radius token의 값을 변경하여 구분한다.",
+      "EntityItem :: medium, small 사이즈는 최대 한 줄의 텍스트만 가질 수 있다. 즉, TextPair와 사용할 수 없다. 디스크립션이 필요하면 large, huge 사이즈를 사용한다.",
       "AvatarGroup. maximum avatar length 3"
     ]'
     ></mm-text-list>
@@ -89,12 +77,16 @@
       )
     </script>
 
+    <mm-text variant="subhead">추상 레벨 EntityItem</mm-text>
     <mm-tile>
       <div style="display: flex; gap: var(--space-3)">
         <mm-avatar size="huge" src="/public/images/springsteen.jpg"> </mm-avatar>
         <div>
-          <mm-text variant="subhead">제목의 영역</mm-text>
-          <mm-text variant="body">Facebook 안팎의 모든 사람</mm-text>
+          <mm-title-with-description
+            level="2-narrow"
+            title="제목의 영역"
+            description="Facebook 안팎의 모든 사람"
+          ></mm-title-with-description>
           <mm-group variant="chip">
             <mm-tag variant="hashtag">React</mm-tag>
             <mm-tag variant="hashtag">Java</mm-tag>

@@ -11,8 +11,24 @@ class Link extends HTMLElement {
     container.target = this.target || '_blank'
     container.dataset.variant = this.variant || 'primary'
 
+    const icon = document.createElement('mm-icon')
+    icon.setAttribute('name', 'arrow-up-right')
+    icon.setAttribute('size', 'small')
+    // TODO 위에서 생성
+
+    if (this.isExternal) {
+      container.setAttribute('rel', 'noopener noreferrer')
+      const srOnly = document.createElement('span')
+      srOnly.hidden = true // 임시
+      srOnly.classList.add('sr-only')
+      srOnly.textContent = '(새 창에서 열림)'
+      container.appendChild(srOnly)
+      // container.appendChild(icon)
+    }
+
     shadow.appendChild(container)
     container.append(...this.childNodes, makeStyleSheet('link'))
+    if (this.isExternal) container.appendChild(icon)
   }
 
   get href() {
@@ -23,6 +39,9 @@ class Link extends HTMLElement {
   }
   get variant() {
     return this.getAttribute('variant')
+  }
+  get isExternal() {
+    return this.getAttribute('isExternal') === 'true'
   }
 
   connectedCallback() {}

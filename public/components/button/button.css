@@ -100,7 +100,10 @@ em, i  {
   /* 버튼과 아이콘 버튼의 상태 동일 */
   /* TODO pending */
   &:hover {
-    box-shadow: var(--status-hover);
+    /* box-shadow: var(--status-hover); */
+    /* TODO */
+    /* 통일 */
+    border-color: var(--color-background-strong);
   }
   &:focus {
     outline: 3px solid #007185;
@@ -212,7 +215,9 @@ em, i  {
   /* pointer-events: none; */
 }
 .button:not(:disabled):hover {
-  box-shadow: var(--status-hover);
+  /* box-shadow: var(--status-hover); */
+  border-color: var(--color-background-strong);
+
 }
 .button:not(:disabled):focus {
   outline: 3px solid #007185;

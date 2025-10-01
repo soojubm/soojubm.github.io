@@ -130,19 +130,23 @@
       <br />
       <div class="class-why-item">
         <figure class="feature-item-avatar" role="img" aria-label="" style="margin: 0">🌏</figure>
-        <h3>세상을 이해하려면, 경제는 필수니까</h3>
-        <p>
-          하지만 학교, 학원, 부모님도 제대로 안 알려준 그것. 경제를 안다는 건 우리 사회가 어떻게
-          굴러가는지 이해하고 해석하기 위해 꼭 필요한 첫걸음이죠.
-        </p>
+        <mm-title-with-description
+          level="2"
+          title="세상을 이해하려면, 경제는 필수니까"
+          description="하지만 학교,
+          학원, 부모님도 제대로 안 알려준 그것. 경제를 안다는 건 우리 사회가 어떻게 굴러가는지
+          이해하고 해석하기 위해 꼭 필요한 첫걸음이죠."
+        ></mm-title-with-description>
       </div>
+      <div style="height: var(--space-2)"></div>
       <div class="class-why-item">
         <figure class="feature-item-avatar" role="img" aria-label="" style="margin: 0">💰</figure>
-        <h3>10년 후에도 내 지갑이 귀여울 순 없어</h3>
-        <p>
-          뉴닉과 함께 경제의 기초 체력을 쌓아두면, 분명 뉴닉 기사와 신문이 다르게 읽힐 거고요. 다른
-          세상이 열리면, 저금만 하던 나의 경제 생활과 선택도 한층 달라질 겁니다.
-        </p>
+        <mm-title-with-description
+          level="2"
+          title="돈을 다루려면, 경제는 필수니까"
+          description="돈을 모으고, 불리고, 지키는 모든 과정에서 경제를 이해하는 건 필수입니다. 경제를
+          알아야 돈이 어떻게 움직이는지, 내가 어떤 선택을 해야 하는지 알 수 있죠."
+        ></mm-title-with-description>
       </div>
     </mm-text-group>
   </section>
@@ -187,30 +191,45 @@
       >
     </mm-text-group>
     <br /><br />
-    <div style="display: flex; justify-content: space-evenly; gap: 2rem">
-      <div>
-        <span class="feature-item-avatar" role="img" aria-label="">😱</span>
-        <h3>"남들은 재테크 한다는데 나는 금리도 몰라!"</h3>
-        <p>부동산, 주식 등에 도전하기 전, 기본적인 용어들과 전체 경제의 흐름을 이해할 수 있어요.</p>
-      </div>
-      <div>
-        <span class="feature-item-avatar" role="img" aria-label="">🤑</span>
-        <h3>"전문 용어로 빼곡한 경제 뉴스, 영자신문보다 어려워!"</h3>
-        <p>기준금리, CPI, 관세가 어쩌구... 뉴닉은 다 쉽게 풀어낼 수 있습니다. 뉴닉이니까요.</p>
-      </div>
-      <div>
-        <span class="feature-item-avatar" role="img" aria-label="">😵</span>
-        <h3>"경제 개론서를 사봤지만 첫 챕터에서 늘 덮게 돼!"</h3>
-        <p>이미 경제 공부를 혼자 도전했지만 어렵고 지루했다면 고슴이 생존기가 정답!</p>
-      </div>
+    <div
+      style="
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-evenly;
+        gap: 2rem;
+      "
+    >
+      <mm-feature
+        icon="😱"
+        titleText="남들은 재테크 한다는데 나는 금리도 몰라!"
+        description="부동산, 주식 등에 도전하기 전, 기본적인 용어들과 전체 경제의 흐름을 이해할 수 있어요."
+      ></mm-feature>
+      <mm-feature
+        icon="🤑"
+        titleText="전문 용어로 빼곡한 경제 뉴스, 영자신문보다 어려워!"
+        description="기준금리, CPI, 관세가 어쩌구... 뉴닉은 다 쉽게 풀어낼 수 있습니다. 뉴닉이니까요."
+      ></mm-feature>
+      <mm-feature
+        icon="😵"
+        titleText="경제 개론서를 사봤지만 첫 챕터에서 늘 덮게 돼!"
+        description="이미 경제 공부를 혼자 도전했지만 어렵고 지루했다면 고슴이 생존기가 정답!"
+      ></mm-feature>
     </div>
-    <mm-text variant="body">그리고 또...</mm-text>
-    <ul>
-      <li>경제 기본기가 아예 없는 사람</li>
-      <li>경제 막 공부 시작했는데, 누가 전체적인 그림 한 번 싹 알려주면 좋겠다고 생각한 사람</li>
-      <li>주변 사람들 주식하고 부동산 한다는데, 적금길만 걸어온 사람</li>
-      <li>고슴이의 생존스토리 궁금한 사람</li>
-    </ul>
+    <div style="max-width: 1200px; margin: 2rem auto 0">
+      <mm-tile>
+        <mm-text variant="subhead">그리고 또...</mm-text>
+        <div style="height: var(--space-2)"></div>
+        <ul>
+          <li>경제 기본기가 아예 없는 사람</li>
+          <li>
+            경제 막 공부 시작했는데, 누가 전체적인 그림 한 번 싹 알려주면 좋겠다고 생각한 사람
+          </li>
+          <li>주변 사람들 주식하고 부동산 한다는데, 적금길만 걸어온 사람</li>
+          <li>고슴이의 생존스토리 궁금한 사람</li>
+        </ul>
+      </mm-tile>
+    </div>
   </section>
 
   <section class="class-curriculum">

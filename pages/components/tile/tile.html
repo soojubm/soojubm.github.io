@@ -23,22 +23,42 @@
   <section class="component-example">
     <mm-group>
       <mm-tile variant="flat">
-        <mm-text variant="subhead">flat variant</mm-text>
+        <mm-title-with-description
+          level="2"
+          title="flat"
+          description="단순 구획을 표현하기 때문에 클릭할 수 없는 카드에 사용합니다."
+        ></mm-title-with-description>
       </mm-tile>
       <mm-tile variant="tinted">
-        <mm-text variant="subhead">tinted variant</mm-text>
+        <mm-title-with-description
+          level="2"
+          title="tinted"
+          description="배경색이 추가되어 강조된 카드에 사용합니다."
+        ></mm-title-with-description>
       </mm-tile>
       <mm-tile variant="elevated">
-        <mm-text variant="subhead">elevated variant</mm-text>
+        <mm-title-with-description
+          level="2"
+          title="elevated"
+          description="클릭할 수 있음을 나타내는 카드에 사용합니다."
+        ></mm-title-with-description>
       </mm-tile>
     </mm-group>
     <mm-separator></mm-separator>
     <mm-group>
       <mm-tile variant="elevated" size="small">
-        <mm-text variant="body">small size</mm-text>
+        <mm-title-with-description
+          level="3"
+          title="small"
+          description="스몰 사이즈"
+        ></mm-title-with-description>
       </mm-tile>
       <mm-tile variant="elevated" size="medium">
-        <mm-text variant="body">medium size</mm-text>
+        <mm-title-with-description
+          level="2"
+          title="medium (size default)"
+          description="미디엄 사이즈"
+        ></mm-title-with-description>
       </mm-tile>
     </mm-group>
   </section>
@@ -162,6 +182,7 @@
         요금제 변경하기
       </button>
     </header>
+
     <mm-tile>
       <div
         style="

@@ -76,6 +76,14 @@ ul {
   line-height:var(--font-line-height);
   color:var(--color-text);
 }
+
+.text[data-variant=heading2] {
+  font-size: 24px;
+  font-weight:var(--font-weight-bold);
+  line-height:var(--font-line-height);
+  color:var(--color-text);
+}
+
 .text[data-variant=subhead] {
   /* // 단독으로 쓰이지 않음 */
   /* TODO 단독으로 쓰일 때 아바타의 이름 */

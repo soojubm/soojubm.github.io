@@ -59,7 +59,6 @@ const components = [
   'avatar',
 
   'button',
-  'buttonGroup',
   'iconButton',
   'link',
 

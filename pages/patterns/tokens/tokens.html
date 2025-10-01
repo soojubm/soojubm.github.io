@@ -1,4 +1,12 @@
 <main class="page">
+  <mm-title-with-description
+    level="1"
+    title="Tokens"
+    description="디자인 시스템의 기본 구성 요소입니다. 토큰은 색상, 타이포그래피, 간격, 크기, 모양 및 기타 스타일 속성을 포함하여 제품의 시각적 및 기능적 특성을 정의합니다. 디자인 토큰을 사용하면 일관된 디자인 언어를 유지하고, 다양한 플랫폼과 장치에서 동일한 사용자 경험을 제공하며, 디자인과 개발 간의 협업을 촉진할 수 있습니다."
+  >
+  </mm-title-with-description>
+
+  <br /><br />
   <style>
     /* .token-group {
       gap: 0;
@@ -10,22 +18,16 @@
       margin: -1px;
       border-radius: 0;
     } */
-    section + section {
-      margin-top: 8rem;
-    }
   </style>
-  <section>
-    <mm-text-group>
-      <mm-text variant="title">Color</mm-text>
-      <mm-text variant="body"> primary color = primary interactions, reinforce brand </mm-text>
-      <mm-text variant="body">
-        The use of color in an experience helps define communication, meaning, brand, and roles,
+  <section class="component-temp">
+    <mm-title-with-description
+      level="2"
+      title="Color"
+      description="색상은 기본 상호작용을 나타내고 브랜드를 강화합니다. (primary interactions, reinforce brand) The use of color in an experience helps define communication, meaning, brand, and roles,
         making it easier for users to interact, search, and differentiate elements. For additional
-        guidance, refer to the component-specific guidelines.
-      </mm-text>
-    </mm-text-group>
-    <br /><br />
-
+        guidance, refer to the component-specific guidelines."
+    ></mm-title-with-description>
+    <br />
     <mm-text-group>
       <mm-text variant="label-strong">Primitives</mm-text>
     </mm-text-group>
@@ -137,11 +139,11 @@
 
     <mm-text variant="label-strong">Text</mm-text>
     <div class="token-group">
-      <article class="token-item" style="border: 0; background: var(--gray100)">
-        <b>--color-text-weak: var(--gray100);</b>
+      <article class="token-item" style="border: 0; background: var(--gray400)">
+        <b>--color-text-light: var(--gray400);</b>
       </article>
       <article class="token-item" style="border: 0; background: var(--gray800)">
-        <b style="color: #fff">--color-text-strong: var(--gray800)</b>
+        <b style="color: #fff">--color-text: var(--gray800)</b>
       </article>
     </div>
 
@@ -157,13 +159,12 @@
     </article>
   </section>
 
-  <section>
-    <mm-text-group>
-      <mm-text variant="title">Size</mm-text>
-      <mm-text variant="body-large">
-        요소의 너비와 높이입니다. 뷰포트의 크기가 변경되어도 사이즈 토큰은 변하지 않습니다.
-      </mm-text>
-    </mm-text-group>
+  <section class="component-temp">
+    <mm-title-with-description
+      level="2"
+      title="Size"
+      description="요소의 너비와 높이입니다. 뷰포트의 크기가 변경되어도 사이즈 토큰은 변하지 않습니다."
+    ></mm-title-with-description>
     <section class="token-group">
       <div class="token-item">
         <figure style="width: var(--size-huge); height: var(--size-huge)"></figure>
@@ -210,9 +211,9 @@
     </div>
   </section>
 
-  <section>
+  <section class="component-temp">
     <mm-title-with-description
-      level="1"
+      level="2"
       title="Shapes - Radius & Elevations"
       description="radius.formInput/photoSmall"
     ></mm-title-with-description>
@@ -237,9 +238,9 @@
     </div>
   </section>
 
-  <section>
+  <section class="component-temp">
     <mm-title-with-description
-      level="1"
+      level="2"
       title="Border"
       description="내용 없음."
     ></mm-title-with-description>
@@ -256,9 +257,9 @@
     </div>
   </section>
 
-  <section>
+  <section class="component-temp">
     <mm-title-with-description
-      level="1"
+      level="2"
       title="Space"
       description="요소 사이의 간격. 현재 섹션 레벨의 간격은 정의하고 있지 않음."
     ></mm-title-with-description>
@@ -297,9 +298,9 @@
     </section>
   </section>
 
-  <section>
+  <section class="component-temp">
     <mm-title-with-description
-      level="1"
+      level="2"
       title="Text"
       description="활자의 위계와 배치. 정보 계층. 피그마에서 140% line-height를 주면 소숫점 반올림을 해서 표현해줌. 그런데 브라우저는 소수점
         그대로 표현하기 때문에 안 맞는다. TODO. 고정값으로 표현. 기본 폰트에 따라 가변적인
@@ -365,9 +366,9 @@
     </mm-tile> -->
   </section>
 
-  <section>
+  <section class="component-temp">
     <mm-title-with-description
-      level="1"
+      level="2"
       title="Layouts - Width"
       description="모든 container는 --small부터 max-width를 100%. TODO breakpoint.medium. breakpoint.android.compact/expanded"
     ></mm-title-with-description>
@@ -510,9 +511,9 @@
     </div>
   </section>
 
-  <section>
+  <section class="component-temp">
     <mm-title-with-description
-      level="1"
+      level="2"
       title="Animation"
       description="콘텐츠보다 액션이 강조되지 않도록 뷰포트 내에서 delay를 최대 3개로 제한합니다. inactive로
         변경될 때(닫기 등) 즉시(instantly) 실행합니다."
@@ -578,9 +579,9 @@
     </div>
   </section>
 
-  <section>
+  <section class="component-temp">
     <mm-title-with-description
-      level="1"
+      level="2"
       title="Z-index"
       description="한 자릿수로 사용하면 서드 파티 라이브러리를 사용할 때 문제"
     ></mm-title-with-description>

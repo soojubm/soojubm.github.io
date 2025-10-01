@@ -76,6 +76,14 @@
   </section>
 
   <section class="component-guide">
+    <mm-text-list
+      texts='[
+        "foundation :: 정보 보충",
+        "short text, long form text. MD3 rich tooltip(title, description, actions-link/button) / plain tooltip", "작은 화면에서 바텀 시트나 팝오버로 제공하는 것이 좋다.",
+        "coachmark(arrow tooltip, tourtip, 로딩 시점에 이미 열려 있다.)와 다른 역할. doorhanger/pointing arrow. 좋은 유아이라는 생각은 안 됨. 최대한 지양."
+      ]'
+    ></mm-text-list>
+    <div style="height: var(--space-4)"></div>
     <mm-text-group>
       <mm-feature
         icon="database-script-plus"
@@ -84,29 +92,7 @@
         description="사용자가 반드시 숙지해야 하는 중요한 정보를 툴팁으로 제공하지 마세요. 정보를 보충하여 설명하는 맥락. 아코디언도 마찬가지. 행동을 유도하는 가이드로 사용하지 마세요. 중요한 액션을 요할 때는 cognitive? button이나 text link 등 충분히 강조되고 눈에 띄는 컴포넌트를 사용."
       >
       </mm-feature>
-      <div style="height: 1rem"></div>
-      <mm-feature
-        icon="database-script-plus"
-        titleText="아이콘 버튼, 일반 텍스트 및 단락"
-        subtitle="Easy scanning"
-        description="사용자가 반드시 숙지해야 하는 중요한 정보를 툴팁으로 제공하지 마세요. 정보를 보충하여 설명하는 맥락. 아코디언도 마찬가지. 행동을 유도하는 가이드로 사용하지 마세요. 중요한 액션을 요할 때는 cognitive? button이나 text link 등 충분히 강조되고 눈에 띄는 컴포넌트를 사용."
-      >
       </mm-feature>
-    </mm-text-group>
-
-    <mm-text-group>
-      <mm-text variant="subhead">Meta problems</mm-text>
-      <mm-text variant="body">
-        툴팁의 트리거를 페이지 링크로 사용하지 마세요. 대안. coachmark(arrow tooltip)와 명확한
-        구분이 필요. 페이지 로딩 시점에 열려 있는 인터페이스는 엄밀히 말하면 툴팁은 아님. 새로운
-        컴포넌트로 정의해야 한다. 이 경우 doorhanger/pointing arrow가 필요하며 사용자의 행동을
-        적극적으로 유도하기 위해 사용된다.
-      </mm-text>
-      <mm-text variant="body"> 작은 화면에서 바텀 시트나 팝오버로 제공하는 것이 좋다. </mm-text>
-      <mm-text variant="body">
-        short text, long form text. MD3 rich tooltip(title, description, actions-link/button) /
-        plain tooltip"
-      </mm-text>
     </mm-text-group>
   </section>
 

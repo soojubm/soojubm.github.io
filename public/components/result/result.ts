@@ -13,14 +13,10 @@ class Result extends HTMLElement {
     container.role = 'status'
     container.classList.add('result')
 
-    const title = document.createElement('mm-text')
-    title.setAttribute('variant', 'subhead')
-    title.innerText = this.title
-
-    const description = document.createElement('mm-text')
-    description.classList.add('result-description')
-    description.setAttribute('variant', 'body')
-    description.innerText = this.description
+    const titleWithDescription = document.createElement('mm-title-with-description')
+    titleWithDescription.setAttribute('level', '2')
+    titleWithDescription.setAttribute('title', this.title)
+    titleWithDescription.setAttribute('description', this.description)
 
     const avatar = document.createElement('mm-avatar')
     avatar.setAttribute('size', 'huge')
@@ -32,8 +28,7 @@ class Result extends HTMLElement {
 
     shadow.appendChild(container)
     container.appendChild(avatar)
-    container.appendChild(title)
-    if (this.description) container.appendChild(description)
+    container.appendChild(titleWithDescription)
     container.append(...this.childNodes)
     container.append(makeStyleSheet('result'))
   }
