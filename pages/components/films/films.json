@@ -1,6 +1,15 @@
 [
   {
     "id": 202509,
+    "releasedate": 1956,
+    "titlekorean": "",
+    "titleenglish": "King Rat",
+    "director": "로버트 푸스트",
+    "country": "영국",
+    "etc": ""
+  },
+  {
+    "id": 202509,
     "releasedate": 1971,
     "titlekorean": "혐오스러운 닥터 파이브스",
     "titleenglish": "The Abominable Dr. Phibes",

@@ -5,7 +5,7 @@
 
   position: relative;
   
-  --step-icon-size: var(--size-tiny);
+  --step-icon-size: var(--size-small);
 }
 .step-item {display:block;flex:auto;text-align:center;position:relative;}
 .step:before {content:'';
@@ -17,7 +17,7 @@
   width:var(--step-icon-size);
   height:var(--step-icon-size);
   margin: 0 auto;
-  border-radius: var(--radius);
+  border-radius: 50%;
   background: var(--color-background-weak);
   font-size: 0;
   position: relative;
@@ -25,10 +25,9 @@
 .step-item-label {
   display: block;
   margin: var(--space-1) 0 0;
-  font-size: var(--font-size-small);
-  font-weight: var(--font-weight-normal);
   line-height: var(--step-icon-size);
   color:var(--color-text-light);
+  font-weight: var(--font-weight-bold);
 }
 .step-item-description {margin:var(--space-2) 0 0 1.75rem;}
 

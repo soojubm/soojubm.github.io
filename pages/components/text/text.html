@@ -161,7 +161,8 @@ The font size of a key is never bigger than the value.
   <section class="component-example">
     <div>
       <mm-text variant="title">heading1, page title</mm-text>
-      <mm-text variant="subhead">heading2, section title</mm-text>
+      <mm-text variant="heading2">heading2, 2510 추가</mm-text>
+      <mm-text variant="subhead">subhead, section title</mm-text>
       <mm-separator></mm-separator>
       <mm-text variant="body-large">body large</mm-text>
       <mm-text variant="body">body</mm-text>
@@ -193,27 +194,15 @@ The font size of a key is never bigger than the value.
         부족하다. 버튼 레이블도 그렇게 보일 수 있다. body text는 weight와 line height, color를
         prop으로 받는 게 훨씬 나을 수 있다.
       </mm-text>
-      <mm-text variant="label-strong">
-        Utilities. - Truncated. long-form content. truncate-multiple은 항상 2줄.
-      </mm-text>
-      <p>
-        단독으로 쓰는 텍스트와 항상 함께 쓰이는 텍스트를 구분해야 한다. 일반적으로 subheading,
-        label, caption은 단독으로 쓰지 않는다.
-      </p>
-      <p>heading level="", body size=""</p>
-    </mm-text-group>
-
-    <mm-text-group>
-      <mm-text variant="body">message: 사용자의 관점, description: 시스템이 주체</mm-text>
-      <mm-text
-        >line-height 와 별개로 모든 텍스트는 텍스트를 감싸는 컨테이너로 세로값을 주는 게 좋을 수
-        있다. 디자이너의 의도에 따라 조정이 필요하다.</mm-text
-      >
-      <mm-text variant="body">
-        headingText, bodyText의 lineHeight를 따로 설정할까. 1에 가까운 값(x-height), 기본값,
-        넓은값(large 저용). label이 기본적으로 좁은 line height를 갖는다면 컨터이네가 공간을 갖는
-        역할을 위임 받아야 함. 이 컨테이너는 비어 있을 수도 았고 text stack의 간격을 정의할 수 있다.
-      </mm-text>
+      <mm-text-list
+        texts='[
+        "단독으로 쓰는 텍스트와 항상 함께 쓰이는 텍스트를 구분. 일반적으로 subheading, label, caption은 단독으로 쓰지 않는다.",
+        "heading level=, body size=",
+        "Utilities. - Truncated. long-form content. truncate-multiple은 항상 2줄.",
+        "message: 사용자의 관점, description: 시스템이 주체",
+        "line-height 와 별개로 모든 텍스트는 텍스트를 감싸는 컨테이너로 세로값을 주는 게 좋을 수 있다. 디자이너의 의도에 따라 조정이 필요하다. 피그마에서 소숫점 올려버림. headingText, bodyText의 lineHeight를 따로 설정할까. 1에 가까운 값(x-height), 기본값, 넓은값(large 저용). label이 기본적으로 좁은 line height를 갖는다면 컨터이네가 공간을 갖는 역할을 위임 받아야 함. 이 컨테이너는 비어 있을 수도 았고 text stack의 간격을 정의할 수 있다."
+      ]'
+      ></mm-text-list>
     </mm-text-group>
 
     <!-- 
@@ -223,6 +212,8 @@ The font size of a key is never bigger than the value.
       2507 캡션 제거
       Stat과 Summary의 차이. clickable, non-clickable ?
     -->
+
+    <br />
 
     <mm-text-group>
       <mm-text variant="subhead">타이포그래피 규칙</mm-text>
@@ -268,6 +259,17 @@ The font size of a key is never bigger than the value.
     </mm-text-list>
 
     <mm-text-group>
+      <mm-text variant="subhead">Meta problems</mm-text>
+      <mm-text-list
+        texts='["KeyValue, TextGroup, ContentGroup, TextList, TextStack, TextPair", "Label-Description Pair (라벨-설명 쌍) :: 메타 정보를 보여주는 방식. 그러니까 UI패턴.", "Question-Answer Pair, Translation Pair, Dialogue Pair"]'
+      ></mm-text-list>
+      <mm-text variant="subhead">menuItem. with Avatar.</mm-text>
+      <mm-text-list
+        texts='["예: ProfileKeyValuePair, FeatureLabelWithDescription.", "KeyValuePair :: Key와 Value가 동일한 위계를 갖는다. 리스트 형태이다. alignment/size", "LabelWithDescription :: Label이 강조된다. size?"]'
+      ></mm-text-list>
+    </mm-text-group>
+
+    <mm-text-group>
       <mm-text variant="subhead">용어 정의 및 분류</mm-text>
       <mm-text variant="body">
         제목 heading - title / subtitle / subhead(subheading) / caption (label)
@@ -281,31 +283,87 @@ The font size of a key is never bigger than the value.
     </mm-text-group>
   </section>
 
-  <br /><br />
-
-  <section class="hero">
-    <div class="hero-obj">
-      <div class="hero-obj1"></div>
-      <div class="hero-obj2"></div>
-      <div class="hero-obj3"></div>
-    </div>
-    <mm-text-group variant="title">
-      <mm-text variant="title">히어로 섹션 제목</mm-text>
-      <div style="max-width: 640px">
-        <mm-text variant="body-large">
-          이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에
-          부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은 침묵에 잠겼다.
-        </mm-text>
+  <section class="component-temp">
+    <mm-title-with-description
+      level="2"
+      title="Hero Section"
+      description="A hero section is a large, prominent section at the top of a webpage that typically includes a headline, subheadline, and a call-to-action button."
+    ></mm-title-with-description>
+    <mm-separator></mm-separator>
+    <section class="hero">
+      <!-- <div class="hero-obj">
+        <div class="hero-obj1"></div>
+        <div class="hero-obj2"></div>
+        <div class="hero-obj3"></div>
+      </div> -->
+      <mm-text-group variant="title">
+        <mm-title-with-description
+          level="1"
+          title="Hero Title"
+          description="이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에
+            부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은 침묵에 잠겼다."
+        ></mm-title-with-description>
         <!-- <mm-text variant="body-large" truncated="true">
-          이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에
-          부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은 침묵에 잠겼다.
-        </mm-text> -->
+            이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에
+            부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은 침묵에 잠겼다.
+          </mm-text> -->
+        <div style="height: var(--space-4)"></div>
+        <mm-group variant="button">
+          <mm-button variant="primary" size="large">콜 투 액션</mm-button>
+          <mm-button variant="text" size="large">더 알아보기</mm-button>
+        </mm-group>
+      </mm-text-group>
+    </section>
+  </section>
+
+  <section class="component-temp">
+    <mm-title-with-description
+      level="2"
+      title="Text List"
+      description="순서가 있는 리스트와 순서가 없는 리스트, 그리고 텍스트 리스트 컴포넌트를 제공합니다."
+    ></mm-title-with-description>
+    <br />
+
+    <mm-text-list texts='["mm-text-list 1", "mm-text-list 1"]'> </mm-text-list>
+    <mm-separator></mm-separator>
+    <ul>
+      <li>순서가 없는 리스트</li>
+      <li>순서가 없는 리스트</li>
+    </ul>
+    <mm-separator></mm-separator>
+    <ol>
+      <li>순서가 있는 리스트</li>
+      <li>순서가 있는 리스트</li>
+    </ol>
+  </section>
+
+  <section class="component-temp">
+    <mm-keyvalue key="keyvalue key text" value="keyvalue value text"></mm-keyvalue>
+    <mm-separator></mm-separator>
+    <mm-text-pair
+      labelText="textpair label text"
+      descriptionText="textpair description text"
+    ></mm-text-pair>
+    <mm-separator></mm-separator>
+    <mm-group style="gap: 2rem">
+      <div>
+        <mm-text variant="label">사이즈</mm-text>
+        <mm-text variant="subhead">보통</mm-text>
       </div>
-      <footer class="hero-actions" style="margin: 1.5rem 0 0">
-        <mm-button variant="primary" size="large">콜 투 액션</mm-button>
-        <mm-button variant="text" size="large">더 알아보기</mm-button>
-      </footer>
-    </mm-text-group>
+      <div>
+        <mm-text variant="label">한글</mm-text>
+        <mm-text variant="subhead">작은 거 필요하나</mm-text>
+      </div>
+      <mm-keyvalue size="large" alignment="column" key="Move" value="562 kcal"> </mm-keyvalue>
+    </mm-group>
+    <mm-separator></mm-separator>
+    <div class="product-info-price" role="suggestion">
+      <del class="product-info-price-deletion" role="deletion">₩ 30,000</del>
+      <b class="product-info-price-insertion" role="insertion">₩ 20,000</b>
+      <em class="product-info-price-percentage">(30%)</em>
+    </div>
+
+    <div class="js-counter" data-number="234">234</div>
   </section>
 
   <!-- 사이트맵 / 메가메뉴 -->

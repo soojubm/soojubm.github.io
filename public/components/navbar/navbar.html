@@ -77,7 +77,7 @@
     </div>
   </div>
 </nav>
-<div class="navbar-backdrop" hidden></div>
+<div class="navbar-backdrop"></div>
 
 <nav class="sidebar-menu">
   <mm-group alignment="vertical">
@@ -101,7 +101,6 @@
     <menu id="" aria-labelledby="">
       <a href="avatar.html">avatar </a>
       <a href="text.html"> text </a>
-      <a href="textPair.html"> TextPair </a>
       <a href="tag.html"> tag </a>
       <a href="tile.html"> tile </a>
       <a href="separator.html"> separator </a>
@@ -118,7 +117,7 @@
       <a href="iconButton.html"> icon Button </a>
       <a href="menuitem.html">menuItem</a>
       <a href="link.html"> link </a>
-      <a href="tab.html"> tab </a>
+      <a href="tab.html"> tabs </a>
     </menu>
   </div>
   <div>
@@ -140,21 +139,30 @@
   </div>
   <div>
     <button aria-haspopup="menu" aria-controls="" class="is-open">
+      <mm-avatar slot="avatar" variant="tertiary" icon="reply-to-message"> </mm-avatar>
+      <mm-text variant="body">Feedbacks</mm-text>
+      <div style="margin-left: auto"><mm-icon name="nav-arrow-down"></mm-icon></div>
+    </button>
+    <menu id="" aria-labelledby="">
+      <a href="dialog.html">dialog</a>
+      <a href="result.html">result</a>
+    </menu>
+  </div>
+  <div>
+    <button aria-haspopup="menu" aria-controls="" class="is-open">
       <mm-avatar slot="avatar" variant="tertiary" icon="building"> </mm-avatar>
       <mm-text variant="body">Components</mm-text>
       <div style="margin-left: auto"><mm-icon name="nav-arrow-down"></mm-icon></div>
     </button>
     <!-- <mm-menuitem label="컴포넌트">
-        <mm-avatar slot="avatar" variant="tertiary" size="medium" icon="building"> </mm-avatar>
-      </mm-menuitem> -->
+      <mm-avatar slot="avatar" variant="tertiary" size="medium" icon="building"> </mm-avatar>
+    </mm-menuitem> -->
     <menu id="" aria-labelledby="">
       <a href="breadcrumb.html"> breadcrumb </a>
       <a href="tooltip.html"> tooltip </a>
       <a href="callout.html"> callout </a>
       <a href="bar.html">bars?</a>
-      <a href="dialog.html">dialog</a>
       <a href="table.html">table 🚧</a>
-      <a href="result.html">result</a>
       <!-- <a href="step.html">step</a> -->
     </menu>
   </div>

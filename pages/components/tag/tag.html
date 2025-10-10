@@ -1,19 +1,10 @@
 <main class="page">
-  <!-- <mm-group>
-    <mm-avatar icon="database-script-plus" size="medium"></mm-avatar>
-    <mm-avatar icon="database-script-plus" size="medium"></mm-avatar>
-  </mm-group> -->
-
-  <div style="height: var(--space-2)"></div>
   <mm-title-with-description
-    title="Tags"
+    title="Tag"
     description="인접 요소나 부모 요소를 부연하는 시각 정보입니다. 상태, 카테고리, 키워드로 강조된 시각 정보는
     사용자가 복잡한 정보 더미에서 중요한 정보를 우선적으로 파악하도록 돕습니다."
   ></mm-title-with-description>
-  <!-- <mm-text variant="body-large">
-      post 페이지에서 태그와 컴포넌트에서의 태그. hashtag는 tag 컴포넌트와 역할이 다르기 때문에 별도의 컴포넌트로 만들어주어야 한다. 현재
-      hashtag(keyword)는 chip으로 대체. todo. 댑스가 2이상 인 케이스.
-    </p> -->
+
   <!-- Badge intent="info" -->
 
   <dl class="article-aka">
@@ -48,6 +39,7 @@
         16%
       </mm-tag>
     </mm-group>
+    <mm-separator></mm-separator>
     <mm-group variant="tag">
       <style>
         .dot-badge {
@@ -88,26 +80,28 @@
   </section>
 
   <section class="component-guide">
-    <mm-text-list
-      slot="children"
-      texts='[
-          "foundation :: 인터렉션이 가능한 것처럼 보이지 않아야 합니다.",
-          "Use short labels for easy scanning. 중요한 정보를 빠르게 파악할 수 있는 짧은 단어의 조합.",
-          "그룹에서 primary tag는 그룹을 대표하는 맥락으로 1개만 포함",
-          "태그 그룹은 최대 4개의 태그를 표시. 너무 많은 태그 목록으로 사용자의 콘텐츠 탐색을 방해하지 마세요. 예외 케이스. 태그의 목록이 페이지 전체를 관통하는 경우 탐색을 보조하는 역할이 아니라 정보를 보충하는 맥락이기 때문에 4개 이상을 허용합니다. 그런데 이것은 platform problem.",
-          "Dot(status). New/Unread, Live. A dot badge notifies the user that something is new or updated without showing a count."
-        ]'
-    ></mm-text-list>
-    <!-- <mm-text variant="body">"아바타, 바텀 네비게이션, 탭에서 일관되게 사용되는가?"</mm-text> -->
-    <!-- <mm-text-group>
-      <mm-text variant="subhead">Considerations</mm-text>
-      <mm-group>
-        <mm-tag variant="primary">Non-interactive</mm-tag>
-      without showing a count. <mm-tag>notification</mm-tag>
-        <mm-tag>status</mm-tag>
-        <mm-tag>informational</mm-tag>
-      </mm-group>
-    </mm-text-group> -->
+    <section class="feature columns-3">
+      <mm-feature
+        icon="cursor-pointer"
+        titleText="Non-interactive"
+        subtitle="notification, status, informational"
+        description="사용자의 입력이나 상호작용 없이 정보를 표시하는 정적(Static) 컴포넌트입니다. 상태, 속성, 분류 등의 정보를 한눈에 전달하는 데 초점을 둡니다. 인터렉션이 가능한 것처럼 보이지 않아야 합니다."
+      >
+      </mm-feature>
+      <mm-feature
+        icon="multi-window"
+        titleText="Collective (Groupable)"
+        description="너무 많은 태그 목록으로 사용자의 콘텐츠 탐색을 방해하지 마세요. primary tag는 그룹을 대표하는 맥락으로 1개만 포함, 최대 4개의 태그 그룹. 정보를 보충하는 맥락에서 4개 이상을 허용될 수 있다. Profile 페이지 참고."
+      >
+      </mm-feature>
+      <mm-feature
+        icon="task-list"
+        titleText="Scannable, Glanceable"
+        subtitle="Easy scanning"
+        description="Use short labels for easy scanning. 중요한 정보를 빠르게 파악할 수 있는 짧은 단어의 조합."
+      >
+      </mm-feature>
+    </section>
 
     <!-- <mm-text-group>
       <mm-text variant="subhead">Changelog</mm-text>
@@ -127,4 +121,31 @@
       </table>
     </mm-text-group> -->
   </section>
+
+  <section class="component-temp">
+    <mm-title-with-description
+      level="2"
+      title="Dot badge / Live Badge, New badge, Unread Badge"
+      description="A dot badge notifies the user that something is new or updated without showing a count."
+    ></mm-title-with-description>
+  </section>
+
+  <section class="component-temp">
+    <mm-title-with-description
+      level="2"
+      title="Hashtag"
+      description="post 페이지에서 태그와 컴포넌트에서의 태그. hashtag는 tag 컴포넌트와 역할이 다르기 때문에 별도의 컴포넌트로 만들어주어야 한다. 현재
+        hashtag(keyword)는 chip으로 대체."
+    ></mm-title-with-description>
+  </section>
+
+  <mm-tile variant="tinted" size="large">
+    <mm-text variant="label-strong">Checklist</mm-text>
+    <div style="height: var(--space-2)"></div>
+    <mm-text-list
+      texts='[
+      "아바타, 바텀 네비게이션, 탭에서 일관되게 사용되는가?"
+      ]'
+    ></mm-text-list>
+  </mm-tile>
 </main>

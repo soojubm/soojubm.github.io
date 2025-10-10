@@ -14,7 +14,7 @@ class Result extends HTMLElement {
     container.classList.add('result')
 
     const titleWithDescription = document.createElement('mm-title-with-description')
-    titleWithDescription.setAttribute('level', '2')
+    titleWithDescription.setAttribute('level', '3')
     titleWithDescription.setAttribute('title', this.title)
     titleWithDescription.setAttribute('description', this.description)
 

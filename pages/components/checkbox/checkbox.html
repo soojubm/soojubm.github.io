@@ -51,10 +51,19 @@
         "미리 선택된 기본값을 제공하는 것은 편향된 데이터를 수집할 위험이 있습니다.",
         "체크박스 그룹은 관련된 옵션들을 함께 묶어 사용자에게 제공할 수 있습니다. 이 경우, 그룹의 제목(legend)을 명확하게 표시하여 사용자가 옵션들의 맥락을 이해할 수 있도록 합니다.",
         "레이블은 최대 2단어로 작성합니다. choice냐 action option(?)이냐. action option일 때는 동사를 포함하여 작성합니다.",
-        "옵션 목록을 파악하기 쉽게 수직 정렬합니다. 강조가 필요한 경우 체크박스 컴포넌트는 독립적인 형태를 유지하고 체크박스의 크기 또는 컨테이너를 강조하고... 근데 이런 제약은 너무 과하다. 초기의 최소한의 정의 라는 foundation의 시효 소멸..",
-        "MasterCheckbox / TermsCheckbox / TermsCheckboxGroup"
+        "옵션 목록을 파악하기 쉽게 수직 정렬합니다. 강조가 필요한 경우 체크박스 컴포넌트는 독립적인 형태를 유지하고 체크박스의 크기 또는 컨테이너를 강조하고... 근데 이런 제약은 너무 과하다. 초기의 최소한의 정의 라는 foundation의 시효 소멸.."
       ]'
     ></mm-text-list>
+  </section>
+
+  <section class="component-temp">
+    <mm-title-with-description
+      level="2"
+      title="MasterCheckbox / TermsCheckbox / TermsCheckboxGroup"
+      description="체크박스 그룹에 대한 설명"
+    ></mm-title-with-description>
+    <br />
+
     <mm-tile variant="elevated">
       <mm-checkbox
         size="large"
@@ -66,60 +75,92 @@
       >
         모두 동의합니다
       </mm-checkbox>
-      <mm-separator spacing="small"></mm-separator>
-      <mm-group variant="checkbox">
-        <mm-row justifyContent="space-between">
-          <mm-checkbox size="large" class="js-check" id="terms5" name="terms">
-            이용약관에 동의합니다.
-            <mm-link href="#">이용약관 바로가기</mm-link>
-          </mm-checkbox>
-        </mm-row>
-        <mm-row justifyContent="space-between">
-          <mm-checkbox size="large" class="js-check" id="terms6" name="terms">
-            이용약관에 동의합니다.
-            <mm-link href="#">이용약관 바로가기</mm-link>
-          </mm-checkbox>
-        </mm-row>
-        <mm-row justifyContent="space-between">
-          <mm-checkbox size="large" class="js-check" id="terms7" name="terms">
-            이용약관에 동의합니다.
-          </mm-checkbox>
-        </mm-row>
-      </mm-group>
     </mm-tile>
+    <mm-group variant="checkbox" style="margin-left: 1rem; margin-top: -0.5rem">
+      <mm-row justifyContent="space-between">
+        <mm-checkbox size="large" class="js-check" id="terms5" name="terms">
+          이용약관에 동의합니다.
+        </mm-checkbox>
+        <mm-link href="#">이용약관 바로가기</mm-link>
+      </mm-row>
+      <mm-row justifyContent="space-between">
+        <mm-checkbox size="large" class="js-check" id="terms6" name="terms">
+          이용약관에 동의합니다.
+        </mm-checkbox>
+        <mm-link href="#">이용약관 바로가기</mm-link>
+      </mm-row>
+      <mm-row justifyContent="space-between">
+        <mm-checkbox size="large" class="js-check" id="terms7" name="terms">
+          이용약관에 동의합니다.
+        </mm-checkbox>
+      </mm-row>
+    </mm-group>
+  </section>
 
-    <div style="display: flex; flex-direction: column; gap: var(--space-3)">
-      <mm-tile>
-        <mm-titlebar titletext="컬렉션에 추가"></mm-titlebar>
-        <br />
-        <mm-tile variant="elevated" size="small">
-          <mm-menuitem label="새 컬렉션 만들기">
-            <mm-avatar slot="avatar" icon="plus"> </mm-avatar>
-          </mm-menuitem>
-        </mm-tile>
-        <div style="height: var(--space-3)"></div>
-        <mm-group variant="checkbox">
-          <!-- aira-checked="mixed" aria-controls="1 2" -->
-          <mm-checkbox size="large" name="collection 1">컬렉션 1</mm-checkbox>
-          <mm-checkbox size="large" name="collection 2">컬렉션 2 - 관리: 수정/삭제 등</mm-checkbox>
-        </mm-group>
-      </mm-tile>
-      <mm-tile>
-        <mm-titlebar titletext="컬렉션 만들기">
-          <mm-button slot="action" variant="text">완료</mm-button>
-        </mm-titlebar>
-        <div style="height: 1rem"></div>
-        <mm-textfield label="컬렉션 이름" placeholder="컬렉션 이름"></mm-textfield>
-        <div style="height: 0.75rem"></div>
+  <section class="component-temp">
+    <mm-title-with-description
+      level="2"
+      title="Sampler"
+      description="연습"
+    ></mm-title-with-description>
+    <br />
+
+    <div style="width: 400px">
+      <mm-titlebar variant="close" label="컬렉션에 추가" hiddenBack>
+        <mm-button slot="action" variant="text">새 컬렉션</mm-button>
+      </mm-titlebar>
+      <div style="height: var(--space-3)"></div>
+      <mm-group alignment="vertical">
+        <mm-menuitem label="을지로 맛집">
+          <mm-avatar
+            slot="avatar"
+            size="large"
+            fallback="💳"
+            style="background: aliceblue; font-size: 1.5rem"
+          ></mm-avatar>
+          <mm-checkbox slot="check" name="checkbox" size=""></mm-checkbox>
+        </mm-menuitem>
+        <mm-menuitem label="컬렉션 2 - 관리: 수정/삭제 등">
+          <mm-avatar
+            slot="avatar"
+            size="large"
+            fallback="💳"
+            style="background: aliceblue; font-size: 1.5rem"
+          ></mm-avatar>
+          <mm-checkbox slot="check" name="checkbox" size=""></mm-checkbox>
+        </mm-menuitem>
         <!-- aira-checked="mixed" aria-controls="1 2" -->
-        <button-list-component
-          id="button-list"
-          options='[
-          {"label": "공개", "value": "apple"},
-          {"label": "비공개", "value": "banana"}
-        ]'
-        ></button-list-component>
-      </mm-tile>
+      </mm-group>
+      <mm-separator></mm-separator>
+      <mm-titlebar label="새 컬렉션">
+        <mm-button slot="action" variant="text">완료</mm-button>
+      </mm-titlebar>
+      <div style="height: 1rem"></div>
+      <mm-textfield label="컬렉션 이름" placeholder="컬렉션 이름"></mm-textfield>
+      <div style="height: 0.75rem"></div>
+      <!-- aira-checked="mixed" aria-controls="1 2" -->
+      <button-list-component
+        id="button-list"
+        options='[
+              {"label": "공개", "value": "apple"},
+              {"label": "비공개", "value": "banana"}
+            ]'
+      ></button-list-component>
+      <br />
+      <mm-menuitem label="이 컬렉션에 멤버 추가">
+        <mm-avatar slot="avatar" icon="plus"> </mm-avatar>
+      </mm-menuitem>
+      <mm-separator></mm-separator>
+      <mm-titlebar label="멤버 추가">
+        <mm-button slot="action" variant="text">완료</mm-button>
+      </mm-titlebar>
+      <div style="height: var(--space-4)"></div>
+      <mm-textfield label="TODO 멤버 검색" placeholder="멤버 이름"></mm-textfield>
+      <div style="height: var(--space-4)"></div>
+      <ul>
+        <li>추천</li>
+        <li>멤버 오른쪽 체크박스</li>
+      </ul>
     </div>
   </section>
 </main>

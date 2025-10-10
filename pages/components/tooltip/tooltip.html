@@ -76,15 +76,7 @@
   </section>
 
   <section class="component-guide">
-    <mm-text-list
-      texts='[
-        "foundation :: 정보 보충",
-        "short text, long form text. MD3 rich tooltip(title, description, actions-link/button) / plain tooltip", "작은 화면에서 바텀 시트나 팝오버로 제공하는 것이 좋다.",
-        "coachmark(arrow tooltip, tourtip, 로딩 시점에 이미 열려 있다.)와 다른 역할. doorhanger/pointing arrow. 좋은 유아이라는 생각은 안 됨. 최대한 지양."
-      ]'
-    ></mm-text-list>
-    <div style="height: var(--space-4)"></div>
-    <mm-text-group>
+    <div class="column columns-3">
       <mm-feature
         icon="database-script-plus"
         titleText="정보 보충"
@@ -92,8 +84,13 @@
         description="사용자가 반드시 숙지해야 하는 중요한 정보를 툴팁으로 제공하지 마세요. 정보를 보충하여 설명하는 맥락. 아코디언도 마찬가지. 행동을 유도하는 가이드로 사용하지 마세요. 중요한 액션을 요할 때는 cognitive? button이나 text link 등 충분히 강조되고 눈에 띄는 컴포넌트를 사용."
       >
       </mm-feature>
-      </mm-feature>
-    </mm-text-group>
+    </div>
+    <mm-text-list
+      texts='[
+        "short text, long form text. MD3 rich tooltip(title, description, actions-link/button) / plain tooltip", "작은 화면에서 바텀 시트나 팝오버로 제공하는 것이 좋다.",
+        "coachmark(arrow tooltip, tourtip, 로딩 시점에 이미 열려 있다.)와 다른 역할. doorhanger/pointing arrow. 좋은 유아이라는 생각은 안 됨. 최대한 지양."
+      ]'
+    ></mm-text-list>
   </section>
 
   <dl class="article-aka">

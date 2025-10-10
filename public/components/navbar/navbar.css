@@ -10,7 +10,8 @@
   height:var(--navbar-height);
   padding:var(--space-3) var(--grid-margin);
   box-sizing:border-box;background:var(--color-background);
-  position:sticky;
+  /* position:sticky; */
+  position: fixed;
   top: 0;
   z-index:var(--zindex-menu);
 }

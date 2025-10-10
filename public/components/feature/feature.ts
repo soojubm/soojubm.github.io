@@ -16,15 +16,21 @@ class Feature extends HTMLElement {
     icon.setAttribute('name', this.icon || '')
     icon.setAttribute('size', 'medium')
 
-    avatar.classList.add('feature-item-avatar')
     avatar.appendChild(icon)
 
     const titleWithDescription = document.createElement('mm-title-with-description')
-    titleWithDescription.setAttribute('level', '2')
+    titleWithDescription.setAttribute('level', '4')
     titleWithDescription.setAttribute('title', this.titleText || '')
     titleWithDescription.setAttribute('description', this.description || '')
     titleWithDescription.classList.add('feature-item-header')
 
+    const style = document.createElement('style')
+    style.textContent = `
+      mm-avatar::part(avatar) {
+        border-color: var(--color-text) !important;
+      }
+    `
+    shadow.appendChild(style) // ✅ 중요!
     // const subtitle = document.createElement('sup')
     // subtitle.innerText = this.subtitle || ''
 

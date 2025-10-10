@@ -10,23 +10,25 @@
       <mm-tooltip content="로그인">
         <mm-icon-button slot="trigger" icon="user"></mm-icon-button>
       </mm-tooltip>
+      <mm-icon-button variant="" icon="star-solid"></mm-icon-button>
+      <mm-icon-button variant="" icon="star"></mm-icon-button>
     </div>
     <mm-separator></mm-separator>
     <mm-group>
       <mm-icon-button variant="navigator" icon="arrow-left"></mm-icon-button>
       <mm-icon-button variant="navigator" icon="arrow-right" color="gold"></mm-icon-button>
-      <mm-icon-button variant="navigator" icon="star-solid"></mm-icon-button>
-      <mm-icon-button variant="navigator" icon="star"></mm-icon-button>
       <mm-icon-button variant="navigator" icon="xmark"></mm-icon-button>
       <mm-clear-button></mm-clear-button>
     </mm-group>
+    <mm-separator></mm-separator>
+    <p>indicator TODO 타일 내부에서 우측에 화살표로 강조되어 있는. + expandable</p>
   </section>
   <section class="component-props">
     <dl>
       <dt>name</dt>
       <dd>iconNameType</dd>
       <dt>variant</dt>
-      <dd>'default?' | 'navigator'</dd>
+      <dd>'action' | 'navigator'</dd>
       <dt>size</dt>
       <dd>'small' | 'medium'</dd>
       <dt>ariaLabel</dt>
@@ -56,5 +58,18 @@
         ]'
     ></mm-text-list>
   </section>
+
+  <section class="component-temp">
+    <mm-text variant="subhead">Icon</mm-text>
+  </section>
+  <section class="component-temp">
+    <mm-text variant="subhead">MoreMenuButton, ActionMenuButton, ContextMenuButton</mm-text>
+  </section>
+  <section class="component-temp">
+    <mm-title-with-description
+      level="2"
+      title="Icon Indicator"
+      description="링크, 펼침, 시트오픈"
+    ></mm-title-with-description>
   </section>
 </main>

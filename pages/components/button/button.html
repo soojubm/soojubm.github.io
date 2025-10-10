@@ -1,12 +1,8 @@
 <main class="page js-tab">
-
-  <div>
-    123
-  </div>
   <header class="page-header">
     <mm-title-with-description
       title="Button"
-      description="페이지 이동이나 양식 제출 등 사용자 여정의 핵심과업을 수행합니다. 제한적으로 사용하여 사용자의 과업을 돕습니다.??"
+      description="페이지 이동이나 양식 제출 등 사용자 여정의 핵심 과업입니다. (이 디스크립션은 칩이 있었을 때 유효)"
     ></mm-title-with-description>
     <dl class="article-aka">
       <dt>a.k.a</dt>
@@ -14,13 +10,14 @@
       <dd>text - icon(avatar)</dd>
     </dl>
   </header>
+
   <div style="margin-top: 2rem"></div>
   <mm-tablist class="tablist">
     <mm-tab slot="tab" name="" selected="true" data-index="1"> 베리언트 </mm-tab>
     <mm-tab slot="tab" name="" selected="false" data-index="2"> 상태 </mm-tab>
     <i class="tablist-indicator"></i>
   </mm-tablist>
-  <div style="margin-bottom: -1rem"></div>
+
   <section class="component-example">
     <mm-tabpanel role="tabpanel" aria-hidden="false" data-index="1">
       <mm-group>
@@ -71,12 +68,135 @@
     </dl>
   </section>
 
+  <!-- 참고: 버튼 네이밍. 'link' | 'subtle' | 'primary' / 'solid' | 'outline' | 'plain' |'text' -->
+  <section class="component-guide">
+    <section class="feature columns-3">
+      <mm-feature
+        icon="cursor-pointer"
+        titleText="Interactive - action"
+        subtitle="Easy scanning"
+        description="버튼은 페이지 내에서 여러 번 반복될 수 없는 최종적인 인터렉션입니다. 단, 전송이 실패하는 경우에는 여러 번 반복해서 실행할 수 있습니다."
+      >
+      </mm-feature>
+      <mm-feature
+        icon="reply-to-message"
+        titleText="Feedback needed"
+        subtitle="Easy scanning"
+        description="물리적인 인터페이스의 출현만이 수행 결과를 피드백하는 것이 아닙니다. 예측할 수 있는 페이지 이동이나 페이지 새로고침, 정보 구조의 변화도 피드백으로 취급될 수 있습니다. (ex bad case: 인스타그램 앱에서 로그인되었다는 toast. 홈으로 이동과 피드 노출만으로 로그인 상태를 인지할수 있다.)"
+      >
+      </mm-feature>
+      <mm-feature
+        icon="multi-window"
+        titleText="Groupable"
+        subtitle="Easy scanning"
+        description="물리적인 인터페이스의 출현만이 수행 결과를 피드백하는 것이 아닙니다. 예측할 수 있는 페이지 이동이나 페이지 새로고침, 정보 구조의 변화도 피드백으로 취급될 수 있습니다. (ex bad case: 인스타그램 앱에서 로그인되었다는 toast. 홈으로 이동과 피드 노출만으로 로그인 상태를 인지할수 있다.)"
+      >
+      </mm-feature>
+    </section>
+
+    <br />
+
+    <!-- <mm-text-group>
+      <mm-text variant="subhead">Changelog</mm-text>
+          <table class="table">
+      <tbody>
+        <tr>
+          <th>21-07-28</th>
+          <td>chip-label 엘리먼트 항상 사용. space-chip-inset 레이블에 패딩을 주면 아이콘
+            컨트롤이 쉬워짐.</td>
+        </tr>
+        <tr>
+          <th>2022년</th>
+          <td>button small 삭제. chip과 형태의 변별력이 없고 용법이 중복.</td>
+        </tr>
+        <tr>
+          <th style="width:100px;">Aug 2024</th>
+          <td>The stroke color was softened to improve visual hierarchy between chips and
+            buttons. 버튼과의 위계를 위하여 나는, 사이즈 제한으로도 충분하다고 생각</td>
+        </tr>
+        <tr>
+          <th style="width:100px;">Nov 2024</th>
+          <td>칩과 통합하고 사이즈 토큰과 동일한 사이즈 프로토콜을 사용한다. 추후 선택 또는 필터링에
+            따른 기능 버튼을 추가한다. 문제. 아이콘 버튼이 필요. 간격. Chip을 제거한 이유. 형태에 기반한
+            액션이라는 것은 둘 다 동일. 게다가 새로운 역할을 부여 받는 버튼은 어차피 새로운 컴포넌트로
+            정의되어야 하는데, filterButton이 filterChip이 되어야 하는 이유를 못 찾겠음. 결론적으로
+            버튼의 형태, 이것은 input과 textfield도 마찬가지로 적용이 되는데, 버튼의 형태는 고유한
+            프리미티브 컴포넌트가 갖고, 도메인에 맞게 역할를 갖는 새로운 컴포넌트를 별도 정의한다.
+            ButtonPrimitive (orbit)</td>
+        </tr>
+      </tbody>
+    </table>
+    </mm-text-group> -->
+
+    <mm-text-group>
+      <mm-text-list
+        texts='[
+          "Avoid disabled buttons. Let the user send incomplete form and use error messages to explain what is wrong.",
+          "실행 결과를 에측할 수 있는 레이블을 작성하세요. 툴팁으로 부연하거나, 실행을 유도하는 보조 텍스트 또는 실행 결과를 보충하는 보조 텍스트로 버튼 이외의 가이드가 필요하지 않습니다.",
+          "동사가 포함된 2자 ~ 8자 한글(!). 레이블 줄임?(truncated) 불가. 사용자 시점 (ex 보내기 => 받기)."
+        ]'
+      ></mm-text-list>
+      <mm-text-list
+        texts='["Split button이란? 사용자에게 더 많은 작업을 표시하는 경우 작업을 선택하여 트리거할 수 있도록 선택 + 버튼 조합을 사용. 것이 좋습니다.", "Link Button, Action Button의 구분으로 책임 분리. href / disabled, onClick", Link 안에 button의 형태를 포함하도록 하는 방법은?", "빈 버튼이 필요한가? 리액트에서 포커싱이 가능한 전체 영역의 버튼. 도는 버튼 내부에서포지셔닝되는 버튼. 시각적으로는 버튼 내부의 버튼이지만 구조적으로 대안이 되는 형태의 버튼", "Dropdown은 버튼과 목록을 포함한 합성된 컴포넌트임. 최근 바텀 셀렉트 시트 같은 느낌."]'
+      ></mm-text-list>
+      <mm-text>
+        group과 sets 차이. 머티리얼 칩스에서 구분해서 사용함. 그룹은 순서나 구조가 있는.
+      </mm-text>
+      <mm-text>FilterButton, FilterOption, SortButton</mm-text>
+      <style>
+        td {
+          text-align: center;
+        }
+      </style>
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>RawChip / Chip</th>
+            <th>FilterChip</th>
+            <th>ChoiceChip</th>
+            <th>ActionChip</th>
+            <th>InputChip</th>
+            <th>AssistChip</th>
+            <th>SuggestionChip</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Material 2 (Rounded)</th>
+            <td></td>
+            <td>🔵 (multiple select Filter chip, dissmissable)</td>
+            <td>🔵 (radio)</td>
+            <td>🔵 (toggle)</td>
+            <td>🔵 (dissmissable)</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th>Material 3</th>
+            <td></td>
+            <td>🟣 (ChoiceChip). 필터 칩의 서브셋. 단독 사용 안 됨</td>
+            <td></td>
+            <td></td>
+            <td>🟣 dismissable</td>
+            <td>🟣 (ActionChip)</td>
+            <td>🟣 (ActionChip)</td>
+          </tr>
+          <tr>
+            <th>Flutter</th>
+            <td>🔵</td>
+          </tr>
+        </tbody>
+      </table>
+    </mm-text-group>
+  </section>
+
   <section class="component-temp">
-        <mm-title-with-description
+    <mm-title-with-description
       level="2"
-      title="ShowMore Button"
-      description="Image Button, CheckoutButton. fullWidth로 사용하지 마세요. 단일 콘텐츠 또는 콘텐츠 목록의 너비와 대비를 통한 강조. TODO 이건
-      최종 액션이 아님. 칩이 되는 게 나을 수도.">
+      title="ShowMoreButton"
+      description="Image Button, CheckoutButton. fullWidth로 사용하지 마세요. 단일 콘텐츠 또는 콘텐츠 목록의 너비와 대비를 통한 강조."
+    >
     </mm-title-with-description>
     <br />
     <div class="columns-3" style="gap: 1rem">
@@ -105,8 +225,11 @@
     <mm-title-with-description
       level="2"
       title="FileUpload Button"
-      description="이미지 업로드와 파일 업로드 구분">
+      description="이미지 업로드와 파일 업로드 구분"
+    >
     </mm-title-with-description>
+
+    <br />
 
     <form class="file" method="" enctype="multipart/form-data">
       <div>
@@ -115,35 +238,55 @@
           class="js-file-input visually-hidden"
           type="file"
           id="file2"
-          accept=".jpg,.png" capture="camera"
+          accept=".jpg,.png"
+          capture="camera"
           multiple
           hidden
         />
       </div>
-      <mm-text variant="body">Only .jpg and .png files. 500kb max file size.</mm-text>
+      <mm-text variant="caption">Only .jpg and .png files. 500kb max file size.</mm-text>
     </form>
+
     <mm-separator></mm-separator>
+
     <mm-text variant="label">첨부한 파일</mm-text>
     <mm-text variant="body" role="status" class="js-file-attachment-helper">
       No files currently selected for upload.
     </mm-text>
-    <section class="file-attachment-list js-file-attachment-list">
-      <figure style="width: 100px;padding:var(--space-3);border-radius:var(--radius);background-color:var(--color-background-weak);border-radius:var(--radius);position:relative;">
-        <img src="/public/images/springsteen.jpg" alt="${file.name}" style="border-radius:var(--radius);" />
-        <figcaption style="display:flex;flex-direction: column;gap:var(--space-1);margin-top:var(--space-2);">
-          <mm-text variant="label-strong">${file.name}</b>
-          <mm-text>${returnFileSize(file.size)}</mm-text>
+
+    <div class="file-attachment-list js-file-attachment-list">
+      <figure
+        style="
+          width: 100px;
+          padding: var(--space-3);
+          border-radius: var(--radius);
+          background-color: var(--color-background-weak);
+          border-radius: var(--radius);
+          position: relative;
+        "
+      >
+        <img
+          src="/public/images/springsteen.jpg"
+          alt="${file.name}"
+          style="border-radius: var(--radius)"
+        />
+        <figcaption>
+          <mm-text variant="label-strong">${file.name}</mm-text>
+          <mm-text variant="caption">${returnFileSize(file.size)}</mm-text>
         </figcaption>
-        <div style="position:absolute;right:var(--space-1);top:var(--space-1);"><mm-clear-button class="js-remove-this">close</mm-clear-button></div>
+        <div style="position: absolute; right: var(--space-1); top: var(--space-1)">
+          <mm-clear-button class="js-remove-this">close</mm-clear-button>
+        </div>
       </figure>
-    </section>
+    </div>
   </section>
 
   <section class="component-temp">
     <mm-title-with-description
       level="2"
       title="Button Group"
-      description="버튼 그룹은 관련된 액션을 묶어 사용자가 선택할 수 있도록 합니다.">
+      description="버튼 그룹은 관련된 액션을 묶어 사용자가 선택할 수 있도록 합니다."
+    >
     </mm-title-with-description>
     <br />
     <mm-group variant="chip">
@@ -210,160 +353,34 @@
     <mm-title-with-description
       level="2"
       title="Toogle Button"
-      description="전환 및 선택. 팔로우 팔로잉, 북마크, 좋아요 등">
+      description="전환 및 선택. 팔로우 팔로잉, 북마크, 좋아요 등"
+    >
     </mm-title-with-description>
     <br />
     <div style="display: flex; gap: var(--space-0)">
-        <style>
-          button mm-icon {
-            pointer-events: none;
-          }
-          .is-selected {
-            border-radius: var(--radius);
-            background-color: var(--color-background-weak);
-          }
-        </style>
-        <button
-          class="is-selected js-test-toggle"
-          data-name="grid"
-          style="width: 32px; height: 32px"
-        >
-          <mm-icon name="view-grid"></mm-icon>
-        </button>
-        <button
-          icon="view-columns-3"
-          aria-label=""
-          class="js-test-toggle"
-          status="active"
-          data-name="list"
-          style="width: 32px; height: 32px"
-        >
-          <mm-icon name="view-columns-3"></mm-icon>
-        </button>
-      </div>
-  </section>
-
-  <!-- 참고: 버튼 네이밍. 'link' | 'subtle' | 'primary' / 'solid' | 'outline' | 'plain' |'text' -->
-  <section class="component-guide">
-    <section class="feature columns-3">
-      <mm-feature
-        icon="cursor-pointer"
-        titleText="Interactive - action"
-        subtitle="Easy scanning"
-        description="버튼은 페이지 내에서 여러 번 반복될 수 없는 최종적인 인터렉션입니다. 단, 전송이 실패하는 경우에는 여러 번 반복해서 실행할 수 있습니다."
-      >
-      </mm-feature>
-      <mm-feature
-        icon="reply-to-message"
-        titleText="Feedback needed"
-        subtitle="Easy scanning"
-        description="물리적인 인터페이스의 출현만이 수행 결과를 피드백하는 것이 아닙니다. 예측할 수 있는 페이지 이동이나 페이지 새로고침, 정보 구조의 변화도 피드백으로 취급될 수 있습니다. (ex bad case: 인스타그램 앱에서 로그인되었다는 toast. 홈으로 이동과 피드 노출만으로 로그인 상태를 인지할수 있다.)"
-      >
-      </mm-feature>
-      <mm-feature
-        icon="multi-window"
-        titleText="Groupable"
-        subtitle="Easy scanning"
-        description="물리적인 인터페이스의 출현만이 수행 결과를 피드백하는 것이 아닙니다. 예측할 수 있는 페이지 이동이나 페이지 새로고침, 정보 구조의 변화도 피드백으로 취급될 수 있습니다. (ex bad case: 인스타그램 앱에서 로그인되었다는 toast. 홈으로 이동과 피드 노출만으로 로그인 상태를 인지할수 있다.)"
-      >
-      </mm-feature>
-    </section>
-
-    <!-- <mm-text-group>
-      <mm-text variant="subhead">Changelog</mm-text>
-          <table class="table">
-      <tbody>
-        <tr>
-          <th>21-07-28</th>
-          <td>chip-label 엘리먼트 항상 사용. space-chip-inset 레이블에 패딩을 주면 아이콘
-            컨트롤이 쉬워짐.</td>
-        </tr>
-        <tr>
-          <th>2022년</th>
-          <td>button small 삭제. chip과 형태의 변별력이 없고 용법이 중복.</td>
-        </tr>
-        <tr>
-          <th style="width:100px;">Aug 2024</th>
-          <td>The stroke color was softened to improve visual hierarchy between chips and
-            buttons. 버튼과의 위계를 위하여 나는, 사이즈 제한으로도 충분하다고 생각</td>
-        </tr>
-        <tr>
-          <th style="width:100px;">Nov 2024</th>
-          <td>칩과 통합하고 사이즈 토큰과 동일한 사이즈 프로토콜을 사용한다. 추후 선택 또는 필터링에
-            따른 기능 버튼을 추가한다. 문제. 아이콘 버튼이 필요. 간격. Chip을 제거한 이유. 형태에 기반한
-            액션이라는 것은 둘 다 동일. 게다가 새로운 역할을 부여 받는 버튼은 어차피 새로운 컴포넌트로
-            정의되어야 하는데, filterButton이 filterChip이 되어야 하는 이유를 못 찾겠음. 결론적으로
-            버튼의 형태, 이것은 input과 textfield도 마찬가지로 적용이 되는데, 버튼의 형태는 고유한
-            프리미티브 컴포넌트가 갖고, 도메인에 맞게 역할를 갖는 새로운 컴포넌트를 별도 정의한다.
-            ButtonPrimitive (orbit)</td>
-        </tr>
-      </tbody>
-    </table>
-    </mm-text-group> -->
-
-    <mm-text-group>
-      <mm-text-list
-        texts='[
-          "Avoid disabled buttons. Let the user send incomplete form and use error messages to explain what is wrong.",
-          "실행 결과를 에측할 수 있는 레이블을 작성하세요. 툴팁으로 부연하거나, 실행을 유도하는 보조 텍스트 또는 실행 결과를 보충하는 보조 텍스트로 버튼 이외의 가이드가 필요하지 않습니다.",
-          "동사가 포함된 2자 ~ 8자 한글(!). 레이블 줄임?(truncated) 불가. 사용자 시점 (ex 보내기 => 받기)."
-        ]'
-      ></mm-text-list>
-      <mm-text-list
-        texts='["Split button이란? 사용자에게 더 많은 작업을 표시하는 경우 작업을 선택하여 트리거할 수 있도록 선택 + 버튼 조합을 사용. 것이 좋습니다.", "Link Button, Action Button의 구분으로 책임 분리. href / disabled, onClick", Link 안에 button의 형태를 포함하도록 하는 방법은?", "빈 버튼이 필요한가? 리액트에서 포커싱이 가능한 전체 영역의 버튼. 도는 버튼 내부에서포지셔닝되는 버튼. 시각적으로는 버튼 내부의 버튼이지만 구조적으로 대안이 되는 형태의 버튼", "Dropdown은 버튼과 목록을 포함한 합성된 컴포넌트임. 최근 바텀 셀렉트 시트 같은 느낌."]'
-      ></mm-text-list>
-      <mm-text
-        >
-        group과 sets 차이. 머티리얼 칩스에서 구분해서 사용함. 그룹은 순서나 구조가 있는.
-        </mm-text
-      >
-      <mm-text>FilterButton, FilterOption, SortButton</mm-text>
       <style>
-        td {
-          text-align: center;
+        button mm-icon {
+          pointer-events: none;
+        }
+        .is-selected {
+          border-radius: var(--radius);
+          background-color: var(--color-background-weak);
         }
       </style>
-      <table>
-        <thead>
-          <tr>
-            <th></th>
-            <th>RawChip / Chip</th>
-            <th>FilterChip</th>
-            <th>ChoiceChip</th>
-            <th>ActionChip</th>
-            <th>InputChip</th>
-            <th>AssistChip</th>
-            <th>SuggestionChip</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th>Material 2 (Rounded)</th>
-            <td></td>
-            <td>🔵 (multiple select Filter chip, dissmissable)</td>
-            <td>🔵 (radio)</td>
-            <td>🔵 (toggle)</td>
-            <td>🔵 (dissmissable)</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>Material 3</th>
-            <td></td>
-            <td>🟣 (ChoiceChip). 필터 칩의 서브셋. 단독 사용 안 됨</td>
-            <td></td>
-            <td></td>
-            <td>🟣 dismissable</td>
-            <td>🟣 (ActionChip)</td>
-            <td>🟣 (ActionChip)</td>
-          </tr>
-          <tr>
-            <th>Flutter</th>
-            <td>🔵</td>
-          </tr>
-        </tbody>
-      </table>
-    </mm-text-group>
+      <button class="is-selected js-test-toggle" data-name="grid" style="width: 32px; height: 32px">
+        <mm-icon name="view-grid"></mm-icon>
+      </button>
+      <button
+        icon="view-columns-3"
+        aria-label=""
+        class="js-test-toggle"
+        status="active"
+        data-name="list"
+        style="width: 32px; height: 32px"
+      >
+        <mm-icon name="view-columns-3"></mm-icon>
+      </button>
+    </div>
   </section>
 
   <address class="component-references">
@@ -377,8 +394,7 @@
     <mm-link href="https://m3.material.io/components/segmented-buttons/overview"
       >Segmented buttons</mm-link
     >
-    <mm-link
-      href="https://developer.apple.com/design/human-interface-guidelines/segmented-controls"
+    <mm-link href="https://developer.apple.com/design/human-interface-guidelines/segmented-controls"
       >Segmented controls</mm-link
     >
     <mm-link href="https://www.w3.org/WAI/ARIA/apg/patterns/listbox/"> WAI listbox</mm-link>

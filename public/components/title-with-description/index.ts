@@ -14,7 +14,7 @@ class TitleWithDescription extends HTMLElement {
       gap: 'var(--space-3)',
     },
     '2': {
-      title: 'subhead',
+      title: 'heading2',
       description: 'body',
       gap: 'var(--space-1)',
     },
@@ -24,9 +24,14 @@ class TitleWithDescription extends HTMLElement {
       gap: 'var(--space-0)',
     },
     '3': {
+      title: 'subhead',
+      description: 'body',
+      gap: 'var(--space-1)',
+    },
+    '4': {
       title: 'label-strong',
       description: 'body',
-      gap: 0,
+      gap: 'var(--space-1)',
     },
   }
 
@@ -59,6 +64,9 @@ class TitleWithDescription extends HTMLElement {
         display: flex;
         flex-direction: column;
         gap: ${variant?.gap ?? '12px'};
+      }
+      mm-text[variant=body-large] {
+      max-width: 720px;
       }
     `
     shadowRoot!.append(style)

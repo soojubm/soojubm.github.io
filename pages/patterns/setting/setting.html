@@ -10,6 +10,13 @@
   >
     <mm-avatar size="huge" variant="secondary" default="true"></mm-avatar>
     <mm-text variant="subhead"> 수줍이님, 어서와요<i style="font-style: italic">!</i> </mm-text>
+
+    <div style="display: flex; gap: 1rem; justify-content: center; margin: 1rem 0 0">
+      <mm-avatar size="large" variant="primary" default="false"></mm-avatar>
+      <mm-avatar size="large" variant="primary" default="false"></mm-avatar>
+      <mm-avatar size="large" variant="primary" default="false"></mm-avatar>
+      <mm-avatar size="large" variant="primary" default="false"></mm-avatar>
+    </div>
   </header>
   <mm-group variant="menuitem">
     <mm-menuitem label="사용자 정보" description="전자 메일, 일정, 연락처에서 사용하는 계정">
@@ -258,7 +265,7 @@
     </footer> -->
 
   <section style="margin: 4rem 0">
-    <mm-titlebar titletext="닉네임 변경" role="navigation">
+    <mm-titlebar label="닉네임 변경" role="navigation">
       <button slot="action" class="titlebar-action" style="color: var(--color-primary)">
         <span class="titlebar-action-label">저장</span>
       </button>

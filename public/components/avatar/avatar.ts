@@ -14,6 +14,7 @@ class Avatar extends HTMLElement {
 
     const container = document.createElement('figure')
     container.classList.add('avatar')
+    container.setAttribute('part', 'avatar') // feature에서 라인 스타일 위해 임시
     container.role = 'img'
     container.dataset.size = this.size
     container.dataset.variant = this.variant

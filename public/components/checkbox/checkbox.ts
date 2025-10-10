@@ -7,10 +7,10 @@ export class CustomHTMLElement extends HTMLElement {
 }
 
 class Checkbox extends CustomHTMLElement {
-  static formAssociated = true
-  static get observedAttributes() {
-    return ['checked', 'disabled']
-  }
+  // static formAssociated = true
+  // static get observedAttributes() {
+  //   return ['checked', 'disabled']
+  // }
 
   constructor() {
     super()
@@ -24,6 +24,7 @@ class Checkbox extends CustomHTMLElement {
     const label = document.createElement('label')
     label.setAttribute('for', this.name || '')
     // label.append(...this.childNodes)
+    label.innerHTML = this.innerHTML || ''
     label.append(this.textContent || '')
 
     const input = document.createElement('input')
@@ -31,22 +32,17 @@ class Checkbox extends CustomHTMLElement {
     input.setAttribute('id', this.name || '')
     input.setAttribute('name', this.name || '')
 
-    input.addEventListener('change', () => {
-      // 타겟이 check all 일 때
-      if (this.disabled) return
-    })
-
-    shadow.appendChild(container)
+    shadow.append(container, makeStyleSheet('checkbox'))
     container.appendChild(input)
 
-    if (this.textContent && this.textContent.length > 0) {
-      container.appendChild(label)
-    }
+    // if (this.textContent && this.textContent.length > 0) {
+    container.appendChild(label)
+    // }
 
     if (this.checked) input.setAttribute('checked', 'true')
     if (this.disabled) input.setAttribute('disabled', 'true')
-
     if (this.size) container.setAttribute('data-size', this.size)
+
     if (this.helper) {
       const helper = document.createElement('p')
       helper.textContent = this.helper
@@ -54,7 +50,12 @@ class Checkbox extends CustomHTMLElement {
     }
 
     // 임시
-    shadow.appendChild(makeStyleSheet('checkbox'))
+    // shadow.appendChild(makeStyleSheet('checkbox'))
+
+    // input.addEventListener('change', () => {
+    //   // 타겟이 check all 일 때
+    //   if (this.disabled) return
+    // })
   }
 
   get name() {

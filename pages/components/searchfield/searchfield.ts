@@ -7,6 +7,9 @@ import '/pages/components/components.css'
 import '/public/stylesheets/shared.css'
 import '/public/stylesheets/components/form.css'
 
+import '/public/stylesheets/components/step.css'
+import '/public/components/textfield/textfield.css'
+
 document.addEventListener('DOMContentLoaded', () => {
   document.body.insertAdjacentHTML('beforeend', navbar)
   document.body.insertAdjacentHTML('beforeend', main)

@@ -395,6 +395,10 @@ menu-item:focus-visible {
   .columns {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .columns-3 {
+    grid-template-columns: 2fr;
+  }
 }
 
 @media (max-width: 480px) {

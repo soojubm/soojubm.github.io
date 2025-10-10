@@ -80,7 +80,6 @@ const components = [
   'callout',
 
   'text',
-  'textPair',
 
   'separator',
 

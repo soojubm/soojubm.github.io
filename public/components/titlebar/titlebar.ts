@@ -15,12 +15,13 @@ class TitleBar extends HTMLElement {
 
     const title = document.createElement('mm-text')
     title.setAttribute('variant', 'label-strong')
-    title.innerText = this.titleText || ''
+    title.innerText = this.label || ''
 
+    // if(this.variant === 'back') {
+    // }
     const backButton = document.createElement('mm-icon-button')
     backButton.setAttribute('variant', 'navigator')
     backButton.setAttribute('icon', 'arrow-left')
-
     if (!this.hiddenBack) container.append(backButton)
 
     // if (!back.ariaLabel) back.ariaLabel = '이전 페이지로'
@@ -37,12 +38,16 @@ class TitleBar extends HTMLElement {
   //   return this.getAttribute('hasBack')
   // }
 
+  get variant() {
+    return this.getAttribute('variant')
+  }
+
   get hiddenBack() {
     return this.hasAttribute('hiddenBack')
   }
 
-  get titleText() {
-    return this.getAttribute('titleText')
+  get label() {
+    return this.getAttribute('label')
   }
 
   connectedCallback() {}
