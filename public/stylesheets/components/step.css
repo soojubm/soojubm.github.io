@@ -26,7 +26,7 @@
   display: block;
   margin: var(--space-1) 0 0;
   line-height: var(--step-icon-size);
-  color:var(--color-text-light);
+  color:var(--color-foreground-light);
   font-weight: var(--font-weight-bold);
 }
 .step-item-description {margin:var(--space-2) 0 0 1.75rem;}
@@ -40,4 +40,4 @@
 .step[data-align=vertical] .step-item-description {width:100%;margin:0 0 0 1.5rem;}
 
 .step-item.is-active .step-item-icon {background:var(--color-background-strong);}
-.step-item.is-active .step-item-label {color:var(--color-text);}
+.step-item.is-active .step-item-label {color:var(--color-foreground);}

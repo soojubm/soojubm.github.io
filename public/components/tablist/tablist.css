@@ -4,9 +4,9 @@
 
   --tab-radius: var(--radius);
   --tab-border: var(--border);
-  --tab-label-color: var(--color-text-light);
+  --tab-label-color: var(--color-foreground-light);
   --tab-label-weight: var(--font-weight-bold);
-  --tab-label-color-actived: var(--color-text)
+  --tab-label-color-actived: var(--color-foreground)
   --tab-size: var(--size-large);
 
   display: flex;
@@ -38,13 +38,13 @@ button {
   height:var(--size-medium);
   gap: var(--space-1);
   padding: 0 var(--space-3);
-  color:var(--color-text-light);
+  color:var(--color-foreground-light);
   font-weight: var(--font-weight-bold);
   position:relative;
   z-index:var(--zindex-default);
   cursor: pointer;
   &:hover {
-    color: var(--color-text)
+    color: var(--color-foreground)
   }
 }
 .tab[aria-selected=true] {
@@ -54,7 +54,7 @@ button {
   box-shadow: var(--shadow);
   box-sizing: border-box;
   /* font-weight: var(--font-weight-bold); */
-  color:var(--color-text);
+  color:var(--color-foreground);
 }
 
 .tab-label {padding:0 0 var(--adjust-label-line) 0;}

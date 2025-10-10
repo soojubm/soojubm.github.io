@@ -84,7 +84,7 @@ https://m3.material.io/blog/building-with-m3-expressive
   <header class="" style="display: flex; justify-content: space-between">
     <div style="width: 40%">
       <mm-text variant="title">
-        <span style="color: var(--color-text-light)">Let us guide</span>
+        <span style="color: var(--color-foreground-light)">Let us guide</span>
       </mm-text>
       <mm-text variant="title"> The aim is to reduce “decision fatigue" </mm-text>
     </div>
@@ -535,56 +535,6 @@ https://m3.material.io/blog/building-with-m3-expressive
       <!-- <mm-result title="최근 알림 메세지가 없습니다."></mm-result> -->
     </mm-tile>
 
-    <mm-tile>
-      <mm-menuitem label="수줍이" description="Youtube subscriber">
-        <mm-avatar slot="avatar" default="true"></mm-avatar>
-      </mm-menuitem>
-      <div style="margin: var(--space-2) 0 0">
-        <mm-text variant="body">
-          Sometimes at night, I find myself behind the computer. When I finally blink, a mess of code
-          is drawing random structures on the screen. I spend the rest of the night staring.
-        </mm-text>
-      </div>
-      <div style="margin-block: var(--space-3)">
-        <mm-group variant="button">
-          <mm-keyvalue key="팔로워" value="62" alignment="inline"></mm-keyvalue>
-          <i class="icon-bullet"></i>
-          <mm-keyvalue key="팔로잉" value="8" alignment="inline"></mm-keyvalue>
-        </mm-group>
-      </div>
-      <mm-tile variant="tile" size="small">
-        <mm-text>🥺 수줍이님을 팔로우하고 있는 친구가 없습니다.</mm-text>
-      </mm-tile>
-    </mm-tile>
-    <mm-tile variant="flat">
-      <div style="display: flex; gap: 1rem">
-        <mm-avatar size="huge" variant="secondary" default="true"></mm-avatar>
-        <mm-group style="flex-direction: column; gap: var(--space-2)">
-          <div>
-            <mm-text variant="label">Top User</mm-text>
-            <mm-text variant="subhead">수줍이</mm-text>
-          </div>
-          <div>
-            <mm-text variant="label">Daily Purchase</mm-text>
-            <mm-text variant="subhead">10 Items</mm-text>
-          </div>
-        </mm-group>
-      </div>
-      <mm-separator></mm-separator>
-      <mm-keyvalue key="Total New Users" value="5.9K" alignment="vertical"></mm-keyvalue>
-      <!-- <mm-tag>8.2% 상승</mm-tag> -->
-      <mm-tile variant="elevated" size="small" style="margin: var(--space-3) 0 0">
-        <mm-group variant="avatar">
-          <mm-avatar size="small" default="true"></mm-avatar>
-          <mm-avatar size="small" default="true"></mm-avatar>
-          <mm-avatar size="small" default="true"></mm-avatar>
-          <mm-avatar size="small" default="true"></mm-avatar>
-          <mm-text style="margin-left: var(--space-2)"> Followed by 수줍이 외 4명 </mm-text>
-        </mm-group>
-      </mm-tile>
-      <!-- <mm-text class="mutiual"> 내가 팔로우하는 사용자 중에는 팔로워가 없습니다. (twitter) </mm-text> -->
-    </mm-tile>
-
 
 
     
@@ -603,30 +553,6 @@ https://m3.material.io/blog/building-with-m3-expressive
       </mm-group>
     </mm-tile>
 
-    <mm-tile variant="flat" name="access">
-      <mm-titlebar label="공개 대상 선택"></mm-titlebar>
-      <br />
-      <mm-group variant="menuitem">
-        <mm-menuitem>
-          <mm-radio slot="check"></mm-radio>
-          <mm-avatar slot="avatar" size="large" icon="group"> </mm-avatar>
-          <mm-text-pair
-            slot="text"
-            labelText="친구만"
-            descriptionText="회원님의 Facebook 친구"
-          ></mm-text-pair>
-        </mm-menuitem>
-        <mm-menuitem data->
-          <mm-radio slot="check"></mm-radio>
-          <mm-avatar slot="avatar" size="large" icon="lock"> </mm-avatar>
-          <mm-text-pair
-            slot="text"
-            labelText="나만 보기"
-            descriptionText="부끄러우니까"
-          ></mm-text-pair>
-        </mm-menuitem>
-      </mm-group>
-    </mm-tile>
 
     <mm-tile variant="flat" class="share">
       <mm-titlebar label="공유"></mm-titlebar>
@@ -998,29 +924,6 @@ https://m3.material.io/blog/building-with-m3-expressive
     ></div>
   </div>
 
-  <form class="subscribe" style="max-width:400px;">
-    <mm-text-group>
-      <mm-text variant="subhead">수줍이 뉴스레터</mm-text>
-      <mm-text variant="body">
-        섭스크라이브 유아이 콤포넌트 입니다. <br />두 줄 단락을 위해 쓰고 있습니다.
-      </mm-text>
-      <div style="height: 1rem;"></div>
-      <mm-textfield type="email" placeholder="Enter Your Email..">
-        <mm-icon slot="leading" name="mail"></mm-icon>
-        <mm-button slot="suffix" type="submit" variant="primary" size="medium">뉴스레터 구독</mm-button>
-      </mm-textfield>
-      <!-- <mm-checkbox>
-        본인은 Google의 <a href="" rel="noopener" target="_blank">이용 약관</a>에 동의하며 본인의
-        정보가 Google의 <a href="" rel="noopener" target="_blank">개인정보보호 정책</a>에 따라
-        이용된다는 것을 인정합니다.
-      </mm-checkbox>
-      <mm-text>
-        걱정하지 마세요. 스팸은 없습니다! 귀하의 정보는 web.dev 및 Chrome 관련 업데이트에만 사용되며
-        당사에서 보내는 이메일은 일반적으로 한 달에 1-2회를 넘지 않습니다. 언제든지 구독을 취소할 수
-        있습니다.
-      </mm-text> -->
-    </mm-text-group>
-  </form>
 </main>
 
 
@@ -1097,17 +1000,17 @@ https://m3.material.io/blog/building-with-m3-expressive
       </li>
       <li>본 이벤트는 당사 사정에 따라 사전 예고 없이 내용 변경 및 조기 종료될 수 있습니다.</li>
 
-      <li style="color: var(--color-text-light)">
+      <li style="color: var(--color-foreground-light)">
         금융투자상품은 예금자보호법에 따라 예금보험공사가 보호하지 않습니다.
       </li>
-      <li style="color: var(--color-text-light)">
+      <li style="color: var(--color-foreground-light)">
         유의사항 등. 이벤트 페이지 등의 최하단에 주로 사용. text list.
       </li>
-      <li style="color: var(--color-text-light)">
+      <li style="color: var(--color-foreground-light)">
         전환을 위한 핵심 콘텐츠는 아니기 때문에 background-strong 등의 강조된 형태를 사용하지
         마세요.
       </li>
-      <li style="color: var(--color-text-light)">
+      <li style="color: var(--color-foreground-light)">
         background weak는 clickable 요소이지만 텍스트를 톤 다운해서 보완.
       </li>
     </ul>

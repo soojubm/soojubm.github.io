@@ -173,7 +173,7 @@ em, i  {
   --button-text-color: var(--color-primary);
 }
 .button[data-variant=tertiary] {
-  --button-text-color: var(--color-text);
+  --button-text-color: var(--color-foreground);
 }
 .button[data-variant=text] {
   border-color: transparent;
@@ -232,7 +232,7 @@ em, i  {
 /* :host {
   --chip-color-border: 0;
   --chip-color-background: var(--color-background-weak);
-  --chip-color-text: var(--color-text);
+  --chip-color-text: var(--color-foreground);
   --chip-radius: var(--radius);
   --chip-border-color: transparent;
   --chip-border: 1px solid var(--chip-border-color);
@@ -278,7 +278,7 @@ em, i  {
 }
 .chip-name {
   margin: 0 var(--space-1) 0 0;
-  color:var(--color-text-light);}
+  color:var(--color-foreground-light);}
 .chip-name:after {content:': ';}
 
 

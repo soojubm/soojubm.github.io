@@ -11,7 +11,7 @@
   background: var(--color-background);
   font-size: var(--font-size-small);
   line-height: var(--size-small);
-  color: var(--color-text);
+  color: var(--color-foreground);
 
   --tag-border: var(--border);
   --tag-color: 0;
@@ -37,7 +37,7 @@
 .tag[data-variant=hashtag] {
   padding: 0;
   border: 0;
-  color: var(--color-text-light);
+  color: var(--color-foreground-light);
   &::before {
   content: '#';
   }

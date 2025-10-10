@@ -27,7 +27,7 @@
 .footer-address-info {display: flex;
 	flex-wrap: wrap;
 	column-gap: var(--space-2);}
-.footer-address-info dt {color:var(--color-text-light);}
+.footer-address-info dt {color:var(--color-foreground-light);}
 .footer-copyright {display:block;}
 
 .footer-terms {}

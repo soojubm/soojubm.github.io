@@ -15,7 +15,7 @@
   overflow:hidden;position:absolute;left:0;top:0;}
 .chat-avatar img {height:100%;}
 .chat-username {display:block;margin:0 0 var(--space-1) 0;font-size:var(--font-size-small);}
-.chat-time {margin:0 0 0 var(--space-1);color:var(--color-text-light);font-size:var(--font-size-small);color:var(--color-text-light);position:absolute;bottom:-1.5rem;}
+.chat-time {margin:0 0 0 var(--space-1);color:var(--color-foreground-light);font-size:var(--font-size-small);color:var(--color-foreground-light);position:absolute;bottom:-1.5rem;}
 .chat-bubble {
   width:fit-content;
   max-width:calc(90% - var(--size-medium));

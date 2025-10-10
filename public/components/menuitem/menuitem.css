@@ -29,18 +29,18 @@
 .item-label {
   font-size:var(--font-size-medium);
   /* line-height: var(--size-medium); */
-  color:var(--color-text);
+  color:var(--color-foreground);
 }
 .item-description {
   line-height: var(--size-medium);
-  color: var(--color-text-light);
+  color: var(--color-foreground-light);
 }
 
 /* reset */
 menu {margin:0;padding:0;}
 a {
   text-decoration: none;
-  color: var(--color-text);
+  color: var(--color-foreground);
 }
 
 ::slotted([slot=avatar]) {
@@ -61,7 +61,7 @@ a {
 [data-alignment=vertical] {flex-direction:column;gap:0;}
 
 
-.item-description {display:block;color:var(--color-text-light);line-height:var(--font-line-height);}
+.item-description {display:block;color:var(--color-foreground-light);line-height:var(--font-line-height);}
 .item-description + .item-name {margin-top:-.125rem;}
 .item-tag {margin-left:var(--space-2);}
 
@@ -106,7 +106,7 @@ a {
 
 /* // chip-togglable
 // 이건 필요 없다. 팔로우 팔로잉. 외에는 switch */
-.item-action.is-active {border-color:transparent;background:var(--color-background-weak);color:var(--color-text);}
+.item-action.is-active {border-color:transparent;background:var(--color-background-weak);color:var(--color-foreground);}
 
 /* [role=menuitem] {display:flex;align-items:center;width:100%;}
 [role=menuitemcheckbox] {}

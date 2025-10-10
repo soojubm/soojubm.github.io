@@ -9,7 +9,7 @@
 
 .product-detail {}
 .product-detail-nav {margin:4rem auto;padding:16px 0;width:60%;text-align:center;}
-.product-detail-nav-item {display:inline-block;padding:8px 56px;font-size:14px;color:var(--color-text-light);}
+.product-detail-nav-item {display:inline-block;padding:8px 56px;font-size:14px;color:var(--color-foreground-light);}
 .product-detail-nav-item.is-active {border-bottom:1px solid var(--gray800);color:var(--gray800);}
 .product-detail-body {width:60%;margin:0 auto;}
 .product-detail-body-title {margin:.5rem 0;}
@@ -21,7 +21,7 @@
 .product-detail-intro-image + figure {margin-top:0;margin-bottom:0;}
 
 .product-detail-summary dl {width:66.6666%;overflow:hidden;box-sizing:border-box;}
-.product-detail-summary dt {float:left;width:8rem;margin:.25rem 0;color:var(--color-text-light);}
+.product-detail-summary dt {float:left;width:8rem;margin:.25rem 0;color:var(--color-foreground-light);}
 .product-detail-summary dd {float:left;width:calc(100% - 8rem);margin:.25rem 0;color:var(--gray800);}
 
 .product-policy {margin:4rem 0;}

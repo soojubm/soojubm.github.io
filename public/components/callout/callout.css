@@ -1,5 +1,5 @@
 .callout {
-  --callout-text-color: var(--color-text);
+  --callout-text-color: var(--color-foreground);
 
   display:flex;
   align-items:center;

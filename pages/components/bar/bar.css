@@ -13,7 +13,7 @@
   flex-direction: column;
   align-items: center;
   font-size: 10px;
-  color: var(--color-text);
+  color: var(--color-foreground);
   position: relative;
 }
 

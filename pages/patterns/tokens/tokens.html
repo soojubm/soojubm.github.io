@@ -28,79 +28,102 @@
         guidance, refer to the component-specific guidelines."
     ></mm-title-with-description>
     <br />
-    <mm-text-group>
-      <mm-text variant="label-strong">Primitives</mm-text>
-    </mm-text-group>
-    <div class="token-group">
-      <article class="token-item" style="border: 0; background-color: var(--green100)">
-        <b>--green100: rgba(10, 160, 80, 0.1)</b>
-      </article>
-      <article
-        class="token-item is-primary200"
-        style="border: 0; background-color: var(--green800)"
-      >
-        <b style="color: #fff">--green800: #1b995c</b>
-      </article>
-      <article class="token-item" style="border: 0; background-color: var(--red100)">
-        <b style="color: var(--color-text)">--red100: rgba(243, 68, 97, .06)</b>
-      </article>
-      <article class="token-item" style="border: 0; background-color: var(--red800)">
-        <b style="color: #fff">--red800: #f02849</b>
-      </article>
-      <article class="token-item" style="border: 0; background: var(--color-accent)">
-        <b>--yellow800: gold</b>
-      </article>
+    <div
+      style="
+        margin: 0 -1rem;
+        padding: 1rem;
+        background: var(--color-background-weak);
+        border-radius: var(--radius-large);
+      "
+    >
+      <mm-text-group>
+        <mm-text variant="label-strong">Primitives</mm-text>
+      </mm-text-group>
+      <div class="token-group">
+        <article class="token-item" style="border: 0; background-color: var(--green100)">
+          <b>--green100: rgba(10, 160, 80, 0.1)</b>
+        </article>
+        <article
+          class="token-item is-primary200"
+          style="border: 0; background-color: var(--green800)"
+        >
+          <b style="color: #fff">--green800: #1b995c</b>
+        </article>
+        <article class="token-item" style="border: 0; background-color: var(--red100)">
+          <b style="color: var(--color-foreground)">--red100: rgba(243, 68, 97, .06)</b>
+        </article>
+        <article class="token-item" style="border: 0; background-color: var(--red800)">
+          <b style="color: #fff">--red800: #f02849</b>
+        </article>
+        <article class="token-item" style="border: 0; background: var(--color-accent)">
+          <b>--yellow800: gold</b>
+        </article>
+      </div>
+      <mm-separator></mm-separator>
+      <div class="token-group">
+        <article class="token-item">
+          <b style="color: var(--color-foreground)">--gray0: #fff</b>
+        </article>
+        <article class="token-item" style="border: 0; background: #fcfdfc">
+          <b>--gray50: #fcfdfc</b>
+        </article>
+        <article class="token-item" style="border: 0; background: var(--gray100)">
+          <b>--gray100: #f5f8f5</b>
+        </article>
+        <article class="token-item is-gray200" style="border: 0; background: var(--gray200)">
+          <b>--gray200: #e0e2e1</b>
+        </article>
+        <article class="token-item is-gray200" style="border: 0; background: var(--gray300)">
+          <b>--gray300: #c1c3c2</b>
+        </article>
+        <article class="token-item is-gray400" style="border: 0; background: var(--gray400)">
+          <b style="color: #fff">--gray400: #979d9a</b>
+        </article>
+        <article class="token-item" style="border: 0; background: var(--gray800)">
+          <b style="color: #fff">--gray800: #343c38</b>
+        </article>
+        <article class="token-item" style="border: 0; background: var(--gray900)">
+          <b style="color: #fff">--gray900: #1e2321</b>
+        </article>
+      </div>
+      <mm-separator></mm-separator>
+      <div class="token-group">
+        <article class="token-item">
+          <b>TODO Skeleton</b>
+        </article>
+        <article class="token-item">
+          <b>TODO Transparent gradient</b>
+        </article>
+        <article class="token-item">
+          <b>--color-categorical-1: null TODO</b>
+        </article>
+      </div>
     </div>
-    <mm-separator></mm-separator>
+
+    <br />
+
+    <mm-text variant="label-strong">Foreground (Text, Icon)</mm-text>
     <div class="token-group">
       <article class="token-item">
-        <b style="color: var(--color-text)">--gray0: #fff</b>
+        <b>--color-foreground: var(--gray800)</b>
+        <mm-text variant="label-strong">soojubm</mm-text>
       </article>
-      <article class="token-item" style="border: 0; background: #fcfdfc">
-        <b>--gray50: #fcfdfc</b>
+      <article class="token-item">
+        <b>--color-foreground-light: var(--gray400)</b>
+        <mm-text variant="label-strong">
+          <span style="color: var(--color-foreground-light)">soojubm</span>
+        </mm-text>
       </article>
-      <article class="token-item" style="border: 0; background: var(--gray100)">
-        <b>--gray100: #f5f8f5</b>
+      <article class="token-item">
+        <b>--color-foreground-link: var(--color-primary)</b>
+        <mm-link>soojubm</mm-link>
       </article>
-      <article class="token-item is-gray200" style="border: 0; background: var(--gray200)">
-        <b>--gray200: #e0e2e1</b>
-      </article>
-      <article class="token-item is-gray200" style="border: 0; background: var(--gray300)">
-        <b>--gray300: #c1c3c2</b>
-      </article>
-      <article class="token-item is-gray400" style="border: 0; background: var(--gray400)">
-        <b style="color: #fff">--gray400: #979d9a</b>
+      <!-- <article class="token-item" style="border: 0; background: var(--gray400)">
+        <b style="color: #fff">--color-foreground-light: var(--gray400);</b>
       </article>
       <article class="token-item" style="border: 0; background: var(--gray800)">
-        <b style="color: #fff">--gray800: #343c38</b>
-      </article>
-      <article class="token-item" style="border: 0; background: var(--gray900)">
-        <b style="color: #fff">--gray900: #1e2321</b>
-      </article>
-    </div>
-    <mm-separator></mm-separator>
-    <div class="token-group">
-      <article class="token-item">
-        <b>TODO Skeleton</b>
-      </article>
-      <article class="token-item">
-        <b>TODO Transparent gradient</b>
-      </article>
-      <article class="token-item">
-        <b>--color-categorical-1: null TODO</b>
-      </article>
-    </div>
-    <mm-separator></mm-separator>
-    <div class="token-group">
-      <article class="token-item">
-        <b>--color-attention-text: null TODO</b>
-      </article>
-      <article class="token-item">
-        <b>--color-attention-background: null TODO</b>
-      </article>
-      <article class="token-item">
-        <b>--color-attention-border: null TODO</b>
-      </article>
+        <b style="color: #fff">--color-foreground: var(--gray800)</b>
+      </article> -->
     </div>
 
     <br />
@@ -111,6 +134,9 @@
       </article>
       <article class="token-item" style="border: 0; background: var(--gray800)">
         <b style="color: #fff">--color-background-strong: var(--gray800)</b>
+      </article>
+      <article class="token-item" style="border: 0; background: var(--color-primary)">
+        <b style="color: #fff">--color-background-primary: var(--gray800)</b>
       </article>
     </div>
 
@@ -130,33 +156,29 @@
 
     <mm-text variant="label-strong">Status</mm-text>
     <div class="token-group">
-      <article class="token-item" style="border: 0; background: var(--yellow800)">
-        <b>--color-state-attention: var(--gray800)</b>
+      <article class="token-item" style="border: 0; background: var(--red800)">
+        <b>--color-attention-background: var(--color-attention)</b>
+      </article>
+      <article class="token-item">
+        <b>--color-attention-foreground: var(--gray0)</b>
+      </article>
+      <article class="token-item" style="border: 0; background: var(--red100)">
+        <b>--color-accent-border: var(--color-attention)</b>
       </article>
     </div>
 
-    <br />
-
-    <mm-text variant="label-strong">Text</mm-text>
+    <mm-separator></mm-separator>
     <div class="token-group">
-      <article class="token-item" style="border: 0; background: var(--gray400)">
-        <b>--color-text-light: var(--gray400);</b>
+      <article class="token-item" style="border: 0; background: var(--color-accent)">
+        <b>--color-accent-background: var(--color-attention)</b>
       </article>
-      <article class="token-item" style="border: 0; background: var(--gray800)">
-        <b style="color: #fff">--color-text: var(--gray800)</b>
+      <article class="token-item">
+        <b>--color-accent-foreground: var(--gray0)</b>
+      </article>
+      <article class="token-item" style="border: 0; background: var(--color-accent)">
+        <b>--color-accent-border: var(--color-attention)</b>
       </article>
     </div>
-
-    <article class="token-item">
-      <mm-text variant="body-large">수줍음</mm-text>
-      <b>--color-text</b>
-    </article>
-    <article class="token-item">
-      <mm-text variant="body-large">
-        <span style="color: var(--color-text-light)">수줍음</span>
-      </mm-text>
-      <b>--color-text-light</b>
-    </article>
   </section>
 
   <section class="component-temp">

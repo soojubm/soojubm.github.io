@@ -29,7 +29,7 @@ const styles = `
     // border-radius: var(--radius);
     font-family: inherit;
     font-weight: var(--font-weight-bold);
-    color: var(--color-text);
+    color: var(--color-foreground);
   }
 
   button:hover {

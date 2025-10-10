@@ -27,7 +27,7 @@ class Feature extends HTMLElement {
     const style = document.createElement('style')
     style.textContent = `
       mm-avatar::part(avatar) {
-        border-color: var(--color-text) !important;
+        border-color: var(--color-foreground) !important;
       }
     `
     shadow.appendChild(style) // ✅ 중요!

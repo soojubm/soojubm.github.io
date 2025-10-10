@@ -18,12 +18,6 @@
       <mm-avatar variant="secondary" size="large" default="true" badge="true"></mm-avatar>
       <mm-avatar variant="tertiary" size="large" default="true" badge="true"></mm-avatar>
     </mm-group>
-    <mm-separator></mm-separator>
-    <mm-group variant="avatar">
-      <mm-avatar size="medium" default="true"></mm-avatar>
-      <mm-avatar size="medium" default="true"></mm-avatar>
-      <mm-avatar size="medium" default="true"></mm-avatar>
-    </mm-group>
   </section>
 
   <section class="component-props">
@@ -102,14 +96,24 @@
       title="AvatarGroup"
       description="maximum avatar length 3"
     ></mm-title-with-description>
+    <mm-separator></mm-separator>
+    <mm-group variant="avatar">
+      <mm-avatar size="medium" default="true"></mm-avatar>
+      <mm-avatar size="medium" default="true"></mm-avatar>
+      <mm-avatar size="medium" default="true"></mm-avatar>
+    </mm-group>
   </section>
+
   <section class="component-temp">
     <mm-title-with-description
       level="2"
       title="UserAvatar, CompanyAvatar"
       description="UserAvatar name={} description={string | React.ReactNode} avatarProps={} / CompanyAvatar name={}"
     ></mm-title-with-description>
+    <mm-separator></mm-separator>
+    <b>TODO</b>
   </section>
+
   <section class="component-temp">
     <mm-title-with-description
       level="2"
@@ -132,6 +136,66 @@
         </mm-group>
       </div>
     </div>
+  </section>
+
+  <section class="component-temp">
+    <mm-title-with-description
+      level="2"
+      title="UserCard"
+      description="구체 레벨."
+    ></mm-title-with-description>
+    <br />
+    <mm-tile variant="flat">
+      <div style="display: flex; gap: 1rem">
+        <mm-avatar size="huge" variant="secondary" default="true"></mm-avatar>
+        <mm-group style="flex-direction: column; gap: var(--space-2)">
+          <div>
+            <mm-text variant="label">Top User</mm-text>
+            <mm-text variant="subhead">수줍이</mm-text>
+          </div>
+          <div>
+            <mm-text variant="label">Daily Purchase</mm-text>
+            <mm-text variant="subhead">10 Items</mm-text>
+          </div>
+        </mm-group>
+      </div>
+      <mm-separator></mm-separator>
+      <mm-keyvalue key="Total New Users" value="5.9K" alignment="vertical"></mm-keyvalue>
+      <!-- <mm-tag>8.2% 상승</mm-tag> -->
+      <mm-tile variant="elevated" size="small" style="margin: var(--space-3) 0 0">
+        <mm-group variant="avatar">
+          <mm-avatar size="small" default="true"></mm-avatar>
+          <mm-avatar size="small" default="true"></mm-avatar>
+          <mm-avatar size="small" default="true"></mm-avatar>
+          <mm-avatar size="small" default="true"></mm-avatar>
+          <mm-text style="margin-left: var(--space-2)"> Followed by 수줍이 외 4명 </mm-text>
+        </mm-group>
+      </mm-tile>
+      <!-- <mm-text class="mutiual"> 내가 팔로우하는 사용자 중에는 팔로워가 없습니다. (twitter) </mm-text> -->
+    </mm-tile>
+    <br />
+
+    <mm-tile>
+      <mm-menuitem label="수줍이" description="Youtube subscriber">
+        <mm-avatar slot="avatar" default="true"></mm-avatar>
+      </mm-menuitem>
+      <div style="margin: var(--space-2) 0 0">
+        <mm-text variant="body">
+          Sometimes at night, I find myself behind the computer. When I finally blink, a mess of
+          code is drawing random structures on the screen. I spend the rest of the night staring.
+        </mm-text>
+      </div>
+      <div style="margin-block: var(--space-3)">
+        <mm-group variant="button">
+          <mm-keyvalue key="팔로워" value="62" alignment="inline"></mm-keyvalue>
+          <i class="icon-bullet"></i>
+          <mm-keyvalue key="팔로잉" value="8" alignment="inline"></mm-keyvalue>
+        </mm-group>
+      </div>
+      <mm-tile variant="tile" size="small">
+        <mm-text>🥺 수줍이님을 팔로우하고 있는 친구가 없습니다.</mm-text>
+      </mm-tile>
+    </mm-tile>
   </section>
 </main>
 

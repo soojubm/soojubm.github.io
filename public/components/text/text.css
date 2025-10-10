@@ -61,7 +61,7 @@ ul {
 
 
 .text {
-  color: var(--color-text);
+  color: var(--color-foreground);
 }
 
 .text[data-variant=display] {
@@ -74,14 +74,14 @@ ul {
   font-size:var(--font-size-huge);
   font-weight:var(--font-weight-bold);
   line-height:var(--font-line-height);
-  color:var(--color-text);
+  color:var(--color-foreground);
 }
 
 .text[data-variant=heading2] {
   font-size: 1.5rem;
   font-weight:var(--font-weight-bold);
   line-height:var(--font-line-height);
-  color:var(--color-text);
+  color:var(--color-foreground);
 }
 
 .text[data-variant=subhead] {
@@ -90,7 +90,7 @@ ul {
   line-height: var(--font-line-height);
   font-size:var(--font-size-large);
   font-weight:var(--font-weight-bold);
-  color: var(--color-text);
+  color: var(--color-foreground);
 }
 
 .text[data-variant=body] {
@@ -110,7 +110,7 @@ ul {
   font-size:var(--font-size-medium);
   font-weight:var(--font-weight-normal);
   line-height: var(--font-line-height);
-  color:var(--color-text-light);
+  color:var(--color-foreground-light);
 }
 
 .text[data-variant=label-strong] {

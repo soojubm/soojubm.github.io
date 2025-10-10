@@ -13,7 +13,7 @@ input:valid {} input:invalid {}
   border-radius: var(--radius);
   box-sizing: border-box;
   font: inherit;
-  color: var(--color-text);
+  color: var(--color-foreground);
   /* // for safari #fff. 사파리의 인풋은 기본이 검정임. 그래서 텍스트도 흰색. */
 }
 
@@ -85,7 +85,7 @@ input[type=search]::-webkit-search-results-decoration {display:none;}
 }
 .textfield-label small {
   margin:0 0 0 var(--space-1);
-  color:var(--color-text-light);
+  color:var(--color-foreground-light);
 }
 .textfield-input {
   display:block;
@@ -95,7 +95,7 @@ input[type=search]::-webkit-search-results-decoration {display:none;}
   box-sizing: border-box;
   border-radius:var(--textfield-radius);
   background: var(--textfield-background-color);
-  color: var(--color-text);
+  color: var(--color-foreground);
 
   /* box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 0px 0px; */
 }
@@ -106,7 +106,7 @@ textarea.textfield-input {
 }
 /* .textfield-input:hover {border-color:var(--color-primary);} */
 .textfield-input:focus {box-shadow:var(--status-hover);}
-.textfield-input:read-only {color:var(--color-text-light);cursor:default;}
+.textfield-input:read-only {color:var(--color-foreground-light);cursor:default;}
 .textfield-input:disabled {opacity:.5;cursor:not-allowed;}
 .textfield-helper {margin:var(--space-1) 0 0;color:var(--red800);}
 

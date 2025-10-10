@@ -40,7 +40,7 @@
   relative;
   cursor: pointer;
 
-  /* .component-props dl dt::before {content:'\2669';display:block;font-size: 12px;color:var(--color-text);font-style:normal;font-weight: bold;;} */
+  /* .component-props dl dt::before {content:'\2669';display:block;font-size: 12px;color:var(--color-foreground);font-style:normal;font-weight: bold;;} */
   
   &:after {
     content: '...펼쳐서 더보기';
@@ -56,7 +56,7 @@
 
   }
   mm-text[variant='subhead'] {display: none;}
-  dl dt {color:var(--color-text-light);}
+  dl dt {color:var(--color-foreground-light);}
   dl dd {margin-top:-.25rem;font-weight:var(--font-weight-bold);font-style:italic;}
   dl dd + dt {margin-top:var(--space-3);}
   dl dd + dd {margin:0 0 var(--space-1) 0;font-style:normal;font-weight:var(--font-weight-normal);font-size:var(--font-size-medium)}

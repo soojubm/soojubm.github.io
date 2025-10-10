@@ -44,7 +44,7 @@ class Dropdown extends HTMLElement {
         border: var(--border-stronger);
         border-radius: var(--radius);
         background-color: var(--color-background);
-        color: var(--color-text);
+        color: var(--color-foreground);
         cursor: pointer;
         text-align: left;
         font-family: inherit;

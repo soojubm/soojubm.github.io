@@ -111,7 +111,7 @@
 
 .checkbox input:disabled ~ label {opacity:.5;cursor:not-allowed;}
 
-.checkbox-description {display:block !important;padding-left:calc(var(--size-tiny) + var(--space-2));color:var(--color-text-light);}
+.checkbox-description {display:block !important;padding-left:calc(var(--size-tiny) + var(--space-2));color:var(--color-foreground-light);}
 
 /* // hidden attribute */
 input[type=radio] + label + *,

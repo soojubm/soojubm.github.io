@@ -125,8 +125,8 @@
   --color-border-stronger: var(--gray300);
   --color-border-hover: var(--gray800);
 
-  --color-text: var(--gray900);
-  --color-text-light: var(--gray400);
+  --color-foreground: var(--gray900);
+  --color-foreground-light: var(--gray400);
 
   --color-gradient-from: null;
   --color-gradient-to: null;
@@ -230,9 +230,9 @@
   /* // 같은 변수도 재할당이 필요하다. */
   --gray200: #252d29;
 
-  --color-text: #d3d4d5;
-  --color-text-weak: var(--gray800);
-  --color-text-light: var(--gray400);
+  --color-foreground: #d3d4d5;
+  --color-foreground-weak: var(--gray800);
+  --color-foreground-light: var(--gray400);
 
   --color-background: rgb(31, 35, 33);
   --color-background-weak: #292f2c;
@@ -243,7 +243,7 @@
   --color-background-surface-2: null;
 
   --color-tile-container: var(--color-background-surface-1);
-  --color-tile-on-container: var(--color-text);
+  --color-tile-on-container: var(--color-foreground);
 
 
   --color-border: var(--gray800);
