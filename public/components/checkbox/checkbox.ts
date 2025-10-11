@@ -14,8 +14,6 @@ class Checkbox extends CustomHTMLElement {
 
   constructor() {
     super()
-    // this._internals = this.attachInternals()
-    // this.innerHTML = `<button class="chip"></button>`
     const shadow = this.attachShadow({ mode: 'open' })
 
     const container = document.createElement('div')
@@ -23,9 +21,11 @@ class Checkbox extends CustomHTMLElement {
 
     const label = document.createElement('label')
     label.setAttribute('for', this.name || '')
-    // label.append(...this.childNodes)
-    label.innerHTML = this.innerHTML || ''
-    label.append(this.textContent || '')
+
+    // label.innerHTML = this.innerHTML || ''
+
+    const slot = document.createElement('slot')
+    label.appendChild(slot)
 
     const input = document.createElement('input')
     input.setAttribute('type', 'checkbox')
