@@ -2,16 +2,6 @@
   --section-margin: var(--space-4);
 }
 
-
-.component-temp {
-  margin: 0 0 1rem calc(-5vw + 1rem);
-  padding: 2rem calc(var(--grid-margin) - 1rem);
-  /* border-radius: var(--radius-large) var(--radius-large) 0 0;
-   */
-  border: var(--border-stronger);
-  border-radius: var(--radius-large);
-}
-
 .component-example {
   margin: 2.5rem 0 1rem calc(-5vw + 1rem);
   padding: 2rem calc(var(--grid-margin) - 1rem);

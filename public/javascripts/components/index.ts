@@ -46,10 +46,12 @@ import TextPair from '../../components/textpair/textpair'
 import Dropdown from '../../components/textfield/dropdown'
 import ButtonListComponent from '../../components/buttonList/buttonList'
 import TitleWithDescription from '../../components/title-with-description/index'
+import ComponentSection from '../../components/component-section'
 
 export function defineCustomElement() {
   if ('customElements' in window) {
     customElements.define('mm-icon', Icon)
+    customElements.define('mm-component-section', ComponentSection)
 
     customElements.define('button-list-component', ButtonListComponent)
 

@@ -5,30 +5,27 @@
       <rect height="1" width="7" y="4" x="1" />
     </svg>
   </div> -->
-    <mm-title-with-description
-      level="1"
-      title="Signifier"
-      description="예측 가능한 사용자 인터렉션으로 서비스와 사용자 사이의 신뢰 구축."
-    >
-    </mm-title-with-description>
-    <br />
-    <mm-text-list
-      texts='[
+  <mm-title-with-description
+    level="1"
+    title="Signifier"
+    description="예측 가능한 사용자 인터렉션으로 서비스와 사용자 사이의 신뢰 구축."
+  >
+  </mm-title-with-description>
+  <br />
+  <mm-text-list
+    texts='[
         "상태를 표현하는 시각 언어는 일부 컴포넌트에 종속되지 않고 제품 전체에 일관합니다.",
         "성공적인 상호작용 피드백은 장식적인 것이 아니라 정보를 제공하는 것입니다. 시각적 노이즈나 강렬한 색상 변화를 유발하는 정교한 전환을 피하세요. 주의를 산만하게 하는 애니메이션은 혼란을 야기하고 인터페이스를 사용하기 불편하게 만들 수 있습니다.",
         "TODO 더보기 패턴. 아이템이 3개 이하일 때 제목 우측에 모두보기 버튼을 위치할 수 있지만, 아이템이 4개 이상이라면 아이템의 아래에 모두보기 버튼을 배치. 가로 스크롤인 경우 스크롤의 가장 우측에 배치할 수도. "
       ]'
-    ></mm-text-list>
+  ></mm-text-list>
 
   <br />
 
-  <section class="component-temp">
-    <mm-title-with-description
-      level="2"
-      title="Clickable"
-      description="인터렉션 가능한 오브젝트를 구분합니다. 사용자는 클릭할 수 있는 오브젝트를 명확하게 인지하여 예측 가능한 신뢰를 구축할 수 있습니다."
-    ></mm-title-with-description>
-    <br />
+  <mm-component-section
+    title="Clickable"
+    description="인터렉션 가능한 오브젝트를 구분합니다. 사용자는 클릭할 수 있는 오브젝트를 명확하게 인지하여 예측 가능한 신뢰를 구축할 수 있습니다."
+  >
     <section class="columns columns-3">
       <div class="token-item" style="box-shadow: var(--shadow)">
         <p>
@@ -49,26 +46,21 @@
         <p><b>이미지</b>는 클릭할 수 있다.</p>
       </div> -->
     </section>
-  </section>
+  </mm-component-section>
 
-<section class="component-temp">
-
-
-  <mm-title-with-description
-    level="2"
+  <mm-component-section
     title="Icons"
     description="아이콘은 기표로 정의한 의미를 전달하는 기호입니다. 단순히 장식적인 용도로 사용하지 마세요."
-  ></mm-title-with-description>
-  <br />
-  <mm-text-list
-    texts='[
+  >
+    <mm-text-list
+      texts='[
       "Indicator Icons - Label, Decorative",
       "Navigation Icons",
       "Action Icons",
       "TODO :: dismiss, remove, clear, close"
     ]'
-  ></mm-text-list>
-  <br />
+    ></mm-text-list>
+    <br />
     <section
       class="group"
       style="display: flex; flex-wrap: wrap; gap: var(--space-3); margin: 0 0 2rem"
@@ -76,7 +68,7 @@
       <mm-entity size="huge" alignment="center" label="" description="Search">
         <mm-avatar slot="avatar" variant="secondary" size="huge" icon="search"> </mm-avatar>
       </mm-entity>
-  
+
       <!-- <mm-entity size="huge" alignment="center" label="">
               description="Expandable & Collapsible (vertical)"
               <mm-avatar slot="avatar" variant="secondary" size="huge" >
@@ -129,7 +121,7 @@
       <mm-entity size="huge" alignment="center" label="" description="Setting">
         <mm-avatar slot="avatar" variant="secondary" size="huge" icon="settings"> </mm-avatar>
       </mm-entity>
-  
+
       <mm-entity size="huge" alignment="center" label="" description="Copy">
         <mm-avatar slot="avatar" variant="secondary" size="huge" icon="copy"> </mm-avatar>
       </mm-entity>
@@ -137,7 +129,6 @@
         <mm-avatar slot="avatar" variant="secondary" size="huge" icon="refresh"> </mm-avatar>
       </mm-entity>
     </section>
-
     <mm-group>
       <mm-entity size="huge" alignment="center" label="" description="Lock">
         <mm-avatar slot="avatar" variant="secondary" size="huge" icon="lock"> </mm-avatar>
@@ -149,19 +140,14 @@
         <mm-avatar slot="avatar" variant="secondary" size="huge" icon="mail"> </mm-avatar>
       </mm-entity>
     </mm-group>
-</section>
+  </mm-component-section>
 
-
-
-  <section class="component-temp">
-    <mm-title-with-description
-      level="2"
-      title="Interaction states"
-      description="Interaction states communicate the status of an element in the interface, establish
+  <mm-component-sectio
+    title="Interaction states"
+    description="Interaction states communicate the status of an element in the interface, establish
         confidence once an action is taken, and suggest the ability (or inability) to interact with
         the element."
-    ></mm-title-with-description>
-    <br />
+  >
     <div>
       <mm-text variant="label-strong">Hover state</mm-text>
       <mm-tile>
@@ -205,25 +191,20 @@
         <span style="background: var(--color-background-strong)"></span>
       </div>
     </div>
-  </section>
+  </mm-component-sectio>
 
-
-
-  <section class="component-temp">
-    <mm-title-with-description
-      level="2"
-      title="Feedbacks"
-      description="Interaction states communicate the status of an element in the interface, establish
+  <mm-component-section
+    title="Feedbacks"
+    description="Interaction states communicate the status of an element in the interface, establish
         confidence once an action is taken, and suggest the ability (or inability) to interact with
         the element."
-    ></mm-title-with-description>
-      <mm-text variant="body">
-        Keep things consistent. Consistent treatments for interaction feedback create recognizable
-        patterns. If an interaction produces different feedback across the Shopify admin, it
-        deteriorates the integrity of the pattern and risks confusing merchants.
-      </mm-text>
-    </mm-text-group>
-  
+  >
+    <mm-text variant="body">
+      Keep things consistent. Consistent treatments for interaction feedback create recognizable
+      patterns. If an interaction produces different feedback across the Shopify admin, it
+      deteriorates the integrity of the pattern and risks confusing merchants.
+    </mm-text>
+
     <div class="" style="margin-top: 1.5rem">
       <mm-text-pair
         labelText="Global Error"
@@ -235,24 +216,19 @@
         descriptionText="reload - refresh - redirect / result 컴포넌트 / inline error, callout error"
       ></mm-text-pair>
     </div>
-  </section>
+  </mm-component-section>
 
-
-
-  <section class="component-temp">
-    <mm-title-with-description
-      level="2"
-      title="Layout and structure"
-      description="레이아웃과 구조는 콘텐츠의 우선순위를 정하고, 사용자가 콘텐츠를 인지하고 이해하는 데 도움을 줍니다."
-    ></mm-title-with-description>
-
-    <br />
-
-    <mm-text-list texts='[
+  <mm-component-section
+    title="Layout and structure"
+    description="레이아웃과 구조는 콘텐츠의 우선순위를 정하고, 사용자가 콘텐츠를 인지하고 이해하는 데 도움을 줍니다."
+  >
+    <mm-text-list
+      texts='[
     "사용자의 화면 크기를 한정하지 마세요. 새로운 플랫폼이나 새로운 디바이스가 출시되더라도 빠르게 대응할 수 있어야 합니다. 특정 디바이스에 최적화하거나 종속되지 않고 환경에 구애받지 않는 일관된 경험과 인터페이스를 설계한다는 태도.",
     "디자인 이론에 근거한 그리드 시스템은 디자이너에게만 유효하게 동작한다. 12칼럼 그리드는 사용자의 다양한 화면 크기에 대응하기 어렵다? 2~4개의 칼럼을 갖는 레이아웃 시스템이 필요할 수는 있으나, 엄격한 그리드 시스템은.",
     "왜 디자이너들은 작업판의 크기 정의를 어려워 하는가? 375px 등의 고정된 가로 크기는 의미가 없다. 마찬가지로 디자인 툴에서 자동으로 말줄임표를 만든다는 식의 솔루션은 아무 문제도 해결할 수 없다. 말줄임표가 발생하면 레이블의 의미를 전달하지 못 하기 때문이다. 엄격한 writing 가이드가 유아이 툴의 자동화보다 중요하다."
-    ]'></mm-text-list>
+    ]'
+    ></mm-text-list>
 
     <mm-title-with-description
       level="4"
@@ -262,7 +238,7 @@
 
     <br />
 
-      <mm-title-with-description
+    <mm-title-with-description
       level="4"
       title="4 칼럼 그리드"
       description="페이지의 맥락을 구분하기 위해 레이아웃 모듈이나 배경색의 대비를 활용할 수 있습니다. 컨테이너 너비(비밀번호찾기와 로그인/회원가입)와 배경색(설정, 글쓰기, 소개 등)."
@@ -275,17 +251,17 @@
       <blockquote>
         <li>
           "MD3의 Responsive layout. TODO : 반응하는 레이어를 위한 규칙을 어떻게 정의하면 좋을까?
-          프레젠테이션 패턴. 섹션, 아티클 그리고 모달, 드롭다운 등의 컴포넌트도 작은 화면에서는 페이지
-          맥락이 될 수 있음을 고려합니다. 결국 모바일 퍼스트 foundation.",
+          프레젠테이션 패턴. 섹션, 아티클 그리고 모달, 드롭다운 등의 컴포넌트도 작은 화면에서는
+          페이지 맥락이 될 수 있음을 고려합니다. 결국 모바일 퍼스트 foundation.",
         </li>
         <li>"Use only universally recognized icons to represent actions or options.",</li>
         <li>
-          "addable / expandable, done / check / positive" "bold text를 clickable로 사용? (단락 더 보기
-          등에서 사용되는 패턴)" "iOS에서 뒤로가기(이전 페이지)는 chevron."
+          "addable / expandable, done / check / positive" "bold text를 clickable로 사용? (단락 더
+          보기 등에서 사용되는 패턴)" "iOS에서 뒤로가기(이전 페이지)는 chevron."
         </li>
       </blockquote>
     </mm-text-group>
-  </section>
+  </mm-component-section>
 
   <section class="component-references">
     <a

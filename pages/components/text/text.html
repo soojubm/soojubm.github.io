@@ -199,7 +199,6 @@ The font size of a key is never bigger than the value.
         "단독으로 쓰는 텍스트와 항상 함께 쓰이는 텍스트를 구분. 일반적으로 subheading, label, caption은 단독으로 쓰지 않는다.",
         "heading level=, body size=",
         "Utilities. - Truncated. long-form content. truncate-multiple은 항상 2줄.",
-        "message: 사용자의 관점, description: 시스템이 주체",
         "line-height 와 별개로 모든 텍스트는 텍스트를 감싸는 컨테이너로 세로값을 주는 게 좋을 수 있다. 디자이너의 의도에 따라 조정이 필요하다. 피그마에서 소숫점 올려버림. headingText, bodyText의 lineHeight를 따로 설정할까. 1에 가까운 값(x-height), 기본값, 넓은값(large 저용). label이 기본적으로 좁은 line height를 갖는다면 컨터이네가 공간을 갖는 역할을 위임 받아야 함. 이 컨테이너는 비어 있을 수도 았고 text stack의 간격을 정의할 수 있다."
       ]'
       ></mm-text-list>
@@ -217,25 +216,33 @@ The font size of a key is never bigger than the value.
 
     <mm-text-group>
       <mm-text variant="subhead">타이포그래피 규칙</mm-text>
-      <mm-text variant="label-strong">텍스트 모듈</mm-text>
-      <mm-text variant="body">
-        본문은 왼끝 맞추기(오른끝 흘리기). 사용자의 주목을 요할 때, 또는 맥락의 전환을 표현하기 위해
-        콘텐츠 모듈을 가운데 정렬할 수 있다. ex) result component
-      </mm-text>
-      <mm-text variant="label-strong">들여쓰기</mm-text>
-      <mm-text variant="body">
-        단락의 위 아래 간격을 활용합니다. 작은 화면에서 공간 활용을 위해 좌측 들여쓰기 하지
-        않습니다.
-      </mm-text>
-      <mm-text variant="label-strong">시각보정</mm-text>
-      <mm-text variant="body">
-        개별 폰트의 기준선이 다르기 때문에 주변 요소나 부모 요소에 맞춰 시각보정이 필요하다.
-      </mm-text>
-      <mm-text variant="label-strong">제목의 생략</mm-text>
-      <mm-text variant="body">
-        <del>제목을 자르는 것을 허용할 것인가? 허용하지 않을 것인가?</del> 종국에는 모든 텍스트는
-        잘릴 수 있음을 염두해야 한다. 점점 더 작은 스크린에 대응할 수 있어야 한다. 폴더블, 와치
-      </mm-text>
+      <mm-title-with-description
+        level="4"
+        title="텍스트 모듈"
+        description="본문은 왼끝 맞추기(오른끝 흘리기). 사용자의 주목을 요할 때, 또는 맥락의 전환을 표현하기 위해
+        콘텐츠 모듈을 가운데 정렬할 수 있다. ex) result component"
+      ></mm-title-with-description>
+
+      <mm-title-with-description
+        level="4"
+        title="들여쓰기"
+        description="단락의 위 아래 간격을 활용합니다. 작은 화면에서 공간 활용을 위해 좌측 들여쓰기 하지
+        않습니다."
+      ></mm-title-with-description>
+
+      <mm-title-with-description
+        level="4"
+        title="시각보정"
+        description="개별 폰트의 기준선이 다르기 때문에 주변 요소나 부모 요소에 맞춰 시각보정이 필요하다."
+      ></mm-title-with-description>
+
+      <mm-title-with-description
+        level="4"
+        title="제목의 생략"
+        description="<del>제목을 자르는 것을 허용할 것인가? 허용하지 않을 것인가?</del> 종국에는 모든 텍스트는
+        잘릴 수 있음을 염두해야 한다. 점점 더 작은 스크린에 대응할 수 있어야 한다. 폴더블, 와치"
+      ></mm-title-with-description>
+
       <mm-text variant="label-strong">텍스트의 강조</mm-text>
       <mm-text variant="body">형태적 강조 :: mark, u, em, b</mm-text>
       <mm-text variant="body">의미론적 강조 ::strong - 개인정보처리방침 등</mm-text>
@@ -261,11 +268,7 @@ The font size of a key is never bigger than the value.
     <mm-text-group>
       <mm-text variant="subhead">Meta problems</mm-text>
       <mm-text-list
-        texts='["KeyValue, TextGroup, ContentGroup, TextList, TextStack, TextPair", "Label-Description Pair (라벨-설명 쌍) :: 메타 정보를 보여주는 방식. 그러니까 UI패턴.", "Question-Answer Pair, Translation Pair, Dialogue Pair"]'
-      ></mm-text-list>
-      <mm-text variant="subhead">menuItem. with Avatar.</mm-text>
-      <mm-text-list
-        texts='["예: ProfileKeyValuePair, FeatureLabelWithDescription.", "KeyValuePair :: Key와 Value가 동일한 위계를 갖는다. 리스트 형태이다. alignment/size", "LabelWithDescription :: Label이 강조된다. size?"]'
+        texts='["KeyValue, TextGroup, ContentGroup, TextList, TextStack, TextPair", "Label-Description Pair (라벨-설명 쌍) :: 메타 정보를 보여주는 방식. 그러니까 UI패턴.", "Question-Answer Pair, Translation Pair, Dialogue Pair", "예: ProfileKeyValuePair, FeatureLabelWithDescription.", "KeyValuePair :: Key와 Value가 동일한 위계를 갖는다. 리스트 형태이다. alignment/size"]'
       ></mm-text-list>
     </mm-text-group>
 
@@ -280,16 +283,14 @@ The font size of a key is never bigger than the value.
       <mm-text variant="body">
         단어(word)" → "구(phrase)" → "문장(sentence)" → "문단(paragraph)"
       </mm-text>
+      <mm-text variant="body"> "message: 사용자의 관점, description: 시스템이 주체", </mm-text>
     </mm-text-group>
   </section>
 
-  <section class="component-temp">
-    <mm-title-with-description
-      level="2"
-      title="Hero Section"
-      description="A hero section is a large, prominent section at the top of a webpage that typically includes a headline, subheadline, and a call-to-action button."
-    ></mm-title-with-description>
-    <mm-separator></mm-separator>
+  <mm-component-section
+    title="Hero Section"
+    description="A hero section is a large, prominent section at the top of a webpage that typically includes a headline, subheadline, and a call-to-action button."
+  >
     <section class="hero">
       <!-- <div class="hero-obj">
         <div class="hero-obj1"></div>
@@ -314,16 +315,12 @@ The font size of a key is never bigger than the value.
         </mm-group>
       </mm-text-group>
     </section>
-  </section>
+  </mm-component-section>
 
-  <section class="component-temp">
-    <mm-title-with-description
-      level="2"
-      title="Text List"
-      description="순서가 있는 리스트와 순서가 없는 리스트, 그리고 텍스트 리스트 컴포넌트를 제공합니다."
-    ></mm-title-with-description>
-    <br />
-
+  <mm-component-section
+    title="Text List"
+    description="순서가 있는 리스트와 순서가 없는 리스트, 그리고 텍스트 리스트 컴포넌트를 제공합니다."
+  >
     <mm-text-list texts='["mm-text-list 1", "mm-text-list 1"]'> </mm-text-list>
     <mm-separator></mm-separator>
     <ul>
@@ -335,9 +332,9 @@ The font size of a key is never bigger than the value.
       <li>순서가 있는 리스트</li>
       <li>순서가 있는 리스트</li>
     </ol>
-  </section>
+  </mm-component-section>
 
-  <section class="component-temp">
+  <mm-component-section>
     <mm-keyvalue key="keyvalue key text" value="keyvalue value text"></mm-keyvalue>
     <mm-separator></mm-separator>
     <mm-text-pair
@@ -364,7 +361,7 @@ The font size of a key is never bigger than the value.
     </div>
 
     <div class="js-counter" data-number="234">234</div>
-  </section>
+  </mm-component-section>
 
   <!-- 사이트맵 / 메가메뉴 -->
   <!-- <nav style="display: flex; gap: 4rem">

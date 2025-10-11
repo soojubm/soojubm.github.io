@@ -15,59 +15,34 @@
     <mm-avatar slot="avatar" variant="secondary" size="huge">#</mm-avatar>
   </mm-entity>
 
-  <div class="graph">
-    <div class="graph-title">
-      1월 26일 <em>컴퓨터통신 분야</em>에서는<br /><em>7백명의 지식iN</em>들이 답변하셨습니다.
-    </div>
-    <div class="graph-item">
-      <span class="graph-item-value">40%</span>
-      <div class="graph-item-bar"></div>
-      <span class="graph-item-label">10대</span>
-    </div>
-    <div class="graph-item">
-      <span class="graph-item-value">30%</span>
-      <div class="graph-item-bar"></div>
-      <span class="graph-item-label">20대</span>
-    </div>
-    <div class="graph-item">
-      <span class="graph-item-value">20%</span>
-      <div class="graph-item-bar"></div>
-      <span class="graph-item-label">30대</span>
-    </div>
-    <div class="graph-item">
-      <span class="graph-item-value">10%</span>
-      <div class="graph-item-bar"></div>
-      <span class="graph-item-label">40대</span>
-    </div>
-  </div>
+  <br />
+  <br />
 
-  <mm-tile>
-    <article class="meter">
-      <h1 class="meter-title">200 GB 중 187.23 GB 사용됨</h1>
-      <div class="meter-graph">
-        <div class="meter-graph-item" data-type="facebook" style="width: 40%"></div>
-        <div class="meter-graph-item" data-type="twitter" style="width: 30%"></div>
-        <div class="meter-graph-item" data-type="instagram" style="width: 7%"></div>
+  <article class="meter">
+    <mm-text variant="heading2">200 GB 중 187.23 GB 사용됨</mm-text>
+    <div class="meter-graph">
+      <div class="meter-graph-item" data-type="facebook" style="width: 40%"></div>
+      <div class="meter-graph-item" data-type="twitter" style="width: 30%"></div>
+      <div class="meter-graph-item" data-type="instagram" style="width: 7%"></div>
+    </div>
+    <div class="meter-legend" style="margin: 1rem 0">
+      <div class="meter-legend-item">
+        <mm-avatar size="small" style="background-color: var(--color-facebook)"></mm-avatar>
+        <mm-text variant="label-strong">페이스북</mm-text>
+        <mm-text variant="label-strong" style="margin-left: auto">800,000원</mm-text>
       </div>
-      <div class="meter-legend">
-        <div class="meter-legend-item">
-          <mm-avatar size="small" style="background-color: var(--color-facebook)"></mm-avatar>
-          <mm-text variant="label">페이스북</mm-text>
-          <mm-text variant="body" style="margin-left: auto">800,000원</mm-text>
-        </div>
-        <div class="meter-legend-item">
-          <mm-avatar size="small" style="background-color: var(--color-twitter)"></mm-avatar>
-          <mm-text variant="label">트위터</mm-text>
-          <mm-text variant="body" style="margin-left: auto">800,000원</mm-text>
-        </div>
-        <div class="meter-legend-item">
-          <mm-avatar size="small" style="background-color: var(--color-pinterest)"></mm-avatar>
-          <mm-text variant="label">핀터레스트</mm-text>
-          <mm-text variant="body" style="margin-left: auto">800,000원</mm-text>
-        </div>
+      <div class="meter-legend-item">
+        <mm-avatar size="small" style="background-color: var(--color-twitter)"></mm-avatar>
+        <mm-text variant="label">트위터</mm-text>
+        <mm-text variant="body" style="margin-left: auto">800,000원</mm-text>
       </div>
-    </article>
-  </mm-tile>
+      <div class="meter-legend-item">
+        <mm-avatar size="small" style="background-color: var(--color-pinterest)"></mm-avatar>
+        <mm-text variant="label">핀터레스트</mm-text>
+        <mm-text variant="body" style="margin-left: auto">800,000원</mm-text>
+      </div>
+    </div>
+  </article>
 
   <br />
 
@@ -98,57 +73,57 @@
   </mm-tile>
   <!-- <header class="dashboard-head"></header> -->
   <section style="display: flex; justify-content: space-between; gap: 1rem">
-    <mm-tile style="width: 100%">
+    <mm-tile variant="tinted" style="width: 100%">
       <article class="overview-item" style="width: 100%; position: relative">
-        <mm-text variant="body">수신</mm-text>
+        <mm-text variant="label-strong">수신</mm-text>
         <!-- <mm-tag style="position: absolute; right: 1rem; top: 0.875rem">태그</mm-tag> -->
         <mm-text variant="title">
           1,508
           <small style="font-size: var(--font-size-medium); vertical-align: super">90%</small>
         </mm-text>
-        <div class="meter">
+        <div class="meter" style="margin-top: var(--space-2)">
           <div class="meter-track">
             <b class="meter-thumb" style="width: 68%"></b>
           </div>
-          <span class="meter-text">200GB 중 115.72GB 사용</span>
+          <mm-text variant="caption">200GB 중 115.72GB 사용</mm-text>
         </div>
       </article>
     </mm-tile>
-    <mm-tile style="width: 100%">
+    <mm-tile variant="tinted" style="width: 100%">
       <article class="overview-item" style="width: 100%; position: relative">
-        <mm-text variant="body">수신</mm-text>
+        <mm-text variant="label-strong">수신</mm-text>
         <!-- <mm-tag style="position: absolute; right: 1rem; top: 0.875rem">태그</mm-tag> -->
         <mm-text variant="title">
           1,508
           <small style="font-size: var(--font-size-medium); vertical-align: super">90%</small>
         </mm-text>
-        <div class="meter">
+        <div class="meter" style="margin-top: var(--space-2)">
           <div class="meter-track">
             <b class="meter-thumb" style="width: 68%"></b>
           </div>
-          <span class="meter-text">200GB 중 115.72GB 사용</span>
+          <mm-text variant="caption">200GB 중 115.72GB 사용</mm-text>
         </div>
       </article>
     </mm-tile>
-    <mm-tile style="width: 100%">
+    <mm-tile variant="tinted" style="width: 100%">
       <article class="overview-item" style="width: 100%; position: relative">
-        <mm-text variant="body">수신</mm-text>
+        <mm-text variant="label-strong">수신</mm-text>
         <!-- <mm-tag style="position: absolute; right: 1rem; top: 0.875rem">태그</mm-tag> -->
         <mm-text variant="title">
           1,508
           <small style="font-size: var(--font-size-medium); vertical-align: super">90%</small>
         </mm-text>
-        <div class="meter">
+        <div class="meter" style="margin-top: var(--space-2)">
           <div class="meter-track">
             <b class="meter-thumb" style="width: 68%"></b>
           </div>
-          <span class="meter-text">200GB 중 115.72GB 사용</span>
+          <mm-text variant="caption">200GB 중 115.72GB 사용</mm-text>
         </div>
       </article>
     </mm-tile>
   </section>
   <br /><br />
-  <section style="display: flex; justify-content: space-between; gap: 1rem">
+  <section style="display: flex; justify-content: space-between; gap: 1.5rem">
     <div style="width: 66.6666%">
       <header
         style="
@@ -158,7 +133,7 @@
           margin: 0 0 var(--space-3);
         "
       >
-        <mm-text variant="subhead">Transactions</mm-text>
+        <mm-text variant="heading2">Transactions</mm-text>
         <mm-link>View all</mm-link>
       </header>
       <mm-group variant="menuitem" style="gap: var(--space-3)">
@@ -180,10 +155,12 @@
         <mm-tile variant="flat">
           <mm-menuitem>
             <mm-avatar slot="avatar" size="large">🦊</mm-avatar>
-            <div slot="text">
-              <mm-text variant="body-bo">사진 및 동영상 백업</mm-text>
-              <mm-text variant="label">New York, NY - <b>128 Views</b></mm-text>
-            </div>
+            <mm-text-pair
+              slot="text"
+              labelText="사진 및 동영상 백업"
+              descriptionText="디스크립션이다"
+            >
+            </mm-text-pair>
             <mm-group slot="action" variant="chip">
               <mm-button>버튼</mm-button>
               <mm-icon-button variant="navigator" icon="more-vert"> </mm-icon-button>
@@ -218,4 +195,30 @@
     <div style="margin-top: -0.75rem"><mm-text variant="body">NETWORKS</mm-text></div>
   </div>
   <progress class="progress is-normal" value="40" max="100">40%</progress>
+
+  <div class="graph">
+    <div class="graph-title">
+      1월 26일 <em>컴퓨터통신 분야</em>에서는<br /><em>7백명의 지식iN</em>들이 답변하셨습니다.
+    </div>
+    <div class="graph-item">
+      <span class="graph-item-value">40%</span>
+      <div class="graph-item-bar"></div>
+      <span class="graph-item-label">10대</span>
+    </div>
+    <div class="graph-item">
+      <span class="graph-item-value">30%</span>
+      <div class="graph-item-bar"></div>
+      <span class="graph-item-label">20대</span>
+    </div>
+    <div class="graph-item">
+      <span class="graph-item-value">20%</span>
+      <div class="graph-item-bar"></div>
+      <span class="graph-item-label">30대</span>
+    </div>
+    <div class="graph-item">
+      <span class="graph-item-value">10%</span>
+      <div class="graph-item-bar"></div>
+      <span class="graph-item-label">40대</span>
+    </div>
+  </div>
 </main>

@@ -10,10 +10,9 @@
   ></section>
   <div>
     <form class="authentication" name="login" action="" method="" novalidat="true">
-      <!-- 제목 중간보다 큰 폰트가 필요해서 별도 컴포넌트 -->
       <mm-title-with-description
         level="2"
-        title="로그인"
+        title="Sign in to your account"
         description="Lorem Ipsum is simply dummy text."
       ></mm-title-with-description>
       <br />
@@ -58,15 +57,18 @@
       </menu>
     </form>
 
+    <br /><br />
+
     <form class="authentication" name="signup">
-      <header class="authentication-head">
-        <h2 class="authentication-head-title">Welcome<i style="font-style: italic">!</i></h2>
-        <mm-text variant="body" class="authentication-head-description">
-          Find your people. Engage your customers. Build your brand. Do it all with Mailchimp’s
-          Marketing Platform. Already have an account?
-          <mm-link href="#">Log in</mm-link>
-        </mm-text>
-      </header>
+      <mm-title-with-description
+        level="2"
+        title="Welcome!"
+        description="Find your people. Engage your customers. Build your brand. Do it all with Mailchimp’s
+          Marketing Platform. Already have an account?"
+      ></mm-title-with-description>
+      <mm-link href="#">Log in</mm-link>
+      <br />
+      <br />
 
       <fieldset class="authentication-fieldset required">
         <legend hidden>필수입력</legend>
@@ -129,18 +131,13 @@
     </form>
 
     <form class="authentication" name="password" action="" method="" style="max-width: 560px">
-      <header class="authentication-head">
-        <h2 class="authentication-head-title" title="Reset Your Password">Reset Your Password</h2>
-        <p
-          class="authentication-head-description"
-          data-temp="We get it, stuff happens! What's your email address?"
-        >
-          비밀번호가 기억이 안 나세요? 걱정 말아요<i style="font-style: italic">!</i>
-          <br />
-          임시 비밀번호를 이메일로 보내드릴게요.
-        </p>
-        <!-- <p>비밀번호를 재설정할 수 있는 링크를 이메일로 보내드릴게요.</p> -->
-      </header>
+      <mm-title-with-description
+        level="2"
+        title="Reset Your Password"
+        description="We get it, stuff happens! What's your email address? 비밀번호가 기억이 안 나세요? 걱정 말아요! 임시 비밀번호를 이메일로 보내드릴게요."
+      ></mm-title-with-description>
+      <br />
+      <!-- <p>비밀번호를 재설정할 수 있는 링크를 이메일로 보내드릴게요.</p> -->
 
       <fieldset class="authentication-fieldset">
         <mm-textfield label="이메일 주소" placeholder="soojubm@gmail.com"></mm-textfield>
@@ -155,12 +152,12 @@
     </form>
 
     <form class="authentication" name="password-2" style="max-width: 560px" action="">
-      <header class="authentication-head">
-        <h1 variant="title" class="authentication-head-title">비밀번호 재설정</h1>
-        <p class="authentication-head-description">
-          Enter your email to receive a password reset link
-        </p>
-      </header>
+      <mm-title-with-description
+        level="2"
+        title="비밀번호 재설정"
+        description="Enter your email to receive a password reset link"
+      ></mm-title-with-description>
+      <br />
       <fieldset class="authentication-fieldset">
         <mm-textfield label="새 비밀번호" placeholder="" autofocus></mm-textfield>
         <p role="alert" class="textfield-helper" hidden>이메일 형식이 아니에요.</p>
@@ -173,7 +170,7 @@
 
     <form class="authentication verify" name="verify" style="max-width: 560px">
       <mm-title-with-description
-        level="1"
+        level="2"
         title="Please check your email!"
         description="We get it, stuff happens! What's your email address? / We have emailed a 6-digit confirmation code to acb@domain, please enter the code in below
           box to verify your email."
@@ -215,7 +212,7 @@
 
     <section style="margin: 8rem 0">
       <mm-title-with-description
-        level="1"
+        level="2"
         title="메일함을 확인하세요."
         description="faf@faf.co으로 비밀번호 재설정 링크를 발송했습니다."
       ></mm-title-with-description>

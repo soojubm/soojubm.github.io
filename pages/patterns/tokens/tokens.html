@@ -19,15 +19,12 @@
       border-radius: 0;
     } */
   </style>
-  <section class="component-temp">
-    <mm-title-with-description
-      level="2"
-      title="Color"
-      description="색상은 기본 상호작용을 나타내고 브랜드를 강화합니다. (primary interactions, reinforce brand) The use of color in an experience helps define communication, meaning, brand, and roles,
+  <mm-component-section
+    title="Color"
+    description="색상은 기본 상호작용을 나타내고 브랜드를 강화합니다. (primary interactions, reinforce brand) The use of color in an experience helps define communication, meaning, brand, and roles,
         making it easier for users to interact, search, and differentiate elements. For additional
         guidance, refer to the component-specific guidelines."
-    ></mm-title-with-description>
-    <br />
+  >
     <div
       style="
         margin: 0 -1rem;
@@ -118,12 +115,12 @@
         <b>--color-foreground-link: var(--color-primary)</b>
         <mm-link>soojubm</mm-link>
       </article>
-      <!-- <article class="token-item" style="border: 0; background: var(--gray400)">
-        <b style="color: #fff">--color-foreground-light: var(--gray400);</b>
+      <article class="token-item">
+        <b>--color-foreground-on-solid: var(--gray0);</b>
       </article>
       <article class="token-item" style="border: 0; background: var(--gray800)">
-        <b style="color: #fff">--color-foreground: var(--gray800)</b>
-      </article> -->
+        <b style="color: #fff">--color-foreground-on-solid-light: var(--gray400)</b>
+      </article>
     </div>
 
     <br />
@@ -179,14 +176,12 @@
         <b>--color-accent-border: var(--color-attention)</b>
       </article>
     </div>
-  </section>
+  </mm-component-section>
 
-  <section class="component-temp">
-    <mm-title-with-description
-      level="2"
-      title="Size"
-      description="요소의 너비와 높이입니다. 뷰포트의 크기가 변경되어도 사이즈 토큰은 변하지 않습니다."
-    ></mm-title-with-description>
+  <mm-component-section
+    title="Size"
+    description="요소의 너비와 높이입니다. 뷰포트의 크기가 변경되어도 사이즈 토큰은 변하지 않습니다."
+  >
     <section class="token-group">
       <div class="token-item">
         <figure style="width: var(--size-huge); height: var(--size-huge)"></figure>
@@ -231,14 +226,12 @@
         <b>--size-action-small: null</b>
       </div>
     </div>
-  </section>
+  </mm-component-section>
 
-  <section class="component-temp">
-    <mm-title-with-description
-      level="2"
-      title="Shapes - Radius & Elevations"
-      description="radius.formInput/photoSmall"
-    ></mm-title-with-description>
+  <mm-component-section
+    title="Shapes - Radius & Elevations"
+    description="radius.formInput/photoSmall"
+  >
     <div class="token-group">
       <article class="token-item is-gray000">
         <figure></figure>
@@ -258,14 +251,9 @@
         <b>--shadow: 0 0 .5rem rgb(0 0 0 / 7.5%)</b>
       </article>
     </div>
-  </section>
+  </mm-component-section>
 
-  <section class="component-temp">
-    <mm-title-with-description
-      level="2"
-      title="Border"
-      description="내용 없음."
-    ></mm-title-with-description>
+  <mm-component-section title="Border" description="내용 없음.">
     <div class="token-group">
       <div class="token-item">
         <b>--border-width: 1px</b>
@@ -277,9 +265,9 @@
         <b>--border-width-thin: null</b>
       </div>
     </div>
-  </section>
+  </mm-component-section>
 
-  <section class="component-temp">
+  <mm-component-section>
     <mm-title-with-description
       level="2"
       title="Space"
@@ -318,17 +306,14 @@
         <b>--space-page-grid-column: null</b>
       </div>
     </section>
-  </section>
+  </mm-component-section>
 
-  <section class="component-temp">
-    <mm-title-with-description
-      level="2"
-      title="Font"
-      description="활자의 위계와 배치. 정보 계층. 피그마에서 140% line-height를 주면 소숫점 반올림을 해서 표현해줌. 그런데 브라우저는 소수점
+  <mm-component-section
+    title="Font"
+    description="활자의 위계와 배치. 정보 계층. 피그마에서 140% line-height를 주면 소숫점 반올림을 해서 표현해줌. 그런데 브라우저는 소수점
         그대로 표현하기 때문에 안 맞는다. TODO. 고정값으로 표현. 기본 폰트에 따라 가변적인
         line-height는 토큰화 어렵다."
-    ></mm-title-with-description>
-
+  >
     <button
       class="js-default-font"
       style="display: flex; align-items: center; gap: var(--space-2); margin: var(--space-3) 0"
@@ -386,15 +371,12 @@
       </div>
       <mm-text variant="body">body</mm-text>
     </mm-tile> -->
-  </section>
+  </mm-component-section>
 
-  <section class="component-temp">
-    <mm-title-with-description
-      level="2"
-      title="Layouts - Width"
-      description="모든 container는 --small부터 max-width를 100%. TODO breakpoint.medium. breakpoint.android.compact/expanded"
-    ></mm-title-with-description>
-
+  <mm-component-section
+    title="Layouts - Width"
+    description="모든 container는 --small부터 max-width를 100%. TODO breakpoint.medium. breakpoint.android.compact/expanded"
+  >
     <section class="browserWindow_my1Q" style="width: 480px; margin: 2rem 0">
       <header class="browserWindowHeader_jXSR">
         <div class="dots">
@@ -531,15 +513,13 @@
         <b>--layout-dialog-large: 640px</b>
       </div>
     </div>
-  </section>
+  </mm-component-section>
 
-  <section class="component-temp">
-    <mm-title-with-description
-      level="2"
-      title="Animation"
-      description="콘텐츠보다 액션이 강조되지 않도록 뷰포트 내에서 delay를 최대 3개로 제한합니다. inactive로
+  <mm-component-section
+    title="Animation"
+    description="콘텐츠보다 액션이 강조되지 않도록 뷰포트 내에서 delay를 최대 3개로 제한합니다. inactive로
         변경될 때(닫기 등) 즉시(instantly) 실행합니다."
-    ></mm-title-with-description>
+  >
     <div class="token-group">
       <div class="token-item">
         <figure class="animation-fadeup"></figure>
@@ -599,14 +579,12 @@
         <b>@keyframes pop</b>
       </div>
     </div>
-  </section>
+  </mm-component-section>
 
-  <section class="component-temp">
-    <mm-title-with-description
-      level="2"
-      title="Z-index"
-      description="한 자릿수로 사용하면 서드 파티 라이브러리를 사용할 때 문제"
-    ></mm-title-with-description>
+  <mm-component-section
+    title="Z-index"
+    description="한 자릿수로 사용하면 서드 파티 라이브러리를 사용할 때 문제"
+  >
     <div class="token-group">
       <div class="token-item">
         <b>--zindex-deepdive: -1</b>
@@ -636,7 +614,7 @@
         <b>--zindex-skipmenu: 10</b>
       </div>
     </div>
-  </section>
+  </mm-component-section>
 
   <section class="component-references">
     <a href="https://design-tokens.github.io/community-group/format" target="_blank">
