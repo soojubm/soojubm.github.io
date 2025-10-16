@@ -1,82 +1,4 @@
-<div class="scroll-outer">
-  <div class="scroll-inner">
-    <div class="item">Item 1</div>
-    <div class="item">Item 2</div>
-    <div class="item">Item 3</div>
-    <div class="item">Item 4</div>
-    <div class="item">Item 5</div>
-    <div class="item">Item 6</div>
-    <div class="item">Item 6</div>
-    <div class="item">Item 6</div>
-    <div class="item">Item 6</div>
-    <div class="item">Item 6</div>
-    <div class="item">Item 6</div>
-    <!-- 계속 추가 가능 -->
-  </div>
-</div>
 
-https://m3.material.io/blog/building-with-m3-expressive
-
-
-
-<style>:root {
-  --layout-max-width: 1200px;
-  --layout-side-padding: calc((100vw - var(--layout-max-width)) / 2);
-  --item-min-width: 240px;
-  --item-gap: 20px;
-}
-
-.scroll-outer {
-  overflow-x: auto;
-  scroll-snap-type: x mandatory; /* 🧲 scroll snap 적용 */
-  -webkit-overflow-scrolling: touch; /* iOS 부드러운 스크롤 */
-}
-
-.scroll-inner {
-  display: flex;
-  gap: var(--item-gap);
-  padding: 20px 0;
-  padding-left: var(--layout-side-padding);
-  padding-right: var(--layout-side-padding);
-  min-width: 100vw;
-}
-
-.item {
-  min-width: var(--item-min-width);
-  height: 150px;
-  background: #eee;
-  flex-shrink: 0;
-  scroll-snap-align: start; /* 🧲 아이템이 스냅에 맞춰짐 */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  border-radius: 8px;
-}
-
-/* 반응형 대응 */
-@media (max-width: 1200px) {
-  :root {
-    --layout-side-padding: 16px;
-    --item-min-width: 200px;
-    --item-gap: 16px;
-  }
-}
-
-@media (max-width: 768px) {
-  :root {
-    --layout-side-padding: 12px;
-    --item-min-width: 180px;
-    --item-gap: 12px;
-  }
-
-  .item {
-    height: 120px;
-    font-size: 14px;
-  }
-}
-
-</style>
 
 <main class="page" style="max-width:1600px;margin:0 auto;">
 
@@ -95,7 +17,12 @@ https://m3.material.io/blog/building-with-m3-expressive
         goal isn't "all or nothing". 의사결정의 고비가 왔을 때 언제든 이곳으로 돌아와 비교대상의
         우위를 결정하세요. 취사선택. 가치판단.
       </mm-text>
+      <div>
+      "Abstract추상 레벨(패턴 또는 파운데이션) →Semantic시멘틱 레벨(도메인 최적화) → Concrete구체 레벨(맥락화, Implementation)",
+      "구체 레벨 :: user, company 등 두 가지 이상의 아바타 유형이 필요할 때 radius token의 값을 변경하여 구분한다."
     </div>
+    </div>
+ 
   </header>
   <section style="margin: 4rem -4rem; display: flex; gap: 1rem">
     <article style="border: var(--border); padding: 2rem; border-radius: 2rem; border: 2px solid transparent;
@@ -165,6 +92,42 @@ https://m3.material.io/blog/building-with-m3-expressive
       </mm-text>
     </article>
   </section>
+
+
+    <h1 style="text-align: center;margin: 2rem 0;">Sie sind in guter Gesellschaft</h1>
+    <div class="feature columns" style="max-width: 1000px;margin: 2rem auto;gap:1.5rem;">
+      <mm-feature
+        icon="✋"
+        titleText="타겟의 명료 / "
+        description="Meaningful and Trustworthy. 기본적인 내용을 서술하지 마세요. 이 문서를 읽는 사람은 체크박스와 라디오의 차이를 이해하고 있습니다."
+      ></mm-feature>
+      <mm-feature
+        icon="✋"
+        titleText="용도의 분명"
+        description="경우에따라.상황에따라.목적에맞게 등 용도를 특정할 수 없는 사하지 마세요. 기능과 역할을 분명히."
+      ></mm-feature>
+      <mm-feature
+        icon="✋"
+        titleText="규모의 약속"
+        description="모든 세부사항을 정의하지 마세요. 규칙을 정의하는 일 만큼 문제 해결을 위한 도구의 복잡도를 관리도 중요합니다. 예를 들면, border width는 border 스코프에서 디펜던시가 있고, 일괄 변경이 쉽기 때문에 토큰을 정의하지 않는 것이 좋습니다."
+      ></mm-feature>
+      <mm-feature
+        icon="✋"
+        titleText="내용의 간결"
+        description="목록을 열거하거나 가짓수를 보충하는 등의 단순한 정보를 반복하지 마세요."
+      ></mm-feature>
+      <mm-feature
+        icon="✋"
+        titleText="정보의 당위"
+        description="일어날 법 하지 않는 don't 케이스를 작성하여 문서를 장황하게 만들지 마세요. 컴포넌트와 문서는 계속해서 개선되고 변화한다는 원칙에 연동."
+      ></mm-feature>
+      <mm-feature
+        icon="✋"
+        titleText="4,5 Mrd. Verbindungen, Tendenz steigend"
+        description="die durch die Dropbox-Dateifreigabe erstellt wurden."
+      ></mm-feature>
+    </div>
+
   <style>
     .browserWindow_my1Q {
       border: 3px solid #ebedf0;
@@ -313,15 +276,7 @@ https://m3.material.io/blog/building-with-m3-expressive
     <mm-tile variant="flat">
       <mm-titlebar label="팔로우하는 사람"></mm-titlebar>
       <br />
-      <!-- <div style="max-width: 200px; margin: 0 -0.25rem var(--space-3)">
-        <mm-tablist>
-          <mm-tab slot="tab" selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">
-            모두
-          </mm-tab>
-          <mm-tab slot="tab" aria-controls="panel-2" id="tab-2" tabindex="-1">바보만</mm-tab>
-        </mm-tablist>
-      </div> -->
-      <div style="max-width: 140px; margin: 0 0 var(--space-3)">
+      <div style="max-width: 200px; margin: 0 0 var(--space-3)">
         <button-list-component
           id="button-list"
           options='[
@@ -367,137 +322,6 @@ https://m3.material.io/blog/building-with-m3-expressive
         <!-- 칩 그룹으로 필터링을 제공하니 팔로우 버튼과 위계 충돌. 아바타가 작아서 콘텐츠 분리가 안 된다. -->
       </mm-group>
     </mm-tile>
-    <section class="feeds" role="feed" aria-busy="false">
-      <!-- <aside
-        style="
-          position: fixed;
-          top: 6rem;
-          left: calc(50% + var(--width-sidemenu) - var(--grid-margin) + 1rem);
-          transform: translateX(-50%);
-          z-index: 8;
-        "
-      >
-        <button
-          style="
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            box-shadow: var(--shadow);
-            background: var(--color-primary);
-          "
-          onclick="javascript:alert('샘플 유아이')"
-        >
-          1월 1일 변경된 내용 보기
-        </button>
-      </aside> -->
-      <mm-tile>
-        <article class="feed" aria-setsize="3" aria-posinset="1">
-          <mm-tag> 🔥 Most Popular </mm-tag>
-          <div style="height: 0.75rem"></div>
-          <mm-menuitem label="수줍이" description="2 hour" class="feed-user">
-            <mm-avatar slot="avatar" default="true"></mm-avatar>
-          </mm-menuitem>
-          <div class="feed-content">
-            <figure size="huge" class="feed-content-media">
-              <img src="/public/images/springsteen.jpg" alt="" />
-            </figure>
-            <mm-text variant="body">
-              Monotonectally productivate progressive human capital without user friendly portals.
-              Globally benchmark top-line ideas with distributed catalysts for change.
-              Authoritatively restore ubiquitous partnerships vis-a-vis
-              <mm-link href="#feed">synergistic models</mm-link>.
-            </mm-text>
-            <!-- <mm-text-list
-              texts='[
-            "원활한 피드 탐색 경험을 위해 모든 피드를 보여주지 않는 것이 좋을 수 있다. 너무 많은 피드 콘텐츠.",
-            "피드가 노출되는 이유를 알려줄 수 있다. 또한 사용자는 보고 싶은 피드와 보고 싶지 않은 피드를 결정할 권리가 있다.",
-            "글줄의 길이를 상대적으로 좁게 짜는 경향이 있다.",
-            "피드의 상세 페이지.",
-            "리액션 버튼과 리액션 수치를 각각 제공할 수 있고 따로 제공할 수 있다. 리액션한 사용자 목록을 어떻게 보여줄 것인가. 중복 리액션과 횟수 등 기능 정의. 리액션 => 알림. restful - put과 함께 공부해보기",
-            "시의성이 강조되는 서비스이거나 현안을 다루는 서비스라면 스텟을 실시간으로 갱신할 수 있다.",
-            "피드를 작성할 때 하나 이상의 이미지를 포함할 수 있다면 하나 이상의 이미지를 볼 수 있는 인터페이스가 필요하다."
-            ]'
-            >
-            </mm-text-list> -->
-            <div style="height: var(--space-3)"></div>
-            <mm-group variant="tag">
-              <mm-tag>Google</mm-tag>
-              <mm-tag>Meta</mm-tag>
-              <mm-tag>Nvidia</mm-tag>
-            </mm-group>
-            <div style="height: var(--space-4)"></div>
-            <mm-tile variant="elevated">
-              <mm-tag>3월 14일 수정됨</mm-tag>
-              <div style="height: var(--space-3)"></div>
-              <mm-group alignment="vertical">
-                <mm-menuitem label="Kakao" description="https://www.kakaocorp.com" size="large">
-                  <mm-avatar slot="avatar"> </mm-avatar>
-                </mm-menuitem>
-                <mm-menuitem label="Naver" description="https://www.naver.com" size="large">
-                  <mm-avatar slot="avatar"> </mm-avatar>
-                </mm-menuitem>
-              </mm-group>
-            </mm-tile>
-            <div style="height: var(--space-3)"></div>
-            <mm-group class="feed-reaction">
-              <mm-menuitem label="192" roloe="button">
-                <mm-avatar slot="avatar" variant="tertiary" icon="heart"> </mm-avatar>
-              </mm-menuitem>
-            </mm-group>
-          </div>
-        </article>
-      </mm-tile>
-
-
-      
-
-      <style>
-        .feed {
-          /* margin: 3rem 0; */
-        }
-
-        .feed-content {
-          margin: var(--space-3) 0 0 0;
-        }
-
-        .feed-content-media {
-          margin: 0 0 var(--space-3) 0;
-          overflow: hidden;
-          object-fit: cover;
-          border-radius: var(--radius);
-        }
-
-        .feed-reaction {
-          margin: var(--space-4) 0 0 0;
-          position: relative;
-          z-index: 1;
-        }
-
-        .feed-reaction-icon {
-          width: 24px;
-          height: 24px;
-          font-size: var(--font-size-small);
-        }
-
-        .feed-user {
-          margin: var(--space-3) 0;
-        }
-      </style>
-
-      <script>
-        var form = document.getElementById('subscription-form')
-        form.addEventListener('submit', event => {
-          event.preventDefault()
-          const latestInvoicePaymentIntentStatus = localStorage.getItem(
-            'latestInvoicePaymentIntentStatus',
-          )
-
-          if (latestInvoicePaymentIntentStatus === 'requires_payment_method') {
-            const invoiceId = localStorage.getItem('latestInvoiceId')
-            const isPaymentRetry = true
-          }
-        })
-      </script>
-    </section>
     <mm-tile>
       <mm-titlebar class="js-titlebar" heading="알림"> </mm-titlebar>
       <mm-group variant="button" style="margin: var(--space-4) 0 var(--space-3)">
@@ -519,13 +343,10 @@ https://m3.material.io/blog/building-with-m3-expressive
           </div>
         </div>
       </div>
-
-
-      
       <mm-text-list
         texts='[
-          "popover: 간이 전체 알림. 전체보기기 링크 버튼 필요.", "modal: 전체 알림 페이지를 대체할 수 있다. infinite scroll을 통한 페이지를 대체"
-          "클릭 영역 정의, 개별 알림 액션: 읽음-링크/삭제. 알림의 설정.",
+          "popover: 간이 전체 알림. 전체보기기 링크 버튼 필요.", "modal: 전체 알림 페이지를 대체할 수 있다. infinite scroll을 통한 페이지를 대체",
+          "클릭 영역 정의, 개별 알림 액션: 읽음-링크/삭제. 알림의 설정."
         ]'
       >
       </mm-text-list>
@@ -540,25 +361,6 @@ https://m3.material.io/blog/building-with-m3-expressive
 
   <!-- To simplify is to clarify -->
   <!-- overall consistency and design and development efficiency -->
-
-  <!-- 가이드 작성 시 긍정문 고집하니까 글 쓰기 어려움 -->
-  <!-- const ELEVATIONS = {
-    small: `
-      0.5px 1px 1px hsl(var(--shadow-color) / 0.7)
-    `,
-    medium: `
-      1px 2px 2px hsl(var(--shadow-color) / 0.333),
-      2px 4px 4px hsl(var(--shadow-color) / 0.333),
-      3px 6px 6px hsl(var(--shadow-color) / 0.333)
-    `,
-    large: `
-      1px 2px 2px hsl(var(--shadow-color) / 0.2),
-      2px 4px 4px hsl(var(--shadow-color) / 0.2),
-      4px 8px 8px hsl(var(--shadow-color) / 0.2),
-      8px 16px 16px hsl(var(--shadow-color) / 0.2),
-      16px 32px 32px hsl(var(--shadow-color) / 0.2)
-    `
-  } -->
 
   <article class="article">
     <!-- A design system Ops manager must be someone experienced with design and development.
@@ -700,8 +502,6 @@ https://m3.material.io/blog/building-with-m3-expressive
       </div>
     </div>
 
-    <!-- 문서 작성 가이드 -->
-    <!-- 문서 작성 체크리스트 -->
     <!-- <mm-text variant="label-strong">Easy to read</mm-text>
     <mm-text variant="body">
       나이, 성별, 연령, 학습 수준에 구애없이 누구나 읽을 수 있어야 한다. 두괄식. 외국어 지양.
@@ -728,40 +528,6 @@ https://m3.material.io/blog/building-with-m3-expressive
     <mm-text>
       &loz; 다이얼로그에서 버튼 그룹을 두 가지 방식으로 정렬할 필요가 있나요?
     </mm-text> -->
-
-    <h1 style="text-align: center;margin: 2rem 0;">Sie sind in guter Gesellschaft</h1>
-    <div class="feature columns" style="max-width: 1000px;margin: 2rem auto;gap:1.5rem;">
-      <mm-feature
-        icon="✋"
-        titleText="타겟의 명료 / "
-        description="Meaningful and Trustworthy. 기본적인 내용을 서술하지 마세요. 이 문서를 읽는 사람은 체크박스와 라디오의 차이를 이해하고 있습니다."
-      ></mm-feature>
-      <mm-feature
-        icon="✋"
-        titleText="용도의 분명"
-        description="경우에따라.상황에따라.목적에맞게 등 용도를 특정할 수 없는 사하지 마세요. 기능과 역할을 분명히."
-      ></mm-feature>
-      <mm-feature
-        icon="✋"
-        titleText="규모의 약속"
-        description="모든 세부사항을 정의하지 마세요. 규칙을 정의하는 일 만큼 문제 해결을 위한 도구의 복잡도를 관리도 중요합니다. 예를 들면, border width는 border 스코프에서 디펜던시가 있고, 일괄 변경이 쉽기 때문에 토큰을 정의하지 않는 것이 좋습니다."
-      ></mm-feature>
-      <mm-feature
-        icon="✋"
-        titleText="내용의 간결"
-        description="목록을 열거하거나 가짓수를 보충하는 등의 단순한 정보를 반복하지 마세요."
-      ></mm-feature>
-      <mm-feature
-        icon="✋"
-        titleText="정보의 당위"
-        description="일어날 법 하지 않는 don't 케이스를 작성하여 문서를 장황하게 만들지 마세요. 컴포넌트와 문서는 계속해서 개선되고 변화한다는 원칙에 연동."
-      ></mm-feature>
-      <mm-feature
-        icon="✋"
-        titleText="4,5 Mrd. Verbindungen, Tendenz steigend"
-        description="die durch die Dropbox-Dateifreigabe erstellt wurden."
-      ></mm-feature>
-    </div>
 
     <!-- Apple은 탄소 중립을 실천합니다. 그리고 같은 기준을 2030년까지 모든 제품에 대해서도 적용할
     예정입니다. 모든 Apple 제품과 포장재에 100% 재활용 및 재생 가능 소재만이 사용되는 그날을 위해
@@ -830,7 +596,7 @@ https://m3.material.io/blog/building-with-m3-expressive
     <li>이미지 가이드.반응형 이미지 사용법. 일단 그냥 2배수로 크기 조절. 가장 간단.</li>
   </ul>
 
-  <div style="position: relative">
+  <!-- <div style="position: relative">
     <div
       class="circle"
       style="width: 20rem; height: 20rem; background: red; border-radius: 50%"
@@ -872,13 +638,11 @@ https://m3.material.io/blog/building-with-m3-expressive
         top: 14rem;
       "
     ></div>
-  </div>
+  </div> -->
 
 </main>
 
-
-
-<main class="event" style="display:none">
+<main class="event" hidden>
   <header class="event-header">
     <span class="event-header-eyebrow">프로모션 제목</span>
     <h1 class="event-header-title">프로모션,<br />태그라인 쪼개서<br />3줄 정도</h1>

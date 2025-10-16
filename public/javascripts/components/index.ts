@@ -47,6 +47,10 @@ import Dropdown from '../../components/textfield/dropdown'
 import ButtonListComponent from '../../components/buttonList/buttonList'
 import TitleWithDescription from '../../components/title-with-description/index'
 import ComponentSection from '../../components/component-section'
+import Sheet from '../../components/sheet/sheet'
+import SheetHeader from '../../components/sheet/sheet-header'
+import SheetBody from '../../components/sheet/sheet-body'
+import SheetFooter from '../../components/sheet/sheet-footer'
 
 export function defineCustomElement() {
   if ('customElements' in window) {
@@ -110,6 +114,11 @@ export function defineCustomElement() {
     customElements.define('mm-separator', Separator)
 
     customElements.define('mm-title-with-description', TitleWithDescription)
+
+    customElements.define('mm-sheet', Sheet)
+    customElements.define('mm-sheet-header', SheetHeader)
+    customElements.define('mm-sheet-body', SheetBody)
+    customElements.define('mm-sheet-footer', SheetFooter)
   }
 }
 

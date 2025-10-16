@@ -4,191 +4,114 @@
       <div class="component-navigation-background"></div>
       <mm-button class="is-active js-scrollspy-trigger" href="#">Dim</mm-button>
       <mm-button class="js-scrollspy-trigger" href="#">Page</mm-button>
-      <mm-button class="js-scrollspy-trigger" href="#">Modal</mm-button>
-      <mm-button class="js-scrollspy-trigger" href="#">Toast</mm-button>
-      <mm-button class="js-scrollspy-trigger" href="#">Sheet</mm-button>
-      <mm-button class="js-scrollspy-trigger" href="#">Popover</mm-button>
     </mm-group>
   </nav>
   <style>
-
-.component-navigation {
-  width:calc(100% + .25rem);
-  box-sizing: border-box;
-  background:var(--color-background);
-  position:sticky;top:calc(var(--navbar-height));z-index:7;padding:var(--space-2) var(--grid-margin) !important;
-  scroll-behavior: smooth;
-}
-.component-navigation-background {
-  position: absolute;
-  display: none;
-}
-  </style>
-  -->
-
-  <aside class="loader js-loader">
-    <div class="spinner">
-      <div class="double-bounce1"></div>
-      <div class="double-bounce2"></div>
-    </div>
-    <div class="loader-spinner" hidden></div>
-  </aside>
-  <style>
-    .loader {
-      position: fixed;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      background: var(--color-background-weak);
-      z-index: var(--zindex-loader);
+    .component-navigation {
+      width: calc(100% + 0.25rem);
+      box-sizing: border-box;
+      background: var(--color-background);
+      position: sticky;
+      top: calc(var(--navbar-height));
+      z-index: 7;
+      padding: var(--space-2) var(--grid-margin) !important;
+      scroll-behavior: smooth;
     }
-    .loader-spinner {
-      width: 2rem;
-      height: 2rem;
-      background: var(--color-primary);
-      border-radius: 50%;
-      position: fixed;
-      left: 50%;
-      top: 50%;
-      z-index: var(--zindex-loader);
-      transform: translate(-50%, -50%);
-      animation: scaleout 0.8s infinite ease;
-    }
-
-    /* // .loader.is-hidden {opacity:0;visibility:hidden;z-index:-1;}
-
-    @keyframes spinAround {
-      0% {
-        transform: rotate(0deg);
-      }
-      100% {
-        transform: rotate(359deg);
-      }
-    }
-    // .spinner {
-    //   content: "";
-    //   display: block;
-    //   width: 1em;
-    //   height: 1em;
-    //   animation: spinAround .8s linear infinite;
-    //   border-radius: 50%;
-    //   border-color: transparent transparent #dfdbe3 #dfdbe3;
-    //   border-style: solid;
-    //   border-width: 2px;
-
-    //   border-color: rgba(67,47,101,.1) rgba(67,47,101,.1) var(--font-size-large) var(--font-size-large);
-    //   position: relative;
-    // } */
-
-    .spinner {
-      width: var(--size-large);
-      height: var(--size-large);
-
+    .component-navigation-background {
       position: absolute;
-      left: 50%;
-      top: 47.5%;
-      transform: translate(-50%, -50%);
+      display: none;
     }
+  </style> -->
 
-    .double-bounce1,
-    .double-bounce2 {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      background-color: var(--color-primary);
-      opacity: 0.6;
-      position: absolute;
-      top: 0;
-      left: 0;
+  <mm-sheet>
+    <mm-sheet-header title="설정"></mm-sheet-header>
+    <mm-sheet-body>본문 내용</mm-sheet-body>
+    <mm-sheet-footer></mm-sheet-footer>
+  </mm-sheet>
 
-      -webkit-animation: sk-bounce 2s infinite ease-in-out;
-      animation: sk-bounce 2s infinite ease-in-out;
+  <script type="module">
+    const footer = document.querySelector('mm-sheet-footer')
+
+    footer.actions = {
+      secondary: { label: '취소', onClick: () => alert('취소 클릭') },
+      primary: { label: '저장', onClick: () => alert('저장 클릭') },
     }
-
-    .double-bounce2 {
-      -webkit-animation-delay: -1s;
-      animation-delay: -1s;
-    }
-
-    @keyframes sk-bounce {
-      0%,
-      100% {
-        transform: scale(0);
-        -webkit-transform: scale(0);
-      }
-      50% {
-        transform: scale(1);
-        -webkit-transform: scale(1);
-      }
-    }
-  </style>
+  </script>
 
   <mm-text variant="title">Popovers</mm-text>
 
   <section class="component-example">
-    <mm-tile variant="flat">
-      <mm-text variant="subhead">Modal</mm-text>
-      <mm-text variant="body">something that requires the user’s attention.</mm-text>
-      <footer style="margin-top: 1rem">
-        <mm-button variant="tertiary" class="js-modal" data-modal="woolf">모달 열기</mm-button>
-      </footer>
+    <mm-button variant="tertiary" class="js-modal" data-modal="woolf">모달 열기</mm-button>
+
+    <mm-button variant="tertiary" class="js-toggle">하단 모달 열기</mm-button>
+    <mm-tile variant="elevated" class="sheet js-sheet" role="presentation">
+      <button class="sheet-toggle sheet-drag-handle"></button>
+      <mm-row justifyContent="space-between">
+        <mm-text variant="subhead" class="sheet-title">Presentation - sheet</mm-text>
+        <mm-icon-button
+          variant="navigator"
+          icon="xmark"
+          class="js-sheet-close"
+          aria-label="close sheet"
+        ></mm-icon-button>
+      </mm-row>
+      <mm-menuitem data-size="medium" label="iOS 액션 시트 참고">
+        <mm-avatar slot="avatar" default="true"></mm-avatar>
+      </mm-menuitem>
     </mm-tile>
-    <mm-tile variant="flat">
-      <mm-text variant="subhead">Sheet</mm-text>
-      <mm-text variant="body">
-        sheet or drawer. something that requires the user’s attention.
-      </mm-text>
-      <p>
-        To allow users to view optional information or complete sub-tasks in a workflow while
-        keeping the context of the current page, use Sheet.
-      </p>
-      <footer style="margin-top: 1rem">
-        <mm-button variant="tertiary" class="js-toggle">시트 열기</mm-button>
-        <mm-tile variant="elevated" class="sheet js-sheet" role="presentation">
-          <button class="sheet-toggle"></button>
-          <mm-row justifyContent="space-between">
-            <mm-text variant="subhead" class="sheet-title">Presentation - sheet</mm-text>
-            <mm-icon-button
-              variant="navigator"
-              icon="xmark"
-              class="js-sheet-close"
-              aria-label="close sheet"
-            ></mm-icon-button>
-          </mm-row>
-          <mm-group variant="menuitem">
-            <mm-menuitem data-size="medium" label="iOS 액션 시트 참고">
-              <mm-avatar slot="avatar" default="true"></mm-avatar>
-            </mm-menuitem>
-            <mm-menuitem data-size="medium" label="바텀 시트 옵션">
-              <mm-avatar slot="avatar" default="true"></mm-avatar>
-            </mm-menuitem>
-          </mm-group>
-        </mm-tile>
-      </footer>
-    </mm-tile>
-    <mm-tile variant="tile">
-      <mm-text variant="subhead">Dropdown</mm-text>
-      <mm-text-list
-        texts="[
-      '데스크탑에 최적화된 경험. alignment / placement']"
-      >
-      </mm-text-list>
-      <footer style="margin-top: 1rem">
-        <mm-button variant="tertiary" class="js-toggle" aria-haspopup="">팝오버 열기</mm-button>
-        <mm-tile variant="elevated" class="popover"> 내용 </mm-tile>
-      </footer>
-    </mm-tile>
-    <mm-tile variant="tile">
-      <mm-text variant="subhead">Toast</mm-text>
-      <footer style="margin-top: 1rem">
-        <mm-button variant="tertiary" class="js-toggle">토스트 열기</mm-button>
-        <aside class="toast" role="alert">toast test. 사라지는 시간을 정의.</aside>
-      </footer>
-    </mm-tile>
+
+    <mm-button variant="tertiary" class="js-toggle" aria-haspopup="">팝오버 열기</mm-button>
+    <mm-tile variant="elevated" class="popover"> 내용 </mm-tile>
+
+    <mm-button variant="tertiary" class="js-toggle">토스트 열기</mm-button>
+    <aside class="toast" role="alert">toast test. 사라지는 시간을 정의.</aside>
   </section>
 
   <section class="component-guide">
+    <p>UIAlertController iOS15</p>
+    Sheet → 컨텍스트 확장 (non-blocking) Alert → 주의 요청 (blocking) Action Sheet → 시각적 형태는
+    Sheet이지만, “선택 요청”이라는 intent로 AlertController 하위
+    <p>
+      그 접근은 Sheet를 “레이어의 위치 시스템(position system)”으로 본다는 관점이야. 즉, sheetType이
+      “어떤 역할(role)”이냐가 아니라, **“어디에서 나타나는 sheet냐”**를 기준으로 구분한다는 거지.
+      공간적 언어.
+    </p>
+    <p>접속 환경의 구분을 제거의 파운데이션</p>
+    <p>
+      type SheetType = | 'center' // 화면 중앙 모달 | 'bottom' // bottom sheet | 'top' // top sheet
+      | 'left' // side panel | 'right' // side panel | 'anchor' // 트리거 기준 팝오버형 | 'inline'
+      // 부모 내 overlay
+    </p>
+
+    <p>type="center"는 role="dialog", anchor는 role="menu" 등 내부에서 자동 role 부여 필요</p>
+
+    <p>sheetType → motionPreset, elevation, radius를 자동 매핑하면 좋음</p>
+
+    <mm-text variant="subhead">CreatePortal</mm-text>
+
+    <mm-text variant="subhead">Sheet Backdrop / Sheet Overlay</mm-text>
+    <mm-text variant="subhead">Sheet</mm-text>
+    <mm-text variant="subhead">SheetHeader</mm-text>
+    <mm-text variant="subhead">SheetBody</mm-text>
+    <mm-text variant="subhead">SheetFooter</mm-text>
+
+    <mm-text variant="subhead">Centered Sheet</mm-text>
+    <mm-text variant="body">
+      sheet or drawer. something that requires the user’s attention.
+    </mm-text>
+
+    <mm-text variant="subhead">Modal</mm-text>
+    <mm-text variant="body">something that requires the user’s attention.</mm-text>
+
+    <p>
+      To allow users to view optional information or complete sub-tasks in a workflow while keeping
+      the context of the current page, use Sheet.
+    </p>
+
+    <mm-text variant="subhead">Dropdown</mm-text>
+    <mm-text>데스크탑에 최적화된 경험. alignment / placement']</mm-text>
+    <mm-text variant="subhead">Toast</mm-text>
+
     <mm-text variant="subhead">Case studies</mm-text>
     <ul>
       <li>

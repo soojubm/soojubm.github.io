@@ -232,6 +232,23 @@
     title="Shapes - Radius & Elevations"
     description="radius.formInput/photoSmall"
   >
+    <!-- const ELEVATIONS = {
+    small: `
+      0.5px 1px 1px hsl(var(--shadow-color) / 0.7)
+    `,
+    medium: `
+      1px 2px 2px hsl(var(--shadow-color) / 0.333),
+      2px 4px 4px hsl(var(--shadow-color) / 0.333),
+      3px 6px 6px hsl(var(--shadow-color) / 0.333)
+    `,
+    large: `
+      1px 2px 2px hsl(var(--shadow-color) / 0.2),
+      2px 4px 4px hsl(var(--shadow-color) / 0.2),
+      4px 8px 8px hsl(var(--shadow-color) / 0.2),
+      8px 16px 16px hsl(var(--shadow-color) / 0.2),
+      16px 32px 32px hsl(var(--shadow-color) / 0.2)
+    `
+  } -->
     <div class="token-group">
       <article class="token-item is-gray000">
         <figure></figure>
@@ -267,12 +284,10 @@
     </div>
   </mm-component-section>
 
-  <mm-component-section>
-    <mm-title-with-description
-      level="2"
-      title="Space"
-      description="요소 사이의 간격. 현재 섹션 레벨의 간격은 정의하고 있지 않음."
-    ></mm-title-with-description>
+  <mm-component-section
+    title="Space"
+    description="요소 사이의 간격. 현재 섹션 레벨의 간격은 정의하고 있지 않음."
+  >
     <section class="token-group">
       <div class="token-item">
         <!-- <figure style="width: 100%; height: var(--space-05); border-radius: 0"></figure> -->
@@ -643,7 +658,6 @@
     <mm-text variant="subhead">Checklist</mm-text>
     <ul class="checklist">
       <li>warning과 danger를 반드시 제공해야 하나. attention 하나로 할 수 없나.</li>
-      <li>foreground. primary/secondary. 지금 light로 쓰는 것 보다 이렇게 변경하기.</li>
       <li>
         color-icon와 color-text는 항상 동일한가요? TODO icon 등. - element, foreground, myChatBubble
         에서 텍스트는 흰색이 기본이 됨.
@@ -655,10 +669,7 @@
         elevation.surface / overay, raised, sunken // atlassian 동일한데 왜 나눠놨지. //
         elevation-surface/shadow
       </li>
-      <li>
-        250116 연한 회색 배경 하나로 하니 부족. 배경도 마찬가지임. 이제 최소한의 정의로 하는 실험을
-        종료할 단계인 듯. 200, 50 추가.
-      </li>
+
       <li>폰트의 baseline이 달라서 텍스트의 상하 간격이 안 맞을 수 있다.</li>
       <li>
         그림자를 이용한 시각적 상승 효과로 주변 요소 대비 강조. 더 높은 우선순위 및 행동유도를 위한
@@ -670,13 +681,7 @@
         enable theming and make improve maintainability
       </li>
       <li>--[namespace]-[component / category]-[attribute]-[status]</li>
-      <li>
-        <del>
-          인버트 컬러셋을 추가로 정의하지 않습니다. 하나의 컬러셋으로 다크 테마에 대응합니다. 어렵고
-          또는 불필요한 규칙. 왜냐하면 초기 토큰 세팅 허들을 넘으면 컴포넌트 토큰을 활용한 테마
-          대응이 간편해짐.
-        </del>
-      </li>
+
       <div>
         <p>
           opacity.state.hover 4% opacity.state.focus 4% opacity.state.press 8% opacity.state.active
@@ -684,5 +689,18 @@
         <mm-text variant="body"> strong: 강도나 무게, 농도/subtle: 감정, 표현, 인상 </mm-text>
       </div>
     </ul>
+
+    <mm-text variant="subhead">Changelog</mm-text>
+    <li>
+      250116 연한 회색 배경 하나로 하니 부족. 배경도 마찬가지임. 이제 최소한의 정의로 하는 실험을
+      종료할 단계인 듯. 200, 50 추가.
+    </li>
+    <li>
+      <del>
+        인버트 컬러셋을 추가로 정의하지 않습니다. 하나의 컬러셋으로 다크 테마에 대응합니다. 어렵고
+        또는 불필요한 규칙. 왜냐하면 초기 토큰 세팅 허들을 넘으면 컴포넌트 토큰을 활용한 테마 대응이
+        간편해짐.
+      </del>
+    </li>
   </mm-text-group>
 </main>

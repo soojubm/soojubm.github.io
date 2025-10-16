@@ -60,9 +60,7 @@
 
     <mm-text-list
       texts='[
-        "fallback :: icon-noir name=people-tag",
-        "Abstract추상 레벨(패턴 또는 파운데이션) →Semantic시멘틱 레벨(도메인 최적화) → Concrete구체 레벨(맥락화, Implementation)",
-        "구체 레벨 :: user, company 등 두 가지 이상의 아바타 유형이 필요할 때 radius token의 값을 변경하여 구분한다."
+        "fallback :: icon-noir name=people-tag"
       ]'
     ></mm-text-list>
     <!-- React 코드 -->
@@ -99,7 +97,14 @@
   </mm-component-section>
 
   <mm-component-section
-    title="UserAvatar, CompanyAvatar"
+    title="UserAvatar"
+    description="UserAvatar name={} description={string | React.ReactNode} avatarProps={} / CompanyAvatar name={}"
+  >
+    <b>TODO</b>
+  </mm-component-section>
+
+  <mm-component-section
+    title="CompanyAvatar"
     description="UserAvatar name={} description={string | React.ReactNode} avatarProps={} / CompanyAvatar name={}"
   >
     <b>TODO</b>

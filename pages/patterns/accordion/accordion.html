@@ -89,39 +89,37 @@
 
   <section class="component-guide">
     <mm-text-list
-      texts='["Collapsed/Expanded", "닫는 방법의 정의. 도큐먼트를 클릭하면 닫을 것인지? panel을 클릭하면 닫을 것인지? 이렇게 되면 내부에 링크 등의 액션을 제공할 수 없다. 다른 아코디언 아이템을 클릭했을 대 닫을 것인지? 본문을 클릭하여 닫을 수 있게 되면, 본문에 페이지 링크를 제공할 수 없음.",
+      texts='["Collapsed/Expanded", "details/summary" "닫는 방법의 정의. 도큐먼트를 클릭하면 닫을 것인지? panel을 클릭하면 닫을 것인지? 이렇게 되면 내부에 링크 등의 액션을 제공할 수 없다. 다른 아코디언 아이템을 클릭했을 대 닫을 것인지? 본문을 클릭하여 닫을 수 있게 되면, 본문에 페이지 링크를 제공할 수 없음.",
       "사용자가 반드시 숙지해야 하는 정보를 아코디언으로 요약해서 보여주지 마세요. (참고. Tooltip과 같은 맥락)", "요약된 타이틀summary은 한 문장으로 간결하게 작성하세요."]'
     ></mm-text-list>
     <!--
-        <details>
-          <summary>native details / summary</summary>
-          <p>example</p>
-        </details>
-       -->
-
-    <!-- 
-        <ul>
-          <li>
-            자주묻는질문(FAQ) 정도 외에는 잘 쓰지 않음. 교육 도매인의 커리큘럼 정도에서 보임.
-            collapsed->expanded로 전환될 때 모바일 친화적인 모달 형태가 사용될 수 있다.
-          </li>
-          <li>
-           
-          </li>
-          <li>
-            role button - space keycode를 추가하여 스페이스 키 또한 확장/축소할 수 있는 키로
-            인식되도록 합니다. a 엔터키로만동작
-          </li>
-          <li>
-          
-          </li>
-        </ul>
+      <details>
+        <summary>native details / summary</summary>
+        <p>example</p>
+      </details>
       -->
+
+    <mm-title-with-description level="2" title="useCollapsedExpanded"></mm-title-with-description>
+
+    <ul>
+      <li>
+        자주묻는질문(FAQ) 정도 외에는 잘 쓰지 않음. 교육 도매인의 커리큘럼 정도에서 보임. actived:
+        레이어가 모바일에서 사용성이 좋기 때문에 레거시 유아이로 봐도 될 듯. 자주묻는질문은 보조
+        정보.
+      </li>
+      <li>
+        role button - space keycode를 추가하여 스페이스 키 또한 확장/축소할 수 있는 키로 인식되도록
+        합니다. a 엔터키로만동작
+      </li>
+    </ul>
+
     <nav class="component-references">
       <mm-text variant="subhead">References</mm-text>
       <a href="https://nuli.navercorp.com/community/article/1132889">nuli</a>
     </nav>
   </section>
 
-  <abbr title="Frequently asked questions" hidden>FAQ</abbr>
+  <mm-component-section title="Frequently asked questions" description="">
+    <abbr title="Frequently asked questions" hidden>FAQ</abbr>
+  </mm-component-section>
 </main>

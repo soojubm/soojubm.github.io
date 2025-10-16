@@ -60,34 +60,63 @@
     title="MasterCheckbox / TermsCheckbox / TermsCheckboxGroup"
     description="체크박스 그룹에 대한 설명"
   >
-    <mm-tile variant="elevated">
-      <mm-checkbox
-        size="large"
-        class="js-checkall"
-        aira-checked="mixed"
-        aria-controls="1 2"
-        data-indeterminate="true"
-        indeterminate
-      >
-        모두 동의합니다
-      </mm-checkbox>
-    </mm-tile>
-    <mm-group variant="checkbox" style="margin-left: 1rem; margin-top: -0.5rem">
-      <mm-row justifyContent="space-between">
+    <mm-checkbox
+      size="large"
+      class="js-checkall"
+      aira-checked="mixed"
+      aria-controls="1 2"
+      data-indeterminate="true"
+      indeterminate
+    >
+      <mm-text variant="label-strong">모두 동의합니다 (선택동의 포함)</mm-text>
+    </mm-checkbox>
+    <mm-separator spacing="small"></mm-separator>
+    <mm-group variant="checkbox">
+      <mm-row justifyContent="space-between" style="width: 100%">
         <mm-checkbox size="large" class="js-check" id="terms5" name="terms">
-          이용약관에 동의합니다.
+          이용약관 동의 (필수)
         </mm-checkbox>
-        <mm-link href="#">이용약관 바로가기</mm-link>
+        <mm-icon-button
+          variant="navigator"
+          size="small"
+          aria-label="이용약관 바로가기"
+          href="#"
+          icon="arrow-up-right"
+        ></mm-icon-button>
       </mm-row>
+      <mm-tile variant="tinted" style="width: 100%; margin: var(--space-1) 0">
+        <div style="margin-left: 1rem">
+          <mm-checkbox
+            size="small"
+            class="js-checkall"
+            aira-checked="mixed"
+            aria-controls="1 2"
+            data-indeterminate="true"
+            indeterminate
+          >
+            성별
+          </mm-checkbox>
+          <mm-checkbox
+            size="small"
+            class="js-checkall"
+            aira-checked="mixed"
+            aria-controls="1 2"
+            data-indeterminate="true"
+            indeterminate
+          >
+            생년월일
+          </mm-checkbox>
+        </div>
+      </mm-tile>
       <mm-row justifyContent="space-between">
         <mm-checkbox size="large" class="js-check" id="terms6" name="terms">
-          이용약관에 동의합니다.
+          개인정보 수집/이용 동의
         </mm-checkbox>
-        <mm-link href="#">이용약관 바로가기</mm-link>
       </mm-row>
+      <div style="height: var(--space-1)"></div>
       <mm-row justifyContent="space-between">
         <mm-checkbox size="large" class="js-check" id="terms7" name="terms">
-          이용약관에 동의합니다.
+          개인정보 제3자 제공 동의
         </mm-checkbox>
       </mm-row>
     </mm-group>

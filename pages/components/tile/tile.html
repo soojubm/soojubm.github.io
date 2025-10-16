@@ -86,7 +86,7 @@
       texts='[
           "타일 내부 leading, tailing 컴포넌트에 따라 시각보정이 필요할 수 있습니다.",
           "flat 형태는 단순 구획을 표현하기 때문에 클릭할 수 없는 카드에 사용합니다. (foundations에서 정의하고 있다. 내 마음속으로..) elevated 형태는 클릭할 수 있음clickable의 기표이므로, 타일 전체가 하나의 클릭 가능한 컴포넌트이거나 타일 내부에 클릭 가능한 컴포넌트를 포함한다.",
-          "transparented tile 을 정의하여 모든 contentbox가 tile이 되는 것은 어떤가? 비어있는 컴포넌트(Box, Row, div)와는 어떤 차이가 있나? row는 레이아웃 컴포넌트, tile은 형태 컴포넌트이다. tile에 너무 많은 책임을 줄 필요 없다.",
+          "transparented tile 을 정의하여 모든 contentbox가 tile이 되는 것은 어떤가? 비어있는 컴포넌트(Box, Row, div)와는 어떤 차이가 있나? row는 레이아웃 컴포넌트, tile은 형태 컴포넌트이다. tile에 과도한 책임을 부여하지 말 것.",
           "size를 number로 정의하는 유연한 방식이 되어도 좋겠다. 여기에서 number의 타입은 spacing token을 레퍼런스한다.",
           "inset이 커질수록 작은 화면에서 inset 감소가 불가피하다. 물리적 화면 크기에 컴포넌트의 의존성이 커진다. inset이 일정 크기를 넘을 때 콘텐츠 모듈을 가운데 정렬하는 것은 어떤가?"
         ]'
@@ -147,26 +147,6 @@
       <div style="position: absolute; right: 1rem; top: 1rem">
         <mm-button>팔로우</mm-button>
       </div>
-    </mm-tile>
-    <mm-tile>
-      <mm-tilebar heading="Ratings"></mm-tilebar>
-      <div aria-label="별점 5개 만점에 3.9개를 받았습니다." style="text-align: center">
-        <mm-text variant="label">리뷰 116만개</mm-text>
-        <mm-text variant="subhead">⭐ 4.8</mm-text>
-      </div>
-      <mm-separator></mm-separator>
-      <div class="graph2">
-        <b class="graph-label">5 Stars</b>
-        <span class="graph-value">68%</span>
-        <progress class="progress" value="40" max="100">40%</progress>
-        <!-- <div class="graph-bar"><b style="width: 68%"></b></div> -->
-      </div>
-      <div class="graph2">
-        <b class="graph-label">4 Stars</b>
-        <span class="graph-value">24%</span>
-        <progress class="progress" value="40" max="100">40%</progress>
-      </div>
-      <small>별 다섯개에서 점수만큼 채우는 유아이는 최근 잘 보이지 않는다. 구현이 어려움.</small>
     </mm-tile>
 
     <header
@@ -257,64 +237,216 @@
         <mm-icon name="arrow-right"></mm-icon>
       </button>
     </mm-tile>
+  </mm-text-group>
 
-    <mm-tile variant="flat" style="width: 100%; max-width: 24rem">
-      <mm-tag style="position: absolute; left: -0.25rem; top: var(--space-3)">
-        🔥 Most Popular
-      </mm-tag>
-      <div style="height: 1.75rem"></div>
+  <mm-component-section title="PricingTile" description="">
+    <div style="position: relative">
+      <!-- <mm-tag style="position: absolute; left: -0.25rem; top: var(--space-3)"> -->
+      <mm-tag> 🔥 Most Popular </mm-tag>
+      <div style="height: 1rem"></div>
       <mm-text variant="subhead">Standard</mm-text>
-      <!-- <mm-text variant="body"> 대법원장은 국회의 동의를 얻어 대통령이 임명한다. </mm-text> -->
-      <div style="margin: var(--space-2) 0 var(--space-4) 0">
+      <mm-text variant="body"> 대법원장은 국회의 동의를 얻어 대통령이 임명한다. </mm-text>
+      <div style="margin: var(--space-3) 0 1.5rem 0">
         <mm-text variant="title">₩ 6,800</mm-text>
         <mm-text variant="label">한 달에 한 번</mm-text>
       </div>
       <mm-text-list
         texts='[
-      "스토리지 2TB",
-      "Google 전문가와의 상담",
-      "회원을 위한 추가 혜택"
-      ]'
+        "스토리지 2TB",
+        "Google 전문가와의 상담",
+        "회원을 위한 추가 혜택"
+        ]'
       >
       </mm-text-list>
       <br />
       <mm-group>
         <mm-button variant="primary" size="large" isfullwidth="true">업그레이드</mm-button>
       </mm-group>
-    </mm-tile>
-  </mm-text-group>
+    </div>
+  </mm-component-section>
 
-  <section style="width: 320px">
-    <mm-tile variant="" role="listitem">
-      <mm-tag variant="primary">카테고리</mm-tag>
-      <mm-button slot="action" icon="more-vert"> </mm-button>
-      <figure class="media">
-        <img src="/public/images/springsteen.jpg" alt="" />
-      </figure>
-      <div style="height: var(--space-2)"></div>
-      <mm-menuitem label="수줍이" description="2년 전">
-        <mm-avatar slot="avatar" size="small"></mm-avatar>
-      </mm-menuitem>
-      <div style="height: var(--space-2)"></div>
-      <mm-title-with-description
-        level="2"
-        title="카드 유아이"
-        description="텍스트는 최대 두 줄 무야호 따봉 북마크 장바구니 등의 액션이 있을 수 있고 내부 외부 가이드를
-        만들어야해"
-      />
-      <div style="height: var(--space-3)"></div>
-      <mm-group variant="tag">
-        <mm-tag variant="hashtag">프로젝트관리</mm-tag>
-        <mm-tag variant="hashtag">프로덕트디자인</mm-tag>
-        <mm-tag variant="hashtag">프론트엔드개발</mm-tag>
-      </mm-group>
-      <div style="height: var(--space-2)"></div>
-      <mm-tag class="card-note">마일리지 적립 200P</mm-tag>
-      <div style="height: var(--space-3)"></div>
-      <mm-menuitem label="퓨어 오렌지 주스" description="">
-        <mm-avatar slot="avatar" size="large">🍊</mm-avatar>
-        <div><del>₩19,000</del> ₩16,000 <em>할인율 20%</em></div>
-      </mm-menuitem>
-    </mm-tile>
-  </section>
+  <mm-component-section title="FeedTile" description="TODO">
+    <section class="feeds" role="feed" aria-busy="false">
+      <!-- <aside
+        style="
+          position: fixed;
+          top: 6rem;
+          left: calc(50% + var(--width-sidemenu) - var(--grid-margin) + 1rem);
+          transform: translateX(-50%);
+          z-index: 8;
+        "
+      >
+        <button
+          style="
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            box-shadow: var(--shadow);
+            background: var(--color-primary);
+          "
+          onclick="javascript:alert('샘플 유아이')"
+        >
+          1월 1일 변경된 내용 보기
+        </button>
+      </aside> -->
+      <article class="feed" aria-setsize="3" aria-posinset="1">
+        <mm-tag> 🔥 Most Popular </mm-tag>
+        <div style="height: 0.75rem"></div>
+        <mm-menuitem label="수줍이" description="2 hour" class="feed-user">
+          <mm-avatar slot="avatar" default="true"></mm-avatar>
+        </mm-menuitem>
+        <div class="feed-content">
+          <figure size="huge" class="feed-content-media">
+            <img src="/public/images/springsteen.jpg" alt="" />
+          </figure>
+          <mm-text variant="body">
+            Monotonectally productivate progressive human capital without user friendly portals.
+            Globally benchmark top-line ideas with distributed catalysts for change. Authoritatively
+            restore ubiquitous partnerships vis-a-vis
+            <mm-link href="#feed">synergistic models</mm-link>.
+          </mm-text>
+          <!-- <mm-text-list
+              texts='[
+            "원활한 피드 탐색 경험을 위해 모든 피드를 보여주지 않는 것이 좋을 수 있다. 너무 많은 피드 콘텐츠.",
+            "피드가 노출되는 이유를 알려줄 수 있다. 또한 사용자는 보고 싶은 피드와 보고 싶지 않은 피드를 결정할 권리가 있다.",
+            "글줄의 길이를 상대적으로 좁게 짜는 경향이 있다.",
+            "피드의 상세 페이지.",
+            "리액션 버튼과 리액션 수치를 각각 제공할 수 있고 따로 제공할 수 있다. 리액션한 사용자 목록을 어떻게 보여줄 것인가. 중복 리액션과 횟수 등 기능 정의. 리액션 => 알림. restful - put과 함께 공부해보기",
+            "시의성이 강조되는 서비스이거나 현안을 다루는 서비스라면 스텟을 실시간으로 갱신할 수 있다.",
+            "피드를 작성할 때 하나 이상의 이미지를 포함할 수 있다면 하나 이상의 이미지를 볼 수 있는 인터페이스가 필요하다."
+            ]'
+            >
+            </mm-text-list> -->
+          <div style="height: var(--space-3)"></div>
+          <mm-group variant="tag">
+            <mm-tag>Google</mm-tag>
+            <mm-tag>Meta</mm-tag>
+            <mm-tag>Nvidia</mm-tag>
+          </mm-group>
+          <div style="height: var(--space-4)"></div>
+          <mm-tile variant="elevated">
+            <mm-tag>3월 14일 수정됨</mm-tag>
+            <div style="height: var(--space-3)"></div>
+            <mm-group alignment="vertical">
+              <mm-menuitem label="Kakao" description="https://www.kakaocorp.com" size="large">
+                <mm-avatar slot="avatar"> </mm-avatar>
+              </mm-menuitem>
+              <mm-menuitem label="Naver" description="https://www.naver.com" size="large">
+                <mm-avatar slot="avatar"> </mm-avatar>
+              </mm-menuitem>
+            </mm-group>
+          </mm-tile>
+          <div style="height: var(--space-3)"></div>
+          <mm-group class="feed-reaction">
+            <mm-menuitem label="192" roloe="button">
+              <mm-avatar slot="avatar" variant="tertiary" icon="heart"> </mm-avatar>
+            </mm-menuitem>
+          </mm-group>
+        </div>
+      </article>
+
+      <style>
+        .feed {
+          /* margin: 3rem 0; */
+        }
+
+        .feed-content {
+          margin: var(--space-3) 0 0 0;
+        }
+
+        .feed-content-media {
+          margin: 0 0 var(--space-3) 0;
+          overflow: hidden;
+          object-fit: cover;
+          border-radius: var(--radius);
+        }
+
+        .feed-reaction {
+          margin: var(--space-4) 0 0 0;
+          position: relative;
+          z-index: 1;
+        }
+
+        .feed-reaction-icon {
+          width: 24px;
+          height: 24px;
+          font-size: var(--font-size-small);
+        }
+
+        .feed-user {
+          margin: var(--space-3) 0;
+        }
+      </style>
+
+      <script>
+        var form = document.getElementById('subscription-form')
+        form.addEventListener('submit', event => {
+          event.preventDefault()
+          const latestInvoicePaymentIntentStatus = localStorage.getItem(
+            'latestInvoicePaymentIntentStatus',
+          )
+
+          if (latestInvoicePaymentIntentStatus === 'requires_payment_method') {
+            const invoiceId = localStorage.getItem('latestInvoiceId')
+            const isPaymentRetry = true
+          }
+        })
+      </script>
+    </section>
+  </mm-component-section>
+
+  <mm-component-section title="RatingTile" description="TODO">
+    <mm-tilebar heading="Ratings"></mm-tilebar>
+    <div aria-label="별점 5개 만점에 3.9개를 받았습니다." style="text-align: center">
+      <mm-text variant="label">리뷰 116만개</mm-text>
+      <mm-text variant="subhead">⭐ 4.8</mm-text>
+    </div>
+    <mm-separator></mm-separator>
+    <div class="graph2">
+      <b class="graph-label">5 Stars</b>
+      <span class="graph-value">68%</span>
+      <progress class="progress" value="40" max="100">40%</progress>
+      <!-- <div class="graph-bar"><b style="width: 68%"></b></div> -->
+    </div>
+    <div class="graph2">
+      <b class="graph-label">4 Stars</b>
+      <span class="graph-value">24%</span>
+      <progress class="progress" value="40" max="100">40%</progress>
+    </div>
+    <small>별 다섯개에서 점수만큼 채우는 유아이는 최근 잘 보이지 않는다. 구현이 어려움.</small>
+  </mm-component-section>
+
+  <mm-component-section title="이 상품을 구매한">
+    <section class="product-recommend">
+      <article class="card">
+        <figure class="card-thumbnail">
+          <img src="/public/images/product_sample.png" style="width: 50%" alt="" />
+        </figure>
+        <div
+          class="card-item-price"
+          style="
+            margin: var(--space-3) 0 0;
+            font-size: var(--font-size-large);
+            font-weight: var(--font-weight-bold);
+          "
+        >
+          <em>₩ 16,000</em>
+        </div>
+        <h3 class="card-title" style="padding-top: 0.25rem">가격을 강조하는 카드.</h3>
+        <a
+          href="#"
+          style="
+            display: block;
+            margin: var(--space-3) 0;
+            color: var(--gray800);
+            text-decoration: underline;
+          "
+          >애플</a
+        >
+        <mm-group>
+          <mm-tag class="card-category">인기있는</mm-tag>
+          <mm-tag class="card-note">무료배송 / 200 포인트 적립</mm-tag>
+        </mm-group>
+      </article>
+    </section>
+  </mm-component-section>
 </main>

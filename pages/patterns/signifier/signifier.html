@@ -263,6 +263,128 @@
     </mm-text-group>
   </mm-component-section>
 
+  <mm-component-section>
+    <div class="scroll-outer">
+      <div class="scroll-inner">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+        <div class="item">Item 4</div>
+        <div class="item">Item 5</div>
+        <div class="item">Item 6</div>
+        <div class="item">Item 6</div>
+        <div class="item">Item 6</div>
+        <div class="item">Item 6</div>
+        <div class="item">Item 6</div>
+        <div class="item">Item 6</div>
+        <!-- 계속 추가 가능 -->
+      </div>
+    </div>
+
+    https://m3.material.io/blog/building-with-m3-expressive
+
+    <style>
+      :root {
+        --layout-max-width: 1200px;
+        --layout-side-padding: calc((100vw - var(--layout-max-width)) / 2);
+        --item-min-width: 240px;
+        --item-gap: 20px;
+      }
+
+      .scroll-outer {
+        overflow-x: auto;
+        scroll-snap-type: x mandatory; /* 🧲 scroll snap 적용 */
+        -webkit-overflow-scrolling: touch; /* iOS 부드러운 스크롤 */
+      }
+
+      .scroll-inner {
+        display: flex;
+        gap: var(--item-gap);
+        padding: 20px 0;
+        padding-left: var(--layout-side-padding);
+        padding-right: var(--layout-side-padding);
+        min-width: 100vw;
+      }
+
+      .item {
+        min-width: var(--item-min-width);
+        height: 150px;
+        background: #eee;
+        flex-shrink: 0;
+        scroll-snap-align: start; /* 🧲 아이템이 스냅에 맞춰짐 */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        border-radius: 8px;
+      }
+
+      /* 반응형 대응 */
+      @media (max-width: 1200px) {
+        :root {
+          --layout-side-padding: 16px;
+          --item-min-width: 200px;
+          --item-gap: 16px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        :root {
+          --layout-side-padding: 12px;
+          --item-min-width: 180px;
+          --item-gap: 12px;
+        }
+
+        .item {
+          height: 120px;
+          font-size: 14px;
+        }
+      }
+    </style>
+  </mm-component-section>
+
+  <!-- <aside class="loader">
+    <div class="spinner">
+      <div class="double-bounce1"></div>
+      <div class="double-bounce2"></div>
+    </div>
+  </aside>
+  <style>
+    .loader {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background: var(--color-background-weak);
+      z-index: var(--zindex-loader);
+    }
+    .spinner {
+      width: var(--size-large);
+      height: var(--size-large);
+      position: relative;
+    }
+    .double-bounce1,
+    .double-bounce2 {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background-color: var(--color-primary);
+      opacity: 0.6;
+      position: absolute;
+      top: 0;
+      left: 0;
+      animation: scaleout2 2s infinite ease-in-out;
+    }
+    .double-bounce2 {
+      -webkit-animation-delay: -1s;
+      animation-delay: -1s;
+    }
+  </style> -->
+
   <section class="component-references">
     <a
       href="https://developer.apple.com/design/human-interface-guidelines/components/layout-and-organization/disclosure-controls"
