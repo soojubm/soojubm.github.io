@@ -21,8 +21,7 @@
   min-height: var(--size-medium);
   /* // min for larger size */
   gap: var(--space-2);
-  margin: -2px -.5rem;
-  padding: 2px .5rem;
+
   position:relative;
   z-index:1;
 }
