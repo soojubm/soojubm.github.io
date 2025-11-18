@@ -29,7 +29,9 @@
         </p>
         <mm-text variant="title" data-temp="センチメンタル通り">センチメンタル通り</mm-text>
         <span class="product-quick-total-price" style="font-size: var(--font-size-large)">
-          <del>₩ 25,000</del> <b>₩ 16,000</b> <em class="rate">(36% 할인)</em>
+          <del style="color: var(--color-foreground-light)">₩ 25,000</del>
+          <em class="rate"> 36% 할인</em>
+          <mm-text variant="heading2">₩ 16,000</mm-text>
         </span>
         <mm-text variant="body">
           I have 2 kids so sleep is hard to come by, these have helped me to wake up feeling more
@@ -48,7 +50,6 @@
         </div> -->
 
         <!-- FIXME fullwidth doesn't work -->
-        <!-- <mm-group variant="button"> -->
         <!-- <mm-button variant="tertiary">찜 reverse</mm-button> -->
         <div
           class="counter js-counter"
@@ -57,13 +58,24 @@
           <label for="numberfield" style="position: absolute; opacity: 0">
             레이블 라이트하우스용
           </label>
-          <mm-icon-button
-            variant="navigator"
-            icon="minus"
-            class="js-counter-decrement"
-            aria-controls="numberfield"
-          ></mm-icon-button>
-          <mm-textfield size="small" value="20"></mm-textfield>
+          <mm-textfield value="20">
+            <mm-icon-button
+              slot="prefix"
+              variant="navigator"
+              size="small"
+              icon="minus"
+              class="js-counter-decrement"
+              aria-controls="numberfield"
+            ></mm-icon-button>
+            <mm-icon-button
+              slot="suffix"
+              variant="navigator"
+              icon="plus"
+              class="js-counter-increment"
+              tabindex="-1"
+            >
+            </mm-icon-button>
+          </mm-textfield>
           <!-- <input
             class="counter-input js-counter-input js-number-input"
             type="number"
@@ -73,18 +85,11 @@
             max="20"
             value="0"
           /> -->
-          <mm-icon-button
-            variant="navigator"
-            icon="plus"
-            class="js-counter-increment"
-            tabindex="-1"
-          >
-          </mm-icon-button>
         </div>
-        <mm-row justifyContent="space-between">
+        <!-- <mm-row justifyContent="space-between">
           <mm-text variant="label-strong">총 상품금액</mm-text>
           <mm-text variant="subhead">₩ 163,000</mm-text>
-        </mm-row>
+        </mm-row> -->
 
         <footer style="margin: var(--space-2) 0">
           <mm-button variant="primary" size="large" isfullwidth="true">Add to Cart</mm-button>
@@ -92,11 +97,11 @@
         <!-- </mm-group> -->
 
         <mm-row gap="var(--space-1)">
-          <mm-icon name="pipe-3d"></mm-icon>
+          <mm-icon name="delivery-truck"></mm-icon>
           <mm-text variant="body">Free shipping on all U.S. orders of $40+</mm-text>
         </mm-row>
         <mm-row gap="var(--space-1)">
-          <mm-icon name="pipe-3d"></mm-icon>
+          <mm-icon name="box-iso"></mm-icon>
           <mm-text variant="body">Free returns and exchanges</mm-text>
         </mm-row>
       </form>
@@ -367,7 +372,7 @@
       <mm-text variant="label-strong" data-english="Shipping Information">배송 정책</mm-text>
       <li>미책임. 배송지를 오기재. 미고지 배송지를 수정.</li>
       <mm-text variant="label-strong" data-english="Returns &Exchanges"
-        >교환 또는 반품(취소) 정책</mm-text
+        >교환 또는 반품(취소) 정책 - 판매자 과실과 구매자 과실 구분</mm-text
       >
       <ul>
         <li>환불 완료 영업일 기준 4일</li>
@@ -470,7 +475,7 @@
           기타 객관적으로 이에 준하는 것으로 인정되는 경우 청약철회가 제한될 수 있습니다.
         </td>
       </tr>
-      <mm-text variant="label-strong">미성년자 계약취소에 대한 안내</mm-text>
+      <h3>미성년자 계약취소에 대한 안내</h3>
       미성년 고객께서 상품을 주문(계약) 하시는 경우,법정대리인(부모님 등)의 동의가 없으면 미성년자
       본인 또는 법정대리인(부모님 등)이 그 주문(계약)을 취소하실 수있습니다. 안전검사 대상 공산품을
       구매하시는 경우 품질경영 및 공산품 안전관리법에 따른 안전검사표시가 있는 제품인지 확인하시기

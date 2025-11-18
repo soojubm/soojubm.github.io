@@ -53,6 +53,10 @@ class TitleWithDescription extends HTMLElement {
       descriptionElement.setAttribute('variant', variant.description)
       descriptionElement.textContent = this.description
     }
+    if (this.center) {
+      titleElement.setAttribute('center', '')
+      descriptionElement.setAttribute('center', '')
+    }
     if (!hostElement.isConnected) {
       hostElement.append(titleElement, descriptionElement)
       shadowRoot!.append(hostElement)
@@ -86,6 +90,9 @@ class TitleWithDescription extends HTMLElement {
   }
   get description() {
     return this.getAttribute('description') || ''
+  }
+  get center() {
+    return this.hasAttribute('center')
   }
 
   disconnectedCallback() {}

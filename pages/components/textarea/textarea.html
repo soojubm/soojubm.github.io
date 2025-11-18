@@ -54,7 +54,25 @@
     </dl>
   </section>
 
-  <section class="component-guide">
-    <mm-text variant="body">코멘트, 게시글</mm-text>
-  </section>
+  <!-- <section class="component-guide"></section> -->
+  <div style="height: 1rem"></div>
+
+  <mm-component-section title="Comment Input" description="TODO"> </mm-component-section>
+  <mm-component-section title="Prompt Input" description="TODO">
+    <div style="background: var(--color-background-weak); border-radius: var(--radius)">
+      <mm-textarea placeholder="샘플러"></mm-textarea>
+      <div
+        class="prompt-input-actions"
+        style="
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: var(--space-2) var(--space-3);
+        "
+      >
+        <mm-icon-button icon="star"></mm-icon-button>
+        <mm-button variant="primary" size="small">전송</mm-button>
+      </div>
+    </div>
+  </mm-component-section>
 </main>

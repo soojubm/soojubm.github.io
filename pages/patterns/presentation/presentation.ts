@@ -15,14 +15,20 @@ document.addEventListener('DOMContentLoaded', () => {
   document.body.insertAdjacentHTML('beforeend', main)
   document.body.insertAdjacentHTML('beforeend', footer)
 
-  const sheetElement = document.querySelector('.js-sheet')
-  const sheetCloseElement = sheetElement?.querySelector('.js-sheet-close')
-
-  window.addEventListener('load', () => {
-    sheetElement?.classList.add('is-visible')
+  const sheets = document.querySelectorAll('[data-open-sheet]')
+  console.log('sheets', sheets)
+  sheets.forEach(btn => {
+    btn.addEventListener('click', e => {
+      const type = (e.currentTarget as HTMLElement).dataset.openSheet
+      const sheet = document.querySelector(`mm-sheet[type="${type}"]`) as any
+      sheet?.open()
+    })
   })
-  sheetCloseElement?.addEventListener('click', () => {
-    sheetCloseElement.parentElement?.classList.remove('is-visible')
+
+  document.querySelectorAll('mm-sheet').forEach(sheetEl => {
+    sheetEl.addEventListener('sheetclose', () => {
+      ;(sheetEl as any).close()
+    })
   })
 })
 

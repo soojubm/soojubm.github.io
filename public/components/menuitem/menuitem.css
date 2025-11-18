@@ -8,6 +8,7 @@
 /* default vertical */
 .menu-group[aria-orientation=vertical] {}
 .menu-group[aria-orientation=horizontal] {}
+
 /* selected */
 .menu-group[aria-activedescendant] {}
 .menu-group [role=option] {}
@@ -19,26 +20,22 @@
   align-items: center;
   width: 100%;
   min-height: var(--size-medium);
-  /* // min for larger size */
   gap: var(--space-2);
 
   position:relative;
   z-index:1;
 }
 
-::slotted([slot=text]),
-.item-label {
-  font-size:var(--font-size-medium);
-  /* line-height: var(--size-medium); */
-  color:var(--color-foreground);
-}
-.item-description {
-  line-height: var(--size-medium);
-  color: var(--color-foreground-light);
-}
-
 /* reset */
-menu {margin:0;padding:0;}
+/* TODO */
+button {
+  all: unset;
+}
+/* a {
+  text-decoration: none;
+  color: var(--color-foreground);
+} */
+
 a {
   text-decoration: none;
   color: var(--color-foreground);
@@ -52,19 +49,12 @@ a {
   display:flex;
   align-items: center;
   justify-content: center;
-  width:var(--size-small);
+  width: var(--size-medium);
   font-size:var(--font-size-small);
 }
 ::slotted([slot=action]) {margin:0 0 0 auto !important;}
-::slotted([slot=text]) {}
-::slotted([slot=text]) p {line-height:24px;}
 
 [data-alignment=vertical] {flex-direction:column;gap:0;}
-
-
-.item-description {display:block;color:var(--color-foreground-light);line-height:var(--font-line-height);}
-.item-description + .item-name {margin-top:-.125rem;}
-.item-tag {margin-left:var(--space-2);}
 
 .item:hover {
   --hover-outline: calc(var(--space-2) / 2 * -1);
@@ -80,6 +70,13 @@ a {
     left:var(--hover-outline);right:var(--hover-outline);top:var(--hover-outline);bottom:var(--hover-outline);
     z-index: -1;
   }
+}
+
+/* TODO mm-text */
+/* TODO mm-avatar */
+.item[data-tone='danger'] mm-avatar,
+.item[data-tone='danger'] mm-text[variant='body'] {
+  color: #d93025; /* 혹은 원하는 danger 색상 (예: 밝은 빨간색) */
 }
 
 /* TODO navbar detect current page */
@@ -98,17 +95,11 @@ a {
     z-index: -1;
   }
 }
-
-
-/* .item .checkbox {display:flex;justify-content:flex-end;position:absolute;left:0;right:0;top:0;bottom:0;}
-.item .checkbox label {width:100%;}
-.item .checkbox label:before {display:none;left:auto;right:0;top:4px;}
-.item .checkbox label:after {left:auto;right:7px;top:12px;} */
-
 /* // chip-togglable
 // 이건 필요 없다. 팔로우 팔로잉. 외에는 switch */
 .item-action.is-active {border-color:transparent;background:var(--color-background-weak);color:var(--color-foreground);}
 
-/* [role=menuitem] {display:flex;align-items:center;width:100%;}
+/*
+[role=menuitem] {display:flex;align-items:center;width:100%;}
 [role=menuitemcheckbox] {}
 [role=menuitemradio] {} */

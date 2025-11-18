@@ -1,4 +1,4 @@
- import { makeStyleSheet } from '../../javascripts/components/utils'
+import { makeStyleSheet } from '../../javascripts/components/utils'
 
 // : 'title' | 'subhead' | 'body' | 'body-large' | 'label' | 'label-strong'
 
@@ -16,6 +16,7 @@ class Text extends HTMLElement {
     hostElement.classList.add('text')
     hostElement.dataset.variant = this.variant
     hostElement.dataset.truncated = this.truncated.toString()
+    hostElement.dataset.center = this.center ? 'true' : 'false'
     hostElement.innerHTML = this.innerHTML
 
     shadowRoot!.append(hostElement, makeStyleSheet('text'))
@@ -23,6 +24,9 @@ class Text extends HTMLElement {
 
   get variant() {
     return this.getAttribute('variant') || 'body'
+  }
+  get center() {
+    return this.hasAttribute('center')
   }
   get truncated() {
     return this.hasAttribute('truncated')

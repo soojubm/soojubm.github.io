@@ -4,9 +4,9 @@
     description="인접 요소나 부모 요소를 부연하는 시각 정보입니다. 상태, 카테고리, 키워드로 강조된 시각 정보는
     사용자가 복잡한 정보 더미에서 중요한 정보를 우선적으로 파악하도록 돕습니다."
   ></mm-title-with-description>
+  <!-- "아바타, 바텀 네비게이션, 탭에서 일관되게 사용되는가?" -->
 
   <!-- Badge intent="info" -->
-
   <dl class="article-aka">
     <dt>a.k.a.</dt>
     <dd>Badge</dd>
@@ -23,7 +23,6 @@
     <mm-group variant="tag">
       <mm-tag variant="tertiary">기본태그</mm-tag>
       <mm-tag variant="primary">강조태그</mm-tag>
-      <!-- <mm-tag variant="hashtag" role="listitem">85년생</mm-tag> -->
       <mm-tag variant="primary">8</mm-tag>
       <mm-tag variant="primary">88</mm-tag>
       <!-- <mm-tag variant="secondary">기본태그</mm-tag> -->
@@ -133,7 +132,8 @@
   </mm-component-section>
 
   <mm-component-section title="CategoryTag" description="카테고리. variant.feature1~4">
-    <mm-tag>🔥 Most Popular</mm-tag>
+    <mm-text>TODO</mm-text>
+    <!-- <mm-tag>🔥 Most Popular</mm-tag> -->
   </mm-component-section>
 
   <mm-component-section
@@ -141,15 +141,9 @@
     description="post 페이지에서 태그와 컴포넌트에서의 태그. hashtag는 tag 컴포넌트와 역할이 다르기 때문에 별도의 컴포넌트로 만들어주어야 한다. 현재
         hashtag(keyword)는 chip으로 대체."
   >
+    <mm-group>
+      <mm-tag variant="hashtag" role="listitem">88년생</mm-tag>
+      <mm-tag variant="hashtag" role="listitem">여성</mm-tag>
+    </mm-group>
   </mm-component-section>
-
-  <mm-tile variant="tinted" size="large">
-    <mm-text variant="label-strong">Checklist</mm-text>
-    <div style="height: var(--space-2)"></div>
-    <mm-text-list
-      texts='[
-      "아바타, 바텀 네비게이션, 탭에서 일관되게 사용되는가?"
-      ]'
-    ></mm-text-list>
-  </mm-tile>
 </main>

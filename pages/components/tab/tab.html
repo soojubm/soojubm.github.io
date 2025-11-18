@@ -48,6 +48,22 @@
   </section>
 
   <section class="component-guide">
+    <section class="feature columns-2">
+      <mm-feature
+        icon="cursor-pointer"
+        titleText="Interactive - content switching"
+        subtitle="Easy scanning"
+        description="페이지 링크, 콘텐츠 정렬, 콘텐츠 필터 또는 탭투스크롤로 사용하지 마세요."
+      >
+      </mm-feature>
+      <mm-feature
+        icon="task-list"
+        titleText="Easy scanning"
+        subtitle="Easy scanning"
+        description="최대 2단어를 넘지 않도록 작성하고 두 줄이 되지 않도록 작성합니다. (그러나 폴더블과 워치를 위해 말 줄임표나 두 줄 레이블을 허용할 것인가?)"
+      >
+      </mm-feature>
+    </section>
     <mm-text>
       Make sure the controls within a pane affect content only in the same pane. Panes are mutually
       exclusive, so ensure they’re fully self-contained. Use a segmented control to provide closely
@@ -58,25 +74,14 @@
 
     <mm-text-list
       texts='[
-          "콘텐츠 스위칭 맥락. 따라서 페이지 링크, 콘텐츠 정렬, 콘텐츠 필터 또는 탭투스크롤로 사용하지 마세요.",
           "SearchParams과 브라우저 히스토리를 활용할 것인가? (?tab=projects)",
           "글로벌 네비게이션 패턴인 햄버거 메뉴와 탭(바텀네비게이션, 탭바)을 함께 사용할 수 있는가?",
-          "탭의 가로 스크롤. MDI 패턴. 탭의 최대 갯수를 제한할 수도 있다.",
-          "레이블은 1줄로 사용하고 최대 2단어로 작성합니다. 2줄이 되면 Easy scanning이 어려워진다. easy scanning principle",
-          "레이블의 말줄임표와 관련. 워치, 폴더블과 같은 더 작은 화면에 대한 고려가 없을 때나 유효. 말 줄임표 또는 두 줄 레이블은 허용되어야 할 수 있음. 대신 엄격한 글자 수 제한.",
+          "탭의 가로 스크롤(+ MDI). 탭의 최대 갯수 제한.",
           "탭의 중첩. 페이지에서 수행하는 과업 중심 플로우 설계. 중첩을 허용한다면 탭의 중첩 패턴을 정의해야 함. Material 3의 primary tabs / secondary tabs 분류 등 참고. 또는 네이버 쇼핑의 4단계 5단계 탭.",
           "flutter. Scaffold - AppBar - bottom: TabBar - tabs - Tab / Scaffold - body - TabBarView"
         ]'
     >
     </mm-text-list>
-    <!-- <div style="max-width: 200px">
-      <mm-tablist>
-        <mm-tab slot="tab" selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">
-          Monthly
-        </mm-tab>
-        <mm-tab slot="tab" aria-controls="panel-2" id="tab-2" tabindex="-1">Yearly</mm-tab>
-      </mm-tablist>
-    </div> -->
   </section>
 
   <section class="component-references">

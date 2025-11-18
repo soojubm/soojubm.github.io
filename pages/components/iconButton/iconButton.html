@@ -5,6 +5,13 @@
   ></mm-title-with-description>
 
   <section class="component-example">
+    <mm-group>
+      <mm-icon-button variant="primary" icon="arrow-right"></mm-icon-button>
+      <mm-icon-button variant="primary" icon="arrow-up"></mm-icon-button>
+      <mm-icon-button variant="primary" size="small" icon="arrow-right"></mm-icon-button>
+      <mm-icon-button variant="primary" size="small" icon="arrow-up"></mm-icon-button>
+    </mm-group>
+    <mm-separator></mm-separator>
     <div style="display: flex; align-items: center; gap: var(--space-2)">
       <mm-icon-button variant="" icon="heart"></mm-icon-button>
       <mm-tooltip content="로그인">
@@ -29,7 +36,7 @@
       <dt>name</dt>
       <dd>iconNameType</dd>
       <dt>variant</dt>
-      <dd>'action' | 'navigator'</dd>
+      <dd>'primary' | 'action' | 'navigator'</dd>
       <dt>size</dt>
       <dd>'small' | 'medium'</dd>
       <dt>ariaLabel</dt>
@@ -63,6 +70,9 @@
   <mm-component-section title="Icon"> </mm-component-section>
   <mm-component-section title="MoreMenuButton, ActionMenuButton, ContextMenuButton">
   </mm-component-section>
-  <mm-component-section title="Icon Indicator" description="링크, 펼침, 시트오픈">
+  <mm-component-section
+    title="Icon Indicator"
+    description="링크, 펼침/숨김, 시트오픈 등에서 사용하는 아이콘. 직접적인 클릭 영역을 표현하는 것이 아니라 보조적인 시각 요소로 사용됩니다."
+  >
   </mm-component-section>
 </main>

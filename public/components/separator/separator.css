@@ -12,6 +12,10 @@ hr[role=separator] {
   text-align:center;
   position:relative;
   z-index:var(--zindex-default);
+
+  /* height: 2px;
+  transform: scaleY(0.5);
+  transform-origin: center; */
 }
 
 hr[role=separator]:after {content:'';width:4rem;line-height:24px;background:var(--color-background);font-size:var(--font-size-small);color:var(--color-foreground-light);text-align:center;position:absolute;left:50%;top:0;transform:translateX(-50%);}

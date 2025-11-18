@@ -1,8 +1,9 @@
 <main class="page" role="" aria-label="site">
-  <mm-text-group variant="title">
-    <mm-text variant="title">Dialog</mm-text>
-    <mm-text variant="body-large"> 사용자의 정보나 재산의 변경 또는 삭제 확인. </mm-text>
-  </mm-text-group>
+  <mm-title-with-description
+    level="1"
+    title="Dialog"
+    description="사용자의 정보나 재산의 변경 또는 삭제 확인."
+  ></mm-title-with-description>
 
   <dl class="article-aka">
     <dt>a.k.a.</dt>
@@ -21,9 +22,15 @@
         aria-describedby="dialog-description2"
       >
         <div role="document" tabindex="0">
-          <mm-text variant="subhead">Alert Dialog</mm-text>
-          <mm-text variant="subhead" class="dialog-title" id="dialog-title1"></mm-text>
-          <p class="dialog-description" id="dialog-description1">부끄러우니까 보지마요!</p>
+          <mm-title-with-description
+            level="3"
+            title="Alert Dialog"
+            description="부끄러우니까 보지마요!"
+            center="true"
+          ></mm-title-with-description>
+          <!-- <mm-text variant="subhead">Alert Dialog</mm-text> -->
+          <!-- <mm-text variant="subhead" class="dialog-title" id="dialog-title1"></mm-text> -->
+          <!-- <p class="dialog-description" id="dialog-description1">부끄러우니까 보지마요!</p> -->
           <button class="dialog-close js-close" aria-label="delete"></button>
           <footer class="dialog-foot">
             <mm-button variant="primary" size="large">확인</mm-button>
@@ -38,15 +45,20 @@
         aria-labelledby="dialog-title2"
         aria-describedby="dialog-description2"
       >
-        <header class="dialog-head">
+        <mm-title-with-description
+          level="3"
+          title="페이지를 나가시겠어요?"
+          description="저장되지 않은 변경 사항이 있습니다. 이 페이지에서 나가면 변경 사항이 취소됩니다."
+        ></mm-title-with-description>
+        <!-- <header class="dialog-head">
           <mm-text variant="subhead" class="dialog-title">페이지를 나가시겠어요?</mm-text>
           <button class="dialog-close js-close" aria-label="delete"></button>
-        </header>
-        <div class="dialog-body">
+        </header> -->
+        <!-- <div class="dialog-body">
           <p class="dialog-description" id="dialog-description2">
             저장되지 않은 변경 사항이 있습니다. 이 페이지에서 나가면 변경 사항이 취소됩니다.
           </p>
-        </div>
+        </div> -->
         <mm-group variant="button" class="dialog-foot">
           <mm-button variant="tertiary" size="large">계속 수정하기</mm-button>
           <mm-button variant="primary" size="large">나가기</mm-button>
@@ -98,7 +110,7 @@
   </section>
 
   <section class="component-guide">
-    <div class="column columns-3">
+    <div class="column columns-2">
       <mm-feature
         icon="cursor-pointer"
         titleText="Feedback"

@@ -1,85 +1,80 @@
-// mm-sheet-footer.ts
 export interface SheetAction {
   label: string
   onClick: () => void
 }
 
-export class SheetFooter extends HTMLElement {
+class SheetFooter extends HTMLElement {
+  static get observedAttributes() {
+    return ['primary-label', 'secondary-label']
+  }
+
   private primaryAction: SheetAction | null = null
   private secondaryAction: SheetAction | null = null
 
   constructor() {
     super()
     this.attachShadow({ mode: 'open' })
-    // initial render (empty)
-    this.render()
-  }
-
-  // external API: set actions
-  set actions(actions: { primary?: SheetAction; secondary?: SheetAction }) {
-    this.primaryAction = actions.primary ?? null
-    this.secondaryAction = actions.secondary ?? null
-    this.render()
   }
 
   connectedCallback() {
-    // nothing else required; render already handles it
+    this.render()
+  }
+
+  attributeChangedCallback(name: string, _: string | null, newValue: string | null) {
+    if (name === 'primary-label' && newValue) {
+      this.primaryAction = {
+        label: newValue,
+        onClick: () => console.log('primary clicked'),
+      }
+    }
+    if (name === 'secondary-label' && newValue) {
+      this.secondaryAction = {
+        label: newValue,
+        onClick: () => console.log('secondary clicked'),
+      }
+    }
+    this.render()
   }
 
   private render() {
     if (!this.shadowRoot) return
+    const { primaryAction, secondaryAction } = this
 
-    // Build inner HTML
     this.shadowRoot.innerHTML = `
       <style>
-        :host { display: flex; justify-content: flex-end; gap: 0.5rem; padding: 1rem; border-top: 1px solid #e5e5e5; background: white; }
-        button { all: unset; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial; font-size: 0.95rem; padding: 0.5rem 1rem; border-radius: 8px; cursor: pointer; box-sizing: border-box; }
-        button.primary { background-color: #007aff; color: white; }
-        button.secondary { background-color: #f2f2f2; color: #111; }
-        button:active { transform: translateY(1px); }
+        :host div {
+          display: flex;
+          justify-content: flex-end;
+          gap: var(--space-2);
+          padding: 1rem 0;
+          border-top: var(--border);
+          background: white;
+          font-family: sans-serif;
+        }
       </style>
       <div id="buttons"></div>
     `
 
     const container = this.shadowRoot.getElementById('buttons')!
 
-    // Secondary first (left), then primary (right)
-    if (this.secondaryAction) {
-      const secBtn = document.createElement('button')
-      secBtn.className = 'secondary'
-      secBtn.textContent = this.secondaryAction.label
-      secBtn.addEventListener('click', e => {
-        // call user handler
-        try {
-          this.secondaryAction!.onClick()
-        } catch (err) {
-          console.error(err)
-        }
-        // also emit an event for host to react if needed
-        this.dispatchEvent(
-          new CustomEvent('secondaryaction', { detail: {}, bubbles: true, composed: true }),
-        )
-      })
+    if (secondaryAction) {
+      const secBtn = document.createElement('mm-button')
+      secBtn.classList.add('secondary')
+      secBtn.textContent = secondaryAction.label
+      secBtn.addEventListener('click', secondaryAction.onClick)
       container.appendChild(secBtn)
     }
 
-    if (this.primaryAction) {
-      const priBtn = document.createElement('button')
-      priBtn.className = 'primary'
-      priBtn.textContent = this.primaryAction.label
-      priBtn.addEventListener('click', e => {
-        try {
-          this.primaryAction!.onClick()
-        } catch (err) {
-          console.error(err)
-        }
-        this.dispatchEvent(
-          new CustomEvent('primaryaction', { detail: {}, bubbles: true, composed: true }),
-        )
-      })
+    if (primaryAction) {
+      const priBtn = document.createElement('mm-button')
+      priBtn.classList.add('primary')
+      priBtn.setAttribute('variant', 'primary')
+      priBtn.textContent = primaryAction.label
+      priBtn.addEventListener('click', primaryAction.onClick)
       container.appendChild(priBtn)
     }
   }
 }
 
+customElements.define('mm-sheet-footer', SheetFooter)
 export default SheetFooter

@@ -74,9 +74,15 @@ em, i  {
   height: var(--button-size);
   border-radius: var(--button-radius);
   background: var(--button-color);
+  color: var(--button-text-color);
 
   cursor: pointer;
   /* 왜 커서 넣어야 되지? */
+
+  &[data-variant='primary'] {
+    background-color: var(--color-primary);
+    --button-text-color: #fff;
+  }
 
   &[data-variant='plain'] {
     background-color: transparent;
@@ -96,6 +102,10 @@ em, i  {
     box-shadow: var(--shadow);
     background-color: var(--color-background);
   }
+
+    &[data-size='small'] {
+    --button-size: var(--size-small);
+    }
 
   /* 버튼과 아이콘 버튼의 상태 동일 */
   /* TODO pending */

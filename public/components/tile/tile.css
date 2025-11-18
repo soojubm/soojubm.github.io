@@ -30,12 +30,19 @@ img {display:block;width:100%;}
 .tile[data-variant=tinted] {
   border-color: transparent;
   background-color: var(--color-background-weak);
+  &:hover {
+    /* 임시 */
+    outline: 2px solid;
+  }
 }
-
 
 .tile[data-variant=elevated] {
   /* box-shadow:var(--shadow-tile); */
   box-shadow:var(--shadow);
+    &:hover {
+    /* 임시 */
+    outline: 2px solid;
+  }
 }
 
 .tile[data-size=small] {

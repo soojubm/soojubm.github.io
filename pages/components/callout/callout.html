@@ -59,14 +59,6 @@
         브라우저가 role="alert" 속성이 있는 요소를 발견하면 즉시 사용자에게 경고 내용을 읽습니다.
       </mm-text>
       <mm-text variant="body">
-        사용자 행동의 단순 피드백의 역할입니다. 닫기 또는 되돌리기 등 액션을 포함하지 마세요. 사용자
-        인터렉션을 요구하는 경우, 주목도가 높은 모달로 제공하세요.
-      </mm-text>
-    </mm-text-group>
-
-    <mm-text-group>
-      <mm-text variant="subhead">Editorial</mm-text>
-      <mm-text variant="body">
         알림은 언제나 유저에게 베네핏을 주거나, 긴급한 메시지이거나, 적어도 적절한 타이밍의
         내용이어야 한다. 똑같은 텍스트가 각각의 컴포넌트에 쓰였을 때 어떤 맥락으로 유저에게 닿을 수
         있는지를.
@@ -83,11 +75,9 @@
       </mm-text>
       <mm-text-list
         texts='[
-  "with Toast. toast=>snackbar(withAction)",
   "링크를 제공할 것인가?",
   "게임에서 파티 탈퇴와 같이 직접 실행하지 않은, 연속적인 결과가 발생하는 경우 여러 개가 필요.",
-  "input feedback과 callout을 분리해야 한다.",
-  "아이콘으로 callout의 맥락을 구분할 수 있다. 아이콘이 없는 callout은 단순 Tile 컴포넌트처럼 보일 수 있다."
+  "아이콘이 없는 callout은 단순 Tile 컴포넌트처럼 보일 수 있겠다.. 아이콘으로 callout의 맥락을 구분"
   ]'
       >
       </mm-text-list>
@@ -102,4 +92,12 @@
       Time stamp (1optional): Shows the time the toast notification was sent.
       -->
   </section>
+
+  <mm-component-section title="Input Feedback" description="TODO"> </mm-component-section>
+  <mm-component-section
+    title="Snackbar"
+    description="닫기 또는 되돌리기 등 액션을 포함하지 마세요. 사용자 인터렉션을 요구하는 경우, 주목도가 높은
+        모달로 제공하세요. with Toast. toast=>snackbar(withAction)"
+  >
+  </mm-component-section>
 </main>

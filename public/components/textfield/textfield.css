@@ -20,8 +20,12 @@ input:valid {} input:invalid {}
 /* // todo 사파리에서 버튼 클릭 효과 제가
 // 년도 월 일 순서로 포커싱 됨 */
 
-textarea {}
+/* // 리셋꼬~ */
+textarea {border:0 none;font-family:inherit;font-size:inherit;resize:none;}
 textarea:focus {-webkit-appearance:none;}
+textarea:focus-visible {
+  outline: none;
+}
 
 /* // on safari */
 input:focus-visible {outline:0;}
@@ -65,7 +69,7 @@ input[type=search]::-webkit-search-results-decoration {display:none;}
 
   --textfield-padding: null;
   --textfield-color-border: null; 
-  --textfield-color-border-hover: null; 
+  --textfield-color-border-hover: var(--gray400); 
 
   --textfield-color-background: null;
   --textfield-background-color: null;
@@ -91,13 +95,19 @@ input[type=search]::-webkit-search-results-decoration {display:none;}
   display:block;
   width:100%;
   height:var(--textfield-height);
-  padding:var(--space-2) var(--space-4);
+  padding:var(--space-3) var(--space-4);
   box-sizing: border-box;
   border-radius:var(--textfield-radius);
   background: var(--textfield-background-color);
   color: var(--color-foreground);
 
+  
+
   /* box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 0px 0px; */
+}
+
+.textfield-input:not(:disabled):hover {
+  border-color: var(--textfield-color-border-hover);
 }
 
 /* TODO */

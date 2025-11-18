@@ -5,8 +5,8 @@
   	margin: 0 auto;
   /* TODO minus footer height */
  
-  padding: 2rem 0 4rem;
-  padding-left: calc(var(--width-sidemenu) + var(--grid-margin));
+  /* padding: 2rem 0 4rem; */
+  /* padding-left: calc(var(--width-sidemenu) + var(--grid-margin)); */
   position: relative;
 
 }

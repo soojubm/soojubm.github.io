@@ -60,6 +60,7 @@ class Dropdown extends HTMLElement {
         display: none;
         max-height: 200px;
         overflow-y: auto;
+        padding: var(--space-1);
         border: var(--border-stronger);
         border-radius: var(--radius);
         border-top: none;
@@ -70,14 +71,6 @@ class Dropdown extends HTMLElement {
         left: 0;
         right: 0;
         z-index: 10;
-      }
-      .dropdown-item {
-        padding: 8px var(--space-3);
-        font-size: var(--font-size-small);
-        cursor: pointer;
-      }
-      .dropdown-item:hover {
-        background-color: var(--color-background-weak);
       }
 
       @media (max-width: 800px) {
@@ -97,9 +90,8 @@ class Dropdown extends HTMLElement {
     this._options = Array.from(this.querySelectorAll('option')) as HTMLOptionElement[]
 
     this._options.forEach(option => {
-      const item = document.createElement('div')
-      item.classList.add('dropdown-item')
-      item.textContent = option.textContent
+      const item = document.createElement('mm-menuitem')
+      item.setAttribute('label', option.textContent || '')
       item.dataset.value = option.value
       item.addEventListener('click', this.onOptionClick.bind(this))
 

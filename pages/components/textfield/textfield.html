@@ -31,7 +31,6 @@
       }
     }
   </style>
-
   <!-- Dropdown(*Menu, Contextual Menu)*
     displays a list of actions, options or links.
     It is triggered when a user interacts with a Button, Textfield or other control.
@@ -42,7 +41,6 @@
     immediate action.
     Place destructive actions at the bottom
   -->
-
   <mm-title-with-description title="TextField" description="-"></mm-title-with-description>
 
   <!-- - 콤보박스 textfield + select -->
@@ -122,45 +120,21 @@
       <mm-feature
         icon="cursor-pointer"
         titleText="Interactive - input"
-        description="TODO"
+        description="사용자 여정에 허들이 될 수 있는 불필요한 정보 입력을 유도하지 마세요. 다시 말해 모든 텍스트필드는 필수 입력입니다. 사용자 정보를 수집하여 사용자 또는 비즈니스에 명확한 이점이 있는 경우 선택 필드를 제안할 수 있습니다. 이 때 선택 입력 필드는 '선택입력' 텍스트로 가이드합니다."
+      >
+      </mm-feature>
+      <mm-feature
+        icon="cursor-pointer"
+        titleText="eye"
+        description="레이블을 텍스트필드 왼쪽에 배치하지 마세요. 아이콘은 텍스트 레이블을 대체할 수 있습니다.
+          텍스트 레이블 대신 아이콘 레이블을 사용하는 예시. 이메일 주소로 사용자를 추가하는
+          케이스에서 입력 정보를 아이콘으로 단순화 및 직관화. 이메일, 패스워드 등의 특수한 텍스트필드 타입은 기본 텍스트필드와의 구별을 위해 시각적인 단서를 제공하세요."
       >
       </mm-feature>
     </section>
+  </section>
 
-
-      <mm-text-group>
-        <mm-text variant="subhead">Meta problems</mm-text>
-        <mm-text variant="body">
-          카드번호, 주민등록번호 뒷자리 등의 마스킹 처리가 필요한 필드
-          </mm-text
-        >
-
-        <mm-text variant="body">
-          A form field element has neither an id nor a name attribute. This might prevent the
-          browser from correctly autofilling the form. To fix this issue, add a unique id or name
-          attribute to a form field. This is not strictly needed, but still recommended even if you
-          have an autocomplete attribute on the same element.</mm-text
-        >
-        <mm-text variant="body" data-temp="required indicator / optional indicator">
-          사용자 여정에 허들이 될 수 있는 불필요한 정보 입력을 유도하지 마세요. 다시 말해 모든
-          텍스트필드는 필수 입력입니다. 사용자 정보를 수집하여 사용자 또는 비즈니스에 명확한 이점이
-          있는 경우 선택 필드를 제안할 수 있습니다. 이 때 선택 입력 필드는 '선택입력' 텍스트로
-          가이드합니다.
-        </mm-text>
-        <mm-text variant="body">
-          레이블을 텍스트필드 왼쪽에 배치하지 마세요. 아이콘은 텍스트 레이블을 대체할 수 있습니다.
-          텍스트 레이블 대신 아이콘 레이블을 사용하는 예시. 이메일 주소로 사용자를 추가하는
-          케이스에서 입력 정보를 아이콘으로 단순화 및 직관화. </mm-text
-        >
-        <mm-text>이메일, 패스워드 등의 특수한 텍스트필드 타입은 기본 텍스트필드와의 구별을 위해 시각적인 단서를 제공하세요.</mm-text>
-        <mm-text variant="body">
-          helper(help message)와 feedback(feedback message / validation feedback)을 구분하기.
-          mui에서는 error prop.
-        </mm-text>
-      </mm-text-group>
-    </section>
-
-    <!-- <section class="textbox" style="position: relative">
+  <!-- <section class="textbox" style="position: relative">
         <mm-group
           data-e="menu"
           class="textbox-toolbar"
@@ -192,7 +166,7 @@
         </footer>
       </section> -->
 
-    <!-- <div class="calendar">
+  <!-- <div class="calendar">
       <style>
         .calendar {
           width: 250px;
@@ -331,184 +305,100 @@
       </mm-tile>
     </div> -->
 
-    <mm-text-list texts="[]">
-      <li>TODO utilities. 앞자리 0 제거. 숫자만입력3자리마다콤마. 소숫점 컨트롤.</li>
-      <li>url field. www 및 https://</li>
-      <li>
-        form 컴포넌트는 간격에 대한 구조 컴포넌트. TODO. FormField, FormLabel, FormControl. form
-        patterns. FormField label / TextInput 으로 나누는 방안. groupable은 속성. 그래서 컴포넌트
-        이름은 form layout / fieldset / fieldgroup FormLabel checkbox-label와 input-label을 똑같이
-        할 수 있나? field label : fieldset legend, label - input/textarea 그러면 searchField 등의
-        대안이 될 수 있나?
-      </li>
-      <li>field feedback / fieldset feedback(checkbox group, login)</li>
-      <li>props: minValue, maxValue, value, onDecreseClick, onIncreseClick</li>
-      <li>221021: - + 버튼에 포커스는 필요가 없다. input 키보드 위 아래로?</li>
-      <li>
-        장식적인 검색 아이콘과 clickable한 액션. prefix는 장식. suffix는 액션? suffix에 유닛이 있을
-        수도
-      </li>
-    </mm-text-list>
+  <mm-text-list texts="[]">
+    <li>TODO utilities. 앞자리 0 제거. 숫자만입력3자리마다콤마. 소숫점 컨트롤.</li>
+    <li>url field. www 및 https://</li>
+    <li>
+      form 컴포넌트는 간격에 대한 구조 컴포넌트. TODO. FormField, FormLabel, FormControl. form
+      patterns. FormField label / TextInput 으로 나누는 방안. groupable은 속성. 그래서 컴포넌트
+      이름은 form layout / fieldset / fieldgroup FormLabel checkbox-label와 input-label을 똑같이 할
+      수 있나? field label : fieldset legend, label - input/textarea 그러면 searchField 등의 대안이
+      될 수 있나?
+    </li>
+    <li>field feedback / fieldset feedback(checkbox group, login)</li>
+    <li>props: minValue, maxValue, value, onDecreseClick, onIncreseClick</li>
+    <li>221021: - + 버튼에 포커스는 필요가 없다. input 키보드 위 아래로?</li>
+    <li>
+      장식적인 검색 아이콘과 clickable한 액션. prefix는 장식. suffix는 액션? suffix에 유닛이 있을
+      수도
+    </li>
+  </mm-text-list>
 
-    <!-- https://story.pxd.co.kr/1451 -->
-    <p>loading state</p>
-
-    <div class="range">
-      <label for="myRange">숙박 인원</label>
-      <input type="range" min="1" max="10" value="2" step="any" list="tickmarks" id="myRange" />
-      <datalist id="tickmarks_temp">
-        <option value="0" label="0"></option>
-        <option value="5" label="5"></option>
-      </datalist>
-    </div>
-
-    <article class="article">
-      <label for="">레이블</label>
-      <mm-menuitem data-size="large" style="margin-bottom: var(--space-3)">
-        <mm-avatar></mm-avatar>
-        <span class="item-description">관심사가 비슷한 사용자</span>
-        <h2 class="item-name">Gyeongsoo I</h2>
-        <!-- <button class="item-action"><span class="item-action-label">팔로우</span></button> -->
-      </mm-menuitem>
-      <p>
-        Note: Make sure the role of the element that serves as the container for the popup content
-        is a menu, listbox, tree, grid or dialog and that the value of aria-haspopup matches the
-        role of the popup container.
-      </p>
-      <!-- ! flex-wrap: warp일 때 min-width가 fixed -->
-      <!-- ! width:100% and max-width doesnt' work-->
-    </article>
-
-    <!-- <section
-      style="display: flex; justify-content: center; gap: 2rem; margin: 0 var(--grid-margin)"
+  <!-- <div
+    style="
+      width: 20rem;
+      height: 20rem;
+      border-radius: 50%;
+      background-image: url('../public/images/prometheus.jpg');
+      background-size: cover;
+      position: relative;
+    "
+  >
+    <h3
+      class="quote-title"
+      style="
+        color: #fff;
+        background: #000;
+        display: inline-block;
+        color: #fff;
+        position: relative;
+        z-index: 1;
+      "
     >
-      <div
-        class=""
-        style="
-          width: 20rem;
-          height: 20rem;
-          border-radius: 50%;
-          background-image: url('/public/images/springsteen.jpg');
-          background-size: cover;
-          position: relative;
-        "
-      >
-        <h3
-          class="quote-title"
-          style="
-            color: #fff;
-            background: #000;
-            display: inline-block;
-            color: #fff;
-            position: relative;
-            z-index: 1;
-          "
-        >
-          Cool Hand Luke
-        </h3>
-        <br />
-        <cite
-          class="quote-byline"
-          style="
-            color: #fff;
-            background: #000;
-            display: inline-block;
-            margin-top: 0;
-            position: relative;
-            z-index: 1;
-          "
-        >
-          <div class="quote-byline-name" style="color: #fff; position: relative">
-            Bruce Springsteen
-          </div>
-          <time class="quote-byline-job" style="color: #fff; position: relative">1967</time>
-        </cite>
-        <div
-          style="
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(
-              to bottom,
-              rgba(0, 0, 0, 0),
-              rgba(0, 0, 0, 0.5),
-              rgb(0, 0, 0.75)
-            );
-            height: 128px;
-            z-index: 0;
-            border-radius: var(--radius);
-          "
-        ></div>
-      </div>
+      프로메테우스
+    </h3>
+    <br />
+    <cite
+      class="quote-byline"
+      style="
+        color: #fff;
+        background: #000;
+        display: inline-block;
+        margin-top: 0;
+        position: relative;
+        z-index: 1;
+      "
+    >
+      <div class="quote-byline-name" style="color: #fff; position: relative">리들리 스콧</div>
+      <time class="quote-byline-job" style="color: #fff; position: relative">2012, 미국</time>
+    </cite>
+  </div> -->
 
-      <div
-        style="
-          width: 20rem;
-          height: 20rem;
-          border-radius: 50%;
-          background-image: url('../public/images/prometheus.jpg');
-          background-size: cover;
-          position: relative;
-        "
-      >
-        <h3
-          class="quote-title"
-          style="
-            color: #fff;
-            background: #000;
-            display: inline-block;
-            color: #fff;
-            position: relative;
-            z-index: 1;
-          "
-        >
-          프로메테우스
-        </h3>
-        <br />
-        <cite
-          class="quote-byline"
-          style="
-            color: #fff;
-            background: #000;
-            display: inline-block;
-            margin-top: 0;
-            position: relative;
-            z-index: 1;
-          "
-        >
-          <div class="quote-byline-name" style="color: #fff; position: relative">리들리 스콧</div>
-          <time class="quote-byline-job" style="color: #fff; position: relative">2012, 미국</time>
-        </cite>
-      </div>
-    </section> -->
+  <mm-component-section
+    title="Input Feedback"
+    description="
+          helper(help message)와 feedback(feedback message / validation feedback)을 구분하기.
+          mui에서는 error prop."
+  >
+  </mm-component-section>
 
-        <mm-component-section 
-        title="RevealButton"
-        description="회원가입 프로세스에서 비밀번호 확인 필드가 존재하는 경우에는
+  <mm-component-section
+    title="RevealButton"
+    description="회원가입 프로세스에서 비밀번호 확인 필드가 존재하는 경우에는
           제공할 필요가 없다. 비밀번호 확인 필드를 제공하지 않는 것은 국내 서비스에는 익숙하지 않은
-          경험. 비밀번호 입력 필드가 1개만 존재하는 경우 리빌 버튼을 제공할 수 있다">
-    </mm-component-section>
+          경험. 비밀번호 입력 필드가 1개만 존재하는 경우 리빌 버튼을 제공할 수 있다"
+  >
+  </mm-component-section>
 
-    <mm-component-section 
-        title="Counter TextField"
-        description="숫자 입력 필드. 수량, 가격, step/count. suffix(unit)">
-      <br />
-        <div
-          class="counter js-counter"
-          style="display: flex; align-items: center; max-width: 10rem; gap: var(--space-2)"
-        >
-          <label for="numberfield" style="position: absolute; opacity: 0">
-            레이블 라이트하우스용 price, quantity(step/count). 우측 정렬. suffix(unit)
-          </label>
-          <mm-icon-button
-            variant="navigator"
-            icon="minus"
-            class="js-counter-decrement"
-            aria-controls="numberfield"
-          ></mm-icon-button>
-          <mm-textfield value="20"></mm-textfield>
-          <!-- <input
+  <mm-component-section
+    title="Counter TextField"
+    description="숫자 입력 필드. 수량, 가격, step/count. suffix(unit)"
+  >
+    <div
+      class="counter js-counter"
+      style="display: flex; align-items: center; max-width: 10rem; gap: var(--space-2)"
+    >
+      <label for="numberfield" style="position: absolute; opacity: 0">
+        레이블 라이트하우스용 price, quantity(step/count). 우측 정렬. suffix(unit)
+      </label>
+      <mm-icon-button
+        variant="navigator"
+        icon="minus"
+        class="js-counter-decrement"
+        aria-controls="numberfield"
+      ></mm-icon-button>
+      <mm-textfield value="20"></mm-textfield>
+      <!-- <input
             class="counter-input js-counter-input js-number-input"
             type="number"
             name="counter1"
@@ -517,91 +407,74 @@
             max="20"
             value="0"
           /> -->
-          <mm-icon-button
-            variant="navigator"
-            icon="plus"
-            class="js-counter-increment"
-            tabindex="-1"
-          >
-          </mm-icon-button>
-        </div>
-    </mm-component-section>
-
-    <mm-component-section>
-            <mm-title-with-description
-      level="2"
-        title="PasswordField"
-        description="숫자 입력 필드. 수량, 가격, step/count. suffix(unit). native reset button"
-      ></mm-title-with-description>
-      <br />
-
-        <mm-textfield type="password">
-          <mm-icon-button
-            slot="suffix"
-            icon="eye-solid"
-            aria-label="비밀번호 보기"
-          ></mm-icon-button>
-        </mm-textfield>
-
-       <section>
-        <div class="validation-item validation1">8 - 12 characters / 8 characters minimum</div>
-        <div class="validation-item validation2">
-          One lowercase character / One uppercase character / One Number
-        </div>
-        <div class="validation-item validation3">One special character</div>
-        <div class="validation-item validation4">동일한 문자 6개 연속</div>
-      </section>
-      <div class="textfield">
-        <label class="textfield-label" for="signup-password-confirm">비밀번호 확인</label>
-        <input
-          class="textfield-input js-password-test"
-          type="password"
-          id="signup-password-confirm"
-          placeholder="6자리 이상"
-        />
-        <mm-button variant="tertiary" class="js-view-password" type="button"
-          >비밀번호 보기</mm-button
-        >
-      </div>
-      <style>
-        .validation-item {
-          display: flex;
-          align-items: center;
-          gap: var(--space-2);
-        }
-        .is-valid1 .validation1 {
-          color: red;
-        }
-        .is-valid2 .validation2 {
-          color: red;
-        }
-        .is-valid3 .validation3 {
-          color: red;
-        }
-        .is-valid4 .validation4 {
-          color: red;
-        }
-        .is-valid5 .validation5 {
-          color: red;
-        }
-      </style>
-    </section>
+      <mm-icon-button variant="navigator" icon="plus" class="js-counter-increment" tabindex="-1">
+      </mm-icon-button>
+    </div>
   </mm-component-section>
 
-  <mm-component-section>
+  <mm-component-section
+    title="PasswordField"
+    description="숫자 입력 필드. 수량, 가격, step/count. suffix(unit). native reset button"
+  >
+    <mm-textfield type="password">
+      <mm-icon-button slot="suffix" icon="eye-solid" aria-label="비밀번호 보기"></mm-icon-button>
+    </mm-textfield>
 
-                <mm-title-with-description
-      level="2"
-        title="Newsletter"
-        description="TODO"
+    <section>
+      <div class="validation-item validation1">8 - 12 characters / 8 characters minimum</div>
+      <div class="validation-item validation2">
+        One lowercase character / One uppercase character / One Number
+      </div>
+      <div class="validation-item validation3">One special character</div>
+      <div class="validation-item validation4">동일한 문자 6개 연속</div>
+    </section>
+    <div class="textfield">
+      <label class="textfield-label" for="signup-password-confirm">비밀번호 확인</label>
+      <input
+        class="textfield-input js-password-test"
+        type="password"
+        id="signup-password-confirm"
+        placeholder="6자리 이상"
+      />
+      <mm-button variant="tertiary" class="js-view-password" type="button">비밀번호 보기</mm-button>
+    </div>
+    <style>
+      .validation-item {
+        display: flex;
+        align-items: center;
+        gap: var(--space-2);
+      }
+      .is-valid1 .validation1 {
+        color: red;
+      }
+      .is-valid2 .validation2 {
+        color: red;
+      }
+      .is-valid3 .validation3 {
+        color: red;
+      }
+      .is-valid4 .validation4 {
+        color: red;
+      }
+      .is-valid5 .validation5 {
+        color: red;
+      }
+    </style>
+  </mm-component-section>
+
+  <mm-component-section title="Newsletter" description="TODO">
+    <form class="subscribe" style="max-width: 400px">
+      <mm-title-with-description
+        level="3"
+        title="Newsletter subscribe"
+        description="섭스크라이브 유아이 콤포넌트 입니다. 두 줄 단락을 위해 쓰고 있습니다."
       ></mm-title-with-description>
-      <mm-separator></mm-separator>
-  <form class="subscribe" style="max-width:400px;">
-    <mm-title-with-description level="3" title="Newsletter subscribe" description="섭스크라이브 유아이 콤포넌트 입니다. 두 줄 단락을 위해 쓰고 있습니다."></mm-title-with-description>
-      <div style="height: 1rem;"></div>
+      <div style="height: 1rem"></div>
       <mm-textfield type="email" placeholder="Enter Your Email..">
         <mm-icon slot="leading" name="mail"></mm-icon>
-        <mm-button slot="suffix" type="submit" variant="primary" size="medium">뉴스레터 구독</mm-button>
+        <mm-button slot="suffix" type="submit" variant="primary" size="medium"
+          >뉴스레터 구독</mm-button
+        >
       </mm-textfield>
       <!-- <mm-checkbox>
         본인은 Google의 <a href="" rel="noopener" target="_blank">이용 약관</a>에 동의하며 본인의
@@ -613,19 +486,17 @@
         당사에서 보내는 이메일은 일반적으로 한 달에 1-2회를 넘지 않습니다. 언제든지 구독을 취소할 수
         있습니다.
       </mm-text> -->
-  </form>
+    </form>
   </mm-component-section>
 
-
-
-    <aside class="component-references">
-      <mm-text variant="subhead">References</mm-text>
-      <mm-link
-        href="https://support.google.com/accounts/answer/32040?visit_id=637702064644854938-965259796&p=pw_dont_reuse&hl=ko&rd=1"
-      >
-        구글의 비밀번호 만들기 팁꾸
-      </mm-link>
-    </aside>
+  <aside class="component-references">
+    <mm-text variant="subhead">References</mm-text>
+    <mm-link
+      href="https://support.google.com/accounts/answer/32040?visit_id=637702064644854938-965259796&p=pw_dont_reuse&hl=ko&rd=1"
+    >
+      구글의 비밀번호 만들기 팁꾸
+    </mm-link>
+  </aside>
 
   <!-- <form action="">
 

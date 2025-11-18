@@ -5,33 +5,38 @@ class Radio extends HTMLElement {
     super()
     const shadow = this.attachShadow({ mode: 'open' })
 
+    const id = this.id_temp || `radio-${Math.random().toString(36).substr(2, 9)}`
+
     const container = document.createElement('div')
     container.classList.add('radio')
 
-    const label = document.createElement('label')
-    label.innerHTML = this.innerHTML || ''
-    label.setAttribute('for', this.id_temp || '')
-
+    // input
     const input = document.createElement('input')
     input.setAttribute('type', 'radio')
-    input.setAttribute('id', this.id_temp || '')
+    input.setAttribute('id', this.id_temp || id)
     input.setAttribute('name', this.name || '')
+    // MEMO true 와 같은 값 없이
+    if (this.checked) input.setAttribute('checked', '')
+    if (this.disabled) input.setAttribute('disabled', '')
 
-    if (this.checked) input.setAttribute('checked', 'true')
-    if (this.disabled) input.setAttribute('disabled', 'true')
+    // label
+    const label = document.createElement('label')
+    label.setAttribute('for', id)
 
-    // if (this.checked) {
-    //   input.setAttribute('checked', 'true')
-    // } else {
-    //   input.removeAttribute('checked')
-    // }
+    const indicator = document.createElement('span')
+    indicator.classList.add('radio-indicator')
 
-    shadow.append(container, makeStyleSheet('radio'))
+    label.appendChild(indicator) // 한 번만 붙이기
+    if (this.textContent && this.textContent.length > 0) {
+      const text = document.createElement('span')
+      text.classList.add('radio-text')
+      text.textContent = this.textContent
+      label.appendChild(text) // indicator 재첨부 X
+    }
+
     container.appendChild(input)
 
-    if (this.textContent && this.textContent.length > 0) {
-      container.appendChild(label)
-    }
+    container.appendChild(label)
 
     if (this.helper) {
       const helper = document.createElement('p')
@@ -39,6 +44,9 @@ class Radio extends HTMLElement {
 
       container.appendChild(helper)
     }
+
+    shadow.appendChild(makeStyleSheet('radio'))
+    shadow.appendChild(container)
   }
 
   get id_temp() {

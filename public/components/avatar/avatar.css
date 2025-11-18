@@ -36,11 +36,11 @@ img {
   }
 }
 /* .avatar:not([data-size]) {} */
-.avatar[data-default=true] {
-  background-image: url('/public/images/soojubm.png');
+/* .avatar[data-default=true] { */
+  /* background-image: url('/public/images/soojubm.png');
   background-size: 87.5%;
-  background-position: 85% 57.5%;
-}
+  background-position: 85% 57.5%; */
+/* } */
 
 .avatar[data-size=huge] {
   --avatar-size: var(--size-huge);

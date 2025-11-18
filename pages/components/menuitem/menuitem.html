@@ -1,7 +1,7 @@
 <main class="page">
   <mm-title-with-description
     title="MenuItem"
-    description="사용자가 수행할 수 있는 행동 목록."
+    description="해당 영역에 대해(?) 사용자가 수행할 수 있는 행동 목록."
   ></mm-title-with-description>
 
   <dl class="article-aka">
@@ -12,29 +12,21 @@
   </dl>
 
   <section class="component-example">
-    <mm-group variant="menuitem">
-      <mm-menuitem size="medium">
-        <mm-avatar slot="avatar" variant="tertiary" size="large" icon="group"></mm-avatar>
-        <mm-text-pair
-          slot="text"
-          labelText="사진 및 동영상 백업"
-          descriptionText="우측 액션은 사실 그냥 시각 정보인데"
-        >
-        </mm-text-pair>
-        <mm-tag slot="action" variant="primary">신규</mm-tag>
-      </mm-menuitem>
+    <mm-group variant="menuitem" style="max-width: 520px">
+      <mm-menuitem icon="group" label="동료찾기"> </mm-menuitem>
+      <mm-menuitem icon="trash" label="삭제하기" tone="danger"> </mm-menuitem>
       <mm-separator spacing="small"></mm-separator>
-      <mm-menuitem>
-        <mm-avatar slot="avatar" size="large">🦊</mm-avatar>
-        <mm-text-pair
-          slot="text"
-          labelText="사진 및 동영상 백업"
-          descriptionText="디스크립션이다"
-        ></mm-text-pair>
-        <mm-button slot="action">버튼</mm-button>
-      </mm-menuitem>
-      <mm-menuitem label="메뉴아이템 링크" role="menuitem">
-        <mm-avatar slot="avatar">🦊</mm-avatar>
+      <mm-group variant="dropdown">
+        <mm-menuitem icon="check" label="MenuItemCheckbox"> </mm-menuitem>
+        <mm-menuitem icon="uncheck" label="MenuItemCheckbox"> </mm-menuitem>
+      </mm-group>
+      <mm-separator spacing="small"></mm-separator>
+      <mm-menuitem label="windows 패턴">
+        <mm-avatar slot="avatar" variant="tertiary"></mm-avatar>
+        <mm-group slot="action" variant="chip">
+          <mm-button>퀵 액션</mm-button>
+          <mm-icon-button variant="navigator" size="small" icon="arrow-right"> </mm-icon-button>
+        </mm-group>
       </mm-menuitem>
       <mm-menuitem label="메뉴아이템 체크박스" role="menuitemcheckbox">
         <mm-avatar slot="avatar">🦊</mm-avatar>
@@ -44,18 +36,11 @@
         <mm-avatar slot="avatar">🦊</mm-avatar>
         <mm-radio slot="check" id="radio1" name="radio1" value="" checked="true"></mm-radio>
       </mm-menuitem>
-      <mm-menuitem label="windows 패턴">
-        <mm-avatar slot="avatar"></mm-avatar>
-        <mm-group slot="action" variant="chip">
-          <mm-button>퀵 액션</mm-button>
-          <mm-icon-button variant="navigator" icon="arrow-right"> </mm-icon-button>
-        </mm-group>
-      </mm-menuitem>
       <mm-tile variant="elevated" size="small" role="menuitemcheckbox">
-        <mm-menuitem label="강조된 메뉴아이템" description="리스트가 될 수 없어">
+        <mm-list-row primary="강조된 메뉴아이템" secondary="리스트가 될 수 없어">
           <mm-avatar slot="avatar">🦊</mm-avatar>
           <mm-switch slot="action" role="switch"></mm-switch>
-        </mm-menuitem>
+        </mm-list-row>
         <div style="height: var(--space-1)"></div>
         <small>
           Google 포토에 최대 해상도로 백업. TODO menuitem에 tile이 포함되어야 hover 상태.
@@ -67,8 +52,10 @@
   <section class="component-props">
     <mm-text variant="subhead">Props</mm-text>
     <dl>
-      <dt>name</dt>
+      <dt>text<attr>?</attr></dt>
       <dd>string</dd>
+      <dt>textPair<attr>?</attr></dt>
+      <dd>{primaryText: string, secondaryText: string}</dd>
       <dt>size</dt>
       <dd>'large' | 'medium'</dd>
       <dt>action</dt>
@@ -82,68 +69,19 @@
 
   <section class="component-guide">
     <mm-text-list
-      texts='[ "메뉴 아이템의 우측(action) 슬롯에는 액션 인티케이터(버튼, 스위치, 체크박스, 라디오)가 위치합니다.",
-    "정보를 보충하는 시각 정보 컴포넌트, 예를 들면 태그 액션 버튼이 따로 존재할 수도 있어야 한다. 이 정보가 중요한 이유 hover 상태 표현을 위해. 케이스. 팔로우 팔로잉. 또는 전체 영역이 팔로우.",
-    "textSlot :: 사이즈에 따라 두 줄이 될 수 있는데, 세부적인 정의를 실무자가 암기할 필요 없어야 한다. 또는 너무 자유도가 높다. 캡슐화 필요"]
-    '
+      texts='[
+      "flutter. ListView. 스크롤 가능한 뷰 컨테이너. 동적으로 데이터를 랜더링하는 책임까지 포함되어 있다. itemBuilder: (context, index) {} / controller: ScrollController(). ListView - SwitchListTile / RadioListTile / 클릭 영역을 타일 전체로 지정하고 있다. 2가지 이상의 액션을 허용할 것인가?",
+      "액션(단일), 선택. 멀티플 액션을 허용할 것인가? TODO role=listbox/menu는 항목 선택과 명령 실행 차이. 자식으로 option, menuitemcheckbox 등을 가지는 것이 차이. 사용 맥락 또한 listbox는 폼이나 입력. aria-orientation값을 갖습니다 vertical.드롭다운은 패턴. 사용자 인터렉션 방식에 가까움. listbox는 기본적으로 드롭다운 목록을 제공하지않는다."
+    ]'
     ></mm-text-list>
 
     <ul>
       <li>Menu -> MenuButton(Trigger) / MenuList - MenuItem, MenuLink</li>
       <li>MenuItemAvatar. sizes: large | medium</li>
-      <li>MenuItemLabel - title(truncated)</li>
+      <li>MenuItemLabel - title(truncated), description</li>
       <li>MenuItemAction. toggle | more | delete</li>
       <li>MenuHelper. setting-item. filter-item.</li>
     </ul>
-
-    <div style="height: var(--space-3)"></div>
-
-    <mm-text>
-      flutter. ListView. 스크롤 가능한 뷰 컨테이너. 동적으로 데이터를 랜더링하는 책임까지 포함되어
-      있다. 그렇다면 스크롤이 필요한 모든 컨텐츠 뷰는 리스트인가? itemBuilder: (context, index) {} /
-      controller: ScrollController(). ListView - SwitchListTile / RadioListTile / 클릭 영역을 타일
-      전체로 지정하고 있다. 2가지 이상의 액션을 허용할 것인가?
-    </mm-text>
-    <mm-text variant="body">
-      선택과는 다른 맥락. 단독으로 쓸 수 있다. TODO role=listbox/menu는 항목 선택과 명령 실행 차이.
-      자식으로 option, menuitemcheckbox 등을 가지는 것이 차이. select와의 차이는 이미지를 포함할 수
-      있다고. 사용 맥락 또한 listbox는 폼이나 입력. aria-orientation값을 갖습니다 vertical.
-      드롭다운은 패턴. 사용자 인터렉션 방식에 가까움. listbox는 기본적으로 드롭다운 목록을 제공하지
-      않는다."
-    </mm-text>
-
-    <mm-tile>
-      <mm-row justifyContent="space-between">
-        <div>
-          <mm-text variant="label-strong">Strictly Necessary</mm-text>
-          <mm-text variant="body">
-            These cookies are essential in order to use the website and use its features.
-          </mm-text>
-        </div>
-        <mm-switch></mm-switch>
-      </mm-row>
-    </mm-tile>
-
-    <mm-tile variant="flat">
-      <mm-group variant="dropdown">
-        <mm-menuitem role="menuitem" href="#design">
-          <mm-icon slot="check" name="check"></mm-icon>
-          <span slot="text">Only Text</span>
-        </mm-menuitem>
-        <mm-menuitem role="menuitem">
-          <span slot="check"></span>
-          <span slot="text">on popover</span>
-        </mm-menuitem>
-        <mm-menuitem class="dropdown-menu-item">
-          <span slot="check"></span>
-          <span slot="text">with dropdown/pulldown</span>
-        </mm-menuitem>
-        <mm-menuitem class="dropdown-menu-item">
-          <span slot="check"></span>
-          <span slot="text">with popover</span>
-        </mm-menuitem>
-      </mm-group>
-    </mm-tile>
 
     <mm-tile>
       <mm-menuitem>
@@ -157,67 +95,93 @@
         </div>
       </mm-menuitem>
     </mm-tile>
-    <mm-menuitem>
-      <mm-avatar slot="avatar" size="large" fallback="🎅🏻"></mm-avatar>
-      <mm-text-pair
-        slot="text"
-        labelText="Widgefy iOS Widgets"
-        descriptionText="떢볶이"
-      ></mm-text-pair>
-      <div slot="action" style="text-align: right">
-        <span style="display: block; line-height: 18px">18,800 KRW</span>
-        <mm-text variant="label">6410</mm-text>
-      </div>
-    </mm-menuitem>
   </section>
 
-  <mm-component-section title="See this post in" description="test">
+  <mm-component-section
+    title="ListRow"
+    description="actionSlot :: 액션 인티케이터(버튼, 스위치, 체크박스, 라디오) ??. 내부에 다중 액션을 제공하는 패턴은 메뉴 아이템과 분리해야 할까. 호버 정의가 달라지거나., textSlot :: 사이즈에 따라 두 줄 허용. 현재 3가지의 TextPair 사용 중. text를 받을 때. textPair를 받을 때."
+  >
+    <mm-group variant="menuitem">
+      <mm-list-row
+        icon="group"
+        primary="MenuItem와 ListRow의 차이점은?"
+        secondary="설명 텍스트가 있을 수도 있고 없을 수도 있다."
+      >
+        <mm-button slot="action">액션</mm-button>
+      </mm-list-row>
+      <mm-list-row icon="group" primary="Widgefy iOS Widgets" secondary="떡볶이">
+        <div slot="action" style="text-align: right">
+          <span style="display: block; line-height: 18px">18,800 KRW</span>
+          <mm-text variant="label">6410</mm-text>
+        </div>
+      </mm-list-row>
+      <mm-list-row
+        icon="group"
+        primary="사진 및 동영상 백업"
+        secondary="우측 액션은 사실 그냥 시각 정보인데"
+      >
+        <mm-tag slot="action" variant="primary">신규</mm-tag>
+      </mm-list-row>
+    </mm-group>
+  </mm-component-section>
+
+  <mm-component-section title="See this post in" description="TODO">
     <mm-tile>
       <mm-titlebar label="See this post in"> </mm-titlebar>
       <br />
       <mm-group variant="menuitem">
-        <mm-menuitem label="수줍이 앱">
-          <mm-avatar slot="avatar" variant="secondary" size="large" default="true"></mm-avatar>
-          <mm-button slot="action">열기</mm-button>
-        </mm-menuitem>
-        <mm-menuitem label="사파리 브라우저">
-          <mm-avatar slot="avatar" size="large" default="true"></mm-avatar>
+        <mm-list-row primary="수줍이 앱">
+          <mm-avatar slot="avatar" variant="secondary" size="large"></mm-avatar>
+          <mm-button slot="action" variant="primary">열기</mm-button>
+        </mm-list-row>
+        <mm-list-row primary="사파리 브라우저">
+          <mm-avatar slot="avatar" size="large"></mm-avatar>
           <mm-button slot="action" status="active">실행</mm-button>
-        </mm-menuitem>
+        </mm-list-row>
       </mm-group>
     </mm-tile>
   </mm-component-section>
-  <mm-component-section title="Share" description="연습">
+  <mm-component-section title="Share" description="TODO">
     <mm-titlebar label="공유"></mm-titlebar>
-    <div style="height: var(--space-3)"></div>
+    <div style="height: var(--space-4)"></div>
     <mm-text variant="subhead" class="share-title">가족이나 친구와<br />함께 보세요!</mm-text>
     <div style="height: var(--space-3)"></div>
     <mm-group variant="menuitem">
-      <mm-menuitem class="share-facebook" label="facebook으로 공유">
+      <mm-menuitem icon="facebook" label="facebook으로 공유">
         <mm-avatar
           slot="avatar"
           size="medium"
-          icon="facebook"
           style="background-color: var(--color-facebook); color: #fff"
         >
         </mm-avatar>
       </mm-menuitem>
-      <mm-menuitem class="share-twitter" label="twitter로 공유">
-        <mm-avatar
-          slot="avatar"
-          icon="twitter"
-          style="background-color: var(--color-twitter); color: #fff"
-        >
-        </mm-avatar>
+      <mm-menuitem
+        icon="twitter"
+        label="twitter로 공유"
+        style="background-color: var(--color-twitter); color: #fff"
+      >
       </mm-menuitem>
-      <mm-menuitem class="share-kakao" label="kakao talk으로 공유">
-        <mm-avatar slot="avatar" icon="message" style="background-color: var(--color-kakao)">
-        </mm-avatar>
+      <mm-menuitem icon="message" label="kakao talk으로 공유">
+        <mm-avatar slot="avatar" style="background-color: var(--color-kakao)"> </mm-avatar>
       </mm-menuitem>
-      <mm-menuitem class="share-kakao" label="링크 복사">
-        <mm-avatar slot="avatar" icon="copy"> </mm-avatar>
+      <mm-menuitem icon="copy" label="링크 복사">
+        <mm-avatar slot="avatar"> </mm-avatar>
       </mm-menuitem>
     </mm-group>
+  </mm-component-section>
+
+  <mm-component-section title="Setting Option - switch" description="TODO">
+    <mm-tile>
+      <mm-row justifyContent="space-between" gap="var(--space-4)">
+        <div>
+          <mm-text variant="label-strong">Strictly Necessary</mm-text>
+          <mm-text variant="body">
+            These cookies are essential in order to use the website and use its features.
+          </mm-text>
+        </div>
+        <mm-switch></mm-switch>
+      </mm-row>
+    </mm-tile>
   </mm-component-section>
 </main>
 

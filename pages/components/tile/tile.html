@@ -24,23 +24,23 @@
     <mm-group>
       <mm-tile variant="flat">
         <mm-title-with-description
-          level="2"
+          level="3"
           title="flat"
-          description="단순 구획을 표현하기 때문에 클릭할 수 없는 카드에 사용합니다."
+          description="단순 구획을 표현. 클릭할 수 없다."
         ></mm-title-with-description>
       </mm-tile>
       <mm-tile variant="tinted">
         <mm-title-with-description
-          level="2"
+          level="3"
           title="tinted"
-          description="배경색이 추가되어 강조된 카드에 사용합니다."
+          description="강조 표현. 클릭할 수 있다."
         ></mm-title-with-description>
       </mm-tile>
       <mm-tile variant="elevated">
         <mm-title-with-description
-          level="2"
+          level="3"
           title="elevated"
-          description="클릭할 수 있음을 나타내는 카드에 사용합니다."
+          description="강조 표현2. 클릭할 수 있다."
         ></mm-title-with-description>
       </mm-tile>
     </mm-group>
@@ -48,14 +48,14 @@
     <mm-group>
       <mm-tile variant="elevated" size="small">
         <mm-title-with-description
-          level="3"
+          level="4"
           title="small"
-          description="스몰 사이즈"
+          description="스몰 사이즈. 메뉴에서만 사용?"
         ></mm-title-with-description>
       </mm-tile>
       <mm-tile variant="elevated" size="medium">
         <mm-title-with-description
-          level="2"
+          level="4"
           title="medium (size default)"
           description="미디엄 사이즈"
         ></mm-title-with-description>
@@ -85,10 +85,10 @@
     <mm-text-list
       texts='[
           "타일 내부 leading, tailing 컴포넌트에 따라 시각보정이 필요할 수 있습니다.",
-          "flat 형태는 단순 구획을 표현하기 때문에 클릭할 수 없는 카드에 사용합니다. (foundations에서 정의하고 있다. 내 마음속으로..) elevated 형태는 클릭할 수 있음clickable의 기표이므로, 타일 전체가 하나의 클릭 가능한 컴포넌트이거나 타일 내부에 클릭 가능한 컴포넌트를 포함한다.",
+          "foundation :: elevated는 타일 전체가 하나의 클릭 가능한 컴포넌트이거나 타일 내부에 클릭 가능한 컴포넌트를 포함.",
           "transparented tile 을 정의하여 모든 contentbox가 tile이 되는 것은 어떤가? 비어있는 컴포넌트(Box, Row, div)와는 어떤 차이가 있나? row는 레이아웃 컴포넌트, tile은 형태 컴포넌트이다. tile에 과도한 책임을 부여하지 말 것.",
           "size를 number로 정의하는 유연한 방식이 되어도 좋겠다. 여기에서 number의 타입은 spacing token을 레퍼런스한다.",
-          "inset이 커질수록 작은 화면에서 inset 감소가 불가피하다. 물리적 화면 크기에 컴포넌트의 의존성이 커진다. inset이 일정 크기를 넘을 때 콘텐츠 모듈을 가운데 정렬하는 것은 어떤가?"
+          "inset이 너무 커지면 물리적 화면 크기에 컴포넌트의 변경이 생길 수 있다. inset이 일정 크기를 넘을 때 콘텐츠 모듈을 가운데 정렬하는 방법이 있다."
         ]'
     >
     </mm-text-list>
@@ -118,7 +118,7 @@
       <mm-button variant="primary">Get All-Access</mm-button>
     </aside>
 
-    <picture>
+    <!-- <picture>
       <source
         srcset="photo-light.png"
         media="(prefers-color-scheme: light) or (prefers-color-scheme: no-preference)"
@@ -128,61 +128,15 @@
       <source type="image/webp" srcset="pyramid.webp" />
       <source media="(max-width: 799px)" srcset="elva-480w-close-portrait.jpg" />
       <source media="(min-width: 800px)" srcset="elva-800w.jpg" />
-      <img src="elva-800w.jpg" alt="딸 엘바를 안고 서 있는 크리스" />
-    </picture>
-    <img
+      <img src="elva-800w.jpg" alt="딸 엘바를 안고 서 있는 크리스" loading="lazy" />
+    </picture> -->
+    <!-- <img
       srcset="elva-fairy-320w.jpg 320w, elva-fairy-480w.jpg 480w, elva-fairy-640w.jpg 2x, elva-fairy-800w.jpg 800w"
       sizes="(max-width: 320px) 280px, (max-width: 480px) 440px, 800px"
       src="elva-fairy-800w.jpg"
       alt="요정 옷을 입은 엘바"
-    />
+    /> -->
 
-    <mm-tile variant="elevated">
-      <mm-avatar src="/public/images/springsteen.jpg"> </mm-avatar>
-      <div style="height: var(--space-2)"></div>
-      <mm-text-pair
-        labelText="Bruce Springsteen"
-        descriptionText="Product Design Intern @soojubm"
-      ></mm-text-pair>
-      <div style="position: absolute; right: 1rem; top: 1rem">
-        <mm-button>팔로우</mm-button>
-      </div>
-    </mm-tile>
-
-    <header
-      style="
-        height: var(--size-large);
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      "
-    >
-      <mm-text variant="subhead">내 요금제</mm-text>
-      <button style="color: var(--color-primary); font-weight: bold; text-decoration: underline">
-        요금제 변경하기
-      </button>
-    </header>
-
-    <mm-tile>
-      <div
-        style="
-          padding: 1rem;
-          box-sizing: border-box;
-          border-radius: var(--radius);
-          background: var(--color-background-weak);
-          text-align: center;
-        "
-      >
-        택배사에 직접 연락하지 않아도<br />영업일 기준 3일 이내에 방문합니다.
-        <small style="display: block; margin: var(--space-2) 0 0">방문 택배사 : 한진택배</small>
-      </div>
-      <mm-text-list texts="[]">
-        <li>
-          환불은 반품상품 도착 이후 결제방법에 따라 진행됩니다. 상품에 이상이 있는 경우는 반품처리가
-          되지 않을 수도 있으며, 이 경우 고객센터에서 연락을 드립니다.
-        </li>
-      </mm-text-list>
-    </mm-tile>
     <mm-tile variant="flat">
       <mm-avatar style="background: aliceblue">
         <mm-icon name="graph-up"></mm-icon>
@@ -221,21 +175,10 @@
         <mm-tag variant="hashtag">Remote friendly</mm-tag>
       </mm-group>
       <div style="height: var(--space-3)"></div>
-      <!-- <mm-button>View Job</mm-button> -->
-      <button
-        style="
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 100%;
-          gap: 0.5rem;
-          padding: var(--space-3) 1rem 0;
-          border-top: var(--border);
-        "
-      >
-        View Job
+      <mm-button
+        >View Job
         <mm-icon name="arrow-right"></mm-icon>
-      </button>
+      </mm-button>
     </mm-tile>
   </mm-text-group>
 

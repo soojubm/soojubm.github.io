@@ -10,6 +10,10 @@ class SheetHeader extends HTMLElement {
     this.attachShadow({ mode: 'open' })
   }
 
+  connectedCallback() {
+    this.render()
+  }
+
   attributeChangedCallback(name: string, _: string | null, newValue: string | null) {
     if (name === 'title') {
       this._title = newValue ?? ''
@@ -17,12 +21,8 @@ class SheetHeader extends HTMLElement {
     }
   }
 
-  connectedCallback() {
-    this.render()
-  }
-
   private handleClose = () => {
-    const event = new CustomEvent('sheetclose', { bubbles: true })
+    const event = new CustomEvent('sheetclose', { bubbles: true, composed: true })
     this.dispatchEvent(event)
   }
 
@@ -35,42 +35,19 @@ class SheetHeader extends HTMLElement {
           display: flex;
           align-items: center;
           justify-content: space-between;
-          padding: 1rem;
-          border-bottom: 1px solid #e5e5e5;
+          padding: 1rem 0;
+          border-bottom: var(--border);
           background: white;
-          font-family: sans-serif;
-        }
-
-        h2 {
-          font-size: 1rem;
-          margin: 0;
-        }
-
-        button {
-          all: unset;
-          cursor: pointer;
-          width: 24px;
-          height: 24px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 20px;
-          line-height: 1;
-          color: #666;
-          border-radius: 4px;
-        }
-
-        button:hover {
-          background-color: #f2f2f2;
         }
       </style>
 
-      <h2>${this._title}</h2>
-      <button aria-label="Close">&times;</button>
+      <mm-text variant="subhead">${this._title}</mm-text>
+      <mm-icon-button variant="navigator" icon="xmark" aria-label="Close"></mm-icon-button>
     `
 
-    this.shadowRoot.querySelector('button')?.addEventListener('click', this.handleClose)
+    this.shadowRoot.querySelector('mm-icon-button')?.addEventListener('click', this.handleClose)
   }
 }
 
+customElements.define('mm-sheet-header', SheetHeader)
 export default SheetHeader

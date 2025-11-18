@@ -7,16 +7,16 @@
 
   <section class="component-example">
     <mm-group variant="">
-      <mm-avatar size="huge" default="true" badge="true" badge></mm-avatar>
-      <mm-avatar size="large" default="true" default="true" badge="true"></mm-avatar>
-      <mm-avatar size="medium" default="true" fallback="수" badge="true"></mm-avatar>
-      <mm-avatar size="small" default="true"> </mm-avatar>
+      <mm-avatar size="huge" src="/public/images/springsteen.jpg" badge="true"></mm-avatar>
+      <mm-avatar size="large"></mm-avatar>
+      <mm-avatar size="medium"></mm-avatar>
+      <mm-avatar size="small"></mm-avatar>
     </mm-group>
     <mm-separator></mm-separator>
     <mm-group variant="">
-      <mm-avatar variant="primary" size="large" default="true" badge="true"></mm-avatar>
-      <mm-avatar variant="secondary" size="large" default="true" badge="true"></mm-avatar>
-      <mm-avatar variant="tertiary" size="large" default="true" badge="true"></mm-avatar>
+      <mm-avatar variant="primary" size="large" badge="true"></mm-avatar>
+      <mm-avatar variant="secondary" size="large" badge="true"></mm-avatar>
+      <mm-avatar variant="tertiary" size="large" badge="true"></mm-avatar>
     </mm-group>
   </section>
 
@@ -38,31 +38,18 @@
 
   <section class="component-guide">
     <section class="feature columns-3">
-      <mm-feature
-        icon="cursor-pointer"
-        titleText="Representative"
-        description="foundations :: 아웃라인 아바타는 클릭할 수 없다."
-      >
+      <mm-feature icon="cursor-pointer" titleText="Representative" description="TODO">
+        <!-- description="foundations :: 아웃라인 아바타는 클릭할 수 없다." -->
       </mm-feature>
       <mm-feature
         icon="cursor-pointer"
         titleText="Interactive or Non-interactive"
-        description="사용자의 입력이나 상호작용 없이 정보를 표시하는 정적(Static) 컴포넌트입니다. 상태, 속성, 분류 등의 정보를 한눈에 전달하는 데 초점을 둡니다. 인터렉션이 가능한 것처럼 보이지 않아야 합니다."
+        description="TODO"
       >
       </mm-feature>
-      <mm-feature
-        icon="cursor-pointer"
-        titleText="Groupable"
-        description="사용자의 입력이나 상호작용 없이 정보를 표시하는 정적(Static) 컴포넌트입니다. 상태, 속성, 분류 등의 정보를 한눈에 전달하는 데 초점을 둡니다. 인터렉션이 가능한 것처럼 보이지 않아야 합니다."
-      >
-      </mm-feature>
+      <mm-feature icon="cursor-pointer" titleText="Groupable" description="TODO"> </mm-feature>
     </section>
 
-    <mm-text-list
-      texts='[
-        "fallback :: icon-noir name=people-tag"
-      ]'
-    ></mm-text-list>
     <!-- React 코드 -->
     <!-- <section class="example"></section>
 
@@ -90,9 +77,9 @@
 
   <mm-component-section title="AvatarGroup" description="maximum avatar length 3">
     <mm-group variant="avatar">
-      <mm-avatar size="medium" default="true"></mm-avatar>
-      <mm-avatar size="medium" default="true"></mm-avatar>
-      <mm-avatar size="medium" default="true"></mm-avatar>
+      <mm-avatar size="medium"></mm-avatar>
+      <mm-avatar size="medium"></mm-avatar>
+      <mm-avatar size="medium"></mm-avatar>
     </mm-group>
   </mm-component-section>
 
@@ -129,12 +116,22 @@
         </mm-group>
       </div>
     </div>
+    <br />
+    <mm-entity
+      class="greeting"
+      label="windows-emoji 👋"
+      description="Tender is the night"
+      description2="description area2."
+      data-temp="이 패턴에서 아바타는 시각 정보가 아니라 링크로 사용. hashtag 등 사실상 page head로 사용될 수 있는."
+    >
+      <mm-avatar slot="avatar" variant="secondary" size="huge">#</mm-avatar>
+    </mm-entity>
   </mm-component-section>
 
   <mm-component-section title="UserCard" description="구체 레벨.">
     <mm-tile variant="flat">
       <div style="display: flex; gap: 1rem">
-        <mm-avatar size="huge" variant="secondary" default="true"></mm-avatar>
+        <mm-avatar size="huge" variant="secondary"></mm-avatar>
         <mm-group style="flex-direction: column; gap: var(--space-2)">
           <div>
             <mm-text variant="label">Top User</mm-text>
@@ -151,10 +148,10 @@
       <!-- <mm-tag>8.2% 상승</mm-tag> -->
       <mm-tile variant="elevated" size="small" style="margin: var(--space-3) 0 0">
         <mm-group variant="avatar">
-          <mm-avatar size="small" default="true"></mm-avatar>
-          <mm-avatar size="small" default="true"></mm-avatar>
-          <mm-avatar size="small" default="true"></mm-avatar>
-          <mm-avatar size="small" default="true"></mm-avatar>
+          <mm-avatar size="small"></mm-avatar>
+          <mm-avatar size="small"></mm-avatar>
+          <mm-avatar size="small"></mm-avatar>
+          <mm-avatar size="small"></mm-avatar>
           <mm-text style="margin-left: var(--space-2)"> Followed by 수줍이 외 4명 </mm-text>
         </mm-group>
       </mm-tile>
@@ -163,7 +160,7 @@
     <br />
     <mm-tile>
       <mm-menuitem label="수줍이" description="Youtube subscriber">
-        <mm-avatar slot="avatar" default="true"></mm-avatar>
+        <mm-avatar slot="avatar"></mm-avatar>
       </mm-menuitem>
       <div style="margin: var(--space-2) 0 0">
         <mm-text variant="body">
@@ -174,7 +171,6 @@
       <div style="margin-block: var(--space-3)">
         <mm-group variant="button">
           <mm-keyvalue key="팔로워" value="62" alignment="inline"></mm-keyvalue>
-          <i class="icon-bullet"></i>
           <mm-keyvalue key="팔로잉" value="8" alignment="inline"></mm-keyvalue>
         </mm-group>
       </div>

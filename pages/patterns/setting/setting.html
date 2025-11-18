@@ -10,18 +10,25 @@
   >
     <mm-avatar size="huge" variant="secondary" default="true"></mm-avatar>
     <mm-text variant="subhead"> 수줍이님, 어서와요<i style="font-style: italic">!</i> </mm-text>
-
-    <div style="display: flex; gap: 1rem; justify-content: center; margin: 1rem 0 0">
+    <!-- <div style="display: flex; gap: 1rem; justify-content: center; margin: 1rem 0 0">
       <mm-avatar size="large" variant="primary" default="false"></mm-avatar>
       <mm-avatar size="large" variant="primary" default="false"></mm-avatar>
       <mm-avatar size="large" variant="primary" default="false"></mm-avatar>
       <mm-avatar size="large" variant="primary" default="false"></mm-avatar>
-    </div>
+    </div> -->
   </header>
+
+  <!-- <mm-text variant="subhead">프로필 정보</mm-text> -->
+  <!-- <mm-text variant="subhead">프로필</mm-text> -->
+
   <mm-group variant="menuitem">
-    <mm-menuitem label="사용자 정보" description="전자 메일, 일정, 연락처에서 사용하는 계정">
+    <div style="display: flex; gap: var(--space-2)">
       <mm-avatar slot="avatar" size="large" variant="secondary" default="true"></mm-avatar>
-    </mm-menuitem>
+      <div>
+        <mm-text>사용자 정보</mm-text>
+        <mm-text variant="label">전자 메일, 일정, 연락처에서 사용하는 계정</mm-text>
+      </div>
+    </div>
     <mm-menuitem label="soojubm@gmail.com">
       <mm-avatar slot="avatar" icon="mail"> </mm-avatar>
       <mm-icon slot="action" name="arrow-right" aria-label=""></mm-icon>
@@ -30,37 +37,54 @@
       <mm-avatar slot="avatar" icon="lock"> </mm-avatar>
       <mm-icon slot="action" name="arrow-right" aria-label=""></mm-icon>
     </mm-menuitem>
+    <!-- <mm-menuitem>
+      <div slot="text">
+        <mm-text variant="label">닉네임</mm-text>
+        <mm-text variant="body">수줍이</mm-text>
+      </div>
+      <mm-icon slot="action" name="arrow-right"></mm-icon>
+    </mm-menuitem> -->
   </mm-group>
   <mm-separator></mm-separator>
   <mm-group variant="menuitem">
-    <mm-menuitem label="소셜 네트워크로 로그인" description="간편">
+    <div style="display: flex; gap: var(--space-2)">
       <mm-avatar slot="avatar" size="large" variant="secondary" default="true"></mm-avatar>
-    </mm-menuitem>
-    <mm-menuitem label="구글로 로그인">
+      <div>
+        <mm-text>소셜 네트워크로 로그인</mm-text>
+        <mm-text variant="label">전자 메일, 일정, 연락처에서 사용하는 계정</mm-text>
+      </div>
+    </div>
+    <mm-menuitem label="구글 계정으로 로그인">
       <mm-avatar slot="avatar" icon="google"> </mm-avatar>
+      <mm-icon slot="action" name="arrow-right" aria-label="연동해제"></mm-icon>
+    </mm-menuitem>
+    <mm-menuitem label="애플 계정으로 로그인">
+      <mm-avatar slot="avatar" icon="apple"> </mm-avatar>
       <mm-icon slot="action" name="arrow-right" aria-label="연동해제"></mm-icon>
     </mm-menuitem>
   </mm-group>
   <mm-separator></mm-separator>
   <mm-group alignment="vertical">
-    <mm-text variant="subhead">뉴스레터</mm-text>
+    <!-- <mm-text variant="subhead">뉴스레터</mm-text> -->
     <mm-menuitem label="시사 뉴스레터" class="js-darkmode">
       <mm-avatar slot="avatar" icon="mail-in"> </mm-avatar>
       <mm-switch slot="action"></mm-switch>
     </mm-menuitem>
-    <mm-tile size="small">
-      <mm-text> 매 주 월요일, 수요일, 금요일 아침에 받아볼 수 있어요. </mm-text>
-    </mm-tile>
+    <mm-text> 매 주 월요일, 수요일, 금요일 아침에 받아볼 수 있어요. </mm-text>
   </mm-group>
   <mm-separator></mm-separator>
   <mm-group alignment="vertical">
-    <mm-tile variant="elevated" size="small">
-      <mm-menuitem label="Premium 개인" description="월간 구독">
-        <mm-avatar slot="avatar" size="large" default="true"></mm-avatar>
-        <!-- <mm-icon slot="action" name="arrow-right" aria-label="자세히보기"></mm-icon> -->
+    <div style="display: flex; gap: var(--space-2)">
+      <mm-avatar slot="avatar" size="large" variant="secondary" default="true"></mm-avatar>
+      <div>
+        <mm-text>Premium 개인</mm-text>
+        <mm-text variant="label">월간 구독</mm-text>
+      </div>
+      <div style="margin-left: auto">
         <mm-button slot="action" aria-label="자세히보기">구독 관리</mm-button>
-      </mm-menuitem>
-    </mm-tile>
+      </div>
+    </div>
+    <div style="margin-top: -0.5rem"></div>
     <mm-tile>
       <mm-group alignment="vertical">
         <mm-keyvalue key="다음 결제 예정일" value="2024.04.02."></mm-keyvalue>
@@ -76,97 +100,10 @@
     </mm-tile>
   </mm-group>
 
-  <p style="margin: var(--space-3) 0 0; line-height: 1.4">
+  <p style="margin: var(--space-2) 0 0; line-height: 1.4">
     To delete your account permanently,
     <mm-link href="#">tap here to visit our support page</mm-link> to close your account yourself.
   </p>
-
-  <br /><br />
-
-  <mm-tile>
-    <div style="margin-top: -0.125rem">
-      <mm-text variant="subhead">iPhone을 백업할 수 없음</mm-text>
-    </div>
-    <div style="height: var(--space-2)"></div>
-    <mm-text variant="body"
-      >저장 공간이 부족하여 최근 iPhone 백업이 iCloud에 저장되지 않았습니다. 저장 공간을 추가 또는
-      관리하여 iPhone 백업을 유지하십시오.</mm-text
-    >
-    <div style="height: var(--space-4)"></div>
-    <mm-button>저장 공간 추가</mm-button>
-  </mm-tile>
-
-  <br /><br />
-
-  <mm-group alignment="vertical">
-    <!-- <mm-text variant="subhead">프로필 정보</mm-text> -->
-    <mm-text variant="subhead">프로필</mm-text>
-    <mm-tile class="setting-item">
-      <mm-menuitem>
-        <mm-avatar slot="avatar" size="large" default="true"></mm-avatar>
-        <div slot="text">
-          <mm-text variant="label">프로필 사진</mm-text>
-          <mm-text variant="body">10MB 이내의 JPEG, PNG, GIF 형식이어야 합니다.</mm-text>
-        </div>
-      </mm-menuitem>
-      <div style="height: var(--space-2)"></div>
-      <mm-group variant="chip">
-        <mm-button>프로필 사진 추가 / 업데이트</mm-button>
-        <!-- <mm-button>기본 이미지로 변경</mm-button> -->
-      </mm-group>
-      <div style="height: var(--space-2)"></div>
-      <!-- <div
-        style="
-          border-radius: var(--radius);
-          background-color: var(--color-background-weak);
-          margin: var(--space-2) -0.5rem 0.5rem;
-          padding: var(--space-2);
-        "
-      >
-        <mm-text> 10MB 이내의 JPEG, PNG, GIF 형식이어야 합니다. </mm-text>
-      </div> -->
-      <mm-callout variant="success">
-        프로필 사진을 업데이트했습니다. 멋져 보이네요, soojubm님!
-      </mm-callout>
-      <!-- <mm-callout variant="danger"> 프로필 사진을 삭제했습니다. </mm-callout> -->
-    </mm-tile>
-    <mm-group alignment="vertical">
-      <mm-tile>
-        <mm-menuitem>
-          <div slot="text">
-            <mm-text variant="label">닉네임</mm-text>
-            <mm-text variant="body">수줍이</mm-text>
-          </div>
-          <mm-icon slot="action" name="arrow-right"></mm-icon>
-        </mm-menuitem>
-      </mm-tile>
-      <div style="padding: var(--space-1) var(--space-3)">
-        <mm-text>
-          soojubm 닉네임을 만드세요! 60일 동안 변경할 수 없습니다 — 취소할 수 없습니다! Twitch
-          이용규약을 위반한 닉네임은 계정이 영구정지될 수 있으니 주의하세요.
-        </mm-text>
-      </div>
-      <mm-tile>
-        <mm-menuitem>
-          <div slot="text">
-            <mm-text variant="label">관심분야</mm-text>
-            <mm-text variant="body">문화/예술, 인권, 경제</mm-text>
-          </div>
-          <mm-icon slot="action" name="arrow-right"></mm-icon>
-        </mm-menuitem>
-        <div
-          style="
-            border-radius: var(--radius);
-            background-color: var(--color-background-weak);
-            margin: var(--space-2) -0.5rem -0.5rem;
-            padding: var(--space-2);
-          "
-        >
-          <mm-text>관심있는 분야의 콘텐츠를 추천 받으세요.</mm-text>
-        </div>
-      </mm-tile>
-    </mm-group>
-  </mm-group>
 
   <br /><br />
 
@@ -219,45 +156,33 @@
         </div>
         <mm-button slot="action" variant="danger">비활성화</mm-button>
       </mm-menuitem>
+
+      <mm-menuitem>
+        <div slot="text">
+          <mm-text variant="label">관심분야</mm-text>
+          <mm-text variant="body">문화/예술, 인권, 경제</mm-text>
+        </div>
+        <mm-icon slot="action" name="arrow-right"></mm-icon>
+      </mm-menuitem>
+      <mm-text>관심있는 분야의 콘텐츠를 추천 받으세요.</mm-text>
     </div>
   </mm-group>
 
-  <br /><br />
+  <br />
 
-  <mm-group alignment="vertical">
-    <mm-text variant="subhead" title="Service sign-in / Integration">
-      소셜 네트워크로 로그인하기
-    </mm-text>
-    <mm-group alignment="vertical">
-      <mm-tile>
-        <mm-menuitem>
-          <mm-text-pair
-            slot="text"
-            labelText="Facebook"
-            descriptionText="사용자의 Opera와 Facebook 게정을 연결하세요."
-          >
-          </mm-text-pair>
-          <mm-button slot="action">연동하기</mm-button>
-        </mm-menuitem>
-      </mm-tile>
-      <mm-tile>
-        <mm-menuitem label="soojubm@gmail.com">
-          <mm-avatar slot="avatar"> </mm-avatar>
-          <mm-button slot="action" disabled>Google 연동해제</mm-button>
-        </mm-menuitem>
-        <div
-          style="
-            border-radius: var(--radius);
-            background-color: var(--color-background-weak);
-            margin: var(--space-2) -0.5rem -0.5rem;
-            padding: var(--space-2);
-          "
-        >
-          <mm-text> 계정의 비밀번호를 설정한 후 소셜 계정을 연결을 해제하세요. </mm-text>
-        </div>
-      </mm-tile>
-    </mm-group>
-  </mm-group>
+  <mm-tile>
+    <div style="margin-top: -0.125rem">
+      <mm-text variant="subhead">iPhone을 백업할 수 없음</mm-text>
+    </div>
+    <div style="height: var(--space-2)"></div>
+    <mm-text variant="body"
+      >저장 공간이 부족하여 최근 iPhone 백업이 iCloud에 저장되지 않았습니다. 저장 공간을 추가 또는
+      관리하여 iPhone 백업을 유지하십시오.</mm-text
+    >
+    <div style="height: var(--space-4)"></div>
+    <mm-button>저장 공간 추가</mm-button>
+  </mm-tile>
+
   <br /><br />
 
   <!-- <footer>
@@ -290,13 +215,31 @@
     </form>
   </section>
 
+  <mm-tile>
+    <mm-menuitem label="soojubm@gmail.com">
+      <mm-avatar slot="avatar"> </mm-avatar>
+      <mm-button slot="action" disabled>Google 연동해제</mm-button>
+    </mm-menuitem>
+    <div
+      style="
+        border-radius: var(--radius);
+        background-color: var(--color-background-weak);
+        margin: var(--space-2) -0.5rem -0.5rem;
+        padding: var(--space-2);
+      "
+    >
+      <mm-text> 계정의 비밀번호를 설정한 후 소셜 계정을 연결을 해제하세요. </mm-text>
+    </div>
+    <mm-button slot="action">연동하기</mm-button>
+  </mm-tile>
+
   <blockquote>
     <mm-text-list
       texts='[
-      "개인정보와 프로필 정보를 구분한다.",
-      "프로필 수정은 프로필 페이지에서 진입할 수 있다.",
-      "계정 삭제, 비밀번호 찾기",
-      "Your name appears on your Profile page, as your byline, and in your responses. It is a required field."
+        "개인정보와 프로필 정보를 구분한다.",
+        "프로필 수정은 프로필 페이지에서 진입할 수 있다.",
+        "계정 삭제, 비밀번호 찾기",
+        "Your name appears on your Profile page, as your byline, and in your responses. It is a required field."
       ]'
     >
     </mm-text-list>
@@ -305,6 +248,11 @@
           잠시 Twitch를 쉬고 싶으세요? 이미 준비되어 있습니다! 계정을 비활성화하면 프로필과 콘텐츠가
           임시로 비활성화되며 유저 정보는 삭제되지 않습니다. 나중에 마음이 바뀌면 계정에 다시
           로그인하여 프로필을 다시 활성화할 수 있습니다.
-        </li> -->?
+        </li> -->
+
+    <!-- <mm-text>
+        soojubm 닉네임을 만드세요! 60일 동안 변경할 수 없습니다 — 취소할 수 없습니다! Twitch
+        이용규약을 위반한 닉네임은 계정이 영구정지될 수 있으니 주의하세요.
+      </mm-text> -->
   </blockquote>
 </main>

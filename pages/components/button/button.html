@@ -74,21 +74,21 @@
         icon="cursor-pointer"
         titleText="Interactive - action"
         subtitle="Easy scanning"
-        description="버튼은 페이지 내에서 여러 번 반복될 수 없는 최종적인 인터렉션입니다. 단, 전송이 실패하는 경우에는 여러 번 반복해서 실행할 수 있습니다."
+        description="버튼은 페이지 내에서 여러 번 반복될 수 없는 최종적인 인터렉션입니다. 단, 전송이 실패하는 경우 여러 번 반복해서 실행할 수 있습니다."
       >
       </mm-feature>
       <mm-feature
         icon="reply-to-message"
         titleText="Feedback needed"
         subtitle="Easy scanning"
-        description="물리적인 인터페이스의 출현만이 수행 결과를 피드백하는 것이 아닙니다. 예측할 수 있는 페이지 이동이나 페이지 새로고침, 정보 구조의 변화도 피드백으로 취급될 수 있습니다. (ex bad case: 인스타그램 앱에서 로그인되었다는 toast. 홈으로 이동과 피드 노출만으로 로그인 상태를 인지할수 있다.)"
+        description="물리적인 인터페이스의 출현만이 수행 결과의 피드백이 아닙니다. 예측할 수 있는 페이지 이동이나 페이지 새로고침, 정보 구조의 변화도 피드백으로 취급될 수 있습니다. (ex bad case: 인스타그램 앱에서 로그인되었다는 toast. 홈으로 이동과 피드 노출만으로 로그인 상태를 인지할수 있다.)"
       >
       </mm-feature>
       <mm-feature
         icon="multi-window"
         titleText="Groupable"
         subtitle="Easy scanning"
-        description="물리적인 인터페이스의 출현만이 수행 결과를 피드백하는 것이 아닙니다. 예측할 수 있는 페이지 이동이나 페이지 새로고침, 정보 구조의 변화도 피드백으로 취급될 수 있습니다. (ex bad case: 인스타그램 앱에서 로그인되었다는 toast. 홈으로 이동과 피드 노출만으로 로그인 상태를 인지할수 있다.)"
+        description="TODO"
       >
       </mm-feature>
     </section>
@@ -192,7 +192,7 @@
 
   <mm-component-section
     title="ShowMoreButton"
-    description="Image Button, CheckoutButton. fullWidth로 사용하지 마세요. 단일 콘텐츠 또는 콘텐츠 목록의 너비와 대비를 통한 강조."
+    description="Image Button, CheckoutButton. fullWidth로 사용하지 마세요. 콘텐츠 목록의 너비와의 대비를 통한 강조."
   >
     <div class="columns-3" style="gap: 1rem">
       <div
@@ -369,12 +369,14 @@
 
   <address class="component-references">
     <mm-text variant="subhead">References</mm-text>
-    <a href="https://developer.android.com/reference/android/widget/HorizontalScrollView">
+    <mm-link href="https://developer.android.com/reference/android/widget/HorizontalScrollView">
       Android - HorizontalScrollView
-    </a>
-    <a href="https://developer.android.com/reference/com/google/android/material/chip/ChipGroup">
+    </mm-link>
+    <mm-link
+      href="https://developer.android.com/reference/com/google/android/material/chip/ChipGroup"
+    >
       Android - ChipGroup
-    </a>
+    </mm-link>
     <mm-link href="https://m3.material.io/components/segmented-buttons/overview"
       >Segmented buttons</mm-link
     >

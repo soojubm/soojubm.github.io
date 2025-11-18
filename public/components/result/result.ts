@@ -17,6 +17,7 @@ class Result extends HTMLElement {
     titleWithDescription.setAttribute('level', '3')
     titleWithDescription.setAttribute('title', this.title)
     titleWithDescription.setAttribute('description', this.description)
+    titleWithDescription.setAttribute('center', 'true')
 
     const avatar = document.createElement('mm-avatar')
     avatar.setAttribute('size', 'huge')

@@ -6,32 +6,31 @@ class MenuItem extends HTMLElement {
     const shadow = this.attachShadow({ mode: 'open' })
 
     const container = document.createElement('a')
+    container.setAttribute('href', this.href || '#')
     container.classList.add('item')
     container.role = 'menuitem'
-    container.setAttribute('href', this.href || '#')
-    container.setAttribute('target', this.target || '')
     if (this.alignment) container.dataset.alignment = this.alignment
+    if (this.tone) container.dataset.tone = this.tone
 
     const check = document.createElement('slot')
     check.name = 'check'
     check.classList.add('item-check')
 
-    const avatar = document.createElement('slot')
-    avatar.name = 'avatar'
+    const avatar = document.createElement('mm-avatar')
+    avatar.setAttribute('variant', 'tertiary')
+    if (this.icon) avatar.setAttribute('icon', this.icon)
 
     const action = document.createElement('slot')
     action.name = 'action'
 
-    const text = document.createElement('slot')
-    text.name = 'text'
-
-    const label = document.createElement('span')
-    label.classList.add('item-label')
+    const label = document.createElement('mm-text')
+    label.setAttribute('variant', 'body')
     label.innerText = this.label || ''
 
-    const description = document.createElement(this.description === 'description' ? 'span' : 'time')
+    // const description = document.createElement(this.description === 'description' ? 'span' : 'time')
+    const description = document.createElement('mm-text')
+    description.setAttribute('variant', 'label')
     description.innerText = this.description || ''
-    description.classList.add('item-description')
 
     // TODO
     if (this.current && this.current?.length > 0) {
@@ -39,7 +38,8 @@ class MenuItem extends HTMLElement {
     }
 
     shadow.append(container, makeStyleSheet('menuitem'))
-    container.append(check, avatar, text, label, description, action)
+    if (this.icon) container.append(avatar)
+    container.append(check, label, description, action)
 
     // const template = this.getTemplate()
     // shadow.innerHTML = template
@@ -71,12 +71,19 @@ class MenuItem extends HTMLElement {
     return this.getAttribute('href')
   }
 
-  get target() {
-    return this.getAttribute('target')
+  // get target() {
+  //   return this.getAttribute('target')
+  // }
+
+  get icon() {
+    return this.getAttribute('icon')
+  }
+  get tone() {
+    return this.getAttribute('tone')
   }
 
   get description() {
-    return this.getAttribute('description' || 'time')
+    return this.getAttribute('description') || ''
   }
 
   get label() {

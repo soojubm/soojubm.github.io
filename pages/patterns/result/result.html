@@ -1,11 +1,9 @@
 <main class="page">
-  <mm-text-group variant="title">
-    <mm-text variant="title">Result</mm-text>
-    <mm-text variant="body-large">
-      실행 결과를 피드백하는 섹션 또는 페이지 단위의 컴포넌트. 완료Complete. 오류Error. 빈
-      데이터Empty Data. 비공개.
-    </mm-text>
-  </mm-text-group>
+  <mm-title-with-description
+    level="1"
+    title="Result"
+    description="실행 결과를 피드백하는 섹션 또는 페이지 단위의 컴포넌트. 완료Complete. 오류Error. 빈 데이터Empty Data. 비공개."
+  ></mm-title-with-description>
 
   <dl class="article-aka">
     <dt>a.k.a.</dt>
@@ -17,15 +15,12 @@
     <mm-result
       avatarIcon="clipboard-check"
       title="주문을 확인해주세요."
-      description="헌법재판소 재판관의 임기는 6년으로 하며, 법률이 정하는 바에 의하여 연임할 수 있다. 대통령은 법률안의 일부에 대하여 또는 법률안을 수정하여 재의를 요구할 수 없다."
+      description="헌법재판소 재판관의 임기는 6년으로 하며, 법률이 정하는 바에 의하여 연임할 수 있다."
+      center="true"
     >
       <!-- <mm-avatar slot="avatar" variant="secondary" size="huge" icon="clipboard-check"></mm-avatar> -->
-      <mm-tile>
-        <mm-group alignment="vertical">
-          <mm-keyvalue key="주문일자" value="2019.08.10."> </mm-keyvalue>
-          <mm-keyvalue key="결제금액" value="₩ 54,000"> </mm-keyvalue>
-        </mm-group>
-      </mm-tile>
+      <!-- <mm-keyvalue key="주문일자" value="2019.08.10."> </mm-keyvalue>
+      <mm-keyvalue key="결제금액" value="₩ 54,000"> </mm-keyvalue> -->
       <mm-group variant="button">
         <mm-button variant="tertiary" size="large">홈으로</mm-button>
         <mm-button variant="primary" size="large">주문내역 보기</mm-button>
@@ -44,7 +39,6 @@
       <dd>string</dd>
       <dt>children<abbr>?</abbr></dt>
       <dd>React.Node</dd>
-      <!-- <dd>extra elements</dd> -->
       <dt>primaryAction<abbr>?</abbr></dt>
       <dd>{label: string, onClick: () => void}</dd>
       <dt>secondaryAction<abbr>?</abbr></dt>
@@ -54,11 +48,11 @@
 
   <section class="component-guide">
     <mm-text-group>
+      <mm-text variant="label-strong">You're done!</mm-text>
       <mm-text variant="body">
         empty content, error feedback, Order Completed, Booking Confirmed, Registration Complete,
-        Submission Successful, Payment Successful 상태에서 사용합니다. ( You're done!)
+        Submission Successful, Payment Successful
       </mm-text>
-      <mm-text variant="body">페이지 레벨과 섹션 레벨에서 사용합니다.</mm-text>
       <mm-text variant="label-strong">텍스트 모듈</mm-text>
       <mm-text variant="body">
         <del>

@@ -196,7 +196,6 @@
   display: block;
 }
 
-
 .is-menu-opened .sidebar-menu {
   transform:translateX(0);overflow-y:auto;
   overscroll-behavior:contain;
@@ -211,9 +210,9 @@
 @media (max-width:1080px) {
   .page {
   }
-  .footer {
+  /* .footer {
     padding-inline: var(--grid-margin) !important; 
-  }
+  } */
   .is-menu-opened .footer {
     transform: translateX(0);
   }

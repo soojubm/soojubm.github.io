@@ -1,9 +1,8 @@
 
-:host, 
 .result {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
+  align-items: center;
   width: 100%;
   max-width: var(--layout-width-tiny);
   max-width: 400px;

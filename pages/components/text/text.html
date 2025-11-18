@@ -191,15 +191,15 @@ The font size of a key is never bigger than the value.
     <mm-text-group>
       <mm-text variant="label-strong">
         normal, body 두 가지로는 한계가 보인다. 400을 normal로 한다면 메뉴의 텍스트가 400은 약간
-        부족하다. 버튼 레이블도 그렇게 보일 수 있다. body text는 weight와 line height, color를
-        prop으로 받는 게 훨씬 나을 수 있다.
+        부족하다. 버튼 레이블도 그렇게 보일 수 있다.
       </mm-text>
       <mm-text-list
         texts='[
-        "단독으로 쓰는 텍스트와 항상 함께 쓰이는 텍스트를 구분. 일반적으로 subheading, label, caption은 단독으로 쓰지 않는다.",
-        "heading level=, body size=",
+        "단독으로 쓰는 텍스트와 페어링할 수 있는 텍스트를 구분. 일반적으로 subheading, label, caption은 단독으로 쓰지 않는다.",
+        "피그마에서 소숫점 올림한다. line height를 가변값으로 사용 시 주의.",
+        "heading level=, body size= lineHeight=? weight= color=",
         "Utilities. - Truncated. long-form content. truncate-multiple은 항상 2줄.",
-        "line-height 와 별개로 모든 텍스트는 텍스트를 감싸는 컨테이너로 세로값을 주는 게 좋을 수 있다. 디자이너의 의도에 따라 조정이 필요하다. 피그마에서 소숫점 올려버림. headingText, bodyText의 lineHeight를 따로 설정할까. 1에 가까운 값(x-height), 기본값, 넓은값(large 저용). label이 기본적으로 좁은 line height를 갖는다면 컨터이네가 공간을 갖는 역할을 위임 받아야 함. 이 컨테이너는 비어 있을 수도 았고 text stack의 간격을 정의할 수 있다."
+        "line-height. 1에 가까운 값(x-height), 기본값, 넓은값(large 저용). label이 기본적으로 좁은 line height를 갖는다면 컨터이네가 공간을 갖는 역할을 위임 받아야 함. 이 컨테이너는 비어 있을 수도 았고 text stack의 간격을 정의할 수 있다."
       ]'
       ></mm-text-list>
     </mm-text-group>
@@ -266,24 +266,19 @@ The font size of a key is never bigger than the value.
     </mm-text-list>
 
     <mm-text-group>
-      <mm-text variant="subhead">Meta problems</mm-text>
+      <mm-text variant="subhead">용어의 정의</mm-text>
       <mm-text-list
-        texts='["KeyValue, TextGroup, ContentGroup, TextList, TextStack, TextPair", "Label-Description Pair (라벨-설명 쌍) :: 메타 정보를 보여주는 방식. 그러니까 UI패턴.", "Question-Answer Pair, Translation Pair, Dialogue Pair", "예: ProfileKeyValuePair, FeatureLabelWithDescription.", "KeyValuePair :: Key와 Value가 동일한 위계를 갖는다. 리스트 형태이다. alignment/size"]'
+        texts='[
+          "KeyValue, TextGroup, ContentGroup, TextList, TextStack, TextPair",
+          "Label-Description Pair (라벨-설명 쌍) :: 메타 정보를 보여주는 방식. 그러니까 UI패턴.",
+          "Question-Answer Pair, Translation Pair, Dialogue Pair", "예: ProfileKeyValuePair, FeatureLabelWithDescription.",
+          "KeyValuePair :: Key와 Value가 동일한 위계를 갖는다. 리스트 형태이다. alignment/size",
+          "제목 heading - title / subtitle / subhead(subheading) / caption (label)",
+          "본문 body - paragraph / label, help text / kicker/overline/eyebrow",
+          "단어(word) → 구(phrase) → 문장(sentence) → 문단(paragraph)",
+          "message: 사용자의 관점, description: 시스템이 주체"
+        ]'
       ></mm-text-list>
-    </mm-text-group>
-
-    <mm-text-group>
-      <mm-text variant="subhead">용어 정의 및 분류</mm-text>
-      <mm-text variant="body">
-        제목 heading - title / subtitle / subhead(subheading) / caption (label)
-      </mm-text>
-      <mm-text variant="body">
-        본문 body - paragraph / label, help text / kicker/overline/eyebrow
-      </mm-text>
-      <mm-text variant="body">
-        단어(word)" → "구(phrase)" → "문장(sentence)" → "문단(paragraph)"
-      </mm-text>
-      <mm-text variant="body"> "message: 사용자의 관점, description: 시스템이 주체", </mm-text>
     </mm-text-group>
   </section>
 
@@ -369,6 +364,21 @@ The font size of a key is never bigger than the value.
     ></mm-text-pair>
     <mm-separator></mm-separator>
     <mm-group style="gap: 2rem">
+      <div
+        style="
+          display: inline-flex;
+          flex-direction: column;
+          align-items: center;
+          padding: var(--space-4);
+          gap: var(--space-2);
+          background-color: var(--color-background);
+          border-radius: var(--radius);
+          width: 160px;
+        "
+      >
+        <mm-text variant="title">266</mm-text>
+        <div style="margin-top: -0.75rem"><mm-text variant="body">NETWORKS</mm-text></div>
+      </div>
       <div>
         <mm-text variant="label">사이즈</mm-text>
         <mm-text variant="subhead">보통</mm-text>

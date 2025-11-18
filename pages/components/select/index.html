@@ -45,14 +45,6 @@
         <option value="3">Option 3</option>
       </mm-dropdown>
     </div>
-    <mm-separator></mm-separator>
-    <div class="select">
-      <label class="textfield-label" for="select1">셀렉트 레이블</label>
-      <select class="textfield-input" id="select2">
-        <option value="option2">Choose an option1</option>
-        <option value="option2">Choose an option2</option>
-      </select>
-    </div>
   </section>
 
   <section class="component-props">
@@ -73,7 +65,7 @@
     <mm-text-list
       texts='[
           "다중 선택(combobox).모달이나 바텀 시트 등의 새로운 뷰로 대체하는 게 모바일 친화적.",
-          "select와 action menu의 차이. selected value.",
+          "select와 action menu/dropdown의 차이. selected value.",
           "label tag 클릭 시 옵션이 열리지 않고 셀렉트에 포커스만 동작한다.",
           "navtive select의 장점. 접근성, 키보드 네비게이션, 시스템 스타일 일관성 유지.",
           "indicator를 position으로 넣고 옵션에 말줄임표를 넣어야.",
@@ -81,5 +73,20 @@
         ]'
     >
     </mm-text-list>
+    <mm-text>
+      옵션 개수가 4~5개 이상 화면 공간이 좁고 옵션을 숨겨야 함 선택이 “자주 변경되지 않음” 복잡한
+      폼(form)의 입력 항목 옵션 라벨이 길거나 설명이 필요한 경우
+    </mm-text>
   </section>
+
+  <mm-component-section title="Range Input" description="숙박 인원 선택 예시">
+    <div class="range">
+      <label for="myRange">숙박 인원</label>
+      <input type="range" min="1" max="10" value="2" step="any" list="tickmarks" id="myRange" />
+      <datalist id="tickmarks_temp">
+        <option value="0" label="0"></option>
+        <option value="5" label="5"></option>
+      </datalist>
+    </div>
+  </mm-component-section>
 </main>

@@ -61,7 +61,8 @@ ul {
 
 
 .text {
-  color: var(--color-foreground);
+  /* color: var(--color-foreground); */
+  color: inherit;
 }
 
 .text[data-variant=display] {
@@ -122,6 +123,10 @@ ul {
 .text[data-variant=caption] {
   font-size: var(--font-size-small);
   line-height: 16px;
+}
+
+.text[data-center="true"] {
+  text-align: center;
 }
 
 .text[data-truncated="true"] {

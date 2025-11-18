@@ -8,24 +8,18 @@
   --radio-radius: 50%;
   --radio-inset: var(--space-2);
 
-  display: flex;
-  align-items: center;
+  min-width: var(--radio-size);
   min-height: var(--size-medium);
-  gap: var(--space-2);
   position:relative;
 }
 
 .radio label {
-  padding: 0 0 0 calc(var(--radio-size) + var(--radio-inset));
+  display: flex;
+  gap: var(--space-2);
   line-height: var(--radio-size);
 }
 
-.radio input {
-  /* // reset */
-  margin: 0;
-  background-color: var(--color-background);
-
-  display: block;
+.radio-indicator {
   width:var(--radio-size);
   height:var(--radio-size);
   border:var(--radio-border);
@@ -36,6 +30,13 @@
 
   /* TODO pointer cursor on radio container */
   /* cursor: pointer; */
+}
+
+
+.radio input {
+  /* // reset */
+  margin: 0;
+  background-color: var(--color-background);
 
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -44,7 +45,7 @@
   position: absolute;
   left: 0;
 }
-.radio input:checked {
+.radio input:checked + label .radio-indicator {
   --b1: 25.3267% .015896 252.417568;
   --b2: 23.2607% .013807 253.100675;
   background: var(--color-primary);

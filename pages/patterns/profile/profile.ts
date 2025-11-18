@@ -10,7 +10,7 @@ import { hideNavbar } from '../../../public/javascripts/common/navbar'
 document.addEventListener('DOMContentLoaded', () => {
   document.body.insertAdjacentHTML('beforeend', navbar)
   document.body.insertAdjacentHTML('beforeend', main)
-  document.body.insertAdjacentHTML('beforeend', footer)
+  // document.body.insertAdjacentHTML('beforeend', footer)
 
   hideNavbar()
 

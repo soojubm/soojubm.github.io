@@ -19,10 +19,7 @@ class Avatar extends HTMLElement {
     container.dataset.size = this.size
     container.dataset.variant = this.variant
     container.ariaLabel = this.ariaLabel
-    container.dataset.default = this.default
     container.innerHTML = this.innerHTML
-
-    const badge = document.createElement('mm-badge')
 
     if (this.icon) {
       const icon = document.createElement('mm-icon')
@@ -32,13 +29,13 @@ class Avatar extends HTMLElement {
       container.appendChild(icon)
     }
 
-    // for fallback TODO
-    if (this.src === null && !this.default && this.icon === null && this.childNodes.length) {
-      const defaultIcon = document.createElement('mm-icon')
+    // if (!this.src && !this.icon && this.childNodes.length) {
+    if (!this.src && !this.icon && !this.childNodes.length) {
+      const iconElement = document.createElement('mm-icon')
       const isLargeIcon = this.size === 'large' || this.size === 'huge'
-      defaultIcon.setAttribute('name', 'people-tag')
-      defaultIcon.setAttribute('size', isLargeIcon ? 'large' : 'medium')
-      container.appendChild(defaultIcon)
+      iconElement.setAttribute('name', 'people-tag')
+      iconElement.setAttribute('size', isLargeIcon ? 'large' : 'medium')
+      container.appendChild(iconElement)
     }
 
     const style = this.getAttribute('style')
@@ -50,7 +47,6 @@ class Avatar extends HTMLElement {
       image.setAttribute('src', this.src)
       container.appendChild(image)
     }
-    if (this.badge) container.appendChild(badge)
   }
 
   get variant() {
@@ -61,20 +57,12 @@ class Avatar extends HTMLElement {
     return this.getAttribute('size') ?? 'medium'
   }
 
-  get badge() {
-    return this.getAttribute('badge')
-  }
-
   get src() {
     return this.getAttribute('src')
   }
 
   get icon() {
     return this.getAttribute('icon')
-  }
-
-  get default() {
-    return this.getAttribute('default') ?? 'false'
   }
 }
 

@@ -53,7 +53,25 @@
       >
       </mm-feature>
     </section>
+  </section>
 
+  <mm-component-section title="Access 권한" description="TODO">
+    <mm-titlebar label="공개 대상 선택"></mm-titlebar>
+    <br />
+    <mm-group variant="menuitem">
+      <mm-list-row primary="전체공개" secondary="모든 Facebook 사용자">
+        <mm-radio slot="check"></mm-radio>
+        <mm-avatar slot="avatar" size="large" icon="earth"> </mm-avatar>
+      </mm-list-row>
+      <mm-list-row icon="group" primary="친구만" secondary="회원님의 Facebook 친구">
+        <mm-radio slot="check"></mm-radio>
+      </mm-list-row>
+      <mm-list-row icon="lock" primary="나만 보기" secondary="부끄러우니까 보지마요">
+        <mm-radio slot="check"></mm-radio>
+      </mm-list-row>
+    </mm-group>
+  </mm-component-section>
+  <mm-component-section title="Tile Radio?" description="TODO">
     <mm-tile variant="elevated" style="width: 100%">
       <mm-radio name="gender" id="option1" value="" style="margin-top: -0.25rem">
         <mm-text variant="label">Standard License</mm-text>
@@ -62,30 +80,5 @@
         <mm-tag>460P 적립</mm-tag>
       </mm-radio>
     </mm-tile>
-  </section>
-
-  <mm-component-section title="Access 권한" description="test">
-    <mm-titlebar label="공개 대상 선택"></mm-titlebar>
-    <br />
-    <mm-group variant="menuitem">
-      <mm-menuitem>
-        <mm-radio slot="check"></mm-radio>
-        <mm-avatar slot="avatar" size="large" icon="group"> </mm-avatar>
-        <mm-text-pair
-          slot="text"
-          labelText="친구만"
-          descriptionText="회원님의 Facebook 친구"
-        ></mm-text-pair>
-      </mm-menuitem>
-      <mm-menuitem data->
-        <mm-radio slot="check"></mm-radio>
-        <mm-avatar slot="avatar" size="large" icon="lock"> </mm-avatar>
-        <mm-text-pair
-          slot="text"
-          labelText="나만 보기"
-          descriptionText="부끄러우니까"
-        ></mm-text-pair>
-      </mm-menuitem>
-    </mm-group>
   </mm-component-section>
 </main>

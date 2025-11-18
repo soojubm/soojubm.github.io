@@ -43,7 +43,12 @@
       role="menubar"
       style="display: flex; align-items: center; margin: var(--space-3) 0; gap: 1rem"
     >
-      <mm-searchfield size="small" hiddenLabel="false" placeholder="검색꾸"> </mm-searchfield>
+      <mm-searchfield
+        size="small"
+        hiddenLabel="false"
+        placeholder="검색꾸"
+        value="유저"
+      ></mm-searchfield>
       <mm-checkbox name="test1">28 selected</mm-checkbox>
     </menu>
     <table>
@@ -61,9 +66,9 @@
             <mm-checkbox></mm-checkbox>
           </th>
           <th scope="col" aria-sort="none" style="width: 15%">
-            <div style="display: flex; align-items: center; gap: var(--space-)">
+            <div style="display: flex; align-items: center; gap: var(--space-1)">
               Name
-              <mm-icon name="arrow-separate-vertical" size="small"></mm-icon>
+              <mm-icon name="arrow-separate-vertical" size="tiny"></mm-icon>
             </div>
           </th>
           <th scope="col" aria-sort="none" style="width: calc(65% - 80px)">Title</th>
@@ -125,8 +130,7 @@
         </td>
         <td>
           <mm-link>
-            External link
-            <mm-icon size="small" name="arrow-up-right"></mm-icon>
+            <mm-link isExternal="true"> External link </mm-link>
           </mm-link>
         </td>
         <td>
@@ -177,19 +181,6 @@
       <i class="pagination-ellipsis" aria-label="맨 앞 페이지로 이동">...</i>
       <button class="pagination-link" aria-label="맨 뒤 페이지로 이동">50</button>
     </nav>
-
-    <div role="status">
-      <small>숙소 300개 이상 중 <b>281 – 300</b> (airbnb)</small>
-    </div>
-
-    <mm-group>
-      <mm-text>page</mm-text>
-      <mm-button size="small">
-        18
-        <mm-icon name="nav-arrow-down"></mm-icon>
-      </mm-button>
-      <mm-text>of 22</mm-text>
-    </mm-group>
 
     <!-- <div>
       <style>
@@ -251,6 +242,21 @@
       </mm-text-list>
     </mm-text-group>
   </section>
+
+  <mm-component-section title="Paginations" description="TODO">
+    <div role="status">
+      <small>숙소 300개 이상 중 <b>281 – 300</b> (airbnb)</small>
+    </div>
+
+    <mm-group>
+      <mm-text>page</mm-text>
+      <mm-button size="small">
+        <mm-icon size="tiny" name="nav-arrow-down"></mm-icon>
+      </mm-button>
+      <mm-text>of 22</mm-text>
+    </mm-group>
+  </mm-component-section>
+
   <!-- <p>pagination vs more load vs infinite scroll. 느린 탐색 경험이 필요할 때. 게시판이나 상품 목록의 탐색에서 이전에 탐색한 상품의 위치를 찾기 편리함. 최근 본 목록이나 섬네일에서 북마크를 제공한다면?</p> -->
 
   <!-- 초기화 width: auto; image-->

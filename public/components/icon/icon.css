@@ -3,16 +3,22 @@ i {
   font-style: normal;
 }
 
+:host {
+}
 .icon {
+  --button-text-color: var(--color-foreground);
+  --button-text-color: inherit;
   display: flex !important;
   align-items: center;
   justify-content: center;
   font-size: 1rem !important;
-  color: var(--color-foreground);
+  color: var( --button-text-color);
 
   --icon-size: 0;
   --icon-font-size: 0;
-
+  &[data-size=tiny] {
+    font-size: .75rem !important
+  }
   &[data-size=small] {
     font-size: .875rem !important
   }

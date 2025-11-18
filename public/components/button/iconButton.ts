@@ -7,7 +7,7 @@ class IconButton extends HTMLElement {
   private iconElement: HTMLElement
 
   static get observedAttributes() {
-    return ['disabled', 'icon', 'variant', 'label']
+    return ['disabled', 'icon', 'variant', 'label', 'size', 'color']
   }
 
   constructor() {
@@ -22,8 +22,13 @@ class IconButton extends HTMLElement {
 
     hostElement.classList.add('icon-button')
     hostElement.dataset.variant = this.variant
+    hostElement.dataset.size = this.size
 
     iconElement.setAttribute('name', this.icon)
+
+    if (this.color) {
+      iconElement.setAttribute('color', this.color)
+    }
 
     hostElement.appendChild(this.iconElement)
 
@@ -48,6 +53,13 @@ class IconButton extends HTMLElement {
     return this.getAttribute('variant') || ''
   }
 
+  get size() {
+    return this.getAttribute('size') || ''
+  }
+  get color() {
+    return this.getAttribute('color') || ''
+  }
+
   get label() {
     return this.getAttribute('label') || ''
   }
@@ -55,7 +67,22 @@ class IconButton extends HTMLElement {
   get tooltip() {
     return this.getAttribute('tooltip') || ''
   }
+
   disconnectedCallback() {}
+
+  attributeChangedCallback(name: string, oldValue: string | null, newValue: string | null): void {
+    if (oldValue === newValue) return
+
+    // color 속성이 변경되었을 때 처리
+    if (name === 'color' && this.iconElement) {
+      if (newValue) {
+        this.iconElement.setAttribute('color', newValue)
+      } else {
+        // color 속성이 제거되었을 경우
+        this.iconElement.removeAttribute('color')
+      }
+    }
+  }
 }
 
 export default IconButton

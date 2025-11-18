@@ -1,11 +1,65 @@
 [
   {
+    "id": 202511,
+    "releasedate": 1946,
+    "titlekorean": "칠흑 같은 밤",
+    "titleenglish": "So Dark the Night",
+    "director": "조셉 H. 루이스",
+    "country": "미국",
+    "etc": ""
+  },
+  {
+    "id": 202511,
+    "releasedate": 1982,
+    "titlekorean": "머리가 둔한 살인자",
+    "titleenglish": "The Simple-Minded Murderer",
+    "director": "한스 알프레드슨",
+    "country": "스웨덴",
+    "etc": ""
+  },
+  {
+    "id": 202510,
+    "releasedate": 1950,
+    "titlekorean": "히아신스와 소녀",
+    "titleenglish": "Girl with Hyacinths",
+    "director": "하세 에크만",
+    "country": "스웨덴",
+    "etc": ""
+  },
+  {
+    "id": 202510,
+    "releasedate": 2020,
+    "titlekorean": "썸머 필름을 타고",
+    "titleenglish": "It's a Summer Film!",
+    "director": "마츠모토 소우시",
+    "country": "일본",
+    "etc": ""
+  },
+  {
+    "id": 202510,
+    "releasedate": 1950,
+    "titlekorean": "그 남자들",
+    "titleenglish": "The Men",
+    "director": "프레드 진네만",
+    "country": "미국",
+    "etc": "말론브란도"
+  },
+  {
     "id": 202510,
     "releasedate": 1967,
-    "titlekorean": "존 오브 인터레스트",
+    "titlekorean": "심사관",
     "titleenglish": "The Starting Point",
-    "director": "이만희",
-    "country": "한국",
+    "director": "주성치????",
+    "country": "홍콩",
+    "etc": ""
+  },
+  {
+    "id": 202510,
+    "releasedate": 2023,
+    "titlekorean": "존 오브 인터레스트",
+    "titleenglish": "The Zone of Interest",
+    "director": "조나단 글레이저",
+    "country": "미국",
     "etc": ""
   },
   {
@@ -19,11 +73,20 @@
   },
   {
     "id": 202510,
-    "releasedate": 1956,
+    "releasedate": 1965,
     "titlekorean": "킹 랫",
     "titleenglish": "King Rat",
-    "director": "로버트 푸스트",
-    "country": "영국",
+    "director": "브라이언 포브스",
+    "country": "미국",
+    "etc": ""
+  },
+  {
+    "id": 202510,
+    "releasedate": 2023,
+    "titlekorean": "가여운 것들",
+    "titleenglish": "Poor Things",
+    "director": "요르고스 란티모스",
+    "country": "그리스",
     "etc": ""
   },
   {

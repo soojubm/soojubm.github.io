@@ -13,7 +13,7 @@ class Link extends HTMLElement {
 
     const icon = document.createElement('mm-icon')
     icon.setAttribute('name', 'arrow-up-right')
-    icon.setAttribute('size', 'small')
+    icon.setAttribute('size', 'tiny')
     // TODO 위에서 생성
 
     if (this.isExternal) {
