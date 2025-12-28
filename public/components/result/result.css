@@ -14,5 +14,4 @@
 ::slotted([slot=title]) {}
 ::slotted([slot=description]) {}
 ::slotted([slot=list]) {width:100%;}
-/* TODO width가 왜 필요하지? */
-::slotted([slot=action]) {margin:1.25rem 0 0 0;}
+::slotted([slot=action]) {margin:1rem 0 0 0;}

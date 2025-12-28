@@ -82,6 +82,7 @@ const components = [
   'text',
 
   'separator',
+  'indicator',
 
   'step',
 

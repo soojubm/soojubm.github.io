@@ -18,19 +18,29 @@ class Checkbox extends CustomHTMLElement {
 
     const container = document.createElement('div')
     container.classList.add('checkbox')
+    if (this.size) container.setAttribute('data-size', this.size)
 
     const label = document.createElement('label')
     label.setAttribute('for', this.name || '')
 
-    // label.innerHTML = this.innerHTML || ''
+    const indicator = document.createElement('span')
+    indicator.classList.add('checkbox-indicator')
+    label.appendChild(indicator)
 
-    const slot = document.createElement('slot')
-    label.appendChild(slot)
+    const text = document.createElement('mm-text')
+    label.appendChild(text)
+    text.setAttribute('variant', 'body')
+    text.textContent = this.textContent || ''
+
+    // const slot = document.createElement('slot')
+    // label.appendChild(slot)
 
     const input = document.createElement('input')
     input.setAttribute('type', 'checkbox')
     input.setAttribute('id', this.name || '')
     input.setAttribute('name', this.name || '')
+    if (this.checked) input.setAttribute('checked', 'true')
+    if (this.disabled) input.setAttribute('disabled', 'true')
 
     shadow.append(container, makeStyleSheet('checkbox'))
     container.appendChild(input)
@@ -38,10 +48,6 @@ class Checkbox extends CustomHTMLElement {
     // if (this.textContent && this.textContent.length > 0) {
     container.appendChild(label)
     // }
-
-    if (this.checked) input.setAttribute('checked', 'true')
-    if (this.disabled) input.setAttribute('disabled', 'true')
-    if (this.size) container.setAttribute('data-size', this.size)
 
     if (this.helper) {
       const helper = document.createElement('p')

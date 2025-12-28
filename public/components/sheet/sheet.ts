@@ -82,7 +82,7 @@ class Sheet extends HTMLElement {
         }
 
         .sheet {
-          background: white;
+          background: var(--color-background);
           border-radius: 12px;
           width: 100%;
           padding: 0 var(--space-4);

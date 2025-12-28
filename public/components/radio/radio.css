@@ -8,8 +8,7 @@
   --radio-radius: 50%;
   --radio-inset: var(--space-2);
 
-  min-width: var(--radio-size);
-  min-height: var(--size-medium);
+  /* min-width: var(--radio-size); */
   position:relative;
 }
 

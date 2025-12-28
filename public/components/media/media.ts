@@ -1,4 +1,4 @@
-import { makeStyleSheet, inheritStyle, setSlotElement } from '../../javascripts/components/utils'
+import { makeStyleSheet, setSlotElement } from '../../javascripts/components/utils'
 
 class Media extends HTMLElement {
   constructor() {
@@ -19,8 +19,6 @@ class Media extends HTMLElement {
 
     container.appendChild(makeStyleSheet('media'))
     container.appendChild(image)
-
-    // inheritStyle(shadow, container)
   }
 
   get size() {

@@ -37,7 +37,7 @@ class SheetHeader extends HTMLElement {
           justify-content: space-between;
           padding: 1rem 0;
           border-bottom: var(--border);
-          background: white;
+          background: var(--color-background);
         }
       </style>
 

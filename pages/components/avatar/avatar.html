@@ -7,16 +7,17 @@
 
   <section class="component-example">
     <mm-group variant="">
-      <mm-avatar size="huge" src="/public/images/springsteen.jpg" badge="true"></mm-avatar>
-      <mm-avatar size="large"></mm-avatar>
-      <mm-avatar size="medium"></mm-avatar>
-      <mm-avatar size="small"></mm-avatar>
-    </mm-group>
-    <mm-separator></mm-separator>
-    <mm-group variant="">
       <mm-avatar variant="primary" size="large" badge="true"></mm-avatar>
       <mm-avatar variant="secondary" size="large" badge="true"></mm-avatar>
       <mm-avatar variant="tertiary" size="large" badge="true"></mm-avatar>
+    </mm-group>
+    <mm-separator></mm-separator>
+    <mm-group variant="">
+      <mm-avatar size="huge" src="/public/images/springsteen.jpg"></mm-avatar>
+      <!-- <mm-avatar size="huge" src="/public/images/springsteen.jpg" badge-label="New"></mm-avatar> -->
+      <mm-avatar size="large" src="/public/images/springsteen.jpg"></mm-avatar>
+      <mm-avatar size="medium" src="/public/images/springsteen.jpg"></mm-avatar>
+      <mm-avatar size="small" src="/public/images/springsteen.jpg"></mm-avatar>
     </mm-group>
   </section>
 
@@ -25,14 +26,14 @@
     <dl>
       <dt>variant</dt>
       <dd>'primary' | 'secondary' | 'tertiary'</dd>
-      <dt>src<abbr>?</abbr></dt>
-      <dd>string</dd>
       <dt>size</dt>
       <dd>'huge' | 'large' | 'medium' | 'small'</dd>
+      <dt>src<abbr>?</abbr></dt>
+      <dd>string</dd>
+      <dt>icon<abbr>?</abbr></dt>
+      <dd>iconNameType?</dd>
       <!-- <dt>badge<abbr>?</abbr></dt>
       <dd>'unread' | 'new' | 'live'</dd> -->
-      <!-- <dt>icon</dt>
-      <dd>iconNameType?</dd> -->
     </dl>
   </section>
 
@@ -74,6 +75,10 @@
       )
     </script> -->
   </section>
+
+  <mm-component-section title="FallbackImage" description="TODO">
+    <b>TODO</b>
+  </mm-component-section>
 
   <mm-component-section title="AvatarGroup" description="maximum avatar length 3">
     <mm-group variant="avatar">

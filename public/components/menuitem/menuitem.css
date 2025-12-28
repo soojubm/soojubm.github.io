@@ -20,7 +20,7 @@
   align-items: center;
   width: 100%;
   min-height: var(--size-medium);
-  gap: var(--space-2);
+  gap: var(--space-1);
 
   position:relative;
   z-index:1;
@@ -31,30 +31,13 @@
 button {
   all: unset;
 }
-/* a {
-  text-decoration: none;
-  color: var(--color-foreground);
-} */
-
 a {
   text-decoration: none;
   color: var(--color-foreground);
 }
 
-::slotted([slot=avatar]) {
-  /* display:flex; */
-  /* align-items:center; */
-}
-::slotted([slot=check]) {
-  display:flex;
-  align-items: center;
-  justify-content: center;
-  width: var(--size-medium);
-  font-size:var(--font-size-small);
-}
+::slotted([slot=prefix]) {}
 ::slotted([slot=action]) {margin:0 0 0 auto !important;}
-
-[data-alignment=vertical] {flex-direction:column;gap:0;}
 
 .item:hover {
   --hover-outline: calc(var(--space-2) / 2 * -1);
@@ -72,8 +55,7 @@ a {
   }
 }
 
-/* TODO mm-text */
-/* TODO mm-avatar */
+/* TODO mm-text mm-avatar */
 .item[data-tone='danger'] mm-avatar,
 .item[data-tone='danger'] mm-text[variant='body'] {
   color: #d93025; /* 혹은 원하는 danger 색상 (예: 밝은 빨간색) */
@@ -95,9 +77,6 @@ a {
     z-index: -1;
   }
 }
-/* // chip-togglable
-// 이건 필요 없다. 팔로우 팔로잉. 외에는 switch */
-.item-action.is-active {border-color:transparent;background:var(--color-background-weak);color:var(--color-foreground);}
 
 /*
 [role=menuitem] {display:flex;align-items:center;width:100%;}

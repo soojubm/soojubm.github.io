@@ -191,18 +191,6 @@ mark {color:inherit;} mark::before {content: " [강조 시작] ";opacity:0;posit
   animation-play-state: paused;
 }
 
-/* // ! width inherit ::::: for button element
-// 비효율 position:relative;z-index:1; */
-/* // 드롭다운이 항상 칩은 아니다. */
-.dropdown {position:relative;}
-.dropdown-trigger {}
-.dropdown-menu {min-width:var(--width-tiny);position:absolute;transform:scale(0);transform-origin:left top;}
-.dropdown-menu-title {}
-.dropdown-menu-item {display:block;margin:0 -.25rem;padding:0 .25rem;line-height:var(--size-medium);color:var(--color-foreground);position:relative;z-index:var(--zindex-default);}
-.dropdown-menu-item:hover {border-radius:var(--radius);background:var(--color-background-weak);}
-.is-active + .dropdown-menu {transform:scale(1);top:calc(var(--size-medium));z-index:var(--zindex-popover);}
-
-
 .lock-scroll {width:100%;position:fixed;overflow-y:scroll;overflow:hidden;margin-right:17px;}
 .lock-scroll {
   /* // height: 100vh; */

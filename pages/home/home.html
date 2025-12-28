@@ -286,34 +286,12 @@
         ></button-list-component>
       </div>
       <mm-group variant="menuitem">
-        <mm-menuitem>
-          <mm-avatar
-            slot="avatar"
-            size="large"
-            default="true"
-            style="background-color: yellowgreen"
-          ></mm-avatar>
-          <mm-text-pair
-            slot="text"
-            labelText="수줍이"
-            descriptionText="유아이 디자이너"
-          ></mm-text-pair>
+        <mm-list-row primaryText="수줍이" secondaryText="유아이 디자이너">
           <mm-button slot="action" variant="secondary">팔로우</mm-button>
-        </mm-menuitem>
-        <mm-menuitem>
-          <mm-avatar
-            slot="avatar"
-            size="large"
-            default="true"
-            style="background-color: blueviolet"
-          ></mm-avatar>
-          <mm-text-pair
-            slot="text"
-            labelText="진짜수줍이"
-            descriptionText="유투브 구독자"
-          ></mm-text-pair>
+        </mm-list-row>
+        <mm-list-row primaryText="진짜수줍이" secondaryText="유투브 구독자">
           <mm-button slot="action">팔로우 중</mm-button>
-        </mm-menuitem>
+        </mm-list-row>
         <!-- <mm-tile variant="elevated" size="small" style="margin-top: var(--space-1)">
           <mm-menuitem label="더 많은 친구를 찾아보세요!" description="">
             <mm-avatar slot="avatar" variant="primary" icon="search"></mm-avatar>

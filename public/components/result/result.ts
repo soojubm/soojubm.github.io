@@ -24,13 +24,13 @@ class Result extends HTMLElement {
     avatar.setAttribute('variant', 'secondary')
     avatar.setAttribute('icon', this.avatarIcon)
 
-    // const style = this.getAttribute('style')
-    // container.setAttribute('style', style || '')
+    const actionSlot = document.createElement('slot')
+    actionSlot.name = 'action'
 
     shadow.appendChild(container)
     container.appendChild(avatar)
     container.appendChild(titleWithDescription)
-    container.append(...this.childNodes)
+    container.appendChild(actionSlot)
     container.append(makeStyleSheet('result'))
   }
 

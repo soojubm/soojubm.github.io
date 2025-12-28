@@ -1,0 +1,47 @@
+<main class="page js-tab">
+  <mm-title-with-description
+    title="Indicator"
+    description="모든 인디케이터가 아이콘인가? 아니다. 스피너. 이거 signifier에 부분적으로 정리되어 있다."
+  ></mm-title-with-description>
+
+  <section class="component-example">
+    <mm-group> </mm-group>
+    <div style="display: flex; align-items: center; gap: var(--space-2)">
+      <mm-icon-button variant="" icon="heart"></mm-icon-button>
+      <mm-tooltip content="로그인">
+        <mm-icon-button slot="trigger" icon="user"></mm-icon-button>
+      </mm-tooltip>
+      <mm-icon-button variant="" icon="star-solid"></mm-icon-button>
+      <mm-icon-button variant="" icon="star"></mm-icon-button>
+    </div>
+  </section>
+  <section class="component-props">
+    <dl>
+      <dt>variant</dt>
+      <dd>'primary' | 'action' | 'navigator'</dd>
+    </dl>
+    <!-- <mm-text-group>
+      <mm-text variant="body">
+        버튼으로 아이콘 버튼을 대체하기 어렵다. 레이블과 함께 사용될 때 내부 간격의 조절이
+        불가피하다. 아이콘 버튼은 레이블 대신 대체 텍스트나 툴팁을 제공해야 하는데 옵셔널한 값으로
+        버튼의 책임이 불필요하게 커질 수 있다.
+      </mm-text>
+      <mm-text variant="body"
+        >Toggled states. Buttons can swap icons based on data states. There are several icons within
+        our library that have a “Filled” counterpart to indicate whether a state is toggled on. The
+        “Outlined” version indicates it is toggled off.
+      </mm-text>
+    </mm-text-group> -->
+  </section>
+
+  <section class="component-guide">
+    <mm-text-list
+      texts='[
+          "아이콘 컴포넌트를 합성하는 버튼 컴포넌트",
+          "액션 아이콘 버튼과 내비게이터 아이콘 버튼의 구별"
+        ]'
+    ></mm-text-list>
+  </section>
+
+  <mm-component-section title="Icon"> </mm-component-section>
+</main>

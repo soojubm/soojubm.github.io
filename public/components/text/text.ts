@@ -8,18 +8,21 @@ class Text extends HTMLElement {
   constructor() {
     super()
     const shadowRoot = this.attachShadow({ mode: 'open' })
-    this.hostElement = document.createElement('p')
-  }
-  connectedCallback() {
-    const { shadowRoot, hostElement } = this
 
-    hostElement.classList.add('text')
+    this.hostElement = document.createElement('p')
+    this.hostElement.classList.add('text')
+
+    // ★ 스타일을 constructor 에서 1회만 추가
+    shadowRoot.append(makeStyleSheet('text'))
+    shadowRoot.append(this.hostElement)
+  }
+
+  connectedCallback() {
+    const { hostElement } = this
     hostElement.dataset.variant = this.variant
-    hostElement.dataset.truncated = this.truncated.toString()
+    hostElement.dataset.truncated = this.truncated ? 'true' : 'false'
     hostElement.dataset.center = this.center ? 'true' : 'false'
     hostElement.innerHTML = this.innerHTML
-
-    shadowRoot!.append(hostElement, makeStyleSheet('text'))
   }
 
   get variant() {
@@ -31,8 +34,6 @@ class Text extends HTMLElement {
   get truncated() {
     return this.hasAttribute('truncated')
   }
-
-  disconnectedCallback() {}
 }
 
 export default Text

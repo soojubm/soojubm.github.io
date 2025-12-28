@@ -1,4 +1,4 @@
-import { makeStyleSheet, inheritStyle } from '../../javascripts/components/utils'
+import { attachShadowStyles, makeStyleSheet } from '../../javascripts/components/utils'
 
 class Radio extends HTMLElement {
   constructor() {
@@ -45,7 +45,11 @@ class Radio extends HTMLElement {
       container.appendChild(helper)
     }
 
-    shadow.appendChild(makeStyleSheet('radio'))
+    attachShadowStyles(shadow, [
+      '/stylesheets/shared/reset.css',
+      '/public/components/radio/radio.css',
+    ])
+
     shadow.appendChild(container)
   }
 

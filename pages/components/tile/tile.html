@@ -87,8 +87,7 @@
           "타일 내부 leading, tailing 컴포넌트에 따라 시각보정이 필요할 수 있습니다.",
           "foundation :: elevated는 타일 전체가 하나의 클릭 가능한 컴포넌트이거나 타일 내부에 클릭 가능한 컴포넌트를 포함.",
           "transparented tile 을 정의하여 모든 contentbox가 tile이 되는 것은 어떤가? 비어있는 컴포넌트(Box, Row, div)와는 어떤 차이가 있나? row는 레이아웃 컴포넌트, tile은 형태 컴포넌트이다. tile에 과도한 책임을 부여하지 말 것.",
-          "size를 number로 정의하는 유연한 방식이 되어도 좋겠다. 여기에서 number의 타입은 spacing token을 레퍼런스한다.",
-          "inset이 너무 커지면 물리적 화면 크기에 컴포넌트의 변경이 생길 수 있다. inset이 일정 크기를 넘을 때 콘텐츠 모듈을 가운데 정렬하는 방법이 있다."
+          "inset이 너무 커지면 물리적 화면 크기에 따라 inset의 변경이 필요할 수 있다. 콘텐츠 모듈을 가운데 정렬로 해결할 수 있다."
         ]'
     >
     </mm-text-list>
@@ -100,9 +99,8 @@
       fit your needs.
     </mm-text>
   </section>
-
   <mm-text-group>
-    <aside
+    <!-- <aside
       style="
         display: flex;
         align-items: center;
@@ -116,7 +114,7 @@
       <mm-avatar size="large" default="true"></mm-avatar>
       <mm-text variant="subhead"> You can download this product with the All-Access Pass. </mm-text>
       <mm-button variant="primary">Get All-Access</mm-button>
-    </aside>
+    </aside> -->
 
     <!-- <picture>
       <source
@@ -156,7 +154,7 @@
     </mm-tile>
 
     <mm-tile>
-      <q style="margin-top: 1rem">
+      <q>
         I'm impressed by how GitHub Copilot seems to know exactly what I want to type next. GitHub
         Copilot is particularly helpful when working on React components, where it makes eerily
         accurate predictions. GitHub Copilot has become an indispensable part of my programmer
@@ -165,20 +163,6 @@
       <figcaption style="margin: var(--space-3) 0 0 0">
         <mm-text variant="label">Byline</mm-text>
       </figcaption>
-    </mm-tile>
-
-    <mm-tile>
-      <mm-text variant="subhead">Senior Front-end Developer</mm-text>
-      <mm-group variant="hashtag">
-        <mm-tag variant="hashtag">Full-Time</mm-tag>
-        <mm-tag variant="hashtag">Korea</mm-tag>
-        <mm-tag variant="hashtag">Remote friendly</mm-tag>
-      </mm-group>
-      <div style="height: var(--space-3)"></div>
-      <mm-button
-        >View Job
-        <mm-icon name="arrow-right"></mm-icon>
-      </mm-button>
     </mm-tile>
   </mm-text-group>
 
@@ -270,19 +254,19 @@
             <mm-tag>3월 14일 수정됨</mm-tag>
             <div style="height: var(--space-3)"></div>
             <mm-group alignment="vertical">
-              <mm-menuitem label="Kakao" description="https://www.kakaocorp.com" size="large">
-                <mm-avatar slot="avatar"> </mm-avatar>
-              </mm-menuitem>
-              <mm-menuitem label="Naver" description="https://www.naver.com" size="large">
-                <mm-avatar slot="avatar"> </mm-avatar>
-              </mm-menuitem>
+              <mm-list-row
+                primaryText="Kakao"
+                secondaryText="https://www.kakaocorp.com"
+                size="large"
+              >
+              </mm-list-row>
+              <mm-list-row primaryText="Naver" secondaryText="https://www.naver.com" size="large">
+              </mm-list-row>
             </mm-group>
           </mm-tile>
           <div style="height: var(--space-3)"></div>
-          <mm-group class="feed-reaction">
-            <mm-menuitem label="192" roloe="button">
-              <mm-avatar slot="avatar" variant="tertiary" icon="heart"> </mm-avatar>
-            </mm-menuitem>
+          <mm-group>
+            <mm-menuitem icon="heart" label="192"> </mm-menuitem>
           </mm-group>
         </div>
       </article>
@@ -301,18 +285,6 @@
           overflow: hidden;
           object-fit: cover;
           border-radius: var(--radius);
-        }
-
-        .feed-reaction {
-          margin: var(--space-4) 0 0 0;
-          position: relative;
-          z-index: 1;
-        }
-
-        .feed-reaction-icon {
-          width: 24px;
-          height: 24px;
-          font-size: var(--font-size-small);
         }
 
         .feed-user {
@@ -337,7 +309,7 @@
     </section>
   </mm-component-section>
 
-  <mm-component-section title="RatingTile" description="TODO">
+  <!-- <mm-component-section title="RatingTile" description="TODO">
     <mm-tilebar heading="Ratings"></mm-tilebar>
     <div aria-label="별점 5개 만점에 3.9개를 받았습니다." style="text-align: center">
       <mm-text variant="label">리뷰 116만개</mm-text>
@@ -348,7 +320,6 @@
       <b class="graph-label">5 Stars</b>
       <span class="graph-value">68%</span>
       <progress class="progress" value="40" max="100">40%</progress>
-      <!-- <div class="graph-bar"><b style="width: 68%"></b></div> -->
     </div>
     <div class="graph2">
       <b class="graph-label">4 Stars</b>
@@ -356,7 +327,8 @@
       <progress class="progress" value="40" max="100">40%</progress>
     </div>
     <small>별 다섯개에서 점수만큼 채우는 유아이는 최근 잘 보이지 않는다. 구현이 어려움.</small>
-  </mm-component-section>
+  </mm-component-section> -->
+  <!-- <div class="graph-bar"><b style="width: 68%"></b></div> -->
 
   <mm-component-section title="이 상품을 구매한">
     <section class="product-recommend">

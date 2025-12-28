@@ -247,6 +247,7 @@
   --color-tile-container: var(--color-background-surface-1);
   --color-tile-on-container: var(--color-foreground);
 
+  --color-foreground-on-solid: var(--color-foreground);
 
   --color-border: var(--gray800);
   --color-border-stronger: #5f6964;

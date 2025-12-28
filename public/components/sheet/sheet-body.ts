@@ -10,7 +10,6 @@ class SheetBody extends HTMLElement {
         flex: 1 1 auto;
         min-height: 0;
         overflow-y: auto;
-        background: #fff;
         box-sizing: border-box;
       }
       .content {

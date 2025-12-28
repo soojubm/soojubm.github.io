@@ -12,7 +12,7 @@ img {
   
   --avatar-size: var(--size-medium);
   --avatar-background-color: var(--color-background-weak);
-  --avatar-border: var(--border);
+  --avatar-border: var(--border-stronger);
   --avatar-radius: var(--radius);
   --avatar-badge-size: var(--size-tiny);
 

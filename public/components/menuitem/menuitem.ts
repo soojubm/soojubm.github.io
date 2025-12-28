@@ -7,14 +7,14 @@ class MenuItem extends HTMLElement {
 
     const container = document.createElement('a')
     container.setAttribute('href', this.href || '#')
+    container.setAttribute('target', '_blank')
     container.classList.add('item')
     container.role = 'menuitem'
     if (this.alignment) container.dataset.alignment = this.alignment
     if (this.tone) container.dataset.tone = this.tone
 
-    const check = document.createElement('slot')
-    check.name = 'check'
-    check.classList.add('item-check')
+    const prefix = document.createElement('slot')
+    prefix.name = 'prefix'
 
     const avatar = document.createElement('mm-avatar')
     avatar.setAttribute('variant', 'tertiary')
@@ -39,7 +39,7 @@ class MenuItem extends HTMLElement {
 
     shadow.append(container, makeStyleSheet('menuitem'))
     if (this.icon) container.append(avatar)
-    container.append(check, label, description, action)
+    container.append(prefix, label, description, action)
 
     // const template = this.getTemplate()
     // shadow.innerHTML = template
@@ -70,10 +70,6 @@ class MenuItem extends HTMLElement {
   get href() {
     return this.getAttribute('href')
   }
-
-  // get target() {
-  //   return this.getAttribute('target')
-  // }
 
   get icon() {
     return this.getAttribute('icon')

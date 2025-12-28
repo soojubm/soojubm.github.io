@@ -150,6 +150,17 @@
 }
 
 
+/* .sidebar-menu > a {
+  display:flex;
+  align-items:center;
+  height: var(--size-medium);
+  gap: var(--space-4);
+  border-left: var(--border);
+  color:var(--color-foreground);
+  text-transform: capitalize;
+  position: relative;
+} */
+
 .sidebar-menu > div {display:flex;flex-direction:column;}
 .sidebar-menu > div button {
   display: flex; align-items: center; gap: 0.5rem; margin-bottom: var(--space-1);

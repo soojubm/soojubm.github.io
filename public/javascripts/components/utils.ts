@@ -5,9 +5,21 @@ export function makeStyleSheet(name) {
 
   return link
 }
-export function inheritStyle(this, container) {
-  const style = this.getAttribute('style')
-  container.setAttribute('style', style || '')
+
+export function attachShadowStyles(shadow: ShadowRoot, hrefs: string[]) {
+  hrefs.forEach(href => {
+    // 이미 같은 href의 <link>가 붙어 있으면 중복 생성 방지
+    const exists = Array.from(
+      shadow.querySelectorAll<HTMLLinkElement>('link[rel="stylesheet"]'),
+    ).some(link => link.getAttribute('href') === href)
+
+    if (exists) return
+
+    const link = document.createElement('link')
+    link.setAttribute('rel', 'stylesheet')
+    link.setAttribute('href', href)
+    shadow.appendChild(link)
+  })
 }
 
 export function setSlotElement(container, name: string) {

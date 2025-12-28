@@ -80,6 +80,6 @@
 .products {display:flex;flex-wrap:wrap;width:100%;border-left:var(--border);}
 .products-item {width:25%;border:var(--border);border-width:0 1px 1px 0;box-sizing:border-box;}
 .products-item-thumbnail {height:320px;border-bottom:var(--border);}
-.products-item-brand {display:block;margin:1rem 1.5rem 0;}
-.products-item-name {margin:.5rem 1.5rem 1rem;}
-.products-item-price {display:block;margin:1rem 1.5rem;}
+.products-item-brand {display:block;margin:var(--space-4) 1.5rem 0;}
+.products-item-name {margin:var(--space-4) 1.5rem var(--space-2);}
+.products-item-price {display:block;margin:var(--space-4) 1.5rem;}

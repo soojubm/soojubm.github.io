@@ -3,6 +3,7 @@
     title="RadioGroup"
     description="옵션 목록에서 하나의 옵션을 선택합니다."
   ></mm-title-with-description>
+
   <dl class="article-aka">
     <dt>a.k.a.</dt>
     <dd aria-label="">Radio group</dd>
@@ -38,13 +39,13 @@
   </section>
   <section class="component-guide">
     <section class="feature columns-2">
-      <!-- <mm-feature
-        icon="cursor-pointer"
+      <mm-feature
+        icon="interactive"
         titleText="Interactive - choice"
         subtitle="Easy scanning"
         description="미리 선택된 기본값을 제공하는 것은 편향된 데이터를 수집할 위험이 있습니다. 만약 미리 선택된 값을 적용하는 경우 첫 번째 옵션을 기본 옵션으로."
       >
-      </mm-feature> -->
+      </mm-feature>
       <mm-feature
         icon="task-list"
         titleText="Easy scanning"
@@ -59,15 +60,15 @@
     <mm-titlebar label="공개 대상 선택"></mm-titlebar>
     <br />
     <mm-group variant="menuitem">
-      <mm-list-row primary="전체공개" secondary="모든 Facebook 사용자">
-        <mm-radio slot="check"></mm-radio>
+      <mm-list-row primaryText="전체공개" secondaryText="모든 Facebook 사용자">
+        <mm-radio slot="prefix"></mm-radio>
         <mm-avatar slot="avatar" size="large" icon="earth"> </mm-avatar>
       </mm-list-row>
-      <mm-list-row icon="group" primary="친구만" secondary="회원님의 Facebook 친구">
-        <mm-radio slot="check"></mm-radio>
+      <mm-list-row icon="group" primaryText="친구만" secondaryText="회원님의 Facebook 친구">
+        <mm-radio slot="prefix"></mm-radio>
       </mm-list-row>
-      <mm-list-row icon="lock" primary="나만 보기" secondary="부끄러우니까 보지마요">
-        <mm-radio slot="check"></mm-radio>
+      <mm-list-row icon="lock" primaryText="나만 보기" secondaryText="부끄러우니까 보지마요">
+        <mm-radio slot="prefix"></mm-radio>
       </mm-list-row>
     </mm-group>
   </mm-component-section>

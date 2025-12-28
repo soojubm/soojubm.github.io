@@ -1,7 +1,6 @@
 
 .chat {
   --chat-bubble-border: var(--border);
-
   --chat-avatar-border: 1px solid transparent;
 
   padding:0 0 0 calc(var(--size-medium) + var(--space-2));
@@ -40,15 +39,15 @@
 .is-mine .chat-time {right:0;}
 .is-mine .chat-bubble {margin-left:auto;border-radius:1.5rem;border-top-right-radius:var(--radius);text-align:left;}
 .is-mine .chat-inputing  {right:0;}
+.is-mine .chat-inputing span {
+  background-color: var(--color-foreground-on-solid);
+}
 
 .chat-bubble.is-primary,
 .is-mine .chat-bubble {border-color:var(--color-primary);background:var(--color-primary);}
 
-
 .chat-bubble.is-primary p,
 .chat-bubble.is-primary b,
 .is-mine .chat-bubble p {color:var(--gray0);}
-
-
 
 .chat-date {text-align:center;}

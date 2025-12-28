@@ -19,7 +19,7 @@
         aria-helper="주로 세팅 페이지에서 사용되는 디스크립션 영역. 항상 텍스트 더미인 것은 아님. 하지만 그렇다면 expanded/collapsed 맥락이 아닐까?"
         checked
       >
-        체크박스 레이블
+        체크박스 기본
       </mm-checkbox>
       <mm-checkbox name="checkbox" size="large" disabled>체크박스 비활성</mm-checkbox>
       <mm-checkbox name="checkbox" size="large" checked disabled>체크박스 비활성 체크</mm-checkbox>
@@ -102,8 +102,8 @@
             icon="arrow-up-right"
           ></mm-icon-button>
         </mm-row>
-        <mm-tile variant="tinted" style="width: 100%; margin: var(--space-1) 0">
-          <div style="margin-left: 0.5rem">
+        <mm-tile variant="tinted" style="width: 100%">
+          <mm-group variant="checkbox">
             <mm-checkbox
               size="small"
               class="js-checkall"
@@ -124,19 +124,14 @@
             >
               생년월일
             </mm-checkbox>
-          </div>
+          </mm-group>
         </mm-tile>
-        <mm-row justifyContent="space-between">
-          <mm-checkbox size="large" class="js-check" id="terms6" name="terms">
-            개인정보 수집/이용 동의
-          </mm-checkbox>
-        </mm-row>
-        <div style="height: var(--space-1)"></div>
-        <mm-row justifyContent="space-between">
-          <mm-checkbox size="large" class="js-check" id="terms7" name="terms">
-            개인정보 제3자 제공 동의
-          </mm-checkbox>
-        </mm-row>
+        <mm-checkbox size="large" class="js-check" id="terms6" name="terms">
+          개인정보 수집/이용 동의
+        </mm-checkbox>
+        <mm-checkbox size="large" class="js-check" id="terms7" name="terms">
+          개인정보 제3자 제공 동의
+        </mm-checkbox>
       </mm-group>
     </div>
   </mm-component-section>
@@ -147,25 +142,21 @@
         <mm-button slot="action" variant="text">새 컬렉션</mm-button>
       </mm-titlebar>
       <div style="height: var(--space-3)"></div>
-      <mm-group alignment="vertical">
-        <mm-menuitem label="을지로 맛집">
+      <mm-group variant="checkbox">
+        <mm-option-row primaryText="을지로 맛집" secondaryText="test">
+          <mm-avatar slot="avatar" size="large" style="font-size: 1.5rem; overflow: hidden">
+            💳
+          </mm-avatar>
+        </mm-option-row>
+        <!-- <mm-menuitem label="을지로 맛집">
           <mm-avatar
             slot="avatar"
             size="large"
             fallback="💳"
             style="background: aliceblue; font-size: 1.5rem"
           ></mm-avatar>
-          <mm-checkbox slot="check" name="checkbox" size=""></mm-checkbox>
-        </mm-menuitem>
-        <mm-menuitem label="컬렉션 2 - 관리: 수정/삭제 등">
-          <mm-avatar
-            slot="avatar"
-            size="large"
-            fallback="💳"
-            style="background: aliceblue; font-size: 1.5rem"
-          ></mm-avatar>
-          <mm-checkbox slot="check" name="checkbox" size=""></mm-checkbox>
-        </mm-menuitem>
+          <mm-checkbox slot="action" name="checkbox" size=""></mm-checkbox>
+        </mm-menuitem> -->
         <!-- aira-checked="mixed" aria-controls="1 2" -->
       </mm-group>
       <mm-separator></mm-separator>

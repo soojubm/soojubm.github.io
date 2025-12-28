@@ -56,6 +56,13 @@ class ComponentSection extends HTMLElement {
           border: var(--border-stronger);
           border-radius: var(--radius-large);
         }
+
+        @media (max-width: 768px) {
+          .component-temp {
+            margin-left: 0;
+            padding-inline: var(--grid-margin);
+          }
+        }
       </style>
       <section class="component-temp">
         <mm-title-with-description

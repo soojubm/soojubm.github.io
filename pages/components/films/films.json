@@ -1,5 +1,32 @@
 [
   {
+    "id": 202512,
+    "releasedate": 1999,
+    "titlekorean": "위대한 쇼맨",
+    "titleenglish": "Fin De Siecle",
+    "director": "송능한",
+    "country": "한국",
+    "etc": "뮤지컬"
+  },
+  {
+    "id": 202512,
+    "releasedate": 1999,
+    "titlekorean": "덤보",
+    "titleenglish": "Fin De Siecle",
+    "director": "송능한",
+    "country": "한국",
+    "etc": ""
+  },
+  {
+    "id": 202511,
+    "releasedate": 1999,
+    "titlekorean": "세기말",
+    "titleenglish": "Fin De Siecle",
+    "director": "송능한",
+    "country": "한국",
+    "etc": ""
+  },
+  {
     "id": 202511,
     "releasedate": 1946,
     "titlekorean": "칠흑 같은 밤",
@@ -33,7 +60,7 @@
     "titleenglish": "It's a Summer Film!",
     "director": "마츠모토 소우시",
     "country": "일본",
-    "etc": ""
+    "etc": "자토이치 대보살고개 라이조 13인의자객 그리운어머니 니시무라소세키 거미의성 린타로? 츠바키산주로 원원살별 지옥문 22:57 1:8:10 1:9:18"
   },
   {
     "id": 202510,
@@ -46,10 +73,10 @@
   },
   {
     "id": 202510,
-    "releasedate": 1967,
+    "releasedate": 1992,
     "titlekorean": "심사관",
-    "titleenglish": "The Starting Point",
-    "director": "주성치????",
+    "titleenglish": "Justice審死官",
+    "director": "두기봉",
     "country": "홍콩",
     "etc": ""
   },

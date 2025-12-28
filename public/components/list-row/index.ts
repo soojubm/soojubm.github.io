@@ -1,6 +1,6 @@
 class ListRow extends HTMLElement {
   static get observedAttributes() {
-    return ['icon', 'primary', 'secondary']
+    return ['icon', 'primarytext', 'secondarytext', 'avatar-variant']
   }
 
   private shadow!: ShadowRoot
@@ -40,31 +40,25 @@ class ListRow extends HTMLElement {
     `
     this.shadow.appendChild(style)
 
-    // 🔹 avatar container
     this.avatarContainer = document.createElement('div')
     this.avatarContainer.className = 'avatar'
 
-    // slot for avatar
     const avatarSlot = document.createElement('slot')
     avatarSlot.name = 'avatar'
 
-    // fallback mm-avatar
     this.fallbackAvatar = document.createElement('mm-avatar')
     this.fallbackAvatar.setAttribute('variant', 'tertiary')
     this.fallbackAvatar.setAttribute('size', 'large')
-    this.fallbackAvatar.setAttribute('icon', this.getAttribute('icon') || '')
     this.shadow.appendChild(this.avatarContainer)
 
     this.avatarContainer.appendChild(avatarSlot)
     this.avatarContainer.appendChild(this.fallbackAvatar)
 
-    // listen for slot content
     avatarSlot.addEventListener('slotchange', () => {
       const assigned = avatarSlot.assignedElements()
       this.fallbackAvatar.style.display = assigned.length > 0 ? 'none' : 'flex'
     })
 
-    // 🔹 text container
     const textContainer = document.createElement('div')
     textContainer.className = 'text-container'
 
@@ -78,7 +72,6 @@ class ListRow extends HTMLElement {
 
     this.shadow.appendChild(textContainer)
 
-    // 🔹 action slot
     const action = document.createElement('slot')
     action.name = 'action'
     this.shadow.appendChild(action)
@@ -93,11 +86,10 @@ class ListRow extends HTMLElement {
   }
 
   private render() {
-    // text
-    const primaryAttr = this.getAttribute('primary')
+    const primaryAttr = this.getAttribute('primarytext')
     this.primaryEl.textContent = primaryAttr || ''
 
-    const secondaryAttr = this.getAttribute('secondary')
+    const secondaryAttr = this.getAttribute('secondarytext')
     if (secondaryAttr) {
       this.secondaryEl.textContent = secondaryAttr
       this.secondaryEl.style.display = 'inline'
@@ -106,10 +98,15 @@ class ListRow extends HTMLElement {
       this.secondaryEl.style.display = 'none'
     }
 
-    // avatar fallback
     const iconAttr = this.getAttribute('icon') || ''
     this.fallbackAvatar.setAttribute('name', iconAttr)
+
+    const avatarVariant = this.getAttribute('avatar-variant') || 'tertiary'
+    this.fallbackAvatar.setAttribute('variant', avatarVariant)
   }
 }
 
+// if (!customElements.get('mm-list-row')) {
+//   customElements.define('mm-list-row', ListRow)
+// }
 export default ListRow

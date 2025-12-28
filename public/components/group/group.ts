@@ -18,10 +18,6 @@ class Group extends HTMLElement {
     hostElement.classList.add('group')
     hostElement.role = 'group'
 
-    hostElement.dataset.alignment = this.alignment
-
-    if (this.alignment) hostElement.dataset.alignment = this.alignment
-
     const style = this.getAttribute('style')
     hostElement.setAttribute('style', style || '')
 
@@ -33,10 +29,6 @@ class Group extends HTMLElement {
 
   get variant() {
     return this.getAttribute('variant') || ''
-  }
-
-  get alignment() {
-    return this.getAttribute('alignment') || ''
   }
 
   disconnectedCallback() {}

@@ -52,12 +52,14 @@ import SheetHeader from '../../components/sheet/sheet-header'
 import SheetBody from '../../components/sheet/sheet-body'
 import SheetFooter from '../../components/sheet/sheet-footer'
 import ListRow from '../../components/list-row'
+import OptionRow from '../../components/option-row'
 
 export function defineCustomElement() {
   if ('customElements' in window) {
     customElements.define('mm-icon', Icon)
     customElements.define('mm-component-section', ComponentSection)
     customElements.define('mm-list-row', ListRow)
+    customElements.define('mm-option-row', OptionRow)
 
     customElements.define('button-list-component', ButtonListComponent)
 

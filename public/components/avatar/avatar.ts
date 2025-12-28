@@ -1,4 +1,4 @@
-import { makeStyleSheet, inheritStyle } from '../../javascripts/components/utils'
+import { makeStyleSheet } from '../../javascripts/components/utils'
 
 class Avatar extends HTMLElement {
   constructor() {
@@ -20,6 +20,13 @@ class Avatar extends HTMLElement {
     container.dataset.variant = this.variant
     container.ariaLabel = this.ariaLabel
     container.innerHTML = this.innerHTML
+
+    if (this.badgeLabel) {
+      const badge = document.createElement('mm-tag')
+      badge.setAttribute('variant', 'primary')
+      badge.textContent = this.badgeLabel
+      container.appendChild(badge)
+    }
 
     if (this.icon) {
       const icon = document.createElement('mm-icon')
@@ -63,6 +70,10 @@ class Avatar extends HTMLElement {
 
   get icon() {
     return this.getAttribute('icon')
+  }
+
+  get badgeLabel() {
+    return this.getAttribute('badge-label')
   }
 }
 

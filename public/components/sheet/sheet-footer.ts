@@ -48,7 +48,6 @@ class SheetFooter extends HTMLElement {
           gap: var(--space-2);
           padding: 1rem 0;
           border-top: var(--border);
-          background: white;
           font-family: sans-serif;
         }
       </style>
