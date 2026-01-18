@@ -72,8 +72,7 @@
     <section class="feature columns-3">
       <mm-feature
         icon="cursor-pointer"
-        titleText="Interactive - action"
-        subtitle="Easy scanning"
+        titleText="Actionable"
         description="버튼은 페이지 내에서 여러 번 반복될 수 없는 최종적인 인터렉션입니다. 단, 전송이 실패하는 경우 여러 번 반복해서 실행할 수 있습니다."
       >
       </mm-feature>
@@ -235,7 +234,7 @@
 
     <mm-separator></mm-separator>
 
-    <mm-text variant="label">첨부한 파일</mm-text>
+    <mm-text variant="subheading">첨부한 파일</mm-text>
     <mm-text variant="body" role="status" class="js-file-attachment-helper">
       No files currently selected for upload.
     </mm-text>
@@ -257,7 +256,7 @@
           style="border-radius: var(--radius)"
         />
         <figcaption>
-          <mm-text variant="label-strong">${file.name}</mm-text>
+          <mm-text variant="heading4">${file.name}</mm-text>
           <mm-text variant="caption">${returnFileSize(file.size)}</mm-text>
         </figcaption>
         <div style="position: absolute; right: var(--space-1); top: var(--space-1)">
@@ -321,7 +320,7 @@
     </mm-text-group>
     <br />
     <mm-tile>
-      <mm-text variant="label-strong">이 문서가 도움이 되었나요?</mm-text>
+      <mm-text variant="heading4">이 문서가 도움이 되었나요?</mm-text>
       <small title="17 out of 439 found this helpful"> 417명 중 349명이 도움을 받았어요. </small>
       <div style="height: 1rem"></div>
       <mm-group variant="">

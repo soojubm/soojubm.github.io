@@ -1,6 +1,6 @@
 import { makeStyleSheet } from '../../javascripts/components/utils'
 
-// : 'title' | 'subhead' | 'body' | 'body-large' | 'label' | 'label-strong'
+// : 'title' | 'subhead' | 'body' | 'body-large' | 'label' | 'heading4'
 
 class Text extends HTMLElement {
   private hostElement: HTMLParagraphElement

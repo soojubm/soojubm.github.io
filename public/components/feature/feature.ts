@@ -73,7 +73,7 @@ class Feature extends HTMLElement {
     this.avatar.setAttribute('size', 'large')
 
     this.iconEl = document.createElement('mm-icon')
-    this.iconEl.setAttribute('size', 'medium')
+    this.iconEl.setAttribute('size', 'large')
     this.avatar.appendChild(this.iconEl)
 
     // header

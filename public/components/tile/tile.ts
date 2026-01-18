@@ -8,14 +8,7 @@ class Tile extends HTMLElement {
     const container = document.createElement('div')
     container.classList.add('tile')
 
-    // FIXME:  순서를 여기서 정의하게 되어버림
-    // setSlotElement(container, 'thumbnail')
-    // setSlotElement(container, 'byline')
-    // setSlotElement(container, 'heading')
-    // setSlotElement(container, 'body')
-    // setSlotElement(container, 'tags')
     setSlotElement(container, 'category')
-    // setSlotElement(container, 'item')
 
     const slotAction = document.createElement('slot')
     slotAction.name = 'action'
@@ -31,6 +24,11 @@ class Tile extends HTMLElement {
 
     if (this.variant) container.setAttribute('data-variant', this.variant)
     if (this.size) container.setAttribute('data-size', this.size)
+    if (this.height) {
+      container.style.setProperty('--tile-height', this.height)
+    } else {
+      container.style.removeProperty('--tile-height')
+    }
 
     shadow.appendChild(container)
     container.appendChild(makeStyleSheet('tile'))
@@ -51,6 +49,10 @@ class Tile extends HTMLElement {
 
   get size() {
     return this.getAttribute('size')
+  }
+
+  get height() {
+    return this.getAttribute('height')
   }
 
   connectedCallback() {}

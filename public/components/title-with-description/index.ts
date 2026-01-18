@@ -29,7 +29,7 @@ class TitleWithDescription extends HTMLElement {
       gap: 'var(--space-1)',
     },
     '4': {
-      title: 'label-strong',
+      title: 'heading4',
       description: 'body',
       gap: 'var(--space-1)',
     },

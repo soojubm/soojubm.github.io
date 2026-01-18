@@ -76,32 +76,34 @@
   </section>
 
   <section class="component-guide">
-    <div class="column columns-2">
+    <div class="column columns-3">
       <mm-feature
         icon="database-script-plus"
-        titleText="정보 보충"
-        subtitle="Easy scanning"
-        description="툴팁이 없는 것이 베스트 프렉티스임. 사용자가 반드시 숙지해야 하는 중요한 정보를 툴팁으로 제공하지 마세요. 아코디언도 마찬가지. 행동을 유도하는 가이드로 사용하지 마세요. 중요한 액션을 요할 때는 cognitive? button이나 text link 등 충분히 강조되고 눈에 띄는 컴포넌트를 사용."
+        titleText="Supplementary"
+        description="작은 화면에서 바텀 시트나 팝오버로 제공하는 것이 좋다. 사용자가 반드시 숙지해야 하는 중요한 정보를 툴팁으로 제공하지 마세요."
       >
       </mm-feature>
       <mm-feature
         icon="thumbs-down"
         titleText="Not Recommended"
         subtitle="Easy scanning"
-        description="작은 화면에서 바텀 시트나 팝오버로 제공하는 것이 좋다."
+        description="설명이 필요없는 플로우와 인터페이스를 만들어라.. 툴팁은 없을수록 좋다. 접근성을 위한 최소한의 설명만 제공"
       >
+      </mm-feature>
+      <mm-feature icon="accessibility" titleText="Aids accessibility" description="TODO">
       </mm-feature>
     </div>
     <mm-text-list
       texts='[
+        "아코디언도 마찬가지. 행동을 유도하는 가이드로 사용하지 마세요. 중요한 액션을 요할 때는 cognitive? button이나 text link 등 충분히 강조되고 눈에 띄는 컴포넌트를 사용.",
         "short text, long form text. MD3 rich tooltip(title, description, actions-link/button) / plain tooltip"
       ]'
     ></mm-text-list>
   </section>
 
   <mm-component-section
-    title="Coachmark"
-    description="arrow tooltip, tourtip, 로딩 시점에 이미 열려 있다. doorhanger/pointing arrow."
+    title="GuideTip"
+    description="arrow tooltip, tourtip, coachmark, 로딩 시점에 이미 열려 있다. doorhanger/pointing arrow."
   >
   </mm-component-section>
 

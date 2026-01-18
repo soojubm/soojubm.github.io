@@ -38,21 +38,6 @@
         16%
       </mm-tag>
     </mm-group>
-    <mm-separator></mm-separator>
-    <mm-group variant="tag">
-      <style>
-        .dot-badge {
-          display: inline-flex;
-          width: 0.5rem;
-          height: 0.5rem;
-          /* padding: var(--space-1); */
-          margin-right: var(--space-2);
-          background: crimson;
-          border-radius: 50%;
-        }
-      </style>
-      <em class="dot-badge"></em>
-    </mm-group>
   </section>
 
   <section class="component-props">
@@ -78,16 +63,15 @@
       >
       </mm-feature>
       <mm-feature
-        icon="multi-window"
-        titleText="Collective (Groupable)"
-        description="너무 많은 태그 목록으로 사용자의 콘텐츠 탐색을 방해하지 마세요. primary tag는 그룹을 대표하는 맥락으로 1개만 포함, 최대 4개의 태그 그룹. 정보를 보충하는 맥락에서 4개 이상을 허용될 수 있다. Profile 페이지 참고."
+        icon="task-list"
+        titleText="Glanceable"
+        description="Use short labels for easy scanning. 중요한 정보를 빠르게 파악할 수 있는 짧은 단어의 조합."
       >
       </mm-feature>
       <mm-feature
-        icon="task-list"
-        titleText="Scannable, Glanceable"
-        subtitle="Easy scanning"
-        description="Use short labels for easy scanning. 중요한 정보를 빠르게 파악할 수 있는 짧은 단어의 조합."
+        icon="cube-scan"
+        titleText="Groupable"
+        description="너무 많은 태그 목록으로 사용자의 콘텐츠 탐색을 방해하지 마세요. primary tag는 그룹을 대표하는 맥락으로 1개만 포함, 최대 4개의 태그 그룹. 정보를 보충하는 맥락에서 4개 이상을 허용될 수 있다. Profile 페이지 참고."
       >
       </mm-feature>
     </section>
@@ -125,6 +109,17 @@
     title="Dot badge / Live Badge, New badge, Unread Badge"
     description="A dot badge notifies the user that something is new or updated without showing a count."
   >
+    <style>
+      .dot-badge {
+        display: inline-flex;
+        width: 0.5rem;
+        height: 0.5rem;
+        margin-right: var(--space-2);
+        background: crimson;
+        border-radius: 50%;
+      }
+    </style>
+    <em class="dot-badge"></em>
   </mm-component-section>
 
   <mm-component-section title="MostPopularTag" description="가장 인기있는 태그">

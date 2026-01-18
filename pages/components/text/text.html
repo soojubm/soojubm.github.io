@@ -13,7 +13,7 @@
   <!-- last updates :: multiple summary lists -->
   <!-- ‘key’ that’s a description or label of a piece of information, like “Name”
 ‘value’ which is the piece of information itself, such as “John Smith” -->
-  <!-- summary list - row / column -->
+
   <!-- ally -->
   <!-- To give more context, add visually hidden text to the links. This means a screen reader user will hear the row action and the ‘key’ label for the information it will affect, like ‘Change name’ or ‘Change date of birth’. -->
 
@@ -150,9 +150,6 @@ The font size of a key is never bigger than the value.
       animation: scaleout 0.4s ease 1s both;
     }
 
-    @media (max-width: 1100px) {
-    }
-
     .block:not(:last-child) {
       margin-bottom: 1.5rem;
     }
@@ -160,32 +157,30 @@ The font size of a key is never bigger than the value.
 
   <section class="component-example">
     <div>
-      <mm-text variant="title">heading1, page title</mm-text>
-      <mm-text variant="heading2">heading2, 2510 추가</mm-text>
+      <mm-text variant="title">heading1</mm-text>
+      <mm-text variant="heading2">heading2</mm-text>
       <div style="height: var(--space-1)"></div>
-      <mm-text variant="subhead">heading3, subhead, section title</mm-text>
+      <mm-text variant="subhead">heading3</mm-text>
+      <div style="height: var(--space-2)"></div>
+      <mm-text variant="heading4">heading4</mm-text>
+      <mm-separator></mm-separator>
+      <mm-text variant="subheading">subheading</mm-text>
       <mm-separator></mm-separator>
       <mm-text variant="body-large">body large</mm-text>
       <mm-text variant="body">body</mm-text>
       <mm-separator></mm-separator>
-      <!-- <mm-text variant="caption">caption</mm-text>
-      <mm-separator></mm-separator> -->
-
-      <mm-text variant="label-strong">label, strong</mm-text>
-      <mm-text variant="label">label</mm-text>
+      <mm-text variant="caption">caption</mm-text>
     </div>
   </section>
   <section class="component-props">
     <dl>
       <dt>variant</dt>
-      <dd>'title' | 'subhead' | 'label' | 'label-strong' | 'body' | 'body-large'</dd>
+      <dd>'title' | 'subhead' | 'label' | 'heading4' | 'body' | 'body-large'</dd>
       <dt>color</dt>
       <dd>'primary' | 'secondary'</dd>
-      <dt>lineHeight</dt>
-      <dd>'small' | 'medium'</dd>
       <dt>truncatedLine<attr>?</attr></dt>
       <dd>'single' | 'multi' (2 lines)</dd>
-      <dt>preservedLine<attr>? TODO</attr></dt>
+      <dt>preservedLine<attr>?</attr></dt>
       <dd>boolean</dd>
     </dl>
   </section>
@@ -193,19 +188,51 @@ The font size of a key is never bigger than the value.
   <section class="component-guide">
     <mm-text-list
       texts='[
-        "피그마에서 소숫점 올림한다. line height를 고정값을 사용하는 것이 토큰화에도 좋다. 아이콘과 텍스트의 가운데 정렬 문제에 대하여",
+        "피그마에서 소숫점 올림한다. line height를 고정값을 사용하는 것이 토큰화에도 좋다. (TODO 아이콘과 텍스트의 가운데 정렬 문제에 대하여)",
         "텍스트 목록을 2 댑스(nested)로 제공하지 마세요. 중첩된 목록은 콘텐츠를 읽기 어렵게 하며 작은 화면에 적합하지 않다. 약관에서는 사용해야 할 수도.",
         "태그라인은 작은 화면에서도 임팩트를 줄 수 있도록 작성 단계에서 행갈이를 고려하세요. 글자 또는 단어의 수를 제한하고 개행 조건을 정의하세요.",
         "제목을 자르는 것을 허용할 수 있나. 종국에 모든 텍스트는 잘릴 수 있음을 염두해야 한다. 점점 더 작아지는 스크린. 폴더블, 와치",
-        "KeyValue(LabelDescription/DescriptionList), TextGroup, ContentGroup, TextList, TextStack, TextPair",
-        "Question-Answer Pair, Translation Pair, Dialogue Pair, ProfileKeyValuePair, FeatureLabelWithDescription",
-        "제목 heading - title / subtitle / subhead(subheading) / caption (label)",
-        "본문 body - paragraph / label, help text / kicker/overline/eyebrow",
+        "본문 body - paragraph / label, help text, ㅊ메샤ㅐㅜ / kicker/overline/eyebrow",
         "단어(word) → 구(phrase) → 문장(sentence) → 문단(paragraph)",
-        "message: 사용자의 관점, description: 시스템이 주체",
-        "ParagraphGroup."
+        "message: 사용자의 관점, description: 시스템이 주체"
       ]'
     ></mm-text-list>
+
+    <div class="column columns-3" style="margin-top: 2rem">
+      <mm-tile variant="" height="400px">
+        <mm-text variant="heading4">body large</mm-text>
+        <div style="height: var(--space-4)"></div>
+        <mm-text variant="body-large">
+          Line height is the vertical space between lines of text, measured from baseline to
+          baseline. Line height is pre-defined and built into each style.
+        </mm-text>
+
+        <div style="margin-top: auto">
+          <mm-text>(long form - blog post, article, terms :: paragraph)</mm-text>
+        </div>
+      </mm-tile>
+      <mm-tile variant="" height="400px">
+        <mm-text variant="heading4">body</mm-text>
+        <div style="height: var(--space-4)"></div>
+        <mm-text>
+          Line height is the vertical space between lines of text, measured from baseline to
+          baseline. Line height is pre-defined and built into each style.
+        </mm-text>
+
+        <div style="margin-top: auto"><mm-text>(UI)</mm-text></div>
+      </mm-tile>
+      <mm-tile variant="" height="400px">
+        <mm-text variant="heading4">description</mm-text>
+        <div style="height: var(--space-4)"></div>
+        <mm-text>
+          Line height is the vertical space between lines of text, measured from baseline to
+          baseline. Line height is pre-defined and built into each style.
+        </mm-text>
+
+        <div style="margin-top: auto"><mm-text>(UI) - tight</mm-text></div>
+      </mm-tile>
+    </div>
+
     <!-- 
       # Note
       caption, brief description의 차이
@@ -237,7 +264,7 @@ The font size of a key is never bigger than the value.
         description="개별 폰트의 기준선이 다르기 때문에 주변 요소나 부모 요소에 맞춰 시각보정이 필요하다."
       ></mm-title-with-description>
 
-      <mm-text variant="label-strong">텍스트의 강조</mm-text>
+      <mm-text variant="heading4">텍스트의 강조</mm-text>
       <mm-text variant="body">
         단락에 포함된 단어나 구문을 underline, primary color로 강조하지 마세요. 우리는 underlined와
         pirmary colored text를 <mark>clickable</mark>로 엄격하게 정의하고 있습니다.
@@ -247,29 +274,38 @@ The font size of a key is never bigger than the value.
     </mm-text-group>
   </section>
 
-  <mm-component-section title="TitleWithDescription" description="level=1|2|3|4">
+  <mm-component-section
+    title="ParagraphGroup"
+    description="TextGroup, ContentGroup, TextList, TextStack"
+  >
+  </mm-component-section>
+
+  <mm-component-section
+    title="TitleWithDescription"
+    description="KeyValue(LabelDescription/DescriptionList),TextPair, Question-Answer Pair,  Translation Pair, Dialogue Pair, ProfileKeyValuePair, FeatureLabelWithDescription "
+  >
     <mm-title-with-description
       level="1"
-      title="Title 1"
-      description="Description 1"
+      title="Level 1 Title"
+      description="Level 1 Description"
     ></mm-title-with-description>
     <mm-separator></mm-separator>
     <mm-title-with-description
       level="2"
-      title="Title 2"
-      description="Description 2"
+      title="Level 2 Title"
+      description="Level 2 Description"
     ></mm-title-with-description>
     <mm-separator></mm-separator>
     <mm-title-with-description
       level="3"
-      title="Title 3"
-      description="Description 3"
+      title="Level 3 Title"
+      description="Level 3 Description"
     ></mm-title-with-description>
     <mm-separator></mm-separator>
     <mm-title-with-description
       level="4"
-      title="Title 4"
-      description="Description 4"
+      title="Level 4 Title"
+      description="Level 4 Description"
     ></mm-title-with-description>
   </mm-component-section>
 
@@ -303,10 +339,7 @@ The font size of a key is never bigger than the value.
     </section>
   </mm-component-section>
 
-  <mm-component-section
-    title="Text List"
-    description="순서가 있는 리스트와 순서가 없는 리스트. 체크 리스트."
-  >
+  <mm-component-section title="Text List" description="순서가 있는 리스트와 순서가 없는 리스트.">
     <mm-text-list texts='["mm-text-list 1", "mm-text-list 1"]'> </mm-text-list>
     <mm-separator></mm-separator>
     <ul>
@@ -329,27 +362,12 @@ The font size of a key is never bigger than the value.
     ></mm-text-pair>
     <mm-separator></mm-separator>
     <mm-group style="gap: 2rem">
-      <div
-        style="
-          display: inline-flex;
-          flex-direction: column;
-          align-items: center;
-          padding: var(--space-4);
-          gap: var(--space-2);
-          background-color: var(--color-background);
-          border-radius: var(--radius);
-          width: 160px;
-        "
-      >
-        <mm-text variant="title">266</mm-text>
-        <div style="margin-top: -0.75rem"><mm-text variant="body">NETWORKS</mm-text></div>
-      </div>
       <div>
-        <mm-text variant="label">사이즈</mm-text>
+        <mm-text variant="subheading">사이즈</mm-text>
         <mm-text variant="subhead">보통</mm-text>
       </div>
       <div>
-        <mm-text variant="label">한글</mm-text>
+        <mm-text variant="subheading">한글</mm-text>
         <mm-text variant="subhead">작은 거 필요하나</mm-text>
       </div>
       <mm-keyvalue size="large" alignment="column" key="Move" value="562 kcal"> </mm-keyvalue>
@@ -368,10 +386,10 @@ The font size of a key is never bigger than the value.
     <mm-text variant="" hidden aria-hidden="true">사이트맵</mm-text>
     <mm-group alignment="vertical">
       <mm-text variant="subhead">사이트맵 컴포넌트</mm-text>
-      <mm-text variant="label" href="#">샘플</mm-text>
-      <mm-text variant="label" href="#">사이트맵 </mm-text>
-      <mm-text variant="label" href="#">사이트맵 샘플</mm-text>
-      <mm-text variant="label" href="#">사이트맵 컴포넌트 샘플</mm-text>
+      <mm-text variant="subheading" href="#">샘플</mm-text>
+      <mm-text variant="subheading" href="#">사이트맵 </mm-text>
+      <mm-text variant="subheading" href="#">사이트맵 샘플</mm-text>
+      <mm-text variant="subheading" href="#">사이트맵 컴포넌트 샘플</mm-text>
     </mm-group>
     <mm-group alignment="vertical">
       <mm-text variant="subhead">꺼이꺼이</mm-text>
