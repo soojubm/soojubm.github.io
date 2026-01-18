@@ -140,10 +140,11 @@
         <mm-icon name="graph-up"></mm-icon>
       </mm-avatar>
       <div style="height: var(--space-3)"></div>
-      <b class="item-name">상해종합주가지수</b>
-      <p class="item-description" style="margin: 0 0 0.5rem">2999.55p</p>
+      <mm-text variant="label-strong">상해종합주가지수</mm-text>
+      <mm-text variant="body">2999.55p</mm-text>
+      <div style="margin-top: var(--space-1)"></div>
       <mm-tag variant="up">4.33% 상승</mm-tag>
-      <div style="margin-top: 0.5rem">
+      <div style="margin-top: var(--space-3)">
         <mm-text variant="caption">
           <span style="color: var(--color-foreground-light)">10분 지연. live</span>
         </mm-text>
@@ -152,8 +153,7 @@
         </mm-text>
       </div>
     </mm-tile>
-
-    <mm-tile>
+    <!-- <mm-tile>
       <q>
         I'm impressed by how GitHub Copilot seems to know exactly what I want to type next. GitHub
         Copilot is particularly helpful when working on React components, where it makes eerily
@@ -163,7 +163,7 @@
       <figcaption style="margin: var(--space-3) 0 0 0">
         <mm-text variant="subheading">Byline</mm-text>
       </figcaption>
-    </mm-tile>
+    </mm-tile> -->
   </mm-text-group>
 
   <mm-component-section title="PricingTile" description="">
@@ -218,9 +218,7 @@
       <article class="feed" aria-setsize="3" aria-posinset="1">
         <mm-tag> 🔥 Most Popular </mm-tag>
         <div style="height: 0.75rem"></div>
-        <mm-menuitem label="수줍이" description="2 hour" class="feed-user">
-          <mm-avatar slot="avatar" default="true"></mm-avatar>
-        </mm-menuitem>
+        <mm-list-row size="small" primaryText="수줍이" secondaryText="2 hour"> </mm-list-row>
         <div class="feed-content">
           <figure size="huge" class="feed-content-media">
             <img src="/public/images/springsteen.jpg" alt="" />
@@ -273,6 +271,7 @@
 
       <style>
         .feed {
+          max-width: 400px;
           /* margin: 3rem 0; */
         }
 
@@ -285,10 +284,6 @@
           overflow: hidden;
           object-fit: cover;
           border-radius: var(--radius);
-        }
-
-        .feed-user {
-          margin: var(--space-3) 0;
         }
       </style>
 

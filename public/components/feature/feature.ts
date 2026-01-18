@@ -70,7 +70,7 @@ class Feature extends HTMLElement {
     // avatar
     this.avatar = document.createElement('mm-avatar')
     this.avatar.setAttribute('variant', 'secondary')
-    this.avatar.setAttribute('size', 'large')
+    this.avatar.setAttribute('size', 'medium')
 
     this.iconEl = document.createElement('mm-icon')
     this.iconEl.setAttribute('size', 'large')
@@ -79,7 +79,7 @@ class Feature extends HTMLElement {
     // header
     this.header = document.createElement('mm-title-with-description')
     this.header.classList.add('feature-item-header')
-    this.header.setAttribute('level', '3')
+    this.header.setAttribute('level', '4')
 
     // slot
     this.slotEl = document.createElement('slot')

@@ -92,8 +92,8 @@ input:focus + label::before {
 }
 
 .checkbox[data-size=large] input[type="checkbox"]:checked + label .checkbox-indicator::after {
-  left:9px;
-  top:9px;
+  left: 8px;
+  top: 8px;
   transform:rotate(-50deg) scale(1.5);
 }
 

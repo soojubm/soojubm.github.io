@@ -1,6 +1,6 @@
 class ListRow extends HTMLElement {
   static get observedAttributes() {
-    return ['icon', 'primarytext', 'secondarytext', 'avatar-variant']
+    return ['size', 'icon', 'primarytext', 'secondarytext', 'avatar-variant']
   }
 
   private shadow!: ShadowRoot
@@ -30,6 +30,12 @@ class ListRow extends HTMLElement {
         flex: 1;
         display: flex;
         flex-direction: column;
+      }
+      /* TODO size 중복 */
+      .text-container.size-small {
+        flex-direction: row;
+        align-items: center;
+        gap: var(--space-2);
       }
 
       .avatar {
@@ -61,6 +67,9 @@ class ListRow extends HTMLElement {
 
     const textContainer = document.createElement('div')
     textContainer.className = 'text-container'
+    // TODO size 중복
+    const size = this.getAttribute('size') || 'medium'
+    if (size === 'small') textContainer.classList.add('size-small')
 
     this.primaryEl = document.createElement('mm-text')
     this.primaryEl.setAttribute('variant', 'body-bold')
@@ -97,6 +106,9 @@ class ListRow extends HTMLElement {
       this.secondaryEl.textContent = ''
       this.secondaryEl.style.display = 'none'
     }
+
+    const size = this.getAttribute('size') || 'medium'
+    this.fallbackAvatar.setAttribute('size', size)
 
     const iconAttr = this.getAttribute('icon') || ''
     this.fallbackAvatar.setAttribute('name', iconAttr)
