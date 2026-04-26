@@ -1,4 +1,12 @@
-body,dl,dd,figure,blockquote,h1,h2,h3,h4,h5,h6,p,input[type=radio],input[type=checkbox] {margin:0;}
+// BASEHTML
+// import { resetSheet } from './styles.js'
+// styles.js
+// 1. 기본 리셋 및 테마 시트
+
+// TODO reset css 파일
+export const resetSheet = new CSSStyleSheet()
+resetSheet.replaceSync(`
+  body,dl,dd,figure,blockquote,h1,h2,h3,h4,h5,h6,p,input[type=radio],input[type=checkbox] {margin:0;}
 ul,ol,menu,fieldset,legend {margin:0;padding:0;}
 fieldset,iframe,img {border:none}
 hr {margin-block:0;border:none;}
@@ -399,4 +407,51 @@ menu-item:focus-visible {
   .columns-3 {
     grid-template-columns: 1fr;
   }
+}
+  
+  
+  
+  :host { display: block; }`)
+
+export const themeSheet = new CSSStyleSheet()
+themeSheet.replaceSync(`:host { --primary-color: #007bff; }`)
+
+// 2. 컴포넌트별 시트 캐시 (메모리 절약)
+const sheetCache: Record<string, CSSStyleSheet> = {}
+
+/**
+ * 컴포넌트 이름을 받아 CSSStyleSheet를 반환합니다.
+ * @param name 컴포넌트 식별자 (예: 'avatar')
+ * @param cssText (옵션) 초기화 시 사용할 CSS 문자열
+ */
+
+export function getSharedSheet(name: string, cssText?: string): CSSStyleSheet {
+  if (!sheetCache[name]) {
+    const sheet = new CSSStyleSheet()
+    if (cssText) sheet.replaceSync(cssText)
+    sheetCache[name] = sheet
+  }
+  return sheetCache[name]
+}
+
+export abstract class BaseElement extends HTMLElement {
+  protected readonly root: ShadowRoot
+
+  constructor() {
+    super()
+    this.root = this.attachShadow({ mode: 'open' })
+    this.root.adoptedStyleSheets = [resetSheet, themeSheet]
+  }
+
+  protected addSheets(...sheets: CSSStyleSheet[]) {
+    const current = this.root.adoptedStyleSheets
+    const next = sheets.filter(s => !current.includes(s))
+    this.root.adoptedStyleSheets = [...current, ...next]
+  }
+
+  connectedCallback(): void {
+    this.render()
+  }
+
+  protected abstract render(): void
 }

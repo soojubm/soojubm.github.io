@@ -11,31 +11,45 @@
   /* // -apple-system === san-serif / system-ui === BlinkMacSystemFont */
   --font-family: 'Pretendard', system-ui, sans-serif;
   --font-family: 'Alan Sans', 'Gothic A1', system-ui, sans-serif;
-  --font-family-heading: null;
-  --font-family-body: null;
-  --font-family-caption: null;
-  --font-family-code: null;
+  /* --font-family-heading/body/code */
   --font-family-monospace: 'Courier New', Courier, monospace;
 
-  /* font-size-heading / font-size-body  */
-  --font-size-huge: 2rem;
-  --font-size-large: 1.125rem; 
-  --font-size-medium: .875rem;
-  --font-size-small: .75rem;
+  --font-size-32: 32px;
+  --font-size-18: 18px; 
+  --font-size-14: 14px;
+  --font-size-12: 12px;
+
+  --font-line-height-40: 40px;
+  --font-line-height-32: 32px;
+  --font-line-height-24: 24px;
+  --font-line-height-16: 16px;
+
+  --font-size-heading: null;
+  --font-size-heading: null;
+  --font-size-subheading: null;
+  --font-size-subheading-: null;
+  --font-size-body: var(--font-size-14);
+  --font-size-body-large: var(--font-size-18);
+  --font-size-caption: var(--font-size-12);
+
+
+  --font-line-height-heading: null;
+  --font-line-height-subheading: null;
+  --font-line-height-body: null;
+  --font-line-height-body-large: null;
+
+
+  /* 
+  --font-line-height-large: 1.715;
+  --font-line-height: 1.5;
+  */
+
 
   --font-weight-normal: 500;
   --font-weight-bold: 700;
-  --font-weight-extrabold: null;
-
-  --font-line-height-large: 1.715;
-  --font-line-height: 1.5;
-
-  --adjust-label-line: 0px;
 
   --navbar-height: calc(32px + 1.5rem);
   --titlebar-height: calc(32px + 1.5rem);
-
-  --textfield-height: var(--size-large);
 
   --layout-width-wide: 1280px;
   --layout-width-narrow: 400px;
@@ -63,8 +77,6 @@
   --gray0: #fff;
   --gray50: #fcfdfc;
   --gray100: #f5f6f5;
-  /* --gray100: #fafbfa; */
-  /* --gray100: #f2f5f2; */
   --gray200: #e4e9e7;
   --gray200: #e9edec;
   --gray300: #c1c3c2;
@@ -81,18 +93,16 @@
   --red800: #f02849;
   --yellow800: gold;
 
-  --color-white: var(--gray0);
-  --color-black: #000;
-
   --color-primary: var(--green800);
-  --color-primary-light: null;
-  --color-secondary: var(--yellow800);
+  --color-primary-subtle: null;
+  --color-secondary: null;
+  --color-brand: null;
   --color-accent: var(--yellow800);
-  --color-warning: var(--red800);
-  --color-danger: var(--red800);
+  /* // 작은 제품에는 한 개로  충분 */
+  /* --color-warning: var(--red800); */
+  --color-danger: var(--red800); 
 
   /* --color-status / --color-classification */
-
   --color-google: #fff;
   --color-facebook: hsl(214, 89%, 52%);
   --color-twitter: rgb(29, 161, 242);
@@ -115,18 +125,18 @@
   --color-temp4: #f6edf6;
 
   --color-background: var(--gray0);
-  --color-background-weak: var(--gray100);
-  --color-background-weaker: var(--gray50);
+  --color-background-subtle: var(--gray100);
   --color-background-strong: var(--gray800);
   --color-background-interaction: null;
   --color-background-non-interaction: null;
 
   --color-border: var(--gray200);
-  --color-border-stronger: var(--gray300);
+  --color-border-strong: var(--gray300);
   --color-border-hover: var(--gray800);
 
   --color-foreground: var(--gray900);
   --color-foreground-light: var(--gray400);
+  /* --color-goreground-muted: var(--placeholder-disabled); */
 
   --color-foreground-on-solid: var(--gray0);
 
@@ -143,30 +153,26 @@
   --size-tiny: 1rem;
 
   /* squished-stretched */
-  --space-0: 0;
   --space-05: .125rem;
   --space-1: .25rem;
   --space-2: .5rem;
   --space-3: .75rem;
   --space-4: 1rem;
-  /* --space-8: 2rem; */
   --space-1-minus: calc(var(--space-1) * -1);
   --space-2-minus: calc(var(--space-2) * -1);
   --space-3-minus: calc(var(--space-3) * -1);
 
   --border-width: 1px;
   --border: var(--border-width) solid var(--color-border);
-  --border-stronger: var(--border-width) solid var(--color-border-stronger);
+  --border-stronger: var(--border-width) solid var(--color-border-strong);
   --border-active: 1px solid var(--color-primary);
   --border-thin: null;
   --border-thick: null;
 
-  /* // radius-round / radius-pill */
+  /* // radius-round / radius-pill / sharp-soft */
   --radius: 6px;
   --radius-large: 1rem;
   --radius-round: 50%; 
-  --radius-sharp: null;
-  --radius-soft: null;
 
   /* 여기서 2배로 하면 다른 모든 곳에서도 두 배로 가져간다. */
   /* As an element gets closer to the user, the offset should increase, the blur radius should increase, and the shadow's opacity should decrease. */
@@ -223,13 +229,12 @@
 
 @media (max-width: 1100px) {
   :root {
-    /* --font-size-huge: 1.5rem; */
+    /* --font-size-32: 1.5rem; */
   }
 }
 
 :root [data-theme=dark] {
   /* // img {filter: invert(100%) hue-rotate(180deg);mix-blend-mode: screen;mix-blend-mode: multiply;} */
-  /* // 같은 변수도 재할당이 필요하다. */
   --gray200: #252d29;
 
   --color-foreground: #d3d4d5;
@@ -237,7 +242,7 @@
   --color-foreground-light: var(--gray400);
 
   --color-background: rgb(31, 35, 33);
-  --color-background-weak: #292f2c;
+  --color-background-subtle: #292f2c;
   --color-background-strong: var(--gray0);
 
   --color-background-page: null;
@@ -250,11 +255,11 @@
   --color-foreground-on-solid: var(--color-foreground);
 
   --color-border: var(--gray800);
-  --color-border-stronger: #5f6964;
+  --color-border-strong: #5f6964;
   --color-border-hover: var(--gray0);
 
   --border: 1px solid var(--color-border);
-  --border-stronger: var(--border-width) solid var(--color-border-stronger);
+  --border-stronger: var(--border-width) solid var(--color-border-strong);
 
   --status-focus: 0 0 0 2px var(--color-border-hover);
   --status-hover: 0 0 0 2px rgba(255,255,255,.25);
@@ -270,5 +275,3 @@
 }
 
 /* // $p-breakpoints-lg-only: '(min-width: 65em) and (max-width: 89.9975em)'; */
-
-

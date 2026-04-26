@@ -81,4 +81,8 @@ class Tag extends HTMLElement {
   disconnectedCallback() {}
 }
 
+if (!customElements.get('mm-tag')) {
+  customElements.define('mm-tag', Tag)
+}
+
 export default Tag

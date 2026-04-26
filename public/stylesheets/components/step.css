@@ -18,8 +18,7 @@
   height:var(--step-icon-size);
   margin: 0 auto;
   border-radius: 50%;
-  background: var(--color-background-weak);
-  font-size: var(--font-size-small);
+  background: var(--color-background-subtle);
   font-weight: var(--font-weight-bold);
   position: relative;
 }

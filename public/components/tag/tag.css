@@ -9,7 +9,7 @@
   outline: 2px solid var(--color-background);
   box-sizing: border-box;
   background: var(--color-background);
-  font-size: var(--font-size-small);
+  font-size: var(--font-size-12);
   line-height: var(--size-small);
   color: var(--color-foreground);
 
@@ -24,7 +24,7 @@
   color:var(--gray800);
 }
 .tag[data-variant=secondary] {
-  background-color: var(--color-background-weak);
+  background-color: var(--color-background-subtle);
   border-color: transparent;
 }
 

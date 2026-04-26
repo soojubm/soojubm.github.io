@@ -1,4 +1,5 @@
 /* TODO 가운데 정렬된 목록의 가로 스크롤 방법 */
+/* TODO: align 은 네이티브 속성과 충돌할 수 있다. title 같은 느낌 */
 
 /* 
 // todo flex일 대 min-width가 필수가 된다.. margin/padding은 container에 의존
@@ -47,10 +48,6 @@
   gap:var(--space-3);
 }
 
-/* TODO: align 은 네이티브 값과 충돌할 수 있어서? 빨갛게 뜸? */
-.group[data-alignment=center] {
-  justify-content: center;
-}
 
 .group[data-direction=row] {}
 .group[data-direction=column] {}

@@ -180,7 +180,7 @@
   margin: 0 0 0 1rem;
   padding: 0 0 0 1.5rem;
   border-left: var(--border);
-  /* font-size:var(--font-size-small); */
+  /* font-size:var(--font-size-12); */
   color:var(--color-foreground);
   text-transform: capitalize;
   position: relative;
@@ -189,7 +189,7 @@
 .sidebar-menu > div a:hover,
 .sidebar-menu > div a[aria-current=page] {
   border-color: var(--color-primary);
-  background-color:var(--color-background-weak);
+  background-color:var(--color-background-subtle);
   border-radius: 0 var(--radius) var(--radius) 0;
   cursor: pointer;
 }

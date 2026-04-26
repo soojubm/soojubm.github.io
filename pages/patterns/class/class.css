@@ -25,7 +25,7 @@
 
 .class-order-title {border-top:var(--border);}
 .class-order-description {border-top:var(--border);}
-.class-order-price {border-top:var(--border);font-size:var(--font-size-large);}
+.class-order-price {border-top:var(--border);font-size:var(--font-size-18);}
 .class-order-action {border-top:var(--border);}
 .class-order-action-share {}
 

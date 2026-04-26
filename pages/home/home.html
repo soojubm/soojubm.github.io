@@ -25,72 +25,129 @@
  
   </header>
   <section style="margin: 4rem -4rem; display: flex; gap: 1rem">
-    <article style="border: var(--border); padding: 2rem; border-radius: 2rem; border: 2px solid transparent;
-    background-image: linear-gradient(#fff, #fff), linear-gradient(to right, #231557 0%, #44107A 29%, #FF1361 67%, #FFF800 100%);
-    background-origin: border-box;
-    background-clip: padding-box, border-box;">
-      <mm-text variant="subheading">Make a Constraints</mm-text>
-      <mm-text variant="subhead">한계를 설정하기</mm-text>
-      <br />
-      <mm-text variant="body">
-        모두를 위한 서비스, 접속 환경 등의 제약없이 없이. 궁극적으로 해결하려는 문제는 유저
-        인터페이스가 아니다.
-      </mm-text>
-      <br />
-      <mm-text variant="heading4">A11y. </mm-text>
-      <mm-text variant="body">
-        접근성으로 결정을 도와라. 접근성에 충족하지 않는 디자인을 하기 위한 시간을 낭비하지 마세요.
-        시각 이상자를 위한 형태. 크기, 깊이, 테두리의 제한된 규칙(제약Constraints)은 오히려 제품
-        개발 속도를 높일 수 있습니다.
-      </mm-text>
-      <mm-text variant="body">
-        색각 이상자를 위해 색상 외의 시각 언어로 상태 정보를 표현하세요.
-      </mm-text>
 
-      <mm-text variant="heading4">Mobile First</mm-text>
-      <mm-text variant="body">
-        디바이스나 브라우저 등 접속 환경에 종속되지 않는 일관된 시각 경험. 크로스 플랫폼. 서비스
-        확장과 유지 보수. 데스크탑 환경에서나 유효한 hover 형태를 디자인하는 데에 많은 시간을 들일
-        필요가 없습니다.
-      </mm-text>
-    </article>
+<pre>
+  1. Constraint-driven Design
+  
+  우리는 제약을 통해 설계하며, 접근성을 기본 제약으로 포함한다.
+  
+  제한된 스케일과 규칙을 사용한다
+  A11y 미충족 디자인은 허용하지 않는다
+  색상에 의존하지 않는 상태 표현을 사용한다
+  불필요한 변형과 예외를 만들지 않는다
+  2. Universal Experience
+  
+  환경에 독립적인 일관된 경험을 설계한다.
+  
+  Platform-agnostic 설계
+  Mobile-first 접근
+  특정 환경에 종속된 인터랙션에 의존하지 않는다
+  3. Progressive & Scalable
+  
+  단순하게 시작하고, 점진적으로 확장한다.
+  
+  초기에는 최소 구조로 설계한다
+  필요에 따라 기능과 표현을 확장한다
+  컴포넌트는 제한된 패턴으로 점진적으로 추가한다
+  모든 경우를 사전에 정의하지 않는다
+  문서에서 분리해야 할 것 (Principles 아님)
+  Documentation / Operating Guidelines
+  UI Kit은 결과물로 다룬다
+  판단 기준과 설계 이유를 문서화한다
+  시스템의 사용 방식과 확장 방법을 정의한다
+  Expected Outcome (결과)
+  예측 가능성
+  일관성
+  신뢰 가능한 사용자 경험
+  핵심 구조 요약
+  Principles → 어떻게 판단할 것인가
+  Guidelines → 어떻게 운영할 것인가
+  Outcome → 그래서 무엇이 만들어지는가
+</pre>
 
-    <article style="border: var(--border); padding: 2rem; border-radius: 2rem">
-      <mm-text variant="subheading" data-temp=" minimum viable experience">
-        Progressive enhancement
-        </mm-text>
-      <mm-text variant="subhead">점진적으로 향상하기</mm-text>
-      <br />
-      <mm-text variant="body-large">
-        처음부터 너무 많은 약속 하지 않기. 시각 언어를 확장해가며 디테일을 높이세요. 중요한 것은
-        코드 환경에서 유효한 최적의 컴포넌트 사례를 만드는 일입니다.
-      </mm-text>
-      <br />
-      <mm-text variant="heading4">not-yet-completed</mm-text>
-      <mm-text variant="body">
-        규칙 최소화. 크기와 비례해서 radius와 shadow 조정이 필요하지만 규칙을 최소화.
-      </mm-text>
 
-      <mm-text variant="heading4">제품으로서의 디자인 시스템 문서.</mm-text>
-      <mm-text variant="body">
-        디자인 시스템은 유아이 라이브러리UI Library나 유아이 키트UI Kits가 아닙니다. 가능한 모든
-        경우의 수를 나열하지 마세요.
-      </mm-text>
-    </article>
+<article
+  style="border: var(--border); padding: 2rem; border-radius: 2rem; border: 2px solid transparent;
+  background-image: linear-gradient(#fff, #fff), linear-gradient(to right, #231557 0%, #44107A 29%, #FF1361 67%, #FFF800 100%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;"
+>
+  <mm-text variant="subheading">1. Constraint-driven Design</mm-text>
+  <mm-text variant="subhead">한계를 설정하기</mm-text>
+  <br />
+  <mm-text variant="body">
+    우리는 선택을 줄이기 위해 제약을 만든다. 제약은 속도와 일관성을 만든다.
+  </mm-text>
+  <br />
+  <mm-text variant="heading4">A11y</mm-text>
+  <mm-text variant="body">
+    접근성은 기본 제약이다. 충족하지 않는 디자인은 허용하지 않는다.
+  </mm-text>
+  <mm-text variant="body">
+    색상에 의존하지 않고 형태, 대비, 구조로 상태를 표현한다.
+  </mm-text>
+  <br />
+  <mm-text variant="heading4">Mobile First</mm-text>
+  <mm-text variant="body">
+    가장 제약이 큰 환경에서 시작한다.
+  </mm-text>
+  <mm-text variant="body">
+    환경에 종속되지 않는 일관된 경험을 만든다.
+  </mm-text>
+</article>
 
-    <article style="border: var(--border); padding: 2rem; border-radius: 2rem">
-      <mm-text variant="subheading">Make a Constraints</mm-text>
-      <mm-text variant="subhead">예측 가능한 설계하기</mm-text>
-      <br />
-      <mm-text variant="body-large">
-        UI는 사용자의 추가적인 학습을 최소화할 정도로 보편타당해야. 제품 스코프에서도 친숙하고
-        신뢰할 수 있는 서비스 경험을 위해 예측 가능하고 일관된 기표.
-      </mm-text>
-      <br />
-      <mm-text variant="body">
-        디바이스나 브라우저 등 접속 환경에 종속되지 않는 일관된 시각 경험.
-      </mm-text>
-    </article>
+<article
+  style="border: var(--border); padding: 2rem; border-radius: 2rem; border: 2px solid transparent;
+  background-image: linear-gradient(#fff, #fff), linear-gradient(to right, #11998e 0%, #38ef7d 100%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;"
+>
+  <mm-text variant="subheading">2. Universal Experience</mm-text>
+  <mm-text variant="subhead">환경에 독립적인 경험</mm-text>
+  <br />
+  <mm-text variant="body">
+    우리는 디바이스와 브라우저에 종속되지 않는 경험을 설계한다.
+  </mm-text>
+  <br />
+  <mm-text variant="heading4">Platform-agnostic</mm-text>
+  <mm-text variant="body">
+    특정 환경에 최적화된 표현보다 모든 환경에서 일관된 구조를 우선한다.
+  </mm-text>
+  <br />
+  <mm-text variant="heading4">Consistent Patterns</mm-text>
+  <mm-text variant="body">
+    동일한 문제는 동일한 방식으로 해결한다. 패턴의 반복이 일관성을 만든다.
+  </mm-text>
+</article>
+
+<article
+  style="border: var(--border); padding: 2rem; border-radius: 2rem; border: 2px solid transparent;
+  background-image: linear-gradient(#fff, #fff), linear-gradient(to right, #ee0979 0%, #ff6a00 100%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;"
+>
+  <mm-text variant="subheading">3. Progressive & Scalable</mm-text>
+  <mm-text variant="subhead">점진적으로 확장하기</mm-text>
+  <br />
+  <mm-text variant="body">
+    우리는 단순하게 시작하고 필요에 따라 확장한다.
+  </mm-text>
+  <br />
+  <mm-text variant="heading4">Start Small</mm-text>
+  <mm-text variant="body">
+    초기에는 최소한의 구조와 패턴만 정의한다.
+  </mm-text>
+  <br />
+  <mm-text variant="heading4">Scale by Need</mm-text>
+  <mm-text variant="body">
+    실제 사용과 요구에 따라 컴포넌트와 패턴을 추가한다.
+  </mm-text>
+  <br />
+  <mm-text variant="heading4">Composable</mm-text>
+  <mm-text variant="body">
+    새로운 요소를 추가하기보다 기존 요소를 조합해 확장한다.
+  </mm-text>
+</article>
   </section>
 
 
@@ -434,7 +491,7 @@
         z-index: 2;
       }
       .stamp p {
-        font-size: var(--font-size-large);
+        font-size: var(--font-size-18);
         font-weight: bold;
         margin: 0;
         --tt: 15deg;
@@ -650,7 +707,7 @@
     <span class="event-intro-eyebrow tag">이벤트 하나</span>
     <h2
       class="event-intro-title"
-      style="margin: var(--space-4) 0; line-height: var(--font-line-height)"
+      style="margin: var(--space-4) 0;"
     >
       글자 수와<br />개행 원칙을<br />정의해둡니다.
     </h2>

@@ -4,9 +4,6 @@
     description="사용자가 수행할 수 있는 행동 목록입니다. 단일 액션 또는 선택 액션을 포함할 수 있습니다."
   ></mm-title-with-description>
 
-  https://polaris-react.shopify.com/components/lists/resource-list?example=resource-list-default
-  option list / action list
-
   <script type="module">
     import OptionRow from './mm-option-row.js'
 
@@ -18,12 +15,21 @@
 
   <dl class="article-aka">
     <dt>a.k.a.</dt>
-    <dd title="shopify 22 12">Action list</dd>
+    <!-- option list action list :넘누포괄적 -->
     <dd title="shopify 22 12">Menu group</dd>
     <dd>action menu</dd>
   </dl>
 
   <section class="component-example">
+    <div style="max-width: 400px">
+      <mm-dropdown>
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+        <option value="3">Option 3</option>
+      </mm-dropdown>
+    </div>
+    <mm-separator></mm-separator>
+
     <div style="max-width: 520px">
       <div>
         <mm-menuitem label="MenuItem"> </mm-menuitem>
@@ -133,20 +139,27 @@
   >
     <mm-group variant="menuitem">
       <mm-list-row
+        size="large"
         icon="group"
         primaryText="MenuItem와 ListRow의 차이점은?"
         secondaryText="설명 텍스트가 있을 수도 있고 없을 수도 있다."
       >
         <mm-button slot="action">액션</mm-button>
       </mm-list-row>
-      <mm-list-row icon="group" primaryText="Widgefy iOS Widgets" secondaryText="떡볶이">
+      <mm-list-row
+        size="large"
+        icon="group"
+        primaryText="Widgefy iOS Widgets"
+        secondaryText="떡볶이"
+      >
         <div slot="action" style="text-align: right">
           <span style="display: block; line-height: 18px">18,800 KRW</span>
           <mm-text variant="subheading">6410</mm-text>
         </div>
       </mm-list-row>
       <mm-list-row
-        icon="group"
+        size="large"
+        icon=""
         primaryText="사진 및 동영상 백업"
         secondaryText="우측 액션은 사실 그냥 시각 정보인데"
       >

@@ -7,7 +7,7 @@
   
   } */
 .range {}
-.range input[type=range] {width:100%;height:4px;background:var(--color-background-weak);appearance:none;-webkit-appearance:none;}
+.range input[type=range] {width:100%;height:4px;background:var(--color-background-subtle);appearance:none;-webkit-appearance:none;}
 .range input[type=range]::-webkit-slider-thumb {appearance:none;width:16px;height:16px;padding:4px;background:var(--red800);border-radius:var(--radius);cursor:pointer;appearance:none;-webkit-appearance:none;}
 .range input[type=range]:focus::-webkit-slider-thumb {transform:scale(1.25);box-shadow:0 0 0 0.25rem rgba(0,153,255,0.3), 0 var(--space-05) 0.5rem rgba(0,0,0,0.1);}
 
@@ -65,7 +65,7 @@ input[type=file] + label:after {display:none;}
 
 /* // radius = iOS */
 .counter {display:flex;gap: 0.5rem;position:relative;}
-.counter-input {width:100%;margin:0 var(--space-2);background:var(--color-background-weak);border-radius:var(--radius);text-align:center;}
+.counter-input {width:100%;margin:0 var(--space-2);background:var(--color-background-subtle);border-radius:var(--radius);text-align:center;}
 .counter-decrement {}
 .counter-increment {border-radius:0 var(--radius) var(--radius) 0;}
 .counter [aria-disabled=true] {opacity:.5;cursor:not-allowed;}

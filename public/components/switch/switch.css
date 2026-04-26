@@ -39,8 +39,8 @@
   height: var(--switch-height);
   border-radius: var(--switch-radius);
   border: var(--border);
-  border-color: var(--color-border-stronger);
-  background-color: var(--color-background-weak);
+  border-color: var(--color-border-strong);
+  background-color: var(--color-background-subtle);
   color: black;
   transition: background, box-shadow .2s ease-out;
   box-shadow: var(--handleoffsetcalculator) 0 0 2px var(--tglbg) inset, var(--padding);

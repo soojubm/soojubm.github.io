@@ -53,7 +53,7 @@ class ComponentSection extends HTMLElement {
         .component-temp {
           margin: 0 0 1rem calc(-5vw + 1rem);
           padding: 2rem calc(var(--grid-margin) - 1rem) 2.25rem;
-          border: var(--border);
+          border: var(--border-stronger);
           border-radius: var(--radius-large);
         }
 

@@ -37,7 +37,7 @@ const styles = `
   }
 
   button.selected {
-    background: var(--color-background-weak);
+    background: var(--color-background-subtle);
     border-color: var(--color-primary);
     color: var(--color-primary);
   }

@@ -1,4 +1,140 @@
 [
+  // 더스퀘어
+  {
+    "id": 202604,
+    "releasedate": 2003,
+    "titlekorean": "햄릿",
+    "titleenglish": "A Good Lawyer's Wife",
+    "director": "베를린",
+    "country": "한국",
+    "etc": ""
+  },
+  {
+    "id": 202603,
+    "releasedate": 2003,
+    "titlekorean": "햄릿",
+    "titleenglish": "A Good Lawyer's Wife",
+    "director": "임상수",
+    "country": "한국",
+    "etc": ""
+  },
+  {
+    "id": 202603,
+    "releasedate": 2003,
+    "titlekorean": "바람난 가족",
+    "titleenglish": "A Good Lawyer's Wife",
+    "director": "임상수",
+    "country": "한국",
+    "etc": ""
+  },
+  {
+    "id": 202603,
+    "releasedate": 1962,
+    "titlekorean": "온리 투 캔 플레이",
+    "titleenglish": "Only Two Can Play",
+    "director": "시드니 질리엣",
+    "country": "영국",
+    "etc": "피터셀러즈. 생일개봉"
+  },
+  {
+    "id": 202603,
+    "releasedate": 1989,
+    "titlekorean": "점심 데이트",
+    "titleenglish": "The Lunch Date",
+    "director": "애덤 데이빗슨",
+    "country": "미국",
+    "etc": "단편"
+  },
+  {
+    "id": 202603,
+    "releasedate": 2025,
+    "titlekorean": "어쩔수가없다",
+    "titleenglish": "No Other Choice",
+    "director": "박찬욱",
+    "country": "한국",
+    "etc": ""
+  },
+  {
+    "id": 202602,
+    "releasedate": 2017,
+    "titlekorean": "주성치",
+    "titleenglish": "TODO",
+    "director": "이명세",
+    "country": "한국",
+    "etc": ""
+  },
+  {
+    "id": 202602,
+    "releasedate": 2017,
+    "titlekorean": "호박과 마요네즈",
+    "titleenglish": "Pumpkin and Mayonnaise南瓜とマヨネーズ",
+    "director": "도미나가 마사노리",
+    "country": "일본",
+    "etc": ""
+  },
+  {
+    "id": 202602,
+    "releasedate": 2010,
+    "titlekorean": "김종욱 찾기",
+    "titleenglish": "Finding Mr. Destiny",
+    "director": "장유정",
+    "country": "한국",
+    "etc": ""
+  },
+  {
+    "id": 202602,
+    "releasedate": 1955,
+    "titlekorean": "위조 동전",
+    "titleenglish": "The Counterfeit Coin",
+    "director": "게오르기 스차 블라스",
+    "country": "그리스",
+    "etc": ""
+  },
+  {
+    "id": 202602,
+    "releasedate": 2017,
+    "titlekorean": "인정사정 볼것없다",
+    "titleenglish": "",
+    "director": "이명세",
+    "country": "한국",
+    "etc": ""
+  },
+  {
+    "id": 202602,
+    "releasedate": 2017,
+    "titlekorean": "너와의 백번째 사랑",
+    "titleenglish": "The 100th Love with You君と100回目の恋",
+    "director": "츠키카와 쇼",
+    "country": "일본",
+    "etc": ""
+  },
+  {
+    "id": 202601,
+    "releasedate": 2025,
+    "titlekorean": "물의 연대기",
+    "titleenglish": "The Chronology of Water",
+    "director": "크리스틴 스튜어트 ",
+    "country": "미국",
+    "etc": "아트하우스 모모"
+  },
+  {
+    "id": 202601,
+    "releasedate": 1973,
+    "titlekorean": "엄마와 창녀",
+    "titleenglish": "La maman et la putain",
+    "director": "장 으스타슈",
+    "country": "프랑스",
+    "etc": ""
+  },
+  {
+    "id": 202601,
+    "releasedate": 1952,
+    "titlekorean": "러스티 맨",
+    "titleenglish": "The Lusty Men",
+    "director": "니콜라스 레이",
+    "country": "미국",
+    "etc": "로버트미첨"
+  },
   {
     "id": 202601,
     "releasedate": 2017,
@@ -10,66 +146,75 @@
   },
   {
     "id": 202601,
-    "releasedate": 1999,
+    "releasedate": 2022,
+    "titlekorean": "너의 눈을 들여다보면",
+    "titleenglish": "Small, Slow But Steady",
+    "director": "미야케 쇼",
+    "country": "일본",
+    "etc": ""
+  },
+  {
+    "id": 202601,
+    "releasedate": 1988,
     "titlekorean": "아키라",
-    "titleenglish": "Fin De Siecle",
-    "director": "",
-    "country": "",
-    "etc": "뮤지컬"
+    "titleenglish": "AKIRA",
+    "director": "오토모 카츠히로",
+    "country": "일본",
+    "etc": "애니메이션"
   },
   {
     "id": 202601,
     "releasedate": 1978,
     "titlekorean": "지미 블랙스미스",
     "titleenglish": "The Chant of Jimmy Blacksmith",
-    "director": "",
+    "director": "프레드 쉐피시",
     "country": "호주",
     "etc": ""
   },
   {
     "id": 202601,
-    "releasedate": 1999,
+    "releasedate": 2021,
     "titlekorean": "우연과 상상",
-    "titleenglish": "Fin De Siecle",
-    "director": "",
-    "country": "",
-    "etc": "뮤지컬"
+    "titleenglish": "Wheel of Fortune and Fantasy",
+    "director": "하마구치 류스케",
+    "country": "일본",
+    "etc": ""
   },
   {
     "id": 202601,
-    "releasedate": 1999,
+    "releasedate": 2013,
     "titlekorean": "마담 프루스트의 비밀정원",
-    "titleenglish": "Fin De Siecle",
-    "director": "",
-    "country": "",
-    "etc": "뮤지컬"
+    "titleenglish": "Attila Marcel",
+    "director": "실뱅 쇼메",
+    "country": "프랑스",
+    "etc": ""
   },
   {
     "id": 202512,
-    "releasedate": 1999,
+    "releasedate": 1994,
     "titlekorean": "독립시대",
-    "titleenglish": "Fin De Siecle",
+    "titleenglish": "A Confucian Confusion",
     "director": "에드워드 양",
     "country": "대만",
-    "etc": "뮤지컬"
-  },
-  {
-    "id": 202512,
-    "releasedate": 1999,
-    "titlekorean": "위대한 쇼맨",
-    "titleenglish": "Fin De Siecle",
-    "director": "",
-    "country": "",
-    "etc": "뮤지컬"
-  },
-  {
-    "id": 202512,
-    "releasedate": 1999,
-    "titlekorean": "덤보",
-    "titleenglish": "Fin De Siecle",
-    "director": "송능한",
-    "country": "한국",
     "etc": ""
+  },
+  {
+    "id": 202512,
+    "releasedate": 2017,
+    "titlekorean": "위대한 쇼맨",
+    "titleenglish": "The Greatest Showman",
+    "director": "마이클 그레이시",
+    "country": "미국",
+    "etc": "뮤지컬"
+  },
+  {
+    "id": 202512,
+    "releasedate": 1941,
+    "titlekorean": "덤보",
+    "titleenglish": "Dumbo",
+    "director": "송능한",
+    "country": "벤 샤프스틴, 노먼 퍼거슨 외",
+    "etc": "애니메이션, 월트디즈니"
   },
   {
     "id": 202511,

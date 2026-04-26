@@ -57,7 +57,7 @@ label {
   width: var(--checkbox-size);
   height: var(--checkbox-size);
   border: var(--border);
-  border-color: var(--color-border-stronger);
+  border-color: var(--color-border-strong);
   box-sizing: border-box;
   border-radius: var(--checkbox-radius);
   background: var(--color-background);

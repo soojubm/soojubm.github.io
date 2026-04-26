@@ -2,7 +2,7 @@
   margin: var(--space-1) 0;
   padding: var(--space-2) var(--space-4);
   border-radius: var(--radius);
-  background:var(--color-background-weak);
+  background:var(--color-background-subtle);
 }
 .accordion-title {
   display:flex;
@@ -20,4 +20,4 @@
 .faq-item-reaction {}
 .faq-item-reaction-title {margin:0 0 var(--space-2) 0;}
 .faq-item-reaction-button {margin:0 2rem;color:var(--color-foreground-light);}
-.faq-item-reaction-button-emoji {display:block;font-size:var(--font-size-huge);}
+.faq-item-reaction-button-emoji {display:block;font-size:var(--font-size-32);}

@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const colorTokens = [
   { name: '--gray0', value: '', cases: ['--color-background'] },
-  { name: '--gray100', value: '', cases: ['--color-background-weak'] },
+  { name: '--gray100', value: '', cases: ['--color-background-subtle'] },
   { name: '--gray200', value: '', cases: ['--color-border'] },
   { name: '--gray400', value: '', cases: ['--color-foreground-light'] },
   // { name: '--gray600', value: '' },
@@ -44,9 +44,9 @@ const colorTokens = [
 
 const typographyTokens = [
   { name: '--font-family', value: '"Quattrocento Sans", "Gothic A1", sans-serif' },
-  { name: '--font-size-huge', value: '2rem' },
-  { name: '--font-size-large', value: '1.125rem' },
-  { name: '--font-size-medium', value: '.875rem' },
+  { name: '--font-size-32', value: '2rem' },
+  { name: '--font-size-18', value: '1.125rem' },
+  { name: '--font-size-14', value: '.875rem' },
   { name: '--font-weight-normal', value: '400' },
   { name: '--font-weight-bold', value: '800' },
   { name: '--font-line-height', value: '1.4' },

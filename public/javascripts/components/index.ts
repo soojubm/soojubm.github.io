@@ -1,6 +1,17 @@
-import Tag from '../../components/tag/tag'
-
+// 이 코드는 “값을 가져오기 위한 import”가 아니라 “부작용(side-effect)을 실행시키기 위한 import”다.
+import '../../components/icon/icon'
 import Avatar from '../../components/avatar/avatar'
+import '../../components/button/button'
+import '../../components/tag/tag'
+
+// 👉 “이 파일은 module이다”라고 명시
+
+// 효과:
+
+// TS에서 global script로 처리되는 것 방지
+// side-effect entry 파일로 안정화
+export {}
+
 import Entity from '../../components/entity/entity'
 
 import Tile from '../../components/tile/tile'
@@ -10,7 +21,6 @@ import Checkbox from '../../components/checkbox/checkbox'
 import Switch from '../../components/switch/switch'
 import Radio from '../../components/radio/radio'
 
-import Button from '../../components/button/button'
 import Link from '../../components/link/link'
 import Text from '../../components/text/text'
 
@@ -63,13 +73,10 @@ export function defineCustomElement() {
 
     customElements.define('button-list-component', ButtonListComponent)
 
-    customElements.define('mm-button', Button)
     customElements.define('mm-icon-button', IconButton)
     customElements.define('mm-clear-button', ClearButton)
 
     customElements.define('mm-link', Link)
-
-    customElements.define('mm-tag', Tag)
 
     customElements.define('mm-entity', Entity)
 
@@ -119,10 +126,10 @@ export function defineCustomElement() {
 
     customElements.define('mm-title-with-description', TitleWithDescription)
 
-    customElements.define('mm-sheet', Sheet)
-    customElements.define('mm-sheet-header', SheetHeader)
-    customElements.define('mm-sheet-body', SheetBody)
-    customElements.define('mm-sheet-footer', SheetFooter)
+    // customElements.define('mm-sheet', Sheet)
+    // customElements.define('mm-sheet-header', SheetHeader)
+    // customElements.define('mm-sheet-body', SheetBody)
+    // customElements.define('mm-sheet-footer', SheetFooter)
   }
 }
 

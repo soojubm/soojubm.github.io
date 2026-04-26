@@ -25,14 +25,7 @@
         making it easier for users to interact, search, and differentiate elements. For additional
         guidance, refer to the component-specific guidelines."
   >
-    <div
-      style="
-        margin: 0 -1rem;
-        padding: 1rem;
-        background: var(--color-background-weak);
-        border-radius: var(--radius-large);
-      "
-    >
+    <div style="border-radius: var(--radius-large)">
       <mm-text-group>
         <mm-text variant="heading4">Primitives</mm-text>
       </mm-text-group>
@@ -128,7 +121,7 @@
     <mm-text variant="heading4">Background / Surface</mm-text>
     <div class="token-group">
       <article class="token-item" style="border: 0; background: var(--gray100)">
-        <b>--color-background-weak: var(--gray100);</b>
+        <b>--color-background-subtle: var(--gray100);</b>
       </article>
       <article class="token-item" style="border: 0; background: var(--gray800)">
         <b style="color: #fff">--color-background-strong: var(--gray800)</b>
@@ -214,9 +207,6 @@
       <div class="token-item">
         <b>--icon-size-medium: null;</b>
       </div>
-      <div class="token-item">
-        <b>--icon-size-medium: null;</b>
-      </div>
     </div>
     <mm-separator></mm-separator>
     <div class="token-group">
@@ -285,10 +275,7 @@
     </div>
   </mm-component-section>
 
-  <mm-component-section
-    title="Space"
-    description="요소 사이의 간격. 현재 섹션 레벨의 간격은 정의하고 있지 않음."
-  >
+  <mm-component-section title="Space" description="요소 사이의 간격.">
     <section class="token-group">
       <div class="token-item">
         <!-- <figure style="width: 100%; height: var(--space-05); border-radius: 0"></figure> -->
@@ -313,6 +300,12 @@
     <mm-separator></mm-separator>
     <section class="token-group">
       <div class="token-item">
+        <b>--space-button-group: var(--space-2)</b>
+      </div>
+    </section>
+    <mm-separator></mm-separator>
+    <section class="token-group">
+      <div class="token-item">
         <b>--space-page-grid-margin: 5vw</b>
       </div>
       <div class="token-item">
@@ -324,12 +317,10 @@
     </section>
   </mm-component-section>
 
-  <mm-component-section
-    title="Font"
-    description="활자의 위계와 배치. 정보 계층. 피그마에서 140% line-height를 주면 소숫점 반올림을 해서 표현해줌. 그런데 브라우저는 소수점
-        그대로 표현하기 때문에 안 맞는다. TODO. 고정값으로 표현. 기본 폰트에 따라 가변적인
-        line-height는 토큰화 어렵다."
-  >
+  <mm-component-section title="Font" description="활자의 위계와 배치. 정보 계층.">
+    <mm-text-list
+      texts='["2602 - 디자인 시스템이 성숙도에 진입함에 따라 line-height를 고정값으로 변경하고 토큰에서 제거. 컴포넌트에 종속되는 값으로만 정의"]'
+    ></mm-text-list>
     <button
       class="js-default-font"
       style="display: flex; align-items: center; gap: var(--space-2); margin: var(--space-3) 0"
@@ -343,14 +334,17 @@
       <div class="token-item">
         <b>--font-family: 'IBM Plex San', 'Gothic A1', sans-serif</b>
       </div>
+    </section>
+    <mm-separator></mm-separator>
+    <section class="token-group">
       <div class="token-item">
-        <b>--font-size-huge: 2rem</b>
+        <b>--font-size-32: 2rem</b>
       </div>
       <div class="token-item">
-        <b>--font-size-large: 1.125rem</b>
+        <b>--font-size-18: 1.125rem</b>
       </div>
-      <div class="token-item" style="background-color: var(--color-background-weak)">
-        <b>--font-size-medium: .875rem</b>
+      <div class="token-item" style="background-color: var(--color-background-subtle)">
+        <b>--font-size-14: .875rem</b>
       </div>
     </section>
     <mm-separator></mm-separator>
@@ -365,18 +359,10 @@
     <mm-separator></mm-separator>
     <section class="token-group">
       <div class="token-item">
-        <!-- :: heading, word. -->
-        <b>--font-line-height: 150% TODO</b>
+        <b>--font-letter-spacing-title: null;</b>
       </div>
       <div class="token-item">
-        <b>--font-line-height-large: 180% TODO</b>
-      </div>
-    </section>
-    <mm-separator></mm-separator>
-    <section class="token-group">
-      <div class="token-item">
-        <!-- :: heading, word. -->
-        <b>--font-letter-spacing-title: null TODO</b>
+        <b>--font-letter-spacing-body: null;</b>
       </div>
     </section>
 
@@ -660,8 +646,8 @@
     <ul class="checklist">
       <li>warning과 danger를 반드시 제공해야 하나. attention 하나로 할 수 없나.</li>
       <li>
-        color-icon와 color-text는 항상 동일한가요? TODO icon 등. - element, foreground, myChatBubble
-        에서 텍스트는 흰색이 기본이 됨.
+        color-icon와 color-text는 항상 동일한가요? myChatBubble 에서 텍스트는 foreground-color는
+        흰색이 된다
       </li>
       <li>
         color-text-disabled, color-input-disabled, color-button-disabled는 항상 같은 것은 아니다.
@@ -670,7 +656,6 @@
         elevation.surface / overay, raised, sunken // atlassian 동일한데 왜 나눠놨지. //
         elevation-surface/shadow
       </li>
-
       <li>폰트의 baseline이 달라서 텍스트의 상하 간격이 안 맞을 수 있다.</li>
       <li>
         그림자를 이용한 시각적 상승 효과로 주변 요소 대비 강조. 더 높은 우선순위 및 행동유도를 위한

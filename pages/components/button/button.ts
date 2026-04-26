@@ -1,20 +1,11 @@
-import footer from '/public/components/footer/footer.html'
-import navbar from '/public/components/navbar/navbar.html'
+import { renderLayout } from '../../../layouts/base-layouts'
 import main from './button.html'
 
-// import '/public/stylesheets/shared.css'
-import '/public/stylesheets/shared/webfonts.css'
-import '/public/stylesheets/shared/reset.css'
-import '/public/stylesheets/shared/keyframes.css'
-import '/public/stylesheets/shared/variables.css'
-
-import '/pages/components/components.css'
+document.addEventListener('DOMContentLoaded', () => {
+  document.body.innerHTML = renderLayout(main)
+})
 
 document.addEventListener('DOMContentLoaded', () => {
-  document.body.insertAdjacentHTML('beforeend', navbar)
-  document.body.insertAdjacentHTML('beforeend', main)
-  document.body.insertAdjacentHTML('beforeend', footer)
-
   // TODO: 반복해서 올렸을 때 filelist의 누적 또는 리셋
   // TODO: 동일한 파일의 업로드
   // 삭제했을 때 fileList에서 삭제

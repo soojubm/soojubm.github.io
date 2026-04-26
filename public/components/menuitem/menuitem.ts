@@ -7,7 +7,7 @@ class MenuItem extends HTMLElement {
 
     const container = document.createElement('a')
     container.setAttribute('href', this.href || '#')
-    container.setAttribute('target', '_blank')
+    // container.setAttribute('target', '_blank')
     container.classList.add('item')
     container.role = 'menuitem'
     if (this.alignment) container.dataset.alignment = this.alignment

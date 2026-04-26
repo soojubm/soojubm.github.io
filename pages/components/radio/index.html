@@ -60,15 +60,15 @@
     <mm-titlebar label="공개 대상 선택"></mm-titlebar>
     <br />
     <mm-group variant="menuitem">
-      <mm-list-row primaryText="전체공개" secondaryText="모든 Facebook 사용자">
-        <mm-radio slot="prefix"></mm-radio>
-        <mm-avatar slot="avatar" size="large" icon="earth"> </mm-avatar>
+      <mm-list-row icon="group" primaryText="전체공개" secondaryText="모든 Facebook 사용자">
+        <mm-radio slot="action"></mm-radio>
+        <mm-avatar slot="avatar" size="large" icon="group"> </mm-avatar>
       </mm-list-row>
       <mm-list-row icon="group" primaryText="친구만" secondaryText="회원님의 Facebook 친구">
-        <mm-radio slot="prefix"></mm-radio>
+        <mm-radio slot="action"></mm-radio>
       </mm-list-row>
       <mm-list-row icon="lock" primaryText="나만 보기" secondaryText="부끄러우니까 보지마요">
-        <mm-radio slot="prefix"></mm-radio>
+        <mm-radio slot="action"></mm-radio>
       </mm-list-row>
     </mm-group>
   </mm-component-section>

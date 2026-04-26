@@ -13,8 +13,8 @@
   border-top-left-radius: var(--radius);
   overflow:hidden;position:absolute;left:0;top:0;}
 .chat-avatar img {height:100%;}
-.chat-username {display:block;margin:0 0 var(--space-1) 0;font-size:var(--font-size-small);}
-.chat-time {margin:0 0 0 var(--space-1);color:var(--color-foreground-light);font-size:var(--font-size-small);color:var(--color-foreground-light);position:absolute;bottom:-1.5rem;}
+.chat-username {display:block;margin:0 0 var(--space-1) 0;font-size:var(--font-size-12);}
+.chat-time {margin:0 0 0 var(--space-1);color:var(--color-foreground-light);font-size:var(--font-size-12);color:var(--color-foreground-light);position:absolute;bottom:-1.5rem;}
 .chat-bubble {
   width:fit-content;
   max-width:calc(90% - var(--size-medium));
@@ -22,13 +22,12 @@
   /* border:var(--chat-bubble-border); */
   border-radius:1rem;
   border-top-left-radius:var(--radius);
-  background-color: var(--color-background-weak);
+  background-color: var(--color-background-subtle);
 }
 .chat-bubble.has-image {width:85%;padding:0;background:none;overflow:hidden;}
 .chat-bubble figure {}
 
 .chat-bubble p, .chat-bubble li {
-  line-height: var(--font-line-height);
 }
 
 .chat + .chat {margin-top:var(--space-4);}

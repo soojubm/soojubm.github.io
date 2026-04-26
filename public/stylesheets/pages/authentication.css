@@ -25,7 +25,5 @@ display: flex; flex-direction: column; gap: 0.75rem
 .login-social-naver {margin-bottom:8px;background:#3bcc15;}
 .login-social-kakao {float:left;width:49%;color:var(--gray0);margin-right:2%;background:#f9df34;}
 
-.signup-terms-content {height:120px;padding:8px 16px;border:var(--border);border-radius:var(--radius);box-sizing:border-box;font-size:var(--font-size-small);overflow-y:scroll;}
-
 /* // .password-submit {float:left;width:200px;max-width:50%;}
 // .password-link {float:right;margin-top:16px;} */

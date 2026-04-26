@@ -94,6 +94,21 @@ class ListRow extends HTMLElement {
     if (oldValue !== newValue) this.render()
   }
 
+  private updateAvatar() {
+    const size = this.getAttribute('size') ?? 'medium'
+    const icon = this.getAttribute('icon')
+    const variant = this.getAttribute('avatar-variant') ?? 'tertiary'
+
+    this.fallbackAvatar.setAttribute('size', size)
+    this.fallbackAvatar.setAttribute('variant', variant)
+
+    if (icon) {
+      this.fallbackAvatar.setAttribute('icon', icon)
+    } else {
+      this.fallbackAvatar.removeAttribute('icon')
+    }
+  }
+
   private render() {
     const primaryAttr = this.getAttribute('primarytext')
     this.primaryEl.textContent = primaryAttr || ''
@@ -107,14 +122,7 @@ class ListRow extends HTMLElement {
       this.secondaryEl.style.display = 'none'
     }
 
-    const size = this.getAttribute('size') || 'medium'
-    this.fallbackAvatar.setAttribute('size', size)
-
-    const iconAttr = this.getAttribute('icon') || ''
-    this.fallbackAvatar.setAttribute('name', iconAttr)
-
-    const avatarVariant = this.getAttribute('avatar-variant') || 'tertiary'
-    this.fallbackAvatar.setAttribute('variant', avatarVariant)
+    this.updateAvatar()
   }
 }
 

@@ -6,9 +6,18 @@ export const DARKTHEME_SELECTOR = '.js-darkmode'
 const savedTheme = localStorage.getItem('theme')
 
 // TODO getSavedTheme
-export const isDarkTheme = () => localStorage.getItem('theme') === exports.DARK_THEME_CLASS
+// export const isDarkTheme = () => localStorage.getItem('theme') === DARK_THEME_CLASS
+export const getSavedTheme = () => {
+  const saved = localStorage.getItem('theme')
 
-// export const isDarkTheme = window.matchMedia &&
+  if (saved) return saved
+
+  return window.matchMedia('(prefers-color-scheme: dark)').matches
+    ? DARK_THEME_CLASS
+    : LIGHT_THEME_CLASS
+}
+
+export const isDarkTheme = () => getSavedTheme() === DARK_THEME_CLASS // export const isDarkTheme = window.matchMedia &&
 //   window.matchMedia('(prefers-color-scheme: dark)').matches;
 
 // function usePrefersDarkMode() {

@@ -70,7 +70,7 @@ class Feature extends HTMLElement {
     // avatar
     this.avatar = document.createElement('mm-avatar')
     this.avatar.setAttribute('variant', 'secondary')
-    this.avatar.setAttribute('size', 'medium')
+    this.avatar.setAttribute('size', 'large')
 
     this.iconEl = document.createElement('mm-icon')
     this.iconEl.setAttribute('size', 'large')

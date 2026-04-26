@@ -1,6 +1,6 @@
 [role=tablist] {
   --tablist-border: null;
-  --tablist-background: var(--color-background-weak);
+  --tablist-background: var(--color-background-subtle);
 
   --tab-radius: var(--radius);
   --tab-border: var(--border);
@@ -57,13 +57,9 @@ button {
   color:var(--color-foreground);
 }
 
-.tab-label {padding:0 0 var(--adjust-label-line) 0;}
+.tab-label {padding:0 0 0 0;}
 
 .tablist-indicator {display:block;height:calc(100% - .5rem);background:var(--color-background);box-shadow:var(--shadow);border-color:var(--color-background-strong);border-radius:var(--radius);position:absolute;transition:all var(--duration);}
 .tablist-tab:nth-child(1)[aria-selected=true] ~ .tablist-indicator {transform: translateX(clac(70px * 1))}
 
 .profile-display {display:flex;margin:0 0 var(--space-3) 0;}
-.profile-display-title {margin:0 0 var(--space-1) 0;font-size:var(--font-size-small);}
-.profile-display-button {background:none;}
-.profile-display-button.is-selected {background:var(--color-background-weak);}
-.profile-display-button i {vertical-align:middle;}

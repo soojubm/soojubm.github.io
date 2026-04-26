@@ -18,7 +18,7 @@ em, i  {
   --button-padding-block: 0;
   --button-padding-inline: var(--space-4);
 
-  --button-color: var(--color-background-weak);
+  --button-color: var(--color-background-subtle);
 
   --button-border: 1px solid var(--button-color);
   --button-radius: var(--radius);
@@ -198,7 +198,7 @@ em, i  {
 /* sizes */
 .button[data-size=huge] {
   --button-size: 64px;
-  --button-text-size: var(--font-size-large);
+  --button-text-size: var(--font-size-18);
   padding-bottom: 5px;
 }
 
@@ -241,7 +241,7 @@ em, i  {
 
 /* :host {
   --chip-color-border: 0;
-  --chip-color-background: var(--color-background-weak);
+  --chip-color-background: var(--color-background-subtle);
   --chip-color-text: var(--color-foreground);
   --chip-radius: var(--radius);
   --chip-border-color: transparent;

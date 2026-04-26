@@ -47,7 +47,7 @@ a {
     /* // z-idnex 이슈 */
     content:'';
     display:block;
-    background-color:var(--color-background-weak);
+    background-color:var(--color-background-subtle);
     border-radius:var(--radius);
     position:absolute;
     left:var(--hover-outline);right:var(--hover-outline);top:var(--hover-outline);bottom:var(--hover-outline);

@@ -4,6 +4,7 @@
 // import detectOnline from './public/javascripts/common'
 // import input from './public/javascripts/input/index'
 // import routePage from './public/javascripts/router'
+
 import { stopAnimation } from './public/javascripts/utils/optimizationUtils'
 
 import { detectLoad, lockBodyElement, unlockBodyElement } from './public/javascripts/load'
@@ -28,6 +29,7 @@ import { getWindowScrollTop, getElementOffsetTop } from './public/javascripts/ut
 // import { fetchPage } from './public/javascripts/router'
 
 // document.addEventListener('DOMContentLoaded', lockBodyElement)
+
 document.addEventListener('DOMContentLoaded', defineCustomElement)
 
 // TODO 윈도우에서 폰트

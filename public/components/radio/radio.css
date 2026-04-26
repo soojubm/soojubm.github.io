@@ -3,7 +3,7 @@
 
 .radio {
   --radio-size: var(--size-tiny);
-  --radio-color: var(--color-border-stronger);
+  --radio-color: var(--color-border-strong);
   --radio-border: 1px solid var(--radio-color);
   --radio-radius: 50%;
   --radio-inset: var(--space-2);

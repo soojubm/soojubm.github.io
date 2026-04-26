@@ -76,7 +76,7 @@ input[type=search]::-webkit-search-results-decoration {display:none;}
   --textfield-border-width: null; 
 
   --textfield-height: var(--size-large);
-  --textfield-background-color: var(--color-background-weak);
+  --textfield-background-color: var(--color-background-subtle);
   --textfield-border: var(--border);
   --textfield-radius: var(--radius);
   --textfield-text-color: 0;
@@ -150,7 +150,6 @@ textarea.textfield-input {
 }
 
 ::slotted([slot=link]) {
-  font-size:var(--font-size-small);
   position:absolute;right:0;top:0;
 }
 
@@ -182,7 +181,7 @@ textarea.textfield-input {
   padding:var(--space-2) var(--size-large);
   border: 0;
   border-radius: var(--radius);
-  background: var(--color-background-weak);
+  background: var(--color-background-subtle);
   overflow: hidden;
   /* font-size: inherit; */
   font: inherit;

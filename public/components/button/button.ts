@@ -86,6 +86,10 @@ class Button extends HTMLElement {
   //   } else {
 }
 
+if (!customElements.get('mm-button')) {
+  customElements.define('mm-button', Button)
+}
+
 export default Button
 
 // if (this.isfullwidth) {

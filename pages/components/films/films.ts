@@ -51,7 +51,7 @@ function displayFilms(data) {
       `
       <article style="min-width:100px;border:var(--border);padding:var(--space-3);border-radius:12px;position:relative">
         <div style="display:flex;justify-content:space-between;gap:1rem;">
-          <time style="font-size:var(--font-size-small);">${item.releasedate}</time>
+          <time style="font-size:var(--font-size-12);">${item.releasedate}</time>
           <small>${item.country}</small>
         </div>
         <p style="margin:var(--space-1) 0 0 0"><b>${item.titlekorean}</b></p>

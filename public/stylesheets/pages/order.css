@@ -7,5 +7,3 @@
 .order-item {}
 .order-item-head {display: flex; align-items: center; line-height: 24px}
 .order-item-head-type {width: var(--size-large); justify-content: center}
-.order-item-head-time {margin-left: var(--space-2); color: var(--color-foreground-light); font-size: var(--font-size-small)}
-.order-item-head-status {margin-left: auto; font-size: var(--font-size-small);}
