@@ -3,7 +3,11 @@
     "allow": [
       "Bash(rm pages/components/card/*.ts)",
       "Bash(git add *)",
-      "Bash(git commit -m 'pages/components/card: 빈 파일들 삭제 *)"
+      "Bash(git commit -m 'pages/components/card: 빈 파일들 삭제 *)",
+      "Bash(awk '{print $2}')",
+      "Bash(xargs kill *)",
+      "Read(//Users/soojubm/Documents/GitHub/soojubm.github.io/**)",
+      "Bash(timeout 5 npm run dev)"
     ]
   }
 }
