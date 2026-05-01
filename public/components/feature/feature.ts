@@ -1,5 +1,6 @@
 import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { featureStyles } from './feature.styles'
 
 @customElement('mm-feature')
 class Feature extends LitElement {
@@ -7,6 +8,8 @@ class Feature extends LitElement {
   @property({ type: String, attribute: 'titletext' }) titleText = ''
   @property({ type: String }) description = ''
   @property({ type: String }) variant = ''
+
+  static styles = [featureStyles]
 
   private iconMap: Record<string, string> = {
     interactive: 'cursor-pointer',
@@ -21,7 +24,6 @@ class Feature extends LitElement {
   render() {
     const iconName = this.iconMap[this.icon] ?? this.icon
     return html`
-      <link rel="stylesheet" href="/public/components/feature/feature.css" />
       <div class="feature-item" data-variant="${this.variant}">
         <mm-avatar variant="secondary" size="large">
           <mm-icon size="large" name="${iconName}"></mm-icon>

@@ -1,5 +1,6 @@
 import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { checkboxStyles } from './checkbox.styles'
 
 @customElement('mm-checkbox')
 class Checkbox extends LitElement {
@@ -10,6 +11,8 @@ class Checkbox extends LitElement {
   @property({ type: Boolean, reflect: true }) checked = false
   @property({ type: Boolean, reflect: true }) disabled = false
 
+  static styles = [checkboxStyles]
+
   private _onChange(event: Event) {
     const target = event.target as HTMLInputElement
     this.checked = target.checked
@@ -18,7 +21,6 @@ class Checkbox extends LitElement {
 
   render() {
     return html`
-      <link rel="stylesheet" href="/public/components/checkbox/checkbox.css" />
       <div class="checkbox" data-size="${this.size}">
         <input
           type="checkbox"

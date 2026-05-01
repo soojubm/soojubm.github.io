@@ -1,5 +1,6 @@
 import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { keyvalueStyles } from './keyvalue.styles'
 
 @customElement('mm-keyvalue')
 class Keyvalue extends LitElement {
@@ -8,9 +9,10 @@ class Keyvalue extends LitElement {
   @property({ type: String }) size = ''
   @property({ type: String }) alignment = ''
 
+  static styles = [keyvalueStyles]
+
   render() {
     return html`
-      <link rel="stylesheet" href="/public/components/keyvalue/keyvalue.css" />
       <div class="summary-item" data-size="${this.size}" data-alignment="${this.alignment}">
         <mm-text variant="label">${this.key}</mm-text>
         <mm-text variant="${this.size === 'large' ? 'subhead' : 'heading4'}">${this.value}</mm-text>

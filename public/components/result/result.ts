@@ -1,5 +1,6 @@
 import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { resultStyles } from './result.styles'
 
 @customElement('mm-result')
 class Result extends LitElement {
@@ -7,9 +8,10 @@ class Result extends LitElement {
   @property({ type: String }) title = ''
   @property({ type: String }) description = ''
 
+  static styles = [resultStyles]
+
   render() {
     return html`
-      <link rel="stylesheet" href="/public/components/result/result.css" />
       <div role="status" class="result">
         <mm-avatar size="huge" variant="secondary" icon="${this.avatarIcon}"></mm-avatar>
         <mm-title-with-description
