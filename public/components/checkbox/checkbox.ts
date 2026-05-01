@@ -1,95 +1,42 @@
-import { makeStyleSheet } from '../../javascripts/components/utils'
+import { LitElement, html } from 'lit'
+import { customElement, property } from 'lit/decorators.js'
 
-export class CustomHTMLElement extends HTMLElement {
-  constructor() {
-    super()
-  }
-}
+@customElement('mm-checkbox')
+class Checkbox extends LitElement {
+  @property({ type: String }) name = ''
+  @property({ type: String }) size = ''
+  @property({ type: String }) helper = ''
+  @property({ type: String }) value = ''
+  @property({ type: Boolean, reflect: true }) checked = false
+  @property({ type: Boolean, reflect: true }) disabled = false
 
-class Checkbox extends CustomHTMLElement {
-  // static formAssociated = true
-  // static get observedAttributes() {
-  //   return ['checked', 'disabled']
-  // }
-
-  constructor() {
-    super()
-    const shadow = this.attachShadow({ mode: 'open' })
-
-    const container = document.createElement('div')
-    container.classList.add('checkbox')
-    if (this.size) container.setAttribute('data-size', this.size)
-
-    const label = document.createElement('label')
-    label.setAttribute('for', this.name || '')
-
-    const indicator = document.createElement('span')
-    indicator.classList.add('checkbox-indicator')
-    label.appendChild(indicator)
-
-    const text = document.createElement('mm-text')
-    label.appendChild(text)
-    text.setAttribute('variant', 'body')
-    text.textContent = this.textContent || ''
-
-    // const slot = document.createElement('slot')
-    // label.appendChild(slot)
-
-    const input = document.createElement('input')
-    input.setAttribute('type', 'checkbox')
-    input.setAttribute('id', this.name || '')
-    input.setAttribute('name', this.name || '')
-    if (this.checked) input.setAttribute('checked', 'true')
-    if (this.disabled) input.setAttribute('disabled', 'true')
-
-    shadow.append(container, makeStyleSheet('checkbox'))
-    container.appendChild(input)
-
-    // if (this.textContent && this.textContent.length > 0) {
-    container.appendChild(label)
-    // }
-
-    if (this.helper) {
-      const helper = document.createElement('p')
-      helper.textContent = this.helper
-      container.appendChild(helper)
-    }
-
-    // 임시
-    // shadow.appendChild(makeStyleSheet('checkbox'))
-
-    // input.addEventListener('change', () => {
-    //   // 타겟이 check all 일 때
-    //   if (this.disabled) return
-    // })
+  private _onChange(event: Event) {
+    const target = event.target as HTMLInputElement
+    this.checked = target.checked
+    this.dispatchEvent(new Event('change', { bubbles: true, composed: true }))
   }
 
-  get name() {
-    return this.getAttribute('name')
+  render() {
+    return html`
+      <link rel="stylesheet" href="/public/components/checkbox/checkbox.css" />
+      <div class="checkbox" data-size="${this.size}">
+        <input
+          type="checkbox"
+          id="${this.name}"
+          name="${this.name}"
+          value="${this.value}"
+          ?checked="${this.checked}"
+          ?disabled="${this.disabled}"
+          @change="${this._onChange}"
+        />
+        <label for="${this.name}">
+          <span class="checkbox-indicator"></span>
+          <mm-text variant="body"><slot></slot></mm-text>
+        </label>
+        ${this.helper ? html`<p>${this.helper}</p>` : ''}
+      </div>
+    `
   }
-
-  get size() {
-    return this.getAttribute('size')
-  }
-
-  get helper() {
-    return this.getAttribute('helper')
-  }
-
-  get value() {
-    return this.getAttribute('value')
-  }
-
-  get checked() {
-    return this.hasAttribute('checked')
-  }
-
-  get disabled() {
-    return this.hasAttribute('disabled')
-  }
-
-  connectedCallback() {}
-  disconnectedCallback() {}
 }
 
 export default Checkbox

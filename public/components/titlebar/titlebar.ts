@@ -1,63 +1,25 @@
-import { makeStyleSheet } from '../../javascripts/components/utils'
+import { LitElement, html } from 'lit'
+import { customElement, property } from 'lit/decorators.js'
+import { titlebarStyles } from './titlebar.styles'
 
-class TitleBar extends HTMLElement {
-  static get observedAttributes() {
-    return ['variant']
-  }
+@customElement('mm-titlebar')
+class TitleBar extends LitElement {
+  @property({ type: String }) variant = ''
+  @property({ type: String }) label = ''
+  @property({ type: Boolean, attribute: 'hiddenBack' }) hiddenBack = false
 
-  constructor() {
-    super()
-    const shadow = this.attachShadow({ mode: 'open' })
+  static styles = [titlebarStyles]
 
-    const container = document.createElement('header')
-    container.role = 'navigation'
-    container.classList.add('titlebar')
-
-    const title = document.createElement('mm-text')
-    title.setAttribute('variant', 'subhead')
-    title.innerText = this.label || ''
-
-    // if(this.variant === 'back') {
-    // }
-    const backButton = document.createElement('mm-icon-button')
-    backButton.setAttribute('variant', 'navigator')
-    backButton.setAttribute('icon', 'arrow-left')
-    if (!this.hiddenBack) container.append(backButton)
-
-    // if (!back.ariaLabel) back.ariaLabel = '이전 페이지로'
-    // ariaLabel 때문에 쉐도우돔을 그리지 못 함.
-
-    const actionSlot = document.createElement('slot')
-    actionSlot.name = 'action'
-
-    shadow.append(container, makeStyleSheet('titlebar'))
-    container.append(title, actionSlot)
-  }
-
-  // get hasBack() {
-  //   return this.getAttribute('hasBack')
-  // }
-
-  get variant() {
-    return this.getAttribute('variant')
-  }
-
-  get hiddenBack() {
-    return this.hasAttribute('hiddenBack')
-  }
-
-  get label() {
-    return this.getAttribute('label')
-  }
-
-  connectedCallback() {}
-  disconnectedCallback() {}
-  attributeChangedCallback(name, oldValue, newValue) {
-    // const backButton = this.shadowRoot?.querySelector('mm-icon-button button')
-    // if (backButton) {
-    //   backButton.setAttribute('variant', newValue)
-    // }
-    // this.shadowRoot?.querySelector('mm-icon-button')?.setAttribute('variant', newValue)
+  render() {
+    return html`
+      <header role="navigation" class="titlebar" data-variant="${this.variant}">
+        ${!this.hiddenBack
+          ? html`<mm-icon-button variant="navigator" icon="arrow-left"></mm-icon-button>`
+          : ''}
+        <mm-text variant="subhead" class="titlebar-title">${this.label}</mm-text>
+        <slot name="action"></slot>
+      </header>
+    `
   }
 }
 

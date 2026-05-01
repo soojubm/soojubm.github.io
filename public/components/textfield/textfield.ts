@@ -1,24 +1,55 @@
-import Input from './input'
+import { LitElement, html } from 'lit'
+import { customElement, property } from 'lit/decorators.js'
+import { textfieldStyles } from './textfield.styles'
 
-class Textfield extends Input {
-  constructor() {
-    super()
-  }
+@customElement('mm-textfield')
+class Textfield extends LitElement {
+  @property({ type: String }) type = 'text'
+  @property({ type: String }) value = ''
+  @property({ type: String }) name = ''
+  @property({ type: String }) placeholder = ''
+  @property({ type: String }) label = ''
+  @property({ type: String }) helper = ''
+  @property({ type: Boolean, attribute: 'isOptional' }) isOptional = false
+  @property({ type: Boolean, attribute: 'hiddenLabel' }) hiddenLabel = false
+  @property({ type: Boolean, reflect: true }) disabled = false
+  @property({ type: Boolean, attribute: 'aria-invalid' }) isInvalid = false
 
-  static get observedAttributes() {
-    return [...Input.observedAttributes]
-  }
+  static styles = [textfieldStyles]
 
-  connectedCallback() {
-    // 부모 클래스의 connectedCallback 호출
-    super.connectedCallback() // 부모 클래스에서 처리하는 렌더링을 수행
+  render() {
+    return html`
+      <div
+        class="textfield ${this.isInvalid ? 'is-invalid' : ''}"
+        data-label="${String(this.hiddenLabel)}"
+      >
+        ${this.label
+          ? html`
+              <label class="textfield-label">
+                ${this.label}
+                ${this.isOptional ? html`<small>선택입력</small>` : ''}
+              </label>
+            `
+          : ''}
 
-    // Textfield에서 추가로 필요한 처리 (옵션)
-    // 예: 추가적인 DOM 요소 삽입, 클래스 추가 등
-  }
+        <slot name="prefix"></slot>
 
-  disconnectedCallback() {
-    console.log('disconnected', this)
+        <input
+          class="reset-input textfield-input"
+          type="${this.type}"
+          .value="${this.value}"
+          name="${this.name}"
+          placeholder="${this.placeholder}"
+          ?disabled="${this.disabled}"
+          aria-invalid="${this.isInvalid ? 'true' : 'false'}"
+        />
+
+        <slot name="suffix"></slot>
+        <slot name="link"></slot>
+
+        ${this.helper ? html`<p class="textfield-helper">${this.helper}</p>` : ''}
+      </div>
+    `
   }
 }
 

@@ -1,79 +1,39 @@
-import { makeStyleSheet } from '../../javascripts/components/utils'
+import { LitElement, html } from 'lit'
+import { customElement, property } from 'lit/decorators.js'
+import { avatarStyles } from './avatar.styles'
 
-class Avatar extends HTMLElement {
-  constructor() {
-    super()
-    this.attachShadow({ mode: 'open' })
-  }
+@customElement('mm-avatar')
+class Avatar extends LitElement {
+  @property({ type: String }) variant = 'primary'
+  @property({ type: String }) size = 'medium'
+  @property({ type: String }) src = ''
+  @property({ type: String }) icon = ''
+  @property({ type: String, attribute: 'badge-label' }) badgeLabel = ''
 
-  connectedCallback() {
-    const shadow = this.shadowRoot!
+  static styles = [avatarStyles]
 
-    // 이미 렌더링 되어 있으면 중복 생성 방지. 왜 여기서만?
-    if (shadow.querySelector('.avatar')) return
+  render() {
+    const isLargeIcon = this.size === 'large' || this.size === 'huge'
+    const iconSize = isLargeIcon ? 'large' : 'medium'
+    const hasSlottedText = Boolean(this.textContent?.trim())
 
-    const container = document.createElement('figure')
-    container.classList.add('avatar')
-    container.setAttribute('part', 'avatar') // feature에서 라인 스타일 위해 임시
-    container.role = 'img'
-    container.dataset.size = this.size
-    container.dataset.variant = this.variant
-    container.ariaLabel = this.ariaLabel
-    container.innerHTML = this.innerHTML
-
-    if (this.badgeLabel) {
-      const badge = document.createElement('mm-tag')
-      badge.setAttribute('variant', 'primary')
-      badge.textContent = this.badgeLabel
-      container.appendChild(badge)
-    }
-
-    if (this.icon) {
-      const icon = document.createElement('mm-icon')
-      const isLargeIcon = this.size === 'large' || this.size === 'huge'
-      icon.setAttribute('name', this.icon)
-      icon.setAttribute('size', isLargeIcon ? 'large' : 'medium')
-      container.appendChild(icon)
-    }
-
-    // if (!this.src && !this.icon && this.childNodes.length) {
-    if (!this.src && !this.icon && !this.childNodes.length) {
-      const iconElement = document.createElement('mm-icon')
-      const isLargeIcon = this.size === 'large' || this.size === 'huge'
-      iconElement.setAttribute('name', 'people-tag')
-      iconElement.setAttribute('size', isLargeIcon ? 'large' : 'medium')
-      container.appendChild(iconElement)
-    }
-
-    const style = this.getAttribute('style')
-    if (style) container.setAttribute('style', style)
-
-    shadow.append(container, makeStyleSheet('avatar'))
-    if (this.src) {
-      const image = document.createElement('img')
-      image.setAttribute('src', this.src)
-      container.appendChild(image)
-    }
-  }
-
-  get variant() {
-    return this.getAttribute('variant') ?? 'primary'
-  }
-
-  get size() {
-    return this.getAttribute('size') ?? 'medium'
-  }
-
-  get src() {
-    return this.getAttribute('src')
-  }
-
-  get icon() {
-    return this.getAttribute('icon')
-  }
-
-  get badgeLabel() {
-    return this.getAttribute('badge-label')
+    return html`
+      <figure
+        class="avatar"
+        part="avatar"
+        role="img"
+        data-size="${this.size}"
+        data-variant="${this.variant}"
+        aria-label="${this.ariaLabel || ''}"
+      >
+        ${this.src ? html`<img src="${this.src}" alt="${this.ariaLabel || 'avatar'}" />` : ''}
+        ${this.icon ? html`<mm-icon name="${this.icon}" size="${iconSize}"></mm-icon>` : ''}
+        ${!this.src && !this.icon && !hasSlottedText
+          ? html`<mm-icon name="people-tag" size="${iconSize}"></mm-icon>`
+          : html`<slot></slot>`}
+        ${this.badgeLabel ? html`<mm-tag variant="primary">${this.badgeLabel}</mm-tag>` : ''}
+      </figure>
+    `
   }
 }
 

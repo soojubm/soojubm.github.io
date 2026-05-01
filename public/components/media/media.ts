@@ -1,40 +1,22 @@
-import { makeStyleSheet, setSlotElement } from '../../javascripts/components/utils'
+import { LitElement, html } from 'lit'
+import { customElement, property } from 'lit/decorators.js'
+import { mediaStyles } from './media.styles'
 
-class Media extends HTMLElement {
-  constructor() {
-    super()
-    const shadow = this.attachShadow({ mode: 'open' })
+@customElement('mm-media')
+class Media extends LitElement {
+  @property({ type: String }) size = ''
+  @property({ type: String }) src = ''
+  @property({ type: String }) alt = ''
 
-    const container = document.createElement('div')
-    container.classList.add('media')
+  static styles = [mediaStyles]
 
-    const image = document.createElement('img')
-    if (this.src) image.src = this.src
-    if (this.alt) image.alt = this.alt
-
-    shadow.appendChild(container)
-
-    const style = this.getAttribute('style')
-    container.setAttribute('style', style || '')
-
-    container.appendChild(makeStyleSheet('media'))
-    container.appendChild(image)
+  render() {
+    return html`
+      <div class="media" data-size="${this.size}">
+        <img src="${this.src}" alt="${this.alt}" />
+      </div>
+    `
   }
-
-  get size() {
-    return this.getAttribute('size')
-  }
-
-  get src() {
-    return this.getAttribute('src')
-  }
-
-  get alt() {
-    return this.getAttribute('alt')
-  }
-
-  connectedCallback() {}
-  disconnectedCallback() {}
 }
 
 export default Media

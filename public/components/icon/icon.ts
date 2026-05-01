@@ -1,49 +1,30 @@
-import { importStyle, makeStyleSheet } from '../../javascripts/components/utils'
+import { LitElement, html } from 'lit'
+import { customElement, property } from 'lit/decorators.js'
+import { iconStyles } from './icon.styles'
 
-// 동적으로 생성할 때, 다른 커스텀 엘리먼트에서.connectedCallback 에 넣으면 됨.
+@customElement('mm-icon')
+class Icon extends LitElement {
+  @property({ type: String }) name = ''
+  @property({ type: String }) size = ''
+  @property({ type: String }) color = ''
 
-class Icon extends HTMLElement {
-  constructor() {
-    super()
+  static styles = [iconStyles]
+
+  render() {
+    const iconClassName = this.name ? `iconoir-${this.name}` : ''
+
+    return html`
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css"
+      />
+      <i
+        class="icon ${iconClassName}"
+        data-size="${this.size}"
+        style="${this.color ? `color: ${this.color}` : ''}"
+      ></i>
+    `
   }
-
-  connectedCallback() {
-    if (this.shadowRoot) return
-
-    const ICON_CLASSNAME = `iconoir-${this.name}`
-
-    const shadow = this.attachShadow({ mode: 'open' })
-
-    const container = document.createElement('i')
-    // container.role = 'img'
-    container.classList.add('icon', ICON_CLASSNAME)
-    if (this.size) container.dataset.size = this.size
-    if (this.color) container.style.color = this.color
-
-    const pretty = document.createElement('link')
-    pretty.href = 'https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css'
-    pretty.rel = 'stylesheet'
-
-    shadow.append(makeStyleSheet('icon'), pretty, container)
-  }
-  disconnectedCallback() {}
-
-  get name() {
-    return this.getAttribute('name')
-  }
-
-  get size() {
-    return this.getAttribute('size')
-  }
-
-  get color() {
-    return this.getAttribute('color')
-  }
-  // set size(value) {
-  //   // TODO TS2339: Property 'dataset' does not exist on type 'ChildNode'
-  //   const node = this.shadowRoot!.lastChild as HTMLElement
-  //   if (value) node.dataset.size = value
-  // }
 }
 
 export default Icon

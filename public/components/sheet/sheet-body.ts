@@ -1,32 +1,16 @@
-class SheetBody extends HTMLElement {
-  constructor() {
-    super()
-    const shadow = this.attachShadow({ mode: 'open' })
+import { LitElement, css, html } from 'lit'
+import { customElement } from 'lit/decorators.js'
 
-    const style = document.createElement('style')
-    style.textContent = `
-      :host {
-        display: block;
-        flex: 1 1 auto;
-        min-height: 0;
-        overflow-y: auto;
-        box-sizing: border-box;
-      }
-      .content {
-        padding: 1rem 0;
-        box-sizing: border-box;
-      }
-    `
-    const container = document.createElement('div')
-    container.className = 'content'
-    const slot = document.createElement('slot')
-    container.appendChild(slot)
+@customElement('mm-sheet-body')
+class SheetBody extends LitElement {
+  static styles = css`
+    :host { display: block; flex: 1 1 auto; min-height: 0; overflow-y: auto; box-sizing: border-box; }
+    .content { padding: 1rem 0; box-sizing: border-box; }
+  `
 
-    shadow.appendChild(style)
-    shadow.appendChild(container)
+  render() {
+    return html`<div class="content"><slot></slot></div>`
   }
 }
-
-customElements.define('mm-sheet-body', SheetBody)
 
 export default SheetBody

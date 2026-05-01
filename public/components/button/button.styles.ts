@@ -1,0 +1,334 @@
+import { css } from 'lit'
+
+export const buttonStyles = css`
+  /* reset */
+  button {
+    padding: 0;
+    border: 0;
+    font-family: var(--font-family);
+    font-size: inherit;
+  }
+  em,
+  i {
+    font-style: normal;
+  }
+
+  /* host에서 정의하면 커스텀 엘리먼트가 아닐 .class로 사용할 때 못 가져온다. */
+  :host {
+    --button-min-width: 5rem;
+
+    --button-size: var(--size-medium); // button-height
+
+    --button-padding-block: 0;
+    --button-padding-inline: var(--space-4);
+
+    --button-color: var(--color-background-subtle);
+
+    --button-border: 1px solid var(--button-color);
+    --button-radius: var(--radius);
+
+    /* CONTAINER */
+    /* 토큰의 카테고리로 네이밍되어 있네. */
+    --button-container-height: null;
+    --button-container-shape: null; // radius
+    --button-container-elevation: null; //
+    --button-container-shadow-color: null;
+    --button-container-color: null; // background가 아님
+
+    /* TEXT */
+    --button-text-color: 0;
+    --button-text-size: inherit;
+    --button-text-weight: var(--font-weight-bold);
+
+    /* MD3 */
+    /* --button-container-height */
+    /* --button-label-size  */
+
+    --button-focus-border-color: null;
+
+    /* button-text-size 토큰이 없는 이유. 테마에 대응하기 위해 필요한 게 아님. */
+    /*
+  --button-color-background
+  --button-color-border
+  --button-color-text
+  --button-space-inset
+  --button-size-height
+  --button-size-min-width
+  */
+  }
+
+  :host(.primary) {
+  }
+  /* 이렇게 하면 일단 프로젝트에 어려움. */
+  /* :host([variant="primary"]) .button {
+  --button-color: var(--color-primary);
+  --button-text-color: var(--gray0);
+} */
+
+  /* IconButton */
+  .icon-button {
+    /* // reset */
+    font-family: inherit;
+    font-family: var(--font-family);
+    font-size: inherit;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--button-size);
+    height: var(--button-size);
+    border-radius: var(--button-radius);
+    background: var(--button-color);
+    color: var(--button-text-color);
+
+    cursor: pointer;
+    /* 왜 커서 넣어야 되지? */
+
+    &[data-variant='primary'] {
+      background-color: var(--color-primary);
+      --button-text-color: #fff;
+    }
+
+    &[data-variant='plain'] {
+      background-color: transparent;
+      border: none;
+    }
+
+    &[data-variant='navigator'] {
+      border: var(--border);
+      border-radius: 50%;
+      box-shadow: var(--shadow);
+      background-color: var(--color-background);
+    }
+    &[data-variant='clear'] {
+      --button-size: var(--size-small);
+      border: var(--border);
+      border-radius: 50%;
+      box-shadow: var(--shadow);
+      background-color: var(--color-background);
+    }
+
+    &[data-size='small'] {
+      --button-size: var(--size-small);
+    }
+
+    /* 버튼과 아이콘 버튼의 상태 동일 */
+    /* TODO pending */
+    &:hover {
+      /* box-shadow: var(--status-hover); */
+      /* TODO */
+      /* 통일 */
+      border-color: var(--color-background-strong);
+    }
+    &:focus {
+      outline: 3px solid #007185;
+      outline-offset: 2px;
+    }
+    &:active {
+      background: #f0b800;
+      border-color: #008296;
+      box-shadow: 0 0 0 3px #c8f3fa, inset 0 0 0 2px #fff;
+    }
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    &:disabled:hover {
+      box-shadow: none;
+    }
+    &:disabled:focus {
+      outline: none;
+    }
+    &:disabled:active {
+      background: var(--button-color);
+      border-color: var(--button-color);
+      box-shadow: none;
+    }
+  }
+
+  .button {
+    /* // reset */
+    font-family: inherit;
+    font-family: var(--font-family);
+    font-size: inherit;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    height: var(--button-size);
+    padding: 0 var(--button-padding-inline);
+    border: var(--button-border);
+    border-radius: var(--button-radius);
+    box-sizing: border-box;
+    background: var(--button-color);
+
+    font-size: var(--button-text-size);
+    font-weight: var(--button-text-weight);
+    color: var(--button-text-color);
+
+    text-transform: capitalize;
+
+    cursor: pointer;
+  }
+  .button-label {
+    pointer-events: none;
+  }
+
+  /* variants */
+  .button[data-variant='primary'] {
+    border-color: transparent;
+    background-color: var(--color-primary);
+    --button-text-color: #fff;
+  }
+  .button[data-variant='secondary'] {
+    border-color: transparent;
+    --button-color: var(--green100);
+    --button-text-color: var(--color-primary);
+  }
+  .button[data-variant='tertiary'] {
+    --button-text-color: var(--color-foreground);
+  }
+  .button[data-variant='text'] {
+    border-color: transparent;
+    --button-color: var(--color-background);
+    --button-text-color: var(--color-primary);
+  }
+  .button[data-variant='destructive'] {
+    --button-color: var(--red800);
+    --button-text-color: var(--gray0);
+  }
+
+  /* sizes */
+  .button[data-size='huge'] {
+    --button-size: 64px;
+    --button-text-size: var(--font-size-18);
+    padding-bottom: 5px;
+  }
+
+  .button[data-size='large'] {
+    --button-size: var(--size-large);
+    min-width: var(--button-min-width);
+  }
+
+  .button[data-isfullwidth='true'] {
+    width: 100%;
+  }
+
+  .button[aria-selected] {
+  }
+  .button[aria-checked='true'] {
+    border: 1px solid var(--color-background-strong);
+  }
+
+  /* states */
+  .button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    /* pointer-events: none; */
+  }
+  .button:not(:disabled):hover {
+    /* box-shadow: var(--status-hover); */
+    border-color: var(--color-background-strong);
+  }
+  .button:not(:disabled):focus {
+    outline: 3px solid #007185;
+    outline-offset: 2px;
+  }
+  .button:not(:disabled):active {
+    background: #f0b800;
+    border-color: #008296;
+    box-shadow: 0 0 0 3px #c8f3fa, inset 0 0 0 2px #fff;
+  }
+
+  /* :host {
+  --chip-color-border: 0;
+  --chip-color-background: var(--color-background-subtle);
+  --chip-color-text: var(--color-foreground);
+  --chip-radius: var(--radius);
+  --chip-border-color: transparent;
+  --chip-border: 1px solid var(--chip-border-color);
+  --chip-size: var(--size-medium);
+  --chip-inset: null;
+  --chip-shadow: none;
+} */
+
+  /* @media (hover) and (pointer: fine) {
+  &:hover {box-shadow:var(--status-hover);}
+}
+*/
+  /* outline: 2px solid var(--color-background); */
+
+  .chip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: var(--size-medium);
+    height: var(--chip-size);
+    gap: var(--space-2);
+    padding: 0 var(--space-3);
+    border: var(--chip-border);
+    border-radius: var(--chip-radius);
+    box-shadow: var(--chip-shadow);
+    background: var(--chip-color-background);
+    color: var(--chip-color-text);
+    position: relative;
+    &:hover {
+      box-shadow: var(--hover);
+      cursor: pointer;
+    }
+  }
+
+  .chip:disabled:not(:hover) {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  .chip-label {
+    line-height: 1;
+    color: inherit;
+    text-transform: capitalize;
+  }
+  .chip-name {
+    margin: 0 var(--space-1) 0 0;
+    color: var(--color-foreground-light);
+  }
+  .chip-name:after {
+    content: ': ';
+  }
+
+  .chip[aria-checked='true'] {
+    border: 1px solid var(--color-background-strong);
+  }
+
+  .chip[aria-expanded] {
+  }
+  .chip[aria-pressed] {
+  }
+  .chip[aria-haspopup] {
+  }
+
+  .chip[data-variant='destructive'] {
+    background-color: var(--red100);
+    color: var(--red800);
+  }
+
+  ::slotted([slot='prefix']) {
+    margin-right: var(--space-2);
+  }
+  ::slotted([slot='suffix']) {
+    margin-left: var(--space-2);
+  }
+
+  /*
+.chip-label ~ ::slotted([slot=badge]) {
+  margin-right: -0.25rem;
+} */
+
+  // .chip[aria-expanded=true] {
+  //   background-image: url(
+  //     'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48"><path d="M480 696 280 497h400L480 696Z"/></svg>');
+  //   background-repeat: no-repeat;
+  //   background-size: 14px;
+  //   background-position: 90% 50%;
+  // }
+`

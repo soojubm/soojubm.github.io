@@ -1,39 +1,21 @@
-import { makeStyleSheet } from '../../javascripts/components/utils'
+import { LitElement, html } from 'lit'
+import { customElement, property } from 'lit/decorators.js'
+import { buttonStyles } from './button.styles'
 
-class ClearButton extends HTMLElement {
-  constructor() {
-    super()
+@customElement('mm-clear-button')
+class ClearButton extends LitElement {
+  @property({ type: String }) label = ''
+  @property({ type: Boolean, reflect: true }) disabled = false
+
+  static styles = [buttonStyles]
+
+  render() {
+    return html`
+      <button class="icon-button" data-variant="clear" aria-label="${this.label}" ?disabled="${this.disabled}">
+        <mm-icon name="xmark"></mm-icon>
+      </button>
+    `
   }
-
-  get icon() {
-    return this.getAttribute('icon')
-  }
-
-  get variant() {
-    return this.getAttribute('variant')
-  }
-
-  get label() {
-    return this.getAttribute('label')
-  }
-
-  connectedCallback() {
-    if (this.shadowRoot) return
-
-    const shadowRoot = this.attachShadow({ mode: 'open' })
-
-    const host = document.createElement('button')
-    host.classList.add('icon-button')
-    host.dataset.variant = 'clear'
-
-    const icon = document.createElement('mm-icon')
-    icon.setAttribute('name', 'xmark')
-
-    shadowRoot?.append(host, makeStyleSheet('button'))
-    host.appendChild(icon)
-  }
-  attributeChangedCallback() {}
-  disconnectedCallback() {}
 }
 
 export default ClearButton

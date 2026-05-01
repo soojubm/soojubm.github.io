@@ -1,62 +1,23 @@
-import { makeStyleSheet, setSlotElement } from '../../javascripts/components/utils'
+import { LitElement, html } from 'lit'
+import { customElement, property } from 'lit/decorators.js'
 
-class Tile extends HTMLElement {
-  constructor() {
-    super()
-    const shadow = this.attachShadow({ mode: 'open' })
+@customElement('mm-tile')
+class Tile extends LitElement {
+  @property({ type: String }) variant = ''
+  @property({ type: String }) size = ''
+  @property({ type: String }) height = ''
 
-    const container = document.createElement('div')
-    container.classList.add('tile')
-
-    setSlotElement(container, 'category')
-
-    const slotAction = document.createElement('slot')
-    slotAction.name = 'action'
-
-    // ...rest
-    const children = document.createElement('slot')
-    // children.name = 'children'
-    // container.innerHTML = this.innerHTML || ''
-
-    // TODO 이게 없으면백그라운드 는 뒤에 깔림. 하지만 보더가 중복됨.
-    const style = this.getAttribute('style')
-    container.setAttribute('style', style || '')
-
-    if (this.variant) container.setAttribute('data-variant', this.variant)
-    if (this.size) container.setAttribute('data-size', this.size)
-    if (this.height) {
-      container.style.setProperty('--tile-height', this.height)
-    } else {
-      container.style.removeProperty('--tile-height')
-    }
-
-    shadow.appendChild(container)
-    container.appendChild(makeStyleSheet('tile'))
-    container.appendChild(slotAction)
-    container.appendChild(children)
+  render() {
+    const inlineStyle = this.height ? `--tile-height:${this.height};` : ''
+    return html`
+      <link rel="stylesheet" href="/public/components/tile/tile.css" />
+      <div class="tile" data-variant="${this.variant}" data-size="${this.size}" style="${inlineStyle}">
+        <slot name="category"></slot>
+        <slot name="action"></slot>
+        <slot></slot>
+      </div>
+    `
   }
-
-  // get size() {
-  //   return this.getAttribute('size')
-  // }
-  // set size(value) {
-  //   if (value) this.setAttribute('size', value)
-  // }
-
-  get variant() {
-    return this.getAttribute('variant')
-  }
-
-  get size() {
-    return this.getAttribute('size')
-  }
-
-  get height() {
-    return this.getAttribute('height')
-  }
-
-  connectedCallback() {}
-  disconnectedCallback() {}
 }
 
 export default Tile

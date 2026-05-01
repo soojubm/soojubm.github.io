@@ -1,88 +1,36 @@
-import { attachShadowStyles, makeStyleSheet } from '../../javascripts/components/utils'
+import { LitElement, html } from 'lit'
+import { customElement, property } from 'lit/decorators.js'
 
-class Radio extends HTMLElement {
-  constructor() {
-    super()
-    const shadow = this.attachShadow({ mode: 'open' })
+@customElement('mm-radio')
+class Radio extends LitElement {
+  @property({ type: String }) id = ''
+  @property({ type: String }) name = ''
+  @property({ type: String }) helper = ''
+  @property({ type: String }) value = ''
+  @property({ type: Boolean, reflect: true }) checked = false
+  @property({ type: Boolean, reflect: true }) disabled = false
 
-    const id = this.id_temp || `radio-${Math.random().toString(36).substr(2, 9)}`
-
-    const container = document.createElement('div')
-    container.classList.add('radio')
-
-    // input
-    const input = document.createElement('input')
-    input.setAttribute('type', 'radio')
-    input.setAttribute('id', this.id_temp || id)
-    input.setAttribute('name', this.name || '')
-    // MEMO true 와 같은 값 없이
-    if (this.checked) input.setAttribute('checked', '')
-    if (this.disabled) input.setAttribute('disabled', '')
-
-    // label
-    const label = document.createElement('label')
-    label.setAttribute('for', id)
-
-    const indicator = document.createElement('span')
-    indicator.classList.add('radio-indicator')
-
-    label.appendChild(indicator) // 한 번만 붙이기
-    if (this.textContent && this.textContent.length > 0) {
-      const text = document.createElement('span')
-      text.classList.add('radio-text')
-      text.textContent = this.textContent
-      label.appendChild(text) // indicator 재첨부 X
-    }
-
-    container.appendChild(input)
-
-    container.appendChild(label)
-
-    if (this.helper) {
-      const helper = document.createElement('p')
-      helper.textContent = this.helper
-
-      container.appendChild(helper)
-    }
-
-    attachShadowStyles(shadow, [
-      '/stylesheets/shared/reset.css',
-      '/public/components/radio/radio.css',
-    ])
-
-    shadow.appendChild(container)
+  render() {
+    const id = this.id || `radio-${Math.random().toString(36).slice(2, 9)}`
+    return html`
+      <link rel="stylesheet" href="/public/components/radio/radio.css" />
+      <div class="radio">
+        <input
+          type="radio"
+          id="${id}"
+          name="${this.name}"
+          value="${this.value}"
+          ?checked="${this.checked}"
+          ?disabled="${this.disabled}"
+        />
+        <label for="${id}">
+          <span class="radio-indicator"></span>
+          <span class="radio-text"><slot></slot></span>
+        </label>
+        ${this.helper ? html`<p>${this.helper}</p>` : ''}
+      </div>
+    `
   }
-
-  get id_temp() {
-    return this.getAttribute('id')
-  }
-
-  get name() {
-    return this.getAttribute('name')
-  }
-
-  get helper() {
-    return this.getAttribute('helper')
-  }
-
-  get value() {
-    return this.getAttribute('value')
-  }
-
-  get checked() {
-    return this.hasAttribute('checked')
-  }
-
-  get disabled() {
-    return this.hasAttribute('disabled')
-  }
-
-  // static get observedAttributes() {
-  //   return ['checked', 'disabled']
-  // }
-
-  connectedCallback() {}
-  disconnectedCallback() {}
 }
 
 export default Radio

@@ -1,28 +1,21 @@
-import { makeStyleSheet } from '../../javascripts/components/utils'
+import { LitElement, html } from 'lit'
+import { customElement, property } from 'lit/decorators.js'
+import { rowStyles } from './row.styles'
 
-class Row extends HTMLElement {
-  constructor() {
-    super()
-    const shadow = this.attachShadow({ mode: 'open' })
+@customElement('mm-row')
+class Row extends LitElement {
+  @property({ type: String }) gap = ''
+  @property({ type: String, attribute: 'justifyContent' }) justifyContent = ''
 
-    const container = document.createElement('div')
-    container.classList.add('row')
-    container.dataset.justifyContent = this.justifyContent || ''
+  static styles = [rowStyles]
 
-    shadow.appendChild(container)
-    container.append(...this.childNodes, makeStyleSheet('row'))
+  render() {
+    return html`
+      <div class="row" data-gap="${this.gap}" data-justify-content="${this.justifyContent}">
+        <slot></slot>
+      </div>
+    `
   }
-
-  get gap() {
-    return this.getAttribute('gap')
-  }
-
-  get justifyContent() {
-    return this.getAttribute('justifyContent')
-  }
-
-  connectedCallback() {}
-  disconnectedCallback() {}
 }
 
 export default Row

@@ -1,71 +1,45 @@
-import { makeStyleSheet } from '../../javascripts/components/utils'
+import { LitElement, html } from 'lit'
+import { customElement, property } from 'lit/decorators.js'
+import { tablistStyles } from './tablist.styles'
 
-class Tablist extends HTMLElement {
-  static get observedAttributes() {
-    return ['aria-selected']
+@customElement('mm-tablist')
+class Tablist extends LitElement {
+  @property({ type: String }) value = ''
+  @property({ type: String }) variant = ''
+
+  static styles = [tablistStyles]
+
+  connectedCallback() {
+    super.connectedCallback()
+    this.addEventListener('mm-tab-select', this._handleSelect as EventListener)
   }
-  constructor() {
-    super()
-    const shadow = this.attachShadow({ mode: 'open' })
 
-    const container = document.createElement('nav')
-    container.role = 'tablist'
-    container.classList.add('tablist')
-    container.dataset.variant = this.variant || ''
+  disconnectedCallback() {
+    this.removeEventListener('mm-tab-select', this._handleSelect as EventListener)
+    super.disconnectedCallback()
+  }
 
-    const indicatorSlot = document.createElement('slot')
-    indicatorSlot.name = 'indicator'
+  private _handleSelect = (event: CustomEvent<{ dataIndex: string }>) => {
+    const { dataIndex } = event.detail
+    const tabElements = this.querySelectorAll('mm-tab')
+    const panels = this.parentElement?.querySelectorAll('mm-tabpanel')
 
-    const tabSlot = document.createElement('slot')
-    tabSlot.name = 'tab'
+    tabElements.forEach(tab => {
+      tab.setAttribute('selected', tab.getAttribute('data-index') === dataIndex ? 'true' : 'false')
+    })
 
-    shadow.appendChild(container)
-    container.append(tabSlot, indicatorSlot, makeStyleSheet('tablist'))
-    // ...this.childNodes
-
-    this.querySelectorAll('[slot=tab]').forEach(tab => {
-      this.dataset.temp = 'test'
-      container.dataset.temp = 'test'
-      tab.addEventListener('click', event => {
-        const eventTarget = event.target as HTMLElement
-
-        const panels = this.parentNode?.querySelectorAll('[role=tabpanel')
-
-        this.querySelectorAll('[slot=tab]').forEach(tab =>
-          tab.setAttribute('aria-selected', 'false'),
-        )
-        eventTarget.setAttribute('aria-selected', 'true')
-
-        panels?.forEach(panel => {
-          panel.setAttribute('aria-hidden', 'true')
-          if (panel.getAttribute('data-index') === eventTarget.getAttribute('data-index')) {
-            // if (panel.getAttribute('data-index') === eventTarget.getAttribute('aria-controls')) {
-            panel.setAttribute('aria-hidden', 'false')
-          }
-        })
-      })
+    panels?.forEach(panel => {
+      panel.setAttribute('aria-hidden', panel.getAttribute('data-index') === dataIndex ? 'false' : 'true')
     })
   }
 
-  changeTab(event) {
-    // function initializeIndicator() {
-    //   const indicatorElement = tabElement?.querySelector<HTMLElement>('.tablist-indicator')
-    //   if (!indicatorElement) return
-    //   indicatorElement.style.left = `${selectedTab.offsetLeft}px`
-    //   indicatorElement.style.width = getElementWidth(selectedTab)
-    // }
-  }
-  // selected
-  get value() {
-    return this.getAttribute('value')
-  }
-  get variant() {
-    return this.getAttribute('variant')
-  }
-  connectedCallback() {}
-  disconnectedCallback() {}
-  attributeChangedCallback(name, oldValue, newValue) {
-    console.log('tablist @@@@@', name, oldValue, newValue)
+  render() {
+    return html`
+      <nav role="tablist" class="tablist" data-variant="${this.variant}">
+        <slot name="tab"></slot>
+        <slot name="indicator"></slot>
+      </nav>
+    `
   }
 }
 

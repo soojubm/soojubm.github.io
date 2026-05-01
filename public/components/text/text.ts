@@ -1,4 +1,7 @@
-import { makeStyleSheet } from '../../javascripts/components/utils'
+import { LitElement, html } from 'lit'
+import { customElement, property } from 'lit/decorators.js'
+import { styleMap } from 'lit/directives/style-map.js'
+import { textStyles } from './text.styles'
 
 const textVariants = {
   display: {
@@ -50,71 +53,27 @@ const textVariants = {
 
 type TextVariant = keyof typeof textVariants
 
-function applyVariantStyle(el: HTMLElement, variant: TextVariant) {
-  const style = textVariants[variant]
+@customElement('mm-text')
+class Text extends LitElement {
+  @property({ type: String }) variant: TextVariant = 'body'
+  @property({ type: Boolean, reflect: true }) center = false
+  @property({ type: Boolean, reflect: true }) truncated = false
 
-  Object.entries(style).forEach(([key, value]) => {
-    // @ts-ignore
-    el.style[key] = value
-  })
-}
+  static styles = [textStyles]
 
-class Text extends HTMLElement {
-  private hostElement: HTMLParagraphElement
+  render() {
+    const variantStyle = textVariants[this.variant]
 
-  static get observedAttributes() {
-    return ['variant', 'center', 'truncated']
-  }
-
-  constructor() {
-    super()
-
-    const shadowRoot = this.attachShadow({ mode: 'open' })
-
-    this.hostElement = document.createElement('p')
-    this.hostElement.classList.add('text')
-
-    shadowRoot.append(makeStyleSheet('text'))
-    shadowRoot.append(this.hostElement)
-  }
-
-  connectedCallback() {
-    this.render()
-  }
-
-  attributeChangedCallback() {
-    this.render()
-  }
-
-  private render() {
-    const { hostElement } = this
-
-    const slot = document.createElement('slot')
-    this.hostElement.append(slot)
-
-    // 2. variant style 적용
-    applyVariantStyle(hostElement, this.variant)
-
-    // 3. boolean props → class로 처리 (이게 더 맞다)
-    hostElement.classList.toggle('is-center', this.center)
-    hostElement.classList.toggle('is-truncated', this.truncated)
-  }
-
-  // get variant(): TextVariant {
-  //   return (this.getAttribute('variant') as TextVariant) || 'body'
-  // }
-
-  get variant(): TextVariant {
-    const v = this.getAttribute('variant')
-
-    return (this.getAttribute('variant') as TextVariant) ?? 'body'
-  }
-  get center() {
-    return this.hasAttribute('center')
-  }
-
-  get truncated() {
-    return this.hasAttribute('truncated')
+    return html`
+      <p
+        class="text"
+        style=${styleMap(variantStyle)}
+        ?data-center=${this.center}
+        ?data-truncated=${this.truncated}
+      >
+        <slot></slot>
+      </p>
+    `
   }
 }
 

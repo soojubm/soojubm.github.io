@@ -1,8 +1,47 @@
 // 이 코드는 “값을 가져오기 위한 import”가 아니라 “부작용(side-effect)을 실행시키기 위한 import”다.
 import '../../components/icon/icon'
-import Avatar from '../../components/avatar/avatar'
+import '../../components/avatar/avatar'
 import '../../components/button/button'
+import '../../components/link/link'
 import '../../components/tag/tag'
+import '../../components/textfield/textfield'
+import '../../components/textfield/searchfield'
+import '../../components/textfield/textarea'
+import '../../components/tablist/tablist'
+import '../../components/tab/tab'
+import '../../components/tabpanel/tabpanel'
+import '../../components/tooltip/tooltip'
+import '../../components/callout/callout'
+import '../../components/menuitem/menuitem'
+import '../../components/media/media'
+import '../../components/group/group'
+import '../../components/row/row'
+import '../../components/entity/entity'
+import '../../components/text/text'
+import '../../components/text/textGroup'
+import '../../components/text/textList'
+import '../../components/titlebar/titlebar'
+import '../../components/separator/separator'
+import '../../components/tile/tile'
+import '../../components/checkbox/checkbox'
+import '../../components/switch/switch'
+import '../../components/radio/radio'
+import '../../components/result/result'
+import '../../components/feature/feature'
+import '../../components/keyvalue/keyvalue'
+import '../../components/button/iconButton'
+import '../../components/button/clearButton'
+import '../../components/textpair/textpair'
+import '../../components/textfield/dropdown'
+import '../../components/buttonList/buttonList'
+import '../../components/title-with-description/index'
+import '../../components/component-section'
+import '../../components/sheet/sheet'
+import '../../components/sheet/sheet-header'
+import '../../components/sheet/sheet-body'
+import '../../components/sheet/sheet-footer'
+import '../../components/list-row'
+import '../../components/option-row'
 
 // 👉 “이 파일은 module이다”라고 명시
 
@@ -12,124 +51,12 @@ import '../../components/tag/tag'
 // side-effect entry 파일로 안정화
 export {}
 
-import Entity from '../../components/entity/entity'
-
-import Tile from '../../components/tile/tile'
-import Textfield from '../../components/textfield/textfield'
-
-import Checkbox from '../../components/checkbox/checkbox'
-import Switch from '../../components/switch/switch'
-import Radio from '../../components/radio/radio'
-
-import Link from '../../components/link/link'
-import Text from '../../components/text/text'
-
-import Group from '../../components/group/group'
-import Row from '../../components/row/row'
-
-import Tablist from '../../components/tablist/tablist'
-import Tab from '../../components/tab/tab'
-import Callout from '../../components/callout/callout'
-
-import MenuItem from '../../components/menuitem/menuitem'
-
 import Dialog from './dialog'
-
-import Tooltip from '../../components/tooltip/tooltip'
-import TitleBar from '../../components/titlebar/titlebar'
-import Icon from '../../components/icon/icon'
-import Separator from '../../components/separator/separator'
-
-import Result from '../../components/result/result'
-import Feature from '../../components/feature/feature'
-import Keyvalue from '../../components/keyvalue/keyvalue'
-
-import Media from '../../components/media/media'
-import TabPanel from '../../components/tabpanel/tabpanel'
-import IconButton from '../../components/button/iconButton'
-import Textarea from '../../components/textfield/textarea'
-import ClearButton from '../../components/button/clearButton'
-import SearchField from '../../components/textfield/searchfield'
-import TextGroup from '../../components/text/textGroup'
-import TextList from '../../components/text/textList'
-import TextPair from '../../components/textpair/textpair'
-import Dropdown from '../../components/textfield/dropdown'
-import ButtonListComponent from '../../components/buttonList/buttonList'
-import TitleWithDescription from '../../components/title-with-description/index'
-import ComponentSection from '../../components/component-section'
-import Sheet from '../../components/sheet/sheet'
-import SheetHeader from '../../components/sheet/sheet-header'
-import SheetBody from '../../components/sheet/sheet-body'
-import SheetFooter from '../../components/sheet/sheet-footer'
-import ListRow from '../../components/list-row'
-import OptionRow from '../../components/option-row'
 
 export function defineCustomElement() {
   if ('customElements' in window) {
-    customElements.define('mm-icon', Icon)
-    customElements.define('mm-component-section', ComponentSection)
-    customElements.define('mm-list-row', ListRow)
-    customElements.define('mm-option-row', OptionRow)
-
-    customElements.define('button-list-component', ButtonListComponent)
-
-    customElements.define('mm-icon-button', IconButton)
-    customElements.define('mm-clear-button', ClearButton)
-
-    customElements.define('mm-link', Link)
-
-    customElements.define('mm-entity', Entity)
-
     // 위에 있어야 넣어지네? text보다 shadow Dom
-    customElements.define('mm-result', Result)
-    customElements.define('mm-feature', Feature)
-
-    customElements.define('mm-avatar', Avatar)
-
-    customElements.define('mm-textfield', Textfield)
-    customElements.define('mm-searchfield', SearchField)
-    customElements.define('mm-textarea', Textarea)
-
-    customElements.define('mm-checkbox', Checkbox)
-    customElements.define('mm-switch', Switch)
-    customElements.define('mm-radio', Radio)
-
-    customElements.define('mm-dropdown', Dropdown)
-
-    customElements.define('mm-tile', Tile)
-
-    // 순서 왜 이렇게 해야 하는지..
-    customElements.define('mm-text-pair', TextPair)
-    customElements.define('mm-keyvalue', Keyvalue)
-
-    customElements.define('mm-text', Text)
-
-    customElements.define('mm-text-group', TextGroup)
-    customElements.define('mm-text-list', TextList)
-    customElements.define('mm-tablist', Tablist)
-    customElements.define('mm-tab', Tab)
-    customElements.define('mm-tabpanel', TabPanel)
-
-    customElements.define('mm-callout', Callout)
-
-    customElements.define('mm-menuitem', MenuItem)
-
     customElements.define('mm-dialog', Dialog)
-    customElements.define('mm-media', Media)
-
-    customElements.define('mm-tooltip', Tooltip)
-
-    customElements.define('mm-titlebar', TitleBar)
-    customElements.define('mm-group', Group)
-    customElements.define('mm-row', Row)
-    customElements.define('mm-separator', Separator)
-
-    customElements.define('mm-title-with-description', TitleWithDescription)
-
-    // customElements.define('mm-sheet', Sheet)
-    // customElements.define('mm-sheet-header', SheetHeader)
-    // customElements.define('mm-sheet-body', SheetBody)
-    // customElements.define('mm-sheet-footer', SheetFooter)
   }
 }
 

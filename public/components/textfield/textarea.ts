@@ -1,83 +1,50 @@
-import { makeStyleSheet } from '../../javascripts/components/utils'
+import { LitElement, html } from 'lit'
+import { customElement, property } from 'lit/decorators.js'
+import { textfieldStyles } from './textfield.styles'
 
-class Textarea extends HTMLElement {
-  constructor() {
-    super()
-    const shadow = this.attachShadow({ mode: 'open' })
+@customElement('mm-textarea')
+class Textarea extends LitElement {
+  @property({ type: String }) value = ''
+  @property({ type: String }) name = ''
+  @property({ type: String }) placeholder = ''
+  @property({ type: String }) label = ''
+  @property({ type: String }) helper = ''
+  @property({ type: Boolean, attribute: 'isOptional' }) isOptional = false
+  @property({ type: Boolean, attribute: 'hiddenLabel' }) hiddenLabel = false
+  @property({ type: Boolean, reflect: true }) disabled = false
+  @property({ type: Boolean, attribute: 'aria-invalid' }) isInvalid = false
 
-    const container = document.createElement('div')
-    container.classList.add('textfield')
-    container.classList.toggle('is-invalid', this.isInvalid)
-    if (this.hiddenLabel) container.dataset.label = String(this.hiddenLabel)
+  static styles = [textfieldStyles]
 
-    const label = document.createElement('label')
-    label.classList.add('textfield-label')
-    label.textContent = this.label
+  render() {
+    return html`
+      <div
+        class="textfield ${this.isInvalid ? 'is-invalid' : ''}"
+        data-label="${String(this.hiddenLabel)}"
+      >
+        ${this.label
+          ? html`
+              <label class="textfield-label">
+                ${this.label}
+                ${this.isOptional ? html`<small>선택입력</small>` : ''}
+              </label>
+            `
+          : ''}
 
-    const textarea = document.createElement('textarea')
-    textarea.classList.add('reset-input', 'textfield-input')
-    textarea.setAttribute('value', this.value || '')
-    textarea.setAttribute('placeholder', this.placeholder || '')
-    textarea.setAttribute('rows', String(3))
+        <textarea
+          class="reset-input textfield-input"
+          rows="3"
+          .value="${this.value}"
+          name="${this.name}"
+          placeholder="${this.placeholder}"
+          ?disabled="${this.disabled}"
+          aria-invalid="${this.isInvalid ? 'true' : 'false'}"
+        ></textarea>
 
-    const p = document.createElement('p')
-    p.classList.add('textfield-helper')
-    p.textContent = this.helper
-
-    if (this.disabled) textarea.setAttribute('disabled', String(this.disabled))
-
-    if (this.isOptional) {
-      const small = document.createElement('small')
-      small.textContent = '선택입력'
-      label.appendChild(small)
-    }
-
-    shadow.appendChild(container)
-    if (this.label) container.appendChild(label)
-    if (this.helper) container.appendChild(p)
-    container.append(textarea, makeStyleSheet('textfield'))
+        ${this.helper ? html`<p class="textfield-helper">${this.helper}</p>` : ''}
+      </div>
+    `
   }
-
-  get value() {
-    return this.getAttribute('value')
-  }
-
-  get name() {
-    return this.getAttribute('name')
-  }
-
-  get placeholder() {
-    return this.getAttribute('placeholder')
-  }
-
-  get label() {
-    return this.getAttribute('label')
-  }
-
-  get helper() {
-    return this.getAttribute('helper')
-  }
-
-  get isOptional() {
-    return this.hasAttribute('isOptional')
-  }
-
-  get hiddenLabel() {
-    return this.hasAttribute('hiddenLabel')
-  }
-
-  get disabled() {
-    return this.hasAttribute('disabled')
-  }
-
-  get isInvalid() {
-    return this.hasAttribute('aria-invalid')
-  }
-
-  connectedCallback() {}
-  disconnectedCallback() {}
 }
 
 export default Textarea
-
-function drawContainer() {}

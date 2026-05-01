@@ -1,50 +1,27 @@
-import { makeStyleSheet } from '../../javascripts/components/utils'
+import { LitElement, html } from 'lit'
+import { customElement, property } from 'lit/decorators.js'
 
-class Result extends HTMLElement {
-  constructor() {
-    super()
-    this.attachShadow({ mode: 'open' })
+@customElement('mm-result')
+class Result extends LitElement {
+  @property({ type: String, attribute: 'avatarIcon' }) avatarIcon = ''
+  @property({ type: String }) title = ''
+  @property({ type: String }) description = ''
+
+  render() {
+    return html`
+      <link rel="stylesheet" href="/public/components/result/result.css" />
+      <div role="status" class="result">
+        <mm-avatar size="huge" variant="secondary" icon="${this.avatarIcon}"></mm-avatar>
+        <mm-title-with-description
+          level="3"
+          title="${this.title}"
+          description="${this.description}"
+          center
+        ></mm-title-with-description>
+        <slot name="action"></slot>
+      </div>
+    `
   }
-
-  connectedCallback() {
-    const shadow = this.shadowRoot!
-
-    const container = document.createElement('div')
-    container.role = 'status'
-    container.classList.add('result')
-
-    const titleWithDescription = document.createElement('mm-title-with-description')
-    titleWithDescription.setAttribute('level', '3')
-    titleWithDescription.setAttribute('title', this.title)
-    titleWithDescription.setAttribute('description', this.description)
-    titleWithDescription.setAttribute('center', 'true')
-
-    const avatar = document.createElement('mm-avatar')
-    avatar.setAttribute('size', 'huge')
-    avatar.setAttribute('variant', 'secondary')
-    avatar.setAttribute('icon', this.avatarIcon)
-
-    const actionSlot = document.createElement('slot')
-    actionSlot.name = 'action'
-
-    shadow.appendChild(container)
-    container.appendChild(avatar)
-    container.appendChild(titleWithDescription)
-    container.appendChild(actionSlot)
-    container.append(makeStyleSheet('result'))
-  }
-
-  get avatarIcon() {
-    return this.getAttribute('avatarIcon') || ''
-  }
-  get title() {
-    return this.getAttribute('title') || ''
-  }
-  get description() {
-    return this.getAttribute('description') || ''
-  }
-
-  disconnectedCallback() {}
 }
 
 export default Result

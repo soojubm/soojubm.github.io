@@ -1,39 +1,22 @@
-import { makeStyleSheet } from '../../javascripts/components/utils'
+import { LitElement, html } from 'lit'
+import { customElement, property } from 'lit/decorators.js'
+import { tooltipStyles } from './tooltip.styles'
 
-class Tooltip extends HTMLElement {
-  constructor() {
-    super()
-    const shadow = this.attachShadow({ mode: 'open' })
-    // 결국 2개 다 슬롯이어야 하는 듯? 왜?
+@customElement('mm-tooltip')
+class Tooltip extends LitElement {
+  @property({ type: String }) content = ''
+  @property({ type: String }) align = ''
 
-    const container = document.createElement('div')
-    container.classList.add('tooltip')
-    container.dataset.align = this.align || ''
+  static styles = [tooltipStyles]
 
-    const trigger = document.createElement('slot')
-    trigger.classList.add('tooltip-trigger')
-    trigger.name = 'trigger'
-
-    const content = document.createElement('div')
-    content.classList.add('tooltip-content')
-    content.role = 'tooltip'
-    content.innerText = this.content || ''
-
-    shadow.append(container, makeStyleSheet('tooltip'))
-
-    container.appendChild(trigger)
-    container.appendChild(content)
+  render() {
+    return html`
+      <div class="tooltip" data-align="${this.align}">
+        <slot class="tooltip-trigger" name="trigger"></slot>
+        <div class="tooltip-content" role="tooltip">${this.content}</div>
+      </div>
+    `
   }
-
-  get content() {
-    return this.getAttribute('content')
-  }
-  get align() {
-    return this.getAttribute('align')
-  }
-
-  connectedCallback() {}
-  disconnectedCallback() {}
 }
 
 export default Tooltip

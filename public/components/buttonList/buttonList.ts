@@ -1,120 +1,88 @@
+import { LitElement, css, html } from 'lit'
+import { customElement, property, state } from 'lit/decorators.js'
+
 interface OptionItem {
   label: string
   value: string
 }
 
-const styles = `
-  :host {}
+@customElement('button-list-component')
+class ButtonListComponent extends LitElement {
+  @property({ type: String }) options = '[]'
+  @state() private selectedIndex = 0
 
-  .button-list {
-    display: flex;
-    // width: fit-content;
-    overflow:hidden;
-    // gap: var(--space-2);
-    border: var(--border-stronger);
-    border-radius: var(--radius);
-  }
+  static styles = css`
+    :host {
+    }
 
-  button {
-    border: 0;
-    background: transparent;
+    .button-list {
+      display: flex;
+      overflow: hidden;
+      border: var(--border-stronger);
+      border-radius: var(--radius);
+    }
 
-    flex: 1;
-    padding: 8px 16px;
-    cursor: pointer;
-    transition: background 0.3s, border-color 0.3s;
+    button {
+      border: 0;
+      background: transparent;
+      flex: 1;
+      padding: 8px 16px;
+      cursor: pointer;
+      transition: background 0.3s, border-color 0.3s;
 
-    // background: var(--color-background);
-    // border: var(--border-stronger);
-    // border-radius: var(--radius);
-    font-family: inherit;
-    font-weight: var(--font-weight-bold);
-    color: var(--color-foreground);
-  }
+      font-family: inherit;
+      font-weight: var(--font-weight-bold);
+      color: var(--color-foreground);
+    }
 
-  button:hover {
-    outline: 2px solid var(--color-border);
-  }
+    button:hover {
+      outline: 2px solid var(--color-border);
+    }
 
-  button.selected {
-    background: var(--color-background-subtle);
-    border-color: var(--color-primary);
-    color: var(--color-primary);
-  }
-`
+    button.selected {
+      background: var(--color-background-subtle);
+      border-color: var(--color-primary);
+      color: var(--color-primary);
+    }
+  `
 
-class ButtonListComponent extends HTMLElement {
-  private container: HTMLDivElement
-
-  constructor() {
-    super()
-    const shadow = this.attachShadow({ mode: 'open' })
-
-    const style = document.createElement('style')
-    style.textContent = styles
-
-    this.container = document.createElement('div')
-    this.container.classList.add('button-list')
-
-    shadow.append(style, this.container)
-  }
-
-  static get observedAttributes() {
-    return ['options']
-  }
-
-  // 여기서 newValue 때문에 랜더링이 발생함.
-  attributeChangedCallback(name: string, oldValue: string | null, newValue: string | null) {
-    if (name === 'options' && newValue) {
-      this.updateButtons(JSON.parse(newValue))
+  private get parsedOptions(): OptionItem[] {
+    try {
+      const parsed = JSON.parse(this.options)
+      return Array.isArray(parsed) ? parsed : []
+    } catch {
+      return []
     }
   }
 
-  connectedCallback() {
-    if (!this.hasAttribute('options')) {
-      this.setAttribute('options', JSON.stringify([]))
-    }
+  private onButtonClick(index: number, value: string) {
+    this.selectedIndex = index
+
+    this.dispatchEvent(
+      new CustomEvent('optionChange', {
+        detail: { value },
+        bubbles: true,
+        composed: true,
+      }),
+    )
   }
 
-  private updateButtons(options: OptionItem[]) {
-    this.container.innerHTML = ''
-
-    options.forEach((option, index) => {
-      const button = document.createElement('button')
-      button.classList.toggle('selected', index === 0)
-      button.textContent = option.label
-      button.dataset.value = option.value
-
-      button.addEventListener('click', () => this.onButtonClick(button))
-
-      this.container.appendChild(button)
-    })
-  }
-
-  private onButtonClick(targetButton: HTMLButtonElement) {
-    const selectedButton = this.container.querySelector('button.selected')
-    selectedButton?.classList.remove('selected')
-    targetButton.classList.add('selected')
-
-    const event = new CustomEvent('optionChange', {
-      detail: { value: targetButton.dataset.value },
-      bubbles: true,
-      composed: true,
-    })
-    this.dispatchEvent(event)
+  render() {
+    return html`
+      <div class="button-list">
+        ${this.parsedOptions.map(
+          (option, index) => html`
+            <button
+              class=${index === this.selectedIndex ? 'selected' : ''}
+              @click=${() => this.onButtonClick(index, option.value)}
+            >
+              ${option.label}
+            </button>
+          `,
+        )}
+      </div>
+    `
   }
 }
 
 export default ButtonListComponent
-
-// event.detail.value
-
-// bubbles
-// parentElement.addEventListener('optionChange', (event) => {
-//   console.log(event.detail.value);  // 자식에서 발생한 이벤트를 부모에서 감지
-// });
-
-// composed
-// shadowRootElement.addEventListener('optionChange', (event) => {
-//   console.log(event.detail.value);  // Shadow DOM 바깥에서 감지
-// });

@@ -1,0 +1,36 @@
+import { css } from 'lit'
+
+export const titlebarStyles = css`
+  .titlebar {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    position: relative;
+  }
+
+  .titlebar[data-size='large'] {
+    align-items: baseline;
+    height: 100px;
+  }
+
+  .titlebar[data-size='large'] .titlebar-title {
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: calc(var(--titlebar-height) - 0.25rem);
+    transform: translateX(0);
+  }
+
+  .is-sticky-titlebar .titlebar {
+    position: fixed;
+    top: 0;
+  }
+
+  .is-sticky-titlebar .titlebar-background {
+    box-shadow: var(--shadow);
+  }
+
+  ::slotted([slot='action']) {
+    margin: 0 0 0 auto;
+  }
+`

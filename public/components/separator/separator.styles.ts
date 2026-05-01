@@ -1,0 +1,48 @@
+import { css } from 'lit'
+
+export const separatorStyles = css`
+  hr {
+    margin: 0;
+    border: 0;
+    position: relative;
+  }
+
+  hr[role='separator'] {
+    width: 100%;
+    margin: var(--space-4) 0;
+    border-top: var(--border);
+    text-align: center;
+    position: relative;
+    z-index: var(--zindex-default);
+  }
+
+  hr[role='separator']::after {
+    content: '';
+    width: 4rem;
+    line-height: 24px;
+    background: var(--color-background);
+    font-size: var(--font-size-12);
+    color: var(--color-foreground-light);
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+  }
+
+  hr[role='separator'][data-spacing='small'] {
+    margin-block: var(--space-2);
+  }
+
+  ::slotted([slot='text']) {
+    width: 4rem;
+    line-height: 24px;
+    background: var(--color-background);
+    font-size: var(--font-size-12);
+    color: var(--color-foreground-light);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+`

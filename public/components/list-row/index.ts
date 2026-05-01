@@ -1,132 +1,35 @@
-class ListRow extends HTMLElement {
-  static get observedAttributes() {
-    return ['size', 'icon', 'primarytext', 'secondarytext', 'avatar-variant']
-  }
+import { LitElement, css, html } from 'lit'
+import { customElement, property } from 'lit/decorators.js'
 
-  private shadow!: ShadowRoot
-  private avatarContainer!: HTMLElement
-  private fallbackAvatar!: HTMLElement
-  private primaryEl!: HTMLElement
-  private secondaryEl!: HTMLElement
+@customElement('mm-list-row')
+class ListRow extends LitElement {
+  @property({ type: String }) size = 'medium'
+  @property({ type: String }) icon = ''
+  @property({ type: String, attribute: 'primarytext' }) primaryText = ''
+  @property({ type: String, attribute: 'secondarytext' }) secondaryText = ''
+  @property({ type: String, attribute: 'avatar-variant' }) avatarVariant = 'tertiary'
 
-  constructor() {
-    super()
-    this.shadow = this.attachShadow({ mode: 'open' })
+  static styles = css`
+    :host { display: flex; align-items: center; width: 100%; gap: var(--space-2); }
+    ::slotted([slot='action']) { margin-left: auto; }
+    .text-container { flex: 1; display: flex; flex-direction: column; }
+    .text-container.size-small { flex-direction: row; align-items: center; gap: var(--space-2); }
+    .avatar { display: flex; align-items: center; justify-content: center; }
+  `
 
-    const style = document.createElement('style')
-    style.textContent = `
-      :host {
-        display: flex;
-        align-items: center;
-        width: 100%;
-        gap: var(--space-2);
-      }
-
-      ::slotted([slot="action"]) {
-        margin-left: auto;
-      }
-
-      .text-container {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-      }
-      /* TODO size 중복 */
-      .text-container.size-small {
-        flex-direction: row;
-        align-items: center;
-        gap: var(--space-2);
-      }
-
-      .avatar {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
+  render() {
+    return html`
+      <div class="avatar">
+        <slot name="avatar"></slot>
+        <mm-avatar variant="${this.avatarVariant}" size="${this.size}" icon="${this.icon}"></mm-avatar>
+      </div>
+      <div class="text-container ${this.size === 'small' ? 'size-small' : ''}">
+        <mm-text variant="body-bold">${this.primaryText}</mm-text>
+        ${this.secondaryText ? html`<mm-text variant="label">${this.secondaryText}</mm-text>` : ''}
+      </div>
+      <slot name="action"></slot>
     `
-    this.shadow.appendChild(style)
-
-    this.avatarContainer = document.createElement('div')
-    this.avatarContainer.className = 'avatar'
-
-    const avatarSlot = document.createElement('slot')
-    avatarSlot.name = 'avatar'
-
-    this.fallbackAvatar = document.createElement('mm-avatar')
-    this.fallbackAvatar.setAttribute('variant', 'tertiary')
-    this.fallbackAvatar.setAttribute('size', 'large')
-    this.shadow.appendChild(this.avatarContainer)
-
-    this.avatarContainer.appendChild(avatarSlot)
-    this.avatarContainer.appendChild(this.fallbackAvatar)
-
-    avatarSlot.addEventListener('slotchange', () => {
-      const assigned = avatarSlot.assignedElements()
-      this.fallbackAvatar.style.display = assigned.length > 0 ? 'none' : 'flex'
-    })
-
-    const textContainer = document.createElement('div')
-    textContainer.className = 'text-container'
-    // TODO size 중복
-    const size = this.getAttribute('size') || 'medium'
-    if (size === 'small') textContainer.classList.add('size-small')
-
-    this.primaryEl = document.createElement('mm-text')
-    this.primaryEl.setAttribute('variant', 'body-bold')
-    textContainer.appendChild(this.primaryEl)
-
-    this.secondaryEl = document.createElement('mm-text')
-    this.secondaryEl.setAttribute('variant', 'label')
-    textContainer.appendChild(this.secondaryEl)
-
-    this.shadow.appendChild(textContainer)
-
-    const action = document.createElement('slot')
-    action.name = 'action'
-    this.shadow.appendChild(action)
-  }
-
-  connectedCallback() {
-    this.render()
-  }
-
-  attributeChangedCallback(name: string, oldValue: string | null, newValue: string | null) {
-    if (oldValue !== newValue) this.render()
-  }
-
-  private updateAvatar() {
-    const size = this.getAttribute('size') ?? 'medium'
-    const icon = this.getAttribute('icon')
-    const variant = this.getAttribute('avatar-variant') ?? 'tertiary'
-
-    this.fallbackAvatar.setAttribute('size', size)
-    this.fallbackAvatar.setAttribute('variant', variant)
-
-    if (icon) {
-      this.fallbackAvatar.setAttribute('icon', icon)
-    } else {
-      this.fallbackAvatar.removeAttribute('icon')
-    }
-  }
-
-  private render() {
-    const primaryAttr = this.getAttribute('primarytext')
-    this.primaryEl.textContent = primaryAttr || ''
-
-    const secondaryAttr = this.getAttribute('secondarytext')
-    if (secondaryAttr) {
-      this.secondaryEl.textContent = secondaryAttr
-      this.secondaryEl.style.display = 'inline'
-    } else {
-      this.secondaryEl.textContent = ''
-      this.secondaryEl.style.display = 'none'
-    }
-
-    this.updateAvatar()
   }
 }
 
-// if (!customElements.get('mm-list-row')) {
-//   customElements.define('mm-list-row', ListRow)
-// }
 export default ListRow

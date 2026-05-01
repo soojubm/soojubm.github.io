@@ -1,37 +1,21 @@
-import { makeStyleSheet } from '../../javascripts/components/utils'
+import { LitElement, html } from 'lit'
+import { customElement, property } from 'lit/decorators.js'
+import { groupStyles } from './group.styles'
 
-type ValueType = 'checkbox' | 'chip' | 'button' | 'textfield' | 'menuitem'
+@customElement('mm-group')
+class Group extends LitElement {
+  @property({ type: String }) variant = ''
+  @property({ type: String }) alignment = ''
 
-const getContainer = (value: ValueType) => {
-  if (value === 'checkbox') return 'fieldset'
-  return 'div'
-}
-class Group extends HTMLElement {
-  private hostElement: HTMLDivElement
-  constructor() {
-    super()
-    this.attachShadow({ mode: 'open' })
-    this.hostElement = document.createElement('div')
+  static styles = [groupStyles]
+
+  render() {
+    return html`
+      <div class="group" role="group" data-variant="${this.variant}" data-alignment="${this.alignment}">
+        <slot></slot>
+      </div>
+    `
   }
-  connectedCallback() {
-    const { shadowRoot, hostElement } = this
-    hostElement.classList.add('group')
-    hostElement.role = 'group'
-
-    const style = this.getAttribute('style')
-    hostElement.setAttribute('style', style || '')
-
-    if (this.variant) hostElement.dataset.variant = this.variant
-
-    shadowRoot!.appendChild(hostElement)
-    hostElement.append(...this.childNodes, makeStyleSheet('group'))
-  }
-
-  get variant() {
-    return this.getAttribute('variant') || ''
-  }
-
-  disconnectedCallback() {}
 }
 
 export default Group

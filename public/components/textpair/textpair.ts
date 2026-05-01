@@ -1,32 +1,20 @@
-class TextPair extends HTMLElement {
-  constructor() {
-    super()
-    const shadow = this.attachShadow({ mode: 'open' })
+import { LitElement, html } from 'lit'
+import { customElement, property } from 'lit/decorators.js'
 
-    const container = document.createElement('div')
+@customElement('mm-text-pair')
+class TextPair extends LitElement {
+  @property({ type: String, attribute: 'labelText' }) labelText = ''
+  @property({ type: String, attribute: 'descriptionText' }) descriptionText = ''
 
-    const labelTextElement = document.createElement('mm-text')
-    labelTextElement.setAttribute('variant', 'heading4')
-    labelTextElement.innerText = this.labelText || ''
-
-    const descriptionElement = document.createElement('mm-text')
-    descriptionElement.setAttribute('variant', 'label')
-    descriptionElement.innerText = this.descriptionText || ''
-
-    shadow.appendChild(container)
-    container.append(labelTextElement, descriptionElement)
+  render() {
+    return html`
+      <link rel="stylesheet" href="/public/components/textpair/textpair.css" />
+      <div class="summary-item">
+        <mm-text variant="heading4">${this.labelText}</mm-text>
+        <mm-text variant="label">${this.descriptionText}</mm-text>
+      </div>
+    `
   }
-
-  get labelText() {
-    return this.getAttribute('labelText')
-  }
-
-  get descriptionText() {
-    return this.getAttribute('descriptionText')
-  }
-
-  connectedCallback() {}
-  disconnectedCallback() {}
 }
 
 export default TextPair

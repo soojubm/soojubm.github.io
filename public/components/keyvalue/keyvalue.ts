@@ -1,49 +1,23 @@
-import { makeStyleSheet } from '../../javascripts/components/utils'
+import { LitElement, html } from 'lit'
+import { customElement, property } from 'lit/decorators.js'
 
-class Keyvalue extends HTMLElement {
-  constructor() {
-    super()
-    const shadow = this.attachShadow({ mode: 'open' })
+@customElement('mm-keyvalue')
+class Keyvalue extends LitElement {
+  @property({ type: String }) key = ''
+  @property({ type: String }) value = ''
+  @property({ type: String }) size = ''
+  @property({ type: String }) alignment = ''
 
-    const container = document.createElement('div')
-    container.classList.add('summary-item')
-    if (this.size) container.dataset.size = this.size
-
-    const slot = document.createElement('slot')
-    slot.name = 'slot'
-
-    const keyText = document.createElement('mm-text')
-    keyText.setAttribute('variant', 'label')
-    keyText.innerText = this.key || ''
-
-    const valueText = document.createElement('mm-text')
-    valueText.setAttribute('variant', this.size === 'large' ? 'subhead' : 'heading4')
-    valueText.innerText = this.value || ''
-
-    if (this.alignment) container.dataset.alignment = this.alignment
-
-    shadow.appendChild(container)
-    container.append(keyText, valueText, slot, makeStyleSheet('keyvalue'))
+  render() {
+    return html`
+      <link rel="stylesheet" href="/public/components/keyvalue/keyvalue.css" />
+      <div class="summary-item" data-size="${this.size}" data-alignment="${this.alignment}">
+        <mm-text variant="label">${this.key}</mm-text>
+        <mm-text variant="${this.size === 'large' ? 'subhead' : 'heading4'}">${this.value}</mm-text>
+        <slot name="slot"></slot>
+      </div>
+    `
   }
-
-  get key() {
-    return this.getAttribute('key')
-  }
-
-  get value() {
-    return this.getAttribute('value')
-  }
-
-  get size() {
-    return this.getAttribute('size')
-  }
-
-  get alignment() {
-    return this.getAttribute('alignment')
-  }
-
-  connectedCallback() {}
-  disconnectedCallback() {}
 }
 
 export default Keyvalue

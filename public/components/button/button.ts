@@ -1,284 +1,54 @@
-import { makeStyleSheet } from '../../javascripts/components/utils'
+import { LitElement, html } from 'lit'
+import { customElement, property } from 'lit/decorators.js'
+import { buttonStyles } from './button.styles' // 👈 분리한 스타일 파일 불러오기
 
-class Button extends HTMLElement {
-  private hostElement: HTMLButtonElement
-  private labelElement: HTMLElement
-  private iconElement?: HTMLElement
+@customElement('mm-button')
+export class Button extends LitElement {
+  // 1. 상태(Property) 정의: 기존의 getter와 attributeChangedCallback을 완벽히 대체합니다.
+  @property({ type: String }) variant = 'tertiary'
+  @property({ type: String }) size = 'medium'
+  @property({ type: String }) status = ''
+  // 문자열 'true'/'false' 대신 깔끔하게 Boolean 타입으로 처리합니다.
+  @property({ type: Boolean }) isFullWidth = false
+  // reflect: true를 주면 JS 프로퍼티 변경 시 HTML 속성(attribute)에도 자동 반영됩니다.
+  @property({ type: Boolean, reflect: true }) disabled = false
+  @property({ type: String }) icon = ''
 
-  static get observedAttributes() {
-    return ['disabled']
-  }
+  // 2. 스타일: 기존 makeStyleSheet('button')을 대체합니다.
+  static styles = [buttonStyles]
 
-  constructor() {
-    super()
-    const shadowRoot = this.attachShadow({ mode: 'open' })
-    this.hostElement = document.createElement('button')
-    this.labelElement = document.createElement('label')
-    this.iconElement = undefined
-  }
-
-  connectedCallback() {
-    const { shadowRoot, hostElement, labelElement, iconElement } = this
-
-    hostElement.classList.add('button')
-    hostElement.dataset.variant = this.variant
-    hostElement.dataset.size = this.size
-    hostElement.dataset.status = this.status
-
-    hostElement.dataset.isfullwidth = this.isfullwidth === 'true' ? 'true' : 'false'
-
-    labelElement.classList.add('button-label')
-    labelElement.textContent = this.textContent
-
-    shadowRoot!.innerHTML = ''
-    shadowRoot!.append(hostElement, makeStyleSheet('button'))
-    hostElement.appendChild(labelElement)
-
-    // if (this.icon && !this.iconElement) {
-    //   iconElement = document.createElement('mm-icon')
-    //   iconElement.setAttribute('name', this.icon)
-    //   hostElement.appendChild(iconElement)
-    // }
-
+  // 💡 이벤트 핸들러 함수 정의
+  private _handleClick(event: Event) {
     if (this.disabled) {
-      this.hostElement.setAttribute('disabled', 'true')
-      this.hostElement.setAttribute('aria-disabled', 'true') // TODO 이거 필수인지?
+      event.preventDefault()
+      event.stopPropagation()
+      return
     }
-
-    if (this.status === 'active') hostElement.setAttribute('aria-selected', 'true')
-    if (this.status === 'checked') hostElement.setAttribute('aria-checked', 'true')
-  }
-  attributeChangedCallback(name: string, oldValue: string, newValue: string): void {
-    if (oldValue !== newValue) {
-      // this.render()
-    }
-  }
-  disconnectedCallback() {}
-
-  get variant() {
-    return this.getAttribute('variant') || 'tertiary'
+    alert('버튼이 클릭되었습니다!')
   }
 
-  get isfullwidth() {
-    return this.getAttribute('isfullwidth') || 'false'
+  // 3. 렌더링: connectedCallback과 복잡한 DOM 생성 로직을 모두 대체합니다.
+  render() {
+    return html`
+      <button
+        class="button"
+        data-variant="${this.variant}"
+        data-size="${this.size}"
+        data-status="${this.status}"
+        data-isfullwidth="${this.isFullWidth}"
+        ?disabled="${this.disabled}"
+        aria-selected="${this.status === 'active' ? 'true' : 'false'}"
+        aria-checked="${this.status === 'checked' ? 'true' : 'false'}"
+        @click="${this._handleClick}"
+      >
+        ${this.icon ? html`<mm-icon name="${this.icon}"></mm-icon>` : ''}
+
+        <label class="button-label">
+          <slot></slot>
+        </label>
+      </button>
+    `
   }
-
-  get size() {
-    return this.getAttribute('size') || 'medium'
-  }
-
-  get status() {
-    return this.getAttribute('status') || ''
-  }
-
-  get disabled(): boolean {
-    return this.hasAttribute('disabled')
-  }
-
-  get icon() {
-    return this.getAttribute('icon') || ''
-  }
-
-  // attributeChangedCallback(name, oldValue, newValue) {
-  //   if(this.disabled) {
-  //     this.removeAttribute('tabindex')
-  //     this._internals.ariaDisabled = true
-  //   } else {
-}
-
-if (!customElements.get('mm-button')) {
-  customElements.define('mm-button', Button)
 }
 
 export default Button
-
-// if (this.isfullwidth) {
-//   hostElement.dataset.isfullwidth = '';
-// } else {
-//   delete hostElement.dataset.isfullwidth;
-// }
-
-// TODO:
-// class BlueBuy extends HTMLElement {
-//   static get observedAttributes() {
-//     return ['sku'];
-//   }
-//   connectedCallback() {
-//     this.render();
-//   }
-//   render() {
-//     const sku = this.getAttribute('sku');
-//     const price = prices[sku];
-//     this.innerHTML = `<button type="button">buy for ${price}</button>`;
-//   }
-//   attributeChangedCallback(attr, oldValue, newValue) {
-//     this.render();
-//   }
-//   disconnectedCallback() {...}
-// }
-// window.customElements.define('blue-buy', BlueBuy);
-
-// this._internals = this.attachInternals()
-// this._internals.role = 'button'
-
-// this.addEventListener('keydown', e => {
-//   if (e.code === 'Enter' || e.code === 'space') {
-//     this.dispatchEvent(
-//       new PointerEvent('click', {
-//         bubbles: true,
-//         cancelable: true,
-//       }),
-//     )
-//   }
-// })
-
-// this.addEventListener('click', e => {
-//   if (this.disabled) {
-//     e.preventDefault()
-//     e.stopImmediatePropagation()
-//   }
-// })
-
-// this._observer = new MutationObserver(() => {
-//   this._internals.ariaLabel = this.textContent
-// })
-
-// import { importScript, makeStyleSheet } from '../../javascripts/components/utils'
-
-// console.log('#internals', this.#internals)
-// const sheet = new CSSStyleSheet()
-
-// replace all styles synchronously:
-// document.adoptedStyleSheets = [...document.adoptedStyleSheets, sheet]
-
-// Any @import rules are ignored.
-// Both of these still apply the a{} style:
-// sheet.replaceSync('@import url("styles.css"); a { color: red; }')
-// sheet.replace('@import url("styles.css"); a { color: red; }').then(() => {
-//     console.log('Styles replaced', sheet)
-//   })
-//   .catch(err => {
-//     console.error('Failed to replace styles:', err)
-//   })
-// Console warning: "@import rules are not allowed here..."
-
-// shadow.adoptedStyleSheets = [sheet]
-// host.shadowRoot?.adoptedStyleSheets = [sheet]
-
-// class Chip extends HTMLElement {
-//   static get observedAttributes() {
-//     return ['icon']
-//   }
-//   constructor() {
-//     super()
-//   }
-
-//   // static get observedAttributes() {
-//   //   return ['size', 'status', 'icon', 'type', 'value', 'label']
-//   // }
-
-//   get size() {
-//     return this.getAttribute('size')
-//   }
-
-//   get variant() {
-//     return this.getAttribute('variant')
-//   }
-
-//   get status() {
-//     return this.getAttribute('status')
-//   }
-//   get type() {
-//     return this.getAttribute('type')
-//   }
-//   get value() {
-//     return this.getAttribute('value')
-//   }
-//   get name() {
-//     return this.getAttribute('name')
-//   }
-
-//   get icon() {
-//     return this.getAttribute('icon')
-//   }
-
-//   get ariaLabel() {
-//     return this.getAttribute('aria-label')
-//   }
-
-//   connectedCallback() {
-//     const shadow = this.attachShadow({ mode: 'open' })
-
-//     const host = document.createElement('button')
-//     host.classList.add('chip')
-
-//     const name = document.createElement('span')
-//     name.classList.add('chip-name')
-
-//     // append 순서로 slot 순서를 결정할 수 있다.
-
-//     // TODO avatar와 공통
-//     if (this.icon) {
-//       const icon = document.createElement('mm-icon')
-//       icon.setAttribute('name', this.icon)
-
-//       host.ariaLabel = this.ariaLabel
-
-//       host.appendChild(icon)
-//     }
-
-//     shadow.append(host, makeStyleSheet('chip'))
-
-//     if (this.name) {
-//       name.innerText = this.name || ''
-//       host.appendChild(name)
-//     }
-
-//     // // 예시로 textContent 설정
-//     // const text = this.textContent.trim();
-
-//     // // textContent가 비어있지 않을 때만 요소 추가
-//     // if (text.length > 0) {
-//     //     const newElement = document.createElement('p');
-//     //     newElement.textContent = text;
-//     //     this.container.appendChild(newElement);
-//     // }
-//     if (this.textContent && this.textContent.trim().length > 0) {
-//       const label = document.createElement('span')
-//       label.classList.add('chip-label')
-//       label.innerText = this.textContent
-
-//       host.appendChild(label)
-//     }
-
-//     // TODO
-//     // shadow.appendChild(container)
-//     // container.append(...this.childNodes, makeStyleSheet('menuitem'))
-
-//     // this.addEventListener('click', e => {
-//     //   if (this.disabled) return
-//     //   this.toggleDrawer()
-//     // })
-
-//     // b.append(...this.childNodes)
-
-//     if (this.variant) host.dataset.variant = this.variant
-
-//     if (this.status === 'active') host.setAttribute('aria-selected', 'true')
-//     if (this.status === 'disabled') host.setAttribute('disabled', 'true')
-//     if (this.status === 'checked') host.setAttribute('aria-checked', 'true')
-//   }
-//   disconnectedCallback() {}
-//   // attributeChangedCallback(name, oldValue, newValue) {
-//   //   // When the drawer is disabled, update keyboard/screen reader behavior.
-//   //   if (this.disabled) {
-//   //     this.setAttribute('tabindex', '-1')
-//   //     this.setAttribute('aria-disabled', 'true')
-//   //   } else {
-//   //     this.setAttribute('tabindex', '0')
-//   //     this.setAttribute('aria-disabled', 'false')
-//   //   }
-//   // }
-// }
-
-// export default Chip

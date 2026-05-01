@@ -483,59 +483,6 @@
     </style>
     <!-- // invoice / order  구분 -->
 
-    <style>
-      .stamp {
-        position: absolute;
-        right: 6vmax;
-        top: 6vmax;
-        z-index: 2;
-      }
-      .stamp p {
-        font-size: var(--font-size-18);
-        font-weight: bold;
-        margin: 0;
-        --tt: 15deg;
-      }
-      .stamp .circle {
-        display: block;
-        width: 1px;
-        height: 1px;
-        background-color: transparent;
-        animation: rotation 9.5s linear infinite;
-      }
-      .stamp .circle span {
-        height: 4vmax;
-        position: absolute;
-        display: inline-block;
-        left: 0;
-        bottom: 0;
-        transform-origin: bottom center;
-      }
-
-      .stamp .circle span:nth-of-type(1) {
-        transform: rotate(0deg);
-      }
-      .stamp .circle span:nth-of-type(2) {
-        transform: rotate(20deg);
-      }
-      .stamp .circle span:nth-of-type(3) {
-        transform: rotate(40deg);
-      }
-      .stamp .circle span:nth-of-type(4) {
-        transform: rotate(60deg);
-      }
-    </style>
-    <div class="stamp">
-      <div class="circle">
-        <p style="font-size: 12px">test</p>
-        <p>
-          <span class="char1">U</span>
-          <span class="char2">N</span>
-          <span class="char3">D</span>
-          <span class="char4">E</span>
-        </p>
-      </div>
-    </div>
 
     <!-- <mm-text variant="heading4">Easy to read</mm-text>
     <mm-text variant="body">

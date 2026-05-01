@@ -1,51 +1,32 @@
-import { makeStyleSheet } from '../../javascripts/components/utils'
+import { LitElement, html } from 'lit'
+import { customElement, property } from 'lit/decorators.js'
+import { linkStyles } from './link.styles'
 
-class Link extends HTMLElement {
-  constructor() {
-    super()
-    const shadow = this.attachShadow({ mode: 'open' })
+@customElement('mm-link')
+class Link extends LitElement {
+  @property({ type: String }) href = ''
+  @property({ type: String }) target = '_blank'
+  @property({ type: String }) variant = 'primary'
+  @property({ type: String, attribute: 'isExternal' }) isExternal = 'false'
 
-    const container = document.createElement('a')
-    container.classList.add('link')
-    container.href = this.href || ''
-    container.target = this.target || '_blank'
-    container.dataset.variant = this.variant || 'primary'
+  static styles = [linkStyles]
 
-    const icon = document.createElement('mm-icon')
-    icon.setAttribute('name', 'arrow-up-right')
-    icon.setAttribute('size', 'tiny')
-    // TODO 위에서 생성
+  render() {
+    const external = this.isExternal === 'true'
 
-    if (this.isExternal) {
-      container.setAttribute('rel', 'noopener noreferrer')
-      const srOnly = document.createElement('span')
-      srOnly.hidden = true // 임시
-      srOnly.classList.add('sr-only')
-      srOnly.textContent = '(새 창에서 열림)'
-      container.appendChild(srOnly)
-      // container.appendChild(icon)
-    }
-
-    shadow.appendChild(container)
-    container.append(...this.childNodes, makeStyleSheet('link'))
-    if (this.isExternal) container.appendChild(icon)
+    return html`
+      <a
+        class="link"
+        href="${this.href}"
+        target="${this.target}"
+        data-variant="${this.variant}"
+        rel="${external ? 'noopener noreferrer' : ''}"
+      >
+        <slot></slot>
+        ${external ? html`<mm-icon name="arrow-up-right" size="tiny"></mm-icon>` : ''}
+      </a>
+    `
   }
-
-  get href() {
-    return this.getAttribute('href')
-  }
-  get target() {
-    return this.getAttribute('target')
-  }
-  get variant() {
-    return this.getAttribute('variant')
-  }
-  get isExternal() {
-    return this.getAttribute('isExternal') === 'true'
-  }
-
-  connectedCallback() {}
-  disconnectedCallback() {}
 }
 
 export default Link

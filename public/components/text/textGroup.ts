@@ -1,29 +1,19 @@
-import { makeStyleSheet } from '../../javascripts/components/utils'
+import { LitElement, html } from 'lit'
+import { customElement, property } from 'lit/decorators.js'
+import { textStyles } from './text.styles'
 
-class TextGroup extends HTMLElement {
-  private hostElement: HTMLElement
+@customElement('mm-text-group')
+class TextGroup extends LitElement {
+  @property({ type: String }) variant = ''
 
-  constructor() {
-    super()
-    const shadowRoot = this.attachShadow({ mode: 'open' })
+  static styles = [textStyles]
 
-    this.hostElement = document.createElement('div')
-  }
-
-  connectedCallback() {
-    const {shadowRoot, hostElement } = this
-    hostElement.role = 'group'
-    hostElement.classList.add('text-group')
-    hostElement.dataset.variant = this.variant
-
-    shadowRoot!.append(hostElement, makeStyleSheet('text'))
-    hostElement.append(...this.childNodes)
-  }
-  disconnectedCallback() {}
-
-  
-  get variant() {
-    return this.getAttribute('variant') || ''
+  render() {
+    return html`
+      <div role="group" class="text-group" data-variant="${this.variant}">
+        <slot></slot>
+      </div>
+    `
   }
 }
 

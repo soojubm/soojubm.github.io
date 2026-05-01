@@ -1,11 +1,12 @@
-class TitleWithDescription extends HTMLElement {
-  private hostElement: HTMLElement
-  private titleElement: HTMLElement
-  private descriptionElement: HTMLElement
+import { LitElement, css, html } from 'lit'
+import { customElement, property } from 'lit/decorators.js'
 
-  static get observedAttributes() {
-    return ['title', 'description', 'level']
-  }
+@customElement('mm-title-with-description')
+class TitleWithDescription extends LitElement {
+  @property({ type: String }) title = ''
+  @property({ type: String }) description = ''
+  @property({ type: String }) level = '1'
+  @property({ type: Boolean, reflect: true }) center = false
 
   static variants = {
     '1': {
@@ -35,67 +36,29 @@ class TitleWithDescription extends HTMLElement {
     },
   }
 
-  constructor() {
-    super()
-    this.attachShadow({ mode: 'open' })
-    this.hostElement = document.createElement('div')
-    this.titleElement = document.createElement('mm-text')
-    this.descriptionElement = document.createElement('mm-text')
-  }
-  connectedCallback() {
-    const { shadowRoot, hostElement, titleElement, descriptionElement } = this
-
-    const level = this.getAttribute('level') || '1'
-    const variant = TitleWithDescription.variants[level]
-    if (variant) {
-      titleElement.setAttribute('variant', variant.title)
-      titleElement.textContent = this.title
-      descriptionElement.setAttribute('variant', variant.description)
-      descriptionElement.textContent = this.description
+  static styles = css`
+    :host > div {
+      display: flex;
+      flex-direction: column;
     }
-    if (this.center) {
-      titleElement.setAttribute('center', '')
-      descriptionElement.setAttribute('center', '')
-    }
-    if (!hostElement.isConnected) {
-      hostElement.append(titleElement, descriptionElement)
-      shadowRoot!.append(hostElement)
-    }
-
-    const style = document.createElement('style')
-    style.textContent = `
-      :host > div {
-        display: flex;
-        flex-direction: column;
-        gap: ${variant?.gap ?? '12px'};
-      }
-      mm-text[variant=body-large] {
+    mm-text[variant='body-large'] {
       max-width: 720px;
-      }
+    }
+  `
+
+  render() {
+    const variant =
+      TitleWithDescription.variants[this.level as keyof typeof TitleWithDescription.variants] ??
+      TitleWithDescription.variants['1']
+    return html`
+      <div style="gap:${variant.gap}">
+        <mm-text variant="${variant.title}" ?center="${this.center}">${this.title}</mm-text>
+        <mm-text variant="${variant.description}" ?center="${this.center}"
+          >${this.description}</mm-text
+        >
+      </div>
     `
-    shadowRoot!.append(style)
   }
-
-  attributeChangedCallback(name, oldValue, newValue) {
-    if (name === 'title' && this.titleElement) {
-      this.titleElement.textContent = newValue
-    }
-    if (name === 'description' && this.descriptionElement) {
-      this.descriptionElement.textContent = newValue
-    }
-  }
-
-  get title() {
-    return this.getAttribute('title') || ''
-  }
-  get description() {
-    return this.getAttribute('description') || ''
-  }
-  get center() {
-    return this.hasAttribute('center')
-  }
-
-  disconnectedCallback() {}
 }
 
 export default TitleWithDescription

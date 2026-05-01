@@ -1,72 +1,37 @@
-import { makeStyleSheet } from '../../javascripts/components/utils'
+import { LitElement, html } from 'lit'
+import { customElement, property } from 'lit/decorators.js'
+import { tablistStyles } from '../tablist/tablist.styles'
 
-class Tab extends HTMLElement {
-  // TODO : constructo가 아닌 connectedCallback에서 사용하면, 스타일을 못 받아옴
+@customElement('mm-tab')
+class Tab extends LitElement {
+  @property({ type: String }) value = ''
+  @property({ type: String }) selected = 'false'
+  @property({ type: String, attribute: 'data-index' }) dataIndex = ''
 
-  static observedAttributes = ['aria-selected'] // TODO
+  static styles = [tablistStyles]
 
-  constructor() {
-    super()
-    const shadow = this.attachShadow({ mode: 'open' })
-
-    const container = document.createElement('button')
-    container.role = 'tab'
-    container.classList.add('tab')
-    container.ariaSelected = this.selected || 'false'
-
-    const label = document.createElement('span')
-    label.classList.add('tab-label')
-
-    shadow.appendChild(container)
-    container.append(...this.childNodes, makeStyleSheet('tablist'))
-
-    // TRACKING THE URL
-    // connectedCallback() {
-    //   if (window.location.hash.substr(1) === this.heading.id) {
-    //     this.setAttribute('open', 'true')
-    //     this.btn.focus()
-    //   }
-    // }
-    // this.btn.onclick = () => {
-    //   let open = this.getAttribute('open') === 'true' || false
-    //   this.setAttribute('open', open ? 'false' : 'true')
-
-    //   if (this.heading.id && !open) {
-    //     history.pushState(null, null, '#' + this.heading.id)
-    //   }
-    // }
-
-    // attributeChangedCallback(name) {
-    //   if (name === 'open') {
-    //     this.switchState()
-    //   }
-    // }
-    // this.switchState = () => {
-    //   let expanded = this.getAttribute('open') === 'true' || false
-    //   this.btn.setAttribute('aria-expanded', expanded)
-    //   this.shadowRoot.querySelector('.content').hidden = !expanded
-    // }
-
-    // declarative: The component only requires a clear trigger; the script manages everything under the hood.
-    // composable: you can use it within or with any other component.
-    // reusable: you can use it anywhere you need to toggle something into view.
-    // extensible: I could do some more work to make it more extensible, but with the trigger event alone, we can react to the internal state.
-    // interoperable: works on most modern browsers, and for the cases where it doesn't, the user can still read the information.
-    // accessible: I could make more efforts on this subject, but this article isn't about accessibility.
+  private _onClick() {
+    this.dispatchEvent(
+      new CustomEvent('mm-tab-select', {
+        bubbles: true,
+        composed: true,
+        detail: { dataIndex: this.dataIndex },
+      }),
+    )
   }
 
-  get value() {
-    return this.getAttribute('value')
-  }
-
-  get selected() {
-    return this.getAttribute('selected')
-  }
-
-  connectedCallback() {}
-  disconnectedCallback() {}
-  attributeChangedCallback(name, oldValue, newValue) {
-    this.shadowRoot?.querySelector('button')?.setAttribute('aria-selected', newValue || 'false')
+  render() {
+    return html`
+      <button
+        role="tab"
+        class="tab"
+        data-index="${this.dataIndex}"
+        aria-selected="${this.selected}"
+        @click="${this._onClick}"
+      >
+        <slot></slot>
+      </button>
+    `
   }
 }
 

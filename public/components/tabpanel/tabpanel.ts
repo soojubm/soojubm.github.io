@@ -1,46 +1,18 @@
-import { makeStyleSheet } from '../../javascripts/components/utils'
+import { LitElement, html } from 'lit'
+import { customElement, property } from 'lit/decorators.js'
 
-class TabPanel extends HTMLElement {
-  constructor() {
-    super()
-    const shadow = this.attachShadow({ mode: 'open' })
+@customElement('mm-tabpanel')
+class TabPanel extends LitElement {
+  @property({ type: String, attribute: 'aria-hidden' }) ariaHidden = 'false'
+  @property({ type: String, attribute: 'data-index' }) dataIndex = ''
 
-    const container = document.createElement('section')
-    container.role = 'tabpanel'
-    container.classList.add('tabpanel') // unstyled
-    container.ariaHidden = this.ariaHidden || 'false'
-    container.dataset.index = this.dataIndex || ''
-
-    shadow.appendChild(container)
-    container.append(...this.childNodes, makeStyleSheet('tablist'))
-  }
-
-  get ariaHidden() {
-    return this.getAttribute('aria-hidden')
-  }
-
-  get dataIndex() {
-    return this.getAttribute('data-index')
-  }
-
-  connectedCallback() {
-    // if (!this.hasAttribute('role')) this.setAttribute('role', 'checkbox')
-    // if (!this.hasAttribute('tabindex')) this.setAttribute('tabindex', 0)
-    // if (!this.getAttribute('greeting-name')) { this.setAttribute('greeting-name', 'world'); }
-  }
-  disconnectedCallback() {}
-  attributeChangedCallback(name, oldValue, newValue) {
-    if (oldValue === newValue) return
-
-    // this.setAttribute('aria-hidden', newValue) // assign doesn't work
-    this.shadowRoot?.querySelector('section')?.setAttribute(name, newValue)
-
-    // if (name === 'checked') this.checked = newValue
-    // switch (name) {
-    //   case 'greeting-name':
-    //     this.p.textContent = `Hello ${newVal || 'world'}!`
-    //     break
-    // }
+  render() {
+    return html`
+      <section role="tabpanel" class="tabpanel" aria-hidden="${this.ariaHidden}" data-index="${this
+        .dataIndex}">
+        <slot></slot>
+      </section>
+    `
   }
 }
 

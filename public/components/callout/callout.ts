@@ -1,46 +1,25 @@
-import { makeStyleSheet } from '../../javascripts/components/utils'
+import { LitElement, html } from 'lit'
+import { customElement, property } from 'lit/decorators.js'
+import { calloutStyles } from './callout.styles'
 
-class Callout extends HTMLElement {
-  constructor() {
-    super()
+@customElement('mm-callout')
+class Callout extends LitElement {
+  @property({ type: String }) heading = ''
+  @property({ type: String }) text = ''
+  @property({ type: String }) variant = ''
+
+  static styles = [calloutStyles]
+
+  render() {
+    return html`
+      <div class="callout" data-variant="${this.variant}">
+        <mm-icon name="warning-triangle" class="callout-icon"></mm-icon>
+        ${this.heading ? html`<h3 class="callout-title">${this.heading}</h3>` : ''}
+        ${this.text ? html`<p class="callout-text">${this.text}</p>` : ''}
+        <slot></slot>
+      </div>
+    `
   }
-
-  get heading() {
-    return this.getAttribute('heading')
-  }
-
-  get text() {
-    return this.getAttribute('text')
-  }
-
-  get variant() {
-    return this.getAttribute('variant')
-  }
-
-  connectedCallback() {
-    const shadow = this.attachShadow({ mode: 'open' })
-
-    const container = document.createElement('div')
-    container.classList.add('callout')
-    container.dataset.variant = this.variant || ''
-
-    // const heading = document.createElement('h3')
-    // heading.classList.add('callout-title')
-    // heading.innerText = this.heading || ''
-
-    const text = document.createElement('p')
-    text.classList.add('callout-text')
-    text.innerText = this.text || ''
-
-    const icon = document.createElement('mm-icon')
-    icon.setAttribute('name', 'warning-triangle')
-    icon.classList.add('callout-icon')
-    // icon.setAttribute('color', 'red')
-
-    shadow.append(container, makeStyleSheet('callout'))
-    container.append(icon, text, ...this.childNodes)
-  }
-  disconnectedCallback() {}
 }
 
 export default Callout
