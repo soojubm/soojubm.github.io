@@ -1,5 +1,5 @@
 import { renderLayout } from '../../../layouts/base-layouts'
-import main from './index.html'
+import main from './textarea.html'
 
 document.addEventListener('DOMContentLoaded', () => {
   document.body.innerHTML = renderLayout(main)

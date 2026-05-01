@@ -1,13 +1,6 @@
-import footer from '/public/components/footer/footer.html'
-import navbar from '/public/components/navbar/navbar.html'
-
+import { renderLayout } from '../../../layouts/base-layouts'
 import main from './callout.html'
 
-import '/pages/components/components.css'
-import '/public/stylesheets/shared.css'
-
 document.addEventListener('DOMContentLoaded', () => {
-  document.body.insertAdjacentHTML('beforeend', navbar)
-  document.body.insertAdjacentHTML('beforeend', main)
-  document.body.insertAdjacentHTML('beforeend', footer)
+  document.body.innerHTML = renderLayout(main)
 })
