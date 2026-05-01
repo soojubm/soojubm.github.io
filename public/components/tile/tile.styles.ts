@@ -101,17 +101,4 @@ export const tileStyles = css`
     width: 100%;
     max-width: var(--width-medium);
   }
-
-  .card-title {padding:var(--space-3) 0 0;font-size:var(--font-size-14);font-weight:var(--font-weight-bold);color:var(--color-foreground);}
-  .card-text {margin:var(--space-1) 0;}
-
-  .card-category {position:absolute;left:var(--space-2);top:var(--space-2);}
-
-  .card-date {margin:0 0 0 .5rem;color:var(--color-foreground-light);}
-  .card-note {justify-content:center;width:100%;margin:var(--space-3) 0 0 0;}
-  .card-more {display:none;position:absolute;right:var(--inset);top:var(--inset);}
-
-  @media (hover) and (pointer: fine) {
-    :host:hover .card-more {display:flex;}
-  }
 `

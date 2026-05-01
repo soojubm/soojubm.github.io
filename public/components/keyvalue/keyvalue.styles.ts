@@ -16,12 +16,4 @@ export const keyvalueStyles = css`
   }
 
   :host {display:flex;gap:2rem;}
-  .statistic-item {position: relative;}
-  .statistic-item:hover {}
-  .statistic-label {display: block;color: var(--color-foreground-light);line-height:24px;}
-  .statistic-value {display: block;font-size:var(--font-size-18);font-weight:var(--font-weight-bold);}
-
-  :host[data-size=small] {}
-  :host[data-size=small] .statistic-item {display: flex;align-items: center;}
-  :host[data-size=small] .statistic-value {margin: 0 0 0 var(--space-1);font-size: var(--font-size-14);}
 `

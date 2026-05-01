@@ -103,8 +103,6 @@ export const checkboxStyles = css`
 
   :host input:disabled ~ label {opacity:.5;cursor:not-allowed;}
 
-  .checkbox-description {display:block !important;padding-left:calc(var(--size-tiny) + var(--space-2));color:var(--color-foreground-light);}
-
   @keyframes checkmark {
     0% {
       background-position-y: 5px;
