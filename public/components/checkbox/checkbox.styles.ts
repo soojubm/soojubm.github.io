@@ -1,0 +1,138 @@
+import { css } from 'lit'
+
+export const checkboxStyles = css`
+  :host {
+    --checkbox-size: var(--size-tiny);
+    --checkbox-gap: calc(var(--checkbox-size) + var(--space-2));
+    --checkbox-radius: 4px;
+    --checkbox-inset: var(--space-2);
+
+    /* min-height: 32로 가면 slotted 에서 정렬 문제 */
+    /* min-height: var(--size-medium); */
+    gap: var(--space-2);
+  }
+
+  :host input {
+    /* reset */
+    margin: 0;
+
+    /* opacity: 0;
+    inline-size: 100%; */
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    /* .sr-only { */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+    /* } */
+  }
+
+  label {
+    display: flex;
+    align-items: center;
+    height: var(--checkbox-size);
+    gap: var(--space-2);
+  }
+
+  .checkbox-indicator {
+    display: inline-flex; /* 아이콘과 텍스트를 한 줄에 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+    cursor: pointer;
+    position: relative; /* 가상 선택자 위치 지정을 위해 */
+    /* padding-left: var(--checkbox-gap); */
+    user-select: none; /* 텍스트 선택 방지 */
+
+    width: var(--checkbox-size);
+    height: var(--checkbox-size);
+    border: var(--border);
+    border-color: var(--color-border-strong);
+    box-sizing: border-box;
+    border-radius: var(--checkbox-radius);
+    background: var(--color-background);
+  }
+
+
+
+  input[type="checkbox"] + label .checkbox-indicator::after {
+    /* content: '\2713'; */
+    content: '';
+    display: block;
+    width:6px;
+    height:2px;
+    border-left:1px solid;
+    border-bottom:1px solid;
+    border-color:var(--gray200);
+    position:absolute;
+    left:4px;
+    top:5px;
+    transform:rotate(-50deg) scale(0);
+  }
+
+  input[type="checkbox"]:checked + label .checkbox-indicator::after {
+    border-color:var(--color-primary);
+    transform: rotate(-50deg) scale(1);
+  }
+
+  /* 포커스 상태 스타일링 (접근성 향상) */
+  input:focus + label::before {
+    outline: 2px solid #007bff; /* 포커스 아웃라인 */
+    outline-offset: 2px;
+  }
+
+  :host([data-size=large]) input[type="checkbox"]:checked + label .checkbox-indicator::after {
+    left: 8px;
+    top: 8px;
+    transform:rotate(-50deg) scale(1.5);
+  }
+
+  :host(:focus-within) label {}
+
+  :host input[indeterminate=true] ~ label:before,
+  :host input[data-indeterminate=true] ~ label:before {border-color:var(--green800);background:var(--green100);}
+  :host input[indeterminate=true] ~ label:after,
+  :host input[data-indeterminate=true] ~ label:after {display:block;width:8px;background:var(--color-primary);border:none;left:4px;top:48%;transform:rotate(0deg);}
+
+  :host input:disabled ~ label {opacity:.5;cursor:not-allowed;}
+
+  .checkbox-description {display:block !important;padding-left:calc(var(--size-tiny) + var(--space-2));color:var(--color-foreground-light);}
+
+  @keyframes checkmark {
+    0% {
+      background-position-y: 5px;
+    }
+    50% {
+      background-position-y: -2px;
+    }
+    100% {
+      background-position-y: 0;
+    }
+  }
+
+
+  /* input[type="radio"]:checked + label::after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    background-color: #007bff;
+    border-radius: 50%;
+  } */
+
+
+  /* // size */
+  :host([data-size=large]) {
+    --checkbox-size: var(--size-small);
+  }
+`

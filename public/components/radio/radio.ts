@@ -1,8 +1,11 @@
 import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { radioStyles } from './radio.styles'
 
 @customElement('mm-radio')
 class Radio extends LitElement {
+  static styles = [radioStyles]
+
   @property({ type: String }) id = ''
   @property({ type: String }) name = ''
   @property({ type: String }) helper = ''
@@ -13,7 +16,6 @@ class Radio extends LitElement {
   render() {
     const id = this.id || `radio-${Math.random().toString(36).slice(2, 9)}`
     return html`
-      <link rel="stylesheet" href="/public/components/radio/radio.css" />
       <div>
         <input
           type="radio"

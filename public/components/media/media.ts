@@ -12,7 +12,7 @@ class Media extends LitElement {
 
   render() {
     return html`
-      <div class="" data-size="${this.size}">
+      <div data-size="${this.size}">
         <img src="${this.src}" alt="${this.alt}" />
       </div>
     `

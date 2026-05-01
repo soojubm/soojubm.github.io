@@ -11,7 +11,7 @@ class Tooltip extends LitElement {
 
   render() {
     return html`
-      <div class="" data-align="${this.align}">
+      <div data-align="${this.align}">
         <slot class="tooltip-trigger" name="trigger"></slot>
         <div class="tooltip-content" role="tooltip">${this.content}</div>
       </div>

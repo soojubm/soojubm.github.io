@@ -1,0 +1,117 @@
+import { css } from 'lit'
+
+export const tileStyles = css`
+  /* reset  */
+  figure {
+    margin: 0;
+  }
+  p {margin: 0;}
+  img {display:block;width:100%;}
+
+  :host {
+    height: var(--tile-height, auto);
+
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    padding: var(--space-4);
+    border: var(--border);
+    border-radius: var(--radius);
+    box-sizing: border-box;
+    background: var(--color-background);
+    position: relative;
+    z-index: 1;
+    /* z index for popover why? */
+    /* // 임시 */
+    /* margin: var(--space-3) 0; */
+  }
+
+  :host[data-variant=plain] {
+    padding: 0;
+    border: 0;
+    background: none;
+  }
+
+  :host[data-variant=tinted] {
+    border-color: transparent;
+    background-color: var(--color-background-subtle);
+  }
+
+  :host[data-variant=elevated] {
+    /* box-shadow:var(--shadow-tile); */
+    box-shadow:var(--shadow);
+      /* &:hover {
+      outline: 2px solid;
+    } */
+  }
+
+  :host[data-size=small] {
+    padding: var(--space-2);
+  }
+
+
+
+  ::slotted([slot=action]) {
+    position: absolute;
+    right: var(--space-2);
+    top: var(--space-2);
+    z-index: 1;
+  }
+  ::slotted([slot=tags]) {
+    margin: var(--space-2) 0;
+  }
+
+  /* // 텍스트가 올 때 시각보정. 아이콘이 오면 아이콘에서 margin-top:.5rem?
+  // hoverable. 전체가 클릭 영역일 수도 있지만 내부에 버튼이 있을 수도.
+  // flat / raised / elevated / floating / lifted
+  */
+
+
+  ::slotted([slot=thumbnail]) {
+    max-height: 200px;
+    border: var(--border);
+    border-radius: var(--radius);
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+  }
+  ::slotted([slot=thumbnail]) img {
+    width: 75%;
+
+  }
+  ::slotted([slot=heading]) {
+    display: block;
+    margin: var(--space-3) 0 0 0 !important;
+  }
+  ::slotted([slot=tags]) {
+    display: block;
+    margin: var(--space-3) 0 0 0 !important;
+  }
+
+
+  :host {
+    position: relative;
+    cursor: pointer;
+    /* width: 100%;
+    max-width: var(--width-medium); */
+  }
+
+  :host[data-size=medium] {
+    width: 100%;
+    max-width: var(--width-medium);
+  }
+
+  .card-title {padding:var(--space-3) 0 0;font-size:var(--font-size-14);font-weight:var(--font-weight-bold);color:var(--color-foreground);}
+  .card-text {margin:var(--space-1) 0;}
+
+  .card-category {position:absolute;left:var(--space-2);top:var(--space-2);}
+
+  .card-date {margin:0 0 0 .5rem;color:var(--color-foreground-light);}
+  .card-note {justify-content:center;width:100%;margin:var(--space-3) 0 0 0;}
+  .card-more {display:none;position:absolute;right:var(--inset);top:var(--inset);}
+
+  @media (hover) and (pointer: fine) {
+    :host:hover .card-more {display:flex;}
+  }
+`

@@ -66,7 +66,6 @@ class Text extends LitElement {
 
     return html`
       <p
-        class=""
         style=${styleMap(variantStyle)}
         ?data-center=${this.center}
         ?data-truncated=${this.truncated}

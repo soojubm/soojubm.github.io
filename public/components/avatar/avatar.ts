@@ -19,7 +19,6 @@ class Avatar extends LitElement {
 
     return html`
       <figure
-        class=""
         part="avatar"
         role="img"
         data-size="${this.size}"

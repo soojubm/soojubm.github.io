@@ -1,8 +1,11 @@
 import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { checkboxStyles } from './checkbox.styles'
 
 @customElement('mm-checkbox')
 class Checkbox extends LitElement {
+  static styles = [checkboxStyles]
+
   @property({ type: String }) name = ''
   @property({ type: String }) size = ''
   @property({ type: String }) helper = ''
@@ -18,7 +21,6 @@ class Checkbox extends LitElement {
 
   render() {
     return html`
-      <link rel="stylesheet" href="/public/components/checkbox/checkbox.css" />
       <div data-size="${this.size}">
         <input
           type="checkbox"

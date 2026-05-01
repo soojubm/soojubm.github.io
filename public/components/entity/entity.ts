@@ -15,11 +15,13 @@ class Entity extends LitElement {
 
   render() {
     return html`
-      <div class="" data-alignment="${this.alignment}" data-size="${this.size}">
+      <div data-alignment="${this.alignment}" data-size="${this.size}">
         <slot name="avatar"></slot>
         <slot name="tag"></slot>
 
-        ${this.label ? html`<mm-text class="entity-label" variant="subhead">${this.label}</mm-text>` : ''}
+        ${this.label
+          ? html`<mm-text class="entity-label" variant="subhead">${this.label}</mm-text>`
+          : ''}
         ${this.description ? html`<mm-text variant="caption">${this.description}</mm-text>` : ''}
         ${this.description2 ? html`<mm-text variant="caption">${this.description2}</mm-text>` : ''}
         ${this.description3 ? html`<mm-text variant="caption">${this.description3}</mm-text>` : ''}

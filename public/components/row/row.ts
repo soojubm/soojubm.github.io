@@ -11,7 +11,7 @@ class Row extends LitElement {
 
   render() {
     return html`
-      <div class="" data-gap="${this.gap}" data-justify-content="${this.justifyContent}">
+      <div data-gap="${this.gap}" data-justify-content="${this.justifyContent}">
         <slot></slot>
       </div>
     `

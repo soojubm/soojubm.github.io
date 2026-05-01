@@ -1,8 +1,11 @@
 import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { switchStyles } from './switch.styles'
 
 @customElement('mm-switch')
 class Switch extends LitElement {
+  static styles = [switchStyles]
+
   @property({ type: String }) name = ''
   @property({ type: String }) size = ''
   @property({ type: Boolean, reflect: true }) checked = false
@@ -16,8 +19,7 @@ class Switch extends LitElement {
 
   render() {
     return html`
-      <link rel="stylesheet" href="/public/components/switch/switch.css" />
-      <div class="" data-size="${this.size}">
+      <div data-size="${this.size}">
         <input
           id="${this.name}"
           name="${this.name}"
