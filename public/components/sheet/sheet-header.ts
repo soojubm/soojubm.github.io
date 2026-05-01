@@ -6,7 +6,14 @@ class SheetHeader extends LitElement {
   @property({ type: String }) title = ''
 
   static styles = css`
-    :host { display: flex; align-items: center; justify-content: space-between; padding: 1rem 0; border-bottom: var(--border); background: var(--color-background); }
+    :host {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+      border-bottom: var(--border);
+      background: var(--color-background);
+    }
   `
 
   private handleClose = () => {
@@ -16,7 +23,12 @@ class SheetHeader extends LitElement {
   render() {
     return html`
       <mm-text variant="subhead">${this.title}</mm-text>
-      <mm-icon-button variant="navigator" icon="xmark" aria-label="Close" @click="${this.handleClose}"></mm-icon-button>
+      <mm-icon-button
+        variant="navigator"
+        icon="xmark"
+        aria-label="Close"
+        @click="${this.handleClose}"
+      ></mm-icon-button>
     `
   }
 }

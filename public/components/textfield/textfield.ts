@@ -26,8 +26,7 @@ class Textfield extends LitElement {
         ${this.label
           ? html`
               <label class="textfield-label">
-                ${this.label}
-                ${this.isOptional ? html`<small>선택입력</small>` : ''}
+                ${this.label} ${this.isOptional ? html`<small>선택입력</small>` : ''}
               </label>
             `
           : ''}

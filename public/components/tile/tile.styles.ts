@@ -5,8 +5,13 @@ export const tileStyles = css`
   figure {
     margin: 0;
   }
-  p {margin: 0;}
-  img {display:block;width:100%;}
+  p {
+    margin: 0;
+  }
+  img {
+    display: block;
+    width: 100%;
+  }
 
   :host {
     height: var(--tile-height, auto);
@@ -27,38 +32,36 @@ export const tileStyles = css`
     /* margin: var(--space-3) 0; */
   }
 
-  :host[data-variant=plain] {
+  :host[data-variant='plain'] {
     padding: 0;
     border: 0;
     background: none;
   }
 
-  :host[data-variant=tinted] {
+  :host[data-variant='tinted'] {
     border-color: transparent;
     background-color: var(--color-background-subtle);
   }
 
-  :host[data-variant=elevated] {
+  :host[data-variant='elevated'] {
     /* box-shadow:var(--shadow-tile); */
-    box-shadow:var(--shadow);
-      /* &:hover {
+    box-shadow: var(--shadow);
+    /* &:hover {
       outline: 2px solid;
     } */
   }
 
-  :host[data-size=small] {
+  :host[data-size='small'] {
     padding: var(--space-2);
   }
 
-
-
-  ::slotted([slot=action]) {
+  ::slotted([slot='action']) {
     position: absolute;
     right: var(--space-2);
     top: var(--space-2);
     z-index: 1;
   }
-  ::slotted([slot=tags]) {
+  ::slotted([slot='tags']) {
     margin: var(--space-2) 0;
   }
 
@@ -67,8 +70,7 @@ export const tileStyles = css`
   // flat / raised / elevated / floating / lifted
   */
 
-
-  ::slotted([slot=thumbnail]) {
+  ::slotted([slot='thumbnail']) {
     max-height: 200px;
     border: var(--border);
     border-radius: var(--radius);
@@ -76,19 +78,17 @@ export const tileStyles = css`
     overflow: hidden;
     position: relative;
   }
-  ::slotted([slot=thumbnail]) img {
+  ::slotted([slot='thumbnail']) img {
     width: 75%;
-
   }
-  ::slotted([slot=heading]) {
+  ::slotted([slot='heading']) {
     display: block;
     margin: var(--space-3) 0 0 0 !important;
   }
-  ::slotted([slot=tags]) {
+  ::slotted([slot='tags']) {
     display: block;
     margin: var(--space-3) 0 0 0 !important;
   }
-
 
   :host {
     position: relative;
@@ -97,7 +97,7 @@ export const tileStyles = css`
     max-width: var(--width-medium); */
   }
 
-  :host[data-size=medium] {
+  :host[data-size='medium'] {
     width: 100%;
     max-width: var(--width-medium);
   }

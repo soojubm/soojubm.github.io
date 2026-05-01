@@ -12,9 +12,16 @@ export const resultStyles = css`
     margin: 0 auto;
   }
 
-  ::slotted([slot=avatar]) {}
-  ::slotted([slot=title]) {}
-  ::slotted([slot=description]) {}
-  ::slotted([slot=list]) {width:100%;}
-  ::slotted([slot=action]) {margin:1rem 0 0 0;}
+  ::slotted([slot='avatar']) {
+  }
+  ::slotted([slot='title']) {
+  }
+  ::slotted([slot='description']) {
+  }
+  ::slotted([slot='list']) {
+    width: 100%;
+  }
+  ::slotted([slot='action']) {
+    margin: 1rem 0 0 0;
+  }
 `

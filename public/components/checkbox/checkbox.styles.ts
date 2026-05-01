@@ -60,25 +60,23 @@ export const checkboxStyles = css`
     background: var(--color-background);
   }
 
-
-
-  input[type="checkbox"] + label .checkbox-indicator::after {
+  input[type='checkbox'] + label .checkbox-indicator::after {
     /* content: '\2713'; */
     content: '';
     display: block;
-    width:6px;
-    height:2px;
-    border-left:1px solid;
-    border-bottom:1px solid;
-    border-color:var(--gray200);
-    position:absolute;
-    left:4px;
-    top:5px;
-    transform:rotate(-50deg) scale(0);
+    width: 6px;
+    height: 2px;
+    border-left: 1px solid;
+    border-bottom: 1px solid;
+    border-color: var(--gray200);
+    position: absolute;
+    left: 4px;
+    top: 5px;
+    transform: rotate(-50deg) scale(0);
   }
 
-  input[type="checkbox"]:checked + label .checkbox-indicator::after {
-    border-color:var(--color-primary);
+  input[type='checkbox']:checked + label .checkbox-indicator::after {
+    border-color: var(--color-primary);
     transform: rotate(-50deg) scale(1);
   }
 
@@ -88,20 +86,35 @@ export const checkboxStyles = css`
     outline-offset: 2px;
   }
 
-  :host([data-size=large]) input[type="checkbox"]:checked + label .checkbox-indicator::after {
+  :host([data-size='large']) input[type='checkbox']:checked + label .checkbox-indicator::after {
     left: 8px;
     top: 8px;
-    transform:rotate(-50deg) scale(1.5);
+    transform: rotate(-50deg) scale(1.5);
   }
 
-  :host(:focus-within) label {}
+  :host(:focus-within) label {
+  }
 
-  :host input[indeterminate=true] ~ label:before,
-  :host input[data-indeterminate=true] ~ label:before {border-color:var(--green800);background:var(--green100);}
-  :host input[indeterminate=true] ~ label:after,
-  :host input[data-indeterminate=true] ~ label:after {display:block;width:8px;background:var(--color-primary);border:none;left:4px;top:48%;transform:rotate(0deg);}
+  :host input[indeterminate='true'] ~ label:before,
+  :host input[data-indeterminate='true'] ~ label:before {
+    border-color: var(--green800);
+    background: var(--green100);
+  }
+  :host input[indeterminate='true'] ~ label:after,
+  :host input[data-indeterminate='true'] ~ label:after {
+    display: block;
+    width: 8px;
+    background: var(--color-primary);
+    border: none;
+    left: 4px;
+    top: 48%;
+    transform: rotate(0deg);
+  }
 
-  :host input:disabled ~ label {opacity:.5;cursor:not-allowed;}
+  :host input:disabled ~ label {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
 
   @keyframes checkmark {
     0% {
@@ -115,7 +128,6 @@ export const checkboxStyles = css`
     }
   }
 
-
   /* input[type="radio"]:checked + label::after {
     content: '';
     position: absolute;
@@ -128,9 +140,8 @@ export const checkboxStyles = css`
     border-radius: 50%;
   } */
 
-
   /* // size */
-  :host([data-size=large]) {
+  :host([data-size='large']) {
     --checkbox-size: var(--size-small);
   }
 `

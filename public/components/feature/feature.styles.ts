@@ -1,7 +1,14 @@
 import { css } from 'lit'
 
 export const featureStyles = css`
-  .feature-item {display:flex;flex-direction:column;width:100%;gap:var(--space-3);position:relative;z-index:1;}
+  .feature-item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: var(--space-3);
+    position: relative;
+    z-index: 1;
+  }
   /* .feature-item-title {margin: 0 0 var(--space-3);} */
   /* .feature-item-avatar:before {
     content:'';
@@ -13,7 +20,7 @@ export const featureStyles = css`
     position:absolute;left:0rem;top:0;z-index:-1;}
   .feature-item-link {display:block;margin:2rem 0 0 0;} */
 
-  .feature-item[data-variant=simple] {
+  .feature-item[data-variant='simple'] {
     padding: 2rem;
     box-sizing: border-box;
     border-radius: var(--radius);
@@ -21,6 +28,8 @@ export const featureStyles = css`
   }
 
   @media (--tiny) {
-    .feature-item {max-width:100%;}
+    .feature-item {
+      max-width: 100%;
+    }
   }
 `

@@ -18,10 +18,24 @@ class Input extends LitElement {
 
   render() {
     return html`
-      <div class="textfield ${this.isInvalid ? 'is-invalid' : ''}" data-label="${String(this.hiddenLabel)}">
-        ${this.label ? html`<label class="textfield-label">${this.label}${this.isOptional ? html`<small>선택입력</small>` : ''}</label>` : ''}
+      <div
+        class="textfield ${this.isInvalid ? 'is-invalid' : ''}"
+        data-label="${String(this.hiddenLabel)}"
+      >
+        ${this.label
+          ? html`<label class="textfield-label"
+              >${this.label}${this.isOptional ? html`<small>선택입력</small>` : ''}</label
+            >`
+          : ''}
         <slot name="prefix"></slot>
-        <input class="reset-input textfield-input" type="${this.type}" .value="${this.value}" name="${this.name}" placeholder="${this.placeholder}" ?disabled="${this.disabled}" />
+        <input
+          class="reset-input textfield-input"
+          type="${this.type}"
+          .value="${this.value}"
+          name="${this.name}"
+          placeholder="${this.placeholder}"
+          ?disabled="${this.disabled}"
+        />
         <slot name="suffix"></slot>
         <slot name="link"></slot>
         ${this.helper ? html`<p class="textfield-helper">${this.helper}</p>` : ''}

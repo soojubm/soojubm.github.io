@@ -29,7 +29,10 @@ class Tablist extends LitElement {
     })
 
     panels?.forEach(panel => {
-      panel.setAttribute('aria-hidden', panel.getAttribute('data-index') === dataIndex ? 'false' : 'true')
+      panel.setAttribute(
+        'aria-hidden',
+        panel.getAttribute('data-index') === dataIndex ? 'false' : 'true',
+      )
     })
   }
 

@@ -150,7 +150,6 @@ export const textfieldStyles = css`
     cursor: not-allowed;
   }
 
-
   ::slotted([slot='suffix']) {
     display: flex;
     align-items: center;

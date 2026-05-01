@@ -9,7 +9,7 @@ export const radioStyles = css`
     --radio-inset: var(--space-2);
 
     /* min-width: var(--radio-size); */
-    position:relative;
+    position: relative;
   }
 
   label {
@@ -19,18 +19,17 @@ export const radioStyles = css`
   }
 
   .radio-indicator {
-    width:var(--radio-size);
-    height:var(--radio-size);
-    border:var(--radio-border);
+    width: var(--radio-size);
+    height: var(--radio-size);
+    border: var(--radio-border);
     border-radius: var(--radio-radius);
     box-shadow: var(--shadow);
-    box-sizing:border-box;
+    box-sizing: border-box;
     /* animation:ripple2 0.2s linear forwards; */
 
     /* TODO pointer cursor on radio container */
     /* cursor: pointer; */
   }
-
 
   input {
     /* // reset */
@@ -45,21 +44,21 @@ export const radioStyles = css`
     left: 0;
   }
   input:checked + label .radio-indicator {
-    --b1: 25.3267% .015896 252.417568;
-    --b2: 23.2607% .013807 253.100675;
+    --b1: 25.3267% 0.015896 252.417568;
+    --b2: 23.2607% 0.013807 253.100675;
     background: var(--color-primary);
     border-color: var(--color-primary);
 
-    animation: radiomark var(--animation-input, .2s) ease-out;
-    box-shadow:
-      0 0 0 4px var(--color-background) inset;
-
+    animation: radiomark var(--animation-input, 0.2s) ease-out;
+    box-shadow: 0 0 0 4px var(--color-background) inset;
   }
 
   input:disabled {
-    opacity:.4;cursor:not-allowed;
+    opacity: 0.4;
+    cursor: not-allowed;
   }
   input:disabled + label {
-    opacity:.6;cursor:not-allowed;
+    opacity: 0.6;
+    cursor: not-allowed;
   }
 `

@@ -8,8 +8,12 @@ class TabPanel extends LitElement {
 
   render() {
     return html`
-      <section role="tabpanel" class="tabpanel" aria-hidden="${this.ariaHidden}" data-index="${this
-        .dataIndex}">
+      <section
+        role="tabpanel"
+        class="tabpanel"
+        aria-hidden="${this.ariaHidden}"
+        data-index="${this.dataIndex}"
+      >
         <slot></slot>
       </section>
     `
