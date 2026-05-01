@@ -14,7 +14,7 @@ class Radio extends LitElement {
     const id = this.id || `radio-${Math.random().toString(36).slice(2, 9)}`
     return html`
       <link rel="stylesheet" href="/public/components/radio/radio.css" />
-      <div class="radio">
+      <div>
         <input
           type="radio"
           id="${id}"

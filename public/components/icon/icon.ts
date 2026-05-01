@@ -19,7 +19,7 @@ class Icon extends LitElement {
         href="https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css"
       />
       <i
-        class="icon ${iconClassName}"
+        class="${iconClassName}"
         data-size="${this.size}"
         style="${this.color ? `color: ${this.color}` : ''}"
       ></i>

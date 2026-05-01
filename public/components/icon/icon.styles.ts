@@ -5,7 +5,7 @@ export const iconStyles = css`
     font-style: normal;
   }
 
-  .icon {
+  :host {
     --button-text-color: var(--color-foreground);
     --button-text-color: inherit;
     display: flex !important;
@@ -15,15 +15,15 @@ export const iconStyles = css`
     color: var(--button-text-color);
   }
 
-  .icon[data-size='tiny'] {
+  :host([data-size='tiny']) {
     font-size: 0.75rem !important;
   }
 
-  .icon[data-size='small'] {
+  :host([data-size='small']) {
     font-size: 0.875rem !important;
   }
 
-  .icon[data-size='large'] {
+  :host([data-size='large']) {
     font-size: 1.5rem !important;
   }
 `

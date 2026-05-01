@@ -12,7 +12,7 @@ class Tag extends LitElement {
   render() {
     if (this.datetime) {
       return html`
-        <time class="tag" data-variant="${this.variant}" datetime="${this.datetime}">
+        <time data-variant="${this.variant}" datetime="${this.datetime}">
           <slot name="icon"></slot>
           <slot></slot>
         </time>
@@ -20,7 +20,7 @@ class Tag extends LitElement {
     }
 
     return html`
-      <span class="tag" data-variant="${this.variant}">
+      <span data-variant="${this.variant}">
         <slot name="icon"></slot>
         <slot></slot>
       </span>

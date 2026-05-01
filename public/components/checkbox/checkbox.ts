@@ -19,7 +19,7 @@ class Checkbox extends LitElement {
   render() {
     return html`
       <link rel="stylesheet" href="/public/components/checkbox/checkbox.css" />
-      <div class="checkbox" data-size="${this.size}">
+      <div data-size="${this.size}">
         <input
           type="checkbox"
           id="${this.name}"

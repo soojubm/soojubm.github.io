@@ -31,7 +31,6 @@ export class Button extends LitElement {
   render() {
     return html`
       <button
-        class="button"
         data-variant="${this.variant}"
         data-size="${this.size}"
         data-status="${this.status}"

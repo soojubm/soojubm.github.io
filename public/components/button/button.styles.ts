@@ -146,7 +146,7 @@ export const buttonStyles = css`
     }
   }
 
-  .button {
+  button {
     /* // reset */
     font-family: inherit;
     font-family: var(--font-family);
@@ -176,66 +176,66 @@ export const buttonStyles = css`
   }
 
   /* variants */
-  .button[data-variant='primary'] {
+  button[data-variant='primary'] {
     border-color: transparent;
     background-color: var(--color-primary);
     --button-text-color: #fff;
   }
-  .button[data-variant='secondary'] {
+  button[data-variant='secondary'] {
     border-color: transparent;
     --button-color: var(--green100);
     --button-text-color: var(--color-primary);
   }
-  .button[data-variant='tertiary'] {
+  button[data-variant='tertiary'] {
     --button-text-color: var(--color-foreground);
   }
-  .button[data-variant='text'] {
+  button[data-variant='text'] {
     border-color: transparent;
     --button-color: var(--color-background);
     --button-text-color: var(--color-primary);
   }
-  .button[data-variant='destructive'] {
+  button[data-variant='destructive'] {
     --button-color: var(--red800);
     --button-text-color: var(--gray0);
   }
 
   /* sizes */
-  .button[data-size='huge'] {
+  button[data-size='huge'] {
     --button-size: 64px;
     --button-text-size: var(--font-size-18);
     padding-bottom: 5px;
   }
 
-  .button[data-size='large'] {
+  button[data-size='large'] {
     --button-size: var(--size-large);
     min-width: var(--button-min-width);
   }
 
-  .button[data-isfullwidth='true'] {
+  button[data-isfullwidth='true'] {
     width: 100%;
   }
 
-  .button[aria-selected] {
+  button[aria-selected] {
   }
-  .button[aria-checked='true'] {
+  button[aria-checked='true'] {
     border: 1px solid var(--color-background-strong);
   }
 
   /* states */
-  .button:disabled {
+  button:disabled {
     opacity: 0.5;
     cursor: not-allowed;
     /* pointer-events: none; */
   }
-  .button:not(:disabled):hover {
+  button:not(:disabled):hover {
     /* box-shadow: var(--status-hover); */
     border-color: var(--color-background-strong);
   }
-  .button:not(:disabled):focus {
+  button:not(:disabled):focus {
     outline: 3px solid #007185;
     outline-offset: 2px;
   }
-  .button:not(:disabled):active {
+  button:not(:disabled):active {
     background: #f0b800;
     border-color: #008296;
     box-shadow: 0 0 0 3px #c8f3fa, inset 0 0 0 2px #fff;
