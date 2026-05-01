@@ -1,16 +1,8 @@
-import footer from '/public/components/footer/footer.html'
-import navbar from '/public/components/navbar/navbar.html'
-
+import { renderLayout } from '../../../layouts/base-layouts'
 import main from './auth.html'
-import '/public/stylesheets/pages/authentication.css'
-
-import '/public/stylesheets/shared.css'
-import '/pages/components/components.css'
 
 document.addEventListener('DOMContentLoaded', () => {
-  document.body.insertAdjacentHTML('beforeend', navbar)
-  document.body.insertAdjacentHTML('beforeend', main)
-  document.body.insertAdjacentHTML('beforeend', footer)
+  document.body.innerHTML = renderLayout(main)
 
   // function createCustomer() {
   //   let billingEmail = document.querySelector('#email')?.value as HTMLElement

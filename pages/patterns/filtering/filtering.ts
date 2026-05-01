@@ -1,19 +1,8 @@
-import footer from '/public/components/footer/footer.html'
-import navbar from '/public/components/navbar/navbar.html'
-
+import { renderLayout } from '../../../layouts/base-layouts'
 import main from './filtering.html'
 
-import '/public/stylesheets/shared.css'
-
-import '/public/stylesheets/pages/filter.css'
-
-import '/pages/components/components.css'
-import '/pages/patterns/setting/setting.css'
-
 document.addEventListener('DOMContentLoaded', () => {
-  document.body.insertAdjacentHTML('beforeend', navbar)
-  document.body.insertAdjacentHTML('beforeend', main)
-  document.body.insertAdjacentHTML('beforeend', footer)
+  document.body.innerHTML = renderLayout(main)
 })
 
 // {
