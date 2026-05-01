@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(rm pages/components/card/*.ts)",
+      "Bash(git add *)",
+      "Bash(git commit -m 'pages/components/card: 빈 파일들 삭제 *)"
+    ]
+  }
+}
