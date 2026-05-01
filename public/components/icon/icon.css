@@ -5,7 +5,7 @@ i {
 
 :host {
 }
-.icon {
+:host {
   --button-text-color: var(--color-foreground);
   --button-text-color: inherit;
   display: flex !important;

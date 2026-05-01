@@ -11,7 +11,7 @@ class Tile extends LitElement {
     const inlineStyle = this.height ? `--tile-height:${this.height};` : ''
     return html`
       <link rel="stylesheet" href="/public/components/tile/tile.css" />
-      <div class="tile" data-variant="${this.variant}" data-size="${this.size}" style="${inlineStyle}">
+      <div class="" data-variant="${this.variant}" data-size="${this.size}" style="${inlineStyle}">
         <slot name="category"></slot>
         <slot name="action"></slot>
         <slot></slot>

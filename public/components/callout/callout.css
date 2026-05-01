@@ -1,4 +1,4 @@
-.callout {
+:host {
   --callout-text-color: var(--color-foreground);
 
   display:flex;
@@ -21,16 +21,16 @@
   }
 }
 
-.callout[data-variant=success] {
+:host[data-variant=success] {
   --callout-text-color: var(--green800);
   border: 1px solid;
 }
-.callout[data-variant=danger] {
+:host[data-variant=danger] {
   --callout-text-color: var(--red800);
   border: 1px solid;
 }
 
-.callout[data-variant=warning] {
+:host[data-variant=warning] {
   --callout-text-color: sienna;
   border: 1px solid;
 }

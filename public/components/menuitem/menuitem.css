@@ -15,7 +15,7 @@
 .menu-group [role=option][aria-selected=true] {}
 .menu-group [role=option][aria-selected=false] {}
 
-.item {
+:host {
   display: flex;
   align-items: center;
   width: 100%;
@@ -39,7 +39,7 @@ a {
 ::slotted([slot=prefix]) {}
 ::slotted([slot=action]) {margin:0 0 0 auto !important;}
 
-.item:hover {
+:host:hover {
   --hover-outline: calc(var(--space-2) / 2 * -1);
   --hover-outline: 0;
   cursor: pointer;
@@ -56,13 +56,13 @@ a {
 }
 
 /* TODO mm-text mm-avatar */
-.item[data-tone='danger'] mm-avatar,
-.item[data-tone='danger'] mm-text[variant='body'] {
+:host[data-tone='danger'] mm-avatar,
+:host[data-tone='danger'] mm-text[variant='body'] {
   color: #d93025; /* 혹은 원하는 danger 색상 (예: 밝은 빨간색) */
 }
 
 /* TODO navbar detect current page */
-.item[aria-current=page] {
+:host[aria-current=page] {
   --hover-outline: calc(var(--space-2) / 2 * -1);
   --hover-outline: 0;
   cursor: pointer;

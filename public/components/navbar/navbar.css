@@ -1,4 +1,4 @@
-.navbar {
+:host {
   display:flex;
   align-items: center;
   width: 100%;
@@ -85,7 +85,7 @@
 /* page 패딩, article에 패딩. 마이너스 마진. page size="" */
 /* ReactNative safeAreaView, scrollView */
 
-.page {
+:host {
   /* width: calc(var(--layout-width-wide) - var(--width-sidemenu) - var(--grid-margin)); */
   /* margin: 0 auto; */
 
@@ -98,19 +98,19 @@
 }
 
 /* fluid or with sidemenu */
-.page[data-size=fluid] {
+:host[data-size=fluid] {
   max-width: 100%;
   padding: 0 0 8rem;
 }
 
 /* 2. navbar with sidebar fluid layout */
-.page[data-size=wide] {
+:host[data-size=wide] {
   display: flex;
   justify-content: space-between;
 }
-.page[data-size=narrow] {}
+:host[data-size=narrow] {}
 
-.footer {
+:host {
   padding: 0 var(--grid-margin);
 }
 
@@ -211,20 +211,20 @@
   transform:translateX(0);overflow-y:auto;
   overscroll-behavior:contain;
 }
-.is-menu-opened .page,
-.is-menu-opened .footer {
+.is-menu-opened :host,
+.is-menu-opened :host {
   padding-left:calc(var(--width-sidemenu) + var(--grid-margin) + var(--grid-margin) + 1rem);
   /* transform: translateX(calc(var(--grid-margin) + var(--width-sidemenu))); */
 }
 
 /* --small */
 @media (max-width:1080px) {
-  .page {
+  :host {
   }
-  /* .footer {
+  /* :host {
     padding-inline: var(--grid-margin) !important; 
   } */
-  .is-menu-opened .footer {
+  .is-menu-opened :host {
     transform: translateX(0);
   }
 }

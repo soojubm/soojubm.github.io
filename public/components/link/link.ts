@@ -16,7 +16,7 @@ class Link extends LitElement {
 
     return html`
       <a
-        class="link"
+        class=""
         href="${this.href}"
         target="${this.target}"
         data-variant="${this.variant}"

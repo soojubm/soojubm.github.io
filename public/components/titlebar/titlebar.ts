@@ -12,7 +12,7 @@ class TitleBar extends LitElement {
 
   render() {
     return html`
-      <header role="navigation" class="titlebar" data-variant="${this.variant}">
+      <header role="navigation" class="" data-variant="${this.variant}">
         ${!this.hiddenBack
           ? html`<mm-icon-button variant="navigator" icon="arrow-left"></mm-icon-button>`
           : ''}

@@ -1,4 +1,4 @@
-.row {display:flex;align-items:center;width:100%;gap:var(--space-1);}
-.row[data-justify-content="space-between"] {justify-content: space-between;}
+:host {display:flex;align-items:center;width:100%;gap:var(--space-1);}
+:host[data-justify-content="space-between"] {justify-content: space-between;}
 
-/* .row[data-gap="1"] {} */
+/* :host[data-gap="1"] {} */

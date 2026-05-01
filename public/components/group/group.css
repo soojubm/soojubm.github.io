@@ -11,49 +11,49 @@
   > * {min-width:auto;}
 } */
 
-.group {
+:host {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-2);
 }
 
-.group[data-variant=menuitem] {
+:host[data-variant=menuitem] {
   flex-direction: column;
   gap: var(--space-2);
 }
 
 
-.group[data-variant=avatar] {align-items:center;gap:0;}
-.group[data-variant=avatar] > * + * {margin-left:-.25rem;}
+:host[data-variant=avatar] {align-items:center;gap:0;}
+:host[data-variant=avatar] > * + * {margin-left:-.25rem;}
 
 /* 6px spacing 예외케이스 */
-.group[data-variant=tag] {gap:6px}
-.group[data-variant=button] {
+:host[data-variant=tag] {gap:6px}
+:host[data-variant=button] {
   gap:var(--space-2);
 }
 
-.group[data-variant=hashtag] {
+:host[data-variant=hashtag] {
   column-gap: var(--space-2);
   row-gap: -.25rem;
 }
 
-.group[data-variant=radio],
-.group[data-variant=checkbox] {
+:host[data-variant=radio],
+:host[data-variant=checkbox] {
   flex-direction:column;
   gap: var(--space-3);
 }
 
-.group[data-variant=form] {
+:host[data-variant=form] {
   flex-direction:column;
   gap:var(--space-3);
 }
 
 
-.group[data-direction=row] {}
-.group[data-direction=column] {}
-.group[data-alignment=right] {}
+:host[data-direction=row] {}
+:host[data-direction=column] {}
+:host[data-alignment=right] {}
 
-.group[data-alignment='bleeding-vertical'] {
+:host[data-alignment='bleeding-vertical'] {
   display: flex;
   flex-wrap: nowrap;
   white-space: nowrap;

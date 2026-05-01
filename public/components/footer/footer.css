@@ -1,4 +1,4 @@
-.footer {
+:host {
   /* border-top: var(--border); */
 	padding:2rem var(--grid-margin);
 	/* width: calc(var(--layout-width-wide) - var(--width-sidemenu) - var(--grid-margin)); */

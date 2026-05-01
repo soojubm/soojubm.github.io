@@ -15,7 +15,7 @@ class Entity extends LitElement {
 
   render() {
     return html`
-      <div class="entity" data-alignment="${this.alignment}" data-size="${this.size}">
+      <div class="" data-alignment="${this.alignment}" data-size="${this.size}">
         <slot name="avatar"></slot>
         <slot name="tag"></slot>
 

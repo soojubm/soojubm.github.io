@@ -5,7 +5,7 @@
 --switch-border-color: var(--color-border-secondary);
 --switch-border: 2px solid var(--switch-border-color);
 */
-/* .switch {
+/* :host {
   --switch-width: 40px;
   --switch-height: 20px;
   --switch-radius: var(--radius);
@@ -19,7 +19,7 @@
   position:relative;
 }
 
-.switch input {
+:host input {
   cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -46,7 +46,7 @@
   box-shadow: var(--handleoffsetcalculator) 0 0 2px var(--tglbg) inset, var(--padding);
 }
 
-.switch input:checked {
+:host input:checked {
   background-image: none;
   --handleoffsetcalculator: var(--handleoffset);
   --tw-text-opacity: 1;
@@ -54,7 +54,7 @@
 }*/
 
 
-.switch {
+:host {
   
   --switch-width: 2rem;
   --switch-height: 16px;
@@ -64,7 +64,7 @@
   position:relative;
 }
 
-.switch input {
+:host input {
   opacity: 0;
   inline-size: 100%;
   position: absolute;
@@ -76,13 +76,13 @@
   inline-size: 100%;
 }
 
-.switch label {
+:host label {
   display:flex;
   gap:var(--space-2);
   line-height:var(--switch-height);
   cursor:pointer;
 }
-.switch label:before {
+:host label:before {
   content:'';
   display:block;
   width:var(--switch-width);
@@ -93,7 +93,7 @@
   transition:background-color .125s;
   transition:all .25s;
 }
-.switch label:after {
+:host label:after {
   content:'';
   display:block;
   width:var(--switch-height);
@@ -106,12 +106,12 @@
   position:absolute;left:0;top:0;
   transition:transform .2s;
 }
-.switch input:checked + label {}
-.switch input:checked + label:before {content:'';background:var(--color-primary);}
-.switch input:checked + label:after {transform:translateX(calc(var(--switch-width) - 16px));}
+:host input:checked + label {}
+:host input:checked + label:before {content:'';background:var(--color-primary);}
+:host input:checked + label:after {transform:translateX(calc(var(--switch-width) - 16px));}
 
-.switch input:disabled {}
-.switch input:disabled + label {cursor:not-allowed;opacity:.5;}
-.switch:focus-within label:before {
+:host input:disabled {}
+:host input:disabled + label {cursor:not-allowed;opacity:.5;}
+:host:focus-within label:before {
   outline: 3px solid var(--color-point);
 } 

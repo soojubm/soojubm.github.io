@@ -43,7 +43,7 @@ class Dropdown extends LitElement {
 
   render() {
     return html`
-      <div class="dropdown">
+      <div class="">
         <button class="dropdown-button" haspopup="listbox" aria-pressed="${this.isOpen}" @click="${this.toggleOpen}">
           ${this.selectedLabel}
           <mm-icon name="nav-arrow-down" size="small"></mm-icon>

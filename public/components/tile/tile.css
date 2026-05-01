@@ -6,7 +6,7 @@ figure {
 p {margin: 0;}
 img {display:block;width:100%;}
 
-.tile {
+:host {
   height: var(--tile-height, auto);
 
   display: flex;
@@ -25,18 +25,18 @@ img {display:block;width:100%;}
   /* margin: var(--space-3) 0; */
 }
 
-.tile[data-variant=plain] {
+:host[data-variant=plain] {
   padding: 0;
   border: 0;
   background: none;
 }
 
-.tile[data-variant=tinted] {
+:host[data-variant=tinted] {
   border-color: transparent;
   background-color: var(--color-background-subtle);
 }
 
-.tile[data-variant=elevated] {
+:host[data-variant=elevated] {
   /* box-shadow:var(--shadow-tile); */
   box-shadow:var(--shadow);
     /* &:hover {
@@ -44,7 +44,7 @@ img {display:block;width:100%;}
   } */
 }
 
-.tile[data-size=small] {
+:host[data-size=small] {
   padding: var(--space-2);
 }
 
@@ -88,14 +88,14 @@ img {display:block;width:100%;}
 }
 
 
-.card {
+:host {
   position: relative;
   cursor: pointer;
   /* width: 100%;
   max-width: var(--width-medium); */
 }
 
-.card[data-size=medium] {
+:host[data-size=medium] {
   width: 100%;
   max-width: var(--width-medium);
 }
@@ -110,5 +110,5 @@ img {display:block;width:100%;}
 .card-more {display:none;position:absolute;right:var(--inset);top:var(--inset);}
 
 @media (hover) and (pointer: fine) {
-  .card:hover .card-more {display:flex;}
+  :host:hover .card-more {display:flex;}
 }

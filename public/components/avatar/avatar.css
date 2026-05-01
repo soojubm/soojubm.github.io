@@ -7,7 +7,7 @@ img {
   width: 100%;
 }
 
-.avatar {
+:host {
   margin: 0 !important;
   
   --avatar-size: var(--size-medium);
@@ -35,32 +35,32 @@ img {
     object-fit: cover;
   }
 }
-/* .avatar:not([data-size]) {} */
-/* .avatar[data-default=true] { */
+/* :host:not([data-size]) {} */
+/* :host[data-default=true] { */
   /* background-image: url('/public/images/soojubm.png');
   background-size: 87.5%;
   background-position: 85% 57.5%; */
 /* } */
 
-.avatar[data-size=huge] {
+:host[data-size=huge] {
   --avatar-size: var(--size-huge);
   font-size:var(--font-size-huge);
 }
-.avatar[data-size=large] {
+:host[data-size=large] {
   --avatar-size: var(--size-large);
   font-size: var(--font-size-large);
 }
-.avatar[data-size=medium] {
+:host[data-size=medium] {
   --avatar-badge-size: 8px;
 }
-.avatar[data-size=small] {
+:host[data-size=small] {
   --avatar-size:var(--size-small);
 }
-.avatar[data-variant=secondary] {
+:host[data-variant=secondary] {
   border: var(--border);
   --avatar-background-color: var(--color-background);
 }
-.avatar[data-variant=tertiary] {
+:host[data-variant=tertiary] {
   --avatar-background-color: transparent;
   border:none;
   box-shadow: none;
@@ -73,10 +73,10 @@ img {
   top: -.25rem;
 }
 
-.entity {}
-.entity[data-alignment=center] {text-align: center;}
+:host {}
+:host[data-alignment=center] {text-align: center;}
 .entity-label {display:block;margin:.5rem 0 0;font-size:var(--font-size-medium);font-weight:var(--font-weight-bold);}
-.entity ::slotted([slot=tag]) {
+:host ::slotted([slot=tag]) {
   position: absolute;
   left: var(--space-1-minus);
   top: var(--space-1-minus);

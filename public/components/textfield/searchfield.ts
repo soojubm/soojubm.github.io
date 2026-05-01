@@ -13,7 +13,7 @@ class SearchField extends LitElement {
 
   render() {
     return html`
-      <div class="searchfield" role="search" aria-label="sitewide / on the page">
+      <div class="" role="search" aria-label="sitewide / on the page">
         <mm-icon class="searchfield-prefix" name="search"></mm-icon>
 
         <input

@@ -1,5 +1,5 @@
 
-.breadcrumb {display:flex;align-items:center;width:100%;overflow:hidden;}
+:host {display:flex;align-items:center;width:100%;overflow:hidden;}
 .breadcrumb-divider {margin:0 var(--space-3);color:var(--gray200);}
 .breadcrumb-item {color:var(--color-primary);position:relative;}
 .breadcrumb-item[aria-current=page] {color:var(--color-foreground);}

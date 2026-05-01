@@ -10,7 +10,7 @@ class Result extends LitElement {
   render() {
     return html`
       <link rel="stylesheet" href="/public/components/result/result.css" />
-      <div role="status" class="result">
+      <div role="status" class="">
         <mm-avatar size="huge" variant="secondary" icon="${this.avatarIcon}"></mm-avatar>
         <mm-title-with-description
           level="3"

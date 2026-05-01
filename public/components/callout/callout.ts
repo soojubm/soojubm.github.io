@@ -12,7 +12,7 @@ class Callout extends LitElement {
 
   render() {
     return html`
-      <div class="callout" data-variant="${this.variant}">
+      <div class="" data-variant="${this.variant}">
         <mm-icon name="warning-triangle" class="callout-icon"></mm-icon>
         ${this.heading ? html`<h3 class="callout-title">${this.heading}</h3>` : ''}
         ${this.text ? html`<p class="callout-text">${this.text}</p>` : ''}

@@ -1,4 +1,4 @@
-.tooltip {position:relative;}
+:host {position:relative;}
 .tooltip-trigger {display:flex;align-items:center;height:var(--size-small);}
 .tooltip-content {
   display: none;
@@ -17,7 +17,7 @@
 }
 .tooltip-content:before {content:'';display:block;position:absolute;left:0;right:50%;top:-8px;bottom:0;}
 
-.tooltip:hover .tooltip-content {display:block;}
+:host:hover .tooltip-content {display:block;}
 
 [data-align=center] .tooltip-content {white-space:pre;left:50%;transform:translateX(-50%);}
 [data-align=left] .tooltip-content {white-space:pre;}

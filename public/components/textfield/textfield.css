@@ -63,7 +63,7 @@ input[type=search]::-webkit-search-results-decoration {display:none;}
 
 /* textfield 중복 / for select */
 :host,
-.textfield {
+:host {
   /* width: 100%; */
   position:relative;
 
@@ -155,16 +155,16 @@ textarea.textfield-input {
 
 
 /* :: 조건부 append 시 slotted 안됨 */
-.textfield[data-label=false] {
+:host[data-label=false] {
   --textfield-icon-position: 0;
 }
-.textfield[data-label=false] .textfield-label {}
+:host[data-label=false] .textfield-label {}
 /* [data-label=false] .textfield-input {padding-left:var(--textfield-height);} */
 /* 왜 안 됨. */
 /* ::slotted([slot=prefix]) ~ .textfield-input {padding-left:48px !important;} */
 
 /* sizes */
-.textfield[data-size=small] {
+:host[data-size=small] {
 --textfield-height: var(--size-medium); 
 }
 
@@ -174,8 +174,8 @@ textarea.textfield-input {
 
 /* searchfield */
 /* // 검색필드는 레이블이 없다. label ~로 하면 되긴 함. */
-.searchfield {position:relative;}
-.searchfield input {
+:host {position:relative;}
+:host input {
   width: 100%;
   height:var(--size-large);
   padding:var(--space-2) var(--size-large);

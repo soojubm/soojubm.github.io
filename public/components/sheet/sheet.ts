@@ -30,7 +30,7 @@ class Sheet extends LitElement {
     const maxWidth = this.type === 'center'
       ? { small: '320px', medium: '480px', large: '640px', full: '100%' }[this.size] || '480px'
       : '100%'
-    return html`<aside class="sheet" style="max-width:${maxWidth}"><slot></slot></aside>`
+    return html`<aside class="" style="max-width:${maxWidth}"><slot></slot></aside>`
   }
 
   open() {

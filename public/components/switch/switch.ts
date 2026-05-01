@@ -17,7 +17,7 @@ class Switch extends LitElement {
   render() {
     return html`
       <link rel="stylesheet" href="/public/components/switch/switch.css" />
-      <div class="switch" data-size="${this.size}">
+      <div class="" data-size="${this.size}">
         <input
           id="${this.name}"
           name="${this.name}"
