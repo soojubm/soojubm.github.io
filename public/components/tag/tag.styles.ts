@@ -1,7 +1,8 @@
 import { css } from 'lit'
 
 export const tagStyles = css`
-  .tag {
+  span,
+  time {
     display: inline-flex;
     align-items: center;
     height: var(--size-small);
@@ -18,48 +19,48 @@ export const tagStyles = css`
     --tag-color: 0;
   }
 
-  .tag[data-variant='primary'] {
+  [data-variant='primary'] {
     border-color: var(--color-accent);
     background-color: var(--color-accent);
     color: var(--gray800);
   }
 
-  .tag[data-variant='secondary'] {
+  [data-variant='secondary'] {
     background-color: var(--color-background-subtle);
     border-color: transparent;
   }
 
-  .tag[data-variant='feature1'] {
+  [data-variant='feature1'] {
     border-color: transparent;
     background: var(--color-temp1);
     color: var(--gray800);
   }
 
-  .tag[data-variant='feature2'] {
+  [data-variant='feature2'] {
     border-color: transparent;
     background: var(--color-temp2);
     color: var(--gray800);
   }
 
-  .tag[data-variant='feature3'] {
+  [data-variant='feature3'] {
     border-color: transparent;
     background: var(--color-temp3);
     color: var(--gray800);
   }
 
-  .tag[data-variant='feature4'] {
+  [data-variant='feature4'] {
     border-color: transparent;
     background: var(--color-temp4);
     color: var(--gray800);
   }
 
-  .tag[data-variant='hashtag'] {
+  [data-variant='hashtag'] {
     padding: 0;
     border: 0;
     color: var(--color-foreground-light);
   }
 
-  .tag[data-variant='hashtag']::before {
+  [data-variant='hashtag']::before {
     content: '#';
   }
 `

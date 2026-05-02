@@ -5,15 +5,6 @@ export const textfieldStyles = css`
     margin: 0;
   }
 
-  .reset-input {
-    background: transparent;
-    border: 1px solid transparent;
-    border-radius: var(--radius);
-    box-sizing: border-box;
-    font: inherit;
-    color: var(--color-foreground);
-  }
-
   textarea {
     border: 0 none;
     font-family: inherit;
@@ -89,8 +80,7 @@ export const textfieldStyles = css`
     display: none;
   }
 
-  :host,
-  .textfield {
+  :host {
     position: relative;
     --textfield-padding: null;
     --textfield-color-border: null;
@@ -107,17 +97,17 @@ export const textfieldStyles = css`
     --textfield-placeholder-color: null;
   }
 
-  .textfield-label {
+  label {
     display: block;
     line-height: var(--size-small);
   }
 
-  .textfield-label small {
+  label small {
     margin: 0 0 0 var(--space-1);
     color: var(--color-foreground-light);
   }
 
-  .textfield-input {
+  input {
     display: block;
     width: 100%;
     height: var(--textfield-height);
@@ -126,37 +116,35 @@ export const textfieldStyles = css`
     border-radius: var(--textfield-radius);
     background: var(--textfield-background-color);
     color: var(--color-foreground);
+    border: 1px solid transparent;
+    font: inherit;
   }
 
-  .textfield-input:not(:disabled):hover {
+  input:not(:disabled):hover {
     border-color: var(--textfield-color-border-hover);
   }
 
-  textarea.textfield-input {
+  textarea {
     height: auto;
   }
 
-  .textfield-input:focus {
+  input:focus {
     box-shadow: var(--status-hover);
   }
 
-  .textfield-input:read-only {
+  input:read-only {
     color: var(--color-foreground-light);
     cursor: default;
   }
 
-  .textfield-input:disabled {
+  input:disabled {
     opacity: 0.5;
     cursor: not-allowed;
   }
 
-  .textfield-helper {
+  p {
     margin: var(--space-1) 0 0;
     color: var(--red800);
-  }
-
-  .textfield-suffix ~ .textfield-input {
-    padding-right: 4rem;
   }
 
   ::slotted([slot='suffix']) {
@@ -180,7 +168,7 @@ export const textfieldStyles = css`
     left: 0;
   }
 
-  ::slotted([slot='prefix']) ~ .textfield-input {
+  ::slotted([slot='prefix']) ~ input {
     padding-left: 48px;
   }
 
@@ -190,15 +178,15 @@ export const textfieldStyles = css`
     top: 0;
   }
 
-  .textfield[data-label='false'] {
+  [data-label='false'] {
     --textfield-icon-position: 0;
   }
 
-  .textfield[data-size='small'] {
+  [data-size='small'] {
     --textfield-height: var(--size-medium);
   }
 
-  .is-invalid .textfield-input {
+  [data-invalid] input {
     border-color: var(--color-danger);
   }
 

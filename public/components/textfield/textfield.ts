@@ -1,53 +1,66 @@
-import { LitElement, html } from 'lit'
+import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { textfieldStyles } from './textfield.styles'
 
 @customElement('mm-textfield')
-class Textfield extends LitElement {
+export class Textfield extends LitElement {
   @property({ type: String }) type = 'text'
   @property({ type: String }) value = ''
-  @property({ type: String }) name = ''
-  @property({ type: String }) placeholder = ''
-  @property({ type: String }) label = ''
-  @property({ type: String }) helper = ''
-  @property({ type: Boolean, attribute: 'isOptional' }) isOptional = false
-  @property({ type: Boolean, attribute: 'hiddenLabel' }) hiddenLabel = false
+  @property({ type: String }) name?: string
+  @property({ type: String }) placeholder?: string
+  @property({ type: String }) label?: string
+  @property({ type: String }) helper?: string
+
+  @property({ type: Boolean, attribute: 'is-optional' }) isOptional = false
+  @property({ type: Boolean, attribute: 'hidden-label' }) hiddenLabel = false
   @property({ type: Boolean, reflect: true }) disabled = false
   @property({ type: Boolean, attribute: 'aria-invalid' }) isInvalid = false
 
   static styles = [textfieldStyles]
 
+  private inputId = `input-${crypto.randomUUID()}`
+
+  private _handleInput(event: Event) {
+    const target = event.target as HTMLInputElement
+    this.value = target.value
+
+    this.dispatchEvent(
+      new CustomEvent('input', {
+        bubbles: true,
+        composed: true,
+        detail: { value: this.value },
+      }),
+    )
+  }
+
   render() {
     return html`
-      <div
-        class="textfield ${this.isInvalid ? 'is-invalid' : ''}"
-        data-label="${String(this.hiddenLabel)}"
-      >
+      <div ?data-invalid=${this.isInvalid} data-label=${this.hiddenLabel ? 'true' : 'false'}>
         ${this.label
           ? html`
-              <label class="textfield-label">
-                ${this.label}
-                ${this.isOptional ? html`<small>선택입력</small>` : ''}
+              <label for=${this.inputId}>
+                ${this.label} ${this.isOptional ? html`<small>선택입력</small>` : nothing}
               </label>
             `
-          : ''}
+          : nothing}
 
         <slot name="prefix"></slot>
 
         <input
-          class="reset-input textfield-input"
-          type="${this.type}"
-          .value="${this.value}"
-          name="${this.name}"
-          placeholder="${this.placeholder}"
-          ?disabled="${this.disabled}"
-          aria-invalid="${this.isInvalid ? 'true' : 'false'}"
+          id=${this.inputId}
+          type=${this.type}
+          .value=${this.value}
+          name=${this.name || nothing}
+          placeholder=${this.placeholder || nothing}
+          ?disabled=${this.disabled}
+          aria-invalid=${this.isInvalid ? 'true' : 'false'}
+          @input=${this._handleInput}
         />
 
         <slot name="suffix"></slot>
         <slot name="link"></slot>
 
-        ${this.helper ? html`<p class="textfield-helper">${this.helper}</p>` : ''}
+        ${this.helper ? html`<p>${this.helper}</p>` : nothing}
       </div>
     `
   }

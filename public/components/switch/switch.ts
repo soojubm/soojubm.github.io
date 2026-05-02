@@ -1,93 +1,50 @@
-import { LitElement, html } from 'lit'
+import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { switchStyles } from './switch.styles'
 
 @customElement('mm-switch')
-class Switch extends LitElement {
-  @property({ type: String }) name = ''
-  @property({ type: String }) size = ''
+export class Switch extends LitElement {
+  @property({ type: String }) name?: string
+  @property({ type: String }) size?: string
   @property({ type: Boolean, reflect: true }) checked = false
   @property({ type: Boolean, reflect: true }) disabled = false
 
   static styles = [switchStyles]
 
+  private inputId = `switch-${crypto.randomUUID()}`
+
   private _onChange(event: Event) {
     const target = event.target as HTMLInputElement
     this.checked = target.checked
-    this.dispatchEvent(new Event('change', { bubbles: true, composed: true }))
+
+    // 🔍 콘솔에서 상태 변화를 확인하기 위한 로그
+    console.log(`[mm-switch] 현재 checked 상태:`, this.checked)
+
+    this.dispatchEvent(
+      new CustomEvent('change', {
+        bubbles: true,
+        composed: true,
+        detail: { checked: this.checked },
+      }),
+    )
   }
 
   render() {
     return html`
-      <div class="switch" data-size="${this.size}">
+      <div data-size=${this.size || nothing}>
         <input
-          id="${this.name}"
-          name="${this.name}"
+          id=${this.inputId}
+          name=${this.name || nothing}
           type="checkbox"
           role="switch"
-          ?checked="${this.checked}"
-          ?disabled="${this.disabled}"
-          @change="${this._onChange}"
+          .checked=${this.checked}
+          ?disabled=${this.disabled}
+          @change=${this._onChange}
         />
-        <label for="${this.name}"><slot></slot></label>
+        <label for=${this.inputId}><slot></slot></label>
       </div>
     `
   }
 }
 
 export default Switch
-
-// type Parameter = {
-//   checkAllSelector: string
-//   checkSelector: string
-// }
-
-// // useSelection
-// // useForm
-
-// class Checkbox {
-//   checkAllElement: HTMLInputElement | null
-//   constructor() {
-//     this.checkAllElement = null
-//   }
-
-//   get isCheckedAll() {
-//     return false
-//   }
-//   get isCheckedSome() {
-//     return false
-//   }
-// }
-
-// function checkbox({ checkAllSelector, checkSelector }: Parameter) {
-//   const checkAllElement = document.querySelector<HTMLInputElement>(checkAllSelector)
-//   const checkElements = document.querySelectorAll<HTMLInputElement>(checkSelector)
-//   if (!checkAllElement || !checkElements) return
-
-//   checkAllElement.addEventListener('change', () => checkAll(checkElements, checkAllElement))
-//   checkElements.forEach(checkElement => {
-//     checkElement.addEventListener('change', () => checkTarget(checkElements, checkAllElement))
-//   })
-// }
-
-// function checkTarget(checkItems, checkAll) {
-//   const checkboxElements: HTMLInputElement[] = Array.from(checkItems)
-
-//   let isCheckedAll = checkboxElements.every(checkItem => checkItem.checked)
-//   let isCheckedSome = checkboxElements.some(checkItem => checkItem.checked)
-//   let isIndeterminate = isCheckedSome && !isCheckedAll
-
-//   checkAll.checked = isCheckedAll
-//   checkAll.indeterminate = isIndeterminate
-//   checkAll.dataset.indeterminate = isIndeterminate
-// }
-
-// function checkAll(checkItems, checkAll) {
-//   checkItems.forEach(checkItem => {
-//     checkItem.checked = checkAll.checked
-//     checkAll.indeterminate = false
-//     checkAll.dataset.indeterminate = false
-//   })
-// }
-
-// export default checkbox

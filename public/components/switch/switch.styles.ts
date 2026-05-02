@@ -1,7 +1,7 @@
 import { css } from 'lit'
 
 export const switchStyles = css`
-  .switch {
+  :host {
     --switch-width: 2rem;
     --switch-height: 16px;
     --switch-radius: var(--radius);
@@ -10,7 +10,7 @@ export const switchStyles = css`
     position: relative;
   }
 
-  .switch input {
+  input {
     opacity: 0;
     inline-size: 100%;
     position: absolute;
@@ -21,14 +21,14 @@ export const switchStyles = css`
     inline-size: 100%;
   }
 
-  .switch label {
+  label {
     display: flex;
     gap: var(--space-2);
     line-height: var(--switch-height);
     cursor: pointer;
   }
 
-  .switch label:before {
+  label:before {
     content: '';
     display: block;
     width: var(--switch-width);
@@ -40,7 +40,7 @@ export const switchStyles = css`
     transition: all 0.25s;
   }
 
-  .switch label:after {
+  label:after {
     content: '';
     display: block;
     width: var(--switch-height);
@@ -56,19 +56,19 @@ export const switchStyles = css`
     transition: transform 0.2s;
   }
 
-  .switch input:checked + label:before {
+  input:checked + label:before {
     content: '';
     background: var(--color-primary);
   }
-  .switch input:checked + label:after {
+  input:checked + label:after {
     transform: translateX(calc(var(--switch-width) - 16px));
   }
 
-  .switch input:disabled + label {
+  input:disabled + label {
     cursor: not-allowed;
     opacity: 0.5;
   }
-  .switch:focus-within label:before {
+  :host:focus-within label:before {
     outline: 3px solid var(--color-point);
   }
 `

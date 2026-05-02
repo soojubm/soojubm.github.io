@@ -5,8 +5,8 @@ export const avatarStyles = css`
     width: 100%;
   }
 
-  .avatar {
-    margin: 0 !important;
+  figure {
+    margin: 0;
     --avatar-size: var(--size-medium);
     --avatar-background-color: var(--color-background-weak);
     --avatar-border: var(--border-stronger);
@@ -25,36 +25,36 @@ export const avatarStyles = css`
     position: relative;
   }
 
-  .avatar img {
+  img {
     height: inherit;
     border-radius: var(--radius);
     object-fit: cover;
   }
 
-  .avatar[data-size='huge'] {
+  [data-size='huge'] {
     --avatar-size: var(--size-huge);
     font-size: var(--font-size-huge);
   }
 
-  .avatar[data-size='large'] {
+  [data-size='large'] {
     --avatar-size: var(--size-large);
     font-size: var(--font-size-large);
   }
 
-  .avatar[data-size='medium'] {
+  [data-size='medium'] {
     --avatar-badge-size: 8px;
   }
 
-  .avatar[data-size='small'] {
+  [data-size='small'] {
     --avatar-size: var(--size-small);
   }
 
-  .avatar[data-variant='secondary'] {
+  [data-variant='secondary'] {
     border: var(--border);
     --avatar-background-color: var(--color-background);
   }
 
-  .avatar[data-variant='tertiary'] {
+  [data-variant='tertiary'] {
     --avatar-background-color: transparent;
     border: none;
     box-shadow: none;

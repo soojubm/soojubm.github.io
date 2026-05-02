@@ -1,99 +1,60 @@
-import { LitElement, html } from 'lit'
+import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { checkboxStyles } from './checkbox.styles'
 
 @customElement('mm-checkbox')
-class Checkbox extends LitElement {
-  @property({ type: String }) name = ''
-  @property({ type: String }) size = ''
-  @property({ type: String }) helper = ''
-  @property({ type: String }) value = ''
+export class Checkbox extends LitElement {
+  @property({ type: String }) name?: string
+  @property({ type: String }) size?: string
+  @property({ type: String }) helper?: string
+  @property({ type: String }) value?: string
   @property({ type: Boolean, reflect: true }) checked = false
   @property({ type: Boolean, reflect: true }) disabled = false
+  @property({ type: Boolean, reflect: true }) indeterminate = false
 
   static styles = [checkboxStyles]
+
+  // 고유 ID 생성: 여러 체크박스가 같은 name을 가질 때 label의 for 속성이 꼬이는 것을 방지
+  private inputId = `checkbox-${crypto.randomUUID()}`
 
   private _onChange(event: Event) {
     const target = event.target as HTMLInputElement
     this.checked = target.checked
-    this.dispatchEvent(new Event('change', { bubbles: true, composed: true }))
+
+    // 사용자가 직접 클릭하면 indeterminate 상태는 해제되는 것이 브라우저 기본 동작입니다.
+    this.indeterminate = false
+
+    // 상위 컴포넌트에서 쉽게 값을 사용할 수 있도록 detail 객체에 상태를 담아 발송
+    this.dispatchEvent(
+      new CustomEvent('change', {
+        bubbles: true,
+        composed: true,
+        detail: { checked: this.checked, value: this.value },
+      }),
+    )
   }
 
   render() {
     return html`
-      <div class="checkbox" data-size="${this.size}">
+      <div data-size=${this.size || nothing}>
         <input
           type="checkbox"
-          id="${this.name}"
-          name="${this.name}"
-          value="${this.value}"
-          ?checked="${this.checked}"
-          ?disabled="${this.disabled}"
-          @change="${this._onChange}"
+          id=${this.inputId}
+          name=${this.name || nothing}
+          .value=${this.value || nothing}
+          .checked=${this.checked}
+          .indeterminate=${this.indeterminate}
+          ?disabled=${this.disabled}
+          @change=${this._onChange}
         />
-        <label for="${this.name}">
-          <span class="checkbox-indicator"></span>
+        <label for=${this.inputId}>
+          <span></span>
           <mm-text variant="body"><slot></slot></mm-text>
         </label>
-        ${this.helper ? html`<p>${this.helper}</p>` : ''}
+        ${this.helper ? html`<p>${this.helper}</p>` : nothing}
       </div>
     `
   }
 }
 
 export default Checkbox
-
-// type Parameter = {
-//   checkAllSelector: string
-//   checkSelector: string
-// }
-
-// // useSelection
-// // useForm
-
-// class Checkbox {
-//   checkAllElement: HTMLInputElement | null
-//   constructor() {
-//     this.checkAllElement = null
-//   }
-
-//   get isCheckedAll() {
-//     return false
-//   }
-//   get isCheckedSome() {
-//     return false
-//   }
-// }
-
-// function checkbox({ checkAllSelector, checkSelector }: Parameter) {
-//   const checkAllElement = document.querySelector<HTMLInputElement>(checkAllSelector)
-//   const checkElements = document.querySelectorAll<HTMLInputElement>(checkSelector)
-//   if (!checkAllElement || !checkElements) return
-
-//   checkAllElement.addEventListener('change', () => checkAll(checkElements, checkAllElement))
-//   checkElements.forEach(checkElement => {
-//     checkElement.addEventListener('change', () => checkTarget(checkElements, checkAllElement))
-//   })
-// }
-
-// function checkTarget(checkItems, checkAll) {
-//   const checkboxElements: HTMLInputElement[] = Array.from(checkItems)
-
-//   let isCheckedAll = checkboxElements.every(checkItem => checkItem.checked)
-//   let isCheckedSome = checkboxElements.some(checkItem => checkItem.checked)
-//   let isIndeterminate = isCheckedSome && !isCheckedAll
-
-//   checkAll.checked = isCheckedAll
-//   checkAll.indeterminate = isIndeterminate
-//   checkAll.dataset.indeterminate = isIndeterminate
-// }
-
-// function checkAll(checkItems, checkAll) {
-//   checkItems.forEach(checkItem => {
-//     checkItem.checked = checkAll.checked
-//     checkAll.indeterminate = false
-//     checkAll.dataset.indeterminate = false
-//   })
-// }
-
-// export default checkbox

@@ -1,7 +1,7 @@
 import { css } from 'lit'
 
 export const checkboxStyles = css`
-  .checkbox {
+  :host {
     --checkbox-size: var(--size-tiny);
     --checkbox-gap: calc(var(--checkbox-size) + var(--space-2));
     --checkbox-radius: 4px;
@@ -9,7 +9,7 @@ export const checkboxStyles = css`
     gap: var(--space-2);
   }
 
-  .checkbox input {
+  input {
     margin: 0;
     cursor: pointer;
     -webkit-appearance: none;
@@ -33,7 +33,7 @@ export const checkboxStyles = css`
     gap: var(--space-2);
   }
 
-  .checkbox-indicator {
+  label > span {
     display: inline-flex;
     align-items: center;
     cursor: pointer;
@@ -48,7 +48,7 @@ export const checkboxStyles = css`
     background: var(--color-background);
   }
 
-  input[type='checkbox'] + label .checkbox-indicator::after {
+  input[type='checkbox'] + label > span::after {
     content: '';
     display: block;
     width: 6px;
@@ -62,7 +62,7 @@ export const checkboxStyles = css`
     transform: rotate(-50deg) scale(0);
   }
 
-  input[type='checkbox']:checked + label .checkbox-indicator::after {
+  input[type='checkbox']:checked + label > span::after {
     border-color: var(--color-primary);
     transform: rotate(-50deg) scale(1);
   }
@@ -72,19 +72,19 @@ export const checkboxStyles = css`
     outline-offset: 2px;
   }
 
-  .checkbox[data-size='large'] input[type='checkbox']:checked + label .checkbox-indicator::after {
+  [data-size='large'] input[type='checkbox']:checked + label > span::after {
     left: 8px;
     top: 8px;
     transform: rotate(-50deg) scale(1.5);
   }
 
-  .checkbox input[indeterminate='true'] ~ label:before,
-  .checkbox input[data-indeterminate='true'] ~ label:before {
+  input[indeterminate='true'] ~ label:before,
+  input[data-indeterminate='true'] ~ label:before {
     border-color: var(--green800);
     background: var(--green100);
   }
-  .checkbox input[indeterminate='true'] ~ label:after,
-  .checkbox input[data-indeterminate='true'] ~ label:after {
+  input[indeterminate='true'] ~ label:after,
+  input[data-indeterminate='true'] ~ label:after {
     display: block;
     width: 8px;
     background: var(--color-primary);
@@ -94,15 +94,9 @@ export const checkboxStyles = css`
     transform: rotate(0deg);
   }
 
-  .checkbox input:disabled ~ label {
+  input:disabled ~ label {
     opacity: 0.5;
     cursor: not-allowed;
-  }
-
-  .checkbox-description {
-    display: block !important;
-    padding-left: calc(var(--size-tiny) + var(--space-2));
-    color: var(--color-foreground-light);
   }
 
   @keyframes checkmark {
@@ -117,7 +111,7 @@ export const checkboxStyles = css`
     }
   }
 
-  .checkbox[data-size='large'] {
+  [data-size='large'] {
     --checkbox-size: var(--size-small);
   }
 `

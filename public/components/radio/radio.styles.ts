@@ -1,7 +1,7 @@
 import { css } from 'lit'
 
 export const radioStyles = css`
-  .radio {
+  :host {
     --radio-size: var(--size-tiny);
     --radio-color: var(--color-border-strong);
     --radio-border: 1px solid var(--radio-color);
@@ -10,13 +10,13 @@ export const radioStyles = css`
     position: relative;
   }
 
-  .radio label {
+  label {
     display: flex;
     gap: var(--space-2);
     line-height: var(--radio-size);
   }
 
-  .radio-indicator {
+  label > span:first-child {
     width: var(--radio-size);
     height: var(--radio-size);
     border: var(--radio-border);
@@ -25,7 +25,7 @@ export const radioStyles = css`
     box-sizing: border-box;
   }
 
-  .radio input {
+  input {
     margin: 0;
     background-color: var(--color-background);
     -webkit-appearance: none;
@@ -35,18 +35,18 @@ export const radioStyles = css`
     left: 0;
   }
 
-  .radio input:checked + label .radio-indicator {
+  input:checked + label > span:first-child {
     background: var(--color-primary);
     border-color: var(--color-primary);
     animation: radiomark var(--animation-input, 0.2s) ease-out;
     box-shadow: 0 0 0 4px var(--color-background) inset;
   }
 
-  .radio input:disabled {
+  input:disabled {
     opacity: 0.4;
     cursor: not-allowed;
   }
-  .radio input:disabled + label {
+  input:disabled + label {
     opacity: 0.6;
     cursor: not-allowed;
   }
