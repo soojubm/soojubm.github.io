@@ -1,17 +1,11 @@
-import footer from '/src/components/footer/footer.html'
-import navbar from '/src/components/navbar/navbar.html'
+import { renderLayout } from '../../../layouts/base-layouts'
+// import main from './index.html'
 
-import main from './passwordfield.html'
-import '/pages/components/components.css'
-
-import '/src/stylesheets/shared.css'
-import '/src/stylesheets/components/form.css'
+// document.addEventListener('DOMContentLoaded', () => {
+//   document.body.innerHTML = renderLayout(main)
+// })
 
 document.addEventListener('DOMContentLoaded', () => {
-  document.body.insertAdjacentHTML('beforeend', navbar)
-  document.body.insertAdjacentHTML('beforeend', main)
-  document.body.insertAdjacentHTML('beforeend', footer)
-
   const passwordTest = document.querySelector('.js-password-test')
   passwordTest?.addEventListener('keyup', validatePasswordTest)
 

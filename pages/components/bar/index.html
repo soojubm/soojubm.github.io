@@ -4,6 +4,45 @@
     description="Appbar / Bottom Navigation / Toolbar"
   ></mm-title-with-description>
 
+  <style>
+    .bottombar {
+      display: flex;
+      justify-content: space-around;
+      padding: var(--space-1) 0 calc(constant(safe-area-inset-bottom) + var(--space-2));
+      padding: var(--space-2) 0 calc(env(safe-area-inset-bottom) + var(--space-2));
+      border-top: var(--border);
+      background: var(--color-background);
+    }
+
+    .bottombar-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 10px;
+      color: var(--color-foreground);
+      position: relative;
+    }
+
+    .bottombar-item-icon {
+      margin: 0 auto;
+      background: none;
+    }
+
+    .bottombar-item em {
+      display: flex;
+      width: 4px;
+      height: 4px;
+      background: var(--red800);
+      border-radius: var(--radius);
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(var(--space-3), -1.125rem);
+    }
+    .bottombar-item.is-active {
+    }
+  </style>
+
   <section class="component-example">
     <nav class="bottombar">
       <a href="#" class="bottombar-item is-active">

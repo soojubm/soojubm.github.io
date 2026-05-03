@@ -1,20 +1,11 @@
-import footer from '/src/components/footer/footer.html'
-import navbar from '/src/components/navbar/navbar.html'
-
-import main from './presentation.html'
-
-import '/src/stylesheets/shared.css'
-
-import '/src/stylesheets/pages/presentations.css'
-// import '/pages/patterns/dialog.css'
-import '/pages/components/components.css'
-import '/pages/patterns/table/pagination.css'
+import { renderLayout } from '../../../layouts/base-layouts'
+import main from './index.html'
 
 document.addEventListener('DOMContentLoaded', () => {
-  document.body.insertAdjacentHTML('beforeend', navbar)
-  document.body.insertAdjacentHTML('beforeend', main)
-  document.body.insertAdjacentHTML('beforeend', footer)
+  document.body.innerHTML = renderLayout(main)
+})
 
+document.addEventListener('DOMContentLoaded', () => {
   const sheets = document.querySelectorAll('[data-open-sheet]')
   console.log('sheets', sheets)
   sheets.forEach(btn => {

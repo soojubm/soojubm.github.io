@@ -1,20 +1,12 @@
-import footer from '/src/components/footer/footer.html'
-import navbar from '/src/components/navbar/navbar.html'
+import { renderLayout } from '../../../layouts/base-layouts'
+import main from './index.html'
 
-// import sidemenu from '/src/components/sidemenu/sidemenu.html'
-import '/src/components/sidemenu/sidemenu.css'
-
-import main from './tokens.html'
-
-import '/src/stylesheets/shared.css'
-import '/pages/components/components.css'
-import './tokens.css'
+document.addEventListener('DOMContentLoaded', () => {
+  document.body.innerHTML = renderLayout(main)
+})
 
 document.addEventListener('DOMContentLoaded', () => {
   // document.querySelector('body')!.insertBefore(navbar, );
-  document.body.insertAdjacentHTML('beforeend', navbar)
-  document.body.insertAdjacentHTML('beforeend', main)
-  document.body.insertAdjacentHTML('beforeend', footer)
   // renderSidemenu
   // document.querySelector('.page')!.insertAdjacentHTML('afterbegin', sidemenu)
 

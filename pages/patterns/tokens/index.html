@@ -1,19 +1,785 @@
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    renderComponent('footer')
-  })
+<main class="page">
+  <mm-title-with-description
+    level="1"
+    title="Tokens"
+    description="디자인 시스템의 기본 구성 요소입니다. 토큰은 색상, 타이포그래피, 간격, 크기, 모양 및 기타 스타일 속성을 포함하여 제품의 시각적 및 기능적 특성을 정의합니다. 디자인 토큰을 사용하면 일관된 디자인 언어를 유지하고, 다양한 플랫폼과 장치에서 동일한 사용자 경험을 제공하며, 디자인과 개발 간의 협업을 촉진할 수 있습니다."
+  >
+  </mm-title-with-description>
 
-  async function renderComponent(componentName) {
-    const endpoint = `/views/components/${componentName}.html`
-
-    try {
-      const response = await fetch(endpoint)
-      if (!response.ok) throw 'Something went wrong.'
-
-      const responseText = await response.text()
-      document.body.innerHTML = responseText
-    } catch (error) {
-      console.log(error)
+  <style>
+    main {
+      --item-width: 20%;
     }
-  }
-</script>
+
+    .token-group {
+      /* display:flex;flex-wrap:wrap;margin:calc(var(--space-3) / 2 * -1); */
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-3);
+      margin: var(--space-3) 0;
+    }
+    .token-item {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+      padding: var(--space-3);
+      border: var(--border);
+      border-radius: var(--radius);
+      background: var(--color-background);
+    }
+    .token-item figure {
+      width: var(--size-large);
+      height: var(--size-large);
+      background: var(--color-background-strong);
+      border-radius: var(--radius);
+    }
+    .token-item b {
+      display: block;
+      /* font-family: var(--font-family-monospace); */
+      font-weight: var(--font-weight-bold);
+      font-size: var(--font-size-12);
+    }
+
+    .is-primary100 figure {
+      background: var(--green100);
+    }
+    .is-primary200 figure {
+      background: var(--color-primary);
+    }
+    .is-gradient figure {
+      background-color: none;
+      background-image: linear-gradient(106deg, var(--red800), var(--color-primary));
+    }
+    .is-elevation figure {
+      background: none;
+      box-shadow: var(--shadow);
+    }
+
+    .animation-rotation {
+      animation: rotation 1s var(--bazier) infinite;
+    }
+    .animation-fadeup {
+      animation: fadeup 1s var(--bazier) infinite;
+    }
+    .animation-marquee {
+      animation: marquee 4s var(--bazier) infinite;
+    }
+    .delay-second {
+      animation-delay: var(--animation-delay-second);
+    }
+    .delay-third {
+      animation-delay: var(--animation-delay-third);
+    }
+
+    .token-item .color-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .token-item .color-item + .color-item {
+      margin: var(--space-2) 0 0 0;
+    }
+
+    @media (max-width: 1200px) {
+      main {
+        --item-width: 33.3333%;
+      }
+      .token-group {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* @media (max-width: 1100px) { */
+    @media (max-width: 800px) {
+      .token-group {
+        display: block;
+        margin: 0;
+      }
+      .token-item {
+        max-width: 100%;
+        margin: var(--space-3) 0;
+      }
+    }
+
+    /* .token-group {
+          gap: 0;
+          border-radius: var(--radius);
+          overflow: hidden;
+          border: var(--border);
+        }
+        .token-group .token-item {
+          margin: -1px;
+          border-radius: 0;
+        } */
+  </style>
+  <mm-component-section
+    title="Color"
+    description="색상은 기본 상호작용을 나타내고 브랜드를 강화합니다. (primary interactions, reinforce brand) The use of color in an experience helps define communication, meaning, brand, and roles,
+        making it easier for users to interact, search, and differentiate elements. For additional
+        guidance, refer to the component-specific guidelines."
+  >
+    <div style="border-radius: var(--radius-large)">
+      <mm-text-group>
+        <mm-text variant="heading4">Primitives</mm-text>
+      </mm-text-group>
+      <div class="token-group">
+        <article class="token-item" style="border: 0; background-color: var(--green100)">
+          <b>--green100: rgba(10, 160, 80, 0.1)</b>
+        </article>
+        <article
+          class="token-item is-primary200"
+          style="border: 0; background-color: var(--green800)"
+        >
+          <b style="color: #fff">--green800: #1b995c</b>
+        </article>
+        <article class="token-item" style="border: 0; background-color: var(--red100)">
+          <b style="color: var(--color-foreground)">--red100: rgba(243, 68, 97, .06)</b>
+        </article>
+        <article class="token-item" style="border: 0; background-color: var(--red800)">
+          <b style="color: #fff">--red800: #f02849</b>
+        </article>
+        <article class="token-item" style="border: 0; background: var(--color-accent)">
+          <b>--yellow800: gold</b>
+        </article>
+      </div>
+      <mm-separator></mm-separator>
+      <div class="token-group">
+        <article class="token-item">
+          <b style="color: var(--color-foreground)">--gray0: #fff</b>
+        </article>
+        <article class="token-item" style="border: 0; background: #fcfdfc">
+          <b>--gray50: #fcfdfc</b>
+        </article>
+        <article class="token-item" style="border: 0; background: var(--gray100)">
+          <b>--gray100: #f5f8f5</b>
+        </article>
+        <article class="token-item is-gray200" style="border: 0; background: var(--gray200)">
+          <b>--gray200: #e0e2e1</b>
+          <small>bullet 등에 사용</small>
+        </article>
+        <article class="token-item is-gray200" style="border: 0; background: var(--gray300)">
+          <b>--gray300: #c1c3c2</b>
+        </article>
+        <article class="token-item is-gray400" style="border: 0; background: var(--gray400)">
+          <b style="color: #fff">--gray400: #979d9a</b>
+        </article>
+        <article class="token-item" style="border: 0; background: var(--gray800)">
+          <b style="color: #fff">--gray800: #343c38</b>
+        </article>
+        <article class="token-item" style="border: 0; background: var(--gray900)">
+          <b style="color: #fff">--gray900: #1e2321</b>
+        </article>
+      </div>
+      <mm-separator></mm-separator>
+      <div class="token-group">
+        <article class="token-item">
+          <b>TODO Skeleton</b>
+        </article>
+        <article class="token-item">
+          <b>TODO Transparent gradient</b>
+        </article>
+        <article class="token-item">
+          <b>--color-categorical-1: null TODO</b>
+        </article>
+      </div>
+    </div>
+
+    <br />
+
+    <mm-text variant="heading4">Foreground (Text, Icon)</mm-text>
+    <div class="token-group">
+      <article class="token-item">
+        <b>--color-foreground: var(--gray800)</b>
+        <mm-text variant="heading4">soojubm</mm-text>
+      </article>
+      <article class="token-item">
+        <b>--color-foreground-light: var(--gray400)</b>
+        <mm-text variant="heading4">
+          <span style="color: var(--color-foreground-light)">soojubm</span>
+        </mm-text>
+      </article>
+      <article class="token-item">
+        <b>--color-foreground-link: var(--color-primary)</b>
+        <mm-link>soojubm</mm-link>
+      </article>
+      <article class="token-item">
+        <b>--color-foreground-on-solid: var(--gray0);</b>
+      </article>
+      <article class="token-item" style="border: 0; background: var(--gray800)">
+        <b style="color: #fff">--color-foreground-on-solid-light: var(--gray400)</b>
+      </article>
+    </div>
+
+    <br />
+    <mm-text variant="heading4">Background / Surface</mm-text>
+    <div class="token-group">
+      <article class="token-item" style="border: 0; background: var(--gray100)">
+        <b>--color-background-subtle: var(--gray100);</b>
+      </article>
+      <article class="token-item" style="border: 0; background: var(--gray800)">
+        <b style="color: #fff">--color-background-strong: var(--gray800)</b>
+      </article>
+      <article class="token-item" style="border: 0; background: var(--color-primary)">
+        <b style="color: #fff">--color-background-primary: var(--gray800)</b>
+      </article>
+    </div>
+
+    <br />
+
+    <mm-text variant="heading4">Border</mm-text>
+    <div class="token-group">
+      <article class="token-item" style="border: 0; background: var(--gray100)">
+        <b>--color-border: var(--gray100);</b>
+      </article>
+      <article class="token-item" style="border: 0; background: var(--gray200)">
+        <b>--color-border-strong: var(--gray200)</b>
+      </article>
+    </div>
+
+    <br />
+
+    <mm-text variant="heading4">Status</mm-text>
+    <div class="token-group">
+      <article class="token-item" style="border: 0; background: var(--red800)">
+        <b>--color-attention-background: var(--color-attention)</b>
+      </article>
+      <article class="token-item">
+        <b>--color-attention-foreground: var(--gray0)</b>
+      </article>
+      <article class="token-item" style="border: 0; background: var(--red100)">
+        <b>--color-accent-border: var(--color-attention)</b>
+      </article>
+    </div>
+
+    <mm-separator></mm-separator>
+    <div class="token-group">
+      <article class="token-item" style="border: 0; background: var(--color-accent)">
+        <b>--color-accent-background: var(--color-attention)</b>
+      </article>
+      <article class="token-item">
+        <b>--color-accent-foreground: var(--gray0)</b>
+      </article>
+      <article class="token-item" style="border: 0; background: var(--color-accent)">
+        <b>--color-accent-border: var(--color-attention)</b>
+      </article>
+    </div>
+  </mm-component-section>
+
+  <mm-component-section
+    title="Size"
+    description="요소의 너비와 높이입니다. 뷰포트의 크기가 변경되어도 사이즈 토큰은 변하지 않습니다."
+  >
+    <section class="token-group">
+      <div class="token-item">
+        <figure style="width: var(--size-huge); height: var(--size-huge)"></figure>
+        <b>--size-huge: 5rem</b>
+      </div>
+      <div class="token-item">
+        <figure style="width: var(--size-large); height: var(--size-large)"></figure>
+        <b>--size-large: 3rem</b>
+      </div>
+      <div class="token-item">
+        <figure style="width: var(--size-medium); height: var(--size-medium)"></figure>
+        <b>--size-medium: 2rem</b>
+      </div>
+      <div class="token-item">
+        <figure style="width: var(--size-small); height: var(--size-small)"></figure>
+        <b>--size-small: 1.5rem</b>
+      </div>
+      <div class="token-item">
+        <figure style="width: var(--size-tiny); height: var(--size-tiny)"></figure>
+        <b>--size-tiny: 1rem</b>
+      </div>
+    </section>
+    <mm-separator></mm-separator>
+    <div class="token-item">
+      <b>--avatar-huge: var(--size-huge)</b>
+    </div>
+    <mm-separator></mm-separator>
+    <div class="token-group">
+      <div class="token-item">
+        <b>--icon-size-medium: null;</b>
+      </div>
+    </div>
+    <mm-separator></mm-separator>
+    <div class="token-group">
+      <div class="token-item">
+        <b>--size-tapTarget-minimum: null</b>
+      </div>
+      <div class="token-item">
+        <b>--size-action-small: null</b>
+      </div>
+    </div>
+  </mm-component-section>
+
+  <mm-component-section
+    title="Shapes - Radius & Elevations"
+    description="radius.formInput/photoSmall"
+  >
+    <!-- const ELEVATIONS = {
+    small: `
+      0.5px 1px 1px hsl(var(--shadow-color) / 0.7)
+    `,
+    medium: `
+      1px 2px 2px hsl(var(--shadow-color) / 0.333),
+      2px 4px 4px hsl(var(--shadow-color) / 0.333),
+      3px 6px 6px hsl(var(--shadow-color) / 0.333)
+    `,
+    large: `
+      1px 2px 2px hsl(var(--shadow-color) / 0.2),
+      2px 4px 4px hsl(var(--shadow-color) / 0.2),
+      4px 8px 8px hsl(var(--shadow-color) / 0.2),
+      8px 16px 16px hsl(var(--shadow-color) / 0.2),
+      16px 32px 32px hsl(var(--shadow-color) / 0.2)
+    `
+  } -->
+    <div class="token-group">
+      <article class="token-item is-gray000">
+        <figure></figure>
+        <b>--radius: 6px</b>
+      </article>
+      <article class="token-item is-gray000">
+        <figure style="border-radius: var(--radius-large)"></figure>
+        <b>--radius-large: 1rem</b>
+      </article>
+      <article class="token-item is-gray000">
+        <figure style="border-radius: 50%"></figure>
+        <b>--radius-circle: 50%</b>
+        <!-- <span>radio, icon button</span> -->
+      </article>
+      <article class="token-item is-elevation" title="Surface or Elevation">
+        <figure style="box-shadow: var(--shadow)"></figure>
+        <b>--shadow: 0 0 .5rem rgb(0 0 0 / 7.5%)</b>
+      </article>
+    </div>
+  </mm-component-section>
+
+  <mm-component-section title="Border" description="내용 없음.">
+    <div class="token-group">
+      <div class="token-item">
+        <b>--border-width: 1px</b>
+      </div>
+      <div class="token-item">
+        <b>--border-width-thick: null</b>
+      </div>
+      <div class="token-item">
+        <b>--border-width-thin: null</b>
+      </div>
+    </div>
+  </mm-component-section>
+
+  <mm-component-section title="Space" description="요소 사이의 간격.">
+    <section class="token-group">
+      <div class="token-item">
+        <!-- <figure style="width: 100%; height: var(--space-05); border-radius: 0"></figure> -->
+        <b>--space-05: .125rem</b>
+      </div>
+      <div class="token-item">
+        <b>--space-1: .25rem</b>
+      </div>
+      <div class="token-item">
+        <b>--space-2: .5rem</b>
+      </div>
+      <div class="token-item">
+        <b>--space-3: .75rem</b>
+      </div>
+      <div class="token-item">
+        <b>--space-4: 1rem</b>
+      </div>
+      <div class="token-item">
+        <b>--space-1-negative: calc(var(--space-1) * -1)</b>
+      </div>
+    </section>
+    <mm-separator></mm-separator>
+    <section class="token-group">
+      <div class="token-item">
+        <b>--space-button-group: var(--space-2)</b>
+      </div>
+    </section>
+    <mm-separator></mm-separator>
+    <section class="token-group">
+      <div class="token-item">
+        <b>--space-page-grid-margin: 5vw</b>
+      </div>
+      <div class="token-item">
+        <b>--space-page-grid-gutter: 1rem</b>
+      </div>
+      <div class="token-item">
+        <b>--space-page-grid-column: null</b>
+      </div>
+    </section>
+  </mm-component-section>
+
+  <mm-component-section title="Font" description="활자의 위계와 배치. 정보 계층.">
+    <mm-text-list
+      texts='["2602 - 디자인 시스템이 성숙도에 진입함에 따라 line-height를 고정값으로 변경하고 토큰에서 제거. 컴포넌트에 종속되는 값으로만 정의"]'
+    ></mm-text-list>
+    <button
+      class="js-default-font"
+      style="display: flex; align-items: center; gap: var(--space-2); margin: var(--space-3) 0"
+    >
+      <mm-avatar slot="avatar" icon="font-question"></mm-avatar>
+      시스템 폰트로 보기
+    </button>
+
+    <!-- <mm-text variant="heading4">Typefaces <sup>2</sup></mm-text> -->
+    <section class="token-group">
+      <div class="token-item">
+        <b>--font-family: 'IBM Plex San', 'Gothic A1', sans-serif</b>
+      </div>
+    </section>
+    <mm-separator></mm-separator>
+    <section class="token-group">
+      <div class="token-item">
+        <b>--font-size-32: 2rem</b>
+      </div>
+      <div class="token-item">
+        <b>--font-size-18: 1.125rem</b>
+      </div>
+      <div class="token-item" style="background-color: var(--color-background-subtle)">
+        <b>--font-size-14: .875rem</b>
+      </div>
+    </section>
+    <mm-separator></mm-separator>
+    <section class="token-group">
+      <div class="token-item">
+        <b>--font-weight-normal: 400</b>
+      </div>
+      <div class="token-item">
+        <b>--font-weight-bold: 800</b>
+      </div>
+    </section>
+    <mm-separator></mm-separator>
+    <section class="token-group">
+      <div class="token-item">
+        <b>--font-letter-spacing-title: null;</b>
+      </div>
+      <div class="token-item">
+        <b>--font-letter-spacing-body: null;</b>
+      </div>
+    </section>
+
+    <!-- <mm-surface>
+      <mm-text variant="subhead">subhead</mm-text>
+      <div class="space" style="height: var(--space-3)">
+        <span>space-after-subhead</span>
+      </div>
+      <mm-text variant="body">body</mm-text>
+    </mm-surface> -->
+  </mm-component-section>
+
+  <mm-component-section
+    title="Layouts - Width"
+    description="모든 container는 --small부터 max-width를 100%. TODO breakpoint.medium. breakpoint.android.compact/expanded"
+  >
+    <section class="browserWindow_my1Q" style="width: 480px; margin: 2rem 0">
+      <header class="browserWindowHeader_jXSR">
+        <div class="dots">
+          <span class="dot_giz1" style="background: rgb(242, 95, 88)"></span>
+          <span class="dot_giz1" style="background: rgb(251, 190, 60)"></span>
+          <span class="dot_giz1" style="background: rgb(88, 203, 66)"></span>
+        </div>
+        <div class="browserWindowAddressBar_Pd8y text--truncate">
+          <font style="vertical-align: inherit">http://로컬호스트:3000</font>
+        </div>
+        <div>
+          <span class="bar_rrRL"></span>
+          <span class="bar_rrRL"></span>
+          <span class="bar_rrRL"></span>
+        </div>
+      </header>
+      <artile class="browserWindowBody_Idgs" style="display: flex; padding-top: var(--space-1)">
+        <!-- <div style="width:100%;max-width:60px;height:340px;background:var(--green100);">5vw</div> -->
+        <div style="width: 320px; margin: 0 auto">
+          <header style="padding: var(--space-2) 0; border-bottom: var(--border)">
+            <div
+              style="
+                width: 0.75rem;
+                height: 0.75rem;
+                border-radius: var(--radius);
+                background: #000;
+              "
+            ></div>
+          </header>
+          <div style="display: flex; gap: var(--space-2); margin-top: var(--space-2)">
+            <div
+              style="
+                width: 100%;
+                max-width: 120px;
+                height: 300px;
+                border-radius: var(--radius);
+                border: 1px solid var(--color-primary);
+                background: var(--green100);
+              "
+            ></div>
+            <div
+              style="
+                width: 100%;
+                max-width: 320px;
+                height: 300px;
+                border-radius: var(--radius);
+                border: 1px solid var(--color-primary);
+                background: var(--green100);
+              "
+            ></div>
+          </div>
+        </div>
+        <!-- <div style="width:100%;max-width:60px;height:340px;background:var(--green100);">5vw</div> -->
+      </artile>
+    </section>
+
+    <style>
+      .browserWindow_my1Q {
+        border: 2px solid #ebedf0;
+        border-top: 0;
+      }
+      .browserWindowHeader_jXSR {
+        background: #ebedf0;
+        align-items: center;
+        padding: 0.25rem 0.75rem;
+        display: flex;
+      }
+      .dots {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+      .dot_giz1 {
+        background-color: rgb(187, 187, 187);
+        border-radius: 50%;
+        width: 10px;
+        height: 10px;
+      }
+      .browserWindowAddressBar_Pd8y {
+        background-color: #fff;
+        user-select: none;
+        border-radius: 12.5px;
+        flex: 1 0 0%;
+        margin: 0px 0.75rem;
+        padding: 4px 12px;
+        font-size: 10px;
+      }
+      .browserWindowBody_Idgs {
+        padding: 1rem;
+      }
+      .bar_rrRL {
+        background-color: rgb(170, 170, 170);
+        width: 12px;
+        height: 2px;
+        margin: 2px 0px;
+        display: block;
+      }
+    </style>
+    <div class="token-group">
+      <div class="token-item">
+        <b>@custom-media --large (max-width: 1080px)</b>
+      </div>
+      <div class="token-item">
+        <b>@custom-media --medium (max-width: 640px)</b>
+      </div>
+    </div>
+    <mm-separator></mm-separator>
+    <div class="token-group">
+      <div class="token-item">
+        <b>--layout-width-wide: 1200px</b>
+      </div>
+      <div class="token-item">
+        <b>--layout-width-regular: 640px</b>
+      </div>
+      <div class="token-item">
+        <b>--layout-width-narrow: 480px</b>
+      </div>
+      <div class="token-item">
+        <b>--layout-width-extra-narrow: 200px TODO</b>
+      </div>
+    </div>
+    <mm-separator></mm-separator>
+    <div class="token-group">
+      <div class="token-item">
+        <b>--layout-width-extra-narrow: 200px TODO</b>
+      </div>
+    </div>
+    <mm-separator></mm-separator>
+    <div class="token-group">
+      <div class="token-item">
+        <b>--layout-dialog: 480px</b>
+      </div>
+      <div class="token-item">
+        <b>--layout-dialog-large: 640px</b>
+      </div>
+    </div>
+  </mm-component-section>
+
+  <mm-component-section
+    title="Animation"
+    description="콘텐츠보다 액션이 강조되지 않도록 뷰포트 내에서 delay를 최대 3개로 제한합니다. inactive로
+        변경될 때(닫기 등) 즉시(instantly) 실행합니다."
+  >
+    <div class="token-group">
+      <div class="token-item">
+        <figure class="animation-fadeup"></figure>
+        <b>--animation-delay-first: 0s</b>
+      </div>
+      <div class="token-item">
+        <figure class="animation-fadeup delay-second"></figure>
+        <b>--animation-delay-second: .2s</b>
+      </div>
+      <div class="token-item">
+        <figure class="animation-fadeup delay-third"></figure>
+        <b>--animation-delay-third: .4s</b>
+      </div>
+    </div>
+    <mm-separator></mm-separator>
+    <div class="token-group">
+      <div class="token-item">
+        <mm-keyvalue alignment="column" key="" value=""></mm-keyvalue>
+        <b>--animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955)</b>
+      </div>
+    </div>
+    <mm-separator></mm-separator>
+    <div class="token-group">
+      <div class="token-item">
+        <figure class="animation-fadeup"></figure>
+        <b>--animation-duration: .4s</b>
+      </div>
+      <div class="token-item">
+        <figure class="animation-fadeup delay-second"></figure>
+        <b>--animation-duration-quick/quickly: .2s</b>
+      </div>
+      <div class="token-item">
+        <figure class="animation-fadeup delay-third"></figure>
+        <b>--animation-duration-slow: .8s</b>
+      </div>
+      <div class="token-item">
+        <figure class="animation-fadeup delay-third"></figure>
+        <b>--animation-duration-instant: 0</b>
+      </div>
+    </div>
+    <mm-separator></mm-separator>
+    <div class="token-group">
+      <div class="token-item">
+        <figure class="animation-fadeup"></figure>
+        <b>@keyframes fadeup</b>
+      </div>
+      <div class="token-item">
+        <figure class="animation-rotation"></figure>
+        <b>@keyframes rotation</b>
+      </div>
+      <div class="token-item">
+        <figure class="animation-marquee"></figure>
+        <b>@keyframes marquee</b>
+      </div>
+      <div class="token-item">
+        <figure></figure>
+        <b>@keyframes pop</b>
+      </div>
+    </div>
+  </mm-component-section>
+
+  <mm-component-section
+    title="Z-index"
+    description="한 자릿수로 사용하면 서드 파티 라이브러리를 사용할 때 문제"
+  >
+    <div class="token-group">
+      <div class="token-item">
+        <b>--zindex-deepdive: -1</b>
+      </div>
+      <div class="token-item">
+        <b>--zindex-default: 1</b>
+      </div>
+      <div class="token-item">
+        <b>--zindex-sticky: 7</b>
+      </div>
+      <div class="token-item">
+        <b>--zindex-navigation: 7</b>
+      </div>
+      <div class="token-item">
+        <b>--zindex-popover: 6</b>
+      </div>
+      <div class="token-item">
+        <b>--zindex-modal: 8</b>
+      </div>
+      <div class="token-item">
+        <b>--zindex-backdrop: 7</b>
+      </div>
+      <div class="token-item">
+        <b>--zindex-toast: 9</b>
+      </div>
+      <div class="token-item">
+        <b>--zindex-skipmenu: 10</b>
+      </div>
+    </div>
+  </mm-component-section>
+
+  <section class="component-references">
+    <a href="https://design-tokens.github.io/community-group/format" target="_blank">
+      Design Tokens Format Module, W3C
+    </a>
+    <a href="https://docs.specifyapp.com/concepts/token-types" target="_blank">token json</a>
+    <a href="https://www.delldesignsystem.com/foundations/elevation/" target="_blank">
+      dell elevation
+    </a>
+    <a href="https://www.delldesignsystem.com/foundations/typography/" target="_blank">
+      dell typography
+    </a>
+    <a href="https://atlassian.design/components/tokens/all-tokens" target="_blank">test</a>
+    <a
+      href="https://medium.com/eightshapes-llc/size-in-design-systems-64f234aec519"
+      target="_blank"
+    >
+      Size in Design System
+    </a>
+    <a href="https://bulma.io/documentation/form/input/" target="_blank">bulma variables</a>
+  </section>
+
+  <mm-text-group>
+    <!-- <mm-text variant="title">Tokens</mm-text>
+  <mm-text variant="body-large">정리 중.</mm-text> -->
+    <mm-text variant="subhead">Checklist</mm-text>
+    <ul class="checklist">
+      <li>warning과 danger를 반드시 제공해야 하나. attention 하나로 할 수 없나.</li>
+      <li>
+        color-icon와 color-text는 항상 동일한가요? myChatBubble 에서 텍스트는 foreground-color는
+        흰색이 된다
+      </li>
+      <li>
+        color-text-disabled, color-input-disabled, color-button-disabled는 항상 같은 것은 아니다.
+      </li>
+      <li>
+        elevation.surface / overay, raised, sunken // atlassian 동일한데 왜 나눠놨지. //
+        elevation-surface/shadow
+      </li>
+      <li>폰트의 baseline이 달라서 텍스트의 상하 간격이 안 맞을 수 있다.</li>
+      <li>
+        그림자를 이용한 시각적 상승 효과로 주변 요소 대비 강조. 더 높은 우선순위 및 행동유도를 위한
+        높은 고도. 사용자는 시각적 단어로 우선순위를 인식하고 인터렉션. 그러나 시각적 우선순위는
+        그림자로만 줄 수 있는 것은 아님. 레이어를 활용할 수도 있다.
+      </li>
+      <li>
+        개별 토큰에 디스크립션이 필요하지 않도록 명명합니다. core: give a name to a raw value to
+        enable theming and make improve maintainability
+      </li>
+      <li>--[namespace]-[component / category]-[attribute]-[status]</li>
+
+      <div>
+        <p>
+          opacity.state.hover 4% opacity.state.focus 4% opacity.state.press 8% opacity.state.active
+        </p>
+        <mm-text variant="body"> strong: 강도나 무게, 농도/subtle: 감정, 표현, 인상 </mm-text>
+      </div>
+    </ul>
+
+    <mm-text variant="subhead">Changelog</mm-text>
+    <li>
+      250116 연한 회색 배경 하나로 하니 부족. 배경도 마찬가지임. 이제 최소한의 정의로 하는 실험을
+      종료할 단계인 듯. 200, 50 추가.
+    </li>
+    <li>
+      <del>
+        인버트 컬러셋을 추가로 정의하지 않습니다. 하나의 컬러셋으로 다크 테마에 대응합니다. 어렵고
+        또는 불필요한 규칙. 왜냐하면 초기 토큰 세팅 허들을 넘으면 컴포넌트 토큰을 활용한 테마 대응이
+        간편해짐.
+      </del>
+    </li>
+  </mm-text-group>
+</main>

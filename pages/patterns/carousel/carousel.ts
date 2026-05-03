@@ -1,17 +1,11 @@
-import footer from '/src/components/footer/footer.html'
-import navbar from '/src/components/navbar/navbar.html'
-
-import main from './carousel.html'
-// import '/carousel.css'
-
-import '/src/stylesheets/shared.css'
-import '/pages/components/components.css'
+import { renderLayout } from '../../../layouts/base-layouts'
+import main from './index.html'
 
 document.addEventListener('DOMContentLoaded', () => {
-  document.body.insertAdjacentHTML('beforeend', navbar)
-  document.body.insertAdjacentHTML('beforeend', main)
-  document.body.insertAdjacentHTML('beforeend', footer)
+  document.body.innerHTML = renderLayout(main)
+})
 
+document.addEventListener('DOMContentLoaded', () => {
   const carousel = () => {
     const conatiner = document.querySelector<HTMLElement>('.js-carousel')
     if (!conatiner) return

@@ -1,18 +1,13 @@
-import footer from '/src/components/footer/footer.html'
-import navbar from '/src/components/navbar/navbar.html'
-
-import main from './post.html'
 import './post.css'
 
-import '/src/stylesheets/shared.css'
-import '/pages/components/components.css'
-import { hideNavbar } from '../../../src/javascripts/common/navbar'
+import { renderLayout } from '../../../layouts/base-layouts'
+import main from './index.html'
 
 document.addEventListener('DOMContentLoaded', () => {
-  document.body.insertAdjacentHTML('beforeend', navbar)
-  document.body.insertAdjacentHTML('beforeend', main)
-  // document.body.insertAdjacentHTML('beforeend', footer)
+  document.body.innerHTML = renderLayout(main)
+})
 
+document.addEventListener('DOMContentLoaded', () => {
   hideNavbar()
 
   function scrollProgress() {

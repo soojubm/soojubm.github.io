@@ -5,6 +5,46 @@
     description="사용자의 정보나 재산의 변경 또는 삭제 확인."
   ></mm-title-with-description>
 
+  <style>
+    .dialog {
+      width: 100%;
+      max-width: var(--popover-width-dialog);
+      padding: var(--space-4);
+      border: var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      box-sizing: border-box;
+      background: var(--color-background);
+    }
+
+    .dialog-head {
+      display: flex;
+      justify-content: space-between;
+    }
+    .dialog-head-title {
+      margin: 0 auto;
+    }
+
+    .dialog-title {
+    }
+    .dialog-description {
+      margin: 0.5rem 0 1.5rem;
+    }
+
+    .dialog-foot {
+      display: flex;
+      justify-content: flex-end;
+      /* justify-content:space-between;flex-direction:row-reverse; */
+      margin: 1.5rem 0 0;
+    }
+
+    .dialog-close {
+      position: absolute;
+      right: 0.5rem;
+      top: 0.5rem;
+    }
+  </style>
+
   <dl class="article-aka">
     <dt>a.k.a.</dt>
     <dd title="">Alert</dd>
