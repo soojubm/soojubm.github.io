@@ -1,0 +1,9 @@
+@import '/src/stylesheets/shared/variables.css';
+@import '/src/stylesheets/shared/webfonts.css';
+@import '/src/stylesheets/shared/reset.css';
+@import '/src/stylesheets/shared/keyframes.css';
+
+.page,
+.footer {
+  transition: all .6s ease;
+}

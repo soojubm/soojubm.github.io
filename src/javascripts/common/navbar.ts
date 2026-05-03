@@ -1,8 +1,8 @@
 import detectTheme from '../theme/dectectTheme'
 import toggleDarkTheme from '../theme/toggleTheme'
 
-import '/public/components/navbar/navbar.css'
-import '/public/components/footer/footer.css'
+import '/src/components/navbar/navbar.css'
+import '/src/components/footer/footer.css'
 import { BRUTAL_THEME_CLASS } from '../theme/const'
 
 const OPENED_MENU_CLASSNAME = 'is-menu-opened'

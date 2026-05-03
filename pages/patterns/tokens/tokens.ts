@@ -1,12 +1,12 @@
-import footer from '/public/components/footer/footer.html'
-import navbar from '/public/components/navbar/navbar.html'
+import footer from '/src/components/footer/footer.html'
+import navbar from '/src/components/navbar/navbar.html'
 
-// import sidemenu from '/public/components/sidemenu/sidemenu.html'
-import '/public/components/sidemenu/sidemenu.css'
+// import sidemenu from '/src/components/sidemenu/sidemenu.html'
+import '/src/components/sidemenu/sidemenu.css'
 
 import main from './tokens.html'
 
-import '/public/stylesheets/shared.css'
+import '/src/stylesheets/shared.css'
 import '/pages/components/components.css'
 import './tokens.css'
 

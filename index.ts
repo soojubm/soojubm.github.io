@@ -1,32 +1,32 @@
 'use strict'
 
 // import { copyClipboard } from './javascripts/utils/formatUtils.js'
-// import detectOnline from './public/javascripts/common'
-// import input from './public/javascripts/input/index'
-// import routePage from './public/javascripts/router'
+// import detectOnline from './src/javascripts/common'
+// import input from './src/javascripts/input/index'
+// import routePage from './src/javascripts/router'
 
-import { stopAnimation } from './public/javascripts/utils/optimizationUtils'
+import { stopAnimation } from './src/javascripts/utils/optimizationUtils'
 
-import { detectLoad, lockBodyElement, unlockBodyElement } from './public/javascripts/load'
+import { detectLoad, lockBodyElement, unlockBodyElement } from './src/javascripts/load'
 
-import toggleElement from './public/javascripts/event/toggleElement'
-import tab from './public/javascripts/event/tab'
-import scrollspy from './public/javascripts/event/scrollspy'
-import scrollAnimation from './public/javascripts/event/scrollAnimation'
+import toggleElement from './src/javascripts/event/toggleElement'
+import tab from './src/javascripts/event/tab'
+import scrollspy from './src/javascripts/event/scrollspy'
+import scrollAnimation from './src/javascripts/event/scrollAnimation'
 
-import { initializeNavbar } from './public/javascripts/common/navbar'
+import { initializeNavbar } from './src/javascripts/common/navbar'
 
-import { defineCustomElement } from './public/javascripts/components'
-import setupModal from './public/javascripts/event/modal'
+import { defineCustomElement } from './src/javascripts/components'
+import setupModal from './src/javascripts/event/modal'
 
-import { throttle } from './public/javascripts/utils/optimizationUtils'
-import { getWindowScrollTop, getElementOffsetTop } from './public/javascripts/utils/elementUtils'
+import { throttle } from './src/javascripts/utils/optimizationUtils'
+import { getWindowScrollTop, getElementOffsetTop } from './src/javascripts/utils/elementUtils'
 
-// import('./public/javascripts/event/modal').then(module => {
+// import('./src/javascripts/event/modal').then(module => {
 //   console.log(module)
 // })
 
-// import { fetchPage } from './public/javascripts/router'
+// import { fetchPage } from './src/javascripts/router'
 
 // document.addEventListener('DOMContentLoaded', lockBodyElement)
 

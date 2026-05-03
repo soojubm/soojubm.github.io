@@ -1,10 +1,10 @@
-import footer from '/public/components/footer/footer.html'
-import navbar from '/public/components/navbar/navbar.html'
+import footer from '/src/components/footer/footer.html'
+import navbar from '/src/components/navbar/navbar.html'
 
 import main from './step.html'
-import '/public/stylesheets/shared.css'
+import '/src/stylesheets/shared.css'
 import '/pages/components/components.css'
-import '/public/stylesheets/components/step.css'
+import '/src/stylesheets/components/step.css'
 
 document.addEventListener('DOMContentLoaded', () => {
   document.body.insertAdjacentHTML('beforeend', navbar)

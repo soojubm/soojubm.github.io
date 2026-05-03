@@ -19,7 +19,7 @@
 .navbar-logo {
   width:var(--size-medium);height:var(--size-medium);
   box-shadow: 0 0 3px var(--yellow800);
-  background:url('/public/images/soojubm.png') no-repeat 64% 60%;background-size:80%;background-color:var(--color-background-strong) !important;border-radius:50%;
+  background:url('/src/images/soojubm.png') no-repeat 64% 60%;background-size:80%;background-color:var(--color-background-strong) !important;border-radius:50%;
 }
 .navbar-burger {margin:0 var(--space-2) 0 0;z-index:calc(var(--zindex-menu) + 1);}
 

@@ -1,14 +1,14 @@
-import footer from '/public/components/footer/footer.html'
-import navbar from '/public/components/navbar/navbar.html'
+import footer from '/src/components/footer/footer.html'
+import navbar from '/src/components/navbar/navbar.html'
 
 import main from './searchfield.html'
 import '/pages/components/components.css'
 
-import '/public/stylesheets/shared.css'
-import '/public/stylesheets/components/form.css'
+import '/src/stylesheets/shared.css'
+import '/src/stylesheets/components/form.css'
 
-import '/public/stylesheets/components/step.css'
-import '/public/components/textfield/textfield.css'
+import '/src/stylesheets/components/step.css'
+import '/src/components/textfield/textfield.css'
 
 document.addEventListener('DOMContentLoaded', () => {
   document.body.insertAdjacentHTML('beforeend', navbar)

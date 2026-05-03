@@ -121,7 +121,7 @@ module.exports = {
   target: ['web', 'es5'],
   devtool: 'inline-source-map',
   entry: {
-    index: ['./pages/home/home.ts', './public/javascripts/common/navbar.ts', './index.ts'],
+    index: ['./pages/home/home.ts', './src/javascripts/common/navbar.ts', './index.ts'],
     ...test,
     ...test2,
   },
@@ -129,7 +129,7 @@ module.exports = {
     path: path.resolve(__dirname, './build'), // 기본값은 dist
     filename: '[name].bundle.js',
     chunkFilename: '[name].js',
-    // publicPath: './',
+    // srcPath: './',
   },
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
