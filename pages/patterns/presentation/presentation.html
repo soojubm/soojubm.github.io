@@ -253,17 +253,17 @@
     </tbody>
   </table> -->
   <mm-icon-button icon="filter"></mm-icon-button>
-  <mm-tile style="margin: var(--space-2) 0 0">
+  <mm-surface style="margin: var(--space-2) 0 0">
     <mm-titlebar label="필터"></mm-titlebar>
     <form class="filter" style="height: 50vh; overflow-y: auto">
       <fieldset class="filter-fieldset" role="radiogroup" style="padding-top: 0">
         <!-- <legend class="filter-fieldset-legend">예약옵션</legend> -->
-        <mm-tile variant="elevated" size="small">
+        <mm-surface variant="elevated" size="small">
           <mm-menuitem label="즉시 예약">
             <mm-avatar slot="avatar">🦊</mm-avatar>
             <mm-switch slot="action"></mm-switch>
           </mm-menuitem>
-        </mm-tile>
+        </mm-surface>
         <small class="setting-item-helper">
           호스트 승인을 기다릴 필요 없이 예약할 수 있는 숙소
         </small>
@@ -278,9 +278,9 @@
         </mm-group>
         <div style="height: var(--space-3)"></div>
         <small>예를 들어 다음과 같습니다.</small>
-        <mm-tile size="small">
+        <mm-surface size="small">
           <mm-avatar></mm-avatar>
-        </mm-tile>
+        </mm-surface>
       </fieldset>
       <mm-separator></mm-separator>
       <fieldset class="filter-fieldset" role="radiogroup">
@@ -330,5 +330,5 @@
       <mm-button variant="primary" size="large">적용/숙소 25개 표시</mm-button>
       <mm-button variant="text" size="large">전체 해제</mm-button>
     </mm-group>
-  </mm-tile>
+  </mm-surface>
 </main>

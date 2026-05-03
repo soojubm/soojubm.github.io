@@ -1,6 +1,6 @@
 <main class="page">
   <mm-title-with-description
-    title="Tile"
+    title="Surface"
     description="연관 정보를 묶어 시각적으로 강조하는 컨테이너입니다."
   ></mm-title-with-description>
 
@@ -21,52 +21,52 @@
   </dl>
 
   <section class="component-example">
-    <mm-group>
-      <mm-tile variant="flat">
+    <mm-group variant="button">
+      <mm-surface variant="flat">
         <mm-title-with-description
           level="3"
           title="flat"
           description="단순 구획을 표현. 클릭할 수 없다."
         ></mm-title-with-description>
-      </mm-tile>
-      <mm-tile variant="tinted">
+      </mm-surface>
+      <mm-surface variant="tinted">
         <mm-title-with-description
           level="3"
           title="tinted"
           description="강조 표현. 클릭할 수 있다."
         ></mm-title-with-description>
-      </mm-tile>
-      <mm-tile variant="elevated">
+      </mm-surface>
+      <mm-surface variant="elevated">
         <mm-title-with-description
           level="3"
           title="elevated"
           description="강조 표현2. 클릭할 수 있다."
         ></mm-title-with-description>
-      </mm-tile>
+      </mm-surface>
     </mm-group>
     <mm-separator></mm-separator>
     <mm-group>
-      <mm-tile variant="elevated" size="small">
+      <mm-surface variant="elevated" size="small">
         <mm-title-with-description
           level="4"
           title="small"
           description="스몰 사이즈. 메뉴에서만 사용?"
         ></mm-title-with-description>
-      </mm-tile>
-      <mm-tile variant="elevated" size="medium">
+      </mm-surface>
+      <mm-surface variant="elevated" size="medium">
         <mm-title-with-description
           level="4"
           title="medium (size default)"
           description="미디엄 사이즈"
         ></mm-title-with-description>
-      </mm-tile>
+      </mm-surface>
     </mm-group>
   </section>
 
   <section class="component-props">
     <dl>
       <dt>variant?</dt>
-      <dd>'flat ? outlined' | 'elevated' | 'plain? soft?' | 'white'</dd>
+      <dd>'flat ? outlined' | 'elevated' | 'plain? soft?' | 'white', 'transparent'</dd>
       <dt>size</dt>
       <dd>'medium' | 'small'</dd>
       <dt>children</dt>
@@ -85,12 +85,16 @@
     <mm-text-list
       texts='[
           "타일 내부 leading, tailing 컴포넌트에 따라 시각보정이 필요할 수 있습니다.",
-          "foundation :: elevated는 타일 전체가 하나의 클릭 가능한 컴포넌트이거나 타일 내부에 클릭 가능한 컴포넌트를 포함.",
-          "transparented tile 을 정의하여 모든 contentbox가 tile이 되는 것은 어떤가? 비어있는 컴포넌트(Box, Row, div)와는 어떤 차이가 있나? row는 레이아웃 컴포넌트, tile은 형태 컴포넌트이다. tile에 과도한 책임을 부여하지 말 것.",
           "inset이 너무 커지면 물리적 화면 크기에 따라 inset의 변경이 필요할 수 있다. 콘텐츠 모듈을 가운데 정렬로 해결할 수 있다."
         ]'
     >
     </mm-text-list>
+    <!-- "foundation :: elevated는 타일 전체가 하나의 클릭 가능한 컴포넌트이거나 타일 내부에 클릭 가능한
+    컴포넌트를 포함.", -->
+    <!-- "transparented tile 을 정의하여 모든 contentbox가 tile이 되는 것은 어떤가? 비어있는
+    컴포넌트(Box, Row, div)와는 어떤 차이가 있나? row는 레이아웃 컴포넌트, tile은 형태 컴포넌트이다.
+    tile에 과도한 책임을 부여하지 말 것.", => transparent 필요. 배경있는 상황 -->
+
     <mm-text variant="body">
       At its core, Card is a Box with specific styling attributes and more explicit use cases that
       you can find in Examples. If you find yourself limited by the default styling and constraints
@@ -134,36 +138,6 @@
       src="elva-fairy-800w.jpg"
       alt="요정 옷을 입은 엘바"
     /> -->
-
-    <mm-tile variant="flat">
-      <mm-avatar style="background: aliceblue">
-        <mm-icon name="graph-up"></mm-icon>
-      </mm-avatar>
-      <div style="height: var(--space-3)"></div>
-      <mm-text variant="label-strong">상해종합주가지수</mm-text>
-      <mm-text variant="body">2999.55p</mm-text>
-      <div style="margin-top: var(--space-1)"></div>
-      <mm-tag variant="up">4.33% 상승</mm-tag>
-      <div style="margin-top: var(--space-3)">
-        <mm-text variant="caption">
-          <span style="color: var(--color-foreground-light)">10분 지연. live</span>
-        </mm-text>
-        <mm-text variant="caption">
-          <span style="color: var(--color-foreground-light)">현지 시간 기준 10.27. 01:27</span>
-        </mm-text>
-      </div>
-    </mm-tile>
-    <!-- <mm-tile>
-      <q>
-        I'm impressed by how GitHub Copilot seems to know exactly what I want to type next. GitHub
-        Copilot is particularly helpful when working on React components, where it makes eerily
-        accurate predictions. GitHub Copilot has become an indispensable part of my programmer
-        toolbelt.
-      </q>
-      <figcaption style="margin: var(--space-3) 0 0 0">
-        <mm-text variant="subheading">Byline</mm-text>
-      </figcaption>
-    </mm-tile> -->
   </mm-text-group>
 
   <mm-component-section title="PricingTile" description="">
@@ -248,7 +222,7 @@
             <mm-tag>Nvidia</mm-tag>
           </mm-group>
           <div style="height: var(--space-4)"></div>
-          <mm-tile variant="elevated">
+          <mm-surface variant="elevated">
             <mm-tag>3월 14일 수정됨</mm-tag>
             <div style="height: var(--space-3)"></div>
             <mm-group alignment="vertical">
@@ -261,7 +235,7 @@
               <mm-list-row primaryText="Naver" secondaryText="https://www.naver.com" size="large">
               </mm-list-row>
             </mm-group>
-          </mm-tile>
+          </mm-surface>
           <div style="height: var(--space-3)"></div>
           <mm-group>
             <mm-menuitem icon="heart" label="192"> </mm-menuitem>
@@ -305,7 +279,7 @@
   </mm-component-section>
 
   <!-- <mm-component-section title="RatingTile" description="TODO">
-    <mm-tilebar heading="Ratings"></mm-tilebar>
+    <mm-surfacebar heading="Ratings"></mm-surfacebar>
     <div aria-label="별점 5개 만점에 3.9개를 받았습니다." style="text-align: center">
       <mm-text variant="subheading">리뷰 116만개</mm-text>
       <mm-text variant="subhead">⭐ 4.8</mm-text>
@@ -359,4 +333,34 @@
       </article>
     </section>
   </mm-component-section>
+
+  <!-- <mm-surface variant="flat">
+      <mm-avatar style="background: aliceblue">
+        <mm-icon name="graph-up"></mm-icon>
+      </mm-avatar>
+      <div style="height: var(--space-3)"></div>
+      <mm-text variant="label-strong">상해종합주가지수</mm-text>
+      <mm-text variant="body">2999.55p</mm-text>
+      <div style="margin-top: var(--space-1)"></div>
+      <mm-tag variant="up">4.33% 상승</mm-tag>
+      <div style="margin-top: var(--space-3)">
+        <mm-text variant="caption">
+          <span style="color: var(--color-foreground-light)">10분 지연. live</span>
+        </mm-text>
+        <mm-text variant="caption">
+          <span style="color: var(--color-foreground-light)">현지 시간 기준 10.27. 01:27</span>
+        </mm-text>
+      </div>
+    </mm-surface> -->
+  <!-- <mm-surface>
+      <q>
+        I'm impressed by how GitHub Copilot seems to know exactly what I want to type next. GitHub
+        Copilot is particularly helpful when working on React components, where it makes eerily
+        accurate predictions. GitHub Copilot has become an indispensable part of my programmer
+        toolbelt.
+      </q>
+      <figcaption style="margin: var(--space-3) 0 0 0">
+        <mm-text variant="subheading">Byline</mm-text>
+      </figcaption>
+    </mm-surface> -->
 </main>

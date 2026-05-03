@@ -53,7 +53,7 @@ box-shadow:var(--shadow-large);
 
 
 @media (max-width: 800px) {
-  .tabpanel mm-tile {
+  .tabpanel mm-surface {
     width:100%;
   }
 }

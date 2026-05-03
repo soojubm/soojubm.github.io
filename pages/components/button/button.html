@@ -271,30 +271,30 @@
     description="버튼 그룹은 관련된 액션을 묶어 사용자가 선택할 수 있도록 합니다."
   >
     <mm-group variant="chip">
-      <mm-tile size="small">
+      <mm-surface size="small">
         <mm-group variant="chip">
           <mm-button variant="tertiary" size="large">취소</mm-button>
           <mm-button variant="primary" size="large">저장</mm-button>
         </mm-group>
-      </mm-tile>
-      <mm-tile size="small">
+      </mm-surface>
+      <mm-surface size="small">
         <mm-group variant="chip">
           <mm-button variant="text" size="large">건너뛰기</mm-button>
           <mm-button variant="secondary" size="large">다음</mm-button>
         </mm-group>
-      </mm-tile>
-      <mm-tile size="small">
+      </mm-surface>
+      <mm-surface size="small">
         <mm-group variant="chip">
           <mm-button variant="tertiary" size="large">이전</mm-button>
           <mm-button variant="secondary" size="large">다음</mm-button>
         </mm-group>
-      </mm-tile>
-      <mm-tile size="small">
+      </mm-surface>
+      <mm-surface size="small">
         <mm-group variant="chip" class="hero-actions">
           <mm-button variant="primary" size="large" href="#components">지금 가입하기</mm-button>
           <mm-button variant="text" size="large">더 알아보기</mm-button>
         </mm-group>
-      </mm-tile>
+      </mm-surface>
     </mm-group>
     <br />
     <dl>
@@ -319,7 +319,7 @@
       </mm-text>
     </mm-text-group>
     <br />
-    <mm-tile>
+    <mm-surface>
       <mm-text variant="heading4">이 문서가 도움이 되었나요?</mm-text>
       <small title="17 out of 439 found this helpful"> 417명 중 349명이 도움을 받았어요. </small>
       <div style="height: 1rem"></div>
@@ -327,7 +327,7 @@
         <mm-button>도움이 됐어요</mm-button>
         <mm-button>부족해요</mm-button>
       </mm-group>
-    </mm-tile>
+    </mm-surface>
   </mm-component-section>
 
   <mm-component-section
@@ -487,17 +487,17 @@
     <mm-text variant="subhead">
       Single selection for contents filtering. togglebuttonGroup mui
     </mm-text>
-    <mm-tile size="small">
+    <mm-surface size="small">
       <mm-group variant="chip">
         <mm-button status="checked" class="js-toggle is-active">전체</mm-button>
         <mm-button class="js-toggle">입금확인</mm-button>
         <mm-button class="js-toggle">결제완료</mm-button>
         <mm-button class="js-toggle">배송중</mm-button>
       </mm-group>
-    </mm-tile>
+    </mm-surface>
 
     <mm-text variant="subhead">Multiple selections</mm-text>
-    <mm-tile size="small">
+    <mm-surface size="small">
       <mm-group variant="chip" aria-multiselectable="true">
         <mm-button role="option" name="check" aria-selected="true" status="checked">소설</mm-button>
         <mm-button role="option" icon="check" aria-selected="false" status="checked">
@@ -505,10 +505,10 @@
         >
         <mm-button role="option" aria-selected="false">타이포그래피</mm-button>
       </mm-group>
-    </mm-tile>
+    </mm-surface>
 
     <mm-text variant="subhead">Bleeding</mm-text>
-    <mm-tile size="small">
+    <mm-surface size="small">
       <div class="group" data-alignment="bleeding-vertical">
         <mm-button>블리딩1234</mm-button>
         <mm-button>블리딩4564</mm-button>
@@ -516,7 +516,7 @@
         <mm-button>블리딩4564</mm-button>
         <mm-button>블리딩1234</mm-button>
       </div>
-    </mm-tile>
+    </mm-surface>
 
     <mm-text-list
       texts='[

@@ -11,7 +11,12 @@ class Group extends LitElement {
 
   render() {
     return html`
-      <div class="group" role="group" data-variant="${this.variant}" data-alignment="${this.alignment}">
+      <div
+        class="group"
+        role="group"
+        data-variant="${this.variant}"
+        data-alignment="${this.alignment}"
+      >
         <slot></slot>
       </div>
     `

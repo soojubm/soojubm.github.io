@@ -38,41 +38,43 @@
         aria-haspopup="menu"
         aria-expanded="false"
       ></mm-icon-button>
-      <mm-tile variant="elevated" size="medium" hidden>
-        <mm-entity
-          label="수줍이"
-          description="soojubm@gmail.com"
-          description2="010 3121 7045"
-          description="UI Designer"
-        >
-          <mm-avatar slot="avatar" variant="secondary" size="large" default="true"></mm-avatar>
-        </mm-entity>
-        <div style="margin: var(--space-2) 0 0">
-          <mm-button>내 프로필 관리</mm-button>
-        </div>
-        <div style="position: absolute; right: var(--space-4); top: var(--space-4)">
-          <mm-tag variant="primary" size="large">샘플 유아이</mm-tag>
-        </div>
-        <mm-separator></mm-separator>
-        <mm-group variant="menuitem">
-          <mm-menuitem
-            icon="half-moon"
-            label="어둡게 보기"
-            class="js-darkmode"
-            aria-label="change theme"
+      <div hidden>
+        <mm-surface variant="elevated" size="medium">
+          <mm-entity
+            label="수줍이"
+            description="soojubm@gmail.com"
+            description2="010 3121 7045"
+            description="UI Designer"
           >
-            <mm-switch slot="action"></mm-switch>
-          </mm-menuitem>
-          <mm-menuitem icon="megaphone" label="고객센터 및 도움말"> </mm-menuitem>
-        </mm-group>
-        <mm-separator></mm-separator>
-        <mm-menuitem icon="log-out" label="로그아웃"> </mm-menuitem>
-        <mm-separator></mm-separator>
-        <mm-group style="margin-top: -0.25rem">
-          <mm-link variant="secondary" href="#">개인정보처리방침</mm-link>
-          <mm-link variant="secondary" href="#">서비스 약관</mm-link>
-        </mm-group>
-      </mm-tile>
+            <mm-avatar slot="avatar" variant="secondary" size="large" default="true"></mm-avatar>
+          </mm-entity>
+          <div style="margin: var(--space-2) 0 0">
+            <mm-button>내 프로필 관리</mm-button>
+          </div>
+          <div style="position: absolute; right: var(--space-4); top: var(--space-4)">
+            <mm-tag variant="primary" size="large">샘플 유아이</mm-tag>
+          </div>
+          <mm-separator></mm-separator>
+          <mm-group variant="menuitem">
+            <mm-menuitem
+              icon="half-moon"
+              label="어둡게 보기"
+              class="js-darkmode"
+              aria-label="change theme"
+            >
+              <mm-switch slot="action"></mm-switch>
+            </mm-menuitem>
+            <mm-menuitem icon="megaphone" label="고객센터 및 도움말"> </mm-menuitem>
+          </mm-group>
+          <mm-separator></mm-separator>
+          <mm-menuitem icon="log-out" label="로그아웃"> </mm-menuitem>
+          <mm-separator></mm-separator>
+          <mm-group style="margin-top: -0.25rem">
+            <mm-link variant="secondary" href="#">개인정보처리방침</mm-link>
+            <mm-link variant="secondary" href="#">서비스 약관</mm-link>
+          </mm-group>
+        </mm-surface>
+      </div>
     </div>
   </div>
 </nav>
@@ -103,7 +105,7 @@
       <a href="avatar.html">avatar </a>
       <a href="text.html"> text </a>
       <a href="tag.html"> tag </a>
-      <a href="tile.html"> tile </a>
+      <a href="surface.html"> surface </a>
       <a href="separator.html"> separator </a>
       <a href="tooltip.html"> tooltip </a>
     </menu>

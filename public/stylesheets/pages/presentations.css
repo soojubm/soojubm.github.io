@@ -40,7 +40,7 @@
   transform:translateY(50vh);transition:all 1s;
 }
 .sheet-title {margin:0 0 var(--space-3);}
-.sheet-drag-handler {width:80px;height:.25rem;border-radius:var(--radius);background:var(--color-background-weak);position:absolute;left:50%;top:.5rem;transform:translateX(-50%);}
+.sheet-drag-handler {width:80px;height:.25rem;border-radius:var(--radius);background:var(--color-background-subtle);position:absolute;left:50%;top:.5rem;transform:translateX(-50%);}
 /* // .sheet.is-hidden {animation:temp111 1s forwards} */
 .sheet-close {position:absolute;right:.5rem;top:.5rem;}
 

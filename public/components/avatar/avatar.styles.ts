@@ -8,7 +8,7 @@ export const avatarStyles = css`
   figure {
     margin: 0;
     --avatar-size: var(--size-medium);
-    --avatar-background-color: var(--color-background-weak);
+    --avatar-background-color: var(--color-background-subtle);
     --avatar-border: var(--border-stronger);
     --avatar-radius: var(--radius);
     --avatar-badge-size: var(--size-tiny);

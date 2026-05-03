@@ -73,7 +73,7 @@ const components = [
   'tab',
   'bar',
 
-  'tile',
+  'surface',
   'menuitem',
   'switch',
   'tooltip',

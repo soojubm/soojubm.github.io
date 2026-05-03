@@ -134,7 +134,7 @@
   </mm-component-section>
 
   <mm-component-section title="UserCard" description="구체 레벨.">
-    <mm-tile variant="flat">
+    <mm-surface variant="flat">
       <div style="display: flex; gap: 1rem">
         <mm-avatar size="huge" variant="secondary"></mm-avatar>
         <mm-group style="flex-direction: column; gap: var(--space-2)">
@@ -151,7 +151,7 @@
       <mm-separator></mm-separator>
       <mm-keyvalue key="Total New Users" value="5.9K" alignment="vertical"></mm-keyvalue>
       <!-- <mm-tag>8.2% 상승</mm-tag> -->
-      <mm-tile variant="elevated" size="small" style="margin: var(--space-3) 0 0">
+      <mm-surface variant="elevated" size="small" style="margin: var(--space-3) 0 0">
         <mm-group variant="avatar">
           <mm-avatar size="small"></mm-avatar>
           <mm-avatar size="small"></mm-avatar>
@@ -159,11 +159,11 @@
           <mm-avatar size="small"></mm-avatar>
           <mm-text style="margin-left: var(--space-2)"> Followed by 수줍이 외 4명 </mm-text>
         </mm-group>
-      </mm-tile>
+      </mm-surface>
       <!-- <mm-text class="mutiual"> 내가 팔로우하는 사용자 중에는 팔로워가 없습니다. (twitter) </mm-text> -->
-    </mm-tile>
+    </mm-surface>
     <br />
-    <mm-tile>
+    <mm-surface>
       <mm-menuitem label="수줍이" description="Youtube subscriber">
         <mm-avatar slot="avatar"></mm-avatar>
       </mm-menuitem>
@@ -179,9 +179,9 @@
           <mm-keyvalue key="팔로잉" value="8" alignment="inline"></mm-keyvalue>
         </mm-group>
       </div>
-      <mm-tile variant="tile" size="small">
+      <mm-surface variant="tile" size="small">
         <mm-text>🥺 수줍이님을 팔로우하고 있는 친구가 없습니다.</mm-text>
-      </mm-tile>
-    </mm-tile>
+      </mm-surface>
+    </mm-surface>
   </mm-component-section>
 </main>

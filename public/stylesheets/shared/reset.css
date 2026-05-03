@@ -16,7 +16,7 @@ a {text-decoration:none;
 pre {margin-block:0;background-color:#fff;}
 a:link,a:visited {} a:hover,a:focus {} a:active {}
 
-code {display:block;background:var(--color-background-weak);border-radius:var(--radius);font-family:var(--font-family-code);font-size:var(--font-size-12);letter-spacing:.0125rem;}
+code {display:block;background:var(--color-background-subtle);border-radius:var(--radius);font-family:var(--font-family-code);font-size:var(--font-size-12);letter-spacing:.0125rem;}
 svg {color:var(--gray800);}
 
 /* // for appearance on safari */
@@ -75,7 +75,7 @@ table {
 
   --table-cell-padding: var(--space-2) 0 ;
   --table-cell-background: var(--color-background);
-  --table-cell-background-hover: var(--color-background-weak);
+  --table-cell-background-hover: var(--color-background-subtle);
   --table-cell-background-selected: null;
 
   width:100%;
@@ -284,8 +284,8 @@ mark {color:inherit;} mark::before {content: " [강조 시작] ";opacity:0;posit
 
 /* // hover-item */
 .is-hovered {
-  box-shadow: 0 0 0 2px var(--color-background-weak);
-  background: var(--color-background-weak);
+  box-shadow: 0 0 0 2px var(--color-background-subtle);
+  background: var(--color-background-subtle);
   border-radius: 4px;
 }
 
@@ -307,7 +307,7 @@ menu-item:focus-visible {
 .is-hovered::before {
   content:'';
   display:block;
-  background-color:var(--color-background-weak);
+  background-color:var(--color-background-subtle);
   border-radius:var(--radius);
   position:absolute;
   left:var(--hover-outline);
