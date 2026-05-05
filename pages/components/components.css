@@ -45,8 +45,8 @@
     bottom: 0;
   }
   mm-text[variant='subhead'] {display: none;}
-  dl dt {color:var(--color-foreground-light);}
-  dl dd {font-weight:var(--font-weight-bold);}
+  dl dt {color:var(--color-foreground-light);line-height:20px;}
+  dl dd {}
   dl dd + dt {margin-top:var(--space-3);}
   dl dd + dd {margin:0 0 var(--space-1) 0;font-style:normal;font-weight:var(--font-weight-normal);font-size:var(--font-size-14)}
 }

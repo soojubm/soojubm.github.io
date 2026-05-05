@@ -13,17 +13,29 @@
       <i slot="indicator" class="tablist-indicator"></i>
     </mm-tablist> -->
     <mm-tablist>
-      <mm-tab slot="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">
-        첫번째 탭
-      </mm-tab>
-      <mm-tab slot="tab" aria-controls="panel-2" id="tab-2" tabindex="-1"> 두번째 탭 </mm-tab>
-      <mm-tab slot="tab" aria-controls="panel-3" id="tab-3" tabindex="-1"> 세번째 탭 </mm-tab>
+      <mm-tab slot="tab">소개</mm-tab>
+      <mm-tab slot="tab">갤러리</mm-tab>
+      <mm-tab slot="tab">문의하기</mm-tab>
       <i slot="indicator" class="tablist-indicator"></i>
+
+      <div slot="panel">
+        <h1>서비스 소개</h1>
+        <p>여기는 <strong>풍부한 HTML</strong> 컨텐츠가 들어갈 수 있습니다.</p>
+      </div>
+
+      <div slot="panel">
+        <img src="gallery.jpg" alt="이미지도 가능" />
+        <my-custom-component></my-custom-component>
+      </div>
+
+      <div slot="panel">
+        <form>
+          <input type="text" placeholder="이름을 입력하세요" />
+          <button>전송</button>
+        </form>
+      </div>
     </mm-tablist>
-    <div style="height: var(--space-4)"></div>
-    <div class="tabpanel" id="panel-1" role="tabpanel" tabindex="0" aria-labelledby="tab-1">
-      <p>Content for the first panel.</p>
-    </div>
+
     <div
       class="tabpanel"
       id="panel-2"

@@ -1,55 +1,54 @@
 import { LitElement, html } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
+import { customElement, property, query } from 'lit/decorators.js'
 import { tablistStyles } from './tablist.styles'
 
 @customElement('mm-tablist')
 class Tablist extends LitElement {
-  @property({ type: String }) value = ''
-  @property({ type: String }) variant = ''
+  @property({ type: String, reflect: true }) value = '0'
 
   static styles = [tablistStyles]
 
-  connectedCallback() {
-    super.connectedCallback()
-    this.addEventListener('mm-tab-select', this._handleSelect as EventListener)
+  @query('slot[name="tab"]') tabSlot!: HTMLSlotElement
+  @query('slot[name="panel"]') panelSlot!: HTMLSlotElement
+
+  // 슬롯의 내용환이 변할 때마다 인덱스를 다시 매깁니다.
+  private _handleSlotChange() {
+    this._updateItems()
   }
 
-  disconnectedCallback() {
-    this.removeEventListener('mm-tab-select', this._handleSelect as EventListener)
-    super.disconnectedCallback()
+  private _handleSelect = (e: CustomEvent) => {
+    const tabs = this.tabSlot.assignedElements() as any[]
+    const target = e.target as any
+
+    // 클릭된 탭의 순서(index)를 찾아 value로 설정
+    const newIndex = tabs.indexOf(target)
+    if (newIndex !== -1) {
+      this.value = String(newIndex)
+      this._updateItems()
+    }
   }
 
-  private _handleSelect = (event: CustomEvent<{ dataIndex: string }>) => {
-    const { dataIndex } = event.detail
-    const tabElements = this.querySelectorAll('mm-tab')
-    const panels = this.parentElement?.querySelectorAll('mm-tabpanel')
+  private _updateItems() {
+    const tabs = this.tabSlot.assignedElements() as any[]
+    const panels = this.panelSlot.assignedElements() as HTMLElement[]
 
-    tabElements.forEach(tab => {
-      tab.setAttribute('selected', tab.getAttribute('data-index') === dataIndex ? 'true' : 'false')
+    tabs.forEach((tab, i) => {
+      tab.selected = String(i) === this.value
     })
 
-    panels?.forEach(panel => {
-      panel.setAttribute('aria-hidden', panel.getAttribute('data-index') === dataIndex ? 'false' : 'true')
+    panels.forEach((panel, i) => {
+      panel.style.display = String(i) === this.value ? 'block' : 'none'
     })
   }
 
   render() {
     return html`
-      <nav role="tablist" class="tablist" data-variant="${this.variant}">
-        <slot name="tab"></slot>
-        <slot name="indicator"></slot>
+      <nav role="tablist" class="tablist" @mm-tab-select="${this._handleSelect}">
+        <slot name="tab" @slotchange="${this._handleSlotChange}"></slot>
       </nav>
+      <div class="panel-container">
+        <slot name="panel" @slotchange="${this._handleSlotChange}"></slot>
+      </div>
     `
   }
 }
-
-export default Tablist
-
-// const parsedData = JSON.parse(`${this.data}`)
-// container.appendChild(
-//   parsedData.map(item => {
-//     return `
-//     <div>${item.label}</div>
-//   `
-//   }),
-// )

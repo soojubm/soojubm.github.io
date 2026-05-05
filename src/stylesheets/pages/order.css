@@ -1,9 +1,0 @@
-
-.order {}
-.order-head {position:relative;}
-.order-head-title {}
-.order-head-description {}
-
-.order-item {}
-.order-item-head {display: flex; align-items: center; line-height: 24px}
-.order-item-head-type {width: var(--size-large); justify-content: center}

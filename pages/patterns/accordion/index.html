@@ -10,6 +10,49 @@
     <dd title="">expanded/collapsed</dd>
   </dl>
 
+  <style>
+    .accordion {
+      margin: var(--space-1) 0;
+      padding: var(--space-2) var(--space-4);
+      border-radius: var(--radius);
+      background: var(--color-background-subtle);
+    }
+    .accordion-title {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      width: 100%;
+      height: var(--size-medium);
+      font-weight: var(--font-weight-bold);
+    }
+    .accordion-panel {
+      display: none;
+      cursor: default;
+    }
+    .accordion-panel p + p {
+      margin: var(--space-2) 0 0 0;
+    }
+
+    [aria-expanded='true'] .accordion-panel {
+      display: block;
+      padding: var(--space-2) 0;
+    }
+
+    .faq-item-reaction {
+    }
+    .faq-item-reaction-title {
+      margin: 0 0 var(--space-2) 0;
+    }
+    .faq-item-reaction-button {
+      margin: 0 2rem;
+      color: var(--color-foreground-light);
+    }
+    .faq-item-reaction-button-emoji {
+      display: block;
+      font-size: var(--font-size-32);
+    }
+  </style>
+
   <section class="component-example">
     <article class="accordion js-accordion is-active">
       <button

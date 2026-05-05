@@ -9,11 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // document.querySelector('body')!.insertBefore(navbar, );
   // renderSidemenu
   // document.querySelector('.page')!.insertAdjacentHTML('afterbegin', sidemenu)
-
-  // // ! 디자인시스템에 추가한 거 임시
-  document
-    .querySelector('.js-default-font')
-    ?.addEventListener('click', () => document.body.classList.toggle('font-default'))
 })
 
 const colorTokens = [

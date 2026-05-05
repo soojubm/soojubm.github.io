@@ -1,7 +1,7 @@
 <main class="page">
   <mm-title-with-description
     title="Surface"
-    description="연관 정보를 묶어 시각적으로 강조하는 컨테이너입니다."
+    description="콘텐츠가 놓이는 기본 바탕이자, 정보의 논리적 구조를 시각적 깊이로 표현하는 기반입니다. 배경과 대비되는 명도나 그림자(Elevation)를 활용해 요소 간의 층위(Layer)를 형성하며, 사용자는 화면의 입체적인 구조를 직관적으로 이해하고 현재 상호작용 중인 정보의 중요도를 인지하게 됩니다."
   ></mm-title-with-description>
 
   <!-- 추가 콘텐츠에 대한 티저로 사용할 수 있습니다 -->
@@ -21,7 +21,7 @@
   </dl>
 
   <section class="component-example">
-    <mm-group variant="button">
+    <div style="display: flex; flex-direction: column; gap: var(--space-3)">
       <mm-surface variant="flat">
         <mm-title-with-description
           level="3"
@@ -43,7 +43,7 @@
           description="강조 표현2. 클릭할 수 있다."
         ></mm-title-with-description>
       </mm-surface>
-    </mm-group>
+    </div>
     <mm-separator></mm-separator>
     <mm-group>
       <mm-surface variant="elevated" size="small">

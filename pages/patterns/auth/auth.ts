@@ -5,8 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
   document.body.innerHTML = renderLayout(main)
 })
 
-import '/src/stylesheets/pages/authentication.css'
-
 document.addEventListener('DOMContentLoaded', () => {
   // function createCustomer() {
   //   let billingEmail = document.querySelector('#email')?.value as HTMLElement

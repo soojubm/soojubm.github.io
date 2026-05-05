@@ -1,5 +1,3 @@
-import '/src/stylesheets/components/feed.css'
-
 import { renderLayout } from '../../../layouts/base-layouts'
 import main from './index.html'
 
