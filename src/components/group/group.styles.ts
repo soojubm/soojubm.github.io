@@ -34,12 +34,6 @@ export const groupStyles = css`
     row-gap: -0.25rem;
   }
 
-  .group[data-variant='radio'],
-  .group[data-variant='checkbox'] {
-    flex-direction: column;
-    gap: var(--space-3);
-  }
-
   .group[data-variant='form'] {
     flex-direction: column;
     gap: var(--space-3);

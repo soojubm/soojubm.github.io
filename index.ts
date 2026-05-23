@@ -62,7 +62,7 @@ async function domEvents() {
   // test
   const prop = document.querySelector('.component-props')
   prop?.addEventListener('click', event => {
-    prop.classList.toggle('is-opened')
+    prop.classList.add('is-opened')
   })
 
   setupModal({ selector: '.js-modal' })

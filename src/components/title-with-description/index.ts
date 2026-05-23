@@ -19,15 +19,10 @@ class TitleWithDescription extends LitElement {
       description: 'body',
       gap: 'var(--space-1)',
     },
-    '2-narrow': {
-      title: 'subhead',
-      description: 'body',
-      gap: 'var(--space-0)',
-    },
     '3': {
       title: 'subhead',
       description: 'body',
-      gap: 'var(--space-1)',
+      gap: 'var(--space-2)',
     },
     '4': {
       title: 'heading4',

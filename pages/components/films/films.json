@@ -1,11 +1,56 @@
 [
   // 더스퀘어
   {
+    "id": 202605,
+    "releasedate": 1962,
+    "titlekorean": "파계",
+    "titleenglish": "The Outcast",
+    "director": "이치가와 곤",
+    "country": "일본",
+    "etc": "부락민, 라이조"
+  },
+  {
+    "id": 202605,
+    "releasedate": 2003,
+    "titlekorean": "더 킹: 헨리 5세",
+    "titleenglish": "A Good Lawyer's Wife",
+    "director": "류승완",
+    "country": "한국",
+    "etc": "넷플릭스"
+  },
+  {
+    "id": 202605,
+    "releasedate": 2003,
+    "titlekorean": "식스센스",
+    "titleenglish": "A Good Lawyer's Wife",
+    "director": "M. 나이트 샤말란",
+    "country": "한국",
+    "etc": "호러"
+  },
+  {
     "id": 202604,
     "releasedate": 2003,
-    "titlekorean": "햄릿",
+    "titlekorean": "런",
     "titleenglish": "A Good Lawyer's Wife",
-    "director": "베를린",
+    "director": "류승완",
+    "country": "한국",
+    "etc": "호러"
+  },
+  {
+    "id": 202604,
+    "releasedate": 2003,
+    "titlekorean": "냉정과 열정사이",
+    "titleenglish": "",
+    "director": "",
+    "country": "일본",
+    "etc": ""
+  },
+  {
+    "id": 202604,
+    "releasedate": 2003,
+    "titlekorean": "베를린",
+    "titleenglish": "",
+    "director": "류승완",
     "country": "한국",
     "etc": ""
   },
@@ -13,7 +58,7 @@
     "id": 202603,
     "releasedate": 2003,
     "titlekorean": "햄릿",
-    "titleenglish": "A Good Lawyer's Wife",
+    "titleenglish": "",
     "director": "임상수",
     "country": "한국",
     "etc": ""
@@ -55,13 +100,13 @@
     "etc": ""
   },
   {
-    "id": 202602,
+    "id": 202603,
     "releasedate": 2017,
-    "titlekorean": "주성치",
+    "titlekorean": "도성타왕",
     "titleenglish": "TODO",
     "director": "이명세",
-    "country": "한국",
-    "etc": ""
+    "country": "홍콩",
+    "etc": "주성치"
   },
   {
     "id": 202602,
@@ -6946,7 +6991,7 @@
     "releasedate": 1956,
     "titlekorean": "버마의 하프",
     "titleenglish": "The Burmese Harp",
-    "director": "이치카와 곤",
+    "director": "이치가와 곤",
     "country": "일본"
   },
   {
@@ -10145,7 +10190,7 @@
     "releasedate": "2004",
     "titlekorean": "토니 타키타니",
     "titleenglish": "Tony Takitani",
-    "director": "이치카와 준",
+    "director": "이치가와 준",
     "country": "일본",
     "etc": ""
   },
@@ -10977,7 +11022,7 @@
     "releasedate": "1959",
     "titlekorean": "들불",
     "titleenglish": "Fires on the Plain: 野火;Nobi",
-    "director": "이치카와 곤",
+    "director": "이치가와 곤",
     "country": "일본",
     "etc": ""
   },

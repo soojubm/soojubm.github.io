@@ -70,10 +70,18 @@
       <dd>slot || React.ReactNode</dd>
       <dt>content</dt>
       <dd>string</dd>
-      <dt>align</dt>
-      <dd>'left' | 'right' | 'center'</dd>
+      <dt>placement</dt>
+      <dd>
+        PlacementType :: top | top-start | top-end | bottom | bottom-start | bottom-end | left |
+        left-start | left-end | right | right-start | right-end
+      </dd>
     </dl>
   </section>
+  <!-- type Side = 'top' | 'bottom' | 'left' | 'right';
+
+type Align = 'start' | 'end';
+
+type Placement = Side | `${Side}-${Align}`;> -->
 
   <section class="component-guide">
     <div class="column columns-3">

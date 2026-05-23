@@ -4,22 +4,13 @@
     description="옵션 목록에서 하나의 옵션을 선택합니다."
   ></mm-title-with-description>
 
-  <dl class="article-aka">
-    <dt>a.k.a.</dt>
-    <dd aria-label="">Radio group</dd>
-  </dl>
-
   <section class="component-example">
     <fieldset role="radiogroup" style="max-width: 640px">
-      <legend hidden>radiogroup</legend>
-      <mm-group variant="checkbox">
-        <mm-radio id="gender-man" name="gender" value="">Video Killed the Radio Button</mm-radio>
-        <!-- <p class="radio-helper">선택한 옵션의 보조 텍스트 영역입니다. 좁은 화면에서 충분한 공간 확보를 위해 들여쓰지 않습니다.</p> -->
-        <mm-radio id="gender-etc" name="gender" value="" disabled> disabled </mm-radio>
-        <mm-radio id="gender-etc" name="gender" value="" checked disabled>
-          checked and disabled
-        </mm-radio>
-      </mm-group>
+      <mm-radio-group id="plan-group" name="membership" value="premium">
+        <mm-radio value="basic">베이직 요금제</mm-radio>
+        <mm-radio value="premium">프리미엄 요금제</mm-radio
+        <mm-radio value="ultimate" disabled>얼티메이트 요금제</mm-radio>
+      </mm-radio-group>
     </fieldset>
   </section>
   <section class="component-props">

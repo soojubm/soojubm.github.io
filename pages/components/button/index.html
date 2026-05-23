@@ -270,32 +270,24 @@
     title="Button Group"
     description="버튼 그룹은 관련된 액션을 묶어 사용자가 선택할 수 있도록 합니다."
   >
-    <mm-group variant="chip">
-      <mm-surface size="small">
-        <mm-group variant="chip">
-          <mm-button variant="tertiary" size="large">취소</mm-button>
-          <mm-button variant="primary" size="large">저장</mm-button>
-        </mm-group>
-      </mm-surface>
-      <mm-surface size="small">
-        <mm-group variant="chip">
-          <mm-button variant="text" size="large">건너뛰기</mm-button>
-          <mm-button variant="secondary" size="large">다음</mm-button>
-        </mm-group>
-      </mm-surface>
-      <mm-surface size="small">
-        <mm-group variant="chip">
-          <mm-button variant="tertiary" size="large">이전</mm-button>
-          <mm-button variant="secondary" size="large">다음</mm-button>
-        </mm-group>
-      </mm-surface>
-      <mm-surface size="small">
-        <mm-group variant="chip" class="hero-actions">
-          <mm-button variant="primary" size="large" href="#components">지금 가입하기</mm-button>
-          <mm-button variant="text" size="large">더 알아보기</mm-button>
-        </mm-group>
-      </mm-surface>
-    </mm-group>
+    <div style="display: flex; flex-direction: column; gap: 1.5rem">
+      <mm-group variant="chip">
+        <mm-button variant="tertiary" size="large">취소</mm-button>
+        <mm-button variant="primary" size="large">저장</mm-button>
+      </mm-group>
+      <mm-group variant="chip">
+        <mm-button variant="text" size="large">건너뛰기</mm-button>
+        <mm-button variant="secondary" size="large">다음</mm-button>
+      </mm-group>
+      <mm-group variant="chip">
+        <mm-button variant="tertiary" size="large">이전</mm-button>
+        <mm-button variant="secondary" size="large">다음</mm-button>
+      </mm-group>
+      <mm-group variant="chip" class="hero-actions">
+        <mm-button variant="primary" size="large" href="#components">지금 가입하기</mm-button>
+        <mm-button variant="text" size="large">더 알아보기</mm-button>
+      </mm-group>
+    </div>
     <br />
     <dl>
       <dt>primaryAction</dt>
@@ -331,7 +323,7 @@
   </mm-component-section>
 
   <mm-component-section
-    title="ToggleButtonGroup"
+    title="ToggleButton ToggleButtonGroup"
     description="전환 및 선택. 팔로우 팔로잉, 북마크, 좋아요 등"
   >
     <div style="display: flex; gap: var(--space-0)">
@@ -358,12 +350,6 @@
         <mm-icon name="view-columns-3"></mm-icon>
       </button>
     </div>
-  </mm-component-section>
-
-  <mm-component-section
-    title="FollowButton"
-    description="ToggleActionButton. 팔로우 팔로잉, 북마크, 좋아요 등"
-  >
   </mm-component-section>
 
   <address class="component-references">

@@ -35,7 +35,7 @@ export class Feature extends LitElement {
         </mm-avatar>
 
         <mm-title-with-description
-          level="4"
+          level="3"
           .title="${this.titleText}"
           .description="${this.description}"
         ></mm-title-with-description>

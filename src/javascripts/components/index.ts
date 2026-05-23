@@ -25,7 +25,6 @@ import '../../components/separator/separator'
 import '../../components/surface/surface'
 import '../../components/checkbox/checkbox'
 import '../../components/switch/switch'
-import '../../components/radio/radio'
 import '../../components/result/result'
 import '../../components/feature/feature'
 import '../../components/keyvalue/keyvalue'
@@ -42,6 +41,15 @@ import '../../components/sheet/sheet-body'
 import '../../components/sheet/sheet-footer'
 import '../../components/list-row'
 import '../../components/option-row'
+
+import '../../components/radio/radio'
+import '../../components/radio/radio-group'
+
+import '../../components/menuitem/menu-item-row'
+import '../../components/menuitem/menu-item-link'
+import '../../components/menuitem/menu-item-checkbox'
+import '../../components/menuitem/menu-item-radio'
+import '../../components/menuitem/menu-item-radio-group'
 
 // 👉 “이 파일은 module이다”라고 명시
 

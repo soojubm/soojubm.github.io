@@ -16,7 +16,7 @@ a {text-decoration:none;
 pre {margin-block:0;background-color:#fff;}
 a:link,a:visited {} a:hover,a:focus {} a:active {}
 
-code {display:block;background:var(--color-background-subtle);border-radius:var(--radius);font-family:var(--font-family-code);font-size:var(--font-size-12);letter-spacing:.0125rem;}
+code {display:block;font-family:var(--font-family-code);font-size:var(--font-size-12);letter-spacing:.0125rem;}
 svg {color:var(--gray800);}
 
 /* // for appearance on safari */

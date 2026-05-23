@@ -22,8 +22,11 @@ export class Radio extends LitElement {
     return this.id || this._defaultId
   }
 
-  // 라디오 버튼 선택 시 내부 상태를 업데이트하고 이벤트를 상위로 전달합니다.
+  // mm-radio.ts 내부의 _onChange 함수 수정
   private _onChange(event: Event) {
+    // 🔥 핵심: 네이티브 change 이벤트가 외부(Shadow DOM 밖)로 버블링되는 것을 완벽히 차단합니다.
+    event.stopPropagation()
+
     const target = event.target as HTMLInputElement
     this.checked = target.checked
 

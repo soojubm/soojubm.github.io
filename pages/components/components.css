@@ -52,6 +52,7 @@
 }
 .component-props.is-opened {
   height: auto;
+  cursor: default;
 
   &:after {
     display: none;

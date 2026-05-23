@@ -16,7 +16,7 @@ class MenuItem extends LitElement {
 
   render() {
     return html`
-      <a
+      <div
         href="${this.href}"
         class="item"
         role="menuitem"
@@ -29,7 +29,7 @@ class MenuItem extends LitElement {
         <mm-text variant="body">${this.label}</mm-text>
         <mm-text variant="label">${this.description}</mm-text>
         <slot name="action"></slot>
-      </a>
+      </div>
     `
   }
 }

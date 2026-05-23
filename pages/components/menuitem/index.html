@@ -13,53 +13,50 @@
     })
   </script>
 
-  <dl class="article-aka">
-    <dt>a.k.a.</dt>
-    <!-- option list action list :넘누포괄적 -->
-    <dd title="shopify 22 12">Menu group</dd>
-    <dd>action menu</dd>
-  </dl>
-
   <section class="component-example">
-    <div style="max-width: 400px">
-      <mm-dropdown>
-        <option value="1">Option 1</option>
-        <option value="2">Option 2</option>
-        <option value="3">Option 3</option>
-      </mm-dropdown>
+    <div style="max-width: 520px">
+      <mm-menu-item-row>
+        <mm-avatar slot="prefix" variant="tertiary" icon="user"></mm-avatar>
+        <mm-text slot="label" variant="body"> Profile </mm-text>
+        <mm-checkbox slot="action"></mm-checkbox>
+      </mm-menu-item-row>
+      <mm-menu-item-checkbox icon="bell" ?checked="${true}">Notifications </mm-menu-item-checkbox>
+      <!-- <mm-menu-item-link icon="users"> Profile </mm-menu-item-link> -->
+      <mm-menu-item-row>MenuItemRow </mm-menu-item-row>
+      <mm-menu-item-row icon="group">MenuItem with Ico </mm-menu-item-row>
+      <mm-menu-item-row icon="trash" tone="danger">MenuItem with Icon </mm-menu-item-row>
+      <mm-menu-item-row icon="check">test </mm-menu-item-row>
+
+      <mm-menu-item-radio-group id="theme-group" name="theme" value="dark">
+        <mm-menu-item-radio value="light">라이트 모드</mm-menu-item-radio>
+        <mm-menu-item-radio value="dark">다크 모드</mm-menu-item-radio>
+        <mm-menu-item-radio value="system">시스템 설정 동기화</mm-menu-item-radio>
+      </mm-menu-item-radio-group>
+      <script></script>
     </div>
+
     <mm-separator></mm-separator>
 
-    <div style="max-width: 520px">
-      <div>
-        <mm-menuitem label="MenuItem"> </mm-menuitem>
-        <mm-menuitem label="MenuItem"> </mm-menuitem>
-      </div>
-      <mm-separator size="small"></mm-separator>
-      <div>
-        <mm-menuitem icon="group" label="MenuItem with Icon"> </mm-menuitem>
-        <mm-menuitem icon="trash" label="MenuItem with Icon" tone="danger"> </mm-menuitem>
-      </div>
-      <mm-separator size="small"></mm-separator>
-      <mm-menuitem icon="check" label="MenuItemCheckbox"> </mm-menuitem>
+    <div style="max-width: 400px">
+      <mm-dropdown id="my-dropdown">
+        <option value="profile">내 프로필 보기</option>
+        <option value="settings">설정</option>
+
+        <option value="notice" type="checkbox" checked>공지사항 알림 받기</option>
+        <option value="marketing" type="checkbox">마케팅 정보 수신 동의</option>
+      </mm-dropdown>
     </div>
   </section>
 
   <section class="component-props">
     <mm-text variant="subhead">Props</mm-text>
     <dl>
-      <dt>text<attr>?</attr></dt>
+      <dt>children<attr>?</attr></dt>
       <dd>string</dd>
-      <dt>textPair<attr>?</attr></dt>
-      <dd>{primaryText: string, secondaryText: string}</dd>
-      <dt>size</dt>
-      <dd>'large' | 'medium'</dd>
-      <dt>action</dt>
-      <dd>'checkbox' | 'radio' | 'switch' | 'link (default)'</dd>
-      <dt>avatar? avatarProps?</dt>
-      <dd>React.ReactNode</dd>
-      <dt>tag<attr>?</attr></dt>
-      <dd>React.ReactNode</dd>
+      <!-- <dt>textPair<attr>?</attr></dt>
+      <dd>{primaryText: string, secondaryText: string}</dd> -->
+      <dt>icon</dt>
+      <dd>string</dd>
     </dl>
   </section>
 
@@ -68,10 +65,21 @@
       texts='[
       "flutter. ListView. 스크롤 가능한 뷰 컨테이너. 동적으로 데이터를 랜더링하는 책임까지 포함되어 있다. itemBuilder: (context, index) {} / controller: ScrollController(). ListView - SwitchListTile / RadioListTile / 클릭 영역을 타일 전체로 지정하고 있다. 2가지 이상의 액션이 포함되어야 할 때는?",
       "role=listbox/menu는 항목 선택과 명령 실행 차이. 자식으로 option, menuitemcheckbox 등을 가지는 것이 차이. 사용 맥락 또한 listbox는 폼이나 입력. aria-orientation값을 갖습니다 vertical.드롭다운은 패턴. 사용자 인터렉션 방식에 가까움. listbox는 기본적으로 드롭다운 목록을 제공하지않는다.",
-      "Menu -> MenuTrigger / MenuList - MenuItem, MenuLink",
-      "MenuItemAvatar, MenuItemLabel - title, description, MenuItemAction - toggle | more | delete"
     ]'
     ></mm-text-list>
+
+    <mm-surface variant="">
+      <code style="display: grid">
+        <span><span>Menu</span></span>
+        <span><span>├─ MenuTrigger</span></span>
+        <span><span>├─ MenuList</span></span>
+        <span><span>│└─ MenuItemAvatar</span></span>
+        <span><span>│└─ MenuItemLabel</span></span>
+        <span><span>│└─ MenuItemAction - toggle | more | delet</span></span>
+        <span><span>└─ MenuLink</span></span>
+        <!-- <span data-line=""><span> └── SheetFooter</span></span> -->
+      </code>
+    </mm-surface>
 
     <mm-surface>
       <mm-list-row primaryText="Personal License" secondaryText="1 user">
