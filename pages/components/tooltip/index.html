@@ -84,7 +84,7 @@ type Align = 'start' | 'end';
 type Placement = Side | `${Side}-${Align}`;> -->
 
   <section class="component-guide">
-    <div class="column columns-3">
+    <div class="column columns-2">
       <mm-feature
         icon="database-script-plus"
         titleText="Supplementary"
@@ -103,11 +103,26 @@ type Placement = Side | `${Side}-${Align}`;> -->
     </div>
     <mm-text-list
       texts='[
-        "아코디언도 마찬가지. 행동을 유도하는 가이드로 사용하지 마세요. 중요한 액션을 요할 때는 cognitive? button이나 text link 등 충분히 강조되고 눈에 띄는 컴포넌트를 사용.",
+        "아코디언도 마찬가지. 중요한 액션을 요할 때는 cognitive? button이나 text link 등 충분히 강조되고 눈에 띄는 컴포넌트를 사용.",
         "short text, long form text. MD3 rich tooltip(title, description, actions-link/button) / plain tooltip",
         "useFloating, "
       ]'
     ></mm-text-list>
+
+    <!-- 방법 A: 가이드라인으로만 분리 (추천)
+
+개발 스펙은 완전히 동일하게 열어두고, 기획자나 디자이너가 쓸 때 "아이콘 버튼에는 10자 이내의 명사형으로 적고, 용어 설명에는 줄바꿈을 허용한다" 같은 글자 수 규칙만 가이드 문서에 명시합니다.
+
+방법 B: 너비(Max-width) 옵션으로 분리
+
+Short형 (액션 보완형): 텍스트가 한 줄로 짧게 끝나며 말줄임 없이 콤팩트한 크기.
+
+Long형 (정보 설명형): 설명이 길어질 수 있으므로 최대 너비(max-width: 240px 등)가 지정되어 있고 자동 줄바꿈(Wrap)이 지원되는 크기. -->
+
+    > 💡 **접근성 팁 (Accessibility Notes)** > - **액션 보완형:** 아이콘 버튼의 실질적인 이름을
+    대체하므로, 버튼의 `aria-label` 값과 툴팁 텍스트를 일치시키거나 `aria-labelledby`로 강하게
+    연결합니다. > - **정보 설명형:** 이미 존재하는 텍스트의 부가 설명이므로, `aria-describedby`를
+    사용해 참고용 설명임을 브라우저에 알립니다.
   </section>
 
   <mm-component-section

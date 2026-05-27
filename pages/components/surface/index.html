@@ -65,6 +65,28 @@
     </div> -->
 
   <section class="component-guide">
+    <section class="feature columns-2">
+      <mm-feature
+        icon="task-list"
+        titleText="Structural"
+        description="연독립된 배경 영역을 제공하여 화면을 논리적인 단위로 분리하고 관련 정보를 하나로 묶어, 전체 레이아웃의 시각적 구조를 잡아줍니다."
+      >
+      </mm-feature>
+      <mm-feature
+        icon="cursor-pointer"
+        titleText="Dimensional"
+        subtitle="notification, status, informational"
+        description="명도 대비나 음영(Shadow)을 통해 화면에 시각적인 깊이감(Depth)을 부여하고, 정보 레이어 간의 상하 관계를 직관적으로 인지하도록 돕습니다."
+      >
+      </mm-feature>
+
+      <mm-feature
+        icon="cube-scan"
+        titleText="Indicative"
+        description="고유한 배경색(Color)과 깊이감(Depth)의 조합 및 변화를 활용하여, 해당 영역이 사용자가 누를 수 있는(Clickable) 대상인지 아닌지를 직관적으로 식별하게 만드는 기표 역할을 합니다."
+      >
+      </mm-feature>
+    </section>
     <mm-text-list
       texts='[
           "타일 내부 leading, tailing 컴포넌트에 따라 시각보정이 필요할 수 있습니다.",
@@ -149,7 +171,7 @@
     </div>
   </mm-component-section>
 
-  <mm-component-section title="FeedTile" description="TODO">
+  <mm-component-section title="FeedTile" description="">
     <section class="feeds" role="feed" aria-busy="false">
       <!-- <aside
         style="
@@ -173,38 +195,35 @@
         </button>
       </aside> -->
       <article class="feed" aria-setsize="3" aria-posinset="1">
-        <mm-tag> 🔥 Most Popular </mm-tag>
-        <div style="height: 0.75rem"></div>
-        <mm-list-row size="small" primaryText="수줍이" secondaryText="2 hour"> </mm-list-row>
-        <div class="feed-content">
-          <figure size="huge" class="feed-content-media">
-            <img src="/src/images/springsteen.jpg" alt="" />
-          </figure>
+        <div class="feed-header">
+          <mm-tag> 🔥 Most Popular </mm-tag>
+          <mm-list-row size="small" primaryText="수줍이" secondaryText="2 hour"> </mm-list-row>
+        </div>
+        <div class="feed-body">
+          <mm-thumbnail ratio="16:9" src="/src/images/springsteen.jpg" alt=""></mm-thumbnail>
           <mm-text variant="body">
             Monotonectally productivate progressive human capital without user friendly portals.
             Globally benchmark top-line ideas with distributed catalysts for change. Authoritatively
             restore ubiquitous partnerships vis-a-vis
             <mm-link href="#feed">synergistic models</mm-link>.
           </mm-text>
-          <!-- <mm-text-list
-              texts='[
-            "원활한 피드 탐색 경험을 위해 모든 피드를 보여주지 않는 것이 좋을 수 있다. 너무 많은 피드 콘텐츠.",
-            "피드가 노출되는 이유를 알려줄 수 있다. 또한 사용자는 보고 싶은 피드와 보고 싶지 않은 피드를 결정할 권리가 있다.",
-            "글줄의 길이를 상대적으로 좁게 짜는 경향이 있다.",
-            "피드의 상세 페이지.",
-            "리액션 버튼과 리액션 수치를 각각 제공할 수 있고 따로 제공할 수 있다. 리액션한 사용자 목록을 어떻게 보여줄 것인가. 중복 리액션과 횟수 등 기능 정의. 리액션 => 알림. restful - put과 함께 공부해보기",
-            "시의성이 강조되는 서비스이거나 현안을 다루는 서비스라면 스텟을 실시간으로 갱신할 수 있다.",
-            "피드를 작성할 때 하나 이상의 이미지를 포함할 수 있다면 하나 이상의 이미지를 볼 수 있는 인터페이스가 필요하다."
-            ]'
-            >
-            </mm-text-list> -->
-          <div style="height: var(--space-3)"></div>
+          <mm-text-list
+            texts='[
+              "원활한 피드 탐색 경험을 위해 모든 피드를 보여주지 않는 것이 좋을 수 있다. 너무 많은 피드 콘텐츠.",
+              "피드가 노출되는 이유를 알려줄 수 있다. 또한 사용자는 보고 싶은 피드와 보고 싶지 않은 피드를 결정할 권리가 있다.",
+              "글줄의 길이를 상대적으로 좁게 짜는 경향이 있다.",
+              "피드의 상세 페이지.",
+              "리액션 버튼과 리액션 수치를 각각 제공할 수 있고 따로 제공할 수 있다. 리액션한 사용자 목록을 어떻게 보여줄 것인가. 중복 리액션과 횟수 등 기능 정의. 리액션 => 알림. restful - put과 함께 공부해보기",
+              "시의성이 강조되는 서비스이거나 현안을 다루는 서비스라면 스텟을 실시간으로 갱신할 수 있다.",
+              "피드를 작성할 때 하나 이상의 이미지를 포함할 수 있다면 하나 이상의 이미지를 볼 수 있는 인터페이스가 필요하다."
+              ]'
+          >
+          </mm-text-list>
           <mm-group variant="tag">
             <mm-tag>Google</mm-tag>
             <mm-tag>Meta</mm-tag>
             <mm-tag>Nvidia</mm-tag>
           </mm-group>
-          <div style="height: var(--space-4)"></div>
           <mm-surface variant="elevated">
             <mm-tag>3월 14일 수정됨</mm-tag>
             <div style="height: var(--space-3)"></div>
@@ -219,7 +238,8 @@
               </mm-list-row>
             </mm-group>
           </mm-surface>
-          <div style="height: var(--space-3)"></div>
+        </div>
+        <div class="feed-footer">
           <mm-group>
             <mm-menuitem icon="heart" label="192"> </mm-menuitem>
           </mm-group>
@@ -228,19 +248,23 @@
 
       <style>
         .feed {
+          display: flex;
+          flex-direction: column;
           max-width: 400px;
-          /* margin: 3rem 0; */
+          gap: var(--space-3);
         }
 
-        .feed-content {
-          margin: var(--space-3) 0 0 0;
+        .feed-header {
+          display: flex;
+          flex-direction: column;
+          gap: var(--space-3);
         }
-
-        .feed-content-media {
-          margin: 0 0 var(--space-3) 0;
-          overflow: hidden;
-          object-fit: cover;
-          border-radius: var(--radius);
+        .feed-body {
+          display: flex;
+          flex-direction: column;
+          gap: var(--space-3);
+        }
+        .feed-footer {
         }
       </style>
 
@@ -285,9 +309,7 @@
   <mm-component-section title="이 상품을 구매한">
     <section class="product-recommend">
       <article class="card">
-        <figure class="card-thumbnail">
-          <img src="/src/images/product_sample.png" style="width: 50%" alt="" />
-        </figure>
+        <mm-thumbnail ratio="16:9" src="/src/images/product_sample.png" alt=""></mm-thumbnail>
         <div
           class="card-item-price"
           style="

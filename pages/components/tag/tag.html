@@ -20,58 +20,55 @@
   </dl>
 
   <section class="component-example">
-    <mm-group variant="tag">
-      <mm-tag variant="tertiary">기본태그</mm-tag>
+    <mm-group>
+      <!-- primitive -->
+      <mm-tag tone="gray"> gray </mm-tag>
+      <mm-tag tone="green"> green </mm-tag>
+      <mm-tag tone="yellow"> yellow </mm-tag>
+      <mm-tag tone="red"> red </mm-tag>
+      <mm-tag tone="blue"> blue </mm-tag>
+      <mm-tag tone="purple"> purple </mm-tag>
+      <mm-tag tone="pink"> pink </mm-tag>
+      <mm-tag tone="orange"> orange </mm-tag>
+      <mm-tag tone="cyan"> cyan </mm-tag>
+
       <mm-tag variant="primary">강조태그</mm-tag>
       <mm-tag variant="primary">8</mm-tag>
       <mm-tag variant="primary">88</mm-tag>
-      <!-- <mm-tag variant="secondary">기본태그</mm-tag> -->
-    </mm-group>
-    <mm-separator></mm-separator>
-    <mm-group variant="tag">
-      <mm-tag variant="feature1">유저리서치</mm-tag>
-      <mm-tag variant="feature2">유저플로우</mm-tag>
-      <mm-tag variant="feature3">유저스트</mm-tag>
-      <mm-tag variant="feature4">A/B테스팅</mm-tag>
-      <mm-tag variant="feature2">
-        <mm-icon slot="icon" name="graph-up"></mm-icon>
-        16%
-      </mm-tag>
     </mm-group>
   </section>
 
   <section class="component-props">
     <mm-text variant="subhead" hidden>Props</mm-text>
     <dl>
-      <dt>variant</dt>
-      <dd>'primary' | <del>'secondary'</del> | 'tertiary' | 'hashtag'</dd>
+      <dt>tone</dt>
+      <dd>type TagTone = 'gray' | 'green' | 'yellow' | 'red' | 'blue' | 'purple'</dd>
       <dt>children</dt>
       <dd>React.ReactNode</dd>
-      <!-- <dt>iconSlot</dt>
-      <dd>React.ReactNode</dd>
-      <dd>for categories / status</dd> -->
+      <dt>icon</dt>
+      <dd>IconNameType</dd>
     </dl>
   </section>
 
   <section class="component-guide">
-    <section class="feature columns-3">
+    <section class="feature columns-2">
       <mm-feature
         icon="cursor-pointer"
-        titleText="Non-interactive"
+        titleText="Glanceable"
         subtitle="notification, status, informational"
-        description="사용자의 입력이나 상호작용 없이 정보를 표시하는 정적(Static) 컴포넌트입니다. 상태, 속성, 분류 등의 정보를 한눈에 전달하는 데 초점을 둡니다. 인터렉션이 가능한 것처럼 보이지 않아야 합니다."
+        description="컬러와 아이콘 등의 시각적 요소를 활용하여 시스템의 상태(Status)나 긴급도를 사용자가 화면을 훑는 것만으로도 한눈에 파악할 수 있게 합니다. (e.g., 진행 중, 승인 대기, 위험)"
       >
       </mm-feature>
       <mm-feature
         icon="task-list"
-        titleText="Glanceable"
-        description="Use short labels for easy scanning. 중요한 정보를 빠르게 파악할 수 있는 짧은 단어의 조합."
+        titleText="Categorical"
+        description="방대한 데이터 속에서 콘텐츠의 분류(Category)나 공통 속성(Property)을 명확하게 묶어 화면을 구조화하고, 사용자가 원하는 정보를 빠르게 탐색하도록 돕습니다. (e.g., 부서명, 기획전, 문서 유형)"
       >
       </mm-feature>
       <mm-feature
         icon="cube-scan"
-        titleText="Groupable"
-        description="너무 많은 태그 목록으로 사용자의 콘텐츠 탐색을 방해하지 마세요. primary tag는 그룹을 대표하는 맥락으로 1개만 포함, 최대 4개의 태그 그룹. 정보를 보충하는 맥락에서 4개 이상을 허용될 수 있다. Profile 페이지 참고."
+        titleText="Informational"
+        description="클릭이나 삭제 등의 별도 인터랙션(Non-interactive) 없이, 객체의 부가적인 속성이나 메타 정보를 읽기 전용(Read-only) 형태로 안전하고 콤팩트하게 전달합니다. (e.g., 배송비 무료, NEW, 추천)"
       >
       </mm-feature>
     </section>
@@ -94,37 +91,71 @@
       </table>
     </mm-text-group> -->
   </section>
-
-  <mm-component-section title="Hashtag" description="hashtag(keyword)와 chip 역할 구분.">
-    <mm-group>
-      <mm-tag variant="hashtag" role="listitem">88년생</mm-tag>
-      <mm-tag variant="hashtag" role="listitem">여성</mm-tag>
-    </mm-group>
-  </mm-component-section>
-
   <mm-component-section
     title="Dot badge"
     description="Live badge, New badge, Unread badge.A dot badge notifies the user that something is new or updated without showing a count."
   >
-    <style>
-      .dot-badge {
-        display: inline-flex;
-        width: 0.5rem;
-        height: 0.5rem;
-        margin-right: var(--space-2);
-        background: crimson;
-        border-radius: 50%;
-      }
-    </style>
-    <em class="dot-badge"></em>
+    <div>
+      <style>
+        .dot-badge {
+          display: inline-flex;
+          width: 0.5rem;
+          height: 0.5rem;
+          margin-right: var(--space-2);
+          background: crimson;
+          border-radius: 50%;
+        }
+      </style>
+      <em class="dot-badge"></em>
+    </div>
   </mm-component-section>
 
   <mm-component-section title="MostPopularTag" description="구체 레벨. 가장 인기있는 태그">
     <mm-tag>🔥 Most Popular</mm-tag>
   </mm-component-section>
 
+  <mm-component-section title="KeywordTag" description="">
+    <mm-group>
+      <mm-status-tag variant="neutral"> keyword1 </mm-status-tag>
+      <mm-status-tag variant="neutral"> keyword2 </mm-status-tag>
+      <mm-status-tag variant="neutral"> keyword3 </mm-status-tag>
+    </mm-group>
+  </mm-component-section>
+
+  <mm-component-section title="AccentTag" description="">
+    <mm-group>
+      <mm-accent-tag> Featured </mm-accent-tag>
+    </mm-group>
+  </mm-component-section>
+
   <mm-component-section title="CategoryTag" description="카테고리. variant.feature1~4">
-    <mm-text>TODO</mm-text>
-    <!-- <mm-tag>🔥 Most Popular</mm-tag> -->
+    <mm-group variant="tag">
+      <mm-category-tag category="music"> Jazz </mm-category-tag>
+      <mm-category-tag category="finance"> Stocks </mm-category-tag>
+      <mm-category-tag category="design"> UI Design </mm-category-tag>
+      <mm-category-tag category="engineering"> Frontend </mm-category-tag>
+      <mm-category-tag category="marketing"> Branding </mm-category-tag>
+      <mm-category-tag category="news"> Breaking </mm-category-tag>
+      <mm-category-tag category="lifestyle"> Wellness </mm-category-tag>
+      <mm-category-tag category="sports"> Football </mm-category-tag>
+      <mm-tag variant="feature1">유저리서치</mm-tag>
+      <mm-tag variant="feature2">유저플로우</mm-tag>
+      <mm-tag variant="feature3">유저스트</mm-tag>
+      <mm-tag variant="feature4">A/B테스팅</mm-tag>
+      <mm-tag variant="feature2">
+        <mm-icon slot="icon" name="graph-up"></mm-icon>
+        16%
+      </mm-tag>
+    </mm-group>
+  </mm-component-section>
+
+  <mm-component-section title="StatusTag" description="">
+    <mm-group>
+      <mm-status-tag variant="neutral"> neutral </mm-status-tag>
+      <mm-status-tag variant="success"> success </mm-status-tag>
+      <mm-status-tag variant="warning"> warning </mm-status-tag>
+      <mm-status-tag variant="error"> error </mm-status-tag>
+      <mm-status-tag variant="info"> info </mm-status-tag>
+    </mm-group>
   </mm-component-section>
 </main>

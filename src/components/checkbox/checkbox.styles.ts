@@ -1,5 +1,19 @@
 import { css } from 'lit'
 
+export const checkboxGroupStyles = css`
+  fieldset {
+    all: unset;
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  legend {
+    display: none;
+  }
+`
+
 export const checkboxStyles = css`
   :host {
     --checkbox-size: var(--size-tiny);

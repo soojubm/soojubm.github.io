@@ -24,16 +24,14 @@
     <mm-group>
       <mm-icon-button variant="navigator" icon="arrow-left"></mm-icon-button>
       <mm-icon-button variant="navigator" icon="arrow-right" color="gold"></mm-icon-button>
-      <mm-icon-button variant="navigator" icon="xmark"></mm-icon-button>
-      <mm-clear-button></mm-clear-button>
     </mm-group>
   </section>
   <section class="component-props">
     <dl>
+      <dt>variant</dt>
+      <dd>'cta' | 'action' | 'flow'</dd>
       <dt>name</dt>
       <dd>iconNameType</dd>
-      <dt>variant</dt>
-      <dd>'primary' | 'action' | 'navigator'</dd>
       <dt>size</dt>
       <dd>'small' | 'medium'</dd>
       <dt>ariaLabel</dt>
@@ -41,30 +39,27 @@
       <dt>onClick</dt>
       <dd>event:(React.MouseEvent&lt;HTMLButtonElement&gt;) => void</dd>
     </dl>
-    <!-- <mm-text variant="body">
-      버튼으로 아이콘 버튼을 대체하기 어렵다. 레이블과 함께 사용될 때 내부 간격의 조절이 불가피하다.
-      아이콘 버튼은 레이블 대신 대체 텍스트나 툴팁을 제공해야 하는데 옵셔널한 값으로 버튼의 책임이
-      불필요하게 커질 수 있다.
-    </mm-text>
+  </section>
+
+  <section class="component-guide">
     <mm-text variant="body"
       >Toggled states. Buttons can swap icons based on data states. There are several icons within
       our library that have a “Filled” counterpart to indicate whether a state is toggled on. The
       “Outlined” version indicates it is toggled off.
-    </mm-text> -->
-  </section>
-
-  <section class="component-guide">
-    <mm-text-list
-      texts='[
-        "액션 아이콘 버튼과 내비게이터 아이콘 버튼의 구별",
-        "(textfield-check/select indicator) "
-      ]'
-    ></mm-text-list>
+    </mm-text>
   </section>
 
   <mm-component-section title="MoreMenuButton, ActionMenuButton, ContextMenuButton">
+    <mm-icon-button variant="navigator" icon="more-vert"></mm-icon-button>
   </mm-component-section>
 
-  <mm-component-section title="Close Button" description=""> </mm-component-section>
-  <mm-component-section title="Expand Button / Indicator" description=""> </mm-component-section>
+  <mm-component-section title="Close Button" description="">
+    <mm-icon-button variant="navigator" icon="xmark"></mm-icon-button>
+  </mm-component-section>
+  <mm-component-section title="Clear Button" description="search field에서 사용.">
+    <mm-clear-button></mm-clear-button>
+  </mm-component-section>
+  <mm-component-section title="Expand Button / Indicator" description="">
+    <mm-icon-button variant="navigator" size="small" icon="nav-arrow-down"></mm-icon-button>
+  </mm-component-section>
 </main>

@@ -24,11 +24,6 @@ class TitleWithDescription extends LitElement {
       description: 'body',
       gap: 'var(--space-2)',
     },
-    '4': {
-      title: 'heading4',
-      description: 'body',
-      gap: 'var(--space-1)',
-    },
   }
 
   static styles = css`

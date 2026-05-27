@@ -16,9 +16,18 @@ export const groupStyles = css`
     align-items: center;
     gap: 0;
   }
-
-  .group[data-variant='avatar'] > * + * {
+  /* 1. 모든 슬롯 자식들에게 왼쪽 음수 마진 부여 */
+  .group[data-variant='avatar'] ::slotted(*) {
     margin-left: -0.25rem;
+    outline: 2px solid var(--color-background);
+    border-radius: var(--radius);
+    position: relative;
+    z-index: 1;
+  }
+
+  /* 2. 가장 첫 번째 슬롯 자식은 겹치지 않도록 마진을 0으로 리셋 */
+  .group[data-variant='avatar'] ::slotted(:first-child) {
+    margin-left: 0;
   }
 
   .group[data-variant='tag'] {
@@ -27,11 +36,6 @@ export const groupStyles = css`
 
   .group[data-variant='button'] {
     gap: var(--space-2);
-  }
-
-  .group[data-variant='hashtag'] {
-    column-gap: var(--space-2);
-    row-gap: -0.25rem;
   }
 
   .group[data-variant='form'] {

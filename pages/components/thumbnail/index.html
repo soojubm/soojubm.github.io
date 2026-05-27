@@ -1,0 +1,33 @@
+<main class="page">
+  <mm-title-with-description
+    title="thumbnail"
+    description="선으로 콘텐츠를 구획합니다. 반복과 대비가 구획되었다는 인상을 주기 때문에 남용하지 않습니다."
+  ></mm-title-with-description>
+
+  <section class="component-example">
+    <div style="display: flex; gap: 1rem">
+      <mm-thumbnail src="/src/images/temp.png" alt="멋진 풍경"></-thumbnail>
+      <mm-thumbnail
+        src="/src/images/temp.png"
+        alt="멋진 풍경"
+        href="/video/1025"
+      ></mm-thumbnail>
+      <mm-thumbnail
+        src="/src/images/temp.png"
+        alt="멋진 풍경"
+        clickable
+        @click="${openModal}"
+      ></mm-thumbnail>
+    </div>
+  </section>
+
+  <mm-component-props>
+    <mm-prop name="src" type="string"></mm-prop>
+    <mm-prop name="alt" type="string"></mm-prop>
+    <mm-prop name="ratio" type="'1:1' | '16:9' | '4:3' = '1:1'"></mm-prop>
+    <mm-prop name="clickable" type="boolean"></mm-prop>
+    <mm-prop name="@click" type="(e: MouseEvent) => void" kind="event"></mm-prop>
+  </mm-component-props>
+
+  <section class="component-guide"></section>
+</main>

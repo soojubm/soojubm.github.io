@@ -67,9 +67,8 @@
     </dl>
   </section>
 
-  <!-- 참고: 버튼 네이밍. 'link' | 'subtle' | 'primary' / 'solid' | 'outline' | 'plain' |'text' -->
   <section class="component-guide">
-    <section class="feature columns-3">
+    <section class="feature columns-2">
       <mm-feature
         icon="cursor-pointer"
         titleText="Actionable"
@@ -140,7 +139,6 @@
       <mm-text>
         group과 sets 차이. 머티리얼 칩스에서 구분해서 사용함. 그룹은 순서나 구조가 있는.
       </mm-text>
-      <mm-text>FilterButton, FilterOption, SortButton</mm-text>
       <style>
         td {
           text-align: center;
@@ -190,165 +188,130 @@
   </section>
 
   <mm-component-section
+    title="Button Group"
+    description="버튼 그룹은 관련된 액션을 묶어 사용자가 선택할 수 있도록 합니다. 항상primary action에 먼저 포커스되어야 합니다. tabindex는 불필요. 마크업 순서와 정렬 스타일링으로 해결."
+  >
+    <div>
+      <mm-text-group>
+        <dl>
+          <dt>primaryAction</dt>
+          <dd>{label: string, onClick: () => void}</dd>
+          <dt>secondaryAction</dt>
+          <dd>{label: string, onClick: () => void}</dd>
+        </dl>
+      </mm-text-group>
+      <div style="display: flex; flex-direction: column; gap: 1.5rem">
+        <mm-group variant="chip">
+          <mm-button variant="tertiary" size="large">취소</mm-button>
+          <mm-button variant="primary" size="large">저장</mm-button>
+        </mm-group>
+        <mm-group variant="chip">
+          <mm-button variant="text" size="large">건너뛰기</mm-button>
+          <mm-button variant="secondary" size="large">다음</mm-button>
+        </mm-group>
+        <mm-group variant="chip">
+          <mm-button variant="tertiary" size="large">이전</mm-button>
+          <mm-button variant="secondary" size="large">다음</mm-button>
+        </mm-group>
+        <mm-group variant="chip" class="hero-actions">
+          <mm-button variant="primary" size="large" href="#components">지금 가입하기</mm-button>
+          <mm-button variant="text" size="large">더 알아보기</mm-button>
+        </mm-group>
+      </div>
+      <mm-surface>
+        <mm-text variant="heading4">이 문서가 도움이 되었나요?</mm-text>
+        <small title="17 out of 439 found this helpful"> 417명 중 349명이 도움을 받았어요. </small>
+        <div style="height: 1rem"></div>
+        <mm-group variant="">
+          <mm-button>도움이 됐어요</mm-button>
+          <mm-button>부족해요</mm-button>
+        </mm-group>
+      </mm-surface>
+    </div>
+  </mm-component-section>
+
+  <mm-component-section
     title="ShowMoreButton"
     description="Image Button, CheckoutButton. fullWidth로 사용하지 마세요. 콘텐츠 목록의 너비와의 대비를 통한 강조."
   >
-    <div class="columns-3" style="gap: 1rem">
-      <div
-        class=""
-        style="background: var(--green100); height: 4rem; border-radius: var(--radius-large)"
-      ></div>
-      <div
-        class=""
-        style="background: var(--green100); height: 4rem; border-radius: var(--radius-large)"
-      ></div>
-      <div
-        class=""
-        style="background: var(--green100); height: 4rem; border-radius: var(--radius-large)"
-      ></div>
-    </div>
-    <div style="display: flex; justify-content: center; padding: 1.5rem 0 0">
-      <mm-button variant="tertiary">
-        Show more
-        <mm-icon slot="suffix" name="nav-arrow-down"></mm-icon>
-      </mm-button>
+    <div>
+      <div class="columns-3" style="gap: 1rem">
+        <div
+          class=""
+          style="background: var(--green100); height: 4rem; border-radius: var(--radius-large)"
+        ></div>
+        <div
+          class=""
+          style="background: var(--green100); height: 4rem; border-radius: var(--radius-large)"
+        ></div>
+        <div
+          class=""
+          style="background: var(--green100); height: 4rem; border-radius: var(--radius-large)"
+        ></div>
+      </div>
+      <div style="display: flex; justify-content: center; padding: 1.5rem 0 0">
+        <mm-button variant="tertiary">
+          Show more
+          <mm-icon slot="suffix" name="nav-arrow-down"></mm-icon>
+        </mm-button>
+      </div>
     </div>
   </mm-component-section>
+
+  <mm-component-section title="FilterButton / FilterOption" description="...">
+  </mm-component-section>
+  <mm-component-section title="SortButton" description="..."> </mm-component-section>
 
   <mm-component-section title="FileUpload Button" description="이미지 업로드와 파일 업로드 구분">
-    <form class="file" method="" enctype="multipart/form-data">
-      <div>
-        <mm-button>사진 업로드. 여기로 드래그 하셔도 되어요.</mm-button>
-        <input
-          class="js-file-input visually-hidden"
-          type="file"
-          id="file2"
-          accept=".jpg,.png"
-          capture="camera"
-          multiple
-          hidden
-        />
-      </div>
-      <mm-text variant="caption">Only .jpg and .png files. 500kb max file size.</mm-text>
-    </form>
-
-    <mm-separator></mm-separator>
-
-    <mm-text variant="subheading">첨부한 파일</mm-text>
-    <mm-text variant="body" role="status" class="js-file-attachment-helper">
-      No files currently selected for upload.
-    </mm-text>
-
-    <div class="file-attachment-list js-file-attachment-list">
-      <figure
-        style="
-          width: 100px;
-          padding: var(--space-3);
-          border-radius: var(--radius);
-          background-color: var(--color-background-subtle);
-          border-radius: var(--radius);
-          position: relative;
-        "
-      >
-        <img
-          src="/src/images/springsteen.jpg"
-          alt="${file.name}"
-          style="border-radius: var(--radius)"
-        />
-        <figcaption>
-          <mm-text variant="heading4">${file.name}</mm-text>
-          <mm-text variant="caption">${returnFileSize(file.size)}</mm-text>
-        </figcaption>
-        <div style="position: absolute; right: var(--space-1); top: var(--space-1)">
-          <mm-clear-button class="js-remove-this">close</mm-clear-button>
+    <div>
+      <form class="file" method="" enctype="multipart/form-data">
+        <div>
+          <mm-button>사진 업로드. 여기로 드래그 하셔도 되어요.</mm-button>
+          <input
+            class="js-file-input visually-hidden"
+            type="file"
+            id="file2"
+            accept=".jpg,.png"
+            capture="camera"
+            multiple
+            hidden
+          />
         </div>
-      </figure>
-    </div>
-  </mm-component-section>
+        <mm-text variant="caption">Only .jpg and .png files. 500kb max file size.</mm-text>
+      </form>
 
-  <mm-component-section
-    title="Button Group"
-    description="버튼 그룹은 관련된 액션을 묶어 사용자가 선택할 수 있도록 합니다."
-  >
-    <div style="display: flex; flex-direction: column; gap: 1.5rem">
-      <mm-group variant="chip">
-        <mm-button variant="tertiary" size="large">취소</mm-button>
-        <mm-button variant="primary" size="large">저장</mm-button>
-      </mm-group>
-      <mm-group variant="chip">
-        <mm-button variant="text" size="large">건너뛰기</mm-button>
-        <mm-button variant="secondary" size="large">다음</mm-button>
-      </mm-group>
-      <mm-group variant="chip">
-        <mm-button variant="tertiary" size="large">이전</mm-button>
-        <mm-button variant="secondary" size="large">다음</mm-button>
-      </mm-group>
-      <mm-group variant="chip" class="hero-actions">
-        <mm-button variant="primary" size="large" href="#components">지금 가입하기</mm-button>
-        <mm-button variant="text" size="large">더 알아보기</mm-button>
-      </mm-group>
-    </div>
-    <br />
-    <dl>
-      <dt>primaryAction</dt>
-      <dd>{label: string, onClick: () => void}</dd>
-      <dt>secondaryAction</dt>
-      <dd>{label: string, onClick: () => void}</dd>
-      <!-- <dt>tertiaryAction<abbr>?</abbr></dt>
-      <dd>{label: string, onClick: () => void}</dd> -->
-    </dl>
-    <br />
-    <mm-text-group>
-      <mm-text>
-        항상primary action에 먼저 포커스되어야 합니다. tabindex는 불필요. 마크업 순서와 정렬
-        스타일링으로 해결.
-      </mm-text>
-      <mm-text>
-        텍스트 버튼은 버튼 처럼 보이지 않을 수 있기 때문에 학습된? 보편적인? 약속된? 누구랑 약속?
-        패턴에서 사용하세요. 이 시스템에는 정의하지 않지만 세로 정렬되는 버튼 그룹에서 text button이
-        아래에 배치되는 패턴과 혼동되지 않도록 버튼의 아래 가이드 텍스트를 배치하지 않습니다. ->
-        사실은 모든 버튼에서 전환을 유도하는 텍스트를 사용없이 인터페이스만으로.
-      </mm-text>
-    </mm-text-group>
-    <br />
-    <mm-surface>
-      <mm-text variant="heading4">이 문서가 도움이 되었나요?</mm-text>
-      <small title="17 out of 439 found this helpful"> 417명 중 349명이 도움을 받았어요. </small>
-      <div style="height: 1rem"></div>
-      <mm-group variant="">
-        <mm-button>도움이 됐어요</mm-button>
-        <mm-button>부족해요</mm-button>
-      </mm-group>
-    </mm-surface>
-  </mm-component-section>
+      <mm-separator></mm-separator>
 
-  <mm-component-section
-    title="ToggleButton ToggleButtonGroup"
-    description="전환 및 선택. 팔로우 팔로잉, 북마크, 좋아요 등"
-  >
-    <div style="display: flex; gap: var(--space-0)">
-      <style>
-        button mm-icon {
-          pointer-events: none;
-        }
-        .is-selected {
-          border-radius: var(--radius);
-          background-color: var(--color-background-subtle);
-        }
-      </style>
-      <button class="is-selected js-test-toggle" data-name="grid" style="width: 32px; height: 32px">
-        <mm-icon name="view-grid"></mm-icon>
-      </button>
-      <button
-        icon="view-columns-3"
-        aria-label=""
-        class="js-test-toggle"
-        status="active"
-        data-name="list"
-        style="width: 32px; height: 32px"
-      >
-        <mm-icon name="view-columns-3"></mm-icon>
-      </button>
+      <mm-text variant="subheading">첨부한 파일</mm-text>
+      <mm-text variant="body" role="status" class="js-file-attachment-helper">
+        No files currently selected for upload.
+      </mm-text>
+
+      <div class="file-attachment-list js-file-attachment-list">
+        <figure
+          style="
+            width: 100px;
+            padding: var(--space-3);
+            border-radius: var(--radius);
+            background-color: var(--color-background-subtle);
+            border-radius: var(--radius);
+            position: relative;
+          "
+        >
+          <img
+            src="/src/images/springsteen.jpg"
+            alt="${file.name}"
+            style="border-radius: var(--radius)"
+          />
+          <figcaption>
+            <mm-text variant="heading4">${file.name}</mm-text>
+            <mm-text variant="caption">${returnFileSize(file.size)}</mm-text>
+          </figcaption>
+          <div style="position: absolute; right: var(--space-1); top: var(--space-1)">
+            <mm-clear-button class="js-remove-this">close</mm-clear-button>
+          </div>
+        </figure>
+      </div>
     </div>
   </mm-component-section>
 

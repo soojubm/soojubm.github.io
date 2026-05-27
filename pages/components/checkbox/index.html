@@ -5,28 +5,13 @@
   ></mm-title-with-description>
 
   <section class="component-example">
-    <!-- a11y checkgroup not valid -->
-    <!-- <legend">checkgroup</legend> -->
-    <!-- <mm-group>
-      <mm-checkbox name="checkbox" size="large" checked> 체크박스</mm-checkbox>
-      <mm-checkbox name="checkbox" checked> </mm-checkbox>
-    </mm-group> -->
-    <mm-group variant="checkbox">
-      <mm-checkbox
-        name="checkbox"
-        value="value"
-        size="large"
-        aria-helper="주로 세팅 페이지에서 사용되는 디스크립션 영역. 항상 텍스트 더미인 것은 아님. 하지만 그렇다면 expanded/collapsed 맥락이 아닐까?"
-        checked
-      >
-        체크박스 기본
+    <mm-checkbox-group legend="관심 분야" name="interest">
+      <mm-checkbox size="large" value="basic" checked> 체크박스 기본 </mm-checkbox>
+      <mm-checkbox size="large" value="disabled" disabled> 체크박스 비활성 </mm-checkbox>
+      <mm-checkbox size="large" value="disabled-checked" checked disabled>
+        체크박스 비활성 체크
       </mm-checkbox>
-      <mm-checkbox name="checkbox" size="large" disabled>체크박스 비활성</mm-checkbox>
-      <mm-checkbox name="checkbox" size="large" checked disabled>체크박스 비활성 체크</mm-checkbox>
-      <mm-separator></mm-separator>
-      <mm-checkbox name="checkbox" size="medium">체크박스 미더엄</mm-checkbox>
-      <mm-checkbox name="checkbox" size="large">체크박스 라지</mm-checkbox>
-    </mm-group>
+    </mm-checkbox-group>
   </section>
 
   <section class="component-props">
@@ -49,7 +34,7 @@
   </section>
 
   <section class="component-guide">
-    <section class="feature columns-3">
+    <section class="feature columns-2">
       <mm-feature
         icon="task-list"
         titleText="Interactive - choice"
@@ -77,62 +62,38 @@
   <mm-component-section title="MasterCheckbox" description="TermsAllCheckbox, TermsCheckboxGroup">
     <div>
       <mm-surface variant="elevated" size="medium">
-        <mm-checkbox
-          size="large"
-          class="js-checkall"
-          aira-checked="mixed"
-          aria-controls="1 2"
-          data-indeterminate="true"
-          indeterminate
-        >
+        <mm-checkbox size="large" aria-controls="main-terms-group">
           <mm-text variant="heading4">모두 동의합니다 (선택동의 포함)</mm-text>
         </mm-checkbox>
       </mm-surface>
-      <div style="height: var(--space-3)"></div>
-      <mm-group variant="checkbox">
-        <mm-row justifyContent="space-between" style="width: 100%">
-          <mm-checkbox size="large" class="js-check" id="terms5" name="terms">
-            이용약관 동의 (필수)
-          </mm-checkbox>
-          <mm-icon-button
-            variant="navigator"
-            size="small"
-            aria-label="이용약관 바로가기"
-            href="#"
-            icon="arrow-up-right"
-          ></mm-icon-button>
-        </mm-row>
-        <mm-surface variant="tinted" style="width: 100%">
-          <mm-group variant="checkbox">
-            <mm-checkbox
+
+      <div style="margin-bottom: var(--space-3)"></div>
+
+      <mm-checkbox-group id="main-terms-group" name="terms">
+        <div class="terms-nested-item">
+          <mm-row>
+            <mm-checkbox value="terms5" size="large"> 이용약관 동의 (필수) </mm-checkbox>
+            <mm-icon-button
+              variant="navigator"
               size="small"
-              class="js-checkall"
-              aira-checked="mixed"
-              aria-controls="1 2"
-              data-indeterminate="true"
-              indeterminate
-            >
-              성별
-            </mm-checkbox>
-            <mm-checkbox
-              size="small"
-              class="js-checkall"
-              aira-checked="mixed"
-              aria-controls="1 2"
-              data-indeterminate="true"
-              indeterminate
-            >
-              생년월일
-            </mm-checkbox>
-          </mm-group>
-        </mm-surface>
-        <mm-checkbox size="large" class="js-check" id="terms6" name="terms">
-          개인정보 수집/이용 동의
-        </mm-checkbox>
-        <mm-checkbox size="large" class="js-check" id="terms7" name="terms">
-          개인정보 제3자 제공 동의
-        </mm-checkbox>
-      </mm-group>
+              aria-label="이용약관 바로가기"
+              href="#"
+              icon="arrow-up-right"
+            ></mm-icon-button>
+          </mm-row>
+
+          <mm-surface variant="tinted" style="width: 100%; margin-top: var(--space-1)">
+            <mm-checkbox-group name="terms-detail">
+              <mm-checkbox value="gender" size="small"> 성별 </mm-checkbox>
+              <mm-checkbox value="birth" size="small"> 생년월일 </mm-checkbox>
+            </mm-checkbox-group>
+          </mm-surface>
+        </div>
+
+        <mm-checkbox value="terms6" size="large"> 개인정보 수집/이용 동의 </mm-checkbox>
+
+        <mm-checkbox value="terms7" size="large"> 개인정보 제3자 제공 동의 </mm-checkbox>
+      </mm-checkbox-group>
     </div>
   </mm-component-section>
 
@@ -148,7 +109,7 @@
             💳
           </mm-avatar>
         </mm-option-row>
-        <!-- <mm-menuitem label="을지로 맛집">
+        <mm-menuitem label="을지로 맛집">
           <mm-avatar
             slot="avatar"
             size="large"
@@ -156,8 +117,8 @@
             style="background: aliceblue; font-size: 1.5rem"
           ></mm-avatar>
           <mm-checkbox slot="action" name="checkbox" size=""></mm-checkbox>
-        </mm-menuitem> -->
-        <!-- aira-checked="mixed" aria-controls="1 2" -->
+        </mm-menuitem>
+        aira-checked="mixed" aria-contro?ls="1 2"
       </mm-group>
       <mm-separator></mm-separator>
       <mm-titlebar label="새 컬렉션">
@@ -167,13 +128,13 @@
       <mm-textfield label="컬렉션 이름" placeholder="컬렉션 이름"></mm-textfield>
       <div style="height: 0.75rem"></div>
       <!-- aira-checked="mixed" aria-controls="1 2" -->
-      <button-list-component
+      <mm-toggle-button-group
         id="button-list"
         options='[
               {"label": "공개", "value": "apple"},
               {"label": "비공개", "value": "banana"}
             ]'
-      ></button-list-component>
+      ></mm-toggle-button-group>
       <br />
       <mm-menuitem label="이 컬렉션에 멤버 추가">
         <mm-avatar slot="avatar" icon="plus"> </mm-avatar>

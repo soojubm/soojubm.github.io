@@ -23,14 +23,6 @@ export class MenuItemRow extends LitElement {
     return undefined
   }
 
-  protected renderContent() {
-    return html`
-      <div class="label">
-        <slot></slot>
-      </div>
-    `
-  }
-
   protected renderAction() {
     return html` <slot name="action"></slot> `
   }
@@ -45,7 +37,10 @@ export class MenuItemRow extends LitElement {
         aria-checked=${ifDefined(this.getAriaChecked())}
       >
         ${this.icon ? html`<mm-avatar variant="tertiary" icon="${this.icon}"></mm-avatar>` : ''}
-        ${this.renderContent()} ${this.renderAction()}
+        <div class="label">
+          <slot></slot>
+        </div>
+        ${this.renderAction()}
       </div>
     `
   }

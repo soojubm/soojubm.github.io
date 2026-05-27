@@ -4,54 +4,72 @@ import { checkboxStyles } from './checkbox.styles'
 
 @customElement('mm-checkbox')
 export class Checkbox extends LitElement {
-  @property({ type: String }) name?: string
-  @property({ type: String }) size?: string
-  @property({ type: String }) helper?: string
-  @property({ type: String }) value?: string
-  @property({ type: Boolean, reflect: true }) checked = false
-  @property({ type: Boolean, reflect: true }) disabled = false
-  @property({ type: Boolean, reflect: true }) indeterminate = false
+  @property({ type: String })
+  name?: string
+
+  @property({ type: String })
+  value?: string
+
+  @property({ type: String })
+  size?: string
+
+  @property({ type: Boolean, reflect: true })
+  checked = false
+
+  @property({ type: Boolean, reflect: true })
+  disabled = false
+
+  @property({ type: Boolean, reflect: true })
+  indeterminate = false
 
   static styles = [checkboxStyles]
 
-  // 고유 ID 생성: 여러 체크박스가 같은 name을 가질 때 label의 for 속성이 꼬이는 것을 방지
-  private inputId = `checkbox-${crypto.randomUUID()}`
+  // SSR 환경 및 crypto가 없는 구형 환경에서도 터지지 않도록 고유 ID 생성을 보장합니다.
+  private _inputId = `checkbox-${
+    crypto?.randomUUID?.() || Math.random().toString(36).substring(2, 9)
+  }`
 
-  private _onChange(event: Event) {
+  private _onChange = (event: Event) => {
     const target = event.target as HTMLInputElement
-    this.checked = target.checked
 
-    // 사용자가 직접 클릭하면 indeterminate 상태는 해제되는 것이 브라우저 기본 동작입니다.
+    this.checked = target.checked
     this.indeterminate = false
 
-    // 상위 컴포넌트에서 쉽게 값을 사용할 수 있도록 detail 객체에 상태를 담아 발송
     this.dispatchEvent(
       new CustomEvent('change', {
         bubbles: true,
         composed: true,
-        detail: { checked: this.checked, value: this.value },
+        detail: {
+          checked: this.checked,
+          value: this.value || '', // 부모 컴포넌트와의 타입 동기화를 위해 항상 string을 보장합니다.
+        },
       }),
     )
   }
 
   render() {
+    // 가독성을 위한 구조 분해 할당
+    const { name, value, size, checked, disabled, indeterminate, _inputId } = this
+
     return html`
-      <div data-size=${this.size || nothing}>
+      <div class="checkbox" data-size=${size || nothing}>
         <input
           type="checkbox"
-          id=${this.inputId}
-          name=${this.name || nothing}
-          .value=${this.value || nothing}
-          .checked=${this.checked}
-          .indeterminate=${this.indeterminate}
-          ?disabled=${this.disabled}
+          id=${_inputId}
+          name=${name || nothing}
+          .value=${value || ''}
+          .checked=${checked}
+          .indeterminate=${indeterminate}
+          ?disabled=${disabled}
           @change=${this._onChange}
         />
-        <label for=${this.inputId}>
-          <span></span>
-          <mm-text variant="body"><slot></slot></mm-text>
+
+        <label for=${_inputId}>
+          <span class="indicator"></span>
+          <mm-text variant="body">
+            <slot></slot>
+          </mm-text>
         </label>
-        ${this.helper ? html`<p>${this.helper}</p>` : nothing}
       </div>
     `
   }

@@ -11,7 +11,12 @@ class ClearButton extends LitElement {
 
   render() {
     return html`
-      <button class="icon-button" data-variant="clear" aria-label="${this.label}" ?disabled="${this.disabled}">
+      <button
+        class="icon-button"
+        data-variant="clear"
+        aria-label="${this.label}"
+        ?disabled="${this.disabled}"
+      >
         <mm-icon name="xmark"></mm-icon>
       </button>
     `

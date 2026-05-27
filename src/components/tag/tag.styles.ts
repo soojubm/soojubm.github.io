@@ -1,66 +1,150 @@
-import { css } from 'lit'
+// tag.styles.ts
+
+import { css, unsafeCSS } from 'lit'
+
+/**
+ * --------------------------------------------------
+ * primitive visual tones
+ * purely visual layer
+ * --------------------------------------------------
+ */
+
+export const tagToneStyles = {
+  gray: {
+    background: '#f3f4f6',
+    color: '#374151',
+    borderColor: '#e5e7eb',
+  },
+
+  green: {
+    background: '#dcfce7',
+    color: '#166534',
+    borderColor: '#86efac',
+  },
+
+  yellow: {
+    background: '#fef3c7',
+    color: '#92400e',
+    borderColor: '#fcd34d',
+  },
+
+  red: {
+    background: '#fee2e2',
+    color: '#991b1b',
+    borderColor: '#fca5a5',
+  },
+
+  blue: {
+    background: '#dbeafe',
+    color: '#1d4ed8',
+    borderColor: '#93c5fd',
+  },
+
+  purple: {
+    background: '#f3e8ff',
+    color: '#7e22ce',
+    borderColor: '#d8b4fe',
+  },
+
+  pink: {
+    background: '#fce7f3',
+    color: '#be185d',
+    borderColor: '#f9a8d4',
+  },
+
+  orange: {
+    background: '#ffedd5',
+    color: '#c2410c',
+    borderColor: '#fdba74',
+  },
+
+  cyan: {
+    background: '#cffafe',
+    color: '#0e7490',
+    borderColor: '#67e8f9',
+  },
+} as const
+
+export type TagTone = keyof typeof tagToneStyles
+
+/**
+ * --------------------------------------------------
+ * semantic mappings
+ * --------------------------------------------------
+ */
+
+export const statusToneMap = {
+  success: 'green',
+  warning: 'yellow',
+  error: 'red',
+  info: 'blue',
+  neutral: 'gray',
+} as const satisfies Record<string, TagTone>
+
+export type StatusVariant = keyof typeof statusToneMap
+
+export const categoryToneMap = {
+  music: 'purple',
+  finance: 'green',
+  design: 'pink',
+  engineering: 'blue',
+  marketing: 'orange',
+  news: 'cyan',
+  lifestyle: 'yellow',
+  sports: 'red',
+} as const satisfies Record<string, TagTone>
+
+export type Category = keyof typeof categoryToneMap
+
+/**
+ * --------------------------------------------------
+ * tone css generator
+ * --------------------------------------------------
+ */
+
+const toneCss = Object.entries(tagToneStyles)
+  .map(([tone, styles]) => {
+    return `
+      [data-tone='${tone}'] {
+        background: ${styles.background};
+        color: ${styles.color};
+        border-color: ${styles.borderColor};
+      }
+    `
+  })
+  .join('\n')
+
+/**
+ * --------------------------------------------------
+ * component styles
+ * --------------------------------------------------
+ */
 
 export const tagStyles = css`
+  :host {
+    display: inline-flex;
+  }
+
   span,
   time {
     display: inline-flex;
     align-items: center;
-    height: var(--size-small);
-    padding: 0 var(--space-2);
-    border: var(--tag-border);
+    gap: var(--space-1);
+    min-height: var(--size-small);
+    padding-inline: var(--space-2);
     border-radius: var(--radius);
-    outline: 2px solid var(--color-background);
+    border: 1px solid transparent;
     box-sizing: border-box;
-    background: var(--color-background);
+    white-space: nowrap;
     font-size: var(--font-size-12);
-    line-height: var(--size-small);
-    color: var(--color-foreground);
-    --tag-border: var(--border);
-    --tag-color: 0;
+    font-weight: var(--font-weight);
+    line-height: 1;
   }
+  // slot[name='icon']::slotted(*) {
+  //   inline-size: 0.875rem;
+  //   block-size: 0.875rem;
+  //   flex-shrink: 0;
+  // }
 
-  [data-variant='primary'] {
-    border-color: var(--color-accent);
-    background-color: var(--color-accent);
-    color: var(--gray800);
-  }
-
-  [data-variant='secondary'] {
-    background-color: var(--color-background-subtle);
-    border-color: transparent;
-  }
-
-  [data-variant='feature1'] {
-    border-color: transparent;
-    background: var(--color-temp1);
-    color: var(--gray800);
-  }
-
-  [data-variant='feature2'] {
-    border-color: transparent;
-    background: var(--color-temp2);
-    color: var(--gray800);
-  }
-
-  [data-variant='feature3'] {
-    border-color: transparent;
-    background: var(--color-temp3);
-    color: var(--gray800);
-  }
-
-  [data-variant='feature4'] {
-    border-color: transparent;
-    background: var(--color-temp4);
-    color: var(--gray800);
-  }
-
-  [data-variant='hashtag'] {
-    padding: 0;
-    border: 0;
-    color: var(--color-foreground-light);
-  }
-
-  [data-variant='hashtag']::before {
-    content: '#';
-  }
+  ${unsafeCSS(toneCss)}
 `

@@ -1,9 +1,7 @@
 // 이 코드는 “값을 가져오기 위한 import”가 아니라 “부작용(side-effect)을 실행시키기 위한 import”다.
 import '../../components/icon/icon'
 import '../../components/avatar/avatar'
-import '../../components/button/button'
 import '../../components/link/link'
-import '../../components/tag/tag'
 import '../../components/textfield/textfield'
 import '../../components/textfield/searchfield'
 import '../../components/textfield/textarea'
@@ -13,7 +11,6 @@ import '../../components/tabpanel/tabpanel'
 import '../../components/tooltip/tooltip'
 import '../../components/callout/callout'
 import '../../components/menuitem/menuitem'
-import '../../components/media/media'
 import '../../components/group/group'
 import '../../components/row/row'
 import '../../components/entity/entity'
@@ -23,16 +20,11 @@ import '../../components/text/textList'
 import '../../components/titlebar/titlebar'
 import '../../components/separator/separator'
 import '../../components/surface/surface'
-import '../../components/checkbox/checkbox'
 import '../../components/switch/switch'
 import '../../components/result/result'
 import '../../components/feature/feature'
 import '../../components/keyvalue/keyvalue'
-import '../../components/button/iconButton'
-import '../../components/button/clearButton'
-import '../../components/textpair/textpair'
 import '../../components/textfield/dropdown'
-import '../../components/buttonList/buttonList'
 import '../../components/title-with-description/index'
 import '../../components/component-section'
 import '../../components/sheet/sheet'
@@ -42,6 +34,23 @@ import '../../components/sheet/sheet-footer'
 import '../../components/list-row'
 import '../../components/option-row'
 
+import '../../components/thumbnail/thumbnail'
+
+import '../../components/button/button'
+import '../../components/button/icon-button'
+import '../../components/button/clear-button'
+
+import '../../components/toggle-button-group'
+
+import '../../components/checkbox/checkbox'
+import '../../components/checkbox/checkbox-group'
+
+import '../../components/tag/tag'
+import '../../components/tag/keyword-tag'
+import '../../components/tag/accent-tag'
+import '../../components/tag/status-tag'
+import '../../components/tag/category-tag'
+
 import '../../components/radio/radio'
 import '../../components/radio/radio-group'
 
@@ -50,6 +59,8 @@ import '../../components/menuitem/menu-item-link'
 import '../../components/menuitem/menu-item-checkbox'
 import '../../components/menuitem/menu-item-radio'
 import '../../components/menuitem/menu-item-radio-group'
+
+import '../../components/component-props/'
 
 // 👉 “이 파일은 module이다”라고 명시
 

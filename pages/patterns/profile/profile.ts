@@ -2,6 +2,8 @@ import { renderLayout } from '../../../layouts/base-layouts'
 import { hideNavbar } from '../../../src/javascripts/common/navbar'
 import main from './index.html'
 
+import './profile.css'
+
 document.addEventListener('DOMContentLoaded', () => {
   document.body.innerHTML = renderLayout(main)
 })

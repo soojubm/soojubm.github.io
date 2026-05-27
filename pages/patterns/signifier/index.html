@@ -52,94 +52,117 @@
     title="Icons"
     description="아이콘은 기표로 정의한 의미를 전달하는 기호입니다. 단순히 장식적인 용도로 사용하지 마세요."
   >
-    <mm-text-list
-      texts='[
-      "Indicator Icons - Label, Decorative",
-      "Navigation Icons",
-      "Action Icons",
-      "TODO :: dismiss, remove, clear, close"
-    ]'
-    ></mm-text-list>
-    <br />
-    <section
-      class="group"
-      style="display: flex; flex-wrap: wrap; gap: var(--space-3); margin: 0 0 2rem"
-    >
-      <mm-entity size="huge" alignment="center" label="" description="Search">
-        <mm-avatar slot="avatar" variant="secondary" size="huge" icon="search"> </mm-avatar>
-      </mm-entity>
-
-      <!-- <mm-entity size="huge" alignment="center" label="">
-              description="Expandable & Collapsible (vertical)"
-              <mm-avatar slot="avatar" variant="secondary" size="huge" >
-                <mm-icon slot="prefix" name="search"></mm-icon>
-              </mm-avatar>
-            </mm-entity> -->
-      <mm-entity size="huge" alignment="center" label="" description="Expandable">
-        <mm-avatar slot="avatar" variant="secondary" size="huge">
-          <mm-icon slot="prefix" name="nav-arrow-down"></mm-icon>
-        </mm-avatar>
-      </mm-entity>
-      <mm-entity size="huge" alignment="center" label="" description="to back">
-        <mm-avatar slot="avatar" variant="secondary" size="huge" icon="arrow-left"> </mm-avatar>
-      </mm-entity>
-      <mm-entity size="huge" alignment="center" label="" description="Internal Link">
-        <mm-avatar slot="avatar" variant="secondary" size="huge">
-          <mm-icon slot="prefix" name="arrow-right"></mm-icon>
-        </mm-avatar>
-        <b>(ex: view all)</b>
-      </mm-entity>
-      <mm-entity
-        size="huge"
-        alignment="center"
-        label=""
-        description="External Link"
-        data-temp="visit icon - pinterest"
+    <div>
+      <mm-text-list
+        texts='[
+        "Indicator Icons - Label, Decorative",
+        "Navigation Icons",
+        "Action Icons",
+        "TODO :: dismiss, remove, clear, close"
+      ]'
+      ></mm-text-list>
+      <br />
+      <section
+        class="group"
+        style="display: flex; flex-wrap: wrap; gap: var(--space-3); margin: 0 0 2rem"
       >
-        <mm-avatar slot="avatar" variant="secondary" size="huge">
-          <mm-icon slot="prefix" name="arrow-up-right"></mm-icon>
-        </mm-avatar>
-        <b>(ex: view all)</b>
-      </mm-entity>
-      <!-- Remove / Close / Clear -->
-      <mm-entity size="huge" alignment="center" label="" description="Remove">
-        <mm-avatar slot="avatar" variant="secondary" size="huge">
-          <mm-icon slot="prefix" name="xmark"></mm-icon>
-        </mm-avatar>
-      </mm-entity>
-      <mm-entity size="huge" alignment="center" label="" description="Plus">
-        <mm-avatar slot="avatar" variant="secondary" size="huge">
-          <mm-icon slot="prefix" name="plus"></mm-icon>
-        </mm-avatar>
-      </mm-entity>
-      <mm-entity size="huge" alignment="center" label="" description="Checked">
-        <mm-avatar slot="avatar" variant="secondary" size="huge" icon="check"> </mm-avatar>
-      </mm-entity>
-      <mm-entity size="huge" alignment="center" label="" description="more-vertical">
-        <mm-avatar slot="avatar" variant="secondary" size="huge" icon="more-vert"> </mm-avatar>
-      </mm-entity>
-      <mm-entity size="huge" alignment="center" label="" description="Setting">
-        <mm-avatar slot="avatar" variant="secondary" size="huge" icon="settings"> </mm-avatar>
-      </mm-entity>
+        <mm-entity size="huge" alignment="center" label="" description="Search">
+          <mm-avatar slot="avatar" variant="secondary" size="huge" icon="search"> </mm-avatar>
+        </mm-entity>
 
-      <mm-entity size="huge" alignment="center" label="" description="Copy">
-        <mm-avatar slot="avatar" variant="secondary" size="huge" icon="copy"> </mm-avatar>
-      </mm-entity>
-      <mm-entity size="huge" alignment="center" label="" description="Refresh">
-        <mm-avatar slot="avatar" variant="secondary" size="huge" icon="refresh"> </mm-avatar>
-      </mm-entity>
-    </section>
-    <mm-group>
-      <mm-entity size="huge" alignment="center" label="" description="Lock">
-        <mm-avatar slot="avatar" variant="secondary" size="huge" icon="lock"> </mm-avatar>
-      </mm-entity>
-      <mm-entity size="huge" alignment="center" label="" description="Logout">
-        <mm-avatar slot="avatar" variant="secondary" size="huge" icon="log-out"> </mm-avatar>
-      </mm-entity>
-      <mm-entity size="huge" alignment="center" label="" description="Email">
-        <mm-avatar slot="avatar" variant="secondary" size="huge" icon="mail"> </mm-avatar>
-      </mm-entity>
-    </mm-group>
+        <!-- <mm-entity size="huge" alignment="center" label="">
+                description="Expandable & Collapsible (vertical)"
+                <mm-avatar slot="avatar" variant="secondary" size="huge" >
+                  <mm-icon slot="prefix" name="search"></mm-icon>
+                </mm-avatar>
+              </mm-entity> -->
+        <mm-entity size="huge" alignment="center" label="" description="Expandable">
+          <mm-avatar slot="avatar" variant="secondary" size="huge">
+            <mm-icon slot="prefix" name="nav-arrow-down"></mm-icon>
+          </mm-avatar>
+        </mm-entity>
+        <mm-entity size="huge" alignment="center" label="" description="to back">
+          <mm-avatar slot="avatar" variant="secondary" size="huge" icon="arrow-left"> </mm-avatar>
+        </mm-entity>
+        <mm-entity size="huge" alignment="center" label="" description="Internal Link">
+          <mm-avatar slot="avatar" variant="secondary" size="huge">
+            <mm-icon slot="prefix" name="arrow-right"></mm-icon>
+          </mm-avatar>
+          <b>(ex: view all)</b>
+        </mm-entity>
+        <mm-entity
+          size="huge"
+          alignment="center"
+          label=""
+          description="External Link"
+          data-temp="visit icon - pinterest"
+        >
+          <mm-avatar slot="avatar" variant="secondary" size="huge">
+            <mm-icon slot="prefix" name="arrow-up-right"></mm-icon>
+          </mm-avatar>
+          <b>(ex: view all)</b>
+        </mm-entity>
+        <!-- Remove / Close / Clear -->
+        <mm-entity size="huge" alignment="center" label="" description="Remove">
+          <mm-avatar slot="avatar" variant="secondary" size="huge">
+            <mm-icon slot="prefix" name="xmark"></mm-icon>
+          </mm-avatar>
+        </mm-entity>
+        <mm-entity size="huge" alignment="center" label="" description="Plus">
+          <mm-avatar slot="avatar" variant="secondary" size="huge">
+            <mm-icon slot="prefix" name="plus"></mm-icon>
+          </mm-avatar>
+        </mm-entity>
+        <mm-entity size="huge" alignment="center" label="" description="Checked">
+          <mm-avatar slot="avatar" variant="secondary" size="huge" icon="check"> </mm-avatar>
+        </mm-entity>
+        <mm-entity size="huge" alignment="center" label="" description="more-vert">
+          <mm-avatar slot="avatar" variant="secondary" size="huge" icon="more-vert"> </mm-avatar>
+        </mm-entity>
+        <mm-entity size="huge" alignment="center" label="" description="Setting">
+          <mm-avatar slot="avatar" variant="secondary" size="huge" icon="settings"> </mm-avatar>
+        </mm-entity>
+
+        <mm-entity size="huge" alignment="center" label="" description="Copy">
+          <mm-avatar slot="avatar" variant="secondary" size="huge" icon="copy"> </mm-avatar>
+        </mm-entity>
+        <mm-entity size="huge" alignment="center" label="" description="Refresh">
+          <mm-avatar slot="avatar" variant="secondary" size="huge" icon="refresh"> </mm-avatar>
+        </mm-entity>
+      </section>
+      <mm-group>
+        <mm-entity size="huge" alignment="center" label="" description="Lock">
+          <mm-avatar slot="avatar" variant="secondary" size="huge" icon="lock"> </mm-avatar>
+        </mm-entity>
+        <mm-entity size="huge" alignment="center" label="" description="Logout">
+          <mm-avatar slot="avatar" variant="secondary" size="huge" icon="log-out"> </mm-avatar>
+        </mm-entity>
+        <mm-entity size="huge" alignment="center" label="" description="Email">
+          <mm-avatar slot="avatar" variant="secondary" size="huge" icon="mail"> </mm-avatar>
+        </mm-entity>
+      </mm-group>
+    </div>
+  </mm-component-section>
+
+  <mm-component-section title="Selected Indicator" description="폼 컨트롤처럼 느껴지지 않아야.">
+    <div>
+      <mm-text>상태 인지성(state perception) / affordance / 접근성 / 시스템 일관성</mm-text>
+      <mm-text>위치는 고정</mm-text>
+      <mm-text>background foreground weight</mm-text>
+      <mm-text>Strong Selection Context:: - check - dot - bar - fill - outline</mm-text>
+      <li>--selection-indicator-size</li>
+      <li>--selection-indicator-gap</li>
+      <li>--selection-indicator-color</li>
+      <mm-text
+        >선택 상태는 최소 2개 이상의 signal로 표현하는 것이 좋다 (WCAG 색상만으로 상태를 전달하지 말
+        것)</mm-text
+      >
+      <mm-text>“selected”라는 상태가 모든 컴포넌트에서 같은 의미 강도를 가지지 않는다</mm-text>
+      <div>
+        TAB::navigation, context switching, current view / check indicator::confirmed selection,
+        chosen item, applied state
+      </div>
+    </div>
   </mm-component-section>
 
   <mm-component-section
@@ -149,39 +172,41 @@
         the element."
   >
     <div>
-      <mm-text variant="heading4">Hover state</mm-text>
-      <!-- <a
-          class="item is-hovered"
-          data-size="medium"
-          style="display: flex; align-items: center; gap: 0.75rem; width: 100%; margin: 0 auto"
-        >
-          <mm-avatar default="true"></mm-avatar>
-          <span class="item-name">Item</span>
-        </a> -->
-      <!-- <p>
-          Interaction states communicate the status of an element
-          <a href="" class="is-hovered" style="text-decoration: underline">Text Link</a> in the
-          interface.
-        </p> -->
-      <mm-text variant="heading4">Focus state</mm-text>
-    </div>
-    <div>
-      <mm-text variant="heading4" style="margin: 0">Disabled state</mm-text>
-      <mm-text data-note="IBM example">opacity :: Component 50%, Text 25%, Icons 50% </mm-text>
-      <mm-text>Hover none, Cursor not-allowed, removed elevated style</mm-text>
-    </div>
-    <div>
-      <mm-text variant="heading4">Pressed state</mm-text>
-    </div>
-    <div>
-      <mm-text variant="heading4">Selected state</mm-text>
-    </div>
-    <div>
-      <mm-text variant="heading4">Progressing state</mm-text>
-      <div class="chat-inputing animation-chatting">
-        <span style="background: var(--color-background-strong)"></span>
-        <span style="background: var(--color-background-strong)"></span>
-        <span style="background: var(--color-background-strong)"></span>
+      <div>
+        <mm-text variant="heading4">Hover state</mm-text>
+        <!-- <a
+            class="item is-hovered"
+            data-size="medium"
+            style="display: flex; align-items: center; gap: 0.75rem; width: 100%; margin: 0 auto"
+          >
+            <mm-avatar default="true"></mm-avatar>
+            <span class="item-name">Item</span>
+          </a> -->
+        <!-- <p>
+            Interaction states communicate the status of an element
+            <a href="" class="is-hovered" style="text-decoration: underline">Text Link</a> in the
+            interface.
+          </p> -->
+        <mm-text variant="heading4">Focus state</mm-text>
+      </div>
+      <div>
+        <mm-text variant="heading4" style="margin: 0">Disabled state</mm-text>
+        <mm-text data-note="IBM example">opacity :: Component 50%, Text 25%, Icons 50% </mm-text>
+        <mm-text>Hover none, Cursor not-allowed, removed elevated style</mm-text>
+      </div>
+      <div>
+        <mm-text variant="heading4">Pressed state</mm-text>
+      </div>
+      <div>
+        <mm-text variant="heading4">Selected state</mm-text>
+      </div>
+      <div>
+        <mm-text variant="heading4">Progressing state</mm-text>
+        <div class="chat-inputing animation-chatting">
+          <span style="background: var(--color-background-strong)"></span>
+          <span style="background: var(--color-background-strong)"></span>
+          <span style="background: var(--color-background-strong)"></span>
+        </div>
       </div>
     </div>
   </mm-component-section>
@@ -227,7 +252,7 @@
     ></mm-text-list>
 
     <mm-title-with-description
-      level="4"
+      level="3"
       title="페이지 모듈의 대비"
       description="페이지의 맥락을 구분하기 위해 레이아웃 모듈이나 배경색의 대비를 활용할 수 있습니다. 컨테이너 너비(비밀번호찾기와 로그인/회원가입)와 배경색(설정, 글쓰기, 소개 등)."
     ></mm-title-with-description>
@@ -235,7 +260,7 @@
     <br />
 
     <mm-title-with-description
-      level="4"
+      level="3"
       title="4 칼럼 그리드"
       description="페이지의 맥락을 구분하기 위해 레이아웃 모듈이나 배경색의 대비를 활용할 수 있습니다. 컨테이너 너비(비밀번호찾기와 로그인/회원가입)와 배경색(설정, 글쓰기, 소개 등)."
     ></mm-title-with-description>

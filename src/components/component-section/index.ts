@@ -7,25 +7,22 @@ class ComponentSection extends LitElement {
   @property({ type: String }) description = ''
 
   static styles = css`
-    section {
+    /* slot에 들어온 direct child */
+    ::slotted(*) {
       display: block;
-      padding: 1rem 0;
-    }
-    mm-title-with-description {
-      display: block;
-    }
-    mm-separator {
-      margin: 1rem 0;
-      display: block;
-    }
-    .children {
-      margin-top: 0.5rem;
-    }
-    .component-temp {
-      margin: 0 0 1rem calc(-5vw + 1rem);
-      padding: 1.5rem calc(var(--grid-margin) - 1rem) 2rem;
       border: var(--border-stronger);
       border-radius: var(--radius-large);
+      margin: 1rem 0 1rem calc(-5vw + 1rem);
+      padding: 2rem calc(var(--grid-margin) - 1rem);
+    }
+
+    .component-temp {
+      display: block;
+      padding: 1rem 0;
+      // margin: 0 0 1rem calc(-5vw + 1rem);
+      // padding: 1.5rem calc(var(--grid-margin) - 1rem) 2rem;
+      // border: var(--border-stronger);
+      // border-radius: var(--radius-large);
     }
     @media (max-width: 768px) {
       .component-temp {
@@ -43,8 +40,7 @@ class ComponentSection extends LitElement {
           title="${this.title}"
           description="${this.description}"
         ></mm-title-with-description>
-        <mm-separator></mm-separator>
-        <div class="children"><slot></slot></div>
+        <slot></slot>
       </section>
     `
   }

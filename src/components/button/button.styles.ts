@@ -102,10 +102,7 @@ export const buttonStyles = css`
     }
     &[data-variant='clear'] {
       --button-size: var(--size-small);
-      border: var(--border);
-      border-radius: 50%;
       box-shadow: var(--shadow);
-      background-color: var(--color-background);
     }
 
     &[data-size='small'] {
