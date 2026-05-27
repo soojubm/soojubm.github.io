@@ -62,6 +62,8 @@ import '../../components/menuitem/menu-item-radio-group'
 
 import '../../components/component-props/'
 
+import '../../components/app-sidebar'
+
 // 👉 “이 파일은 module이다”라고 명시
 
 // 효과:

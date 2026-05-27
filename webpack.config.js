@@ -1,3 +1,6 @@
+// 💡 최상단 추가: 웹팩(JS)에서 sitemap.ts(TS) 파일을 직접 require할 수 있게 합니다.
+require('ts-node').register({ transpileOnly: true })
+
 const path = require('path')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
@@ -6,64 +9,31 @@ const WebpackObfuscator = require('webpack-obfuscator')
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 const { BundleStatsWebpackPlugin } = require('bundle-stats-webpack-plugin')
 
-// 1. 페이지 및 컴포넌트 구성 데이터
-const PAGES_CONFIG = {
-  patterns: [
-    'dashboard',
-    'dialog',
-    'result',
-    'presentation',
-    'filtering',
-    'carousel',
-    'setting',
-    'post',
-    'accordion',
-    'profile',
-    'feed',
-    'notification',
-    'auth',
-    'product',
-    'contact',
-    'checkout',
-    'cake',
-    'class',
-    'table',
-    'signifier',
-    'tokens',
-  ],
-  components: [
-    'breadcrumb',
-    'avatar',
-    'button',
-    'icon-button',
-    'toggle-button-group',
-    'link',
-    'tag',
-    'checkbox',
-    'radio',
-    'textfield',
-    'searchfield',
-    'textarea',
-    'tab',
-    'surface',
-    'menuitem',
-    'switch',
-    'tooltip',
-    'callout',
-    'text',
-    'separator',
-    'thumbnail',
-    'step',
-    'films',
-    'books',
-  ],
-}
+// 💡 sitemap.ts 데이터 로드 (프로젝트 구조에 맞게 경로를 조정하세요)
+const { SITEMAP } = require('./src/sitemap.ts')
 
 const HTML_TEMPLATE = './index.html'
 
 /**
+ * 💡 사이트맵 객체를 평탄화(Flat)하면서 폴더 경로(patterns / components)를 동적으로 분류합니다.
+ */
+const ALL_PAGES = []
+SITEMAP.forEach(node => {
+  if (node.type === 'standalone') {
+    if (node.id !== 'index') {
+      // tokens, signifier 등은 기존에 patterns 폴더에 속해 있었음
+      ALL_PAGES.push({ id: node.id, subDir: 'patterns' })
+    }
+  } else if (node.type === 'category') {
+    const subDir = node.id === 'patterns' ? 'patterns' : 'components'
+    node.items.forEach(item => {
+      ALL_PAGES.push({ id: item.id, subDir: subDir })
+    })
+  }
+})
+
+/**
  * 엔트리 포인트 생성 로직
- * - navbar는 index.ts 내부에서 import 하는 방식으로 변경하여 엔트리에서 제거
  */
 const getEntries = () => {
   const entries = {
@@ -71,15 +41,10 @@ const getEntries = () => {
     index: ['./pages/home/home.ts', './index.ts'],
   }
 
-  const addEntries = (list, subDir) => {
-    list.forEach(item => {
-      // 모든 엔트리에 index.ts를 포함시켜 공통 로직(navbar 등) 공유
-      entries[item] = [`./pages/${subDir}/${item}/${item}.ts`, './index.ts']
-    })
-  }
-
-  addEntries(PAGES_CONFIG.patterns, 'patterns')
-  addEntries(PAGES_CONFIG.components, 'components')
+  // 사이트맵에서 추출한 데이터를 기반으로 엔트리 자동 생성
+  ALL_PAGES.forEach(page => {
+    entries[page.id] = [`./pages/${page.subDir}/${page.id}/${page.id}.ts`, './index.ts']
+  })
 
   return entries
 }
@@ -87,15 +52,19 @@ const getEntries = () => {
 /**
  * HtmlWebpackPlugin 인스턴스 생성
  */
-const getHtmlPlugins = () => {
-  const allPages = [...PAGES_CONFIG.patterns, ...PAGES_CONFIG.components]
-  return allPages.map(
-    item =>
+const getHtmlPlugins = isProd => {
+  return ALL_PAGES.map(
+    page =>
       new HtmlWebpackPlugin({
         template: HTML_TEMPLATE,
-        filename: `${item}.html`,
-        chunks: [item],
-        minify: false,
+        filename: `${page.id}.html`,
+        chunks: [page.id],
+        minify: isProd, // 프로덕션에서는 HTML 압축 활성화
+        // 💡 HTML 템플릿(EJS) 내부에서 사이드바를 동적으로 그릴 수 있도록 데이터 주입
+        templateParameters: {
+          sitemap: SITEMAP,
+          currentPage: page.id,
+        },
       }),
   )
 }
@@ -115,7 +84,7 @@ module.exports = (env, argv) => {
       path: path.resolve(__dirname, 'build'),
       filename: isProd ? 'js/[name].[contenthash:8].js' : '[name].bundle.js',
       chunkFilename: isProd ? 'js/[name].[contenthash:8].chunk.js' : '[name].js',
-      clean: true, // CleanWebpackPlugin 기능을 대체하는 내장 옵션
+      clean: true,
     },
 
     resolve: {
@@ -134,7 +103,7 @@ module.exports = (env, argv) => {
             {
               loader: 'ts-loader',
               options: {
-                transpileOnly: true, // 타입 체크 생략으로 빌드 속도 향상
+                transpileOnly: true,
               },
             },
           ],
@@ -160,13 +129,11 @@ module.exports = (env, argv) => {
       splitChunks: {
         chunks: 'all',
         cacheGroups: {
-          // 공통 라이브러리 분리
           vendors: {
             test: /[\\/]node_modules[\\/]/,
             name: 'vendors',
             priority: -10,
           },
-          // CSS 순서 충돌 및 파편화 방지
           styles: {
             name: 'styles',
             type: 'css/auto',
@@ -181,19 +148,23 @@ module.exports = (env, argv) => {
 
     plugins: [
       new CleanWebpackPlugin(),
+      // 메인 홈 페이지 플러그인 설정에도 사이트맵 데이터 주입
       new HtmlWebpackPlugin({
         template: HTML_TEMPLATE,
         filename: 'index.html',
         chunks: ['index'],
+        templateParameters: {
+          sitemap: SITEMAP,
+          currentPage: 'index',
+        },
       }),
-      ...getHtmlPlugins(),
+      ...getHtmlPlugins(isProd),
 
       new MiniCssExtractPlugin({
         filename: isProd ? 'css/[name].[contenthash:8].css' : '[name].css',
-        ignoreOrder: true, // CSS 순서 경고 무시
+        ignoreOrder: true,
       }),
 
-      // 프로덕션 환경 전용 도구
       ...(isProd
         ? [
             new WebpackObfuscator({ rotateStringArray: true }, ['excluded_bundle_name.js']),
@@ -212,16 +183,14 @@ module.exports = (env, argv) => {
       hot: true,
       client: {
         overlay: {
-          warnings: false, // 브라우저 화면에 경고 오버레이 숨김
+          warnings: false,
           errors: true,
         },
       },
     },
 
-    // 빌드 로그 최적화
     stats: 'minimal',
 
-    // 콘솔에서 CSS 순서 충돌 경고 숨김
     ignoreWarnings: [
       {
         module: /mini-css-extract-plugin/,
