@@ -68,6 +68,7 @@ import '../../components/domains/component-example'
 import '../../components/domains/component-props'
 import '../../components/domains/component-section'
 import '../../components/domains/component-references'
+import '../../components/domains/page-header'
 
 import '../../components/domains/prompt-input'
 
