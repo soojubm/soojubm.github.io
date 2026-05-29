@@ -2,9 +2,7 @@
 import '../../components/icon/icon'
 
 import '../../components/link/link'
-import '../../components/textfield/textfield'
-import '../../components/textfield/searchfield'
-import '../../components/textfield/textarea'
+import '../../components/textfield'
 import '../../components/tabpanel/tabpanel'
 import '../../components/tooltip/tooltip'
 import '../../components/callout/callout'
@@ -18,7 +16,6 @@ import '../../components/switch/switch'
 import '../../components/result/result'
 import '../../components/feature/feature'
 import '../../components/keyvalue/keyvalue'
-import '../../components/textfield/dropdown'
 import '../../components/title-with-description/index'
 import '../../components/sheet/sheet'
 import '../../components/sheet/sheet-header'
@@ -41,18 +38,10 @@ import '../../components/tag'
 
 import '../../components/radio'
 
-import '../../components/avatar/avatar'
-import '../../components/avatar/user-snippet'
+import '../../components/avatar'
 
 // domains
-import '../../components/domains/app-sidebar'
-import '../../components/domains/component-example'
-import '../../components/domains/component-props'
-import '../../components/domains/component-section'
-import '../../components/domains/component-references'
-import '../../components/domains/page-header'
-
-import '../../components/domains/prompt-input'
+import '../../components/domains'
 
 import '../../components/tabs'
 

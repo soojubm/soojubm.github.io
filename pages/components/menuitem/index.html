@@ -14,6 +14,13 @@
   </script>
 
   <mm-component-example>
+    <mm-setting-item
+      label="철저한 코드 리뷰"
+      description="Codex가 새 이슈를 더 이상 찾지 못할 때까지 추가 발견 사항을 계속 찾도록 합니다."
+    >
+      <mm-switch slot="action"></mm-switch>
+    </mm-setting-item>
+
     <div style="max-width: 520px">
       <mm-menu-item-row>
         <mm-avatar slot="prefix" variant="tertiary" icon="user"></mm-avatar>
@@ -89,17 +96,7 @@
     </mm-menuitem>
   </mm-component-section>
 
-  <mm-component-section title="MenuItemSwitch" description="">
-    <mm-row justifyContent="space-between">
-      <div>
-        <mm-text size="14" weight="bold">Strictly Necessary</mm-text>
-        <mm-text size="14">
-          These cookies are essential in order to use the website and use its features.
-        </mm-text>
-      </div>
-      <mm-switch></mm-switch>
-    </mm-row>
-  </mm-component-section>
+  <mm-component-section title="MenuItemSwitch" description=""> </mm-component-section>
 
   <mm-component-section title="ListRow" description="">
     <mm-group variant="menuitem">
