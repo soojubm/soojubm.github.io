@@ -64,6 +64,7 @@ import '../../components/avatar/user-snippet'
 
 // domains
 import '../../components/domains/app-sidebar'
+import '../../components/domains/component-example'
 import '../../components/domains/component-props'
 import '../../components/domains/component-section'
 import '../../components/domains/component-references'
