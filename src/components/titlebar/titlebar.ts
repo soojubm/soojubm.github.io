@@ -16,7 +16,7 @@ class TitleBar extends LitElement {
         ${!this.hiddenBack
           ? html`<mm-icon-button variant="navigator" icon="arrow-left"></mm-icon-button>`
           : ''}
-        <mm-text variant="subhead" class="titlebar-title">${this.label}</mm-text>
+        <mm-text size="18" class="titlebar-title">${this.label}</mm-text>
         <slot name="action"></slot>
       </header>
     `

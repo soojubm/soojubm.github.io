@@ -17,9 +17,9 @@ class UserSnippet extends LitElement {
       <div class="entity" data-size="${this.size}">
         <slot name="avatar"></slot>
         <slot name="tag"></slot>
-        <mm-text class="entity-label" variant="subhead">${this.name}</mm-text>
-        <mm-text variant="caption">${this.email}</mm-text>
-        <mm-text variant="caption">${this.phone}</mm-text>
+        <mm-text class="entity-label" size="18">${this.name}</mm-text>
+        <mm-text size="12">${this.email}</mm-text>
+        <mm-text size="12">${this.phone}</mm-text>
       </div>
     `
   }

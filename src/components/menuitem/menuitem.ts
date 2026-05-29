@@ -26,8 +26,8 @@ class MenuItem extends LitElement {
       >
         ${this.icon ? html`<mm-avatar variant="tertiary" icon="${this.icon}"></mm-avatar>` : ''}
         <slot name="prefix"></slot>
-        <mm-text variant="body">${this.label}</mm-text>
-        <mm-text variant="label">${this.description}</mm-text>
+        <mm-text size="14">${this.label}</mm-text>
+        <mm-text size="12" color="var(--color-foreground-light)">${this.description}</mm-text>
         <slot name="action"></slot>
       </div>
     `

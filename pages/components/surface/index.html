@@ -97,7 +97,7 @@
     컴포넌트(Box, Row, div)와는 어떤 차이가 있나? row는 레이아웃 컴포넌트, tile은 형태 컴포넌트이다.
     tile에 과도한 책임을 부여하지 말 것.", => transparent 필요. 배경있는 상황 -->
 
-    <mm-text variant="body">
+    <mm-text size="14">
       At its core, Card is a Box with specific styling attributes and more explicit use cases that
       you can find in Examples. If you find yourself limited by the default styling and constraints
       of a Card, you may consider using a Box instead, but first consider bringing the problem you
@@ -118,7 +118,7 @@
       "
     >
       <mm-avatar size="large" default="true"></mm-avatar>
-      <mm-text variant="subhead"> You can download this product with the All-Access Pass. </mm-text>
+      <mm-text size="18"> You can download this product with the All-Access Pass. </mm-text>
       <mm-button variant="primary">Get All-Access</mm-button>
     </aside> -->
 
@@ -147,8 +147,8 @@
       <!-- <mm-tag style="position: absolute; left: -0.25rem; top: var(--space-3)"> -->
       <mm-tag> 🔥 Most Popular </mm-tag>
       <div style="height: 1rem"></div>
-      <mm-text variant="subhead">Standard</mm-text>
-      <mm-text variant="body"> 대법원장은 국회의 동의를 얻어 대통령이 임명한다. </mm-text>
+      <mm-text size="18">Standard</mm-text>
+      <mm-text size="14"> 대법원장은 국회의 동의를 얻어 대통령이 임명한다. </mm-text>
       <div style="margin: var(--space-3) 0 1.5rem 0">
         <mm-text size="32" weight="bold">₩ 6,800</mm-text>
         <mm-text color="var(--color-foreground-light)">한 달에 한 번</mm-text>
@@ -198,7 +198,7 @@
         </div>
         <div class="feed-body">
           <mm-thumbnail ratio="16:9" src="/src/images/springsteen.jpg" alt=""></mm-thumbnail>
-          <mm-text variant="body">
+          <mm-text size="14">
             Monotonectally productivate progressive human capital without user friendly portals.
             Globally benchmark top-line ideas with distributed catalysts for change. Authoritatively
             restore ubiquitous partnerships vis-a-vis
@@ -281,8 +281,8 @@
   <!-- <mm-component-section title="RatingTile" description="TODO">
     <mm-surfacebar heading="Ratings"></mm-surfacebar>
     <div aria-label="별점 5개 만점에 3.9개를 받았습니다." style="text-align: center">
-      <mm-text variant="subheading">리뷰 116만개</mm-text>
-      <mm-text variant="subhead">⭐ 4.8</mm-text>
+      <mm-text size="14" color="var(--color-foreground-light)">리뷰 116만개</mm-text>
+      <mm-text size="18">⭐ 4.8</mm-text>
     </div>
     <mm-separator></mm-separator>
     <div class="graph2">
@@ -337,15 +337,15 @@
         <mm-icon name="graph-up"></mm-icon>
       </mm-avatar>
       <div style="height: var(--space-3)"></div>
-      <mm-text variant="label-strong">상해종합주가지수</mm-text>
-      <mm-text variant="body">2999.55p</mm-text>
+      <mm-text size="12" weight="bold">상해종합주가지수</mm-text>
+      <mm-text size="14">2999.55p</mm-text>
       <div style="margin-top: var(--space-1)"></div>
       <mm-tag variant="up">4.33% 상승</mm-tag>
       <div style="margin-top: var(--space-3)">
-        <mm-text variant="caption">
+        <mm-text size="12">
           <span style="color: var(--color-foreground-light)">10분 지연. live</span>
         </mm-text>
-        <mm-text variant="caption">
+        <mm-text size="12">
           <span style="color: var(--color-foreground-light)">현지 시간 기준 10.27. 01:27</span>
         </mm-text>
       </div>
@@ -358,7 +358,7 @@
         toolbelt.
       </q>
       <figcaption style="margin: var(--space-3) 0 0 0">
-        <mm-text variant="subheading">Byline</mm-text>
+        <mm-text size="14" color="var(--color-foreground-light)">Byline</mm-text>
       </figcaption>
     </mm-surface> -->
 </main>

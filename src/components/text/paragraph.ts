@@ -3,11 +3,11 @@ import { styleMap } from 'lit/directives/style-map.js'
 import { customElement, property } from 'lit/decorators.js'
 
 import { resetStyles } from '../shared/reset.styles'
-import { textSizes, textWeights, type TextWeight } from './text.styles'
+import { textSizes, textWeights, type TextSize, type TextWeight } from './text.styles'
 
 type ParagraphSize = 'medium' | 'large'
 
-const paragraphSizes: Record<ParagraphSize, keyof typeof textSizes> = {
+const paragraphSizes: Record<ParagraphSize, TextSize> = {
   medium: '14',
   large: '18',
 }
@@ -33,8 +33,8 @@ export class Paragraph extends LitElement {
   ]
 
   render() {
-    const sizeKey = paragraphSizes[this.size] ?? paragraphSizes.medium
-    const sizeStyle = textSizes[sizeKey]
+    const size = paragraphSizes[this.size] ?? paragraphSizes.medium
+    const sizeStyle = textSizes[size]
     const weightStyle = textWeights[this.weight] ?? textWeights.medium
 
     const dynamicStyles = {

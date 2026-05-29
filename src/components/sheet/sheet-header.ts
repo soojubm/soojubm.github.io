@@ -15,7 +15,7 @@ class SheetHeader extends LitElement {
 
   render() {
     return html`
-      <mm-text variant="subhead">${this.title}</mm-text>
+      <mm-text size="18">${this.title}</mm-text>
       <mm-icon-button variant="navigator" icon="xmark" aria-label="Close" @click="${this.handleClose}"></mm-icon-button>
     `
   }

@@ -43,7 +43,7 @@ export class Sidebar extends LitElement {
                   class="is-open"
                 >
                   <mm-avatar slot="avatar" variant="tertiary" icon="${node.icon}"> </mm-avatar>
-                  <mm-text variant="body">${node.title}</mm-text>
+                  <mm-text size="14">${node.title}</mm-text>
                   <div style="margin-left: auto"><mm-icon name="nav-arrow-down"></mm-icon></div>
                 </button>
 

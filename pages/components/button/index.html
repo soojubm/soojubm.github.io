@@ -71,7 +71,7 @@
     <br />
 
     <!-- <mm-text-group>
-      <mm-text variant="subhead">Changelog</mm-text>
+      <mm-text size="18">Changelog</mm-text>
           <table class="table">
       <tbody>
         <tr>
@@ -103,7 +103,7 @@
     </mm-text-group> -->
 
     <mm-text-group>
-      <mm-text variant="body-large">
+      <mm-text size="18">
         사용자 여정을 보조하는 액션입니다. 실행 페이지에서 사용자는 즉각적인 결과를 기대할 수
         있습니다. icon only chip 링크. 링크 개념 모호. 팝업. 쿼리스트링.
       </mm-text>
@@ -125,7 +125,7 @@
           <mm-button icon="nav-arrow-down" aria-expanded="true"> expandable </mm-button>
         </mm-group>
 
-        <mm-text variant="subhead">
+        <mm-text size="18">
           Single selection for contents filtering. togglebuttonGroup mui
         </mm-text>
         <mm-group variant="chip">
@@ -135,7 +135,7 @@
           <mm-button class="js-toggle">배송중</mm-button>
         </mm-group>
 
-        <mm-text variant="subhead">Multiple selections</mm-text>
+        <mm-text size="18">Multiple selections</mm-text>
         <mm-group variant="chip" aria-multiselectable="true">
           <mm-button role="option" name="check" aria-selected="true" status="checked"
             >소설</mm-button
@@ -251,7 +251,7 @@
         </mm-group>
       </div>
       <mm-surface>
-        <mm-text variant="heading4">이 문서가 도움이 되었나요?</mm-text>
+        <mm-text size="14" weight="bold">이 문서가 도움이 되었나요?</mm-text>
         <small title="17 out of 439 found this helpful"> 417명 중 349명이 도움을 받았어요. </small>
         <div style="height: 1rem"></div>
         <mm-group variant="">
@@ -330,13 +330,13 @@
             hidden
           />
         </div>
-        <mm-text variant="caption">Only .jpg and .png files. 500kb max file size.</mm-text>
+        <mm-text size="12">Only .jpg and .png files. 500kb max file size.</mm-text>
       </form>
 
       <mm-separator></mm-separator>
 
-      <mm-text variant="subheading">첨부한 파일</mm-text>
-      <mm-text variant="body" role="status" class="js-file-attachment-helper">
+      <mm-text size="14" color="var(--color-foreground-light)">첨부한 파일</mm-text>
+      <mm-text size="14" role="status" class="js-file-attachment-helper">
         No files currently selected for upload.
       </mm-text>
 
@@ -357,8 +357,8 @@
             style="border-radius: var(--radius)"
           />
           <figcaption>
-            <mm-text variant="heading4">${file.name}</mm-text>
-            <mm-text variant="caption">${returnFileSize(file.size)}</mm-text>
+            <mm-text size="14" weight="bold">${file.name}</mm-text>
+            <mm-text size="12">${returnFileSize(file.size)}</mm-text>
           </figcaption>
           <div style="position: absolute; right: var(--space-1); top: var(--space-1)">
             <mm-clear-button class="js-remove-this">close</mm-clear-button>

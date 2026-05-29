@@ -17,7 +17,7 @@
     <div style="max-width: 520px">
       <mm-menu-item-row>
         <mm-avatar slot="prefix" variant="tertiary" icon="user"></mm-avatar>
-        <mm-text slot="label" variant="body"> Profile </mm-text>
+        <mm-text slot="label" size="14"> Profile </mm-text>
         <mm-checkbox slot="action"></mm-checkbox>
       </mm-menu-item-row>
       <mm-menu-item-checkbox icon="bell" ?checked="${true}">Notifications </mm-menu-item-checkbox>
@@ -92,8 +92,8 @@
   <mm-component-section title="MenuItemSwitch" description="">
     <mm-row justifyContent="space-between">
       <div>
-        <mm-text variant="heading4">Strictly Necessary</mm-text>
-        <mm-text variant="body">
+        <mm-text size="14" weight="bold">Strictly Necessary</mm-text>
+        <mm-text size="14">
           These cookies are essential in order to use the website and use its features.
         </mm-text>
       </div>
@@ -120,12 +120,12 @@
       >
         <div slot="action" style="text-align: right">
           <span style="display: block; line-height: 18px">18,800 KRW</span>
-          <mm-text variant="subheading">6410</mm-text>
+          <mm-text size="14" color="var(--color-foreground-light)">6410</mm-text>
         </div>
       </mm-list-row>
 
       <mm-list-row size="large" primaryText="Personal License" secondaryText="1 user">
-        <mm-text slot="action" variant="subhead">18,800 KRW</mm-text>
+        <mm-text slot="action" size="18">18,800 KRW</mm-text>
       </mm-list-row>
 
       <mm-list-row
@@ -157,7 +157,7 @@
     <div>
       <mm-titlebar label="공유"></mm-titlebar>
       <div style="height: var(--space-4)"></div>
-      <mm-text variant="subhead" class="share-title">가족이나 친구와<br />함께 보세요!</mm-text>
+      <mm-text size="18" class="share-title">가족이나 친구와<br />함께 보세요!</mm-text>
       <div style="height: var(--space-3)"></div>
       <mm-group variant="menuitem">
         <mm-menuitem icon="facebook" label="facebook으로 공유">

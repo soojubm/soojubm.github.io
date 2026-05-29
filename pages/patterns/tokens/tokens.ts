@@ -165,8 +165,8 @@ const article = [
 //   article.forEach(item => {
 //     const articleSample = `
 //       <article class="article js-scrollspy-section">
-//         <mm-text variant="title">${item.title}</mm-text>
-//         <mm-text variant="body-large">
+//         <mm-text size="32">${item.title}</mm-text>
+//         <mm-text size="18">
 //         ${item.kicker}
 //         </p>
 //         <p style="margin:2rem 0">${item.description}</p>

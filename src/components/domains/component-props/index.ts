@@ -88,7 +88,7 @@ export class ComponentProps extends LitElement {
         right: 0;
         bottom: 0;
       }
-      ::slotted(mm-text[variant='subhead']) {
+      ::slotted(mm-text[size='18']) {
         display: none;
       }
       .component-props.is-opened {

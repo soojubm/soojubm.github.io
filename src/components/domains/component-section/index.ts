@@ -29,7 +29,7 @@ class ComponentSection extends LitElement {
   render() {
     return html`
       <section class="component-temp">
-        <mm-text variant="heading2" weight="bold">${this.title}</mm-text>
+        <mm-text size="24" weight="bold">${this.title}</mm-text>
         ${this.description ? html`<mm-paragraph>${this.description}</mm-paragraph>` : nothing}
         <slot></slot>
       </section>

@@ -46,8 +46,8 @@ class ListRow extends LitElement {
         ></mm-avatar>
       </div>
       <div class="text-container ${this.size === 'small' ? 'size-small' : ''}">
-        <mm-text variant="heading4">${this.primaryText}</mm-text>
-        ${this.secondaryText ? html`<mm-text variant="label">${this.secondaryText}</mm-text>` : ''}
+        <mm-text size="14" weight="bold">${this.primaryText}</mm-text>
+        ${this.secondaryText ? html`<mm-text size="12" color="var(--color-foreground-light)">${this.secondaryText}</mm-text>` : ''}
       </div>
       <slot name="action"></slot>
     `

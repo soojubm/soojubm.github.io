@@ -66,7 +66,7 @@ export class Checkbox extends LitElement {
 
         <label for=${_inputId}>
           <span class="indicator"></span>
-          <mm-text variant="body">
+          <mm-text size="14">
             <slot></slot>
           </mm-text>
         </label>

@@ -13,8 +13,7 @@ export class PageTitle extends Text {
     this.as = 'h1'
 
     // 2단계: 페이지 타이틀에 정의된 고유 토큰 값을 주입합니다.
-    // 내부적으로 textSizes.xl은 var(--font-size-28)에 매핑됩니다.
-    this.variant = 'title'
+    this.size = '32'
     this.weight = 'bold'
 
     // 3단계: 기본 테마 색상을 지정합니다.

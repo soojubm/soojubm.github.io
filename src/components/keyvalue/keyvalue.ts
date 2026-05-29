@@ -14,8 +14,10 @@ class Keyvalue extends LitElement {
   render() {
     return html`
       <div class="summary-item" data-size="${this.size}" data-alignment="${this.alignment}">
-        <mm-text variant="label">${this.key}</mm-text>
-        <mm-text variant="${this.size === 'large' ? 'subhead' : 'heading4'}">${this.value}</mm-text>
+        <mm-text size="12" color="var(--color-foreground-light)">${this.key}</mm-text>
+        ${this.size === 'large'
+          ? html`<mm-text size="18">${this.value}</mm-text>`
+          : html`<mm-text size="14" weight="bold">${this.value}</mm-text>`}
         <slot name="slot"></slot>
       </div>
     `

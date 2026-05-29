@@ -1,30 +1,11 @@
 import { css } from 'lit'
 
-// const textVariants = {
-// display: {
-//   fontSize: '64px',
-//   lineHeight: '1',
-//   fontWeight: 'var(--font-weight-bold)',
-// },
-
 export const textSizes = {
-  // 1. 구형 variant 토큰 (마이그레이션 완료 후 삭제 예정)
-  title: { fontSize: 'var(--font-size-32)', lineHeight: 'var(--font-size-32)' },
-  heading2: { fontSize: 'var(--font-size-24)', lineHeight: 'var(--font-size-24)' },
-  subhead: { fontSize: 'var(--font-size-18)', lineHeight: 'var(--font-size-18)' },
-  body: { fontSize: 'var(--font-size-14)', lineHeight: 'var(--font-size-14)' },
-  'body-large': { fontSize: 'var(--font-size-18)', lineHeight: 'var(--font-size-18)' },
-  caption: {
-    fontSize: 'var(--font-size-12)',
-    lineHeight: 'var(--font-size-12)',
-  },
-
-  // 2. 신형 Primitive 전용 사이즈 토큰 (숫자 기반)
-  '32': { fontSize: 'var(--font-size-32)', lineHeight: 'var(--font-size-32)' },
-  '24': { fontSize: 'var(--font-size-24)', lineHeight: 'var(--font-size-24)' },
-  '18': { fontSize: 'var(--font-size-18)', lineHeight: 'var(--font-size-18)' },
-  '14': { fontSize: 'var(--font-size-14)', lineHeight: 'var(--font-size-14)' },
-  '12': { fontSize: 'var(--font-size-12)', lineHeight: 'var(--font-size-12)' },
+  '32': { fontSize: 'var(--font-size-32)', lineHeight: 'var(--font-line-height-40)' },
+  '24': { fontSize: 'var(--font-size-24)', lineHeight: 'var(--font-line-height-32)' },
+  '18': { fontSize: 'var(--font-size-18)', lineHeight: 'var(--font-line-height-28)' },
+  '14': { fontSize: 'var(--font-size-14)', lineHeight: 'var(--font-line-height-24)' },
+  '12': { fontSize: 'var(--font-size-12)', lineHeight: 'var(--font-line-height-16)' },
 } as const
 
 export const textWeights = {

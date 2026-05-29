@@ -16,18 +16,18 @@ class TitleWithDescription extends LitElement {
 
   static variants = {
     '1': {
-      title: 'title',
-      description: 'body-large',
+      titleSize: '32',
+      descriptionSize: '18',
       gap: 'var(--space-3)',
     },
     '2': {
-      title: 'heading2',
-      description: 'body',
+      titleSize: '24',
+      descriptionSize: '14',
       gap: 'var(--space-1)',
     },
     '3': {
-      title: 'subhead',
-      description: 'body',
+      titleSize: '18',
+      descriptionSize: '14',
       gap: 'var(--space-2)',
     },
   }
@@ -65,7 +65,7 @@ class TitleWithDescription extends LitElement {
       >
         ${isLevel1
           ? html`
-              <mm-text variant="title" weight="bold" ?center="${this.center}">
+              <mm-text size="32" weight="bold" ?center="${this.center}">
                 ${this.title}
               </mm-text>
               <mm-paragraph size="large" ?center="${this.center}">
@@ -73,10 +73,10 @@ class TitleWithDescription extends LitElement {
               </mm-paragraph>
             `
           : html`
-              <mm-text variant="${variant.title}" weight="bold" ?center="${this.center}">
+              <mm-text size="${variant.titleSize}" weight="bold" ?center="${this.center}">
                 ${this.title}
               </mm-text>
-              <mm-text variant="${variant.description}" ?center="${this.center}">
+              <mm-text size="${variant.descriptionSize}" ?center="${this.center}">
                 ${this.description}
               </mm-text>
             `}
