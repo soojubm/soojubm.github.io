@@ -9,5 +9,6 @@ export const renderLayout = (content: string) => {
   return `
     ${navbar}
     ${content}
+    ${footer}
   `
 }

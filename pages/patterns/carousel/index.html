@@ -6,18 +6,10 @@
   <section class="component-example">
     <section class="carousel js-carousel">
       <nav style="display: flex; gap: var(--space-3)" role="tablist">
-        <mm-entity description="추가">
-          <mm-avatar slot="avatar" size="huge" fallback="+"></mm-avatar>
-        </mm-entity>
-        <mm-entity description="공유하기" data-index="keyword">
-          <mm-avatar slot="avatar" size="huge" fallback="🌏"></mm-avatar>
-        </mm-entity>
-        <mm-entity description="키워드목록">
-          <mm-avatar slot="avatar" size="huge" fallback="💀"></mm-avatar>
-        </mm-entity>
-        <mm-entity description="주문 아이템">
-          <mm-avatar slot="avatar" size="huge" fallback="🍔"></mm-avatar>
-        </mm-entity>
+        <mm-avatar slot="avatar" size="huge" fallback="+"></mm-avatar>
+        <mm-avatar slot="avatar" size="huge" fallback="🌏"></mm-avatar>
+        <mm-avatar slot="avatar" size="huge" fallback="💀"></mm-avatar>
+        <mm-avatar slot="avatar" size="huge" fallback="🍔"></mm-avatar>
       </nav>
       <nav class="carousel-arrows">
         <mm-icon-button
@@ -35,16 +27,7 @@
         >
         </mm-icon-button>
       </nav>
-      <mm-group class="carousel-viewer js-carousel-viewer">
-        <mm-entity size="huge" label="폴 뉴먼" description="주연">
-          <mm-avatar
-            slot="avatar"
-            variant="tertiary"
-            size="huge"
-            src="/src/images/springsteen.jpg"
-          ></mm-avatar>
-        </mm-entity>
-      </mm-group>
+      <mm-group class="carousel-viewer js-carousel-viewer"> </mm-group>
       <!-- <nav class="carousel-dots">
           <button class="carousel-dots-dot">1</button>
           <button class="carousel-dots-dot">1</button>

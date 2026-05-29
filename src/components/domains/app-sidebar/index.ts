@@ -1,6 +1,6 @@
 import { LitElement, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
-import { SITEMAP } from '../../sitemap' // sitemap.ts 경로에 맞게 수정
+import { SITEMAP } from '../../../sitemap'
 
 @customElement('mm-sidebar')
 export class Sidebar extends LitElement {
@@ -48,7 +48,7 @@ export class Sidebar extends LitElement {
                 </button>
 
                 <menu id="${node.id}-menu" aria-labelledby="${node.id}-btn">
-                  ${node.items.map(
+                  ${node?.items?.map(
                     item => html`
                       <a
                         href="${item.id}.html"

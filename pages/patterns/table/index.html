@@ -51,100 +51,115 @@
       ></mm-searchfield>
       <mm-checkbox name="test1">28 selected</mm-checkbox>
     </menu>
-    <table>
-      <caption hidden>
-        히라가나 오십음도
-      </caption>
-      <!-- <colgroup>
-        <col>
-        <col span="2" class="batman">
-        <col span="2" class="flash">
-      </colgroup> -->
-      <thead>
-        <tr>
-          <th role="columnheader" aria-sort="none" style="width: calc(40px)">
-            <mm-checkbox></mm-checkbox>
-          </th>
-          <th scope="col" aria-sort="none" style="width: 15%">
-            <div style="display: flex; align-items: center; gap: var(--space-1)">
-              Name
-              <mm-icon name="arrow-separate-vertical" size="tiny"></mm-icon>
-            </div>
-          </th>
-          <th scope="col" aria-sort="none" style="width: calc(65% - 80px)">Title</th>
-          <th scope="col" aria-sort="none" style="width: 128px">Link</th>
-          <th scope="col" aria-sort="none" style="width: auto">Status</th>
-          <th scope="col" aria-sort="none" style="width: 8%; text-align: right">Age</th>
-          <th scope="col" aria-sort="none" style="width: 140px">
-            <span hidden>visually hidden</span>
-          </th>
-        </tr>
-      </thead>
-      <tr>
-        <td>
-          <mm-checkbox></mm-checkbox>
-        </td>
-        <th scope="row">
-          <div style="display: flex; align-items: center; gap: var(--space-2)">
-            <mm-avatar variant="secondary" default="true"></mm-avatar>
-            Gabriel
-          </div>
-        </th>
-        <td>
-          <div style="display: flex; align-items: center; gap: var(--space-2)">
-            <mm-tag>Male</mm-tag>
-            <mm-text>타이틀</mm-text>
-          </div>
-        </td>
-        <td>
-          <mm-link isExternal="true"> External link </mm-link>
-        </td>
-        <td>
-          <mm-group variant="tag">
-            <mm-tag variant="feature1">유저리서치</mm-tag>
-          </mm-group>
-        </td>
-        <td style="text-align: right">13</td>
-        <td>
-          <mm-group variant="chip" style="justify-content: flex-end">
-            <mm-button>액션</mm-button>
-            <mm-icon-button variant="navigator" icon="more-vert"></mm-icon-button>
-          </mm-group>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <mm-checkbox checked></mm-checkbox>
-        </td>
-        <th scope="row">
-          <div style="display: flex; align-items: center; gap: var(--space-2)">
-            <mm-avatar variant="secondary" default="true"></mm-avatar>
-            Ella
-          </div>
-        </th>
-        <td>
-          <div style="display: flex; align-items: center; gap: var(--space-2)">
-            <mm-tag>Female</mm-tag>
-            <mm-text>You can't compress the program...</mm-text>
-          </div>
-        </td>
-        <td>
-          <mm-link>
-            <mm-link isExternal="true"> External link </mm-link>
-          </mm-link>
-        </td>
-        <td>
-          <mm-tag variant="feature2">유저플로우</mm-tag>
-        </td>
-        <td style="text-align: right">8</td>
-        <td>
-          <mm-group variant="chip" style="justify-content: flex-end">
-            <mm-button>액션</mm-button>
-            <mm-icon-button variant="navigator" icon="more-vert"></mm-icon-button>
-          </mm-group>
-        </td>
-      </tr>
-    </table>
+    <div class="table-container">
+      <table>
+        <caption hidden>
+          히라가나 오십음도
+        </caption>
+        <colgroup>
+          <col style="width: var(--col-checkbox)" />
+          <col style="width: 80px" />
+          <col style="width: 240px" />
+          <col style="width: 80px" />
+          <col style="width: 80px" />
+          <col style="width: 80px" />
+          <col style="width: 160px" />
+        </colgroup>
+        <thead>
+          <tr>
+            <th role="columnheader" aria-sort="none" style="width: calc(40px)">
+              <mm-checkbox></mm-checkbox>
+            </th>
+            <th scope="col" aria-sort="none" style="width: 15%">
+              <div style="display: flex; align-items: center; gap: var(--space-1)">
+                Name
+                <mm-icon name="arrow-separate-vertical" size="tiny"></mm-icon>
+              </div>
+            </th>
+            <th scope="col" aria-sort="none" style="width: calc(65% - 80px)">Title</th>
+            <th scope="col" aria-sort="none" style="width: 128px">Link</th>
+            <th scope="col" aria-sort="none" style="width: auto">Status</th>
+            <th scope="col" aria-sort="none" style="width: 8%; text-align: right">Age</th>
+            <th scope="col" aria-sort="none" style="width: 140px">
+              <span hidden>visually hidden</span>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <mm-checkbox></mm-checkbox>
+            </td>
+            <th scope="row">
+              <div style="display: flex; align-items: center; gap: var(--space-2)">
+                <mm-avatar variant="secondary" default="true"></mm-avatar>
+                Gabriel
+              </div>
+            </th>
+            <td>
+              <div style="display: flex; align-items: center; gap: var(--space-2)">
+                <mm-tag>Male</mm-tag>
+                <mm-text>타이틀</mm-text>
+              </div>
+            </td>
+            <td>
+              <mm-link isExternal="true"> External link </mm-link>
+            </td>
+            <td>
+              <mm-group variant="tag">
+                <mm-category-tag category="music">유저리서치</mm-category-tag>
+              </mm-group>
+            </td>
+            <td style="text-align: right">13</td>
+            <td style="text-align: right">
+              <div style="display: flex; align-items: center; gap: var(--space-2)">
+                <mm-button>액션</mm-button>
+                <mm-icon-button variant="navigator" icon="more-vert"></mm-icon-button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <mm-checkbox checked></mm-checkbox>
+            </td>
+            <th scope="row">
+              <div style="display: flex; align-items: center; gap: var(--space-2)">
+                <mm-avatar variant="secondary" default="true"></mm-avatar>
+                Ella
+              </div>
+            </th>
+            <td>
+              <div style="display: flex; align-items: center; gap: var(--space-2)">
+                <mm-tag>Female</mm-tag>
+                <mm-text>You can't compress the program...</mm-text>
+              </div>
+            </td>
+            <td>
+              <mm-link>
+                <mm-link isExternal="true"> External link </mm-link>
+              </mm-link>
+            </td>
+            <td>
+              <mm-category-tag category="finance">유저플로우</mm-category-tag>
+            </td>
+            <td style="text-align: right">8</td>
+            <td style="text-align: right">
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  justify-content: flex-end;
+                  gap: var(--space-2);
+                "
+              >
+                <mm-button>액션</mm-button>
+                <mm-icon-button variant="navigator" icon="more-vert"></mm-icon-button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
     <nav class="pagination" aria-label="pagination" style="margin: 1rem 0">
       <button
         variant="navigator"
@@ -212,18 +227,13 @@
     </div> -->
   </section>
 
-  <section class="component-props">
-    <mm-text variant="subhead">Props</mm-text>
-    <dl>
-      <!-- <dt>offset</dt>
-            <dd>number</dd> -->
-      <dt>initialPageNumber? selecedPageNumber?</dt>
-      <dd>number</dd>
-      <dt>lastPageNumber</dt>
-      <dd>number</dd>
-      <!-- <dd>서버에서 받는다.</dd> -->
-    </dl>
-  </section>
+  <mm-component-props>
+    <mm-prop name="src" type="string"></mm-prop>
+    <mm-prop name="alt" type="string"></mm-prop>
+    <mm-prop name="ratio" type="'1:1' | '16:9' | '4:3' = '1:1'"></mm-prop>
+    <mm-prop name="clickable" type="boolean"></mm-prop>
+    <mm-prop name="@click" type="(e: MouseEvent) => void" kind="event"></mm-prop>
+  </mm-component-props>
 
   <section class="component-guide">
     <mm-text-list
@@ -236,21 +246,21 @@
     </mm-text-list>
   </section>
 
-  <mm-component-section title="Paginations" description="TODO">
-    <div role="status">
-      <small>숙소 300개 이상 중 <b>281 – 300</b> (airbnb)</small>
-    </div>
+  <mm-component-section title="Paginations" description="">
+    <div>
+      <div role="status">
+        <small>숙소 300개 이상 중 <b>281 – 300</b> (airbnb)</small>
+      </div>
 
-    <mm-group>
-      <mm-text>page</mm-text>
-      <mm-button size="small">
-        <mm-icon size="tiny" name="nav-arrow-down"></mm-icon>
-      </mm-button>
-      <mm-text>of 22</mm-text>
-    </mm-group>
+      <mm-group>
+        <mm-text>page</mm-text>
+        <mm-button size="small">
+          <mm-icon size="tiny" name="nav-arrow-down"></mm-icon>
+        </mm-button>
+        <mm-text>of 22</mm-text>
+      </mm-group>
+    </div>
   </mm-component-section>
 
   <!-- <p>pagination vs more load vs infinite scroll. 느린 탐색 경험이 필요할 때. 게시판이나 상품 목록의 탐색에서 이전에 탐색한 상품의 위치를 찾기 편리함. 최근 본 목록이나 섬네일에서 북마크를 제공한다면?</p> -->
-
-  <!-- 초기화 width: auto; image-->
 </main>

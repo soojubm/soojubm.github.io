@@ -58,6 +58,12 @@ q:before {
   line-height: 1rem;
 }
 
+.table-container {
+  height: 320px;
+  background-color: var(--color-background-subtle);
+  overflow-x: auto;
+}
+
 table {
   --table-radius: null;
 
@@ -84,6 +90,19 @@ table {
   border-left-style:hidden;
   border-right-style:hidden;
   font-size: inherit;
+
+  /* 스크롤 */
+  width: max-content;
+  min-width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+
+  background: #fff;
+
+  --col-checkbox: 32px;
+  --col-id: 80;
+
+
 }
 table caption {padding:.5rem 0;font-size:var(--font-size-12);text-align:left;}
 table thead {}
@@ -375,10 +394,6 @@ menu-item:focus-visible {
 
 }
 
-.component-props .columns-3 {
-    padding: 2rem calc(var(--grid-margin) - 1rem);
-    margin: 2rem calc(var(--grid-margin) * -1 + 1rem);
-}
 @media (max-width: 1200px) {
   .columns {
     grid-template-columns: repeat(2, 1fr);

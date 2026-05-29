@@ -23,12 +23,12 @@
     </p>
     <div style="height: var(--space-3)"></div>
     <mm-group variant="tag">
-      <mm-tag>이것은헤시태그</mm-tag>
-      <mm-tag>해시태그는클릭할수있다?</mm-tag>
-      <mm-tag>해시태그를통한검색</mm-tag>
+      <mm-keyword-tag>이것은헤시태그</mm-keyword-tag>
+      <mm-keyword-tag>해시태그는클릭할수있다?</mm-keyword-tag>
+      <mm-keyword-tag>해시태그를통한검색</mm-keyword-tag>
     </mm-group>
     <mm-separator></mm-separator>
-    <mm-link href="#" isExternal="true">고래잡이</mm-link>
+    <mm-link href="#" external="true">고래잡이</mm-link>
     <mm-separator></mm-separator>
     <!-- TODO link, text button일 수도 있다. -->
     <section style="display: flex; flex-direction: column; gap: var(--space-2)">
@@ -43,55 +43,15 @@
         <mm-link>Get in touch with us.</mm-link>
       </mm-row>
     </section>
-    <mm-separator></mm-separator>
-    <mm-group>
-      <button
-        style="
-          display: flex;
-          align-items: center;
-          gap: var(--space-1);
-          color: var(--color-primary);
-          font-weight: var(--font-weight-bold);
-          border: none;
-          font: inherit;
-          font-weight: var(--font-weight-bold);
-          background: none;
-        "
-      >
-        View More <mm-icon name="nav-arrow-down"></mm-icon>
-      </button>
-      <button
-        style="
-          display: flex;
-          align-items: center;
-          gap: var(--space-1);
-          color: var(--color-primary);
-          border: none;
-          background: none;
-          font: inherit;
-          font-weight: var(--font-weight-bold);
-        "
-      >
-        View Less <mm-icon name="nav-arrow-up"></mm-icon>
-      </button>
-    </mm-group>
   </section>
 
-  <section class="component-props">
-    <mm-text variant="subhead">Props</mm-text>
-    <dl>
-      <!-- <dt>variant</dt>
-        <dd>'inside' | 'outside'</dd>
-        <dd>
-          단락 내부와 외부에서의 형태를 구분합니다. 단락 내부에서는 본문 텍스트와 대비를 높이기 위해
-          언더라인을 표시합니다. 불필요해보이는 규칙.
-        </dd> -->
-      <dt>href</dt>
-      <dd>string</dd>
-      <dt>isExternal<attr>?</attr></dt>
-      <dd>boolean</dd>
-    </dl>
-  </section>
+  <mm-component-props>
+    <mm-prop name="src" type="string"></mm-prop>
+    <mm-prop name="alt" type="string"></mm-prop>
+    <mm-prop name="ratio" type="'1:1' | '16:9' | '4:3' = '1:1'"></mm-prop>
+    <mm-prop name="clickable" type="boolean"></mm-prop>
+    <mm-prop name="@click" type="(e: MouseEvent) => void" kind="event"></mm-prop>
+  </mm-component-props>
 
   <section class="component-guide">
     <mm-text-list

@@ -137,16 +137,13 @@
     </script>
   </section>
 
-  <section class="component-props">
-    <dl>
-      <dt>options</dt>
-      <dd>Option[]</dd>
-      <dt>selectedValue</dt>
-      <dd>Option[value]</dd>
-      <dt>onChange</dt>
-      <dd>(event: React.FormEvent&lt;HTMLSelectElement&gt;) => void</dd>
-    </dl>
-  </section>
+  <mm-component-props>
+    <mm-prop name="src" type="string"></mm-prop>
+    <mm-prop name="alt" type="string"></mm-prop>
+    <mm-prop name="ratio" type="'1:1' | '16:9' | '4:3' = '1:1'"></mm-prop>
+    <mm-prop name="clickable" type="boolean"></mm-prop>
+    <mm-prop name="@click" type="(e: MouseEvent) => void" kind="event"></mm-prop>
+  </mm-component-props>
 
   <section class="component-guide">
     <section class="feature columns-2">

@@ -115,17 +115,13 @@
     </article>
   </section>
 
-  <section class="component-props">
-    <mm-text variant="subhead">Props</mm-text>
-    <dl>
-      <dt>summary</dt>
-      <dd>string</dd>
-      <dt>content</dt>
-      <dd>string</dd>
-      <dt>onClick</dt>
-      <dd>() => void</dd>
-    </dl>
-  </section>
+  <mm-component-props>
+    <mm-prop name="src" type="string"></mm-prop>
+    <mm-prop name="alt" type="string"></mm-prop>
+    <mm-prop name="ratio" type="'1:1' | '16:9' | '4:3' = '1:1'"></mm-prop>
+    <mm-prop name="clickable" type="boolean"></mm-prop>
+    <mm-prop name="@click" type="(e: MouseEvent) => void" kind="event"></mm-prop>
+  </mm-component-props>
 
   <section class="component-guide">
     <mm-text-list
@@ -160,8 +156,37 @@
     </ul>
   </mm-component-section>
 
-  <nav class="component-references">
-    <mm-text variant="subhead">References</mm-text>
-    <a href="https://nuli.navercorp.com/community/article/1132889">nuli</a>
-  </nav>
+  <mm-component-references>
+    <mm-link external href="https://developer.apple.com/documentation/swiftui/navigationstack">
+      swiftui navigationstack
+    </mm-link>
+    <mm-link
+      external
+      href="https://developer.apple.com/design/human-interface-guidelines/tab-views"
+    >
+      HIG tab views
+    </mm-link>
+    <mm-link
+      external
+      href="https://developer.apple.com/design/human-interface-guidelines/components/selection-and-input/segmented-controls/"
+    >
+      HIG Segmented controls
+    </mm-link>
+    <mm-link external href="https://material.io/components/tabs">MD Tabs</mm-link>
+    <mm-link external href="https://m3.material.io/components/top-app-bar/overview">
+      MD3 top app bar
+    </mm-link>
+    <mm-link external href="https://m2.material.io/components/bottom-navigation">
+      M2 Bottom Navigation
+    </mm-link>
+    <mm-link external href="https://m3.material.io/components/navigation-bar/overview">
+      M3 Navigation Bar
+    </mm-link>
+    <mm-link
+      external
+      href="https://developer.apple.com/design/human-interface-guidelines/components/navigation-and-search/tab-bars"
+    >
+      HIG Tab bars
+    </mm-link>
+  </mm-component-references>
 </main>

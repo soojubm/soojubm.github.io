@@ -31,24 +31,16 @@
       <mm-tag tone="pink"> pink </mm-tag>
       <mm-tag tone="orange"> orange </mm-tag>
       <mm-tag tone="cyan"> cyan </mm-tag>
-
-      <mm-tag variant="primary">강조태그</mm-tag>
-      <mm-tag variant="primary">8</mm-tag>
-      <mm-tag variant="primary">88</mm-tag>
     </mm-group>
   </section>
 
-  <section class="component-props">
-    <mm-text variant="subhead" hidden>Props</mm-text>
-    <dl>
-      <dt>tone</dt>
-      <dd>type TagTone = 'gray' | 'green' | 'yellow' | 'red' | 'blue' | 'purple'</dd>
-      <dt>children</dt>
-      <dd>React.ReactNode</dd>
-      <dt>icon</dt>
-      <dd>IconNameType</dd>
-    </dl>
-  </section>
+  <mm-component-props>
+    <mm-prop name="src" type="string"></mm-prop>
+    <mm-prop name="alt" type="string"></mm-prop>
+    <mm-prop name="ratio" type="'1:1' | '16:9' | '4:3' = '1:1'"></mm-prop>
+    <mm-prop name="clickable" type="boolean"></mm-prop>
+    <mm-prop name="@click" type="(e: MouseEvent) => void" kind="event"></mm-prop>
+  </mm-component-props>
 
   <section class="component-guide">
     <section class="feature columns-2">
@@ -122,13 +114,13 @@
     </mm-group>
   </mm-component-section>
 
-  <mm-component-section title="AccentTag" description="">
+  <mm-component-section title="AccentTag" description="TODO accent color">
     <mm-group>
       <mm-accent-tag> Featured </mm-accent-tag>
     </mm-group>
   </mm-component-section>
 
-  <mm-component-section title="CategoryTag" description="카테고리. variant.feature1~4">
+  <mm-component-section title="CategoryTag" description="">
     <mm-group variant="tag">
       <mm-category-tag category="music"> Jazz </mm-category-tag>
       <mm-category-tag category="finance"> Stocks </mm-category-tag>
@@ -137,15 +129,9 @@
       <mm-category-tag category="marketing"> Branding </mm-category-tag>
       <mm-category-tag category="news"> Breaking </mm-category-tag>
       <mm-category-tag category="lifestyle"> Wellness </mm-category-tag>
-      <mm-category-tag category="sports"> Football </mm-category-tag>
-      <mm-tag variant="feature1">유저리서치</mm-tag>
-      <mm-tag variant="feature2">유저플로우</mm-tag>
-      <mm-tag variant="feature3">유저스트</mm-tag>
-      <mm-tag variant="feature4">A/B테스팅</mm-tag>
-      <mm-tag variant="feature2">
-        <mm-icon slot="icon" name="graph-up"></mm-icon>
-        16%
-      </mm-tag>
+      <mm-category-tag category="sports">
+        <mm-icon slot="icon" name="graph-up"></mm-icon> Football
+      </mm-category-tag>
     </mm-group>
   </mm-component-section>
 

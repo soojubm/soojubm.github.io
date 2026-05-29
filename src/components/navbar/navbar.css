@@ -219,7 +219,8 @@
 
 /* --small */
 @media (max-width:1080px) {
-  .page {
+  .is-menu-opened .page {
+    padding-left: var(--grid-margin);
   }
   /* .footer {
     padding-inline: var(--grid-margin) !important; 

@@ -1,4 +1,4 @@
-import { LitElement, css, html } from 'lit'
+import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 @customElement('mm-component-section')
@@ -12,34 +12,25 @@ class ComponentSection extends LitElement {
       display: block;
       border: var(--border-stronger);
       border-radius: var(--radius-large);
-      margin: 1rem 0 1rem calc(-5vw + 1rem);
+      margin: 0.5rem 0 3rem calc(-5vw + 1rem);
       padding: 2rem calc(var(--grid-margin) - 1rem);
     }
 
     .component-temp {
-      display: block;
-      padding: 1rem 0;
-      // margin: 0 0 1rem calc(-5vw + 1rem);
-      // padding: 1.5rem calc(var(--grid-margin) - 1rem) 2rem;
-      // border: var(--border-stronger);
-      // border-radius: var(--radius-large);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+      margin: 2rem 0;
     }
     @media (max-width: 768px) {
-      .component-temp {
-        margin-left: 0;
-        padding-inline: var(--grid-margin);
-      }
     }
   `
 
   render() {
     return html`
       <section class="component-temp">
-        <mm-title-with-description
-          level="2"
-          title="${this.title}"
-          description="${this.description}"
-        ></mm-title-with-description>
+        <mm-text variant="heading2" weight="bold">${this.title}</mm-text>
+        ${this.description ? html`<mm-paragraph>${this.description}</mm-paragraph>` : nothing}
         <slot></slot>
       </section>
     `

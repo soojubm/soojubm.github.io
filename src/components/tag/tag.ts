@@ -1,42 +1,25 @@
-// tag.ts
-
 import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { ifDefined } from 'lit/directives/if-defined.js'
-
 import { tagStyles, type TagTone } from './tag.styles'
 
 @customElement('mm-tag')
 export class Tag extends LitElement {
-  /**
-   * purely visual primitive
-   */
-
-  @property({ type: String })
-  tone: TagTone = 'gray'
-
-  /**
-   * optional semantic time support
-   */
-
-  @property({ type: String })
-  datetime?: string
+  @property({ type: String }) tone: TagTone = 'gray'
 
   static styles = [tagStyles]
 
+  // 하위 클래스에서 기본 슬롯을 오버라이드할 수 있도록 분리
+  protected renderDefaultSlot() {
+    return html`<slot></slot>`
+  }
+
   render() {
-    const innerContent = html`
-      <slot name="icon"></slot>
-      <slot></slot>
+    return html`
+      <span data-tone=${this.tone}>
+        <slot name="icon"></slot>
+        ${this.renderDefaultSlot()}
+      </span>
     `
-
-    if (this.datetime) {
-      return html`
-        <time data-tone=${this.tone} datetime=${ifDefined(this.datetime)}> ${innerContent} </time>
-      `
-    }
-
-    return html` <span data-tone=${this.tone}> ${innerContent} </span> `
   }
 }
 

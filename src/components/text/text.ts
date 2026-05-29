@@ -1,80 +1,60 @@
-import { LitElement, html } from 'lit'
+import { LitElement, css } from 'lit' // 👈 여기서는 LitElement와 css만!
 import { customElement, property } from 'lit/decorators.js'
+import { html, unsafeStatic } from 'lit/static-html.js' // 👈
 import { styleMap } from 'lit/directives/style-map.js'
-import { textStyles } from './text.styles'
 
-const textVariants = {
-  display: {
-    fontSize: '64px',
-    lineHeight: '1',
-    fontWeight: 'var(--font-weight-bold)',
-  },
-  title: {
-    fontSize: 'var(--font-size-32)',
-    lineHeight: 'var(--font-line-height-40)',
-    fontWeight: 'var(--font-weight-bold)',
-  },
-  heading2: {
-    fontSize: '1.5rem',
-    lineHeight: '2.25rem',
-    fontWeight: 'var(--font-weight-bold)',
-  },
-  subhead: {
-    fontSize: 'var(--font-size-18)',
-    lineHeight: 'var(--font-line-height-24)',
-    fontWeight: 'var(--font-weight-bold)',
-  },
-  heading4: {
-    fontSize: 'var(--font-size-14)',
-    lineHeight: 'var(--font-line-height-24)',
-    fontWeight: 'var(--font-weight-bold)',
-  },
-  subheading: {
-    fontSize: 'var(--font-size-14)',
-    lineHeight: 'var(--font-line-height-24)',
-    fontWeight: 'var(--font-weight-normal)',
-    color: 'var(--color-foreground-light)',
-  },
-  body: {
-    fontSize: 'var(--font-size-14)',
-    lineHeight: 'var(--font-line-height-24)',
-    fontWeight: 'var(--font-weight-normal)',
-  },
-  'body-large': {
-    fontSize: 'var(--font-size-18)',
-    lineHeight: 'var(--font-line-height-32)',
-    fontWeight: 'var(--font-weight-normal)',
-  },
-  caption: {
-    fontSize: 'var(--font-size-12)',
-    lineHeight: 'var(--font-line-height-16)',
-  },
-} as const
-
-type TextVariant = keyof typeof textVariants
+import { textSizes, textWeights, type TextSize, type TextWeight } from './text.styles'
 
 @customElement('mm-text')
-class Text extends LitElement {
-  @property({ type: String }) variant: TextVariant = 'body'
-  @property({ type: Boolean, reflect: true }) center = false
-  @property({ type: Boolean, reflect: true }) truncated = false
+export class Text extends LitElement {
+  @property({ type: String }) as = 'span'
+  @property({ type: String }) variant = 'body' // 구형 매핑 프롭스 (하위 호환 유지)
+  @property({ type: String }) size = '' // 신형 프리미티브 사이즈 프롭스 ('32' | '24' | '18' | '14' | '12')
+  @property({ type: String }) weight: TextWeight = 'medium'
+  @property({ type: String }) color = 'inherit'
 
-  static styles = [textStyles]
+  static styles = css`
+    :host {
+      display: inline-block;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    span {
+      margin: 0;
+      font-family: inherit;
+      color: inherit;
+    }
+  `
 
   render() {
-    const variantStyle = textVariants[this.variant]
+    const tag = unsafeStatic(this.as)
+
+    // ❌ 기존 코드: size가 존재하기만 하면 무조건 variant를 무시함
+    // const sizeKey = (this.size || this.variant) as TextSize
+
+    //  수정 코드: 들어온 size가 실제로 textSizes 토큰에 존재하는 정당한 키(32, 24, 14 등)인지 검사
+    const isValidSize = this.size in textSizes
+    const sizeKey = (isValidSize ? this.size : this.variant) as TextSize
+
+    const sizeStyle = textSizes[sizeKey] || textSizes['14']
+    const weightStyle = textWeights[this.weight] || textWeights.medium
+
+    const dynamicStyles = {
+      fontSize: sizeStyle.fontSize,
+      lineHeight: sizeStyle.lineHeight,
+      fontWeight: weightStyle,
+      color: this.color,
+    }
 
     return html`
-      <p
-        class="text"
-        style=${styleMap(variantStyle || {})}
-        ?data-center=${this.center}
-        ?data-truncated=${this.truncated}
-      >
-        <slot></slot>
-      </p>
-    `
+    <${tag} style=${styleMap(dynamicStyles)}>
+      <slot></slot>
+    </${tag}>
+  `
   }
 }
-
-export default Text

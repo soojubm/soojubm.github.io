@@ -4,12 +4,6 @@
     description="long content field"
   ></mm-title-with-description>
 
-  <dl class="article-aka">
-    <dt>a.k.a.</dt>
-    <dd>TextInput</dd>
-    <dd>Input</dd>
-  </dl>
-
   <section class="component-example">
     <div style="max-width: 400px">
       <mm-textarea
@@ -20,59 +14,81 @@
     </div>
   </section>
 
-  <section class="component-props">
-    <mm-text variant="subhead">Props</mm-text>
-    <dl>
-      <dt>name</dt>
-      <dd>string</dd>
-      <dt>label</dt>
-      <dd>string</dd>
-      <dt>isHiddenLabel<attr>?</attr></dt>
-      <dd>boolean</dd>
-      <dt>value</dt>
-      <dd>string</dd>
-      <dt>placeholder</dt>
-      <dd>string</dd>
-      <dt>length</dt>
-      <dd>number</dd>
-      <!-- <dt>rows</dt>
-      <dd>number. 플랫폼에서 고정.</dd> -->
-      <dt>helper<attr>?</attr></dt>
-      <dd>string</dd>
-      <dt>isDisabled<attr>?</attr></dt>
-      <dd>boolean</dd>
-      <dt>isReadOnly<attr>?</attr></dt>
-      <dd>boolean</dd>
-      <dt>isAutoFocus<attr>?</attr></dt>
-      <dd>boolean</dd>
-      <dt>onChange<attr>?</attr></dt>
-      <dd>(event: React.ChangeEvent&lt;HTMLInputElement&gt;) => void</dd>
-      <dt>onKeyDown<attr>?</attr></dt>
-      <dd>(event: KeyboardEvent&lt;HTMLInputElement&gt;) => void</dd>
-      <dt>onFocus<attr>?</attr></dt>
-      <dd>(event: React.FocusEvent&lt;HTMLInputElement&gt;) => void</dd>
-    </dl>
-  </section>
+  <mm-component-props>
+    <mm-prop name="src" type="string"></mm-prop>
+    <mm-prop name="alt" type="string"></mm-prop>
+    <mm-prop name="ratio" type="'1:1' | '16:9' | '4:3' = '1:1'"></mm-prop>
+    <mm-prop name="clickable" type="boolean"></mm-prop>
+    <mm-prop name="@click" type="(e: MouseEvent) => void" kind="event"></mm-prop>
+  </mm-component-props>
 
   <!-- <section class="component-guide"></section> -->
-  <div style="height: 1rem"></div>
 
   <mm-component-section title="Comment Input" description="TODO"> </mm-component-section>
   <mm-component-section title="Prompt Input" description="TODO">
-    <div style="background: var(--color-background-subtle); border-radius: var(--radius)">
-      <mm-textarea placeholder="샘플러"></mm-textarea>
-      <div
-        class="prompt-input-actions"
-        style="
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          padding: var(--space-2) var(--space-3);
-        "
-      >
-        <mm-icon-button icon="star"></mm-icon-button>
-        <mm-button variant="primary" size="small">전송</mm-button>
-      </div>
+    <div>
+      <mm-prompt-input id="promptInput" class="w-full max-w-(--breakpoint-md)">
+        <mm-prompt-input-textarea placeholder="Ask me anything..."></mm-prompt-input-textarea>
+
+        <mm-prompt-input-actions>
+          <button type="button" id="sendBtn" class="send-button">⬆️</button>
+        </mm-prompt-input-actions>
+      </mm-prompt-input>
+
+      <script type="module">
+        const promptInput = document.getElementById('promptInput')
+        const sendBtn = document.getElementById('sendBtn')
+
+        // 상태 관리 변수
+        let isLoading = false
+
+        // 상태를 UI에 반영하는 함수
+        function setLoading(loadingState) {
+          isLoading = loadingState
+
+          if (isLoading) {
+            promptInput.setAttribute('is-loading', '') // 부모 컴포넌트에 속성 반영
+            sendBtn.textContent = '🛑' // 버튼 아이콘 변경
+          } else {
+            promptInput.removeAttribute('is-loading')
+            sendBtn.textContent = '⬆️'
+          }
+        }
+
+        // 값 변경 감지 (커스텀 이벤트 수신)
+        promptInput.addEventListener('value-change', event => {
+          console.log('입력 중인 값:', event.detail.value)
+        })
+
+        // 엔터 전송 감지 (커스텀 이벤트 수신)
+        promptInput.addEventListener('submit', event => {
+          console.log('전송된 프롬프트:', event.detail.value)
+
+          // 로딩 상태 시뮬레이션
+          setLoading(true)
+          setTimeout(() => {
+            setLoading(false)
+            // 전송 완료 후 내부 textarea 비워주기
+            const textareaComponent = promptInput.querySelector('mm-prompt-input-textarea')
+            if (textareaComponent) textareaComponent.value = ''
+          }, 2000)
+        })
+
+        // 전송 버튼 클릭 시 컴포넌트에 submit 트리거 위임 혹은 직접 처리
+        sendBtn.addEventListener('click', () => {
+          if (isLoading) {
+            setLoading(false)
+          } else {
+            // 컴포넌트 내부 밸류를 읽어와서 submit 이벤트 수동 디스패치 가능
+            const currentVal = promptInput.value
+            if (currentVal.trim()) {
+              promptInput.dispatchEvent(
+                new CustomEvent('submit', { detail: { value: currentVal } }),
+              )
+            }
+          }
+        })
+      </script>
     </div>
   </mm-component-section>
 </main>

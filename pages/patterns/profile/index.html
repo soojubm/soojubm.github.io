@@ -6,15 +6,20 @@
     <p class="profile-head-description"></p>
   </header> -->
   <section class="profile-user">
-    <mm-entity
-      label="수줍이"
-      description="soojubm@gmail.com"
-      description2="010 3121 7045"
+    <mm-user-snippet
+      name="수줍이"
+      email="soojubm@gmail.com"
+      phone="010 3121 7045"
       description="UI Designer"
     >
-      <mm-avatar slot="avatar" variant="secondary" size="huge" default="true"></mm-avatar>
+      <mm-avatar
+        slot="avatar"
+        size="huge"
+        variant="secondary"
+        src="/src/images/soojubm.png"
+      ></mm-avatar>
       <mm-tag slot="tag" variant="primary">접속 중</mm-tag>
-    </mm-entity>
+    </mm-user-snippet>
     <div style="margin: var(--space-3) 0 0 0">
       <mm-group variant="chip">
         <mm-button variant="primary" status="active">팔로우</mm-button>

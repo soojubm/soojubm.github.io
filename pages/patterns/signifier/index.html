@@ -66,80 +66,41 @@
         class="group"
         style="display: flex; flex-wrap: wrap; gap: var(--space-3); margin: 0 0 2rem"
       >
-        <mm-entity size="huge" alignment="center" label="" description="Search">
-          <mm-avatar slot="avatar" variant="secondary" size="huge" icon="search"> </mm-avatar>
-        </mm-entity>
-
-        <!-- <mm-entity size="huge" alignment="center" label="">
-                description="Expandable & Collapsible (vertical)"
-                <mm-avatar slot="avatar" variant="secondary" size="huge" >
-                  <mm-icon slot="prefix" name="search"></mm-icon>
-                </mm-avatar>
-              </mm-entity> -->
-        <mm-entity size="huge" alignment="center" label="" description="Expandable">
-          <mm-avatar slot="avatar" variant="secondary" size="huge">
-            <mm-icon slot="prefix" name="nav-arrow-down"></mm-icon>
-          </mm-avatar>
-        </mm-entity>
-        <mm-entity size="huge" alignment="center" label="" description="to back">
-          <mm-avatar slot="avatar" variant="secondary" size="huge" icon="arrow-left"> </mm-avatar>
-        </mm-entity>
-        <mm-entity size="huge" alignment="center" label="" description="Internal Link">
-          <mm-avatar slot="avatar" variant="secondary" size="huge">
-            <mm-icon slot="prefix" name="arrow-right"></mm-icon>
-          </mm-avatar>
-          <b>(ex: view all)</b>
-        </mm-entity>
-        <mm-entity
-          size="huge"
-          alignment="center"
-          label=""
-          description="External Link"
-          data-temp="visit icon - pinterest"
-        >
-          <mm-avatar slot="avatar" variant="secondary" size="huge">
-            <mm-icon slot="prefix" name="arrow-up-right"></mm-icon>
-          </mm-avatar>
-          <b>(ex: view all)</b>
-        </mm-entity>
+        <mm-avatar slot="avatar" variant="secondary" size="huge" icon="search"> </mm-avatar>
+        <!-- description="Expandable & Collapsible (vertical)" -->
+        <mm-avatar slot="avatar" variant="secondary" size="huge">
+          <mm-icon slot="prefix" name="search"></mm-icon>
+        </mm-avatar>
+        <mm-avatar slot="avatar" variant="secondary" size="huge">
+          <mm-icon slot="prefix" name="nav-arrow-down"></mm-icon>
+        </mm-avatar>
+        <mm-avatar slot="avatar" variant="secondary" size="huge" icon="arrow-left"> </mm-avatar>
+        <mm-avatar slot="avatar" variant="secondary" size="huge">
+          <mm-icon slot="prefix" name="arrow-right"></mm-icon>
+        </mm-avatar>
+        <b>(ex: view all)</b>
+        <mm-avatar slot="avatar" variant="secondary" size="huge">
+          <mm-icon slot="prefix" name="arrow-up-right"></mm-icon>
+        </mm-avatar>
+        <b>(ex: view all)</b>
         <!-- Remove / Close / Clear -->
-        <mm-entity size="huge" alignment="center" label="" description="Remove">
-          <mm-avatar slot="avatar" variant="secondary" size="huge">
-            <mm-icon slot="prefix" name="xmark"></mm-icon>
-          </mm-avatar>
-        </mm-entity>
-        <mm-entity size="huge" alignment="center" label="" description="Plus">
-          <mm-avatar slot="avatar" variant="secondary" size="huge">
-            <mm-icon slot="prefix" name="plus"></mm-icon>
-          </mm-avatar>
-        </mm-entity>
-        <mm-entity size="huge" alignment="center" label="" description="Checked">
-          <mm-avatar slot="avatar" variant="secondary" size="huge" icon="check"> </mm-avatar>
-        </mm-entity>
-        <mm-entity size="huge" alignment="center" label="" description="more-vert">
-          <mm-avatar slot="avatar" variant="secondary" size="huge" icon="more-vert"> </mm-avatar>
-        </mm-entity>
-        <mm-entity size="huge" alignment="center" label="" description="Setting">
-          <mm-avatar slot="avatar" variant="secondary" size="huge" icon="settings"> </mm-avatar>
-        </mm-entity>
+        <mm-avatar slot="avatar" variant="secondary" size="huge">
+          <mm-icon slot="prefix" name="xmark"></mm-icon>
+        </mm-avatar>
+        <mm-avatar slot="avatar" variant="secondary" size="huge">
+          <mm-icon slot="prefix" name="plus"></mm-icon>
+        </mm-avatar>
+        <mm-avatar slot="avatar" variant="secondary" size="huge" icon="check"> </mm-avatar>
+        <mm-avatar slot="avatar" variant="secondary" size="huge" icon="more-vert"> </mm-avatar>
+        <mm-avatar slot="avatar" variant="secondary" size="huge" icon="settings"> </mm-avatar>
 
-        <mm-entity size="huge" alignment="center" label="" description="Copy">
-          <mm-avatar slot="avatar" variant="secondary" size="huge" icon="copy"> </mm-avatar>
-        </mm-entity>
-        <mm-entity size="huge" alignment="center" label="" description="Refresh">
-          <mm-avatar slot="avatar" variant="secondary" size="huge" icon="refresh"> </mm-avatar>
-        </mm-entity>
+        <mm-avatar slot="avatar" variant="secondary" size="huge" icon="copy"> </mm-avatar>
+        <mm-avatar slot="avatar" variant="secondary" size="huge" icon="refresh"> </mm-avatar>
       </section>
       <mm-group>
-        <mm-entity size="huge" alignment="center" label="" description="Lock">
-          <mm-avatar slot="avatar" variant="secondary" size="huge" icon="lock"> </mm-avatar>
-        </mm-entity>
-        <mm-entity size="huge" alignment="center" label="" description="Logout">
-          <mm-avatar slot="avatar" variant="secondary" size="huge" icon="log-out"> </mm-avatar>
-        </mm-entity>
-        <mm-entity size="huge" alignment="center" label="" description="Email">
-          <mm-avatar slot="avatar" variant="secondary" size="huge" icon="mail"> </mm-avatar>
-        </mm-entity>
+        <mm-avatar slot="avatar" variant="secondary" size="huge" icon="lock"> </mm-avatar>
+        <mm-avatar slot="avatar" variant="secondary" size="huge" icon="log-out"> </mm-avatar>
+        <mm-avatar slot="avatar" variant="secondary" size="huge" icon="mail"> </mm-avatar>
       </mm-group>
     </div>
   </mm-component-section>
@@ -153,10 +114,10 @@
       <li>--selection-indicator-size</li>
       <li>--selection-indicator-gap</li>
       <li>--selection-indicator-color</li>
-      <mm-text
-        >선택 상태는 최소 2개 이상의 signal로 표현하는 것이 좋다 (WCAG 색상만으로 상태를 전달하지 말
-        것)</mm-text
-      >
+      <mm-text>
+        선택 상태는 최소 2개 이상의 signal로 표현하는 것이 좋다 (WCAG 색상만으로 상태를 전달하지 말
+        것)
+      </mm-text>
       <mm-text>“selected”라는 상태가 모든 컴포넌트에서 같은 의미 강도를 가지지 않는다</mm-text>
       <div>
         TAB::navigation, context switching, current view / check indicator::confirmed selection,
@@ -217,22 +178,24 @@
         confidence once an action is taken, and suggest the ability (or inability) to interact with
         the element."
   >
-    <mm-text variant="body">
-      Keep things consistent. Consistent treatments for interaction feedback create recognizable
-      patterns. If an interaction produces different feedback across the Shopify admin, it
-      deteriorates the integrity of the pattern and risks confusing merchants.
-    </mm-text>
+    <div>
+      <mm-text variant="body">
+        Keep things consistent. Consistent treatments for interaction feedback create recognizable
+        patterns. If an interaction produces different feedback across the Shopify admin, it
+        deteriorates the integrity of the pattern and risks confusing merchants.
+      </mm-text>
 
-    <div class="" style="margin-top: 1.5rem">
-      <mm-text-pair
-        labelText="Global Error"
-        descriptionText="인터넷연결오류: toast + callout (blocking / detour)"
-      ></mm-text-pair>
-      <br />
-      <mm-text-pair
-        labelText="Local Error"
-        descriptionText="reload - refresh - redirect / result 컴포넌트 / inline error, callout error"
-      ></mm-text-pair>
+      <div class="" style="margin-top: 1.5rem">
+        <mm-text-pair
+          labelText="Global Error"
+          descriptionText="인터넷연결오류: toast + callout (blocking / detour)"
+        ></mm-text-pair>
+        <br />
+        <mm-text-pair
+          labelText="Local Error"
+          descriptionText="reload - refresh - redirect / result 컴포넌트 / inline error, callout error"
+        ></mm-text-pair>
+      </div>
     </div>
   </mm-component-section>
 
@@ -240,33 +203,35 @@
     title="Layout and structure"
     description="레이아웃과 구조는 콘텐츠의 우선순위를 정하고, 사용자가 콘텐츠를 인지하고 이해하는 데 도움을 줍니다."
   >
-    <mm-text-list
-      texts='[
-        "사용자의 화면 크기를 한정하지 마세요. 새로운 플랫폼이나 새로운 디바이스가 출시되더라도 빠르게 대응할 수 있어야 합니다. 특정 디바이스에 최적화하거나 종속되지 않고 환경에 구애받지 않는 일관된 경험과 인터페이스를 설계한다는 태도.",
-        "디자인 이론에 근거한 그리드 시스템은 디자이너에게만 유효하게 동작한다. 12칼럼 그리드는 사용자의 다양한 화면 크기에 대응하기 어렵다? 2~4개의 칼럼을 갖는 레이아웃 시스템이 필요할 수는 있으나, 엄격한 그리드 시스템은.",
-        "왜 디자이너들은 작업판의 크기 정의를 어려워 하는가? 375px 등의 고정된 가로 크기는 의미가 없다. 마찬가지로 디자인 툴에서 자동으로 말줄임표를 만든다는 식의 솔루션은 아무 문제도 해결할 수 없다. 말줄임표가 발생하면 레이블의 의미를 전달하지 못 하기 때문이다. 엄격한 writing 가이드가 유아이 툴의 자동화보다 중요하다.",
-        "MD3의 Responsive layout. TODO : 반응하는 레이어를 위한 규칙을 어떻게 정의하면 좋을까? 프레젠테이션 패턴. 섹션, 아티클 그리고 모달, 드롭다운 등의 컴포넌트도 작은 화면에서는 페이지 맥락이 될 수 있음을 고려합니다. 결국 모바일 퍼스트 foundation.",
-        "Use only universally recognized icons to represent actions or options.",
-        "addable / expandable, done / check / positive" "bold text를 clickable로 사용? (단락 더보기 등에서 사용되는 패턴)" "iOS에서 뒤로가기(이전 페이지)는 chevron."
-      ]'
-    ></mm-text-list>
+    <div>
+      <mm-text-list
+        texts='[
+          "사용자의 화면 크기를 한정하지 마세요. 새로운 플랫폼이나 새로운 디바이스가 출시되더라도 빠르게 대응할 수 있어야 합니다. 특정 디바이스에 최적화하거나 종속되지 않고 환경에 구애받지 않는 일관된 경험과 인터페이스를 설계한다는 태도.",
+          "디자인 이론에 근거한 그리드 시스템은 디자이너에게만 유효하게 동작한다. 12칼럼 그리드는 사용자의 다양한 화면 크기에 대응하기 어렵다? 2~4개의 칼럼을 갖는 레이아웃 시스템이 필요할 수는 있으나, 엄격한 그리드 시스템은.",
+          "왜 디자이너들은 작업판의 크기 정의를 어려워 하는가? 375px 등의 고정된 가로 크기는 의미가 없다. 마찬가지로 디자인 툴에서 자동으로 말줄임표를 만든다는 식의 솔루션은 아무 문제도 해결할 수 없다. 말줄임표가 발생하면 레이블의 의미를 전달하지 못 하기 때문이다. 엄격한 writing 가이드가 유아이 툴의 자동화보다 중요하다.",
+          "MD3의 Responsive layout. TODO : 반응하는 레이어를 위한 규칙을 어떻게 정의하면 좋을까? 프레젠테이션 패턴. 섹션, 아티클 그리고 모달, 드롭다운 등의 컴포넌트도 작은 화면에서는 페이지 맥락이 될 수 있음을 고려합니다. 결국 모바일 퍼스트 foundation.",
+          "Use only universally recognized icons to represent actions or options.",
+          "addable / expandable, done / check / positive" "bold text를 clickable로 사용? (단락 더보기 등에서 사용되는 패턴)" "iOS에서 뒤로가기(이전 페이지)는 chevron."
+        ]'
+      ></mm-text-list>
 
-    <mm-title-with-description
-      level="3"
-      title="페이지 모듈의 대비"
-      description="페이지의 맥락을 구분하기 위해 레이아웃 모듈이나 배경색의 대비를 활용할 수 있습니다. 컨테이너 너비(비밀번호찾기와 로그인/회원가입)와 배경색(설정, 글쓰기, 소개 등)."
-    ></mm-title-with-description>
+      <mm-title-with-description
+        level="3"
+        title="페이지 모듈의 대비"
+        description="페이지의 맥락을 구분하기 위해 레이아웃 모듈이나 배경색의 대비를 활용할 수 있습니다. 컨테이너 너비(비밀번호찾기와 로그인/회원가입)와 배경색(설정, 글쓰기, 소개 등)."
+      ></mm-title-with-description>
 
-    <br />
+      <br />
 
-    <mm-title-with-description
-      level="3"
-      title="4 칼럼 그리드"
-      description="페이지의 맥락을 구분하기 위해 레이아웃 모듈이나 배경색의 대비를 활용할 수 있습니다. 컨테이너 너비(비밀번호찾기와 로그인/회원가입)와 배경색(설정, 글쓰기, 소개 등)."
-    ></mm-title-with-description>
-    <mm-text variant="subhead">
-      목표. 우선순위. 중요한 문제에 집중. 비판적인 관점으로 정보 필터링.
-    </mm-text>
+      <mm-title-with-description
+        level="3"
+        title="4 칼럼 그리드"
+        description="페이지의 맥락을 구분하기 위해 레이아웃 모듈이나 배경색의 대비를 활용할 수 있습니다. 컨테이너 너비(비밀번호찾기와 로그인/회원가입)와 배경색(설정, 글쓰기, 소개 등)."
+      ></mm-title-with-description>
+      <mm-text variant="subhead">
+        목표. 우선순위. 중요한 문제에 집중. 비판적인 관점으로 정보 필터링.
+      </mm-text>
+    </div>
   </mm-component-section>
 
   <mm-component-section>
@@ -391,20 +356,39 @@
     }
   </style> -->
 
-  <section class="component-references">
-    <a
-      href="https://developer.apple.com/design/human-interface-guidelines/components/layout-and-organization/disclosure-controls"
-      target="_blank"
+  <mm-component-references>
+    <mm-link external href="https://developer.apple.com/documentation/swiftui/navigationstack">
+      swiftui navigationstack
+    </mm-link>
+    <mm-link
+      external
+      href="https://developer.apple.com/design/human-interface-guidelines/tab-views"
     >
-      disclosure-controls
-    </a>
-    <a href="https://developer.apple.com/kr/design/tips/" target="_blank">UI 디자인 기본 원칙</a>
-    <a href="https://m3.material.io/foundations/interaction-states" target="_blank"
-      >MD interaction-states</a
+      HIG tab views
+    </mm-link>
+    <mm-link
+      external
+      href="https://developer.apple.com/design/human-interface-guidelines/components/selection-and-input/segmented-controls/"
     >
-    <!-- https://material.io/design/interaction/states.html -->
-    <a href="https://simplicable.com/new/visual-information" target="_blank">Visual Information</a>
-  </section>
+      HIG Segmented controls
+    </mm-link>
+    <mm-link external href="https://material.io/components/tabs">MD Tabs</mm-link>
+    <mm-link external href="https://m3.material.io/components/top-app-bar/overview">
+      MD3 top app bar
+    </mm-link>
+    <mm-link external href="https://m2.material.io/components/bottom-navigation">
+      M2 Bottom Navigation
+    </mm-link>
+    <mm-link external href="https://m3.material.io/components/navigation-bar/overview">
+      M3 Navigation Bar
+    </mm-link>
+    <mm-link
+      external
+      href="https://developer.apple.com/design/human-interface-guidelines/components/navigation-and-search/tab-bars"
+    >
+      HIG Tab bars
+    </mm-link>
+  </mm-component-references>
 </main>
 
 <!-- <main class="page">

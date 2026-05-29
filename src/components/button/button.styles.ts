@@ -20,7 +20,7 @@ export const buttonStyles = css`
     --button-size: var(--size-medium); // button-height
 
     --button-padding-block: 0;
-    --button-padding-inline: var(--space-4);
+    --button-padding-inline: var(--space-3);
 
     --button-color: var(--color-background-subtle);
 

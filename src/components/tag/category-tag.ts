@@ -1,34 +1,21 @@
-// category-tag.ts
-
-import { LitElement, html } from 'lit'
+import { html, type PropertyValues } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-
-import './tag'
-
+import { Tag } from './tag'
 import { categoryToneMap, type Category } from './tag.styles'
 
 @customElement('mm-category-tag')
-export class CategoryTag extends LitElement {
-  /**
-   * domain semantic layer
-   */
+export class CategoryTag extends Tag {
+  @property({ type: String }) category: Category = 'design'
 
-  @property({ type: String })
-  category: Category = 'design'
+  willUpdate(changedProperties: PropertyValues<this>) {
+    super.willUpdate(changedProperties)
+    if (changedProperties.has('category')) {
+      this.tone = categoryToneMap[this.category]
+    }
+  }
 
-  @property({ type: String })
-  datetime?: string
-
-  render() {
-    const tone = categoryToneMap[this.category]
-
-    return html`
-      <mm-tag tone=${tone} .datetime=${this.datetime}>
-        <slot name="icon" slot="icon"></slot>
-
-        <slot> ${this.category} </slot>
-      </mm-tag>
-    `
+  protected override renderDefaultSlot() {
+    return html`<slot>${this.category}</slot>`
   }
 }
 

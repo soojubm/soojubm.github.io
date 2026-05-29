@@ -22,14 +22,13 @@
     ></div>
   </section>
 
-  <section class="component-props">
-    <dl>
-      <dt>size</dt>
-      <dd>'large' | 'medium'</dd>
-      <dt>text</dt>
-      <dd>string</dd>
-    </dl>
-  </section>
+  <mm-component-props>
+    <mm-prop name="src" type="string"></mm-prop>
+    <mm-prop name="alt" type="string"></mm-prop>
+    <mm-prop name="ratio" type="'1:1' | '16:9' | '4:3' = '1:1'"></mm-prop>
+    <mm-prop name="clickable" type="boolean"></mm-prop>
+    <mm-prop name="@click" type="(e: MouseEvent) => void" kind="event"></mm-prop>
+  </mm-component-props>
 
   <section class="component-guide">
     <section class="feature columns-2">

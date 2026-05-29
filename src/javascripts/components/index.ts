@@ -1,22 +1,16 @@
 // 이 코드는 “값을 가져오기 위한 import”가 아니라 “부작용(side-effect)을 실행시키기 위한 import”다.
 import '../../components/icon/icon'
-import '../../components/avatar/avatar'
+
 import '../../components/link/link'
 import '../../components/textfield/textfield'
 import '../../components/textfield/searchfield'
 import '../../components/textfield/textarea'
-import '../../components/tablist/tablist'
-import '../../components/tab/tab'
 import '../../components/tabpanel/tabpanel'
 import '../../components/tooltip/tooltip'
 import '../../components/callout/callout'
 import '../../components/menuitem/menuitem'
 import '../../components/group/group'
 import '../../components/row/row'
-import '../../components/entity/entity'
-import '../../components/text/text'
-import '../../components/text/textGroup'
-import '../../components/text/textList'
 import '../../components/titlebar/titlebar'
 import '../../components/separator/separator'
 import '../../components/surface/surface'
@@ -26,7 +20,6 @@ import '../../components/feature/feature'
 import '../../components/keyvalue/keyvalue'
 import '../../components/textfield/dropdown'
 import '../../components/title-with-description/index'
-import '../../components/component-section'
 import '../../components/sheet/sheet'
 import '../../components/sheet/sheet-header'
 import '../../components/sheet/sheet-body'
@@ -35,6 +28,12 @@ import '../../components/list-row'
 import '../../components/option-row'
 
 import '../../components/thumbnail/thumbnail'
+
+import '../../components/text/text'
+import '../../components/text/paragraph'
+import '../../components/text/textGroup'
+import '../../components/text/page-title'
+import '../../components/text/textList'
 
 import '../../components/button/button'
 import '../../components/button/icon-button'
@@ -60,9 +59,18 @@ import '../../components/menuitem/menu-item-checkbox'
 import '../../components/menuitem/menu-item-radio'
 import '../../components/menuitem/menu-item-radio-group'
 
-import '../../components/component-props/'
+import '../../components/avatar/avatar'
+import '../../components/avatar/user-snippet'
 
-import '../../components/app-sidebar'
+// domains
+import '../../components/domains/app-sidebar'
+import '../../components/domains/component-props'
+import '../../components/domains/component-section'
+import '../../components/domains/component-references'
+
+import '../../components/domains/prompt-input'
+
+import '../../components/tabs'
 
 // 👉 “이 파일은 module이다”라고 명시
 

@@ -5,36 +5,81 @@
   ></mm-title-with-description>
 
   <section class="component-example">
-    <!-- <mm-tablist variant="primary">
-      <mm-tab slot="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" tabindex="0">
-        첫번째 탭
-      </mm-tab>
-      <mm-tab slot="tab" aria-controls="panel-2" id="tab-2" tabindex="-1">두번째 탭</mm-tab>
-      <i slot="indicator" class="tablist-indicator"></i>
-    </mm-tablist> -->
-    <mm-tablist>
-      <mm-tab slot="tab">소개</mm-tab>
-      <mm-tab slot="tab">갤러리</mm-tab>
-      <mm-tab slot="tab">문의하기</mm-tab>
-      <i slot="indicator" class="tablist-indicator"></i>
+    <mm-tabs value="menu1" variant="line">
+      <mm-tab-list>
+        <mm-tab value="menu1">첫 번째 메뉴</mm-tab>
+        <mm-tab value="menu2">두 번째 메뉴</mm-tab>
+        <mm-tab value="menu3">세 번째 메뉴</mm-tab>
+      </mm-tab-list>
 
-      <div slot="panel">
-        <h1>서비스 소개</h1>
-        <p>여기는 <strong>풍부한 HTML</strong> 컨텐츠가 들어갈 수 있습니다.</p>
-      </div>
+      <mm-tab-panel value="menu1">🍎 1번 콘텐츠 영역입니다.</mm-tab-panel>
+      <mm-tab-panel value="menu2">🍌 2번 콘텐츠 영역입니다.</mm-tab-panel>
+      <mm-tab-panel value="menu3">🍇 3번 콘텐츠 영역입니다.</mm-tab-panel>
+    </mm-tabs>
 
-      <div slot="panel">
-        <img src="gallery.jpg" alt="이미지도 가능" />
-        <my-custom-component></my-custom-component>
-      </div>
+    <mm-tabs value="daily" variant="pill">
+      <mm-tab-list>
+        <mm-tab value="daily">일간</mm-tab>
+        <mm-tab value="weekly">주간</mm-tab>
+        <mm-tab value="monthly">월간</mm-tab>
+      </mm-tab-list>
 
-      <div slot="panel">
-        <form>
-          <input type="text" placeholder="이름을 입력하세요" />
-          <button>전송</button>
-        </form>
-      </div>
-    </mm-tablist>
+      <mm-tab-panel value="daily">📅 오늘 생성된 데이터...</mm-tab-panel>
+      <mm-tab-panel value="weekly">🗓️ 이번 주 누적 데이터...</mm-tab-panel>
+      <mm-tab-panel value="monthly">📊 이번 달 정산 데이터...</mm-tab-panel>
+    </mm-tabs>
+
+    <style>
+      .bottombar {
+        display: flex;
+        justify-content: space-around;
+        padding: var(--space-1) 0 calc(constant(safe-area-inset-bottom) + var(--space-2));
+        padding: var(--space-2) 0 calc(env(safe-area-inset-bottom) + var(--space-2));
+        border-top: var(--border);
+        background: var(--color-background);
+      }
+
+      .bottombar-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+      }
+
+      .bottombar-item-icon {
+        margin: 0 auto;
+        background: none;
+      }
+
+      .bottombar-item em {
+        display: flex;
+        width: 4px;
+        height: 4px;
+        background: var(--red800);
+        border-radius: var(--radius);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(var(--space-3), -1.125rem);
+      }
+    </style>
+
+    <nav class="bottombar">
+      <a href="#" class="bottombar-item is-active">
+        <mm-avatar variant="tertiary" icon="air-conditioner"> </mm-avatar>
+        <mm-text variant="caption">홈</mm-text>
+        <em></em>
+      </a>
+      <a href="#" class="bottombar-item">
+        <mm-avatar variant="tertiary" icon="air-conditioner"> </mm-avatar>
+        <mm-text variant="caption">카테고리</mm-text>
+      </a>
+      <a href="#" class="bottombar-item">
+        <mm-avatar variant="tertiary" icon="air-conditioner"> </mm-avatar>
+        <mm-text variant="caption">설정</mm-text>
+      </a>
+    </nav>
+    <!-- // iOS isTranslucent: Bool -->
 
     <div
       class="tabpanel"
@@ -48,16 +93,13 @@
     </div>
   </section>
 
-  <section class="component-props">
-    <!-- <mm-text variant="subhead">Props</mm-text> -->
-    <dl>
-      <dt>tablist</dt>
-      <dd><del>OptionType[]</del>TabType[]</dd>
-      <dt>tabPanel</dt>
-      <dd>React.Node</dd>
-      <!-- <dt>indicator (active bar)</dt> -->
-    </dl>
-  </section>
+  <mm-component-props>
+    <mm-prop name="src" type="string"></mm-prop>
+    <mm-prop name="alt" type="string"></mm-prop>
+    <mm-prop name="ratio" type="'1:1' | '16:9' | '4:3' = '1:1'"></mm-prop>
+    <mm-prop name="clickable" type="boolean"></mm-prop>
+    <mm-prop name="@click" type="(e: MouseEvent) => void" kind="event"></mm-prop>
+  </mm-component-props>
 
   <section class="component-guide">
     <section class="feature columns-2">
@@ -92,135 +134,60 @@
           "글로벌 네비게이션 패턴인 햄버거 메뉴와 탭(바텀네비게이션, 탭바)을 함께 사용할 수 있는가?",
           "탭의 가로 스크롤(+ MDI). 탭의 최대 갯수 제한.",
           "탭의 중첩. 페이지에서 수행하는 과업 중심 플로우 설계. 중첩을 허용한다면 탭의 중첩 패턴을 정의해야 함. Material 3의 primary tabs / secondary tabs 분류 등 참고. 또는 네이버 쇼핑의 4단계 5단계 탭.",
-          "flutter. Scaffold - AppBar - bottom: TabBar - tabs - Tab / Scaffold - body - TabBarView"
+          "flutter. Scaffold - AppBar - bottom: TabBar - tabs - Tab / Scaffold - body - TabBarView",
+          "우측 actions. 갯수 제한. md에서 최대 3개. hamberger case."
         ]'
     >
     </mm-text-list>
   </section>
 
-  <section class="component-references">
-    <mm-text variant="subhead" hidden>References</mm-text>
-    <a href="https://developer.apple.com/documentation/swiftui/navigationstack">
+  <mm-separator></mm-separator>
+  <mm-titlebar label="수줍이님">
+    <mm-group slot="action">
+      <mm-button>저장</mm-button>
+      <mm-icon-button variant="navigator" icon="more-vert"></mm-icon-button>
+    </mm-group>
+  </mm-titlebar>
+
+  <mm-component-props>
+    <mm-prop name="src" type="string"></mm-prop>
+    <mm-prop name="alt" type="string"></mm-prop>
+    <mm-prop name="ratio" type="'1:1' | '16:9' | '4:3' = '1:1'"></mm-prop>
+    <mm-prop name="clickable" type="boolean"></mm-prop>
+    <mm-prop name="@click" type="(e: MouseEvent) => void" kind="event"></mm-prop>
+  </mm-component-props>
+
+  <mm-component-references>
+    <mm-link external href="https://developer.apple.com/documentation/swiftui/navigationstack">
       swiftui navigationstack
-    </a>
-    <a
+    </mm-link>
+    <mm-link
+      external
       href="https://developer.apple.com/design/human-interface-guidelines/tab-views"
-      target="_blank"
     >
       HIG tab views
-    </a>
-    <a
+    </mm-link>
+    <mm-link
+      external
       href="https://developer.apple.com/design/human-interface-guidelines/components/selection-and-input/segmented-controls/"
-      target="_blank"
     >
       HIG Segmented controls
-    </a>
-    <a href="https://material.io/components/tabs" target="_blank">MD Tabs</a>
-
-    <a href="https://m3.material.io/components/top-app-bar/overview" target="_blank">
+    </mm-link>
+    <mm-link external href="https://material.io/components/tabs">MD Tabs</mm-link>
+    <mm-link external href="https://m3.material.io/components/top-app-bar/overview">
       MD3 top app bar
-    </a>
-    <a href="https://m2.material.io/components/bottom-navigation" target="_blank">
+    </mm-link>
+    <mm-link external href="https://m2.material.io/components/bottom-navigation">
       M2 Bottom Navigation
-    </a>
-    <a href="https://m3.material.io/components/navigation-bar/overview" target="_blank">
+    </mm-link>
+    <mm-link external href="https://m3.material.io/components/navigation-bar/overview">
       M3 Navigation Bar
-    </a>
-    <a
+    </mm-link>
+    <mm-link
+      external
       href="https://developer.apple.com/design/human-interface-guidelines/components/navigation-and-search/tab-bars"
-      target="_blank"
     >
       HIG Tab bars
-    </a>
-  </section>
+    </mm-link>
+  </mm-component-references>
 </main>
-
-<style>
-  .bottombar {
-    display: flex;
-    justify-content: space-around;
-    padding: var(--space-1) 0 calc(constant(safe-area-inset-bottom) + var(--space-2));
-    padding: var(--space-2) 0 calc(env(safe-area-inset-bottom) + var(--space-2));
-    border-top: var(--border);
-    background: var(--color-background);
-  }
-
-  .bottombar-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 10px;
-    color: var(--color-foreground);
-    position: relative;
-  }
-
-  .bottombar-item-icon {
-    margin: 0 auto;
-    background: none;
-  }
-
-  .bottombar-item em {
-    display: flex;
-    width: 4px;
-    height: 4px;
-    background: var(--red800);
-    border-radius: var(--radius);
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(var(--space-3), -1.125rem);
-  }
-  .bottombar-item.is-active {
-  }
-</style>
-
-<nav class="bottombar">
-  <a href="#" class="bottombar-item is-active">
-    <mm-avatar variant="tertiary" icon="air-conditioner"> </mm-avatar>
-    <span class="bottombar-item-label">홈</span>
-    <em></em>
-  </a>
-  <a href="#" class="bottombar-item">
-    <mm-avatar variant="tertiary" icon="air-conditioner"> </mm-avatar>
-    <span class="bottombar-item-label">카테고리</span>
-  </a>
-  <a href="#" class="bottombar-item">
-    <mm-avatar variant="tertiary" icon="air-conditioner"> </mm-avatar>
-    <span class="bottombar-item-label">설정</span>
-  </a>
-</nav>
-<mm-separator></mm-separator>
-<mm-titlebar label="수줍이님">
-  <mm-group slot="action">
-    <mm-button>저장</mm-button>
-    <mm-icon-button variant="navigator" icon="more-vert"></mm-icon-button>
-  </mm-group>
-</mm-titlebar>
-
-<section class="component-props">
-  <mm-text variant="subhead">Props</mm-text>
-  <dl>
-    <dt>title<attr>?</attr></dt>
-    <dd>string</dd>
-    <dt>backType?<attr>?</attr></dt>
-    <dd>'close' | 'back'</dd>
-    <dt>actions</dt>
-    <dd>React.Node</dd>
-    <dt>onNext<attr>?</attr></dt>
-    <dd>() => void</dd>
-    <dt>onComplete(?) / onCancel<attr>?</attr></dt>
-    <dd>() => void</dd>
-  </dl>
-</section>
-
-<section class="component-guide">
-  <mm-text-group>
-    <mm-text variant="subhead">Editorial</mm-text>
-    <mm-text variant="body">
-      bottom navigation의 label은 예외적으로 10px을 사용한다. 토큰과 텍스트 컴포넌트에서 정의하고
-      있지 않음.
-    </mm-text>
-    <mm-text variant="body"> 우측 actions. 갯수 제한. md에서 최대 3개. hamberger case. </mm-text>
-  </mm-text-group>
-</section>
-<!-- // iOS isTranslucent: Bool -->

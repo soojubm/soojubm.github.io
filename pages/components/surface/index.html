@@ -46,16 +46,13 @@
     </div>
   </section>
 
-  <section class="component-props">
-    <dl>
-      <dt>variant?</dt>
-      <dd>'flat ? outlined' | 'elevated' | 'plain? soft?' | 'white', 'transparent'</dd>
-      <dt>size</dt>
-      <dd>'medium' | 'small'</dd>
-      <dt>children</dt>
-      <dd>React.Node</dd>
-    </dl>
-  </section>
+  <mm-component-props>
+    <mm-prop name="src" type="string"></mm-prop>
+    <mm-prop name="alt" type="string"></mm-prop>
+    <mm-prop name="ratio" type="'1:1' | '16:9' | '4:3' = '1:1'"></mm-prop>
+    <mm-prop name="clickable" type="boolean"></mm-prop>
+    <mm-prop name="@click" type="(e: MouseEvent) => void" kind="event"></mm-prop>
+  </mm-component-props>
 
   <!-- <div class="feature columns">
       <mm-feature icon="box-iso" titleText="컨테이너" description="ㅅㄷㄴㅅ"></mm-feature>
@@ -153,8 +150,8 @@
       <mm-text variant="subhead">Standard</mm-text>
       <mm-text variant="body"> 대법원장은 국회의 동의를 얻어 대통령이 임명한다. </mm-text>
       <div style="margin: var(--space-3) 0 1.5rem 0">
-        <mm-text variant="title">₩ 6,800</mm-text>
-        <mm-text variant="subheading">한 달에 한 번</mm-text>
+        <mm-text size="32" weight="bold">₩ 6,800</mm-text>
+        <mm-text color="var(--color-foreground-light)">한 달에 한 번</mm-text>
       </div>
       <mm-text-list
         texts='[
@@ -209,13 +206,9 @@
           </mm-text>
           <mm-text-list
             texts='[
-              "원활한 피드 탐색 경험을 위해 모든 피드를 보여주지 않는 것이 좋을 수 있다. 너무 많은 피드 콘텐츠.",
-              "피드가 노출되는 이유를 알려줄 수 있다. 또한 사용자는 보고 싶은 피드와 보고 싶지 않은 피드를 결정할 권리가 있다.",
+              "원활한 피드 탐색 경험을 위해 모든 피드를 보여주지 않는 것이 좋을 수 있다. 피드가 노출되는 이유를 알려줄 수 있다. 또한 사용자는 보고 싶은 피드와 보고 싶지 않은 피드를 결정할 권리가 있다.",
               "글줄의 길이를 상대적으로 좁게 짜는 경향이 있다.",
-              "피드의 상세 페이지.",
-              "리액션 버튼과 리액션 수치를 각각 제공할 수 있고 따로 제공할 수 있다. 리액션한 사용자 목록을 어떻게 보여줄 것인가. 중복 리액션과 횟수 등 기능 정의. 리액션 => 알림. restful - put과 함께 공부해보기",
-              "시의성이 강조되는 서비스이거나 현안을 다루는 서비스라면 스텟을 실시간으로 갱신할 수 있다.",
-              "피드를 작성할 때 하나 이상의 이미지를 포함할 수 있다면 하나 이상의 이미지를 볼 수 있는 인터페이스가 필요하다."
+              "리액션 버튼과 리액션 수치를 각각 제공할 수 있고 따로 제공할 수 있다. 리액션한 사용자 목록을 어떻게 보여줄 것인가. 중복 리액션과 횟수 등 기능 정의. 리액션 => 알림."
               ]'
           >
           </mm-text-list>

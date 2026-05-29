@@ -107,6 +107,7 @@ export const textfieldStyles = css`
     color: var(--color-foreground-light);
   }
 
+  textarea,
   input {
     display: block;
     width: 100%;

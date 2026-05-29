@@ -86,33 +86,13 @@
   <!-- <p>unit, choose/enter</p> -->
   <!-- <abbr title="필수입력">*</abbr> -->
 
-  <section class="component-props">
-    <mm-text variant="subhead">Props</mm-text>
-    <dl>
-      <dt><del>type - to be deprecated</del></dt>
-      <dd><del>HTMLInputTypeAttribute? | "text"</del></dd>
-      <dt>name</dt>
-      <dd>string</dd>
-      <dt>placeholder</dt>
-      <dd>string</dd>
-      <dt>label</dt>
-      <dd>string</dd>
-      <dt>value</dt>
-      <dd>string</dd>
-      <dt>isDisabled<attr>?</attr></dt>
-      <dd>boolean</dd>
-      <dt>isReadOnly<attr>?</attr></dt>
-      <dd>boolean</dd>
-      <dt>isAutoFocus<attr>?</attr></dt>
-      <dd>boolean</dd>
-      <dt>onChange<attr>?</attr></dt>
-      <dd>(event: React.ChangeEvent&lt;HTMLInputElement&gt;) => void</dd>
-      <dt>onKeyDown<attr>?</attr></dt>
-      <dd>(event: KeyboardEvent&lt;HTMLInputElement&gt;) => void</dd>
-      <dt>onFocus<attr>?</attr></dt>
-      <dd>(event: React.FocusEvent&lt;HTMLInputElement&gt;) => void</dd>
-    </dl>
-  </section>
+  <mm-component-props>
+    <mm-prop name="src" type="string"></mm-prop>
+    <mm-prop name="alt" type="string"></mm-prop>
+    <mm-prop name="ratio" type="'1:1' | '16:9' | '4:3' = '1:1'"></mm-prop>
+    <mm-prop name="clickable" type="boolean"></mm-prop>
+    <mm-prop name="@click" type="(e: MouseEvent) => void" kind="event"></mm-prop>
+  </mm-component-props>
 
   <section class="component-guide">
     <section class="feature columns-2">
@@ -487,14 +467,39 @@
     </form>
   </mm-component-section>
 
-  <aside class="component-references">
-    <mm-text variant="subhead">References</mm-text>
-    <mm-link
-      href="https://support.google.com/accounts/answer/32040?visit_id=637702064644854938-965259796&p=pw_dont_reuse&hl=ko&rd=1"
-    >
-      구글의 비밀번호 만들기 팁꾸
+  <mm-component-references>
+    <mm-link external href="https://developer.apple.com/documentation/swiftui/navigationstack">
+      swiftui navigationstack
     </mm-link>
-  </aside>
+    <mm-link
+      external
+      href="https://developer.apple.com/design/human-interface-guidelines/tab-views"
+    >
+      HIG tab views
+    </mm-link>
+    <mm-link
+      external
+      href="https://developer.apple.com/design/human-interface-guidelines/components/selection-and-input/segmented-controls/"
+    >
+      HIG Segmented controls
+    </mm-link>
+    <mm-link external href="https://material.io/components/tabs">MD Tabs</mm-link>
+    <mm-link external href="https://m3.material.io/components/top-app-bar/overview">
+      MD3 top app bar
+    </mm-link>
+    <mm-link external href="https://m2.material.io/components/bottom-navigation">
+      M2 Bottom Navigation
+    </mm-link>
+    <mm-link external href="https://m3.material.io/components/navigation-bar/overview">
+      M3 Navigation Bar
+    </mm-link>
+    <mm-link
+      external
+      href="https://developer.apple.com/design/human-interface-guidelines/components/navigation-and-search/tab-bars"
+    >
+      HIG Tab bars
+    </mm-link>
+  </mm-component-references>
 
   <!-- <form action="">
 

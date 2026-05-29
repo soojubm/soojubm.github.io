@@ -17,21 +17,13 @@
     <mm-switch name="newsletter" checked disabled>Receive weekly newsletter</mm-switch>
   </section>
 
-  <section class="component-props">
-    <mm-text variant="subhead">Props</mm-text>
-    <dl>
-      <dt>label?</dt>
-      <dd>string</dd>
-      <dt>name</dt>
-      <dd>string</dd>
-      <dt>checked</dt>
-      <dd>boolean</dd>
-      <dt>isDisabled<attr>?</attr></dt>
-      <dd>boolean</dd>
-      <dt>onChange</dt>
-      <dd>(event: React.ChangeEvent&lt;HTMLInputElement&gt;) => void</dd>
-    </dl>
-  </section>
+  <mm-component-props>
+    <mm-prop name="src" type="string"></mm-prop>
+    <mm-prop name="alt" type="string"></mm-prop>
+    <mm-prop name="ratio" type="'1:1' | '16:9' | '4:3' = '1:1'"></mm-prop>
+    <mm-prop name="clickable" type="boolean"></mm-prop>
+    <mm-prop name="@click" type="(e: MouseEvent) => void" kind="event"></mm-prop>
+  </mm-component-props>
   <section class="component-guide">
     <section class="feature columns-2">
       <mm-feature

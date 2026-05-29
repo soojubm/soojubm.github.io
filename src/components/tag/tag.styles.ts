@@ -1,5 +1,3 @@
-// tag.styles.ts
-
 import { css, unsafeCSS } from 'lit'
 
 /**
@@ -11,9 +9,9 @@ import { css, unsafeCSS } from 'lit'
 
 export const tagToneStyles = {
   gray: {
-    background: '#f3f4f6',
-    color: '#374151',
-    borderColor: '#e5e7eb',
+    background: 'var(--color-background-subtle)',
+    color: 'var(--color-foreground)',
+    borderColor: 'var(--color-border)',
   },
 
   green: {

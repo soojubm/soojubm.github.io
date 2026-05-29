@@ -19,6 +19,7 @@ class Dropdown extends LitElement {
       position: relative;
       width: 100%;
     }
+
     .dropdown-button {
       display: flex;
       justify-content: space-between;
@@ -32,27 +33,52 @@ class Dropdown extends LitElement {
       text-align: left;
       font-family: inherit;
     }
+
     .dropdown-button[aria-expanded='true'] mm-icon {
       transform: rotate(180deg);
     }
+
+    .dropdown-button mm-icon {
+      transition: transform 160ms ease;
+    }
+
     .dropdown-list {
-      display: none;
-      max-height: 200px;
-      overflow-y: auto;
-      padding: var(--space-1);
-      border: var(--border-stronger);
-      border-radius: var(--radius);
-      border-top: none;
-      background-color: var(--color-background);
-      box-shadow: var(--shadow);
       position: absolute;
-      top: 100%;
+      top: calc(100% + 4px);
       left: 0;
       right: 0;
       z-index: 10;
+
+      max-height: 200px;
+      overflow-y: auto;
+      padding: var(--space-1);
+
+      border: var(--border-stronger);
+      border-radius: var(--radius);
+      background-color: var(--color-background);
+      box-shadow: var(--shadow);
+
+      /* 초기 상태 */
+      opacity: 0;
+      transform: translateY(-4px) scale(0.98);
+      transform-origin: top center;
+
+      visibility: hidden;
+      pointer-events: none;
+
+      transition: opacity 120ms ease, transform 180ms cubic-bezier(0.2, 0.8, 0.2, 1),
+        visibility 0s linear 180ms;
     }
+
     .dropdown-list.open {
-      display: block;
+      opacity: 1;
+      transform: translateY(0) scale(1);
+
+      visibility: visible;
+      pointer-events: auto;
+
+      transition: opacity 120ms ease, transform 220ms cubic-bezier(0.18, 1.25, 0.4, 1),
+        visibility 0s;
     }
   `
 
@@ -118,7 +144,7 @@ class Dropdown extends LitElement {
           @click="${this.toggleOpen}"
         >
           ${this.selectedLabel}
-          <mm-icon name="nav-arrow-down" size="small"></mm-icon>
+          <mm-icon name="nav-arrow-down"></mm-icon>
         </button>
         <div class="dropdown-list ${this.isOpen ? 'open' : ''}" role="menu">
           ${this.options.map(option => {

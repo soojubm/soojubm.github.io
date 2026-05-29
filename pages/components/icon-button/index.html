@@ -26,26 +26,20 @@
       <mm-icon-button variant="navigator" icon="arrow-right" color="gold"></mm-icon-button>
     </mm-group>
   </section>
-  <section class="component-props">
-    <dl>
-      <dt>variant</dt>
-      <dd>'cta' | 'action' | 'flow'</dd>
-      <dt>name</dt>
-      <dd>iconNameType</dd>
-      <dt>size</dt>
-      <dd>'small' | 'medium'</dd>
-      <dt>ariaLabel</dt>
-      <dd>string</dd>
-      <dt>onClick</dt>
-      <dd>event:(React.MouseEvent&lt;HTMLButtonElement&gt;) => void</dd>
-    </dl>
-  </section>
+  <mm-component-props>
+    <mm-prop name="src" type="string"></mm-prop>
+    <mm-prop name="alt" type="string"></mm-prop>
+    <mm-prop name="ratio" type="'1:1' | '16:9' | '4:3' = '1:1'"></mm-prop>
+    <mm-prop name="clickable" type="boolean"></mm-prop>
+    <mm-prop name="@click" type="(e: MouseEvent) => void" kind="event"></mm-prop>
+  </mm-component-props>
 
   <section class="component-guide">
-    <mm-text variant="body"
-      >Toggled states. Buttons can swap icons based on data states. There are several icons within
-      our library that have a “Filled” counterpart to indicate whether a state is toggled on. The
-      “Outlined” version indicates it is toggled off.
+    <mm-text variant="body">
+      Toggled states. Buttons can swap icons based on data states.
+      <br />
+      There are several icons within our library that have a “Filled” counterpart to indicate
+      whether a state is toggled on. The “Outlined” version indicates it is toggled off.
     </mm-text>
   </section>
 

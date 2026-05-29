@@ -1,34 +1,21 @@
-// status-tag.ts
-
-import { LitElement, html } from 'lit'
+import { html, type PropertyValues } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-
-import './tag'
-
+import { Tag } from './tag'
 import { statusToneMap, type StatusVariant } from './tag.styles'
 
 @customElement('mm-status-tag')
-export class StatusTag extends LitElement {
-  /**
-   * semantic status layer
-   */
+export class StatusTag extends Tag {
+  @property({ type: String }) variant: StatusVariant = 'neutral'
 
-  @property({ type: String })
-  variant: StatusVariant = 'neutral'
+  willUpdate(changedProperties: PropertyValues<this>) {
+    super.willUpdate(changedProperties)
+    if (changedProperties.has('variant')) {
+      this.tone = statusToneMap[this.variant]
+    }
+  }
 
-  @property({ type: String })
-  datetime?: string
-
-  render() {
-    const tone = statusToneMap[this.variant]
-
-    return html`
-      <mm-tag tone=${tone} .datetime=${this.datetime}>
-        <slot name="icon" slot="icon"></slot>
-
-        <slot> ${this.variant} </slot>
-      </mm-tag>
-    `
+  protected override renderDefaultSlot() {
+    return html`<slot>${this.variant}</slot>`
   }
 }
 

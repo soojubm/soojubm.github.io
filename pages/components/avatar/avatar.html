@@ -21,21 +21,13 @@
     </mm-group>
   </section>
 
-  <section class="component-props">
-    <mm-text variant="subhead">interface Props</mm-text>
-    <dl>
-      <dt>variant</dt>
-      <dd>'primary' | 'secondary' | 'tertiary'</dd>
-      <dt>size</dt>
-      <dd>'huge' | 'large' | 'medium' | 'small'</dd>
-      <dt>src<abbr>?</abbr></dt>
-      <dd>string</dd>
-      <dt>icon<abbr>?</abbr></dt>
-      <dd>iconNameType?</dd>
-      <!-- <dt>badge<abbr>?</abbr></dt>
-      <dd>'unread' | 'new' | 'live'</dd> -->
-    </dl>
-  </section>
+  <mm-component-props>
+    <mm-prop name="src" type="string"></mm-prop>
+    <mm-prop name="alt" type="string"></mm-prop>
+    <mm-prop name="ratio" type="'1:1' | '16:9' | '4:3' = '1:1'"></mm-prop>
+    <mm-prop name="clickable" type="boolean"></mm-prop>
+    <mm-prop name="@click" type="(e: MouseEvent) => void" kind="event"></mm-prop>
+  </mm-component-props>
 
   <section class="component-guide">
     <section class="feature columns-2">
@@ -93,86 +85,36 @@
     </mm-group>
   </mm-component-section>
 
-  <mm-component-section
-    title="EntityItem"
-    description="추상 레벨, medium, small 사이즈는 최대 한 줄의 텍스트만 가질 수 있다. 디스크립션이 필요하면 large, huge 사이즈를 사용한다."
-  >
-    <div>
-      <div style="display: flex; gap: var(--space-3)">
-        <mm-avatar size="huge" src="/src/images/springsteen.jpg"> </mm-avatar>
+  <!-- <div>
+    <div style="display: flex; gap: 1rem">
+      <mm-avatar size="huge" variant="secondary"></mm-avatar>
+      <div>
         <div>
-          <mm-text variant="subhead">제목 영역</mm-text>
-          <mm-text variant="body">Facebook 안팎의 모든 사람</mm-text>
-          <mm-group variant="chip">
-            <mm-tag>React</mm-tag>
-            <mm-tag>Java</mm-tag>
-            <mm-tag>Phython</mm-tag>
-          </mm-group>
+          <mm-text variant="subheading">Top User</mm-text>
+          <mm-text variant="subhead">수줍이</mm-text>
+        </div>
+        <div style="margin-top: var(--space-3)">
+          <mm-text variant="subheading">Daily Purchase</mm-text>
+          <mm-text variant="subhead">10 Items</mm-text>
         </div>
       </div>
-      <mm-entity
-        class="greeting"
-        label="windows-emoji 👋"
-        description="Tender is the night"
-        description2="description area2."
-        data-temp="이 패턴에서 아바타는 시각 정보가 아니라 링크로 사용. hashtag 등 사실상 page head로 사용될 수 있는."
-      >
-        <mm-avatar slot="avatar" variant="secondary" size="huge">#</mm-avatar>
-      </mm-entity>
     </div>
-  </mm-component-section>
-
-  <mm-component-section title="UserCard" description="구체 레벨.">
-    <div>
-      <mm-surface variant="flat">
-        <div style="display: flex; gap: 1rem">
-          <mm-avatar size="huge" variant="secondary"></mm-avatar>
-          <div>
-            <div>
-              <mm-text variant="subheading">Top User</mm-text>
-              <mm-text variant="subhead">수줍이</mm-text>
-            </div>
-            <div style="margin-top: var(--space-3)">
-              <mm-text variant="subheading">Daily Purchase</mm-text>
-              <mm-text variant="subhead">10 Items</mm-text>
-            </div>
-          </div>
-        </div>
-        <mm-separator></mm-separator>
-        <mm-keyvalue key="Total New Users" value="5.9K" alignment="vertical"></mm-keyvalue>
-        <!-- <mm-tag>8.2% 상승</mm-tag> -->
-        <mm-surface variant="elevated" size="small" style="margin: var(--space-3) 0 0">
-          <mm-group variant="avatar">
-            <mm-avatar size="small"></mm-avatar>
-            <mm-avatar size="small"></mm-avatar>
-            <mm-avatar size="small"></mm-avatar>
-            <mm-avatar size="small"></mm-avatar>
-            <mm-text style="margin-left: var(--space-2)"> Followed by 수줍이 외 4명 </mm-text>
-          </mm-group>
-        </mm-surface>
-        <!-- <mm-text class="mutiual"> 내가 팔로우하는 사용자 중에는 팔로워가 없습니다. (twitter) </mm-text> -->
-      </mm-surface>
-      <br />
-      <mm-surface>
-        <mm-menuitem label="수줍이" description="Youtube subscriber">
-          <mm-avatar slot="avatar"></mm-avatar>
-        </mm-menuitem>
-        <div style="margin: var(--space-2) 0 0">
-          <mm-text variant="body">
-            Sometimes at night, I find myself behind the computer. When I finally blink, a mess of
-            code is drawing random structures on the screen. I spend the rest of the night staring.
-          </mm-text>
-        </div>
-        <div style="margin-block: var(--space-3)">
-          <mm-group variant="button">
-            <mm-keyvalue key="팔로워" value="62" alignment="inline"></mm-keyvalue>
-            <mm-keyvalue key="팔로잉" value="8" alignment="inline"></mm-keyvalue>
-          </mm-group>
-        </div>
-        <mm-surface variant="tile" size="small">
-          <mm-text>🥺 수줍이님을 팔로우하고 있는 친구가 없습니다.</mm-text>
-        </mm-surface>
-      </mm-surface>
+    <mm-separator></mm-separator>
+    <div style="display: flex; gap: var(--space-2)">
+      <mm-keyvalue key="Total New Users" value="5.9K" alignment="vertical"></mm-keyvalue>
+      <mm-tag>8.2% 상승</mm-tag>
     </div>
-  </mm-component-section>
+    <mm-surface variant="elevated" size="small">
+      <mm-group variant="avatar">
+        <mm-avatar size="small"></mm-avatar>
+        <mm-avatar size="small"></mm-avatar>
+        <mm-avatar size="small"></mm-avatar>
+        <mm-text style="margin-left: var(--space-2)"> Followed by 수줍이 외 4명 </mm-text>
+      </mm-group>
+    </mm-surface>
+    
+    <mm-text class="mutiual"> 내가 팔로우하는 사용자 중에는 팔로워가 없습니다. (twitter) </mm-text>
+      <mm-surface variant="tile" size="small">
+    <mm-text>🥺 수줍이님을 팔로우하고 있는 친구가 없습니다.</mm-text>
+  </div> -->
 </main>

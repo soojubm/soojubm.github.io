@@ -17,8 +17,8 @@ class SearchField extends LitElement {
         <mm-icon class="searchfield-prefix" name="search"></mm-icon>
 
         <input
-          class="reset-input textfield-input searchfield-input"
           type="search"
+          class="reset-input textfield-input searchfield-input"
           .value="${this.value}"
           name="${this.name}"
           placeholder="${this.placeholder}"
