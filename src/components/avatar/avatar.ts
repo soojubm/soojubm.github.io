@@ -6,6 +6,7 @@ import { avatarStyles } from './avatar.styles'
 export class Avatar extends LitElement {
   @property({ type: String }) variant = 'primary'
   @property({ type: String }) size = 'medium'
+  @property({ type: String }) shape: 'circle' | 'square' = 'square'
   @property({ type: String }) src?: string
   @property({ type: String }) icon?: string
   @property({ type: String, attribute: 'badge-label' }) badgeLabel?: string
@@ -41,6 +42,7 @@ export class Avatar extends LitElement {
         role="img"
         data-size=${this.size}
         data-variant=${this.variant}
+        data-shape=${this.shape}
         aria-label=${this.ariaLabel || 'avatar'}
       >
         ${this.renderAvatarContent(iconSize)}

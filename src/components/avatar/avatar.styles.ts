@@ -27,8 +27,12 @@ export const avatarStyles = css`
 
   img {
     height: inherit;
-    border-radius: var(--radius);
+    border-radius: var(--avatar-radius);
     object-fit: cover;
+  }
+
+  [data-shape='circle'] {
+    --avatar-radius: var(--radius-round);
   }
 
   [data-size='huge'] {
