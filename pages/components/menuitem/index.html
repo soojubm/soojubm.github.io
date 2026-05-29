@@ -4,51 +4,48 @@
     description="사용자가 수행할 수 있는 행동 목록입니다. 단일 액션 또는 선택 액션을 포함할 수 있습니다."
   ></mm-page-header>
 
-  <script type="module">
-    import OptionRow from './mm-option-row.js'
-
-    const row = document.getElementById('opt1')
-    row.addEventListener('mm-change', e => {
-      console.log('row changed', e.detail.selected)
-    })
-  </script>
-
   <mm-component-example>
-    <mm-setting-item
-      label="철저한 코드 리뷰"
-      description="Codex가 새 이슈를 더 이상 찾지 못할 때까지 추가 발견 사항을 계속 찾도록 합니다."
-    >
-      <mm-switch slot="action"></mm-switch>
-    </mm-setting-item>
+    <div style="display: grid; gap: var(--space-3); max-width: 520px">
+      <mm-group variant="menuitem">
+        <mm-menuitem icon="user" label="Profile" description="Account settings"></mm-menuitem>
+        <mm-menuitem icon="link" label="Open documentation" href="/build/menuitem.html">
+          <mm-icon slot="action" name="nav-arrow-right"></mm-icon>
+        </mm-menuitem>
+        <mm-menuitem icon="trash" label="Delete item" tone="danger"></mm-menuitem>
+      </mm-group>
 
-    <div style="max-width: 520px">
-      <mm-menu-item-row>
-        <mm-avatar slot="prefix" variant="tertiary" icon="user"></mm-avatar>
-        <mm-text slot="label" size="14"> Profile </mm-text>
-        <mm-checkbox slot="action"></mm-checkbox>
-      </mm-menu-item-row>
-      <mm-menu-item-checkbox icon="bell" ?checked="${true}">Notifications </mm-menu-item-checkbox>
-      <!-- <mm-menu-item-link icon="users"> Profile </mm-menu-item-link> -->
-      <mm-menu-item-row>MenuItemRow </mm-menu-item-row>
-      <mm-menu-item-row icon="group">MenuItem with Ico </mm-menu-item-row>
-      <mm-menu-item-row icon="trash" tone="danger">MenuItem with Icon </mm-menu-item-row>
-      <mm-menu-item-row icon="check">test </mm-menu-item-row>
+      <mm-group variant="menuitem">
+        <mm-menu-item-row icon="group" label="Menu item row" description="Composable row">
+          <mm-button slot="action">Action</mm-button>
+        </mm-menu-item-row>
+        <mm-menu-item-link icon="external-link" label="Menu item link" href="/build/menuitem.html">
+        </mm-menu-item-link>
+        <mm-menu-item-checkbox icon="bell" checked>Notifications</mm-menu-item-checkbox>
+      </mm-group>
 
       <mm-menu-item-radio-group id="theme-group" name="theme" value="dark">
         <mm-menu-item-radio value="light">라이트 모드</mm-menu-item-radio>
         <mm-menu-item-radio value="dark">다크 모드</mm-menu-item-radio>
         <mm-menu-item-radio value="system">시스템 설정 동기화</mm-menu-item-radio>
       </mm-menu-item-radio-group>
-      <script></script>
+
+      <mm-setting-item
+        label="철저한 코드 리뷰"
+        description="Codex가 새 이슈를 더 이상 찾지 못할 때까지 추가 발견 사항을 계속 찾도록 합니다."
+      >
+        <mm-switch slot="action"></mm-switch>
+      </mm-setting-item>
     </div>
   </mm-component-example>
 
   <mm-component-props>
-    <mm-prop name="src" type="string"></mm-prop>
-    <mm-prop name="alt" type="string"></mm-prop>
-    <mm-prop name="ratio" type="'1:1' | '16:9' | '4:3' = '1:1'"></mm-prop>
-    <mm-prop name="clickable" type="boolean"></mm-prop>
-    <mm-prop name="@click" type="(e: MouseEvent) => void" kind="event"></mm-prop>
+    <mm-prop name="label" type="string"></mm-prop>
+    <mm-prop name="description" type="string" optional></mm-prop>
+    <mm-prop name="icon" type="string" optional></mm-prop>
+    <mm-prop name="href" type="string" optional></mm-prop>
+    <mm-prop name="tone" type="string" optional></mm-prop>
+    <mm-prop name="disabled" type="boolean" optional></mm-prop>
+    <mm-prop name="slot: action" type="HTMLElement" optional></mm-prop>
   </mm-component-props>
 
   <section class="component-guide">

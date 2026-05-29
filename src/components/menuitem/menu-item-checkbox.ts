@@ -15,10 +15,10 @@ export class MenuItemCheckbox extends MenuItemRow {
     return String(this.checked)
   }
 
-  private handleToggle() {
+  private commitChecked(checked: boolean) {
     if (this.disabled) return
 
-    this.checked = !this.checked
+    this.checked = checked
 
     this.dispatchEvent(
       new CustomEvent('change', {
@@ -31,30 +31,35 @@ export class MenuItemCheckbox extends MenuItemRow {
     )
   }
 
-  private handleCheckboxClick(e: Event) {
+  private handleRowClick() {
+    this.commitChecked(!this.checked)
+  }
+
+  private handleControlChange(e: Event) {
     e.stopPropagation()
+    const { checked } = (e as CustomEvent<{ checked: boolean }>).detail
+    this.commitChecked(checked)
   }
 
   override connectedCallback() {
     super.connectedCallback()
 
-    this.addEventListener('click', this.handleToggle)
+    this.addEventListener('click', this.handleRowClick)
   }
 
   override disconnectedCallback() {
     super.disconnectedCallback()
 
-    this.removeEventListener('click', this.handleToggle)
+    this.removeEventListener('click', this.handleRowClick)
   }
 
   protected override renderAction() {
     return html`
-      <input
-        type="checkbox"
+      <mm-checkbox
         .checked=${this.checked}
         ?disabled=${this.disabled}
-        @click=${this.handleCheckboxClick}
-      />
+        @change=${this.handleControlChange}
+      ></mm-checkbox>
     `
   }
 }

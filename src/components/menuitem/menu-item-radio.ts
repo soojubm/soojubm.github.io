@@ -23,12 +23,10 @@ export class MenuItemRadio extends MenuItemRow {
 
   private handleSelect() {
     if (this.disabled) return
-    // 라디오 버튼은 이미 체크되어 있다면 클릭해도 해제되지 않습니다.
     if (this.checked) return
 
     this.checked = true
 
-    // 부모 그룹으로 변경 이벤트를 보냅니다.
     this.dispatchEvent(
       new CustomEvent('change', {
         detail: {
@@ -42,8 +40,9 @@ export class MenuItemRadio extends MenuItemRow {
     )
   }
 
-  private handleRadioClick(e: Event) {
+  private handleControlChange(e: Event) {
     e.stopPropagation()
+    this.handleSelect()
   }
 
   override connectedCallback() {
@@ -58,15 +57,13 @@ export class MenuItemRadio extends MenuItemRow {
 
   protected override renderAction() {
     return html`
-      <input
-        type="radio"
+      <mm-radio
         .name=${this.name}
         .value=${this.value}
         .checked=${this.checked}
         ?disabled=${this.disabled}
-        @click=${this.handleRadioClick}
-        @change=${this.handleSelect}
-      />
+        @change=${this.handleControlChange}
+      ></mm-radio>
     `
   }
 }

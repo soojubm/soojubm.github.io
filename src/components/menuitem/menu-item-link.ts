@@ -1,13 +1,23 @@
-import { LitElement, html, nothing } from 'lit'
+import { html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { menuItemStyles } from './menuitem.styles'
+import { ifDefined } from 'lit/directives/if-defined.js'
 import { MenuItemRow } from './menu-item-row'
 
-@customElement('menu-item-link')
+@customElement('mm-menu-item-link')
 export class MenuItemLink extends MenuItemRow {
-  @property() href = ''
+  @property({ type: String }) href = ''
 
-  render() {
-    return html` <a href=${this.href} class="reset"> ${super.render()} </a> `
+  protected override renderItem() {
+    return html`
+      <a
+        href=${ifDefined(this.disabled ? undefined : this.href)}
+        class="item"
+        role=${this.getRole()}
+        data-tone=${this.tone}
+        aria-disabled=${String(this.disabled)}
+      >
+        ${this.renderContent()}
+      </a>
+    `
   }
 }

@@ -107,6 +107,10 @@ export const textfieldStyles = css`
     color: var(--color-foreground-light);
   }
 
+  .textfield {
+    position: relative;
+  }
+
   textarea,
   input {
     display: block;
@@ -197,7 +201,7 @@ export const textfieldStyles = css`
 
   .searchfield input {
     width: 100%;
-    height: var(--size-large);
+    height: var(--textfield-height);
     padding: var(--space-2) var(--size-large);
     border: 0;
     border-radius: var(--radius);
@@ -217,8 +221,8 @@ export const textfieldStyles = css`
     display: flex;
     align-items: center;
     justify-content: center;
-    width: var(--size-large);
-    height: var(--size-large);
+    width: var(--textfield-height);
+    height: var(--textfield-height);
     position: absolute;
     left: 0;
     top: 0;
@@ -233,8 +237,8 @@ export const textfieldStyles = css`
     display: flex;
     align-items: center;
     justify-content: center;
-    width: var(--size-large);
-    height: var(--size-large);
+    width: var(--textfield-height);
+    height: var(--textfield-height);
     position: absolute;
     right: 32px;
     top: 0;

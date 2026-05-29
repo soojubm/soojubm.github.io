@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import './menu-item-radio'
+import { MenuItemRadio } from './menu-item-radio'
 
 @customElement('mm-menu-item-radio-group')
 export class MenuItemRadioGroup extends LitElement {
@@ -24,7 +24,7 @@ export class MenuItemRadioGroup extends LitElement {
     this.value = detail.value
 
     // 그룹 내의 모든 라디오 버튼을 찾아 현재 선택된 것 외에는 전부 체크 해제합니다.
-    const radios = Array.from(this.querySelectorAll('mm-menu-item-radio')) as any[]
+    const radios = Array.from(this.querySelectorAll('mm-menu-item-radio')) as MenuItemRadio[]
     radios.forEach(radio => {
       if (radio !== target) {
         radio.checked = false
@@ -46,7 +46,7 @@ export class MenuItemRadioGroup extends LitElement {
     const slot = e.target as HTMLSlotElement
     const radios = slot
       .assignedElements({ flatten: true })
-      .filter(el => el.tagName.toLowerCase() === 'mm-menu-item-radio') as any[]
+      .filter(el => el.tagName.toLowerCase() === 'mm-menu-item-radio') as MenuItemRadio[]
 
     radios.forEach(radio => {
       if (this.name) radio.name = this.name
