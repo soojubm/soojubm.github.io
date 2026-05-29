@@ -1,6 +1,7 @@
 import './post.css'
 
 import { renderLayout } from '../../../layouts/base-layouts'
+import { hideNavbar } from '../../../src/javascripts/common/navbar'
 import main from './index.html'
 
 document.addEventListener('DOMContentLoaded', () => {

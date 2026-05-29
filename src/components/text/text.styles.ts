@@ -20,11 +20,11 @@ export const textSizes = {
   },
 
   // 2. 신형 Primitive 전용 사이즈 토큰 (숫자 기반)
-  '32': { fontSize: 'var(--font-size-32)', lineHeight: 'var(--font-line-height-40)' },
-  '24': { fontSize: 'var(--font-size-24)', lineHeight: 'var(--font-line-height-32)' },
-  '18': { fontSize: 'var(--font-size-18)', lineHeight: 'var(--font-line-height-28)' },
-  '14': { fontSize: 'var(--font-size-14)', lineHeight: 'var(--font-line-height-24)' },
-  '12': { fontSize: 'var(--font-size-12)', lineHeight: 'var(--font-line-height-16)' },
+  '32': { fontSize: 'var(--font-size-32)', lineHeight: 'var(--font-size-32)' },
+  '24': { fontSize: 'var(--font-size-24)', lineHeight: 'var(--font-size-24)' },
+  '18': { fontSize: 'var(--font-size-18)', lineHeight: 'var(--font-size-18)' },
+  '14': { fontSize: 'var(--font-size-14)', lineHeight: 'var(--font-size-14)' },
+  '12': { fontSize: 'var(--font-size-12)', lineHeight: 'var(--font-size-12)' },
 } as const
 
 export const textWeights = {

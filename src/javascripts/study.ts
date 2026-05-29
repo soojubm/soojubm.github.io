@@ -44,7 +44,7 @@ function validateForm(inputProps) {
   return verifyInputName[inputName](inputProps)
 }
 
-const history = createBrowserHistory()
+const browserHistory = createBrowserHistory()
 
 class scrollbox {
   constructor() {

@@ -13,7 +13,7 @@ const paragraphSizes: Record<ParagraphSize, keyof typeof textSizes> = {
 }
 
 @customElement('mm-paragraph')
-export class DesignParagraph extends LitElement {
+export class Paragraph extends LitElement {
   @property({ type: String }) size: ParagraphSize = 'medium'
   @property({ type: String }) weight: TextWeight = 'medium'
   @property({ type: String }) color = 'inherit'

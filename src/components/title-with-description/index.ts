@@ -1,5 +1,6 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { resetStyles } from '../shared/reset.styles'
 
 /**
  * mm-title-with-description
@@ -31,19 +32,22 @@ class TitleWithDescription extends LitElement {
     },
   }
 
-  static styles = css`
-    :host {
-      display: block;
-    }
-    .container {
-      display: flex;
-      flex-direction: column;
-    }
-    /* Level 1 전용 본문 최대 너비 제한 (가독성 최적화) */
-    .container[data-level='1'] mm-paragraph {
-      max-width: 720px;
-    }
-  `
+  static styles = [
+    resetStyles,
+    css`
+      :host {
+        display: block;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+      }
+      /* Level 1 전용 본문 최대 너비 제한 (가독성 최적화) */
+      .container[data-level='1'] mm-paragraph {
+        max-width: 720px;
+      }
+    `,
+  ]
 
   render() {
     const variant =
