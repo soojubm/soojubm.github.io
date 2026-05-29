@@ -2,6 +2,7 @@ import { LitElement, css, html } from 'lit'
 import { styleMap } from 'lit/directives/style-map.js'
 import { customElement, property } from 'lit/decorators.js'
 
+import { resetStyles } from '../shared/reset.styles'
 import { textSizes, textWeights, type TextWeight } from './text.styles'
 
 type ParagraphSize = 'medium' | 'large'
@@ -18,16 +19,18 @@ export class DesignParagraph extends LitElement {
   @property({ type: String }) color = 'inherit'
   @property({ type: Boolean, reflect: true }) center = false
 
-  static styles = css`
-    :host {
-      display: block;
-    }
-    p {
-      margin: 0;
-      font-family: inherit;
-      color: inherit;
-    }
-  `
+  static styles = [
+    resetStyles,
+    css`
+      :host {
+        display: block;
+      }
+      p {
+        font-family: inherit;
+        color: inherit;
+      }
+    `,
+  ]
 
   render() {
     const sizeKey = paragraphSizes[this.size] ?? paragraphSizes.medium
