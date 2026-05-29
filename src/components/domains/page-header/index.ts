@@ -24,9 +24,6 @@ export class PageHeader extends LitElement {
         align-items: center;
         text-align: center;
       }
-      mm-paragraph {
-        max-width: 720px;
-      }
     `,
   ]
 
@@ -35,7 +32,9 @@ export class PageHeader extends LitElement {
       <header class="page-header">
         <mm-text as="h1" size="32" weight="bold">${this.title}</mm-text>
         ${this.description
-          ? html`<mm-paragraph size="large" ?center=${this.center}>${this.description}</mm-paragraph>`
+          ? html`<mm-paragraph size="large" ?center=${this.center}
+              >${this.description}</mm-paragraph
+            >`
           : null}
       </header>
     `
