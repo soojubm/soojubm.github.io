@@ -64,11 +64,9 @@
   </style>
 
   <mm-component-props>
-    <mm-prop name="src" type="string"></mm-prop>
-    <mm-prop name="alt" type="string"></mm-prop>
-    <mm-prop name="ratio" type="'1:1' | '16:9' | '4:3' = '1:1'"></mm-prop>
-    <mm-prop name="clickable" type="boolean"></mm-prop>
-    <mm-prop name="@click" type="(e: MouseEvent) => void" kind="event"></mm-prop>
+    <mm-prop name="content" type="string"></mm-prop>
+    <mm-prop name="align" type="string" optional></mm-prop>
+    <mm-prop name="slot: trigger" type="HTMLElement"></mm-prop>
   </mm-component-props>
   <!-- type Side = 'top' | 'bottom' | 'left' | 'right';
 

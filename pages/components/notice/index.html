@@ -27,15 +27,13 @@
   </mm-component-example>
 
   <mm-component-props>
-    <mm-prop name="src" type="string"></mm-prop>
-    <mm-prop name="alt" type="string"></mm-prop>
-    <mm-prop name="ratio" type="'1:1' | '16:9' | '4:3' = '1:1'"></mm-prop>
-    <mm-prop name="clickable" type="boolean"></mm-prop>
-    <mm-prop name="@click" type="(e: MouseEvent) => void" kind="event"></mm-prop>
+    <mm-prop name="heading" type="string" optional></mm-prop>
+    <mm-prop name="text" type="string" optional></mm-prop>
+    <mm-prop name="variant" type="string" optional></mm-prop>
   </mm-component-props>
 
   <mm-component-guide>
-    <mm-text-group>
+    <mm-paragraph-group>
       <mm-text size="18">Best practices</mm-text>
       <mm-text size="14">
         브라우저가 role="alert" 속성이 있는 요소를 발견하면 즉시 사용자에게 경고 내용을 읽습니다.
@@ -63,7 +61,7 @@
   ]'
       >
       </mm-text-list>
-    </mm-text-group>
+    </mm-paragraph-group>
 
     <!--
       Icon: Informs users of the kind of notification at a glance.

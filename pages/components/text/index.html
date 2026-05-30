@@ -170,11 +170,10 @@ The font size of a key is never bigger than the value.
     </div>
   </mm-component-example>
   <mm-component-props>
-    <mm-prop name="src" type="string"></mm-prop>
-    <mm-prop name="alt" type="string"></mm-prop>
-    <mm-prop name="ratio" type="'1:1' | '16:9' | '4:3' = '1:1'"></mm-prop>
-    <mm-prop name="clickable" type="boolean"></mm-prop>
-    <mm-prop name="@click" type="(e: MouseEvent) => void" kind="event"></mm-prop>
+    <mm-prop name="as" type="'span' | 'p' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' = 'span'"></mm-prop>
+    <mm-prop name="size" type="'32' | '24' | '18' | '14' | '12' = '14'"></mm-prop>
+    <mm-prop name="weight" type="'medium' | 'bold' = 'medium'"></mm-prop>
+    <mm-prop name="color" type="string = 'inherit'"></mm-prop>
   </mm-component-props>
 
   <mm-component-guide>
@@ -264,7 +263,7 @@ The font size of a key is never bigger than the value.
 
   <mm-component-section
     title="ParagraphGroup"
-    description="문단 사이의 간격을 정의. TextGroup, ContentGroup, TextStack"
+    description="문단 사이의 간격을 정의. ContentGroup, TextStack"
   >
     <mm-paragraph-group>
       <mm-paragraph>
@@ -316,7 +315,7 @@ The font size of a key is never bigger than the value.
         <div class="hero-obj2"></div>
         <div class="hero-obj3"></div>
       </div> -->
-      <mm-text-group size="32">
+      <mm-paragraph-group size="32">
         <mm-title-with-description
           level="1"
           title="Hero Title"
@@ -332,7 +331,7 @@ The font size of a key is never bigger than the value.
           <mm-button variant="primary" size="large">콜 투 액션</mm-button>
           <mm-button variant="text" size="large">더 알아보기</mm-button>
         </mm-button-group>
-      </mm-text-group>
+      </mm-paragraph-group>
     </section>
   </mm-component-section>
 

@@ -37,10 +37,15 @@
   </mm-component-example>
 
   <mm-component-props>
-    <mm-prop name="src" type="string"></mm-prop>
-    <mm-prop name="alt" type="string"></mm-prop>
-    <mm-prop name="ratio" type="'1:1' | '16:9' | '4:3' = '1:1'"></mm-prop>
-    <mm-prop name="clickable" type="boolean"></mm-prop>
+    <mm-prop
+      name="variant"
+      type="'primary' | 'secondary' | 'tertiary' | 'destructive' | 'text' = 'tertiary'"
+    ></mm-prop>
+    <mm-prop name="size" type="'medium' | 'large' = 'medium'"></mm-prop>
+    <mm-prop name="status" type="string" optional></mm-prop>
+    <mm-prop name="isFullWidth" type="boolean" optional></mm-prop>
+    <mm-prop name="disabled" type="boolean" optional></mm-prop>
+    <mm-prop name="icon" type="string" optional></mm-prop>
     <mm-prop name="@click" type="(e: MouseEvent) => void" kind="event"></mm-prop>
   </mm-component-props>
 
@@ -68,7 +73,7 @@
       </mm-feature>
     </section>
 
-    <!-- <mm-text-group>
+    <!-- <mm-paragraph-group>
       <mm-text size="18">Changelog</mm-text>
           <table class="table">
       <tbody>
@@ -98,9 +103,9 @@
         </tr>
       </tbody>
     </table>
-    </mm-text-group> -->
+    </mm-paragraph-group> -->
 
-    <mm-text-group>
+    <mm-paragraph-group>
       <mm-text size="18">
         사용자 여정을 보조하는 액션입니다. 실행 페이지에서 사용자는 즉각적인 결과를 기대할 수
         있습니다. icon only chip 링크. 링크 개념 모호. 팝업. 쿼리스트링.
@@ -137,52 +142,65 @@
       <mm-text>
         group과 sets 차이. 머티리얼 칩스에서 구분해서 사용함. 그룹은 순서나 구조가 있는.
       </mm-text>
-      <style>
-        td {
-          text-align: center;
-        }
-      </style>
       <table>
+        <caption>
+          Material 2, Material 3, Flutter의 Chip 명칭 비교
+        </caption>
         <thead>
           <tr>
-            <th></th>
-            <th>RawChip / Chip</th>
-            <th>FilterChip</th>
-            <th>ChoiceChip</th>
-            <th>ActionChip</th>
-            <th>InputChip</th>
-            <th>AssistChip</th>
-            <th>SuggestionChip</th>
+            <th>역할</th>
+            <th>Material 2</th>
+            <th>Material 3</th>
+            <th>Flutter</th>
+            <th>정리</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <th>Material 2 (Rounded)</th>
-            <td></td>
-            <td>🔵 (multiple select Filter chip, dissmissable)</td>
-            <td>🔵 (radio)</td>
-            <td>🔵 (toggle)</td>
-            <td>🔵 (dissmissable)</td>
-            <td></td>
-            <td></td>
+            <th>기본 표시</th>
+            <td>Chip</td>
+            <td>타입으로 직접 분류하지 않음</td>
+            <td>Chip / RawChip</td>
+            <td>RawChip은 Flutter의 기반 위젯. 보통 직접 쓰기보다 목적별 Chip을 사용한다.</td>
           </tr>
           <tr>
-            <th>Material 3</th>
-            <td></td>
-            <td>🟣 (ChoiceChip). 필터 칩의 서브셋. 단독 사용 안 됨</td>
-            <td></td>
-            <td></td>
-            <td>🟣 dismissable</td>
-            <td>🟣 (ActionChip)</td>
-            <td>🟣 (ActionChip)</td>
+            <th>입력값 / 엔티티</th>
+            <td>Input chip</td>
+            <td>Input chip</td>
+            <td>InputChip</td>
+            <td>삭제 가능하며, 필요하면 선택 또는 press 동작도 가질 수 있다.</td>
           </tr>
           <tr>
-            <th>Flutter</th>
-            <td>🔵</td>
+            <th>단일 선택</th>
+            <td>Choice chip</td>
+            <td>Filter chip의 단일 선택 케이스</td>
+            <td>ChoiceChip</td>
+            <td>M3에서도 Flutter는 single-select filter chip을 ChoiceChip으로 구현한다.</td>
+          </tr>
+          <tr>
+            <th>다중 선택 / 필터</th>
+            <td>Filter chip</td>
+            <td>Filter chip</td>
+            <td>FilterChip</td>
+            <td>M2에서는 checkbox 대안, M3/Flutter에서는 다중 선택 filter chip에 대응한다.</td>
+          </tr>
+          <tr>
+            <th>보조 액션</th>
+            <td>Action chip</td>
+            <td>Assist chip</td>
+            <td>ActionChip</td>
+            <td>M2의 Action chip은 toggle이 아니라 관련 액션 실행이다.</td>
+          </tr>
+          <tr>
+            <th>제안 액션</th>
+            <td>Action chip에 가까움</td>
+            <td>Suggestion chip</td>
+            <td>ActionChip</td>
+            <td>Flutter M3에서 ActionChip은 Assist/Suggestion chip 양쪽에 사용된다.</td>
           </tr>
         </tbody>
       </table>
-    </mm-text-group>
+    </mm-paragraph-group>
   </mm-component-guide>
 
   <!-- <mm-component-section
@@ -217,14 +235,14 @@
     description="버튼 그룹은 관련된 액션을 묶어 사용자가 선택할 수 있도록 합니다. 항상primary action에 먼저 포커스되어야 합니다. tabindex는 불필요. 마크업 순서와 정렬 스타일링으로 해결."
   >
     <div>
-      <mm-text-group>
+      <mm-paragraph-group>
         <dl>
           <dt>primaryAction</dt>
           <dd>{label: string, onClick: () => void}</dd>
           <dt>secondaryAction</dt>
           <dd>{label: string, onClick: () => void}</dd>
         </dl>
-      </mm-text-group>
+      </mm-paragraph-group>
       <div style="display: flex; flex-direction: column; gap: 1.5rem">
         <mm-button-group>
           <mm-button variant="tertiary" size="large">취소</mm-button>
@@ -261,18 +279,9 @@
   >
     <div>
       <div class="columns-3" style="gap: 1rem">
-        <div
-          class=""
-          style="background: var(--green100); height: 4rem; border-radius: var(--radius-large)"
-        ></div>
-        <div
-          class=""
-          style="background: var(--green100); height: 4rem; border-radius: var(--radius-large)"
-        ></div>
-        <div
-          class=""
-          style="background: var(--green100); height: 4rem; border-radius: var(--radius-large)"
-        ></div>
+        <mm-ui-placeholder></mm-ui-placeholder>
+        <mm-ui-placeholder></mm-ui-placeholder>
+        <mm-ui-placeholder></mm-ui-placeholder>
       </div>
       <div style="display: flex; justify-content: center; padding: 1.5rem 0 0">
         <mm-button variant="tertiary">
@@ -343,54 +352,13 @@
 
   <mm-component-section title="FileUpload Button" description="이미지 업로드와 파일 업로드 구분">
     <div>
-      <form class="file" method="" enctype="multipart/form-data">
-        <div>
-          <mm-button>사진 업로드. 여기로 드래그 하셔도 되어요.</mm-button>
-          <input
-            class="js-file-input visually-hidden"
-            type="file"
-            id="file2"
-            accept=".jpg,.png"
-            capture="camera"
-            multiple
-            hidden
-          />
-        </div>
-        <mm-text size="12">Only .jpg and .png files. 500kb max file size.</mm-text>
-      </form>
-
-      <mm-separator></mm-separator>
-
-      <mm-text size="14" color="var(--color-foreground-light)">첨부한 파일</mm-text>
-      <mm-text size="14" role="status" class="js-file-attachment-helper">
-        No files currently selected for upload.
-      </mm-text>
-
-      <div class="file-attachment-list js-file-attachment-list">
-        <figure
-          style="
-            width: 100px;
-            padding: var(--space-3);
-            border-radius: var(--radius);
-            background-color: var(--color-background-subtle);
-            border-radius: var(--radius);
-            position: relative;
-          "
-        >
-          <img
-            src="/src/images/springsteen.jpg"
-            alt="${file.name}"
-            style="border-radius: var(--radius)"
-          />
-          <figcaption>
-            <mm-text size="14" weight="bold">${file.name}</mm-text>
-            <mm-text size="12">${returnFileSize(file.size)}</mm-text>
-          </figcaption>
-          <div style="position: absolute; right: var(--space-1); top: var(--space-1)">
-            <mm-clear-button class="js-remove-this">close</mm-clear-button>
-          </div>
-        </figure>
-      </div>
+      <mm-file-upload-button
+        label="사진 업로드. 여기로 드래그 하셔도 되어요."
+        helper="Only .jpg and .png files. 500kb max file size."
+        accept=".jpg,.png"
+        capture
+        multiple
+      ></mm-file-upload-button>
     </div>
   </mm-component-section>
 

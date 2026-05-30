@@ -129,11 +129,13 @@
   </mm-component-example>
 
   <mm-component-props>
-    <mm-prop name="src" type="string"></mm-prop>
-    <mm-prop name="alt" type="string"></mm-prop>
-    <mm-prop name="ratio" type="'1:1' | '16:9' | '4:3' = '1:1'"></mm-prop>
-    <mm-prop name="clickable" type="boolean"></mm-prop>
-    <mm-prop name="@click" type="(e: MouseEvent) => void" kind="event"></mm-prop>
+    <mm-prop name="open" type="boolean"></mm-prop>
+    <mm-prop name="title" type="string"></mm-prop>
+    <mm-prop name="description" type="string" optional></mm-prop>
+    <mm-prop name="center" type="boolean" optional></mm-prop>
+    <mm-prop name="closeable" type="boolean" optional></mm-prop>
+    <mm-prop name="type" type="'dialog' | 'alertdialog' = 'alertdialog'"></mm-prop>
+    <mm-prop name="dialog-close" type="CustomEvent" kind="event"></mm-prop>
   </mm-component-props>
 
   <mm-component-guide>

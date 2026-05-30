@@ -7,23 +7,14 @@
   <mm-component-aka items='["Anchor"]'></mm-component-aka>
 
   <mm-component-example>
-    <p class="util-truncate" style="max-width: 560px">
-      이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는
-      <mm-link href="#">고래잡이</mm-link> 이야기를 들을 기대에 부풀었다. 그런데 이거 참 놀랍게도
-      거의 모두가 깊은 침묵에 잠겼다. 그것도 모자라 다들 난감해하는 눈치였다. 아니, 폭풍우가
-      몰아치는 가운데 엄청나게 큰 고래, 그것도 생전 처음 보는 고래를 수줍은 기색 없이 잡아 올리고
-      눈도 깜빡하지 않은 채 사투를 벌여서 죽이는 용맹한 바닷사람들이 직업도 똑같고 취향까지 비슷한
-      사람들이 모여 앉은 아침 식탁에서는 그린 산맥의 목장을 한 번도 떠나 본 적 없는 양 떼마냥
-      부끄러워하며 서로를 힐끔거릴 뿐이었다. 이 얼마나 희한한 광경인가! 숫기 없는 곰, 소심한 전사
-      같은 고래잡이들이라니! ...
-      <button style="font-weight: var(--font-weight-bold)">더 보기</button>
-    </p>
+    <mm-read-more-paragraph
+      limit="120"
+      content="이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에 부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은 침묵에 잠겼다. 그것도 모자라 다들 난감해하는 눈치였다. 아니, 폭풍우가 몰아치는 가운데 엄청나게 큰 고래, 그것도 생전 처음 보는 고래를 수줍은 기색 없이 잡아 올리고 눈도 깜빡하지 않은 채 사투를 벌여서 죽이는 용맹한 바닷사람들이 직업도 똑같고 취향까지 비슷한 사람들이 모여 앉은 아침 식탁에서는 그린 산맥의 목장을 한 번도 떠나 본 적 없는 양 떼마냥 부끄러워하며 서로를 힐끔거릴 뿐이었다. 이 얼마나 희한한 광경인가! 숫기 없는 곰, 소심한 전사 같은 고래잡이들이라니!"
+    ></mm-read-more-paragraph>
     <div style="height: var(--space-3)"></div>
-    <mm-group variant="tag">
-      <mm-keyword-tag>이것은헤시태그</mm-keyword-tag>
-      <mm-keyword-tag>해시태그는클릭할수있다?</mm-keyword-tag>
-      <mm-keyword-tag>해시태그를통한검색</mm-keyword-tag>
-    </mm-group>
+    <mm-keyword-tag-group
+      keywords='["이것은헤시태그", "해시태그는클릭할수있다?", "해시태그를통한검색"]'
+    ></mm-keyword-tag-group>
     <mm-separator></mm-separator>
     <mm-link href="#" external="true">고래잡이</mm-link>
     <mm-separator></mm-separator>
@@ -39,15 +30,13 @@
         <mm-text size="14">Something's not right?</mm-text>
         <mm-link>Get in touch with us.</mm-link>
       </mm-row>
-    </mm-component-guide>
+    </section>
   </mm-component-example>
 
   <mm-component-props>
-    <mm-prop name="src" type="string"></mm-prop>
-    <mm-prop name="alt" type="string"></mm-prop>
-    <mm-prop name="ratio" type="'1:1' | '16:9' | '4:3' = '1:1'"></mm-prop>
-    <mm-prop name="clickable" type="boolean"></mm-prop>
-    <mm-prop name="@click" type="(e: MouseEvent) => void" kind="event"></mm-prop>
+    <mm-prop name="href" type="string"></mm-prop>
+    <mm-prop name="target" type="string" optional></mm-prop>
+    <mm-prop name="external" type="boolean" optional></mm-prop>
   </mm-component-props>
 
   <mm-component-guide>
@@ -57,5 +46,5 @@
           "내부 링크와 외부 링크의 구별. 형태적 구별과 코드상 구별 target=_blank rel=noopener noreferrer"
         ]'
     ></mm-text-list>
-  </section>
+  </mm-component-guide>
 </main>

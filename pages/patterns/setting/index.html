@@ -29,16 +29,20 @@
   >
   </mm-list-row>
   <div style="height: var(--space-3)"></div>
-  <mm-group variant="menuitem">
-    <mm-menuitem icon="mail" label="soojubm@gmail.com">
+  <mm-group alignment="vertical">
+    <mm-setting-item start-icon="mail" label="이메일 주소" description="soojubm@gmail.com">
       <mm-icon slot="action" name="arrow-right" aria-label=""></mm-icon>
-    </mm-menuitem>
-    <mm-menuitem icon="lock" label="비밀번호 변경">
+    </mm-setting-item>
+    <mm-setting-item
+      start-icon="lock"
+      label="비밀번호"
+      description="강력한 비밀번호로 보안을 강화하세요."
+    >
       <mm-icon slot="action" name="arrow-right" aria-label=""></mm-icon>
-    </mm-menuitem>
-    <mm-menuitem icon="user" label="닉네임 변경">
+    </mm-setting-item>
+    <mm-setting-item start-icon="user" label="닉네임" description="프로필과 응답에 표시되는 이름">
       <mm-icon slot="action" name="arrow-right" aria-label=""></mm-icon>
-    </mm-menuitem>
+    </mm-setting-item>
   </mm-group>
   <mm-separator></mm-separator>
   <mm-list-row
@@ -49,22 +53,33 @@
   >
   </mm-list-row>
   <div style="height: var(--space-3)"></div>
-  <mm-group variant="menuitem">
-    <mm-menuitem icon="google" label="구글 계정으로 로그인">
+  <mm-group alignment="vertical">
+    <mm-setting-item
+      start-icon="google"
+      label="구글 계정으로 로그인"
+      description="Google 계정 연결 상태를 관리합니다."
+    >
       <mm-icon slot="action" name="arrow-right" aria-label="연동해제"></mm-icon>
-    </mm-menuitem>
-    <mm-menuitem icon="apple" label="애플 계정으로 로그인">
+    </mm-setting-item>
+    <mm-setting-item
+      start-icon="apple"
+      label="애플 계정으로 로그인"
+      description="Apple 계정 연결 상태를 관리합니다."
+    >
       <mm-icon slot="action" name="arrow-right" aria-label="연동해제"></mm-icon>
-    </mm-menuitem>
+    </mm-setting-item>
   </mm-group>
   <mm-separator></mm-separator>
   <mm-group alignment="vertical">
     <!-- <mm-text size="18">뉴스레터</mm-text> -->
-    <mm-menuitem label="시사 뉴스레터" class="js-darkmode">
-      <mm-avatar slot="avatar" icon="mail-in"> </mm-avatar>
+    <mm-setting-item
+      start-icon="mail-in"
+      label="시사 뉴스레터"
+      description="매 주 월요일, 수요일, 금요일 아침에 받아볼 수 있어요."
+      class="js-darkmode"
+    >
       <mm-switch slot="action"></mm-switch>
-    </mm-menuitem>
-    <mm-text> 매 주 월요일, 수요일, 금요일 아침에 받아볼 수 있어요. </mm-text>
+    </mm-setting-item>
   </mm-group>
   <mm-separator></mm-separator>
   <mm-list-row
@@ -76,14 +91,9 @@
   </mm-list-row>
   <div style="height: 0.5rem"></div>
   <mm-group alignment="vertical">
-    <mm-list-row
-      avatar-variant="primary"
-      icon="credit-card"
-      primaryText="Premium 개인"
-      secondaryText="월간 구독"
-    >
+    <mm-setting-item start-icon="credit-card" label="Premium 개인" description="월간 구독">
       <mm-button slot="action" aria-label="자세히보기">구독 관리</mm-button>
-    </mm-list-row>
+    </mm-setting-item>
     <mm-surface>
       <mm-group alignment="vertical">
         <mm-keyvalue key="다음 결제 예정일" value="2024.04.02."></mm-keyvalue>
@@ -109,30 +119,30 @@
   <!-- TODO :: group을 section -->
   <mm-text size="18">개인정보</mm-text>
 
-  <mm-group variant="menuitem">
+  <mm-group alignment="vertical">
     <!-- TODO size  -->
-    <mm-list-row primaryText="이메일 주소" secondaryText="soojubm@gmail.com">
+    <mm-setting-item label="이메일 주소" description="soojubm@gmail.com">
       <mm-button slot="action">Update email</mm-button>
-    </mm-list-row>
-    <mm-list-row primaryText="배송지" secondaryText="배송지를 관리하고 기본 배송지를 설정하세요.">
+    </mm-setting-item>
+    <mm-setting-item label="배송지" description="배송지를 관리하고 기본 배송지를 설정하세요.">
       <mm-button slot="action">Update email</mm-button>
-    </mm-list-row>
+    </mm-setting-item>
   </mm-group>
 
   <br /><br />
 
   <mm-text size="18">보안</mm-text>
-  <mm-group variant="menuitem">
-    <mm-list-row primaryText="비밀번호" secondaryText="강력한 비밀번호로 보안을 강화하세요.">
+  <mm-group alignment="vertical">
+    <mm-setting-item label="비밀번호" description="강력한 비밀번호로 보안을 강화하세요.">
       <mm-icon slot="action" name="arrow-right">비밀번호 변경</mm-icon>
-    </mm-list-row>
-    <mm-list-row primaryText="계정 비활성화" secondaryText="비활성화 페이지에서 할 수 있습니다.">
+    </mm-setting-item>
+    <mm-setting-item label="계정 비활성화" description="비활성화 페이지에서 할 수 있습니다.">
       <mm-button slot="action">비활성화 하기</mm-button>
-    </mm-list-row>
+    </mm-setting-item>
 
-    <mm-list-row primaryText="관심분야" secondaryText="문화/예술, 인권, 경제">
+    <mm-setting-item label="관심분야" description="문화/예술, 인권, 경제">
       <mm-icon slot="action" name="arrow-right"></mm-icon>
-    </mm-list-row>
+    </mm-setting-item>
     <mm-text>관심있는 분야의 콘텐츠를 추천 받으세요.</mm-text>
   </mm-group>
 
@@ -174,20 +184,18 @@
       <br />
       <mm-textfield label="닉네임" placeholder="이름이요."></mm-textfield>
       <mm-separator></mm-separator>
-      <mm-group variant="radio">
-        <legend hidden>radiogroup</legend>
+      <mm-radio-group label="radiogroup">
         <mm-radio name="gender">기타</mm-radio>
         <mm-radio name="gender">여성</mm-radio>
         <mm-radio name="gender">남성</mm-radio>
-      </mm-group>
+      </mm-radio-group>
     </form>
   </section>
 
   <mm-surface>
-    <mm-menuitem label="soojubm@gmail.com">
-      <mm-avatar slot="avatar"> </mm-avatar>
+    <mm-setting-item start-icon="google" label="soojubm@gmail.com" description="Google 계정 연결">
       <mm-button slot="action" disabled>Google 연동해제</mm-button>
-    </mm-menuitem>
+    </mm-setting-item>
     <div
       style="
         border-radius: var(--radius);

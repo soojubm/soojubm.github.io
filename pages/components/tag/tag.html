@@ -24,11 +24,8 @@
   </mm-component-example>
 
   <mm-component-props>
-    <mm-prop name="src" type="string"></mm-prop>
-    <mm-prop name="alt" type="string"></mm-prop>
-    <mm-prop name="ratio" type="'1:1' | '16:9' | '4:3' = '1:1'"></mm-prop>
-    <mm-prop name="clickable" type="boolean"></mm-prop>
-    <mm-prop name="@click" type="(e: MouseEvent) => void" kind="event"></mm-prop>
+    <mm-prop name="tone" type="'gray' | 'green' | 'yellow' | 'red' | 'blue' | 'purple' | 'pink' | 'orange' | 'cyan' = 'gray'"></mm-prop>
+    <mm-prop name="slot: icon" type="HTMLElement" optional></mm-prop>
   </mm-component-props>
 
   <mm-component-guide>
@@ -54,7 +51,7 @@
       </mm-feature>
     </mm-component-guide>
 
-    <!-- <mm-text-group>
+    <!-- <mm-paragraph-group>
       <mm-text size="18">Changelog</mm-text>
       <table>
         <tbody>
@@ -70,7 +67,7 @@
           </tr>
         </tbody>
       </table>
-    </mm-text-group> -->
+    </mm-paragraph-group> -->
   </section>
   <mm-component-section
     title="Dot badge"

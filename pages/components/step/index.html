@@ -102,11 +102,11 @@
   </mm-component-example>
 
   <mm-component-props>
-    <mm-prop name="src" type="string"></mm-prop>
-    <mm-prop name="alt" type="string"></mm-prop>
-    <mm-prop name="ratio" type="'1:1' | '16:9' | '4:3' = '1:1'"></mm-prop>
-    <mm-prop name="clickable" type="boolean"></mm-prop>
-    <mm-prop name="@click" type="(e: MouseEvent) => void" kind="event"></mm-prop>
+    <mm-prop name="aria-current" type="'step'"></mm-prop>
+    <mm-prop name="data-align" type="'vertical'"></mm-prop>
+    <mm-prop name="is-active" type="class"></mm-prop>
+    <mm-prop name="label" type="slot"></mm-prop>
+    <mm-prop name="description" type="slot" optional></mm-prop>
   </mm-component-props>
 
   <mm-component-guide>

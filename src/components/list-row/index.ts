@@ -16,9 +16,6 @@ class ListRow extends LitElement {
       width: 100%;
       gap: var(--space-2);
     }
-    ::slotted([slot='action']) {
-      margin-left: auto;
-    }
     .text-container {
       flex: 1;
       display: flex;
@@ -49,7 +46,6 @@ class ListRow extends LitElement {
         <mm-text size="14" weight="bold">${this.primaryText}</mm-text>
         ${this.secondaryText ? html`<mm-text size="12" color="var(--color-foreground-light)">${this.secondaryText}</mm-text>` : ''}
       </div>
-      <slot name="action"></slot>
     `
   }
 }

@@ -23,7 +23,6 @@ import '../../components/sheet/sheet-body'
 import '../../components/sheet/sheet-footer'
 import '../../components/dialog'
 import '../../components/list-row'
-import '../../components/option-row'
 
 import '../../components/thumbnail/thumbnail'
 

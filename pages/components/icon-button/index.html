@@ -27,11 +27,13 @@
     </mm-group>
   </mm-component-example>
   <mm-component-props>
-    <mm-prop name="src" type="string"></mm-prop>
-    <mm-prop name="alt" type="string"></mm-prop>
-    <mm-prop name="ratio" type="'1:1' | '16:9' | '4:3' = '1:1'"></mm-prop>
-    <mm-prop name="clickable" type="boolean"></mm-prop>
-    <mm-prop name="@click" type="(e: MouseEvent) => void" kind="event"></mm-prop>
+    <mm-prop name="icon" type="string"></mm-prop>
+    <mm-prop name="variant" type="'cta' | 'action' | 'flow' = 'action'"></mm-prop>
+    <mm-prop name="size" type="'small' | 'medium' = 'medium'"></mm-prop>
+    <mm-prop name="label" type="string" optional></mm-prop>
+    <mm-prop name="tooltip" type="string" optional></mm-prop>
+    <mm-prop name="href" type="string" optional></mm-prop>
+    <mm-prop name="disabled" type="boolean" optional></mm-prop>
   </mm-component-props>
 
   <mm-component-guide>

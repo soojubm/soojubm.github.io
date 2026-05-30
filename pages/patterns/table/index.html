@@ -1,8 +1,5 @@
 <main class="page" aria-label="site">
-  <mm-page-header
-    title="Table"
-    description="표와 관련된 컴포넌트 및 패턴들."
-  ></mm-page-header>
+  <mm-page-header title="Table" description="표와 관련된 컴포넌트 및 패턴들."></mm-page-header>
   <mm-component-example>
     <header
       style="
@@ -106,9 +103,7 @@
               <mm-link isExternal="true"> External link </mm-link>
             </td>
             <td>
-              <mm-group variant="tag">
-                <mm-category-tag category="music">유저리서치</mm-category-tag>
-              </mm-group>
+              <mm-category-tag category="music">유저리서치</mm-category-tag>
             </td>
             <td style="text-align: right">13</td>
             <td style="text-align: right">
@@ -228,11 +223,11 @@
   </mm-component-example>
 
   <mm-component-props>
-    <mm-prop name="src" type="string"></mm-prop>
-    <mm-prop name="alt" type="string"></mm-prop>
-    <mm-prop name="ratio" type="'1:1' | '16:9' | '4:3' = '1:1'"></mm-prop>
-    <mm-prop name="clickable" type="boolean"></mm-prop>
-    <mm-prop name="@click" type="(e: MouseEvent) => void" kind="event"></mm-prop>
+    <mm-prop name="caption" type="string" optional></mm-prop>
+    <mm-prop name="scope" type="'col' | 'row'"></mm-prop>
+    <mm-prop name="aria-sort" type="'none' | 'ascending' | 'descending'" optional></mm-prop>
+    <mm-prop name="aria-rowcount" type="number" optional></mm-prop>
+    <mm-prop name="aria-rowindex" type="number" optional></mm-prop>
   </mm-component-props>
 
   <mm-component-guide>

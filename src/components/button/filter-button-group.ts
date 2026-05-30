@@ -5,7 +5,7 @@ import type { FilterButton } from './filter-button'
 
 /**
  * mm-filter-button을 묶는 그룹.
- * multiple 속성으로 다중 선택(체크박스형) / 단일 선택(라디오형)을 전환합니다.
+ * mode 속성으로 다중 선택(체크박스형) / 단일 선택(라디오형)을 전환합니다.
  */
 type FilterMode = 'single' | 'multiple'
 
@@ -51,7 +51,7 @@ export class FilterButtonGroup extends LitElement {
   private _onToggle = (e: CustomEvent<{ value: string; selected: boolean }>) => {
     const { value, selected } = e.detail
 
-    if (this.multiple) {
+    if (this._isMultiple) {
       this.selected = selected
         ? [...this.selected, value]
         : this.selected.filter(v => v !== value)

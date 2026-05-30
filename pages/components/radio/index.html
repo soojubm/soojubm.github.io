@@ -14,11 +14,12 @@
     </fieldset>
   </mm-component-example>
   <mm-component-props>
-    <mm-prop name="src" type="string"></mm-prop>
-    <mm-prop name="alt" type="string"></mm-prop>
-    <mm-prop name="ratio" type="'1:1' | '16:9' | '4:3' = '1:1'"></mm-prop>
-    <mm-prop name="clickable" type="boolean"></mm-prop>
-    <mm-prop name="@click" type="(e: MouseEvent) => void" kind="event"></mm-prop>
+    <mm-prop name="name" type="string" optional></mm-prop>
+    <mm-prop name="value" type="string" optional></mm-prop>
+    <mm-prop name="helper" type="string" optional></mm-prop>
+    <mm-prop name="checked" type="boolean" optional></mm-prop>
+    <mm-prop name="disabled" type="boolean" optional></mm-prop>
+    <mm-prop name="change" type="CustomEvent detail: checked, value" kind="event"></mm-prop>
   </mm-component-props>
   <mm-component-guide>
     <section class="feature columns-2">
@@ -43,18 +44,26 @@
     <div>
       <mm-titlebar label="공개 대상 선택"></mm-titlebar>
       <br />
-      <mm-group variant="menuitem">
-        <mm-list-row icon="group" primaryText="전체공개" secondaryText="모든 Facebook 사용자">
-          <mm-radio slot="action"></mm-radio>
-          <mm-avatar slot="avatar" size="large" icon="group"> </mm-avatar>
-        </mm-list-row>
-        <mm-list-row icon="group" primaryText="친구만" secondaryText="회원님의 Facebook 친구">
-          <mm-radio slot="action"></mm-radio>
-        </mm-list-row>
-        <mm-list-row icon="lock" primaryText="나만 보기" secondaryText="부끄러우니까 보지마요">
-          <mm-radio slot="action"></mm-radio>
-        </mm-list-row>
-      </mm-group>
+      <mm-menu-item-radio-group name="access" value="public">
+        <mm-menu-item-radio
+          icon="group"
+          label="전체공개"
+          description="모든 Facebook 사용자"
+          value="public"
+        ></mm-menu-item-radio>
+        <mm-menu-item-radio
+          icon="group"
+          label="친구만"
+          description="회원님의 Facebook 친구"
+          value="friends"
+        ></mm-menu-item-radio>
+        <mm-menu-item-radio
+          icon="lock"
+          label="나만 보기"
+          description="부끄러우니까 보지마요"
+          value="private"
+        ></mm-menu-item-radio>
+      </mm-menu-item-radio-group>
     </div>
   </mm-component-section>
   <mm-component-section title="Tile Radio?" description="TODO">

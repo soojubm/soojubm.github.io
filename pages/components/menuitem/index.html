@@ -30,6 +30,7 @@
       </mm-menu-item-radio-group>
 
       <mm-setting-item
+        start-icon="code"
         label="철저한 코드 리뷰"
         description="Codex가 새 이슈를 더 이상 찾지 못할 때까지 추가 발견 사항을 계속 찾도록 합니다."
       >
@@ -41,7 +42,7 @@
   <mm-component-props>
     <mm-prop name="label" type="string"></mm-prop>
     <mm-prop name="description" type="string" optional></mm-prop>
-    <mm-prop name="icon" type="string" optional></mm-prop>
+    <mm-prop name="start-icon" type="string" optional></mm-prop>
     <mm-prop name="href" type="string" optional></mm-prop>
     <mm-prop name="tone" type="string" optional></mm-prop>
     <mm-prop name="disabled" type="boolean" optional></mm-prop>
@@ -95,42 +96,38 @@
 
   <mm-component-section title="MenuItemSwitch" description=""> </mm-component-section>
 
-  <mm-component-section title="ListRow" description="">
-    <mm-group variant="menuitem">
+  <mm-component-section
+    title="ListRow"
+    description="ListRow는 아바타와 2개의 텍스트만 배치하는 읽기/표시용 row입니다. action, href, role, 선택 상태가 필요한 경우 MenuItem 계열을 사용합니다."
+  >
+    <mm-paragraph-group>
+      <mm-text size="14">
+        ListRow는 콘텐츠를 설명하는 정적인 행입니다. 같은 배치가 필요하더라도 사용자가 누르거나
+        선택하는 항목은 MenuItemRow, MenuItemLink, MenuItemCheckbox, MenuItemRadio로 확장합니다.
+      </mm-text>
       <mm-list-row
         avatar-variant="secondary"
         size="large"
         icon="group"
         primaryText="MenuItem와 ListRow의 차이점은?"
-        secondaryText="설명 텍스트가 있을 수도 있고 없을 수도 있다."
-      >
-        <mm-button slot="action">액션</mm-button>
-      </mm-list-row>
+        secondaryText="ListRow는 표시 전용이고 MenuItem은 행동 가능한 row입니다."
+      ></mm-list-row>
       <mm-list-row
         size="large"
         icon="group"
         primaryText="Widgefy iOS Widgets"
         secondaryText="떡볶이"
-      >
-        <div slot="action" style="text-align: right">
-          <span style="display: block; line-height: 18px">18,800 KRW</span>
-          <mm-text size="14" color="var(--color-foreground-light)">6410</mm-text>
-        </div>
-      </mm-list-row>
+      ></mm-list-row>
 
-      <mm-list-row size="large" primaryText="Personal License" secondaryText="1 user">
-        <mm-text slot="action" size="18">18,800 KRW</mm-text>
-      </mm-list-row>
+      <mm-list-row size="large" primaryText="Personal License" secondaryText="1 user"></mm-list-row>
 
       <mm-list-row
         size="large"
         icon=""
         primaryText="사진 및 동영상 백업"
-        secondaryText="우측 액션은 사실 그냥 시각 정보인데"
-      >
-        <mm-tag slot="action" variant="primary">신규</mm-tag>
-      </mm-list-row>
-    </mm-group>
+        secondaryText="보조 상태나 액션은 별도 MenuItem 또는 도메인 row에서 다룹니다."
+      ></mm-list-row>
+    </mm-paragraph-group>
   </mm-component-section>
 
   <mm-component-section title="See this post in" description="">
@@ -138,12 +135,12 @@
       <mm-titlebar label="See this post in"> </mm-titlebar>
       <br />
       <mm-group variant="menuitem">
-        <mm-list-row avatar-variant="primary" size="large" primaryText="수줍이 앱">
+        <mm-menu-item-row icon="app-window" label="수줍이 앱" description="앱에서 게시물을 엽니다.">
           <mm-button slot="action" variant="primary">열기</mm-button>
-        </mm-list-row>
-        <mm-list-row avatarVariant="primary" size="large" primaryText="사파리 브라우저">
+        </mm-menu-item-row>
+        <mm-menu-item-row icon="safari" label="사파리 브라우저" description="브라우저에서 게시물을 엽니다.">
           <mm-button slot="action" status="active">실행</mm-button>
-        </mm-list-row>
+        </mm-menu-item-row>
       </mm-group>
     </div>
   </mm-component-section>

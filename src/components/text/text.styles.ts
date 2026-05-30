@@ -56,16 +56,6 @@ export const textStyles = css`
     transform: rotate(37.5deg);
   }
 
-  .text-group {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-3);
-  }
-
-  .text-group[data-variant='small'] {
-    gap: var(--space-1);
-  }
-
   .text[data-center='true'] {
     text-align: center;
   }

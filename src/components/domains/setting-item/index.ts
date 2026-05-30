@@ -5,6 +5,7 @@ import { customElement, property } from 'lit/decorators.js'
 export class SettingItem extends LitElement {
   @property({ type: String }) label = ''
   @property({ type: String }) description = ''
+  @property({ type: String, attribute: 'start-icon' }) startIcon = ''
 
   @property({ type: Boolean, reflect: true })
   disabled = false
@@ -19,11 +20,19 @@ export class SettingItem extends LitElement {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: var(--space-4, 16px);
+      gap: var(--space-3, 12px);
       padding: var(--space-5, 20px) 0;
     }
 
+    .start {
+      flex: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
     .content {
+      flex: 1;
       min-width: 0;
       display: flex;
       flex-direction: column;
@@ -45,6 +54,13 @@ export class SettingItem extends LitElement {
   render() {
     return html`
       <div class="item">
+        ${this.startIcon
+          ? html`
+              <span class="start" aria-hidden="true">
+                <mm-avatar variant="tertiary" size="medium" icon=${this.startIcon}></mm-avatar>
+              </span>
+            `
+          : ''}
         <div class="content">
           <mm-text weight="bold">${this.label}</mm-text>
           <mm-text>${this.description}</mm-text>
