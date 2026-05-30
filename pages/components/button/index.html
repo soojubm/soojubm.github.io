@@ -12,27 +12,27 @@
 
   <mm-component-example>
     <mm-tabpanel role="tabpanel" aria-hidden="false" data-index="1">
-      <mm-group>
+      <mm-button-group>
         <mm-button variant="primary" size="large">primary</mm-button>
         <mm-button variant="secondary" size="large">secondary</mm-button>
         <mm-button variant="tertiary" size="large">tertiary</mm-button>
         <mm-button variant="destructive" aria-label="danger">destructive</mm-button>
         <mm-button variant="text" size="large">text</mm-button>
         <mm-button variant="text" size="large" disabled>text</mm-button>
-      </mm-group>
+      </mm-button-group>
       <mm-separator></mm-separator>
-      <mm-group>
+      <mm-button-group>
         <mm-button variant="primary" size="large">large</mm-button>
         <mm-button variant="primary">small</mm-button>
-      </mm-group>
+      </mm-button-group>
     </mm-tabpanel>
     <mm-separator></mm-separator>
     <mm-tabpanel role="tabpanel" aria-hidden="true" data-index="2">
-      <mm-group variant="chip">
+      <mm-button-group>
         <mm-button variant="tertiary" status="hover">hovered</mm-button>
         <mm-button variant="tertiary" status="focus">focused</mm-button>
         <mm-button variant="`tertiary" disabled>disabled</mm-button>
-      </mm-group>
+      </mm-button-group>
     </mm-tabpanel>
   </mm-component-example>
 
@@ -67,8 +67,6 @@
       >
       </mm-feature>
     </section>
-
-    <br />
 
     <!-- <mm-text-group>
       <mm-text size="18">Changelog</mm-text>
@@ -108,36 +106,12 @@
         있습니다. icon only chip 링크. 링크 개념 모호. 팝업. 쿼리스트링.
       </mm-text>
 
-      <mm-component-aka items='["Tag", "Pill", "Badge", "Token", "Label", "Pick Button"]'></mm-component-aka>
+      <mm-component-aka
+        items='["Tag", "Pill", "Badge", "Token", "Label", "Pick Button"]'
+      ></mm-component-aka>
 
-      <mm-component-example>
-        <mm-group variant="chip">
-          <mm-button icon="check" status="checked"> checkable </mm-button>
-          <mm-button icon="xmark" status="checked"> dismiss </mm-button>
-          <mm-button icon="nav-arrow-down" aria-expanded="true"> expandable </mm-button>
-        </mm-group>
-
-        <mm-text size="18">
-          Single selection for contents filtering. togglebuttonGroup mui
-        </mm-text>
-        <mm-group variant="chip">
-          <mm-button status="checked" class="js-toggle is-active">전체</mm-button>
-          <mm-button class="js-toggle">입금확인</mm-button>
-          <mm-button class="js-toggle">결제완료</mm-button>
-          <mm-button class="js-toggle">배송중</mm-button>
-        </mm-group>
-
-        <mm-text size="18">Multiple selections</mm-text>
-        <mm-group variant="chip" aria-multiselectable="true">
-          <mm-button role="option" name="check" aria-selected="true" status="checked"
-            >소설</mm-button
-          >
-          <mm-button role="option" icon="check" aria-selected="false" status="checked">
-            영화</mm-button
-          >
-          <mm-button role="option" aria-selected="false">타이포그래피</mm-button>
-        </mm-group>
-      </mm-component-example>
+      <!-- " aria-selected="true"
+       aria-expanded="true" -->
 
       <mm-text-list
         texts='[
@@ -211,6 +185,33 @@
     </mm-text-group>
   </mm-component-guide>
 
+  <!-- <mm-component-section
+    title="ButtonGroup"
+    description="2개 이상의 버튼을 묶는 레이아웃 컨테이너. 방향, 정렬, 간격, flex 분배를 prop으로 제어합니다."
+  >
+    <div style="display: flex; flex-direction: column; gap: var(--space-4)">
+      <mm-button-group>
+        <mm-button variant="tertiary">취소</mm-button>
+        <mm-button variant="primary">저장</mm-button>
+      </mm-button-group>
+
+      <mm-button-group justify="between">
+        <mm-button variant="text">건너뛰기</mm-button>
+        <mm-button variant="primary">다음</mm-button>
+      </mm-button-group>
+
+      <mm-button-group stretch>
+        <mm-button variant="tertiary">이전</mm-button>
+        <mm-button variant="primary">다음</mm-button>
+      </mm-button-group>
+
+      <mm-button-group direction="column" gap="3">
+        <mm-button variant="primary" size="large">지금 시작하기</mm-button>
+        <mm-button variant="text">더 알아보기</mm-button>
+      </mm-button-group>
+    </div>
+  </mm-component-section> -->
+
   <mm-component-section
     title="Button Group"
     description="버튼 그룹은 관련된 액션을 묶어 사용자가 선택할 수 있도록 합니다. 항상primary action에 먼저 포커스되어야 합니다. tabindex는 불필요. 마크업 순서와 정렬 스타일링으로 해결."
@@ -225,31 +226,31 @@
         </dl>
       </mm-text-group>
       <div style="display: flex; flex-direction: column; gap: 1.5rem">
-        <mm-group variant="chip">
+        <mm-button-group>
           <mm-button variant="tertiary" size="large">취소</mm-button>
           <mm-button variant="primary" size="large">저장</mm-button>
-        </mm-group>
-        <mm-group variant="chip">
+        </mm-button-group>
+        <mm-button-group>
           <mm-button variant="text" size="large">건너뛰기</mm-button>
           <mm-button variant="secondary" size="large">다음</mm-button>
-        </mm-group>
-        <mm-group variant="chip">
+        </mm-button-group>
+        <mm-button-group>
           <mm-button variant="tertiary" size="large">이전</mm-button>
           <mm-button variant="secondary" size="large">다음</mm-button>
-        </mm-group>
-        <mm-group variant="chip" class="hero-actions">
+        </mm-button-group>
+        <mm-button-group class="hero-actions">
           <mm-button variant="primary" size="large" href="#components">지금 가입하기</mm-button>
           <mm-button variant="text" size="large">더 알아보기</mm-button>
-        </mm-group>
+        </mm-button-group>
       </div>
       <mm-surface>
         <mm-text size="14" weight="bold">이 문서가 도움이 되었나요?</mm-text>
         <small title="17 out of 439 found this helpful"> 417명 중 349명이 도움을 받았어요. </small>
         <div style="height: 1rem"></div>
-        <mm-group variant="">
+        <mm-button-group>
           <mm-button>도움이 됐어요</mm-button>
           <mm-button>부족해요</mm-button>
-        </mm-group>
+        </mm-button-group>
       </mm-surface>
     </div>
   </mm-component-section>
@@ -283,13 +284,46 @@
   </mm-component-section>
 
   <mm-component-section title="ViewMoreButton" description="TODO define expandable indicator">
-    <mm-group>
+    <mm-button-group>
       <mm-button variant="text" icon="nav-arrow-down">View More</mm-button>
       <mm-button variant="text" icon="nav-arrow-up">View Less</mm-button>
-    </mm-group>
+    </mm-button-group>
   </mm-component-section>
 
-  <mm-component-section title="FilterButton / FilterOption" description="...">
+  <mm-component-section
+    title="FilterButton / FilterOption"
+    description="콘텐츠 필터링을 위한 옵션 버튼. size=small의 mm-button을 합성하며 선택 시 체크 아이콘을 표시합니다. 그룹으로 묶어 단일 선택 또는 다중 선택을 지원합니다."
+  >
+    <div style="display: flex; flex-direction: column; gap: var(--space-4)">
+      <div>
+        <mm-text size="14" weight="bold">단일 옵션 (selected 상태)</mm-text>
+        <div style="display: flex; gap: 6px; margin-top: var(--space-2)">
+          <mm-filter-button value="all" selected>전체</mm-filter-button>
+          <mm-filter-button value="news">뉴스</mm-filter-button>
+          <mm-filter-button value="design" disabled>디자인</mm-filter-button>
+        </div>
+      </div>
+
+      <div>
+        <mm-text size="14" weight="bold">Single selection (라디오형)</mm-text>
+        <mm-filter-button-group style="margin-top: var(--space-2)">
+          <mm-filter-button value="all" selected>전체</mm-filter-button>
+          <mm-filter-button value="deposit">입금확인</mm-filter-button>
+          <mm-filter-button value="paid">결제완료</mm-filter-button>
+          <mm-filter-button value="shipping">배송중</mm-filter-button>
+        </mm-filter-button-group>
+      </div>
+
+      <div>
+        <mm-text size="14" weight="bold">Multiple selection (체크박스형)</mm-text>
+        <mm-filter-button-group multiple style="margin-top: var(--space-2)">
+          <mm-filter-button value="novel" selected>소설</mm-filter-button>
+          <mm-filter-button value="movie" selected>영화</mm-filter-button>
+          <mm-filter-button value="typo">타이포그래피</mm-filter-button>
+          <mm-filter-button value="music">음악</mm-filter-button>
+        </mm-filter-button-group>
+      </div>
+    </div>
   </mm-component-section>
   <mm-component-section
     title="SortButton"
@@ -365,7 +399,10 @@
   </mm-component-section>
 
   <mm-component-references>
-    <mm-link external href="https://developer.android.com/reference/android/widget/HorizontalScrollView">
+    <mm-link
+      external
+      href="https://developer.android.com/reference/android/widget/HorizontalScrollView"
+    >
       Android - HorizontalScrollView
     </mm-link>
     <mm-link
@@ -374,8 +411,14 @@
     >
       Android - ChipGroup
     </mm-link>
-    <mm-link external href="https://m3.material.io/components/segmented-buttons/overview">Segmented buttons</mm-link>
-    <mm-link external href="https://developer.apple.com/design/human-interface-guidelines/segmented-controls">Segmented controls</mm-link>
+    <mm-link external href="https://m3.material.io/components/segmented-buttons/overview"
+      >Segmented buttons</mm-link
+    >
+    <mm-link
+      external
+      href="https://developer.apple.com/design/human-interface-guidelines/segmented-controls"
+      >Segmented controls</mm-link
+    >
     <mm-link external href="https://www.w3.org/WAI/ARIA/apg/patterns/listbox/">WAI listbox</mm-link>
   </mm-component-references>
 </main>

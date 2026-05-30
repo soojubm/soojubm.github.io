@@ -2,6 +2,7 @@ import { LitElement, html, css } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { state } from 'lit/decorators/state.js'
 import { resetStyles } from '../../shared/reset.styles'
+import '../../button/read-more-button'
 
 /**
  * 1. 자식 컴포넌트: <mm-prop>
@@ -76,11 +77,9 @@ export class ComponentProps extends LitElement {
         position: relative;
         cursor: pointer;
       }
-      .component-props::after {
-        content: '...펼쳐서 더보기';
-        display: block;
+      .component-props-more {
+        display: flex;
         padding: 0.75rem 2rem 1rem calc(var(--grid-margin) - 1rem);
-        font-weight: bold;
         background-color: inherit;
         /* background: linear-gradient(to bottom, rgba(255,255,255,0), var(--color-background-subtle), var(--color-background-subtle)); */
         position: absolute;
@@ -95,7 +94,7 @@ export class ComponentProps extends LitElement {
         height: auto;
         cursor: default;
       }
-      .component-props.is-opened::after {
+      .component-props.is-opened .component-props-more {
         display: none;
       }
 
@@ -107,7 +106,7 @@ export class ComponentProps extends LitElement {
           border-inline: 0;
           border-radius: 0;
         }
-        .component-props::after {
+        .component-props-more {
           padding-inline: var(--grid-margin);
         }
       }
@@ -131,6 +130,9 @@ export class ComponentProps extends LitElement {
         <dl>
           <slot></slot>
         </dl>
+        <div class="component-props-more" aria-hidden=${this._isOpened ? 'true' : 'false'}>
+          <mm-read-more-button more-label="...펼쳐서 더보기"></mm-read-more-button>
+        </div>
       </section>
     `
   }

@@ -208,11 +208,42 @@ The font size of a key is never bigger than the value.
 
   <mm-component-section title="Headings" description="">
     <div style="display: flex; flex-direction: column">
-      <mm-text size="32" weight="bold" as="h1">페이지 레벨의 타이틀</mm-text>
+      <mm-page-title>페이지 레벨의 타이틀</mm-page-title>
       <div style="height: 1rem"></div>
-      <mm-text size="18" weight="bold" as="h2">섹션 레벨의 타이틀</mm-text>
+      <mm-section-title>섹션 레벨의 타이틀</mm-section-title>
       <div style="height: 0.75rem"></div>
       <mm-text size="14" weight="bold" as="h2">소제목</mm-text>
+    </div>
+  </mm-component-section>
+
+  <mm-component-section
+    title="SectionTitle"
+    description="콘텐츠 묶음의 제목. 기본 h2, font-size-18, bold를 사용합니다."
+  >
+    <div style="display: flex; flex-direction: column; gap: var(--space-2)">
+      <mm-section-title>계정 설정</mm-section-title>
+      <mm-paragraph>로그인, 알림, 공개 범위처럼 계정에 연결된 옵션을 관리합니다.</mm-paragraph>
+    </div>
+  </mm-component-section>
+
+  <mm-component-section
+    title="Caption"
+    description="보조 설명, 메타 정보, 이미지 캡션처럼 낮은 위계의 텍스트입니다."
+  >
+    <div style="display: flex; flex-direction: column; gap: var(--space-3)">
+      <mm-caption>마지막 업데이트: 2026.05.30</mm-caption>
+      <figure style="margin: 0">
+        <div
+          style="
+            width: 100%;
+            max-width: 360px;
+            aspect-ratio: 16 / 9;
+            background: var(--color-container);
+            border: var(--border);
+          "
+        ></div>
+        <mm-caption as="figcaption">이미지 하단에 배치되는 설명 텍스트</mm-caption>
+      </figure>
     </div>
   </mm-component-section>
 
@@ -297,10 +328,10 @@ The font size of a key is never bigger than the value.
             부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은 침묵에 잠겼다.
           </mm-text> -->
         <div style="height: var(--space-4)"></div>
-        <mm-group variant="button">
+        <mm-button-group>
           <mm-button variant="primary" size="large">콜 투 액션</mm-button>
           <mm-button variant="text" size="large">더 알아보기</mm-button>
-        </mm-group>
+        </mm-button-group>
       </mm-text-group>
     </section>
   </mm-component-section>

@@ -1,10 +1,10 @@
 <main class="page">
   <!-- <nav class="component-navigation" role="group" data-scroll="vertical" role="menubar">
-    <mm-group variant="chip">
+    <mm-button-group>
       <div class="component-navigation-background"></div>
       <mm-button class="is-active js-scrollspy-trigger" href="#">Dim</mm-button>
       <mm-button class="js-scrollspy-trigger" href="#">Page</mm-button>
-    </mm-group>
+    </mm-button-group>
   </nav>
   <style>
     .component-navigation {
@@ -126,14 +126,14 @@
   <mm-text size="32">Presentation</mm-text>
 
   <mm-component-example>
-    <mm-group>
+    <mm-button-group>
       <mm-button data-open-sheet="center">Center Sheet 열기</mm-button>
       <mm-button data-open-sheet="bottom">Bottom Sheet 열기</mm-button>
       <mm-button data-open-sheet="left">Left Sheet 열기</mm-button>
       <mm-button data-open-sheet="right">Right Sheet 열기</mm-button>
       <mm-button data-open-sheet="anchor">Anchor Sheet 열기</mm-button>
       <mm-button data-open-sheet="inline">Inline Sheet 열기</mm-button>
-    </mm-group>
+    </mm-button-group>
     <mm-button variant="tertiary" class="js-toggle">토스트 열기</mm-button>
     <aside class="toast" role="alert">toast test. 사라지는 시간을 정의.</aside>
 
@@ -322,11 +322,11 @@
       <mm-separator></mm-separator>
       <fieldset class="filter-fieldset" role="radiogroup">
         <legend class="filter-fieldset-legend">평수</legend>
-        <mm-group variant="chip">
+        <mm-button-group>
           <mm-button>10평 미만</mm-button>
           <mm-button>20평</mm-button>
           <mm-button>30평</mm-button>
-        </mm-group>
+        </mm-button-group>
       </fieldset>
       <mm-separator></mm-separator>
       <fieldset class="filter-fieldset" role="radiogroup">
@@ -363,9 +363,9 @@
         </mm-group>
       </fieldset>
     </form>
-    <mm-group variant="button">
+    <mm-button-group>
       <mm-button variant="primary" size="large">적용/숙소 25개 표시</mm-button>
       <mm-button variant="text" size="large">전체 해제</mm-button>
-    </mm-group>
+    </mm-button-group>
   </mm-surface>
 </main>

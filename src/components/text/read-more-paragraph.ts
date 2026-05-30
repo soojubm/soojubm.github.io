@@ -1,6 +1,7 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 import { resetStyles } from '../shared/reset.styles'
+import '../button/read-more-button'
 
 @customElement('mm-read-more-paragraph')
 export class ReadMoreParagraph extends LitElement {
@@ -16,15 +17,9 @@ export class ReadMoreParagraph extends LitElement {
         display: block;
       }
 
-      button {
-        font: inherit;
-        background: none;
-        border: none;
-        padding: 0;
+      mm-read-more-button {
         margin: 0;
         margin-left: var(--space-1);
-        font-weight: var(--font-weight-bold);
-        color: var(--color-foreground);
       }
     `,
   ]
@@ -44,7 +39,10 @@ export class ReadMoreParagraph extends LitElement {
       <mm-paragraph>
         ${displayText}
         ${truncated
-          ? html`<button @click=${this.toggle}>${this.expanded ? '접기' : '더 보기'}</button>`
+          ? html`<mm-read-more-button
+              .expanded=${this.expanded}
+              @click=${this.toggle}
+            ></mm-read-more-button>`
           : nothing}
       </mm-paragraph>
     `

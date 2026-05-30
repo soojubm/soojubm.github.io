@@ -22,9 +22,7 @@ export class Button extends LitElement {
     if (this.disabled) {
       event.preventDefault()
       event.stopPropagation()
-      return
     }
-    alert('버튼이 클릭되었습니다!')
   }
 
   // 3. 렌더링: connectedCallback과 복잡한 DOM 생성 로직을 모두 대체합니다.
