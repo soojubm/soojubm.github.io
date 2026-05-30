@@ -43,6 +43,7 @@ import '../../components/avatar'
 // domains
 import '../../components/domains'
 
+import '../../components/spinner'
 import '../../components/tabs'
 
 // 👉 “이 파일은 module이다”라고 명시

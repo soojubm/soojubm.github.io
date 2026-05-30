@@ -10,6 +10,39 @@ export class Sidebar extends LitElement {
     return this
   }
 
+  // Lit 렌더링이 완료된 후 실행 → DOM이 확실히 존재
+  firstUpdated() {
+    this.querySelectorAll<HTMLElement>('.sidebar-menu button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        btn.classList.toggle('is-open')
+      })
+    })
+
+    this.highlightCurrentLink()
+    this.syncScrollPosition()
+  }
+
+  private highlightCurrentLink() {
+    const currentPageId = window.location.pathname.split('/').pop()?.replace('.html', '') || 'index'
+    this.querySelectorAll<HTMLElement>('.sidebar-menu a').forEach(a => {
+      const href = a.getAttribute('href')?.replace('.html', '') || ''
+      if (href && href === currentPageId) {
+        a.setAttribute('aria-current', 'page')
+      }
+    })
+  }
+
+  private syncScrollPosition() {
+    const saved = localStorage.getItem('sidebarScroll')
+    if (saved) this.scrollTop = Number(saved)
+
+    this.querySelectorAll<HTMLElement>('.sidebar-menu a').forEach(a => {
+      a.addEventListener('click', () => {
+        localStorage.setItem('sidebarScroll', String(this.scrollTop))
+      })
+    })
+  }
+
   render() {
     // 💡 브라우저 현재 URL을 분석해서 현재 어떤 페이지에 있는지 자동으로 알아냅니다.
     // 예: /thumbnail.html -> 'thumbnail'

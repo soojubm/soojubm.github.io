@@ -235,6 +235,19 @@ The font size of a key is never bigger than the value.
     title="ParagraphGroup"
     description="문단 사이의 간격을 정의. TextGroup, ContentGroup, TextStack"
   >
+    <mm-paragraph-group>
+      <mm-paragraph>
+        첫 번째 문단입니다. Paragraph medium은 font-size-14를 기준으로 하며, 일반적인 UI 본문에 사용됩니다.
+        레이아웃에서 여러 문단이 이어질 때 ParagraphGroup으로 묶어 일관된 간격을 유지합니다.
+      </mm-paragraph>
+      <mm-paragraph>
+        두 번째 문단입니다. 문단 사이 간격은 var(--space-4)로 고정되어 있어 사용처마다 따로 간격을 지정하지 않아도 됩니다.
+        긴 본문 콘텐츠나 설명 영역에서 활용하세요.
+      </mm-paragraph>
+      <mm-paragraph>
+        세 번째 문단입니다. 슬롯을 통해 mm-paragraph 외에도 다른 요소를 자유롭게 조합할 수 있습니다.
+      </mm-paragraph>
+    </mm-paragraph-group>
   </mm-component-section>
 
   <mm-component-section

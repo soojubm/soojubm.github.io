@@ -1,0 +1,170 @@
+<main class="page" role="" aria-label="site">
+  <mm-page-header
+    level="1"
+    title="Dialog"
+    description="사용자의 정보나 재산의 변경 또는 삭제 확인."
+  ></mm-page-header>
+
+  <button onclick="confirm('gggg')">111</button>
+
+  <style>
+    .dialog {
+      width: 100%;
+      max-width: var(--popover-width-dialog);
+      padding: var(--space-4);
+      border: var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      box-sizing: border-box;
+      background: var(--color-background);
+    }
+
+    .dialog-head {
+      display: flex;
+      justify-content: space-between;
+    }
+    .dialog-head-title {
+      margin: 0 auto;
+    }
+
+    .dialog-title {
+    }
+    .dialog-description {
+      margin: 0.5rem 0 1.5rem;
+    }
+
+    .dialog-foot {
+      display: flex;
+      justify-content: flex-end;
+      /* justify-content:space-between;flex-direction:row-reverse; */
+      margin: 1.5rem 0 0;
+    }
+
+    .dialog-close {
+      position: absolute;
+      right: 0.5rem;
+      top: 0.5rem;
+    }
+  </style>
+
+  <dl class="article-aka">
+    <dt>a.k.a.</dt>
+    <dd title="">Alert</dd>
+    <dd title="">Modal</dd>
+    <dd title="lightning">Prompt</dd>
+  </dl>
+
+  <mm-component-example>
+    <div>
+      <aside
+        class="dialog"
+        role="alertdialog"
+        aria-modal="true"
+        aria-labelledby="dialog-title1"
+        aria-describedby="dialog-description2"
+      >
+        <div role="document" tabindex="0">
+          <mm-title-with-description
+            level="3"
+            title="Alert Dialog"
+            description="부끄러우니까 보지마요!"
+            center="true"
+          ></mm-title-with-description>
+          <!-- <mm-text size="18">Alert Dialog</mm-text> -->
+          <!-- <mm-text size="18" class="dialog-title" id="dialog-title1"></mm-text> -->
+          <!-- <p class="dialog-description" id="dialog-description1">부끄러우니까 보지마요!</p> -->
+          <button class="dialog-close js-close" aria-label="delete"></button>
+          <footer class="dialog-foot">
+            <mm-button variant="primary" size="large">확인</mm-button>
+          </footer>
+        </div>
+      </aside>
+      <br />
+      <aside
+        class="dialog"
+        role="alertdialog"
+        aria-modal="true"
+        aria-labelledby="dialog-title2"
+        aria-describedby="dialog-description2"
+      >
+        <mm-title-with-description
+          level="3"
+          title="페이지를 나가시겠어요?"
+          description="저장되지 않은 변경 사항이 있습니다. 이 페이지에서 나가면 변경 사항이 취소됩니다."
+        ></mm-title-with-description>
+        <!-- <header class="dialog-head">
+          <mm-text size="18" class="dialog-title">페이지를 나가시겠어요?</mm-text>
+          <button class="dialog-close js-close" aria-label="delete"></button>
+        </header> -->
+        <!-- <div class="dialog-body">
+          <p class="dialog-description" id="dialog-description2">
+            저장되지 않은 변경 사항이 있습니다. 이 페이지에서 나가면 변경 사항이 취소됩니다.
+          </p>
+        </div> -->
+        <mm-group variant="button" class="dialog-foot">
+          <mm-button variant="tertiary" size="large">계속 수정하기</mm-button>
+          <mm-button variant="primary" size="large">나가기</mm-button>
+        </mm-group>
+      </aside>
+      <br />
+      <aside
+        class="dialog"
+        role="alertdialog"
+        aria-modal="true"
+        aria-labelledby="dialog-title2"
+        aria-describedby="dialog-description2"
+      >
+        <header class="dialog-head">
+          <mm-clear-button></mm-clear-button>
+          <!-- <button class="dialog-close js-close" aria-label="delete"></button> -->
+        </header>
+        <div class="dialog-body">
+          <p class="dialog-description" id="dialog-description2">
+            By clicking “Accept Cookies”, you agree to the storing of cookies on your device to
+            enhance site navigation, analyze site usage, and assist in our marketing efforts. View
+            our Cookie Policy for more information.
+          </p>
+        </div>
+        <mm-group variant="button" class="dialog-foot">
+          <mm-button variant="tertiary" size="large">Cookie Settings</mm-button>
+          <mm-button variant="primary" size="large">Accept Cookie</mm-button>
+        </mm-group>
+      </aside>
+    </div>
+  </mm-component-example>
+
+  <mm-component-props>
+    <mm-prop name="src" type="string"></mm-prop>
+    <mm-prop name="alt" type="string"></mm-prop>
+    <mm-prop name="ratio" type="'1:1' | '16:9' | '4:3' = '1:1'"></mm-prop>
+    <mm-prop name="clickable" type="boolean"></mm-prop>
+    <mm-prop name="@click" type="(e: MouseEvent) => void" kind="event"></mm-prop>
+  </mm-component-props>
+
+  <section class="component-guide">
+    <div class="column columns-2">
+      <mm-feature
+        icon="cursor-pointer"
+        titleText="Feedback"
+        subtitle=""
+        description="ally. 다이얼로그를 닫기 전에는 이전 콘텐츠로 포커스 불가능. 다이얼로그(또는 모달)를 닫은 후
+          열기 버튼으로 포커스. TODO 타이틀 글자수 제한. 논모달에서만 닫기 버튼 사용"
+      >
+      </mm-feature>
+      <mm-feature
+        icon="task-list"
+        titleText="Interactive"
+        subtitle=""
+        description="Alert or Confirmation, Notification.레이어를 2개 이상 쌓지 마세요. 현대 유아이에서 레이어라는 개념이 모호함. 풀스크린
+          모달에서 다이얼로그를 띄울 수 있어야 할까? 프라이머리 버튼의 레이블은 다이얼로그 제목의 동사와 페어링되어야 한다. 부정어로 묻지 말 것."
+      >
+      </mm-feature>
+    </div>
+
+    <mm-text size="14">
+      단순 다이얼로그는 복잡한 구조가 필요없다. 모달리티 컨텐츠 뷰에서 head/body/foot 구조가
+      필요한데, 이것은 페이지 모듈과 동일하다. DialogHead, DialogBody, DialogFoot. buttonGroup
+      type="unary(confirm) | binary(cancel/confirm). 이런 정의는 불필요하다.
+    </mm-text>
+  </section>
+</main>

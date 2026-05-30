@@ -1,0 +1,28 @@
+<main class="page">
+  <mm-page-header
+    title="Spinner"
+    description="비동기 작업의 진행 중 상태를 나타냅니다."
+  ></mm-page-header>
+
+  <mm-component-example>
+    <mm-group>
+      <mm-spinner size="small"></mm-spinner>
+      <mm-spinner size="medium"></mm-spinner>
+      <mm-spinner size="large"></mm-spinner>
+    </mm-group>
+    <mm-separator></mm-separator>
+    <mm-group>
+      <mm-spinner label="저장 중..."></mm-spinner>
+      <mm-spinner label="불러오는 중..."></mm-spinner>
+    </mm-group>
+    <mm-separator></mm-separator>
+    <mm-spinner>
+      <mm-text size="14">커스텀 슬롯 레이블</mm-text>
+    </mm-spinner>
+  </mm-component-example>
+
+  <mm-component-props>
+    <mm-prop name="size" type="'small' | 'medium' | 'large' = 'medium'"></mm-prop>
+    <mm-prop name="label" type="string = '로딩 중'"></mm-prop>
+  </mm-component-props>
+</main>
