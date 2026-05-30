@@ -88,6 +88,7 @@ export const SITEMAP = [
       { id: 'presentation', name: 'presentation' },
       { id: 'auth', name: 'auth' },
       { id: 'profile', name: 'user profile', badge: '🔥' },
+      { id: 'chat', name: 'chat' },
       { id: 'setting', name: 'setting' },
       { id: 'post', name: 'post' },
       { id: 'product', name: 'Product' },

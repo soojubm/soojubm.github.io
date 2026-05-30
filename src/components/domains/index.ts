@@ -8,4 +8,5 @@ import './prompt-input'
 import './setting-item'
 import './portfolio-item'
 import './social-links'
+import './chat'
 export {}

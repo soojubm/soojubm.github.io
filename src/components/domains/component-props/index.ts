@@ -66,7 +66,7 @@ export class ComponentProps extends LitElement {
         display: block;
       }
       .component-props {
-        height: 9rem;
+        height: 12rem;
         overflow: hidden;
         margin: 0 0 0 calc(-5vw + 1rem);
         padding: 1.5rem calc(var(--grid-margin) - 1rem);

@@ -10,7 +10,7 @@ type ViewModeChangeEvent = CustomEvent<{ mode: 'grid' | 'list' }>
 type SortChangeEvent = CustomEvent<{ order: 'latest' | 'oldest' }>
 
 document.addEventListener('DOMContentLoaded', () => {
-  document.body.innerHTML = renderLayout(main)
+  document.body.innerHTML = renderLayout(main, { closeSidebar: true })
   hideNavbar()
 
   const modal = setupModal()

@@ -5,11 +5,15 @@ import footer from '/src/components/footer/footer.html'
 import '/pages/components/components.css'
 import '/src/stylesheets/shared.css'
 
-export const renderLayout = (content: string) => {
+export const renderLayout = (content: string, options: { footer?: boolean; closeSidebar?: boolean } = {}) => {
+  if (options.closeSidebar) {
+    document.body.classList.remove('is-menu-opened')
+  }
+
   return `
     ${navbar}
     ${content}
     <aside id="modal"></aside>
-    ${footer}
+    ${options.footer ? footer : ''}
   `
 }
