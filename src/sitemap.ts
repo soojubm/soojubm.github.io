@@ -70,7 +70,7 @@ export const SITEMAP = [
     items: [
       { id: 'tooltip', name: 'tooltip' },
       { id: 'dialog', name: 'dialog' },
-      { id: 'callout', name: 'banner' }, // href와 이름이 매칭되지 않는 부분 처리
+      { id: 'notice', name: 'notice' },
       { id: 'spinner', name: 'spinner' },
     ],
   },

@@ -16,22 +16,15 @@ export class ReadMoreParagraph extends LitElement {
         display: block;
       }
 
-      p {
-        margin: 0;
-        font-size: var(--font-size-14);
-        line-height: var(--line-height-14);
-      }
-
       button {
         font: inherit;
         background: none;
         border: none;
         padding: 0;
         margin: 0;
-
         margin-left: var(--space-1);
         font-weight: var(--font-weight-bold);
-        color: var(--color-foregeound);
+        color: var(--color-foreground);
       }
     `,
   ]
@@ -48,12 +41,12 @@ export class ReadMoreParagraph extends LitElement {
         : this.content
 
     return html`
-      <p>
+      <mm-paragraph>
         ${displayText}
         ${truncated
           ? html`<button @click=${this.toggle}>${this.expanded ? '접기' : '더 보기'}</button>`
           : nothing}
-      </p>
+      </mm-paragraph>
     `
   }
 }

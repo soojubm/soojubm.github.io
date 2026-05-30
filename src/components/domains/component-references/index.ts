@@ -17,6 +17,7 @@ export class ComponentReferences extends LitElement {
     .component-references {
       display: flex;
       flex-direction: column;
+      padding: 4rem 0;
       gap: var(--space-3);
       /* border-top: 2px dashed var(--color-border); */
     }

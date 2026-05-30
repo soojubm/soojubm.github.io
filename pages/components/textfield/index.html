@@ -47,11 +47,7 @@
   ></mm-title-with-description>
 
   <!-- - 콤보박스 textfield + select -->
-  <dl class="article-aka">
-    <dt>a.k.a.</dt>
-    <dd>TextInput</dd>
-    <dd>Input</dd>
-  </dl>
+  <mm-component-aka items='["TextInput", "Input"]'></mm-component-aka>
 
   <mm-component-example>
     <div style="max-width: 400px">
@@ -282,23 +278,13 @@
     </div> -->
 
   <mm-text-list texts="[]">
-    <li>TODO utilities. 앞자리 0 제거. 숫자만입력3자리마다콤마. 소숫점 컨트롤.</li>
-    <li>url field. www 및 https://</li>
-    <li>
-      form 컴포넌트는 간격에 대한 구조 컴포넌트. TODO. FormField, FormLabel, FormControl. form
+    <mm-text-list texts='["TODO utilities. 앞자리 0 제거. 숫자만입력3자리마다콤마. 소숫점 컨트롤.", "url field. www 및 https://", "form 컴포넌트는 간격에 대한 구조 컴포넌트. TODO. FormField, FormLabel, FormControl. form
       patterns. FormField label / TextInput 으로 나누는 방안. groupable은 속성. 그래서 컴포넌트
       이름은 form layout / fieldset / fieldgroup FormLabel checkbox-label와 input-label을 똑같이 할
       수 있나? field label : fieldset legend, label - input/textarea 그러면 searchField 등의 대안이
-      될 수 있나?
-    </li>
-    <li>field feedback / fieldset feedback(checkbox group, login)</li>
-    <li>props: minValue, maxValue, value, onDecreseClick, onIncreseClick</li>
-    <li>221021: - + 버튼에 포커스는 필요가 없다. input 키보드 위 아래로?</li>
-    <li>
-      장식적인 검색 아이콘과 clickable한 액션. prefix는 장식. suffix는 액션? suffix에 유닛이 있을
-      수도
-    </li>
-  </mm-text-list>
+      될 수 있나?", "field feedback / fieldset feedback(checkbox group, login)", "props: minValue, maxValue, value, onDecreseClick, onIncreseClick", "221021: - + 버튼에 포커스는 필요가 없다. input 키보드 위 아래로?", "장식적인 검색 아이콘과 clickable한 액션. prefix는 장식. suffix는 액션? suffix에 유닛이 있을
+      수도"]'></mm-text-list>
+</mm-text-list>
 
   <!-- <div
     style="
@@ -468,36 +454,11 @@
   </mm-component-section>
 
   <mm-component-references>
-    <mm-link external href="https://developer.apple.com/documentation/swiftui/navigationstack">
-      swiftui navigationstack
-    </mm-link>
     <mm-link
       external
-      href="https://developer.apple.com/design/human-interface-guidelines/tab-views"
+      href="https://support.google.com/accounts/answer/32040?visit_id=637702064644854938-965259796&p=pw_dont_reuse&hl=ko&rd=1"
     >
-      HIG tab views
-    </mm-link>
-    <mm-link
-      external
-      href="https://developer.apple.com/design/human-interface-guidelines/components/selection-and-input/segmented-controls/"
-    >
-      HIG Segmented controls
-    </mm-link>
-    <mm-link external href="https://material.io/components/tabs">MD Tabs</mm-link>
-    <mm-link external href="https://m3.material.io/components/top-app-bar/overview">
-      MD3 top app bar
-    </mm-link>
-    <mm-link external href="https://m2.material.io/components/bottom-navigation">
-      M2 Bottom Navigation
-    </mm-link>
-    <mm-link external href="https://m3.material.io/components/navigation-bar/overview">
-      M3 Navigation Bar
-    </mm-link>
-    <mm-link
-      external
-      href="https://developer.apple.com/design/human-interface-guidelines/components/navigation-and-search/tab-bars"
-    >
-      HIG Tab bars
+      구글의 비밀번호 만들기 팁꾸
     </mm-link>
   </mm-component-references>
 

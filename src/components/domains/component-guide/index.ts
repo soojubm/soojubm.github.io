@@ -8,12 +8,15 @@ class ComponentGuide extends LitElement {
       display: flex;
       flex-direction: column;
       gap: var(--space-4);
-      padding: 2.5rem 0;
+      padding: 4rem 0;
     }
   `
 
   render() {
-    return html`<slot></slot>`
+    return html`<div>
+      <div hidden><mm-text as="h2"">Component Guide</mm-text></div>
+      <slot></slot>
+    </div>`
   }
 }
 

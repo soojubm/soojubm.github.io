@@ -221,114 +221,40 @@
       the context of the current page, use Sheet.
     </p>
 
-    <ul>
-      <li>브라우저 히스토리가 필요한 레이어.</li>
-      <li>
-        body element의 스크롤. 스크롤의 크기 보정. 크롬에서는 html에 overflow:hidden를 잘 주면
+    <mm-text-list texts='["브라우저 히스토리가 필요한 레이어.", "body element의 스크롤. 스크롤의 크기 보정. 크롬에서는 html에 overflow:hidden를 잘 주면
         끝인데, 익스플로러에선 스크롤 제어하려면 body에 먹여야 한? html에 overflow:hidden;을주고
-        모달에 overflow-y를 주면(조건:모달이 윈도우창보다 작아질때)
-      </li>
-
-      <li>iOS에서 modality/dialog는 버튼으로 닫는다.</li>
-      <li>foundation ::모든 레이어는 모달(다이얼로그)이 대체 가능하다.</li>
-      <li>md. When adapting for larger screens, a bottom sheet can become a context menu.</li>
-
-      <li>
-        <b>사용자 워크플로 중심으로 용법을 정의.</b> 토스트 식빵처럼 튀어나오는 것을 toast로 정의할
+        모달에 overflow-y를 주면(조건:모달이 윈도우창보다 작아질때)", "iOS에서 modality/dialog는 버튼으로 닫는다.", "foundation ::모든 레이어는 모달(다이얼로그)이 대체 가능하다.", "md. When adapting for larger screens, a bottom sheet can become a context menu.", "사용자 워크플로 중심으로 용법을 정의. 토스트 식빵처럼 튀어나오는 것을 toast로 정의할
         수도 특정 위치(왼쪽 아래)에 위치하는 맥락으로 toast를 정의할 수도 있는 것. 너무 많은
         콘텐츠를 모달에 표시하지 않도록 제한할 것인지, dribble, pinterest와 같이 풀페이지 모달 뷰를
-        허용하여 페이지 맥락으로 접근을 허용할 것인지.
-      </li>
-      <li>
-        popover no tip / caret tip / tab tip - carbon design system + toggletip,tooltip으로 구분
-      </li>
-
-      <li>md. Swap the bottom sheet for a side sheet in landscape layouts.</li>
-    </ul>
+        허용하여 페이지 맥락으로 접근을 허용할 것인지.", "popover no tip / caret tip / tab tip - carbon design system + toggletip,tooltip으로 구분", "md. Swap the bottom sheet for a side sheet in landscape layouts."]'></mm-text-list>
 
     <mm-text size="18">Toast</mm-text>
     <mm-text>Don't show more than one at a time.</mm-text>
-    <li>일시적인 피드백.</li>
-    <li>
-      toast VS snackbar. action 유/무. MD 버전업과 함께 재정의 됨. HIG에 정의되지 않음. iOS spotify
-      앱에서 '라이브러리에 추가되었습니다'. 휴지통이 있으면 되돌리기 액션이 필요없을 수도 있다.
-    </li>
-
-    <mm-text size="18">Case studies</mm-text>
-    <ul>
-      <li>
-        <b>ibm.</b> Don’t use to display complex or large amounts of data. Don’t recreate a full app
-        or page in a dialog.
-      </li>
-      <li>
-        <b>airbnb.</b> 큰 화면에서 x 버튼. 모바일에서 페이지처럼 변하면서 arrow 버튼으로 변경됨
-      </li>
-      <li><b>pinterest.</b> onDismiss / Preventing close on outside click / layer component</li>
-    </ul>
+    <mm-text-list texts='["일시적인 피드백.", "toast VS snackbar. action 유/무. MD 버전업과 함께 재정의 됨. HIG에 정의되지 않음. iOS spotify
+      앱에서 '라이브러리에 추가되었습니다'. 휴지통이 있으면 되돌리기 액션이 필요없을 수도 있다."]'></mm-text-list>
+<mm-text size="18">Case studies</mm-text>
+    <mm-text-list texts='["ibm. Don’t use to display complex or large amounts of data. Don’t recreate a full app
+        or page in a dialog.", "airbnb. 큰 화면에서 x 버튼. 모바일에서 페이지처럼 변하면서 arrow 버튼으로 변경됨", "pinterest. onDismiss / Preventing close on outside click / layer component"]'></mm-text-list>
 
     <mm-text size="18">Open triggers</mm-text>
-    <ul>
-      <li>window.load</li>
-      <li>window.resize</li>
-      <li>actions</li>
-    </ul>
+    <mm-text-list texts='["window.load", "window.resize", "actions"]'></mm-text-list>
 
     <mm-text size="18">Close triggers</mm-text>
-    <ul>
-      <li><b>click</b> CloseButton / ConfirmButton / CancelButton /Backdrop,Dim,Overay</li>
-      <li><b>keydown</b>. escKey. enterKey. spaceBar</li>
-    </ul>
+    <mm-text-list texts='["click CloseButton / ConfirmButton / CancelButton /Backdrop,Dim,Overay", "keydown. escKey. enterKey. spaceBar"]'></mm-text-list>
 
     <mm-component-references>
-      <mm-link external href="https://developer.apple.com/documentation/swiftui/navigationstack">
-        swiftui navigationstack
-      </mm-link>
-      <mm-link
-        external
-        href="https://developer.apple.com/design/human-interface-guidelines/tab-views"
-      >
-        HIG tab views
-      </mm-link>
-      <mm-link
-        external
-        href="https://developer.apple.com/design/human-interface-guidelines/components/selection-and-input/segmented-controls/"
-      >
-        HIG Segmented controls
-      </mm-link>
-      <mm-link external href="https://material.io/components/tabs">MD Tabs</mm-link>
-      <mm-link external href="https://m3.material.io/components/top-app-bar/overview">
-        MD3 top app bar
-      </mm-link>
-      <mm-link external href="https://m2.material.io/components/bottom-navigation">
-        M2 Bottom Navigation
-      </mm-link>
-      <mm-link external href="https://m3.material.io/components/navigation-bar/overview">
-        M3 Navigation Bar
-      </mm-link>
-      <mm-link
-        external
-        href="https://developer.apple.com/design/human-interface-guidelines/components/navigation-and-search/tab-bars"
-      >
-        HIG Tab bars
-      </mm-link>
+      <mm-link external href="https://developer.mozilla.org/ko/docs/Web/API/Popover_API">Mozilla Popover API</mm-link>
+      <mm-link external href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/presentation_role">ARIA: presentation role</mm-link>
+      <mm-link external href="https://developer.apple.com/design/human-interface-guidelines/components/presentation/action-sheets">HIG action-sheets</mm-link>
+      <mm-link external href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alertdialog_role">alertdialog role</mm-link>
     </mm-component-references>
   </mm-component-guide>
 
   <mm-text-list texts="[]">
-    <li>적용 버튼 클릭Batch updates. carbon.</li>
-    <li>필터 트리거에 적용된 필터의 갯수 표시.</li>
-    <li>setting item과 filter item은 비슷한 패턴이지만 역할이 다르기 때문에 분리</li>
-    <li>옵션 레이블 2단어 이하, 옵션 갯수 5개 이하 칩그룹을 사용한다.</li>
-    <li>사용자는 적용된 필터 옵션을 초기화하기 위해 새로고침을 할까?</li>
-    <li>range UI는 얼마나 사용자 친화적인가?</li>
-    <li>presentation 컴포넌트가 필터의 적용과 상태에 영향을 준다.</li>
-    <li>
-      옵션 목록을 나열할 때. 모두 셀렉트로 제공할 수도 있지만 다른 컴포넌트로 옵션 하나 하나를
+    <mm-text-list texts='["적용 버튼 클릭Batch updates. carbon.", "필터 트리거에 적용된 필터의 갯수 표시.", "setting item과 filter item은 비슷한 패턴이지만 역할이 다르기 때문에 분리", "옵션 레이블 2단어 이하, 옵션 갯수 5개 이하 칩그룹을 사용한다.", "사용자는 적용된 필터 옵션을 초기화하기 위해 새로고침을 할까?", "range UI는 얼마나 사용자 친화적인가?", "presentation 컴포넌트가 필터의 적용과 상태에 영향을 준다.", "옵션 목록을 나열할 때. 모두 셀렉트로 제공할 수도 있지만 다른 컴포넌트로 옵션 하나 하나를
       환기할 수 있다. dropdown, chip, radio 등의 혼합 => 디자인과 개발 비용이 증가하는 만큼 사용자
-      경험이 월등한가? (case. airbnb) 아니면 다른 의도나 효과가 있을까?
-    </li>
-    <li>필터를 적용하고 초기화하는 버튼 그룹의 정렬.</li>
-  </mm-text-list>
+      경험이 월등한가? (case. airbnb) 아니면 다른 의도나 효과가 있을까?", "필터를 적용하고 초기화하는 버튼 그룹의 정렬."]'></mm-text-list>
+</mm-text-list>
 
   <!-- <table>
     <caption>

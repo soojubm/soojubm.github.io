@@ -24,7 +24,7 @@ class Input extends LitElement {
         <input class="reset-input textfield-input" type="${this.type}" .value="${this.value}" name="${this.name}" placeholder="${this.placeholder}" ?disabled="${this.disabled}" />
         <slot name="suffix"></slot>
         <slot name="link"></slot>
-        ${this.helper ? html`<p class="textfield-helper">${this.helper}</p>` : ''}
+        ${this.helper ? html`<mm-text size="12" class="textfield-helper">${this.helper}</mm-text>` : ''}
       </div>
     `
   }

@@ -91,7 +91,7 @@ export class Textfield extends LitElement {
   }
 
   protected renderHelper(): unknown {
-    return this.helper ? html`<p>${this.helper}</p>` : nothing
+    return this.helper ? html`<mm-text size="12" color="var(--color-foreground-light)" as="p">${this.helper}</mm-text>` : nothing
   }
 
   protected renderInput(): unknown {

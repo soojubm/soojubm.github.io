@@ -127,6 +127,7 @@ export class ComponentProps extends LitElement {
         class="component-props ${this._isOpened ? 'is-opened' : ''}"
         @click=${this._handleClick}
       >
+        <div hidden><mm-text as="h2">Props</mm-text></div>
         <dl>
           <slot></slot>
         </dl>

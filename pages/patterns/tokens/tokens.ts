@@ -1,8 +1,8 @@
-import { renderLayout } from '../../../layouts/base-layouts'
+import { renderDocumentLayout } from '../../../layouts/document-layout'
 import main from './index.html'
 
 document.addEventListener('DOMContentLoaded', () => {
-  document.body.innerHTML = renderLayout(main)
+  document.body.innerHTML = renderDocumentLayout(main)
 })
 
 document.addEventListener('DOMContentLoaded', () => {

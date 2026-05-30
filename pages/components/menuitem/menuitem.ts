@@ -1,4 +1,4 @@
-import { renderLayout } from '../../../layouts/base-layouts'
+import { renderDocumentLayout } from '../../../layouts/document-layout'
 import main from './index.html'
 
 interface MenuItemRadioGroupChangeDetail {
@@ -7,7 +7,7 @@ interface MenuItemRadioGroupChangeDetail {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  document.body.innerHTML = renderLayout(main)
+  document.body.innerHTML = renderDocumentLayout(main)
 
   const radioGroup = document.querySelector<HTMLElement>('#theme-group')
 

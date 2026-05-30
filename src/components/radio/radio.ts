@@ -49,7 +49,7 @@ export class Radio extends LitElement {
           <span></span>
           <span><slot></slot></span>
         </label>
-        ${this.helper ? html`<p>${this.helper}</p>` : nothing}
+        ${this.helper ? html`<mm-text size="12" color="var(--color-foreground-light)" as="p">${this.helper}</mm-text>` : nothing}
       </div>
     `
   }

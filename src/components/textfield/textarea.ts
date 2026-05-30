@@ -80,7 +80,7 @@ export class Textarea extends LitElement {
           : ''}
         ${this.renderTextarea()}
         ${this.helper
-          ? html`<p id="${this._textareaId}-helper" class="textfield-helper">${this.helper}</p>`
+          ? html`<mm-text size="12" id="${this._textareaId}-helper" class="textfield-helper">${this.helper}</mm-text>`
           : ''}
       </div>
     `

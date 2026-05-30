@@ -4,11 +4,7 @@
     description="사용자의 필요에 따라 취사선택할 수 있도록 정보 목록을 요약합니다. 반드시 숙지해야 하는 중요 정보를 collapsed로 제공하지 않아야 합니다."
   ></mm-page-header>
 
-  <dl class="article-aka">
-    <dt>a.k.a.</dt>
-    <dd title="">disclosure/expanded</dd>
-    <dd title="">expanded/collapsed</dd>
-  </dl>
+  <mm-component-aka items='["disclosure/expanded", "expanded/collapsed"]'></mm-component-aka>
 
   <style>
     .accordion {
@@ -143,50 +139,13 @@
   </mm-component-section>
 
   <mm-component-section title="useCollapsedExpanded">
-    <ul>
-      <li>
-        자주묻는질문(FAQ) 정도 외에는 잘 쓰지 않음. 교육 도매인의 커리큘럼 정도에서 보임. actived:
+    <mm-text-list texts='["자주묻는질문(FAQ) 정도 외에는 잘 쓰지 않음. 교육 도매인의 커리큘럼 정도에서 보임. actived:
         레이어가 모바일에서 사용성이 좋기 때문에 레거시 유아이로 봐도 될 듯. 자주묻는질문은 보조
-        정보.
-      </li>
-      <li>
-        role button - space keycode를 추가하여 스페이스 키 또한 확장/축소할 수 있는 키로 인식되도록
-        합니다. a 엔터키로만동작
-      </li>
-    </ul>
+        정보.", "role button - space keycode를 추가하여 스페이스 키 또한 확장/축소할 수 있는 키로 인식되도록
+        합니다. a 엔터키로만동작"]'></mm-text-list>
   </mm-component-section>
 
   <mm-component-references>
-    <mm-link external href="https://developer.apple.com/documentation/swiftui/navigationstack">
-      swiftui navigationstack
-    </mm-link>
-    <mm-link
-      external
-      href="https://developer.apple.com/design/human-interface-guidelines/tab-views"
-    >
-      HIG tab views
-    </mm-link>
-    <mm-link
-      external
-      href="https://developer.apple.com/design/human-interface-guidelines/components/selection-and-input/segmented-controls/"
-    >
-      HIG Segmented controls
-    </mm-link>
-    <mm-link external href="https://material.io/components/tabs">MD Tabs</mm-link>
-    <mm-link external href="https://m3.material.io/components/top-app-bar/overview">
-      MD3 top app bar
-    </mm-link>
-    <mm-link external href="https://m2.material.io/components/bottom-navigation">
-      M2 Bottom Navigation
-    </mm-link>
-    <mm-link external href="https://m3.material.io/components/navigation-bar/overview">
-      M3 Navigation Bar
-    </mm-link>
-    <mm-link
-      external
-      href="https://developer.apple.com/design/human-interface-guidelines/components/navigation-and-search/tab-bars"
-    >
-      HIG Tab bars
-    </mm-link>
+    <mm-link external href="https://nuli.navercorp.com/community/article/1132889">nuli</mm-link>
   </mm-component-references>
 </main>

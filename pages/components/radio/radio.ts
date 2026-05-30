@@ -1,9 +1,9 @@
-import { renderLayout } from '../../../layouts/base-layouts'
+import { renderDocumentLayout } from '../../../layouts/document-layout'
 import main from './index.html'
 // import { RadioGroup } from './radio-group'
 
 document.addEventListener('DOMContentLoaded', () => {
-  document.body.innerHTML = renderLayout(main)
+  document.body.innerHTML = renderDocumentLayout(main)
 
   interface RadioGroupDetail {
     value: string
