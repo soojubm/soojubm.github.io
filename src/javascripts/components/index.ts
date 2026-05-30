@@ -21,6 +21,7 @@ import '../../components/sheet/sheet'
 import '../../components/sheet/sheet-header'
 import '../../components/sheet/sheet-body'
 import '../../components/sheet/sheet-footer'
+import '../../components/dialog'
 import '../../components/list-row'
 import '../../components/option-row'
 
@@ -56,13 +57,8 @@ import '../../components/tabs'
 // side-effect entry 파일로 안정화
 export {}
 
-import Dialog from './dialog'
-
 export function defineCustomElement() {
-  if ('customElements' in window) {
-    // 위에 있어야 넣어지네? text보다 shadow Dom
-    customElements.define('mm-dialog', Dialog)
-  }
+  return
 }
 
 // <script>
