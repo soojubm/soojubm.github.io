@@ -30,7 +30,7 @@ export const tabsStyles = css`
   :host([variant='line']) .indicator {
     bottom: -2px; /* 부모 보더선과 정밀하게 겹치도록 설정 */
     height: 2px;
-    background-color: #007aff;
+    background-color: var(--color-primary);
   }
 
   /* ==========================================================
@@ -45,7 +45,7 @@ export const tabsStyles = css`
   :host([variant='pill']) .indicator {
     height: calc(100% - 8px); /* 패딩 상하 영역 제외 */
     top: 4px;
-    background-color: #ffffff;
+    background-color: var(--color-background);
     border-radius: 6px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
     z-index: 0; /* 탭 텍스트 뒤로 배치 */

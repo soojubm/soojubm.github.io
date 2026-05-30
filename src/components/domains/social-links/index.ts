@@ -1,0 +1,89 @@
+import { LitElement, css, html, nothing } from 'lit'
+import { customElement, property } from 'lit/decorators.js'
+import { resetStyles } from '../../shared/reset.styles'
+
+const PLATFORMS = [
+  { key: 'github', label: 'Github' },
+  { key: 'pinterest', label: 'Pinterest' },
+  { key: 'facebook', label: 'Facebook' },
+  { key: 'twitter', label: 'Twitter' },
+  { key: 'instagram', label: 'Instagram' },
+  { key: 'notion', label: 'Notion', icon: 'people-tag' },
+] as const
+
+type PlatformKey = typeof PLATFORMS[number]['key']
+
+@customElement('mm-social-links')
+export class SocialLinks extends LitElement {
+  @property({ type: String }) github = ''
+  @property({ type: String }) pinterest = ''
+  @property({ type: String }) facebook = ''
+  @property({ type: String }) twitter = ''
+  @property({ type: String }) instagram = ''
+  @property({ type: String }) notion = ''
+
+  /** compact: 아이콘만 표시 / 기본: label + 외부링크 아이콘 */
+  @property({ type: Boolean }) compact = false
+
+  static styles = [
+    resetStyles,
+    css`
+      .compact {
+        display: flex;
+        gap: var(--space-2);
+      }
+
+      .compact a {
+        text-decoration: none;
+        color: inherit;
+      }
+    `,
+  ]
+
+  private get activeLinks() {
+    return PLATFORMS.flatMap(({ key, label, ...rest }) => {
+      const href = this[key as PlatformKey]
+      if (!href) return []
+      return [{ key, label, icon: 'icon' in rest ? rest.icon : key, href }]
+    })
+  }
+
+  private renderDefault() {
+    return html`
+      <mm-group variant="menuitem">
+        ${this.activeLinks.map(
+          ({ label, icon, href }) => html`
+            <mm-menuitem label=${label} icon=${icon} href=${href} target="_blank">
+              <mm-icon slot="action" size="small" name="arrow-up-right"></mm-icon>
+            </mm-menuitem>
+          `,
+        )}
+      </mm-group>
+    `
+  }
+
+  private renderCompact() {
+    return html`
+      <div class="compact">
+        ${this.activeLinks.map(
+          ({ label, icon, href }) => html`
+            <a href=${href} target="_blank" rel="noopener noreferrer" aria-label=${label}>
+              <mm-avatar variant="primary" icon=${icon}></mm-avatar>
+            </a>
+          `,
+        )}
+      </div>
+    `
+  }
+
+  render() {
+    if (!this.activeLinks.length) return nothing
+    return this.compact ? this.renderCompact() : this.renderDefault()
+  }
+}
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'mm-social-links': SocialLinks
+  }
+}

@@ -6,4 +6,6 @@ import './component-references'
 import './page-header'
 import './prompt-input'
 import './setting-item'
+import './portfolio-item'
+import './social-links'
 export {}

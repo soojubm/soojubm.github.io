@@ -1,5 +1,6 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
+import './view-mode-switcher'
 
 interface OptionItem {
   value: string
@@ -69,6 +70,18 @@ export class ToggleButtonGroup extends LitElement {
   connectedCallback() {
     super.connectedCallback()
     this.currentIndex = this.selectedIndex
+    this.addEventListener('click', this.handleHostClick)
+  }
+
+  disconnectedCallback() {
+    this.removeEventListener('click', this.handleHostClick)
+    super.disconnectedCallback()
+  }
+
+  protected updated(changedProperties: Map<string, unknown>) {
+    if (changedProperties.has('selectedIndex')) {
+      this.currentIndex = this.selectedIndex
+    }
   }
 
   private get parsedOptions(): OptionItem[] {
@@ -86,6 +99,17 @@ export class ToggleButtonGroup extends LitElement {
     this.currentIndex = index
 
     this.dispatchEvent(
+      new CustomEvent('option-change', {
+        detail: {
+          index,
+          value: option.value,
+        },
+        bubbles: true,
+        composed: true,
+      }),
+    )
+
+    this.dispatchEvent(
       new CustomEvent('optionChange', {
         detail: {
           index,
@@ -95,6 +119,18 @@ export class ToggleButtonGroup extends LitElement {
         composed: true,
       }),
     )
+  }
+
+  private handleHostClick = (event: MouseEvent) => {
+    const button = event.composedPath().find(target => target instanceof HTMLButtonElement)
+    if (!(button instanceof HTMLButtonElement)) return
+
+    const buttons = Array.from(this.renderRoot.querySelectorAll('button'))
+    const index = buttons.indexOf(button)
+    const option = this.parsedOptions[index]
+
+    if (!option) return
+    this.onButtonClick(index, option)
   }
 
   render() {
@@ -113,7 +149,6 @@ export class ToggleButtonGroup extends LitElement {
               ?disabled=${option.disabled}
               ?aria-pressed=${isSelected}
               aria-label=${option.ariaLabel ?? option.label ?? ''}
-              @click=${() => this.onButtonClick(index, option)}
             >
               ${option.icon ? html` <mm-icon name=${option.icon}></mm-icon> ` : nothing}
               ${option.label ? html` <span class="label"> ${option.label} </span> ` : nothing}

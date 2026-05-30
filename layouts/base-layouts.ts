@@ -9,6 +9,7 @@ export const renderLayout = (content: string) => {
   return `
     ${navbar}
     ${content}
+    <aside id="modal"></aside>
     ${footer}
   `
 }

@@ -1,0 +1,32 @@
+import { LitElement, html, nothing } from 'lit'
+import { customElement, property } from 'lit/decorators.js'
+import { resetStyles } from '../shared/reset.styles'
+
+@customElement('mm-keyword-tag-group')
+export class KeywordTagGroup extends LitElement {
+  @property({
+    type: Array,
+    converter: (value) => {
+      if (!value) return []
+      try { return JSON.parse(value) } catch { return [] }
+    },
+  })
+  keywords: string[] = []
+
+  static styles = [resetStyles]
+
+  render() {
+    if (!this.keywords.length) return nothing
+    return html`
+      <mm-group variant="tag">
+        ${this.keywords.map((k) => html`<mm-keyword-tag>${k}</mm-keyword-tag>`)}
+      </mm-group>
+    `
+  }
+}
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'mm-keyword-tag-group': KeywordTagGroup
+  }
+}

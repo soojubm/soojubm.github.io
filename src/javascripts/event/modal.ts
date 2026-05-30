@@ -1,58 +1,51 @@
-//var abc = window.innerWidth - document.body.clientWidth;
-
-import { pushBrowserHistory, backHistory } from '../utils/browserUtils'
-
 type Parameter = {
-  selector: string
+  selector?: string
 }
-type modalId = 'newneek' | 'woolf' | 'lettering' | 'etc-works' | any
 
-// toggleClass 어떤 이벤트인지 개발자 도구로 알 수 가 없네
+type ModalId = string
 
-// 비모달 다이얼로그를 위해서
-// 열려 있는 다이얼로그와 메인 페이지간에 포커스를 이동시킬 수 있는
-// 전역 키보드 단축키가 필요하다는 점을 유의하십시오.
+export type ModalController = ReturnType<typeof createModalController>
 
-// ! 모달을 닫았을 때 이전 엘리먼트로 포커스
-// TODO 어떤 버튼을 클릭해도 닫아야 함. (확인/취소)
-// TODO 모달 밖의 컨텐츠에 aria-hidden 모달의 위치는 바디 안에?
-// TODO 다이얼로그 안에서만 탭이 돌아야
-// TODO 지금 라우팅에서 history를 저장할 때의 문제.
-
-function setupModal({ selector: trigger }: Parameter) {
-  const modalTriggers = document.querySelectorAll<HTMLElement>(trigger)
-  const modalContainer = document.querySelector<HTMLElement>('#modal')
-  // const modalDialog = modalContainer.querySelector('.modal-dialog')
-  // const closeElement = modalContainer.querySelector('.js-modal-close')
+export function createModalController() {
+  const modalContainer = getModalContainer()
   let previousActiveElement: HTMLElement | null
   let previousPageYOffset: number | null
 
-  // const isOpened = document.body.classList.contains('is-modal-visible')
-  //const isOutside = !event.target.closest('.modal-inner');
+  function getModalContainer() {
+    const existingContainer = document.querySelector<HTMLElement>('#modal')
+    if (existingContainer) return existingContainer
 
-  modalTriggers.forEach(trigger => trigger.addEventListener('click', handleTriggerClick))
+    const container = document.createElement('aside')
+    container.id = 'modal'
+    document.body.append(container)
+    return container
+  }
+
+  function connect(selector: string) {
+    const modalTriggers = document.querySelectorAll<HTMLElement>(selector)
+    modalTriggers.forEach(trigger => trigger.addEventListener('click', handleTriggerClick))
+  }
 
   function handleTriggerClick(event: MouseEvent) {
     event.preventDefault()
-    const modalId = (event.currentTarget as HTMLElement).dataset.modal
-
-    openModal()
-    fetchModalContent(modalId)
+    const trigger = event.currentTarget as HTMLElement
+    const modalId = trigger.dataset.modal || trigger.getAttribute('modal')
+    if (modalId) open(modalId)
   }
 
-  async function fetchModalContent(modalId: modalId) {
+  async function open(modalId: ModalId) {
     try {
+      openShell()
       const endpoint = `/pages/patterns/profile/${modalId}.html`
       const response = await fetch(endpoint)
+      if (!response.ok) throw new Error(`Failed to load ${endpoint}`)
       const html = await response.text()
 
-      modalContainer!.innerHTML = html
+      modalContainer.innerHTML = html
       previousActiveElement = document.activeElement as HTMLElement
-      // pushBrowserHistory({}, '', `/#profile/modal/${modalId}`)
-      // modalContainer.querySelector('button').focus()
     } catch (error) {
       console.error('Error fetching modal data:', error)
-      // throw 'Something went wrong.'
+      close()
     }
   }
 
@@ -63,36 +56,45 @@ function setupModal({ selector: trigger }: Parameter) {
     const isModalCloseElement = target.classList.contains('js-modal-close') // 닫기 버튼 클릭 여부
 
     if (isClickOutsideModal || isModalCloseElement) {
-      closeModal() // 모달 닫기 함수 호출
+      close()
     }
   }
 
-  function openModal() {
+  function openShell() {
     previousPageYOffset = window.pageYOffset || window.scrollY
     document.body.classList.add('is-modal-visible', 'lock-scroll')
     document.body.style.top = `-${previousPageYOffset}px`
 
     document.addEventListener('keydown', handleKeyDown)
-    modalContainer!.addEventListener('click', closeModalTemp)
+    modalContainer.addEventListener('click', closeModalTemp)
   }
 
-  function closeModal() {
+  function close() {
     document.body.classList.remove('is-modal-visible', 'lock-scroll')
     if (previousPageYOffset !== null) {
       window.scrollTo(0, previousPageYOffset)
     }
-    modalContainer!.innerHTML = ''
+    modalContainer.innerHTML = ''
 
     previousActiveElement?.focus()
 
     document.removeEventListener('keydown', handleKeyDown)
-    modalContainer?.removeEventListener('click', closeModalTemp)
+    modalContainer.removeEventListener('click', closeModalTemp)
   }
+
   function handleKeyDown(event: KeyboardEvent) {
     if (event.key === 'Escape') {
-      closeModal()
+      close()
     }
   }
+
+  return { connect, open, close }
+}
+
+function setupModal({ selector }: Parameter = {}) {
+  const controller = createModalController()
+  if (selector) controller.connect(selector)
+  return controller
 }
 
 export default setupModal

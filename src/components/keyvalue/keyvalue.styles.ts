@@ -22,31 +22,4 @@ export const keyvalueStyles = css`
     flex-direction: column;
     gap: var(--space-0);
   }
-
-  .statistic {
-    display: flex;
-    gap: 2rem;
-  }
-  .statistic-item {
-    position: relative;
-  }
-  .statistic-label {
-    display: block;
-    color: var(--color-foreground-light);
-    line-height: 24px;
-  }
-  .statistic-value {
-    display: block;
-    font-size: var(--font-size-18);
-    font-weight: var(--font-weight-bold);
-  }
-
-  .statistic[data-size='small'] .statistic-item {
-    display: flex;
-    align-items: center;
-  }
-  .statistic[data-size='small'] .statistic-value {
-    margin: 0 0 0 var(--space-1);
-    font-size: var(--font-size-14);
-  }
 `

@@ -1,219 +1,105 @@
-<!-- MEMO :: 너무 많은 슬롯으로 재활용이 어려우졌다. -->
 <main class="profile">
-  <!-- <header class="profile-head">
-    <div class="profile-head-background"></div>
-    <h1 class="profile-head-headline"></h1>
-    <p class="profile-head-description"></p>
-  </header> -->
   <section class="profile-user">
     <mm-user-snippet
       name="수줍이"
       email="soojubm@gmail.com"
       phone="010 3121 7045"
       description="UI Designer"
-    >
-      <mm-avatar
-        slot="avatar"
-        size="huge"
-        variant="secondary"
-        src="/src/images/soojubm.png"
-      ></mm-avatar>
-      <mm-tag slot="tag" variant="primary">접속 중</mm-tag>
-    </mm-user-snippet>
-    <div style="margin: var(--space-3) 0 0 0">
-      <mm-group variant="chip">
-        <mm-button variant="primary" status="active">팔로우</mm-button>
-        <mm-button variant="tertiary">메시지</mm-button>
-      </mm-group>
+      avatar-src="/src/images/soojubm.png"
+      avatar-size="huge"
+      avatar-variant="secondary"
+      tag-label="접속 중"
+    ></mm-user-snippet>
+
+    <mm-group variant="chip">
+      <mm-button variant="primary" status="active">팔로우</mm-button>
+      <mm-button variant="tertiary">메시지</mm-button>
+    </mm-group>
+    <mm-read-more-paragraph
+      limit="100"
+      content="Sometimes at night, I find myself behind the computer. When I finally blink, a mess of code is drawing random structures on the screen. I spend the rest of the night staring. 유아이를 그립니다. 배경을 넣어보았다. 모바일에서 팔로우 버튼을 상단으로 조정해야 한다. 업로드 버튼과 설정 버튼."
+    ></mm-read-more-paragraph>
+    <mm-keyword-tag-group
+      keywords='["HTML5","VanillaJS","ReactJS","WebComponents","Typescript","GoogleAnalytics","Figma"]'
+    ></mm-keyword-tag-group>
+    <div>
+      <mm-keyvalue key="팔로워" value="621.1K"></mm-keyvalue>
+      <mm-keyvalue key="팔로우 중" value="1,284"></mm-keyvalue>
     </div>
-    <p class="profile-user-description" style="max-width: 560px">
-      Sometimes at night, I find myself behind the computer. When I finally blink, a mess of code is
-      drawing random structures on the screen. I spend the rest of the night staring. 유아이를
-      그립니다. 배경을 넣어보았다. 모바일에서 팔로우 버튼을 상단으로 조정해야 한다. 업로드 버튼과
-      설정 버튼.
-      <mm-link href="javascript:alert('유아이 패턴 샘플입니다.')">더 보기</mm-link>
-    </p>
-    <mm-group variant="tag">
-      <mm-tag>HTML5</mm-tag>
-      <mm-tag>VanillaJS</mm-tag>
-      <mm-tag>ReactJS</mm-tag>
-      <mm-tag>WebComponents</mm-tag>
-      <mm-tag>Typescript</mm-tag>
-      <mm-tag>GoogleAnalytics</mm-tag>
-      <mm-tag>Figma</mm-tag>
-    </mm-group>
-    <div
-      class="statistic"
-      style="display: flex; gap: 2rem; margin: var(--space-4) 0 var(--space-3)"
-    >
-      <div>
-        <mm-text size="14" color="var(--color-foreground-light)">팔로워</mm-text>
-        <mm-text size="18">621.1K</mm-text>
-      </div>
-      <div>
-        <mm-text size="14" color="var(--color-foreground-light)">팔로우 중</mm-text>
-        <mm-text size="18">1,284</mm-text>
-      </div>
-    </div>
-    <mm-group variant="avatar">
-      <mm-avatar size="small" default="true"></mm-avatar>
-      <mm-avatar size="small" default="true"></mm-avatar>
-      <mm-avatar size="small" default="true"></mm-avatar>
-      <mm-avatar size="small" default="true"></mm-avatar>
-      <span style="margin-left: var(--space-2); line-height: var(--size-small)"
-        >Followed by 수줍이 외 4명</span
-      >
-    </mm-group>
-    <mm-separator></mm-separator>
-    <mm-group alignment="vertical" style="margin: 0 0 2rem 0">
-      <h2 hidden>소셜 미디어</h2>
-      <mm-menuitem
-        label="github"
-        href="https://github.com/soojubm"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <mm-avatar slot="avatar" icon="github"> </mm-avatar>
-      </mm-menuitem>
-      <mm-menuitem
-        label="pinterest"
-        href="https://www.pinterest.co.kr/soojubm/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <mm-avatar slot="avatar" icon="pinterest"> </mm-avatar>
-      </mm-menuitem>
-      <mm-menuitem
-        label="facebook"
-        href="https://www.facebook.com/soojubm/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <mm-avatar slot="avatar" icon="facebook"> </mm-avatar>
-      </mm-menuitem>
-    </mm-group>
+    <mm-avatar-group avatars='["","","",""]' label="Followed by 수줍이 외 4명"></mm-avatar-group>
+    <mm-social-links
+      compact
+      github="https://github.com/soojubm"
+      pinterest="https://www.pinterest.co.kr/soojubm/"
+      facebook="https://www.facebook.com/soojubm/"
+    ></mm-social-links>
   </section>
 
-  <section class="profile-body js-tab">
-    <mm-tablist class="tablist">
-      <mm-tab slot="tab" name="project" selected="true" data-index="1"> 프로젝트 </mm-tab>
-      <mm-tab slot="tab" name="case-study" selected="false" data-index="2"> 두 번째 탭 </mm-tab>
-      <mm-tab slot="tab" name="blank" selected="false" data-index="3">빈 상태 </mm-tab>
-      <i class="tablist-indicator"></i>
-    </mm-tablist>
+  <section class="profile-body">
+    <mm-tabs value="daily" variant="pill">
+      <mm-tab-list>
+        <mm-tab value="daily">프로젝트</mm-tab>
+        <mm-tab value="weekly">두번째 탭</mm-tab>
+        <mm-tab value="monthly">빈 상태</mm-tab>
+      </mm-tab-list>
 
-    <!-- todo day night toggle과 동일한 패턴, tab과도 형태기능적으로 유사.  -->
-    <!-- list/grid, gallery/card view -->
-    <menu
-      class="profile-display"
-      role="menubar"
-      style="display: flex; align-items: center; margin: var(--space-3) 0"
-      title="항목을 아이콘, 목록, 계층 또는 갤러리로 보여줍니다."
-    >
-      <!-- <b role="status">3 works</b> -->
-      <div style="display: flex; gap: var(--space-0)">
-        <style>
-          button mm-icon {
-            pointer-events: none;
-          }
-          .is-selected {
-            border-radius: var(--radius);
-            background-color: var(--color-background-subtle);
-          }
-        </style>
-        <button
-          class="is-selected js-test-toggle"
-          data-name="grid"
-          style="width: 32px; height: 32px"
-          aria-label=""
+      <menu role="menubar" style="margin: var(--space-3) 0">
+        <!-- <b role="status">3 works</b> -->
+        <div style="display: flex; justify-content: space-between; gap: var(--space-2)">
+          <mm-view-mode-switcher></mm-view-mode-switcher>
+          <mm-sort-dropdown></mm-sort-dropdown>
+        </div>
+      </menu>
+
+      <mm-tab-panel value="daily">
+        <section class="portfolio-grid">
+          <mm-portfolio-item
+            modal="newneek"
+            label="뉴닉"
+            description="디스크립션..."
+            src="/src/images/newneek/gosum-spinner.png"
+            badge="최신"
+            date="2024-06-20"
+            keywords='["프로젝트관리","디자인","프론트엔드개발"]'
+          ></mm-portfolio-item>
+
+          <mm-portfolio-item
+            modal="etc-works"
+            label="프리랜서"
+            description="선별된..."
+            src="/src/images/work-studium.jpg"
+            date="2022-09-12"
+            keywords='["프리랜서","디자인","워드프레스"]'
+          ></mm-portfolio-item>
+
+          <mm-portfolio-item
+            modal="lettering"
+            label="레터링"
+            description="취미생활?"
+            src="/src/images/budha.png"
+            date="2021-02-22"
+            keywords='["취미생활","레터링"]'
+          ></mm-portfolio-item>
+        </section>
+      </mm-tab-panel>
+
+      <mm-tab-panel value="weekly">
+        <section class="portfolio-grid">
+          <mm-portfolio-item
+            modal="flat_sitemap"
+            label="Flat sitemap"
+            date="2023-04-01"
+          ></mm-portfolio-item>
+        </section>
+      </mm-tab-panel>
+
+      <mm-tab-panel value="monthly">
+        <mm-result
+          title="아직 새 글이 없어요."
+          description="포트폴리오를 업로드하여 수줍이님을 알려보세요."
         >
-          <mm-icon name="view-grid"></mm-icon>
-        </button>
-        <button
-          aria-label=""
-          class="js-test-toggle"
-          status="active"
-          data-name="list"
-          style="width: 32px; height: 32px"
-        >
-          <mm-icon name="table-rows"></mm-icon>
-        </button>
-      </div>
-      <div class="profile-sorting" style="margin-left: auto">
-        <button
-          variant="text"
-          class="js-test-toggle"
-          style="display: flex; align-items: center; gap: var(--space-2)"
-        >
-          최신순
-          <mm-icon name="arrow-up" size="tiny"></mm-icon>
-        </button>
-      </div>
-    </menu>
-
-    <!-- MEMO: mm-tabpanel 일 때 mm-surface 사이즈 스타일 -->
-    <section class="tabpanel" role="tabpanel" aria-hidden="false" data-index="1">
-      <div class="card js-modal" data-modal="newneek">
-        <mm-tag variant="primary">최신</mm-tag>
-        <!-- TODO morevIconButton -->
-        <mm-icon-button variant="navigator" icon="more-vert"></mm-icon-button>
-        <mm-thumbnail src="/src/images/newneek/gosum-spinner.png" alt=""></mm-thumbnail>
-        <mm-text-group>
-          <mm-text size="14" weight="bold">뉴닉</mm-text>
-          <mm-text size="14" color="var(--color-foreground-light)">디스크립션...</mm-text>
-          <!-- <time class="card-date">2022. 02. 22.</time> -->
-          <mm-group variant="tag" style="margin-top: var(--space-05)">
-            <mm-tag>프로젝트관리</mm-tag>
-            <mm-tag>디자인</mm-tag>
-            <mm-tag>프론트엔드개발</mm-tag>
-          </mm-group>
-        </mm-text-group>
-      </div>
-
-      <div class="card js-modal" data-modal="etc-works">
-        <mm-thumbnail src="/src/images/work-studium.jpg" alt=""></mm-thumbnail>
-        <mm-text-group>
-          <mm-text size="14" weight="bold">프리랜서</mm-text>
-          <mm-text size="14" color="var(--color-foreground-light)">선별된...</mm-text>
-          <!-- <time class="card-date">September 12, 2017</time> -->
-          <mm-button icon="more-vert" class="card-more" hidden> </mm-button>
-          <mm-group variant="tag" style="margin-top: var(--space-05)">
-            <mm-tag>프리랜서</mm-tag>
-            <mm-tag>디자인</mm-tag>
-            <mm-tag>워드프레스</mm-tag>
-          </mm-group>
-        </mm-text-group>
-      </div>
-
-      <div class="card js-modal" data-modal="lettering">
-        <mm-icon-button icon="more-vert"></mm-icon-button>
-        <mm-thumbnail src="/src/images/budha.png" alt=""></mm-thumbnail>
-        <mm-text-group>
-          <mm-text size="14" weight="bold">레터링</mm-text>
-          <mm-text size="14" color="var(--color-foreground-light)">취미생활? </mm-text>
-          <mm-group variant="tag" style="margin-top: var(--space-05)">
-            <mm-tag>취미생활</mm-tag>
-            <mm-tag>레터링</mm-tag>
-          </mm-group>
-        </mm-text-group>
-      </div>
-    </section>
-
-    <section class="tabpanel" role="tabpanel" aria-hidden="true" data-index="2">
-      <div class="card js-modal" data-modal="flat_sitemap">
-        <figure>
-          <img />
-        </figure>
-        <mm-text size="18">Flat sitemap</mm-text>
-      </div>
-    </section>
-
-    <section class="tabpanel" role="tabpanel" aria-hidden="true" data-index="3">
-      <mm-result
-        title="아직 새 글이 없어요."
-        description="포트폴리오를 업로드하여 수줍이님을 알려보세요."
-      >
-      </mm-result>
-    </section>
+        </mm-result>
+      </mm-tab-panel>
+    </mm-tabs>
   </section>
 </main>

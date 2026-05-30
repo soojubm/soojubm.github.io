@@ -6,15 +6,10 @@
     email="soojubm@gmail.com"
     phone="010 3121 7045"
     description="UI Designer"
-  >
-    <mm-avatar
-      slot="avatar"
-      size="huge"
-      variant="secondary"
-      src="/src/images/soojubm.png"
-    ></mm-avatar>
-    <mm-tag slot="tag" variant="primary">접속 중</mm-tag>
-  </mm-user-snippet>
+    avatar-src="/src/images/soojubm.png"
+    avatar-size="huge"
+    avatar-variant="secondary"
+  ></mm-user-snippet>
   <!-- <p>
       UI를 그립니다. 스타트업의 환경이나 태도에 관심이 많았습니다만 여전히 스물의 목적잃은 표본인 양 갈피를 못 잡고 프리랜서로 혼자서 일하다보니 부쩍,
       동료들과 함께 시너지를 발휘하여 문제를 해결하고 싶다는 데, 우리의 프로덕트를 함께 만들어 가고 싶다는 데 마음이 동했습니다. 나이 서른이 넘어도
@@ -22,24 +17,14 @@
     </p> -->
 
   <div style="max-width: 240px; margin: 0.75rem 0 1.5rem">
-    <mm-group variant="menuitem" class="footer-temp">
-      <!-- TODO 쉐도우돔 안에 쉐도우돔 -->
-      <mm-menuitem
-        label="About"
-        icon="people-tag"
-        href="https://soojubm.notion.site/UI-Designer-9c18f4dd39eb4181b9f9c2ee76896618"
-        target="_blank"
-      >
-        <mm-icon slot="action" size="small" name="arrow-up-right"></mm-icon>
-      </mm-menuitem>
-      <mm-menuitem label="Github" icon="github" href="https://github.com/soojubm">
-        <mm-icon slot="action" size="small" name="arrow-up-right"></mm-icon>
-      </mm-menuitem>
-      <div style="display: flex; gap: var(--space-2); margin: var(--space-4) 0 0 0">
-        <mm-link href="./films.html">영화감상 목록 </mm-link>
-        <mm-link href="./books.html">독서 목록 </mm-link>
-      </div>
-    </mm-group>
+    <mm-social-links
+      notion="https://soojubm.notion.site/UI-Designer-9c18f4dd39eb4181b9f9c2ee76896618"
+      github="https://github.com/soojubm"
+    ></mm-social-links>
+    <div style="display: flex; gap: var(--space-2); margin: var(--space-4) 0 0 0">
+      <mm-link href="./films.html">영화감상 목록 </mm-link>
+      <mm-link href="./books.html">독서 목록 </mm-link>
+    </div>
   </div>
 
   <dl class="footer-address-info">
@@ -65,26 +50,8 @@
   </address>
 
   <aside class="footer-scroll" style="margin: 1.5rem 0 0 0">
-    <p class="footer-scroll-indicator" aria-hidden="true" hidden>스크롤</p>
-    <button class="footer-scroll-bottom js-to-bottom" hidden>아래로</button>
-    <mm-icon-button
-      variant="navigator"
-      class="footer-scroll-top js-to-top"
-      icon="arrow-up"
-      aria-label="맨 위로"
-    >
-    </mm-icon-button>
+    <mm-to-top-button></mm-to-top-button>
   </aside>
 
   <div class="footer" hidden>infinite scroll test</div>
 </footer>
-
-<script>
-  document.addEventListener('click', scrollToTop)
-  function scrollToTop(event) {
-    if (!event.target.closest('.js-to-top')) return
-
-    event.preventDefault()
-    window.scrollTo(0, 0)
-  }
-</script>
