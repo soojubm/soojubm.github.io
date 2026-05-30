@@ -17,12 +17,7 @@
     <a href="/pages/patterns/signifier/">Signifier</a>
   </div> -->
   <div class="navbar-user">
-    <button class="js-brutalmode" aria-label="change theme">brutal theme</button>
-
-    <button class="theme-toggle js-darkmode" aria-label="change theme">
-      <span class="day iconoir-sun-light"></span>
-      <span class="night iconoir-half-moon"></span>
-    </button>
+    <mm-theme-switcher></mm-theme-switcher>
     <div style="position: relative">
       <mm-icon-button
         icon="profile-circle"
@@ -51,14 +46,6 @@
           </div>
           <mm-separator></mm-separator>
           <mm-group variant="menuitem">
-            <mm-menuitem
-              icon="half-moon"
-              label="어둡게 보기"
-              class="js-darkmode"
-              aria-label="change theme"
-            >
-              <mm-switch slot="action"></mm-switch>
-            </mm-menuitem>
             <mm-menuitem icon="megaphone" label="고객센터 및 도움말"> </mm-menuitem>
           </mm-group>
           <mm-separator></mm-separator>

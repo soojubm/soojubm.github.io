@@ -29,6 +29,7 @@ import '../../components/thumbnail/thumbnail'
 import '../../components/text'
 
 import '../../components/button'
+import '../../components/navbar/theme-switcher'
 import '../../components/icon-button'
 
 import '../../components/toggle-button-group'

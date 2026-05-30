@@ -1,27 +1,12 @@
 import detectTheme from '../theme/dectectTheme'
-import toggleDarkTheme from '../theme/toggleTheme'
 
 import '/src/components/navbar/navbar.css'
 import '/src/components/footer/footer.css'
-import { BRUTAL_THEME_CLASS } from '../theme/const'
 
 const OPENED_MENU_CLASSNAME = 'is-menu-opened'
 const isOpendNavbarMenu = () => document.body.classList.contains(OPENED_MENU_CLASSNAME)
 
-document.addEventListener('click', toggleDarkTheme)
 document.addEventListener('click', toggleNavbarMenu)
-
-document.addEventListener('click', event => {
-  const target = event.target as HTMLElement
-  if (target.closest('.js-brutalmode')) {
-    // localStorage.setItem('theme', 'burutal')
-    document.body.dataset.theme = 'brutal'
-  }
-
-  // const currentTheme = isDarkTheme() ? LIGHT_THEME_CLASS : DARK_THEME_CLASS
-
-  // detectTheme()
-})
 
 document.addEventListener('DOMContentLoaded', () => {
   detectTheme()
