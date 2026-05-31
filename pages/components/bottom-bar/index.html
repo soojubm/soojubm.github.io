@@ -5,25 +5,13 @@
   ></mm-page-header>
 
   <mm-component-example>
-    <mm-surface variant="outlined" style="overflow: hidden">
-      <div style="padding: var(--space-4)">
-        <mm-text>기본 항목</mm-text>
-      </div>
-      <mm-bottom-bar></mm-bottom-bar>
-    </mm-surface>
-    <mm-separator></mm-separator>
-    <mm-surface variant="outlined" style="overflow: hidden">
-      <div style="padding: var(--space-4)">
-        <mm-text>커스텀 항목</mm-text>
-      </div>
-      <mm-bottom-bar
-        items='[
+    <mm-bottom-bar
+      items='[
           { "label": "홈", "href": "#", "icon": "home-simple-door", "active": true },
           { "label": "검색", "href": "#", "icon": "search", "badge": true },
           { "label": "설정", "href": "#", "icon": "settings" }
         ]'
-      ></mm-bottom-bar>
-    </mm-surface>
+    ></mm-bottom-bar>
   </mm-component-example>
 
   <mm-component-props>

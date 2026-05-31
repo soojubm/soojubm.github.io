@@ -1,5 +1,5 @@
 import { LitElement, html, nothing } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
+import { customElement, property, state } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 import '../avatar/list-row'
 import { menuItemStyles } from './menuitem.styles'
@@ -19,6 +19,8 @@ export class MenuItemRow extends LitElement {
   @property({ type: String, attribute: 'avatar-size' }) avatarSize = 'medium'
   /** 아바타 변형 (icon 또는 avatar-src 지정 시 유효) */
   @property({ type: String, attribute: 'avatar-variant' }) avatarVariant = 'tertiary'
+
+  @state() private _hasSlottedAvatar = false
 
   @property({ type: Boolean, reflect: true }) disabled = false
   /** role 직접 지정 (미지정 시 컴포넌트 기본 role 사용) */
@@ -48,6 +50,11 @@ export class MenuItemRow extends LitElement {
     return html`<slot name="action" slot="trailing"></slot>`
   }
 
+  private onAvatarSlotChange(e: Event) {
+    const slot = e.target as HTMLSlotElement
+    this._hasSlottedAvatar = slot.assignedElements().length > 0
+  }
+
   protected renderAvatar() {
     if (this.icon || this.avatarSrc) {
       return html`
@@ -60,7 +67,13 @@ export class MenuItemRow extends LitElement {
         ></mm-avatar>
       `
     }
-    return html`<slot name="avatar" slot="leading"></slot>`
+    return html`
+      <slot
+        name="avatar"
+        slot=${ifDefined(this._hasSlottedAvatar ? 'leading' : undefined)}
+        @slotchange=${this.onAvatarSlotChange}
+      ></slot>
+    `
   }
 
   protected renderContent() {

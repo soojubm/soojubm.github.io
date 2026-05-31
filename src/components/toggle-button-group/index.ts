@@ -20,12 +20,24 @@ export class ToggleButtonGroup extends LitElement {
   @state() private currentIndex = 0
 
   static styles = css`
+    :host {
+      --toggle-size: var(--size-medium);
+      --toggle-padding-inline: var(--space-3);
+      --toggle-radius: var(--radius);
+      --toggle-color: var(--color-background);
+      --toggle-text-color: var(--color-foreground);
+      --toggle-selected-color: var(--selection-background);
+      --toggle-selected-border-color: var(--selection-indicator-color);
+      --toggle-selected-text-color: var(--selection-foreground);
+      --toggle-group-background: var(--color-background-subtle);
+    }
+
     .button-list {
       display: inline-flex;
       align-items: center;
 
-      background: var(--color-background-subtle);
-      border-radius: var(--radius);
+      background: var(--toggle-group-background);
+      border-radius: var(--toggle-radius);
       overflow: hidden;
     }
 
@@ -44,16 +56,16 @@ export class ToggleButtonGroup extends LitElement {
       justify-content: center;
       gap: 8px;
 
-      min-height: var(--size-medium);
-      padding: 0 var(--space-3);
+      min-height: var(--toggle-size);
+      padding: 0 var(--toggle-padding-inline);
 
       border: var(--border-width) solid transparent;
       box-sizing: border-box;
-      background: transparent;
+      background: var(--toggle-color);
       cursor: pointer;
 
       font: inherit;
-      color: var(--color-foreground);
+      color: var(--toggle-text-color);
 
       transition: background 0.2s, color 0.2s, opacity 0.2s;
     }
@@ -63,9 +75,9 @@ export class ToggleButtonGroup extends LitElement {
     }
 
     button.selected {
-      border-color: var(--selection-indicator-color);
-      background: var(--selection-background);
-      color: var(--selection-foreground);
+      border-color: var(--toggle-selected-border-color);
+      background: var(--toggle-selected-color);
+      color: var(--toggle-selected-text-color);
     }
 
     button:disabled {

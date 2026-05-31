@@ -31,10 +31,6 @@ export class Token extends LitElement {
         display: flex;
         flex-direction: column;
       }
-
-      :host(:not(:first-child)) dt {
-        margin-top: var(--space-3);
-      }
     `,
   ]
 
@@ -72,13 +68,12 @@ export class ComponentTokens extends LitElement {
       dl {
         display: grid;
         grid-template-columns: auto 1fr;
-        gap: 0 var(--space-4);
+        gap: var(--space-2) var(--space-4);
         margin: 0;
       }
 
       @media (max-width: 1100px) {
         .component-tokens {
-          max-width: 100%;
           margin-inline: calc(var(--grid-margin) * -1);
           padding-inline: var(--grid-margin);
           border-inline: 0;

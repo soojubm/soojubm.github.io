@@ -52,12 +52,36 @@
   </mm-component-props>
 
   <mm-component-tokens>
-    <mm-token name="--tabs-indicator-color" default="var(--color-primary)" description="line variant 선택 인디케이터 색상"></mm-token>
-    <mm-token name="--tabs-line-color" default="#e5e5ea" description="line variant 하단 구분선 색상"></mm-token>
-    <mm-token name="--tabs-line-width" default="2px" description="line variant 선·인디케이터 두께"></mm-token>
-    <mm-token name="--tabs-pill-background" default="var(--color-background-subtle)" description="pill variant 트랙 배경색"></mm-token>
-    <mm-token name="--tabs-pill-indicator-background" default="var(--color-background)" description="pill variant 선택 인디케이터 배경색"></mm-token>
-    <mm-token name="--tabs-pill-radius" default="var(--radius)" description="pill variant 트랙 모서리 반지름"></mm-token>
+    <mm-token
+      name="--tabs-indicator-color"
+      default="var(--color-primary)"
+      description="line variant 선택 인디케이터 색상"
+    ></mm-token>
+    <mm-token
+      name="--tabs-line-color"
+      default="#e5e5ea"
+      description="line variant 하단 구분선 색상"
+    ></mm-token>
+    <mm-token
+      name="--tabs-line-width"
+      default="2px"
+      description="line variant 선·인디케이터 두께"
+    ></mm-token>
+    <mm-token
+      name="--tabs-pill-background"
+      default="var(--color-background-subtle)"
+      description="pill variant 트랙 배경색"
+    ></mm-token>
+    <mm-token
+      name="--tabs-pill-indicator-background"
+      default="var(--color-background)"
+      description="pill variant 선택 인디케이터 배경색"
+    ></mm-token>
+    <mm-token
+      name="--tabs-pill-radius"
+      default="var(--radius)"
+      description="pill variant 트랙 모서리 반지름"
+    ></mm-token>
   </mm-component-tokens>
 
   <mm-component-guide>
@@ -76,19 +100,21 @@
         description="최대 2단어를 넘지 않도록 작성하고 두 줄이 되지 않도록 작성합니다. (그러나 폴더블과 워치 이후 말 줄임표나 두 줄 레이블을 허용해야 하는가)"
       >
       </mm-feature>
-    </mm-component-guide>
-    <mm-text>
-      Make sure the controls within a pane affect content only in the same pane. Panes are mutually
-      exclusive, so ensure they’re fully self-contained. Use a segmented control to provide closely
-      related choices that affect an object, state, or view. For example, a segmented control can
-      help people switch between views in a toolbar. Avoid using a segmented control to offer
-      actions, such as adding, removing, or editing content.
-    </mm-text>
+    </section>
+  </mm-component-guide>
 
-    <!-- 포함 컴포넌트: Tabs, Breadcrumbs(웹), Pagination, Stepper, Bottom Navigation(모바일), Side Drawer -->
+  <mm-text>
+    Make sure the controls within a pane affect content only in the same pane. Panes are mutually
+    exclusive, so ensure they’re fully self-contained. Use a segmented control to provide closely
+    related choices that affect an object, state, or view. For example, a segmented control can help
+    people switch between views in a toolbar. Avoid using a segmented control to offer actions, such
+    as adding, removing, or editing content.
+  </mm-text>
 
-    <mm-text-list
-      texts='[
+  <!-- 포함 컴포넌트: Tabs, Breadcrumbs(웹), Pagination, Stepper, Bottom Navigation(모바일), Side Drawer -->
+
+  <mm-text-list
+    texts='[
           "SearchParams과 브라우저 히스토리를 활용할 것인가? (?tab=projects) / url변경 ",
           "글로벌 네비게이션 패턴인 햄버거 메뉴와 탭(바텀네비게이션, 탭바)을 함께 사용할 수 있는가?",
           "탭의 가로 스크롤(+ MDI). 탭의 최대 갯수 제한.",
@@ -96,30 +122,8 @@
           "flutter. Scaffold - AppBar - bottom: TabBar - tabs - Tab / Scaffold - body - TabBarView",
           "우측 actions. 갯수 제한. md에서 최대 3개. hamberger case."
         ]'
-    >
-    </mm-text-list>
-  </section>
-
-  <mm-component-section title="Navigation Bars">
-    <mm-top-bar label="수줍이님">
-      <mm-button-group slot="action">
-        <mm-button>저장</mm-button>
-        <mm-icon-button variant="navigator" icon="more-vert"></mm-icon-button>
-      </mm-button-group>
-    </mm-top-bar>
-
-    <div style="height: var(--space-4)"></div>
-
-    <mm-bottom-bar></mm-bottom-bar>
-  </mm-component-section>
-
-  <mm-component-props>
-    <mm-prop name="label" type="string"></mm-prop>
-    <mm-prop name="variant" type="string" optional></mm-prop>
-    <mm-prop name="nav" type="'back' | 'close' | ''" optional></mm-prop>
-    <mm-prop name="action" type="slot" optional></mm-prop>
-    <mm-prop name="items" type="BottomBarItem[]" optional></mm-prop>
-  </mm-component-props>
+  >
+  </mm-text-list>
 
   <mm-component-references>
     <mm-link external href="https://developer.apple.com/documentation/swiftui/navigationstack">

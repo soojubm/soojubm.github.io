@@ -100,7 +100,6 @@ export class ComponentProps extends LitElement {
 
       @media (max-width: 1100px) {
         .component-props {
-          max-width: 100%;
           margin-inline: calc(var(--grid-margin) * -1);
           padding-inline: var(--grid-margin);
           border-inline: 0;

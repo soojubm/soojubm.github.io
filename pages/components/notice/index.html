@@ -1,10 +1,10 @@
 <main class="page">
   <mm-page-header
-    title="Callouts"
-    description="시스템이나 브라우저의 상태 이상, 사용자의 행동에 피드백합니다."
+    title="Notice"
+    description="시스템 상태나 사용자 행동에 대한 피드백을 인라인으로 전달합니다."
   ></mm-page-header>
 
-  <mm-component-aka items='["Alert", "Message", "Callout", "Banner", "Information", "Feedback", "Notice", "Inline Message"]'></mm-component-aka>
+  <mm-component-aka items='["Alert", "Callout", "Banner", "Inline message", "Feedback"]'></mm-component-aka>
 
   <mm-component-example>
     <div style="max-width: 480px">
@@ -19,8 +19,7 @@
         <mm-notice
           variant="warning"
           text="바시니의 작품은 페라라 부르주아사회의 유대인 박해라는 깊은 상처에 기인한다는 점에서 정치적이다."
-        >
-        </mm-notice>
+        ></mm-notice>
         <mm-notice variant="danger" text="인터넷에 연결되어 있지 않습니다."></mm-notice>
       </mm-group>
     </div>
@@ -29,7 +28,7 @@
   <mm-component-props>
     <mm-prop name="heading" type="string" optional></mm-prop>
     <mm-prop name="text" type="string" optional></mm-prop>
-    <mm-prop name="variant" type="string" optional></mm-prop>
+    <mm-prop name="variant" type='"success" | "warning" | "danger"' optional></mm-prop>
   </mm-component-props>
 
   <mm-component-tokens>
@@ -38,54 +37,17 @@
     <mm-token name="--notice-radius" default="var(--radius)"></mm-token>
     <mm-token name="--notice-border" default="var(--border)"></mm-token>
     <mm-token name="--notice-text-color" default="var(--color-foreground)"></mm-token>
+    <mm-token name="--notice-icon-color" default="var(--color-foreground-light)"></mm-token>
   </mm-component-tokens>
 
   <mm-component-guide>
-    <mm-paragraph-group>
-      <mm-text size="18">Best practices</mm-text>
-      <mm-text size="14">
-        브라우저가 role="alert" 속성이 있는 요소를 발견하면 즉시 사용자에게 경고 내용을 읽습니다.
-      </mm-text>
-      <mm-text size="14">
-        알림은 언제나 유저에게 베네핏을 주거나, 긴급한 메시지이거나, 적어도 적절한 타이밍의
-        내용이어야 한다. 똑같은 텍스트가 각각의 컴포넌트에 쓰였을 때 어떤 맥락으로 유저에게 닿을 수
-        있는지를.
-      </mm-text>
-      <mm-text size="14">
-        사용자의 귀책이 아닌 경우, 단순 "오류" 대신 "시스템 오류"와 같은 용어를 사용하여 사용자가
-        잘못한 것처럼 느끼지 않도록 하세요.
-      </mm-text>
-      <mm-text size="14">
-        * 이 규칙이 굉장히 인사이트풀. 유저가 중요한 액션을 수행했을 경우, 완료 메시지를 전달하기
-        위해 한 화면 전체를 사용하는 경우가 있다. 이때는 유저가 집중할 수 있는 정보가 하나뿐이어서
-        맥락이 복잡하지 않으므로, \"이미지가 담긴 포스팅이 완료되었습니다.\" 등의 문장형으로 길게
-        설명할 필요 없이, \"제출 완료!\"같은 단일 단어로 대체할 수 있다.
-      </mm-text>
-      <mm-text-list
-        texts='[
-  "링크를 제공할 것인가?",
-  "게임에서 파티 탈퇴와 같이 직접 실행하지 않은, 연속적인 결과가 발생하는 경우 여러 개가 필요.",
-  "아이콘이 없는 callout은 단순 Tile 컴포넌트처럼 보일 수 있겠다.. 아이콘으로 callout의 맥락을 구분"
-  ]'
-      >
-      </mm-text-list>
-    </mm-paragraph-group>
-
-    <!--
-      Icon: Informs users of the kind of notification at a glance.
-      Title: Gives users a quick overview of the notification.
-      Message (1optional): Provides additional detail and actionable steps for the user to take.
-      Inline notification action (1optional): Ghost button that allows users to address the notification or navigates them to a page with further details.
-      Close button (1optional): Closes the notification.
-      Time stamp (1optional): Shows the time the toast notification was sent.
-      -->
+    <mm-text-list
+      texts='[
+        "role=\"alert\" 속성이 있는 요소는 브라우저가 즉시 사용자에게 읽습니다. 긴급도가 낮은 알림에는 role=\"status\"를 사용하세요.",
+        "사용자 귀책이 아닌 경우 단순 \"오류\" 대신 \"시스템 오류\"처럼 책임 소재를 명확히 해 사용자가 위축되지 않도록 합니다.",
+        "독립적인 on/off가 아닌 단일 선택 그룹에는 variant를 사용합니다. 색상만으로 의미를 전달하지 않고 아이콘을 함께 제공합니다.",
+        "닫기 버튼이 필요한 경우 slot에 mm-clear-button을 넣어 사용합니다."
+      ]'
+    ></mm-text-list>
   </mm-component-guide>
-
-  <mm-component-section title="Input Feedback" description="TODO"> </mm-component-section>
-  <mm-component-section
-    title="Snackbar"
-    description="닫기 또는 되돌리기 등 액션을 포함하지 마세요. 사용자 인터렉션을 요구하는 경우, 주목도가 높은
-        모달로 제공하세요. with Toast. toast=>snackbar(withAction)"
-  >
-  </mm-component-section>
 </main>
