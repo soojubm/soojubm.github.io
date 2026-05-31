@@ -15,12 +15,18 @@ export class MenuItemLink extends MenuItemRow {
     return this.external || this.target === '_blank'
   }
 
+  protected override get interactive() {
+    return true
+  }
+
   protected override renderAction() {
     return html`
-      ${this._isExternal
-        ? html`<mm-icon name="arrow-up-right" size="small"></mm-icon>`
-        : nothing}
-      <slot name="action"></slot>
+      <span class="link-trailing" slot="trailing">
+        ${this._isExternal
+          ? html`<mm-icon name="arrow-up-right" size="small"></mm-icon>`
+          : nothing}
+        <slot name="action"></slot>
+      </span>
     `
   }
 
@@ -33,6 +39,7 @@ export class MenuItemLink extends MenuItemRow {
         class="item"
         role=${this.getRole()}
         data-tone=${ifDefined(this.tone || undefined)}
+        ?data-interactive=${this.interactive}
         aria-label=${ifDefined(this.ariaLabel || undefined)}
         aria-disabled=${ifDefined(this.disabled ? 'true' : undefined)}
       >

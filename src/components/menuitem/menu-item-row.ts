@@ -1,6 +1,7 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
+import '../avatar/list-row'
 import { menuItemStyles } from './menuitem.styles'
 
 @customElement('mm-menu-item-row')
@@ -25,6 +26,11 @@ export class MenuItemRow extends LitElement {
 
   static styles = [menuItemStyles]
 
+  /** 클릭 가능한(hover 강조) 행 여부. 기본 행은 표현용이므로 false. */
+  protected get interactive(): boolean {
+    return false
+  }
+
   protected getRole(): string {
     return this.role || 'menuitem'
   }
@@ -39,13 +45,14 @@ export class MenuItemRow extends LitElement {
   }
 
   protected renderAction() {
-    return html`<slot name="action"></slot>`
+    return html`<slot name="action" slot="trailing"></slot>`
   }
 
   protected renderAvatar() {
     if (this.icon || this.avatarSrc) {
       return html`
         <mm-avatar
+          slot="leading"
           variant=${this.avatarVariant}
           size=${this.avatarSize}
           icon=${ifDefined(this.icon || undefined)}
@@ -53,29 +60,16 @@ export class MenuItemRow extends LitElement {
         ></mm-avatar>
       `
     }
-    return html`<slot name="avatar"></slot>`
+    return html`<slot name="avatar" slot="leading"></slot>`
   }
 
   protected renderContent() {
-    const label = this.label
-      ? html`<mm-text size="14">${this.label}</mm-text>`
-      : html`<slot name="label"><slot></slot></slot>`
-
     return html`
-      ${this.renderAvatar()}
-      <slot name="prefix"></slot>
-      <span class="content">
-        <mm-text size="14">${label}</mm-text>
-        ${this.description
-          ? html`<mm-text
-              size="14"
-              color="var(--color-foreground-light)"
-              style="margin-top: var(--space-1-minus)"
-              >${this.description}</mm-text
-            >`
-          : nothing}
-      </span>
-      ${this.renderAction()}
+      <mm-list-row label=${this.label} description=${this.description}>
+        ${this.renderAvatar()}
+        ${this.label ? nothing : html`<slot name="label"><slot></slot></slot>`}
+        ${this.renderAction()}
+      </mm-list-row>
     `
   }
 
@@ -85,6 +79,7 @@ export class MenuItemRow extends LitElement {
         class="item"
         role=${this.getRole()}
         data-tone=${ifDefined(this.tone || undefined)}
+        ?data-interactive=${this.interactive}
         aria-label=${ifDefined(this.ariaLabel || undefined)}
         aria-disabled=${ifDefined(this.disabled ? 'true' : undefined)}
         aria-checked=${ifDefined(this.getAriaChecked())}

@@ -13,6 +13,10 @@ export class MenuItemRadio extends MenuItemRow {
   @property({ type: String })
   name = ''
 
+  protected override get interactive() {
+    return true
+  }
+
   protected override getRole() {
     return 'menuitemradio'
   }
@@ -58,6 +62,7 @@ export class MenuItemRadio extends MenuItemRow {
   protected override renderAction() {
     return html`
       <mm-radio
+        slot="trailing"
         .name=${this.name}
         .value=${this.value}
         .checked=${this.checked}

@@ -1,30 +1,36 @@
 import { css } from 'lit'
 
 export const menuItemStyles = css`
+  :host {
+    --menuitem-size: var(--size-medium);
+    --menuitem-radius: var(--radius);
+    --menuitem-color-hover: var(--color-background-subtle);
+    --menuitem-color-danger: #d93025;
+  }
+
   .item {
     display: flex;
     align-items: center;
     width: 100%;
-    min-height: var(--size-medium);
-    gap: var(--space-2);
-    border-radius: var(--radius);
+    min-height: var(--menuitem-size);
+    border-radius: var(--menuitem-radius);
     color: inherit;
     text-decoration: none;
     box-sizing: border-box;
   }
 
-  .content {
-    min-width: 0;
+  mm-list-row {
     flex: 1;
-    display: flex;
-    flex-direction: column;
   }
 
-  .item[aria-current='page'],
-  .item:hover {
-    --hover-outline: 0;
-    background-color: var(--color-background-subtle);
+  /* 상호작용 가능한 행(checkbox·radio·switch·link 등)만 hover 강조 */
+  .item[data-interactive] {
     cursor: pointer;
+  }
+
+  .item[data-interactive][aria-current='page'],
+  .item[data-interactive]:hover {
+    background-color: var(--menuitem-color-hover);
   }
 
   .item[aria-disabled='true'] {
@@ -36,22 +42,8 @@ export const menuItemStyles = css`
     all: unset;
   }
 
-  ::slotted([slot='action']) {
-    margin: 0 0 0 auto !important;
-  }
-
-  mm-checkbox,
-  mm-radio {
-    margin-left: auto;
-  }
-
-  .item[data-tone='danger'] mm-avatar,
-  .item[data-tone='danger'] mm-text {
-    color: #d93025;
-  }
-
-  .item[aria-current='page'] {
-    --hover-outline: 0;
-    cursor: pointer;
+  /* tone=danger: color를 행에 지정하면 list-row 내부 텍스트·아이콘이 상속받는다 */
+  .item[data-tone='danger'] {
+    color: var(--menuitem-color-danger);
   }
 `

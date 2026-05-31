@@ -7,6 +7,10 @@ export class MenuItemCheckbox extends MenuItemRow {
   @property({ type: Boolean, reflect: true }) checked = false
   @property({ type: String }) value = ''
 
+  protected override get interactive() {
+    return true
+  }
+
   protected override getRole() {
     return 'menuitemcheckbox'
   }
@@ -57,6 +61,7 @@ export class MenuItemCheckbox extends MenuItemRow {
   protected override renderAction() {
     return html`
       <mm-checkbox
+        slot="trailing"
         .checked=${this.checked}
         ?disabled=${this.disabled}
         @change=${this.handleControlChange}
