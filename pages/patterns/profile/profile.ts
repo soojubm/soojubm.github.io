@@ -13,15 +13,18 @@ document.addEventListener('DOMContentLoaded', () => {
   document.body.innerHTML = renderLayout(main, { closeSidebar: true })
   hideNavbar()
 
-  const modal = setupModal()
-  document.addEventListener('portfolio-item-open', event => {
-    const modalId = (event as PortfolioItemOpenEvent).detail.modal
-    modal.open(modalId)
-  })
-
+  setupPortfolioModal()
   document.addEventListener('view-mode-change', handleViewModeChange)
   document.addEventListener('sort-change', handleSortChange)
 })
+
+/** mm-portfolio-item의 portfolio-item-open 이벤트를 모달 열기에 연결한다. */
+function setupPortfolioModal() {
+  const modal = setupModal()
+  document.addEventListener('portfolio-item-open', event => {
+    modal.open((event as PortfolioItemOpenEvent).detail.modal)
+  })
+}
 
 function handleViewModeChange(event: Event) {
   const target = event.target as HTMLElement

@@ -122,7 +122,7 @@
 
   <mm-text-list texts='["적용 버튼 클릭 Batch updates. carbon.", "필터 트리거에 적용된 필터의 갯수 표시.", "setting item과 filter item은 비슷한 패턴이지만 역할이 다르기 때문에 분리", "옵션 레이블 2단어 이하, 옵션 갯수 5개 이하 칩그룹을 사용한다.", "사용자는 적용된 필터 옵션을 초기화하기 위해 새로고침을 할까?", "range UI는 얼마나 사용자 친화적인가?", "presentation 컴포넌트가 필터의 적용과 상태에 영향을 준다.", "옵션 목록을 나열할 때. 모두 셀렉트로 제공할 수도 있지만 다른 컴포넌트로 옵션 하나 하나를 환기할 수 있다. dropdown, chip, radio 등의 혼합 => 디자인과 개발 비용이 증가하는 만큼 사용자 경험이 월등한가?", "필터를 적용하고 초기화하는 버튼 그룹의 정렬."]'></mm-text-list>
 
-  <mm-icon-button icon="filter" id="filter-trigger"></mm-icon-button>
+  <mm-icon-button icon="filter" data-open-sheet="#filter-sheet"></mm-icon-button>
   <mm-sheet type="bottom" id="filter-sheet">
     <mm-sheet-header title="필터"></mm-sheet-header>
     <mm-sheet-body>
