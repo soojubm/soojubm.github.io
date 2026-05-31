@@ -119,6 +119,11 @@ export const inputStyles = css`
     background: transparent;
   }
 
+  input::placeholder,
+  textarea::placeholder {
+    color: var(--color-foreground-light);
+  }
+
   .textfield-control:hover {
     border-color: var(--input-color-border-hover);
   }

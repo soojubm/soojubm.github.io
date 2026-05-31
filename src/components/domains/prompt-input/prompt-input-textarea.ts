@@ -1,5 +1,6 @@
 import { LitElement, html, css } from 'lit'
 import { customElement, property, query } from 'lit/decorators.js'
+import { inputStyles } from '../../textfield/input.styles'
 
 @customElement('mm-prompt-input-textarea')
 export class PromptInputTextarea extends LitElement {
@@ -9,41 +10,26 @@ export class PromptInputTextarea extends LitElement {
 
   @query('textarea') private _textarea!: HTMLTextAreaElement
 
-  static styles = css`
-    :host {
-      display: block;
-      --prompt-textarea-min-height: 24px;
-      --prompt-textarea-max-height: 200px;
-      --prompt-textarea-padding: 0;
-      --prompt-textarea-background: transparent;
-      --prompt-textarea-color: var(--color-foreground);
-      --prompt-textarea-placeholder-color: var(--color-foreground-light);
-      --prompt-textarea-font-size: inherit;
-      --prompt-textarea-line-height: 1.5;
-    }
+  // inputStyles가 배경색(--input-background-color)·border·radius·padding·포커스를
+  // 제공한다. autoresize(min/max-height)와 placeholder 색만 추가로 얹는다.
+  static styles = [
+    inputStyles,
+    css`
+      :host {
+        display: block;
+        --prompt-textarea-min-height: var(--input-height);
+        --prompt-textarea-max-height: 200px;
+        --prompt-textarea-line-height: 1.5;
+      }
 
-    textarea {
-      width: 100%;
-      min-height: var(--prompt-textarea-min-height);
-      max-height: var(--prompt-textarea-max-height);
-      padding: var(--prompt-textarea-padding);
-      margin: 0;
-      box-sizing: border-box;
-      border: none;
-      outline: none;
-      background: var(--prompt-textarea-background);
-      resize: none;
-      font-family: inherit;
-      font-size: var(--prompt-textarea-font-size);
-      line-height: var(--prompt-textarea-line-height);
-      color: var(--prompt-textarea-color);
-      overflow-y: auto;
-    }
-
-    textarea::placeholder {
-      color: var(--prompt-textarea-placeholder-color);
-    }
-  `
+      textarea {
+        min-height: var(--prompt-textarea-min-height);
+        max-height: var(--prompt-textarea-max-height);
+        line-height: var(--prompt-textarea-line-height);
+        overflow-y: auto;
+      }
+    `,
+  ]
 
   // 외부에서 value를 직접 바꿨을 때도 높이를 재계산하도록 유도
   updated(changedProperties: Map<string, any>) {
