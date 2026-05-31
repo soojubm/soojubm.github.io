@@ -1,0 +1,55 @@
+<main class="page">
+  <mm-page-header
+    title="List Row"
+    description="leading(아바타·아이콘) + 본문(제목·설명) + trailing(액션) 한 줄을 구성하는 표현 전용 primitive. 상호작용 의미가 필요하면 menuItem을 사용합니다."
+  ></mm-page-header>
+
+  <mm-component-aka items='["ListTile", "Media Object"]'></mm-component-aka>
+
+  <mm-component-example>
+    <mm-list-row label="수줍이" description="Youtube Subscriber">
+      <mm-avatar slot="leading" src="/src/images/springsteen.jpg"></mm-avatar>
+    </mm-list-row>
+    <mm-separator></mm-separator>
+    <mm-list-row label="사용자 정보" description="전자 메일, 일정, 연락처에서 사용하는 계정">
+      <mm-avatar slot="leading" variant="secondary" icon="user-badge-check"></mm-avatar>
+      <mm-icon slot="trailing" name="arrow-right" aria-label=""></mm-icon>
+    </mm-list-row>
+    <mm-separator></mm-separator>
+    <mm-list-row label="trailing 액션">
+      <mm-avatar slot="leading" variant="secondary" icon="bell"></mm-avatar>
+      <mm-switch slot="trailing"></mm-switch>
+    </mm-list-row>
+  </mm-component-example>
+
+  <mm-component-props>
+    <mm-prop name="label" type="string" optional></mm-prop>
+    <mm-prop name="description" type="string" optional></mm-prop>
+    <mm-prop name="slot: leading" type="HTMLElement" optional></mm-prop>
+    <mm-prop name="slot: default" type="HTMLElement" optional></mm-prop>
+    <mm-prop name="slot: trailing" type="HTMLElement" optional></mm-prop>
+  </mm-component-props>
+
+  <mm-component-guide>
+    <mm-paragraph-group>
+      <mm-text size="14" weight="bold">언제 사용하나요</mm-text>
+      <mm-text size="14">
+        리스트의 한 항목, 사용자 정보 행, 설정 행처럼 "아이콘/아바타 + 텍스트 + 액션"이 가로로
+        나열되는 모든 곳의 기본 골격입니다. mm-user-row가 이 위에 아바타 기본값을 얹어 만들어집니다.
+      </mm-text>
+      <mm-text size="14" weight="bold">menuItem과의 차이</mm-text>
+      <mm-text size="14">
+        list-row는 레이아웃만 담당하며 role·hover·키보드 같은 상호작용을 포함하지 않습니다. 클릭
+        가능한 메뉴 항목이 필요하면 menuItem 계열을 사용하세요.
+      </mm-text>
+    </mm-paragraph-group>
+    <mm-text-list
+      texts='[
+        "leading 또는 trailing 슬롯이 비어 있으면 해당 영역이 사라져 불필요한 간격이 생기지 않습니다.",
+        "본문은 label/description 속성 또는 기본 슬롯으로 자유롭게 채울 수 있습니다.",
+        "제목·설명 타이포(14, 보조색, 음수 마진)는 컴포넌트에 고정되어 사용처마다 드리프트하지 않습니다."
+      ]'
+    >
+    </mm-text-list>
+  </mm-component-guide>
+</main>

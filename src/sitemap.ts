@@ -27,6 +27,7 @@ export const SITEMAP = [
     icon: 'flower',
     items: [
       { id: 'avatar', name: 'avatar' },
+      { id: 'list-row', name: 'list row' },
       { id: 'text', name: 'text' },
       { id: 'tag', name: 'tag' },
       { id: 'surface', name: 'surface' },
