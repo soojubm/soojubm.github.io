@@ -34,6 +34,9 @@ export class ChatBubbleBase extends LitElement {
         font-size: var(--font-size-14);
         line-height: var(--line-height-14);
         box-sizing: border-box;
+        /* 기본 none, brutal 테마에서 --bubble-border 주입(상속)으로 #000.
+           failed 상태는 element-level border로 덮어 danger 보더 유지. */
+        border: var(--bubble-border, none);
       }
 
       /* 이미지 버블 */

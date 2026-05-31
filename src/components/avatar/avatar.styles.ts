@@ -63,4 +63,9 @@ export const avatarStyles = css`
     box-shadow: none;
   }
 
+  /* brutal: variant가 element-level border를 설정하므로 :host-context로 덮어
+     모든 아바타(figure)에 #000 보더 적용 */
+  :host-context([data-theme='brutal']) figure {
+    border: var(--avatar-border);
+  }
 `

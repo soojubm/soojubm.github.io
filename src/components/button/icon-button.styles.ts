@@ -1,11 +1,10 @@
 import { css } from 'lit'
+import { buttonHostTokens } from './button.tokens'
 
 export const iconButtonStyles = css`
+  /* 토큰은 button.tokens.ts에서 button과 공유한다. */
   :host {
-    --button-size: var(--size-medium);
-    --button-color: var(--color-background-subtle);
-    --button-radius: var(--radius);
-    --button-text-color: var(--color-foreground);
+    ${buttonHostTokens}
   }
 
   button {
@@ -88,5 +87,11 @@ export const iconButtonStyles = css`
       border-color: var(--button-color);
       box-shadow: none;
     }
+  }
+
+  /* brutal: variant가 element-level border를 설정하므로 :host-context로 덮어
+     모든 아이콘 버튼에 #000 보더 적용 (base에 border가 없어 full border 지정) */
+  :host-context([data-theme='brutal']) .icon-button {
+    border: var(--border-stronger);
   }
 `

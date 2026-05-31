@@ -7,100 +7,19 @@
   <mm-component-example>
     <div style="display: grid; gap: var(--space-5); max-width: 520px">
       <!-- Row: 기본 / 아이콘 / 설명 / tone / disabled -->
-      <div>
-        <mm-text size="12" color="var(--color-foreground-light)">MenuItemRow</mm-text>
-        <mm-menu-item-group aria-label="기본 메뉴">
-          <mm-menu-item-row icon="user" label="프로필" description="계정 설정"></mm-menu-item-row>
-          <mm-menu-item-row icon="settings" label="환경설정"></mm-menu-item-row>
-          <mm-menu-item-row icon="trash" label="삭제" tone="danger"></mm-menu-item-row>
-          <mm-menu-item-row icon="log-out" label="로그아웃" disabled></mm-menu-item-row>
-        </mm-menu-item-group>
-      </div>
-
-      <!-- Link: 내부 / 외부 -->
-      <div>
-        <mm-text size="12" color="var(--color-foreground-light)">MenuItemLink</mm-text>
-        <mm-menu-item-group aria-label="링크 메뉴">
-          <mm-menu-item-link icon="book" label="문서 보기" href="#"></mm-menu-item-link>
-          <mm-menu-item-link
-            icon="open-in-browser"
-            label="외부 링크"
-            href="https://example.com"
-            target="_blank"
-          ></mm-menu-item-link>
-          <mm-menu-item-link
-            icon="github"
-            label="GitHub"
-            href="https://github.com"
-            external
-          ></mm-menu-item-link>
-        </mm-menu-item-group>
-      </div>
+      <mm-menu-item-group aria-label="기본 메뉴">
+        <mm-menu-item-row icon="user" label="프로필" description="계정 설정"></mm-menu-item-row>
+        <mm-menu-item-row icon="settings" label="환경설정"></mm-menu-item-row>
+        <mm-menu-item-row icon="trash" label="삭제" tone="danger"></mm-menu-item-row>
+        <mm-menu-item-row icon="log-out" label="로그아웃" disabled></mm-menu-item-row>
+      </mm-menu-item-group>
 
       <!-- Row + action slot -->
-      <div>
-        <mm-text size="12" color="var(--color-foreground-light)">Action slot</mm-text>
-        <mm-menu-item-group aria-label="액션 메뉴">
-          <mm-menu-item-row
-            icon="app-window"
-            label="수줍이 앱"
-            description="앱에서 게시물을 엽니다."
-          >
-            <mm-button slot="action" variant="primary">열기</mm-button>
-          </mm-menu-item-row>
-        </mm-menu-item-group>
-      </div>
-
-      <!-- Switch -->
-      <div>
-        <mm-text size="12" color="var(--color-foreground-light)">MenuItemSwitch</mm-text>
-        <mm-menu-item-group aria-label="토글 설정">
-          <mm-menu-item-switch icon="bell" label="알림" value="notification" checked></mm-menu-item-switch>
-          <mm-menu-item-switch icon="wifi" label="Wi-Fi" value="wifi"></mm-menu-item-switch>
-        </mm-menu-item-group>
-      </div>
-
-      <!-- CheckboxGroup -->
-      <div>
-        <mm-text size="12" color="var(--color-foreground-light)">MenuItemCheckboxGroup</mm-text>
-        <mm-menu-item-checkbox-group aria-label="알림 설정">
-          <mm-menu-item-checkbox
-            icon="bell"
-            label="푸시 알림"
-            value="push"
-            checked
-          ></mm-menu-item-checkbox>
-          <mm-menu-item-checkbox
-            icon="mail"
-            label="이메일 알림"
-            value="email"
-            checked
-          ></mm-menu-item-checkbox>
-          <mm-menu-item-checkbox
-            icon="message"
-            label="문자 알림"
-            value="sms"
-          ></mm-menu-item-checkbox>
-        </mm-menu-item-checkbox-group>
-      </div>
-
-      <!-- RadioGroup -->
-      <div>
-        <mm-text size="12" color="var(--color-foreground-light)">MenuItemRadioGroup</mm-text>
-        <mm-menu-item-radio-group name="theme" value="dark" aria-label="테마 선택">
-          <mm-menu-item-radio
-            value="light"
-            icon="sun-light"
-            label="라이트 모드"
-          ></mm-menu-item-radio>
-          <mm-menu-item-radio value="dark" icon="half-moon" label="다크 모드"></mm-menu-item-radio>
-          <mm-menu-item-radio
-            value="system"
-            icon="settings"
-            label="시스템 설정 동기화"
-          ></mm-menu-item-radio>
-        </mm-menu-item-radio-group>
-      </div>
+      <mm-menu-item-group aria-label="액션 메뉴">
+        <mm-menu-item-row icon="app-window" label="수줍이 앱" description="앱에서 게시물을 엽니다.">
+          <mm-button slot="action" variant="primary">열기</mm-button>
+        </mm-menu-item-row>
+      </mm-menu-item-group>
 
       <!-- SettingItem -->
       <div>
@@ -167,24 +86,35 @@
     title="MenuItemCheckboxGroup"
     description="mm-menu-item-checkbox는 항상 그룹 안에서 사용합니다."
   >
-    <mm-menu-item-checkbox-group aria-label="콘텐츠 유형 필터">
+    <mm-menu-item-checkbox-group aria-label="알림 설정">
       <mm-menu-item-checkbox
-        icon="book"
-        label="아티클"
-        value="article"
+        icon="bell"
+        label="푸시 알림"
+        value="push"
         checked
       ></mm-menu-item-checkbox>
       <mm-menu-item-checkbox
-        icon="video-camera"
-        label="동영상"
-        value="video"
+        icon="mail"
+        label="이메일 알림"
+        value="email"
         checked
       ></mm-menu-item-checkbox>
-      <mm-menu-item-checkbox icon="music-note" label="오디오" value="audio"></mm-menu-item-checkbox>
+      <mm-menu-item-checkbox icon="message" label="문자 알림" value="sms"></mm-menu-item-checkbox>
     </mm-menu-item-checkbox-group>
   </mm-component-section>
 
   <mm-component-section title="MenuItemRadioGroup">
+    <mm-menu-item-radio-group name="theme" value="dark" aria-label="테마 선택">
+      <mm-menu-item-radio value="light" icon="sun-light" label="라이트 모드"></mm-menu-item-radio>
+      <mm-menu-item-radio value="dark" icon="half-moon" label="다크 모드"></mm-menu-item-radio>
+      <mm-menu-item-radio
+        value="system"
+        icon="settings"
+        label="시스템 설정 동기화"
+      ></mm-menu-item-radio>
+    </mm-menu-item-radio-group>
+
+    <mm-separator></mm-separator>
     <mm-menu-item-radio-group name="access" value="public" aria-label="공개 범위">
       <mm-menu-item-radio
         value="public"
@@ -202,11 +132,15 @@
     </mm-menu-item-radio-group>
   </mm-component-section>
 
+  <mm-component-section title="MenuItemRadioSwitch">
+    <mm-menu-item-switch icon="wifi" label="Wi-Fi" value="wifi"></mm-menu-item-switch>
+  </mm-component-section>
+
   <mm-component-section title="MenuItemLink — external">
     <mm-menu-item-group>
       <mm-menu-item-link
         icon="book"
-        label="문서"
+        label="문서보기"
         href="#"
         description="내부 링크 (아이콘 없음)"
       ></mm-menu-item-link>
@@ -236,7 +170,11 @@
         description="프론트엔드 개발자 모임"
         avatar-size="large"
       ></mm-menu-item-row>
-      <mm-menu-item-row label="Personal License" description="1 user" avatar-size="large"></mm-menu-item-row>
+      <mm-menu-item-row
+        label="Personal License"
+        description="1 user"
+        avatar-size="large"
+      ></mm-menu-item-row>
     </mm-menu-item-group>
   </mm-component-section>
 

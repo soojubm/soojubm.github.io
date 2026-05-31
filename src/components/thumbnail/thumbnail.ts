@@ -29,7 +29,7 @@ export class Thumbnail extends LitElement {
       width: 100%;
       padding: 0;
       margin: 0;
-      border: none;
+      border: var(--thumbnail-border, none);
       background: none;
       overflow: hidden;
       border-radius: var(--thumbnail-radius);

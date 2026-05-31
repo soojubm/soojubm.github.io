@@ -72,6 +72,7 @@ export class ComponentProps extends LitElement {
         margin: 0 0 0 calc(-5vw + 1rem);
         padding: 1.5rem calc(var(--grid-margin) - 1rem);
         background-color: var(--color-background-subtle);
+        border: var(--component-props-border, none);
         /* border-radius: 0 0 var(--radius-large) var(--radius-large); */
         border-radius: var(--radius-large);
         position: relative;

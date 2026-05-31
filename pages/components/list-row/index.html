@@ -7,17 +7,13 @@
   <mm-component-aka items='["ListTile", "Media Object"]'></mm-component-aka>
 
   <mm-component-example>
-    <mm-list-row label="수줍이" description="Youtube Subscriber">
-      <mm-avatar slot="leading" src="/src/images/springsteen.jpg"></mm-avatar>
-    </mm-list-row>
+    <mm-list-row label="수줍이" description="Youtube Subscriber" avatar-src="/src/images/springsteen.jpg"></mm-list-row>
     <mm-separator></mm-separator>
-    <mm-list-row label="사용자 정보" description="전자 메일, 일정, 연락처에서 사용하는 계정">
-      <mm-avatar slot="leading" variant="secondary" icon="user-badge-check"></mm-avatar>
+    <mm-list-row label="사용자 정보" description="전자 메일, 일정, 연락처에서 사용하는 계정" avatar-variant="secondary" icon="user-badge-check">
       <mm-icon slot="trailing" name="arrow-right" aria-label=""></mm-icon>
     </mm-list-row>
     <mm-separator></mm-separator>
-    <mm-list-row label="trailing 액션">
-      <mm-avatar slot="leading" variant="secondary" icon="bell"></mm-avatar>
+    <mm-list-row label="trailing 액션" avatar-variant="secondary" icon="bell">
       <mm-switch slot="trailing"></mm-switch>
     </mm-list-row>
   </mm-component-example>
@@ -25,7 +21,10 @@
   <mm-component-props>
     <mm-prop name="label" type="string" optional></mm-prop>
     <mm-prop name="description" type="string" optional></mm-prop>
-    <mm-prop name="slot: leading" type="HTMLElement" optional></mm-prop>
+    <mm-prop name="icon" type="string" optional></mm-prop>
+    <mm-prop name="avatar-src" type="string" optional></mm-prop>
+    <mm-prop name="avatar-variant" type="string" optional></mm-prop>
+    <mm-prop name="avatar-size" type="string" optional></mm-prop>
     <mm-prop name="slot: default" type="HTMLElement" optional></mm-prop>
     <mm-prop name="slot: trailing" type="HTMLElement" optional></mm-prop>
   </mm-component-props>

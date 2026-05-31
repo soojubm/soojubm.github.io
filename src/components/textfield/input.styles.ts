@@ -80,10 +80,13 @@ export const inputStyles = css`
     position: relative;
     --input-height: var(--size-large);
     --input-background-color: var(--color-background-subtle);
-    --input-border: var(--border);
     --input-radius: var(--radius);
     --input-color-border-hover: var(--gray400);
     --input-text-color: var(--color-foreground);
+  }
+
+  :host-context([data-theme='brutal']) {
+    --input-color-border-hover: var(--brutal-border-color);
   }
 
   .textfield-control,
@@ -93,7 +96,9 @@ export const inputStyles = css`
     box-sizing: border-box;
     border-radius: var(--input-radius);
     background: var(--input-background-color);
-    border: 1px solid transparent;
+    /* 기본 transparent, brutal 테마에서 --input-border-color 주입(상속)으로 #000.
+       hover/invalid가 element-level border-color로 덮으므로 상태는 그대로 우선. */
+    border: 1px solid var(--input-border-color, transparent);
   }
 
   .textfield-control {

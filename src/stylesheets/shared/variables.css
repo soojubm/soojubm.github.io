@@ -262,15 +262,26 @@
 }
 
 :root [data-theme=brutal] {
-  /* 모든 border를 검정으로: 색상 토큰을 덮으면 --border / --border-stronger /
-     직접 var(--color-border)를 쓰는 곳까지 전부 검정이 된다. */
-  --color-border: #000;
-  --color-border-strong: #000;
-  --color-border-hover: #000;
+  /* 프리미티브: 이 값 하나로 모든 brutal 보더 색상을 제어한다 */
+  --brutal-border-color: #000;
 
-  --border: var(--border-width) solid var(--color-border);
-  --border-stronger: var(--border-width) solid var(--color-border-strong);
-  --border-active: var(--border-width) solid var(--color-border);
+  --color-border: var(--brutal-border-color);
+  --color-border-strong: var(--brutal-border-color);
+  --color-border-hover: var(--brutal-border-color);
+
+  --border: var(--border-width) solid var(--brutal-border-color);
+  --border-stronger: var(--border-width) solid var(--brutal-border-color);
+  --border-active: var(--border-width) solid var(--brutal-border-color);
+
+  /* 컴포넌트 토큰: 섀도우 DOM 상속으로 주입.
+     base 요소에 element-level border override가 없는 컴포넌트는 토큰 주입으로 처리.
+     (button·avatar는 variant가 element-level border를 설정해 토큰으로 못 이기므로
+      각 styles에서 :host-context로 처리) */
+  --thumbnail-border: var(--border-stronger);
+  --component-props-border: var(--border-stronger);
+  --component-tokens-border: var(--border-stronger);
+  --input-border-color: var(--brutal-border-color);
+  --bubble-border: var(--border-stronger);
 }
 
 /* // $p-breakpoints-lg-only: '(min-width: 65em) and (max-width: 89.9975em)'; */

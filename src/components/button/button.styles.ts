@@ -1,4 +1,5 @@
 import { css } from 'lit'
+import { buttonHostTokens } from './button.tokens'
 
 export const buttonStyles = css`
   /* reset */
@@ -14,18 +15,9 @@ export const buttonStyles = css`
   }
 
   /* host에서 정의하면 커스텀 엘리먼트가 아닐 .class로 사용할 때 못 가져온다. */
+  /* 토큰은 button.tokens.ts에서 icon-button과 공유한다. */
   :host {
-    --button-size: var(--size-medium);
-    --button-min-width: 5rem;
-    --button-padding-inline: var(--space-3);
-
-    --button-color: var(--color-background-subtle);
-    --button-border: 1px solid var(--button-color);
-    --button-radius: var(--radius);
-
-    --button-text-color: var(--color-foreground);
-    --button-text-size: inherit;
-    --button-text-weight: var(--font-weight-bold);
+    ${buttonHostTokens}
   }
 
   :host(.primary) {
@@ -126,7 +118,7 @@ export const buttonStyles = css`
     gap: var(--space-2);
     height: var(--button-size);
     padding: 0 var(--button-padding-inline);
-    border: var(--button-border);
+    border: var(--button-border, 1px solid var(--button-color));
     border-radius: var(--button-radius);
     box-sizing: border-box;
     background: var(--button-color);
@@ -164,6 +156,12 @@ export const buttonStyles = css`
   .button[data-variant='destructive'] {
     --button-color: var(--red800);
     --button-text-color: var(--gray0);
+  }
+
+  /* brutal: variant의 transparent 보더를 강제로 덮어 모든 버튼에 #000 보더 적용.
+     (variant가 element-level에서 border-color를 설정하므로 토큰 주입으로는 못 이김) */
+  :host-context([data-theme='brutal']) .button {
+    border-color: var(--brutal-border-color);
   }
 
   /* sizes */
