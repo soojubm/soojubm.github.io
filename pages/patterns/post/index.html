@@ -17,9 +17,8 @@
         Pinterest announces industry-first body type technology to increase body representation on
         platform
       </mm-text>
-      <mm-menuitem label="수줍이" description="Youtube Subscriber">
-        <mm-avatar slot="avatar" size="medium" src="/src/images/springsteen.jpg"></mm-avatar>
-      </mm-menuitem>
+      <mm-menu-item-row label="수줍이" description="Youtube Subscriber" avatar-src="/src/images/springsteen.jpg" avatar-size="medium">
+      </mm-menu-item-row>
 
       <div>
         <mm-text size="14">2022년 4월 9일</mm-text>
@@ -115,17 +114,15 @@
   </mm-button-group>
   <mm-separator></mm-separator>
   <section class="post-reaction">
-    <mm-menuitem label="192" roloe="button">
-      <mm-avatar slot="avatar" icon="message"> </mm-avatar>
-    </mm-menuitem>
+    <mm-menu-item-row label="192" roloe="button" icon="message">
+    </mm-menu-item-row>
   </section>
   <mm-surface class="comment" variant="elevated">
     <form variany="elevated" class="feed-make" action="" style="position:relative;">
-      <mm-titlebar label="게시물 만들기"></mm-titlebar>
+      <mm-top-bar label="게시물 만들기"></mm-top-bar>
       <div style="height: 1rem"></div>
-      <mm-menuitem label="수줍이" size="medium">
-        <mm-avatar slot="avatar" src="/src/images/springsteen.jpg"></mm-avatar>
-      </mm-menuitem>
+      <mm-menu-item-row label="수줍이" size="medium" avatar-src="/src/images/springsteen.jpg">
+      </mm-menu-item-row>
       <div style="height: var(--space-2)"></div>
       <mm-textarea
         name="comment"
@@ -136,7 +133,7 @@
   </mm-surface>
   <br />
   <mm-surface>
-    <mm-titlebar label="댓글 2개"></mm-titlebar>
+    <mm-top-bar label="댓글 2개"></mm-top-bar>
     <div class="comment-list" style="margin-top:1rem;">
       <div class="comment-list-item">
         <div style="display: flex; align-items: center; gap: var(--space-3)">
@@ -188,7 +185,7 @@
         "개인적, 직업적 목표를 달성하세요"
       ]'></mm-text-list>
       <div style="height:var(--space-1)"></div>
-      <mm-button variant="primary" size="large"> 멤버십 가입하기 </mm-button>
+      <mm-button slot="action" variant="primary" size="large">멤버십 가입하기</mm-button>
     </mm-result>
     <div class="post-attract-blur"></div>
   </aside>

@@ -29,10 +29,8 @@ export class Checkbox extends LitElement {
     crypto?.randomUUID?.() || Math.random().toString(36).substring(2, 9)
   }`
 
-  private _onChange = (event: Event) => {
-    const target = event.target as HTMLInputElement
-
-    this.checked = target.checked
+  private _commitChecked(checked: boolean) {
+    this.checked = checked
     this.indeterminate = false
 
     this.dispatchEvent(
@@ -45,6 +43,20 @@ export class Checkbox extends LitElement {
         },
       }),
     )
+  }
+
+  private _onChange = (event: Event) => {
+    const target = event.target as HTMLInputElement
+
+    this._commitChecked(target.checked)
+  }
+
+  private _onLabelClick = (event: Event) => {
+    event.preventDefault()
+
+    if (this.disabled) return
+
+    this._commitChecked(!this.checked)
   }
 
   render() {
@@ -64,7 +76,7 @@ export class Checkbox extends LitElement {
           @change=${this._onChange}
         />
 
-        <label for=${_inputId}>
+        <label for=${_inputId} @click=${this._onLabelClick}>
           <span class="indicator"></span>
           <mm-text size="14">
             <slot></slot>

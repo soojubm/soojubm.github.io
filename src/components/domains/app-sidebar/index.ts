@@ -55,13 +55,12 @@ export class Sidebar extends LitElement {
           // 1. 독립형 메뉴 아이템 처리
           if (node.type === 'standalone') {
             return html`
-              <mm-menuitem
+              <mm-menu-item-link
                 label="${node.title}"
                 icon="${node.icon}"
                 href="${node.id}.html"
                 class="${currentPageId === node.id ? 'is-active' : ''}"
-              >
-              </mm-menuitem>
+              ></mm-menu-item-link>
             `
           }
 

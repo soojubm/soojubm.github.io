@@ -1,128 +1,4 @@
 <main class="page">
-  <!-- <nav class="component-navigation" role="group" data-scroll="vertical" role="menubar">
-    <mm-button-group>
-      <div class="component-navigation-background"></div>
-      <mm-button class="is-active js-scrollspy-trigger" href="#">Dim</mm-button>
-      <mm-button class="js-scrollspy-trigger" href="#">Page</mm-button>
-    </mm-button-group>
-  </nav>
-  <style>
-    .component-navigation {
-      width: calc(100% + 0.25rem);
-      box-sizing: border-box;
-      background: var(--color-background);
-      position: sticky;
-      top: calc(var(--navbar-height));
-      z-index: 7;
-      padding: var(--space-2) var(--grid-margin) !important;
-      scroll-behavior: smooth;
-    }
-    .component-navigation-background {
-      position: absolute;
-      display: none;
-    }
-  </style> -->
-
-  <style>
-    @define-mixin overay {
-      overflow: auto;
-      background: rgba(0, 0, 0, 0.6);
-      position: fixed;
-      left: 0;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      z-index: var(--zindex-modal);
-    }
-
-    @define-mixin modal-dialog {
-      max-width: 800px;
-      margin: 5% auto;
-      padding: 4rem var(--grid-margin);
-      background: var(--color-background);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      animation: modal 0.2s forwards;
-      position: relative;
-    }
-
-    @define-mixin toast {
-      position: fixed;
-      left: var(--space-4);
-      bottom: var(--space-4);
-    }
-
-    .sheet {
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-      margin-bottom: var(--space-2);
-
-      position: fixed;
-      left: var(--space-2);
-      right: var(--space-2);
-      bottom: calc(constant(safe-area-inset-bottom));
-      bottom: calc(env(safe-area-inset-bottom));
-      z-index: var(--zindex-bottombar);
-      transform: translateY(50vh);
-      transition: all 1s;
-    }
-    .sheet-title {
-      margin: 0 0 var(--space-3);
-    }
-    .sheet-drag-handler {
-      width: 80px;
-      height: 0.25rem;
-      border-radius: var(--radius);
-      background: var(--color-background-subtle);
-      position: absolute;
-      left: 50%;
-      top: 0.5rem;
-      transform: translateX(-50%);
-    }
-    /* // .sheet.is-hidden {animation:temp111 1s forwards} */
-    .sheet-close {
-      position: absolute;
-      right: 0.5rem;
-      top: 0.5rem;
-    }
-
-    .popover {
-      display: none;
-      width: 100%;
-      max-width: var(--width-medium);
-    }
-    .is-active + .popover {
-      display: block;
-      position: absolute;
-      left: 0;
-      top: calc(var(--size-medium) + var(--space-2));
-    }
-
-    .toast {
-      background: gold;
-      margin: var(--space-4);
-      padding: var(--space-4);
-      border-radius: var(--radius);
-      position: fixed;
-      left: 0;
-      bottom: 0;
-      z-index: var(--zindex-toast);
-      transition: all 0.4s ease;
-      transform: translateX(-100vw);
-    }
-    .is-active + .toast {
-      transform: translateX(0);
-    }
-
-    @media (max-width: 1100px) {
-      .toast {
-        bottom: calc(constant(safe-area-inset-bottom) + 0);
-        bottom: calc(env(safe-area-inset-bottom) + 0);
-      }
-    }
-  </style>
-
   <mm-text size="32">Presentation</mm-text>
 
   <mm-component-example>
@@ -186,10 +62,10 @@
   <mm-component-guide>
     <p>UIAlertController iOS15</p>
     Sheet → 컨텍스트 확장 (non-blocking) Alert → 주의 요청 (blocking) Action Sheet → 시각적 형태는
-    Sheet이지만, “선택 요청”이라는 intent로 AlertController 하위
+    Sheet이지만, "선택 요청"이라는 intent로 AlertController 하위
     <p>
-      그 접근은 Sheet를 “레이어의 위치 시스템(position system)”으로 본다는 관점이야. 즉, sheetType이
-      “어떤 역할(role)”이냐가 아니라, **“어디에서 나타나는 sheet냐”**를 기준으로 구분한다는 거지.
+      그 접근은 Sheet를 "레이어의 위치 시스템(position system)"으로 본다는 관점이야. 즉, sheetType이
+      "어떤 역할(role)"이냐가 아니라, **"어디에서 나타나는 sheet냐"**를 기준으로 구분한다는 거지.
       공간적 언어.
     </p>
     <p>접속 환경의 구분을 제거의 파운데이션</p>
@@ -198,7 +74,7 @@
 
     <mm-text size="18">Modal</mm-text>
     <mm-text size="14">
-      something that requires the user’s attention. 사용자는 모달 형태의 집중된 환경에서 리스크를
+      something that requires the user's attention. 사용자는 모달 형태의 집중된 환경에서 리스크를
       관리할 수 있습니다.구조적으로는 main tag의 형제 엘리먼트. 루트 엘리먼트가 상태 클래스를 가짐.
       popovertarget. 사용자 인터렉션을 요구할 때 modal로 주의를 집중 시킵니다. non interactions is
       non modal. 이 규칙이라면 non-modal dialog는 허용될 수 없다. modal은 배경을 클릭해서 닫는
@@ -221,26 +97,20 @@
       the context of the current page, use Sheet.
     </p>
 
-    <mm-text-list texts='["브라우저 히스토리가 필요한 레이어.", "body element의 스크롤. 스크롤의 크기 보정. 크롬에서는 html에 overflow:hidden를 잘 주면
-        끝인데, 익스플로러에선 스크롤 제어하려면 body에 먹여야 한? html에 overflow:hidden;을주고
-        모달에 overflow-y를 주면(조건:모달이 윈도우창보다 작아질때)", "iOS에서 modality/dialog는 버튼으로 닫는다.", "foundation ::모든 레이어는 모달(다이얼로그)이 대체 가능하다.", "md. When adapting for larger screens, a bottom sheet can become a context menu.", "사용자 워크플로 중심으로 용법을 정의. 토스트 식빵처럼 튀어나오는 것을 toast로 정의할
-        수도 특정 위치(왼쪽 아래)에 위치하는 맥락으로 toast를 정의할 수도 있는 것. 너무 많은
-        콘텐츠를 모달에 표시하지 않도록 제한할 것인지, dribble, pinterest와 같이 풀페이지 모달 뷰를
-        허용하여 페이지 맥락으로 접근을 허용할 것인지.", "popover no tip / caret tip / tab tip - carbon design system + toggletip,tooltip으로 구분", "md. Swap the bottom sheet for a side sheet in landscape layouts."]'></mm-text-list>
+    <mm-text-list texts='["브라우저 히스토리가 필요한 레이어.", "body element의 스크롤. 스크롤의 크기 보정. 크롬에서는 html에 overflow:hidden를 잘 주면 끝인데, 익스플로러에선 스크롤 제어하려면 body에 먹여야 한? html에 overflow:hidden;을주고 모달에 overflow-y를 주면(조건:모달이 윈도우창보다 작아질때)", "iOS에서 modality/dialog는 버튼으로 닫는다.", "foundation ::모든 레이어는 모달(다이얼로그)이 대체 가능하다.", "md. When adapting for larger screens, a bottom sheet can become a context menu.", "사용자 워크플로 중심으로 용법을 정의. 토스트 식빵처럼 튀어나오는 것을 toast로 정의할 수도 특정 위치(왼쪽 아래)에 위치하는 맥락으로 toast를 정의할 수도 있는 것. 너무 많은 콘텐츠를 모달에 표시하지 않도록 제한할 것인지, dribble, pinterest와 같이 풀페이지 모달 뷰를 허용하여 페이지 맥락으로 접근을 허용할 것인지.", "popover no tip / caret tip / tab tip - carbon design system + toggletip,tooltip으로 구분", "md. Swap the bottom sheet for a side sheet in landscape layouts."]'></mm-text-list>
 
     <mm-text size="18">Toast</mm-text>
     <mm-text>Don't show more than one at a time.</mm-text>
-    <mm-text-list texts='["일시적인 피드백.", "toast VS snackbar. action 유/무. MD 버전업과 함께 재정의 됨. HIG에 정의되지 않음. iOS spotify
-      앱에서 ‘라이브러리에 추가되었습니다’. 휴지통이 있으면 되돌리기 액션이 필요없을 수도 있다."]'></mm-text-list>
-<mm-text size="18">Case studies</mm-text>
-    <mm-text-list texts='["ibm. Don’t use to display complex or large amounts of data. Don’t recreate a full app
-        or page in a dialog.", "airbnb. 큰 화면에서 x 버튼. 모바일에서 페이지처럼 변하면서 arrow 버튼으로 변경됨", "pinterest. onDismiss / Preventing close on outside click / layer component"]'></mm-text-list>
+    <mm-text-list texts='["일시적인 피드백.", "toast VS snackbar. action 유/무. MD 버전업과 함께 재정의 됨. HIG에 정의되지 않음. iOS spotify 앱에서 '라이브러리에 추가되었습니다'. 휴지통이 있으면 되돌리기 액션이 필요없을 수도 있다."]'></mm-text-list>
+
+    <mm-text size="18">Case studies</mm-text>
+    <mm-text-list texts='["ibm. Don't use to display complex or large amounts of data. Don't recreate a full app or page in a dialog.", "airbnb. 큰 화면에서 x 버튼. 모바일에서 페이지처럼 변하면서 arrow 버튼으로 변경됨", "pinterest. onDismiss / Preventing close on outside click / layer component"]'></mm-text-list>
 
     <mm-text size="18">Open triggers</mm-text>
     <mm-text-list texts='["window.load", "window.resize", "actions"]'></mm-text-list>
 
     <mm-text size="18">Close triggers</mm-text>
-    <mm-text-list texts='["click CloseButton / ConfirmButton / CancelButton /Backdrop,Dim,Overay", "keydown. escKey. enterKey. spaceBar"]'></mm-text-list>
+    <mm-text-list texts='["click CloseButton / ConfirmButton / CancelButton / Backdrop, Dim, Overlay", "keydown. escKey. enterKey. spaceBar"]'></mm-text-list>
 
     <mm-component-references>
       <mm-link external href="https://developer.mozilla.org/ko/docs/Web/API/Popover_API">Mozilla Popover API</mm-link>
@@ -250,122 +120,70 @@
     </mm-component-references>
   </mm-component-guide>
 
-  <mm-text-list texts="[]">
-    <mm-text-list texts='["적용 버튼 클릭Batch updates. carbon.", "필터 트리거에 적용된 필터의 갯수 표시.", "setting item과 filter item은 비슷한 패턴이지만 역할이 다르기 때문에 분리", "옵션 레이블 2단어 이하, 옵션 갯수 5개 이하 칩그룹을 사용한다.", "사용자는 적용된 필터 옵션을 초기화하기 위해 새로고침을 할까?", "range UI는 얼마나 사용자 친화적인가?", "presentation 컴포넌트가 필터의 적용과 상태에 영향을 준다.", "옵션 목록을 나열할 때. 모두 셀렉트로 제공할 수도 있지만 다른 컴포넌트로 옵션 하나 하나를
-      환기할 수 있다. dropdown, chip, radio 등의 혼합 => 디자인과 개발 비용이 증가하는 만큼 사용자
-      경험이 월등한가? (case. airbnb) 아니면 다른 의도나 효과가 있을까?", "필터를 적용하고 초기화하는 버튼 그룹의 정렬."]'></mm-text-list>
-</mm-text-list>
+  <mm-text-list texts='["적용 버튼 클릭 Batch updates. carbon.", "필터 트리거에 적용된 필터의 갯수 표시.", "setting item과 filter item은 비슷한 패턴이지만 역할이 다르기 때문에 분리", "옵션 레이블 2단어 이하, 옵션 갯수 5개 이하 칩그룹을 사용한다.", "사용자는 적용된 필터 옵션을 초기화하기 위해 새로고침을 할까?", "range UI는 얼마나 사용자 친화적인가?", "presentation 컴포넌트가 필터의 적용과 상태에 영향을 준다.", "옵션 목록을 나열할 때. 모두 셀렉트로 제공할 수도 있지만 다른 컴포넌트로 옵션 하나 하나를 환기할 수 있다. dropdown, chip, radio 등의 혼합 => 디자인과 개발 비용이 증가하는 만큼 사용자 경험이 월등한가?", "필터를 적용하고 초기화하는 버튼 그룹의 정렬."]'></mm-text-list>
 
-  <!-- <table>
-    <caption>
-      화면 크기에 따른 변경을 고려하지 않았을 때
-    </caption>
-    <thead>
-      <tr>
-        <th scope="col" style="text-align: left"></th>
-        <th scope="col" style="text-align: left">Dropdown</th>
-        <th scope="col" style="text-align: left">Sheet</th>
-        <th scope="col" style="text-align: left">Modal</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">데스크탑 사용성</th>
-        <td>상</td>
-        <td>하</td>
-        <td>중</td>
-      </tr>
-      <tr>
-        <th scope="row">모바일 사용성</th>
-        <td>하</td>
-        <td>상</td>
-        <td>중</td>
-      </tr>
-      <tr>
-        <th scope="row">참고</th>
-        <td>막연한 탐색.</td>
-        <td>모바일에서 빠른 접근성.</td>
-        <td>상세한 탐색.</td>
-      </tr>
-    </tbody>
-  </table> -->
-  <mm-icon-button icon="filter"></mm-icon-button>
-  <mm-surface style="margin: var(--space-2) 0 0">
-    <mm-titlebar label="필터"></mm-titlebar>
-    <form class="filter" style="height: 50vh; overflow-y: auto">
-      <fieldset class="filter-fieldset" role="radiogroup" style="padding-top: 0">
-        <!-- <legend class="filter-fieldset-legend">예약옵션</legend> -->
-        <mm-surface variant="elevated" size="small">
-          <mm-menuitem label="즉시 예약">
-            <mm-avatar slot="avatar">🦊</mm-avatar>
-            <mm-switch slot="action"></mm-switch>
-          </mm-menuitem>
-        </mm-surface>
-        <small class="setting-item-helper">
-          호스트 승인을 기다릴 필요 없이 예약할 수 있는 숙소
-        </small>
-      </fieldset>
-      <mm-separator></mm-separator>
-      <fieldset class="filter-fieldset" role="radiogroup">
-        <legend class="filter-fieldset-legend">예산</legend>
-        <mm-radio-group label="예산">
-          <mm-radio id="gender-man" name="gender" value="">50,000원 미만 </mm-radio>
-          <mm-radio>100,000원 미만</mm-radio>
-          <mm-radio>150,000원 미만</mm-radio>
-        </mm-radio-group>
-        <div style="height: var(--space-3)"></div>
-        <small>예를 들어 다음과 같습니다.</small>
-        <mm-surface size="small">
-          <mm-avatar></mm-avatar>
-        </mm-surface>
-      </fieldset>
-      <mm-separator></mm-separator>
-      <fieldset class="filter-fieldset" role="radiogroup">
-        <legend class="filter-fieldset-legend">평수</legend>
-        <mm-button-group>
-          <mm-button>10평 미만</mm-button>
-          <mm-button>20평</mm-button>
-          <mm-button>30평</mm-button>
-        </mm-button-group>
-      </fieldset>
-      <mm-separator></mm-separator>
-      <fieldset class="filter-fieldset" role="radiogroup">
-        <legend class="filter-fieldset-legend">접근성 편의</legend>
-        <p class="filter-fieldset-description">
-          호스트가 제공하고 에어비앤비에서 검토한 정보입니다.
-        </p>
-        <mm-group variant="checkbox">
-          <mm-checkbox value="">게스트 출입구에 계단이나 문턱 없음</mm-checkbox>
-          <mm-checkbox value="other">너비 81cm 이상의 게스트 출입구</mm-checkbox>
-          <mm-checkbox value="other">휠체어 접근 가능 주차 공간</mm-checkbox>
-        </mm-group>
-      </fieldset>
-      <mm-separator></mm-separator>
-      <fieldset class="filter-fieldset" role="radiogroup">
-        <legend class="filter-fieldset-legend">릴리스 채널</legend>
-        <p class="filter-fieldset-description">
-          참고: 이 설정은 이 컴퓨터에만 적용됩니다. 앱 업데이트를 받으려면 Slack을 다시 시작해야 할
-          수도 있습니다.
-        </p>
-        <p>TODO Select</p>
-      </fieldset>
-      <mm-separator></mm-separator>
-      <fieldset class="filter-fieldset" role="radiogroup">
-        <legend class="filter-fieldset-legend">데스크톱에서 활성 상태가 아닌 경우...</legend>
-        <mm-group variant="checkbox">
-          <mm-checkbox>멘션 및 다이렉트 메시지에 대한 이메일 알림 받기</mm-checkbox>
-          <div style="margin-left: 1.5rem">
-            <mm-radio-group label="이메일 알림 주기">
-              <mm-radio checked>15분 마다 한 번</mm-radio>
-              <mm-radio>한 시간에 한 번</mm-radio>
-            </mm-radio-group>
-          </div>
-        </mm-group>
-      </fieldset>
-    </form>
-    <mm-button-group>
-      <mm-button variant="primary" size="large">적용/숙소 25개 표시</mm-button>
-      <mm-button variant="text" size="large">전체 해제</mm-button>
-    </mm-button-group>
-  </mm-surface>
+  <mm-icon-button icon="filter" id="filter-trigger"></mm-icon-button>
+  <mm-sheet type="bottom" id="filter-sheet">
+    <mm-sheet-header title="필터"></mm-sheet-header>
+    <mm-sheet-body>
+      <form class="filter">
+        <fieldset class="filter-fieldset" role="group">
+          <mm-menu-item-switch icon="calendar" label="즉시 예약" value="instant" description="호스트 승인을 기다릴 필요 없이 예약할 수 있는 숙소"></mm-menu-item-switch>
+        </fieldset>
+        <mm-separator></mm-separator>
+        <fieldset class="filter-fieldset" role="group">
+          <legend class="filter-fieldset-legend">예산</legend>
+          <mm-menu-item-radio-group name="budget" aria-label="예산">
+            <mm-menu-item-radio value="50000" label="50,000원 미만"></mm-menu-item-radio>
+            <mm-menu-item-radio value="100000" label="100,000원 미만"></mm-menu-item-radio>
+            <mm-menu-item-radio value="150000" label="150,000원 미만"></mm-menu-item-radio>
+          </mm-menu-item-radio-group>
+        </fieldset>
+        <mm-separator></mm-separator>
+        <fieldset class="filter-fieldset" role="group">
+          <legend class="filter-fieldset-legend">평수</legend>
+          <mm-filter-button-group mode="single">
+            <mm-filter-button value="10">10평 미만</mm-filter-button>
+            <mm-filter-button value="20">20평</mm-filter-button>
+            <mm-filter-button value="30">30평</mm-filter-button>
+          </mm-filter-button-group>
+        </fieldset>
+        <mm-separator></mm-separator>
+        <fieldset class="filter-fieldset" role="group">
+          <legend class="filter-fieldset-legend">접근성 편의</legend>
+          <p class="filter-fieldset-description">
+            호스트가 제공하고 에어비앤비에서 검토한 정보입니다.
+          </p>
+          <mm-menu-item-checkbox-group aria-label="접근성 편의">
+            <mm-menu-item-checkbox value="no-stairs" label="게스트 출입구에 계단이나 문턱 없음"></mm-menu-item-checkbox>
+            <mm-menu-item-checkbox value="entrance-width" label="너비 81cm 이상의 게스트 출입구"></mm-menu-item-checkbox>
+            <mm-menu-item-checkbox value="parking" label="휠체어 접근 가능 주차 공간"></mm-menu-item-checkbox>
+          </mm-menu-item-checkbox-group>
+        </fieldset>
+        <mm-separator></mm-separator>
+        <fieldset class="filter-fieldset" role="group">
+          <legend class="filter-fieldset-legend">릴리스 채널</legend>
+          <p class="filter-fieldset-description">
+            참고: 이 설정은 이 컴퓨터에만 적용됩니다. 앱 업데이트를 받으려면 Slack을 다시 시작해야 할
+            수도 있습니다.
+          </p>
+          <mm-dropdown>
+            <option value="stable">Stable</option>
+            <option value="beta">Beta</option>
+            <option value="canary">Canary</option>
+          </mm-dropdown>
+        </fieldset>
+        <mm-separator></mm-separator>
+        <fieldset class="filter-fieldset" role="group">
+          <legend class="filter-fieldset-legend">데스크톱에서 활성 상태가 아닌 경우...</legend>
+          <mm-menu-item-switch value="email-notify" label="멘션 및 다이렉트 메시지에 대한 이메일 알림 받기"></mm-menu-item-switch>
+          <mm-menu-item-radio-group name="email-interval" aria-label="이메일 알림 주기" value="15min">
+            <mm-menu-item-radio value="15min" label="15분 마다 한 번"></mm-menu-item-radio>
+            <mm-menu-item-radio value="1hour" label="한 시간에 한 번"></mm-menu-item-radio>
+          </mm-menu-item-radio-group>
+        </fieldset>
+      </form>
+    </mm-sheet-body>
+    <mm-sheet-footer primary-label="숙소 25개 표시" secondary-label="전체 해제"></mm-sheet-footer>
+  </mm-sheet>
 </main>

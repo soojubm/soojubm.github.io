@@ -150,16 +150,18 @@ export class TableOfContents extends LitElement {
     if (!this.items.length) return nothing
 
     return html`
-      <mm-text size="12" weight="bold" color="var(--color-foreground-light)" class="toc-title">On this page</mm-text>
-      <ul>
-        ${this.items.map(
-          item => html`
-            <li data-level=${item.level} ?data-active=${item.id === this.activeId}>
-              <a href=${'#' + item.id}>${item.label}</a>
-            </li>
-          `,
-        )}
-      </ul>
+      <nav aria-label="On this page">
+        <mm-text size="12" weight="bold" color="var(--color-foreground-light)" class="toc-title" aria-hidden="true">On this page</mm-text>
+        <ul>
+          ${this.items.map(
+            item => html`
+              <li data-level=${item.level} ?data-active=${item.id === this.activeId}>
+                <a href=${'#' + item.id}>${item.label}</a>
+              </li>
+            `,
+          )}
+        </ul>
+      </nav>
     `
   }
 }

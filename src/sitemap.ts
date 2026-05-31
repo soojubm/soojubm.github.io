@@ -42,7 +42,7 @@ export const SITEMAP = [
     items: [
       { id: 'button', name: 'button' },
       { id: 'icon-button', name: 'icon Button' },
-      { id: 'toggle-button-group', name: 'toggle button group' },
+      { id: 'toggle-button', name: 'toggle button' },
       { id: 'menuitem', name: 'menuItem' },
       { id: 'link', name: 'link' },
       { id: 'breadcrumb', name: 'breadcrumb', badge: '⚠️' },
@@ -71,7 +71,7 @@ export const SITEMAP = [
       { id: 'tooltip', name: 'tooltip' },
       { id: 'dialog', name: 'dialog' },
       { id: 'notice', name: 'notice' },
-      { id: 'spinner', name: 'spinner' },
+      { id: 'loading', name: 'loading' },
     ],
   },
   {

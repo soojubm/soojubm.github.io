@@ -31,7 +31,7 @@
       <mm-button-group>
         <mm-button variant="tertiary" status="hover">hovered</mm-button>
         <mm-button variant="tertiary" status="focus">focused</mm-button>
-        <mm-button variant="`tertiary" disabled>disabled</mm-button>
+        <mm-button variant="tertiary" disabled>disabled</mm-button>
       </mm-button-group>
     </mm-tabpanel>
   </mm-component-example>
@@ -48,6 +48,77 @@
     <mm-prop name="icon" type="string" optional></mm-prop>
     <mm-prop name="@click" type="(e: MouseEvent) => void" kind="event"></mm-prop>
   </mm-component-props>
+
+  <mm-component-anatomy
+    parts='[
+      "컨테이너 — variant·size로 형태와 위계를 정의하고 클릭 영역을 만듭니다.",
+      "아이콘 — 레이블을 보조하는 선택적 메타포(icon).",
+      "레이블 — 실행 결과를 예측할 수 있는 동사형 텍스트."
+    ]'
+  >
+    <div style="position: relative; display: inline-block">
+      <mm-button variant="primary" size="large" icon="send-diagonal">보내기</mm-button>
+
+      <!-- 번호 마커 -->
+      <span
+        style="
+          position: absolute;
+          left: -1.75rem;
+          top: 50%;
+          transform: translateY(-50%);
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 1.25rem;
+          height: 1.25rem;
+          border-radius: 50%;
+          background: var(--color-foreground);
+          color: var(--color-background);
+          font-size: var(--font-size-12);
+          font-weight: var(--font-weight-bold);
+        "
+        >1</span
+      >
+      <span
+        style="
+          position: absolute;
+          left: 1.75rem;
+          bottom: -1.75rem;
+          transform: translateX(-50%);
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 1.25rem;
+          height: 1.25rem;
+          border-radius: 50%;
+          background: var(--color-foreground);
+          color: var(--color-background);
+          font-size: var(--font-size-12);
+          font-weight: var(--font-weight-bold);
+        "
+        >2</span
+      >
+      <span
+        style="
+          position: absolute;
+          right: 1.5rem;
+          bottom: -1.75rem;
+          transform: translateX(50%);
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 1.25rem;
+          height: 1.25rem;
+          border-radius: 50%;
+          background: var(--color-foreground);
+          color: var(--color-background);
+          font-size: var(--font-size-12);
+          font-weight: var(--font-weight-bold);
+        "
+        >3</span
+      >
+    </div>
+  </mm-component-anatomy>
 
   <mm-component-guide>
     <section class="feature columns-2">
@@ -277,18 +348,13 @@
     title="ShowMoreButton"
     description="Image Button, CheckoutButton. fullWidth로 사용하지 마세요. 콘텐츠 목록의 너비와의 대비를 통한 강조."
   >
-    <div>
-      <div class="columns-3" style="gap: 1rem">
-        <mm-ui-placeholder></mm-ui-placeholder>
-        <mm-ui-placeholder></mm-ui-placeholder>
-        <mm-ui-placeholder></mm-ui-placeholder>
-      </div>
-      <div style="display: flex; justify-content: center; padding: 1.5rem 0 0">
-        <mm-button variant="tertiary">
-          Show more
-          <mm-icon slot="suffix" name="nav-arrow-down"></mm-icon>
-        </mm-button>
-      </div>
+    <div class="columns-3" style="gap: 1rem">
+      <mm-ui-placeholder></mm-ui-placeholder>
+      <mm-ui-placeholder></mm-ui-placeholder>
+      <mm-ui-placeholder></mm-ui-placeholder>
+    </div>
+    <div style="padding: 1.5rem 0 0">
+      <mm-show-more-button></mm-show-more-button>
     </div>
   </mm-component-section>
 
@@ -305,17 +371,8 @@
   >
     <div style="display: flex; flex-direction: column; gap: var(--space-4)">
       <div>
-        <mm-text size="14" weight="bold">단일 옵션 (selected 상태)</mm-text>
-        <div style="display: flex; gap: 6px; margin-top: var(--space-2)">
-          <mm-filter-button value="all" selected>전체</mm-filter-button>
-          <mm-filter-button value="news">뉴스</mm-filter-button>
-          <mm-filter-button value="design" disabled>디자인</mm-filter-button>
-        </div>
-      </div>
-
-      <div>
         <mm-text size="14" weight="bold">Single selection (라디오형)</mm-text>
-        <mm-filter-button-group style="margin-top: var(--space-2)">
+        <mm-filter-button-group mode="single" style="margin-top: var(--space-2)">
           <mm-filter-button value="all" selected>전체</mm-filter-button>
           <mm-filter-button value="deposit">입금확인</mm-filter-button>
           <mm-filter-button value="paid">결제완료</mm-filter-button>
@@ -325,7 +382,7 @@
 
       <div>
         <mm-text size="14" weight="bold">Multiple selection (체크박스형)</mm-text>
-        <mm-filter-button-group multiple style="margin-top: var(--space-2)">
+        <mm-filter-button-group mode="multiple" style="margin-top: var(--space-2)">
           <mm-filter-button value="novel" selected>소설</mm-filter-button>
           <mm-filter-button value="movie" selected>영화</mm-filter-button>
           <mm-filter-button value="typo">타이포그래피</mm-filter-button>

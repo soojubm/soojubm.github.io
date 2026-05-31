@@ -1,5 +1,6 @@
 import './app-sidebar'
 import './component-example'
+import './component-anatomy'
 import './component-props'
 import './component-section'
 import './component-references'
@@ -14,4 +15,5 @@ import './toc'
 import './portfolio-item'
 import './social-links'
 import './chat'
+import './search-suggestions'
 export {}

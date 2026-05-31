@@ -1,32 +1,33 @@
 import { css } from 'lit'
 
-export const titlebarStyles = css`
-  .titlebar {
+export const topBarStyles = css`
+  .top-bar {
     display: flex;
     align-items: center;
     gap: var(--space-2);
+    padding-block: var(--space-4);
     position: relative;
   }
 
-  .titlebar[data-size='large'] {
+  .top-bar[data-size='large'] {
     align-items: baseline;
     height: 100px;
   }
 
-  .titlebar[data-size='large'] .titlebar-title {
+  .top-bar[data-size='large'] .top-bar-title {
     font-size: 1.5rem;
     position: absolute;
     left: 0;
-    top: calc(var(--titlebar-height) - 0.25rem);
+    top: calc(var(--top-bar-height) - 0.25rem);
     transform: translateX(0);
   }
 
-  .is-sticky-titlebar .titlebar {
+  .is-sticky-top-bar .top-bar {
     position: fixed;
     top: 0;
   }
 
-  .is-sticky-titlebar .titlebar-background {
+  .is-sticky-top-bar .top-bar-background {
     box-shadow: var(--shadow);
   }
 

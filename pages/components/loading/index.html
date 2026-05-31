@@ -1,6 +1,6 @@
 <main class="page">
   <mm-page-header
-    title="Spinner"
+    title="Loading"
     description="비동기 작업의 진행 중 상태를 나타냅니다."
   ></mm-page-header>
 
@@ -25,4 +25,18 @@
     <mm-prop name="size" type="'small' | 'medium' | 'large' = 'medium'"></mm-prop>
     <mm-prop name="label" type="string = '로딩 중'"></mm-prop>
   </mm-component-props>
+
+  <mm-component-section
+    title="TypingIndicator"
+    description="입력 중·응답 대기 등 진행 상태를 나타내는 3-dot 모션입니다. 채팅 입력 표시에 사용합니다."
+  >
+    <mm-group>
+      <mm-typing-indicator></mm-typing-indicator>
+    </mm-group>
+    <mm-separator></mm-separator>
+    <!-- 어두운 버블 위 색상 반전 예시 -->
+    <div style="display: inline-flex; padding: var(--space-3) var(--space-4); border-radius: 1rem; background: var(--color-primary)">
+      <mm-typing-indicator color="var(--color-foreground-on-solid)"></mm-typing-indicator>
+    </div>
+  </mm-component-section>
 </main>

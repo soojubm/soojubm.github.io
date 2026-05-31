@@ -1,17 +1,16 @@
 import { LitElement, css, html } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
+import { property } from 'lit/decorators.js'
 import { resetStyles } from '../../shared/reset.styles'
 
-@customElement('mm-chat-bubble')
-export class ChatBubble extends LitElement {
-  /** 내가 보낸 메시지 */
-  @property({ type: Boolean, reflect: true }) mine = false
+/**
+ * 채팅 버블 공통 베이스. 직접 사용하지 말고
+ * mm-ai-chat-bubble / mm-my-chat-bubble 을 사용합니다.
+ */
+export class ChatBubbleBase extends LitElement {
   /** 타이핑 애니메이션 표시 */
   @property({ type: Boolean }) typing = false
   /** 이미지 src (이미지 버블) */
   @property({ type: String }) src = ''
-  /** 전송 상태 (예: "전송됨", "읽음") */
-  @property({ type: String }) status = ''
   /** 메시지 시간 */
   @property({ type: String }) time = ''
 
@@ -21,10 +20,7 @@ export class ChatBubble extends LitElement {
       :host {
         display: flex;
         justify-content: flex-start;
-      }
-
-      :host([mine]) {
-        justify-content: flex-end;
+        min-width: -webkit-fill-available;
       }
 
       .bubble {
@@ -40,13 +36,6 @@ export class ChatBubble extends LitElement {
         box-sizing: border-box;
       }
 
-      :host([mine]) .bubble {
-        border-radius: 1rem;
-        border-top-right-radius: var(--radius);
-        background: var(--color-primary);
-        color: var(--color-foreground-on-solid);
-      }
-
       /* 이미지 버블 */
       .bubble.is-image {
         padding: 0;
@@ -55,10 +44,11 @@ export class ChatBubble extends LitElement {
         border-radius: var(--radius);
       }
 
-      .bubble.is-image img {
-        width: 100%;
+      .bubble.is-image mm-thumbnail {
         display: block;
+        max-width: 240px;
         border-radius: var(--radius);
+        overflow: hidden;
       }
 
       /* 타이핑 애니메이션 */
@@ -76,10 +66,6 @@ export class ChatBubble extends LitElement {
         border-radius: 50%;
         background: var(--color-foreground-light);
         animation: bounce 1.2s infinite ease-in-out;
-      }
-
-      :host([mine]) .typing span {
-        background: var(--color-foreground-on-solid);
       }
 
       .typing span:nth-child(1) {
@@ -103,18 +89,6 @@ export class ChatBubble extends LitElement {
         }
       }
 
-      .status {
-        display: block;
-        margin-top: var(--space-1);
-        font-size: var(--font-size-12);
-        color: var(--color-foreground-light);
-        text-align: right;
-      }
-
-      :host([mine]) .status {
-        color: color-mix(in srgb, var(--color-foreground-on-solid) 70%, transparent);
-      }
-
       .time {
         display: block;
         margin-top: var(--space-1);
@@ -124,35 +98,20 @@ export class ChatBubble extends LitElement {
     `,
   ]
 
-  render() {
-    if (this.typing) {
-      return html`
-        <div class="bubble">
-          <div class="typing"><span></span><span></span><span></span></div>
-        </div>
-      `
-    }
-
-    if (this.src) {
-      return html`
-        <div class="bubble is-image">
-          <img src=${this.src} alt="" />
-        </div>
-      `
-    }
-
+  protected renderTyping() {
     return html`
       <div class="bubble">
-        <slot></slot>
-        ${this.status ? html`<span class="status" role="status">${this.status}</span>` : ''}
-        ${this.time ? html`<time class="time">${this.time}</time>` : ''}
+        <div class="typing"><span></span><span></span><span></span></div>
       </div>
     `
   }
-}
 
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-chat-bubble': ChatBubble
+  protected renderImage() {
+    return html`
+      <div class="bubble is-image">
+        <mm-thumbnail src=${this.src} alt="" ratio="4:3"></mm-thumbnail>
+        ${this.time ? html`<time class="time">${this.time}</time>` : ''}
+      </div>
+    `
   }
 }

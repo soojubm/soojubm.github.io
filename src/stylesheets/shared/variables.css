@@ -151,6 +151,13 @@
   --border-stronger: var(--border-width) solid var(--color-border-strong);
   --border-active: 1px solid var(--color-primary);
   --border-thin: null;
+
+  /* // selection indicator :: 선택 상태를 나타내는 기표(check/dot/bar/fill/outline) */
+  --selection-indicator-size: var(--space-2);
+  --selection-indicator-gap: var(--space-2);
+  --selection-indicator-color: var(--color-primary);
+  --selection-background: var(--green100);
+  --selection-foreground: var(--color-primary);
   --border-thick: null;
 
   /* // radius-round / radius-pill / sharp-soft */

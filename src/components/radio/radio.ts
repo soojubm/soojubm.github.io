@@ -6,7 +6,6 @@ import { radioStyles } from './radio.styles'
 export class Radio extends LitElement {
   // 인스턴스 전역 내장 프로퍼티인 id 오버라이드 데코레이터 제거
   @property({ type: String }) name?: string
-  @property({ type: String }) helper?: string
   @property({ type: String }) value?: string
   @property({ type: Boolean, reflect: true }) checked = false
   @property({ type: Boolean, reflect: true }) disabled = false
@@ -49,7 +48,6 @@ export class Radio extends LitElement {
           <span></span>
           <span><slot></slot></span>
         </label>
-        ${this.helper ? html`<mm-text size="12" color="var(--color-foreground-light)" as="p">${this.helper}</mm-text>` : nothing}
       </div>
     `
   }

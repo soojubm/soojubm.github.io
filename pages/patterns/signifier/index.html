@@ -62,46 +62,23 @@
       ]'
       ></mm-text-list>
       <br />
-      <section
-        class="group"
-        style="display: flex; flex-wrap: wrap; gap: var(--space-3); margin: 0 0 2rem"
-      >
-        <mm-avatar slot="avatar" variant="secondary" size="huge" icon="search"> </mm-avatar>
-        <!-- description="Expandable & Collapsible (vertical)" -->
-        <mm-avatar slot="avatar" variant="secondary" size="huge">
-          <mm-icon slot="prefix" name="search"></mm-icon>
-        </mm-avatar>
-        <mm-avatar slot="avatar" variant="secondary" size="huge">
-          <mm-icon slot="prefix" name="nav-arrow-down"></mm-icon>
-        </mm-avatar>
-        <mm-avatar slot="avatar" variant="secondary" size="huge" icon="arrow-left"> </mm-avatar>
-        <mm-avatar slot="avatar" variant="secondary" size="huge">
-          <mm-icon slot="prefix" name="arrow-right"></mm-icon>
-        </mm-avatar>
-        <b>(ex: view all)</b>
-        <mm-avatar slot="avatar" variant="secondary" size="huge">
-          <mm-icon slot="prefix" name="arrow-up-right"></mm-icon>
-        </mm-avatar>
-        <b>(ex: view all)</b>
-        <!-- Remove / Close / Clear -->
-        <mm-avatar slot="avatar" variant="secondary" size="huge">
-          <mm-icon slot="prefix" name="xmark"></mm-icon>
-        </mm-avatar>
-        <mm-avatar slot="avatar" variant="secondary" size="huge">
-          <mm-icon slot="prefix" name="plus"></mm-icon>
-        </mm-avatar>
-        <mm-avatar slot="avatar" variant="secondary" size="huge" icon="check"> </mm-avatar>
-        <mm-avatar slot="avatar" variant="secondary" size="huge" icon="more-vert"> </mm-avatar>
-        <mm-avatar slot="avatar" variant="secondary" size="huge" icon="settings"> </mm-avatar>
-
-        <mm-avatar slot="avatar" variant="secondary" size="huge" icon="copy"> </mm-avatar>
-        <mm-avatar slot="avatar" variant="secondary" size="huge" icon="refresh"> </mm-avatar>
+      <section style="display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: var(--space-1)">
+        <mm-menu-item-row icon="search" label="search" description="Search"></mm-menu-item-row>
+        <mm-menu-item-row icon="nav-arrow-down" label="nav-arrow-down" description="Expand, dropdown"></mm-menu-item-row>
+        <mm-menu-item-row icon="arrow-left" label="arrow-left" description="Back, previous"></mm-menu-item-row>
+        <mm-menu-item-row icon="arrow-right" label="arrow-right" description="Next, continue, view all"></mm-menu-item-row>
+        <mm-menu-item-row icon="arrow-up-right" label="arrow-up-right" description="External link, view all"></mm-menu-item-row>
+        <mm-menu-item-row icon="xmark" label="xmark" description="Remove, close, clear"></mm-menu-item-row>
+        <mm-menu-item-row icon="plus" label="plus" description="Add, create"></mm-menu-item-row>
+        <mm-menu-item-row icon="check" label="check" description="Confirm, selected"></mm-menu-item-row>
+        <mm-menu-item-row icon="more-vert" label="more-vert" description="More actions"></mm-menu-item-row>
+        <mm-menu-item-row icon="settings" label="settings" description="Settings"></mm-menu-item-row>
+        <mm-menu-item-row icon="copy" label="copy" description="Copy"></mm-menu-item-row>
+        <mm-menu-item-row icon="refresh" label="refresh" description="Refresh"></mm-menu-item-row>
+        <mm-menu-item-row icon="lock" label="lock" description="Private, locked"></mm-menu-item-row>
+        <mm-menu-item-row icon="log-out" label="log-out" description="Sign out"></mm-menu-item-row>
+        <mm-menu-item-row icon="mail" label="mail" description="Message, email"></mm-menu-item-row>
       </section>
-      <mm-group>
-        <mm-avatar slot="avatar" variant="secondary" size="huge" icon="lock"> </mm-avatar>
-        <mm-avatar slot="avatar" variant="secondary" size="huge" icon="log-out"> </mm-avatar>
-        <mm-avatar slot="avatar" variant="secondary" size="huge" icon="mail"> </mm-avatar>
-      </mm-group>
     </div>
   </mm-component-section>
 
@@ -161,11 +138,7 @@
       </div>
       <div>
         <mm-text size="14" weight="bold">Progressing state</mm-text>
-        <div class="chat-inputing animation-chatting">
-          <span style="background: var(--color-background-strong)"></span>
-          <span style="background: var(--color-background-strong)"></span>
-          <span style="background: var(--color-background-strong)"></span>
-        </div>
+        <mm-typing-indicator color="var(--color-background-strong)"></mm-typing-indicator>
       </div>
     </div>
   </mm-component-section>
@@ -371,12 +344,12 @@
     <mm-text size="18">Data Formatting</mm-text>
     <div style="height: var(--space-2)"></div>
     <div style="display: flex; flex-direction: column; gap: var(--space-2)">
-      <mm-menuitem>
+      <mm-menu-item-row>
         <mm-avatar slot="avatar"></mm-avatar>
         <mm-text-pair slot="text" labelText="getDateFormat(20220610)" descriptionText="test">
         </mm-text-pair>
-      </mm-menuitem>
-      <mm-menuitem>
+      </mm-menu-item-row>
+      <mm-menu-item-row>
         <mm-avatar slot="avatar"></mm-avatar>
         <mm-text-pair
           slot="text"
@@ -384,15 +357,15 @@
           descriptionText="30,000원 / ₩ 30,000 / 30,000 won"
         >
         </mm-text-pair>
-      </mm-menuitem>
-      <mm-menuitem>
+      </mm-menu-item-row>
+      <mm-menu-item-row>
         <mm-avatar slot="avatar"></mm-avatar>
         <mm-text-pair
           slot="text"
           labelText="getNumberFotmat(30000)"
           descriptionText="3만 / 30K"
         ></mm-text-pair>
-      </mm-menuitem>
+      </mm-menu-item-row>
     </div>
 
     <mm-text size="18">Event handler naming.</mm-text>

@@ -11,7 +11,6 @@ export const avatarStyles = css`
     --avatar-background-color: var(--color-background-subtle);
     --avatar-border: var(--border-stronger);
     --avatar-radius: var(--radius);
-    --avatar-badge-size: var(--size-tiny);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -45,10 +44,6 @@ export const avatarStyles = css`
     font-size: var(--font-size-large);
   }
 
-  [data-size='medium'] {
-    --avatar-badge-size: 8px;
-  }
-
   [data-size='small'] {
     --avatar-size: var(--size-small);
   }
@@ -64,9 +59,4 @@ export const avatarStyles = css`
     box-shadow: none;
   }
 
-  [slot='badge'] {
-    position: absolute;
-    left: -0.25rem;
-    top: -0.25rem;
-  }
 `

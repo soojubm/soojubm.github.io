@@ -155,42 +155,7 @@
         </tbody>
       </table>
     </div>
-    <nav class="pagination" aria-label="pagination" style="margin: 1rem 0">
-      <button
-        variant="navigator"
-        class="pagination-link pagination-previous"
-        aria-label="앞 페이지로 이동"
-      >
-        이전
-      </button>
-      <button
-        variant="navigator"
-        class="pagination-link pagination-next"
-        aria-label="뒷 페이지로 이동"
-      >
-        다음
-      </button>
-      <button variant="navigator" class="pagination-link" aria-label="맨 앞 페이지로 이동">
-        1
-      </button>
-      <i class="pagination-ellipsis" aria-label="맨 앞 페이지로 이동">...</i>
-      <button variant="navigator" class="pagination-link" href="#" aria-label="1 페이지로 이동">
-        5
-      </button>
-      <button class="pagination-link" href="#" aria-label="1 페이지로 이동">6</button>
-      <button
-        status="active"
-        class="pagination-link is-current"
-        aria-label="1 페이지로 이동"
-        aria-current="true"
-      >
-        7
-      </button>
-      <button class="pagination-link" href="#" aria-label="1 페이지로 이동">8</button>
-      <button class="pagination-link" href="#" aria-label="1 페이지로 이동">9</button>
-      <i class="pagination-ellipsis" aria-label="맨 앞 페이지로 이동">...</i>
-      <button class="pagination-link" aria-label="맨 뒤 페이지로 이동">50</button>
-    </nav>
+    <mm-pagination current-page="7" page-count="50"></mm-pagination>
 
     <!-- <div>
       <style>
@@ -254,6 +219,7 @@
         </mm-button>
         <mm-text>of 22</mm-text>
       </mm-group>
+      <mm-pagination current-page="2" page-count="22" sibling-count="2"></mm-pagination>
     </div>
   </mm-component-section>
 

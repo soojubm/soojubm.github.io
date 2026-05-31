@@ -1,5 +1,5 @@
 import { LitElement, html, nothing } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
+import { customElement, property, state } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 import { textfieldStyles } from './textfield.styles'
 
@@ -11,6 +11,7 @@ export class Textfield extends LitElement {
   @property({ type: String }) placeholder?: string
   @property({ type: String }) label?: string
   @property({ type: String }) helper?: string
+  @property({ type: String, attribute: 'validation-text' }) validationText?: string
   @property({ type: String }) size = ''
 
   @property({ type: Boolean, attribute: 'is-optional' }) isOptional = false
@@ -23,6 +24,9 @@ export class Textfield extends LitElement {
   static styles = [textfieldStyles]
 
   protected inputId = `input-${crypto?.randomUUID?.() || Math.random().toString(36).slice(2)}`
+  @state() private hasPrefixSlot = false
+  @state() private hasSuffixSlot = false
+  @state() private hasLinkSlot = false
 
   protected get effectiveHiddenLabel() {
     return this.hiddenLabel || this.hiddenLabelAlias
@@ -52,6 +56,33 @@ export class Textfield extends LitElement {
     return 'textfield-input'
   }
 
+  protected get showPrefix() {
+    return this.hasPrefixSlot
+  }
+
+  protected get showSuffix() {
+    return this.hasSuffixSlot
+  }
+
+  protected get showLink() {
+    return this.hasLinkSlot
+  }
+
+  protected handleSlotChange(kind: 'prefix' | 'suffix' | 'link', event: Event) {
+    const slot = event.target as HTMLSlotElement
+    const hasContent = slot
+      .assignedNodes({ flatten: true })
+      .some(
+        node =>
+          (node.nodeType === Node.TEXT_NODE && node.textContent?.trim() !== '') ||
+          node.nodeType === Node.ELEMENT_NODE,
+      )
+
+    if (kind === 'prefix') this.hasPrefixSlot = hasContent
+    if (kind === 'suffix') this.hasSuffixSlot = hasContent
+    if (kind === 'link') this.hasLinkSlot = hasContent
+  }
+
   protected _handleInput(event: Event) {
     const target = event.target as HTMLInputElement
     this.value = target.value
@@ -79,19 +110,27 @@ export class Textfield extends LitElement {
   }
 
   protected renderPrefix(): unknown {
-    return html`<slot name="prefix"></slot>`
+    return html`<slot name="prefix" @slotchange=${(event: Event) => this.handleSlotChange('prefix', event)}></slot>`
   }
 
   protected renderSuffix(): unknown {
-    return html`<slot name="suffix"></slot>`
+    return html`<slot name="suffix" @slotchange=${(event: Event) => this.handleSlotChange('suffix', event)}></slot>`
   }
 
   protected renderLink(): unknown {
-    return html`<slot name="link"></slot>`
+    return html`<slot name="link" @slotchange=${(event: Event) => this.handleSlotChange('link', event)}></slot>`
   }
 
   protected renderHelper(): unknown {
-    return this.helper ? html`<mm-text size="12" color="var(--color-foreground-light)" as="p">${this.helper}</mm-text>` : nothing
+    return this.helper
+      ? html`<mm-text class="textfield-helper" size="12" color="var(--color-foreground-light)" as="p">${this.helper}</mm-text>`
+      : nothing
+  }
+
+  protected renderValidation(): unknown {
+    return this.validationText
+      ? html`<mm-text id=${`${this.inputId}-validation`} class="textfield-validation" size="12" color="var(--color-danger)" as="p">${this.validationText}</mm-text>`
+      : nothing
   }
 
   protected renderInput(): unknown {
@@ -105,8 +144,26 @@ export class Textfield extends LitElement {
         placeholder=${this.placeholder || nothing}
         ?disabled=${this.disabled}
         aria-invalid=${this.isInvalid ? 'true' : 'false'}
+        aria-describedby=${this.validationText ? `${this.inputId}-validation` : nothing}
         @input=${this._handleInput}
       />
+    `
+  }
+
+  protected renderControl(): unknown {
+    return html`
+      <div class="textfield-control">
+        ${this.showPrefix
+          ? html`<span class="textfield-affix textfield-prefix">${this.renderPrefix()}</span>`
+          : this.renderPrefix()}
+        ${this.renderInput()}
+        ${this.showSuffix
+          ? html`<span class="textfield-affix textfield-suffix">${this.renderSuffix()}</span>`
+          : this.renderSuffix()}
+        ${this.showLink
+          ? html`<span class="textfield-affix textfield-link">${this.renderLink()}</span>`
+          : this.renderLink()}
+      </div>
     `
   }
 
@@ -120,8 +177,7 @@ export class Textfield extends LitElement {
         data-label=${this.effectiveHiddenLabel ? 'true' : 'false'}
         data-size=${ifDefined(this.size || undefined)}
       >
-        ${this.renderLabel()} ${this.renderPrefix()} ${this.renderInput()} ${this.renderSuffix()}
-        ${this.renderLink()} ${this.renderHelper()}
+        ${this.renderLabel()} ${this.renderHelper()} ${this.renderControl()} ${this.renderValidation()}
       </div>
     `
   }

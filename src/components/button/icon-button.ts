@@ -1,5 +1,6 @@
-import { CSSResult, LitElement, html, unsafeCSS } from 'lit'
+import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import '../tooltip/tooltip'
 import { iconButtonStyles } from './icon-button.styles'
 
 const buttonVariants = {
@@ -24,6 +25,7 @@ class IconButton extends LitElement {
   @property({ type: String }) size: IconButtonSize = 'medium'
   @property({ type: String }) label = ''
   @property({ type: String }) tooltip = ''
+  @property({ type: String, attribute: 'tooltip-align' }) tooltipAlign = ''
   @property({ type: String }) href = ''
   @property({ type: Boolean, reflect: true }) disabled = false
 
@@ -38,10 +40,11 @@ class IconButton extends LitElement {
   //   return this.color || 'inherit'
   // }
 
-  render() {
+  private renderControl() {
     if (this.href && !this.disabled) {
       return html`
         <a
+          slot="trigger"
           href="${this.href}"
           class="icon-button"
           data-variant="${this.variant}"
@@ -55,6 +58,7 @@ class IconButton extends LitElement {
 
     return html`
       <button
+        slot="trigger"
         type="button"
         class="icon-button"
         data-variant="${this.variant}"
@@ -65,6 +69,18 @@ class IconButton extends LitElement {
       >
         <mm-icon name="${this.icon}"></mm-icon>
       </button>
+    `
+  }
+
+  render() {
+    const control = this.renderControl()
+
+    if (!this.tooltip) return control
+
+    return html`
+      <mm-tooltip content=${this.tooltip} align=${this.tooltipAlign}>
+        ${control}
+      </mm-tooltip>
     `
   }
 }

@@ -1,11 +1,13 @@
 import { LitElement, html, css } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { ifDefined } from 'lit/directives/if-defined.js'
 import { MenuItemRadio } from './menu-item-radio'
 
 @customElement('mm-menu-item-radio-group')
 export class MenuItemRadioGroup extends LitElement {
   @property({ type: String }) name = ''
   @property({ type: String, reflect: true }) value = ''
+  @property({ type: String, attribute: 'aria-label' }) override ariaLabel = ''
 
   static styles = css`
     :host {
@@ -58,7 +60,7 @@ export class MenuItemRadioGroup extends LitElement {
 
   render() {
     return html`
-      <div role="radiogroup" @change=${this.handleRadioChange}>
+      <div role="radiogroup" aria-label=${ifDefined(this.ariaLabel || undefined)} @change=${this.handleRadioChange}>
         <slot @slotchange=${this.handleSlotChange}></slot>
       </div>
     `

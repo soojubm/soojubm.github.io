@@ -7,15 +7,14 @@
 
   <mm-component-example>
     <mm-group variant="">
-      <mm-avatar variant="primary" size="large" shape="circle" badge="true"></mm-avatar>
-      <mm-avatar variant="primary" size="large" badge="true"></mm-avatar>
-      <mm-avatar variant="secondary" size="large" badge="true"></mm-avatar>
-      <mm-avatar variant="tertiary" size="large" badge="true"></mm-avatar>
+      <mm-avatar variant="primary" size="large" shape="circle"></mm-avatar>
+      <mm-avatar variant="primary" size="large"></mm-avatar>
+      <mm-avatar variant="secondary" size="large"></mm-avatar>
+      <mm-avatar variant="tertiary" size="large"></mm-avatar>
     </mm-group>
     <mm-separator></mm-separator>
     <mm-group variant="">
       <mm-avatar size="huge" src="/src/images/springsteen.jpg"></mm-avatar>
-      <!-- <mm-avatar size="huge" src="/src/images/springsteen.jpg" badge-label="New"></mm-avatar> -->
       <mm-avatar size="large" src="/src/images/springsteen.jpg"></mm-avatar>
       <mm-avatar size="medium" src="/src/images/springsteen.jpg"></mm-avatar>
       <mm-avatar size="small" src="/src/images/springsteen.jpg"></mm-avatar>
@@ -28,8 +27,22 @@
     <mm-prop name="size" type="'huge' | 'large' | 'medium' | 'small' = 'medium'"></mm-prop>
     <mm-prop name="variant" type="'primary' | 'secondary' | 'tertiary' = 'primary'"></mm-prop>
     <mm-prop name="shape" type="'circle' | 'square' = 'square'"></mm-prop>
-    <mm-prop name="badge-label" type="string"></mm-prop>
   </mm-component-props>
+
+  <mm-component-anatomy
+    parts='[
+      "컨테이너 — 원형/사각형 형태와 크기·배경(variant)을 정의합니다.",
+      "콘텐츠 — 이미지, 아이콘, 이니셜 중 하나를 우선순위에 따라 표시합니다."
+    ]'
+  >
+    <div style="position: relative; display: inline-block">
+      <mm-avatar size="huge" variant="secondary"></mm-avatar>
+
+      <!-- 번호 마커 -->
+      <span style="position: absolute; left: -1.75rem; top: 50%; transform: translateY(-50%); display: inline-flex; align-items: center; justify-content: center; width: 1.25rem; height: 1.25rem; border-radius: 50%; background: var(--color-foreground); color: var(--color-background); font-size: var(--font-size-12); font-weight: var(--font-weight-bold)">1</span>
+      <span style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); display: inline-flex; align-items: center; justify-content: center; width: 1.25rem; height: 1.25rem; border-radius: 50%; background: var(--color-foreground); color: var(--color-background); font-size: var(--font-size-12); font-weight: var(--font-weight-bold)">2</span>
+    </div>
+  </mm-component-anatomy>
 
   <mm-component-guide>
     <section class="feature columns-2">

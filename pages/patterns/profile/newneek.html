@@ -185,7 +185,7 @@
 <aside class="modal newneek" role="presentation">
   <article class="modal-dialog" role="dialog">
     <header class="modal-head">
-      <mm-titlebar label="모달 제목"></mm-titlebar>
+      <mm-top-bar label="모달 제목"></mm-top-bar>
     </header>
 
     <section class="modal-body">
@@ -203,81 +203,44 @@
       </div>
 
       <section style="max-width: 480px; margin: 0 auto">
-        <div class="chat">
-          <figure class="chat-avatar">🧔</figure>
-          <div>
-            <h5 class="chat-username">신규방문자</h5>
-          </div>
-          <div class="chat-bubble">
-            <p>OOO이 이슈인데 신문은 어렵고 재미없어.</p>
-          </div>
-          <div class="chat-bubble">
-            <p>뭐야 이렇게 쉬운 이슈였어? 뉴닉?</p>
-          </div>
-          <div class="chat-bubble">
-            <p>이메일로 구독해보자!</p>
-          </div>
-        </div>
+        <mm-chat-feed>
+          <mm-chat-message username="신규방문자">
+            <mm-ai-chat-bubble no-reactions>OOO이 이슈인데 신문은 어렵고 재미없어.</mm-ai-chat-bubble>
+            <mm-ai-chat-bubble no-reactions>뭐야 이렇게 쉬운 이슈였어? 뉴닉?</mm-ai-chat-bubble>
+            <mm-ai-chat-bubble no-reactions>이메일로 구독해보자!</mm-ai-chat-bubble>
+          </mm-chat-message>
 
-        <div class="chat">
-          <figure class="chat-avatar">🧔</figure>
-          <div>
-            <h5 class="chat-username">뉴스레터 구독자</h5>
-          </div>
-          <div class="chat-bubble">
-            <p>예전에 비슷한 이슈가 있었던 것 같은데...</p>
-          </div>
-          <div class="chat-bubble">
-            <p>뉴닉이 어떻게 쉽고 재미있게 풀어줬더라?</p>
-          </div>
-          <div style="height: var(--space-2)"></div>
-          <mm-button-group>
-            <mm-button>최신 콘텐츠 탐색</mm-button>
-            <mm-button>관심 분야로 탐색</mm-button>
-            <mm-button>큐레이션 콘텐츠 탐색</mm-button>
-            <mm-button>이슈나 인물로 검색</mm-button>
-            <mm-button>관심 콘텐츠 저장</mm-button>
-          </mm-button-group>
-        </div>
+          <mm-chat-message username="뉴스레터 구독자">
+            <mm-ai-chat-bubble no-reactions>예전에 비슷한 이슈가 있었던 것 같은데...</mm-ai-chat-bubble>
+            <mm-ai-chat-bubble no-reactions>뉴닉이 어떻게 쉽고 재미있게 풀어줬더라?</mm-ai-chat-bubble>
+            <mm-button-group>
+              <mm-button>최신 콘텐츠 탐색</mm-button>
+              <mm-button>관심 분야로 탐색</mm-button>
+              <mm-button>큐레이션 콘텐츠 탐색</mm-button>
+              <mm-button>이슈나 인물로 검색</mm-button>
+              <mm-button>관심 콘텐츠 저장</mm-button>
+            </mm-button-group>
+          </mm-chat-message>
+        </mm-chat-feed>
       </section>
 
       <mm-separator></mm-separator>
 
       <section style="max-width: 480px; margin: 0 auto">
-        <div class="chat is-mine">
-          <figure class="chat-avatar" hidden>
-            <img src="/src/images/springsteen.jpg" alt="" />
-          </figure>
-          <div class="chat-bubble">
-            <p style="color: #000">뉴닉하면 어떤 색이 떠올라요?</p>
-          </div>
-        </div>
+        <mm-chat-feed>
+          <mm-chat-message mine avatar-src="/src/images/springsteen.jpg">
+            <mm-my-chat-bubble>뉴닉하면 어떤 색이 떠올라요?</mm-my-chat-bubble>
+          </mm-chat-message>
 
-        <div class="chat">
-          <figure class="chat-avatar">🧔</figure>
-          <div>
-            <h5 class="chat-username">찐뉴니커</h5>
-          </div>
-          <div class="chat-bubble">
-            <p>후후.. 역시 뉴닉은 회색이죠! 네? 주황색은 본 적이 없는데...</p>
-          </div>
-        </div>
+          <mm-chat-message username="찐뉴니커">
+            <mm-ai-chat-bubble no-reactions>후후.. 역시 뉴닉은 회색이죠! 네? 주황색은 본 적이 없는데...</mm-ai-chat-bubble>
+          </mm-chat-message>
 
-        <div class="chat is-mine">
-          <figure class="chat-avatar" hidden>
-            <img src="/src/images/springsteen.jpg" alt="" />
-          </figure>
-
-          <div class="chat-bubble">
-            <p style="color: #000">As-is 주황을 버튼에만 사용</p>
-          </div>
-          <div class="chat-bubble">
-            <p style="color: #000">
-              To-be 주황을 배경색으로 넓게 사용하여 브랜드 아이덴티티를 강화하고 주황색 배경에
-              검정색 버튼의 고대비로 주목도를 높이자.
-            </p>
-          </div>
-        </div>
+          <mm-chat-message mine avatar-src="/src/images/springsteen.jpg">
+            <mm-my-chat-bubble>As-is 주황을 버튼에만 사용</mm-my-chat-bubble>
+            <mm-my-chat-bubble>To-be 주황을 배경색으로 넓게 사용하여 브랜드 아이덴티티를 강화하고 주황색 배경에 검정색 버튼의 고대비로 주목도를 높이자.</mm-my-chat-bubble>
+          </mm-chat-message>
+        </mm-chat-feed>
       </section>
 
       <br /><br />
@@ -323,58 +286,25 @@
       </section>
 
       <section style="max-width: 480px; margin: 4rem auto">
-        <div class="chat is-mine">
-          <figure class="chat-avatar" hidden>
-            <img src="/src/images/springsteen.jpg" alt="" />
-          </figure>
+        <mm-chat-feed>
+          <mm-chat-message mine avatar-src="/src/images/springsteen.jpg">
+            <mm-my-chat-bubble>어떻게 뉴스레터 구독자를 웹사이트로 랜딩시킬 수 있을까?</mm-my-chat-bubble>
+          </mm-chat-message>
 
-          <div class="chat-bubble">
-            <p style="color: #000">어떻게 뉴스레터 구독자를 웹사이트로 랜딩시킬 수 있을까?</p>
-          </div>
-        </div>
+          <mm-chat-message username="고슴이">
+            <mm-ai-chat-bubble no-reactions>클릭율이 높았던 하이퍼링크를 정리해봤슴!</mm-ai-chat-bubble>
+            <mm-ai-chat-bubble no-reactions>🤩 시각 콘텐츠. <br />지도, 이미지, 동영상.</mm-ai-chat-bubble>
+            <mm-ai-chat-bubble no-reactions>🤬 자극적인 어휘. <br />폭력, 학생들을 납치.</mm-ai-chat-bubble>
+            <mm-ai-chat-bubble no-reactions>🤯 생소한, 어려운 용어(정책 등). <br />다르푸스 학살, 계정관리제.</mm-ai-chat-bubble>
+            <mm-ai-chat-bubble no-reactions>🥰 뉴닉이 정리했다. <br />뉴닉이 정리한 ‘아이오와 코커스’ 콘텐츠 읽으러 가기.</mm-ai-chat-bubble>
+          </mm-chat-message>
 
-        <div class="chat">
-          <figure class="chat-avatar">🦔</figure>
-          <div>
-            <h5 class="chat-username">고슴이</h5>
-          </div>
-          <div class="chat-bubble">
-            <p>클릭율이 높았던 하이퍼링크를 정리해봤슴!</p>
-          </div>
-          <div class="chat-bubble">
-            <p>🤩 시각 콘텐츠. <br />지도, 이미지, 동영상.</p>
-          </div>
-          <div class="chat-bubble">
-            <p>🤬 자극적인 어휘. <br />폭력, 학생들을 납치.</p>
-          </div>
-          <div class="chat-bubble">
-            <p>🤯 생소한, 어려운 용어(정책 등). <br />다르푸스 학살, 계정관리제.</p>
-          </div>
-          <div class="chat-bubble">
-            <p>🥰 뉴닉이 정리했다. <br />뉴닉이 정리한 ‘아이오와 코커스’ 콘텐츠 읽으러 가기.</p>
-          </div>
-        </div>
-
-        <div class="chat is-mine">
-          <figure class="chat-avatar" hidden>
-            <img src="/src/images/springsteen.jpg" alt="" />
-          </figure>
-
-          <div class="chat-bubble">
-            <p style="color: #000">
-              브랜드 경험에 대한 고민: 클릭율이 잘 나오도록 자극적인 단어를 활용 등이 대안 언론의
-              저널리즘?
-            </p>
-          </div>
-          <div class="chat-bubble">
-            <p style="color: #000">
-              내일 뉴스레터를 받아볼 수 있다고 알려주면 구독 전환에 도움이 될까?
-            </p>
-          </div>
-          <div class="chat-bubble">
-            <p style="color: #000">어떻게 하면 뉴스레터 구독자가 웹사이트에 가입할까?</p>
-          </div>
-        </div>
+          <mm-chat-message mine avatar-src="/src/images/springsteen.jpg">
+            <mm-my-chat-bubble>브랜드 경험에 대한 고민: 클릭율이 잘 나오도록 자극적인 단어를 활용 등이 대안 언론의 저널리즘?</mm-my-chat-bubble>
+            <mm-my-chat-bubble>내일 뉴스레터를 받아볼 수 있다고 알려주면 구독 전환에 도움이 될까?</mm-my-chat-bubble>
+            <mm-my-chat-bubble>어떻게 하면 뉴스레터 구독자가 웹사이트에 가입할까?</mm-my-chat-bubble>
+          </mm-chat-message>
+        </mm-chat-feed>
       </section>
 
       <p style="text-align: left">

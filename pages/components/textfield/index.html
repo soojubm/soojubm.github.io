@@ -60,7 +60,7 @@
           aria-invalid="true"
           aria-describedby="error"
           aria-errormessage="msgID"
-          helper="이미 등록된 이메일입니다."
+          validation-text="이미 등록된 이메일입니다."
         ></mm-textfield>
         <mm-separator spacing="small"></mm-separator>
         <mm-textfield label="with label" placeholder="Label"></mm-textfield>
@@ -89,6 +89,7 @@
     <mm-prop name="placeholder" type="string" optional></mm-prop>
     <mm-prop name="label" type="string" optional></mm-prop>
     <mm-prop name="helper" type="string" optional></mm-prop>
+    <mm-prop name="validation-text" type="string" optional></mm-prop>
     <mm-prop name="size" type="string" optional></mm-prop>
     <mm-prop name="is-optional" type="boolean" optional></mm-prop>
     <mm-prop name="hidden-label" type="boolean" optional></mm-prop>
@@ -96,6 +97,29 @@
     <mm-prop name="aria-invalid" type="boolean" optional></mm-prop>
     <mm-prop name="input" type="CustomEvent detail: value" kind="event"></mm-prop>
   </mm-component-props>
+
+  <mm-component-anatomy
+    parts='[
+      "레이블 — 입력 항목의 이름을 나타냅니다(label).",
+      "헬퍼 텍스트 — 레이블 아래에서 입력 형식이나 보조 정보를 안내합니다(helper).",
+      "입력 필드 — 값을 입력·표시하는 영역. placeholder로 입력 형식을 안내합니다.",
+      "접두/접미 요소 — 아이콘·단위·버튼 등 보조 요소(slot: prefix / suffix).",
+      "검증 텍스트 — 입력 필드 아래에서 오류나 검증 결과를 전달합니다(validation-text)."
+    ]'
+  >
+    <div style="position: relative; display: inline-block; padding-left: 1.75rem">
+      <mm-textfield label="이메일" placeholder="name@example.com" helper="회사 이메일을 입력하세요." validation-text="올바른 이메일 형식으로 입력하세요." aria-invalid="true" style="width: 280px">
+        <mm-icon slot="prefix" name="mail"></mm-icon>
+      </mm-textfield>
+
+      <!-- 번호 마커 (세로 배치) -->
+      <span style="position: absolute; left: 0; top: 0.25rem; display: inline-flex; align-items: center; justify-content: center; width: 1.25rem; height: 1.25rem; border-radius: 50%; background: var(--color-foreground); color: var(--color-background); font-size: var(--font-size-12); font-weight: var(--font-weight-bold)">1</span>
+      <span style="position: absolute; left: 0; top: 2rem; display: inline-flex; align-items: center; justify-content: center; width: 1.25rem; height: 1.25rem; border-radius: 50%; background: var(--color-foreground); color: var(--color-background); font-size: var(--font-size-12); font-weight: var(--font-weight-bold)">2</span>
+      <span style="position: absolute; left: 0; top: 4.25rem; display: inline-flex; align-items: center; justify-content: center; width: 1.25rem; height: 1.25rem; border-radius: 50%; background: var(--color-primary); color: var(--color-background); font-size: var(--font-size-12); font-weight: var(--font-weight-bold)">3</span>
+      <span style="position: absolute; left: 2.25rem; top: 4.25rem; display: inline-flex; align-items: center; justify-content: center; width: 1.25rem; height: 1.25rem; border-radius: 50%; background: var(--color-foreground); color: var(--color-background); font-size: var(--font-size-12); font-weight: var(--font-weight-bold)">4</span>
+      <span style="position: absolute; left: 0; bottom: 0.25rem; display: inline-flex; align-items: center; justify-content: center; width: 1.25rem; height: 1.25rem; border-radius: 50%; background: var(--color-foreground); color: var(--color-background); font-size: var(--font-size-12); font-weight: var(--font-weight-bold)">5</span>
+    </div>
+  </mm-component-anatomy>
 
   <mm-component-guide>
     <section class="feature columns-2">
@@ -348,88 +372,46 @@
   </mm-component-section>
 
   <mm-component-section
-    title="Counter / NumberField"
-    description="숫자 입력 필드. 수량, 가격, step/count. suffix(unit)"
+    title="NumberInput"
+    description="숫자 입력 필드. 수량, 가격, step/count 입력에 사용합니다."
   >
-    <div
-      class="counter js-counter"
-      style="display: flex; align-items: center; max-width: 10rem; gap: var(--space-2)"
-    >
-      <label for="numberfield" style="position: absolute; opacity: 0">
-        레이블 라이트하우스용 price, quantity(step/count). 우측 정렬. suffix(unit)
-      </label>
-      <mm-icon-button
-        variant="navigator"
-        icon="minus"
-        class="js-counter-decrement"
-        aria-controls="numberfield"
-      ></mm-icon-button>
-      <mm-textfield value="20"></mm-textfield>
-      <!-- <input
-            class="counter-input js-counter-input js-number-input"
-            type="number"
-            name="counter1"
-            id="numberfield"
-            min="5"
-            max="20"
-            value="0"
-          /> -->
-      <mm-icon-button variant="navigator" icon="plus" class="js-counter-increment" tabindex="-1">
-      </mm-icon-button>
+    <div style="display: flex; flex-direction: column; gap: var(--space-3); max-width: 20rem">
+      <mm-number-input
+        label="수량"
+        name="quantity"
+        value="2"
+        min="1"
+        max="20"
+        step="1"
+        helper="1개 이상 20개 이하로 입력하세요."
+      ></mm-number-input>
+
+      <mm-number-input
+        label="가격"
+        name="price"
+        value="30000"
+        min="0"
+        step="1000"
+      ></mm-number-input>
+
+      <mm-number-input label="비활성" value="10" disabled></mm-number-input>
     </div>
   </mm-component-section>
 
   <mm-component-section
     title="PasswordField"
-    description="숫자 입력 필드. 수량, 가격, step/count. suffix(unit). native reset button"
+    description="비밀번호 입력 필드. searchfield처럼 textfield를 확장하며, suffix에 reveal-button을 두어 입력값 노출을 토글합니다."
   >
-    <div>
-      <mm-textfield type="password">
-        <mm-icon-button slot="suffix" icon="eye-solid" aria-label="비밀번호 보기"></mm-icon-button>
-      </mm-textfield>
+    <div style="display: flex; flex-direction: column; gap: var(--space-3); max-width: 400px">
+      <mm-passwordfield
+        label="비밀번호"
+        placeholder="비밀번호를 입력하세요"
+        helper="8자 이상, 영문·숫자·특수문자를 포함하세요."
+      ></mm-passwordfield>
 
-      <section>
-        <div class="validation-item validation1">8 - 12 characters / 8 characters minimum</div>
-        <div class="validation-item validation2">
-          One lowercase character / One uppercase character / One Number
-        </div>
-        <div class="validation-item validation3">One special character</div>
-        <div class="validation-item validation4">동일한 문자 6개 연속</div>
-      </section>
-      <div class="textfield">
-        <label class="textfield-label" for="signup-password-confirm">비밀번호 확인</label>
-        <input
-          class="textfield-input js-password-test"
-          type="password"
-          id="signup-password-confirm"
-          placeholder="6자리 이상"
-        />
-        <mm-button variant="tertiary" class="js-view-password" type="button"
-          >비밀번호 보기</mm-button
-        >
-      </div>
-      <style>
-        .validation-item {
-          display: flex;
-          align-items: center;
-          gap: var(--space-2);
-        }
-        .is-valid1 .validation1 {
-          color: red;
-        }
-        .is-valid2 .validation2 {
-          color: red;
-        }
-        .is-valid3 .validation3 {
-          color: red;
-        }
-        .is-valid4 .validation4 {
-          color: red;
-        }
-        .is-valid5 .validation5 {
-          color: red;
-        }
-      </style>
+      <mm-passwordfield label="비밀번호 확인" placeholder="6자리 이상"></mm-passwordfield>
+
+      <mm-passwordfield label="비활성" value="secret123" disabled></mm-passwordfield>
     </div>
   </mm-component-section>
 

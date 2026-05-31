@@ -24,6 +24,14 @@ class SearchField extends Textfield {
     return 'textfield-input searchfield-input'
   }
 
+  protected override get showPrefix() {
+    return true
+  }
+
+  protected override get showSuffix() {
+    return true
+  }
+
   protected override renderLabel(): unknown {
     return nothing
   }

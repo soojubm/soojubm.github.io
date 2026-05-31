@@ -6,7 +6,7 @@ export const menuItemStyles = css`
     align-items: center;
     width: 100%;
     min-height: var(--size-medium);
-    gap: var(--space-1);
+    gap: var(--space-2);
     border-radius: var(--radius);
     color: inherit;
     text-decoration: none;

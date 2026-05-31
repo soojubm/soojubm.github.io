@@ -12,8 +12,10 @@ export class FilterButton extends LitElement {
   @property({ type: String }) value = ''
   /** 선택 상태 */
   @property({ type: Boolean, reflect: true }) selected = false
-  /** 다중 선택 그룹 여부 (checkbox role) / 단일 선택이면 radio role */
-  @property({ type: Boolean }) multiple = false
+  /** 선택 방식: single(radio role) | multiple(checkbox role) */
+  @property({ type: String }) mode: 'single' | 'multiple' = 'single'
+  /** "전체" 옵션 — 클릭 시 그룹의 모든 옵션을 선택/해제 */
+  @property({ type: Boolean, attribute: 'select-all' }) selectAll = false
   @property({ type: Boolean, reflect: true }) disabled = false
 
   static styles = [
@@ -29,7 +31,7 @@ export class FilterButton extends LitElement {
     if (this.disabled) return
     this.dispatchEvent(
       new CustomEvent('filter-toggle', {
-        detail: { value: this.value, selected: !this.selected },
+        detail: { value: this.value, selected: !this.selected, selectAll: this.selectAll },
         bubbles: true,
         composed: true,
       }),
@@ -44,7 +46,7 @@ export class FilterButton extends LitElement {
         status=${this.selected ? 'checked' : ''}
         ?disabled=${this.disabled}
         icon=${this.selected ? 'check' : ''}
-        role=${this.multiple ? 'checkbox' : 'radio'}
+        role=${this.mode === 'multiple' ? 'checkbox' : 'radio'}
         aria-checked=${this.selected ? 'true' : 'false'}
         @click=${this._handleClick}
       >

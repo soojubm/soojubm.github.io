@@ -1,186 +1,244 @@
 <main class="page">
   <mm-page-header
     title="MenuItem"
-    description="사용자가 수행할 수 있는 행동 목록입니다. 단일 액션 또는 선택 액션을 포함할 수 있습니다."
+    description="사용자가 수행할 수 있는 행동 목록입니다. 단일 액션 또는 선택 액션을 포함합니다."
   ></mm-page-header>
 
   <mm-component-example>
-    <div style="display: grid; gap: var(--space-3); max-width: 520px">
-      <mm-group variant="menuitem">
-        <mm-menuitem icon="user" label="Profile" description="Account settings"></mm-menuitem>
-        <mm-menuitem icon="link" label="Open documentation" href="/build/menuitem.html">
-          <mm-icon slot="action" name="nav-arrow-right"></mm-icon>
-        </mm-menuitem>
-        <mm-menuitem icon="trash" label="Delete item" tone="danger"></mm-menuitem>
-      </mm-group>
+    <div style="display: grid; gap: var(--space-5); max-width: 520px">
+      <!-- Row: 기본 / 아이콘 / 설명 / tone / disabled -->
+      <div>
+        <mm-text size="12" color="var(--color-foreground-light)">MenuItemRow</mm-text>
+        <mm-menu-item-group aria-label="기본 메뉴">
+          <mm-menu-item-row icon="user" label="프로필" description="계정 설정"></mm-menu-item-row>
+          <mm-menu-item-row icon="settings" label="환경설정"></mm-menu-item-row>
+          <mm-menu-item-row icon="trash" label="삭제" tone="danger"></mm-menu-item-row>
+          <mm-menu-item-row icon="log-out" label="로그아웃" disabled></mm-menu-item-row>
+        </mm-menu-item-group>
+      </div>
 
-      <mm-group variant="menuitem">
-        <mm-menu-item-row icon="group" label="Menu item row" description="Composable row">
-          <mm-button slot="action">Action</mm-button>
-        </mm-menu-item-row>
-        <mm-menu-item-link icon="external-link" label="Menu item link" href="/build/menuitem.html">
-        </mm-menu-item-link>
-        <mm-menu-item-checkbox icon="bell" checked>Notifications</mm-menu-item-checkbox>
-      </mm-group>
+      <!-- Link: 내부 / 외부 -->
+      <div>
+        <mm-text size="12" color="var(--color-foreground-light)">MenuItemLink</mm-text>
+        <mm-menu-item-group aria-label="링크 메뉴">
+          <mm-menu-item-link icon="book" label="문서 보기" href="#"></mm-menu-item-link>
+          <mm-menu-item-link
+            icon="open-in-browser"
+            label="외부 링크"
+            href="https://example.com"
+            target="_blank"
+          ></mm-menu-item-link>
+          <mm-menu-item-link
+            icon="github"
+            label="GitHub"
+            href="https://github.com"
+            external
+          ></mm-menu-item-link>
+        </mm-menu-item-group>
+      </div>
 
-      <mm-menu-item-radio-group id="theme-group" name="theme" value="dark">
-        <mm-menu-item-radio value="light">라이트 모드</mm-menu-item-radio>
-        <mm-menu-item-radio value="dark">다크 모드</mm-menu-item-radio>
-        <mm-menu-item-radio value="system">시스템 설정 동기화</mm-menu-item-radio>
-      </mm-menu-item-radio-group>
+      <!-- Row + action slot -->
+      <div>
+        <mm-text size="12" color="var(--color-foreground-light)">Action slot</mm-text>
+        <mm-menu-item-group aria-label="액션 메뉴">
+          <mm-menu-item-row
+            icon="app-window"
+            label="수줍이 앱"
+            description="앱에서 게시물을 엽니다."
+          >
+            <mm-button slot="action" variant="primary">열기</mm-button>
+          </mm-menu-item-row>
+        </mm-menu-item-group>
+      </div>
 
-      <mm-setting-item
-        start-icon="code"
-        label="철저한 코드 리뷰"
-        description="Codex가 새 이슈를 더 이상 찾지 못할 때까지 추가 발견 사항을 계속 찾도록 합니다."
-      >
-        <mm-switch slot="action"></mm-switch>
-      </mm-setting-item>
+      <!-- Switch -->
+      <div>
+        <mm-text size="12" color="var(--color-foreground-light)">MenuItemSwitch</mm-text>
+        <mm-menu-item-group aria-label="토글 설정">
+          <mm-menu-item-switch icon="bell" label="알림" value="notification" checked></mm-menu-item-switch>
+          <mm-menu-item-switch icon="wifi" label="Wi-Fi" value="wifi"></mm-menu-item-switch>
+        </mm-menu-item-group>
+      </div>
+
+      <!-- CheckboxGroup -->
+      <div>
+        <mm-text size="12" color="var(--color-foreground-light)">MenuItemCheckboxGroup</mm-text>
+        <mm-menu-item-checkbox-group aria-label="알림 설정">
+          <mm-menu-item-checkbox
+            icon="bell"
+            label="푸시 알림"
+            value="push"
+            checked
+          ></mm-menu-item-checkbox>
+          <mm-menu-item-checkbox
+            icon="mail"
+            label="이메일 알림"
+            value="email"
+            checked
+          ></mm-menu-item-checkbox>
+          <mm-menu-item-checkbox
+            icon="message"
+            label="문자 알림"
+            value="sms"
+          ></mm-menu-item-checkbox>
+        </mm-menu-item-checkbox-group>
+      </div>
+
+      <!-- RadioGroup -->
+      <div>
+        <mm-text size="12" color="var(--color-foreground-light)">MenuItemRadioGroup</mm-text>
+        <mm-menu-item-radio-group name="theme" value="dark" aria-label="테마 선택">
+          <mm-menu-item-radio
+            value="light"
+            icon="sun-light"
+            label="라이트 모드"
+          ></mm-menu-item-radio>
+          <mm-menu-item-radio value="dark" icon="half-moon" label="다크 모드"></mm-menu-item-radio>
+          <mm-menu-item-radio
+            value="system"
+            icon="settings"
+            label="시스템 설정 동기화"
+          ></mm-menu-item-radio>
+        </mm-menu-item-radio-group>
+      </div>
+
+      <!-- SettingItem -->
+      <div>
+        <mm-text size="12" color="var(--color-foreground-light)">SettingItem</mm-text>
+        <mm-setting-item
+          start-icon="code"
+          label="철저한 코드 리뷰"
+          description="추가 발견 사항을 계속 찾도록 합니다."
+        >
+          <mm-switch slot="action" checked></mm-switch>
+        </mm-setting-item>
+        <mm-setting-item
+          start-icon="half-moon"
+          label="다크 모드"
+          description="어두운 배경 테마를 사용합니다."
+        >
+          <mm-switch slot="action"></mm-switch>
+        </mm-setting-item>
+      </div>
     </div>
   </mm-component-example>
 
   <mm-component-props>
     <mm-prop name="label" type="string"></mm-prop>
     <mm-prop name="description" type="string" optional></mm-prop>
-    <mm-prop name="start-icon" type="string" optional></mm-prop>
-    <mm-prop name="href" type="string" optional></mm-prop>
-    <mm-prop name="tone" type="string" optional></mm-prop>
+    <mm-prop name="icon" type="string" optional></mm-prop>
+    <mm-prop name="avatar-src" type="string" optional></mm-prop>
+    <mm-prop name="avatar-size" type="string" optional></mm-prop>
+    <mm-prop name="tone" type="'danger' | string" optional></mm-prop>
     <mm-prop name="disabled" type="boolean" optional></mm-prop>
+    <mm-prop name="aria-label" type="string" optional></mm-prop>
     <mm-prop name="slot: action" type="HTMLElement" optional></mm-prop>
+    <mm-prop name="slot: avatar" type="HTMLElement" optional></mm-prop>
   </mm-component-props>
+
+  <!-- "flutter. ListView. 스크롤 가능한 뷰 컨테이너. 동적으로 데이터를 랜더링하는 책임까지 포함되어
+  있다. itemBuilder: (context, index) {} / controller: ScrollController(). ListView - SwitchListTile
+  / RadioListTile / 클릭 영역을 타일 전체로 지정하고 있다. 2가지 이상의 액션이 포함되어야 할 때는?",
+  "role=listbox/menu는 항목 선택과 명령 실행 차이. 자식으로 option, menuitemcheckbox 등을 가지는
+  것이 차이. 사용 맥락 또한 listbox는 폼이나 입력. aria-orientation값을 갖습니다 vertical.드롭다운은
+  패턴. 사용자 인터렉션 방식에 가까움. listbox는 기본적으로 드롭다운 목록을 제공하지않는다.", -->
 
   <mm-component-guide>
     <mm-text-list
       texts='[
-      "flutter. ListView. 스크롤 가능한 뷰 컨테이너. 동적으로 데이터를 랜더링하는 책임까지 포함되어 있다. itemBuilder: (context, index) {} / controller: ScrollController(). ListView - SwitchListTile / RadioListTile / 클릭 영역을 타일 전체로 지정하고 있다. 2가지 이상의 액션이 포함되어야 할 때는?",
-      "role=listbox/menu는 항목 선택과 명령 실행 차이. 자식으로 option, menuitemcheckbox 등을 가지는 것이 차이. 사용 맥락 또한 listbox는 폼이나 입력. aria-orientation값을 갖습니다 vertical.드롭다운은 패턴. 사용자 인터렉션 방식에 가까움. listbox는 기본적으로 드롭다운 목록을 제공하지않는다.",
-    ]'
+        "role=menu 는 명령 실행 목록. role=listbox 는 폼 내 선택 목록. 컨텍스트에 따라 구분합니다.",
+        "아이콘은 icon prop으로, 이미지는 avatar-src prop으로 전달합니다. 이모지·커스텀 콘텐츠만 slot=\"avatar\"를 사용합니다.",
+        "MenuItemCheckbox 는 항상 MenuItemCheckboxGroup 안에서 사용합니다. MenuItemRadio 는 RadioGroup 안에서 단일 선택입니다.",
+        "MenuItemSwitch 는 즉시 적용되는 독립 on/off 토글입니다. 그룹 선택이 아닌 개별 설정에 사용합니다.",
+        "표시 전용 행도 MenuItemRow로 표현합니다. action 슬롯 없이 label/description만 사용하면 read-only 행이 됩니다."
+      ]'
     ></mm-text-list>
-
-    <mm-surface variant="">
-      <code style="display: grid">
-        <span><span>Menu</span></span>
-        <span><span>├─ MenuTrigger</span></span>
-        <span><span>├─ MenuList</span></span>
-        <span><span>│└─ MenuItemAvatar</span></span>
-        <span><span>│└─ MenuItemLabel</span></span>
-        <span><span>│└─ MenuItemAction - toggle | more | delet</span></span>
-        <span><span>└─ MenuLink</span></span>
-        <!-- <span data-line=""><span> └── SheetFooter</span></span> -->
-      </code>
-    </mm-surface>
   </mm-component-guide>
 
-  <!-- <mm-menuitem label="windows 패턴">
-    <mm-group slot="action" variant="chip">
-      <mm-button>퀵 액션</mm-button>
-      <mm-icon-button variant="navigator" size="small" icon="arrow-right"> </mm-icon-button>
-    </mm-group>
-  </mm-menuitem> -->
+  <mm-component-section
+    title="MenuItemCheckboxGroup"
+    description="mm-menu-item-checkbox는 항상 그룹 안에서 사용합니다."
+  >
+    <mm-menu-item-checkbox-group aria-label="콘텐츠 유형 필터">
+      <mm-menu-item-checkbox
+        icon="book"
+        label="아티클"
+        value="article"
+        checked
+      ></mm-menu-item-checkbox>
+      <mm-menu-item-checkbox
+        icon="video-camera"
+        label="동영상"
+        value="video"
+        checked
+      ></mm-menu-item-checkbox>
+      <mm-menu-item-checkbox icon="music-note" label="오디오" value="audio"></mm-menu-item-checkbox>
+    </mm-menu-item-checkbox-group>
+  </mm-component-section>
+
+  <mm-component-section title="MenuItemRadioGroup">
+    <mm-menu-item-radio-group name="access" value="public" aria-label="공개 범위">
+      <mm-menu-item-radio
+        value="public"
+        icon="group"
+        label="전체공개"
+        description="모든 사용자"
+      ></mm-menu-item-radio>
+      <mm-menu-item-radio
+        value="friends"
+        icon="group"
+        label="친구만"
+        description="회원님의 친구"
+      ></mm-menu-item-radio>
+      <mm-menu-item-radio value="private" icon="lock" label="나만 보기"></mm-menu-item-radio>
+    </mm-menu-item-radio-group>
+  </mm-component-section>
+
+  <mm-component-section title="MenuItemLink — external">
+    <mm-menu-item-group>
+      <mm-menu-item-link
+        icon="book"
+        label="문서"
+        href="#"
+        description="내부 링크 (아이콘 없음)"
+      ></mm-menu-item-link>
+      <mm-menu-item-link
+        icon="open-in-browser"
+        label="MDN Web Docs"
+        href="https://developer.mozilla.org"
+        target="_blank"
+      ></mm-menu-item-link>
+      <mm-menu-item-link
+        icon="github"
+        label="GitHub"
+        href="https://github.com"
+        external
+      ></mm-menu-item-link>
+    </mm-menu-item-group>
+  </mm-component-section>
 
   <mm-component-section
-    title="MenuItemCheckbox"
-    description="왼쪽에 체크 indicator가 있는 형태는 체크박스와 구별이 안 된다."
+    title="표시 전용 행"
+    description="액션·선택이 없는 행도 MenuItemRow로 표현합니다. 클릭이 필요하면 action 슬롯이나 MenuItemLink를 사용합니다."
   >
-    <mm-menuitem label="메뉴아이템 체크박스" role="menuitemcheckbox">
-      <mm-avatar slot="avatar">🦊</mm-avatar>
-      <mm-checkbox slot="action" id="check1" name="check1" value="" checked="true"></mm-checkbox>
-    </mm-menuitem>
-  </mm-component-section>
-
-  <mm-component-section title="MenuItemRadio">
-    <mm-menuitem label="메뉴아이템 라디오" role="menuitemradio">
-      <mm-radio slot="action" id="radio1" name="radio1" value="" checked="true"></mm-radio>
-    </mm-menuitem>
-  </mm-component-section>
-
-  <mm-component-section title="MenuItemSwitch" description=""> </mm-component-section>
-
-  <mm-component-section
-    title="ListRow"
-    description="ListRow는 아바타와 2개의 텍스트만 배치하는 읽기/표시용 row입니다. action, href, role, 선택 상태가 필요한 경우 MenuItem 계열을 사용합니다."
-  >
-    <mm-paragraph-group>
-      <mm-text size="14">
-        ListRow는 콘텐츠를 설명하는 정적인 행입니다. 같은 배치가 필요하더라도 사용자가 누르거나
-        선택하는 항목은 MenuItemRow, MenuItemLink, MenuItemCheckbox, MenuItemRadio로 확장합니다.
-      </mm-text>
-      <mm-list-row
-        avatar-variant="secondary"
-        size="large"
+    <mm-menu-item-group>
+      <mm-menu-item-row
         icon="group"
-        primaryText="MenuItem와 ListRow의 차이점은?"
-        secondaryText="ListRow는 표시 전용이고 MenuItem은 행동 가능한 row입니다."
-      ></mm-list-row>
-      <mm-list-row
-        size="large"
-        icon="group"
-        primaryText="Widgefy iOS Widgets"
-        secondaryText="떡볶이"
-      ></mm-list-row>
-
-      <mm-list-row size="large" primaryText="Personal License" secondaryText="1 user"></mm-list-row>
-
-      <mm-list-row
-        size="large"
-        icon=""
-        primaryText="사진 및 동영상 백업"
-        secondaryText="보조 상태나 액션은 별도 MenuItem 또는 도메인 row에서 다룹니다."
-      ></mm-list-row>
-    </mm-paragraph-group>
+        label="Frontend Group"
+        description="프론트엔드 개발자 모임"
+        avatar-size="large"
+      ></mm-menu-item-row>
+      <mm-menu-item-row label="Personal License" description="1 user" avatar-size="large"></mm-menu-item-row>
+    </mm-menu-item-group>
   </mm-component-section>
 
-  <mm-component-section title="See this post in" description="">
-    <div>
-      <mm-titlebar label="See this post in"> </mm-titlebar>
-      <br />
-      <mm-group variant="menuitem">
-        <mm-menu-item-row icon="app-window" label="수줍이 앱" description="앱에서 게시물을 엽니다.">
-          <mm-button slot="action" variant="primary">열기</mm-button>
-        </mm-menu-item-row>
-        <mm-menu-item-row icon="safari" label="사파리 브라우저" description="브라우저에서 게시물을 엽니다.">
-          <mm-button slot="action" status="active">실행</mm-button>
-        </mm-menu-item-row>
-      </mm-group>
-    </div>
-  </mm-component-section>
-  <mm-component-section title="Share" description="">
-    <div>
-      <mm-titlebar label="공유"></mm-titlebar>
-      <div style="height: var(--space-4)"></div>
-      <mm-text size="18" class="share-title">가족이나 친구와<br />함께 보세요!</mm-text>
-      <div style="height: var(--space-3)"></div>
-      <mm-group variant="menuitem">
-        <mm-menuitem icon="facebook" label="facebook으로 공유">
-          <mm-avatar
-            slot="avatar"
-            size="medium"
-            style="background-color: var(--color-facebook); color: #fff"
-          >
-          </mm-avatar>
-        </mm-menuitem>
-        <mm-menuitem
-          icon="twitter"
-          label="twitter로 공유"
-          style="background-color: var(--color-twitter); color: #fff"
-        >
-        </mm-menuitem>
-        <mm-menuitem icon="message" label="kakao talk으로 공유">
-          <mm-avatar slot="avatar" style="background-color: var(--color-kakao)"> </mm-avatar>
-        </mm-menuitem>
-        <mm-menuitem icon="copy" label="링크 복사">
-          <mm-avatar slot="avatar"> </mm-avatar>
-        </mm-menuitem>
-      </mm-group>
-    </div>
-  </mm-component-section>
+  <mm-component-references>
+    <mm-link external href="https://www.w3.org/WAI/ARIA/apg/patterns/menubar/"
+      >WAI-ARIA Menubar Pattern</mm-link
+    >
+    <mm-link external href="https://developer.apple.com/design/human-interface-guidelines/menus"
+      >HIG Menus</mm-link
+    >
+    <mm-link external href="https://m3.material.io/components/menus/overview">MD3 Menus</mm-link>
+  </mm-component-references>
 </main>
-
-<!-- <nav aria-label="On this page">
-  <div>On this page</div>
-  <a href="#skip">Skip to content link</a>
-  <a href="#toc">Table of contents</a>
-  <a href="#bc">Page breadcrumbs</a>
-  <a href="#ln">Local navigation</a>
-  <a href="#global">Global navigation</a>
-</nav> -->

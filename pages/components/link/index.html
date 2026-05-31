@@ -20,16 +20,18 @@
     <mm-separator></mm-separator>
     <!-- TODO link, text button일 수도 있다. -->
     <section style="display: flex; flex-direction: column; gap: var(--space-2)">
-      <mm-row gap="var(--space-1)">
-        <mm-icon name="pipe-3d"></mm-icon>
-        <mm-text size="14">궁금증이 해결되지 않는다면?</mm-text>
-        <mm-link>지금 문의하기</mm-link>
-      </mm-row>
-      <mm-row>
-        <mm-icon name="pipe-3d"></mm-icon>
-        <mm-text size="14">Something's not right?</mm-text>
-        <mm-link>Get in touch with us.</mm-link>
-      </mm-row>
+      <mm-link-prompt
+        icon="pipe-3d"
+        message="궁금증이 해결되지 않는다면?"
+        action-label="지금 문의하기"
+        href="#"
+      ></mm-link-prompt>
+      <mm-link-prompt
+        icon="pipe-3d"
+        message="Something's not right?"
+        action-label="Get in touch with us."
+        href="#"
+      ></mm-link-prompt>
     </section>
   </mm-component-example>
 
@@ -38,6 +40,21 @@
     <mm-prop name="target" type="string" optional></mm-prop>
     <mm-prop name="external" type="boolean" optional></mm-prop>
   </mm-component-props>
+
+  <mm-component-anatomy
+    parts='[
+      "레이블 — 이동할 목적지를 설명하는 클릭 가능한 텍스트입니다.",
+      "외부 링크 아이콘 — 새 탭/외부 사이트로 이동함을 나타내는 표식(external)."
+    ]'
+  >
+    <div style="position: relative; display: inline-block; padding: 0.5rem 0">
+      <mm-link href="https://soojubm.github.io" external>수줍이 디자인 시스템</mm-link>
+
+      <!-- 번호 마커 -->
+      <span style="position: absolute; left: 2.5rem; top: -1.5rem; transform: translateX(-50%); display: inline-flex; align-items: center; justify-content: center; width: 1.25rem; height: 1.25rem; border-radius: 50%; background: var(--color-foreground); color: var(--color-background); font-size: var(--font-size-12); font-weight: var(--font-weight-bold)">1</span>
+      <span style="position: absolute; right: -1.75rem; top: 50%; transform: translateY(-50%); display: inline-flex; align-items: center; justify-content: center; width: 1.25rem; height: 1.25rem; border-radius: 50%; background: var(--color-foreground); color: var(--color-background); font-size: var(--font-size-12); font-weight: var(--font-weight-bold)">2</span>
+    </div>
+  </mm-component-anatomy>
 
   <mm-component-guide>
     <mm-text-list

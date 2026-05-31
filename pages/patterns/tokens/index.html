@@ -104,6 +104,22 @@
       </mm-token-item>
       <mm-token-item label="--color-foreground-on-solid: var(--gray0)" style="border: 0; background: var(--color-background-strong)" class="token-swatch-light"></mm-token-item>
     </mm-token-group>
+
+    <mm-separator></mm-separator>
+
+    <mm-text size="14" weight="bold">Selection</mm-text>
+    <mm-text size="12" color="var(--color-foreground-light)">
+      선택 상태(체크박스·토글·필터 등)를 나타내는 기표 토큰. 색상만으로 상태를 전달하지 않도록 check/dot/bar/fill/outline 등과 조합합니다.
+    </mm-text>
+    <mm-token-group>
+      <mm-token-item label="--selection-indicator-size: var(--space-2)" preview-style="width: var(--selection-indicator-size); height: var(--selection-indicator-size); background: var(--selection-indicator-color)"></mm-token-item>
+      <mm-token-item label="--selection-indicator-gap: var(--space-2)"></mm-token-item>
+      <mm-token-item label="--selection-indicator-color: var(--color-primary)" style="border: 0; background: var(--selection-indicator-color)" class="token-swatch-light"></mm-token-item>
+      <mm-token-item label="--selection-background: var(--green100)" style="background: var(--selection-background)"></mm-token-item>
+      <mm-token-item label="--selection-foreground: var(--color-primary)">
+        <mm-text size="14" color="var(--selection-foreground)">Selected</mm-text>
+      </mm-token-item>
+    </mm-token-group>
   </mm-component-section>
 
   <mm-component-section

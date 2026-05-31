@@ -11,10 +11,16 @@ export const resultStyles = css`
     margin: 0 auto;
   }
 
-  ::slotted([slot='list']) {
+  .result-content {
     width: 100%;
   }
-  ::slotted([slot='action']) {
+
+  .result-content[hidden],
+  .result-actions[hidden] {
+    display: none;
+  }
+
+  .result-actions {
     margin: 1rem 0 0 0;
   }
 `

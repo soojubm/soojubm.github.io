@@ -21,6 +21,10 @@ document.addEventListener('DOMContentLoaded', () => {
       ;(sheetEl as any).close()
     })
   })
+
+  const filterTrigger = document.querySelector('#filter-trigger')
+  const filterSheet = document.querySelector('#filter-sheet') as any
+  filterTrigger?.addEventListener('click', () => filterSheet?.open())
 })
 
 // {

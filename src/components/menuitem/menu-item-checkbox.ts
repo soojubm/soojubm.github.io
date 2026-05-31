@@ -4,8 +4,8 @@ import { MenuItemRow } from './menu-item-row'
 
 @customElement('mm-menu-item-checkbox')
 export class MenuItemCheckbox extends MenuItemRow {
-  @property({ type: Boolean, reflect: true })
-  checked = false
+  @property({ type: Boolean, reflect: true }) checked = false
+  @property({ type: String }) value = ''
 
   protected override getRole() {
     return 'menuitemcheckbox'
@@ -24,6 +24,7 @@ export class MenuItemCheckbox extends MenuItemRow {
       new CustomEvent('change', {
         detail: {
           checked: this.checked,
+          value: this.value,
         },
         bubbles: true,
         composed: true,

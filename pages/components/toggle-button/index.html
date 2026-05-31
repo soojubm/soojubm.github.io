@@ -1,0 +1,138 @@
+<main class="page">
+  <mm-page-header
+    title="ToggleButton"
+    description="클릭하면 선택/비선택 상태가 전환되는 버튼입니다. 독립적인 on/off 토글과, 단일 선택 세그먼트(ToggleButtonGroup)로 확장됩니다."
+  ></mm-page-header>
+
+  <mm-component-aka items='["Toggle", "Switch button", "Pressed button"]'></mm-component-aka>
+
+  <mm-component-example>
+    <mm-button-group>
+      <mm-toggle-button value="bold" icon="bold" selected>굵게</mm-toggle-button>
+      <mm-toggle-button value="italic" icon="italic">기울임</mm-toggle-button>
+      <mm-toggle-button value="underline" icon="underline">밑줄</mm-toggle-button>
+      <mm-toggle-button value="disabled" disabled>비활성</mm-toggle-button>
+    </mm-button-group>
+  </mm-component-example>
+
+  <mm-component-props>
+    <mm-prop name="selected" type="boolean = false"></mm-prop>
+    <mm-prop name="value" type="string"></mm-prop>
+    <mm-prop name="icon" type="string" optional></mm-prop>
+    <mm-prop name="disabled" type="boolean = false"></mm-prop>
+    <mm-prop name="change" type="CustomEvent detail: selected, value" kind="event"></mm-prop>
+  </mm-component-props>
+
+  <mm-component-guide>
+    <mm-text-list
+      texts='[
+        "선택 상태는 색상만으로 전달하지 않습니다. 배경·테두리·아이콘 등 2개 이상의 신호를 조합합니다(selection 토큰).",
+        "독립 on/off에는 ToggleButton, 단일 선택(세그먼트)에는 ToggleButtonGroup을 사용합니다.",
+        "옵션 개수가 4~5개 이상이거나 화면 공간이 좁고 옵션을 숨겨야 할 때는 Dropdown/Select를 고려합니다."
+      ]'
+    ></mm-text-list>
+  </mm-component-guide>
+
+  <mm-component-anatomy
+    parts='[
+      "컨테이너 — 옵션들을 감싸고 단일 선택 그룹임을 나타냅니다.",
+      "옵션 버튼 — 각 선택지. 아이콘과 레이블을 가질 수 있습니다.",
+      "선택 인디케이터 — 현재 선택된 옵션을 배경·색상으로 표시합니다.",
+      "구분선 — 옵션 사이의 시각적 경계(선택)."
+    ]'
+  >
+    <div style="position: relative; display: inline-block">
+      <mm-toggle-button-group
+        options='[
+          {"value":"list","icon":"list","label":"목록"},
+          {"value":"grid","icon":"view-grid","label":"그리드"}
+        ]'
+      ></mm-toggle-button-group>
+
+      <!-- 번호 마커 -->
+      <span style="position: absolute; left: -1.75rem; top: 50%; transform: translateY(-50%); display: inline-flex; align-items: center; justify-content: center; width: 1.25rem; height: 1.25rem; border-radius: 50%; background: var(--color-foreground); color: var(--color-background); font-size: var(--font-size-12); font-weight: var(--font-weight-bold)">1</span>
+      <span style="position: absolute; left: 50%; top: -1.75rem; transform: translateX(-50%); display: inline-flex; align-items: center; justify-content: center; width: 1.25rem; height: 1.25rem; border-radius: 50%; background: var(--color-foreground); color: var(--color-background); font-size: var(--font-size-12); font-weight: var(--font-weight-bold)">2</span>
+      <span style="position: absolute; left: 25%; bottom: -1.75rem; transform: translateX(-50%); display: inline-flex; align-items: center; justify-content: center; width: 1.25rem; height: 1.25rem; border-radius: 50%; background: var(--selection-indicator-color); color: var(--color-background); font-size: var(--font-size-12); font-weight: var(--font-weight-bold)">3</span>
+      <span style="position: absolute; left: 50%; bottom: -1.75rem; transform: translateX(-50%); display: inline-flex; align-items: center; justify-content: center; width: 1.25rem; height: 1.25rem; border-radius: 50%; background: var(--color-foreground); color: var(--color-background); font-size: var(--font-size-12); font-weight: var(--font-weight-bold)">4</span>
+    </div>
+  </mm-component-anatomy>
+
+  <mm-component-section
+    title="ToggleButtonGroup"
+    description="여러 ToggleButton을 묶어 단일 선택(세그먼트 컨트롤)으로 동작합니다. 레이블·아이콘·아이콘 전용·disabled 옵션을 지원합니다."
+  >
+    <div style="display: flex; flex-direction: column; gap: 1rem; width: 400px">
+      <mm-toggle-button-group
+        options='[
+          {"label":"Grid","value":"grid"},
+          {"label":"List","value":"list"}
+        ]'
+      ></mm-toggle-button-group>
+
+      <mm-toggle-button-group
+        options='[
+          {"label":"Grid","value":"grid","icon":"view-grid"},
+          {"label":"List","value":"list","icon":"list"}
+        ]'
+      ></mm-toggle-button-group>
+
+      <mm-toggle-button-group
+        options='[
+          {"value":"grid","icon":"view-grid","ariaLabel":"Grid view"},
+          {"value":"list","icon":"table-rows","ariaLabel":"List view"}
+        ]'
+      ></mm-toggle-button-group>
+
+      <mm-toggle-button-group
+        options='[
+          {"label":"Compact","value":"compact","icon":"minus"},
+          {"label":"Default","value":"default","icon":"circle"},
+          {"label":"Comfortable","value":"comfortable","icon":"plus","disabled":true}
+        ]'
+      ></mm-toggle-button-group>
+    </div>
+  </mm-component-section>
+
+  <mm-component-section
+    title="ThemeSwitcher"
+    description="현재 테마를 아이콘 버튼으로 표시하고, 드롭다운에서 테마를 전환합니다."
+  >
+    <mm-theme-switcher></mm-theme-switcher>
+  </mm-component-section>
+
+  <mm-component-section
+    title="ViewModeSwitcher"
+    description="그리드/목록 보기처럼 화면 표시 방식을 전환하는 아이콘 전용 세그먼트 컨트롤입니다."
+  >
+    <mm-view-mode-switcher></mm-view-mode-switcher>
+  </mm-component-section>
+
+  <mm-component-section
+    title="FollowButton"
+    description="ToggleButton을 확장한 도메인 버튼. 선택(팔로잉) 상태에 따라 레이블과 아이콘이 전환됩니다."
+  >
+    <mm-button-group>
+      <mm-follow-button></mm-follow-button>
+      <mm-follow-button selected></mm-follow-button>
+    </mm-button-group>
+  </mm-component-section>
+
+  <mm-component-section
+    title="BookmarkButton"
+    description="ToggleButton을 확장한 아이콘 전용 토글. shape으로 별·북마크·하트를 선택합니다."
+  >
+    <mm-button-group>
+      <mm-bookmark-button shape="star"></mm-bookmark-button>
+      <mm-bookmark-button shape="star" selected></mm-bookmark-button>
+      <mm-bookmark-button shape="bookmark"></mm-bookmark-button>
+      <mm-bookmark-button shape="bookmark" selected></mm-bookmark-button>
+      <mm-bookmark-button shape="heart"></mm-bookmark-button>
+      <mm-bookmark-button shape="heart" selected></mm-bookmark-button>
+    </mm-button-group>
+  </mm-component-section>
+
+  <mm-component-references>
+    <mm-link external href="https://m3.material.io/components/button-groups/overview">MD3 Button groups</mm-link>
+    <mm-link external href="https://polaris-react.shopify.com/components/lists/resource-list">Shopify Resource list</mm-link>
+  </mm-component-references>
+</main>

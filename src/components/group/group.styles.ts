@@ -7,11 +7,6 @@ export const groupStyles = css`
     gap: var(--space-2);
   }
 
-  .group[data-variant='menuitem'] {
-    flex-direction: column;
-    gap: var(--space-2);
-  }
-
   .group[data-variant='avatar'] {
     align-items: center;
     gap: 0;

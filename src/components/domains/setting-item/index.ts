@@ -1,48 +1,33 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { ifDefined } from 'lit/directives/if-defined.js'
 
+/**
+ * 설정 화면의 한 행. mm-menu-item-row를 합성하고
+ * setting 고유의 패딩·구분선을 입힙니다.
+ *
+ * <mm-setting-item start-icon="bell" label="알림" description="...">
+ *   <mm-switch slot="action"></mm-switch>
+ * </mm-setting-item>
+ */
 @customElement('mm-setting-item')
 export class SettingItem extends LitElement {
   @property({ type: String }) label = ''
   @property({ type: String }) description = ''
   @property({ type: String, attribute: 'start-icon' }) startIcon = ''
 
-  @property({ type: Boolean, reflect: true })
-  disabled = false
+  @property({ type: Boolean, reflect: true }) disabled = false
 
   static styles = css`
     :host {
       display: block;
-      border-bottom: 1px solid var(--color-border, #262626);
+      border-bottom: 1px solid var(--color-border);
     }
 
-    .item {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: var(--space-3, 12px);
-      padding: var(--space-5, 20px) 0;
-    }
-
-    .start {
-      flex: none;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .content {
-      flex: 1;
-      min-width: 0;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .action {
-      flex: none;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
+    mm-menu-item-row {
+      --menu-item-padding: var(--space-5) 0;
+      display: block;
+      padding: var(--space-5) 0;
     }
 
     :host([disabled]) {
@@ -53,22 +38,15 @@ export class SettingItem extends LitElement {
 
   render() {
     return html`
-      <div class="item">
-        ${this.startIcon
-          ? html`
-              <span class="start" aria-hidden="true">
-                <mm-avatar variant="tertiary" size="medium" icon=${this.startIcon}></mm-avatar>
-              </span>
-            `
-          : ''}
-        <div class="content">
-          <mm-text weight="bold">${this.label}</mm-text>
-          <mm-text>${this.description}</mm-text>
-        </div>
-        <div class="action">
-          <slot name="action"></slot>
-        </div>
-      </div>
+      <mm-menu-item-row
+        icon=${ifDefined(this.startIcon || undefined)}
+        label=${this.label}
+        description=${this.description}
+        ?disabled=${this.disabled}
+        role="group"
+      >
+        <slot name="action" slot="action"></slot>
+      </mm-menu-item-row>
     `
   }
 }

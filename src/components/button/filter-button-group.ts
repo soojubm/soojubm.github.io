@@ -48,10 +48,22 @@ export class FilterButtonGroup extends LitElement {
     return Array.from(this.querySelectorAll('mm-filter-button')) as FilterButton[]
   }
 
-  private _onToggle = (e: CustomEvent<{ value: string; selected: boolean }>) => {
-    const { value, selected } = e.detail
+  /** "전체" 옵션을 제외한 일반 옵션 버튼 */
+  private get _optionButtons() {
+    return this._buttons.filter(b => !b.selectAll)
+  }
 
-    if (this._isMultiple) {
+  private get _selectAllButton() {
+    return this._buttons.find(b => b.selectAll)
+  }
+
+  private _onToggle = (e: CustomEvent<{ value: string; selected: boolean; selectAll?: boolean }>) => {
+    const { value, selected, selectAll } = e.detail
+
+    if (selectAll) {
+      // "전체" 클릭: 모든 일반 옵션을 선택/해제
+      this.selected = selected ? this._optionButtons.map(b => b.value) : []
+    } else if (this._isMultiple) {
       this.selected = selected
         ? [...this.selected, value]
         : this.selected.filter(v => v !== value)
@@ -71,17 +83,26 @@ export class FilterButtonGroup extends LitElement {
   }
 
   private _syncButtons() {
-    this._buttons.forEach(btn => {
+    this._optionButtons.forEach(btn => {
       btn.selected = this.selected.includes(btn.value)
-      btn.multiple = this.multiple
+      btn.mode = this.mode
     })
+    // "전체" 버튼은 모든 일반 옵션이 선택됐을 때만 selected
+    const allBtn = this._selectAllButton
+    if (allBtn) {
+      const allSelected =
+        this._optionButtons.length > 0 &&
+        this._optionButtons.every(b => this.selected.includes(b.value))
+      allBtn.selected = allSelected
+      allBtn.mode = this.mode
+    }
   }
 
   // 버튼에 미리 selected가 지정돼 있으면 그룹 상태로 흡수
   private _adoptInitialSelection = () => {
     const preselected = this._buttons.filter(b => b.selected).map(b => b.value)
     if (preselected.length) {
-      this.selected = this.multiple ? preselected : preselected.slice(0, 1)
+      this.selected = this._isMultiple ? preselected : preselected.slice(0, 1)
     }
     this._syncButtons()
   }
@@ -92,7 +113,7 @@ export class FilterButtonGroup extends LitElement {
 
   render() {
     return html`
-      <div role=${this.multiple ? 'group' : 'radiogroup'}>
+      <div role=${this._isMultiple ? 'group' : 'radiogroup'}>
         <slot @slotchange=${this._adoptInitialSelection}></slot>
       </div>
     `

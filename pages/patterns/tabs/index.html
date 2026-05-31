@@ -29,56 +29,6 @@
       <mm-tab-panel value="monthly">📊 이번 달 정산 데이터...</mm-tab-panel>
     </mm-tabs>
 
-    <style>
-      .bottombar {
-        display: flex;
-        justify-content: space-around;
-        padding: var(--space-1) 0 calc(constant(safe-area-inset-bottom) + var(--space-2));
-        padding: var(--space-2) 0 calc(env(safe-area-inset-bottom) + var(--space-2));
-        border-top: var(--border);
-        background: var(--color-background);
-      }
-
-      .bottombar-item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        position: relative;
-      }
-
-      .bottombar-item-icon {
-        margin: 0 auto;
-        background: none;
-      }
-
-      .bottombar-item em {
-        display: flex;
-        width: 4px;
-        height: 4px;
-        background: var(--red800);
-        border-radius: var(--radius);
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(var(--space-3), -1.125rem);
-      }
-    </style>
-
-    <nav class="bottombar">
-      <a href="#" class="bottombar-item is-active">
-        <mm-avatar variant="tertiary" icon="air-conditioner"> </mm-avatar>
-        <mm-text size="12">홈</mm-text>
-        <em></em>
-      </a>
-      <a href="#" class="bottombar-item">
-        <mm-avatar variant="tertiary" icon="air-conditioner"> </mm-avatar>
-        <mm-text size="12">카테고리</mm-text>
-      </a>
-      <a href="#" class="bottombar-item">
-        <mm-avatar variant="tertiary" icon="air-conditioner"> </mm-avatar>
-        <mm-text size="12">설정</mm-text>
-      </a>
-    </nav>
     <!-- // iOS isTranslucent: Bool -->
 
     <div
@@ -141,19 +91,25 @@
     </mm-text-list>
   </section>
 
-  <mm-separator></mm-separator>
-  <mm-titlebar label="수줍이님">
-    <mm-button-group>
-      <mm-button>저장</mm-button>
-      <mm-icon-button variant="navigator" icon="more-vert"></mm-icon-button>
-    </mm-button-gro>
-  </mm-titlebar>
+  <mm-component-section title="Navigation Bars">
+    <mm-top-bar label="수줍이님">
+      <mm-button-group slot="action">
+        <mm-button>저장</mm-button>
+        <mm-icon-button variant="navigator" icon="more-vert"></mm-icon-button>
+      </mm-button-group>
+    </mm-top-bar>
+
+    <div style="height: var(--space-4)"></div>
+
+    <mm-bottom-bar></mm-bottom-bar>
+  </mm-component-section>
 
   <mm-component-props>
     <mm-prop name="label" type="string"></mm-prop>
     <mm-prop name="variant" type="string" optional></mm-prop>
-    <mm-prop name="hiddenBack" type="boolean" optional></mm-prop>
+    <mm-prop name="nav" type="'back' | 'close' | ''" optional></mm-prop>
     <mm-prop name="action" type="slot" optional></mm-prop>
+    <mm-prop name="items" type="BottomBarItem[]" optional></mm-prop>
   </mm-component-props>
 
   <mm-component-references>

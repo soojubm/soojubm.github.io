@@ -93,7 +93,6 @@ export const textfieldStyles = css`
     --textfield-border: var(--border);
     --textfield-radius: var(--radius);
     --textfield-text-color: 0;
-    --textfield-icon-position: var(--size-small);
     --textfield-placeholder-color: null;
   }
 
@@ -111,29 +110,47 @@ export const textfieldStyles = css`
     position: relative;
   }
 
+  .textfield-control,
+  textarea {
+    width: 100%;
+    height: var(--textfield-height);
+    box-sizing: border-box;
+    border-radius: var(--textfield-radius);
+    background: var(--textfield-background-color);
+    border: 1px solid transparent;
+  }
+
+  .textfield-control {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
   textarea,
   input {
     display: block;
     width: 100%;
-    height: var(--textfield-height);
+    min-width: 0;
+    height: 100%;
     padding: var(--space-3) var(--space-4);
     box-sizing: border-box;
-    border-radius: var(--textfield-radius);
-    background: var(--textfield-background-color);
+    border: 0;
+    background: transparent;
     color: var(--color-foreground);
-    border: 1px solid transparent;
     font: inherit;
   }
 
-  input:not(:disabled):hover {
+  .textfield-control:hover {
     border-color: var(--textfield-color-border-hover);
   }
 
   textarea {
     height: auto;
+    min-height: var(--textfield-height);
   }
 
-  input:focus {
+  .textfield-control:focus-within,
+  textarea:focus {
     box-shadow: var(--status-hover);
   }
 
@@ -147,105 +164,70 @@ export const textfieldStyles = css`
     cursor: not-allowed;
   }
 
-  p {
+  .textfield-helper {
+    margin: var(--space-1) 0 var(--space-1);
+  }
+
+  .textfield-validation {
     margin: var(--space-1) 0 0;
-    color: var(--red800);
   }
 
-  ::slotted([slot='suffix']) {
-    display: flex;
+  .textfield-affix {
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     height: var(--textfield-height);
-    position: absolute;
-    top: var(--textfield-icon-position);
-    right: var(--space-2);
+    flex: 0 0 auto;
   }
 
-  ::slotted([slot='prefix']) {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .textfield-prefix {
     width: var(--textfield-height);
-    height: var(--textfield-height);
-    position: absolute;
-    top: var(--textfield-icon-position);
-    left: 0;
   }
 
-  ::slotted([slot='prefix']) ~ input {
-    padding-left: 48px;
-  }
-
-  ::slotted([slot='link']) {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-
-  [data-label='false'] {
-    --textfield-icon-position: 0;
+  .textfield-suffix,
+  .textfield-link {
+    padding-right: var(--space-2);
   }
 
   [data-size='small'] {
     --textfield-height: var(--size-medium);
   }
 
-  [data-invalid] input {
+  [data-invalid] .textfield-control,
+  [data-invalid] textarea {
     border-color: var(--color-danger);
   }
 
-  .searchfield {
-    position: relative;
+  .searchfield .textfield-control {
+    border: 0;
+    transition: all 0.2s ease;
   }
 
   .searchfield input {
-    width: 100%;
-    height: var(--textfield-height);
-    padding: var(--space-2) var(--size-large);
-    border: 0;
-    border-radius: var(--radius);
-    background: var(--color-background-subtle);
-    overflow: hidden;
-    font: inherit;
-    transition: all 0.2s ease;
-    position: relative;
-    z-index: 1;
-  }
-
-  .searchfield-input:focus ~ .searchfield-cancel {
-    right: 0;
+    padding: var(--space-2) 0;
   }
 
   .searchfield-prefix {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     width: var(--textfield-height);
-    height: var(--textfield-height);
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: 2;
-  }
-
-  .searchfield-prefix ~ .searchfield-input {
-    padding-left: calc(var(--size-medium) + var(--space-2) + 0.5rem);
   }
 
   .searchfield-clear {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     width: var(--textfield-height);
-    height: var(--textfield-height);
-    position: absolute;
-    right: 32px;
-    top: 0;
-    z-index: 1;
   }
 
-  .searchfield-input:focus + .searchfield-clear {
-    display: flex;
+  .number-input {
+    max-width: 10rem;
+  }
+
+  .number-input input {
+    padding-right: var(--space-2);
+    padding-left: var(--space-2);
+    text-align: center;
+  }
+
+  .number-input .textfield-prefix,
+  .number-input .textfield-suffix {
+    width: var(--textfield-height);
+    padding: 0;
   }
 `

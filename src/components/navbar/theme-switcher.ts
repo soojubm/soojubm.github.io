@@ -96,7 +96,6 @@ export class ThemeSwitcher extends LitElement {
       }
 
       .option[aria-current='true'] {
-        font-weight: var(--font-weight-bold);
         color: var(--color-primary);
       }
     `,

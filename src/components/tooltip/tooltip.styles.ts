@@ -1,18 +1,25 @@
 import { css } from 'lit'
 
 export const tooltipStyles = css`
+  :host {
+    display: inline-flex;
+    position: relative;
+  }
+
   .tooltip {
+    display: inline-flex;
+    align-items: center;
     position: relative;
   }
 
   .tooltip-trigger {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    height: var(--size-small);
   }
 
   .tooltip-content {
-    display: none;
+    opacity: 0;
+    visibility: hidden;
     width: max-content;
     max-width: 320px;
     padding: 0.5rem var(--space-3);
@@ -22,8 +29,10 @@ export const tooltipStyles = css`
     color: var(--color-foreground-on-solid);
     position: absolute;
     left: 0;
-    top: var(--size-medium);
+    top: calc(100% + var(--space-1));
     z-index: 6;
+    pointer-events: none;
+    transition: opacity 0.15s linear, visibility 0.15s linear;
   }
 
   .tooltip-content::before {
@@ -36,8 +45,12 @@ export const tooltipStyles = css`
     bottom: 0;
   }
 
+  :host(:hover) .tooltip-content,
+  :host(:focus-within) .tooltip-content,
+  .tooltip[data-open='true'] .tooltip-content,
   .tooltip:hover .tooltip-content {
-    display: block;
+    opacity: 1;
+    visibility: visible;
   }
 
   .tooltip[data-align='center'] .tooltip-content {

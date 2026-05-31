@@ -2,6 +2,7 @@
 import '../../components/icon/icon'
 
 import '../../components/link/link'
+import '../../components/link/link-prompt'
 import '../../components/textfield'
 import '../../components/tabpanel/tabpanel'
 import '../../components/tooltip/tooltip'
@@ -9,7 +10,9 @@ import '../../components/notice/notice'
 import '../../components/menuitem'
 import '../../components/group/group'
 import '../../components/row/row'
-import '../../components/titlebar/titlebar'
+import '../../components/top-bar'
+import '../../components/page'
+import '../../components/bottom-bar'
 import '../../components/separator/separator'
 import '../../components/surface/surface'
 import '../../components/switch/switch'
@@ -22,7 +25,6 @@ import '../../components/sheet/sheet-header'
 import '../../components/sheet/sheet-body'
 import '../../components/sheet/sheet-footer'
 import '../../components/dialog'
-import '../../components/list-row'
 
 import '../../components/thumbnail/thumbnail'
 
@@ -46,6 +48,7 @@ import '../../components/avatar'
 import '../../components/domains'
 
 import '../../components/spinner'
+import '../../components/spinner/typing-indicator'
 import '../../components/tabs'
 
 // 👉 “이 파일은 module이다”라고 명시

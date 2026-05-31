@@ -16,6 +16,7 @@ interface OptionItem {
 export class ToggleButtonGroup extends LitElement {
   @property({ type: String }) options = '[]'
   @property({ type: Number }) selectedIndex = 0
+  @property({ type: Boolean, reflect: true }) stretch = false
   @state() private currentIndex = 0
 
   static styles = css`
@@ -28,6 +29,15 @@ export class ToggleButtonGroup extends LitElement {
       overflow: hidden;
     }
 
+    :host([stretch]) .button-list {
+      display: flex;
+      width: 100%;
+    }
+
+    :host([stretch]) button {
+      flex: 1;
+    }
+
     button {
       display: inline-flex;
       align-items: center;
@@ -37,7 +47,8 @@ export class ToggleButtonGroup extends LitElement {
       min-height: var(--size-medium);
       padding: 0 var(--space-3);
 
-      border: 0;
+      border: var(--border-width) solid transparent;
+      box-sizing: border-box;
       background: transparent;
       cursor: pointer;
 
@@ -52,9 +63,9 @@ export class ToggleButtonGroup extends LitElement {
     }
 
     button.selected {
-      background: var(--green100);
-      color: var(--color-primary);
-      font-weight: var(--font-weight-bold);
+      border-color: var(--selection-indicator-color);
+      background: var(--selection-background);
+      color: var(--selection-foreground);
     }
 
     button:disabled {

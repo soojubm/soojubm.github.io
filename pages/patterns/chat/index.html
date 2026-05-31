@@ -1,58 +1,54 @@
-<style>
-  .chat-page {
-    display: flex;
-    flex-direction: column;
-    height: calc(100vh - var(--navbar-height, 56px));
-    padding: 0;
-    overflow: hidden;
-  }
-
-  .chat-page mm-chat-room {
-    flex: 1;
-    min-height: 0;
-  }
-</style>
-
-<main class="page chat-page">
+<mm-page layout="chat">
   <mm-chat-room>
     <mm-chat-feed slot="feed">
-
       <mm-chat-date label="2022년 5월 17일"></mm-chat-date>
 
       <mm-chat-message username="수줍이">
-        <mm-chat-bubble>
+        <mm-ai-chat-bubble>
           날짜는 버블 밖으로 나와야한다. 리얼타임. 버블의 전송 상태. reaction. iMessage에서 날짜는
           터치 제스쳐. 1:1대화 / 1:n 대화.
-        </mm-chat-bubble>
-        <mm-chat-bubble>짧은 내용일 때.</mm-chat-bubble>
-        <mm-chat-bubble src="/src/images/springsteen.jpg" time="12:00 am"></mm-chat-bubble>
+        </mm-ai-chat-bubble>
+        <mm-ai-chat-bubble>짧은 내용일 때.</mm-ai-chat-bubble>
+        <mm-ai-chat-bubble src="/src/images/springsteen.jpg" time="12:00 am"></mm-ai-chat-bubble>
       </mm-chat-message>
 
       <mm-chat-message mine>
-        <mm-chat-bubble mine status="전송됨">
+        <mm-my-chat-bubble status="전송됨">
           감사합니다! 아바타와 닉네임 불필요. 전송 순서 중요.
-        </mm-chat-bubble>
-        <mm-chat-bubble mine typing></mm-chat-bubble>
+        </mm-my-chat-bubble>
+        <mm-my-chat-bubble src="/src/images/prometheus.jpg" time="12:01 am"></mm-my-chat-bubble>
       </mm-chat-message>
 
       <mm-chat-date label="2022년 5월 18일"></mm-chat-date>
 
       <mm-chat-message username="수줍이">
-        <mm-chat-bubble>안녕하세요 👋</mm-chat-bubble>
+        <mm-ai-chat-bubble>안녕하세요 👋</mm-ai-chat-bubble>
       </mm-chat-message>
 
       <mm-chat-message mine>
-        <mm-chat-bubble mine status="읽음">반갑습니다! 오늘도 좋은 하루 보내세요.</mm-chat-bubble>
+        <mm-my-chat-bubble failed>네트워크 오류로 전송에 실패한 메시지입니다.</mm-my-chat-bubble>
       </mm-chat-message>
 
+      <mm-chat-message mine>
+        <mm-my-chat-bubble status="읽음">반갑습니다! 오늘도 좋은 하루 보내세요.</mm-my-chat-bubble>
+        <mm-my-chat-bubble typing></mm-my-chat-bubble>
+      </mm-chat-message>
     </mm-chat-feed>
 
-    <mm-prompt-input slot="input">
-      <mm-prompt-input-textarea placeholder="메시지를 입력하세요..."></mm-prompt-input-textarea>
-      <mm-prompt-input-actions>
-        <mm-icon-button icon="send-diagonal" aria-label="전송"></mm-icon-button>
-      </mm-prompt-input-actions>
-    </mm-prompt-input>
+    <div slot="input">
+      <mm-chat-input-suggestions style="margin-bottom: var(--space-2)">
+        <mm-chat-input-suggestion>네, 좋아요 👍</mm-chat-input-suggestion>
+        <mm-chat-input-suggestion>다시 설명해 주세요</mm-chat-input-suggestion>
+        <mm-chat-input-suggestion icon="calendar">일정 잡기</mm-chat-input-suggestion>
+        <mm-chat-input-suggestion>나중에 할게요</mm-chat-input-suggestion>
+      </mm-chat-input-suggestions>
 
+      <mm-prompt-input>
+        <mm-prompt-input-textarea placeholder="메시지를 입력하세요..."></mm-prompt-input-textarea>
+        <mm-prompt-input-actions>
+          <mm-icon-button icon="send-diagonal" aria-label="전송"></mm-icon-button>
+        </mm-prompt-input-actions>
+      </mm-prompt-input>
+    </div>
   </mm-chat-room>
-</main>
+</mm-page>
