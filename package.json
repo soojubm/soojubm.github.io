@@ -70,7 +70,6 @@
     "webpack-obfuscator": "^3.5.1"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.6.0",
     "bundle-stats": "^4.8.4",
     "bundle-stats-webpack-plugin": "^4.8.4",
     "handlebars": "^4.7.7",

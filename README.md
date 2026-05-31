@@ -27,10 +27,6 @@ TerserPlugin > uglifyjs-webpack-plugin: 번들링 속도가 빠르다. 유지보
 
 - inline-source-map
 
-## 디펜던시
-
-- @babel/polyfill은 소스코드가 실행되기 전에 동작해야 하기때문에 --save로 패키지에 추가.
-
 ## extensions
 
 - ('./myFile')

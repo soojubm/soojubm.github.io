@@ -262,7 +262,15 @@
 }
 
 :root [data-theme=brutal] {
-  --border: 1px solid;
+  /* 모든 border를 검정으로: 색상 토큰을 덮으면 --border / --border-stronger /
+     직접 var(--color-border)를 쓰는 곳까지 전부 검정이 된다. */
+  --color-border: #000;
+  --color-border-strong: #000;
+  --color-border-hover: #000;
+
+  --border: var(--border-width) solid var(--color-border);
+  --border-stronger: var(--border-width) solid var(--color-border-strong);
+  --border-active: var(--border-width) solid var(--color-border);
 }
 
 /* // $p-breakpoints-lg-only: '(min-width: 65em) and (max-width: 89.9975em)'; */

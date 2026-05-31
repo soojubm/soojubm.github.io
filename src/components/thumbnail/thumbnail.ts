@@ -6,10 +6,11 @@ export class Thumbnail extends LitElement {
   @property({ type: String }) src = ''
   @property({ type: String }) alt = ''
   @property({ type: String }) ratio: '1:1' | '16:9' | '4:3' = '16:9'
+  @property({ type: String }) loading: 'eager' | 'lazy' = 'lazy'
+  @property({ type: String, attribute: 'fetchpriority' }) fetchPriority: 'high' | 'low' | 'auto' =
+    'auto'
 
-  // 💡 [치트키 1] 링크 주소가 들어오면 내부에서 자동으로 <a> 태그를 켭니다.
   @property({ type: String }) href = ''
-  // 💡 [치트키 2] true면 내부에서 자동으로 <button> 태그를 켭니다.
   @property({ type: Boolean }) clickable = false
 
   @state() private _hasError = false
@@ -19,9 +20,10 @@ export class Thumbnail extends LitElement {
     :host {
       display: block;
       width: 100%;
+      --thumbnail-radius: 12px;
+      --thumbnail-color-empty: var(--color-background-subtle);
     }
 
-    /* 💡 최외곽 루트 태그들(a, button, div)의 스타일을 컴포넌트가 완벽히 통제 */
     .thumbnail-root {
       display: block;
       width: 100%;
@@ -30,12 +32,11 @@ export class Thumbnail extends LitElement {
       border: none;
       background: none;
       overflow: hidden;
-      border-radius: 12px;
+      border-radius: var(--thumbnail-radius);
       text-decoration: none;
       color: inherit;
     }
 
-    /* 인터랙션이 가능한 상태(Link 또는 Button)일 때만 호버 효과 강제 */
     .thumbnail-root.interactive {
       cursor: pointer;
       transition: all 0.3s ease-in-out;
@@ -44,14 +45,14 @@ export class Thumbnail extends LitElement {
       transform: scale(1.03);
     }
     .thumbnail-root:focus-visible {
-      outline: 3px solid #2563eb;
+      outline: 3px solid var(--color-focus, #2563eb);
       outline-offset: 2px;
     }
 
     .image-wrapper {
       position: relative;
       width: 100%;
-      background-color: #f3f4f6;
+      background-color: var(--thumbnail-color-empty);
     }
     img {
       width: 100%;
@@ -71,7 +72,9 @@ export class Thumbnail extends LitElement {
         <img
           src="${displaySrc}"
           alt="${this.alt}"
-          loading="lazy"
+          loading="${this.loading}"
+          decoding="async"
+          fetchpriority="${this.fetchPriority}"
           @error=${() => (this._hasError = true)}
         />
       </div>

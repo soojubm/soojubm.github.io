@@ -27,7 +27,7 @@ SITEMAP.forEach(node => {
   } else if (node.type === 'category') {
     const subDir = node.id === 'patterns' ? 'patterns' : 'components'
     node.items.forEach(item => {
-      ALL_PAGES.push({ id: item.id, subDir: subDir })
+      ALL_PAGES.push({ id: item.id, subDir: item.subDir || subDir })
     })
   }
 })
@@ -71,6 +71,7 @@ const getHtmlPlugins = isProd => {
 
 module.exports = (env, argv) => {
   const isProd = argv.mode === 'production'
+  const shouldAnalyze = process.env.ANALYZE === 'true'
 
   return {
     mode: isProd ? 'production' : 'development',
@@ -174,7 +175,7 @@ module.exports = (env, argv) => {
       ...(isProd
         ? [
             new WebpackObfuscator({ rotateStringArray: true }, ['excluded_bundle_name.js']),
-            new BundleAnalyzerPlugin({ openAnalyzer: false }),
+            ...(shouldAnalyze ? [new BundleAnalyzerPlugin({ openAnalyzer: false })] : []),
             new BundleStatsWebpackPlugin(),
           ]
         : []),

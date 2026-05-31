@@ -98,6 +98,15 @@
     <mm-prop name="input" type="CustomEvent detail: value" kind="event"></mm-prop>
   </mm-component-props>
 
+  <mm-component-tokens>
+    <mm-token name="--textfield-height" default="var(--size-large)" description="입력 필드 높이 (size=small일 때 var(--size-medium))"></mm-token>
+    <mm-token name="--textfield-background-color" default="var(--color-background-subtle)" description="배경색"></mm-token>
+    <mm-token name="--textfield-border" default="var(--border)" description="테두리 스타일"></mm-token>
+    <mm-token name="--textfield-radius" default="var(--radius)" description="모서리 반지름"></mm-token>
+    <mm-token name="--textfield-color-border-hover" default="var(--gray400)" description="호버 상태 테두리 색상"></mm-token>
+    <mm-token name="--textfield-text-color" default="var(--color-foreground)" description="입력 텍스트 색상"></mm-token>
+  </mm-component-tokens>
+
   <mm-component-anatomy
     parts='[
       "레이블 — 입력 항목의 이름을 나타냅니다(label).",

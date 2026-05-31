@@ -1,18 +1,21 @@
 import { css } from 'lit'
 
 export const iconButtonStyles = css`
+  :host {
+    --button-size: var(--size-medium);
+    --button-color: var(--color-background-subtle);
+    --button-radius: var(--radius);
+    --button-text-color: var(--color-foreground);
+  }
+
   button {
     padding: 0;
     border: 0;
     font-family: var(--font-family);
     font-size: inherit;
-
-    --button-size: var(--size-medium);
   }
 
   .icon-button {
-    /* // reset */
-    font-family: inherit;
     font-family: var(--font-family);
     font-size: inherit;
 
@@ -21,8 +24,8 @@ export const iconButtonStyles = css`
     justify-content: center;
     width: var(--button-size);
     height: var(--button-size);
-    border-radius: var(--radius);
-    background: var(--color-background-subtle);
+    border-radius: var(--button-radius);
+    background: var(--button-color);
     color: var(--button-text-color);
 
     cursor: pointer;

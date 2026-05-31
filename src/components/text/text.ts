@@ -18,6 +18,7 @@ export class Text extends LitElement {
     css`
       :host {
         display: inline-block;
+        --text-color: inherit;
       }
       h1,
       h2,
@@ -28,7 +29,7 @@ export class Text extends LitElement {
       p,
       span {
         font-family: inherit;
-        color: inherit;
+        color: var(--text-color);
       }
     `,
   ]
@@ -42,7 +43,7 @@ export class Text extends LitElement {
       fontSize: sizeStyle.fontSize,
       lineHeight: sizeStyle.lineHeight,
       fontWeight: weightStyle,
-      color: this.color,
+      ...(this.color !== 'inherit' ? { color: this.color } : {}),
     }
 
     return html`

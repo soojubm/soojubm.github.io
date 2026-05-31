@@ -20,6 +20,13 @@
     <mm-prop name="aria-label" type="'breadcrumb'"></mm-prop>
   </mm-component-props>
 
+  <mm-component-tokens>
+    <mm-token name="--breadcrumb-item-color" default="var(--color-primary)" description="링크 항목 색상"></mm-token>
+    <mm-token name="--breadcrumb-item-color-current" default="var(--color-foreground)" description="현재 페이지 항목 색상"></mm-token>
+    <mm-token name="--breadcrumb-divider-color" default="var(--gray200)" description="구분자 색상"></mm-token>
+    <mm-token name="--breadcrumb-divider-space" default="var(--space-3)" description="구분자 좌우 여백"></mm-token>
+  </mm-component-tokens>
+
   <mm-component-guide>
     <mm-text-list
       texts='[

@@ -21,7 +21,7 @@ export class Textfield extends LitElement {
   @property({ type: Boolean, reflect: true }) disabled = false
   @property({ type: Boolean, attribute: 'aria-invalid' }) isInvalid = false
 
-  static styles = [textfieldStyles]
+  static styles = textfieldStyles
 
   protected inputId = `input-${crypto?.randomUUID?.() || Math.random().toString(36).slice(2)}`
   @state() private hasPrefixSlot = false

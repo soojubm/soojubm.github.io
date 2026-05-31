@@ -1,0 +1,33 @@
+<main class="page">
+  <mm-page-header
+    title="Bottom Bar"
+    description="작은 화면 하단에서 주요 목적지 사이를 이동하는 내비게이션입니다."
+  ></mm-page-header>
+
+  <mm-component-example>
+    <mm-surface variant="outlined" style="overflow: hidden">
+      <div style="padding: var(--space-4)">
+        <mm-text>기본 항목</mm-text>
+      </div>
+      <mm-bottom-bar></mm-bottom-bar>
+    </mm-surface>
+    <mm-separator></mm-separator>
+    <mm-surface variant="outlined" style="overflow: hidden">
+      <div style="padding: var(--space-4)">
+        <mm-text>커스텀 항목</mm-text>
+      </div>
+      <mm-bottom-bar
+        items='[
+          { "label": "홈", "href": "#", "icon": "home-simple-door", "active": true },
+          { "label": "검색", "href": "#", "icon": "search", "badge": true },
+          { "label": "설정", "href": "#", "icon": "settings" }
+        ]'
+      ></mm-bottom-bar>
+    </mm-surface>
+  </mm-component-example>
+
+  <mm-component-props>
+    <mm-prop name="items" type="JSON string" optional></mm-prop>
+    <mm-prop name="label" type="string = '하단 내비게이션'" optional></mm-prop>
+  </mm-component-props>
+</main>

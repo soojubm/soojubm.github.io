@@ -21,6 +21,14 @@
     <mm-prop name="change" type="CustomEvent detail: checked, value" kind="event"></mm-prop>
   </mm-component-props>
 
+  <mm-component-tokens>
+    <mm-token name="--radio-size" default="var(--size-tiny)" description="라디오 버튼 너비·높이"></mm-token>
+    <mm-token name="--radio-color" default="var(--color-border-strong)" description="테두리 색상"></mm-token>
+    <mm-token name="--radio-border" default="1px solid var(--radio-color)" description="테두리 스타일"></mm-token>
+    <mm-token name="--radio-radius" default="50%" description="모서리 반지름 (원형 고정)"></mm-token>
+    <mm-token name="--radio-color-checked" default="var(--color-primary)" description="선택 상태 배경·테두리 색상"></mm-token>
+  </mm-component-tokens>
+
   <mm-component-anatomy
     parts='[
       "컨트롤(인디케이터) — 선택 여부를 나타내는 원형 버튼입니다.",

@@ -4,6 +4,13 @@ export const tooltipStyles = css`
   :host {
     display: inline-flex;
     position: relative;
+
+    --tooltip-max-width: 320px;
+    --tooltip-padding: 0.5rem var(--space-3);
+    --tooltip-radius: var(--radius);
+    --tooltip-color: var(--color-background-strong);
+    --tooltip-text-color: var(--color-foreground-on-solid);
+    --tooltip-shadow: var(--shadow);
   }
 
   .tooltip {
@@ -21,12 +28,12 @@ export const tooltipStyles = css`
     opacity: 0;
     visibility: hidden;
     width: max-content;
-    max-width: 320px;
-    padding: 0.5rem var(--space-3);
-    border-radius: var(--radius);
-    background: var(--color-background-strong);
-    box-shadow: var(--shadow);
-    color: var(--color-foreground-on-solid);
+    max-width: var(--tooltip-max-width);
+    padding: var(--tooltip-padding);
+    border-radius: var(--tooltip-radius);
+    background: var(--tooltip-color);
+    box-shadow: var(--tooltip-shadow);
+    color: var(--tooltip-text-color);
     position: absolute;
     left: 0;
     top: calc(100% + var(--space-1));

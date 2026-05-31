@@ -18,7 +18,7 @@ class Input extends LitElement {
   @state() private hasSuffixSlot = false
   @state() private hasLinkSlot = false
 
-  static styles = [textfieldStyles]
+  static styles = textfieldStyles
 
   private handleSlotChange(kind: 'prefix' | 'suffix' | 'link', event: Event) {
     const slot = event.target as HTMLSlotElement

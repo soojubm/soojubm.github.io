@@ -38,18 +38,23 @@ export const sizeStyles = mapToStyles(SIZES, 'size', 'surface')
 export const styles = css`
   :host {
     display: block;
+    --surface-height: auto;
+    --surface-padding: var(--space-4);
+    --surface-border: var(--border);
+    --surface-radius: var(--radius);
+    --surface-color: var(--color-background);
   }
 
   .surface {
-    height: var(--surface-height, auto);
+    height: var(--surface-height);
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding: var(--space-4);
-    border: var(--border);
-    border-radius: var(--radius);
+    padding: var(--surface-padding);
+    border: var(--surface-border);
+    border-radius: var(--surface-radius);
     box-sizing: border-box;
-    background: var(--color-background);
+    background: var(--surface-color);
     position: relative;
     z-index: 1;
     transition: box-shadow 0.2s ease-in-out;

@@ -51,41 +51,13 @@
 
         <!-- FIXME fullwidth doesn't work -->
         <!-- <mm-button variant="tertiary">찜 reverse</mm-button> -->
-        <div
-          class="counter js-counter"
-          style="display: flex; align-items: center; max-width: 10rem; gap: var(--space-2)"
-        >
-          <label for="numberfield" style="position: absolute; opacity: 0">
-            레이블 라이트하우스용
-          </label>
-          <mm-textfield value="20">
-            <mm-icon-button
-              slot="prefix"
-              variant="navigator"
-              size="small"
-              icon="minus"
-              class="js-counter-decrement"
-              aria-controls="numberfield"
-            ></mm-icon-button>
-            <mm-icon-button
-              slot="suffix"
-              variant="navigator"
-              icon="plus"
-              class="js-counter-increment"
-              tabindex="-1"
-            >
-            </mm-icon-button>
-          </mm-textfield>
-          <!-- <input
-            class="counter-input js-counter-input js-number-input"
-            type="number"
-            name="counter1"
-            id="numberfield"
-            min="5"
-            max="20"
-            value="0"
-          /> -->
-        </div>
+        <mm-number-input
+          value="1"
+          min="1"
+          max="99"
+          style="max-width: 10rem"
+          label="수량"
+        ></mm-number-input>
         <!-- <mm-row justifyContent="space-between">
           <mm-text size="14" weight="bold">총 상품금액</mm-text>
           <mm-text size="18">₩ 163,000</mm-text>

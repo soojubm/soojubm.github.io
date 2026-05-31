@@ -23,6 +23,16 @@ export class FilterButton extends LitElement {
     css`
       :host {
         display: inline-flex;
+
+        --filter-button-selected-color: var(--selection-background);
+        --filter-button-selected-border-color: var(--selection-indicator-color);
+        --filter-button-selected-text-color: var(--selection-foreground);
+      }
+
+      :host([selected]) mm-button {
+        --button-checked-color: var(--filter-button-selected-color);
+        --button-checked-border-color: var(--filter-button-selected-border-color);
+        --button-checked-text-color: var(--filter-button-selected-text-color);
       }
     `,
   ]

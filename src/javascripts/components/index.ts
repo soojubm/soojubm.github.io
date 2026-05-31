@@ -1,4 +1,3 @@
-// 이 코드는 “값을 가져오기 위한 import”가 아니라 “부작용(side-effect)을 실행시키기 위한 import”다.
 import '../../components/icon/icon'
 
 import '../../components/link/link'
@@ -50,61 +49,4 @@ import '../../components/domains'
 import '../../components/spinner'
 import '../../components/spinner/typing-indicator'
 import '../../components/tabs'
-
-// 👉 “이 파일은 module이다”라고 명시
-
-// 효과:
-
-// TS에서 global script로 처리되는 것 방지
-// side-effect entry 파일로 안정화
 export {}
-
-export function defineCustomElement() {
-  return
-}
-
-// <script>
-// const text = document.createTextNode(`${Math.random()}`);
-// document.querySelector('x-component').appendChild(text);
-
-// setInterval(() => {
-//   // update text node (no slotchange update)
-//   text.data = `${Math.random()}`;
-
-//   // update text content (triggers slotchange update)
-//   document.querySelector('x-component').textContent = `${Math.random()}`;
-
-//   // change the DOM structure (triggers slotchange update)
-//   document.querySelector('x-component').innerHTML = `<span>${Math.random()}</span>`;
-// }, 1000);
-// </script>
-
-// <script>
-// setInterval(() => {
-//   // update text content
-//   document.querySelector('x-component').textContent = `${Math.random()}`;
-
-//   // change the DOM structure
-//   document.querySelector('x-component').innerHTML = `<span>${Math.random()}</span>`;
-// }, 1000);
-
-// 이벤트가 발생하지 않음
-// const text = document.createTextNode(`${Math.random()}`);
-// document.querySelector('x-component').appendChild(text);
-// </script>
-
-// const template = document.createElement('template')
-// template.innerHTML = `
-// <div class="inner-template">
-//   <slot></slot>
-// </div>`
-
-// class XComponent extends HTMLElement {
-//   constructor() {
-//     super()
-//     this.attachShadow({ mode: 'open' })
-//     this.shadowRoot.appendChild(template.content.cloneNode(true))
-
-//     this.shadowRoot.addEventListener('slotchange', event => console.log(event))
-//   }
-// }

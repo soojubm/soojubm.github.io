@@ -5,7 +5,7 @@ import { resultStyles } from './result.styles'
 
 @customElement('mm-result')
 class Result extends LitElement {
-  @property({ type: String, attribute: 'avatarIcon' }) avatarIcon = ''
+  @property({ type: String, attribute: 'avataricon' }) avatarIcon = ''
   @property({ type: String, attribute: 'avatar-icon' }) avatarIconAlias = ''
   @property({ type: String }) title = ''
   @property({ type: String }) description = ''

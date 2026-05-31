@@ -1,7 +1,6 @@
-// textarea.ts (부모 컴포넌트)
-import { LitElement, html } from 'lit'
+import { LitElement, html, css } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
-import { textfieldStyles } from './textfield.styles'
+import { inputStyles } from './input.styles'
 
 let uniqueIdCounter = 0
 
@@ -19,15 +18,39 @@ export class Textarea extends LitElement {
 
   @state() protected _textareaId = `mm-textarea-${uniqueIdCounter++}`
 
-  static styles = [textfieldStyles]
+  static styles = [
+    inputStyles,
+    css`
+      p {
+        margin: 0;
+      }
 
-  // 👇 자식이 오버라이드할 수 있도록 Getter와 메서드로 분리
+      label {
+        display: block;
+        line-height: var(--size-small);
+      }
+
+      label small {
+        margin: 0 0 0 var(--space-1);
+        color: var(--color-foreground-light);
+      }
+
+      .textfield {
+        position: relative;
+      }
+
+      .textfield-helper {
+        margin: var(--space-1) 0 var(--space-1);
+      }
+    `,
+  ]
+
   protected get textareaClasses() {
     return 'reset-input textfield-input'
   }
 
   protected get textareaRows() {
-    return 3 // 기본 textarea는 3줄
+    return 3
   }
 
   protected _onInput(event: InputEvent) {
@@ -36,9 +59,7 @@ export class Textarea extends LitElement {
     this._dispatchInputEvent(target.value)
   }
 
-  protected _onKeyDown(event: KeyboardEvent) {
-    // 기본 컴포넌트에서는 엔터키 특수 기능 없음 (기본 개행)
-  }
+  protected _onKeyDown(_event: KeyboardEvent) {}
 
   private _dispatchInputEvent(value: string) {
     this.dispatchEvent(
@@ -50,13 +71,11 @@ export class Textarea extends LitElement {
     )
   }
 
-  // 👇 핵심: <textarea> 마크업과 속성 바인딩을 자식과 공유하기 위해 메서드로 추출
   protected renderTextarea() {
     const helperId = `${this._textareaId}-helper`
     return html`
       <textarea
         id="${this._textareaId}"
-        class="${this.textareaClasses}"
         rows="${this.textareaRows}"
         .value="${this.value}"
         name="${this.name}"
@@ -72,11 +91,11 @@ export class Textarea extends LitElement {
 
   render() {
     return html`
-      <div class="textfield ${this.isInvalid ? 'is-invalid' : ''}" data-label="${this.hiddenLabel}">
+      <div class="textfield" ?data-invalid="${this.isInvalid}" data-label="${this.hiddenLabel}">
         ${this.label
-          ? html`<label class="textfield-label" for="${this._textareaId}"
-              >${this.label}${this.isOptional ? html`<small>선택입력</small>` : ''}</label
-            >`
+          ? html`<label for="${this._textareaId}">
+              ${this.label}${this.isOptional ? html`<small>선택입력</small>` : ''}
+            </label>`
           : ''}
         ${this.renderTextarea()}
         ${this.helper

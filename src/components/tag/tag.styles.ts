@@ -121,20 +121,25 @@ const toneCss = Object.entries(tagToneStyles)
 export const tagStyles = css`
   :host {
     display: inline-flex;
+    --tag-size: var(--size-small);
+    --tag-padding-inline: var(--space-2);
+    --tag-gap: var(--space-1);
+    --tag-radius: var(--radius);
+    --tag-font-size: var(--font-size-12);
   }
 
   span,
   time {
     display: inline-flex;
     align-items: center;
-    gap: var(--space-1);
-    min-height: var(--size-small);
-    padding-inline: var(--space-2);
-    border-radius: var(--radius);
+    gap: var(--tag-gap);
+    min-height: var(--tag-size);
+    padding-inline: var(--tag-padding-inline);
+    border-radius: var(--tag-radius);
     border: 1px solid transparent;
     box-sizing: border-box;
     white-space: nowrap;
-    font-size: var(--font-size-12);
+    font-size: var(--tag-font-size);
     font-weight: var(--font-weight);
     line-height: 1;
   }

@@ -23,6 +23,18 @@
     <mm-prop name="change" type="CustomEvent detail: selected, value" kind="event"></mm-prop>
   </mm-component-props>
 
+  <mm-component-tokens>
+    <mm-token name="--toggle-size" default="var(--size-medium)" description="버튼 최소 높이"></mm-token>
+    <mm-token name="--toggle-padding-inline" default="var(--space-3)" description="좌우 내부 여백"></mm-token>
+    <mm-token name="--toggle-color" default="var(--color-background)" description="기본 배경색"></mm-token>
+    <mm-token name="--toggle-border" default="1px solid var(--color-border-strong)" description="테두리 스타일"></mm-token>
+    <mm-token name="--toggle-radius" default="var(--radius)" description="모서리 반지름"></mm-token>
+    <mm-token name="--toggle-text-color" default="var(--color-foreground)" description="기본 텍스트·아이콘 색상"></mm-token>
+    <mm-token name="--toggle-selected-color" default="var(--selection-background)" description="선택 상태 배경색"></mm-token>
+    <mm-token name="--toggle-selected-border-color" default="var(--selection-indicator-color)" description="선택 상태 테두리색"></mm-token>
+    <mm-token name="--toggle-selected-text-color" default="var(--selection-foreground)" description="선택 상태 텍스트·아이콘 색상"></mm-token>
+  </mm-component-tokens>
+
   <mm-component-guide>
     <mm-text-list
       texts='[

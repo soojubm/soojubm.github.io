@@ -23,6 +23,13 @@
     <mm-prop name="slot: text" type="HTMLElement" optional></mm-prop>
   </mm-component-props>
 
+  <mm-component-tokens>
+    <mm-token name="--separator-spacing" default="var(--space-4)" description="위아래 여백 (spacing=small일 때 var(--space-2)로 축소)"></mm-token>
+    <mm-token name="--separator-border" default="var(--border)" description="선 스타일"></mm-token>
+    <mm-token name="--separator-text-color" default="var(--color-foreground-light)" description="중앙 텍스트 색상"></mm-token>
+    <mm-token name="--separator-text-background" default="var(--color-background)" description="중앙 텍스트 배경색 (선을 가리기 위해 사용)"></mm-token>
+  </mm-component-tokens>
+
   <mm-component-guide>
     <section class="feature columns-2">
       <mm-feature

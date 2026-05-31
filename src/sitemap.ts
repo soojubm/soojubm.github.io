@@ -46,7 +46,18 @@ export const SITEMAP = [
       { id: 'toggle-button', name: 'toggle button' },
       { id: 'menuitem', name: 'menuItem' },
       { id: 'link', name: 'link' },
+    ],
+  },
+  {
+    type: 'category',
+    id: 'navigations',
+    title: 'Navigations',
+    icon: 'nav-arrow-right',
+    items: [
+      { id: 'top-bar', name: 'top bar' },
+      { id: 'bottom-bar', name: 'bottom bar' },
       { id: 'breadcrumb', name: 'breadcrumb', badge: '⚠️' },
+      { id: 'tabs', name: 'tabs', subDir: 'patterns' },
     ],
   },
   {
@@ -83,7 +94,6 @@ export const SITEMAP = [
     items: [
       // { id: 'layout', name: 'layout' },
       { id: 'result', name: 'result' },
-      { id: 'tabs', name: 'tabs' },
       { id: 'table', name: 'table', badge: '🚧' },
       { id: 'accordion', name: 'accordion' },
       { id: 'presentation', name: 'presentation' },

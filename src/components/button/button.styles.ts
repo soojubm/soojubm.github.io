@@ -15,46 +15,17 @@ export const buttonStyles = css`
 
   /* host에서 정의하면 커스텀 엘리먼트가 아닐 .class로 사용할 때 못 가져온다. */
   :host {
+    --button-size: var(--size-medium);
     --button-min-width: 5rem;
-
-    --button-size: var(--size-medium); // button-height
-
-    --button-padding-block: 0;
     --button-padding-inline: var(--space-3);
 
     --button-color: var(--color-background-subtle);
-
     --button-border: 1px solid var(--button-color);
     --button-radius: var(--radius);
 
-    /* CONTAINER */
-    /* 토큰의 카테고리로 네이밍되어 있네. */
-    --button-container-height: null;
-    --button-container-shape: null; // radius
-    --button-container-elevation: null; //
-    --button-container-shadow-color: null;
-    --button-container-color: null; // background가 아님
-
-    /* TEXT */
-    --button-text-color: 0;
+    --button-text-color: var(--color-foreground);
     --button-text-size: inherit;
     --button-text-weight: var(--font-weight-bold);
-
-    /* MD3 */
-    /* --button-container-height */
-    /* --button-label-size  */
-
-    --button-focus-border-color: null;
-
-    /* button-text-size 토큰이 없는 이유. 테마에 대응하기 위해 필요한 게 아님. */
-    /*
-  --button-color-background
-  --button-color-border
-  --button-color-text
-  --button-space-inset
-  --button-size-height
-  --button-size-min-width
-  */
   }
 
   :host(.primary) {
@@ -163,7 +134,6 @@ export const buttonStyles = css`
     font-size: var(--button-text-size);
     font-weight: var(--button-text-weight);
     color: var(--button-text-color);
-
     text-transform: capitalize;
 
     cursor: pointer;
@@ -215,7 +185,9 @@ export const buttonStyles = css`
   .button[aria-selected] {
   }
   .button[aria-checked='true'] {
-    border: 1px solid var(--color-background-strong);
+    border: 1px solid var(--button-checked-border-color, var(--color-background-strong));
+    background: var(--button-checked-color, var(--button-color));
+    color: var(--button-checked-text-color, var(--button-text-color));
   }
 
   /* states */

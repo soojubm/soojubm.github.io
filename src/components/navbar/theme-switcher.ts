@@ -1,14 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, state } from 'lit/decorators.js'
+import { getPreferredTheme, saveTheme, THEMES, type Theme } from '../../javascripts/theme'
 import { resetStyles } from '../shared/reset.styles'
-
-type Theme = 'light' | 'dark' | 'brutal'
-
-const THEMES: { value: Theme; icon: string; label: string }[] = [
-  { value: 'light',  icon: 'sun-light',    label: 'Day' },
-  { value: 'dark',   icon: 'half-moon',    label: 'Night' },
-  { value: 'brutal', icon: 'color-filter', label: 'Brutal' },
-]
 
 @customElement('mm-theme-switcher')
 export class ThemeSwitcher extends LitElement {
@@ -103,10 +96,7 @@ export class ThemeSwitcher extends LitElement {
 
   connectedCallback() {
     super.connectedCallback()
-    const saved = localStorage.getItem('theme') as Theme | null
-    if (saved && THEMES.some(t => t.value === saved)) {
-      this.theme = saved
-    }
+    this.theme = getPreferredTheme()
     document.addEventListener('click', this._handleOutsideClick)
   }
 
@@ -124,9 +114,7 @@ export class ThemeSwitcher extends LitElement {
   }
 
   private _select(theme: Theme) {
-    this.theme = theme
-    document.body.dataset.theme = theme
-    localStorage.setItem('theme', theme)
+    this.theme = saveTheme(theme)
     this.open = false
   }
 

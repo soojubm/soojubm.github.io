@@ -5,28 +5,43 @@ import { customElement, property, query } from 'lit/decorators.js'
 export class PromptInputTextarea extends LitElement {
   @property({ type: String }) placeholder = 'Ask me anything...'
   @property({ type: String }) value = ''
+  @property({ type: String }) name = ''
 
   @query('textarea') private _textarea!: HTMLTextAreaElement
 
   static styles = css`
+    :host {
+      display: block;
+      --prompt-textarea-min-height: 24px;
+      --prompt-textarea-max-height: 200px;
+      --prompt-textarea-padding: 0;
+      --prompt-textarea-background: transparent;
+      --prompt-textarea-color: var(--color-foreground);
+      --prompt-textarea-placeholder-color: var(--color-foreground-light);
+      --prompt-textarea-font-size: inherit;
+      --prompt-textarea-line-height: 1.5;
+    }
+
     textarea {
       width: 100%;
-      min-height: 24px;
-      max-height: 200px;
-      padding: 0;
+      min-height: var(--prompt-textarea-min-height);
+      max-height: var(--prompt-textarea-max-height);
+      padding: var(--prompt-textarea-padding);
       margin: 0;
+      box-sizing: border-box;
       border: none;
       outline: none;
-      background: transparent;
+      background: var(--prompt-textarea-background);
       resize: none;
       font-family: inherit;
-      font-size: 15px;
-      line-height: 1.5;
-      color: #09090b;
+      font-size: var(--prompt-textarea-font-size);
+      line-height: var(--prompt-textarea-line-height);
+      color: var(--prompt-textarea-color);
       overflow-y: auto;
     }
+
     textarea::placeholder {
-      color: #a1a1aa;
+      color: var(--prompt-textarea-placeholder-color);
     }
   `
 
@@ -76,6 +91,7 @@ export class PromptInputTextarea extends LitElement {
     return html`
       <textarea
         .value="${this.value}"
+        name="${this.name}"
         placeholder="${this.placeholder}"
         rows="1"
         @input="${this._onInput}"

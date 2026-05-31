@@ -1,0 +1,3 @@
+import './comment-item'
+
+export {}

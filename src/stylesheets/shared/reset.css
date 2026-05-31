@@ -171,24 +171,11 @@ q:before {
 }
 
 table {
-  --table-radius: null;
-
-  --table-space-top: null;
-  --table-space-bottom: null;
-
   --table-lineheight: 1.6;
-
-  --table-border: 0;
-  --table-border-light: 1px solid #dde0e3;
-
-  --table-head-background: #f2f2f5;
-
-  --table-row-border: null;
-
+  --table-row-border: var(--border);
   --table-cell-padding: var(--space-2) 0;
   --table-cell-background: var(--color-background);
   --table-cell-background-hover: var(--color-background-subtle);
-  --table-cell-background-selected: null;
 
   width: 100%;
   border-collapse: collapse;
@@ -203,7 +190,7 @@ table {
   border-collapse: collapse;
   table-layout: fixed;
 
-  background: #fff;
+  background: var(--table-cell-background);
 
   --col-checkbox: 32px;
   --col-id: 80;
@@ -226,7 +213,7 @@ table tbody {
 }
 table tbody tr {
   /* border:var(--border); */
-  border-bottom: var(--border);
+  border-bottom: var(--table-row-border);
   line-height: var(--table-lineheight);
   position: relative;
 }

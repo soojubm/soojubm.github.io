@@ -1,8 +1,7 @@
 <main class="page">
   <mm-page-header
     title="Avatar"
-    description="사용자나 회사 등 개체를 대표하는 시각 정보입니다. 정보 더미의 주체로서 인접한 정보
-  더미 중 최상위 위계를 갖습니다."
+    description="사용자나 회사 등 개체를 대표하는 시각 정보입니다. 정보 더미의 주체로서 인접한 정보 더미 중 최상위 위계를 갖습니다."
   ></mm-page-header>
 
   <mm-component-example>
@@ -22,23 +21,28 @@
   </mm-component-example>
 
   <mm-component-props>
-    <mm-prop name="src" type="string"></mm-prop>
-    <mm-prop name="icon" type="string"></mm-prop>
+    <mm-prop name="src" type="string" optional></mm-prop>
+    <mm-prop name="icon" type="string" optional></mm-prop>
     <mm-prop name="size" type="'huge' | 'large' | 'medium' | 'small' = 'medium'"></mm-prop>
     <mm-prop name="variant" type="'primary' | 'secondary' | 'tertiary' = 'primary'"></mm-prop>
     <mm-prop name="shape" type="'circle' | 'square' = 'square'"></mm-prop>
   </mm-component-props>
 
+  <mm-component-tokens>
+    <mm-token name="--avatar-size" default="var(--size-medium)" description="아바타 너비·높이"></mm-token>
+    <mm-token name="--avatar-background-color" default="var(--color-background-subtle)" description="배경색"></mm-token>
+    <mm-token name="--avatar-border" default="var(--border-stronger)" description="테두리 스타일"></mm-token>
+    <mm-token name="--avatar-radius" default="var(--radius)" description="모서리 반지름"></mm-token>
+  </mm-component-tokens>
+
   <mm-component-anatomy
     parts='[
-      "컨테이너 — 원형/사각형 형태와 크기·배경(variant)을 정의합니다.",
-      "콘텐츠 — 이미지, 아이콘, 이니셜 중 하나를 우선순위에 따라 표시합니다."
+      "컨테이너 — variant·size로 형태와 크기·배경을 정의합니다.",
+      "콘텐츠 — 이미지 > 아이콘 > 이니셜 > 기본 아이콘 순서로 폴백합니다."
     ]'
   >
     <div style="position: relative; display: inline-block">
       <mm-avatar size="huge" variant="secondary"></mm-avatar>
-
-      <!-- 번호 마커 -->
       <span style="position: absolute; left: -1.75rem; top: 50%; transform: translateY(-50%); display: inline-flex; align-items: center; justify-content: center; width: 1.25rem; height: 1.25rem; border-radius: 50%; background: var(--color-foreground); color: var(--color-background); font-size: var(--font-size-12); font-weight: var(--font-weight-bold)">1</span>
       <span style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); display: inline-flex; align-items: center; justify-content: center; width: 1.25rem; height: 1.25rem; border-radius: 50%; background: var(--color-foreground); color: var(--color-background); font-size: var(--font-size-12); font-weight: var(--font-weight-bold)">2</span>
     </div>
@@ -47,89 +51,37 @@
   <mm-component-guide>
     <section class="feature columns-2">
       <mm-feature
-        icon="cursor-pointer"
+        icon="profile-circle"
         titleText="Representative"
         description="사용자, 브랜드, 혹은 특정 객체를 시각적으로 대변합니다. 이미지 프로필을 최우선으로 보여주며, 이미지가 없을 경우 이름의 이니셜이나 기본 아이콘으로 대체(Fallback)하여 고유의 정체성을 유지합니다."
-      >
-      </mm-feature>
+      ></mm-feature>
       <mm-feature
-        icon="cursor-pointer"
+        icon="info-empty"
         titleText="Informational"
         description="객체의 고유 데이터(식별 정보)와 유기적인 메타 데이터(상태 정보)를 결합하여, 화면 내에서 하나의 독립된 정보 노출 단위로 기능합니다."
-      >
-      </mm-feature>
-    </mm-component-guide>
+      ></mm-feature>
+    </section>
+    <mm-text-list
+      texts='[
+        "이미지가 없을 때 이니셜·아이콘·기본 아이콘 순으로 폴백합니다. alt 텍스트 또는 aria-label을 반드시 제공하세요.",
+        "shape=circle은 사람(사용자)을 나타낼 때, square는 브랜드·조직·콘텐츠에 사용합니다.",
+        "variant=secondary는 배경과 구분이 필요한 컨텍스트(흰 배경 위 흰 이미지 등)에서 사용합니다.",
+        "size는 인접한 텍스트 위계와 맞춥니다. 18px 본문 옆에는 medium, 섹션 헤더 옆에는 large를 권장합니다.",
+        "컴포넌트 토큰(--avatar-size 등)으로 특정 컨텍스트에서 크기·색상을 재정의할 수 있습니다."
+      ]'
+    ></mm-text-list>
+  </mm-component-guide>
 
-    <!-- React 코드 -->
-    <!-- <section class="example"></section>
-
-    <script type="text/babel">
-      function Button({ label }) {
-        return <button style={{ padding: '8px 16px', borderRadius: '8px' }}>{label}</button>
-      }
-
-      function Card({ title, content }) {
-        return (
-          <div style={{ border: '1px solid #ddd', padding: '16px', borderRadius: '12px' }}>
-            <h3>{title}</h3>
-            <p>{content}</p>
-          </div>
-        )
-      }
-      ReactDOM.createRoot(document.getElementById('example')).render(
-        <>
-          <Card title="가이드 카드" content="이것은 React 컴포넌트 가이드 예시입니다." />
-          <Button label="가이드 버튼" />,
-        </>,
-      )
-    </script> -->
-  </section>
-
-  <mm-component-section title="AvatarFallback" description="">
+  <mm-component-section title="Fallback" description="src·icon이 없을 때 슬롯 콘텐츠 → 기본 아이콘 순으로 표시됩니다.">
     <mm-group>
       <mm-avatar size="medium">MM</mm-avatar>
       <mm-avatar size="medium" icon="profile-circle"></mm-avatar>
+      <mm-avatar size="medium"></mm-avatar>
     </mm-group>
   </mm-component-section>
 
-  <mm-component-section title="AvatarGroup" description="maximum avatar length 3">
-    <mm-group variant="avatar">
-      <mm-avatar size="medium" src="/src/images/springsteen.jpg"></mm-avatar>
-      <mm-avatar size="medium" src="/src/images/springsteen.jpg"></mm-avatar>
-      <mm-avatar size="medium" src="/src/images/springsteen.jpg"></mm-avatar>
-    </mm-group>
+  <mm-component-section title="AvatarGroup" description="최대 3개를 겹쳐 표시하고 초과 인원은 숫자로 대체합니다.">
+    <mm-avatar-group avatars='["", "", "", ""]' label="수줍이 외 3명"></mm-avatar-group>
   </mm-component-section>
 
-  <!-- <div>
-    <div style="display: flex; gap: 1rem">
-      <mm-avatar size="huge" variant="secondary"></mm-avatar>
-      <div>
-        <div>
-          <mm-text size="14" color="var(--color-foreground-light)">Top User</mm-text>
-          <mm-text size="18">수줍이</mm-text>
-        </div>
-        <div style="margin-top: var(--space-3)">
-          <mm-text size="14" color="var(--color-foreground-light)">Daily Purchase</mm-text>
-          <mm-text size="18">10 Items</mm-text>
-        </div>
-      </div>
-    </div>
-    <mm-separator></mm-separator>
-    <div style="display: flex; gap: var(--space-2)">
-      <mm-keyvalue key="Total New Users" value="5.9K" alignment="vertical"></mm-keyvalue>
-      <mm-tag>8.2% 상승</mm-tag>
-    </div>
-    <mm-surface variant="elevated" size="small">
-      <mm-group variant="avatar">
-        <mm-avatar size="small"></mm-avatar>
-        <mm-avatar size="small"></mm-avatar>
-        <mm-avatar size="small"></mm-avatar>
-        <mm-text style="margin-left: var(--space-2)"> Followed by 수줍이 외 4명 </mm-text>
-      </mm-group>
-    </mm-surface>
-    
-    <mm-text class="mutiual"> 내가 팔로우하는 사용자 중에는 팔로워가 없습니다. (twitter) </mm-text>
-      <mm-surface variant="tile" size="small">
-    <mm-text>🥺 수줍이님을 팔로우하고 있는 친구가 없습니다.</mm-text>
-  </div> -->
 </main>

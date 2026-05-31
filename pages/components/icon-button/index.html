@@ -35,6 +35,13 @@
     <mm-prop name="disabled" type="boolean" optional></mm-prop>
   </mm-component-props>
 
+  <mm-component-tokens>
+    <mm-token name="--button-size" default="var(--size-medium)" description="버튼 너비·높이"></mm-token>
+    <mm-token name="--button-color" default="var(--color-background-subtle)" description="배경색"></mm-token>
+    <mm-token name="--button-radius" default="var(--radius)" description="모서리 반지름"></mm-token>
+    <mm-token name="--button-text-color" default="var(--color-foreground)" description="아이콘 색상"></mm-token>
+  </mm-component-tokens>
+
   <mm-component-anatomy
     parts='[
       "컨테이너 — variant·size로 형태와 클릭 영역을 정의합니다.",

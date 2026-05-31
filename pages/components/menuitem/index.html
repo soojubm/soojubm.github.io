@@ -136,6 +136,14 @@
     <mm-prop name="slot: avatar" type="HTMLElement" optional></mm-prop>
   </mm-component-props>
 
+  <mm-component-tokens>
+    <mm-token name="--menuitem-size" default="var(--size-medium)" description="행 최소 높이"></mm-token>
+    <mm-token name="--menuitem-gap" default="var(--space-2)" description="아이콘·콘텐츠·액션 사이 간격"></mm-token>
+    <mm-token name="--menuitem-radius" default="var(--radius)" description="모서리 반지름"></mm-token>
+    <mm-token name="--menuitem-color-hover" default="var(--color-background-subtle)" description="hover·현재 페이지 배경색"></mm-token>
+    <mm-token name="--menuitem-color-danger" default="#d93025" description="danger tone 텍스트·아이콘 색상"></mm-token>
+  </mm-component-tokens>
+
   <!-- "flutter. ListView. 스크롤 가능한 뷰 컨테이너. 동적으로 데이터를 랜더링하는 책임까지 포함되어
   있다. itemBuilder: (context, index) {} / controller: ScrollController(). ListView - SwitchListTile
   / RadioListTile / 클릭 영역을 타일 전체로 지정하고 있다. 2가지 이상의 액션이 포함되어야 할 때는?",

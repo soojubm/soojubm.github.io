@@ -1,14 +1,21 @@
 import { css } from 'lit'
 
 export const noticeStyles = css`
-  .notice {
+  :host {
+    --notice-gap: var(--space-2);
+    --notice-padding: var(--space-3);
+    --notice-radius: var(--radius);
+    --notice-border: var(--border);
     --notice-text-color: var(--color-foreground);
+  }
+
+  .notice {
     display: flex;
     align-items: center;
-    gap: var(--space-2);
-    padding: var(--space-3);
-    border: var(--border);
-    border-radius: var(--radius);
+    gap: var(--notice-gap);
+    padding: var(--notice-padding);
+    border: var(--notice-border);
+    border-radius: var(--notice-radius);
     color: var(--notice-text-color);
     position: relative;
   }

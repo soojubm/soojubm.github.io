@@ -10,16 +10,24 @@ export class PromptInput extends LitElement {
     :host {
       display: flex;
       flex-direction: column;
-      border: 1px solid #e4e4e7; /* 자일리톨 스타일의 연한 테두리 */
-      border-radius: 12px;
-      padding: 12px;
-      background-color: #ffffff;
+      --prompt-input-border-color: var(--color-border, #e4e4e7);
+      --prompt-input-border-color-focus: var(--color-foreground, #09090b);
+      --prompt-input-radius: 12px;
+      --prompt-input-padding: 12px;
+      --prompt-input-background: var(--color-background);
+      border: 1px solid var(--prompt-input-border-color);
+      border-radius: var(--prompt-input-radius);
+      padding: var(--prompt-input-padding);
+      background-color: var(--prompt-input-background);
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
       transition: border-color 0.2s, box-shadow 0.2s;
     }
     :host(:focus-within) {
-      border-color: #09090b; /* 포커스 시 다크 테두리 */
-      box-shadow: 0 0 0 1px #09090b;
+      border-color: var(--prompt-input-border-color-focus);
+      box-shadow: 0 0 0 1px var(--prompt-input-border-color-focus);
+    }
+    ::slotted(mm-textfield-action-bar) {
+      padding-top: 8px;
     }
   `
 

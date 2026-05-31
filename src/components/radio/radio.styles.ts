@@ -34,7 +34,7 @@ export const radioStyles = css`
     --radio-color: var(--color-border-strong);
     --radio-border: 1px solid var(--radio-color);
     --radio-radius: 50%;
-    --radio-inset: var(--space-2);
+    --radio-color-checked: var(--color-primary);
     position: relative;
   }
 
@@ -64,8 +64,8 @@ export const radioStyles = css`
   }
 
   input:checked + label > span:first-child {
-    background: var(--color-primary);
-    border-color: var(--color-primary);
+    background: var(--radio-color-checked);
+    border-color: var(--radio-color-checked);
     animation: radiomark var(--animation-input, 0.2s) ease-out;
     box-shadow: 0 0 0 4px var(--color-background) inset;
   }

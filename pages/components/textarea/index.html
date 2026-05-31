@@ -27,73 +27,33 @@
     <mm-prop name="input" type="CustomEvent detail: value" kind="event"></mm-prop>
   </mm-component-props>
 
+  <mm-component-tokens>
+    <mm-token name="--textfield-height" default="var(--size-large)" description="입력 영역 최소 높이 (textarea는 자동 확장)"></mm-token>
+    <mm-token name="--textfield-background-color" default="var(--color-background-subtle)" description="배경색"></mm-token>
+    <mm-token name="--textfield-border" default="var(--border)" description="테두리 스타일"></mm-token>
+    <mm-token name="--textfield-radius" default="var(--radius)" description="모서리 반지름"></mm-token>
+    <mm-token name="--textfield-color-border-hover" default="var(--gray400)" description="호버 상태 테두리 색상"></mm-token>
+    <mm-token name="--textfield-text-color" default="var(--color-foreground)" description="입력 텍스트 색상"></mm-token>
+  </mm-component-tokens>
+
   <!-- <mm-component-guide></mm-component-guide> -->
 
-  <mm-component-section title="Comment Input" description="TODO"> </mm-component-section>
+  <mm-component-section title="Comment Input" description="댓글 작성 입력 패턴">
+    <div style="max-width: 480px">
+      <mm-comment-input
+        placeholder="무슨 생각을 하고 계신가요?"
+        submit-label="댓글 게시"
+      ></mm-comment-input>
+    </div>
+  </mm-component-section>
   <mm-component-section title="Prompt Input" description="TODO">
-    <div>
-      <mm-prompt-input id="promptInput" class="w-full max-w-(--breakpoint-md)">
+    <div style="max-width: 480px">
+      <mm-prompt-input>
         <mm-prompt-input-textarea placeholder="Ask me anything..."></mm-prompt-input-textarea>
-
-        <mm-prompt-input-actions>
-          <button type="button" id="sendBtn" class="send-button">⬆️</button>
-        </mm-prompt-input-actions>
+        <mm-textfield-action-bar>
+          <mm-icon-button icon="send-diagonal" aria-label="전송"></mm-icon-button>
+        </mm-textfield-action-bar>
       </mm-prompt-input>
-
-      <script type="module">
-        const promptInput = document.getElementById('promptInput')
-        const sendBtn = document.getElementById('sendBtn')
-
-        // 상태 관리 변수
-        let isLoading = false
-
-        // 상태를 UI에 반영하는 함수
-        function setLoading(loadingState) {
-          isLoading = loadingState
-
-          if (isLoading) {
-            promptInput.setAttribute('is-loading', '') // 부모 컴포넌트에 속성 반영
-            sendBtn.textContent = '🛑' // 버튼 아이콘 변경
-          } else {
-            promptInput.removeAttribute('is-loading')
-            sendBtn.textContent = '⬆️'
-          }
-        }
-
-        // 값 변경 감지 (커스텀 이벤트 수신)
-        promptInput.addEventListener('value-change', event => {
-          console.log('입력 중인 값:', event.detail.value)
-        })
-
-        // 엔터 전송 감지 (커스텀 이벤트 수신)
-        promptInput.addEventListener('submit', event => {
-          console.log('전송된 프롬프트:', event.detail.value)
-
-          // 로딩 상태 시뮬레이션
-          setLoading(true)
-          setTimeout(() => {
-            setLoading(false)
-            // 전송 완료 후 내부 textarea 비워주기
-            const textareaComponent = promptInput.querySelector('mm-prompt-input-textarea')
-            if (textareaComponent) textareaComponent.value = ''
-          }, 2000)
-        })
-
-        // 전송 버튼 클릭 시 컴포넌트에 submit 트리거 위임 혹은 직접 처리
-        sendBtn.addEventListener('click', () => {
-          if (isLoading) {
-            setLoading(false)
-          } else {
-            // 컴포넌트 내부 밸류를 읽어와서 submit 이벤트 수동 디스패치 가능
-            const currentVal = promptInput.value
-            if (currentVal.trim()) {
-              promptInput.dispatchEvent(
-                new CustomEvent('submit', { detail: { value: currentVal } }),
-              )
-            }
-          }
-        })
-      </script>
     </div>
   </mm-component-section>
 </main>

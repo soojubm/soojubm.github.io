@@ -18,18 +18,28 @@ export class ToggleButton extends LitElement {
     css`
       :host {
         display: inline-flex;
+
+        --toggle-size: var(--size-medium);
+        --toggle-padding-inline: var(--space-3);
+        --toggle-color: var(--color-background);
+        --toggle-border: 1px solid var(--color-border-strong);
+        --toggle-radius: var(--radius);
+        --toggle-text-color: var(--color-foreground);
+        --toggle-selected-color: var(--selection-background);
+        --toggle-selected-border-color: var(--selection-indicator-color);
+        --toggle-selected-text-color: var(--selection-foreground);
       }
 
       .toggle {
         display: inline-flex;
         align-items: center;
         gap: var(--space-2);
-        min-height: var(--size-medium);
-        padding: 0 var(--space-3);
-        border: 1px solid var(--color-border-strong);
-        border-radius: var(--radius);
-        background: var(--color-background);
-        color: var(--color-foreground);
+        min-height: var(--toggle-size);
+        padding: 0 var(--toggle-padding-inline);
+        border: var(--toggle-border);
+        border-radius: var(--toggle-radius);
+        background: var(--toggle-color);
+        color: var(--toggle-text-color);
         font: inherit;
         font-size: var(--font-size-14);
         cursor: pointer;
@@ -41,9 +51,9 @@ export class ToggleButton extends LitElement {
       }
 
       :host([selected]) .toggle {
-        background: var(--selection-background);
-        border-color: var(--selection-indicator-color);
-        color: var(--selection-foreground);
+        background: var(--toggle-selected-color);
+        border-color: var(--toggle-selected-border-color);
+        color: var(--toggle-selected-text-color);
       }
 
       :host([disabled]) .toggle {

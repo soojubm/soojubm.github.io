@@ -1,0 +1,35 @@
+<main class="page">
+  <mm-page-header
+    title="Top Bar"
+    description="화면 상단에서 현재 위치와 주요 내비게이션 액션을 제공합니다."
+  ></mm-page-header>
+
+  <mm-component-example>
+    <mm-surface variant="outlined" style="overflow: hidden">
+      <mm-top-bar label="상세 정보"></mm-top-bar>
+      <div style="padding: var(--space-4)">
+        <mm-text>기본 뒤로가기 내비게이션을 포함한 상단 바입니다.</mm-text>
+      </div>
+    </mm-surface>
+    <mm-separator></mm-separator>
+    <mm-surface variant="outlined" style="overflow: hidden">
+      <mm-top-bar nav="close" label="컬렉션에 추가">
+        <mm-button slot="action" variant="text">완료</mm-button>
+      </mm-top-bar>
+      <div style="padding: var(--space-4)">
+        <mm-text>닫기 액션과 보조 액션을 함께 배치할 수 있습니다.</mm-text>
+      </div>
+    </mm-surface>
+  </mm-component-example>
+
+  <mm-component-props>
+    <mm-prop name="label" type="string"></mm-prop>
+    <mm-prop name="nav" type="'back' | 'close' | '' = 'back'" optional></mm-prop>
+    <mm-prop name="variant" type="string" optional></mm-prop>
+    <mm-prop name="slot='action'" type="HTMLElement" optional></mm-prop>
+  </mm-component-props>
+
+  <mm-component-tokens>
+    <mm-token name="--top-bar-height" default="3.5rem" description="상단 바 높이"></mm-token>
+  </mm-component-tokens>
+</main>

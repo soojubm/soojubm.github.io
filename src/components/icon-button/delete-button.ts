@@ -4,7 +4,7 @@ import { iconButtonStyles } from '../button/icon-button.styles'
 
 /**
  * 아이템·데이터를 영구 삭제하는 파괴적 액션 버튼.
- * destructive — 빨간 아이콘, 호버 시 배경 강조
+ * destructive — 빨간 아이콘
  */
 @customElement('mm-delete-button')
 export class DeleteButton extends LitElement {
@@ -22,10 +22,6 @@ export class DeleteButton extends LitElement {
         background: transparent;
         color: var(--color-status-negative, #c0392b);
         border: none;
-      }
-      .icon-button[data-variant='destructive']:hover {
-        background-color: color-mix(in srgb, var(--color-status-negative, #c0392b) 10%, transparent);
-        border-color: transparent;
       }
     `,
   ]
