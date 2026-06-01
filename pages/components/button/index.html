@@ -263,7 +263,7 @@
     title="ButtonGroup"
     description="2개 이상의 버튼을 묶는 레이아웃 컨테이너. 방향, 정렬, 간격, flex 분배를 prop으로 제어합니다."
   >
-    <div style="display: flex; flex-direction: column; gap: var(--space-4)">
+    <mm-flex direction="column" gap="4" nowrap>
       <mm-button-group>
         <mm-button variant="tertiary">취소</mm-button>
         <mm-button variant="primary">저장</mm-button>
@@ -283,7 +283,7 @@
         <mm-button variant="primary" size="large">지금 시작하기</mm-button>
         <mm-button variant="text">더 알아보기</mm-button>
       </mm-button-group>
-    </div>
+    </mm-flex>
   </mm-component-section> -->
 
   <mm-component-section
@@ -299,7 +299,7 @@
           <dd>{label: string, onClick: () => void}</dd>
         </dl>
       </mm-paragraph-group>
-      <div style="display: flex; flex-direction: column; gap: 1.5rem">
+      <mm-flex direction="column" gap="1.5rem" nowrap>
         <mm-button-group>
           <mm-button variant="tertiary" size="large">취소</mm-button>
           <mm-button variant="primary" size="large">저장</mm-button>
@@ -316,7 +316,7 @@
           <mm-button variant="primary" size="large" href="#components">지금 가입하기</mm-button>
           <mm-button variant="text" size="large">더 알아보기</mm-button>
         </mm-button-group>
-      </div>
+      </mm-flex>
       <mm-surface>
         <mm-text size="14" weight="bold">이 문서가 도움이 되었나요?</mm-text>
         <small title="17 out of 439 found this helpful"> 417명 중 349명이 도움을 받았어요. </small>
@@ -354,7 +354,7 @@
     title="FilterButton"
     description="콘텐츠 필터링을 위한 옵션 버튼. size=small의 mm-button을 합성하며 선택 시 체크 아이콘을 표시합니다. 그룹으로 묶어 단일 선택 또는 다중 선택을 지원합니다."
   >
-    <div style="display: flex; flex-direction: column; gap: var(--space-4)">
+    <mm-flex direction="column" gap="4" nowrap>
       <div>
         <mm-text size="14" weight="bold">Single selection (라디오형)</mm-text>
         <mm-filter-button-group mode="single" style="margin-top: var(--space-2)">
@@ -374,7 +374,7 @@
           <mm-filter-button value="music">음악</mm-filter-button>
         </mm-filter-button-group>
       </div>
-    </div>
+    </mm-flex>
     <mm-component-tokens>
       <mm-token
         name="--filter-button-selected-color"

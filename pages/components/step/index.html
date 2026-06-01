@@ -73,17 +73,17 @@
 
     <mm-separator></mm-separator>
     <div>
-      <div style="display: flex; align-items: center; height: 32px; gap: var(--space-3)">
+      <mm-flex align="center" gap="3" nowrap style="height: 32px">
         <mm-text size="18">01</mm-text>
         <mm-text size="14" weight="bold">Choose your platform</mm-text>
-      </div>
-      <div style="display: flex; align-items: center; height: 32px; gap: var(--space-3)">
+      </mm-flex>
+      <mm-flex align="center" gap="3" nowrap style="height: 32px">
         <mm-text size="18">02</mm-text>
         <mm-text size="14" weight="bold">Set color theme</mm-text>
-      </div>
+      </mm-flex>
     </div>
     <mm-separator></mm-separator>
-    <mm-group>
+    <mm-flex>
       <mm-menu-item-row>
         <mm-avatar slot="avatar" size="medium"></mm-avatar>
         <div slot="text">
@@ -98,7 +98,7 @@
           <mm-text size="14">UPLOAD 3D FILES</mm-text>
         </div>
       </mm-menu-item-row>
-    </mm-group>
+    </mm-flex>
   </mm-component-example>
 
   <mm-component-props>
@@ -216,11 +216,11 @@
         선언해야 하기 때문에 defalt / small을 defalt / large로 변경.", "add stack component. chip-group과 tag-group 제거하고 stack으로 통합.", "color gray600 삭제. 본문용으로 야외나 밝은 조명 아래서 가시성이 떨어짐.", "타임라인과 구분. 타임라인은 히스토리 맥락으로 스텝의 역순. 확장, 링크, indentation"]'></mm-text-list>
 
     <mm-surface flat="flat" size="medium">
-      <mm-group class="order-item-head">
+      <mm-flex class="order-item-head">
         <mm-tag class="order-item-head-type" style="width: var(--size-large)">포장</mm-tag>
         <mm-text as="time">2022. 12. 05. 15:32</ㅡtime>
         <b class="order-item-head-status" style="margin-left: auto">배달완료</b>
-      </mm-group>
+      </mm-flex>
       <div style="height: var(--space-3)"></div>
       <mm-menu-item-row>
         <mm-avatar slot="avatar" size="large"></mm-avatar>

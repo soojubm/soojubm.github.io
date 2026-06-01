@@ -5,19 +5,19 @@
   ></mm-page-header>
 
   <mm-component-example>
-    <mm-group variant="">
+    <mm-flex>
       <mm-avatar variant="primary" size="large" shape="circle"></mm-avatar>
       <mm-avatar variant="primary" size="large"></mm-avatar>
       <mm-avatar variant="secondary" size="large"></mm-avatar>
       <mm-avatar variant="tertiary" size="large"></mm-avatar>
-    </mm-group>
+    </mm-flex>
     <mm-separator></mm-separator>
-    <mm-group variant="">
+    <mm-flex>
       <mm-avatar size="huge" src="/src/images/springsteen.jpg"></mm-avatar>
       <mm-avatar size="large" src="/src/images/springsteen.jpg"></mm-avatar>
       <mm-avatar size="medium" src="/src/images/springsteen.jpg"></mm-avatar>
       <mm-avatar size="small" src="/src/images/springsteen.jpg"></mm-avatar>
-    </mm-group>
+    </mm-flex>
   </mm-component-example>
 
   <mm-component-props>
@@ -43,8 +43,21 @@
   >
     <div style="position: relative; display: inline-block">
       <mm-avatar size="huge" variant="secondary"></mm-avatar>
-      <mm-list-marker variant="number" value="1" style="position: absolute; left: -1.75rem; top: 50%; transform: translateY(-50%);"></mm-list-marker>
-      <mm-list-marker variant="number" value="2" style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);"></mm-list-marker>
+      <mm-list-marker
+        variant="number"
+        value="1"
+        style="position: absolute; left: -1.75rem; top: 50%; transform: translateY(-50%)"
+      ></mm-list-marker>
+      <mm-list-marker
+        variant="number"
+        value="2"
+        style="
+          position: absolute;
+          left: 50%;
+          top: calc(50% + 1.25rem);
+          transform: translate(-50%, -50%);
+        "
+      ></mm-list-marker>
     </div>
   </mm-component-anatomy>
 
@@ -76,11 +89,11 @@
     title="Fallback"
     description="src·icon이 없을 때 슬롯 콘텐츠 → 기본 아이콘 순으로 표시됩니다."
   >
-    <mm-group>
+    <mm-flex>
       <mm-avatar size="medium">MM</mm-avatar>
       <mm-avatar size="medium" icon="profile-circle"></mm-avatar>
       <mm-avatar size="medium"></mm-avatar>
-    </mm-group>
+    </mm-flex>
   </mm-component-section>
 
   <mm-component-section

@@ -51,7 +51,7 @@
 
   <mm-component-example>
     <div style="max-width: 400px">
-      <mm-group variant="form">
+      <mm-flex direction="column" gap="3">
         <mm-textfield placeholder="Placeholder"></mm-textfield>
         <mm-textfield placeholder="Disabled" disabled></mm-textfield>
         <mm-textfield
@@ -64,7 +64,7 @@
         ></mm-textfield>
         <mm-separator spacing="small"></mm-separator>
         <mm-textfield label="with label" placeholder="Label"></mm-textfield>
-      </mm-group>
+      </mm-flex>
     </div>
   </mm-component-example>
 
@@ -145,14 +145,14 @@
   </section>
 
   <section class="textbox" style="position: relative">
-        <mm-group
+        <mm-flex
           data-e="menu"
           class="textbox-toolbar"
           style="width: max-content; position: absolute; top: var(--space-1); left: var(--space-1)"
         >
           <mm-icon-button icon="bold" class="textbox-toolbar-bold"></mm-icon-button>
           <mm-icon-button icon="italic" class="textbox-toolbar-italic"></mm-icon-button>
-        </mm-group>
+        </mm-flex>
         <div
           class="textbox-view"
           role="textbox"
@@ -284,7 +284,7 @@
       </div>
 
       <br />
-      <mm-group variant="textfield">
+      <mm-flex>
         <div style="flex: 1">
           <mm-textfield type="date" name="date-start" label="체크인" placeholder="YYYY. MM. DD.">
             <mm-icon slot="suffix" name="calendar"></mm-icon>
@@ -295,20 +295,20 @@
             <mm-icon slot="suffix" name="calendar"></mm-icon>
           </mm-textfield>
         </div>
-      </mm-group>
+      </mm-flex>
       <br />
       <mm-surface>
-        <mm-group variant="textfield" style="width: 100%; flex-wrap: nowrap; align-items: flex-end">
+        <mm-flex nowrap align="end" style="width: 100%">
           <mm-textfield label="Length" placeholder="cm unit"></mm-textfield>
-          <div style="display: flex; align-items: center; height: var(--size-large)">
+          <mm-flex align="center" gap="0" nowrap style="height: var(--size-large)">
             <mm-icon name="xmark"></mm-icon>
-          </div>
+          </mm-flex>
           <mm-textfield label="Width" placeholder="x means"></mm-textfield>
-          <div style="display: flex; align-items: center; height: var(--size-large)">
+          <mm-flex align="center" gap="0" nowrap style="height: var(--size-large)">
             <mm-icon name="xmark"></mm-icon>
-          </div>
+          </mm-flex>
           <mm-textfield label="Height" placeholder="cm"></mm-textfield>
-        </mm-group>
+        </mm-flex>
       </mm-surface>
     </div>
 
@@ -379,7 +379,7 @@
     title="NumberInput"
     description="숫자 입력 필드. 수량, 가격, step/count 입력에 사용합니다."
   >
-    <div style="display: flex; flex-direction: column; gap: var(--space-3);">
+    <mm-flex direction="column" gap="3" nowrap>
       <mm-number-input
         label="수량"
         name="quantity"
@@ -399,14 +399,14 @@
       ></mm-number-input>
 
       <mm-number-input label="비활성" value="10" disabled></mm-number-input>
-    </div>
+    </mm-flex>
   </mm-component-section>
 
   <mm-component-section
     title="PasswordField"
     description="비밀번호 입력 필드. searchfield처럼 textfield를 확장하며, suffix에 reveal-button을 두어 입력값 노출을 토글합니다."
   >
-    <div style="display: flex; flex-direction: column; gap: var(--space-3); max-width: 400px">
+    <mm-flex direction="column" gap="3" nowrap style="max-width: 400px">
       <mm-passwordfield
         label="비밀번호"
         placeholder="비밀번호를 입력하세요"
@@ -416,7 +416,7 @@
       <mm-passwordfield label="비밀번호 확인" placeholder="6자리 이상"></mm-passwordfield>
 
       <mm-passwordfield label="비활성" value="secret123" disabled></mm-passwordfield>
-    </div>
+    </mm-flex>
   </mm-component-section>
 
   <mm-component-section title="Newsletter" description="TODO">

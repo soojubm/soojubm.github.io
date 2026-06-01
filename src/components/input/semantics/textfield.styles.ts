@@ -16,17 +16,14 @@ export const textfieldStyles = [
       margin: var(--space-1) 0 0;
     }
 
-    .textfield-affix {
+    .textfield-affix,
+    .textfield-suffix,
+    .textfield-prefix {
       display: inline-flex;
       align-items: center;
       justify-content: center;
+      min-width: var(--input-height);
       height: var(--input-height);
-      padding-inline: var(--input-padding);
-      flex: 0 0 auto;
-    }
-
-    .textfield-prefix {
-      width: var(--input-height);
     }
 
     [data-size='small'] {
@@ -40,17 +37,6 @@ export const textfieldStyles = [
 
     .searchfield input {
       padding: var(--space-2) 0;
-    }
-
-    .searchfield-prefix {
-      width: var(--input-height);
-    }
-
-    .searchfield-clear {
-      width: var(--input-height);
-    }
-
-    .number-input {
     }
 
     .number-input input {

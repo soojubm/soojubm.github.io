@@ -67,12 +67,6 @@ export class CommentItem extends LitElement {
       top: 0;
     }
 
-    .more {
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
-
     .menu {
       display: none;
       width: var(--comment-item-menu-width);
@@ -130,14 +124,23 @@ export class CommentItem extends LitElement {
   render() {
     return html`
       <article class="item">
-        <mm-user-row
-          label=${this.author}
-          description=${this.time}
-          avatar-src=${this.avatarSrc}
-          avatar-size="large"
-        ></mm-user-row>
+        <mm-user-row label=${this.author} description=${this.time} avatar-src=${this.avatarSrc}>
+          ${this.editable
+            ? html`
+                <mm-icon-button
+                  slot="trailing"
+                  variant="navigator"
+                  icon="more-vert"
+                  aria-label="댓글 메뉴"
+                  aria-haspopup="true"
+                  aria-expanded=${this._menuOpen ? 'true' : 'false'}
+                  @click=${this._toggleMenu}
+                ></mm-icon-button>
+              `
+            : ''}
+        </mm-user-row>
 
-        <mm-text size="14"><slot></slot></mm-text>
+        <slot></slot>
 
         ${this.replyLabel
           ? html`<button class="reply" @click=${() => this._emit('reply')}>
@@ -146,20 +149,10 @@ export class CommentItem extends LitElement {
           : ''}
         ${this.editable
           ? html`
-              <div class="more">
-                <mm-icon-button
-                  variant="navigator"
-                  icon="more-vert"
-                  aria-label="댓글 메뉴"
-                  aria-haspopup="true"
-                  aria-expanded=${this._menuOpen ? 'true' : 'false'}
-                  @click=${this._toggleMenu}
-                ></mm-icon-button>
-                <menu class="menu" data-open=${this._menuOpen ? 'true' : 'false'}>
-                  <button @click=${() => this._onMenuAction('edit')}>수정</button>
-                  <button @click=${() => this._onMenuAction('delete')}>삭제</button>
-                </menu>
-              </div>
+              <menu class="menu" data-open=${this._menuOpen ? 'true' : 'false'}>
+                <button @click=${() => this._onMenuAction('edit')}>수정</button>
+                <button @click=${() => this._onMenuAction('delete')}>삭제</button>
+              </menu>
             `
           : ''}
 

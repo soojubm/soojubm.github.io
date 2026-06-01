@@ -1,8 +1,8 @@
 <nav class="navbar js-navbar" role="navigation">
-  <div style="display: flex; gap: var(--space-2)">
+  <mm-flex gap="2" nowrap>
     <mm-hamburger-button aria-label="전체메뉴"></mm-hamburger-button>
     <a class="navbar-logo" href="./index.html"></a>
-  </div>
+  </mm-flex>
 
   <!-- main-menu / primary-menu / global-menu / navigation-menu / top-menu -->
   <!-- <div class="navbar-menu">
@@ -46,10 +46,10 @@
           <mm-separator></mm-separator>
           <mm-menu-item-row icon="log-out" label="로그아웃"></mm-menu-item-row>
           <mm-separator></mm-separator>
-          <mm-group style="margin-top: -0.25rem">
+          <mm-flex style="margin-top: -0.25rem">
             <mm-link variant="secondary" href="#">개인정보처리방침</mm-link>
             <mm-link variant="secondary" href="#">서비스 약관</mm-link>
-          </mm-group>
+          </mm-flex>
         </mm-surface>
       </div>
     </div>

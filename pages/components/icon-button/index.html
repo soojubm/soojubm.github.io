@@ -5,7 +5,7 @@
   ></mm-page-header>
 
   <mm-component-example>
-    <mm-group>
+    <mm-flex>
       <mm-icon-button
         variant="primary"
         icon="arrow-right"
@@ -32,31 +32,31 @@
         tooltip="위로"
         tooltip-align="center"
       ></mm-icon-button>
-    </mm-group>
+    </mm-flex>
     <mm-separator></mm-separator>
-    <div style="display: flex; align-items: center; gap: var(--space-2)">
+    <mm-flex align="center" gap="2" nowrap>
       <mm-icon-button
-        variant=""
+       
         icon="heart"
         tooltip="좋아요"
         tooltip-align="center"
       ></mm-icon-button>
       <mm-icon-button icon="user" tooltip="로그인" tooltip-align="center"></mm-icon-button>
       <mm-icon-button
-        variant=""
+       
         icon="star-solid"
         tooltip="즐겨찾기됨"
         tooltip-align="center"
       ></mm-icon-button>
       <mm-icon-button
-        variant=""
+       
         icon="star"
         tooltip="즐겨찾기"
         tooltip-align="center"
       ></mm-icon-button>
-    </div>
+    </mm-flex>
     <mm-separator></mm-separator>
-    <mm-group>
+    <mm-flex>
       <mm-icon-button
         variant="navigator"
         icon="arrow-left"
@@ -70,7 +70,7 @@
         tooltip="다음"
         tooltip-align="center"
       ></mm-icon-button>
-    </mm-group>
+    </mm-flex>
   </mm-component-example>
   <mm-component-props>
     <mm-prop name="icon" type="string"></mm-prop>
@@ -160,32 +160,32 @@
     title="PrevButton, NextButton"
     description="페이지·캐러셀·단계형 흐름에서 이전/다음 항목으로 이동합니다."
   >
-    <div style="display: flex; align-items: center; gap: var(--space-4)">
+    <mm-flex align="center" gap="4" nowrap>
       <mm-tooltip content="이전" align="center">
         <mm-prev-button slot="trigger"></mm-prev-button>
       </mm-tooltip>
       <mm-tooltip content="다음" align="center">
         <mm-next-button slot="trigger"></mm-next-button>
       </mm-tooltip>
-    </div>
+    </mm-flex>
   </mm-component-section>
 
   <mm-component-section
     title="Close Button"
     description="모달, 패널, 시트 등 레이어를 닫는 버튼. navigator 스타일 — 원형, 테두리, 그림자."
   >
-    <div style="display: flex; align-items: center; gap: var(--space-4)">
+    <mm-flex align="center" gap="4" nowrap>
       <mm-tooltip content="닫기" align="center">
         <mm-close-button slot="trigger"></mm-close-button>
       </mm-tooltip>
-    </div>
+    </mm-flex>
   </mm-component-section>
 
   <mm-component-section
     title="Dismiss Button"
     description="배너, 알림, 토스트 등 비파괴적 해제 버튼. plain 스타일 — 배경 없음, 경량."
   >
-    <div style="display: flex; align-items: center; gap: var(--space-4)">
+    <mm-flex align="center" gap="4" nowrap>
       <mm-tooltip content="해제" align="center">
         <mm-dismiss-button slot="trigger"></mm-dismiss-button>
       </mm-tooltip>
@@ -205,14 +205,14 @@
           <mm-dismiss-button slot="trigger"></mm-dismiss-button>
         </mm-tooltip>
       </div>
-    </div>
+    </mm-flex>
   </mm-component-section>
 
   <mm-component-section
     title="Delete Button"
     description="아이템·데이터를 영구 삭제하는 파괴적 액션 버튼. 빨간 아이콘, 호버 시 배경 강조."
   >
-    <div style="display: flex; align-items: center; gap: var(--space-4)">
+    <mm-flex align="center" gap="4" nowrap>
       <mm-tooltip content="삭제" align="center">
         <mm-delete-button slot="trigger"></mm-delete-button>
       </mm-tooltip>
@@ -234,14 +234,14 @@
           <mm-delete-button slot="trigger"></mm-delete-button>
         </mm-tooltip>
       </div>
-    </div>
+    </mm-flex>
   </mm-component-section>
 
   <mm-component-section
     title="Copy Button"
     description="텍스트를 클립보드에 복사하는 버튼. 복사 성공 시 일시적으로 체크 아이콘으로 전환됩니다."
   >
-    <div style="display: flex; align-items: center; gap: var(--space-4)">
+    <mm-flex align="center" gap="4" nowrap>
       <mm-tooltip content="복사" align="center">
         <mm-copy-button slot="trigger" value="copied text"></mm-copy-button>
       </mm-tooltip>
@@ -263,7 +263,7 @@
           <mm-copy-button slot="trigger" value="https://soojubm.github.io"></mm-copy-button>
         </mm-tooltip>
       </div>
-    </div>
+    </mm-flex>
   </mm-component-section>
 
   <mm-component-section title="Clear Button" description="search field에서 사용.">

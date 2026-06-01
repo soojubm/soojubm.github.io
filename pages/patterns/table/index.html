@@ -62,10 +62,10 @@
               <mm-checkbox></mm-checkbox>
             </th>
             <th scope="col" aria-sort="none" style="width: 15%">
-              <div style="display: flex; align-items: center; gap: var(--space-1)">
+              <mm-flex align="center" gap="1" nowrap>
                 Name
                 <mm-icon name="arrow-separate-vertical" size="tiny"></mm-icon>
-              </div>
+              </mm-flex>
             </th>
             <th scope="col" aria-sort="none" style="width: calc(65% - 80px)">Title</th>
             <th scope="col" aria-sort="none" style="width: 128px">Link</th>
@@ -82,16 +82,16 @@
               <mm-checkbox></mm-checkbox>
             </td>
             <th scope="row">
-              <div style="display: flex; align-items: center; gap: var(--space-2)">
+              <mm-flex align="center" gap="2" nowrap>
                 <mm-avatar variant="secondary" default="true"></mm-avatar>
                 Gabriel
-              </div>
+              </mm-flex>
             </th>
             <td>
-              <div style="display: flex; align-items: center; gap: var(--space-2)">
+              <mm-flex align="center" gap="2" nowrap>
                 <mm-tag>Male</mm-tag>
                 <mm-text>타이틀</mm-text>
-              </div>
+              </mm-flex>
             </td>
             <td>
               <mm-link isExternal="true"> External link </mm-link>
@@ -101,10 +101,10 @@
             </td>
             <td style="text-align: right">13</td>
             <td style="text-align: right">
-              <div style="display: flex; align-items: center; gap: var(--space-2)">
+              <mm-flex align="center" gap="2" nowrap>
                 <mm-button>액션</mm-button>
                 <mm-icon-button variant="navigator" icon="more-vert"></mm-icon-button>
-              </div>
+              </mm-flex>
             </td>
           </tr>
           <tr>
@@ -112,16 +112,16 @@
               <mm-checkbox checked></mm-checkbox>
             </td>
             <th scope="row">
-              <div style="display: flex; align-items: center; gap: var(--space-2)">
+              <mm-flex align="center" gap="2" nowrap>
                 <mm-avatar variant="secondary" default="true"></mm-avatar>
                 Ella
-              </div>
+              </mm-flex>
             </th>
             <td>
-              <div style="display: flex; align-items: center; gap: var(--space-2)">
+              <mm-flex align="center" gap="2" nowrap>
                 <mm-tag>Female</mm-tag>
                 <mm-text>You can't compress the program...</mm-text>
-              </div>
+              </mm-flex>
             </td>
             <td>
               <mm-link>
@@ -190,24 +190,21 @@
   </mm-component-props>
 
   <mm-component-tokens>
-    <mm-token name="--table-lineheight" default="1.6" description="헤더·셀 줄 높이"></mm-token>
-    <mm-token name="--table-row-border" default="var(--border)" description="행 구분선"></mm-token>
+    <mm-token name="--table-lineheight" default="1.6"></mm-token>
+    <mm-token name="--table-row-border" default="var(--border)"></mm-token>
     <mm-token
       name="--table-cell-padding"
       default="var(--space-2) 0"
-      description="셀 내부 여백"
     ></mm-token>
     <mm-token
       name="--table-cell-background"
       default="var(--color-background)"
-      description="테이블 배경색"
     ></mm-token>
     <mm-token
       name="--table-cell-background-hover"
       default="var(--color-background-subtle)"
-      description="행 호버 배경색"
     ></mm-token>
-    <mm-token name="--col-checkbox" default="32px" description="체크박스 컬럼 너비"></mm-token>
+    <mm-token name="--col-checkbox" default="32px"></mm-token>
   </mm-component-tokens>
 
   <mm-component-guide>
@@ -227,13 +224,13 @@
         <small>숙소 300개 이상 중 <b>281 – 300</b> (airbnb)</small>
       </div>
 
-      <mm-group>
+      <mm-flex>
         <mm-text>page</mm-text>
         <mm-button size="small">
           <mm-icon size="tiny" name="nav-arrow-down"></mm-icon>
         </mm-button>
         <mm-text>of 22</mm-text>
-      </mm-group>
+      </mm-flex>
       <mm-pagination current-page="2" page-count="22" sibling-count="2"></mm-pagination>
     </div>
   </mm-component-section>

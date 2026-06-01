@@ -1,7 +1,7 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { resetStyles } from '../../../stylesheets/shared/reset.styles'
-import '../indicators/list-marker'
+import '../../text/semantics/textList'
 
 /**
  * 컴포넌트 해부도(Anatomy) 섹션.
@@ -30,7 +30,9 @@ export class ComponentAnatomy extends LitElement {
     resetStyles,
     css`
       :host {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-3);
         margin-top: 4rem;
       }
 
@@ -41,27 +43,9 @@ export class ComponentAnatomy extends LitElement {
         gap: var(--space-4);
         flex-wrap: wrap;
         padding: 3rem 2rem;
-        margin-top: var(--space-3);
         border: var(--border-stronger);
         border-radius: var(--radius-large);
         background: var(--color-background-subtle);
-      }
-
-      ol {
-        list-style: none;
-        margin: var(--space-4) 0 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        gap: var(--space-2);
-      }
-
-      li {
-        display: flex;
-        align-items: center;
-        gap: var(--space-2);
-        font-size: var(--font-size-14);
-        color: var(--color-foreground);
       }
     `,
   ]
@@ -73,18 +57,7 @@ export class ComponentAnatomy extends LitElement {
         <slot></slot>
       </div>
       ${this.parts.length
-        ? html`
-            <ol>
-              ${this.parts.map(
-                (part, i) => html`
-                  <li>
-                    <mm-list-marker variant="number" value=${i + 1}></mm-list-marker>
-                    <span>${part}</span>
-                  </li>
-                `,
-              )}
-            </ol>
-          `
+        ? html`<mm-text-list variant="number" texts=${JSON.stringify(this.parts)}></mm-text-list>`
         : nothing}
     `
   }

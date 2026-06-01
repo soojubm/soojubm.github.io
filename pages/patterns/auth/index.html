@@ -79,14 +79,14 @@
       <fieldset class="authentication-fieldset" style="margin: 1rem 0 0">
         <legend hidden>선택입력</legend>
         <mm-textfield label="닉네임" placeholder="수줍이" is-optional></mm-textfield>
-        <mm-group alignment="horizontal">
+        <mm-flex direction="row">
           <mm-textfield label="출생년도" placeholder="출생년도" is-optional></mm-textfield>
           <mm-dropdown>
             <option value="other">기타</option>
             <option value="female">여성</option>
             <option value="male">남성</option>
           </mm-dropdown>
-        </mm-group>
+        </mm-flex>
       </fieldset>
 
       <fieldset class="authentication-fieldset">
@@ -96,12 +96,12 @@
           회원가입 시 <mm-link href="#">이용약관</mm-link>과
           <mm-link href="#">개인정보처리방침</mm-link>에 동의하는 것으로 간주합니다.
         </strong>
-        <mm-group alignment="vertical">
+        <mm-flex direction="column">
           <mm-checkbox class="js-checkall">모두 동의합니다.</mm-checkbox>
           <mm-checkbox>이용약관 동의</mm-checkbox>
           <mm-checkbox>개인정보처리방침에 동의합니다.</mm-checkbox>
           <mm-checkbox>[선택] 광고성 정보 수신 동의</mm-checkbox>
-        </mm-group>
+        </mm-flex>
       </fieldset>
 
       <footer class="authentication-foot">
@@ -157,12 +157,12 @@
       ></mm-title-with-description>
       <mm-link href="signin.html">인증번호 재전송</mm-link>
       <br /><br />
-      <mm-group alignment="horizontal">
+      <mm-flex direction="row">
         <mm-textfield type="number" name="code1" maxlength="1" style="width: var(--size-large)"></mm-textfield>
         <mm-textfield type="number" name="code2" maxlength="1" style="width: var(--size-large)"></mm-textfield>
         <mm-textfield type="number" name="code3" maxlength="1" style="width: var(--size-large)"></mm-textfield>
         <mm-textfield type="number" name="code4" maxlength="1" style="width: var(--size-large)"></mm-textfield>
-      </mm-group>
+      </mm-flex>
     </form>
 
     <!-- 재설정 메일 발송 완료 -->

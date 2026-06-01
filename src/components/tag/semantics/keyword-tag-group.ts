@@ -18,9 +18,9 @@ export class KeywordTagGroup extends LitElement {
   render() {
     if (!this.keywords.length) return nothing
     return html`
-      <mm-group variant="tag">
+      <mm-flex gap="1">
         ${this.keywords.map((k) => html`<mm-keyword-tag>${k}</mm-keyword-tag>`)}
-      </mm-group>
+      </mm-flex>
     `
   }
 }

@@ -36,7 +36,6 @@
 .product-story--boxed .product-story-features {margin-bottom:2rem;}
 
 .product-review {max-width:1000px;margin:5rem auto 0;padding:2rem 4rem;box-sizing:border-box;border-radius:var(--radius-large);background-color:skyblue;}
-.product-review-list {display:flex;gap:var(--space-4);margin-top:var(--space-4);}
 
 .product-policy {margin:4rem 0;}
 

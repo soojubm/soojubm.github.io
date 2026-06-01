@@ -5,6 +5,7 @@ import { customElement, property, state } from 'lit/decorators.js'
 class ComponentSection extends LitElement {
   @property({ type: String }) title = ''
   @property({ type: String }) description = ''
+  @property({ type: String }) level: 'semantic' | 'domain' = 'semantic'
 
   @state() private _hasContent = false
 
@@ -37,6 +38,7 @@ class ComponentSection extends LitElement {
   render() {
     return html`
       <section class="component-section">
+        <mm-tag>${this.level === 'domain' ? 'Domain' : 'Semantic'}</mm-tag>
         <mm-text size="24" weight="bold" as="h3">${this.title}</mm-text>
         ${this.description ? html`<mm-paragraph>${this.description}</mm-paragraph>` : nothing}
         <div class="content ${this._hasContent ? 'has-content' : ''}">

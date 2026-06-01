@@ -9,7 +9,7 @@
   <mm-component-aka items='["EmphasisBox", "Box", "Card", "Module", "Section", "Container", "Paper", "Building block", "Segment", "Panel"]'></mm-component-aka>
 
   <mm-component-example>
-    <div style="display: flex; flex-direction: column; gap: var(--space-3)">
+    <mm-flex direction="column" gap="3" nowrap>
       <mm-surface variant="flat">
         <mm-title-with-description
           level="3"
@@ -31,7 +31,7 @@
           description="강조 표현2. 클릭할 수 있다."
         ></mm-title-with-description>
       </mm-surface>
-    </div>
+    </mm-flex>
   </mm-component-example>
 
   <mm-component-props>
@@ -156,9 +156,9 @@
       >
       </mm-text-list>
       <br />
-      <mm-group>
+      <mm-flex>
         <mm-button variant="primary" size="large" isfullwidth="true">업그레이드</mm-button>
-      </mm-group>
+      </mm-flex>
     </div>
   </mm-component-section>
 
@@ -206,15 +206,15 @@
               ]'
           >
           </mm-text-list>
-          <mm-group variant="tag">
+          <mm-flex gap="1">
             <mm-tag>Google</mm-tag>
             <mm-tag>Meta</mm-tag>
             <mm-tag>Nvidia</mm-tag>
-          </mm-group>
+          </mm-flex>
           <mm-surface variant="elevated">
             <mm-tag>3월 14일 수정됨</mm-tag>
             <div style="height: var(--space-3)"></div>
-            <mm-group alignment="vertical">
+            <mm-flex direction="column">
               <mm-menu-item-row
                 label="Kakao"
                 description="https://www.kakaocorp.com"
@@ -223,13 +223,13 @@
               </mm-menu-item-row>
               <mm-menu-item-row label="Naver" description="https://www.naver.com" avatar-size="large">
               </mm-menu-item-row>
-            </mm-group>
+            </mm-flex>
           </mm-surface>
         </div>
         <div class="feed-footer">
-          <mm-group>
+          <mm-flex>
             <mm-menu-item-row icon="heart" label="192"> </mm-menu-item-row>
-          </mm-group>
+          </mm-flex>
         </div>
       </article>
 
@@ -318,10 +318,10 @@
           "
           >애플</a
         >
-        <mm-group>
+        <mm-flex>
           <mm-tag class="card-category">인기있는</mm-tag>
           <mm-tag class="card-note">무료배송 / 200 포인트 적립</mm-tag>
-        </mm-group>
+        </mm-flex>
       </article>
     </section>
   </mm-component-section>

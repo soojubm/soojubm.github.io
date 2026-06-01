@@ -9,7 +9,7 @@
   <mm-component-aka items='["Badge", "Label", "Keyword", "Flag", "activity bar counter (vs code)", "Counter badge (quantity)", "Health", "Status Pill"]'></mm-component-aka>
 
   <mm-component-example>
-    <mm-group>
+    <mm-flex>
       <!-- primitive -->
       <mm-tag tone="gray"> gray </mm-tag>
       <mm-tag tone="green"> green </mm-tag>
@@ -20,7 +20,7 @@
       <mm-tag tone="pink"> pink </mm-tag>
       <mm-tag tone="orange"> orange </mm-tag>
       <mm-tag tone="cyan"> cyan </mm-tag>
-    </mm-group>
+    </mm-flex>
   </mm-component-example>
 
   <mm-component-props>
@@ -120,21 +120,21 @@
   </mm-component-section>
 
   <mm-component-section title="KeywordTag" description="">
-    <mm-group>
+    <mm-flex>
       <mm-status-tag variant="neutral"> keyword1 </mm-status-tag>
       <mm-status-tag variant="neutral"> keyword2 </mm-status-tag>
       <mm-status-tag variant="neutral"> keyword3 </mm-status-tag>
-    </mm-group>
+    </mm-flex>
   </mm-component-section>
 
   <mm-component-section title="AccentTag" description="TODO accent color">
-    <mm-group>
+    <mm-flex>
       <mm-accent-tag> Featured </mm-accent-tag>
-    </mm-group>
+    </mm-flex>
   </mm-component-section>
 
   <mm-component-section title="CategoryTag" description="">
-    <mm-group variant="tag">
+    <mm-flex gap="1">
       <mm-category-tag category="music"> Jazz </mm-category-tag>
       <mm-category-tag category="finance"> Stocks </mm-category-tag>
       <mm-category-tag category="design"> UI Design </mm-category-tag>
@@ -145,16 +145,16 @@
       <mm-category-tag category="sports">
         <mm-icon slot="icon" name="graph-up"></mm-icon> Football
       </mm-category-tag>
-    </mm-group>
+    </mm-flex>
   </mm-component-section>
 
   <mm-component-section title="StatusTag" description="">
-    <mm-group>
+    <mm-flex>
       <mm-status-tag variant="neutral"> neutral </mm-status-tag>
       <mm-status-tag variant="success"> success </mm-status-tag>
       <mm-status-tag variant="warning"> warning </mm-status-tag>
       <mm-status-tag variant="error"> error </mm-status-tag>
       <mm-status-tag variant="info"> info </mm-status-tag>
-    </mm-group>
+    </mm-flex>
   </mm-component-section>
 </main>

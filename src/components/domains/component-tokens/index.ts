@@ -13,8 +13,6 @@ export class Token extends LitElement {
   @property({ type: String }) name = ''
   /** 기본값 (예: var(--size-medium)) */
   @property({ type: String }) default = ''
-  /** 토큰 설명 */
-  @property({ type: String }) description = ''
 
   static styles = [
     resetStyles,
@@ -39,7 +37,6 @@ export class Token extends LitElement {
       <dt>${this.name}</dt>
       <dd class="meta">
         ${this.default ? html`<mm-text>${this.default}</mm-text>` : ''}
-        ${this.description ? html`<mm-text>${this.description}</mm-text>` : ''}
       </dd>
     `
   }

@@ -155,7 +155,7 @@ The font size of a key is never bigger than the value.
   </style>
 
   <mm-component-example>
-    <div style="display: flex; flex-direction: column">
+    <mm-flex direction="column" gap="0" nowrap>
       <mm-text size="32">font size 32px</mm-text>
       <div style="height: var(--space-2)"></div>
       <mm-text size="24">font size 24px</mm-text>
@@ -167,7 +167,7 @@ The font size of a key is never bigger than the value.
       <mm-separator></mm-separator>
       <mm-text size="14" weight="medium">font weight normal</mm-text>
       <mm-text size="14" weight="bold">font weight bold</mm-text>
-    </div>
+    </mm-flex>
   </mm-component-example>
   <mm-component-props>
     <mm-prop
@@ -213,37 +213,37 @@ The font size of a key is never bigger than the value.
   </mm-component-guide>
 
   <mm-component-section title="Headings" description="">
-    <div style="display: flex; flex-direction: column">
+    <mm-flex direction="column" gap="0" nowrap>
       <mm-page-title>페이지 레벨의 타이틀</mm-page-title>
       <div style="height: 1rem"></div>
       <mm-section-title>섹션 레벨의 타이틀</mm-section-title>
       <div style="height: 0.75rem"></div>
       <mm-text size="14" weight="bold" as="h2">소제목</mm-text>
-    </div>
+    </mm-flex>
   </mm-component-section>
 
   <mm-component-section
     title="SectionTitle"
     description="콘텐츠 묶음의 제목. 기본 h2, font-size-18, bold를 사용합니다."
   >
-    <div style="display: flex; flex-direction: column; gap: var(--space-2)">
+    <mm-flex direction="column" gap="2" nowrap>
       <mm-section-title>계정 설정</mm-section-title>
       <mm-paragraph>로그인, 알림, 공개 범위처럼 계정에 연결된 옵션을 관리합니다.</mm-paragraph>
-    </div>
+    </mm-flex>
   </mm-component-section>
 
   <mm-component-section
     title="Caption"
     description="보조 설명, 메타 정보, 이미지 캡션처럼 낮은 위계의 텍스트입니다."
   >
-    <div style="display: flex; flex-direction: column; gap: var(--space-3)">
+    <mm-flex direction="column" gap="3" nowrap>
       <mm-caption>마지막 업데이트: 2026.05.30</mm-caption>
       <mm-thumbnail
         ratio="16:9"
         figcaption="이미지 하단에 배치되는 설명 텍스트"
         style="max-width: 360px"
       ></mm-thumbnail>
-    </div>
+    </mm-flex>
   </mm-component-section>
 
   <mm-component-section
@@ -356,7 +356,7 @@ The font size of a key is never bigger than the value.
       <div>
         <mm-keyvalue key="keyvalue key text" value="keyvalue value text"></mm-keyvalue>
         <mm-separator></mm-separator>
-        <div style="display: flex; gap: 2rem">
+        <mm-flex gap="2rem" nowrap>
           <div>
             <mm-text size="14" color="var(--color-foreground-light)">사이즈</mm-text>
             <mm-text size="18">보통</mm-text>
@@ -366,7 +366,7 @@ The font size of a key is never bigger than the value.
             <mm-text size="18">작은 거 필요하나</mm-text>
           </div>
           <mm-keyvalue size="large" alignment="column" key="Move" value="562 kcal"> </mm-keyvalue>
-        </div>
+        </mm-flex>
         <mm-separator></mm-separator>
         <div class="product-info-price" role="suggestion">
           <del class="product-info-price-deletion" role="deletion">₩ 30,000</del>
@@ -380,16 +380,16 @@ The font size of a key is never bigger than the value.
   <!-- 사이트맵 / 메가메뉴 -->
   <!-- <nav style="display: flex; gap: 4rem">
     <mm-text hidden aria-hidden="true" size="14">사이트맵</mm-text>
-    <mm-group alignment="vertical">
+    <mm-flex direction="column">
       <mm-text size="18">사이트맵 컴포넌트</mm-text>
       <mm-text href="#" size="14" color="var(--color-foreground-light)">샘플</mm-text>
       <mm-text href="#" size="14" color="var(--color-foreground-light)">사이트맵 </mm-text>
       <mm-text href="#" size="14" color="var(--color-foreground-light)">사이트맵 샘플</mm-text>
       <mm-text href="#" size="14" color="var(--color-foreground-light)">사이트맵 컴포넌트 샘플</mm-text>
-    </mm-group>
-    <mm-group alignment="vertical">
+    </mm-flex>
+    <mm-flex direction="column">
       <mm-text size="18">꺼이꺼이</mm-text>
       <mm-text size="18">호이호이</mm-text>
-    </mm-group>
+    </mm-flex>
   </nav> -->
 </main>
