@@ -7,13 +7,8 @@
   <mm-component-example>
     <mm-group>
       <mm-spinner size="small"></mm-spinner>
-      <mm-spinner size="medium"></mm-spinner>
-      <mm-spinner size="large"></mm-spinner>
-    </mm-group>
-    <mm-separator></mm-separator>
-    <mm-group>
-      <mm-spinner label="저장 중..."></mm-spinner>
-      <mm-spinner label="불러오는 중..."></mm-spinner>
+      <mm-spinner size="medium" label="저장 중..."></mm-spinner>
+      <mm-spinner size="large" label="불러오는 중..."></mm-spinner>
     </mm-group>
     <mm-separator></mm-separator>
     <mm-spinner>
@@ -35,7 +30,14 @@
     </mm-group>
     <mm-separator></mm-separator>
     <!-- 어두운 버블 위 색상 반전 예시 -->
-    <div style="display: inline-flex; padding: var(--space-3) var(--space-4); border-radius: 1rem; background: var(--color-primary)">
+    <div
+      style="
+        display: inline-flex;
+        padding: var(--space-3) var(--space-4);
+        border-radius: 1rem;
+        background: var(--color-primary);
+      "
+    >
       <mm-typing-indicator color="var(--color-foreground-on-solid)"></mm-typing-indicator>
     </div>
   </mm-component-section>
