@@ -27,17 +27,64 @@
 .class-order-description {border-top:var(--border);}
 .class-order-price {border-top:var(--border);font-size:var(--font-size-18);}
 .class-order-action {border-top:var(--border);}
-.class-order-action-share {}
+.class-order-footer {border-top:var(--border);}
+
+.class-order-btn {
+  font-size: inherit;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  height: var(--size-large);
+  padding: 0 var(--space-4) 2px;
+  border: none;
+  border-radius: var(--radius);
+  box-sizing: border-box;
+  background: var(--color-primary);
+  color: #fff;
+  font-weight: var(--font-weight-bold);
+  text-transform: capitalize;
+  cursor: pointer;
+  width: 50%;
+}
+.class-order-btn .line {background-color: #fff;}
 
 .minicards {display:flex;padding:0;border-top:var(--border);}
 .minicards .minicard {width:25%;padding:1rem;border-right:var(--border);box-sizing:border-box;text-align:center;}
 .minicards .minicard span {font-size:1.5rem;}
 .minicards .minicard p {}
 
+.minicard--closed {position:relative;}
+.minicard-badge {
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  transform: translate(-50%, -50%) rotate(-3.75deg);
+}
 
-.class-intro {width:100%;padding:4rem var(--section-padding);border:var(--border);border-top:0;}
 
-.class-why {width:100%;padding:var(--section-padding);border:var(--border);border-top:0;background:var(--color-newneek-gray);}
+.marquee {
+  width: 100%;
+  border: var(--border);
+  border-top: 0;
+  box-sizing: border-box;
+  font-size: 1.5rem;
+}
+
+.class-intro {width:100%;padding:4rem var(--section-padding);border:var(--border);border-top:0;text-align:center;}
+.class-intro-image {
+  max-width: 480px;
+  margin: 2rem auto 0;
+  border: var(--border);
+  border-width: 2px;
+}
+.class-intro-image figcaption {
+  padding: 1rem;
+  border-top: var(--border);
+  text-align: center;
+}
+
+.class-why {width:100%;padding:var(--section-padding);padding-bottom:6rem;border:var(--border);border-top:0;background:var(--color-newneek-gray);}
 .class-why-item {}
 
 .class-feature {display:flex;width:100%;}
@@ -51,7 +98,17 @@
 .class-feature > div:nth-of-type(1) {
   background: #000;
 }
+.class-feature-list {display:flex;flex-direction:column;gap:1rem;margin-top:1rem;}
 
+.class-who {width:100%;padding:4rem var(--section-padding);border:var(--border);border-top:0;box-sizing:border-box;}
+.class-who-grid {
+  max-width: 1200px;
+  margin: 2rem auto 0;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 2rem;
+}
+.class-who-note {max-width:1200px;margin:2rem auto 0;}
 
 .class-curriculum {width:100%;border:var(--border);border-top:0;background:var(--color-newneek-gray);}
 .class-curriculum > * {

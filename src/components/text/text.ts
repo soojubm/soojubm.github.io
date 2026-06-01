@@ -12,6 +12,7 @@ export class Text extends LitElement {
   @property({ type: String }) size: TextSize = '14'
   @property({ type: String }) weight: TextWeight = 'medium'
   @property({ type: String }) color = 'inherit'
+  @property({ type: Boolean }) center = false
 
   static styles = [
     resetStyles,
@@ -19,6 +20,9 @@ export class Text extends LitElement {
       :host {
         display: inline-block;
         --text-color: inherit;
+      }
+      :host([center]) {
+        display: block;
       }
       h1,
       h2,
@@ -44,6 +48,7 @@ export class Text extends LitElement {
       lineHeight: sizeStyle.lineHeight,
       fontWeight: weightStyle,
       ...(this.color !== 'inherit' ? { color: this.color } : {}),
+      ...(this.center ? { textAlign: 'center' } : {}),
     }
 
     return html`

@@ -31,17 +31,10 @@
         <span role="img" aria-label="">🗓️</span>
         <p class="minicard-value">이용기간 무제한</p>
       </figure>
-      <figure class="minicard" style="position: relative">
+      <figure class="minicard minicard--closed">
         <span role="img" aria-label="">🤼</span>
         <p class="minicard-value"><del>얼리버드 500명</del></p>
-        <p
-          style="
-            position: absolute;
-            left: 50%;
-            top: 45%;
-            transform: translate(-50%, -50%) rotate(-3.75deg);
-          "
-        >
+        <p class="minicard-badge">
           <mm-tag>✨ 마감 ✨</mm-tag>
         </p>
       </figure>
@@ -52,53 +45,20 @@
       <em class="class-order-price-percentage">(30%)</em>
     </div>
     <footer class="class-order-action">
-      <!-- <mm-button variant="primary" style="width: 50%">
-        기본기 구매하기
-        <div class="cta-arrow"><div class="line"></div></div
-      ></mm-button> -->
-      <button
-        style="
-          font-size: inherit;
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          gap: var(--space-2);
-          height: var(--size-large);
-          padding: 0 var(--space-4) 2px;
-          /* border: var(--border); */
-          border-radius: var(--radius);
-          box-sizing: border-box;
-          background: var(--color-primary);
-          color: #fff;
-          font-weight: var(--font-weight-bold);
-          text-transform: capitalize;
-          cursor: pointer;
-          width: 50%;
-        "
-      >
+      <button class="class-order-btn">
         기본기 구매하기
         <div class="cta-arrow">
-          <div class="line" style="background-color: #fff"></div>
+          <div class="line"></div>
         </div>
       </button>
-      <!-- <button class="button" data-variant="secondary">공유</button> -->
     </footer>
-    <p style="border-top: var(--border)">
+    <p class="class-order-footer">
       더 궁금한 점이 있다면 <a href="/help" style="text-decoration: underline">👉고객센터</a>로
       문의해 주세요. 고맙슴!
     </p>
   </header>
 
-  <section
-    class="marquee"
-    style="
-      width: 100%;
-      border: var(--border);
-      border-top: 0;
-      box-sizing: border-box;
-      font-size: 1.5rem;
-    "
-  >
+  <section class="marquee">
     <p>🦔 고슴이: 지금부터 설명 들어가겠슴!</p>
     <p>🦔 고슴이: 지금부터 설명 들어가겠슴!</p>
     <p>🦔 고슴이: 지금부터 설명 들어가겠슴!</p>
@@ -107,27 +67,26 @@
     <p>🦔 고슴이: 지금부터 설명 들어가겠슴!</p>
   </section>
 
-  <section class="class-intro" style="text-align: center">
+  <section class="class-intro">
     <mm-paragraph-group>
-      <mm-text size="32">
+      <mm-text size="32" center>
         주식부터 환율까지<br />삶에서 필수적인<br />경제 개념들을 마스터합니다.
       </mm-text>
-      <mm-text size="18">
+      <mm-text size="18" center>
         주제 당 5분 분량의 기사로 구성되어 있으며,<br />경제초보 고슴이의 성장기를 담았답니다.
       </mm-text>
     </mm-paragraph-group>
-    <figure style="max-width: 480px; margin: 2rem auto; border: var(--border); border-width: 2px">
+    <figure class="class-intro-image">
       <img src="/src/images/cake_gosum.jpg" />
-      <figcaption style="padding: 1rem; border-top: var(--border); text-align: center">
+      <figcaption>
         🦔 고슴이: 뉴니커만 보고 달려온 2년... 점점 당이 떨어진다....
       </figcaption>
     </figure>
   </section>
 
-  <section class="class-why" style="padding-bottom: 6rem">
+  <section class="class-why">
     <mm-paragraph-group>
       <mm-text size="32">경제라니...<br />나 좀 머리 아파. 왜 읽어야 해?</mm-text>
-      <br />
       <div class="class-why-item">
         <figure class="feature-item-avatar" role="img" aria-label="" style="margin: 0">🌏</figure>
         <mm-title-with-description
@@ -138,7 +97,6 @@
           이해하고 해석하기 위해 꼭 필요한 첫걸음이죠."
         ></mm-title-with-description>
       </div>
-      <div style="height: var(--space-2)"></div>
       <div class="class-why-item">
         <figure class="feature-item-avatar" role="img" aria-label="" style="margin: 0">💰</figure>
         <mm-title-with-description
@@ -158,8 +116,7 @@
         <mm-text size="32">[고슴이 생존기: 경제 기본기편] 은요</mm-text>
         <mm-text size="18">이런 말이 절로 나오는 사람들!</mm-text>
       </mm-paragraph-group>
-      <br />
-      <div style="display: flex; flex-direction: column; gap: 1rem">
+      <div class="class-feature-list">
         <mm-feature
           icon="💁‍♂️"
           titleText="쉽고 재밌어요"
@@ -179,48 +136,35 @@
     </div>
   </section>
 
-  <section class="class-who" style="padding: 4rem var(--section-padding); width: 100%">
+  <section class="class-who">
     <mm-paragraph-group>
-      <mm-text size="32"
-        ><span style="display: block; text-align: center">이건 누가 읽으면 좋아?</span></mm-text
-      >
-      <mm-text size="18"
-        ><span style="display: block; text-align: center"
-          >이런 말이 절로 나오는 사람들!</span
-        ></mm-text
-      >
+      <mm-text size="32" center>이건 누가 읽으면 좋아?</mm-text>
+      <mm-text size="18" center>이런 말이 절로 나오는 사람들!</mm-text>
     </mm-paragraph-group>
-    <br /><br />
-    <div
-      style="
-        max-width: 1200px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-evenly;
-        gap: 2rem;
-      "
-    >
+    <div class="class-who-grid">
       <mm-feature
-        icon="😱"
+        emoji="😱"
         titleText="남들은 재테크 한다는데 나는 금리도 몰라!"
         description="부동산, 주식 등에 도전하기 전, 기본적인 용어들과 전체 경제의 흐름을 이해할 수 있어요."
       ></mm-feature>
       <mm-feature
-        icon="🤑"
+        emoji="🤑"
         titleText="전문 용어로 빼곡한 경제 뉴스, 영자신문보다 어려워!"
         description="기준금리, CPI, 관세가 어쩌구... 뉴닉은 다 쉽게 풀어낼 수 있습니다. 뉴닉이니까요."
       ></mm-feature>
       <mm-feature
-        icon="😵"
+        emoji="😵"
         titleText="경제 개론서를 사봤지만 첫 챕터에서 늘 덮게 돼!"
         description="이미 경제 공부를 혼자 도전했지만 어렵고 지루했다면 고슴이 생존기가 정답!"
       ></mm-feature>
     </div>
-    <div style="max-width: 1200px; margin: 2rem auto 0">
+    <div class="class-who-note">
       <mm-surface>
         <mm-text size="18">그리고 또...</mm-text>
         <div style="height: var(--space-2)"></div>
-        <mm-text-list texts='["경제 기본기가 아예 없는 사람", "경제 막 공부 시작했는데, 누가 전체적인 그림 한 번 싹 알려주면 좋겠다고 생각한 사람", "주변 사람들 주식하고 부동산 한다는데, 적금길만 걸어온 사람", "고슴이의 생존스토리 궁금한 사람"]'></mm-text-list>
+        <mm-text-list
+          texts='["경제 기본기가 아예 없는 사람", "경제 막 공부 시작했는데, 누가 전체적인 그림 한 번 싹 알려주면 좋겠다고 생각한 사람", "주변 사람들 주식하고 부동산 한다는데, 적금길만 걸어온 사람", "고슴이의 생존스토리 궁금한 사람"]'
+        ></mm-text-list>
       </mm-surface>
     </div>
   </section>
@@ -230,7 +174,7 @@
       <mm-text size="32"> 에피소드 (관련 도메인에서 주로 커리큘럼) </mm-text>
     </header>
     <div class="">
-      <figure></figure>
+      <mm-thumbnail></mm-thumbnail>
       <mm-tag>물가편</mm-tag>
       <h3>Episode 1. 배추값이 금값이다?</h3>
       <p>
@@ -254,7 +198,6 @@
   <section class="products">
     <div class="products-item">
       <figure class="products-item-thumbnail"><img src="" alt="" /></figure>
-      <!-- <span class="products-item-brand">Test</span> -->
       <h2 class="products-item-name">샘플 영역</h2>
       <span class="products-item-price">60,280 円(税込)</span>
     </div>
