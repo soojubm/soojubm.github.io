@@ -99,35 +99,10 @@
       </footer>
     </aside>
 
-    <!-- <div class="product-detail-intro" style="max-width: 1000px; margin: 8rem auto">
-      <figure class="product-detail-intro-image">
-        <img src="" alt="" />
-      </figure>
-      <figure class="product-detail-intro-image">
-        <img src="" alt="" />
-      </figure>
-      <mm-text size="32">
-        <span class="linebreak-desktop">우리의 입맛에 맞는 파스타를 엄선하여</span>
-        <span class="linebreak-desktop">이탈리아 지역별 정통 파스타소스를 재현하였습니다.</span>
-      </mm-text>
-    </div> -->
-
-    <br />
-
-    <section
-      style="
-        display: flex;
-        flex-direction: row-reverse;
-        align-items: center;
-        gap: 2rem;
-        max-width: 1000px;
-        margin: 0 auto;
-      "
-    >
-      <div
-        style="width: 560px; height: 780px; border-radius: var(--radius-large); background: #2a348b"
-      ></div>
-      <div style="display: flex; flex-direction: column; flex: 1; gap: var(--space-4)">
+    <!-- 마케팅 스토리: 이미지 + 텍스트 -->
+    <section class="product-story product-story--reverse">
+      <div class="product-story-media"></div>
+      <div class="product-story-body">
         <mm-tag variant="temp1">Why prebiotics?</mm-tag>
         <mm-title-with-description
           level="1"
@@ -137,21 +112,9 @@
       </div>
     </section>
 
-    <section style="padding: 2rem 0 0 0; max-width: 1000px; margin: 5rem auto 0">
-      <!-- <div
-        style="width: 560px; height: 780px; border-radius: var(--radius-large); background: #2a348b"
-      ></div> -->
-      <div
-        style="
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          width: 100%;
-          gap: var(--space-4);
-          text-align: center;
-          margin: 0 auto;
-        "
-      >
+    <!-- 마케팅 스토리: 중앙 정렬 + 특징 -->
+    <section class="product-story product-story--center">
+      <div class="product-story-body">
         <mm-tag variant="temp1">Why prebiotics?</mm-tag>
         <mm-title-with-description
           level="1"
@@ -159,7 +122,7 @@
           description="And good bacteria creates a healthy oral environment. In addition to positively impacting the things you can taste and feel, like fresher breath and less sensitive teeth, a balanced oral environment is directly linked to cardiovascular, respiratory, and immune health."
         ></mm-title-with-description>
       </div>
-      <div class="feature columns" style="max-width: 1000px; margin: 2rem auto 0; gap: 1.5rem">
+      <div class="columns product-story-features">
         <mm-feature
           icon="✋"
           titleText="Tangerine Oil"
@@ -183,68 +146,42 @@
       </div>
     </section>
 
-    <section
-      style="
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 2rem;
-        padding: 2rem 0 0 0;
-        margin: 5rem 0 0 0;
-      "
-    >
-      <!-- <div
-        style="width: 560px; height: 780px; border-radius: var(--radius-large); background: #2a348b"
-      ></div> -->
-      <div
-        style="
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: var(--space-4);
-          padding: 4rem;
-          text-align: center;
-          background-color: #f7f5f1;
-        "
-      >
-        <mm-tag variant="temp1">Why prebiotics?</mm-tag>
-        <mm-title-with-description
-          level="1"
-          title="Prebiotics are fibers that feed good bacteria"
-          description="And good bacteria creates a healthy oral environment. In addition to positively impacting the things you can taste and feel, like fresher breath and less sensitive teeth, a balanced oral environment is directly linked to cardiovascular, respiratory, and immune health."
-        ></mm-title-with-description>
-        <div class="feature columns" style="max-width: 1000px; margin: 2rem auto; gap: 1.5rem">
-          <mm-feature
-            icon="✋"
-            titleText="Tangerine Oil"
-            description="A microbial substrate that has a positive impact on the oral environment"
-          ></mm-feature>
-          <mm-feature
-            icon="✋"
-            titleText="Tangerine Oil"
-            description="A microbial substrate that has a positive impact on the oral environment"
-          ></mm-feature>
-          <mm-feature
-            icon="✋"
-            titleText="Tangerine Oil"
-            description="A microbial substrate that has a positive impact on the oral environment"
-          ></mm-feature>
-          <mm-feature
-            icon="✋"
-            titleText="Tangerine Oil"
-            description="A microbial substrate that has a positive impact on the oral environment"
-          ></mm-feature>
-        </div>
+    <!-- 마케팅 스토리: 박스 배경 + 특징 -->
+    <section class="product-story product-story--boxed">
+      <mm-tag variant="temp1">Why prebiotics?</mm-tag>
+      <mm-title-with-description
+        level="1"
+        title="Prebiotics are fibers that feed good bacteria"
+        description="And good bacteria creates a healthy oral environment. In addition to positively impacting the things you can taste and feel, like fresher breath and less sensitive teeth, a balanced oral environment is directly linked to cardiovascular, respiratory, and immune health."
+      ></mm-title-with-description>
+      <div class="columns product-story-features">
+        <mm-feature
+          icon="✋"
+          titleText="Tangerine Oil"
+          description="A microbial substrate that has a positive impact on the oral environment"
+        ></mm-feature>
+        <mm-feature
+          icon="✋"
+          titleText="Tangerine Oil"
+          description="A microbial substrate that has a positive impact on the oral environment"
+        ></mm-feature>
+        <mm-feature
+          icon="✋"
+          titleText="Tangerine Oil"
+          description="A microbial substrate that has a positive impact on the oral environment"
+        ></mm-feature>
+        <mm-feature
+          icon="✋"
+          titleText="Tangerine Oil"
+          description="A microbial substrate that has a positive impact on the oral environment"
+        ></mm-feature>
       </div>
     </section>
 
-    <section
-      style="display: flex; align-items: center; gap: 4rem; max-width: 1000px; margin: 5rem auto 0"
-    >
-      <div
-        style="width: 560px; height: 780px; border-radius: var(--radius-large); background: #2a348b"
-      ></div>
-      <div style="display: flex; flex-direction: column; flex: 1; gap: var(--space-4)">
+    <!-- 마케팅 스토리: 이미지 + 텍스트 -->
+    <section class="product-story">
+      <div class="product-story-media"></div>
+      <div class="product-story-body">
         <mm-tag variant="temp1">Why prebiotics?</mm-tag>
         <mm-title-with-description
           level="1"
@@ -254,26 +191,14 @@
       </div>
     </section>
 
-    <section
-      class="review"
-      style="
-        background-color: skyblue;
-        margin: 5rem 0;
-        padding: 2rem 4rem;
-        box-sizing: border-box;
-        border-radius: var(--radius-large);
-        max-width: 1000px;
-        margin: 5rem auto 0;
-      "
-    >
+    <!-- 리뷰 -->
+    <section class="product-review">
       <mm-title-with-description
         level="2"
         title="Loved By Over +70,000 Smiles!"
         description="Toothpaste so good, you’ll actually look forward to brushing —just ask our customers."
       ></mm-title-with-description>
-      <div style="height: var(--space-1)"></div>
-      <!-- <mm-keyvalue key="Total review" value="83"></mm-keyvalue> -->
-      <div style="display: flex; gap: var(--space-4); margin-top: var(--space-4)">
+      <div class="product-review-list">
         <mm-surface variant="flat">
           <div>⭐⭐⭐⭐⭐</div>
           <div style="margin-top: var(--space-3)">
@@ -292,15 +217,15 @@
               >I have 2 kids so sleep is hard to come by, these have helped me to wake up feeling
               more refreshed and ready to start the day
             </mm-text>
-            <div style="height: var(--space-4)"></div>
           </div>
+          <div style="height: var(--space-4)"></div>
           <mm-text-pair labelText="Fleet Foxes" descriptionText="2020년 12월 1일"></mm-text-pair>
         </mm-surface>
       </div>
     </section>
 
-    <br /><br /><br /><br /><br />
-    <div class="product-detail-summary">
+    <!-- 상품 상세정보 고지 -->
+    <section class="product-detail-summary">
       <mm-text size="18">상품상세정보 고지</mm-text>
       <dl style="margin: var(--space-3) 0">
         <dt>제품명</dt>
@@ -320,25 +245,15 @@
         <dt>문의전화</dt>
         <dd>02-000-2000</dd>
       </dl>
-    </div>
+    </section>
 
-    <!-- <section class="product-detail-gallary">
-      <figure><img src="/src/images/springsteen.jpg" alt="" /></figure>
-      <figure><img src="/src/images/springsteen.jpg" alt="" /></figure>
-      <figure><img src="/src/images/springsteen.jpg" alt="" /></figure>
-      <figure><img src="/src/images/springsteen.jpg" alt="" /></figure>
-    </section> -->
-
-    <!-- <h3>오픈마켓</h3>
-    <mm-text-list texts='["상품의 배송비는 공급업체의 정책에 따라 다릅니다.", "동일 브랜드의 상품이라도 상품별 출고일시가 달라 각각 배송될 수 있습니다.", "일부 주문상품 또는 예약상품의 경우 기본 배송일 외에 추가 배송 소요일이 발생될 수 있습니다."]'></mm-text-list> -->
-
-    <!-- <li>배송지연 시 공지 (자연재해, 내부문제 등)</li> -->
-
+    <!-- 거래/배송/교환·반품 정책 -->
     <section class="product-policy">
       <mm-text data-english="Shipping Information" size="14" weight="bold">배송 정책</mm-text>
       <mm-text-list texts='["미책임. 배송지를 오기재. 미고지 배송지를 수정."]'></mm-text-list>
-      <mm-text data-english="Returns &Exchanges"
-         size="14" weight="bold">교환 또는 반품(취소) 정책 - 판매자 과실과 구매자 과실 구분</mm-text
+
+      <mm-text data-english="Returns & Exchanges" size="14" weight="bold"
+        >교환 또는 반품(취소) 정책 - 판매자 과실과 구매자 과실 구분</mm-text
       >
       <mm-text-list texts='["환불 완료 영업일 기준 4일", "출고 이후 환불요청 시 상품 회수 후 처리됩니다.", "상품 불량인 경우는 배송비를 포함한 전액이 환불됩니다.", "해당 상품 구매 시 사은품/증정품 등이 제공된 경우, 상품 교환/반품 시 함께 보내주셔야
           합니다.", "교환/반품 불가 사유. 훼손(포장 등). 소비. 시간 경과로 인한 가치 훼손(?)", "단순변심/구매착오. 상품을 받으신 날로부터 7일 이내 교환/반품이 가능합니다.", "고객의 주문에 따라 개별적으로 생산되는 상품 또는 이와 유사한 상품에 대하여 청약 철회등을
@@ -357,8 +272,8 @@
         <tr>
           <th>배송비</th>
           <td>
-            기본 배송비 25,000원 / 총 결제 금액 50,000원 이상 무료배송 / 도서,산간,제주 기본 배송비
-            5,000d원(기본 배송비 2,000 + 3,000). 배송비 결제 주문 시 결제
+            기본 배송비 2,500원 / 총 결제 금액 50,000원 이상 무료배송 / 도서,산간,제주 기본 배송비
+            5,000원(기본 배송비 2,000 + 3,000). 배송비 결제 주문 시 결제
             <p>
               변심 반품의 경우는 왕복배송비를 차감한 금액이 환불되며, 제품 및 포장 상태가 재판매
               가능하여야 합니다.
@@ -375,7 +290,7 @@
         </tr>
         <tr>
           <th>반품배송비</th>
-          <td>3,000원 (부분 반품인 경우)/dd></td>
+          <td>3,000원 (부분 반품인 경우)</td>
         </tr>
         <tr>
           <th>교환/반품주소</th>
@@ -384,7 +299,7 @@
         <tr>
           <th>교환/반품방법</th>
           <td>
-            [마이페이지>주문조회>교화/반품 신청하기] 또는 [고객센터>1:1상담] 또는
+            [마이페이지>주문조회>교환/반품 신청하기] 또는 [고객센터>1:1상담] 또는
             고객센터(080-619-8888).
           </td>
         </tr>
@@ -405,102 +320,42 @@
           </td>
         </tr>
       </table>
-      <mm-text size="18">불만처리 및 분쟁해결</mm-text>
+
+      <h3>불만처리 및 분쟁해결</h3>
       <p>
         상품의 품질보증 및 피해보상에 관한 사항은 관련 법률 및 공정거래위원회
         고시[소비자분쟁해결기준]에 따릅니다.
-        <!-- 소비자분쟁해결기준(공정거래위원회 고시) 및 관계법령 -->
       </p>
+
       <h3>대금환불 및 환불지연에 따른 배상금 안내</h3>
-      <td>
+      <p>
         주문취소 및 대금의 환불은 마이페이지에서 신청할 수 있으며, 전자상거래 등에서의 소비자보호에
         관한 법률에 따라 소비자의 청약철회 후 판매자가 재화 등을 반환 받은 날로부터 3영업일 이내에
         지급받은 대금의 환급을 정당한 사유 없이 지연하는 때에는 소비자는 지연기간에 대해서 연 20%의
         지연배상금을 판매자에게 청구할 수 있습니다. 「전자상거래 등에서의 소비자보호에 관한 법률
         시행령」
-      </td>
-      <tr>
-        <td>
-          제품하자가 아닌 소비자의 단순변심, 착오구매에 따른 청약철회가 불가능한 경우 그 구체적
-          사유와 근거
-        </td>
-        <td>
-          전자상거래등에서의소비자보호에관한법률 등에 의한 청약철회 제한 사유에 해당하는 경우 및
-          기타 객관적으로 이에 준하는 것으로 인정되는 경우 청약철회가 제한될 수 있습니다.
-        </td>
-      </tr>
+      </p>
+
+      <h3>청약철회가 제한되는 경우</h3>
+      <p>
+        제품하자가 아닌 소비자의 단순변심, 착오구매에 따른 청약철회가 불가능한 경우, 전자상거래
+        등에서의 소비자보호에 관한 법률 등에 의한 청약철회 제한 사유에 해당하는 경우 및 기타
+        객관적으로 이에 준하는 것으로 인정되는 경우 청약철회가 제한될 수 있습니다.
+      </p>
+
       <h3>미성년자 계약취소에 대한 안내</h3>
-      미성년 고객께서 상품을 주문(계약) 하시는 경우,법정대리인(부모님 등)의 동의가 없으면 미성년자
-      본인 또는 법정대리인(부모님 등)이 그 주문(계약)을 취소하실 수있습니다. 안전검사 대상 공산품을
-      구매하시는 경우 품질경영 및 공산품 안전관리법에 따른 안전검사표시가 있는 제품인지 확인하시기
-      바랍니다. 정보,전기통신기기를 구매하시는 경우 관련법률에 따라 인증 또는 승인을 받은 상품인지
-      확인하시기 바랍니다. 롯데ON의 결제시스템을 이용하지 않고 판매자와 직접거래 하실 경우 상품을
-      받지 못하거나, 구매한 상품과 상이한 상품을 받는 등 피해가 발생 할 수 있으니 유의하시기
-      바랍니다.
+      <p>
+        미성년 고객께서 상품을 주문(계약) 하시는 경우, 법정대리인(부모님 등)의 동의가 없으면
+        미성년자 본인 또는 법정대리인(부모님 등)이 그 주문(계약)을 취소하실 수 있습니다. 안전검사
+        대상 공산품을 구매하시는 경우 품질경영 및 공산품 안전관리법에 따른 안전검사표시가 있는
+        제품인지 확인하시기 바랍니다. 정보, 전기통신기기를 구매하시는 경우 관련법률에 따라 인증 또는
+        승인을 받은 상품인지 확인하시기 바랍니다.
+      </p>
       <p>
         통신판매업자는 미성년자와 재화등의 거래에 관한 계약을 체결할 때에는 법정대리인이 그 계약에
         동의하지 아니하면 미성년자 본인 또는 법정대리인이 그 계약을 취소할 수 있다는 내용을
         미성년자에게 고지하여야 한다.
       </p>
     </section>
-
-    <blockquote>
-      <div>
-        <p>상품을 수거해 드릴까요?</p>
-        <p>네. 수거해주세요. 네이버페이를 통해 택배사로 요청합니다.</p>
-        <p>
-          아니오. 이미 판매자에게 발송했습니다. 송장정보를 입력하면 처리 현황을 확인할 수 있습니다.
-        </p>
-        <p>아니오. 나중에 직접 발송할게요. 판매자에게 수거 방법 확인 후 발송해주세요.</p>
-      </div>
-
-      <mm-text-list texts='["크라우드 펀딩 도메인에서 옵션을 펼치는 경향. 그리고 애플.", "상품 구성(옵션)을 우선적으로 정의해야 함. 하나의 상품이 여러 개의 옵션(상품)을 가질 수
-          있고, 색상 또는 사이즈 옵션을 가질 수 있다.", "3칼럼 레이아웃은 스크롤 고정 영역을 고려해야 한다. 상품 이미지를 가운데 배치하면 상세
-          정보와 주문을 분리하기 어렵다.", "작게 만들기. 옵션을 장바구니에서 선택. 모바일에서는 버튼 후 옵션 선택. 그 전에 단건 구매
-          위주의 주문이라면 장바구니를 없앨 수도. 장바구니는 drawer 형태가 될 수도. 쇼피파이.", "신선식품 커머스. 유통기한, 원산지, 포장(친환경) 등이 현명한(?) 소비자의 구매 결정에 영향을
-          주는 요인으로 작용하여 최상단으로 상품 정보가 올라오는 경향. 법적으로 강제되었으나
-          상세페이지의 이미지에 포함되거나 하단에 눈에 띄지 않게 고지하는 경향이었음. 베네핏,
-          포인트, 배송 안내에 더하여 전략 배치할 수 있다.", "상품 상세 정보는 소비자가 이해하기 쉬운 용어로 작성되어야 하며, 부득이 외국어나 전문용어가
-          사용되는 경우에는 해당 용어의 의미를 쉽게 이해할 수 있도록 주석 등을 통해 부기해야 한다.", "상품 소개 및 판매 방송을 하는 경우 제조자, 원산지 등 상품 등의 정보를 소비자가 알아보기
-          쉽도록 반복적 또는 지속적으로 명확하게 제공해야 한다.", "단건의 상품 구매하는 케이스와 수량 및 옵션을 선택하는 케이스의 구별. 펀딩이나. 구매ㅐ=.
-          장바구니."]'></mm-text-list>
-    </blockquote>
-    <!--
-		거래조건에 관한 정보
-
-		공급방법 및 공급시기
-		1. 배송방법
-		2. 주문 이후 예상되는 배송기간
-		3. 배소입용(도서산간 추가비용 포함)
-
-		청약철회 반품 정보
-
-		단순변심, 착오구매 시 기간과 소비자 부담 반품비용
-		=> 고객의 변심에 의한 교환, 반품인 경우 기발생한 운송비(미국내배송비5 + 국제택배비 20 + 1파운드당 3, 수입세금 및 제비용)
-		- 제품하자가 아닌 단순변심, 착오구매에 따른 청약철회가 불가능한 경우 구체적 사유와 근거
-		- 제품하자, 오배송 등에 따른 청약철회 기간 및 통신판매업자가 부담하는 반품비용 등
-
-		3.
-		교환 반품 보증 조건 및 품질보증기준
-		A/S 관련 전화번호
-		환불 방법, 환불 지연 배상금을 지급받을 수 있다는 사실 및 구체적 조건과 절차
-
-		4소비자피해보상의 처리, 재화 등에 대한 불만 처리 및 소비자와 사업자 사이의 분쟁처리에 관한 사항
-		5거래에 관한 약관의 내용 또는 확인할 수 있는 방법
-
-		1. 소비자에게 제공되는 상품 등의 정보는 색상의 차별화, 테두리의 이용, 전체화면 크기를 고려하여 소비자가 알아보기 쉽도록 위치·글자 크기 등을 선택하여 명확하게 제공하여야 한다.
-		2. 상품 등의 정보는 소비자가 이해하기 쉬운 용어로 작성하여야 한다. 부득이 외국어나 전문용어 등이 사용될 수밖에 없는 경우에는 해당 용어의 바로 옆에 그 구체적인 개념을 주석 등을 통해 부기해 주는 등의 방법으로 소비자가 그 의미를 쉽게 이해할 수 있도록 하여야 한다.
-		3. 방송법 제9조제5항에 따라 방송통신위원회로부터 승인받은 상품소개와 판매에 관한 전문편성을 행하는 방송채널사용사업자와 데이터방송 등을 통하여 상품소개와 판매에 관한 방송을 송신하는 방송사업자가 상품소개 및 판매방송을 하는 경우 제조자, 원산지 등 상품 등의 정보를 소비자가 알아보기 쉽도록 반복적 또는 지속적으로 명확하게 제공하여야 한다.
-		3. 통신판매업자가 정보를 제공할 수 없는 항목이 있는 경우 그 구체적인 사유를 제시하고, 그에 준하는 정보를 제공하도록 노력하여야 한다.
-		<예시> 제조연월일: 생산지에서 직접 배송되므로 고객님께 배송될 상품의 제조연월일이 파악되지 않습니다. 단, 주문일로부터 3일 이내에 생산된 제품이 배송됩니다. 정확한 제조연월일을 확인하시려면 생산자(전화번호)에게 문의하시기 바랍니다.
-		5. 품목별 재화 등에 관한 정보 항목 중 품질보증기준은 결함·하자 등에 따른 구체적인 피해보상기준을 명시하거나, "결함·하자 등에 따른 소비자피해에 대해서는 ○○○보상규정에 따라 보상가능함" 등과 같이 명시하여야 한다. 다만, 적용되는 보상규정이 소비자기본법 제16조에 의한 소비자분쟁해결기준이 아닐 경우 그 규정을 알 수 있는 방법을 함께 제시하여야 한다. 또한, (10)사무용기기 중 노트북 및 (11)부터 (14)까지의 품목에 대하여는 품질보증기준이 소비자기본법 제16조에 의한 소비자분쟁해결기준보다 불리할 경우에는 불리하다는 사실 및 그 내용을 함께 명시하여야 한다.
-		6. 품목별 재화 등에 관한 정보 항목 중 KC 인증 필 유무는 인증을 받은 경우 KC마크 또는 인증번호를 표시하거나 인증을 받았다는 사실 등으로 표시할 수 있으며, 인증을 받았는지 여부를 확인할 수 없는 경우에는 확인할 수 없다는 사실 등으로 표시할 수 있다.
-		7. 주된 상품에 부수되는 상품을 추가하여 선택하는 방식으로 판매하는 경우 주된 상품에 대한 정보를 제공하여야 한다. 이때 부수되는 상품이란 주된 상품의 본체 이외의 예비품, 추가 부속품, 일부 기능의 추가로 인한 특별한 부속물 등을 의미한다.
-
-    소비자분쟁해결기준(공정거래위원회 고시) 및 관계법령에 따릅니다
-		<a href="https://www.law.go.kr/%ED%96%89%EC%A0%95%EA%B7%9C%EC%B9%99/%EC%A0%84%EC%9E%90%EC%83%81%EA%B1%B0%EB%9E%98%EB%93%B1%EC%97%90%EC%84%9C%EC%9D%98%EC%83%81%ED%92%88%EB%93%B1%EC%9D%98%EC%A0%95%EB%B3%B4%EC%A0%9C%EA%B3%B5%EC%97%90%EA%B4%80%ED%95%9C%EA%B3%A0%EC%8B%9C">전자상거래등에서의상품등의정보제공에관한고시</a>
-		<a href="https://easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=25&ccfNo=3&cciNo=1&cnpClsNo=1">인터넷쇼핑몰 사업자의 신원 등 표시 의무 </a>
-		<a href="http://easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&csmSeq=25&ccfNo=3&cciNo=1&cnpClsNo=2">신원 및 거래조건에 관한 정보 제공 의무 </a>
-		 -->
   </section>
 </main>
