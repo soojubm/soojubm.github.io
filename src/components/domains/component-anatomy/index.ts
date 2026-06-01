@@ -1,7 +1,7 @@
-import './anatomy-number'
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { resetStyles } from '../../../stylesheets/shared/reset.styles'
+import '../indicators/list-marker'
 
 /**
  * 컴포넌트 해부도(Anatomy) 섹션.
@@ -63,20 +63,6 @@ export class ComponentAnatomy extends LitElement {
         font-size: var(--font-size-14);
         color: var(--color-foreground);
       }
-
-      .marker {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 1.5rem;
-        height: 1.5rem;
-        flex-shrink: 0;
-        border-radius: var(--radius-round);
-        background: var(--color-foreground);
-        color: var(--color-background);
-        font-size: var(--font-size-12);
-        font-weight: var(--font-weight-bold);
-      }
     `,
   ]
 
@@ -92,7 +78,7 @@ export class ComponentAnatomy extends LitElement {
               ${this.parts.map(
                 (part, i) => html`
                   <li>
-                    <span class="marker">${i + 1}</span>
+                    <mm-list-marker variant="number" value=${i + 1}></mm-list-marker>
                     <span>${part}</span>
                   </li>
                 `,

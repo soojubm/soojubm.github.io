@@ -64,11 +64,6 @@
         ></mm-textfield>
         <mm-separator spacing="small"></mm-separator>
         <mm-textfield label="with label" placeholder="Label"></mm-textfield>
-        <!-- <div>
-          <mm-text size="14">1 sandbox</mm-text>
-          <mm-text size="14"> $100.00 / addl sandbox </mm-text>
-        </div> -->
-        <!-- TODO field width -->
       </mm-group>
     </div>
   </mm-component-example>
@@ -122,11 +117,11 @@
       </mm-textfield>
 
       <!-- 번호 마커 (세로 배치) -->
-      <span style="position: absolute; left: 0; top: 0.25rem; display: inline-flex; align-items: center; justify-content: center; width: 1.25rem; height: 1.25rem; border-radius: 50%; background: var(--color-foreground); color: var(--color-background); font-size: var(--font-size-12); font-weight: var(--font-weight-bold)">1</span>
-      <span style="position: absolute; left: 0; top: 2rem; display: inline-flex; align-items: center; justify-content: center; width: 1.25rem; height: 1.25rem; border-radius: 50%; background: var(--color-foreground); color: var(--color-background); font-size: var(--font-size-12); font-weight: var(--font-weight-bold)">2</span>
-      <span style="position: absolute; left: 0; top: 4.25rem; display: inline-flex; align-items: center; justify-content: center; width: 1.25rem; height: 1.25rem; border-radius: 50%; background: var(--color-primary); color: var(--color-background); font-size: var(--font-size-12); font-weight: var(--font-weight-bold)">3</span>
-      <span style="position: absolute; left: 2.25rem; top: 4.25rem; display: inline-flex; align-items: center; justify-content: center; width: 1.25rem; height: 1.25rem; border-radius: 50%; background: var(--color-foreground); color: var(--color-background); font-size: var(--font-size-12); font-weight: var(--font-weight-bold)">4</span>
-      <span style="position: absolute; left: 0; bottom: 0.25rem; display: inline-flex; align-items: center; justify-content: center; width: 1.25rem; height: 1.25rem; border-radius: 50%; background: var(--color-foreground); color: var(--color-background); font-size: var(--font-size-12); font-weight: var(--font-weight-bold)">5</span>
+      <mm-list-marker variant="number" value="1" style="position: absolute; left: 0; top: 0.25rem"></mm-list-marker>
+      <mm-list-marker variant="number" value="2" style="position: absolute; left: 0; top: 2rem"></mm-list-marker>
+      <mm-list-marker variant="number" value="3" style="position: absolute; left: 0; top: 4.25rem"></mm-list-marker>
+      <mm-list-marker variant="number" value="4" style="position: absolute; left: 2.25rem; top: 4.25rem"></mm-list-marker>
+      <mm-list-marker variant="number" value="5" style="position: absolute; left: 0; bottom: 0.25rem"></mm-list-marker>
     </div>
   </mm-component-anatomy>
 
@@ -149,7 +144,7 @@
     </mm-component-guide>
   </section>
 
-  <!-- <section class="textbox" style="position: relative">
+  <section class="textbox" style="position: relative">
         <mm-group
           data-e="menu"
           class="textbox-toolbar"
@@ -179,9 +174,9 @@
         <footer>
           <mm-button>게시</mm-button>
         </footer>
-      </section> -->
+      </section>
 
-  <!-- <div class="calendar">
+  <div class="calendar">
       <style>
         .calendar {
           width: 250px;
@@ -315,7 +310,7 @@
           <mm-textfield label="Height" placeholder="cm"></mm-textfield>
         </mm-group>
       </mm-surface>
-    </div> -->
+    </div>
 
   <mm-text-list texts="[]">
     <mm-text-list texts='["TODO utilities. 앞자리 0 제거. 숫자만입력3자리마다콤마. 소숫점 컨트롤.", "url field. www 및 https://", "form 컴포넌트는 간격에 대한 구조 컴포넌트. TODO. FormField, FormLabel, FormControl. form
@@ -326,7 +321,7 @@
       수도"]'></mm-text-list>
 </mm-text-list>
 
-  <!-- <div
+  <div
     style="
       width: 20rem;
       height: 20rem;
@@ -364,7 +359,7 @@
       <div class="quote-byline-name" style="color: #fff; position: relative">리들리 스콧</div>
       <time class="quote-byline-job" style="color: #fff; position: relative">2012, 미국</time>
     </cite>
-  </div> -->
+  </div>
 
   <mm-component-section
     title="Input Feedback"
@@ -384,7 +379,7 @@
     title="NumberInput"
     description="숫자 입력 필드. 수량, 가격, step/count 입력에 사용합니다."
   >
-    <div style="display: flex; flex-direction: column; gap: var(--space-3); max-width: 20rem">
+    <div style="display: flex; flex-direction: column; gap: var(--space-3);">
       <mm-number-input
         label="수량"
         name="quantity"
@@ -438,7 +433,7 @@
           >뉴스레터 구독</mm-button
         >
       </mm-textfield>
-      <!-- <mm-checkbox>
+      <mm-checkbox>
         본인은 Google의 <a href="" rel="noopener" target="_blank">이용 약관</a>에 동의하며 본인의
         정보가 Google의 <a href="" rel="noopener" target="_blank">개인정보보호 정책</a>에 따라
         이용된다는 것을 인정합니다.
@@ -447,7 +442,7 @@
         걱정하지 마세요. 스팸은 없습니다! 귀하의 정보는 web.dev 및 Chrome 관련 업데이트에만 사용되며
         당사에서 보내는 이메일은 일반적으로 한 달에 1-2회를 넘지 않습니다. 언제든지 구독을 취소할 수
         있습니다.
-      </mm-text> -->
+      </mm-text>
     </form>
   </mm-component-section>
 
