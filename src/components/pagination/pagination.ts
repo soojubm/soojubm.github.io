@@ -15,6 +15,7 @@ export class Pagination extends LitElement {
   static styles = css`
     :host {
       display: block;
+      --button-color-focus: #007185;
     }
 
     .pagination {
@@ -50,7 +51,7 @@ export class Pagination extends LitElement {
     }
 
     button:not(:disabled):focus {
-      outline: 3px solid #007185;
+      outline: 3px solid var(--button-color-focus);
       outline-offset: 2px;
     }
 

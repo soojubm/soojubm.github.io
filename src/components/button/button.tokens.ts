@@ -13,6 +13,11 @@ export const buttonTokens = {
   '--button-text-color': 'var(--color-foreground)',
   '--button-text-size': 'inherit',
   '--button-text-weight': 'var(--font-weight-bold)',
+  /* 상태 색상 — button / icon-button / pagination 공유 */
+  '--button-color-focus': '#007185',
+  '--button-color-active-bg': '#f0b800',
+  '--button-color-active-border': '#008296',
+  '--button-color-active-ring': '#c8f3fa',
 } as const
 
 /** 토큰 객체를 :host 안에 넣을 CSS 선언 묶음으로 변환 */

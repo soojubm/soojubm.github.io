@@ -6,6 +6,9 @@ export const separatorStyles = css`
     --separator-border: var(--border);
     --separator-text-color: var(--color-foreground-light);
     --separator-text-background: var(--color-background);
+    /* 가운데 텍스트 레이블 공통 토큰 */
+    --separator-label-width: 4rem;
+    --separator-label-line-height: 24px;
   }
 
   hr {
@@ -23,10 +26,11 @@ export const separatorStyles = css`
     z-index: var(--zindex-default);
   }
 
+  /* 텍스트 없을 때: ::after로 배경 박스만 그려 선을 가림 */
   hr[role='separator']::after {
     content: '';
-    width: 4rem;
-    line-height: 24px;
+    width: var(--separator-label-width);
+    line-height: var(--separator-label-line-height);
     background: var(--separator-text-background);
     font-size: var(--font-size-12);
     color: var(--separator-text-color);
@@ -41,9 +45,10 @@ export const separatorStyles = css`
     margin-block: var(--space-2);
   }
 
+  /* 텍스트 있을 때: slot 요소가 ::after 위에 올라와 선을 가리고 텍스트를 표시 */
   ::slotted([slot='text']) {
-    width: 4rem;
-    line-height: 24px;
+    width: var(--separator-label-width);
+    line-height: var(--separator-label-line-height);
     background: var(--separator-text-background);
     font-size: var(--font-size-12);
     color: var(--separator-text-color);

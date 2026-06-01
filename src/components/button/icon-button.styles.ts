@@ -64,13 +64,13 @@ export const iconButtonStyles = css`
       border-color: var(--color-background-strong);
     }
     &:focus {
-      outline: 3px solid #007185;
+      outline: 3px solid var(--button-color-focus);
       outline-offset: 2px;
     }
     &:active {
-      background: #f0b800;
-      border-color: #008296;
-      box-shadow: 0 0 0 3px #c8f3fa, inset 0 0 0 2px #fff;
+      background: var(--button-color-active-bg);
+      border-color: var(--button-color-active-border);
+      box-shadow: 0 0 0 3px var(--button-color-active-ring), inset 0 0 0 2px #fff;
     }
     &:disabled {
       opacity: 0.5;
