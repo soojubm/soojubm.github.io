@@ -45,7 +45,7 @@ const sizeTokens = [
   {
     name: '--size-large',
     value: '3rem / 48px',
-    cases: ['--avatar-large', '--button-height', '--textfield-height'],
+    cases: ['--avatar-large', '--button-height', '--input-height'],
   },
   { name: '--size-medium', value: '2rem / 32px', cases: ['--avatar-medium', '--chip-height'] },
   {

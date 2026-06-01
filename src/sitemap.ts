@@ -19,19 +19,7 @@ export const SITEMAP = [
     icon: 'design-pencil',
   },
 
-  // 2. 기록 (개인 컬렉션)
-  {
-    type: 'category',
-    id: 'records',
-    title: '기록',
-    icon: 'journal-page',
-    items: [
-      { id: 'films', name: '영화' },
-      { id: 'books', name: '독서' },
-    ],
-  },
-
-  // 3. 카테고리 그룹 메뉴 (Dropdown Categories)
+  // 2. 카테고리 그룹 메뉴 (Dropdown Categories)
   {
     type: 'category',
     id: 'visual-information',
@@ -81,7 +69,7 @@ export const SITEMAP = [
       { id: 'checkbox', name: 'checkbox' },
       { id: 'radio', name: 'radio' },
       { id: 'switch', name: 'switch' },
-      { id: 'textfield', name: 'Text Field' },
+      { id: 'input', name: 'Input' },
       { id: 'searchfield', name: 'Search Field' },
       { id: 'textarea', name: 'Textarea' },
     ],
