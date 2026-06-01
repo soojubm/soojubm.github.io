@@ -132,14 +132,15 @@ export class Textfield extends LitElement {
 
   protected renderHelper(): unknown {
     return this.helper
-      ? html`<mm-textfield-helper>${this.helper}</mm-textfield-helper>`
+      ? html`<div style="margin-top:-.25rem">
+          <mm-textfield-helper>${this.helper}</mm-textfield-helper>
+        </div>`
       : nothing
   }
 
   protected renderValidation(): unknown {
     return this.validationText
-      ? html`<mm-textfield-validation
-          id=${`${this.inputId}-validation`}
+      ? html`<mm-textfield-validation id=${`${this.inputId}-validation`}
           >${this.validationText}</mm-textfield-validation
         >`
       : nothing
