@@ -54,7 +54,6 @@ export class SocialLinks extends LitElement {
         ${this.activeLinks.map(
           ({ label, icon, href }) => html`
             <mm-menu-item-link label=${label} icon=${icon} href=${href} target="_blank">
-              <mm-icon slot="action" size="small" name="arrow-up-right"></mm-icon>
             </mm-menu-item-link>
           `,
         )}
