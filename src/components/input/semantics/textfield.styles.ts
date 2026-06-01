@@ -8,21 +8,11 @@ export const textfieldStyles = [
       margin: 0;
     }
 
-    label {
-      display: block;
-      line-height: var(--size-small);
-    }
-
-    label small {
-      margin: 0 0 0 var(--space-1);
-      color: var(--color-foreground-light);
-    }
-
     .textfield {
       position: relative;
     }
 
-    .textfield-validation {
+    mm-textfield-validation {
       margin: var(--space-1) 0 0;
     }
 

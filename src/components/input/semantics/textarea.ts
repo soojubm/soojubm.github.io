@@ -25,16 +25,6 @@ export class Textarea extends LitElement {
         margin: 0;
       }
 
-      label {
-        display: block;
-        line-height: var(--size-small);
-      }
-
-      label small {
-        margin: 0 0 0 var(--space-1);
-        color: var(--color-foreground-light);
-      }
-
       .textfield {
         position: relative;
       }
@@ -89,13 +79,15 @@ export class Textarea extends LitElement {
     return html`
       <div class="textfield" ?data-invalid="${this.isInvalid}" data-label="${this.hiddenLabel}">
         ${this.label
-          ? html`<label for="${this._textareaId}">
-              ${this.label}${this.isOptional ? html`<small>선택입력</small>` : ''}
-            </label>`
+          ? html`<mm-textfield-label for="${this._textareaId}" ?optional=${this.isOptional}>
+              ${this.label}
+            </mm-textfield-label>`
           : ''}
         ${this.renderTextarea()}
         ${this.helper
-          ? html`<mm-text size="12" id="${this._textareaId}-helper">${this.helper}</mm-text>`
+          ? html`<mm-textfield-helper id="${this._textareaId}-helper"
+              >${this.helper}</mm-textfield-helper
+            >`
           : ''}
       </div>
     `

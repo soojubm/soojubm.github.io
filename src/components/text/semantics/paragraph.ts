@@ -5,9 +5,10 @@ import { customElement, property } from 'lit/decorators.js'
 import { resetStyles } from '../../../stylesheets/shared/reset.styles'
 import { textSizes, textWeights, type TextSize, type TextWeight } from '../text.styles'
 
-type ParagraphSize = 'medium' | 'large'
+type ParagraphSize = 'small' | 'medium' | 'large'
 
 const paragraphSizes: Record<ParagraphSize, TextSize> = {
+  small: '12',
   medium: '14',
   large: '18',
 }

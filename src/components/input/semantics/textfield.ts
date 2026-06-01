@@ -103,9 +103,9 @@ export class Textfield extends LitElement {
     if (!this.label) return nothing
 
     return html`
-      <label for=${this.inputId}>
-        ${this.label} ${this.effectiveIsOptional ? html`<small>선택입력</small>` : nothing}
-      </label>
+      <mm-textfield-label for=${this.inputId} ?optional=${this.effectiveIsOptional}>
+        ${this.label}
+      </mm-textfield-label>
     `
   }
 
@@ -140,7 +140,6 @@ export class Textfield extends LitElement {
     return this.validationText
       ? html`<mm-textfield-validation
           id=${`${this.inputId}-validation`}
-          class="textfield-validation"
           >${this.validationText}</mm-textfield-validation
         >`
       : nothing

@@ -42,11 +42,11 @@ class Input extends LitElement {
         data-label="${String(this.hiddenLabel)}"
       >
         ${this.label
-          ? html`<label class="textfield-label"
-              >${this.label}${this.isOptional ? html`<small>선택입력</small>` : ''}</label
+          ? html`<mm-textfield-label ?optional=${this.isOptional}
+              >${this.label}</mm-textfield-label
             >`
           : ''}
-        ${this.helper ? html`<mm-text size="12">${this.helper}</mm-text>` : ''}
+        ${this.helper ? html`<mm-textfield-helper>${this.helper}</mm-textfield-helper>` : ''}
         <div class="textfield-control">
           ${this.hasPrefixSlot
             ? html`<span class="textfield-affix textfield-prefix"
@@ -91,7 +91,7 @@ class Input extends LitElement {
               ></slot>`}
         </div>
         ${this.validationText
-          ? html`<mm-text size="12" class="textfield-validation">${this.validationText}</mm-text>`
+          ? html`<mm-textfield-validation>${this.validationText}</mm-textfield-validation>`
           : ''}
       </div>
     `
