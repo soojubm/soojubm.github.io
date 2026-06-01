@@ -1,5 +1,6 @@
 import { LitElement, html, css } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
+import '../text/semantics/caption'
 
 @customElement('mm-thumbnail')
 export class Thumbnail extends LitElement {
@@ -12,6 +13,7 @@ export class Thumbnail extends LitElement {
 
   @property({ type: String }) href = ''
   @property({ type: Boolean }) clickable = false
+  @property({ type: String }) figcaption = ''
 
   @state() private _hasError = false
   private _fallbackImage = 'https://via.placeholder.com/300?text=No+Image'
@@ -29,22 +31,16 @@ export class Thumbnail extends LitElement {
       width: 100%;
       padding: 0;
       margin: 0;
-      border: var(--thumbnail-border, none);
-      background: none;
-      overflow: hidden;
-      border-radius: var(--thumbnail-radius);
-      text-decoration: none;
-      color: inherit;
     }
 
-    .thumbnail-root.interactive {
+    .thumbnail-media.interactive {
       cursor: pointer;
       transition: all 0.3s ease-in-out;
     }
-    .thumbnail-root.interactive:hover {
+    .thumbnail-media.interactive:hover {
       transform: scale(1.03);
     }
-    .thumbnail-root:focus-visible {
+    .thumbnail-media:focus-visible {
       outline: 3px solid var(--color-focus, #2563eb);
       outline-offset: 2px;
     }
@@ -59,6 +55,23 @@ export class Thumbnail extends LitElement {
       height: 100%;
       object-fit: cover;
       display: block;
+    }
+
+    .thumbnail-media {
+      display: block;
+      width: 100%;
+      padding: 0;
+      border: var(--thumbnail-border, none);
+      background: none;
+      overflow: hidden;
+      border-radius: var(--thumbnail-radius);
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .thumbnail-caption {
+      display: block;
+      margin-top: var(--space-2, 8px);
     }
   `
 
@@ -79,22 +92,28 @@ export class Thumbnail extends LitElement {
         />
       </div>
     `
-    // 1. 이동할 주소(href)가 있다면 자동으로 <a> 태그로 출력
+    // 미디어(이미지 틀)를 감싸는 요소를 상황에 맞게 결정합니다.
+    let media
     if (this.href) {
-      return html`
-        <a href="${this.href}" class="thumbnail-root interactive"> ${innerTemplate} </a>
-      `
+      // 1. 이동할 주소(href)가 있다면 <a> 태그로 출력
+      media = html`<a href="${this.href}" class="thumbnail-media interactive">${innerTemplate}</a>`
+    } else if (this.clickable) {
+      // 2. 주소는 없지만 클릭 동작(clickable)이 필요하다면 <button> 태그로 출력
+      media = html`<button type="button" class="thumbnail-media interactive">${innerTemplate}</button>`
+    } else {
+      // 3. 아무것도 없다면 단순 보기용 <div>로 출력
+      media = html`<div class="thumbnail-media">${innerTemplate}</div>`
     }
 
-    // 2. 주소는 없지만 클릭 동작(clickable)이 필요하다면 <button> 태그로 출력
-    if (this.clickable) {
-      return html`
-        <button type="button" class="thumbnail-root interactive">${innerTemplate}</button>
-      `
-    }
-
-    // 3. 아무것도 없다면 단순 보기용 <div>로 출력
-    return html` <figure class="thumbnail-root">${innerTemplate}</figure> `
+    // thumbnail 자체가 <figure>이며, figcaption 값이 있으면 내부에 캡션을 함께 렌더링합니다.
+    return html`
+      <figure class="thumbnail-root">
+        ${media}
+        ${this.figcaption
+          ? html`<mm-caption as="figcaption" class="thumbnail-caption">${this.figcaption}</mm-caption>`
+          : ''}
+      </figure>
+    `
   }
 }
 
