@@ -1,6 +1,8 @@
-import { LitElement, css, html } from 'lit'
+import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 import { resetStyles } from '../../stylesheets/shared/reset.styles'
+import '../menuitem/menu-item-row'
+import '../menuitem/semantics/menu-item-checkbox'
 
 export interface DropdownOption {
   label: string
@@ -8,6 +10,7 @@ export interface DropdownOption {
   type: 'default' | 'checkbox'
   checked: boolean
   selected: boolean
+  icon?: string
 }
 
 @customElement('mm-dropdown')
@@ -89,12 +92,35 @@ export class Dropdown extends LitElement {
         transition: opacity 120ms ease, transform 220ms cubic-bezier(0.18, 1.25, 0.4, 1),
           visibility 0s;
       }
+
+      mm-menu-item-row {
+        border-radius: var(--radius);
+        cursor: pointer;
+      }
+
+      mm-menu-item-row:hover {
+        background-color: var(--color-background-subtle);
+      }
+
+      mm-menu-item-row[aria-current='true'] {
+        color: var(--color-primary);
+      }
     `,
   ]
 
   connectedCallback(): void {
     super.connectedCallback()
     this.syncOptions()
+    document.addEventListener('click', this.handleOutsideClick)
+  }
+
+  disconnectedCallback(): void {
+    super.disconnectedCallback()
+    document.removeEventListener('click', this.handleOutsideClick)
+  }
+
+  private handleOutsideClick = (e: MouseEvent) => {
+    if (this.isOpen && !this.contains(e.target as Node)) this.isOpen = false
   }
 
   protected get defaultOptions(): DropdownOption[] {
@@ -102,20 +128,30 @@ export class Dropdown extends LitElement {
   }
 
   protected syncOptions() {
-    const lightDomOptions = Array.from(this.querySelectorAll('option')).map(option => ({
+    const lightDomOptions = this.parseLightDomOptions()
+    this.options = lightDomOptions.length > 0 ? lightDomOptions : this.defaultOptions
+    this.selectedLabel = this.resolveSelectedLabel()
+  }
+
+  // light DOM의 <option> 요소를 DropdownOption 데이터로 변환
+  private parseLightDomOptions(): DropdownOption[] {
+    return Array.from(this.querySelectorAll('option')).map(option => ({
       label: option.textContent || '',
       value: option.value,
       type: (option.getAttribute('type') as 'default' | 'checkbox') || 'default',
       checked: option.hasAttribute('checked'),
       selected: option.hasAttribute('selected'),
     }))
+  }
 
-    this.options = lightDomOptions.length > 0 ? lightDomOptions : this.defaultOptions
-    this.selectedLabel =
+  // value > selected > 첫 default 옵션 순으로 표시 라벨 결정
+  private resolveSelectedLabel(): string {
+    return (
       this.options.find(option => option.value === this.value)?.label ??
       this.options.find(option => option.selected)?.label ??
       this.options.find(option => option.type === 'default')?.label ??
       this.selectedLabel
+    )
   }
 
   protected toggleOpen() {
@@ -164,39 +200,65 @@ export class Dropdown extends LitElement {
     )
   }
 
+  // 트리거 버튼: 서브클래스에서 아이콘 버튼 등으로 교체 가능
+  protected renderTrigger() {
+    return html`
+      <button
+        class="dropdown-button"
+        aria-haspopup="true"
+        aria-expanded="${this.isOpen}"
+        @click="${this.toggleOpen}"
+      >
+        ${this.selectedLabel}
+        <mm-icon name="nav-arrow-down"></mm-icon>
+      </button>
+    `
+  }
+
+  protected renderList() {
+    return html`
+      <div class="dropdown-list ${this.isOpen ? 'open' : ''}" role="menu">
+        ${this.options.map(option => this.renderOption(option))}
+      </div>
+    `
+  }
+
+  protected renderOption(option: DropdownOption) {
+    return option.type === 'checkbox'
+      ? this.renderCheckboxOption(option)
+      : this.renderDefaultOption(option)
+  }
+
+  // 체크박스 옵션: 클릭해도 닫히지 않고 체크 상태만 토글
+  protected renderCheckboxOption(option: DropdownOption) {
+    return html`
+      <mm-menu-item-checkbox
+        .checked=${option.checked}
+        @change=${(e: CustomEvent) => this.handleCheckboxChange(option, e)}
+      >
+        ${option.label}
+      </mm-menu-item-checkbox>
+    `
+  }
+
+  // 일반 옵션: 선택 시 닫히며 현재 value면 aria-current로 강조
+  protected renderDefaultOption(option: DropdownOption) {
+    return html`
+      <mm-menu-item-row
+        icon=${option.icon ?? nothing}
+        aria-current=${option.value === this.value ? 'true' : nothing}
+        @click="${() => this.selectOption(option)}"
+      >
+        ${option.label}
+      </mm-menu-item-row>
+    `
+  }
+
   render() {
     return html`
       <div class="dropdown">
-        <button
-          class="dropdown-button"
-          aria-haspopup="true"
-          aria-expanded="${this.isOpen}"
-          @click="${this.toggleOpen}"
-        >
-          ${this.selectedLabel}
-          <mm-icon name="nav-arrow-down"></mm-icon>
-        </button>
-        <div class="dropdown-list ${this.isOpen ? 'open' : ''}" role="menu">
-          ${this.options.map(option => {
-            // 1. 체크박스 타입일 때
-            if (option.type === 'checkbox') {
-              return html`
-                <mm-menu-item-checkbox
-                  .checked=${option.checked}
-                  @change=${(e: CustomEvent) => this.handleCheckboxChange(option, e)}
-                >
-                  ${option.label}
-                </mm-menu-item-checkbox>
-              `
-            }
-            // 2. 기본 일반 행 타입일 때
-            return html`
-              <mm-menu-item-row @click="${() => this.selectOption(option)}">
-                ${option.label}
-              </mm-menu-item-row>
-            `
-          })}
-        </div>
+        ${this.renderTrigger()}
+        ${this.renderList()}
       </div>
     `
   }

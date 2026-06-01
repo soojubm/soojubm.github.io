@@ -1,79 +1,50 @@
-import { LitElement, css, html } from 'lit'
-import { customElement, state } from 'lit/decorators.js'
+import { css, html } from 'lit'
+import { customElement, property } from 'lit/decorators.js'
+import Dropdown, { DropdownOption } from '../dropdown/dropdown'
 import { getPreferredTheme, saveTheme, THEMES, type Theme } from '../../javascripts/theme'
 import '../icon-button/icon-button'
 
 @customElement('mm-theme-switcher')
-export class ThemeSwitcher extends LitElement {
-  @state() private theme: Theme = 'light'
-  @state() private open = false
+export class ThemeSwitcher extends Dropdown {
+  @property({ type: String, reflect: true }) value: Theme = 'light'
 
-  static styles = css`
-    :host {
-      position: relative;
-      display: inline-flex;
-    }
+  static styles = [
+    ...Dropdown.styles,
+    css`
+      :host {
+        display: inline-flex;
+      }
 
-    .dropdown {
-      position: absolute;
-      top: calc(100% + var(--space-1));
-      right: 0;
-      z-index: 100;
-      min-width: 120px;
-      background: var(--color-background);
-      border: var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
+      .dropdown {
+        width: auto;
+      }
 
-    .option {
-      display: flex;
-      align-items: center;
-      gap: var(--space-2);
-      width: 100%;
-      padding: var(--space-2) var(--space-3);
-      background: none;
-      border: none;
-      font: inherit;
-      font-size: var(--font-size-14);
-      color: var(--color-foreground);
-      cursor: pointer;
-      text-align: left;
-      box-sizing: border-box;
-    }
+      .dropdown-list {
+        left: auto;
+        right: 0;
+        min-width: 120px;
+      }
+    `,
+  ]
 
-    .option:hover {
-      background: var(--color-background-subtle);
-    }
-
-    .option[aria-current='true'] {
-      color: var(--color-primary);
-    }
-  `
-
-  connectedCallback() {
+  connectedCallback(): void {
+    this.value = getPreferredTheme()
     super.connectedCallback()
-    this.theme = getPreferredTheme()
-    document.addEventListener('click', this._handleOutsideClick)
   }
 
-  disconnectedCallback() {
-    super.disconnectedCallback()
-    document.removeEventListener('click', this._handleOutsideClick)
+  protected get defaultOptions(): DropdownOption[] {
+    return THEMES.map(theme => ({
+      label: theme.label,
+      value: theme.value,
+      type: 'default',
+      checked: false,
+      selected: this.value === theme.value,
+      icon: theme.icon,
+    }))
   }
 
-  private _handleOutsideClick = (e: MouseEvent) => {
-    if (!this.contains(e.target as Node)) this.open = false
-  }
-
-  private _select(theme: Theme) {
-    this.theme = saveTheme(theme)
-    this.open = false
-  }
-
-  render() {
-    const currentTheme = THEMES.find(t => t.value === this.theme)
+  protected renderTrigger() {
+    const currentTheme = THEMES.find(theme => theme.value === this.value)
 
     return html`
       <mm-icon-button
@@ -81,30 +52,16 @@ export class ThemeSwitcher extends LitElement {
         icon="${currentTheme?.icon ?? 'sun-light'}"
         aria-label="테마 변경"
         .haspopup=${true}
-        .expanded=${this.open}
-        @click=${() => (this.open = !this.open)}
+        .expanded=${this.isOpen}
+        @click=${this.toggleOpen}
       ></mm-icon-button>
-
-      ${this.open
-        ? html`
-            <div class="dropdown" role="listbox" aria-label="테마 선택">
-              ${THEMES.map(
-                t => html`
-                  <button
-                    class="option"
-                    role="option"
-                    aria-current=${t.value === this.theme ? 'true' : 'false'}
-                    @click=${() => this._select(t.value)}
-                  >
-                    <mm-icon name=${t.icon}></mm-icon>
-                    ${t.label}
-                  </button>
-                `,
-              )}
-            </div>
-          `
-        : ''}
     `
+  }
+
+  protected selectOption(option: DropdownOption) {
+    this.value = saveTheme(option.value as Theme)
+    this.isOpen = false
+    this.emitSelectChange(option)
   }
 }
 
