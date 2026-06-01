@@ -1,7 +1,8 @@
-import { LitElement, css, html, nothing } from 'lit'
+import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import '../icon-button/semantics/prev-button'
 import '../icon-button/semantics/next-button'
+import '../icon-button/semantics/page-button'
 
 type PaginationItem = number | 'ellipsis'
 
@@ -15,7 +16,6 @@ export class Pagination extends LitElement {
   static styles = css`
     :host {
       display: block;
-      --button-color-focus: #007185;
     }
 
     .pagination {
@@ -26,50 +26,15 @@ export class Pagination extends LitElement {
       margin: var(--space-4) 0;
     }
 
-    button,
     .pagination-ellipsis {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       width: var(--size-medium);
       height: var(--size-medium);
-      border-radius: var(--radius);
-      font: inherit;
-      line-height: 1;
-    }
-
-    button {
-      border: var(--border);
-      background: var(--color-background);
-      color: var(--color-foreground);
-      cursor: pointer;
-    }
-
-    button:not(:disabled):hover {
-      border-color: var(--color-background-strong);
-      background: var(--color-background-subtle);
-    }
-
-    button:not(:disabled):focus {
-      outline: 3px solid var(--button-color-focus);
-      outline-offset: 2px;
-    }
-
-    button[aria-current='page'] {
-      border-color: var(--selection-indicator-color);
-      background-color: var(--selection-background);
-      color: var(--selection-foreground);
-      font-weight: var(--font-weight-bold);
-    }
-
-    button:disabled {
-      opacity: 0.45;
-      cursor: not-allowed;
-    }
-
-    .pagination-ellipsis {
       color: var(--color-foreground-light);
       letter-spacing: 1px;
+      line-height: 1;
       user-select: none;
     }
 
@@ -78,10 +43,13 @@ export class Pagination extends LitElement {
         gap: 0;
       }
 
-      button,
-      .pagination-ellipsis,
       mm-prev-button,
-      mm-next-button {
+      mm-next-button,
+      mm-page-button {
+        --button-size: var(--size-small);
+      }
+
+      .pagination-ellipsis {
         width: var(--size-small);
         height: var(--size-small);
       }
@@ -151,14 +119,11 @@ export class Pagination extends LitElement {
     const isCurrent = item === this.safeCurrentPage
 
     return html`
-      <button
-        type="button"
-        aria-label=${`${item} 페이지로 이동`}
-        aria-current=${isCurrent ? 'page' : nothing}
+      <mm-page-button
+        .page=${item}
+        ?current=${isCurrent}
         @click=${() => this.setPage(item)}
-      >
-        ${item}
-      </button>
+      ></mm-page-button>
     `
   }
 
