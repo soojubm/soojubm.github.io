@@ -25,6 +25,7 @@ export class ToggleButtonGroup extends LitElement {
       --toggle-padding-inline: var(--space-3);
       --toggle-radius: var(--radius);
       --toggle-color: var(--color-background);
+      --toggle-border: 1px solid var(--color-border-strong);
       --toggle-text-color: var(--color-foreground);
       --toggle-selected-color: var(--selection-background);
       --toggle-selected-border-color: var(--selection-indicator-color);
@@ -59,7 +60,7 @@ export class ToggleButtonGroup extends LitElement {
       min-height: var(--toggle-size);
       padding: 0 var(--toggle-padding-inline);
 
-      border: var(--border-width) solid transparent;
+      border: var(--toggle-border);
       box-sizing: border-box;
       background: var(--toggle-color);
       cursor: pointer;

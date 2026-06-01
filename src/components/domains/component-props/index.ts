@@ -26,7 +26,7 @@ export class Prop extends LitElement {
         color: var(--color-foreground-light);
         line-height: 20px;
       }
-      attr {
+      dt attr {
         color: var(--color-foreground-light);
         font-weight: var(--font-weight-normal);
         margin-left: 0.125rem;

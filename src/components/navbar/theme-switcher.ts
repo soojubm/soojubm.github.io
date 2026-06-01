@@ -1,7 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, state } from 'lit/decorators.js'
 import { getPreferredTheme, saveTheme, THEMES, type Theme } from '../../javascripts/theme'
-import { resetStyles } from '../../stylesheets/shared/reset.styles'
+import { iconButtonStyles } from '../icon-button/icon-button.styles'
 
 @customElement('mm-theme-switcher')
 export class ThemeSwitcher extends LitElement {
@@ -9,7 +9,7 @@ export class ThemeSwitcher extends LitElement {
   @state() private open = false
 
   static styles = [
-    resetStyles,
+    iconButtonStyles,
     css`
       :host {
         position: relative;
@@ -19,20 +19,7 @@ export class ThemeSwitcher extends LitElement {
       /* ── 트리거 버튼 ── */
       .trigger {
         position: relative;
-        width: var(--size-small);
-        height: var(--size-small);
-        border: none;
-        background: none;
-        cursor: pointer;
-        padding: 0;
-        border-radius: var(--radius);
         overflow: hidden;
-        color: var(--color-foreground);
-      }
-
-      .trigger:focus-visible {
-        outline: 3px solid var(--color-primary);
-        outline-offset: 2px;
       }
 
       .track {
@@ -123,7 +110,9 @@ export class ThemeSwitcher extends LitElement {
 
     return html`
       <button
-        class="trigger"
+        class="icon-button trigger"
+        data-variant="plain"
+        data-size="small"
         aria-label="테마 변경"
         aria-haspopup="listbox"
         aria-expanded=${this.open}
