@@ -39,7 +39,16 @@ export class ToggleButtonGroup extends LitElement {
 
       background: var(--toggle-group-background);
       border-radius: var(--toggle-radius);
-      overflow: hidden;
+    }
+
+    button:first-child {
+      border-start-start-radius: var(--toggle-radius);
+      border-end-start-radius: var(--toggle-radius);
+    }
+
+    button:last-child {
+      border-start-end-radius: var(--toggle-radius);
+      border-end-end-radius: var(--toggle-radius);
     }
 
     :host([stretch]) .button-list {
