@@ -30,12 +30,6 @@
       ></mm-toggle-button-group>
     </div>
 
-    <!-- <mm-button-group>
-      <mm-button status="active">All</mm-button>
-      <mm-button>Active</mm-button>
-      <mm-button>Draft</mm-button>
-    </mm-button-group> -->
-
     <menu
       role="menubar"
       style="display: flex; align-items: center; margin: var(--space-3) 0; gap: 1rem"
@@ -198,9 +192,21 @@
   <mm-component-tokens>
     <mm-token name="--table-lineheight" default="1.6" description="헤더·셀 줄 높이"></mm-token>
     <mm-token name="--table-row-border" default="var(--border)" description="행 구분선"></mm-token>
-    <mm-token name="--table-cell-padding" default="var(--space-2) 0" description="셀 내부 여백"></mm-token>
-    <mm-token name="--table-cell-background" default="var(--color-background)" description="테이블 배경색"></mm-token>
-    <mm-token name="--table-cell-background-hover" default="var(--color-background-subtle)" description="행 호버 배경색"></mm-token>
+    <mm-token
+      name="--table-cell-padding"
+      default="var(--space-2) 0"
+      description="셀 내부 여백"
+    ></mm-token>
+    <mm-token
+      name="--table-cell-background"
+      default="var(--color-background)"
+      description="테이블 배경색"
+    ></mm-token>
+    <mm-token
+      name="--table-cell-background-hover"
+      default="var(--color-background-subtle)"
+      description="행 호버 배경색"
+    ></mm-token>
     <mm-token name="--col-checkbox" default="32px" description="체크박스 컬럼 너비"></mm-token>
   </mm-component-tokens>
 

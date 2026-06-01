@@ -55,7 +55,6 @@ export const textfieldStyles = [
     }
 
     .number-input {
-      max-width: 10rem;
     }
 
     .number-input input {
