@@ -21,16 +21,12 @@ export const textfieldStyles = [
       align-items: center;
       justify-content: center;
       height: var(--input-height);
+      padding-inline: var(--input-padding);
       flex: 0 0 auto;
     }
 
     .textfield-prefix {
       width: var(--input-height);
-    }
-
-    .textfield-suffix,
-    .textfield-link {
-      padding-right: var(--space-2);
     }
 
     [data-size='small'] {
@@ -66,7 +62,6 @@ export const textfieldStyles = [
     .number-input .textfield-prefix,
     .number-input .textfield-suffix {
       width: var(--input-height);
-      padding: 0;
     }
   `,
 ]

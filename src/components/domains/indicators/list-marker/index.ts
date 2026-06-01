@@ -24,20 +24,22 @@ export class ListMarker extends LitElement {
 
       :host([variant='number']),
       :host([variant='check']) {
-        width: 1.25rem;
-        height: 1.25rem;
+        width: var(--size-tiny);
+        height: var(--size-tiny);
+        margin-top: var(--space-1);
         font-size: var(--font-size-12);
         font-weight: var(--font-weight-bold);
       }
 
       :host([variant='dot']) {
-        width: 0.375rem;
-        height: 0.375rem;
+        width: var(--size-tiny);
+        height: var(--size-tiny);
       }
 
       svg {
-        width: 0.625rem;
-        height: 0.625rem;
+        width: 0.5rem;
+        height: 0.5rem;
+        color: #fff;
       }
     `,
   ]

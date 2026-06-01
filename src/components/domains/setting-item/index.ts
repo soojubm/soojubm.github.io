@@ -21,13 +21,6 @@ export class SettingItem extends LitElement {
   static styles = css`
     :host {
       display: block;
-      border-bottom: 1px solid var(--color-border);
-    }
-
-    mm-menu-item-row {
-      --menu-item-padding: var(--space-5) 0;
-      display: block;
-      padding: var(--space-5) 0;
     }
 
     :host([disabled]) {

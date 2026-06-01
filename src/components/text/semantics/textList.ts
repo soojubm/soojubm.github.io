@@ -29,10 +29,6 @@ class TextList extends LitElement {
         margin-left: 0;
         padding-left: 0;
       }
-
-      mm-list-marker {
-        margin-top: 0.25rem;
-      }
     `,
   ]
 
@@ -58,8 +54,12 @@ class TextList extends LitElement {
     )
 
     return tag === 'ol'
-      ? html`<ol class="list">${list}</ol>`
-      : html`<ul class="list">${list}</ul>`
+      ? html`<ol class="list">
+          ${list}
+        </ol>`
+      : html`<ul class="list">
+          ${list}
+        </ul>`
   }
 }
 
