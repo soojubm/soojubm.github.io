@@ -22,10 +22,6 @@ export const textfieldStyles = [
       position: relative;
     }
 
-    .textfield-helper {
-      margin: var(--space-1) 0 var(--space-1);
-    }
-
     .textfield-validation {
       margin: var(--space-1) 0 0;
     }

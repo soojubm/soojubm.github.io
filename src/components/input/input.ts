@@ -37,22 +37,62 @@ class Input extends LitElement {
 
   render() {
     return html`
-      <div class="textfield ${this.isInvalid ? 'is-invalid' : ''}" data-label="${String(this.hiddenLabel)}">
-        ${this.label ? html`<label class="textfield-label">${this.label}${this.isOptional ? html`<small>선택입력</small>` : ''}</label>` : ''}
-        ${this.helper ? html`<mm-text size="12" class="textfield-helper">${this.helper}</mm-text>` : ''}
+      <div
+        class="textfield ${this.isInvalid ? 'is-invalid' : ''}"
+        data-label="${String(this.hiddenLabel)}"
+      >
+        ${this.label
+          ? html`<label class="textfield-label"
+              >${this.label}${this.isOptional ? html`<small>선택입력</small>` : ''}</label
+            >`
+          : ''}
+        ${this.helper ? html`<mm-text size="12">${this.helper}</mm-text>` : ''}
         <div class="textfield-control">
           ${this.hasPrefixSlot
-            ? html`<span class="textfield-affix textfield-prefix"><slot name="prefix" @slotchange=${(event: Event) => this.handleSlotChange('prefix', event)}></slot></span>`
-            : html`<slot name="prefix" @slotchange=${(event: Event) => this.handleSlotChange('prefix', event)}></slot>`}
-          <input class="reset-input textfield-input" type="${this.type}" .value="${this.value}" name="${this.name}" placeholder="${this.placeholder}" ?disabled="${this.disabled}" />
+            ? html`<span class="textfield-affix textfield-prefix"
+                ><slot
+                  name="prefix"
+                  @slotchange=${(event: Event) => this.handleSlotChange('prefix', event)}
+                ></slot
+              ></span>`
+            : html`<slot
+                name="prefix"
+                @slotchange=${(event: Event) => this.handleSlotChange('prefix', event)}
+              ></slot>`}
+          <input
+            class="reset-input textfield-input"
+            type="${this.type}"
+            .value="${this.value}"
+            name="${this.name}"
+            placeholder="${this.placeholder}"
+            ?disabled="${this.disabled}"
+          />
           ${this.hasSuffixSlot
-            ? html`<span class="textfield-affix textfield-suffix"><slot name="suffix" @slotchange=${(event: Event) => this.handleSlotChange('suffix', event)}></slot></span>`
-            : html`<slot name="suffix" @slotchange=${(event: Event) => this.handleSlotChange('suffix', event)}></slot>`}
+            ? html`<span class="textfield-affix textfield-suffix"
+                ><slot
+                  name="suffix"
+                  @slotchange=${(event: Event) => this.handleSlotChange('suffix', event)}
+                ></slot
+              ></span>`
+            : html`<slot
+                name="suffix"
+                @slotchange=${(event: Event) => this.handleSlotChange('suffix', event)}
+              ></slot>`}
           ${this.hasLinkSlot
-            ? html`<span class="textfield-affix textfield-link"><slot name="link" @slotchange=${(event: Event) => this.handleSlotChange('link', event)}></slot></span>`
-            : html`<slot name="link" @slotchange=${(event: Event) => this.handleSlotChange('link', event)}></slot>`}
+            ? html`<span class="textfield-affix textfield-link"
+                ><slot
+                  name="link"
+                  @slotchange=${(event: Event) => this.handleSlotChange('link', event)}
+                ></slot
+              ></span>`
+            : html`<slot
+                name="link"
+                @slotchange=${(event: Event) => this.handleSlotChange('link', event)}
+              ></slot>`}
         </div>
-        ${this.validationText ? html`<mm-text size="12" class="textfield-validation">${this.validationText}</mm-text>` : ''}
+        ${this.validationText
+          ? html`<mm-text size="12" class="textfield-validation">${this.validationText}</mm-text>`
+          : ''}
       </div>
     `
   }

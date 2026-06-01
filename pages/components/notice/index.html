@@ -9,11 +9,7 @@
   <mm-component-example>
     <div style="max-width: 480px">
       <mm-group alignment="vertical">
-        <mm-notice text="배너. 히어로와 콜아웃의 차이.">
-          <div style="margin-left: auto">
-            <mm-clear-button></mm-clear-button>
-          </div>
-        </mm-notice>
+        <mm-notice text="배너. 히어로와 콜아웃의 차이." dismissible></mm-notice>
 
         <mm-notice variant="success" text="좋아요 표시한 동영상에 추가됨"></mm-notice>
         <mm-notice
@@ -29,15 +25,18 @@
     <mm-prop name="heading" type="string" optional></mm-prop>
     <mm-prop name="text" type="string" optional></mm-prop>
     <mm-prop name="variant" type='"success" | "warning" | "danger"' optional></mm-prop>
+    <mm-prop name="dismissible" type="boolean" optional></mm-prop>
   </mm-component-props>
 
   <mm-component-tokens>
     <mm-token name="--notice-gap" default="var(--space-2)"></mm-token>
     <mm-token name="--notice-padding" default="var(--space-3)"></mm-token>
     <mm-token name="--notice-radius" default="var(--radius)"></mm-token>
-    <mm-token name="--notice-border" default="var(--border)"></mm-token>
-    <mm-token name="--notice-text-color" default="var(--color-foreground)"></mm-token>
-    <mm-token name="--notice-icon-color" default="var(--color-foreground-light)"></mm-token>
+    <mm-token name="--notice-border-width" default="var(--border-width)"></mm-token>
+    <mm-token name="--notice-accent" default="var(--color-foreground-light)"></mm-token>
+    <mm-token name="--notice-color" default="var(--color-foreground)"></mm-token>
+    <mm-token name="--notice-bg" default="transparent"></mm-token>
+    <mm-token name="--notice-border-color" default="var(--color-border)"></mm-token>
   </mm-component-tokens>
 
   <mm-component-guide>
@@ -46,7 +45,7 @@
         "role=\"alert\" 속성이 있는 요소는 브라우저가 즉시 사용자에게 읽습니다. 긴급도가 낮은 알림에는 role=\"status\"를 사용하세요.",
         "사용자 귀책이 아닌 경우 단순 \"오류\" 대신 \"시스템 오류\"처럼 책임 소재를 명확히 해 사용자가 위축되지 않도록 합니다.",
         "독립적인 on/off가 아닌 단일 선택 그룹에는 variant를 사용합니다. 색상만으로 의미를 전달하지 않고 아이콘을 함께 제공합니다.",
-        "닫기 버튼이 필요한 경우 slot에 mm-clear-button을 넣어 사용합니다."
+        "닫기 버튼이 필요한 경우 dismissible 속성을 사용합니다. mm-dismiss 이벤트로 닫힘 시점을 감지할 수 있습니다."
       ]'
     ></mm-text-list>
   </mm-component-guide>

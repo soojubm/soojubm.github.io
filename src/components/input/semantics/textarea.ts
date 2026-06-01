@@ -38,10 +38,6 @@ export class Textarea extends LitElement {
       .textfield {
         position: relative;
       }
-
-      .textfield-helper {
-        margin: var(--space-1) 0 var(--space-1);
-      }
     `,
   ]
 
@@ -99,7 +95,7 @@ export class Textarea extends LitElement {
           : ''}
         ${this.renderTextarea()}
         ${this.helper
-          ? html`<mm-text size="12" id="${this._textareaId}-helper" class="textfield-helper">${this.helper}</mm-text>`
+          ? html`<mm-text size="12" id="${this._textareaId}-helper">${this.helper}</mm-text>`
           : ''}
       </div>
     `

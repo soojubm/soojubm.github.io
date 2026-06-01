@@ -81,10 +81,22 @@
   --color-primary-subtle: null;
   --color-secondary: null;
   --color-brand: null;
+
   --color-accent: var(--yellow800);
-  /* // 작은 제품에는 한 개로  충분 */
-  /* --color-warning: var(--red800); */
-  --color-danger: var(--red800); 
+  --color-accent-subtle: color-mix(in srgb, var(--color-accent) 8%, var(--color-background));
+  --color-accent-border: color-mix(in srgb, var(--color-accent) 30%, transparent);
+
+  --color-success: var(--green800);
+  --color-success-subtle: color-mix(in srgb, var(--color-success) 8%, var(--color-background));
+  --color-success-border: color-mix(in srgb, var(--color-success) 30%, transparent);
+
+  --color-warning: var(--yellow800);
+  --color-warning-subtle: color-mix(in srgb, var(--color-warning) 8%, var(--color-background));
+  --color-warning-border: color-mix(in srgb, var(--color-warning) 30%, transparent);
+
+  --color-danger: var(--red800);
+  --color-danger-subtle: color-mix(in srgb, var(--color-danger) 8%, var(--color-background));
+  --color-danger-border: color-mix(in srgb, var(--color-danger) 30%, transparent);
 
   /* --color-status / --color-classification */
   --color-google: #fff;

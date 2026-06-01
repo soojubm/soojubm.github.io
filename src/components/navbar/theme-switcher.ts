@@ -1,85 +1,56 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, state } from 'lit/decorators.js'
 import { getPreferredTheme, saveTheme, THEMES, type Theme } from '../../javascripts/theme'
-import { iconButtonStyles } from '../icon-button/icon-button.styles'
+import '../icon-button/icon-button'
 
 @customElement('mm-theme-switcher')
 export class ThemeSwitcher extends LitElement {
   @state() private theme: Theme = 'light'
   @state() private open = false
 
-  static styles = [
-    iconButtonStyles,
-    css`
-      :host {
-        position: relative;
-        display: inline-flex;
-      }
+  static styles = css`
+    :host {
+      position: relative;
+      display: inline-flex;
+    }
 
-      /* ── 트리거 버튼 ── */
-      .trigger {
-        position: relative;
-        overflow: hidden;
-      }
+    .dropdown {
+      position: absolute;
+      top: calc(100% + var(--space-1));
+      right: 0;
+      z-index: 100;
+      min-width: 120px;
+      background: var(--color-background);
+      border: var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
 
-      .track {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        display: flex;
-        flex-direction: column;
-        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      }
+    .option {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      width: 100%;
+      padding: var(--space-2) var(--space-3);
+      background: none;
+      border: none;
+      font: inherit;
+      font-size: var(--font-size-14);
+      color: var(--color-foreground);
+      cursor: pointer;
+      text-align: left;
+      box-sizing: border-box;
+    }
 
-      .slot {
-        flex-shrink: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: var(--size-small);
-        height: var(--size-small);
-      }
+    .option:hover {
+      background: var(--color-background-subtle);
+    }
 
-      /* ── 드롭다운 ── */
-      .dropdown {
-        position: absolute;
-        top: calc(100% + var(--space-1));
-        right: 0;
-        z-index: 100;
-        min-width: 120px;
-        background: var(--color-background);
-        border: var(--border);
-        border-radius: var(--radius);
-        box-shadow: var(--shadow);
-        overflow: hidden;
-      }
-
-      .option {
-        display: flex;
-        align-items: center;
-        gap: var(--space-2);
-        width: 100%;
-        padding: var(--space-2) var(--space-3);
-        background: none;
-        border: none;
-        font: inherit;
-        font-size: var(--font-size-14);
-        color: var(--color-foreground);
-        cursor: pointer;
-        text-align: left;
-        box-sizing: border-box;
-      }
-
-      .option:hover {
-        background: var(--color-background-subtle);
-      }
-
-      .option[aria-current='true'] {
-        color: var(--color-primary);
-      }
-    `,
-  ]
+    .option[aria-current='true'] {
+      color: var(--color-primary);
+    }
+  `
 
   connectedCallback() {
     super.connectedCallback()
@@ -96,38 +67,23 @@ export class ThemeSwitcher extends LitElement {
     if (!this.contains(e.target as Node)) this.open = false
   }
 
-  private get _index() {
-    return THEMES.findIndex(t => t.value === this.theme)
-  }
-
   private _select(theme: Theme) {
     this.theme = saveTheme(theme)
     this.open = false
   }
 
   render() {
-    const offsetY = `translateY(calc(var(--size-small) * ${-this._index}))`
+    const currentTheme = THEMES.find(t => t.value === this.theme)
 
     return html`
-      <button
-        class="icon-button trigger"
-        data-variant="plain"
-        data-size="small"
+      <mm-icon-button
+        variant="plain"
+        icon="${currentTheme?.icon ?? 'sun-light'}"
         aria-label="테마 변경"
-        aria-haspopup="listbox"
-        aria-expanded=${this.open}
+        .haspopup=${true}
+        .expanded=${this.open}
         @click=${() => (this.open = !this.open)}
-      >
-        <span class="track" style="transform: ${offsetY}">
-          ${THEMES.map(
-            t => html`
-              <span class="slot">
-                <mm-icon name=${t.icon}></mm-icon>
-              </span>
-            `,
-          )}
-        </span>
-      </button>
+      ></mm-icon-button>
 
       ${this.open
         ? html`
@@ -140,7 +96,7 @@ export class ThemeSwitcher extends LitElement {
                     aria-current=${t.value === this.theme ? 'true' : 'false'}
                     @click=${() => this._select(t.value)}
                   >
-                    <mm-icon name=${t.icon} size="small"></mm-icon>
+                    <mm-icon name=${t.icon}></mm-icon>
                     ${t.label}
                   </button>
                 `,

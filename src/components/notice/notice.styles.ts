@@ -2,12 +2,20 @@ import { css } from 'lit'
 
 export const noticeStyles = css`
   :host {
+    display: block;
+    width: 100%;
+
+    /* structure */
     --notice-gap: var(--space-2);
     --notice-padding: var(--space-3);
     --notice-radius: var(--radius);
-    --notice-border: var(--border);
-    --notice-text-color: var(--color-foreground);
-    --notice-icon-color: var(--color-foreground-light);
+    --notice-border-width: var(--border-width);
+
+    /* semantic color — default (info) */
+    --notice-accent: var(--color-foreground-light);
+    --notice-color: var(--color-foreground);
+    --notice-bg: transparent;
+    --notice-border-color: var(--color-border);
   }
 
   .notice {
@@ -15,13 +23,14 @@ export const noticeStyles = css`
     align-items: center;
     gap: var(--notice-gap);
     padding: var(--notice-padding);
-    border: var(--notice-border);
+    border: var(--notice-border-width) solid var(--notice-border-color);
     border-radius: var(--notice-radius);
-    color: var(--notice-text-color);
+    background: var(--notice-bg);
+    color: var(--notice-color);
   }
 
   .notice-icon {
-    color: var(--notice-icon-color);
+    color: var(--notice-accent);
     flex-shrink: 0;
   }
 
@@ -30,24 +39,29 @@ export const noticeStyles = css`
     margin: 0;
   }
 
+  .notice-dismiss {
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+
   .notice[data-variant='success'] {
-    --notice-text-color: var(--green800);
-    --notice-icon-color: var(--green800);
-    background: color-mix(in srgb, var(--green800) 8%, var(--color-background));
-    border-color: color-mix(in srgb, var(--green800) 30%, transparent);
+    --notice-accent: var(--color-success);
+    --notice-color: var(--color-success);
+    --notice-bg: var(--color-success-subtle);
+    --notice-border-color: var(--color-success-border);
   }
 
   .notice[data-variant='warning'] {
-    --notice-text-color: var(--yellow800);
-    --notice-icon-color: var(--yellow800);
-    background: color-mix(in srgb, var(--yellow800) 8%, var(--color-background));
-    border-color: color-mix(in srgb, var(--yellow800) 30%, transparent);
+    --notice-accent: var(--color-warning);
+    --notice-color: var(--color-warning);
+    --notice-bg: var(--color-warning-subtle);
+    --notice-border-color: var(--color-warning-border);
   }
 
   .notice[data-variant='danger'] {
-    --notice-text-color: var(--color-danger);
-    --notice-icon-color: var(--color-danger);
-    background: color-mix(in srgb, var(--color-danger) 8%, var(--color-background));
-    border-color: color-mix(in srgb, var(--color-danger) 30%, transparent);
+    --notice-accent: var(--color-danger);
+    --notice-color: var(--color-danger);
+    --notice-bg: var(--color-danger-subtle);
+    --notice-border-color: var(--color-danger-border);
   }
 `

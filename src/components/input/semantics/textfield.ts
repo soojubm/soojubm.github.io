@@ -110,26 +110,41 @@ export class Textfield extends LitElement {
   }
 
   protected renderPrefix(): unknown {
-    return html`<slot name="prefix" @slotchange=${(event: Event) => this.handleSlotChange('prefix', event)}></slot>`
+    return html`<slot
+      name="prefix"
+      @slotchange=${(event: Event) => this.handleSlotChange('prefix', event)}
+    ></slot>`
   }
 
   protected renderSuffix(): unknown {
-    return html`<slot name="suffix" @slotchange=${(event: Event) => this.handleSlotChange('suffix', event)}></slot>`
+    return html`<slot
+      name="suffix"
+      @slotchange=${(event: Event) => this.handleSlotChange('suffix', event)}
+    ></slot>`
   }
 
   protected renderLink(): unknown {
-    return html`<slot name="link" @slotchange=${(event: Event) => this.handleSlotChange('link', event)}></slot>`
+    return html`<slot
+      name="link"
+      @slotchange=${(event: Event) => this.handleSlotChange('link', event)}
+    ></slot>`
   }
 
   protected renderHelper(): unknown {
     return this.helper
-      ? html`<mm-text class="textfield-helper" size="12" color="var(--color-foreground-light)" as="p">${this.helper}</mm-text>`
+      ? html`<mm-text size="12" color="var(--color-foreground-light)" as="p"
+          >${this.helper}</mm-text
+        >`
       : nothing
   }
 
   protected renderValidation(): unknown {
     return this.validationText
-      ? html`<mm-text id=${`${this.inputId}-validation`} class="textfield-validation" size="12" color="var(--color-danger)" as="p">${this.validationText}</mm-text>`
+      ? html`<mm-textfield-validation
+          id=${`${this.inputId}-validation`}
+          class="textfield-validation"
+          >${this.validationText}</mm-textfield-validation
+        >`
       : nothing
   }
 
@@ -177,7 +192,8 @@ export class Textfield extends LitElement {
         data-label=${this.effectiveHiddenLabel ? 'true' : 'false'}
         data-size=${ifDefined(this.size || undefined)}
       >
-        ${this.renderLabel()} ${this.renderHelper()} ${this.renderControl()} ${this.renderValidation()}
+        ${this.renderLabel()} ${this.renderHelper()} ${this.renderControl()}
+        ${this.renderValidation()}
       </div>
     `
   }
