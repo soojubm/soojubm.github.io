@@ -1,4 +1,5 @@
 import './avatar'
-import './avatar-group'
+
+import './semantics/avatar-group'
 
 export {}

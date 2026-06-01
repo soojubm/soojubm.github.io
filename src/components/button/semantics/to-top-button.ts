@@ -1,6 +1,6 @@
 import { LitElement, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
-import { resetStyles } from '../../shared/reset.styles'
+import { resetStyles } from '../../../stylesheets/shared/reset.styles'
 
 @customElement('mm-to-top-button')
 export class ToTopButton extends LitElement {

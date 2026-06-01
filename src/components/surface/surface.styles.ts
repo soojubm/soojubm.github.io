@@ -9,7 +9,6 @@ export const VARIANTS = {
     background: none;
   `,
   tinted: css`
-    border-color: transparent;
     background-color: var(--color-background-subtle);
   `,
   elevated: css`
@@ -46,7 +45,7 @@ export const styles = css`
   }
 
   .surface {
-    height: var(--surface-height);
+    height: var(--xsurface-height);
     display: flex;
     flex-direction: column;
     width: 100%;

@@ -1,6 +1,6 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { resetStyles } from '../../shared/reset.styles'
+import { resetStyles } from '../../../stylesheets/shared/reset.styles'
 
 /**
  * 콘텐츠 필터링 옵션 버튼. mm-button(size=small)을 합성합니다.

@@ -1,6 +1,6 @@
 import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { iconButtonStyles } from '../../button/icon-button.styles'
+import { iconButtonStyles } from '../icon-button.styles'
 
 /**
  * 비밀번호 등 가려진 입력값의 노출 여부를 토글하는 버튼.

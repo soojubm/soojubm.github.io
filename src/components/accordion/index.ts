@@ -1,4 +1,4 @@
 import './accordion'
-import './accordion-item'
+import './semantics/accordion-item'
 
 export {}

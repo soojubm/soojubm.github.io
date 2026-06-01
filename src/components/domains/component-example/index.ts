@@ -1,6 +1,6 @@
 import { LitElement, css, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
-import { resetStyles } from '../../shared/reset.styles'
+import { resetStyles } from '../../../stylesheets/shared/reset.styles'
 
 @customElement('mm-component-example')
 export class ComponentExample extends LitElement {

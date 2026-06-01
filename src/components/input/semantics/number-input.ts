@@ -1,6 +1,6 @@
 import { html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import '../button/icon-button'
+import '../../icon-button/icon-button'
 import { Textfield } from './textfield'
 
 @customElement('mm-number-input')

@@ -1,6 +1,7 @@
 import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { iconButtonStyles } from '../../button/icon-button.styles'
+import { iconButtonStyles } from '../icon-button.styles'
+import { ICON_NAMES } from './icon-names'
 
 /**
  * 모달, 패널, 시트 등 레이어를 닫는 버튼.
@@ -26,7 +27,7 @@ export class CloseButton extends LitElement {
         aria-label=${this.ariaLabel}
         @click=${this.handleClick}
       >
-        <mm-icon name="xmark"></mm-icon>
+        <mm-icon name=${ICON_NAMES.XMARK}></mm-icon>
       </button>
     `
   }

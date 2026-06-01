@@ -1,7 +1,7 @@
 import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { checkboxStyles } from './checkbox.styles'
-import type { Checkbox } from './checkbox'
+import { checkboxStyles } from '../checkbox.styles'
+import type { Checkbox } from '../checkbox'
 
 @customElement('mm-master-checkbox')
 export class MasterCheckbox extends LitElement {

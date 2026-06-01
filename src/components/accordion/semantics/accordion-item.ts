@@ -1,6 +1,6 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { resetStyles } from '../shared/reset.styles'
+import { resetStyles } from '../../../stylesheets/shared/reset.styles'
 
 /**
  * 개별 아코디언 항목.

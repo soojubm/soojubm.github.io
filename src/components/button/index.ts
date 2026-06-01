@@ -1,6 +1,5 @@
 import './button'
 import './button-group'
-import './icon-button'
 
 import './semantics/filter-button'
 import './semantics/filter-button-group'

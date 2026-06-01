@@ -1,6 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { iconButtonStyles } from '../../button/icon-button.styles'
+import { iconButtonStyles } from '../icon-button.styles'
+import { ICON_NAMES } from './icon-names'
 
 /**
  * 배너, 알림, 토스트 등 비파괴적 해제 버튼.
@@ -37,7 +38,7 @@ export class DismissButton extends LitElement {
         aria-label=${this.ariaLabel}
         @click=${this.handleClick}
       >
-        <mm-icon name="xmark"></mm-icon>
+        <mm-icon name=${ICON_NAMES.XMARK}></mm-icon>
       </button>
     `
   }

@@ -2,7 +2,7 @@ import { LitElement, css, html } from 'lit'
 import { styleMap } from 'lit/directives/style-map.js'
 import { customElement, property } from 'lit/decorators.js'
 
-import { resetStyles } from '../../shared/reset.styles'
+import { resetStyles } from '../../../stylesheets/shared/reset.styles'
 import { textSizes, textWeights, type TextSize, type TextWeight } from '../text.styles'
 
 type ParagraphSize = 'medium' | 'large'

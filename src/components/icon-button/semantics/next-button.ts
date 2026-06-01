@@ -1,6 +1,7 @@
 import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { iconButtonStyles } from '../../button/icon-button.styles'
+import { iconButtonStyles } from '../icon-button.styles'
+import { ICON_NAMES } from './icon-names'
 
 @customElement('mm-next-button')
 export class NextButton extends LitElement {
@@ -27,7 +28,7 @@ export class NextButton extends LitElement {
         ?disabled=${this.disabled}
         @click=${this.handleClick}
       >
-        <mm-icon name="arrow-right"></mm-icon>
+        <mm-icon name=${ICON_NAMES.ARROW_RIGHT}></mm-icon>
       </button>
     `
   }

@@ -15,6 +15,7 @@ export class UiPlaceholder extends LitElement {
     .placeholder {
       width: 100%;
       background: var(--ui-placeholder-color);
+      border: 1px solid var(--brutal-border-color);
       height: var(--ui-placeholder-height);
       border-radius: var(--ui-placeholder-radius);
     }

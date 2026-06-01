@@ -1,6 +1,6 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
-import './view-mode-switcher'
+import './semantics/view-mode-switcher'
 
 interface OptionItem {
   value: string

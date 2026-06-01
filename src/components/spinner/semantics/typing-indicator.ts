@@ -1,6 +1,6 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { resetStyles } from '../shared/reset.styles'
+import { resetStyles } from '../../../stylesheets/shared/reset.styles'
 
 /**
  * 입력 중(typing)·진행 중 상태를 나타내는 3-dot 모션.

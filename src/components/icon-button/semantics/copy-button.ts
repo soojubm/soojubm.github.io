@@ -1,6 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
-import { iconButtonStyles } from '../../button/icon-button.styles'
+import { iconButtonStyles } from '../icon-button.styles'
+import { ICON_NAMES } from './icon-names'
 
 /**
  * 텍스트를 클립보드에 복사하는 버튼.
@@ -55,7 +56,7 @@ export class CopyButton extends LitElement {
         aria-label=${this.copied ? '복사됨' : this.ariaLabel}
         @click=${this.handleClick}
       >
-        <mm-icon name=${this.copied ? 'check' : 'copy'}></mm-icon>
+        <mm-icon name=${this.copied ? ICON_NAMES.CHECK : ICON_NAMES.COPY}></mm-icon>
       </button>
     `
   }

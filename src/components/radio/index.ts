@@ -1,4 +1,5 @@
 import './radio'
-import './radio-group'
+
+import './semantics/radio-group'
 
 export {}

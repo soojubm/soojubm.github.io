@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 import { html, unsafeStatic } from 'lit/static-html.js' // 👈
 import { styleMap } from 'lit/directives/style-map.js'
 
-import { resetStyles } from '../shared/reset.styles'
+import { resetStyles } from '../../stylesheets/shared/reset.styles'
 import { textSizes, textWeights, type TextSize, type TextWeight } from './text.styles'
 
 @customElement('mm-text')

@@ -7,5 +7,6 @@ import './semantics/page-title'
 import './semantics/section-title'
 import './semantics/caption'
 import './semantics/textList'
+import './semantics/title-with-description'
 
 export {}

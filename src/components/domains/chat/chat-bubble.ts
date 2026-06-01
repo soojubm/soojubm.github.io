@@ -1,6 +1,6 @@
 import { LitElement, css, html } from 'lit'
 import { property } from 'lit/decorators.js'
-import { resetStyles } from '../../shared/reset.styles'
+import { resetStyles } from '../../../stylesheets/shared/reset.styles'
 
 /**
  * 채팅 버블 공통 베이스. 직접 사용하지 말고

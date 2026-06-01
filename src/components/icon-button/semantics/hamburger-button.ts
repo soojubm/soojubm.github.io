@@ -1,6 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { iconButtonStyles } from '../../button/icon-button.styles'
+import { iconButtonStyles } from '../icon-button.styles'
+import { ICON_NAMES } from './icon-names'
 
 /**
  * 사이드바/내비게이션 메뉴를 여닫는 햄버거 버튼.
@@ -38,7 +39,7 @@ export class HamburgerButton extends LitElement {
         aria-haspopup="true"
         aria-expanded=${this.expanded ? 'true' : 'false'}
       >
-        <mm-icon name="menu-scale"></mm-icon>
+        <mm-icon name=${ICON_NAMES.MENU_SCALE}></mm-icon>
       </button>
     `
   }

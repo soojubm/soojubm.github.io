@@ -1,7 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, state } from 'lit/decorators.js'
 import { getPreferredTheme, saveTheme, THEMES, type Theme } from '../../javascripts/theme'
-import { resetStyles } from '../shared/reset.styles'
+import { resetStyles } from '../../stylesheets/shared/reset.styles'
 
 @customElement('mm-theme-switcher')
 export class ThemeSwitcher extends LitElement {

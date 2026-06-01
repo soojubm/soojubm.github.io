@@ -1,9 +1,9 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { resetStyles } from '../shared/reset.styles'
+import { resetStyles } from '../../stylesheets/shared/reset.styles'
 import '../button'
 import '../icon-button'
-import '../title-with-description'
+import '../text/semantics/title-with-description'
 
 @customElement('mm-dialog')
 export class Dialog extends LitElement {

@@ -1,6 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { iconButtonStyles } from '../../button/icon-button.styles'
+import { iconButtonStyles } from '../icon-button.styles'
+import { ICON_NAMES } from './icon-names'
 
 /**
  * 아이템·데이터를 영구 삭제하는 파괴적 액션 버튼.
@@ -40,7 +41,7 @@ export class DeleteButton extends LitElement {
         aria-label=${this.ariaLabel}
         @click=${this.handleClick}
       >
-        <mm-icon name="trash"></mm-icon>
+        <mm-icon name=${ICON_NAMES.TRASH}></mm-icon>
       </button>
     `
   }

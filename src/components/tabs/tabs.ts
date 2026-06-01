@@ -1,8 +1,8 @@
 import { LitElement, html, css } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import TabList from './tab-list'
-import Tab from './tab'
-import TabPanel from './tab-panel'
+import TabList from './semantics/tab-list'
+import Tab from './semantics/tab'
+import TabPanel from './semantics/tab-panel'
 
 @customElement('mm-tabs')
 export class Tabs extends LitElement {

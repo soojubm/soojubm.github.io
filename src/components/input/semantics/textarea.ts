@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
-import { inputStyles } from './input.styles'
+import { inputStyles } from '../input.styles'
 
 let uniqueIdCounter = 0
 

@@ -1,6 +1,6 @@
 import { LitElement, html } from 'lit'
 import { property, state } from 'lit/decorators.js'
-import { textfieldStyles } from './textfield.styles'
+import { textfieldStyles } from './semantics/textfield.styles'
 
 class Input extends LitElement {
   @property({ type: String }) type = 'text'

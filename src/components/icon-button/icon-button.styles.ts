@@ -1,5 +1,5 @@
 import { css } from 'lit'
-import { buttonHostTokens } from './button.tokens'
+import { buttonHostTokens } from '../button/button.tokens'
 
 export const iconButtonStyles = css`
   /* 토큰은 button.tokens.ts에서 button과 공유한다. */

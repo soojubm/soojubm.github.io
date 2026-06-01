@@ -43,8 +43,44 @@
   >
     <div style="position: relative; display: inline-block">
       <mm-avatar size="huge" variant="secondary"></mm-avatar>
-      <span style="position: absolute; left: -1.75rem; top: 50%; transform: translateY(-50%); display: inline-flex; align-items: center; justify-content: center; width: 1.25rem; height: 1.25rem; border-radius: 50%; background: var(--color-foreground); color: var(--color-background); font-size: var(--font-size-12); font-weight: var(--font-weight-bold)">1</span>
-      <span style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); display: inline-flex; align-items: center; justify-content: center; width: 1.25rem; height: 1.25rem; border-radius: 50%; background: var(--color-foreground); color: var(--color-background); font-size: var(--font-size-12); font-weight: var(--font-weight-bold)">2</span>
+      <span
+        style="
+          position: absolute;
+          left: -1.75rem;
+          top: 50%;
+          transform: translateY(-50%);
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 1.25rem;
+          height: 1.25rem;
+          border-radius: 50%;
+          background: var(--color-foreground);
+          color: var(--color-background);
+          font-size: var(--font-size-12);
+          font-weight: var(--font-weight-bold);
+        "
+        >1</span
+      >
+      <span
+        style="
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 1.25rem;
+          height: 1.25rem;
+          border-radius: 50%;
+          background: var(--color-foreground);
+          color: var(--color-background);
+          font-size: var(--font-size-12);
+          font-weight: var(--font-weight-bold);
+        "
+        >2</span
+      >
     </div>
   </mm-component-anatomy>
 
@@ -72,7 +108,10 @@
     ></mm-text-list>
   </mm-component-guide>
 
-  <mm-component-section title="Fallback" description="src·icon이 없을 때 슬롯 콘텐츠 → 기본 아이콘 순으로 표시됩니다.">
+  <mm-component-section
+    title="Fallback"
+    description="src·icon이 없을 때 슬롯 콘텐츠 → 기본 아이콘 순으로 표시됩니다."
+  >
     <mm-group>
       <mm-avatar size="medium">MM</mm-avatar>
       <mm-avatar size="medium" icon="profile-circle"></mm-avatar>
@@ -80,8 +119,10 @@
     </mm-group>
   </mm-component-section>
 
-  <mm-component-section title="AvatarGroup" description="최대 3개를 겹쳐 표시하고 초과 인원은 숫자로 대체합니다.">
+  <mm-component-section
+    title="AvatarGroup"
+    description="최대 3개를 겹쳐 표시하고 초과 인원은 숫자로 대체합니다."
+  >
     <mm-avatar-group avatars='["", "", "", ""]' label="수줍이 외 3명"></mm-avatar-group>
   </mm-component-section>
-
 </main>

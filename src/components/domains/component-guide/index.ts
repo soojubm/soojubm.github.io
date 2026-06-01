@@ -10,12 +10,18 @@ class ComponentGuide extends LitElement {
       gap: var(--space-4);
       padding: 4rem 0;
     }
+
+    .slot-container {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
   `
 
   render() {
     return html`<div>
       <div hidden><mm-text as="h2"">Component Guide</mm-text></div>
-      <slot></slot>
+     <div class="slot-container"> <slot></slot></div>
     </div>`
   }
 }

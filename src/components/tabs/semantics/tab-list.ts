@@ -1,6 +1,6 @@
 import { LitElement, html } from 'lit'
 import { customElement, query } from 'lit/decorators.js'
-import { tabsStyles } from './tabs.styles'
+import { tabsStyles } from '../tabs.styles'
 
 @customElement('mm-tab-list')
 export default class TabList extends LitElement {

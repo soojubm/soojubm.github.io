@@ -1,3 +1,5 @@
+import './icon-button'
+
 import './semantics/hamburger-button'
 import './semantics/close-button'
 import './semantics/dismiss-button'
