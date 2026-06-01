@@ -235,16 +235,8 @@ The font size of a key is never bigger than the value.
   >
     <div style="display: flex; flex-direction: column; gap: var(--space-3)">
       <mm-caption>마지막 업데이트: 2026.05.30</mm-caption>
-      <figure style="margin: 0">
-        <div
-          style="
-            width: 100%;
-            max-width: 360px;
-            aspect-ratio: 16 / 9;
-            background: var(--color-container);
-            border: var(--border);
-          "
-        ></div>
+      <figure style="margin: 0; max-width: 360px">
+        <mm-thumbnail ratio="16:9"></mm-thumbnail>
         <mm-caption as="figcaption">이미지 하단에 배치되는 설명 텍스트</mm-caption>
       </figure>
     </div>
@@ -341,11 +333,35 @@ The font size of a key is never bigger than the value.
 
   <mm-component-section title="Text List" description="">
     <div>
-      <mm-text-list texts='["mm-text-list 1", "mm-text-list 1"]'> </mm-text-list>
+      <div style="display: flex; align-items: center; gap: 1.5rem">
+        <span style="display: inline-flex; align-items: center; gap: var(--space-2)">
+          <mm-list-marker variant="number" value="1"></mm-list-marker>
+          <mm-text size="14">number</mm-text>
+        </span>
+        <span style="display: inline-flex; align-items: center; gap: var(--space-2)">
+          <mm-list-marker variant="dot"></mm-list-marker>
+          <mm-text size="14">dot</mm-text>
+        </span>
+        <span style="display: inline-flex; align-items: center; gap: var(--space-2)">
+          <mm-list-marker variant="check"></mm-list-marker>
+          <mm-text size="14">check</mm-text>
+        </span>
+      </div>
       <mm-separator></mm-separator>
-      <mm-text-list texts='["순서가 없는 리스트", "순서가 없는 리스트"]'></mm-text-list>
+      <mm-text-list
+        variant="number"
+        texts='["순서가 있는 리스트의 첫 번째 항목", "절차나 우선순위처럼 순서가 의미를 갖는 콘텐츠에 사용합니다.", "마커는 number 변형을 사용합니다."]'
+      ></mm-text-list>
       <mm-separator></mm-separator>
-      <mm-text-list texts='["순서가 있는 리스트", "순서가 있는 리스트"]'></mm-text-list>
+      <mm-text-list
+        variant="dot"
+        texts='["순서가 없는 리스트의 항목", "나열되는 항목 사이에 순서나 위계가 없을 때 사용합니다.", "마커는 dot 변형을 사용합니다."]'
+      ></mm-text-list>
+      <mm-separator></mm-separator>
+      <mm-text-list
+        variant="check"
+        texts='["체크리스트 항목", "완료, 충족, 포함 같은 긍정적인 상태를 나타낼 때 사용합니다.", "마커는 check 변형을 사용합니다."]'
+      ></mm-text-list>
       <mm-separator></mm-separator>
       <div>
         <mm-keyvalue key="keyvalue key text" value="keyvalue value text"></mm-keyvalue>

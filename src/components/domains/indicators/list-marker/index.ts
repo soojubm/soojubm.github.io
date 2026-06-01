@@ -1,0 +1,70 @@
+import { LitElement, css, html, svg } from 'lit'
+import { customElement, property } from 'lit/decorators.js'
+import { resetStyles } from '../../../../stylesheets/shared/reset.styles'
+
+type Variant = 'number' | 'dot' | 'check'
+
+@customElement('mm-list-marker')
+export class ListMarker extends LitElement {
+  @property({ type: String }) variant: Variant = 'number'
+  @property({ type: Number }) value = 1
+
+  static styles = [
+    resetStyles,
+    css`
+      :host {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        background: var(--color-foreground);
+        color: var(--color-background);
+        border-radius: 50%;
+      }
+
+      :host([variant='number']),
+      :host([variant='check']) {
+        width: 1.25rem;
+        height: 1.25rem;
+        font-size: var(--font-size-12);
+        font-weight: var(--font-weight-bold);
+      }
+
+      :host([variant='dot']) {
+        width: 0.375rem;
+        height: 0.375rem;
+      }
+
+      svg {
+        width: 0.625rem;
+        height: 0.625rem;
+      }
+    `,
+  ]
+
+  private renderCheck() {
+    return svg`
+      <svg viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M1.5 5L4 7.5L8.5 2.5"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    `
+  }
+
+  render() {
+    if (this.variant === 'check') return this.renderCheck()
+    if (this.variant === 'dot') return html``
+    return html`${this.value}`
+  }
+}
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'mm-list-marker': ListMarker
+  }
+}

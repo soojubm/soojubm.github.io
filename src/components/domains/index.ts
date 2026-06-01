@@ -1,3 +1,4 @@
+import './indicators'
 import './app-sidebar'
 import './component-example'
 import './component-anatomy'
