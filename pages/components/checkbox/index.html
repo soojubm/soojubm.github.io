@@ -42,9 +42,9 @@
     <div style="position: relative; display: inline-block">
       <mm-checkbox size="large" checked>관심 분야</mm-checkbox>
 
-      <mm-anatomy-number value="1" style="position: absolute; left: -1.75rem; top: 50%; transform: translateY(-50%); display: inline-flex; align-items: center; justify-content: center; width: 1.25rem; height: 1.25rem; border-radius: 50%; background: var(--color-foreground); color: var(--color-background); font-size: var(--font-size-12); font-weight: var(--font-weight-bold);"></mm-anatomy-number>
-      <mm-anatomy-number value="2" style="position: absolute; left: 0.5rem; bottom: -1.75rem; transform: translateX(-50%); display: inline-flex; align-items: center; justify-content: center; width: 1.25rem; height: 1.25rem; border-radius: 50%; background: var(--color-primary); color: var(--color-background); font-size: var(--font-size-12); font-weight: var(--font-weight-bold);"></mm-anatomy-number>
-      <mm-anatomy-number value="3" style="position: absolute; right: -1.75rem; top: 50%; transform: translateY(-50%); display: inline-flex; align-items: center; justify-content: center; width: 1.25rem; height: 1.25rem; border-radius: 50%; background: var(--color-foreground); color: var(--color-background); font-size: var(--font-size-12); font-weight: var(--font-weight-bold);"></mm-anatomy-number>
+      <mm-list-marker variant="number" value="1" style="position: absolute; left: -1.75rem; top: 50%; transform: translateY(-50%); display: inline-flex; align-items: center; justify-content: center; width: 1.25rem; height: 1.25rem; border-radius: 50%; background: var(--color-foreground); color: var(--color-background); font-size: var(--font-size-12); font-weight: var(--font-weight-bold);"></mm-list-marker>
+      <mm-list-marker variant="number" value="2" style="position: absolute; left: 0.5rem; bottom: -1.75rem; transform: translateX(-50%); display: inline-flex; align-items: center; justify-content: center; width: 1.25rem; height: 1.25rem; border-radius: 50%; background: var(--color-primary); color: var(--color-background); font-size: var(--font-size-12); font-weight: var(--font-weight-bold);"></mm-list-marker>
+      <mm-list-marker variant="number" value="3" style="position: absolute; right: -1.75rem; top: 50%; transform: translateY(-50%); display: inline-flex; align-items: center; justify-content: center; width: 1.25rem; height: 1.25rem; border-radius: 50%; background: var(--color-foreground); color: var(--color-background); font-size: var(--font-size-12); font-weight: var(--font-weight-bold);"></mm-list-marker>
     </div>
   </mm-component-anatomy>
 
@@ -117,29 +117,25 @@
       <mm-top-bar nav="close" label="컬렉션에 추가">
         <mm-button slot="action" variant="text">새 컬렉션</mm-button>
       </mm-top-bar>
-      <div style="height: var(--space-3)"></div>
-      <mm-group variant="checkbox">
-        <mm-menu-item-checkbox label="을지로 맛집" description="test" checked>
+      <mm-menu-item-checkbox-group aria-label="컬렉션 선택">
+        <mm-menu-item-checkbox value="euljiro-1" label="을지로 맛집" description="test" checked>
           <mm-avatar slot="avatar" size="large" style="font-size: 1.5rem; overflow: hidden">
             💳
           </mm-avatar>
         </mm-menu-item-checkbox>
-        <mm-menu-item-row label="을지로 맛집">
+        <mm-menu-item-checkbox value="euljiro-2" label="을지로 맛집">
           <mm-avatar
             slot="avatar"
             size="large"
             fallback="💳"
             style="background: aliceblue; font-size: 1.5rem"
           ></mm-avatar>
-          <mm-checkbox slot="action" name="checkbox" size=""></mm-checkbox>
-        </mm-menu-item-row>
-        aira-checked="mixed" aria-contro?ls="1 2"
-      </mm-group>
+        </mm-menu-item-checkbox>
+      </mm-menu-item-checkbox-group>
       <mm-separator></mm-separator>
       <mm-top-bar label="새 컬렉션">
         <mm-button slot="action" variant="text">완료</mm-button>
       </mm-top-bar>
-      <div style="height: 1rem"></div>
       <mm-textfield label="컬렉션 이름" placeholder="컬렉션 이름"></mm-textfield>
       <div style="height: 0.75rem"></div>
       <!-- aira-checked="mixed" aria-controls="1 2" -->
@@ -150,14 +146,12 @@
               {"label": "비공개", "value": "banana"}
             ]'
       ></mm-toggle-button-group>
-      <br />
       <mm-menu-item-row label="이 컬렉션에 멤버 추가" icon="plus">
       </mm-menu-item-row>
       <mm-separator></mm-separator>
       <mm-top-bar label="멤버 추가">
         <mm-button slot="action" variant="text">완료</mm-button>
       </mm-top-bar>
-      <div style="height: var(--space-4)"></div>
       <mm-textfield label="TODO 멤버 검색" placeholder="멤버 이름"></mm-textfield>
       <div style="height: var(--space-4)"></div>
       <mm-text-list texts='["추천", "멤버 오른쪽 체크박스"]'></mm-text-list>
