@@ -16,6 +16,7 @@ const ICON_MAP: Record<string, string> = {
 @customElement('mm-feature')
 export class Feature extends LitElement {
   @property({ type: String }) icon = ''
+  @property({ type: String }) emoji = ''
 
   // HTML 관례에 맞춰 외부 사용 시 title-text로 사용할 수 있도록 설정
   @property({ type: String, attribute: 'titletext' }) titleText = ''
@@ -25,14 +26,26 @@ export class Feature extends LitElement {
 
   static styles = [featureStyles]
 
-  render() {
+  private renderVisual() {
+    if (this.emoji) {
+      return html`
+        <mm-avatar variant="secondary" size="large">
+          <span aria-hidden="true">${this.emoji}</span>
+        </mm-avatar>
+      `
+    }
     const iconName = ICON_MAP[this.icon] ?? this.icon
+    return html`
+      <mm-avatar variant="secondary" size="large">
+        <mm-icon size="large" name="${iconName}"></mm-icon>
+      </mm-avatar>
+    `
+  }
 
+  render() {
     return html`
       <div data-variant="${this.variant}">
-        <mm-avatar variant="secondary" size="large">
-          <mm-icon size="large" name="${iconName}"></mm-icon>
-        </mm-avatar>
+        ${this.renderVisual()}
 
         <mm-title-with-description
           level="3"

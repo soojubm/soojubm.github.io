@@ -1,4 +1,4 @@
-import { LitElement, html } from 'lit'
+import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import '../tooltip/tooltip'
 import { iconButtonStyles } from './icon-button.styles'
@@ -7,6 +7,9 @@ const buttonVariants = {
   cta: 'primary',
   action: 'action',
   flow: 'flow',
+  plain: 'plain',
+  navigator: 'navigator',
+  destructive: 'destructive',
 } as const
 
 const buttonSizes = {
@@ -14,7 +17,6 @@ const buttonSizes = {
   medium: 'medium',
 } as const
 
-// 1. 각각의 개별 객체에서 직접 키(Key) 타입을 추출
 export type IconButtonVariant = keyof typeof buttonVariants
 export type IconButtonSize = keyof typeof buttonSizes
 
@@ -24,23 +26,21 @@ class IconButton extends LitElement {
   @property({ type: String }) variant: IconButtonVariant = 'action'
   @property({ type: String }) size: IconButtonSize = 'medium'
   @property({ type: String }) label = ''
+  @property({ type: String, attribute: 'aria-label' }) override ariaLabel = ''
   @property({ type: String }) tooltip = ''
   @property({ type: String, attribute: 'tooltip-align' }) tooltipAlign = ''
   @property({ type: String }) href = ''
   @property({ type: Boolean, reflect: true }) disabled = false
+  @property({ type: Boolean }) haspopup = false
+  @property({ type: Boolean, reflect: true }) expanded = false
 
   static styles = [iconButtonStyles]
 
   private get _accessibilityLabel(): string {
-    return this.label || this.tooltip || this.icon || ''
+    return this.ariaLabel || this.label || this.tooltip || this.icon || ''
   }
 
-  // private get _iconColor(): string {
-  //   if (this.variant === 'cta') return 'primary'
-  //   return this.color || 'inherit'
-  // }
-
-  private renderControl() {
+  protected renderControl() {
     if (this.href && !this.disabled) {
       return html`
         <a
@@ -66,6 +66,8 @@ class IconButton extends LitElement {
         aria-label="${this._accessibilityLabel}"
         ?disabled="${this.disabled}"
         aria-disabled="${this.disabled ? 'true' : 'false'}"
+        aria-haspopup="${this.haspopup ? 'true' : nothing}"
+        aria-expanded="${this.haspopup ? (this.expanded ? 'true' : 'false') : nothing}"
       >
         <mm-icon name="${this.icon}"></mm-icon>
       </button>

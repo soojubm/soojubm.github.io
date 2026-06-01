@@ -1,6 +1,6 @@
-import { LitElement, css, html } from 'lit'
+import { css, html } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
-import { iconButtonStyles } from '../icon-button.styles'
+import IconButton from '../icon-button'
 import { ICON_NAMES } from './icon-names'
 
 /**
@@ -8,16 +8,14 @@ import { ICON_NAMES } from './icon-names'
  * 복사 성공 시 일시적으로 체크 아이콘으로 전환됩니다.
  */
 @customElement('mm-copy-button')
-export class CopyButton extends LitElement {
+export class CopyButton extends IconButton {
   /** 복사할 텍스트 */
   @property({ type: String }) value = ''
-  @property({ type: String, attribute: 'aria-label' })
-  override ariaLabel = '복사'
 
   @state() private copied = false
 
-  static styles = [
-    iconButtonStyles,
+  static override styles = [
+    ...IconButton.styles,
     css`
       .icon-button[data-variant='plain'] {
         color: var(--color-foreground-light);
@@ -32,7 +30,13 @@ export class CopyButton extends LitElement {
     `,
   ]
 
-  private async handleClick() {
+  constructor() {
+    super()
+    this.variant = 'plain'
+    this.ariaLabel = '복사'
+  }
+
+  private _handleClick = async () => {
     const text = this.value || this.textContent?.trim() || ''
     try {
       await navigator.clipboard.writeText(text)
@@ -46,15 +50,16 @@ export class CopyButton extends LitElement {
     }
   }
 
-  render() {
+  protected override renderControl() {
     return html`
       <button
+        slot="trigger"
         type="button"
         class="icon-button"
         data-variant="plain"
         ?data-copied=${this.copied}
         aria-label=${this.copied ? '복사됨' : this.ariaLabel}
-        @click=${this.handleClick}
+        @click=${this._handleClick}
       >
         <mm-icon name=${this.copied ? ICON_NAMES.CHECK : ICON_NAMES.COPY}></mm-icon>
       </button>

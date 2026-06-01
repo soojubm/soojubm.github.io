@@ -23,6 +23,11 @@ SITEMAP.forEach(node => {
   }
 })
 
+const MY_PAGES = [
+  { id: 'films', name: '영화감상 목록' },
+  { id: 'books', name: '독서 목록' },
+]
+
 const getEntries = () => {
   const entries = {
     index: ['./pages/home/home.ts', './index.ts'],
@@ -30,6 +35,10 @@ const getEntries = () => {
 
   ALL_PAGES.forEach(page => {
     entries[page.id] = [`./pages/${page.subDir}/${page.id}/${page.id}.ts`, './index.ts']
+  })
+
+  MY_PAGES.forEach(page => {
+    entries[`my-${page.id}`] = [`./pages/my/${page.id}/${page.id}.ts`, './index.ts']
   })
 
   return entries
@@ -145,6 +154,19 @@ module.exports = (env, argv) => {
         },
       }),
       ...getHtmlPlugins(isProd),
+      ...MY_PAGES.map(
+        page =>
+          new HtmlWebpackPlugin({
+            template: HTML_TEMPLATE,
+            filename: `my/${page.id}/index.html`,
+            chunks: [`my-${page.id}`],
+            minify: isProd,
+            templateParameters: {
+              sitemap: SITEMAP,
+              currentPage: page.id,
+            },
+          }),
+      ),
 
       new MiniCssExtractPlugin({
         filename: isProd ? 'css/[name].[contenthash:8].css' : '[name].css',

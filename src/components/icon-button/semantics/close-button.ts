@@ -1,6 +1,5 @@
-import { LitElement, html } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
-import { iconButtonStyles } from '../icon-button.styles'
+import { customElement } from 'lit/decorators.js'
+import IconButton from '../icon-button'
 import { ICON_NAMES } from './icon-names'
 
 /**
@@ -8,28 +7,26 @@ import { ICON_NAMES } from './icon-names'
  * navigator variant — 원형, 테두리, 그림자
  */
 @customElement('mm-close-button')
-export class CloseButton extends LitElement {
-  @property({ type: String, attribute: 'aria-label' })
-  override ariaLabel = '닫기'
-
-  static styles = [iconButtonStyles]
-
-  private handleClick() {
-    this.dispatchEvent(new CustomEvent('close', { bubbles: true, composed: true }))
+export class CloseButton extends IconButton {
+  constructor() {
+    super()
+    this.icon = ICON_NAMES.XMARK
+    this.variant = 'navigator'
+    this.ariaLabel = '닫기'
   }
 
-  render() {
-    return html`
-      <button
-        type="button"
-        class="icon-button"
-        data-variant="navigator"
-        aria-label=${this.ariaLabel}
-        @click=${this.handleClick}
-      >
-        <mm-icon name=${ICON_NAMES.XMARK}></mm-icon>
-      </button>
-    `
+  override connectedCallback() {
+    super.connectedCallback()
+    this.addEventListener('click', this._handleClick)
+  }
+
+  override disconnectedCallback() {
+    super.disconnectedCallback()
+    this.removeEventListener('click', this._handleClick)
+  }
+
+  private _handleClick = () => {
+    this.dispatchEvent(new CustomEvent('close', { bubbles: true, composed: true }))
   }
 }
 

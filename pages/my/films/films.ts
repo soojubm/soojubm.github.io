@@ -1,6 +1,6 @@
 import { renderDocumentLayout } from '../../../layouts/document-layout'
 import main from './index.html'
-import { renderList, getCountries, PAGE_SIZE } from '../_list-page'
+import { renderList, getCountries, PAGE_SIZE } from '../../components/_list-page'
 
 interface Film {
   id: number
@@ -107,7 +107,7 @@ function getDecades(films: Film[]) {
 
 async function loadFilms(): Promise<Film[] | null> {
   try {
-    const res = await fetch('/pages/components/films/films.json')
+    const res = await fetch('/pages/my/films/films.json')
     return await res.json()
   } catch {
     return null

@@ -1,36 +1,29 @@
-import { LitElement, html } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
-import { iconButtonStyles } from '../icon-button.styles'
+import { customElement } from 'lit/decorators.js'
+import IconButton from '../icon-button'
 import { ICON_NAMES } from './icon-names'
 
 @customElement('mm-prev-button')
-export class PrevButton extends LitElement {
-  @property({ type: String, attribute: 'aria-label' })
-  override ariaLabel = '이전'
-  @property({ type: Boolean, reflect: true }) disabled = false
-
-  static styles = [iconButtonStyles]
-
-  private handleClick() {
-    if (this.disabled) return
-
-    this.dispatchEvent(new CustomEvent('prev', { bubbles: true, composed: true }))
+export class PrevButton extends IconButton {
+  constructor() {
+    super()
+    this.icon = ICON_NAMES.ARROW_LEFT
+    this.variant = 'navigator'
+    this.ariaLabel = '이전'
   }
 
-  render() {
-    return html`
-      <button
-        type="button"
-        class="icon-button"
-        data-variant="navigator"
-        aria-label=${this.ariaLabel}
-        aria-disabled=${this.disabled ? 'true' : 'false'}
-        ?disabled=${this.disabled}
-        @click=${this.handleClick}
-      >
-        <mm-icon name=${ICON_NAMES.ARROW_LEFT}></mm-icon>
-      </button>
-    `
+  override connectedCallback() {
+    super.connectedCallback()
+    this.addEventListener('click', this._handleClick)
+  }
+
+  override disconnectedCallback() {
+    super.disconnectedCallback()
+    this.removeEventListener('click', this._handleClick)
+  }
+
+  private _handleClick = () => {
+    if (this.disabled) return
+    this.dispatchEvent(new CustomEvent('prev', { bubbles: true, composed: true }))
   }
 }
 

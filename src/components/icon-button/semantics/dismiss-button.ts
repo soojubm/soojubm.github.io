@@ -1,6 +1,6 @@
-import { LitElement, css, html } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
-import { iconButtonStyles } from '../icon-button.styles'
+import { css } from 'lit'
+import { customElement } from 'lit/decorators.js'
+import IconButton from '../icon-button'
 import { ICON_NAMES } from './icon-names'
 
 /**
@@ -8,12 +8,9 @@ import { ICON_NAMES } from './icon-names'
  * plain variant — 배경 없음, 경량
  */
 @customElement('mm-dismiss-button')
-export class DismissButton extends LitElement {
-  @property({ type: String, attribute: 'aria-label' })
-  override ariaLabel = '닫기'
-
-  static styles = [
-    iconButtonStyles,
+export class DismissButton extends IconButton {
+  static override styles = [
+    ...IconButton.styles,
     css`
       .icon-button[data-variant='plain'] {
         color: var(--color-foreground-light);
@@ -25,22 +22,25 @@ export class DismissButton extends LitElement {
     `,
   ]
 
-  private handleClick() {
-    this.dispatchEvent(new CustomEvent('dismiss', { bubbles: true, composed: true }))
+  constructor() {
+    super()
+    this.icon = ICON_NAMES.XMARK
+    this.variant = 'plain'
+    this.ariaLabel = '닫기'
   }
 
-  render() {
-    return html`
-      <button
-        type="button"
-        class="icon-button"
-        data-variant="plain"
-        aria-label=${this.ariaLabel}
-        @click=${this.handleClick}
-      >
-        <mm-icon name=${ICON_NAMES.XMARK}></mm-icon>
-      </button>
-    `
+  override connectedCallback() {
+    super.connectedCallback()
+    this.addEventListener('click', this._handleClick)
+  }
+
+  override disconnectedCallback() {
+    super.disconnectedCallback()
+    this.removeEventListener('click', this._handleClick)
+  }
+
+  private _handleClick = () => {
+    this.dispatchEvent(new CustomEvent('dismiss', { bubbles: true, composed: true }))
   }
 }
 

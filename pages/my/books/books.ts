@@ -1,6 +1,6 @@
 import { renderDocumentLayout } from '../../../layouts/document-layout'
 import main from './index.html'
-import { renderList, getCountries } from '../_list-page'
+import { renderList, getCountries } from '../../components/_list-page'
 
 interface Book {
   releasedate: number
@@ -76,7 +76,7 @@ function getFiltered(books: Book[], state: FilterState) {
 
 async function loadBooks(): Promise<Book[] | null> {
   try {
-    const res = await fetch('/pages/components/books/books.json')
+    const res = await fetch('/pages/my/books/books.json')
     return await res.json()
   } catch {
     return null
