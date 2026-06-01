@@ -1,8 +1,10 @@
-import './hamburger-button'
-import './close-button'
-import './dismiss-button'
-import './delete-button'
-import './copy-button'
-import './reveal-button'
-import './prev-button'
-import './next-button'
+import './semantics/hamburger-button'
+import './semantics/close-button'
+import './semantics/dismiss-button'
+import './semantics/delete-button'
+import './semantics/copy-button'
+import './semantics/reveal-button'
+import './semantics/prev-button'
+import './semantics/next-button'
+
+export {}

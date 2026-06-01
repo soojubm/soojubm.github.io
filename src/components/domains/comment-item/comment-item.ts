@@ -35,12 +35,6 @@ export class CommentItem extends LitElement {
       position: relative;
     }
 
-    .author {
-      display: flex;
-      align-items: center;
-      gap: var(--space-3);
-    }
-
     .reply {
       align-self: flex-start;
       padding: 0;
@@ -136,13 +130,12 @@ export class CommentItem extends LitElement {
   render() {
     return html`
       <article class="item">
-        <header class="author">
-          <mm-avatar size="large" src=${this.avatarSrc}></mm-avatar>
-          <div>
-            <mm-text size="14" weight="bold">${this.author}</mm-text>
-            <mm-text size="12">${this.time}</mm-text>
-          </div>
-        </header>
+        <mm-user-row
+          label=${this.author}
+          description=${this.time}
+          avatar-src=${this.avatarSrc}
+          avatar-size="large"
+        ></mm-user-row>
 
         <mm-text size="14"><slot></slot></mm-text>
 
@@ -151,7 +144,6 @@ export class CommentItem extends LitElement {
               ${this.replyLabel}
             </button>`
           : ''}
-
         ${this.editable
           ? html`
               <div class="more">

@@ -1,101 +1,84 @@
 import { renderDocumentLayout } from '../../../layouts/document-layout'
 import main from './index.html'
+import { renderList, getCountries } from '../_list-page'
+
+interface Book {
+  releasedate: number
+  titlekorean: string
+  titleenglish: string
+  director: string
+  country: string
+  etc: string
+}
+
+type FilterState = { country: string }
 
 document.addEventListener('DOMContentLoaded', () => {
   document.body.innerHTML = renderDocumentLayout(main)
+  initPage()
 })
 
-document.addEventListener('DOMContentLoaded', () => {
-  fetchAndDisplay()
-})
+async function initPage() {
+  const books = await loadBooks()
+  if (!books?.length) return
 
-async function fetchAndDisplay() {
-  const films = await fetchFilms()
+  const state: FilterState = { country: '' }
 
-  displayFilms(films)
-}
-
-function displayFilms(data) {
-  const html = data?.map(
-    item =>
-      `
-      <article style="min-width:100px;border:var(--border);padding:var(--space-3);border-radius:12px;position:relative">
-        <div style="display:flex;justify-content:space-between;gap:1rem;">
-          <small style="display:block;line-height:18px;"><time>${item.releasedate}</time></small>
-          <small>${item.country}</small>
-        </div>
-        <p style="margin:var(--space-1) 0 0 0"><b>${item.titlekorean}</b></p>
-        <p style="margin-top:-.25rem;"><small>${item.titleenglish}</small></p>
-        <p style="margin-top:var(--space-1);">${item.director}</p>
-      </article>
-    `,
+  renderFilters(books, state)
+  renderList(getFiltered(books, state), 0, bookCard, next =>
+    renderList(getFiltered(books, state), next, bookCard, () => {}),
   )
-
-  document.querySelector('.group')!.innerHTML = html.join(' ')
-  document.querySelector('.length')!.innerHTML = data.length
 }
 
-async function fetchFilms() {
-  try {
-    // const res = await fetch(`${proxy}${baseEndpoint}?q=${query}`)
-    const endpoint = `/pages/components/books/books.json`
-    const response = await fetch(endpoint)
-    const data = await response.json()
+function renderFilters(books: Book[], state: FilterState) {
+  const container = document.querySelector<HTMLElement>('.js-filters')
+  if (!container) return
 
-    console.log(data)
-    return data
-  } catch (error) {
-    console.log(error)
+  const countries = getCountries(books, 5)
+
+  container.innerHTML = `
+    <div style="display:flex;align-items:flex-start;gap:var(--space-3)">
+      <span style="min-width:2rem;padding-top:6px;font-size:var(--font-size-12);color:var(--color-foreground-light)">국가</span>
+      <mm-filter-button-group class="js-country-filter" mode="single" style="flex:1;flex-wrap:wrap">
+        ${countries.map(c => `<mm-filter-button value="${c}">${c}</mm-filter-button>`).join('')}
+      </mm-filter-button-group>
+    </div>
+  `
+
+  container.querySelector('.js-country-filter')?.addEventListener('change', e => {
+    state.country = (e as CustomEvent<{ selected: string[] }>).detail.selected[0] ?? ''
+    renderList(getFiltered(books, state), 0, bookCard, next =>
+      renderList(getFiltered(books, state), next, bookCard, () => {}),
+    )
+  })
+}
+
+function bookCard(b: Book) {
+  return `
+    <article style="border:var(--border);padding:var(--space-3);border-radius:var(--radius);display:flex;flex-direction:column;gap:var(--space-1)">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:var(--space-2)">
+        <time style="font-size:var(--font-size-12);color:var(--color-foreground-light)">${b.releasedate ?? ''}</time>
+        <span style="font-size:var(--font-size-12);color:var(--color-foreground-light)">${b.country ?? ''}</span>
+      </div>
+      <p style="margin:0;font-weight:var(--font-weight-bold);line-height:1.3">${b.titlekorean}</p>
+      <p style="margin:0;font-size:var(--font-size-12);color:var(--color-foreground-light)">${b.titleenglish}</p>
+      <p style="margin:0;font-size:var(--font-size-14)">${b.director}</p>
+    </article>
+  `
+}
+
+function getFiltered(books: Book[], state: FilterState) {
+  return books.filter(b => {
+    if (state.country && b.country !== state.country) return false
+    return true
+  })
+}
+
+async function loadBooks(): Promise<Book[] | null> {
+  try {
+    const res = await fetch('/pages/components/books/books.json')
+    return await res.json()
+  } catch {
+    return null
   }
 }
-
-// async function handleSubmit(event) {
-//   event.preventDefault()
-//   const el = event.currentTarget
-//   fetchAndDisplay(form.query.value)
-// }
-// async function fetchAndDisplay(query) {
-//   // turn the form off
-//   form.submit.disabled = true
-//   // submit the search
-//   const recipes = await fetchRecipes(query)
-//   console.log(recipes)
-//   form.submit.disabled = false
-//   displayRecipes(recipes.results)
-// }
-
-// const filters = {
-//   sarcastic(letter, index) {
-//     console.log(letter, index);
-//     return letter;
-//   },
-//   funky() {},
-//   unable() {},
-// };
-// function transformText(text) {
-//   // take the text, and loop over each letter
-//   const mod = Array.from(text).map(filters.sarcastic);
-//   console.log(mod);
-//   result.textContent = text;
-// }
-// textarea.addEventListener("input", (e) => transformText(e.target.value));
-
-// const filter = document.querySelector('[name="filter"]:checked').value;
-// console.log(filter);
-
-// try catch / response?.ok
-
-// let response;
-
-// try {
-//   response = await fetch('https://httpbin.org/status/429');
-// } catch (error) {
-//   console.log('There was an error', error);
-// }
-
-// // Uses the 'optional chaining' operator
-// if (response?.ok) {
-//   console.log('Use the response here!');
-// } else {
-//   console.log(`HTTP Response Code: ${response?.status}`)
-// }

@@ -5,19 +5,19 @@
   ></mm-page-header>
 
   <mm-component-example>
-    <nav class="breadcrumb" aria-label="breadcrumb">
-      <a class="breadcrumb-item breadcrumb-home" href="/">홈</a>
-      <i class="breadcrumb-divider" aria-hidden="true">/</i>
-      <a class="breadcrumb-item" href="#">페이지 이름</a>
-      <i class="breadcrumb-divider" aria-hidden="true">/</i>
-      <span class="breadcrumb-item" aria-current="page">현재 페이지</span>
-    </nav>
+    <mm-breadcrumb
+      items='[
+        { "label": "홈", "href": "/" },
+        { "label": "페이지 이름", "href": "#" },
+        { "label": "현재 페이지" }
+      ]'
+    ></mm-breadcrumb>
   </mm-component-example>
 
   <mm-component-props>
-    <mm-prop name="href" type="string"></mm-prop>
-    <mm-prop name="aria-current" type="'page'"></mm-prop>
-    <mm-prop name="aria-label" type="'breadcrumb'"></mm-prop>
+    <mm-prop name="items" type="{ label: string; href?: string }[] (JSON)"></mm-prop>
+    <mm-prop name="label" type="string = 'breadcrumb'" optional></mm-prop>
+    <mm-prop name="divider" type="string = '/'" optional></mm-prop>
   </mm-component-props>
 
   <mm-component-tokens>

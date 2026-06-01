@@ -57,7 +57,6 @@ module.exports = (env, argv) => {
 
   return {
     mode: isProd ? 'production' : 'development',
-    watch: !isProd,
     target: ['web', 'es5'],
     devtool: isProd ? 'source-map' : 'inline-source-map',
 

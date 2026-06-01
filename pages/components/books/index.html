@@ -1,13 +1,21 @@
 <main class="page">
-  <mm-button-group>
-    <mm-button status="active">전체</mm-button>
-    <mm-button>2020년대</mm-button>
-    <mm-button>2010년대</mm-button>
-    <mm-button>일본</mm-button>
-    <mm-button>한국</mm-button>
-    <mm-button>이탈리아</mm-button>
-  </mm-button-group>
-  <br />
-  <p class="length" role="status"></p>
-  <div class="group" style="display: flex; flex-wrap: wrap; gap: 1rem"></div>
+  <mm-page-header
+    title="독서 목록"
+    description="읽은 책을 기록합니다."
+  ></mm-page-header>
+
+  <div class="js-filters"></div>
+
+  <p style="margin: var(--space-3) 0; color: var(--color-foreground-light); font-size: var(--font-size-14)">
+    <span class="js-count"></span>권
+  </p>
+
+  <div
+    class="js-list"
+    style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: var(--space-3)"
+  ></div>
+
+  <div class="js-more" style="margin-top: var(--space-6); display: none">
+    <mm-show-more-button class="js-more-btn" label="더 보기"></mm-show-more-button>
+  </div>
 </main>

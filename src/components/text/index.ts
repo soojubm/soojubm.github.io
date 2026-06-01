@@ -1,10 +1,11 @@
 import './text'
-import './paragraph'
-import './paragraph-group'
-import './read-more-paragraph'
-import './page-title'
-import './section-title'
-import './caption'
-import './textList'
+
+import './semantics/paragraph'
+import './semantics/paragraph-group'
+import './semantics/read-more-paragraph'
+import './semantics/page-title'
+import './semantics/section-title'
+import './semantics/caption'
+import './semantics/textList'
 
 export {}

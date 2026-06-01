@@ -20,4 +20,6 @@ import './chat'
 import './comment-input'
 import './comment-item'
 import './search-suggestions'
+import './user-row'
+import './user-snippet'
 export {}

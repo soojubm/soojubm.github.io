@@ -1,5 +1,13 @@
 [
-  // 더스퀘어
+  {
+    "id": 202605,
+    "releasedate": 1962,
+    "titlekorean": "더스퀘어누락",
+    "titleenglish": "The Outcast",
+    "director": "이치가와 곤",
+    "country": "일본",
+    "etc": "부락민, 라이조"
+  },
   {
     "id": 202605,
     "releasedate": 1962,

@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'lit'
 import { customElement, property, query } from 'lit/decorators.js'
-import { inputStyles } from '../../textfield/input.styles'
+import { inputStyles } from '../../input/input.styles'
 
 @customElement('mm-prompt-input-textarea')
 export class PromptInputTextarea extends LitElement {

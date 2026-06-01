@@ -1,7 +1,7 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
-import '../avatar/list-row'
+import '../list-row/list-row'
 import { menuItemStyles } from './menuitem.styles'
 
 @customElement('mm-menu-item-row')

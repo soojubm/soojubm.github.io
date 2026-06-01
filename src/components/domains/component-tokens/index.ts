@@ -1,7 +1,7 @@
 import { LitElement, html, css } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { resetStyles } from '../../shared/reset.styles'
-import '../../text/section-title'
+import '../../text/semantics/section-title'
 
 /**
  * 개별 CSS 커스텀 프로퍼티(토큰) 행.

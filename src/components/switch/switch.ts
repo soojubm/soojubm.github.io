@@ -17,9 +17,6 @@ export class Switch extends LitElement {
     const target = event.target as HTMLInputElement
     this.checked = target.checked
 
-    // 🔍 콘솔에서 상태 변화를 확인하기 위한 로그
-    console.log(`[mm-switch] 현재 checked 상태:`, this.checked)
-
     this.dispatchEvent(
       new CustomEvent('change', {
         bubbles: true,

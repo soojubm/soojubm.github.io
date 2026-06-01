@@ -1,7 +1,7 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import '../icon-button/prev-button'
-import '../icon-button/next-button'
+import '../icon-button/semantics/prev-button'
+import '../icon-button/semantics/next-button'
 
 type PaginationItem = number | 'ellipsis'
 

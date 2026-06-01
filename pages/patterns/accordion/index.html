@@ -1,150 +1,110 @@
-<main class="page" aria-label="site">
+<main class="page">
   <mm-page-header
     title="Accordion"
-    description="사용자의 필요에 따라 취사선택할 수 있도록 정보 목록을 요약합니다. 반드시 숙지해야 하는 중요 정보를 collapsed로 제공하지 않아야 합니다."
+    description="콘텐츠를 펼치거나 접어 필요한 정보만 선택적으로 볼 수 있게 합니다. 반드시 숙지해야 할 중요 정보에는 사용하지 않아야 합니다."
   ></mm-page-header>
 
-  <mm-component-aka items='["disclosure/expanded", "expanded/collapsed"]'></mm-component-aka>
-
-  <style>
-    .accordion {
-      margin: var(--space-1) 0;
-      padding: var(--space-2) var(--space-4);
-      border-radius: var(--radius);
-      background: var(--color-background-subtle);
-    }
-    .accordion-title {
-      display: flex;
-      align-items: center;
-      gap: var(--space-2);
-      width: 100%;
-      height: var(--size-medium);
-      font-weight: var(--font-weight-bold);
-    }
-    .accordion-panel {
-      display: none;
-      cursor: default;
-    }
-    .accordion-panel p + p {
-      margin: var(--space-2) 0 0 0;
-    }
-
-    [aria-expanded='true'] .accordion-panel {
-      display: block;
-      padding: var(--space-2) 0;
-    }
-
-    .faq-item-reaction {
-    }
-    .faq-item-reaction-title {
-      margin: 0 0 var(--space-2) 0;
-    }
-    .faq-item-reaction-button {
-      margin: 0 2rem;
-      color: var(--color-foreground-light);
-    }
-    .faq-item-reaction-button-emoji {
-      display: block;
-      font-size: var(--font-size-32);
-    }
-  </style>
+  <mm-component-aka items='["Disclosure", "Expand / Collapse", "Details / Summary"]'></mm-component-aka>
 
   <mm-component-example>
-    <article class="accordion js-accordion is-active">
-      <button
-        class="accordion-title"
-        aria-expanded="false"
-        role="heading"
-        aria-label="3"
-        aria-controls="1"
-        aria-disable="true"
-      >
-        <mm-icon name="arrow-right-circle-solid"></mm-icon>
-        탈퇴하고 싶어요.
-      </button>
-      <div class="accordion-panel">
-        <p>
-          Tying state and its visual representation together is a very good thing. It ensures that
-          state changes are communicated interoperably. Do not listen to those who advocate the
-          absolute separation of HTML semantics and CSS styles. Form should follow function, and
-          directly is most reliable.
-        </p>
-        <p>[aria-expanded] rect { fill: currentColor; }</p>
-        <p>toggle-section open="false"s</p>
-        <pre>
-          (function() {
-            const headings = document.querySelectorAll('h2')
-          
-            Array.prototype.forEach.call(headings, heading => {
-              let btn = heading.querySelector('button')
-              let target = heading.nextElementSibling
-          
-              btn.onclick = () => {
-                let expanded = btn.getAttribute('aria-expanded') === 'true' || false
-          
-                btn.setAttribute('aria-expanded', !expanded)
-                target.hidden = expanded    
-              }
-            })
-          })()
-        </pre>
-        <footer class="faq-item-reaction">
-          <p class="faq-reaction-title reaction-prompt">이 답변이 도움이 되었나요?</p>
-        </footer>
-      </div>
-    </article>
-    <article
-      class="accordion js-accordion is-active"
-      role="region"
-      aria-labelledby="region-heading"
-    >
-      <button class="accordion-title" role="heading" id="region-heading" aria-expanded="false">
-        <mm-icon name="arrow-right-circle-solid"></mm-icon>
-        임시 아이콘입니다.
-      </button>
-      <div class="accordion-panel">
-        <p>
-          모든 국민은 건강하고 쾌적한 환경에서 생활할 권리를 가지며, 국가와 국민은 환경보전을 위하여
-          노력하여야 한다.
-        </p>
-      </div>
-    </article>
+    <mm-accordion exclusive>
+      <mm-accordion-item summary="서비스를 탈퇴하고 싶어요.">
+        <mm-text size="14">
+          마이페이지 → 계정 설정 → 회원 탈퇴 순서로 진행하시면 됩니다.
+          탈퇴 후 30일간 데이터가 보관되며 이후 완전히 삭제됩니다.
+        </mm-text>
+      </mm-accordion-item>
+      <mm-accordion-item summary="비밀번호를 잊어버렸어요.">
+        <mm-text size="14">
+          로그인 화면의 "비밀번호 찾기"를 통해 가입 이메일로 재설정 링크를 받을 수 있습니다.
+        </mm-text>
+      </mm-accordion-item>
+      <mm-accordion-item summary="결제 영수증은 어디서 확인하나요?">
+        <mm-text size="14">
+          마이페이지 → 결제 내역에서 영수증을 확인하고 다운로드할 수 있습니다.
+        </mm-text>
+      </mm-accordion-item>
+    </mm-accordion>
   </mm-component-example>
 
   <mm-component-props>
-    <mm-prop name="aria-expanded" type="boolean"></mm-prop>
-    <mm-prop name="aria-controls" type="string"></mm-prop>
-    <mm-prop name="aria-labelledby" type="string" optional></mm-prop>
-    <mm-prop name="disabled" type="boolean" optional></mm-prop>
+    <mm-prop name="mm-accordion" type="group container" optional></mm-prop>
+    <mm-prop name="exclusive" type="boolean = false"></mm-prop>
+    <mm-prop name="mm-accordion-item" type="individual item" optional></mm-prop>
+    <mm-prop name="summary" type="string"></mm-prop>
+    <mm-prop name="open" type="boolean = false"></mm-prop>
+    <mm-prop name="disabled" type="boolean = false"></mm-prop>
+    <mm-prop name="slot: summary" type="HTMLElement (trigger)" optional></mm-prop>
+    <mm-prop name="slot: default" type="HTMLElement (panel content)" optional></mm-prop>
+    <mm-prop name="event: accordion-toggle" type="CustomEvent { open: boolean }" optional></mm-prop>
   </mm-component-props>
 
+  <mm-component-tokens>
+    <mm-token
+      name="--accordion-padding-x"
+      default="var(--space-4)"
+      description="패널 가로 안쪽 여백"
+    ></mm-token>
+    <mm-token
+      name="--accordion-padding-y"
+      default="var(--space-2)"
+      description="패널 세로 안쪽 여백"
+    ></mm-token>
+    <mm-token
+      name="--accordion-background"
+      default="var(--color-background-subtle)"
+      description="아이템 배경색"
+    ></mm-token>
+    <mm-token
+      name="--accordion-border"
+      default="none"
+      description="아이템 테두리 (brutal 테마에서는 자동으로 #000 보더가 적용됩니다)"
+    ></mm-token>
+    <mm-token
+      name="--accordion-radius"
+      default="var(--radius)"
+      description="아이템 모서리 반경"
+    ></mm-token>
+  </mm-component-tokens>
+
   <mm-component-guide>
+    <mm-paragraph-group>
+      <mm-text size="14" weight="bold">언제 사용하나요</mm-text>
+      <mm-text size="14">
+        FAQ·커리큘럼·필터처럼 항목이 많고 사용자가 선택적으로 읽는 콘텐츠에 적합합니다.
+        모든 내용을 한 번에 읽어야 하는 경우에는 펼쳐진 상태로 표시하는 것이 낫습니다.
+      </mm-text>
+    </mm-paragraph-group>
     <mm-text-list
       texts='[
-      "Collapsed/Expanded, details/summary",
-      "닫는 방법의 정의. 도큐먼트를 클릭하면 닫을 것인지? panel을 클릭하면 닫을 것인지? 이렇게 되면 내부에 링크 등의 액션을 제공할 수 없다. 다른 아코디언 아이템을 클릭했을 대 닫을 것인지? 본문을 클릭하여 닫을 수 있게 되면, 본문에 페이지 링크를 제공할 수 없음.",
-      "사용자가 반드시 숙지해야 하는 정보를 아코디언으로 요약해서 보여주지 마세요. (참고. Tooltip과 같은 맥락)", "요약된 타이틀summary은 한 문장으로 간결하게 작성하세요."]'
+        "반드시 읽어야 하는 중요 정보(약관·경고 등)는 숨기지 마세요. (Tooltip과 같은 맥락)",
+        "트리거 텍스트(summary)는 한 문장으로 간결하게 작성하세요.",
+        "exclusive 모드는 FAQ처럼 하나씩 확인하는 패턴에 사용하고, 여러 항목을 동시에 비교해야 할 때는 끄세요.",
+        "패널 안에 링크·버튼 등 인터랙션이 있을 경우, 패널 클릭으로 닫히는 동작을 추가하지 마세요."
+      ]'
     ></mm-text-list>
-    <!--
-      <details>
-        <summary>native details / summary</summary>
-        <p>example</p>
-      </details>
-      -->
   </mm-component-guide>
 
-  <mm-component-section title="Frequently asked questions" description="">
-    <abbr title="Frequently asked questions" hidden>FAQ</abbr>
+  <mm-component-section
+    title="Disabled"
+    description="disabled 상태에서는 트리거가 비활성화됩니다."
+  >
+    <mm-accordion-item summary="비활성 항목 (클릭해도 열리지 않습니다)" disabled>
+      <mm-text size="14">이 콘텐츠는 볼 수 없습니다.</mm-text>
+    </mm-accordion-item>
   </mm-component-section>
 
-  <mm-component-section title="useCollapsedExpanded">
-    <mm-text-list texts='["자주묻는질문(FAQ) 정도 외에는 잘 쓰지 않음. 교육 도매인의 커리큘럼 정도에서 보임. actived:
-        레이어가 모바일에서 사용성이 좋기 때문에 레거시 유아이로 봐도 될 듯. 자주묻는질문은 보조
-        정보.", "role button - space keycode를 추가하여 스페이스 키 또한 확장/축소할 수 있는 키로 인식되도록
-        합니다. a 엔터키로만동작"]'></mm-text-list>
+  <mm-component-section
+    title="Open by default"
+    description="open 속성으로 초기 상태를 펼쳐진 상태로 지정할 수 있습니다."
+  >
+    <mm-accordion-item summary="처음부터 펼쳐진 항목" open>
+      <mm-text size="14">open 속성이 지정되어 페이지 로드 시 바로 표시됩니다.</mm-text>
+    </mm-accordion-item>
   </mm-component-section>
 
   <mm-component-references>
+    <mm-link external href="https://www.w3.org/WAI/ARIA/apg/patterns/accordion/">WAI-ARIA Accordion Pattern</mm-link>
     <mm-link external href="https://nuli.navercorp.com/community/article/1132889">nuli</mm-link>
   </mm-component-references>
 </main>

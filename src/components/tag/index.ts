@@ -1,8 +1,8 @@
 import './tag'
-import './keyword-tag'
-import './keyword-tag-group'
-import './accent-tag'
-import './status-tag'
-import './category-tag'
+import './semantics/keyword-tag'
+import './semantics/keyword-tag-group'
+import './semantics/accent-tag'
+import './semantics/status-tag'
+import './semantics/category-tag'
 
 export {}
