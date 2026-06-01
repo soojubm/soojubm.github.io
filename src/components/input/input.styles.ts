@@ -83,6 +83,9 @@ export const inputStyles = css`
     --input-radius: var(--radius);
     --input-color-border-hover: var(--gray400);
     --input-text-color: var(--color-foreground);
+    --input-padding-block: var(--space-3);
+    --input-padding-inline: var(--space-4);
+    --input-padding: var(--input-padding-inline);
   }
 
   :host-context([data-theme='brutal']) {
@@ -113,7 +116,7 @@ export const inputStyles = css`
     width: 100%;
     min-width: 0;
     height: 100%;
-    padding: var(--space-3) var(--space-4);
+    padding: var(--input-padding-block) var(--input-padding-inline);
     box-sizing: border-box;
     border: 0;
     color: var(--color-foreground);
