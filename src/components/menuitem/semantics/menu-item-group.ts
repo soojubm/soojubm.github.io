@@ -1,16 +1,19 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { ifDefined } from 'lit/directives/if-defined.js'
 import { resetStyles } from '../../../stylesheets/shared/reset.styles'
 
 @customElement('mm-menu-item-group')
 export class MenuItemGroup extends LitElement {
-  @property({ type: String, attribute: 'aria-label' }) override ariaLabel = ''
+  /** 기본 menu, 다중 선택은 group, 단일 선택은 radiogroup */
+  @property({ type: String, reflect: true }) override role = 'menu'
 
   static styles = [
     resetStyles,
     css`
       :host {
+        display: block;
+      }
+      :host > div {
         display: flex;
         flex-direction: column;
         gap: var(--space-2);
@@ -20,7 +23,7 @@ export class MenuItemGroup extends LitElement {
 
   render() {
     return html`
-      <div role="menu" aria-label=${ifDefined(this.ariaLabel || undefined)}>
+      <div>
         <slot></slot>
       </div>
     `

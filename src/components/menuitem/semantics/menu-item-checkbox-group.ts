@@ -2,6 +2,7 @@ import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 import type { MenuItemCheckbox } from './menu-item-checkbox'
+import './menu-item-group'
 
 /**
  * mm-menu-item-checkbox를 묶는 다중 선택 그룹.
@@ -66,13 +67,13 @@ export class MenuItemCheckboxGroup extends LitElement {
 
   render() {
     return html`
-      <div
+      <mm-menu-item-group
         role="group"
         aria-label=${ifDefined(this.ariaLabel || undefined)}
         @change=${this.handleChange}
       >
         <slot @slotchange=${this.handleSlotChange}></slot>
-      </div>
+      </mm-menu-item-group>
     `
   }
 }
