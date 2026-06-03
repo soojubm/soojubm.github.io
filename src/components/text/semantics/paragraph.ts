@@ -1,22 +1,14 @@
 import { LitElement, css, html } from 'lit'
-import { styleMap } from 'lit/directives/style-map.js'
 import { customElement, property } from 'lit/decorators.js'
-
 import { resetStyles } from '../../../stylesheets/shared/reset.styles'
-import { textSizes, textWeights, type TextSize, type TextWeight } from '../text.styles'
+import type { TextWeight } from '../text.styles'
 
 type ParagraphSize = 'small' | 'medium' | 'large'
 
-const paragraphSizes: Record<ParagraphSize, TextSize> = {
-  small: '12',
-  medium: '14',
-  large: '18',
-}
-
 @customElement('mm-paragraph')
 export class Paragraph extends LitElement {
-  @property({ type: String }) size: ParagraphSize = 'medium'
-  @property({ type: String }) weight: TextWeight = 'medium'
+  @property({ type: String, reflect: true }) size: ParagraphSize = 'medium'
+  @property({ type: String, reflect: true }) weight: TextWeight = 'medium'
   @property({ type: String }) color = 'inherit'
   @property({ type: Boolean, reflect: true }) center = false
 
@@ -25,27 +17,37 @@ export class Paragraph extends LitElement {
     css`
       :host {
         display: block;
+        font-size: var(--font-size-14);
+        line-height: var(--font-line-height-24);
+        font-weight: var(--font-weight-medium);
+        color: inherit;
       }
+
+      :host([size='small']) { font-size: var(--font-size-12); line-height: var(--font-line-height-16); }
+      :host([size='large']) { font-size: var(--font-size-18); line-height: var(--font-line-height-28); }
+
+      :host([weight='bold']) { font-weight: var(--font-weight-bold); }
+
+      :host([center]) { text-align: center; }
+
       p {
+        margin: 0;
         font-family: inherit;
+        font-size: inherit;
+        line-height: inherit;
+        font-weight: inherit;
         color: inherit;
       }
     `,
   ]
 
-  render() {
-    const size = paragraphSizes[this.size] ?? paragraphSizes.medium
-    const sizeStyle = textSizes[size]
-    const weightStyle = textWeights[this.weight] ?? textWeights.medium
-
-    const dynamicStyles = {
-      fontSize: sizeStyle.fontSize,
-      lineHeight: sizeStyle.lineHeight,
-      fontWeight: weightStyle,
-      color: this.color,
-      textAlign: this.center ? 'center' : undefined,
+  updated(changed: Map<string, unknown>) {
+    if (changed.has('color')) {
+      this.style.color = this.color !== 'inherit' ? this.color : ''
     }
+  }
 
-    return html`<p style=${styleMap(dynamicStyles)}><slot></slot></p>`
+  render() {
+    return html`<p><slot></slot></p>`
   }
 }

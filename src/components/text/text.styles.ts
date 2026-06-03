@@ -1,69 +1,36 @@
 import { css } from 'lit'
 
-export const textSizes = {
-  '32': { fontSize: 'var(--font-size-32)', lineHeight: 'var(--font-line-height-40)' },
-  '24': { fontSize: 'var(--font-size-24)', lineHeight: 'var(--font-line-height-32)' },
-  '18': { fontSize: 'var(--font-size-18)', lineHeight: 'var(--font-line-height-28)' },
-  '14': { fontSize: 'var(--font-size-14)', lineHeight: 'var(--font-line-height-24)' },
-  '12': { fontSize: 'var(--font-size-12)', lineHeight: 'var(--font-line-height-16)' },
-} as const
-
-export const textWeights = {
-  medium: 'var(--font-weight-medium)',
-  bold: 'var(--font-weight-bold)',
-} as const
-
-// 타입 추론을 위한 타입 정의
-export type TextSize = keyof typeof textSizes
-export type TextWeight = keyof typeof textWeights
+export type TextSize = '32' | '24' | '18' | '14' | '12'
+export type TextWeight = 'medium' | 'bold'
 
 export const textStyles = css`
-  h1,
-  h2,
-  h3,
-  p {
-    margin: 0;
-    line-height: var(--font-line-height-large);
+  :host {
+    display: inline-block;
+    font-size: var(--font-size-14);
+    line-height: var(--font-line-height-24);
+    font-weight: var(--font-weight-medium);
+    color: inherit;
   }
 
-  ul {
-    margin: 0;
-  }
-
-  .text[data-center='true'] {
+  :host([center]) {
+    display: block;
     text-align: center;
   }
 
-  .text[data-truncated='true'] {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
+  :host([size='32']) { font-size: var(--font-size-32); line-height: var(--font-line-height-40); }
+  :host([size='24']) { font-size: var(--font-size-24); line-height: var(--font-line-height-32); }
+  :host([size='18']) { font-size: var(--font-size-18); line-height: var(--font-line-height-28); }
+  :host([size='14']) { font-size: var(--font-size-14); line-height: var(--font-line-height-24); }
+  :host([size='12']) { font-size: var(--font-size-12); line-height: var(--font-line-height-16); }
 
-  .util-truncate-multi {
-    white-space: normal;
-    word-wrap: break-word;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-  }
+  :host([weight='bold']) { font-weight: var(--font-weight-bold); }
 
-  .summary {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: var(--space-2);
-  }
-
-  .summary-item {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .summary-item[data-alignment='inline'] {
-    justify-content: baseline;
-    gap: var(--space-2);
+  h1, h2, h3, h4, h5, h6, p, span {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    font-weight: inherit;
+    color: inherit;
   }
 `

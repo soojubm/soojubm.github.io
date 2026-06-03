@@ -1,6 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 import { resetStyles } from '../../../stylesheets/shared/reset.styles'
+import '../../flex/flex'
 
 @customElement('mm-paragraph-group')
 export class ParagraphGroup extends LitElement {
@@ -8,15 +9,17 @@ export class ParagraphGroup extends LitElement {
     resetStyles,
     css`
       :host {
-        display: flex;
-        flex-direction: column;
-        gap: var(--space-4);
+        display: block;
       }
     `,
   ]
 
   render() {
-    return html`<slot></slot>`
+    return html`
+      <mm-flex direction="column" gap="4">
+        <slot></slot>
+      </mm-flex>
+    `
   }
 }
 
