@@ -53,7 +53,6 @@ export class FilterButton extends LitElement {
       <mm-button
         variant="tertiary"
         size="small"
-        status=${this.selected ? 'checked' : ''}
         ?disabled=${this.disabled}
         icon=${this.selected ? 'check' : ''}
         role=${this.mode === 'multiple' ? 'checkbox' : 'radio'}

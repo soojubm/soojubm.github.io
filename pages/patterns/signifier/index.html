@@ -58,21 +58,58 @@
         "Indicator Icons - Label, Decorative",
         "Navigation Icons",
         "Action Icons",
-        "TODO :: dismiss, remove, clear, close"
       ]'
       ></mm-text-list>
       <br />
-      <section style="display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: var(--space-1)">
+      <section
+        style="
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+          gap: var(--space-1);
+        "
+      >
         <mm-menu-item-row icon="search" label="search" description="Search"></mm-menu-item-row>
-        <mm-menu-item-row icon="nav-arrow-down" label="nav-arrow-down" description="Expand, dropdown"></mm-menu-item-row>
-        <mm-menu-item-row icon="arrow-left" label="arrow-left" description="Back, previous"></mm-menu-item-row>
-        <mm-menu-item-row icon="arrow-right" label="arrow-right" description="Next, continue, view all"></mm-menu-item-row>
-        <mm-menu-item-row icon="arrow-up-right" label="arrow-up-right" description="External link, view all"></mm-menu-item-row>
-        <mm-menu-item-row icon="xmark" label="xmark" description="Remove, close, clear"></mm-menu-item-row>
+        <mm-menu-item-row
+          icon="nav-arrow-down"
+          label="nav-arrow-down"
+          description="Expand, dropdown"
+        ></mm-menu-item-row>
+        <mm-menu-item-row
+          icon="arrow-left"
+          label="arrow-left"
+          description="Back, previous"
+        ></mm-menu-item-row>
+        <mm-menu-item-row
+          icon="arrow-right"
+          label="arrow-right"
+          description="Next, continue, view all"
+        ></mm-menu-item-row>
+        <mm-menu-item-row
+          icon="arrow-up-right"
+          label="arrow-up-right"
+          description="External link, view all"
+        ></mm-menu-item-row>
+        <mm-menu-item-row
+          icon="xmark"
+          label="xmark"
+          description="Remove, close, clear"
+        ></mm-menu-item-row>
         <mm-menu-item-row icon="plus" label="plus" description="Add, create"></mm-menu-item-row>
-        <mm-menu-item-row icon="check" label="check" description="Confirm, selected"></mm-menu-item-row>
-        <mm-menu-item-row icon="more-vert" label="more-vert" description="More actions"></mm-menu-item-row>
-        <mm-menu-item-row icon="settings" label="settings" description="Settings"></mm-menu-item-row>
+        <mm-menu-item-row
+          icon="check"
+          label="check"
+          description="Confirm, selected"
+        ></mm-menu-item-row>
+        <mm-menu-item-row
+          icon="more-vert"
+          label="more-vert"
+          description="More actions"
+        ></mm-menu-item-row>
+        <mm-menu-item-row
+          icon="settings"
+          label="settings"
+          description="Settings"
+        ></mm-menu-item-row>
         <mm-menu-item-row icon="copy" label="copy" description="Copy"></mm-menu-item-row>
         <mm-menu-item-row icon="refresh" label="refresh" description="Refresh"></mm-menu-item-row>
         <mm-menu-item-row icon="lock" label="lock" description="Private, locked"></mm-menu-item-row>
@@ -88,7 +125,9 @@
       <mm-text>위치는 고정</mm-text>
       <mm-text>background foreground weight</mm-text>
       <mm-text>Strong Selection Context:: - check - dot - bar - fill - outline</mm-text>
-      <mm-text-list texts='["--selection-indicator-size", "--selection-indicator-gap", "--selection-indicator-color"]'></mm-text-list>
+      <mm-text-list
+        texts='["--selection-indicator-size", "--selection-indicator-gap", "--selection-indicator-color"]'
+      ></mm-text-list>
       <mm-text>
         선택 상태는 최소 2개 이상의 signal로 표현하는 것이 좋다 (WCAG 색상만으로 상태를 전달하지 말
         것)
@@ -328,10 +367,20 @@
   </style> -->
 
   <mm-component-references>
-    <mm-link external href="https://developer.apple.com/design/human-interface-guidelines/components/layout-and-organization/disclosure-controls">disclosure-controls</mm-link>
-    <mm-link external href="https://developer.apple.com/kr/design/tips/">UI 디자인 기본 원칙</mm-link>
-    <mm-link external href="https://m3.material.io/foundations/interaction-states">MD interaction-states</mm-link>
-    <mm-link external href="https://simplicable.com/new/visual-information">Visual Information</mm-link>
+    <mm-link
+      external
+      href="https://developer.apple.com/design/human-interface-guidelines/components/layout-and-organization/disclosure-controls"
+      >disclosure-controls</mm-link
+    >
+    <mm-link external href="https://developer.apple.com/kr/design/tips/"
+      >UI 디자인 기본 원칙</mm-link
+    >
+    <mm-link external href="https://m3.material.io/foundations/interaction-states"
+      >MD interaction-states</mm-link
+    >
+    <mm-link external href="https://simplicable.com/new/visual-information"
+      >Visual Information</mm-link
+    >
   </mm-component-references>
 </main>
 

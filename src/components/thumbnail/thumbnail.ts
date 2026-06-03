@@ -23,6 +23,7 @@ export class Thumbnail extends LitElement {
       display: block;
       width: 100%;
       --thumbnail-radius: 12px;
+      --thumbnail-border: var(--border);
       --thumbnail-color-empty: var(--color-background-subtle);
     }
 
@@ -99,7 +100,9 @@ export class Thumbnail extends LitElement {
       media = html`<a href="${this.href}" class="thumbnail-media interactive">${innerTemplate}</a>`
     } else if (this.clickable) {
       // 2. 주소는 없지만 클릭 동작(clickable)이 필요하다면 <button> 태그로 출력
-      media = html`<button type="button" class="thumbnail-media interactive">${innerTemplate}</button>`
+      media = html`<button type="button" class="thumbnail-media interactive">
+        ${innerTemplate}
+      </button>`
     } else {
       // 3. 아무것도 없다면 단순 보기용 <div>로 출력
       media = html`<div class="thumbnail-media">${innerTemplate}</div>`
@@ -110,7 +113,9 @@ export class Thumbnail extends LitElement {
       <figure class="thumbnail-root">
         ${media}
         ${this.figcaption
-          ? html`<mm-caption as="figcaption" class="thumbnail-caption">${this.figcaption}</mm-caption>`
+          ? html`<mm-caption as="figcaption" class="thumbnail-caption"
+              >${this.figcaption}</mm-caption
+            >`
           : ''}
       </figure>
     `

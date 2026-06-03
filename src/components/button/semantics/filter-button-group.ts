@@ -1,11 +1,13 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { resetStyles } from '../../../stylesheets/shared/reset.styles'
+import '../../flex/flex'
 import type { FilterButton } from './filter-button'
 
 /**
  * mm-filter-button을 묶는 그룹.
  * mode 속성으로 다중 선택(체크박스형) / 단일 선택(라디오형)을 전환합니다.
+ * 레이아웃은 mm-flex에 위임하고, role은 host에 직접 반영합니다.
  */
 type FilterMode = 'single' | 'multiple'
 
@@ -26,22 +28,26 @@ export class FilterButtonGroup extends LitElement {
       :host {
         display: block;
       }
-      div {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 6px;
-      }
     `,
   ]
 
   connectedCallback() {
     super.connectedCallback()
     this.addEventListener('filter-toggle', this._onToggle as EventListener)
+    this._updateRole()
   }
 
   disconnectedCallback() {
     super.disconnectedCallback()
     this.removeEventListener('filter-toggle', this._onToggle as EventListener)
+  }
+
+  updated(changedProps: Map<string, unknown>) {
+    if (changedProps.has('mode')) this._updateRole()
+  }
+
+  private _updateRole() {
+    this.setAttribute('role', this._isMultiple ? 'group' : 'radiogroup')
   }
 
   private get _buttons() {
@@ -61,14 +67,12 @@ export class FilterButtonGroup extends LitElement {
     const { value, selected, selectAll } = e.detail
 
     if (selectAll) {
-      // "전체" 클릭: 모든 일반 옵션을 선택/해제
       this.selected = selected ? this._optionButtons.map(b => b.value) : []
     } else if (this._isMultiple) {
       this.selected = selected
         ? [...this.selected, value]
         : this.selected.filter(v => v !== value)
     } else {
-      // 단일 선택: 같은 값을 다시 누르면 해제, 아니면 교체
       this.selected = selected ? [value] : []
     }
 
@@ -87,7 +91,6 @@ export class FilterButtonGroup extends LitElement {
       btn.selected = this.selected.includes(btn.value)
       btn.mode = this.mode
     })
-    // "전체" 버튼은 모든 일반 옵션이 선택됐을 때만 selected
     const allBtn = this._selectAllButton
     if (allBtn) {
       const allSelected =
@@ -98,7 +101,6 @@ export class FilterButtonGroup extends LitElement {
     }
   }
 
-  // 버튼에 미리 selected가 지정돼 있으면 그룹 상태로 흡수
   private _adoptInitialSelection = () => {
     const preselected = this._buttons.filter(b => b.selected).map(b => b.value)
     if (preselected.length) {
@@ -113,9 +115,9 @@ export class FilterButtonGroup extends LitElement {
 
   render() {
     return html`
-      <div role=${this._isMultiple ? 'group' : 'radiogroup'}>
+      <mm-flex gap="6px">
         <slot @slotchange=${this._adoptInitialSelection}></slot>
-      </div>
+      </mm-flex>
     `
   }
 }

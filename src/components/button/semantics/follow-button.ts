@@ -1,25 +1,40 @@
-import { html } from 'lit'
+import { css, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
+import { resetStyles } from '../../../stylesheets/shared/reset.styles'
 import { ToggleButton } from './toggle-button'
+import '../button'
 
 /**
- * 팔로우 토글 버튼. ToggleButton을 확장합니다.
- * 선택(팔로잉) 상태에 따라 레이블과 아이콘이 전환됩니다.
+ * 팔로우 토글 버튼.
+ * ToggleButton의 토글 로직을 상속하고, mm-button으로 렌더링합니다.
  */
 @customElement('mm-follow-button')
 export class FollowButton extends ToggleButton {
+  static styles = [
+    resetStyles,
+    css`
+      :host {
+        display: inline-flex;
+      }
+
+      :host([selected]) mm-button {
+        --button-color: var(--selection-background);
+        --button-border: 1px solid var(--selection-indicator-color);
+        --button-text-color: var(--selection-foreground);
+      }
+    `,
+  ]
+
   override render() {
     return html`
-      <button
-        type="button"
-        class="toggle"
-        aria-pressed=${this.selected ? 'true' : 'false'}
+      <mm-button
+        icon=${this.selected ? 'check' : 'plus'}
         ?disabled=${this.disabled}
+        aria-pressed=${this.selected ? 'true' : 'false'}
         @click=${this.handleClick}
       >
-        <mm-icon name=${this.selected ? 'check' : 'plus'}></mm-icon>
         ${this.selected ? '팔로잉' : '팔로우'}
-      </button>
+      </mm-button>
     `
   }
 }

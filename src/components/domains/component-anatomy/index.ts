@@ -35,7 +35,6 @@ export class ComponentAnatomy extends LitElement {
         gap: var(--space-3);
         margin-top: 4rem;
       }
-
       .stage {
         display: flex;
         align-items: center;
@@ -46,6 +45,10 @@ export class ComponentAnatomy extends LitElement {
         border: var(--border-stronger);
         border-radius: var(--radius-large);
         background: var(--color-background-subtle);
+      }
+      .stage slot {
+        display: block;
+        position: relative;
       }
     `,
   ]

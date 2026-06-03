@@ -4,36 +4,25 @@
     description="페이지 이동이나 양식 제출 등 사용자 여정의 핵심 과업입니다. (이 디스크립션은 칩이 있었을 때 유효)"
   ></mm-page-header>
 
-  <!-- <mm-tablist class="tablist">
-    <mm-tab slot="tab" name="" selected="true" data-index="1"> 베리언트 </mm-tab>
-    <mm-tab slot="tab" name="" selected="false" data-index="2"> 상태 </mm-tab>
-    <i class="tablist-indicator"></i>
-  </mm-tablist> -->
-
   <mm-component-example>
-    <mm-tabpanel role="tabpanel" aria-hidden="false" data-index="1">
-      <mm-button-group>
-        <mm-button variant="primary" size="large">primary</mm-button>
-        <mm-button variant="secondary" size="large">secondary</mm-button>
-        <mm-button variant="tertiary" size="large">tertiary</mm-button>
-        <mm-button variant="destructive" aria-label="danger">destructive</mm-button>
-        <mm-button variant="text" size="large">text</mm-button>
-        <mm-button variant="text" size="large" disabled>text</mm-button>
-      </mm-button-group>
-      <mm-separator></mm-separator>
-      <mm-button-group>
-        <mm-button variant="primary" size="large">large</mm-button>
-        <mm-button variant="primary">small</mm-button>
-      </mm-button-group>
-    </mm-tabpanel>
+    <mm-button-group>
+      <mm-button variant="primary" size="large">primary</mm-button>
+      <mm-button variant="secondary" size="large">secondary</mm-button>
+      <mm-button variant="tertiary" size="large">tertiary</mm-button>
+      <mm-button variant="destructive" size="large" aria-label="danger">destructive</mm-button>
+      <mm-button variant="text" size="large">text</mm-button>
+    </mm-button-group>
     <mm-separator></mm-separator>
-    <mm-tabpanel role="tabpanel" aria-hidden="true" data-index="2">
-      <mm-button-group>
-        <mm-button variant="tertiary" status="hover">hovered</mm-button>
-        <mm-button variant="tertiary" status="focus">focused</mm-button>
-        <mm-button variant="tertiary" disabled>disabled</mm-button>
-      </mm-button-group>
-    </mm-tabpanel>
+    <mm-button-group>
+      <mm-button variant="primary" size="large">large</mm-button>
+      <mm-button variant="primary">small</mm-button>
+    </mm-button-group>
+    <mm-separator></mm-separator>
+    <mm-button-group>
+      <mm-button variant="tertiary">hovered</mm-button>
+      <mm-button variant="tertiary">focused</mm-button>
+      <mm-button variant="tertiary" disabled>disabled</mm-button>
+    </mm-button-group>
   </mm-component-example>
 
   <mm-component-props>
@@ -68,25 +57,22 @@
       "레이블 — 실행 결과를 예측할 수 있는 동사형 텍스트."
     ]'
   >
-    <div style="position: relative; display: inline-block">
-      <mm-button variant="primary" size="large" icon="send-diagonal">보내기</mm-button>
-
-      <mm-list-marker
-        variant="number"
-        value="1"
-        style="position: absolute; left: -1.75rem; top: 50%; transform: translateY(-50%)"
-      ></mm-list-marker>
-      <mm-list-marker
-        variant="number"
-        value="2"
-        style="position: absolute; left: 1.75rem; bottom: -1.75rem; transform: translateX(-50%)"
-      ></mm-list-marker>
-      <mm-list-marker
-        variant="number"
-        value="3"
-        style="position: absolute; right: 1.5rem; bottom: -1.75rem; transform: translateX(50%)"
-      ></mm-list-marker>
-    </div>
+    <mm-button variant="primary" size="large" icon="send-diagonal">보내기</mm-button>
+    <mm-list-marker
+      variant="number"
+      value="1"
+      style="position: absolute; left: -1.75rem; top: 50%; transform: translateY(-50%)"
+    ></mm-list-marker>
+    <mm-list-marker
+      variant="number"
+      value="2"
+      style="position: absolute; left: 1.75rem; bottom: -1.75rem; transform: translateX(-50%)"
+    ></mm-list-marker>
+    <mm-list-marker
+      variant="number"
+      value="3"
+      style="position: absolute; right: 1.5rem; bottom: -1.75rem; transform: translateX(50%)"
+    ></mm-list-marker>
   </mm-component-anatomy>
 
   <mm-component-guide>
@@ -154,9 +140,6 @@
       <mm-component-aka
         items='["Tag", "Pill", "Badge", "Token", "Label", "Pick Button"]'
       ></mm-component-aka>
-
-      <!-- " aria-selected="true"
-       aria-expanded="true" -->
 
       <mm-text-list
         texts='[
