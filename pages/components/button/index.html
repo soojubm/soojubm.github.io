@@ -50,43 +50,15 @@
   </mm-component-props>
 
   <mm-component-tokens>
-    <mm-token
-      name="--button-size"
-      default="var(--size-medium)"
-     
-    ></mm-token>
-    <mm-token
-      name="--button-min-width"
-      default="5rem"
-     
-    ></mm-token>
-    <mm-token
-      name="--button-padding-inline"
-      default="var(--space-3)"
-     
-    ></mm-token>
-    <mm-token
-      name="--button-color"
-      default="var(--color-background-subtle)"
-     
-    ></mm-token>
-    <mm-token
-      name="--button-border"
-      default="1px solid var(--button-color)"
-     
-    ></mm-token>
+    <mm-token name="--button-size" default="var(--size-medium)"></mm-token>
+    <mm-token name="--button-min-width" default="5rem"></mm-token>
+    <mm-token name="--button-padding-inline" default="var(--space-3)"></mm-token>
+    <mm-token name="--button-color" default="var(--color-background-subtle)"></mm-token>
+    <mm-token name="--button-border" default="1px solid var(--button-color)"></mm-token>
     <mm-token name="--button-radius" default="var(--radius)"></mm-token>
-    <mm-token
-      name="--button-text-color"
-      default="var(--color-foreground)"
-     
-    ></mm-token>
+    <mm-token name="--button-text-color" default="var(--color-foreground)"></mm-token>
     <mm-token name="--button-text-size" default="inherit"></mm-token>
-    <mm-token
-      name="--button-text-weight"
-      default="var(--font-weight-bold)"
-     
-    ></mm-token>
+    <mm-token name="--button-text-weight" default="var(--font-weight-bold)"></mm-token>
   </mm-component-tokens>
 
   <mm-component-anatomy
@@ -99,9 +71,21 @@
     <div style="position: relative; display: inline-block">
       <mm-button variant="primary" size="large" icon="send-diagonal">보내기</mm-button>
 
-      <mm-list-marker variant="number" value="1" style="position: absolute; left: -1.75rem; top: 50%; transform: translateY(-50%);"></mm-list-marker>
-      <mm-list-marker variant="number" value="2" style="position: absolute; left: 1.75rem; bottom: -1.75rem; transform: translateX(-50%);"></mm-list-marker>
-      <mm-list-marker variant="number" value="3" style="position: absolute; right: 1.5rem; bottom: -1.75rem; transform: translateX(50%);"></mm-list-marker>
+      <mm-list-marker
+        variant="number"
+        value="1"
+        style="position: absolute; left: -1.75rem; top: 50%; transform: translateY(-50%)"
+      ></mm-list-marker>
+      <mm-list-marker
+        variant="number"
+        value="2"
+        style="position: absolute; left: 1.75rem; bottom: -1.75rem; transform: translateX(-50%)"
+      ></mm-list-marker>
+      <mm-list-marker
+        variant="number"
+        value="3"
+        style="position: absolute; right: 1.5rem; bottom: -1.75rem; transform: translateX(50%)"
+      ></mm-list-marker>
     </div>
   </mm-component-anatomy>
 
@@ -189,15 +173,13 @@
           "Avoid disabled buttons. Let the user send incomplete form and use error messages to explain what is wrong.",
           "실행 결과를 에측할 수 있는 레이블을 작성하세요. 툴팁으로 부연하거나, 실행을 유도하는 보조 텍스트 또는 실행 결과를 보충하는 보조 텍스트로 버튼 이외의 가이드가 필요하지 않습니다.",
           "동사가 포함된 2자 ~ 8자 한글(!). 레이블 줄임?(truncated) 불가. 사용자 시점 (ex 보내기 => 받기).",
-          "맥락이 다른 액션을 그룹으로 제공할 수 있습니다. 이 때 단일선택, 다중선택, 삭제여부, 펼침메뉴 등의 기표를 충분히 제공하세요. ariaHaspopup/ariaSelected"
+          "맥락이 다른 액션을 그룹으로 제공할 수 있습니다. 이 때 단일선택, 다중선택, 삭제여부, 펼침메뉴 등의 기표를 충분히 제공하세요. ariaHaspopup/ariaSelected",
+          "Split button이란? 사용자에게 더 많은 작업을 표시하는 경우 작업을 선택하여 트리거할 수 있도록 선택 + 버튼 조합을 사용. 것이 좋습니다.",
+          "Link Button, Action Button의 구분으로 책임 분리. href / disabled, onClick", "Link 안에 button의 형태를 포함하도록 하는 방법은?",
+          "빈 버튼이 필요한가? 리액트에서 포커싱이 가능한 전체 영역의 버튼. 도는 버튼 내부에서포지셔닝되는 버튼. 시각적으로는 버튼 내부의 버튼이지만 구조적으로 대안이 되는 형태의 버튼",
         ]'
       ></mm-text-list>
-      <mm-text-list
-        texts='["Split button이란? 사용자에게 더 많은 작업을 표시하는 경우 작업을 선택하여 트리거할 수 있도록 선택 + 버튼 조합을 사용. 것이 좋습니다.", "Link Button, Action Button의 구분으로 책임 분리. href / disabled, onClick", Link 안에 button의 형태를 포함하도록 하는 방법은?", "빈 버튼이 필요한가? 리액트에서 포커싱이 가능한 전체 영역의 버튼. 도는 버튼 내부에서포지셔닝되는 버튼. 시각적으로는 버튼 내부의 버튼이지만 구조적으로 대안이 되는 형태의 버튼", "Dropdown은 버튼과 목록을 포함한 합성된 컴포넌트임. 최근 바텀 셀렉트 시트 같은 느낌."]'
-      ></mm-text-list>
-      <mm-text>
-        group과 sets 차이. 머티리얼 칩스에서 구분해서 사용함. 그룹은 순서나 구조가 있는.
-      </mm-text>
+
       <table>
         <caption>
           Material 2, Material 3, Flutter의 Chip 명칭 비교
@@ -379,17 +361,14 @@
       <mm-token
         name="--filter-button-selected-color"
         default="var(--selection-background)"
-       
       ></mm-token>
       <mm-token
         name="--filter-button-selected-border-color"
         default="var(--selection-indicator-color)"
-       
       ></mm-token>
       <mm-token
         name="--filter-button-selected-text-color"
         default="var(--selection-foreground)"
-       
       ></mm-token>
     </mm-component-tokens>
   </mm-component-section>

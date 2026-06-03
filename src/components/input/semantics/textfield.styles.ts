@@ -26,8 +26,21 @@ export const textfieldStyles = [
       height: var(--input-height);
     }
 
-    [data-size='small'] {
+    :host([size='small']) {
       --input-height: var(--size-medium);
+    }
+
+    /* 라벨을 시각적으로만 감추고 스크린리더에는 남김 (for 연결 유지) */
+    :host([hidden-label]) mm-textfield-label {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
     }
 
     .searchfield .textfield-control {

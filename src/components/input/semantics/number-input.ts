@@ -1,7 +1,8 @@
-import { html, nothing } from 'lit'
+import { html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import '../../icon-button/icon-button'
 import { Textfield } from './textfield'
+import '../input'
 
 @customElement('mm-number-input')
 export class NumberInput extends Textfield {
@@ -96,21 +97,21 @@ export class NumberInput extends Textfield {
 
   protected override renderInput(): unknown {
     return html`
-      <input
-        id=${this.inputId}
-        class=${this.inputClasses}
-        type=${this.inputType}
+      <mm-input
+        input-id=${this.inputId}
+        input-class=${this.inputClasses}
+        .type=${this.inputType}
         .value=${this.value}
-        name=${this.name || nothing}
-        placeholder=${this.placeholder || nothing}
-        min=${this.min ?? nothing}
-        max=${this.max ?? nothing}
-        step=${this.step}
+        .name=${this.name}
+        .placeholder=${this.placeholder}
+        .min=${this.min}
+        .max=${this.max}
+        .step=${this.step}
         ?disabled=${this.disabled}
-        aria-invalid=${this.isInvalid ? 'true' : 'false'}
-        aria-describedby=${this.validationText ? `${this.inputId}-validation` : nothing}
+        ?invalid=${this.isInvalid}
+        .describedBy=${this.validationText ? `${this.inputId}-validation` : undefined}
         @input=${this._handleInput}
-      />
+      ></mm-input>
     `
   }
 }

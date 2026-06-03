@@ -19,7 +19,6 @@
 
 <main class="page" style="display: flex">
   <div>
-
     <!-- 로그인 -->
     <form class="authentication" name="login" action="" method="" novalidate>
       <mm-title-with-description
@@ -27,7 +26,6 @@
         title="Sign in to your account"
         description="Lorem Ipsum is simply dummy text."
       ></mm-title-with-description>
-      <br />
 
       <fieldset class="authentication-fieldset">
         <mm-button size="large" isfullwidth>페이스북으로 시작</mm-button>
@@ -43,7 +41,9 @@
         </div>
       </fieldset>
 
-      <mm-notice variant="danger" text="가입하지 않은 이메일이거나 잘못된 비밀번호입니다."></mm-notice>
+      <mm-textfield-validation>
+        가입하지 않은 이메일이거나 잘못된 비밀번호입니다.
+      </mm-textfield-validation>
 
       <footer class="authentication-foot">
         <mm-button variant="primary" size="large" isfullwidth type="submit">로그인</mm-button>
@@ -96,12 +96,15 @@
           회원가입 시 <mm-link href="#">이용약관</mm-link>과
           <mm-link href="#">개인정보처리방침</mm-link>에 동의하는 것으로 간주합니다.
         </strong>
-        <mm-flex direction="column">
-          <mm-checkbox class="js-checkall">모두 동의합니다.</mm-checkbox>
-          <mm-checkbox>이용약관 동의</mm-checkbox>
-          <mm-checkbox>개인정보처리방침에 동의합니다.</mm-checkbox>
-          <mm-checkbox>[선택] 광고성 정보 수신 동의</mm-checkbox>
-        </mm-flex>
+        <mm-master-checkbox controls="signup-terms-group">
+          <mm-text size="14" weight="bold">모두 동의합니다.</mm-text>
+        </mm-master-checkbox>
+
+        <mm-checkbox-group id="signup-terms-group" name="terms">
+          <mm-checkbox value="terms">이용약관 동의</mm-checkbox>
+          <mm-checkbox value="privacy">개인정보처리방침에 동의합니다.</mm-checkbox>
+          <mm-checkbox value="marketing">[선택] 광고성 정보 수신 동의</mm-checkbox>
+        </mm-checkbox-group>
       </fieldset>
 
       <footer class="authentication-foot">
@@ -140,8 +143,8 @@
       ></mm-title-with-description>
       <br />
       <fieldset class="authentication-fieldset">
-        <mm-textfield label="새 비밀번호" autofocus></mm-textfield>
-        <mm-textfield label="새 비밀번호 확인"></mm-textfield>
+        <mm-passwordfield label="새 비밀번호" autofocus></mm-passwordfield>
+        <mm-passwordfield label="새 비밀번호 확인"></mm-passwordfield>
       </fieldset>
       <footer class="authentication-foot">
         <mm-button type="submit" variant="primary" size="large">비밀번호 변경</mm-button>
@@ -158,25 +161,31 @@
       <mm-link href="signin.html">인증번호 재전송</mm-link>
       <br /><br />
       <mm-flex direction="row">
-        <mm-textfield type="number" name="code1" maxlength="1" style="width: var(--size-large)"></mm-textfield>
-        <mm-textfield type="number" name="code2" maxlength="1" style="width: var(--size-large)"></mm-textfield>
-        <mm-textfield type="number" name="code3" maxlength="1" style="width: var(--size-large)"></mm-textfield>
-        <mm-textfield type="number" name="code4" maxlength="1" style="width: var(--size-large)"></mm-textfield>
+        <mm-textfield
+          type="number"
+          name="code1"
+          maxlength="1"
+          style="width: var(--size-large)"
+        ></mm-textfield>
+        <mm-textfield
+          type="number"
+          name="code2"
+          maxlength="1"
+          style="width: var(--size-large)"
+        ></mm-textfield>
+        <mm-textfield
+          type="number"
+          name="code3"
+          maxlength="1"
+          style="width: var(--size-large)"
+        ></mm-textfield>
+        <mm-textfield
+          type="number"
+          name="code4"
+          maxlength="1"
+          style="width: var(--size-large)"
+        ></mm-textfield>
       </mm-flex>
     </form>
-
-    <!-- 재설정 메일 발송 완료 -->
-    <section style="margin: 8rem 0">
-      <mm-title-with-description
-        level="2"
-        title="메일함을 확인하세요."
-        description="faf@faf.co으로 비밀번호 재설정 링크를 발송했습니다."
-      ></mm-title-with-description>
-      <mm-button-group>
-        <mm-button>이메일 재전송 버튼</mm-button>
-        <mm-button href="#">로그인하기</mm-button>
-      </mm-button-group>
-    </section>
-
   </div>
 </main>

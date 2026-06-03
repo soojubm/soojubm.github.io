@@ -22,7 +22,24 @@
       <mm-chat-date label="2022년 5월 18일"></mm-chat-date>
 
       <mm-chat-message username="수줍이">
-        <mm-ai-chat-bubble>안녕하세요 👋</mm-ai-chat-bubble>
+        <mm-chat-reasoning open duration="4초">
+          <mm-chat-reasoning-step done>질문 의도 파악</mm-chat-reasoning-step>
+          <mm-chat-reasoning-step done>관련 문서 3건 검색</mm-chat-reasoning-step>
+          <mm-chat-reasoning-step done>핵심 내용 정리</mm-chat-reasoning-step>
+        </mm-chat-reasoning>
+        <mm-ai-chat-bubble>안녕하세요 👋 무엇을 도와드릴까요?</mm-ai-chat-bubble>
+      </mm-chat-message>
+
+      <mm-chat-message mine>
+        <mm-my-chat-bubble status="읽음">디자인 시스템 토큰 구조를 설명해줘.</mm-my-chat-bubble>
+      </mm-chat-message>
+
+      <mm-chat-message username="수줍이">
+        <mm-chat-reasoning thinking open>
+          <mm-chat-reasoning-step done>질문 의도 파악</mm-chat-reasoning-step>
+          <mm-chat-reasoning-step active>토큰 정의 파일 검색 중</mm-chat-reasoning-step>
+          <mm-chat-reasoning-step>답변 정리</mm-chat-reasoning-step>
+        </mm-chat-reasoning>
       </mm-chat-message>
 
       <mm-chat-message mine>

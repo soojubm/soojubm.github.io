@@ -1,67 +1,65 @@
-import { css, html } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
-import Dropdown, { DropdownOption } from '../dropdown/dropdown'
-import { getPreferredTheme, saveTheme, THEMES, type Theme } from '../../javascripts/theme'
+import { LitElement, css, html } from 'lit'
+import { customElement, property, state } from 'lit/decorators.js'
+import '../dropdown/dropdown'
 import '../icon-button/icon-button'
+import { getPreferredTheme, saveTheme, THEMES, type Theme } from '../../javascripts/theme'
 
 @customElement('mm-theme-switcher')
-export class ThemeSwitcher extends Dropdown {
+export class ThemeSwitcher extends LitElement {
   @property({ type: String, reflect: true }) value: Theme = 'light'
+  @state() private isOpen = false
 
-  static styles = [
-    ...Dropdown.styles,
-    css`
-      :host {
-        display: inline-flex;
-      }
+  static styles = css`
+    :host {
+      display: inline-flex;
+    }
 
-      .dropdown {
-        width: auto;
-      }
-
-      .dropdown-list {
-        left: auto;
-        right: 0;
-        min-width: 120px;
-      }
-    `,
-  ]
+    mm-dropdown::part(list) {
+      left: auto;
+      right: 0;
+      min-width: 120px;
+    }
+  `
 
   connectedCallback(): void {
-    this.value = getPreferredTheme()
     super.connectedCallback()
+    this.value = getPreferredTheme()
   }
 
-  protected get defaultOptions(): DropdownOption[] {
-    return THEMES.map(theme => ({
-      label: theme.label,
-      value: theme.value,
-      type: 'default',
-      checked: false,
-      selected: this.value === theme.value,
-      icon: theme.icon,
-    }))
+  private get currentIcon(): string {
+    return THEMES.find(theme => theme.value === this.value)?.icon ?? 'sun-light'
   }
 
-  protected renderTrigger() {
-    const currentTheme = THEMES.find(theme => theme.value === this.value)
+  // 선택 시 테마를 저장하고 현재 값을 동기화
+  private handleChange(e: CustomEvent) {
+    this.value = saveTheme(e.detail.value as Theme)
+  }
 
+  // 드롭다운 펼침 상태를 트리거 아이콘 버튼에 반영
+  private handleToggle(e: CustomEvent) {
+    this.isOpen = e.detail.open
+  }
+
+  render() {
     return html`
-      <mm-icon-button
-        variant="plain"
-        icon="${currentTheme?.icon ?? 'sun-light'}"
-        aria-label="테마 변경"
-        .haspopup=${true}
-        .expanded=${this.isOpen}
-        @click=${this.toggleOpen}
-      ></mm-icon-button>
+      <mm-dropdown .value=${this.value} @change=${this.handleChange} @toggle=${this.handleToggle}>
+        <mm-icon-button
+          slot="trigger"
+          variant="plain"
+          icon="${this.currentIcon}"
+          aria-label="테마 변경"
+          .haspopup=${true}
+          .expanded=${this.isOpen}
+        ></mm-icon-button>
+        ${THEMES.map(
+          theme => html`
+            <option value=${theme.value} icon=${theme.icon} ?selected=${this.value === theme.value}>
+              ${theme.label}
+            </option>
+          `,
+        )}
+      </mm-dropdown>
     `
-  }
-
-  protected selectOption(option: DropdownOption) {
-    this.value = saveTheme(option.value as Theme)
-    this.isOpen = false
-    this.emitSelectChange(option)
   }
 }
 

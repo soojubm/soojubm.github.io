@@ -1,4 +1,4 @@
-import { LitElement, css, html, nothing } from 'lit'
+import { LitElement, css, html, nothing, type PropertyValues } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 import { resetStyles } from '../../stylesheets/shared/reset.styles'
 import '../menuitem/menu-item-row'
@@ -29,29 +29,15 @@ export class Dropdown extends LitElement {
       }
 
       .dropdown-button {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: fit-content;
-        gap: var(--space-2);
-        height: var(--size-medium);
-        padding: 0 var(--space-3);
-        border-radius: var(--radius);
-        background-color: var(--color-background);
-        color: var(--color-foreground);
-        cursor: pointer;
-        text-align: left;
-        font-family: inherit;
-        border: 0;
-        font-size: var(--font-size-14);
+      }
+
+      // TODO component and state
+      .dropdown-button mm-icon {
+        transition: transform 160ms ease;
       }
 
       .dropdown-button[aria-expanded='true'] mm-icon {
         transform: rotate(180deg);
-      }
-
-      .dropdown-button mm-icon {
-        transition: transform 160ms ease;
       }
 
       .dropdown-list {
@@ -61,10 +47,12 @@ export class Dropdown extends LitElement {
         right: 0;
         z-index: 10;
 
+        min-width: 120px;
         max-height: 200px;
         overflow-y: auto;
-        padding: var(--space-1);
 
+        // style
+        padding: var(--space-1);
         border: var(--border-stronger);
         border-radius: var(--radius);
         background-color: var(--color-background);
@@ -94,7 +82,6 @@ export class Dropdown extends LitElement {
       }
 
       mm-menu-item-row {
-        border-radius: var(--radius);
         cursor: pointer;
       }
 
@@ -119,8 +106,9 @@ export class Dropdown extends LitElement {
     document.removeEventListener('click', this.handleOutsideClick)
   }
 
+  // composedPath()로 shadow 경계를 넘어 판별 — 트리거가 다른 컴포넌트의 shadow DOM에 끼워져도 동작
   private handleOutsideClick = (e: MouseEvent) => {
-    if (this.isOpen && !this.contains(e.target as Node)) this.isOpen = false
+    if (this.isOpen && !e.composedPath().includes(this)) this.isOpen = false
   }
 
   protected get defaultOptions(): DropdownOption[] {
@@ -141,6 +129,7 @@ export class Dropdown extends LitElement {
       type: (option.getAttribute('type') as 'default' | 'checkbox') || 'default',
       checked: option.hasAttribute('checked'),
       selected: option.hasAttribute('selected'),
+      icon: option.getAttribute('icon') ?? undefined,
     }))
   }
 
@@ -200,24 +189,22 @@ export class Dropdown extends LitElement {
     )
   }
 
-  // 트리거 버튼: 서브클래스에서 아이콘 버튼 등으로 교체 가능
+  // 트리거: 소비자가 slot="trigger"로 커스텀 트리거(아이콘 버튼 등)를 끼워 넣을 수 있다.
+  // 슬롯에 click을 위임하므로 끼워 넣은 요소든 기본 버튼이든 클릭하면 펼쳐진다.
   protected renderTrigger() {
     return html`
-      <button
-        class="dropdown-button"
-        aria-haspopup="true"
-        aria-expanded="${this.isOpen}"
-        @click="${this.toggleOpen}"
-      >
-        ${this.selectedLabel}
-        <mm-icon name="nav-arrow-down"></mm-icon>
-      </button>
+      <slot name="trigger" @click="${this.toggleOpen}">
+        <button class="dropdown-button" aria-haspopup="true" aria-expanded="${this.isOpen}">
+          ${this.selectedLabel}
+          <mm-icon name="nav-arrow-down"></mm-icon>
+        </button>
+      </slot>
     `
   }
 
   protected renderList() {
     return html`
-      <div class="dropdown-list ${this.isOpen ? 'open' : ''}" role="menu">
+      <div part="list" class="dropdown-list ${this.isOpen ? 'open' : ''}" role="menu">
         ${this.options.map(option => this.renderOption(option))}
       </div>
     `
@@ -254,12 +241,16 @@ export class Dropdown extends LitElement {
     `
   }
 
+  // 펼침 상태가 바뀌면 toggle 이벤트로 알린다 — 커스텀 트리거가 expanded 상태를 동기화할 수 있도록.
+  protected updated(changed: PropertyValues) {
+    if (changed.has('isOpen')) {
+      this.dispatchEvent(new CustomEvent('toggle', { detail: { open: this.isOpen } }))
+    }
+  }
+
   render() {
     return html`
-      <div class="dropdown">
-        ${this.renderTrigger()}
-        ${this.renderList()}
-      </div>
+      <div part="dropdown" class="dropdown">${this.renderTrigger()} ${this.renderList()}</div>
     `
   }
 }

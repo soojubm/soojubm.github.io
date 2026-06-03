@@ -110,6 +110,11 @@ export const inputStyles = css`
     overflow: hidden;
   }
 
+  /* mm-input은 light DOM에 렌더되므로 내부 input이 직접 flex item이 되도록 비표시한다. */
+  mm-input {
+    display: contents;
+  }
+
   textarea,
   input {
     display: block;

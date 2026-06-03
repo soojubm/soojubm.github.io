@@ -80,23 +80,25 @@ export class MasterCheckbox extends LitElement {
 
   render() {
     return html`
-      <div class="checkbox" data-size=${this.size} @pointerdown=${this._onPointerDown}>
-        <input
-          type="checkbox"
-          id=${this._inputId}
-          .checked=${this.checked}
-          .indeterminate=${this.indeterminate}
-          aria-controls=${this.controls}
-          @change=${this._onInputChange}
-        />
+      <mm-surface variant="elevated" size="medium">
+        <div class="checkbox" data-size=${this.size} @pointerdown=${this._onPointerDown}>
+          <input
+            type="checkbox"
+            id=${this._inputId}
+            .checked=${this.checked}
+            .indeterminate=${this.indeterminate}
+            aria-controls=${this.controls}
+            @change=${this._onInputChange}
+          />
 
-        <label for=${this._inputId}>
-          <span class="indicator"></span>
-          <slot>
-            <mm-text size="14" weight="bold">모두 동의합니다 (선택동의 포함)</mm-text>
-          </slot>
-        </label>
-      </div>
+          <label for=${this._inputId}>
+            <span class="indicator"></span>
+            <slot>
+              <mm-text size="14" weight="bold">모두 동의합니다 (선택동의 포함)</mm-text>
+            </slot>
+          </label>
+        </div>
+      </mm-surface>
     `
   }
 }

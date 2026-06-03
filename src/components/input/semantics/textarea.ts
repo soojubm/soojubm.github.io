@@ -12,7 +12,7 @@ export class Textarea extends LitElement {
   @property({ type: String }) label = ''
   @property({ type: String }) helper = ''
   @property({ type: Boolean, attribute: 'is-optional' }) isOptional = false
-  @property({ type: Boolean, attribute: 'hidden-label' }) hiddenLabel = false
+  @property({ type: Boolean, attribute: 'hidden-label', reflect: true }) hiddenLabel = false
   @property({ type: Boolean, reflect: true }) disabled = false
   @property({ type: Boolean, attribute: 'aria-invalid', reflect: true }) isInvalid = false
 
@@ -27,6 +27,19 @@ export class Textarea extends LitElement {
 
       .textfield {
         position: relative;
+      }
+
+      /* 라벨을 시각적으로만 감추고 스크린리더에는 남김 (for 연결 유지) */
+      :host([hidden-label]) mm-textfield-label {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
       }
     `,
   ]
@@ -77,7 +90,7 @@ export class Textarea extends LitElement {
 
   render() {
     return html`
-      <div class="textfield" ?data-invalid="${this.isInvalid}" data-label="${this.hiddenLabel}">
+      <div class="textfield" ?data-invalid="${this.isInvalid}">
         ${this.label
           ? html`<mm-textfield-label for="${this._textareaId}" ?optional=${this.isOptional}>
               ${this.label}

@@ -5,7 +5,7 @@ import { noticeStyles } from './notice.styles'
 const VARIANT_ICONS: Record<string, string> = {
   success: 'check-circle',
   warning: 'warning-triangle',
-  danger: 'error-circle',
+  danger: 'warning-circle',
 }
 
 @customElement('mm-notice')
