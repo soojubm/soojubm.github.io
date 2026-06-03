@@ -1,10 +1,15 @@
 import { css } from 'lit'
-import { buttonHostTokens } from '../button/button.tokens'
 
 export const iconButtonStyles = css`
-  /* 토큰은 button.tokens.ts에서 button과 공유한다. */
   :host {
-    ${buttonHostTokens}
+    --button-size: var(--size-medium);
+    --button-color: var(--color-background-subtle);
+    --button-radius: var(--radius);
+    --button-text-color: var(--color-foreground);
+    --button-color-focus: #007185;
+    --button-color-active-bg: #f0b800;
+    --button-color-active-border: #008296;
+    --button-color-active-ring: #c8f3fa;
   }
 
   button {

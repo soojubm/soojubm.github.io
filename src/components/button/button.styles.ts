@@ -1,223 +1,102 @@
 import { css } from 'lit'
-import { buttonHostTokens } from './button.tokens'
 
 export const buttonStyles = css`
-  /* reset */
-  button {
-    padding: 0;
-    border: 0;
-    font-family: var(--font-family);
-    font-size: inherit;
-  }
-  em,
-  i {
-    font-style: normal;
-  }
-
-  /* host에서 정의하면 커스텀 엘리먼트가 아닐 .class로 사용할 때 못 가져온다. */
-  /* 토큰은 button.tokens.ts에서 icon-button과 공유한다. */
   :host {
-    ${buttonHostTokens}
+    --button-size: var(--size-medium);
+    --button-min-width: 5rem;
+    --button-padding-inline: var(--space-3);
+    --button-border: var(--border);
+    --button-color: var(--color-background-subtle);
+    --button-radius: var(--radius);
+    --button-text-color: var(--color-foreground);
+    --button-text-size: inherit;
+    --button-text-weight: var(--font-weight-bold);
+    --button-color-focus: #007185;
+    --button-color-active-bg: #f0b800;
+    --button-color-active-border: #008296;
+    --button-color-active-ring: #c8f3fa;
+
+    &([isfullwidth]) button {
+      width: 100%;
+    }
+
+    &([variant='primary']) button {
+      --button-border-color: 1px solid transparent;
+      background-color: var(--color-primary);
+      --button-text-color: #fff;
+    }
+    &([variant='secondary']) button {
+      --button-border-color: 1px solid transparent;
+      --button-color: var(--green100);
+      --button-text-color: var(--color-primary);
+    }
+    &([variant='tertiary']) button {
+      --button-text-color: var(--color-foreground);
+    }
+    &([variant='text']) button {
+      --button-border-color: 1px solid transparent;
+      --button-color: var(--color-background);
+      --button-text-color: var(--color-primary);
+    }
+    &([variant='destructive']) button {
+      --button-color: var(--red800);
+      --button-text-color: var(--gray0);
+    }
+
+    &([size='huge']) button {
+      --button-size: 64px;
+      --button-text-size: var(--font-size-18);
+      padding-bottom: 5px;
+    }
+    &([size='large']) button {
+      --button-size: var(--size-large);
+      min-width: var(--button-min-width);
+    }
+
+    // TODO filter-button으로 이동
+    &([aria-checked='true']) button {
+      border: 1px solid var(--button-checked-border-color, var(--color-background-strong));
+      background: var(--button-checked-color, var(--button-color));
+      color: var(--button-checked-text-color, var(--button-text-color));
+    }
   }
 
-  :host(.primary) {
-  }
-  /* 이렇게 하면 일단 프로젝트에 어려움. */
-  /* :host([variant="primary"]) .button {
-  --button-color: var(--color-primary);
-  --button-text-color: var(--gray0);
-} */
-
-  .button {
-    /* // reset */
-    font-family: inherit;
-    font-family: var(--font-family);
-    font-size: inherit;
-
+  button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: var(--space-2);
     height: var(--button-size);
     padding: 0 var(--button-padding-inline);
-    border: var(--button-border, 1px solid var(--button-color));
+    border: var(--button-border);
     border-radius: var(--button-radius);
-    box-sizing: border-box;
     background: var(--button-color);
+    box-sizing: border-box;
 
+    font-family: var(--font-family);
     font-size: var(--button-text-size);
     font-weight: var(--button-text-weight);
     color: var(--button-text-color);
     text-transform: capitalize;
 
     cursor: pointer;
-  }
-  .button-label {
-    pointer-events: none;
-  }
 
-  /* variants */
-  .button[data-variant='primary'] {
-    border-color: transparent;
-    background-color: var(--color-primary);
-    --button-text-color: #fff;
-  }
-  .button[data-variant='secondary'] {
-    border-color: transparent;
-    --button-color: var(--green100);
-    --button-text-color: var(--color-primary);
-  }
-  .button[data-variant='tertiary'] {
-    --button-text-color: var(--color-foreground);
-  }
-  .button[data-variant='text'] {
-    border-color: transparent;
-    --button-color: var(--color-background);
-    --button-text-color: var(--color-primary);
-  }
-  .button[data-variant='destructive'] {
-    --button-color: var(--red800);
-    --button-text-color: var(--gray0);
-  }
-
-  /* brutal: variant의 transparent 보더를 강제로 덮어 모든 버튼에 #000 보더 적용.
-     (variant가 element-level에서 border-color를 설정하므로 토큰 주입으로는 못 이김) */
-  :host-context([data-theme='brutal']) .button {
-    border-color: var(--brutal-border-color);
-  }
-
-  /* sizes */
-  .button[data-size='huge'] {
-    --button-size: 64px;
-    --button-text-size: var(--font-size-18);
-    padding-bottom: 5px;
-  }
-
-  .button[data-size='large'] {
-    --button-size: var(--size-large);
-    min-width: var(--button-min-width);
-  }
-
-  .button[data-isfullwidth='true'] {
-    width: 100%;
-  }
-
-  .button[aria-selected] {
-  }
-  .button[aria-checked='true'] {
-    border: 1px solid var(--button-checked-border-color, var(--color-background-strong));
-    background: var(--button-checked-color, var(--button-color));
-    color: var(--button-checked-text-color, var(--button-text-color));
-  }
-
-  /* states */
-  .button:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-    /* pointer-events: none; */
-  }
-  .button:not(:disabled):hover {
-    /* box-shadow: var(--status-hover); */
-    border-color: var(--color-background-strong);
-  }
-  .button:not(:disabled):focus {
-    outline: 3px solid var(--button-color-focus);
-    outline-offset: 2px;
-  }
-  .button:not(:disabled):active {
-    background: var(--button-color-active-bg);
-    border-color: var(--button-color-active-border);
-    box-shadow: 0 0 0 3px var(--button-color-active-ring), inset 0 0 0 2px #fff;
-  }
-
-  /* :host {
-  --chip-color-border: 0;
-  --chip-color-background: var(--color-background-subtle);
-  --chip-color-text: var(--color-foreground);
-  --chip-radius: var(--radius);
-  --chip-border-color: transparent;
-  --chip-border: 1px solid var(--chip-border-color);
-  --chip-size: var(--size-medium);
-  --chip-inset: null;
-  --chip-shadow: none;
-} */
-
-  /* @media (hover) and (pointer: fine) {
-  &:hover {box-shadow:var(--status-hover);}
-}
-*/
-  /* outline: 2px solid var(--color-background); */
-
-  .chip {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: var(--size-medium);
-    height: var(--chip-size);
-    gap: var(--space-2);
-    padding: 0 var(--space-3);
-    border: var(--chip-border);
-    border-radius: var(--chip-radius);
-    box-shadow: var(--chip-shadow);
-    background: var(--chip-color-background);
-    color: var(--chip-color-text);
-    position: relative;
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
     &:hover {
-      box-shadow: var(--hover);
-      cursor: pointer;
+      border-color: var(--color-background-strong);
+    }
+    &:focus {
+      outline: 3px solid var(--button-color-focus);
+      outline-offset: 2px;
+    }
+    &:enabled:active {
+      background: var(--button-color-active-bg);
+      border-color: var(--button-color-active-border);
+      box-shadow: 0 0 0 3px var(--button-color-active-ring), inset 0 0 0 2px #fff;
     }
   }
 
-  .chip:disabled:not(:hover) {
-    opacity: 0.5;
-    cursor: not-allowed;
-  }
-  .chip-label {
-    line-height: 1;
-    color: inherit;
-    text-transform: capitalize;
-  }
-  .chip-name {
-    margin: 0 var(--space-1) 0 0;
-    color: var(--color-foreground-light);
-  }
-  .chip-name:after {
-    content: ': ';
-  }
-
-  .chip[aria-checked='true'] {
-    border: 1px solid var(--color-background-strong);
-  }
-
-  .chip[aria-expanded] {
-  }
-  .chip[aria-pressed] {
-  }
-  .chip[aria-haspopup] {
-  }
-
-  .chip[data-variant='destructive'] {
-    background-color: var(--red100);
-    color: var(--red800);
-  }
-
-  ::slotted([slot='prefix']) {
-    margin-right: var(--space-2);
-  }
-  ::slotted([slot='suffix']) {
-    margin-left: var(--space-2);
-  }
-
-  /*
-.chip-label ~ ::slotted([slot=badge]) {
-  margin-right: -0.25rem;
-} */
-
-  // .chip[aria-expanded=true] {
-  //   background-image: url(
-  //     'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48"><path d="M480 696 280 497h400L480 696Z"/></svg>');
-  //   background-repeat: no-repeat;
-  //   background-size: 14px;
-  //   background-position: 90% 50%;
-  // }
 `
