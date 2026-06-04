@@ -14,7 +14,6 @@ class IconButton extends LitElement {
   @property({ type: String, attribute: 'aria-label' }) override ariaLabel = ''
   @property({ type: String }) tooltip = ''
   @property({ type: String, attribute: 'tooltip-align' }) tooltipAlign = ''
-  @property({ type: String }) href = ''
   @property({ type: Boolean, reflect: true }) disabled = false
   @property({ type: Boolean }) haspopup = false
   @property({ type: Boolean, reflect: true }) expanded = false
@@ -26,19 +25,6 @@ class IconButton extends LitElement {
   }
 
   protected renderControl() {
-    if (this.href && !this.disabled) {
-      return html`
-        <a
-          slot="trigger"
-          href="${this.href}"
-          class="icon-button"
-          aria-label="${this._accessibilityLabel}"
-        >
-          <mm-icon name="${this.icon}"></mm-icon>
-        </a>
-      `
-    }
-
     return html`
       <button
         slot="trigger"
