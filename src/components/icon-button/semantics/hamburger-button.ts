@@ -1,16 +1,14 @@
-import { css, html } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
+import { css } from 'lit'
+import { customElement } from 'lit/decorators.js'
 import IconButton from '../icon-button'
+import { PopupTriggerMixin } from '../popup-trigger.mixin'
 import { ICON_NAMES } from './icon-names'
 
 /**
  * 사이드바/내비게이션 메뉴를 여닫는 햄버거 버튼.
- * aria-haspopup · aria-expanded를 직접 선언해 팝업 트리거임을 명시합니다.
  */
 @customElement('mm-hamburger-button')
-export class HamburgerButton extends IconButton {
-  @property({ type: Boolean, reflect: true }) expanded = false
-
+export class HamburgerButton extends PopupTriggerMixin(IconButton) {
   static override styles = [
     ...IconButton.styles,
     css`
@@ -24,21 +22,6 @@ export class HamburgerButton extends IconButton {
     super()
     this.icon = ICON_NAMES.MENU_SCALE
     this.variant = 'plain'
-  }
-
-  protected override renderControl() {
-    return html`
-      <button
-        slot="trigger"
-        type="button"
-        aria-label="${this._accessibilityLabel}"
-        ?disabled="${this.disabled}"
-        aria-haspopup="true"
-        aria-expanded="${this.expanded ? 'true' : 'false'}"
-      >
-        <mm-icon name="${this.icon}"></mm-icon>
-      </button>
-    `
   }
 
   override connectedCallback() {
