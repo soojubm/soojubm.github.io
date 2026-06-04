@@ -15,9 +15,9 @@ class IconButton extends LitElement {
   @property({ type: String }) tooltip = ''
   @property({ type: String, attribute: 'tooltip-align' }) tooltipAlign = ''
   @property({ type: Boolean, reflect: true }) disabled = false
-  // 호스트에 설정된 aria 속성을 내부 <button>으로 포워딩
-  @property({ attribute: 'aria-haspopup' }) private haspopup: string | null = null
-  @property({ attribute: 'aria-expanded' }) private expanded: string | null = null
+  // 호스트에 설정된 aria 속성을 내부 <button>으로 포워딩 (mm-dropdown 등 외부 컨트롤러용)
+  @property({ attribute: 'aria-haspopup' }) private _ariaHaspopup: string | null = null
+  @property({ attribute: 'aria-expanded' }) private _ariaExpanded: string | null = null
 
   static styles = [iconButtonStyles]
 
@@ -32,8 +32,8 @@ class IconButton extends LitElement {
         type="button"
         aria-label="${this._accessibilityLabel}"
         ?disabled="${this.disabled}"
-        aria-haspopup="${this.haspopup !== null ? this.haspopup : nothing}"
-        aria-expanded="${this.expanded !== null ? this.expanded : nothing}"
+        aria-haspopup="${this._ariaHaspopup !== null ? this._ariaHaspopup : nothing}"
+        aria-expanded="${this._ariaExpanded !== null ? this._ariaExpanded : nothing}"
       >
         <mm-icon name="${this.icon}"></mm-icon>
       </button>

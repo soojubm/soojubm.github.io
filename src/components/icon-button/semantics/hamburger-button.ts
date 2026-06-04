@@ -1,38 +1,50 @@
-import { LitElement, css, html } from 'lit'
+import { css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import '../icon-button'
+import IconButton from '../icon-button'
 import { ICON_NAMES } from './icon-names'
 
 /**
  * 사이드바/내비게이션 메뉴를 여닫는 햄버거 버튼.
+ * aria-haspopup · aria-expanded를 직접 선언해 팝업 트리거임을 명시합니다.
  */
 @customElement('mm-hamburger-button')
-export class HamburgerButton extends LitElement {
+export class HamburgerButton extends IconButton {
   @property({ type: Boolean, reflect: true }) expanded = false
 
-  static styles = css`
-    :host {
-      display: inline-flex;
-      z-index: calc(var(--zindex-menu) + 1);
-    }
-  `
+  static override styles = [
+    ...IconButton.styles,
+    css`
+      :host {
+        z-index: calc(var(--zindex-menu) + 1);
+      }
+    `,
+  ]
+
+  constructor() {
+    super()
+    this.icon = ICON_NAMES.MENU_SCALE
+    this.variant = 'plain'
+  }
+
+  protected override renderControl() {
+    return html`
+      <button
+        slot="trigger"
+        type="button"
+        aria-label="${this._accessibilityLabel}"
+        ?disabled="${this.disabled}"
+        aria-haspopup="true"
+        aria-expanded="${this.expanded ? 'true' : 'false'}"
+      >
+        <mm-icon name="${this.icon}"></mm-icon>
+      </button>
+    `
+  }
 
   override connectedCallback() {
     super.connectedCallback()
     // navbar.ts의 toggleNavbarMenu가 .js-navbar-toggle을 selector로 사용
     this.classList.add('js-navbar-toggle')
-  }
-
-  render() {
-    return html`
-      <mm-icon-button
-        variant="plain"
-        icon="${ICON_NAMES.MENU_SCALE}"
-        aria-label="메뉴"
-        aria-haspopup="true"
-        aria-expanded="${this.expanded ? 'true' : 'false'}"
-      ></mm-icon-button>
-    `
   }
 }
 
