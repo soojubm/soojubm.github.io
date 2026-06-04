@@ -1,9 +1,10 @@
 import { html } from 'lit'
 import { customElement } from 'lit/decorators.js'
-import { MenuItemToggle } from '../menu-item-toggle'
+import { MenuItemRow } from '../menu-item-row'
+import { ToggleMixin } from '../menuitem.mixins'
 
 @customElement('mm-menu-item-checkbox')
-export class MenuItemCheckbox extends MenuItemToggle {
+export class MenuItemCheckbox extends ToggleMixin(MenuItemRow) {
   protected override getRole() {
     return 'menuitemcheckbox'
   }

@@ -1,13 +1,10 @@
 import { html } from 'lit'
 import { customElement } from 'lit/decorators.js'
-import { MenuItemToggle } from '../menu-item-toggle'
+import { MenuItemRow } from '../menu-item-row'
+import { ToggleMixin } from '../menuitem.mixins'
 
-/**
- * 우측에 토글 스위치가 있는 메뉴 항목.
- * 설정·환경 토글처럼 즉시 on/off 되는 상태를 표현합니다.
- */
 @customElement('mm-menu-item-switch')
-export class MenuItemSwitch extends MenuItemToggle {
+export class MenuItemSwitch extends ToggleMixin(MenuItemRow) {
   protected override getRole() {
     return 'menuitemcheckbox'
   }
