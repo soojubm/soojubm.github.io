@@ -1,4 +1,6 @@
+import { html } from 'lit'
 import { property } from 'lit/decorators.js'
+import { ifDefined } from 'lit/directives/if-defined.js'
 import { MenuItemRow } from './menu-item-row'
 
 /**
@@ -38,6 +40,22 @@ export abstract class MenuItemToggle extends MenuItemRow {
     e.stopPropagation()
     const { checked } = (e as CustomEvent<{ checked: boolean }>).detail
     this.commitChecked(checked)
+  }
+
+  // inner 컨트롤(checkbox·switch)과 이중 tab stop 방지 — host click 리스너로 키보드 대응
+  protected override renderItem() {
+    return html`
+      <div
+        class="item"
+        role=${this.getRole()}
+        data-tone=${ifDefined(this.tone || undefined)}
+        ?data-interactive=${this.interactive}
+        aria-disabled=${ifDefined(this.disabled ? 'true' : undefined)}
+        aria-checked=${ifDefined(this.getAriaChecked())}
+      >
+        ${this.renderContent()}
+      </div>
+    `
   }
 
   override connectedCallback() {

@@ -1,9 +1,10 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
+import '../../list-row/list-row'
 
 /**
- * 설정 화면의 한 행. mm-menu-item-row를 합성하고
+ * 설정 화면의 한 행. mm-list-row를 합성하고
  * setting 고유의 패딩·구분선을 입힙니다.
  *
  * <mm-setting-item start-icon="bell" label="알림" description="...">
@@ -31,15 +32,13 @@ export class SettingItem extends LitElement {
 
   render() {
     return html`
-      <mm-menu-item-row
+      <mm-list-row
         icon=${ifDefined(this.startIcon || undefined)}
         label=${this.label}
         description=${this.description}
-        ?disabled=${this.disabled}
-        role="group"
       >
-        <slot name="action" slot="action"></slot>
-      </mm-menu-item-row>
+        <slot name="action" slot="trailing"></slot>
+      </mm-list-row>
     `
   }
 }

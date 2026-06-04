@@ -20,7 +20,7 @@ export class MenuItemRow extends LitElement {
   static styles = [menuItemStyles]
 
   protected get interactive(): boolean {
-    return false
+    return true
   }
 
   protected getRole(): string {
@@ -57,7 +57,8 @@ export class MenuItemRow extends LitElement {
 
   protected renderItem() {
     return html`
-      <div
+      <button
+        type="button"
         class="item"
         role=${this.getRole()}
         data-tone=${ifDefined(this.tone || undefined)}
@@ -66,7 +67,7 @@ export class MenuItemRow extends LitElement {
         aria-checked=${ifDefined(this.getAriaChecked())}
       >
         ${this.renderContent()}
-      </div>
+      </button>
     `
   }
 

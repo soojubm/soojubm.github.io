@@ -81,14 +81,6 @@ export class Dropdown extends LitElement {
           visibility 0s;
       }
 
-      mm-menu-item-row {
-        cursor: pointer;
-      }
-
-      mm-menu-item-row:hover {
-        background-color: var(--color-background-subtle);
-      }
-
       mm-menu-item-row[aria-current='true'] {
         color: var(--color-primary);
       }
