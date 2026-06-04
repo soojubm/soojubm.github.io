@@ -7,11 +7,20 @@
   <mm-component-aka items='["ListTile", "Media Object"]'></mm-component-aka>
 
   <mm-component-example>
-    <mm-user-row
-      label="수줍이"
-      description="Youtube Subscriber"
-      avatar-src="/src/images/springsteen.jpg"
-    ></mm-user-row>
+    <mm-flex direction="column" gap="var(--space-2)">
+      <mm-list-row label="아바타 없고 사이즈 라지" description="Youtube Subscriber"></mm-list-row>
+      <mm-list-row
+        label="사이즈 미디엄"
+        description="Youtube Subscriber"
+        avatar-src="/src/images/springsteen.jpg"
+      ></mm-list-row>
+      <mm-list-row
+        label="사이즈 라지"
+        description="Youtube Subscriber"
+        avatar-size="large"
+        avatar-src="/src/images/springsteen.jpg"
+      ></mm-list-row>
+    </mm-flex>
   </mm-component-example>
 
   <mm-component-props>
@@ -24,6 +33,38 @@
     <mm-prop name="slot: default" type="HTMLElement" optional></mm-prop>
     <mm-prop name="slot: trailing" type="HTMLElement" optional></mm-prop>
   </mm-component-props>
+
+  <mm-component-anatomy
+    parts='[
+      "leading — 아이콘 또는 아바타를 담는 선택적 영역. 없으면 content가 왼쪽 끝에서 시작합니다.",
+      "content — label과 description으로 구성된 본문. flex: 1로 남은 공간을 채웁니다.",
+      "trailing — 오른쪽에 배치되는 선택적 슬롯. 액션 버튼·뱃지·메타 텍스트 등을 넣습니다."
+    ]'
+  >
+    <mm-list-row
+      label="브루스 스프링스틴"
+      description="Musician"
+      avatar-size="large"
+      avatar-src="/src/images/springsteen.jpg"
+    >
+      <mm-follow-button slot="trailing"></mm-follow-button>
+    </mm-list-row>
+    <mm-list-marker
+      variant="number"
+      value="1"
+      style="position: absolute; left: 1.25rem; bottom: -1.75rem; transform: translateX(-50%)"
+    ></mm-list-marker>
+    <mm-list-marker
+      variant="number"
+      value="2"
+      style="position: absolute; left: 50%; bottom: -1.75rem; transform: translateX(-50%)"
+    ></mm-list-marker>
+    <mm-list-marker
+      variant="number"
+      value="3"
+      style="position: absolute; right: 1.25rem; bottom: -1.75rem; transform: translateX(50%)"
+    ></mm-list-marker>
+  </mm-component-anatomy>
 
   <mm-component-guide>
     <mm-paragraph-group>
@@ -38,14 +79,6 @@
         가능한 메뉴 항목이 필요하면 menuItem 계열을 사용하세요.
       </mm-text>
     </mm-paragraph-group>
-    <mm-text-list
-      texts='[
-        "leading 또는 trailing 슬롯이 비어 있으면 해당 영역이 사라져 불필요한 간격이 생기지 않습니다.",
-        "본문은 label/description 속성 또는 기본 슬롯으로 자유롭게 채울 수 있습니다.",
-        "제목·설명 타이포(14, 보조색, 음수 마진)는 컴포넌트에 고정되어 사용처마다 드리프트하지 않습니다."
-      ]'
-    >
-    </mm-text-list>
   </mm-component-guide>
 
   <mm-component-section
@@ -72,7 +105,7 @@
       avatar-variant="secondary"
       icon="user"
     >
-      <mm-icon slot="trailing" name="arrow-right" aria-label=""></mm-icon>
+      <mm-tag slot="trailing">테스트용 태그</mm-tag>
     </mm-user-row>
   </mm-component-section>
 

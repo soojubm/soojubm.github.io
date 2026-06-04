@@ -6,7 +6,9 @@
 
   <!-- 추가 콘텐츠에 대한 티저로 사용할 수 있습니다 -->
   <!-- 세로값을 지정하지 않으면, border-width 만큼 세로 값이 더해진다. -->
-  <mm-component-aka items='["EmphasisBox", "Box", "Card", "Module", "Section", "Container", "Paper", "Building block", "Segment", "Panel"]'></mm-component-aka>
+  <mm-component-aka
+    items='["EmphasisBox", "Box", "Card", "Module", "Section", "Container", "Paper", "Building block", "Segment", "Panel"]'
+  ></mm-component-aka>
 
   <mm-component-example>
     <mm-flex direction="column" gap="3" nowrap>
@@ -77,7 +79,7 @@
         description="고유한 배경색(Color)과 깊이감(Depth)의 조합 및 변화를 활용하여, 해당 영역이 사용자가 누를 수 있는(Clickable) 대상인지 아닌지를 직관적으로 식별하게 만드는 기표 역할을 합니다."
       >
       </mm-feature>
-    </mm-component-guide>
+    </section>
     <mm-text-list
       texts='[
           "타일 내부 leading, tailing 컴포넌트에 따라 시각보정이 필요할 수 있습니다.",
@@ -98,7 +100,7 @@
       are trying to solve to Design System Office Hours to see if another component or pattern could
       fit your needs.
     </mm-text>
-  </section>
+  </mm-component-guide>
   <mm-paragraph-group>
     <!-- <aside
       style="
@@ -164,32 +166,16 @@
 
   <mm-component-section title="FeedTile" description="">
     <section class="feeds" role="feed" aria-busy="false">
-      <!-- <aside
-        style="
-          position: fixed;
-          top: 6rem;
-          left: calc(50% + var(--width-sidemenu) - var(--grid-margin) + 1rem);
-          transform: translateX(-50%);
-          z-index: 8;
-        "
-      >
-        <button
-          style="
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            box-shadow: var(--shadow);
-            background: var(--color-primary);
-          "
-          onclick="javascript:alert('샘플 유아이')"
-        >
-          1월 1일 변경된 내용 보기
-        </button>
-      </aside> -->
       <article class="feed" aria-setsize="3" aria-posinset="1">
-        <div class="feed-header">
+        <header class="feed-header">
           <mm-tag> 🔥 Most Popular </mm-tag>
-          <mm-menu-item-row label="수줍이" description="2 hour"></mm-menu-item-row>
-        </div>
+          <mm-menu-item-row
+            avatar-size="large"
+            icon="user"
+            label="수줍이"
+            description="2 hour ago"
+          ></mm-menu-item-row>
+        </header>
         <div class="feed-body">
           <mm-thumbnail ratio="16:9" src="/src/images/springsteen.jpg" alt=""></mm-thumbnail>
           <mm-text size="14">
@@ -206,11 +192,7 @@
               ]'
           >
           </mm-text-list>
-          <mm-flex gap="1">
-            <mm-tag>Google</mm-tag>
-            <mm-tag>Meta</mm-tag>
-            <mm-tag>Nvidia</mm-tag>
-          </mm-flex>
+          <mm-keyword-tag-group keywords='["Google", "Meta", "Nvidia"]'></mm-keyword-tag-group>
           <mm-surface variant="elevated">
             <mm-tag>3월 14일 수정됨</mm-tag>
             <div style="height: var(--space-3)"></div>
@@ -221,15 +203,17 @@
                 avatar-size="large"
               >
               </mm-menu-item-row>
-              <mm-menu-item-row label="Naver" description="https://www.naver.com" avatar-size="large">
+              <mm-menu-item-row
+                label="Naver"
+                description="https://www.naver.com"
+                avatar-size="large"
+              >
               </mm-menu-item-row>
             </mm-flex>
           </mm-surface>
         </div>
         <div class="feed-footer">
-          <mm-flex>
-            <mm-menu-item-row icon="heart" label="192"> </mm-menu-item-row>
-          </mm-flex>
+          <mm-menu-item-row icon="heart" label="192"> </mm-menu-item-row>
         </div>
       </article>
 

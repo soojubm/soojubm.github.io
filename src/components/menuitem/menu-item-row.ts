@@ -36,7 +36,7 @@ export class MenuItemRow extends LitElement {
   }
 
   protected renderAction() {
-    return html`<slot name="action" slot="trailing"></slot>`
+    return html``
   }
 
   protected renderContent() {

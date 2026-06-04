@@ -10,10 +10,6 @@ export const ToggleMixin = <T extends GConstructor<MenuItemRow>>(Base: T) => {
     @property({ type: Boolean, reflect: true }) checked = false
     @property({ type: String }) value = ''
 
-    protected override get interactive() {
-      return true
-    }
-
     protected override getAriaChecked(): string | undefined {
       return String(this.checked)
     }

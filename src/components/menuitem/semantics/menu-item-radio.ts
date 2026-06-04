@@ -5,18 +5,9 @@ import { MenuItemRow } from '../menu-item-row'
 
 @customElement('mm-menu-item-radio')
 export class MenuItemRadio extends MenuItemRow {
-  @property({ type: Boolean, reflect: true })
-  checked = false
-
-  @property({ type: String })
-  value = ''
-
-  @property({ type: String })
-  name = ''
-
-  protected override get interactive() {
-    return true
-  }
+  @property({ type: Boolean, reflect: true }) checked = false
+  @property({ type: String }) value = ''
+  @property({ type: String }) name = ''
 
   protected override getRole() {
     return 'menuitemradio'
