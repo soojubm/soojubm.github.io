@@ -3,22 +3,8 @@ import { customElement, property } from 'lit/decorators.js'
 import '../tooltip/tooltip'
 import { iconButtonStyles } from './icon-button.styles'
 
-const buttonVariants = {
-  cta: 'primary',
-  action: 'action',
-  flow: 'flow',
-  plain: 'plain',
-  navigator: 'navigator',
-  destructive: 'destructive',
-} as const
-
-const buttonSizes = {
-  small: 'small',
-  medium: 'medium',
-} as const
-
-export type IconButtonVariant = keyof typeof buttonVariants
-export type IconButtonSize = keyof typeof buttonSizes
+export type IconButtonVariant = 'action' | 'flow' | 'plain' | 'navigator' | 'destructive'
+export type IconButtonSize = 'small' | 'medium'
 
 @customElement('mm-icon-button')
 class IconButton extends LitElement {
@@ -58,7 +44,6 @@ class IconButton extends LitElement {
       <button
         slot="trigger"
         type="button"
-        class="icon-button"
         aria-label="${this._accessibilityLabel}"
         ?disabled="${this.disabled}"
         aria-disabled="${this.disabled ? 'true' : 'false'}"
