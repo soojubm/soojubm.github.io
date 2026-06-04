@@ -1,4 +1,4 @@
-import { LitElement, html, nothing } from 'lit'
+import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import '../tooltip/tooltip'
 import { iconButtonStyles } from './icon-button.styles'
@@ -15,12 +15,10 @@ class IconButton extends LitElement {
   @property({ type: String }) tooltip = ''
   @property({ type: String, attribute: 'tooltip-align' }) tooltipAlign = ''
   @property({ type: Boolean, reflect: true }) disabled = false
-  @property({ type: Boolean }) haspopup = false
-  @property({ type: Boolean, reflect: true }) expanded = false
 
   static styles = [iconButtonStyles]
 
-  private get _accessibilityLabel(): string {
+  protected get _accessibilityLabel(): string {
     return this.ariaLabel || this.tooltip || this.icon || ''
   }
 
@@ -31,8 +29,6 @@ class IconButton extends LitElement {
         type="button"
         aria-label="${this._accessibilityLabel}"
         ?disabled="${this.disabled}"
-        aria-haspopup="${this.haspopup ? 'true' : nothing}"
-        aria-expanded="${this.haspopup ? (this.expanded ? 'true' : 'false') : nothing}"
       >
         <mm-icon name="${this.icon}"></mm-icon>
       </button>

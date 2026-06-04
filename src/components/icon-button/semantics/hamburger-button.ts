@@ -1,5 +1,5 @@
-import { css } from 'lit'
-import { customElement } from 'lit/decorators.js'
+import { css, html } from 'lit'
+import { customElement, property } from 'lit/decorators.js'
 import IconButton from '../icon-button'
 import { ICON_NAMES } from './icon-names'
 
@@ -8,6 +8,8 @@ import { ICON_NAMES } from './icon-names'
  */
 @customElement('mm-hamburger-button')
 export class HamburgerButton extends IconButton {
+  @property({ type: Boolean, reflect: true }) expanded = false
+
   static override styles = [
     ...IconButton.styles,
     css`
@@ -21,7 +23,21 @@ export class HamburgerButton extends IconButton {
     super()
     this.icon = ICON_NAMES.MENU_SCALE
     this.variant = 'plain'
-    this.haspopup = true
+  }
+
+  protected override renderControl() {
+    return html`
+      <button
+        slot="trigger"
+        type="button"
+        aria-label="${this._accessibilityLabel}"
+        ?disabled="${this.disabled}"
+        aria-haspopup="true"
+        aria-expanded="${this.expanded ? 'true' : 'false'}"
+      >
+        <mm-icon name="${this.icon}"></mm-icon>
+      </button>
+    `
   }
 
   override connectedCallback() {

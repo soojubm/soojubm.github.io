@@ -35,7 +35,7 @@ export function toggleNavbarMenu(event) {
 
   document.body.classList.toggle(OPENED_MENU_CLASSNAME, !isOpendNavbarMenu())
 
-  trigger.setAttribute('aria-expanded', String(isOpendNavbarMenu()))
+  trigger.toggleAttribute('expanded', isOpendNavbarMenu())
   menuElement.setAttribute('aria-hidden', String(!isOpendNavbarMenu()))
 
   const tabIndex = String(isOpendNavbarMenu() ? '0' : '-1')

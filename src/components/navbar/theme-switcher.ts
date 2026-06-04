@@ -1,5 +1,5 @@
 import { LitElement, css, html } from 'lit'
-import { customElement, property, state } from 'lit/decorators.js'
+import { customElement, property } from 'lit/decorators.js'
 import '../dropdown/dropdown'
 import '../icon-button/icon-button'
 import { getPreferredTheme, saveTheme, THEMES, type Theme } from '../../javascripts/theme'
@@ -7,7 +7,6 @@ import { getPreferredTheme, saveTheme, THEMES, type Theme } from '../../javascri
 @customElement('mm-theme-switcher')
 export class ThemeSwitcher extends LitElement {
   @property({ type: String, reflect: true }) value: Theme = 'light'
-  @state() private isOpen = false
 
   static styles = css`
     :host {
@@ -35,21 +34,14 @@ export class ThemeSwitcher extends LitElement {
     this.value = saveTheme(e.detail.value as Theme)
   }
 
-  // 드롭다운 펼침 상태를 트리거 아이콘 버튼에 반영
-  private handleToggle(e: CustomEvent) {
-    this.isOpen = e.detail.open
-  }
-
   render() {
     return html`
-      <mm-dropdown .value=${this.value} @change=${this.handleChange} @toggle=${this.handleToggle}>
+      <mm-dropdown .value=${this.value} @change=${this.handleChange}>
         <mm-icon-button
           slot="trigger"
           variant="plain"
           icon="${this.currentIcon}"
           aria-label="테마 변경"
-          .haspopup=${true}
-          .expanded=${this.isOpen}
         ></mm-icon-button>
         ${THEMES.map(
           theme => html`

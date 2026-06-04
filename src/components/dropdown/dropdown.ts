@@ -233,10 +233,17 @@ export class Dropdown extends LitElement {
     `
   }
 
-  // 펼침 상태가 바뀌면 toggle 이벤트로 알린다 — 커스텀 트리거가 expanded 상태를 동기화할 수 있도록.
+  // 슬롯 trigger에 aria-haspopup / aria-expanded를 직접 반영
+  private _updateTriggerAria() {
+    const trigger = this.querySelector('[slot="trigger"]')
+    if (!trigger) return
+    trigger.setAttribute('aria-haspopup', 'true')
+    trigger.setAttribute('aria-expanded', String(this.isOpen))
+  }
+
   protected updated(changed: PropertyValues) {
     if (changed.has('isOpen')) {
-      this.dispatchEvent(new CustomEvent('toggle', { detail: { open: this.isOpen } }))
+      this._updateTriggerAria()
     }
   }
 
