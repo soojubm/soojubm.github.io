@@ -6,14 +6,7 @@ import { Textfield } from './textfield'
 class PasswordField extends Textfield {
   @state() private revealed = false
 
-  static override styles = [
-    ...Textfield.styles,
-    css`
-      .passwordfield .textfield-suffix {
-        padding-right: var(--space-2);
-      }
-    `,
-  ]
+  static override styles = [...Textfield.styles]
 
   protected override get fieldClasses() {
     return 'textfield passwordfield'

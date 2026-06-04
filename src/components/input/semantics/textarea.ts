@@ -21,10 +21,6 @@ export class Textarea extends LitElement {
   static styles = [
     inputStyles,
     css`
-      p {
-        margin: 0;
-      }
-
       .textfield {
         position: relative;
       }
@@ -73,18 +69,20 @@ export class Textarea extends LitElement {
   protected renderTextarea() {
     const helperId = `${this._textareaId}-helper`
     return html`
-      <textarea
-        id="${this._textareaId}"
-        rows="${this.textareaRows}"
-        .value="${this.value}"
-        name="${this.name}"
-        placeholder="${this.placeholder}"
-        ?disabled="${this.disabled}"
-        aria-invalid="${this.isInvalid ? 'true' : 'false'}"
-        aria-describedby="${this.helper ? helperId : ''}"
-        @input="${this._onInput}"
-        @keydown="${this._onKeyDown}"
-      ></textarea>
+      <div class="textfield-control">
+        <textarea
+          id="${this._textareaId}"
+          rows="${this.textareaRows}"
+          .value="${this.value}"
+          name="${this.name}"
+          placeholder="${this.placeholder}"
+          ?disabled="${this.disabled}"
+          aria-invalid="${this.isInvalid ? 'true' : 'false'}"
+          aria-describedby="${this.helper ? helperId : ''}"
+          @input="${this._onInput}"
+          @keydown="${this._onKeyDown}"
+        ></textarea>
+      </div>
     `
   }
 

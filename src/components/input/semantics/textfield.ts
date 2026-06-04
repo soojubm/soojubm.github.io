@@ -145,11 +145,11 @@ export class Textfield extends LitElement {
     return html`
       <div class="textfield-control">
         ${this.showPrefix
-          ? html`<span class="textfield-affix textfield-prefix">${this.renderPrefix()}</span>`
+          ? html`<span class="textfield-prefix">${this.renderPrefix()}</span>`
           : this.renderPrefix()}
         ${this.renderInput()}
         ${this.showSuffix
-          ? html`<span class="textfield-affix textfield-suffix">${this.renderSuffix()}</span>`
+          ? html`<span class="textfield-suffix">${this.renderSuffix()}</span>`
           : this.renderSuffix()}
       </div>
     `

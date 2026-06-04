@@ -1,35 +1,29 @@
 import { LitElement, html, css } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { textfieldStyles } from '../../input/semantics/textfield.styles'
 
 @customElement('mm-prompt-input')
 export class PromptInput extends LitElement {
   @property({ type: String, reflect: true }) value = ''
   @property({ type: Boolean, attribute: 'is-loading', reflect: true }) isLoading = false
 
-  static styles = css`
-    :host {
-      display: flex;
-      flex-direction: column;
-      --prompt-input-border-color: var(--color-border, #e4e4e7);
-      --prompt-input-border-color-focus: var(--color-foreground, #09090b);
-      --prompt-input-radius: 12px;
-      --prompt-input-padding: 12px;
-      --prompt-input-background: var(--color-background);
-      border: 1px solid var(--prompt-input-border-color);
-      border-radius: var(--prompt-input-radius);
-      padding: var(--prompt-input-padding);
-      background-color: var(--prompt-input-background);
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-      transition: border-color 0.2s, box-shadow 0.2s;
-    }
-    :host(:focus-within) {
-      border-color: var(--prompt-input-border-color-focus);
-      box-shadow: 0 0 0 1px var(--prompt-input-border-color-focus);
-    }
-    ::slotted(mm-textfield-action-bar) {
-      padding-top: 8px;
-    }
-  `
+  static styles = [
+    ...textfieldStyles,
+    css`
+      :host {
+        --prompt-input-border-color: var(--color-border, #e4e4e7);
+        --prompt-input-border-color-focus: var(--color-foreground, #09090b);
+        --prompt-input-radius: 12px;
+        --prompt-input-padding: 12px;
+        --prompt-input-background: var(--color-background);
+      }
+
+      .textfield-control {
+        flex-direction: column;
+        align-items: stretch;
+      }
+    `,
+  ]
 
   constructor() {
     super()
@@ -52,6 +46,6 @@ export class PromptInput extends LitElement {
   }
 
   render() {
-    return html`<slot></slot>` // 하위 요소들이 자유롭게 배치될 공간
+    return html`<div class="textfield-control"><slot></slot></div>` // 하위 요소들이 자유롭게 배치될 공간
   }
 }

@@ -10,23 +10,12 @@ export class PromptInputTextarea extends LitElement {
 
   @query('textarea') private _textarea!: HTMLTextAreaElement
 
-  // inputStyles가 배경색(--input-background-color)·border·radius·padding·포커스를
-  // 제공한다. autoresize(min/max-height)와 placeholder 색만 추가로 얹는다.
   static styles = [
     inputStyles,
     css`
       :host {
         display: block;
-        --prompt-textarea-min-height: var(--input-height);
-        --prompt-textarea-max-height: 200px;
-        --prompt-textarea-line-height: 1.5;
-      }
-
-      textarea {
-        min-height: var(--prompt-textarea-min-height);
-        max-height: var(--prompt-textarea-max-height);
-        line-height: var(--prompt-textarea-line-height);
-        overflow-y: auto;
+        width: 100%;
       }
     `,
   ]

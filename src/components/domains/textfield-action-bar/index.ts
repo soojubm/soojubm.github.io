@@ -3,12 +3,13 @@ import { customElement, property } from 'lit/decorators.js'
 
 @customElement('mm-textfield-action-bar')
 export class TextfieldActionBar extends LitElement {
-  @property({ type: String }) align: 'start' | 'center' | 'end' | 'between' = 'end'
+  @property({ type: String, reflect: true }) align: 'start' | 'center' | 'end' | 'between' = 'end'
 
   static styles = css`
     :host {
       display: flex;
       align-items: center;
+      width: 100%;
       gap: var(--space-2);
     }
 

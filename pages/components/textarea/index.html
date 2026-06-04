@@ -1,8 +1,5 @@
 <main class="page">
-  <mm-page-header
-    title="Textarea"
-    description="long content field"
-  ></mm-page-header>
+  <mm-page-header title="Textarea" description="long content field"></mm-page-header>
 
   <mm-component-example>
     <div style="max-width: 400px">
@@ -29,7 +26,10 @@
 
   <mm-component-tokens>
     <mm-token name="--textfield-height" default="var(--size-large)"></mm-token>
-    <mm-token name="--textfield-background-color" default="var(--color-background-subtle)"></mm-token>
+    <mm-token
+      name="--textfield-background-color"
+      default="var(--color-background-subtle)"
+    ></mm-token>
     <mm-token name="--textfield-border" default="var(--border)"></mm-token>
     <mm-token name="--textfield-radius" default="var(--radius)"></mm-token>
     <mm-token name="--textfield-color-border-hover" default="var(--gray400)"></mm-token>
@@ -47,13 +47,11 @@
     </div>
   </mm-component-section>
   <mm-component-section title="Prompt Input" description="TODO">
-    <div style="max-width: 480px">
-      <mm-prompt-input>
-        <mm-prompt-input-textarea placeholder="Ask me anything..."></mm-prompt-input-textarea>
-        <mm-textfield-action-bar>
-          <mm-icon-button icon="send-diagonal" aria-label="전송"></mm-icon-button>
-        </mm-textfield-action-bar>
-      </mm-prompt-input>
-    </div>
+    <mm-prompt-input>
+      <mm-prompt-input-textarea placeholder="Ask me anything..."></mm-prompt-input-textarea>
+      <mm-textfield-action-bar align="end">
+        <mm-icon-button variant="primary" icon="arrow-up" aria-label="전송"></mm-icon-button>
+      </mm-textfield-action-bar>
+    </mm-prompt-input>
   </mm-component-section>
 </main>
