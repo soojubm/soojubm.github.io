@@ -23,8 +23,8 @@ export type IconButtonSize = keyof typeof buttonSizes
 @customElement('mm-icon-button')
 class IconButton extends LitElement {
   @property({ type: String }) icon = ''
-  @property({ type: String }) variant: IconButtonVariant = 'action'
-  @property({ type: String }) size: IconButtonSize = 'medium'
+  @property({ type: String, reflect: true }) variant: IconButtonVariant = 'action'
+  @property({ type: String, reflect: true }) size: IconButtonSize = 'medium'
   @property({ type: String }) label = ''
   @property({ type: String, attribute: 'aria-label' }) override ariaLabel = ''
   @property({ type: String }) tooltip = ''
@@ -47,8 +47,6 @@ class IconButton extends LitElement {
           slot="trigger"
           href="${this.href}"
           class="icon-button"
-          data-variant="${this.variant}"
-          data-size="${this.size}"
           aria-label="${this._accessibilityLabel}"
         >
           <mm-icon name="${this.icon}"></mm-icon>
@@ -61,8 +59,6 @@ class IconButton extends LitElement {
         slot="trigger"
         type="button"
         class="icon-button"
-        data-variant="${this.variant}"
-        data-size="${this.size}"
         aria-label="${this._accessibilityLabel}"
         ?disabled="${this.disabled}"
         aria-disabled="${this.disabled ? 'true' : 'false'}"
@@ -80,9 +76,7 @@ class IconButton extends LitElement {
     if (!this.tooltip) return control
 
     return html`
-      <mm-tooltip content=${this.tooltip} align=${this.tooltipAlign}>
-        ${control}
-      </mm-tooltip>
+      <mm-tooltip content=${this.tooltip} align=${this.tooltipAlign}> ${control} </mm-tooltip>
     `
   }
 }

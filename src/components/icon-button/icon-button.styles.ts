@@ -35,31 +35,6 @@ export const iconButtonStyles = css`
     cursor: pointer;
     /* 왜 커서 넣어야 되지? */
 
-    &[data-variant='primary'] {
-      background-color: var(--color-primary);
-      --button-text-color: #fff;
-    }
-
-    &[data-variant='plain'] {
-      background-color: transparent;
-      border: none;
-    }
-
-    &[data-variant='navigator'] {
-      border: var(--border);
-      border-radius: 50%;
-      box-shadow: var(--shadow);
-      background-color: var(--color-background);
-    }
-    &[data-variant='clear'] {
-      --button-size: var(--size-small);
-      box-shadow: var(--shadow);
-    }
-
-    &[data-size='small'] {
-      --button-size: var(--size-small);
-    }
-
     /* 버튼과 아이콘 버튼의 상태 동일 */
     /* TODO pending */
     &:hover {
@@ -92,6 +67,32 @@ export const iconButtonStyles = css`
       border-color: var(--button-color);
       box-shadow: none;
     }
+  }
+
+  :host([variant='primary']) .icon-button {
+    background-color: var(--color-primary);
+    --button-text-color: #fff;
+  }
+
+  :host([variant='plain']) .icon-button {
+    background-color: transparent;
+    border: none;
+  }
+
+  :host([variant='navigator']) .icon-button {
+    border: var(--border);
+    border-radius: 50%;
+    box-shadow: var(--shadow);
+    background-color: var(--color-background);
+  }
+
+  :host([variant='clear']) .icon-button {
+    --button-size: var(--size-small);
+    box-shadow: var(--shadow);
+  }
+
+  :host([size='small']) .icon-button {
+    --button-size: var(--size-small);
   }
 
   /* brutal: variant가 element-level border를 설정하므로 :host-context로 덮어
