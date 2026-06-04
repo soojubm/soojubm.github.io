@@ -31,7 +31,6 @@ class IconButton extends LitElement {
         type="button"
         aria-label="${this._accessibilityLabel}"
         ?disabled="${this.disabled}"
-        aria-disabled="${this.disabled ? 'true' : 'false'}"
         aria-haspopup="${this.haspopup ? 'true' : nothing}"
         aria-expanded="${this.haspopup ? (this.expanded ? 'true' : 'false') : nothing}"
       >
