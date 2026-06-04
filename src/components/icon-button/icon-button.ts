@@ -11,7 +11,6 @@ class IconButton extends LitElement {
   @property({ type: String }) icon = ''
   @property({ type: String, reflect: true }) variant: IconButtonVariant = 'action'
   @property({ type: String, reflect: true }) size: IconButtonSize = 'medium'
-  @property({ type: String }) label = ''
   @property({ type: String, attribute: 'aria-label' }) override ariaLabel = ''
   @property({ type: String }) tooltip = ''
   @property({ type: String, attribute: 'tooltip-align' }) tooltipAlign = ''
@@ -23,7 +22,7 @@ class IconButton extends LitElement {
   static styles = [iconButtonStyles]
 
   private get _accessibilityLabel(): string {
-    return this.ariaLabel || this.label || this.tooltip || this.icon || ''
+    return this.ariaLabel || this.tooltip || this.icon || ''
   }
 
   protected renderControl() {

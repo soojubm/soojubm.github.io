@@ -88,7 +88,6 @@
     <mm-prop name="icon" type="string"></mm-prop>
     <mm-prop name="variant" type="'cta' | 'action' | 'flow' = 'action'"></mm-prop>
     <mm-prop name="size" type="'small' | 'medium' = 'medium'"></mm-prop>
-    <mm-prop name="label" type="string" optional></mm-prop>
     <mm-prop name="tooltip" type="string" optional></mm-prop>
     <mm-prop name="tooltip-align" type="'left' | 'center' | 'right'" optional></mm-prop>
     <mm-prop name="href" type="string" optional></mm-prop>
@@ -106,7 +105,7 @@
     parts='[
       "컨테이너 — variant·size로 형태와 클릭 영역을 정의합니다.",
       "아이콘 — 액션을 나타내는 메타포(icon).",
-      "접근성 레이블 — 화면에 보이지 않지만 액션을 설명하는 텍스트(label/aria-label).",
+      "접근성 레이블 — 화면에 보이지 않지만 액션을 설명하는 텍스트(aria-label).",
       "툴팁 — icon-only 버튼의 용도를 보조 설명합니다."
     ]'
   >
@@ -116,7 +115,7 @@
           slot="trigger"
           variant="primary"
           icon="heart"
-          label="좋아요"
+          aria-label="좋아요"
         ></mm-icon-button>
       </mm-tooltip>
 
