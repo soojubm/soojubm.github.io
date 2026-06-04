@@ -9,8 +9,6 @@ export class MenuItemRow extends LitElement {
   @property({ type: String }) tone = ''
   @property({ type: String }) label = ''
   @property({ type: String }) description = ''
-  @property({ type: String, attribute: 'aria-label' }) override ariaLabel = ''
-
   @property({ type: String }) icon = ''
   @property({ type: String, attribute: 'avatar-src' }) avatarSrc = ''
   @property({ type: String, attribute: 'avatar-size' }) avatarSize = 'medium'
@@ -64,7 +62,6 @@ export class MenuItemRow extends LitElement {
         role=${this.getRole()}
         data-tone=${ifDefined(this.tone || undefined)}
         ?data-interactive=${this.interactive}
-        aria-label=${ifDefined(this.ariaLabel || undefined)}
         aria-disabled=${ifDefined(this.disabled ? 'true' : undefined)}
         aria-checked=${ifDefined(this.getAriaChecked())}
       >

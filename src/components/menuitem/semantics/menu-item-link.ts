@@ -40,7 +40,6 @@ export class MenuItemLink extends MenuItemRow {
         role=${this.getRole()}
         data-tone=${ifDefined(this.tone || undefined)}
         ?data-interactive=${this.interactive}
-        aria-label=${ifDefined(this.ariaLabel || undefined)}
         aria-disabled=${ifDefined(this.disabled ? 'true' : undefined)}
       >
         ${this.renderContent()}
