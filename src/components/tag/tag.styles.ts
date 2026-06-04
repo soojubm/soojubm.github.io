@@ -8,6 +8,11 @@ import { css, unsafeCSS } from 'lit'
  */
 
 export const tagToneStyles = {
+  default: {
+    background: 'transparent',
+    color: 'var(--color-foreground)',
+    borderColor: 'transparent',
+  },
   gray: {
     background: 'var(--color-background-subtle)',
     color: 'var(--color-foreground)',
@@ -101,15 +106,14 @@ export type Category = keyof typeof categoryToneMap
  */
 
 const toneCss = Object.entries(tagToneStyles)
-  .map(([tone, styles]) => {
-    return `
-      [data-tone='${tone}'] {
-        background: ${styles.background};
-        color: ${styles.color};
-        border-color: ${styles.borderColor};
-      }
-    `
-  })
+  .map(([tone, styles]) => `
+    :host([tone='${tone}']) span,
+    :host([tone='${tone}']) time {
+      background: ${styles.background};
+      color: ${styles.color};
+      border-color: ${styles.borderColor};
+    }
+  `)
   .join('\n')
 
 /**

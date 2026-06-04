@@ -4,7 +4,7 @@ import { tagStyles, type TagTone } from './tag.styles'
 
 @customElement('mm-tag')
 export class Tag extends LitElement {
-  @property({ type: String }) tone: TagTone = 'gray'
+  @property({ type: String, reflect: true }) tone: TagTone = 'default'
 
   static styles = [tagStyles]
 
@@ -20,7 +20,7 @@ export class Tag extends LitElement {
   override willUpdate(changedProperties: PropertyValues<this>) {
     super.willUpdate(changedProperties)
     const mapping = this.toneMapping
-    if (mapping && changedProperties.has(mapping.watchProp as keyof this)) {
+    if (mapping && (changedProperties as Map<string, unknown>).has(mapping.watchProp)) {
       const val = (this as Record<string, unknown>)[mapping.watchProp] as string
       if (val in mapping.toneMap) this.tone = mapping.toneMap[val]
     }
@@ -33,7 +33,7 @@ export class Tag extends LitElement {
 
   render() {
     return html`
-      <span data-tone=${this.tone}>
+      <span>
         <slot name="icon"></slot>
         ${this.renderDefaultSlot()}
       </span>
