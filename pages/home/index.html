@@ -585,6 +585,732 @@
       "
     ></div>
   </div> -->
+
+  <section style="margin: 4rem 0">
+    <mm-text as="h1" size="32" weight="bold">Architecture Layers</mm-text>
+    <mm-text as="p" size="14" style="margin: 0.5rem 0 0.5rem">
+      추상에서 구체로. 아래로 내려갈수록 도메인에 가까워지고, 재사용 범위는 좁아진다.
+    </mm-text>
+
+    <!-- 핵심 판단 기준 -->
+    <div
+      style="
+        margin: 1rem 0 2rem;
+        padding: 1rem 1.5rem;
+        background: var(--color-background-subtle);
+        border-radius: var(--radius);
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-2);
+      "
+    >
+      <mm-text size="12" color="var(--color-foreground-light)">레이어 판단 기준</mm-text>
+      <mm-text size="14"><strong>다른 도메인이나 서비스에서도 쓸 수 있는가?</strong> → Semantic. 이 서비스에만 존재하는 개념인가? → Concrete.</mm-text>
+      <mm-text size="14" color="var(--color-foreground-light)">폴더 구조가 이 경계를 구조적으로 강제한다. <code>semantics/</code> = 도메인 독립, <code>domains/</code> = 도메인 종속.</mm-text>
+    </div>
+
+    <!-- 의사결정 플로우 -->
+    <div
+      style="
+        display: flex;
+        align-items: center;
+        gap: var(--space-2);
+        margin: 0 0 2rem;
+        flex-wrap: wrap;
+      "
+    >
+      <mm-text size="12" color="var(--color-foreground-light)">새 요소가 필요할 때</mm-text>
+      <mm-text size="14" weight="bold">Abstract 없으면 만든다</mm-text>
+      <mm-text size="14" color="var(--color-foreground-light)">→</mm-text>
+      <mm-text size="14" weight="bold">도메인 무관하면 Semantic으로 고정한다</mm-text>
+      <mm-text size="14" color="var(--color-foreground-light)">→</mm-text>
+      <mm-text size="14" weight="bold">Concrete에서 조합한다</mm-text>
+    </div>
+
+    <!-- 레이어 테이블 -->
+    <div
+      style="
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        border: var(--border-stronger);
+        border-radius: var(--radius-large);
+        overflow: hidden;
+      "
+    >
+      <!-- 헤더 -->
+      <div
+        style="
+          padding: 0.75rem 2rem;
+          border-bottom: var(--border-stronger);
+          display: grid;
+          grid-template-columns: 10rem 1fr 2fr;
+          gap: 1rem;
+        "
+      >
+        <mm-text size="12" color="var(--color-foreground-light)">레이어</mm-text>
+        <mm-text size="12" color="var(--color-foreground-light)">정의</mm-text>
+        <mm-text size="12" color="var(--color-foreground-light)">예시 / 위치</mm-text>
+      </div>
+
+      <!-- LAYER 1: Abstract -->
+      <div
+        style="
+          padding: 1.5rem 2rem;
+          border-bottom: var(--border-stronger);
+          display: grid;
+          grid-template-columns: 10rem 1fr 2fr;
+          gap: 1rem;
+          align-items: start;
+        "
+      >
+        <div>
+          <mm-text size="12" color="var(--color-foreground-light)">LAYER 1</mm-text>
+          <mm-text size="18" weight="bold">Abstract</mm-text>
+        </div>
+        <mm-text size="14">HTML 요소 수준의 가장 작은 단위. 의도 없이 props로만 변형되는 범용 빌딩 블록.</mm-text>
+        <div>
+          <mm-text size="14"><code>mm-button</code>, <code>mm-text</code>, <code>mm-tag</code>, <code>mm-icon-button</code></mm-text>
+          <mm-text size="14" color="var(--color-foreground-light)" style="margin-top: 0.25rem">src/components/{name}/</mm-text>
+        </div>
+      </div>
+
+      <!-- 의존성 방향 -->
+      <div style="padding: 0.375rem 2rem; border-bottom: var(--border-stronger); background: var(--color-background-subtle)">
+        <mm-text size="12" color="var(--color-foreground-light)">↓ extends — Semantic은 Abstract를 상속해 역할을 고정한다</mm-text>
+      </div>
+
+      <!-- LAYER 2: Semantic -->
+      <div
+        style="
+          padding: 1.5rem 2rem;
+          border-bottom: var(--border-stronger);
+          display: grid;
+          grid-template-columns: 10rem 1fr 2fr;
+          gap: 1rem;
+          align-items: start;
+        "
+      >
+        <div>
+          <mm-text size="12" color="var(--color-foreground-light)">LAYER 2</mm-text>
+          <mm-text size="18" weight="bold">Semantic</mm-text>
+        </div>
+        <mm-text size="14">의미가 있고 도메인에 독립적인 단위. 어떤 서비스에서도 쓸 수 있는 개념. variant 대신 이름이 용도를 표현.</mm-text>
+        <div>
+          <mm-text size="14"><code>mm-read-more-button</code>, <code>mm-close-button</code>, <code>mm-caption</code>, <code>mm-accent-tag</code></mm-text>
+          <mm-text size="14" color="var(--color-foreground-light)" style="margin-top: 0.25rem">src/components/{name}/semantics/</mm-text>
+        </div>
+      </div>
+
+      <!-- 의존성 방향 -->
+      <div style="padding: 0.375rem 2rem; border-bottom: var(--border-stronger); background: var(--color-background-subtle)">
+        <mm-text size="12" color="var(--color-foreground-light)">↓ composes — Concrete는 Abstract·Semantic 컴포넌트를 조합해 완성한다</mm-text>
+      </div>
+
+      <!-- LAYER 3: Concrete -->
+      <div
+        style="
+          padding: 1.5rem 2rem;
+          display: grid;
+          grid-template-columns: 10rem 1fr 2fr;
+          gap: 1rem;
+          align-items: start;
+        "
+      >
+        <div>
+          <mm-text size="12" color="var(--color-foreground-light)">LAYER 3</mm-text>
+          <mm-text size="18" weight="bold">Concrete</mm-text>
+        </div>
+        <mm-text size="14">특정 도메인·서비스에 종속된 조합. 다른 서비스에서 그대로 가져다 쓸 수 없는 것.</mm-text>
+        <div>
+          <mm-text size="14"><code>mm-comment-input</code>, <code>mm-user-row</code>, <code>mm-prompt-input</code></mm-text>
+          <mm-text size="14" color="var(--color-foreground-light)" style="margin-top: 0.25rem">src/components/domains/</mm-text>
+        </div>
+      </div>
+    </div>
+
+    <!-- 방법론 비평 -->
+    <div
+      style="
+        margin-top: 2rem;
+        padding: 1.5rem 2rem;
+        border: var(--border-stronger);
+        border-radius: var(--radius-large);
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-3);
+      "
+    >
+      <mm-text as="h2" size="18" weight="bold">이 방법론의 한계</mm-text>
+
+      <div style="display: flex; flex-direction: column; gap: var(--space-2)">
+        <mm-text size="14" weight="bold">"다른 서비스에서 쓸 수 있는가"의 판단은 여전히 주관적이다</mm-text>
+        <mm-text size="14"><code>mm-search-suggestions</code>는 어떤 서비스에나 있는 검색 UI다 — Semantic인가? 아니면 이 서비스의 검색 동작에 종속된다 — Concrete인가? 기준이 명확해도 경계 사례에서는 판단이 갈린다. 폴더 구조가 강제할 수 있는 건 배치 이후다. 배치 전 판단은 사람이 한다.</mm-text>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: var(--space-2)">
+        <mm-text size="14" weight="bold">Concrete가 도메인을 넘어 재사용되면 레이어가 흔들린다</mm-text>
+        <mm-text size="14"><code>mm-comment-input</code>이 댓글과 DM 두 화면에서 모두 쓰인다면? 처음엔 도메인 특화였다가 점점 범용이 된다. Concrete를 Semantic으로 격상하는 시점과 기준이 없으면 domains/ 안에 사실상 Semantic인 컴포넌트가 쌓이기 시작한다.</mm-text>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: var(--space-2)">
+        <mm-text size="14" weight="bold">Semantic 레이어가 팽창하기 쉽다</mm-text>
+        <mm-text size="14">"도메인 무관"의 기준이 느슨하면 모든 컴포넌트가 Semantic 후보가 된다. 작은 변형마다 새로운 Semantic 컴포넌트가 추가되면 semantics/ 디렉토리가 비대해지고, Abstract 컴포넌트의 variant로 충분히 해결할 수 있는 것들이 별도 클래스로 분산된다.</mm-text>
+      </div>
+    </div>
+  </section>
+
+  <section style="margin: 4rem 0">
+    <mm-text as="h1" size="32" weight="bold">Naming Conventions</mm-text>
+    <mm-text as="p" size="14" style="margin: 0.5rem 0 2rem">
+      일관된 네이밍은 코드 탐색과 예측 가능성을 높입니다.
+    </mm-text>
+
+    <div class="columns-2">
+      <div
+        style="
+          padding: 1.5rem;
+          border: var(--border-stronger);
+          border-radius: var(--radius-large);
+          display: flex;
+          flex-direction: column;
+          gap: var(--space-3);
+        "
+      >
+        <mm-text as="h2" size="18" weight="bold">Components</mm-text>
+        <table>
+          <thead>
+            <tr>
+              <th><mm-text size="12" color="var(--color-foreground-light)">패턴</mm-text></th>
+              <th><mm-text size="12" color="var(--color-foreground-light)">예시</mm-text></th>
+              <th><mm-text size="12" color="var(--color-foreground-light)">설명</mm-text></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>mm-{name}</code></td>
+              <td><code>mm-button</code></td>
+              <td><mm-text size="14">Abstract — 범용 컴포넌트</mm-text></td>
+            </tr>
+            <tr>
+              <td><code>mm-{role}-{type}</code></td>
+              <td><code>mm-close-button</code></td>
+              <td><mm-text size="14">Semantic — 역할 고정</mm-text></td>
+            </tr>
+            <tr>
+              <td><code>mm-{domain}-{noun}</code></td>
+              <td><code>mm-user-row</code></td>
+              <td><mm-text size="14">Concrete — 도메인 특화</mm-text></td>
+            </tr>
+            <tr>
+              <td><code>mm-{name}-group</code></td>
+              <td><code>mm-keyword-tag-group</code></td>
+              <td><mm-text size="14">그룹/컨테이너 컴포넌트</mm-text></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <mm-text as="h2" size="18" weight="bold" style="margin-top: 0.5rem">File Structure</mm-text>
+        <table>
+          <tbody>
+            <tr>
+              <td><code>{name}.ts</code></td>
+              <td><mm-text size="14">컴포넌트 본체</mm-text></td>
+            </tr>
+            <tr>
+              <td><code>{name}.styles.ts</code></td>
+              <td><mm-text size="14">분리된 스타일 정의</mm-text></td>
+            </tr>
+            <tr>
+              <td><code>_{name}.variants.ts</code></td>
+              <td><mm-text size="14">variant 맵 (내부 전용, _ prefix)</mm-text></td>
+            </tr>
+            <tr>
+              <td><code>semantics/{role}.ts</code></td>
+              <td><mm-text size="14">Semantic 레이어 컴포넌트</mm-text></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div
+        style="
+          padding: 1.5rem;
+          border: var(--border-stronger);
+          border-radius: var(--radius-large);
+          display: flex;
+          flex-direction: column;
+          gap: var(--space-3);
+        "
+      >
+        <mm-text as="h2" size="18" weight="bold">Design Tokens</mm-text>
+        <table>
+          <thead>
+            <tr>
+              <th><mm-text size="12" color="var(--color-foreground-light)">카테고리</mm-text></th>
+              <th><mm-text size="12" color="var(--color-foreground-light)">패턴</mm-text></th>
+              <th><mm-text size="12" color="var(--color-foreground-light)">예시</mm-text></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><mm-text size="14">Color</mm-text></td>
+              <td><code>--color-{role}[-modifier]</code></td>
+              <td><code>--color-foreground-light</code></td>
+            </tr>
+            <tr>
+              <td><mm-text size="14">Spacing</mm-text></td>
+              <td><code>--space-{scale}</code></td>
+              <td><code>--space-4</code> (= 1rem)</td>
+            </tr>
+            <tr>
+              <td><mm-text size="14">Font size</mm-text></td>
+              <td><code>--font-size-{px}</code></td>
+              <td><code>--font-size-14</code></td>
+            </tr>
+            <tr>
+              <td><mm-text size="14">Radius</mm-text></td>
+              <td><code>--radius[-modifier]</code></td>
+              <td><code>--radius-large</code></td>
+            </tr>
+            <tr>
+              <td><mm-text size="14">Shadow</mm-text></td>
+              <td><code>--shadow[-modifier]</code></td>
+              <td><code>--shadow-tile</code></td>
+            </tr>
+            <tr>
+              <td><mm-text size="14">Z-index</mm-text></td>
+              <td><code>--zindex-{context}</code></td>
+              <td><code>--zindex-modal</code></td>
+            </tr>
+            <tr>
+              <td><mm-text size="14">Size</mm-text></td>
+              <td><code>--size-{scale}</code></td>
+              <td><code>--size-medium</code> (= 2rem)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <mm-text as="h2" size="18" weight="bold" style="margin-top: 0.5rem">Component Tokens</mm-text>
+        <mm-text size="14">컴포넌트 내부 토큰은 <code>--{component}-{property}</code> 패턴을 사용합니다.</mm-text>
+        <table>
+          <tbody>
+            <tr>
+              <td><code>--button-size</code></td>
+              <td><mm-text size="14">button 컴포넌트의 높이</mm-text></td>
+            </tr>
+            <tr>
+              <td><code>--button-text-color</code></td>
+              <td><mm-text size="14">button 텍스트 색상 override</mm-text></td>
+            </tr>
+            <tr>
+              <td><code>--input-border-color</code></td>
+              <td><mm-text size="14">input 보더 색상 override</mm-text></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section style="margin: 4rem 0">
+    <mm-text as="h1" size="32" weight="bold">Component Status</mm-text>
+    <mm-text as="p" size="14" style="margin: 0.5rem 0 2rem">
+      현재 구현된 컴포넌트 현황입니다. <code>pages/components/</code> 및 sitemap 기준.
+    </mm-text>
+
+    <div class="columns-2">
+      <div>
+        <mm-text as="h2" size="18" weight="bold" style="margin-bottom: 1rem">Visual Information</mm-text>
+        <table>
+          <thead>
+            <tr>
+              <th><mm-text size="12" color="var(--color-foreground-light)">컴포넌트</mm-text></th>
+              <th><mm-text size="12" color="var(--color-foreground-light)">Semantic</mm-text></th>
+              <th><mm-text size="12" color="var(--color-foreground-light)">상태</mm-text></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><mm-text size="14">Avatar</mm-text></td>
+              <td><mm-text size="14" color="var(--color-foreground-light)">—</mm-text></td>
+              <td><mm-text size="14">✅</mm-text></td>
+            </tr>
+            <tr>
+              <td><mm-text size="14">Text</mm-text></td>
+              <td><mm-text size="14" color="var(--color-foreground-light)">caption, paragraph, section-title, page-title</mm-text></td>
+              <td><mm-text size="14">✅</mm-text></td>
+            </tr>
+            <tr>
+              <td><mm-text size="14">Tag</mm-text></td>
+              <td><mm-text size="14" color="var(--color-foreground-light)">accent-tag, status-tag, keyword-tag, category-tag</mm-text></td>
+              <td><mm-text size="14">✅</mm-text></td>
+            </tr>
+            <tr>
+              <td><mm-text size="14">List Row</mm-text></td>
+              <td><mm-text size="14" color="var(--color-foreground-light)">—</mm-text></td>
+              <td><mm-text size="14">✅</mm-text></td>
+            </tr>
+            <tr>
+              <td><mm-text size="14">Surface</mm-text></td>
+              <td><mm-text size="14" color="var(--color-foreground-light)">—</mm-text></td>
+              <td><mm-text size="14">✅</mm-text></td>
+            </tr>
+            <tr>
+              <td><mm-text size="14">Thumbnail</mm-text></td>
+              <td><mm-text size="14" color="var(--color-foreground-light)">—</mm-text></td>
+              <td><mm-text size="14">✅</mm-text></td>
+            </tr>
+            <tr>
+              <td><mm-text size="14">Separator</mm-text></td>
+              <td><mm-text size="14" color="var(--color-foreground-light)">—</mm-text></td>
+              <td><mm-text size="14">✅</mm-text></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <mm-text as="h2" size="18" weight="bold" style="margin: 2rem 0 1rem">Actions</mm-text>
+        <table>
+          <thead>
+            <tr>
+              <th><mm-text size="12" color="var(--color-foreground-light)">컴포넌트</mm-text></th>
+              <th><mm-text size="12" color="var(--color-foreground-light)">Semantic</mm-text></th>
+              <th><mm-text size="12" color="var(--color-foreground-light)">상태</mm-text></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><mm-text size="14">Button</mm-text></td>
+              <td><mm-text size="14" color="var(--color-foreground-light)">read-more, follow, filter, bookmark, file-upload…</mm-text></td>
+              <td><mm-text size="14">✅</mm-text></td>
+            </tr>
+            <tr>
+              <td><mm-text size="14">Icon Button</mm-text></td>
+              <td><mm-text size="14" color="var(--color-foreground-light)">close, hamburger, copy, delete, reveal, prev/next…</mm-text></td>
+              <td><mm-text size="14">✅</mm-text></td>
+            </tr>
+            <tr>
+              <td><mm-text size="14">Toggle Button</mm-text></td>
+              <td><mm-text size="14" color="var(--color-foreground-light)">—</mm-text></td>
+              <td><mm-text size="14">✅</mm-text></td>
+            </tr>
+            <tr>
+              <td><mm-text size="14">MenuItem</mm-text></td>
+              <td><mm-text size="14" color="var(--color-foreground-light)">—</mm-text></td>
+              <td><mm-text size="14">✅</mm-text></td>
+            </tr>
+            <tr>
+              <td><mm-text size="14">Link</mm-text></td>
+              <td><mm-text size="14" color="var(--color-foreground-light)">—</mm-text></td>
+              <td><mm-text size="14">✅</mm-text></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <mm-text as="h2" size="18" weight="bold" style="margin: 2rem 0 1rem">Navigations</mm-text>
+        <table>
+          <tbody>
+            <tr>
+              <td><mm-text size="14">Top Bar</mm-text></td>
+              <td><mm-text size="14" color="var(--color-foreground-light)">—</mm-text></td>
+              <td><mm-text size="14">✅</mm-text></td>
+            </tr>
+            <tr>
+              <td><mm-text size="14">Bottom Bar</mm-text></td>
+              <td><mm-text size="14" color="var(--color-foreground-light)">—</mm-text></td>
+              <td><mm-text size="14">✅</mm-text></td>
+            </tr>
+            <tr>
+              <td><mm-text size="14">Breadcrumb</mm-text></td>
+              <td><mm-text size="14" color="var(--color-foreground-light)">—</mm-text></td>
+              <td><mm-text size="14">⚠️ 검토 필요</mm-text></td>
+            </tr>
+            <tr>
+              <td><mm-text size="14">Tabs</mm-text></td>
+              <td><mm-text size="14" color="var(--color-foreground-light)">—</mm-text></td>
+              <td><mm-text size="14">✅</mm-text></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div>
+        <mm-text as="h2" size="18" weight="bold" style="margin-bottom: 1rem">Forms</mm-text>
+        <table>
+          <tbody>
+            <tr>
+              <td><mm-text size="14">Checkbox</mm-text></td>
+              <td><mm-text size="14" color="var(--color-foreground-light)">—</mm-text></td>
+              <td><mm-text size="14">✅</mm-text></td>
+            </tr>
+            <tr>
+              <td><mm-text size="14">Radio</mm-text></td>
+              <td><mm-text size="14" color="var(--color-foreground-light)">—</mm-text></td>
+              <td><mm-text size="14">✅</mm-text></td>
+            </tr>
+            <tr>
+              <td><mm-text size="14">Switch</mm-text></td>
+              <td><mm-text size="14" color="var(--color-foreground-light)">—</mm-text></td>
+              <td><mm-text size="14">✅</mm-text></td>
+            </tr>
+            <tr>
+              <td><mm-text size="14">Input</mm-text></td>
+              <td><mm-text size="14" color="var(--color-foreground-light)">search field, password field, textarea</mm-text></td>
+              <td><mm-text size="14">✅</mm-text></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <mm-text as="h2" size="18" weight="bold" style="margin: 2rem 0 1rem">Feedbacks</mm-text>
+        <table>
+          <tbody>
+            <tr>
+              <td><mm-text size="14">Tooltip</mm-text></td>
+              <td><mm-text size="14" color="var(--color-foreground-light)">—</mm-text></td>
+              <td><mm-text size="14">✅</mm-text></td>
+            </tr>
+            <tr>
+              <td><mm-text size="14">Dialog</mm-text></td>
+              <td><mm-text size="14" color="var(--color-foreground-light)">—</mm-text></td>
+              <td><mm-text size="14">✅</mm-text></td>
+            </tr>
+            <tr>
+              <td><mm-text size="14">Notice</mm-text></td>
+              <td><mm-text size="14" color="var(--color-foreground-light)">—</mm-text></td>
+              <td><mm-text size="14">✅</mm-text></td>
+            </tr>
+            <tr>
+              <td><mm-text size="14">Loading</mm-text></td>
+              <td><mm-text size="14" color="var(--color-foreground-light)">—</mm-text></td>
+              <td><mm-text size="14">✅</mm-text></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <mm-text as="h2" size="18" weight="bold" style="margin: 2rem 0 1rem">Patterns</mm-text>
+        <table>
+          <tbody>
+            <tr>
+              <td><mm-text size="14">Result</mm-text></td>
+              <td><mm-text size="14">✅</mm-text></td>
+            </tr>
+            <tr>
+              <td><mm-text size="14">Accordion</mm-text></td>
+              <td><mm-text size="14">✅</mm-text></td>
+            </tr>
+            <tr>
+              <td><mm-text size="14">Auth</mm-text></td>
+              <td><mm-text size="14">✅</mm-text></td>
+            </tr>
+            <tr>
+              <td><mm-text size="14">Chat</mm-text></td>
+              <td><mm-text size="14">✅</mm-text></td>
+            </tr>
+            <tr>
+              <td><mm-text size="14">Setting</mm-text></td>
+              <td><mm-text size="14">✅</mm-text></td>
+            </tr>
+            <tr>
+              <td><mm-text size="14">Post / Product / Checkout</mm-text></td>
+              <td><mm-text size="14">✅</mm-text></td>
+            </tr>
+            <tr>
+              <td><mm-text size="14">User Profile</mm-text></td>
+              <td><mm-text size="14">🔥 신규</mm-text></td>
+            </tr>
+            <tr>
+              <td><mm-text size="14">Table</mm-text></td>
+              <td><mm-text size="14">🚧 진행중</mm-text></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section style="margin: 4rem 0">
+    <mm-text as="h1" size="32" weight="bold">Tech Stack</mm-text>
+    <mm-text as="p" size="14" style="margin: 0.5rem 0 2rem">
+      이 디자인 시스템을 구성하는 기술 스택입니다.
+    </mm-text>
+
+    <div class="columns-3">
+      <div
+        style="
+          padding: 1.5rem;
+          border: var(--border-stronger);
+          border-radius: var(--radius-large);
+          display: flex;
+          flex-direction: column;
+          gap: var(--space-2);
+        "
+      >
+        <mm-text as="h2" size="18" weight="bold">Core</mm-text>
+        <table>
+          <tbody>
+            <tr>
+              <td><mm-text size="14" weight="bold">Lit v3</mm-text></td>
+              <td><mm-text size="14" color="var(--color-foreground-light)">Web Components framework — mm-* custom elements</mm-text></td>
+            </tr>
+            <tr>
+              <td><mm-text size="14" weight="bold">TypeScript</mm-text></td>
+              <td><mm-text size="14" color="var(--color-foreground-light)">정적 타입 시스템, ts-loader로 번들</mm-text></td>
+            </tr>
+            <tr>
+              <td><mm-text size="14" weight="bold">BaseElement</mm-text></td>
+              <td><mm-text size="14" color="var(--color-foreground-light)">HTMLElement 확장, Shadow DOM + adoptedStyleSheets</mm-text></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div
+        style="
+          padding: 1.5rem;
+          border: var(--border-stronger);
+          border-radius: var(--radius-large);
+          display: flex;
+          flex-direction: column;
+          gap: var(--space-2);
+        "
+      >
+        <mm-text as="h2" size="18" weight="bold">Build</mm-text>
+        <table>
+          <tbody>
+            <tr>
+              <td><mm-text size="14" weight="bold">Webpack 5</mm-text></td>
+              <td><mm-text size="14" color="var(--color-foreground-light)">멀티 엔트리, 코드 스플리팅, HtmlWebpackPlugin</mm-text></td>
+            </tr>
+            <tr>
+              <td><mm-text size="14" weight="bold">Babel</mm-text></td>
+              <td><mm-text size="14" color="var(--color-foreground-light)">@babel/preset-env, ES5 타겟 트랜스파일</mm-text></td>
+            </tr>
+            <tr>
+              <td><mm-text size="14" weight="bold">PostCSS</mm-text></td>
+              <td><mm-text size="14" color="var(--color-foreground-light)">cssnano로 CSS 최적화, MiniCssExtractPlugin</mm-text></td>
+            </tr>
+            <tr>
+              <td><mm-text size="14" weight="bold">Sass</mm-text></td>
+              <td><mm-text size="14" color="var(--color-foreground-light)">스타일시트 전처리기</mm-text></td>
+            </tr>
+            <tr>
+              <td><mm-text size="14" weight="bold">GitHub Actions</mm-text></td>
+              <td><mm-text size="14" color="var(--color-foreground-light)">webpack.yml로 빌드 및 배포 자동화</mm-text></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div
+        style="
+          padding: 1.5rem;
+          border: var(--border-stronger);
+          border-radius: var(--radius-large);
+          display: flex;
+          flex-direction: column;
+          gap: var(--space-2);
+        "
+      >
+        <mm-text as="h2" size="18" weight="bold">Lint / Format</mm-text>
+        <table>
+          <tbody>
+            <tr>
+              <td><mm-text size="14" weight="bold">ESLint</mm-text></td>
+              <td><mm-text size="14" color="var(--color-foreground-light)">TypeScript 정적 분석</mm-text></td>
+            </tr>
+            <tr>
+              <td><mm-text size="14" weight="bold">Stylelint</mm-text></td>
+              <td><mm-text size="14" color="var(--color-foreground-light)">CSS/SCSS 린팅</mm-text></td>
+            </tr>
+            <tr>
+              <td><mm-text size="14" weight="bold">Prettier</mm-text></td>
+              <td><mm-text size="14" color="var(--color-foreground-light)">코드 포맷터</mm-text></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section style="margin: 4rem 0">
+    <mm-text as="h1" size="32" weight="bold">Folder Structure</mm-text>
+    <mm-text as="p" size="14" style="margin: 0.5rem 0 2rem">
+      프로젝트의 주요 폴더 구조입니다.
+    </mm-text>
+
+    <div class="columns-2">
+      <div
+        style="
+          padding: 1.5rem;
+          border: var(--border-stronger);
+          border-radius: var(--radius-large);
+        "
+      >
+        <mm-text as="h2" size="18" weight="bold" style="margin-bottom: 1rem">src/</mm-text>
+        <pre style="margin: 0; font-size: var(--font-size-12); line-height: 1.8; overflow-x: auto">src/
+├── components/          # mm-* Web Components
+│   ├── button/
+│   │   └── semantics/   # 의미론적 변형 (e.g. read-more-button)
+│   ├── icon-button/
+│   ├── text/
+│   ├── tag/
+│   ├── flex/            # 레이아웃 컴포넌트
+│   ├── shared/          # 공유 믹스인/유틸
+│   └── domains/         # 도메인 전용 컴포넌트
+│       ├── component-section/
+│       ├── component-tokens/
+│       ├── page-header/
+│       └── ...
+├── javascripts/
+│   ├── common/
+│   ├── event/
+│   ├── theme/
+│   └── utils/
+├── stylesheets/
+│   ├── shared/          # 공통 스타일
+│   ├── themes/          # 라이트/다크 테마 토큰
+│   └── vendors/
+├── images/
+├── types/
+└── webfonts/</pre>
+      </div>
+
+      <div
+        style="
+          padding: 1.5rem;
+          border: var(--border-stronger);
+          border-radius: var(--radius-large);
+        "
+      >
+        <mm-text as="h2" size="18" weight="bold" style="margin-bottom: 1rem">pages/ & root</mm-text>
+        <pre style="margin: 0; font-size: var(--font-size-12); line-height: 1.8; overflow-x: auto">pages/
+├── home/                # 홈 페이지
+├── components/          # 컴포넌트 문서 페이지
+│   ├── button/
+│   ├── text/
+│   ├── input/
+│   └── ...
+├── patterns/            # 패턴 페이지
+│   ├── auth/
+│   ├── checkout/
+│   ├── tokens/
+│   └── ...
+└── my/                  # 개인 콘텐츠
+    ├── books/
+    └── films/
+
+(root)
+├── index.html           # Webpack HTML 템플릿
+├── index.ts             # 글로벌 엔트리
+├── base-element.ts      # BaseElement (HTMLElement 확장)
+├── webpack.config.js
+├── tsconfig.json
+└── .github/
+    └── workflows/
+        └── webpack.yml  # CI/CD</pre>
+      </div>
+    </div>
+  </section>
 </main>
 
 <!-- <main class="event" hidden>

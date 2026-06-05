@@ -31,7 +31,6 @@
       type="'primary' | 'secondary' | 'tertiary' | 'destructive' | 'text' = 'tertiary'"
     ></mm-prop>
     <mm-prop name="size" type="'medium' | 'large' = 'medium'"></mm-prop>
-    <mm-prop name="status" type="string" optional></mm-prop>
     <mm-prop name="isFullWidth" type="boolean" optional></mm-prop>
     <mm-prop name="disabled" type="boolean" optional></mm-prop>
     <mm-prop name="icon" type="string" optional></mm-prop>
@@ -50,6 +49,7 @@
     <mm-token name="--button-text-weight" default="var(--font-weight-bold)"></mm-token>
   </mm-component-tokens>
 
+  <!-- TODO 내부 청결 다른 다른 페이지에서 -->
   <mm-component-anatomy
     parts='[
       "컨테이너 — variant·size로 형태와 위계를 정의하고 클릭 영역을 만듭니다.",
@@ -340,20 +340,6 @@
         </mm-filter-button-group>
       </div>
     </mm-flex>
-    <mm-component-tokens>
-      <mm-token
-        name="--filter-button-selected-color"
-        default="var(--selection-background)"
-      ></mm-token>
-      <mm-token
-        name="--filter-button-selected-border-color"
-        default="var(--selection-indicator-color)"
-      ></mm-token>
-      <mm-token
-        name="--filter-button-selected-text-color"
-        default="var(--selection-foreground)"
-      ></mm-token>
-    </mm-component-tokens>
   </mm-component-section>
   <mm-component-section
     title="SortButton"

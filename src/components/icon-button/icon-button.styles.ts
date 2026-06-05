@@ -5,6 +5,7 @@ export const iconButtonStyles = css`
     --button-size: var(--size-medium);
     --button-color: var(--color-background-subtle);
     --button-radius: var(--radius);
+    --button-border: 1px solid var(--color-border);
     --button-text-color: var(--color-foreground);
     --button-color-focus: #007185;
     --button-color-active-bg: #f0b800;
@@ -17,17 +18,13 @@ export const iconButtonStyles = css`
     border: 0;
     font-family: var(--font-family);
     font-size: inherit;
-  }
-
-  .icon-button {
-    font-family: var(--font-family);
-    font-size: inherit;
 
     display: inline-flex;
     align-items: center;
     justify-content: center;
     width: var(--button-size);
     height: var(--button-size);
+    border: var(--button-border);
     border-radius: var(--button-radius);
     background: var(--button-color);
     color: var(--button-text-color);
@@ -69,35 +66,29 @@ export const iconButtonStyles = css`
     }
   }
 
-  :host([variant='primary']) .icon-button {
+  :host([variant='primary']) button {
     background-color: var(--color-primary);
     --button-text-color: #fff;
   }
 
-  :host([variant='plain']) .icon-button {
+  :host([variant='plain']) button {
     background-color: transparent;
     border: none;
   }
 
-  :host([variant='navigator']) .icon-button {
+  :host([variant='navigator']) button {
     border: var(--border);
     border-radius: 50%;
     box-shadow: var(--shadow);
     background-color: var(--color-background);
   }
 
-  :host([variant='clear']) .icon-button {
+  :host([variant='clear']) button {
     --button-size: var(--size-small);
     box-shadow: var(--shadow);
   }
 
-  :host([size='small']) .icon-button {
+  :host([size='small']) button {
     --button-size: var(--size-small);
-  }
-
-  /* brutal: variant가 element-level border를 설정하므로 :host-context로 덮어
-     모든 아이콘 버튼에 #000 보더 적용 (base에 border가 없어 full border 지정) */
-  :host-context([data-theme='brutal']) .icon-button {
-    border: var(--border-stronger);
   }
 `

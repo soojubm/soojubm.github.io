@@ -21,10 +21,6 @@ export class Token extends LitElement {
         display: contents;
       }
 
-      dt {
-        font-size: var(--font-size-14);
-      }
-
       .meta {
         display: flex;
         flex-direction: column;
@@ -35,9 +31,7 @@ export class Token extends LitElement {
   render() {
     return html`
       <dt>${this.name}</dt>
-      <dd class="meta">
-        ${this.default ? html`<mm-text>${this.default}</mm-text>` : ''}
-      </dd>
+      <dd class="meta">${this.default ? html`<mm-text>${this.default}</mm-text>` : ''}</dd>
     `
   }
 }
@@ -66,7 +60,7 @@ export class ComponentTokens extends LitElement {
       dl {
         display: grid;
         grid-template-columns: auto 1fr;
-        gap: var(--space-2) var(--space-4);
+        gap: var(--space-2) 1.5rem;
         margin: 0;
       }
 

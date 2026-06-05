@@ -32,6 +32,9 @@ export class ReadMoreButton extends Button {
         text-transform: none;
         height: auto;
 
+        color: var(--color-foreground);
+        background: transparent;
+
         &:hover {
           border-color: transparent;
         }

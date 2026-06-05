@@ -31,7 +31,10 @@
     <mm-token name="--toggle-border" default="1px solid var(--color-border-strong)"></mm-token>
     <mm-token name="--toggle-text-color" default="var(--color-foreground)"></mm-token>
     <mm-token name="--toggle-selected-color" default="var(--selection-background)"></mm-token>
-    <mm-token name="--toggle-selected-border-color" default="var(--selection-indicator-color)"></mm-token>
+    <mm-token
+      name="--toggle-selected-border-color"
+      default="var(--selection-indicator-color)"
+    ></mm-token>
     <mm-token name="--toggle-selected-text-color" default="var(--selection-foreground)"></mm-token>
     <mm-token name="--toggle-group-background" default="var(--color-background-subtle)"></mm-token>
   </mm-component-tokens>
@@ -62,10 +65,26 @@
         ]'
       ></mm-toggle-button-group>
 
-      <mm-list-marker variant="number" value="1" style="position: absolute; left: -1.75rem; top: 50%; transform: translateY(-50%)"></mm-list-marker>
-      <mm-list-marker variant="number" value="2" style="position: absolute; left: 50%; top: -1.75rem; transform: translateX(-50%)"></mm-list-marker>
-      <mm-list-marker variant="number" value="3" style="position: absolute; left: 25%; bottom: -1.75rem; transform: translateX(-50%)"></mm-list-marker>
-      <mm-list-marker variant="number" value="4" style="position: absolute; left: 50%; bottom: -1.75rem; transform: translateX(-50%)"></mm-list-marker>
+      <mm-list-marker
+        variant="number"
+        value="1"
+        style="position: absolute; left: -1.75rem; top: 50%; transform: translateY(-50%)"
+      ></mm-list-marker>
+      <mm-list-marker
+        variant="number"
+        value="2"
+        style="position: absolute; left: 50%; top: -1.75rem; transform: translateX(-50%)"
+      ></mm-list-marker>
+      <mm-list-marker
+        variant="number"
+        value="3"
+        style="position: absolute; left: 25%; bottom: -1.75rem; transform: translateX(-50%)"
+      ></mm-list-marker>
+      <mm-list-marker
+        variant="number"
+        value="4"
+        style="position: absolute; left: 50%; bottom: -1.75rem; transform: translateX(-50%)"
+      ></mm-list-marker>
     </div>
   </mm-component-anatomy>
 
@@ -131,7 +150,7 @@
 
   <mm-component-section
     title="BookmarkButton"
-    description="ToggleButton을 확장한 아이콘 전용 토글. shape으로 별·북마크·하트를 선택합니다."
+    description="ToggleButton을 확장한 아이콘 전용 토글. shape으로 별·북마크·하트를 선택합니다. TODO selected token 활용여부"
   >
     <mm-button-group>
       <mm-bookmark-button shape="star"></mm-bookmark-button>
@@ -144,7 +163,11 @@
   </mm-component-section>
 
   <mm-component-references>
-    <mm-link external href="https://m3.material.io/components/button-groups/overview">MD3 Button groups</mm-link>
-    <mm-link external href="https://polaris-react.shopify.com/components/lists/resource-list">Shopify Resource list</mm-link>
+    <mm-link external href="https://m3.material.io/components/button-groups/overview"
+      >MD3 Button groups</mm-link
+    >
+    <mm-link external href="https://polaris-react.shopify.com/components/lists/resource-list"
+      >Shopify Resource list</mm-link
+    >
   </mm-component-references>
 </main>
