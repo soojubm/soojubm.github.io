@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 import { textStyles } from '../text.styles'
 import '../../domains/indicators/list-marker'
 
-type Variant = 'check' | 'dot' | 'number'
+type Variant = 'check' | 'number'
 
 @customElement('mm-text-list')
 class TextList extends LitElement {

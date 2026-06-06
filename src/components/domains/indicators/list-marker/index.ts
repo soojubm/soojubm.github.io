@@ -2,7 +2,7 @@ import { LitElement, css, html, svg } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { resetStyles } from '../../../../stylesheets/shared/reset.styles'
 
-type Variant = 'number' | 'dot' | 'check'
+type Variant = 'number' | 'check'
 
 @customElement('mm-list-marker')
 export class ListMarker extends LitElement {
@@ -31,11 +31,6 @@ export class ListMarker extends LitElement {
         font-weight: var(--font-weight-bold);
       }
 
-      :host([variant='dot']) {
-        width: var(--size-tiny);
-        height: var(--size-tiny);
-      }
-
       svg {
         width: 0.5rem;
         height: 0.5rem;
@@ -60,7 +55,6 @@ export class ListMarker extends LitElement {
 
   render() {
     if (this.variant === 'check') return this.renderCheck()
-    if (this.variant === 'dot') return html``
     return html`${this.value}`
   }
 }
