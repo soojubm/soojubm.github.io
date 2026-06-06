@@ -1,7 +1,7 @@
 import applyTheme from '../theme'
 
-import '/src/components/navbar/navbar.css'
-import '/src/components/footer/footer.css'
+import '../../components/navbar/navbar.css'
+import '../../components/footer/footer.css'
 
 const OPENED_MENU_CLASSNAME = 'is-menu-opened'
 const isOpendNavbarMenu = () => document.body.classList.contains(OPENED_MENU_CLASSNAME)

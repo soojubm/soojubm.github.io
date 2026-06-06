@@ -1,7 +1,7 @@
-import '/src/components/navbar/navbar'
-import '/src/components/footer/footer'
+import '../src/components/navbar/navbar'
+import '../src/components/footer/footer'
 
-import '/src/stylesheets/shared.css'
+import '../src/stylesheets/shared.css'
 
 const layoutStyles = `
   <style>
