@@ -1,5 +1,5 @@
 import { LitElement, html, css } from 'lit'
-import { customElement, property, state } from 'lit/decorators.js'
+import { customElement, property, query, state } from 'lit/decorators.js'
 import { inputStyles } from '../input.styles'
 
 let uniqueIdCounter = 0
@@ -11,12 +11,59 @@ export class Textarea extends LitElement {
   @property({ type: String }) placeholder = ''
   @property({ type: String }) label = ''
   @property({ type: String }) helper = ''
+  @property({ type: Number }) rows = 3
   @property({ type: Boolean, attribute: 'is-optional' }) isOptional = false
   @property({ type: Boolean, attribute: 'hidden-label', reflect: true }) hiddenLabel = false
   @property({ type: Boolean, reflect: true }) disabled = false
   @property({ type: Boolean, attribute: 'aria-invalid', reflect: true }) isInvalid = false
 
+  @query('textarea') protected _textarea!: HTMLTextAreaElement
+
   @state() protected _textareaId = `mm-textarea-${uniqueIdCounter++}`
+
+  protected get maxVisibleRows() {
+    return 5
+  }
+
+  protected updated(changedProperties: Map<string, unknown>) {
+    if (changedProperties.has('value')) {
+      this._autoResize()
+    }
+  }
+
+  protected _autoResize() {
+    if (!this._textarea) return
+    const computedStyle = window.getComputedStyle(this._textarea)
+    const fontSize = Number.parseFloat(computedStyle.fontSize)
+    const lineHeight = Number.parseFloat(computedStyle.lineHeight) || fontSize * 1.2
+    const paddingBlock =
+      Number.parseFloat(computedStyle.paddingTop) + Number.parseFloat(computedStyle.paddingBottom)
+    const maxHeight = lineHeight * this.maxVisibleRows + paddingBlock
+
+    this._textarea.style.height = 'auto'
+    const nextHeight = Math.min(this._textarea.scrollHeight, maxHeight)
+    this._textarea.style.height = `${nextHeight}px`
+    this._textarea.style.overflowY = this._textarea.scrollHeight > maxHeight ? 'auto' : 'hidden'
+  }
+
+  protected _onInput(event: InputEvent) {
+    const target = event.target as HTMLTextAreaElement
+    this.value = target.value
+    this._autoResize()
+    this._dispatchInputEvent(target.value)
+  }
+
+  protected _onKeyDown(_event: KeyboardEvent) {}
+
+  private _dispatchInputEvent(value: string) {
+    this.dispatchEvent(
+      new CustomEvent('input', {
+        detail: { value },
+        bubbles: true,
+        composed: true,
+      }),
+    )
+  }
 
   static styles = [
     inputStyles,
@@ -40,39 +87,13 @@ export class Textarea extends LitElement {
     `,
   ]
 
-  protected get textareaClasses() {
-    return 'reset-input textfield-input'
-  }
-
-  protected get textareaRows() {
-    return 3
-  }
-
-  protected _onInput(event: InputEvent) {
-    const target = event.target as HTMLTextAreaElement
-    this.value = target.value
-    this._dispatchInputEvent(target.value)
-  }
-
-  protected _onKeyDown(_event: KeyboardEvent) {}
-
-  private _dispatchInputEvent(value: string) {
-    this.dispatchEvent(
-      new CustomEvent('input', {
-        detail: { value },
-        bubbles: true,
-        composed: true,
-      }),
-    )
-  }
-
   protected renderTextarea() {
     const helperId = `${this._textareaId}-helper`
     return html`
       <div class="textfield-control">
         <textarea
           id="${this._textareaId}"
-          rows="${this.textareaRows}"
+          rows="${this.rows}"
           .value="${this.value}"
           name="${this.name}"
           placeholder="${this.placeholder}"

@@ -1,21 +1,20 @@
-import { LitElement, html, css } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
-import { textfieldStyles } from '../../input/semantics/textfield.styles'
+import { LitElement, css, html } from 'lit'
+import { customElement, property, query } from 'lit/decorators.js'
+import { inputStyles } from '../../input/input.styles'
+import { PromptInputTextarea } from './prompt-input-textarea'
 
 @customElement('mm-prompt-input')
 export class PromptInput extends LitElement {
   @property({ type: String, reflect: true }) value = ''
   @property({ type: Boolean, attribute: 'is-loading', reflect: true }) isLoading = false
 
+  @query('slot') private _slot!: HTMLSlotElement
+
   static styles = [
-    ...textfieldStyles,
+    inputStyles,
     css`
       :host {
-        --prompt-input-border-color: var(--color-border, #e4e4e7);
-        --prompt-input-border-color-focus: var(--color-foreground, #09090b);
-        --prompt-input-radius: 12px;
-        --prompt-input-padding: 12px;
-        --prompt-input-background: var(--color-background);
+        display: block;
       }
 
       .textfield-control {
@@ -32,6 +31,28 @@ export class PromptInput extends LitElement {
     this.addEventListener('prompt-textarea-submit', this._handleTextareaSubmit as EventListener)
   }
 
+  protected updated(changedProperties: Map<string, unknown>) {
+    if (changedProperties.has('value')) {
+      this._syncTextareaValue()
+    }
+  }
+
+  private get _textarea() {
+    return this._slot
+      ?.assignedElements({ flatten: true })
+      .find(element => element instanceof PromptInputTextarea) as PromptInputTextarea | undefined
+  }
+
+  private _syncTextareaValue() {
+    const textarea = this._textarea
+    if (!textarea || textarea.value === this.value) return
+    textarea.value = this.value
+  }
+
+  private _handleSlotChange() {
+    this._syncTextareaValue()
+  }
+
   private _handleTextareaInput(e: CustomEvent) {
     this.value = e.detail.value
     // 부모 컴포넌트(React/Vue 등 외부 환경)로 value 변경 알림
@@ -46,6 +67,6 @@ export class PromptInput extends LitElement {
   }
 
   render() {
-    return html`<div class="textfield-control"><slot></slot></div>` // 하위 요소들이 자유롭게 배치될 공간
+    return html`<div class="textfield-control"><slot @slotchange=${this._handleSlotChange}></slot></div>`
   }
 }

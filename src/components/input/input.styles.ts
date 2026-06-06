@@ -24,7 +24,7 @@ export const inputStyles = css`
     }
   }
 
-  textarea textarea:focus-visible,
+  textarea:focus-visible,
   input:focus-visible {
     outline: 0;
   }
