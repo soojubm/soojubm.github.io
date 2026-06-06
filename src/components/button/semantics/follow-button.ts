@@ -1,6 +1,7 @@
 import { css, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 import { resetStyles } from '../../../stylesheets/shared/reset.styles'
+import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
 import { ToggleButton } from './toggle-button'
 import '../button'
 
@@ -28,7 +29,7 @@ export class FollowButton extends ToggleButton {
   override render() {
     return html`
       <mm-button
-        icon=${this.selected ? 'check' : 'plus'}
+        icon=${this.selected ? ICON_NAMES.CHECK : ICON_NAMES.ADD}
         ?disabled=${this.disabled}
         aria-pressed=${this.selected ? 'true' : 'false'}
         @click=${this.handleClick}

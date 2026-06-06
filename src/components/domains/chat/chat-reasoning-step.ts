@@ -1,6 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { resetStyles } from '../../../stylesheets/shared/reset.styles'
+import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
 
 /**
  * 답변 과정의 개별 단계.
@@ -104,7 +105,7 @@ export class ChatReasoningStep extends LitElement {
     return html`
       <span class="marker">
         ${this.done
-          ? html`<mm-icon class="check" name="check-circle-solid"></mm-icon>`
+          ? html`<mm-icon class="check" name=${ICON_NAMES.DONE}></mm-icon>`
           : html`<span class="dot"></span>`}
       </span>
       <span class="content"><slot></slot></span>

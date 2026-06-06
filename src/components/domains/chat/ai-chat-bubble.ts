@@ -1,5 +1,6 @@
 import { css, html } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
+import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
 import { ChatBubbleBase } from './chat-bubble'
 
 /**
@@ -92,21 +93,21 @@ export class AiChatBubble extends ChatBubbleBase {
               <mm-icon-button
                 size="small"
                 variant="plain"
-                icon="copy"
+                icon=${ICON_NAMES.COPY}
                 aria-label="복사"
                 @click=${(event: Event) => this.emitReaction(event, 'copy')}
               ></mm-icon-button>
               <mm-icon-button
                 size="small"
                 variant="plain"
-                icon="thumbs-up"
+                icon=${ICON_NAMES.THUMBS_UP}
                 aria-label="좋아요"
                 @click=${(event: Event) => this.emitReaction(event, 'like')}
               ></mm-icon-button>
               <mm-icon-button
                 size="small"
                 variant="plain"
-                icon="thumbs-down"
+                icon=${ICON_NAMES.DISLIKE}
                 aria-label="싫어요"
                 @click=${(event: Event) => this.emitReaction(event, 'dislike')}
               ></mm-icon-button>

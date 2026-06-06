@@ -3,6 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 import '../dropdown/dropdown'
 import '../icon-button/icon-button'
 import { getPreferredTheme, saveTheme, THEMES, type Theme } from '../../javascripts/theme'
+import { ICON_NAMES } from '../icon-button/semantics/icon-names'
 
 @customElement('mm-theme-switcher')
 export class ThemeSwitcher extends LitElement {
@@ -26,7 +27,7 @@ export class ThemeSwitcher extends LitElement {
   }
 
   private get currentIcon(): string {
-    return THEMES.find(theme => theme.value === this.value)?.icon ?? 'sun-light'
+    return THEMES.find(theme => theme.value === this.value)?.icon ?? ICON_NAMES.LIGHT_MODE
   }
 
   // 선택 시 테마를 저장하고 현재 값을 동기화

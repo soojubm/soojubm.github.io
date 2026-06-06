@@ -10,7 +10,7 @@ import { ICON_NAMES } from './icon-names'
 export class CloseButton extends IconButton {
   constructor() {
     super()
-    this.icon = ICON_NAMES.XMARK
+    this.icon = ICON_NAMES.CLOSE
     this.variant = 'navigator'
     this.ariaLabel = '닫기'
   }

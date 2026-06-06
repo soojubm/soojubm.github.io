@@ -61,7 +61,7 @@ export class CopyButton extends IconButton {
         aria-label=${this.copied ? '복사됨' : this.ariaLabel}
         @click=${this._handleClick}
       >
-        <mm-icon name=${this.copied ? ICON_NAMES.CHECK : ICON_NAMES.COPY}></mm-icon>
+        <mm-icon name=${this.copied ? ICON_NAMES.COPY_SUCCESS : ICON_NAMES.COPY}></mm-icon>
       </button>
     `
   }

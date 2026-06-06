@@ -1,6 +1,7 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { resetStyles } from '../../../stylesheets/shared/reset.styles'
+import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
 
 @customElement('mm-portfolio-item')
 export class PortfolioItem extends LitElement {
@@ -118,7 +119,11 @@ export class PortfolioItem extends LitElement {
         @keydown=${this.handleKeyDown}
       >
         ${this.badge ? html`<mm-accent-tag class="badge">${this.badge}</mm-accent-tag>` : nothing}
-        <mm-icon-button class="action" variant="navigator" icon="more-vert"></mm-icon-button>
+        <mm-icon-button
+          class="action"
+          variant="navigator"
+          icon=${ICON_NAMES.MORE_ACTIONS}
+        ></mm-icon-button>
         ${this.src ? html`<mm-thumbnail src=${this.src} alt=${this.alt}></mm-thumbnail>` : nothing}
         <div class="content">
           ${this.label ? html`<mm-text size="18" weight="bold">${this.label}</mm-text>` : nothing}

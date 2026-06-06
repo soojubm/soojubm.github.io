@@ -1,5 +1,6 @@
 import { html, nothing } from 'lit'
 import { customElement } from 'lit/decorators.js'
+import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
 import { Textfield } from './textfield'
 
 @customElement('mm-searchfield')
@@ -37,7 +38,7 @@ class SearchField extends Textfield {
   }
 
   protected override renderLeading(): unknown {
-    return html`<mm-icon class="searchfield-leading" name="search"></mm-icon>`
+    return html`<mm-icon class="searchfield-leading" name=${ICON_NAMES.SEARCH}></mm-icon>`
   }
 
   protected override renderTrailing(): unknown {

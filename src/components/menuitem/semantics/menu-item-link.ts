@@ -1,6 +1,7 @@
 import { html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
+import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
 import { MenuItemRow } from '../menu-item-row'
 
 @customElement('mm-menu-item-link')
@@ -10,7 +11,7 @@ export class MenuItemLink extends MenuItemRow {
   protected override renderAction() {
     return html`
       <span slot="trailing">
-        <mm-icon name="arrow-up-right" size="small"></mm-icon>
+        <mm-icon name=${ICON_NAMES.SHARE} size="small"></mm-icon>
       </span>
     `
   }

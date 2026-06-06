@@ -1,5 +1,6 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { ICON_NAMES } from '../icon-button/semantics/icon-names'
 
 interface BottomBarItem {
   label: string
@@ -10,9 +11,9 @@ interface BottomBarItem {
 }
 
 const defaultItems: BottomBarItem[] = [
-  { label: '홈', href: '#', icon: 'air-conditioner', active: true, badge: true },
-  { label: '카테고리', href: '#', icon: 'air-conditioner' },
-  { label: '설정', href: '#', icon: 'air-conditioner' },
+  { label: '홈', href: '#', icon: ICON_NAMES.HOME, active: true, badge: true },
+  { label: '카테고리', href: '#', icon: ICON_NAMES.HOME },
+  { label: '설정', href: '#', icon: ICON_NAMES.HOME },
 ]
 
 @customElement('mm-bottom-bar')
@@ -77,7 +78,7 @@ class BottomBar extends LitElement {
               href=${item.href ?? '#'}
               aria-current=${item.active ? 'page' : nothing}
             >
-              <mm-avatar variant="tertiary" icon=${item.icon ?? 'air-conditioner'}></mm-avatar>
+              <mm-avatar variant="tertiary" icon=${item.icon ?? ICON_NAMES.HOME}></mm-avatar>
               <mm-text size="12">${item.label}</mm-text>
               ${item.badge ? html`<em aria-hidden="true"></em>` : nothing}
             </a>

@@ -1,5 +1,6 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
+import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
 
 /**
  * 댓글 목록의 개별 항목.
@@ -130,7 +131,7 @@ export class CommentItem extends LitElement {
                 <mm-icon-button
                   slot="trailing"
                   variant="navigator"
-                  icon="more-vert"
+                  icon=${ICON_NAMES.MORE_ACTIONS}
                   aria-label="댓글 메뉴"
                   aria-haspopup="true"
                   aria-expanded=${this._menuOpen ? 'true' : 'false'}

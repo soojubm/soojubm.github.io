@@ -1,11 +1,12 @@
 import { LitElement, html } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
+import { ICON_NAMES } from '../icon-button/semantics/icon-names'
 import { noticeStyles } from './notice.styles'
 
 const VARIANT_ICONS: Record<string, string> = {
-  success: 'check-circle',
-  warning: 'warning-triangle',
-  danger: 'warning-circle',
+  success: ICON_NAMES.SUCCESS,
+  warning: ICON_NAMES.WARNING,
+  danger: ICON_NAMES.DANGER,
 }
 
 @customElement('mm-notice')
@@ -20,7 +21,7 @@ class Notice extends LitElement {
   static styles = [noticeStyles]
 
   private get icon() {
-    return VARIANT_ICONS[this.variant] ?? 'info-circle'
+    return VARIANT_ICONS[this.variant] ?? ICON_NAMES.INFO
   }
 
   private dismiss() {

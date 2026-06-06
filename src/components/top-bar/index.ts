@@ -1,5 +1,6 @@
 import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { ICON_NAMES } from '../icon-button/semantics/icon-names'
 import { topBarStyles } from './top-bar.styles'
 
 @customElement('mm-top-bar')
@@ -15,12 +16,12 @@ class TopBar extends LitElement {
     return html`
       <header role="navigation" class="top-bar" data-variant="${this.variant}">
         ${this.nav === 'back'
-          ? html`<mm-icon-button variant="navigator" icon="arrow-left"></mm-icon-button>`
+          ? html`<mm-icon-button variant="navigator" icon=${ICON_NAMES.BACK}></mm-icon-button>`
           : ''}
         <mm-text size="18" class="top-bar-title">${this.title}</mm-text>
         <slot name="action"></slot>
         ${this.nav === 'close'
-          ? html`<mm-icon-button variant="navigator" icon="xmark"></mm-icon-button>`
+          ? html`<mm-icon-button variant="navigator" icon=${ICON_NAMES.CLOSE}></mm-icon-button>`
           : ''}
       </header>
     `

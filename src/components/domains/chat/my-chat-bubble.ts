@@ -1,5 +1,6 @@
 import { css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
 import { ChatBubbleBase } from './chat-bubble'
 
 /**
@@ -93,7 +94,7 @@ export class MyChatBubble extends ChatBubbleBase {
           <mm-icon-button
             size="small"
             variant="plain"
-            icon="refresh-double"
+            icon=${ICON_NAMES.RETRY}
             aria-label="재전송"
             @click=${this.handleRetry}
           ></mm-icon-button>

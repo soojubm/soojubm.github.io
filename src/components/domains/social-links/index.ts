@@ -1,14 +1,15 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
 import { resetStyles } from '../../../stylesheets/shared/reset.styles'
 
 const PLATFORMS = [
-  { key: 'github', label: 'Github' },
-  { key: 'pinterest', label: 'Pinterest' },
-  { key: 'facebook', label: 'Facebook' },
-  { key: 'twitter', label: 'Twitter' },
-  { key: 'instagram', label: 'Instagram' },
-  { key: 'notion', label: 'Notion', icon: 'people-tag' },
+  { key: 'github', label: 'Github', icon: ICON_NAMES.GITHUB },
+  { key: 'pinterest', label: 'Pinterest', icon: ICON_NAMES.PINTEREST },
+  { key: 'facebook', label: 'Facebook', icon: ICON_NAMES.FACEBOOK },
+  { key: 'twitter', label: 'Twitter', icon: ICON_NAMES.TWITTER },
+  { key: 'instagram', label: 'Instagram', icon: ICON_NAMES.INSTAGRAM },
+  { key: 'notion', label: 'Notion', icon: ICON_NAMES.PEOPLE_TAG },
 ] as const
 
 type PlatformKey = typeof PLATFORMS[number]['key']
@@ -41,10 +42,10 @@ export class SocialLinks extends LitElement {
   ]
 
   private get activeLinks() {
-    return PLATFORMS.flatMap(({ key, label, ...rest }) => {
+    return PLATFORMS.flatMap(({ key, label, icon }) => {
       const href = this[key as PlatformKey]
       if (!href) return []
-      return [{ key, label, icon: 'icon' in rest ? rest.icon : key, href }]
+      return [{ key, label, icon, href }]
     })
   }
 

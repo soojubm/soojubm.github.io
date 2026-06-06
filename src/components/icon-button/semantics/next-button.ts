@@ -6,7 +6,7 @@ import { ICON_NAMES } from './icon-names'
 export class NextButton extends IconButton {
   constructor() {
     super()
-    this.icon = ICON_NAMES.ARROW_RIGHT
+    this.icon = ICON_NAMES.NEXT
     this.variant = 'navigator'
     this.ariaLabel = '다음'
   }

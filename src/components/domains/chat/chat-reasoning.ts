@@ -1,6 +1,7 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { resetStyles } from '../../../stylesheets/shared/reset.styles'
+import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
 
 /**
  * AI 답변 과정(추론 단계)을 접을 수 있는 형태로 보여주는 컨테이너.
@@ -152,13 +153,13 @@ export class ChatReasoning extends LitElement {
           <span class="lead">
             ${this.thinking
               ? html`<span class="spinner" role="status" aria-label="생각하는 중"></span>`
-              : html`<mm-icon name="sparks"></mm-icon>`}
+              : html`<mm-icon name=${ICON_NAMES.SPARKS}></mm-icon>`}
           </span>
           <span class="label">${this.label}</span>
           ${this.duration && !this.thinking
             ? html`<span class="duration">${this.duration}</span>`
             : nothing}
-          <mm-icon class="chevron" name="nav-arrow-right"></mm-icon>
+          <mm-icon class="chevron" name=${ICON_NAMES.SITEMAP}></mm-icon>
         </button>
         <div class="panel">
           <div class="panel-inner">

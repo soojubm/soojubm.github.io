@@ -1,5 +1,6 @@
 import { css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
 import { ToggleButton } from './toggle-button'
 
 /**
@@ -35,14 +36,14 @@ export class BookmarkButton extends ToggleButton {
 
   private get iconName() {
     const filled = {
-      star: 'star-solid',
-      bookmark: 'bookmark-solid',
-      heart: 'heart-solid',
+      star: ICON_NAMES.FAVORITE_SELECTED,
+      bookmark: ICON_NAMES.BOOKMARK_SELECTED,
+      heart: ICON_NAMES.LIKE_SELECTED,
     }
     const outline = {
-      star: 'star',
-      bookmark: 'bookmark',
-      heart: 'heart',
+      star: ICON_NAMES.FAVORITE,
+      bookmark: ICON_NAMES.BOOKMARK,
+      heart: ICON_NAMES.LIKE,
     }
     return this.selected ? filled[this.shape] : outline[this.shape]
   }

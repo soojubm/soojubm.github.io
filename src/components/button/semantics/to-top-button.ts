@@ -1,6 +1,7 @@
 import { LitElement, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 import { resetStyles } from '../../../stylesheets/shared/reset.styles'
+import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
 
 @customElement('mm-to-top-button')
 export class ToTopButton extends LitElement {
@@ -14,7 +15,7 @@ export class ToTopButton extends LitElement {
     return html`
       <mm-icon-button
         variant="navigator"
-        icon="arrow-up"
+        icon=${ICON_NAMES.SCROLL_TOP}
         aria-label="맨 위로"
         @click=${this.handleClick}
       ></mm-icon-button>

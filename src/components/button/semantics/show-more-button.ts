@@ -1,6 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { resetStyles } from '../../../stylesheets/shared/reset.styles'
+import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
 
 /**
  * 더보기/접기 토글 버튼.
@@ -45,7 +46,7 @@ export class ShowMoreButton extends LitElement {
     return html`
       <mm-button
         variant="tertiary"
-        icon="nav-arrow-down"
+        icon=${ICON_NAMES.EXPAND}
         icon-position="trailing"
         @click=${this.handleClick}
         aria-expanded=${this.expanded}

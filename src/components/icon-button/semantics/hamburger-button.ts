@@ -20,7 +20,7 @@ export class HamburgerButton extends PopupTriggerMixin(IconButton) {
 
   constructor() {
     super()
-    this.icon = ICON_NAMES.MENU_SCALE
+    this.icon = ICON_NAMES.MENU
     this.variant = 'plain'
   }
 

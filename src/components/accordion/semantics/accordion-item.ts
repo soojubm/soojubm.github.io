@@ -1,6 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { resetStyles } from '../../../stylesheets/shared/reset.styles'
+import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
 
 /**
  * 개별 아코디언 항목.
@@ -121,7 +122,7 @@ export class AccordionItem extends LitElement {
           @click=${this._toggle}
         >
           <slot name="summary">${this.summary}</slot>
-          <mm-icon class="icon" name="nav-arrow-right"></mm-icon>
+          <mm-icon class="icon" name=${ICON_NAMES.SITEMAP}></mm-icon>
         </button>
 
         <div class="panel" aria-hidden=${this.open ? 'false' : 'true'}>

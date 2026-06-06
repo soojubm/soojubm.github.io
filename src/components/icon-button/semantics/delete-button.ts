@@ -26,7 +26,7 @@ export class DeleteButton extends IconButton {
 
   constructor() {
     super()
-    this.icon = ICON_NAMES.TRASH
+    this.icon = ICON_NAMES.DELETE
     this.variant = 'destructive'
     this.ariaLabel = '삭제'
   }

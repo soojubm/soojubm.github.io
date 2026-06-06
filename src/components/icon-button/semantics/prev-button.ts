@@ -6,7 +6,7 @@ import { ICON_NAMES } from './icon-names'
 export class PrevButton extends IconButton {
   constructor() {
     super()
-    this.icon = ICON_NAMES.ARROW_LEFT
+    this.icon = ICON_NAMES.PREVIOUS
     this.variant = 'navigator'
     this.ariaLabel = '이전'
   }

@@ -1,5 +1,6 @@
 import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
 
 type ViewMode = 'grid' | 'list'
 
@@ -8,8 +9,8 @@ export class ViewModeSwitcher extends LitElement {
   @property({ type: String, reflect: true }) value: ViewMode = 'grid'
 
   private readonly options = JSON.stringify([
-    { value: 'grid', icon: 'view-grid', ariaLabel: '그리드 보기' },
-    { value: 'list', icon: 'table-rows', ariaLabel: '목록 보기' },
+    { value: 'grid', icon: ICON_NAMES.GRID_VIEW, ariaLabel: '그리드 보기' },
+    { value: 'list', icon: ICON_NAMES.LIST_VIEW, ariaLabel: '목록 보기' },
   ])
 
   private get selectedIndex() {

@@ -1,5 +1,6 @@
 import { LitElement, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
+import { ICON_NAMES } from '../icon-button/semantics/icon-names'
 
 @customElement('mm-navbar')
 export class Navbar extends LitElement {
@@ -20,7 +21,7 @@ export class Navbar extends LitElement {
           <mm-theme-switcher></mm-theme-switcher>
           <div style="position: relative">
             <mm-icon-button
-              icon="profile-circle"
+              icon=${ICON_NAMES.PROFILE}
               class="navbar-user-trigger js-navbar-user-trigger"
               aria-haspopup="menu"
               aria-expanded="false"
@@ -46,10 +47,13 @@ export class Navbar extends LitElement {
                 </div>
                 <mm-separator></mm-separator>
                 <mm-menu-item-group>
-                  <mm-menu-item-row icon="megaphone" label="고객센터 및 도움말"></mm-menu-item-row>
+                  <mm-menu-item-row
+                    icon=${ICON_NAMES.ANNOUNCEMENT}
+                    label="고객센터 및 도움말"
+                  ></mm-menu-item-row>
                 </mm-menu-item-group>
                 <mm-separator></mm-separator>
-                <mm-menu-item-row icon="log-out" label="로그아웃"></mm-menu-item-row>
+                <mm-menu-item-row icon=${ICON_NAMES.LOG_OUT} label="로그아웃"></mm-menu-item-row>
                 <mm-separator></mm-separator>
                 <mm-flex style="margin-top: -0.25rem">
                   <mm-link variant="secondary" href="#">개인정보처리방침</mm-link>

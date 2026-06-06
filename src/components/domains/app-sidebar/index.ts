@@ -1,6 +1,7 @@
 import { LitElement, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 import { SITEMAP } from '../../../sitemap'
+import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
 
 @customElement('mm-sidebar')
 export class Sidebar extends LitElement {
@@ -76,7 +77,7 @@ export class Sidebar extends LitElement {
                 >
                   <mm-avatar slot="avatar" variant="tertiary" icon="${node.icon}"> </mm-avatar>
                   <mm-text size="14">${node.title}</mm-text>
-                  <div style="margin-left: auto"><mm-icon name="nav-arrow-down"></mm-icon></div>
+                  <div style="margin-left: auto"><mm-icon name=${ICON_NAMES.EXPAND}></mm-icon></div>
                 </button>
 
                 <menu id="${node.id}-menu" aria-labelledby="${node.id}-btn">

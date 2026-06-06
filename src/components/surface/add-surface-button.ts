@@ -1,5 +1,6 @@
 import { LitElement, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
+import { ICON_NAMES } from '../icon-button/semantics/icon-names'
 import '../icon/icon'
 import './surface'
 import { addSurfaceButtonStyles } from './add-surface-button.styles'
@@ -11,7 +12,7 @@ export class AddSurfaceButton extends LitElement {
   render() {
     return html`
       <button type="button">
-        <mm-icon name="plus"></mm-icon>
+        <mm-icon name=${ICON_NAMES.ADD}></mm-icon>
         <slot></slot>
       </button>
     `

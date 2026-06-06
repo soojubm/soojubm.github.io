@@ -1,5 +1,6 @@
 import { html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
 import '../../icon-button/icon-button'
 import { Textfield } from './textfield'
 import '../input'
@@ -70,7 +71,7 @@ export class NumberInput extends Textfield {
       <mm-icon-button
         variant="plain"
         size="small"
-        icon="minus"
+        icon=${ICON_NAMES.SUBTRACT}
         label="감소"
         tooltip="감소"
         tooltip-align="center"
@@ -85,7 +86,7 @@ export class NumberInput extends Textfield {
       <mm-icon-button
         variant="plain"
         size="small"
-        icon="plus"
+        icon=${ICON_NAMES.ADD}
         label="증가"
         tooltip="증가"
         tooltip-align="center"

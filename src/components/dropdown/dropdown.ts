@@ -1,6 +1,7 @@
 import { LitElement, css, html, nothing, type PropertyValues } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 import { resetStyles } from '../../stylesheets/shared/reset.styles'
+import { ICON_NAMES } from '../icon-button/semantics/icon-names'
 import '../menuitem/menu-item-row'
 import '../menuitem/semantics/menu-item-checkbox'
 
@@ -188,7 +189,7 @@ export class Dropdown extends LitElement {
       <slot name="trigger" @click="${this.toggleOpen}">
         <button class="dropdown-button" aria-haspopup="true" aria-expanded="${this.isOpen}">
           ${this.selectedLabel}
-          <mm-icon name="nav-arrow-down"></mm-icon>
+          <mm-icon name=${ICON_NAMES.EXPAND}></mm-icon>
         </button>
       </slot>
     `

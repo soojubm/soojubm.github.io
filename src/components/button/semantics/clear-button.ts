@@ -1,5 +1,6 @@
 import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
 import { buttonStyles } from '../button.styles'
 
 @customElement('mm-clear-button')
@@ -17,7 +18,7 @@ class ClearButton extends LitElement {
         aria-label="${this.label}"
         ?disabled="${this.disabled}"
       >
-        <mm-icon name="xmark"></mm-icon>
+        <mm-icon name=${ICON_NAMES.CLOSE}></mm-icon>
       </button>
     `
   }

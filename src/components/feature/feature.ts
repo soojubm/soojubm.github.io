@@ -1,16 +1,17 @@
 import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { ICON_NAMES } from '../icon-button/semantics/icon-names'
 import { featureStyles } from './feature.styles'
 
 // 컴포넌트 외부로 상수 데이터를 분리하여 메모리 재할당 방지
 const ICON_MAP: Record<string, string> = {
-  interactive: 'cursor-pointer',
-  easyScanning: 'eye-circle',
-  groupable: 'information-circle',
-  check: 'check-circle',
-  warning: 'warning-triangle',
-  error: 'alert-circle',
-  user: 'user-circle',
+  interactive: ICON_NAMES.CLICK,
+  easyScanning: ICON_NAMES.VIEW,
+  groupable: ICON_NAMES.HELP,
+  check: ICON_NAMES.SUCCESS,
+  warning: ICON_NAMES.WARNING,
+  error: ICON_NAMES.ERROR,
+  user: ICON_NAMES.USER_CIRCLE,
 }
 
 @customElement('mm-feature')

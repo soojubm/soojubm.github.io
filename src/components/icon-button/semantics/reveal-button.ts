@@ -1,6 +1,7 @@
 import { html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import IconButton from '../icon-button'
+import { ICON_NAMES } from './icon-names'
 
 /**
  * 비밀번호 등 가려진 입력값의 노출 여부를 토글하는 버튼.
@@ -48,7 +49,7 @@ export class RevealButton extends IconButton {
         aria-label=${this.revealed ? '비밀번호 숨기기' : '비밀번호 보기'}
         ?disabled=${this.disabled}
       >
-        <mm-icon name=${this.revealed ? 'eye-closed' : 'eye-solid'}></mm-icon>
+        <mm-icon name=${this.revealed ? ICON_NAMES.HIDE : ICON_NAMES.REVEAL}></mm-icon>
       </button>
     `
   }

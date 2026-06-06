@@ -24,7 +24,7 @@ export class DismissButton extends IconButton {
 
   constructor() {
     super()
-    this.icon = ICON_NAMES.XMARK
+    this.icon = ICON_NAMES.DISMISS
     this.variant = 'plain'
     this.ariaLabel = '닫기'
   }

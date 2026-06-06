@@ -1,5 +1,6 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
+import { ICON_NAMES } from '../icon-button/semantics/icon-names'
 import { avatarStyles } from './avatar.styles'
 
 @customElement('mm-avatar')
@@ -65,7 +66,7 @@ export class Avatar extends LitElement {
     return html`
       <slot @slotchange=${this.handleSlotChange}></slot>
       ${!this.hasSlottedContent
-        ? html`<mm-icon name="people-tag" size=${iconSize}></mm-icon>`
+        ? html`<mm-icon name=${ICON_NAMES.PEOPLE_TAG} size=${iconSize}></mm-icon>`
         : nothing}
     `
   }

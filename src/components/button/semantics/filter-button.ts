@@ -1,6 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { resetStyles } from '../../../stylesheets/shared/reset.styles'
+import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
 
 /**
  * 콘텐츠 필터링 옵션 버튼. mm-button(size=small)을 합성합니다.
@@ -54,7 +55,7 @@ export class FilterButton extends LitElement {
         variant="tertiary"
         size="small"
         ?disabled=${this.disabled}
-        icon=${this.selected ? 'check' : ''}
+        icon=${this.selected ? ICON_NAMES.CHECK : ''}
         role=${this.mode === 'multiple' ? 'checkbox' : 'radio'}
         aria-checked=${this.selected ? 'true' : 'false'}
         @click=${this._handleClick}

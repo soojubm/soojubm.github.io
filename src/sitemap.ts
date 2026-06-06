@@ -1,22 +1,24 @@
+import { ICON_NAMES } from './components/icon-button/semantics/icon-names'
+
 export const SITEMAP = [
   // 1. 상단 독립 메뉴 (Top-level Links)
   {
     type: 'standalone',
     id: 'index',
     title: '홈',
-    icon: 'home-simple-door',
+    icon: ICON_NAMES.HOME_PAGE,
   },
   {
     type: 'standalone',
     id: 'tokens',
     title: 'Tokens',
-    icon: 'palette',
+    icon: ICON_NAMES.PALETTE,
   },
   {
     type: 'standalone',
     id: 'signifier',
     title: 'Signifier',
-    icon: 'design-pencil',
+    icon: ICON_NAMES.DESIGN,
   },
 
   // 2. 카테고리 그룹 메뉴 (Dropdown Categories)
@@ -24,7 +26,7 @@ export const SITEMAP = [
     type: 'category',
     id: 'visual-information',
     title: 'Visual Information',
-    icon: 'flower',
+    icon: ICON_NAMES.FLOWER,
     items: [
       { id: 'avatar', name: 'avatar' },
       { id: 'list-row', name: 'list row' },
@@ -39,7 +41,7 @@ export const SITEMAP = [
     type: 'category',
     id: 'actions',
     title: 'Actions',
-    icon: 'mouse-button-left',
+    icon: ICON_NAMES.MOUSE_BUTTON,
     items: [
       { id: 'button', name: 'button' },
       { id: 'icon-button', name: 'icon Button' },
@@ -52,7 +54,7 @@ export const SITEMAP = [
     type: 'category',
     id: 'navigations',
     title: 'Navigations',
-    icon: 'nav-arrow-right',
+    icon: ICON_NAMES.SITEMAP,
     items: [
       { id: 'top-bar', name: 'top bar' },
       { id: 'bottom-bar', name: 'bottom bar' },
@@ -64,7 +66,7 @@ export const SITEMAP = [
     type: 'category',
     id: 'forms',
     title: 'Forms',
-    icon: 'input-field',
+    icon: ICON_NAMES.FIELD,
     items: [
       { id: 'checkbox', name: 'checkbox' },
       { id: 'radio', name: 'radio' },
@@ -78,7 +80,7 @@ export const SITEMAP = [
     type: 'category',
     id: 'feedbacks',
     title: 'Feedbacks',
-    icon: 'reply-to-message',
+    icon: ICON_NAMES.REPLY,
     items: [
       { id: 'tooltip', name: 'tooltip' },
       { id: 'dialog', name: 'dialog' },
@@ -90,7 +92,7 @@ export const SITEMAP = [
     type: 'category',
     id: 'patterns',
     title: 'Patterns',
-    icon: 'city',
+    icon: ICON_NAMES.PLACE,
     items: [
       // { id: 'layout', name: 'layout' },
       { id: 'result', name: 'result' },
