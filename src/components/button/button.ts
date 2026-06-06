@@ -4,6 +4,7 @@ import { buttonStyles } from './button.styles'
 
 export type ButtonVariant = 'primary' | 'secondary' | 'tertiary' | 'text' | 'destructive'
 export type ButtonSize = 'huge' | 'large' | 'medium'
+export type ButtonIconPosition = 'leading' | 'trailing'
 
 @customElement('mm-button')
 export class Button extends LitElement {
@@ -12,6 +13,7 @@ export class Button extends LitElement {
   @property({ type: Boolean, reflect: true }) isFullWidth = false
   @property({ type: Boolean, reflect: true }) disabled = false
   @property({ type: String }) icon = ''
+  @property({ type: String, attribute: 'icon-position' }) iconPosition: ButtonIconPosition = 'leading'
 
   static styles = [buttonStyles]
 
@@ -22,14 +24,19 @@ export class Button extends LitElement {
     }
   }
 
+  private renderIcon(position: ButtonIconPosition) {
+    return this.icon && this.iconPosition === position ? html`<mm-icon name="${this.icon}"></mm-icon>` : ''
+  }
+
   render() {
     return html`
       <button
         ?disabled="${this.disabled}"
         @click="${this._handleClick}"
       >
-        ${this.icon ? html`<mm-icon name="${this.icon}"></mm-icon>` : ''}
+        ${this.renderIcon('leading')}
         <slot></slot>
+        ${this.renderIcon('trailing')}
       </button>
     `
   }

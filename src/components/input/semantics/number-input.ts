@@ -22,11 +22,11 @@ export class NumberInput extends Textfield {
     return 'textfield-input number-input-field'
   }
 
-  protected override get showPrefix() {
+  protected override get showLeading() {
     return true
   }
 
-  protected override get showSuffix() {
+  protected override get showTrailing() {
     return true
   }
 
@@ -65,7 +65,7 @@ export class NumberInput extends Textfield {
     this.commitValue(this.numericValue + this.step)
   }
 
-  protected override renderPrefix(): unknown {
+  protected override renderLeading(): unknown {
     return html`
       <mm-icon-button
         variant="plain"
@@ -80,7 +80,7 @@ export class NumberInput extends Textfield {
     `
   }
 
-  protected override renderSuffix(): unknown {
+  protected override renderTrailing(): unknown {
     return html`
       <mm-icon-button
         variant="plain"

@@ -43,9 +43,14 @@ export class ShowMoreButton extends LitElement {
 
   render() {
     return html`
-      <mm-button variant="tertiary" @click=${this.handleClick} aria-expanded=${this.expanded}>
+      <mm-button
+        variant="tertiary"
+        icon="nav-arrow-down"
+        icon-position="trailing"
+        @click=${this.handleClick}
+        aria-expanded=${this.expanded}
+      >
         ${this.expanded ? this.lessLabel : this.moreLabel}
-        <mm-icon slot="suffix" name="nav-arrow-down"></mm-icon>
       </mm-button>
     `
   }

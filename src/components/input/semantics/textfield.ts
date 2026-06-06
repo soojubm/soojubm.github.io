@@ -23,8 +23,8 @@ export class Textfield extends LitElement {
   static styles = textfieldStyles
 
   protected inputId = `input-${crypto?.randomUUID?.() || Math.random().toString(36).slice(2)}`
-  @state() private hasPrefixSlot = false
-  @state() private hasSuffixSlot = false
+  @state() private hasLeadingSlot = false
+  @state() private hasTrailingSlot = false
 
   protected get fieldClasses() {
     return 'textfield'
@@ -46,15 +46,15 @@ export class Textfield extends LitElement {
     return 'textfield-input'
   }
 
-  protected get showPrefix() {
-    return this.hasPrefixSlot
+  protected get showLeading() {
+    return this.hasLeadingSlot
   }
 
-  protected get showSuffix() {
-    return this.hasSuffixSlot
+  protected get showTrailing() {
+    return this.hasTrailingSlot
   }
 
-  protected handleSlotChange(kind: 'prefix' | 'suffix', event: Event) {
+  protected handleSlotChange(kind: 'leading' | 'trailing', event: Event) {
     const slot = event.target as HTMLSlotElement
     const hasContent = slot
       .assignedNodes({ flatten: true })
@@ -64,8 +64,8 @@ export class Textfield extends LitElement {
           node.nodeType === Node.ELEMENT_NODE,
       )
 
-    if (kind === 'prefix') this.hasPrefixSlot = hasContent
-    if (kind === 'suffix') this.hasSuffixSlot = hasContent
+    if (kind === 'leading') this.hasLeadingSlot = hasContent
+    if (kind === 'trailing') this.hasTrailingSlot = hasContent
   }
 
   protected _handleInput(event: Event) {
@@ -94,17 +94,17 @@ export class Textfield extends LitElement {
     `
   }
 
-  protected renderPrefix(): unknown {
+  protected renderLeading(): unknown {
     return html`<slot
-      name="prefix"
-      @slotchange=${(event: Event) => this.handleSlotChange('prefix', event)}
+      name="leading"
+      @slotchange=${(event: Event) => this.handleSlotChange('leading', event)}
     ></slot>`
   }
 
-  protected renderSuffix(): unknown {
+  protected renderTrailing(): unknown {
     return html`<slot
-      name="suffix"
-      @slotchange=${(event: Event) => this.handleSlotChange('suffix', event)}
+      name="trailing"
+      @slotchange=${(event: Event) => this.handleSlotChange('trailing', event)}
     ></slot>`
   }
 
@@ -144,13 +144,13 @@ export class Textfield extends LitElement {
   protected renderControl(): unknown {
     return html`
       <div class="textfield-control">
-        ${this.showPrefix
-          ? html`<span class="textfield-prefix">${this.renderPrefix()}</span>`
-          : this.renderPrefix()}
+        ${this.showLeading
+          ? html`<span class="textfield-leading">${this.renderLeading()}</span>`
+          : this.renderLeading()}
         ${this.renderInput()}
-        ${this.showSuffix
-          ? html`<span class="textfield-suffix">${this.renderSuffix()}</span>`
-          : this.renderSuffix()}
+        ${this.showTrailing
+          ? html`<span class="textfield-trailing">${this.renderTrailing()}</span>`
+          : this.renderTrailing()}
       </div>
     `
   }

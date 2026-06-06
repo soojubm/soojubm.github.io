@@ -1,22 +1,22 @@
 <main class="page" style="margin: 0 auto">
   <header>
     <mm-flex justify="center" gap="4">
-    <div style="width: 30%">
-      <mm-text size="32">
-        <span style="color: var(--color-foreground-light)">Let us guide</span>
-      </mm-text>
-      <mm-text size="32"> The aim is to reduce “decision fatigue" </mm-text>
-    </div>
-    <div style="width: 40%">
-      <mm-text size="18">
-        고민은 시스템이, 실행은 당신이.<br />
-        결정 피로도를 최소화하여 아이디어를 가장 빠른 속도로 제품화합니다.
-        <!-- 유연성flexibility과 재사용성, 지속 가능성과 같은 기본 개념은 여기에서 이야기하지 않기. The
+      <div style="width: 30%">
+        <mm-text size="32">
+          <span style="color: var(--color-foreground-light)">Let us guide</span>
+        </mm-text>
+        <mm-text size="32"> The aim is to reduce “decision fatigue" </mm-text>
+      </div>
+      <div style="width: 40%">
+        <mm-text size="18">
+          고민은 시스템이, 실행은 당신이.<br />
+          결정 피로도를 최소화하여 아이디어를 가장 빠른 속도로 제품화합니다.
+          <!-- 유연성flexibility과 재사용성, 지속 가능성과 같은 기본 개념은 여기에서 이야기하지 않기. The
         goal isn't "all or nothing". -->
-      </mm-text>
-      <!-- "Abstract추상 레벨(패턴 또는 파운데이션) →Semantic시멘틱 레벨(도메인 최적화) → Concrete구체 레벨(맥락화, Implementation)",
+        </mm-text>
+        <!-- "Abstract추상 레벨(패턴 또는 파운데이션) →Semantic시멘틱 레벨(도메인 최적화) → Concrete구체 레벨(맥락화, Implementation)",
       "구체 레벨 :: user, company 등 두 가지 이상의 아바타 유형이 필요할 때 radius token의 값을 변경하여 구분한다." -->
-    </div>
+      </div>
     </mm-flex>
   </header>
   <section style="margin: 4rem 0">
@@ -550,7 +550,7 @@
     texts='["Styling hooks follows a specific naming convention to promote predictability and consistency.", "초기 선언은 펼쳐서 margin:0 0 0 0. 재할당의 암시를 위해 방향을 풀어서 margin-left. 이것도 의미 없는 것이, margin-block, margin-inline", "position fixed. z-index 보전을 위해 static이 아닌 relative로 초기화하세요.", "형태를 대변하여 명명하지 마세요. 레이아웃을 방향(left, right)을 포함하여 명명하지 마세요. 레이아웃은 변경 가능성이 높은 인터페이스 요소입니다. 역할에 기반하여 명명하세요.", "naming: -s vs - list / action vs control vs foot", "값을 직접적으로 포함하지 마세요. 디자인 토큰에서 얻을 수 있는 추상화 및 기타 이점이 무효화. 값을 조정하기 쉽도록 추상화.. 1 unit을 .25rem으로 모두 네이밍 할 수 있나.", "이미지 가이드.반응형 이미지 사용법. 일단 그냥 2배수로 크기 조절. 가장 간단."]'
   ></mm-text-list>
 
-  <!-- <div style="position: relative">
+  <div style="position: relative">
     <div
       class="circle"
       style="width: 20rem; height: 20rem; background: red; border-radius: 50%"
@@ -592,7 +592,7 @@
         top: 14rem;
       "
     ></div>
-  </div> -->
+  </div>
 
   <section style="margin: 4rem 0">
     <mm-text as="h1" size="32" weight="bold">Architecture Layers</mm-text>
@@ -892,7 +892,7 @@
             </tr>
             <tr>
               <td><code>_{name}.variants.ts</code></td>
-              <td><mm-text size="14">variant 맵 (내부 전용, _ prefix)</mm-text></td>
+              <td><mm-text size="14">variant 맵 (내부 전용, _ leading)</mm-text></td>
             </tr>
             <tr>
               <td><code>semantics/{role}.ts</code></td>
@@ -1444,7 +1444,7 @@ pages/
   </section>
 </main>
 
-<!-- <main class="event" hidden>
+<main class="event" hidden>
   <header class="event-header">
     <span class="event-header-eyebrow">프로모션 제목</span>
     <h1 class="event-header-title">프로모션,<br />태그라인 쪼개서<br />3줄 정도</h1>
@@ -1516,4 +1516,4 @@ pages/
     <mm-text size="18" color="#fff">프로젝트를 찾고 있는 프리랜서라면?</mm-text>
     <mm-button variant="tertiary" size="large" isfullwidth>지금 지원하기</mm-button>
   </footer>
-</main> -->
+</main>

@@ -11,7 +11,7 @@ export class Navbar extends LitElement {
   render() {
     return html`
       <nav class="navbar js-navbar" role="navigation">
-        <mm-flex gap="2" nowrap>
+        <mm-flex gap="2">
           <mm-hamburger-button aria-label="전체메뉴"></mm-hamburger-button>
           <a class="navbar-logo" href="./index.html"></a>
         </mm-flex>

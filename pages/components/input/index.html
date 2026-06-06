@@ -69,10 +69,10 @@
   </mm-component-example>
 
   <!-- <mm-textfield type="text" label="" hidden-label placeholder="Placeholder...">
-    <mm-icon slot="prefix" name="xray-view"></mm-icon>
+    <mm-icon slot="leading" name="xray-view"></mm-icon>
   </mm-textfield>
-  <mm-textfield type="email" label="" hidden-label placeholder="with Suffix...">
-    <mm-icon slot="suffix" name="xray-view"></mm-icon>
+  <mm-textfield type="email" label="" hidden-label placeholder="with Trailing...">
+    <mm-icon slot="trailing" name="xray-view"></mm-icon>
   </mm-textfield> -->
   <!-- <p>unit, choose/enter</p> -->
   <!-- <abbr title="필수입력">*</abbr> -->
@@ -107,13 +107,13 @@
       "레이블 — 입력 항목의 이름을 나타냅니다(label).",
       "헬퍼 텍스트 — 레이블 아래에서 입력 형식이나 보조 정보를 안내합니다(helper).",
       "입력 필드 — 값을 입력·표시하는 영역. placeholder로 입력 형식을 안내합니다.",
-      "접두/접미 요소 — 아이콘·단위·버튼 등 보조 요소(slot: prefix / suffix).",
+      "접두/접미 요소 — 아이콘·단위·버튼 등 보조 요소(slot: leading / trailing).",
       "검증 텍스트 — 입력 필드 아래에서 오류나 검증 결과를 전달합니다(validation-text)."
     ]'
   >
     <div style="position: relative; display: inline-block; padding-left: 1.75rem">
       <mm-textfield label="이메일" placeholder="name@example.com" helper="회사 이메일을 입력하세요." validation-text="올바른 이메일 형식으로 입력하세요." aria-invalid="true" style="width: 280px">
-        <mm-icon slot="prefix" name="mail"></mm-icon>
+        <mm-icon slot="leading" name="mail"></mm-icon>
       </mm-textfield>
 
       <!-- 번호 마커 (세로 배치) -->
@@ -287,24 +287,24 @@
       <mm-flex>
         <div style="flex: 1">
           <mm-textfield type="date" name="date-start" label="체크인" placeholder="YYYY. MM. DD.">
-            <mm-icon slot="suffix" name="calendar"></mm-icon>
+            <mm-icon slot="trailing" name="calendar"></mm-icon>
           </mm-textfield>
         </div>
         <div style="flex: 1">
           <mm-textfield type="date" name="date-end" label="체크아웃" placeholder="YYYY. MM. DD.">
-            <mm-icon slot="suffix" name="calendar"></mm-icon>
+            <mm-icon slot="trailing" name="calendar"></mm-icon>
           </mm-textfield>
         </div>
       </mm-flex>
       <br />
       <mm-surface>
-        <mm-flex nowrap align="end" style="width: 100%">
+        <mm-flex align="end" style="width: 100%">
           <mm-textfield label="Length" placeholder="cm unit"></mm-textfield>
-          <mm-flex align="center" gap="0" nowrap style="height: var(--size-large)">
+          <mm-flex align="center" gap="0" style="height: var(--size-large)">
             <mm-icon name="xmark"></mm-icon>
           </mm-flex>
           <mm-textfield label="Width" placeholder="x means"></mm-textfield>
-          <mm-flex align="center" gap="0" nowrap style="height: var(--size-large)">
+          <mm-flex align="center" gap="0" style="height: var(--size-large)">
             <mm-icon name="xmark"></mm-icon>
           </mm-flex>
           <mm-textfield label="Height" placeholder="cm"></mm-textfield>
@@ -317,7 +317,7 @@
       patterns. FormField label / TextInput 으로 나누는 방안. groupable은 속성. 그래서 컴포넌트
       이름은 form layout / fieldset / fieldgroup FormLabel checkbox-label와 input-label을 똑같이 할
       수 있나? field label : fieldset legend, label - input/textarea 그러면 searchField 등의 대안이
-      될 수 있나?", "field feedback / fieldset feedback(checkbox group, login)", "props: minValue, maxValue, value, onDecreseClick, onIncreseClick", "221021: - + 버튼에 포커스는 필요가 없다. input 키보드 위 아래로?", "장식적인 검색 아이콘과 clickable한 액션. prefix는 장식. suffix는 액션? suffix에 유닛이 있을
+      될 수 있나?", "field feedback / fieldset feedback(checkbox group, login)", "props: minValue, maxValue, value, onDecreseClick, onIncreseClick", "221021: - + 버튼에 포커스는 필요가 없다. input 키보드 위 아래로?", "장식적인 검색 아이콘과 clickable한 액션. leading는 장식. trailing는 액션? trailing에 유닛이 있을
       수도"]'></mm-text-list>
 </mm-text-list>
 
@@ -379,7 +379,7 @@
     title="NumberInput"
     description="숫자 입력 필드. 수량, 가격, step/count 입력에 사용합니다."
   >
-    <mm-flex direction="column" gap="3" nowrap>
+    <mm-flex direction="column" gap="3">
       <mm-number-input
         label="수량"
         name="quantity"
@@ -404,9 +404,9 @@
 
   <mm-component-section
     title="PasswordField"
-    description="비밀번호 입력 필드. searchfield처럼 textfield를 확장하며, suffix에 reveal-button을 두어 입력값 노출을 토글합니다."
+    description="비밀번호 입력 필드. searchfield처럼 textfield를 확장하며, trailing에 reveal-button을 두어 입력값 노출을 토글합니다."
   >
-    <mm-flex direction="column" gap="3" nowrap style="max-width: 400px">
+    <mm-flex direction="column" gap="3" style="max-width: 400px">
       <mm-passwordfield
         label="비밀번호"
         placeholder="비밀번호를 입력하세요"
@@ -429,7 +429,7 @@
       <div style="height: 1rem"></div>
       <mm-textfield type="email" placeholder="Enter Your Email..">
         <mm-icon slot="leading" name="mail"></mm-icon>
-        <mm-button slot="suffix" type="submit" variant="primary" size="medium"
+        <mm-button slot="trailing" type="submit" variant="primary" size="medium"
           >
           뉴스레터 구독
           </mm-button

@@ -20,11 +20,11 @@ class PasswordField extends Textfield {
     return 'textfield-input passwordfield-input'
   }
 
-  protected override get showSuffix() {
+  protected override get showTrailing() {
     return true
   }
 
-  protected override renderSuffix(): unknown {
+  protected override renderTrailing(): unknown {
     return html`
       <mm-reveal-button
         class="passwordfield-reveal"

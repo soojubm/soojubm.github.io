@@ -93,14 +93,14 @@
       the font size is less than 16px.
     </mm-text>
     <mm-text size="18" type="1">
-      prefix, name, suffix는 언더스코어(_)로 구분합니다. direction / shape / status / color / size
-      suffix에서는 direction, shape, status, color, size 등의 요소를 정의합니다. 2개 이상의 suffix가
-      사용되는 경우 direction, shape, status, color, size의 순서로 작성합니다. suffix에서는 단어를
+      leading, name, trailing는 언더스코어(_)로 구분합니다. direction / shape / status / color / size
+      trailing에서는 direction, shape, status, color, size 등의 요소를 정의합니다. 2개 이상의 trailing가
+      사용되는 경우 direction, shape, status, color, size의 순서로 작성합니다. trailing에서는 단어를
       축약하지 않습니다. status는 에셋의 동작에 따른 상태를 정의합니다. size는 셋의 크기를 숫자와
       단위를 조합하여 작성합니다. 단위는 플랫폼에 맞춰서 작성합니다. 예시) android → dp, iOS → px,
       web → px size는 가로를 기준으로 작성하고 세로는 표기하지 않습니다. 해상도별로 구분해야 하는
-      경우 1x, 2x를 사용합니다. 제플린과 같이 프로그램에 의해 자동으로 suffix가 붙는 경우는 1x, 2x
-      가이드를 따르지 않아도 됩니다. 이미 배포되어 적용된 에셋에서 suffix가 추가되는 경우, 기존
+      경우 1x, 2x를 사용합니다. 제플린과 같이 프로그램에 의해 자동으로 trailing가 붙는 경우는 1x, 2x
+      가이드를 따르지 않아도 됩니다. 이미 배포되어 적용된 에셋에서 trailing가 추가되는 경우, 기존
       에셋을 변형하지 않고 구별자를 추가합니다.
     </mm-text>
   </section>
@@ -124,7 +124,7 @@
   ></mm-comment-input>
   <br />
   <mm-surface>
-    <mm-top-bar label="댓글 2개"></mm-top-bar>
+    <mm-top-bar title="댓글 2개"></mm-top-bar>
     <mm-flex direction="column" gap="4" style="margin-top: 1rem">
       <mm-comment-item
         author="수줍이"

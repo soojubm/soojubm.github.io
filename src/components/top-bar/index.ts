@@ -5,7 +5,7 @@ import { topBarStyles } from './top-bar.styles'
 @customElement('mm-top-bar')
 class TopBar extends LitElement {
   @property({ type: String }) variant = ''
-  @property({ type: String }) label = ''
+  @property({ type: String }) title = ''
   /** 'back' | 'close' | '' */
   @property({ type: String }) nav: 'back' | 'close' | '' = 'back'
 
@@ -17,7 +17,7 @@ class TopBar extends LitElement {
         ${this.nav === 'back'
           ? html`<mm-icon-button variant="navigator" icon="arrow-left"></mm-icon-button>`
           : ''}
-        <mm-text size="18" class="top-bar-title">${this.label}</mm-text>
+        <mm-text size="18" class="top-bar-title">${this.title}</mm-text>
         <slot name="action"></slot>
         ${this.nav === 'close'
           ? html`<mm-icon-button variant="navigator" icon="xmark"></mm-icon-button>`

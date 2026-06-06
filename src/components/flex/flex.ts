@@ -38,7 +38,7 @@ export class Flex extends LitElement {
   /** 간격. 숫자 토큰(0~6 → var(--space-N)) 또는 임의의 CSS 길이값 */
   @property({ type: String }) gap = '2'
   /** 줄바꿈 허용 여부 */
-  @property({ type: Boolean }) nowrap = false
+  @property({ type: Boolean }) wrap = false
   /** 자식 요소 flex: 1 (동일 너비/높이 분배) */
   @property({ type: Boolean, reflect: true }) stretch = false
 
@@ -67,7 +67,7 @@ export class Flex extends LitElement {
       `justify-content: ${justifyMap[this.justify] ?? 'flex-start'}`,
       `align-items: ${alignMap[this.align] ?? 'stretch'}`,
       `gap: ${gap}`,
-      `flex-wrap: ${this.nowrap ? 'nowrap' : 'wrap'}`,
+      `flex-wrap: ${this.wrap ? 'wrap' : 'nowrap'}`,
     ].join('; ')
 
     return html`

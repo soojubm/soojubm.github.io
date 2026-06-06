@@ -24,11 +24,11 @@ class SearchField extends Textfield {
     return 'textfield-input searchfield-input'
   }
 
-  protected override get showPrefix() {
+  protected override get showLeading() {
     return true
   }
 
-  protected override get showSuffix() {
+  protected override get showTrailing() {
     return true
   }
 
@@ -36,11 +36,11 @@ class SearchField extends Textfield {
     return nothing
   }
 
-  protected override renderPrefix(): unknown {
-    return html`<mm-icon class="searchfield-prefix" name="search"></mm-icon>`
+  protected override renderLeading(): unknown {
+    return html`<mm-icon class="searchfield-leading" name="search"></mm-icon>`
   }
 
-  protected override renderSuffix(): unknown {
+  protected override renderTrailing(): unknown {
     return html`
       <mm-clear-button
         class="searchfield-clear"

@@ -34,6 +34,7 @@
     <mm-prop name="isFullWidth" type="boolean" optional></mm-prop>
     <mm-prop name="disabled" type="boolean" optional></mm-prop>
     <mm-prop name="icon" type="string" optional></mm-prop>
+    <mm-prop name="iconPosition" type="'leading' | 'trailing' = 'leading'" optional></mm-prop>
     <mm-prop name="@click" type="(e: MouseEvent) => void" kind="event"></mm-prop>
   </mm-component-props>
 
@@ -228,7 +229,7 @@
     title="ButtonGroup"
     description="2개 이상의 버튼을 묶는 레이아웃 컨테이너. 방향, 정렬, 간격, flex 분배를 prop으로 제어합니다."
   >
-    <mm-flex direction="column" gap="4" nowrap>
+    <mm-flex direction="column" gap="4">
       <mm-button-group>
         <mm-button variant="tertiary">취소</mm-button>
         <mm-button variant="primary">저장</mm-button>
@@ -264,7 +265,7 @@
           <dd>{label: string, onClick: () => void}</dd>
         </dl>
       </mm-paragraph-group>
-      <mm-flex direction="column" gap="1.5rem" nowrap>
+      <mm-flex direction="column" gap="1.5rem">
         <mm-button-group>
           <mm-button variant="tertiary" size="large">취소</mm-button>
           <mm-button variant="primary" size="large">저장</mm-button>
@@ -310,8 +311,8 @@
 
   <mm-component-section title="ViewMoreButton" description="TODO define expandable indicator">
     <mm-button-group>
-      <mm-button variant="text" icon="nav-arrow-down">View More</mm-button>
-      <mm-button variant="text" icon="nav-arrow-up">View Less</mm-button>
+      <mm-button variant="text" icon="nav-arrow-down" icon-position="trailing">View More</mm-button>
+      <mm-button variant="text" icon="nav-arrow-up" icon-position="trailing">View Less</mm-button>
     </mm-button-group>
   </mm-component-section>
 
@@ -319,7 +320,7 @@
     title="FilterButton"
     description="콘텐츠 필터링을 위한 옵션 버튼. size=small의 mm-button을 합성하며 선택 시 체크 아이콘을 표시합니다. 그룹으로 묶어 단일 선택 또는 다중 선택을 지원합니다."
   >
-    <mm-flex direction="column" gap="4" nowrap>
+    <mm-flex direction="column" gap="4">
       <div>
         <mm-text size="14" weight="bold">Single selection (라디오형)</mm-text>
         <mm-filter-button-group mode="single" style="margin-top: var(--space-2)">

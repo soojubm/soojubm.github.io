@@ -1,6 +1,6 @@
 <main class="page" style="max-width: var(--layout-width-small)">
   <mm-component-section title="장바구니" description="담은 상품과 결제 예정 금액을 확인합니다.">
-    <mm-top-bar label="장바구니"></mm-top-bar>
+    <mm-top-bar title="장바구니"></mm-top-bar>
     <div style="height: var(--space-3)"></div>
     <div style="position: relative">
       <mm-avatar size="huge">
@@ -37,7 +37,7 @@
   </mm-component-section>
 
   <mm-component-section title="배송지 등록" description="상품을 받을 배송지 정보를 입력합니다.">
-    <mm-top-bar label="배송지 등록"></mm-top-bar>
+    <mm-top-bar title="배송지 등록"></mm-top-bar>
     <br />
     <mm-flex direction="column" gap="3">
       <mm-textfield
@@ -86,7 +86,7 @@
     title="주문/결제"
     description="배송지, 주문상품, 할인, 결제수단을 확인하고 결제합니다."
   >
-    <mm-top-bar label="주문/결제"></mm-top-bar>
+    <mm-top-bar title="주문/결제"></mm-top-bar>
     <div style="height: var(--space-4)"></div>
 
     <section class="checkout-shipping">
@@ -94,7 +94,7 @@
       <mm-surface size="small">
         <mm-menu-item-row>
           <mm-radio
-            slot="prefix"
+            slot="leading"
             id="shipping-default"
             name="shipping"
             value="default"
@@ -181,7 +181,7 @@
     <div style="height: var(--space-4)"></div>
 
     <section class="checkout-summary">
-      <mm-flex justify="between" gap="0" nowrap>
+      <mm-flex justify="between" gap="0">
         <mm-text size="18">결제상세</mm-text>
         <mm-text size="18">13,980원</mm-text>
       </mm-flex>
@@ -264,7 +264,7 @@
         </div>
         <mm-separator></mm-separator>
         <footer>
-          <mm-flex justify="between" gap="0" nowrap>
+          <mm-flex justify="between" gap="0">
             <mm-text size="14" weight="bold">주문금액</mm-text>
             <mm-text size="14" weight="bold">13,980원</mm-text>
           </mm-flex>

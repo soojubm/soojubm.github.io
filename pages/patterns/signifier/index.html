@@ -611,27 +611,8 @@
     </mm-flex>
 
     <mm-flex direction="column" gap="16">
-      <div class="scroll-outer">
-        <div class="scroll-inner">
-          <div class="item">Item 1</div>
-          <div class="item">Item 2</div>
-          <div class="item">Item 3</div>
-          <div class="item">Item 4</div>
-          <div class="item">Item 5</div>
-          <div class="item">Item 6</div>
-          <div class="item">Item 6</div>
-          <div class="item">Item 6</div>
-          <div class="item">Item 6</div>
-          <div class="item">Item 6</div>
-          <div class="item">Item 6</div>
-          <!-- 계속 추가 가능 -->
-        </div>
-      </div>
-
-      https://m3.material.io/blog/building-with-m3-expressive
-
       <style>
-        :root {
+        <style > :root {
           --layout-max-width: 1200px;
           --layout-side-padding: calc((100vw - var(--layout-max-width)) / 2);
           --item-min-width: 240px;
@@ -688,49 +669,25 @@
           }
         }
       </style>
-    </mm-flex>
+      <div class="scroll-outer">
+        <div class="scroll-inner">
+          <div class="item">Item 1</div>
+          <div class="item">Item 2</div>
+          <div class="item">Item 3</div>
+          <div class="item">Item 4</div>
+          <div class="item">Item 5</div>
+          <div class="item">Item 6</div>
+          <div class="item">Item 6</div>
+          <div class="item">Item 6</div>
+          <div class="item">Item 6</div>
+          <div class="item">Item 6</div>
+          <div class="item">Item 6</div>
+          <!-- 계속 추가 가능 -->
+        </div>
+      </div>
 
-    <!-- <aside class="loader">
-    <div class="spinner">
-      <div class="double-bounce1"></div>
-      <div class="double-bounce2"></div>
-    </div>
-  </aside>
-  <style>
-    .loader {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: fixed;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      background: var(--color-background-subtle);
-      z-index: var(--zindex-loader);
-    }
-    .spinner {
-      width: var(--size-large);
-      height: var(--size-large);
-      position: relative;
-    }
-    .double-bounce1,
-    .double-bounce2 {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      background-color: var(--color-primary);
-      opacity: 0.6;
-      position: absolute;
-      top: 0;
-      left: 0;
-      animation: scaleout2 2s infinite ease-in-out;
-    }
-    .double-bounce2 {
-      -webkit-animation-delay: -1s;
-      animation-delay: -1s;
-    }
-  </style> -->
+      https://m3.material.io/blog/building-with-m3-expressive
+    </mm-flex>
 
     <mm-component-references>
       <mm-link
@@ -807,3 +764,45 @@
     </section>
   </mm-flex>
 </main>
+
+<!-- <aside class="loader">
+      <div class="spinner">
+        <div class="double-bounce1"></div>
+        <div class="double-bounce2"></div>
+      </div>
+    </aside>
+    <style>
+      .loader {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background: var(--color-background-subtle);
+        z-index: var(--zindex-loader);
+      }
+      .spinner {
+        width: var(--size-large);
+        height: var(--size-large);
+        position: relative;
+      }
+      .double-bounce1,
+      .double-bounce2 {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background-color: var(--color-primary);
+        opacity: 0.6;
+        position: absolute;
+        top: 0;
+        left: 0;
+        animation: scaleout2 2s infinite ease-in-out;
+      }
+      .double-bounce2 {
+        -webkit-animation-delay: -1s;
+        animation-delay: -1s;
+      }
+    </style> -->

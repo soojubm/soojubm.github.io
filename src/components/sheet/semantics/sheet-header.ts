@@ -15,7 +15,7 @@ class SheetHeader extends LitElement {
 
   render() {
     return html`
-      <mm-top-bar label="${this.title}" nav="close" @click="${this.handleClose}"></mm-top-bar>
+      <mm-top-bar title="${this.title}" nav="close" @click="${this.handleClose}"></mm-top-bar>
     `
   }
 }

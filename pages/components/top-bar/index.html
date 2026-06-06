@@ -5,15 +5,15 @@
   ></mm-page-header>
 
   <mm-component-example>
-    <mm-top-bar label="상세 정보"></mm-top-bar>
+    <mm-top-bar title="상세 정보"></mm-top-bar>
     <mm-text>기본 뒤로가기 내비게이션을 포함한 상단 바입니다.</mm-text>
     <mm-separator></mm-separator>
-    <mm-top-bar nav="close" label="컬렉션에 추가">
+    <mm-top-bar nav="close" title="컬렉션에 추가">
       <mm-button slot="action" variant="text">완료</mm-button>
     </mm-top-bar>
     <mm-text>닫기 액션과 보조 액션을 함께 배치할 수 있습니다.</mm-text>
     <mm-separator></mm-separator>
-    <mm-top-bar label="수줍이님">
+    <mm-top-bar title="수줍이님">
       <mm-button-group slot="action">
         <mm-button>저장</mm-button>
         <mm-icon-button variant="navigator" icon="more-vert"></mm-icon-button>
@@ -22,7 +22,7 @@
   </mm-component-example>
 
   <mm-component-props>
-    <mm-prop name="label" type="string"></mm-prop>
+    <mm-prop name="title" type="string"></mm-prop>
     <mm-prop name="nav" type="'back' | 'close' | '' = 'back'" optional></mm-prop>
     <mm-prop name="variant" type="string" optional></mm-prop>
     <mm-prop name="slot='action'" type="HTMLElement" optional></mm-prop>

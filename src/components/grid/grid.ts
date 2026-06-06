@@ -22,16 +22,20 @@ export class Grid extends LitElement {
         gap: var(--space-4);
       }
 
+      .grid > ::slotted(*) {
+        min-width: 0;
+      }
+
       .grid[data-columns='2'] {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
       .grid[data-columns='3'] {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, minmax(0, 1fr));
       }
 
       .grid[data-columns='4'] {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(4, minmax(0, 1fr));
       }
 
       @media (max-width: 640px) {
