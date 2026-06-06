@@ -1,5 +1,5 @@
-import navbar from '/src/components/navbar/navbar.html'
-import footer from '/src/components/footer/footer.html'
+import '/src/components/navbar/navbar'
+import '/src/components/footer/footer'
 
 // 컴포넌트 페이지용 임시
 import '/src/stylesheets/shared.css'
@@ -13,9 +13,9 @@ export const renderLayout = (
   }
 
   return `
-    ${navbar}
+    <mm-navbar></mm-navbar>
     ${content}
     <aside id="modal"></aside>
-    ${options.footer ? footer : ''}
+    ${options.footer ? '<mm-footer></mm-footer>' : ''}
   `
 }

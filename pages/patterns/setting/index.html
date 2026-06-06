@@ -120,6 +120,28 @@
     <mm-text>관심있는 분야의 콘텐츠를 추천 받으세요.</mm-text>
   </mm-menu-item-group>
 
+  <mm-surface>
+    <mm-menu-item-row
+      avatar-size="large"
+      icon="google"
+      label="soojubm@gmail.com"
+      description="Google 계정 연결"
+    >
+      <mm-button slot="action" disabled>Google 연동해제</mm-button>
+    </mm-menu-item-row>
+    <div
+      style="
+        border-radius: var(--radius);
+        background-color: var(--color-background-subtle);
+        margin: var(--space-2) 0 0;
+        padding: var(--space-2);
+      "
+    >
+      <mm-text> 계정의 비밀번호를 설정한 후 소셜 계정을 연결을 해제하세요. </mm-text>
+    </div>
+    <mm-button slot="action">연동하기</mm-button>
+  </mm-surface>
+
   <br />
 
   <mm-surface>
@@ -161,28 +183,6 @@
       ></mm-toggle-button-group>
     </form>
   </section>
-
-  <mm-surface>
-    <mm-menu-item-row
-      avatar-size="large"
-      icon="google"
-      label="soojubm@gmail.com"
-      description="Google 계정 연결"
-    >
-      <mm-button slot="action" disabled>Google 연동해제</mm-button>
-    </mm-menu-item-row>
-    <div
-      style="
-        border-radius: var(--radius);
-        background-color: var(--color-background-subtle);
-        margin: var(--space-2) -0.5rem -0.5rem;
-        padding: var(--space-2);
-      "
-    >
-      <mm-text> 계정의 비밀번호를 설정한 후 소셜 계정을 연결을 해제하세요. </mm-text>
-    </div>
-    <mm-button slot="action">연동하기</mm-button>
-  </mm-surface>
 
   <br />
 

@@ -260,49 +260,55 @@
     Sie sind in guter Gesellschaft
   </mm-text>
   <mm-flex direction="column" gap="1rem" style="max-width: 1000px; margin: 0 auto">
-    <mm-feature titleText="타겟의 명료 (Clarity of Audience)">
-      <mm-text as="p" size="14">문서는 이미 기본 개념을 이해한 사람을 전제로 작성한다.</mm-text>
-      <mm-text as="p" size="14"
-        >기초 개념 설명은 제거하고, 판단과 적용에 필요한 정보만 남긴다.</mm-text
-      >
+    <mm-feature
+      titleText="타겟의 명료 (Clarity of Audience)"
+      description="문서는 이미 기본 개념을 이해한 사람을 전제로 작성한다. 기초 개념 설명은 제거하고, 판단과 적용에 필요한 정보만 남긴다."
+    >
       <mm-text-list
-        texts='["정의가 아니라 의사결정 기준을 제공한다", "“무엇인가”보다 “언제 선택하는가”에 집중한다", "읽는 사람이 이미 알고 있는 내용을 반복하지 않는다"]'
+        texts='["정의가 아니라 의사결정 기준을 제공한다", "”무엇인가”보다 “언제 선택하는가”에 집중한다", "읽는 사람이 이미 알고 있는 내용을 반복하지 않는다"]'
       ></mm-text-list>
     </mm-feature>
 
-    <mm-feature titleText="용도의 분명 (Explicit Intent)">
-      <mm-text as="p" size="14">모든 항목은 명확한 목적을 가져야 한다.</mm-text>
-      <mm-text as="p" size="14">모호한 범용 표현은 제거한다.</mm-text>
+    <mm-feature
+      titleText="용도의 분명 (Explicit Intent)"
+      description="모든 항목은 명확한 목적을 가져야 한다. 모호한 범용 표현은 제거한다."
+    >
       <mm-text-list
         texts='["“상황에 따라”, “필요 시” 같은 표현 금지", "각 요소는 단일 역할을 갖는다", "컴포넌트/패턴은 사용 조건이 아니라 사용 목적으로 정의한다"]'
       ></mm-text-list>
     </mm-feature>
 
-    <mm-feature titleText="규모의 약속 (Controlled Scope)">
-      <mm-text as="p" size="14"
-        >문서는 시스템을 완성하려는 시도가 아니라, 복잡도를 관리하는 도구여야 한다.</mm-text
-      >
+    <mm-feature
+      titleText="규모의 약속 (Controlled Scope)"
+      description="문서는 시스템을 완성하려는 시도가 아니라, 복잡도를 관리하는 도구여야 한다."
+    >
       <mm-text-list
         texts='["모든 것을 정의하지 않는다", "규칙 추가는 유지 비용 증가로 간주한다", "토큰화/추상화는 일괄 변경 필요성이 명확할 때만 도입한다", "예: border width는 종속성이 명확하면 토큰화하지 않는다"]'
       ></mm-text-list>
     </mm-feature>
 
-    <mm-feature titleText="내용의 간결 (Economy of Content)">
-      <mm-text as="p" size="14">문서는 정보량이 아니라 밀도로 평가한다.</mm-text>
+    <mm-feature
+      titleText="내용의 간결 (Economy of Content)"
+      description="문서는 정보량이 아니라 밀도로 평가한다."
+    >
       <mm-text-list
         texts='["단순 열거, 옵션 나열 금지", "대표성 있는 최소 예시만 사용", "반복 구조 제거"]'
       ></mm-text-list>
     </mm-feature>
 
-    <mm-feature titleText="정보의 당위 (Justified Information)">
-      <mm-text as="p" size="14">모든 문장은 존재 이유를 가져야 한다.</mm-text>
+    <mm-feature
+      titleText="정보의 당위 (Justified Information)"
+      description="모든 문장은 존재 이유를 가져야 한다."
+    >
       <mm-text-list
         texts='["낮은 확률의 edge case 배제", "금지보다 설계 이유 중심으로 작성", "현재 결정 근거만 기록"]'
       ></mm-text-list>
     </mm-feature>
 
-    <mm-feature titleText=" 변화 전제 (Designed for Change)">
-      <mm-text as="p" size="14">문서는 변화 가능한 계약이다.</mm-text>
+    <mm-feature
+      titleText="변화 전제 (Designed for Change)"
+      description="문서는 변화 가능한 계약이다."
+    >
       <mm-text-list
         texts='["완전성을 목표로 하지 않는다", "변경 가능성을 구조적으로 허용한다", "정답이 아니라 현재 기준을 명시한다"]'
       ></mm-text-list>
@@ -403,13 +409,13 @@
     <!-- Design system knowledge and experience are also essential. An Ops manager cannot optimize the operations without a fundamental understanding of building, managing and scaling a design system. -->
     <!-- Unlike traditional DesignOps, which focuses on design, and DevOps, which focuses on development, design system Ops straddles these two disciplines providing support to designers and engineers. -->
 
-    <!-- The design system team and its users should never have to ask, “how do I do this?” or “where do
-    we find that?” Ops’ goal is to maximize design system efficiency and reduce time-to-market for
+    <!-- The design system team and its users should never have to ask, “how do I do this?" or “where do
+    we find that?" Ops’ goal is to maximize design system efficiency and reduce time-to-market for
     releases. -->
 
     <!-- 2. Define the Problem. Once Ops identifies an issue, it’s crucial to define the problem to implement the correct solution. Is there something wrong with the process, or is it a matter of better training? -->
 
-    <!-- Success should be measured by the problems you solve rather than the tools you put in place.” -->
+    <!-- Success should be measured by the problems you solve rather than the tools you put in place." -->
 
     <!-- If everything is a component, nothing is a component -->
     <!-- declarative, composable, reusable, extensible, interoperable and accessible -->
@@ -605,8 +611,14 @@
       "
     >
       <mm-text size="12" color="var(--color-foreground-light)">레이어 판단 기준</mm-text>
-      <mm-text size="14"><strong>다른 도메인이나 서비스에서도 쓸 수 있는가?</strong> → Semantic. 이 서비스에만 존재하는 개념인가? → Concrete.</mm-text>
-      <mm-text size="14" color="var(--color-foreground-light)">폴더 구조가 이 경계를 구조적으로 강제한다. <code>semantics/</code> = 도메인 독립, <code>domains/</code> = 도메인 종속.</mm-text>
+      <mm-text size="14"
+        ><strong>다른 도메인이나 서비스에서도 쓸 수 있는가?</strong> → Semantic. 이 서비스에만
+        존재하는 개념인가? → Concrete.</mm-text
+      >
+      <mm-text size="14" color="var(--color-foreground-light)"
+        >폴더 구조가 이 경계를 구조적으로 강제한다. <code>semantics/</code> = 도메인 독립,
+        <code>domains/</code> = 도메인 종속.</mm-text
+      >
     </div>
 
     <!-- 의사결정 플로우 -->
@@ -668,16 +680,31 @@
           <mm-text size="12" color="var(--color-foreground-light)">LAYER 1</mm-text>
           <mm-text size="18" weight="bold">Abstract</mm-text>
         </div>
-        <mm-text size="14">HTML 요소 수준의 가장 작은 단위. 의도 없이 props로만 변형되는 범용 빌딩 블록.</mm-text>
+        <mm-text size="14"
+          >HTML 요소 수준의 가장 작은 단위. 의도 없이 props로만 변형되는 범용 빌딩 블록.</mm-text
+        >
         <div>
-          <mm-text size="14"><code>mm-button</code>, <code>mm-text</code>, <code>mm-tag</code>, <code>mm-icon-button</code></mm-text>
-          <mm-text size="14" color="var(--color-foreground-light)" style="margin-top: 0.25rem">src/components/{name}/</mm-text>
+          <mm-text size="14"
+            ><code>mm-button</code>, <code>mm-text</code>, <code>mm-tag</code>,
+            <code>mm-icon-button</code></mm-text
+          >
+          <mm-text size="14" color="var(--color-foreground-light)" style="margin-top: 0.25rem"
+            >src/components/{name}/</mm-text
+          >
         </div>
       </div>
 
       <!-- 의존성 방향 -->
-      <div style="padding: 0.375rem 2rem; border-bottom: var(--border-stronger); background: var(--color-background-subtle)">
-        <mm-text size="12" color="var(--color-foreground-light)">↓ extends — Semantic은 Abstract를 상속해 역할을 고정한다</mm-text>
+      <div
+        style="
+          padding: 0.375rem 2rem;
+          border-bottom: var(--border-stronger);
+          background: var(--color-background-subtle);
+        "
+      >
+        <mm-text size="12" color="var(--color-foreground-light)"
+          >↓ extends — Semantic은 Abstract를 상속해 역할을 고정한다</mm-text
+        >
       </div>
 
       <!-- LAYER 2: Semantic -->
@@ -695,16 +722,32 @@
           <mm-text size="12" color="var(--color-foreground-light)">LAYER 2</mm-text>
           <mm-text size="18" weight="bold">Semantic</mm-text>
         </div>
-        <mm-text size="14">의미가 있고 도메인에 독립적인 단위. 어떤 서비스에서도 쓸 수 있는 개념. variant 대신 이름이 용도를 표현.</mm-text>
+        <mm-text size="14"
+          >의미가 있고 도메인에 독립적인 단위. 어떤 서비스에서도 쓸 수 있는 개념. variant 대신
+          이름이 용도를 표현.</mm-text
+        >
         <div>
-          <mm-text size="14"><code>mm-read-more-button</code>, <code>mm-close-button</code>, <code>mm-caption</code>, <code>mm-accent-tag</code></mm-text>
-          <mm-text size="14" color="var(--color-foreground-light)" style="margin-top: 0.25rem">src/components/{name}/semantics/</mm-text>
+          <mm-text size="14"
+            ><code>mm-read-more-button</code>, <code>mm-close-button</code>,
+            <code>mm-caption</code>, <code>mm-accent-tag</code></mm-text
+          >
+          <mm-text size="14" color="var(--color-foreground-light)" style="margin-top: 0.25rem"
+            >src/components/{name}/semantics/</mm-text
+          >
         </div>
       </div>
 
       <!-- 의존성 방향 -->
-      <div style="padding: 0.375rem 2rem; border-bottom: var(--border-stronger); background: var(--color-background-subtle)">
-        <mm-text size="12" color="var(--color-foreground-light)">↓ composes — Concrete는 Abstract·Semantic 컴포넌트를 조합해 완성한다</mm-text>
+      <div
+        style="
+          padding: 0.375rem 2rem;
+          border-bottom: var(--border-stronger);
+          background: var(--color-background-subtle);
+        "
+      >
+        <mm-text size="12" color="var(--color-foreground-light)"
+          >↓ composes — Concrete는 Abstract·Semantic 컴포넌트를 조합해 완성한다</mm-text
+        >
       </div>
 
       <!-- LAYER 3: Concrete -->
@@ -721,10 +764,17 @@
           <mm-text size="12" color="var(--color-foreground-light)">LAYER 3</mm-text>
           <mm-text size="18" weight="bold">Concrete</mm-text>
         </div>
-        <mm-text size="14">특정 도메인·서비스에 종속된 조합. 다른 서비스에서 그대로 가져다 쓸 수 없는 것.</mm-text>
+        <mm-text size="14"
+          >특정 도메인·서비스에 종속된 조합. 다른 서비스에서 그대로 가져다 쓸 수 없는 것.</mm-text
+        >
         <div>
-          <mm-text size="14"><code>mm-comment-input</code>, <code>mm-user-row</code>, <code>mm-prompt-input</code></mm-text>
-          <mm-text size="14" color="var(--color-foreground-light)" style="margin-top: 0.25rem">src/components/domains/</mm-text>
+          <mm-text size="14"
+            ><code>mm-comment-input</code>, <code>mm-user-row</code>,
+            <code>mm-prompt-input</code></mm-text
+          >
+          <mm-text size="14" color="var(--color-foreground-light)" style="margin-top: 0.25rem"
+            >src/components/domains/</mm-text
+          >
         </div>
       </div>
     </div>
@@ -744,18 +794,35 @@
       <mm-text as="h2" size="18" weight="bold">이 방법론의 한계</mm-text>
 
       <div style="display: flex; flex-direction: column; gap: var(--space-2)">
-        <mm-text size="14" weight="bold">"다른 서비스에서 쓸 수 있는가"의 판단은 여전히 주관적이다</mm-text>
-        <mm-text size="14"><code>mm-search-suggestions</code>는 어떤 서비스에나 있는 검색 UI다 — Semantic인가? 아니면 이 서비스의 검색 동작에 종속된다 — Concrete인가? 기준이 명확해도 경계 사례에서는 판단이 갈린다. 폴더 구조가 강제할 수 있는 건 배치 이후다. 배치 전 판단은 사람이 한다.</mm-text>
+        <mm-text size="14" weight="bold"
+          >"다른 서비스에서 쓸 수 있는가"의 판단은 여전히 주관적이다</mm-text
+        >
+        <mm-text size="14"
+          ><code>mm-search-suggestions</code>는 어떤 서비스에나 있는 검색 UI다 — Semantic인가?
+          아니면 이 서비스의 검색 동작에 종속된다 — Concrete인가? 기준이 명확해도 경계 사례에서는
+          판단이 갈린다. 폴더 구조가 강제할 수 있는 건 배치 이후다. 배치 전 판단은 사람이
+          한다.</mm-text
+        >
       </div>
 
       <div style="display: flex; flex-direction: column; gap: var(--space-2)">
-        <mm-text size="14" weight="bold">Concrete가 도메인을 넘어 재사용되면 레이어가 흔들린다</mm-text>
-        <mm-text size="14"><code>mm-comment-input</code>이 댓글과 DM 두 화면에서 모두 쓰인다면? 처음엔 도메인 특화였다가 점점 범용이 된다. Concrete를 Semantic으로 격상하는 시점과 기준이 없으면 domains/ 안에 사실상 Semantic인 컴포넌트가 쌓이기 시작한다.</mm-text>
+        <mm-text size="14" weight="bold"
+          >Concrete가 도메인을 넘어 재사용되면 레이어가 흔들린다</mm-text
+        >
+        <mm-text size="14"
+          ><code>mm-comment-input</code>이 댓글과 DM 두 화면에서 모두 쓰인다면? 처음엔 도메인
+          특화였다가 점점 범용이 된다. Concrete를 Semantic으로 격상하는 시점과 기준이 없으면
+          domains/ 안에 사실상 Semantic인 컴포넌트가 쌓이기 시작한다.</mm-text
+        >
       </div>
 
       <div style="display: flex; flex-direction: column; gap: var(--space-2)">
         <mm-text size="14" weight="bold">Semantic 레이어가 팽창하기 쉽다</mm-text>
-        <mm-text size="14">"도메인 무관"의 기준이 느슨하면 모든 컴포넌트가 Semantic 후보가 된다. 작은 변형마다 새로운 Semantic 컴포넌트가 추가되면 semantics/ 디렉토리가 비대해지고, Abstract 컴포넌트의 variant로 충분히 해결할 수 있는 것들이 별도 클래스로 분산된다.</mm-text>
+        <mm-text size="14"
+          >"도메인 무관"의 기준이 느슨하면 모든 컴포넌트가 Semantic 후보가 된다. 작은 변형마다
+          새로운 Semantic 컴포넌트가 추가되면 semantics/ 디렉토리가 비대해지고, Abstract 컴포넌트의
+          variant로 충분히 해결할 수 있는 것들이 별도 클래스로 분산된다.</mm-text
+        >
       </div>
     </div>
   </section>
@@ -891,8 +958,12 @@
           </tbody>
         </table>
 
-        <mm-text as="h2" size="18" weight="bold" style="margin-top: 0.5rem">Component Tokens</mm-text>
-        <mm-text size="14">컴포넌트 내부 토큰은 <code>--{component}-{property}</code> 패턴을 사용합니다.</mm-text>
+        <mm-text as="h2" size="18" weight="bold" style="margin-top: 0.5rem"
+          >Component Tokens</mm-text
+        >
+        <mm-text size="14"
+          >컴포넌트 내부 토큰은 <code>--{component}-{property}</code> 패턴을 사용합니다.</mm-text
+        >
         <table>
           <tbody>
             <tr>
@@ -921,7 +992,9 @@
 
     <div class="columns-2">
       <div>
-        <mm-text as="h2" size="18" weight="bold" style="margin-bottom: 1rem">Visual Information</mm-text>
+        <mm-text as="h2" size="18" weight="bold" style="margin-bottom: 1rem"
+          >Visual Information</mm-text
+        >
         <table>
           <thead>
             <tr>
@@ -938,12 +1011,20 @@
             </tr>
             <tr>
               <td><mm-text size="14">Text</mm-text></td>
-              <td><mm-text size="14" color="var(--color-foreground-light)">caption, paragraph, section-title, page-title</mm-text></td>
+              <td>
+                <mm-text size="14" color="var(--color-foreground-light)"
+                  >caption, paragraph, section-title, page-title</mm-text
+                >
+              </td>
               <td><mm-text size="14">✅</mm-text></td>
             </tr>
             <tr>
               <td><mm-text size="14">Tag</mm-text></td>
-              <td><mm-text size="14" color="var(--color-foreground-light)">accent-tag, status-tag, keyword-tag, category-tag</mm-text></td>
+              <td>
+                <mm-text size="14" color="var(--color-foreground-light)"
+                  >accent-tag, status-tag, keyword-tag, category-tag</mm-text
+                >
+              </td>
               <td><mm-text size="14">✅</mm-text></td>
             </tr>
             <tr>
@@ -981,12 +1062,20 @@
           <tbody>
             <tr>
               <td><mm-text size="14">Button</mm-text></td>
-              <td><mm-text size="14" color="var(--color-foreground-light)">read-more, follow, filter, bookmark, file-upload…</mm-text></td>
+              <td>
+                <mm-text size="14" color="var(--color-foreground-light)"
+                  >read-more, follow, filter, bookmark, file-upload…</mm-text
+                >
+              </td>
               <td><mm-text size="14">✅</mm-text></td>
             </tr>
             <tr>
               <td><mm-text size="14">Icon Button</mm-text></td>
-              <td><mm-text size="14" color="var(--color-foreground-light)">close, hamburger, copy, delete, reveal, prev/next…</mm-text></td>
+              <td>
+                <mm-text size="14" color="var(--color-foreground-light)"
+                  >close, hamburger, copy, delete, reveal, prev/next…</mm-text
+                >
+              </td>
               <td><mm-text size="14">✅</mm-text></td>
             </tr>
             <tr>
@@ -1055,7 +1144,11 @@
             </tr>
             <tr>
               <td><mm-text size="14">Input</mm-text></td>
-              <td><mm-text size="14" color="var(--color-foreground-light)">search field, password field, textarea</mm-text></td>
+              <td>
+                <mm-text size="14" color="var(--color-foreground-light)"
+                  >search field, password field, textarea</mm-text
+                >
+              </td>
               <td><mm-text size="14">✅</mm-text></td>
             </tr>
           </tbody>
@@ -1150,15 +1243,27 @@
           <tbody>
             <tr>
               <td><mm-text size="14" weight="bold">Lit v3</mm-text></td>
-              <td><mm-text size="14" color="var(--color-foreground-light)">Web Components framework — mm-* custom elements</mm-text></td>
+              <td>
+                <mm-text size="14" color="var(--color-foreground-light)"
+                  >Web Components framework — mm-* custom elements</mm-text
+                >
+              </td>
             </tr>
             <tr>
               <td><mm-text size="14" weight="bold">TypeScript</mm-text></td>
-              <td><mm-text size="14" color="var(--color-foreground-light)">정적 타입 시스템, ts-loader로 번들</mm-text></td>
+              <td>
+                <mm-text size="14" color="var(--color-foreground-light)"
+                  >정적 타입 시스템, ts-loader로 번들</mm-text
+                >
+              </td>
             </tr>
             <tr>
               <td><mm-text size="14" weight="bold">BaseElement</mm-text></td>
-              <td><mm-text size="14" color="var(--color-foreground-light)">HTMLElement 확장, Shadow DOM + adoptedStyleSheets</mm-text></td>
+              <td>
+                <mm-text size="14" color="var(--color-foreground-light)"
+                  >HTMLElement 확장, Shadow DOM + adoptedStyleSheets</mm-text
+                >
+              </td>
             </tr>
           </tbody>
         </table>
@@ -1179,23 +1284,43 @@
           <tbody>
             <tr>
               <td><mm-text size="14" weight="bold">Webpack 5</mm-text></td>
-              <td><mm-text size="14" color="var(--color-foreground-light)">멀티 엔트리, 코드 스플리팅, HtmlWebpackPlugin</mm-text></td>
+              <td>
+                <mm-text size="14" color="var(--color-foreground-light)"
+                  >멀티 엔트리, 코드 스플리팅, HtmlWebpackPlugin</mm-text
+                >
+              </td>
             </tr>
             <tr>
               <td><mm-text size="14" weight="bold">Babel</mm-text></td>
-              <td><mm-text size="14" color="var(--color-foreground-light)">@babel/preset-env, ES5 타겟 트랜스파일</mm-text></td>
+              <td>
+                <mm-text size="14" color="var(--color-foreground-light)"
+                  >@babel/preset-env, ES5 타겟 트랜스파일</mm-text
+                >
+              </td>
             </tr>
             <tr>
               <td><mm-text size="14" weight="bold">PostCSS</mm-text></td>
-              <td><mm-text size="14" color="var(--color-foreground-light)">cssnano로 CSS 최적화, MiniCssExtractPlugin</mm-text></td>
+              <td>
+                <mm-text size="14" color="var(--color-foreground-light)"
+                  >cssnano로 CSS 최적화, MiniCssExtractPlugin</mm-text
+                >
+              </td>
             </tr>
             <tr>
               <td><mm-text size="14" weight="bold">Sass</mm-text></td>
-              <td><mm-text size="14" color="var(--color-foreground-light)">스타일시트 전처리기</mm-text></td>
+              <td>
+                <mm-text size="14" color="var(--color-foreground-light)"
+                  >스타일시트 전처리기</mm-text
+                >
+              </td>
             </tr>
             <tr>
               <td><mm-text size="14" weight="bold">GitHub Actions</mm-text></td>
-              <td><mm-text size="14" color="var(--color-foreground-light)">webpack.yml로 빌드 및 배포 자동화</mm-text></td>
+              <td>
+                <mm-text size="14" color="var(--color-foreground-light)"
+                  >webpack.yml로 빌드 및 배포 자동화</mm-text
+                >
+              </td>
             </tr>
           </tbody>
         </table>
@@ -1216,15 +1341,23 @@
           <tbody>
             <tr>
               <td><mm-text size="14" weight="bold">ESLint</mm-text></td>
-              <td><mm-text size="14" color="var(--color-foreground-light)">TypeScript 정적 분석</mm-text></td>
+              <td>
+                <mm-text size="14" color="var(--color-foreground-light)"
+                  >TypeScript 정적 분석</mm-text
+                >
+              </td>
             </tr>
             <tr>
               <td><mm-text size="14" weight="bold">Stylelint</mm-text></td>
-              <td><mm-text size="14" color="var(--color-foreground-light)">CSS/SCSS 린팅</mm-text></td>
+              <td>
+                <mm-text size="14" color="var(--color-foreground-light)">CSS/SCSS 린팅</mm-text>
+              </td>
             </tr>
             <tr>
               <td><mm-text size="14" weight="bold">Prettier</mm-text></td>
-              <td><mm-text size="14" color="var(--color-foreground-light)">코드 포맷터</mm-text></td>
+              <td>
+                <mm-text size="14" color="var(--color-foreground-light)">코드 포맷터</mm-text>
+              </td>
             </tr>
           </tbody>
         </table>
@@ -1240,14 +1373,11 @@
 
     <div class="columns-2">
       <div
-        style="
-          padding: 1.5rem;
-          border: var(--border-stronger);
-          border-radius: var(--radius-large);
-        "
+        style="padding: 1.5rem; border: var(--border-stronger); border-radius: var(--radius-large)"
       >
         <mm-text as="h2" size="18" weight="bold" style="margin-bottom: 1rem">src/</mm-text>
-        <pre style="margin: 0; font-size: var(--font-size-12); line-height: 1.8; overflow-x: auto">src/
+        <pre style="margin: 0; font-size: var(--font-size-12); line-height: 1.8; overflow-x: auto">
+src/
 ├── components/          # mm-* Web Components
 │   ├── button/
 │   │   └── semantics/   # 의미론적 변형 (e.g. read-more-button)
@@ -1272,18 +1402,16 @@
 │   └── vendors/
 ├── images/
 ├── types/
-└── webfonts/</pre>
+└── webfonts/</pre
+        >
       </div>
 
       <div
-        style="
-          padding: 1.5rem;
-          border: var(--border-stronger);
-          border-radius: var(--radius-large);
-        "
+        style="padding: 1.5rem; border: var(--border-stronger); border-radius: var(--radius-large)"
       >
         <mm-text as="h2" size="18" weight="bold" style="margin-bottom: 1rem">pages/ & root</mm-text>
-        <pre style="margin: 0; font-size: var(--font-size-12); line-height: 1.8; overflow-x: auto">pages/
+        <pre style="margin: 0; font-size: var(--font-size-12); line-height: 1.8; overflow-x: auto">
+pages/
 ├── home/                # 홈 페이지
 ├── components/          # 컴포넌트 문서 페이지
 │   ├── button/
@@ -1307,7 +1435,8 @@
 ├── tsconfig.json
 └── .github/
     └── workflows/
-        └── webpack.yml  # CI/CD</pre>
+        └── webpack.yml  # CI/CD</pre
+        >
       </div>
     </div>
   </section>
