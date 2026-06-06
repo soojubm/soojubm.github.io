@@ -24,7 +24,8 @@ export class ChatRoom extends LitElement {
 
       .feed {
         flex: 1;
-        overflow-y: auto;
+        display: flex;
+        overflow: hidden;
         padding: var(--space-4);
       }
 
