@@ -17,6 +17,7 @@ export interface DropdownOption {
 @customElement('mm-dropdown')
 export class Dropdown extends LitElement {
   @property({ type: String }) value = ''
+  @property({ type: String }) align: 'left' | 'right' = 'left'
   @state() protected isOpen = false
   @state() protected selectedLabel = 'Select an option'
   @state() protected options: DropdownOption[] = []
@@ -80,6 +81,11 @@ export class Dropdown extends LitElement {
 
         transition: opacity 120ms ease, transform 220ms cubic-bezier(0.18, 1.25, 0.4, 1),
           visibility 0s;
+      }
+
+      .dropdown-list.align-right {
+        left: auto;
+        right: 0;
       }
 
       mm-menu-item-row[aria-current='true'] {
@@ -197,7 +203,11 @@ export class Dropdown extends LitElement {
 
   protected renderList() {
     return html`
-      <div part="list" class="dropdown-list ${this.isOpen ? 'open' : ''}" role="menu">
+      <div
+        part="list"
+        class="dropdown-list ${this.isOpen ? 'open' : ''} ${this.align === 'right' ? 'align-right' : ''}"
+        role="menu"
+      >
         ${this.options.map(option => this.renderOption(option))}
       </div>
     `

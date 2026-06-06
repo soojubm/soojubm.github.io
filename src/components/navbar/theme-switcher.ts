@@ -7,17 +7,11 @@ import { ICON_NAMES } from '../icon-button/semantics/icon-names'
 
 @customElement('mm-theme-switcher')
 export class ThemeSwitcher extends LitElement {
-  @property({ type: String, reflect: true }) value: Theme = 'light'
+  @property({ type: String }) value: Theme = 'light'
 
   static styles = css`
     :host {
       display: inline-flex;
-    }
-
-    mm-dropdown::part(list) {
-      left: auto;
-      right: 0;
-      min-width: 120px;
     }
   `
 
@@ -37,7 +31,7 @@ export class ThemeSwitcher extends LitElement {
 
   render() {
     return html`
-      <mm-dropdown .value=${this.value} @change=${this.handleChange}>
+      <mm-dropdown .value=${this.value} align="right" @change=${this.handleChange}>
         <mm-icon-button
           slot="trigger"
           variant="plain"
@@ -46,7 +40,7 @@ export class ThemeSwitcher extends LitElement {
         ></mm-icon-button>
         ${THEMES.map(
           theme => html`
-            <option value=${theme.value} icon=${theme.icon} ?selected=${this.value === theme.value}>
+            <option value=${theme.value} icon=${theme.icon}>
               ${theme.label}
             </option>
           `,
