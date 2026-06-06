@@ -18,14 +18,11 @@ export class ChatMessage extends LitElement {
         display: flex;
         flex-direction: column;
         gap: var(--space-2);
-        padding-left: calc(var(--size-medium) + var(--space-2));
         position: relative;
         box-sizing: border-box;
       }
 
       :host([mine]) {
-        padding-left: 0;
-        padding-right: calc(var(--size-medium) + var(--space-2));
         align-items: flex-end;
       }
 
@@ -53,11 +50,7 @@ export class ChatMessage extends LitElement {
 
   render() {
     return html`
-      <mm-avatar
-        class="avatar"
-        size="medium"
-        src=${this.avatarSrc || ''}
-      ></mm-avatar>
+      <mm-avatar class="avatar" size="medium" src=${this.avatarSrc || ''}></mm-avatar>
       ${this.username && !this.mine
         ? html`<span class="username">${this.username}</span>`
         : nothing}

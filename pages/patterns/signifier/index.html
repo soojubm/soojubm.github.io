@@ -1,221 +1,589 @@
 <main class="page">
-  <!-- <div style="width: 20px">
+  <mm-flex direction="column" gap="4rem">
+    <!-- <div style="width: 20px">
     <svg viewBox="0 0 10 10">
       <rect height="7" width="1" y="1" x="4" />
       <rect height="1" width="7" y="4" x="1" />
     </svg>
   </div> -->
-  <mm-title-with-description
-    level="1"
-    title="Signifier"
-    description="예측 가능한 사용자 인터렉션으로 서비스와 사용자 사이의 신뢰 구축."
-  >
-  </mm-title-with-description>
-  <br />
-  <mm-text-list
-    texts='[
+    <mm-title-with-description
+      level="1"
+      title="Signifier"
+      description="예측 가능한 사용자 인터렉션으로 서비스와 사용자 사이의 신뢰 구축."
+    >
+    </mm-title-with-description>
+
+    <mm-paragraph>Foundations</mm-paragraph>
+    <mm-paragraph-group>
+      <mm-paragraph>
+        Signifiers define the visual cues that communicate what an element means, what state it is
+        in, and what users can do with it.
+      </mm-paragraph>
+      <mm-paragraph>
+        기표는 사용자가 UI를 보고 해당 요소의 역할, 상태, 가능한 행동을 이해할 수 있도록 하는 시각적
+        단서입니다. 이 페이지는 디자인 시스템 안에서 특정 시각 표현이 특정 의미에만 사용되도록
+        제한하는 공통 계약을 정의합니다.
+      </mm-paragraph>
+    </mm-paragraph-group>
+
+    <mm-text-list
+      texts='[
         "상태를 표현하는 시각 언어는 컴포넌트에 종속되지 않고 제품 전체에 일관합니다.",
         "성공적인 상호작용 피드백은 장식적인 것이 아니라 정보를 제공하는 것입니다. 시각적 노이즈나 강렬한 색상 변화를 유발하는 정교한 전환을 피하세요. 주의를 산만하게 하는 애니메이션은 혼란을 야기하고 인터페이스를 사용하기 불편하게 만들 수 있습니다.",
         "TODO 더보기 패턴. 아이템이 3개 이하일 때 제목 우측에 모두보기 버튼을 위치할 수 있지만, 아이템이 4개 이상이라면 아이템의 아래에 모두보기 버튼을 배치. 가로 스크롤인 경우 스크롤의 가장 우측에 배치할 수도. "
       ]'
-  ></mm-text-list>
+    ></mm-text-list>
 
-  <br />
+    <mm-paragraph-group>
+      <h2 id="overview-title">Overview</h2>
+      <mm-paragraph>
+        Signifier 페이지의 목적은 UI의 시각 표현이 어떤 의미, 상태, 행동 가능성을 나타내는지
+        일관되게 정의하는 것입니다. 기표는 장식이 아니라 사용자가 인터페이스를 해석하는 방식에 직접
+        관여하는 규칙입니다.
+      </mm-paragraph>
+      <mm-paragraph>
+        예를 들어 primary color text, underline, pointer cursor, external link icon, check icon은
+        각각 특정한 의미를 갖습니다. 이러한 단서가 다른 의미로 재사용되면 사용자는 요소의 역할을
+        오해할 수 있습니다.
+      </mm-paragraph>
+    </mm-paragraph-group>
 
-  <mm-component-section
-    title="Clickable"
-    description="인터렉션 가능한 오브젝트를 구분합니다. 사용자는 클릭할 수 있는 오브젝트를 명확하게 인지하여 예측 가능한 신뢰를 구축할 수 있습니다."
-  >
-    <section class="columns columns-3">
-      <div class="token-item" style="box-shadow: var(--shadow)">
-        <p>
-          <b>elevated 오브젝트</b>는 클릭할 수 있다. 또는 오브젝트 내부에 클릭할 수 있는 요소가
-          존재한다.
-        </p>
-      </div>
-      <div class="token-item" style="border: none; background: var(--color-background-subtle)">
-        <p><b>연한 회색 배경의 오브젝트</b>는 클릭할 수 있다.</p>
-      </div>
-      <div class="token-item">
-        <p>
-          <b><em>브랜드 컬러 텍스트</em></b
-          >는 클릭할 수 있다.
-        </p>
-      </div>
-      <!-- <div class="token-item">
-        <p><b>이미지</b>는 클릭할 수 있다.</p>
-      </div> -->
-    </section>
-  </mm-component-section>
+    <mm-paragraph-group>
+      <h2 id="principles-title">Core Principles</h2>
+      <article>
+        <h3>One signifier, one primary meaning</h3>
+        <mm-paragraph>
+          하나의 시각적 단서는 시스템이 명시적으로 허용하지 않는 한 다른 의미로 재사용하지 않습니다.
+          예를 들어 외부 링크 아이콘은 외부 목적지로 이동한다는 의미에 사용하며, 일반적인 내부
+          이동이나 상세 보기에는 사용하지 않습니다.
+        </mm-paragraph>
+      </article>
 
-  <mm-component-section
-    title="Icons"
-    description="아이콘은 기표로 정의한 의미를 전달하는 기호입니다. 단순히 장식적인 용도로 사용하지 마세요."
-  >
-    <div>
-      <mm-text-list
-        texts='[
+      <article>
+        <h3>Do not use interaction cues as decoration</h3>
+        <mm-paragraph>
+          클릭 가능성을 암시하는 색상, 밑줄, 커서, 아이콘은 장식이나 일반 강조로 사용하지 않습니다.
+          사용자는 이러한 단서를 인터랙션 가능성으로 학습하기 때문입니다.
+        </mm-paragraph>
+      </article>
+
+      <article>
+        <h3>Do not rely on color alone</h3>
+        <mm-paragraph>
+          상태나 피드백은 색상만으로 전달하지 않습니다. 중요한 상태는 아이콘, 텍스트, 형태, 위치,
+          ARIA 속성 등과 함께 제공해야 합니다.
+        </mm-paragraph>
+      </article>
+
+      <article>
+        <h3>Keep signifiers consistent across components</h3>
+        <mm-paragraph>
+          컴포넌트의 접근성 속성은 다를 수 있지만 사용자가 인지하는 시각적 기표는 일관되게
+          유지합니다. 예를 들어 Tabs는 aria-selected, Toggle Button은 aria-pressed, Checkbox는
+          aria-checked를 사용할 수 있지만 선택 상태의 시각적 단서는 공통된 원칙을 따릅니다.
+        </mm-paragraph>
+      </article>
+    </mm-paragraph-group>
+
+    <mm-flex direction="column" gap="16">
+      <mm-text size="24" weight="bold" as="h3">Clickable & Link Signifiers</mm-text>
+      <mm-paragraph>
+        Clickable signifier는 사용자가 특정 요소를 누르거나 이동할 수 있음을 나타냅니다. primary
+        color text, underline, pointer cursor, button-like shape은 인터랙티브 요소에만 사용합니다.
+      </mm-paragraph>
+
+      <mm-avatar size="huge" icon="mouse-button-left"> </mm-avatar>
+
+      <section aria-labelledby="clickable-title">
+        <article>
+          <h3>Primary color text</h3>
+          <mm-paragraph>
+            Primary color text는 링크, 텍스트 버튼, 인라인 액션처럼 클릭 가능한 텍스트에 예약합니다.
+            본문 강조, 메타 정보 강조, 장식적 하이라이트에는 사용하지 않습니다.
+          </mm-paragraph>
+
+          <h4>Do</h4>
+          <pre><code>&lt;a href="/settings"&gt;설정으로 이동&lt;/a&gt;</code></pre>
+
+          <h4>Don’t</h4>
+          <pre><code>&lt;p&gt;이 기능은 &lt;span class="text-primary"&gt;중요합니다&lt;/span&gt;.&lt;/p&gt;</code></pre>
+        </article>
+
+        <article>
+          <h3>External links</h3>
+          <mm-paragraph>
+            외부 링크 아이콘은 현재 제품 또는 서비스 맥락을 벗어나는 목적지를 나타냅니다. 일반적인
+            내부 이동, 패널 확장, 상세 보기에는 사용하지 않습니다.
+          </mm-paragraph>
+        </article>
+      </section>
+      <mm-paragraph>
+        인터렉션 가능한 오브젝트를 구분합니다. 사용자는 클릭할 수 있는 오브젝트를 명확하게 인지하여
+        예측 가능한 신뢰를 구축할 수 있습니다.
+      </mm-paragraph>
+      <mm-grid columns="3">
+        <mm-surface variant="elevated">
+          <mm-paragraph>
+            <b>elevated 오브젝트</b>는 클릭할 수 있다. 또는 오브젝트 내부에 클릭할 수 있는 요소가
+            존재한다.
+          </mm-paragraph>
+        </mm-surface>
+        <mm-surface variant="tinted">
+          <mm-paragraph><b>연한 회색 배경의 오브젝트</b>는 클릭할 수 있다.</mm-paragraph>
+        </mm-surface>
+        <mm-surface variant="plain">
+          <mm-paragraph>
+            <mm-link href="#">브랜드 컬러 텍스트</mm-link>는 클릭할 수 있다. 이미지는 클릭할 수
+            있다?
+          </mm-paragraph>
+        </mm-surface>
+      </mm-grid>
+    </mm-flex>
+
+    <mm-flex direction="column" gap="16">
+      <mm-text size="24" weight="bold" as="h3">Icon Indicators</mm-text>
+      <mm-paragraph>
+        Icon indicator는 장식이 아니라 특정 의미를 전달하는 시각적 단서입니다. 아이콘을 indicator로
+        사용하는 경우, 해당 아이콘의 의미와 사용 범위를 명확히 고정해야 합니다. //// 아이콘은 기표로
+        정의한 의미를 전달하는 기호입니다. 단순히 장식적인 용도로 사용하지 마세요.
+      </mm-paragraph>
+
+      <mm-flex gap="24" wrap>
+        <mm-grid columns="2">
+          <mm-list-row
+            icon="group"
+            avatar-size="large"
+            label="External link"
+            description="외부 목적지로 이동하거나 새 외부 맥락을 여는 경우에 사용합니다."
+          ></mm-list-row>
+          <mm-list-row
+            icon="group"
+            avatar-size="large"
+            label="Check"
+            description="선택됨, 완료됨, 확인됨을 나타냅니다. 단순한 긍정 장식으로 사용하지 않습니다."
+          ></mm-list-row>
+          <mm-list-row
+            icon="group"
+            avatar-size="large"
+            label="Warning"
+            description="사용자의 주의가 필요한 상태를 나타냅니다. 마케팅 강조 용도로 사용하지 않습니다."
+          ></mm-list-row>
+          <mm-list-row
+            icon="group"
+            avatar-size="large"
+            label="Error"
+            description="오류, 실패, 수정이 필요한 상태를 나타냅니다."
+          ></mm-list-row>
+          <mm-list-row
+            icon="group"
+            avatar-size="large"
+            label="Info"
+            description="보조 정보나 설명 가능한 상태를 나타냅니다."
+          ></mm-list-row>
+          <mm-list-row
+            icon="group"
+            avatar-size="large"
+            label="Download"
+            description="파일 또는 데이터를 내려받는 액션에 사용합니다."
+          ></mm-list-row>
+          <mm-list-row
+            icon="group"
+            avatar-size="large"
+            label="More"
+            description="추가 액션 메뉴 또는 숨겨진 옵션을 나타냅니다."
+          ></mm-list-row>
+          <mm-list-row
+            icon="group"
+            avatar-size="large"
+            label="Required"
+            description="필수 입력 또는 필수 조건을 나타냅니다."
+          ></mm-list-row>
+        </mm-grid>
+      </mm-flex>
+      <div>
+        <mm-text-list
+          texts='[
         "Indicator Icons - Label, Decorative",
         "Navigation Icons",
-        "Action Icons",
+        "Action Icons"
       ]'
-      ></mm-text-list>
-      <br />
-      <section
-        style="
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
-          gap: var(--space-1);
-        "
-      >
-        <mm-menu-item-row icon="search" label="search" description="Search"></mm-menu-item-row>
-        <mm-menu-item-row
-          icon="nav-arrow-down"
-          label="nav-arrow-down"
-          description="Expand, dropdown"
-        ></mm-menu-item-row>
-        <mm-menu-item-row
-          icon="arrow-left"
-          label="arrow-left"
-          description="Back, previous"
-        ></mm-menu-item-row>
-        <mm-menu-item-row
-          icon="arrow-right"
-          label="arrow-right"
-          description="Next, continue, view all"
-        ></mm-menu-item-row>
-        <mm-menu-item-row
-          icon="arrow-up-right"
-          label="arrow-up-right"
-          description="External link, view all"
-        ></mm-menu-item-row>
-        <mm-menu-item-row
-          icon="xmark"
-          label="xmark"
-          description="Remove, close, clear"
-        ></mm-menu-item-row>
-        <mm-menu-item-row icon="plus" label="plus" description="Add, create"></mm-menu-item-row>
-        <mm-menu-item-row
-          icon="check"
-          label="check"
-          description="Confirm, selected"
-        ></mm-menu-item-row>
-        <mm-menu-item-row
-          icon="more-vert"
-          label="more-vert"
-          description="More actions"
-        ></mm-menu-item-row>
-        <mm-menu-item-row
-          icon="settings"
-          label="settings"
-          description="Settings"
-        ></mm-menu-item-row>
-        <mm-menu-item-row icon="copy" label="copy" description="Copy"></mm-menu-item-row>
-        <mm-menu-item-row icon="refresh" label="refresh" description="Refresh"></mm-menu-item-row>
-        <mm-menu-item-row icon="lock" label="lock" description="Private, locked"></mm-menu-item-row>
-        <mm-menu-item-row icon="log-out" label="log-out" description="Sign out"></mm-menu-item-row>
-        <mm-menu-item-row icon="mail" label="mail" description="Message, email"></mm-menu-item-row>
-      </section>
-    </div>
-  </mm-component-section>
-
-  <mm-component-section title="Selected Indicator" description="폼 컨트롤처럼 느껴지지 않아야.">
-    <div>
-      <mm-text>상태 인지성(state perception) / affordance / 접근성 / 시스템 일관성</mm-text>
-      <mm-text>위치는 고정</mm-text>
-      <mm-text>background foreground weight</mm-text>
-      <mm-text>Strong Selection Context:: - check - dot - bar - fill - outline</mm-text>
-      <mm-text-list
-        texts='["--selection-indicator-size", "--selection-indicator-gap", "--selection-indicator-color"]'
-      ></mm-text-list>
-      <mm-text>
-        선택 상태는 최소 2개 이상의 signal로 표현하는 것이 좋다 (WCAG 색상만으로 상태를 전달하지 말
-        것)
-      </mm-text>
-      <mm-text>“selected”라는 상태가 모든 컴포넌트에서 같은 의미 강도를 가지지 않는다</mm-text>
-      <div>
-        TAB::navigation, context switching, current view / check indicator::confirmed selection,
-        chosen item, applied state
+        ></mm-text-list>
+        <section
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+            gap: var(--space-1);
+          "
+        >
+          <mm-menu-item-row icon="search" label="search" description="Search"></mm-menu-item-row>
+          <mm-menu-item-row
+            icon="nav-arrow-down"
+            label="nav-arrow-down"
+            description="Expand, dropdown"
+          ></mm-menu-item-row>
+          <mm-menu-item-row
+            icon="arrow-left"
+            label="arrow-left"
+            description="Back, previous"
+          ></mm-menu-item-row>
+          <mm-menu-item-row
+            icon="arrow-right"
+            label="arrow-right"
+            description="Next, continue, view all"
+          ></mm-menu-item-row>
+          <mm-menu-item-row
+            icon="arrow-up-right"
+            label="arrow-up-right"
+            description="External link, view all"
+          ></mm-menu-item-row>
+          <mm-menu-item-row
+            icon="xmark"
+            label="xmark"
+            description="Remove, close, clear"
+          ></mm-menu-item-row>
+          <mm-menu-item-row icon="plus" label="plus" description="Add, create"></mm-menu-item-row>
+          <mm-menu-item-row
+            icon="check"
+            label="check"
+            description="Confirm, selected"
+          ></mm-menu-item-row>
+          <mm-menu-item-row
+            icon="more-vert"
+            label="more-vert"
+            description="More actions"
+          ></mm-menu-item-row>
+          <mm-menu-item-row
+            icon="settings"
+            label="settings"
+            description="Settings"
+          ></mm-menu-item-row>
+          <mm-menu-item-row icon="copy" label="copy" description="Copy"></mm-menu-item-row>
+          <mm-menu-item-row icon="refresh" label="refresh" description="Refresh"></mm-menu-item-row>
+          <mm-menu-item-row
+            icon="lock"
+            label="lock"
+            description="Private, locked"
+          ></mm-menu-item-row>
+          <mm-menu-item-row
+            icon="log-out"
+            label="log-out"
+            description="Sign out"
+          ></mm-menu-item-row>
+          <mm-menu-item-row
+            icon="mail"
+            label="mail"
+            description="Message, email"
+          ></mm-menu-item-row>
+        </section>
       </div>
-    </div>
-  </mm-component-section>
+    </mm-flex>
 
-  <mm-component-section
-    title="Interaction states"
-    description="Interaction states communicate the status of an element in the interface, establish
-        confidence once an action is taken, and suggest the ability (or inability) to interact with
-        the element."
-  >
-    <div>
+    <mm-flex direction="column" gap="16">
+      <mm-text size="24" weight="bold" as="h3">Selected Indicators</mm-text>
+      <mm-paragraph>
+        Selected는 여러 선택지 중 사용자가 선택한 항목을 나타냅니다. 컴포넌트별 의미론적 상태는 다를
+        수 있지만, 선택 상태를 전달하는 시각적 기표는 일관되게 관리합니다. ///// 폼 컨트롤처럼
+        느껴지지 않아야.
+      </mm-paragraph>
+
+      <section aria-labelledby="selected-title">
+        <article>
+          <h3>Related states</h3>
+          <mm-list-row
+            icon="group"
+            avatar-size="large"
+            label="Selected"
+            description="여러 선택지 중 선택된 항목입니다."
+          ></mm-list-row>
+          <mm-list-row
+            icon="group"
+            avatar-size="large"
+            label="Current"
+            description="현재 위치나 현재 보고 있는 항목입니다."
+          ></mm-list-row>
+          <mm-list-row
+            icon="group"
+            avatar-size="large"
+            label="Active"
+            description="현재 활성화되어 있는 항목입니다."
+          ></mm-list-row>
+          <mm-list-row
+            icon="group"
+            avatar-size="large"
+            label="Checked"
+            description="체크박스, 라디오, 메뉴 옵션의 체크 상태입니다."
+          ></mm-list-row>
+          <mm-list-row
+            icon="group"
+            avatar-size="large"
+            label="Pressed"
+            description="토글 버튼이 눌린 상태입니다."
+          ></mm-list-row>
+        </article>
+
+        <article>
+          <h3>Visual cues</h3>
+          <mm-text-list
+            variant="check"
+            texts='["selected background", "selected border", "check icon", "stronger label weight", "selected indicator line"]'
+          ></mm-text-list>
+        </article>
+
+        <article>
+          <h3>Component mapping</h3>
+          <mm-list-row
+            icon="group"
+            avatar-size="large"
+            label="Tabs"
+            description="aria-selected를 사용합니다."
+          ></mm-list-row>
+          <mm-list-row
+            icon="group"
+            avatar-size="large"
+            label="Toggle Button"
+            description="aria-pressed를 사용합니다."
+          ></mm-list-row>
+          <mm-list-row
+            icon="group"
+            avatar-size="large"
+            label="Radio"
+            description="aria-checked 또는 native checked state를 사용합니다."
+          ></mm-list-row>
+          <mm-list-row
+            icon="group"
+            avatar-size="large"
+            label="Checkbox"
+            description="aria-checked 또는 native checked state를 사용합니다."
+          ></mm-list-row>
+          <mm-list-row
+            icon="group"
+            avatar-size="large"
+            label="Menu option"
+            description="역할에 따라 aria-checked 또는 aria-selected를 사용합니다."
+          ></mm-list-row>
+        </article>
+      </section>
       <div>
-        <mm-text size="14" weight="bold">Hover state</mm-text>
-        <!-- <a
-            class="item is-hovered"
-            data-size="medium"
-            style="display: flex; align-items: center; gap: 0.75rem; width: 100%; margin: 0 auto"
-          >
-            <mm-avatar default="true"></mm-avatar>
-            <span class="item-name">Item</span>
-          </a> -->
-        <!-- <p>
+        <mm-text>상태 인지성(state perception) / affordance / 접근성 / 시스템 일관성</mm-text>
+        <mm-text>위치는 고정</mm-text>
+        <mm-text>background foreground weight</mm-text>
+        <mm-text>Strong Selection Context:: - check - dot - bar - fill - outline</mm-text>
+        <mm-text-list
+          texts='["--selection-indicator-size", "--selection-indicator-gap", "--selection-indicator-color"]'
+        ></mm-text-list>
+        <mm-text>
+          선택 상태는 최소 2개 이상의 signal로 표현하는 것이 좋다 (WCAG 색상만으로 상태를 전달하지
+          말 것)
+        </mm-text>
+        <mm-text>“selected”라는 상태가 모든 컴포넌트에서 같은 의미 강도를 가지지 않는다</mm-text>
+        <div>
+          TAB::navigation, context switching, current view / check indicator::confirmed selection,
+          chosen item, applied state
+        </div>
+      </div>
+    </mm-flex>
+
+    <mm-flex direction="column" gap="16">
+      <mm-text size="24" weight="bold" as="h3">Interaction States</mm-text>
+      <mm-paragraph>
+        Interaction states는 사용자가 요소와 상호작용하는 과정에서 현재 상태를 이해하도록 돕는
+        시각적 단서입니다. Interaction states communicate the status of an element in the interface,
+        establish confidence once an action is taken, and suggest the ability (or inability) to
+        interact with the element.
+      </mm-paragraph>
+
+      <mm-grid columns="2">
+        <mm-list-row
+          icon="group"
+          avatar-size="large"
+          label="Hover"
+          description="포인터가 요소 위에 위치해 있으며 상호작용 가능함을 나타냅니다."
+        ></mm-list-row>
+        <mm-list-row
+          icon="group"
+          avatar-size="large"
+          label="Focus"
+          description="키보드 또는 프로그램적 탐색으로 요소가 포커스를 받은 상태입니다."
+        ></mm-list-row>
+        <mm-list-row
+          icon="group"
+          avatar-size="large"
+          label="Focus-visible"
+          description="키보드 탐색 등 명시적 포커스 표시가 필요한 상태입니다."
+        ></mm-list-row>
+        <mm-list-row
+          icon="group"
+          avatar-size="large"
+          label="Pressed"
+          description="요소가 눌리는 중이거나 토글된 상태입니다."
+        ></mm-list-row>
+        <mm-list-row
+          icon="group"
+          avatar-size="large"
+          label="Disabled"
+          description="현재 사용할 수 없는 상태입니다. 단순히 시각적으로 약하게 보이는 것 이상의 의미를 갖습니다."
+        ></mm-list-row>
+        <mm-list-row
+          icon="group"
+          avatar-size="large"
+          label="Loading"
+          description="작업이 진행 중이며 결과가 아직 확정되지 않은 상태입니다."
+        ></mm-list-row>
+      </mm-grid>
+
+      <div>
+        <div>
+          <a class="item is-hovered" data-size="medium" style="width: 100%; margin: 0 auto">
+            <mm-flex align="center" gap="0.75rem">
+              <mm-avatar default="true"></mm-avatar>
+              <span class="item-name">Item</span>
+            </mm-flex>
+          </a>
+          <p>
             Interaction states communicate the status of an element
             <a href="" class="is-hovered" style="text-decoration: underline">Text Link</a> in the
             interface.
-          </p> -->
-        <mm-text size="14" weight="bold">Focus state</mm-text>
-      </div>
-      <div>
-        <mm-text style="margin: 0" size="14" weight="bold">Disabled state</mm-text>
-        <mm-text data-note="IBM example">opacity :: Component 50%, Text 25%, Icons 50% </mm-text>
-        <mm-text>Hover none, Cursor not-allowed, removed elevated style</mm-text>
-      </div>
-      <div>
-        <mm-text size="14" weight="bold">Pressed state</mm-text>
-      </div>
-      <div>
-        <mm-text size="14" weight="bold">Selected state</mm-text>
-      </div>
-      <div>
-        <mm-text size="14" weight="bold">Progressing state</mm-text>
-        <mm-typing-indicator color="var(--color-background-strong)"></mm-typing-indicator>
-      </div>
-    </div>
-  </mm-component-section>
+          </p>
+        </div>
 
-  <mm-component-section
-    title="Feedbacks"
-    description="Interaction states communicate the status of an element in the interface, establish
+        <div>
+          <mm-text size="14" weight="bold">Selected state</mm-text>
+        </div>
+        <div>
+          <mm-text size="14" weight="bold">Progressing state</mm-text>
+          <mm-typing-indicator color="var(--color-background-strong)"></mm-typing-indicator>
+        </div>
+      </div>
+    </mm-flex>
+
+    <mm-flex direction="column" gap="16">
+      <mm-text size="24" weight="bold" as="h3">Feedback Signifiers</mm-text>
+      <mm-paragraph>
+        Feedback signifier는 사용자의 행동이나 시스템 상태에 대한 결과를 전달합니다. success, info,
+        warning, error는 색상뿐 아니라 명시적 메시지와 접근성 관계를 함께 제공해야 합니다.
+        Interaction states communicate the status of an element in the interface, establish
         confidence once an action is taken, and suggest the ability (or inability) to interact with
-        the element."
-  >
-    <div>
-      <mm-text size="14">
-        Keep things consistent. Consistent treatments for interaction feedback create recognizable
-        patterns. If an interaction produces different feedback across the Shopify admin, it
-        deteriorates the integrity of the pattern and risks confusing merchants.
-      </mm-text>
+        the element.
+      </mm-paragraph>
 
-      <div class="" style="margin-top: 1.5rem">
-        <mm-text-pair
-          labelText="Global Error"
-          descriptionText="인터넷연결오류: toast + callout (blocking / detour)"
-        ></mm-text-pair>
-        <br />
-        <mm-text-pair
-          labelText="Local Error"
-          descriptionText="reload - refresh - redirect / result 컴포넌트 / inline error, callout error"
-        ></mm-text-pair>
+      <section aria-labelledby="feedback-title">
+        <article>
+          <h3>Feedback types</h3>
+          <mm-list-row
+            icon="group"
+            avatar-size="large"
+            label="Success"
+            description="작업이 성공적으로 완료되었음을 나타냅니다."
+          ></mm-list-row>
+          <mm-list-row
+            icon="group"
+            avatar-size="large"
+            label="Info"
+            description="추가 정보나 참고 가능한 상태를 나타냅니다."
+          ></mm-list-row>
+          <mm-list-row
+            icon="group"
+            avatar-size="large"
+            label="Warning"
+            description="진행 전에 주의가 필요한 상태를 나타냅니다."
+          ></mm-list-row>
+          <mm-list-row
+            icon="group"
+            avatar-size="large"
+            label="Error"
+            description="실패, 오류, 수정 필요 상태를 나타냅니다."
+          ></mm-list-row>
+          <mm-list-row
+            icon="group"
+            avatar-size="large"
+            label="Empty"
+            description="데이터나 결과가 없는 상태를 설명합니다."
+          ></mm-list-row>
+          <mm-list-row
+            icon="group"
+            avatar-size="large"
+            label="Progress"
+            description="작업이 진행 중임을 나타냅니다."
+          ></mm-list-row>
+        </article>
+        <article>
+          <h3>Error feedback</h3>
+          <mm-paragraph>Error feedback은 다음 요소를 함께 제공해야 합니다.</mm-paragraph>
+          <mm-text-list
+            variant="check"
+            texts='["error tone", "error icon when helpful", "explicit message text", "affected field or region", "accessible relationship such as aria-invalid and aria-describedby"]'
+          ></mm-text-list>
+        </article>
+      </section>
+
+      <div>
+        <mm-text size="14">
+          Keep things consistent. Consistent treatments for interaction feedback create recognizable
+          patterns. If an interaction produces different feedback across the Shopify admin, it
+          deteriorates the integrity of the pattern and risks confusing merchants.
+        </mm-text>
+
+        <div style="margin-top: 1.5rem">
+          <mm-text-pair
+            labelText="Global Error"
+            descriptionText="인터넷연결오류: toast + callout (blocking / detour)"
+          ></mm-text-pair>
+
+          <mm-text-pair
+            labelText="Local Error"
+            descriptionText="reload - refresh - redirect / result 컴포넌트 / inline error, callout error"
+          ></mm-text-pair>
+        </div>
       </div>
-    </div>
-  </mm-component-section>
+    </mm-flex>
 
-  <mm-component-section
-    title="Layout and structure"
-    description="레이아웃과 구조는 콘텐츠의 우선순위를 정하고, 사용자가 콘텐츠를 인지하고 이해하는 데 도움을 줍니다."
-  >
-    <div>
-      <mm-text-list
-        texts='[
+    <mm-flex direction="column" gap="16">
+      <mm-text size="24" weight="bold" as="h3"
+        >Structure &amp; Grouping ///// Layout and structure</mm-text
+      >
+      <mm-paragraph>
+        Layout 자체를 정의하기보다, 공간과 구조가 의미를 전달하는 경우를 다룹니다. 같은 영역에
+        배치된 요소는 같은 개체나 맥락에 속한다는 신호가 될 수 있고, 구분선은 서로 다른 항목의
+        경계를 나타낼 수 있습니다. ///// 레이아웃과 구조는 콘텐츠의 우선순위를 정하고, 사용자가
+        콘텐츠를 인지하고 이해하는 데 도움을 줍니다.
+      </mm-paragraph>
+
+      <mm-grid columns="2">
+        <mm-list-row
+          icon="group"
+          avatar-size="large"
+          label="Grouping"
+          description="같은 컨테이너 안의 요소는 같은 맥락 또는 개체에 속함을 나타냅니다."
+        ></mm-list-row>
+        <mm-list-row
+          icon="group"
+          avatar-size="large"
+          label="Separation"
+          description="구분선, 간격, 배경 차이는 항목이나 섹션의 경계를 나타냅니다."
+        ></mm-list-row>
+        <mm-list-row
+          icon="group"
+          avatar-size="large"
+          label="Hierarchy"
+          description="크기, 위치, 간격, 밀도는 정보의 우선순위를 전달합니다."
+        ></mm-list-row>
+        <mm-list-row
+          icon="group"
+          avatar-size="large"
+          label="Relationship"
+          description="인접성, 정렬, 포함 관계는 요소 간 관계를 나타냅니다."
+        ></mm-list-row>
+        <mm-list-row
+          icon="group"
+          avatar-size="large"
+          label="Density as meaning"
+          description="높은 밀도는 관리형/목록형 인터페이스를, 낮은 밀도는 탐색형/강조형 인터페이스를 암시할 수 있습니다."
+        ></mm-list-row>
+      </mm-grid>
+
+      <div>
+        <mm-text-list
+          texts='[
           "사용자의 화면 크기를 한정하지 마세요. 새로운 플랫폼이나 새로운 디바이스가 출시되더라도 빠르게 대응할 수 있어야 합니다. 특정 디바이스에 최적화하거나 종속되지 않고 환경에 구애받지 않는 일관된 경험과 인터페이스를 설계한다는 태도.",
           "디자인 이론에 근거한 그리드 시스템은 디자이너에게만 유효하게 동작한다. 12칼럼 그리드는 사용자의 다양한 화면 크기에 대응하기 어렵다? 2~4개의 칼럼을 갖는 레이아웃 시스템이 필요할 수는 있으나, 엄격한 그리드 시스템은.",
           "왜 디자이너들은 작업판의 크기 정의를 어려워 하는가? 375px 등의 고정된 가로 크기는 의미가 없다. 마찬가지로 디자인 툴에서 자동으로 말줄임표를 만든다는 식의 솔루션은 아무 문제도 해결할 수 없다. 말줄임표가 발생하면 레이블의 의미를 전달하지 못 하기 때문이다. 엄격한 writing 가이드가 유아이 툴의 자동화보다 중요하다.",
@@ -223,108 +591,106 @@
           "Use only universally recognized icons to represent actions or options.",
           "addable / expandable, done / check / positive" "bold text를 clickable로 사용? (단락 더보기 등에서 사용되는 패턴)" "iOS에서 뒤로가기(이전 페이지)는 chevron."
         ]'
-      ></mm-text-list>
+        ></mm-text-list>
 
-      <mm-title-with-description
-        level="3"
-        title="페이지 모듈의 대비"
-        description="페이지의 맥락을 구분하기 위해 레이아웃 모듈이나 배경색의 대비를 활용할 수 있습니다. 컨테이너 너비(비밀번호찾기와 로그인/회원가입)와 배경색(설정, 글쓰기, 소개 등)."
-      ></mm-title-with-description>
+        <mm-title-with-description
+          level="3"
+          title="페이지 모듈의 대비"
+          description="페이지의 맥락을 구분하기 위해 레이아웃 모듈이나 배경색의 대비를 활용할 수 있습니다. 컨테이너 너비(비밀번호찾기와 로그인/회원가입)와 배경색(설정, 글쓰기, 소개 등)."
+        ></mm-title-with-description>
 
-      <br />
-
-      <mm-title-with-description
-        level="3"
-        title="4 칼럼 그리드"
-        description="페이지의 맥락을 구분하기 위해 레이아웃 모듈이나 배경색의 대비를 활용할 수 있습니다. 컨테이너 너비(비밀번호찾기와 로그인/회원가입)와 배경색(설정, 글쓰기, 소개 등)."
-      ></mm-title-with-description>
-      <mm-text size="18">
-        목표. 우선순위. 중요한 문제에 집중. 비판적인 관점으로 정보 필터링.
-      </mm-text>
-    </div>
-  </mm-component-section>
-
-  <mm-component-section>
-    <div class="scroll-outer">
-      <div class="scroll-inner">
-        <div class="item">Item 1</div>
-        <div class="item">Item 2</div>
-        <div class="item">Item 3</div>
-        <div class="item">Item 4</div>
-        <div class="item">Item 5</div>
-        <div class="item">Item 6</div>
-        <div class="item">Item 6</div>
-        <div class="item">Item 6</div>
-        <div class="item">Item 6</div>
-        <div class="item">Item 6</div>
-        <div class="item">Item 6</div>
-        <!-- 계속 추가 가능 -->
+        <mm-title-with-description
+          level="3"
+          title="4 칼럼 그리드"
+          description="페이지의 맥락을 구분하기 위해 레이아웃 모듈이나 배경색의 대비를 활용할 수 있습니다. 컨테이너 너비(비밀번호찾기와 로그인/회원가입)와 배경색(설정, 글쓰기, 소개 등)."
+        ></mm-title-with-description>
+        <mm-text size="18">
+          목표. 우선순위. 중요한 문제에 집중. 비판적인 관점으로 정보 필터링.
+        </mm-text>
       </div>
-    </div>
+    </mm-flex>
 
-    https://m3.material.io/blog/building-with-m3-expressive
+    <mm-flex direction="column" gap="16">
+      <div class="scroll-outer">
+        <div class="scroll-inner">
+          <div class="item">Item 1</div>
+          <div class="item">Item 2</div>
+          <div class="item">Item 3</div>
+          <div class="item">Item 4</div>
+          <div class="item">Item 5</div>
+          <div class="item">Item 6</div>
+          <div class="item">Item 6</div>
+          <div class="item">Item 6</div>
+          <div class="item">Item 6</div>
+          <div class="item">Item 6</div>
+          <div class="item">Item 6</div>
+          <!-- 계속 추가 가능 -->
+        </div>
+      </div>
 
-    <style>
-      :root {
-        --layout-max-width: 1200px;
-        --layout-side-padding: calc((100vw - var(--layout-max-width)) / 2);
-        --item-min-width: 240px;
-        --item-gap: 20px;
-      }
+      https://m3.material.io/blog/building-with-m3-expressive
 
-      .scroll-outer {
-        overflow-x: auto;
-        scroll-snap-type: x mandatory; /* 🧲 scroll snap 적용 */
-        -webkit-overflow-scrolling: touch; /* iOS 부드러운 스크롤 */
-      }
-
-      .scroll-inner {
-        display: flex;
-        gap: var(--item-gap);
-        padding: 20px 0;
-        padding-left: var(--layout-side-padding);
-        padding-right: var(--layout-side-padding);
-        min-width: 100vw;
-      }
-
-      .item {
-        min-width: var(--item-min-width);
-        height: 150px;
-        background: #eee;
-        flex-shrink: 0;
-        scroll-snap-align: start; /* 🧲 아이템이 스냅에 맞춰짐 */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: bold;
-        border-radius: 8px;
-      }
-
-      /* 반응형 대응 */
-      @media (max-width: 1200px) {
+      <style>
         :root {
-          --layout-side-padding: 16px;
-          --item-min-width: 200px;
-          --item-gap: 16px;
+          --layout-max-width: 1200px;
+          --layout-side-padding: calc((100vw - var(--layout-max-width)) / 2);
+          --item-min-width: 240px;
+          --item-gap: 20px;
         }
-      }
 
-      @media (max-width: 768px) {
-        :root {
-          --layout-side-padding: 12px;
-          --item-min-width: 180px;
-          --item-gap: 12px;
+        .scroll-outer {
+          overflow-x: auto;
+          scroll-snap-type: x mandatory; /* 🧲 scroll snap 적용 */
+          -webkit-overflow-scrolling: touch; /* iOS 부드러운 스크롤 */
+        }
+
+        .scroll-inner {
+          display: flex;
+          gap: var(--item-gap);
+          padding: 20px 0;
+          padding-left: var(--layout-side-padding);
+          padding-right: var(--layout-side-padding);
+          min-width: 100vw;
         }
 
         .item {
-          height: 120px;
-          font-size: 14px;
+          min-width: var(--item-min-width);
+          height: 150px;
+          background: #eee;
+          flex-shrink: 0;
+          scroll-snap-align: start; /* 🧲 아이템이 스냅에 맞춰짐 */
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-weight: bold;
+          border-radius: 8px;
         }
-      }
-    </style>
-  </mm-component-section>
 
-  <!-- <aside class="loader">
+        /* 반응형 대응 */
+        @media (max-width: 1200px) {
+          :root {
+            --layout-side-padding: 16px;
+            --item-min-width: 200px;
+            --item-gap: 16px;
+          }
+        }
+
+        @media (max-width: 768px) {
+          :root {
+            --layout-side-padding: 12px;
+            --item-min-width: 180px;
+            --item-gap: 12px;
+          }
+
+          .item {
+            height: 120px;
+            font-size: 14px;
+          }
+        }
+      </style>
+    </mm-flex>
+
+    <!-- <aside class="loader">
     <div class="spinner">
       <div class="double-bounce1"></div>
       <div class="double-bounce2"></div>
@@ -366,453 +732,78 @@
     }
   </style> -->
 
-  <mm-component-references>
-    <mm-link
-      external
-      href="https://developer.apple.com/design/human-interface-guidelines/components/layout-and-organization/disclosure-controls"
-      >disclosure-controls</mm-link
-    >
-    <mm-link external href="https://developer.apple.com/kr/design/tips/"
-      >UI 디자인 기본 원칙</mm-link
-    >
-    <mm-link external href="https://m3.material.io/foundations/interaction-states"
-      >MD interaction-states</mm-link
-    >
-    <mm-link external href="https://simplicable.com/new/visual-information"
-      >Visual Information</mm-link
-    >
-  </mm-component-references>
-
-  <!DOCTYPE html>
-  <html lang="ko">
-    <head>
-      <meta charset="utf-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <title>Signifiers — 시각적 단서와 상태 표시</title>
-    </head>
-    <body>
-      <main>
-        <header>
-          <p>Foundations</p>
-          <h1>Signifiers</h1>
-          <p>
-            Signifiers define the visual cues that communicate what an element means, what state it
-            is in, and what users can do with it.
-          </p>
-          <p>
-            기표는 사용자가 UI를 보고 해당 요소의 역할, 상태, 가능한 행동을 이해할 수 있도록 하는
-            시각적 단서입니다. 이 페이지는 디자인 시스템 안에서 특정 시각 표현이 특정 의미에만
-            사용되도록 제한하는 공통 계약을 정의합니다.
-          </p>
-        </header>
-
-        <section aria-labelledby="overview-title">
-          <h2 id="overview-title">Overview</h2>
-          <p>
-            Signifier 페이지의 목적은 UI의 시각 표현이 어떤 의미, 상태, 행동 가능성을 나타내는지
-            일관되게 정의하는 것입니다. 기표는 장식이 아니라 사용자가 인터페이스를 해석하는 방식에
-            직접 관여하는 규칙입니다.
-          </p>
-          <p>
-            예를 들어 primary color text, underline, pointer cursor, external link icon, check
-            icon은 각각 특정한 의미를 갖습니다. 이러한 단서가 다른 의미로 재사용되면 사용자는 요소의
-            역할을 오해할 수 있습니다.
-          </p>
-        </section>
-
-        <section aria-labelledby="principles-title">
-          <h2 id="principles-title">Core Principles</h2>
-
-          <article>
-            <h3>One signifier, one primary meaning</h3>
-            <p>
-              하나의 시각적 단서는 시스템이 명시적으로 허용하지 않는 한 다른 의미로 재사용하지
-              않습니다. 예를 들어 외부 링크 아이콘은 외부 목적지로 이동한다는 의미에 사용하며,
-              일반적인 내부 이동이나 상세 보기에는 사용하지 않습니다.
-            </p>
-          </article>
-
-          <article>
-            <h3>Do not use interaction cues as decoration</h3>
-            <p>
-              클릭 가능성을 암시하는 색상, 밑줄, 커서, 아이콘은 장식이나 일반 강조로 사용하지
-              않습니다. 사용자는 이러한 단서를 인터랙션 가능성으로 학습하기 때문입니다.
-            </p>
-          </article>
-
-          <article>
-            <h3>Do not rely on color alone</h3>
-            <p>
-              상태나 피드백은 색상만으로 전달하지 않습니다. 중요한 상태는 아이콘, 텍스트, 형태,
-              위치, ARIA 속성 등과 함께 제공해야 합니다.
-            </p>
-          </article>
-
-          <article>
-            <h3>Keep signifiers consistent across components</h3>
-            <p>
-              컴포넌트의 접근성 속성은 다를 수 있지만 사용자가 인지하는 시각적 기표는 일관되게
-              유지합니다. 예를 들어 Tabs는 aria-selected, Toggle Button은 aria-pressed, Checkbox는
-              aria-checked를 사용할 수 있지만 선택 상태의 시각적 단서는 공통된 원칙을 따릅니다.
-            </p>
-          </article>
-        </section>
-
-        <section aria-labelledby="clickable-title">
-          <h2 id="clickable-title">Clickable &amp; Link Signifiers</h2>
-          <p>
-            Clickable signifier는 사용자가 특정 요소를 누르거나 이동할 수 있음을 나타냅니다. primary
-            color text, underline, pointer cursor, button-like shape은 인터랙티브 요소에만
-            사용합니다.
-          </p>
-
-          <article>
-            <h3>Primary color text</h3>
-            <p>
-              Primary color text는 링크, 텍스트 버튼, 인라인 액션처럼 클릭 가능한 텍스트에
-              예약합니다. 본문 강조, 메타 정보 강조, 장식적 하이라이트에는 사용하지 않습니다.
-            </p>
-
-            <h4>Do</h4>
-            <pre><code>&lt;a href="/settings"&gt;설정으로 이동&lt;/a&gt;</code></pre>
-
-            <h4>Don’t</h4>
-            <pre><code>&lt;p&gt;이 기능은 &lt;span class="text-primary"&gt;중요합니다&lt;/span&gt;.&lt;/p&gt;</code></pre>
-          </article>
-
-          <article>
-            <h3>External links</h3>
-            <p>
-              외부 링크 아이콘은 현재 제품 또는 서비스 맥락을 벗어나는 목적지를 나타냅니다. 일반적인
-              내부 이동, 패널 확장, 상세 보기에는 사용하지 않습니다.
-            </p>
-          </article>
-        </section>
-
-        <section aria-labelledby="icon-title">
-          <h2 id="icon-title">Icon Indicators</h2>
-          <p>
-            Icon indicator는 장식이 아니라 특정 의미를 전달하는 시각적 단서입니다. 아이콘을
-            indicator로 사용하는 경우, 해당 아이콘의 의미와 사용 범위를 명확히 고정해야 합니다.
-          </p>
-
-          <dl>
-            <dt>External link</dt>
-            <dd>외부 목적지로 이동하거나 새 외부 맥락을 여는 경우에 사용합니다.</dd>
-
-            <dt>Check</dt>
-            <dd>선택됨, 완료됨, 확인됨을 나타냅니다. 단순한 긍정 장식으로 사용하지 않습니다.</dd>
-
-            <dt>Warning</dt>
-            <dd>사용자의 주의가 필요한 상태를 나타냅니다. 마케팅 강조 용도로 사용하지 않습니다.</dd>
-
-            <dt>Error</dt>
-            <dd>오류, 실패, 수정이 필요한 상태를 나타냅니다.</dd>
-
-            <dt>Info</dt>
-            <dd>보조 정보나 설명 가능한 상태를 나타냅니다.</dd>
-
-            <dt>Download</dt>
-            <dd>파일 또는 데이터를 내려받는 액션에 사용합니다.</dd>
-
-            <dt>More</dt>
-            <dd>추가 액션 메뉴 또는 숨겨진 옵션을 나타냅니다.</dd>
-
-            <dt>Required</dt>
-            <dd>필수 입력 또는 필수 조건을 나타냅니다.</dd>
-          </dl>
-        </section>
-
-        <section aria-labelledby="selected-title">
-          <h2 id="selected-title">Selected Indicators</h2>
-          <p>
-            Selected는 여러 선택지 중 사용자가 선택한 항목을 나타냅니다. 컴포넌트별 의미론적 상태는
-            다를 수 있지만, 선택 상태를 전달하는 시각적 기표는 일관되게 관리합니다.
-          </p>
-
-          <article>
-            <h3>Related states</h3>
-            <dl>
-              <dt>Selected</dt>
-              <dd>여러 선택지 중 선택된 항목입니다.</dd>
-
-              <dt>Current</dt>
-              <dd>현재 위치나 현재 보고 있는 항목입니다.</dd>
-
-              <dt>Active</dt>
-              <dd>현재 활성화되어 있는 항목입니다.</dd>
-
-              <dt>Checked</dt>
-              <dd>체크박스, 라디오, 메뉴 옵션의 체크 상태입니다.</dd>
-
-              <dt>Pressed</dt>
-              <dd>토글 버튼이 눌린 상태입니다.</dd>
-            </dl>
-          </article>
-
-          <article>
-            <h3>Visual cues</h3>
-            <ul>
-              <li>selected background</li>
-              <li>selected border</li>
-              <li>check icon</li>
-              <li>stronger label weight</li>
-              <li>selected indicator line</li>
-            </ul>
-          </article>
-
-          <article>
-            <h3>Component mapping</h3>
-            <dl>
-              <dt>Tabs</dt>
-              <dd>aria-selected를 사용합니다.</dd>
-
-              <dt>Toggle Button</dt>
-              <dd>aria-pressed를 사용합니다.</dd>
-
-              <dt>Radio</dt>
-              <dd>aria-checked 또는 native checked state를 사용합니다.</dd>
-
-              <dt>Checkbox</dt>
-              <dd>aria-checked 또는 native checked state를 사용합니다.</dd>
-
-              <dt>Menu option</dt>
-              <dd>역할에 따라 aria-checked 또는 aria-selected를 사용합니다.</dd>
-            </dl>
-          </article>
-        </section>
-
-        <section aria-labelledby="states-title">
-          <h2 id="states-title">Interaction States</h2>
-          <p>
-            Interaction states는 사용자가 요소와 상호작용하는 과정에서 현재 상태를 이해하도록 돕는
-            시각적 단서입니다.
-          </p>
-
-          <dl>
-            <dt>Hover</dt>
-            <dd>포인터가 요소 위에 위치해 있으며 상호작용 가능함을 나타냅니다.</dd>
-
-            <dt>Focus</dt>
-            <dd>키보드 또는 프로그램적 탐색으로 요소가 포커스를 받은 상태입니다.</dd>
-
-            <dt>Focus-visible</dt>
-            <dd>키보드 탐색 등 명시적 포커스 표시가 필요한 상태입니다.</dd>
-
-            <dt>Pressed</dt>
-            <dd>요소가 눌리는 중이거나 토글된 상태입니다.</dd>
-
-            <dt>Disabled</dt>
-            <dd>
-              현재 사용할 수 없는 상태입니다. 단순히 시각적으로 약하게 보이는 것 이상의 의미를
-              갖습니다.
-            </dd>
-
-            <dt>Loading</dt>
-            <dd>작업이 진행 중이며 결과가 아직 확정되지 않은 상태입니다.</dd>
-          </dl>
-        </section>
-
-        <section aria-labelledby="feedback-title">
-          <h2 id="feedback-title">Feedback Signifiers</h2>
-          <p>
-            Feedback signifier는 사용자의 행동이나 시스템 상태에 대한 결과를 전달합니다. success,
-            info, warning, error는 색상뿐 아니라 명시적 메시지와 접근성 관계를 함께 제공해야 합니다.
-          </p>
-
-          <article>
-            <h3>Error feedback</h3>
-            <p>Error feedback은 다음 요소를 함께 제공해야 합니다.</p>
-            <ul>
-              <li>error tone</li>
-              <li>error icon when helpful</li>
-              <li>explicit message text</li>
-              <li>affected field or region</li>
-              <li>accessible relationship such as aria-invalid and aria-describedby</li>
-            </ul>
-          </article>
-
-          <article>
-            <h3>Feedback types</h3>
-            <dl>
-              <dt>Success</dt>
-              <dd>작업이 성공적으로 완료되었음을 나타냅니다.</dd>
-
-              <dt>Info</dt>
-              <dd>추가 정보나 참고 가능한 상태를 나타냅니다.</dd>
-
-              <dt>Warning</dt>
-              <dd>진행 전에 주의가 필요한 상태를 나타냅니다.</dd>
-
-              <dt>Error</dt>
-              <dd>실패, 오류, 수정 필요 상태를 나타냅니다.</dd>
-
-              <dt>Empty</dt>
-              <dd>데이터나 결과가 없는 상태를 설명합니다.</dd>
-
-              <dt>Progress</dt>
-              <dd>작업이 진행 중임을 나타냅니다.</dd>
-            </dl>
-          </article>
-        </section>
-
-        <section aria-labelledby="structure-title">
-          <h2 id="structure-title">Structure &amp; Grouping</h2>
-          <p>
-            Layout 자체를 정의하기보다, 공간과 구조가 의미를 전달하는 경우를 다룹니다. 같은 영역에
-            배치된 요소는 같은 개체나 맥락에 속한다는 신호가 될 수 있고, 구분선은 서로 다른 항목의
-            경계를 나타낼 수 있습니다.
-          </p>
-
-          <dl>
-            <dt>Grouping</dt>
-            <dd>같은 컨테이너 안의 요소는 같은 맥락 또는 개체에 속함을 나타냅니다.</dd>
-
-            <dt>Separation</dt>
-            <dd>구분선, 간격, 배경 차이는 항목이나 섹션의 경계를 나타냅니다.</dd>
-
-            <dt>Hierarchy</dt>
-            <dd>크기, 위치, 간격, 밀도는 정보의 우선순위를 전달합니다.</dd>
-
-            <dt>Relationship</dt>
-            <dd>인접성, 정렬, 포함 관계는 요소 간 관계를 나타냅니다.</dd>
-
-            <dt>Density as meaning</dt>
-            <dd>
-              높은 밀도는 관리형/목록형 인터페이스를, 낮은 밀도는 탐색형/강조형 인터페이스를 암시할
-              수 있습니다.
-            </dd>
-          </dl>
-        </section>
-
-        <section aria-labelledby="mapping-title">
-          <h2 id="mapping-title">Component Mapping</h2>
-          <p>
-            Signifier 규칙은 각 컴포넌트 문서와 연결되어야 합니다. 이 매핑은 공통 기표가 실제
-            컴포넌트에서 어떻게 적용되는지 확인하기 위한 기준입니다.
-          </p>
-
-          <table>
-            <thead>
-              <tr>
-                <th scope="col">Signifier</th>
-                <th scope="col">Meaning</th>
-                <th scope="col">Allowed in</th>
-                <th scope="col">Not allowed in</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">Primary color text</th>
-                <td>Clickable text or link</td>
-                <td>Link, Text Button, inline action</td>
-                <td>Body emphasis, metadata, decorative highlight</td>
-              </tr>
-              <tr>
-                <th scope="row">Underline</th>
-                <td>Text link or clickable text</td>
-                <td>Link, inline action</td>
-                <td>General emphasis</td>
-              </tr>
-              <tr>
-                <th scope="row">External link icon</th>
-                <td>External destination</td>
-                <td>External link, third-party document, partner page</td>
-                <td>Internal route, expandable panel, detail view</td>
-              </tr>
-              <tr>
-                <th scope="row">Check icon</th>
-                <td>Selected, completed, confirmed</td>
-                <td>Option Row, Menu Option, completion feedback</td>
-                <td>Generic positive decoration</td>
-              </tr>
-              <tr>
-                <th scope="row">Selected background</th>
-                <td>Selected item</td>
-                <td>Toggle Button, Option Row, Tab, Menu Option</td>
-                <td>Hover-only state, decorative card emphasis</td>
-              </tr>
-              <tr>
-                <th scope="row">Error tone</th>
-                <td>Error, failure, destructive meaning</td>
-                <td>Form error, Alert, destructive action</td>
-                <td>General attention, marketing emphasis</td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
-      </main>
-    </body>
-  </html>
-</main>
-
-<!-- <main class="page">
-  ChangeEvent / FormEvent
-  <mm-text size="32">Utilities</mm-text>
-  <mm-text size="18">작성 중.</mm-text>
-
-  <secti
-    <mm-text size="18">Data Formatting</mm-text>
-    <div style="height: var(--space-2)"></div>
-    <mm-flex direction="column" gap="2" nowrap>
-      <mm-menu-item-row>
-        <mm-avatar slot="avatar"></mm-avatar>
-        <mm-text-pair slot="text" labelText="getDateFormat(20220610)" descriptionText="test">
-        </mm-text-pair>
-      </mm-menu-item-row>
-      <mm-menu-item-row>
-        <mm-avatar slot="avatar"></mm-avatar>
-        <mm-text-pair
-          slot="text"
-          labelText="getCurrencyFormat(30000)"
-          descriptionText="30,000원 / ₩ 30,000 / 30,000 won"
-        >
-        </mm-text-pair>
-      </mm-menu-item-row>
-      <mm-menu-item-row>
-        <mm-avatar slot="avatar"></mm-avatar>
-        <mm-text-pair
-          slot="text"
-          labelText="getNumberFotmat(30000)"
-          descriptionText="3만 / 30K"
-        ></mm-text-pair>
-      </mm-menu-item-row>
-    </mm-flex>
-
-    <mm-text size="18">Event handler naming.</mm-text>
-
-    <mm-text size="18">Early return.</mm-text>
-
-    <mm-text size="18">Types</mm-text>
-    <mm-text size="14">OptionType = { label: '', value: '' } </mm-text>
-
-    <mm-text size="18">CSS</mm-text>
-    <mm-text size="14" weight="bold">linebreaker-desktop / linebreaker-mobile</mm-text>
-    <mm-text size="14" weight="bold">animation-stopper-resize / hidden</mm-text>
-
-    <mm-text size="18">Attention required</mm-text>
-
-    <div>
-      <label for="username">Username</label>
-      <input id="username" name="username" aria-describedby="username-desc" />
-      <button aria-expanded="false" aria-controls="username-desc" aria-label="Help about username">
-        <span aria-hidden="true">?</span>
-      </button>
-      <p id="username-desc" hidden>
-        Your username is the name that you use to log in to this service.
-      </p>
-    </div>
-
-    <blockquote>
-      <mm-text-list
-        texts='[
-        "slotted은 정렬, 위치만을 명세. 형태는 슬롯으로 들어온 친구가 하는 것.",
-        "서비스가 출시 환경이 웹온리(웹/태블릿+모바일) 웹+모바일앱(웹+태블릿/모바일)",
-        "naming: data-index 보다 name name을 숫자로 주면 됨.",
-        "role로 스타일링 하면 수정이 어려움. aria로 상태 표현은 좋다."
-        ]'
+    <mm-component-references>
+      <mm-link
+        external
+        href="https://developer.apple.com/design/human-interface-guidelines/components/layout-and-organization/disclosure-controls"
+        >disclosure-controls</mm-link
       >
-      </mm-text-list>
-    </blockquote>
-  </section>
-</main> -->
+      <mm-link external href="https://developer.apple.com/kr/design/tips/"
+        >UI 디자인 기본 원칙</mm-link
+      >
+      <mm-link external href="https://m3.material.io/foundations/interaction-states"
+        >MD interaction-states</mm-link
+      >
+      <mm-link external href="https://simplicable.com/new/visual-information"
+        >Visual Information</mm-link
+      >
+    </mm-component-references>
+
+    <section aria-labelledby="mapping-title">
+      <h2 id="mapping-title">Component Mapping</h2>
+      <mm-paragraph>
+        Signifier 규칙은 각 컴포넌트 문서와 연결되어야 합니다. 이 매핑은 공통 기표가 실제
+        컴포넌트에서 어떻게 적용되는지 확인하기 위한 기준입니다.
+      </mm-paragraph>
+
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Signifier</th>
+            <th scope="col">Meaning</th>
+            <th scope="col">Allowed in</th>
+            <th scope="col">Not allowed in</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Primary color text</th>
+            <td>Clickable text or link</td>
+            <td>Link, Text Button, inline action</td>
+            <td>Body emphasis, metadata, decorative highlight</td>
+          </tr>
+          <tr>
+            <th scope="row">Underline</th>
+            <td>Text link or clickable text</td>
+            <td>Link, inline action</td>
+            <td>General emphasis</td>
+          </tr>
+          <tr>
+            <th scope="row">External link icon</th>
+            <td>External destination</td>
+            <td>External link, third-party document, partner page</td>
+            <td>Internal route, expandable panel, detail view</td>
+          </tr>
+          <tr>
+            <th scope="row">Check icon</th>
+            <td>Selected, completed, confirmed</td>
+            <td>Option Row, Menu Option, completion feedback</td>
+            <td>Generic positive decoration</td>
+          </tr>
+          <tr>
+            <th scope="row">Selected background</th>
+            <td>Selected item</td>
+            <td>Toggle Button, Option Row, Tab, Menu Option</td>
+            <td>Hover-only state, decorative card emphasis</td>
+          </tr>
+          <tr>
+            <th scope="row">Error tone</th>
+            <td>Error, failure, destructive meaning</td>
+            <td>Form error, Alert, destructive action</td>
+            <td>General attention, marketing emphasis</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </mm-flex>
+</main>

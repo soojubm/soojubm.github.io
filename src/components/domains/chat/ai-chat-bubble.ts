@@ -15,14 +15,6 @@ export class AiChatBubble extends ChatBubbleBase {
   static styles = [
     ...ChatBubbleBase.styles,
     css`
-      .row {
-        display: flex;
-        flex-direction: column;
-        gap: var(--space-1);
-        position: relative;
-        width: fit-content;
-      }
-
       .reactions {
         display: flex;
         position: absolute;
@@ -84,39 +76,42 @@ export class AiChatBubble extends ChatBubbleBase {
     if (this.src) return this.renderImage()
 
     return html`
-      <div class="row">
-        <div class="bubble" @click=${this.toggleActions} aria-haspopup="menu" aria-expanded=${this.isActionsOpen ? 'true' : 'false'}>
-          <slot></slot>
-          ${this.time ? html`<time class="time">${this.time}</time>` : ''}
-        </div>
-        ${this.noReactions || !this.isActionsOpen
-          ? ''
-          : html`
-              <div class="reactions" role="menu" aria-label="메시지 피드백">
-                <mm-icon-button
-                  size="small"
-                  variant="plain"
-                  icon="copy"
-                  aria-label="복사"
-                  @click=${(event: Event) => this.emitReaction(event, 'copy')}
-                ></mm-icon-button>
-                <mm-icon-button
-                  size="small"
-                  variant="plain"
-                  icon="thumbs-up"
-                  aria-label="좋아요"
-                  @click=${(event: Event) => this.emitReaction(event, 'like')}
-                ></mm-icon-button>
-                <mm-icon-button
-                  size="small"
-                  variant="plain"
-                  icon="thumbs-down"
-                  aria-label="싫어요"
-                  @click=${(event: Event) => this.emitReaction(event, 'dislike')}
-                ></mm-icon-button>
-              </div>
-            `}
+      <div
+        class="bubble"
+        @click=${this.toggleActions}
+        aria-haspopup="menu"
+        aria-expanded=${this.isActionsOpen ? 'true' : 'false'}
+      >
+        <slot></slot>
+        ${this.time ? html`<time class="time">${this.time}</time>` : ''}
       </div>
+      ${this.noReactions || !this.isActionsOpen
+        ? ''
+        : html`
+            <div class="reactions" role="menu" aria-label="메시지 피드백">
+              <mm-icon-button
+                size="small"
+                variant="plain"
+                icon="copy"
+                aria-label="복사"
+                @click=${(event: Event) => this.emitReaction(event, 'copy')}
+              ></mm-icon-button>
+              <mm-icon-button
+                size="small"
+                variant="plain"
+                icon="thumbs-up"
+                aria-label="좋아요"
+                @click=${(event: Event) => this.emitReaction(event, 'like')}
+              ></mm-icon-button>
+              <mm-icon-button
+                size="small"
+                variant="plain"
+                icon="thumbs-down"
+                aria-label="싫어요"
+                @click=${(event: Event) => this.emitReaction(event, 'dislike')}
+              ></mm-icon-button>
+            </div>
+          `}
     `
   }
 }

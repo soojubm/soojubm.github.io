@@ -1,5 +1,6 @@
 <main class="page" style="margin: 0 auto">
-  <header class="" style="display: flex; justify-content: center; gap: 1rem">
+  <header>
+    <mm-flex justify="center" gap="4">
     <div style="width: 30%">
       <mm-text size="32">
         <span style="color: var(--color-foreground-light)">Let us guide</span>
@@ -16,9 +17,10 @@
       <!-- "Abstract추상 레벨(패턴 또는 파운데이션) →Semantic시멘틱 레벨(도메인 최적화) → Concrete구체 레벨(맥락화, Implementation)",
       "구체 레벨 :: user, company 등 두 가지 이상의 아바타 유형이 필요할 때 radius token의 값을 변경하여 구분한다." -->
     </div>
+    </mm-flex>
   </header>
   <section style="margin: 4rem 0">
-    <div class="columns-2">
+    <mm-grid columns="2">
       <div
         style="
           display: flex;
@@ -74,7 +76,7 @@
           👉 핵심: 처음부터 완벽하게 만들지 않는다. 대신 확장 가능하게 만든다
         </mm-text>
       </div>
-    </div>
+    </mm-grid>
   </section>
 
   <article
@@ -793,7 +795,7 @@
     >
       <mm-text as="h2" size="18" weight="bold">이 방법론의 한계</mm-text>
 
-      <div style="display: flex; flex-direction: column; gap: var(--space-2)">
+      <mm-flex direction="column" gap="2">
         <mm-text size="14" weight="bold"
           >"다른 서비스에서 쓸 수 있는가"의 판단은 여전히 주관적이다</mm-text
         >
@@ -803,9 +805,9 @@
           판단이 갈린다. 폴더 구조가 강제할 수 있는 건 배치 이후다. 배치 전 판단은 사람이
           한다.</mm-text
         >
-      </div>
+      </mm-flex>
 
-      <div style="display: flex; flex-direction: column; gap: var(--space-2)">
+      <mm-flex direction="column" gap="2">
         <mm-text size="14" weight="bold"
           >Concrete가 도메인을 넘어 재사용되면 레이어가 흔들린다</mm-text
         >
@@ -814,16 +816,16 @@
           특화였다가 점점 범용이 된다. Concrete를 Semantic으로 격상하는 시점과 기준이 없으면
           domains/ 안에 사실상 Semantic인 컴포넌트가 쌓이기 시작한다.</mm-text
         >
-      </div>
+      </mm-flex>
 
-      <div style="display: flex; flex-direction: column; gap: var(--space-2)">
+      <mm-flex direction="column" gap="2">
         <mm-text size="14" weight="bold">Semantic 레이어가 팽창하기 쉽다</mm-text>
         <mm-text size="14"
           >"도메인 무관"의 기준이 느슨하면 모든 컴포넌트가 Semantic 후보가 된다. 작은 변형마다
           새로운 Semantic 컴포넌트가 추가되면 semantics/ 디렉토리가 비대해지고, Abstract 컴포넌트의
           variant로 충분히 해결할 수 있는 것들이 별도 클래스로 분산된다.</mm-text
         >
-      </div>
+      </mm-flex>
     </div>
   </section>
 
@@ -833,7 +835,7 @@
       일관된 네이밍은 코드 탐색과 예측 가능성을 높입니다.
     </mm-text>
 
-    <div class="columns-2">
+    <mm-grid columns="2">
       <div
         style="
           padding: 1.5rem;
@@ -981,7 +983,7 @@
           </tbody>
         </table>
       </div>
-    </div>
+    </mm-grid>
   </section>
 
   <section style="margin: 4rem 0">
@@ -990,7 +992,7 @@
       현재 구현된 컴포넌트 현황입니다. <code>pages/components/</code> 및 sitemap 기준.
     </mm-text>
 
-    <div class="columns-2">
+    <mm-grid columns="2">
       <div>
         <mm-text as="h2" size="18" weight="bold" style="margin-bottom: 1rem"
           >Visual Information</mm-text
@@ -1218,7 +1220,7 @@
           </tbody>
         </table>
       </div>
-    </div>
+    </mm-grid>
   </section>
 
   <section style="margin: 4rem 0">
@@ -1227,7 +1229,7 @@
       이 디자인 시스템을 구성하는 기술 스택입니다.
     </mm-text>
 
-    <div class="columns-3">
+    <mm-grid columns="3">
       <div
         style="
           padding: 1.5rem;
@@ -1362,7 +1364,7 @@
           </tbody>
         </table>
       </div>
-    </div>
+    </mm-grid>
   </section>
 
   <section style="margin: 4rem 0">
@@ -1371,7 +1373,7 @@
       프로젝트의 주요 폴더 구조입니다.
     </mm-text>
 
-    <div class="columns-2">
+    <mm-grid columns="2">
       <div
         style="padding: 1.5rem; border: var(--border-stronger); border-radius: var(--radius-large)"
       >
@@ -1438,7 +1440,7 @@ pages/
         └── webpack.yml  # CI/CD</pre
         >
       </div>
-    </div>
+    </mm-grid>
   </section>
 </main>
 
@@ -1467,7 +1469,7 @@ pages/
     <span class="event-header-objects-item"></span>
   </header>
 
-  <section class="" style="padding-bottom: 6rem;text-align:center;">
+  <section style="padding-bottom: 6rem;text-align:center;">
     <figure style="font-size: 3rem">🦍</figure>
     <span class="event-intro-eyebrow tag">이벤트 하나</span>
     <h2

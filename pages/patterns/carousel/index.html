@@ -5,11 +5,13 @@
   <p>aka. carousel, slider, stepper</p>
   <mm-component-example>
     <section class="carousel js-carousel">
-      <nav style="display: flex; gap: var(--space-3)" role="tablist">
-        <mm-avatar slot="avatar" size="huge" fallback="+"></mm-avatar>
-        <mm-avatar slot="avatar" size="huge" fallback="🌏"></mm-avatar>
-        <mm-avatar slot="avatar" size="huge" fallback="💀"></mm-avatar>
-        <mm-avatar slot="avatar" size="huge" fallback="🍔"></mm-avatar>
+      <nav role="tablist">
+        <mm-flex gap="3">
+          <mm-avatar slot="avatar" size="huge" fallback="+"></mm-avatar>
+          <mm-avatar slot="avatar" size="huge" fallback="🌏"></mm-avatar>
+          <mm-avatar slot="avatar" size="huge" fallback="💀"></mm-avatar>
+          <mm-avatar slot="avatar" size="huge" fallback="🍔"></mm-avatar>
+        </mm-flex>
       </nav>
       <nav class="carousel-arrows">
         <mm-icon-button

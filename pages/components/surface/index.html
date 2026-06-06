@@ -42,12 +42,12 @@
     <mm-prop name="height" type="string" optional></mm-prop>
   </mm-component-props>
 
-  <!-- <div class="feature columns">
+  <!-- <mm-grid columns="4">
       <mm-feature icon="box-iso" titleText="컨테이너" description="ㅅㄷㄴㅅ"></mm-feature>
       <mm-feature icon="box-iso" titleText="컨테이너 역할" description="ㅅㄷㄴㅅ"></mm-feature>
       <mm-feature icon="box-iso" titleText="컨테이너 역할" description="ㅅㄷㄴㅅ"></mm-feature>
       <mm-feature icon="box-iso" titleText="컨테이너 역할" description="ㅅㄷㄴㅅ"></mm-feature>
-    </div> -->
+    </mm-grid> -->
 
   <mm-component-tokens>
     <mm-token name="--surface-height" default="auto"></mm-token>
@@ -58,7 +58,7 @@
   </mm-component-tokens>
 
   <mm-component-guide>
-    <section class="feature columns-2">
+    <mm-grid columns="2">
       <mm-feature
         icon="task-list"
         titleText="Structural"
@@ -79,7 +79,7 @@
         description="고유한 배경색(Color)과 깊이감(Depth)의 조합 및 변화를 활용하여, 해당 영역이 사용자가 누를 수 있는(Clickable) 대상인지 아닌지를 직관적으로 식별하게 만드는 기표 역할을 합니다."
       >
       </mm-feature>
-    </section>
+    </mm-grid>
     <mm-text-list
       texts='[
           "타일 내부 leading, tailing 컴포넌트에 따라 시각보정이 필요할 수 있습니다.",

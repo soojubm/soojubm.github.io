@@ -58,10 +58,6 @@
           style="max-width: 10rem"
           label="수량"
         ></mm-number-input>
-        <!-- <mm-row justifyContent="space-between">
-          <mm-text size="14" weight="bold">총 상품금액</mm-text>
-          <mm-text size="18">₩ 163,000</mm-text>
-        </mm-row> -->
 
         <footer style="margin: var(--space-2) 0">
           <mm-button variant="primary" size="large" isfullwidth="true">Add to Cart</mm-button>
@@ -122,7 +118,7 @@
           description="And good bacteria creates a healthy oral environment. In addition to positively impacting the things you can taste and feel, like fresher breath and less sensitive teeth, a balanced oral environment is directly linked to cardiovascular, respiratory, and immune health."
         ></mm-title-with-description>
       </div>
-      <div class="columns product-story-features">
+      <mm-grid columns="4" class="product-story-features">
         <mm-feature
           icon="✋"
           titleText="Tangerine Oil"
@@ -143,7 +139,7 @@
           titleText="Tangerine Oil"
           description="A microbial substrate that has a positive impact on the oral environment"
         ></mm-feature>
-      </div>
+      </mm-grid>
     </section>
 
     <!-- 마케팅 스토리: 박스 배경 + 특징 -->
@@ -154,7 +150,7 @@
         title="Prebiotics are fibers that feed good bacteria"
         description="And good bacteria creates a healthy oral environment. In addition to positively impacting the things you can taste and feel, like fresher breath and less sensitive teeth, a balanced oral environment is directly linked to cardiovascular, respiratory, and immune health."
       ></mm-title-with-description>
-      <div class="columns product-story-features">
+      <mm-grid columns="4" class="product-story-features">
         <mm-feature
           icon="✋"
           titleText="Tangerine Oil"
@@ -175,7 +171,7 @@
           titleText="Tangerine Oil"
           description="A microbial substrate that has a positive impact on the oral environment"
         ></mm-feature>
-      </div>
+      </mm-grid>
     </section>
 
     <!-- 마케팅 스토리: 이미지 + 텍스트 -->
@@ -255,10 +251,12 @@
       <mm-text data-english="Returns & Exchanges" size="14" weight="bold"
         >교환 또는 반품(취소) 정책 - 판매자 과실과 구매자 과실 구분</mm-text
       >
-      <mm-text-list texts='["환불 완료 영업일 기준 4일", "출고 이후 환불요청 시 상품 회수 후 처리됩니다.", "상품 불량인 경우는 배송비를 포함한 전액이 환불됩니다.", "해당 상품 구매 시 사은품/증정품 등이 제공된 경우, 상품 교환/반품 시 함께 보내주셔야
+      <mm-text-list
+        texts='["환불 완료 영업일 기준 4일", "출고 이후 환불요청 시 상품 회수 후 처리됩니다.", "상품 불량인 경우는 배송비를 포함한 전액이 환불됩니다.", "해당 상품 구매 시 사은품/증정품 등이 제공된 경우, 상품 교환/반품 시 함께 보내주셔야
           합니다.", "교환/반품 불가 사유. 훼손(포장 등). 소비. 시간 경과로 인한 가치 훼손(?)", "단순변심/구매착오. 상품을 받으신 날로부터 7일 이내 교환/반품이 가능합니다.", "고객의 주문에 따라 개별적으로 생산되는 상품 또는 이와 유사한 상품에 대하여 청약 철회등을
           인정하는 경우 통신판매업자에게 회복할 수 없는 중대한 피해가 예상되는 경우로서 사전에 해당
-          거래에 대하여 별도로 그 사실을 고지하고 고객의 서면(전자문서 포함)에 의한 동의를 받은 경우"]'></mm-text-list>
+          거래에 대하여 별도로 그 사실을 고지하고 고객의 서면(전자문서 포함)에 의한 동의를 받은 경우"]'
+      ></mm-text-list>
 
       <table>
         <tr>

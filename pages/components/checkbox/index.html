@@ -49,7 +49,7 @@
   </mm-component-anatomy>
 
   <mm-component-guide>
-    <section class="feature columns-2">
+    <mm-grid columns="2">
       <mm-feature
         icon="task-list"
         titleText="Interactive - choice"
@@ -71,8 +71,8 @@
         description="체크박스 그룹은 관련된 옵션들을 함께 묶어 사용자에게 제공할 수 있습니다. 이 경우, 그룹의 제목(legend)을 명확하게 표시하여 사용자가 옵션들의 맥락을 이해할 수 있도록 합니다."
       >
       </mm-feature>
-    </mm-component-guide>
-  </section>
+    </mm-grid>
+  </mm-component-guide>
 
   <mm-component-section title="MasterCheckbox" description="TermsAllCheckbox, TermsCheckboxGroup">
     <div>
@@ -81,7 +81,7 @@
       </mm-master-checkbox>
 
       <mm-checkbox-group id="main-terms-group" name="terms">
-        <div class="terms-nested-item">
+        <div>
           <mm-row>
             <mm-checkbox value="terms5" size="large"> 이용약관 동의 (필수) </mm-checkbox>
             <mm-icon-button

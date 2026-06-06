@@ -30,17 +30,16 @@
       ></mm-toggle-button-group>
     </div>
 
-    <menu
-      role="menubar"
-      style="display: flex; align-items: center; margin: var(--space-3) 0; gap: 1rem"
-    >
-      <mm-searchfield
-        size="small"
-        hidden-label
-        placeholder="검색꾸"
-        value="유저"
-      ></mm-searchfield>
-      <mm-checkbox name="test1">28 selected</mm-checkbox>
+    <menu role="menubar" style="margin: var(--space-3) 0">
+      <mm-flex align="center" gap="4">
+        <mm-searchfield
+          size="small"
+          hidden-label
+          placeholder="검색꾸"
+          value="유저"
+        ></mm-searchfield>
+        <mm-checkbox name="test1">28 selected</mm-checkbox>
+      </mm-flex>
     </menu>
     <div class="table-container">
       <table>

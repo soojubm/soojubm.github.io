@@ -1,19 +1,19 @@
 <main class="page">
-  <mm-page-header
-    title="영화감상 목록"
-    description="감상한 영화를 기록합니다."
-  ></mm-page-header>
+  <mm-page-header title="영화감상 목록" description="감상한 영화를 기록합니다."></mm-page-header>
 
   <div class="js-filters"></div>
 
-  <p style="margin: var(--space-3) 0; color: var(--color-foreground-light); font-size: var(--font-size-14)">
+  <p
+    style="
+      margin: var(--space-3) 0;
+      color: var(--color-foreground-light);
+      font-size: var(--font-size-14);
+    "
+  >
     <span class="js-count"></span>편
   </p>
 
-  <div
-    class="js-list"
-    style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: var(--space-3)"
-  ></div>
+  <mm-flex class="js-list" gap="3"></mm-flex>
 
   <div class="js-more" style="margin-top: var(--space-6); display: none">
     <mm-show-more-button class="js-more-btn" label="더 보기"></mm-show-more-button>

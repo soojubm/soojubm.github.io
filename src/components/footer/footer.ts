@@ -60,20 +60,22 @@ export class Footer extends LitElement {
           <mm-to-top-button></mm-to-top-button>
         </aside>
 
-        <nav style="display: flex; gap: 4rem">
-          <mm-text hidden aria-hidden="true" size="14">사이트맵</mm-text>
-          <mm-flex direction="column">
-            <mm-text size="18">사이트맵 컴포넌트</mm-text>
-            <mm-text href="#" size="14" color="var(--color-foreground-light)">샘플</mm-text>
-            <mm-text href="#" size="14" color="var(--color-foreground-light)">사이트맵 </mm-text>
-            <mm-text href="#" size="14" color="var(--color-foreground-light)">사이트맵 샘플</mm-text>
-            <mm-text href="#" size="14" color="var(--color-foreground-light)"
-              >사이트맵 컴포넌트 샘플</mm-text
-            >
-          </mm-flex>
-          <mm-flex direction="column">
-            <mm-text size="18">꺼이꺼이</mm-text>
-            <mm-text size="18">호이호이</mm-text>
+        <nav>
+          <mm-flex gap="4rem">
+            <mm-text hidden aria-hidden="true" size="14">사이트맵</mm-text>
+            <mm-flex direction="column">
+              <mm-text size="18">사이트맵 컴포넌트</mm-text>
+              <mm-text href="#" size="14" color="var(--color-foreground-light)">샘플</mm-text>
+              <mm-text href="#" size="14" color="var(--color-foreground-light)">사이트맵 </mm-text>
+              <mm-text href="#" size="14" color="var(--color-foreground-light)">사이트맵 샘플</mm-text>
+              <mm-text href="#" size="14" color="var(--color-foreground-light)"
+                >사이트맵 컴포넌트 샘플</mm-text
+              >
+            </mm-flex>
+            <mm-flex direction="column">
+              <mm-text size="18">꺼이꺼이</mm-text>
+              <mm-text size="18">호이호이</mm-text>
+            </mm-flex>
           </mm-flex>
         </nav>
       </footer>

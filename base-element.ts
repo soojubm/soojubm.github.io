@@ -362,55 +362,6 @@ menu-item:focus-visible {
 
 
 
-.columns {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 기본 4개의 칼럼 */
-  gap: var(--space-4);
-  gap: 2rem;
-}
-
-.columns-2 {
-    display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-
-
-}
-.columns-3 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-
-}
-
-.component-props .columns-3 {
-    padding: 2rem calc(var(--grid-margin) - 1rem);
-    margin: 2rem calc(var(--grid-margin) * -1 + 1rem);
-}
-@media (max-width: 1200px) {
-  .columns {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .columns-3 {
-    grid-template-columns: 2fr;
-  }
-}
-
-@media (max-width: 480px) {
-  .columns {
-    grid-template-columns: 1fr;
-  }
-  .columns-2 {
-    grid-template-columns: 1fr;
-  }
-  .columns-3 {
-    grid-template-columns: 1fr;
-  }
-}
-  
-  
-  
   :host { display: block; }`)
 
 export const themeSheet = new CSSStyleSheet()

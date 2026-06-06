@@ -63,7 +63,8 @@
     </mm-row>
   </mm-surface>
   <!-- <header class="dashboard-head"></header> -->
-  <section style="display: flex; justify-content: space-between; gap: 1rem">
+  <section>
+    <mm-flex justify="between" gap="4">
     <mm-surface variant="tinted" style="width: 100%">
       <article class="overview-item" style="width: 100%; position: relative">
         <mm-text size="14" weight="bold">수신</mm-text>
@@ -112,9 +113,11 @@
         </div>
       </article>
     </mm-surface>
+    </mm-flex>
   </section>
   <br /><br />
-  <section style="display: flex; justify-content: space-between; gap: 1.5rem">
+  <section>
+    <mm-flex justify="between" gap="1.5rem">
     <div style="width: 66.6666%">
       <header
         style="
@@ -168,6 +171,7 @@
         background: var(--color-background-strong);
       "
     ></div>
+    </mm-flex>
   </section>
 
   <progress class="progress is-normal" value="40" max="100">40%</progress>

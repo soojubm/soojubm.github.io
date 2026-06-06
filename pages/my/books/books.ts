@@ -1,4 +1,4 @@
-import { renderDocumentLayout } from '../../../layouts/document-layout'
+import { renderLayout } from '../../../layouts/base-layouts'
 import main from './index.html'
 import { renderList, getCountries } from '../../components/_list-page'
 
@@ -14,7 +14,7 @@ interface Book {
 type FilterState = { country: string }
 
 document.addEventListener('DOMContentLoaded', () => {
-  document.body.innerHTML = renderDocumentLayout(main)
+  document.body.innerHTML = renderLayout(main)
   initPage()
 })
 
@@ -37,12 +37,12 @@ function renderFilters(books: Book[], state: FilterState) {
   const countries = getCountries(books, 5)
 
   container.innerHTML = `
-    <div style="display:flex;align-items:flex-start;gap:var(--space-3)">
+    <mm-flex align="start" gap="3">
       <span style="min-width:2rem;padding-top:6px;font-size:var(--font-size-12);color:var(--color-foreground-light)">국가</span>
       <mm-filter-button-group class="js-country-filter" mode="single" style="flex:1;flex-wrap:wrap">
         ${countries.map(c => `<mm-filter-button value="${c}">${c}</mm-filter-button>`).join('')}
       </mm-filter-button-group>
-    </div>
+    </mm-flex>
   `
 
   container.querySelector('.js-country-filter')?.addEventListener('change', e => {
@@ -55,14 +55,16 @@ function renderFilters(books: Book[], state: FilterState) {
 
 function bookCard(b: Book) {
   return `
-    <article style="border:var(--border);padding:var(--space-3);border-radius:var(--radius);display:flex;flex-direction:column;gap:var(--space-1)">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:var(--space-2)">
-        <time style="font-size:var(--font-size-12);color:var(--color-foreground-light)">${b.releasedate ?? ''}</time>
-        <span style="font-size:var(--font-size-12);color:var(--color-foreground-light)">${b.country ?? ''}</span>
-      </div>
-      <p style="margin:0;font-weight:var(--font-weight-bold);line-height:1.3">${b.titlekorean}</p>
-      <p style="margin:0;font-size:var(--font-size-12);color:var(--color-foreground-light)">${b.titleenglish}</p>
-      <p style="margin:0;font-size:var(--font-size-14)">${b.director}</p>
+    <article style="border:var(--border);padding:var(--space-3);border-radius:var(--radius)">
+      <mm-flex direction="column" gap="1">
+        <mm-flex justify="between" align="center" gap="2">
+          <time style="font-size:var(--font-size-12);color:var(--color-foreground-light)">${b.releasedate ?? ''}</time>
+          <span style="font-size:var(--font-size-12);color:var(--color-foreground-light)">${b.country ?? ''}</span>
+        </mm-flex>
+        <p style="margin:0;font-weight:var(--font-weight-bold);line-height:1.3">${b.titlekorean}</p>
+        <p style="margin:0;font-size:var(--font-size-12);color:var(--color-foreground-light)">${b.titleenglish}</p>
+        <p style="margin:0;font-size:var(--font-size-14)">${b.director}</p>
+      </mm-flex>
     </article>
   `
 }

@@ -1,4 +1,4 @@
-import { renderDocumentLayout } from '../../../layouts/document-layout'
+import { renderLayout } from '../../../layouts/base-layouts'
 import main from './index.html'
 import { renderList, getCountries, PAGE_SIZE } from '../../components/_list-page'
 
@@ -15,7 +15,7 @@ interface Film {
 type FilterState = { decade: string; country: string }
 
 document.addEventListener('DOMContentLoaded', () => {
-  document.body.innerHTML = renderDocumentLayout(main)
+  document.body.innerHTML = renderLayout(main)
   initPage()
 })
 
@@ -39,20 +39,20 @@ function renderFilters(films: Film[], state: FilterState) {
   const countries = getCountries(films, 20)
 
   container.innerHTML = `
-    <div style="display:flex;flex-direction:column;gap:var(--space-2)">
-      <div style="display:flex;align-items:flex-start;gap:var(--space-3)">
+    <mm-flex direction="column" gap="2">
+      <mm-flex align="start" gap="3">
         <span style="min-width:2rem;padding-top:6px;font-size:var(--font-size-12);color:var(--color-foreground-light)">연대</span>
         <mm-filter-button-group class="js-decade-filter" mode="single" style="flex:1;flex-wrap:wrap">
           ${decades.map(d => `<mm-filter-button value="${d}">${d}s</mm-filter-button>`).join('')}
         </mm-filter-button-group>
-      </div>
-      <div style="display:flex;align-items:flex-start;gap:var(--space-3)">
+      </mm-flex>
+      <mm-flex align="start" gap="3">
         <span style="min-width:2rem;padding-top:6px;font-size:var(--font-size-12);color:var(--color-foreground-light)">국가</span>
         <mm-filter-button-group class="js-country-filter" mode="single" style="flex:1;flex-wrap:wrap">
           ${countries.map(c => `<mm-filter-button value="${c}">${c}</mm-filter-button>`).join('')}
         </mm-filter-button-group>
-      </div>
-    </div>
+      </mm-flex>
+    </mm-flex>
   `
 
   const rerender = () =>
@@ -73,14 +73,16 @@ function renderFilters(films: Film[], state: FilterState) {
 
 function filmCard(f: Film) {
   return `
-    <article style="border:var(--border);padding:var(--space-3);border-radius:var(--radius);display:flex;flex-direction:column;gap:var(--space-1)">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:var(--space-2)">
-        <time style="font-size:var(--font-size-12);color:var(--color-foreground-light)">${f.releasedate}</time>
-        <span style="font-size:var(--font-size-12);color:var(--color-foreground-light)">${f.country ?? ''}</span>
-      </div>
-      <p style="margin:0;font-weight:var(--font-weight-bold);line-height:1.3">${f.titlekorean}</p>
-      <p style="margin:0;font-size:var(--font-size-12);color:var(--color-foreground-light)">${f.titleenglish}</p>
-      <p style="margin:0;font-size:var(--font-size-14)">${f.director}</p>
+    <article style="border:var(--border);padding:var(--space-3);border-radius:var(--radius)">
+      <mm-flex direction="column" gap="1">
+        <mm-flex justify="between" align="center" gap="2">
+          <time style="font-size:var(--font-size-12);color:var(--color-foreground-light)">${f.releasedate}</time>
+          <span style="font-size:var(--font-size-12);color:var(--color-foreground-light)">${f.country ?? ''}</span>
+        </mm-flex>
+        <p style="margin:0;font-weight:var(--font-weight-bold);line-height:1.3">${f.titlekorean}</p>
+        <p style="margin:0;font-size:var(--font-size-12);color:var(--color-foreground-light)">${f.titleenglish}</p>
+        <p style="margin:0;font-size:var(--font-size-14)">${f.director}</p>
+      </mm-flex>
     </article>
   `
 }
