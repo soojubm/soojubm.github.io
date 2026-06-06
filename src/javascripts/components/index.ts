@@ -22,7 +22,7 @@ import '../../components/surface/add-surface-button'
 import '../../components/switch/switch'
 import '../../components/result/result'
 import '../../components/feature/feature'
-import '../../components/keyvalue/keyvalue'
+import '../../components/meta-item/meta-item'
 import '../../components/sheet'
 import '../../components/dialog'
 

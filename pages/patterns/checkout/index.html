@@ -23,9 +23,9 @@
     <mm-separator></mm-separator>
     <footer>
       <mm-menu-item-group>
-        <mm-keyvalue key="총 상품금액" value="₩ 30,000"></mm-keyvalue>
-        <mm-keyvalue key="배송료" value="₩ 3,000"></mm-keyvalue>
-        <mm-keyvalue key="할인" value="₩ 2,000"></mm-keyvalue>
+        <mm-meta-item label="총 상품금액" value="₩ 30,000"></mm-meta-item>
+        <mm-meta-item label="배송료" value="₩ 3,000"></mm-meta-item>
+        <mm-meta-item label="할인" value="₩ 2,000"></mm-meta-item>
         <mm-row justifyContent="space-between">
           <mm-text size="18">최종 결제 금액</mm-text>
           <mm-text size="18">₩ 37,000</mm-text>
@@ -82,7 +82,10 @@
     </mm-flex>
   </mm-component-section>
 
-  <mm-component-section title="주문/결제" description="배송지, 주문상품, 할인, 결제수단을 확인하고 결제합니다.">
+  <mm-component-section
+    title="주문/결제"
+    description="배송지, 주문상품, 할인, 결제수단을 확인하고 결제합니다."
+  >
     <mm-top-bar label="주문/결제"></mm-top-bar>
     <div style="height: var(--space-4)"></div>
 
@@ -90,7 +93,13 @@
       <mm-text size="18">배송지</mm-text>
       <mm-surface size="small">
         <mm-menu-item-row>
-          <mm-radio slot="prefix" id="shipping-default" name="shipping" value="default" checked></mm-radio>
+          <mm-radio
+            slot="prefix"
+            id="shipping-default"
+            name="shipping"
+            value="default"
+            checked
+          ></mm-radio>
           <div slot="text">
             <mm-flex gap="1">
               <mm-text size="14" weight="bold">수줍이 집</mm-text>
@@ -103,9 +112,7 @@
         </mm-menu-item-row>
       </mm-surface>
       <div style="height: var(--space-3)"></div>
-      <mm-surface variant="elevated" size="small">
-        <mm-menu-item-row label="배송지 변경/추가" icon="coins-swap"></mm-menu-item-row>
-      </mm-surface>
+      <mm-add-surface-button> 배송지 변경/추가 </mm-add-surface-button>
     </section>
 
     <div style="height: var(--space-4)"></div>
@@ -115,7 +122,10 @@
       <mm-surface size="small">
         <mm-menu-item-row avatar-src="/src/images/cake_gosum.jpg" avatar-size="huge">
           <div slot="text">
-            <mm-text-pair labelText="뉴닉이 풀어 쓴 경제상식사전" descriptionText="₩ 11,900"></mm-text-pair>
+            <mm-text-pair
+              labelText="뉴닉이 풀어 쓴 경제상식사전"
+              descriptionText="₩ 11,900"
+            ></mm-text-pair>
             <div style="height: var(--space-2)"></div>
             <mm-tag>평생 소장</mm-tag>
           </div>
@@ -128,7 +138,11 @@
     <section class="checkout-discount">
       <mm-text size="18">쿠폰 마일리지 할인</mm-text>
       <div style="height: var(--space-3)"></div>
-      <mm-textfield label="보너스 쿠폰" placeholder="사용 가능한 쿠폰이 없습니다." disabled></mm-textfield>
+      <mm-textfield
+        label="보너스 쿠폰"
+        placeholder="사용 가능한 쿠폰이 없습니다."
+        disabled
+      ></mm-textfield>
       <div style="height: var(--space-3)"></div>
       <mm-textfield label="사용 마일리지" placeholder="0 마일리지"></mm-textfield>
       <div style="height: var(--space-3)"></div>
@@ -139,42 +153,17 @@
 
     <section class="checkout-payment">
       <mm-text size="18">결제수단</mm-text>
-      <mm-flex direction="column">
-        <mm-surface size="small">
-          <mm-menu-item-row label="신용카드/체크카드">
-            <mm-avatar
-              slot="avatar"
-              size="large"
-              fallback="💳"
-              style="background: aliceblue; font-size: 1.5rem"
-            ></mm-avatar>
-            <mm-text>개인/법인/카드사선택</mm-text>
-            <mm-radio slot="prefix" id="payment-card" name="payment" value="card" checked="true"></mm-radio>
-          </mm-menu-item-row>
-        </mm-surface>
-        <mm-surface size="small">
-          <mm-menu-item-row label="현금">
-            <mm-avatar
-              slot="avatar"
-              size="large"
-              fallback="💵"
-              style="background: #defade; font-size: 1.5rem"
-            ></mm-avatar>
-            <mm-radio slot="prefix" id="payment-cash" name="payment" value="cash"></mm-radio>
-          </mm-menu-item-row>
-        </mm-surface>
-        <mm-surface size="small">
-          <mm-menu-item-row label="무통장입금">
-            <mm-avatar
-              slot="avatar"
-              size="large"
-              fallback="🫓"
-              style="background: antiquewhite; font-size: 1.5rem"
-            ></mm-avatar>
-            <mm-radio disabled slot="prefix" id="payment-bank" name="payment" value="bank"></mm-radio>
-          </mm-menu-item-row>
-        </mm-surface>
-      </mm-flex>
+      <mm-surface size="small">
+        <mm-menu-item-radio-group name="payment" value="card" aria-label="결제수단 선택">
+          <mm-menu-item-radio
+            value="card"
+            label="신용카드/체크카드"
+            description="개인/법인/카드사선택"
+          ></mm-menu-item-radio>
+          <mm-menu-item-radio value="cash" label="현금"></mm-menu-item-radio>
+          <mm-menu-item-radio value="bank" label="무통장입금" disabled></mm-menu-item-radio>
+        </mm-menu-item-radio-group>
+      </mm-surface>
       <div style="height: var(--space-3)"></div>
       <div>
         <mm-text size="14" color="var(--color-foreground-light)">결제 안내</mm-text>
@@ -197,12 +186,12 @@
         <mm-text size="18">13,980원</mm-text>
       </mm-flex>
       <div style="height: var(--space-3)"></div>
-      <mm-keyvalue key="마일리지 사용" value="980원"></mm-keyvalue>
-      <mm-keyvalue key="카드 결제" value="12,980원"></mm-keyvalue>
+      <mm-meta-item label="마일리지 사용" value="980원"></mm-meta-item>
+      <mm-meta-item label="카드 결제" value="12,980원"></mm-meta-item>
       <mm-surface>
         <mm-flex direction="column">
-          <mm-keyvalue key="상품 금액" value="₩ 160,000"></mm-keyvalue>
-          <mm-keyvalue key="서비스 수수료" value="₩ 3,000"></mm-keyvalue>
+          <mm-meta-item label="상품 금액" value="₩ 160,000"></mm-meta-item>
+          <mm-meta-item label="서비스 수수료" value="₩ 3,000"></mm-meta-item>
           <mm-row justifyContent="space-between">
             <mm-text size="18">총 합계 (KRW)</mm-text>
             <mm-text size="18">₩ 163,000</mm-text>
@@ -223,9 +212,9 @@
       </mm-text>
     </mm-paragraph-group>
     <div style="height: var(--space-3)"></div>
-    <mm-surface variant="elevated" size="small">
-      <mm-menu-item-row label="Add a payment method" icon="plus"></mm-menu-item-row>
-    </mm-surface>
+
+    <mm-add-surface-button> Add a payment method </mm-add-surface-button>
+
     <div style="height: var(--space-3)"></div>
     <mm-menu-item-row>
       <mm-avatar slot="avatar" size="huge"></mm-avatar>
@@ -237,7 +226,10 @@
     </mm-menu-item-row>
   </mm-component-section>
 
-  <mm-component-section title="Order Complete" description="주문완료 후 주문상세와 혜택을 확인합니다.">
+  <mm-component-section
+    title="Order Complete"
+    description="주문완료 후 주문상세와 혜택을 확인합니다."
+  >
     <section class="order-complete">
       <header style="text-align: center; margin: 1.5rem 0">
         <mm-text size="18">주문완료 되었습니다.</mm-text>
@@ -261,7 +253,10 @@
           <div style="height: var(--space-2)"></div>
           <mm-menu-item-row avatar-src="/src/images/cake_gosum.jpg" avatar-size="huge">
             <div slot="text">
-              <mm-text-pair labelText="뉴닉이 풀어 쓴 경제상식사전" descriptionText="₩ 11,900"></mm-text-pair>
+              <mm-text-pair
+                labelText="뉴닉이 풀어 쓴 경제상식사전"
+                descriptionText="₩ 11,900"
+              ></mm-text-pair>
               <div style="height: var(--space-2)"></div>
               <mm-tag>평생 소장</mm-tag>
             </div>
@@ -273,12 +268,9 @@
             <mm-text size="14" weight="bold">주문금액</mm-text>
             <mm-text size="14" weight="bold">13,980원</mm-text>
           </mm-flex>
-          <div style="height: var(--space-2)"></div>
-          <mm-keyvalue key="상품금액" value="30,000원"></mm-keyvalue>
-          <div style="height: var(--space-1)"></div>
-          <mm-keyvalue key="배송료" value="3,000원"></mm-keyvalue>
-          <div style="height: var(--space-1)"></div>
-          <mm-keyvalue key="할인" value="2,000원"></mm-keyvalue>
+          <mm-meta-item label="상품금액" value="30,000원"></mm-meta-item>
+          <mm-meta-item label="배송료" value="3,000원"></mm-meta-item>
+          <mm-meta-item label="할인" value="2,000원"></mm-meta-item>
           <mm-separator></mm-separator>
           <mm-text size="14" weight="bold">결제상세</mm-text>
           <mm-text>카드 간편결제</mm-text>

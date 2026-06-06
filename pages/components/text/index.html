@@ -349,18 +349,12 @@ The font size of a key is never bigger than the value.
       ></mm-text-list>
       <mm-separator></mm-separator>
       <div>
-        <mm-keyvalue key="keyvalue key text" value="keyvalue value text"></mm-keyvalue>
+        <mm-meta-item label="keyvalue key text" value="keyvalue value text"></mm-meta-item>
         <mm-separator></mm-separator>
         <mm-flex gap="2rem" nowrap>
-          <div>
-            <mm-text size="14" color="var(--color-foreground-light)">사이즈</mm-text>
-            <mm-text size="18">보통</mm-text>
-          </div>
-          <div>
-            <mm-text size="14" color="var(--color-foreground-light)">한글</mm-text>
-            <mm-text size="18">작은 거 필요하나</mm-text>
-          </div>
-          <mm-keyvalue size="large" alignment="column" key="Move" value="562 kcal"> </mm-keyvalue>
+          <mm-meta-item layout="stacked" label="사이즈" value="보통"></mm-meta-item>
+          <mm-meta-item layout="stacked" label="한글" value="작은 거 필요하나"></mm-meta-item>
+          <mm-meta-item layout="stacked" label="Move" value="562 kcal"></mm-meta-item>
         </mm-flex>
         <mm-separator></mm-separator>
         <div class="product-info-price" role="suggestion">
