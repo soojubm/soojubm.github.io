@@ -1,5 +1,3 @@
-import './menu-item-row'
-
 import './semantics/menu-item-group'
 import './semantics/menu-item-checkbox'
 import './semantics/menu-item-checkbox-group'

@@ -47,13 +47,13 @@ export class Navbar extends LitElement {
                 </div>
                 <mm-separator></mm-separator>
                 <mm-menu-item-group>
-                  <mm-menu-item-row
+                  <mm-menu-item-action
                     icon=${ICON_NAMES.ANNOUNCEMENT}
                     label="고객센터 및 도움말"
-                  ></mm-menu-item-row>
+                  ></mm-menu-item-action>
                 </mm-menu-item-group>
                 <mm-separator></mm-separator>
-                <mm-menu-item-row icon=${ICON_NAMES.LOG_OUT} label="로그아웃"></mm-menu-item-row>
+                <mm-menu-item-action icon=${ICON_NAMES.LOG_OUT} label="로그아웃"></mm-menu-item-action>
                 <mm-separator></mm-separator>
                 <mm-flex style="margin-top: -0.25rem">
                   <mm-link variant="secondary" href="#">개인정보처리방침</mm-link>

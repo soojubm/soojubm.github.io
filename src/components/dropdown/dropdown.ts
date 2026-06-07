@@ -2,7 +2,7 @@ import { LitElement, css, html, nothing, type PropertyValues } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 import { resetStyles } from '../../stylesheets/shared/reset.styles'
 import { ICON_NAMES } from '../icon-button/semantics/icon-names'
-import '../menuitem/menu-item-row'
+import '../menuitem/semantics/menu-item-action'
 import '../menuitem/semantics/menu-item-checkbox'
 
 export interface DropdownOption {
@@ -88,7 +88,7 @@ export class Dropdown extends LitElement {
         right: 0;
       }
 
-      mm-menu-item-row[aria-current='true'] {
+      mm-menu-item-action[aria-current='true'] {
         color: var(--color-primary);
       }
     `,
@@ -234,13 +234,13 @@ export class Dropdown extends LitElement {
   // 일반 옵션: 선택 시 닫히며 현재 value면 aria-current로 강조
   protected renderDefaultOption(option: DropdownOption) {
     return html`
-      <mm-menu-item-row
+      <mm-menu-item-action
         icon=${option.icon ?? nothing}
         aria-current=${option.value === this.value ? 'true' : nothing}
         @click="${() => this.selectOption(option)}"
       >
         ${option.label}
-      </mm-menu-item-row>
+      </mm-menu-item-action>
     `
   }
 

@@ -7,28 +7,32 @@
   <mm-component-example>
     <mm-flex direction="column">
       <mm-menu-item-group aria-label="기본 메뉴">
-        <mm-menu-item-row icon="user" label="프로필"></mm-menu-item-row>
-        <mm-menu-item-row icon="settings" label="환경설정"></mm-menu-item-row>
-        <mm-menu-item-row icon="trash" label="삭제" tone="danger"></mm-menu-item-row>
-        <mm-menu-item-row icon="log-out" label="로그아웃 (비활성)" disabled></mm-menu-item-row>
+        <mm-menu-item-action icon="user" label="프로필"></mm-menu-item-action>
+        <mm-menu-item-action icon="settings" label="환경설정"></mm-menu-item-action>
+        <mm-menu-item-action icon="trash" label="삭제" tone="danger"></mm-menu-item-action>
+        <mm-menu-item-action
+          icon="log-out"
+          label="로그아웃 (비활성)"
+          disabled
+        ></mm-menu-item-action>
       </mm-menu-item-group>
       <mm-menu-item-group aria-label="액션 메뉴">
-        <mm-menu-item-row
+        <mm-menu-item-action
           icon="app-window"
           label="수줍이 앱"
           description="앱에서 게시물을 엽니다."
-        ></mm-menu-item-row>
-        <mm-menu-item-row
+        ></mm-menu-item-action>
+        <mm-menu-item-action
           icon="group"
           label="Frontend Group"
           description="프론트엔드 개발자 모임"
           avatar-size="large"
-        ></mm-menu-item-row>
-        <mm-menu-item-row
+        ></mm-menu-item-action>
+        <mm-menu-item-action
           label="Personal License"
           description="1 user"
           avatar-size="large"
-        ></mm-menu-item-row>
+        ></mm-menu-item-action>
       </mm-menu-item-group>
     </mm-flex>
   </mm-component-example>
@@ -62,8 +66,7 @@
     <mm-text-list
       texts='[
         "role=menu 는 명령 실행 목록. role=listbox 는 폼 내 선택 목록. 컨텍스트에 따라 구분합니다.",
-        "아이콘은 icon prop으로, 이미지는 avatar-src prop으로 전달합니다. 이모지·커스텀 콘텐츠만 slot=\"avatar\"를 사용합니다.",
-        "TODO MenuItemRow => MenuItemAction으로 변경 에정."
+        "아이콘은 icon prop으로, 이미지는 avatar-src prop으로 전달합니다. 이모지·커스텀 콘텐츠만 slot=\"avatar\"를 사용합니다."
       ]'
     ></mm-text-list>
   </mm-component-guide>
@@ -101,6 +104,7 @@
     </mm-menu-item-radio-group>
 
     <mm-separator></mm-separator>
+
     <mm-menu-item-radio-group name="access" value="public" aria-label="공개 범위">
       <mm-menu-item-radio
         value="public"

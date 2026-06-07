@@ -39,27 +39,27 @@
 
   <mm-surface style="margin-bottom: 1rem">
     <mm-row justifyContent="space-between">
-      <mm-menu-item-row style="width: 33%">
+      <mm-menu-item-action style="width: 33%">
         <mm-avatar slot="avatar" size="large">🦊</mm-avatar>
         <div slot="text">
           <mm-text size="14" color="var(--color-foreground-light)">주문배송</mm-text>
           <mm-text size="18">7</mm-text>
         </div>
-      </mm-menu-item-row>
-      <mm-menu-item-row style="width: 33%">
+      </mm-menu-item-action>
+      <mm-menu-item-action style="width: 33%">
         <mm-avatar slot="avatar" size="large">🦊</mm-avatar>
         <div slot="text">
           <mm-text size="14" color="var(--color-foreground-light)">구매확정</mm-text>
           <mm-text size="18">54</mm-text>
         </div>
-      </mm-menu-item-row>
-      <mm-menu-item-row style="width: 33%">
+      </mm-menu-item-action>
+      <mm-menu-item-action style="width: 33%">
         <mm-avatar slot="avatar" size="large">🦊</mm-avatar>
         <div slot="text">
           <mm-text size="14" color="var(--color-foreground-light)">찜</mm-text>
           <mm-text size="18">108</mm-text>
         </div>
-      </mm-menu-item-row>
+      </mm-menu-item-action>
     </mm-row>
   </mm-surface>
   <!-- <header class="dashboard-head"></header> -->
@@ -132,34 +132,34 @@
       </header>
       <mm-menu-item-group style="gap: var(--space-3)">
         <mm-surface variant="flat">
-          <mm-menu-item-row>
+          <mm-menu-item-action>
             <mm-avatar slot="avatar" size="large">🦊</mm-avatar>
-            <mm-text-pair
+            <mm-meta-item
               slot="text"
-              labelText="사진 및 동영상 백업"
-              descriptionText="디스크립션이다"
+              label="사진 및 동영상 백업"
+              value="디스크립션이다"
             >
-            </mm-text-pair>
+            </mm-meta-item>
             <mm-flex slot="action">
               <mm-button>버튼</mm-button>
               <mm-icon-button variant="navigator" icon="more-vert"> </mm-icon-button>
             </mm-menu-item-group>
-          </mm-menu-item-row>
+          </mm-menu-item-action>
         </mm-surface>
         <mm-surface variant="flat">
-          <mm-menu-item-row>
+          <mm-menu-item-action>
             <mm-avatar slot="avatar" size="large">🦊</mm-avatar>
-            <mm-text-pair
+            <mm-meta-item
               slot="text"
-              labelText="사진 및 동영상 백업"
-              descriptionText="디스크립션이다"
+              label="사진 및 동영상 백업"
+              value="디스크립션이다"
             >
-            </mm-text-pair>
+            </mm-meta-item>
             <mm-flex slot="action">
               <mm-button>버튼</mm-button>
               <mm-icon-button variant="navigator" icon="more-vert"> </mm-icon-button>
             </mm-flex>
-          </mm-menu-item-row>
+          </mm-menu-item-action>
         </mm-surface>
       </mm-flex>
     </div>

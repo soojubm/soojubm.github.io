@@ -7,7 +7,7 @@ import '../avatar/avatar'
 
 /**
  * leading(아바타·아이콘) + content(title/description) + trailing 한 줄을 구성하는 표현 전용 primitive.
- * 상호작용(role, hover 등)은 포함하지 않는다. 메뉴 의미가 필요하면 mm-menu-item-row를 쓴다.
+ * 상호작용(role, hover 등)은 포함하지 않는다. 메뉴 의미가 필요하면 mm-menu-item-action을 쓴다.
  */
 @customElement('mm-list-row')
 export class ListRow extends LitElement {

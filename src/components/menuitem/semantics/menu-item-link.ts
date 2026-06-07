@@ -2,10 +2,10 @@ import { html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
-import { MenuItemRow } from '../menu-item-row'
+import { MenuItemBase } from '../menu-item-base'
 
 @customElement('mm-menu-item-link')
-export class MenuItemLink extends MenuItemRow {
+export class MenuItemLink extends MenuItemBase {
   @property({ type: String }) href = ''
 
   protected override renderAction() {

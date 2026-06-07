@@ -1,11 +1,10 @@
 import { LitElement, html, nothing } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
+import { property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 import '../list-row/list-row'
 import { menuItemStyles } from './menuitem.styles'
 
-@customElement('mm-menu-item-row')
-export class MenuItemRow extends LitElement {
+export class MenuItemBase extends LitElement {
   @property({ type: String }) tone = ''
   @property({ type: String }) label = ''
   @property({ type: String }) description = ''
@@ -75,5 +74,3 @@ export class MenuItemRow extends LitElement {
     return this.renderItem()
   }
 }
-
-export default MenuItemRow

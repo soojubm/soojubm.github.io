@@ -169,12 +169,12 @@
       <article class="feed" aria-setsize="3" aria-posinset="1">
         <header class="feed-header">
           <mm-tag> 🔥 Most Popular </mm-tag>
-          <mm-menu-item-row
+          <mm-menu-item-action
             avatar-size="large"
             icon="user"
             label="수줍이"
             description="2 hour ago"
-          ></mm-menu-item-row>
+          ></mm-menu-item-action>
         </header>
         <div class="feed-body">
           <mm-thumbnail ratio="16:9" src="/src/images/springsteen.jpg" alt=""></mm-thumbnail>
@@ -197,23 +197,23 @@
             <mm-tag>3월 14일 수정됨</mm-tag>
             <div style="height: var(--space-3)"></div>
             <mm-flex direction="column">
-              <mm-menu-item-row
+              <mm-menu-item-action
                 label="Kakao"
                 description="https://www.kakaocorp.com"
                 avatar-size="large"
               >
-              </mm-menu-item-row>
-              <mm-menu-item-row
+              </mm-menu-item-action>
+              <mm-menu-item-action
                 label="Naver"
                 description="https://www.naver.com"
                 avatar-size="large"
               >
-              </mm-menu-item-row>
+              </mm-menu-item-action>
             </mm-flex>
           </mm-surface>
         </div>
         <div class="feed-footer">
-          <mm-menu-item-row icon="heart" label="192"> </mm-menu-item-row>
+          <mm-menu-item-action icon="heart" label="192"> </mm-menu-item-action>
         </div>
       </article>
 
@@ -256,7 +256,7 @@
     </section>
   </mm-component-section>
 
-  <!-- <mm-component-section title="RatingTile" description="TODO">
+  <mm-component-section title="RatingTile" description="">
     <mm-surfacebar heading="Ratings"></mm-surfacebar>
     <div aria-label="별점 5개 만점에 3.9개를 받았습니다." style="text-align: center">
       <mm-text size="14" color="var(--color-foreground-light)">리뷰 116만개</mm-text>
@@ -274,8 +274,8 @@
       <progress class="progress" value="40" max="100">40%</progress>
     </div>
     <small>별 다섯개에서 점수만큼 채우는 유아이는 최근 잘 보이지 않는다. 구현이 어려움.</small>
-  </mm-component-section> -->
-  <!-- <div class="graph-bar"><b style="width: 68%"></b></div> -->
+  </mm-component-section>
+  <div class="graph-bar"><b style="width: 68%"></b></div>
 
   <mm-component-section title="이 상품을 구매한">
     <section class="product-recommend">
@@ -310,33 +310,33 @@
     </section>
   </mm-component-section>
 
-  <!-- <mm-surface variant="flat">
-      <mm-avatar style="background: aliceblue">
-        <mm-icon name="graph-up"></mm-icon>
-      </mm-avatar>
-      <div style="height: var(--space-3)"></div>
-      <mm-text size="12" weight="bold">상해종합주가지수</mm-text>
-      <mm-text size="14">2999.55p</mm-text>
-      <div style="margin-top: var(--space-1)"></div>
-      <mm-tag variant="up">4.33% 상승</mm-tag>
-      <div style="margin-top: var(--space-3)">
-        <mm-text size="12">
-          <span style="color: var(--color-foreground-light)">10분 지연. live</span>
-        </mm-text>
-        <mm-text size="12">
-          <span style="color: var(--color-foreground-light)">현지 시간 기준 10.27. 01:27</span>
-        </mm-text>
-      </div>
-    </mm-surface> -->
-  <!-- <mm-surface>
-      <q>
-        I'm impressed by how GitHub Copilot seems to know exactly what I want to type next. GitHub
-        Copilot is particularly helpful when working on React components, where it makes eerily
-        accurate predictions. GitHub Copilot has become an indispensable part of my programmer
-        toolbelt.
-      </q>
-      <figcaption style="margin: var(--space-3) 0 0 0">
-        <mm-text size="14" color="var(--color-foreground-light)">Byline</mm-text>
-      </figcaption>
-    </mm-surface> -->
+  <mm-surface variant="flat">
+    <mm-avatar style="background: aliceblue">
+      <mm-icon name="graph-up"></mm-icon>
+    </mm-avatar>
+    <div style="height: var(--space-3)"></div>
+    <mm-text size="12" weight="bold">상해종합주가지수</mm-text>
+    <mm-text size="14">2999.55p</mm-text>
+    <div style="margin-top: var(--space-1)"></div>
+    <mm-tag variant="up">4.33% 상승</mm-tag>
+    <div style="margin-top: var(--space-3)">
+      <mm-text size="12">
+        <span style="color: var(--color-foreground-light)">10분 지연. live</span>
+      </mm-text>
+      <mm-text size="12">
+        <span style="color: var(--color-foreground-light)">현지 시간 기준 10.27. 01:27</span>
+      </mm-text>
+    </div>
+  </mm-surface>
+  <mm-surface>
+    <q>
+      I'm impressed by how GitHub Copilot seems to know exactly what I want to type next. GitHub
+      Copilot is particularly helpful when working on React components, where it makes eerily
+      accurate predictions. GitHub Copilot has become an indispensable part of my programmer
+      toolbelt.
+    </q>
+    <figcaption style="margin: var(--space-3) 0 0 0">
+      <mm-text size="14" color="var(--color-foreground-light)">Byline</mm-text>
+    </figcaption>
+  </mm-surface>
 </main>

@@ -6,10 +6,10 @@
       <mm-avatar size="huge">
         <img src="/src/images/product_sample.png" alt="" />
       </mm-avatar>
-      <mm-text-pair
-        labelText="폰타나 베네치아 로스티드 쉬림프 크림"
-        descriptionText="Brown, 3개"
-      ></mm-text-pair>
+      <mm-meta-item
+        label="폰타나 베네치아 로스티드 쉬림프 크림"
+        value="Brown, 3개"
+      />
       <mm-text size="18">₩ 22,500</mm-text>
       <mm-clear-button style="position: absolute; right: 0; top: 0"></mm-clear-button>
       <mm-button>수량/옵션 변경</mm-button>
@@ -23,9 +23,9 @@
     <mm-separator></mm-separator>
     <footer>
       <mm-menu-item-group>
-        <mm-meta-item label="총 상품금액" value="₩ 30,000"></mm-meta-item>
-        <mm-meta-item label="배송료" value="₩ 3,000"></mm-meta-item>
-        <mm-meta-item label="할인" value="₩ 2,000"></mm-meta-item>
+        <mm-meta-item label="총 상품금액" value="₩ 30,000"/>
+        <mm-meta-item label="배송료" value="₩ 3,000"/>
+        <mm-meta-item label="할인" value="₩ 2,000"/>
         <mm-row justifyContent="space-between">
           <mm-text size="18">최종 결제 금액</mm-text>
           <mm-text size="18">₩ 37,000</mm-text>
@@ -92,7 +92,7 @@
     <section class="checkout-shipping">
       <mm-text size="18">배송지</mm-text>
       <mm-surface size="small">
-        <mm-menu-item-row>
+        <mm-menu-item-action>
           <mm-radio
             slot="leading"
             id="shipping-default"
@@ -109,7 +109,7 @@
             <mm-text size="14">[07655] 서울특별시 강서구 까치산로 182 1202호</mm-text>
             <mm-text size="14" color="var(--color-foreground-light)">010-3121-7045</mm-text>
           </div>
-        </mm-menu-item-row>
+        </mm-menu-item-action>
       </mm-surface>
       <div style="height: var(--space-3)"></div>
       <mm-add-surface-button> 배송지 변경/추가 </mm-add-surface-button>
@@ -120,16 +120,16 @@
     <section class="checkout-product">
       <mm-text size="18" aria-label="summary">주문상품</mm-text>
       <mm-surface size="small">
-        <mm-menu-item-row avatar-src="/src/images/cake_gosum.jpg" avatar-size="huge">
+        <mm-menu-item-action avatar-src="/src/images/cake_gosum.jpg" avatar-size="huge">
           <div slot="text">
-            <mm-text-pair
-              labelText="뉴닉이 풀어 쓴 경제상식사전"
-              descriptionText="₩ 11,900"
-            ></mm-text-pair>
+            <mm-meta-item
+              label="뉴닉이 풀어 쓴 경제상식사전"
+              value="₩ 11,900"
+            />
             <div style="height: var(--space-2)"></div>
             <mm-tag>평생 소장</mm-tag>
           </div>
-        </mm-menu-item-row>
+        </mm-menu-item-action>
       </mm-surface>
     </section>
 
@@ -186,12 +186,12 @@
         <mm-text size="18">13,980원</mm-text>
       </mm-flex>
       <div style="height: var(--space-3)"></div>
-      <mm-meta-item label="마일리지 사용" value="980원"></mm-meta-item>
-      <mm-meta-item label="카드 결제" value="12,980원"></mm-meta-item>
+      <mm-meta-item label="마일리지 사용" value="980원"/>
+      <mm-meta-item label="카드 결제" value="12,980원"/>
       <mm-surface>
         <mm-flex direction="column">
-          <mm-meta-item label="상품 금액" value="₩ 160,000"></mm-meta-item>
-          <mm-meta-item label="서비스 수수료" value="₩ 3,000"></mm-meta-item>
+          <mm-meta-item label="상품 금액" value="₩ 160,000"/>
+          <mm-meta-item label="서비스 수수료" value="₩ 3,000"/>
           <mm-row justifyContent="space-between">
             <mm-text size="18">총 합계 (KRW)</mm-text>
             <mm-text size="18">₩ 163,000</mm-text>
@@ -216,14 +216,14 @@
     <mm-add-surface-button> Add a payment method </mm-add-surface-button>
 
     <div style="height: var(--space-3)"></div>
-    <mm-menu-item-row>
+    <mm-menu-item-action>
       <mm-avatar slot="avatar" size="huge"></mm-avatar>
       <div slot="text">
         <mm-text size="18">VISA 1988 XXXX 1111</mm-text>
         <mm-text>Expires on 10/23</mm-text>
         <em>Edit</em>
       </div>
-    </mm-menu-item-row>
+    </mm-menu-item-action>
   </mm-component-section>
 
   <mm-component-section
@@ -251,16 +251,16 @@
           <mm-text size="14" weight="bold">주문상품 1건</mm-text>
           <mm-text size="14">13:00 까지 결제 시 오늘 발송</mm-text>
           <div style="height: var(--space-2)"></div>
-          <mm-menu-item-row avatar-src="/src/images/cake_gosum.jpg" avatar-size="huge">
+          <mm-menu-item-action avatar-src="/src/images/cake_gosum.jpg" avatar-size="huge">
             <div slot="text">
-              <mm-text-pair
-                labelText="뉴닉이 풀어 쓴 경제상식사전"
-                descriptionText="₩ 11,900"
-              ></mm-text-pair>
+              <mm-meta-item
+                label="뉴닉이 풀어 쓴 경제상식사전"
+                value="₩ 11,900"
+              />
               <div style="height: var(--space-2)"></div>
               <mm-tag>평생 소장</mm-tag>
             </div>
-          </mm-menu-item-row>
+          </mm-menu-item-action>
         </div>
         <mm-separator></mm-separator>
         <footer>
@@ -268,9 +268,9 @@
             <mm-text size="14" weight="bold">주문금액</mm-text>
             <mm-text size="14" weight="bold">13,980원</mm-text>
           </mm-flex>
-          <mm-meta-item label="상품금액" value="30,000원"></mm-meta-item>
-          <mm-meta-item label="배송료" value="3,000원"></mm-meta-item>
-          <mm-meta-item label="할인" value="2,000원"></mm-meta-item>
+          <mm-meta-item label="상품금액" value="30,000원"/>
+          <mm-meta-item label="배송료" value="3,000원"/>
+          <mm-meta-item label="할인" value="2,000원"/>
           <mm-separator></mm-separator>
           <mm-text size="14" weight="bold">결제상세</mm-text>
           <mm-text>카드 간편결제</mm-text>

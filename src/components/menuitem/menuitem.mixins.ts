@@ -1,11 +1,11 @@
 import { html } from 'lit'
 import { property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
-import { MenuItemRow } from './menu-item-row'
+import { MenuItemBase } from './menu-item-base'
 
 type GConstructor<T = {}> = new (...args: any[]) => T
 
-export const ToggleMixin = <T extends GConstructor<MenuItemRow>>(Base: T) => {
+export const ToggleMixin = <T extends GConstructor<MenuItemBase>>(Base: T) => {
   class Toggle extends Base {
     @property({ type: Boolean, reflect: true }) checked = false
     @property({ type: String }) value = ''

@@ -1,10 +1,10 @@
 import { html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
-import { MenuItemRow } from '../menu-item-row'
+import { MenuItemBase } from '../menu-item-base'
 
 @customElement('mm-menu-item-radio')
-export class MenuItemRadio extends MenuItemRow {
+export class MenuItemRadio extends MenuItemBase {
   @property({ type: Boolean, reflect: true }) checked = false
   @property({ type: String }) value = ''
   @property({ type: String }) name = ''
