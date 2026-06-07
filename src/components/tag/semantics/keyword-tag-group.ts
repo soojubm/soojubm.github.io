@@ -24,10 +24,10 @@ export class KeywordTagGroup extends LitElement {
   render() {
     if (!this.keywords.length) return nothing
     return html`
-      <mm-flex gap="1" wrap>
+      <mm-tag-group>
         ${this.title ? html`<mm-accent-tag>${this.title}</mm-accent-tag>` : nothing}
         ${this.keywords.map(k => html`<mm-keyword-tag>${k}</mm-keyword-tag>`)}
-      </mm-flex>
+      </mm-tag-group>
     `
   }
 }
