@@ -22,7 +22,6 @@
 	border-top:var(--border);
 }
 .footer-address {}
-.footer-address-logo {display:block;font-size:var(--font-size-18);filter:grayscale(100%);opacity:.5;}
 .footer-address-slogan {margin:var(--space-4) 0;font-size:var(--font-size-18);letter-spacing:.5px;}
 .footer-address-info {display: flex;
 	flex-wrap: wrap;
@@ -30,22 +29,4 @@
 .footer-address-info dt {color:var(--color-foreground-light);}
 .footer-copyright {display:block;}
 
-.footer-terms {}
-.footer-terms-link {margin:0 1rem 0 0;}
-
 .footer-scroll {}
-.footer-scroll-indicator {}
-.footer-scroll-indicator i {width:2px;height:8px;background:var(--gray800);margin:8px auto 0;animation:bounce 0.5s infinite alternate;transform:rotate(90deg);}
-.footer-scroll-bottom {display:none;}
-
-.footer-temp {
-	margin:var(--space-4) 0;
-	a {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		max-width: var(--width-tiny);
-		margin: var(--space-2) 0;
-		position: relative;
-	}
-}

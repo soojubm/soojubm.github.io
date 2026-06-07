@@ -1,5 +1,4 @@
   
-.option:checked { box-shadow: 0 0 0 3px lime; color: red; }
 
 .full-width {
 	width: 100vw;
@@ -45,17 +44,3 @@
     </svg>
 </button>  */
 
-
-.util_hidden {
-  display: none !important;
-}
-
-.util_hiddenVisually {
-  position: absolute !important;
-  overflow: hidden !important;
-  clip: rect(1px, 1px, 1px, 1px) !important;
-  width: 1px !important;
-  height: 1px !important;
-  padding: 0 !important;
-  border: 0 !important;
-}
