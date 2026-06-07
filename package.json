@@ -37,7 +37,6 @@
     "postcss": "^8.5.15",
     "postcss-loader": "^7.3.4",
     "prettier": "^2.7.1",
-    "sass": "^1.93.3",
     "stylelint": "^14.15.0",
     "ts-loader": "^9.6.0",
     "ts-node": "^10.9.2",
