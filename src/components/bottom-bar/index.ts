@@ -1,5 +1,5 @@
 import { LitElement, css, html, nothing } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
+import { customElement, property, state } from 'lit/decorators.js'
 import { ICON_NAMES } from '../icon-button/semantics/icon-names'
 
 interface BottomBarItem {
@@ -19,7 +19,9 @@ const defaultItems: BottomBarItem[] = [
 @customElement('mm-bottom-bar')
 class BottomBar extends LitElement {
   @property({ type: String }) items = ''
-  @property({ type: String }) label = '하단 내비게이션'
+  @property({ type: String, attribute: 'aria-label' }) ariaLabel = '하단 내비게이션'
+
+  @state() private selectedIndex: number | null = null
 
   static styles = css`
     .bottom-bar {
@@ -44,6 +46,18 @@ class BottomBar extends LitElement {
       color: var(--selection-foreground);
     }
 
+    .bottom-bar-item[aria-current='page'] .bottom-bar-indicator {
+      background: var(--selection-background);
+    }
+
+    .bottom-bar-indicator {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius-full);
+      padding: var(--space-1) var(--space-4);
+    }
+
     .bottom-bar-item em {
       display: flex;
       width: 4px;
@@ -57,6 +71,12 @@ class BottomBar extends LitElement {
     }
   `
 
+  private handleItemClick(e: Event, index: number) {
+    e.preventDefault()
+    this.selectedIndex = index
+    this.dispatchEvent(new CustomEvent('change', { detail: { index }, bubbles: true, composed: true }))
+  }
+
   private get parsedItems() {
     if (!this.items) return defaultItems
 
@@ -69,16 +89,23 @@ class BottomBar extends LitElement {
   }
 
   render() {
+    const items = this.parsedItems
+    const defaultActive = items.findIndex(item => item.active)
+    const activeIndex = this.selectedIndex ?? (defaultActive >= 0 ? defaultActive : null)
+
     return html`
-      <nav class="bottom-bar" aria-label=${this.label}>
-        ${this.parsedItems.map(
-          item => html`
+      <nav class="bottom-bar" aria-label=${this.ariaLabel}>
+        ${items.map(
+          (item, index) => html`
             <a
               class="bottom-bar-item"
               href=${item.href ?? '#'}
-              aria-current=${item.active ? 'page' : nothing}
+              aria-current=${activeIndex === index ? 'page' : nothing}
+              @click=${(e: Event) => this.handleItemClick(e, index)}
             >
-              <mm-avatar variant="tertiary" icon=${item.icon ?? ICON_NAMES.HOME}></mm-avatar>
+              <span class="bottom-bar-indicator">
+                <mm-avatar variant="tertiary" icon=${item.icon ?? ICON_NAMES.HOME}></mm-avatar>
+              </span>
               <mm-text size="12">${item.label}</mm-text>
               ${item.badge ? html`<em aria-hidden="true"></em>` : nothing}
             </a>

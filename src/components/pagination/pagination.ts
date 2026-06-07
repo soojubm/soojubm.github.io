@@ -11,7 +11,7 @@ export class Pagination extends LitElement {
   @property({ type: Number, attribute: 'current-page', reflect: true }) currentPage = 1
   @property({ type: Number, attribute: 'page-count' }) pageCount = 1
   @property({ type: Number, attribute: 'sibling-count' }) siblingCount = 1
-  @property({ type: String }) label = 'pagination'
+  @property({ type: String, attribute: 'aria-label' }) ariaLabel = 'pagination'
 
   static styles = css`
     :host {
@@ -131,7 +131,7 @@ export class Pagination extends LitElement {
     const currentPage = this.safeCurrentPage
 
     return html`
-      <nav class="pagination" aria-label=${this.label}>
+      <nav class="pagination" aria-label=${this.ariaLabel}>
         <mm-prev-button
           aria-label="이전 페이지로 이동"
           ?disabled=${currentPage === 1}

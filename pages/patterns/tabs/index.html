@@ -5,29 +5,31 @@
   ></mm-page-header>
 
   <mm-component-example>
-    <mm-tabs value="menu1" variant="line">
-      <mm-tab-list>
-        <mm-tab value="menu1">첫 번째 메뉴</mm-tab>
-        <mm-tab value="menu2">두 번째 메뉴</mm-tab>
-        <mm-tab value="menu3">세 번째 메뉴</mm-tab>
-      </mm-tab-list>
-
-      <mm-tab-panel value="menu1">🍎 1번 콘텐츠 영역입니다.</mm-tab-panel>
-      <mm-tab-panel value="menu2">🍌 2번 콘텐츠 영역입니다.</mm-tab-panel>
-      <mm-tab-panel value="menu3">🍇 3번 콘텐츠 영역입니다.</mm-tab-panel>
-    </mm-tabs>
-
-    <mm-tabs value="daily" variant="pill">
-      <mm-tab-list>
-        <mm-tab value="daily">일간</mm-tab>
-        <mm-tab value="weekly">주간</mm-tab>
-        <mm-tab value="monthly">월간</mm-tab>
-      </mm-tab-list>
-
-      <mm-tab-panel value="daily">📅 오늘 생성된 데이터...</mm-tab-panel>
-      <mm-tab-panel value="weekly">🗓️ 이번 주 누적 데이터...</mm-tab-panel>
-      <mm-tab-panel value="monthly">📊 이번 달 정산 데이터...</mm-tab-panel>
-    </mm-tabs>
+    <mm-flex direction="column" gap="4">
+      <mm-tabs value="menu1" variant="line">
+        <mm-tab-list>
+          <mm-tab value="menu1">첫 번째 메뉴</mm-tab>
+          <mm-tab value="menu2">두 번째 메뉴</mm-tab>
+          <mm-tab value="menu3">세 번째 메뉴</mm-tab>
+        </mm-tab-list>
+  
+        <mm-tab-panel value="menu1">🍎 1번 콘텐츠 영역입니다.</mm-tab-panel>
+        <mm-tab-panel value="menu2">🍌 2번 콘텐츠 영역입니다.</mm-tab-panel>
+        <mm-tab-panel value="menu3">🍇 3번 콘텐츠 영역입니다.</mm-tab-panel>
+      </mm-tabs>
+  
+      <mm-tabs value="daily" variant="pill">
+        <mm-tab-list>
+          <mm-tab value="daily">일간</mm-tab>
+          <mm-tab value="weekly">주간</mm-tab>
+          <mm-tab value="monthly">월간</mm-tab>
+        </mm-tab-list>
+  
+        <mm-tab-panel value="daily">📅 오늘 생성된 데이터...</mm-tab-panel>
+        <mm-tab-panel value="weekly">🗓️ 이번 주 누적 데이터...</mm-tab-panel>
+        <mm-tab-panel value="monthly">📊 이번 달 정산 데이터...</mm-tab-panel>
+      </mm-tabs>
+    </mm-flex direction="column" gap="4">
     <!-- // iOS isTranslucent: Bool -->
   </mm-component-example>
 
@@ -83,8 +85,7 @@
           "글로벌 네비게이션 패턴인 햄버거 메뉴와 탭(바텀네비게이션, 탭바)을 함께 사용할 수 있는가?",
           "탭의 가로 스크롤(+ MDI). 탭의 최대 갯수 제한.",
           "탭의 중첩. 페이지에서 수행하는 과업 중심 플로우 설계. 중첩을 허용한다면 탭의 중첩 패턴을 정의해야 함. Material 3의 primary tabs / secondary tabs 분류 등 참고. 또는 네이버 쇼핑의 4단계 5단계 탭.",
-          "flutter. Scaffold - AppBar - bottom: TabBar - tabs - Tab / Scaffold - body - TabBarView",
-          "우측 actions. 갯수 제한. md에서 최대 3개. hamberger case."
+          "flutter. Scaffold - AppBar - bottom: TabBar - tabs - Tab / Scaffold - body - TabBarView"
         ]'
   >
   </mm-text-list>

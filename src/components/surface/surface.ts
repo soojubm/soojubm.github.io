@@ -11,7 +11,6 @@ export class Surface extends LitElement {
 
   @property({ type: String }) variant?: Variant
   @property({ type: String }) size?: Size
-  @property({ type: String }) height?: string
 
   render() {
     return html`

@@ -10,7 +10,7 @@ import { resetStyles } from '../../../stylesheets/shared/reset.styles'
 export class TypingIndicator extends LitElement {
   /** 점 색상 */
   @property({ type: String }) color = 'var(--color-foreground)'
-  @property({ type: String }) label = '입력 중'
+  @property({ type: String, attribute: 'aria-label' }) ariaLabel = '입력 중'
 
   static styles = [
     resetStyles,
@@ -59,7 +59,7 @@ export class TypingIndicator extends LitElement {
       <div
         class="dots"
         role="status"
-        aria-label=${this.label}
+        aria-label=${this.ariaLabel}
         style="--typing-color: ${this.color}"
       >
         <span></span><span></span><span></span>

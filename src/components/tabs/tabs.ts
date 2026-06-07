@@ -6,14 +6,15 @@ import TabPanel from './semantics/tab-panel'
 
 @customElement('mm-tabs')
 export class Tabs extends LitElement {
-  @property({ type: String, reflect: true }) value = ''
-  @property({ type: String, reflect: true }) variant = 'line'
-
   static styles = css`
     :host {
-      display: block;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
     }
   `
+  @property({ type: String, reflect: true }) value = ''
+  @property({ type: String, reflect: true }) variant = 'line'
 
   constructor() {
     super()

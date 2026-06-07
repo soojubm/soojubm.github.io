@@ -5,9 +5,7 @@ import { topBarStyles } from './top-bar.styles'
 
 @customElement('mm-top-bar')
 class TopBar extends LitElement {
-  @property({ type: String }) variant = ''
   @property({ type: String }) title = ''
-  /** 'back' | 'close' | '' */
   @property({ type: String }) nav: 'back' | 'close' | '' = 'back'
 
   static styles = [topBarStyles]
@@ -18,14 +16,22 @@ class TopBar extends LitElement {
 
   render() {
     return html`
-      <header role="navigation" class="top-bar" data-variant="${this.variant}">
+      <header role="navigation" class="top-bar">
         ${this.nav === 'back'
-          ? html`<mm-icon-button variant="navigator" icon=${ICON_NAMES.BACK} @click=${this.handleNavClick}></mm-icon-button>`
+          ? html`<mm-icon-button
+              variant="navigator"
+              icon=${ICON_NAMES.BACK}
+              @click=${this.handleNavClick}
+            ></mm-icon-button>`
           : ''}
         <mm-text size="18" class="top-bar-title">${this.title}</mm-text>
         <slot name="action"></slot>
         ${this.nav === 'close'
-          ? html`<mm-icon-button variant="navigator" icon=${ICON_NAMES.CLOSE} @click=${this.handleNavClick}></mm-icon-button>`
+          ? html`<mm-icon-button
+              variant="navigator"
+              icon=${ICON_NAMES.CLOSE}
+              @click=${this.handleNavClick}
+            ></mm-icon-button>`
           : ''}
       </header>
     `

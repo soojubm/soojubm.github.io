@@ -5,7 +5,7 @@ import { buttonStyles } from '../button.styles'
 
 @customElement('mm-clear-button')
 class ClearButton extends LitElement {
-  @property({ type: String }) label = ''
+  @property({ type: String, attribute: 'aria-label' }) ariaLabel = ''
   @property({ type: Boolean, reflect: true }) disabled = false
 
   static styles = [buttonStyles]
@@ -15,7 +15,7 @@ class ClearButton extends LitElement {
       <button
         class="icon-button"
         data-variant="clear"
-        aria-label="${this.label}"
+        aria-label="${this.ariaLabel}"
         ?disabled="${this.disabled}"
       >
         <mm-icon name=${ICON_NAMES.CLOSE}></mm-icon>

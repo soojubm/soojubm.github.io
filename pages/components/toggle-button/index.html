@@ -92,7 +92,14 @@
     title="ToggleButtonGroup"
     description="여러 ToggleButton을 묶어 단일 선택(세그먼트 컨트롤)으로 동작합니다. 레이블·아이콘·아이콘 전용·disabled 옵션을 지원합니다."
   >
-    <mm-flex direction="column" gap="1rem" style="width: 400px">
+    <mm-flex direction="column" gap="1rem">
+      <mm-toggle-button-group
+        options='[
+          {"value":"grid","icon":"view-grid","ariaLabel":"Grid view"},
+          {"value":"list","icon":"table-rows","ariaLabel":"List view"}
+        ]'
+      ></mm-toggle-button-group>
+
       <mm-toggle-button-group
         options='[
           {"label":"Grid","value":"grid"},
@@ -104,13 +111,6 @@
         options='[
           {"label":"Grid","value":"grid","icon":"view-grid"},
           {"label":"List","value":"list","icon":"list"}
-        ]'
-      ></mm-toggle-button-group>
-
-      <mm-toggle-button-group
-        options='[
-          {"value":"grid","icon":"view-grid","ariaLabel":"Grid view"},
-          {"value":"list","icon":"table-rows","ariaLabel":"List view"}
         ]'
       ></mm-toggle-button-group>
 

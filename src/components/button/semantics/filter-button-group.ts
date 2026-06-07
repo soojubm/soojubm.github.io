@@ -1,7 +1,6 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { resetStyles } from '../../../stylesheets/shared/reset.styles'
-import '../../flex/flex'
 import type { FilterButton } from './filter-button'
 
 /**
@@ -26,7 +25,8 @@ export class FilterButtonGroup extends LitElement {
     resetStyles,
     css`
       :host {
-        display: block;
+        display: flex;
+        gap: 6px;
       }
     `,
   ]
@@ -114,11 +114,7 @@ export class FilterButtonGroup extends LitElement {
   }
 
   render() {
-    return html`
-      <mm-flex gap="6px">
-        <slot @slotchange=${this._adoptInitialSelection}></slot>
-      </mm-flex>
-    `
+    return html`<slot @slotchange=${this._adoptInitialSelection}></slot>`
   }
 }
 

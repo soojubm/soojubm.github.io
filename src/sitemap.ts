@@ -1,5 +1,7 @@
 import { ICON_NAMES } from './components/icon-button/semantics/icon-names'
 
+// badge
+
 export const SITEMAP = [
   // 1. 상단 독립 메뉴 (Top-level Links)
   {
@@ -56,10 +58,10 @@ export const SITEMAP = [
     title: 'Navigations',
     icon: ICON_NAMES.SITEMAP,
     items: [
+      { id: 'tabs', name: 'tabs' },
       { id: 'top-bar', name: 'top bar' },
       { id: 'bottom-bar', name: 'bottom bar' },
-      { id: 'breadcrumb', name: 'breadcrumb', badge: '⚠️' },
-      { id: 'tabs', name: 'tabs', subDir: 'patterns' },
+      { id: 'breadcrumb', name: 'breadcrumb', badge: '' },
     ],
   },
   {

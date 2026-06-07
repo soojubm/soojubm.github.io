@@ -15,9 +15,7 @@ interface BreadcrumbItem {
 export class Breadcrumb extends LitElement {
   /** [{ "label": "홈", "href": "/" }, ...] 형태의 JSON 문자열 */
   @property({ type: String }) items = '[]'
-  /** nav의 aria-label */
-  @property({ type: String }) label = 'breadcrumb'
-  /** 항목 사이 구분자 */
+  @property({ type: String, attribute: 'aria-label' }) ariaLabel = 'breadcrumb'
   @property({ type: String }) divider = '/'
 
   static styles = css`
@@ -67,16 +65,14 @@ export class Breadcrumb extends LitElement {
     const items = this.parsedItems
 
     return html`
-      <nav class="breadcrumb" aria-label=${this.label}>
+      <nav class="breadcrumb" aria-label=${this.ariaLabel}>
         ${items.map((item, index) => {
           const isLast = index === items.length - 1
           const isHome = index === 0
 
           const node =
             item.href && !isLast
-              ? html`<a
-                  class="breadcrumb-item ${isHome ? 'breadcrumb-home' : ''}"
-                  href=${item.href}
+              ? html`<a class="breadcrumb-item ${isHome ? 'breadcrumb-home' : ''}" href=${item.href}
                   >${item.label}</a
                 >`
               : html`<span class="breadcrumb-item" aria-current=${isLast ? 'page' : nothing}
