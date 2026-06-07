@@ -45,6 +45,15 @@
           texts='["제한된 스케일과 규칙을 사용한다", "접근성(A11y)을 기본 제약으로 포함한다", "색상에 의존하지 않는 상태 표현을 사용한다", "Platform-agnostic을 전제로 한다", "Mobile-first로 설계한다", "특정 환경에 종속된 인터랙션에 의존하지 않는다", "불필요한 변형과 예외를 만들지 않는다"]'
         ></mm-text-list>
 
+            <mm-text size="14" weight="bold">Platform-agnostic</mm-text>
+    <mm-text size="14">
+      특정 환경에 최적화된 표현보다 모든 환경에서 일관된 구조를 우선한다.
+    </mm-text>
+    <mm-text size="14" weight="bold">Consistent Patterns</mm-text>
+    <mm-text size="14">
+      동일한 문제는 동일한 방식으로 해결한다. 패턴의 반복이 일관성을 만든다.
+    </mm-text>
+
         <mm-text as="b" weight="bold">
           👉 핵심: 좋은 디자인을 선택하는 것이 아니라, 잘못된 디자인을 불가능하게 만든다
         </mm-text>
@@ -72,87 +81,7 @@
           texts='["초기에는 최소 구조로 설계한다", "필요에 따라 기능과 표현을 확장한다", "컴포넌트는 제한된 패턴으로 점진적으로 추가한다", "모든 경우를 사전에 정의하지 않는다", "조합 가능한 구조를 우선한다"]'
         ></mm-text-list>
 
-        <mm-text as="b" weight="bold">
-          👉 핵심: 처음부터 완벽하게 만들지 않는다. 대신 확장 가능하게 만든다
-        </mm-text>
-      </div>
-    </mm-grid>
-  </section>
-
-  <article
-    style="
-      border: var(--border);
-      padding: 2rem;
-      border-radius: 2rem;
-      border: 2px solid transparent;
-      background-image: linear-gradient(#fff, #fff),
-        linear-gradient(to right, #231557 0%, #44107a 29%, #ff1361 67%, #fff800 100%);
-      background-origin: border-box;
-      background-clip: padding-box, border-box;
-    "
-  >
-    <mm-text size="14" color="var(--color-foreground-light)">1. Constraint-driven Design</mm-text>
-    <mm-text size="18">한계를 설정하기</mm-text>
-    <br />
-    <mm-text size="14">
-      우리는 선택을 줄이기 위해 제약을 만든다. 제약은 속도와 일관성을 만든다.
-    </mm-text>
-    <br />
-    <mm-text size="14" weight="bold">A11y</mm-text>
-    <mm-text size="14"> 접근성은 기본 제약이다. 충족하지 않는 디자인은 허용하지 않는다. </mm-text>
-    <mm-text size="14"> 색상에 의존하지 않고 형태, 대비, 구조로 상태를 표현한다. </mm-text>
-    <br />
-    <mm-text size="14" weight="bold">Mobile First</mm-text>
-    <mm-text size="14"> 가장 제약이 큰 환경에서 시작한다. </mm-text>
-    <mm-text size="14"> 환경에 종속되지 않는 일관된 경험을 만든다. </mm-text>
-  </article>
-
-  <article
-    style="
-      border: var(--border);
-      padding: 2rem;
-      border-radius: 2rem;
-      border: 2px solid transparent;
-      background-image: linear-gradient(#fff, #fff),
-        linear-gradient(to right, #11998e 0%, #38ef7d 100%);
-      background-origin: border-box;
-      background-clip: padding-box, border-box;
-    "
-  >
-    <mm-text size="14" color="var(--color-foreground-light)">2. Universal Experience</mm-text>
-    <mm-text size="18">환경에 독립적인 경험</mm-text>
-    <br />
-    <mm-text size="14"> 우리는 디바이스와 브라우저에 종속되지 않는 경험을 설계한다. </mm-text>
-    <br />
-    <mm-text size="14" weight="bold">Platform-agnostic</mm-text>
-    <mm-text size="14">
-      특정 환경에 최적화된 표현보다 모든 환경에서 일관된 구조를 우선한다.
-    </mm-text>
-    <br />
-    <mm-text size="14" weight="bold">Consistent Patterns</mm-text>
-    <mm-text size="14">
-      동일한 문제는 동일한 방식으로 해결한다. 패턴의 반복이 일관성을 만든다.
-    </mm-text>
-  </article>
-
-  <article
-    style="
-      border: var(--border);
-      padding: 2rem;
-      border-radius: 2rem;
-      border: 2px solid transparent;
-      background-image: linear-gradient(#fff, #fff),
-        linear-gradient(to right, #ee0979 0%, #ff6a00 100%);
-      background-origin: border-box;
-      background-clip: padding-box, border-box;
-    "
-  >
-    <mm-text size="14" color="var(--color-foreground-light)">3. Progressive & Scalable</mm-text>
-    <mm-text size="18">점진적으로 확장하기</mm-text>
-    <br />
-    <mm-text size="14"> 우리는 단순하게 시작하고 필요에 따라 확장한다. </mm-text>
-    <br />
-    <mm-text size="14" weight="bold">Start Small</mm-text>
+            <mm-text size="14" weight="bold">Start Small</mm-text>
     <mm-text size="14"> 초기에는 최소한의 구조와 패턴만 정의한다. </mm-text>
     <br />
     <mm-text size="14" weight="bold">Scale by Need</mm-text>
@@ -160,7 +89,15 @@
     <br />
     <mm-text size="14" weight="bold">Composable</mm-text>
     <mm-text size="14"> 새로운 요소를 추가하기보다 기존 요소를 조합해 확장한다. </mm-text>
-  </article>
+
+        <mm-text as="b" weight="bold">
+          👉 핵심: 처음부터 완벽하게 만들지 않는다. 대신 확장 가능하게 만든다
+        </mm-text>
+      </div>
+    </mm-grid>
+  </section>
+
+
 
   <section>
     <mm-text as="h1" size="32" weight="bold">Typography</mm-text>
@@ -979,243 +916,6 @@
             <tr>
               <td><code>--input-border-color</code></td>
               <td><mm-text size="14">input 보더 색상 override</mm-text></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </mm-grid>
-  </section>
-
-  <section style="margin: 4rem 0">
-    <mm-text as="h1" size="32" weight="bold">Component Status</mm-text>
-    <mm-text as="p" size="14" style="margin: 0.5rem 0 2rem">
-      현재 구현된 컴포넌트 현황입니다. <code>pages/components/</code> 및 sitemap 기준.
-    </mm-text>
-
-    <mm-grid columns="2">
-      <div>
-        <mm-text as="h2" size="18" weight="bold" style="margin-bottom: 1rem"
-          >Visual Information</mm-text
-        >
-        <table>
-          <thead>
-            <tr>
-              <th><mm-text size="12" color="var(--color-foreground-light)">컴포넌트</mm-text></th>
-              <th><mm-text size="12" color="var(--color-foreground-light)">Semantic</mm-text></th>
-              <th><mm-text size="12" color="var(--color-foreground-light)">상태</mm-text></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><mm-text size="14">Avatar</mm-text></td>
-              <td><mm-text size="14" color="var(--color-foreground-light)">—</mm-text></td>
-              <td><mm-text size="14">✅</mm-text></td>
-            </tr>
-            <tr>
-              <td><mm-text size="14">Text</mm-text></td>
-              <td>
-                <mm-text size="14" color="var(--color-foreground-light)"
-                  >caption, paragraph, section-title, page-title</mm-text
-                >
-              </td>
-              <td><mm-text size="14">✅</mm-text></td>
-            </tr>
-            <tr>
-              <td><mm-text size="14">Tag</mm-text></td>
-              <td>
-                <mm-text size="14" color="var(--color-foreground-light)"
-                  >accent-tag, status-tag, keyword-tag, category-tag</mm-text
-                >
-              </td>
-              <td><mm-text size="14">✅</mm-text></td>
-            </tr>
-            <tr>
-              <td><mm-text size="14">List Row</mm-text></td>
-              <td><mm-text size="14" color="var(--color-foreground-light)">—</mm-text></td>
-              <td><mm-text size="14">✅</mm-text></td>
-            </tr>
-            <tr>
-              <td><mm-text size="14">Surface</mm-text></td>
-              <td><mm-text size="14" color="var(--color-foreground-light)">—</mm-text></td>
-              <td><mm-text size="14">✅</mm-text></td>
-            </tr>
-            <tr>
-              <td><mm-text size="14">Thumbnail</mm-text></td>
-              <td><mm-text size="14" color="var(--color-foreground-light)">—</mm-text></td>
-              <td><mm-text size="14">✅</mm-text></td>
-            </tr>
-            <tr>
-              <td><mm-text size="14">Separator</mm-text></td>
-              <td><mm-text size="14" color="var(--color-foreground-light)">—</mm-text></td>
-              <td><mm-text size="14">✅</mm-text></td>
-            </tr>
-          </tbody>
-        </table>
-
-        <mm-text as="h2" size="18" weight="bold" style="margin: 2rem 0 1rem">Actions</mm-text>
-        <table>
-          <thead>
-            <tr>
-              <th><mm-text size="12" color="var(--color-foreground-light)">컴포넌트</mm-text></th>
-              <th><mm-text size="12" color="var(--color-foreground-light)">Semantic</mm-text></th>
-              <th><mm-text size="12" color="var(--color-foreground-light)">상태</mm-text></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><mm-text size="14">Button</mm-text></td>
-              <td>
-                <mm-text size="14" color="var(--color-foreground-light)"
-                  >read-more, follow, filter, bookmark, file-upload…</mm-text
-                >
-              </td>
-              <td><mm-text size="14">✅</mm-text></td>
-            </tr>
-            <tr>
-              <td><mm-text size="14">Icon Button</mm-text></td>
-              <td>
-                <mm-text size="14" color="var(--color-foreground-light)"
-                  >close, hamburger, copy, delete, reveal, prev/next…</mm-text
-                >
-              </td>
-              <td><mm-text size="14">✅</mm-text></td>
-            </tr>
-            <tr>
-              <td><mm-text size="14">Toggle Button</mm-text></td>
-              <td><mm-text size="14" color="var(--color-foreground-light)">—</mm-text></td>
-              <td><mm-text size="14">✅</mm-text></td>
-            </tr>
-            <tr>
-              <td><mm-text size="14">MenuItem</mm-text></td>
-              <td><mm-text size="14" color="var(--color-foreground-light)">—</mm-text></td>
-              <td><mm-text size="14">✅</mm-text></td>
-            </tr>
-            <tr>
-              <td><mm-text size="14">Link</mm-text></td>
-              <td><mm-text size="14" color="var(--color-foreground-light)">—</mm-text></td>
-              <td><mm-text size="14">✅</mm-text></td>
-            </tr>
-          </tbody>
-        </table>
-
-        <mm-text as="h2" size="18" weight="bold" style="margin: 2rem 0 1rem">Navigations</mm-text>
-        <table>
-          <tbody>
-            <tr>
-              <td><mm-text size="14">Top Bar</mm-text></td>
-              <td><mm-text size="14" color="var(--color-foreground-light)">—</mm-text></td>
-              <td><mm-text size="14">✅</mm-text></td>
-            </tr>
-            <tr>
-              <td><mm-text size="14">Bottom Bar</mm-text></td>
-              <td><mm-text size="14" color="var(--color-foreground-light)">—</mm-text></td>
-              <td><mm-text size="14">✅</mm-text></td>
-            </tr>
-            <tr>
-              <td><mm-text size="14">Breadcrumb</mm-text></td>
-              <td><mm-text size="14" color="var(--color-foreground-light)">—</mm-text></td>
-              <td><mm-text size="14">⚠️ 검토 필요</mm-text></td>
-            </tr>
-            <tr>
-              <td><mm-text size="14">Tabs</mm-text></td>
-              <td><mm-text size="14" color="var(--color-foreground-light)">—</mm-text></td>
-              <td><mm-text size="14">✅</mm-text></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div>
-        <mm-text as="h2" size="18" weight="bold" style="margin-bottom: 1rem">Forms</mm-text>
-        <table>
-          <tbody>
-            <tr>
-              <td><mm-text size="14">Checkbox</mm-text></td>
-              <td><mm-text size="14" color="var(--color-foreground-light)">—</mm-text></td>
-              <td><mm-text size="14">✅</mm-text></td>
-            </tr>
-            <tr>
-              <td><mm-text size="14">Radio</mm-text></td>
-              <td><mm-text size="14" color="var(--color-foreground-light)">—</mm-text></td>
-              <td><mm-text size="14">✅</mm-text></td>
-            </tr>
-            <tr>
-              <td><mm-text size="14">Switch</mm-text></td>
-              <td><mm-text size="14" color="var(--color-foreground-light)">—</mm-text></td>
-              <td><mm-text size="14">✅</mm-text></td>
-            </tr>
-            <tr>
-              <td><mm-text size="14">Input</mm-text></td>
-              <td>
-                <mm-text size="14" color="var(--color-foreground-light)"
-                  >search field, password field, textarea</mm-text
-                >
-              </td>
-              <td><mm-text size="14">✅</mm-text></td>
-            </tr>
-          </tbody>
-        </table>
-
-        <mm-text as="h2" size="18" weight="bold" style="margin: 2rem 0 1rem">Feedbacks</mm-text>
-        <table>
-          <tbody>
-            <tr>
-              <td><mm-text size="14">Tooltip</mm-text></td>
-              <td><mm-text size="14" color="var(--color-foreground-light)">—</mm-text></td>
-              <td><mm-text size="14">✅</mm-text></td>
-            </tr>
-            <tr>
-              <td><mm-text size="14">Dialog</mm-text></td>
-              <td><mm-text size="14" color="var(--color-foreground-light)">—</mm-text></td>
-              <td><mm-text size="14">✅</mm-text></td>
-            </tr>
-            <tr>
-              <td><mm-text size="14">Notice</mm-text></td>
-              <td><mm-text size="14" color="var(--color-foreground-light)">—</mm-text></td>
-              <td><mm-text size="14">✅</mm-text></td>
-            </tr>
-            <tr>
-              <td><mm-text size="14">Loading</mm-text></td>
-              <td><mm-text size="14" color="var(--color-foreground-light)">—</mm-text></td>
-              <td><mm-text size="14">✅</mm-text></td>
-            </tr>
-          </tbody>
-        </table>
-
-        <mm-text as="h2" size="18" weight="bold" style="margin: 2rem 0 1rem">Patterns</mm-text>
-        <table>
-          <tbody>
-            <tr>
-              <td><mm-text size="14">Result</mm-text></td>
-              <td><mm-text size="14">✅</mm-text></td>
-            </tr>
-            <tr>
-              <td><mm-text size="14">Accordion</mm-text></td>
-              <td><mm-text size="14">✅</mm-text></td>
-            </tr>
-            <tr>
-              <td><mm-text size="14">Auth</mm-text></td>
-              <td><mm-text size="14">✅</mm-text></td>
-            </tr>
-            <tr>
-              <td><mm-text size="14">Chat</mm-text></td>
-              <td><mm-text size="14">✅</mm-text></td>
-            </tr>
-            <tr>
-              <td><mm-text size="14">Setting</mm-text></td>
-              <td><mm-text size="14">✅</mm-text></td>
-            </tr>
-            <tr>
-              <td><mm-text size="14">Post / Product / Checkout</mm-text></td>
-              <td><mm-text size="14">✅</mm-text></td>
-            </tr>
-            <tr>
-              <td><mm-text size="14">User Profile</mm-text></td>
-              <td><mm-text size="14">🔥 신규</mm-text></td>
-            </tr>
-            <tr>
-              <td><mm-text size="14">Table</mm-text></td>
-              <td><mm-text size="14">🚧 진행중</mm-text></td>
             </tr>
           </tbody>
         </table>

@@ -9,6 +9,10 @@ export const topBarStyles = css`
     position: relative;
   }
 
+  .top-bar-title {
+    flex: 1;
+  }
+
   .top-bar[data-size='large'] {
     align-items: baseline;
     height: 100px;

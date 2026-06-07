@@ -90,6 +90,7 @@ export const inputStyles = css`
     align-items: center;
     overflow: hidden;
     width: 100%;
+    min-height: var(--input-height);
     gap: var(--input-padding-inline);
     padding: var(--input-padding-block) var(--input-padding-inline);
     border: var(--input-border);

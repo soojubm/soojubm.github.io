@@ -1,6 +1,5 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import '../tooltip/tooltip'
 import { iconButtonStyles } from './icon-button.styles'
 
 export type IconButtonVariant = 'action' | 'flow' | 'plain' | 'navigator' | 'destructive'

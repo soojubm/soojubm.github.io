@@ -39,9 +39,21 @@
     <div style="position: relative; display: inline-block">
       <mm-radio value="premium" checked>프리미엄 요금제</mm-radio>
 
-      <mm-list-marker variant="number" value="1" style="position: absolute; left: -1.75rem; top: 50%; transform: translateY(-50%)"></mm-list-marker>
-      <mm-list-marker variant="number" value="2" style="position: absolute; left: 0.45rem; bottom: -1.75rem; transform: translateX(-50%)"></mm-list-marker>
-      <mm-list-marker variant="number" value="3" style="position: absolute; right: -1.75rem; top: 50%; transform: translateY(-50%)"></mm-list-marker>
+      <mm-list-marker
+        variant="number"
+        value="1"
+        style="position: absolute; left: -1.75rem; top: 50%; transform: translateY(-50%)"
+      ></mm-list-marker>
+      <mm-list-marker
+        variant="number"
+        value="2"
+        style="position: absolute; left: 0.45rem; bottom: -1.75rem; transform: translateX(-50%)"
+      ></mm-list-marker>
+      <mm-list-marker
+        variant="number"
+        value="3"
+        style="position: absolute; right: -1.75rem; top: 50%; transform: translateY(-50%)"
+      ></mm-list-marker>
     </div>
   </mm-component-anatomy>
 
@@ -64,7 +76,7 @@
     </mm-grid>
   </mm-component-guide>
 
-  <mm-component-section title="Access 권한" description="TODO">
+  <mm-component-section title="Access 권한" description="">
     <div>
       <mm-top-bar title="공개 대상 선택"></mm-top-bar>
       <mm-menu-item-radio-group name="access" value="public">
@@ -90,7 +102,7 @@
     </div>
   </mm-component-section>
 
-  <mm-component-section title="Tile Radio?" description="TODO">
+  <mm-component-section title="Tile Radio?" description="">
     <mm-surface variant="elevated">
       <mm-radio name="gender" id="option1" value="">
         <mm-text size="14" color="var(--color-foreground-light)">Standard License</mm-text>

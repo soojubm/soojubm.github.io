@@ -18,6 +18,7 @@ export const textfieldStyles = [
 
     :host([size='small']) {
       --input-height: var(--size-medium);
+      --input-padding-block: 0px;
     }
 
     /* 라벨을 시각적으로만 감추고 스크린리더에는 남김 (for 연결 유지) */

@@ -61,6 +61,10 @@ export const buttonStyles = css`
     color: var(--button-checked-text-color, var(--button-text-color));
   }
 
+  :host([aria-checked='true']) button mm-icon {
+    --button-text-color: var(--button-checked-icon-color, currentColor);
+  }
+
   button {
     display: inline-flex;
     align-items: center;

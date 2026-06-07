@@ -11,14 +11,13 @@ export const tagToneStyles = {
   default: {
     background: 'transparent',
     color: 'var(--color-foreground)',
-    borderColor: 'transparent',
-  },
-  gray: {
-    background: 'var(--color-background-subtle)',
-    color: 'var(--color-foreground)',
     borderColor: 'var(--color-border)',
   },
-
+  // gray: {
+  //   background: 'var(--color-background-subtle)',
+  //   color: 'var(--color-foreground)',
+  //   borderColor: 'var(--color-border)',
+  // },
   green: {
     background: '#dcfce7',
     color: '#166534',
@@ -81,7 +80,7 @@ export const statusToneMap = {
   warning: 'yellow',
   error: 'red',
   info: 'blue',
-  neutral: 'gray',
+  neutral: 'default',
 } as const satisfies Record<string, TagTone>
 
 export type StatusVariant = keyof typeof statusToneMap

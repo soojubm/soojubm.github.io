@@ -32,7 +32,7 @@ class UserSnippet extends LitElement {
           ${this.description
             ? html`<mm-text size="14" style="margin-top:-.125rem">${this.description}</mm-text>`
             : nothing}
-          <mm-text size="12" style="margin-block:-.25rem;">${this.email}</mm-text>
+          <mm-text size="12">${this.email}</mm-text>
           <mm-text size="12">${this.phone}</mm-text>
         </div>
       </div>

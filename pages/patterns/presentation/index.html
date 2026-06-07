@@ -10,7 +10,7 @@
       <mm-button data-open-sheet="anchor">Anchor Sheet 열기</mm-button>
       <mm-button data-open-sheet="inline">Inline Sheet 열기</mm-button>
     </mm-button-group>
-    <mm-button variant="tertiary">토스트 열기</mm-button>
+    <mm-button variant="tertiary" data-open-toast>토스트 열기</mm-button>
     <aside class="toast" role="alert">toast test. 사라지는 시간을 정의.</aside>
 
     <!-- Center -->
@@ -72,23 +72,66 @@
 
     <mm-text size="18">CreatePortal</mm-text>
 
-    <mm-text size="18">Modal</mm-text>
+    <mm-text size="18">Modal vs Non-modal</mm-text>
     <mm-text size="14">
-      something that requires the user's attention. 사용자는 모달 형태의 집중된 환경에서 리스크를
-      관리할 수 있습니다.구조적으로는 main tag의 형제 엘리먼트. 루트 엘리먼트가 상태 클래스를 가짐.
-      popovertarget. 사용자 인터렉션을 요구할 때 modal로 주의를 집중 시킵니다. non interactions is
-      non modal. 이 규칙이라면 non-modal dialog는 허용될 수 없다. modal은 배경을 클릭해서 닫는
-      기능은 중요도가 낮은 수행에서만 허용한다. 중요도가 낮은 작업이란?
+      Presentation 레이어는 사용자의 주의를 얼마나 차단하느냐에 따라 두 가지로 나뉜다. 이 기준은
+      시각적 형태(Sheet, Dialog 등)가 아니라 <strong>배경과의 상호작용 허용 여부</strong>로 결정된다.
     </mm-text>
+
+    <mm-text size="16">Modal</mm-text>
+    <mm-text size="14">
+      배경과의 상호작용을 차단하고 사용자의 즉각적인 응답을 요구한다. Backdrop(dim)이 뒤를 덮고,
+      포커스는 레이어 내부에 갇힌다(focus trap). 닫기는 명시적인 버튼 액션으로만 허용하는 것이
+      원칙이며, 배경 클릭으로 닫는 기능은 중요도가 낮은 작업에서만 예외적으로 허용한다.
+    </mm-text>
+    <mm-text-list
+      texts='["배경 클릭·스크롤 불가.", "포커스 트랩 — Tab 키가 레이어 내부를 순환한다.", "ESC 키 닫기는 데이터 손실 위험이 없는 경우에만 허용.", "aria-modal=\"true\", role=\"dialog\" 명시.", "용례: 삭제 확인, 중요 정보 입력, 오류 처리, 결제 흐름."]'
+    ></mm-text-list>
+
+    <mm-text size="16">Non-modal</mm-text>
+    <mm-text size="14">
+      배경과의 상호작용을 허용한다. 현재 작업 맥락을 유지하면서 부가 정보나 서브태스크를 제공할 때
+      사용한다. 포커스 트랩이 없고, 외부 클릭·ESC로 언제든 닫을 수 있다. Backdrop을 사용하지
+      않으므로 사용자는 레이어를 무시하고 계속 작업할 수 있다.
+    </mm-text>
+    <mm-text-list
+      texts='["배경 클릭·스크롤 가능.", "포커스 트랩 없음 — Tab 키가 페이지 전체를 순환한다.", "외부 클릭 또는 ESC로 닫힌다.", "용례: Dropdown, Tooltip, Toast, 사이드 패널, Anchor popover."]'
+    ></mm-text-list>
+
+    <mm-text size="16">Sheet 타입별 분류</mm-text>
+    <mm-text-list
+      texts='["Modal — center: Backdrop + focus trap. 사용자 확인이 필요한 작업.", "Non-modal — bottom: 컨텍스트 확장. 배경 스크롤 허용 여부는 콘텐츠 성격에 따라 결정.", "Non-modal — left / right: 사이드 패널. 페이지 맥락을 유지한 채 추가 정보 탐색.", "Non-modal — anchor: Dropdown과 동일한 패턴. 트리거 근처에 위치, 외부 클릭으로 닫힘.", "Non-modal — inline: 부모 컨테이너 내부에 삽입. 레이어 개념이 아닌 확장 영역."]'
+    ></mm-text-list>
     <mm-text size="18">Z-Index</mm-text>
     <mm-text>딤(오버레이) - 팝오버 - 모달 - 팝오버 - 토스트 - 시트.</mm-text>
 
     <mm-text size="18">Anatomy</mm-text>
-    <mm-text size="14" weight="bold">Sheet Backdrop / Sheet Overlay</mm-text>
-    <mm-text size="14" weight="bold">Sheet</mm-text>
-    <mm-text size="14" weight="bold">SheetHeader</mm-text>
-    <mm-text size="14" weight="bold">SheetBody</mm-text>
-    <mm-text size="14" weight="bold">SheetFooter</mm-text>
+    <div class="anatomy">
+      <div class="anatomy-backdrop">
+        <span class="anatomy-label">Sheet Backdrop</span>
+        <div class="anatomy-sheet">
+          <span class="anatomy-label">Sheet</span>
+          <div class="anatomy-sheet-header">
+            <span class="anatomy-label">SheetHeader</span>
+            <div class="anatomy-sheet-header-inner">
+              <div class="anatomy-mock-title"></div>
+              <div class="anatomy-mock-close"></div>
+            </div>
+          </div>
+          <div class="anatomy-sheet-body">
+            <span class="anatomy-label">SheetBody</span>
+            <div class="anatomy-mock-line"></div>
+            <div class="anatomy-mock-line anatomy-mock-line--short"></div>
+            <div class="anatomy-mock-line"></div>
+          </div>
+          <div class="anatomy-sheet-footer">
+            <span class="anatomy-label">SheetFooter</span>
+            <div class="anatomy-mock-btn anatomy-mock-btn--secondary"></div>
+            <div class="anatomy-mock-btn"></div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <mm-text>dropdown, tooltip. alignment / placement</mm-text>
 
@@ -97,30 +140,54 @@
       the context of the current page, use Sheet.
     </p>
 
-    <mm-text-list texts='["브라우저 히스토리가 필요한 레이어.", "body element의 스크롤. 스크롤의 크기 보정. 크롬에서는 html에 overflow:hidden를 잘 주면 끝인데, 익스플로러에선 스크롤 제어하려면 body에 먹여야 한? html에 overflow:hidden;을주고 모달에 overflow-y를 주면(조건:모달이 윈도우창보다 작아질때)", "iOS에서 modality/dialog는 버튼으로 닫는다.", "foundation ::모든 레이어는 모달(다이얼로그)이 대체 가능하다.", "md. When adapting for larger screens, a bottom sheet can become a context menu.", "사용자 워크플로 중심으로 용법을 정의. 토스트 식빵처럼 튀어나오는 것을 toast로 정의할 수도 특정 위치(왼쪽 아래)에 위치하는 맥락으로 toast를 정의할 수도 있는 것. 너무 많은 콘텐츠를 모달에 표시하지 않도록 제한할 것인지, dribble, pinterest와 같이 풀페이지 모달 뷰를 허용하여 페이지 맥락으로 접근을 허용할 것인지.", "popover no tip / caret tip / tab tip - carbon design system + toggletip,tooltip으로 구분", "md. Swap the bottom sheet for a side sheet in landscape layouts."]'></mm-text-list>
+    <mm-text-list
+      texts='["브라우저 히스토리가 필요한 레이어.", "iOS에서 modality/dialog는 버튼으로 닫는다.", "foundation ::모든 레이어는 모달(다이얼로그)이 대체 가능하다.", "md. When adapting for larger screens, a bottom sheet can become a context menu.", "사용자 워크플로 중심으로 용법을 정의. 토스트 식빵처럼 튀어나오는 것을 toast로 정의할 수도 특정 위치(왼쪽 아래)에 위치하는 맥락으로 toast를 정의할 수도 있는 것. 너무 많은 콘텐츠를 모달에 표시하지 않도록 제한할 것인지, dribble, pinterest와 같이 풀페이지 모달 뷰를 허용하여 페이지 맥락으로 접근을 허용할 것인지.", "popover no tip / caret tip / tab tip - carbon design system + toggletip,tooltip으로 구분", "md. Swap the bottom sheet for a side sheet in landscape layouts."]'
+    ></mm-text-list>
 
     <mm-text size="18">Toast</mm-text>
     <mm-text>Don't show more than one at a time.</mm-text>
-    <mm-text-list texts='["일시적인 피드백.", "toast VS snackbar. action 유/무. MD 버전업과 함께 재정의 됨. HIG에 정의되지 않음. iOS spotify 앱에서 &apos;라이브러리에 추가되었습니다&apos;. 휴지통이 있으면 되돌리기 액션이 필요없을 수도 있다."]'></mm-text-list>
+    <mm-text-list
+      texts='["일시적인 피드백.", "toast VS snackbar. action 유/무. MD 버전업과 함께 재정의 됨. HIG에 정의되지 않음. 휴지통이 있으면 되돌리기 액션이 필요없을 수도 있다."]'
+    ></mm-text-list>
 
     <mm-text size="18">Case studies</mm-text>
-    <mm-text-list texts='["ibm. Don&apos;t use to display complex or large amounts of data. Don&apos;t recreate a full app or page in a dialog.", "airbnb. 큰 화면에서 x 버튼. 모바일에서 페이지처럼 변하면서 arrow 버튼으로 변경됨", "pinterest. onDismiss / Preventing close on outside click / layer component"]'></mm-text-list>
+    <mm-text-list
+      texts='["ibm. Don&apos;t use to display complex or large amounts of data. Don&apos;t recreate a full app or page in a dialog.", "airbnb. 큰 화면에서 x 버튼. 모바일에서 페이지처럼 변하면서 arrow 버튼으로 변경됨", "pinterest. onDismiss / Preventing close on outside click / layer component"]'
+    ></mm-text-list>
 
     <mm-text size="18">Open triggers</mm-text>
     <mm-text-list texts='["window.load", "window.resize", "actions"]'></mm-text-list>
 
     <mm-text size="18">Close triggers</mm-text>
-    <mm-text-list texts='["click CloseButton / ConfirmButton / CancelButton / Backdrop, Dim, Overlay", "keydown. escKey. enterKey. spaceBar"]'></mm-text-list>
+    <mm-text-list
+      texts='["click CloseButton / ConfirmButton / CancelButton / Backdrop, Dim, Overlay", "keydown. escKey. enterKey. spaceBar"]'
+    ></mm-text-list>
 
     <mm-component-references>
-      <mm-link external href="https://developer.mozilla.org/ko/docs/Web/API/Popover_API">Mozilla Popover API</mm-link>
-      <mm-link external href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/presentation_role">ARIA: presentation role</mm-link>
-      <mm-link external href="https://developer.apple.com/design/human-interface-guidelines/components/presentation/action-sheets">HIG action-sheets</mm-link>
-      <mm-link external href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alertdialog_role">alertdialog role</mm-link>
+      <mm-link external href="https://developer.mozilla.org/ko/docs/Web/API/Popover_API"
+        >Mozilla Popover API</mm-link
+      >
+      <mm-link
+        external
+        href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/presentation_role"
+        >ARIA: presentation role</mm-link
+      >
+      <mm-link
+        external
+        href="https://developer.apple.com/design/human-interface-guidelines/components/presentation/action-sheets"
+        >HIG action-sheets</mm-link
+      >
+      <mm-link
+        external
+        href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alertdialog_role"
+        >alertdialog role</mm-link
+      >
     </mm-component-references>
   </mm-component-guide>
 
-  <mm-text-list texts='["적용 버튼 클릭 Batch updates. carbon.", "필터 트리거에 적용된 필터의 갯수 표시.", "setting item과 filter item은 비슷한 패턴이지만 역할이 다르기 때문에 분리", "옵션 레이블 2단어 이하, 옵션 갯수 5개 이하 칩그룹을 사용한다.", "사용자는 적용된 필터 옵션을 초기화하기 위해 새로고침을 할까?", "range UI는 얼마나 사용자 친화적인가?", "presentation 컴포넌트가 필터의 적용과 상태에 영향을 준다.", "옵션 목록을 나열할 때. 모두 셀렉트로 제공할 수도 있지만 다른 컴포넌트로 옵션 하나 하나를 환기할 수 있다. dropdown, chip, radio 등의 혼합 => 디자인과 개발 비용이 증가하는 만큼 사용자 경험이 월등한가?", "필터를 적용하고 초기화하는 버튼 그룹의 정렬."]'></mm-text-list>
+  <mm-text-list
+    texts='["적용 버튼 클릭 Batch updates. carbon.", "필터 트리거에 적용된 필터의 갯수 표시.", "setting item과 filter item은 비슷한 패턴이지만 역할이 다르기 때문에 분리", "옵션 레이블 2단어 이하, 옵션 갯수 5개 이하 칩그룹을 사용한다.", "사용자는 적용된 필터 옵션을 초기화하기 위해 새로고침을 할까?", "range UI는 얼마나 사용자 친화적인가?", "presentation 컴포넌트가 필터의 적용과 상태에 영향을 준다.", "옵션 목록을 나열할 때. 모두 셀렉트로 제공할 수도 있지만 다른 컴포넌트로 옵션 하나 하나를 환기할 수 있다. dropdown, chip, radio 등의 혼합 => 디자인과 개발 비용이 증가하는 만큼 사용자 경험이 월등한가?", "필터를 적용하고 초기화하는 버튼 그룹의 정렬."]'
+  ></mm-text-list>
 
   <mm-icon-button icon="filter" data-open-sheet="#filter-sheet"></mm-icon-button>
   <mm-sheet type="bottom" id="filter-sheet">
@@ -128,7 +195,12 @@
     <mm-sheet-body>
       <form class="filter">
         <fieldset class="filter-fieldset" role="group">
-          <mm-menu-item-switch icon="calendar" label="즉시 예약" value="instant" description="호스트 승인을 기다릴 필요 없이 예약할 수 있는 숙소"></mm-menu-item-switch>
+          <mm-menu-item-switch
+            icon="calendar"
+            label="즉시 예약"
+            value="instant"
+            description="호스트 승인을 기다릴 필요 없이 예약할 수 있는 숙소"
+          ></mm-menu-item-switch>
         </fieldset>
         <mm-separator></mm-separator>
         <fieldset class="filter-fieldset" role="group">
@@ -155,17 +227,26 @@
             호스트가 제공하고 에어비앤비에서 검토한 정보입니다.
           </p>
           <mm-menu-item-checkbox-group aria-label="접근성 편의">
-            <mm-menu-item-checkbox value="no-stairs" label="게스트 출입구에 계단이나 문턱 없음"></mm-menu-item-checkbox>
-            <mm-menu-item-checkbox value="entrance-width" label="너비 81cm 이상의 게스트 출입구"></mm-menu-item-checkbox>
-            <mm-menu-item-checkbox value="parking" label="휠체어 접근 가능 주차 공간"></mm-menu-item-checkbox>
+            <mm-menu-item-checkbox
+              value="no-stairs"
+              label="게스트 출입구에 계단이나 문턱 없음"
+            ></mm-menu-item-checkbox>
+            <mm-menu-item-checkbox
+              value="entrance-width"
+              label="너비 81cm 이상의 게스트 출입구"
+            ></mm-menu-item-checkbox>
+            <mm-menu-item-checkbox
+              value="parking"
+              label="휠체어 접근 가능 주차 공간"
+            ></mm-menu-item-checkbox>
           </mm-menu-item-checkbox-group>
         </fieldset>
         <mm-separator></mm-separator>
         <fieldset class="filter-fieldset" role="group">
           <legend class="filter-fieldset-legend">릴리스 채널</legend>
           <p class="filter-fieldset-description">
-            참고: 이 설정은 이 컴퓨터에만 적용됩니다. 앱 업데이트를 받으려면 Slack을 다시 시작해야 할
-            수도 있습니다.
+            참고: 이 설정은 이 컴퓨터에만 적용됩니다. 앱 업데이트를 받으려면 Slack을 다시 시작해야
+            할 수도 있습니다.
           </p>
           <mm-dropdown>
             <option value="stable">Stable</option>
@@ -176,8 +257,15 @@
         <mm-separator></mm-separator>
         <fieldset class="filter-fieldset" role="group">
           <legend class="filter-fieldset-legend">데스크톱에서 활성 상태가 아닌 경우...</legend>
-          <mm-menu-item-switch value="email-notify" label="멘션 및 다이렉트 메시지에 대한 이메일 알림 받기"></mm-menu-item-switch>
-          <mm-menu-item-radio-group name="email-interval" aria-label="이메일 알림 주기" value="15min">
+          <mm-menu-item-switch
+            value="email-notify"
+            label="멘션 및 다이렉트 메시지에 대한 이메일 알림 받기"
+          ></mm-menu-item-switch>
+          <mm-menu-item-radio-group
+            name="email-interval"
+            aria-label="이메일 알림 주기"
+            value="15min"
+          >
             <mm-menu-item-radio value="15min" label="15분 마다 한 번"></mm-menu-item-radio>
             <mm-menu-item-radio value="1hour" label="한 시간에 한 번"></mm-menu-item-radio>
           </mm-menu-item-radio-group>

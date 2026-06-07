@@ -12,16 +12,20 @@ class TopBar extends LitElement {
 
   static styles = [topBarStyles]
 
+  private handleNavClick = () => {
+    this.dispatchEvent(new CustomEvent('navclick', { bubbles: true, composed: true }))
+  }
+
   render() {
     return html`
       <header role="navigation" class="top-bar" data-variant="${this.variant}">
         ${this.nav === 'back'
-          ? html`<mm-icon-button variant="navigator" icon=${ICON_NAMES.BACK}></mm-icon-button>`
+          ? html`<mm-icon-button variant="navigator" icon=${ICON_NAMES.BACK} @click=${this.handleNavClick}></mm-icon-button>`
           : ''}
         <mm-text size="18" class="top-bar-title">${this.title}</mm-text>
         <slot name="action"></slot>
         ${this.nav === 'close'
-          ? html`<mm-icon-button variant="navigator" icon=${ICON_NAMES.CLOSE}></mm-icon-button>`
+          ? html`<mm-icon-button variant="navigator" icon=${ICON_NAMES.CLOSE} @click=${this.handleNavClick}></mm-icon-button>`
           : ''}
       </header>
     `

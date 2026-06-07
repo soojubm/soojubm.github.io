@@ -23,12 +23,6 @@ export class TokenItem extends LitElement {
         box-sizing: border-box;
       }
 
-      @media (max-width: 800px) {
-        :host {
-          margin: var(--space-3) 0;
-        }
-      }
-
       figure {
         margin: 0;
         width: var(--size-large);
@@ -49,9 +43,7 @@ export class TokenItem extends LitElement {
 
   render() {
     return html`
-      ${this.previewStyle
-        ? html`<figure style=${this.previewStyle}></figure>`
-        : nothing}
+      ${this.previewStyle ? html`<figure style=${this.previewStyle}></figure>` : nothing}
       ${this.label ? html`<span class="label">${this.label}</span>` : nothing}
       <slot></slot>
     `

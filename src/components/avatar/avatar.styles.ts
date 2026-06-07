@@ -5,6 +5,8 @@ export const avatarStyles = css`
     --avatar-size: var(--size-medium);
     --avatar-background-color: var(--color-background-subtle);
     --avatar-border: var(--border-stronger);
+    --avatar-border-color: transparent;
+    --avatar-icon-color: var(--color-foreground);
     --avatar-radius: var(--radius);
     display: inline-flex;
   }
@@ -26,6 +28,8 @@ export const avatarStyles = css`
     border-radius: var(--avatar-radius);
     box-sizing: border-box;
     position: relative;
+    box-shadow: 0 0 0 1px var(--avatar-border-color);
+    --button-text-color: var(--avatar-icon-color);
   }
 
   img {

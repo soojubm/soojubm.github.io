@@ -11,7 +11,6 @@ export class TokenGroup extends LitElement {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: var(--space-3);
-        margin: var(--space-3) 0;
       }
 
       @media (max-width: 1200px) {
