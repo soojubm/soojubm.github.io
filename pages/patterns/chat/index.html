@@ -22,24 +22,51 @@
       <mm-chat-date label="2022년 5월 18일"></mm-chat-date>
 
       <mm-chat-message username="수줍이">
+        <mm-ai-chat-bubble>
+          디자인 시스템 토큰은 세 계층으로 구성됩니다. 아래 출처를 참고하세요.
+          <mm-chat-source-group style="margin-top:var(--space-2)">
+            <mm-chat-source
+              href="https://www.figma.com/blog/how-figmas-design-system-scales/"
+              title="How Figma's Design System Scales"
+              description="Figma 팀이 토큰 구조를 어떻게 계층화했는지 설명하는 공식 블로그 포스트입니다."
+              icon="figma"
+            ></mm-chat-source>
+            <mm-chat-source
+              href="https://atlassian.design/foundations/design-tokens"
+              title="Design Tokens – Atlassian Design System"
+              description="Atlassian이 글로벌·앨리어스·컴포넌트 토큰을 어떻게 분리했는지 다룹니다."
+              icon="book"
+            ></mm-chat-source>
+            <mm-chat-source
+              href="https://github.com/amzn/style-dictionary"
+              title="Style Dictionary – Amazon"
+              description="토큰을 플랫폼별 변수로 변환하는 오픈소스 빌드 시스템입니다."
+              label="GitHub"
+              icon="github"
+            ></mm-chat-source>
+          </mm-chat-source-group>
+        </mm-ai-chat-bubble>
+      </mm-chat-message>
+
+      <mm-chat-message>
+        <mm-chat-chain-of-thought thinking open>
+          <mm-chat-chain-of-thought-step status="complete">질문 의도 파악</mm-chat-chain-of-thought-step>
+          <mm-chat-chain-of-thought-step status="active" description="design-tokens.json, tokens.ts 파일 분석 중">토큰 정의 파일 검색 중</mm-chat-chain-of-thought-step>
+          <mm-chat-chain-of-thought-step status="pending">답변 정리</mm-chat-chain-of-thought-step>
+        </mm-chat-chain-of-thought>
+      </mm-chat-message>
+
+      <mm-chat-message>
+        <mm-chat-confirmation message="example.txt 파일을 삭제하려고 합니다. 이 작업을 승인하시겠어요?"></mm-chat-confirmation>
+      </mm-chat-message>
+
+      <mm-chat-message>
         <mm-chat-reasoning open duration="4초">
-          <mm-chat-reasoning-step done>질문 의도 파악</mm-chat-reasoning-step>
-          <mm-chat-reasoning-step done>관련 문서 3건 검색</mm-chat-reasoning-step>
+          <mm-chat-reasoning-step done description="사용자가 토큰 계층 구조를 알고 싶어 함">질문 의도 파악</mm-chat-reasoning-step>
+          <mm-chat-reasoning-step done description="Figma, Atlassian, Style Dictionary 문서 발견">관련 문서 3건 검색</mm-chat-reasoning-step>
           <mm-chat-reasoning-step done>핵심 내용 정리</mm-chat-reasoning-step>
         </mm-chat-reasoning>
         <mm-ai-chat-bubble>안녕하세요 👋 무엇을 도와드릴까요?</mm-ai-chat-bubble>
-      </mm-chat-message>
-
-      <mm-chat-message mine>
-        <mm-my-chat-bubble status="읽음">디자인 시스템 토큰 구조를 설명해줘.</mm-my-chat-bubble>
-      </mm-chat-message>
-
-      <mm-chat-message username="수줍이">
-        <mm-chat-reasoning thinking open>
-          <mm-chat-reasoning-step done>질문 의도 파악</mm-chat-reasoning-step>
-          <mm-chat-reasoning-step active>토큰 정의 파일 검색 중</mm-chat-reasoning-step>
-          <mm-chat-reasoning-step>답변 정리</mm-chat-reasoning-step>
-        </mm-chat-reasoning>
       </mm-chat-message>
 
       <mm-chat-message mine>
@@ -62,7 +89,11 @@
 
       <mm-prompt-input>
         <mm-prompt-input-textarea placeholder="메시지를 입력하세요..."></mm-prompt-input-textarea>
-        <mm-textfield-action-bar>
+        <mm-textfield-action-bar align="between">
+          <mm-button-group gap="1">
+            <mm-attachment-dropdown></mm-attachment-dropdown>
+            <mm-model-selector value="claude-sonnet"></mm-model-selector>
+          </mm-button-group>
           <mm-icon-button icon="send-diagonal" aria-label="전송"></mm-icon-button>
         </mm-textfield-action-bar>
       </mm-prompt-input>

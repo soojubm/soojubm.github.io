@@ -1,15 +1,15 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { resetStyles } from '../../../stylesheets/shared/reset.styles'
+import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
+import '../../icon-button/icon-button'
 
 @customElement('mm-chat-message')
 export class ChatMessage extends LitElement {
   /** 내가 보낸 메시지 그룹 */
   @property({ type: Boolean, reflect: true }) mine = false
-  /** 발신자 이름 (상대방만 표시) */
-  @property({ type: String }) username = ''
-  /** 발신자 아바타 이미지 */
-  @property({ type: String, attribute: 'avatar-src' }) avatarSrc = ''
+  /** AI 메시지 reactions 숨김 */
+  @property({ type: Boolean }) noReactions = false
 
   static styles = [
     resetStyles,
@@ -26,35 +26,57 @@ export class ChatMessage extends LitElement {
         align-items: flex-end;
       }
 
-      .avatar {
-        position: absolute;
-        left: 0;
-        top: 0;
+      .reactions {
+        display: flex;
+        gap: var(--space-1);
       }
 
-      :host([mine]) .avatar {
-        display: none;
-      }
-
-      .username {
-        font-size: var(--font-size-12);
-        color: var(--color-foreground-light);
-        margin: 0;
-      }
-
-      :host([mine]) .username {
+      :host([mine]) .reactions {
         display: none;
       }
     `,
   ]
 
+  private _emitReaction(reaction: string) {
+    this.dispatchEvent(
+      new CustomEvent('chat-reaction', {
+        detail: { reaction },
+        bubbles: true,
+        composed: true,
+      }),
+    )
+  }
+
   render() {
     return html`
-      <mm-avatar class="avatar" size="medium" src=${this.avatarSrc || ''}></mm-avatar>
-      ${this.username && !this.mine
-        ? html`<span class="username">${this.username}</span>`
-        : nothing}
       <slot></slot>
+      ${!this.mine && !this.noReactions
+        ? html`
+            <div class="reactions">
+              <mm-icon-button
+                size="small"
+                variant="plain"
+                icon=${ICON_NAMES.COPY}
+                aria-label="복사"
+                @click=${() => this._emitReaction('copy')}
+              ></mm-icon-button>
+              <mm-icon-button
+                size="small"
+                variant="plain"
+                icon=${ICON_NAMES.THUMBS_UP}
+                aria-label="좋아요"
+                @click=${() => this._emitReaction('like')}
+              ></mm-icon-button>
+              <mm-icon-button
+                size="small"
+                variant="plain"
+                icon=${ICON_NAMES.DISLIKE}
+                aria-label="싫어요"
+                @click=${() => this._emitReaction('dislike')}
+              ></mm-icon-button>
+            </div>
+          `
+        : nothing}
     `
   }
 }

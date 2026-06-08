@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 import { buttonStyles } from './button.styles'
 
 export type ButtonVariant = 'primary' | 'secondary' | 'tertiary' | 'text' | 'destructive'
-export type ButtonSize = 'huge' | 'large' | 'medium'
+export type ButtonSize = 'huge' | 'large' | 'medium' | 'small'
 export type ButtonIconPosition = 'leading' | 'trailing'
 
 @customElement('mm-button')

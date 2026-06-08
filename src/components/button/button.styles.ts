@@ -53,6 +53,12 @@ export const buttonStyles = css`
     --button-size: var(--size-large);
     min-width: var(--button-min-width);
   }
+  :host([size='small']) button {
+    --button-size: 2rem;
+    --button-text-size: var(--font-size-12);
+    --button-padding-inline: var(--space-2);
+    min-width: 0;
+  }
 
   /* TODO filter-button으로 이동 */
   :host([aria-checked='true']) button {
@@ -69,6 +75,8 @@ export const buttonStyles = css`
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    /* max-content for trailing icons */
+    width: max-content;
     gap: var(--space-2);
     height: var(--button-size);
     padding: 0 var(--button-padding-inline);
@@ -102,5 +110,4 @@ export const buttonStyles = css`
       box-shadow: 0 0 0 3px var(--button-color-active-ring), inset 0 0 0 2px #fff;
     }
   }
-
 `
