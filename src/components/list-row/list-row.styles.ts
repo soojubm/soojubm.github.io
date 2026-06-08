@@ -24,4 +24,14 @@ export const listRowStyles = css`
     display: flex;
     flex-direction: column;
   }
+
+  .list-row-emoji {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--size-medium);
+    height: var(--size-medium);
+    font-size: 1.25rem;
+    line-height: 1;
+  }
 `

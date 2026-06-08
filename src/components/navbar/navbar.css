@@ -177,6 +177,33 @@
   cursor: pointer;
 }
 
+.navbar-search-container {
+  position: fixed;
+  top: var(--navbar-height);
+  left: 0;
+  right: 0;
+  width: 100vw;
+  z-index: calc(var(--zindex-menu) - 1);
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+  padding: var(--space-2) var(--grid-margin) 0;
+}
+
+.navbar-search-container mm-sheet {
+  display: block;
+  width: 100%;
+  max-width: 640px;
+  pointer-events: none;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.navbar-search-container mm-sheet[open] {
+  pointer-events: auto;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
 .navbar-user-trigger + * {
   width: 100%;
   min-width: 320px;

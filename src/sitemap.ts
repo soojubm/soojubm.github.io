@@ -74,7 +74,6 @@ export const SITEMAP = [
       { id: 'radio', name: 'radio' },
       { id: 'switch', name: 'switch' },
       { id: 'input', name: 'Input' },
-      { id: 'searchfield', name: 'Search Field' },
       { id: 'textarea', name: 'Textarea' },
     ],
   },

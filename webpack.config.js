@@ -179,9 +179,10 @@ module.exports = (env, argv) => {
     ],
 
     devServer: {
-      static: {
-        directory: path.resolve(__dirname, './'),
-      },
+      static: [
+        { directory: path.resolve(__dirname, './') },
+        { directory: path.resolve(__dirname, 'build'), publicPath: '/' },
+      ],
       compress: true,
       port: 9000,
       hot: true,

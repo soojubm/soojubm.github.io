@@ -1,12 +1,124 @@
-import { LitElement, html } from 'lit'
-import { customElement } from 'lit/decorators.js'
+import { LitElement, html, nothing } from 'lit'
+import { customElement, state } from 'lit/decorators.js'
 import { ICON_NAMES } from '../icon-button/semantics/icon-names'
+
+type PagefindResult = { url: string; meta: { title: string }; excerpt: string }
+type Pagefind = {
+  search: (q: string) => Promise<{ results: { data: () => Promise<PagefindResult> }[] }>
+}
 
 @customElement('mm-navbar')
 export class Navbar extends LitElement {
-  // 전역 CSS(.navbar, .navbar-user 등)를 그대로 상속받기 위해 Light DOM 사용
+  @state() private _searchOpen = false
+  @state() private _query = ''
+  @state() private _results: PagefindResult[] = []
+  @state() private _searching = false
+
+  private _pagefind: Pagefind | null = null
+  private _debounceTimer: ReturnType<typeof setTimeout> | null = null
+
   createRenderRoot() {
     return this
+  }
+
+  private async _loadPagefind() {
+    if (this._pagefind) return
+    try {
+      // webpack이 번들링하지 않도록 Function constructor로 동적 import
+      const dynamicImport = new Function('url', 'return import(url)')
+      this._pagefind = (await dynamicImport('/pagefind/pagefind.js')) as Pagefind
+    } catch {
+      console.warn('Pagefind not available. Run npm run build first.')
+    }
+  }
+
+  private _toggleSearch() {
+    this._searchOpen = !this._searchOpen
+    const sheet = this.querySelector('.js-search-sheet') as any
+    if (sheet) sheet.isOpen = this._searchOpen
+    if (this._searchOpen) {
+      this._loadPagefind()
+      requestAnimationFrame(() => {
+        const input = this.querySelector('.js-search-sheet mm-searchfield') as any
+        input?.focus?.()
+      })
+    } else {
+      this._query = ''
+      this._results = []
+    }
+  }
+
+  private _onInput(e: Event) {
+    this._query = (e as CustomEvent).detail?.value ?? (e.target as any)?.value ?? ''
+    if (this._debounceTimer) clearTimeout(this._debounceTimer)
+    if (!this._query.trim()) {
+      this._results = []
+      return
+    }
+    this._debounceTimer = setTimeout(() => this._search(this._query), 200)
+  }
+
+  private async _search(query: string) {
+    await this._loadPagefind()
+    if (!this._pagefind) return
+    this._searching = true
+    try {
+      const { results } = await this._pagefind.search(query)
+      const data = await Promise.all(results.slice(0, 8).map(r => r.data()))
+      this._results = data
+    } finally {
+      this._searching = false
+    }
+  }
+
+  private _renderDefault() {
+    return html`
+      <mm-search-suggestions
+        aria-label="추천 검색어"
+        style="margin-bottom: var(--space-3); overflow-x: auto"
+      >
+        <mm-search-suggestion>아파트열쇠를빌려드립니다</mm-search-suggestion>
+        <mm-search-suggestion>로얄테넌바움</mm-search-suggestion>
+        <mm-search-suggestion>소매치기</mm-search-suggestion>
+        <mm-search-suggestion>이탈리아여행</mm-search-suggestion>
+        <mm-search-suggestion>고슴도치</mm-search-suggestion>
+        <mm-search-suggestion>고슴도치</mm-search-suggestion>
+      </mm-search-suggestions>
+
+      <mm-menu-item-group aria-label="최근 검색">
+        <mm-text size="14" color="var(--color-foreground-light)">최근 검색</mm-text>
+        <mm-menu-item-action label="고슴이" emoji="🦔"></mm-menu-item-action>
+        <mm-menu-item-action label="개구리" emoji="🐸"></mm-menu-item-action>
+      </mm-menu-item-group>
+    `
+  }
+
+  private _renderResults() {
+    if (this._searching) {
+      return html`<mm-text size="14" color="var(--color-foreground-light)">검색 중...</mm-text>`
+    }
+    if (this._results.length === 0) {
+      return html`<mm-text size="14" color="var(--color-foreground-light)"
+        >'${this._query}'에 대한 결과가 없습니다.</mm-text
+      >`
+    }
+    return html`
+      <mm-menu-item-group aria-label="검색 결과">
+        <mm-text size="14" color="var(--color-foreground-light)">검색 결과</mm-text>
+        ${this._results.map(
+          r => html`
+            <mm-menu-item-action
+              icon=${ICON_NAMES.SEARCH}
+              label=${r.meta.title || r.url}
+              description=${r.excerpt ? r.excerpt.replace(/<[^>]*>/g, '') : ''}
+              @click=${() => {
+                window.location.href = r.url
+              }}
+            ></mm-menu-item-action>
+          `,
+        )}
+      </mm-menu-item-group>
+    `
   }
 
   render() {
@@ -18,6 +130,12 @@ export class Navbar extends LitElement {
         </mm-flex>
 
         <div class="navbar-user">
+          <mm-icon-button
+            icon=${ICON_NAMES.SEARCH}
+            aria-label="검색"
+            aria-expanded=${this._searchOpen ? 'true' : 'false'}
+            @click=${this._toggleSearch}
+          ></mm-icon-button>
           <mm-theme-switcher></mm-theme-switcher>
           <div style="position: relative">
             <mm-icon-button
@@ -53,7 +171,10 @@ export class Navbar extends LitElement {
                   ></mm-menu-item-action>
                 </mm-menu-item-group>
                 <mm-separator></mm-separator>
-                <mm-menu-item-action icon=${ICON_NAMES.LOG_OUT} label="로그아웃"></mm-menu-item-action>
+                <mm-menu-item-action
+                  icon=${ICON_NAMES.LOG_OUT}
+                  label="로그아웃"
+                ></mm-menu-item-action>
                 <mm-separator></mm-separator>
                 <mm-flex style="margin-top: -0.25rem">
                   <mm-link variant="secondary" href="#">개인정보처리방침</mm-link>
@@ -65,6 +186,28 @@ export class Navbar extends LitElement {
         </div>
       </nav>
       <div class="navbar-backdrop"></div>
+
+      <div class="navbar-search-container">
+        <mm-sheet class="js-search-sheet" type="inline">
+          <mm-sheet-body>
+            <mm-flex direction="column" gap="3">
+              <mm-flex gap="2">
+                <mm-icon-button
+                  icon=${ICON_NAMES.BACK}
+                  aria-label="검색 닫기"
+                  @click=${this._toggleSearch}
+                ></mm-icon-button>
+                <mm-searchfield
+                  placeholder="컴포넌트, 패턴을 검색하세요"
+                  .value=${this._query}
+                  @input=${this._onInput}
+                ></mm-searchfield>
+              </mm-flex>
+              ${this._query ? this._renderResults() : this._renderDefault()}
+            </mm-flex>
+          </mm-sheet-body>
+        </mm-sheet>
+      </div>
 
       <mm-sidebar></mm-sidebar>
     `

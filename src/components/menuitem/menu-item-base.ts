@@ -9,6 +9,7 @@ export class MenuItemBase extends LitElement {
   @property({ type: String }) label = ''
   @property({ type: String }) description = ''
   @property({ type: String }) icon = ''
+  @property({ type: String }) emoji = ''
   @property({ type: String, attribute: 'avatar-src' }) avatarSrc = ''
   @property({ type: String, attribute: 'avatar-size' }) avatarSize = 'medium'
   @property({ type: String, attribute: 'avatar-variant' }) avatarVariant = 'tertiary'
@@ -44,6 +45,7 @@ export class MenuItemBase extends LitElement {
         label=${this.label}
         description=${this.description}
         icon=${ifDefined(this.icon || undefined)}
+        emoji=${ifDefined(this.emoji || undefined)}
         avatar-src=${ifDefined(this.avatarSrc || undefined)}
         avatar-size=${this.avatarSize}
         avatar-variant=${this.avatarVariant}

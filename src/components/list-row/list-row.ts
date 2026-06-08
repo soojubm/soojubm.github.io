@@ -15,6 +15,7 @@ export class ListRow extends LitElement {
   @property({ type: String }) description = ''
 
   @property({ type: String }) icon = ''
+  @property({ type: String }) emoji = ''
   @property({ type: String, attribute: 'avatar-src' }) avatarSrc = ''
   @property({ type: String, attribute: 'avatar-size' }) avatarSize = 'medium'
   @property({ type: String, attribute: 'avatar-variant' }) avatarVariant = 'tertiary'
@@ -35,19 +36,21 @@ export class ListRow extends LitElement {
   }
 
   render() {
-    const hasLeading = !!(this.icon || this.avatarSrc)
+    const hasLeading = !!(this.icon || this.avatarSrc || this.emoji)
 
     return html`
       <div class="list-row">
         ${hasLeading
           ? html`
               <span class="list-row-leading">
-                <mm-avatar
-                  size=${this.avatarSize}
-                  variant=${this.avatarVariant}
-                  icon=${ifDefined(this.icon || undefined)}
-                  src=${ifDefined(this.avatarSrc || undefined)}
-                ></mm-avatar>
+                ${this.emoji
+                  ? html`<span class="list-row-emoji" aria-hidden="true">${this.emoji}</span>`
+                  : html`<mm-avatar
+                      size=${this.avatarSize}
+                      variant=${this.avatarVariant}
+                      icon=${ifDefined(this.icon || undefined)}
+                      src=${ifDefined(this.avatarSrc || undefined)}
+                    ></mm-avatar>`}
               </span>
             `
           : nothing}

@@ -61,6 +61,7 @@ class Sheet extends LitElement {
       border-radius: 12px;
       width: 100%;
       padding: 0 var(--space-4);
+      box-sizing: border-box;
       max-height: 90vh;
       display: flex;
       flex-direction: column;
