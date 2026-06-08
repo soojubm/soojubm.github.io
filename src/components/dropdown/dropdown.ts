@@ -1,6 +1,7 @@
 import { LitElement, css, html, nothing, type PropertyValues } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 import { resetStyles } from '../../stylesheets/shared/reset.styles'
+import { popoverStyles } from '../../stylesheets/shared/popover.styles'
 import { ICON_NAMES } from '../icon-button/semantics/icon-names'
 import '../menuitem/semantics/menu-item-action'
 import '../menuitem/semantics/menu-item-checkbox'
@@ -24,13 +25,11 @@ export class Dropdown extends LitElement {
 
   static styles = [
     resetStyles,
+    popoverStyles,
     css`
       .dropdown {
         position: relative;
         width: 100%;
-      }
-
-      .dropdown-button {
       }
 
       // TODO component and state
@@ -52,35 +51,6 @@ export class Dropdown extends LitElement {
         min-width: 120px;
         max-height: 200px;
         overflow-y: auto;
-
-        // style
-        padding: var(--space-1);
-        border: var(--border-stronger);
-        border-radius: var(--radius);
-        background-color: var(--color-background);
-        box-shadow: var(--shadow);
-
-        /* 초기 상태 */
-        opacity: 0;
-        transform: translateY(-4px) scale(0.98);
-        transform-origin: top center;
-
-        visibility: hidden;
-        pointer-events: none;
-
-        transition: opacity 120ms ease, transform 180ms cubic-bezier(0.2, 0.8, 0.2, 1),
-          visibility 0s linear 180ms;
-      }
-
-      .dropdown-list.open {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-
-        visibility: visible;
-        pointer-events: auto;
-
-        transition: opacity 120ms ease, transform 220ms cubic-bezier(0.18, 1.25, 0.4, 1),
-          visibility 0s;
       }
 
       .dropdown-list.align-right {
@@ -205,7 +175,7 @@ export class Dropdown extends LitElement {
     return html`
       <div
         part="list"
-        class="dropdown-list ${this.isOpen ? 'open' : ''} ${this.align === 'right' ? 'align-right' : ''}"
+        class="popover dropdown-list ${this.isOpen ? 'open' : ''} ${this.align === 'right' ? 'align-right' : ''}"
         role="menu"
       >
         ${this.options.map(option => this.renderOption(option))}

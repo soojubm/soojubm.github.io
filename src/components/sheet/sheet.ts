@@ -1,5 +1,6 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { popoverStyles } from '../../stylesheets/shared/popover.styles'
 export type SheetType = 'center' | 'bottom' | 'left' | 'right' | 'anchor' | 'inline'
 export type SheetSize = 'small' | 'medium' | 'large' | 'full'
 
@@ -7,6 +8,7 @@ export type SheetSize = 'small' | 'medium' | 'large' | 'full'
 class Sheet extends LitElement {
   @property({ type: String }) type: SheetType = 'center'
   @property({ type: String }) size: SheetSize = 'medium'
+  @property({ type: String }) height?: string
   @property({ type: Boolean, reflect: true, attribute: 'open' }) isOpen = false
 
   /** anchor 타입: 열기를 유발한 클릭 자체가 document 핸들러를 트리거하지 않도록 스킵 */
@@ -33,7 +35,7 @@ class Sheet extends LitElement {
     if (!e.composedPath().includes(this)) this.close()
   }
 
-  static styles = css`
+  static styles = [popoverStyles, css`
     :host {
       display: flex;
       position: fixed;
@@ -84,7 +86,7 @@ class Sheet extends LitElement {
       max-width: 800px;
       border-bottom-left-radius: 12px;
       border-bottom-right-radius: 12px;
-      transform: translateY(20px);
+      transform: translateY(100%);
     }
 
     :host([open][type='bottom']) .sheet {
@@ -99,7 +101,7 @@ class Sheet extends LitElement {
       max-height: 100vh;
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
-      transform: translateX(-20px);
+      transform: translateX(-100%);
     }
 
     :host([open][type='left']) .sheet {
@@ -114,33 +116,28 @@ class Sheet extends LitElement {
       max-height: 100vh;
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
-      transform: translateX(20px);
+      transform: translateX(100%);
     }
 
     :host([open][type='right']) .sheet {
       transform: translateX(0);
     }
 
-    /* anchor — dropdown과 동일한 패턴 */
+    /* anchor — popoverStyles 공유, :host 애니메이션은 .sheet.popover가 담당 */
     :host([type='anchor']) {
       position: fixed;
       inset: auto; /* base의 inset: 0 리셋 — JS가 top/left를 주입 */
       background: transparent;
       width: auto;
       height: auto;
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
     }
 
     :host([type='anchor']) .sheet {
       width: 320px;
       max-height: 400px;
-      transform: translateY(-4px) scale(0.98);
-      transform-origin: top left;
-      transition: transform 180ms cubic-bezier(0.2, 0.8, 0.2, 1);
-    }
-
-    :host([open][type='anchor']) .sheet {
-      transform: translateY(0) scale(1);
-      transition: transform 220ms cubic-bezier(0.18, 1.25, 0.4, 1);
     }
 
     /* inline */
@@ -157,14 +154,23 @@ class Sheet extends LitElement {
     :host([open][type='inline']) .sheet {
       transform: translateY(0);
     }
-  `
+  `]
 
   render() {
     const maxWidth =
       this.type === 'center'
         ? { small: '320px', medium: '480px', large: '640px', full: '100%' }[this.size] || '480px'
-        : '100%'
-    return html`<aside class="sheet" style="max-width:${maxWidth}"><slot></slot></aside>`
+        : this.type === 'left' || this.type === 'right'
+          ? '90vw'
+          : '100%'
+    const heightStyle = this.height ? `height:${this.height};` : ''
+    const isAnchor = this.type === 'anchor'
+    const cls = [
+      'sheet',
+      isAnchor && 'popover',
+      isAnchor && this.isOpen && 'open',
+    ].filter(Boolean).join(' ')
+    return html`<aside class="${cls}" style="max-width:${maxWidth};${heightStyle}"><slot></slot></aside>`
   }
 
   open() {

@@ -1,0 +1,231 @@
+<main class="page">
+  <mm-page-header
+    title="Sheet"
+    description="콘텐츠나 작업을 레이어 위에 표시합니다. 위치와 모달리티에 따라 center·bottom·left·right·anchor 타입으로 구분됩니다."
+  ></mm-page-header>
+
+  <mm-component-aka items='["Drawer", "Panel", "Bottom Sheet", "Side Sheet", "Modal"]'></mm-component-aka>
+
+  <mm-component-example>
+    <mm-button-group>
+      <mm-button data-open-sheet="center">Center</mm-button>
+      <mm-button data-open-sheet="bottom">Bottom</mm-button>
+      <mm-button data-open-sheet="left">Left</mm-button>
+      <mm-button data-open-sheet="right">Right</mm-button>
+      <mm-button data-open-sheet="anchor">Anchor</mm-button>
+    </mm-button-group>
+
+    <mm-sheet type="center" size="medium">
+      <mm-sheet-header title="Center Sheet"></mm-sheet-header>
+      <mm-sheet-body><mm-paragraph>중앙 모달 콘텐츠</mm-paragraph></mm-sheet-body>
+      <mm-sheet-footer primary-label="확인" secondary-label="닫기"></mm-sheet-footer>
+    </mm-sheet>
+    <mm-sheet type="bottom">
+      <mm-sheet-header title="Bottom Sheet"></mm-sheet-header>
+      <mm-sheet-body><mm-paragraph>하단 시트 콘텐츠</mm-paragraph></mm-sheet-body>
+      <mm-sheet-footer primary-label="저장" secondary-label="취소"></mm-sheet-footer>
+    </mm-sheet>
+    <mm-sheet type="left">
+      <mm-sheet-header title="Left Sheet"></mm-sheet-header>
+      <mm-sheet-body><mm-paragraph>왼쪽 패널 콘텐츠</mm-paragraph></mm-sheet-body>
+      <mm-sheet-footer primary-label="완료" secondary-label="닫기"></mm-sheet-footer>
+    </mm-sheet>
+    <mm-sheet type="right">
+      <mm-sheet-header title="Right Sheet"></mm-sheet-header>
+      <mm-sheet-body><mm-paragraph>오른쪽 패널 콘텐츠</mm-paragraph></mm-sheet-body>
+      <mm-sheet-footer primary-label="완료" secondary-label="닫기"></mm-sheet-footer>
+    </mm-sheet>
+    <mm-sheet type="anchor">
+      <mm-sheet-header title="Anchor Sheet"></mm-sheet-header>
+      <mm-sheet-body><mm-paragraph>트리거 근처 팝오버 시트</mm-paragraph></mm-sheet-body>
+      <mm-sheet-footer primary-label="확인" secondary-label="닫기"></mm-sheet-footer>
+    </mm-sheet>
+  </mm-component-example>
+
+  <mm-component-anatomy
+    parts='[
+      "오버레이 — 시트 뒤 반투명 배경. anchor 타입에서만 외부 클릭으로 닫힙니다.",
+      "시트 컨테이너 — flex column 박스. height prop으로 높이 고정, max-height: 90vh 기본값.",
+      "mm-sheet-header — 타이틀과 닫기 버튼. sheetclose 이벤트를 발생시킵니다.",
+      "mm-sheet-body — 스크롤 가능한 콘텐츠 영역. flex: 1 1 auto로 header·footer를 제외한 나머지를 채웁니다.",
+      "mm-sheet-footer — 액션 버튼 영역. primary-label / secondary-label prop으로 구성합니다."
+    ]'
+  >
+    <div class="anatomy">
+      <div class="anatomy-backdrop">
+        <span class="anatomy-label">Overlay</span>
+        <div class="anatomy-sheet">
+          <span class="anatomy-label">mm-sheet</span>
+          <div class="anatomy-sheet-header">
+            <span class="anatomy-label">mm-sheet-header</span>
+            <div class="anatomy-mock-title"></div>
+            <div class="anatomy-mock-close"></div>
+          </div>
+          <div class="anatomy-sheet-body">
+            <span class="anatomy-label">mm-sheet-body</span>
+            <div class="anatomy-mock-line"></div>
+            <div class="anatomy-mock-line anatomy-mock-line--short"></div>
+            <div class="anatomy-mock-line"></div>
+          </div>
+          <div class="anatomy-sheet-footer">
+            <span class="anatomy-label">mm-sheet-footer</span>
+            <div class="anatomy-mock-btn anatomy-mock-btn--secondary"></div>
+            <div class="anatomy-mock-btn"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mm-component-anatomy>
+
+  <mm-component-guide>
+    <mm-text size="18">Modal vs Non-modal</mm-text>
+    <mm-text size="14">
+      Presentation 레이어는 사용자의 주의를 얼마나 차단하느냐에 따라 두 가지로 나뉜다. 이 기준은
+      시각적 형태(Sheet, Dialog 등)가 아니라 <strong>배경과의 상호작용 허용 여부</strong>로 결정된다.
+    </mm-text>
+
+    <mm-text size="16">Modal</mm-text>
+    <mm-text size="14">
+      배경과의 상호작용을 차단하고 사용자의 즉각적인 응답을 요구한다. Backdrop(dim)이 뒤를 덮고,
+      포커스는 레이어 내부에 갇힌다(focus trap). 닫기는 명시적인 버튼 액션으로만 허용하는 것이
+      원칙이며, 배경 클릭으로 닫는 기능은 중요도가 낮은 작업에서만 예외적으로 허용한다.
+    </mm-text>
+    <mm-text-list
+      texts='["배경 클릭·스크롤 불가.", "포커스 트랩 — Tab 키가 레이어 내부를 순환한다.", "ESC 키 닫기는 데이터 손실 위험이 없는 경우에만 허용.", "aria-modal=\"true\", role=\"dialog\" 명시.", "용례: 삭제 확인, 중요 정보 입력, 오류 처리, 결제 흐름."]'
+    ></mm-text-list>
+
+    <mm-text size="16">Non-modal</mm-text>
+    <mm-text size="14">
+      배경과의 상호작용을 허용한다. 현재 작업 맥락을 유지하면서 부가 정보나 서브태스크를 제공할 때
+      사용한다. 포커스 트랩이 없고, 외부 클릭·ESC로 언제든 닫을 수 있다.
+    </mm-text>
+    <mm-text-list
+      texts='["배경 클릭·스크롤 가능.", "포커스 트랩 없음 — Tab 키가 페이지 전체를 순환한다.", "외부 클릭 또는 ESC로 닫힌다.", "용례: Dropdown, Tooltip, Toast, 사이드 패널, Anchor popover."]'
+    ></mm-text-list>
+
+    <mm-text size="16">Sheet 타입별 분류</mm-text>
+    <mm-text-list
+      texts='["Modal — center: Backdrop + focus trap. 사용자 확인이 필요한 작업.", "Non-modal — bottom: 컨텍스트 확장. 배경 스크롤 허용 여부는 콘텐츠 성격에 따라 결정.", "Non-modal — left / right: 사이드 패널. 페이지 맥락을 유지한 채 추가 정보 탐색.", "Non-modal — anchor: Dropdown과 동일한 패턴. 트리거 근처에 위치, 외부 클릭으로 닫힘."]'
+    ></mm-text-list>
+
+    <mm-component-references>
+      <mm-link external href="https://developer.mozilla.org/ko/docs/Web/API/Popover_API">Mozilla Popover API</mm-link>
+      <mm-link external href="https://developer.apple.com/design/human-interface-guidelines/components/presentation/action-sheets">HIG action-sheets</mm-link>
+      <mm-link external href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alertdialog_role">alertdialog role</mm-link>
+    </mm-component-references>
+  </mm-component-guide>
+
+  <mm-component-section
+    title="mm-sheet-header"
+    description="타이틀과 닫기 버튼을 제공합니다. sheetclose 이벤트를 버블링합니다."
+  >
+    <mm-sheet-header title="Sheet Title"></mm-sheet-header>
+  </mm-component-section>
+
+  <mm-component-section
+    title="mm-sheet-body"
+    description="스크롤 가능한 콘텐츠 영역. flex: 1 1 auto로 header·footer를 제외한 나머지를 채웁니다."
+  >
+    <mm-sheet-body>
+      <mm-paragraph>sheet-body는 콘텐츠가 넘치면 내부에서 스크롤됩니다.</mm-paragraph>
+      <mm-paragraph>mm-sheet에 height를 지정하면 고정 높이 내에서 body가 스크롤됩니다.</mm-paragraph>
+    </mm-sheet-body>
+  </mm-component-section>
+
+  <mm-component-section
+    title="mm-sheet-footer"
+    description="액션 버튼 영역. primary-label / secondary-label prop으로 버튼을 구성합니다."
+  >
+    <mm-flex direction="column" gap="3">
+      <mm-sheet-footer primary-label="확인" secondary-label="취소"></mm-sheet-footer>
+      <mm-sheet-footer primary-label="확인"></mm-sheet-footer>
+    </mm-flex>
+  </mm-component-section>
+
+  <mm-component-section
+    title="mm-backdrop"
+    description="레이어 뒤에 표시되는 반투명 오버레이. open prop으로 표시하며 --backdrop-color로 색상을 재정의할 수 있습니다."
+  >
+    <div style="position: relative; height: 120px; border-radius: 12px; overflow: hidden;">
+      <mm-paragraph>배경 콘텐츠</mm-paragraph>
+      <mm-backdrop open style="--backdrop-position: absolute; --backdrop-z-index: 1; border-radius: 12px;"></mm-backdrop>
+    </div>
+  </mm-component-section>
+
+  <mm-component-props>
+    <mm-prop name="open" type="boolean"></mm-prop>
+    <mm-prop name="type" type="'center' | 'bottom' | 'left' | 'right' | 'anchor' = 'center'"></mm-prop>
+    <mm-prop name="size" type="'small' | 'medium' | 'large' | 'full' = 'medium'" optional></mm-prop>
+    <mm-prop name="height" type="string" optional></mm-prop>
+    <mm-prop name="sheetclose" type="CustomEvent" kind="event"></mm-prop>
+  </mm-component-props>
+
+  <mm-icon-button icon="filter" data-open-sheet="#filter-sheet"></mm-icon-button>
+  <mm-sheet type="bottom" id="filter-sheet">
+    <mm-sheet-header title="필터"></mm-sheet-header>
+    <mm-sheet-body>
+      <form class="filter">
+        <fieldset class="filter-fieldset" role="group">
+          <mm-menu-item-switch
+            icon="calendar"
+            label="즉시 예약"
+            value="instant"
+            description="호스트 승인을 기다릴 필요 없이 예약할 수 있는 숙소"
+          ></mm-menu-item-switch>
+        </fieldset>
+        <mm-separator></mm-separator>
+        <fieldset class="filter-fieldset" role="group">
+          <legend class="filter-fieldset-legend">예산</legend>
+          <mm-menu-item-radio-group name="budget" aria-label="예산">
+            <mm-menu-item-radio value="50000" label="50,000원 미만"></mm-menu-item-radio>
+            <mm-menu-item-radio value="100000" label="100,000원 미만"></mm-menu-item-radio>
+            <mm-menu-item-radio value="150000" label="150,000원 미만"></mm-menu-item-radio>
+          </mm-menu-item-radio-group>
+        </fieldset>
+        <mm-separator></mm-separator>
+        <fieldset class="filter-fieldset" role="group">
+          <legend class="filter-fieldset-legend">평수</legend>
+          <mm-filter-button-group mode="single">
+            <mm-filter-button value="10">10평 미만</mm-filter-button>
+            <mm-filter-button value="20">20평</mm-filter-button>
+            <mm-filter-button value="30">30평</mm-filter-button>
+          </mm-filter-button-group>
+        </fieldset>
+        <mm-separator></mm-separator>
+        <fieldset class="filter-fieldset" role="group">
+          <legend class="filter-fieldset-legend">접근성 편의</legend>
+          <p class="filter-fieldset-description">
+            호스트가 제공하고 에어비앤비에서 검토한 정보입니다.
+          </p>
+          <mm-menu-item-checkbox-group aria-label="접근성 편의">
+            <mm-menu-item-checkbox value="no-stairs" label="게스트 출입구에 계단이나 문턱 없음"></mm-menu-item-checkbox>
+            <mm-menu-item-checkbox value="entrance-width" label="너비 81cm 이상의 게스트 출입구"></mm-menu-item-checkbox>
+            <mm-menu-item-checkbox value="parking" label="휠체어 접근 가능 주차 공간"></mm-menu-item-checkbox>
+          </mm-menu-item-checkbox-group>
+        </fieldset>
+        <mm-separator></mm-separator>
+        <fieldset class="filter-fieldset" role="group">
+          <legend class="filter-fieldset-legend">릴리스 채널</legend>
+          <mm-dropdown>
+            <option value="stable">Stable</option>
+            <option value="beta">Beta</option>
+            <option value="canary">Canary</option>
+          </mm-dropdown>
+        </fieldset>
+        <mm-separator></mm-separator>
+        <fieldset class="filter-fieldset" role="group">
+          <legend class="filter-fieldset-legend">데스크톱에서 활성 상태가 아닌 경우...</legend>
+          <mm-menu-item-switch
+            value="email-notify"
+            label="멘션 및 다이렉트 메시지에 대한 이메일 알림 받기"
+          ></mm-menu-item-switch>
+          <mm-menu-item-radio-group name="email-interval" aria-label="이메일 알림 주기" value="15min">
+            <mm-menu-item-radio value="15min" label="15분 마다 한 번"></mm-menu-item-radio>
+            <mm-menu-item-radio value="1hour" label="한 시간에 한 번"></mm-menu-item-radio>
+          </mm-menu-item-radio-group>
+        </fieldset>
+      </form>
+    </mm-sheet-body>
+    <mm-sheet-footer primary-label="숙소 25개 표시" secondary-label="전체 해제"></mm-sheet-footer>
+  </mm-sheet>
+</main>
