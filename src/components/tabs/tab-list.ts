@@ -1,11 +1,12 @@
 import { LitElement, html } from 'lit'
 import { customElement, query } from 'lit/decorators.js'
-import { tabsStyles } from '../tabs.styles'
+import { tabsStyles } from './tabs.styles'
 
 @customElement('mm-tab-list')
 export default class TabList extends LitElement {
   @query('slot') tabSlot!: HTMLSlotElement
   @query('.indicator') indicator!: HTMLDivElement
+  @query('.tablist-container') tablistContainer!: HTMLDivElement
 
   static styles = [tabsStyles]
 
@@ -29,10 +30,10 @@ export default class TabList extends LitElement {
 
     if (activeTab) {
       const tabRect = activeTab.getBoundingClientRect()
-      const listRect = this.getBoundingClientRect()
+      const containerRect = this.tablistContainer.getBoundingClientRect()
 
-      // 핵심: 외부 Light DOM과 내부 Shadow DOM 간의 갭을 무력화하는 절대 좌표 연산
-      const offsetLeft = tabRect.left - listRect.left
+      // 핵심: indicator는 .tablist-container 기준 absolute이므로 container rect를 기준으로 연산
+      const offsetLeft = tabRect.left - containerRect.left
       const offsetWidth = tabRect.width
 
       this.indicator.style.transform = `translateX(${offsetLeft}px)`

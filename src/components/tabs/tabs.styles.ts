@@ -63,8 +63,11 @@ export const tabsStyles = css`
   }
 
   :host([variant='pill']) .indicator {
-    height: calc(100% - var(--space-2)); /* 패딩 상하 영역 제외 */
-    top: var(--space-1);
+    /*
+    height: calc(100% - var(--space-2));
+    */
+    height: var(--size-medium);
+    top: calc(var(--space-1) -1px); /* 부모 패딩과 보더 두께를 고려하여 위치 조정 */
     background-color: var(--tabs-pill-indicator-background);
     border: var(--tabs-pill-indicator-border);
     border-radius: var(--radius);

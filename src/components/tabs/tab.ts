@@ -18,6 +18,11 @@ export default class Tab extends LitElement {
 
   static styles = css`
     :host {
+      position: relative;
+      z-index: 1; /* pill indicator 위에 텍스트가 렌더링되도록 stacking context 생성 */
+    }
+
+    [role='tab'] {
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -28,10 +33,9 @@ export default class Tab extends LitElement {
       cursor: pointer;
       user-select: none;
       transition: color 0.25s ease, font-weight 0.25s ease;
-      z-index: 1; /* pill 스타일 인디케이터 배경보다 위에 오도록 설정 */
     }
 
-    :host([active]) {
+    [role='tab'][aria-selected='true'] {
       color: var(--color-primary);
     }
 
