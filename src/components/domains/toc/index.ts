@@ -1,92 +1,152 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, state } from 'lit/decorators.js'
+import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
 import { resetStyles } from '../../../stylesheets/shared/reset.styles'
 
 interface TocItem {
   id: string
   label: string
-  level: 'page' | 'guide' | 'section'
 }
 
 @customElement('mm-toc')
 export class TableOfContents extends LitElement {
   @state() private items: TocItem[] = []
   @state() private activeId = ''
+  @state() private copied = false
+  @state() private indicatorY = 0
 
   static styles = [
     resetStyles,
     css`
       :host {
         display: block;
-        width: 200px;
+        width: var(--width-small);
         flex-shrink: 0;
         position: sticky;
-        top: 4rem;
-        max-height: calc(100vh - 5rem);
+        top: calc(var(--space-4) * 4);
+        max-height: calc(100vh - var(--size-huge));
         overflow-y: auto;
         padding: var(--space-4) 0 var(--space-4) var(--space-4);
         box-sizing: border-box;
       }
 
       .toc-title {
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
         margin: 0 0 var(--space-2) 0;
       }
 
-      ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
+      .toc-list {
         display: flex;
         flex-direction: column;
-        gap: 2px;
+        gap: var(--space-05);
+        position: relative;
       }
 
-      a {
+      .toc-link {
         display: block;
+        width: 100%;
+        padding: var(--space-05) var(--space-2);
+        border: 0;
+        border-radius: var(--radius);
+        background: transparent;
+        font-family: var(--font-family);
         font-size: var(--font-size-12);
         line-height: 1.5;
         color: var(--color-foreground-light);
+        text-align: left;
         text-decoration: none;
-        padding: 2px var(--space-2);
+        cursor: pointer;
+        transition: color 0.16s ease;
+      }
+
+      .toc-link:hover {
+        color: var(--color-foreground);
+      }
+
+      .selected-indicator {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: var(--space-05);
+        height: var(--selection-indicator-size);
         border-radius: var(--radius);
-        border-left: 2px solid transparent;
-        transition: color 0.1s, border-color 0.1s;
+        background: var(--selection-indicator-color);
+        opacity: 1;
+        transform: translateY(var(--toc-indicator-y)) scaleY(1);
+        transform-origin: center;
+        transition: opacity 0.16s ease, transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
       }
 
-      a:hover {
-        color: var(--color-foreground);
-      }
-
-      li[data-level='page'] a {
-        font-weight: var(--font-weight-bold);
-        color: var(--color-foreground);
-      }
-
-      li[data-level='guide'] a {
-        color: var(--color-foreground);
-        padding-left: var(--space-2);
-      }
-
-      li[data-level='section'] a {
-        padding-left: var(--space-5);
-      }
-
-      li[data-active] a {
+      .toc-link[data-active] {
         color: var(--color-primary);
-        border-left-color: var(--color-primary);
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .toc-link,
+        .selected-indicator {
+          transition: none;
+        }
+      }
+
+      .share {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-2);
+        margin-top: var(--space-4);
+        padding-top: var(--space-4);
+        border-top: var(--border);
+      }
+
+      .share-actions {
+        display: flex;
+        gap: var(--space-1);
+      }
+
+      .share-action {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: var(--size-small);
+        height: var(--size-small);
+        padding: 0;
+        border: var(--border);
+        border-radius: var(--radius);
+        background: var(--color-background-subtle);
+        color: var(--color-foreground);
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      .share-action:hover {
+        border-color: var(--color-border-hover);
+      }
+
+      .share-action:focus-visible {
+        outline: var(--status-focus);
+        outline-offset: var(--space-05);
       }
     `,
   ]
 
   connectedCallback() {
     super.connectedCallback()
+    window.addEventListener('resize', this.updateIndicatorPosition)
     // 커스텀 엘리먼트 업그레이드 후 실행
     requestAnimationFrame(() => {
       this.buildItems()
       this.setupScrollSpy()
+      this.updateIndicatorPosition()
     })
+  }
+
+  disconnectedCallback() {
+    super.disconnectedCallback()
+    window.removeEventListener('resize', this.updateIndicatorPosition)
+  }
+
+  updated(changedProps: Map<string, unknown>) {
+    if (changedProps.has('items') || changedProps.has('activeId')) {
+      requestAnimationFrame(() => this.updateIndicatorPosition())
+    }
   }
 
   private buildItems() {
@@ -97,7 +157,7 @@ export class TableOfContents extends LitElement {
       const label = pageHeader.getAttribute('title') || ''
       if (label) {
         pageHeader.id = 'toc-page-header'
-        items.push({ id: 'toc-page-header', label, level: 'page' })
+        items.push({ id: 'toc-page-header', label })
       }
     }
 
@@ -105,19 +165,21 @@ export class TableOfContents extends LitElement {
     let guideIndex = 0
     let sectionIndex = 0
 
-    document.querySelectorAll<HTMLElement>('mm-component-guide, mm-component-section').forEach(el => {
-      if (el.tagName.toLowerCase() === 'mm-component-guide') {
-        const id = `toc-guide-${guideIndex++}`
-        el.id = id
-        items.push({ id, label: 'Component Guide', level: 'guide' })
-      } else {
-        const label = el.getAttribute('title') || ''
-        if (!label) return
-        const id = `toc-section-${sectionIndex++}`
-        el.id = id
-        items.push({ id, label, level: 'section' })
-      }
-    })
+    document
+      .querySelectorAll<HTMLElement>('mm-component-guide, mm-component-section')
+      .forEach(el => {
+        if (el.tagName.toLowerCase() === 'mm-component-guide') {
+          const id = `toc-guide-${guideIndex++}`
+          el.id = id
+          items.push({ id, label: 'Component Guide' })
+        } else {
+          const label = el.getAttribute('title') || ''
+          if (!label) return
+          const id = `toc-section-${sectionIndex++}`
+          el.id = id
+          items.push({ id, label })
+        }
+      })
 
     this.items = items
     if (items.length) this.activeId = items[0].id
@@ -146,22 +208,147 @@ export class TableOfContents extends LitElement {
     })
   }
 
+  private updateIndicatorPosition = () => {
+    const list = this.renderRoot.querySelector<HTMLElement>('.toc-list')
+    const indicator = this.renderRoot.querySelector<HTMLElement>('.selected-indicator')
+    const activeItem = Array.from(this.renderRoot.querySelectorAll<HTMLElement>('.toc-link')).find(
+      link => link.dataset.tocId === this.activeId,
+    )
+
+    if (!list || !indicator || !activeItem) return
+
+    const listRect = list.getBoundingClientRect()
+    const itemRect = activeItem.getBoundingClientRect()
+    const indicatorRect = indicator.getBoundingClientRect()
+    const nextY = itemRect.top - listRect.top + itemRect.height / 2 - indicatorRect.height / 2
+
+    if (this.indicatorY !== nextY) {
+      this.indicatorY = nextY
+    }
+  }
+
+  private scrollToItem(id: string) {
+    const target = document.getElementById(id)
+    if (!target) return
+
+    this.activeId = id
+    target.scrollIntoView({ block: 'start', behavior: 'smooth' })
+    window.history.pushState(null, '', `#${id}`)
+  }
+
+  private get shareUrl() {
+    return window.location.href
+  }
+
+  private get shareTitle() {
+    return document.title
+  }
+
+  private get shareLinks() {
+    const url = encodeURIComponent(this.shareUrl)
+    const title = encodeURIComponent(this.shareTitle)
+
+    return [
+      {
+        href: `https://twitter.com/intent/tweet?url=${url}&text=${title}`,
+        icon: ICON_NAMES.TWITTER,
+        label: 'Share on Twitter',
+      },
+      {
+        href: `https://www.facebook.com/sharer/sharer.php?u=${url}`,
+        icon: ICON_NAMES.FACEBOOK,
+        label: 'Share on Facebook',
+      },
+    ]
+  }
+
+  private async copyShareUrl() {
+    try {
+      await navigator.clipboard.writeText(this.shareUrl)
+    } catch {
+      const textarea = document.createElement('textarea')
+      textarea.value = this.shareUrl
+      textarea.setAttribute('readonly', '')
+      document.body.append(textarea)
+      textarea.select()
+      document.execCommand('copy')
+      textarea.remove()
+    }
+
+    this.copied = true
+    window.setTimeout(() => {
+      this.copied = false
+    }, 1600)
+  }
+
+  private renderShareSection() {
+    return html`
+      <section class="share" aria-label="Share on">
+        <mm-text
+          weight="bold"
+          color="var(--color-foreground-light)"
+          class="toc-title"
+          aria-hidden="true"
+          >Share on</mm-text
+        >
+        <div class="share-actions">
+          ${this.shareLinks.map(
+            ({ href, icon, label }) => html`
+              <a
+                class="share-action"
+                href=${href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label=${label}
+              >
+                <mm-icon name=${icon}></mm-icon>
+              </a>
+            `,
+          )}
+          <button
+            class="share-action"
+            type="button"
+            aria-label=${this.copied ? 'Copied link' : 'Copy link'}
+            @click=${this.copyShareUrl}
+          >
+            <mm-icon name=${this.copied ? ICON_NAMES.COPY_SUCCESS : ICON_NAMES.LINK}></mm-icon>
+          </button>
+        </div>
+      </section>
+    `
+  }
+
   render() {
     if (!this.items.length) return nothing
 
     return html`
       <nav aria-label="On this page">
-        <mm-text size="12" weight="bold" color="var(--color-foreground-light)" class="toc-title" aria-hidden="true">On this page</mm-text>
-        <ul>
+        <mm-text
+          weight="bold"
+          color="var(--color-foreground-light)"
+          class="toc-title"
+          aria-hidden="true"
+          >On this page</mm-text
+        >
+        <div class="toc-list" style=${`--toc-indicator-y: ${this.indicatorY}px`}>
+          <span class="selected-indicator" aria-hidden="true"></span>
           ${this.items.map(
             item => html`
-              <li data-level=${item.level} ?data-active=${item.id === this.activeId}>
-                <a href=${'#' + item.id}>${item.label}</a>
-              </li>
+              <button
+                class="toc-link"
+                type="button"
+                data-toc-id=${item.id}
+                ?data-active=${item.id === this.activeId}
+                aria-current=${item.id === this.activeId ? 'true' : nothing}
+                @click=${() => this.scrollToItem(item.id)}
+              >
+                ${item.label}
+              </button>
             `,
           )}
-        </ul>
+        </div>
       </nav>
+      ${this.renderShareSection()}
     `
   }
 }
