@@ -3,7 +3,6 @@ import './src/javascripts/components'
 import { initializeNavbar } from './src/javascripts/common/navbar'
 import scrollAnimation from './src/javascripts/event/scrollAnimation'
 import scrollspy from './src/javascripts/event/scrollspy'
-import setupModal from './src/javascripts/event/modal'
 import { stopAnimation } from './src/javascripts/utils/optimizationUtils'
 
 const MOBILE_NAVBAR_QUERY = '(max-width: 1080px)'
@@ -14,7 +13,6 @@ stopAnimation()
 
 function initializePage() {
   applyWindowsFont()
-  setupModal({ selector: '.js-modal' })
   updateDocumentTitle()
   initializeResponsiveNavbar()
   initializeScrollEffects()

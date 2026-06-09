@@ -5,50 +5,54 @@
     description="사용자의 정보나 재산의 변경 또는 삭제 확인."
   ></mm-page-header>
 
-  <button onclick="confirm('gggg')">111</button>
-
   <mm-component-aka items='["Alert", "Modal", "Prompt"]'></mm-component-aka>
 
   <mm-component-example>
-    <mm-flex direction="column" gap="4">
-      <mm-dialog open closeable center title="Alert Dialog" description="부끄러우니까 보지마요!">
-        <mm-button slot="footer" variant="primary" size="large">확인</mm-button>
-      </mm-dialog>
+    <mm-button-group>
+      <mm-button data-open-dialog="alert">Alert</mm-button>
+      <mm-button data-open-dialog="confirm">Confirm</mm-button>
+      <mm-button data-open-dialog="cookie">Cookie</mm-button>
+    </mm-button-group>
 
-      <mm-dialog
-        open
-        title="페이지를 나가시겠어요?"
-        description="저장되지 않은 변경 사항이 있습니다. 이 페이지에서 나가면 변경 사항이 취소됩니다."
-      >
-        <mm-flex slot="footer" gap="2">
-          <mm-button variant="tertiary" size="large">계속 수정하기</mm-button>
-          <mm-button variant="primary" size="large">나가기</mm-button>
-        </mm-flex>
-      </mm-dialog>
+    <mm-dialog id="dialog-alert" closeable title="Alert Dialog" description="부끄러우니까 보지마요!">
+      <mm-button slot="footer" variant="primary" size="large">확인</mm-button>
+    </mm-dialog>
 
-      <mm-dialog open closeable title="쿠키 사용 안내">
-        <mm-paragraph>
-          By clicking “Accept Cookies”, you agree to the storing of cookies on your device to
-          enhance site navigation, analyze site usage, and assist in our marketing efforts. View our
-          Cookie Policy for more information.
-        </mm-paragraph>
-        <mm-flex slot="footer" gap="2">
-          <mm-button variant="tertiary" size="large">Cookie Settings</mm-button>
-          <mm-button variant="primary" size="large">Accept Cookie</mm-button>
-        </mm-flex>
-      </mm-dialog>
-    </mm-flex>
+    <mm-dialog
+      id="dialog-confirm"
+      title="페이지를 나가시겠어요?"
+      description="저장되지 않은 변경 사항이 있습니다. 이 페이지에서 나가면 변경 사항이 취소됩니다."
+    >
+      <mm-flex slot="footer" gap="2">
+        <mm-button variant="tertiary" size="large">계속 수정하기</mm-button>
+        <mm-button variant="primary" size="large">나가기</mm-button>
+      </mm-flex>
+    </mm-dialog>
+
+    <mm-dialog id="dialog-cookie" closeable title="쿠키 사용 안내">
+      <mm-paragraph>
+        By clicking "Accept Cookies", you agree to the storing of cookies on your device to
+        enhance site navigation, analyze site usage, and assist in our marketing efforts. View our
+        Cookie Policy for more information.
+      </mm-paragraph>
+      <mm-flex slot="footer" gap="2">
+        <mm-button variant="tertiary" size="large">Cookie Settings</mm-button>
+        <mm-button variant="primary" size="large">Accept Cookie</mm-button>
+      </mm-flex>
+    </mm-dialog>
   </mm-component-example>
 
   <mm-component-props>
     <mm-prop name="open" type="boolean"></mm-prop>
     <mm-prop name="title" type="string"></mm-prop>
     <mm-prop name="description" type="string"></mm-prop>
-    <mm-prop name="center" type="boolean"></mm-prop>
     <mm-prop name="closeable" type="boolean"></mm-prop>
-    <mm-prop name="type" type="'dialog' | 'alertdialog' = 'alertdialog'"></mm-prop>
+    <mm-prop name="primary-label" type="string"></mm-prop>
+    <mm-prop name="secondary-label" type="string"></mm-prop>
     <mm-prop name="slot='footer'" type="actions"></mm-prop>
     <mm-prop name="dialog-close" type="CustomEvent" kind="event"></mm-prop>
+    <mm-prop name="primary-click" type="CustomEvent" kind="event"></mm-prop>
+    <mm-prop name="secondary-click" type="CustomEvent" kind="event"></mm-prop>
   </mm-component-props>
 
   <mm-component-guide>
@@ -57,24 +61,16 @@
         icon="cursor-pointer"
         titleText="Feedback"
         subtitle=""
-        description="ally. 다이얼로그를 닫기 전에는 이전 콘텐츠로 포커스 불가능. 다이얼로그(또는 모달)를 닫은 후
-          열기 버튼으로 포커스. TODO 타이틀 글자수 제한. 논모달에서만 닫기 버튼 사용"
+        description="다이얼로그를 닫기 전에는 이전 콘텐츠로 포커스 불가능. 다이얼로그를 닫은 후 열기 버튼으로 포커스 복귀. 레이어를 2개 이상 쌓지 마세요."
       >
       </mm-feature>
       <mm-feature
         icon="task-list"
         titleText="Interactive"
         subtitle=""
-        description="Alert or Confirmation, Notification.레이어를 2개 이상 쌓지 마세요. 현대 유아이에서 레이어라는 개념이 모호함. 풀스크린
-          모달에서 다이얼로그를 띄울 수 있어야 할까? 프라이머리 버튼의 레이블은 다이얼로그 제목의 동사와 페어링되어야 한다. 부정어로 묻지 말 것."
+        description="프라이머리 버튼의 레이블은 다이얼로그 제목의 동사와 페어링되어야 한다. 부정어로 묻지 말 것."
       >
       </mm-feature>
     </mm-grid>
-
-    <mm-text size="14">
-      단순 다이얼로그는 복잡한 구조가 필요없다. 모달리티 컨텐츠 뷰에서 head/body/foot 구조가
-      필요한데, 이것은 페이지 모듈과 동일하다. DialogHead, DialogBody, DialogFoot. buttonGroup
-      type="unary(confirm) | binary(cancel/confirm). 이런 정의는 불필요하다.
-    </mm-text>
   </mm-component-guide>
 </main>
