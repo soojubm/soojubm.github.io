@@ -1,7 +1,7 @@
 import { renderLayout } from '../../../layouts/base-layouts'
 import { hideNavbar } from '../../../src/javascripts/common/navbar'
-import setupModal from '../../../src/javascripts/event/modal'
 import main from './index.html'
+import type Sheet from '../../../src/components/sheet/sheet'
 
 import './profile.css'
 
@@ -18,20 +18,19 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('sort-change', handleSortChange)
 })
 
-/** mm-portfolio-item의 portfolio-item-open 이벤트를 모달 열기에 연결한다. */
+/** mm-portfolio-item의 portfolio-item-open 이벤트를 mm-sheet 컴포넌트 open()에 연결한다. */
 function setupPortfolioModal() {
-  const modal = setupModal()
   document.addEventListener('portfolio-item-open', event => {
-    modal.open((event as PortfolioItemOpenEvent).detail.modal)
+    const { modal } = (event as PortfolioItemOpenEvent).detail
+    const sheet = document.querySelector<Sheet>(`#sheet-${modal}`)
+    sheet?.open()
   })
 }
 
 function handleViewModeChange(event: Event) {
   const target = event.target as HTMLElement
   const viewModeEvent = event as ViewModeChangeEvent
-
   const containerElement = target.closest<HTMLElement>('.profile-body')
-
   containerElement?.classList.toggle('list', viewModeEvent.detail.mode === 'list')
 }
 
@@ -42,7 +41,6 @@ function handleSortChange(event: Event) {
 
   containerElement?.querySelectorAll<HTMLElement>('.portfolio-grid').forEach(gridElement => {
     const items = Array.from(gridElement.querySelectorAll<HTMLElement>('mm-portfolio-item'))
-
     items
       .sort((a, b) => {
         const aDate = Date.parse(a.getAttribute('date') ?? '')
@@ -52,15 +50,3 @@ function handleSortChange(event: Event) {
       .forEach(item => gridElement.append(item))
   })
 }
-
-// {
-//   name: 'button',
-//   role: action',
-//   description: '',
-//   aka: ['string', 'string'],
-//   features: [],
-//   bestPractices: [],
-//   props: { name: '', size: ''}
-//   relatedComponents: [],
-//   useCases: [],
-// }

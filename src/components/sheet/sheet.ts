@@ -17,12 +17,20 @@ class Sheet extends LitElement {
   connectedCallback() {
     super.connectedCallback()
     this.addEventListener('sheetclose', () => this.close())
+    this.addEventListener('click', this.handleBackdropClick)
     document.addEventListener('click', this.handleOutsideClick)
   }
 
   disconnectedCallback() {
     super.disconnectedCallback()
+    this.removeEventListener('click', this.handleBackdropClick)
     document.removeEventListener('click', this.handleOutsideClick)
+  }
+
+  /** center/bottom/left/right 타입: 호스트(backdrop) 영역 클릭 시 닫는다 */
+  private handleBackdropClick = (e: MouseEvent) => {
+    if (!this._isModal || !this.isOpen) return
+    if (e.target === this) this.close()
   }
 
   /** anchor 타입만 outside-click으로 닫는다 — dropdown과 동일한 패턴 */
@@ -33,6 +41,10 @@ class Sheet extends LitElement {
       return
     }
     if (!e.composedPath().includes(this)) this.close()
+  }
+
+  private get _isModal() {
+    return this.type !== 'anchor' && this.type !== 'inline'
   }
 
   static styles = [
@@ -196,10 +208,12 @@ class Sheet extends LitElement {
   open() {
     this.isOpen = true
     this._skipNextOutsideClick = true // 열기를 유발한 클릭을 outside-click 핸들러가 받지 않도록
+    if (this._isModal) document.body.classList.add('lock-scroll')
   }
 
   close() {
     this.isOpen = false
+    if (this._isModal) document.body.classList.remove('lock-scroll')
   }
 
   toggle() {

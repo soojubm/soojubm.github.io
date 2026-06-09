@@ -37,6 +37,18 @@ export class Dropdown extends LitElement {
         width: 100%;
       }
 
+      .dropdown-button {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-1);
+        padding: var(--space-1) var(--space-2);
+        border: var(--border);
+        border-radius: var(--radius);
+        background: var(--color-background);
+        color: var(--color-foreground);
+        font-family: var(--font-family);
+      }
+
       // TODO component and state
       .dropdown-button mm-icon {
         transition: transform 160ms ease;

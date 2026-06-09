@@ -221,20 +221,17 @@
   --animation-timing-function-ease: null;
 
   --zindex-default: 1;
-  --zindex-popover: 5;
   --zindex-tooltip: 2;
   --zindex-menu: 2;
   --zindex-dropdown: 2;
-  --zindex-sticky: 4;
   --zindex-fixed: 4;
-  --zindex-modal-overay: 8;
-  --zindex-modal: 9;
-  --zindex-toast: 9;
-  --zindex-menu: 8;
-  --zindex-bottombar: 8;
-  --zindex-loader: 10;
-  --zindex-sheet: 7;
   --zindex-backdrop: 6;
+  --zindex-sheet: 7;
+  --zindex-modal: 8;
+  --zindex-bottombar: 8;
+  --zindex-toast: 9;
+  --zindex-loader: 10;
+  --zindex-popover: 5;
 
   --color-backdrop: rgba(0, 0, 0, 0.1);
 

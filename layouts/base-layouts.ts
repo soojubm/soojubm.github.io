@@ -15,7 +15,6 @@ export const renderLayout = (
   return `
     <mm-navbar></mm-navbar>
     ${content}
-    <aside id="modal"></aside>
     ${options.footer ? '<mm-footer></mm-footer>' : ''}
   `
 }

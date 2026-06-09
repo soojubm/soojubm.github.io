@@ -29,7 +29,7 @@ export class FollowButton extends ToggleButton {
   override render() {
     return html`
       <mm-button
-        icon=${this.selected ? ICON_NAMES.CHECK : ICON_NAMES.ADD}
+        variant=${this.selected ? 'tertiary' : 'primary'}
         ?disabled=${this.disabled}
         aria-pressed=${this.selected ? 'true' : 'false'}
         @click=${this.handleClick}
