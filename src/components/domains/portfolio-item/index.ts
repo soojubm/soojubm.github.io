@@ -132,9 +132,9 @@ export class PortfolioItem extends LitElement {
             ? html`<time hidden datetime=${this.date}>${this.formattedDate}</time>`
             : nothing}
           ${this.keywords.length
-            ? html`<mm-flex gap="1" style="margin-top: var(--space-2);">
+            ? html`<mm-keyword-tag-group style="margin-top: var(--space-2);">
                 ${this.keywords.map(k => html`<mm-keyword-tag>${k}</mm-keyword-tag>`)}
-              </mm-flex>`
+              </mm-keyword-tag-group>`
             : nothing}
           <slot></slot>
         </div>
