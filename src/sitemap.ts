@@ -99,7 +99,7 @@ export const SITEMAP = [
       { id: 'result', name: 'result' },
       { id: 'table', name: 'table', badge: '🚧' },
       { id: 'accordion', name: 'accordion' },
-      { id: 'presentation', name: 'presentation' },
+      { id: 'sheet', name: 'sheet' },
       { id: 'auth', name: 'auth' },
       { id: 'profile', name: 'user profile', badge: '🔥' },
       { id: 'chat', name: 'chat' },

@@ -92,7 +92,7 @@ export const inputStyles = css`
     width: 100%;
     min-height: var(--input-height);
     gap: var(--input-padding-inline);
-    padding: var(--input-padding-block) var(--input-padding-inline);
+    padding: 0 var(--input-padding-inline);
     border: var(--input-border);
     border-radius: var(--input-radius);
     box-sizing: border-box;

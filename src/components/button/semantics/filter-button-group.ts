@@ -26,7 +26,7 @@ export class FilterButtonGroup extends LitElement {
     css`
       :host {
         display: flex;
-        gap: 6px;
+        gap: var(--space-2);
       }
     `,
   ]
@@ -63,15 +63,15 @@ export class FilterButtonGroup extends LitElement {
     return this._buttons.find(b => b.selectAll)
   }
 
-  private _onToggle = (e: CustomEvent<{ value: string; selected: boolean; selectAll?: boolean }>) => {
+  private _onToggle = (
+    e: CustomEvent<{ value: string; selected: boolean; selectAll?: boolean }>,
+  ) => {
     const { value, selected, selectAll } = e.detail
 
     if (selectAll) {
       this.selected = selected ? this._optionButtons.map(b => b.value) : []
     } else if (this._isMultiple) {
-      this.selected = selected
-        ? [...this.selected, value]
-        : this.selected.filter(v => v !== value)
+      this.selected = selected ? [...this.selected, value] : this.selected.filter(v => v !== value)
     } else {
       this.selected = selected ? [value] : []
     }

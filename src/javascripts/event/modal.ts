@@ -51,11 +51,21 @@ export function createModalController() {
 
   function closeModalTemp(event: MouseEvent) {
     const target = event.target as HTMLElement
+    const path = event.composedPath()
 
     const isClickOutsideModal = target.classList.contains('modal') // 모달 외부 클릭 여부
     const isModalCloseElement = target.classList.contains('js-modal-close') // 닫기 버튼 클릭 여부
+    const isClickOutsideSheet = target.localName === 'mm-sheet'
+    const hasSheetHeader = path.some(
+      element => element instanceof HTMLElement && element.localName === 'mm-sheet-header',
+    )
+    const hasCloseButton = path.some(
+      element =>
+        element instanceof HTMLButtonElement && element.getAttribute('aria-label') === '닫기',
+    )
+    const isSheetCloseElement = hasSheetHeader && hasCloseButton
 
-    if (isClickOutsideModal || isModalCloseElement) {
+    if (isClickOutsideModal || isModalCloseElement || isClickOutsideSheet || isSheetCloseElement) {
       close()
     }
   }
@@ -67,6 +77,7 @@ export function createModalController() {
 
     document.addEventListener('keydown', handleKeyDown)
     modalContainer.addEventListener('click', closeModalTemp)
+    modalContainer.addEventListener('sheetclose', close)
   }
 
   function close() {
@@ -80,6 +91,7 @@ export function createModalController() {
 
     document.removeEventListener('keydown', handleKeyDown)
     modalContainer.removeEventListener('click', closeModalTemp)
+    modalContainer.removeEventListener('sheetclose', close)
   }
 
   function handleKeyDown(event: KeyboardEvent) {

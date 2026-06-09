@@ -4,8 +4,12 @@ import { resetStyles } from '../../../stylesheets/shared/reset.styles'
 
 @customElement('mm-token-item')
 export class TokenItem extends LitElement {
-  /** 토큰 이름 / 값 텍스트 */
-  @property({ type: String }) label = ''
+  /** 토큰 이름 */
+  @property({ type: String }) key = ''
+  /** 토큰 값 */
+  @property({ type: String }) value = ''
+  /** dot 색상 (CSS color 값) */
+  @property({ type: String }) color = ''
   /** figure 미리보기의 인라인 style 값 */
   @property({ type: String, attribute: 'preview-style' }) previewStyle = ''
 
@@ -32,19 +36,31 @@ export class TokenItem extends LitElement {
         flex-shrink: 0;
       }
 
-      .label {
-        display: block;
-        font-weight: var(--font-weight-bold);
-        font-size: var(--font-size-12);
-        word-break: break-all;
+      .dot {
+        flex-shrink: 0;
+        width: var(--size-small);
+        height: var(--size-small);
+        border-radius: var(--radius);
+      }
+
+      .key::before {
+        content: '--';
+      }
+
+      .key::after {
+        content: ':';
       }
     `,
   ]
 
   render() {
     return html`
+      <mm-flex gap="2" wrap>
+        ${this.color ? html`<span class="dot" style="background:${this.color}"></span>` : nothing}
+        ${this.key ? html`<span class="key">${this.key}</span>` : nothing}
+        ${this.value ? html`<span class="value">${this.value}</span>` : nothing}
+      </mm-flex>
       ${this.previewStyle ? html`<figure style=${this.previewStyle}></figure>` : nothing}
-      ${this.label ? html`<span class="label">${this.label}</span>` : nothing}
       <slot></slot>
     `
   }

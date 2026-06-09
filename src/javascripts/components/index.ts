@@ -23,6 +23,7 @@ import '../../components/switch/switch'
 import '../../components/result/result'
 import '../../components/feature/feature'
 import '../../components/meta-item/meta-item'
+import '../../components/backdrop'
 import '../../components/sheet'
 import '../../components/dialog'
 

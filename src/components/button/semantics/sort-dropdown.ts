@@ -1,41 +1,41 @@
+import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import Dropdown, { DropdownOption } from '../../dropdown/dropdown'
+import '../../dropdown/dropdown'
 
 type SortOrder = 'latest' | 'oldest'
 
+const SORT_OPTIONS = [
+  { label: '최신순', value: 'latest' },
+  { label: '오래된순', value: 'oldest' },
+] as const
+
 @customElement('mm-sort-dropdown')
-export class SortDropdown extends Dropdown {
+export class SortDropdown extends LitElement {
   @property({ type: String, reflect: true }) value: SortOrder = 'latest'
 
-  protected get defaultOptions(): DropdownOption[] {
-    return [
-      {
-        label: '최신순',
-        value: 'latest',
-        type: 'default',
-        checked: false,
-        selected: this.value === 'latest',
-      },
-      {
-        label: '오래된순',
-        value: 'oldest',
-        type: 'default',
-        checked: false,
-        selected: this.value === 'oldest',
-      },
-    ]
-  }
-
-  protected emitSelectChange(option: DropdownOption) {
-    super.emitSelectChange(option)
+  private handleChange(e: CustomEvent) {
+    const next = e.detail.value as SortOrder
+    this.value = next
 
     this.dispatchEvent(
       new CustomEvent('sort-change', {
-        detail: { order: this.value },
+        detail: { order: next },
         bubbles: true,
         composed: true,
       }),
     )
+  }
+
+  render() {
+    return html`
+      <mm-dropdown .value=${this.value} @change=${this.handleChange}>
+        ${SORT_OPTIONS.map(
+          opt => html`
+            <option value=${opt.value} ?selected=${this.value === opt.value}>${opt.label}</option>
+          `,
+        )}
+      </mm-dropdown>
+    `
   }
 }
 

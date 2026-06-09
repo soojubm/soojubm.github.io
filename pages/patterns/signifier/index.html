@@ -264,6 +264,21 @@ Availability state: enabled / disabled / loading -->
           cursor: not-allowed;
           pointer-events: none;
         }
+
+        .selection-indicator-demo {
+          min-width: var(--width-small);
+        }
+
+        .selection-indicator-option {
+          padding: var(--space-1) var(--space-2);
+          border-radius: var(--radius);
+        }
+
+        .selection-indicator-space {
+          flex-shrink: 0;
+          width: var(--selection-indicator-width, var(--space-05));
+          height: var(--selection-indicator-size);
+        }
       </style>
 
       <mm-flex direction="column" gap="3">
@@ -313,6 +328,41 @@ Availability state: enabled / disabled / loading -->
           keywords='["selected background", "selected border", "check icon - confirmed selection, chosen item, applied state", "stronger label weight", "selected indicator line"]'
         ></mm-keyword-tag-group>
       </mm-paragraph-group>
+
+      <mm-token-stage
+        parts='[
+          { "key": "--selection-indicator-size", "value": "선택 라인의 길이" },
+          { "key": "--selection-indicator-gap", "value": "indicator와 선택 항목 사이 간격" },
+          { "key": "--selection-indicator-color", "value": "선택 상태를 나타내는 accent color" }
+        ]'
+      >
+        <mm-flex class="selection-indicator-demo" direction="column" gap="1">
+          <mm-flex
+            class="selection-indicator-option"
+            align="center"
+            gap="var(--selection-indicator-gap)"
+          >
+            <span class="selection-indicator-space" aria-hidden="true"></span>
+            <mm-text>Unselected item</mm-text>
+          </mm-flex>
+          <mm-flex
+            class="selection-indicator-option"
+            align="center"
+            gap="var(--selection-indicator-gap)"
+          >
+            <mm-selection-indicator aria-hidden="true"></mm-selection-indicator>
+            <mm-text weight="bold">Selected item</mm-text>
+          </mm-flex>
+          <mm-flex
+            class="selection-indicator-option"
+            align="center"
+            gap="var(--selection-indicator-gap)"
+          >
+            <span class="selection-indicator-space" aria-hidden="true"></span>
+            <mm-text>Unselected item</mm-text>
+          </mm-flex>
+        </mm-flex>
+      </mm-token-stage>
 
       <!-- <mm-text-list
         texts='["--selection-indicator-size", "--selection-indicator-gap", "--selection-indicator-color"]'

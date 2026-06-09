@@ -2,6 +2,7 @@ import { LitElement, css, html, nothing } from 'lit'
 import { customElement, state } from 'lit/decorators.js'
 import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
 import { resetStyles } from '../../../stylesheets/shared/reset.styles'
+import '../indicators/selection-indicator'
 
 interface TocItem {
   id: string
@@ -62,27 +63,12 @@ export class TableOfContents extends LitElement {
         color: var(--color-foreground);
       }
 
-      .selected-indicator {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: var(--space-05);
-        height: var(--selection-indicator-size);
-        border-radius: var(--radius);
-        background: var(--selection-indicator-color);
-        opacity: 1;
-        transform: translateY(var(--toc-indicator-y)) scaleY(1);
-        transform-origin: center;
-        transition: opacity 0.16s ease, transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
-      }
-
       .toc-link[data-active] {
         color: var(--color-primary);
       }
 
       @media (prefers-reduced-motion: reduce) {
-        .toc-link,
-        .selected-indicator {
+        .toc-link {
           transition: none;
         }
       }
@@ -210,7 +196,7 @@ export class TableOfContents extends LitElement {
 
   private updateIndicatorPosition = () => {
     const list = this.renderRoot.querySelector<HTMLElement>('.toc-list')
-    const indicator = this.renderRoot.querySelector<HTMLElement>('.selected-indicator')
+    const indicator = this.renderRoot.querySelector<HTMLElement>('mm-selection-indicator')
     const activeItem = Array.from(this.renderRoot.querySelectorAll<HTMLElement>('.toc-link')).find(
       link => link.dataset.tocId === this.activeId,
     )
@@ -330,8 +316,8 @@ export class TableOfContents extends LitElement {
           aria-hidden="true"
           >On this page</mm-text
         >
-        <div class="toc-list" style=${`--toc-indicator-y: ${this.indicatorY}px`}>
-          <span class="selected-indicator" aria-hidden="true"></span>
+        <div class="toc-list" style=${`--selection-indicator-y: ${this.indicatorY}px`}>
+          <mm-selection-indicator position="absolute" aria-hidden="true"></mm-selection-indicator>
           ${this.items.map(
             item => html`
               <button

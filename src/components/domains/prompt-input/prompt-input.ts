@@ -20,6 +20,7 @@ export class PromptInput extends LitElement {
       .textfield-control {
         flex-direction: column;
         align-items: stretch;
+        padding-block: var(--input-padding-block);
       }
     `,
   ]
