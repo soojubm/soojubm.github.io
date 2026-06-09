@@ -5,17 +5,17 @@ export const tabsStyles = css`
     display: block;
 
     --tabs-indicator-color: var(--color-primary);
-    --tabs-line-color: #e5e5ea;
-    --tabs-line-width: 2px;
+    --tabs-line-color: var(--color-border);
+    --tabs-line-width: calc(var(--border-width) * 2);
     --tabs-pill-background: var(--color-background-subtle);
     --tabs-pill-indicator-background: var(--color-background);
     --tabs-pill-radius: var(--radius);
     --tabs-pill-border: none;
     --tabs-pill-indicator-border: none;
-    --tabs-pill-indicator-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+    --tabs-pill-indicator-shadow: var(--shadow);
   }
 
-  /* brutal: 회색 하단선·부드러운 그림자 대신 #000 하드 보더로 전환.
+  /* brutal: 회색 하단선·부드러운 그림자 대신 brutal border로 전환.
      line·pill 모두 토큰 재정의만으로 처리한다(상속). */
   :host-context([data-theme='brutal']) {
     --tabs-line-color: var(--brutal-border-color);
@@ -59,15 +59,15 @@ export const tabsStyles = css`
     background-color: var(--tabs-pill-background);
     border: var(--tabs-pill-border);
     border-radius: var(--tabs-pill-radius);
-    padding: 4px;
+    padding: var(--space-1);
   }
 
   :host([variant='pill']) .indicator {
-    height: calc(100% - 8px); /* 패딩 상하 영역 제외 */
-    top: 4px;
+    height: calc(100% - var(--space-2)); /* 패딩 상하 영역 제외 */
+    top: var(--space-1);
     background-color: var(--tabs-pill-indicator-background);
     border: var(--tabs-pill-indicator-border);
-    border-radius: 6px;
+    border-radius: var(--radius);
     box-shadow: var(--tabs-pill-indicator-shadow);
     z-index: 0; /* 탭 텍스트 뒤로 배치 */
   }

@@ -7,10 +7,10 @@ export const iconButtonStyles = css`
     --icon-button-radius: var(--radius);
     --icon-button-border: 1px solid var(--color-border);
     --icon-button-text-color: var(--color-foreground);
-    --icon-button-color-focus: #007185;
-    --icon-button-color-active-bg: #f0b800;
-    --icon-button-color-active-border: #008296;
-    --icon-button-color-active-ring: #c8f3fa;
+    --icon-button-color-focus: var(--color-interaction-focus);
+    --icon-button-color-active-bg: var(--color-interaction-active-background);
+    --icon-button-color-active-border: var(--color-interaction-active-border);
+    --icon-button-color-active-ring: var(--color-interaction-active-ring);
   }
 
   button {
@@ -47,7 +47,8 @@ export const iconButtonStyles = css`
     &:active {
       background: var(--icon-button-color-active-bg);
       border-color: var(--icon-button-color-active-border);
-      box-shadow: 0 0 0 3px var(--icon-button-color-active-ring), inset 0 0 0 2px #fff;
+      box-shadow: 0 0 0 3px var(--icon-button-color-active-ring),
+        inset 0 0 0 2px var(--color-foreground-on-solid);
     }
     &:disabled {
       opacity: 0.5;
@@ -68,7 +69,7 @@ export const iconButtonStyles = css`
 
   :host([variant='primary']) button {
     background-color: var(--color-primary);
-    --icon-button-text-color: #fff;
+    --icon-button-text-color: var(--color-foreground-on-solid);
   }
 
   :host([variant='plain']) button {
@@ -78,17 +79,17 @@ export const iconButtonStyles = css`
 
   :host([variant='navigator']) button {
     border: var(--border);
-    border-radius: 50%;
+    border-radius: var(--radius-round);
     box-shadow: var(--shadow);
     background-color: var(--color-background);
   }
 
-  :host([variant='clear']) button {
-    --icon-button-size: var(--size-small);
+  :host([variant='clear']) {
+    --icon-button-size: var(--size-tiny);
     box-shadow: var(--shadow);
   }
 
-  :host([size='small']) button {
+  :host([size='small']) {
     --icon-button-size: var(--size-small);
   }
 `

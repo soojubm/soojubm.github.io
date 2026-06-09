@@ -29,7 +29,10 @@ export class ChatChainOfThoughtStep extends LitElement {
         gap: var(--space-2);
         position: relative;
         padding-bottom: var(--space-3);
-        color: var(--color-foreground-disabled, color-mix(in srgb, var(--color-foreground) 35%, transparent));
+        color: var(
+          --color-foreground-disabled,
+          color-mix(in srgb, var(--color-foreground) 35%, transparent)
+        );
       }
 
       :host(:last-child) {
@@ -112,7 +115,7 @@ export class ChatChainOfThoughtStep extends LitElement {
       .content {
         display: flex;
         flex-direction: column;
-        gap: 2px;
+        gap: var(--space-05);
         min-width: 0;
       }
 
@@ -128,7 +131,9 @@ export class ChatChainOfThoughtStep extends LitElement {
       }
 
       @keyframes spin {
-        to { transform: rotate(360deg); }
+        to {
+          transform: rotate(360deg);
+        }
       }
     `,
   ]
@@ -141,8 +146,8 @@ export class ChatChainOfThoughtStep extends LitElement {
             ? html`<mm-icon class="check" name=${this.icon}></mm-icon>`
             : html`<mm-icon class="check" name=${ICON_NAMES.DONE}></mm-icon>`
           : this.status === 'active'
-            ? html`<span class="spinner" role="status" aria-label="진행 중"></span>`
-            : html`<span class="circle"></span>`}
+          ? html`<span class="spinner" role="status" aria-label="진행 중"></span>`
+          : html`<span class="circle"></span>`}
       </span>
       <span class="content">
         <span class="label"><slot></slot></span>
@@ -293,17 +298,30 @@ export class ChatChainOfThought extends LitElement {
       }
 
       @keyframes spin {
-        to { transform: rotate(360deg); }
+        to {
+          transform: rotate(360deg);
+        }
       }
 
       @keyframes pulse {
-        0%, 100% { opacity: 1; }
-        50%       { opacity: 0.5; }
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.5;
+        }
       }
 
       @keyframes fadeIn {
-        from { opacity: 0; transform: translateX(-4px); }
-        to   { opacity: 1; transform: translateX(0); }
+        from {
+          opacity: 0;
+          transform: translateX(-4px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
       }
     `,
   ]

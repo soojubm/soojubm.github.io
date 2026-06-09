@@ -28,6 +28,11 @@ export class Dropdown extends LitElement {
     popoverStyles,
     css`
       .dropdown {
+        --dropdown-offset: var(--space-1);
+        --dropdown-z-index: var(--zindex-loader);
+        --dropdown-min-width: calc(var(--width-small) - var(--space-4) * 5);
+        --dropdown-max-height: var(--width-small);
+
         position: relative;
         width: 100%;
       }
@@ -43,13 +48,13 @@ export class Dropdown extends LitElement {
 
       .dropdown-list {
         position: absolute;
-        top: calc(100% + 4px);
+        top: calc(100% + var(--dropdown-offset));
         left: 0;
         right: 0;
-        z-index: 10;
+        z-index: var(--dropdown-z-index);
 
-        min-width: 120px;
-        max-height: 200px;
+        min-width: var(--dropdown-min-width);
+        max-height: var(--dropdown-max-height);
         overflow-y: auto;
       }
 
@@ -175,7 +180,9 @@ export class Dropdown extends LitElement {
     return html`
       <div
         part="list"
-        class="popover dropdown-list ${this.isOpen ? 'open' : ''} ${this.align === 'right' ? 'align-right' : ''}"
+        class="popover dropdown-list ${this.isOpen ? 'open' : ''} ${this.align === 'right'
+          ? 'align-right'
+          : ''}"
         role="menu"
       >
         ${this.options.map(option => this.renderOption(option))}

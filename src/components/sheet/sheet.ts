@@ -35,142 +35,162 @@ class Sheet extends LitElement {
     if (!e.composedPath().includes(this)) this.close()
   }
 
-  static styles = [popoverStyles, css`
-    :host {
-      display: flex;
-      position: fixed;
-      inset: 0;
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-      background: rgba(0, 0, 0, 0.5);
+  static styles = [
+    popoverStyles,
+    css`
+      :host {
+        --sheet-z-index: var(--zindex-sheet);
+        --sheet-backdrop-color: var(--color-backdrop);
+        --sheet-radius: calc(var(--radius) * 2);
+        --sheet-bottom-offset: var(--space-4);
+        --sheet-bottom-max-width: calc(var(--layout-width-small) + var(--space-4) * 10);
+        --sheet-anchor-width: calc(var(--width-small) + var(--space-4) * 7.5);
+        --sheet-anchor-max-height: calc(var(--width-small) * 2);
+        --sheet-size-small: var(--sheet-anchor-width);
+        --sheet-size-medium: var(--layout-width-tiny);
+        --sheet-size-large: var(--layout-width-small);
+        --sheet-size-full: 100%;
 
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-      transition: opacity 180ms ease, visibility 0s linear 180ms;
-    }
+        display: flex;
+        position: fixed;
+        inset: 0;
+        justify-content: center;
+        align-items: center;
+        z-index: var(--sheet-z-index);
+        background: var(--sheet-backdrop-color);
 
-    :host([open]) {
-      opacity: 1;
-      visibility: visible;
-      pointer-events: auto;
-      transition: opacity 180ms ease, visibility 0s;
-    }
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity 180ms ease, visibility 0s linear 180ms;
+      }
 
-    .sheet {
-      background: var(--color-background);
-      border-radius: 12px;
-      width: 100%;
-      padding: 0 var(--space-4);
-      box-sizing: border-box;
-      max-height: 90vh;
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-      position: relative;
+      :host([open]) {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transition: opacity 180ms ease, visibility 0s;
+      }
 
-      transform: scale(0.96);
-      transition: transform 180ms cubic-bezier(0.2, 0.8, 0.2, 1);
-    }
+      .sheet {
+        background: var(--color-background);
+        border-radius: var(--sheet-radius);
+        width: 100%;
+        padding: 0 var(--space-4);
+        box-sizing: border-box;
+        max-height: 90vh;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        position: relative;
 
-    :host([open]) .sheet {
-      transform: scale(1);
-      transition: transform 220ms cubic-bezier(0.18, 1.25, 0.4, 1);
-    }
+        transform: scale(0.96);
+        transition: transform 180ms cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
 
-    /* bottom */
-    :host([type='bottom']) .sheet {
-      margin-top: auto;
-      margin-bottom: 1rem;
-      max-width: 800px;
-      border-bottom-left-radius: 12px;
-      border-bottom-right-radius: 12px;
-      transform: translateY(100%);
-    }
+      :host([open]) .sheet {
+        transform: scale(1);
+        transition: transform 220ms cubic-bezier(0.18, 1.25, 0.4, 1);
+      }
 
-    :host([open][type='bottom']) .sheet {
-      transform: translateY(0);
-    }
+      /* bottom */
+      :host([type='bottom']) .sheet {
+        margin-top: auto;
+        margin-bottom: var(--sheet-bottom-offset);
+        max-width: var(--sheet-bottom-max-width);
+        border-bottom-left-radius: var(--sheet-radius);
+        border-bottom-right-radius: var(--sheet-radius);
+        transform: translateY(100%);
+      }
 
-    /* left */
-    :host([type='left']) .sheet {
-      margin-right: auto;
-      max-width: 90vw;
-      height: 100%;
-      max-height: 100vh;
-      border-top-right-radius: 0;
-      border-bottom-right-radius: 0;
-      transform: translateX(-100%);
-    }
+      :host([open][type='bottom']) .sheet {
+        transform: translateY(0);
+      }
 
-    :host([open][type='left']) .sheet {
-      transform: translateX(0);
-    }
+      /* left */
+      :host([type='left']) .sheet {
+        margin-right: auto;
+        max-width: 90vw;
+        height: 100%;
+        max-height: 100vh;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        transform: translateX(-100%);
+      }
 
-    /* right */
-    :host([type='right']) .sheet {
-      margin-left: auto;
-      max-width: 90vw;
-      height: 100%;
-      max-height: 100vh;
-      border-top-left-radius: 0;
-      border-bottom-left-radius: 0;
-      transform: translateX(100%);
-    }
+      :host([open][type='left']) .sheet {
+        transform: translateX(0);
+      }
 
-    :host([open][type='right']) .sheet {
-      transform: translateX(0);
-    }
+      /* right */
+      :host([type='right']) .sheet {
+        margin-left: auto;
+        max-width: 90vw;
+        height: 100%;
+        max-height: 100vh;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        transform: translateX(100%);
+      }
 
-    /* anchor — popoverStyles 공유, :host 애니메이션은 .sheet.popover가 담당 */
-    :host([type='anchor']) {
-      position: fixed;
-      inset: auto; /* base의 inset: 0 리셋 — JS가 top/left를 주입 */
-      background: transparent;
-      width: auto;
-      height: auto;
-      opacity: 1;
-      visibility: visible;
-      pointer-events: auto;
-    }
+      :host([open][type='right']) .sheet {
+        transform: translateX(0);
+      }
 
-    :host([type='anchor']) .sheet {
-      width: 320px;
-      max-height: 400px;
-    }
+      /* anchor — popoverStyles 공유, :host 애니메이션은 .sheet.popover가 담당 */
+      :host([type='anchor']) {
+        position: fixed;
+        inset: auto; /* base의 inset: 0 리셋 — JS가 top/left를 주입 */
+        background: transparent;
+        width: auto;
+        height: auto;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+      }
 
-    /* inline */
-    :host([type='inline']) {
-      position: relative;
-      inset: auto; /* base의 inset: 0 리셋 */
-      background: transparent;
-    }
+      :host([type='anchor']) .sheet {
+        width: var(--sheet-anchor-width);
+        max-height: var(--sheet-anchor-max-height);
+      }
 
-    :host([type='inline']) .sheet {
-      transform: translateY(-4px);
-    }
+      /* inline */
+      :host([type='inline']) {
+        position: relative;
+        inset: auto; /* base의 inset: 0 리셋 */
+        background: transparent;
+      }
 
-    :host([open][type='inline']) .sheet {
-      transform: translateY(0);
-    }
-  `]
+      :host([type='inline']) .sheet {
+        transform: translateY(var(--space-1-minus));
+      }
+
+      :host([open][type='inline']) .sheet {
+        transform: translateY(0);
+      }
+    `,
+  ]
 
   render() {
     const maxWidth =
       this.type === 'center'
-        ? { small: '320px', medium: '480px', large: '640px', full: '100%' }[this.size] || '480px'
+        ? {
+            small: 'var(--sheet-size-small)',
+            medium: 'var(--sheet-size-medium)',
+            large: 'var(--sheet-size-large)',
+            full: 'var(--sheet-size-full)',
+          }[this.size] || 'var(--sheet-size-medium)'
         : this.type === 'left' || this.type === 'right'
-          ? '90vw'
-          : '100%'
+        ? '90vw'
+        : '100%'
     const heightStyle = this.height ? `height:${this.height};` : ''
     const isAnchor = this.type === 'anchor'
-    const cls = [
-      'sheet',
-      isAnchor && 'popover',
-      isAnchor && this.isOpen && 'open',
-    ].filter(Boolean).join(' ')
-    return html`<aside class="${cls}" style="max-width:${maxWidth};${heightStyle}"><slot></slot></aside>`
+    const cls = ['sheet', isAnchor && 'popover', isAnchor && this.isOpen && 'open']
+      .filter(Boolean)
+      .join(' ')
+    return html`<aside class="${cls}" style="max-width:${maxWidth};${heightStyle}">
+      <slot></slot>
+    </aside>`
   }
 
   open() {

@@ -11,8 +11,8 @@ export class Page extends LitElement {
   static styles = css`
     :host {
       display: block;
-      min-height: calc(100vh - var(--navbar-height) - 200px);
-      padding: var(--space-4) var(--grid-margin) 6rem;
+      min-height: calc(100vh - var(--navbar-height) - var(--width-small));
+      padding: var(--space-4) var(--grid-margin) calc(var(--space-4) * 6);
       position: relative;
     }
 
@@ -22,16 +22,16 @@ export class Page extends LitElement {
     }
 
     :host([width='medium']) {
-      max-width: var(--layout-width-medium);
+      max-width: calc(var(--layout-width-small) + var(--space-4) * 10);
       box-sizing: content-box;
     }
 
     :host([layout='chat']) {
       display: flex;
       flex-direction: column;
-      max-width: 800px;
+      max-width: calc(var(--layout-width-small) + var(--space-4) * 10);
       margin: 0 auto;
-      height: calc(100vh - var(--navbar-height, 56px));
+      height: calc(100vh - var(--navbar-height));
       padding: 0;
       overflow: hidden;
     }

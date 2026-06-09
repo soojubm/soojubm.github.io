@@ -11,10 +11,10 @@ export const buttonStyles = css`
     --button-text-color: var(--color-foreground);
     --button-text-size: inherit;
     --button-text-weight: var(--font-weight-bold);
-    --button-color-focus: #007185;
-    --button-color-active-bg: #f0b800;
-    --button-color-active-border: #008296;
-    --button-color-active-ring: #c8f3fa;
+    --button-color-focus: var(--color-interaction-focus);
+    --button-color-active-bg: var(--color-interaction-active-background);
+    --button-color-active-border: var(--color-interaction-active-border);
+    --button-color-active-ring: var(--color-interaction-active-ring);
   }
 
   :host([isfullwidth]) button {
@@ -22,12 +22,12 @@ export const buttonStyles = css`
   }
 
   :host([variant='primary']) button {
-    --button-border-color: 1px solid transparent;
+    --button-border-color: var(--border-transparent);
     background-color: var(--color-primary);
-    --button-text-color: #fff;
+    --button-text-color: var(--color-foreground-on-solid);
   }
   :host([variant='secondary']) button {
-    --button-border-color: 1px solid transparent;
+    --button-border-color: var(--border-transparent);
     --button-color: var(--green100);
     --button-text-color: var(--color-primary);
   }
@@ -35,7 +35,7 @@ export const buttonStyles = css`
     --button-text-color: var(--color-foreground);
   }
   :host([variant='text']) button {
-    --button-border-color: 1px solid transparent;
+    --button-border-color: var(--border-transparent);
     --button-color: var(--color-background);
     --button-text-color: var(--color-primary);
   }
@@ -62,7 +62,8 @@ export const buttonStyles = css`
 
   /* TODO filter-button으로 이동 */
   :host([aria-checked='true']) button {
-    border: 1px solid var(--button-checked-border-color, var(--color-background-strong));
+    border: var(--border-width) solid
+      var(--button-checked-border-color, var(--color-background-strong));
     background: var(--button-checked-color, var(--button-color));
     color: var(--button-checked-text-color, var(--button-text-color));
   }
@@ -107,7 +108,8 @@ export const buttonStyles = css`
     &:enabled:active {
       background: var(--button-color-active-bg);
       border-color: var(--button-color-active-border);
-      box-shadow: 0 0 0 3px var(--button-color-active-ring), inset 0 0 0 2px #fff;
+      box-shadow: 0 0 0 3px var(--button-color-active-ring),
+        inset 0 0 0 2px var(--color-foreground-on-solid);
     }
   }
 `

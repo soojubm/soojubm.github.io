@@ -64,7 +64,7 @@ export class ToggleButtonGroup extends LitElement {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
+      gap: var(--space-2);
 
       min-height: var(--toggle-size);
       padding: 0 var(--toggle-padding-inline);

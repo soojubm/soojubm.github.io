@@ -130,6 +130,11 @@
   --color-border-strong: var(--gray300);
   --color-border-hover: var(--gray800);
 
+  --color-interaction-focus: #007185;
+  --color-interaction-active-background: #f0b800;
+  --color-interaction-active-border: #008296;
+  --color-interaction-active-ring: #c8f3fa;
+
   --color-foreground: var(--gray900);
   --color-foreground-light: var(--gray400);
   /* --color-goreground-muted: var(--placeholder-disabled); */
@@ -166,6 +171,7 @@
   --border-width: 1px;
   --border: var(--border-width) solid var(--color-border);
   --border-stronger: var(--border-width) solid var(--color-border-strong);
+  --border-transparent: var(--border-width) solid transparent;
   --border-active: 1px solid var(--color-primary);
   --border-thin: null;
 
@@ -228,6 +234,9 @@
   --zindex-bottombar: 8;
   --zindex-loader: 10;
   --zindex-sheet: 7;
+  --zindex-backdrop: 6;
+
+  --color-backdrop: rgba(0, 0, 0, 0.1);
 
   --safearea-inset-bottom1: constant(safe-area-inset-bottom);
   --safearea-inset-bottom2: env(safe-area-inset-bottom);

@@ -32,7 +32,10 @@ export class ChatReasoningStep extends LitElement {
         padding-bottom: var(--space-3);
         font-size: var(--font-size-13, var(--font-size-14));
         line-height: var(--line-height-14);
-        color: var(--color-foreground-disabled, color-mix(in srgb, var(--color-foreground) 35%, transparent));
+        color: var(
+          --color-foreground-disabled,
+          color-mix(in srgb, var(--color-foreground) 35%, transparent)
+        );
       }
 
       :host(:last-child) {
@@ -104,7 +107,7 @@ export class ChatReasoningStep extends LitElement {
       .content {
         display: flex;
         flex-direction: column;
-        gap: var(--space-half, 2px);
+        gap: var(--space-05);
         min-width: 0;
       }
 
@@ -127,7 +130,8 @@ export class ChatReasoningStep extends LitElement {
         0% {
           box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-primary) 50%, transparent);
         }
-        70%, 100% {
+        70%,
+        100% {
           box-shadow: 0 0 0 6px transparent;
         }
       }
@@ -144,8 +148,8 @@ export class ChatReasoningStep extends LitElement {
         ${showCheck
           ? html`<mm-icon class="check" name=${ICON_NAMES.DONE}></mm-icon>`
           : showCustomIcon
-            ? html`<mm-icon class="check" name=${this.icon}></mm-icon>`
-            : html`<span class="dot"></span>`}
+          ? html`<mm-icon class="check" name=${this.icon}></mm-icon>`
+          : html`<span class="dot"></span>`}
       </span>
       <span class="content">
         <span class="label"><slot></slot></span>

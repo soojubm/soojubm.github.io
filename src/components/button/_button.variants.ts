@@ -9,12 +9,12 @@ import { unsafeCSS, type CSSResult } from 'lit'
  */
 export const buttonVariants = {
   primary: {
-    '--button-border-color': '1px solid transparent',
+    '--button-border-color': 'var(--border-transparent)',
     'background-color': 'var(--color-primary)',
-    '--button-text-color': '#fff',
+    '--button-text-color': 'var(--color-foreground-on-solid)',
   },
   secondary: {
-    '--button-border-color': '1px solid transparent',
+    '--button-border-color': 'var(--border-transparent)',
     '--button-color': 'var(--green100)',
     '--button-text-color': 'var(--color-primary)',
   },
@@ -22,7 +22,7 @@ export const buttonVariants = {
     '--button-text-color': 'var(--color-foreground)',
   },
   text: {
-    '--button-border-color': '1px solid transparent',
+    '--button-border-color': 'var(--border-transparent)',
     '--button-color': 'var(--color-background)',
     '--button-text-color': 'var(--color-primary)',
   },

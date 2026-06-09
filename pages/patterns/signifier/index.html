@@ -148,8 +148,8 @@ Availability state: enabled / disabled / loading -->
     </mm-paragraph-group>
 
     <mm-flex direction="column" gap="3">
-      <mm-avatar size="huge" icon="mouse-button-left"> </mm-avatar>
-      <mm-text size="24" weight="bold" as="h3">Clickable signifier</mm-text>
+      <mm-avatar variant="tertiary" size="large" icon="mouse-button-left"> </mm-avatar>
+      <mm-text size="24" weight="bold" as="h3">Clickable signifiers</mm-text>
       <mm-paragraph>
         사용자가 특정 요소를 누르거나 이동할 수 있음을 학습하여 신뢰를 구축합니다.
       </mm-paragraph>
@@ -184,10 +184,8 @@ Availability state: enabled / disabled / loading -->
     <mm-flex direction="column" gap="3">
       <mm-text size="24" weight="bold" as="h3">Interaction States</mm-text>
       <mm-paragraph>
-        Interaction states는 사용자가 요소와 상호작용하는 과정에서 현재 상태를 이해하도록 돕는
-        시각적 단서입니다. Interaction states communicate the status of an element in the interface,
-        establish confidence once an action is taken, and suggest the ability (or inability) to
-        interact with the element.
+        시각적 단서입니다. 작업이 수행된 후 신뢰도를 확립하며, 해당 요소와 상호 작용할 수 있는지
+        여부를 나타냅니다.
       </mm-paragraph>
 
       <style>
@@ -224,14 +222,15 @@ Availability state: enabled / disabled / loading -->
         }
 
         .demo-btn.is-focus {
-          outline: 3px solid #007185;
+          outline: 3px solid var(--color-interaction-focus);
           outline-offset: 2px;
         }
 
         .demo-btn.is-active {
-          background: #f0b800;
-          border-color: #008296;
-          box-shadow: 0 0 0 3px #c8f3fa, inset 0 0 0 2px #fff;
+          background: var(--color-interaction-active-background);
+          border-color: var(--color-interaction-active-border);
+          box-shadow: 0 0 0 3px var(--color-interaction-active-ring),
+            inset 0 0 0 2px var(--color-foreground-on-solid);
         }
 
         .demo-btn.is-disabled {
@@ -244,7 +243,7 @@ Availability state: enabled / disabled / loading -->
           font-size: inherit;
           color: var(--color-foreground);
           text-decoration: none;
-          border-bottom: 1px solid transparent;
+          border-bottom: var(--border-transparent);
           padding-bottom: 1px;
         }
 
@@ -255,7 +254,7 @@ Availability state: enabled / disabled / loading -->
         }
 
         .demo-link.is-focus {
-          outline: 3px solid #007185;
+          outline: 3px solid var(--color-interaction-focus);
           outline-offset: 2px;
           border-radius: 2px;
         }
@@ -267,7 +266,7 @@ Availability state: enabled / disabled / loading -->
         }
       </style>
 
-      <mm-flex direction="column" gap="2">
+      <mm-flex direction="column" gap="3">
         <mm-filter-button-group id="interaction-state-picker" mode="single">
           <mm-filter-button value="default" selected>Default</mm-filter-button>
           <mm-filter-button value="hover">Hover</mm-filter-button>
@@ -278,7 +277,7 @@ Availability state: enabled / disabled / loading -->
         </mm-filter-button-group>
         <mm-list-row
           id="interaction-state-desc"
-          icon="cursor"
+          icon="cursor-pointer"
           avatar-size="large"
           label="Default"
           description="아무런 상호작용이 없는 기본 상태입니다."
@@ -453,6 +452,12 @@ Availability state: enabled / disabled / loading -->
             description="목록에 필터를 적용합니다."
           ></mm-list-row>
           <mm-list-row
+            icon="plus"
+            avatar-size="large"
+            label="Increase"
+            description="값이나 수량을 증가시킵니다."
+          ></mm-list-row>
+          <mm-list-row
             icon="import"
             avatar-size="large"
             label="Import"
@@ -469,6 +474,12 @@ Availability state: enabled / disabled / loading -->
             avatar-size="large"
             label="More Actions"
             description="추가 액션 메뉴를 표시합니다."
+          ></mm-list-row>
+          <mm-list-row
+            icon="minus"
+            avatar-size="large"
+            label="Decrease"
+            description="값이나 수량을 감소시킵니다."
           ></mm-list-row>
           <mm-list-row
             icon="refresh"
@@ -757,7 +768,7 @@ Availability state: enabled / disabled / loading -->
         컨트롤을 연결합니다.
       </mm-paragraph>
 
-      <mm-grid columns="1">
+      <mm-flex direction="column" gap="3">
         <mm-list-row
           icon="check-circle"
           avatar-size="large"
@@ -766,18 +777,14 @@ Availability state: enabled / disabled / loading -->
         >
         </mm-list-row>
         <mm-token-group>
+          <mm-token-item color="var(--color-success)" key="color-success"></mm-token-item>
           <mm-token-item
-            label="--color-success"
-            style="border: 0; background: var(--color-success)"
-            class="token-swatch-light"
+            color="var(--color-success-subtle)"
+            key="color-success-subtle"
           ></mm-token-item>
           <mm-token-item
-            label="--color-success-border"
-            style="border-color: var(--color-success-border)"
-          ></mm-token-item>
-          <mm-token-item
-            label="--color-success-subtle"
-            style="background: var(--color-success-subtle)"
+            color="var(--color-success-border)"
+            key="color-success-border"
           ></mm-token-item>
         </mm-token-group>
 
@@ -794,56 +801,40 @@ Availability state: enabled / disabled / loading -->
           description="진행 전에 사용자의 주의가 필요한 상태입니다."
         ></mm-list-row>
         <mm-token-group>
+          <mm-token-item color="var(--color-warning)" key="color-warning"></mm-token-item>
           <mm-token-item
-            label="--color-warning"
-            style="border: 0; background: var(--color-warning)"
+            color="var(--color-warning-subtle)"
+            key="color-warning-subtle"
           ></mm-token-item>
-          <mm-token-item
-            label="--color-warning-border"
-            style="border-color: var(--color-warning-border)"
-          ></mm-token-item>
-          <mm-token-item
-            label="--color-warning-subtle"
-            style="background: var(--color-warning-subtle)"
-          ></mm-token-item>
+          <mm-token-item key="color-warning-border"></mm-token-item>
         </mm-token-group>
 
         <mm-list-row
-          icon="alert-circle"
+          icon="xmark-circle"
           avatar-size="large"
           label="Error"
           description="오류, 실패, 수정이 필요한 상태를 나타냅니다."
         ></mm-list-row>
         <mm-token-group>
+          <mm-token-item color="var(--color-danger)" key="color-danger"></mm-token-item>
           <mm-token-item
-            label="--color-danger"
-            style="border: 0; background: var(--color-danger)"
-            class="token-swatch-light"
+            color="var(--color-danger-subtle)"
+            key="color-danger-subtle"
           ></mm-token-item>
-          <mm-token-item
-            label="--color-danger-border"
-            style="border-color: var(--color-danger-border)"
-          ></mm-token-item>
-          <mm-token-item
-            label="--color-danger-subtle"
-            style="background: var(--color-danger-subtle)"
-          ></mm-token-item>
+          <mm-token-item key="color-danger-border"></mm-token-item>
         </mm-token-group>
-
-        <div style="margin-top: 1.5rem">
-          <mm-meta-item
-            label="Global Error"
-            value="인터넷연결오류: toast + callout (blocking / detour)"
-          />
-
-          <mm-meta-item
-            label="Local Error"
-            value="reload - refresh - redirect / result 컴포넌트 / inline error, callout error"
-          />
-        </div>
-
+        <mm-meta-item
+          layout="inline"
+          label="Global Error"
+          value="인터넷연결오류: toast + callout (blocking / detour)"
+        ></mm-meta-item>
+        <mm-meta-item
+          layout="inline"
+          label="Local Error"
+          value="reload - refresh - redirect / result 컴포넌트 / inline error, callout error"
+        ></mm-meta-item>
         <mm-list-row
-          icon="info-empty"
+          icon="glass-empty"
           avatar-size="large"
           label="Empty"
           description="데이터나 결과가 없는 상태를 설명합니다."
@@ -854,7 +845,7 @@ Availability state: enabled / disabled / loading -->
           label="Progress"
           description="작업이 진행 중이며 결과를 기다리는 상태입니다."
         ></mm-list-row>
-      </mm-grid>
+      </mm-flex>
 
       <div>
         <mm-text size="14">
@@ -866,9 +857,7 @@ Availability state: enabled / disabled / loading -->
     </mm-flex>
 
     <mm-flex direction="column" gap="3">
-      <mm-text size="24" weight="bold" as="h3"
-        >Structure &amp; Grouping ///// Layout and structure</mm-text
-      >
+      <mm-text size="24" weight="bold" as="h3">Structure &amp; Grouping</mm-text>
       <mm-paragraph>
         Layout 자체를 정의하기보다, 공간과 구조가 의미를 전달하는 경우를 다룹니다. 같은 영역에
         배치된 요소는 같은 개체나 맥락에 속한다는 신호가 될 수 있고, 구분선은 서로 다른 항목의
@@ -929,7 +918,7 @@ Availability state: enabled / disabled / loading -->
           --layout-max-width: 1200px;
           --layout-side-padding: calc((100vw - var(--layout-max-width)) / 2);
           --item-min-width: 240px;
-          --item-gap: 20px;
+          --item-gap: calc(var(--space-4) + var(--space-1));
         }
 
         .scroll-outer {
@@ -965,7 +954,7 @@ Availability state: enabled / disabled / loading -->
           :root {
             --layout-side-padding: 16px;
             --item-min-width: 200px;
-            --item-gap: 16px;
+            --item-gap: var(--space-4);
           }
         }
 
@@ -973,7 +962,7 @@ Availability state: enabled / disabled / loading -->
           :root {
             --layout-side-padding: 12px;
             --item-min-width: 180px;
-            --item-gap: 12px;
+            --item-gap: var(--space-3);
           }
 
           .item {

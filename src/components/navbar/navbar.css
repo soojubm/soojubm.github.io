@@ -20,17 +20,16 @@
 .navbar-logo {
   width: var(--size-medium);
   height: var(--size-medium);
-  box-shadow: 0 0 3px var(--yellow800);
+  box-shadow: 0 0 var(--space-1) var(--yellow800);
   background: url('/src/images/soojubm.png') no-repeat 64% 60%;
   background-size: 80%;
   background-color: var(--color-background-strong) !important;
-  border-radius: 50%;
+  border-radius: var(--radius-round);
 }
 
 .navbar-backdrop {
   height: var(--navbar-height);
 }
-
 
 .navbar-user {
   display: flex;
@@ -48,9 +47,9 @@
   /* width: calc(var(--layout-width-wide) - var(--width-sidemenu) - var(--grid-margin)); */
   /* margin: 0 auto; */
 
-  min-height: calc(100vh - var(--navbar-height) - 200px);
-  padding: var(--space-4) var(--grid-margin) 6rem;
-  /* padding: var(--space-4) 0 6rem; */
+  min-height: calc(100vh - var(--navbar-height) - var(--width-small));
+  padding: var(--space-4) var(--grid-margin) calc(var(--space-4) * 6);
+  /* padding: var(--space-4) 0 calc(var(--space-4) * 6); */
   /* padding-left: calc(var(--width-sidemenu) + var(--grid-margin)); */
   position: relative;
 }
@@ -58,7 +57,7 @@
 /* fluid or with sidemenu */
 .page[data-size='fluid'] {
   max-width: 100%;
-  padding: 0 0 8rem;
+  padding: 0 0 calc(var(--space-4) * 8);
 }
 
 /* 2. navbar with sidebar fluid layout */
@@ -80,7 +79,7 @@
   width: 100%;
   height: calc(100vh - var(--navbar-height) - var(--space-4) - var(--space-4));
   max-width: var(--width-sidemenu);
-  gap: 0.5rem;
+  gap: var(--space-2);
   padding: var(--space-4) var(--space-3) var(--space-4) calc(var(--grid-margin));
   background: var(--color-background);
 
@@ -101,16 +100,16 @@
   z-index: var(--zindex-menu);
 
   &::-webkit-scrollbar {
-    width: 0.5rem;
+    width: var(--space-2);
     height: auto;
-    padding: 0.125rem;
+    padding: var(--space-05);
     opacity: 0;
   }
   &::-webkit-scrollbar-track {
     background: inherit;
   }
   &::-webkit-scrollbar-thumb {
-    margin: 0.125rem;
+    margin: var(--space-05);
     background: var(--color-background);
     border-radius: var(--radius);
   }
@@ -144,7 +143,7 @@
 .sidebar-menu > div button {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: var(--space-2);
   margin-bottom: var(--space-1);
 }
 .sidebar-menu > div button + menu {
@@ -160,8 +159,8 @@
   display: flex;
   align-items: center;
   height: var(--size-medium);
-  margin: 0 0 0 1rem;
-  padding: 0 0 0 1.5rem;
+  margin: 0 0 0 var(--space-4);
+  padding: 0 0 0 calc(var(--space-4) + var(--space-2));
   border-left: var(--border);
   /* font-size:var(--font-size-12); */
   color: var(--color-foreground);
@@ -193,24 +192,24 @@
 .navbar-search-container mm-sheet {
   display: block;
   width: 100%;
-  max-width: 640px;
+  max-width: var(--layout-width-small);
   pointer-events: none;
-  border-radius: 12px;
+  border-radius: calc(var(--radius) * 2);
   overflow: hidden;
 }
 
 .navbar-search-container mm-sheet[open] {
   pointer-events: auto;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--shadow);
 }
 
 .navbar-user-trigger + * {
   width: 100%;
-  min-width: 320px;
-  max-width: 320px;
+  min-width: calc(var(--width-small) + var(--space-4) * 7.5);
+  max-width: calc(var(--width-small) + var(--space-4) * 7.5);
   position: absolute;
   right: 0;
-  top: 40px;
+  top: calc(var(--space-4) * 2.5);
 }
 .navbar-user-trigger.is-active + * {
   display: block;
@@ -223,12 +222,14 @@
 }
 .is-menu-opened .page,
 .is-menu-opened .footer {
-  padding-left: calc(var(--width-sidemenu) + var(--grid-margin) + var(--grid-margin) + 1rem);
+  padding-left: calc(
+    var(--width-sidemenu) + var(--grid-margin) + var(--grid-margin) + var(--space-4)
+  );
   /* transform: translateX(calc(var(--grid-margin) + var(--width-sidemenu))); */
 }
 
 /* --small */
-@media (max-width: 1080px) {
+@media (--small) {
   .is-menu-opened .page {
     padding-left: var(--grid-margin);
   }
