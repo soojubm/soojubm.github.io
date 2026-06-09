@@ -3,6 +3,8 @@ import { customElement, state } from 'lit/decorators.js'
 import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
 import { resetStyles } from '../../../stylesheets/shared/reset.styles'
 import '../indicators/selection-indicator'
+import '../../icon-button/icon-button'
+import '../../button/button-group'
 
 interface TocItem {
   id: string
@@ -82,34 +84,6 @@ export class TableOfContents extends LitElement {
         border-top: var(--border);
       }
 
-      .share-actions {
-        display: flex;
-        gap: var(--space-1);
-      }
-
-      .share-action {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: var(--size-small);
-        height: var(--size-small);
-        padding: 0;
-        border: var(--border);
-        border-radius: var(--radius);
-        background: var(--color-background-subtle);
-        color: var(--color-foreground);
-        text-decoration: none;
-        cursor: pointer;
-      }
-
-      .share-action:hover {
-        border-color: var(--color-border-hover);
-      }
-
-      .share-action:focus-visible {
-        outline: var(--status-focus);
-        outline-offset: var(--space-05);
-      }
     `,
   ]
 
@@ -277,29 +251,24 @@ export class TableOfContents extends LitElement {
           aria-hidden="true"
           >Share on</mm-text
         >
-        <div class="share-actions">
+        <mm-button-group>
           ${this.shareLinks.map(
             ({ href, icon, label }) => html`
-              <a
-                class="share-action"
-                href=${href}
-                target="_blank"
-                rel="noopener noreferrer"
+              <mm-icon-button
+                icon=${icon}
+                variant="action"
                 aria-label=${label}
-              >
-                <mm-icon name=${icon}></mm-icon>
-              </a>
+                @click=${() => window.open(href, '_blank', 'noopener,noreferrer')}
+              ></mm-icon-button>
             `,
           )}
-          <button
-            class="share-action"
-            type="button"
+          <mm-icon-button
+            icon=${this.copied ? ICON_NAMES.COPY_SUCCESS : ICON_NAMES.LINK}
+            variant="action"
             aria-label=${this.copied ? 'Copied link' : 'Copy link'}
             @click=${this.copyShareUrl}
-          >
-            <mm-icon name=${this.copied ? ICON_NAMES.COPY_SUCCESS : ICON_NAMES.LINK}></mm-icon>
-          </button>
-        </div>
+          ></mm-icon-button>
+        </mm-button-group>
       </section>
     `
   }
