@@ -30,7 +30,6 @@ export class TableOfContents extends LitElement {
         max-height: calc(100vh - var(--size-huge));
         overflow-y: auto;
         padding: var(--space-4) 0 var(--space-4) var(--space-4);
-        box-sizing: border-box;
       }
 
       .toc-title {

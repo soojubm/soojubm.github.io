@@ -20,7 +20,6 @@ export class Paragraph extends LitElement {
         font-size: var(--font-size-14);
         line-height: var(--font-line-height-24);
         font-weight: var(--font-weight-medium);
-        color: inherit;
       }
 
       :host([size='small']) { font-size: var(--font-size-12); line-height: var(--font-line-height-16); }

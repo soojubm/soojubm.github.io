@@ -24,7 +24,6 @@ export class TokenItem extends LitElement {
         border: var(--border);
         border-radius: var(--radius);
         background: var(--color-background);
-        box-sizing: border-box;
       }
 
       figure {

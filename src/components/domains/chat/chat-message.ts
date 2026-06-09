@@ -3,6 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 import { resetStyles } from '../../../stylesheets/shared/reset.styles'
 import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
 import '../../icon-button/icon-button'
+import '../../button/button-group'
 
 @customElement('mm-chat-message')
 export class ChatMessage extends LitElement {
@@ -18,20 +19,13 @@ export class ChatMessage extends LitElement {
         display: flex;
         flex-direction: column;
         gap: var(--space-2);
-        position: relative;
-        box-sizing: border-box;
       }
 
       :host([mine]) {
         align-items: flex-end;
       }
 
-      .reactions {
-        display: flex;
-        gap: var(--space-1);
-      }
-
-      :host([mine]) .reactions {
+      :host([mine]) mm-button-group {
         display: none;
       }
     `,
@@ -52,7 +46,7 @@ export class ChatMessage extends LitElement {
       <slot></slot>
       ${!this.mine && !this.noReactions
         ? html`
-            <div class="reactions">
+            <mm-button-group>
               <mm-icon-button
                 size="small"
                 variant="plain"
@@ -74,7 +68,7 @@ export class ChatMessage extends LitElement {
                 aria-label="싫어요"
                 @click=${() => this._emitReaction('dislike')}
               ></mm-icon-button>
-            </div>
+            </mm-button-group>
           `
         : nothing}
     `

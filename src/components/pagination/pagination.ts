@@ -22,7 +22,7 @@ export class Pagination extends LitElement {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: var(--space-1);
+      gap: var(--space-2);
       margin: var(--space-4) 0;
     }
 
