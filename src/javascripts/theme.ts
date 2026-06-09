@@ -1,15 +1,26 @@
-import { DEFAULT_THEME, THEME_STORAGE_KEY, THEMES, type Theme } from './const'
+import { ICON_NAMES } from '../components/icon-button/semantics/icon-names'
 
-export function isTheme(value: string | null): value is Theme {
+export type Theme = 'light' | 'dark' | 'brutal'
+
+export const THEMES: { value: Theme; icon: string; label: string }[] = [
+  { value: 'light', icon: ICON_NAMES.LIGHT_MODE, label: 'Day' },
+  { value: 'dark', icon: ICON_NAMES.DARK_MODE, label: 'Night' },
+  { value: 'brutal', icon: ICON_NAMES.THEME, label: 'Brutal' },
+]
+
+const THEME_STORAGE_KEY = 'theme'
+const DEFAULT_THEME: Theme = 'light'
+
+function isTheme(value: string | null): value is Theme {
   return THEMES.some(theme => theme.value === value)
 }
 
-export function getStoredTheme(): Theme | null {
+function getStoredTheme(): Theme | null {
   const theme = localStorage.getItem(THEME_STORAGE_KEY)
   return isTheme(theme) ? theme : null
 }
 
-export function getSystemTheme(): Theme {
+function getSystemTheme(): Theme {
   return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : DEFAULT_THEME
 }
 
