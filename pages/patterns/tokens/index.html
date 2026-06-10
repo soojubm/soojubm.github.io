@@ -577,7 +577,8 @@
           "space-1: .25rem — 인접 요소 간 밀착 간격",
           "space-2: .5rem — 기본 인라인 간격",
           "space-3: .75rem — 그룹 내 요소 간격",
-          "space-4: 1rem — 섹션 내부 여백"
+          "space-4: 1rem — 섹션 내부 여백",
+          "space-16: 64px — 큰 섹션 간격"
         ]'
       >
         <div style="display: flex; align-items: center; gap: 2rem; padding-top: 1.5rem">
@@ -711,6 +712,32 @@
               ></div>
             </div>
           </div>
+          <div
+            style="display: flex; flex-direction: column; align-items: center; gap: var(--space-2)"
+          >
+            <mm-list-marker variant="number" value="6"></mm-list-marker>
+            <div style="display: flex; align-items: center">
+              <div
+                style="
+                  width: 2px;
+                  height: var(--size-medium);
+                  background: var(--color-background-strong);
+                  border-radius: var(--radius);
+                "
+              ></div>
+              <div
+                style="width: var(--space-16); height: 4px; background: var(--color-primary)"
+              ></div>
+              <div
+                style="
+                  width: 2px;
+                  height: var(--size-medium);
+                  background: var(--color-background-strong);
+                  border-radius: var(--radius);
+                "
+              ></div>
+            </div>
+          </div>
         </div>
       </mm-token-stage>
       <mm-token-group>
@@ -719,6 +746,8 @@
         <mm-token-item key="space-2" value=".5rem"></mm-token-item>
         <mm-token-item key="space-3" value=".75rem"></mm-token-item>
         <mm-token-item key="space-4" value="1rem"></mm-token-item>
+        <mm-token-item key="space-16" value="64px"></mm-token-item>
+        <mm-token-item key="space-section" value="var(--space-16)"></mm-token-item>
         <mm-token-item key="space-1-minus" value="calc(var(--space-1) * -1)"></mm-token-item>
         <mm-token-item key="space-2-minus" value="calc(var(--space-2) * -1)"></mm-token-item>
         <mm-token-item key="space-3-minus" value="calc(var(--space-3) * -1)"></mm-token-item>
