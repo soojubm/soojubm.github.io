@@ -27,6 +27,25 @@ export const noticeStyles = css`
     border-radius: var(--notice-radius);
     background: var(--notice-bg);
     color: var(--notice-color);
+
+    &[data-variant='success'] {
+      --notice-accent: var(--color-success);
+      --notice-color: var(--color-success);
+      --notice-bg: var(--color-success-subtle);
+      --notice-border-color: var(--color-success-border);
+    }
+    &[data-variant='warning'] {
+      --notice-accent: var(--color-warning);
+      --notice-color: var(--color-warning);
+      --notice-bg: var(--color-warning-subtle);
+      --notice-border-color: var(--color-warning-border);
+    }
+    &[data-variant='danger'] {
+      --notice-accent: var(--color-danger);
+      --notice-color: var(--color-danger);
+      --notice-bg: var(--color-danger-subtle);
+      --notice-border-color: var(--color-danger-border);
+    }
   }
 
   .notice-icon {
@@ -42,26 +61,5 @@ export const noticeStyles = css`
   .notice-dismiss {
     margin-left: auto;
     flex-shrink: 0;
-  }
-
-  .notice[data-variant='success'] {
-    --notice-accent: var(--color-success);
-    --notice-color: var(--color-success);
-    --notice-bg: var(--color-success-subtle);
-    --notice-border-color: var(--color-success-border);
-  }
-
-  .notice[data-variant='warning'] {
-    --notice-accent: var(--color-warning);
-    --notice-color: var(--color-warning);
-    --notice-bg: var(--color-warning-subtle);
-    --notice-border-color: var(--color-warning-border);
-  }
-
-  .notice[data-variant='danger'] {
-    --notice-accent: var(--color-danger);
-    --notice-color: var(--color-danger);
-    --notice-bg: var(--color-danger-subtle);
-    --notice-border-color: var(--color-danger-border);
   }
 `

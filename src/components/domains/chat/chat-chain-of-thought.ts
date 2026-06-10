@@ -37,30 +37,27 @@ export class ChatChainOfThoughtStep extends LitElement {
 
       :host(:last-child) {
         padding-bottom: 0;
-      }
 
-      /* 연결선 */
-      .marker::after {
-        content: '';
-        position: absolute;
-        left: calc(0.625rem - 1px);
-        top: 1.25rem;
-        bottom: 0;
-        width: 2px;
-        background: var(--color-border);
-        transition: background 200ms ease;
+        & .marker::after { display: none; }
       }
 
       :host([status='complete']) .marker::after {
         background: color-mix(in srgb, var(--color-success) 40%, var(--color-border));
       }
 
-      :host(:last-child) .marker::after {
-        display: none;
-      }
-
       /* 마커 영역 */
       .marker {
+        /* 연결선 */
+        &::after {
+          content: '';
+          position: absolute;
+          left: calc(0.625rem - 1px);
+          top: 1.25rem;
+          bottom: 0;
+          width: 2px;
+          background: var(--color-border);
+          transition: background 200ms ease;
+        }
         position: relative;
         display: flex;
         align-items: flex-start;
@@ -101,14 +98,12 @@ export class ChatChainOfThoughtStep extends LitElement {
       /* 텍스트 상태별 */
       :host([status='active']) {
         color: var(--color-foreground);
+
+        & .label { font-weight: var(--font-weight-bold); }
       }
 
       :host([status='complete']) {
         color: var(--color-foreground);
-      }
-
-      :host([status='active']) .label {
-        font-weight: var(--font-weight-bold);
       }
 
       /* 콘텐츠 */
@@ -243,9 +238,11 @@ export class ChatChainOfThought extends LitElement {
         flex-shrink: 0;
       }
 
-      :host([thinking]) .label {
-        color: var(--color-foreground);
-        animation: pulse 1.6s ease-in-out infinite;
+      :host([thinking]) {
+        & .label {
+          color: var(--color-foreground);
+          animation: pulse 1.6s ease-in-out infinite;
+        }
       }
 
       .active-hint {
@@ -272,8 +269,9 @@ export class ChatChainOfThought extends LitElement {
         color: var(--color-foreground-light);
       }
 
-      :host([open]) .chevron {
-        transform: rotate(90deg);
+      :host([open]) {
+        & .chevron { transform: rotate(90deg); }
+        & .panel { grid-template-rows: 1fr; }
       }
 
       /* ── 패널 ── */
@@ -281,10 +279,6 @@ export class ChatChainOfThought extends LitElement {
         display: grid;
         grid-template-rows: 0fr;
         transition: grid-template-rows var(--cot-transition);
-      }
-
-      :host([open]) .panel {
-        grid-template-rows: 1fr;
       }
 
       .panel-inner {

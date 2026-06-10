@@ -23,10 +23,10 @@ export const addSurfaceButtonStyles = css`
     font-family: var(--font-family);
     box-sizing: border-box;
     cursor: pointer;
-  }
 
-  button:hover {
-    background-color: var(--add-surface-button-hover-bg);
+    &:hover {
+      background-color: var(--add-surface-button-hover-bg);
+    }
   }
 
   mm-icon {

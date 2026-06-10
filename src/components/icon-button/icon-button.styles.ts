@@ -15,10 +15,6 @@ export const iconButtonStyles = css`
 
   button {
     padding: 0;
-    border: 0;
-    font-family: var(--font-family);
-    font-size: inherit;
-
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -28,16 +24,11 @@ export const iconButtonStyles = css`
     border-radius: var(--icon-button-radius);
     background: var(--icon-button-color);
     color: var(--icon-button-text-color);
-
+    font-family: var(--font-family);
+    font-size: inherit;
     cursor: pointer;
-    /* 왜 커서 넣어야 되지? */
 
-    /* 버튼과 아이콘 버튼의 상태 동일 */
-    /* TODO pending */
     &:hover {
-      /* box-shadow: var(--status-hover); */
-      /* TODO */
-      /* 통일 */
       border-color: var(--color-background-strong);
     }
     &:focus {
@@ -53,17 +44,14 @@ export const iconButtonStyles = css`
     &:disabled {
       opacity: 0.5;
       cursor: not-allowed;
-    }
-    &:disabled:hover {
-      box-shadow: none;
-    }
-    &:disabled:focus {
-      outline: none;
-    }
-    &:disabled:active {
-      background: var(--icon-button-color);
-      border-color: var(--icon-button-color);
-      box-shadow: none;
+
+      &:hover { box-shadow: none; }
+      &:focus { outline: none; }
+      &:active {
+        background: var(--icon-button-color);
+        border-color: var(--icon-button-color);
+        box-shadow: none;
+      }
     }
   }
 

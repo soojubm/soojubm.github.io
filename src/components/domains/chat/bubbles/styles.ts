@@ -3,12 +3,18 @@ import { css } from 'lit'
 export const myChatBubbleStyles = css`
   :host {
     justify-content: flex-end;
-  }
 
-  :host([failed]) {
-    flex-direction: column;
-    align-items: flex-end;
-    gap: var(--space-1);
+    &([failed]) {
+      flex-direction: column;
+      align-items: flex-end;
+      gap: var(--space-1);
+
+      & .bubble {
+        background: color-mix(in srgb, var(--color-danger) 12%, var(--color-background));
+        color: var(--color-foreground);
+        border: 1px solid var(--color-danger);
+      }
+    }
   }
 
   .bubble {
@@ -17,10 +23,10 @@ export const myChatBubbleStyles = css`
     border-top-right-radius: var(--radius);
     background: var(--color-primary);
     color: var(--color-foreground-on-solid);
-  }
 
-  .bubble.is-image {
-    background: none;
+    &.is-image {
+      background: none;
+    }
   }
 
   .typing span {
@@ -41,12 +47,6 @@ export const myChatBubbleStyles = css`
     align-items: center;
     gap: var(--space-2);
     justify-content: flex-end;
-  }
-
-  :host([failed]) .bubble {
-    background: color-mix(in srgb, var(--color-danger) 12%, var(--color-background));
-    color: var(--color-foreground);
-    border: 1px solid var(--color-danger);
   }
 
   .failed-status {

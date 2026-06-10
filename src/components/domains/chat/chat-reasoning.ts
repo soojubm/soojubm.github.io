@@ -102,9 +102,11 @@ export class ChatReasoning extends LitElement {
         animation: fadeIn 200ms ease;
       }
 
-      :host([thinking]) .label {
-        color: var(--color-foreground);
-        animation: pulse 1.6s ease-in-out infinite;
+      :host([thinking]) {
+        & .label {
+          color: var(--color-foreground);
+          animation: pulse 1.6s ease-in-out infinite;
+        }
       }
 
       .duration {
@@ -122,8 +124,9 @@ export class ChatReasoning extends LitElement {
         color: var(--color-foreground-light);
       }
 
-      :host([open]) .chevron {
-        transform: rotate(90deg);
+      :host([open]) {
+        & .chevron { transform: rotate(90deg); }
+        & .panel { grid-template-rows: 1fr; }
       }
 
       /* ── 콘텐츠 패널 ── */
@@ -131,10 +134,6 @@ export class ChatReasoning extends LitElement {
         display: grid;
         grid-template-rows: 0fr;
         transition: grid-template-rows var(--reasoning-transition);
-      }
-
-      :host([open]) .panel {
-        grid-template-rows: 1fr;
       }
 
       .panel-inner {

@@ -15,34 +15,34 @@ export const separatorStyles = css`
     margin: 0;
     border: 0;
     position: relative;
-  }
 
-  hr[role='separator'] {
-    width: 100%;
-    margin: var(--separator-spacing) 0;
-    border-top: var(--separator-border);
-    text-align: center;
-    position: relative;
-    z-index: var(--zindex-default);
-  }
+    &[role='separator'] {
+      width: 100%;
+      margin: var(--separator-spacing) 0;
+      border-top: var(--separator-border);
+      text-align: center;
+      position: relative;
+      z-index: var(--zindex-default);
 
-  /* 텍스트 없을 때: ::after로 배경 박스만 그려 선을 가림 */
-  hr[role='separator']::after {
-    content: '';
-    width: var(--separator-label-width);
-    line-height: var(--separator-label-line-height);
-    background: var(--separator-text-background);
-    font-size: var(--font-size-12);
-    color: var(--separator-text-color);
-    text-align: center;
-    position: absolute;
-    left: 50%;
-    top: 0;
-    transform: translateX(-50%);
-  }
+      /* 텍스트 없을 때: ::after로 배경 박스만 그려 선을 가림 */
+      &::after {
+        content: '';
+        width: var(--separator-label-width);
+        line-height: var(--separator-label-line-height);
+        background: var(--separator-text-background);
+        font-size: var(--font-size-12);
+        color: var(--separator-text-color);
+        text-align: center;
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+      }
 
-  hr[role='separator'][data-spacing='small'] {
-    margin-block: var(--space-2);
+      &[data-spacing='small'] {
+        margin-block: var(--space-2);
+      }
+    }
   }
 
   /* 텍스트 있을 때: slot 요소가 ::after 위에 올라와 선을 가리고 텍스트를 표시 */

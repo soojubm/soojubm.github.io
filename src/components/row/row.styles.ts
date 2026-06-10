@@ -6,9 +6,9 @@ export const rowStyles = css`
     align-items: center;
     width: 100%;
     gap: var(--space-1);
-  }
 
-  .row[data-justify-content='space-between'] {
-    justify-content: space-between;
+    &[data-justify-content='space-between'] {
+      justify-content: space-between;
+    }
   }
 `

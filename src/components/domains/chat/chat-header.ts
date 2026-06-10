@@ -9,10 +9,10 @@ export class ChatHeader extends LitElement {
     css`
       :host {
         flex-shrink: 0;
-      }
 
-      :host(:empty) {
-        display: none;
+        &(:empty) {
+          display: none;
+        }
       }
 
       .inner {

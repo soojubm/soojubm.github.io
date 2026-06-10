@@ -13,14 +13,17 @@ export const resultStyles = css`
 
   .result-content {
     width: 100%;
-  }
 
-  .result-content[hidden],
-  .result-actions[hidden] {
-    display: none;
+    &[hidden] {
+      display: none;
+    }
   }
 
   .result-actions {
     margin: 1rem 0 0 0;
+
+    &[hidden] {
+      display: none;
+    }
   }
 `

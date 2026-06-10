@@ -58,11 +58,11 @@ export class AccordionItem extends LitElement {
         font-weight: var(--font-weight-bold);
         color: inherit;
         text-align: left;
-      }
 
-      .summary-btn:disabled {
-        opacity: 0.45;
-        cursor: not-allowed;
+        &:disabled {
+          opacity: 0.45;
+          cursor: not-allowed;
+        }
       }
 
       .icon {
@@ -70,10 +70,6 @@ export class AccordionItem extends LitElement {
         width: var(--accordion-icon-size);
         height: var(--accordion-icon-size);
         transition: transform var(--accordion-transition);
-      }
-
-      :host([open]) .icon {
-        transform: rotate(90deg);
       }
 
       /* grid trick: 0fr → 1fr 로 높이 애니메이션 */
@@ -84,18 +80,18 @@ export class AccordionItem extends LitElement {
         transition: grid-template-rows var(--accordion-transition);
       }
 
-      :host([open]) .panel {
-        grid-template-rows: 1fr;
-      }
-
       .panel-inner {
         min-height: 0;
         transition: padding var(--accordion-transition);
       }
 
-      :host([open]) .panel-inner {
-        padding-top: var(--space-2);
-        padding-bottom: var(--space-2);
+      :host([open]) {
+        & .icon { transform: rotate(90deg); }
+        & .panel { grid-template-rows: 1fr; }
+        & .panel-inner {
+          padding-top: var(--space-2);
+          padding-bottom: var(--space-2);
+        }
       }
     `,
   ]

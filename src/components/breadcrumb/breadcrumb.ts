@@ -45,10 +45,10 @@ export class Breadcrumb extends LitElement {
       color: var(--breadcrumb-item-color);
       text-decoration: none;
       white-space: nowrap;
-    }
 
-    .breadcrumb-item[aria-current='page'] {
-      color: var(--breadcrumb-item-color-current);
+      &[aria-current='page'] {
+        color: var(--breadcrumb-item-color-current);
+      }
     }
   `
 

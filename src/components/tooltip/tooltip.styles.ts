@@ -11,12 +11,38 @@ export const tooltipStyles = css`
     --tooltip-color: var(--color-background-strong);
     --tooltip-text-color: var(--color-foreground-on-solid);
     --tooltip-shadow: var(--shadow);
+
+    &(:hover) .tooltip-content,
+    &(:focus-within) .tooltip-content {
+      opacity: 1;
+      visibility: visible;
+    }
   }
 
   .tooltip {
     display: inline-flex;
     align-items: center;
     position: relative;
+
+    &[data-open='true'] .tooltip-content,
+    &:hover .tooltip-content {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    &[data-align='center'] .tooltip-content {
+      white-space: pre;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    &[data-align='left'] .tooltip-content {
+      white-space: pre;
+    }
+    &[data-align='right'] .tooltip-content {
+      white-space: pre;
+      left: auto;
+      right: 0;
+    }
   }
 
   .tooltip-trigger {
@@ -40,39 +66,15 @@ export const tooltipStyles = css`
     z-index: 6;
     pointer-events: none;
     transition: opacity 0.15s linear, visibility 0.15s linear;
-  }
 
-  .tooltip-content::before {
-    content: '';
-    display: block;
-    position: absolute;
-    left: 0;
-    right: 50%;
-    top: -8px;
-    bottom: 0;
-  }
-
-  :host(:hover) .tooltip-content,
-  :host(:focus-within) .tooltip-content,
-  .tooltip[data-open='true'] .tooltip-content,
-  .tooltip:hover .tooltip-content {
-    opacity: 1;
-    visibility: visible;
-  }
-
-  .tooltip[data-align='center'] .tooltip-content {
-    white-space: pre;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .tooltip[data-align='left'] .tooltip-content {
-    white-space: pre;
-  }
-
-  .tooltip[data-align='right'] .tooltip-content {
-    white-space: pre;
-    left: auto;
-    right: 0;
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      right: 50%;
+      top: -8px;
+      bottom: 0;
+    }
   }
 `

@@ -25,18 +25,10 @@ export class Spinner extends LitElement {
         border-top-color: var(--color-primary);
         animation: spin 0.8s linear infinite;
         flex-shrink: 0;
-      }
 
-      [data-size='small'] {
-        --spinner-size: var(--size-small);
-      }
-
-      [data-size='medium'] {
-        --spinner-size: var(--size-medium);
-      }
-
-      [data-size='large'] {
-        --spinner-size: var(--size-large);
+        &[data-size='small'] { --spinner-size: var(--size-small); }
+        &[data-size='medium'] { --spinner-size: var(--size-medium); }
+        &[data-size='large'] { --spinner-size: var(--size-large); }
       }
 
       .label {

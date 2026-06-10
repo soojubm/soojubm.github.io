@@ -47,15 +47,15 @@ export class Dropdown extends LitElement {
         background: var(--color-background);
         color: var(--color-foreground);
         font-family: var(--font-family);
-      }
 
-      // TODO component and state
-      .dropdown-button mm-icon {
-        transition: transform 160ms ease;
-      }
+        // TODO component and state
+        mm-icon {
+          transition: transform 160ms ease;
+        }
 
-      .dropdown-button[aria-expanded='true'] mm-icon {
-        transform: rotate(180deg);
+        &[aria-expanded='true'] mm-icon {
+          transform: rotate(180deg);
+        }
       }
 
       .dropdown-list {
@@ -68,11 +68,11 @@ export class Dropdown extends LitElement {
         min-width: var(--dropdown-min-width);
         max-height: var(--dropdown-max-height);
         overflow-y: auto;
-      }
 
-      .dropdown-list.align-right {
-        left: auto;
-        right: 0;
+        &.align-right {
+          left: auto;
+          right: 0;
+        }
       }
 
       mm-menu-item-action[aria-current='true'] {

@@ -7,32 +7,33 @@ export const topBarStyles = css`
     gap: var(--space-2);
     padding-block: var(--space-4);
     position: relative;
+
+    &[data-size='large'] {
+      align-items: baseline;
+      height: 100px;
+
+      & .top-bar-title {
+        font-size: 1.5rem;
+        position: absolute;
+        left: 0;
+        top: calc(var(--top-bar-height) - 0.25rem);
+        transform: translateX(0);
+      }
+    }
   }
 
   .top-bar-title {
     flex: 1;
   }
 
-  .top-bar[data-size='large'] {
-    align-items: baseline;
-    height: 100px;
-  }
-
-  .top-bar[data-size='large'] .top-bar-title {
-    font-size: 1.5rem;
-    position: absolute;
-    left: 0;
-    top: calc(var(--top-bar-height) - 0.25rem);
-    transform: translateX(0);
-  }
-
-  .is-sticky-top-bar .top-bar {
-    position: fixed;
-    top: 0;
-  }
-
-  .is-sticky-top-bar .top-bar-background {
-    box-shadow: var(--shadow);
+  .is-sticky-top-bar {
+    & .top-bar {
+      position: fixed;
+      top: 0;
+    }
+    & .top-bar-background {
+      box-shadow: var(--shadow);
+    }
   }
 
   ::slotted([slot='action']) {

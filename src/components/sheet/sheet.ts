@@ -82,6 +82,15 @@ class Sheet extends LitElement {
         visibility: visible;
         pointer-events: auto;
         transition: opacity 180ms ease, visibility 0s;
+
+        & .sheet {
+          transform: scale(1);
+          transition: transform 220ms cubic-bezier(0.18, 1.25, 0.4, 1);
+        }
+        &([type='bottom']) .sheet { transform: translateY(0); }
+        &([type='left']) .sheet { transform: translateX(0); }
+        &([type='right']) .sheet { transform: translateX(0); }
+        &([type='inline']) .sheet { transform: translateY(0); }
       }
 
       .sheet {
@@ -100,11 +109,6 @@ class Sheet extends LitElement {
         transition: transform 180ms cubic-bezier(0.2, 0.8, 0.2, 1);
       }
 
-      :host([open]) .sheet {
-        transform: scale(1);
-        transition: transform 220ms cubic-bezier(0.18, 1.25, 0.4, 1);
-      }
-
       /* bottom */
       :host([type='bottom']) .sheet {
         margin-top: auto;
@@ -113,10 +117,6 @@ class Sheet extends LitElement {
         border-bottom-left-radius: var(--sheet-radius);
         border-bottom-right-radius: var(--sheet-radius);
         transform: translateY(100%);
-      }
-
-      :host([open][type='bottom']) .sheet {
-        transform: translateY(0);
       }
 
       /* left */
@@ -130,10 +130,6 @@ class Sheet extends LitElement {
         transform: translateX(-100%);
       }
 
-      :host([open][type='left']) .sheet {
-        transform: translateX(0);
-      }
-
       /* right */
       :host([type='right']) .sheet {
         margin-left: auto;
@@ -143,10 +139,6 @@ class Sheet extends LitElement {
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
         transform: translateX(100%);
-      }
-
-      :host([open][type='right']) .sheet {
-        transform: translateX(0);
       }
 
       /* anchor — popoverStyles 공유, :host 애니메이션은 .sheet.popover가 담당 */
@@ -159,11 +151,11 @@ class Sheet extends LitElement {
         opacity: 1;
         visibility: visible;
         pointer-events: auto;
-      }
 
-      :host([type='anchor']) .sheet {
-        width: var(--sheet-anchor-width);
-        max-height: var(--sheet-anchor-max-height);
+        & .sheet {
+          width: var(--sheet-anchor-width);
+          max-height: var(--sheet-anchor-max-height);
+        }
       }
 
       /* inline */
@@ -171,14 +163,10 @@ class Sheet extends LitElement {
         position: relative;
         inset: auto; /* base의 inset: 0 리셋 */
         background: transparent;
-      }
 
-      :host([type='inline']) .sheet {
-        transform: translateY(var(--space-1-minus));
-      }
-
-      :host([open][type='inline']) .sheet {
-        transform: translateY(0);
+        & .sheet {
+          transform: translateY(var(--space-1-minus));
+        }
       }
     `,
   ]
