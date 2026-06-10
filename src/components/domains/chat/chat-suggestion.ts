@@ -6,8 +6,8 @@ import { resetStyles } from '../../../stylesheets/shared/reset.styles'
  * 채팅 입력 추천 버튼. mm-button(size=small)을 베이스로 합니다.
  * 클릭 시 chat-suggestion-select 이벤트를 발행합니다.
  */
-@customElement('mm-chat-input-suggestion')
-export class ChatInputSuggestion extends LitElement {
+@customElement('mm-chat-suggestion')
+export class ChatSuggestion extends LitElement {
   /** 선택 시 전달할 값 (없으면 텍스트 콘텐츠 사용) */
   @property({ type: String }) value = ''
   @property({ type: String }) icon = ''
@@ -34,12 +34,7 @@ export class ChatInputSuggestion extends LitElement {
 
   render() {
     return html`
-      <mm-button
-        variant="tertiary"
-        size="small"
-        icon=${this.icon}
-        @click=${this.handleClick}
-      >
+      <mm-button variant="tertiary" size="small" icon=${this.icon} @click=${this.handleClick}>
         <slot></slot>
       </mm-button>
     `
@@ -48,6 +43,6 @@ export class ChatInputSuggestion extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'mm-chat-input-suggestion': ChatInputSuggestion
+    'mm-chat-suggestion': ChatSuggestion
   }
 }

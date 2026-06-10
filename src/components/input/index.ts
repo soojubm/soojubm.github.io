@@ -7,6 +7,7 @@ import './semantics/textfield-validation'
 import './semantics/searchfield'
 import './semantics/passwordfield'
 import './semantics/number-input'
-import './semantics/textarea'
+import './textarea'
+import './semantics/textarea-field'
 
 export {}

@@ -108,23 +108,14 @@
     </mm-chat-body>
 
     <mm-chat-footer>
-      <mm-chat-input-suggestions>
-        <mm-chat-input-suggestion>네, 좋아요 👍</mm-chat-input-suggestion>
-        <mm-chat-input-suggestion>다시 설명해 주세요</mm-chat-input-suggestion>
-        <mm-chat-input-suggestion icon="calendar">일정 잡기</mm-chat-input-suggestion>
-        <mm-chat-input-suggestion>나중에 할게요</mm-chat-input-suggestion>
-      </mm-chat-input-suggestions>
+      <mm-chat-suggestions>
+        <mm-chat-suggestion>네, 좋아요 👍</mm-chat-suggestion>
+        <mm-chat-suggestion>다시 설명해 주세요</mm-chat-suggestion>
+        <mm-chat-suggestion icon="calendar">일정 잡기</mm-chat-suggestion>
+        <mm-chat-suggestion>나중에 할게요</mm-chat-suggestion>
+      </mm-chat-suggestions>
       <div style="height: var(--space-3)"></div>
-      <mm-prompt-input>
-        <mm-prompt-input-textarea placeholder="메시지를 입력하세요..."></mm-prompt-input-textarea>
-        <mm-textfield-action-bar align="between">
-          <mm-button-group gap="1">
-            <mm-attachment-dropdown></mm-attachment-dropdown>
-            <mm-model-selector value="claude-sonnet"></mm-model-selector>
-          </mm-button-group>
-          <mm-icon-button icon="send-diagonal" aria-label="전송"></mm-icon-button>
-        </mm-textfield-action-bar>
-      </mm-prompt-input>
+      <mm-prompt-input placeholder="메시지를 입력하세요..." model="claude-sonnet"></mm-prompt-input>
     </mm-chat-footer>
   </mm-chat-room>
 </mm-page>

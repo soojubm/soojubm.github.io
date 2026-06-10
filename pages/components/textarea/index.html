@@ -2,13 +2,15 @@
   <mm-page-header title="Textarea" description="long content field"></mm-page-header>
 
   <mm-component-example>
-    <div style="max-width: 400px">
-      <mm-textarea
-        label="Textarea"
-        placeholder="Textarea Placeholder... rows는 기본값"
-      ></mm-textarea>
-      <small class="textfield-byte"><b>0</b> / 100</small>
-    </div>
+    <mm-flex direction="column" gap="4" style="width: 100%; max-width: 400px">
+      <mm-textarea placeholder="Textarea placeholder..."></mm-textarea>
+
+      <mm-textarea-field
+        label="Textarea Field"
+        placeholder="Textarea placeholder..."
+        helper="레이블과 헬퍼 텍스트를 가질 수 있다."
+      ></mm-textarea-field>
+    </mm-flex>
   </mm-component-example>
 
   <mm-component-props>
@@ -18,7 +20,6 @@
     <mm-prop name="label" type="string" optional></mm-prop>
     <mm-prop name="helper" type="string" optional></mm-prop>
     <mm-prop name="is-optional" type="boolean" optional></mm-prop>
-    <mm-prop name="hidden-label" type="boolean" optional></mm-prop>
     <mm-prop name="disabled" type="boolean" optional></mm-prop>
     <mm-prop name="aria-invalid" type="boolean" optional></mm-prop>
     <mm-prop name="input" type="CustomEvent detail: value" kind="event"></mm-prop>
@@ -48,11 +49,6 @@
   </mm-component-section>
 
   <mm-component-section title="Prompt Input" description="">
-    <mm-prompt-input>
-      <mm-prompt-input-textarea placeholder="Ask me anything..."></mm-prompt-input-textarea>
-      <mm-textfield-action-bar align="end">
-        <mm-icon-button variant="primary" icon="arrow-up" aria-label="전송"></mm-icon-button>
-      </mm-textfield-action-bar>
-    </mm-prompt-input>
+    <mm-prompt-input placeholder="Ask me anything..."></mm-prompt-input>
   </mm-component-section>
 </main>

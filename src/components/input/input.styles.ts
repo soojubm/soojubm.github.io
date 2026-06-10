@@ -9,83 +9,17 @@ export const inputStyles = css`
     --input-border: 1px solid var(--color-border);
     --input-color-border-hover: var(--gray400);
     --input-text-color: var(--color-foreground);
-    --input-padding-block: var(--space-3);
+    --input-padding-block: var(--space-2);
     --input-padding-inline: var(--space-4);
     --input-padding: var(--input-padding-inline);
-  }
-
-  textarea {
-    border: 0 none;
-    font-family: inherit;
-    font-size: inherit;
-    resize: none;
-    &:focus {
-      -webkit-appearance: none;
-    }
-  }
-
-  textarea:focus-visible,
-  input:focus-visible {
-    outline: 0;
-  }
-
-  input[type='text'] {
-    -webkit-appearance: none;
-  }
-
-  input[type='number'] {
-    -webkit-appearance: none;
-    -moz-appearance: textfield;
-  }
-
-  input[type='number']::-webkit-inner-spin-button,
-  input[type='number']::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-  }
-
-  input[type='date'] {
-    display: block;
-    max-height: var(--size-large);
-    -webkit-appearance: none;
-  }
-
-  input[type='date']::-webkit-calendar-picker-indicator {
-    width: 100%;
-    opacity: 0;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-  }
-
-  input[type='date']::-webkit-inner-spin-button {
-    display: none;
-    -webkit-appearance: none;
-  }
-
-  input[type='password'] {
-    -webkit-appearance: none;
-    letter-spacing: 0.25rem;
-  }
-
-  input[type='search'] {
-    font-family: inherit;
-    font-size: inherit;
-    -webkit-appearance: none;
-  }
-
-  input[type='search']::-webkit-search-decoration,
-  input[type='search']::-webkit-search-cancel-button,
-  input[type='search']::-webkit-search-results-button,
-  input[type='search']::-webkit-search-results-decoration {
-    display: none;
   }
 
   // :host-context([data-theme='brutal']) {
   //   --input-color-border-hover: var(--brutal-border-color);
   // }
 
-  .textfield-control {
+  .textfield-control,
+  .textarea-control {
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -104,6 +38,10 @@ export const inputStyles = css`
     &:focus-within {
       box-shadow: var(--status-hover);
     }
+
+    &[data-invalid] {
+      border-color: var(--color-danger);
+    }
   }
 
   /* mm-input은 light DOM에 렌더되므로 내부 input이 직접 flex item이 되도록 비표시한다. */
@@ -111,41 +49,111 @@ export const inputStyles = css`
     display: contents;
   }
 
-  textarea,
+  textarea {
+    width: 100%;
+    min-width: 0;
+    height: auto;
+    min-height: var(--input-height);
+    border: 0 none;
+    outline: none;
+    background: inherit;
+    font: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    color: var(--color-foreground);
+    padding: var(--input-padding-block) var(--input-padding-inline);
+    box-sizing: border-box;
+    resize: none;
+
+    &:focus {
+      -webkit-appearance: none;
+    }
+    &:focus-visible {
+      outline: 0;
+    }
+    &::placeholder {
+      color: var(--color-foreground-light);
+    }
+  }
+
   input {
     width: 100%;
     min-width: 0;
     height: 100%;
-
     border: 0;
     outline: none;
     background: inherit;
     font: inherit;
     color: var(--color-foreground);
+    padding-inline: var(--input-padding-inline);
+
+    &:focus-visible {
+      outline: 0;
+    }
+    &::placeholder {
+      color: var(--color-foreground-light);
+    }
+    &:read-only {
+      color: var(--color-foreground-light);
+      cursor: default;
+    }
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    &[type='text'] {
+      -webkit-appearance: none;
+    }
+    &[type='number'] {
+      -webkit-appearance: none;
+      -moz-appearance: textfield;
+
+      &::-webkit-inner-spin-button,
+      &::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+      }
+    }
+    &[type='date'] {
+      display: block;
+      max-height: var(--size-large);
+      -webkit-appearance: none;
+
+      &::-webkit-calendar-picker-indicator {
+        width: 100%;
+        opacity: 0;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+      }
+      &::-webkit-inner-spin-button {
+        display: none;
+        -webkit-appearance: none;
+      }
+    }
+    &[type='password'] {
+      -webkit-appearance: none;
+      letter-spacing: 0.25rem;
+    }
+    &[type='search'] {
+      font-family: inherit;
+      font-size: inherit;
+      -webkit-appearance: none;
+
+      &::-webkit-search-decoration,
+      &::-webkit-search-cancel-button,
+      &::-webkit-search-results-button,
+      &::-webkit-search-results-decoration {
+        display: none;
+      }
+    }
   }
 
-  input::placeholder,
-  textarea::placeholder {
-    color: var(--color-foreground-light);
-  }
-
-  textarea {
-    height: auto;
-    min-height: var(--input-height);
-  }
-
-  input:read-only {
-    color: var(--color-foreground-light);
-    cursor: default;
-  }
-
-  input:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-  }
-
-  [data-invalid] .textfield-control,
-  [data-invalid] textarea {
-    border-color: var(--color-danger);
+  [data-invalid] {
+    & .textfield-control,
+    & .textarea-control,
+    & textarea {
+      border-color: var(--color-danger);
+    }
   }
 `
