@@ -19,6 +19,7 @@ export default class Tab extends LitElement {
   static styles = css`
     :host {
       position: relative;
+      display: inline-flex;
       z-index: 1; /* pill indicator 위에 텍스트가 렌더링되도록 stacking context 생성 */
     }
 
