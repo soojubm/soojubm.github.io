@@ -115,7 +115,7 @@
   max-width: calc(90% - var(--size-medium));
   padding: var(--space-3) var(--space-4);
   /* border:var(--chat-bubble-border); */
-  border-radius: 1rem;
+  border-radius: var(--radius-large);
   border-top-left-radius: var(--radius);
   background-color: var(--color-background-subtle);
 }

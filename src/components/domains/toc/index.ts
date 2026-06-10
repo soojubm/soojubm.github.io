@@ -33,7 +33,7 @@ export class TableOfContents extends LitElement {
       }
 
       .toc-title {
-        margin: 0 0 var(--space-2) 0;
+        margin: 0 0 var(--space-1) 0;
       }
 
       .toc-list {
@@ -77,12 +77,9 @@ export class TableOfContents extends LitElement {
       .share {
         display: flex;
         flex-direction: column;
-        gap: var(--space-2);
+        gap: var(--space-1);
         margin-top: var(--space-4);
-        padding-top: var(--space-4);
-        border-top: var(--border);
       }
-
     `,
   ]
 

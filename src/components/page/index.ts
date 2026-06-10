@@ -7,6 +7,8 @@ export class Page extends LitElement {
   @property({ type: String, reflect: true }) width: 'small' | 'medium' | '' = ''
   /** 페이지 레이아웃 변형. 'chat' = full-height flex column */
   @property({ type: String, reflect: true }) layout: 'chat' | '' = ''
+  /** 페이지 좌우 패딩 제거 */
+  @property({ type: Boolean, reflect: true }) fullWidth = false
 
   static styles = css`
     :host {
@@ -14,6 +16,11 @@ export class Page extends LitElement {
       min-height: calc(100vh - var(--navbar-height) - var(--width-small));
       padding: var(--space-4) var(--grid-margin) calc(var(--space-4) * 6);
       position: relative;
+    }
+
+    :host([fullwidth]) {
+      padding-right: 0;
+      padding-left: 0;
     }
 
     :host([width='small']) {
@@ -34,6 +41,10 @@ export class Page extends LitElement {
       height: calc(100vh - var(--navbar-height));
       padding: 0;
       overflow: hidden;
+    }
+
+    :host([layout='chat'][fullwidth]) {
+      max-width: none;
     }
 
     :host([layout='chat']) ::slotted(mm-chat-room) {

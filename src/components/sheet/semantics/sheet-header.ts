@@ -8,31 +8,12 @@ class SheetHeader extends LitElement {
   static styles = css`
     header {
       display: flex;
+      align-items: center;
+      justify-content: space-between;
       width: 100%;
-      padding: var(--space-4) 0;
-      align-items: center;
+      padding: var(--space-3) 0;
+      // height: var(--size-large);
       gap: var(--space-2);
-      box-sizing: border-box;
-    }
-
-    mm-text {
-      flex: 1 1 auto;
-      min-width: 0;
-    }
-
-    button {
-      display: inline-flex;
-      width: var(--size-medium);
-      height: var(--size-medium);
-      padding: 0;
-      align-items: center;
-      justify-content: center;
-      border: var(--border);
-      border-radius: var(--radius);
-      background: var(--color-background);
-      color: inherit;
-      cursor: pointer;
-      box-shadow: var(--shadow);
       box-sizing: border-box;
     }
   `
@@ -45,9 +26,7 @@ class SheetHeader extends LitElement {
     return html`
       <header role="navigation">
         <mm-text size="18">${this.title}</mm-text>
-        <button type="button" aria-label="닫기" @click=${this.handleClose}>
-          <mm-icon name="xmark"></mm-icon>
-        </button>
+        <mm-icon-button icon="xmark" aria-label="닫기" @click=${this.handleClose}></mm-icon-button>
       </header>
     `
   }

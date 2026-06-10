@@ -21,7 +21,6 @@ export class ChatInputSuggestions extends LitElement {
         flex-wrap: nowrap;
         overflow-x: auto;
         scroll-behavior: smooth;
-        padding: var(--space-1) 0;
         -ms-overflow-style: none;
         scrollbar-width: none;
       }

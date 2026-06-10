@@ -1,20 +1,20 @@
 import { LitElement, css, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 import { resetStyles } from '../../../stylesheets/shared/reset.styles'
+import { scrollbarStyles } from '../../../stylesheets/shared/scrollbar.styles'
 
-@customElement('mm-chat-feed')
-export class ChatFeed extends LitElement {
+@customElement('mm-chat-body')
+export class ChatBody extends LitElement {
   static styles = [
     resetStyles,
+    scrollbarStyles,
     css`
       :host {
         display: flex;
-        flex-direction: column;
         flex: 1;
-        max-width: 800px;
-        margin: 0 auto;
-        gap: 4rem;
-        /* TODO gap-section */
+        min-height: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
       }
     `,
   ]
@@ -26,6 +26,6 @@ export class ChatFeed extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'mm-chat-feed': ChatFeed
+    'mm-chat-body': ChatBody
   }
 }

@@ -6,10 +6,12 @@
 
   <mm-component-example>
     <mm-flex>
-      <mm-avatar variant="primary" size="large" shape="circle"></mm-avatar>
-      <mm-avatar variant="primary" size="large"></mm-avatar>
-      <mm-avatar variant="secondary" size="large"></mm-avatar>
-      <mm-avatar variant="tertiary" size="large"></mm-avatar>
+      <mm-avatar variant="primary" size="medium" shape="circle"></mm-avatar>
+      <mm-avatar variant="secondary" size="medium" shape="circle"></mm-avatar>
+      <mm-avatar variant="tertiary" size="medium" shape="circle"></mm-avatar>
+      <mm-avatar variant="primary" size="medium"></mm-avatar>
+      <mm-avatar variant="secondary" size="medium"></mm-avatar>
+      <mm-avatar variant="tertiary" size="medium"></mm-avatar>
     </mm-flex>
     <mm-separator></mm-separator>
     <mm-flex>
@@ -21,11 +23,11 @@
   </mm-component-example>
 
   <mm-component-props>
+    <mm-prop name="variant" type="'primary' | 'secondary' | 'tertiary' = 'primary'"></mm-prop>
+    <mm-prop name="size" type="'huge' | 'large' | 'medium' | 'small' = 'medium'"></mm-prop>
+    <mm-prop name="shape" type="'circle' | 'square' = 'square'"></mm-prop>
     <mm-prop name="src" type="string" optional></mm-prop>
     <mm-prop name="icon" type="string" optional></mm-prop>
-    <mm-prop name="size" type="'huge' | 'large' | 'medium' | 'small' = 'medium'"></mm-prop>
-    <mm-prop name="variant" type="'primary' | 'secondary' | 'tertiary' = 'primary'"></mm-prop>
-    <mm-prop name="shape" type="'circle' | 'square' = 'square'"></mm-prop>
   </mm-component-props>
 
   <mm-component-tokens>

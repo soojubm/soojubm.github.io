@@ -1,6 +1,5 @@
 import { LitElement, css, html } from 'lit'
-import { customElement, property, query } from 'lit/decorators.js'
-import { inputStyles } from '../../input/input.styles'
+import { customElement, property } from 'lit/decorators.js'
 import { PromptInputTextarea } from './prompt-input-textarea'
 
 @customElement('mm-prompt-input')
@@ -8,19 +7,10 @@ export class PromptInput extends LitElement {
   @property({ type: String, reflect: true }) value = ''
   @property({ type: Boolean, attribute: 'is-loading', reflect: true }) isLoading = false
 
-  @query('slot') private _slot!: HTMLSlotElement
-
   static styles = [
-    inputStyles,
     css`
       :host {
         display: block;
-      }
-
-      .textfield-control {
-        flex-direction: column;
-        align-items: stretch;
-        padding-block: var(--input-padding-block);
       }
     `,
   ]
@@ -39,9 +29,9 @@ export class PromptInput extends LitElement {
   }
 
   private get _textarea() {
-    return this._slot
-      ?.assignedElements({ flatten: true })
-      .find(element => element instanceof PromptInputTextarea) as PromptInputTextarea | undefined
+    return Array.from(this.children).find(element => element instanceof PromptInputTextarea) as
+      | PromptInputTextarea
+      | undefined
   }
 
   private _syncTextareaValue() {
@@ -68,6 +58,6 @@ export class PromptInput extends LitElement {
   }
 
   render() {
-    return html`<div class="textfield-control"><slot @slotchange=${this._handleSlotChange}></slot></div>`
+    return html`<slot @slotchange=${this._handleSlotChange}></slot>`
   }
 }

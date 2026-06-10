@@ -8,10 +8,7 @@ import { ChatBubbleBase } from './chat-bubble'
  */
 @customElement('mm-ai-chat-bubble')
 export class AiChatBubble extends ChatBubbleBase {
-  static styles = [
-    ...ChatBubbleBase.styles,
-    css``,
-  ]
+  static styles = [...ChatBubbleBase.styles, css``]
 
   render() {
     if (this.typing) return this.renderTyping()
@@ -20,7 +17,6 @@ export class AiChatBubble extends ChatBubbleBase {
     return html`
       <div class="bubble">
         <slot></slot>
-        ${this.time ? html`<time class="time">${this.time}</time>` : ''}
       </div>
     `
   }
