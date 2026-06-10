@@ -15,58 +15,58 @@ export const buttonStyles = css`
     --button-color-active-bg: var(--color-interaction-active-background);
     --button-color-active-border: var(--color-interaction-active-border);
     --button-color-active-ring: var(--color-interaction-active-ring);
+  }
 
-    &([isfullwidth]) button { width: 100%; }
+  :host([isfullwidth]) button { width: 100%; }
 
-    &([variant='primary']) button {
-      --button-border-color: var(--border-transparent);
-      background-color: var(--color-primary);
-      --button-text-color: var(--color-foreground-on-solid);
-    }
-    &([variant='secondary']) button {
-      --button-border-color: var(--border-transparent);
-      --button-color: var(--green100);
-      --button-text-color: var(--color-primary);
-    }
-    &([variant='tertiary']) button {
-      --button-text-color: var(--color-foreground);
-    }
-    &([variant='text']) button {
-      --button-border-color: var(--border-transparent);
-      --button-color: var(--color-background);
-      --button-text-color: var(--color-primary);
-    }
-    &([variant='destructive']) button {
-      --button-color: var(--red800);
-      --button-text-color: var(--gray0);
-    }
+  :host([variant='primary']) button {
+    --button-border-color: var(--border-transparent);
+    background-color: var(--color-primary);
+    --button-text-color: var(--color-foreground-on-solid);
+  }
+  :host([variant='secondary']) button {
+    --button-border-color: var(--border-transparent);
+    --button-color: var(--green100);
+    --button-text-color: var(--color-primary);
+  }
+  :host([variant='tertiary']) button {
+    --button-text-color: var(--color-foreground);
+  }
+  :host([variant='text']) button {
+    --button-border-color: var(--border-transparent);
+    --button-color: var(--color-background);
+    --button-text-color: var(--color-primary);
+  }
+  :host([variant='destructive']) button {
+    --button-color: var(--red800);
+    --button-text-color: var(--gray0);
+  }
 
-    &([size='huge']) button {
-      --button-size: 64px;
-      --button-text-size: var(--font-size-18);
-      padding-bottom: 5px;
-    }
-    &([size='large']) button {
-      --button-size: var(--size-large);
-      min-width: var(--button-min-width);
-    }
-    &([size='small']) button {
-      --button-size: 2rem;
-      --button-text-size: var(--font-size-12);
-      --button-padding-inline: var(--space-2);
-      min-width: 0;
-    }
+  :host([size='huge']) button {
+    --button-size: 64px;
+    --button-text-size: var(--font-size-18);
+    padding-bottom: 5px;
+  }
+  :host([size='large']) button {
+    --button-size: var(--size-large);
+    min-width: var(--button-min-width);
+  }
+  :host([size='small']) button {
+    --button-size: 2rem;
+    --button-text-size: var(--font-size-12);
+    --button-padding-inline: var(--space-2);
+    min-width: 0;
+  }
 
-    /* TODO filter-button으로 이동 */
-    &([aria-checked='true']) button {
-      border: var(--border-width) solid
-        var(--button-checked-border-color, var(--color-background-strong));
-      background: var(--button-checked-color, var(--button-color));
-      color: var(--button-checked-text-color, var(--button-text-color));
+  /* TODO filter-button으로 이동 */
+  :host([aria-checked='true']) button {
+    border: var(--border-width) solid
+      var(--button-checked-border-color, var(--color-background-strong));
+    background: var(--button-checked-color, var(--button-color));
+    color: var(--button-checked-text-color, var(--button-text-color));
 
-      mm-icon {
-        --button-text-color: var(--button-checked-icon-color, currentColor);
-      }
+    mm-icon {
+      --button-text-color: var(--button-checked-icon-color, currentColor);
     }
   }
 

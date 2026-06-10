@@ -87,11 +87,12 @@ class Sheet extends LitElement {
           transform: scale(1);
           transition: transform 220ms cubic-bezier(0.18, 1.25, 0.4, 1);
         }
-        &([type='bottom']) .sheet { transform: translateY(0); }
-        &([type='left']) .sheet { transform: translateX(0); }
-        &([type='right']) .sheet { transform: translateX(0); }
-        &([type='inline']) .sheet { transform: translateY(0); }
       }
+
+      :host([open][type='bottom']) .sheet { transform: translateY(0); }
+      :host([open][type='left']) .sheet { transform: translateX(0); }
+      :host([open][type='right']) .sheet { transform: translateX(0); }
+      :host([open][type='inline']) .sheet { transform: translateY(0); }
 
       .sheet {
         background: var(--color-background);

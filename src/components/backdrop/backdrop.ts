@@ -17,13 +17,13 @@ export class Backdrop extends LitElement {
       visibility: hidden;
       pointer-events: none;
       transition: opacity 180ms ease, visibility 0s linear 180ms;
+    }
 
-      &([open]) {
-        opacity: 1;
-        visibility: visible;
-        pointer-events: auto;
-        transition: opacity 180ms ease, visibility 0s;
-      }
+    :host([open]) {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transition: opacity 180ms ease, visibility 0s;
     }
   `
 

@@ -3,17 +3,17 @@ import { css } from 'lit'
 export const myChatBubbleStyles = css`
   :host {
     justify-content: flex-end;
+  }
 
-    &([failed]) {
-      flex-direction: column;
-      align-items: flex-end;
-      gap: var(--space-1);
+  :host([failed]) {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: var(--space-1);
 
-      & .bubble {
-        background: color-mix(in srgb, var(--color-danger) 12%, var(--color-background));
-        color: var(--color-foreground);
-        border: 1px solid var(--color-danger);
-      }
+    & .bubble {
+      background: color-mix(in srgb, var(--color-danger) 12%, var(--color-background));
+      color: var(--color-foreground);
+      border: 1px solid var(--color-danger);
     }
   }
 
