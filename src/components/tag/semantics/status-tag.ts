@@ -1,18 +1,15 @@
-import { html } from 'lit'
+import { LitElement } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { Tag } from '../tag'
-import { statusToneMap, type StatusVariant, type TagTone } from '../tag.styles'
+import { renderMappedTag } from '../tag'
+import { statusToneMap, type StatusVariant } from '../tag.styles'
 
 @customElement('mm-status-tag')
-export class StatusTag extends Tag {
+export class StatusTag extends LitElement {
   @property({ type: String }) variant: StatusVariant = 'neutral'
+  @property({ type: String }) icon = ''
 
-  protected override get toneMapping(): { watchProp: string; toneMap: Record<string, TagTone> } {
-    return { watchProp: 'variant', toneMap: statusToneMap }
-  }
-
-  protected override renderDefaultSlot() {
-    return html`<slot>${this.variant}</slot>`
+  render() {
+    return renderMappedTag(this.variant, statusToneMap, this.icon)
   }
 }
 

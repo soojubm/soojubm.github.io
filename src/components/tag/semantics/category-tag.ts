@@ -1,18 +1,15 @@
-import { html } from 'lit'
+import { LitElement } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { Tag } from '../tag'
-import { categoryToneMap, type Category, type TagTone } from '../tag.styles'
+import { renderMappedTag } from '../tag'
+import { categoryToneMap, type Category } from '../tag.styles'
 
 @customElement('mm-category-tag')
-export class CategoryTag extends Tag {
+export class CategoryTag extends LitElement {
   @property({ type: String }) category: Category = 'design'
+  @property({ type: String }) icon = ''
 
-  protected override get toneMapping(): { watchProp: string; toneMap: Record<string, TagTone> } {
-    return { watchProp: 'category', toneMap: categoryToneMap }
-  }
-
-  protected override renderDefaultSlot() {
-    return html`<slot>${this.category}</slot>`
+  render() {
+    return renderMappedTag(this.category, categoryToneMap, this.icon)
   }
 }
 

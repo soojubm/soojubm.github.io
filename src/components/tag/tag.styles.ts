@@ -1,5 +1,19 @@
 import { css, unsafeCSS } from 'lit'
 
+type ToneStyle = {
+  background: string
+  color: string
+  borderColor: string
+}
+
+const categoryTone = (token: number): ToneStyle => ({
+  background: `var(--tag-category-${token}-bg)`,
+  color: `var(--tag-category-${token}-text)`,
+  borderColor: `var(--tag-category-${token}-border)`,
+})
+
+const defineToneMap = <Map extends Record<string, TagTone>>(map: Map) => map
+
 /**
  * --------------------------------------------------
  * primitive visual tones
@@ -13,58 +27,19 @@ export const tagToneStyles = {
     color: 'var(--color-foreground)',
     borderColor: 'var(--color-border)',
   },
-  // gray: {
-  //   background: 'var(--color-background-subtle)',
-  //   color: 'var(--color-foreground)',
-  //   borderColor: 'var(--color-border)',
-  // },
-  green: {
-    background: 'var(--tag-category-2-bg)',
-    color: 'var(--tag-category-2-text)',
-    borderColor: 'var(--tag-category-2-border)',
+  gold: {
+    background: 'var(--color-accent-subtle)',
+    color: 'var(--color-foreground)',
+    borderColor: 'var(--color-accent-border)',
   },
-
-  yellow: {
-    background: 'var(--tag-category-6-bg)',
-    color: 'var(--tag-category-6-text)',
-    borderColor: 'var(--tag-category-6-border)',
-  },
-
-  red: {
-    background: 'var(--tag-category-7-bg)',
-    color: 'var(--tag-category-7-text)',
-    borderColor: 'var(--tag-category-7-border)',
-  },
-
-  blue: {
-    background: 'var(--tag-category-1-bg)',
-    color: 'var(--tag-category-1-text)',
-    borderColor: 'var(--tag-category-1-border)',
-  },
-
-  purple: {
-    background: 'var(--tag-category-8-bg)',
-    color: 'var(--tag-category-8-text)',
-    borderColor: 'var(--tag-category-8-border)',
-  },
-
-  pink: {
-    background: 'var(--tag-category-3-bg)',
-    color: 'var(--tag-category-3-text)',
-    borderColor: 'var(--tag-category-3-border)',
-  },
-
-  orange: {
-    background: 'var(--tag-category-4-bg)',
-    color: 'var(--tag-category-4-text)',
-    borderColor: 'var(--tag-category-4-border)',
-  },
-
-  cyan: {
-    background: 'var(--tag-category-5-bg)',
-    color: 'var(--tag-category-5-text)',
-    borderColor: 'var(--tag-category-5-border)',
-  },
+  green: categoryTone(2),
+  yellow: categoryTone(6),
+  red: categoryTone(7),
+  blue: categoryTone(1),
+  purple: categoryTone(8),
+  pink: categoryTone(3),
+  orange: categoryTone(4),
+  cyan: categoryTone(5),
 } as const
 
 export type TagTone = keyof typeof tagToneStyles
@@ -75,26 +50,26 @@ export type TagTone = keyof typeof tagToneStyles
  * --------------------------------------------------
  */
 
-export const statusToneMap = {
-  success: 'green',
-  warning: 'yellow',
-  error: 'red',
-  info: 'blue',
-  neutral: 'default',
-} as const satisfies Record<string, TagTone>
+export const statusToneMap = defineToneMap({
+  success: 'green' as const,
+  warning: 'yellow' as const,
+  error: 'red' as const,
+  info: 'blue' as const,
+  neutral: 'default' as const,
+})
 
 export type StatusVariant = keyof typeof statusToneMap
 
-export const categoryToneMap = {
-  music: 'purple',
-  finance: 'green',
-  design: 'pink',
-  engineering: 'blue',
-  marketing: 'orange',
-  news: 'cyan',
-  lifestyle: 'yellow',
-  sports: 'red',
-} as const satisfies Record<string, TagTone>
+export const categoryToneMap = defineToneMap({
+  music: 'purple' as const,
+  finance: 'green' as const,
+  design: 'pink' as const,
+  engineering: 'blue' as const,
+  marketing: 'orange' as const,
+  news: 'cyan' as const,
+  lifestyle: 'yellow' as const,
+  sports: 'red' as const,
+})
 
 export type Category = keyof typeof categoryToneMap
 
@@ -105,14 +80,16 @@ export type Category = keyof typeof categoryToneMap
  */
 
 const toneCss = Object.entries(tagToneStyles)
-  .map(([tone, styles]) => `
+  .map(
+    ([tone, styles]) => `
     :host([tone='${tone}']) span,
     :host([tone='${tone}']) time {
       background: ${styles.background};
       color: ${styles.color};
       border-color: ${styles.borderColor};
     }
-  `)
+  `,
+  )
   .join('\n')
 
 /**
