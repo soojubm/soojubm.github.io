@@ -12,11 +12,12 @@ export const tooltipStyles = css`
     --tooltip-text-color: var(--color-foreground-on-solid);
     --tooltip-shadow: var(--shadow);
 
-    &(:hover) .tooltip-content,
-    &(:focus-within) .tooltip-content {
-      opacity: 1;
-      visibility: visible;
-    }
+  }
+
+  :host(:hover) .tooltip-content,
+  :host(:focus-within) .tooltip-content {
+    opacity: 1;
+    visibility: visible;
   }
 
   .tooltip {
