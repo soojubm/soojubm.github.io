@@ -25,6 +25,8 @@ export const inputStyles = css`
     overflow: hidden;
     width: 100%;
     min-height: var(--input-height);
+    gap: var(--space-2);
+    padding-inline: var(--input-padding-inline);
     border: var(--input-border);
     border-radius: var(--input-radius);
     box-sizing: border-box;
@@ -61,7 +63,7 @@ export const inputStyles = css`
     font-family: inherit;
     font-size: inherit;
     color: var(--color-foreground);
-    padding: var(--input-padding-block) var(--input-padding-inline);
+    padding: var(--input-padding-block) 0;
     box-sizing: border-box;
     resize: none;
 
@@ -85,7 +87,6 @@ export const inputStyles = css`
     background: inherit;
     font: inherit;
     color: var(--color-foreground);
-    padding-inline: var(--input-padding-inline);
 
     &:focus-visible {
       outline: 0;

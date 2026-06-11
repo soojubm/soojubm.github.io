@@ -21,7 +21,7 @@ export class ComponentRelated extends LitElement {
   render() {
     return html`
       <section class="component-related">
-        <mm-text size="18" weight="bold">${this.heading}</mm-text>
+        <mm-paragraph size="large" weight="bold">${this.heading}</mm-paragraph>
         <slot></slot>
       </section>
     `

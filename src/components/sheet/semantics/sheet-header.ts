@@ -25,7 +25,7 @@ class SheetHeader extends LitElement {
   render() {
     return html`
       <header role="navigation">
-        <mm-text size="18">${this.title}</mm-text>
+        <mm-paragraph size="large">${this.title}</mm-paragraph>
         <mm-icon-button icon="xmark" aria-label="닫기" @click=${this.handleClose}></mm-icon-button>
       </header>
     `

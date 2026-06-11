@@ -1,6 +1,7 @@
 import { css, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 import { resetStyles } from '../../../stylesheets/shared/reset.styles'
+import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
 import { ToggleButton } from './toggle-button'
 import '../button'
 
@@ -33,7 +34,7 @@ export class FollowButton extends ToggleButton {
         aria-pressed=${this.selected ? 'true' : 'false'}
         @click=${this.handleClick}
       >
-        ${this.selected ? '팔로잉' : '팔로우'}
+        ${this.selected ? '팔로우 중' : '팔로우'}
       </mm-button>
     `
   }

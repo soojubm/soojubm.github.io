@@ -126,7 +126,7 @@ export class PortfolioItem extends LitElement {
         ></mm-icon-button>
         ${this.src ? html`<mm-thumbnail src=${this.src} alt=${this.alt}></mm-thumbnail>` : nothing}
         <div class="content">
-          ${this.label ? html`<mm-text size="18" weight="bold">${this.label}</mm-text>` : nothing}
+          ${this.label ? html`<mm-paragraph size="large" weight="bold">${this.label}</mm-paragraph>` : nothing}
           ${this.description ? html`<mm-text size="14">${this.description}</mm-text>` : nothing}
           ${this.date
             ? html`<time hidden datetime=${this.date}>${this.formattedDate}</time>`

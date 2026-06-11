@@ -10,9 +10,11 @@ export class ChatFeed extends LitElement {
       :host {
         display: flex;
         flex-direction: column;
-        flex: 1;
+        flex: none;
+        width: 100%;
         max-width: 800px;
-        margin: 0 auto;
+        margin: 2rem auto;
+        box-sizing: border-box;
         gap: 4rem;
         /* TODO gap-section */
       }

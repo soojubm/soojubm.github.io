@@ -172,14 +172,6 @@
   </mm-component-guide>
 
   <section class="textbox" style="position: relative">
-    <mm-flex
-      data-e="menu"
-      class="textbox-toolbar"
-      style="width: max-content; position: absolute; top: var(--space-1); left: var(--space-1)"
-    >
-      <mm-icon-button icon="bold" class="textbox-toolbar-bold"></mm-icon-button>
-      <mm-icon-button icon="italic" class="textbox-toolbar-italic"></mm-icon-button>
-    </mm-flex>
     <div
       class="textbox-view"
       role="textbox"
@@ -187,20 +179,7 @@
       aria-placeholder=""
       aria-labelledby=""
       style="padding: 48px var(--space-2) var(--space-1)"
-    >
-      <h1
-        class="textbox-view-heading"
-        style="margin: 0 0 var(--space-4) 0; color: var(--color-foreground-light)"
-      >
-        제목
-      </h1>
-      <div class="textbox-view-bdoy" style="color: var(--color-foreground-light)">
-        제목 / 내용 선택 영역에 is-selected
-      </div>
-    </div>
-    <footer>
-      <mm-button>게시</mm-button>
-    </footer>
+    ></div>
   </section>
 
   <div class="calendar">
@@ -324,29 +303,22 @@
       </div>
     </mm-flex>
     <br />
-    <mm-surface>
-      <mm-flex align="end" style="width: 100%">
-        <mm-textfield label="Length" placeholder="cm unit"></mm-textfield>
-        <mm-flex align="center" gap="0" style="height: var(--size-large)">
-          <mm-icon name="xmark"></mm-icon>
-        </mm-flex>
-        <mm-textfield label="Width" placeholder="x means"></mm-textfield>
-        <mm-flex align="center" gap="0" style="height: var(--size-large)">
-          <mm-icon name="xmark"></mm-icon>
-        </mm-flex>
-        <mm-textfield label="Height" placeholder="cm"></mm-textfield>
-      </mm-flex>
-    </mm-surface>
+    <mm-flex align="end">
+      <mm-textfield label="Length" placeholder="cm unit"></mm-textfield>
+      <mm-icon name="xmark"></mm-icon>
+      <mm-textfield label="Width" placeholder="x means"></mm-textfield>
+      <mm-icon name="xmark"></mm-icon>
+      <mm-textfield label="Height" placeholder="cm"></mm-textfield>
+    </mm-flex>
   </div>
 
   <mm-text-list texts="[]">
     <mm-text-list
-      texts='["TODO utilities. 앞자리 0 제거. 숫자만입력3자리마다콤마. 소숫점 컨트롤.", "url field. www 및 https://", "form 컴포넌트는 간격에 대한 구조 컴포넌트. TODO. FormField, FormLabel, FormControl. form
-      patterns. FormField label / TextInput 으로 나누는 방안. groupable은 속성. 그래서 컴포넌트
-      이름은 form layout / fieldset / fieldgroup FormLabel checkbox-label와 input-label을 똑같이 할
-      수 있나? field label : fieldset legend, label - input/textarea 그러면 searchField 등의 대안이
-      될 수 있나?", "field feedback / fieldset feedback(checkbox group, login)", "props: minValue, maxValue, value, onDecreseClick, onIncreseClick", "221021: - + 버튼에 포커스는 필요가 없다. input 키보드 위 아래로?", "장식적인 검색 아이콘과 clickable한 액션. leading는 장식. trailing는 액션? trailing에 유닛이 있을
-      수도"]'
+      texts='[
+      "",
+      "url field. www 및 https://",
+      "form 컴포넌트는 간격에 대한 구조 컴포넌트. TODO. FormField, FormLabel, FormControl. formpatterns. FormField label / TextInput 으로 나누는 방안. groupable은 속성. 그래서 컴포넌트 이름은 form layout / fieldset / fieldgroup FormLabel checkbox-label와 input-label을 똑같이 할수 있나? field label : fieldset legend, label - input/textarea 그러면 searchField 등의 대안이될 수 있나?", "field feedback / fieldset feedback(checkbox group, login)", "props: minValue, maxValue, value, onDecreseClick, onIncreseClick",
+      "221021: - + 버튼에 포커스는 필요가 없다. input 키보드 위 아래로?", "장식적인 검색 아이콘과 clickable한 액션. leading는 장식. trailing는 액션? trailing에 유닛이 있을 수도"]'
     ></mm-text-list>
   </mm-text-list>
 
@@ -406,7 +378,7 @@
 
   <mm-component-section
     title="NumberInput"
-    description="숫자 입력 필드. 수량, 가격, step/count 입력에 사용합니다."
+    description="숫자 입력 필드. 수량, 가격, step/count 입력에 사용합니다. TODO utilities. 앞자리 0 제거. 숫자만입력3자리마다콤마. 소숫점 컨트롤."
   >
     <mm-flex direction="column" gap="3">
       <mm-number-input

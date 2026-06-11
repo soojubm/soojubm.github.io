@@ -24,7 +24,7 @@ class TopBar extends LitElement {
               @click=${this.handleNavClick}
             ></mm-icon-button>`
           : ''}
-        <mm-text size="18" class="top-bar-title">${this.title}</mm-text>
+        <mm-paragraph size="large" class="top-bar-title">${this.title}</mm-paragraph>
         <slot name="action"></slot>
         ${this.nav === 'close'
           ? html`<mm-icon-button

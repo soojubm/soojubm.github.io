@@ -26,6 +26,14 @@ export class PromptInput extends LitElement {
     css`
       :host {
         display: block;
+        background: var(--input-background-color);
+        border: var(--input-border);
+        padding: var(--space-3);
+        border-radius: var(--radius);
+      }
+
+      .textarea-control {
+        border: none;
       }
     `,
   ]

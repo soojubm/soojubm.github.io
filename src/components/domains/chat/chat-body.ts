@@ -10,9 +10,10 @@ export class ChatBody extends LitElement {
     scrollbarStyles,
     css`
       :host {
-        display: flex;
+        display: block;
         flex: 1;
         min-height: 0;
+        box-sizing: border-box;
         overflow-x: hidden;
         overflow-y: auto;
       }

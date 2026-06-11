@@ -10,7 +10,7 @@
         label="폰타나 베네치아 로스티드 쉬림프 크림"
         value="Brown, 3개"
       />
-      <mm-text size="18">₩ 22,500</mm-text>
+      <mm-paragraph size="large">₩ 22,500</mm-paragraph>
       <mm-clear-button style="position: absolute; right: 0; top: 0"></mm-clear-button>
       <mm-button>수량/옵션 변경</mm-button>
       <mm-separator></mm-separator>
@@ -27,8 +27,8 @@
         <mm-meta-item label="배송료" value="₩ 3,000"/>
         <mm-meta-item label="할인" value="₩ 2,000"/>
         <mm-row justifyContent="space-between">
-          <mm-text size="18">최종 결제 금액</mm-text>
-          <mm-text size="18">₩ 37,000</mm-text>
+          <mm-paragraph size="large">최종 결제 금액</mm-paragraph>
+          <mm-paragraph size="large">₩ 37,000</mm-paragraph>
         </mm-row>
       </mm-menu-item-group>
       <div style="height: var(--space-3)"></div>
@@ -90,7 +90,7 @@
     <div style="height: var(--space-4)"></div>
 
     <section class="checkout-shipping">
-      <mm-text size="18">배송지</mm-text>
+      <mm-paragraph size="large">배송지</mm-paragraph>
       <mm-surface size="small">
         <mm-menu-item-action>
           <mm-radio
@@ -118,7 +118,7 @@
     <div style="height: var(--space-4)"></div>
 
     <section class="checkout-product">
-      <mm-text size="18" aria-label="summary">주문상품</mm-text>
+      <mm-paragraph size="large">주문상품</mm-paragraph>
       <mm-surface size="small">
         <mm-menu-item-action avatar-src="/src/images/cake_gosum.jpg" avatar-size="huge">
           <div slot="text">
@@ -136,7 +136,7 @@
     <div style="height: var(--space-4)"></div>
 
     <section class="checkout-discount">
-      <mm-text size="18">쿠폰 마일리지 할인</mm-text>
+      <mm-paragraph size="large">쿠폰 마일리지 할인</mm-paragraph>
       <div style="height: var(--space-3)"></div>
       <mm-textfield
         label="보너스 쿠폰"
@@ -152,7 +152,7 @@
     <div style="height: var(--space-4)"></div>
 
     <section class="checkout-payment">
-      <mm-text size="18">결제수단</mm-text>
+      <mm-paragraph size="large">결제수단</mm-paragraph>
       <mm-surface size="small">
         <mm-menu-item-radio-group name="payment" value="card" aria-label="결제수단 선택">
           <mm-menu-item-radio
@@ -182,8 +182,8 @@
 
     <section class="checkout-summary">
       <mm-flex justify="between" gap="0">
-        <mm-text size="18">결제상세</mm-text>
-        <mm-text size="18">13,980원</mm-text>
+        <mm-paragraph size="large">결제상세</mm-paragraph>
+        <mm-paragraph size="large">13,980원</mm-paragraph>
       </mm-flex>
       <div style="height: var(--space-3)"></div>
       <mm-meta-item label="마일리지 사용" value="980원"/>
@@ -193,8 +193,8 @@
           <mm-meta-item label="상품 금액" value="₩ 160,000"/>
           <mm-meta-item label="서비스 수수료" value="₩ 3,000"/>
           <mm-row justifyContent="space-between">
-            <mm-text size="18">총 합계 (KRW)</mm-text>
-            <mm-text size="18">₩ 163,000</mm-text>
+            <mm-paragraph size="large">총 합계 (KRW)</mm-paragraph>
+            <mm-paragraph size="large">₩ 163,000</mm-paragraph>
           </mm-row>
         </mm-flex>
         <footer style="margin: var(--space-4) 0 0 0">
@@ -206,7 +206,7 @@
 
   <mm-component-section title="결제수단 관리" description="저장된 카드 등 결제수단을 관리합니다.">
     <mm-paragraph-group>
-      <mm-text size="18">Your Payments / Wallet</mm-text>
+      <mm-paragraph size="large">Your Payments / Wallet</mm-paragraph>
       <mm-text size="14">
         name on card / Card Number / Expiration Date / CVV / billing address (따로 관리됨).
       </mm-text>
@@ -219,7 +219,7 @@
     <mm-menu-item-action>
       <mm-avatar slot="avatar" size="huge"></mm-avatar>
       <div slot="text">
-        <mm-text size="18">VISA 1988 XXXX 1111</mm-text>
+        <mm-paragraph size="large">VISA 1988 XXXX 1111</mm-paragraph>
         <mm-text>Expires on 10/23</mm-text>
         <em>Edit</em>
       </div>
@@ -232,8 +232,8 @@
   >
     <section class="order-complete">
       <header style="text-align: center; margin: 1.5rem 0">
-        <mm-text size="18">주문완료 되었습니다.</mm-text>
-        <mm-text size="18">2024.08.19 23:55</mm-text>
+        <mm-paragraph size="large">주문완료 되었습니다.</mm-paragraph>
+        <mm-paragraph size="large">2024.08.19 23:55</mm-paragraph>
       </header>
       <mm-surface>
         <header>

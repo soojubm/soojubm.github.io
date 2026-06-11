@@ -28,7 +28,7 @@ class UserSnippet extends LitElement {
           ? html`<mm-accent-tag class="entity-tag">${this.tagLabel}</mm-accent-tag>`
           : nothing}
         <div class="entity-content">
-          <mm-text size="18" weight="bold">${this.name}</mm-text>
+          <mm-paragraph size="large" weight="bold">${this.name}</mm-paragraph>
           ${this.description
             ? html`<mm-text size="14" style="margin-top:-.125rem">${this.description}</mm-text>`
             : nothing}

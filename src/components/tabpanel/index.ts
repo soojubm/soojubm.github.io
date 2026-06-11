@@ -1,0 +1,3 @@
+import './tabpanel'
+
+export {}

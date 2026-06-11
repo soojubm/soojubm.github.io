@@ -28,7 +28,7 @@ export const tagToneStyles = {
     borderColor: 'var(--color-border)',
   },
   gold: {
-    background: 'var(--color-accent-subtle)',
+    background: 'var(--yellow800)',
     color: 'var(--color-foreground)',
     borderColor: 'var(--color-accent-border)',
   },
