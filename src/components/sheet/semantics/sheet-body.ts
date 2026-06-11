@@ -11,12 +11,10 @@ class SheetBody extends LitElement {
         display: block;
         flex: 1 1 auto;
         min-height: 0;
-        padding: 0 0 1.25rem;
         box-sizing: border-box;
         overflow-y: auto;
         scrollbar-color: var(--color-border-strong) transparent;
         scrollbar-gutter: stable;
-        box-sizing: border-box;
       }
       :host::-webkit-scrollbar-thumb {
         background: var(--color-border-strong);

@@ -10,6 +10,7 @@ class Sheet extends LitElement {
   @property({ type: String }) size: SheetSize = 'medium'
   @property({ type: String }) height?: string
   @property({ type: Boolean, reflect: true, attribute: 'open' }) isOpen = false
+  @property({ type: Boolean, reflect: true, attribute: 'backdrop-blur' }) backdropBlur = false
 
   /** anchor 타입: 열기를 유발한 클릭 자체가 document 핸들러를 트리거하지 않도록 스킵 */
   private _skipNextOutsideClick = false
@@ -66,6 +67,8 @@ class Sheet extends LitElement {
         display: flex;
         position: fixed;
         inset: 0;
+        width: 100vw;
+        height: 100dvh;
         justify-content: center;
         align-items: center;
         z-index: var(--sheet-z-index);
@@ -75,6 +78,12 @@ class Sheet extends LitElement {
         visibility: hidden;
         pointer-events: none;
         transition: opacity 180ms ease, visibility 0s linear 180ms;
+        backdrop-filter: blur(0px);
+      }
+
+      :host([backdrop-blur]) {
+        backdrop-filter: blur(2px);
+        transition: opacity 180ms ease, visibility 0s linear 180ms, backdrop-filter 180ms ease;
       }
 
       :host([open]) {
@@ -89,10 +98,18 @@ class Sheet extends LitElement {
         }
       }
 
-      :host([open][type='bottom']) .sheet { transform: translateY(0); }
-      :host([open][type='left']) .sheet { transform: translateX(0); }
-      :host([open][type='right']) .sheet { transform: translateX(0); }
-      :host([open][type='inline']) .sheet { transform: translateY(0); }
+      :host([open][type='bottom']) .sheet {
+        transform: translateY(0);
+      }
+      :host([open][type='left']) .sheet {
+        transform: translateX(0);
+      }
+      :host([open][type='right']) .sheet {
+        transform: translateX(0);
+      }
+      :host([open][type='inline']) .sheet {
+        transform: translateY(0);
+      }
 
       .sheet {
         background: var(--color-background);

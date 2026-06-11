@@ -24,12 +24,12 @@ export class TableOfContents extends LitElement {
       :host {
         display: block;
         width: var(--width-small);
+        max-height: calc(100vh - var(--size-huge));
+        padding: var(--space-4) 0 0;
         flex-shrink: 0;
         position: sticky;
         top: calc(var(--space-4) * 4);
-        max-height: calc(100vh - var(--size-huge));
         overflow-y: auto;
-        padding: var(--space-4) 0 var(--space-4) var(--space-4);
       }
 
       .toc-title {

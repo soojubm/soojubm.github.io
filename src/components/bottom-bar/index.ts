@@ -7,11 +7,11 @@ interface BottomBarItem {
   href?: string
   icon?: string
   active?: boolean
-  badge?: boolean
+  // badge?: boolean
 }
 
 const defaultItems: BottomBarItem[] = [
-  { label: '홈', href: '#', icon: ICON_NAMES.HOME, active: true, badge: true },
+  { label: '홈', href: '#', icon: ICON_NAMES.HOME, active: true },
   { label: '카테고리', href: '#', icon: ICON_NAMES.HOME },
   { label: '설정', href: '#', icon: ICON_NAMES.HOME },
 ]
@@ -24,54 +24,42 @@ class BottomBar extends LitElement {
   @state() private selectedIndex: number | null = null
 
   static styles = css`
-      .bottom-bar {
-        display: flex;
-        padding: var(--space-2) 0 calc(env(safe-area-inset-bottom) + var(--space-2));
-        border-top: var(--border);
-        background: var(--color-background);
-        position: relative;
-      }
+    .bottom-bar {
+      display: flex;
+      padding: var(--space-2) 0 calc(env(safe-area-inset-bottom) + var(--space-2));
+      background: var(--color-background);
+      position: relative;
+    }
 
-      .bottom-bar-item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        flex: 1;
-        position: relative;
-        min-width: var(--size-large);
-        color: var(--color-foreground);
-        text-decoration: none;
-        z-index: 1;
-      }
+    .bottom-bar-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 1;
+      position: relative;
+      min-width: var(--size-large);
+      color: var(--color-foreground);
+      text-decoration: none;
+      z-index: 1;
+    }
 
-      .bottom-bar-item[aria-current='page'] {
-        color: var(--selection-foreground);
-      }
+    .bottom-bar-item[aria-current='page'] {
+      color: var(--selection-foreground);
+    }
 
-      .bottom-bar-indicator {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: calc(100% / var(--bottom-bar-count, 3));
-        height: 100%;
-        background: var(--selection-background);
-        border-radius: var(--radius-full);
-        transform: var(--bottom-bar-transform, translateX(0%));
-        transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-        pointer-events: none;
-      }
-
-      .bottom-bar-item em {
-        display: flex;
-        width: 4px;
-        height: 4px;
-        border-radius: var(--radius);
-        background: var(--color-danger);
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(var(--space-3), -1.125rem);
-      }
+    .bottom-bar-indicator {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: calc(100% / var(--bottom-bar-count, 3));
+      height: 100%;
+      background: var(--selection-background);
+      border: var(--border-transparent);
+      border-radius: var(--radius-large);
+      transform: var(--bottom-bar-transform, translateX(0%));
+      transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      pointer-events: none;
+    }
   `
 
   private handleItemClick(e: Event, index: number) {
@@ -119,7 +107,6 @@ class BottomBar extends LitElement {
             >
               <mm-avatar variant="tertiary" icon=${item.icon ?? ICON_NAMES.HOME}></mm-avatar>
               <mm-text size="12">${item.label}</mm-text>
-              ${item.badge ? html`<em aria-hidden="true"></em>` : nothing}
             </a>
           `,
         )}

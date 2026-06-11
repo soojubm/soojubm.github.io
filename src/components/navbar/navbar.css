@@ -176,33 +176,6 @@
   cursor: pointer;
 }
 
-.navbar-search-container {
-  position: fixed;
-  top: var(--navbar-height);
-  left: 0;
-  right: 0;
-  width: 100vw;
-  z-index: calc(var(--zindex-menu) - 1);
-  display: flex;
-  justify-content: center;
-  pointer-events: none;
-  padding: var(--space-2) var(--grid-margin) 0;
-}
-
-.navbar-search-container mm-sheet {
-  display: block;
-  width: 100%;
-  max-width: var(--layout-width-small);
-  pointer-events: none;
-  border-radius: calc(var(--radius) * 2);
-  overflow: hidden;
-}
-
-.navbar-search-container mm-sheet[open] {
-  pointer-events: auto;
-  box-shadow: var(--shadow);
-}
-
 .navbar-user-trigger + * {
   width: 100%;
   min-width: calc(var(--width-small) + var(--space-4) * 7.5);
