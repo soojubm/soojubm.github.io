@@ -24,15 +24,6 @@
   position: relative;
 }
 
-.portfolio-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-4);
-  width: 100%;
-}
-.portfolio-grid > * {
-  width: calc(33.3333% - 0.75rem);
-}
 
 @media (max-width: 1320px) {
   .profile {

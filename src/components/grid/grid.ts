@@ -48,7 +48,7 @@ export class Grid extends LitElement {
       @media (max-width: 1000px) {
         .grid[data-columns='3'],
         .grid[data-columns='4'] {
-          grid-template-columns: 2fr;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
         }
       }
 
