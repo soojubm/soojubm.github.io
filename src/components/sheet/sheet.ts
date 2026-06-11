@@ -6,8 +6,8 @@ export type SheetSize = 'small' | 'medium' | 'large' | 'full'
 
 @customElement('mm-sheet')
 class Sheet extends LitElement {
-  @property({ type: String }) type: SheetType = 'center'
-  @property({ type: String }) size: SheetSize = 'medium'
+  @property({ type: String, reflect: true }) type: SheetType = 'center'
+  @property({ type: String, reflect: true }) size: SheetSize = 'medium'
   @property({ type: String }) height?: string
   @property({ type: Boolean, reflect: true, attribute: 'open' }) isOpen = false
   @property({ type: Boolean, reflect: true, attribute: 'backdrop-blur' }) backdropBlur = false
@@ -54,29 +54,29 @@ class Sheet extends LitElement {
       :host {
         --sheet-z-index: var(--zindex-sheet);
         --sheet-backdrop-color: var(--color-backdrop);
-        --sheet-radius: calc(var(--radius) * 2);
-        --sheet-bottom-offset: var(--space-4);
+        --sheet-radius: var(--radius-large);
         --sheet-bottom-max-width: calc(var(--layout-width-small) + var(--space-4) * 10);
         --sheet-anchor-width: calc(var(--width-small) + var(--space-4) * 7.5);
         --sheet-anchor-max-height: calc(var(--width-small) * 2);
         --sheet-size-small: var(--sheet-anchor-width);
         --sheet-size-medium: var(--layout-width-tiny);
-        --sheet-size-large: var(--layout-width-small);
+        --sheet-size-large: var(--layout-width-wide);
         --sheet-size-full: 100%;
 
         display: flex;
-        position: fixed;
-        inset: 0;
         width: 100vw;
         height: 100dvh;
         justify-content: center;
         align-items: center;
-        z-index: var(--sheet-z-index);
         background: var(--sheet-backdrop-color);
 
         opacity: 0;
         visibility: hidden;
         pointer-events: none;
+
+        position: fixed;
+        inset: 0;
+        z-index: var(--sheet-z-index);
         transition: opacity 180ms ease, visibility 0s linear 180ms;
         backdrop-filter: blur(0px);
       }
@@ -112,14 +112,14 @@ class Sheet extends LitElement {
       }
 
       .sheet {
+        display: flex;
+        flex-direction: column;
         background: var(--color-background);
         border-radius: var(--sheet-radius);
         width: 100%;
         padding: 0 var(--space-4);
         box-sizing: border-box;
         max-height: 90vh;
-        display: flex;
-        flex-direction: column;
         overflow: hidden;
         position: relative;
 
@@ -127,13 +127,18 @@ class Sheet extends LitElement {
         transition: transform 180ms cubic-bezier(0.2, 0.8, 0.2, 1);
       }
 
+      /* center + size */
+      :host([type='center']) .sheet { max-width: var(--sheet-size-medium); }
+      :host([type='center'][size='small']) .sheet { max-width: var(--sheet-size-small); }
+      :host([type='center'][size='large']) .sheet { max-width: var(--sheet-size-large); }
+      :host([type='center'][size='full']) .sheet { max-width: var(--sheet-size-full); }
+
       /* bottom */
       :host([type='bottom']) .sheet {
-        margin-top: auto;
-        margin-bottom: var(--sheet-bottom-offset);
         max-width: var(--sheet-bottom-max-width);
         border-bottom-left-radius: var(--sheet-radius);
         border-bottom-right-radius: var(--sheet-radius);
+        margin-top: auto;
         transform: translateY(100%);
       }
 
@@ -190,23 +195,12 @@ class Sheet extends LitElement {
   ]
 
   render() {
-    const maxWidth =
-      this.type === 'center'
-        ? {
-            small: 'var(--sheet-size-small)',
-            medium: 'var(--sheet-size-medium)',
-            large: 'var(--sheet-size-large)',
-            full: 'var(--sheet-size-full)',
-          }[this.size] || 'var(--sheet-size-medium)'
-        : this.type === 'left' || this.type === 'right'
-        ? '90vw'
-        : '100%'
     const heightStyle = this.height ? `height:${this.height};` : ''
     const isAnchor = this.type === 'anchor'
     const cls = ['sheet', isAnchor && 'popover', isAnchor && this.isOpen && 'open']
       .filter(Boolean)
       .join(' ')
-    return html`<aside class="${cls}" style="max-width:${maxWidth};${heightStyle}">
+    return html`<aside class="${cls}" style="${heightStyle}">
       <slot></slot>
     </aside>`
   }

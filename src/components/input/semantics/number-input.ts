@@ -1,119 +1,117 @@
-import { html } from 'lit'
+import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
+import { textfieldStyles } from './textfield.styles'
 import '../../icon-button/icon-button'
-import { Textfield } from './textfield'
 import '../input'
 
 @customElement('mm-number-input')
-export class NumberInput extends Textfield {
+export class NumberInput extends LitElement {
+  @property({ type: String }) value = ''
+  @property({ type: String }) name?: string
+  @property({ type: String }) placeholder?: string
+  @property({ type: String }) label?: string
+  @property({ type: String }) helper?: string
+  @property({ type: String, attribute: 'validation-text' }) validationText?: string
+  @property({ type: String, reflect: true }) size = ''
+  @property({ type: Boolean, attribute: 'is-optional' }) isOptional = false
+  @property({ type: Boolean, attribute: 'hidden-label', reflect: true }) hiddenLabel = false
+  @property({ type: Boolean, reflect: true }) disabled = false
+  @property({ type: Boolean, attribute: 'aria-invalid' }) isInvalid = false
   @property({ type: Number }) min?: number
   @property({ type: Number }) max?: number
   @property({ type: Number }) step = 1
 
-  protected override get fieldClasses() {
-    return 'textfield number-input'
+  static styles = textfieldStyles
+
+  private inputId = `input-${crypto?.randomUUID?.() || Math.random().toString(36).slice(2)}`
+
+  render() {
+    return html`
+      <div class="textfield" ?data-invalid=${this.isInvalid}>
+        ${this.label
+          ? html`<mm-textfield-label for=${this.inputId} ?optional=${this.isOptional}>${this.label}</mm-textfield-label>`
+          : nothing}
+        ${this.helper
+          ? html`<div style="margin-top:-.25rem"><mm-textfield-helper>${this.helper}</mm-textfield-helper></div>`
+          : nothing}
+        <div class="textfield-control">
+          <mm-icon-button
+            variant="plain"
+            size="small"
+            icon=${ICON_NAMES.SUBTRACT}
+            label="감소"
+            tooltip="감소"
+            tooltip-align="center"
+            ?disabled=${this.disabled}
+            @click=${this._decrement}
+          ></mm-icon-button>
+          <mm-input
+            input-id=${this.inputId}
+            input-class="textfield-input"
+            .type=${'number'}
+            .value=${this.value}
+            .name=${this.name}
+            .placeholder=${this.placeholder}
+            .min=${this.min}
+            .max=${this.max}
+            .step=${this.step}
+            ?disabled=${this.disabled}
+            ?invalid=${this.isInvalid}
+            .describedBy=${this.validationText ? `${this.inputId}-validation` : undefined}
+            @input=${this._handleInput}
+          ></mm-input>
+          <mm-icon-button
+            variant="plain"
+            size="small"
+            icon=${ICON_NAMES.ADD}
+            label="증가"
+            tooltip="증가"
+            tooltip-align="center"
+            ?disabled=${this.disabled}
+            @click=${this._increment}
+          ></mm-icon-button>
+        </div>
+        ${this.validationText
+          ? html`<mm-textfield-validation id=${`${this.inputId}-validation`}>${this.validationText}</mm-textfield-validation>`
+          : nothing}
+      </div>
+    `
   }
 
-  protected override get inputType() {
-    return 'number'
-  }
-
-  protected override get inputClasses() {
-    return 'textfield-input number-input-field'
-  }
-
-  protected override get showLeading() {
-    return true
-  }
-
-  protected override get showTrailing() {
-    return true
-  }
-
-  private get numericValue() {
+  private get _numericValue() {
     const parsed = Number(this.value)
     if (Number.isFinite(parsed)) return parsed
     if (typeof this.min === 'number') return this.min
     return 0
   }
 
-  private clamp(value: number) {
+  private _clamp(value: number) {
     if (typeof this.min === 'number' && value < this.min) return this.min
     if (typeof this.max === 'number' && value > this.max) return this.max
     return value
   }
 
-  private commitValue(value: number) {
-    this.value = String(this.clamp(value))
-    this.dispatchInputEvent(this.value)
-    this.dispatchEvent(
-      new CustomEvent('change', {
-        bubbles: true,
-        composed: true,
-        detail: { value: this.value },
-      }),
-    )
+  private _commit(value: number) {
+    this.value = String(this._clamp(value))
+    this.dispatchEvent(new CustomEvent('input', { bubbles: true, composed: true, detail: { value: this.value } }))
+    this.dispatchEvent(new CustomEvent('change', { bubbles: true, composed: true, detail: { value: this.value } }))
   }
 
-  private decrement() {
+  private _decrement() {
     if (this.disabled) return
-    this.commitValue(this.numericValue - this.step)
+    this._commit(this._numericValue - this.step)
   }
 
-  private increment() {
+  private _increment() {
     if (this.disabled) return
-    this.commitValue(this.numericValue + this.step)
+    this._commit(this._numericValue + this.step)
   }
 
-  protected override renderLeading(): unknown {
-    return html`
-      <mm-icon-button
-        variant="plain"
-        size="small"
-        icon=${ICON_NAMES.SUBTRACT}
-        label="감소"
-        tooltip="감소"
-        tooltip-align="center"
-        ?disabled=${this.disabled}
-        @click=${this.decrement}
-      ></mm-icon-button>
-    `
-  }
-
-  protected override renderTrailing(): unknown {
-    return html`
-      <mm-icon-button
-        variant="plain"
-        size="small"
-        icon=${ICON_NAMES.ADD}
-        label="증가"
-        tooltip="증가"
-        tooltip-align="center"
-        ?disabled=${this.disabled}
-        @click=${this.increment}
-      ></mm-icon-button>
-    `
-  }
-
-  protected override renderInput(): unknown {
-    return html`
-      <mm-input
-        input-id=${this.inputId}
-        input-class=${this.inputClasses}
-        .type=${this.inputType}
-        .value=${this.value}
-        .name=${this.name}
-        .placeholder=${this.placeholder}
-        .min=${this.min}
-        .max=${this.max}
-        .step=${this.step}
-        ?disabled=${this.disabled}
-        ?invalid=${this.isInvalid}
-        .describedBy=${this.validationText ? `${this.inputId}-validation` : undefined}
-        @input=${this._handleInput}
-      ></mm-input>
-    `
+  private _handleInput(event: Event) {
+    const target = event.target as HTMLInputElement
+    this.value = target.value
+    this.dispatchEvent(new CustomEvent('input', { bubbles: true, composed: true, detail: { value: this.value } }))
   }
 }
 

@@ -1,6 +1,5 @@
 import { LitElement, html, nothing } from 'lit'
-import { customElement, property, state } from 'lit/decorators.js'
-import { ifDefined } from 'lit/directives/if-defined.js'
+import { customElement, property } from 'lit/decorators.js'
 import { textfieldStyles } from './textfield.styles'
 import '../input'
 
@@ -22,149 +21,36 @@ export class Textfield extends LitElement {
 
   static styles = textfieldStyles
 
-  protected inputId = `input-${crypto?.randomUUID?.() || Math.random().toString(36).slice(2)}`
-  @state() private hasLeadingSlot = false
-  @state() private hasTrailingSlot = false
+  private inputId = `input-${crypto?.randomUUID?.() || Math.random().toString(36).slice(2)}`
 
-  protected get fieldClasses() {
-    return 'textfield'
-  }
-
-  protected get fieldRole(): string | undefined {
-    return undefined
-  }
-
-  protected get fieldAriaLabel(): string | undefined {
-    return undefined
-  }
-
-  protected get inputType() {
-    return this.type
-  }
-
-  protected get inputClasses() {
-    return 'textfield-input'
-  }
-
-  protected get showLeading() {
-    return this.hasLeadingSlot
-  }
-
-  protected get showTrailing() {
-    return this.hasTrailingSlot
-  }
-
-  protected handleSlotChange(kind: 'leading' | 'trailing', event: Event) {
-    const slot = event.target as HTMLSlotElement
-    const hasContent = slot
-      .assignedNodes({ flatten: true })
-      .some(
-        node =>
-          (node.nodeType === Node.TEXT_NODE && node.textContent?.trim() !== '') ||
-          node.nodeType === Node.ELEMENT_NODE,
-      )
-
-    if (kind === 'leading') this.hasLeadingSlot = hasContent
-    if (kind === 'trailing') this.hasTrailingSlot = hasContent
-  }
-
-  protected _handleInput(event: Event) {
+  private _handleInput(event: Event) {
     const target = event.target as HTMLInputElement
     this.value = target.value
-    this.dispatchInputEvent(this.value)
-  }
-
-  protected dispatchInputEvent(value: string) {
-    this.dispatchEvent(
-      new CustomEvent('input', {
-        bubbles: true,
-        composed: true,
-        detail: { value },
-      }),
-    )
-  }
-
-  protected renderLabel(): unknown {
-    if (!this.label) return nothing
-
-    return html`
-      <mm-textfield-label for=${this.inputId} ?optional=${this.isOptional}>
-        ${this.label}
-      </mm-textfield-label>
-    `
-  }
-
-  protected renderLeading(): unknown {
-    return html`<slot
-      name="leading"
-      @slotchange=${(event: Event) => this.handleSlotChange('leading', event)}
-    ></slot>`
-  }
-
-  protected renderTrailing(): unknown {
-    return html`<slot
-      name="trailing"
-      @slotchange=${(event: Event) => this.handleSlotChange('trailing', event)}
-    ></slot>`
-  }
-
-  protected renderHelper(): unknown {
-    return this.helper
-      ? html`<div style="margin-top:-.25rem">
-          <mm-textfield-helper>${this.helper}</mm-textfield-helper>
-        </div>`
-      : nothing
-  }
-
-  protected renderValidation(): unknown {
-    return this.validationText
-      ? html`<mm-textfield-validation id=${`${this.inputId}-validation`}
-          >${this.validationText}</mm-textfield-validation
-        >`
-      : nothing
-  }
-
-  protected renderInput(): unknown {
-    return html`
-      <mm-input
-        input-id=${this.inputId}
-        input-class=${this.inputClasses}
-        .type=${this.inputType}
-        .value=${this.value}
-        .name=${this.name}
-        .placeholder=${this.placeholder}
-        ?disabled=${this.disabled}
-        ?invalid=${this.isInvalid}
-        .describedBy=${this.validationText ? `${this.inputId}-validation` : undefined}
-        @input=${this._handleInput}
-      ></mm-input>
-    `
-  }
-
-  protected renderControl(): unknown {
-    return html`
-      <div class="textfield-control">
-        ${this.showLeading
-          ? html`<span class="textfield-leading">${this.renderLeading()}</span>`
-          : this.renderLeading()}
-        ${this.renderInput()}
-        ${this.showTrailing
-          ? html`<span class="textfield-trailing">${this.renderTrailing()}</span>`
-          : this.renderTrailing()}
-      </div>
-    `
+    this.dispatchEvent(new CustomEvent('input', { bubbles: true, composed: true, detail: { value: this.value } }))
   }
 
   render() {
     return html`
-      <div
-        class=${this.fieldClasses}
-        role=${ifDefined(this.fieldRole)}
-        aria-label=${ifDefined(this.fieldAriaLabel)}
-        ?data-invalid=${this.isInvalid}
-      >
-        ${this.renderLabel()} ${this.renderHelper()} ${this.renderControl()}
-        ${this.renderValidation()}
+      <div class="textfield" ?data-invalid=${this.isInvalid}>
+        ${this.label ? html`<mm-textfield-label for=${this.inputId} ?optional=${this.isOptional}>${this.label}</mm-textfield-label>` : nothing}
+        ${this.helper ? html`<div style="margin-top:-.25rem"><mm-textfield-helper>${this.helper}</mm-textfield-helper></div>` : nothing}
+        <div class="textfield-control">
+          <slot name="leading"></slot>
+          <mm-input
+            input-id=${this.inputId}
+            input-class="textfield-input"
+            .type=${this.type}
+            .value=${this.value}
+            .name=${this.name}
+            .placeholder=${this.placeholder}
+            ?disabled=${this.disabled}
+            ?invalid=${this.isInvalid}
+            .describedBy=${this.validationText ? `${this.inputId}-validation` : undefined}
+            @input=${this._handleInput}
+          ></mm-input>
+          <slot name="trailing"></slot>
+        </div>
+        ${this.validationText ? html`<mm-textfield-validation id=${`${this.inputId}-validation`}>${this.validationText}</mm-textfield-validation>` : nothing}
       </div>
     `
   }
