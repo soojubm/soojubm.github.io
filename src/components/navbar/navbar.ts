@@ -35,7 +35,7 @@ export class Navbar extends LitElement {
   private _toggleSearch() {
     this._searchOpen = !this._searchOpen
     const sheet = this.querySelector('.js-search-sheet') as any
-    if (sheet) sheet.isOpen = this._searchOpen
+    if (sheet) this._searchOpen ? sheet.open() : sheet.close()
     if (this._searchOpen) {
       this._loadPagefind()
       requestAnimationFrame(() => {
@@ -73,10 +73,7 @@ export class Navbar extends LitElement {
 
   private _renderDefault() {
     return html`
-      <mm-search-suggestions
-        aria-label="추천 검색어"
-        style="margin-bottom: var(--space-3); overflow-x: auto"
-      >
+      <mm-search-suggestions bleed="var(--space-4)" fade aria-label="추천 검색어">
         <mm-search-suggestion>아파트열쇠를빌려드립니다</mm-search-suggestion>
         <mm-search-suggestion>로얄테넌바움</mm-search-suggestion>
         <mm-search-suggestion>소매치기</mm-search-suggestion>
@@ -187,27 +184,19 @@ export class Navbar extends LitElement {
       </nav>
       <div class="navbar-backdrop"></div>
 
-      <div class="navbar-search-container">
-        <mm-sheet class="js-search-sheet" type="inline">
-          <mm-sheet-body>
-            <mm-flex direction="column" gap="3">
-              <mm-flex gap="2">
-                <mm-icon-button
-                  icon=${ICON_NAMES.BACK}
-                  aria-label="검색 닫기"
-                  @click=${this._toggleSearch}
-                ></mm-icon-button>
-                <mm-searchfield
-                  placeholder="컴포넌트, 패턴을 검색하세요"
-                  .value=${this._query}
-                  @input=${this._onInput}
-                ></mm-searchfield>
-              </mm-flex>
-              ${this._query ? this._renderResults() : this._renderDefault()}
-            </mm-flex>
-          </mm-sheet-body>
-        </mm-sheet>
-      </div>
+      <mm-sheet class="js-search-sheet" type="center" size="medium" backdrop-blur>
+        <mm-top-bar type="back" data-todo="topbar vs sheetheader"></mm-top-bar>
+        <mm-sheet-body>
+          <mm-flex direction="column" gap="2">
+            <mm-searchfield
+              placeholder="컴포넌트, 패턴을 검색하세요"
+              .value=${this._query}
+              @input=${this._onInput}
+            ></mm-searchfield>
+            ${this._query ? this._renderResults() : this._renderDefault()}
+          </mm-flex>
+        </mm-sheet-body>
+      </mm-sheet>
 
       <mm-sidebar></mm-sidebar>
     `
