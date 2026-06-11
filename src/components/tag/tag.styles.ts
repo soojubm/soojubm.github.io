@@ -155,4 +155,10 @@ export const tagStyles = css`
   // }
 
   ${unsafeCSS(toneCss)}
+
+  /* brutal: 톤별 색상 보더를 --brutal-border-color(#000)로 통일 */
+  :host-context([data-theme='brutal']) span,
+  :host-context([data-theme='brutal']) time {
+    border-color: var(--brutal-border-color);
+  }
 `
