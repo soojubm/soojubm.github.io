@@ -5,6 +5,7 @@
   gap: var(--size-large);
   margin: 0 auto;
   padding: 2rem var(--grid-margin) 8rem;
+  box-sizing: border-box;
 }
 
 .profile-user {
@@ -23,7 +24,6 @@
   box-sizing: border-box;
   position: relative;
 }
-
 
 @media (max-width: 1320px) {
   .profile {

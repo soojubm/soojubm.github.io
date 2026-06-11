@@ -4,14 +4,16 @@
     description="콘텐츠를 펼치거나 접어 필요한 정보만 선택적으로 볼 수 있게 합니다. 반드시 숙지해야 할 중요 정보에는 사용하지 않아야 합니다."
   ></mm-page-header>
 
-  <mm-component-aka items='["Disclosure", "Expand / Collapse", "Details / Summary"]'></mm-component-aka>
+  <mm-component-aka
+    items='["Disclosure", "Expand / Collapse", "Details / Summary"]'
+  ></mm-component-aka>
 
   <mm-component-example>
     <mm-accordion exclusive>
-      <mm-accordion-item summary="서비스를 탈퇴하고 싶어요.">
+      <mm-accordion-item summary="서비스를 탈퇴하고 싶어요." open>
         <mm-text size="14">
-          마이페이지 → 계정 설정 → 회원 탈퇴 순서로 진행하시면 됩니다.
-          탈퇴 후 30일간 데이터가 보관되며 이후 완전히 삭제됩니다.
+          마이페이지 → 계정 설정 → 회원 탈퇴 순서로 진행하시면 됩니다. 탈퇴 후 30일간 데이터가
+          보관되며 이후 완전히 삭제됩니다.
         </mm-text>
       </mm-accordion-item>
       <mm-accordion-item summary="비밀번호를 잊어버렸어요.">
@@ -19,7 +21,7 @@
           로그인 화면의 "비밀번호 찾기"를 통해 가입 이메일로 재설정 링크를 받을 수 있습니다.
         </mm-text>
       </mm-accordion-item>
-      <mm-accordion-item summary="결제 영수증은 어디서 확인하나요?">
+      <mm-accordion-item summary="결제 영수증은 어디서 확인하나요?" disabled>
         <mm-text size="14">
           마이페이지 → 결제 내역에서 영수증을 확인하고 다운로드할 수 있습니다.
         </mm-text>
@@ -40,34 +42,19 @@
   </mm-component-props>
 
   <mm-component-tokens>
-    <mm-token
-      name="--accordion-padding-x"
-      default="var(--space-4)"
-    ></mm-token>
-    <mm-token
-      name="--accordion-padding-y"
-      default="var(--space-2)"
-    ></mm-token>
-    <mm-token
-      name="--accordion-background"
-      default="var(--color-background-subtle)"
-    ></mm-token>
-    <mm-token
-      name="--accordion-border"
-      default="none"
-    ></mm-token>
-    <mm-token
-      name="--accordion-radius"
-      default="var(--radius)"
-    ></mm-token>
+    <mm-token name="--accordion-padding-x" default="var(--space-4)"></mm-token>
+    <mm-token name="--accordion-padding-y" default="var(--space-2)"></mm-token>
+    <mm-token name="--accordion-background" default="var(--color-background-subtle)"></mm-token>
+    <mm-token name="--accordion-border" default="none"></mm-token>
+    <mm-token name="--accordion-radius" default="var(--radius)"></mm-token>
   </mm-component-tokens>
 
   <mm-component-guide>
     <mm-paragraph-group>
       <mm-text size="14" weight="bold">언제 사용하나요</mm-text>
       <mm-text size="14">
-        FAQ·커리큘럼·필터처럼 항목이 많고 사용자가 선택적으로 읽는 콘텐츠에 적합합니다.
-        모든 내용을 한 번에 읽어야 하는 경우에는 펼쳐진 상태로 표시하는 것이 낫습니다.
+        FAQ·커리큘럼·필터처럼 항목이 많고 사용자가 선택적으로 읽는 콘텐츠에 적합합니다. 모든 내용을
+        한 번에 읽어야 하는 경우에는 펼쳐진 상태로 표시하는 것이 낫습니다.
       </mm-text>
     </mm-paragraph-group>
     <mm-text-list
@@ -80,26 +67,10 @@
     ></mm-text-list>
   </mm-component-guide>
 
-  <mm-component-section
-    title="Disabled"
-    description="disabled 상태에서는 트리거가 비활성화됩니다."
-  >
-    <mm-accordion-item summary="비활성 항목 (클릭해도 열리지 않습니다)" disabled>
-      <mm-text size="14">이 콘텐츠는 볼 수 없습니다.</mm-text>
-    </mm-accordion-item>
-  </mm-component-section>
-
-  <mm-component-section
-    title="Open by default"
-    description="open 속성으로 초기 상태를 펼쳐진 상태로 지정할 수 있습니다."
-  >
-    <mm-accordion-item summary="처음부터 펼쳐진 항목" open>
-      <mm-text size="14">open 속성이 지정되어 페이지 로드 시 바로 표시됩니다.</mm-text>
-    </mm-accordion-item>
-  </mm-component-section>
-
   <mm-component-references>
-    <mm-link external href="https://www.w3.org/WAI/ARIA/apg/patterns/accordion/">WAI-ARIA Accordion Pattern</mm-link>
+    <mm-link external href="https://www.w3.org/WAI/ARIA/apg/patterns/accordion/"
+      >WAI-ARIA Accordion Pattern</mm-link
+    >
     <mm-link external href="https://nuli.navercorp.com/community/article/1132889">nuli</mm-link>
   </mm-component-references>
 </main>
