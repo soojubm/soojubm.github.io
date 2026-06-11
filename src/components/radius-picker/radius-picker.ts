@@ -1,0 +1,101 @@
+import { LitElement, css, html } from 'lit'
+import { customElement, state } from 'lit/decorators.js'
+import '../toggle-button-group'
+
+const SQUARE_CLASS = 'shape-square'
+const COLOR_CLASSES = ['color-black', 'color-green']
+
+type Shape = 'circle' | 'square'
+type Color = 'green' | 'black'
+
+const SHAPE_OPTIONS = JSON.stringify([
+  { value: 'circle', label: 'Circle' },
+  { value: 'square', label: 'Square' },
+])
+
+const COLOR_OPTIONS = JSON.stringify([
+  { value: 'green', label: 'Green' },
+  { value: 'black', label: 'Black' },
+])
+
+@customElement('mm-radius-picker')
+export class RadiusPicker extends LitElement {
+  @state() private shape: Shape = 'circle'
+  @state() private color: Color = 'green'
+
+  static styles = css`
+    :host {
+      position: fixed;
+      bottom: 1.5rem;
+      left: 0;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    .bar {
+      pointer-events: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-3);
+      padding: var(--space-2) var(--space-3);
+      background: var(--color-background);
+      border: var(--border);
+      border-radius: var(--radius-large);
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    .divider {
+      width: 1px;
+      height: 1.25rem;
+      background: var(--color-border);
+    }
+
+    .label {
+      font-size: 12px;
+      color: var(--color-foreground-subtle);
+      white-space: nowrap;
+    }
+  `
+
+  private handleShapeChange(e: CustomEvent) {
+    this.shape = e.detail.value as Shape
+    document.documentElement.classList.toggle(SQUARE_CLASS, this.shape === 'square')
+  }
+
+  private handleColorChange(e: CustomEvent) {
+    this.color = e.detail.value as Color
+    COLOR_CLASSES.forEach(c => document.documentElement.classList.remove(c))
+    document.documentElement.classList.add(`color-${this.color}`)
+  }
+
+  render() {
+    return html`
+      <div class="bar">
+        <span class="label">Radius</span>
+        <mm-toggle-button-group
+          options=${SHAPE_OPTIONS}
+          .selectedIndex=${this.shape === 'square' ? 1 : 0}
+          @option-change=${this.handleShapeChange}
+        ></mm-toggle-button-group>
+
+        <div class="divider"></div>
+
+        <span class="label">Color</span>
+        <mm-toggle-button-group
+          options=${COLOR_OPTIONS}
+          .selectedIndex=${this.color === 'black' ? 1 : 0}
+          @option-change=${this.handleColorChange}
+        ></mm-toggle-button-group>
+      </div>
+    `
+  }
+}
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'mm-radius-picker': RadiusPicker
+  }
+}

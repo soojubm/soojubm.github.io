@@ -15,6 +15,7 @@ export const renderLayout = (
   return `
     <mm-navbar></mm-navbar>
     ${content}
+    <mm-radius-picker></mm-radius-picker>
     ${options.footer ? '<mm-footer></mm-footer>' : ''}
   `
 }

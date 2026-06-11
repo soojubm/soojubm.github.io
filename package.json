@@ -9,7 +9,8 @@
     "start": "webpack serve --open --mode=development",
     "build": "webpack --mode=production && node scripts/build-search-index.mjs",
     "remove": "rm -r node_modules",
-    "stat": "npx webpack --mode production --json artifacts/webpack-stats.json"
+    "stat": "npx webpack --mode production --json artifacts/webpack-stats.json",
+    "analyze": "cem analyze --globs 'src/components/**/*.ts'"
   },
   "repository": {
     "type": "git",
@@ -28,6 +29,7 @@
     "@babel/cli": "^7.29.7",
     "@babel/core": "^7.29.7",
     "@babel/preset-env": "^7.29.7",
+    "@custom-elements-manifest/analyzer": "^0.11.0",
     "babel-loader": "^9.2.1",
     "css-loader": "^6.7.2",
     "cssnano": "^7.1.9",
@@ -54,5 +56,6 @@
     "sockjs": {
       "uuid": "^11.1.1"
     }
-  }
+  },
+  "customElements": "custom-elements.json"
 }

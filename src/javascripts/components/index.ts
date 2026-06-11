@@ -48,6 +48,8 @@ import '../../components/avatar'
 // domains
 import '../../components/domains'
 
+import '../../components/radius-picker/radius-picker'
+
 import '../../components/spinner'
 import '../../components/tabs'
 import '../../components/accordion'

@@ -9,6 +9,7 @@
       "language": "html"
     }
   ],
+  "html.customData": ["./custom-elements.json"],
   "workbench.colorCustomizations": {
     "activityBar.background": "#480F67",
     "titleBar.activeBackground": "#651590",

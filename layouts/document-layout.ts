@@ -33,6 +33,7 @@ export const renderDocumentLayout = (content: string, options: { footer?: boolea
       ${content}
       <mm-toc></mm-toc>
     </div>
+    <mm-radius-picker></mm-radius-picker>
     <aside id="modal"></aside>
     ${options.footer ? '<mm-footer></mm-footer>' : ''}
   `

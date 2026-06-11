@@ -189,7 +189,27 @@
   --radius: 6px;
   --radius-large: 1rem;
   --radius-round: 50%;
+}
 
+.shape-square {
+  --radius: 0px;
+  --radius-large: 0px;
+  --radius-round: 0%;
+}
+
+.color-black {
+  --color-primary: #1a1a1a;
+  --green100: rgba(0, 0, 0, 0.08);
+  --color-success: #1a1a1a;
+}
+
+.color-green {
+  --color-primary: var(--green800);
+  --green100: rgba(10, 160, 80, 0.075);
+  --color-success: var(--green800);
+}
+
+:root {
   /* 여기서 2배로 하면 다른 모든 곳에서도 두 배로 가져간다. */
   /* As an element gets closer to the user, the offset should increase, the blur radius should increase, and the shadow's opacity should decrease. */
   /* You can skip some of these calculations by using our intuition. */
