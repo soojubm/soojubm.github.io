@@ -1,8 +1,9 @@
-import { html } from 'lit'
+import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { ICON_NAMES } from '../../../icon-button/semantics/icon-names'
-import { ChatBubbleBase } from './chat-bubble'
+import { resetStyles } from '../../../../stylesheets/shared/reset.styles'
+import { chatBubbleStyles } from '../chat.styles'
 import { myChatBubbleStyles } from './styles'
+import { ICON_NAMES } from '../../../icon-button/semantics/icon-names'
 import '../../../text/text'
 
 /**
@@ -10,13 +11,29 @@ import '../../../text/text'
  * 전송 상태(전송됨/읽음)와 전송 실패(재전송)를 표시합니다.
  */
 @customElement('mm-my-chat-bubble')
-export class MyChatBubble extends ChatBubbleBase {
-  /** 전송 상태 (예: "전송됨", "읽음") */
+export class MyChatBubble extends LitElement {
+  @property({ type: Boolean }) typing = false
+  @property({ type: String }) src = ''
   @property({ type: String }) status = ''
-  /** 전송 실패 상태 */
   @property({ type: Boolean, reflect: true }) failed = false
 
-  static styles = [...ChatBubbleBase.styles, myChatBubbleStyles]
+  static styles = [resetStyles, chatBubbleStyles, myChatBubbleStyles]
+
+  private renderTyping() {
+    return html`
+      <div class="bubble">
+        <div class="typing"><span></span><span></span><span></span></div>
+      </div>
+    `
+  }
+
+  private renderImage() {
+    return html`
+      <div class="bubble is-image">
+        <mm-thumbnail src=${this.src} alt="" ratio="4:3"></mm-thumbnail>
+      </div>
+    `
+  }
 
   private handleRetry() {
     this.dispatchEvent(new CustomEvent('retry', { bubbles: true, composed: true }))

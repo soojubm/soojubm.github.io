@@ -1,6 +1,6 @@
-import { html } from 'lit'
+import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import IconButton from '../icon-button'
+import { iconButtonStyles } from '../icon-button.styles'
 import { ICON_NAMES } from './icon-names'
 
 /**
@@ -8,20 +8,18 @@ import { ICON_NAMES } from './icon-names'
  * revealed 상태에 따라 eye / eye-closed 아이콘으로 전환됩니다.
  */
 @customElement('mm-reveal-button')
-export class RevealButton extends IconButton {
+export class RevealButton extends LitElement {
   @property({ type: Boolean, reflect: true }) revealed = false
+  @property({ type: Boolean, reflect: true }) disabled = false
 
-  constructor() {
-    super()
-    this.variant = 'plain'
-  }
+  static styles = [iconButtonStyles]
 
-  override connectedCallback() {
+  connectedCallback() {
     super.connectedCallback()
     this.addEventListener('click', this._handleClick)
   }
 
-  override disconnectedCallback() {
+  disconnectedCallback() {
     super.disconnectedCallback()
     this.removeEventListener('click', this._handleClick)
   }
@@ -38,12 +36,10 @@ export class RevealButton extends IconButton {
     )
   }
 
-  protected override renderControl() {
+  render() {
     return html`
       <button
-        slot="trigger"
         type="button"
-        class="icon-button"
         data-variant="plain"
         aria-pressed=${this.revealed ? 'true' : 'false'}
         aria-label=${this.revealed ? '비밀번호 숨기기' : '비밀번호 보기'}

@@ -1,14 +1,26 @@
-import { html } from 'lit'
+import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
-import { MenuItemBase } from '../menu-item-base'
+import { menuItemStyles } from '../menuitem.styles'
+import { renderMenuItemContent } from '../menuitem.utils'
 
 @customElement('mm-menu-item-link')
-export class MenuItemLink extends MenuItemBase {
+export class MenuItemLink extends LitElement {
+  @property({ type: String }) tone = ''
+  @property({ type: String }) label = ''
+  @property({ type: String }) description = ''
+  @property({ type: String }) icon = ''
+  @property({ type: String }) emoji = ''
+  @property({ type: String, attribute: 'avatar-src' }) avatarSrc = ''
+  @property({ type: String, attribute: 'avatar-size' }) avatarSize = 'medium'
+  @property({ type: String, attribute: 'avatar-variant' }) avatarVariant = 'tertiary'
+  @property({ type: Boolean, reflect: true }) disabled = false
   @property({ type: String }) href = ''
 
-  protected override renderAction() {
+  static styles = [menuItemStyles]
+
+  private renderAction() {
     return html`
       <span slot="trailing">
         <mm-icon name=${ICON_NAMES.SHARE} size="small"></mm-icon>
@@ -16,17 +28,17 @@ export class MenuItemLink extends MenuItemBase {
     `
   }
 
-  protected override renderItem() {
+  render() {
     return html`
       <a
         href=${ifDefined(this.disabled ? undefined : this.href)}
         class="item"
-        role=${this.getRole()}
+        role="menuitem"
         data-tone=${ifDefined(this.tone || undefined)}
-        ?data-interactive=${this.interactive}
+        data-interactive
         aria-disabled=${ifDefined(this.disabled ? 'true' : undefined)}
       >
-        ${this.renderContent()}
+        ${renderMenuItemContent(this, this.renderAction())}
       </a>
     `
   }

@@ -1,22 +1,20 @@
-import { customElement } from 'lit/decorators.js'
-import IconButton from '../icon-button'
+import { LitElement, css, html } from 'lit'
+import { customElement, property } from 'lit/decorators.js'
 import { ICON_NAMES } from './icon-names'
+import '../icon-button'
 
 @customElement('mm-next-button')
-export class NextButton extends IconButton {
-  constructor() {
-    super()
-    this.icon = ICON_NAMES.NEXT
-    this.variant = 'navigator'
-    this.ariaLabel = '다음'
-  }
+export class NextButton extends LitElement {
+  @property({ type: Boolean, reflect: true }) disabled = false
 
-  override connectedCallback() {
+  static styles = css`:host { display: contents; }`
+
+  connectedCallback() {
     super.connectedCallback()
     this.addEventListener('click', this._handleClick)
   }
 
-  override disconnectedCallback() {
+  disconnectedCallback() {
     super.disconnectedCallback()
     this.removeEventListener('click', this._handleClick)
   }
@@ -24,6 +22,17 @@ export class NextButton extends IconButton {
   private _handleClick = () => {
     if (this.disabled) return
     this.dispatchEvent(new CustomEvent('next', { bubbles: true, composed: true }))
+  }
+
+  render() {
+    return html`
+      <mm-icon-button
+        icon=${ICON_NAMES.NEXT}
+        variant="navigator"
+        aria-label="다음"
+        ?disabled=${this.disabled}
+      ></mm-icon-button>
+    `
   }
 }
 

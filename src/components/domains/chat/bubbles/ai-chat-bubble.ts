@@ -1,14 +1,33 @@
-import { css, html } from 'lit'
-import { customElement } from 'lit/decorators.js'
-import { ChatBubbleBase } from './chat-bubble'
+import { LitElement, html } from 'lit'
+import { customElement, property } from 'lit/decorators.js'
+import { resetStyles } from '../../../../stylesheets/shared/reset.styles'
+import { chatBubbleStyles } from '../chat.styles'
 
 /**
  * 상대방/AI가 보낸 메시지 버블. 좌측 정렬.
- * reactions는 mm-chat-message 하단에서 항상 노출됩니다.
  */
 @customElement('mm-ai-chat-bubble')
-export class AiChatBubble extends ChatBubbleBase {
-  static styles = [...ChatBubbleBase.styles, css``]
+export class AiChatBubble extends LitElement {
+  @property({ type: Boolean }) typing = false
+  @property({ type: String }) src = ''
+
+  static styles = [resetStyles, chatBubbleStyles]
+
+  private renderTyping() {
+    return html`
+      <div class="bubble">
+        <div class="typing"><span></span><span></span><span></span></div>
+      </div>
+    `
+  }
+
+  private renderImage() {
+    return html`
+      <div class="bubble is-image">
+        <mm-thumbnail src=${this.src} alt="" ratio="4:3"></mm-thumbnail>
+      </div>
+    `
+  }
 
   render() {
     if (this.typing) return this.renderTyping()

@@ -1,14 +1,24 @@
-import { css } from 'lit'
-import { customElement } from 'lit/decorators.js'
-import { ChatMessageBase } from './chat-message'
+import { LitElement, css, html, nothing } from 'lit'
+import { customElement, property } from 'lit/decorators.js'
+import { resetStyles } from '../../../stylesheets/shared/reset.styles'
+import '../../text/text'
 
 @customElement('mm-my-chat-message')
-export class MyChatMessage extends ChatMessageBase {
+export class MyChatMessage extends LitElement {
+  @property({ type: String }) time = ''
+
   static styles = [
-    ...ChatMessageBase.styles,
+    resetStyles,
     css`
       :host {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-2);
         align-items: flex-end;
+      }
+
+      .time {
+        color: var(--color-foreground-light);
       }
 
       ::slotted(mm-my-chat-bubble) {
@@ -17,6 +27,15 @@ export class MyChatMessage extends ChatMessageBase {
       }
     `,
   ]
+
+  render() {
+    return html`
+      <slot></slot>
+      ${this.time
+        ? html`<mm-text class="time" as="time" size="12" weight="medium">${this.time}</mm-text>`
+        : nothing}
+    `
+  }
 }
 
 declare global {

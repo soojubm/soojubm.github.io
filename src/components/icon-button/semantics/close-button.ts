@@ -1,32 +1,40 @@
-import { customElement } from 'lit/decorators.js'
-import IconButton from '../icon-button'
+import { LitElement, css, html } from 'lit'
+import { customElement, property } from 'lit/decorators.js'
 import { ICON_NAMES } from './icon-names'
+import '../icon-button'
 
 /**
  * 모달, 패널, 시트 등 레이어를 닫는 버튼.
- * navigator variant — 원형, 테두리, 그림자
  */
 @customElement('mm-close-button')
-export class CloseButton extends IconButton {
-  constructor() {
-    super()
-    this.icon = ICON_NAMES.CLOSE
-    this.variant = 'navigator'
-    this.ariaLabel = '닫기'
-  }
+export class CloseButton extends LitElement {
+  @property({ type: Boolean, reflect: true }) disabled = false
 
-  override connectedCallback() {
+  static styles = css`:host { display: contents; }`
+
+  connectedCallback() {
     super.connectedCallback()
     this.addEventListener('click', this._handleClick)
   }
 
-  override disconnectedCallback() {
+  disconnectedCallback() {
     super.disconnectedCallback()
     this.removeEventListener('click', this._handleClick)
   }
 
   private _handleClick = () => {
     this.dispatchEvent(new CustomEvent('close', { bubbles: true, composed: true }))
+  }
+
+  render() {
+    return html`
+      <mm-icon-button
+        icon=${ICON_NAMES.CLOSE}
+        variant="navigator"
+        aria-label="닫기"
+        ?disabled=${this.disabled}
+      ></mm-icon-button>
+    `
   }
 }
 

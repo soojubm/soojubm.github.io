@@ -1,35 +1,33 @@
-import { html } from 'lit'
+import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
-import { MenuItemBase } from '../menu-item-base'
+import { menuItemStyles } from '../menuitem.styles'
+import { renderMenuItemContent } from '../menuitem.utils'
 
 @customElement('mm-menu-item-radio')
-export class MenuItemRadio extends MenuItemBase {
+export class MenuItemRadio extends LitElement {
+  @property({ type: String }) tone = ''
+  @property({ type: String }) label = ''
+  @property({ type: String }) description = ''
+  @property({ type: String }) icon = ''
+  @property({ type: String }) emoji = ''
+  @property({ type: String, attribute: 'avatar-src' }) avatarSrc = ''
+  @property({ type: String, attribute: 'avatar-size' }) avatarSize = 'medium'
+  @property({ type: String, attribute: 'avatar-variant' }) avatarVariant = 'tertiary'
+  @property({ type: Boolean, reflect: true }) disabled = false
   @property({ type: Boolean, reflect: true }) checked = false
   @property({ type: String }) value = ''
   @property({ type: String }) name = ''
 
-  protected override getRole() {
-    return 'menuitemradio'
-  }
-
-  protected override getAriaChecked(): string | undefined {
-    return String(this.checked)
-  }
+  static styles = [menuItemStyles]
 
   private handleSelect() {
     if (this.disabled) return
     if (this.checked) return
-
     this.checked = true
-
     this.dispatchEvent(
       new CustomEvent('change', {
-        detail: {
-          checked: this.checked,
-          value: this.value,
-          name: this.name,
-        },
+        detail: { checked: this.checked, value: this.value, name: this.name },
         bubbles: true,
         composed: true,
       }),
@@ -41,33 +39,17 @@ export class MenuItemRadio extends MenuItemBase {
     this.handleSelect()
   }
 
-  override connectedCallback() {
+  connectedCallback() {
     super.connectedCallback()
     this.addEventListener('click', this.handleSelect)
   }
 
-  override disconnectedCallback() {
+  disconnectedCallback() {
     super.disconnectedCallback()
     this.removeEventListener('click', this.handleSelect)
   }
 
-  // inner mm-radio와 이중 tab stop 방지
-  protected override renderItem() {
-    return html`
-      <div
-        class="item"
-        role=${this.getRole()}
-        data-tone=${ifDefined(this.tone || undefined)}
-        ?data-interactive=${this.interactive}
-        aria-disabled=${ifDefined(this.disabled ? 'true' : undefined)}
-        aria-checked=${ifDefined(this.getAriaChecked())}
-      >
-        ${this.renderContent()}
-      </div>
-    `
-  }
-
-  protected override renderAction() {
+  private renderAction() {
     return html`
       <mm-radio
         slot="trailing"
@@ -77,6 +59,21 @@ export class MenuItemRadio extends MenuItemBase {
         ?disabled=${this.disabled}
         @change=${this.handleControlChange}
       ></mm-radio>
+    `
+  }
+
+  render() {
+    return html`
+      <div
+        class="item"
+        role="menuitemradio"
+        data-tone=${ifDefined(this.tone || undefined)}
+        data-interactive
+        aria-disabled=${ifDefined(this.disabled ? 'true' : undefined)}
+        aria-checked=${String(this.checked)}
+      >
+        ${renderMenuItemContent(this, this.renderAction())}
+      </div>
     `
   }
 }

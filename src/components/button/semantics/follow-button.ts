@@ -1,16 +1,18 @@
-import { css, html } from 'lit'
-import { customElement } from 'lit/decorators.js'
+import { LitElement, css, html } from 'lit'
+import { customElement, property } from 'lit/decorators.js'
 import { resetStyles } from '../../../stylesheets/shared/reset.styles'
-import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
-import { ToggleButton } from './toggle-button'
 import '../button'
 
 /**
  * 팔로우 토글 버튼.
- * ToggleButton의 토글 로직을 상속하고, mm-button으로 렌더링합니다.
+ * mm-button으로 렌더링하며 선택 상태를 직접 관리합니다.
  */
 @customElement('mm-follow-button')
-export class FollowButton extends ToggleButton {
+export class FollowButton extends LitElement {
+  @property({ type: Boolean, reflect: true }) selected = false
+  @property({ type: String }) value = ''
+  @property({ type: Boolean, reflect: true }) disabled = false
+
   static styles = [
     resetStyles,
     css`
@@ -26,7 +28,19 @@ export class FollowButton extends ToggleButton {
     `,
   ]
 
-  override render() {
+  private handleClick() {
+    if (this.disabled) return
+    this.selected = !this.selected
+    this.dispatchEvent(
+      new CustomEvent('change', {
+        detail: { selected: this.selected, value: this.value },
+        bubbles: true,
+        composed: true,
+      }),
+    )
+  }
+
+  render() {
     return html`
       <mm-button
         variant=${this.selected ? 'tertiary' : 'primary'}

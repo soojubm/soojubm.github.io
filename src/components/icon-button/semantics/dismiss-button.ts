@@ -1,46 +1,40 @@
-import { css } from 'lit'
-import { customElement } from 'lit/decorators.js'
-import IconButton from '../icon-button'
+import { LitElement, css, html } from 'lit'
+import { customElement, property } from 'lit/decorators.js'
 import { ICON_NAMES } from './icon-names'
+import '../icon-button'
 
 /**
  * 배너, 알림, 토스트 등 비파괴적 해제 버튼.
- * plain variant — 배경 없음, 경량
  */
 @customElement('mm-dismiss-button')
-export class DismissButton extends IconButton {
-  static override styles = [
-    ...IconButton.styles,
-    css`
-      .icon-button[data-variant='plain'] {
-        color: var(--color-foreground-light);
-      }
-      .icon-button[data-variant='plain']:hover {
-        color: var(--color-foreground);
-        background-color: var(--color-background-subtle);
-      }
-    `,
-  ]
+export class DismissButton extends LitElement {
+  @property({ type: Boolean, reflect: true }) disabled = false
 
-  constructor() {
-    super()
-    this.icon = ICON_NAMES.DISMISS
-    this.variant = 'plain'
-    this.ariaLabel = '닫기'
-  }
+  static styles = css`:host { display: contents; }`
 
-  override connectedCallback() {
+  connectedCallback() {
     super.connectedCallback()
     this.addEventListener('click', this._handleClick)
   }
 
-  override disconnectedCallback() {
+  disconnectedCallback() {
     super.disconnectedCallback()
     this.removeEventListener('click', this._handleClick)
   }
 
   private _handleClick = () => {
     this.dispatchEvent(new CustomEvent('dismiss', { bubbles: true, composed: true }))
+  }
+
+  render() {
+    return html`
+      <mm-icon-button
+        icon=${ICON_NAMES.DISMISS}
+        variant="plain"
+        aria-label="닫기"
+        ?disabled=${this.disabled}
+      ></mm-icon-button>
+    `
   }
 }
 

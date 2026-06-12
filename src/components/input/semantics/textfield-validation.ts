@@ -1,9 +1,14 @@
+import { LitElement, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
-import { Paragraph } from '../../text/semantics/paragraph'
+import '../../text/semantics/paragraph'
+
 @customElement('mm-textfield-validation')
-export class TextfieldValidation extends Paragraph {
-  override color = 'var(--color-danger)'
+export class TextfieldValidation extends LitElement {
+  render() {
+    return html`<mm-paragraph color="var(--color-danger)"><slot></slot></mm-paragraph>`
+  }
 }
+
 declare global {
   interface HTMLElementTagNameMap {
     'mm-textfield-validation': TextfieldValidation

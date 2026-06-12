@@ -1,51 +1,41 @@
-import { css, html } from 'lit'
+import { LitElement, css, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
-import Dropdown, { type DropdownOption } from '../../dropdown/dropdown'
+import '../../dropdown/dropdown'
 import '../../icon-button/icon-button'
 
 @customElement('mm-attachment-dropdown')
-export class AttachmentDropdown extends Dropdown {
-  protected get defaultOptions(): DropdownOption[] {
-    return [
-      { label: '이미지 업로드', value: 'upload',  type: 'default', checked: false, selected: false, icon: 'import' },
-      { label: '카메라 촬영',   value: 'camera',  type: 'default', checked: false, selected: false, icon: 'camera' },
-      { label: 'URL로 추가',    value: 'url',     type: 'default', checked: false, selected: false, icon: 'link' },
-    ]
-  }
+export class AttachmentDropdown extends LitElement {
+  static styles = css`
+    :host {
+      display: contents;
+    }
 
-  static styles = [
-    ...Dropdown.styles,
-    css`
-      .dropdown {
-        width: auto;
-      }
+    mm-dropdown::part(dropdown) {
+      width: auto;
+    }
 
-      /* 위로 열리는 리스트 */
-      .dropdown-list {
-        top: auto;
-        bottom: calc(100% + 4px);
-        left: 0;
-        right: auto;
-        min-width: 160px;
-        transform-origin: bottom center;
-        transform: translateY(4px) scale(0.98);
-      }
+    mm-dropdown::part(list) {
+      top: auto;
+      bottom: calc(100% + 4px);
+      left: 0;
+      right: auto;
+      min-width: 160px;
+      transform-origin: bottom center;
+    }
+  `
 
-      .dropdown-list.open {
-        transform: translateY(0) scale(1);
-      }
-    `,
-  ]
-
-  protected renderTrigger() {
+  render() {
     return html`
-      <mm-icon-button
-        icon="media-image-plus"
-        aria-label="이미지 첨부"
-        aria-haspopup="true"
-        aria-expanded="${this.isOpen}"
-        @click="${this.toggleOpen}"
-      ></mm-icon-button>
+      <mm-dropdown>
+        <mm-icon-button
+          slot="trigger"
+          icon="media-image-plus"
+          aria-label="이미지 첨부"
+        ></mm-icon-button>
+        <option value="upload" icon="import">이미지 업로드</option>
+        <option value="camera" icon="camera">카메라 촬영</option>
+        <option value="url" icon="link">URL로 추가</option>
+      </mm-dropdown>
     `
   }
 }

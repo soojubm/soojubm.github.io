@@ -1,14 +1,30 @@
-import { html, nothing } from 'lit'
+import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { resetStyles } from '../../../stylesheets/shared/reset.styles'
 import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
-import { ChatMessageBase } from './chat-message'
+import '../../text/text'
 import '../../icon-button/icon-button'
 import '../../button/button-group'
 
 @customElement('mm-ai-chat-message')
-export class AiChatMessage extends ChatMessageBase {
-  /** AI 메시지 reactions 숨김 */
+export class AiChatMessage extends LitElement {
+  @property({ type: String }) time = ''
   @property({ type: Boolean, attribute: 'no-reactions' }) noReactions = false
+
+  static styles = [
+    resetStyles,
+    css`
+      :host {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-2);
+      }
+
+      .time {
+        color: var(--color-foreground-light);
+      }
+    `,
+  ]
 
   private _emitReaction(reaction: string) {
     this.dispatchEvent(
@@ -51,7 +67,13 @@ export class AiChatMessage extends ChatMessageBase {
   }
 
   render() {
-    return html` ${this.renderMessage()} ${this.renderReactions()} `
+    return html`
+      <slot></slot>
+      ${this.time
+        ? html`<mm-text class="time" as="time" size="12" weight="medium">${this.time}</mm-text>`
+        : nothing}
+      ${this.renderReactions()}
+    `
   }
 }
 
