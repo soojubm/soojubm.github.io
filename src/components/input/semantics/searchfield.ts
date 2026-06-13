@@ -28,11 +28,13 @@ class SearchField extends LitElement {
           ?disabled=${this.disabled}
           @input=${this._handleInput}
         ></mm-input>
-        <mm-clear-button
-          label="clear"
-          ?disabled=${this.disabled || !this.value}
-          @click=${this._clear}
-        ></mm-clear-button>
+        ${this.value.length > 0
+          ? html`<mm-clear-button
+              label="clear"
+              ?disabled=${this.disabled}
+              @click=${this._clear}
+            ></mm-clear-button>`
+          : ''}
       </div>
     `
   }
