@@ -92,12 +92,16 @@ export class Navbar extends LitElement {
 
   private _renderResults() {
     if (this._searching) {
-      return html`<mm-text size="14" color="var(--color-foreground-light)">검색 중...</mm-text>`
+      return html`
+        <mm-text size="14" color="var(--color-foreground-light)">검색 중...</mm-text>
+      `
     }
     if (this._results.length === 0) {
-      return html`<mm-text size="14" color="var(--color-foreground-light)"
-        >'${this._query}'에 대한 결과가 없습니다.</mm-text
-      >`
+      return html`
+        <mm-text size="14" color="var(--color-foreground-light)">
+          '${this._query}'에 대한 결과가 없습니다.
+        </mm-text>
+      `
     }
     return html`
       <mm-menu-item-group aria-label="검색 결과">
@@ -187,14 +191,16 @@ export class Navbar extends LitElement {
       <mm-sheet class="js-search-sheet" type="center" size="medium" backdrop-blur>
         <mm-top-bar type="back" data-todo="topbar vs sheetheader"></mm-top-bar>
         <mm-sheet-body>
-          <mm-flex direction="column" gap="2">
-            <mm-searchfield
-              placeholder="컴포넌트, 패턴을 검색하세요"
-              .value=${this._query}
-              @input=${this._onInput}
-            ></mm-searchfield>
-            ${this._query ? this._renderResults() : this._renderDefault()}
-          </mm-flex>
+          <form role="search">
+            <mm-flex direction="column" gap="2">
+              <mm-searchfield
+                placeholder="컴포넌트, 패턴을 검색하세요"
+                .value=${this._query}
+                @input=${this._onInput}
+              ></mm-searchfield>
+              ${this._query ? this._renderResults() : this._renderDefault()}
+            </mm-flex>
+          </form>
         </mm-sheet-body>
       </mm-sheet>
 

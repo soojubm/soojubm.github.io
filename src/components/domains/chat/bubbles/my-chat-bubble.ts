@@ -22,7 +22,11 @@ export class MyChatBubble extends LitElement {
   private renderTyping() {
     return html`
       <div class="bubble">
-        <div class="typing"><span></span><span></span><span></span></div>
+        <div class="typing">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
     `
   }
@@ -44,7 +48,9 @@ export class MyChatBubble extends LitElement {
       <div class="bubble is-my">
         <slot></slot>
         ${this.status && !this.failed
-          ? html`<span class="status" role="status">${this.status}</span>`
+          ? html`
+              <span class="status" role="status">${this.status}</span>
+            `
           : ''}
       </div>
     `

@@ -31,7 +31,13 @@ export class Token extends LitElement {
   render() {
     return html`
       <dt>${this.name}</dt>
-      <dd class="meta">${this.default ? html`<mm-text>${this.default}</mm-text>` : ''}</dd>
+      <dd class="meta">
+        ${this.default
+          ? html`
+              <mm-text>${this.default}</mm-text>
+            `
+          : ''}
+      </dd>
     `
   }
 }

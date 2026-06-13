@@ -14,31 +14,34 @@
       <mm-button data-open-dialog="cookie">Cookie</mm-button>
     </mm-button-group>
 
-    <mm-dialog id="dialog-alert" closeable title="Alert Dialog" description="부끄러우니까 보지마요!">
-      <mm-button slot="footer" variant="primary" size="large">확인</mm-button>
-    </mm-dialog>
+    <mm-dialog
+      id="dialog-alert"
+      closeable
+      title="Alert Dialog"
+      description="부끄러우니까 보지마요!"
+      primary-label="확인"
+    ></mm-dialog>
 
     <mm-dialog
       id="dialog-confirm"
       title="페이지를 나가시겠어요?"
       description="저장되지 않은 변경 사항이 있습니다. 이 페이지에서 나가면 변경 사항이 취소됩니다."
-    >
-      <mm-flex slot="footer" gap="2">
-        <mm-button variant="tertiary" size="large">계속 수정하기</mm-button>
-        <mm-button variant="primary" size="large">나가기</mm-button>
-      </mm-flex>
-    </mm-dialog>
+      primary-label="계속 수정하기"
+      secondary-label="나가기"
+    ></mm-dialog>
 
-    <mm-dialog id="dialog-cookie" closeable title="쿠키 사용 안내">
+    <mm-dialog
+      id="dialog-cookie"
+      closeable
+      title="쿠키 사용 안내"
+      primary-label="Cookie Settings"
+      secondary-label="Accept Cookie"
+    >
       <mm-paragraph>
-        By clicking "Accept Cookies", you agree to the storing of cookies on your device to
-        enhance site navigation, analyze site usage, and assist in our marketing efforts. View our
-        Cookie Policy for more information.
+        By clicking "Accept Cookies", you agree to the storing of cookies on your device to enhance
+        site navigation, analyze site usage, and assist in our marketing efforts. View our Cookie
+        Policy for more information.
       </mm-paragraph>
-      <mm-flex slot="footer" gap="2">
-        <mm-button variant="tertiary" size="large">Cookie Settings</mm-button>
-        <mm-button variant="primary" size="large">Accept Cookie</mm-button>
-      </mm-flex>
     </mm-dialog>
   </mm-component-example>
 
@@ -62,15 +65,13 @@
         titleText="Feedback"
         subtitle=""
         description="다이얼로그를 닫기 전에는 이전 콘텐츠로 포커스 불가능. 다이얼로그를 닫은 후 열기 버튼으로 포커스 복귀. 레이어를 2개 이상 쌓지 마세요."
-      >
-      </mm-feature>
+      ></mm-feature>
       <mm-feature
         icon="task-list"
         titleText="Interactive"
         subtitle=""
         description="프라이머리 버튼의 레이블은 다이얼로그 제목의 동사와 페어링되어야 한다. 부정어로 묻지 말 것."
-      >
-      </mm-feature>
+      ></mm-feature>
     </mm-grid>
   </mm-component-guide>
 </main>

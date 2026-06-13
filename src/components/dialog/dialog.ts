@@ -52,32 +52,29 @@ export class Dialog extends LitElement {
   }
 
   render() {
-    const hasHeader = this.title || this.closeable
-    const hasFooter = this.primaryLabel || this.secondaryLabel
-
     return html`
       <mm-sheet type="center" size="small" @sheetclose=${this.handleSheetClose}>
-        ${hasHeader
-          ? html`<mm-sheet-header title=${this.title}></mm-sheet-header>`
-          : nothing}
+        <mm-sheet-header title=${this.title}></mm-sheet-header>
 
         <mm-sheet-body>
-          ${this.description ? html`<p>${this.description}</p>` : nothing}
+          ${this.description
+            ? html`
+                <p>${this.description}</p>
+              `
+            : nothing}
           <slot></slot>
         </mm-sheet-body>
 
-        ${hasFooter
-          ? html`
-              <mm-sheet-footer
-                primary-label=${this.primaryLabel}
-                secondary-label=${this.secondaryLabel}
-                @primary-click=${() =>
-                  this.dispatchEvent(new CustomEvent('primary-click', { bubbles: true, composed: true }))}
-                @secondary-click=${() =>
-                  this.dispatchEvent(new CustomEvent('secondary-click', { bubbles: true, composed: true }))}
-              ></mm-sheet-footer>
-            `
-          : html`<slot name="footer"></slot>`}
+        <mm-sheet-footer
+          primary-label=${this.primaryLabel}
+          secondary-label=${this.secondaryLabel}
+          @primary-click=${() =>
+            this.dispatchEvent(new CustomEvent('primary-click', { bubbles: true, composed: true }))}
+          @secondary-click=${() =>
+            this.dispatchEvent(
+              new CustomEvent('secondary-click', { bubbles: true, composed: true }),
+            )}
+        ></mm-sheet-footer>
       </mm-sheet>
     `
   }

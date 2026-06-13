@@ -58,11 +58,17 @@ function bookCard(b: Book) {
     <article style="border:var(--border);padding:var(--space-3);border-radius:var(--radius)">
       <mm-flex direction="column" gap="1">
         <mm-flex justify="between" align="center" gap="2">
-          <time style="font-size:var(--font-size-12);color:var(--color-foreground-light)">${b.releasedate ?? ''}</time>
-          <span style="font-size:var(--font-size-12);color:var(--color-foreground-light)">${b.country ?? ''}</span>
+          <time style="font-size:var(--font-size-12);color:var(--color-foreground-light)">${
+            b.releasedate ?? ''
+          }</time>
+          <span style="font-size:var(--font-size-12);color:var(--color-foreground-light)">${
+            b.country ?? ''
+          }</span>
         </mm-flex>
         <p style="margin:0;font-weight:var(--font-weight-bold);line-height:1.3">${b.titlekorean}</p>
-        <p style="margin:0;font-size:var(--font-size-12);color:var(--color-foreground-light)">${b.titleenglish}</p>
+        <p style="margin:0;font-size:var(--font-size-12);color:var(--color-foreground-light)">${
+          b.titleenglish
+        }</p>
         <p style="margin:0;font-size:var(--font-size-14)">${b.director}</p>
       </mm-flex>
     </article>

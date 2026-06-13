@@ -54,19 +54,25 @@ export class Avatar extends LitElement {
   private renderAvatarContent(iconSize: string) {
     // 1. 이미지가 최우선 순위
     if (this.src) {
-      return html`<img src=${this.src} alt=${this.ariaLabel || 'avatar'} />`
+      return html`
+        <img src=${this.src} alt=${this.ariaLabel || 'avatar'} />
+      `
     }
 
     // 2. 이미지가 없으면 아이콘
     if (this.icon) {
-      return html`<mm-icon name=${this.icon} size=${iconSize}></mm-icon>`
+      return html`
+        <mm-icon name=${this.icon} size=${iconSize}></mm-icon>
+      `
     }
 
     // 3. 둘 다 없으면 Slot(이니셜 텍스트 등) 렌더링. Slot 내용도 없으면 기본 아이콘 렌더링
     return html`
       <slot @slotchange=${this.handleSlotChange}></slot>
       ${!this.hasSlottedContent
-        ? html`<mm-icon name=${ICON_NAMES.PEOPLE_TAG} size=${iconSize}></mm-icon>`
+        ? html`
+            <mm-icon name=${ICON_NAMES.PEOPLE_TAG} size=${iconSize}></mm-icon>
+          `
         : nothing}
     `
   }

@@ -32,7 +32,9 @@ export class MyChatMessage extends LitElement {
     return html`
       <slot></slot>
       ${this.time
-        ? html`<mm-text class="time" as="time" size="12" weight="medium">${this.time}</mm-text>`
+        ? html`
+            <mm-text class="time" as="time" size="12" weight="medium">${this.time}</mm-text>
+          `
         : nothing}
     `
   }

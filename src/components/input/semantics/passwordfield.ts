@@ -18,7 +18,11 @@ class PasswordField extends LitElement {
 
   @state() private revealed = false
 
-  static styles = css`:host { display: contents; }`
+  static styles = css`
+    :host {
+      display: contents;
+    }
+  `
 
   render() {
     return html`

@@ -76,11 +76,17 @@ function filmCard(f: Film) {
     <article style="border:var(--border);padding:var(--space-3);border-radius:var(--radius)">
       <mm-flex direction="column" gap="1">
         <mm-flex justify="between" align="center" gap="2">
-          <time style="font-size:var(--font-size-12);color:var(--color-foreground-light)">${f.releasedate}</time>
-          <span style="font-size:var(--font-size-12);color:var(--color-foreground-light)">${f.country ?? ''}</span>
+          <time style="font-size:var(--font-size-12);color:var(--color-foreground-light)">${
+            f.releasedate
+          }</time>
+          <span style="font-size:var(--font-size-12);color:var(--color-foreground-light)">${
+            f.country ?? ''
+          }</span>
         </mm-flex>
         <p style="margin:0;font-weight:var(--font-weight-bold);line-height:1.3">${f.titlekorean}</p>
-        <p style="margin:0;font-size:var(--font-size-12);color:var(--color-foreground-light)">${f.titleenglish}</p>
+        <p style="margin:0;font-size:var(--font-size-12);color:var(--color-foreground-light)">${
+          f.titleenglish
+        }</p>
         <p style="margin:0;font-size:var(--font-size-14)">${f.director}</p>
       </mm-flex>
     </article>
@@ -100,9 +106,7 @@ function getFiltered(films: Film[], state: FilterState) {
 
 function getDecades(films: Film[]) {
   const set = new Set(
-    films
-      .filter(f => f.releasedate >= 1880)
-      .map(f => String(Math.floor(f.releasedate / 10) * 10)),
+    films.filter(f => f.releasedate >= 1880).map(f => String(Math.floor(f.releasedate / 10) * 10)),
   )
   return [...set].sort()
 }

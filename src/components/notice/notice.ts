@@ -35,11 +35,21 @@ class Notice extends LitElement {
     return html`
       <div class="notice" data-variant="${this.variant}">
         <mm-icon name=${this.icon} class="notice-icon"></mm-icon>
-        ${this.heading ? html`<h3 class="notice-title">${this.heading}</h3>` : ''}
-        ${this.text ? html`<mm-text size="14">${this.text}</mm-text>` : ''}
+        ${this.heading
+          ? html`
+              <h3 class="notice-title">${this.heading}</h3>
+            `
+          : ''}
+        ${this.text
+          ? html`
+              <mm-text size="14">${this.text}</mm-text>
+            `
+          : ''}
         <slot></slot>
         ${this.dismissible
-          ? html`<mm-clear-button class="notice-dismiss" @click=${this.dismiss}></mm-clear-button>`
+          ? html`
+              <mm-clear-button class="notice-dismiss" @click=${this.dismiss}></mm-clear-button>
+            `
           : ''}
       </div>
     `

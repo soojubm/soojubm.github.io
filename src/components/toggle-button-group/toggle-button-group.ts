@@ -183,8 +183,16 @@ export class ToggleButtonGroup extends LitElement {
               ?aria-pressed=${isSelected}
               aria-label=${option.ariaLabel ?? option.label ?? ''}
             >
-              ${option.icon ? html` <mm-icon name=${option.icon}></mm-icon> ` : nothing}
-              ${option.label ? html` <span class="label"> ${option.label} </span> ` : nothing}
+              ${option.icon
+                ? html`
+                    <mm-icon name=${option.icon}></mm-icon>
+                  `
+                : nothing}
+              ${option.label
+                ? html`
+                    <span class="label">${option.label}</span>
+                  `
+                : nothing}
             </button>
           `
         })}

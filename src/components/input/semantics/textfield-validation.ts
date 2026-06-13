@@ -5,7 +5,9 @@ import '../../text/semantics/paragraph'
 @customElement('mm-textfield-validation')
 export class TextfieldValidation extends LitElement {
   render() {
-    return html`<mm-paragraph color="var(--color-danger)"><slot></slot></mm-paragraph>`
+    return html`
+      <mm-paragraph color="var(--color-danger)"><slot></slot></mm-paragraph>
+    `
   }
 }
 

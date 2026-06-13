@@ -72,16 +72,24 @@ export class Breadcrumb extends LitElement {
 
           const node =
             item.href && !isLast
-              ? html`<a class="breadcrumb-item ${isHome ? 'breadcrumb-home' : ''}" href=${item.href}
-                  >${item.label}</a
-                >`
-              : html`<span class="breadcrumb-item" aria-current=${isLast ? 'page' : nothing}
-                  >${item.label}</span
-                >`
+              ? html`
+                  <a class="breadcrumb-item ${isHome ? 'breadcrumb-home' : ''}" href=${item.href}>
+                    ${item.label}
+                  </a>
+                `
+              : html`
+                  <span class="breadcrumb-item" aria-current=${isLast ? 'page' : nothing}>
+                    ${item.label}
+                  </span>
+                `
 
-          return html`${node}${isLast
-            ? nothing
-            : html`<i class="breadcrumb-divider" aria-hidden="true">${this.divider}</i>`}`
+          return html`
+            ${node}${isLast
+              ? nothing
+              : html`
+                  <i class="breadcrumb-divider" aria-hidden="true">${this.divider}</i>
+                `}
+          `
         })}
       </nav>
     `

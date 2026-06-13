@@ -113,7 +113,9 @@ export class Pagination extends LitElement {
 
   private renderPage(item: PaginationItem) {
     if (item === 'ellipsis') {
-      return html`<span class="pagination-ellipsis" aria-hidden="true">...</span>`
+      return html`
+        <span class="pagination-ellipsis" aria-hidden="true">...</span>
+      `
     }
 
     const isCurrent = item === this.safeCurrentPage

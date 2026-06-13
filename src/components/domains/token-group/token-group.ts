@@ -9,26 +9,23 @@ export class TokenGroup extends LitElement {
     css`
       :host {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: var(--space-3);
-      }
-
-      @media (max-width: 1200px) {
-        :host {
-          grid-template-columns: repeat(2, 1fr);
-        }
-      }
-
-      @media (max-width: 800px) {
-        :host {
-          display: block;
-        }
+        gap: var(--space-2);
       }
     `,
   ]
 
+  private _assignIndices = () => {
+    const slot = this.shadowRoot!.querySelector('slot')!
+    slot
+      .assignedElements({ flatten: true })
+      .filter(el => el.tagName === 'MM-TOKEN-ITEM')
+      .forEach((el, i) => el.setAttribute('index', String(i + 1)))
+  }
+
   render() {
-    return html`<slot></slot>`
+    return html`
+      <slot @slotchange=${this._assignIndices}></slot>
+    `
   }
 }
 

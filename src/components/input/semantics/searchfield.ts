@@ -40,14 +40,18 @@ class SearchField extends LitElement {
   private _handleInput(event: Event) {
     const target = event.target as HTMLInputElement
     this.value = target.value
-    this.dispatchEvent(new CustomEvent('input', { bubbles: true, composed: true, detail: { value: this.value } }))
+    this.dispatchEvent(
+      new CustomEvent('input', { bubbles: true, composed: true, detail: { value: this.value } }),
+    )
   }
 
   private _clear(event: Event) {
     event.stopPropagation()
     if (this.disabled || !this.value) return
     this.value = ''
-    this.dispatchEvent(new CustomEvent('input', { bubbles: true, composed: true, detail: { value: '' } }))
+    this.dispatchEvent(
+      new CustomEvent('input', { bubbles: true, composed: true, detail: { value: '' } }),
+    )
   }
 }
 

@@ -10,7 +10,11 @@ import '../icon-button'
 export class CloseButton extends LitElement {
   @property({ type: Boolean, reflect: true }) disabled = false
 
-  static styles = css`:host { display: contents; }`
+  static styles = css`
+    :host {
+      display: contents;
+    }
+  `
 
   connectedCallback() {
     super.connectedCallback()

@@ -56,17 +56,25 @@ export class ChatConfirmation extends LitElement {
 
   render() {
     if (this.status === 'accepted') {
-      return html`<mm-notice variant="success" text="승인했습니다"></mm-notice>`
+      return html`
+        <mm-notice variant="success" text="승인했습니다"></mm-notice>
+      `
     }
 
     if (this.status === 'rejected') {
-      return html`<mm-notice variant="danger" text="거부했습니다"></mm-notice>`
+      return html`
+        <mm-notice variant="danger" text="거부했습니다"></mm-notice>
+      `
     }
 
     return html`
       <mm-notice heading="승인 요청">
         <mm-text class="message" size="14">
-          ${this.message ? this.message : html`<slot></slot>`}
+          ${this.message
+            ? this.message
+            : html`
+                <slot></slot>
+              `}
         </mm-text>
         <div class="actions">
           <mm-button variant="tertiary" size="medium" @click=${this._reject}>

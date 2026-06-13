@@ -25,7 +25,11 @@ export class LinkPrompt extends LitElement {
   render() {
     return html`
       <span class="link-prompt">
-        ${this.icon ? html`<mm-icon name=${this.icon}></mm-icon>` : nothing}
+        ${this.icon
+          ? html`
+              <mm-icon name=${this.icon}></mm-icon>
+            `
+          : nothing}
         <mm-text size="14">${this.message}</mm-text>
         <mm-link href=${this.href} ?external=${this.external}>${this.actionLabel}</mm-link>
       </span>

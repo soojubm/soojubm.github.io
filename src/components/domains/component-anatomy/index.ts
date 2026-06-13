@@ -60,7 +60,9 @@ export class ComponentAnatomy extends LitElement {
         <slot></slot>
       </div>
       ${this.parts.length
-        ? html`<mm-text-list variant="number" texts=${JSON.stringify(this.parts)}></mm-text-list>`
+        ? html`
+            <mm-text-list variant="number" texts=${JSON.stringify(this.parts)}></mm-text-list>
+          `
         : nothing}
     `
   }

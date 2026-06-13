@@ -6,8 +6,8 @@
 
   <mm-component-example>
     <mm-checkbox-group legend="관심 분야" name="interest">
-      <mm-checkbox size="large" value="basic" checked> 체크박스 기본 </mm-checkbox>
-      <mm-checkbox size="large" value="disabled" disabled> 체크박스 비활성 </mm-checkbox>
+      <mm-checkbox size="large" value="basic" checked>체크박스 기본</mm-checkbox>
+      <mm-checkbox size="large" value="disabled" disabled>체크박스 비활성</mm-checkbox>
       <mm-checkbox size="large" value="disabled-checked" checked disabled>
         체크박스 비활성 체크
       </mm-checkbox>
@@ -42,9 +42,21 @@
     <div style="position: relative; display: inline-block">
       <mm-checkbox size="large" checked>관심 분야</mm-checkbox>
 
-      <mm-list-marker variant="number" value="1" style="position: absolute; left: -1.75rem; top: 50%; transform: translateY(-50%)"></mm-list-marker>
-      <mm-list-marker variant="number" value="2" style="position: absolute; left: 0.5rem; bottom: -1.75rem; transform: translateX(-50%)"></mm-list-marker>
-      <mm-list-marker variant="number" value="3" style="position: absolute; right: -1.75rem; top: 50%; transform: translateY(-50%)"></mm-list-marker>
+      <mm-list-marker
+        variant="number"
+        value="1"
+        style="position: absolute; left: -1.75rem; top: 50%; transform: translateY(-50%)"
+      ></mm-list-marker>
+      <mm-list-marker
+        variant="number"
+        value="2"
+        style="position: absolute; left: 0.5rem; bottom: -1.75rem; transform: translateX(-50%)"
+      ></mm-list-marker>
+      <mm-list-marker
+        variant="number"
+        value="3"
+        style="position: absolute; right: -1.75rem; top: 50%; transform: translateY(-50%)"
+      ></mm-list-marker>
     </div>
   </mm-component-anatomy>
 
@@ -55,22 +67,19 @@
         titleText="Interactive - choice"
         subtitle="Easy scanning"
         description="미리 선택된 기본값을 제공하는 것은 편향된 데이터를 수집할 위험이 있습니다."
-      >
-      </mm-feature>
+      ></mm-feature>
       <mm-feature
         icon="task-list"
         titleText="Easy scanning"
         subtitle="Easy scanning"
         description="옵션 목록을 파악하기 쉽게 수직 정렬합니다. 레이블은 최대 2단어로 작성합니다. choice냐 action option(?)이냐. action option일 때는 동사를 포함하여 작성합니다."
-      >
-      </mm-feature>
+      ></mm-feature>
       <mm-feature
         icon="task-list"
         titleText="Groupable"
         subtitle="Easy scanning"
         description="체크박스 그룹은 관련된 옵션들을 함께 묶어 사용자에게 제공할 수 있습니다. 이 경우, 그룹의 제목(legend)을 명확하게 표시하여 사용자가 옵션들의 맥락을 이해할 수 있도록 합니다."
-      >
-      </mm-feature>
+      ></mm-feature>
     </mm-grid>
   </mm-component-guide>
 
@@ -83,7 +92,7 @@
       <mm-checkbox-group id="main-terms-group" name="terms">
         <div>
           <mm-row>
-            <mm-checkbox value="terms5" size="large"> 이용약관 동의 (필수) </mm-checkbox>
+            <mm-checkbox value="terms5" size="large">이용약관 동의 (필수)</mm-checkbox>
             <mm-icon-button
               variant="navigator"
               size="small"
@@ -95,15 +104,15 @@
 
           <mm-surface variant="tinted" style="width: 100%; margin-top: var(--space-1)">
             <mm-checkbox-group name="terms-detail">
-              <mm-checkbox value="gender" size="small"> 성별 </mm-checkbox>
-              <mm-checkbox value="birth" size="small"> 생년월일 </mm-checkbox>
+              <mm-checkbox value="gender" size="small">성별</mm-checkbox>
+              <mm-checkbox value="birth" size="small">생년월일</mm-checkbox>
             </mm-checkbox-group>
           </mm-surface>
         </div>
 
-        <mm-checkbox value="terms6" size="large"> 개인정보 수집/이용 동의 </mm-checkbox>
+        <mm-checkbox value="terms6" size="large">개인정보 수집/이용 동의</mm-checkbox>
 
-        <mm-checkbox value="terms7" size="large"> 개인정보 제3자 제공 동의 </mm-checkbox>
+        <mm-checkbox value="terms7" size="large">개인정보 제3자 제공 동의</mm-checkbox>
       </mm-checkbox-group>
     </div>
   </mm-component-section>

@@ -1,17 +1,13 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { resetStyles } from '../../../stylesheets/shared/reset.styles'
+import '../../domains/indicators/list-marker'
 
 @customElement('mm-token-item')
 export class TokenItem extends LitElement {
-  /** 토큰 이름 */
   @property({ type: String }) key = ''
-  /** 토큰 값 */
   @property({ type: String }) value = ''
-  /** dot 색상 (CSS color 값) */
-  @property({ type: String }) color = ''
-  /** figure 미리보기의 인라인 style 값 */
-  @property({ type: String, attribute: 'preview-style' }) previewStyle = ''
+  @property({ type: Number }) index = 0
 
   static styles = [
     resetStyles,
@@ -19,35 +15,18 @@ export class TokenItem extends LitElement {
       :host {
         display: flex;
         flex-direction: column;
-        gap: var(--space-2);
-        padding: var(--space-3);
-        border: var(--border);
-        border-radius: var(--radius);
-        background: var(--color-background);
       }
 
-      figure {
-        margin: 0;
-        width: var(--size-large);
-        height: var(--size-large);
-        background: var(--color-background-strong);
-        border-radius: var(--radius);
-        flex-shrink: 0;
-      }
+      // .key::before {
+      //   content: '--';
+      // }
 
-      .dot {
-        flex-shrink: 0;
-        width: var(--size-small);
-        height: var(--size-small);
-        border-radius: var(--radius);
-      }
+      // .key::after {
+      //   content: ':';
+      // }
 
-      .key::before {
-        content: '--';
-      }
-
-      .key::after {
-        content: ':';
+      .key {
+        font-weight: var(--font-weight-bold);
       }
     `,
   ]
@@ -55,11 +34,22 @@ export class TokenItem extends LitElement {
   render() {
     return html`
       <mm-flex gap="2" wrap>
-        ${this.color ? html`<span class="dot" style="background:${this.color}"></span>` : nothing}
-        ${this.key ? html`<span class="key">${this.key}</span>` : nothing}
-        ${this.value ? html`<span class="value">${this.value}</span>` : nothing}
+        ${this.index
+          ? html`
+              <mm-list-marker value=${this.index}></mm-list-marker>
+            `
+          : nothing}
+        ${this.key
+          ? html`
+              <span class="key">${this.key}</span>
+            `
+          : nothing}
+        ${this.value
+          ? html`
+              <span class="value">${this.value}</span>
+            `
+          : nothing}
       </mm-flex>
-      ${this.previewStyle ? html`<figure style=${this.previewStyle}></figure>` : nothing}
       <slot></slot>
     `
   }

@@ -40,7 +40,11 @@ class ComponentSection extends LitElement {
       <section class="component-section">
         <div hidden><mm-tag>${this.level === 'domain' ? 'Domain' : 'Semantic'}</mm-tag></div>
         <mm-text size="24" weight="bold" as="h3">${this.title}</mm-text>
-        ${this.description ? html`<mm-paragraph>${this.description}</mm-paragraph>` : nothing}
+        ${this.description
+          ? html`
+              <mm-paragraph>${this.description}</mm-paragraph>
+            `
+          : nothing}
         <div class="content ${this._hasContent ? 'has-content' : ''}">
           <slot @slotchange=${this._onSlotChange}></slot>
         </div>

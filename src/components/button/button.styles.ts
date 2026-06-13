@@ -17,7 +17,9 @@ export const buttonStyles = css`
     --button-color-active-ring: var(--color-interaction-active-ring);
   }
 
-  :host([isfullwidth]) button { width: 100%; }
+  :host([isfullwidth]) button {
+    width: 100%;
+  }
 
   :host([variant='primary']) button {
     --button-border-color: var(--border-transparent);

@@ -25,12 +25,16 @@ class UserSnippet extends LitElement {
           src=${this.avatarSrc || ''}
         ></mm-avatar>
         ${this.tagLabel
-          ? html`<mm-accent-tag class="entity-tag">${this.tagLabel}</mm-accent-tag>`
+          ? html`
+              <mm-accent-tag class="entity-tag">${this.tagLabel}</mm-accent-tag>
+            `
           : nothing}
         <div class="entity-content">
           <mm-paragraph size="large" weight="bold">${this.name}</mm-paragraph>
           ${this.description
-            ? html`<mm-text size="14" style="margin-top:-.125rem">${this.description}</mm-text>`
+            ? html`
+                <mm-text size="14" style="margin-top:-.125rem">${this.description}</mm-text>
+              `
             : nothing}
           <mm-text size="12">${this.email}</mm-text>
           <mm-text size="12">${this.phone}</mm-text>

@@ -38,7 +38,11 @@ module.exports = {
     'no-new-func': 'error',
     'prefer-spread': 'warn',
     'prefer-arrow-callback': ['error', { allowUnboundThis: false }],
-    'prefer-destructuring': ['error', { VariableDeclarator: { object: true } }, { AssignmentExpression: { array: true } }],
+    'prefer-destructuring': [
+      'error',
+      { VariableDeclarator: { object: true } },
+      { AssignmentExpression: { array: true } },
+    ],
     'prefer-template': 'error',
 
     // 'arrow-parens': [2, "as-needed", { "requireForBlockBody": true }],

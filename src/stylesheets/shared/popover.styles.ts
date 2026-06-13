@@ -22,7 +22,6 @@ export const popoverStyles = css`
     transform: translateY(0) scale(1);
     visibility: visible;
     pointer-events: auto;
-    transition: opacity 120ms ease, transform 220ms cubic-bezier(0.18, 1.25, 0.4, 1),
-      visibility 0s;
+    transition: opacity 120ms ease, transform 220ms cubic-bezier(0.18, 1.25, 0.4, 1), visibility 0s;
   }
 `

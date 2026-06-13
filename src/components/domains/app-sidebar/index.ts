@@ -75,7 +75,7 @@ export class Sidebar extends LitElement {
                   aria-controls="${node.id}-menu"
                   class="is-open"
                 >
-                  <mm-avatar slot="avatar" variant="tertiary" icon="${node.icon}"> </mm-avatar>
+                  <mm-avatar slot="avatar" variant="tertiary" icon="${node.icon}"></mm-avatar>
                   <mm-text size="14">${node.title}</mm-text>
                   <div style="margin-left: auto"><mm-icon name=${ICON_NAMES.EXPAND}></mm-icon></div>
                 </button>

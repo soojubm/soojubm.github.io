@@ -9,6 +9,10 @@ import '../text'
 @customElement('mm-section-title')
 export class SectionTitle extends LitElement {
   render() {
-    return html`<mm-text as="h2" size="18" weight="bold" color="var(--color-foreground)"><slot></slot></mm-text>`
+    return html`
+      <mm-text as="h2" size="18" weight="bold" color="var(--color-foreground)">
+        <slot></slot>
+      </mm-text>
+    `
   }
 }

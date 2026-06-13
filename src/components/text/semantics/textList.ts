@@ -54,12 +54,16 @@ class TextList extends LitElement {
     )
 
     return tag === 'ol'
-      ? html`<ol class="list">
-          ${list}
-        </ol>`
-      : html`<ul class="list">
-          ${list}
-        </ul>`
+      ? html`
+          <ol class="list">
+            ${list}
+          </ol>
+        `
+      : html`
+          <ul class="list">
+            ${list}
+          </ul>
+        `
   }
 }
 

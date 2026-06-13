@@ -31,7 +31,9 @@ export class TextfieldActionBar extends LitElement {
   `
 
   render() {
-    return html`<slot></slot>`
+    return html`
+      <slot></slot>
+    `
   }
 }
 

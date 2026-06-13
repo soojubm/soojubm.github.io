@@ -9,6 +9,10 @@ import '../text'
 @customElement('mm-page-title')
 export class PageTitle extends LitElement {
   render() {
-    return html`<mm-text as="h1" size="32" weight="bold" color="var(--color-foreground)"><slot></slot></mm-text>`
+    return html`
+      <mm-text as="h1" size="32" weight="bold" color="var(--color-foreground)">
+        <slot></slot>
+      </mm-text>
+    `
   }
 }

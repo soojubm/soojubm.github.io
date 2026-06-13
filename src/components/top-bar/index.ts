@@ -18,20 +18,24 @@ class TopBar extends LitElement {
     return html`
       <header role="navigation" class="top-bar">
         ${this.nav === 'back'
-          ? html`<mm-icon-button
-              variant="navigator"
-              icon=${ICON_NAMES.BACK}
-              @click=${this.handleNavClick}
-            ></mm-icon-button>`
+          ? html`
+              <mm-icon-button
+                variant="navigator"
+                icon=${ICON_NAMES.BACK}
+                @click=${this.handleNavClick}
+              ></mm-icon-button>
+            `
           : ''}
         <mm-paragraph size="large" class="top-bar-title">${this.title}</mm-paragraph>
         <slot name="action"></slot>
         ${this.nav === 'close'
-          ? html`<mm-icon-button
-              variant="navigator"
-              icon=${ICON_NAMES.CLOSE}
-              @click=${this.handleNavClick}
-            ></mm-icon-button>`
+          ? html`
+              <mm-icon-button
+                variant="navigator"
+                icon=${ICON_NAMES.CLOSE}
+                @click=${this.handleNavClick}
+              ></mm-icon-button>
+            `
           : ''}
       </header>
     `

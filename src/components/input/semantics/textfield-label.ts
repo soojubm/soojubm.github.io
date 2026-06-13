@@ -20,7 +20,12 @@ export class TextfieldLabel extends LitElement {
   render() {
     return html`
       <label for=${this.htmlFor ?? nothing}>
-        <slot></slot>${this.optional ? html`<small>선택입력</small>` : nothing}
+        <slot></slot>
+        ${this.optional
+          ? html`
+              <small>선택입력</small>
+            `
+          : nothing}
       </label>
     `
   }

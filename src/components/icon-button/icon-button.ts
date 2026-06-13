@@ -45,7 +45,7 @@ class IconButton extends LitElement {
     if (!this.tooltip) return control
 
     return html`
-      <mm-tooltip content=${this.tooltip} align=${this.tooltipAlign}> ${control} </mm-tooltip>
+      <mm-tooltip content=${this.tooltip} align=${this.tooltipAlign}>${control}</mm-tooltip>
     `
   }
 }

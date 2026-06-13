@@ -29,14 +29,18 @@ class SheetFooter extends LitElement {
     return html`
       <mm-button-group justify="end">
         ${this.secondaryLabel
-          ? html`<mm-button variant="tertiary" size="medium" @click=${this.handleSecondaryClick}
-              >${this.secondaryLabel}</mm-button
-            >`
+          ? html`
+              <mm-button variant="tertiary" size="medium" @click=${this.handleSecondaryClick}>
+                ${this.secondaryLabel}
+              </mm-button>
+            `
           : ''}
         ${this.primaryLabel
-          ? html`<mm-button variant="primary" size="medium" @click=${this.handlePrimaryClick}
-              >${this.primaryLabel}</mm-button
-            >`
+          ? html`
+              <mm-button variant="primary" size="medium" @click=${this.handlePrimaryClick}>
+                ${this.primaryLabel}
+              </mm-button>
+            `
           : ''}
       </mm-button-group>
     `

@@ -40,9 +40,7 @@ export class ThemeSwitcher extends LitElement {
         ></mm-icon-button>
         ${THEMES.map(
           theme => html`
-            <option value=${theme.value} icon=${theme.icon}>
-              ${theme.label}
-            </option>
+            <option value=${theme.value} icon=${theme.icon}>${theme.label}</option>
           `,
         )}
       </mm-dropdown>

@@ -17,7 +17,12 @@ export class ChatDate extends LitElement {
   ]
 
   render() {
-    return html`<mm-tag>${this.label}<slot></slot></mm-tag>`
+    return html`
+      <mm-tag>
+        ${this.label}
+        <slot></slot>
+      </mm-tag>
+    `
   }
 }
 

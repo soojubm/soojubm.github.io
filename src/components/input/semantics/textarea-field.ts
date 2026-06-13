@@ -18,13 +18,19 @@ export class TextareaField extends LitElement {
   static styles = textfieldStyles
 
   private inputId = `mm-textarea-${crypto?.randomUUID?.() || Math.random().toString(36).slice(2)}`
-  private get helperId() { return `${this.inputId}-helper` }
+  private get helperId() {
+    return `${this.inputId}-helper`
+  }
 
   render() {
     return html`
       <div class="textfield" ?data-invalid=${this.isInvalid}>
         ${this.label
-          ? html`<mm-textfield-label for=${this.inputId} ?optional=${this.isOptional}>${this.label}</mm-textfield-label>`
+          ? html`
+              <mm-textfield-label for=${this.inputId} ?optional=${this.isOptional}>
+                ${this.label}
+              </mm-textfield-label>
+            `
           : nothing}
         <mm-textarea
           input-id=${this.inputId}
@@ -38,7 +44,9 @@ export class TextareaField extends LitElement {
           @input=${this._syncValue}
         ></mm-textarea>
         ${this.helper
-          ? html`<mm-textfield-helper id=${this.helperId}>${this.helper}</mm-textfield-helper>`
+          ? html`
+              <mm-textfield-helper id=${this.helperId}>${this.helper}</mm-textfield-helper>
+            `
           : nothing}
       </div>
     `

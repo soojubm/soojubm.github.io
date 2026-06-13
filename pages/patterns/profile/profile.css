@@ -50,11 +50,6 @@
 @media (hover: hover) and (pointer: fine) {
 }
 
-mm-sheet[id^='sheet-'] {
-  --sheet-radius: var(--radius-large);
-  --sheet-size-large: 800px;
-}
-
 .list mm-portfolio-item {
   width: 100%;
 }

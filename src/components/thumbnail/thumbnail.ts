@@ -97,15 +97,19 @@ export class Thumbnail extends LitElement {
     let media
     if (this.href) {
       // 1. 이동할 주소(href)가 있다면 <a> 태그로 출력
-      media = html`<a href="${this.href}" class="thumbnail-media interactive">${innerTemplate}</a>`
+      media = html`
+        <a href="${this.href}" class="thumbnail-media interactive">${innerTemplate}</a>
+      `
     } else if (this.clickable) {
       // 2. 주소는 없지만 클릭 동작(clickable)이 필요하다면 <button> 태그로 출력
-      media = html`<button type="button" class="thumbnail-media interactive">
-        ${innerTemplate}
-      </button>`
+      media = html`
+        <button type="button" class="thumbnail-media interactive">${innerTemplate}</button>
+      `
     } else {
       // 3. 아무것도 없다면 단순 보기용 <div>로 출력
-      media = html`<div class="thumbnail-media">${innerTemplate}</div>`
+      media = html`
+        <div class="thumbnail-media">${innerTemplate}</div>
+      `
     }
 
     // thumbnail 자체가 <figure>이며, figcaption 값이 있으면 내부에 캡션을 함께 렌더링합니다.
@@ -113,9 +117,9 @@ export class Thumbnail extends LitElement {
       <figure class="thumbnail-root">
         ${media}
         ${this.figcaption
-          ? html`<mm-caption as="figcaption" class="thumbnail-caption"
-              >${this.figcaption}</mm-caption
-            >`
+          ? html`
+              <mm-caption as="figcaption" class="thumbnail-caption">${this.figcaption}</mm-caption>
+            `
           : ''}
       </figure>
     `

@@ -45,8 +45,12 @@ export const iconButtonStyles = css`
       opacity: 0.5;
       cursor: not-allowed;
 
-      &:hover { box-shadow: none; }
-      &:focus { outline: none; }
+      &:hover {
+        box-shadow: none;
+      }
+      &:focus {
+        outline: none;
+      }
       &:active {
         background: var(--icon-button-color);
         border-color: var(--icon-button-color);

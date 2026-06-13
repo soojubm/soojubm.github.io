@@ -14,14 +14,13 @@ const layoutStyles = `
       min-width: 0;
     }
     mm-toc {
+    display: none;
     }
-      /*
     @media (min-width: 1280px) {
       mm-toc {
         display: block;
       }
     }
-      */
   </style>
 `
 

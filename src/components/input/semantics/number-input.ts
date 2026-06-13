@@ -30,10 +30,18 @@ export class NumberInput extends LitElement {
     return html`
       <div class="textfield" ?data-invalid=${this.isInvalid}>
         ${this.label
-          ? html`<mm-textfield-label for=${this.inputId} ?optional=${this.isOptional}>${this.label}</mm-textfield-label>`
+          ? html`
+              <mm-textfield-label for=${this.inputId} ?optional=${this.isOptional}>
+                ${this.label}
+              </mm-textfield-label>
+            `
           : nothing}
         ${this.helper
-          ? html`<div style="margin-top:-.25rem"><mm-textfield-helper>${this.helper}</mm-textfield-helper></div>`
+          ? html`
+              <div style="margin-top:-.25rem">
+                <mm-textfield-helper>${this.helper}</mm-textfield-helper>
+              </div>
+            `
           : nothing}
         <div class="textfield-control">
           <mm-icon-button
@@ -73,7 +81,11 @@ export class NumberInput extends LitElement {
           ></mm-icon-button>
         </div>
         ${this.validationText
-          ? html`<mm-textfield-validation id=${`${this.inputId}-validation`}>${this.validationText}</mm-textfield-validation>`
+          ? html`
+              <mm-textfield-validation id=${`${this.inputId}-validation`}>
+                ${this.validationText}
+              </mm-textfield-validation>
+            `
           : nothing}
       </div>
     `
@@ -94,8 +106,12 @@ export class NumberInput extends LitElement {
 
   private _commit(value: number) {
     this.value = String(this._clamp(value))
-    this.dispatchEvent(new CustomEvent('input', { bubbles: true, composed: true, detail: { value: this.value } }))
-    this.dispatchEvent(new CustomEvent('change', { bubbles: true, composed: true, detail: { value: this.value } }))
+    this.dispatchEvent(
+      new CustomEvent('input', { bubbles: true, composed: true, detail: { value: this.value } }),
+    )
+    this.dispatchEvent(
+      new CustomEvent('change', { bubbles: true, composed: true, detail: { value: this.value } }),
+    )
   }
 
   private _decrement() {
@@ -111,7 +127,9 @@ export class NumberInput extends LitElement {
   private _handleInput(event: Event) {
     const target = event.target as HTMLInputElement
     this.value = target.value
-    this.dispatchEvent(new CustomEvent('input', { bubbles: true, composed: true, detail: { value: this.value } }))
+    this.dispatchEvent(
+      new CustomEvent('input', { bubbles: true, composed: true, detail: { value: this.value } }),
+    )
   }
 }
 

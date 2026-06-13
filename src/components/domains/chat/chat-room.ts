@@ -26,7 +26,9 @@ export class ChatRoom extends LitElement {
   ]
 
   render() {
-    return html`<slot></slot>`
+    return html`
+      <slot></slot>
+    `
   }
 }
 

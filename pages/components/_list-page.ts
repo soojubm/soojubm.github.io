@@ -32,7 +32,10 @@ export function renderList<T>(
   } else {
     listEl.insertAdjacentHTML(
       'beforeend',
-      items.slice(offset, offset + PAGE_SIZE).map(toCard).join(''),
+      items
+        .slice(offset, offset + PAGE_SIZE)
+        .map(toCard)
+        .join(''),
     )
   }
 

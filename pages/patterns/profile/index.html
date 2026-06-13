@@ -96,8 +96,7 @@
         <mm-result
           title="아직 새 글이 없어요."
           description="포트폴리오를 업로드하여 수줍이님을 알려보세요."
-        >
-        </mm-result>
+        ></mm-result>
       </mm-tab-panel>
     </mm-tabs>
   </section>
@@ -161,7 +160,7 @@
     transform: translateY(-1.05rem);
   }
 
-  .intro-head-description {
+  .subscribe-gosum {
     padding: 2rem 0 3rem;
     background: #fb7800;
     box-sizing: border-box;
@@ -169,16 +168,13 @@
 
   .today-poll {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     flex-wrap: wrap;
     margin: 4rem auto;
   }
-  .today-poll h2 {
-    width: 100%;
-    margin: 0 0 2rem 0;
-    text-align: center;
-  }
   .today-poll div {
+    width: 80px;
     margin: 0 0.5rem;
     background: var(--color-background);
     text-align: center;
@@ -237,7 +233,7 @@
           <img class="mangrove2" src="/src/images/newneek/home-mangrove2.png" alt="" />
         </div>
         <div class="mangrove-foot">
-          <b>고슴이는 집을 찾을 수 있을까요? </b>
+          <b>고슴이는 집을 찾을 수 있을까요?</b>
         </div>
       </div>
     </div>
@@ -271,53 +267,58 @@
           <mm-my-chat-bubble>뉴닉하면 어떤 색이 떠올라요?</mm-my-chat-bubble>
         </mm-my-chat-message>
         <mm-ai-chat-message username="찐뉴니커" no-reactions>
-          <mm-ai-chat-bubble
-            >후후.. 역시 뉴닉은 회색이죠! 네? 주황색은 본 적이 없는데...</mm-ai-chat-bubble
-          >
+          <mm-ai-chat-bubble>
+            후후.. 역시 뉴닉은 회색이죠! 네? 주황색은 본 적이 없는데...
+          </mm-ai-chat-bubble>
         </mm-ai-chat-message>
         <mm-my-chat-message avatar-src="/src/images/springsteen.jpg">
           <mm-my-chat-bubble>As-is 주황을 버튼에만 사용</mm-my-chat-bubble>
-          <mm-my-chat-bubble
-            >To-be 주황을 배경색으로 넓게 사용하여 브랜드 아이덴티티를 강화하고 주황색 배경에 검정색
-            버튼의 고대비로 주목도를 높이자.</mm-my-chat-bubble
-          >
+          <mm-my-chat-bubble>
+            To-be 주황을 배경색으로 넓게 사용하여 브랜드 아이덴티티를 강화하고 주황색 배경에 검정색
+            버튼의 고대비로 주목도를 높이자.
+          </mm-my-chat-bubble>
         </mm-my-chat-message>
       </mm-chat-feed>
     </section>
 
-    <br /><br />
+    <br />
+    <br />
 
     <section class="subscribe-gosum">
-      <div class="intro-head-description">
-        <mm-text size="14"
-          ><span role="img">🚀</span> 지금 구독하면 <b>내일 아침</b>에 읽을 수 있어요!</mm-text
-        >
-        <mm-text size="14">✨<b>305,408명</b>이 뉴닉을 읽고 있어요.</mm-text>
-        <br />
-        <mm-textfield placeholder="이메일 주소"></mm-textfield>
-        <mm-textfield placeholder="닉네임"></mm-textfield>
+      <mm-flex direction="column" gap="2">
+        <mm-text size="14">
+          지금 구독하면
+          <b>내일 아침</b>
+          에 읽을 수 있어요!
+        </mm-text>
+        <mm-text size="14">
+          ✨
+          <b>305,408명</b>
+          이 뉴닉을 읽고 있어요.
+        </mm-text>
+        <mm-input placeholder="이메일 주소"></mm-input>
+        <mm-input placeholder="닉네임"></mm-input>
         <mm-button variant="primary">뉴스레터 무료로 구독하기</mm-button>
-      </div>
+      </mm-flex>
     </section>
 
     <section class="today-poll">
-      <h2 style="margin: 0">오늘 기분 어때요?</h2>
-      <p style="width: 100%; margin: var(--space-3) 0 3rem 0; text-align: center">
-        🦔고슴이: 고슴이는...!
-      </p>
-      <br /><br />
-      <div>
-        <figure><span>🧒</span></figure>
-        <span class="label">기타</span>
-      </div>
-      <div>
-        <figure><span>👧</span></figure>
-        <span class="label">여성</span>
-      </div>
-      <div>
-        <figure><span>👦</span></figure>
-        <span class="label">남성</span>
-      </div>
+      <mm-text size="18" weight="bold">오늘 기분 어때요?</mm-text>
+      <mm-text center>🦔고슴이: 고슴이는...!</mm-text>
+      <mm-flex direction="column" justify="center" align="center" gap="2">
+        <div>
+          <figure><span>🧒</span></figure>
+          <span class="label">기타</span>
+        </div>
+        <div>
+          <figure><span>👧</span></figure>
+          <span class="label">여성</span>
+        </div>
+        <div>
+          <figure><span>👦</span></figure>
+          <span class="label">남성</span>
+        </div>
+      </mm-flex>
     </section>
 
     <div style="max-width: 800px; margin: 4rem 0">

@@ -86,8 +86,12 @@ export class AccordionItem extends LitElement {
       }
 
       :host([open]) {
-        & .icon { transform: rotate(90deg); }
-        & .panel { grid-template-rows: 1fr; }
+        & .icon {
+          transform: rotate(90deg);
+        }
+        & .panel {
+          grid-template-rows: 1fr;
+        }
         & .panel-inner {
           padding-top: var(--space-2);
           padding-bottom: var(--space-2);

@@ -29,8 +29,8 @@ export class Footer extends LitElement {
             github="https://github.com/soojubm"
           ></mm-social-links>
           <mm-flex gap="2" style="margin: var(--space-4) 0 0 0">
-            <mm-link href="/my/films/">영화감상 목록 </mm-link>
-            <mm-link href="/my/books/">독서 목록 </mm-link>
+            <mm-link href="/my/films/">영화감상 목록</mm-link>
+            <mm-link href="/my/books/">독서 목록</mm-link>
           </mm-flex>
         </div>
 
@@ -49,9 +49,9 @@ export class Footer extends LitElement {
           <dd>2018-서울강서구-1234</dd>
           <abbr title="phone"></abbr>
         </dl>
-        <small class="footer-copyright" style="margin: var(--space-3) 0 0 0"
-          >© 2019 soojubm. All rights reserved.</small
-        >
+        <small class="footer-copyright" style="margin: var(--space-3) 0 0 0">
+          © 2019 soojubm. All rights reserved.
+        </small>
         <address class="footer-address">
           <p class="footer-address-slogan">Making things better.</p>
         </address>
@@ -66,11 +66,13 @@ export class Footer extends LitElement {
             <mm-flex direction="column">
               <mm-paragraph size="large">사이트맵 컴포넌트</mm-paragraph>
               <mm-text href="#" size="14" color="var(--color-foreground-light)">샘플</mm-text>
-              <mm-text href="#" size="14" color="var(--color-foreground-light)">사이트맵 </mm-text>
-              <mm-text href="#" size="14" color="var(--color-foreground-light)">사이트맵 샘플</mm-text>
-              <mm-text href="#" size="14" color="var(--color-foreground-light)"
-                >사이트맵 컴포넌트 샘플</mm-text
-              >
+              <mm-text href="#" size="14" color="var(--color-foreground-light)">사이트맵</mm-text>
+              <mm-text href="#" size="14" color="var(--color-foreground-light)">
+                사이트맵 샘플
+              </mm-text>
+              <mm-text href="#" size="14" color="var(--color-foreground-light)">
+                사이트맵 컴포넌트 샘플
+              </mm-text>
             </mm-flex>
             <mm-flex direction="column">
               <mm-paragraph size="large">꺼이꺼이</mm-paragraph>

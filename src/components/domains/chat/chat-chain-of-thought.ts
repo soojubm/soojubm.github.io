@@ -38,7 +38,9 @@ export class ChatChainOfThoughtStep extends LitElement {
       :host(:last-child) {
         padding-bottom: 0;
 
-        & .marker::after { display: none; }
+        & .marker::after {
+          display: none;
+        }
       }
 
       :host([status='complete']) .marker::after {
@@ -99,7 +101,9 @@ export class ChatChainOfThoughtStep extends LitElement {
       :host([status='active']) {
         color: var(--color-foreground);
 
-        & .label { font-weight: var(--font-weight-bold); }
+        & .label {
+          font-weight: var(--font-weight-bold);
+        }
       }
 
       :host([status='complete']) {
@@ -138,15 +142,27 @@ export class ChatChainOfThoughtStep extends LitElement {
       <span class="marker">
         ${this.status === 'complete'
           ? this.icon
-            ? html`<mm-icon class="check" name=${this.icon}></mm-icon>`
-            : html`<mm-icon class="check" name=${ICON_NAMES.DONE}></mm-icon>`
+            ? html`
+                <mm-icon class="check" name=${this.icon}></mm-icon>
+              `
+            : html`
+                <mm-icon class="check" name=${ICON_NAMES.DONE}></mm-icon>
+              `
           : this.status === 'active'
-          ? html`<span class="spinner" role="status" aria-label="진행 중"></span>`
-          : html`<span class="circle"></span>`}
+          ? html`
+              <span class="spinner" role="status" aria-label="진행 중"></span>
+            `
+          : html`
+              <span class="circle"></span>
+            `}
       </span>
       <span class="content">
         <span class="label"><slot></slot></span>
-        ${this.description ? html`<span class="desc">${this.description}</span>` : nothing}
+        ${this.description
+          ? html`
+              <span class="desc">${this.description}</span>
+            `
+          : nothing}
       </span>
     `
   }
@@ -270,8 +286,12 @@ export class ChatChainOfThought extends LitElement {
       }
 
       :host([open]) {
-        & .chevron { transform: rotate(90deg); }
-        & .panel { grid-template-rows: 1fr; }
+        & .chevron {
+          transform: rotate(90deg);
+        }
+        & .panel {
+          grid-template-rows: 1fr;
+        }
       }
 
       /* ── 패널 ── */
@@ -345,17 +365,25 @@ export class ChatChainOfThought extends LitElement {
         >
           <span class="lead">
             ${this.thinking
-              ? html`<span class="spinner" role="status" aria-label="생각하는 중"></span>`
-              : html`<mm-icon name=${ICON_NAMES.SPARKS}></mm-icon>`}
+              ? html`
+                  <span class="spinner" role="status" aria-label="생각하는 중"></span>
+                `
+              : html`
+                  <mm-icon name=${ICON_NAMES.SPARKS}></mm-icon>
+                `}
           </span>
 
           <span class="header-text">
             <span class="label">${this.label}</span>
             ${this.thinking && this._activeLabel
-              ? html`<span class="active-hint">${this._activeLabel}</span>`
+              ? html`
+                  <span class="active-hint">${this._activeLabel}</span>
+                `
               : nothing}
             ${!this.thinking && this.duration
-              ? html`<span class="duration">${this.duration}</span>`
+              ? html`
+                  <span class="duration">${this.duration}</span>
+                `
               : nothing}
           </span>
 

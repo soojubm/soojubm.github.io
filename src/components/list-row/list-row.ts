@@ -44,27 +44,38 @@ export class ListRow extends LitElement {
           ? html`
               <span class="list-row-leading">
                 ${this.emoji
-                  ? html`<span class="list-row-emoji" aria-hidden="true">${this.emoji}</span>`
-                  : html`<mm-avatar
-                      size=${this.avatarSize}
-                      variant=${this.avatarVariant}
-                      icon=${ifDefined(this.icon || undefined)}
-                      src=${ifDefined(this.avatarSrc || undefined)}
-                    ></mm-avatar>`}
+                  ? html`
+                      <span class="list-row-emoji" aria-hidden="true">${this.emoji}</span>
+                    `
+                  : html`
+                      <mm-avatar
+                        size=${this.avatarSize}
+                        variant=${this.avatarVariant}
+                        icon=${ifDefined(this.icon || undefined)}
+                        src=${ifDefined(this.avatarSrc || undefined)}
+                      ></mm-avatar>
+                    `}
               </span>
             `
           : nothing}
         <span class="list-row-content">
           ${this.label
-            ? html`<mm-text size="14">${this.label}</mm-text>`
-            : html`<slot></slot>`}
+            ? html`
+                <mm-text size="14">${this.label}</mm-text>
+              `
+            : html`
+                <slot></slot>
+              `}
           ${this.description
-            ? html`<mm-text
-                size="14"
-                color="var(--color-foreground-light)"
-                style="margin-top: var(--space-1-minus)"
-                >${this.description}</mm-text
-              >`
+            ? html`
+                <mm-text
+                  size="14"
+                  color="var(--color-foreground-light)"
+                  style="margin-top: var(--space-1-minus)"
+                >
+                  ${this.description}
+                </mm-text>
+              `
             : nothing}
         </span>
         <span class="list-row-trailing" ?hidden=${!this.hasTrailing}>

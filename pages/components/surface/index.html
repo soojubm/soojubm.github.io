@@ -70,30 +70,26 @@
         icon="task-list"
         titleText="Structural"
         description="연독립된 배경 영역을 제공하여 화면을 논리적인 단위로 분리하고 관련 정보를 하나로 묶어, 전체 레이아웃의 시각적 구조를 잡아줍니다."
-      >
-      </mm-feature>
+      ></mm-feature>
       <mm-feature
         icon="cursor-pointer"
         titleText="Dimensional"
         subtitle="notification, status, informational"
         description="명도 대비나 음영(Shadow)을 통해 화면에 시각적인 깊이감(Depth)을 부여하고, 정보 레이어 간의 상하 관계를 직관적으로 인지하도록 돕습니다."
-      >
-      </mm-feature>
+      ></mm-feature>
 
       <mm-feature
         icon="cube-scan"
         titleText="Indicative"
         description="고유한 배경색(Color)과 깊이감(Depth)의 조합 및 변화를 활용하여, 해당 영역이 사용자가 누를 수 있는(Clickable) 대상인지 아닌지를 직관적으로 식별하게 만드는 기표 역할을 합니다."
-      >
-      </mm-feature>
+      ></mm-feature>
     </mm-grid>
     <mm-text-list
       texts='[
           "타일 내부 leading, tailing 컴포넌트에 따라 시각보정이 필요할 수 있습니다.",
           "inset이 너무 커지면 물리적 화면 크기에 따라 inset의 변경이 필요할 수 있다. 콘텐츠 모듈을 가운데 정렬로 해결할 수 있다."
         ]'
-    >
-    </mm-text-list>
+    ></mm-text-list>
     <!-- "foundation :: elevated는 타일 전체가 하나의 클릭 가능한 컴포넌트이거나 타일 내부에 클릭 가능한
     컴포넌트를 포함.", -->
     <!-- "transparented tile 을 정의하여 모든 contentbox가 tile이 되는 것은 어떤가? 비어있는
@@ -148,10 +144,10 @@
   <mm-component-section title="PricingTile" description="">
     <div style="position: relative">
       <!-- <mm-tag style="position: absolute; left: -0.25rem; top: var(--space-3)"> -->
-      <mm-tag> 🔥 Most Popular </mm-tag>
+      <mm-tag>🔥 Most Popular</mm-tag>
       <div style="height: 1rem"></div>
       <mm-paragraph size="large">Standard</mm-paragraph>
-      <mm-text size="14"> 대법원장은 국회의 동의를 얻어 대통령이 임명한다. </mm-text>
+      <mm-text size="14">대법원장은 국회의 동의를 얻어 대통령이 임명한다.</mm-text>
       <div style="margin: var(--space-3) 0 1.5rem 0">
         <mm-text size="32" weight="bold">₩ 6,800</mm-text>
         <mm-text color="var(--color-foreground-light)">한 달에 한 번</mm-text>
@@ -162,8 +158,7 @@
         "Google 전문가와의 상담",
         "회원을 위한 추가 혜택"
         ]'
-      >
-      </mm-text-list>
+      ></mm-text-list>
       <br />
       <mm-flex>
         <mm-button variant="primary" size="large" isfullwidth="true">업그레이드</mm-button>
@@ -175,7 +170,7 @@
     <section class="feeds" role="feed" aria-busy="false">
       <article class="feed" aria-setsize="3" aria-posinset="1">
         <header class="feed-header">
-          <mm-tag> 🔥 Most Popular </mm-tag>
+          <mm-tag>🔥 Most Popular</mm-tag>
           <mm-menu-item-action
             avatar-size="large"
             icon="user"
@@ -189,7 +184,8 @@
             Monotonectally productivate progressive human capital without user friendly portals.
             Globally benchmark top-line ideas with distributed catalysts for change. Authoritatively
             restore ubiquitous partnerships vis-a-vis
-            <mm-link href="#feed">synergistic models</mm-link>.
+            <mm-link href="#feed">synergistic models</mm-link>
+            .
           </mm-text>
           <mm-text-list
             texts='[
@@ -197,8 +193,7 @@
               "글줄의 길이를 상대적으로 좁게 짜는 경향이 있다.",
               "리액션 버튼과 리액션 수치를 각각 제공할 수 있고 따로 제공할 수 있다. 리액션한 사용자 목록을 어떻게 보여줄 것인가. 중복 리액션과 횟수 등 기능 정의. 리액션 => 알림."
               ]'
-          >
-          </mm-text-list>
+          ></mm-text-list>
           <mm-keyword-tag-group keywords='["Google", "Meta", "Nvidia"]'></mm-keyword-tag-group>
           <mm-surface variant="elevated">
             <mm-tag>3월 14일 수정됨</mm-tag>
@@ -208,19 +203,17 @@
                 label="Kakao"
                 description="https://www.kakaocorp.com"
                 avatar-size="large"
-              >
-              </mm-menu-item-action>
+              ></mm-menu-item-action>
               <mm-menu-item-action
                 label="Naver"
                 description="https://www.naver.com"
                 avatar-size="large"
-              >
-              </mm-menu-item-action>
+              ></mm-menu-item-action>
             </mm-flex>
           </mm-surface>
         </div>
         <div class="feed-footer">
-          <mm-menu-item-action icon="heart" label="192"> </mm-menu-item-action>
+          <mm-menu-item-action icon="heart" label="192"></mm-menu-item-action>
         </div>
       </article>
 
@@ -307,8 +300,9 @@
             color: var(--gray800);
             text-decoration: underline;
           "
-          >애플</a
         >
+          애플
+        </a>
         <mm-flex>
           <mm-tag class="card-category">인기있는</mm-tag>
           <mm-tag class="card-note">무료배송 / 200 포인트 적립</mm-tag>

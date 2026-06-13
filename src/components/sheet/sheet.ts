@@ -56,7 +56,7 @@ class Sheet extends LitElement {
         --sheet-backdrop-color: var(--color-backdrop);
         --sheet-radius: var(--radius-large);
         --sheet-bottom-max-width: calc(var(--layout-width-small) + var(--space-4) * 10);
-        --sheet-anchor-width: calc(var(--width-small) + var(--space-4) * 7.5);
+        --sheet-anchor-width: var(--layout-width-tiny);
         --sheet-anchor-max-height: calc(var(--width-small) * 2);
         --sheet-size-small: var(--sheet-anchor-width);
         --sheet-size-medium: var(--layout-width-tiny);
@@ -128,10 +128,18 @@ class Sheet extends LitElement {
       }
 
       /* center + size */
-      :host([type='center']) .sheet { max-width: var(--sheet-size-medium); }
-      :host([type='center'][size='small']) .sheet { max-width: var(--sheet-size-small); }
-      :host([type='center'][size='large']) .sheet { max-width: var(--sheet-size-large); }
-      :host([type='center'][size='full']) .sheet { max-width: var(--sheet-size-full); }
+      :host([type='center']) .sheet {
+        max-width: var(--sheet-size-medium);
+      }
+      :host([type='center'][size='small']) .sheet {
+        max-width: var(--sheet-size-small);
+      }
+      :host([type='center'][size='large']) .sheet {
+        max-width: var(--sheet-size-large);
+      }
+      :host([type='center'][size='full']) .sheet {
+        max-width: var(--sheet-size-full);
+      }
 
       /* bottom */
       :host([type='bottom']) .sheet {
@@ -200,9 +208,11 @@ class Sheet extends LitElement {
     const cls = ['sheet', isAnchor && 'popover', isAnchor && this.isOpen && 'open']
       .filter(Boolean)
       .join(' ')
-    return html`<aside class="${cls}" style="${heightStyle}">
-      <slot></slot>
-    </aside>`
+    return html`
+      <aside class="${cls}" style="${heightStyle}">
+        <slot></slot>
+      </aside>
+    `
   }
 
   open() {

@@ -65,12 +65,8 @@ class TitleWithDescription extends LitElement {
       >
         ${isLevel1
           ? html`
-              <mm-text size="32" weight="bold" ?center="${this.center}">
-                ${this.title}
-              </mm-text>
-              <mm-paragraph size="large" ?center="${this.center}">
-                ${this.description}
-              </mm-paragraph>
+              <mm-text size="32" weight="bold" ?center="${this.center}">${this.title}</mm-text>
+              <mm-paragraph size="large" ?center="${this.center}">${this.description}</mm-paragraph>
             `
           : html`
               <mm-text size="${variant.titleSize}" weight="bold" ?center="${this.center}">

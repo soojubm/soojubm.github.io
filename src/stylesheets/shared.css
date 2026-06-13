@@ -298,9 +298,6 @@ input[type='file'] + label:after {
 }
 .price-input {
 }
-.number-input {
-}
-
 /* // radius = iOS */
 .counter {
   display: flex;

@@ -62,7 +62,9 @@ export class TypingIndicator extends LitElement {
         aria-label=${this.ariaLabel}
         style="--typing-color: ${this.color}"
       >
-        <span></span><span></span><span></span>
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
     `
   }

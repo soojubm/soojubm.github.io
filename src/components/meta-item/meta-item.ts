@@ -4,7 +4,8 @@ import { metaItemStyles } from './meta-item.styles'
 
 @customElement('mm-meta-item')
 class MetaItem extends LitElement {
-  @property({ type: String, reflect: true }) layout: 'horizontal' | 'stacked' | 'inline' = 'horizontal'
+  @property({ type: String, reflect: true }) layout: 'horizontal' | 'stacked' | 'inline' =
+    'horizontal'
   @property({ type: String }) label = ''
   @property({ type: String }) value = ''
 

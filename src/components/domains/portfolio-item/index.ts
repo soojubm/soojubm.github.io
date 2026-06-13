@@ -118,24 +118,44 @@ export class PortfolioItem extends LitElement {
         @click=${this.open}
         @keydown=${this.handleKeyDown}
       >
-        ${this.badge ? html`<mm-accent-tag class="badge">${this.badge}</mm-accent-tag>` : nothing}
+        ${this.badge
+          ? html`
+              <mm-accent-tag class="badge">${this.badge}</mm-accent-tag>
+            `
+          : nothing}
         <mm-icon-button
           class="action"
           variant="navigator"
           icon=${ICON_NAMES.MORE_ACTIONS}
         ></mm-icon-button>
-        ${this.src ? html`<mm-thumbnail src=${this.src} alt=${this.alt}></mm-thumbnail>` : nothing}
+        ${this.src
+          ? html`
+              <mm-thumbnail src=${this.src} alt=${this.alt}></mm-thumbnail>
+            `
+          : nothing}
         <div class="content">
-          ${this.label ? html`<mm-paragraph size="large" weight="bold">${this.label}</mm-paragraph>` : nothing}
-          ${this.description ? html`<mm-text size="14">${this.description}</mm-text>` : nothing}
+          ${this.label
+            ? html`
+                <mm-paragraph size="large" weight="bold">${this.label}</mm-paragraph>
+              `
+            : nothing}
+          ${this.description
+            ? html`
+                <mm-text size="14">${this.description}</mm-text>
+              `
+            : nothing}
           ${this.date
-            ? html`<time hidden datetime=${this.date}>${this.formattedDate}</time>`
+            ? html`
+                <time hidden datetime=${this.date}>${this.formattedDate}</time>
+              `
             : nothing}
           ${this.keywords.length
-            ? html`<mm-keyword-tag-group
-                .keywords=${this.keywords}
-                style="margin-top: var(--space-2);"
-              ></mm-keyword-tag-group>`
+            ? html`
+                <mm-keyword-tag-group
+                  .keywords=${this.keywords}
+                  style="margin-top: var(--space-2);"
+                ></mm-keyword-tag-group>
+              `
             : nothing}
           <slot></slot>
         </div>

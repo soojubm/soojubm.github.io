@@ -26,9 +26,15 @@ export class Spinner extends LitElement {
         animation: spin 0.8s linear infinite;
         flex-shrink: 0;
 
-        &[data-size='small'] { --spinner-size: var(--size-small); }
-        &[data-size='medium'] { --spinner-size: var(--size-medium); }
-        &[data-size='large'] { --spinner-size: var(--size-large); }
+        &[data-size='small'] {
+          --spinner-size: var(--size-small);
+        }
+        &[data-size='medium'] {
+          --spinner-size: var(--size-medium);
+        }
+        &[data-size='large'] {
+          --spinner-size: var(--size-large);
+        }
       }
 
       .label {
@@ -37,19 +43,16 @@ export class Spinner extends LitElement {
       }
 
       @keyframes spin {
-        to { transform: rotate(360deg); }
+        to {
+          transform: rotate(360deg);
+        }
       }
     `,
   ]
 
   render() {
     return html`
-      <span
-        class="spinner"
-        data-size=${this.size}
-        role="status"
-        aria-label=${this.label}
-      ></span>
+      <span class="spinner" data-size=${this.size} role="status" aria-label=${this.label}></span>
       <slot>
         <span class="label">${this.label}</span>
       </slot>

@@ -1,17 +1,39 @@
-.carousel {position: relative;}
-.carousel-viewer {}
-.carousel-viewer-slide {}
-.carousel-viewer-slide:hover {}
-.carousel-viewer-slide-media {}
-.carousel-viewer-slide-name {}
-.carousel-dots {display: flex;align-items: center;}
-.carousel-dots-dot {width: 10px;height: 10px;margin: 0px 4px;border-radius: 50%;background: rgba(0, 0, 0, 1);cursor: pointer;}
-.carousel-dots-dot:hover {opacity: .5;}
-.carousel-arrows button.is-disabled {opacity: .2;}
+.carousel {
+  position: relative;
+}
+.carousel-viewer {
+}
+.carousel-viewer-slide {
+}
+.carousel-viewer-slide:hover {
+}
+.carousel-viewer-slide-media {
+}
+.carousel-viewer-slide-name {
+}
+.carousel-dots {
+  display: flex;
+  align-items: center;
+}
+.carousel-dots-dot {
+  width: 10px;
+  height: 10px;
+  margin: 0px 4px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 1);
+  cursor: pointer;
+}
+.carousel-dots-dot:hover {
+  opacity: 0.5;
+}
+.carousel-arrows button.is-disabled {
+  opacity: 0.2;
+}
 @media (max-width: 1100px) {
-
   .carousel-arrows {
     display: none;
   }
-  .carousel:hover .carousel-arrows {display: block;}
+  .carousel:hover .carousel-arrows {
+    display: block;
+  }
 }

@@ -67,7 +67,11 @@ export class ChatSource extends LitElement {
           )
         }}
       >
-        ${this.icon ? html`<mm-icon name=${this.icon}></mm-icon>` : ''}
+        ${this.icon
+          ? html`
+              <mm-icon name=${this.icon}></mm-icon>
+            `
+          : ''}
         ${this._domain}
       </mm-button>
     `
@@ -141,9 +145,7 @@ export class ChatSourceGroup extends LitElement {
 
         transform: translateY(-4px);
         opacity: 0;
-        transition:
-          opacity 160ms ease,
-          transform 200ms cubic-bezier(0.18, 1.25, 0.4, 1);
+        transition: opacity 160ms ease, transform 200ms cubic-bezier(0.18, 1.25, 0.4, 1);
       }
 
       :host([data-open]) .sheet {
@@ -194,8 +196,6 @@ export class ChatSourceGroup extends LitElement {
     `,
   ]
 
-
-
   private get _domain() {
     if (!this._activeSource) return ''
     if (this._activeSource.label) return this._activeSource.label
@@ -220,22 +220,35 @@ export class ChatSourceGroup extends LitElement {
                 ? html`
                     <div class="sheet-header">
                       ${src.icon
-                        ? html`<mm-icon class="sheet-icon" name=${src.icon}></mm-icon>`
+                        ? html`
+                            <mm-icon class="sheet-icon" name=${src.icon}></mm-icon>
+                          `
                         : ''}
                       <span class="sheet-domain">${this._domain}</span>
                     </div>
                   `
                 : ''}
-              ${src.title ? html`<mm-text as="span" size="14" weight="bold">${src.title}</mm-text>` : ''}
-              ${src.description ? html`<mm-paragraph size="small">${src.description}</mm-paragraph>` : ''}
+              ${src.title
+                ? html`
+                    <mm-text as="span" size="14" weight="bold">${src.title}</mm-text>
+                  `
+                : ''}
+              ${src.description
+                ? html`
+                    <mm-paragraph size="small">${src.description}</mm-paragraph>
+                  `
+                : ''}
               ${src.href
-                ? html`<a
+                ? html`
+                    <a
                       class="sheet-link"
                       href=${src.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      >방문하기 ↗</a
-                    >`
+                    >
+                      방문하기 ↗
+                    </a>
+                  `
                 : ''}
             </div>
           `

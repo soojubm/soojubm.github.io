@@ -62,15 +62,24 @@ export class AvatarGroup extends LitElement {
     return html`
       <div class="avatars">
         ${visible.map(
-          src => html` <mm-avatar size=${this.size} .src=${src || undefined}></mm-avatar> `,
+          src =>
+            html`
+              <mm-avatar size=${this.size} .src=${src || undefined}></mm-avatar>
+            `,
         )}
         ${overflowCount > 0
-          ? html`<mm-avatar size=${this.size}
-              ><mm-text size="12">+${overflowCount}</mm-text></mm-avatar
-            >`
+          ? html`
+              <mm-avatar size=${this.size}>
+                <mm-text size="12">+${overflowCount}</mm-text>
+              </mm-avatar>
+            `
           : nothing}
       </div>
-      ${this.label ? html`<span class="label">${this.label}</span>` : nothing}
+      ${this.label
+        ? html`
+            <span class="label">${this.label}</span>
+          `
+        : nothing}
     `
   }
 }

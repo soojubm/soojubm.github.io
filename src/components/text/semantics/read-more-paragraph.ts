@@ -39,10 +39,12 @@ export class ReadMoreParagraph extends LitElement {
       <mm-paragraph>
         ${displayText}
         ${truncated
-          ? html`<mm-read-more-button
-              .expanded=${this.expanded}
-              @click=${this.toggle}
-            ></mm-read-more-button>`
+          ? html`
+              <mm-read-more-button
+                .expanded=${this.expanded}
+                @click=${this.toggle}
+              ></mm-read-more-button>
+            `
           : nothing}
       </mm-paragraph>
     `

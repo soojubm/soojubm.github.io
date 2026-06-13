@@ -15,7 +15,13 @@ export class UserRow extends LitElement {
   @property({ type: String, attribute: 'avatar-size' }) avatarSize = 'medium'
   @property({ type: String, attribute: 'avatar-variant' }) avatarVariant = 'tertiary'
 
-  static styles = [css`:host { display: block; }`]
+  static styles = [
+    css`
+      :host {
+        display: block;
+      }
+    `,
+  ]
 
   render() {
     return html`

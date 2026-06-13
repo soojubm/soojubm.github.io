@@ -8,7 +8,11 @@ export class ComponentAka extends LitElement {
     type: Array,
     converter: value => {
       if (!value) return []
-      try { return JSON.parse(value) } catch { return [] }
+      try {
+        return JSON.parse(value)
+      } catch {
+        return []
+      }
     },
   })
   items: string[] = []
@@ -27,7 +31,12 @@ export class ComponentAka extends LitElement {
     return html`
       <dl>
         <dt>a.k.a.</dt>
-        ${this.items.map(item => html`<dd>${item}</dd>`)}
+        ${this.items.map(
+          item =>
+            html`
+              <dd>${item}</dd>
+            `,
+        )}
       </dl>
     `
   }

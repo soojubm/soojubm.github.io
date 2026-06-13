@@ -4,7 +4,9 @@
     description="콘텐츠나 작업을 레이어 위에 표시합니다. 위치와 모달리티에 따라 center·bottom·left·right·anchor 타입으로 구분됩니다."
   ></mm-page-header>
 
-  <mm-component-aka items='["Drawer", "Panel", "Bottom Sheet", "Side Sheet", "Modal"]'></mm-component-aka>
+  <mm-component-aka
+    items='["Drawer", "Panel", "Bottom Sheet", "Side Sheet", "Modal"]'
+  ></mm-component-aka>
 
   <mm-component-example>
     <mm-button-group>
@@ -81,7 +83,9 @@
     <mm-paragraph size="large">Modal vs Non-modal</mm-paragraph>
     <mm-text size="14">
       Presentation 레이어는 사용자의 주의를 얼마나 차단하느냐에 따라 두 가지로 나뉜다. 이 기준은
-      시각적 형태(Sheet, Dialog 등)가 아니라 <strong>배경과의 상호작용 허용 여부</strong>로 결정된다.
+      시각적 형태(Sheet, Dialog 등)가 아니라
+      <strong>배경과의 상호작용 허용 여부</strong>
+      로 결정된다.
     </mm-text>
 
     <mm-text size="16">Modal</mm-text>
@@ -109,9 +113,21 @@
     ></mm-text-list>
 
     <mm-component-references>
-      <mm-link external href="https://developer.mozilla.org/ko/docs/Web/API/Popover_API">Mozilla Popover API</mm-link>
-      <mm-link external href="https://developer.apple.com/design/human-interface-guidelines/components/presentation/action-sheets">HIG action-sheets</mm-link>
-      <mm-link external href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alertdialog_role">alertdialog role</mm-link>
+      <mm-link external href="https://developer.mozilla.org/ko/docs/Web/API/Popover_API">
+        Mozilla Popover API
+      </mm-link>
+      <mm-link
+        external
+        href="https://developer.apple.com/design/human-interface-guidelines/components/presentation/action-sheets"
+      >
+        HIG action-sheets
+      </mm-link>
+      <mm-link
+        external
+        href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alertdialog_role"
+      >
+        alertdialog role
+      </mm-link>
     </mm-component-references>
   </mm-component-guide>
 
@@ -128,7 +144,9 @@
   >
     <mm-sheet-body>
       <mm-paragraph>sheet-body는 콘텐츠가 넘치면 내부에서 스크롤됩니다.</mm-paragraph>
-      <mm-paragraph>mm-sheet에 height를 지정하면 고정 높이 내에서 body가 스크롤됩니다.</mm-paragraph>
+      <mm-paragraph>
+        mm-sheet에 height를 지정하면 고정 높이 내에서 body가 스크롤됩니다.
+      </mm-paragraph>
     </mm-sheet-body>
   </mm-component-section>
 
@@ -146,15 +164,21 @@
     title="mm-backdrop"
     description="레이어 뒤에 표시되는 반투명 오버레이. open prop으로 표시하며 --backdrop-color로 색상을 재정의할 수 있습니다."
   >
-    <div style="position: relative; height: 120px; border-radius: 12px; overflow: hidden;">
+    <div style="position: relative; height: 120px; border-radius: 12px; overflow: hidden">
       <mm-paragraph>배경 콘텐츠</mm-paragraph>
-      <mm-backdrop open style="--backdrop-position: absolute; --backdrop-z-index: 1; border-radius: 12px;"></mm-backdrop>
+      <mm-backdrop
+        open
+        style="--backdrop-position: absolute; --backdrop-z-index: 1; border-radius: 12px"
+      ></mm-backdrop>
     </div>
   </mm-component-section>
 
   <mm-component-props>
     <mm-prop name="open" type="boolean"></mm-prop>
-    <mm-prop name="type" type="'center' | 'bottom' | 'left' | 'right' | 'anchor' = 'center'"></mm-prop>
+    <mm-prop
+      name="type"
+      type="'center' | 'bottom' | 'left' | 'right' | 'anchor' = 'center'"
+    ></mm-prop>
     <mm-prop name="size" type="'small' | 'medium' | 'large' | 'full' = 'medium'" optional></mm-prop>
     <mm-prop name="height" type="string" optional></mm-prop>
     <mm-prop name="sheetclose" type="CustomEvent" kind="event"></mm-prop>
@@ -198,9 +222,18 @@
             호스트가 제공하고 에어비앤비에서 검토한 정보입니다.
           </p>
           <mm-menu-item-checkbox-group aria-label="접근성 편의">
-            <mm-menu-item-checkbox value="no-stairs" label="게스트 출입구에 계단이나 문턱 없음"></mm-menu-item-checkbox>
-            <mm-menu-item-checkbox value="entrance-width" label="너비 81cm 이상의 게스트 출입구"></mm-menu-item-checkbox>
-            <mm-menu-item-checkbox value="parking" label="휠체어 접근 가능 주차 공간"></mm-menu-item-checkbox>
+            <mm-menu-item-checkbox
+              value="no-stairs"
+              label="게스트 출입구에 계단이나 문턱 없음"
+            ></mm-menu-item-checkbox>
+            <mm-menu-item-checkbox
+              value="entrance-width"
+              label="너비 81cm 이상의 게스트 출입구"
+            ></mm-menu-item-checkbox>
+            <mm-menu-item-checkbox
+              value="parking"
+              label="휠체어 접근 가능 주차 공간"
+            ></mm-menu-item-checkbox>
           </mm-menu-item-checkbox-group>
         </fieldset>
         <mm-separator></mm-separator>
@@ -219,7 +252,11 @@
             value="email-notify"
             label="멘션 및 다이렉트 메시지에 대한 이메일 알림 받기"
           ></mm-menu-item-switch>
-          <mm-menu-item-radio-group name="email-interval" aria-label="이메일 알림 주기" value="15min">
+          <mm-menu-item-radio-group
+            name="email-interval"
+            aria-label="이메일 알림 주기"
+            value="15min"
+          >
             <mm-menu-item-radio value="15min" label="15분 마다 한 번"></mm-menu-item-radio>
             <mm-menu-item-radio value="1hour" label="한 시간에 한 번"></mm-menu-item-radio>
           </mm-menu-item-radio-group>

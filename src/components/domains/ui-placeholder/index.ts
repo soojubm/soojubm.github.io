@@ -28,7 +28,9 @@ export class UiPlaceholder extends LitElement {
       --ui-placeholder-radius: ${this.radius};
     `
 
-    return html`<div class="placeholder" style=${style} aria-hidden="true"></div>`
+    return html`
+      <div class="placeholder" style=${style} aria-hidden="true"></div>
+    `
   }
 }
 

@@ -20,15 +20,15 @@ export class ListMarker extends LitElement {
         background: var(--color-foreground);
         color: var(--color-background);
         border-radius: 50%;
-      }
-
-      :host([variant='number']),
-      :host([variant='check']) {
         width: var(--size-tiny);
         height: var(--size-tiny);
         margin-top: var(--space-1);
         font-size: var(--font-size-12);
         font-weight: var(--font-weight-bold);
+      }
+
+      :host([variant='number']),
+      :host([variant='check']) {
       }
 
       svg {
@@ -55,7 +55,9 @@ export class ListMarker extends LitElement {
 
   render() {
     if (this.variant === 'check') return this.renderCheck()
-    return html`${this.value}`
+    return html`
+      ${this.value}
+    `
   }
 }
 

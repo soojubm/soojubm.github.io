@@ -114,7 +114,9 @@ export class FilterButtonGroup extends LitElement {
   }
 
   render() {
-    return html`<slot @slotchange=${this._adoptInitialSelection}></slot>`
+    return html`
+      <slot @slotchange=${this._adoptInitialSelection}></slot>
+    `
   }
 }
 

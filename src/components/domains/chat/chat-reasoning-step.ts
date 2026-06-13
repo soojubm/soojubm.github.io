@@ -146,14 +146,24 @@ export class ChatReasoningStep extends LitElement {
     return html`
       <span class="marker">
         ${showCheck
-          ? html`<mm-icon class="check" name=${ICON_NAMES.DONE}></mm-icon>`
+          ? html`
+              <mm-icon class="check" name=${ICON_NAMES.DONE}></mm-icon>
+            `
           : showCustomIcon
-          ? html`<mm-icon class="check" name=${this.icon}></mm-icon>`
-          : html`<span class="dot"></span>`}
+          ? html`
+              <mm-icon class="check" name=${this.icon}></mm-icon>
+            `
+          : html`
+              <span class="dot"></span>
+            `}
       </span>
       <span class="content">
         <span class="label"><slot></slot></span>
-        ${this.description ? html`<span class="desc">${this.description}</span>` : nothing}
+        ${this.description
+          ? html`
+              <span class="desc">${this.description}</span>
+            `
+          : nothing}
       </span>
     `
   }

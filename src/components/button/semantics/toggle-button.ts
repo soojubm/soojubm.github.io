@@ -84,7 +84,11 @@ export class ToggleButton extends LitElement {
         ?disabled=${this.disabled}
         @click=${this.handleClick}
       >
-        ${this.icon ? html`<mm-icon name=${this.icon}></mm-icon>` : ''}
+        ${this.icon
+          ? html`
+              <mm-icon name=${this.icon}></mm-icon>
+            `
+          : ''}
         <slot></slot>
       </button>
     `

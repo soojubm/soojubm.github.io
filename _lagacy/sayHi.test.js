@@ -1,5 +1,5 @@
 // Run the test
-test('Returns a greeting as a string', function() {
+test('Returns a greeting as a string', function () {
   // should return a string
   expect(typeof sayHi()).toBe('string')
 
@@ -10,17 +10,16 @@ test('Returns a greeting as a string', function() {
   // expect(sayHi()).toBeTruthy();
 })
 
-
-describe('The sayHi() method', function() {
-  test('it returns a string', function() {
+describe('The sayHi() method', function () {
+  test('it returns a string', function () {
     expect(typeof sayHi()).toBe('string')
   })
 
-  test('it includes the provided name', function() {
+  test('it includes the provided name', function () {
     expect(sayHi('Merlin')).toContain('Merlin')
   })
 
-  test('it has a value when no name is included', function() {
+  test('it has a value when no name is included', function () {
     expect(sayHi()).not.toHaveLength(0)
   })
 })

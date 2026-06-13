@@ -16,7 +16,11 @@ export class AiChatBubble extends LitElement {
   private renderTyping() {
     return html`
       <div class="bubble">
-        <div class="typing"><span></span><span></span><span></span></div>
+        <div class="typing">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
     `
   }

@@ -11,7 +11,6 @@ export const tooltipStyles = css`
     --tooltip-color: var(--color-background-strong);
     --tooltip-text-color: var(--color-foreground-on-solid);
     --tooltip-shadow: var(--shadow);
-
   }
 
   :host(:hover) .tooltip-content,

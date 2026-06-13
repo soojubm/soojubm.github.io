@@ -23,7 +23,11 @@ export function renderMenuItemContent(props: MenuItemProps, action: unknown) {
       avatar-size=${props.avatarSize}
       avatar-variant=${props.avatarVariant}
     >
-      ${props.label ? nothing : html`<slot name="label"><slot></slot></slot>`}
+      ${props.label
+        ? nothing
+        : html`
+            <slot name="label"><slot></slot></slot>
+          `}
       ${action}
     </mm-list-row>
   `

@@ -39,4 +39,3 @@ export const buttonSizes = {
     'min-width': 'var(--button-min-width)',
   },
 } as const
-

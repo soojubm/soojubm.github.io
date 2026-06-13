@@ -21,7 +21,11 @@ class Link extends LitElement {
         rel="${this.external ? 'noopener noreferrer' : ''}"
       >
         <slot></slot>
-        ${this.external ? html`<mm-icon name=${ICON_NAMES.LINK}></mm-icon>` : nothing}
+        ${this.external
+          ? html`
+              <mm-icon name=${ICON_NAMES.LINK}></mm-icon>
+            `
+          : nothing}
       </a>
     `
   }

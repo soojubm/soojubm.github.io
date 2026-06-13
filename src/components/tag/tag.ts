@@ -29,13 +29,19 @@ export class Tag extends LitElement {
   static styles = [tagStyles]
 
   protected renderDefaultSlot() {
-    return html`<slot></slot>`
+    return html`
+      <slot></slot>
+    `
   }
 
   render() {
     return html`
       <span>
-        ${this.icon ? html`<mm-icon name=${this.icon}></mm-icon>` : nothing}
+        ${this.icon
+          ? html`
+              <mm-icon name=${this.icon}></mm-icon>
+            `
+          : nothing}
         ${this.renderDefaultSlot()}
       </span>
     `

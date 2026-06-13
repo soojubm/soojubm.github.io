@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
   applyTheme()
 })
 
-
 export function hideNavbar() {
   document.body.classList.remove('is-menu-opened')
 }

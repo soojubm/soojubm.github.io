@@ -107,13 +107,19 @@ export class PromptInput extends LitElement {
           <mm-textfield-action-bar align="between">
             <mm-button-group gap="1">
               <slot name="leading-actions"></slot>
-              ${this.hideAttachment ? '' : html`<mm-attachment-dropdown></mm-attachment-dropdown>`}
+              ${this.hideAttachment
+                ? ''
+                : html`
+                    <mm-attachment-dropdown></mm-attachment-dropdown>
+                  `}
               ${this.hideModelSelector
                 ? ''
-                : html`<mm-model-selector
-                    .value=${this.model}
-                    @change=${this._handleModelChange}
-                  ></mm-model-selector>`}
+                : html`
+                    <mm-model-selector
+                      .value=${this.model}
+                      @change=${this._handleModelChange}
+                    ></mm-model-selector>
+                  `}
             </mm-button-group>
             <mm-button-group gap="1">
               <slot name="trailing-actions"></slot>

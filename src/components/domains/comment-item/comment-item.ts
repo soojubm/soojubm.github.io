@@ -144,9 +144,9 @@ export class CommentItem extends LitElement {
         <slot></slot>
 
         ${this.replyLabel
-          ? html`<button class="reply" @click=${() => this._emit('reply')}>
-              ${this.replyLabel}
-            </button>`
+          ? html`
+              <button class="reply" @click=${() => this._emit('reply')}>${this.replyLabel}</button>
+            `
           : ''}
         ${this.editable
           ? html`

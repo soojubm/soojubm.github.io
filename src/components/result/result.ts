@@ -37,7 +37,13 @@ class Result extends LitElement {
       <div role="status" class="result">
         <slot name="avatar">
           ${this.effectiveAvatarIcon
-            ? html`<mm-avatar size="huge" variant="secondary" icon=${this.effectiveAvatarIcon}></mm-avatar>`
+            ? html`
+                <mm-avatar
+                  size="huge"
+                  variant="secondary"
+                  icon=${this.effectiveAvatarIcon}
+                ></mm-avatar>
+              `
             : nothing}
         </slot>
         <mm-title-with-description

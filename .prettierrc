@@ -9,6 +9,7 @@
   "proseWrap": "preserve",
   "arrowParens": "avoid",
   "endOfLine": "lf",
+  "htmlWhitespaceSensitivity": "ignore",
 
   "jsxBracketSameLine": false,
   "jsxSingleQuote": false,

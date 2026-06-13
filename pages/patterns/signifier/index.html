@@ -1,5 +1,7 @@
 <main class="page">
   <mm-flex direction="column" gap="4rem">
+            <!-- "TODO 더보기 패턴. 아이템이 3개 이하일 때 제목 우측에 모두보기 버튼을 위치할 수 있지만, 아이템이 4개 이상이라면 아이템의 아래에 모두보기 버튼을 배치. 가로 스크롤인 경우 스크롤의 가장 우측에 배치할 수도. " -->
+
     <!-- <div style="width: 20px">
     <svg viewBox="0 0 10 10">
       <rect height="7" width="1" y="1" x="4" />
@@ -59,7 +61,7 @@ Availability state: enabled / disabled / loading -->
         <mm-title-with-description
           level="1"
           title="Signifier"
-          description="Signifiers define the visual cues that communicate what an element means, what state it isin, and what users can do with it. ///// 기표는 사용자가 UI를 보고 해당 요소의 역할, 상태, 가능한 행동을 이해할 수 있도록 하는 시각적단서입니다. 이 페이지는 디자인 시스템 안에서 특정 시각 표현이 특정 의미에만 사용되도록제한하는 공통 계약을 정의합니다. ///// 예측 가능한 사용자 인터렉션으로 서비스와 사용자 사이의 신뢰 구축."
+          description="기표는 사용자가 UI를 보고 해당 요소의 역할, 상태, 가능한 행동을 이해할 수 있도록 하는 시각적단서입니다. 이 페이지는 디자인 시스템 안에서 특정 시각 표현이 특정 의미에만 사용되도록제한하는 공통 계약을 정의합니다. ///// 예측 가능한 사용자 인터렉션으로 서비스와 사용자 사이의 신뢰 구축."
         >
         </mm-title-with-description>
         <mm-caption>
@@ -67,29 +69,22 @@ Availability state: enabled / disabled / loading -->
           일관되게 정의하는 것입니다. 기표는 장식이 아니라 사용자가 인터페이스를 해석하는 방식에
           직접 관여하는 규칙입니다.
         </mm-caption>
-        <mm-caption>
-          예를 들어 primary color text, underline, pointer cursor, external link icon, check icon은
-          각각 특정한 의미를 갖습니다. 이러한 단서가 다른 의미로 재사용되면 사용자는 요소의 역할을
-          오해할 수 있습니다.
-        </mm-caption>
         <mm-text-list
           texts='[
           "Do not over signify. 기표는 많을수록 좋은 게 아니라, 사용자의 판단을 도와야 할 때만 사용한다.",
             "상태를 표현하는 시각 언어는 컴포넌트에 종속되지 않고 제품 전체에 일관합니다.",
             "성공적인 상호작용 피드백은 장식적인 것이 아니라 정보를 제공하는 것입니다. 시각적 노이즈나 강렬한 색상 변화를 유발하는 정교한 전환을 피하세요. 주의를 산만하게 하는 애니메이션은 혼란을 야기하고 인터페이스를 사용하기 불편하게 만들 수 있습니다.",
-            "TODO 더보기 패턴. 아이템이 3개 이하일 때 제목 우측에 모두보기 버튼을 위치할 수 있지만, 아이템이 4개 이상이라면 아이템의 아래에 모두보기 버튼을 배치. 가로 스크롤인 경우 스크롤의 가장 우측에 배치할 수도. "
           ]'
         ></mm-text-list>
       </mm-paragraph-group>
     </header>
 
     <mm-paragraph-group>
-      <!-- <h2 id="principles-title">Core Principles</h2> -->
-      <mm-grid columns="4" column-max-width="280px">
+      <mm-grid columns="2" column-max-width="400px">
         <mm-feature
           icon="check"
           titletext="One signifier, one primary meaning"
-          description="하나의 시각적 단서는 시스템이 명시적으로 허용하지 않는 한 다른 의미로 재사용하지 않습니다. 예를 들어 외부 링크 아이콘은 외부 목적지로 이동한다는 의미에 사용하며, 일반적인 내부 이동이나 상세 보기에는 사용하지 않습니다."
+          description="하나의 시각적 단서는 하나의 주요 의미를 갖습니다. 시스템이 명시적으로 허용하지 않는 한 같은 단서를 다른 의미로 재사용하지 않습니다."
         ></mm-feature>
         <mm-feature
           icon="interactive"
@@ -104,34 +99,34 @@ Availability state: enabled / disabled / loading -->
         <mm-feature
           icon="groupable"
           titletext="Keep signifiers consistent across components"
-          description="컴포넌트의 접근성 속성은 다를 수 있지만 사용자가 인지하는 시각적 기표는 일관되게 유지합니다. 예를 들어 Tabs는 aria-selected, Toggle Button은 aria-pressed, Checkbox는 aria-checked를 사용할 수 있지만 선택 상태의 시각적 단서는 공통된 원칙을 따릅니다."
+          description="컴포넌트의 역할과 접근성 속성은 달라도, 사용자가 인지하는 같은 의미나 상태는 일관된 시각적 방식으로 표현합니다."
         ></mm-feature>
       </mm-grid>
     </mm-paragraph-group>
 
     <mm-paragraph-group>
-      <h3>Page Context Contrast</h3>
-      <p>
+      <mm-text size="18">Page Context Contrast</ㅡ>
+      <mm-text>
         페이지의 맥락을 구분하기 위해 컨테이너 너비, 레이아웃 모듈, 배경색의 대비를 사용할 수
         있습니다. 이러한 대비는 사용자가 현재 화면의 성격을 빠르게 이해하도록 돕는 페이지 레벨의
         기표입니다.
-      </p>
+      </mm-text>
 
-      <p>
+      <mm-text>
         예를 들어 비밀번호 찾기와 같은 집중형 작업은 좁은 컨테이너를 사용하고, 로그인/회원가입처럼
         더 많은 입력과 선택이 필요한 화면은 상대적으로 넓은 컨테이너를 사용할 수 있습니다. 설정,
         글쓰기, 소개 페이지처럼 서로 다른 정보 구조를 가진 화면은 배경색이나 표면 대비를 통해 맥락의
         전환을 표현할 수 있습니다.
-      </p>
+      </mm-text>
 
-      <p>
+      <mm-text>
         Use layout contrast to distinguish page contexts. Container width, surface treatment, and
         background contrast can signal whether a page is focused, editorial, administrative, or
         exploratory.
-      </p>
+      </mm-text>
 
       <dl>
-        <dt>Narrow container</dt>
+        <mm-text>Narrow container</ㅡ>
         <dd>비밀번호 찾기처럼 사용자의 집중이 필요한 단일 작업 흐름에 사용합니다.</dd>
 
         <dt>Medium container</dt>
@@ -184,7 +179,7 @@ Availability state: enabled / disabled / loading -->
     <mm-flex direction="column" gap="3">
       <mm-text size="24" weight="bold" as="h3">Interaction States</mm-text>
       <mm-paragraph>
-        시각적 단서입니다. 작업이 수행된 후 신뢰도를 확립하며, 해당 요소와 상호 작용할 수 있는지
+        작업이 수행된 후 신뢰도를 확립하며, 해당 요소와 상호 작용할 수 있는지
         여부를 나타냅니다.
       </mm-paragraph>
 
@@ -283,20 +278,12 @@ Availability state: enabled / disabled / loading -->
 
       <mm-flex direction="column" gap="3">
         <mm-filter-button-group id="interaction-state-picker" mode="single">
-          <mm-filter-button value="default" selected>Default</mm-filter-button>
-          <mm-filter-button value="hover">Hover</mm-filter-button>
+          <mm-filter-button value="hover" selected>Hover</mm-filter-button>
           <mm-filter-button value="focus">Focus</mm-filter-button>
           <mm-filter-button value="active">Active</mm-filter-button>
           <mm-filter-button value="disabled">Disabled</mm-filter-button>
           <mm-filter-button value="loading">Loading</mm-filter-button>
         </mm-filter-button-group>
-        <mm-list-row
-          id="interaction-state-desc"
-          icon="cursor-pointer"
-          avatar-size="large"
-          label="Default"
-          description="아무런 상호작용이 없는 기본 상태입니다."
-        ></mm-list-row>
         <div class="interaction-demo-stage">
           <button class="demo-btn" id="demo-button">Button</button>
           <a class="demo-link" id="demo-link">Text Link</a>
@@ -317,30 +304,55 @@ Availability state: enabled / disabled / loading -->
         사용자가 인지하는 선택 기표는 일관되게 유지합니다.
       </mm-paragraph>
 
-      <mm-paragraph>
-        선택 상태는 색상만으로 전달하지 않습니다. 배경·테두리·아이콘 등 2개 이상의 신호를
-        조합합니다(selection 토큰).
-      </mm-paragraph>
-
       <mm-paragraph-group>
         <mm-text-list
           variant="check"
-          texts='["상태 인지성(state perception) / affordance / 접근성 / 시스템 일관성", "선택 상태는 최소 2개 이상의 signal로 표현하는 것이 좋다 (WCAG 색상만으로 상태를 전달하지 말 것)"]'
+          texts='[
+          "상태 인지성(state perception) / affordance / 접근성 / 시스템 일관성",
+          "선택 상태는 색상만으로 전달하지 않습니다. 선택 상태는 최소 2개 이상의 signal로 표현하는 것이 좋다 (WCAG 색상만으로 상태를 전달하지 말 것)"]'
         ></mm-text-list>
+
+      <mm-grid columns="2">
+        <mm-list-row
+          icon="group"
+          avatar-size="large"
+          label="Selected"
+          description="여러 선택지 중 선택된 항목입니다. Tabs :: aria-selected"
+        ></mm-list-row>
+        <mm-list-row
+          icon="group"
+          avatar-size="large"
+          label="Current"
+          description="현재 위치나 현재 보고 있는 항목입니다."
+        ></mm-list-row>
+        <mm-list-row
+          icon="group"
+          avatar-size="large"
+          label="Active"
+          description="현재 활성화되어 있는 항목입니다."
+        ></mm-list-row>
+        
+        <mm-list-row
+          icon="group"
+          avatar-size="large"
+          label="Checked"
+          description="체크박스, 라디오, 메뉴 옵션의 체크 상태입니다."
+        ></mm-list-row>
+        <mm-list-row
+          icon="group"
+          avatar-size="large"
+          label="Pressed"
+          description="토글 버튼이 눌린 상태입니다. Toggle Button? selected?"
+        ></mm-list-row>
+      </mm-grid>
 
         <mm-keyword-tag-group
           title="Visual cues"
-          keywords='["selected background", "selected border", "check icon - confirmed selection, chosen item, applied state", "stronger label weight", "selected indicator line"]'
+          keywords='["background color", "border", "check icon - confirmed selection, chosen item, applied state", "stronger label weight", "indicator line"]'
         ></mm-keyword-tag-group>
       </mm-paragraph-group>
 
-      <mm-token-stage
-        parts='[
-          { "key": "--selection-indicator-size", "value": "선택 라인의 길이" },
-          { "key": "--selection-indicator-gap", "value": "indicator와 선택 항목 사이 간격" },
-          { "key": "--selection-indicator-color", "value": "선택 상태를 나타내는 accent color" }
-        ]'
-      >
+      <mm-token-stage>
         <mm-flex class="selection-indicator-demo" direction="column" gap="1">
           <mm-flex
             class="selection-indicator-option"
@@ -369,75 +381,7 @@ Availability state: enabled / disabled / loading -->
         </mm-flex>
       </mm-token-stage>
 
-      <!-- <mm-text-list
-        texts='["--selection-indicator-size", "--selection-indicator-gap", "--selection-indicator-color"]'
-      ></mm-text-list> -->
 
-      <!-- <mm-grid columns="3">
-        <mm-list-row
-          icon="group"
-          avatar-size="large"
-          label="Selected"
-          description="여러 선택지 중 선택된 항목입니다."
-        ></mm-list-row>
-        <mm-list-row
-          icon="group"
-          avatar-size="large"
-          label="Current"
-          description="현재 위치나 현재 보고 있는 항목입니다."
-        ></mm-list-row>
-        <mm-list-row
-          icon="group"
-          avatar-size="large"
-          label="Active"
-          description="현재 활성화되어 있는 항목입니다."
-        ></mm-list-row>
-        <mm-list-row
-          icon="group"
-          avatar-size="large"
-          label="Checked"
-          description="체크박스, 라디오, 메뉴 옵션의 체크 상태입니다."
-        ></mm-list-row>
-        <mm-list-row
-          icon="group"
-          avatar-size="large"
-          label="Pressed"
-          description="토글 버튼이 눌린 상태입니다."
-        ></mm-list-row>
-      </mm-grid> -->
-
-      <mm-grid columns="2">
-        <mm-list-row
-          icon="group"
-          avatar-size="large"
-          label="Tabs"
-          description="aria-selected를 사용합니다."
-        ></mm-list-row>
-        <mm-list-row
-          icon="group"
-          avatar-size="large"
-          label="Toggle Button"
-          description="aria-pressed를 사용합니다."
-        ></mm-list-row>
-        <mm-list-row
-          icon="group"
-          avatar-size="large"
-          label="Radio"
-          description="aria-checked 또는 native checked state를 사용합니다."
-        ></mm-list-row>
-        <mm-list-row
-          icon="group"
-          avatar-size="large"
-          label="Checkbox"
-          description="aria-checked 또는 native checked state를 사용합니다."
-        ></mm-list-row>
-        <mm-list-row
-          icon="group"
-          avatar-size="large"
-          label="Menu option"
-          description="aria-checked 또는 aria-selected를 사용합니다."
-        ></mm-list-row>
-      </mm-grid>
     </mm-flex>
 
     <mm-flex direction="column" gap="3">

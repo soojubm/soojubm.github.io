@@ -22,12 +22,22 @@ export class Paragraph extends LitElement {
         font-weight: var(--font-weight-medium);
       }
 
-      :host([size='small']) { font-size: var(--font-size-12); line-height: var(--font-line-height-16); }
-      :host([size='large']) { font-size: var(--font-size-18); line-height: var(--font-line-height-28); }
+      :host([size='small']) {
+        font-size: var(--font-size-12);
+        line-height: var(--font-line-height-16);
+      }
+      :host([size='large']) {
+        font-size: var(--font-size-18);
+        line-height: var(--font-line-height-28);
+      }
 
-      :host([weight='bold']) { font-weight: var(--font-weight-bold); }
+      :host([weight='bold']) {
+        font-weight: var(--font-weight-bold);
+      }
 
-      :host([center]) { text-align: center; }
+      :host([center]) {
+        text-align: center;
+      }
 
       p {
         margin: 0;
@@ -47,6 +57,8 @@ export class Paragraph extends LitElement {
   }
 
   render() {
-    return html`<p><slot></slot></p>`
+    return html`
+      <p><slot></slot></p>
+    `
   }
 }

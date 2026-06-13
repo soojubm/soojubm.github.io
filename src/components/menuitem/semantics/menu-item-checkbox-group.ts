@@ -23,9 +23,7 @@ export class MenuItemCheckboxGroup extends LitElement {
   `
 
   private get _checkboxes() {
-    return Array.from(
-      this.querySelectorAll<MenuItemCheckbox>('mm-menu-item-checkbox'),
-    )
+    return Array.from(this.querySelectorAll<MenuItemCheckbox>('mm-menu-item-checkbox'))
   }
 
   private handleChange(e: Event) {
@@ -35,9 +33,7 @@ export class MenuItemCheckboxGroup extends LitElement {
 
     const { checked, value } = (e as CustomEvent<{ checked: boolean; value: string }>).detail
 
-    this.values = checked
-      ? [...this.values, value]
-      : this.values.filter(v => v !== value)
+    this.values = checked ? [...this.values, value] : this.values.filter(v => v !== value)
 
     // 자식 동기화
     this._checkboxes.forEach(cb => {

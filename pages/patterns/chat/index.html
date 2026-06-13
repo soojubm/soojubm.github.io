@@ -56,17 +56,18 @@
 
           <mm-ai-chat-message no-reactions>
             <mm-chat-chain-of-thought thinking open>
-              <mm-chat-chain-of-thought-step status="complete"
-                >질문 의도 파악</mm-chat-chain-of-thought-step
-              >
+              <mm-chat-chain-of-thought-step status="complete">
+                질문 의도 파악
+              </mm-chat-chain-of-thought-step>
               <mm-chat-chain-of-thought-step
                 status="active"
                 description="design-tokens.json, tokens.ts 파일 분석 중"
-                >토큰 정의 파일 검색 중</mm-chat-chain-of-thought-step
               >
-              <mm-chat-chain-of-thought-step status="pending"
-                >답변 정리</mm-chat-chain-of-thought-step
-              >
+                토큰 정의 파일 검색 중
+              </mm-chat-chain-of-thought-step>
+              <mm-chat-chain-of-thought-step status="pending">
+                답변 정리
+              </mm-chat-chain-of-thought-step>
             </mm-chat-chain-of-thought>
           </mm-ai-chat-message>
 
@@ -78,29 +79,30 @@
 
           <mm-ai-chat-message>
             <mm-chat-reasoning open duration="4초">
-              <mm-chat-reasoning-step done description="사용자가 토큰 계층 구조를 알고 싶어 함"
-                >질문 의도 파악</mm-chat-reasoning-step
-              >
+              <mm-chat-reasoning-step done description="사용자가 토큰 계층 구조를 알고 싶어 함">
+                질문 의도 파악
+              </mm-chat-reasoning-step>
               <mm-chat-reasoning-step
                 done
                 description="Figma, Atlassian, Style Dictionary 문서 발견"
-                >관련 문서 3건 검색</mm-chat-reasoning-step
               >
+                관련 문서 3건 검색
+              </mm-chat-reasoning-step>
               <mm-chat-reasoning-step done>핵심 내용 정리</mm-chat-reasoning-step>
             </mm-chat-reasoning>
             <mm-ai-chat-bubble>안녕하세요 👋 무엇을 도와드릴까요?</mm-ai-chat-bubble>
           </mm-ai-chat-message>
 
           <mm-my-chat-message>
-            <mm-my-chat-bubble failed
-              >네트워크 오류로 전송에 실패한 메시지입니다.</mm-my-chat-bubble
-            >
+            <mm-my-chat-bubble failed>
+              네트워크 오류로 전송에 실패한 메시지입니다.
+            </mm-my-chat-bubble>
           </mm-my-chat-message>
 
           <mm-my-chat-message>
-            <mm-my-chat-bubble status="읽음"
-              >반갑습니다! 오늘도 좋은 하루 보내세요.</mm-my-chat-bubble
-            >
+            <mm-my-chat-bubble status="읽음">
+              반갑습니다! 오늘도 좋은 하루 보내세요.
+            </mm-my-chat-bubble>
             <mm-my-chat-bubble typing></mm-my-chat-bubble>
           </mm-my-chat-message>
         </mm-flex>

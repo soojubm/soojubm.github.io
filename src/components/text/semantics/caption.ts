@@ -9,6 +9,10 @@ import '../text'
 @customElement('mm-caption')
 export class Caption extends LitElement {
   render() {
-    return html`<mm-text as="span" size="12" weight="medium" color="var(--color-foreground-light)"><slot></slot></mm-text>`
+    return html`
+      <mm-text as="span" size="12" weight="medium" color="var(--color-foreground-light)">
+        <slot></slot>
+      </mm-text>
+    `
   }
 }

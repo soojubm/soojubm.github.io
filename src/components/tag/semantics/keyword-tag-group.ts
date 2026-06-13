@@ -25,8 +25,17 @@ export class KeywordTagGroup extends LitElement {
     if (!this.keywords.length) return nothing
     return html`
       <mm-tag-group>
-        ${this.title ? html`<mm-accent-tag>${this.title}</mm-accent-tag>` : nothing}
-        ${this.keywords.map(k => html`<mm-keyword-tag>${k}</mm-keyword-tag>`)}
+        ${this.title
+          ? html`
+              <mm-accent-tag>${this.title}</mm-accent-tag>
+            `
+          : nothing}
+        ${this.keywords.map(
+          k =>
+            html`
+              <mm-keyword-tag>${k}</mm-keyword-tag>
+            `,
+        )}
       </mm-tag-group>
     `
   }

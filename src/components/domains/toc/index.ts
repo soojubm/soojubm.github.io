@@ -245,8 +245,9 @@ export class TableOfContents extends LitElement {
           color="var(--color-foreground-light)"
           class="toc-title"
           aria-hidden="true"
-          >Share on</mm-text
         >
+          Share on
+        </mm-text>
         <mm-button-group>
           ${this.shareLinks.map(
             ({ href, icon, label }) => html`
@@ -279,8 +280,9 @@ export class TableOfContents extends LitElement {
           color="var(--color-foreground-light)"
           class="toc-title"
           aria-hidden="true"
-          >On this page</mm-text
         >
+          On this page
+        </mm-text>
         <div class="toc-list" style=${`--selection-indicator-y: ${this.indicatorY}px`}>
           <mm-selection-indicator position="absolute" aria-hidden="true"></mm-selection-indicator>
           ${this.items.map(

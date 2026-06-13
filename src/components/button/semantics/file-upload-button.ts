@@ -115,7 +115,11 @@ export class FileUploadButton extends LitElement {
           capture=${this.capture ? 'camera' : nothing}
           @change=${this.handleChange}
         />
-        ${this.helper ? html`<mm-text size="12">${this.helper}</mm-text>` : ''}
+        ${this.helper
+          ? html`
+              <mm-text size="12">${this.helper}</mm-text>
+            `
+          : ''}
       </div>
 
       <div class="attachments">
@@ -133,14 +137,18 @@ export class FileUploadButton extends LitElement {
                   (file, index) => html`
                     <figure class="attachment">
                       ${file.type.startsWith('image/')
-                        ? html`<img src=${URL.createObjectURL(file)} alt=${file.name} />`
+                        ? html`
+                            <img src=${URL.createObjectURL(file)} alt=${file.name} />
+                          `
                         : ''}
                       <figcaption>
                         <mm-text size="14" weight="bold">${file.name}</mm-text>
                         <mm-text size="12">${this.formatFileSize(file.size)}</mm-text>
                       </figcaption>
                       <div class="remove">
-                        <mm-clear-button @click=${() => this.removeFile(index)}>삭제</mm-clear-button>
+                        <mm-clear-button @click=${() => this.removeFile(index)}>
+                          삭제
+                        </mm-clear-button>
                       </div>
                     </figure>
                   `,

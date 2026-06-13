@@ -125,8 +125,12 @@ export class ChatReasoning extends LitElement {
       }
 
       :host([open]) {
-        & .chevron { transform: rotate(90deg); }
-        & .panel { grid-template-rows: 1fr; }
+        & .chevron {
+          transform: rotate(90deg);
+        }
+        & .panel {
+          grid-template-rows: 1fr;
+        }
       }
 
       /* ── 콘텐츠 패널 ── */
@@ -148,17 +152,30 @@ export class ChatReasoning extends LitElement {
 
       /* ── 애니메이션 ── */
       @keyframes spin {
-        to { transform: rotate(360deg); }
+        to {
+          transform: rotate(360deg);
+        }
       }
 
       @keyframes pulse {
-        0%, 100% { opacity: 1; }
-        50% { opacity: 0.5; }
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.5;
+        }
       }
 
       @keyframes fadeIn {
-        from { opacity: 0; transform: translateX(-4px); }
-        to   { opacity: 1; transform: translateX(0); }
+        from {
+          opacity: 0;
+          transform: translateX(-4px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
       }
     `,
   ]
@@ -200,17 +217,25 @@ export class ChatReasoning extends LitElement {
         >
           <span class="lead">
             ${this.thinking
-              ? html`<span class="spinner" role="status" aria-label="생각하는 중"></span>`
-              : html`<mm-icon name=${ICON_NAMES.SPARKS}></mm-icon>`}
+              ? html`
+                  <span class="spinner" role="status" aria-label="생각하는 중"></span>
+                `
+              : html`
+                  <mm-icon name=${ICON_NAMES.SPARKS}></mm-icon>
+                `}
           </span>
 
           <span class="header-text">
             <span class="label">${this.label}</span>
             ${this.thinking && this._activeLabel
-              ? html`<span class="active-hint">${this._activeLabel}</span>`
+              ? html`
+                  <span class="active-hint">${this._activeLabel}</span>
+                `
               : nothing}
             ${!this.thinking && this.duration
-              ? html`<span class="duration">${this.duration}</span>`
+              ? html`
+                  <span class="duration">${this.duration}</span>
+                `
               : nothing}
           </span>
 

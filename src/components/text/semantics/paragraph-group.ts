@@ -16,7 +16,9 @@ export class ParagraphGroup extends LitElement {
   ]
 
   render() {
-    return html`<slot></slot>`
+    return html`
+      <slot></slot>
+    `
   }
 }
 

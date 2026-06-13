@@ -9,7 +9,11 @@ import '../../text/text'
 @customElement('mm-textfield-helper')
 export class TextfieldHelper extends LitElement {
   render() {
-    return html`<mm-text as="p" size="12" weight="medium" color="var(--color-foreground-light)"><slot></slot></mm-text>`
+    return html`
+      <mm-text as="p" size="12" weight="medium" color="var(--color-foreground-light)">
+        <slot></slot>
+      </mm-text>
+    `
   }
 }
 
