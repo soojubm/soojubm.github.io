@@ -112,7 +112,7 @@ module.exports = (env, argv) => {
         {
           test: /\.css$/,
           resourceQuery: { not: [/raw/] },
-          use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
+          use: [MiniCssExtractPlugin.loader, 'css-loader'],
         },
         {
           test: /\.html$/i,
