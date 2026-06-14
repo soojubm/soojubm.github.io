@@ -3,7 +3,6 @@ require('ts-node').register({ transpileOnly: true })
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 
 const { SITEMAP } = require('./src/sitemap.ts')
 
@@ -62,11 +61,10 @@ const getHtmlPlugins = isProd => {
 
 module.exports = (env, argv) => {
   const isProd = argv.mode === 'production'
-  const shouldAnalyze = process.env.ANALYZE === 'true'
 
   return {
     mode: isProd ? 'production' : 'development',
-    target: ['web', 'es5'],
+    target: 'web',
     devtool: isProd ? 'source-map' : 'inline-source-map',
 
     entry: getEntries(),
@@ -79,10 +77,7 @@ module.exports = (env, argv) => {
     },
 
     resolve: {
-      extensions: ['.ts', '.tsx', '.js', '.jsx'],
-      alias: {
-        '@': path.resolve(__dirname, 'src'),
-      },
+      extensions: ['.ts', '.js'],
     },
 
     module: {
@@ -168,9 +163,6 @@ module.exports = (env, argv) => {
         ignoreOrder: true,
       }),
 
-      ...(isProd
-        ? [...(shouldAnalyze ? [new BundleAnalyzerPlugin({ openAnalyzer: false })] : [])]
-        : []),
     ],
 
     devServer: {
