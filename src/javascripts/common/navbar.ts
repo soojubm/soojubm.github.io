@@ -17,11 +17,12 @@ export function hideNavbar() {
   document.body.classList.remove('is-menu-opened')
 }
 
+export function showNavbar() {
+  document.body.classList.add(OPENED_MENU_CLASSNAME)
+}
+
 export function initializeNavbar() {
   const navigationTrigger = document.querySelector<HTMLElement>('.js-navbar-toggle')
-  if (!document.body.classList.contains(OPENED_MENU_CLASSNAME)) return
-
-  // todo aria
   navigationTrigger?.classList.remove('is-active')
   document.body.classList.remove(OPENED_MENU_CLASSNAME)
 }
