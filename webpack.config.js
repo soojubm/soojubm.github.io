@@ -100,11 +100,6 @@ module.exports = (env, argv) => {
           ],
         },
         {
-          test: /\.m?js$/,
-          exclude: /node_modules/,
-          use: ['babel-loader'],
-        },
-        {
           test: /\.css$/,
           resourceQuery: /raw/,
           type: 'asset/source',
