@@ -1,6 +1,6 @@
 import './src/javascripts/components'
 
-import { initializeNavbar, showNavbar } from './src/javascripts/common/navbar'
+import { initializeNavbar } from './src/javascripts/common/navbar'
 import scrollAnimation from './src/javascripts/event/scrollAnimation'
 import scrollspy from './src/javascripts/event/scrollspy'
 import { stopAnimation } from './src/javascripts/utils/optimizationUtils'
@@ -33,7 +33,6 @@ function initializeResponsiveNavbar() {
   const mediaQuery = window.matchMedia(MOBILE_NAVBAR_QUERY)
   const handleChange = (event: MediaQueryListEvent | MediaQueryList) => {
     if (event.matches) initializeNavbar()
-    else showNavbar()
   }
 
   handleChange(mediaQuery)

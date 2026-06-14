@@ -17,10 +17,6 @@ export function hideNavbar() {
   document.body.classList.remove('is-menu-opened')
 }
 
-export function showNavbar() {
-  document.body.classList.add(OPENED_MENU_CLASSNAME)
-}
-
 export function initializeNavbar() {
   const navigationTrigger = document.querySelector<HTMLElement>('.js-navbar-toggle')
   navigationTrigger?.classList.remove('is-active')
