@@ -10,7 +10,8 @@
     "build": "webpack --mode=production && node scripts/build-search-index.mjs",
     "remove": "rm -r node_modules",
     "stat": "npx webpack --mode production --json artifacts/webpack-stats.json",
-    "analyze": "cem analyze --globs 'src/components/**/*.ts'"
+    "analyze": "cem analyze --globs 'src/components/**/*.ts'",
+    "lint:css": "stylelint \"src/**/*.css\" \"src/**/*.ts\""
   },
   "repository": {
     "type": "git",
@@ -32,8 +33,11 @@
     "html-webpack-plugin": "^5.6.7",
     "mini-css-extract-plugin": "^2.10.2",
     "pagefind": "^1.5.2",
+    "postcss": "^8.5.15",
+    "postcss-lit": "^1.4.1",
     "prettier": "^2.7.1",
-    "stylelint": "^14.15.0",
+    "stylelint": "^16.26.1",
+    "stylelint-config-standard": "^36.0.1",
     "ts-loader": "^9.6.0",
     "ts-node": "^10.9.2",
     "typescript": "^4.9.5",

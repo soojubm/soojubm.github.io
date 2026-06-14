@@ -23,7 +23,7 @@
   box-shadow: 0 0 var(--space-1) var(--yellow800);
   background: url('/src/images/soojubm.png') no-repeat 64% 60%;
   background-size: 80%;
-  background-color: var(--color-background-strong) !important;
+  background-color: var(--color-background-strong);
   border-radius: var(--radius-round);
 }
 
@@ -44,13 +44,13 @@
 /* ReactNative safeAreaView, scrollView */
 
 .page {
-  /* width: calc(var(--layout-width-wide) - var(--width-sidemenu) - var(--grid-margin)); */
+  /* width: calc(var(--layout-width-wide) - var(--layout-width-sidebar) - var(--grid-margin)); */
   /* margin: 0 auto; */
 
   min-height: calc(100vh - var(--navbar-height) - var(--width-small));
   padding: var(--space-4) var(--grid-margin) calc(var(--space-4) * 6);
   /* padding: var(--space-4) 0 calc(var(--space-4) * 6); */
-  /* padding-left: calc(var(--width-sidemenu) + var(--grid-margin)); */
+  /* padding-left: calc(var(--layout-width-sidebar) + var(--grid-margin)); */
   position: relative;
 }
 
@@ -78,11 +78,9 @@
   flex-direction: column;
   width: 100%;
   height: calc(100vh - var(--navbar-height) - var(--space-4) - var(--space-4));
-  max-width: var(--width-sidemenu);
+  max-width: var(--layout-width-sidebar);
   gap: var(--space-2);
   padding: var(--space-4) var(--space-3) var(--space-4) calc(var(--grid-margin));
-  background: var(--color-background);
-
   /* 스크롤 ㄷ할 때 navbar와 충돌 */
   background: var(--color-background);
   scrollbar-gutter: stable;
@@ -90,7 +88,7 @@
   transform: translateX(-120%);
   position: fixed;
   /* left: 50%;
-  width: var(--width-sidemenu);
+  width: var(--layout-width-sidebar);
   height: 100%; */
 
   overflow-y: auto;
@@ -196,9 +194,9 @@
 .is-menu-opened .page,
 .is-menu-opened .footer {
   padding-left: calc(
-    var(--width-sidemenu) + var(--grid-margin) + var(--grid-margin) + var(--space-4)
+    var(--layout-width-sidebar) + var(--grid-margin) + var(--grid-margin) + var(--space-4)
   );
-  /* transform: translateX(calc(var(--grid-margin) + var(--width-sidemenu))); */
+  /* transform: translateX(calc(var(--grid-margin) + var(--layout-width-sidebar))); */
 }
 
 /* --small */

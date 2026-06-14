@@ -30,7 +30,7 @@ export default class Tab extends LitElement {
       height: var(--size-medium);
       padding: 0 var(--space-3);
       font-size: 14px;
-      color: #8e8e93;
+      color: var(--color-foreground-light);
       cursor: pointer;
       user-select: none;
       transition: color 0.25s ease, font-weight 0.25s ease;

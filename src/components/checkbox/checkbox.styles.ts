@@ -25,7 +25,6 @@ export const checkboxStyles = css`
   }
 
   input {
-    margin: 0;
     cursor: pointer;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -83,7 +82,7 @@ export const checkboxStyles = css`
   }
 
   input:focus + label::before {
-    outline: 2px solid #007bff;
+    outline: 2px solid var(--color-interaction-focus);
     outline-offset: 2px;
   }
 

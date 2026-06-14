@@ -7,20 +7,20 @@ export const iconStyles = css`
 
   .icon {
     --button-text-color: inherit;
-    display: flex !important;
+    display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1rem !important;
+    font-size: 1rem;
     color: var(--button-text-color);
 
     &[data-size='tiny'] {
-      font-size: 0.75rem !important;
+      font-size: 0.75rem;
     }
     &[data-size='small'] {
-      font-size: 0.875rem !important;
+      font-size: 0.875rem;
     }
     &[data-size='large'] {
-      font-size: 1.5rem !important;
+      font-size: 1.5rem;
     }
   }
 `

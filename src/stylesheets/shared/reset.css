@@ -1,3 +1,4 @@
+/* stylelint-disable color-no-hex -- 브라우저 리셋 파일이므로 hex 값 허용 */
 body,
 dl,
 dd,
@@ -177,7 +178,6 @@ table {
   --table-cell-background: var(--color-background);
   --table-cell-background-hover: var(--color-background-subtle);
 
-  width: 100%;
   border-collapse: collapse;
   border-spacing: 0;
   border-left-style: hidden;
@@ -187,7 +187,6 @@ table {
   /* 스크롤 */
   width: max-content;
   min-width: 100%;
-  border-collapse: collapse;
   table-layout: fixed;
 
   background: var(--table-cell-background);
@@ -702,10 +701,9 @@ menu-item:focus-visible {
   justify-content: center;
   width: 2rem;
   height: 2rem;
-  font-size: var(--font-size-14);
   margin: auto auto 1rem;
   border-radius: 50%;
-  font-size: 12px;
+  font-size: var(--font-size-12);
   background: #000;
   color: #fff;
 }

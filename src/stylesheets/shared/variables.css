@@ -1,3 +1,4 @@
+/* stylelint-disable color-no-hex -- 토큰 정의 파일이므로 hex 값 허용 */
 @custom-media --large (max-width: 1560px);
 @custom-media --small (max-width: 1100px);
 @custom-media --tiny (max-width: 880px);
@@ -28,11 +29,9 @@
   --layout-width-small: 640px;
   --layout-width-tiny: 480px;
 
-  --width-sidemenu: 16rem;
+  --layout-width-sidebar: 16rem;
   --width-medium: 25rem;
   --width-small: 200px;
-
-  --popover-width-dialog: var(--layout-width-tiny);
 
   --grid-margin: 5vw;
 
@@ -104,6 +103,7 @@
   --space-2: 0.5rem;
   --space-3: 0.75rem;
   --space-4: 1rem;
+  --space-8: 2rem;
   --space-16: 64px;
   --space-section: var(--space-16);
   --space-1-minus: calc(var(--space-1) * -1);

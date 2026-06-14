@@ -1,18 +1,21 @@
+// stylelint-config-standard를 extends하지 않고 필요한 rule만 명시적으로 사용.
+// config-standard는 Prettier와 겹치는 포매팅 rule을 다수 포함해 노이즈가 많음.
 module.exports = {
-  // extends: ['stylelint-config-prettier'],
   rules: {
-    'at-rule-blacklist': [],
-    // "at-rule-empty-line-before": "never", // @media
-    'at-rule-name-case': 'lower',
-    // "at-rule-name-newline-after": "always-multi-line",
-    'at-rule-name-space-after': 'always-single-line',
-    // "at-rule-no-unknown": true, // @define-mixin
-    'at-rule-no-vendor-prefix': true,
-    'at-rule-property-requirelist': {},
-    // "at-rule-semicolon-newline-after": "always",
-    'at-rule-semicolon-space-before': 'never',
-
-    'media-feature-colon-space-after': 'never',
-    'selector-attribute-quotes': 'never',
+    'declaration-block-no-duplicate-properties': true,
+    'property-no-unknown': true,
+    'declaration-no-important': true,
+    'color-no-hex': true,
+    'selector-class-pattern': null,
+    'selector-max-specificity': null,
+    'max-nesting-depth': null,
+    'at-rule-no-unknown': [true, { ignoreAtRules: ['custom-media'] }],
   },
+  ignoreFiles: ['src/stylesheets/vendors/**', 'src/webfonts/**', 'build/**', 'node_modules/**'],
+  overrides: [
+    {
+      files: ['**/*.ts'],
+      customSyntax: 'postcss-lit',
+    },
+  ],
 }

@@ -31,8 +31,8 @@
   user-select: none;
 }
 .resize-animation-stopper * {
-  animation: none !important;
-  transition: none !important;
+  animation: none;
+  transition: none;
 }
 /* // accessibility-text(visually-hidden) */
 /* // if(true) 리더기가 무시. // speak: never; */

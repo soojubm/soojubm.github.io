@@ -23,7 +23,7 @@ export class ListMarker extends LitElement {
         width: var(--size-tiny);
         height: var(--size-tiny);
         margin-top: var(--space-1);
-        font-size: var(--font-size-12);
+        font-size: 10px;
         font-weight: var(--font-weight-bold);
       }
 
@@ -34,7 +34,7 @@ export class ListMarker extends LitElement {
       svg {
         width: 0.5rem;
         height: 0.5rem;
-        color: #fff;
+        color: var(--color-foreground-on-solid);
       }
     `,
   ]

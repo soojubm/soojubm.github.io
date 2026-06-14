@@ -5,7 +5,7 @@ export const menuItemStyles = css`
     --menuitem-size: var(--size-medium);
     --menuitem-radius: var(--radius);
     --menuitem-color-hover: var(--color-background-subtle);
-    --menuitem-color-danger: #d93025;
+    --menuitem-color-danger: var(--color-danger);
   }
 
   .item {

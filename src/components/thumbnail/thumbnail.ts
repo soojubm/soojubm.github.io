@@ -42,7 +42,7 @@ export class Thumbnail extends LitElement {
       transform: scale(1.03);
     }
     .thumbnail-media:focus-visible {
-      outline: 3px solid var(--color-focus, #2563eb);
+      outline: 3px solid var(--color-focus, var(--color-primary));
       outline-offset: 2px;
     }
 
