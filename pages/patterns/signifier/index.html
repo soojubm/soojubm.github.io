@@ -105,7 +105,7 @@ Availability state: enabled / disabled / loading -->
     </mm-paragraph-group>
 
     <mm-paragraph-group>
-      <mm-text size="18">Page Context Contrast</ㅡ>
+      <mm-text size="18">Page Context Contrast</mm-text>
       <mm-text>
         페이지의 맥락을 구분하기 위해 컨테이너 너비, 레이아웃 모듈, 배경색의 대비를 사용할 수
         있습니다. 이러한 대비는 사용자가 현재 화면의 성격을 빠르게 이해하도록 돕는 페이지 레벨의
@@ -126,7 +126,7 @@ Availability state: enabled / disabled / loading -->
       </mm-text>
 
       <dl>
-        <mm-text>Narrow container</ㅡ>
+        <dt>Narrow container</dt>
         <dd>비밀번호 찾기처럼 사용자의 집중이 필요한 단일 작업 흐름에 사용합니다.</dd>
 
         <dt>Medium container</dt>
@@ -179,8 +179,7 @@ Availability state: enabled / disabled / loading -->
     <mm-flex direction="column" gap="3">
       <mm-text size="24" weight="bold" as="h3">Interaction States</mm-text>
       <mm-paragraph>
-        작업이 수행된 후 신뢰도를 확립하며, 해당 요소와 상호 작용할 수 있는지
-        여부를 나타냅니다.
+        입력에 대한 반응과 사용 가능 여부.
       </mm-paragraph>
 
       <style>
@@ -233,6 +232,12 @@ Availability state: enabled / disabled / loading -->
           cursor: not-allowed;
         }
 
+        .demo-btn.is-dragged {
+          opacity: 0.6;
+          box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+          cursor: grabbing;
+        }
+
         .demo-link {
           font-family: var(--font-family);
           font-size: inherit;
@@ -260,6 +265,15 @@ Availability state: enabled / disabled / loading -->
           pointer-events: none;
         }
 
+        .state-name {
+          min-width: 80px;
+          font-family: var(--font-family);
+          font-size: 13px;
+          font-weight: var(--font-weight-bold);
+          color: var(--color-foreground-subtle);
+        }
+
+
         .selection-indicator-demo {
           min-width: var(--width-small);
         }
@@ -276,32 +290,50 @@ Availability state: enabled / disabled / loading -->
         }
       </style>
 
-      <mm-flex direction="column" gap="3">
-        <mm-filter-button-group id="interaction-state-picker" mode="single">
-          <mm-filter-button value="hover" selected>Hover</mm-filter-button>
-          <mm-filter-button value="focus">Focus</mm-filter-button>
-          <mm-filter-button value="active">Active</mm-filter-button>
-          <mm-filter-button value="disabled">Disabled</mm-filter-button>
-          <mm-filter-button value="loading">Loading</mm-filter-button>
-        </mm-filter-button-group>
-        <div class="interaction-demo-stage">
-          <button class="demo-btn" id="demo-button">Button</button>
-          <a class="demo-link" id="demo-link">Text Link</a>
-          <mm-typing-indicator
-            id="demo-loader"
-            color="var(--color-background-strong)"
-            style="display: none"
-          ></mm-typing-indicator>
-        </div>
-      </mm-flex>
+      <mm-grid columns="2" gap="4">
+        <mm-flex direction="column"  gap="3">
+          <mm-text>Hover</mm-text>
+          <mm-surface class="interaction-demo-stage" variant="tinted">
+            <button class="demo-btn is-hover">Button</button>
+          </mm-surface>
+        </mm-flex>
+        <mm-flex direction="column"  gap="3">
+          <mm-text>Focus</mm-text>
+          <mm-surface class="interaction-demo-stage" variant="tinted">
+            <button class="demo-btn is-focus">Button</button>
+          </mm-surface>
+        </mm-flex>
+        <mm-flex direction="column"  gap="3">
+          <mm-text>Active</mm-text>
+          <mm-surface class="interaction-demo-stage" variant="tinted">
+            <button class="demo-btn is-active">Button</button>
+          </mm-surface>
+        </mm-flex>
+        <mm-flex direction="column"  gap="3">
+          <mm-text>Disabled</mm-text>
+          <mm-surface class="interaction-demo-stage" variant="tinted">
+            <button class="demo-btn is-disabled">Button</button>
+          </mm-surface>
+        </mm-flex>
+        <mm-flex direction="column"  gap="3">
+          <mm-text>Loading</mm-text>
+          <mm-surface class="interaction-demo-stage" variant="tinted">
+            <mm-typing-indicator color="var(--color-background-strong)"></mm-typing-indicator>
+          </mm-surface>
+        </mm-flex>
+        <mm-flex direction="column"  gap="3">
+          <mm-text>Dragging</mm-text>
+          <mm-surface class="interaction-demo-stage" variant="tinted">
+            <button class="demo-btn is-dragged">Button</button>
+          </mm-surface>
+        </mm-flex>
+      </mm-grid>
     </mm-flex>
 
     <mm-flex direction="column" gap="3">
       <mm-text size="24" weight="bold" as="h3">Selected Indicators</mm-text>
       <mm-paragraph>
-        Selected는 여러 선택지 중 사용자가 선택한 항목을 나타냅니다. 컴포넌트의 역할에 따라
-        selected, checked, pressed, current 같은 접근성/구현 상태는 달라질 수 있습니다. 하지만
-        사용자가 인지하는 선택 기표는 일관되게 유지합니다.
+        Selected는 여러 선택지 중 사용자가 선택한 항목을 나타냅니다. 사용자가 인지하는 선택 기표는 일관되게 유지합니다.
       </mm-paragraph>
 
       <mm-paragraph-group>
@@ -309,7 +341,7 @@ Availability state: enabled / disabled / loading -->
           variant="check"
           texts='[
           "상태 인지성(state perception) / affordance / 접근성 / 시스템 일관성",
-          "선택 상태는 색상만으로 전달하지 않습니다. 선택 상태는 최소 2개 이상의 signal로 표현하는 것이 좋다 (WCAG 색상만으로 상태를 전달하지 말 것)"]'
+          "선택 상태는 색상만으로 표현하지 않고, 최소 2개 이상의 signal로 표현하는 것이 좋다 (WCAG 색상만으로 상태를 전달하지 말 것)"]'
         ></mm-text-list>
 
       <mm-grid columns="2">
@@ -346,42 +378,11 @@ Availability state: enabled / disabled / loading -->
         ></mm-list-row>
       </mm-grid>
 
-        <mm-keyword-tag-group
-          title="Visual cues"
-          keywords='["background color", "border", "check icon - confirmed selection, chosen item, applied state", "stronger label weight", "indicator line"]'
-        ></mm-keyword-tag-group>
+      <!-- <mm-keyword-tag-group
+        title="Visual cues"
+        keywords='["background color", "border", "check icon - confirmed selection, chosen item, applied state", "stronger label weight", "indicator line"]'
+      ></mm-keyword-tag-group> -->
       </mm-paragraph-group>
-
-      <mm-token-stage>
-        <mm-flex class="selection-indicator-demo" direction="column" gap="1">
-          <mm-flex
-            class="selection-indicator-option"
-            align="center"
-            gap="var(--selection-indicator-gap)"
-          >
-            <span class="selection-indicator-space" aria-hidden="true"></span>
-            <mm-text>Unselected item</mm-text>
-          </mm-flex>
-          <mm-flex
-            class="selection-indicator-option"
-            align="center"
-            gap="var(--selection-indicator-gap)"
-          >
-            <mm-selection-indicator aria-hidden="true"></mm-selection-indicator>
-            <mm-text weight="bold">Selected item</mm-text>
-          </mm-flex>
-          <mm-flex
-            class="selection-indicator-option"
-            align="center"
-            gap="var(--selection-indicator-gap)"
-          >
-            <span class="selection-indicator-space" aria-hidden="true"></span>
-            <mm-text>Unselected item</mm-text>
-          </mm-flex>
-        </mm-flex>
-      </mm-token-stage>
-
-
     </mm-flex>
 
     <mm-flex direction="column" gap="3">
@@ -710,6 +711,12 @@ Availability state: enabled / disabled / loading -->
             description="댓글이나 메모를 작성합니다."
           ></mm-list-row>
           <mm-list-row
+            icon="thumbs-up"
+            avatar-size="large"
+            label="Like"
+            description="긍정적인 반응을 나타냅니다."
+          ></mm-list-row>
+          <mm-list-row
             icon="thumbs-down"
             avatar-size="large"
             label="Dislike"
@@ -738,12 +745,6 @@ Availability state: enabled / disabled / loading -->
             avatar-size="large"
             label="Reply"
             description="메시지에 답장합니다."
-          ></mm-list-row>
-          <mm-list-row
-            icon="thumbs-up"
-            avatar-size="large"
-            label="Thumbs Up"
-            description="긍정적인 반응을 나타냅니다."
           ></mm-list-row>
         </mm-grid>
       </div>
