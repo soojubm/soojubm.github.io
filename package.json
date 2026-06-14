@@ -10,7 +10,6 @@
     "build": "webpack --mode=production && node scripts/build-search-index.mjs",
     "remove": "rm -r node_modules",
     "stat": "npx webpack --mode production --json artifacts/webpack-stats.json",
-    "analyze": "cem analyze --globs 'src/components/**/*.ts'",
     "lint:css": "stylelint \"src/**/*.css\" \"src/**/*.ts\""
   },
   "repository": {
@@ -27,7 +26,6 @@
   },
   "homepage": "https://github.com/soojubm/soojubm.github.io#readme",
   "devDependencies": {
-    "@custom-elements-manifest/analyzer": "^0.11.0",
     "css-loader": "^6.7.2",
     "html-loader": "^4.2.0",
     "html-webpack-plugin": "^5.6.7",
@@ -54,5 +52,4 @@
       "uuid": "^11.1.1"
     }
   },
-  "customElements": "custom-elements.json"
 }
