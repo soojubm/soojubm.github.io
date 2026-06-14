@@ -1,9 +1,9 @@
-import './src/javascripts/components'
+import './src/components'
 
-import { initializeNavbar } from './src/javascripts/common/navbar'
-import scrollAnimation from './src/javascripts/event/scrollAnimation'
-import scrollspy from './src/javascripts/event/scrollspy'
-import { stopAnimation } from './src/javascripts/utils/optimizationUtils'
+import { initializeNavbar } from './src/utils/navbar'
+import scrollAnimation from './src/utils/scroll-animation'
+import scrollspy from './src/utils/scrollspy'
+import { stopAnimation } from './src/utils/optimization-utils'
 
 const MOBILE_NAVBAR_QUERY = '(max-width: 1080px)'
 const WINDOWS_FONT_FAMILY = "'Alan Sans', 'Pretendard', sans-serif"

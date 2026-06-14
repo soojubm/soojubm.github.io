@@ -87,6 +87,7 @@ export const SITEMAP = [
       { id: 'dialog', name: 'dialog' },
       { id: 'notice', name: 'notice' },
       { id: 'loading', name: 'loading' },
+      { id: 'result', name: 'result' },
     ],
   },
   {
@@ -95,19 +96,19 @@ export const SITEMAP = [
     title: 'Patterns',
     icon: ICON_NAMES.PLACE,
     items: [
+      { id: 'profile', name: 'user profile', badge: '🔥' },
+      { id: 'setting', name: 'setting' },
+      { id: 'class', name: 'Product 3 - class' },
+      { id: 'chat', name: 'chat' },
+
       // { id: 'layout', name: 'layout' },
-      { id: 'result', name: 'result' },
       { id: 'table', name: 'table', badge: '🚧' },
       { id: 'accordion', name: 'accordion' },
       { id: 'sheet', name: 'sheet' },
-      { id: 'auth', name: 'auth' },
-      { id: 'profile', name: 'user profile', badge: '🔥' },
-      { id: 'chat', name: 'chat' },
-      { id: 'setting', name: 'setting' },
+      // { id: 'auth', name: 'auth' },
       { id: 'post', name: 'post' },
       { id: 'product', name: 'Product' },
       { id: 'checkout', name: 'Checkout' },
-      { id: 'class', name: 'Product 3 - class' },
     ],
   },
 ]

@@ -23,7 +23,7 @@ const defineToneMap = <Map extends Record<string, TagTone>>(map: Map) => map
 
 export const tagToneStyles = {
   default: {
-    background: 'transparent',
+    background: 'var(--color-background)',
     color: 'var(--color-foreground)',
     borderColor: 'var(--color-border)',
   },

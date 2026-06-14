@@ -59,7 +59,12 @@ export class Footer extends LitElement {
         <aside class="footer-scroll" style="margin: 1.5rem 0 0 0">
           <mm-to-top-button></mm-to-top-button>
         </aside>
+      </footer>
+    `
+  }
+}
 
+/*
         <nav>
           <mm-flex gap="4rem">
             <mm-text hidden aria-hidden="true" size="14">사이트맵</mm-text>
@@ -80,10 +85,7 @@ export class Footer extends LitElement {
             </mm-flex>
           </mm-flex>
         </nav>
-      </footer>
-    `
-  }
-}
+*/
 
 declare global {
   interface HTMLElementTagNameMap {

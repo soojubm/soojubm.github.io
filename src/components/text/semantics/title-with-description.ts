@@ -23,7 +23,7 @@ class TitleWithDescription extends LitElement {
     '2': {
       titleSize: '24',
       descriptionSize: '14',
-      gap: 'var(--space-1)',
+      gap: 'var(--space-2)',
     },
     '3': {
       titleSize: '18',

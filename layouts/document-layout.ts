@@ -18,7 +18,7 @@ const layoutStyles = `
     }
     @media (min-width: 1280px) {
       mm-toc {
-        display: block;
+        display: none;
       }
     }
   </style>

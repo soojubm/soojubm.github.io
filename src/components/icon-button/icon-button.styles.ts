@@ -5,7 +5,7 @@ export const iconButtonStyles = css`
     --icon-button-size: var(--size-medium);
     --icon-button-color: var(--color-background-subtle);
     --icon-button-radius: var(--radius);
-    --icon-button-border: 1px solid var(--color-border);
+    --icon-button-border: var(--border-transparent);
     --icon-button-text-color: var(--color-foreground);
     --icon-button-color-focus: var(--color-interaction-focus);
     --icon-button-color-active-bg: var(--color-interaction-active-background);

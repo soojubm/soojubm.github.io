@@ -1,5 +1,23 @@
 [
   {
+    "id": 202606,
+    "releasedate": 1962,
+    "titlekorean": "아노라",
+    "titleenglish": "The Outcast",
+    "director": "이치가와 곤",
+    "country": "미국",
+    "etc": ""
+  },
+  {
+    "id": 202606,
+    "releasedate": 1962,
+    "titlekorean": "뷰티 인사이드",
+    "titleenglish": "The Outcast",
+    "director": "이치가와 곤",
+    "country": "한국",
+    "etc": ""
+  },
+  {
     "id": 202605,
     "releasedate": 1962,
     "titlekorean": "더스퀘어누락",

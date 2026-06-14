@@ -5,7 +5,7 @@ export const buttonStyles = css`
     --button-size: var(--size-medium);
     --button-min-width: 5rem;
     --button-padding-inline: var(--space-3);
-    --button-border: var(--border);
+    --button-border: var(--border-transparent);
     --button-color: var(--color-background-subtle);
     --button-radius: var(--radius);
     --button-text-color: var(--color-foreground);

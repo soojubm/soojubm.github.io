@@ -12,6 +12,9 @@ export class Grid extends LitElement {
   /** 칼럼 최대 너비. e.g. '200px', '20rem' */
   @property({ attribute: 'column-max-width' }) columnMaxWidth?: string
 
+  /** 간격. 숫자면 --space-{n}, 그 외엔 그대로. e.g. '4', '1rem' */
+  @property({ type: String }) gap = '4'
+
   static styles = [
     resetStyles,
     css`
@@ -22,7 +25,6 @@ export class Grid extends LitElement {
       .grid {
         display: grid;
         width: 100%;
-        gap: var(--space-4);
       }
 
       .grid > ::slotted(*) {
@@ -64,12 +66,13 @@ export class Grid extends LitElement {
 
   render() {
     const columns = [1, 2, 3, 4].includes(this.columns) ? this.columns : 2
-    const style = this.columnMaxWidth
-      ? `--_col-max: ${this.columnMaxWidth}; justify-content: space-between`
-      : ''
+    const gap = /^\d+$/.test(this.gap) ? `var(--space-${this.gap})` : this.gap
+    const styles = [`gap: ${gap}`]
+    if (this.columnMaxWidth)
+      styles.push(`--_col-max: ${this.columnMaxWidth}; justify-content: space-between`)
 
     return html`
-      <div class="grid" data-columns=${columns} style=${style}>
+      <div class="grid" data-columns=${columns} style=${styles.join('; ')}>
         <slot></slot>
       </div>
     `

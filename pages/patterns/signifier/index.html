@@ -1,401 +1,54 @@
 <main class="page">
   <mm-flex direction="column" gap="4rem">
-            <!-- "TODO 더보기 패턴. 아이템이 3개 이하일 때 제목 우측에 모두보기 버튼을 위치할 수 있지만, 아이템이 4개 이상이라면 아이템의 아래에 모두보기 버튼을 배치. 가로 스크롤인 경우 스크롤의 가장 우측에 배치할 수도. " -->
-
-    <!-- <div style="width: 20px">
-    <svg viewBox="0 0 10 10">
-      <rect height="7" width="1" y="1" x="4" />
-      <rect height="1" width="7" y="4" x="1" />
-    </svg>
-  </div> -->
-
-    <!-- 
-  Component States
-- Interaction States
-  - Default
-  - Hover
-  - Focus
-  - Active
-
-- Availability States
-  - Disabled
-  - Loading
-
-- Selection States
-  - Unselected
-  - Selected
-  - Indeterminate
-   -->
-
-    <!-- Component States
-- Interaction States
-- Selection States
-- Validation States
-- Disclosure States
-- Availability States
- -->
-
-    <!-- Interaction States
-- Default
-- Hover
-- Focus
-- Active
-- Disabled
-- Loading
-
-Selected Indicator
-- Selected
-- Unselected
-- Indeterminate -->
-
-    <!-- Selected + Hover
-Selected + Focus
-Selected + Disabled
-Selected + Loading -->
-    <!-- Base state: selected / unselected
-Interaction state: hover / focus / active
-Availability state: enabled / disabled / loading -->
-
-    <header>
-      <mm-paragraph-group>
-        <mm-title-with-description
-          level="1"
-          title="Signifier"
-          description="기표는 사용자가 UI를 보고 해당 요소의 역할, 상태, 가능한 행동을 이해할 수 있도록 하는 시각적단서입니다. 이 페이지는 디자인 시스템 안에서 특정 시각 표현이 특정 의미에만 사용되도록제한하는 공통 계약을 정의합니다. ///// 예측 가능한 사용자 인터렉션으로 서비스와 사용자 사이의 신뢰 구축."
-        >
-        </mm-title-with-description>
-        <mm-caption>
-          Signifier 페이지의 목적은 UI의 시각 표현이 어떤 의미, 상태, 행동 가능성을 나타내는지
-          일관되게 정의하는 것입니다. 기표는 장식이 아니라 사용자가 인터페이스를 해석하는 방식에
-          직접 관여하는 규칙입니다.
-        </mm-caption>
-        <mm-text-list
-          texts='[
-          "Do not over signify. 기표는 많을수록 좋은 게 아니라, 사용자의 판단을 도와야 할 때만 사용한다.",
-            "상태를 표현하는 시각 언어는 컴포넌트에 종속되지 않고 제품 전체에 일관합니다.",
-            "성공적인 상호작용 피드백은 장식적인 것이 아니라 정보를 제공하는 것입니다. 시각적 노이즈나 강렬한 색상 변화를 유발하는 정교한 전환을 피하세요. 주의를 산만하게 하는 애니메이션은 혼란을 야기하고 인터페이스를 사용하기 불편하게 만들 수 있습니다.",
-          ]'
-        ></mm-text-list>
-      </mm-paragraph-group>
-    </header>
+    <mm-page-header
+      title="Signifier"
+      description="기표는 사용자가 UI를 보고 해당 요소의 역할, 상태, 가능한 행동을 이해할 수 있도록 하는 시각적 단서입니다. 이 페이지는 디자인 시스템 안에서 특정 시각 표현이 특정 의미에만 사용되도록 제한하는 공통 계약을 정의합니다."
+    ></mm-page-header>
 
     <mm-paragraph-group>
-      <mm-grid columns="2" column-max-width="400px">
-        <mm-feature
-          icon="check"
-          titletext="One signifier, one primary meaning"
-          description="하나의 시각적 단서는 하나의 주요 의미를 갖습니다. 시스템이 명시적으로 허용하지 않는 한 같은 단서를 다른 의미로 재사용하지 않습니다."
-        ></mm-feature>
-        <mm-feature
-          icon="interactive"
-          titletext="Do not use interaction cues as decoration"
-          description="클릭 가능성을 암시하는 색상, 밑줄, 커서, 아이콘은 장식이나 일반 강조로 사용하지 않습니다. 사용자는 이러한 단서를 인터랙션 가능성으로 학습하기 때문입니다."
-        ></mm-feature>
-        <mm-feature
-          icon="easyScanning"
-          titletext="Do not rely on color alone"
-          description="상태나 피드백은 색상만으로 전달하지 않습니다. 중요한 상태는 아이콘, 텍스트, 형태, 위치, ARIA 속성 등과 함께 제공해야 합니다."
-        ></mm-feature>
-        <mm-feature
-          icon="groupable"
-          titletext="Keep signifiers consistent across components"
-          description="컴포넌트의 역할과 접근성 속성은 달라도, 사용자가 인지하는 같은 의미나 상태는 일관된 시각적 방식으로 표현합니다."
-        ></mm-feature>
-      </mm-grid>
+      <mm-caption>
+        Signifier 페이지의 목적은 UI의 시각 표현이 어떤 의미, 상태, 행동 가능성을 나타내는지
+        일관되게 정의하는 것입니다.
+      </mm-caption>
+      <mm-text-list
+        texts='[
+        "Do not over signify. 기표는 많을수록 좋은 게 아니라, 사용자의 판단을 도와야 할 때만 사용한다.",
+        "상태를 표현하는 시각 언어는 컴포넌트에 종속되지 않고 제품 전체에 일관합니다.",
+        "성공적인 상호작용 피드백은 장식적인 것이 아니라 정보를 제공하는 것입니다. 시각적 노이즈나 강렬한 색상 변화를 유발하는 정교한 전환을 피하세요. 주의를 산만하게 하는 애니메이션은 혼란을 야기하고 인터페이스를 사용하기 불편하게 만들 수 있습니다."
+        ]'
+      ></mm-text-list>
     </mm-paragraph-group>
 
-    <mm-paragraph-group>
-      <mm-text size="18">Page Context Contrast</mm-text>
-      <mm-text>
-        페이지의 맥락을 구분하기 위해 컨테이너 너비, 레이아웃 모듈, 배경색의 대비를 사용할 수
-        있습니다. 이러한 대비는 사용자가 현재 화면의 성격을 빠르게 이해하도록 돕는 페이지 레벨의
-        기표입니다.
-      </mm-text>
-
-      <mm-text>
-        예를 들어 비밀번호 찾기와 같은 집중형 작업은 좁은 컨테이너를 사용하고, 로그인/회원가입처럼
-        더 많은 입력과 선택이 필요한 화면은 상대적으로 넓은 컨테이너를 사용할 수 있습니다. 설정,
-        글쓰기, 소개 페이지처럼 서로 다른 정보 구조를 가진 화면은 배경색이나 표면 대비를 통해 맥락의
-        전환을 표현할 수 있습니다.
-      </mm-text>
-
-      <mm-text>
-        Use layout contrast to distinguish page contexts. Container width, surface treatment, and
-        background contrast can signal whether a page is focused, editorial, administrative, or
-        exploratory.
-      </mm-text>
-
-      <dl>
-        <dt>Narrow container</dt>
-        <dd>비밀번호 찾기처럼 사용자의 집중이 필요한 단일 작업 흐름에 사용합니다.</dd>
-
-        <dt>Medium container</dt>
-        <dd>로그인, 회원가입처럼 입력과 안내가 함께 필요한 인증 흐름에 사용합니다.</dd>
-
-        <dt>Background contrast</dt>
-        <dd>
-          설정, 글쓰기, 소개 페이지처럼 서로 다른 정보 구조나 작업 맥락을 구분할 때 사용합니다.
-        </dd>
-
-        <dt>Surface contrast</dt>
-        <dd>폼, 카드, 편집 영역처럼 독립된 작업 단위를 강조할 때 사용합니다.</dd>
-      </dl>
-    </mm-paragraph-group>
-
-    <mm-flex direction="column" gap="3">
-      <mm-avatar variant="tertiary" size="large" icon="mouse-button-left"> </mm-avatar>
-      <mm-text size="24" weight="bold" as="h3">Clickable signifiers</mm-text>
-      <mm-paragraph>
-        사용자가 특정 요소를 누르거나 이동할 수 있음을 학습하여 신뢰를 구축합니다.
-      </mm-paragraph>
-      <mm-keyword-tag-group
-        keywords='[
-        "pointer cursor",
-        "primary color text",
-        "underline text",
-        "button-like surface"
-      ]'
-      ></mm-keyword-tag-group>
-
-      <mm-grid columns="3">
-        <mm-surface variant="elevated">
-          <mm-paragraph>
-            <b>elevated 오브젝트</b>는 클릭할 수 있다. 또는 오브젝트 내부에 클릭할 수 있는 요소가
-            존재한다.
-          </mm-paragraph>
-        </mm-surface>
-        <mm-surface variant="tinted">
-          <mm-paragraph><b>연한 회색 배경의 오브젝트</b>는 클릭할 수 있다.</mm-paragraph>
-        </mm-surface>
-        <mm-surface variant="transparent">
-          <mm-paragraph>
-            <mm-link href="#">브랜드 컬러 텍스트</mm-link>는 클릭할 수 있다. 이미지는 클릭할 수
-            있다?
-          </mm-paragraph>
-        </mm-surface>
-      </mm-grid>
-    </mm-flex>
-
-    <mm-flex direction="column" gap="3">
-      <mm-text size="24" weight="bold" as="h3">Interaction States</mm-text>
-      <mm-paragraph>
-        입력에 대한 반응과 사용 가능 여부.
-      </mm-paragraph>
-
-      <style>
-        .interaction-demo-stage {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: var(--space-3);
-          padding: var(--space-4) var(--space-4) var(--space-4);
-          background: var(--color-background-subtle);
-          border-radius: var(--radius);
-          min-height: 80px;
-        }
-
-        .demo-btn {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          height: var(--size-medium);
-          padding: 0 var(--space-3);
-          border: var(--border);
-          border-radius: var(--radius);
-          background: var(--color-background-subtle);
-          font-family: var(--font-family);
-          font-size: inherit;
-          font-weight: var(--font-weight-bold);
-          color: var(--color-foreground);
-          cursor: pointer;
-          outline: none;
-        }
-
-        .demo-btn.is-hover {
-          border-color: var(--color-background-strong);
-        }
-
-        .demo-btn.is-focus {
-          outline: 3px solid var(--color-interaction-focus);
-          outline-offset: 2px;
-        }
-
-        .demo-btn.is-active {
-          background: var(--color-interaction-active-background);
-          border-color: var(--color-interaction-active-border);
-          box-shadow: 0 0 0 3px var(--color-interaction-active-ring),
-            inset 0 0 0 2px var(--color-foreground-on-solid);
-        }
-
-        .demo-btn.is-disabled {
-          opacity: 0.5;
-          cursor: not-allowed;
-        }
-
-        .demo-btn.is-dragged {
-          opacity: 0.6;
-          box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
-          cursor: grabbing;
-        }
-
-        .demo-link {
-          font-family: var(--font-family);
-          font-size: inherit;
-          color: var(--color-foreground);
-          text-decoration: none;
-          border-bottom: var(--border-transparent);
-          padding-bottom: 1px;
-        }
-
-        .demo-link.is-hover {
-          color: var(--color-primary);
-          text-decoration: underline;
-          cursor: pointer;
-        }
-
-        .demo-link.is-focus {
-          outline: 3px solid var(--color-interaction-focus);
-          outline-offset: 2px;
-          border-radius: 2px;
-        }
-
-        .demo-link.is-disabled {
-          opacity: 0.5;
-          cursor: not-allowed;
-          pointer-events: none;
-        }
-
-        .state-name {
-          min-width: 80px;
-          font-family: var(--font-family);
-          font-size: 13px;
-          font-weight: var(--font-weight-bold);
-          color: var(--color-foreground-subtle);
-        }
-
-
-        .selection-indicator-demo {
-          min-width: var(--width-small);
-        }
-
-        .selection-indicator-option {
-          padding: var(--space-1) var(--space-2);
-          border-radius: var(--radius);
-        }
-
-        .selection-indicator-space {
-          flex-shrink: 0;
-          width: var(--selection-indicator-width, var(--space-05));
-          height: var(--selection-indicator-size);
-        }
-      </style>
-
-      <mm-grid columns="2" gap="4">
-        <mm-flex direction="column"  gap="3">
-          <mm-text>Hover</mm-text>
-          <mm-surface class="interaction-demo-stage" variant="tinted">
-            <button class="demo-btn is-hover">Button</button>
-          </mm-surface>
-        </mm-flex>
-        <mm-flex direction="column"  gap="3">
-          <mm-text>Focus</mm-text>
-          <mm-surface class="interaction-demo-stage" variant="tinted">
-            <button class="demo-btn is-focus">Button</button>
-          </mm-surface>
-        </mm-flex>
-        <mm-flex direction="column"  gap="3">
-          <mm-text>Active</mm-text>
-          <mm-surface class="interaction-demo-stage" variant="tinted">
-            <button class="demo-btn is-active">Button</button>
-          </mm-surface>
-        </mm-flex>
-        <mm-flex direction="column"  gap="3">
-          <mm-text>Disabled</mm-text>
-          <mm-surface class="interaction-demo-stage" variant="tinted">
-            <button class="demo-btn is-disabled">Button</button>
-          </mm-surface>
-        </mm-flex>
-        <mm-flex direction="column"  gap="3">
-          <mm-text>Loading</mm-text>
-          <mm-surface class="interaction-demo-stage" variant="tinted">
-            <mm-typing-indicator color="var(--color-background-strong)"></mm-typing-indicator>
-          </mm-surface>
-        </mm-flex>
-        <mm-flex direction="column"  gap="3">
-          <mm-text>Dragging</mm-text>
-          <mm-surface class="interaction-demo-stage" variant="tinted">
-            <button class="demo-btn is-dragged">Button</button>
-          </mm-surface>
-        </mm-flex>
-      </mm-grid>
-    </mm-flex>
-
-    <mm-flex direction="column" gap="3">
-      <mm-text size="24" weight="bold" as="h3">Selected Indicators</mm-text>
-      <mm-paragraph>
-        Selected는 여러 선택지 중 사용자가 선택한 항목을 나타냅니다. 사용자가 인지하는 선택 기표는 일관되게 유지합니다.
-      </mm-paragraph>
-
-      <mm-paragraph-group>
-        <mm-text-list
-          variant="check"
-          texts='[
-          "상태 인지성(state perception) / affordance / 접근성 / 시스템 일관성",
-          "선택 상태는 색상만으로 표현하지 않고, 최소 2개 이상의 signal로 표현하는 것이 좋다 (WCAG 색상만으로 상태를 전달하지 말 것)"]'
-        ></mm-text-list>
-
-      <mm-grid columns="2">
-        <mm-list-row
-          icon="group"
-          avatar-size="large"
-          label="Selected"
-          description="여러 선택지 중 선택된 항목입니다. Tabs :: aria-selected"
-        ></mm-list-row>
-        <mm-list-row
-          icon="group"
-          avatar-size="large"
-          label="Current"
-          description="현재 위치나 현재 보고 있는 항목입니다."
-        ></mm-list-row>
-        <mm-list-row
-          icon="group"
-          avatar-size="large"
-          label="Active"
-          description="현재 활성화되어 있는 항목입니다."
-        ></mm-list-row>
-        
-        <mm-list-row
-          icon="group"
-          avatar-size="large"
-          label="Checked"
-          description="체크박스, 라디오, 메뉴 옵션의 체크 상태입니다."
-        ></mm-list-row>
-        <mm-list-row
-          icon="group"
-          avatar-size="large"
-          label="Pressed"
-          description="토글 버튼이 눌린 상태입니다. Toggle Button? selected?"
-        ></mm-list-row>
-      </mm-grid>
-
-      <!-- <mm-keyword-tag-group
-        title="Visual cues"
-        keywords='["background color", "border", "check icon - confirmed selection, chosen item, applied state", "stronger label weight", "indicator line"]'
-      ></mm-keyword-tag-group> -->
-      </mm-paragraph-group>
-    </mm-flex>
+    <mm-grid columns="4" column-max-width="400px">
+      <mm-feature
+        icon="check"
+        titletext="One signifier, one primary meaning"
+        description="하나의 시각적 단서는 하나의 주요 의미를 갖습니다. 시스템이 명시적으로 허용하지 않는 한 같은 단서를 다른 의미로 재사용하지 않습니다."
+      ></mm-feature>
+      <mm-feature
+        icon="interactive"
+        titletext="Do not use interaction cues as decoration"
+        description="클릭 가능성을 암시하는 색상, 밑줄, 커서, 아이콘은 장식이나 일반 강조로 사용하지 않습니다. 사용자는 이러한 단서를 인터랙션 가능성으로 학습하기 때문입니다."
+      ></mm-feature>
+      <mm-feature
+        icon="easyScanning"
+        titletext="Do not rely on color alone"
+        description="상태나 피드백은 색상만으로 전달하지 않습니다. 중요한 상태는 아이콘, 텍스트, 형태, 위치, ARIA 속성 등과 함께 제공해야 합니다."
+      ></mm-feature>
+    </mm-grid>
 
     <mm-flex direction="column" gap="3">
       <mm-text size="24" weight="bold" as="h3">Icon Signifiers</mm-text>
-      <mm-paragraph
-        >아이콘은 기표로 정의한 의미를 전달하는 기호입니다. 단순히 장식적인 용도로 사용하지 마세요.
-        ///// 아이콘은 레이블을 보완하거나, 제한된 공간에서 레이블을 대체하거나, 상태와 행동
-        가능성을 명확히 하기 위해 사용합니다.
+      <mm-paragraph>
+        아이콘은 기표로 정의한 의미를 전달하는 기호입니다. 단순히 장식적인 용도로 사용하지 마세요.
+        아이콘은 레이블을 보완하거나, 제한된 공간에서 레이블을 대체하거나, 상태와 행동 가능성을
+        명확히 하기 위해 사용합니다.
       </mm-paragraph>
-      <!-- 외부 링크 아이콘은 현재 제품 또는 서비스 맥락을 벗어나는 목적지를 나타냅니다. 일반적인 내부 이동, 패널 확장, 상세 보기에는 사용하지 않습니다. -->
       <mm-text-list
         texts='[
-        "Indicator Icons (Label) - Decorative Icon"
+        "Indicator Icons (Label) - Decorative Icon",
+          "Use only universally recognized icons to represent actions or options."
+
       ]'
       ></mm-text-list>
       <mm-filter-button-group id="icon-category-picker" mode="single">
@@ -682,12 +335,6 @@ Availability state: enabled / disabled / loading -->
             description="숨겨진 내용(예: 비밀번호)을 표시합니다."
           ></mm-list-row>
           <mm-list-row
-            icon="eye-circle"
-            avatar-size="large"
-            label="View"
-            description="상세 보기 또는 미리보기를 나타냅니다."
-          ></mm-list-row>
-          <mm-list-row
             icon="xray-view"
             avatar-size="large"
             label="Xray"
@@ -751,168 +398,6 @@ Availability state: enabled / disabled / loading -->
     </mm-flex>
 
     <mm-flex direction="column" gap="3">
-      <mm-text size="24" weight="bold" as="h3">Feedback Signifiers</mm-text>
-      <mm-paragraph>
-        Feedback signifier는 사용자의 행동이나 시스템 상태에 대한 결과를 전달합니다. success, info,
-        warning, error는 색상뿐 아니라 명시적 메시지와 접근성 관계를 함께 제공해야 합니다.
-        Interaction states communicate the status of an element in the interface, establish
-        confidence once an action is taken, and suggest the ability (or inability) to interact with
-        the element.
-      </mm-paragraph>
-
-      <mm-paragraph>
-        에러 피드백은 사용자가 문제의 원인과 영향을 받는 대상을 명확히 이해할 수 있도록 제공해야
-        합니다. 색상만으로 에러 상태를 전달하지 말고, 에러 톤, 명시적인 메시지, 영향을 받는 필드
-        또는 영역, 그리고 접근 가능한 관계를 함께 제공해야 합니다. 폼 컨트롤의 경우
-        aria-invalid="true"로 유효하지 않은 상태를 표시하고, aria-describedby를 사용해 에러 메시지와
-        컨트롤을 연결합니다.
-      </mm-paragraph>
-
-      <mm-flex direction="column" gap="3">
-        <mm-list-row
-          icon="check-circle"
-          avatar-size="large"
-          label="Success"
-          description="작업이 성공적으로 완료되었음을 나타냅니다."
-        >
-        </mm-list-row>
-        <mm-token-group>
-          <mm-token-item color="var(--color-success)" key="color-success"></mm-token-item>
-          <mm-token-item
-            color="var(--color-success-subtle)"
-            key="color-success-subtle"
-          ></mm-token-item>
-          <mm-token-item
-            color="var(--color-success-border)"
-            key="color-success-border"
-          ></mm-token-item>
-        </mm-token-group>
-
-        <mm-list-row
-          icon="info-circle"
-          avatar-size="large"
-          label="Info"
-          description="사용자에게 참고 가능한 보조 정보를 제공합니다."
-        ></mm-list-row>
-        <mm-list-row
-          icon="warning-triangle"
-          avatar-size="large"
-          label="Warning"
-          description="진행 전에 사용자의 주의가 필요한 상태입니다."
-        ></mm-list-row>
-        <mm-token-group>
-          <mm-token-item color="var(--color-warning)" key="color-warning"></mm-token-item>
-          <mm-token-item
-            color="var(--color-warning-subtle)"
-            key="color-warning-subtle"
-          ></mm-token-item>
-          <mm-token-item key="color-warning-border"></mm-token-item>
-        </mm-token-group>
-
-        <mm-list-row
-          icon="xmark-circle"
-          avatar-size="large"
-          label="Error"
-          description="오류, 실패, 수정이 필요한 상태를 나타냅니다."
-        ></mm-list-row>
-        <mm-token-group>
-          <mm-token-item color="var(--color-danger)" key="color-danger"></mm-token-item>
-          <mm-token-item
-            color="var(--color-danger-subtle)"
-            key="color-danger-subtle"
-          ></mm-token-item>
-          <mm-token-item key="color-danger-border"></mm-token-item>
-        </mm-token-group>
-        <mm-meta-item
-          layout="inline"
-          label="Global Error"
-          value="인터넷연결오류: toast + callout (blocking / detour)"
-        ></mm-meta-item>
-        <mm-meta-item
-          layout="inline"
-          label="Local Error"
-          value="reload - refresh - redirect / result 컴포넌트 / inline error, callout error"
-        ></mm-meta-item>
-        <mm-list-row
-          icon="glass-empty"
-          avatar-size="large"
-          label="Empty"
-          description="데이터나 결과가 없는 상태를 설명합니다."
-        ></mm-list-row>
-        <mm-list-row
-          icon="refresh"
-          avatar-size="large"
-          label="Progress"
-          description="작업이 진행 중이며 결과를 기다리는 상태입니다."
-        ></mm-list-row>
-      </mm-flex>
-
-      <div>
-        <mm-text size="14">
-          Keep things consistent. Consistent treatments for interaction feedback create recognizable
-          patterns. If an interaction produces different feedback across the Shopify admin, it
-          deteriorates the integrity of the pattern and risks confusing merchants.
-        </mm-text>
-      </div>
-    </mm-flex>
-
-    <mm-flex direction="column" gap="3">
-      <mm-text size="24" weight="bold" as="h3">Structure &amp; Grouping</mm-text>
-      <mm-paragraph>
-        Layout 자체를 정의하기보다, 공간과 구조가 의미를 전달하는 경우를 다룹니다. 같은 영역에
-        배치된 요소는 같은 개체나 맥락에 속한다는 신호가 될 수 있고, 구분선은 서로 다른 항목의
-        경계를 나타낼 수 있습니다. ///// 레이아웃과 구조는 콘텐츠의 우선순위를 정하고, 사용자가
-        콘텐츠를 인지하고 이해하는 데 도움을 줍니다.
-      </mm-paragraph>
-
-      <mm-grid columns="3">
-        <mm-list-row
-          icon="group"
-          avatar-size="large"
-          label="Grouping"
-          description="같은 컨테이너 안의 요소는 같은 맥락 또는 개체에 속함을 나타냅니다. TODO sets와 구분"
-        ></mm-list-row>
-        <mm-list-row
-          icon="group"
-          avatar-size="large"
-          label="Separation"
-          description="구분선, 간격, 배경 차이는 항목이나 섹션의 경계를 나타냅니다."
-        ></mm-list-row>
-        <!-- <mm-list-row
-          icon="group"
-          avatar-size="large"
-          label="Hierarchy"
-          description="크기, 위치, 간격, 밀도는 정보의 우선순위를 전달합니다."
-        ></mm-list-row> -->
-        <mm-list-row
-          icon="group"
-          avatar-size="large"
-          label="Relationship"
-          description="인접성, 정렬, 포함 관계는 요소 간 관계를 나타냅니다."
-        ></mm-list-row>
-        <mm-list-row
-          icon="group"
-          avatar-size="large"
-          label="Density as meaning"
-          description="높은 밀도는 관리형/목록형 인터페이스를, 낮은 밀도는 탐색형/강조형 인터페이스를 암시할 수 있습니다."
-        ></mm-list-row>
-      </mm-grid>
-
-      <div>
-        <mm-text-list
-          texts='[
-          "사용자의 화면 크기를 한정하지 마세요. 새로운 플랫폼이나 새로운 디바이스가 출시되더라도 빠르게 대응할 수 있어야 합니다. 특정 디바이스에 최적화하거나 종속되지 않고 환경에 구애받지 않는 일관된 경험과 인터페이스를 설계한다는 태도.",
-          "디자인 이론에 근거한 그리드 시스템은 디자이너에게만 유효하게 동작한다. 12칼럼 그리드는 사용자의 다양한 화면 크기에 대응하기 어렵다? 2~4개의 칼럼을 갖는 레이아웃 시스템이 필요할 수는 있으나, 엄격한 그리드 시스템은.",
-          "왜 디자이너들은 작업판의 크기 정의를 어려워 하는가? 375px 등의 고정된 가로 크기는 의미가 없다. 마찬가지로 디자인 툴에서 자동으로 말줄임표를 만든다는 식의 솔루션은 아무 문제도 해결할 수 없다. 말줄임표가 발생하면 레이블의 의미를 전달하지 못 하기 때문이다. 엄격한 writing 가이드가 유아이 툴의 자동화보다 중요하다.",
-          "MD3의 Responsive layout. TODO : 반응하는 레이어를 위한 규칙을 어떻게 정의하면 좋을까? 프레젠테이션 패턴. 섹션, 아티클 그리고 모달, 드롭다운 등의 컴포넌트도 작은 화면에서는 페이지 맥락이 될 수 있음을 고려합니다. 결국 모바일 퍼스트 foundation.",
-          "Use only universally recognized icons to represent actions or options.",
-          "addable / expandable, done / check / positive" "bold text를 clickable로 사용? (단락 더보기 등에서 사용되는 패턴)" "iOS에서 뒤로가기(이전 페이지)는 chevron."
-        ]'
-        ></mm-text-list>
-      </div>
-    </mm-flex>
-
-    <mm-flex direction="column" gap="3">
       <style>
         :root {
           --layout-max-width: 1200px;
@@ -923,14 +408,14 @@ Availability state: enabled / disabled / loading -->
 
         .scroll-outer {
           overflow-x: auto;
-          scroll-snap-type: x mandatory; /* 🧲 scroll snap 적용 */
-          -webkit-overflow-scrolling: touch; /* iOS 부드러운 스크롤 */
+          scroll-snap-type: x mandatory;
+          -webkit-overflow-scrolling: touch;
         }
 
         .scroll-inner {
           display: flex;
           gap: var(--item-gap);
-          padding: 20px 0;
+          padding: var(--space-4) 0;
           padding-left: var(--layout-side-padding);
           padding-right: var(--layout-side-padding);
           min-width: 100vw;
@@ -939,20 +424,19 @@ Availability state: enabled / disabled / loading -->
         .item {
           min-width: var(--item-min-width);
           height: 150px;
-          background: #eee;
+          background: var(--color-background-strong);
           flex-shrink: 0;
-          scroll-snap-align: start; /* 🧲 아이템이 스냅에 맞춰짐 */
+          scroll-snap-align: start;
           display: flex;
           align-items: center;
           justify-content: center;
           font-weight: bold;
-          border-radius: 8px;
+          border-radius: var(--radius);
         }
 
-        /* 반응형 대응 */
         @media (max-width: 1200px) {
           :root {
-            --layout-side-padding: 16px;
+            --layout-side-padding: var(--space-4);
             --item-min-width: 200px;
             --item-gap: var(--space-4);
           }
@@ -960,14 +444,13 @@ Availability state: enabled / disabled / loading -->
 
         @media (max-width: 768px) {
           :root {
-            --layout-side-padding: 12px;
+            --layout-side-padding: var(--space-3);
             --item-min-width: 180px;
             --item-gap: var(--space-3);
           }
 
           .item {
             height: 120px;
-            font-size: 14px;
           }
         }
       </style>
@@ -979,75 +462,13 @@ Availability state: enabled / disabled / loading -->
           <div class="item">Item 4</div>
           <div class="item">Item 5</div>
           <div class="item">Item 6</div>
-          <div class="item">Item 6</div>
-          <div class="item">Item 6</div>
-          <div class="item">Item 6</div>
-          <div class="item">Item 6</div>
-          <div class="item">Item 6</div>
-          <!-- 계속 추가 가능 -->
+          <div class="item">Item 7</div>
+          <div class="item">Item 8</div>
+          <div class="item">Item 9</div>
+          <div class="item">Item 10</div>
+          <div class="item">Item 11</div>
         </div>
       </div>
-
-      https://m3.material.io/blog/building-with-m3-expressive
     </mm-flex>
-
-    <mm-component-references>
-      <mm-link
-        external
-        href="https://developer.apple.com/design/human-interface-guidelines/components/layout-and-organization/disclosure-controls"
-        >disclosure-controls</mm-link
-      >
-      <mm-link external href="https://developer.apple.com/kr/design/tips/"
-        >UI 디자인 기본 원칙</mm-link
-      >
-      <mm-link external href="https://m3.material.io/foundations/interaction-states"
-        >MD interaction-states</mm-link
-      >
-      <mm-link external href="https://simplicable.com/new/visual-information"
-        >Visual Information</mm-link
-      >
-    </mm-component-references>
   </mm-flex>
 </main>
-
-<!-- <aside class="loader">
-      <div class="spinner">
-        <div class="double-bounce1"></div>
-        <div class="double-bounce2"></div>
-      </div>
-    </aside>
-    <style>
-      .loader {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: fixed;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        background: var(--color-background-subtle);
-        z-index: var(--zindex-loader);
-      }
-      .spinner {
-        width: var(--size-large);
-        height: var(--size-large);
-        position: relative;
-      }
-      .double-bounce1,
-      .double-bounce2 {
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        background-color: var(--color-primary);
-        opacity: 0.6;
-        position: absolute;
-        top: 0;
-        left: 0;
-        animation: scaleout2 2s infinite ease-in-out;
-      }
-      .double-bounce2 {
-        -webkit-animation-delay: -1s;
-        animation-delay: -1s;
-      }
-    </style> -->

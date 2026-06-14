@@ -31,7 +31,7 @@ export class Feature extends LitElement {
     if (this.emoji) {
       return html`
         <mm-avatar variant="secondary" size="large">
-          <span aria-hidden="true">${this.emoji}</span>
+          <span aria-hidden="true" style="font-size: var(--font-size-24)">${this.emoji}</span>
         </mm-avatar>
       `
     }

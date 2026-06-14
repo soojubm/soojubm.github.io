@@ -5,7 +5,7 @@ export type TextWeight = 'medium' | 'bold'
 
 export const textStyles = css`
   :host {
-    display: inline-block;
+    display: block;
     color: inherit;
   }
 

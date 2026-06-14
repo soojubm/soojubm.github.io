@@ -1,5 +1,5 @@
 import { renderLayout } from '../../../layouts/base-layouts'
-import { hideNavbar } from '../../../src/javascripts/common/navbar'
+import { hideNavbar } from '../../../src/utils/navbar'
 import main from './index.html'
 import type Sheet from '../../../src/components/sheet/sheet'
 

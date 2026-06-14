@@ -2,7 +2,7 @@ import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import '../dropdown/dropdown'
 import '../icon-button/icon-button'
-import { getPreferredTheme, saveTheme, THEMES, type Theme } from '../../javascripts/theme'
+import { getPreferredTheme, saveTheme, THEMES, type Theme } from '../../utils/theme'
 import { ICON_NAMES } from '../icon-button/semantics/icon-names'
 
 @customElement('mm-theme-switcher')

@@ -26,7 +26,6 @@ export class TokenItem extends LitElement {
       // }
 
       .key {
-        font-weight: var(--font-weight-bold);
       }
     `,
   ]

@@ -18,6 +18,7 @@
 
 ## 타이포그래피
 
+- 텍스트가 2개 이상일 떄는 mm-paragraph-group으로 감싼다.
 - 텍스트는 `mm-text`, 단락은 `mm-paragraph`, 목록은 `mm-text-list`를 사용한다.
 - `p`, `h1`–`h6` 등 raw 태그로 새 콘텐츠를 작성하지 않는다.
 - 텍스트 위계는 `size`만으로 표현한다. `color` prop은 거의 쓰지 않는다.

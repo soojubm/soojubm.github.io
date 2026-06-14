@@ -226,7 +226,7 @@
       <mm-title-with-description
         level="2"
         title="Color"
-        description="색상 토큰은 primitive palette와 의미 기반 semantic color로 나눕니다. 컴포넌트에서는 가능한 한 semantic color를 사용합니다."
+        description="용도와 의미에 따라 색상을 사용하도록..."
       ></mm-title-with-description>
       <mm-token-stage>
         <mm-flex direction="column" gap="4">
@@ -604,6 +604,30 @@
                 "
               ></div>
               <div
+                style="width: var(--space-8); height: 4px; background: var(--color-primary)"
+              ></div>
+              <div
+                style="
+                  width: 2px;
+                  height: var(--size-medium);
+                  background: var(--color-background-strong);
+                  border-radius: var(--radius);
+                "
+              ></div>
+            </mm-flex>
+          </mm-flex>
+          <mm-flex direction="column" align="center" gap="2">
+            <mm-list-marker variant="number" value="7"></mm-list-marker>
+            <mm-flex align="center" gap="0">
+              <div
+                style="
+                  width: 2px;
+                  height: var(--size-medium);
+                  background: var(--color-background-strong);
+                  border-radius: var(--radius);
+                "
+              ></div>
+              <div
                 style="width: var(--space-16); height: 4px; background: var(--color-primary)"
               ></div>
               <div
@@ -618,11 +642,14 @@
           </mm-flex>
         </mm-flex>
         <mm-token-group slot="tokens">
-          <mm-token-item key="space-05" value=".125rem"></mm-token-item>
+          <mm-token-item key="space-05" value=".125rem">
+            <mm-keyword-tag>to be deprecated</mm-keyword-tag>
+          </mm-token-item>
           <mm-token-item key="space-1" value=".25rem"></mm-token-item>
           <mm-token-item key="space-2" value=".5rem"></mm-token-item>
           <mm-token-item key="space-3" value=".75rem"></mm-token-item>
           <mm-token-item key="space-4" value="1rem"></mm-token-item>
+          <mm-token-item key="space-8" value="2rem"></mm-token-item>
           <mm-token-item key="space-16" value="64px"></mm-token-item>
         </mm-token-group>
       </mm-token-stage>
@@ -634,19 +661,15 @@
         title="Layout"
         description="레이아웃 토큰은 페이지, 팝오버, 폼 컨테이너처럼 반복되는 구조의 최대 너비와 여백을 정의합니다."
       ></mm-title-with-description>
-      <mm-token-stage>
-        <mm-token-group slot="tokens">
-          <mm-token-item key="layout-width-wide" value="1280px"></mm-token-item>
-          <mm-token-item key="layout-width-small" value="640px"></mm-token-item>
-          <mm-token-item key="layout-width-tiny" value="480px"></mm-token-item>
-          <mm-token-item key="layout-width-narrow" value="400px"></mm-token-item>
-          <mm-token-item key="width-sidemenu" value="16rem"></mm-token-item>
-          <mm-token-item key="width-small" value="200px"></mm-token-item>
-          <mm-token-item key="popover-width-dialog" value="var(--width-medium)"></mm-token-item>
-          <mm-token-item key="popover-width-dropdown" value="var(--width-small)"></mm-token-item>
-          <mm-token-item key="grid-margin" value="5vw"></mm-token-item>
-        </mm-token-group>
-      </mm-token-stage>
+      <mm-token-group>
+        <mm-token-item key="layout-width-wide" value="1280px"></mm-token-item>
+        <mm-token-item key="layout-width-small" value="640px"></mm-token-item>
+        <mm-token-item key="layout-width-tiny" value="480px"></mm-token-item>
+        <mm-token-item key="layout-width-narrow" value="400px"></mm-token-item>
+        <mm-token-item key="layout-width-sidebar" value="16rem"></mm-token-item>
+        <mm-token-item key="width-small" value="200px"></mm-token-item>
+        <mm-token-item key="grid-margin" value="5vw"></mm-token-item>
+      </mm-token-group>
     </mm-flex>
 
     <mm-flex direction="column" gap="3">
@@ -888,7 +911,7 @@
         title="Z-index"
         description="z-index는 레이어의 우선순위를 정의합니다. 같은 레이어군 안에서만 비교되도록 의미 이름을 사용합니다."
       ></mm-title-with-description>
-      <mm-token-stage>
+      <!-- <mm-token-stage>
         <style>
           .browserWindow_my1Q {
             border: 3px solid #ebedf0;
@@ -1013,15 +1036,16 @@
             </mm-link>
           </article>
         </section>
-        <mm-token-group slot="tokens">
-          <mm-token-item key="zindex-default" value="1"></mm-token-item>
-          <mm-token-item key="zindex-tooltip" value="2"></mm-token-item>
-          <mm-token-item key="zindex-popover" value="5"></mm-token-item>
-          <mm-token-item key="zindex-sheet" value="7"></mm-token-item>
-          <mm-token-item key="zindex-bottombar" value="8"></mm-token-item>
-          <mm-token-item key="zindex-loader" value="10"></mm-token-item>
-        </mm-token-group>
-      </mm-token-stage>
+      </mm-token-stage> -->
+
+      <mm-token-group>
+        <mm-token-item key="zindex-default" value="1"></mm-token-item>
+        <mm-token-item key="zindex-tooltip" value="2"></mm-token-item>
+        <mm-token-item key="zindex-popover" value="5"></mm-token-item>
+        <mm-token-item key="zindex-sheet" value="7"></mm-token-item>
+        <mm-token-item key="zindex-bottombar" value="8"></mm-token-item>
+        <mm-token-item key="zindex-loader" value="10"></mm-token-item>
+      </mm-token-group>
     </mm-flex>
 
     <mm-component-references>

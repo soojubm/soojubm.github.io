@@ -17,6 +17,8 @@ export class Paragraph extends LitElement {
     css`
       :host {
         display: block;
+        /* TODO */
+        max-width: 560px;
         font-size: var(--font-size-14);
         line-height: var(--font-line-height-24);
         font-weight: var(--font-weight-medium);
@@ -27,6 +29,7 @@ export class Paragraph extends LitElement {
         line-height: var(--font-line-height-16);
       }
       :host([size='large']) {
+        max-width: 800px;
         font-size: var(--font-size-18);
         line-height: var(--font-line-height-28);
       }
