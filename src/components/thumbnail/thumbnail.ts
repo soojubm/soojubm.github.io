@@ -23,7 +23,7 @@ export class Thumbnail extends LitElement {
     :host {
       display: block;
       width: 100%;
-      --thumbnail-radius: var(--radius-large);
+      --thumbnail-radius: var(--radius);
       --thumbnail-border: var(--border);
       --thumbnail-color-empty: var(--color-background-subtle);
     }

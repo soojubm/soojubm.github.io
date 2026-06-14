@@ -39,7 +39,6 @@
 
   <style>
     .hero {
-      /* padding:4rem var(--grid-margin) 6rem; */
       position: relative;
       z-index: var(--zindex-default);
     }
@@ -58,24 +57,6 @@
       margin: 1rem 0 0 0;
     }
 
-    .hero-object1 {
-      width: 160px;
-      height: 160px;
-      overflow: hidden;
-      background: url('/src/images/me-min_800x.png') center;
-      background-size: cover;
-      border-radius: var(--radius);
-      filter: grayscale(1);
-    }
-    .hero-object2 {
-      width: 100%;
-      max-width: 360px;
-      z-index: 1;
-      position: absolute;
-      right: calc(var(--grid-margin) + 5rem);
-      top: 3rem;
-      pointer-events: none;
-    }
     .is-observed .hero-eyebrow {
       animation: fadeup var(--animation-duration) 0.1s backwards;
     }
@@ -263,7 +244,7 @@
     </section>
   </mm-component-section>
 
-  <mm-component-section title="Text List" description="">
+  <mm-component-section title="Text List" description="TODO 느낌만">
     <div>
       <mm-text-list
         variant="number"

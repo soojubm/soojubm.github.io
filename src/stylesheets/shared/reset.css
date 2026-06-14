@@ -313,7 +313,7 @@ mark {color:inherit;} mark::before {content: " [강조 시작] ";opacity:0;posit
 .marquee p {
   /* // width: 50%; */
   /* gap or margin쓰면 안 됨. */
-  padding: 1rem;
+  padding: 1.25rem;
   white-space: nowrap;
   animation: marquee 4s linear infinite;
   animation-play-state: running;

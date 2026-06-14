@@ -131,13 +131,13 @@ export class Navbar extends LitElement {
         </mm-flex>
 
         <div class="navbar-user">
+          <mm-theme-switcher></mm-theme-switcher>
           <mm-icon-button
             icon=${ICON_NAMES.SEARCH}
             aria-label="검색"
             aria-expanded=${this._searchOpen ? 'true' : 'false'}
             @click=${this._toggleSearch}
           ></mm-icon-button>
-          <mm-theme-switcher></mm-theme-switcher>
           <div style="position: relative">
             <mm-icon-button
               icon=${ICON_NAMES.PROFILE}
