@@ -14,6 +14,7 @@ export class MenuItemAction extends LitElement {
   @property({ type: String, attribute: 'avatar-src' }) avatarSrc = ''
   @property({ type: String, attribute: 'avatar-size' }) avatarSize = 'medium'
   @property({ type: String, attribute: 'avatar-variant' }) avatarVariant = 'tertiary'
+  @property({ type: Boolean, attribute: 'has-trailing-arrow' }) hasTrailingArrow = false
   @property({ type: Boolean, reflect: true }) disabled = false
   @property({ type: String, attribute: 'role' }) override role = ''
 
@@ -21,6 +22,16 @@ export class MenuItemAction extends LitElement {
 
   override updated() {
     if (this.hasAttribute('role')) this.removeAttribute('role')
+  }
+
+  private renderAction() {
+    if (!this.hasTrailingArrow) return html``
+
+    return html`
+      <span slot="trailing">
+        <mm-icon name="arrow-right" size="small"></mm-icon>
+      </span>
+    `
   }
 
   render() {
@@ -33,7 +44,7 @@ export class MenuItemAction extends LitElement {
         data-interactive
         aria-disabled=${ifDefined(this.disabled ? 'true' : undefined)}
       >
-        ${renderMenuItemContent(this, html``)}
+        ${renderMenuItemContent(this, this.renderAction())}
       </button>
     `
   }

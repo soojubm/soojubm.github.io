@@ -74,7 +74,6 @@ export class RadiusPicker extends LitElement {
   render() {
     return html`
       <div class="bar">
-        <span class="label">Radius</span>
         <mm-toggle-button-group
           options=${SHAPE_OPTIONS}
           .selectedIndex=${this.shape === 'square' ? 1 : 0}
@@ -83,7 +82,6 @@ export class RadiusPicker extends LitElement {
 
         <div class="divider"></div>
 
-        <span class="label">Color</span>
         <mm-toggle-button-group
           options=${COLOR_OPTIONS}
           .selectedIndex=${this.color === 'black' ? 1 : 0}
