@@ -98,6 +98,7 @@
     <mm-prop name="size" type="'32' | '24' | '18' | '14' | '12' = '14'"></mm-prop>
     <mm-prop name="weight" type="'medium' | 'bold' = 'medium'"></mm-prop>
     <mm-prop name="color" type="string = 'inherit'"></mm-prop>
+    <mm-prop name="truncate" type="'1' | '2' | '3'" optional></mm-prop>
   </mm-component-props>
 
   <mm-component-tokens>
@@ -131,26 +132,17 @@
     <!-- 텍스트가 굵거나 진하여 낱자의 속 공간이 좁을수록, 더 넓은 줄 간격이 필요하다. -->
   </mm-component-guide>
 
-  <mm-component-section title="Headings" description="">
+  <mm-component-section
+    title="Headings"
+    description="level(1–4)로 의미 단계(h1–h4)와 크기를 함께 지정하며, 기본값은 2입니다."
+  >
     <mm-flex direction="column" gap="0">
       <mm-heading level="1">페이지 레벨의 타이틀</mm-heading>
       <div style="height: 1rem"></div>
       <mm-heading level="2">섹션 레벨의 타이틀</mm-heading>
       <div style="height: 0.75rem"></div>
       <mm-heading level="3">소제목</mm-heading>
-    </mm-flex>
-  </mm-component-section>
 
-  <mm-component-section
-    title="Heading"
-    description="콘텐츠 묶음의 제목. level(1–4)로 의미 단계(h1–h4)와 크기를 함께 지정하며, 기본값은 2입니다."
-  >
-    <mm-flex direction="column" gap="2">
-      <mm-heading level="2">계정 설정</mm-heading>
-      <mm-paragraph>로그인, 알림, 공개 범위처럼 계정에 연결된 옵션을 관리합니다.</mm-paragraph>
-    </mm-flex>
-    <div style="height: 1rem"></div>
-    <mm-flex direction="column" gap="2">
       <mm-heading level="1">Level 1</mm-heading>
       <mm-heading level="2">Level 2</mm-heading>
       <mm-heading level="3">Level 3</mm-heading>
@@ -175,7 +167,7 @@
     title="Paragraph"
     description="본문(Body). label, help text, caption / kicker/overline/eyebrow"
   >
-    <div>
+    <mm-paragraph-group>
       <mm-paragraph>
         Paragraph medium은 font-size-14입니다. 기본적인 유아이에 사용합니다.
       </mm-paragraph>
@@ -183,7 +175,25 @@
         Paragraph large는 font-size-32와 페어링합니다. 포스트나 게시판 등의 콘텐츠 뷰에서 본문용으로
         사용합니다.
       </mm-paragraph>
-    </div>
+      <mm-separator></mm-separator>
+      <mm-heading level="4">truncate=1 | 2 | 3</mm-heading>
+      <mm-paragraph truncate="1">
+        한 줄에서 말줄임되는 문단입니다. 카드나 리스트처럼 공간이 좁은 곳에서 긴 설명을 간결하게
+        보여줄 때 사용합니다.
+      </mm-paragraph>
+      <mm-paragraph truncate="2">
+        두 줄까지 노출되는 문단입니다. 사용자는 핵심 내용을 빠르게 훑을 수 있고, 세부 내용은 상세
+        화면에서 확인할 수 있습니다. 반복되는 목록 안에서 설명 길이가 제각각일 때 유용합니다.
+        사용자는 핵심 내용을 빠르게 훑을 수 있고, 세부 내용은 상세 화면에서 확인할 수 있습니다.
+        반복되는 목록 안에서 설명 길이가 제각각일 때 유용합니다.
+      </mm-paragraph>
+      <mm-paragraph truncate="3">
+        세 줄까지 노출되는 문단입니다. 너무 짧게 자르면 맥락이 사라지는 소개글이나 요약문에
+        적합합니다. 화면 안의 리듬은 유지하면서도 충분한 정보를 제공해야 할 때 사용합니다. 너무 짧게
+        자르면 맥락이 사라지는 소개글이나 요약문에 적합합니다. 화면 안의 리듬은 유지하면서도 충분한
+        정보를 제공해야 할 때 사용합니다.
+      </mm-paragraph>
+    </mm-paragraph-group>
   </mm-component-section>
 
   <mm-component-section

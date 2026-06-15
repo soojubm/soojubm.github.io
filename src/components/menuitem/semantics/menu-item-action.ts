@@ -4,6 +4,8 @@ import { ifDefined } from 'lit/directives/if-defined.js'
 import { menuItemStyles } from '../menuitem.styles'
 import { renderMenuItemContent } from '../menuitem.utils'
 
+// has-trailing-arrow vs link에서 external
+
 @customElement('mm-menu-item-action')
 export class MenuItemAction extends LitElement {
   @property({ type: String }) tone = ''

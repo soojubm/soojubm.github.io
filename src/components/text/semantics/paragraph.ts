@@ -4,12 +4,14 @@ import { resetStyles } from '../../../stylesheets/shared/reset.styles'
 import type { TextWeight } from '../text.styles'
 
 type ParagraphSize = 'small' | 'medium' | 'large'
+type ParagraphTruncate = '' | '1' | '2' | '3'
 
 @customElement('mm-paragraph')
 export class Paragraph extends LitElement {
   @property({ type: String, reflect: true }) size: ParagraphSize = 'medium'
   @property({ type: String, reflect: true }) weight: TextWeight = 'medium'
   @property({ type: String }) color = 'inherit'
+  @property({ type: String, reflect: true }) truncate: ParagraphTruncate = ''
   @property({ type: Boolean, reflect: true }) center = false
 
   static styles = [
@@ -40,6 +42,29 @@ export class Paragraph extends LitElement {
 
       :host([center]) {
         text-align: center;
+      }
+
+      :host([truncate]) p {
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      :host([truncate='1']) p {
+        white-space: nowrap;
+      }
+
+      :host([truncate='2']) p,
+      :host([truncate='3']) p {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+      }
+
+      :host([truncate='2']) p {
+        -webkit-line-clamp: 2;
+      }
+
+      :host([truncate='3']) p {
+        -webkit-line-clamp: 3;
       }
 
       p {
