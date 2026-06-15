@@ -10,30 +10,29 @@
     <div style="height: var(--space-8)"></div>
   </section> -->
 
-  <mm-text-list texts='["Web Component - Lit", "Github Actions"]'></mm-text-list>
+  <mm-text-list
+    texts='["Web Component - Lit", "Github Actions", "Constraint-driven design"]'
+  ></mm-text-list>
 
-  <mm-ltext-list></mm-ltext-list>
-
+  <!-- <mm-surface variant="plain">
+    <mm-flex direction="column" gap="2">
+      <mm-avatar variant="secondary" size="large" icon="constrained-surface"></mm-avatar>
+      <mm-heading level="2">Constraint-driven Design</mm-heading>
+      <mm-text>제약은 선택을 줄이고, 품질과 일관성을 강제하는 기준이다.</mm-text>
+    </mm-flex>
+    <br />
+    <mm-paragraph-group>
+      <mm-text-list
+        texts='["제한된 스케일과 규칙을 사용한다", "접근성(A11y)을 기본 제약으로 포함한다", "Mobile-first로 설계한다", "특정 환경에 최적화된 표현보다 모든 환경에서 일관된 구조를 우선한다."]'
+      ></mm-text-list>
+      <mm-text as="b" weight="bold">
+        👉 핵심: 좋은 디자인을 선택하는 것이 아니라, 잘못된 디자인을 불가능하게 만든다
+      </mm-text>
+    </mm-paragraph-group>
+  </mm-surface> -->
   <!-- <section>
     <mm-grid columns="2" gap="8">
-      <mm-surface variant="plain">
-        <mm-flex gap="3">
-          <mm-avatar variant="tertiary" size="huge" icon="constrained-surface"></mm-avatar>
-          <mm-flex direction="column" gap="1">
-            <mm-text size="18" weight="bold">Constraint-driven Design</mm-text>
-            <mm-text>제약은 선택을 줄이고, 품질과 일관성을 강제하는 기준이다.</mm-text>
-          </mm-flex>
-        </mm-flex>
-        <br />
-        <mm-paragraph-group>
-          <mm-text-list
-            texts='["제한된 스케일과 규칙을 사용한다", "접근성(A11y)을 기본 제약으로 포함한다", "Mobile-first로 설계한다", "특정 환경에 최적화된 표현보다 모든 환경에서 일관된 구조를 우선한다.", "불필요한 변형과 예외를 만들지 않는다"]'
-          ></mm-text-list>
-          <mm-text as="b" weight="bold">
-            👉 핵심: 좋은 디자인을 선택하는 것이 아니라, 잘못된 디자인을 불가능하게 만든다
-          </mm-text>
-        </mm-paragraph-group>
-      </mm-surface>
+    
       <mm-surface variant="plain">
         <mm-flex gap="3">
           <mm-avatar variant="secondary" size="huge"></mm-avatar>
@@ -51,34 +50,39 @@
   </section> -->
 
   <mm-flex direction="column" gap="4">
-    <mm-text size="24" weight="bold">페이지 맥락의 대비</mm-text>
+    <mm-text size="24" weight="bold">Layout Modules</mm-text>
     <!-- <mm-caption>Page Context Contrast</mm-caption> -->
     <mm-paragraph>
-      페이지 맥락을 구분하기 위해 레이아웃 대비를 사용하세요. 컨테이너 너비, 표면 처리, 배경 대비는
-      페이지가 집중형, 에디토리얼형, 관리형, 탐색형 중 어떤 성격을 갖는지 나타내는 단서가 될 수
-      있습니다.
+      레이아웃 모듈로 컨테이너 너비, 표면 처리, 배경 대비는 페이지가 집중형, 에디토리얼형, 관리형,
+      탐색형 등 성격을 나타내는 단서로 사용합니다.
     </mm-paragraph>
 
-    <mm-grid columns="2">
+    <!--  비밀번호 찾기처럼 사용자의 집중이 필요한 단일 작업 흐름에 사용합니다. -->
+    <mm-grid columns="3">
       <mm-title-with-description
         level="3"
         title="Narrow container"
-        description="비밀번호 찾기처럼 사용자의 집중이 필요한 단일 작업 흐름에 사용합니다."
+        description="로제한된 폭으로 콘텐츠를 배치해 사용자의 집중을 유도합니다."
       ></mm-title-with-description>
       <mm-title-with-description
         level="3"
         title="Medium container"
-        description="로그인, 회원가입처럼 입력과 안내가 함께 필요한 인증 흐름에 사용합니다."
+        description=""
       ></mm-title-with-description>
       <mm-title-with-description
         level="3"
         title="Background contrast"
-        description="설정, 글쓰기, 소개 페이지처럼 서로 다른 정보 구조나 작업 맥락을 구분할 때 사용합니다."
+        description="설정, 글쓰기, 소개 페이지처럼 서로 다른 정보 구조나 작업 맥락을 구분합니다."
       ></mm-title-with-description>
       <mm-title-with-description
         level="3"
         title="Surface contrast"
-        description="폼, 카드, 편집 영역처럼 독립된 작업 단위를 강조할 때 사용합니다."
+        description="폼, 카드, 편집 영역처럼 독립된 작업 단위를 강조합니다."
+      ></mm-title-with-description>
+      <mm-title-with-description
+        level="3"
+        title="Centered content"
+        description="가운데 정렬된 콘텐츠 모듈의 대비로 사용자의 주의를 환기합니다."
       ></mm-title-with-description>
     </mm-grid>
 
@@ -122,7 +126,7 @@
     <!-- <mm-avatar variant="tertiary" size="large" icon="mouse-button-left"></mm-avatar> -->
     <mm-text size="24" weight="bold" as="h3">Interactive signifiers</mm-text>
     <mm-paragraph>
-      사용자가 특정 요소를 누르거나 이동할 수 있음을 학습하여 신뢰를 구축합니다.
+      사용자가 특정 요소를 누르거나 이동할 수 있음 일관된 시각적 단서로 파악합니다.
     </mm-paragraph>
     <!-- "예외 케이스 :: bold text를 clickable로 사용? (단락 더보기 등에서 사용되는 패턴). blur
     background 관련" -->
@@ -262,12 +266,9 @@
 
   <mm-flex direction="column" gap="3">
     <mm-text size="18" weight="bold" as="h3">Selection States</mm-text>
-    <mm-paragraph>
-      여러 선택지 중 사용자가 선택한 항목을 나타냅니다. 선택 상태는 색상만으로 표현하지 않고, 최소
-      2개 이상의 signal로 표현하는 것이 좋다 (WCAG 색상만으로 상태를 전달하지 말 것)"
-    </mm-paragraph>
+    <mm-paragraph>WCAG - 색상만으로 상태를 전달하지 말 것</mm-paragraph>
 
-    <mm-list-row
+    <!-- <mm-list-row
       label="Selected"
       description="여러 선택지 중 선택된 항목입니다. Tabs :: aria-selected"
     ></mm-list-row>
@@ -277,12 +278,12 @@
       label="Checked"
       description="체크박스, 라디오, 메뉴 옵션의 체크 상태입니다."
     ></mm-list-row>
-    <mm-list-row label="Pressed" description="토글 버튼이 눌린 상태입니다."></mm-list-row>
+    <mm-list-row label="Pressed" description="토글 버튼이 눌린 상태입니다."></mm-list-row> -->
   </mm-flex>
 
   <mm-flex direction="column" gap="3">
     <mm-text size="18" weight="bold">Feedback States</mm-text>
-    <mm-paragraph>
+    <!-- <mm-paragraph>
       사용자의 행동이나 시스템 상태에 대한 결과를 전달합니다. 사용자가 문제의 원인과 영향을 받는
       대상을 명확히 이해할 수 있도록 제공해야 합니다. 색상만으로 에러 상태를 전달하지 말고, 에러 톤,
       명시적인 메시지, 영향을 받는 필드 또는 영역, 그리고 접근 가능한 관계를 함께 제공해야 합니다.
@@ -321,19 +322,23 @@
         label="Error"
         description="오류, 실패, 수정이 필요한 상태를 나타냅니다."
       ></mm-list-row>
-      <!-- <mm-list-row
+      <mm-list-row
         icon="glass-empty"
         avatar-size="large"
         label="Empty"
         description="데이터나 결과가 없는 상태를 설명합니다."
-      ></mm-list-row> -->
+      ></mm-list-row>
       <mm-list-row
         icon="refresh"
         avatar-size="large"
         label="Progress"
         description="작업이 진행 중이며 결과를 기다리는 상태입니다. Page loading / Form submitting / Data fetching"
       ></mm-list-row>
-    </mm-flex>
+    </mm-flex> -->
+  </mm-flex>
+
+  <mm-flex direction="column" gap="3">
+    <mm-text size="18" weight="bold">Icons</mm-text>
   </mm-flex>
 
   <mm-component-references>

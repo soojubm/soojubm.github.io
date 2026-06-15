@@ -37,7 +37,7 @@ export const SITEMAP = [
       { id: 'surface', name: 'surface' },
       { id: 'thumbnail', name: 'thumbnail' },
       { id: 'separator', name: 'separator' },
-      { id: 'table', name: 'table', badge: '🚧' },
+      { id: 'table', name: 'table' },
     ],
   },
   {
@@ -104,11 +104,11 @@ export const SITEMAP = [
 
       // { id: 'layout', name: 'layout' },
       { id: 'accordion', name: 'accordion' },
-      { id: 'sheet', name: 'sheet' },
+      // { id: 'sheet', name: 'sheet' },
       // { id: 'auth', name: 'auth' },
-      { id: 'post', name: 'post' },
-      { id: 'product', name: 'Product' },
-      { id: 'checkout', name: 'Checkout' },
+      // { id: 'post', name: 'post' },
+      // { id: 'product', name: 'Product' },
+      // { id: 'checkout', name: 'Checkout' },
     ],
   },
 ]
