@@ -209,7 +209,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
   border-top: var(--border);
+  &:hover {
+    background: #fff;
+  }
 }
 
 .class-refund {

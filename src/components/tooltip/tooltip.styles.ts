@@ -30,15 +30,15 @@ export const tooltipStyles = css`
       visibility: visible;
     }
 
-    &[data-align='center'] .tooltip-content {
+    &[data-placement='center'] .tooltip-content {
       white-space: pre;
       left: 50%;
       transform: translateX(-50%);
     }
-    &[data-align='left'] .tooltip-content {
+    &[data-placement='left'] .tooltip-content {
       white-space: pre;
     }
-    &[data-align='right'] .tooltip-content {
+    &[data-placement='right'] .tooltip-content {
       white-space: pre;
       left: auto;
       right: 0;

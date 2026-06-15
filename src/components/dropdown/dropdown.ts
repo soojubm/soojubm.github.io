@@ -18,7 +18,7 @@ export interface DropdownOption {
 @customElement('mm-dropdown')
 export class Dropdown extends LitElement {
   @property({ type: String }) value = ''
-  @property({ type: String }) align: 'left' | 'right' = 'left'
+  @property({ type: String }) placement: 'left' | 'right' = 'left'
   @state() protected isOpen = false
   @state() protected selectedLabel = 'Select an option'
   @state() protected options: DropdownOption[] = []
@@ -69,7 +69,7 @@ export class Dropdown extends LitElement {
         max-height: var(--dropdown-max-height);
         overflow-y: auto;
 
-        &.align-right {
+        &.placement-right {
           left: auto;
           right: 0;
         }
@@ -192,8 +192,8 @@ export class Dropdown extends LitElement {
     return html`
       <div
         part="list"
-        class="popover dropdown-list ${this.isOpen ? 'open' : ''} ${this.align === 'right'
-          ? 'align-right'
+        class="popover dropdown-list ${this.isOpen ? 'open' : ''} ${this.placement === 'right'
+          ? 'placement-right'
           : ''}"
         role="menu"
       >
@@ -244,6 +244,10 @@ export class Dropdown extends LitElement {
   protected updated(changed: PropertyValues) {
     if (changed.has('isOpen')) {
       this._updateTriggerAria()
+    }
+    // value가 외부에서 바뀌어도 트리거 라벨이 항상 따라오도록 동기화
+    if (changed.has('value')) {
+      this.selectedLabel = this.resolveSelectedLabel()
     }
   }
 

@@ -12,7 +12,7 @@ class IconButton extends LitElement {
   @property({ type: String, reflect: true }) size: IconButtonSize = 'medium'
   @property({ type: String, attribute: 'aria-label' }) override ariaLabel = ''
   @property({ type: String }) tooltip = ''
-  @property({ type: String, attribute: 'tooltip-align' }) tooltipAlign = ''
+  @property({ type: String, attribute: 'tooltip-placement' }) tooltipPlacement = ''
   @property({ type: Boolean, reflect: true }) disabled = false
   // 호스트에 설정된 aria 속성을 내부 <button>으로 포워딩 (mm-dropdown 등 외부 컨트롤러용)
   @property({ attribute: 'aria-haspopup' }) private _ariaHaspopup: string | null = null
@@ -45,7 +45,7 @@ class IconButton extends LitElement {
     if (!this.tooltip) return control
 
     return html`
-      <mm-tooltip content=${this.tooltip} align=${this.tooltipAlign}>${control}</mm-tooltip>
+      <mm-tooltip content=${this.tooltip} placement=${this.tooltipPlacement}>${control}</mm-tooltip>
     `
   }
 }

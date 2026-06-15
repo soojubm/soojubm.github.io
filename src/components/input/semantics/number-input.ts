@@ -50,7 +50,7 @@ export class NumberInput extends LitElement {
             icon=${ICON_NAMES.SUBTRACT}
             label="감소"
             tooltip="감소"
-            tooltip-align="center"
+            tooltip-placement="center"
             ?disabled=${this.disabled}
             @click=${this._decrement}
           ></mm-icon-button>
@@ -75,7 +75,7 @@ export class NumberInput extends LitElement {
             icon=${ICON_NAMES.ADD}
             label="증가"
             tooltip="증가"
-            tooltip-align="center"
+            tooltip-placement="center"
             ?disabled=${this.disabled}
             @click=${this._increment}
           ></mm-icon-button>

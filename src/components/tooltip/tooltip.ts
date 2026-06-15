@@ -5,7 +5,7 @@ import { tooltipStyles } from './tooltip.styles'
 @customElement('mm-tooltip')
 class Tooltip extends LitElement {
   @property({ type: String }) content = ''
-  @property({ type: String }) align = ''
+  @property({ type: String }) placement = ''
   @property({ type: Boolean, reflect: true }) open = false
 
   static styles = [tooltipStyles]
@@ -22,7 +22,7 @@ class Tooltip extends LitElement {
     return html`
       <div
         class="tooltip"
-        data-align="${this.align}"
+        data-placement="${this.placement}"
         data-open="${this.open ? 'true' : 'false'}"
         @mouseover="${this.show}"
         @mouseout="${this.hide}"

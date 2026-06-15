@@ -6,10 +6,10 @@
 
   <mm-component-example>
     <mm-flex gap="2">
-      <mm-tooltip content="로그인" align="center">
+      <mm-tooltip content="로그인" placement="center">
         <mm-icon-button slot="trigger" icon="user"></mm-icon-button>
       </mm-tooltip>
-      <mm-tooltip content="우측 정렬" align="right">
+      <mm-tooltip content="우측 정렬" placement="right">
         <mm-icon-button slot="trigger" icon="user"></mm-icon-button>
       </mm-tooltip>
       <mm-tooltip
@@ -65,7 +65,7 @@
 
   <mm-component-props>
     <mm-prop name="content" type="string"></mm-prop>
-    <mm-prop name="align" type="string" optional></mm-prop>
+    <mm-prop name="placement" type="string" optional></mm-prop>
     <mm-prop name="slot: trigger" type="HTMLElement"></mm-prop>
   </mm-component-props>
   <!-- type Side = 'top' | 'bottom' | 'left' | 'right';
