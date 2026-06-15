@@ -26,7 +26,7 @@ export function renderMenuItemContent(props: MenuItemProps, action: unknown) {
       ${props.label
         ? nothing
         : html`
-            <slot name="label"><slot></slot></slot>
+            <slot></slot>
           `}
       ${action}
     </mm-list-row>
