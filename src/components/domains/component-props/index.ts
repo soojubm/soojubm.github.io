@@ -76,7 +76,7 @@ export class ComponentProps extends LitElement {
         height: 12rem;
         overflow: hidden;
         margin: 0 0 0 calc(-5vw + 1rem);
-        padding: 1.5rem calc(var(--grid-margin) - 1rem);
+        padding: 1.5rem calc(var(--layout-padding-inline) - 1rem);
         background-color: var(--color-background-subtle);
         border: var(--component-props-border, none);
         /* border-radius: 0 0 var(--radius-large) var(--radius-large); */
@@ -86,7 +86,7 @@ export class ComponentProps extends LitElement {
       }
       .component-props-more {
         display: flex;
-        padding: 0.75rem 2rem 1rem calc(var(--grid-margin) - 1rem);
+        padding: 0.75rem 2rem 1rem calc(var(--layout-padding-inline) - 1rem);
         background-color: inherit;
         /* background: linear-gradient(to bottom, rgba(255,255,255,0), var(--color-background-subtle), var(--color-background-subtle)); */
         position: absolute;
@@ -107,13 +107,13 @@ export class ComponentProps extends LitElement {
 
       @media (max-width: 1100px) {
         .component-props {
-          margin-inline: calc(var(--grid-margin) * -1);
-          padding-inline: var(--grid-margin);
+          margin-inline: calc(var(--layout-padding-inline) * -1);
+          padding-inline: var(--layout-padding-inline);
           border-inline: 0;
           border-radius: 0;
         }
         .component-props-more {
-          padding-inline: var(--grid-margin);
+          padding-inline: var(--layout-padding-inline);
         }
       }
     `,

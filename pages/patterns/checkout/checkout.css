@@ -1,7 +1,7 @@
 .checkout {
   max-width: var(--width-medium);
   margin: 0 auto;
-  padding: 0 var(--grid-margin);
+  padding: 0 var(--layout-padding-inline);
 }
 .checkout-product {
 }

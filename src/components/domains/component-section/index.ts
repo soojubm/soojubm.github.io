@@ -26,7 +26,7 @@ class ComponentSection extends LitElement {
       border: var(--border-stronger);
       border-radius: var(--radius-large);
       margin: 0.5rem 0 0 calc(-5vw + 1rem);
-      padding: 2rem calc(var(--grid-margin) - 1rem);
+      padding: 2rem calc(var(--layout-padding-inline) - 1rem);
     }
   `
 

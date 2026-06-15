@@ -1,5 +1,5 @@
 .cake {
-  padding: 0 var(--grid-margin) 4rem;
+  padding: 0 var(--layout-padding-inline) 4rem;
 }
 
 .cake-head {

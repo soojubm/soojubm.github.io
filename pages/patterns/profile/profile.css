@@ -4,7 +4,7 @@
   max-width: 1480px;
   gap: var(--size-large);
   margin: 0 auto;
-  padding: 2rem var(--grid-margin) 8rem;
+  padding: 2rem var(--layout-padding-inline) 8rem;
   box-sizing: border-box;
 }
 

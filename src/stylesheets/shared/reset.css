@@ -658,7 +658,7 @@ menu-item:focus-visible {
 }
 .books .books-head > p {
   margin: 0 auto;
-  padding: 0 var(--grid-margin);
+  padding: 0 var(--layout-padding-inline);
   font-size: var(--font-size-18);
 }
 .books .books-head .book-head-how {
@@ -805,7 +805,7 @@ menu-item:focus-visible {
   right: 3rem;
   bottom: -2.75rem;
 }
-/* .books .books-head .books-head-logo{width:60%;max-width:220px}.books .books-head h1{padding:0 var(--grid-margin);font-size:var(--font-size-32)}.books .books-head h1>span{margin-top:-.5rem}.books .books-head .book-head-how ul{flex-wrap:wrap}.books .books-head .book-head-how ul li{width:100%;margin:1.5rem 0}.bookcard{max-width:100%}.bookcard-body{padding-left:1.5rem;padding-right:1.5rem}.bookcard-foot .bookcard-foot-apply{min-width:calc(100% - 3rem);left:1.5rem}}.books-form{padding:0 5%}.books-form dl{display:flex;margin:.5rem 0}.books-form dl dt{width:20%}.books-form dl dd{width:80%}.books-complete{text-align:center;padding:4rem 5% 6rem}.books-complete h1{margin:1rem 0 2rem;font-size:var(--font-size-32)} */
+/* .books .books-head .books-head-logo{width:60%;max-width:220px}.books .books-head h1{padding:0 var(--layout-padding-inline);font-size:var(--font-size-32)}.books .books-head h1>span{margin-top:-.5rem}.books .books-head .book-head-how ul{flex-wrap:wrap}.books .books-head .book-head-how ul li{width:100%;margin:1.5rem 0}.bookcard{max-width:100%}.bookcard-body{padding-left:1.5rem;padding-right:1.5rem}.bookcard-foot .bookcard-foot-apply{min-width:calc(100% - 3rem);left:1.5rem}}.books-form{padding:0 5%}.books-form dl{display:flex;margin:.5rem 0}.books-form dl dt{width:20%}.books-form dl dd{width:80%}.books-complete{text-align:center;padding:4rem 5% 6rem}.books-complete h1{margin:1rem 0 2rem;font-size:var(--font-size-32)} */
 
 .layout {
   --layout-width: 100%;

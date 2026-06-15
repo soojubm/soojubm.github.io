@@ -57,7 +57,7 @@ export class ComponentTokens extends LitElement {
 
       .component-tokens {
         margin: 1rem 0 0 calc(-5vw + 1rem);
-        padding: 1.5rem calc(var(--grid-margin) - 1rem);
+        padding: 1.5rem calc(var(--layout-padding-inline) - 1rem);
         background-color: var(--color-background-subtle);
         border: var(--component-tokens-border, none);
         border-radius: var(--radius-large);
@@ -72,8 +72,8 @@ export class ComponentTokens extends LitElement {
 
       @media (max-width: 1100px) {
         .component-tokens {
-          margin-inline: calc(var(--grid-margin) * -1);
-          padding-inline: var(--grid-margin);
+          margin-inline: calc(var(--layout-padding-inline) * -1);
+          padding-inline: var(--layout-padding-inline);
           border-inline: 0;
           border-radius: 0;
         }

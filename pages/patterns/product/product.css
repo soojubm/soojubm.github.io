@@ -1,6 +1,6 @@
 .product {
   margin: 0 auto;
-  padding: 0 var(--grid-margin);
+  padding: 0 var(--layout-padding-inline);
 }
 .product-head {
   display: flex;
@@ -191,7 +191,7 @@
 @media (max-width: 800px) {
   .product-head {
     flex-direction: column;
-    padding: 0 var(--grid-margin);
+    padding: 0 var(--layout-padding-inline);
   }
   .product-image {
     width: 100%;
@@ -284,7 +284,7 @@
   display: flex;
   align-items: center;
   height: var(--size-huge);
-  padding: 0 var(--grid-margin);
+  padding: 0 var(--layout-padding-inline);
   background: var(--color-background-subtle);
   position: fixed;
   left: 0;

@@ -14,7 +14,7 @@ export class Page extends LitElement {
     :host {
       display: block;
       min-height: calc(100vh - var(--navbar-height) - var(--width-small));
-      padding: var(--space-4) var(--grid-margin) calc(var(--space-4) * 6);
+      padding: var(--space-4) var(--layout-padding-inline) calc(var(--space-4) * 6);
       position: relative;
     }
 

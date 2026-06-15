@@ -33,7 +33,7 @@
   --width-medium: 25rem;
   --width-small: 200px;
 
-  --grid-margin: 5vw;
+  --layout-padding-inline: 5vw;
 
   --gray0: #fff;
   --gray50: #fcfdfc;

@@ -63,7 +63,7 @@ const sizeTokens = [
 const spacingTokens = [
   { name: '--grid-gutter', value: '' },
   { name: '--grid-column', value: '' },
-  { name: '--grid-margin', value: '5vw' },
+  { name: '--layout-padding-inline', value: '5vw' },
 ]
 
 const zindexTokens = [

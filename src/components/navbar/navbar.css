@@ -8,7 +8,7 @@
   padding:var(--space-3) 0; */
 
   height: var(--navbar-height);
-  padding: var(--space-3) var(--grid-margin);
+  padding: var(--space-3) var(--layout-padding-inline);
   box-sizing: border-box;
   background: var(--color-background);
   /* position:sticky; */
@@ -44,13 +44,13 @@
 /* ReactNative safeAreaView, scrollView */
 
 .page {
-  /* width: calc(var(--layout-width-wide) - var(--layout-width-sidebar) - var(--grid-margin)); */
+  /* width: calc(var(--layout-width-wide) - var(--layout-width-sidebar) - var(--layout-padding-inline)); */
   /* margin: 0 auto; */
 
   min-height: calc(100vh - var(--navbar-height) - var(--width-small));
-  padding: var(--space-4) var(--grid-margin) calc(var(--space-4) * 6);
+  padding: var(--space-4) var(--layout-padding-inline) calc(var(--space-4) * 6);
   /* padding: var(--space-4) 0 calc(var(--space-4) * 6); */
-  /* padding-left: calc(var(--layout-width-sidebar) + var(--grid-margin)); */
+  /* padding-left: calc(var(--layout-width-sidebar) + var(--layout-padding-inline)); */
   position: relative;
 }
 
@@ -69,7 +69,7 @@
 }
 
 .footer {
-  padding: 0 var(--grid-margin);
+  padding: 0 var(--layout-padding-inline);
 }
 
 /* height를 명시적으로 지정하지 않으면, unpositioning 시 문제 */
@@ -80,7 +80,7 @@
   height: calc(100vh - var(--navbar-height) - var(--space-4) - var(--space-4));
   max-width: var(--layout-width-sidebar);
   gap: var(--space-2);
-  padding: var(--space-4) var(--space-3) var(--space-4) calc(var(--grid-margin));
+  padding: var(--space-4) var(--space-3) var(--space-4) calc(var(--layout-padding-inline));
   /* 스크롤 ㄷ할 때 navbar와 충돌 */
   background: var(--color-background);
   scrollbar-gutter: stable;
@@ -194,18 +194,18 @@
 .is-menu-opened .page,
 .is-menu-opened .footer {
   padding-left: calc(
-    var(--layout-width-sidebar) + var(--grid-margin) + var(--grid-margin) + var(--space-4)
+    var(--layout-width-sidebar) + var(--layout-padding-inline) + var(--layout-padding-inline) + var(--space-4)
   );
-  /* transform: translateX(calc(var(--grid-margin) + var(--layout-width-sidebar))); */
+  /* transform: translateX(calc(var(--layout-padding-inline) + var(--layout-width-sidebar))); */
 }
 
 /* --small */
 @media (--small) {
   .is-menu-opened .page {
-    padding-left: var(--grid-margin);
+    padding-left: var(--layout-padding-inline);
   }
   /* .footer {
-    padding-inline: var(--grid-margin) !important; 
+    padding-inline: var(--layout-padding-inline) !important; 
   } */
   .is-menu-opened .footer {
     transform: translateX(0);
