@@ -25,10 +25,6 @@ export class Surface extends LitElement {
   }
 }
 
-// ;div class="thumbnail-wrapper">
-//   // <slot name="thumbnail"></slot> //
-// </div>
-
 declare global {
   interface HTMLElementTagNameMap {
     'mm-surface': Surface

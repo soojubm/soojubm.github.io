@@ -26,10 +26,6 @@ export class TokenStage extends LitElement {
       ::slotted(*) {
         position: relative;
       }
-
-      .description {
-        color: var(--color-foreground-light);
-      }
     `,
   ]
 
@@ -38,7 +34,6 @@ export class TokenStage extends LitElement {
       <div class="stage">
         <slot></slot>
       </div>
-      <slot name="description" class="description"></slot>
       <slot name="tokens"></slot>
     `
   }
