@@ -37,6 +37,7 @@ export const SITEMAP = [
       { id: 'surface', name: 'surface' },
       { id: 'thumbnail', name: 'thumbnail' },
       { id: 'separator', name: 'separator' },
+      { id: 'table', name: 'table', badge: '🚧' },
     ],
   },
   {
@@ -102,7 +103,6 @@ export const SITEMAP = [
       { id: 'chat', name: 'chat' },
 
       // { id: 'layout', name: 'layout' },
-      { id: 'table', name: 'table', badge: '🚧' },
       { id: 'accordion', name: 'accordion' },
       { id: 'sheet', name: 'sheet' },
       // { id: 'auth', name: 'auth' },
