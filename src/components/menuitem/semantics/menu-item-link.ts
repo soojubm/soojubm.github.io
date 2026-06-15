@@ -37,6 +37,7 @@ export class MenuItemLink extends LitElement {
         data-tone=${ifDefined(this.tone || undefined)}
         data-interactive
         aria-disabled=${ifDefined(this.disabled ? 'true' : undefined)}
+        target="_blank"
       >
         ${renderMenuItemContent(this, this.renderAction())}
       </a>

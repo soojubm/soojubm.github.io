@@ -14,7 +14,7 @@
 
   <mm-ltext-list></mm-ltext-list>
 
-  <section>
+  <!-- <section>
     <mm-grid columns="2" gap="8">
       <mm-surface variant="plain">
         <mm-flex gap="3">
@@ -48,7 +48,7 @@
         ></mm-text-list>
       </mm-surface>
     </mm-grid>
-  </section>
+  </section> -->
 
   <mm-flex direction="column" gap="4">
     <mm-text size="24" weight="bold">페이지 맥락의 대비</mm-text>
@@ -271,26 +271,17 @@
       label="Selected"
       description="여러 선택지 중 선택된 항목입니다. Tabs :: aria-selected"
     ></mm-list-row>
-    <mm-list-row
-      label="Current"
-      description="현재 위치나 현재 보고 있는 항목입니다."
-    ></mm-list-row>
-    <mm-list-row
-      label="Active"
-      description="현재 활성화되어 있는 항목입니다."
-    ></mm-list-row>
+    <mm-list-row label="Current" description="현재 위치나 현재 보고 있는 항목입니다."></mm-list-row>
+    <mm-list-row label="Active" description="현재 활성화되어 있는 항목입니다."></mm-list-row>
     <mm-list-row
       label="Checked"
       description="체크박스, 라디오, 메뉴 옵션의 체크 상태입니다."
     ></mm-list-row>
-    <mm-list-row
-      label="Pressed"
-      description="토글 버튼이 눌린 상태입니다."
-    ></mm-list-row>
+    <mm-list-row label="Pressed" description="토글 버튼이 눌린 상태입니다."></mm-list-row>
   </mm-flex>
 
   <mm-flex direction="column" gap="3">
-    <mm-text size="18" weight="bold">Feedback Signifiers</mm-text>
+    <mm-text size="18" weight="bold">Feedback States</mm-text>
     <mm-paragraph>
       사용자의 행동이나 시스템 상태에 대한 결과를 전달합니다. 사용자가 문제의 원인과 영향을 받는
       대상을 명확히 이해할 수 있도록 제공해야 합니다. 색상만으로 에러 상태를 전달하지 말고, 에러 톤,
@@ -330,12 +321,12 @@
         label="Error"
         description="오류, 실패, 수정이 필요한 상태를 나타냅니다."
       ></mm-list-row>
-      <mm-list-row
+      <!-- <mm-list-row
         icon="glass-empty"
         avatar-size="large"
         label="Empty"
         description="데이터나 결과가 없는 상태를 설명합니다."
-      ></mm-list-row>
+      ></mm-list-row> -->
       <mm-list-row
         icon="refresh"
         avatar-size="large"

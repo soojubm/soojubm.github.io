@@ -1,4 +1,4 @@
-import { LitElement, html } from 'lit'
+import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import '../../dropdown/dropdown'
 
@@ -11,6 +11,12 @@ const SORT_OPTIONS = [
 
 @customElement('mm-sort-dropdown')
 export class SortDropdown extends LitElement {
+  static styles = css`
+    :host {
+      display: inline-flex;
+    }
+  `
+
   @property({ type: String, reflect: true }) value: SortOrder = 'latest'
 
   private handleChange(e: CustomEvent) {

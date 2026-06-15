@@ -28,7 +28,7 @@ export class Footer extends LitElement {
             notion="https://soojubm.notion.site/UI-Designer-9c18f4dd39eb4181b9f9c2ee76896618"
             github="https://github.com/soojubm"
           ></mm-social-links>
-          <mm-flex gap="2" style="margin: var(--space-4) 0 0 0">
+          <mm-flex gap="2" style="display:none;margin: var(--space-4) 0 0 0">
             <mm-link href="/my/films/">영화감상 목록</mm-link>
             <mm-link href="/my/books/">독서 목록</mm-link>
           </mm-flex>
