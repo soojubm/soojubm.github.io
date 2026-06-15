@@ -31,7 +31,12 @@ function handleViewModeChange(event: Event) {
   const target = event.target as HTMLElement
   const viewModeEvent = event as ViewModeChangeEvent
   const containerElement = target.closest<HTMLElement>('.profile-body')
-  containerElement?.classList.toggle('list', viewModeEvent.detail.mode === 'list')
+  const isList = viewModeEvent.detail.mode === 'list'
+
+  containerElement?.classList.toggle('list', isList)
+  containerElement?.querySelectorAll('mm-grid').forEach(gridElement => {
+    gridElement.setAttribute('columns', isList ? '1' : '3')
+  })
 }
 
 function handleSortChange(event: Event) {
@@ -39,7 +44,7 @@ function handleSortChange(event: Event) {
   const sortEvent = event as SortChangeEvent
   const containerElement = target.closest<HTMLElement>('.profile-body')
 
-  containerElement?.querySelectorAll<HTMLElement>('.portfolio-grid').forEach(gridElement => {
+  containerElement?.querySelectorAll<HTMLElement>('mm-grid').forEach(gridElement => {
     const items = Array.from(gridElement.querySelectorAll<HTMLElement>('mm-portfolio-item'))
     items
       .sort((a, b) => {
