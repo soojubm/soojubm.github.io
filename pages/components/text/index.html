@@ -135,19 +135,26 @@
     <mm-flex direction="column" gap="0">
       <mm-page-title>페이지 레벨의 타이틀</mm-page-title>
       <div style="height: 1rem"></div>
-      <mm-section-title>섹션 레벨의 타이틀</mm-section-title>
+      <mm-heading level="2">섹션 레벨의 타이틀</mm-heading>
       <div style="height: 0.75rem"></div>
-      <mm-text size="14" weight="bold" as="h2">소제목</mm-text>
+      <mm-heading level="3">소제목</mm-heading>
     </mm-flex>
   </mm-component-section>
 
   <mm-component-section
-    title="SectionTitle"
-    description="콘텐츠 묶음의 제목. 기본 h2, font-size-18, bold를 사용합니다."
+    title="Heading"
+    description="콘텐츠 묶음의 제목. level(1–4)로 의미 단계(h1–h4)와 크기를 함께 지정하며, 기본값은 2입니다."
   >
     <mm-flex direction="column" gap="2">
-      <mm-section-title>계정 설정</mm-section-title>
+      <mm-heading level="2">계정 설정</mm-heading>
       <mm-paragraph>로그인, 알림, 공개 범위처럼 계정에 연결된 옵션을 관리합니다.</mm-paragraph>
+    </mm-flex>
+    <div style="height: 1rem"></div>
+    <mm-flex direction="column" gap="2">
+      <mm-heading level="1">Level 1</mm-heading>
+      <mm-heading level="2">Level 2</mm-heading>
+      <mm-heading level="3">Level 3</mm-heading>
+      <mm-heading level="4">Level 4</mm-heading>
     </mm-flex>
   </mm-component-section>
 

@@ -1,7 +1,7 @@
 import { LitElement, html, css } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { resetStyles } from '../../../stylesheets/shared/reset.styles'
-import '../../text/semantics/section-title'
+import '../../text/semantics/heading'
 
 /**
  * 개별 CSS 커스텀 프로퍼티(토큰) 행.
@@ -84,7 +84,7 @@ export class ComponentTokens extends LitElement {
   render() {
     return html`
       <div class="component-tokens">
-        <mm-section-title style="display:none;">Component Tokens</mm-section-title>
+        <mm-heading style="display:none;">Component Tokens</mm-heading>
         <dl>
           <slot></slot>
         </dl>
