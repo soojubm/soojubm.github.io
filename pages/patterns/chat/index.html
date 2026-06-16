@@ -55,20 +55,22 @@
           </mm-ai-chat-message>
 
           <mm-ai-chat-message no-reactions>
-            <mm-chat-chain-of-thought thinking open>
-              <mm-chat-chain-of-thought-step status="complete">
-                질문 의도 파악
-              </mm-chat-chain-of-thought-step>
-              <mm-chat-chain-of-thought-step
-                status="active"
-                description="design-tokens.json, tokens.ts 파일 분석 중"
-              >
-                토큰 정의 파일 검색 중
-              </mm-chat-chain-of-thought-step>
-              <mm-chat-chain-of-thought-step status="pending">
-                답변 정리
-              </mm-chat-chain-of-thought-step>
-            </mm-chat-chain-of-thought>
+            <mm-flex direction="column" gap="2">
+              <mm-chat-reasoning thinking>
+                <mm-chat-reasoning-flow tone="thinking" label="요청을 확인하는 중">
+                  디자인 토큰 계층 구조를 어떤 관점에서 설명해야 할지 살피고 있어요.
+                </mm-chat-reasoning-flow>
+                <mm-chat-reasoning-flow tone="searching" label="관련 자료 탐색 중">
+                  Figma, Atlassian, Style Dictionary 문서를 함께 대조하고 있어요.
+                </mm-chat-reasoning-flow>
+                <mm-chat-reasoning-flow tone="reading" label="핵심 구조 정리 중">
+                  글로벌, 앨리어스, 컴포넌트 토큰의 역할을 구분하고 있어요.
+                </mm-chat-reasoning-flow>
+                <mm-chat-reasoning-flow tone="writing" label="답변 문장 다듬는 중">
+                  바로 적용할 수 있는 형태로 예시와 함께 정리하고 있어요.
+                </mm-chat-reasoning-flow>
+              </mm-chat-reasoning>
+            </mm-flex>
           </mm-ai-chat-message>
 
           <mm-ai-chat-message no-reactions>
@@ -78,18 +80,6 @@
           </mm-ai-chat-message>
 
           <mm-ai-chat-message>
-            <mm-chat-reasoning open duration="4초">
-              <mm-chat-reasoning-step done description="사용자가 토큰 계층 구조를 알고 싶어 함">
-                질문 의도 파악
-              </mm-chat-reasoning-step>
-              <mm-chat-reasoning-step
-                done
-                description="Figma, Atlassian, Style Dictionary 문서 발견"
-              >
-                관련 문서 3건 검색
-              </mm-chat-reasoning-step>
-              <mm-chat-reasoning-step done>핵심 내용 정리</mm-chat-reasoning-step>
-            </mm-chat-reasoning>
             <mm-ai-chat-bubble>안녕하세요 👋 무엇을 도와드릴까요?</mm-ai-chat-bubble>
           </mm-ai-chat-message>
 

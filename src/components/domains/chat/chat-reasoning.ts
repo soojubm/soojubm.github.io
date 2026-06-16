@@ -1,254 +1,262 @@
 import { LitElement, css, html, nothing } from 'lit'
-import { customElement, property, state } from 'lit/decorators.js'
+import { customElement, property } from 'lit/decorators.js'
 import { resetStyles } from '../../../stylesheets/shared/reset.styles'
 import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
-import type { ChatReasoningStep } from './chat-reasoning-step'
 import '../../icon/icon'
 
+export type ChatReasoningFlowTone = 'thinking' | 'searching' | 'reading' | 'writing'
+
+const toneIconMap: Record<ChatReasoningFlowTone, string> = {
+  thinking: ICON_NAMES.SPARKS,
+  searching: ICON_NAMES.SEARCH,
+  reading: ICON_NAMES.BOOK,
+  writing: ICON_NAMES.DOCUMENT_CHECK,
+}
+
 /**
- * AI 답변 과정(추론 단계)을 접을 수 있는 형태로 보여주는 컨테이너.
- * thinking 상태일 때 헤더에 현재 active step의 텍스트를 표시합니다.
+ * 현재 진행 중인 reasoning 흐름.
+ *
+ * <mm-chat-reasoning-flow tone="searching" label="관련 자료 탐색">
+ *   디자인 토큰 문서를 찾는 중
+ * </mm-chat-reasoning-flow>
+ */
+@customElement('mm-chat-reasoning-flow')
+export class ChatReasoningFlow extends LitElement {
+  @property({ type: Boolean, reflect: true }) active = false
+  @property({ type: String }) tone: ChatReasoningFlowTone = 'thinking'
+  @property({ type: String }) label = ''
+  @property({ type: String }) description = ''
+  @property({ type: String }) icon = ''
+
+  static styles = [
+    resetStyles,
+    css`
+      :host {
+        display: flex;
+        width: 100%;
+        min-width: 0;
+      }
+
+      :host([hidden]) {
+        display: none;
+      }
+
+      .flow {
+        display: flex;
+        width: 100%;
+        gap: var(--space-2);
+        align-items: flex-start;
+      }
+
+      .icon {
+        display: inline-flex;
+        flex-shrink: 0;
+        align-items: center;
+        justify-content: center;
+        width: 1rem;
+        height: 1rem;
+        margin-top: var(--space-05);
+        color: var(--color-primary);
+      }
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-05);
+        min-width: 0;
+      }
+
+      .label {
+        font-size: var(--font-size-13, var(--font-size-14));
+        font-weight: var(--font-weight-bold);
+        line-height: var(--line-height-14, 1.5);
+        color: var(--color-foreground);
+      }
+
+      .description,
+      .slot {
+        font-size: var(--font-size-12);
+        line-height: var(--line-height-12, 1.5);
+        color: var(--color-foreground-light);
+      }
+    `,
+  ]
+
+  render() {
+    return html`
+      <span class="flow">
+        <span class="icon">
+          <mm-icon name=${this.icon || toneIconMap[this.tone] || ICON_NAMES.SPARKS}></mm-icon>
+        </span>
+        <span class="content">
+          ${this.label
+            ? html`
+                <span class="label">${this.label}</span>
+              `
+            : nothing}
+          ${this.description
+            ? html`
+                <span class="description">${this.description}</span>
+              `
+            : nothing}
+          <span class="slot"><slot></slot></span>
+        </span>
+      </span>
+    `
+  }
+}
+
+/**
+ * AI의 현재 상황만 보여주는 reasoning 컨테이너.
+ * 접힘/펼침과 단계형 이력 대신 현재 노출할 flow 하나를 슬롯으로 받습니다.
  *
  * <mm-chat-reasoning thinking>
- *   <mm-chat-reasoning-step done>질문 의도 파악</mm-chat-reasoning-step>
- *   <mm-chat-reasoning-step active>관련 문서 검색</mm-chat-reasoning-step>
- *   <mm-chat-reasoning-step>답변 정리</mm-chat-reasoning-step>
+ *   <mm-chat-reasoning-flow label="관련 자료 탐색">토큰 파일 검색 중</mm-chat-reasoning-flow>
  * </mm-chat-reasoning>
  */
 @customElement('mm-chat-reasoning')
 export class ChatReasoning extends LitElement {
-  @property({ type: String }) label = '답변 과정'
-  /** 추론이 진행 중인 상태 (스피너 + active step 텍스트 표시) */
   @property({ type: Boolean, reflect: true }) thinking = false
-  @property({ type: Boolean, reflect: true }) open = false
   @property({ type: String }) duration = ''
+  @property({ type: Number }) interval = 2200
 
-  @state() private _activeLabel = ''
+  private _flowIndex = 0
+  private _intervalId = 0
 
   static styles = [
     resetStyles,
     css`
       :host {
         display: block;
-        --reasoning-transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
       }
 
-      .reasoning {
+      .trend {
+        display: flex;
         width: fit-content;
         max-width: min(85%, 600px);
-        border: var(--border);
-        border-radius: var(--radius);
-        background: var(--color-background-subtle);
-        overflow: hidden;
-      }
-
-      /* ── 헤더 ── */
-      .summary-btn {
-        display: flex;
-        align-items: center;
         gap: var(--space-2);
-        width: 100%;
-        padding: var(--space-2) var(--space-3);
-        background: none;
-        border: none;
-        cursor: pointer;
-        font: inherit;
-        color: var(--color-foreground-light);
-        text-align: left;
+        align-items: flex-start;
       }
 
-      .lead {
-        flex-shrink: 0;
-        width: 1rem;
-        height: 1rem;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        color: inherit;
-      }
-
-      .spinner {
-        width: 0.875rem;
-        height: 0.875rem;
-        border-radius: 50%;
-        border: 1.5px solid var(--color-border);
-        border-top-color: var(--color-primary);
-        animation: spin 0.8s linear infinite;
-        flex-shrink: 0;
-      }
-
-      .header-text {
+      .content {
         display: flex;
-        align-items: baseline;
-        gap: var(--space-2);
+        flex-direction: column;
+        gap: var(--space-1);
         min-width: 0;
-        flex: 1;
       }
 
-      .label {
-        font-size: var(--font-size-13, var(--font-size-14));
-        font-weight: var(--font-weight-bold);
-        white-space: nowrap;
-        flex-shrink: 0;
-      }
-
-      /* thinking 중: active step 텍스트 */
-      .active-hint {
-        font-size: var(--font-size-12);
-        color: var(--color-foreground-light);
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        animation: fadeIn 200ms ease;
-      }
-
-      :host([thinking]) {
-        & .label {
-          color: var(--color-foreground);
-          animation: pulse 1.6s ease-in-out infinite;
-        }
+      .meta {
+        display: flex;
+        gap: var(--space-2);
+        align-items: baseline;
+        min-width: 0;
       }
 
       .duration {
+        overflow: hidden;
         font-size: var(--font-size-12);
+        line-height: var(--line-height-12, 1.5);
         color: var(--color-foreground-light);
+        text-overflow: ellipsis;
         white-space: nowrap;
       }
 
-      .chevron {
-        margin-left: auto;
-        flex-shrink: 0;
-        width: 1rem;
-        height: 1rem;
-        transition: transform var(--reasoning-transition);
-        color: var(--color-foreground-light);
-      }
-
-      :host([open]) {
-        & .chevron {
-          transform: rotate(90deg);
-        }
-        & .panel {
-          grid-template-rows: 1fr;
-        }
-      }
-
-      /* ── 콘텐츠 패널 ── */
-      .panel {
+      .flows {
         display: grid;
-        grid-template-rows: 0fr;
-        transition: grid-template-rows var(--reasoning-transition);
+        min-width: 0;
       }
 
-      .panel-inner {
-        min-height: 0;
-        overflow: hidden;
+      ::slotted(mm-chat-reasoning-flow) {
+        grid-area: 1 / 1;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(var(--space-1));
+        transition: opacity 240ms ease, transform 240ms ease;
       }
 
-      .steps {
-        padding: 0 var(--space-3) var(--space-3) var(--space-3);
-        border-top: var(--border);
-      }
-
-      /* ── 애니메이션 ── */
-      @keyframes spin {
-        to {
-          transform: rotate(360deg);
-        }
-      }
-
-      @keyframes pulse {
-        0%,
-        100% {
-          opacity: 1;
-        }
-        50% {
-          opacity: 0.5;
-        }
-      }
-
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateX(-4px);
-        }
-        to {
-          opacity: 1;
-          transform: translateX(0);
-        }
+      ::slotted(mm-chat-reasoning-flow[active]) {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
       }
     `,
   ]
 
-  connectedCallback() {
-    super.connectedCallback()
-    this.addEventListener('slotchange', this._syncActiveLabel)
-  }
-
-  disconnectedCallback() {
-    this.removeEventListener('slotchange', this._syncActiveLabel)
-    super.disconnectedCallback()
-  }
-
-  private _syncActiveLabel = () => {
-    const slot = this.shadowRoot?.querySelector('slot')
-    const steps = (slot?.assignedElements({ flatten: true }) ?? []) as ChatReasoningStep[]
-    const active = steps.find(el => el.hasAttribute('active'))
-    this._activeLabel = active?.textContent?.trim() ?? ''
+  firstUpdated() {
+    this._syncFlows()
   }
 
   updated(changed: Map<string, unknown>) {
-    if (changed.has('thinking')) {
-      this._syncActiveLabel()
+    if (changed.has('thinking') || changed.has('interval')) {
+      this._syncFlows()
     }
   }
 
-  private _toggle() {
-    this.open = !this.open
+  disconnectedCallback() {
+    this._stopTransition()
+    super.disconnectedCallback()
+  }
+
+  private _getFlows() {
+    const slot = this.shadowRoot?.querySelector('slot')
+    return (slot?.assignedElements({ flatten: true }) ?? []).filter(
+      flow => flow instanceof ChatReasoningFlow && !flow.hidden,
+    ) as ChatReasoningFlow[]
+  }
+
+  private _syncFlows = () => {
+    const flows = this._getFlows()
+    if (!flows.length) {
+      this._stopTransition()
+      return
+    }
+
+    if (this._flowIndex >= flows.length) {
+      this._flowIndex = 0
+    }
+
+    this._activateFlow(flows)
+    this._stopTransition()
+
+    if (!this.thinking || flows.length < 2) return
+
+    this._intervalId = window.setInterval(() => {
+      const currentFlows = this._getFlows()
+      if (!currentFlows.length) return
+
+      this._flowIndex = (this._flowIndex + 1) % currentFlows.length
+      this._activateFlow(currentFlows)
+    }, this.interval)
+  }
+
+  private _activateFlow(flows: ChatReasoningFlow[]) {
+    flows.forEach((flow, index) => {
+      flow.active = index === this._flowIndex
+    })
+  }
+
+  private _stopTransition() {
+    if (!this._intervalId) return
+
+    window.clearInterval(this._intervalId)
+    this._intervalId = 0
   }
 
   render() {
     return html`
-      <div class="reasoning">
-        <button
-          class="summary-btn"
-          aria-expanded=${this.open ? 'true' : 'false'}
-          @click=${this._toggle}
-        >
-          <span class="lead">
-            ${this.thinking
-              ? html`
-                  <span class="spinner" role="status" aria-label="생각하는 중"></span>
-                `
-              : html`
-                  <mm-icon name=${ICON_NAMES.SPARKS}></mm-icon>
-                `}
-          </span>
-
-          <span class="header-text">
-            <span class="label">${this.label}</span>
-            ${this.thinking && this._activeLabel
-              ? html`
-                  <span class="active-hint">${this._activeLabel}</span>
-                `
-              : nothing}
-            ${!this.thinking && this.duration
-              ? html`
+      <div class="trend" role="status" aria-live="polite">
+        <span class="content">
+          ${this.duration
+            ? html`
+                <span class="meta">
                   <span class="duration">${this.duration}</span>
-                `
-              : nothing}
+                </span>
+              `
+            : nothing}
+          <span class="flows">
+            <slot @slotchange=${this._syncFlows}></slot>
           </span>
-
-          <mm-icon class="chevron" name=${ICON_NAMES.SITEMAP}></mm-icon>
-        </button>
-
-        <div class="panel">
-          <div class="panel-inner">
-            <div class="steps">
-              <slot @slotchange=${this._syncActiveLabel}></slot>
-            </div>
-          </div>
-        </div>
+        </span>
       </div>
     `
   }
@@ -257,5 +265,6 @@ export class ChatReasoning extends LitElement {
 declare global {
   interface HTMLElementTagNameMap {
     'mm-chat-reasoning': ChatReasoning
+    'mm-chat-reasoning-flow': ChatReasoningFlow
   }
 }

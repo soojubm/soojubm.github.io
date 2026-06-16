@@ -39,7 +39,6 @@ export class ChatConfirmation extends LitElement {
       .actions {
         display: flex;
         gap: var(--space-2);
-        margin-left: auto;
       }
     `,
   ]
