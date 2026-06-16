@@ -37,7 +37,7 @@ function renderFilters(books: Book[], state: FilterState) {
   const countries = getCountries(books, 5)
 
   container.innerHTML = `
-    <mm-flex align="start" gap="3">
+    <mm-flex align-items="flex-start" gap="3">
       <span style="min-width:2rem;padding-top:6px;font-size:var(--font-size-12);color:var(--color-foreground-light)">국가</span>
       <mm-filter-button-group class="js-country-filter" mode="single" style="flex:1;flex-wrap:wrap">
         ${countries.map(c => `<mm-filter-button value="${c}">${c}</mm-filter-button>`).join('')}
@@ -57,7 +57,7 @@ function bookCard(b: Book) {
   return `
     <article style="border:var(--border);padding:var(--space-3);border-radius:var(--radius)">
       <mm-flex direction="column" gap="1">
-        <mm-flex justify="between" align="center" gap="2">
+        <mm-flex justify-content="space-between" align-items="center" gap="2">
           <time style="font-size:var(--font-size-12);color:var(--color-foreground-light)">${
             b.releasedate ?? ''
           }</time>
