@@ -9,7 +9,7 @@
       <mm-paragraph size="large">₩ 22,500</mm-paragraph>
       <mm-button>수량/옵션 변경</mm-button>
       <mm-separator></mm-separator>
-      <div class="cart-item-addition">
+      <div>
         <b>AppleCare+ for Macbook/MacBook Air</b>
         <p>Automatically registered with your Apple hardware.</p>
         <span>₩ 20,000</span>
@@ -78,7 +78,7 @@
   <mm-flex direction="column" gap="4">
     <mm-top-bar title="주문/결제"></mm-top-bar>
 
-    <section class="checkout-shipping">
+    <section>
       <mm-paragraph size="large">배송지</mm-paragraph>
       <mm-surface size="small">
         <mm-menu-item-radio-group name="shipping" value="default" aria-label="배송지 선택">
@@ -102,7 +102,7 @@
       <mm-add-surface-button>배송지 변경/추가</mm-add-surface-button>
     </section>
 
-    <section class="checkout-product">
+    <section>
       <mm-paragraph size="large">주문상품</mm-paragraph>
       <!-- portfolio item -->
       <mm-menu-item-action avatar-src="/src/images/cake_gosum.jpg" avatar-size="huge">
@@ -114,7 +114,7 @@
       </mm-menu-item-action>
     </section>
 
-    <section class="checkout-discount">
+    <section>
       <mm-paragraph size="large">쿠폰 마일리지 할인</mm-paragraph>
       <div style="height: var(--space-3)"></div>
       <mm-textfield
@@ -128,7 +128,7 @@
       <mm-button>보유 마일리지 1,186p 모두사용</mm-button>
     </section>
 
-    <section class="checkout-payment">
+    <section>
       <mm-paragraph size="large">결제수단</mm-paragraph>
       <mm-surface size="small">
         <mm-menu-item-radio-group name="payment" value="card" aria-label="결제수단 선택">
@@ -171,7 +171,7 @@
       </div>
     </section>
 
-    <section class="checkout-summary">
+    <section>
       <mm-flex justify="between" gap="0">
         <mm-paragraph size="large">결제상세</mm-paragraph>
         <mm-paragraph size="large">13,980원</mm-paragraph>
@@ -196,7 +196,7 @@
   </mm-flex>
 
   <mm-flex direction="column">
-    <section class="order-complete">
+    <section>
       <header style="text-align: center; margin: 1.5rem 0">
         <mm-paragraph size="large">주문완료 되었습니다.</mm-paragraph>
         <mm-paragraph size="large">2024.08.19 23:55</mm-paragraph>

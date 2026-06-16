@@ -37,7 +37,7 @@ class Notice extends LitElement {
         <mm-icon name=${this.icon} class="notice-icon"></mm-icon>
         ${this.heading
           ? html`
-              <h3 class="notice-title">${this.heading}</h3>
+              <h3>${this.heading}</h3>
             `
           : ''}
         ${this.text

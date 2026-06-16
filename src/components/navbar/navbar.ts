@@ -145,7 +145,7 @@ export class Navbar extends LitElement {
               aria-haspopup="menu"
               aria-expanded="false"
             ></mm-icon-button>
-            <div class="navbar-user-menu" hidden>
+            <div hidden>
               <mm-surface variant="elevated" size="medium">
                 <mm-user-snippet
                   name="수줍이"

@@ -17,17 +17,17 @@
         <span class="step-item-icon">3</span>
         <b class="step-item-label">주문완료</b>
       </div>
-      <div class="step-space">
-        <span class="step-space-dot"></span>
-        <span class="step-space-dot"></span>
-        <span class="step-space-dot"></span>
+      <div>
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
-    </mm-component-guide>
+    </section>
     <div style="height: var(--space-4)"></div>
     <mm-surface>
-      <header class="authentication-head">
+      <header>
         <mm-paragraph size="large">Tell us about yourself</mm-paragraph>
-        <mm-text size="14" class="authentication-head-description">
+        <mm-text size="14">
           Now that you're all signed up, let's personalize your experience.
         </mm-text>
       </header>
@@ -139,9 +139,9 @@
       <div class="timeline-item">
         <mm-tag datetime="">2022. 11. 4.</mm-tag>
         <div class="timeline-item-panel">
-          <mm-avatar slot="avatar" size="small"
-            ><span style="font-size: 0.75rem">🐺</span></mm-avatar
-          >
+          <mm-avatar slot="avatar" size="small">
+            <span style="font-size: 0.75rem">🐺</span>
+          </mm-avatar>
           <div slot="text">
             <span>폰트 디자인</span>
             <span>이도타입 / 한동훈</span>
@@ -154,7 +154,9 @@
           <mm-avatar>🦔</mm-avatar>
           <div>
             <span>뉴닉, 프로덕트 디자이너</span>
-            <mm-text-list texts='["MVP / Feature 일정 산정 및 스펙 정의", "이슈 트래킹, 우선순위 관리를 위한 백로그 구축", "온라인 리서치, VOC 분석을 통한 문제 정의", "프로덕트 디자인 (Userflow / UI / GUI), 프론트엔드 개발", "데이터 트래킹 및 분석 (hotjar, google analytics, google optimize)"]'></mm-text-list>
+            <mm-text-list
+              texts='["MVP / Feature 일정 산정 및 스펙 정의", "이슈 트래킹, 우선순위 관리를 위한 백로그 구축", "온라인 리서치, VOC 분석을 통한 문제 정의", "프로덕트 디자인 (Userflow / UI / GUI), 프론트엔드 개발", "데이터 트래킹 및 분석 (hotjar, google analytics, google optimize)"]'
+            ></mm-text-list>
           </div>
         </div>
       </div>
@@ -212,25 +214,27 @@
       </div>
     </section>
 
-    <mm-text-list texts='["2022. 12. 17.. line-height 기본값 역전. 단락을 제외하면 모든 케이스에서 line-height-small을
-        선언해야 하기 때문에 defalt / small을 defalt / large로 변경.", "add stack component. chip-group과 tag-group 제거하고 stack으로 통합.", "color gray600 삭제. 본문용으로 야외나 밝은 조명 아래서 가시성이 떨어짐.", "타임라인과 구분. 타임라인은 히스토리 맥락으로 스텝의 역순. 확장, 링크, indentation"]'></mm-text-list>
+    <mm-text-list
+      texts='["2022. 12. 17.. line-height 기본값 역전. 단락을 제외하면 모든 케이스에서 line-height-small을
+        선언해야 하기 때문에 defalt / small을 defalt / large로 변경.", "add stack component. chip-group과 tag-group 제거하고 stack으로 통합.", "color gray600 삭제. 본문용으로 야외나 밝은 조명 아래서 가시성이 떨어짐.", "타임라인과 구분. 타임라인은 히스토리 맥락으로 스텝의 역순. 확장, 링크, indentation"]'
+    ></mm-text-list>
 
     <mm-surface flat="flat" size="medium">
-      <mm-flex class="order-item-head">
-        <mm-tag class="order-item-head-type" style="width: var(--size-large)">포장</mm-tag>
-        <mm-text as="time">2022. 12. 05. 15:32</time>
-        <b class="order-item-head-status" style="margin-left: auto">배달완료</b>
+      <mm-flex>
+        <mm-tag style="width: var(--size-large)">포장</mm-tag>
+        <mm-text as="time">2022. 12. 05. 15:32</mm-text>
+        <b style="margin-left: auto">배달완료</b>
       </mm-flex>
       <div style="height: var(--space-3)"></div>
       <mm-menu-item-action>
         <mm-avatar slot="avatar" size="large"></mm-avatar>
-        <div slot="text" class="item-description">
+        <div slot="text">
           <b>쩜순이네닭강정 요기요st</b>
           <mm-flex align="center">
             <span>떡볶이</span>
-            <span> x </span>
+            <span>x</span>
             <span>5</span>
-            <span> 외 1건</span>
+            <span>외 1건</span>
           </mm-flex>
         </div>
       </mm-menu-item-action>
@@ -260,5 +264,5 @@
       </mm-button-group>
       <!-- <mm-tag>네이버 쇼핑은 왜 주문 내역을 숨길 수 있나?</mm-tag> -->
     </mm-surface>
-  </section>
+  </mm-component-guide>
 </main>

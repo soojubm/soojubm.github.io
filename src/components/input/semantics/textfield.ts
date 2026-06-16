@@ -52,7 +52,6 @@ export class Textfield extends LitElement {
           <slot name="leading"></slot>
           <mm-input
             input-id=${this.inputId}
-            input-class="textfield-input"
             .type=${this.type}
             .value=${this.value}
             .name=${this.name}

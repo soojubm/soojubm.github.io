@@ -1,16 +1,6 @@
 .carousel {
   position: relative;
 }
-.carousel-viewer {
-}
-.carousel-viewer-slide {
-}
-.carousel-viewer-slide:hover {
-}
-.carousel-viewer-slide-media {
-}
-.carousel-viewer-slide-name {
-}
 .carousel-dots {
   display: flex;
   align-items: center;

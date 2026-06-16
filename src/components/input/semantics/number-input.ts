@@ -56,7 +56,6 @@ export class NumberInput extends LitElement {
           ></mm-icon-button>
           <mm-input
             input-id=${this.inputId}
-            input-class="textfield-input"
             .type=${'number'}
             .value=${this.value}
             .name=${this.name}

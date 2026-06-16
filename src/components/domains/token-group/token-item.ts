@@ -16,17 +16,6 @@ export class TokenItem extends LitElement {
         display: flex;
         flex-direction: column;
       }
-
-      // .key::before {
-      //   content: '--';
-      // }
-
-      // .key::after {
-      //   content: ':';
-      // }
-
-      .key {
-      }
     `,
   ]
 
@@ -40,12 +29,12 @@ export class TokenItem extends LitElement {
           : nothing}
         ${this.key
           ? html`
-              <span class="key">${this.key}</span>
+              <span>${this.key}</span>
             `
           : nothing}
         ${this.value
           ? html`
-              <span class="value">${this.value}</span>
+              <span>${this.value}</span>
             `
           : nothing}
       </mm-flex>

@@ -238,6 +238,23 @@
         </fieldset>
         <mm-separator></mm-separator>
         <fieldset class="filter-fieldset" role="group">
+          <legend class="filter-fieldset-legend">빠른 작업</legend>
+          <mm-menu-item-group aria-label="빠른 작업">
+            <mm-menu-item-action
+              size="large"
+              icon="search"
+              label="저장된 검색 불러오기"
+            ></mm-menu-item-action>
+            <mm-menu-item-action
+              size="large"
+              icon="trash"
+              label="필터 초기화"
+              tone="danger"
+            ></mm-menu-item-action>
+          </mm-menu-item-group>
+        </fieldset>
+        <mm-separator></mm-separator>
+        <fieldset class="filter-fieldset" role="group">
           <legend class="filter-fieldset-legend">릴리스 채널</legend>
           <mm-dropdown>
             <option value="stable">Stable</option>

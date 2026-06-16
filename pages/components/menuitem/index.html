@@ -33,11 +33,18 @@
           description="1 user"
           avatar-size="large"
         ></mm-menu-item-action>
+        <mm-menu-item-action
+          size="large"
+          icon="settings"
+          label="큰 액션"
+          description="바텀 시트처럼 넓은 터치 영역이 필요할 때 사용합니다."
+        ></mm-menu-item-action>
       </mm-menu-item-group>
     </mm-flex>
   </mm-component-example>
 
   <mm-component-props>
+    <mm-prop name="size" type="'medium' | 'large' = 'medium'" optional></mm-prop>
     <mm-prop name="label" type="string"></mm-prop>
     <mm-prop name="description" type="string" optional></mm-prop>
     <mm-prop name="icon" type="string" optional></mm-prop>

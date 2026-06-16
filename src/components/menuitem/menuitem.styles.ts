@@ -8,6 +8,10 @@ export const menuItemStyles = css`
     --menuitem-color-danger: var(--color-danger);
   }
 
+  :host([size='large']) {
+    --menuitem-size: var(--size-large);
+  }
+
   .item {
     display: flex;
     align-items: center;

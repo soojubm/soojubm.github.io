@@ -12,7 +12,7 @@ export class Footer extends LitElement {
     return html`
       <footer class="footer js-observer" id="footer" role="contentinfo">
         <div class="footer-background"></div>
-        <figure class="footer-logo" hidden></figure>
+        <figure hidden></figure>
         <mm-user-snippet
           name="수줍이"
           email="soojubm@gmail.com"
@@ -52,11 +52,11 @@ export class Footer extends LitElement {
         <small class="footer-copyright" style="margin: var(--space-3) 0 0 0">
           © 2019 soojubm. All rights reserved.
         </small>
-        <address class="footer-address">
+        <address>
           <p class="footer-address-slogan">Making things better.</p>
         </address>
 
-        <aside class="footer-scroll" style="margin: 1.5rem 0 0 0">
+        <aside style="margin: 1.5rem 0 0 0">
           <mm-to-top-button></mm-to-top-button>
         </aside>
       </footer>

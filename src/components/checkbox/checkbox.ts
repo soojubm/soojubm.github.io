@@ -64,7 +64,7 @@ export class Checkbox extends LitElement {
     const { name, value, size, checked, disabled, indeterminate, _inputId } = this
 
     return html`
-      <div class="checkbox" data-size=${size || nothing}>
+      <div data-size=${size || nothing}>
         <input
           type="checkbox"
           id=${_inputId}

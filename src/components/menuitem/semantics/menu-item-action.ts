@@ -8,6 +8,7 @@ import { renderMenuItemContent } from '../menuitem.utils'
 
 @customElement('mm-menu-item-action')
 export class MenuItemAction extends LitElement {
+  @property({ type: String, reflect: true }) size = 'medium'
   @property({ type: String }) tone = ''
   @property({ type: String }) label = ''
   @property({ type: String }) description = ''

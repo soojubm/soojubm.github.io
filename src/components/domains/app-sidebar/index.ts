@@ -1,4 +1,4 @@
-import { LitElement, html } from 'lit'
+import { LitElement, html, nothing } from 'lit'
 import { customElement } from 'lit/decorators.js'
 import { SITEMAP } from '../../../sitemap'
 import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
@@ -59,7 +59,7 @@ export class Sidebar extends LitElement {
               <mm-menu-item-action
                 label="${node.title}"
                 icon="${node.icon}"
-                class="${currentPageId === node.id ? 'is-active' : ''}"
+                class=${currentPageId === node.id ? 'is-active' : nothing}
                 @click="${() => (window.location.href = `${node.id}.html`)}"
               ></mm-menu-item-action>
             `
@@ -85,7 +85,7 @@ export class Sidebar extends LitElement {
                     item => html`
                       <a
                         href="${item.id}.html"
-                        class="${currentPageId === item.id ? 'is-active' : ''}"
+                        class=${currentPageId === item.id ? 'is-active' : nothing}
                       >
                         ${item.name} ${item.badge ? item.badge : ''}
                       </a>
