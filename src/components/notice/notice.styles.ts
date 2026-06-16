@@ -20,14 +20,15 @@ export const noticeStyles = css`
 
   .notice {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     gap: var(--notice-gap);
     padding: var(--notice-padding);
     border: var(--notice-border-width) solid var(--notice-border-color);
     border-radius: var(--notice-radius);
     background: var(--notice-bg);
     color: var(--notice-color);
-
+    position: relative;
     &[data-variant='success'] {
       --notice-accent: var(--color-success);
       --notice-color: var(--color-success);
@@ -49,17 +50,12 @@ export const noticeStyles = css`
   }
 
   .notice-icon {
-    color: var(--notice-accent);
     flex-shrink: 0;
-  }
-
-  h3,
-  mm-text {
-    margin: 0;
   }
 
   .notice-dismiss {
-    margin-left: auto;
-    flex-shrink: 0;
+    position: absolute;
+    right: var(--notice-padding);
+    top: var(--notice-padding);
   }
 `

@@ -49,6 +49,7 @@
   --red100: rgba(243, 68, 97, 0.06);
   --red800: #f02849;
   --yellow800: gold;
+  --orange800: #fb7800;
 
   --color-primary: var(--green800);
 
@@ -59,7 +60,7 @@
   --color-success-subtle: color-mix(in srgb, var(--color-success) 8%, var(--color-background));
   --color-success-border: color-mix(in srgb, var(--color-success) 30%, transparent);
 
-  --color-warning: var(--yellow800);
+  --color-warning: var(--orange800);
   --color-warning-subtle: color-mix(in srgb, var(--color-warning) 8%, var(--color-background));
   --color-warning-border: color-mix(in srgb, var(--color-warning) 30%, transparent);
 

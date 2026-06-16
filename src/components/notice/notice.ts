@@ -37,18 +37,22 @@ class Notice extends LitElement {
         <mm-icon name=${this.icon} class="notice-icon"></mm-icon>
         ${this.heading
           ? html`
-              <h3>${this.heading}</h3>
+              <div style="margin-bottom:-.5rem">
+                <mm-heading level="3">${this.heading}</mm-heading>
+              </div>
             `
           : ''}
         ${this.text
           ? html`
-              <mm-text size="14">${this.text}</mm-text>
+              <mm-paragraph>${this.text}</mm-paragraph>
             `
           : ''}
         <slot></slot>
         ${this.dismissible
           ? html`
-              <mm-clear-button class="notice-dismiss" @click=${this.dismiss}></mm-clear-button>
+              <div class="notice-dismiss">
+                <mm-dismiss-button @click=${this.dismiss}></mm-dismiss-button>
+              </div>
             `
           : ''}
       </div>
