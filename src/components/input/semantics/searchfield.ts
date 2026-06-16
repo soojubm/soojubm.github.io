@@ -1,4 +1,4 @@
-import { LitElement, html } from 'lit'
+import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { inputStyles } from '../input.styles'
 import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
@@ -9,9 +9,16 @@ class SearchField extends LitElement {
   @property({ type: String }) value = ''
   @property({ type: String }) placeholder?: string
   @property({ type: Boolean, reflect: true }) disabled = false
-  @property({ type: String, reflect: true }) size = ''
+  @property({ type: String, reflect: true }) size: 'small' | '' = ''
 
-  static styles = inputStyles
+  static styles = [
+    inputStyles,
+    css`
+      :host([size='small']) {
+        --input-height: var(--size-medium);
+      }
+    `,
+  ]
 
   private inputId = `input-${crypto?.randomUUID?.() || Math.random().toString(36).slice(2)}`
 
@@ -29,11 +36,13 @@ class SearchField extends LitElement {
           @input=${this._handleInput}
         ></mm-input>
         ${this.value.length > 0
-          ? html`<mm-clear-button
-              label="clear"
-              ?disabled=${this.disabled}
-              @click=${this._clear}
-            ></mm-clear-button>`
+          ? html`
+              <mm-clear-button
+                label="clear"
+                ?disabled=${this.disabled}
+                @click=${this._clear}
+              ></mm-clear-button>
+            `
           : ''}
       </div>
     `

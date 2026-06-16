@@ -420,9 +420,10 @@
     title="SearchField"
     description="검색 필드. textfield를 확장하며, leading에 검색 아이콘, trailing에 clear 버튼을 제공합니다."
   >
-    <div style="max-width: 400px">
+    <mm-flex direction="column" gap="3" style="max-width: 400px">
       <mm-searchfield placeholder="궁금한 인물이나 이슈가 있나요?"></mm-searchfield>
-    </div>
+      <mm-searchfield size="small" placeholder="작은 검색 필드"></mm-searchfield>
+    </mm-flex>
   </mm-component-section>
 
   <mm-component-section title="Newsletter" description="TODO">
