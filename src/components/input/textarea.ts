@@ -31,6 +31,22 @@ export class Textarea extends LitElement {
     return 5
   }
 
+  public get isSingleLine() {
+    if (!this._textarea) return true
+
+    const computedStyle = window.getComputedStyle(this._textarea)
+    const fontSize = Number.parseFloat(computedStyle.fontSize)
+    const lineHeight = Number.parseFloat(computedStyle.lineHeight) || fontSize * 1.2
+    const paddingBlock =
+      Number.parseFloat(computedStyle.paddingTop) + Number.parseFloat(computedStyle.paddingBottom)
+
+    return this._textarea.scrollHeight < lineHeight * 2 + paddingBlock
+  }
+
+  public resizeToContent() {
+    this._autoResize()
+  }
+
   protected updated(changedProperties: Map<string, unknown>) {
     if (changedProperties.has('value')) {
       this._autoResize()

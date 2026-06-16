@@ -1,12 +1,9 @@
 import { LitElement, css, html } from 'lit'
-import { customElement, property, query } from 'lit/decorators.js'
-import '../../button/button-group'
+import { customElement, property, query, state } from 'lit/decorators.js'
 import '../../icon-button/icon-button'
 import { inputStyles } from '../../input/input.styles'
 import { Textarea } from '../../input/textarea'
-import '../textfield-action-bar'
 import './attachment-dropdown'
-import './model-selector'
 
 @customElement('mm-prompt-input')
 export class PromptInput extends LitElement {
@@ -17,30 +14,85 @@ export class PromptInput extends LitElement {
   @property({ type: String, attribute: 'submit-label' }) submitLabel = '전송'
   @property({ type: Boolean, attribute: 'is-loading', reflect: true }) isLoading = false
   @property({ type: Boolean, attribute: 'hide-attachment' }) hideAttachment = false
-  @property({ type: Boolean, attribute: 'hide-model-selector' }) hideModelSelector = false
 
   @query('mm-textarea') private _textarea?: Textarea
+
+  @state() private _isSingleLine = true
 
   static styles = [
     inputStyles,
     css`
       :host {
         display: block;
+        padding-inline: var(--space-2);
         background: var(--input-background-color);
-        border: var(--input-border);
-        padding: var(--space-3);
         border-radius: var(--radius);
       }
 
-      .textarea-control {
-        border: none;
+      .chat-input {
+        display: grid;
+        grid-template-areas:
+          'textarea textarea textarea'
+          'actions actions actions';
+        grid-template-columns: auto minmax(0, 1fr) auto;
+        align-items: center;
+      }
+
+      .chat-input.is-single-line {
+        grid-template-areas: 'attach textarea submit';
+        grid-template-rows: var(--input-height);
+      }
+
+      .chat-input.is-single-line .start-actions,
+      .chat-input.is-single-line .end-actions {
+        align-self: center;
+      }
+
+      mm-textarea {
+        grid-area: textarea;
+        --input-color-border-hover: transparent;
+        --input-focus-shadow: none;
+      }
+
+      .actions {
+        display: flex;
+        grid-area: actions;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--space-2);
+        min-width: 0;
+      }
+
+      .chat-input.is-single-line .actions {
+        display: contents;
+      }
+
+      .start-actions {
+        display: flex;
+        grid-area: attach;
+        align-items: center;
+        gap: var(--space-1);
+        min-width: 0;
+      }
+
+      .end-actions {
+        display: flex;
+        grid-area: submit;
+        align-items: center;
+        gap: var(--space-1);
+        justify-self: end;
       }
     `,
   ]
 
+  protected firstUpdated() {
+    this._syncSingleLineState()
+  }
+
   protected updated(changedProperties: Map<string, unknown>) {
     if (changedProperties.has('value')) {
       this._syncTextareaValue()
+      this._queueSingleLineSync()
     }
   }
 
@@ -51,6 +103,7 @@ export class PromptInput extends LitElement {
 
   private _handleTextareaInput(e: CustomEvent<{ value: string }>) {
     this.value = e.detail.value
+    this._queueSingleLineSync()
     this.dispatchEvent(
       new CustomEvent('value-change', {
         detail: { value: this.value },
@@ -60,23 +113,25 @@ export class PromptInput extends LitElement {
     )
   }
 
+  private _queueSingleLineSync() {
+    window.requestAnimationFrame(() => {
+      this._syncSingleLineState()
+    })
+  }
+
+  private _syncSingleLineState() {
+    if (!this._textarea) return
+
+    this._textarea.resizeToContent()
+    this._isSingleLine = this._textarea.isSingleLine
+  }
+
   private _handleTextareaKeydown(e: KeyboardEvent) {
     if (e.isComposing) return
     if (e.key !== 'Enter' || e.shiftKey) return
 
     e.preventDefault()
     this._submit()
-  }
-
-  private _handleModelChange(event: CustomEvent<{ value: string }>) {
-    this.model = event.detail.value
-    this.dispatchEvent(
-      new CustomEvent('model-change', {
-        detail: { value: this.model },
-        bubbles: true,
-        composed: true,
-      }),
-    )
   }
 
   private _submit() {
@@ -94,7 +149,7 @@ export class PromptInput extends LitElement {
   render() {
     return html`
       <form>
-        <mm-flex direction="column" gap="2">
+        <div class=${this._isSingleLine ? 'chat-input is-single-line' : 'chat-input'}>
           <mm-textarea
             .value=${this.value}
             .name=${this.name}
@@ -104,24 +159,17 @@ export class PromptInput extends LitElement {
             @input=${this._handleTextareaInput}
             @keydown=${this._handleTextareaKeydown}
           ></mm-textarea>
-          <mm-textfield-action-bar align="between">
-            <mm-button-group gap="1">
-              <slot name="leading-actions"></slot>
+          <div class="actions">
+            <div class="start-actions">
               ${this.hideAttachment
                 ? ''
                 : html`
                     <mm-attachment-dropdown></mm-attachment-dropdown>
                   `}
-              ${this.hideModelSelector
-                ? ''
-                : html`
-                    <mm-model-selector
-                      .value=${this.model}
-                      @change=${this._handleModelChange}
-                    ></mm-model-selector>
-                  `}
-            </mm-button-group>
-            <mm-button-group gap="1">
+              <slot name="leading-actions"></slot>
+              <!-- <mm-model-selector></mm-model-selector> -->
+            </div>
+            <div class="end-actions">
               <slot name="trailing-actions"></slot>
               <mm-icon-button
                 variant="primary"
@@ -130,9 +178,9 @@ export class PromptInput extends LitElement {
                 ?disabled=${this.isLoading}
                 @click=${this._submit}
               ></mm-icon-button>
-            </mm-button-group>
-          </mm-textfield-action-bar>
-        </mm-flex>
+            </div>
+          </div>
+        </div>
       </form>
     `
   }

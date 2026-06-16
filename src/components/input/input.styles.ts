@@ -8,8 +8,9 @@ export const inputStyles = css`
     --input-radius: var(--radius);
     --input-border: var(--border-transparent);
     --input-color-border-hover: var(--gray400);
+    --input-focus-shadow: var(--status-hover);
     --input-text-color: var(--color-foreground);
-    --input-padding-block: var(--space-2);
+    --input-padding-block: var(--space-3);
     --input-padding-inline: var(--space-4);
     --input-padding: var(--input-padding-inline);
   }
@@ -38,7 +39,7 @@ export const inputStyles = css`
       border-color: var(--input-color-border-hover);
     }
     &:focus-within {
-      box-shadow: var(--status-hover);
+      box-shadow: var(--input-focus-shadow);
     }
 
     &[data-invalid] {

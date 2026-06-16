@@ -2,6 +2,7 @@ import { LitElement, css, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 import '../../dropdown/dropdown'
 import '../../icon-button/icon-button'
+import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
 
 @customElement('mm-attachment-dropdown')
 export class AttachmentDropdown extends LitElement {
@@ -29,7 +30,7 @@ export class AttachmentDropdown extends LitElement {
       <mm-dropdown>
         <mm-icon-button
           slot="trigger"
-          icon="media-image-plus"
+          icon=${ICON_NAMES.ADD}
           aria-label="이미지 첨부"
         ></mm-icon-button>
         <option value="upload" icon="import">이미지 업로드</option>
