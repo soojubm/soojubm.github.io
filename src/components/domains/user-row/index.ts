@@ -8,11 +8,11 @@ import '../../list-row/list-row'
  */
 @customElement('mm-user-row')
 export class UserRow extends LitElement {
+  @property({ type: String }) size = 'medium'
   @property({ type: String }) label = ''
   @property({ type: String }) description = ''
   @property({ type: String }) icon = ''
   @property({ type: String, attribute: 'avatar-src' }) avatarSrc = ''
-  @property({ type: String, attribute: 'avatar-size' }) avatarSize = 'medium'
   @property({ type: String, attribute: 'avatar-variant' }) avatarVariant = 'tertiary'
 
   static styles = [
@@ -26,11 +26,11 @@ export class UserRow extends LitElement {
   render() {
     return html`
       <mm-list-row
+        size=${this.size}
         label=${this.label}
         description=${this.description}
         icon=${this.icon}
         avatar-src=${this.avatarSrc}
-        avatar-size=${this.avatarSize}
         avatar-variant=${this.avatarVariant}
       >
         <slot></slot>

@@ -26,12 +26,12 @@
           icon="group"
           label="Frontend Group"
           description="프론트엔드 개발자 모임"
-          avatar-size="large"
+          size="large"
         ></mm-menu-item-action>
         <mm-menu-item-action
           label="Personal License"
           description="1 user"
-          avatar-size="large"
+          size="large"
         ></mm-menu-item-action>
         <mm-menu-item-action
           size="large"
@@ -49,15 +49,12 @@
     <mm-prop name="description" type="string" optional></mm-prop>
     <mm-prop name="icon" type="string" optional></mm-prop>
     <mm-prop name="avatar-src" type="string" optional></mm-prop>
-    <mm-prop name="avatar-size" type="string" optional></mm-prop>
     <mm-prop name="tone" type="'danger' | string" optional></mm-prop>
     <mm-prop name="has-trailing-arrow" type="boolean" optional></mm-prop>
     <mm-prop name="disabled" type="boolean" optional></mm-prop>
   </mm-component-props>
 
   <mm-component-tokens>
-    <mm-token name="--menuitem-size" default="var(--size-medium)"></mm-token>
-    <mm-token name="--menuitem-gap" default="var(--space-2)"></mm-token>
     <mm-token name="--menuitem-radius" default="var(--radius)"></mm-token>
     <mm-token name="--menuitem-color-hover" default="var(--color-background-subtle)"></mm-token>
     <mm-token name="--menuitem-color-danger" default="#d93025"></mm-token>

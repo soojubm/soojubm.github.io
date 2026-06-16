@@ -2,13 +2,21 @@ import { css } from 'lit'
 
 export const listRowStyles = css`
   :host {
+    --list-row-size: var(--size-medium);
+    --list-row-gap: var(--space-2);
     display: block;
+  }
+
+  :host([size='large']) {
+    --list-row-size: var(--size-large);
+    --list-row-gap: var(--space-3);
   }
 
   .list-row {
     display: flex;
     align-items: center;
-    gap: var(--space-2);
+    min-height: var(--list-row-size);
+    gap: var(--list-row-gap);
   }
 
   .list-row-leading,
@@ -29,9 +37,13 @@ export const listRowStyles = css`
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: var(--size-medium);
-    height: var(--size-medium);
-    font-size: 1.25rem;
+    width: var(--list-row-size);
+    height: var(--list-row-size);
+    font-size: var(--font-size-18);
     line-height: 1;
+  }
+
+  :host([size='large']) .list-row-emoji {
+    font-size: var(--font-size-24);
   }
 `

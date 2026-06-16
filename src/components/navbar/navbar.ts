@@ -153,7 +153,7 @@ export class Navbar extends LitElement {
                   phone="010 3121 7045"
                   description="UI Designer"
                   avatar-src="/src/images/soojubm.png"
-                  avatar-size="huge"
+                  size="large"
                   avatar-variant="secondary"
                   tag-label="접속 중"
                   tag-variant="primary"

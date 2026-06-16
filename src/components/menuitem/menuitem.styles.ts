@@ -2,21 +2,15 @@ import { css } from 'lit'
 
 export const menuItemStyles = css`
   :host {
-    --menuitem-size: var(--size-medium);
     --menuitem-radius: var(--radius);
     --menuitem-color-hover: var(--color-background-subtle);
     --menuitem-color-danger: var(--color-danger);
-  }
-
-  :host([size='large']) {
-    --menuitem-size: var(--size-large);
   }
 
   .item {
     display: flex;
     align-items: center;
     width: 100%;
-    min-height: var(--menuitem-size);
     border-radius: var(--menuitem-radius);
     color: inherit;
     text-decoration: none;

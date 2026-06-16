@@ -7,13 +7,13 @@ import { renderMenuItemContent } from '../menuitem.utils'
 
 @customElement('mm-menu-item-link')
 export class MenuItemLink extends LitElement {
+  @property({ type: String, reflect: true }) size = 'medium'
   @property({ type: String }) tone = ''
   @property({ type: String }) label = ''
   @property({ type: String }) description = ''
   @property({ type: String }) icon = ''
   @property({ type: String }) emoji = ''
   @property({ type: String, attribute: 'avatar-src' }) avatarSrc = ''
-  @property({ type: String, attribute: 'avatar-size' }) avatarSize = 'medium'
   @property({ type: String, attribute: 'avatar-variant' }) avatarVariant = 'tertiary'
   @property({ type: Boolean, reflect: true }) disabled = false
   @property({ type: String }) href = ''

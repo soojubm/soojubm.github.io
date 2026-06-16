@@ -15,7 +15,6 @@ export class MenuItemAction extends LitElement {
   @property({ type: String }) icon = ''
   @property({ type: String }) emoji = ''
   @property({ type: String, attribute: 'avatar-src' }) avatarSrc = ''
-  @property({ type: String, attribute: 'avatar-size' }) avatarSize = 'medium'
   @property({ type: String, attribute: 'avatar-variant' }) avatarVariant = 'tertiary'
   @property({ type: Boolean, attribute: 'has-trailing-arrow' }) hasTrailingArrow = false
   @property({ type: Boolean, reflect: true }) disabled = false

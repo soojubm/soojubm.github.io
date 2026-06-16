@@ -11,13 +11,13 @@ import '../avatar/avatar'
  */
 @customElement('mm-list-row')
 export class ListRow extends LitElement {
+  @property({ type: String, reflect: true }) size = 'medium'
   @property({ type: String }) label = ''
   @property({ type: String }) description = ''
 
   @property({ type: String }) icon = ''
   @property({ type: String }) emoji = ''
   @property({ type: String, attribute: 'avatar-src' }) avatarSrc = ''
-  @property({ type: String, attribute: 'avatar-size' }) avatarSize = 'medium'
   @property({ type: String, attribute: 'avatar-variant' }) avatarVariant = 'tertiary'
 
   static styles = [listRowStyles]
@@ -49,7 +49,7 @@ export class ListRow extends LitElement {
                     `
                   : html`
                       <mm-avatar
-                        size=${this.avatarSize}
+                        size=${this.size}
                         variant=${this.avatarVariant}
                         icon=${ifDefined(this.icon || undefined)}
                         src=${ifDefined(this.avatarSrc || undefined)}
@@ -61,7 +61,7 @@ export class ListRow extends LitElement {
         <span class="list-row-content">
           ${this.label
             ? html`
-                <mm-text size="14">${this.label}</mm-text>
+                <mm-text size=${this.size === 'large' ? '18' : '14'}>${this.label}</mm-text>
               `
             : html`
                 <slot></slot>
@@ -69,7 +69,7 @@ export class ListRow extends LitElement {
           ${this.description
             ? html`
                 <mm-text
-                  size="14"
+                  size=${this.size === 'large' ? '14' : '12'}
                   color="var(--color-foreground-light)"
                   style="margin-top: var(--space-1-minus)"
                 >
