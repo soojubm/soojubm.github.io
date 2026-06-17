@@ -37,6 +37,10 @@ export const menuItemStyles = css`
     }
   }
 
+  :host([aria-current='page']) .item[data-interactive] {
+    background-color: var(--menuitem-color-hover);
+  }
+
   mm-list-row {
     flex: 1;
   }

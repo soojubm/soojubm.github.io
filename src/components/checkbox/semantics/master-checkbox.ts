@@ -94,7 +94,7 @@ export class MasterCheckbox extends LitElement {
           <label for=${this._inputId}>
             <span class="indicator"></span>
             <slot>
-              <mm-text size="14" weight="bold">모두 동의합니다 (선택동의 포함)</mm-text>
+              <mm-paragraph weight="bold">모두 동의합니다 (선택동의 포함)</mm-paragraph>
             </slot>
           </label>
         </div>

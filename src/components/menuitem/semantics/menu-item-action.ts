@@ -4,8 +4,6 @@ import { ifDefined } from 'lit/directives/if-defined.js'
 import { menuItemStyles } from '../menuitem.styles'
 import { renderMenuItemContent } from '../menuitem.utils'
 
-// has-trailing-arrow vs link에서 external
-
 @customElement('mm-menu-item-action')
 export class MenuItemAction extends LitElement {
   @property({ type: String, reflect: true }) size = 'medium'
@@ -16,7 +14,6 @@ export class MenuItemAction extends LitElement {
   @property({ type: String }) emoji = ''
   @property({ type: String, attribute: 'avatar-src' }) avatarSrc = ''
   @property({ type: String, attribute: 'avatar-variant' }) avatarVariant = 'tertiary'
-  @property({ type: Boolean, attribute: 'has-trailing-arrow' }) hasTrailingArrow = false
   @property({ type: Boolean, reflect: true }) disabled = false
   @property({ type: String, attribute: 'role' }) override role = ''
 
@@ -24,16 +21,6 @@ export class MenuItemAction extends LitElement {
 
   override updated() {
     if (this.hasAttribute('role')) this.removeAttribute('role')
-  }
-
-  private renderAction() {
-    if (!this.hasTrailingArrow) return html``
-
-    return html`
-      <span slot="trailing">
-        <mm-icon name="arrow-right" size="small"></mm-icon>
-      </span>
-    `
   }
 
   render() {
@@ -46,7 +33,7 @@ export class MenuItemAction extends LitElement {
         data-interactive
         aria-disabled=${ifDefined(this.disabled ? 'true' : undefined)}
       >
-        ${renderMenuItemContent(this, this.renderAction())}
+        ${renderMenuItemContent(this, html``)}
       </button>
     `
   }

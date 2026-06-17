@@ -123,12 +123,12 @@ export class FileUploadButton extends LitElement {
       </div>
 
       <div class="attachments">
-        <mm-text size="14" color="var(--color-foreground-light)">첨부한 파일</mm-text>
-        <mm-text size="14" role="status">
+        <mm-paragraph color="var(--color-foreground-light)">첨부한 파일</mm-paragraph>
+        <mm-paragraph role="status">
           ${this.files.length
             ? `${this.files.length} file${this.files.length > 1 ? 's' : ''} selected.`
             : 'No files currently selected for upload.'}
-        </mm-text>
+        </mm-paragraph>
 
         ${this.files.length
           ? html`
@@ -142,7 +142,7 @@ export class FileUploadButton extends LitElement {
                           `
                         : ''}
                       <figcaption>
-                        <mm-text size="14" weight="bold">${file.name}</mm-text>
+                        <mm-paragraph weight="bold">${file.name}</mm-paragraph>
                         <mm-text size="12">${this.formatFileSize(file.size)}</mm-text>
                       </figcaption>
                       <div class="remove">

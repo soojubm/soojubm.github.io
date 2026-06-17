@@ -33,7 +33,7 @@ class UserSnippet extends LitElement {
           <mm-paragraph size="large" weight="bold">${this.name}</mm-paragraph>
           ${this.description
             ? html`
-                <mm-text size="14" style="margin-top:-.125rem">${this.description}</mm-text>
+                <mm-paragraph style="margin-top:-.125rem">${this.description}</mm-paragraph>
               `
             : nothing}
           <mm-text size="12">${this.email}</mm-text>

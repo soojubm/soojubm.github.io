@@ -56,9 +56,24 @@
     </mm-sheet>
   </mm-component-example>
 
+  <mm-component-props>
+    <mm-prop name="open" type="boolean"></mm-prop>
+    <mm-prop
+      name="variant"
+      type="'center' | 'bottom' | 'left' | 'right' | 'anchor' = 'center'"
+    ></mm-prop>
+    <mm-prop
+      name="width"
+      type="'small' | 'medium' | 'large' | 'full' = 'medium'"
+      optional
+    ></mm-prop>
+    <mm-prop name="height" type="string" optional></mm-prop>
+    <mm-prop name="sheetclose" type="CustomEvent" kind="event"></mm-prop>
+  </mm-component-props>
+
   <mm-component-anatomy
     parts='[
-      "오버레이 — 시트 뒤 반투명 배경. anchor variant에서만 외부 클릭으로 닫힙니다.",
+      "Backdrop — 시트 뒤 반투명 배경. anchor variant에서만 외부 클릭으로 닫힙니다.",
       "시트 컨테이너 — flex column 박스. height prop으로 높이 고정, max-height: 90vh 기본값.",
       "mm-sheet-header — 타이틀과 닫기 버튼. sheetclose 이벤트를 발생시킵니다.",
       "mm-sheet-body — 스크롤 가능한 콘텐츠 영역. flex: 1 1 auto로 header·footer를 제외한 나머지를 채웁니다.",
@@ -67,7 +82,7 @@
   >
     <div class="anatomy">
       <div class="anatomy-backdrop">
-        <span class="anatomy-label">Overlay</span>
+        <span class="anatomy-label">Backdrop</span>
         <div class="anatomy-sheet">
           <span class="anatomy-label">mm-sheet</span>
           <div class="anatomy-sheet-header">
@@ -93,28 +108,28 @@
 
   <mm-component-guide>
     <mm-paragraph size="large">Modal vs Non-modal</mm-paragraph>
-    <mm-text size="14">
+    <mm-paragraph>
       Presentation 레이어는 사용자의 주의를 얼마나 차단하느냐에 따라 두 가지로 나뉜다. 이 기준은
       시각적 형태(Sheet, Dialog 등)가 아니라
       <strong>배경과의 상호작용 허용 여부</strong>
       로 결정된다.
-    </mm-text>
+    </mm-paragraph>
 
     <mm-text size="16">Modal</mm-text>
-    <mm-text size="14">
+    <mm-paragraph>
       배경과의 상호작용을 차단하고 사용자의 즉각적인 응답을 요구한다. Backdrop(dim)이 뒤를 덮고,
       포커스는 레이어 내부에 갇힌다(focus trap). 닫기는 명시적인 버튼 액션으로만 허용하는 것이
       원칙이며, 배경 클릭으로 닫는 기능은 중요도가 낮은 작업에서만 예외적으로 허용한다.
-    </mm-text>
+    </mm-paragraph>
     <mm-text-list
       texts='["배경 클릭·스크롤 불가.", "포커스 트랩 — Tab 키가 레이어 내부를 순환한다.", "ESC 키 닫기는 데이터 손실 위험이 없는 경우에만 허용.", "aria-modal=\"true\", role=\"dialog\" 명시.", "용례: 삭제 확인, 중요 정보 입력, 오류 처리, 결제 흐름."]'
     ></mm-text-list>
 
     <mm-text size="16">Non-modal</mm-text>
-    <mm-text size="14">
+    <mm-paragraph>
       배경과의 상호작용을 허용한다. 현재 작업 맥락을 유지하면서 부가 정보나 서브태스크를 제공할 때
       사용한다. 포커스 트랩이 없고, 외부 클릭·ESC로 언제든 닫을 수 있다.
-    </mm-text>
+    </mm-paragraph>
     <mm-text-list
       texts='["배경 클릭·스크롤 가능.", "포커스 트랩 없음 — Tab 키가 페이지 전체를 순환한다.", "외부 클릭 또는 ESC로 닫힌다.", "용례: Dropdown, Tooltip, Toast, 사이드 패널, Anchor popover."]'
     ></mm-text-list>
@@ -163,18 +178,8 @@
   </mm-component-section>
 
   <mm-component-section
-    title="mm-sheet-footer"
-    description="액션 버튼 영역. primary-label / secondary-label prop으로 버튼을 구성합니다."
-  >
-    <mm-flex direction="column" gap="3">
-      <mm-sheet-footer primary-label="확인" secondary-label="취소"></mm-sheet-footer>
-      <mm-sheet-footer primary-label="확인"></mm-sheet-footer>
-    </mm-flex>
-  </mm-component-section>
-
-  <mm-component-section
     title="mm-backdrop"
-    description="레이어 뒤에 표시되는 반투명 오버레이. open prop으로 표시하며 --backdrop-color로 색상을 재정의할 수 있습니다."
+    description="레이어 뒤에 표시되는 반투명 Backdrop. open prop으로 표시하며 --backdrop-color로 색상을 재정의할 수 있습니다."
   >
     <div style="position: relative; height: 120px; border-radius: 12px; overflow: hidden">
       <mm-paragraph>배경 콘텐츠</mm-paragraph>
@@ -184,21 +189,6 @@
       ></mm-backdrop>
     </div>
   </mm-component-section>
-
-  <mm-component-props>
-    <mm-prop name="open" type="boolean"></mm-prop>
-    <mm-prop
-      name="variant"
-      type="'center' | 'bottom' | 'left' | 'right' | 'anchor' = 'center'"
-    ></mm-prop>
-    <mm-prop
-      name="width"
-      type="'small' | 'medium' | 'large' | 'full' = 'medium'"
-      optional
-    ></mm-prop>
-    <mm-prop name="height" type="string" optional></mm-prop>
-    <mm-prop name="sheetclose" type="CustomEvent" kind="event"></mm-prop>
-  </mm-component-props>
 
   <mm-icon-button icon="filter" data-open-sheet="#filter-sheet"></mm-icon-button>
   <mm-sheet variant="bottom" id="filter-sheet">

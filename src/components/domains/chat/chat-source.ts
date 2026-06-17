@@ -230,7 +230,7 @@ export class ChatSourceGroup extends LitElement {
                 : ''}
               ${src.title
                 ? html`
-                    <mm-text as="span" size="14" weight="bold">${src.title}</mm-text>
+                    <mm-paragraph weight="bold">${src.title}</mm-paragraph>
                   `
                 : ''}
               ${src.description

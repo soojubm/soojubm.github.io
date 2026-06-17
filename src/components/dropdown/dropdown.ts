@@ -1,7 +1,7 @@
 import { LitElement, css, html, nothing, type PropertyValues } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 import { resetStyles } from '../../stylesheets/shared/reset.styles'
-import { sheetElementStyles } from '../../stylesheets/shared/sheet.styles'
+import { sheetElementStyles } from '../sheet/sheet.styles'
 import { ICON_NAMES } from '../icon-button/semantics/icon-names'
 import '../menuitem/semantics/menu-item-action'
 import '../menuitem/semantics/menu-item-checkbox'

@@ -1,6 +1,6 @@
 import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { sheetStyles } from '../../stylesheets/shared/sheet.styles'
+import { sheetStyles } from './sheet.styles'
 export type SheetVariant = 'center' | 'bottom' | 'left' | 'right' | 'anchor' | 'inline'
 export type SheetWidth = 'small' | 'medium' | 'large' | 'full'
 

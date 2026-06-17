@@ -17,10 +17,15 @@ export class MenuItemLink extends LitElement {
   @property({ type: String, attribute: 'avatar-variant' }) avatarVariant = 'tertiary'
   @property({ type: Boolean, reflect: true }) disabled = false
   @property({ type: String }) href = ''
+  @property({ type: String }) target = '_blank'
+  @property({ type: Boolean, attribute: 'hide-trailing' }) hideTrailing = false
+  @property({ type: String, attribute: 'aria-current', reflect: true }) ariaCurrent = ''
 
   static styles = [menuItemStyles]
 
   private renderAction() {
+    if (this.hideTrailing) return html``
+
     return html`
       <span slot="trailing">
         <mm-icon name=${ICON_NAMES.SHARE} size="small"></mm-icon>
@@ -33,11 +38,14 @@ export class MenuItemLink extends LitElement {
       <a
         href=${ifDefined(this.disabled ? undefined : this.href)}
         class="item"
+        part="item"
         role="menuitem"
         data-tone=${ifDefined(this.tone || undefined)}
         data-interactive
         aria-disabled=${ifDefined(this.disabled ? 'true' : undefined)}
-        target="_blank"
+        aria-current=${ifDefined(this.ariaCurrent || undefined)}
+        target=${ifDefined(this.target || undefined)}
+        rel=${ifDefined(this.target === '_blank' ? 'noopener noreferrer' : undefined)}
       >
         ${renderMenuItemContent(this, this.renderAction())}
       </a>

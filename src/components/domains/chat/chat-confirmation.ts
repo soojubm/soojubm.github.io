@@ -68,13 +68,13 @@ export class ChatConfirmation extends LitElement {
 
     return html`
       <mm-notice heading="승인 요청">
-        <mm-text class="message" size="14">
+        <mm-paragraph class="message">
           ${this.message
             ? this.message
             : html`
                 <slot></slot>
               `}
-        </mm-text>
+        </mm-paragraph>
         <div class="actions">
           <mm-button variant="tertiary" size="medium" @click=${this._reject}>
             ${this.rejectLabel}

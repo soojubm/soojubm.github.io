@@ -20,24 +20,18 @@
           icon="app-window"
           label="수줍이 앱"
           description="앱에서 게시물을 엽니다."
-          has-trailing-arrow
         ></mm-menu-item-action>
-        <mm-menu-item-action
-          icon="group"
-          label="Frontend Group"
-          description="프론트엔드 개발자 모임"
-          size="large"
-        ></mm-menu-item-action>
+        <mm-separator></mm-separator>
         <mm-menu-item-action
           label="Personal License"
           description="1 user"
           size="large"
         ></mm-menu-item-action>
         <mm-menu-item-action
+          icon="group"
+          label="Frontend Group"
+          description="프론트엔드 개발자 모임"
           size="large"
-          icon="settings"
-          label="큰 액션"
-          description="바텀 시트처럼 넓은 터치 영역이 필요할 때 사용합니다."
         ></mm-menu-item-action>
       </mm-menu-item-group>
     </mm-flex>
@@ -50,7 +44,6 @@
     <mm-prop name="icon" type="string" optional></mm-prop>
     <mm-prop name="avatar-src" type="string" optional></mm-prop>
     <mm-prop name="tone" type="'danger' | string" optional></mm-prop>
-    <mm-prop name="has-trailing-arrow" type="boolean" optional></mm-prop>
     <mm-prop name="disabled" type="boolean" optional></mm-prop>
   </mm-component-props>
 

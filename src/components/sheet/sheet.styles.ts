@@ -1,5 +1,5 @@
 import { css } from 'lit'
-import { MEDIA } from './breakpoints'
+import { MEDIA } from '../../stylesheets/shared/breakpoints'
 
 export const sheetElementStyles = css`
   .sheet {

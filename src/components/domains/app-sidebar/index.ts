@@ -25,10 +25,10 @@ export class Sidebar extends LitElement {
 
   private highlightCurrentLink() {
     const currentPageId = window.location.pathname.split('/').pop()?.replace('.html', '') || 'index'
-    this.querySelectorAll<HTMLElement>('.sidebar-menu a').forEach(a => {
-      const href = a.getAttribute('href')?.replace('.html', '') || ''
+    this.querySelectorAll<HTMLElement>('.sidebar-menu mm-menu-item-link').forEach(link => {
+      const href = link.getAttribute('href')?.replace('.html', '') || ''
       if (href && href === currentPageId) {
-        a.setAttribute('aria-current', 'page')
+        link.setAttribute('aria-current', 'page')
       }
     })
   }
@@ -37,8 +37,8 @@ export class Sidebar extends LitElement {
     const saved = localStorage.getItem('sidebarScroll')
     if (saved) this.scrollTop = Number(saved)
 
-    this.querySelectorAll<HTMLElement>('.sidebar-menu a').forEach(a => {
-      a.addEventListener('click', () => {
+    this.querySelectorAll<HTMLElement>('.sidebar-menu mm-menu-item-link').forEach(link => {
+      link.addEventListener('click', () => {
         localStorage.setItem('sidebarScroll', String(this.scrollTop))
       })
     })
@@ -76,19 +76,20 @@ export class Sidebar extends LitElement {
                   class="is-open"
                 >
                   <mm-avatar slot="avatar" variant="tertiary" icon="${node.icon}"></mm-avatar>
-                  <mm-text size="14">${node.title}</mm-text>
+                  <mm-paragraph>${node.title}</mm-paragraph>
                   <div style="margin-left: auto"><mm-icon name=${ICON_NAMES.EXPAND}></mm-icon></div>
                 </button>
 
                 <menu id="${node.id}-menu" aria-labelledby="${node.id}-btn">
                   ${node?.items?.map(
                     item => html`
-                      <a
+                      <mm-menu-item-link
                         href="${item.id}.html"
-                        class=${currentPageId === item.id ? 'is-active' : nothing}
-                      >
-                        ${item.name} ${item.badge ? item.badge : ''}
-                      </a>
+                        label="${item.name}${item.badge ? ` ${item.badge}` : ''}"
+                        target="_self"
+                        hide-trailing
+                        aria-current=${currentPageId === item.id ? 'page' : nothing}
+                      ></mm-menu-item-link>
                     `,
                   )}
                 </menu>

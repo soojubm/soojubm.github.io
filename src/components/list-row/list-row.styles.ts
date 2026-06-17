@@ -2,14 +2,13 @@ import { css } from 'lit'
 
 export const listRowStyles = css`
   :host {
+    display: block;
     --list-row-size: var(--size-medium);
     --list-row-gap: var(--space-2);
-    display: block;
   }
 
   :host([size='large']) {
     --list-row-size: var(--size-large);
-    --list-row-gap: var(--space-3);
   }
 
   .list-row {

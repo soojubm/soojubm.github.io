@@ -67,17 +67,17 @@ export class Footer extends LitElement {
 /*
         <nav>
           <mm-flex gap="4rem">
-            <mm-text hidden aria-hidden="true" size="14">사이트맵</mm-text>
+            <mm-paragraph hidden aria-hidden="true">사이트맵</mm-paragraph>
             <mm-flex direction="column">
               <mm-paragraph size="large">사이트맵 컴포넌트</mm-paragraph>
-              <mm-text href="#" size="14" color="var(--color-foreground-light)">샘플</mm-text>
-              <mm-text href="#" size="14" color="var(--color-foreground-light)">사이트맵</mm-text>
-              <mm-text href="#" size="14" color="var(--color-foreground-light)">
+              <mm-paragraph href="#" color="var(--color-foreground-light)">샘플</mm-paragraph>
+              <mm-paragraph href="#" color="var(--color-foreground-light)">사이트맵</mm-paragraph>
+              <mm-paragraph href="#" color="var(--color-foreground-light)">
                 사이트맵 샘플
-              </mm-text>
-              <mm-text href="#" size="14" color="var(--color-foreground-light)">
+              </mm-paragraph>
+              <mm-paragraph href="#" color="var(--color-foreground-light)">
                 사이트맵 컴포넌트 샘플
-              </mm-text>
+              </mm-paragraph>
             </mm-flex>
             <mm-flex direction="column">
               <mm-paragraph size="large">꺼이꺼이</mm-paragraph>

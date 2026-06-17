@@ -141,7 +141,7 @@ export class PortfolioItem extends LitElement {
             : nothing}
           ${this.description
             ? html`
-                <mm-text size="14">${this.description}</mm-text>
+                <mm-paragraph>${this.description}</mm-paragraph>
               `
             : nothing}
           ${this.date

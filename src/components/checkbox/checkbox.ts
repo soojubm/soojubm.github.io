@@ -78,9 +78,9 @@ export class Checkbox extends LitElement {
 
         <label for=${_inputId} @click=${this._onLabelClick}>
           <span class="indicator"></span>
-          <mm-text size="14">
+          <mm-paragraph>
             <slot></slot>
-          </mm-text>
+          </mm-paragraph>
         </label>
       </div>
     `

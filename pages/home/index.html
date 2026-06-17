@@ -401,17 +401,17 @@
       <div>
         <mm-text as="h2" size="24" weight="bold">Alignment</mm-text>
 
-        <mm-text as="p" size="14">
+        <mm-paragraph>
           기본 본문은 왼끝 맞추기(left align)를 사용합니다. 오른끝 흘리기(ragged right)를 유지하여
           자연스러운 읽기 흐름과 가독성을 제공합니다.
-        </mm-text>
+        </mm-paragraph>
 
-        <mm-text as="p" size="14">
+        <mm-paragraph>
           사용자의 주목이 필요한 경우 콘텐츠 모듈을 가운데 정렬합니다. 이는 상태 변화, 결과, 맥락
           전환 등의 의미를 전달하기 위한 표현입니다. 고민 지점: 상위 레이어를 생성하는 팝업 자체가
           이미 높은 주목도를 가진다. 여기에서 콘텐츠 모듈을 가운데 정렬하는 것은 컨텐츠 정렬의
           일관성을 해치지 않는지?
-        </mm-text>
+        </mm-paragraph>
 
         <mm-text-list texts='["Result component", "Empty state", "Success message"]'></mm-text-list>
       </div>
@@ -437,16 +437,16 @@
       <div>
         <mm-text as="h2" size="24" weight="bold">Emphasis</mm-text>
 
-        <mm-text as="p" size="14">
+        <mm-paragraph>
           underline 및 primary color는 인터랙션 가능한 요소에만 사용합니다.
-        </mm-text>
+        </mm-paragraph>
 
-        <mm-text as="p" size="14">
+        <mm-paragraph>
           텍스트 강조를 위해 clickable affordance를 재사용하지 않습니다.
-        </mm-text>
+        </mm-paragraph>
 
         <div>
-          <mm-paragraph as="h3" size="large" weight="bold">Incorrect Usage</mm-paragraph>
+          <mm-paragraph size="large" weight="bold">Incorrect Usage</mm-paragraph>
 
           <mm-text-list
             texts='["본문 강조를 위한 underline", "강조 문장을 primary color로 처리"]'
@@ -599,17 +599,17 @@
     <mm-surface variant="tinted" style="margin: var(--space-4) 0 var(--space-8)">
       <mm-flex direction="column" gap="2">
         <mm-text size="12" color="var(--color-foreground-light)">레이어 판단 기준</mm-text>
-        <mm-text size="14">
+        <mm-paragraph>
           <strong>다른 도메인이나 서비스에서도 쓸 수 있는가?</strong>
           → Semantic. 이 서비스에만 존재하는 개념인가? → Concrete.
-        </mm-text>
-        <mm-text size="14" color="var(--color-foreground-light)">
+        </mm-paragraph>
+        <mm-paragraph color="var(--color-foreground-light)">
           폴더 구조가 이 경계를 구조적으로 강제한다.
           <code>semantics/</code>
           = 도메인 독립,
           <code>domains/</code>
           = 도메인 종속.
-        </mm-text>
+        </mm-paragraph>
       </mm-flex>
     </mm-surface>
 
@@ -617,23 +617,19 @@
       <mm-flex direction="column">
         <mm-text size="12" color="var(--color-foreground-light)">LAYER 1</mm-text>
         <mm-paragraph size="large" weight="bold">Abstract</mm-paragraph>
-        <mm-text size="14">
+        <mm-paragraph>
           HTML 요소 수준의 가장 작은 단위. 의도 없이 props로만 변형되는 범용 빌딩 블록.
-        </mm-text>
+        </mm-paragraph>
         <div>
-          <mm-text size="14">
+          <mm-paragraph>
             <code>mm-button</code>
             <code>mm-text</code>
             <code>mm-tag</code>
             <code>mm-icon-button</code>
-          </mm-text>
-          <mm-text
-            size="14"
-            color="var(--color-foreground-light)"
-            style="margin-top: var(--space-1)"
-          >
+          </mm-paragraph>
+          <mm-paragraph color="var(--color-foreground-light)" style="margin-top: var(--space-1)">
             src/components/{name}/
-          </mm-text>
+          </mm-paragraph>
         </div>
       </mm-flex>
 
@@ -645,24 +641,20 @@
           <mm-text size="12" color="var(--color-foreground-light)">LAYER 2</mm-text>
           <mm-paragraph size="large" weight="bold">Semantic</mm-paragraph>
         </div>
-        <mm-text size="14">
+        <mm-paragraph>
           의미가 있고 도메인에 독립적인 단위. 어떤 서비스에서도 쓸 수 있는 개념. variant 대신 이름이
           용도를 표현.
-        </mm-text>
+        </mm-paragraph>
         <div>
-          <mm-text size="14">
+          <mm-paragraph>
             <code>mm-read-more-button</code>
             <code>mm-close-button</code>
             <code>mm-caption</code>
             <code>mm-accent-tag</code>
-          </mm-text>
-          <mm-text
-            size="14"
-            color="var(--color-foreground-light)"
-            style="margin-top: var(--space-1)"
-          >
+          </mm-paragraph>
+          <mm-paragraph color="var(--color-foreground-light)" style="margin-top: var(--space-1)">
             src/components/{name}/semantics/
-          </mm-text>
+          </mm-paragraph>
         </div>
       </mm-flex>
 
@@ -674,61 +666,57 @@
           <mm-text size="12" color="var(--color-foreground-light)">LAYER 3</mm-text>
           <mm-paragraph size="large" weight="bold">Concrete</mm-paragraph>
         </div>
-        <mm-text size="14">
+        <mm-paragraph>
           특정 도메인·서비스에 종속된 조합. 다른 서비스에서 그대로 가져다 쓸 수 없는 것.
-        </mm-text>
+        </mm-paragraph>
         <div>
-          <mm-text size="14">
+          <mm-paragraph>
             <code>mm-comment-input</code>
             <code>mm-user-row</code>
             <code>mm-prompt-input</code>
-          </mm-text>
-          <mm-text
-            size="14"
-            color="var(--color-foreground-light)"
-            style="margin-top: var(--space-1)"
-          >
+          </mm-paragraph>
+          <mm-paragraph color="var(--color-foreground-light)" style="margin-top: var(--space-1)">
             src/components/domains/
-          </mm-text>
+          </mm-paragraph>
         </div>
       </mm-flex>
     </div>
 
     <mm-surface>
       <mm-flex direction="column" gap="3">
-        <mm-paragraph as="h2" size="large" weight="bold">이 방법론의 한계</mm-paragraph>
+        <mm-paragraph size="large" weight="bold">이 방법론의 한계</mm-paragraph>
 
         <mm-flex direction="column" gap="2">
-          <mm-text size="14" weight="bold">
+          <mm-paragraph weight="bold">
             "다른 서비스에서 쓸 수 있는가"의 판단은 여전히 주관적이다
-          </mm-text>
-          <mm-text size="14">
+          </mm-paragraph>
+          <mm-paragraph>
             <code>mm-search-suggestions</code>
             는 어떤 서비스에나 있는 검색 UI다 — Semantic인가? 아니면 이 서비스의 검색 동작에
             종속된다 — Concrete인가? 기준이 명확해도 경계 사례에서는 판단이 갈린다. 폴더 구조가
             강제할 수 있는 건 배치 이후다. 배치 전 판단은 사람이 한다.
-          </mm-text>
+          </mm-paragraph>
         </mm-flex>
 
         <mm-flex direction="column" gap="2">
-          <mm-text size="14" weight="bold">
+          <mm-paragraph weight="bold">
             Concrete가 도메인을 넘어 재사용되면 레이어가 흔들린다
-          </mm-text>
-          <mm-text size="14">
+          </mm-paragraph>
+          <mm-paragraph>
             <code>mm-comment-input</code>
             이 댓글과 DM 두 화면에서 모두 쓰인다면? 처음엔 도메인 특화였다가 점점 범용이 된다.
             Concrete를 Semantic으로 격상하는 시점과 기준이 없으면 domains/ 안에 사실상 Semantic인
             컴포넌트가 쌓이기 시작한다.
-          </mm-text>
+          </mm-paragraph>
         </mm-flex>
 
         <mm-flex direction="column" gap="2">
-          <mm-text size="14" weight="bold">Semantic 레이어가 팽창하기 쉽다</mm-text>
-          <mm-text size="14">
+          <mm-paragraph weight="bold">Semantic 레이어가 팽창하기 쉽다</mm-paragraph>
+          <mm-paragraph>
             "도메인 무관"의 기준이 느슨하면 모든 컴포넌트가 Semantic 후보가 된다. 작은 변형마다
             새로운 Semantic 컴포넌트가 추가되면 semantics/ 디렉토리가 비대해지고, Abstract
             컴포넌트의 variant로 충분히 해결할 수 있는 것들이 별도 클래스로 분산된다.
-          </mm-text>
+          </mm-paragraph>
         </mm-flex>
       </mm-flex>
     </mm-surface>

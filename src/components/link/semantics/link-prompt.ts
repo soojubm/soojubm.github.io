@@ -30,7 +30,7 @@ export class LinkPrompt extends LitElement {
               <mm-icon name=${this.icon}></mm-icon>
             `
           : nothing}
-        <mm-text size="14">${this.message}</mm-text>
+        <mm-paragraph>${this.message}</mm-paragraph>
         <mm-link href=${this.href} ?external=${this.external}>${this.actionLabel}</mm-link>
       </span>
     `
