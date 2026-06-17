@@ -17,12 +17,23 @@ class SearchField extends LitElement {
       :host([size='small']) {
         --input-height: var(--size-medium);
       }
+
+      mm-clear-button {
+        opacity: 1;
+      }
+
+      mm-clear-button[hidden-button] {
+        opacity: 0;
+        pointer-events: none;
+      }
     `,
   ]
 
   private inputId = `input-${crypto?.randomUUID?.() || Math.random().toString(36).slice(2)}`
 
   render() {
+    const hasValue = this.value.length > 0
+
     return html`
       <div class="textfield-control">
         <mm-icon name=${ICON_NAMES.SEARCH}></mm-icon>
@@ -34,15 +45,14 @@ class SearchField extends LitElement {
           ?disabled=${this.disabled}
           @input=${this._handleInput}
         ></mm-input>
-        ${this.value.length > 0
-          ? html`
-              <mm-clear-button
-                label="clear"
-                ?disabled=${this.disabled}
-                @click=${this._clear}
-              ></mm-clear-button>
-            `
-          : ''}
+        <mm-clear-button
+          aria-label="검색어 지우기"
+          ?hidden-button=${!hasValue}
+          aria-hidden=${hasValue ? 'false' : 'true'}
+          tabindex=${hasValue ? '0' : '-1'}
+          ?disabled=${this.disabled || !hasValue}
+          @click=${this._clear}
+        ></mm-clear-button>
       </div>
     `
   }
