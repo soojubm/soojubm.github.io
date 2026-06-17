@@ -26,9 +26,11 @@ export class MenuItemLink extends LitElement {
   private renderAction() {
     if (this.hideTrailing) return html``
 
+    const trailingIcon = this.target === '_blank' ? ICON_NAMES.SHARE : ICON_NAMES.FORWARD
+
     return html`
       <span slot="trailing">
-        <mm-icon name=${ICON_NAMES.SHARE} size="small"></mm-icon>
+        <mm-icon name=${trailingIcon} size="small"></mm-icon>
       </span>
     `
   }

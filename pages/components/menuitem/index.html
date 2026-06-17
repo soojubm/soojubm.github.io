@@ -127,16 +127,30 @@
   <mm-component-section title="MenuItemLink">
     <mm-menu-item-group>
       <mm-menu-item-link
+        icon="book"
+        label="Link 컴포넌트"
+        href="link.html"
+        target="_self"
+        description="내부 링크"
+      ></mm-menu-item-link>
+      <mm-menu-item-link
         icon="open-in-browser"
         label="MDN Web Docs"
         href="https://developer.mozilla.org"
+        description="외부 링크"
       ></mm-menu-item-link>
-      <mm-menu-item-link icon="github" label="GitHub" href="https://github.com"></mm-menu-item-link>
       <mm-menu-item-link
-        icon="book"
-        label="문서보기"
-        href="#"
+        icon="menu"
+        label="MenuItem 문서"
+        href="menuitem.html"
+        target="_self"
         description="내부 링크"
+      ></mm-menu-item-link>
+      <mm-menu-item-link
+        icon="github"
+        label="GitHub"
+        href="https://github.com"
+        description="외부 링크"
       ></mm-menu-item-link>
     </mm-menu-item-group>
   </mm-component-section>

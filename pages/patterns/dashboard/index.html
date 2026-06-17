@@ -39,27 +39,29 @@
 
   <mm-surface style="margin-bottom: 1rem">
     <mm-row justifyContent="space-between">
-      <mm-menu-item-action style="width: 33%">
-        <mm-avatar slot="avatar" size="large">🦊</mm-avatar>
-        <div slot="text">
-          <mm-paragraph color="var(--color-foreground-light)">주문배송</mm-paragraph>
-          <mm-paragraph size="large">7</mm-paragraph>
-        </div>
-      </mm-menu-item-action>
-      <mm-menu-item-action style="width: 33%">
-        <mm-avatar slot="avatar" size="large">🦊</mm-avatar>
-        <div slot="text">
-          <mm-paragraph color="var(--color-foreground-light)">구매확정</mm-paragraph>
-          <mm-paragraph size="large">54</mm-paragraph>
-        </div>
-      </mm-menu-item-action>
-      <mm-menu-item-action style="width: 33%">
-        <mm-avatar slot="avatar" size="large">🦊</mm-avatar>
-        <div slot="text">
-          <mm-paragraph color="var(--color-foreground-light)">찜</mm-paragraph>
-          <mm-paragraph size="large">108</mm-paragraph>
-        </div>
-      </mm-menu-item-action>
+      <mm-menu-item-group style="width: 100%">
+        <mm-menu-item-action style="width: 33%">
+          <mm-avatar slot="avatar" size="large">🦊</mm-avatar>
+          <div slot="text">
+            <mm-paragraph color="var(--color-foreground-light)">주문배송</mm-paragraph>
+            <mm-paragraph size="large">7</mm-paragraph>
+          </div>
+        </mm-menu-item-action>
+        <mm-menu-item-action style="width: 33%">
+          <mm-avatar slot="avatar" size="large">🦊</mm-avatar>
+          <div slot="text">
+            <mm-paragraph color="var(--color-foreground-light)">구매확정</mm-paragraph>
+            <mm-paragraph size="large">54</mm-paragraph>
+          </div>
+        </mm-menu-item-action>
+        <mm-menu-item-action style="width: 33%">
+          <mm-avatar slot="avatar" size="large">🦊</mm-avatar>
+          <div slot="text">
+            <mm-paragraph color="var(--color-foreground-light)">찜</mm-paragraph>
+            <mm-paragraph size="large">108</mm-paragraph>
+          </div>
+        </mm-menu-item-action>
+      </mm-menu-item-group>
     </mm-row>
   </mm-surface>
   <!-- <header class="dashboard-head"></header> -->
@@ -131,7 +133,7 @@
           <mm-text size="24">Transactions</mm-text>
           <mm-link>View all</mm-link>
         </header>
-        <mm-menu-item-group style="gap: var(--space-3)">
+        <mm-menu-item-group>
           <mm-surface variant="flat">
             <mm-menu-item-action>
               <mm-avatar slot="avatar" size="large">🦊</mm-avatar>
