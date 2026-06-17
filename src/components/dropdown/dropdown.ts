@@ -1,7 +1,7 @@
 import { LitElement, css, html, nothing, type PropertyValues } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 import { resetStyles } from '../../stylesheets/shared/reset.styles'
-import { popoverStyles } from '../../stylesheets/shared/popover.styles'
+import { sheetElementStyles } from '../../stylesheets/shared/sheet.styles'
 import { ICON_NAMES } from '../icon-button/semantics/icon-names'
 import '../menuitem/semantics/menu-item-action'
 import '../menuitem/semantics/menu-item-checkbox'
@@ -25,7 +25,7 @@ export class Dropdown extends LitElement {
 
   static styles = [
     resetStyles,
-    popoverStyles,
+    sheetElementStyles,
     css`
       .dropdown {
         --dropdown-offset: var(--space-1);
@@ -69,7 +69,7 @@ export class Dropdown extends LitElement {
         max-height: var(--dropdown-max-height);
         overflow-y: auto;
 
-        &.placement-right {
+        &[placement='right'] {
           left: auto;
           right: 0;
         }
@@ -192,9 +192,10 @@ export class Dropdown extends LitElement {
     return html`
       <div
         part="list"
-        class="popover dropdown-list ${this.isOpen ? 'open' : ''} ${this.placement === 'right'
-          ? 'placement-right'
-          : ''}"
+        class="sheet dropdown-list"
+        variant="anchor"
+        ?open=${this.isOpen}
+        placement=${this.placement}
         role="menu"
       >
         ${this.options.map(option => this.renderOption(option))}

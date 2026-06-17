@@ -1,7 +1,7 @@
 <main class="page">
   <mm-page-header
     title="Sheet"
-    description="콘텐츠나 작업을 레이어 위에 표시합니다. 위치와 모달리티에 따라 center·bottom·left·right·anchor 타입으로 구분됩니다."
+    description="콘텐츠나 작업을 레이어 위에 표시합니다. 위치와 모달리티에 따라 center·bottom·left·right·anchor variant로 구분됩니다."
   ></mm-page-header>
 
   <mm-component-aka
@@ -17,27 +17,39 @@
       <mm-button data-open-sheet="anchor">Anchor</mm-button>
     </mm-button-group>
 
-    <mm-sheet type="center" size="medium">
+    <mm-sheet variant="center" width="medium">
       <mm-sheet-header title="Center Sheet"></mm-sheet-header>
       <mm-sheet-body><mm-paragraph>중앙 모달 콘텐츠</mm-paragraph></mm-sheet-body>
       <mm-sheet-footer primary-label="확인" secondary-label="닫기"></mm-sheet-footer>
     </mm-sheet>
-    <mm-sheet type="bottom">
+    <mm-sheet variant="bottom" height="360px">
       <mm-sheet-header title="Bottom Sheet"></mm-sheet-header>
-      <mm-sheet-body><mm-paragraph>하단 시트 콘텐츠</mm-paragraph></mm-sheet-body>
+      <mm-sheet-body>
+        <mm-menu-item-action size="large" label="검색"></mm-menu-item-action>
+        <mm-menu-item-action size="large" label="저장"></mm-menu-item-action>
+        <mm-menu-item-action size="large" label="공유"></mm-menu-item-action>
+        <mm-menu-item-action size="large" label="복사"></mm-menu-item-action>
+        <mm-menu-item-action size="large" label="이름 변경"></mm-menu-item-action>
+        <mm-menu-item-action size="large" label="즐겨찾기"></mm-menu-item-action>
+        <mm-menu-item-action size="large" label="알림 설정"></mm-menu-item-action>
+        <mm-menu-item-action size="large" label="보관"></mm-menu-item-action>
+        <mm-menu-item-action size="large" label="숨기기"></mm-menu-item-action>
+        <mm-menu-item-action size="large" label="신고"></mm-menu-item-action>
+        <mm-menu-item-action size="large" label="삭제" tone="danger"></mm-menu-item-action>
+      </mm-sheet-body>
       <mm-sheet-footer primary-label="저장" secondary-label="취소"></mm-sheet-footer>
     </mm-sheet>
-    <mm-sheet type="left">
+    <mm-sheet variant="left">
       <mm-sheet-header title="Left Sheet"></mm-sheet-header>
       <mm-sheet-body><mm-paragraph>왼쪽 패널 콘텐츠</mm-paragraph></mm-sheet-body>
       <mm-sheet-footer primary-label="완료" secondary-label="닫기"></mm-sheet-footer>
     </mm-sheet>
-    <mm-sheet type="right">
+    <mm-sheet variant="right">
       <mm-sheet-header title="Right Sheet"></mm-sheet-header>
       <mm-sheet-body><mm-paragraph>오른쪽 패널 콘텐츠</mm-paragraph></mm-sheet-body>
       <mm-sheet-footer primary-label="완료" secondary-label="닫기"></mm-sheet-footer>
     </mm-sheet>
-    <mm-sheet type="anchor">
+    <mm-sheet variant="anchor">
       <mm-sheet-header title="Anchor Sheet"></mm-sheet-header>
       <mm-sheet-body><mm-paragraph>트리거 근처 팝오버 시트</mm-paragraph></mm-sheet-body>
       <mm-sheet-footer primary-label="확인" secondary-label="닫기"></mm-sheet-footer>
@@ -46,7 +58,7 @@
 
   <mm-component-anatomy
     parts='[
-      "오버레이 — 시트 뒤 반투명 배경. anchor 타입에서만 외부 클릭으로 닫힙니다.",
+      "오버레이 — 시트 뒤 반투명 배경. anchor variant에서만 외부 클릭으로 닫힙니다.",
       "시트 컨테이너 — flex column 박스. height prop으로 높이 고정, max-height: 90vh 기본값.",
       "mm-sheet-header — 타이틀과 닫기 버튼. sheetclose 이벤트를 발생시킵니다.",
       "mm-sheet-body — 스크롤 가능한 콘텐츠 영역. flex: 1 1 auto로 header·footer를 제외한 나머지를 채웁니다.",
@@ -107,7 +119,7 @@
       texts='["배경 클릭·스크롤 가능.", "포커스 트랩 없음 — Tab 키가 페이지 전체를 순환한다.", "외부 클릭 또는 ESC로 닫힌다.", "용례: Dropdown, Tooltip, Toast, 사이드 패널, Anchor popover."]'
     ></mm-text-list>
 
-    <mm-text size="16">Sheet 타입별 분류</mm-text>
+    <mm-text size="16">Sheet variant별 분류</mm-text>
     <mm-text-list
       texts='["Modal — center: Backdrop + focus trap. 사용자 확인이 필요한 작업.", "Non-modal — bottom: 컨텍스트 확장. 배경 스크롤 허용 여부는 콘텐츠 성격에 따라 결정.", "Non-modal — left / right: 사이드 패널. 페이지 맥락을 유지한 채 추가 정보 탐색.", "Non-modal — anchor: Dropdown과 동일한 패턴. 트리거 근처에 위치, 외부 클릭으로 닫힘."]'
     ></mm-text-list>
@@ -176,16 +188,20 @@
   <mm-component-props>
     <mm-prop name="open" type="boolean"></mm-prop>
     <mm-prop
-      name="type"
+      name="variant"
       type="'center' | 'bottom' | 'left' | 'right' | 'anchor' = 'center'"
     ></mm-prop>
-    <mm-prop name="size" type="'small' | 'medium' | 'large' | 'full' = 'medium'" optional></mm-prop>
+    <mm-prop
+      name="width"
+      type="'small' | 'medium' | 'large' | 'full' = 'medium'"
+      optional
+    ></mm-prop>
     <mm-prop name="height" type="string" optional></mm-prop>
     <mm-prop name="sheetclose" type="CustomEvent" kind="event"></mm-prop>
   </mm-component-props>
 
   <mm-icon-button icon="filter" data-open-sheet="#filter-sheet"></mm-icon-button>
-  <mm-sheet type="bottom" id="filter-sheet">
+  <mm-sheet variant="bottom" id="filter-sheet">
     <mm-sheet-header title="필터"></mm-sheet-header>
     <mm-sheet-body>
       <form class="filter">

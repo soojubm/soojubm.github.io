@@ -1,8 +1,9 @@
-import { LitElement, css, html } from 'lit'
+import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import '../icon-button/semantics/prev-button'
 import '../icon-button/semantics/next-button'
 import '../icon-button/semantics/page-button'
+import { paginationStyles } from './pagination.styles'
 
 type PaginationItem = number | 'ellipsis'
 
@@ -13,48 +14,7 @@ export class Pagination extends LitElement {
   @property({ type: Number, attribute: 'sibling-count' }) siblingCount = 1
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = 'pagination'
 
-  static styles = css`
-    :host {
-      display: block;
-    }
-
-    .pagination {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: var(--space-2);
-      margin: var(--space-4) 0;
-    }
-
-    .pagination-ellipsis {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: var(--size-medium);
-      height: var(--size-medium);
-      color: var(--color-foreground-light);
-      letter-spacing: 1px;
-      line-height: 1;
-      user-select: none;
-    }
-
-    @media (max-width: 480px) {
-      .pagination {
-        gap: 0;
-      }
-
-      mm-prev-button,
-      mm-next-button,
-      mm-page-button {
-        --button-size: var(--size-small);
-      }
-
-      .pagination-ellipsis {
-        width: var(--size-small);
-        height: var(--size-small);
-      }
-    }
-  `
+  static styles = paginationStyles
 
   private get safePageCount() {
     return Math.max(1, Math.floor(this.pageCount))

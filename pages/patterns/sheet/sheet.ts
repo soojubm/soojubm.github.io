@@ -7,7 +7,7 @@ type SheetElement = HTMLElement & {
   open(): void
   close(): void
   toggle(): void
-  type: string
+  variant: string
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -18,9 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /**
  * [data-open-sheet] 트리거를 대응하는 mm-sheet에 연결한다.
- * 값이 #id / .class 형태면 선택자로, 그 외에는 sheet type으로 해석한다.
+ * 값이 #id / .class 형태면 선택자로, 그 외에는 sheet variant로 해석한다.
  *
- * anchor 타입은 dropdown처럼 트리거 아래에 위치하며 toggle / outside-click 동작을 한다.
+ * anchor variant는 dropdown처럼 트리거 아래에 위치하며 toggle / outside-click 동작을 한다.
  * (닫기는 mm-sheet가 sheetclose 이벤트로 스스로 처리하므로 별도 배선이 필요 없다.)
  */
 function setupToastTrigger() {
@@ -41,11 +41,11 @@ function setupSheetTriggers() {
   document.querySelectorAll<HTMLElement>('[data-open-sheet]').forEach(trigger => {
     trigger.addEventListener('click', () => {
       const value = trigger.dataset.openSheet ?? ''
-      const selector = /^[#.]/.test(value) ? value : `mm-sheet[type="${value}"]`
+      const selector = /^[#.]/.test(value) ? value : `mm-sheet[variant="${value}"]`
       const sheet = document.querySelector<SheetElement>(selector)
       if (!sheet) return
 
-      if (sheet.type === 'anchor') {
+      if (sheet.variant === 'anchor') {
         // dropdown과 동일: 트리거 바로 아래에 위치시키고 toggle
         const rect = trigger.getBoundingClientRect()
         const sheetWidth = 320

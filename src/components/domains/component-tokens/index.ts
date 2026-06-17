@@ -1,7 +1,7 @@
-import { LitElement, html, css } from 'lit'
+import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { resetStyles } from '../../../stylesheets/shared/reset.styles'
 import '../../text/semantics/heading'
+import { componentTokensStyles, tokenStyles } from './component-tokens.styles'
 
 /**
  * 개별 CSS 커스텀 프로퍼티(토큰) 행.
@@ -14,19 +14,7 @@ export class Token extends LitElement {
   /** 기본값 (예: var(--size-medium)) */
   @property({ type: String }) default = ''
 
-  static styles = [
-    resetStyles,
-    css`
-      :host {
-        display: contents;
-      }
-
-      .meta {
-        display: flex;
-        flex-direction: column;
-      }
-    `,
-  ]
+  static styles = tokenStyles
 
   render() {
     return html`
@@ -48,38 +36,7 @@ export class Token extends LitElement {
  */
 @customElement('mm-component-tokens')
 export class ComponentTokens extends LitElement {
-  static styles = [
-    resetStyles,
-    css`
-      :host {
-        display: block;
-      }
-
-      .component-tokens {
-        margin: 1rem 0 0 calc(-5vw + 1rem);
-        padding: 1.5rem calc(var(--layout-padding-inline) - 1rem);
-        background-color: var(--color-background-subtle);
-        border: var(--component-tokens-border, none);
-        border-radius: var(--radius-large);
-      }
-
-      dl {
-        display: grid;
-        grid-template-columns: auto 1fr;
-        gap: var(--space-2) 1.5rem;
-        margin: 0;
-      }
-
-      @media (max-width: 1100px) {
-        .component-tokens {
-          margin-inline: calc(var(--layout-padding-inline) * -1);
-          padding-inline: var(--layout-padding-inline);
-          border-inline: 0;
-          border-radius: 0;
-        }
-      }
-    `,
-  ]
+  static styles = componentTokensStyles
 
   render() {
     return html`

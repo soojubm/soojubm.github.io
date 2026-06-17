@@ -188,7 +188,7 @@ export class Navbar extends LitElement {
       </nav>
       <div class="navbar-backdrop"></div>
 
-      <mm-sheet class="js-search-sheet" type="center" size="medium" backdrop-blur>
+      <mm-sheet class="js-search-sheet" variant="center" width="medium" backdrop-blur>
         <mm-top-bar type="back" data-todo="topbar vs sheetheader"></mm-top-bar>
         <mm-sheet-body>
           <form role="search">

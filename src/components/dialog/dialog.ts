@@ -53,7 +53,7 @@ export class Dialog extends LitElement {
 
   render() {
     return html`
-      <mm-sheet type="center" size="small" @sheetclose=${this.handleSheetClose}>
+      <mm-sheet variant="center" width="small" @sheetclose=${this.handleSheetClose}>
         <mm-sheet-header title=${this.title}></mm-sheet-header>
 
         <mm-sheet-body>

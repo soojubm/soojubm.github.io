@@ -1,19 +1,66 @@
-import { LitElement, css, html } from 'lit'
+import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { popoverStyles } from '../../stylesheets/shared/popover.styles'
-export type SheetType = 'center' | 'bottom' | 'left' | 'right' | 'anchor' | 'inline'
-export type SheetSize = 'small' | 'medium' | 'large' | 'full'
+import { sheetStyles } from '../../stylesheets/shared/sheet.styles'
+export type SheetVariant = 'center' | 'bottom' | 'left' | 'right' | 'anchor' | 'inline'
+export type SheetWidth = 'small' | 'medium' | 'large' | 'full'
+
+let scrollLockCount = 0
+let lockedScrollY = 0
+let previousBodyStyles: Partial<CSSStyleDeclaration> = {}
+
+function lockBodyScroll() {
+  scrollLockCount += 1
+  if (scrollLockCount > 1) return
+
+  lockedScrollY = window.scrollY
+  previousBodyStyles = {
+    left: document.body.style.left,
+    overflow: document.body.style.overflow,
+    position: document.body.style.position,
+    right: document.body.style.right,
+    top: document.body.style.top,
+    width: document.body.style.width,
+  }
+
+  document.body.classList.add('lock-scroll')
+  document.body.style.position = 'fixed'
+  document.body.style.top = `-${lockedScrollY}px`
+  document.body.style.left = '0'
+  document.body.style.right = '0'
+  document.body.style.width = '100%'
+  document.body.style.overflow = 'hidden'
+}
+
+function unlockBodyScroll() {
+  if (!scrollLockCount) return
+
+  scrollLockCount -= 1
+  if (scrollLockCount > 0) return
+
+  document.body.classList.remove('lock-scroll')
+  document.body.style.position = previousBodyStyles.position ?? ''
+  document.body.style.top = previousBodyStyles.top ?? ''
+  document.body.style.left = previousBodyStyles.left ?? ''
+  document.body.style.right = previousBodyStyles.right ?? ''
+  document.body.style.width = previousBodyStyles.width ?? ''
+  document.body.style.overflow = previousBodyStyles.overflow ?? ''
+  window.scrollTo(0, lockedScrollY)
+
+  lockedScrollY = 0
+  previousBodyStyles = {}
+}
 
 @customElement('mm-sheet')
 class Sheet extends LitElement {
-  @property({ type: String, reflect: true }) type: SheetType = 'center'
-  @property({ type: String, reflect: true }) size: SheetSize = 'medium'
+  @property({ type: String, reflect: true }) variant: SheetVariant = 'center'
+  @property({ type: String, reflect: true }) width: SheetWidth = 'medium'
   @property({ type: String }) height?: string
   @property({ type: Boolean, reflect: true, attribute: 'open' }) isOpen = false
   @property({ type: Boolean, reflect: true, attribute: 'backdrop-blur' }) backdropBlur = false
 
-  /** anchor 타입: 열기를 유발한 클릭 자체가 document 핸들러를 트리거하지 않도록 스킵 */
+  /** anchor variant: 열기를 유발한 클릭 자체가 document 핸들러를 트리거하지 않도록 스킵 */
   private _skipNextOutsideClick = false
+  private _hasLockedScroll = false
 
   connectedCallback() {
     super.connectedCallback()
@@ -26,17 +73,18 @@ class Sheet extends LitElement {
     super.disconnectedCallback()
     this.removeEventListener('click', this.handleBackdropClick)
     document.removeEventListener('click', this.handleOutsideClick)
+    this.releaseScrollLock()
   }
 
-  /** center/bottom/left/right 타입: 호스트(backdrop) 영역 클릭 시 닫는다 */
+  /** modal variant: 호스트(backdrop) 영역 클릭 시 닫는다 */
   private handleBackdropClick = (e: MouseEvent) => {
     if (!this._isModal || !this.isOpen) return
     if (e.target === this) this.close()
   }
 
-  /** anchor 타입만 outside-click으로 닫는다 — dropdown과 동일한 패턴 */
+  /** anchor variant만 outside-click으로 닫는다 — dropdown과 동일한 패턴 */
   private handleOutsideClick = (e: MouseEvent) => {
-    if (this.type !== 'anchor' || !this.isOpen) return
+    if (this.variant !== 'anchor' || !this.isOpen) return
     if (this._skipNextOutsideClick) {
       this._skipNextOutsideClick = false
       return
@@ -45,171 +93,44 @@ class Sheet extends LitElement {
   }
 
   private get _isModal() {
-    return this.type !== 'anchor' && this.type !== 'inline'
+    return this.variant !== 'anchor' && this.variant !== 'inline'
   }
 
-  static styles = [
-    popoverStyles,
-    css`
-      :host {
-        --sheet-z-index: var(--zindex-sheet);
-        --sheet-backdrop-color: var(--color-backdrop);
-        --sheet-radius: var(--radius-large);
-        --sheet-bottom-max-width: calc(var(--layout-width-small) + var(--space-4) * 10);
-        --sheet-anchor-width: var(--layout-width-tiny);
-        --sheet-anchor-max-height: calc(var(--width-small) * 2);
-        --sheet-size-small: var(--sheet-anchor-width);
-        --sheet-size-medium: var(--layout-width-tiny);
-        --sheet-size-large: var(--layout-width-wide);
-        --sheet-size-full: 100%;
+  protected updated(changedProperties: Map<string, unknown>) {
+    if (changedProperties.has('isOpen') || changedProperties.has('variant')) {
+      this.syncScrollLock()
+    }
+  }
 
-        display: flex;
-        width: 100vw;
-        height: 100dvh;
-        justify-content: center;
-        align-items: center;
-        background: var(--sheet-backdrop-color);
+  private syncScrollLock() {
+    if (this.isOpen && this._isModal) {
+      this.acquireScrollLock()
+      return
+    }
 
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
+    this.releaseScrollLock()
+  }
 
-        position: fixed;
-        inset: 0;
-        z-index: var(--sheet-z-index);
-        transition: opacity 180ms ease, visibility 0s linear 180ms;
-        backdrop-filter: blur(0px);
-      }
+  private acquireScrollLock() {
+    if (this._hasLockedScroll) return
 
-      :host([backdrop-blur]) {
-        backdrop-filter: blur(2px);
-        transition: opacity 180ms ease, visibility 0s linear 180ms, backdrop-filter 180ms ease;
-      }
+    lockBodyScroll()
+    this._hasLockedScroll = true
+  }
 
-      :host([open]) {
-        opacity: 1;
-        visibility: visible;
-        pointer-events: auto;
-        transition: opacity 180ms ease, visibility 0s;
+  private releaseScrollLock() {
+    if (!this._hasLockedScroll) return
 
-        & .sheet {
-          transform: scale(1);
-          transition: transform 220ms cubic-bezier(0.18, 1.25, 0.4, 1);
-        }
-      }
+    unlockBodyScroll()
+    this._hasLockedScroll = false
+  }
 
-      :host([open][type='bottom']) .sheet {
-        transform: translateY(0);
-      }
-      :host([open][type='left']) .sheet {
-        transform: translateX(0);
-      }
-      :host([open][type='right']) .sheet {
-        transform: translateX(0);
-      }
-      :host([open][type='inline']) .sheet {
-        transform: translateY(0);
-      }
-
-      .sheet {
-        display: flex;
-        flex-direction: column;
-        background: var(--color-background);
-        border-radius: var(--sheet-radius);
-        width: 100%;
-        padding: 0 var(--space-4);
-        box-sizing: border-box;
-        max-height: 90vh;
-        overflow: hidden;
-        position: relative;
-
-        transform: scale(0.96);
-        transition: transform 180ms cubic-bezier(0.2, 0.8, 0.2, 1);
-      }
-
-      /* center + size */
-      :host([type='center']) .sheet {
-        max-width: var(--sheet-size-medium);
-      }
-      :host([type='center'][size='small']) .sheet {
-        max-width: var(--sheet-size-small);
-      }
-      :host([type='center'][size='large']) .sheet {
-        max-width: var(--sheet-size-large);
-      }
-      :host([type='center'][size='full']) .sheet {
-        max-width: var(--sheet-size-full);
-      }
-
-      /* bottom */
-      :host([type='bottom']) .sheet {
-        max-width: var(--sheet-bottom-max-width);
-        border-bottom-left-radius: var(--sheet-radius);
-        border-bottom-right-radius: var(--sheet-radius);
-        margin-top: auto;
-        transform: translateY(100%);
-      }
-
-      /* left */
-      :host([type='left']) .sheet {
-        margin-right: auto;
-        max-width: 90vw;
-        height: 100%;
-        max-height: 100vh;
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-        transform: translateX(-100%);
-      }
-
-      /* right */
-      :host([type='right']) .sheet {
-        margin-left: auto;
-        max-width: 90vw;
-        height: 100%;
-        max-height: 100vh;
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
-        transform: translateX(100%);
-      }
-
-      /* anchor — popoverStyles 공유, :host 애니메이션은 .sheet.popover가 담당 */
-      :host([type='anchor']) {
-        position: fixed;
-        inset: auto; /* base의 inset: 0 리셋 — JS가 top/left를 주입 */
-        background: transparent;
-        width: auto;
-        height: auto;
-        opacity: 1;
-        visibility: visible;
-        pointer-events: auto;
-
-        & .sheet {
-          width: var(--sheet-anchor-width);
-          max-height: var(--sheet-anchor-max-height);
-        }
-      }
-
-      /* inline */
-      :host([type='inline']) {
-        position: relative;
-        inset: auto; /* base의 inset: 0 리셋 */
-        background: transparent;
-
-        & .sheet {
-          transform: translateY(var(--space-1-minus));
-        }
-      }
-    `,
-  ]
+  static styles = sheetStyles
 
   render() {
     const heightStyle = this.height ? `height:${this.height};` : ''
-    const isAnchor = this.type === 'anchor'
-    const cls = ['sheet', isAnchor && 'popover', isAnchor && this.isOpen && 'open']
-      .filter(Boolean)
-      .join(' ')
     return html`
-      <aside class="${cls}" style="${heightStyle}">
+      <aside class="sheet" variant=${this.variant} ?open=${this.isOpen} style="${heightStyle}">
         <slot></slot>
       </aside>
     `
@@ -218,12 +139,12 @@ class Sheet extends LitElement {
   open() {
     this.isOpen = true
     this._skipNextOutsideClick = true // 열기를 유발한 클릭을 outside-click 핸들러가 받지 않도록
-    if (this._isModal) document.body.classList.add('lock-scroll')
+    this.syncScrollLock()
   }
 
   close() {
     this.isOpen = false
-    if (this._isModal) document.body.classList.remove('lock-scroll')
+    this.syncScrollLock()
   }
 
   toggle() {

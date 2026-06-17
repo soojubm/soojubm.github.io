@@ -9,7 +9,12 @@ class SheetBody extends LitElement {
     css`
       :host {
         box-sizing: border-box;
+        flex: 1 1 auto;
+        min-height: 0;
         overflow-y: auto;
+        scrollbar-color: var(--color-background-strong) transparent;
+        scrollbar-gutter: stable;
+        scrollbar-width: thin;
       }
     `,
   ]

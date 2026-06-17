@@ -104,7 +104,7 @@ export const SITEMAP = [
 
       // { id: 'layout', name: 'layout' },
       { id: 'accordion', name: 'accordion' },
-      // { id: 'sheet', name: 'sheet' },
+      { id: 'sheet', name: 'sheet' },
       // { id: 'auth', name: 'auth' },
       // { id: 'post', name: 'post' },
       // { id: 'product', name: 'Product' },
