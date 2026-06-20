@@ -1,210 +1,244 @@
-<main class="page">
-  <style>
-    .dashboard-body {
-      max-width: 800px;
-      margin: 1rem auto;
-    }
-  </style>
+<main class="page dashboard">
+  <mm-flex class="dashboard-header" align-items="center" justify-content="space-between" wrap>
+    <mm-text-block
+      level="1"
+      heading="운영 대시보드"
+      description="오늘의 비즈니스 흐름과 처리할 업무를 확인하세요."
+    ></mm-text-block>
+    <mm-button-group>
+      <mm-button variant="tertiary" icon="calendar">최근 7일</mm-button>
+      <mm-button variant="primary" icon="plus">새 보고서</mm-button>
+    </mm-button-group>
+  </mm-flex>
 
-  <br />
-  <br />
-
-  <article class="meter" style="max-width: 400px; margin: 0 auto">
-    <mm-text size="24">200 GB 중 187.23 GB 사용됨</mm-text>
-    <div class="meter-graph">
-      <div class="meter-graph-item" data-type="facebook" style="width: 40%"></div>
-      <div class="meter-graph-item" data-type="twitter" style="width: 30%"></div>
-      <div class="meter-graph-item" data-type="instagram" style="width: 7%"></div>
-    </div>
-    <div class="meter-legend" style="margin: 1rem 0">
-      <div class="meter-legend-item">
-        <mm-avatar size="small" style="background-color: var(--color-facebook)"></mm-avatar>
-        <mm-paragraph weight="bold">페이스북</mm-paragraph>
-        <mm-paragraph style="margin-left: auto" weight="bold">800,000원</mm-paragraph>
-      </div>
-      <div class="meter-legend-item">
-        <mm-avatar size="small" style="background-color: var(--color-twitter)"></mm-avatar>
-        <mm-paragraph color="var(--color-foreground-light)">트위터</mm-paragraph>
-        <mm-paragraph style="margin-left: auto">800,000원</mm-paragraph>
-      </div>
-      <div class="meter-legend-item">
-        <mm-avatar size="small" style="background-color: var(--color-pinterest)"></mm-avatar>
-        <mm-paragraph color="var(--color-foreground-light)">핀터레스트</mm-paragraph>
-        <mm-paragraph style="margin-left: auto">800,000원</mm-paragraph>
-      </div>
-    </div>
-  </article>
-
-  <br />
-
-  <mm-surface style="margin-bottom: 1rem">
-    <mm-row justify-content="space-between">
-      <mm-menu-item-group style="width: 100%">
-        <mm-menu-item-action style="width: 33%">
-          <mm-avatar slot="avatar" size="large">🦊</mm-avatar>
-          <div slot="text">
-            <mm-paragraph color="var(--color-foreground-light)">주문배송</mm-paragraph>
-            <mm-paragraph size="large">7</mm-paragraph>
-          </div>
-        </mm-menu-item-action>
-        <mm-menu-item-action style="width: 33%">
-          <mm-avatar slot="avatar" size="large">🦊</mm-avatar>
-          <div slot="text">
-            <mm-paragraph color="var(--color-foreground-light)">구매확정</mm-paragraph>
-            <mm-paragraph size="large">54</mm-paragraph>
-          </div>
-        </mm-menu-item-action>
-        <mm-menu-item-action style="width: 33%">
-          <mm-avatar slot="avatar" size="large">🦊</mm-avatar>
-          <div slot="text">
-            <mm-paragraph color="var(--color-foreground-light)">찜</mm-paragraph>
-            <mm-paragraph size="large">108</mm-paragraph>
-          </div>
-        </mm-menu-item-action>
-      </mm-menu-item-group>
-    </mm-row>
-  </mm-surface>
   <!-- <header class="dashboard-head"></header> -->
-  <section>
-    <mm-flex justify-content="space-between" gap="4">
-      <mm-surface variant="tinted" style="width: 100%">
-        <article style="width: 100%; position: relative">
-          <mm-paragraph weight="bold">수신</mm-paragraph>
+  <section class="dashboard-section" aria-label="핵심 지표">
+    <mm-grid columns="4">
+      <mm-surface>
+        <article class="metric-card">
+          <mm-flex align-items="center" justify-content="space-between">
+            <mm-avatar icon="credit-card" variant="tertiary"></mm-avatar>
+            <mm-tag tone="green">+12.5%</mm-tag>
+          </mm-flex>
           <!-- <mm-tag style="position: absolute; right: 1rem; top: 0.875rem">태그</mm-tag> -->
-          <mm-text size="32">
-            1,508
-            <small style="font-size: var(--font-size-14); vertical-align: super">90%</small>
-          </mm-text>
-          <div class="meter" style="margin-top: var(--space-2)">
-            <div class="meter-track">
-              <b class="meter-thumb" style="width: 68%"></b>
-            </div>
-            <mm-text size="12">200GB 중 115.72GB 사용</mm-text>
-          </div>
+          <mm-paragraph-group>
+            <mm-paragraph>총 매출</mm-paragraph>
+            <mm-text size="32">₩18,420,000</mm-text>
+            <mm-text>지난주보다 ₩2,046,000 증가</mm-text>
+          </mm-paragraph-group>
         </article>
       </mm-surface>
-      <mm-surface variant="tinted" style="width: 100%">
-        <article style="width: 100%; position: relative">
-          <mm-paragraph weight="bold">수신</mm-paragraph>
+      <mm-surface>
+        <article class="metric-card">
+          <mm-flex align-items="center" justify-content="space-between">
+            <mm-avatar icon="delivery-truck" variant="tertiary"></mm-avatar>
+            <mm-tag tone="blue">진행 중</mm-tag>
+          </mm-flex>
           <!-- <mm-tag style="position: absolute; right: 1rem; top: 0.875rem">태그</mm-tag> -->
-          <mm-text size="32">
-            1,508
-            <small style="font-size: var(--font-size-14); vertical-align: super">90%</small>
-          </mm-text>
-          <div class="meter" style="margin-top: var(--space-2)">
-            <div class="meter-track">
-              <b class="meter-thumb" style="width: 68%"></b>
-            </div>
-            <mm-text size="12">200GB 중 115.72GB 사용</mm-text>
-          </div>
+          <mm-paragraph-group>
+            <mm-paragraph>신규 주문</mm-paragraph>
+            <mm-text size="32">284</mm-text>
+            <mm-text>배송 준비 38건 · 배송 중 72건</mm-text>
+          </mm-paragraph-group>
         </article>
       </mm-surface>
-      <mm-surface variant="tinted" style="width: 100%">
-        <article style="width: 100%; position: relative">
-          <mm-paragraph weight="bold">수신</mm-paragraph>
+      <mm-surface>
+        <article class="metric-card">
+          <mm-flex align-items="center" justify-content="space-between">
+            <mm-avatar icon="group" variant="tertiary"></mm-avatar>
+            <mm-tag tone="green">+8.2%</mm-tag>
+          </mm-flex>
           <!-- <mm-tag style="position: absolute; right: 1rem; top: 0.875rem">태그</mm-tag> -->
-          <mm-text size="32">
-            1,508
-            <small style="font-size: var(--font-size-14); vertical-align: super">90%</small>
-          </mm-text>
-          <div class="meter" style="margin-top: var(--space-2)">
-            <div class="meter-track">
-              <b class="meter-thumb" style="width: 68%"></b>
-            </div>
-            <mm-text size="12">200GB 중 115.72GB 사용</mm-text>
-          </div>
+          <mm-paragraph-group>
+            <mm-paragraph>신규 고객</mm-paragraph>
+            <mm-text size="32">1,508</mm-text>
+            <mm-text>첫 구매 전환율 24.8%</mm-text>
+          </mm-paragraph-group>
         </article>
       </mm-surface>
-    </mm-flex>
+      <mm-surface>
+        <article class="metric-card">
+          <mm-flex align-items="center" justify-content="space-between">
+            <mm-avatar icon="message" variant="tertiary"></mm-avatar>
+            <mm-tag tone="yellow">확인 필요</mm-tag>
+          </mm-flex>
+          <mm-paragraph-group>
+            <mm-paragraph>미응답 문의</mm-paragraph>
+            <mm-text size="32">17</mm-text>
+            <mm-text>평균 응답 시간 12분</mm-text>
+          </mm-paragraph-group>
+        </article>
+      </mm-surface>
+    </mm-grid>
   </section>
-  <br />
-  <br />
-  <section>
-    <mm-flex justify-content="space-between" gap="1.5rem">
-      <div style="width: 66.6666%">
-        <header
-          style="
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin: 0 0 var(--space-3);
-          "
-        >
-          <mm-text size="24">Transactions</mm-text>
-          <mm-link>View all</mm-link>
-        </header>
-        <mm-menu-item-group>
-          <mm-surface variant="flat">
-            <mm-menu-item-action>
-              <mm-avatar slot="avatar" size="large">🦊</mm-avatar>
-              <mm-meta-item
-                slot="text"
-                label="사진 및 동영상 백업"
-                value="디스크립션이다"
-              ></mm-meta-item>
-              <mm-flex slot="action">
-                <mm-button>버튼</mm-button>
-                <mm-icon-button variant="navigator" icon="more-vert"></mm-icon-button>
-              </mm-flex>
-            </mm-menu-item-action>
-          </mm-surface>
-          <mm-surface variant="flat">
-            <mm-menu-item-action>
-              <mm-avatar slot="avatar" size="large">🦊</mm-avatar>
-              <mm-meta-item
-                slot="text"
-                label="사진 및 동영상 백업"
-                value="디스크립션이다"
-              ></mm-meta-item>
-              <mm-flex slot="action">
-                <mm-button>버튼</mm-button>
-                <mm-icon-button variant="navigator" icon="more-vert"></mm-icon-button>
-              </mm-flex>
-            </mm-menu-item-action>
-          </mm-surface>
-        </mm-menu-item-group>
+
+  <section class="dashboard-section dashboard-overview">
+    <mm-surface class="revenue-card">
+      <mm-flex class="card-header" align-items="center" justify-content="space-between">
+        <mm-text-block
+          level="2"
+          heading="주간 매출"
+          description="요일별 결제 완료 금액"
+        ></mm-text-block>
+        <mm-flex class="chart-legend" align-items="center" gap="2">
+          <span class="legend-dot"></span>
+          <mm-text>이번 주</mm-text>
+        </mm-flex>
+      </mm-flex>
+      <div class="revenue-chart" aria-label="월요일부터 일요일까지의 주간 매출 막대그래프">
+        <div class="chart-item">
+          <div class="chart-bar" style="height: 42%"></div>
+          <mm-text>월</mm-text>
+        </div>
+        <div class="chart-item">
+          <div class="chart-bar" style="height: 58%"></div>
+          <mm-text>화</mm-text>
+        </div>
+        <div class="chart-item">
+          <div class="chart-bar" style="height: 48%"></div>
+          <mm-text>수</mm-text>
+        </div>
+        <div class="chart-item">
+          <div class="chart-bar" style="height: 76%"></div>
+          <mm-text>목</mm-text>
+        </div>
+        <div class="chart-item">
+          <div class="chart-bar" style="height: 68%"></div>
+          <mm-text>금</mm-text>
+        </div>
+        <div class="chart-item">
+          <div class="chart-bar" style="height: 92%"></div>
+          <mm-text>토</mm-text>
+        </div>
+        <div class="chart-item">
+          <div class="chart-bar" style="height: 82%"></div>
+          <mm-text>일</mm-text>
+        </div>
       </div>
-      <div
-        style="
-          width: 33.3333%;
-          margin-top: var(--space-section);
-          border-radius: var(--radius);
-          background: var(--color-background-strong);
-        "
-      ></div>
-    </mm-flex>
+    </mm-surface>
+
+    <mm-surface class="task-card">
+      <mm-flex class="card-header" align-items="center" justify-content="space-between">
+        <mm-text-block
+          level="2"
+          heading="오늘 할 일"
+          description="마감이 가까운 업무부터 확인하세요."
+        ></mm-text-block>
+        <mm-tag tone="red">3건</mm-tag>
+      </mm-flex>
+      <mm-menu-item-group>
+        <mm-menu-item-action
+          emoji="📦"
+          trailing-icon="arrow-right"
+          label="출고 지연 주문 확인"
+          description="오늘 오전 11:00까지"
+        ></mm-menu-item-action>
+        <mm-menu-item-action
+          emoji="💬"
+          trailing-icon="arrow-right"
+          label="고객 문의 답변"
+          description="미응답 문의 17건"
+        ></mm-menu-item-action>
+        <mm-menu-item-action
+          emoji="📊"
+          trailing-icon="arrow-right"
+          label="주간 성과 보고서 공유"
+          description="오늘 오후 4:00까지"
+        ></mm-menu-item-action>
+      </mm-menu-item-group>
+    </mm-surface>
   </section>
 
-  <progress value="40" max="100">40%</progress>
+  <section class="dashboard-section">
+    <mm-surface>
+      <mm-flex class="card-header" align-items="center" justify-content="space-between">
+        <mm-text-block
+          level="2"
+          heading="최근 주문"
+          description="가장 최근에 접수된 주문 내역입니다."
+        ></mm-text-block>
+        <mm-button variant="text" icon="arrow-right">전체 보기</mm-button>
+      </mm-flex>
+      <mm-menu-item-group class="order-list">
+        <mm-menu-item-action
+          size="large"
+          emoji="👟"
+          trailing-icon="arrow-right"
+          label="에브리데이 러너 스니커즈"
+          description="#MM-2048 · 김민지 · ₩128,000 · 결제 완료 · 2분 전"
+        ></mm-menu-item-action>
+        <mm-menu-item-action
+          size="large"
+          emoji="🧢"
+          trailing-icon="arrow-right"
+          label="클래식 로고 캡"
+          description="#MM-2047 · 박서준 · ₩42,000 · 상품 준비 · 8분 전"
+        ></mm-menu-item-action>
+        <mm-menu-item-action
+          size="large"
+          emoji="🎒"
+          trailing-icon="arrow-right"
+          label="데일리 유틸리티 백팩"
+          description="#MM-2046 · 이지우 · ₩96,000 · 배송 시작 · 14분 전"
+        ></mm-menu-item-action>
+      </mm-menu-item-group>
+    </mm-surface>
+  </section>
+</main>
 
-  <div class="graph">
-    <div class="graph-title">
-      1월 26일
-      <em>컴퓨터통신 분야</em>
-      에서는
-      <br />
-      <em>7백명의 지식iN</em>
-      들이 답변하셨습니다.
+<!-- <article class="meter" style="max-width: 400px; margin: 0 auto">
+  <mm-text size="24">200 GB 중 187.23 GB 사용됨</mm-text>
+  <div class="meter-graph">
+    <div class="meter-graph-item" data-type="facebook" style="width: 40%"></div>
+    <div class="meter-graph-item" data-type="twitter" style="width: 30%"></div>
+    <div class="meter-graph-item" data-type="instagram" style="width: 7%"></div>
+  </div>
+  <div class="meter-legend" style="margin: 1rem 0">
+    <div class="meter-legend-item">
+      <mm-avatar size="small" style="background-color: var(--color-facebook)"></mm-avatar>
+      <mm-paragraph weight="bold">페이스북</mm-paragraph>
+      <mm-paragraph style="margin-left: auto" weight="bold">800,000원</mm-paragraph>
     </div>
-    <div class="graph-item">
-      <span class="graph-item-value">40%</span>
-      <div class="graph-item-bar"></div>
-      <span class="graph-item-label">10대</span>
+    <div class="meter-legend-item">
+      <mm-avatar size="small" style="background-color: var(--color-twitter)"></mm-avatar>
+      <mm-paragraph color="var(--color-foreground-light)">트위터</mm-paragraph>
+      <mm-paragraph style="margin-left: auto">800,000원</mm-paragraph>
     </div>
-    <div class="graph-item">
-      <span class="graph-item-value">30%</span>
-      <div class="graph-item-bar"></div>
-      <span class="graph-item-label">20대</span>
-    </div>
-    <div class="graph-item">
-      <span class="graph-item-value">20%</span>
-      <div class="graph-item-bar"></div>
-      <span class="graph-item-label">30대</span>
-    </div>
-    <div class="graph-item">
-      <span class="graph-item-value">10%</span>
-      <div class="graph-item-bar"></div>
-      <span class="graph-item-label">40대</span>
+    <div class="meter-legend-item">
+      <mm-avatar size="small" style="background-color: var(--color-pinterest)"></mm-avatar>
+      <mm-paragraph color="var(--color-foreground-light)">핀터레스트</mm-paragraph>
+      <mm-paragraph style="margin-left: auto">800,000원</mm-paragraph>
     </div>
   </div>
-</main>
+</article> -->
+
+<!-- <div class="graph">
+  <div class="graph-title">
+    1월 26일
+    <em>컴퓨터통신 분야</em>
+    에서는
+    <br />
+    <em>7백명의 지식iN</em>
+    들이 답변하셨습니다.
+  </div>
+  <div class="graph-item">
+    <span class="graph-item-value">40%</span>
+    <div class="graph-item-bar"></div>
+    <span class="graph-item-label">10대</span>
+  </div>
+  <div class="graph-item">
+    <span class="graph-item-value">30%</span>
+    <div class="graph-item-bar"></div>
+    <span class="graph-item-label">20대</span>
+  </div>
+  <div class="graph-item">
+    <span class="graph-item-value">20%</span>
+    <div class="graph-item-bar"></div>
+    <span class="graph-item-label">30대</span>
+  </div>
+  <div class="graph-item">
+    <span class="graph-item-value">10%</span>
+    <div class="graph-item-bar"></div>
+    <span class="graph-item-label">40대</span>
+  </div>
+</div> -->

@@ -101,6 +101,7 @@ export const SITEMAP = [
       { id: 'setting', name: 'setting' },
       { id: 'class', name: 'Product 3 - class' },
       { id: 'chat', name: 'chat' },
+      { id: 'dashboard', name: 'dashboard', hidden: true },
 
       // { id: 'layout', name: 'layout' },
       { id: 'accordion', name: 'accordion' },

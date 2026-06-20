@@ -26,12 +26,13 @@
           description="단순 구획을 표현. 클릭할 수 없다."
         ></mm-text-block>
       </mm-surface>
-      <mm-surface variant="tinted">
+      <mm-surface variant="subtle">
         <mm-text-block
           level="3"
-          heading="tinted"
-          description="강조 표현. 클릭할 수 있다."
+          heading="subtle"
+          description="내부에 클릭 가능한 액션이 있는 강조 표현."
         ></mm-text-block>
+        <mm-button variant="text">자세히 보기</mm-button>
       </mm-surface>
       <mm-surface variant="elevated">
         <mm-text-block
@@ -44,7 +45,7 @@
   </mm-component-example>
 
   <mm-component-props>
-    <mm-prop name="variant" type="string" optional></mm-prop>
+    <mm-prop name="variant" type="'plain' | 'subtle' | 'elevated'" optional></mm-prop>
     <mm-prop name="size" type="string" optional></mm-prop>
     <mm-prop name="height" type="string" optional></mm-prop>
   </mm-component-props>

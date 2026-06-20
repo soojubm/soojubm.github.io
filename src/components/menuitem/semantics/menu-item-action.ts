@@ -1,6 +1,7 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
+import '../../icon/icon'
 import { menuItemStyles } from '../menuitem.styles'
 import { renderMenuItemContent } from '../menuitem.utils'
 
@@ -11,6 +12,7 @@ export class MenuItemAction extends LitElement {
   @property({ type: String }) label = ''
   @property({ type: String }) description = ''
   @property({ type: String }) icon = ''
+  @property({ type: String, attribute: 'trailing-icon' }) trailingIcon = ''
   @property({ type: String }) emoji = ''
   @property({ type: String, attribute: 'avatar-src' }) avatarSrc = ''
   @property({ type: String, attribute: 'avatar-variant' }) avatarVariant = 'tertiary'
@@ -40,9 +42,11 @@ export class MenuItemAction extends LitElement {
       >
         ${renderMenuItemContent(
           this,
-          html`
-            <slot name="trailing" slot="trailing"></slot>
-          `,
+          this.trailingIcon
+            ? html`
+                <mm-icon slot="trailing" name=${this.trailingIcon}></mm-icon>
+              `
+            : nothing,
         )}
       </button>
     `

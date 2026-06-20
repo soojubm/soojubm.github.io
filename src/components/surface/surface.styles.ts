@@ -7,7 +7,7 @@ export const VARIANTS = {
     border: 0;
     background: none;
   `,
-  tinted: css`
+  subtle: css`
     background-color: var(--color-background-subtle);
   `,
   elevated: css`
@@ -36,8 +36,8 @@ export const variantStyles = [
     }
   `,
   css`
-    :host([variant='tinted']) .surface {
-      ${VARIANTS.tinted}
+    :host([variant='subtle']) .surface {
+      ${VARIANTS.subtle}
     }
   `,
   css`

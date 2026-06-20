@@ -1,6 +1,7 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 import { ICON_NAMES } from '../icon-button/semantics/icon-names'
+import '../text/semantics/caption'
 
 interface BottomBarItem {
   label: string
@@ -24,6 +25,10 @@ class BottomBar extends LitElement {
   @state() private selectedIndex: number | null = null
 
   static styles = css`
+    :host {
+      --bottom-bar-item-height: calc(var(--size-medium) + var(--font-line-height-24));
+    }
+
     .bottom-bar {
       display: flex;
       padding: var(--space-2) 0 calc(env(safe-area-inset-bottom) + var(--space-2));
@@ -36,10 +41,11 @@ class BottomBar extends LitElement {
       flex-direction: column;
       align-items: center;
       flex: 1;
-      position: relative;
       min-width: var(--size-large);
+      height: var(--bottom-bar-item-height);
       color: var(--color-foreground);
       text-decoration: none;
+      position: relative;
       z-index: 1;
     }
 
@@ -47,15 +53,22 @@ class BottomBar extends LitElement {
       color: var(--selection-foreground);
     }
 
+    .bottom-bar-item[aria-current='page'] mm-avatar {
+      --avatar-icon-color: var(--selection-foreground);
+    }
+
+    .bottom-bar-item[aria-current='page'] mm-caption {
+      --color-foreground-light: var(--selection-foreground);
+    }
+
     .bottom-bar-indicator {
-      position: absolute;
-      top: 0;
-      left: 0;
       width: calc(100% / var(--bottom-bar-count, 3));
-      height: 100%;
-      background: var(--selection-background);
-      border: var(--border-transparent);
+      height: var(--bottom-bar-item-height);
       border-radius: var(--radius-large);
+      background: var(--selection-background);
+      position: absolute;
+      top: var(--space-2);
+      left: 0;
       transform: var(--bottom-bar-transform, translateX(0%));
       transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
       pointer-events: none;
@@ -106,7 +119,7 @@ class BottomBar extends LitElement {
               @click=${(e: Event) => this.handleItemClick(e, index)}
             >
               <mm-avatar variant="tertiary" icon=${item.icon ?? ICON_NAMES.HOME}></mm-avatar>
-              <mm-text size="12">${item.label}</mm-text>
+              <mm-caption>${item.label}</mm-caption>
             </a>
           `,
         )}

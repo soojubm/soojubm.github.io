@@ -68,6 +68,7 @@ export class Sidebar extends LitElement {
                   class="sidebar-category-trigger is-open"
                   label=${node.title}
                   icon=${node.icon}
+                  trailing-icon=${ICON_NAMES.EXPAND}
                   aria-haspopup="menu"
                   aria-controls="${node.id}-menu"
                   aria-expanded="true"
@@ -76,22 +77,22 @@ export class Sidebar extends LitElement {
                     const isOpen = trigger.classList.toggle('is-open')
                     trigger.setAttribute('aria-expanded', String(isOpen))
                   }}
-                >
-                  <mm-icon slot="trailing" name=${ICON_NAMES.EXPAND}></mm-icon>
-                </mm-menu-item-action>
+                ></mm-menu-item-action>
 
                 <menu id="${node.id}-menu" aria-labelledby="${node.id}-btn">
-                  ${node?.items?.map(
-                    item => html`
-                      <mm-menu-item-link
-                        href="${item.id}.html"
-                        label="${item.name}${item.badge ? ` ${item.badge}` : ''}"
-                        target="_self"
-                        hide-trailing
-                        aria-current=${currentPageId === item.id ? 'page' : nothing}
-                      ></mm-menu-item-link>
-                    `,
-                  )}
+                  ${node?.items
+                    ?.filter(item => !('hidden' in item && item.hidden))
+                    .map(
+                      item => html`
+                        <mm-menu-item-link
+                          href="${item.id}.html"
+                          label="${item.name}${item.badge ? ` ${item.badge}` : ''}"
+                          target="_self"
+                          hide-trailing
+                          aria-current=${currentPageId === item.id ? 'page' : nothing}
+                        ></mm-menu-item-link>
+                      `,
+                    )}
                 </menu>
               </div>
             `

@@ -143,11 +143,12 @@
           는 클릭할 수 있다. 또는 오브젝트 내부에 클릭할 수 있는 요소가 존재한다.
         </mm-paragraph>
       </mm-surface>
-      <mm-surface variant="tinted">
+      <mm-surface variant="subtle">
         <mm-paragraph>
           <b>연한 회색 배경의 오브젝트</b>
-          는 클릭할 수 있다.
+          내부에는 클릭 가능한 액션이 존재한다.
         </mm-paragraph>
+        <mm-button variant="text">자세히 보기</mm-button>
       </mm-surface>
       <mm-surface variant="transparent">
         <mm-paragraph>
@@ -466,7 +467,7 @@
     </mm-grid>
   </mm-paragraph-group> -->
 
-  <!-- <mm-surface variant="tinted">
+  <!-- <mm-surface variant="subtle">
     <mm-paragraph-group>
       <mm-text as="h2" size="24" weight="bold">summary? overview?</mm-text>
 
@@ -592,7 +593,7 @@
       추상에서 구체로. 아래로 내려갈수록 도메인에 가까워지고, 재사용 범위는 좁아진다.
     </mm-paragraph>
 
-    <mm-surface variant="tinted" style="margin: var(--space-4) 0 var(--space-8)">
+    <mm-surface variant="subtle" style="margin: var(--space-4) 0 var(--space-8)">
       <mm-flex direction="column" gap="2">
         <mm-text size="12" color="light">레이어 판단 기준</mm-text>
         <mm-paragraph>
