@@ -1,6 +1,7 @@
 import { LitElement, css, html, nothing, type PropertyValues } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 import { resetStyles } from '../../stylesheets/shared/reset.styles'
+import '../button/button'
 import { sheetElementStyles } from '../sheet/sheet.styles'
 import { ICON_NAMES } from '../icon-button/semantics/icon-names'
 import '../menuitem/semantics/menu-item-action'
@@ -38,16 +39,6 @@ export class Dropdown extends LitElement {
       }
 
       .dropdown-button {
-        display: inline-flex;
-        align-items: center;
-        gap: var(--space-1);
-        padding: var(--space-1) var(--space-2);
-        border: var(--border);
-        border-radius: var(--radius);
-        background: var(--color-background);
-        color: var(--color-foreground);
-        font-family: var(--font-family);
-
         // TODO component and state
         mm-icon {
           transition: transform 160ms ease;
@@ -180,10 +171,15 @@ export class Dropdown extends LitElement {
   protected renderTrigger() {
     return html`
       <slot name="trigger" @click="${this.toggleOpen}">
-        <button class="dropdown-button" aria-haspopup="true" aria-expanded="${this.isOpen}">
+        <mm-button
+          class="dropdown-button"
+          size="small"
+          aria-haspopup="true"
+          aria-expanded="${this.isOpen}"
+        >
           ${this.selectedLabel}
           <mm-icon name=${ICON_NAMES.EXPAND}></mm-icon>
-        </button>
+        </mm-button>
       </slot>
     `
   }
