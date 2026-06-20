@@ -4,6 +4,7 @@ import '../sheet'
 import '../sheet/semantics/sheet-header'
 import '../sheet/semantics/sheet-body'
 import '../sheet/semantics/sheet-footer'
+import '../text/semantics/paragraph'
 import type Sheet from '../sheet/sheet'
 
 @customElement('mm-dialog')
@@ -18,6 +19,10 @@ export class Dialog extends LitElement {
   static styles = css`
     :host {
       display: block;
+    }
+
+    mm-sheet[width='small'] {
+      --sheet-width-small: 320px;
     }
   `
 
@@ -59,7 +64,7 @@ export class Dialog extends LitElement {
         <mm-sheet-body>
           ${this.description
             ? html`
-                <p>${this.description}</p>
+                <mm-paragraph>${this.description}</mm-paragraph>
               `
             : nothing}
           <slot></slot>

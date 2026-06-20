@@ -16,9 +16,12 @@ export class PageButton extends LitElement {
   static styles = [
     iconButtonStyles,
     css`
+      :host {
+        --icon-button-color: transparent;
+      }
+
       button[aria-current='page'] {
         border-color: var(--selection-indicator-color);
-        background-color: var(--selection-background);
         color: var(--selection-foreground);
         font-weight: var(--font-weight-bold);
       }

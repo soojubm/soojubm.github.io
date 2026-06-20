@@ -6,7 +6,7 @@ export const tabsStyles = css`
 
     --tabs-indicator-color: var(--color-primary);
     --tabs-line-color: var(--color-border);
-    --tabs-line-width: calc(var(--border-width) * 2);
+    --tabs-line-width: var(--border-width);
     --tabs-pill-background: var(--color-background-subtle);
     --tabs-pill-indicator-background: var(--color-background);
     --tabs-pill-radius: var(--radius);
