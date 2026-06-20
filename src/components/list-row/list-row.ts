@@ -68,10 +68,7 @@ export class ListRow extends LitElement {
               `}
           ${this.description
             ? html`
-                <mm-text
-                  size=${this.size === 'large' ? '14' : '12'}
-                  color="var(--color-foreground-light)"
-                >
+                <mm-text size=${this.size === 'large' ? '14' : '12'} color="light">
                   ${this.description}
                 </mm-text>
               `

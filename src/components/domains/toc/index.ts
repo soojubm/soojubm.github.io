@@ -240,14 +240,7 @@ export class TableOfContents extends LitElement {
   private renderShareSection() {
     return html`
       <section class="share" aria-label="Share on">
-        <mm-text
-          weight="bold"
-          color="var(--color-foreground-light)"
-          class="toc-title"
-          aria-hidden="true"
-        >
-          Share on
-        </mm-text>
+        <mm-text weight="bold" color="light" class="toc-title" aria-hidden="true">Share on</mm-text>
         <mm-button-group>
           ${this.shareLinks.map(
             ({ href, icon, label }) => html`
@@ -275,12 +268,7 @@ export class TableOfContents extends LitElement {
 
     return html`
       <nav aria-label="On this page">
-        <mm-text
-          weight="bold"
-          color="var(--color-foreground-light)"
-          class="toc-title"
-          aria-hidden="true"
-        >
+        <mm-text weight="bold" color="light" class="toc-title" aria-hidden="true">
           On this page
         </mm-text>
         <div class="toc-list" style=${`--selection-indicator-y: ${this.indicatorY}px`}>

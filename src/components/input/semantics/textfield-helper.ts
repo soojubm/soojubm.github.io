@@ -10,7 +10,7 @@ import '../../text/text'
 export class TextfieldHelper extends LitElement {
   render() {
     return html`
-      <mm-text as="p" size="12" weight="medium" color="var(--color-foreground-light)">
+      <mm-text as="p" size="12" weight="medium" color="light">
         <slot></slot>
       </mm-text>
     `

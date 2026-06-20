@@ -121,7 +121,7 @@ export class CheckboxGroup extends LitElement {
         ${this.legend
           ? html`
               <legend>
-                <mm-text size="12" color="var(--color-foreground-light)">${this.legend}</mm-text>
+                <mm-text size="12" color="light">${this.legend}</mm-text>
               </legend>
             `
           : nothing}

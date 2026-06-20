@@ -78,9 +78,7 @@ class TextBlock extends LitElement {
             `}
         ${this.caption
           ? html`
-              <mm-text size="12" color="var(--color-foreground-light)" ?center="${this.center}">
-                ${this.caption}
-              </mm-text>
+              <mm-text size="12" color="light" ?center="${this.center}">${this.caption}</mm-text>
             `
           : nothing}
       </div>

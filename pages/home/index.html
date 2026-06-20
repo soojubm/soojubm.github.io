@@ -594,7 +594,7 @@
 
     <mm-surface variant="tinted" style="margin: var(--space-4) 0 var(--space-8)">
       <mm-flex direction="column" gap="2">
-        <mm-text size="12" color="var(--color-foreground-light)">레이어 판단 기준</mm-text>
+        <mm-text size="12" color="light">레이어 판단 기준</mm-text>
         <mm-paragraph>
           <strong>다른 도메인이나 서비스에서도 쓸 수 있는가?</strong>
           → Semantic. 이 서비스에만 존재하는 개념인가? → Concrete.
@@ -611,7 +611,7 @@
 
     <div>
       <mm-flex direction="column">
-        <mm-text size="12" color="var(--color-foreground-light)">LAYER 1</mm-text>
+        <mm-text size="12" color="light">LAYER 1</mm-text>
         <mm-paragraph size="large" weight="bold">Abstract</mm-paragraph>
         <mm-paragraph>
           HTML 요소 수준의 가장 작은 단위. 의도 없이 props로만 변형되는 범용 빌딩 블록.
@@ -630,11 +630,11 @@
       </mm-flex>
 
       <mm-flex direction="column">
-        <mm-text size="12" color="var(--color-foreground-light)">
+        <mm-text size="12" color="light">
           ↓ extends — Semantic은 Abstract를 상속해 역할을 고정한다
         </mm-text>
         <div>
-          <mm-text size="12" color="var(--color-foreground-light)">LAYER 2</mm-text>
+          <mm-text size="12" color="light">LAYER 2</mm-text>
           <mm-paragraph size="large" weight="bold">Semantic</mm-paragraph>
         </div>
         <mm-paragraph>
@@ -655,11 +655,11 @@
       </mm-flex>
 
       <mm-flex direction="column">
-        <mm-text size="12" color="var(--color-foreground-light)">
+        <mm-text size="12" color="light">
           ↓ composes — Concrete는 Abstract·Semantic 컴포넌트를 조합해 완성한다
         </mm-text>
         <div>
-          <mm-text size="12" color="var(--color-foreground-light)">LAYER 3</mm-text>
+          <mm-text size="12" color="light">LAYER 3</mm-text>
           <mm-paragraph size="large" weight="bold">Concrete</mm-paragraph>
         </div>
         <mm-paragraph>

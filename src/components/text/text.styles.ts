@@ -2,11 +2,16 @@ import { css } from 'lit'
 
 export type TextSize = '32' | '24' | '18' | '14' | '12'
 export type TextWeight = 'medium' | 'bold'
+export type TextColor = 'inherit' | 'light'
 
 export const textStyles = css`
   :host {
     display: block;
     color: inherit;
+  }
+
+  :host([color='light']) {
+    color: var(--color-foreground-light);
   }
 
   :host([center]) {
