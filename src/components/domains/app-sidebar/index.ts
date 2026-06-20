@@ -69,16 +69,22 @@ export class Sidebar extends LitElement {
           if (node.type === 'category') {
             return html`
               <div>
-                <button
+                <mm-menu-item-action
                   id="${node.id}-btn"
+                  class="sidebar-category-trigger is-open"
+                  label=${node.title}
+                  icon=${node.icon}
                   aria-haspopup="menu"
                   aria-controls="${node.id}-menu"
-                  class="is-open"
+                  aria-expanded="true"
+                  @click=${(event: Event) => {
+                    const trigger = event.currentTarget as HTMLElement
+                    const isOpen = trigger.classList.toggle('is-open')
+                    trigger.setAttribute('aria-expanded', String(isOpen))
+                  }}
                 >
-                  <mm-avatar slot="avatar" variant="tertiary" icon="${node.icon}"></mm-avatar>
-                  <mm-paragraph>${node.title}</mm-paragraph>
-                  <div style="margin-left: auto"><mm-icon name=${ICON_NAMES.EXPAND}></mm-icon></div>
-                </button>
+                  <mm-icon slot="trailing" name=${ICON_NAMES.EXPAND}></mm-icon>
+                </mm-menu-item-action>
 
                 <menu id="${node.id}-menu" aria-labelledby="${node.id}-btn">
                   ${node?.items?.map(

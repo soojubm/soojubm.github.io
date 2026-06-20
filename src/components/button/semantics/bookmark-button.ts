@@ -1,6 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { resetStyles } from '../../../stylesheets/shared/reset.styles'
+import '../../icon-button/icon-button'
 import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
 
 /**
@@ -22,30 +23,12 @@ export class BookmarkButton extends LitElement {
         display: inline-flex;
       }
 
-      .toggle {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0;
-        width: var(--size-medium);
-        border: none;
-        background: transparent;
-        color: var(--color-foreground-light);
-        cursor: pointer;
-
-        &:hover {
-          background: var(--color-background-subtle);
-        }
-
-        &:disabled {
-          opacity: 0.5;
-          cursor: not-allowed;
-        }
+      mm-icon-button {
+        --icon-button-text-color: var(--color-foreground-light);
       }
 
-      :host([selected]) .toggle {
-        background: transparent;
-        color: var(--color-accent);
+      :host([selected]) mm-icon-button {
+        --icon-button-text-color: var(--color-accent);
       }
     `,
   ]
@@ -83,16 +66,14 @@ export class BookmarkButton extends LitElement {
 
   render() {
     return html`
-      <button
-        type="button"
-        class="toggle"
+      <mm-icon-button
+        variant="plain"
+        icon=${this.iconName}
         aria-pressed=${this.selected ? 'true' : 'false'}
         aria-label=${this.actionLabel}
         ?disabled=${this.disabled}
         @click=${this.handleClick}
-      >
-        <mm-icon name=${this.iconName}></mm-icon>
-      </button>
+      ></mm-icon-button>
     `
   }
 }

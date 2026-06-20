@@ -138,19 +138,18 @@
   display: flex;
   flex-direction: column;
 }
-.sidebar-menu > div button {
+.sidebar-menu > div .sidebar-category-trigger {
   display: flex;
   align-items: center;
-  gap: var(--space-2);
   margin-bottom: var(--space-1);
 }
-.sidebar-menu > div button + menu {
+.sidebar-menu > div .sidebar-category-trigger + menu {
   display: none;
 }
-.sidebar-menu > div button.is-open + menu {
+.sidebar-menu > div .sidebar-category-trigger.is-open + menu {
   display: block;
 }
-.sidebar-menu > div button.is-open div {
+.sidebar-menu > div .sidebar-category-trigger.is-open > mm-icon {
   transform: rotate(180deg);
 }
 .sidebar-menu > div mm-menu-item-link {

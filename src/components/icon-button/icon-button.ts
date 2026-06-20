@@ -17,6 +17,7 @@ class IconButton extends LitElement {
   // 호스트에 설정된 aria 속성을 내부 <button>으로 포워딩 (mm-dropdown 등 외부 컨트롤러용)
   @property({ attribute: 'aria-haspopup' }) private _ariaHaspopup: string | null = null
   @property({ attribute: 'aria-expanded' }) private _ariaExpanded: string | null = null
+  @property({ attribute: 'aria-pressed' }) private _ariaPressed: string | null = null
 
   static styles = [iconButtonStyles]
 
@@ -33,6 +34,7 @@ class IconButton extends LitElement {
         ?disabled="${this.disabled}"
         aria-haspopup="${this._ariaHaspopup !== null ? this._ariaHaspopup : nothing}"
         aria-expanded="${this._ariaExpanded !== null ? this._ariaExpanded : nothing}"
+        aria-pressed="${this._ariaPressed !== null ? this._ariaPressed : nothing}"
       >
         <mm-icon name="${this.icon}"></mm-icon>
       </button>

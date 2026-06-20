@@ -35,12 +35,14 @@ export class ButtonGroup extends LitElement {
     css`
       :host {
         display: flex;
+
+        --button-group-gap: var(--space-2);
       }
 
       .flex {
         display: flex;
         width: 100%;
-        gap: var(--space-2);
+        gap: var(--button-group-gap);
       }
 
       :host([stretch]) .flex ::slotted(*) {

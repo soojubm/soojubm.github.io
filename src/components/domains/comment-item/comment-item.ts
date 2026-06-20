@@ -1,6 +1,8 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
+import '../../button/button'
 import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
+import '../../menuitem/semantics/menu-item-action'
 
 /**
  * 댓글 목록의 개별 항목.
@@ -36,15 +38,12 @@ export class CommentItem extends LitElement {
       position: relative;
     }
 
-    .reply {
+    mm-button.reply {
       align-self: flex-start;
-      padding: 0;
-      border: 0;
-      background: none;
-      font: inherit;
-      font-weight: var(--font-weight-bold);
-      color: var(--comment-item-reply-color);
-      cursor: pointer;
+
+      --button-color: transparent;
+      --button-padding-inline: 0;
+      --button-text-color: var(--comment-item-reply-color);
     }
 
     .replies {
@@ -87,20 +86,8 @@ export class CommentItem extends LitElement {
       display: block;
     }
 
-    .menu button {
-      display: block;
+    .menu mm-menu-item-action {
       width: 100%;
-      margin: 0;
-      padding: var(--space-2) var(--space-3);
-      border: 0;
-      background: none;
-      font: inherit;
-      text-align: left;
-      cursor: pointer;
-    }
-
-    .menu button:hover {
-      background-color: var(--color-background-subtle);
     }
   `
 
@@ -145,14 +132,28 @@ export class CommentItem extends LitElement {
 
         ${this.replyLabel
           ? html`
-              <button class="reply" @click=${() => this._emit('reply')}>${this.replyLabel}</button>
+              <mm-button
+                class="reply"
+                variant="text"
+                size="small"
+                @click=${() => this._emit('reply')}
+              >
+                ${this.replyLabel}
+              </mm-button>
             `
           : ''}
         ${this.editable
           ? html`
               <menu class="menu" data-open=${this._menuOpen ? 'true' : 'false'}>
-                <button @click=${() => this._onMenuAction('edit')}>수정</button>
-                <button @click=${() => this._onMenuAction('delete')}>삭제</button>
+                <mm-menu-item-action
+                  label="수정"
+                  @click=${() => this._onMenuAction('edit')}
+                ></mm-menu-item-action>
+                <mm-menu-item-action
+                  label="삭제"
+                  tone="danger"
+                  @click=${() => this._onMenuAction('delete')}
+                ></mm-menu-item-action>
               </menu>
             `
           : ''}

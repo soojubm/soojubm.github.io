@@ -1,4 +1,4 @@
-import { LitElement, html } from 'lit'
+import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 import { menuItemStyles } from '../menuitem.styles'
@@ -16,6 +16,9 @@ export class MenuItemAction extends LitElement {
   @property({ type: String, attribute: 'avatar-variant' }) avatarVariant = 'tertiary'
   @property({ type: Boolean, reflect: true }) disabled = false
   @property({ type: String, attribute: 'role' }) override role = ''
+  @property({ attribute: 'aria-controls' }) private _ariaControls: string | null = null
+  @property({ attribute: 'aria-expanded' }) private _ariaExpanded: string | null = null
+  @property({ attribute: 'aria-haspopup' }) private _ariaHaspopup: string | null = null
 
   static styles = [menuItemStyles]
 
@@ -32,8 +35,16 @@ export class MenuItemAction extends LitElement {
         data-tone=${ifDefined(this.tone || undefined)}
         data-interactive
         aria-disabled=${ifDefined(this.disabled ? 'true' : undefined)}
+        aria-controls=${this._ariaControls ?? nothing}
+        aria-expanded=${this._ariaExpanded ?? nothing}
+        aria-haspopup=${this._ariaHaspopup ?? nothing}
       >
-        ${renderMenuItemContent(this, html``)}
+        ${renderMenuItemContent(
+          this,
+          html`
+            <slot name="trailing" slot="trailing"></slot>
+          `,
+        )}
       </button>
     `
   }

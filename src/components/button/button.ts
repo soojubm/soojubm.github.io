@@ -1,4 +1,4 @@
-import { LitElement, html } from 'lit'
+import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { buttonStyles } from './button.styles'
 
@@ -15,6 +15,8 @@ export class Button extends LitElement {
   @property({ type: String }) icon = ''
   @property({ type: String, attribute: 'icon-position' }) iconPosition: ButtonIconPosition =
     'leading'
+  @property({ type: String, attribute: 'aria-label' }) override ariaLabel = ''
+  @property({ attribute: 'aria-pressed' }) private _ariaPressed: string | null = null
 
   static styles = [buttonStyles]
 
@@ -35,7 +37,12 @@ export class Button extends LitElement {
 
   render() {
     return html`
-      <button ?disabled="${this.disabled}" @click="${this._handleClick}">
+      <button
+        ?disabled="${this.disabled}"
+        aria-label=${this.ariaLabel || nothing}
+        aria-pressed=${this._ariaPressed ?? nothing}
+        @click="${this._handleClick}"
+      >
         ${this.renderIcon('leading')}
         <slot></slot>
         ${this.renderIcon('trailing')}

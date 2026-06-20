@@ -1,6 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { resetStyles } from '../../../stylesheets/shared/reset.styles'
+import '../button'
 
 /**
  * 개별 토글 버튼. 클릭하면 선택/비선택 상태를 전환합니다.
@@ -12,6 +13,7 @@ export class ToggleButton extends LitElement {
   @property({ type: String }) value = ''
   @property({ type: String }) icon = ''
   @property({ type: Boolean, reflect: true }) disabled = false
+  @property({ type: String, attribute: 'aria-label' }) override ariaLabel = ''
 
   static styles = [
     resetStyles,
@@ -19,51 +21,35 @@ export class ToggleButton extends LitElement {
       :host {
         display: inline-flex;
 
-        --toggle-size: var(--size-medium);
-        --toggle-padding-inline: var(--space-3);
-        --toggle-color: var(--color-background);
-        --toggle-border: 1px solid var(--color-border-strong);
-        --toggle-radius: var(--radius);
-        --toggle-text-color: var(--color-foreground);
         --toggle-selected-color: var(--selection-background);
         --toggle-selected-border-color: var(--selection-indicator-color);
         --toggle-selected-text-color: var(--selection-foreground);
       }
 
-      .toggle {
-        display: inline-flex;
-        align-items: center;
-        gap: var(--space-2);
-        min-height: var(--toggle-size);
-        padding: 0 var(--toggle-padding-inline);
-        border: var(--toggle-border);
-        border-radius: var(--toggle-radius);
-        background: var(--toggle-color);
-        color: var(--toggle-text-color);
-        font: inherit;
-        font-size: var(--font-size-14);
-        cursor: pointer;
-        transition: background 0.15s, color 0.15s, border-color 0.15s;
+      mm-button {
+        width: 100%;
       }
 
-      .toggle:hover {
-        background: var(--color-background-subtle);
-      }
-
-      :host([selected]) .toggle {
-        background: var(--toggle-selected-color);
-        border-color: var(--toggle-selected-border-color);
-        color: var(--toggle-selected-text-color);
-      }
-
-      :host([disabled]) .toggle {
-        opacity: 0.5;
-        cursor: not-allowed;
+      :host([selected]) mm-button {
+        --button-border: var(--border-width) solid var(--toggle-selected-border-color);
+        --button-color: var(--toggle-selected-color);
+        --button-text-color: var(--toggle-selected-text-color);
       }
     `,
   ]
 
-  protected handleClick() {
+  connectedCallback() {
+    super.connectedCallback()
+    this.addEventListener('click', this.handleClick)
+  }
+
+  disconnectedCallback() {
+    this.removeEventListener('click', this.handleClick)
+    super.disconnectedCallback()
+  }
+
+  protected handleClick = (event: Event) => {
+    event.stopPropagation()
     if (this.disabled) return
     this.selected = !this.selected
     this.dispatchEvent(
@@ -77,20 +63,17 @@ export class ToggleButton extends LitElement {
 
   render() {
     return html`
-      <button
-        type="button"
-        class="toggle"
+      <mm-button
+        variant="tertiary"
+        size="small"
+        isFullWidth
+        icon=${this.icon}
+        aria-label=${this.ariaLabel}
         aria-pressed=${this.selected ? 'true' : 'false'}
         ?disabled=${this.disabled}
-        @click=${this.handleClick}
       >
-        ${this.icon
-          ? html`
-              <mm-icon name=${this.icon}></mm-icon>
-            `
-          : ''}
         <slot></slot>
-      </button>
+      </mm-button>
     `
   }
 }
