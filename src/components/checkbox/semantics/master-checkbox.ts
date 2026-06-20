@@ -6,7 +6,7 @@ import type { Checkbox } from '../checkbox'
 @customElement('mm-master-checkbox')
 export class MasterCheckbox extends LitElement {
   @property({ type: String }) controls = ''
-  @property({ type: String }) size = 'large'
+  @property({ type: String, reflect: true }) size = 'large'
   @property({ type: Boolean, reflect: true }) checked = false
   @property({ type: Boolean, reflect: true }) indeterminate = false
 
@@ -81,7 +81,7 @@ export class MasterCheckbox extends LitElement {
   render() {
     return html`
       <mm-surface variant="elevated" size="medium">
-        <div data-size=${this.size} @pointerdown=${this._onPointerDown}>
+        <div @pointerdown=${this._onPointerDown}>
           <input
             type="checkbox"
             id=${this._inputId}

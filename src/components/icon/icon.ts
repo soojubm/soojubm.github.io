@@ -5,7 +5,7 @@ import { iconStyles } from './icon.styles'
 @customElement('mm-icon')
 class Icon extends LitElement {
   @property({ type: String }) name = ''
-  @property({ type: String }) size = ''
+  @property({ type: String, reflect: true }) size = ''
   @property({ type: String }) color = ''
 
   static styles = [iconStyles]
@@ -18,11 +18,7 @@ class Icon extends LitElement {
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css"
       />
-      <i
-        class="icon ${iconClassName}"
-        data-size="${this.size}"
-        style="${this.color ? `color: ${this.color}` : ''}"
-      ></i>
+      <i class="icon ${iconClassName}" style="${this.color ? `color: ${this.color}` : ''}"></i>
     `
   }
 }

@@ -7,19 +7,6 @@ export const topBarStyles = css`
     gap: var(--space-2);
     padding-block: var(--space-4);
     position: relative;
-
-    &[data-size='large'] {
-      align-items: baseline;
-      height: 100px;
-
-      & .top-bar-title {
-        font-size: 1.5rem;
-        position: absolute;
-        left: 0;
-        top: calc(var(--top-bar-height) - 0.25rem);
-        transform: translateX(0);
-      }
-    }
   }
 
   .top-bar-title {

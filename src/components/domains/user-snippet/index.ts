@@ -20,7 +20,7 @@ class UserSnippet extends LitElement {
     const avatarSize = this.avatarSize || this.size
 
     return html`
-      <div class="entity" data-size="${this.size}">
+      <div class="entity">
         <mm-avatar
           size=${avatarSize}
           variant=${this.avatarVariant}

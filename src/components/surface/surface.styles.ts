@@ -1,5 +1,4 @@
-import { css, unsafeCSS, CSSResult } from 'lit'
-import { mapToStyles } from '../../utils/style-helpers'
+import { css } from 'lit'
 
 // 1. 컴포넌트 이름에 종속되지 않는 일반적인 명칭 사용
 export const VARIANTS = {
@@ -30,9 +29,36 @@ export const SIZES = {
 export type Variant = keyof typeof VARIANTS
 export type Size = keyof typeof SIZES
 
-// 3. 맵핑된 스타일 (내부 클래스명을 'surface'로 지정)
-export const variantStyles = mapToStyles(VARIANTS, 'variant', 'surface')
-export const sizeStyles = mapToStyles(SIZES, 'size', 'surface')
+export const variantStyles = [
+  css`
+    :host([variant='plain']) .surface {
+      ${VARIANTS.plain}
+    }
+  `,
+  css`
+    :host([variant='tinted']) .surface {
+      ${VARIANTS.tinted}
+    }
+  `,
+  css`
+    :host([variant='elevated']) .surface {
+      ${VARIANTS.elevated}
+    }
+  `,
+]
+
+export const sizeStyles = [
+  css`
+    :host([size='small']) .surface {
+      ${SIZES.small}
+    }
+  `,
+  css`
+    :host([size='medium']) .surface {
+      ${SIZES.medium}
+    }
+  `,
+]
 
 export const styles = css`
   :host {

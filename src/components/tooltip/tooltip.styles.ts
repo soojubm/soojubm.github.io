@@ -24,25 +24,31 @@ export const tooltipStyles = css`
     align-items: center;
     position: relative;
 
-    &[data-open='true'] .tooltip-content,
     &:hover .tooltip-content {
       opacity: 1;
       visibility: visible;
     }
+  }
 
-    &[data-placement='center'] .tooltip-content {
-      white-space: pre;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-    &[data-placement='left'] .tooltip-content {
-      white-space: pre;
-    }
-    &[data-placement='right'] .tooltip-content {
-      white-space: pre;
-      left: auto;
-      right: 0;
-    }
+  :host([open]) .tooltip-content {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  :host([placement='center']) .tooltip-content {
+    white-space: pre;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  :host([placement='left']) .tooltip-content {
+    white-space: pre;
+  }
+
+  :host([placement='right']) .tooltip-content {
+    white-space: pre;
+    left: auto;
+    right: 0;
   }
 
   .tooltip-trigger {

@@ -13,7 +13,7 @@ const VARIANT_ICONS: Record<string, string> = {
 class Notice extends LitElement {
   @property({ type: String }) heading = ''
   @property({ type: String }) text = ''
-  @property({ type: String }) variant = ''
+  @property({ type: String, reflect: true }) variant = ''
   @property({ type: Boolean }) dismissible = false
 
   @state() private dismissed = false
@@ -33,7 +33,7 @@ class Notice extends LitElement {
     if (this.dismissed) return html``
 
     return html`
-      <div class="notice" data-variant="${this.variant}">
+      <div class="notice">
         <mm-icon name=${this.icon} class="notice-icon"></mm-icon>
         ${this.heading
           ? html`

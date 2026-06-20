@@ -15,10 +15,10 @@ export class CopyButton extends LitElement {
   static styles = [
     iconButtonStyles,
     css`
-      button[data-variant='plain'] {
+      button.plain {
         color: var(--color-foreground-light);
       }
-      button[data-variant='plain']:hover {
+      button.plain:hover {
         color: var(--color-foreground);
         background-color: var(--color-background-subtle);
       }
@@ -46,7 +46,7 @@ export class CopyButton extends LitElement {
     return html`
       <button
         type="button"
-        data-variant="plain"
+        class="plain"
         ?data-copied=${this.copied}
         aria-label=${this.copied ? '복사됨' : '복사'}
         @click=${this._handleClick}

@@ -45,7 +45,7 @@ export class Feature extends LitElement {
 
   render() {
     return html`
-      <div data-variant="${this.variant}">
+      <div>
         ${this.renderVisual()}
 
         <mm-text-block

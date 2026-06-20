@@ -5,9 +5,9 @@ import { avatarStyles } from './avatar.styles'
 
 @customElement('mm-avatar')
 export class Avatar extends LitElement {
-  @property({ type: String }) variant = 'primary'
-  @property({ type: String }) size = 'medium'
-  @property({ type: String }) shape: 'circle' | 'square' = 'square'
+  @property({ type: String, reflect: true }) variant = 'primary'
+  @property({ type: String, reflect: true }) size = 'medium'
+  @property({ type: String, reflect: true }) shape: 'circle' | 'square' = 'square'
   @property({ type: String }) src?: string
   @property({ type: String }) icon?: string
 
@@ -37,14 +37,7 @@ export class Avatar extends LitElement {
     const iconSize = isLargeIcon ? 'large' : 'medium'
 
     return html`
-      <figure
-        part="avatar"
-        role="img"
-        data-size=${this.size}
-        data-variant=${this.variant}
-        data-shape=${this.shape}
-        aria-label=${this.ariaLabel || 'avatar'}
-      >
+      <figure role="img" aria-label=${this.ariaLabel || 'avatar'}>
         ${this.renderAvatarContent(iconSize)}
       </figure>
     `

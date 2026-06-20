@@ -28,7 +28,7 @@ export class Switch extends LitElement {
 
   render() {
     return html`
-      <div data-size=${this.size || nothing}>
+      <div>
         <input
           id=${this.inputId}
           name=${this.name || nothing}

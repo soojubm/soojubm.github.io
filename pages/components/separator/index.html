@@ -19,7 +19,7 @@
   </mm-component-example>
 
   <mm-component-props>
-    <mm-prop name="spacing" type="string" optional></mm-prop>
+    <mm-prop name="spacing" type="'small' | 'medium' = 'medium'"></mm-prop>
     <mm-prop name="slot: text" type="HTMLElement" optional></mm-prop>
   </mm-component-props>
 
@@ -37,9 +37,8 @@
         titleText="Structural"
         subtitle="notification, status, informational"
         description="정보와 정보 사이의 시각적 경계를 명확히 하여, 복잡한 화면의 레이아웃을 논리적인 단위로 분리하고 구조화합니다."
-      >
-      </mm-feature>
-    </mm-component-guide>
+      ></mm-feature>
+    </mm-grid>
     <mm-text-list
       texts='[
         "hr 태그를 사용하면 의미론적으로 주제를 분리할 수 있고 컴포넌트의 고유성을 유지할 수 있습니다.",
@@ -47,7 +46,6 @@
         "아티클 레벨에서 사용합니다. 섹션 레벨과 페이지 레벨에서는 충분한 여백으로 콘텐츠를 구획합니다. 콘텐츠 레벨에 대한 foundations의 문서화 필요.",
         "불릿 컴포넌트의 정의. 불릿, 콤마, 콜론, 슬래시, 따옴표, 괄호 등으로 나열하는 맥락에 불릿 컴포넌트를 사용한다. 클립보드 복사를 위해 텍스트 더미를 드래그앤드롭으로 선택할 때에 불릿은 선택되지 않아야 한다."
       ]'
-    >
-    </mm-text-list>
-  </mm-grid>
+    ></mm-text-list>
+  </mm-component-guide>
 </main>

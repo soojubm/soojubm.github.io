@@ -7,7 +7,7 @@ import { renderMenuItemContent } from '../menuitem.utils'
 @customElement('mm-menu-item-radio')
 export class MenuItemRadio extends LitElement {
   @property({ type: String, reflect: true }) size = 'medium'
-  @property({ type: String }) tone = ''
+  @property({ type: String, reflect: true }) tone = ''
   @property({ type: String }) label = ''
   @property({ type: String }) description = ''
   @property({ type: String }) icon = ''
@@ -67,7 +67,6 @@ export class MenuItemRadio extends LitElement {
       <div
         class="item"
         role="menuitemradio"
-        data-tone=${ifDefined(this.tone || undefined)}
         data-interactive
         aria-disabled=${ifDefined(this.disabled ? 'true' : undefined)}
         aria-checked=${String(this.checked)}

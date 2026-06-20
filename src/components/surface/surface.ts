@@ -1,7 +1,5 @@
 import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { ifDefined } from 'lit/directives/if-defined.js'
-
 // 파일명이 바뀌어도 import 구조는 깨지지 않음
 import { styles, variantStyles, sizeStyles, type Variant, type Size } from './surface.styles'
 
@@ -9,18 +7,12 @@ import { styles, variantStyles, sizeStyles, type Variant, type Size } from './su
 export class Surface extends LitElement {
   static styles = [styles, ...variantStyles, ...sizeStyles]
 
-  @property({ type: String }) variant?: Variant
-  @property({ type: String }) size?: Size
+  @property({ type: String, reflect: true }) variant?: Variant
+  @property({ type: String, reflect: true }) size?: Size
 
   render() {
     return html`
-      <div
-        class="surface"
-        data-variant=${ifDefined(this.variant)}
-        data-size=${ifDefined(this.size)}
-      >
-        <slot></slot>
-      </div>
+      <div class="surface"><slot></slot></div>
     `
   }
 }

@@ -30,11 +30,11 @@ export const menuItemStyles = css`
       opacity: 0.5;
       pointer-events: none;
     }
+  }
 
-    /* tone=danger: color를 행에 지정하면 list-row 내부 텍스트·아이콘이 상속받는다 */
-    &[data-tone='danger'] {
-      color: var(--menuitem-color-danger);
-    }
+  /* tone=danger: color를 행에 지정하면 list-row 내부 텍스트·아이콘이 상속받는다 */
+  :host([tone='danger']) .item {
+    color: var(--menuitem-color-danger);
   }
 
   :host([aria-current='page']) .item[data-interactive] {

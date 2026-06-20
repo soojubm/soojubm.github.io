@@ -86,7 +86,7 @@ export const checkboxStyles = css`
     outline-offset: 2px;
   }
 
-  [data-size='large'] input[type='checkbox']:checked + label > span::after {
+  :host([size='large']) input[type='checkbox']:checked + label > span::after {
     left: 8px;
     top: 8px;
     transform: rotate(-50deg) scale(1.5);
@@ -125,7 +125,7 @@ export const checkboxStyles = css`
     }
   }
 
-  [data-size='large'] {
+  :host([size='large']) {
     --checkbox-size: var(--size-small);
   }
 `

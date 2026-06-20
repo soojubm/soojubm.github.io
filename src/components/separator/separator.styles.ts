@@ -11,6 +11,14 @@ export const separatorStyles = css`
     --separator-label-line-height: 24px;
   }
 
+  :host([spacing='small']) {
+    --separator-spacing: var(--space-2);
+  }
+
+  :host([spacing='medium']) {
+    --separator-spacing: var(--space-4);
+  }
+
   hr {
     margin: 0;
     border: 0;
@@ -37,10 +45,6 @@ export const separatorStyles = css`
         left: 50%;
         top: 0;
         transform: translateX(-50%);
-      }
-
-      &[data-spacing='small'] {
-        margin-block: var(--space-2);
       }
     }
   }

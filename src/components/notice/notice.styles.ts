@@ -29,24 +29,27 @@ export const noticeStyles = css`
     background: var(--notice-bg);
     color: var(--notice-color);
     position: relative;
-    &[data-variant='success'] {
-      --notice-accent: var(--color-success);
-      --notice-color: var(--color-success);
-      --notice-bg: var(--color-success-subtle);
-      --notice-border-color: var(--color-success-border);
-    }
-    &[data-variant='warning'] {
-      --notice-accent: var(--color-warning);
-      --notice-color: var(--color-warning);
-      --notice-bg: var(--color-warning-subtle);
-      --notice-border-color: var(--color-warning-border);
-    }
-    &[data-variant='danger'] {
-      --notice-accent: var(--color-danger);
-      --notice-color: var(--color-danger);
-      --notice-bg: var(--color-danger-subtle);
-      --notice-border-color: var(--color-danger-border);
-    }
+  }
+
+  :host([variant='success']) {
+    --notice-accent: var(--color-success);
+    --notice-color: var(--color-success);
+    --notice-bg: var(--color-success-subtle);
+    --notice-border-color: var(--color-success-border);
+  }
+
+  :host([variant='warning']) {
+    --notice-accent: var(--color-warning);
+    --notice-color: var(--color-warning);
+    --notice-bg: var(--color-warning-subtle);
+    --notice-border-color: var(--color-warning-border);
+  }
+
+  :host([variant='danger']) {
+    --notice-accent: var(--color-danger);
+    --notice-color: var(--color-danger);
+    --notice-bg: var(--color-danger-subtle);
+    --notice-border-color: var(--color-danger-border);
   }
 
   .notice-icon {

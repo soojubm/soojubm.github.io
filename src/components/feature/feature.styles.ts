@@ -9,7 +9,4 @@ export const featureStyles = css`
     position: relative;
     z-index: 1;
   }
-
-  div([variant='primary']) {
-  }
 `

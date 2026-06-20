@@ -4,7 +4,7 @@ import { resetStyles } from '../../stylesheets/shared/reset.styles'
 
 @customElement('mm-spinner')
 export class Spinner extends LitElement {
-  @property({ type: String }) size: 'small' | 'medium' | 'large' = 'medium'
+  @property({ type: String, reflect: true }) size: 'small' | 'medium' | 'large' = 'medium'
   @property({ type: String }) label = '로딩 중'
 
   static styles = [
@@ -25,16 +25,18 @@ export class Spinner extends LitElement {
         border-top-color: var(--color-primary);
         animation: spin 0.8s linear infinite;
         flex-shrink: 0;
+      }
 
-        &[data-size='small'] {
-          --spinner-size: var(--size-small);
-        }
-        &[data-size='medium'] {
-          --spinner-size: var(--size-medium);
-        }
-        &[data-size='large'] {
-          --spinner-size: var(--size-large);
-        }
+      :host([size='small']) .spinner {
+        --spinner-size: var(--size-small);
+      }
+
+      :host([size='medium']) .spinner {
+        --spinner-size: var(--size-medium);
+      }
+
+      :host([size='large']) .spinner {
+        --spinner-size: var(--size-large);
       }
 
       .label {
@@ -52,7 +54,7 @@ export class Spinner extends LitElement {
 
   render() {
     return html`
-      <span class="spinner" data-size=${this.size} role="status" aria-label=${this.label}></span>
+      <span class="spinner" role="status" aria-label=${this.label}></span>
       <slot>
         <span class="label">${this.label}</span>
       </slot>

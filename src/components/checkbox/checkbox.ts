@@ -10,7 +10,7 @@ export class Checkbox extends LitElement {
   @property({ type: String })
   value?: string
 
-  @property({ type: String })
+  @property({ type: String, reflect: true })
   size?: string
 
   @property({ type: Boolean, reflect: true })
@@ -61,10 +61,10 @@ export class Checkbox extends LitElement {
 
   render() {
     // 가독성을 위한 구조 분해 할당
-    const { name, value, size, checked, disabled, indeterminate, _inputId } = this
+    const { name, value, checked, disabled, indeterminate, _inputId } = this
 
     return html`
-      <div data-size=${size || nothing}>
+      <div>
         <input
           type="checkbox"
           id=${_inputId}

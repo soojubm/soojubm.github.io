@@ -165,19 +165,19 @@ export class Navbar extends LitElement {
                 <div style="position: absolute; right: var(--space-4); top: var(--space-4)">
                   <mm-tag variant="primary" size="large">샘플 유아이</mm-tag>
                 </div>
-                <mm-separator></mm-separator>
+                <mm-separator spacing="small"></mm-separator>
                 <mm-menu-item-group>
                   <mm-menu-item-action
                     icon=${ICON_NAMES.ANNOUNCEMENT}
                     label="고객센터 및 도움말"
                   ></mm-menu-item-action>
                 </mm-menu-item-group>
-                <mm-separator></mm-separator>
+                <mm-separator spacing="small"></mm-separator>
                 <mm-menu-item-action
                   icon=${ICON_NAMES.LOG_OUT}
                   label="로그아웃"
                 ></mm-menu-item-action>
-                <mm-separator></mm-separator>
+                <mm-separator spacing="small"></mm-separator>
                 <mm-flex style="margin-top: -0.25rem">
                   <mm-link variant="secondary" href="#">개인정보처리방침</mm-link>
                   <mm-link variant="secondary" href="#">서비스 약관</mm-link>

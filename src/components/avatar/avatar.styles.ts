@@ -26,30 +26,41 @@ export const avatarStyles = css`
     position: relative;
     box-shadow: 0 0 0 1px var(--avatar-border-color);
     --button-text-color: var(--avatar-icon-color);
+  }
 
-    &[data-shape='circle'] {
-      --avatar-radius: var(--radius-round);
-    }
-    &[data-size='huge'] {
-      --avatar-size: var(--size-huge);
-      font-size: var(--font-size-huge);
-    }
-    &[data-size='large'] {
-      --avatar-size: var(--size-large);
-      font-size: var(--font-size-large);
-    }
-    &[data-size='small'] {
-      --avatar-size: var(--size-small);
-    }
-    &[data-variant='secondary'] {
-      border: var(--border);
-      --avatar-background-color: var(--color-background);
-    }
-    &[data-variant='tertiary'] {
-      --avatar-background-color: transparent;
-      border: none;
-      box-shadow: none;
-    }
+  :host([shape='circle']) {
+    --avatar-radius: var(--radius-round);
+  }
+
+  :host([size='huge']) {
+    --avatar-size: var(--size-huge);
+    font-size: var(--font-size-huge);
+  }
+
+  :host([size='large']) {
+    --avatar-size: var(--size-large);
+    font-size: var(--font-size-large);
+  }
+
+  :host([size='small']) {
+    --avatar-size: var(--size-small);
+  }
+
+  :host([variant='secondary']) {
+    --avatar-background-color: var(--color-background);
+  }
+
+  :host([variant='secondary']) figure {
+    border: var(--border);
+  }
+
+  :host([variant='tertiary']) {
+    --avatar-background-color: transparent;
+  }
+
+  :host([variant='tertiary']) figure {
+    border: none;
+    box-shadow: none;
   }
 
   img {

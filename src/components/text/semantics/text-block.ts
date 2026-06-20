@@ -12,7 +12,7 @@ class TextBlock extends LitElement {
   @property({ type: String }) heading = ''
   @property({ type: String }) description = ''
   @property({ type: String }) caption = ''
-  @property({ type: String }) level = '1'
+  @property({ type: String, reflect: true }) level = '1'
   @property({ type: Boolean, reflect: true }) center = false
 
   static variants = {
@@ -44,7 +44,7 @@ class TextBlock extends LitElement {
         flex-direction: column;
       }
       /* Level 1 전용 본문 최대 너비 제한 (가독성 최적화) */
-      .container[data-level='1'] mm-paragraph {
+      :host([level='1']) .container mm-paragraph {
         max-width: 720px;
       }
     `,
@@ -60,7 +60,6 @@ class TextBlock extends LitElement {
     return html`
       <div
         class="container"
-        data-level="${this.level}"
         style="gap:${variant.gap}; align-items: ${this.center ? 'center' : 'flex-start'};"
       >
         ${isLevel1
