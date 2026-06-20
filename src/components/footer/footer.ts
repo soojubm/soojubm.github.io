@@ -1,5 +1,6 @@
 import { LitElement, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
+import soojubmImage from '../../images/soojubm.png'
 
 @customElement('mm-footer')
 export class Footer extends LitElement {
@@ -18,8 +19,8 @@ export class Footer extends LitElement {
           email="soojubm@gmail.com"
           phone="010 3121 7045"
           description="UI Designer"
-          avatar-src="/src/images/soojubm.png"
-          size="large"
+          avatar-src=${soojubmImage}
+          size="huge"
           avatar-variant="secondary"
         ></mm-user-snippet>
 

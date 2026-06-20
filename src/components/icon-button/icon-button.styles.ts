@@ -2,6 +2,7 @@ import { css } from 'lit'
 
 export const iconButtonStyles = css`
   :host {
+    display: inline-flex;
     --icon-button-size: var(--size-medium);
     --icon-button-color: var(--color-background-subtle);
     --icon-button-radius: var(--radius);
@@ -78,7 +79,8 @@ export const iconButtonStyles = css`
 
   :host([variant='clear']) {
     --icon-button-size: var(--size-tiny);
-    box-shadow: var(--shadow);
+    --icon-button-radius: var(--radius-round);
+    --icon-button-color: var(--color-background);
   }
 
   :host([size='small']) {

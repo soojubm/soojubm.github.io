@@ -13,12 +13,6 @@ export class Sidebar extends LitElement {
 
   // Lit 렌더링이 완료된 후 실행 → DOM이 확실히 존재
   firstUpdated() {
-    this.querySelectorAll<HTMLElement>('.sidebar-menu button').forEach(btn => {
-      btn.addEventListener('click', () => {
-        btn.classList.toggle('is-open')
-      })
-    })
-
     this.highlightCurrentLink()
     this.syncScrollPosition()
   }

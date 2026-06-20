@@ -48,11 +48,11 @@ export class Feature extends LitElement {
       <div data-variant="${this.variant}">
         ${this.renderVisual()}
 
-        <mm-title-with-description
+        <mm-text-block
           level="3"
-          .title="${this.titleText}"
+          .heading="${this.titleText}"
           .description="${this.description}"
-        ></mm-title-with-description>
+        ></mm-text-block>
 
         <slot></slot>
       </div>

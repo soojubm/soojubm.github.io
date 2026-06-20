@@ -1,4 +1,4 @@
-<mm-page width="small" style="margin: 0 auto">
+<mm-page width="small" background="subtle" style="margin: 0 auto">
   <header
     style="
       display: flex;
@@ -24,15 +24,19 @@
   ></mm-list-row>
   <div style="height: var(--space-3)"></div>
   <mm-menu-item-group>
-    <mm-menu-item-action icon="mail" label="soojubm@gmail.com">
-      <mm-icon slot="action" name="arrow-right" aria-label=""></mm-icon>
-    </mm-menu-item-action>
-    <mm-menu-item-action icon="lock" label="비밀번호 변경">
-      <mm-icon slot="action" name="arrow-right" aria-label=""></mm-icon>
-    </mm-menu-item-action>
-    <mm-menu-item-action icon="user" label="닉네임 변경">
-      <mm-icon slot="action" name="arrow-right" aria-label=""></mm-icon>
-    </mm-menu-item-action>
+    <mm-menu-item-link
+      icon="mail"
+      label="soojubm@gmail.com"
+      href="#"
+      target="_self"
+    ></mm-menu-item-link>
+    <mm-menu-item-link
+      icon="lock"
+      label="비밀번호 변경"
+      href="#"
+      target="_self"
+    ></mm-menu-item-link>
+    <mm-menu-item-link icon="user" label="닉네임 변경" href="#" target="_self"></mm-menu-item-link>
   </mm-menu-item-group>
   <mm-separator></mm-separator>
   <mm-list-row

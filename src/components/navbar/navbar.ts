@@ -1,6 +1,7 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, state } from 'lit/decorators.js'
 import { ICON_NAMES } from '../icon-button/semantics/icon-names'
+import soojubmImage from '../../images/soojubm.png'
 
 type PagefindResult = { url: string; meta: { title: string }; excerpt: string }
 type Pagefind = {
@@ -152,7 +153,7 @@ export class Navbar extends LitElement {
                   email="soojubm@gmail.com"
                   phone="010 3121 7045"
                   description="UI Designer"
-                  avatar-src="/src/images/soojubm.png"
+                  avatar-src=${soojubmImage}
                   size="large"
                   avatar-variant="secondary"
                   tag-label="접속 중"

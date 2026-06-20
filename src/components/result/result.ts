@@ -46,12 +46,12 @@ class Result extends LitElement {
               `
             : nothing}
         </slot>
-        <mm-title-with-description
+        <mm-text-block
           level="3"
-          title=${this.title}
+          heading=${this.title}
           description=${this.description}
           center
-        ></mm-title-with-description>
+        ></mm-text-block>
         <div class="result-content" ?hidden=${!this.hasDefaultContent}>
           <slot @slotchange=${(event: Event) => this.handleSlotChange('default', event)}></slot>
         </div>

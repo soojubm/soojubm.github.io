@@ -142,11 +142,8 @@
       <mm-heading level="2">섹션 레벨의 타이틀</mm-heading>
       <div style="height: 0.75rem"></div>
       <mm-heading level="3">소제목</mm-heading>
-
-      <mm-heading level="1">Level 1</mm-heading>
-      <mm-heading level="2">Level 2</mm-heading>
-      <mm-heading level="3">Level 3</mm-heading>
-      <mm-heading level="4">Level 4</mm-heading>
+      <div style="height: 0.75rem"></div>
+      <mm-heading level="4">더소제목</mm-heading>
     </mm-flex>
   </mm-component-section>
 
@@ -217,27 +214,28 @@
   </mm-component-section>
 
   <mm-component-section
-    title="TitleWithDescription"
+    title="Text Block"
     description="KeyValue(LabelDescription/DescriptionList),Question-Answer Pair,  Translation Pair, Dialogue Pair "
   >
     <div>
-      <mm-title-with-description
+      <mm-text-block
         level="1"
-        title="Level 1 Title"
+        heading="Level 1 Title"
         description="이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에 부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은 침묵에 잠겼다. "
-      ></mm-title-with-description>
+      ></mm-text-block>
       <mm-separator></mm-separator>
-      <mm-title-with-description
+      <mm-text-block
         level="2"
-        title="Level 2 Title"
+        heading="Level 2 Title"
         description="이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에 부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은 침묵에 잠겼다. "
-      ></mm-title-with-description>
+      ></mm-text-block>
       <mm-separator></mm-separator>
-      <mm-title-with-description
+      <mm-text-block
         level="3"
-        title="Level 3 Title"
+        heading="Level 3 Title"
         description="이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에 부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은 침묵에 잠겼다. "
-      ></mm-title-with-description>
+        caption="Optional caption text"
+      ></mm-text-block>
     </div>
   </mm-component-section>
 
@@ -246,13 +244,13 @@
     description="A hero section is a large, prominent section at the top of a webpage that typically includes a headline, subheadline, and a call-to-action button."
   >
     <section class="hero">
-      <mm-title-with-description
+      <mm-text-block
         level="1"
-        title="Hero Title"
+        heading="Hero Title"
         description="이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에
             부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은 침묵에 잠겼다. 이야기를 들을 기대에
           부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은 침묵에 잠겼다."
-      ></mm-title-with-description>
+      ></mm-text-block>
       <div style="height: var(--space-8)"></div>
       <mm-button-group>
         <mm-button variant="primary" size="large">콜 투 액션</mm-button>

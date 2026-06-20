@@ -159,20 +159,22 @@
     title="Setting Item"
     description="설정 메뉴에 적합한 레이아웃과 상호작용을 가진 MenuItemRow입니다. 토글 스위치와 함께 사용됩니다."
   >
-    <mm-setting-item
-      start-icon="code"
-      label="철저한 코드 리뷰"
-      description="추가 발견 사항을 계속 찾도록 합니다."
-    >
-      <mm-switch slot="action" checked></mm-switch>
-    </mm-setting-item>
-    <mm-setting-item
-      start-icon="half-moon"
-      label="다크 모드"
-      description="어두운 배경 테마를 사용합니다."
-    >
-      <mm-switch slot="action"></mm-switch>
-    </mm-setting-item>
+    <mm-menu-item-group>
+      <mm-setting-item
+        start-icon="code"
+        label="철저한 코드 리뷰"
+        description="추가 발견 사항을 계속 찾도록 합니다."
+      >
+        <mm-switch slot="action" checked></mm-switch>
+      </mm-setting-item>
+      <mm-setting-item
+        start-icon="half-moon"
+        label="다크 모드"
+        description="어두운 배경 테마를 사용합니다."
+      >
+        <mm-switch slot="action"></mm-switch>
+      </mm-setting-item>
+    </mm-menu-item-group>
   </mm-component-section>
 
   <mm-component-references>

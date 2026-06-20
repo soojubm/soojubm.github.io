@@ -7,6 +7,8 @@ export class Page extends LitElement {
   @property({ type: String, reflect: true }) width: 'small' | 'medium' | '' = ''
   /** 페이지 레이아웃 변형. 'chat' = full-height flex column */
   @property({ type: String, reflect: true }) layout: 'chat' | '' = ''
+  /** 페이지 배경 변형. 'subtle' = var(--color-background-subtle) */
+  @property({ type: String, reflect: true }) background: 'subtle' | '' = ''
   /** 페이지 좌우 패딩 제거 */
   @property({ type: Boolean, reflect: true }) fullWidth = false
 
@@ -16,6 +18,12 @@ export class Page extends LitElement {
       min-height: calc(100vh - var(--navbar-height) - var(--width-small));
       padding: var(--space-4) var(--layout-padding-inline) calc(var(--space-4) * 6);
       position: relative;
+    }
+
+    :host([background='subtle']) {
+      background-color: var(--color-background-subtle);
+      box-shadow: 0 0 0 100vmax var(--color-background-subtle);
+      clip-path: inset(0 -100vmax);
     }
 
     :host([fullwidth]) {

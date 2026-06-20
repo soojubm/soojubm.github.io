@@ -2,7 +2,7 @@ import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { iconButtonStyles } from './icon-button.styles'
 
-export type IconButtonVariant = 'action' | 'flow' | 'plain' | 'navigator' | 'destructive'
+export type IconButtonVariant = 'action' | 'flow' | 'plain' | 'navigator' | 'destructive' | 'clear'
 export type IconButtonSize = 'small' | 'medium'
 
 @customElement('mm-icon-button')

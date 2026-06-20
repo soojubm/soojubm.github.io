@@ -20,9 +20,8 @@
 .navbar-logo {
   width: var(--size-medium);
   height: var(--size-medium);
-  box-shadow: 0 0 var(--space-1) var(--yellow800);
-  background: url('/src/images/soojubm.png') no-repeat 64% 60%;
-  background-size: 80%;
+  background: url('../../images/soojubm.png') no-repeat center;
+  background-size: cover;
   background-color: var(--color-background-strong);
   border-radius: var(--radius-round);
 }

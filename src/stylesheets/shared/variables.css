@@ -207,6 +207,8 @@
   --color-border-hover: var(--brutal-border-color);
 
   --border: var(--border-width) solid var(--brutal-border-color);
+  --border-transparent: var(--border-width) solid var(--brutal-border-color);
+
   --border-stronger: var(--border-width) solid var(--brutal-border-color);
   --border-active: var(--border-width) solid var(--brutal-border-color);
 

@@ -6,6 +6,6 @@ import './semantics/read-more-paragraph'
 import './semantics/heading'
 import './semantics/caption'
 import './semantics/textList'
-import './semantics/title-with-description'
+import './semantics/text-block'
 
 export {}

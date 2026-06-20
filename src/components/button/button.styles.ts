@@ -10,7 +10,7 @@ export const buttonStyles = css`
     --button-radius: var(--radius);
     --button-text-color: var(--color-foreground);
     --button-text-size: inherit;
-    --button-text-weight: var(--font-weight-bold);
+    --button-text-weight: var(--font-weight-normal);
     --button-color-focus: var(--color-interaction-focus);
     --button-color-active-bg: var(--color-interaction-active-background);
     --button-color-active-border: var(--color-interaction-active-border);
@@ -45,7 +45,7 @@ export const buttonStyles = css`
   }
 
   :host([size='huge']) button {
-    --button-size: 64px;
+    --button-size: var(--size-huge);
     --button-text-size: var(--font-size-18);
     padding-bottom: 5px;
   }
@@ -54,9 +54,7 @@ export const buttonStyles = css`
     min-width: var(--button-min-width);
   }
   :host([size='small']) button {
-    --button-size: 2rem;
-    --button-text-size: var(--font-size-12);
-    --button-padding-inline: var(--space-2);
+    --button-size: var(--size-medium);
     min-width: 0;
   }
 

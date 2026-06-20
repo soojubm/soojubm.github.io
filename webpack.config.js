@@ -105,9 +105,24 @@ module.exports = (env, argv) => {
           use: [MiniCssExtractPlugin.loader, 'css-loader'],
         },
         {
+          test: /\.(png|jpe?g|gif|webp|svg)$/i,
+          type: 'asset/resource',
+          generator: {
+            filename: 'images/[name].[contenthash:8][ext]',
+          },
+        },
+        {
           test: /\.html$/i,
           loader: 'html-loader',
-          options: { sources: false },
+          options: {
+            sources: {
+              list: [
+                { tag: 'mm-avatar', attribute: 'src', type: 'src' },
+                { tag: 'mm-user-row', attribute: 'avatar-src', type: 'src' },
+                { tag: 'mm-user-snippet', attribute: 'avatar-src', type: 'src' },
+              ],
+            },
+          },
         },
       ],
     },
@@ -162,7 +177,6 @@ module.exports = (env, argv) => {
         filename: isProd ? 'css/[name].[contenthash:8].css' : '[name].css',
         ignoreOrder: true,
       }),
-
     ],
 
     devServer: {
