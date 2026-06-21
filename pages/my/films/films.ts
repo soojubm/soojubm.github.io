@@ -83,11 +83,13 @@ function filmCard(f: Film) {
             f.country ?? ''
           }</span>
         </mm-flex>
-        <p style="margin:0;font-weight:var(--font-weight-bold);line-height:1.3">${f.titlekorean}</p>
-        <p style="margin:0;font-size:var(--font-size-12);color:var(--color-foreground-light)">${
+        <mm-paragraph style="margin:0;font-weight:var(--font-weight-bold);line-height:1.3">${
+          f.titlekorean
+        }</mm-paragraph>
+        <mm-paragraph style="margin:0;font-size:var(--font-size-12);color:var(--color-foreground-light)">${
           f.titleenglish
-        }</p>
-        <p style="margin:0;font-size:var(--font-size-14)">${f.director}</p>
+        }</mm-paragraph>
+        <mm-paragraph style="margin:0;font-size:var(--font-size-14)">${f.director}</mm-paragraph>
       </mm-flex>
     </article>
   `

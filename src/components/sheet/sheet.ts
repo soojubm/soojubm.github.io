@@ -79,7 +79,7 @@ class Sheet extends LitElement {
   /** modal variant: 호스트(backdrop) 영역 클릭 시 닫는다 */
   private handleBackdropClick = (e: MouseEvent) => {
     if (!this._isModal || !this.isOpen) return
-    if (e.target === this) this.close()
+    if (e.target === this) this.requestClose()
   }
 
   /** anchor variant만 outside-click으로 닫는다 — dropdown과 동일한 패턴 */
@@ -89,7 +89,11 @@ class Sheet extends LitElement {
       this._skipNextOutsideClick = false
       return
     }
-    if (!e.composedPath().includes(this)) this.close()
+    if (!e.composedPath().includes(this)) this.requestClose()
+  }
+
+  private requestClose() {
+    this.dispatchEvent(new CustomEvent('sheetclose', { bubbles: true, composed: true }))
   }
 
   private get _isModal() {

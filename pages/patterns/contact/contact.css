@@ -21,7 +21,7 @@
   margin: 0 0 24px 0;
   box-sizing: border-box;
 }
-.contact-head-description {
+.contact-head > div > mm-paragraph {
   float: left;
   width: 50%;
   padding: 0 64px 0 0;
@@ -58,7 +58,7 @@
   .contact-head-title {
     margin-bottom: 1rem;
   }
-  .contact-head-description {
+  .contact-head > div > mm-paragraph {
     width: 100%;
     margin: 0 0 2rem 0;
   }

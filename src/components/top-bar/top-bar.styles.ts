@@ -9,7 +9,7 @@ export const topBarStyles = css`
     position: relative;
   }
 
-  .top-bar-title {
+  .top-bar > mm-paragraph {
     flex: 1;
   }
 

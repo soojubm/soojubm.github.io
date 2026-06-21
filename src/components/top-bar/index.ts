@@ -26,7 +26,7 @@ class TopBar extends LitElement {
               ></mm-icon-button>
             `
           : ''}
-        <mm-paragraph size="large" class="top-bar-title">${this.title}</mm-paragraph>
+        <mm-paragraph size="large">${this.title}</mm-paragraph>
         <slot name="action"></slot>
         ${this.nav === 'close'
           ? html`

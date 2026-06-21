@@ -32,7 +32,7 @@ export class ChatConfirmation extends LitElement {
         max-width: min(85%, 480px);
       }
 
-      .message {
+      mm-notice > mm-paragraph {
         flex: 1;
       }
 
@@ -68,7 +68,7 @@ export class ChatConfirmation extends LitElement {
 
     return html`
       <mm-notice heading="승인 요청">
-        <mm-paragraph class="message">
+        <mm-paragraph>
           ${this.message
             ? this.message
             : html`

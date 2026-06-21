@@ -50,7 +50,7 @@
 .class-order-action {
   border-top: var(--border);
 }
-.class-order-footer {
+.class-order > mm-paragraph {
   border-top: var(--border);
 }
 
@@ -95,7 +95,7 @@
 .minicard--closed {
   position: relative;
 }
-.minicard-badge {
+.minicard--closed mm-paragraph:last-child {
   position: absolute;
   left: 50%;
   top: 45%;

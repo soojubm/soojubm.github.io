@@ -310,7 +310,7 @@ mark {color:inherit;} mark::before {content: " [강조 시작] ";opacity:0;posit
 .marquee {
   display: flex;
 }
-.marquee p {
+.marquee mm-paragraph {
   /* // width: 50%; */
   /* gap or margin쓰면 안 됨. */
   padding: 1.25rem;
@@ -318,12 +318,12 @@ mark {color:inherit;} mark::before {content: " [강조 시작] ";opacity:0;posit
   animation: marquee 4s linear infinite;
   animation-play-state: running;
 }
-.marquee p:hover {
+.marquee mm-paragraph:hover {
   transform: scale(1.2);
   opacity: 0.5;
   cursor: pointer;
 }
-.marquee:hover p {
+.marquee:hover mm-paragraph {
   animation-play-state: paused;
 }
 

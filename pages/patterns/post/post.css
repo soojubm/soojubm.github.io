@@ -39,11 +39,7 @@
 .post-body {
   position: relative;
 } /* graident 때문에 아래요소에서 마진값주기 */
-.post-body-kicker {
-  margin: 2rem 0 2.5rem 0;
-  font-size: var(--font-size-18);
-  position: relative;
-}
+
 .post-body-image {
   height: 240px;
   overflow: hidden;

@@ -168,15 +168,15 @@ const article = [
 //         <mm-text size="32">${item.title}</mm-text>
 //         <mm-paragraph size="large">
 //         ${item.kicker}
-//         </p>
-//         <p style="margin:2rem 0">${item.description}</p>
+//         </mm-paragraph>
+//         <mm-paragraph style="margin:2rem 0">${item.description}</mm-paragraph>
 //         <div class="token-group">
 //           ${item.tokens.map(item => {
 //             return `<article class="token-item tile-flat ${item.name}">
 //               <figure class="token-item-avatar"></figure>
 //               <b>${item.name}</b>
 //               <div>
-//                 <p>--color-background</p>
+//                 <mm-paragraph>--color-background</mm-paragraph>
 //               </div>
 //               <button class="icon-indicator" style="position: absolute; right: 0.5rem; top: 0.5rem">
 //                 <span class="material-symbols-outlined">content_copy</span>
@@ -198,7 +198,7 @@ const article = [
 //     <figure class="token-item-avatar"></figure>
 //     <b>${token.name}</b>
 //     <div>
-//       <p>--color-background</p>
+//       <mm-paragraph>--color-background</mm-paragraph>
 //     </div>
 //     <button class="icon-indicator" style="position: absolute; right: 0.5rem; top: 0.5rem">
 //       <span class="material-symbols-outlined">content_copy</span>

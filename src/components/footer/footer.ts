@@ -1,6 +1,7 @@
 import { LitElement, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 import soojubmImage from '../../images/soojubm.png'
+import '../text/semantics/paragraph'
 
 @customElement('mm-footer')
 export class Footer extends LitElement {
@@ -54,7 +55,7 @@ export class Footer extends LitElement {
           © 2019 soojubm. All rights reserved.
         </small>
         <address>
-          <p class="footer-address-slogan">Making things better.</p>
+          <mm-paragraph>Making things better.</mm-paragraph>
         </address>
 
         <aside style="margin: 1.5rem 0 0 0">

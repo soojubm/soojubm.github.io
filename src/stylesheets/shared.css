@@ -363,7 +363,8 @@ input[type='file'] + label:after {
   color: var(--color-foreground-light);
   font-weight: var(--font-weight-bold);
 }
-.step-item-description {
+.step-item-description,
+.step-item > mm-paragraph {
   margin: var(--space-2) 0 0 1.75rem;
 }
 
@@ -392,7 +393,8 @@ input[type='file'] + label:after {
 .step[data-align='vertical'] .step-item-label {
   margin-top: 0;
 }
-.step[data-align='vertical'] .step-item-description {
+.step[data-align='vertical'] .step-item-description,
+.step[data-align='vertical'] .step-item > mm-paragraph {
   width: 100%;
   margin: 0 0 0 1.5rem;
 }
