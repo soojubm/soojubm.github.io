@@ -38,38 +38,20 @@
         <mm-checkbox name="test1">28 selected</mm-checkbox>
       </mm-flex>
     </menu>
-    <div class="table-container">
+    <mm-table
+      class="table-container"
+      columns='[
+        {"label": "선택", "width": "var(--col-checkbox)"},
+        {"label": "Name", "width": "80px", "sortable": true},
+        {"label": "Title", "width": "240px"},
+        {"label": "Link", "width": "80px"},
+        {"label": "Status", "width": "80px"},
+        {"label": "Age", "width": "80px", "textAlign": "right"},
+        {"label": "액션", "width": "160px", "textAlign": "right"}
+      ]'
+    >
       <table>
         <caption hidden>히라가나 오십음도</caption>
-        <colgroup>
-          <col style="width: var(--col-checkbox)" />
-          <col style="width: 80px" />
-          <col style="width: 240px" />
-          <col style="width: 80px" />
-          <col style="width: 80px" />
-          <col style="width: 80px" />
-          <col style="width: 160px" />
-        </colgroup>
-        <thead>
-          <tr>
-            <th role="columnheader" aria-sort="none" style="width: calc(40px)">
-              <mm-checkbox></mm-checkbox>
-            </th>
-            <th scope="col" aria-sort="none" style="width: 15%">
-              <mm-flex align-items="center" gap="1">
-                Name
-                <mm-icon name="arrow-separate-vertical" size="tiny"></mm-icon>
-              </mm-flex>
-            </th>
-            <th scope="col" aria-sort="none" style="width: calc(65% - 80px)">Title</th>
-            <th scope="col" aria-sort="none" style="width: 128px">Link</th>
-            <th scope="col" aria-sort="none" style="width: auto">Status</th>
-            <th scope="col" aria-sort="none" style="width: 8%; text-align: right">Age</th>
-            <th scope="col" aria-sort="none" style="width: 140px">
-              <span hidden>visually hidden</span>
-            </th>
-          </tr>
-        </thead>
         <tbody>
           <tr>
             <td>
@@ -135,7 +117,7 @@
           </tr>
         </tbody>
       </table>
-    </div>
+    </mm-table>
     <mm-pagination current-page="7" page-count="50"></mm-pagination>
 
     <!-- <div>
@@ -169,17 +151,17 @@
   </mm-component-example>
 
   <mm-component-props>
-    <mm-prop name="caption" type="string" optional></mm-prop>
-    <mm-prop name="scope" type="'col' | 'row'"></mm-prop>
-    <mm-prop name="aria-sort" type="'none' | 'ascending' | 'descending'" optional></mm-prop>
-    <mm-prop name="aria-rowcount" type="number" optional></mm-prop>
-    <mm-prop name="aria-rowindex" type="number" optional></mm-prop>
+    <mm-prop
+      name="columns"
+      type="{ label: string; width?: string; sortable?: boolean; textAlign?: 'left' | 'center' | 'right' }[] = []"
+    ></mm-prop>
   </mm-component-props>
 
   <mm-component-tokens>
     <mm-token name="table-lineheight" default="1.6"></mm-token>
     <mm-token name="table-row-border" default="var(--border)"></mm-token>
     <mm-token name="table-cell-padding" default="var(--space-2) 0"></mm-token>
+    <mm-token name="table-cell-padding-inline" default="var(--space-2)"></mm-token>
     <mm-token name="table-cell-background" default="var(--color-background)"></mm-token>
     <mm-token
       name="table-cell-background-hover"

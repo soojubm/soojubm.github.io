@@ -175,6 +175,7 @@ table {
   --table-lineheight: 1.6;
   --table-row-border: var(--border);
   --table-cell-padding: var(--space-2) 0;
+  --table-cell-padding-inline: var(--space-2);
   --table-cell-background: var(--color-background);
   --table-cell-background-hover: var(--color-background-subtle);
 
@@ -203,6 +204,7 @@ table thead {
 }
 table thead tr th {
   padding: var(--space-1) 0;
+  padding-inline: var(--table-cell-padding-inline);
   font-size: var(--font-size-12);
   line-height: var(--table-lineheight);
   color: var(--color-foreground-light);
@@ -220,10 +222,12 @@ table tbody tr:hover {
   background-color: var(--table-cell-background-hover);
 }
 table tbody tr th {
+  padding-inline: var(--table-cell-padding-inline);
   text-align: left;
 }
 table tbody tr td {
   padding: var(--table-cell-padding);
+  padding-inline: var(--table-cell-padding-inline);
 }
 table .table-cell-ellipsis {
   flex: 1;

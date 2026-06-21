@@ -54,4 +54,5 @@ import './radius-picker/radius-picker'
 import './spinner'
 import './tabs'
 import './accordion'
+import './table'
 export {}
