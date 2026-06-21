@@ -14,7 +14,7 @@ class MetaItem extends LitElement {
   render() {
     return html`
       <div class="meta-item">
-        <mm-paragraph color="var(--color-foreground-light)">${this.label}</mm-paragraph>
+        <mm-paragraph color="light">${this.label}</mm-paragraph>
         <mm-paragraph weight="bold">${this.value}</mm-paragraph>
       </div>
     `

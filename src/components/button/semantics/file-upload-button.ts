@@ -123,7 +123,7 @@ export class FileUploadButton extends LitElement {
       </div>
 
       <div class="attachments">
-        <mm-paragraph color="var(--color-foreground-light)">첨부한 파일</mm-paragraph>
+        <mm-paragraph color="light">첨부한 파일</mm-paragraph>
         <mm-paragraph role="status">
           ${this.files.length
             ? `${this.files.length} file${this.files.length > 1 ? 's' : ''} selected.`

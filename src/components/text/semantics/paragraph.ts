@@ -10,7 +10,7 @@ type ParagraphTruncate = '' | '1' | '2' | '3'
 export class Paragraph extends LitElement {
   @property({ type: String, reflect: true }) size: ParagraphSize = 'medium'
   @property({ type: String, reflect: true }) weight: TextWeight = 'medium'
-  @property({ type: String }) color = 'inherit'
+  @property({ type: String, reflect: true }) color = 'inherit'
   @property({ type: String, reflect: true }) truncate: ParagraphTruncate = ''
   @property({ type: Boolean, reflect: true }) center = false
 
@@ -24,6 +24,14 @@ export class Paragraph extends LitElement {
         font-size: var(--font-size-14);
         line-height: var(--font-line-height-24);
         font-weight: var(--font-weight-medium);
+      }
+
+      :host([color='light']) {
+        color: var(--color-foreground-light);
+      }
+
+      :host([color='danger']) {
+        color: var(--color-danger);
       }
 
       :host([size='small']) {
@@ -80,7 +88,9 @@ export class Paragraph extends LitElement {
 
   updated(changed: Map<string, unknown>) {
     if (changed.has('color')) {
-      this.style.color = this.color !== 'inherit' ? this.color : ''
+      const isKeyword =
+        this.color === 'inherit' || this.color === 'light' || this.color === 'danger'
+      this.style.color = isKeyword ? '' : this.color
     }
   }
 

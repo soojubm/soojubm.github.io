@@ -84,7 +84,7 @@ export class Navbar extends LitElement {
       </mm-search-suggestions>
 
       <mm-menu-item-group aria-label="최근 검색">
-        <mm-paragraph color="var(--color-foreground-light)">최근 검색</mm-paragraph>
+        <mm-paragraph color="light">최근 검색</mm-paragraph>
         <mm-menu-item-action label="고슴이" emoji="🦔"></mm-menu-item-action>
         <mm-menu-item-action label="개구리" emoji="🐸"></mm-menu-item-action>
       </mm-menu-item-group>
@@ -94,19 +94,19 @@ export class Navbar extends LitElement {
   private _renderResults() {
     if (this._searching) {
       return html`
-        <mm-paragraph color="var(--color-foreground-light)">검색 중...</mm-paragraph>
+        <mm-paragraph color="light">검색 중...</mm-paragraph>
       `
     }
     if (this._results.length === 0) {
       return html`
-        <mm-paragraph color="var(--color-foreground-light)">
+        <mm-paragraph color="light">
           '${this._query}'에 대한 결과가 없습니다.
         </mm-paragraph>
       `
     }
     return html`
       <mm-menu-item-group aria-label="검색 결과">
-        <mm-paragraph color="var(--color-foreground-light)">검색 결과</mm-paragraph>
+        <mm-paragraph color="light">검색 결과</mm-paragraph>
         ${this._results.map(
           r => html`
             <mm-menu-item-action
