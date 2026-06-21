@@ -1,4 +1,4 @@
-import { LitElement, css, html } from 'lit'
+import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { inputStyles } from '../input.styles'
 import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
@@ -11,19 +11,7 @@ class SearchField extends LitElement {
   @property({ type: Boolean, reflect: true }) disabled = false
   @property({ type: String, reflect: true }) size: 'small' | '' = ''
 
-  static styles = [
-    inputStyles,
-    css`
-      mm-clear-button {
-        opacity: 1;
-      }
-
-      mm-clear-button[hidden-button] {
-        opacity: 0;
-        pointer-events: none;
-      }
-    `,
-  ]
+  static styles = [inputStyles]
 
   private inputId = `input-${crypto?.randomUUID?.() || Math.random().toString(36).slice(2)}`
 
@@ -41,14 +29,11 @@ class SearchField extends LitElement {
           ?disabled=${this.disabled}
           @input=${this._handleInput}
         ></mm-input>
-        <mm-clear-button
-          aria-label="검색어 지우기"
-          ?hidden-button=${!hasValue}
-          aria-hidden=${hasValue ? 'false' : 'true'}
-          tabindex=${hasValue ? '0' : '-1'}
-          ?disabled=${this.disabled || !hasValue}
-          @click=${this._clear}
-        ></mm-clear-button>
+        ${hasValue && !this.disabled
+          ? html`
+              <mm-clear-button aria-label="검색어 지우기" @click=${this._clear}></mm-clear-button>
+            `
+          : null}
       </div>
     `
   }
