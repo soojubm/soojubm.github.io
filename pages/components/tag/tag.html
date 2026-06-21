@@ -6,25 +6,30 @@
   <!-- "아바타, 바텀 네비게이션, 탭에서 일관되게 사용되는가?" -->
 
   <!-- Badge intent="info" -->
-  <mm-component-aka items='["Badge", "Label", "Keyword", "Flag", "activity bar counter (vs code)", "Counter badge (quantity)", "Health", "Status Pill"]'></mm-component-aka>
+  <mm-component-aka
+    items='["Badge", "Label", "Keyword", "Flag", "activity bar counter (vs code)", "Counter badge (quantity)", "Health", "Status Pill"]'
+  ></mm-component-aka>
 
   <mm-component-example>
     <mm-flex>
       <!-- primitive -->
-      <mm-tag tone="default"> default </mm-tag>
-      <mm-tag tone="green"> green </mm-tag>
-      <mm-tag tone="yellow"> yellow </mm-tag>
-      <mm-tag tone="red"> red </mm-tag>
-      <mm-tag tone="blue"> blue </mm-tag>
-      <mm-tag tone="purple"> purple </mm-tag>
-      <mm-tag tone="pink"> pink </mm-tag>
-      <mm-tag tone="orange"> orange </mm-tag>
-      <mm-tag tone="cyan"> cyan </mm-tag>
+      <mm-tag tone="default">default</mm-tag>
+      <mm-tag tone="green">green</mm-tag>
+      <mm-tag tone="yellow">yellow</mm-tag>
+      <mm-tag tone="red">red</mm-tag>
+      <mm-tag tone="blue">blue</mm-tag>
+      <mm-tag tone="purple">purple</mm-tag>
+      <mm-tag tone="pink">pink</mm-tag>
+      <mm-tag tone="orange">orange</mm-tag>
+      <mm-tag tone="cyan">cyan</mm-tag>
     </mm-flex>
   </mm-component-example>
 
   <mm-component-props>
-    <mm-prop name="tone" type="'default' | 'green' | 'yellow' | 'red' | 'blue' | 'purple' | 'pink' | 'orange' | 'cyan' = 'default'"></mm-prop>
+    <mm-prop
+      name="tone"
+      type="'default' | 'green' | 'yellow' | 'red' | 'blue' | 'purple' | 'pink' | 'orange' | 'cyan' = 'default'"
+    ></mm-prop>
     <mm-prop name="slot: icon" type="HTMLElement" optional></mm-prop>
   </mm-component-props>
 
@@ -49,9 +54,21 @@
         승인됨
       </mm-tag>
 
-      <mm-list-marker variant="number" value="1" style="position: absolute; left: -1.75rem; top: 50%; transform: translateY(-50%)"></mm-list-marker>
-      <mm-list-marker variant="number" value="2" style="position: absolute; left: 0.75rem; bottom: -1.75rem; transform: translateX(-50%)"></mm-list-marker>
-      <mm-list-marker variant="number" value="3" style="position: absolute; right: 0.75rem; bottom: -1.75rem; transform: translateX(50%)"></mm-list-marker>
+      <mm-list-marker
+        variant="number"
+        value="1"
+        style="position: absolute; left: -1.75rem; top: 50%; transform: translateY(-50%)"
+      ></mm-list-marker>
+      <mm-list-marker
+        variant="number"
+        value="2"
+        style="position: absolute; left: 0.75rem; bottom: -1.75rem; transform: translateX(-50%)"
+      ></mm-list-marker>
+      <mm-list-marker
+        variant="number"
+        value="3"
+        style="position: absolute; right: 0.75rem; bottom: -1.75rem; transform: translateX(50%)"
+      ></mm-list-marker>
     </div>
   </mm-component-anatomy>
 
@@ -59,26 +76,24 @@
     <mm-grid columns="2">
       <mm-feature
         icon="cursor-pointer"
-        titleText="Glanceable"
+        heading="Glanceable"
         subtitle="notification, status, informational"
         description="컬러와 아이콘 등의 시각적 요소를 활용하여 시스템의 상태(Status)나 긴급도를 사용자가 화면을 훑는 것만으로도 한눈에 파악할 수 있게 합니다. (e.g., 진행 중, 승인 대기, 위험)"
-      >
-      </mm-feature>
+      ></mm-feature>
       <mm-feature
         icon="task-list"
-        titleText="Categorical"
+        heading="Categorical"
         description="방대한 데이터 속에서 콘텐츠의 분류(Category)나 공통 속성(Property)을 명확하게 묶어 화면을 구조화하고, 사용자가 원하는 정보를 빠르게 탐색하도록 돕습니다. (e.g., 부서명, 기획전, 문서 유형)"
-      >
-      </mm-feature>
+      ></mm-feature>
       <mm-feature
         icon="cube-scan"
-        titleText="Informational"
+        heading="Informational"
         description="클릭이나 삭제 등의 별도 인터랙션(Non-interactive) 없이, 객체의 부가적인 속성이나 메타 정보를 읽기 전용(Read-only) 형태로 안전하고 콤팩트하게 전달합니다. (e.g., 배송비 무료, NEW, 추천)"
-      >
-      </mm-feature>
-    </mm-component-guide>
+      ></mm-feature>
+    </mm-grid>
+  </mm-component-guide>
 
-    <!-- <mm-paragraph-group>
+  <!-- <mm-paragraph-group>
       <mm-paragraph size="large">Changelog</mm-paragraph>
       <table>
         <tbody>
@@ -95,7 +110,6 @@
         </tbody>
       </table>
     </mm-paragraph-group> -->
-  </mm-grid>
   <mm-component-section
     heading="Dot badge"
     description="Live badge, New badge, Unread badge.A dot badge notifies the user that something is new or updated without showing a count."
@@ -121,40 +135,41 @@
 
   <mm-component-section heading="KeywordTag" description="">
     <mm-tag-group>
-      <mm-status-tag variant="neutral"> keyword1 </mm-status-tag>
-      <mm-status-tag variant="neutral"> keyword2 </mm-status-tag>
-      <mm-status-tag variant="neutral"> keyword3 </mm-status-tag>
+      <mm-status-tag variant="neutral">keyword1</mm-status-tag>
+      <mm-status-tag variant="neutral">keyword2</mm-status-tag>
+      <mm-status-tag variant="neutral">keyword3</mm-status-tag>
     </mm-tag-group>
   </mm-component-section>
 
   <mm-component-section heading="AccentTag" description="TODO accent color">
     <mm-tag-group>
-      <mm-accent-tag> Featured </mm-accent-tag>
+      <mm-accent-tag>Featured</mm-accent-tag>
     </mm-tag-group>
   </mm-component-section>
 
   <mm-component-section heading="CategoryTag" description="">
     <mm-tag-group>
-      <mm-category-tag category="music"> Jazz </mm-category-tag>
-      <mm-category-tag category="finance"> Stocks </mm-category-tag>
-      <mm-category-tag category="design"> UI Design </mm-category-tag>
-      <mm-category-tag category="engineering"> Frontend </mm-category-tag>
-      <mm-category-tag category="marketing"> Branding </mm-category-tag>
-      <mm-category-tag category="news"> Breaking </mm-category-tag>
-      <mm-category-tag category="lifestyle"> Wellness </mm-category-tag>
+      <mm-category-tag category="music">Jazz</mm-category-tag>
+      <mm-category-tag category="finance">Stocks</mm-category-tag>
+      <mm-category-tag category="design">UI Design</mm-category-tag>
+      <mm-category-tag category="engineering">Frontend</mm-category-tag>
+      <mm-category-tag category="marketing">Branding</mm-category-tag>
+      <mm-category-tag category="news">Breaking</mm-category-tag>
+      <mm-category-tag category="lifestyle">Wellness</mm-category-tag>
       <mm-category-tag category="sports">
-        <mm-icon slot="icon" name="graph-up"></mm-icon> Football
+        <mm-icon slot="icon" name="graph-up"></mm-icon>
+        Football
       </mm-category-tag>
     </mm-tag-group>
   </mm-component-section>
 
   <mm-component-section heading="StatusTag" description="">
     <mm-tag-group>
-      <mm-status-tag variant="neutral"> neutral </mm-status-tag>
-      <mm-status-tag variant="success"> success </mm-status-tag>
-      <mm-status-tag variant="warning"> warning </mm-status-tag>
-      <mm-status-tag variant="error"> error </mm-status-tag>
-      <mm-status-tag variant="info"> info </mm-status-tag>
+      <mm-status-tag variant="neutral">neutral</mm-status-tag>
+      <mm-status-tag variant="success">success</mm-status-tag>
+      <mm-status-tag variant="warning">warning</mm-status-tag>
+      <mm-status-tag variant="error">error</mm-status-tag>
+      <mm-status-tag variant="info">info</mm-status-tag>
     </mm-tag-group>
   </mm-component-section>
 </main>

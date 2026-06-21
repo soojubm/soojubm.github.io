@@ -66,7 +66,7 @@ export class ToggleButton extends LitElement {
       <mm-button
         variant="tertiary"
         size="small"
-        isFullWidth
+        full-width
         icon=${this.icon}
         aria-label=${this.ariaLabel}
         aria-pressed=${this.selected ? 'true' : 'false'}

@@ -10,7 +10,7 @@ export type ButtonIconPosition = 'leading' | 'trailing'
 export class Button extends LitElement {
   @property({ type: String, reflect: true }) variant: ButtonVariant = 'tertiary'
   @property({ type: String, reflect: true }) size: ButtonSize = 'medium'
-  @property({ type: Boolean, reflect: true }) isFullWidth = false
+  @property({ type: Boolean, attribute: 'full-width', reflect: true }) isFullWidth = false
   @property({ type: Boolean, reflect: true }) disabled = false
   @property({ type: String }) icon = ''
   @property({ type: String, attribute: 'icon-position' }) iconPosition: ButtonIconPosition =

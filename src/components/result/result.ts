@@ -5,18 +5,13 @@ import { resultStyles } from './result.styles'
 
 @customElement('mm-result')
 class Result extends LitElement {
-  @property({ type: String, attribute: 'avataricon' }) avatarIcon = ''
-  @property({ type: String, attribute: 'avatar-icon' }) avatarIconAlias = ''
+  @property({ type: String, attribute: 'avatar-icon' }) avatarIcon = ''
   @property({ type: String }) heading = ''
   @property({ type: String }) description = ''
   @state() private hasDefaultContent = false
   @state() private hasActionContent = false
 
   static styles = [resultStyles]
-
-  private get effectiveAvatarIcon() {
-    return this.avatarIcon || this.avatarIconAlias
-  }
 
   private handleSlotChange(kind: 'default' | 'action', event: Event) {
     const slot = event.target as HTMLSlotElement
@@ -36,13 +31,9 @@ class Result extends LitElement {
     return html`
       <div role="status" class="result">
         <slot name="avatar">
-          ${this.effectiveAvatarIcon
+          ${this.avatarIcon
             ? html`
-                <mm-avatar
-                  size="huge"
-                  variant="secondary"
-                  icon=${this.effectiveAvatarIcon}
-                ></mm-avatar>
+                <mm-avatar size="huge" variant="secondary" icon=${this.avatarIcon}></mm-avatar>
               `
             : nothing}
         </slot>
@@ -72,49 +63,3 @@ class Result extends LitElement {
 }
 
 export default Result
-
-// static get observedAttributes() {
-//   return ['title', 'description', 'avataricon'];
-// }
-
-// attributeChangedCallback(name: string, oldValue: string | null, newValue: string | null) {
-//   if (!this.shadowRoot || oldValue === newValue) return;
-
-//   switch (name) {
-//     case 'title':
-//       this.updateTitle(newValue);
-//       break;
-//     case 'description':
-//       this.updateDescription(newValue);
-//       break;
-//     case 'avataricon':
-//       this.updateAvatarIcon(newValue);
-//       break;
-//   }
-// }
-
-// // 개별 렌더링 함수들
-// private updateTitle(value: string | null) {
-//   const el = this.shadowRoot?.querySelector('mm-text');
-//   if (el) el.textContent = value || '';
-// }
-
-// private updateDescription(value: string | null) {
-//   const el = this.shadowRoot?.querySelector('.result-description');
-//   if (el) el.textContent = value || '';
-// }
-
-// private updateAvatarIcon(value: string | null) {
-//   const avatar = this.shadowRoot?.querySelector('mm-avatar');
-//   if (avatar) avatar.setAttribute('icon', value || '');
-// }
-
-// get avatarIcon() {
-//   return this.getAttribute('avataricon') || '';
-// }
-
-// set avatarIcon(value: string) {
-//   this.setAttribute('avataricon', value);
-// }
-
-// myResult.avatarIcon = 'happy'; // 내부적으로 setAttribute로 반영됨

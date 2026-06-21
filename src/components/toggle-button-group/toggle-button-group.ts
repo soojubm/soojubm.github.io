@@ -17,7 +17,7 @@ interface OptionItem {
 @customElement('mm-toggle-button-group')
 export class ToggleButtonGroup extends LitElement {
   @property({ type: String }) options = '[]'
-  @property({ type: Number }) selectedIndex = 0
+  @property({ type: Number, attribute: 'selected-index' }) selectedIndex = 0
   @property({ type: Boolean, reflect: true }) stretch = false
   @state() private currentIndex = 0
 

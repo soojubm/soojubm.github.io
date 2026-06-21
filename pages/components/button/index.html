@@ -31,7 +31,7 @@
       type="'primary' | 'secondary' | 'tertiary' | 'destructive' | 'text' = 'tertiary'"
     ></mm-prop>
     <mm-prop name="size" type="'medium' | 'large' = 'medium'"></mm-prop>
-    <mm-prop name="isFullWidth" type="boolean" optional></mm-prop>
+    <mm-prop name="full-width" type="boolean" optional></mm-prop>
     <mm-prop name="disabled" type="boolean" optional></mm-prop>
     <mm-prop name="icon" type="string" optional></mm-prop>
     <mm-prop name="iconPosition" type="'leading' | 'trailing' = 'leading'" optional></mm-prop>
@@ -80,18 +80,18 @@
     <mm-grid columns="2">
       <mm-feature
         icon="cursor-pointer"
-        titleText="Actionable"
+        heading="Actionable"
         description="버튼은 페이지 내에서 여러 번 반복될 수 없는 최종적인 인터렉션입니다. 단, 전송이 실패하는 경우 여러 번 반복해서 실행할 수 있습니다."
       ></mm-feature>
       <mm-feature
         icon="reply-to-message"
-        titleText="Feedback needed"
+        heading="Feedback needed"
         subtitle="Easy scanning"
         description="물리적인 인터페이스의 출현만이 수행 결과의 피드백이 아닙니다. 예측할 수 있는 페이지 이동이나 페이지 새로고침, 정보 구조의 변화도 피드백으로 취급될 수 있습니다. (ex bad case: 인스타그램 앱에서 로그인되었다는 toast. 홈으로 이동과 피드 노출만으로 로그인 상태를 인지할수 있다.)"
       ></mm-feature>
       <mm-feature
         icon="multi-window"
-        titleText="Groupable"
+        heading="Groupable"
         subtitle="Easy scanning"
         description="TODO"
       ></mm-feature>
@@ -291,7 +291,7 @@
 
   <mm-component-section
     heading="ShowMoreButton"
-    description="Image Button, CheckoutButton. fullWidth로 사용하지 마세요. 콘텐츠 목록의 너비와의 대비를 통한 강조."
+    description="Image Button, CheckoutButton. full-width로 사용하지 마세요. 콘텐츠 목록의 너비와의 대비를 통한 강조."
   >
     <mm-grid columns="3">
       <mm-ui-placeholder></mm-ui-placeholder>
@@ -342,7 +342,7 @@
     확장가능한 메뉴로 정렬 목록을 제공하세요. (bad case: 2022.04 구글 지도 바뀐 것)"
   >
     <div>
-      <mm-paragraph>TODO fit-content/fullWidth</mm-paragraph>
+      <mm-paragraph>TODO fit-content/full-width</mm-paragraph>
       <mm-dropdown id="my-dropdown">
         <option value="profile">최신순</option>
         <option value="settings">오래된순</option>

@@ -10,7 +10,7 @@ export class Page extends LitElement {
   /** 페이지 배경 변형. 'subtle' = var(--color-background-subtle) */
   @property({ type: String, reflect: true }) background: 'subtle' | '' = ''
   /** 페이지 좌우 패딩 제거 */
-  @property({ type: Boolean, reflect: true }) fullWidth = false
+  @property({ type: Boolean, attribute: 'full-width', reflect: true }) fullWidth = false
 
   static styles = css`
     :host {
@@ -26,7 +26,7 @@ export class Page extends LitElement {
       clip-path: inset(0 -100vmax);
     }
 
-    :host([fullwidth]) {
+    :host([full-width]) {
       padding-right: 0;
       padding-left: 0;
     }
@@ -51,7 +51,7 @@ export class Page extends LitElement {
       overflow: hidden;
     }
 
-    :host([layout='chat'][fullwidth]) {
+    :host([layout='chat'][full-width]) {
       max-width: none;
     }
 

@@ -19,8 +19,7 @@ export class Feature extends LitElement {
   @property({ type: String }) icon = ''
   @property({ type: String }) emoji = ''
 
-  // HTML 관례에 맞춰 외부 사용 시 title-text로 사용할 수 있도록 설정
-  @property({ type: String, attribute: 'titletext' }) titleText = ''
+  @property({ type: String }) heading = ''
 
   @property({ type: String }) description = ''
   @property({ type: String }) variant = ''
@@ -50,7 +49,7 @@ export class Feature extends LitElement {
 
         <mm-text-block
           level="3"
-          .heading="${this.titleText}"
+          .heading=${this.heading}
           .description="${this.description}"
         ></mm-text-block>
 

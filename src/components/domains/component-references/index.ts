@@ -7,7 +7,7 @@ export class ComponentReferences extends LitElement {
 
   // 기존 마크업에서 hidden 처리가 되어 있었으므로, 기본값을 true로 설정하거나
   // 필요에 따라 노출할 수 있도록 Boolean 속성으로 관리합니다.
-  @property({ type: Boolean }) hideHeading = true
+  @property({ type: Boolean, attribute: 'hide-heading' }) hideHeading = true
 
   static styles = css`
     :host {
