@@ -1,7 +1,7 @@
 <main class="page">
   <mm-page-header
     heading="Sheet"
-    description="콘텐츠나 작업을 레이어 위에 표시합니다. 위치와 모달리티에 따라 center·bottom·left·right·anchor variant로 구분됩니다."
+    description="콘텐츠나 작업을 레이어 위에 표시합니다. 위치와 모달리티에 따라 center·bottom·left·right variant로 구분됩니다."
   ></mm-page-header>
 
   <mm-component-aka
@@ -14,7 +14,6 @@
       <mm-button data-open-sheet="bottom">Bottom</mm-button>
       <mm-button data-open-sheet="left">Left</mm-button>
       <mm-button data-open-sheet="right">Right</mm-button>
-      <mm-button data-open-sheet="anchor">Anchor</mm-button>
     </mm-button-group>
 
     <mm-sheet variant="center" width="medium">
@@ -51,19 +50,11 @@
       <mm-sheet-body><mm-paragraph>오른쪽 패널 콘텐츠</mm-paragraph></mm-sheet-body>
       <mm-sheet-footer primary-label="완료" secondary-label="닫기"></mm-sheet-footer>
     </mm-sheet>
-    <mm-sheet variant="anchor">
-      <mm-sheet-header heading="Anchor Sheet"></mm-sheet-header>
-      <mm-sheet-body><mm-paragraph>트리거 근처 팝오버 시트</mm-paragraph></mm-sheet-body>
-      <mm-sheet-footer primary-label="확인" secondary-label="닫기"></mm-sheet-footer>
-    </mm-sheet>
   </mm-component-example>
 
   <mm-component-props>
     <mm-prop name="open" type="boolean"></mm-prop>
-    <mm-prop
-      name="variant"
-      type="'center' | 'bottom' | 'left' | 'right' | 'anchor' = 'center'"
-    ></mm-prop>
+    <mm-prop name="variant" type="'center' | 'bottom' | 'left' | 'right' = 'center'"></mm-prop>
     <mm-prop
       name="width"
       type="'small' | 'medium' | 'large' | 'full' = 'medium'"
@@ -75,7 +66,7 @@
 
   <mm-component-anatomy
     parts='[
-      "Backdrop — 시트 뒤 반투명 배경. anchor variant에서만 외부 클릭으로 닫힙니다.",
+      "Backdrop — 시트 뒤 반투명 배경. 배경 클릭 시 sheetclose 이벤트를 발생시킵니다.",
       "시트 컨테이너 — flex column 박스. height prop으로 높이 고정, max-height: 90vh 기본값.",
       "mm-sheet-header — 타이틀과 닫기 버튼. sheetclose 이벤트를 발생시킵니다.",
       "mm-sheet-body — 스크롤 가능한 콘텐츠 영역. flex: 1 1 auto로 header·footer를 제외한 나머지를 채웁니다.",
@@ -133,13 +124,19 @@
       사용한다. 포커스 트랩이 없고, 외부 클릭·ESC로 언제든 닫을 수 있다.
     </mm-paragraph>
     <mm-text-list
-      texts='["배경 클릭·스크롤 가능.", "포커스 트랩 없음 — Tab 키가 페이지 전체를 순환한다.", "외부 클릭 또는 ESC로 닫힌다.", "용례: Dropdown, Tooltip, Toast, 사이드 패널, Anchor popover."]'
+      texts='["배경 클릭·스크롤 가능.", "포커스 트랩 없음 — Tab 키가 페이지 전체를 순환한다.", "외부 클릭 또는 ESC로 닫힌다.", "용례: Dropdown, Tooltip, Toast, 사이드 패널, Popover."]'
     ></mm-text-list>
 
     <mm-text size="16">Sheet variant별 분류</mm-text>
     <mm-text-list
-      texts='["Modal — center: Backdrop + focus trap. 사용자 확인이 필요한 작업.", "Non-modal — bottom: 컨텍스트 확장. 배경 스크롤 허용 여부는 콘텐츠 성격에 따라 결정.", "Non-modal — left / right: 사이드 패널. 페이지 맥락을 유지한 채 추가 정보 탐색.", "Non-modal — anchor: Dropdown과 동일한 패턴. 트리거 근처에 위치, 외부 클릭으로 닫힘."]'
+      texts='["Modal — center: Backdrop + focus trap. 사용자 확인이 필요한 작업.", "Non-modal — bottom: 컨텍스트 확장. 배경 스크롤 허용 여부는 콘텐츠 성격에 따라 결정.", "Non-modal — left / right: 사이드 패널. 페이지 맥락을 유지한 채 추가 정보 탐색."]'
     ></mm-text-list>
+
+    <mm-text-block
+      level="2"
+      heading="Changelog"
+      description="Anchor variant를 제거하고 dropdown이 레이어 스타일을 직접 소유하도록 변경했습니다. 향후 범용 anchored layer가 필요하면 별도 mm-popover로 분리합니다."
+    ></mm-text-block>
 
     <mm-component-references>
       <mm-link external href="https://developer.mozilla.org/ko/docs/Web/API/Popover_API">

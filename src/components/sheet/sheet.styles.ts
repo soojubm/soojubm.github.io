@@ -1,7 +1,7 @@
 import { css } from 'lit'
 import { MEDIA } from '../../stylesheets/shared/breakpoints'
 
-export const sheetElementStyles = css`
+const sheetElementStyles = css`
   .sheet {
     display: flex;
     flex-direction: column;
@@ -9,29 +9,6 @@ export const sheetElementStyles = css`
     box-sizing: border-box;
     overflow: hidden;
     position: relative;
-  }
-
-  .sheet[variant='anchor'] {
-    padding: var(--space-1);
-    border: var(--border-stronger);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-
-    opacity: 0;
-    transform: translateY(var(--space-1-minus)) scale(0.98);
-    transform-origin: top left;
-    visibility: hidden;
-    pointer-events: none;
-    transition: opacity 120ms ease, transform 180ms cubic-bezier(0.2, 0.8, 0.2, 1),
-      visibility 0s linear 180ms;
-  }
-
-  .sheet[open][variant='anchor'] {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-    visibility: visible;
-    pointer-events: auto;
-    transition: opacity 120ms ease, transform 220ms cubic-bezier(0.18, 1.25, 0.4, 1), visibility 0s;
   }
 `
 
@@ -42,9 +19,7 @@ export const sheetStyles = [
       --sheet-backdrop-color: var(--color-backdrop);
       --sheet-radius: var(--radius-large);
       --sheet-bottom-max-width: calc(var(--layout-width-small) + var(--space-4) * 10);
-      --sheet-anchor-width: var(--layout-width-tiny);
-      --sheet-anchor-max-height: calc(var(--width-small) * 2);
-      --sheet-width-small: var(--sheet-anchor-width);
+      --sheet-width-small: var(--layout-width-tiny);
       --sheet-width-medium: var(--layout-width-tiny);
       --sheet-width-large: var(--layout-width-wide);
       --sheet-width-full: 100%;
@@ -155,23 +130,6 @@ export const sheetStyles = [
       :host([variant='left']) .sheet,
       :host([variant='right']) .sheet {
         max-width: 100vw;
-      }
-    }
-
-    /* anchor */
-    :host([variant='anchor']) {
-      position: fixed;
-      inset: auto; /* base의 inset: 0 리셋 — JS가 top/left를 주입 */
-      background: transparent;
-      width: auto;
-      height: auto;
-      opacity: 1;
-      visibility: visible;
-      pointer-events: auto;
-
-      & .sheet {
-        width: var(--sheet-anchor-width);
-        max-height: var(--sheet-anchor-max-height);
       }
     }
 

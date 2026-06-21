@@ -2,7 +2,6 @@ import { LitElement, css, html, nothing, type PropertyValues } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 import { resetStyles } from '../../stylesheets/shared/reset.styles'
 import '../button/button'
-import { sheetElementStyles } from '../sheet/sheet.styles'
 import { ICON_NAMES } from '../icon-button/semantics/icon-names'
 import '../menuitem/semantics/menu-item-action'
 import '../menuitem/semantics/menu-item-checkbox'
@@ -26,7 +25,6 @@ export class Dropdown extends LitElement {
 
   static styles = [
     resetStyles,
-    sheetElementStyles,
     css`
       .dropdown {
         --dropdown-offset: var(--space-1);
@@ -50,15 +48,43 @@ export class Dropdown extends LitElement {
       }
 
       .dropdown-list {
+        display: flex;
+        flex-direction: column;
+
+        min-width: var(--dropdown-min-width);
+        max-height: var(--dropdown-max-height);
+
+        padding: var(--space-1);
+        border: var(--border-stronger);
+        border-radius: var(--radius);
+        background: var(--color-background);
+        box-shadow: var(--shadow);
+
         position: absolute;
         top: calc(100% + var(--dropdown-offset));
         left: 0;
         right: 0;
         z-index: var(--dropdown-z-index);
 
-        min-width: var(--dropdown-min-width);
-        max-height: var(--dropdown-max-height);
         overflow-y: auto;
+        box-sizing: border-box;
+
+        opacity: 0;
+        transform: translateY(var(--space-1-minus)) scale(0.98);
+        transform-origin: top left;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity 120ms ease, transform 180ms cubic-bezier(0.2, 0.8, 0.2, 1),
+          visibility 0s linear 180ms;
+
+        &[open] {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+          visibility: visible;
+          pointer-events: auto;
+          transition: opacity 120ms ease, transform 220ms cubic-bezier(0.18, 1.25, 0.4, 1),
+            visibility 0s;
+        }
 
         &[placement='right'] {
           left: auto;
@@ -188,8 +214,7 @@ export class Dropdown extends LitElement {
     return html`
       <div
         part="list"
-        class="sheet dropdown-list"
-        variant="anchor"
+        class="dropdown-list"
         ?open=${this.isOpen}
         placement=${this.placement}
         role="menu"

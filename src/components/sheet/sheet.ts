@@ -1,7 +1,7 @@
 import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { sheetStyles } from './sheet.styles'
-export type SheetVariant = 'center' | 'bottom' | 'left' | 'right' | 'anchor' | 'inline'
+export type SheetVariant = 'center' | 'bottom' | 'left' | 'right' | 'inline'
 export type SheetWidth = 'small' | 'medium' | 'large' | 'full'
 
 let scrollLockCount = 0
@@ -58,21 +58,17 @@ class Sheet extends LitElement {
   @property({ type: Boolean, reflect: true, attribute: 'open' }) isOpen = false
   @property({ type: Boolean, reflect: true, attribute: 'backdrop-blur' }) backdropBlur = false
 
-  /** anchor variant: 열기를 유발한 클릭 자체가 document 핸들러를 트리거하지 않도록 스킵 */
-  private _skipNextOutsideClick = false
   private _hasLockedScroll = false
 
   connectedCallback() {
     super.connectedCallback()
     this.addEventListener('sheetclose', () => this.close())
     this.addEventListener('click', this.handleBackdropClick)
-    document.addEventListener('click', this.handleOutsideClick)
   }
 
   disconnectedCallback() {
     super.disconnectedCallback()
     this.removeEventListener('click', this.handleBackdropClick)
-    document.removeEventListener('click', this.handleOutsideClick)
     this.releaseScrollLock()
   }
 
@@ -82,22 +78,12 @@ class Sheet extends LitElement {
     if (e.target === this) this.requestClose()
   }
 
-  /** anchor variant만 outside-click으로 닫는다 — dropdown과 동일한 패턴 */
-  private handleOutsideClick = (e: MouseEvent) => {
-    if (this.variant !== 'anchor' || !this.isOpen) return
-    if (this._skipNextOutsideClick) {
-      this._skipNextOutsideClick = false
-      return
-    }
-    if (!e.composedPath().includes(this)) this.requestClose()
-  }
-
   private requestClose() {
     this.dispatchEvent(new CustomEvent('sheetclose', { bubbles: true, composed: true }))
   }
 
   private get _isModal() {
-    return this.variant !== 'anchor' && this.variant !== 'inline'
+    return this.variant !== 'inline'
   }
 
   protected updated(changedProperties: Map<string, unknown>) {
@@ -142,7 +128,6 @@ class Sheet extends LitElement {
 
   open() {
     this.isOpen = true
-    this._skipNextOutsideClick = true // 열기를 유발한 클릭을 outside-click 핸들러가 받지 않도록
     this.syncScrollLock()
   }
 
