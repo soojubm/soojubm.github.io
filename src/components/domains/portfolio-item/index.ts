@@ -51,15 +51,16 @@ export class PortfolioItem extends LitElement {
       .badge,
       .action {
         position: absolute;
-        top: var(--space-2);
         z-index: 1;
       }
 
       .badge {
-        left: var(--space-2);
+        top: calc(var(--space-1) * -1);
+        left: calc(var(--space-1) * -1);
       }
 
       .action {
+        top: var(--space-2);
         right: var(--space-2);
       }
 
@@ -80,7 +81,7 @@ export class PortfolioItem extends LitElement {
       }
 
       :host-context(.list) mm-thumbnail {
-        width: 120px;
+        width: 156px;
         flex: none;
       }
     `,
@@ -136,7 +137,7 @@ export class PortfolioItem extends LitElement {
         <div class="content">
           ${this.label
             ? html`
-                <mm-paragraph size="large" weight="bold">${this.label}</mm-paragraph>
+                <mm-heading level="3">${this.label}</mm-heading>
               `
             : nothing}
           ${this.description

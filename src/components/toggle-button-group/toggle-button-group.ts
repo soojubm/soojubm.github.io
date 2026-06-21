@@ -24,13 +24,27 @@ export class ToggleButtonGroup extends LitElement {
   static styles = css`
     :host {
       --toggle-radius: var(--radius);
-      --toggle-group-background: var(--color-background-subtle);
     }
 
     mm-button-group {
       --button-group-gap: 0;
-      background: var(--toggle-group-background);
       border-radius: var(--toggle-radius);
+    }
+
+    mm-toggle-button {
+      --toggle-button-radius: 0;
+    }
+
+    mm-toggle-button:first-child {
+      --toggle-button-radius: var(--toggle-radius) 0 0 var(--toggle-radius);
+    }
+
+    mm-toggle-button:last-child {
+      --toggle-button-radius: 0 var(--toggle-radius) var(--toggle-radius) 0;
+    }
+
+    mm-toggle-button:only-child {
+      --toggle-button-radius: var(--toggle-radius);
     }
 
     :host([stretch]) mm-button-group {

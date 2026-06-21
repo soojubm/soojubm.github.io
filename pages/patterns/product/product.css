@@ -101,24 +101,6 @@
   margin-bottom: 0;
 }
 
-.product-detail-summary dl {
-  width: 66.6666%;
-  overflow: hidden;
-  box-sizing: border-box;
-}
-.product-detail-summary dt {
-  float: left;
-  width: 8rem;
-  margin: 0.25rem 0;
-  color: var(--color-foreground-light);
-}
-.product-detail-summary dd {
-  float: left;
-  width: calc(100% - 8rem);
-  margin: 0.25rem 0;
-  color: var(--gray800);
-}
-
 .product-story {
   display: flex;
   align-items: center;
@@ -203,10 +185,6 @@
   .product-order {
     width: 100%;
     margin-top: var(--space-4);
-  }
-
-  .product-detail dl {
-    width: 100%;
   }
 }
 

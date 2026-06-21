@@ -21,25 +21,25 @@ export const buttonStyles = css`
     width: 100%;
   }
 
-  :host([variant='primary']) button {
+  :host([variant='primary']) {
     --button-border-color: var(--border-transparent);
-    background-color: var(--color-primary);
+    --button-color: var(--color-primary);
     --button-text-color: var(--color-foreground-on-solid);
   }
-  :host([variant='secondary']) button {
+  :host([variant='secondary']) {
     --button-border-color: var(--border-transparent);
     --button-color: var(--green100);
     --button-text-color: var(--color-primary);
   }
-  :host([variant='tertiary']) button {
+  :host([variant='tertiary']) {
     --button-text-color: var(--color-foreground);
   }
-  :host([variant='text']) button {
+  :host([variant='text']) {
     --button-border-color: var(--border-transparent);
     --button-color: var(--color-background);
     --button-text-color: var(--color-primary);
   }
-  :host([variant='destructive']) button {
+  :host([variant='destructive']) {
     --button-color: var(--red800);
     --button-text-color: var(--gray0);
   }

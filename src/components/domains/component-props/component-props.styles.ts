@@ -9,13 +9,12 @@ export const propStyles = [
       display: contents;
     }
     dt {
+      display: flex;
       color: var(--color-foreground-light);
       line-height: 20px;
     }
     dt attr {
-      color: var(--color-foreground-light);
-      font-weight: var(--font-weight-normal);
-      margin-left: 0.125rem;
+      font-size: var(--font-size-12);
     }
 
     dd {

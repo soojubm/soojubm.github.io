@@ -8,6 +8,7 @@ class MetaItem extends LitElement {
     'horizontal'
   @property({ type: String }) label = ''
   @property({ type: String }) value = ''
+  @property({ type: String, attribute: 'value-size' }) valueSize: 'medium' | 'large' = 'medium'
 
   static styles = [metaItemStyles]
 
@@ -15,7 +16,7 @@ class MetaItem extends LitElement {
     return html`
       <div class="meta-item">
         <mm-paragraph color="light">${this.label}</mm-paragraph>
-        <mm-paragraph weight="bold">${this.value}</mm-paragraph>
+        <mm-paragraph size=${this.valueSize} weight="bold">${this.value}</mm-paragraph>
       </div>
     `
   }

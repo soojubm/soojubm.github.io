@@ -109,21 +109,25 @@
       </div>
       <mm-feature-group columns="4" class="product-story-features">
         <mm-feature
+          centered
           icon="✋"
           heading="Tangerine Oil"
           description="A microbial substrate that has a positive impact on the oral environment"
         ></mm-feature>
         <mm-feature
+          centered
           icon="✋"
           heading="Tangerine Oil"
           description="A microbial substrate that has a positive impact on the oral environment"
         ></mm-feature>
         <mm-feature
+          centered
           icon="✋"
           heading="Tangerine Oil"
           description="A microbial substrate that has a positive impact on the oral environment"
         ></mm-feature>
         <mm-feature
+          centered
           icon="✋"
           heading="Tangerine Oil"
           description="A microbial substrate that has a positive impact on the oral environment"
@@ -133,7 +137,7 @@
 
     <!-- 마케팅 스토리: 박스 배경 + 특징 -->
     <section class="product-story product-story--boxed">
-      <mm-tag variant="temp1">Why prebiotics?</mm-tag>
+      <mm-tag tone="purple">Why prebiotics?</mm-tag>
       <mm-text-block
         level="1"
         heading="Prebiotics are fibers that feed good bacteria"
@@ -141,21 +145,25 @@
       ></mm-text-block>
       <mm-feature-group columns="4" class="product-story-features">
         <mm-feature
+          centered
           icon="✋"
           heading="Tangerine Oil"
           description="A microbial substrate that has a positive impact on the oral environment"
         ></mm-feature>
         <mm-feature
+          centered
           icon="✋"
           heading="Tangerine Oil"
           description="A microbial substrate that has a positive impact on the oral environment"
         ></mm-feature>
         <mm-feature
+          centered
           icon="✋"
           heading="Tangerine Oil"
           description="A microbial substrate that has a positive impact on the oral environment"
         ></mm-feature>
         <mm-feature
+          centered
           icon="✋"
           heading="Tangerine Oil"
           description="A microbial substrate that has a positive impact on the oral environment"
@@ -191,7 +199,7 @@
               I have 2 kids so sleep is hard to come by, these have helped me to wake up feeling
               more refreshed and ready to start the day
             </mm-paragraph>
-            <mm-meta-item label="Fleet Foxes" value="2020년 12월 1일" />
+            <mm-meta-item layout="stacked" label="Fleet Foxes" value="2020년 12월 1일" />
           </mm-flex>
         </mm-surface>
         <mm-surface variant="flat">
@@ -201,7 +209,7 @@
               I have 2 kids so sleep is hard to come by, these have helped me to wake up feeling
               more refreshed and ready to start the day
             </mm-paragraph>
-            <mm-meta-item label="Fleet Foxes" value="2020년 12월 1일" />
+            <mm-meta-item layout="stacked" label="Fleet Foxes" value="2020년 12월 1일" />
           </mm-flex>
         </mm-surface>
       </mm-flex>
@@ -210,24 +218,16 @@
     <!-- 상품 상세정보 고지 -->
     <section class="product-detail-summary">
       <mm-heading level="2">상품상세정보 고지</mm-heading>
-      <dl style="margin: var(--space-3) 0">
-        <dt>제품명</dt>
-        <dd>노멀 헤어퍼퓸</dd>
-        <dt>소재</dt>
-        <dd>금속</dd>
-        <dt>치수</dt>
-        <dd>20mm * 40mm</dd>
-        <dt>전성분</dt>
-        <dd>정제수, 아리수, 활명수</dd>
-        <dt>제조일자</dt>
-        <dd>2019. 11. 08.</dd>
-        <dt title="제조자 또는 수입자(수입국)">제조업자</dt>
-        <dd>별도표기</dd>
-        <dt title="제조국 또는 원산지">제조국</dt>
-        <dd>대한민국</dd>
-        <dt>문의전화</dt>
-        <dd>02-000-2000</dd>
-      </dl>
+      <mm-meta-item-group style="margin: var(--space-3) 0">
+        <mm-meta-item layout="inline" label="제품명" value="노멀 헤어퍼퓸"></mm-meta-item>
+        <mm-meta-item layout="inline" label="소재" value="금속"></mm-meta-item>
+        <mm-meta-item layout="inline" label="치수" value="20mm * 40mm"></mm-meta-item>
+        <mm-meta-item layout="inline" label="전성분" value="정제수, 아리수, 활명수"></mm-meta-item>
+        <mm-meta-item layout="inline" label="제조일자" value="2019. 11. 08."></mm-meta-item>
+        <mm-meta-item layout="inline" label="제조업자" value="별도표기"></mm-meta-item>
+        <mm-meta-item layout="inline" label="제조국" value="대한민국"></mm-meta-item>
+        <mm-meta-item layout="inline" label="문의전화" value="02-000-2000"></mm-meta-item>
+      </mm-meta-item-group>
     </section>
 
     <!-- 거래/배송/교환·반품 정책 -->
@@ -243,68 +243,54 @@
           거래에 대하여 별도로 그 사실을 고지하고 고객의 서면(전자문서 포함)에 의한 동의를 받은 경우"]'
       ></mm-text-list>
 
-      <table>
-        <tr>
-          <th>배송가능지역</th>
-          <td>전국</td>
-        </tr>
-        <tr>
-          <th>배송가능요일</th>
-          <td>월화수목금 (공휴일제외)</td>
-        </tr>
-        <tr>
-          <th>배송비</th>
-          <td>
-            기본 배송비 2,500원 / 총 결제 금액 50,000원 이상 무료배송 / 도서,산간,제주 기본 배송비
-            5,000원(기본 배송비 2,000 + 3,000). 배송비 결제 주문 시 결제
-            <mm-paragraph>
-              변심 반품의 경우는 왕복배송비를 차감한 금액이 환불되며, 제품 및 포장 상태가 재판매
-              가능하여야 합니다.
-            </mm-paragraph>
-          </td>
-        </tr>
-        <tr>
-          <th>배송방법</th>
-          <td>택배 (CJ대한통운 1588-1255)</td>
-        </tr>
-        <tr>
-          <th>예상배송시간</th>
-          <td>영업일 기준 1~3일</td>
-        </tr>
-        <tr>
-          <th>반품배송비</th>
-          <td>3,000원 (부분 반품인 경우)</td>
-        </tr>
-        <tr>
-          <th>교환/반품주소</th>
-          <td>서울시 강서구 화곡로 344-2 1404호</td>
-        </tr>
-        <tr>
-          <th>교환/반품방법</th>
-          <td>
-            [마이페이지>주문조회>교환/반품 신청하기] 또는 [고객센터>1:1상담] 또는
-            고객센터(080-619-8888).
-          </td>
-        </tr>
-        <tr>
-          <th>통신판매업자 귀책</th>
-          <td>
-            상품의 내용이 표시, 광고 내용과 다르거나 계약내용을 다르게 이행한 경우에는 재화 등을
-            공급받은 날로부터 3개월 이내, 그 사실을 안 날 또는 알 수 있었던 날로부터 30일 이내에
-            교환 및 반품이 가능합니다. (배송비 회사 부담)
-          </td>
-        </tr>
-        <tr>
-          <th>교환/반품조건</th>
-          <td>
-            주문 취소의 경우 주문 접수 상태에서는 고객님께서 직접 취소하실 수 있습니다. 주문 접수
-            상태 이후 취소는 고객센터로 문의 바랍니다.
-            <br />
-            반송을 원하실 경우 주문번호, 요청사항을 메모하여 보내주시면 보다 신속한 처리에 도움이
-            됩니다.
-          </td>
-        </tr>
-      </table>
+      <mm-meta-item-group style="margin: var(--space-3) 0">
+        <mm-meta-item layout="stacked" label="배송가능지역" value="전국"></mm-meta-item>
+        <mm-meta-item
+          layout="stacked"
+          label="배송가능요일"
+          value="월화수목금 (공휴일제외)"
+        ></mm-meta-item>
+        <mm-meta-item
+          layout="stacked"
+          label="배송비"
+          value="기본 배송비 2,500원 / 총 결제 금액 50,000원 이상 무료배송 / 도서,산간,제주 기본 배송비 5,000원(기본 배송비 2,000 + 3,000). 배송비 결제 주문 시 결제. 변심 반품의 경우는 왕복배송비를 차감한 금액이 환불되며, 제품 및 포장 상태가 재판매 가능하여야 합니다."
+        ></mm-meta-item>
+        <mm-meta-item
+          layout="stacked"
+          label="배송방법"
+          value="택배 (CJ대한통운 1588-1255)"
+        ></mm-meta-item>
+        <mm-meta-item
+          layout="stacked"
+          label="예상배송시간"
+          value="영업일 기준 1~3일"
+        ></mm-meta-item>
+        <mm-meta-item
+          layout="stacked"
+          label="반품배송비"
+          value="3,000원 (부분 반품인 경우)"
+        ></mm-meta-item>
+        <mm-meta-item
+          layout="stacked"
+          label="교환/반품주소"
+          value="서울시 강서구 화곡로 344-2 1404호"
+        ></mm-meta-item>
+        <mm-meta-item
+          layout="stacked"
+          label="교환/반품방법"
+          value="[마이페이지>주문조회>교환/반품 신청하기] 또는 [고객센터>1:1상담] 또는 고객센터(080-619-8888)."
+        ></mm-meta-item>
+        <mm-meta-item
+          layout="stacked"
+          label="통신판매업자 귀책"
+          value="상품의 내용이 표시, 광고 내용과 다르거나 계약내용을 다르게 이행한 경우에는 재화 등을 공급받은 날로부터 3개월 이내, 그 사실을 안 날 또는 알 수 있었던 날로부터 30일 이내에 교환 및 반품이 가능합니다. (배송비 회사 부담)"
+        ></mm-meta-item>
+        <mm-meta-item
+          layout="stacked"
+          label="교환/반품조건"
+          value="주문 취소의 경우 주문 접수 상태에서는 고객님께서 직접 취소하실 수 있습니다. 주문 접수 상태 이후 취소는 고객센터로 문의 바랍니다. 반송을 원하실 경우 주문번호, 요청사항을 메모하여 보내주시면 보다 신속한 처리에 도움이 됩니다."
+        ></mm-meta-item>
+      </mm-meta-item-group>
 
       <mm-heading level="3">불만처리 및 분쟁해결</mm-heading>
       <mm-paragraph>

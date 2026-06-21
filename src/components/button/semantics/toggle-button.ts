@@ -23,17 +23,18 @@ export class ToggleButton extends LitElement {
 
         --toggle-selected-color: var(--selection-background);
         --toggle-selected-border-color: var(--selection-indicator-color);
-        --toggle-selected-text-color: var(--selection-foreground);
+        --toggle-button-radius: var(--radius);
       }
 
       mm-button {
         width: 100%;
+        --button-radius: var(--toggle-button-radius);
       }
 
       :host([selected]) mm-button {
         --button-border: var(--border-width) solid var(--toggle-selected-border-color);
         --button-color: var(--toggle-selected-color);
-        --button-text-color: var(--toggle-selected-text-color);
+        --button-text-color: var(--selection-foreground);
       }
     `,
   ]

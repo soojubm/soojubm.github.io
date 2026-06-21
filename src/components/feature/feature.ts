@@ -24,6 +24,9 @@ export class Feature extends LitElement {
   @property({ type: String }) description = ''
   @property({ type: String }) variant = ''
 
+  /** 비주얼과 텍스트를 가운데 정렬한다. */
+  @property({ type: Boolean, reflect: true }) centered = false
+
   static styles = [featureStyles]
 
   private renderVisual() {
@@ -49,6 +52,7 @@ export class Feature extends LitElement {
 
         <mm-text-block
           level="3"
+          ?centered=${this.centered}
           .heading=${this.heading}
           .description="${this.description}"
         ></mm-text-block>

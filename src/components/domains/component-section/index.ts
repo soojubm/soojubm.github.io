@@ -1,5 +1,6 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
+import { MEDIA } from '../../../stylesheets/shared/breakpoints'
 
 @customElement('mm-component-section')
 class ComponentSection extends LitElement {
@@ -27,6 +28,15 @@ class ComponentSection extends LitElement {
       border-radius: var(--radius-large);
       margin: 0.5rem 0 0 calc(-5vw + 1rem);
       padding: 2rem calc(var(--layout-padding-inline) - 1rem);
+    }
+
+    @media ${MEDIA.small} {
+      .content.has-content {
+        margin-inline: calc(var(--layout-padding-inline) * -1);
+        padding-inline: var(--layout-padding-inline);
+        border-inline: 0;
+        border-radius: 0;
+      }
     }
   `
 

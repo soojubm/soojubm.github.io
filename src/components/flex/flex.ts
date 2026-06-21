@@ -5,6 +5,7 @@ import { resetStyles } from '../../stylesheets/shared/reset.styles'
 type Direction = 'row' | 'column'
 type JustifyAlias = 'start' | 'center' | 'end' | 'between' | 'around'
 type AlignAlias = 'start' | 'center' | 'end' | 'stretch' | 'baseline'
+type GapAlias = 'section'
 type JustifyContent = JustifyAlias | 'flex-start' | 'flex-end' | 'space-between' | 'space-around'
 type AlignItems = AlignAlias | 'flex-start' | 'flex-end'
 
@@ -22,6 +23,10 @@ const alignMap: Record<AlignAlias, string> = {
   end: 'flex-end',
   stretch: 'stretch',
   baseline: 'baseline',
+}
+
+const gapMap: Record<GapAlias, string> = {
+  section: 'var(--space-section)',
 }
 
 /**
@@ -42,7 +47,7 @@ export class Flex extends LitElement {
   @property({ type: String, attribute: 'align-items' }) alignItems: AlignItems = 'stretch'
   /** @deprecated align-items를 사용하세요. */
   @property({ type: String }) align?: AlignItems
-  /** 간격. 숫자 토큰(0~6 → var(--space-N)) 또는 임의의 CSS 길이값 */
+  /** 간격. 숫자 토큰(N → var(--space-N)), 의미 별칭(section) 또는 임의의 CSS 길이값 */
   @property({ type: String }) gap = '2'
   /** 줄바꿈 허용 여부 */
   @property({ type: Boolean }) wrap = false
@@ -68,7 +73,9 @@ export class Flex extends LitElement {
   ]
 
   render() {
-    const gap = /^\d+$/.test(this.gap) ? `var(--space-${this.gap})` : this.gap
+    const gap =
+      gapMap[this.gap as GapAlias] ??
+      (/^\d+$/.test(this.gap) ? `var(--space-${this.gap})` : this.gap)
     const justifyContent = this.justify ?? this.justifyContent
     const alignItems = this.align ?? this.alignItems
     const styles = [

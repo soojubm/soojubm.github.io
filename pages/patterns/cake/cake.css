@@ -1,48 +1,40 @@
 .cake {
-  padding: 0 var(--layout-padding-inline) 4rem;
+  padding: 0 var(--layout-padding-inline) var(--space-section);
 }
 
 .cake-head {
   position: relative;
 }
-.cake-background {
-  height: 100%;
-  background: url('/src/images/springsteen.jpg') no-repeat 0 -200px fixed;
-  background-size: cover;
-  filter: grayscale(100%);
-  background: var(--color-background-subtle);
-}
-.cake-head-description {
-  margin: 1rem 0 0 0;
+
+.cake-summary,
+.cake-meta {
+  max-width: var(--layout-width-small);
 }
 
 .cake-poster {
   width: 50%;
-  max-width: 272px;
-  border: var(--border);
-  border-radius: var(--radius);
+  max-width: 17rem;
   overflow: hidden;
+  border-radius: var(--radius);
   position: absolute;
   right: 0;
   z-index: var(--zindex-default);
 }
+
 .cake-poster img {
   display: block;
+  width: 100%;
 }
 
 @media (max-width: 1100px) {
+  .cake-head {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+  }
+
   .cake-poster {
-    height: auto;
-    margin: 0 0 2rem 0;
-  }
-  .cake-meta {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  .cake-meta ul {
-    margin-left: 0;
-    margin-right: 0;
-    padding-left: 0;
-    padding-right: 0;
+    width: 100%;
+    position: static;
   }
 }

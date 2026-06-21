@@ -9,4 +9,8 @@ export const featureStyles = css`
     position: relative;
     z-index: 1;
   }
+
+  :host([centered]) div {
+    align-items: center;
+  }
 `

@@ -225,6 +225,15 @@ table tbody tr th {
 table tbody tr td {
   padding: var(--table-cell-padding);
 }
+table .table-cell-ellipsis {
+  flex: 1;
+  width: 0;
+  min-width: 0;
+  max-width: 240px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 /* // th[scope='col'] {background: #ccc;}
 // tr:nth-child(even) {}
 // tr:nth-child(odd) {} */

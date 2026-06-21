@@ -25,6 +25,7 @@
 - 버튼 그룹은 `mm-button-group`을 사용한다.
 - 반복되는 카드나 타일을 열 단위로 배치할 때는 직접 CSS Grid를 작성하기보다 `mm-grid`를 우선 사용한다. `columns`와 `gap`으로 구조를 표현하고, 컴포넌트가 제공하는 반응형 동작을 따른다.
 - 형제 영역 사이의 레이아웃 간격은 개별 요소의 `margin`이나 `padding`보다 부모 레이아웃의 `gap`으로 처리한다.
+- 섹션 사이의 간격은 `var(--space-section)`을 사용한다. `mm-flex`에서는 같은 값을 가진 숫자 토큰으로 대신하지 않고 의미 별칭인 `gap="section"`을 사용한다.
 
 ## 페이지 헤더
 
@@ -34,13 +35,19 @@
 ## 타이포그래피
 
 - 텍스트가 2개 이상일 떄는 mm-paragraph-group으로 감싼다.
+- 긴 본문을 접고 펼치는 더 보기 텍스트는 `mm-read-more-paragraph`를 사용한다.
 - 페이지·섹션·소제목 등 제목 맥락에는 `mm-text`가 아닌 `mm-heading`을 사용하고, 의미 위계에 맞는 `level`을 지정한다.
 - 제목과 설명 텍스트가 함께 나오는 맥락에는 `mm-heading`과 `mm-text`를 따로 조합하지 않고 `mm-text-block`을 사용한다.
 - 텍스트는 `mm-text`, 단락은 `mm-paragraph`, 목록은 `mm-text-list`를 사용한다.
+- 연관된 `mm-meta-item`이 2개 이상이면 `mm-meta-item-group`으로 묶는다. `mm-meta-item-group`은 Flex와 기본 `gap="4"`를 엄격하게 사용하며 Grid나 `columns`로 변형하지 않는다.
 - `p`, `h1`–`h6` 등 raw 태그로 새 콘텐츠를 작성하지 않는다.
 - 정보 위계는 제목, 기본 본문, 핵심 수치처럼 꼭 필요한 최소 단계로 단순하게 구성한다.
 - `mm-text size="12"`는 사용하지 않는다. 보조 정보도 기본 텍스트 크기를 우선하고, 더 작은 크기를 추가해 위계를 세분화하지 않는다.
 - 텍스트 크기 단계가 필요할 때는 `size`로 표현하며, `color` prop은 거의 쓰지 않는다.
+
+## 태그
+
+- `mm-tag`가 2개 이상 함께 쓰이면 개별 태그를 직접 나열하지 않고 `mm-keyword-tag-group`을 사용한다.
 
 ## 버튼
 

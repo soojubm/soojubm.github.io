@@ -26,8 +26,7 @@ export const componentTokensStyles = [
     .component-tokens {
       margin: 1rem 0 0 calc(-5vw + 1rem);
       padding: 1.5rem calc(var(--layout-padding-inline) - 1rem);
-      background-color: var(--color-background-subtle);
-      border: var(--component-tokens-border, none);
+      border: var(--border-stronger);
       border-radius: var(--radius-large);
     }
 

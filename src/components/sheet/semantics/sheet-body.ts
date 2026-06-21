@@ -8,13 +8,11 @@ class SheetBody extends LitElement {
     scrollbarStyles,
     css`
       :host {
-        box-sizing: border-box;
         flex: 1 1 auto;
         min-height: 0;
+        padding: 0 0 var(--space-4) 0;
         overflow-y: auto;
-        scrollbar-color: var(--color-background-strong) transparent;
-        scrollbar-gutter: stable;
-        scrollbar-width: thin;
+        overflow-x: hidden;
       }
     `,
   ]
