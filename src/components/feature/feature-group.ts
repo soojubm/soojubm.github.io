@@ -6,7 +6,7 @@ type Columns = 1 | 2 | 3 | 4
 
 /**
  * mm-feature 들을 열 단위로 묶는 그룹.
- * 레이아웃은 mm-grid에 위임하고, gap 기본값은 8이다.
+ * 레이아웃은 mm-grid에 위임하고, gap은 8로 내부에서 엄격하게 고정한다.
  */
 @customElement('mm-feature-group')
 export class FeatureGroup extends LitElement {
@@ -19,9 +19,6 @@ export class FeatureGroup extends LitElement {
   /** 칼럼 수. 1 | 2 | 3 | 4 */
   @property({ type: Number }) columns: Columns = 2
 
-  /** 간격. 숫자면 --space-{n}, 그 외엔 그대로. e.g. '8', '1rem' */
-  @property({ type: String }) gap = '8'
-
   /** 칼럼 최대 너비. e.g. '400px' */
   @property({ attribute: 'column-max-width' }) columnMaxWidth?: string
 
@@ -30,7 +27,7 @@ export class FeatureGroup extends LitElement {
       <mm-grid
         columns=${this.columns}
         column-max-width=${this.columnMaxWidth ?? ''}
-        gap=${this.gap}
+        gap="8"
         role="group"
       >
         <slot></slot>
