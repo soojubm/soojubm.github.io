@@ -1,6 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 import { resetStyles } from '../../../stylesheets/shared/reset.styles'
+import type { IconName } from '../../icon-button/semantics/icon-names'
 import '../../button/button'
 import '../../button/button-group'
 import '../../icon/icon'
@@ -22,7 +23,7 @@ export class ChatSource extends LitElement {
   /** 칩에 표시할 레이블 (없으면 도메인 자동 추출) */
   @property({ type: String }) label = ''
   /** 칩/시트에 표시할 Iconoir 아이콘 이름 */
-  @property({ type: String }) icon = ''
+  @property({ type: String }) icon?: IconName
 
   @state() _open = false
 

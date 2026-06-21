@@ -1,6 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
+import type { IconName } from '../../icon-button/semantics/icon-names'
 import '../../list-row/list-row'
 
 /**
@@ -15,7 +16,7 @@ import '../../list-row/list-row'
 export class SettingItem extends LitElement {
   @property({ type: String }) label = ''
   @property({ type: String }) description = ''
-  @property({ type: String, attribute: 'start-icon' }) startIcon = ''
+  @property({ type: String, attribute: 'start-icon' }) startIcon?: IconName
 
   @property({ type: Boolean, reflect: true }) disabled = false
 

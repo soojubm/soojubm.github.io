@@ -1,10 +1,11 @@
 import { LitElement } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import type { IconName } from '../../icon-button/semantics/icon-names'
 import { renderTag } from '../tag'
 
 @customElement('mm-keyword-tag')
 export class KeywordTag extends LitElement {
-  @property({ type: String }) icon = ''
+  @property({ type: String }) icon?: IconName
 
   render() {
     return renderTag('default', undefined, this.icon)

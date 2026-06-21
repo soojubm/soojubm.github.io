@@ -1,5 +1,6 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import type { IconName } from '../icon-button/semantics/icon-names'
 import { buttonStyles } from './button.styles'
 
 export type ButtonVariant = 'primary' | 'secondary' | 'tertiary' | 'text' | 'destructive'
@@ -12,7 +13,7 @@ export class Button extends LitElement {
   @property({ type: String, reflect: true }) size: ButtonSize = 'medium'
   @property({ type: Boolean, attribute: 'full-width', reflect: true }) isFullWidth = false
   @property({ type: Boolean, reflect: true }) disabled = false
-  @property({ type: String }) icon = ''
+  @property({ type: String }) icon?: IconName
   @property({ type: String, attribute: 'icon-position' }) iconPosition: ButtonIconPosition =
     'leading'
   @property({ type: String, attribute: 'aria-label' }) override ariaLabel = ''

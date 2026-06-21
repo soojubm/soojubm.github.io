@@ -1,8 +1,30 @@
-import { ICON_NAMES } from './components/icon-button/semantics/icon-names'
+import { ICON_NAMES, type IconName } from './components/icon-button/semantics/icon-names'
 
-// badge
+interface SitemapItem {
+  id: string
+  name: string
+  badge?: string
+  hidden?: boolean
+}
 
-export const SITEMAP = [
+interface SitemapStandaloneNode {
+  type: 'standalone'
+  id: string
+  title: string
+  icon: IconName
+}
+
+interface SitemapCategoryNode {
+  type: 'category'
+  id: string
+  title: string
+  icon: IconName
+  items: SitemapItem[]
+}
+
+type SitemapNode = SitemapStandaloneNode | SitemapCategoryNode
+
+export const SITEMAP: SitemapNode[] = [
   // 1. 상단 독립 메뉴 (Top-level Links)
   {
     type: 'standalone',

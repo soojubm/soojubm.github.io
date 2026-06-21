@@ -1,6 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { resetStyles } from '../../../stylesheets/shared/reset.styles'
+import type { IconName } from '../../icon-button/semantics/icon-names'
 import '../button'
 
 /**
@@ -11,7 +12,7 @@ import '../button'
 export class ToggleButton extends LitElement {
   @property({ type: Boolean, reflect: true }) selected = false
   @property({ type: String }) value = ''
-  @property({ type: String }) icon = ''
+  @property({ type: String }) icon?: IconName
   @property({ type: Boolean, reflect: true }) disabled = false
   @property({ type: String, attribute: 'aria-label' }) override ariaLabel = ''
 

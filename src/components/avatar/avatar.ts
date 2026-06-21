@@ -1,6 +1,6 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
-import { ICON_NAMES } from '../icon-button/semantics/icon-names'
+import { ICON_NAMES, type IconName } from '../icon-button/semantics/icon-names'
 import { avatarStyles } from './avatar.styles'
 
 @customElement('mm-avatar')
@@ -9,7 +9,7 @@ export class Avatar extends LitElement {
   @property({ type: String, reflect: true }) size = 'medium'
   @property({ type: String, reflect: true }) shape: 'circle' | 'square' = 'square'
   @property({ type: String }) src?: string
-  @property({ type: String }) icon?: string
+  @property({ type: String }) icon?: IconName
 
   // aria-label을 컴포넌트 템플릿 내부에서 안전하게 사용하기 위해 명시
   @property({ type: String, attribute: 'aria-label' }) override ariaLabel: string | null = null

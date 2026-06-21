@@ -17,6 +17,7 @@ export const ICON_NAMES = {
   SEND: 'send-diagonal',
   SETTINGS: 'settings',
   SHARE: 'arrow-up-right',
+  CAMERA: 'camera',
 
   // Navigation
   BACK: 'arrow-left',
@@ -24,6 +25,8 @@ export const ICON_NAMES = {
   EXPAND: 'nav-arrow-down',
   FORWARD: 'arrow-right',
   MENU: 'menu-scale',
+  MENU_SIMPLE: 'menu',
+  NAVIGATE_DOWN: 'arrow-down',
   OPEN_EXTERNAL: 'open-in-browser',
   PREVIOUS: 'arrow-left',
   NEXT: 'arrow-right',
@@ -37,6 +40,7 @@ export const ICON_NAMES = {
   INFO: 'info-circle',
   SUCCESS: 'check-circle',
   WARNING: 'warning-triangle',
+  FAILURE: 'xmark-circle',
 
   // Selection
   BOOKMARK: 'bookmark',
@@ -131,6 +135,7 @@ export const ICON_NAMES = {
   CLICK: 'cursor-pointer',
   CURSOR: 'cursor',
   HELP: 'information-circle',
+  HELP_CIRCLE: 'help-circle',
   INFO_EMPTY: 'info-empty',
   INTERACTIVE: 'interactive',
   MOUSE_BUTTON: 'mouse-button-left',
@@ -138,4 +143,21 @@ export const ICON_NAMES = {
   PLACE: 'city',
   SPARKS: 'sparks',
   WIFI: 'wifi',
+
+  // Project-specific
+  CONSTRAINED_SURFACE: 'constrained-surface',
+  EMPTY: 'glass-empty',
+  FIGMA: 'figma',
+  LULLABY: 'lullaby',
+  MUSIC_DOUBLE_NOTE: 'music-double-note',
+  MUSIC_DOUBLE_NOTE_PLUS: 'music-double-note-plus',
+  MUSIC_NOTE: 'music-note',
+  MUSIC_NOTE_SOLID: 'music-note-solid',
+  ARCHERY: 'archery',
+  COMPRESS: 'compress',
+  STATS_REPORT: 'stats-report',
+  RULER_COMBINE: 'ruler-combine',
+  COINS_SWAP: 'coins-swap',
 } as const
+
+export type IconName = typeof ICON_NAMES[keyof typeof ICON_NAMES]

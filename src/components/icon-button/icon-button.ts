@@ -1,5 +1,6 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import type { IconName } from './semantics/icon-names'
 import { iconButtonStyles } from './icon-button.styles'
 
 export type IconButtonVariant = 'action' | 'flow' | 'plain' | 'navigator' | 'destructive' | 'clear'
@@ -7,7 +8,7 @@ export type IconButtonSize = 'small' | 'medium'
 
 @customElement('mm-icon-button')
 class IconButton extends LitElement {
-  @property({ type: String }) icon = ''
+  @property({ type: String }) icon?: IconName
   @property({ type: String, reflect: true }) variant: IconButtonVariant = 'action'
   @property({ type: String, reflect: true }) size: IconButtonSize = 'medium'
   @property({ type: String, attribute: 'aria-label' }) override ariaLabel = ''

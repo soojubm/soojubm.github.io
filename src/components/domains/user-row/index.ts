@@ -1,6 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
+import type { IconName } from '../../icon-button/semantics/icon-names'
 import '../../list-row/list-row'
 
 /**
@@ -11,7 +12,7 @@ export class UserRow extends LitElement {
   @property({ type: String }) size = 'medium'
   @property({ type: String }) label = ''
   @property({ type: String }) description = ''
-  @property({ type: String }) icon = ''
+  @property({ type: String }) icon?: IconName
   @property({ type: String, attribute: 'avatar-src' }) avatarSrc = ''
   @property({ type: String, attribute: 'avatar-variant' }) avatarVariant = 'tertiary'
 

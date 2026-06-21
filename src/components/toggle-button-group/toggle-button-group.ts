@@ -1,5 +1,6 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
+import type { IconName } from '../icon-button/semantics/icon-names'
 import '../button/button-group'
 import '../button/semantics/toggle-button'
 import './semantics/view-mode-switcher'
@@ -8,7 +9,7 @@ interface OptionItem {
   value: string
 
   label?: string
-  icon?: string
+  icon?: IconName
 
   ariaLabel?: string
   disabled?: boolean

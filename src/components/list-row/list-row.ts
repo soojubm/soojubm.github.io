@@ -3,6 +3,7 @@ import { customElement, property, state } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
 import { listRowStyles } from './list-row.styles'
+import type { IconName } from '../icon-button/semantics/icon-names'
 import '../avatar/avatar'
 
 /**
@@ -15,7 +16,7 @@ export class ListRow extends LitElement {
   @property({ type: String }) label = ''
   @property({ type: String }) description = ''
 
-  @property({ type: String }) icon = ''
+  @property({ type: String }) icon?: IconName
   @property({ type: String }) emoji = ''
   @property({ type: String, attribute: 'avatar-src' }) avatarSrc = ''
   @property({ type: String, attribute: 'avatar-variant' }) avatarVariant = 'tertiary'
@@ -61,7 +62,9 @@ export class ListRow extends LitElement {
         <span class="list-row-content">
           ${this.label
             ? html`
-                <mm-text size=${this.size === 'large' ? '18' : '14'}>${this.label}</mm-text>
+                <mm-text size=${this.size === 'large' || this.size === 'huge' ? '18' : '14'}>
+                  ${this.label}
+                </mm-text>
               `
             : html`
                 <slot></slot>

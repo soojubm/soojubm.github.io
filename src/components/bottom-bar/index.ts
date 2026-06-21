@@ -1,12 +1,12 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
-import { ICON_NAMES } from '../icon-button/semantics/icon-names'
+import { ICON_NAMES, type IconName } from '../icon-button/semantics/icon-names'
 import '../text/semantics/caption'
 
 interface BottomBarItem {
   label: string
   href?: string
-  icon?: string
+  icon?: IconName
   active?: boolean
   // badge?: boolean
 }

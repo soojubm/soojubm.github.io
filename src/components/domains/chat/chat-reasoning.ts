@@ -1,12 +1,12 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { resetStyles } from '../../../stylesheets/shared/reset.styles'
-import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
+import { ICON_NAMES, type IconName } from '../../icon-button/semantics/icon-names'
 import '../../icon/icon'
 
 export type ChatReasoningFlowTone = 'thinking' | 'searching' | 'reading' | 'writing'
 
-const toneIconMap: Record<ChatReasoningFlowTone, string> = {
+const toneIconMap: Record<ChatReasoningFlowTone, IconName> = {
   thinking: ICON_NAMES.SPARKS,
   searching: ICON_NAMES.SEARCH,
   reading: ICON_NAMES.BOOK,
@@ -26,7 +26,7 @@ export class ChatReasoningFlow extends LitElement {
   @property({ type: String }) tone: ChatReasoningFlowTone = 'thinking'
   @property({ type: String }) label = ''
   @property({ type: String }) description = ''
-  @property({ type: String }) icon = ''
+  @property({ type: String }) icon?: IconName
 
   static styles = [
     resetStyles,

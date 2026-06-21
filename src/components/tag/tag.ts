@@ -1,5 +1,6 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import type { IconName } from '../icon-button/semantics/icon-names'
 import '../icon/icon'
 import { tagStyles, type TagTone } from './tag.styles'
 
@@ -11,20 +12,20 @@ export const getMappedTone = <Value extends string>(
   fallback: TagTone = 'default',
 ) => toneByValue[value] ?? fallback
 
-export const renderTag = (tone: TagTone, fallback?: unknown, icon = '') => html`
+export const renderTag = (tone: TagTone, fallback?: unknown, icon?: IconName) => html`
   <mm-tag tone=${tone} icon=${icon}><slot>${fallback}</slot></mm-tag>
 `
 
 export const renderMappedTag = <Value extends string>(
   value: Value,
   toneByValue: TagToneMap<Value>,
-  icon = '',
+  icon?: IconName,
 ) => renderTag(getMappedTone(value, toneByValue), value, icon)
 
 @customElement('mm-tag')
 export class Tag extends LitElement {
   @property({ type: String, reflect: true }) tone: TagTone = 'default'
-  @property({ type: String }) icon = ''
+  @property({ type: String }) icon?: IconName
 
   static styles = [tagStyles]
 

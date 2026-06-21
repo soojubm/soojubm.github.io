@@ -1,11 +1,12 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
+import type { IconName } from '../icon-button/semantics/icon-names'
 import '../button/button-group'
 import { resultStyles } from './result.styles'
 
 @customElement('mm-result')
 class Result extends LitElement {
-  @property({ type: String, attribute: 'avatar-icon' }) avatarIcon = ''
+  @property({ type: String, attribute: 'avatar-icon' }) avatarIcon?: IconName
   @property({ type: String }) heading = ''
   @property({ type: String }) description = ''
   @state() private hasDefaultContent = false

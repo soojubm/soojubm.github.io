@@ -1,12 +1,13 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import type { IconName } from '../../icon-button/semantics/icon-names'
 
 @customElement('mm-link-prompt')
 export class LinkPrompt extends LitElement {
   @property({ type: String }) message = ''
   @property({ type: String, attribute: 'action-label' }) actionLabel = ''
   @property({ type: String }) href = ''
-  @property({ type: String }) icon = ''
+  @property({ type: String }) icon?: IconName
   @property({ type: Boolean }) external = false
 
   static styles = css`

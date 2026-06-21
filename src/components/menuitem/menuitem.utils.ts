@@ -1,12 +1,13 @@
 import { html, nothing } from 'lit'
 import { ifDefined } from 'lit/directives/if-defined.js'
+import type { IconName } from '../icon-button/semantics/icon-names'
 import '../list-row/list-row'
 
 export interface MenuItemProps {
   size: string
   label: string
   description: string
-  icon: string
+  icon?: IconName
   emoji: string
   avatarSrc: string
   avatarVariant: string

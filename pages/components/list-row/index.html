@@ -21,6 +21,12 @@
         avatar-src="/src/images/springsteen.jpg"
       ></mm-list-row>
       <mm-list-row
+        label="사이즈 휴즈"
+        description="Youtube Subscriber"
+        size="huge"
+        avatar-src="/src/images/springsteen.jpg"
+      ></mm-list-row>
+      <mm-list-row
         label="사이즈 라지 단일 라벨"
         size="large"
         avatar-src="/src/images/springsteen.jpg"
@@ -29,10 +35,10 @@
   </mm-component-example>
 
   <mm-component-props>
-    <mm-prop name="size" type="'medium' | 'large' = 'medium'" optional></mm-prop>
+    <mm-prop name="size" type="'medium' | 'large' | 'huge' = 'medium'" optional></mm-prop>
     <mm-prop name="label" type="string" optional></mm-prop>
     <mm-prop name="description" type="string" optional></mm-prop>
-    <mm-prop name="icon" type="string" optional></mm-prop>
+    <mm-prop name="icon" type="IconName" optional></mm-prop>
     <mm-prop name="avatar-src" type="string" optional></mm-prop>
     <mm-prop name="avatar-variant" type="string" optional></mm-prop>
     <mm-prop name="slot: default" type="HTMLElement" optional></mm-prop>

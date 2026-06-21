@@ -1,10 +1,10 @@
 import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { ICON_NAMES } from '../icon-button/semantics/icon-names'
+import { ICON_NAMES, type IconName } from '../icon-button/semantics/icon-names'
 import { featureStyles } from './feature.styles'
 
 // 컴포넌트 외부로 상수 데이터를 분리하여 메모리 재할당 방지
-const ICON_MAP: Record<string, string> = {
+const ICON_MAP: Record<string, IconName> = {
   interactive: ICON_NAMES.CLICK,
   easyScanning: ICON_NAMES.VIEW,
   groupable: ICON_NAMES.HELP,
@@ -14,7 +14,7 @@ const ICON_MAP: Record<string, string> = {
   user: ICON_NAMES.USER_CIRCLE,
 }
 
-const HEADING_ICON_MAP: Record<string, string> = {
+const HEADING_ICON_MAP: Record<string, IconName> = {
   Glanceable: 'cursor-pointer',
   Categorical: 'task-list',
   Informational: 'megaphone',
@@ -40,7 +40,7 @@ const HEADING_ICON_MAP: Record<string, string> = {
   'Feedback needed': 'reply-to-message',
   'One signifier, one primary meaning': 'check',
   'Do not use interaction cues as decoration': 'interactive',
-  'Do not rely on color alone': 'easyScanning',
+  'Do not rely on color alone': ICON_NAMES.VIEW,
   '타겟의 명료 (Clarity of Audience)': 'archery',
   '용도의 분명 (Explicit Intent)': 'cube-scan',
   '규모의 약속 (Controlled Scope)': 'compress',
@@ -51,7 +51,7 @@ const HEADING_ICON_MAP: Record<string, string> = {
 
 @customElement('mm-feature')
 export class Feature extends LitElement {
-  @property({ type: String }) icon = ''
+  @property({ type: String }) icon?: IconName
   @property({ type: String }) emoji = ''
 
   @property({ type: String }) heading = ''

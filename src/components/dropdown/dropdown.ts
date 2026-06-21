@@ -2,7 +2,7 @@ import { LitElement, css, html, nothing, type PropertyValues } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 import { resetStyles } from '../../stylesheets/shared/reset.styles'
 import '../button/button'
-import { ICON_NAMES } from '../icon-button/semantics/icon-names'
+import { ICON_NAMES, type IconName } from '../icon-button/semantics/icon-names'
 import '../menuitem/semantics/menu-item-action'
 import '../menuitem/semantics/menu-item-checkbox'
 
@@ -12,7 +12,7 @@ export interface DropdownOption {
   type: 'default' | 'checkbox'
   checked: boolean
   selected: boolean
-  icon?: string
+  icon?: IconName
 }
 
 @customElement('mm-dropdown')
@@ -132,7 +132,7 @@ export class Dropdown extends LitElement {
       type: (option.getAttribute('type') as 'default' | 'checkbox') || 'default',
       checked: option.hasAttribute('checked'),
       selected: option.hasAttribute('selected'),
-      icon: option.getAttribute('icon') ?? undefined,
+      icon: (option.getAttribute('icon') as IconName | null) ?? undefined,
     }))
   }
 
