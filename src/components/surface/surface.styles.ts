@@ -2,6 +2,10 @@ import { css } from 'lit'
 
 // 1. 컴포넌트 이름에 종속되지 않는 일반적인 명칭 사용
 export const VARIANTS = {
+  transparent: css`
+    border: var(--border-transparent);
+    background: none;
+  `,
   plain: css`
     padding: 0;
     border: 0;
@@ -30,6 +34,11 @@ export type Variant = keyof typeof VARIANTS
 export type Size = keyof typeof SIZES
 
 export const variantStyles = [
+  css`
+    :host([variant='transparent']) .surface {
+      ${VARIANTS.transparent}
+    }
+  `,
   css`
     :host([variant='plain']) .surface {
       ${VARIANTS.plain}

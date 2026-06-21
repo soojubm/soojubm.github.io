@@ -163,9 +163,6 @@
 .class-who-grid {
   max-width: 1200px;
   margin: 2rem auto 0;
-  display: flex;
-  justify-content: space-evenly;
-  gap: 2rem;
 }
 .class-who-note {
   max-width: 1200px;
