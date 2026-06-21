@@ -16,7 +16,7 @@ export class ChatSource extends LitElement {
   /** 소스 URL */
   @property({ type: String }) href = ''
   /** 시트에 표시할 제목 */
-  @property({ type: String }) title = ''
+  @property({ type: String }) heading = ''
   /** 시트에 표시할 설명 */
   @property({ type: String }) description = ''
   /** 칩에 표시할 레이블 (없으면 도메인 자동 추출) */
@@ -215,7 +215,7 @@ export class ChatSourceGroup extends LitElement {
 
       ${src
         ? html`
-            <div class="sheet" role="dialog" aria-label="${src.title || this._domain}">
+            <div class="sheet" role="dialog" aria-label="${src.heading || this._domain}">
               ${src.href
                 ? html`
                     <div class="sheet-header">
@@ -228,9 +228,9 @@ export class ChatSourceGroup extends LitElement {
                     </div>
                   `
                 : ''}
-              ${src.title
+              ${src.heading
                 ? html`
-                    <mm-paragraph weight="bold">${src.title}</mm-paragraph>
+                    <mm-paragraph weight="bold">${src.heading}</mm-paragraph>
                   `
                 : ''}
               ${src.description

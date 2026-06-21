@@ -7,7 +7,7 @@ import { resultStyles } from './result.styles'
 class Result extends LitElement {
   @property({ type: String, attribute: 'avataricon' }) avatarIcon = ''
   @property({ type: String, attribute: 'avatar-icon' }) avatarIconAlias = ''
-  @property({ type: String }) title = ''
+  @property({ type: String }) heading = ''
   @property({ type: String }) description = ''
   @state() private hasDefaultContent = false
   @state() private hasActionContent = false
@@ -48,7 +48,7 @@ class Result extends LitElement {
         </slot>
         <mm-text-block
           level="3"
-          heading=${this.title}
+          heading=${this.heading}
           description=${this.description}
           center
         ></mm-text-block>

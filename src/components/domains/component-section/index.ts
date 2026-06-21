@@ -3,7 +3,7 @@ import { customElement, property, state } from 'lit/decorators.js'
 
 @customElement('mm-component-section')
 class ComponentSection extends LitElement {
-  @property({ type: String }) title = ''
+  @property({ type: String }) heading = ''
   @property({ type: String }) description = ''
   @property({ type: String }) level: 'semantic' | 'domain' = 'semantic'
 
@@ -39,7 +39,7 @@ class ComponentSection extends LitElement {
     return html`
       <section class="component-section">
         <div hidden><mm-tag>${this.level === 'domain' ? 'Domain' : 'Semantic'}</mm-tag></div>
-        <mm-text size="24" weight="bold" as="h3">${this.title}</mm-text>
+        <mm-text size="24" weight="bold" as="h3">${this.heading}</mm-text>
         ${this.description
           ? html`
               <mm-paragraph>${this.description}</mm-paragraph>

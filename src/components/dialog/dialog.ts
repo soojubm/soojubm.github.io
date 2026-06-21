@@ -10,7 +10,7 @@ import type Sheet from '../sheet/sheet'
 @customElement('mm-dialog')
 export class Dialog extends LitElement {
   @property({ type: Boolean, reflect: true }) open = false
-  @property({ type: String }) title = ''
+  @property({ type: String }) heading = ''
   @property({ type: String }) description = ''
   @property({ type: Boolean, reflect: true }) closeable = false
   @property({ type: String, attribute: 'primary-label' }) primaryLabel = ''
@@ -59,7 +59,7 @@ export class Dialog extends LitElement {
   render() {
     return html`
       <mm-sheet variant="center" width="small" @sheetclose=${this.handleSheetClose}>
-        <mm-sheet-header title=${this.title}></mm-sheet-header>
+        <mm-sheet-header heading=${this.heading}></mm-sheet-header>
 
         <mm-sheet-body>
           ${this.description

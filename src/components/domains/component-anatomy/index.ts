@@ -13,7 +13,7 @@ import '../../text/semantics/textList'
  */
 @customElement('mm-component-anatomy')
 export class ComponentAnatomy extends LitElement {
-  @property({ type: String }) title = 'Anatomy'
+  @property({ type: String }) heading = 'Anatomy'
   @property({
     type: Array,
     converter: value => {
@@ -55,7 +55,7 @@ export class ComponentAnatomy extends LitElement {
 
   render() {
     return html`
-      <mm-text size="24" weight="bold" as="h3">${this.title}</mm-text>
+      <mm-text size="24" weight="bold" as="h3">${this.heading}</mm-text>
       <div class="stage">
         <slot></slot>
       </div>

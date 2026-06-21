@@ -110,7 +110,7 @@ export class TableOfContents extends LitElement {
 
     const pageHeader = document.querySelector('mm-page-header')
     if (pageHeader) {
-      const label = pageHeader.getAttribute('title') || ''
+      const label = pageHeader.getAttribute('heading') || ''
       if (label) {
         pageHeader.id = 'toc-page-header'
         items.push({ id: 'toc-page-header', label })
@@ -129,7 +129,7 @@ export class TableOfContents extends LitElement {
           el.id = id
           items.push({ id, label: 'Component Guide' })
         } else {
-          const label = el.getAttribute('title') || ''
+          const label = el.getAttribute('heading') || ''
           if (!label) return
           const id = `toc-section-${sectionIndex++}`
           el.id = id

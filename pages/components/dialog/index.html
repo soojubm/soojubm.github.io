@@ -1,7 +1,7 @@
 <main class="page" role="" aria-label="site">
   <mm-page-header
     level="1"
-    title="Dialog"
+    heading="Dialog"
     description="사용자의 정보나 재산의 변경 또는 삭제 확인."
   ></mm-page-header>
 
@@ -17,14 +17,14 @@
     <mm-dialog
       id="dialog-alert"
       closeable
-      title="Alert Dialog"
+      heading="Alert Dialog"
       description="부끄러우니까 보지마요!"
       primary-label="확인"
     ></mm-dialog>
 
     <mm-dialog
       id="dialog-confirm"
-      title="페이지를 나가시겠어요?"
+      heading="페이지를 나가시겠어요?"
       description="저장되지 않은 변경 사항이 있습니다. 이 페이지에서 나가면 변경 사항이 취소됩니다."
       primary-label="계속 수정하기"
       secondary-label="나가기"
@@ -33,7 +33,7 @@
     <mm-dialog
       id="dialog-cookie"
       closeable
-      title="쿠키 사용 안내"
+      heading="쿠키 사용 안내"
       primary-label="Cookie Settings"
       secondary-label="Accept Cookie"
     >
@@ -47,7 +47,7 @@
 
   <mm-component-props>
     <mm-prop name="open" type="boolean"></mm-prop>
-    <mm-prop name="title" type="string"></mm-prop>
+    <mm-prop name="heading" type="string"></mm-prop>
     <mm-prop name="description" type="string"></mm-prop>
     <mm-prop name="closeable" type="boolean"></mm-prop>
     <mm-prop name="primary-label" type="string"></mm-prop>

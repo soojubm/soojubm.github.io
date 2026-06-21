@@ -1,6 +1,6 @@
 <main class="page">
   <mm-page-header
-    title="Sheet"
+    heading="Sheet"
     description="콘텐츠나 작업을 레이어 위에 표시합니다. 위치와 모달리티에 따라 center·bottom·left·right·anchor variant로 구분됩니다."
   ></mm-page-header>
 
@@ -18,12 +18,12 @@
     </mm-button-group>
 
     <mm-sheet variant="center" width="medium">
-      <mm-sheet-header title="Center Sheet"></mm-sheet-header>
+      <mm-sheet-header heading="Center Sheet"></mm-sheet-header>
       <mm-sheet-body><mm-paragraph>중앙 모달 콘텐츠</mm-paragraph></mm-sheet-body>
       <mm-sheet-footer primary-label="확인" secondary-label="닫기"></mm-sheet-footer>
     </mm-sheet>
     <mm-sheet variant="bottom" height="360px">
-      <mm-sheet-header title="Bottom Sheet"></mm-sheet-header>
+      <mm-sheet-header heading="Bottom Sheet"></mm-sheet-header>
       <mm-sheet-body>
         <mm-menu-item-group>
           <mm-menu-item-action size="large" label="검색"></mm-menu-item-action>
@@ -42,17 +42,17 @@
       <mm-sheet-footer primary-label="저장" secondary-label="취소"></mm-sheet-footer>
     </mm-sheet>
     <mm-sheet variant="left">
-      <mm-sheet-header title="Left Sheet"></mm-sheet-header>
+      <mm-sheet-header heading="Left Sheet"></mm-sheet-header>
       <mm-sheet-body><mm-paragraph>왼쪽 패널 콘텐츠</mm-paragraph></mm-sheet-body>
       <mm-sheet-footer primary-label="완료" secondary-label="닫기"></mm-sheet-footer>
     </mm-sheet>
     <mm-sheet variant="right">
-      <mm-sheet-header title="Right Sheet"></mm-sheet-header>
+      <mm-sheet-header heading="Right Sheet"></mm-sheet-header>
       <mm-sheet-body><mm-paragraph>오른쪽 패널 콘텐츠</mm-paragraph></mm-sheet-body>
       <mm-sheet-footer primary-label="완료" secondary-label="닫기"></mm-sheet-footer>
     </mm-sheet>
     <mm-sheet variant="anchor">
-      <mm-sheet-header title="Anchor Sheet"></mm-sheet-header>
+      <mm-sheet-header heading="Anchor Sheet"></mm-sheet-header>
       <mm-sheet-body><mm-paragraph>트리거 근처 팝오버 시트</mm-paragraph></mm-sheet-body>
       <mm-sheet-footer primary-label="확인" secondary-label="닫기"></mm-sheet-footer>
     </mm-sheet>
@@ -161,14 +161,14 @@
   </mm-component-guide>
 
   <mm-component-section
-    title="mm-sheet-header"
+    heading="mm-sheet-header"
     description="타이틀과 닫기 버튼을 제공합니다. sheetclose 이벤트를 버블링합니다."
   >
-    <mm-sheet-header title="Sheet Title"></mm-sheet-header>
+    <mm-sheet-header heading="Sheet Title"></mm-sheet-header>
   </mm-component-section>
 
   <mm-component-section
-    title="mm-sheet-body"
+    heading="mm-sheet-body"
     description="스크롤 가능한 콘텐츠 영역. flex: 1 1 auto로 header·footer를 제외한 나머지를 채웁니다."
   >
     <mm-sheet-body>
@@ -180,7 +180,7 @@
   </mm-component-section>
 
   <mm-component-section
-    title="mm-backdrop"
+    heading="mm-backdrop"
     description="레이어 뒤에 표시되는 반투명 Backdrop. open prop으로 표시하며 --backdrop-color로 색상을 재정의할 수 있습니다."
   >
     <div style="position: relative; height: 120px; border-radius: 12px; overflow: hidden">
@@ -194,7 +194,7 @@
 
   <mm-icon-button icon="filter" data-open-sheet="#filter-sheet"></mm-icon-button>
   <mm-sheet variant="bottom" id="filter-sheet">
-    <mm-sheet-header title="필터"></mm-sheet-header>
+    <mm-sheet-header heading="필터"></mm-sheet-header>
     <mm-sheet-body>
       <form class="filter">
         <fieldset class="filter-fieldset" role="group">

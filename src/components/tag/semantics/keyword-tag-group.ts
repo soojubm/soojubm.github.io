@@ -4,7 +4,7 @@ import { resetStyles } from '../../../stylesheets/shared/reset.styles'
 
 @customElement('mm-keyword-tag-group')
 export class KeywordTagGroup extends LitElement {
-  @property({ type: String }) title = ''
+  @property({ type: String }) heading = ''
 
   @property({
     type: Array,
@@ -25,9 +25,9 @@ export class KeywordTagGroup extends LitElement {
     if (!this.keywords.length) return nothing
     return html`
       <mm-tag-group>
-        ${this.title
+        ${this.heading
           ? html`
-              <mm-accent-tag>${this.title}</mm-accent-tag>
+              <mm-accent-tag>${this.heading}</mm-accent-tag>
             `
           : nothing}
         ${this.keywords.map(

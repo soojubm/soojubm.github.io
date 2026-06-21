@@ -4,7 +4,7 @@ import { resetStyles } from '../../../stylesheets/shared/reset.styles'
 
 @customElement('mm-page-header')
 export class PageHeader extends LitElement {
-  @property({ type: String }) title = ''
+  @property({ type: String }) heading = ''
   @property({ type: String }) description = ''
   @property({ type: Boolean, reflect: true }) center = false
 
@@ -30,7 +30,7 @@ export class PageHeader extends LitElement {
   render() {
     return html`
       <header class="page-header">
-        <mm-text as="h1" size="32" weight="bold">${this.title}</mm-text>
+        <mm-text as="h1" size="32" weight="bold">${this.heading}</mm-text>
         ${this.description
           ? html`
               <mm-paragraph size="large" ?center=${this.center}>${this.description}</mm-paragraph>

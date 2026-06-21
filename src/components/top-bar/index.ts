@@ -5,7 +5,7 @@ import { topBarStyles } from './top-bar.styles'
 
 @customElement('mm-top-bar')
 class TopBar extends LitElement {
-  @property({ type: String }) title = ''
+  @property({ type: String }) heading = ''
   @property({ type: String }) nav: 'back' | 'close' | '' = 'back'
 
   static styles = [topBarStyles]
@@ -26,7 +26,7 @@ class TopBar extends LitElement {
               ></mm-icon-button>
             `
           : ''}
-        <mm-paragraph size="large">${this.title}</mm-paragraph>
+        <mm-paragraph size="large">${this.heading}</mm-paragraph>
         <slot name="action"></slot>
         ${this.nav === 'close'
           ? html`

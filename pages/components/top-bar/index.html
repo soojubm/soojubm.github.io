@@ -1,14 +1,14 @@
 <main class="page">
   <mm-page-header
-    title="Top Bar"
+    heading="Top Bar"
     description="화면 상단에서 현재 위치와 주요 내비게이션 액션을 제공합니다."
   ></mm-page-header>
 
   <mm-component-example>
-    <mm-top-bar nav="close" title="상세 정보"></mm-top-bar>
+    <mm-top-bar nav="close" heading="상세 정보"></mm-top-bar>
     <mm-text>기본 뒤로가기 내비게이션을 포함한 상단 바입니다.</mm-text>
     <mm-separator></mm-separator>
-    <mm-top-bar title="컬렉션에 추가">
+    <mm-top-bar heading="컬렉션에 추가">
       <mm-button slot="action" variant="text">완료</mm-button>
     </mm-top-bar>
     <mm-text>
@@ -16,7 +16,7 @@
       case.
     </mm-text>
     <mm-separator></mm-separator>
-    <mm-top-bar title="수줍이님">
+    <mm-top-bar heading="수줍이님">
       <mm-button-group slot="action">
         <mm-button>저장</mm-button>
         <mm-icon-button variant="navigator" icon="more-vert"></mm-icon-button>
@@ -26,7 +26,7 @@
   </mm-component-example>
 
   <mm-component-props>
-    <mm-prop name="title" type="string"></mm-prop>
+    <mm-prop name="heading" type="string"></mm-prop>
     <mm-prop name="nav" type="'back' | 'close' | '' = 'back'" optional></mm-prop>
     <mm-prop name="variant" type="string" optional></mm-prop>
     <mm-prop name="slot='action'" type="HTMLElement" optional></mm-prop>
