@@ -1,15 +1,16 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { interactiveControlStyles } from '../../stylesheets/shared/interactive-control.styles'
 import type { IconName } from './semantics/icon-names'
 import { iconButtonStyles } from './icon-button.styles'
 
-export type IconButtonVariant = 'action' | 'flow' | 'plain' | 'navigator' | 'destructive' | 'clear'
+export type IconButtonVariant = 'primary' | 'secondary' | 'tertiary' | 'ghost' | 'destructive'
 export type IconButtonSize = 'small' | 'medium'
 
 @customElement('mm-icon-button')
 class IconButton extends LitElement {
   @property({ type: String }) icon?: IconName
-  @property({ type: String, reflect: true }) variant: IconButtonVariant = 'action'
+  @property({ type: String, reflect: true }) variant: IconButtonVariant = 'tertiary'
   @property({ type: String, reflect: true }) size: IconButtonSize = 'medium'
   @property({ type: String, attribute: 'aria-label' }) override ariaLabel = ''
   @property({ type: String }) tooltip = ''
@@ -20,7 +21,7 @@ class IconButton extends LitElement {
   @property({ attribute: 'aria-expanded' }) private _ariaExpanded: string | null = null
   @property({ attribute: 'aria-pressed' }) private _ariaPressed: string | null = null
 
-  static styles = [iconButtonStyles]
+  static styles = [interactiveControlStyles, iconButtonStyles]
 
   protected get _accessibilityLabel(): string {
     return this.ariaLabel || this.tooltip || this.icon || ''

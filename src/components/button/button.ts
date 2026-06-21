@@ -1,9 +1,10 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { interactiveControlStyles } from '../../stylesheets/shared/interactive-control.styles'
 import type { IconName } from '../icon-button/semantics/icon-names'
 import { buttonStyles } from './button.styles'
 
-export type ButtonVariant = 'primary' | 'secondary' | 'tertiary' | 'text' | 'destructive'
+export type ButtonVariant = 'primary' | 'secondary' | 'tertiary' | 'ghost' | 'destructive'
 export type ButtonSize = 'huge' | 'large' | 'medium' | 'small'
 export type ButtonIconPosition = 'leading' | 'trailing'
 
@@ -19,7 +20,7 @@ export class Button extends LitElement {
   @property({ type: String, attribute: 'aria-label' }) override ariaLabel = ''
   @property({ attribute: 'aria-pressed' }) private _ariaPressed: string | null = null
 
-  static styles = [buttonStyles]
+  static styles = [interactiveControlStyles, buttonStyles]
 
   private _handleClick(event: Event) {
     if (this.disabled) {

@@ -10,7 +10,7 @@
       <mm-button variant="secondary" size="large">secondary</mm-button>
       <mm-button variant="tertiary" size="large">tertiary</mm-button>
       <mm-button variant="destructive" size="large" aria-label="danger">destructive</mm-button>
-      <mm-button variant="text" size="large">text</mm-button>
+      <mm-button variant="ghost" size="large">ghost</mm-button>
     </mm-button-group>
     <mm-separator></mm-separator>
     <mm-button-group>
@@ -28,7 +28,7 @@
   <mm-component-props>
     <mm-prop
       name="variant"
-      type="'primary' | 'secondary' | 'tertiary' | 'destructive' | 'text' = 'tertiary'"
+      type="'primary' | 'secondary' | 'tertiary' | 'ghost' | 'destructive' = 'tertiary'"
     ></mm-prop>
     <mm-prop name="size" type="'medium' | 'large' = 'medium'"></mm-prop>
     <mm-prop name="full-width" type="boolean" optional></mm-prop>
@@ -223,7 +223,7 @@
       </mm-button-group>
 
       <mm-button-group justify="between">
-        <mm-button variant="text">건너뛰기</mm-button>
+        <mm-button variant="ghost">건너뛰기</mm-button>
         <mm-button variant="primary">다음</mm-button>
       </mm-button-group>
 
@@ -234,7 +234,7 @@
 
       <mm-button-group direction="column" gap="3">
         <mm-button variant="primary" size="large">지금 시작하기</mm-button>
-        <mm-button variant="text">더 알아보기</mm-button>
+        <mm-button variant="ghost">더 알아보기</mm-button>
       </mm-button-group>
     </mm-flex>
   </mm-component-section> -->
@@ -258,7 +258,7 @@
           <mm-button variant="primary" size="large">저장</mm-button>
         </mm-button-group>
         <mm-button-group>
-          <mm-button variant="text" size="large">건너뛰기</mm-button>
+          <mm-button variant="ghost" size="large">건너뛰기</mm-button>
           <mm-button variant="secondary" size="large">다음</mm-button>
         </mm-button-group>
         <mm-button-group>
@@ -267,7 +267,7 @@
         </mm-button-group>
         <mm-button-group class="hero-actions">
           <mm-button variant="primary" size="large" href="#components">지금 가입하기</mm-button>
-          <mm-button variant="text" size="large">더 알아보기</mm-button>
+          <mm-button variant="ghost" size="large">더 알아보기</mm-button>
         </mm-button-group>
       </mm-flex>
       <mm-surface>
@@ -298,8 +298,10 @@
 
   <mm-component-section heading="ViewMoreButton" description="TODO define expandable indicator">
     <mm-button-group>
-      <mm-button variant="text" icon="nav-arrow-down" icon-position="trailing">View More</mm-button>
-      <mm-button variant="text" icon="nav-arrow-up" icon-position="trailing">View Less</mm-button>
+      <mm-button variant="ghost" icon="nav-arrow-down" icon-position="trailing">
+        View More
+      </mm-button>
+      <mm-button variant="ghost" icon="nav-arrow-up" icon-position="trailing">View Less</mm-button>
     </mm-button-group>
   </mm-component-section>
 

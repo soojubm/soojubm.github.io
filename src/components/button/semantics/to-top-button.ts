@@ -14,7 +14,7 @@ export class ToTopButton extends LitElement {
   render() {
     return html`
       <mm-icon-button
-        variant="navigator"
+        variant="secondary"
         icon=${ICON_NAMES.SCROLL_TOP}
         aria-label="맨 위로"
         @click=${this.handleClick}

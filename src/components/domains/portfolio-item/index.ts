@@ -126,7 +126,7 @@ export class PortfolioItem extends LitElement {
           : nothing}
         <mm-icon-button
           class="action"
-          variant="navigator"
+          variant="secondary"
           icon=${ICON_NAMES.MORE_ACTIONS}
         ></mm-icon-button>
         ${this.src

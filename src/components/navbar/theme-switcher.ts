@@ -34,7 +34,7 @@ export class ThemeSwitcher extends LitElement {
       <mm-dropdown .value=${this.value} placement="right" @change=${this.handleChange}>
         <mm-icon-button
           slot="trigger"
-          variant="plain"
+          variant="ghost"
           icon="${this.currentIcon}"
           aria-label="테마 변경"
         ></mm-icon-button>

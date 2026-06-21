@@ -32,7 +32,7 @@ export class PrevButton extends LitElement {
     return html`
       <mm-icon-button
         icon=${ICON_NAMES.PREVIOUS}
-        variant="navigator"
+        variant="secondary"
         aria-label="이전"
         ?disabled=${this.disabled}
       ></mm-icon-button>

@@ -34,7 +34,7 @@ export class CloseButton extends LitElement {
     return html`
       <mm-icon-button
         icon=${ICON_NAMES.CLOSE}
-        variant="navigator"
+        variant="secondary"
         aria-label="닫기"
         ?disabled=${this.disabled}
       ></mm-icon-button>

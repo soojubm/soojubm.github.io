@@ -11,10 +11,6 @@ export const buttonStyles = css`
     --button-text-color: var(--color-foreground);
     --button-text-size: inherit;
     --button-text-weight: var(--font-weight-normal);
-    --button-color-focus: var(--color-interaction-focus);
-    --button-color-active-bg: var(--color-interaction-active-background);
-    --button-color-active-border: var(--color-interaction-active-border);
-    --button-color-active-ring: var(--color-interaction-active-ring);
   }
 
   :host([full-width]) button {
@@ -22,26 +18,26 @@ export const buttonStyles = css`
   }
 
   :host([variant='primary']) {
-    --button-border-color: var(--border-transparent);
+    --button-border: var(--border-transparent);
     --button-color: var(--color-primary);
     --button-text-color: var(--color-foreground-on-solid);
   }
   :host([variant='secondary']) {
-    --button-border-color: var(--border-transparent);
+    --button-border: var(--border-transparent);
     --button-color: var(--green100);
     --button-text-color: var(--color-primary);
   }
   :host([variant='tertiary']) {
     --button-text-color: var(--color-foreground);
   }
-  :host([variant='text']) {
-    --button-border-color: var(--border-transparent);
-    --button-color: var(--color-background);
+  :host([variant='ghost']) {
+    --button-border: var(--border-transparent);
+    --button-color: transparent;
     --button-text-color: var(--color-primary);
   }
   :host([variant='destructive']) {
     --button-color: var(--red800);
-    --button-text-color: var(--gray0);
+    --button-text-color: var(--color-foreground-on-solid);
   }
 
   :host([size='huge']) button {
@@ -91,23 +87,5 @@ export const buttonStyles = css`
     text-transform: capitalize;
 
     cursor: pointer;
-
-    &:disabled {
-      opacity: 0.5;
-      cursor: not-allowed;
-    }
-    &:hover {
-      border-color: var(--color-background-strong);
-    }
-    &:focus {
-      outline: 3px solid var(--button-color-focus);
-      outline-offset: 2px;
-    }
-    &:enabled:active {
-      background: var(--button-color-active-bg);
-      border-color: var(--button-color-active-border);
-      box-shadow: 0 0 0 3px var(--button-color-active-ring),
-        inset 0 0 0 2px var(--color-foreground-on-solid);
-    }
   }
 `

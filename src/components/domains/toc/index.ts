@@ -246,7 +246,7 @@ export class TableOfContents extends LitElement {
             ({ href, icon, label }) => html`
               <mm-icon-button
                 icon=${icon}
-                variant="action"
+                variant="tertiary"
                 aria-label=${label}
                 @click=${() => window.open(href, '_blank', 'noopener,noreferrer')}
               ></mm-icon-button>
@@ -254,7 +254,7 @@ export class TableOfContents extends LitElement {
           )}
           <mm-icon-button
             icon=${this.copied ? ICON_NAMES.COPY_SUCCESS : ICON_NAMES.LINK}
-            variant="action"
+            variant="tertiary"
             aria-label=${this.copied ? 'Copied link' : 'Copy link'}
             @click=${this.copyShareUrl}
           ></mm-icon-button>

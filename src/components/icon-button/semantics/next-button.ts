@@ -32,7 +32,7 @@ export class NextButton extends LitElement {
     return html`
       <mm-icon-button
         icon=${ICON_NAMES.NEXT}
-        variant="navigator"
+        variant="secondary"
         aria-label="다음"
         ?disabled=${this.disabled}
       ></mm-icon-button>

@@ -45,7 +45,7 @@ export class NumberInput extends LitElement {
           : nothing}
         <div class="textfield-control">
           <mm-icon-button
-            variant="plain"
+            variant="ghost"
             size="small"
             icon=${ICON_NAMES.SUBTRACT}
             label="감소"
@@ -69,7 +69,7 @@ export class NumberInput extends LitElement {
             @input=${this._handleInput}
           ></mm-input>
           <mm-icon-button
-            variant="plain"
+            variant="ghost"
             size="small"
             icon=${ICON_NAMES.ADD}
             label="증가"

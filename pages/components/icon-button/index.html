@@ -5,6 +5,39 @@
   ></mm-page-header>
 
   <mm-component-example>
+    <mm-flex align-items="center" gap="2">
+      <mm-icon-button
+        variant="primary"
+        icon="arrow-right"
+        tooltip="Primary"
+        tooltip-placement="center"
+      ></mm-icon-button>
+      <mm-icon-button
+        variant="secondary"
+        icon="arrow-right"
+        tooltip="Secondary"
+        tooltip-placement="center"
+      ></mm-icon-button>
+      <mm-icon-button
+        variant="tertiary"
+        icon="arrow-right"
+        tooltip="Tertiary"
+        tooltip-placement="center"
+      ></mm-icon-button>
+      <mm-icon-button
+        variant="ghost"
+        icon="arrow-right"
+        tooltip="Ghost"
+        tooltip-placement="center"
+      ></mm-icon-button>
+      <mm-icon-button
+        variant="destructive"
+        icon="trash"
+        tooltip="Destructive"
+        tooltip-placement="center"
+      ></mm-icon-button>
+    </mm-flex>
+    <mm-separator></mm-separator>
     <mm-flex>
       <mm-icon-button
         variant="primary"
@@ -47,13 +80,13 @@
     <mm-separator></mm-separator>
     <mm-flex>
       <mm-icon-button
-        variant="navigator"
+        variant="secondary"
         icon="arrow-left"
         tooltip="이전"
         tooltip-placement="center"
       ></mm-icon-button>
       <mm-icon-button
-        variant="navigator"
+        variant="secondary"
         icon="arrow-right"
         color="gold"
         tooltip="다음"
@@ -76,7 +109,7 @@
         disabled
       ></mm-icon-button>
       <mm-icon-button
-        variant="navigator"
+        variant="secondary"
         icon="arrow-left"
         tooltip="이전"
         tooltip-placement="center"
@@ -86,7 +119,10 @@
   </mm-component-example>
   <mm-component-props>
     <mm-prop name="icon" type="IconName"></mm-prop>
-    <mm-prop name="variant" type="'cta' | 'action' | 'flow' = 'action'"></mm-prop>
+    <mm-prop
+      name="variant"
+      type="'primary' | 'secondary' | 'tertiary' | 'ghost' | 'destructive' = 'tertiary'"
+    ></mm-prop>
     <mm-prop name="size" type="'small' | 'medium' = 'medium'"></mm-prop>
     <mm-prop name="tooltip" type="string" optional></mm-prop>
     <mm-prop name="tooltip-placement" type="'left' | 'center' | 'right'" optional></mm-prop>
@@ -159,7 +195,7 @@
 
   <mm-component-section heading="MoreMenuButton, ActionMenuButton, ContextMenuButton">
     <mm-icon-button
-      variant="navigator"
+      variant="secondary"
       icon="more-vert"
       tooltip="더보기"
       tooltip-placement="center"
@@ -182,7 +218,7 @@
 
   <mm-component-section
     heading="Close Button"
-    description="모달, 패널, 시트 등 레이어를 닫는 버튼. navigator 스타일 — 원형, 테두리, 그림자."
+    description="모달, 패널, 시트 등 레이어를 닫는 보조 액션 버튼입니다."
   >
     <mm-flex align-items="center" gap="4">
       <mm-tooltip content="닫기" placement="center">
@@ -193,7 +229,7 @@
 
   <mm-component-section
     heading="Dismiss Button"
-    description="배너, 알림, 토스트 등 비파괴적 해제 버튼. plain 스타일 — 배경 없음, 경량."
+    description="배너, 알림, 토스트 등에서 콘텐츠를 비파괴적으로 해제하는 보조 액션 버튼입니다."
   >
     <mm-flex align-items="center" gap="4">
       <mm-tooltip content="해제" placement="center">
@@ -283,7 +319,7 @@
   </mm-component-section>
   <mm-component-section heading="Expand Button / Indicator" description="">
     <mm-icon-button
-      variant="navigator"
+      variant="secondary"
       size="small"
       icon="nav-arrow-down"
       tooltip="펼치기"

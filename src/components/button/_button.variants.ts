@@ -5,26 +5,26 @@
  */
 export const buttonVariants = {
   primary: {
-    '--button-border-color': 'var(--border-transparent)',
+    '--button-border': 'var(--border-transparent)',
     'background-color': 'var(--color-primary)',
     '--button-text-color': 'var(--color-foreground-on-solid)',
   },
   secondary: {
-    '--button-border-color': 'var(--border-transparent)',
+    '--button-border': 'var(--border-transparent)',
     '--button-color': 'var(--green100)',
     '--button-text-color': 'var(--color-primary)',
   },
   tertiary: {
     '--button-text-color': 'var(--color-foreground)',
   },
-  text: {
-    '--button-border-color': 'var(--border-transparent)',
-    '--button-color': 'var(--color-background)',
+  ghost: {
+    '--button-border': 'var(--border-transparent)',
+    '--button-color': 'transparent',
     '--button-text-color': 'var(--color-primary)',
   },
   destructive: {
     '--button-color': 'var(--red800)',
-    '--button-text-color': 'var(--gray0)',
+    '--button-text-color': 'var(--color-foreground-on-solid)',
   },
 } as const
 

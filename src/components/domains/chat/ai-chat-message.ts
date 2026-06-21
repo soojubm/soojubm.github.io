@@ -43,21 +43,21 @@ export class AiChatMessage extends LitElement {
       <mm-button-group>
         <mm-icon-button
           size="small"
-          variant="plain"
+          variant="ghost"
           icon=${ICON_NAMES.COPY}
           aria-label="복사"
           @click=${() => this._emitReaction('copy')}
         ></mm-icon-button>
         <mm-icon-button
           size="small"
-          variant="plain"
+          variant="ghost"
           icon=${ICON_NAMES.THUMBS_UP}
           aria-label="좋아요"
           @click=${() => this._emitReaction('like')}
         ></mm-icon-button>
         <mm-icon-button
           size="small"
-          variant="plain"
+          variant="ghost"
           icon=${ICON_NAMES.DISLIKE}
           aria-label="싫어요"
           @click=${() => this._emitReaction('dislike')}

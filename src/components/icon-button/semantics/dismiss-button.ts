@@ -33,7 +33,7 @@ export class DismissButton extends LitElement {
   render() {
     return html`
       <mm-icon-button
-        variant="navigator"
+        variant="secondary"
         size="small"
         icon=${ICON_NAMES.DISMISS}
         aria-label="닫기"

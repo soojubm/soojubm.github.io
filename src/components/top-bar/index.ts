@@ -20,7 +20,7 @@ class TopBar extends LitElement {
         ${this.nav === 'back'
           ? html`
               <mm-icon-button
-                variant="navigator"
+                variant="secondary"
                 icon=${ICON_NAMES.BACK}
                 @click=${this.handleNavClick}
               ></mm-icon-button>
@@ -31,7 +31,7 @@ class TopBar extends LitElement {
         ${this.nav === 'close'
           ? html`
               <mm-icon-button
-                variant="navigator"
+                variant="secondary"
                 icon=${ICON_NAMES.CLOSE}
                 @click=${this.handleNavClick}
               ></mm-icon-button>

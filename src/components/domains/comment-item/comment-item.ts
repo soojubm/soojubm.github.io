@@ -117,7 +117,7 @@ export class CommentItem extends LitElement {
             ? html`
                 <mm-icon-button
                   slot="trailing"
-                  variant="navigator"
+                  variant="secondary"
                   icon=${ICON_NAMES.MORE_ACTIONS}
                   aria-label="댓글 메뉴"
                   aria-haspopup="true"
@@ -134,7 +134,7 @@ export class CommentItem extends LitElement {
           ? html`
               <mm-button
                 class="reply"
-                variant="text"
+                variant="ghost"
                 size="small"
                 @click=${() => this._emit('reply')}
               >

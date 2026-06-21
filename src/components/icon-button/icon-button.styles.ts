@@ -8,10 +8,6 @@ export const iconButtonStyles = css`
     --icon-button-radius: var(--radius);
     --icon-button-border: var(--border-transparent);
     --icon-button-text-color: var(--color-foreground);
-    --icon-button-color-focus: var(--color-interaction-focus);
-    --icon-button-color-active-bg: var(--color-interaction-active-background);
-    --icon-button-color-active-border: var(--color-interaction-active-border);
-    --icon-button-color-active-ring: var(--color-interaction-active-ring);
   }
 
   button {
@@ -28,36 +24,6 @@ export const iconButtonStyles = css`
     font-family: var(--font-family);
     font-size: inherit;
     cursor: pointer;
-
-    &:hover {
-      border-color: var(--color-background-strong);
-    }
-    &:focus {
-      outline: 3px solid var(--icon-button-color-focus);
-      outline-offset: 2px;
-    }
-    &:active {
-      background: var(--icon-button-color-active-bg);
-      border-color: var(--icon-button-color-active-border);
-      box-shadow: 0 0 0 3px var(--icon-button-color-active-ring),
-        inset 0 0 0 2px var(--color-foreground-on-solid);
-    }
-    &:disabled {
-      opacity: 0.5;
-      cursor: not-allowed;
-
-      &:hover {
-        box-shadow: none;
-      }
-      &:focus {
-        outline: none;
-      }
-      &:active {
-        background: var(--icon-button-color);
-        border-color: var(--icon-button-color);
-        box-shadow: none;
-      }
-    }
   }
 
   :host([variant='primary']) button {
@@ -65,22 +31,21 @@ export const iconButtonStyles = css`
     --icon-button-text-color: var(--color-foreground-on-solid);
   }
 
-  :host([variant='plain']) button {
-    background-color: transparent;
-    border: none;
-  }
-
-  :host([variant='navigator']) button {
+  :host([variant='secondary']) button {
     border: var(--border);
     border-radius: var(--radius-round);
     box-shadow: var(--shadow);
     background-color: var(--color-background);
   }
 
-  :host([variant='clear']) {
-    --icon-button-size: var(--size-tiny);
-    --icon-button-radius: var(--radius-round);
-    --icon-button-color: var(--color-background);
+  :host([variant='ghost']) button {
+    background-color: transparent;
+    border: none;
+  }
+
+  :host([variant='destructive']) button {
+    background-color: var(--red800);
+    --icon-button-text-color: var(--color-foreground-on-solid);
   }
 
   :host([size='small']) {

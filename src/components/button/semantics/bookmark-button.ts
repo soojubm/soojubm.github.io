@@ -67,7 +67,7 @@ export class BookmarkButton extends LitElement {
   render() {
     return html`
       <mm-icon-button
-        variant="plain"
+        variant="ghost"
         icon=${this.iconName}
         aria-pressed=${this.selected ? 'true' : 'false'}
         aria-label=${this.actionLabel}

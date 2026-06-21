@@ -12,13 +12,19 @@ class ClearButton extends LitElement {
     :host {
       display: contents;
     }
+
+    mm-icon-button {
+      --icon-button-size: var(--size-tiny);
+      --icon-button-radius: var(--radius-round);
+      --icon-button-color: var(--color-background);
+    }
   `
 
   render() {
     return html`
       <mm-icon-button
         icon=${ICON_NAMES.CLOSE}
-        variant="clear"
+        variant="tertiary"
         aria-label=${this.ariaLabel}
         ?disabled=${this.disabled}
       ></mm-icon-button>

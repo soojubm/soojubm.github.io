@@ -36,7 +36,7 @@ export class HamburgerButton extends LitElement {
     return html`
       <mm-icon-button
         icon=${ICON_NAMES.MENU}
-        variant="plain"
+        variant="ghost"
         aria-expanded=${this.expanded ? 'true' : 'false'}
       ></mm-icon-button>
     `

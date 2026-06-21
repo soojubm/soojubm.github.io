@@ -67,7 +67,7 @@ export class MyChatBubble extends LitElement {
           <mm-text class="failed-status" size="12" role="alert">전송 실패</mm-text>
           <mm-icon-button
             size="small"
-            variant="plain"
+            variant="ghost"
             icon=${ICON_NAMES.RETRY}
             aria-label="재전송"
             @click=${this.handleRetry}
