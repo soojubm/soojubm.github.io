@@ -2,7 +2,7 @@ import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { state } from 'lit/decorators/state.js'
 import '../../button/semantics/read-more-button'
-import { componentPropsStyles, propStyles } from './component-props.styles'
+import { componentPropsStyles, propStyles } from './props.styles'
 
 /**
  * 1. 자식 컴포넌트: <mm-prop>

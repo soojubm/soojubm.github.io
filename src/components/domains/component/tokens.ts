@@ -1,7 +1,7 @@
 import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import '../../text/semantics/heading'
-import { componentTokensStyles, tokenStyles } from './component-tokens.styles'
+import { componentTokensStyles, tokenStyles } from './tokens.styles'
 
 /**
  * 개별 CSS 커스텀 프로퍼티(토큰) 행.

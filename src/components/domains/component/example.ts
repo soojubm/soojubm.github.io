@@ -1,6 +1,6 @@
 import { LitElement, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
-import { componentExampleStyles } from './component-example.styles'
+import { componentExampleStyles } from './example.styles'
 
 @customElement('mm-component-example')
 export class ComponentExample extends LitElement {
