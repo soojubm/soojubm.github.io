@@ -264,11 +264,6 @@
   height: var(--size-huge);
   padding: 0 var(--layout-padding-inline);
   background: var(--color-background-subtle);
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 2;
 }
 /* .product-quick:before {content:'';display:block;height:inherit;background:inherit;border-top:var(--border);position:fixed;left:0;right:0;bottom:0;} */
 .product-quick-head {

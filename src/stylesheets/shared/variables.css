@@ -152,6 +152,7 @@
   --zindex-modal: 8;
   --zindex-toast: 9;
   --zindex-loader: 10;
+  --zindex-fixed-bottom: 100;
 
   --color-backdrop: rgba(0, 0, 0, 0.1);
 }
