@@ -15,6 +15,12 @@ export const inputStyles = css`
     --input-padding: var(--input-padding-inline);
   }
 
+  :host([size='small']) {
+    --input-height: var(--size-medium);
+    --input-padding-block: 0;
+    --input-padding-inline: var(--space-2);
+  }
+
   // :host-context([data-theme='brutal']) {
   //   --input-color-border-hover: var(--brutal-border-color);
   // }

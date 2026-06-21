@@ -3,13 +3,17 @@
   grid-template-columns: minmax(0, 1fr);
   gap: var(--space-4);
   width: 100%;
-  max-width: var(--layout-width-wide);
+  max-width: none;
   box-sizing: border-box;
   margin: 0 auto;
   padding: var(--space-8) var(--layout-padding-inline) var(--space-section);
 }
 
 .dashboard-section {
+  width: 100%;
+}
+
+.dashboard-filter mm-grid {
   width: 100%;
 }
 

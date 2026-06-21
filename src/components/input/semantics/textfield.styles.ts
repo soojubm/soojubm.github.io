@@ -16,11 +16,6 @@ export const textfieldStyles = [
       margin: var(--space-1) 0 0;
     }
 
-    :host([size='small']) {
-      --input-height: var(--size-medium);
-      --input-padding-block: 0px;
-    }
-
     /* 라벨을 시각적으로만 감추고 스크린리더에는 남김 (for 연결 유지) */
     :host([hidden-label]) mm-textfield-label {
       position: absolute;

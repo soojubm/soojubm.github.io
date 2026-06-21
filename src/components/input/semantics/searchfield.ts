@@ -14,10 +14,6 @@ class SearchField extends LitElement {
   static styles = [
     inputStyles,
     css`
-      :host([size='small']) {
-        --input-height: var(--size-medium);
-      }
-
       mm-clear-button {
         opacity: 1;
       }

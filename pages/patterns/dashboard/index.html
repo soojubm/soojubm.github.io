@@ -1,10 +1,9 @@
 <main class="page dashboard">
   <mm-flex class="dashboard-header" align-items="center" justify-content="space-between" wrap>
-    <mm-text-block
-      level="1"
-      heading="운영 대시보드"
+    <mm-page-header
+      title="운영 대시보드"
       description="오늘의 비즈니스 흐름과 처리할 업무를 확인하세요."
-    ></mm-text-block>
+    ></mm-page-header>
     <mm-button-group>
       <mm-button variant="tertiary" icon="calendar">최근 7일</mm-button>
       <mm-button variant="primary" icon="plus">새 보고서</mm-button>
@@ -182,6 +181,32 @@
           description="#MM-2046 · 이지우 · ₩96,000 · 배송 시작 · 14분 전"
         ></mm-menu-item-action>
       </mm-menu-item-group>
+    </mm-surface>
+  </section>
+
+  <section class="dashboard-section dashboard-filter" aria-label="주문 검색 및 필터">
+    <mm-surface>
+      <mm-grid columns="4">
+        <mm-textfield
+          size="small"
+          name="keyword"
+          label="검색어"
+          placeholder="상품명 또는 주문번호"
+        ></mm-textfield>
+        <mm-textfield
+          size="small"
+          name="customer"
+          label="고객명"
+          placeholder="고객 이름"
+        ></mm-textfield>
+        <mm-textfield
+          size="small"
+          name="order-status"
+          label="주문 상태"
+          placeholder="결제 완료, 배송 중"
+        ></mm-textfield>
+        <mm-textfield size="small" type="date" name="order-date" label="주문일"></mm-textfield>
+      </mm-grid>
     </mm-surface>
   </section>
 </main>
