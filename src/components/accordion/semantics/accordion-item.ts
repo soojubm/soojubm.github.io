@@ -16,6 +16,8 @@ export class AccordionItem extends LitElement {
   /** 비활성 상태 */
   @property({ type: Boolean, reflect: true }) disabled = false
 
+  private readonly _panelId = `accordion-panel-${crypto.randomUUID()}`
+
   static styles = [
     resetStyles,
     css`
@@ -118,6 +120,7 @@ export class AccordionItem extends LitElement {
         <button
           class="summary-btn"
           aria-expanded=${this.open ? 'true' : 'false'}
+          aria-controls=${this._panelId}
           ?disabled=${this.disabled}
           @click=${this._toggle}
         >
@@ -125,7 +128,7 @@ export class AccordionItem extends LitElement {
           <mm-icon class="icon" name=${ICON_NAMES.SITEMAP}></mm-icon>
         </button>
 
-        <div class="panel" aria-hidden=${this.open ? 'false' : 'true'}>
+        <div id=${this._panelId} class="panel" aria-hidden=${this.open ? 'false' : 'true'}>
           <div class="panel-inner">
             <slot></slot>
           </div>

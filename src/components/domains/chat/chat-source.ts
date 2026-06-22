@@ -55,7 +55,6 @@ export class ChatSource extends LitElement {
         variant="tertiary"
         size="small"
         aria-expanded=${this._open}
-        aria-checked=${this._open}
         aria-haspopup="dialog"
         @click=${(e: Event) => {
           e.stopPropagation()
