@@ -10,7 +10,7 @@ export class Text extends LitElement {
   @property({ type: String, reflect: true }) size: TextSize = '14'
   @property({ type: String, reflect: true }) weight: TextWeight = 'medium'
   @property({ type: String, reflect: true }) color: TextColor = 'inherit'
-  @property({ type: Boolean, reflect: true }) center = false
+  @property({ type: Boolean, reflect: true }) centered = false
 
   static styles = [resetStyles, textStyles]
 

@@ -1,0 +1,66 @@
+import { LitElement, css, html, nothing } from 'lit'
+import { customElement, property } from 'lit/decorators.js'
+import { resetStyles } from '../../../../stylesheets/shared/reset.styles'
+import { ICON_NAMES } from '../../../icon-button/semantics/icon-names'
+
+/**
+ * mm-review-item
+ * 상품 상세(커머스) 도메인의 사용자 리뷰 카드.
+ * 별점·본문·작성자·작성일을 prop으로 받아 표시한다.
+ */
+@customElement('mm-review-item')
+export class ReviewItem extends LitElement {
+  /** 채워진 별 개수. */
+  @property({ type: Number }) rating = 5
+  /** 리뷰 본문. */
+  @property({ type: String }) content = ''
+  /** 작성자 이름. */
+  @property({ type: String }) author = ''
+  /** 작성일. */
+  @property({ type: String }) date = ''
+
+  static styles = [
+    resetStyles,
+    css`
+      :host {
+        display: flex;
+        width: 100%;
+      }
+
+      .rating {
+        display: flex;
+        color: var(--color-accent);
+      }
+    `,
+  ]
+
+  render() {
+    return html`
+      <mm-surface variant="flat">
+        <mm-flex direction="column" gap="3">
+          <div class="rating" role="img" aria-label="${this.rating}점">
+            ${Array.from(
+              { length: this.rating },
+              () => html`
+                <mm-icon name=${ICON_NAMES.FAVORITE_SELECTED}></mm-icon>
+              `,
+            )}
+          </div>
+
+          <mm-paragraph>${this.content}</mm-paragraph>
+          ${this.author || this.date
+            ? html`
+                <mm-list-row label=${this.author} description=${this.date}></mm-list-row>
+              `
+            : nothing}
+        </mm-flex>
+      </mm-surface>
+    `
+  }
+}
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'mm-review-item': ReviewItem
+  }
+}

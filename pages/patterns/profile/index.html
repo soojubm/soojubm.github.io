@@ -109,15 +109,11 @@
     padding: var(--space-8) var(--layout-padding-inline);
   }
 
-  :root {
-    --color-newneek: #fb7800;
-  }
-
   .home-mangrove {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-top: 2px solid #000;
+    border-top: 2px solid var(--color-foreground);
     background: var(--color-newneek);
     position: relative;
   }
@@ -146,9 +142,9 @@
     gap: 1rem;
     width: 100%;
     padding: 0.5rem 0;
-    border-top: 1px solid #000;
-    border-bottom: 2px solid #000;
-    background: #fff;
+    border-top: 1px solid var(--color-foreground);
+    border-bottom: 2px solid var(--color-foreground);
+    background: var(--color-background);
     position: relative;
     z-index: 1;
   }
@@ -162,7 +158,7 @@
 
   .subscribe-gosum {
     padding: 2rem 0 3rem;
-    background: #fb7800;
+    background: var(--color-newneek);
     box-sizing: border-box;
   }
 
@@ -180,7 +176,7 @@
     text-align: center;
   }
   .today-poll div figure {
-    border: 2px solid #000;
+    border: 2px solid var(--color-foreground);
     border-bottom-width: 1px;
   }
   .today-poll div figure span {
@@ -193,9 +189,9 @@
   .today-poll .label {
     display: block;
     padding: 0.25rem 0;
-    border: 2px solid #000;
+    border: 2px solid var(--color-foreground);
     border-top: 0;
-    background: var(--gray100);
+    background: var(--color-background-subtle);
     font-size: var(--font-size-18);
     font-weight: bold;
   }
@@ -240,12 +236,12 @@
 
     <section style="max-width: 480px; margin: 0 auto">
       <mm-chat-feed>
-        <mm-ai-chat-message username="신규방문자" no-reactions>
+        <mm-ai-chat-message username="신규방문자" hidden-reactions>
           <mm-ai-chat-bubble>OOO이 이슈인데 신문은 어렵고 재미없어.</mm-ai-chat-bubble>
           <mm-ai-chat-bubble>뭐야 이렇게 쉬운 이슈였어? 뉴닉?</mm-ai-chat-bubble>
           <mm-ai-chat-bubble>이메일로 구독해보자!</mm-ai-chat-bubble>
         </mm-ai-chat-message>
-        <mm-ai-chat-message username="뉴스레터 구독자" no-reactions>
+        <mm-ai-chat-message username="뉴스레터 구독자" hidden-reactions>
           <mm-ai-chat-bubble>예전에 비슷한 이슈가 있었던 것 같은데...</mm-ai-chat-bubble>
           <mm-ai-chat-bubble>뉴닉이 어떻게 쉽고 재미있게 풀어줬더라?</mm-ai-chat-bubble>
           <mm-button-group>
@@ -266,7 +262,7 @@
         <mm-my-chat-message avatar-src="/src/images/springsteen.jpg">
           <mm-my-chat-bubble>뉴닉하면 어떤 색이 떠올라요?</mm-my-chat-bubble>
         </mm-my-chat-message>
-        <mm-ai-chat-message username="찐뉴니커" no-reactions>
+        <mm-ai-chat-message username="찐뉴니커" hidden-reactions>
           <mm-ai-chat-bubble>
             후후.. 역시 뉴닉은 회색이죠! 네? 주황색은 본 적이 없는데...
           </mm-ai-chat-bubble>
@@ -304,7 +300,7 @@
 
     <section class="today-poll">
       <mm-text size="18" weight="bold">오늘 기분 어때요?</mm-text>
-      <mm-text center>🦔고슴이: 고슴이는...!</mm-text>
+      <mm-text centered>🦔고슴이: 고슴이는...!</mm-text>
       <mm-flex direction="column" justify-content="center" align-items="center" gap="2">
         <div>
           <figure><span>🧒</span></figure>

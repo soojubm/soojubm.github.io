@@ -1,6 +1,7 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { resetStyles } from '../../../stylesheets/shared/reset.styles'
+import '../../tag/tag'
 
 /**
  * mm-text-block
@@ -9,6 +10,7 @@ import { resetStyles } from '../../../stylesheets/shared/reset.styles'
  */
 @customElement('mm-text-block')
 class TextBlock extends LitElement {
+  @property({ type: String }) eyebrow = ''
   @property({ type: String }) heading = ''
   @property({ type: String }) description = ''
   @property({ type: String }) caption = ''
@@ -42,6 +44,10 @@ class TextBlock extends LitElement {
       .container {
         display: flex;
         flex-direction: column;
+        align-items: flex-start;
+      }
+      :host([centered]) .container {
+        align-items: center;
       }
       /* Level 1 전용 본문 최대 너비 제한 (가독성 최적화) */
       :host([level='1']) .container mm-paragraph {
@@ -58,28 +64,34 @@ class TextBlock extends LitElement {
     const isLevel1 = this.level === '1'
 
     return html`
-      <div
-        class="container"
-        style="gap:${variant.gap}; align-items: ${this.centered ? 'center' : 'flex-start'};"
-      >
+      <div class="container" style="gap:${variant.gap}">
+        ${this.eyebrow
+          ? html`
+              <mm-tag tone="purple">${this.eyebrow}</mm-tag>
+            `
+          : nothing}
         ${isLevel1
           ? html`
-              <mm-text size="32" weight="bold" ?center="${this.centered}">${this.heading}</mm-text>
-              <mm-paragraph size="large" ?center="${this.centered}">
+              <mm-text size="32" weight="bold" ?centered="${this.centered}">
+                ${this.heading}
+              </mm-text>
+              <mm-paragraph size="large" ?centered="${this.centered}">
                 ${this.description}
               </mm-paragraph>
             `
           : html`
-              <mm-text size="${variant.headingSize}" weight="bold" ?center="${this.centered}">
+              <mm-text size="${variant.headingSize}" weight="bold" ?centered="${this.centered}">
                 ${this.heading}
               </mm-text>
-              <mm-text size="${variant.descriptionSize}" ?center="${this.centered}">
+              <mm-text size="${variant.descriptionSize}" ?centered="${this.centered}">
                 ${this.description}
               </mm-text>
             `}
         ${this.caption
           ? html`
-              <mm-text size="12" color="light" ?center="${this.centered}">${this.caption}</mm-text>
+              <mm-text size="12" color="light" ?centered="${this.centered}">
+                ${this.caption}
+              </mm-text>
             `
           : nothing}
       </div>

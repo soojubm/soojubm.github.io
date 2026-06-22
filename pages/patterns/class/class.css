@@ -5,16 +5,15 @@
   /* max-width: 1400px; */
   margin: 0 auto;
 
-  color: #000;
+  color: var(--color-foreground);
   --width-section: 60%;
   --outset-section: 4rem 0;
   --border-width: null;
-  --border: 1px solid #000;
+  --border: var(--border-width) solid var(--color-foreground);
   --section-padding: 4rem;
 
   --border: 1px solid;
-  --color-primary: #000;
-  --color-foreground: #000;
+  --color-primary: var(--color-foreground);
 }
 
 .class-media {
@@ -31,7 +30,7 @@
   border: var(--border);
   box-sizing: border-box;
   background-color: var(--color-newneek);
-  color: #000;
+  color: var(--color-foreground);
 }
 .class-order > * {
   padding: 1rem 1.5rem;
@@ -66,14 +65,14 @@
   border-radius: var(--radius);
   box-sizing: border-box;
   background: var(--color-primary);
-  color: #fff;
+  color: var(--color-foreground-on-solid);
   font-weight: var(--font-weight-bold);
   text-transform: capitalize;
   cursor: pointer;
   width: 50%;
 }
 .class-order-btn .line {
-  background-color: #fff;
+  background-color: var(--color-foreground-on-solid);
 }
 
 .minicards {
@@ -150,7 +149,7 @@
   box-sizing: border-box;
 }
 .class-feature > div:nth-of-type(1) {
-  background: #000;
+  background: var(--color-background-strong);
 }
 
 .class-who {
@@ -209,7 +208,7 @@
   width: 100%;
   border-top: var(--border);
   &:hover {
-    background: #fff;
+    background: var(--color-background);
   }
 }
 

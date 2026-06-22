@@ -18,7 +18,7 @@ const colorTokens = [
   { name: '--gray400', value: '', cases: ['--color-foreground-light'] },
   // { name: '--gray600', value: '' },
   { name: '--gray800', value: '', cases: ['--color-foreground', '--color-background-strong'] },
-  { name: '--green100', value: '', cases: ['--color-primary-light'] },
+  { name: '--green100', value: '', cases: ['--color-primary-subtle'] },
   { name: '--green800', value: '', cases: ['--color-primary'] },
   { name: '--red100', value: '', cases: ['--color-danger-light'] },
   { name: '--red800', value: '', cases: ['--color-danger'] },

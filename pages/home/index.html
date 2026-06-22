@@ -205,7 +205,7 @@
 
         .demo-btn.is-dragged {
           opacity: 0.6;
-          box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+          box-shadow: var(--shadow);
           cursor: grabbing;
         }
 
@@ -214,7 +214,7 @@
           font-family: var(--font-family);
           font-size: 13px;
           font-weight: var(--font-weight-bold);
-          color: var(--color-foreground-subtle);
+          color: var(--color-foreground-light);
         }
 
         .selection-indicator-demo {
@@ -712,4 +712,965 @@
       </mm-flex>
     </mm-surface>
   </section> -->
+
+  <mm-flex direction="column" gap="4">
+    <mm-text-block
+      level="2"
+      heading="Property name dictionary"
+      description="158개 이름을 506개 공개 @property 선언에서 집계했습니다. HTML attribute 이름을 기준으로 중복 사용이 많은 순서대로 정렬합니다."
+    ></mm-text-block>
+
+    <mm-table
+      columns='[
+        {"label": "Property", "width": "160px"},
+        {"label": "선언 수", "width": "80px", "textAlign": "right"},
+        {"label": "사용 컴포넌트"}
+      ]'
+    >
+      <table>
+        <caption hidden>컴포넌트 프로퍼티 이름과 선언 수 및 사용 컴포넌트</caption>
+        <tbody>
+          <tr>
+            <th scope="row"><mm-text weight="bold">value</mm-text></th>
+            <td style="text-align: right"><mm-text>34</mm-text></td>
+            <td>
+              <mm-text>
+                mm-bookmark-button, mm-chat-suggestion, mm-checkbox, mm-checkbox-group,
+                mm-copy-button, mm-dropdown, mm-filter-button, mm-follow-button, mm-input,
+                mm-list-marker, mm-menu-item-checkbox, mm-menu-item-radio, mm-menu-item-radio-group,
+                mm-menu-item-switch, mm-meta-item, mm-model-selector, mm-number-input,
+                mm-passwordfield, mm-prompt-input, mm-radio, mm-radio-group, mm-search-suggestion,
+                mm-searchfield, mm-sort-dropdown, mm-tab, mm-tab-panel, mm-tabs, mm-textarea,
+                mm-textarea-field, mm-textfield, mm-theme-switcher, mm-toggle-button, mm-token-item,
+                mm-view-mode-switcher
+              </mm-text>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">disabled</mm-text></th>
+            <td style="text-align: right"><mm-text>33</mm-text></td>
+            <td>
+              <mm-text>
+                mm-accordion-item, mm-bookmark-button, mm-button, mm-checkbox, mm-clear-button,
+                mm-close-button, mm-delete-button, mm-dismiss-button, mm-filter-button,
+                mm-follow-button, mm-icon-button, mm-input, mm-menu-item-action,
+                mm-menu-item-checkbox, mm-menu-item-link, mm-menu-item-radio, mm-menu-item-switch,
+                mm-more-button, mm-next-button, mm-number-input, mm-page-button, mm-passwordfield,
+                mm-prev-button, mm-radio, mm-radio-group, mm-reveal-button, mm-searchfield,
+                mm-setting-item, mm-switch, mm-textarea, mm-textarea-field, mm-textfield,
+                mm-toggle-button
+              </mm-text>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">size</mm-text></th>
+            <td style="text-align: right"><mm-text>24</mm-text></td>
+            <td>
+              <mm-text>
+                mm-avatar, mm-avatar-group, mm-button, mm-checkbox, mm-icon, mm-icon-button,
+                mm-list-row, mm-master-checkbox, mm-menu-item-action, mm-menu-item-checkbox,
+                mm-menu-item-link, mm-menu-item-radio, mm-menu-item-switch, mm-number-input,
+                mm-paragraph, mm-passwordfield, mm-searchfield, mm-spinner, mm-surface, mm-switch,
+                mm-text, mm-textfield, mm-user-row, mm-user-snippet
+              </mm-text>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">icon</mm-text></th>
+            <td style="text-align: right"><mm-text>23</mm-text></td>
+            <td>
+              <mm-text>
+                mm-accent-tag, mm-avatar, mm-button, mm-category-tag, mm-chat-reasoning-flow,
+                mm-chat-source, mm-chat-suggestion, mm-feature, mm-icon-button, mm-keyword-tag,
+                mm-link-prompt, mm-list-row, mm-menu-item-action, mm-menu-item-checkbox,
+                mm-menu-item-link, mm-menu-item-radio, mm-menu-item-switch, mm-search-suggestion,
+                mm-setting-item, mm-status-tag, mm-tag, mm-toggle-button, mm-user-row
+              </mm-text>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">label</mm-text></th>
+            <td style="text-align: right"><mm-text>21</mm-text></td>
+            <td>
+              <mm-text>
+                mm-avatar-group, mm-chat-date, mm-chat-reasoning-flow, mm-chat-source,
+                mm-file-upload-button, mm-list-row, mm-menu-item-action, mm-menu-item-checkbox,
+                mm-menu-item-link, mm-menu-item-radio, mm-menu-item-switch, mm-meta-item,
+                mm-number-input, mm-passwordfield, mm-portfolio-item, mm-radio-group,
+                mm-setting-item, mm-spinner, mm-textarea-field, mm-textfield, mm-user-row
+              </mm-text>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">description</mm-text></th>
+            <td style="text-align: right"><mm-text>19</mm-text></td>
+            <td>
+              <mm-text>
+                mm-chat-reasoning-flow, mm-chat-source, mm-component-section, mm-dialog, mm-feature,
+                mm-list-row, mm-menu-item-action, mm-menu-item-checkbox, mm-menu-item-link,
+                mm-menu-item-radio, mm-menu-item-switch, mm-notice, mm-page-header,
+                mm-portfolio-item, mm-result, mm-setting-item, mm-text-block, mm-user-row,
+                mm-user-snippet
+              </mm-text>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">name</mm-text></th>
+            <td style="text-align: right"><mm-text>19</mm-text></td>
+            <td>
+              <mm-text>
+                mm-checkbox, mm-checkbox-group, mm-comment-input, mm-icon, mm-input,
+                mm-menu-item-radio, mm-menu-item-radio-group, mm-number-input, mm-passwordfield,
+                mm-prompt-input, mm-prop, mm-radio, mm-radio-group, mm-switch, mm-textarea,
+                mm-textarea-field, mm-textfield, mm-token, mm-user-snippet
+              </mm-text>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">heading</mm-text></th>
+            <td style="text-align: right"><mm-text>14</mm-text></td>
+            <td>
+              <mm-text>
+                mm-chat-source, mm-component-anatomy, mm-component-references, mm-component-related,
+                mm-component-section, mm-dialog, mm-feature, mm-keyword-tag-group, mm-notice,
+                mm-page-header, mm-result, mm-sheet-header, mm-text-block, mm-top-bar
+              </mm-text>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">aria-label</mm-text></th>
+            <td style="text-align: right"><mm-text>13</mm-text></td>
+            <td>
+              <mm-text>
+                mm-avatar, mm-bottom-bar, mm-breadcrumb, mm-button, mm-clear-button, mm-icon-button,
+                mm-menu-item-checkbox-group, mm-menu-item-radio-group, mm-more-button,
+                mm-page-button, mm-pagination, mm-toggle-button, mm-typing-indicator
+              </mm-text>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">variant</mm-text></th>
+            <td style="text-align: right"><mm-text>11</mm-text></td>
+            <td>
+              <mm-text>
+                mm-avatar, mm-button, mm-feature, mm-icon-button, mm-list-marker, mm-notice,
+                mm-sheet, mm-status-tag, mm-surface, mm-tabs, mm-text-list
+              </mm-text>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">avatar-src</mm-text></th>
+            <td style="text-align: right"><mm-text>9</mm-text></td>
+            <td>
+              <mm-text>
+                mm-comment-item, mm-list-row, mm-menu-item-action, mm-menu-item-checkbox,
+                mm-menu-item-link, mm-menu-item-radio, mm-menu-item-switch, mm-user-row,
+                mm-user-snippet
+              </mm-text>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">placeholder</mm-text></th>
+            <td style="text-align: right"><mm-text>9</mm-text></td>
+            <td>
+              <mm-text>
+                mm-comment-input, mm-input, mm-number-input, mm-passwordfield, mm-prompt-input,
+                mm-searchfield, mm-textarea, mm-textarea-field, mm-textfield
+              </mm-text>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">avatar-variant</mm-text></th>
+            <td style="text-align: right"><mm-text>8</mm-text></td>
+            <td>
+              <mm-text>
+                mm-list-row, mm-menu-item-action, mm-menu-item-checkbox, mm-menu-item-link,
+                mm-menu-item-radio, mm-menu-item-switch, mm-user-row, mm-user-snippet
+              </mm-text>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">tone</mm-text></th>
+            <td style="text-align: right"><mm-text>8</mm-text></td>
+            <td>
+              <mm-text>
+                mm-accent-tag, mm-chat-reasoning-flow, mm-menu-item-action, mm-menu-item-checkbox,
+                mm-menu-item-link, mm-menu-item-radio, mm-menu-item-switch, mm-tag
+              </mm-text>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">checked</mm-text></th>
+            <td style="text-align: right"><mm-text>7</mm-text></td>
+            <td>
+              <mm-text>
+                mm-checkbox, mm-master-checkbox, mm-menu-item-checkbox, mm-menu-item-radio,
+                mm-menu-item-switch, mm-radio, mm-switch
+              </mm-text>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">emoji</mm-text></th>
+            <td style="text-align: right"><mm-text>7</mm-text></td>
+            <td>
+              <mm-text>
+                mm-feature, mm-list-row, mm-menu-item-action, mm-menu-item-checkbox,
+                mm-menu-item-link, mm-menu-item-radio, mm-menu-item-switch
+              </mm-text>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">aria-invalid</mm-text></th>
+            <td style="text-align: right"><mm-text>6</mm-text></td>
+            <td>
+              <mm-text>
+                mm-input, mm-number-input, mm-passwordfield, mm-textarea, mm-textarea-field,
+                mm-textfield
+              </mm-text>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">optional</mm-text></th>
+            <td style="text-align: right"><mm-text>6</mm-text></td>
+            <td>
+              <mm-text>
+                mm-number-input, mm-passwordfield, mm-prop, mm-textarea-field, mm-textfield,
+                mm-textfield-label
+              </mm-text>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">centered</mm-text></th>
+            <td style="text-align: right"><mm-text>5</mm-text></td>
+            <td>
+              <mm-text>mm-feature, mm-page-header, mm-paragraph, mm-text, mm-text-block</mm-text>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">color</mm-text></th>
+            <td style="text-align: right"><mm-text>5</mm-text></td>
+            <td>
+              <mm-text>
+                mm-icon, mm-paragraph, mm-text, mm-typing-indicator, mm-ui-placeholder
+              </mm-text>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">helper</mm-text></th>
+            <td style="text-align: right"><mm-text>5</mm-text></td>
+            <td>
+              <mm-text>
+                mm-file-upload-button, mm-number-input, mm-passwordfield, mm-textarea-field,
+                mm-textfield
+              </mm-text>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">href</mm-text></th>
+            <td style="text-align: right"><mm-text>5</mm-text></td>
+            <td>
+              <mm-text>
+                mm-chat-source, mm-link, mm-link-prompt, mm-menu-item-link, mm-thumbnail
+              </mm-text>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">open</mm-text></th>
+            <td style="text-align: right"><mm-text>5</mm-text></td>
+            <td>
+              <mm-text>mm-accordion-item, mm-backdrop, mm-dialog, mm-sheet, mm-tooltip</mm-text>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">selected</mm-text></th>
+            <td style="text-align: right"><mm-text>5</mm-text></td>
+            <td>
+              <mm-text>
+                mm-bookmark-button, mm-filter-button, mm-filter-button-group, mm-follow-button,
+                mm-toggle-button
+              </mm-text>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">src</mm-text></th>
+            <td style="text-align: right"><mm-text>5</mm-text></td>
+            <td>
+              <mm-text>
+                mm-ai-chat-bubble, mm-avatar, mm-my-chat-bubble, mm-portfolio-item, mm-thumbnail
+              </mm-text>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">expanded</mm-text></th>
+            <td style="text-align: right"><mm-text>4</mm-text></td>
+            <td>
+              <mm-text>
+                mm-hamburger-button, mm-more-button, mm-read-more-button, mm-show-more-button
+              </mm-text>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">gap</mm-text></th>
+            <td style="text-align: right"><mm-text>4</mm-text></td>
+            <td><mm-text>mm-flex, mm-grid, mm-meta-item-group, mm-row</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">justify-content</mm-text></th>
+            <td style="text-align: right"><mm-text>4</mm-text></td>
+            <td><mm-text>mm-button-group, mm-flex, mm-row, mm-textfield-action-bar</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">active</mm-text></th>
+            <td style="text-align: right"><mm-text>3</mm-text></td>
+            <td><mm-text>mm-chat-reasoning-flow, mm-tab, mm-tab-panel</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">caption</mm-text></th>
+            <td style="text-align: right"><mm-text>3</mm-text></td>
+            <td><mm-text>mm-table, mm-text-block, mm-thumbnail</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">columns</mm-text></th>
+            <td style="text-align: right"><mm-text>3</mm-text></td>
+            <td><mm-text>mm-feature-group, mm-grid, mm-table</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">content</mm-text></th>
+            <td style="text-align: right"><mm-text>3</mm-text></td>
+            <td><mm-text>mm-read-more-paragraph, mm-review-item, mm-tooltip</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">direction</mm-text></th>
+            <td style="text-align: right"><mm-text>3</mm-text></td>
+            <td><mm-text>mm-button-group, mm-flex, mm-meta-item-group</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">hidden-label</mm-text></th>
+            <td style="text-align: right"><mm-text>3</mm-text></td>
+            <td><mm-text>mm-number-input, mm-passwordfield, mm-textfield</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">items</mm-text></th>
+            <td style="text-align: right"><mm-text>3</mm-text></td>
+            <td><mm-text>mm-bottom-bar, mm-breadcrumb, mm-component-aka</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">level</mm-text></th>
+            <td style="text-align: right"><mm-text>3</mm-text></td>
+            <td><mm-text>mm-component-section, mm-heading, mm-text-block</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">stretch</mm-text></th>
+            <td style="text-align: right"><mm-text>3</mm-text></td>
+            <td><mm-text>mm-button-group, mm-flex, mm-toggle-button-group</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">time</mm-text></th>
+            <td style="text-align: right"><mm-text>3</mm-text></td>
+            <td><mm-text>mm-ai-chat-message, mm-comment-item, mm-my-chat-message</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">type</mm-text></th>
+            <td style="text-align: right"><mm-text>3</mm-text></td>
+            <td><mm-text>mm-input, mm-prop, mm-textfield</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">validation-text</mm-text></th>
+            <td style="text-align: right"><mm-text>3</mm-text></td>
+            <td><mm-text>mm-number-input, mm-passwordfield, mm-textfield</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">align</mm-text></th>
+            <td style="text-align: right"><mm-text>2</mm-text></td>
+            <td><mm-text>mm-button-group, mm-flex</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">alt</mm-text></th>
+            <td style="text-align: right"><mm-text>2</mm-text></td>
+            <td><mm-text>mm-portfolio-item, mm-thumbnail</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">aria-describedby</mm-text></th>
+            <td style="text-align: right"><mm-text>2</mm-text></td>
+            <td><mm-text>mm-input, mm-textarea</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">author</mm-text></th>
+            <td style="text-align: right"><mm-text>2</mm-text></td>
+            <td><mm-text>mm-comment-item, mm-review-item</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">column-max-width</mm-text></th>
+            <td style="text-align: right"><mm-text>2</mm-text></td>
+            <td><mm-text>mm-feature-group, mm-grid</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">date</mm-text></th>
+            <td style="text-align: right"><mm-text>2</mm-text></td>
+            <td><mm-text>mm-portfolio-item, mm-review-item</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">external</mm-text></th>
+            <td style="text-align: right"><mm-text>2</mm-text></td>
+            <td><mm-text>mm-link, mm-link-prompt</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">full-width</mm-text></th>
+            <td style="text-align: right"><mm-text>2</mm-text></td>
+            <td><mm-text>mm-button, mm-page</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">height</mm-text></th>
+            <td style="text-align: right"><mm-text>2</mm-text></td>
+            <td><mm-text>mm-sheet, mm-ui-placeholder</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">indeterminate</mm-text></th>
+            <td style="text-align: right"><mm-text>2</mm-text></td>
+            <td><mm-text>mm-checkbox, mm-master-checkbox</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">input-id</mm-text></th>
+            <td style="text-align: right"><mm-text>2</mm-text></td>
+            <td><mm-text>mm-input, mm-textarea</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">keywords</mm-text></th>
+            <td style="text-align: right"><mm-text>2</mm-text></td>
+            <td><mm-text>mm-keyword-tag-group, mm-portfolio-item</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">layout</mm-text></th>
+            <td style="text-align: right"><mm-text>2</mm-text></td>
+            <td><mm-text>mm-meta-item, mm-page</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">less-label</mm-text></th>
+            <td style="text-align: right"><mm-text>2</mm-text></td>
+            <td><mm-text>mm-read-more-button, mm-show-more-button</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">max</mm-text></th>
+            <td style="text-align: right"><mm-text>2</mm-text></td>
+            <td><mm-text>mm-input, mm-number-input</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">message</mm-text></th>
+            <td style="text-align: right"><mm-text>2</mm-text></td>
+            <td><mm-text>mm-chat-confirmation, mm-link-prompt</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">min</mm-text></th>
+            <td style="text-align: right"><mm-text>2</mm-text></td>
+            <td><mm-text>mm-input, mm-number-input</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">mode</mm-text></th>
+            <td style="text-align: right"><mm-text>2</mm-text></td>
+            <td><mm-text>mm-filter-button, mm-filter-button-group</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">more-label</mm-text></th>
+            <td style="text-align: right"><mm-text>2</mm-text></td>
+            <td><mm-text>mm-read-more-button, mm-show-more-button</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">placement</mm-text></th>
+            <td style="text-align: right"><mm-text>2</mm-text></td>
+            <td><mm-text>mm-dropdown, mm-tooltip</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">primary-label</mm-text></th>
+            <td style="text-align: right"><mm-text>2</mm-text></td>
+            <td><mm-text>mm-dialog, mm-sheet-footer</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">rating</mm-text></th>
+            <td style="text-align: right"><mm-text>2</mm-text></td>
+            <td><mm-text>mm-review-item, mm-review-summary</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">role</mm-text></th>
+            <td style="text-align: right"><mm-text>2</mm-text></td>
+            <td><mm-text>mm-menu-item-action, mm-menu-item-group</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">rows</mm-text></th>
+            <td style="text-align: right"><mm-text>2</mm-text></td>
+            <td><mm-text>mm-textarea, mm-textarea-field</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">secondary-label</mm-text></th>
+            <td style="text-align: right"><mm-text>2</mm-text></td>
+            <td><mm-text>mm-dialog, mm-sheet-footer</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">shape</mm-text></th>
+            <td style="text-align: right"><mm-text>2</mm-text></td>
+            <td><mm-text>mm-avatar, mm-bookmark-button</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">status</mm-text></th>
+            <td style="text-align: right"><mm-text>2</mm-text></td>
+            <td><mm-text>mm-chat-confirmation, mm-my-chat-bubble</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">step</mm-text></th>
+            <td style="text-align: right"><mm-text>2</mm-text></td>
+            <td><mm-text>mm-input, mm-number-input</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">submit-label</mm-text></th>
+            <td style="text-align: right"><mm-text>2</mm-text></td>
+            <td><mm-text>mm-comment-input, mm-prompt-input</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">target</mm-text></th>
+            <td style="text-align: right"><mm-text>2</mm-text></td>
+            <td><mm-text>mm-link, mm-menu-item-link</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">typing</mm-text></th>
+            <td style="text-align: right"><mm-text>2</mm-text></td>
+            <td><mm-text>mm-ai-chat-bubble, mm-my-chat-bubble</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">weight</mm-text></th>
+            <td style="text-align: right"><mm-text>2</mm-text></td>
+            <td><mm-text>mm-paragraph, mm-text</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">width</mm-text></th>
+            <td style="text-align: right"><mm-text>2</mm-text></td>
+            <td><mm-text>mm-page, mm-sheet</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">wrap</mm-text></th>
+            <td style="text-align: right"><mm-text>2</mm-text></td>
+            <td><mm-text>mm-button-group, mm-flex</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">accept</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-file-upload-button</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">action-label</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-link-prompt</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">align-items</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-flex</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">approve-label</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-chat-confirmation</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">aria-current</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-menu-item-link</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">as</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-text</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">avatar-icon</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-result</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">avatar-size</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-user-snippet</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">avatars</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-avatar-group</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">backdrop-blur</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-sheet</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">background</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-page</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">badge</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-portfolio-item</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">bleed</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-search-suggestions</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">capture</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-file-upload-button</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">category</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-category-tag</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">clickable</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-thumbnail</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">compact</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-social-links</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">confirm-message</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-delete-button</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">controls</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-master-checkbox</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">current</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-page-button</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">current-page</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-pagination</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">default</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-token</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">discount</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-product-price</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">dismissible</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-notice</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">divider</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-breadcrumb</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">duration</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-chat-reasoning</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">editable</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-comment-item</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">email</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-user-snippet</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">exclusive</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-accordion</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">eyebrow</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-text-block</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">facebook</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-social-links</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">fade</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-search-suggestions</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">failed</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-my-chat-bubble</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">fetchpriority</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-thumbnail</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">for</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-textfield-label</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">github</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-social-links</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">hidden-attachment</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-prompt-input</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">hidden-heading</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-component-references</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">hidden-reactions</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-ai-chat-message</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">hidden-trailing</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-menu-item-link</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">icon-position</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-button</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">index</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-token-item</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">input-class</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-input</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">instagram</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-social-links</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">interval</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-chat-reasoning</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">is-loading</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-prompt-input</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">key</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-token-item</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">legend</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-checkbox-group</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">limit</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-read-more-paragraph</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">loading</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-thumbnail</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">modal</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-portfolio-item</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">model</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-prompt-input</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">multiple</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-file-upload-button</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">nav</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-top-bar</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">notion</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-social-links</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">options</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-toggle-button-group</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">original-price</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-product-price</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">page</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-page-button</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">page-count</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-pagination</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">parts</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-component-anatomy</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">phone</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-user-snippet</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">pinterest</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-social-links</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">price</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-product-price</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">radius</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-ui-placeholder</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">ratio</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-thumbnail</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">reject-label</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-chat-confirmation</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">reply-label</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-comment-item</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">revealed</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-reveal-button</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">review-count</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-review-summary</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">select-all</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-filter-button</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">selected-index</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-toggle-button-group</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">sibling-count</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-pagination</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">spacing</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-separator</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">summary</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-accordion-item</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">tag-label</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-user-snippet</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">texts</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-text-list</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">thinking</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-chat-reasoning</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">tooltip</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-icon-button</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">tooltip-placement</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-icon-button</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">trailing-icon</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-menu-item-action</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">truncate</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-paragraph</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">twitter</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-social-links</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">value-size</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-meta-item</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">values</mm-text></th>
+            <td style="text-align: right"><mm-text>1</mm-text></td>
+            <td><mm-text>mm-menu-item-checkbox-group</mm-text></td>
+          </tr>
+        </tbody>
+      </table>
+    </mm-table>
+  </mm-flex>
 </main>

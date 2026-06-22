@@ -41,8 +41,6 @@ export class Flex extends LitElement {
   /** 주축 정렬 (justify-content) */
   @property({ type: String, attribute: 'justify-content' }) justifyContent: JustifyContent =
     'flex-start'
-  /** @deprecated justify-content를 사용하세요. */
-  @property({ type: String }) justify?: JustifyContent
   /** 교차축 정렬 (align-items) */
   @property({ type: String, attribute: 'align-items' }) alignItems: AlignItems = 'stretch'
   /** @deprecated align-items를 사용하세요. */
@@ -76,11 +74,10 @@ export class Flex extends LitElement {
     const gap =
       gapMap[this.gap as GapAlias] ??
       (/^\d+$/.test(this.gap) ? `var(--space-${this.gap})` : this.gap)
-    const justifyContent = this.justify ?? this.justifyContent
     const alignItems = this.align ?? this.alignItems
     const styles = [
       `flex-direction: ${this.direction}`,
-      `justify-content: ${justifyMap[justifyContent as JustifyAlias] ?? justifyContent}`,
+      `justify-content: ${justifyMap[this.justifyContent as JustifyAlias] ?? this.justifyContent}`,
       `align-items: ${alignMap[alignItems as AlignAlias] ?? alignItems}`,
       `gap: ${gap}`,
       `flex-wrap: ${this.wrap ? 'wrap' : 'nowrap'}`,

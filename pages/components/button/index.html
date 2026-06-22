@@ -34,7 +34,7 @@
     <mm-prop name="full-width" type="boolean" optional></mm-prop>
     <mm-prop name="disabled" type="boolean" optional></mm-prop>
     <mm-prop name="icon" type="IconName" optional></mm-prop>
-    <mm-prop name="iconPosition" type="'leading' | 'trailing' = 'leading'" optional></mm-prop>
+    <mm-prop name="icon-position" type="'leading' | 'trailing' = 'leading'" optional></mm-prop>
     <mm-prop name="@click" type="(e: MouseEvent) => void" kind="event"></mm-prop>
   </mm-component-props>
 
@@ -222,7 +222,7 @@
         <mm-button variant="primary">저장</mm-button>
       </mm-button-group>
 
-      <mm-button-group justify="between">
+      <mm-button-group justify-content="between">
         <mm-button variant="ghost">건너뛰기</mm-button>
         <mm-button variant="primary">다음</mm-button>
       </mm-button-group>

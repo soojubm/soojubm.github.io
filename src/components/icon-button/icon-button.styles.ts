@@ -44,7 +44,7 @@ export const iconButtonStyles = css`
   }
 
   :host([variant='destructive']) button {
-    background-color: var(--red800);
+    background-color: var(--color-danger);
     --icon-button-text-color: var(--color-foreground-on-solid);
   }
 

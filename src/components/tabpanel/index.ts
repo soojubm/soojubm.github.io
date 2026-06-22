@@ -1,3 +1,0 @@
-import './tabpanel'
-
-export {}

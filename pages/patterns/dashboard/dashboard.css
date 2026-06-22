@@ -197,7 +197,7 @@
 .graph-item-bar {
   height: 30px;
   border-radius: 0 0 var(--radius) var(--radius);
-  background: var(--red800);
+  background: var(--color-danger);
   position: absolute;
   left: 0;
   right: 0;

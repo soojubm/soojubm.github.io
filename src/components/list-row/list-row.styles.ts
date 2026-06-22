@@ -11,6 +11,10 @@ export const listRowStyles = css`
     --list-row-size: var(--size-large);
   }
 
+  :host([size='huge']) {
+    --list-row-size: var(--size-huge);
+  }
+
   .list-row {
     display: flex;
     align-items: center;
@@ -42,7 +46,8 @@ export const listRowStyles = css`
     line-height: 1;
   }
 
-  :host([size='large']) .list-row-emoji {
+  :host([size='large']) .list-row-emoji,
+  :host([size='huge']) .list-row-emoji {
     font-size: var(--font-size-24);
   }
 `

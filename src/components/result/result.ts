@@ -42,14 +42,14 @@ class Result extends LitElement {
           level="3"
           heading=${this.heading}
           description=${this.description}
-          center
+          centered
         ></mm-text-block>
         <div class="result-content" ?hidden=${!this.hasDefaultContent}>
           <slot @slotchange=${(event: Event) => this.handleSlotChange('default', event)}></slot>
         </div>
         <mm-button-group
           class="result-actions"
-          justify="center"
+          justify-content="center"
           wrap
           ?hidden=${!this.hasActionContent}
         >

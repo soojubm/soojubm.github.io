@@ -10,7 +10,7 @@
   height: 10px;
   margin: 0px 4px;
   border-radius: 50%;
-  background: rgba(0, 0, 0, 1);
+  background: var(--color-foreground);
   cursor: pointer;
 }
 .carousel-dots-dot:hover {

@@ -12,7 +12,7 @@ export class Paragraph extends LitElement {
   @property({ type: String, reflect: true }) weight: TextWeight = 'medium'
   @property({ type: String, reflect: true }) color = 'inherit'
   @property({ type: String, reflect: true }) truncate: ParagraphTruncate = ''
-  @property({ type: Boolean, reflect: true }) center = false
+  @property({ type: Boolean, reflect: true }) centered = false
 
   static styles = [
     resetStyles,
@@ -48,7 +48,7 @@ export class Paragraph extends LitElement {
         font-weight: var(--font-weight-bold);
       }
 
-      :host([center]) {
+      :host([centered]) {
         text-align: center;
       }
 

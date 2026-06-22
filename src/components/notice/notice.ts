@@ -12,7 +12,7 @@ const VARIANT_ICONS: Record<string, string> = {
 @customElement('mm-notice')
 class Notice extends LitElement {
   @property({ type: String }) heading = ''
-  @property({ type: String }) text = ''
+  @property({ type: String }) description = ''
   @property({ type: String, reflect: true }) variant = ''
   @property({ type: Boolean }) dismissible = false
 
@@ -42,9 +42,9 @@ class Notice extends LitElement {
               </div>
             `
           : ''}
-        ${this.text
+        ${this.description
           ? html`
-              <mm-paragraph>${this.text}</mm-paragraph>
+              <mm-paragraph>${this.description}</mm-paragraph>
             `
           : ''}
         <slot></slot>

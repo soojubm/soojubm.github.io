@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 
 @customElement('mm-ui-placeholder')
 export class UiPlaceholder extends LitElement {
-  @property({ type: String }) color = 'var(--green100)'
+  @property({ type: String }) color = 'var(--color-primary-subtle)'
   @property({ type: String }) height = '4rem'
   @property({ type: String }) radius = 'var(--radius-large)'
 

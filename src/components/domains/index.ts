@@ -16,4 +16,5 @@ import './comment-item'
 import './search-suggestions'
 import './user-row'
 import './user-snippet'
+import './commerce'
 export {}

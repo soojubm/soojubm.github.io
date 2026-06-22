@@ -11,7 +11,7 @@ export class TextareaField extends LitElement {
   @property({ type: String }) label = ''
   @property({ type: String }) helper = ''
   @property({ type: Number }) rows = 3
-  @property({ type: Boolean, attribute: 'is-optional' }) isOptional = false
+  @property({ type: Boolean }) optional = false
   @property({ type: Boolean, reflect: true }) disabled = false
   @property({ type: Boolean, attribute: 'aria-invalid', reflect: true }) isInvalid = false
 
@@ -27,7 +27,7 @@ export class TextareaField extends LitElement {
       <div class="textfield" ?data-invalid=${this.isInvalid}>
         ${this.label
           ? html`
-              <mm-textfield-label for=${this.inputId} ?optional=${this.isOptional}>
+              <mm-textfield-label for=${this.inputId} ?optional=${this.optional}>
                 ${this.label}
               </mm-textfield-label>
             `

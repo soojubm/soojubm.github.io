@@ -11,7 +11,7 @@ export const buttonVariants = {
   },
   secondary: {
     '--button-border': 'var(--border-transparent)',
-    '--button-color': 'var(--green100)',
+    '--button-color': 'var(--color-primary-subtle)',
     '--button-text-color': 'var(--color-primary)',
   },
   tertiary: {
@@ -23,7 +23,7 @@ export const buttonVariants = {
     '--button-text-color': 'var(--color-primary)',
   },
   destructive: {
-    '--button-color': 'var(--red800)',
+    '--button-color': 'var(--color-danger)',
     '--button-text-color': 'var(--color-foreground-on-solid)',
   },
 } as const

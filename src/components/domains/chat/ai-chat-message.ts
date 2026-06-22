@@ -9,7 +9,7 @@ import '../../button/button-group'
 @customElement('mm-ai-chat-message')
 export class AiChatMessage extends LitElement {
   @property({ type: String }) time = ''
-  @property({ type: Boolean, attribute: 'no-reactions' }) noReactions = false
+  @property({ type: Boolean, attribute: 'hidden-reactions' }) hiddenReactions = false
 
   static styles = [
     resetStyles,
@@ -37,7 +37,7 @@ export class AiChatMessage extends LitElement {
   }
 
   private renderReactions() {
-    if (this.noReactions) return nothing
+    if (this.hiddenReactions) return nothing
 
     return html`
       <mm-button-group>

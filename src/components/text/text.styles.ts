@@ -14,7 +14,7 @@ export const textStyles = css`
     color: var(--color-foreground-light);
   }
 
-  :host([center]) {
+  :host([centered]) {
     display: block;
     text-align: center;
   }

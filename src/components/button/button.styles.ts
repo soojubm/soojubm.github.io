@@ -24,7 +24,7 @@ export const buttonStyles = css`
   }
   :host([variant='secondary']) {
     --button-border: var(--border-transparent);
-    --button-color: var(--green100);
+    --button-color: var(--color-primary-subtle);
     --button-text-color: var(--color-primary);
   }
   :host([variant='tertiary']) {
@@ -36,7 +36,7 @@ export const buttonStyles = css`
     --button-text-color: var(--color-primary);
   }
   :host([variant='destructive']) {
-    --button-color: var(--red800);
+    --button-color: var(--color-danger);
     --button-text-color: var(--color-foreground-on-solid);
   }
 
@@ -71,7 +71,7 @@ export const buttonStyles = css`
     align-items: center;
     justify-content: center;
     /* max-content for trailing icons */
-    width: max-content;
+    width: var(--button-width, max-content);
     gap: var(--space-2);
     height: var(--button-size);
     padding: 0 var(--button-padding-inline);

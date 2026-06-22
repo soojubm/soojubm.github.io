@@ -56,13 +56,13 @@ export class ChatConfirmation extends LitElement {
   render() {
     if (this.status === 'accepted') {
       return html`
-        <mm-notice variant="success" text="승인했습니다"></mm-notice>
+        <mm-notice variant="success" description="승인했습니다"></mm-notice>
       `
     }
 
     if (this.status === 'rejected') {
       return html`
-        <mm-notice variant="danger" text="거부했습니다"></mm-notice>
+        <mm-notice variant="danger" description="거부했습니다"></mm-notice>
       `
     }
 

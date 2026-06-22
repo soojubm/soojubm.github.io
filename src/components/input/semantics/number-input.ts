@@ -14,7 +14,7 @@ export class NumberInput extends LitElement {
   @property({ type: String }) helper?: string
   @property({ type: String, attribute: 'validation-text' }) validationText?: string
   @property({ type: String, reflect: true }) size = ''
-  @property({ type: Boolean, attribute: 'is-optional' }) isOptional = false
+  @property({ type: Boolean }) optional = false
   @property({ type: Boolean, attribute: 'hidden-label', reflect: true }) hiddenLabel = false
   @property({ type: Boolean, reflect: true }) disabled = false
   @property({ type: Boolean, attribute: 'aria-invalid' }) isInvalid = false
@@ -31,29 +31,17 @@ export class NumberInput extends LitElement {
       <div class="textfield" ?data-invalid=${this.isInvalid}>
         ${this.label
           ? html`
-              <mm-textfield-label for=${this.inputId} ?optional=${this.isOptional}>
+              <mm-textfield-label for=${this.inputId} ?optional=${this.optional}>
                 ${this.label}
               </mm-textfield-label>
             `
           : nothing}
         ${this.helper
           ? html`
-              <div style="margin-top:-.25rem">
-                <mm-textfield-helper>${this.helper}</mm-textfield-helper>
-              </div>
+              <mm-textfield-helper>${this.helper}</mm-textfield-helper>
             `
           : nothing}
         <div class="textfield-control">
-          <mm-icon-button
-            variant="ghost"
-            size="small"
-            icon=${ICON_NAMES.SUBTRACT}
-            label="감소"
-            tooltip="감소"
-            tooltip-placement="center"
-            ?disabled=${this.disabled}
-            @click=${this._decrement}
-          ></mm-icon-button>
           <mm-input
             input-id=${this.inputId}
             .type=${'number'}
@@ -64,10 +52,20 @@ export class NumberInput extends LitElement {
             .max=${this.max}
             .step=${this.step}
             ?disabled=${this.disabled}
-            ?invalid=${this.isInvalid}
+            ?aria-invalid=${this.isInvalid}
             .describedBy=${this.validationText ? `${this.inputId}-validation` : undefined}
             @input=${this._handleInput}
           ></mm-input>
+          <mm-icon-button
+            variant="ghost"
+            size="small"
+            icon=${ICON_NAMES.SUBTRACT}
+            label="감소"
+            tooltip="감소"
+            tooltip-placement="center"
+            ?disabled=${this.disabled}
+            @click=${this._decrement}
+          ></mm-icon-button>
           <mm-icon-button
             variant="ghost"
             size="small"

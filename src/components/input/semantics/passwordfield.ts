@@ -11,7 +11,7 @@ class PasswordField extends LitElement {
   @property({ type: String }) helper?: string
   @property({ type: String, attribute: 'validation-text' }) validationText?: string
   @property({ type: String, reflect: true }) size = ''
-  @property({ type: Boolean, attribute: 'is-optional' }) isOptional = false
+  @property({ type: Boolean }) optional = false
   @property({ type: Boolean, attribute: 'hidden-label', reflect: true }) hiddenLabel = false
   @property({ type: Boolean, reflect: true }) disabled = false
   @property({ type: Boolean, attribute: 'aria-invalid' }) isInvalid = false
@@ -35,7 +35,7 @@ class PasswordField extends LitElement {
         .helper=${this.helper}
         .validationText=${this.validationText}
         .size=${this.size}
-        ?is-optional=${this.isOptional}
+        ?optional=${this.optional}
         ?hidden-label=${this.hiddenLabel}
         ?disabled=${this.disabled}
         ?aria-invalid=${this.isInvalid}

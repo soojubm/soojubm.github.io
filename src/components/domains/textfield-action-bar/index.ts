@@ -3,7 +3,8 @@ import { customElement, property } from 'lit/decorators.js'
 
 @customElement('mm-textfield-action-bar')
 export class TextfieldActionBar extends LitElement {
-  @property({ type: String, reflect: true }) align: 'start' | 'center' | 'end' | 'between' = 'end'
+  @property({ type: String, attribute: 'justify-content', reflect: true })
+  justifyContent: 'start' | 'center' | 'end' | 'between' = 'end'
 
   static styles = css`
     :host {
@@ -13,19 +14,19 @@ export class TextfieldActionBar extends LitElement {
       gap: var(--space-2);
     }
 
-    :host([align='start']) {
+    :host([justify-content='start']) {
       justify-content: flex-start;
     }
 
-    :host([align='center']) {
+    :host([justify-content='center']) {
       justify-content: center;
     }
 
-    :host([align='end']) {
+    :host([justify-content='end']) {
       justify-content: flex-end;
     }
 
-    :host([align='between']) {
+    :host([justify-content='between']) {
       justify-content: space-between;
     }
   `

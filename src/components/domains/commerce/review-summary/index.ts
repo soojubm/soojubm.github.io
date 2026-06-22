@@ -1,0 +1,60 @@
+import { LitElement, css, html } from 'lit'
+import { customElement, property } from 'lit/decorators.js'
+import { resetStyles } from '../../../../stylesheets/shared/reset.styles'
+import { ICON_NAMES } from '../../../icon-button/semantics/icon-names'
+
+/**
+ * mm-review-summary
+ * 상품의 평균 별점과 전체 리뷰 수를 간결하게 요약한다.
+ */
+@customElement('mm-review-summary')
+export class ReviewSummary extends LitElement {
+  /** 평균 별점. */
+  @property({ type: Number }) rating = 0
+  /** 전체 리뷰 수. */
+  @property({ type: Number, attribute: 'review-count' }) reviewCount = 0
+
+  static styles = [
+    resetStyles,
+    css`
+      :host {
+        display: block;
+      }
+
+      .stars {
+        display: flex;
+        color: var(--color-accent);
+      }
+    `,
+  ]
+
+  render() {
+    const rating = Math.min(5, Math.max(0, this.rating))
+    const filledStars = Math.round(rating)
+
+    return html`
+      <mm-flex align-items="center" gap="2">
+        <div class="stars" role="img" aria-label="5점 만점에 ${rating}점">
+          ${Array.from(
+            { length: 5 },
+            (_, index) => html`
+              <mm-icon
+                name=${index < filledStars ? ICON_NAMES.FAVORITE_SELECTED : ICON_NAMES.FAVORITE}
+              ></mm-icon>
+            `,
+          )}
+        </div>
+        <mm-text weight="bold">${rating.toFixed(1)}</mm-text>
+        <mm-text>리뷰 ${this.reviewCount.toLocaleString('ko-KR')}개</mm-text>
+      </mm-flex>
+    `
+  }
+}
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'mm-review-summary': ReviewSummary
+  }
+}
+
+export default ReviewSummary

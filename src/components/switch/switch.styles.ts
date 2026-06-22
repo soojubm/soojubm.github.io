@@ -5,14 +5,14 @@ export const switchStyles = css`
     --switch-width: 2rem;
     --switch-height: 16px;
     --switch-radius: var(--radius);
-    --switch-color: var(--gray200);
+    --switch-color: var(--color-border);
     --switch-color-checked: var(--color-primary);
     display: block;
     height: var(--switch-height);
     position: relative;
 
     &:focus-within label:before {
-      outline: 3px solid var(--color-point);
+      outline: 3px solid var(--color-interaction-focus);
     }
   }
 

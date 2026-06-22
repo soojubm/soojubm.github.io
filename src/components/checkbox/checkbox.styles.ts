@@ -69,7 +69,7 @@ export const checkboxStyles = css`
     height: 2px;
     border-left: 1px solid;
     border-bottom: 1px solid;
-    border-color: var(--gray200);
+    border-color: var(--color-border);
     position: absolute;
     left: 4px;
     top: 5px;
@@ -94,8 +94,8 @@ export const checkboxStyles = css`
 
   input[indeterminate='true'] ~ label:before,
   input[data-indeterminate='true'] ~ label:before {
-    border-color: var(--green800);
-    background: var(--green100);
+    border-color: var(--color-primary);
+    background: var(--color-primary-subtle);
   }
   input[indeterminate='true'] ~ label:after,
   input[data-indeterminate='true'] ~ label:after {

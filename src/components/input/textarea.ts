@@ -10,7 +10,7 @@ export class Textarea extends LitElement {
   @property({ type: String }) value = ''
   @property({ type: String }) name = ''
   @property({ type: String }) placeholder = ''
-  @property({ type: String, attribute: 'described-by' }) describedBy = ''
+  @property({ type: String, attribute: 'aria-describedby' }) describedBy = ''
   @property({ type: Number }) rows = 3
   @property({ type: Boolean, reflect: true }) disabled = false
   @property({ type: Boolean, attribute: 'aria-invalid', reflect: true }) isInvalid = false

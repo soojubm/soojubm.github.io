@@ -110,8 +110,8 @@ export const sheetStyles = [
       max-width: 50vw;
       height: 100%;
       max-height: 100vh;
-      border-top-right-radius: 0;
-      border-bottom-right-radius: 0;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
       transform: translateX(-100%);
     }
 
@@ -121,8 +121,8 @@ export const sheetStyles = [
       max-width: 50vw;
       height: 100%;
       max-height: 100vh;
-      border-top-left-radius: 0;
-      border-bottom-left-radius: 0;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
       transform: translateX(100%);
     }
 

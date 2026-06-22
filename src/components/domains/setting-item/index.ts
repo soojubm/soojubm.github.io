@@ -8,7 +8,7 @@ import '../../list-row/list-row'
  * 설정 화면의 한 행. mm-list-row를 합성하고
  * setting 고유의 패딩·구분선을 입힙니다.
  *
- * <mm-setting-item start-icon="bell" label="알림" description="...">
+ * <mm-setting-item icon="bell" label="알림" description="...">
  *   <mm-switch slot="action"></mm-switch>
  * </mm-setting-item>
  */
@@ -16,7 +16,7 @@ import '../../list-row/list-row'
 export class SettingItem extends LitElement {
   @property({ type: String }) label = ''
   @property({ type: String }) description = ''
-  @property({ type: String, attribute: 'start-icon' }) startIcon?: IconName
+  @property({ type: String }) icon?: IconName
 
   @property({ type: Boolean, reflect: true }) disabled = false
 
@@ -34,7 +34,7 @@ export class SettingItem extends LitElement {
   render() {
     return html`
       <mm-list-row
-        icon=${ifDefined(this.startIcon || undefined)}
+        icon=${ifDefined(this.icon || undefined)}
         label=${this.label}
         description=${this.description}
       >

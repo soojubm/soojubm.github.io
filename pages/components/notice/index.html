@@ -11,21 +11,25 @@
   <mm-component-example>
     <div style="max-width: 480px">
       <mm-flex direction="column">
-        <mm-notice heading="헤딩" text="배너. 히어로와 콜아웃의 차이." dismissible></mm-notice>
+        <mm-notice
+          heading="헤딩"
+          description="배너. 히어로와 콜아웃의 차이."
+          dismissible
+        ></mm-notice>
 
-        <mm-notice variant="success" text="좋아요 표시한 동영상에 추가됨"></mm-notice>
+        <mm-notice variant="success" description="좋아요 표시한 동영상에 추가됨"></mm-notice>
         <mm-notice
           variant="warning"
-          text="바시니의 작품은 페라라 부르주아사회의 유대인 박해라는 깊은 상처에 기인한다는 점에서 정치적이다."
+          description="바시니의 작품은 페라라 부르주아사회의 유대인 박해라는 깊은 상처에 기인한다는 점에서 정치적이다."
         ></mm-notice>
-        <mm-notice variant="danger" text="인터넷에 연결되어 있지 않습니다."></mm-notice>
+        <mm-notice variant="danger" description="인터넷에 연결되어 있지 않습니다."></mm-notice>
       </mm-flex>
     </div>
   </mm-component-example>
 
   <mm-component-props>
     <mm-prop name="heading" type="string" optional></mm-prop>
-    <mm-prop name="text" type="string" optional></mm-prop>
+    <mm-prop name="description" type="string" optional></mm-prop>
     <mm-prop name="variant" type='"success" | "warning" | "danger"' optional></mm-prop>
     <mm-prop name="dismissible" type="boolean" optional></mm-prop>
   </mm-component-props>

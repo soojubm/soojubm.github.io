@@ -12,7 +12,6 @@ export class Dialog extends LitElement {
   @property({ type: Boolean, reflect: true }) open = false
   @property({ type: String }) heading = ''
   @property({ type: String }) description = ''
-  @property({ type: Boolean, reflect: true }) closeable = false
   @property({ type: String, attribute: 'primary-label' }) primaryLabel = ''
   @property({ type: String, attribute: 'secondary-label' }) secondaryLabel = ''
 

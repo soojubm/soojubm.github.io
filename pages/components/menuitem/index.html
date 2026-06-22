@@ -52,7 +52,7 @@
   <mm-component-tokens>
     <mm-token name="menuitem-radius" default="var(--radius)"></mm-token>
     <mm-token name="menuitem-color-hover" default="var(--color-background-subtle)"></mm-token>
-    <mm-token name="menuitem-color-danger" default="#d93025"></mm-token>
+    <mm-token name="menuitem-color-danger" default="var(--color-danger)"></mm-token>
   </mm-component-tokens>
 
   <!-- "flutter. ListView. 스크롤 가능한 뷰 컨테이너. 동적으로 데이터를 랜더링하는 책임까지 포함되어
@@ -163,20 +163,26 @@
   >
     <mm-menu-item-group>
       <mm-setting-item
-        start-icon="code"
+        icon="code"
         label="철저한 코드 리뷰"
         description="추가 발견 사항을 계속 찾도록 합니다."
       >
         <mm-switch slot="action" checked></mm-switch>
       </mm-setting-item>
       <mm-setting-item
-        start-icon="half-moon"
+        icon="half-moon"
         label="다크 모드"
         description="어두운 배경 테마를 사용합니다."
       >
         <mm-switch slot="action"></mm-switch>
       </mm-setting-item>
     </mm-menu-item-group>
+    <mm-component-props>
+      <mm-prop name="icon" type="IconName" optional></mm-prop>
+      <mm-prop name="label" type="string"></mm-prop>
+      <mm-prop name="description" type="string" optional></mm-prop>
+      <mm-prop name="disabled" type="boolean" optional></mm-prop>
+    </mm-component-props>
   </mm-component-section>
 
   <mm-component-references>

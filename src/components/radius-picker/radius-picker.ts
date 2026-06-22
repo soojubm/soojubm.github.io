@@ -44,7 +44,7 @@ export class RadiusPicker extends LitElement {
       background: var(--color-background);
       border: var(--border);
       border-radius: var(--radius-large);
-      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+      box-shadow: var(--shadow);
     }
 
     .divider {
@@ -55,7 +55,7 @@ export class RadiusPicker extends LitElement {
 
     .label {
       font-size: 12px;
-      color: var(--color-foreground-subtle);
+      color: var(--color-foreground-light);
       white-space: nowrap;
     }
   `

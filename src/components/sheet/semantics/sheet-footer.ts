@@ -27,7 +27,7 @@ class SheetFooter extends LitElement {
 
   render() {
     return html`
-      <mm-button-group justify="end">
+      <mm-button-group justify-content="end">
         ${this.secondaryLabel
           ? html`
               <mm-button variant="tertiary" size="medium" @click=${this.handleSecondaryClick}>

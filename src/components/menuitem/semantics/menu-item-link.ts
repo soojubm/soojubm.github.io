@@ -18,13 +18,13 @@ export class MenuItemLink extends LitElement {
   @property({ type: Boolean, reflect: true }) disabled = false
   @property({ type: String }) href = ''
   @property({ type: String }) target = '_blank'
-  @property({ type: Boolean, attribute: 'hide-trailing' }) hideTrailing = false
+  @property({ type: Boolean, attribute: 'hidden-trailing' }) hiddenTrailing = false
   @property({ type: String, attribute: 'aria-current', reflect: true }) ariaCurrent = ''
 
   static styles = [menuItemStyles]
 
   private renderAction() {
-    if (this.hideTrailing) return html``
+    if (this.hiddenTrailing) return html``
 
     const trailingIcon = this.target === '_blank' ? ICON_NAMES.SHARE : ICON_NAMES.FORWARD
 

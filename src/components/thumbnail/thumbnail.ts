@@ -13,7 +13,7 @@ export class Thumbnail extends LitElement {
 
   @property({ type: String }) href = ''
   @property({ type: Boolean }) clickable = false
-  @property({ type: String }) figcaption = ''
+  @property({ type: String }) caption = ''
 
   @state() private _hasError = false
   private _fallbackImage =
@@ -113,13 +113,13 @@ export class Thumbnail extends LitElement {
       `
     }
 
-    // thumbnail 자체가 <figure>이며, figcaption 값이 있으면 내부에 캡션을 함께 렌더링합니다.
+    // thumbnail 자체가 <figure>이며, caption 값이 있으면 내부에 캡션을 함께 렌더링합니다.
     return html`
       <figure class="thumbnail-root">
         ${media}
-        ${this.figcaption
+        ${this.caption
           ? html`
-              <mm-caption as="figcaption" class="thumbnail-caption">${this.figcaption}</mm-caption>
+              <mm-caption as="figcaption" class="thumbnail-caption">${this.caption}</mm-caption>
             `
           : ''}
       </figure>

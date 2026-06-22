@@ -25,7 +25,7 @@ const alignMap: Record<Align, string> = {
 @customElement('mm-button-group')
 export class ButtonGroup extends LitElement {
   @property({ type: String }) direction: Direction = 'row'
-  @property({ type: String }) justify: Justify = 'start'
+  @property({ type: String, attribute: 'justify-content' }) justifyContent: Justify = 'start'
   @property({ type: String }) align: Align = 'center'
   @property({ type: Boolean }) wrap = false
   @property({ type: Boolean, reflect: true }) stretch = false
@@ -45,8 +45,9 @@ export class ButtonGroup extends LitElement {
         gap: var(--button-group-gap);
       }
 
-      :host([stretch]) .flex ::slotted(*) {
+      :host([stretch]) slot::slotted(*) {
         flex: 1;
+        --button-width: 100%;
       }
     `,
   ]
@@ -54,7 +55,7 @@ export class ButtonGroup extends LitElement {
   render() {
     const styles = [
       `flex-direction: ${this.direction}`,
-      `justify-content: ${justifyMap[this.justify] ?? 'flex-start'}`,
+      `justify-content: ${justifyMap[this.justifyContent] ?? 'flex-start'}`,
       `align-items: ${alignMap[this.align] ?? 'center'}`,
       `flex-wrap: ${this.wrap ? 'wrap' : 'nowrap'}`,
     ].join('; ')

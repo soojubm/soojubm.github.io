@@ -88,7 +88,7 @@ export class Sidebar extends LitElement {
                           href="${item.id}.html"
                           label="${item.name}${item.badge ? ` ${item.badge}` : ''}"
                           target="_self"
-                          hide-trailing
+                          hidden-trailing
                           aria-current=${currentPageId === item.id ? 'page' : nothing}
                         ></mm-menu-item-link>
                       `,

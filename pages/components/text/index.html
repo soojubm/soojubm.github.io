@@ -152,7 +152,7 @@
     <mm-flex direction="column" gap="3">
       <mm-thumbnail
         ratio="16:9"
-        figcaption="이미지 하단에 배치되는 설명 텍스트"
+        caption="이미지 하단에 배치되는 설명 텍스트"
         style="max-width: 360px"
       ></mm-thumbnail>
     </mm-flex>
@@ -258,7 +258,7 @@
 
   <mm-component-section
     heading="Meta Item Group"
-    description="연관된 메타 정보를 Flex와 기본 gap 4로 묶고, 공간이 부족하면 다음 줄로 배치합니다."
+    description="연관된 메타 정보를 Flex와 기본 gap 4로 묶습니다. direction으로 가로 또는 세로 배치를 선택합니다."
   >
     <mm-flex direction="column" gap="8">
       <mm-meta-item label="keyvalue key text" value="keyvalue value text"></mm-meta-item>
@@ -296,7 +296,17 @@
           value-size="large"
         ></mm-meta-item>
       </mm-meta-item-group>
+
+      <mm-meta-item-group direction="column">
+        <mm-meta-item label="상품 금액" value="₩ 16,000"></mm-meta-item>
+        <mm-meta-item label="배송비" value="무료"></mm-meta-item>
+        <mm-meta-item label="총 결제 금액" value="₩ 16,000"></mm-meta-item>
+      </mm-meta-item-group>
     </mm-flex>
+    <mm-component-props>
+      <mm-prop name="direction" type="'row' | 'column' = 'row'"></mm-prop>
+      <mm-prop name="gap" type="string = '4'"></mm-prop>
+    </mm-component-props>
   </mm-component-section>
 
   <mm-component-section

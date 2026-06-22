@@ -6,7 +6,7 @@ import { resetStyles } from '../../../stylesheets/shared/reset.styles'
 export class PageHeader extends LitElement {
   @property({ type: String }) heading = ''
   @property({ type: String }) description = ''
-  @property({ type: Boolean, reflect: true }) center = false
+  @property({ type: Boolean, reflect: true }) centered = false
 
   static styles = [
     resetStyles,
@@ -20,7 +20,7 @@ export class PageHeader extends LitElement {
         gap: var(--space-3);
         align-items: flex-start;
       }
-      :host([center]) .page-header {
+      :host([centered]) .page-header {
         align-items: center;
         text-align: center;
       }
@@ -33,7 +33,9 @@ export class PageHeader extends LitElement {
         <mm-text as="h1" size="32" weight="bold">${this.heading}</mm-text>
         ${this.description
           ? html`
-              <mm-paragraph size="large" ?center=${this.center}>${this.description}</mm-paragraph>
+              <mm-paragraph size="large" ?centered=${this.centered}>
+                ${this.description}
+              </mm-paragraph>
             `
           : null}
       </header>
