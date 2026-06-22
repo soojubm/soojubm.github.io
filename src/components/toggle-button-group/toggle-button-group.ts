@@ -89,17 +89,6 @@ export class ToggleButtonGroup extends LitElement {
         composed: true,
       }),
     )
-
-    this.dispatchEvent(
-      new CustomEvent('optionChange', {
-        detail: {
-          index,
-          value: option.value,
-        },
-        bubbles: true,
-        composed: true,
-      }),
-    )
   }
 
   render() {

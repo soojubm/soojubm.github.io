@@ -1,5 +1,6 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { resetStyles } from '../../stylesheets/shared/reset.styles'
 
 export interface TableColumn {
   label: string
@@ -29,9 +30,7 @@ export class Table extends LitElement {
   })
   columns: TableColumn[] = []
 
-  protected createRenderRoot() {
-    return this
-  }
+  static styles = [resetStyles]
 
   private renderHeader(column: TableColumn) {
     const content = column.sortable

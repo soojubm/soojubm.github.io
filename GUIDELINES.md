@@ -62,9 +62,11 @@
 - 서로 다른 맥락 사이에 구분선이 꼭 필요할 때 CSS `border`나 인접 형제 선택자로 직접 만들지 않고 `mm-separator`를 사용한다.
 - Lit 컴포넌트의 host 상태 선택자는 `:host` 내부에 중첩하지 않고 최상위 `:host([attr])`, `:host(:state)` 형태로 작성한다.
 - `display: contents`는 사용하지 않는다. Lit 컴포넌트 호스트에는 역할에 맞는 `block`, `inline-flex`, `grid` 등의 박스를 명시하고, 자식을 부모 레이아웃의 직접 항목처럼 배치해야 할 때는 마크업 구조를 조정하거나 `subgrid`를 사용한다.
+- `createRenderRoot() { return this }`로 Light DOM을 사용하는 것은 외부 스타일 참여나 전역 문서 상태 선택자가 반드시 필요한 컴포넌트로 제한한다. 예외를 추가할 때는 Shadow DOM을 사용할 수 없는 이유를 코드 주석으로 남긴다.
 
 ## 코드 정리
 
+- CustomEvent 이름은 `kebab-case`로 작성하며, 같은 의미의 camelCase 호환 이벤트를 중복 발행하지 않는다.
 - 작업 후 Prettier를 실행한다.
 
 ## 컴포넌트 페이지 구조
