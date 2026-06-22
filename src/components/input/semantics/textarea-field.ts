@@ -39,7 +39,7 @@ export class TextareaField extends LitElement {
           .placeholder=${this.placeholder}
           .rows=${this.rows}
           ?disabled=${this.disabled}
-          ?aria-invalid=${this.isInvalid}
+          .isInvalid=${this.isInvalid}
           .describedBy=${this.helper ? this.helperId : ''}
           @input=${this._syncValue}
         ></mm-textarea>

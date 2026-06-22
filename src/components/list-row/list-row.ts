@@ -1,6 +1,5 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
-import { ifDefined } from 'lit/directives/if-defined.js'
 
 import { listRowStyles } from './list-row.styles'
 import type { IconName } from '../icon-button/semantics/icon-names'
@@ -52,8 +51,8 @@ export class ListRow extends LitElement {
                       <mm-avatar
                         size=${this.size}
                         variant=${this.avatarVariant}
-                        icon=${ifDefined(this.icon || undefined)}
-                        src=${ifDefined(this.avatarSrc || undefined)}
+                        icon=${this.icon || nothing}
+                        src=${this.avatarSrc || nothing}
                       ></mm-avatar>
                     `}
               </span>

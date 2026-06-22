@@ -1,4 +1,4 @@
-import { LitElement, css, html } from 'lit'
+import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import '../grid/grid'
 
@@ -26,7 +26,7 @@ export class FeatureGroup extends LitElement {
     return html`
       <mm-grid
         columns=${this.columns}
-        column-max-width=${this.columnMaxWidth ?? ''}
+        column-max-width=${this.columnMaxWidth ?? nothing}
         gap="8"
         role="group"
       >

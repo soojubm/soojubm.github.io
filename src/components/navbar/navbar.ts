@@ -111,7 +111,7 @@ export class Navbar extends LitElement {
             <mm-menu-item-action
               icon=${ICON_NAMES.SEARCH}
               label=${r.meta.title || r.url}
-              description=${r.excerpt ? r.excerpt.replace(/<[^>]*>/g, '') : ''}
+              description=${r.excerpt ? r.excerpt.replace(/<[^>]*>/g, '') : nothing}
               @click=${() => this._handleResultClick(r.url)}
             ></mm-menu-item-action>
           `,

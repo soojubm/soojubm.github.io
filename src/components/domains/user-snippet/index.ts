@@ -24,7 +24,7 @@ class UserSnippet extends LitElement {
         <mm-avatar
           size=${avatarSize}
           variant=${this.avatarVariant}
-          src=${this.avatarSrc || ''}
+          src=${this.avatarSrc || nothing}
         ></mm-avatar>
         ${this.tagLabel
           ? html`

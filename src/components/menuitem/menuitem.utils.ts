@@ -1,5 +1,4 @@
 import { html, nothing } from 'lit'
-import { ifDefined } from 'lit/directives/if-defined.js'
 import type { IconName } from '../icon-button/semantics/icon-names'
 import '../list-row/list-row'
 
@@ -19,9 +18,9 @@ export function renderMenuItemContent(props: MenuItemProps, action: unknown) {
       size=${props.size}
       label=${props.label}
       description=${props.description}
-      icon=${ifDefined(props.icon || undefined)}
-      emoji=${ifDefined(props.emoji || undefined)}
-      avatar-src=${ifDefined(props.avatarSrc || undefined)}
+      icon=${props.icon || nothing}
+      emoji=${props.emoji || nothing}
+      avatar-src=${props.avatarSrc || nothing}
       avatar-variant=${props.avatarVariant}
     >
       ${props.label

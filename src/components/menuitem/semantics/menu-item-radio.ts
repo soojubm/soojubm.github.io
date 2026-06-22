@@ -1,6 +1,5 @@
-import { LitElement, html } from 'lit'
+import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { ifDefined } from 'lit/directives/if-defined.js'
 import type { IconName } from '../../icon-button/semantics/icon-names'
 import { menuItemStyles } from '../menuitem.styles'
 import { renderMenuItemContent } from '../menuitem.utils'
@@ -69,7 +68,7 @@ export class MenuItemRadio extends LitElement {
         class="item"
         role="menuitemradio"
         data-interactive
-        aria-disabled=${ifDefined(this.disabled ? 'true' : undefined)}
+        aria-disabled=${this.disabled ? 'true' : nothing}
         aria-checked=${String(this.checked)}
       >
         ${renderMenuItemContent(this, this.renderAction())}

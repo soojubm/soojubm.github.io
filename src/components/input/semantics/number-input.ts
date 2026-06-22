@@ -52,7 +52,7 @@ export class NumberInput extends LitElement {
             .max=${this.max}
             .step=${this.step}
             ?disabled=${this.disabled}
-            ?aria-invalid=${this.isInvalid}
+            .isInvalid=${this.isInvalid}
             .describedBy=${this.validationText ? `${this.inputId}-validation` : undefined}
             @input=${this._handleInput}
           ></mm-input>

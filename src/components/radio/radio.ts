@@ -39,7 +39,7 @@ export class Radio extends LitElement {
           type="radio"
           id=${inputId}
           name=${this.name || nothing}
-          .value=${this.value || nothing}
+          .value=${this.value || ''}
           .checked=${this.checked}
           ?disabled=${this.disabled}
           @change=${this._onChange}

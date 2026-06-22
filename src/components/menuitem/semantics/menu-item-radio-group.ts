@@ -1,6 +1,5 @@
-import { LitElement, html, css } from 'lit'
+import { LitElement, html, css, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { ifDefined } from 'lit/directives/if-defined.js'
 import { MenuItemRadio } from './menu-item-radio'
 import './menu-item-group'
 
@@ -63,7 +62,7 @@ export class MenuItemRadioGroup extends LitElement {
     return html`
       <mm-menu-item-group
         role="radiogroup"
-        aria-label=${ifDefined(this.ariaLabel || undefined)}
+        aria-label=${this.ariaLabel || nothing}
         @change=${this.handleRadioChange}
       >
         <slot @slotchange=${this.handleSlotChange}></slot>

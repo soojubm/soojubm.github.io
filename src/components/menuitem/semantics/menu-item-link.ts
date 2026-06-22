@@ -1,6 +1,5 @@
-import { LitElement, html } from 'lit'
+import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { ifDefined } from 'lit/directives/if-defined.js'
 import { ICON_NAMES, type IconName } from '../../icon-button/semantics/icon-names'
 import { menuItemStyles } from '../menuitem.styles'
 import { renderMenuItemContent } from '../menuitem.utils'
@@ -38,15 +37,15 @@ export class MenuItemLink extends LitElement {
   render() {
     return html`
       <a
-        href=${ifDefined(this.disabled ? undefined : this.href)}
+        href=${this.disabled ? nothing : this.href}
         class="item"
         part="item"
         role="menuitem"
         data-interactive
-        aria-disabled=${ifDefined(this.disabled ? 'true' : undefined)}
-        aria-current=${ifDefined(this.ariaCurrent || undefined)}
-        target=${ifDefined(this.target || undefined)}
-        rel=${ifDefined(this.target === '_blank' ? 'noopener noreferrer' : undefined)}
+        aria-disabled=${this.disabled ? 'true' : nothing}
+        aria-current=${this.ariaCurrent || nothing}
+        target=${this.target || nothing}
+        rel=${this.target === '_blank' ? 'noopener noreferrer' : nothing}
       >
         ${renderMenuItemContent(this, this.renderAction())}
       </a>

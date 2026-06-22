@@ -1,6 +1,5 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { ifDefined } from 'lit/directives/if-defined.js'
 import '../../icon/icon'
 import type { IconName } from '../../icon-button/semantics/icon-names'
 import { menuItemStyles } from '../menuitem.styles'
@@ -36,7 +35,7 @@ export class MenuItemAction extends LitElement {
         class="item"
         role="menuitem"
         data-interactive
-        aria-disabled=${ifDefined(this.disabled ? 'true' : undefined)}
+        aria-disabled=${this.disabled ? 'true' : nothing}
         aria-controls=${this._ariaControls ?? nothing}
         aria-expanded=${this._ariaExpanded ?? nothing}
         aria-haspopup=${this._ariaHaspopup ?? nothing}

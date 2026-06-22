@@ -1,4 +1,4 @@
-import { LitElement, css, html } from 'lit'
+import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { resetStyles } from '../../../stylesheets/shared/reset.styles'
 import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
@@ -56,7 +56,7 @@ export class FilterButton extends LitElement {
         variant="tertiary"
         size="small"
         ?disabled=${this.disabled}
-        icon=${this.selected ? ICON_NAMES.CHECK : ''}
+        icon=${this.selected ? ICON_NAMES.CHECK : nothing}
         role=${this.mode === 'multiple' ? 'checkbox' : 'radio'}
         aria-checked=${this.selected ? 'true' : 'false'}
         @click=${this._handleClick}

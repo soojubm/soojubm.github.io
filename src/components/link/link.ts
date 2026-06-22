@@ -18,7 +18,7 @@ class Link extends LitElement {
         class="link"
         href="${this.href}"
         target="${tempTarget}"
-        rel="${this.external ? 'noopener noreferrer' : ''}"
+        rel=${this.external ? 'noopener noreferrer' : nothing}
       >
         <slot></slot>
         ${this.external

@@ -1,6 +1,5 @@
-import { LitElement, css, html } from 'lit'
+import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { ifDefined } from 'lit/directives/if-defined.js'
 import type { IconName } from '../../icon-button/semantics/icon-names'
 import '../../list-row/list-row'
 
@@ -33,11 +32,7 @@ export class SettingItem extends LitElement {
 
   render() {
     return html`
-      <mm-list-row
-        icon=${ifDefined(this.icon || undefined)}
-        label=${this.label}
-        description=${this.description}
-      >
+      <mm-list-row icon=${this.icon || nothing} label=${this.label} description=${this.description}>
         <slot name="action" slot="trailing"></slot>
       </mm-list-row>
     `

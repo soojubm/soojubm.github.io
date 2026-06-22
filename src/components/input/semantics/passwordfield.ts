@@ -38,7 +38,7 @@ class PasswordField extends LitElement {
         ?optional=${this.optional}
         ?hidden-label=${this.hiddenLabel}
         ?disabled=${this.disabled}
-        ?aria-invalid=${this.isInvalid}
+        .isInvalid=${this.isInvalid}
         @input=${this._syncValue}
       >
         <mm-reveal-button

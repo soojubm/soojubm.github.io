@@ -55,7 +55,7 @@ export class Textfield extends LitElement {
             .name=${this.name}
             .placeholder=${this.placeholder}
             ?disabled=${this.disabled}
-            ?aria-invalid=${this.isInvalid}
+            .isInvalid=${this.isInvalid}
             .describedBy=${this.validationText ? `${this.inputId}-validation` : undefined}
             @input=${this._handleInput}
           ></mm-input>

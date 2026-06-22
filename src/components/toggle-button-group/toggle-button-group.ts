@@ -1,4 +1,4 @@
-import { LitElement, css, html } from 'lit'
+import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 import type { IconName } from '../icon-button/semantics/icon-names'
 import '../button/button-group'
@@ -100,8 +100,8 @@ export class ToggleButtonGroup extends LitElement {
           return html`
             <mm-toggle-button
               value=${option.value}
-              icon=${option.icon ?? ''}
-              aria-label=${option.ariaLabel ?? option.label ?? ''}
+              icon=${option.icon ?? nothing}
+              aria-label=${option.ariaLabel ?? option.label ?? nothing}
               ?selected=${isSelected}
               ?disabled=${option.disabled}
               @change=${(event: Event) => this.onButtonClick(index, option, event)}
