@@ -20,7 +20,7 @@ class PasswordField extends LitElement {
 
   static styles = css`
     :host {
-      display: contents;
+      display: block;
     }
   `
 

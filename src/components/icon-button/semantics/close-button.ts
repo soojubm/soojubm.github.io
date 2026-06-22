@@ -12,7 +12,7 @@ export class CloseButton extends LitElement {
 
   static styles = css`
     :host {
-      display: contents;
+      display: inline-flex;
     }
   `
 

@@ -21,6 +21,7 @@ class IconButton extends LitElement {
   @property({ attribute: 'aria-expanded' }) private _ariaExpanded: string | null = null
   @property({ attribute: 'aria-pressed' }) private _ariaPressed: string | null = null
   @property({ attribute: 'aria-controls' }) private _ariaControls: string | null = null
+  @property({ attribute: 'aria-describedby' }) private _ariaDescribedby: string | null = null
 
   static styles = [interactiveControlStyles, iconButtonStyles]
 
@@ -39,6 +40,7 @@ class IconButton extends LitElement {
         aria-expanded="${this._ariaExpanded !== null ? this._ariaExpanded : nothing}"
         aria-pressed="${this._ariaPressed !== null ? this._ariaPressed : nothing}"
         aria-controls="${this._ariaControls !== null ? this._ariaControls : nothing}"
+        aria-describedby="${this._ariaDescribedby !== null ? this._ariaDescribedby : nothing}"
       >
         <mm-icon name="${this.icon}"></mm-icon>
       </button>

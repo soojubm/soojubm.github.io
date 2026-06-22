@@ -9,7 +9,7 @@ export class NextButton extends LitElement {
 
   static styles = css`
     :host {
-      display: contents;
+      display: inline-flex;
     }
   `
 

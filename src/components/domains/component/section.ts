@@ -19,7 +19,7 @@ class ComponentSection extends LitElement {
     }
 
     .content {
-      display: contents;
+      display: none;
     }
 
     .content.has-content {

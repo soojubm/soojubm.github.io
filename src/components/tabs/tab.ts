@@ -8,6 +8,7 @@ export default class Tab extends LitElement {
 
   connectedCallback() {
     super.connectedCallback()
+    this.setAttribute('role', 'tab')
     this.addEventListener('click', this.handleClick)
   }
 
@@ -23,7 +24,7 @@ export default class Tab extends LitElement {
       z-index: 1; /* pill indicator 위에 텍스트가 렌더링되도록 stacking context 생성 */
     }
 
-    [role='tab'] {
+    .tab-content {
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -36,16 +37,20 @@ export default class Tab extends LitElement {
       transition: color 0.25s ease, font-weight 0.25s ease;
     }
 
-    [role='tab'][aria-selected='true'] {
+    :host([aria-selected='true']) .tab-content {
       color: var(--selection-foreground);
+    }
+
+    :host(:focus-visible) {
+      outline: 2px solid var(--color-primary);
+      outline-offset: 2px;
     }
 
     /* 부모 탭리스트가 pill 형태일 때 활성화된 글자 색상을 커스텀하고 싶다면 하단 주석 해제 */
     /* :host-context(mm-tab-list[variant="pill"])[active] { color: var(--selection-foreground); } */
   `
 
-  private handleClick = () => {
-    // 탭 선택 이벤트를 생성하여 상위 mm-tabs까지 올라가도록 설정(bubbles, composed)
+  public select() {
     this.dispatchEvent(
       new CustomEvent('tab-select', {
         detail: { value: this.value },
@@ -55,9 +60,21 @@ export default class Tab extends LitElement {
     )
   }
 
+  private handleClick = () => {
+    this.focus()
+    this.select()
+  }
+
+  protected updated(changedProperties: Map<string, unknown>) {
+    if (!changedProperties.has('active')) return
+
+    this.setAttribute('aria-selected', String(this.active))
+    this.tabIndex = this.active ? 0 : -1
+  }
+
   render() {
     return html`
-      <div role="tab" aria-selected="${this.active}">
+      <div class="tab-content">
         <slot></slot>
       </div>
     `

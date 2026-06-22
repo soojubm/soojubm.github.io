@@ -53,9 +53,11 @@ export const inputStyles = css`
     }
   }
 
-  /* mm-input은 light DOM에 렌더되므로 내부 input이 직접 flex item이 되도록 비표시한다. */
+  /* mm-input 호스트가 flex item이 되고 내부 input은 호스트 너비를 채운다. */
   mm-input {
-    display: contents;
+    display: flex;
+    flex: 1 1 auto;
+    min-width: 0;
   }
 
   textarea {

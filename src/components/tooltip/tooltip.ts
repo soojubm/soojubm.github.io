@@ -8,14 +8,72 @@ class Tooltip extends LitElement {
   @property({ type: String, reflect: true }) placement = ''
   @property({ type: Boolean, reflect: true }) open = false
 
+  private readonly _contentId = `tooltip-${crypto.randomUUID()}`
+  private _descriptionTargets = new Set<HTMLElement>()
+
   static styles = [tooltipStyles]
 
   private show() {
+    this._syncDescription()
     this.open = true
   }
 
   private hide() {
     this.open = false
+  }
+
+  disconnectedCallback() {
+    this._clearDescriptionTargets()
+    super.disconnectedCallback()
+  }
+
+  private _findDescriptionTarget(element: Element): HTMLElement | null {
+    const focusableSelector =
+      'button, a[href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+
+    if (element instanceof HTMLElement && element.matches(focusableSelector)) return element
+
+    const roots = [element.shadowRoot, element].filter(Boolean) as (ShadowRoot | Element)[]
+    for (const root of roots) {
+      for (const child of root.children) {
+        const target = this._findDescriptionTarget(child)
+        if (target) return target
+      }
+    }
+
+    return null
+  }
+
+  private _clearDescriptionTargets() {
+    this._descriptionTargets.forEach(target => {
+      const descriptions = (target.getAttribute('aria-describedby') || '')
+        .split(/\s+/)
+        .filter(id => id && id !== this._contentId)
+
+      if (descriptions.length) {
+        target.setAttribute('aria-describedby', descriptions.join(' '))
+      } else {
+        target.removeAttribute('aria-describedby')
+      }
+    })
+    this._descriptionTargets.clear()
+  }
+
+  private _syncDescription() {
+    this._clearDescriptionTargets()
+
+    const slot = this.shadowRoot?.querySelector<HTMLSlotElement>('slot[name="trigger"]')
+    slot?.assignedElements({ flatten: true }).forEach(element => {
+      const target = this._findDescriptionTarget(element)
+      if (!target) return
+
+      const descriptions = new Set(
+        (target.getAttribute('aria-describedby') || '').split(/\s+/).filter(Boolean),
+      )
+      descriptions.add(this._contentId)
+      target.setAttribute('aria-describedby', [...descriptions].join(' '))
+      this._descriptionTargets.add(target)
+    })
   }
 
   render() {
@@ -27,8 +85,8 @@ class Tooltip extends LitElement {
         @focusin="${this.show}"
         @focusout="${this.hide}"
       >
-        <slot class="tooltip-trigger" name="trigger"></slot>
-        <div class="tooltip-content" role="tooltip">${this.content}</div>
+        <slot class="tooltip-trigger" name="trigger" @slotchange=${this._syncDescription}></slot>
+        <div id=${this._contentId} class="tooltip-content" role="tooltip">${this.content}</div>
       </div>
     `
   }

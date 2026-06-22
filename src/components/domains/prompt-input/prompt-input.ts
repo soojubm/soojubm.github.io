@@ -63,10 +63,6 @@ export class PromptInput extends LitElement {
         min-width: 0;
       }
 
-      .chat-input.is-single-line .actions {
-        display: contents;
-      }
-
       .start-actions {
         display: flex;
         grid-area: attach;
@@ -146,6 +142,35 @@ export class PromptInput extends LitElement {
     }
   }
 
+  private _renderStartActions() {
+    return html`
+      <div class="start-actions">
+        ${this.hiddenAttachment
+          ? ''
+          : html`
+              <mm-attachment-dropdown></mm-attachment-dropdown>
+            `}
+        <slot name="leading-actions"></slot>
+        <!-- <mm-model-selector></mm-model-selector> -->
+      </div>
+    `
+  }
+
+  private _renderEndActions() {
+    return html`
+      <div class="end-actions">
+        <slot name="trailing-actions"></slot>
+        <mm-icon-button
+          variant="primary"
+          icon="send-diagonal"
+          aria-label=${this.submitLabel}
+          ?disabled=${this.isLoading}
+          @click=${this._submit}
+        ></mm-icon-button>
+      </div>
+    `
+  }
+
   render() {
     return html`
       <form>
@@ -159,27 +184,14 @@ export class PromptInput extends LitElement {
             @input=${this._handleTextareaInput}
             @keydown=${this._handleTextareaKeydown}
           ></mm-textarea>
-          <div class="actions">
-            <div class="start-actions">
-              ${this.hiddenAttachment
-                ? ''
-                : html`
-                    <mm-attachment-dropdown></mm-attachment-dropdown>
-                  `}
-              <slot name="leading-actions"></slot>
-              <!-- <mm-model-selector></mm-model-selector> -->
-            </div>
-            <div class="end-actions">
-              <slot name="trailing-actions"></slot>
-              <mm-icon-button
-                variant="primary"
-                icon="send-diagonal"
-                aria-label=${this.submitLabel}
-                ?disabled=${this.isLoading}
-                @click=${this._submit}
-              ></mm-icon-button>
-            </div>
-          </div>
+          ${this._isSingleLine
+            ? html`
+                ${this._renderStartActions()} ${this._renderEndActions()}
+              `
+            : html`
+                <div class="actions">${this._renderStartActions()} ${this._renderEndActions()}</div>
+              `}
+          }
         </div>
       </form>
     `

@@ -6,6 +6,8 @@ import TabPanel from './tab-panel'
 
 @customElement('mm-tabs')
 export class Tabs extends LitElement {
+  private readonly _tabsId = `tabs-${crypto.randomUUID()}`
+
   static styles = css`
     :host {
       display: flex;
@@ -16,13 +18,62 @@ export class Tabs extends LitElement {
   @property({ type: String, reflect: true }) value = ''
   @property({ type: String, reflect: true }) variant = 'line'
 
-  constructor() {
-    super()
-    // 하위 mm-tab 컴포넌트에서 버블링되어 올라오는 커스텀 이벤트를 감지합니다.
-    this.addEventListener('tab-select', (e: Event) => {
-      const customEvent = e as CustomEvent<{ value: string }>
-      this.value = customEvent.detail.value
-    })
+  connectedCallback() {
+    super.connectedCallback()
+    this.addEventListener('tab-select', this._handleTabSelect)
+    this.addEventListener('keydown', this._handleKeydown)
+  }
+
+  disconnectedCallback() {
+    this.removeEventListener('tab-select', this._handleTabSelect)
+    this.removeEventListener('keydown', this._handleKeydown)
+    super.disconnectedCallback()
+  }
+
+  private _handleTabSelect = (event: Event) => {
+    const customEvent = event as CustomEvent<{ value: string }>
+    this.value = customEvent.detail.value
+  }
+
+  private _handleKeydown = (event: KeyboardEvent) => {
+    const currentTab = event.composedPath().find(element => element instanceof Tab) as
+      | Tab
+      | undefined
+    if (!currentTab) return
+
+    const tabs = Array.from(this.querySelectorAll('mm-tab')).filter(
+      (tab): tab is Tab => tab instanceof Tab,
+    )
+    const currentIndex = tabs.indexOf(currentTab)
+    if (currentIndex < 0) return
+
+    let nextIndex: number | undefined
+    switch (event.key) {
+      case 'ArrowRight':
+        nextIndex = (currentIndex + 1) % tabs.length
+        break
+      case 'ArrowLeft':
+        nextIndex = (currentIndex - 1 + tabs.length) % tabs.length
+        break
+      case 'Home':
+        nextIndex = 0
+        break
+      case 'End':
+        nextIndex = tabs.length - 1
+        break
+      case 'Enter':
+      case ' ':
+        event.preventDefault()
+        currentTab.select()
+        return
+      default:
+        return
+    }
+
+    event.preventDefault()
+    const nextTab = tabs[nextIndex]
+    nextTab.select()
+    nextTab.focus()
   }
 
   protected updated(changedProperties: Map<string, any>) {
@@ -37,21 +88,37 @@ export class Tabs extends LitElement {
   }
 
   private _syncElements() {
-    const tabs = this.querySelectorAll('mm-tab')
-    const panels = this.querySelectorAll('mm-tab-panel')
+    const tabs = Array.from(this.querySelectorAll('mm-tab')).filter(
+      (tab): tab is Tab => tab instanceof Tab,
+    )
+    const panels = Array.from(this.querySelectorAll('mm-tab-panel')).filter(
+      (panel): panel is TabPanel => panel instanceof TabPanel,
+    )
     const tabList = this.querySelector('mm-tab-list')
 
-    // 1. 모든 개별 탭 버튼 active 상태 동기화
-    tabs.forEach(tab => {
-      if (tab instanceof Tab) {
-        tab.active = tab.value === this.value
+    const selectedValue = tabs.some(tab => tab.value === this.value)
+      ? this.value
+      : tabs[0]?.value ?? ''
+    if (selectedValue !== this.value) this.value = selectedValue
+
+    tabs.forEach((tab, index) => {
+      const panel = panels.find(candidate => candidate.value === tab.value)
+      if (!tab.id) tab.id = `${this._tabsId}-tab-${index + 1}`
+
+      tab.active = tab.value === selectedValue
+      if (panel) {
+        if (!panel.id) panel.id = `${this._tabsId}-panel-${index + 1}`
+        tab.setAttribute('aria-controls', panel.id)
+        panel.setAttribute('aria-labelledby', tab.id)
+      } else {
+        tab.removeAttribute('aria-controls')
       }
     })
 
-    // 2. 모든 콘텐츠 패널 active 상태 동기화
     panels.forEach(panel => {
-      if (panel instanceof TabPanel) {
-        panel.active = panel.value === this.value
+      panel.active = panel.value === selectedValue
+      if (!tabs.some(tab => tab.value === panel.value)) {
+        panel.removeAttribute('aria-labelledby')
       }
     })
 
@@ -64,7 +131,7 @@ export class Tabs extends LitElement {
 
   render() {
     return html`
-      <slot></slot>
+      <slot @slotchange=${this._syncElements}></slot>
     `
   }
 }

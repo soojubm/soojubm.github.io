@@ -8,7 +8,7 @@ import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
 export class AttachmentDropdown extends LitElement {
   static styles = css`
     :host {
-      display: contents;
+      display: inline-flex;
     }
 
     mm-dropdown::part(dropdown) {

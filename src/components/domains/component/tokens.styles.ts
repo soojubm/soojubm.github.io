@@ -6,7 +6,9 @@ export const tokenStyles = [
   resetStyles,
   css`
     :host {
-      display: contents;
+      display: grid;
+      grid-column: 1 / -1;
+      grid-template-columns: subgrid;
     }
 
     .meta {

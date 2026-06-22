@@ -6,7 +6,7 @@ export const propStyles = [
   resetStyles,
   css`
     :host {
-      display: contents;
+      display: block;
     }
     dt {
       display: flex;

@@ -6,6 +6,12 @@ export default class TabPanel extends LitElement {
   @property({ type: String }) value = ''
   @property({ type: Boolean, reflect: true }) active = false
 
+  connectedCallback() {
+    super.connectedCallback()
+    this.setAttribute('role', 'tabpanel')
+    this.tabIndex = 0
+  }
+
   static styles = css`
     :host {
       display: none;
@@ -17,9 +23,7 @@ export default class TabPanel extends LitElement {
 
   render() {
     return html`
-      <div role="tabpanel">
-        <slot></slot>
-      </div>
+      <slot></slot>
     `
   }
 }
