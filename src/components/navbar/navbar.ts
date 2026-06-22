@@ -23,6 +23,14 @@ export class Navbar extends LitElement {
     return this
   }
 
+  disconnectedCallback() {
+    if (this._debounceTimer) {
+      clearTimeout(this._debounceTimer)
+      this._debounceTimer = null
+    }
+    super.disconnectedCallback()
+  }
+
   private async _loadPagefind() {
     if (this._pagefind) return
     try {
@@ -57,7 +65,10 @@ export class Navbar extends LitElement {
       this._results = []
       return
     }
-    this._debounceTimer = setTimeout(() => this._search(this._query), 200)
+    this._debounceTimer = setTimeout(() => {
+      this._debounceTimer = null
+      this._search(this._query)
+    }, 200)
   }
 
   private async _search(query: string) {

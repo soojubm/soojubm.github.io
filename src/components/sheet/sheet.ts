@@ -60,16 +60,21 @@ class Sheet extends LitElement {
 
   private _hasLockedScroll = false
 
+  private handleSheetClose = () => {
+    this.close()
+  }
+
   connectedCallback() {
     super.connectedCallback()
-    this.addEventListener('sheetclose', () => this.close())
+    this.addEventListener('sheetclose', this.handleSheetClose)
     this.addEventListener('click', this.handleBackdropClick)
   }
 
   disconnectedCallback() {
-    super.disconnectedCallback()
+    this.removeEventListener('sheetclose', this.handleSheetClose)
     this.removeEventListener('click', this.handleBackdropClick)
     this.releaseScrollLock()
+    super.disconnectedCallback()
   }
 
   /** modal variant: 호스트(backdrop) 영역 클릭 시 닫는다 */

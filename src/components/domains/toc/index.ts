@@ -18,6 +18,11 @@ export class TableOfContents extends LitElement {
   @state() private copied = false
   @state() private indicatorY = 0
 
+  private _setupFrame = 0
+  private _indicatorFrame = 0
+  private _copyTimer = 0
+  private _scrollSpy?: IntersectionObserver
+
   static styles = [
     resetStyles,
     css`
@@ -87,7 +92,8 @@ export class TableOfContents extends LitElement {
     super.connectedCallback()
     window.addEventListener('resize', this.updateIndicatorPosition)
     // 커스텀 엘리먼트 업그레이드 후 실행
-    requestAnimationFrame(() => {
+    this._setupFrame = requestAnimationFrame(() => {
+      this._setupFrame = 0
       this.buildItems()
       this.setupScrollSpy()
       this.updateIndicatorPosition()
@@ -95,13 +101,25 @@ export class TableOfContents extends LitElement {
   }
 
   disconnectedCallback() {
-    super.disconnectedCallback()
     window.removeEventListener('resize', this.updateIndicatorPosition)
+    if (this._setupFrame) cancelAnimationFrame(this._setupFrame)
+    if (this._indicatorFrame) cancelAnimationFrame(this._indicatorFrame)
+    if (this._copyTimer) window.clearTimeout(this._copyTimer)
+    this._setupFrame = 0
+    this._indicatorFrame = 0
+    this._copyTimer = 0
+    this._scrollSpy?.disconnect()
+    this._scrollSpy = undefined
+    super.disconnectedCallback()
   }
 
   updated(changedProps: Map<string, unknown>) {
     if (changedProps.has('items') || changedProps.has('activeId')) {
-      requestAnimationFrame(() => this.updateIndicatorPosition())
+      if (this._indicatorFrame) cancelAnimationFrame(this._indicatorFrame)
+      this._indicatorFrame = requestAnimationFrame(() => {
+        this._indicatorFrame = 0
+        this.updateIndicatorPosition()
+      })
     }
   }
 
@@ -142,9 +160,10 @@ export class TableOfContents extends LitElement {
   }
 
   private setupScrollSpy() {
+    this._scrollSpy?.disconnect()
     if (!this.items.length) return
 
-    const observer = new IntersectionObserver(
+    this._scrollSpy = new IntersectionObserver(
       entries => {
         // 가장 위에 있는 보이는 섹션을 active로
         const visible = entries
@@ -160,7 +179,7 @@ export class TableOfContents extends LitElement {
 
     this.items.forEach(({ id }) => {
       const el = document.getElementById(id)
-      if (el) observer.observe(el)
+      if (el) this._scrollSpy?.observe(el)
     })
   }
 
@@ -232,7 +251,9 @@ export class TableOfContents extends LitElement {
     }
 
     this.copied = true
-    window.setTimeout(() => {
+    if (this._copyTimer) window.clearTimeout(this._copyTimer)
+    this._copyTimer = window.setTimeout(() => {
+      this._copyTimer = 0
       this.copied = false
     }, 1600)
   }
