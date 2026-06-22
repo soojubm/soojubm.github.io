@@ -1,7 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 import '../../button/button'
-import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
+import '../../icon-button/semantics/more-button'
 import '../../menuitem/semantics/menu-item-action'
 
 /**
@@ -115,15 +115,12 @@ export class CommentItem extends LitElement {
         <mm-user-row label=${this.author} description=${this.time} avatar-src=${this.avatarSrc}>
           ${this.editable
             ? html`
-                <mm-icon-button
+                <mm-more-button
                   slot="trailing"
-                  variant="secondary"
-                  icon=${ICON_NAMES.MORE_ACTIONS}
                   aria-label="댓글 메뉴"
-                  aria-haspopup="true"
-                  aria-expanded=${this._menuOpen ? 'true' : 'false'}
+                  ?expanded=${this._menuOpen}
                   @click=${this._toggleMenu}
-                ></mm-icon-button>
+                ></mm-more-button>
               `
             : ''}
         </mm-user-row>

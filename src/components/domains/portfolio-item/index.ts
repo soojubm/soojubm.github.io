@@ -1,7 +1,7 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { resetStyles } from '../../../stylesheets/shared/reset.styles'
-import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
+import '../../icon-button/semantics/more-button'
 
 @customElement('mm-portfolio-item')
 export class PortfolioItem extends LitElement {
@@ -124,11 +124,7 @@ export class PortfolioItem extends LitElement {
               <mm-accent-tag class="badge">${this.badge}</mm-accent-tag>
             `
           : nothing}
-        <mm-icon-button
-          class="action"
-          variant="secondary"
-          icon=${ICON_NAMES.MORE_ACTIONS}
-        ></mm-icon-button>
+        <mm-more-button class="action"></mm-more-button>
         ${this.src
           ? html`
               <mm-thumbnail src=${this.src} alt=${this.alt}></mm-thumbnail>

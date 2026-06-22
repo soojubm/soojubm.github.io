@@ -9,5 +9,6 @@ import './semantics/reveal-button'
 import './semantics/prev-button'
 import './semantics/next-button'
 import './semantics/page-button'
+import './semantics/more-button'
 
 export {}
