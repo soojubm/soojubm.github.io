@@ -20,6 +20,7 @@ class IconButton extends LitElement {
   @property({ attribute: 'aria-haspopup' }) private _ariaHaspopup: string | null = null
   @property({ attribute: 'aria-expanded' }) private _ariaExpanded: string | null = null
   @property({ attribute: 'aria-pressed' }) private _ariaPressed: string | null = null
+  @property({ attribute: 'aria-controls' }) private _ariaControls: string | null = null
 
   static styles = [interactiveControlStyles, iconButtonStyles]
 
@@ -37,6 +38,7 @@ class IconButton extends LitElement {
         aria-haspopup="${this._ariaHaspopup !== null ? this._ariaHaspopup : nothing}"
         aria-expanded="${this._ariaExpanded !== null ? this._ariaExpanded : nothing}"
         aria-pressed="${this._ariaPressed !== null ? this._ariaPressed : nothing}"
+        aria-controls="${this._ariaControls !== null ? this._ariaControls : nothing}"
       >
         <mm-icon name="${this.icon}"></mm-icon>
       </button>

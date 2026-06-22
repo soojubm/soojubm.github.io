@@ -11,6 +11,7 @@ import '../../menuitem/semantics/menu-item-action'
  */
 @customElement('mm-comment-item')
 export class CommentItem extends LitElement {
+  private readonly _menuId = `comment-menu-${crypto.randomUUID()}`
   @property({ type: String }) author = ''
   @property({ type: String }) datetime = ''
   @property({ type: String, attribute: 'avatar-src' }) avatarSrc = ''
@@ -118,6 +119,7 @@ export class CommentItem extends LitElement {
                 <mm-more-button
                   slot="trailing"
                   aria-label="댓글 메뉴"
+                  aria-controls=${this._menuId}
                   ?expanded=${this._menuOpen}
                   @click=${this._toggleMenu}
                 ></mm-more-button>
@@ -141,7 +143,7 @@ export class CommentItem extends LitElement {
           : ''}
         ${this.editable
           ? html`
-              <menu class="menu" data-open=${this._menuOpen ? 'true' : 'false'}>
+              <menu id=${this._menuId} class="menu" data-open=${this._menuOpen ? 'true' : 'false'}>
                 <mm-menu-item-action
                   label="수정"
                   @click=${() => this._onMenuAction('edit')}

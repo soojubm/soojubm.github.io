@@ -10,6 +10,8 @@ export class ReadMoreParagraph extends LitElement {
 
   @state() private expanded = false
 
+  private readonly _contentId = `read-more-content-${crypto.randomUUID()}`
+
   static styles = [
     resetStyles,
     css`
@@ -37,11 +39,12 @@ export class ReadMoreParagraph extends LitElement {
 
     return html`
       <mm-paragraph>
-        ${displayText}
+        <span id=${this._contentId}>${displayText}</span>
         ${truncated
           ? html`
               <mm-read-more-button
                 .expanded=${this.expanded}
+                aria-controls=${this._contentId}
                 @click=${this.toggle}
               ></mm-read-more-button>
             `

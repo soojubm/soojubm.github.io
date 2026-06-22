@@ -126,6 +126,8 @@
     <mm-prop name="size" type="'small' | 'medium' = 'medium'"></mm-prop>
     <mm-prop name="tooltip" type="string" optional></mm-prop>
     <mm-prop name="tooltip-placement" type="'left' | 'center' | 'right'" optional></mm-prop>
+    <mm-prop name="aria-controls" type="string" optional></mm-prop>
+    <mm-prop name="aria-expanded" type="boolean" optional></mm-prop>
     <mm-prop name="disabled" type="boolean" optional></mm-prop>
   </mm-component-props>
 
@@ -190,11 +192,13 @@
     heading="HamburgerButton"
     description="사이드바·내비게이션 메뉴를 여닫는 버튼."
   >
-    <mm-hamburger-button></mm-hamburger-button>
+    <mm-hamburger-button aria-controls="hamburger-menu-example"></mm-hamburger-button>
+    <div id="hamburger-menu-example" hidden></div>
   </mm-component-section>
 
   <mm-component-section heading="MoreButton" description="추가 액션 메뉴를 여는 버튼.">
-    <mm-more-button></mm-more-button>
+    <mm-more-button aria-controls="more-menu-example"></mm-more-button>
+    <div id="more-menu-example" hidden></div>
   </mm-component-section>
 
   <mm-component-section

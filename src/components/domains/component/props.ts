@@ -39,6 +39,8 @@ export class ComponentProps extends LitElement {
   // 💡 1. 컴포넌트 내부에서만 사용할 '열림 상태' 변수를 정의합니다.
   @state() private _isOpened = false
 
+  private readonly _propsId = `component-props-${crypto.randomUUID()}`
+
   static styles = componentPropsStyles
 
   // 💡 3. 클릭되었을 때 상태를 true로 바꾸는 핸들러 함수
@@ -55,11 +57,15 @@ export class ComponentProps extends LitElement {
         @click=${this._handleClick}
       >
         <div hidden><mm-text as="h2">Props</mm-text></div>
-        <dl>
+        <dl id=${this._propsId}>
           <slot></slot>
         </dl>
         <div class="component-props-more" aria-hidden=${this._isOpened ? 'true' : 'false'}>
-          <mm-read-more-button more-label="...펼쳐서 더보기"></mm-read-more-button>
+          <mm-read-more-button
+            more-label="...펼쳐서 더보기"
+            aria-controls=${this._propsId}
+            .expanded=${this._isOpened}
+          ></mm-read-more-button>
         </div>
       </section>
     `

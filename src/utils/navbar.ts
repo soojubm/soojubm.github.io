@@ -19,15 +19,23 @@ export function hideNavbar() {
 
 export function initializeNavbar() {
   const navigationTrigger = document.querySelector<HTMLElement>('.js-navbar-toggle')
-  navigationTrigger?.classList.remove('is-active')
+  navigationTrigger?.removeAttribute('expanded')
+  const menuElement = getControlledElement(navigationTrigger)
+  menuElement?.setAttribute('aria-hidden', 'true')
   document.body.classList.remove(OPENED_MENU_CLASSNAME)
+}
+
+function getControlledElement(trigger?: HTMLElement | null) {
+  const controls = trigger?.getAttribute('aria-controls')
+  return controls ? document.getElementById(controls) : null
 }
 
 export function toggleNavbarMenu(event) {
   const trigger = event.target.closest('.js-navbar-toggle')
   if (!trigger) return
 
-  const menuElement = trigger.nextElementSibling
+  const menuElement = getControlledElement(trigger)
+  if (!menuElement) return
 
   document.body.classList.toggle(OPENED_MENU_CLASSNAME, !isOpendNavbarMenu())
 

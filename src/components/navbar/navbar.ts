@@ -99,9 +99,7 @@ export class Navbar extends LitElement {
     }
     if (this._results.length === 0) {
       return html`
-        <mm-paragraph color="light">
-          '${this._query}'에 대한 결과가 없습니다.
-        </mm-paragraph>
+        <mm-paragraph color="light">'${this._query}'에 대한 결과가 없습니다.</mm-paragraph>
       `
     }
     return html`
@@ -127,7 +125,10 @@ export class Navbar extends LitElement {
     return html`
       <nav class="navbar js-navbar" role="navigation">
         <mm-flex gap="2">
-          <mm-hamburger-button aria-label="전체메뉴"></mm-hamburger-button>
+          <mm-hamburger-button
+            aria-label="전체메뉴"
+            aria-controls="site-sidebar"
+          ></mm-hamburger-button>
           <a class="navbar-logo" href="./index.html"></a>
         </mm-flex>
 
@@ -205,7 +206,7 @@ export class Navbar extends LitElement {
         </mm-sheet-body>
       </mm-sheet>
 
-      <mm-sidebar></mm-sidebar>
+      <mm-sidebar id="site-sidebar" aria-hidden="true"></mm-sidebar>
     `
   }
 }

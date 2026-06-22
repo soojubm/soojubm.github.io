@@ -1,4 +1,4 @@
-import { LitElement, css, html } from 'lit'
+import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { ICON_NAMES } from './icon-names'
 import '../icon-button'
@@ -10,6 +10,7 @@ import '../icon-button'
 export class MoreButton extends LitElement {
   @property({ type: String, attribute: 'aria-label' }) override ariaLabel = '더보기'
   @property({ type: Boolean, reflect: true }) expanded = false
+  @property({ type: String, attribute: 'aria-controls' }) controls = ''
   @property({ type: Boolean, reflect: true }) disabled = false
 
   static styles = css`
@@ -26,8 +27,9 @@ export class MoreButton extends LitElement {
         tooltip="더보기"
         tooltip-placement="center"
         aria-label=${this.ariaLabel}
-        aria-haspopup="true"
+        aria-haspopup="menu"
         aria-expanded=${this.expanded ? 'true' : 'false'}
+        aria-controls=${this.controls || nothing}
         ?disabled=${this.disabled}
       ></mm-icon-button>
     `
