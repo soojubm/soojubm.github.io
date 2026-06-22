@@ -70,6 +70,7 @@
 - Lit의 `render()`는 입력 상태를 템플릿으로 변환하는 순수한 과정으로 유지한다. DOM 조회·변경, 이벤트 발행, 상태 변경은 명명된 handler나 lifecycle에서 처리한다.
 - Lit 바인딩은 HTML Boolean attribute에 `?disabled=${value}`, DOM·커스텀 요소의 property에 `.value=${value}`, 선택적인 일반 attribute에 `attr=${condition ? value : nothing}`을 사용한다. ARIA attribute는 Boolean attribute가 아니므로 `?aria-*`를 사용하지 않는다.
 - `connectedCallback()`에서 `window`·`document` 등의 전역 이벤트를 등록하면 `disconnectedCallback()`에서 동일한 handler로 반드시 제거한다. observer, timer, animation frame 등 연결 중 생성한 자원도 해제한다.
+- 외부에서 attribute·property로 입력하거나 제어할 값만 `@property`로 선언한다. 외부 API가 아닌 컴포넌트 내부 반응형 상태는 `@state`로 선언하고 private 또는 protected로 제한한다.
 - 작업 후 Prettier를 실행한다.
 
 ## 컴포넌트 페이지 구조

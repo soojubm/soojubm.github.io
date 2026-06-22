@@ -25,7 +25,11 @@ export class ChatSource extends LitElement {
   /** 칩/시트에 표시할 Iconoir 아이콘 이름 */
   @property({ type: String }) icon?: IconName
 
-  @state() _open = false
+  @state() private _open = false
+
+  _setOpen(open: boolean) {
+    this._open = open
+  }
 
   private get _domain() {
     if (this.label) return this.label
@@ -102,7 +106,7 @@ export class ChatSourceGroup extends LitElement {
   private _closeOnOutside = (e: PointerEvent) => {
     if (!this._activeSource) return
     if (!e.composedPath().includes(this)) {
-      this._activeSource._open = false
+      this._activeSource._setOpen(false)
       this._activeSource = null
     }
   }
@@ -112,17 +116,17 @@ export class ChatSourceGroup extends LitElement {
     const opening = e.detail.open as boolean
 
     if (!opening) {
-      source._open = false
+      source._setOpen(false)
       this._activeSource = null
       return
     }
 
     // Close previously open source
     if (this._activeSource && this._activeSource !== source) {
-      this._activeSource._open = false
+      this._activeSource._setOpen(false)
     }
 
-    source._open = true
+    source._setOpen(true)
     this._activeSource = source
   }
 

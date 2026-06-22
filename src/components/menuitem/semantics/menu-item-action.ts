@@ -18,9 +18,9 @@ export class MenuItemAction extends LitElement {
   @property({ type: String, attribute: 'avatar-variant' }) avatarVariant = 'tertiary'
   @property({ type: Boolean, reflect: true }) disabled = false
   @property({ type: String, attribute: 'role' }) override role = ''
-  @property({ attribute: 'aria-controls' }) private _ariaControls: string | null = null
-  @property({ attribute: 'aria-expanded' }) private _ariaExpanded: string | null = null
-  @property({ attribute: 'aria-haspopup' }) private _ariaHaspopup: string | null = null
+  @property({ attribute: 'aria-controls' }) override ariaControls: string | null = null
+  @property({ attribute: 'aria-expanded' }) override ariaExpanded: string | null = null
+  @property({ attribute: 'aria-haspopup' }) override ariaHasPopup: string | null = null
 
   static styles = [menuItemStyles]
 
@@ -36,9 +36,9 @@ export class MenuItemAction extends LitElement {
         role="menuitem"
         data-interactive
         aria-disabled=${this.disabled ? 'true' : nothing}
-        aria-controls=${this._ariaControls ?? nothing}
-        aria-expanded=${this._ariaExpanded ?? nothing}
-        aria-haspopup=${this._ariaHaspopup ?? nothing}
+        aria-controls=${this.ariaControls ?? nothing}
+        aria-expanded=${this.ariaExpanded ?? nothing}
+        aria-haspopup=${this.ariaHasPopup ?? nothing}
       >
         ${renderMenuItemContent(
           this,

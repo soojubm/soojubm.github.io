@@ -18,7 +18,7 @@ export class Button extends LitElement {
   @property({ type: String, attribute: 'icon-position' }) iconPosition: ButtonIconPosition =
     'leading'
   @property({ type: String, attribute: 'aria-label' }) override ariaLabel = ''
-  @property({ attribute: 'aria-pressed' }) private _ariaPressed: string | null = null
+  @property({ attribute: 'aria-pressed' }) override ariaPressed: string | null = null
 
   static styles = [interactiveControlStyles, buttonStyles]
 
@@ -42,7 +42,7 @@ export class Button extends LitElement {
       <button
         ?disabled="${this.disabled}"
         aria-label=${this.ariaLabel || nothing}
-        aria-pressed=${this._ariaPressed ?? nothing}
+        aria-pressed=${this.ariaPressed ?? nothing}
         @click="${this._handleClick}"
       >
         ${this.renderIcon('leading')}

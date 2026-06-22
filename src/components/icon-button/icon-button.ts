@@ -17,11 +17,11 @@ class IconButton extends LitElement {
   @property({ type: String, attribute: 'tooltip-placement' }) tooltipPlacement = ''
   @property({ type: Boolean, reflect: true }) disabled = false
   // 호스트에 설정된 aria 속성을 내부 <button>으로 포워딩 (mm-dropdown 등 외부 컨트롤러용)
-  @property({ attribute: 'aria-haspopup' }) private _ariaHaspopup: string | null = null
-  @property({ attribute: 'aria-expanded' }) private _ariaExpanded: string | null = null
-  @property({ attribute: 'aria-pressed' }) private _ariaPressed: string | null = null
-  @property({ attribute: 'aria-controls' }) private _ariaControls: string | null = null
-  @property({ attribute: 'aria-describedby' }) private _ariaDescribedby: string | null = null
+  @property({ attribute: 'aria-haspopup' }) override ariaHasPopup: string | null = null
+  @property({ attribute: 'aria-expanded' }) override ariaExpanded: string | null = null
+  @property({ attribute: 'aria-pressed' }) override ariaPressed: string | null = null
+  @property({ attribute: 'aria-controls' }) override ariaControls: string | null = null
+  @property({ attribute: 'aria-describedby' }) override ariaDescribedBy: string | null = null
 
   static styles = [interactiveControlStyles, iconButtonStyles]
 
@@ -36,11 +36,11 @@ class IconButton extends LitElement {
         type="button"
         aria-label="${this._accessibilityLabel}"
         ?disabled="${this.disabled}"
-        aria-haspopup="${this._ariaHaspopup !== null ? this._ariaHaspopup : nothing}"
-        aria-expanded="${this._ariaExpanded !== null ? this._ariaExpanded : nothing}"
-        aria-pressed="${this._ariaPressed !== null ? this._ariaPressed : nothing}"
-        aria-controls="${this._ariaControls !== null ? this._ariaControls : nothing}"
-        aria-describedby="${this._ariaDescribedby !== null ? this._ariaDescribedby : nothing}"
+        aria-haspopup="${this.ariaHasPopup !== null ? this.ariaHasPopup : nothing}"
+        aria-expanded="${this.ariaExpanded !== null ? this.ariaExpanded : nothing}"
+        aria-pressed="${this.ariaPressed !== null ? this.ariaPressed : nothing}"
+        aria-controls="${this.ariaControls !== null ? this.ariaControls : nothing}"
+        aria-describedby="${this.ariaDescribedBy !== null ? this.ariaDescribedBy : nothing}"
       >
         <mm-icon name="${this.icon}"></mm-icon>
       </button>
