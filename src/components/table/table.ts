@@ -1,6 +1,5 @@
-import { LitElement, html } from 'lit'
+import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { tableStyles } from './table.styles'
 
 export interface TableColumn {
   label: string
@@ -11,6 +10,10 @@ export interface TableColumn {
 
 @customElement('mm-table')
 export class Table extends LitElement {
+  @property({ type: String }) caption = ''
+
+  @property({ attribute: false }) rows: unknown = nothing
+
   @property({
     type: Array,
     converter: value => {
@@ -26,63 +29,58 @@ export class Table extends LitElement {
   })
   columns: TableColumn[] = []
 
-  static styles = tableStyles
-
-  protected updated() {
-    this.syncTable()
+  protected createRenderRoot() {
+    return this
   }
 
-  private syncTable() {
-    const table = this.querySelector(':scope > table')
-    if (!table) return
+  private renderHeader(column: TableColumn) {
+    const content = column.sortable
+      ? html`
+          <mm-flex
+            align-items="center"
+            justify-content=${column.textAlign === 'center'
+              ? 'center'
+              : column.textAlign === 'right'
+              ? 'flex-end'
+              : 'flex-start'}
+            gap="1"
+          >
+            ${column.label}
+            <mm-icon name="arrow-separate-vertical" size="tiny"></mm-icon>
+          </mm-flex>
+        `
+      : column.label
 
-    table.querySelectorAll(':scope > colgroup, :scope > thead').forEach(element => element.remove())
-
-    const colgroup = document.createElement('colgroup')
-    this.columns.forEach(column => {
-      const col = document.createElement('col')
-      if (column.width) col.style.width = column.width
-      colgroup.append(col)
-    })
-
-    const thead = document.createElement('thead')
-    const row = document.createElement('tr')
-    this.columns.forEach(column => {
-      const header = document.createElement('th')
-      header.scope = 'col'
-      if (column.textAlign) header.style.textAlign = column.textAlign
-
-      if (column.sortable) {
-        header.ariaSort = 'none'
-
-        const content = document.createElement('mm-flex')
-        content.setAttribute('align-items', 'center')
-        content.setAttribute('gap', '1')
-        if (column.textAlign === 'center') content.setAttribute('justify-content', 'center')
-        if (column.textAlign === 'right') content.setAttribute('justify-content', 'flex-end')
-        content.append(document.createTextNode(column.label))
-
-        const icon = document.createElement('mm-icon')
-        icon.setAttribute('name', 'arrow-separate-vertical')
-        icon.setAttribute('size', 'tiny')
-        content.append(icon)
-        header.append(content)
-      } else {
-        header.textContent = column.label
-      }
-
-      row.append(header)
-    })
-    thead.append(row)
-
-    const body = table.querySelector(':scope > tbody, :scope > tfoot')
-    table.insertBefore(colgroup, body)
-    table.insertBefore(thead, body)
+    return html`
+      <th
+        scope="col"
+        aria-sort=${column.sortable ? 'none' : nothing}
+        style=${column.textAlign ? `text-align: ${column.textAlign}` : nothing}
+      >
+        ${content}
+      </th>
+    `
   }
 
   render() {
     return html`
-      <slot @slotchange=${this.syncTable}></slot>
+      <div class="table-container">
+        <table>
+          <caption hidden>${this.caption}</caption>
+          <colgroup>
+            ${this.columns.map(
+              column =>
+                html`
+                  <col style=${column.width ? `width: ${column.width}` : nothing} />
+                `,
+            )}
+          </colgroup>
+          <thead>
+            <tr>${this.columns.map(column => this.renderHeader(column))}</tr>
+          </thead>
+          <tbody>${this.rows}</tbody>
+        </table>
+      </div>
     `
   }
 }
