@@ -57,8 +57,6 @@ export class Feature extends LitElement {
   @property({ type: String }) heading = ''
 
   @property({ type: String }) description = ''
-  @property({ type: String }) variant = ''
-
   /** 비주얼과 텍스트를 가운데 정렬한다. */
   @property({ type: Boolean, reflect: true }) centered = false
 

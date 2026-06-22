@@ -5,7 +5,7 @@ import '../../text/text'
 
 @customElement('mm-my-chat-message')
 export class MyChatMessage extends LitElement {
-  @property({ type: String }) time = ''
+  @property({ type: String }) datetime = ''
 
   static styles = [
     resetStyles,
@@ -31,9 +31,9 @@ export class MyChatMessage extends LitElement {
   render() {
     return html`
       <slot></slot>
-      ${this.time
+      ${this.datetime
         ? html`
-            <mm-text class="time" as="time" size="12" weight="medium">${this.time}</mm-text>
+            <mm-text class="time" as="time" size="12" weight="medium">${this.datetime}</mm-text>
           `
         : nothing}
     `

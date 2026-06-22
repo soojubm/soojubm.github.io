@@ -20,7 +20,7 @@ export const checkboxStyles = css`
     --checkbox-radius: 4px;
     --checkbox-color: var(--color-border-strong);
     --checkbox-color-background: var(--color-background);
-    --checkbox-color-checked: var(--color-primary);
+    --checkbox-color-checked: var(--selection-indicator-color);
     gap: var(--space-2);
   }
 
@@ -94,14 +94,14 @@ export const checkboxStyles = css`
 
   input[indeterminate='true'] ~ label:before,
   input[data-indeterminate='true'] ~ label:before {
-    border-color: var(--color-primary);
-    background: var(--color-primary-subtle);
+    border-color: var(--selection-indicator-color);
+    background: var(--selection-background);
   }
   input[indeterminate='true'] ~ label:after,
   input[data-indeterminate='true'] ~ label:after {
     display: block;
     width: 8px;
-    background: var(--color-primary);
+    background: var(--selection-indicator-color);
     border: none;
     left: 4px;
     top: 48%;

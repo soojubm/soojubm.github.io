@@ -37,11 +37,11 @@ export default class Tab extends LitElement {
     }
 
     [role='tab'][aria-selected='true'] {
-      color: var(--color-primary);
+      color: var(--selection-foreground);
     }
 
     /* 부모 탭리스트가 pill 형태일 때 활성화된 글자 색상을 커스텀하고 싶다면 하단 주석 해제 */
-    /* :host-context(mm-tab-list[variant="pill"])[active] { color: var(--color-primary); } */
+    /* :host-context(mm-tab-list[variant="pill"])[active] { color: var(--selection-foreground); } */
   `
 
   private handleClick = () => {

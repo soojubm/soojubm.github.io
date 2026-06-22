@@ -443,7 +443,7 @@
         </mm-paragraph>
 
         <div>
-          <mm-paragraph size="large" weight="bold">Incorrect Usage</mm-paragraph>
+          <mm-paragraph size="large">Incorrect Usage</mm-paragraph>
 
           <mm-text-list
             texts='["본문 강조를 위한 underline", "강조 문장을 primary color로 처리"]'
@@ -607,7 +607,7 @@
     <div>
       <mm-flex direction="column">
         <mm-text size="12" color="light">LAYER 1</mm-text>
-        <mm-paragraph size="large" weight="bold">Abstract</mm-paragraph>
+        <mm-paragraph size="large">Abstract</mm-paragraph>
         <mm-paragraph>
           HTML 요소 수준의 가장 작은 단위. 의도 없이 props로만 변형되는 범용 빌딩 블록.
         </mm-paragraph>
@@ -630,7 +630,7 @@
         </mm-text>
         <div>
           <mm-text size="12" color="light">LAYER 2</mm-text>
-          <mm-paragraph size="large" weight="bold">Semantic</mm-paragraph>
+          <mm-paragraph size="large">Semantic</mm-paragraph>
         </div>
         <mm-paragraph>
           의미가 있고 도메인에 독립적인 단위. 어떤 서비스에서도 쓸 수 있는 개념. variant 대신 이름이
@@ -655,7 +655,7 @@
         </mm-text>
         <div>
           <mm-text size="12" color="light">LAYER 3</mm-text>
-          <mm-paragraph size="large" weight="bold">Concrete</mm-paragraph>
+          <mm-paragraph size="large">Concrete</mm-paragraph>
         </div>
         <mm-paragraph>
           특정 도메인·서비스에 종속된 조합. 다른 서비스에서 그대로 가져다 쓸 수 없는 것.
@@ -675,10 +675,10 @@
 
     <mm-surface>
       <mm-flex direction="column" gap="3">
-        <mm-paragraph size="large" weight="bold">이 방법론의 한계</mm-paragraph>
+        <mm-paragraph size="large">이 방법론의 한계</mm-paragraph>
 
         <mm-flex direction="column" gap="2">
-          <mm-paragraph weight="bold">
+          <mm-paragraph>
             "다른 서비스에서 쓸 수 있는가"의 판단은 여전히 주관적이다
           </mm-paragraph>
           <mm-paragraph>
@@ -690,7 +690,7 @@
         </mm-flex>
 
         <mm-flex direction="column" gap="2">
-          <mm-paragraph weight="bold">
+          <mm-paragraph>
             Concrete가 도메인을 넘어 재사용되면 레이어가 흔들린다
           </mm-paragraph>
           <mm-paragraph>
@@ -702,7 +702,7 @@
         </mm-flex>
 
         <mm-flex direction="column" gap="2">
-          <mm-paragraph weight="bold">Semantic 레이어가 팽창하기 쉽다</mm-paragraph>
+          <mm-paragraph>Semantic 레이어가 팽창하기 쉽다</mm-paragraph>
           <mm-paragraph>
             "도메인 무관"의 기준이 느슨하면 모든 컴포넌트가 Semantic 후보가 된다. 작은 변형마다
             새로운 Semantic 컴포넌트가 추가되면 semantics/ 디렉토리가 비대해지고, Abstract
@@ -717,7 +717,7 @@
     <mm-text-block
       level="2"
       heading="Property name dictionary"
-      description="158개 이름을 506개 공개 @property 선언에서 집계했습니다. HTML attribute 이름을 기준으로 중복 사용이 많은 순서대로 정렬합니다."
+      description="156개 이름을 504개 공개 @property 선언에서 집계했습니다. HTML attribute 이름을 기준으로 중복 사용이 많은 순서대로 정렬합니다."
     ></mm-text-block>
 
     <mm-table
@@ -850,11 +850,11 @@
           </tr>
           <tr>
             <th scope="row"><mm-text weight="bold">variant</mm-text></th>
-            <td style="text-align: right"><mm-text>11</mm-text></td>
+            <td style="text-align: right"><mm-text>10</mm-text></td>
             <td>
               <mm-text>
-                mm-avatar, mm-button, mm-feature, mm-icon-button, mm-list-marker, mm-notice,
-                mm-sheet, mm-status-tag, mm-surface, mm-tabs, mm-text-list
+                mm-avatar, mm-button, mm-icon-button, mm-list-marker, mm-notice, mm-sheet,
+                mm-status-tag, mm-surface, mm-tabs, mm-text-list
               </mm-text>
             </td>
           </tr>
@@ -952,6 +952,16 @@
             <td>
               <mm-text>
                 mm-icon, mm-paragraph, mm-text, mm-typing-indicator, mm-ui-placeholder
+              </mm-text>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">datetime</mm-text></th>
+            <td style="text-align: right"><mm-text>5</mm-text></td>
+            <td>
+              <mm-text>
+                mm-ai-chat-message, mm-comment-item, mm-my-chat-message, mm-portfolio-item,
+                mm-review-item
               </mm-text>
             </td>
           </tr>
@@ -1065,11 +1075,6 @@
             <td><mm-text>mm-button-group, mm-flex, mm-toggle-button-group</mm-text></td>
           </tr>
           <tr>
-            <th scope="row"><mm-text weight="bold">time</mm-text></th>
-            <td style="text-align: right"><mm-text>3</mm-text></td>
-            <td><mm-text>mm-ai-chat-message, mm-comment-item, mm-my-chat-message</mm-text></td>
-          </tr>
-          <tr>
             <th scope="row"><mm-text weight="bold">type</mm-text></th>
             <td style="text-align: right"><mm-text>3</mm-text></td>
             <td><mm-text>mm-input, mm-prop, mm-textfield</mm-text></td>
@@ -1103,11 +1108,6 @@
             <th scope="row"><mm-text weight="bold">column-max-width</mm-text></th>
             <td style="text-align: right"><mm-text>2</mm-text></td>
             <td><mm-text>mm-feature-group, mm-grid</mm-text></td>
-          </tr>
-          <tr>
-            <th scope="row"><mm-text weight="bold">date</mm-text></th>
-            <td style="text-align: right"><mm-text>2</mm-text></td>
-            <td><mm-text>mm-portfolio-item, mm-review-item</mm-text></td>
           </tr>
           <tr>
             <th scope="row"><mm-text weight="bold">external</mm-text></th>
@@ -1435,11 +1435,6 @@
             <td><mm-text>mm-prompt-input</mm-text></td>
           </tr>
           <tr>
-            <th scope="row"><mm-text weight="bold">hidden-heading</mm-text></th>
-            <td style="text-align: right"><mm-text>1</mm-text></td>
-            <td><mm-text>mm-component-references</mm-text></td>
-          </tr>
-          <tr>
             <th scope="row"><mm-text weight="bold">hidden-reactions</mm-text></th>
             <td style="text-align: right"><mm-text>1</mm-text></td>
             <td><mm-text>mm-ai-chat-message</mm-text></td>
@@ -1458,11 +1453,6 @@
             <th scope="row"><mm-text weight="bold">index</mm-text></th>
             <td style="text-align: right"><mm-text>1</mm-text></td>
             <td><mm-text>mm-token-item</mm-text></td>
-          </tr>
-          <tr>
-            <th scope="row"><mm-text weight="bold">input-class</mm-text></th>
-            <td style="text-align: right"><mm-text>1</mm-text></td>
-            <td><mm-text>mm-input</mm-text></td>
           </tr>
           <tr>
             <th scope="row"><mm-text weight="bold">instagram</mm-text></th>

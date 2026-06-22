@@ -11,7 +11,7 @@ export class PortfolioItem extends LitElement {
   @property({ type: String }) alt = ''
   @property({ type: String }) badge = ''
   @property({ type: String }) modal = ''
-  @property({ type: String }) date = ''
+  @property({ type: String }) datetime = ''
   @property({
     type: Array,
     converter: value => {
@@ -105,9 +105,9 @@ export class PortfolioItem extends LitElement {
     this.open()
   }
 
-  private get formattedDate() {
-    if (!this.date) return ''
-    return this.date.replaceAll('-', '. ')
+  private get formattedDatetime() {
+    if (!this.datetime) return ''
+    return this.datetime.replaceAll('-', '. ')
   }
 
   render() {
@@ -141,9 +141,9 @@ export class PortfolioItem extends LitElement {
                 <mm-paragraph>${this.description}</mm-paragraph>
               `
             : nothing}
-          ${this.date
+          ${this.datetime
             ? html`
-                <time hidden datetime=${this.date}>${this.formattedDate}</time>
+                <time hidden datetime=${this.datetime}>${this.formattedDatetime}</time>
               `
             : nothing}
           ${this.keywords.length

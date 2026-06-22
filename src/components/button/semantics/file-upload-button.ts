@@ -142,7 +142,7 @@ export class FileUploadButton extends LitElement {
                           `
                         : ''}
                       <figcaption>
-                        <mm-paragraph weight="bold">${file.name}</mm-paragraph>
+                        <mm-paragraph>${file.name}</mm-paragraph>
                         <mm-text size="12">${this.formatFileSize(file.size)}</mm-text>
                       </figcaption>
                       <div class="remove">

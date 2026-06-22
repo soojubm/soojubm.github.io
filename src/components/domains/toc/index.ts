@@ -65,7 +65,7 @@ export class TableOfContents extends LitElement {
       }
 
       .toc-link[data-active] {
-        color: var(--color-primary);
+        color: var(--selection-foreground);
       }
 
       @media (prefers-reduced-motion: reduce) {

@@ -29,7 +29,7 @@
     <mm-token name="checkbox-radius" default="4px"></mm-token>
     <mm-token name="checkbox-color" default="var(--color-border-strong)"></mm-token>
     <mm-token name="checkbox-color-background" default="var(--color-background)"></mm-token>
-    <mm-token name="checkbox-color-checked" default="var(--color-primary)"></mm-token>
+    <mm-token name="checkbox-color-checked" default="var(--selection-indicator-color)"></mm-token>
   </mm-component-tokens>
 
   <mm-component-anatomy
@@ -83,7 +83,7 @@
   <mm-component-section heading="MasterCheckbox" description="TermsAllCheckbox, TermsCheckboxGroup">
     <div>
       <mm-master-checkbox controls="main-terms-group">
-        <mm-paragraph weight="bold">모두 동의합니다 (선택동의 포함)</mm-paragraph>
+        <mm-paragraph>모두 동의합니다 (선택동의 포함)</mm-paragraph>
       </mm-master-checkbox>
 
       <mm-checkbox-group id="main-terms-group" name="terms">

@@ -1,7 +1,6 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { resetStyles } from '../../../stylesheets/shared/reset.styles'
-import type { TextWeight } from '../text.styles'
 
 type ParagraphSize = 'small' | 'medium' | 'large'
 type ParagraphTruncate = '' | '1' | '2' | '3'
@@ -9,7 +8,6 @@ type ParagraphTruncate = '' | '1' | '2' | '3'
 @customElement('mm-paragraph')
 export class Paragraph extends LitElement {
   @property({ type: String, reflect: true }) size: ParagraphSize = 'medium'
-  @property({ type: String, reflect: true }) weight: TextWeight = 'medium'
   @property({ type: String, reflect: true }) color = 'inherit'
   @property({ type: String, reflect: true }) truncate: ParagraphTruncate = ''
   @property({ type: Boolean, reflect: true }) centered = false
@@ -42,10 +40,6 @@ export class Paragraph extends LitElement {
         max-width: 800px;
         font-size: var(--font-size-18);
         line-height: var(--font-line-height-28);
-      }
-
-      :host([weight='bold']) {
-        font-weight: var(--font-weight-bold);
       }
 
       :host([centered]) {

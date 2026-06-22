@@ -309,7 +309,7 @@ li::marker {
 // h1,h2,h3,h4,h5,h6 {font-weight:var(--font-weight-bold);color:var(--color-foreground);word-break:keep-all;}
 img {vertical-align:middle;}
 u {text-decoration:none;position:relative;}
-u:after {content:'';height:.4em;border-radius:2px;background:var(--green100);position:absolute;left:-.125rem;right:-.125rem;bottom:0;z-index:-1;}
+u:after {content:'';height:.4em;border-radius:2px;background:var(--color-primary-subtle);position:absolute;left:-.125rem;right:-.125rem;bottom:0;z-index:-1;}
 mark {color:inherit;} mark::before {content: " [강조 시작] ";opacity:0;position:absolute;} mark::after {content: " [강조 끝] ";opacity:0;position:absolute;}
 // [hidden] {display:none !important;}
 

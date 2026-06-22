@@ -8,7 +8,7 @@ import '../../button/button-group'
 
 @customElement('mm-ai-chat-message')
 export class AiChatMessage extends LitElement {
-  @property({ type: String }) time = ''
+  @property({ type: String }) datetime = ''
   @property({ type: Boolean, attribute: 'hidden-reactions' }) hiddenReactions = false
 
   static styles = [
@@ -69,9 +69,9 @@ export class AiChatMessage extends LitElement {
   render() {
     return html`
       <slot></slot>
-      ${this.time
+      ${this.datetime
         ? html`
-            <mm-text class="time" as="time" size="12" weight="medium">${this.time}</mm-text>
+            <mm-text class="time" as="time" size="12" weight="medium">${this.datetime}</mm-text>
           `
         : nothing}
       ${this.renderReactions()}

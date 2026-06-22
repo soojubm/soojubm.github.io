@@ -6,7 +6,7 @@ export const switchStyles = css`
     --switch-height: 16px;
     --switch-radius: var(--radius);
     --switch-color: var(--color-border);
-    --switch-color-checked: var(--color-primary);
+    --switch-color-checked: var(--selection-indicator-color);
     display: block;
     height: var(--switch-height);
     position: relative;

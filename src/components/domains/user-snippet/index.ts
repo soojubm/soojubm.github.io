@@ -32,7 +32,7 @@ class UserSnippet extends LitElement {
             `
           : nothing}
         <div class="entity-content">
-          <mm-paragraph size="large" weight="bold">${this.name}</mm-paragraph>
+          <mm-paragraph size="large">${this.name}</mm-paragraph>
           ${this.description
             ? html`
                 <mm-paragraph style="margin-top:-.125rem">${this.description}</mm-paragraph>

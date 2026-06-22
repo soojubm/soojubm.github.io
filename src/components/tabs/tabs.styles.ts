@@ -4,11 +4,11 @@ export const tabsStyles = css`
   :host {
     display: block;
 
-    --tabs-indicator-color: var(--color-primary);
+    --tabs-indicator-color: var(--selection-indicator-color);
     --tabs-line-color: var(--color-border);
     --tabs-line-width: var(--border-width);
     --tabs-pill-background: var(--color-background-subtle);
-    --tabs-pill-indicator-background: var(--color-background);
+    --tabs-pill-indicator-background: var(--selection-background);
     --tabs-pill-radius: var(--radius);
     --tabs-pill-border: none;
     --tabs-pill-indicator-border: none;

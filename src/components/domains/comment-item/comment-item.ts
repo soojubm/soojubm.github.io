@@ -12,7 +12,7 @@ import '../../menuitem/semantics/menu-item-action'
 @customElement('mm-comment-item')
 export class CommentItem extends LitElement {
   @property({ type: String }) author = ''
-  @property({ type: String }) time = ''
+  @property({ type: String }) datetime = ''
   @property({ type: String, attribute: 'avatar-src' }) avatarSrc = ''
   /** 답글 버튼 레이블. 비우면 버튼을 숨깁니다. (예: "답글 10개") */
   @property({ type: String, attribute: 'reply-label' }) replyLabel = ''
@@ -112,7 +112,7 @@ export class CommentItem extends LitElement {
   render() {
     return html`
       <article class="item">
-        <mm-user-row label=${this.author} description=${this.time} avatar-src=${this.avatarSrc}>
+        <mm-user-row label=${this.author} description=${this.datetime} avatar-src=${this.avatarSrc}>
           ${this.editable
             ? html`
                 <mm-more-button

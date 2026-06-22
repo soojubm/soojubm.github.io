@@ -98,10 +98,6 @@
   --color-danger-subtle: color-mix(in srgb, var(--color-danger) 8%, var(--color-background));
   --color-danger-border: color-mix(in srgb, var(--color-danger) 30%, transparent);
 
-  --color-facebook: hsl(214, 89%, 52%);
-  --color-twitter: rgb(29, 161, 242);
-  --color-pinterest: #e60023;
-
   --color-newneek: #fb7800;
   --color-newneek-gray: #ebebeb;
 
@@ -148,7 +144,7 @@
   --selection-indicator-size: var(--space-2);
   --selection-indicator-gap: var(--space-2);
   --selection-indicator-color: var(--color-primary);
-  --selection-background: var(--green100);
+  --selection-background: var(--color-primary-subtle);
   --selection-foreground: var(--color-primary);
 
   --radius: 6px;

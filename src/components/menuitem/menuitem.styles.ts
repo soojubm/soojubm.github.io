@@ -20,9 +20,12 @@ export const menuItemStyles = css`
     &[data-interactive] {
       cursor: pointer;
 
-      &[aria-current='page'],
       &:hover {
         background-color: var(--menuitem-color-hover);
+      }
+
+      &[aria-current='page'] {
+        background-color: var(--selection-background);
       }
     }
 
@@ -38,7 +41,7 @@ export const menuItemStyles = css`
   }
 
   :host([aria-current='page']) .item[data-interactive] {
-    background-color: var(--menuitem-color-hover);
+    background-color: var(--selection-background);
   }
 
   mm-list-row {

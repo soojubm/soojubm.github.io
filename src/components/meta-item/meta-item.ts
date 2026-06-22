@@ -16,7 +16,7 @@ class MetaItem extends LitElement {
     return html`
       <div class="meta-item">
         <mm-paragraph color="light">${this.label}</mm-paragraph>
-        <mm-paragraph size=${this.valueSize} weight="bold">${this.value}</mm-paragraph>
+        <mm-paragraph size=${this.valueSize}>${this.value}</mm-paragraph>
       </div>
     `
   }

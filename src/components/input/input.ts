@@ -12,7 +12,6 @@ import { customElement, property } from 'lit/decorators.js'
 @customElement('mm-input')
 export class Input extends LitElement {
   @property({ attribute: 'input-id' }) inputId = ''
-  @property({ attribute: 'input-class' }) inputClass = ''
   @property() type = 'text'
   @property() value = ''
   @property() name?: string
@@ -40,7 +39,6 @@ export class Input extends LitElement {
     return html`
       <input
         id=${this.inputId || nothing}
-        class=${this.inputClass || nothing}
         type=${this.type}
         .value=${this.value}
         name=${this.name || nothing}

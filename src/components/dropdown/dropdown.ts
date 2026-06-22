@@ -93,7 +93,7 @@ export class Dropdown extends LitElement {
       }
 
       mm-menu-item-action[aria-current='true'] {
-        color: var(--color-primary);
+        color: var(--selection-foreground);
       }
     `,
   ]

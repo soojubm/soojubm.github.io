@@ -22,7 +22,7 @@ export class FollowButton extends LitElement {
 
       :host([selected]) mm-button {
         --button-color: var(--selection-background);
-        --button-border: 1px solid var(--selection-indicator-color);
+        --button-border: var(--border-width) solid var(--selection-indicator-color);
         --button-text-color: var(--selection-foreground);
       }
     `,

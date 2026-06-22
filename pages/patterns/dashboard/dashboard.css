@@ -1,4 +1,9 @@
 .dashboard {
+  /* 대시보드 데모 전용 소셜 브랜드 컬러 */
+  --color-facebook: hsl(214, 89%, 52%);
+  --color-twitter: rgb(29, 161, 242);
+  --color-pinterest: #e60023;
+
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   gap: var(--space-4);

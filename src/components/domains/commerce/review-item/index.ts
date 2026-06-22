@@ -16,8 +16,8 @@ export class ReviewItem extends LitElement {
   @property({ type: String }) content = ''
   /** 작성자 이름. */
   @property({ type: String }) author = ''
-  /** 작성일. */
-  @property({ type: String }) date = ''
+  /** 작성 일시. */
+  @property({ type: String }) datetime = ''
 
   static styles = [
     resetStyles,
@@ -48,9 +48,9 @@ export class ReviewItem extends LitElement {
           </div>
 
           <mm-paragraph>${this.content}</mm-paragraph>
-          ${this.author || this.date
+          ${this.author || this.datetime
             ? html`
-                <mm-list-row label=${this.author} description=${this.date}></mm-list-row>
+                <mm-list-row label=${this.author} description=${this.datetime}></mm-list-row>
               `
             : nothing}
         </mm-flex>

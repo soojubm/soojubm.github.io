@@ -86,8 +86,8 @@
       <div style="height: var(--space-1)"></div>
       <mm-text size="12">font size 12px</mm-text>
       <mm-separator></mm-separator>
-      <mm-paragraph weight="medium">font weight normal</mm-paragraph>
-      <mm-paragraph weight="bold">font weight bold</mm-paragraph>
+      <mm-text weight="medium">font weight normal</mm-text>
+      <mm-text weight="bold">font weight bold</mm-text>
     </mm-flex>
   </mm-component-example>
   <mm-component-props>
@@ -246,14 +246,6 @@
         caption="Optional caption text"
       ></mm-text-block>
     </div>
-    <mm-component-props>
-      <mm-prop name="eyebrow" type="string" optional></mm-prop>
-      <mm-prop name="heading" type="string"></mm-prop>
-      <mm-prop name="description" type="string"></mm-prop>
-      <mm-prop name="caption" type="string" optional></mm-prop>
-      <mm-prop name="level" type="'1' | '2' | '3' = '1'"></mm-prop>
-      <mm-prop name="centered" type="boolean = false"></mm-prop>
-    </mm-component-props>
   </mm-component-section>
 
   <mm-component-section
@@ -303,10 +295,6 @@
         <mm-meta-item label="총 결제 금액" value="₩ 16,000"></mm-meta-item>
       </mm-meta-item-group>
     </mm-flex>
-    <mm-component-props>
-      <mm-prop name="direction" type="'row' | 'column' = 'row'"></mm-prop>
-      <mm-prop name="gap" type="string = '4'"></mm-prop>
-    </mm-component-props>
   </mm-component-section>
 
   <mm-component-section

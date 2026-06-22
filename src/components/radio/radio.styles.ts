@@ -34,7 +34,7 @@ export const radioStyles = css`
     --radio-color: var(--color-border-strong);
     --radio-border: 1px solid var(--radio-color);
     --radio-radius: 50%;
-    --radio-color-checked: var(--color-primary);
+    --radio-color-checked: var(--selection-indicator-color);
     position: relative;
   }
 
