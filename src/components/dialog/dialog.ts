@@ -55,6 +55,14 @@ export class Dialog extends LitElement {
     this.dispatchEvent(new CustomEvent('dialog-close', { bubbles: true, composed: true }))
   }
 
+  private handlePrimaryClick() {
+    this.dispatchEvent(new CustomEvent('primary-click', { bubbles: true, composed: true }))
+  }
+
+  private handleSecondaryClick() {
+    this.dispatchEvent(new CustomEvent('secondary-click', { bubbles: true, composed: true }))
+  }
+
   render() {
     return html`
       <mm-sheet variant="center" width="small" @sheetclose=${this.handleSheetClose}>
@@ -72,12 +80,8 @@ export class Dialog extends LitElement {
         <mm-sheet-footer
           primary-label=${this.primaryLabel}
           secondary-label=${this.secondaryLabel}
-          @primary-click=${() =>
-            this.dispatchEvent(new CustomEvent('primary-click', { bubbles: true, composed: true }))}
-          @secondary-click=${() =>
-            this.dispatchEvent(
-              new CustomEvent('secondary-click', { bubbles: true, composed: true }),
-            )}
+          @primary-click=${this.handlePrimaryClick}
+          @secondary-click=${this.handleSecondaryClick}
         ></mm-sheet-footer>
       </mm-sheet>
     `

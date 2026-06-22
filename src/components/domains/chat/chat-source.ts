@@ -49,6 +49,17 @@ export class ChatSource extends LitElement {
     `,
   ]
 
+  private _handleClick(e: Event) {
+    e.stopPropagation()
+    this.dispatchEvent(
+      new CustomEvent('source-toggle', {
+        detail: { source: this, open: !this._open },
+        bubbles: true,
+        composed: true,
+      }),
+    )
+  }
+
   render() {
     return html`
       <mm-button
@@ -56,16 +67,7 @@ export class ChatSource extends LitElement {
         size="small"
         aria-expanded=${this._open}
         aria-haspopup="dialog"
-        @click=${(e: Event) => {
-          e.stopPropagation()
-          this.dispatchEvent(
-            new CustomEvent('source-toggle', {
-              detail: { source: this, open: !this._open },
-              bubbles: true,
-              composed: true,
-            }),
-          )
-        }}
+        @click=${this._handleClick}
       >
         ${this.icon
           ? html`

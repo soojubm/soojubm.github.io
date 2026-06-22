@@ -1,10 +1,12 @@
 import { LitElement, html, nothing } from 'lit'
-import { customElement } from 'lit/decorators.js'
+import { customElement, state } from 'lit/decorators.js'
 import { SITEMAP } from '../../../sitemap'
 import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
 
 @customElement('mm-sidebar')
 export class Sidebar extends LitElement {
+  @state() private _currentPageId = 'index'
+
   // 💡 중요: 기존 전역 CSS(.sidebar-menu, .is-open 등)를 그대로 상속받아 쓰기 위해
   // Shadow DOM을 끄고 Light DOM 영역에 렌더링하도록 설정합니다.
   createRenderRoot() {
@@ -13,18 +15,13 @@ export class Sidebar extends LitElement {
 
   // Lit 렌더링이 완료된 후 실행 → DOM이 확실히 존재
   firstUpdated() {
-    this.highlightCurrentLink()
     this.syncScrollPosition()
   }
 
-  private highlightCurrentLink() {
-    const currentPageId = window.location.pathname.split('/').pop()?.replace('.html', '') || 'index'
-    this.querySelectorAll<HTMLElement>('.sidebar-menu mm-menu-item-link').forEach(link => {
-      const href = link.getAttribute('href')?.replace('.html', '') || ''
-      if (href && href === currentPageId) {
-        link.setAttribute('aria-current', 'page')
-      }
-    })
+  connectedCallback() {
+    super.connectedCallback()
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html'
+    this._currentPageId = currentPath.replace('.html', '') || 'index'
   }
 
   private syncScrollPosition() {
@@ -38,12 +35,21 @@ export class Sidebar extends LitElement {
     })
   }
 
-  render() {
-    // 💡 브라우저 현재 URL을 분석해서 현재 어떤 페이지에 있는지 자동으로 알아냅니다.
-    // 예: /thumbnail.html -> 'thumbnail'
-    const currentPath = window.location.pathname.split('/').pop() || 'index.html'
-    const currentPageId = currentPath.replace('.html', '') || 'index'
+  private _handleStandaloneClick(pageId: string) {
+    window.location.href = `${pageId}.html`
+  }
 
+  private _handleCategoryToggle(event: Event) {
+    const trigger = event.currentTarget as HTMLElement
+    const isOpen = trigger.classList.toggle('is-open')
+    trigger.setAttribute('aria-expanded', String(isOpen))
+  }
+
+  private _isCurrentPage(pageId: string) {
+    return this._currentPageId === pageId
+  }
+
+  render() {
     return html`
       <nav class="sidebar-menu">
         ${SITEMAP.map(node => {
@@ -53,8 +59,8 @@ export class Sidebar extends LitElement {
               <mm-menu-item-action
                 label="${node.title}"
                 icon="${node.icon}"
-                class=${currentPageId === node.id ? 'is-active' : nothing}
-                @click="${() => (window.location.href = `${node.id}.html`)}"
+                class=${this._isCurrentPage(node.id) ? 'is-active' : nothing}
+                @click=${() => this._handleStandaloneClick(node.id)}
               ></mm-menu-item-action>
             `
           }
@@ -72,11 +78,7 @@ export class Sidebar extends LitElement {
                   aria-haspopup="menu"
                   aria-controls="${node.id}-menu"
                   aria-expanded="true"
-                  @click=${(event: Event) => {
-                    const trigger = event.currentTarget as HTMLElement
-                    const isOpen = trigger.classList.toggle('is-open')
-                    trigger.setAttribute('aria-expanded', String(isOpen))
-                  }}
+                  @click=${this._handleCategoryToggle}
                 ></mm-menu-item-action>
 
                 <menu id="${node.id}-menu" aria-labelledby="${node.id}-btn">
@@ -89,7 +91,7 @@ export class Sidebar extends LitElement {
                           label="${item.name}${item.badge ? ` ${item.badge}` : ''}"
                           target="_self"
                           hidden-trailing
-                          aria-current=${currentPageId === item.id ? 'page' : nothing}
+                          aria-current=${this._isCurrentPage(item.id) ? 'page' : nothing}
                         ></mm-menu-item-link>
                       `,
                     )}

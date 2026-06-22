@@ -77,6 +77,10 @@ export class Thumbnail extends LitElement {
     }
   `
 
+  private _handleImageError() {
+    this._hasError = true
+  }
+
   render() {
     const displaySrc = this._hasError ? this._fallbackImage : this.src || this._fallbackImage
     const ratioMap = { '1:1': '1 / 1', '16:9': '16 / 9', '4:3': '4 / 3' }
@@ -90,7 +94,7 @@ export class Thumbnail extends LitElement {
           loading="${this.loading}"
           decoding="async"
           fetchpriority="${this.fetchPriority}"
-          @error=${() => (this._hasError = true)}
+          @error=${this._handleImageError}
         />
       </div>
     `

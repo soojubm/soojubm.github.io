@@ -112,14 +112,16 @@ export class Navbar extends LitElement {
               icon=${ICON_NAMES.SEARCH}
               label=${r.meta.title || r.url}
               description=${r.excerpt ? r.excerpt.replace(/<[^>]*>/g, '') : ''}
-              @click=${() => {
-                window.location.href = r.url
-              }}
+              @click=${() => this._handleResultClick(r.url)}
             ></mm-menu-item-action>
           `,
         )}
       </mm-menu-item-group>
     `
+  }
+
+  private _handleResultClick(url: string) {
+    window.location.href = url
   }
 
   render() {
