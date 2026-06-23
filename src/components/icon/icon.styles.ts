@@ -1,12 +1,15 @@
 import { css } from 'lit'
 
 export const iconStyles = css`
+  :host {
+    --button-text-color: inherit;
+  }
+
   i {
     font-style: normal;
   }
 
   .icon {
-    --button-text-color: inherit;
     display: flex;
     align-items: center;
     justify-content: center;
