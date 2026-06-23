@@ -7,7 +7,7 @@ import { customElement, property } from 'lit/decorators.js'
  */
 @customElement('mm-read-more-button')
 export class ReadMoreButton extends LitElement {
-  @property({ type: String, attribute: 'aria-expanded', reflect: true }) ariaExpanded = 'false'
+  @property({ type: String, attribute: 'aria-expanded' }) ariaExpanded = 'false'
   @property({ type: String, attribute: 'aria-controls' }) ariaControls: string | null = null
   @property({ type: String, attribute: 'more-label' }) moreLabel = '더 보기'
   @property({ type: String, attribute: 'less-label' }) lessLabel = '접기'

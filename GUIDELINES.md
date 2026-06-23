@@ -63,6 +63,7 @@
 - 접근성을 위한 네이티브 attribute와 ARIA attribute는 별칭 prop으로 우회하지 않고 그대로 공개 API로 사용한다.
 - Lit 클래스 내부 프로퍼티명도 표준 DOM 프로퍼티 이름을 따른다.
 - 네이티브 폼 상태와 ARIA로 표현하는 상태는 구분한다.
+- host에 role을 두는 컴포넌트는 reflect된 role prop으로 일관되게 선언한다.
 
 ## 스타일시트
 

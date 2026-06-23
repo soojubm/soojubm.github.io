@@ -18,9 +18,7 @@ class IconButton extends LitElement {
   @property({ type: Boolean }) disabled = false
   @property({ type: String }) role = ''
   @property({ type: String, attribute: 'aria-haspopup' }) ariaHasPopup: string | null = null
-  @property({ type: String, attribute: 'aria-expanded', reflect: true }) ariaExpanded:
-    | string
-    | null = null
+  @property({ type: String, attribute: 'aria-expanded' }) ariaExpanded: string | null = null
   @property({ type: String, attribute: 'aria-pressed' }) ariaPressed: string | null = null
   @property({ type: String, attribute: 'aria-checked' }) ariaChecked: string | null = null
   @property({ type: String, attribute: 'aria-controls' }) ariaControls: string | null = null

@@ -9,7 +9,7 @@ import '../icon-button'
 @customElement('mm-more-button')
 export class MoreButton extends LitElement {
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = '더보기'
-  @property({ type: String, attribute: 'aria-expanded', reflect: true }) ariaExpanded = 'false'
+  @property({ type: String, attribute: 'aria-expanded' }) ariaExpanded = 'false'
   @property({ type: String, attribute: 'aria-controls' }) ariaControls: string | null = null
   @property({ type: Boolean }) disabled = false
 

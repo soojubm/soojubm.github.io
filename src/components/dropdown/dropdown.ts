@@ -176,6 +176,8 @@ export class Dropdown extends LitElement {
 
   // 체크박스 아이템 변경 시: 데이터 상태만 업데이트 (드롭다운을 닫지 않음)
   protected handleCheckboxChange(option: DropdownOption, e: CustomEvent) {
+    e.stopPropagation()
+
     const isChecked = e.detail.checked
 
     // 내부 state 업데이트 (불변성 유지)
@@ -265,15 +267,10 @@ export class Dropdown extends LitElement {
     `
   }
 
-  // 네이티브 트리거는 ARIA를 직접, 컴포넌트 트리거는 중립 상태 prop을 갱신한다.
+  // 펼침 상태는 실제 트리거 요소가 소유하므로 네이티브 attribute를 직접 갱신한다.
   private _updateTriggerAria() {
     const trigger = this._triggerElements[0]
     if (!trigger) return
-
-    if ('ariaHasPopup' in trigger && 'ariaExpanded' in trigger) {
-      Object.assign(trigger, { ariaHasPopup: 'true', ariaExpanded: String(this.isOpen) })
-      return
-    }
 
     trigger.setAttribute('aria-haspopup', 'true')
     trigger.setAttribute('aria-expanded', String(this.isOpen))

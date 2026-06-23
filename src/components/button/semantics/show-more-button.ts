@@ -9,7 +9,7 @@ import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
  */
 @customElement('mm-show-more-button')
 export class ShowMoreButton extends LitElement {
-  @property({ type: String, attribute: 'aria-expanded', reflect: true }) ariaExpanded = 'false'
+  @property({ type: String, attribute: 'aria-expanded' }) ariaExpanded = 'false'
   @property({ type: String, attribute: 'more-label' }) moreLabel = 'Show more'
   @property({ type: String, attribute: 'less-label' }) lessLabel = 'Show less'
 
@@ -25,7 +25,7 @@ export class ShowMoreButton extends LitElement {
         transition: transform 0.2s ease;
       }
 
-      :host([aria-expanded='true']) mm-icon {
+      mm-button[aria-expanded='true'] mm-icon {
         transform: rotate(180deg);
       }
     `,

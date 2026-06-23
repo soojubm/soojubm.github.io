@@ -88,6 +88,8 @@ export class CheckboxGroup extends LitElement {
     if (!(target instanceof HTMLElement) || target.tagName !== 'MM-CHECKBOX') return
 
     const customEvent = event as CustomEvent<CheckboxChangeDetail>
+    customEvent.stopPropagation()
+
     const { checked, value } = customEvent.detail
 
     if (!value) return

@@ -20,6 +20,8 @@ export class SortDropdown extends LitElement {
   @property({ type: String }) value: SortOrder = 'latest'
 
   private handleChange(e: CustomEvent) {
+    e.stopPropagation()
+
     const next = e.detail.value as SortOrder
     this.value = next
 
