@@ -163,7 +163,7 @@ export class PromptInput extends LitElement {
         <mm-icon-button
           variant="primary"
           icon="send-diagonal"
-          .ariaLabel=${this.submitLabel}
+          aria-label=${this.submitLabel}
           ?disabled=${this.isLoading}
           @click=${this._submit}
         ></mm-icon-button>

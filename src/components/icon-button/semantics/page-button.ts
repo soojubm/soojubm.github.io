@@ -33,8 +33,8 @@ export class PageButton extends LitElement {
     return html`
       <button
         type="button"
-        aria-label="${this.ariaLabel || `${this.page} 페이지로 이동`}"
-        aria-current="${this.ariaCurrent ?? nothing}"
+        aria-label=${this.ariaLabel || `${this.page} 페이지로 이동`}
+        aria-current=${this.ariaCurrent ?? nothing}
         ?disabled="${this.disabled}"
       >
         ${this.page}

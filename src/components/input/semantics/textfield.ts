@@ -55,8 +55,8 @@ export class Textfield extends LitElement {
             .name=${this.name}
             .placeholder=${this.placeholder}
             ?disabled=${this.disabled}
-            .ariaInvalid=${this.ariaInvalid}
-            .ariaDescribedBy=${this.validationText ? `${this.inputId}-validation` : null}
+            aria-invalid=${this.ariaInvalid ?? nothing}
+            aria-describedby=${this.validationText ? `${this.inputId}-validation` : nothing}
             @input=${this._handleInput}
           ></mm-input>
           <slot name="trailing"></slot>

@@ -1,4 +1,4 @@
-import { LitElement, css, html } from 'lit'
+import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 import './textfield'
 
@@ -38,7 +38,7 @@ class PasswordField extends LitElement {
         ?optional=${this.optional}
         ?hidden-label=${this.hiddenLabel}
         ?disabled=${this.disabled}
-        .ariaInvalid=${this.ariaInvalid}
+        aria-invalid=${this.ariaInvalid ?? nothing}
         @input=${this._syncValue}
       >
         <mm-reveal-button

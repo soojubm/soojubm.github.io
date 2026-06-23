@@ -207,7 +207,7 @@ export class Dropdown extends LitElement {
           class="dropdown-button"
           size="small"
           aria-haspopup="true"
-          .ariaExpanded=${String(this.isOpen)}
+          aria-expanded=${String(this.isOpen)}
         >
           ${this.resolveSelectedLabel()}
           <mm-icon name=${ICON_NAMES.EXPAND}></mm-icon>

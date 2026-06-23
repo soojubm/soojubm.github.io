@@ -20,6 +20,7 @@ export class SearchSuggestions extends LitElement {
 
   /** 우측 fade mask 활성화. 스크롤 가능 여부 감지 책임은 외부에서 제어한다. */
   @property({ type: Boolean, reflect: true }) fade = false
+  @property({ type: String, reflect: true }) role = 'group'
 
   static styles = [
     resetStyles,
@@ -58,11 +59,6 @@ export class SearchSuggestions extends LitElement {
     if (changed.has('bleed')) {
       this.style.setProperty('--_bleed', this.bleed ?? '0px')
     }
-  }
-
-  connectedCallback() {
-    super.connectedCallback()
-    this.setAttribute('role', 'group')
   }
 
   render() {

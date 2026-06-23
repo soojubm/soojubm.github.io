@@ -5,10 +5,11 @@ import { customElement, property } from 'lit/decorators.js'
 export default class Tab extends LitElement {
   @property({ type: String }) value = ''
   @property({ type: Boolean, reflect: true }) active = false
+  @property({ type: String, reflect: true }) role = 'tab'
+  @property({ type: String, attribute: 'aria-selected', reflect: true }) ariaSelected = 'false'
 
   connectedCallback() {
     super.connectedCallback()
-    this.setAttribute('role', 'tab')
     this.addEventListener('click', this.handleClick)
   }
 
@@ -68,7 +69,7 @@ export default class Tab extends LitElement {
   protected updated(changedProperties: Map<string, unknown>) {
     if (!changedProperties.has('active')) return
 
-    this.setAttribute('aria-selected', String(this.active))
+    this.ariaSelected = String(this.active)
     this.tabIndex = this.active ? 0 : -1
   }
 

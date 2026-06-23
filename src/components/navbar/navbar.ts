@@ -156,7 +156,7 @@ export class Navbar extends LitElement {
           <mm-icon-button
             icon=${ICON_NAMES.SEARCH}
             aria-label="검색"
-            .ariaExpanded=${String(this._searchOpen)}
+            aria-expanded=${String(this._searchOpen)}
             @click=${this._toggleSearch}
           ></mm-icon-button>
           <div style="position: relative">

@@ -6,7 +6,7 @@ import type { FilterButton } from './filter-button'
 /**
  * mm-filter-button을 묶는 그룹.
  * mode 속성으로 다중 선택(체크박스형) / 단일 선택(라디오형)을 전환합니다.
- * 레이아웃은 mm-flex에 위임하고, role은 host에 직접 반영합니다.
+ * 레이아웃은 host가 담당하고, 선택 방식의 role은 내부 그룹에 명시합니다.
  */
 type FilterMode = 'single' | 'multiple'
 
@@ -28,6 +28,10 @@ export class FilterButtonGroup extends LitElement {
     resetStyles,
     css`
       :host {
+        display: block;
+      }
+
+      .filter-button-group {
         display: flex;
         gap: var(--space-2);
       }
@@ -37,20 +41,11 @@ export class FilterButtonGroup extends LitElement {
   connectedCallback() {
     super.connectedCallback()
     this.addEventListener('filter-toggle', this._onToggle as EventListener)
-    this._updateRole()
   }
 
   disconnectedCallback() {
     super.disconnectedCallback()
     this.removeEventListener('filter-toggle', this._onToggle as EventListener)
-  }
-
-  updated(changedProps: Map<string, unknown>) {
-    if (changedProps.has('mode')) this._updateRole()
-  }
-
-  private _updateRole() {
-    this.setAttribute('role', this._isMultiple ? 'group' : 'radiogroup')
   }
 
   /** "전체" 옵션을 제외한 일반 옵션 버튼 */
@@ -114,7 +109,9 @@ export class FilterButtonGroup extends LitElement {
 
   render() {
     return html`
-      <slot @slotchange=${this._adoptInitialSelection}></slot>
+      <div class="filter-button-group" role=${this._isMultiple ? 'group' : 'radiogroup'}>
+        <slot @slotchange=${this._adoptInitialSelection}></slot>
+      </div>
     `
   }
 }

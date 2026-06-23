@@ -42,9 +42,9 @@ export class Sidebar extends LitElement {
   }
 
   private _handleCategoryToggle(event: Event) {
-    const trigger = event.currentTarget as HTMLElement & { ariaExpanded?: string }
+    const trigger = event.currentTarget as HTMLElement
     const isOpen = trigger.classList.toggle('is-open')
-    trigger.ariaExpanded = String(isOpen)
+    trigger.setAttribute('aria-expanded', String(isOpen))
   }
 
   private _isCurrentPage(pageId: string) {

@@ -25,7 +25,7 @@ class ClearButton extends LitElement {
       <mm-icon-button
         icon=${ICON_NAMES.CLOSE}
         variant="tertiary"
-        .ariaLabel=${this.ariaLabel}
+        aria-label=${this.ariaLabel}
         ?disabled=${this.disabled}
       ></mm-icon-button>
     `

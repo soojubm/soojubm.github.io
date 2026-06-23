@@ -52,8 +52,8 @@ export class NumberInput extends LitElement {
             .max=${this.max}
             .step=${this.step}
             ?disabled=${this.disabled}
-            .ariaInvalid=${this.ariaInvalid}
-            .ariaDescribedBy=${this.validationText ? `${this.inputId}-validation` : null}
+            aria-invalid=${this.ariaInvalid ?? nothing}
+            aria-describedby=${this.validationText ? `${this.inputId}-validation` : nothing}
             @input=${this._handleInput}
           ></mm-input>
           <mm-icon-button

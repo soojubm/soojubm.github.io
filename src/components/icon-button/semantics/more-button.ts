@@ -26,10 +26,10 @@ export class MoreButton extends LitElement {
         icon=${ICON_NAMES.MORE_ACTIONS}
         tooltip="더보기"
         tooltip-placement="center"
-        .ariaLabel=${this.ariaLabel}
+        aria-label=${this.ariaLabel}
         aria-haspopup="menu"
-        .ariaExpanded=${this.ariaExpanded}
-        .ariaControls=${this.ariaControls}
+        aria-expanded=${this.ariaExpanded}
+        aria-controls=${this.ariaControls ?? nothing}
         ?disabled=${this.disabled}
       ></mm-icon-button>
     `

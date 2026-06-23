@@ -49,7 +49,7 @@ export class ShowMoreButton extends LitElement {
         icon=${ICON_NAMES.EXPAND}
         icon-position="trailing"
         @click=${this.handleClick}
-        .ariaExpanded=${this.ariaExpanded}
+        aria-expanded=${this.ariaExpanded}
       >
         ${this.ariaExpanded === 'true' ? this.lessLabel : this.moreLabel}
       </mm-button>

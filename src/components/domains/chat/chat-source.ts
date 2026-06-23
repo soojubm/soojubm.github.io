@@ -69,7 +69,7 @@ export class ChatSource extends LitElement {
       <mm-button
         variant="tertiary"
         size="small"
-        .ariaExpanded=${String(this._open)}
+        aria-expanded=${String(this._open)}
         aria-haspopup="dialog"
         @click=${this._handleClick}
       >
