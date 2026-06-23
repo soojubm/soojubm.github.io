@@ -1,5 +1,6 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
+import { repeat } from 'lit/directives/repeat.js'
 import type { IconName } from '../icon-button/semantics/icon-names'
 import '../button/button-group'
 import '../button/semantics/toggle-button'
@@ -94,22 +95,26 @@ export class ToggleButtonGroup extends LitElement {
   render() {
     return html`
       <mm-button-group ?stretch=${this.stretch}>
-        ${this.parsedOptions.map((option, index) => {
-          const isSelected = index === this.currentIndex
+        ${repeat(
+          this.parsedOptions,
+          option => option.value,
+          (option, index) => {
+            const isSelected = index === this.currentIndex
 
-          return html`
-            <mm-toggle-button
-              value=${option.value}
-              icon=${option.icon || nothing}
-              .ariaLabel=${option.ariaLabel ?? option.label ?? ''}
-              ?selected=${isSelected}
-              ?disabled=${option.disabled}
-              @change=${(event: Event) => this.onButtonClick(index, option, event)}
-            >
-              ${option.label ?? ''}
-            </mm-toggle-button>
-          `
-        })}
+            return html`
+              <mm-toggle-button
+                value=${option.value}
+                icon=${option.icon || nothing}
+                .ariaLabel=${option.ariaLabel ?? option.label ?? ''}
+                ?selected=${isSelected}
+                ?disabled=${option.disabled}
+                @change=${(event: Event) => this.onButtonClick(index, option, event)}
+              >
+                ${option.label ?? ''}
+              </mm-toggle-button>
+            `
+          },
+        )}
       </mm-button-group>
     `
   }

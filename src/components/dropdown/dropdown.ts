@@ -1,5 +1,6 @@
 import { LitElement, css, html, nothing, type PropertyValues } from 'lit'
 import { customElement, property, queryAssignedElements, state } from 'lit/decorators.js'
+import { repeat } from 'lit/directives/repeat.js'
 import { resetStyles } from '../../stylesheets/shared/reset.styles'
 import '../button/button'
 import { ICON_NAMES, type IconName } from '../icon-button/semantics/icon-names'
@@ -227,7 +228,11 @@ export class Dropdown extends LitElement {
         placement=${this.placement}
         role="menu"
       >
-        ${this.options.map(option => this.renderOption(option))}
+        ${repeat(
+          this.options,
+          option => option.value,
+          option => this.renderOption(option),
+        )}
       </div>
     `
   }

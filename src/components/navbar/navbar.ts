@@ -1,5 +1,6 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, query, state } from 'lit/decorators.js'
+import { repeat } from 'lit/directives/repeat.js'
 import { ICON_NAMES } from '../icon-button/semantics/icon-names'
 import soojubmImage from '../../images/soojubm.png'
 import type Sheet from '../sheet/sheet'
@@ -119,13 +120,15 @@ export class Navbar extends LitElement {
     return html`
       <mm-menu-item-group aria-label="검색 결과">
         <mm-paragraph color="light">검색 결과</mm-paragraph>
-        ${this._results.map(
-          r => html`
+        ${repeat(
+          this._results,
+          result => result.url,
+          result => html`
             <mm-menu-item-action
               icon=${ICON_NAMES.SEARCH}
-              label=${r.meta.title || r.url}
-              description=${r.excerpt ? r.excerpt.replace(/<[^>]*>/g, '') : nothing}
-              @click=${() => this._handleResultClick(r.url)}
+              label=${result.meta.title || result.url}
+              description=${result.excerpt ? result.excerpt.replace(/<[^>]*>/g, '') : nothing}
+              @click=${() => this._handleResultClick(result.url)}
             ></mm-menu-item-action>
           `,
         )}

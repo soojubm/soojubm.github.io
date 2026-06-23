@@ -1,5 +1,6 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, query, state } from 'lit/decorators.js'
+import { repeat } from 'lit/directives/repeat.js'
 
 @customElement('mm-file-upload-button')
 export class FileUploadButton extends LitElement {
@@ -133,7 +134,9 @@ export class FileUploadButton extends LitElement {
         ${this.files.length
           ? html`
               <div class="attachment-list">
-                ${this.files.map(
+                ${repeat(
+                  this.files,
+                  file => file,
                   (file, index) => html`
                     <figure class="attachment">
                       ${file.type.startsWith('image/')

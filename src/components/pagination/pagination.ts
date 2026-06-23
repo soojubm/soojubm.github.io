@@ -1,5 +1,6 @@
 import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { repeat } from 'lit/directives/repeat.js'
 import '../icon-button/semantics/prev-button'
 import '../icon-button/semantics/next-button'
 import '../icon-button/semantics/page-button'
@@ -99,7 +100,11 @@ export class Pagination extends LitElement {
           ?disabled=${currentPage === 1}
           @click=${() => this.setPage(currentPage - 1)}
         ></mm-prev-button>
-        ${this.pages.map(item => this.renderPage(item))}
+        ${repeat(
+          this.pages,
+          (item, index) => (item === 'ellipsis' ? `ellipsis-${index}` : item),
+          item => this.renderPage(item),
+        )}
         <mm-next-button
           aria-label="다음 페이지로 이동"
           ?disabled=${currentPage === this.safePageCount}
