@@ -10,7 +10,6 @@ import { emit } from '../../../utils/emit'
  */
 @customElement('mm-search-suggestion')
 export class SearchSuggestion extends LitElement {
-  /** 선택 시 전달할 검색어 (없으면 텍스트 콘텐츠 사용) */
   @property({ type: String }) value = ''
   @property({ type: String }) icon?: IconName
 

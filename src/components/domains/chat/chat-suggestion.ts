@@ -10,7 +10,6 @@ import { emit } from '../../../utils/emit'
  */
 @customElement('mm-chat-suggestion')
 export class ChatSuggestion extends LitElement {
-  /** 선택 시 전달할 값 (없으면 텍스트 콘텐츠 사용) */
   @property({ type: String }) value = ''
   @property({ type: String }) icon?: IconName
 

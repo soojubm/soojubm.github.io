@@ -10,13 +10,9 @@ import { emit } from '../../../utils/emit'
  */
 @customElement('mm-filter-button')
 export class FilterButton extends LitElement {
-  /** 옵션 식별 값 (그룹에서 selection 추적에 사용) */
   @property({ type: String }) value = ''
-  /** 선택 상태 */
   @property({ type: Boolean, reflect: true }) selected = false
-  /** 선택 방식: single(radio role) | multiple(checkbox role) */
   @property({ type: String }) mode: 'single' | 'multiple' = 'single'
-  /** "전체" 옵션 — 클릭 시 그룹의 모든 옵션을 선택/해제 */
   @property({ type: Boolean, attribute: 'select-all' }) selectAll = false
   @property({ type: Boolean }) disabled = false
 

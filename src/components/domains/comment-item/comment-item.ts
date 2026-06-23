@@ -17,9 +17,7 @@ export class CommentItem extends LitElement {
   @property({ type: String }) author = ''
   @property({ type: String }) datetime = ''
   @property({ type: String, attribute: 'avatar-src' }) avatarSrc = ''
-  /** 답글 버튼 레이블. 비우면 버튼을 숨깁니다. (예: "답글 10개") */
   @property({ type: String, attribute: 'reply-label' }) replyLabel = ''
-  /** 수정/삭제 메뉴 노출 여부 (작성자 본인) */
   @property({ type: Boolean }) editable = false
 
   @state() private _menuOpen = false

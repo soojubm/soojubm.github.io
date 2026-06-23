@@ -8,7 +8,6 @@ import type { AccordionItem } from './semantics/accordion-item'
  */
 @customElement('mm-accordion')
 export class Accordion extends LitElement {
-  /** true이면 한 번에 하나의 항목만 펼쳐집니다 (라디오 패턴) */
   @property({ type: Boolean }) exclusive = false
 
   @queryAssignedElements({ selector: 'mm-accordion-item', flatten: true })

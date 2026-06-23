@@ -15,10 +15,8 @@ import { resetStyles } from '../../../stylesheets/shared/reset.styles'
  */
 @customElement('mm-search-suggestions')
 export class SearchSuggestions extends LitElement {
-  /** 부모 패딩 값. negative margin으로 상쇄하고 동일 padding을 내부에 추가해 스크롤 영역을 확장한다. */
   @property({ type: String }) bleed?: string
 
-  /** 우측 fade mask 활성화. 스크롤 가능 여부 감지 책임은 외부에서 제어한다. */
   @property({ type: Boolean, reflect: true }) fade = false
   @property({ type: String, reflect: true }) role = 'group'
 

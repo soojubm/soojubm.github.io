@@ -16,10 +16,8 @@ export class FeatureGroup extends LitElement {
     }
   `
 
-  /** 칼럼 수. 1 | 2 | 3 | 4 */
   @property({ type: Number }) columns: Columns = 2
 
-  /** 칼럼 최대 너비. e.g. '400px' */
   @property({ attribute: 'column-max-width' }) columnMaxWidth?: string
 
   render() {

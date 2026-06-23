@@ -8,11 +8,8 @@ import { resetStyles } from '../../../../stylesheets/shared/reset.styles'
  */
 @customElement('mm-product-price')
 export class ProductPrice extends LitElement {
-  /** 판매가. e.g. '₩ 16,000' */
   @property({ type: String }) price = ''
-  /** 정가(취소선). e.g. '₩ 25,000' */
   @property({ type: String, attribute: 'original-price' }) originalPrice = ''
-  /** 할인 표기. e.g. '36% 할인' */
   @property({ type: String }) discount = ''
 
   static styles = [

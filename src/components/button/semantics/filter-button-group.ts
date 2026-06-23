@@ -13,9 +13,7 @@ type FilterMode = 'single' | 'multiple'
 
 @customElement('mm-filter-button-group')
 export class FilterButtonGroup extends LitElement {
-  /** 선택 방식: single(라디오형) | multiple(체크박스형) */
   @property({ type: String }) mode: FilterMode = 'single'
-  /** 선택된 value 목록 */
   @property({ type: Array }) selected: string[] = []
 
   @queryAssignedElements({ selector: 'mm-filter-button', flatten: true })

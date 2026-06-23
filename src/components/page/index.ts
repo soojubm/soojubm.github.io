@@ -3,13 +3,9 @@ import { customElement, property } from 'lit/decorators.js'
 
 @customElement('mm-page')
 export class Page extends LitElement {
-  /** 콘텐츠 최대 너비. 'small' = var(--layout-width-small) */
   @property({ type: String, reflect: true }) width: 'small' | 'medium' | '' = ''
-  /** 페이지 레이아웃 변형. 'chat' = full-height flex column */
   @property({ type: String, reflect: true }) layout: 'chat' | '' = ''
-  /** 페이지 배경 변형. 'subtle' = var(--color-background-subtle) */
   @property({ type: String, reflect: true }) background: 'subtle' | '' = ''
-  /** 페이지 좌우 패딩 제거 */
   @property({ type: Boolean, attribute: 'full-width', reflect: true }) fullWidth = false
 
   static styles = css`

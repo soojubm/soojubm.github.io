@@ -6,13 +6,10 @@ type Columns = 1 | 2 | 3 | 4
 
 @customElement('mm-grid')
 export class Grid extends LitElement {
-  /** 칼럼 수. 2 | 3 | 4 */
   @property({ type: Number, reflect: true }) columns: Columns = 2
 
-  /** 칼럼 최대 너비. e.g. '200px', '20rem' */
   @property({ attribute: 'column-max-width' }) columnMaxWidth?: string
 
-  /** 간격. 숫자면 --space-{n}, 그 외엔 그대로. e.g. '4', '1rem' */
   @property({ type: String }) gap = '4'
 
   static styles = gridStyles

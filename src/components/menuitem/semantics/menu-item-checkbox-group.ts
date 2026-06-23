@@ -11,9 +11,7 @@ import { emit } from '../../../utils/emit'
  */
 @customElement('mm-menu-item-checkbox-group')
 export class MenuItemCheckboxGroup extends LitElement {
-  /** 내부 그룹의 접근 가능한 이름 */
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = ''
-  /** 선택된 value 목록 */
   @property({ type: Array }) values: string[] = []
 
   @queryAssignedElements({ selector: 'mm-menu-item-checkbox', flatten: true })

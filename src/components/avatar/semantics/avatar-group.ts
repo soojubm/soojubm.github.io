@@ -4,7 +4,6 @@ import { resetStyles } from '../../../stylesheets/shared/reset.styles'
 
 @customElement('mm-avatar-group')
 export class AvatarGroup extends LitElement {
-  /** 아바타 이미지 URL 배열. 빈 문자열이면 기본 아바타로 표시 */
   @property({
     type: Array,
     converter: value => {

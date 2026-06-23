@@ -8,7 +8,6 @@ import { resetStyles } from '../../../stylesheets/shared/reset.styles'
  */
 @customElement('mm-typing-indicator')
 export class TypingIndicator extends LitElement {
-  /** 점 색상 */
   @property({ type: String }) color = 'var(--color-foreground)'
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = '입력 중'
 

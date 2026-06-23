@@ -23,7 +23,6 @@ export class SocialLinks extends LitElement {
   @property({ type: String }) instagram = ''
   @property({ type: String }) notion = ''
 
-  /** compact: 아이콘만 표시 / 기본: label + 외부링크 아이콘 */
   @property({ type: Boolean }) compact = false
 
   static styles = [

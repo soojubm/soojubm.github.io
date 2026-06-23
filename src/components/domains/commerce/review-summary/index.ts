@@ -9,9 +9,7 @@ import { ICON_NAMES } from '../../../icon-button/semantics/icon-names'
  */
 @customElement('mm-review-summary')
 export class ReviewSummary extends LitElement {
-  /** 평균 별점. */
   @property({ type: Number }) rating = 0
-  /** 전체 리뷰 수. */
   @property({ type: Number, attribute: 'review-count' }) reviewCount = 0
 
   static styles = [

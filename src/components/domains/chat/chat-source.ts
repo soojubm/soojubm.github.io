@@ -16,15 +16,10 @@ import { emit } from '../../../utils/emit'
  */
 @customElement('mm-chat-source')
 export class ChatSource extends LitElement {
-  /** 소스 URL */
   @property({ type: String }) href = ''
-  /** 시트에 표시할 제목 */
   @property({ type: String }) heading = ''
-  /** 시트에 표시할 설명 */
   @property({ type: String }) description = ''
-  /** 칩에 표시할 레이블 (없으면 도메인 자동 추출) */
   @property({ type: String }) label = ''
-  /** 칩/시트에 표시할 Iconoir 아이콘 이름 */
   @property({ type: String }) icon?: IconName
 
   @state() private _open = false

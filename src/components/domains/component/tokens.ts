@@ -9,9 +9,7 @@ import { componentTokensStyles, tokenStyles } from './tokens.styles'
  */
 @customElement('mm-token')
 export class Token extends LitElement {
-  /** CSS 변수 이름 (예: --avatar-size) */
   @property({ type: String }) name = ''
-  /** 기본값 (예: var(--size-medium)) */
   @property({ type: String }) default = ''
 
   static styles = tokenStyles

@@ -11,11 +11,8 @@ import { uniqueId } from '../../../utils/unique-id'
  */
 @customElement('mm-accordion-item')
 export class AccordionItem extends LitElement {
-  /** 접기/펼치기 트리거 텍스트 */
   @property({ type: String }) summary = ''
-  /** 펼쳐진 상태 */
   @property({ type: Boolean, reflect: true }) open = false
-  /** 비활성 상태 */
   @property({ type: Boolean }) disabled = false
 
   private readonly _panelId = uniqueId('accordion-panel')

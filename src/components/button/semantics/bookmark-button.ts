@@ -14,7 +14,6 @@ export class BookmarkButton extends LitElement {
   @property({ type: Boolean, reflect: true }) selected = false
   @property({ type: String }) value = ''
   @property({ type: Boolean }) disabled = false
-  /** star | bookmark | heart */
   @property({ type: String }) shape: 'star' | 'bookmark' | 'heart' = 'star'
 
   static styles = [

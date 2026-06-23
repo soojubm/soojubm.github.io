@@ -10,13 +10,9 @@ import { ICON_NAMES } from '../../../icon-button/semantics/icon-names'
  */
 @customElement('mm-review-item')
 export class ReviewItem extends LitElement {
-  /** 채워진 별 개수. */
   @property({ type: Number }) rating = 5
-  /** 리뷰 본문. */
   @property({ type: String }) content = ''
-  /** 작성자 이름. */
   @property({ type: String }) author = ''
-  /** 작성 일시. */
   @property({ type: String }) datetime = ''
 
   static styles = [
