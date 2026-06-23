@@ -4,7 +4,6 @@ import { resetStyles } from '../../stylesheets/shared/reset.styles'
 
 type Direction = 'row' | 'column'
 type Justify = 'start' | 'center' | 'end' | 'between' | 'around'
-type Align = 'start' | 'center' | 'end' | 'stretch' | 'baseline'
 
 const justifyMap: Record<Justify, string> = {
   start: 'flex-start',
@@ -14,19 +13,10 @@ const justifyMap: Record<Justify, string> = {
   around: 'space-around',
 }
 
-const alignMap: Record<Align, string> = {
-  start: 'flex-start',
-  center: 'center',
-  end: 'flex-end',
-  stretch: 'stretch',
-  baseline: 'baseline',
-}
-
 @customElement('mm-button-group')
 export class ButtonGroup extends LitElement {
   @property({ type: String }) direction: Direction = 'row'
   @property({ type: String, attribute: 'justify-content' }) justifyContent: Justify = 'start'
-  @property({ type: String }) align: Align = 'center'
   @property({ type: Boolean }) wrap = false
   @property({ type: Boolean, reflect: true }) stretch = false
 
@@ -56,7 +46,7 @@ export class ButtonGroup extends LitElement {
     const styles = [
       `flex-direction: ${this.direction}`,
       `justify-content: ${justifyMap[this.justifyContent] ?? 'flex-start'}`,
-      `align-items: ${alignMap[this.align] ?? 'center'}`,
+      `align-items: center`,
       `flex-wrap: ${this.wrap ? 'wrap' : 'nowrap'}`,
     ].join('; ')
 
