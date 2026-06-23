@@ -10,14 +10,10 @@ export class Textarea extends LitElement {
   @property({ type: String }) value = ''
   @property({ type: String }) name = ''
   @property({ type: String }) placeholder = ''
-  @property({ type: String, attribute: 'aria-describedby' }) override ariaDescribedBy:
-    | string
-    | null = null
+  @property({ type: String, attribute: 'aria-describedby' }) ariaDescribedBy: string | null = null
   @property({ type: Number }) rows = 3
   @property({ type: Boolean, reflect: true }) disabled = false
-  @property({ type: String, attribute: 'aria-invalid', reflect: true }) override ariaInvalid:
-    | string
-    | null = null
+  @property({ type: String, attribute: 'aria-invalid' }) ariaInvalid: string | null = null
 
   @query('textarea') protected _textarea!: HTMLTextAreaElement
 

@@ -10,7 +10,7 @@ import { resetStyles } from '../../../stylesheets/shared/reset.styles'
 export class TypingIndicator extends LitElement {
   /** 점 색상 */
   @property({ type: String }) color = 'var(--color-foreground)'
-  @property({ type: String, attribute: 'aria-label' }) override ariaLabel = '입력 중'
+  @property({ type: String, attribute: 'aria-label' }) ariaLabel = '입력 중'
 
   static styles = [
     resetStyles,

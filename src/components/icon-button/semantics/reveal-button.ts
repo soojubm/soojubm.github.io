@@ -9,7 +9,7 @@ import { ICON_NAMES } from './icon-names'
  */
 @customElement('mm-reveal-button')
 export class RevealButton extends LitElement {
-  @property({ type: Boolean, reflect: true }) revealed = false
+  @property({ type: Boolean }) revealed = false
   @property({ type: Boolean, reflect: true }) disabled = false
 
   static styles = [iconButtonStyles]

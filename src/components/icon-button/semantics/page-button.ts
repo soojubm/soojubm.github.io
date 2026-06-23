@@ -9,11 +9,10 @@ import { iconButtonStyles } from '../icon-button.styles'
 @customElement('mm-page-button')
 export class PageButton extends LitElement {
   @property({ type: Number }) page = 1
-  @property({ type: String, attribute: 'aria-current', reflect: true }) override ariaCurrent:
-    | string
-    | null = null
+  @property({ type: String, attribute: 'aria-current', reflect: true }) ariaCurrent: string | null =
+    null
   @property({ type: Boolean, reflect: true }) disabled = false
-  @property({ type: String, attribute: 'aria-label' }) override ariaLabel = ''
+  @property({ type: String, attribute: 'aria-label' }) ariaLabel = ''
 
   static styles = [
     iconButtonStyles,

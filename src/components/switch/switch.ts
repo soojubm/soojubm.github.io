@@ -4,8 +4,8 @@ import { switchStyles } from './switch.styles'
 
 @customElement('mm-switch')
 export class Switch extends LitElement {
-  @property({ type: String }) name?: string
-  @property({ type: String }) size?: string
+  @property({ type: String }) name = ''
+  @property({ type: String }) size = ''
   @property({ type: Boolean, reflect: true }) checked = false
   @property({ type: Boolean, reflect: true }) disabled = false
 

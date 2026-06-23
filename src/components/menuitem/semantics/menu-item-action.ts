@@ -17,14 +17,11 @@ export class MenuItemAction extends LitElement {
   @property({ type: String, attribute: 'avatar-src' }) avatarSrc = ''
   @property({ type: String, attribute: 'avatar-variant' }) avatarVariant = 'tertiary'
   @property({ type: Boolean, reflect: true }) disabled = false
-  @property({ type: String }) override role = 'menuitem'
-  @property({ type: String, attribute: 'aria-controls' }) override ariaControls: string | null =
-    null
-  @property({ type: String, attribute: 'aria-expanded' }) override ariaExpanded: string | null =
-    null
-  @property({ type: String, attribute: 'aria-haspopup' }) override ariaHasPopup: string | null =
-    null
-  @property({ type: String, attribute: 'aria-current' }) override ariaCurrent: string | null = null
+  @property({ type: String }) role = 'menuitem'
+  @property({ type: String, attribute: 'aria-controls' }) ariaControls: string | null = null
+  @property({ type: String, attribute: 'aria-expanded' }) ariaExpanded: string | null = null
+  @property({ type: String, attribute: 'aria-haspopup' }) ariaHasPopup: string | null = null
+  @property({ type: String, attribute: 'aria-current' }) ariaCurrent: string | null = null
 
   static styles = [menuItemStyles]
 

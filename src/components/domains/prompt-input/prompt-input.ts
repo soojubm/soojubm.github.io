@@ -12,7 +12,7 @@ export class PromptInput extends LitElement {
   @property({ type: String }) placeholder = 'Ask me anything...'
   @property({ type: String }) model = 'claude-sonnet'
   @property({ type: String, attribute: 'submit-label' }) submitLabel = '전송'
-  @property({ type: Boolean, attribute: 'is-loading', reflect: true }) isLoading = false
+  @property({ type: Boolean, attribute: 'is-loading' }) isLoading = false
   @property({ type: Boolean, attribute: 'hidden-attachment' }) hiddenAttachment = false
 
   @query('mm-textarea') private _textarea?: Textarea

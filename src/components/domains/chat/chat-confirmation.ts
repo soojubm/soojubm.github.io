@@ -16,7 +16,7 @@ export type ConfirmationStatus = 'pending' | 'accepted' | 'rejected'
 @customElement('mm-chat-confirmation')
 export class ChatConfirmation extends LitElement {
   /** 현재 상태 */
-  @property({ type: String, reflect: true }) status: ConfirmationStatus = 'pending'
+  @property({ type: String }) status: ConfirmationStatus = 'pending'
   /** 요청 메시지 (없으면 슬롯 콘텐츠 사용) */
   @property({ type: String }) message = ''
   /** 승인 버튼 레이블 */

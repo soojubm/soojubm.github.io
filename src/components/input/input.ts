@@ -14,11 +14,11 @@ export class Input extends LitElement {
   @property({ attribute: 'input-id' }) inputId = ''
   @property() type = 'text'
   @property() value = ''
-  @property() name?: string
-  @property() placeholder?: string
+  @property() name = ''
+  @property() placeholder = ''
   @property({ type: Boolean }) disabled = false
-  @property({ type: String, attribute: 'aria-invalid' }) override ariaInvalid: string | null = null
-  @property({ attribute: 'aria-describedby' }) override ariaDescribedBy: string | null = null
+  @property({ type: String, attribute: 'aria-invalid' }) ariaInvalid: string | null = null
+  @property({ attribute: 'aria-describedby' }) ariaDescribedBy: string | null = null
   @property({ type: Number }) min?: number
   @property({ type: Number }) max?: number
   @property({ type: Number }) step?: number

@@ -8,14 +8,12 @@ export class TextareaField extends LitElement {
   @property({ type: String }) value = ''
   @property({ type: String }) name = ''
   @property({ type: String }) placeholder = ''
-  @property({ type: String }) label = ''
-  @property({ type: String }) helper = ''
+  @property({ type: String }) label?: string
+  @property({ type: String }) helper?: string
   @property({ type: Number }) rows = 3
   @property({ type: Boolean }) optional = false
   @property({ type: Boolean, reflect: true }) disabled = false
-  @property({ type: String, attribute: 'aria-invalid', reflect: true }) override ariaInvalid:
-    | string
-    | null = null
+  @property({ type: String, attribute: 'aria-invalid' }) ariaInvalid: string | null = null
 
   static styles = textfieldStyles
 

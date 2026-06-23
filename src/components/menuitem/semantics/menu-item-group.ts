@@ -5,7 +5,7 @@ import { resetStyles } from '../../../stylesheets/shared/reset.styles'
 @customElement('mm-menu-item-group')
 export class MenuItemGroup extends LitElement {
   /** 기본 menu, 다중 선택은 group, 단일 선택은 radiogroup */
-  @property({ type: String, reflect: true }) override role = 'menu'
+  @property({ type: String, reflect: true }) role = 'menu'
 
   static styles = [
     resetStyles,

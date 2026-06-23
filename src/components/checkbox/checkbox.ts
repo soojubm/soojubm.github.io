@@ -22,8 +22,7 @@ export class Checkbox extends LitElement {
   @property({ type: Boolean, reflect: true })
   indeterminate = false
 
-  @property({ type: String, attribute: 'aria-controls' }) override ariaControls: string | null =
-    null
+  @property({ type: String, attribute: 'aria-controls' }) ariaControls: string | null = null
 
   static styles = [checkboxStyles]
 

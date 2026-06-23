@@ -9,10 +9,10 @@ type PaginationItem = number | 'ellipsis'
 
 @customElement('mm-pagination')
 export class Pagination extends LitElement {
-  @property({ type: Number, attribute: 'current-page', reflect: true }) currentPage = 1
+  @property({ type: Number, attribute: 'current-page' }) currentPage = 1
   @property({ type: Number, attribute: 'page-count' }) pageCount = 1
   @property({ type: Number, attribute: 'sibling-count' }) siblingCount = 1
-  @property({ type: String, attribute: 'aria-label' }) override ariaLabel = 'pagination'
+  @property({ type: String, attribute: 'aria-label' }) ariaLabel = 'pagination'
 
   static styles = paginationStyles
 

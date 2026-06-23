@@ -6,7 +6,7 @@ import { linkStyles } from './link.styles'
 @customElement('mm-link')
 class Link extends LitElement {
   @property({ type: String }) href = ''
-  @property({ type: String }) target = undefined
+  @property({ type: String }) target = ''
   @property({ type: Boolean }) external = false
 
   static styles = [linkStyles]

@@ -116,7 +116,7 @@ export class ChatReasoningFlow extends LitElement {
  */
 @customElement('mm-chat-reasoning')
 export class ChatReasoning extends LitElement {
-  @property({ type: Boolean, reflect: true }) thinking = false
+  @property({ type: Boolean }) thinking = false
   @property({ type: String }) duration = ''
   @property({ type: Number }) interval = 2200
 

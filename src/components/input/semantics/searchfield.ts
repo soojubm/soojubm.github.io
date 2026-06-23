@@ -7,7 +7,7 @@ import '../input'
 @customElement('mm-searchfield')
 class SearchField extends LitElement {
   @property({ type: String }) value = ''
-  @property({ type: String }) placeholder?: string
+  @property({ type: String }) placeholder = ''
   @property({ type: Boolean, reflect: true }) disabled = false
   @property({ type: String, reflect: true }) size: 'small' | '' = ''
 

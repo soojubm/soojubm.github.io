@@ -5,8 +5,8 @@ import { radioStyles } from './radio.styles'
 @customElement('mm-radio')
 export class Radio extends LitElement {
   // 인스턴스 전역 내장 프로퍼티인 id 오버라이드 데코레이터 제거
-  @property({ type: String }) name?: string
-  @property({ type: String }) value?: string
+  @property({ type: String }) name = ''
+  @property({ type: String }) value = ''
   @property({ type: Boolean, reflect: true }) checked = false
   @property({ type: Boolean, reflect: true }) disabled = false
 

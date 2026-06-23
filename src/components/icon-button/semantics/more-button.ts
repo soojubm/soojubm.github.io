@@ -8,11 +8,9 @@ import '../icon-button'
  */
 @customElement('mm-more-button')
 export class MoreButton extends LitElement {
-  @property({ type: String, attribute: 'aria-label' }) override ariaLabel = '더보기'
-  @property({ type: String, attribute: 'aria-expanded', reflect: true }) override ariaExpanded =
-    'false'
-  @property({ type: String, attribute: 'aria-controls' }) override ariaControls: string | null =
-    null
+  @property({ type: String, attribute: 'aria-label' }) ariaLabel = '더보기'
+  @property({ type: String, attribute: 'aria-expanded', reflect: true }) ariaExpanded = 'false'
+  @property({ type: String, attribute: 'aria-controls' }) ariaControls: string | null = null
   @property({ type: Boolean, reflect: true }) disabled = false
 
   static styles = css`

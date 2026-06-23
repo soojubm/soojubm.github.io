@@ -18,9 +18,8 @@ export class MenuItemLink extends LitElement {
   @property({ type: String }) href = ''
   @property({ type: String }) target = '_blank'
   @property({ type: Boolean, attribute: 'hidden-trailing' }) hiddenTrailing = false
-  @property({ type: String, attribute: 'aria-current', reflect: true }) override ariaCurrent:
-    | string
-    | null = null
+  @property({ type: String, attribute: 'aria-current', reflect: true }) ariaCurrent: string | null =
+    null
 
   static styles = [menuItemStyles]
 

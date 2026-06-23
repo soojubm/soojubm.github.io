@@ -8,11 +8,9 @@ import '../icon-button'
  */
 @customElement('mm-hamburger-button')
 export class HamburgerButton extends LitElement {
-  @property({ type: String, attribute: 'aria-label' }) override ariaLabel = '전체 메뉴'
-  @property({ type: String, attribute: 'aria-expanded', reflect: true }) override ariaExpanded =
-    'false'
-  @property({ type: String, attribute: 'aria-controls' }) override ariaControls: string | null =
-    null
+  @property({ type: String, attribute: 'aria-label' }) ariaLabel = '전체 메뉴'
+  @property({ type: String, attribute: 'aria-expanded', reflect: true }) ariaExpanded = 'false'
+  @property({ type: String, attribute: 'aria-controls' }) ariaControls: string | null = null
 
   static styles = css`
     :host {

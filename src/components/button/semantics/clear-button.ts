@@ -5,7 +5,7 @@ import '../../icon-button/icon-button'
 
 @customElement('mm-clear-button')
 class ClearButton extends LitElement {
-  @property({ type: String, attribute: 'aria-label' }) override ariaLabel = ''
+  @property({ type: String, attribute: 'aria-label' }) ariaLabel = ''
   @property({ type: Boolean, reflect: true }) disabled = false
 
   static styles = css`

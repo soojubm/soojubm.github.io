@@ -11,7 +11,7 @@ export class Avatar extends LitElement {
   @property({ type: String }) src?: string
   @property({ type: String }) icon?: IconName
 
-  @property({ type: String, attribute: 'aria-label' }) override ariaLabel = ''
+  @property({ type: String, attribute: 'aria-label' }) ariaLabel = ''
 
   static styles = [avatarStyles]
 

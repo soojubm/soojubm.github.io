@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 
 @customElement('mm-textfield-label')
 export class TextfieldLabel extends LitElement {
-  @property({ type: String, attribute: 'for' }) htmlFor?: string
+  @property({ type: String, attribute: 'for' }) htmlFor = ''
   @property({ type: Boolean }) optional = false
 
   static styles = css`
@@ -19,7 +19,7 @@ export class TextfieldLabel extends LitElement {
 
   render() {
     return html`
-      <label for=${this.htmlFor ?? nothing}>
+      <label for=${this.htmlFor || nothing}>
         <slot></slot>
         ${this.optional
           ? html`

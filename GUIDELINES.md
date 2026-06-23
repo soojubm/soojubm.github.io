@@ -1,5 +1,11 @@
 # Project Guidelines
 
+## 가이드 작성 원칙
+
+- 가이드는 예시 나열보다 원칙 중심으로 짧게 작성한다.
+- 특정 컴포넌트명은 고유 규칙을 설명할 때만 최소한으로 언급한다.
+- 같은 방향의 규칙은 중복하지 않고 하나의 문장으로 통합한다.
+
 ## 컴포넌트 구조
 
 - 새 컴포넌트와 패턴은 기존 구조·네이밍을 우선 따르고, 꼭 필요할 때만 추가한다.
@@ -63,6 +69,7 @@
 - 스타일 선언은 레이아웃, 크기, 간격, 경계, 배경, 위치 순서로 정리한다.
 - 같은 맥락 안에는 구분선을 넣지 않고, 서로 다른 맥락 사이에만 separator 컴포넌트를 사용한다.
 - 콘텐츠나 레이아웃 구획을 위해 CSS `border`를 직접 사용하지 않는다.
+- Shadow DOM 내부 구조는 외부 스타일 API로 노출하지 않고, 스타일 변형은 prop, token, CSS custom property로만 제공한다.
 - Lit 컴포넌트의 host 상태 선택자는 `:host` 내부에 중첩하지 않고 최상위 `:host([attr])`, `:host(:state)` 형태로 작성한다.
 - `display: contents`는 사용하지 않고, 호스트에는 역할에 맞는 박스를 명시한다.
 - Light DOM은 외부 스타일 참여가 반드시 필요한 컴포넌트로 제한하고 이유를 남긴다.
@@ -72,6 +79,9 @@
 - CustomEvent 이름은 `kebab-case`로 작성하며, 같은 의미의 camelCase 호환 이벤트를 중복 발행하지 않는다.
 - Lit의 `render()`는 순수하게 유지하고, 부수효과는 handler나 lifecycle에서 처리한다.
 - Lit 바인딩은 attribute, property, Boolean attribute의 역할에 맞게 구분해 사용한다.
+- `reflect: true`는 외부 CSS 선택자나 DOM attribute 조회가 필요한 공개 상태에만 사용한다.
+- 조건부 렌더링을 만드는 문자열 prop은 optional로 두고, 단순 값 문자열은 빈 문자열을 기본값으로 둔다.
+- 선택 숫자 prop은 `??` 기준으로 처리한다.
 - 전역 이벤트와 연결 중 생성한 자원은 lifecycle에서 대칭적으로 정리한다.
 - 외부 API는 `@property`, 내부 반응형 상태는 `@state`로 구분한다.
 - 고정된 내부 DOM 조회는 Lit query decorator를 우선 사용한다.

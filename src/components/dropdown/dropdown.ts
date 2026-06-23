@@ -254,7 +254,7 @@ export class Dropdown extends LitElement {
   protected renderDefaultOption(option: DropdownOption) {
     return html`
       <mm-menu-item-action
-        icon=${option.icon ?? nothing}
+        icon=${option.icon || nothing}
         aria-current=${option.value === this.value ? 'true' : nothing}
         @click="${() => this.selectOption(option)}"
       >

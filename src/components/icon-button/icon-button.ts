@@ -12,23 +12,19 @@ class IconButton extends LitElement {
   @property({ type: String }) icon?: IconName
   @property({ type: String, reflect: true }) variant: IconButtonVariant = 'tertiary'
   @property({ type: String, reflect: true }) size: IconButtonSize = 'medium'
-  @property({ type: String, attribute: 'aria-label' }) override ariaLabel = ''
+  @property({ type: String, attribute: 'aria-label' }) ariaLabel = ''
   @property({ type: String }) tooltip = ''
   @property({ type: String, attribute: 'tooltip-placement' }) tooltipPlacement = ''
   @property({ type: Boolean, reflect: true }) disabled = false
-  @property({ type: String }) override role = ''
-  @property({ type: String, attribute: 'aria-haspopup' }) override ariaHasPopup: string | null =
-    null
-  @property({ type: String, attribute: 'aria-expanded', reflect: true }) override ariaExpanded:
+  @property({ type: String }) role = ''
+  @property({ type: String, attribute: 'aria-haspopup' }) ariaHasPopup: string | null = null
+  @property({ type: String, attribute: 'aria-expanded', reflect: true }) ariaExpanded:
     | string
     | null = null
-  @property({ type: String, attribute: 'aria-pressed' }) override ariaPressed: string | null = null
-  @property({ type: String, attribute: 'aria-checked' }) override ariaChecked: string | null = null
-  @property({ type: String, attribute: 'aria-controls' }) override ariaControls: string | null =
-    null
-  @property({ type: String, attribute: 'aria-describedby' }) override ariaDescribedBy:
-    | string
-    | null = null
+  @property({ type: String, attribute: 'aria-pressed' }) ariaPressed: string | null = null
+  @property({ type: String, attribute: 'aria-checked' }) ariaChecked: string | null = null
+  @property({ type: String, attribute: 'aria-controls' }) ariaControls: string | null = null
+  @property({ type: String, attribute: 'aria-describedby' }) ariaDescribedBy: string | null = null
 
   static styles = [interactiveControlStyles, iconButtonStyles]
 

@@ -5,8 +5,7 @@ import type { Checkbox } from '../checkbox'
 
 @customElement('mm-master-checkbox')
 export class MasterCheckbox extends LitElement {
-  @property({ type: String, attribute: 'aria-controls' }) override ariaControls: string | null =
-    null
+  @property({ type: String, attribute: 'aria-controls' }) ariaControls: string | null = null
   @property({ type: String, reflect: true }) size = 'large'
   @property({ type: Boolean, reflect: true }) checked = false
   @property({ type: Boolean, reflect: true }) indeterminate = false

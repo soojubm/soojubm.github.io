@@ -5,8 +5,8 @@ import './textfield'
 @customElement('mm-passwordfield')
 class PasswordField extends LitElement {
   @property({ type: String }) value = ''
-  @property({ type: String }) name?: string
-  @property({ type: String }) placeholder?: string
+  @property({ type: String }) name = ''
+  @property({ type: String }) placeholder = ''
   @property({ type: String }) label?: string
   @property({ type: String }) helper?: string
   @property({ type: String, attribute: 'validation-text' }) validationText?: string
@@ -14,7 +14,7 @@ class PasswordField extends LitElement {
   @property({ type: Boolean }) optional = false
   @property({ type: Boolean, attribute: 'hidden-label', reflect: true }) hiddenLabel = false
   @property({ type: Boolean, reflect: true }) disabled = false
-  @property({ type: String, attribute: 'aria-invalid' }) override ariaInvalid: string | null = null
+  @property({ type: String, attribute: 'aria-invalid' }) ariaInvalid: string | null = null
 
   @state() private revealed = false
 

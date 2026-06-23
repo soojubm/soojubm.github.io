@@ -9,8 +9,7 @@ import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
  */
 @customElement('mm-show-more-button')
 export class ShowMoreButton extends LitElement {
-  @property({ type: String, attribute: 'aria-expanded', reflect: true }) override ariaExpanded =
-    'false'
+  @property({ type: String, attribute: 'aria-expanded', reflect: true }) ariaExpanded = 'false'
   @property({ type: String, attribute: 'more-label' }) moreLabel = 'Show more'
   @property({ type: String, attribute: 'less-label' }) lessLabel = 'Show less'
 
