@@ -25,7 +25,7 @@ export class RadioGroup extends LitElement {
   private _syncChildren() {
     this._radios.forEach(radio => {
       if (this.name) radio.name = this.name
-      if (this.disabled) radio.disabled = this.disabled
+      radio.disabled = this.disabled
       radio.checked = radio.value === this.value
     })
   }
@@ -54,7 +54,7 @@ export class RadioGroup extends LitElement {
 
   render() {
     return html`
-      <fieldset class="radio-group" @change=${this._handleRadioChange}>
+      <fieldset class="radio-group" ?disabled=${this.disabled} @change=${this._handleRadioChange}>
         <legend class="visually-hidden">${this.label}</legend>
         <slot @slotchange=${this._syncChildren}></slot>
       </fieldset>

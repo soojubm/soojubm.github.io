@@ -29,6 +29,7 @@ export const menuItemStyles = css`
       }
     }
 
+    &[disabled],
     &[aria-disabled='true'] {
       opacity: 0.5;
       pointer-events: none;

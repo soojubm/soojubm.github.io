@@ -1,7 +1,9 @@
 import { LitElement, css, html, nothing } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
+import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
 import type { IconName } from '../../icon-button/semantics/icon-names'
 import '../../list-row/list-row'
+
+type DisableableElement = HTMLElement & { disabled?: boolean }
 
 /**
  * 설정 화면의 한 행. mm-list-row를 합성하고
@@ -19,6 +21,9 @@ export class SettingItem extends LitElement {
 
   @property({ type: Boolean, reflect: true }) disabled = false
 
+  @queryAssignedElements({ slot: 'action', flatten: true })
+  private _actions!: DisableableElement[]
+
   static styles = css`
     :host {
       display: block;
@@ -33,9 +38,21 @@ export class SettingItem extends LitElement {
   render() {
     return html`
       <mm-list-row icon=${this.icon || nothing} label=${this.label} description=${this.description}>
-        <slot name="action" slot="trailing"></slot>
+        <slot name="action" slot="trailing" @slotchange=${this._syncActions}></slot>
       </mm-list-row>
     `
+  }
+
+  protected updated(changed: Map<string, unknown>) {
+    if (changed.has('disabled')) this._syncActions()
+  }
+
+  private _syncActions() {
+    this._actions.forEach(action => {
+      if ('disabled' in action) {
+        action.disabled = this.disabled
+      }
+    })
   }
 }
 

@@ -32,7 +32,7 @@ export class MenuItemAction extends LitElement {
         class="item"
         role=${this.role}
         data-interactive
-        aria-disabled=${this.disabled ? 'true' : nothing}
+        ?disabled=${this.disabled}
         aria-controls=${this.ariaControls ?? nothing}
         aria-expanded=${this.ariaExpanded ?? nothing}
         aria-haspopup=${this.ariaHasPopup ?? nothing}
