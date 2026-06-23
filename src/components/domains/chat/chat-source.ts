@@ -1,6 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 import { resetStyles } from '../../../stylesheets/shared/reset.styles'
+import { OutsideClickController } from '../../../controllers/outside-click-controller'
 import type { IconName } from '../../icon-button/semantics/icon-names'
 import '../../button/button'
 import '../../button/button-group'
@@ -93,23 +94,15 @@ export class ChatSource extends LitElement {
 export class ChatSourceGroup extends LitElement {
   @state() private _activeSource: ChatSource | null = null
 
-  connectedCallback() {
-    super.connectedCallback()
-    document.addEventListener('pointerdown', this._closeOnOutside)
-  }
-
-  disconnectedCallback() {
-    document.removeEventListener('pointerdown', this._closeOnOutside)
-    super.disconnectedCallback()
-  }
-
-  private _closeOnOutside = (e: PointerEvent) => {
-    if (!this._activeSource) return
-    if (!e.composedPath().includes(this)) {
-      this._activeSource._setOpen(false)
+  // 바깥을 누르면 열려 있는 소스 시트를 닫는다.
+  private _outsideClick = new OutsideClickController(
+    this,
+    () => {
+      this._activeSource?._setOpen(false)
       this._activeSource = null
-    }
-  }
+    },
+    { isActive: () => this._activeSource !== null },
+  )
 
   private _handleToggle(e: CustomEvent) {
     const source = e.detail.source as ChatSource

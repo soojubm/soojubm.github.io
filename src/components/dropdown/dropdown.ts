@@ -2,6 +2,7 @@ import { LitElement, css, html, nothing, type PropertyValues } from 'lit'
 import { customElement, property, queryAssignedElements, state } from 'lit/decorators.js'
 import { repeat } from 'lit/directives/repeat.js'
 import { resetStyles } from '../../stylesheets/shared/reset.styles'
+import { OutsideClickController } from '../../controllers/outside-click-controller'
 import '../button/button'
 import { ICON_NAMES, type IconName } from '../icon-button/semantics/icon-names'
 import '../menuitem/semantics/menu-item-action'
@@ -35,12 +36,14 @@ export class Dropdown extends LitElement {
   static styles = [
     resetStyles,
     css`
-      .dropdown {
+      :host {
         --dropdown-offset: var(--space-1);
         --dropdown-z-index: var(--zindex-loader);
         --dropdown-min-width: calc(var(--width-small) - var(--space-4) * 5);
         --dropdown-max-height: var(--width-small);
+      }
 
+      .dropdown {
         position: relative;
         width: 100%;
       }
@@ -124,23 +127,14 @@ export class Dropdown extends LitElement {
     `,
   ]
 
-  connectedCallback(): void {
-    super.connectedCallback()
-    document.addEventListener('click', this.handleOutsideClick)
-  }
+  // 바깥 클릭 시 닫기. document 리스너 등록/해제는 컨트롤러가 대칭으로 관리한다.
+  private _outsideClick = new OutsideClickController(this, () => (this.isOpen = false), {
+    event: 'click',
+    isActive: () => this.isOpen,
+  })
 
   firstUpdated() {
     this.syncOptions()
-  }
-
-  disconnectedCallback(): void {
-    super.disconnectedCallback()
-    document.removeEventListener('click', this.handleOutsideClick)
-  }
-
-  // composedPath()로 shadow 경계를 넘어 판별 — 트리거가 다른 컴포넌트의 shadow DOM에 끼워져도 동작
-  private handleOutsideClick = (e: MouseEvent) => {
-    if (this.isOpen && !e.composedPath().includes(this)) this.isOpen = false
   }
 
   protected get defaultOptions(): DropdownOption[] {
