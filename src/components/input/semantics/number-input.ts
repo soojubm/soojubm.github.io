@@ -48,6 +48,7 @@ export class NumberInput extends LitElement {
             .value=${this.value}
             .name=${this.name}
             .placeholder=${this.placeholder}
+            aria-label=${this.label ?? this.placeholder ?? nothing}
             .min=${this.min}
             .max=${this.max}
             .step=${this.step}

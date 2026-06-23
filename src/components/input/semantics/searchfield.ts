@@ -26,6 +26,7 @@ class SearchField extends LitElement {
           .type=${'search'}
           .value=${this.value}
           .placeholder=${this.placeholder}
+          aria-label=${this.placeholder || '검색'}
           ?disabled=${this.disabled}
           @input=${this._handleInput}
         ></mm-input>

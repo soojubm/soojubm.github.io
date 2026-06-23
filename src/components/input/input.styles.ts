@@ -53,13 +53,6 @@ export const inputStyles = css`
     }
   }
 
-  /* mm-input 호스트가 flex item이 되고 내부 input은 호스트 너비를 채운다. */
-  mm-input {
-    display: flex;
-    flex: 1 1 auto;
-    min-width: 0;
-  }
-
   textarea {
     width: 100%;
     min-width: 0;
@@ -84,78 +77,6 @@ export const inputStyles = css`
     }
     &::placeholder {
       color: var(--color-foreground-light);
-    }
-  }
-
-  input {
-    width: 100%;
-    min-width: 0;
-    height: 100%;
-    border: 0;
-    outline: none;
-    background: inherit;
-    font: inherit;
-    color: var(--color-foreground);
-
-    &:focus-visible {
-      outline: 0;
-    }
-    &::placeholder {
-      color: var(--color-foreground-light);
-    }
-    &:read-only {
-      color: var(--color-foreground-light);
-      cursor: default;
-    }
-    &:disabled {
-      opacity: 0.5;
-      cursor: not-allowed;
-    }
-    &[type='text'] {
-      -webkit-appearance: none;
-    }
-    &[type='number'] {
-      -webkit-appearance: none;
-      -moz-appearance: textfield;
-
-      &::-webkit-inner-spin-button,
-      &::-webkit-outer-spin-button {
-        -webkit-appearance: none;
-        -moz-appearance: none;
-      }
-    }
-    &[type='date'] {
-      display: block;
-      max-height: var(--size-large);
-      -webkit-appearance: none;
-
-      &::-webkit-calendar-picker-indicator {
-        width: 100%;
-        opacity: 0;
-        position: absolute;
-        left: 0;
-        bottom: 0;
-      }
-      &::-webkit-inner-spin-button {
-        display: none;
-        -webkit-appearance: none;
-      }
-    }
-    &[type='password'] {
-      -webkit-appearance: none;
-      letter-spacing: 0.25rem;
-    }
-    &[type='search'] {
-      font-family: inherit;
-      font-size: inherit;
-      -webkit-appearance: none;
-
-      &::-webkit-search-decoration,
-      &::-webkit-search-cancel-button,
-      &::-webkit-search-results-button,
-      &::-webkit-search-results-decoration {
-        display: none;
-      }
     }
   }
 
