@@ -32,7 +32,7 @@ export class ViewModeSwitcher extends LitElement {
 
     this.dispatchEvent(
       new CustomEvent('view-mode-change', {
-        detail: { mode: this.value },
+        detail: { value: this.value },
         bubbles: true,
         composed: true,
       }),

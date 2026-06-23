@@ -6,8 +6,8 @@ import type Sheet from '../../../src/components/sheet/sheet'
 import './profile.css'
 
 type PortfolioItemOpenEvent = CustomEvent<{ modal: string }>
-type ViewModeChangeEvent = CustomEvent<{ mode: 'grid' | 'list' }>
-type SortChangeEvent = CustomEvent<{ order: 'latest' | 'oldest' }>
+type ViewModeChangeEvent = CustomEvent<{ value: 'grid' | 'list' }>
+type SortChangeEvent = CustomEvent<{ value: 'latest' | 'oldest' }>
 
 document.addEventListener('DOMContentLoaded', () => {
   document.body.innerHTML = renderLayout(main, { closeSidebar: true })
@@ -31,7 +31,7 @@ function handleViewModeChange(event: Event) {
   const target = event.target as HTMLElement
   const viewModeEvent = event as ViewModeChangeEvent
   const containerElement = target.closest<HTMLElement>('.profile-body')
-  const isList = viewModeEvent.detail.mode === 'list'
+  const isList = viewModeEvent.detail.value === 'list'
 
   containerElement?.classList.toggle('list', isList)
   containerElement?.querySelectorAll('mm-grid').forEach(gridElement => {
@@ -50,7 +50,7 @@ function handleSortChange(event: Event) {
       .sort((a, b) => {
         const aDate = Date.parse(a.getAttribute('date') ?? '')
         const bDate = Date.parse(b.getAttribute('date') ?? '')
-        return sortEvent.detail.order === 'latest' ? bDate - aDate : aDate - bDate
+        return sortEvent.detail.value === 'latest' ? bDate - aDate : aDate - bDate
       })
       .forEach(item => gridElement.append(item))
   })

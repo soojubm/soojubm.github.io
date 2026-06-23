@@ -46,7 +46,7 @@ function renderFilters(books: Book[], state: FilterState) {
   `
 
   container.querySelector('.js-country-filter')?.addEventListener('change', e => {
-    state.country = (e as CustomEvent<{ selected: string[] }>).detail.selected[0] ?? ''
+    state.country = (e as CustomEvent<{ values: string[] }>).detail.values[0] ?? ''
     renderList(getFiltered(books, state), 0, bookCard, next =>
       renderList(getFiltered(books, state), next, bookCard, () => {}),
     )

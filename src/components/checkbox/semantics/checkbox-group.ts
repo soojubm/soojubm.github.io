@@ -109,7 +109,7 @@ export class CheckboxGroup extends LitElement {
         bubbles: true,
         composed: true,
         detail: {
-          value: this.value,
+          values: this.value,
         },
       }),
     )

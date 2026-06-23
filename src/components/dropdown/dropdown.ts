@@ -190,7 +190,7 @@ export class Dropdown extends LitElement {
           type: 'checkbox',
           value: option.value,
           checked: isChecked,
-          currentCheckedValues: this.options.filter(o => o.checked).map(o => o.value),
+          values: this.options.filter(o => o.checked).map(o => o.value),
         },
         bubbles: true,
         composed: true,

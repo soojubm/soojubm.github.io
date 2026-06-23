@@ -61,12 +61,12 @@ function renderFilters(films: Film[], state: FilterState) {
     )
 
   container.querySelector('.js-decade-filter')?.addEventListener('change', e => {
-    state.decade = (e as CustomEvent<{ selected: string[] }>).detail.selected[0] ?? ''
+    state.decade = (e as CustomEvent<{ values: string[] }>).detail.values[0] ?? ''
     rerender()
   })
 
   container.querySelector('.js-country-filter')?.addEventListener('change', e => {
-    state.country = (e as CustomEvent<{ selected: string[] }>).detail.selected[0] ?? ''
+    state.country = (e as CustomEvent<{ values: string[] }>).detail.values[0] ?? ''
     rerender()
   })
 }

@@ -25,7 +25,7 @@ export class SortDropdown extends LitElement {
 
     this.dispatchEvent(
       new CustomEvent('sort-change', {
-        detail: { order: next },
+        detail: { value: next },
         bubbles: true,
         composed: true,
       }),

@@ -78,7 +78,7 @@ export class FilterButtonGroup extends LitElement {
     this._syncButtons()
     this.dispatchEvent(
       new CustomEvent('change', {
-        detail: { selected: this.selected },
+        detail: { values: this.selected },
         bubbles: true,
         composed: true,
       }),
