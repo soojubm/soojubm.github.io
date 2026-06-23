@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 import { resetStyles } from '../../../stylesheets/shared/reset.styles'
 import '../../icon-button/icon-button'
 import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
-import { emit } from '../../../utils/emit'
+import { toggleSelection } from '../button.utils'
 
 /**
  * 북마크/즐겨찾기 토글 버튼.
@@ -53,9 +53,7 @@ export class BookmarkButton extends LitElement {
   }
 
   private handleClick() {
-    if (this.disabled) return
-    this.selected = !this.selected
-    emit(this, 'change', { selected: this.selected, value: this.value })
+    toggleSelection(this)
   }
 
   render() {

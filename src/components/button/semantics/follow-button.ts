@@ -2,12 +2,8 @@ import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { resetStyles } from '../../../stylesheets/shared/reset.styles'
 import '../button'
-import { emit } from '../../../utils/emit'
+import { toggleSelection } from '../button.utils'
 
-/**
- * 팔로우 토글 버튼.
- * mm-button으로 렌더링하며 선택 상태를 직접 관리합니다.
- */
 @customElement('mm-follow-button')
 export class FollowButton extends LitElement {
   @property({ type: Boolean, reflect: true }) selected = false
@@ -30,9 +26,7 @@ export class FollowButton extends LitElement {
   ]
 
   private handleClick() {
-    if (this.disabled) return
-    this.selected = !this.selected
-    emit(this, 'change', { selected: this.selected, value: this.value })
+    toggleSelection(this)
   }
 
   render() {

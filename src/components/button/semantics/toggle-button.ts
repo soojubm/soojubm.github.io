@@ -3,12 +3,8 @@ import { customElement, property } from 'lit/decorators.js'
 import { resetStyles } from '../../../stylesheets/shared/reset.styles'
 import type { IconName } from '../../icon-button/semantics/icon-names'
 import '../button'
-import { emit } from '../../../utils/emit'
+import { toggleSelection } from '../button.utils'
 
-/**
- * 개별 토글 버튼. 클릭하면 선택/비선택 상태를 전환합니다.
- * (단일 선택 세그먼트는 mm-toggle-button-group 사용)
- */
 @customElement('mm-toggle-button')
 export class ToggleButton extends LitElement {
   @property({ type: Boolean, reflect: true }) selected = false
@@ -23,19 +19,16 @@ export class ToggleButton extends LitElement {
       :host {
         display: inline-flex;
 
-        --toggle-selected-color: var(--selection-background);
-        --toggle-selected-border-color: var(--selection-indicator-color);
         --toggle-button-radius: var(--radius);
       }
 
       mm-button {
-        width: 100%;
         --button-radius: var(--toggle-button-radius);
       }
 
       :host([selected]) mm-button {
-        --button-border: var(--border-width) solid var(--toggle-selected-border-color);
-        --button-color: var(--toggle-selected-color);
+        --button-border: var(--border-width) solid var(--selection-indicator-color);
+        --button-color: var(--selection-background);
         --button-text-color: var(--selection-foreground);
       }
     `,
@@ -53,9 +46,7 @@ export class ToggleButton extends LitElement {
 
   protected handleClick = (event: Event) => {
     event.stopPropagation()
-    if (this.disabled) return
-    this.selected = !this.selected
-    emit(this, 'change', { selected: this.selected, value: this.value })
+    toggleSelection(this)
   }
 
   render() {
