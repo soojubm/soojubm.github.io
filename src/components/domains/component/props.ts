@@ -63,8 +63,8 @@ export class ComponentProps extends LitElement {
         <div class="component-props-more" aria-hidden=${this._isOpened ? 'true' : 'false'}>
           <mm-read-more-button
             more-label="...펼쳐서 더보기"
-            aria-controls=${this._propsId}
-            .expanded=${this._isOpened}
+            .ariaControls=${this._propsId}
+            .ariaExpanded=${String(this._isOpened)}
           ></mm-read-more-button>
         </div>
       </section>

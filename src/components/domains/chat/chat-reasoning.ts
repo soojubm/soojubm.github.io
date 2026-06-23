@@ -1,5 +1,5 @@
 import { LitElement, css, html, nothing } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
+import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
 import { resetStyles } from '../../../stylesheets/shared/reset.styles'
 import { ICON_NAMES, type IconName } from '../../icon-button/semantics/icon-names'
 import '../../icon/icon'
@@ -120,6 +120,9 @@ export class ChatReasoning extends LitElement {
   @property({ type: String }) duration = ''
   @property({ type: Number }) interval = 2200
 
+  @queryAssignedElements({ selector: 'mm-chat-reasoning-flow', flatten: true })
+  private _assignedFlows!: ChatReasoningFlow[]
+
   private _flowIndex = 0
   private _intervalId = 0
 
@@ -198,10 +201,7 @@ export class ChatReasoning extends LitElement {
   }
 
   private _getFlows() {
-    const slot = this.shadowRoot?.querySelector('slot')
-    return (slot?.assignedElements({ flatten: true }) ?? []).filter(
-      flow => flow instanceof ChatReasoningFlow && !flow.hidden,
-    ) as ChatReasoningFlow[]
+    return this._assignedFlows.filter(flow => !flow.hidden)
   }
 
   private _syncFlows = () => {

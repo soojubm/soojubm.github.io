@@ -55,7 +55,7 @@ export const buttonStyles = css`
   }
 
   /* TODO filter-button으로 이동 */
-  :host([aria-checked='true']) button {
+  button[aria-checked='true'] {
     border: var(--border-width) solid
       var(--button-checked-border-color, var(--color-background-strong));
     background: var(--button-checked-color, var(--button-color));

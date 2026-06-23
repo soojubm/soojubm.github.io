@@ -40,7 +40,7 @@ export class RevealButton extends LitElement {
     return html`
       <button
         type="button"
-        aria-pressed=${this.revealed ? 'true' : 'false'}
+        aria-pressed=${String(this.revealed)}
         aria-label=${this.revealed ? '비밀번호 숨기기' : '비밀번호 보기'}
         ?disabled=${this.disabled}
       >

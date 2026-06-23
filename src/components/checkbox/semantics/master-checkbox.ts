@@ -1,11 +1,12 @@
-import { LitElement, html } from 'lit'
+import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { checkboxStyles } from '../checkbox.styles'
 import type { Checkbox } from '../checkbox'
 
 @customElement('mm-master-checkbox')
 export class MasterCheckbox extends LitElement {
-  @property({ type: String }) controls = ''
+  @property({ type: String, attribute: 'aria-controls' }) override ariaControls: string | null =
+    null
   @property({ type: String, reflect: true }) size = 'large'
   @property({ type: Boolean, reflect: true }) checked = false
   @property({ type: Boolean, reflect: true }) indeterminate = false
@@ -29,13 +30,15 @@ export class MasterCheckbox extends LitElement {
   }
 
   firstUpdated() {
-    this._controlledElement = document.getElementById(this.controls)
+    this._controlledElement = this.ariaControls ? document.getElementById(this.ariaControls) : null
     this._syncFromControlledCheckboxes()
   }
 
   updated(changed: Map<string, unknown>) {
-    if (changed.has('controls')) {
-      this._controlledElement = document.getElementById(this.controls)
+    if (changed.has('ariaControls')) {
+      this._controlledElement = this.ariaControls
+        ? document.getElementById(this.ariaControls)
+        : null
       this._syncFromControlledCheckboxes()
     }
   }
@@ -87,7 +90,7 @@ export class MasterCheckbox extends LitElement {
             id=${this._inputId}
             .checked=${this.checked}
             .indeterminate=${this.indeterminate}
-            aria-controls=${this.controls}
+            aria-controls=${this.ariaControls ?? nothing}
             @change=${this._onInputChange}
           />
 

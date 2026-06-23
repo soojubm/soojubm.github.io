@@ -839,12 +839,13 @@
           </tr>
           <tr>
             <th scope="row"><mm-text weight="bold">aria-label</mm-text></th>
-            <td style="text-align: right"><mm-text>13</mm-text></td>
+            <td style="text-align: right"><mm-text>14</mm-text></td>
             <td>
               <mm-text>
-                mm-avatar, mm-bottom-bar, mm-breadcrumb, mm-button, mm-clear-button, mm-icon-button,
-                mm-menu-item-checkbox-group, mm-menu-item-radio-group, mm-more-button,
-                mm-page-button, mm-pagination, mm-toggle-button, mm-typing-indicator
+                mm-avatar, mm-bottom-bar, mm-breadcrumb, mm-button, mm-clear-button,
+                mm-hamburger-button, mm-icon-button, mm-menu-item-checkbox-group,
+                mm-menu-item-radio-group, mm-more-button, mm-page-button, mm-pagination,
+                mm-toggle-button, mm-typing-indicator
               </mm-text>
             </td>
           </tr>
@@ -908,6 +909,11 @@
                 mm-menu-item-switch, mm-radio, mm-switch
               </mm-text>
             </td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">aria-checked</mm-text></th>
+            <td style="text-align: right"><mm-text>2</mm-text></td>
+            <td><mm-text>mm-button, mm-icon-button</mm-text></td>
           </tr>
           <tr>
             <th scope="row"><mm-text weight="bold">emoji</mm-text></th>
@@ -1011,20 +1017,22 @@
             </td>
           </tr>
           <tr>
-            <th scope="row"><mm-text weight="bold">expanded</mm-text></th>
-            <td style="text-align: right"><mm-text>4</mm-text></td>
+            <th scope="row"><mm-text weight="bold">aria-expanded</mm-text></th>
+            <td style="text-align: right"><mm-text>7</mm-text></td>
             <td>
               <mm-text>
-                mm-hamburger-button, mm-more-button, mm-read-more-button, mm-show-more-button
+                mm-button, mm-hamburger-button, mm-icon-button, mm-menu-item-action, mm-more-button,
+                mm-read-more-button, mm-show-more-button
               </mm-text>
             </td>
           </tr>
           <tr>
-            <th scope="row"><mm-text weight="bold">controls</mm-text></th>
-            <td style="text-align: right"><mm-text>4</mm-text></td>
+            <th scope="row"><mm-text weight="bold">aria-controls</mm-text></th>
+            <td style="text-align: right"><mm-text>8</mm-text></td>
             <td>
               <mm-text>
-                mm-hamburger-button, mm-master-checkbox, mm-more-button, mm-read-more-button
+                mm-button, mm-checkbox, mm-hamburger-button, mm-icon-button, mm-master-checkbox,
+                mm-menu-item-action, mm-more-button, mm-read-more-button
               </mm-text>
             </td>
           </tr>
@@ -1059,6 +1067,13 @@
             <td><mm-text>mm-read-more-paragraph, mm-review-item, mm-tooltip</mm-text></td>
           </tr>
           <tr>
+            <th scope="row"><mm-text weight="bold">role</mm-text></th>
+            <td style="text-align: right"><mm-text>4</mm-text></td>
+            <td>
+              <mm-text>mm-button, mm-icon-button, mm-menu-item-action, mm-menu-item-group</mm-text>
+            </td>
+          </tr>
+          <tr>
             <th scope="row"><mm-text weight="bold">direction</mm-text></th>
             <td style="text-align: right"><mm-text>3</mm-text></td>
             <td><mm-text>mm-button-group, mm-flex, mm-meta-item-group</mm-text></td>
@@ -1067,6 +1082,11 @@
             <th scope="row"><mm-text weight="bold">hidden-label</mm-text></th>
             <td style="text-align: right"><mm-text>3</mm-text></td>
             <td><mm-text>mm-number-input, mm-passwordfield, mm-textfield</mm-text></td>
+          </tr>
+          <tr>
+            <th scope="row"><mm-text weight="bold">aria-haspopup</mm-text></th>
+            <td style="text-align: right"><mm-text>3</mm-text></td>
+            <td><mm-text>mm-button, mm-icon-button, mm-menu-item-action</mm-text></td>
           </tr>
           <tr>
             <th scope="row"><mm-text weight="bold">items</mm-text></th>
@@ -1105,8 +1125,8 @@
           </tr>
           <tr>
             <th scope="row"><mm-text weight="bold">aria-describedby</mm-text></th>
-            <td style="text-align: right"><mm-text>2</mm-text></td>
-            <td><mm-text>mm-input, mm-textarea</mm-text></td>
+            <td style="text-align: right"><mm-text>4</mm-text></td>
+            <td><mm-text>mm-button, mm-icon-button, mm-input, mm-textarea</mm-text></td>
           </tr>
           <tr>
             <th scope="row"><mm-text weight="bold">author</mm-text></th>
@@ -1199,9 +1219,9 @@
             <td><mm-text>mm-review-item, mm-review-summary</mm-text></td>
           </tr>
           <tr>
-            <th scope="row"><mm-text weight="bold">role</mm-text></th>
+            <th scope="row"><mm-text weight="bold">aria-pressed</mm-text></th>
             <td style="text-align: right"><mm-text>2</mm-text></td>
-            <td><mm-text>mm-menu-item-action, mm-menu-item-group</mm-text></td>
+            <td><mm-text>mm-button, mm-icon-button</mm-text></td>
           </tr>
           <tr>
             <th scope="row"><mm-text weight="bold">rows</mm-text></th>
@@ -1280,8 +1300,8 @@
           </tr>
           <tr>
             <th scope="row"><mm-text weight="bold">aria-current</mm-text></th>
-            <td style="text-align: right"><mm-text>1</mm-text></td>
-            <td><mm-text>mm-menu-item-link</mm-text></td>
+            <td style="text-align: right"><mm-text>3</mm-text></td>
+            <td><mm-text>mm-menu-item-action, mm-menu-item-link, mm-page-button</mm-text></td>
           </tr>
           <tr>
             <th scope="row"><mm-text weight="bold">as</mm-text></th>
@@ -1347,11 +1367,6 @@
             <th scope="row"><mm-text weight="bold">confirm-message</mm-text></th>
             <td style="text-align: right"><mm-text>1</mm-text></td>
             <td><mm-text>mm-delete-button</mm-text></td>
-          </tr>
-          <tr>
-            <th scope="row"><mm-text weight="bold">current</mm-text></th>
-            <td style="text-align: right"><mm-text>1</mm-text></td>
-            <td><mm-text>mm-page-button</mm-text></td>
           </tr>
           <tr>
             <th scope="row"><mm-text weight="bold">current-page</mm-text></th>

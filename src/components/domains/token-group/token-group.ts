@@ -1,9 +1,12 @@
 import { LitElement, css, html } from 'lit'
-import { customElement } from 'lit/decorators.js'
+import { customElement, queryAssignedElements } from 'lit/decorators.js'
 import { resetStyles } from '../../../stylesheets/shared/reset.styles'
 
 @customElement('mm-token-group')
 export class TokenGroup extends LitElement {
+  @queryAssignedElements({ selector: 'mm-token-item', flatten: true })
+  private _items!: HTMLElement[]
+
   static styles = [
     resetStyles,
     css`
@@ -15,11 +18,7 @@ export class TokenGroup extends LitElement {
   ]
 
   private _assignIndices = () => {
-    const slot = this.shadowRoot!.querySelector('slot')!
-    slot
-      .assignedElements({ flatten: true })
-      .filter(el => el.tagName === 'MM-TOKEN-ITEM')
-      .forEach((el, i) => el.setAttribute('index', String(i + 1)))
+    this._items.forEach((item, index) => item.setAttribute('index', String(index + 1)))
   }
 
   render() {

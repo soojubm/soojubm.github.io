@@ -1,5 +1,5 @@
 import { LitElement, html, css, nothing } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
+import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
 import { MenuItemRadio } from './menu-item-radio'
 import './menu-item-group'
 
@@ -8,6 +8,9 @@ export class MenuItemRadioGroup extends LitElement {
   @property({ type: String }) name = ''
   @property({ type: String, reflect: true }) value = ''
   @property({ type: String, attribute: 'aria-label' }) override ariaLabel = ''
+
+  @queryAssignedElements({ selector: 'mm-menu-item-radio', flatten: true })
+  private _radios!: MenuItemRadio[]
 
   static styles = css`
     :host {
@@ -26,8 +29,7 @@ export class MenuItemRadioGroup extends LitElement {
     this.value = detail.value
 
     // 그룹 내의 모든 라디오 버튼을 찾아 현재 선택된 것 외에는 전부 체크 해제합니다.
-    const radios = Array.from(this.querySelectorAll('mm-menu-item-radio')) as MenuItemRadio[]
-    radios.forEach(radio => {
+    this._radios.forEach(radio => {
       if (radio !== target) {
         radio.checked = false
       }
@@ -44,13 +46,8 @@ export class MenuItemRadioGroup extends LitElement {
   }
 
   // 처음에 마크업으로 들어온 자식 노드들에게 name 속성과 초기 checked 값을 동기화합니다.
-  private handleSlotChange(e: Event) {
-    const slot = e.target as HTMLSlotElement
-    const radios = slot
-      .assignedElements({ flatten: true })
-      .filter(el => el.tagName.toLowerCase() === 'mm-menu-item-radio') as MenuItemRadio[]
-
-    radios.forEach(radio => {
+  private handleSlotChange() {
+    this._radios.forEach(radio => {
       if (this.name) radio.name = this.name
       if (this.value && radio.value === this.value) {
         radio.checked = true

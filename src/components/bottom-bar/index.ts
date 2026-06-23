@@ -20,7 +20,7 @@ const defaultItems: BottomBarItem[] = [
 @customElement('mm-bottom-bar')
 class BottomBar extends LitElement {
   @property({ type: String }) items = ''
-  @property({ type: String, attribute: 'aria-label' }) ariaLabel = '하단 내비게이션'
+  @property({ type: String, attribute: 'aria-label' }) override ariaLabel = '하단 내비게이션'
 
   @state() private selectedIndex: number | null = null
 

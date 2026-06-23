@@ -1,5 +1,5 @@
 import { LitElement, html, css } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
+import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
 import TabList from './tab-list'
 import Tab from './tab'
 import TabPanel from './tab-panel'
@@ -18,14 +18,25 @@ export class Tabs extends LitElement {
   @property({ type: String, reflect: true }) value = ''
   @property({ type: String, reflect: true }) variant = 'line'
 
+  @queryAssignedElements({ selector: 'mm-tab-panel', flatten: true })
+  private _panels!: TabPanel[]
+  @queryAssignedElements({ selector: 'mm-tab-list', flatten: true })
+  private _tabLists!: TabList[]
+
+  private get _tabs() {
+    return (this._tabLists[0]?.tabs ?? []).filter((tab): tab is Tab => tab instanceof Tab)
+  }
+
   connectedCallback() {
     super.connectedCallback()
     this.addEventListener('tab-select', this._handleTabSelect)
+    this.addEventListener('tab-list-change', this._handleTabListChange)
     this.addEventListener('keydown', this._handleKeydown)
   }
 
   disconnectedCallback() {
     this.removeEventListener('tab-select', this._handleTabSelect)
+    this.removeEventListener('tab-list-change', this._handleTabListChange)
     this.removeEventListener('keydown', this._handleKeydown)
     super.disconnectedCallback()
   }
@@ -35,15 +46,17 @@ export class Tabs extends LitElement {
     this.value = customEvent.detail.value
   }
 
+  private _handleTabListChange = () => {
+    this._syncElements()
+  }
+
   private _handleKeydown = (event: KeyboardEvent) => {
     const currentTab = event.composedPath().find(element => element instanceof Tab) as
       | Tab
       | undefined
     if (!currentTab) return
 
-    const tabs = Array.from(this.querySelectorAll('mm-tab')).filter(
-      (tab): tab is Tab => tab instanceof Tab,
-    )
+    const tabs = this._tabs
     const currentIndex = tabs.indexOf(currentTab)
     if (currentIndex < 0) return
 
@@ -88,13 +101,9 @@ export class Tabs extends LitElement {
   }
 
   private _syncElements() {
-    const tabs = Array.from(this.querySelectorAll('mm-tab')).filter(
-      (tab): tab is Tab => tab instanceof Tab,
-    )
-    const panels = Array.from(this.querySelectorAll('mm-tab-panel')).filter(
-      (panel): panel is TabPanel => panel instanceof TabPanel,
-    )
-    const tabList = this.querySelector('mm-tab-list')
+    const tabs = this._tabs
+    const panels = this._panels
+    const tabList = this._tabLists[0]
 
     const selectedValue = tabs.some(tab => tab.value === this.value)
       ? this.value

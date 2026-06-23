@@ -1,5 +1,5 @@
 import { LitElement, css, html, nothing } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
+import { customElement, property, query } from 'lit/decorators.js'
 import '../sheet'
 import '../sheet/semantics/sheet-header'
 import '../sheet/semantics/sheet-body'
@@ -15,6 +15,8 @@ export class Dialog extends LitElement {
   @property({ type: String, attribute: 'primary-label' }) primaryLabel = ''
   @property({ type: String, attribute: 'secondary-label' }) secondaryLabel = ''
 
+  @query('mm-sheet') private _sheet?: Sheet
+
   static styles = css`
     :host {
       display: block;
@@ -24,10 +26,6 @@ export class Dialog extends LitElement {
       --sheet-width-small: 320px;
     }
   `
-
-  private get _sheet(): Sheet | null {
-    return this.shadowRoot?.querySelector('mm-sheet') as Sheet | null
-  }
 
   show() {
     this.open = true

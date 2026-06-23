@@ -1,10 +1,10 @@
 import { LitElement, html } from 'lit'
-import { customElement, query } from 'lit/decorators.js'
+import { customElement, query, queryAssignedElements } from 'lit/decorators.js'
 import { tabsStyles } from './tabs.styles'
 
 @customElement('mm-tab-list')
 export default class TabList extends LitElement {
-  @query('slot') tabSlot!: HTMLSlotElement
+  @queryAssignedElements({ flatten: true }) tabs!: HTMLElement[]
   @query('.indicator') indicator!: HTMLDivElement
   @query('.tablist-container') tablistContainer!: HTMLDivElement
 
@@ -19,14 +19,12 @@ export default class TabList extends LitElement {
 
   private _handleSlotChange() {
     this.handleTabChange()
+    this.dispatchEvent(new Event('tab-list-change', { bubbles: true, composed: true }))
   }
 
   private _moveIndicator() {
-    if (!this.indicator || !this.tabSlot) return
-
-    const tabs = this.tabSlot.assignedElements() as HTMLElement[]
     // 현재 active 속성을 가지고 있는 활성 탭 엘리먼트를 찾습니다.
-    const activeTab = tabs.find(tab => tab.hasAttribute('active'))
+    const activeTab = this.tabs.find(tab => tab.hasAttribute('active'))
 
     if (activeTab) {
       const tabRect = activeTab.getBoundingClientRect()

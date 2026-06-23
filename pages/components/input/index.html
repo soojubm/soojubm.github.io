@@ -57,9 +57,7 @@
         <mm-textfield
           value="Invalid"
           placeholder="Placeholder..."
-          aria-invalid="true"
-          aria-describedby="error"
-          aria-errormessage="msgID"
+          invalid
           validation-text="이미 등록된 이메일입니다."
         ></mm-textfield>
         <mm-separator spacing="small"></mm-separator>
@@ -89,7 +87,7 @@
     <mm-prop name="optional" type="boolean" optional></mm-prop>
     <mm-prop name="hidden-label" type="boolean" optional></mm-prop>
     <mm-prop name="disabled" type="boolean" optional></mm-prop>
-    <mm-prop name="aria-invalid" type="boolean" optional></mm-prop>
+    <mm-prop name="aria-invalid" type="'true' | 'false'" optional></mm-prop>
     <mm-prop name="input" type="CustomEvent detail: value" kind="event"></mm-prop>
   </mm-component-props>
 
@@ -117,7 +115,7 @@
         placeholder="name@example.com"
         helper="회사 이메일을 입력하세요."
         validation-text="올바른 이메일 형식으로 입력하세요."
-        aria-invalid="true"
+        invalid
         style="width: 280px"
       >
         <mm-icon slot="leading" name="mail"></mm-icon>

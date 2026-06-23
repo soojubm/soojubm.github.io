@@ -5,11 +5,12 @@ import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
 
 /**
  * 더보기/접기 토글 버튼.
- * expanded 상태에 따라 레이블과 아이콘 방향이 전환됩니다.
+ * aria-expanded 상태에 따라 레이블과 아이콘 방향이 전환됩니다.
  */
 @customElement('mm-show-more-button')
 export class ShowMoreButton extends LitElement {
-  @property({ type: Boolean, reflect: true }) expanded = false
+  @property({ type: String, attribute: 'aria-expanded', reflect: true }) override ariaExpanded =
+    'false'
   @property({ type: String, attribute: 'more-label' }) moreLabel = 'Show more'
   @property({ type: String, attribute: 'less-label' }) lessLabel = 'Show less'
 
@@ -25,17 +26,17 @@ export class ShowMoreButton extends LitElement {
         transition: transform 0.2s ease;
       }
 
-      :host([expanded]) mm-icon {
+      :host([aria-expanded='true']) mm-icon {
         transform: rotate(180deg);
       }
     `,
   ]
 
   private handleClick() {
-    this.expanded = !this.expanded
+    this.ariaExpanded = this.ariaExpanded === 'true' ? 'false' : 'true'
     this.dispatchEvent(
       new CustomEvent('change', {
-        detail: { expanded: this.expanded },
+        detail: { expanded: this.ariaExpanded === 'true' },
         bubbles: true,
         composed: true,
       }),
@@ -49,9 +50,9 @@ export class ShowMoreButton extends LitElement {
         icon=${ICON_NAMES.EXPAND}
         icon-position="trailing"
         @click=${this.handleClick}
-        aria-expanded=${this.expanded}
+        .ariaExpanded=${this.ariaExpanded}
       >
-        ${this.expanded ? this.lessLabel : this.moreLabel}
+        ${this.ariaExpanded === 'true' ? this.lessLabel : this.moreLabel}
       </mm-button>
     `
   }

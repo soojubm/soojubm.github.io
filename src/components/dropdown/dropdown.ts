@@ -1,5 +1,5 @@
 import { LitElement, css, html, nothing, type PropertyValues } from 'lit'
-import { customElement, property, state } from 'lit/decorators.js'
+import { customElement, property, queryAssignedElements, state } from 'lit/decorators.js'
 import { resetStyles } from '../../stylesheets/shared/reset.styles'
 import '../button/button'
 import { ICON_NAMES, type IconName } from '../icon-button/semantics/icon-names'
@@ -22,6 +22,11 @@ export class Dropdown extends LitElement {
   @state() protected isOpen = false
   @state() protected selectedLabel = 'Select an option'
   @state() protected options: DropdownOption[] = []
+
+  @queryAssignedElements({ selector: 'option', flatten: true })
+  private _optionElements!: HTMLOptionElement[]
+  @queryAssignedElements({ slot: 'trigger', flatten: true })
+  private _triggerElements!: HTMLElement[]
 
   static styles = [
     resetStyles,
@@ -100,8 +105,11 @@ export class Dropdown extends LitElement {
 
   connectedCallback(): void {
     super.connectedCallback()
-    this.syncOptions()
     document.addEventListener('click', this.handleOutsideClick)
+  }
+
+  firstUpdated() {
+    this.syncOptions()
   }
 
   disconnectedCallback(): void {
@@ -126,7 +134,7 @@ export class Dropdown extends LitElement {
 
   // light DOM의 <option> 요소를 DropdownOption 데이터로 변환
   private parseLightDomOptions(): DropdownOption[] {
-    return Array.from(this.querySelectorAll('option')).map(option => ({
+    return this._optionElements.map(option => ({
       label: option.textContent || '',
       value: option.value,
       type: (option.getAttribute('type') as 'default' | 'checkbox') || 'default',
@@ -201,7 +209,7 @@ export class Dropdown extends LitElement {
           class="dropdown-button"
           size="small"
           aria-haspopup="true"
-          aria-expanded="${this.isOpen}"
+          .ariaExpanded=${String(this.isOpen)}
         >
           ${this.selectedLabel}
           <mm-icon name=${ICON_NAMES.EXPAND}></mm-icon>
@@ -255,10 +263,16 @@ export class Dropdown extends LitElement {
     `
   }
 
-  // 슬롯 trigger에 aria-haspopup / aria-expanded를 직접 반영
+  // 네이티브 트리거는 ARIA를 직접, 컴포넌트 트리거는 중립 상태 prop을 갱신한다.
   private _updateTriggerAria() {
-    const trigger = this.querySelector('[slot="trigger"]')
+    const trigger = this._triggerElements[0]
     if (!trigger) return
+
+    if ('ariaHasPopup' in trigger && 'ariaExpanded' in trigger) {
+      Object.assign(trigger, { ariaHasPopup: 'true', ariaExpanded: String(this.isOpen) })
+      return
+    }
+
     trigger.setAttribute('aria-haspopup', 'true')
     trigger.setAttribute('aria-expanded', String(this.isOpen))
   }
@@ -276,6 +290,7 @@ export class Dropdown extends LitElement {
   render() {
     return html`
       <div part="dropdown" class="dropdown">${this.renderTrigger()} ${this.renderList()}</div>
+      <slot hidden @slotchange=${this.syncOptions}></slot>
     `
   }
 }

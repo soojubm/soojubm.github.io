@@ -17,7 +17,7 @@ export class NumberInput extends LitElement {
   @property({ type: Boolean }) optional = false
   @property({ type: Boolean, attribute: 'hidden-label', reflect: true }) hiddenLabel = false
   @property({ type: Boolean, reflect: true }) disabled = false
-  @property({ type: Boolean, attribute: 'aria-invalid' }) isInvalid = false
+  @property({ type: String, attribute: 'aria-invalid' }) override ariaInvalid: string | null = null
   @property({ type: Number }) min?: number
   @property({ type: Number }) max?: number
   @property({ type: Number }) step = 1
@@ -28,7 +28,7 @@ export class NumberInput extends LitElement {
 
   render() {
     return html`
-      <div class="textfield" ?data-invalid=${this.isInvalid}>
+      <div class="textfield" ?data-invalid=${this.ariaInvalid === 'true'}>
         ${this.label
           ? html`
               <mm-textfield-label for=${this.inputId} ?optional=${this.optional}>
@@ -52,15 +52,15 @@ export class NumberInput extends LitElement {
             .max=${this.max}
             .step=${this.step}
             ?disabled=${this.disabled}
-            .isInvalid=${this.isInvalid}
-            .describedBy=${this.validationText ? `${this.inputId}-validation` : undefined}
+            .ariaInvalid=${this.ariaInvalid}
+            .ariaDescribedBy=${this.validationText ? `${this.inputId}-validation` : null}
             @input=${this._handleInput}
           ></mm-input>
           <mm-icon-button
             variant="ghost"
             size="small"
             icon=${ICON_NAMES.SUBTRACT}
-            label="감소"
+            aria-label="감소"
             tooltip="감소"
             tooltip-placement="center"
             ?disabled=${this.disabled}
@@ -70,7 +70,7 @@ export class NumberInput extends LitElement {
             variant="ghost"
             size="small"
             icon=${ICON_NAMES.ADD}
-            label="증가"
+            aria-label="증가"
             tooltip="증가"
             tooltip-placement="center"
             ?disabled=${this.disabled}

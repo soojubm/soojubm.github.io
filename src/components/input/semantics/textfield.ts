@@ -17,7 +17,7 @@ export class Textfield extends LitElement {
   @property({ type: Boolean }) optional = false
   @property({ type: Boolean, attribute: 'hidden-label', reflect: true }) hiddenLabel = false
   @property({ type: Boolean, reflect: true }) disabled = false
-  @property({ type: Boolean, attribute: 'aria-invalid' }) isInvalid = false
+  @property({ type: String, attribute: 'aria-invalid' }) override ariaInvalid: string | null = null
 
   static styles = textfieldStyles
 
@@ -33,7 +33,7 @@ export class Textfield extends LitElement {
 
   render() {
     return html`
-      <div class="textfield" ?data-invalid=${this.isInvalid}>
+      <div class="textfield" ?data-invalid=${this.ariaInvalid === 'true'}>
         ${this.label
           ? html`
               <mm-textfield-label for=${this.inputId} ?optional=${this.optional}>
@@ -55,8 +55,8 @@ export class Textfield extends LitElement {
             .name=${this.name}
             .placeholder=${this.placeholder}
             ?disabled=${this.disabled}
-            .isInvalid=${this.isInvalid}
-            .describedBy=${this.validationText ? `${this.inputId}-validation` : undefined}
+            .ariaInvalid=${this.ariaInvalid}
+            .ariaDescribedBy=${this.validationText ? `${this.inputId}-validation` : null}
             @input=${this._handleInput}
           ></mm-input>
           <slot name="trailing"></slot>

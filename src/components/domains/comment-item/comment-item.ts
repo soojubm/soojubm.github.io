@@ -119,8 +119,8 @@ export class CommentItem extends LitElement {
                 <mm-more-button
                   slot="trailing"
                   aria-label="댓글 메뉴"
-                  aria-controls=${this._menuId}
-                  ?expanded=${this._menuOpen}
+                  .ariaControls=${this._menuId}
+                  .ariaExpanded=${String(this._menuOpen)}
                   @click=${this._toggleMenu}
                 ></mm-more-button>
               `

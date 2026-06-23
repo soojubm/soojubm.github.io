@@ -1,5 +1,5 @@
 import { LitElement, css, html } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
+import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
 import { resetStyles } from '../../../stylesheets/shared/reset.styles'
 import type { FilterButton } from './filter-button'
 
@@ -16,6 +16,9 @@ export class FilterButtonGroup extends LitElement {
   @property({ type: String }) mode: FilterMode = 'single'
   /** 선택된 value 목록 */
   @property({ type: Array }) selected: string[] = []
+
+  @queryAssignedElements({ selector: 'mm-filter-button', flatten: true })
+  private _buttons!: FilterButton[]
 
   private get _isMultiple() {
     return this.mode === 'multiple'
@@ -48,10 +51,6 @@ export class FilterButtonGroup extends LitElement {
 
   private _updateRole() {
     this.setAttribute('role', this._isMultiple ? 'group' : 'radiogroup')
-  }
-
-  private get _buttons() {
-    return Array.from(this.querySelectorAll('mm-filter-button')) as FilterButton[]
   }
 
   /** "전체" 옵션을 제외한 일반 옵션 버튼 */

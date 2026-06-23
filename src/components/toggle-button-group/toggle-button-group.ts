@@ -101,7 +101,7 @@ export class ToggleButtonGroup extends LitElement {
             <mm-toggle-button
               value=${option.value}
               icon=${option.icon ?? nothing}
-              aria-label=${option.ariaLabel ?? option.label ?? nothing}
+              .ariaLabel=${option.ariaLabel ?? option.label ?? ''}
               ?selected=${isSelected}
               ?disabled=${option.disabled}
               @change=${(event: Event) => this.onButtonClick(index, option, event)}

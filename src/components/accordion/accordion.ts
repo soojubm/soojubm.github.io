@@ -1,5 +1,5 @@
 import { LitElement, css, html } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
+import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
 import type { AccordionItem } from './semantics/accordion-item'
 
 /**
@@ -10,6 +10,9 @@ import type { AccordionItem } from './semantics/accordion-item'
 export class Accordion extends LitElement {
   /** true이면 한 번에 하나의 항목만 펼쳐집니다 (라디오 패턴) */
   @property({ type: Boolean }) exclusive = false
+
+  @queryAssignedElements({ selector: 'mm-accordion-item', flatten: true })
+  private _items!: AccordionItem[]
 
   static styles = css`
     :host {
@@ -33,7 +36,7 @@ export class Accordion extends LitElement {
     if (!this.exclusive || !e.detail.open) return
 
     const opened = e.target as AccordionItem
-    this.querySelectorAll<AccordionItem>('mm-accordion-item').forEach(item => {
+    this._items.forEach(item => {
       if (item !== opened) item.open = false
     })
   }

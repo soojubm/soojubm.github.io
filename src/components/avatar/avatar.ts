@@ -11,8 +11,7 @@ export class Avatar extends LitElement {
   @property({ type: String }) src?: string
   @property({ type: String }) icon?: IconName
 
-  // aria-label을 컴포넌트 템플릿 내부에서 안전하게 사용하기 위해 명시
-  @property({ type: String, attribute: 'aria-label' }) override ariaLabel: string | null = null
+  @property({ type: String, attribute: 'aria-label' }) override ariaLabel = ''
 
   static styles = [avatarStyles]
 

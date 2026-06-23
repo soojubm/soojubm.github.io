@@ -1,5 +1,5 @@
 import { LitElement, css, html, nothing } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
+import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
 import type { MenuItemCheckbox } from './menu-item-checkbox'
 import './menu-item-group'
 
@@ -10,20 +10,19 @@ import './menu-item-group'
  */
 @customElement('mm-menu-item-checkbox-group')
 export class MenuItemCheckboxGroup extends LitElement {
-  /** 그룹 레이블 (aria-label) */
+  /** 내부 그룹의 접근 가능한 이름 */
   @property({ type: String, attribute: 'aria-label' }) override ariaLabel = ''
   /** 선택된 value 목록 */
   @property({ type: Array }) values: string[] = []
+
+  @queryAssignedElements({ selector: 'mm-menu-item-checkbox', flatten: true })
+  private _checkboxes!: MenuItemCheckbox[]
 
   static styles = css`
     :host {
       display: block;
     }
   `
-
-  private get _checkboxes() {
-    return Array.from(this.querySelectorAll<MenuItemCheckbox>('mm-menu-item-checkbox'))
-  }
 
   private handleChange(e: Event) {
     const target = e.target as HTMLElement

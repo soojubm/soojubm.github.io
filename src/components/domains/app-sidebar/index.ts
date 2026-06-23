@@ -1,11 +1,13 @@
 import { LitElement, html, nothing } from 'lit'
-import { customElement, state } from 'lit/decorators.js'
+import { customElement, queryAll, state } from 'lit/decorators.js'
 import { SITEMAP } from '../../../sitemap'
 import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
 
 @customElement('mm-sidebar')
 export class Sidebar extends LitElement {
   @state() private _currentPageId = 'index'
+
+  @queryAll('.sidebar-menu mm-menu-item-link') private _links!: NodeListOf<HTMLElement>
 
   // 💡 중요: 기존 전역 CSS(.sidebar-menu, .is-open 등)를 그대로 상속받아 쓰기 위해
   // Shadow DOM을 끄고 Light DOM 영역에 렌더링하도록 설정합니다.
@@ -28,7 +30,7 @@ export class Sidebar extends LitElement {
     const saved = localStorage.getItem('sidebarScroll')
     if (saved) this.scrollTop = Number(saved)
 
-    this.querySelectorAll<HTMLElement>('.sidebar-menu mm-menu-item-link').forEach(link => {
+    this._links.forEach(link => {
       link.addEventListener('click', () => {
         localStorage.setItem('sidebarScroll', String(this.scrollTop))
       })
@@ -40,9 +42,9 @@ export class Sidebar extends LitElement {
   }
 
   private _handleCategoryToggle(event: Event) {
-    const trigger = event.currentTarget as HTMLElement
+    const trigger = event.currentTarget as HTMLElement & { ariaExpanded?: string }
     const isOpen = trigger.classList.toggle('is-open')
-    trigger.setAttribute('aria-expanded', String(isOpen))
+    trigger.ariaExpanded = String(isOpen)
   }
 
   private _isCurrentPage(pageId: string) {

@@ -70,8 +70,8 @@ export class ToggleButton extends LitElement {
         size="small"
         full-width
         icon=${this.icon}
-        aria-label=${this.ariaLabel}
-        aria-pressed=${this.selected ? 'true' : 'false'}
+        .ariaLabel=${this.ariaLabel}
+        .ariaPressed=${String(this.selected)}
         ?disabled=${this.disabled}
       >
         <slot></slot>

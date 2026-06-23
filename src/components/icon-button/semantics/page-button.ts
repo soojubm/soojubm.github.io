@@ -9,7 +9,9 @@ import { iconButtonStyles } from '../icon-button.styles'
 @customElement('mm-page-button')
 export class PageButton extends LitElement {
   @property({ type: Number }) page = 1
-  @property({ type: Boolean, reflect: true }) current = false
+  @property({ type: String, attribute: 'aria-current', reflect: true }) override ariaCurrent:
+    | string
+    | null = null
   @property({ type: Boolean, reflect: true }) disabled = false
   @property({ type: String, attribute: 'aria-label' }) override ariaLabel = ''
 
@@ -33,7 +35,7 @@ export class PageButton extends LitElement {
       <button
         type="button"
         aria-label="${this.ariaLabel || `${this.page} 페이지로 이동`}"
-        aria-current="${this.current ? 'page' : nothing}"
+        aria-current="${this.ariaCurrent ?? nothing}"
         ?disabled="${this.disabled}"
       >
         ${this.page}

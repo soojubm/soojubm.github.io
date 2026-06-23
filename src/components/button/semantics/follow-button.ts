@@ -45,7 +45,7 @@ export class FollowButton extends LitElement {
       <mm-button
         variant=${this.selected ? 'tertiary' : 'primary'}
         ?disabled=${this.disabled}
-        aria-pressed=${this.selected ? 'true' : 'false'}
+        .ariaPressed=${String(this.selected)}
         @click=${this.handleClick}
       >
         ${this.selected ? '팔로우 중' : '팔로우'}

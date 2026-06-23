@@ -14,7 +14,7 @@ class PasswordField extends LitElement {
   @property({ type: Boolean }) optional = false
   @property({ type: Boolean, attribute: 'hidden-label', reflect: true }) hiddenLabel = false
   @property({ type: Boolean, reflect: true }) disabled = false
-  @property({ type: Boolean, attribute: 'aria-invalid' }) isInvalid = false
+  @property({ type: String, attribute: 'aria-invalid' }) override ariaInvalid: string | null = null
 
   @state() private revealed = false
 
@@ -38,7 +38,7 @@ class PasswordField extends LitElement {
         ?optional=${this.optional}
         ?hidden-label=${this.hiddenLabel}
         ?disabled=${this.disabled}
-        .isInvalid=${this.isInvalid}
+        .ariaInvalid=${this.ariaInvalid}
         @input=${this._syncValue}
       >
         <mm-reveal-button

@@ -57,8 +57,8 @@ export class FilterButton extends LitElement {
         size="small"
         ?disabled=${this.disabled}
         icon=${this.selected ? ICON_NAMES.CHECK : nothing}
-        role=${this.mode === 'multiple' ? 'checkbox' : 'radio'}
-        aria-checked=${this.selected ? 'true' : 'false'}
+        .role=${this.mode === 'multiple' ? 'checkbox' : 'radio'}
+        .ariaChecked=${String(this.selected)}
         @click=${this._handleClick}
       >
         <slot></slot>

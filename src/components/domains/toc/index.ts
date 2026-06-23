@@ -1,5 +1,5 @@
 import { LitElement, css, html, nothing } from 'lit'
-import { customElement, state } from 'lit/decorators.js'
+import { customElement, query, queryAll, state } from 'lit/decorators.js'
 import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
 import { resetStyles } from '../../../stylesheets/shared/reset.styles'
 import '../indicators/selection-indicator'
@@ -22,6 +22,10 @@ export class TableOfContents extends LitElement {
   private _indicatorFrame = 0
   private _copyTimer = 0
   private _scrollSpy?: IntersectionObserver
+
+  @query('.toc-list') private _list?: HTMLElement
+  @query('mm-selection-indicator') private _indicator?: HTMLElement
+  @queryAll('.toc-link') private _links!: NodeListOf<HTMLElement>
 
   static styles = [
     resetStyles,
@@ -184,11 +188,9 @@ export class TableOfContents extends LitElement {
   }
 
   private updateIndicatorPosition = () => {
-    const list = this.renderRoot.querySelector<HTMLElement>('.toc-list')
-    const indicator = this.renderRoot.querySelector<HTMLElement>('mm-selection-indicator')
-    const activeItem = Array.from(this.renderRoot.querySelectorAll<HTMLElement>('.toc-link')).find(
-      link => link.dataset.tocId === this.activeId,
-    )
+    const list = this._list
+    const indicator = this._indicator
+    const activeItem = Array.from(this._links).find(link => link.dataset.tocId === this.activeId)
 
     if (!list || !indicator || !activeItem) return
 
@@ -268,7 +270,7 @@ export class TableOfContents extends LitElement {
               <mm-icon-button
                 icon=${icon}
                 variant="tertiary"
-                aria-label=${label}
+                .ariaLabel=${label}
                 @click=${() => window.open(href, '_blank', 'noopener,noreferrer')}
               ></mm-icon-button>
             `,
@@ -276,7 +278,7 @@ export class TableOfContents extends LitElement {
           <mm-icon-button
             icon=${this.copied ? ICON_NAMES.COPY_SUCCESS : ICON_NAMES.LINK}
             variant="tertiary"
-            aria-label=${this.copied ? 'Copied link' : 'Copy link'}
+            .ariaLabel=${this.copied ? 'Copied link' : 'Copy link'}
             @click=${this.copyShareUrl}
           ></mm-icon-button>
         </mm-button-group>

@@ -1,7 +1,8 @@
 import { LitElement, html, nothing } from 'lit'
-import { customElement, state } from 'lit/decorators.js'
+import { customElement, query, state } from 'lit/decorators.js'
 import { ICON_NAMES } from '../icon-button/semantics/icon-names'
 import soojubmImage from '../../images/soojubm.png'
+import type Sheet from '../sheet/sheet'
 
 type PagefindResult = { url: string; meta: { title: string }; excerpt: string }
 type Pagefind = {
@@ -17,6 +18,9 @@ export class Navbar extends LitElement {
 
   private _pagefind: Pagefind | null = null
   private _debounceTimer: ReturnType<typeof setTimeout> | null = null
+
+  @query('.js-search-sheet') private _searchSheet?: Sheet
+  @query('.js-search-sheet mm-searchfield') private _searchField?: HTMLElement
 
   // 전역 navbar.css와 body의 메뉴 상태 선택자가 내부 구조에 접근해야 하므로 Light DOM을 유지한다.
   createRenderRoot() {
@@ -44,13 +48,11 @@ export class Navbar extends LitElement {
 
   private _toggleSearch() {
     this._searchOpen = !this._searchOpen
-    const sheet = this.querySelector('.js-search-sheet') as any
-    if (sheet) this._searchOpen ? sheet.open() : sheet.close()
+    if (this._searchSheet) this._searchOpen ? this._searchSheet.open() : this._searchSheet.close()
     if (this._searchOpen) {
       this._loadPagefind()
       requestAnimationFrame(() => {
-        const input = this.querySelector('.js-search-sheet mm-searchfield') as any
-        input?.focus?.()
+        this._searchField?.focus()
       })
     } else {
       this._query = ''
@@ -151,7 +153,7 @@ export class Navbar extends LitElement {
           <mm-icon-button
             icon=${ICON_NAMES.SEARCH}
             aria-label="검색"
-            aria-expanded=${this._searchOpen ? 'true' : 'false'}
+            .ariaExpanded=${String(this._searchOpen)}
             @click=${this._toggleSearch}
           ></mm-icon-button>
           <div style="position: relative">

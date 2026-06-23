@@ -48,7 +48,7 @@ export class CopyButton extends LitElement {
         type="button"
         class="plain"
         ?data-copied=${this.copied}
-        aria-label=${this.copied ? '복사됨' : '복사'}
+        .ariaLabel=${this.copied ? '복사됨' : '복사'}
         @click=${this._handleClick}
       >
         <mm-icon name=${this.copied ? ICON_NAMES.COPY_SUCCESS : ICON_NAMES.COPY}></mm-icon>

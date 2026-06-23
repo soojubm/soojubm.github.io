@@ -10,10 +10,14 @@ export class Textarea extends LitElement {
   @property({ type: String }) value = ''
   @property({ type: String }) name = ''
   @property({ type: String }) placeholder = ''
-  @property({ type: String, attribute: 'aria-describedby' }) describedBy = ''
+  @property({ type: String, attribute: 'aria-describedby' }) override ariaDescribedBy:
+    | string
+    | null = null
   @property({ type: Number }) rows = 3
   @property({ type: Boolean, reflect: true }) disabled = false
-  @property({ type: Boolean, attribute: 'aria-invalid', reflect: true }) isInvalid = false
+  @property({ type: String, attribute: 'aria-invalid', reflect: true }) override ariaInvalid:
+    | string
+    | null = null
 
   @query('textarea') protected _textarea!: HTMLTextAreaElement
 
@@ -24,7 +28,7 @@ export class Textarea extends LitElement {
   }
 
   protected get textareaDescribedBy() {
-    return this.describedBy
+    return this.ariaDescribedBy
   }
 
   protected get maxVisibleRows() {
@@ -92,7 +96,7 @@ export class Textarea extends LitElement {
 
   protected renderTextarea() {
     return html`
-      <div class="textarea-control" ?data-invalid=${this.isInvalid}>
+      <div class="textarea-control" ?data-invalid=${this.ariaInvalid === 'true'}>
         <textarea
           id=${this.textareaId}
           rows=${this.rows}
@@ -100,7 +104,7 @@ export class Textarea extends LitElement {
           name=${this.name || nothing}
           placeholder=${this.placeholder || nothing}
           ?disabled=${this.disabled}
-          aria-invalid=${this.isInvalid ? 'true' : 'false'}
+          aria-invalid=${this.ariaInvalid ?? nothing}
           aria-describedby=${this.textareaDescribedBy || nothing}
           @input=${this._onInput}
           @keydown=${this._onKeyDown}

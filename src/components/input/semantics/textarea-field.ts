@@ -13,7 +13,9 @@ export class TextareaField extends LitElement {
   @property({ type: Number }) rows = 3
   @property({ type: Boolean }) optional = false
   @property({ type: Boolean, reflect: true }) disabled = false
-  @property({ type: Boolean, attribute: 'aria-invalid', reflect: true }) isInvalid = false
+  @property({ type: String, attribute: 'aria-invalid', reflect: true }) override ariaInvalid:
+    | string
+    | null = null
 
   static styles = textfieldStyles
 
@@ -24,7 +26,7 @@ export class TextareaField extends LitElement {
 
   render() {
     return html`
-      <div class="textfield" ?data-invalid=${this.isInvalid}>
+      <div class="textfield" ?data-invalid=${this.ariaInvalid === 'true'}>
         ${this.label
           ? html`
               <mm-textfield-label for=${this.inputId} ?optional=${this.optional}>
@@ -39,8 +41,8 @@ export class TextareaField extends LitElement {
           .placeholder=${this.placeholder}
           .rows=${this.rows}
           ?disabled=${this.disabled}
-          .isInvalid=${this.isInvalid}
-          .describedBy=${this.helper ? this.helperId : ''}
+          .ariaInvalid=${this.ariaInvalid}
+          .ariaDescribedBy=${this.helper ? this.helperId : null}
           @input=${this._syncValue}
         ></mm-textarea>
         ${this.helper

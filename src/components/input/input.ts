@@ -17,8 +17,8 @@ export class Input extends LitElement {
   @property() name?: string
   @property() placeholder?: string
   @property({ type: Boolean }) disabled = false
-  @property({ type: Boolean, attribute: 'aria-invalid' }) isInvalid = false
-  @property({ attribute: 'aria-describedby' }) describedBy?: string
+  @property({ type: String, attribute: 'aria-invalid' }) override ariaInvalid: string | null = null
+  @property({ attribute: 'aria-describedby' }) override ariaDescribedBy: string | null = null
   @property({ type: Number }) min?: number
   @property({ type: Number }) max?: number
   @property({ type: Number }) step?: number
@@ -47,8 +47,8 @@ export class Input extends LitElement {
         max=${this.max ?? nothing}
         step=${this.step ?? nothing}
         ?disabled=${this.disabled}
-        aria-invalid=${this.isInvalid ? 'true' : 'false'}
-        aria-describedby=${this.describedBy || nothing}
+        aria-invalid=${this.ariaInvalid ?? nothing}
+        aria-describedby=${this.ariaDescribedBy ?? nothing}
         @input=${this.handleInput}
       />
     `

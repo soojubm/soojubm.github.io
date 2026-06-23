@@ -7,8 +7,10 @@ import { customElement, property } from 'lit/decorators.js'
  */
 @customElement('mm-read-more-button')
 export class ReadMoreButton extends LitElement {
-  @property({ type: Boolean, reflect: true }) expanded = false
-  @property({ type: String, attribute: 'aria-controls' }) controls = ''
+  @property({ type: String, attribute: 'aria-expanded', reflect: true }) override ariaExpanded =
+    'false'
+  @property({ type: String, attribute: 'aria-controls' }) override ariaControls: string | null =
+    null
   @property({ type: String, attribute: 'more-label' }) moreLabel = '더 보기'
   @property({ type: String, attribute: 'less-label' }) lessLabel = '접기'
 
@@ -35,10 +37,10 @@ export class ReadMoreButton extends LitElement {
     return html`
       <button
         type="button"
-        aria-expanded=${this.expanded ? 'true' : 'false'}
-        aria-controls=${this.controls || nothing}
+        aria-expanded=${this.ariaExpanded}
+        aria-controls=${this.ariaControls ?? nothing}
       >
-        <slot>${this.expanded ? this.lessLabel : this.moreLabel}</slot>
+        <slot>${this.ariaExpanded === 'true' ? this.lessLabel : this.moreLabel}</slot>
       </button>
     `
   }

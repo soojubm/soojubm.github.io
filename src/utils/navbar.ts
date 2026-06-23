@@ -19,7 +19,7 @@ export function hideNavbar() {
 
 export function initializeNavbar() {
   const navigationTrigger = document.querySelector<HTMLElement>('.js-navbar-toggle')
-  navigationTrigger?.removeAttribute('expanded')
+  navigationTrigger?.setAttribute('aria-expanded', 'false')
   const menuElement = getControlledElement(navigationTrigger)
   menuElement?.setAttribute('aria-hidden', 'true')
   document.body.classList.remove(OPENED_MENU_CLASSNAME)
@@ -39,7 +39,7 @@ export function toggleNavbarMenu(event) {
 
   document.body.classList.toggle(OPENED_MENU_CLASSNAME, !isOpendNavbarMenu())
 
-  trigger.toggleAttribute('expanded', isOpendNavbarMenu())
+  trigger.setAttribute('aria-expanded', String(isOpendNavbarMenu()))
   menuElement.setAttribute('aria-hidden', String(!isOpendNavbarMenu()))
 
   const tabIndex = String(isOpendNavbarMenu() ? '0' : '-1')

@@ -1,5 +1,5 @@
 import { LitElement, html } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
+import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
 import { tooltipStyles } from './tooltip.styles'
 
 @customElement('mm-tooltip')
@@ -7,6 +7,9 @@ class Tooltip extends LitElement {
   @property({ type: String }) content = ''
   @property({ type: String, reflect: true }) placement = ''
   @property({ type: Boolean, reflect: true }) open = false
+
+  @queryAssignedElements({ slot: 'trigger', flatten: true })
+  private _triggerElements!: Element[]
 
   private readonly _contentId = `tooltip-${crypto.randomUUID()}`
   private _descriptionTargets = new Set<HTMLElement>()
@@ -62,8 +65,7 @@ class Tooltip extends LitElement {
   private _syncDescription() {
     this._clearDescriptionTargets()
 
-    const slot = this.shadowRoot?.querySelector<HTMLSlotElement>('slot[name="trigger"]')
-    slot?.assignedElements({ flatten: true }).forEach(element => {
+    this._triggerElements.forEach(element => {
       const target = this._findDescriptionTarget(element)
       if (!target) return
 

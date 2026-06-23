@@ -9,8 +9,10 @@ import '../icon-button'
 @customElement('mm-more-button')
 export class MoreButton extends LitElement {
   @property({ type: String, attribute: 'aria-label' }) override ariaLabel = '더보기'
-  @property({ type: Boolean, reflect: true }) expanded = false
-  @property({ type: String, attribute: 'aria-controls' }) controls = ''
+  @property({ type: String, attribute: 'aria-expanded', reflect: true }) override ariaExpanded =
+    'false'
+  @property({ type: String, attribute: 'aria-controls' }) override ariaControls: string | null =
+    null
   @property({ type: Boolean, reflect: true }) disabled = false
 
   static styles = css`
@@ -26,10 +28,10 @@ export class MoreButton extends LitElement {
         icon=${ICON_NAMES.MORE_ACTIONS}
         tooltip="더보기"
         tooltip-placement="center"
-        aria-label=${this.ariaLabel}
+        .ariaLabel=${this.ariaLabel}
         aria-haspopup="menu"
-        aria-expanded=${this.expanded ? 'true' : 'false'}
-        aria-controls=${this.controls || nothing}
+        .ariaExpanded=${this.ariaExpanded}
+        .ariaControls=${this.ariaControls}
         ?disabled=${this.disabled}
       ></mm-icon-button>
     `

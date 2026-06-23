@@ -9,8 +9,10 @@ import '../icon-button'
 @customElement('mm-hamburger-button')
 export class HamburgerButton extends LitElement {
   @property({ type: String, attribute: 'aria-label' }) override ariaLabel = '전체 메뉴'
-  @property({ type: Boolean, reflect: true }) expanded = false
-  @property({ type: String, attribute: 'aria-controls' }) controls = ''
+  @property({ type: String, attribute: 'aria-expanded', reflect: true }) override ariaExpanded =
+    'false'
+  @property({ type: String, attribute: 'aria-controls' }) override ariaControls: string | null =
+    null
 
   static styles = css`
     :host {
@@ -30,9 +32,9 @@ export class HamburgerButton extends LitElement {
       <mm-icon-button
         icon=${ICON_NAMES.MENU}
         variant="ghost"
-        aria-label=${this.ariaLabel}
-        aria-expanded=${this.expanded ? 'true' : 'false'}
-        aria-controls=${this.controls || nothing}
+        .ariaLabel=${this.ariaLabel}
+        .ariaExpanded=${this.ariaExpanded}
+        .ariaControls=${this.ariaControls}
       ></mm-icon-button>
     `
   }

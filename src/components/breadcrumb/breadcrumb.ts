@@ -15,7 +15,7 @@ interface BreadcrumbItem {
 export class Breadcrumb extends LitElement {
   /** [{ "label": "홈", "href": "/" }, ...] 형태의 JSON 문자열 */
   @property({ type: String }) items = '[]'
-  @property({ type: String, attribute: 'aria-label' }) ariaLabel = 'breadcrumb'
+  @property({ type: String, attribute: 'aria-label' }) override ariaLabel = 'breadcrumb'
   @property({ type: String }) divider = '/'
 
   static styles = css`

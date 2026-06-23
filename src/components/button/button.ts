@@ -18,7 +18,19 @@ export class Button extends LitElement {
   @property({ type: String, attribute: 'icon-position' }) iconPosition: ButtonIconPosition =
     'leading'
   @property({ type: String, attribute: 'aria-label' }) override ariaLabel = ''
-  @property({ attribute: 'aria-pressed' }) override ariaPressed: string | null = null
+  @property({ type: String }) override role = ''
+  @property({ type: String, attribute: 'aria-pressed' }) override ariaPressed: string | null = null
+  @property({ type: String, attribute: 'aria-checked' }) override ariaChecked: string | null = null
+  @property({ type: String, attribute: 'aria-expanded', reflect: true }) override ariaExpanded:
+    | string
+    | null = null
+  @property({ type: String, attribute: 'aria-controls' }) override ariaControls: string | null =
+    null
+  @property({ type: String, attribute: 'aria-haspopup' }) override ariaHasPopup: string | null =
+    null
+  @property({ type: String, attribute: 'aria-describedby' }) override ariaDescribedBy:
+    | string
+    | null = null
 
   static styles = [interactiveControlStyles, buttonStyles]
 
@@ -41,8 +53,14 @@ export class Button extends LitElement {
     return html`
       <button
         ?disabled="${this.disabled}"
+        role=${this.role || nothing}
         aria-label=${this.ariaLabel || nothing}
         aria-pressed=${this.ariaPressed ?? nothing}
+        aria-checked=${this.ariaChecked ?? nothing}
+        aria-expanded=${this.ariaExpanded ?? nothing}
+        aria-controls=${this.ariaControls ?? nothing}
+        aria-haspopup=${this.ariaHasPopup ?? nothing}
+        aria-describedby=${this.ariaDescribedBy ?? nothing}
         @click="${this._handleClick}"
       >
         ${this.renderIcon('leading')}

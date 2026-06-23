@@ -17,28 +17,29 @@ export class MenuItemAction extends LitElement {
   @property({ type: String, attribute: 'avatar-src' }) avatarSrc = ''
   @property({ type: String, attribute: 'avatar-variant' }) avatarVariant = 'tertiary'
   @property({ type: Boolean, reflect: true }) disabled = false
-  @property({ type: String, attribute: 'role' }) override role = ''
-  @property({ attribute: 'aria-controls' }) override ariaControls: string | null = null
-  @property({ attribute: 'aria-expanded' }) override ariaExpanded: string | null = null
-  @property({ attribute: 'aria-haspopup' }) override ariaHasPopup: string | null = null
+  @property({ type: String }) override role = 'menuitem'
+  @property({ type: String, attribute: 'aria-controls' }) override ariaControls: string | null =
+    null
+  @property({ type: String, attribute: 'aria-expanded' }) override ariaExpanded: string | null =
+    null
+  @property({ type: String, attribute: 'aria-haspopup' }) override ariaHasPopup: string | null =
+    null
+  @property({ type: String, attribute: 'aria-current' }) override ariaCurrent: string | null = null
 
   static styles = [menuItemStyles]
-
-  override updated() {
-    if (this.hasAttribute('role')) this.removeAttribute('role')
-  }
 
   render() {
     return html`
       <button
         type="button"
         class="item"
-        role="menuitem"
+        role=${this.role}
         data-interactive
         aria-disabled=${this.disabled ? 'true' : nothing}
         aria-controls=${this.ariaControls ?? nothing}
         aria-expanded=${this.ariaExpanded ?? nothing}
         aria-haspopup=${this.ariaHasPopup ?? nothing}
+        aria-current=${this.ariaCurrent ?? nothing}
       >
         ${renderMenuItemContent(
           this,
