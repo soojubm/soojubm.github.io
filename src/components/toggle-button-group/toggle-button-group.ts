@@ -19,9 +19,22 @@ interface OptionItem {
 @customElement('mm-toggle-button-group')
 export class ToggleButtonGroup extends LitElement {
   @property({ type: String }) options = '[]'
-  @property({ type: Number, attribute: 'selected-index' }) selectedIndex = 0
   @property({ type: Boolean, reflect: true }) stretch = false
   @state() private currentIndex = 0
+
+  private _selectedIndex = 0
+
+  @property({ type: Number, attribute: 'selected-index' })
+  get selectedIndex() {
+    return this._selectedIndex
+  }
+
+  set selectedIndex(value: number) {
+    const oldValue = this._selectedIndex
+    this._selectedIndex = value
+    this.currentIndex = value
+    this.requestUpdate('selectedIndex', oldValue)
+  }
 
   static styles = css`
     :host {
@@ -53,17 +66,6 @@ export class ToggleButtonGroup extends LitElement {
       width: 100%;
     }
   `
-
-  connectedCallback() {
-    super.connectedCallback()
-    this.currentIndex = this.selectedIndex
-  }
-
-  protected updated(changedProperties: Map<string, unknown>) {
-    if (changedProperties.has('selectedIndex')) {
-      this.currentIndex = this.selectedIndex
-    }
-  }
 
   private get parsedOptions(): OptionItem[] {
     try {

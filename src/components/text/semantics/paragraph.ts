@@ -1,5 +1,6 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { styleMap } from 'lit/directives/style-map.js'
 import { resetStyles } from '../../../stylesheets/shared/reset.styles'
 
 type ParagraphSize = 'small' | 'medium' | 'large'
@@ -80,17 +81,14 @@ export class Paragraph extends LitElement {
     `,
   ]
 
-  updated(changed: Map<string, unknown>) {
-    if (changed.has('color')) {
-      const isKeyword =
-        this.color === 'inherit' || this.color === 'light' || this.color === 'danger'
-      this.style.color = isKeyword ? '' : this.color
-    }
+  private get customColorStyle() {
+    const isKeyword = this.color === 'inherit' || this.color === 'light' || this.color === 'danger'
+    return { color: isKeyword ? undefined : this.color }
   }
 
   render() {
     return html`
-      <p><slot></slot></p>
+      <p style=${styleMap(this.customColorStyle)}><slot></slot></p>
     `
   }
 }

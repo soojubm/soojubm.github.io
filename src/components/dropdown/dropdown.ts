@@ -21,7 +21,6 @@ export class Dropdown extends LitElement {
   @property({ type: String }) value = ''
   @property({ type: String }) placement: 'left' | 'right' = 'left'
   @state() protected isOpen = false
-  @state() protected selectedLabel = 'Select an option'
   @state() protected options: DropdownOption[] = []
 
   @queryAssignedElements({ selector: 'option', flatten: true })
@@ -130,7 +129,6 @@ export class Dropdown extends LitElement {
   protected syncOptions() {
     const lightDomOptions = this.parseLightDomOptions()
     this.options = lightDomOptions.length > 0 ? lightDomOptions : this.defaultOptions
-    this.selectedLabel = this.resolveSelectedLabel()
   }
 
   // light DOM의 <option> 요소를 DropdownOption 데이터로 변환
@@ -151,7 +149,7 @@ export class Dropdown extends LitElement {
       this.options.find(option => option.value === this.value)?.label ??
       this.options.find(option => option.selected)?.label ??
       this.options.find(option => option.type === 'default')?.label ??
-      this.selectedLabel
+      'Select an option'
     )
   }
 
@@ -162,7 +160,6 @@ export class Dropdown extends LitElement {
   // 일반 아이템 클릭 시: 선택 라벨 변경 후 드롭다운 닫기
   protected selectOption(option: DropdownOption) {
     this.value = option.value
-    this.selectedLabel = option.label
     this.isOpen = false
     this.emitSelectChange(option)
   }
@@ -212,7 +209,7 @@ export class Dropdown extends LitElement {
           aria-haspopup="true"
           .ariaExpanded=${String(this.isOpen)}
         >
-          ${this.selectedLabel}
+          ${this.resolveSelectedLabel()}
           <mm-icon name=${ICON_NAMES.EXPAND}></mm-icon>
         </mm-button>
       </slot>
@@ -285,10 +282,6 @@ export class Dropdown extends LitElement {
   protected updated(changed: PropertyValues) {
     if (changed.has('isOpen')) {
       this._updateTriggerAria()
-    }
-    // value가 외부에서 바뀌어도 트리거 라벨이 항상 따라오도록 동기화
-    if (changed.has('value')) {
-      this.selectedLabel = this.resolveSelectedLabel()
     }
   }
 

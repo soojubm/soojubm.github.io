@@ -154,7 +154,7 @@ export class ChatSourceGroup extends LitElement {
         transition: opacity 160ms ease, transform 200ms cubic-bezier(0.18, 1.25, 0.4, 1);
       }
 
-      :host([data-open]) .sheet {
+      .sheet[data-open] {
         transform: translateY(0);
         opacity: 1;
       }
@@ -221,7 +221,7 @@ export class ChatSourceGroup extends LitElement {
 
       ${src
         ? html`
-            <div class="sheet" role="dialog" aria-label="${src.heading || this._domain}">
+            <div class="sheet" data-open role="dialog" aria-label="${src.heading || this._domain}">
               ${src.href
                 ? html`
                     <div class="sheet-header">
@@ -260,16 +260,6 @@ export class ChatSourceGroup extends LitElement {
           `
         : ''}
     `
-  }
-
-  updated(changed: Map<string, unknown>) {
-    if (changed.has('_activeSource')) {
-      if (this._activeSource) {
-        this.setAttribute('data-open', '')
-      } else {
-        this.removeAttribute('data-open')
-      }
-    }
   }
 }
 
