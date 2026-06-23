@@ -2,13 +2,11 @@ import { LitElement, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 import soojubmImage from '../../images/soojubm.png'
 import '../text/semantics/paragraph'
+import { footerStyles } from './footer.styles'
 
 @customElement('mm-footer')
 export class Footer extends LitElement {
-  // 전역 CSS(.footer 등)를 그대로 상속받기 위해 Light DOM 사용
-  createRenderRoot() {
-    return this
-  }
+  static styles = footerStyles
 
   render() {
     return html`

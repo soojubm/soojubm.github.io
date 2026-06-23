@@ -5,6 +5,7 @@ export const menuItemStyles = css`
     --menuitem-radius: var(--radius);
     --menuitem-color-hover: var(--color-background-subtle);
     --menuitem-color-danger: var(--color-danger);
+    --menuitem-padding-inline-start: 0;
   }
 
   .item {
@@ -12,6 +13,7 @@ export const menuItemStyles = css`
     align-items: center;
     width: 100%;
     border-radius: var(--menuitem-radius);
+    padding-inline-start: var(--menuitem-padding-inline-start);
     color: inherit;
     text-decoration: none;
     box-sizing: border-box;

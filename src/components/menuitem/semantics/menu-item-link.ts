@@ -40,7 +40,6 @@ export class MenuItemLink extends LitElement {
       <a
         href=${this.disabled ? nothing : this.href}
         class="item"
-        part="item"
         role="menuitem"
         data-interactive
         aria-disabled=${this.disabled ? 'true' : nothing}
