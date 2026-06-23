@@ -7,6 +7,8 @@ import { ICON_NAMES, type IconName } from '../icon-button/semantics/icon-names'
 import '../menuitem/semantics/menu-item-action'
 import '../menuitem/semantics/menu-item-checkbox'
 
+type DropdownPlacement = 'bottom-left' | 'bottom-right' | 'top-left' | 'top-right'
+
 export interface DropdownOption {
   label: string
   value: string
@@ -19,7 +21,9 @@ export interface DropdownOption {
 @customElement('mm-dropdown')
 export class Dropdown extends LitElement {
   @property({ type: String }) value = ''
-  @property({ type: String }) placement: 'left' | 'right' = 'left'
+  @property({ type: String }) placement: DropdownPlacement = 'bottom-left'
+  @property({ type: Boolean, reflect: true }) inline = false
+  @property({ type: String, attribute: 'list-min-width' }) listMinWidth = ''
   @state() protected isOpen = false
   @state() protected options: DropdownOption[] = []
 
@@ -39,6 +43,10 @@ export class Dropdown extends LitElement {
 
         position: relative;
         width: 100%;
+      }
+
+      :host([inline]) .dropdown {
+        width: auto;
       }
 
       .dropdown-button {
@@ -91,9 +99,22 @@ export class Dropdown extends LitElement {
             visibility 0s;
         }
 
-        &[placement='right'] {
+        &[placement='bottom-right'],
+        &[placement='top-right'] {
           left: auto;
           right: 0;
+        }
+
+        &[placement='bottom-left'][inline],
+        &[placement='top-left'][inline] {
+          right: auto;
+        }
+
+        &[placement='top-left'],
+        &[placement='top-right'] {
+          top: auto;
+          bottom: calc(100% + var(--dropdown-offset));
+          transform-origin: bottom center;
         }
       }
 
@@ -221,10 +242,11 @@ export class Dropdown extends LitElement {
   protected renderList() {
     return html`
       <div
-        part="list"
         class="dropdown-list"
         ?open=${this.isOpen}
         placement=${this.placement}
+        ?inline=${this.inline}
+        style=${this.listMinWidth ? `min-width: ${this.listMinWidth}` : nothing}
         role="menu"
       >
         ${repeat(
@@ -284,7 +306,7 @@ export class Dropdown extends LitElement {
 
   render() {
     return html`
-      <div part="dropdown" class="dropdown">${this.renderTrigger()} ${this.renderList()}</div>
+      <div class="dropdown">${this.renderTrigger()} ${this.renderList()}</div>
       <slot hidden @slotchange=${this.syncOptions}></slot>
     `
   }

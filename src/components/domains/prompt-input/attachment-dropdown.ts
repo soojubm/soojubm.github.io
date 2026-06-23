@@ -10,24 +10,11 @@ export class AttachmentDropdown extends LitElement {
     :host {
       display: inline-flex;
     }
-
-    mm-dropdown::part(dropdown) {
-      width: auto;
-    }
-
-    mm-dropdown::part(list) {
-      top: auto;
-      bottom: calc(100% + 4px);
-      left: 0;
-      right: auto;
-      min-width: 160px;
-      transform-origin: bottom center;
-    }
   `
 
   render() {
     return html`
-      <mm-dropdown>
+      <mm-dropdown inline placement="top-left" list-min-width="160px">
         <mm-icon-button
           slot="trigger"
           icon=${ICON_NAMES.ADD}

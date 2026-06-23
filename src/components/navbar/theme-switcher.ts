@@ -31,7 +31,7 @@ export class ThemeSwitcher extends LitElement {
 
   render() {
     return html`
-      <mm-dropdown .value=${this.value} placement="right" @change=${this.handleChange}>
+      <mm-dropdown .value=${this.value} placement="bottom-right" @change=${this.handleChange}>
         <mm-icon-button
           slot="trigger"
           variant="ghost"

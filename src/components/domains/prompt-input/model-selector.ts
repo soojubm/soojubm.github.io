@@ -13,18 +13,6 @@ export class ModelSelector extends LitElement {
       display: inline-flex;
     }
 
-    mm-dropdown::part(dropdown) {
-      width: auto;
-    }
-
-    mm-dropdown::part(list) {
-      top: auto;
-      bottom: calc(100% + 4px);
-      left: 0;
-      right: auto;
-      transform-origin: bottom center;
-    }
-
     mm-button {
       --button-icon-gap: var(--space-1);
     }
@@ -40,7 +28,7 @@ export class ModelSelector extends LitElement {
 
   render() {
     return html`
-      <mm-dropdown .value=${this.value}>
+      <mm-dropdown .value=${this.value} inline placement="top-left">
         <mm-button
           slot="trigger"
           variant="tertiary"
