@@ -17,7 +17,7 @@ export class FilterButton extends LitElement {
   @property({ type: String }) mode: 'single' | 'multiple' = 'single'
   /** "전체" 옵션 — 클릭 시 그룹의 모든 옵션을 선택/해제 */
   @property({ type: Boolean, attribute: 'select-all' }) selectAll = false
-  @property({ type: Boolean, reflect: true }) disabled = false
+  @property({ type: Boolean }) disabled = false
 
   static styles = [
     resetStyles,

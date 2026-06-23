@@ -12,7 +12,7 @@ export class TextareaField extends LitElement {
   @property({ type: String }) helper?: string
   @property({ type: Number }) rows = 3
   @property({ type: Boolean }) optional = false
-  @property({ type: Boolean, reflect: true }) disabled = false
+  @property({ type: Boolean }) disabled = false
   @property({ type: String, attribute: 'aria-invalid' }) ariaInvalid: string | null = null
 
   static styles = textfieldStyles

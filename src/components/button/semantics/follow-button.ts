@@ -11,7 +11,7 @@ import '../button'
 export class FollowButton extends LitElement {
   @property({ type: Boolean, reflect: true }) selected = false
   @property({ type: String }) value = ''
-  @property({ type: Boolean, reflect: true }) disabled = false
+  @property({ type: Boolean }) disabled = false
 
   static styles = [
     resetStyles,

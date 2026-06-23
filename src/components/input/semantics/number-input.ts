@@ -16,7 +16,7 @@ export class NumberInput extends LitElement {
   @property({ type: String, reflect: true }) size = ''
   @property({ type: Boolean }) optional = false
   @property({ type: Boolean, attribute: 'hidden-label', reflect: true }) hiddenLabel = false
-  @property({ type: Boolean, reflect: true }) disabled = false
+  @property({ type: Boolean }) disabled = false
   @property({ type: String, attribute: 'aria-invalid' }) ariaInvalid: string | null = null
   @property({ type: Number }) min?: number
   @property({ type: Number }) max?: number

@@ -14,7 +14,7 @@ export class AccordionItem extends LitElement {
   /** 펼쳐진 상태 */
   @property({ type: Boolean, reflect: true }) open = false
   /** 비활성 상태 */
-  @property({ type: Boolean, reflect: true }) disabled = false
+  @property({ type: Boolean }) disabled = false
 
   private readonly _panelId = `accordion-panel-${crypto.randomUUID()}`
 

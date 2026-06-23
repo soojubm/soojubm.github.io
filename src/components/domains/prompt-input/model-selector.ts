@@ -6,7 +6,7 @@ import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
 
 @customElement('mm-model-selector')
 export class ModelSelector extends LitElement {
-  @property({ type: String, reflect: true }) value = 'claude-sonnet'
+  @property({ type: String }) value = 'claude-sonnet'
 
   static styles = css`
     :host {

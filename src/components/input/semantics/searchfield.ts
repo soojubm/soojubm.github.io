@@ -8,7 +8,7 @@ import '../input'
 class SearchField extends LitElement {
   @property({ type: String }) value = ''
   @property({ type: String }) placeholder = ''
-  @property({ type: Boolean, reflect: true }) disabled = false
+  @property({ type: Boolean }) disabled = false
   @property({ type: String, reflect: true }) size: 'small' | '' = ''
 
   static styles = [inputStyles]

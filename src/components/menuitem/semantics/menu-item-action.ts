@@ -16,7 +16,7 @@ export class MenuItemAction extends LitElement {
   @property({ type: String }) emoji = ''
   @property({ type: String, attribute: 'avatar-src' }) avatarSrc = ''
   @property({ type: String, attribute: 'avatar-variant' }) avatarVariant = 'tertiary'
-  @property({ type: Boolean, reflect: true }) disabled = false
+  @property({ type: Boolean }) disabled = false
   @property({ type: String }) role = 'menuitem'
   @property({ type: String, attribute: 'aria-controls' }) ariaControls: string | null = null
   @property({ type: String, attribute: 'aria-expanded' }) ariaExpanded: string | null = null

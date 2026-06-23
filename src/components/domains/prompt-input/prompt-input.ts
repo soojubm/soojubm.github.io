@@ -7,7 +7,7 @@ import './attachment-dropdown'
 
 @customElement('mm-prompt-input')
 export class PromptInput extends LitElement {
-  @property({ type: String, reflect: true }) value = ''
+  @property({ type: String }) value = ''
   @property({ type: String }) name = ''
   @property({ type: String }) placeholder = 'Ask me anything...'
   @property({ type: String }) model = 'claude-sonnet'

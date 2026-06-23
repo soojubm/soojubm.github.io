@@ -15,7 +15,7 @@ class IconButton extends LitElement {
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = ''
   @property({ type: String }) tooltip = ''
   @property({ type: String, attribute: 'tooltip-placement' }) tooltipPlacement = ''
-  @property({ type: Boolean, reflect: true }) disabled = false
+  @property({ type: Boolean }) disabled = false
   @property({ type: String }) role = ''
   @property({ type: String, attribute: 'aria-haspopup' }) ariaHasPopup: string | null = null
   @property({ type: String, attribute: 'aria-expanded', reflect: true }) ariaExpanded:

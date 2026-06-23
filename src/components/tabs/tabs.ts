@@ -15,7 +15,7 @@ export class Tabs extends LitElement {
       gap: var(--space-3);
     }
   `
-  @property({ type: String, reflect: true }) value = ''
+  @property({ type: String }) value = ''
   @property({ type: String, reflect: true }) variant = 'line'
 
   @queryAssignedElements({ selector: 'mm-tab-panel', flatten: true })

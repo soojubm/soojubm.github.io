@@ -14,8 +14,8 @@ export class MenuItemCheckbox extends LitElement {
   @property({ type: String }) emoji = ''
   @property({ type: String, attribute: 'avatar-src' }) avatarSrc = ''
   @property({ type: String, attribute: 'avatar-variant' }) avatarVariant = 'tertiary'
-  @property({ type: Boolean, reflect: true }) disabled = false
-  @property({ type: Boolean, reflect: true }) checked = false
+  @property({ type: Boolean }) disabled = false
+  @property({ type: Boolean }) checked = false
   @property({ type: String }) value = ''
 
   static styles = [menuItemStyles]

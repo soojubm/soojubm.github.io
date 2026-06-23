@@ -17,7 +17,7 @@ export class SortDropdown extends LitElement {
     }
   `
 
-  @property({ type: String, reflect: true }) value: SortOrder = 'latest'
+  @property({ type: String }) value: SortOrder = 'latest'
 
   private handleChange(e: CustomEvent) {
     const next = e.detail.value as SortOrder

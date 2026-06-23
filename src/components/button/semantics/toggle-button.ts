@@ -13,7 +13,7 @@ export class ToggleButton extends LitElement {
   @property({ type: Boolean, reflect: true }) selected = false
   @property({ type: String }) value = ''
   @property({ type: String }) icon?: IconName
-  @property({ type: Boolean, reflect: true }) disabled = false
+  @property({ type: Boolean }) disabled = false
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = ''
 
   static styles = [

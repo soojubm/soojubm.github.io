@@ -5,9 +5,9 @@ import { radioGroupStyles } from '../radio.styles' // 🔥 외부 스타일 임�
 
 @customElement('mm-radio-group')
 export class RadioGroup extends LitElement {
-  @property({ type: String, reflect: true }) value = ''
+  @property({ type: String }) value = ''
   @property({ type: String }) name = ''
-  @property({ type: Boolean, reflect: true }) disabled = false
+  @property({ type: Boolean }) disabled = false
   @property({ type: String }) label = ''
 
   @queryAssignedElements({ selector: 'mm-radio', flatten: true })

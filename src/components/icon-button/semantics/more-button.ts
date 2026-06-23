@@ -11,7 +11,7 @@ export class MoreButton extends LitElement {
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = '더보기'
   @property({ type: String, attribute: 'aria-expanded', reflect: true }) ariaExpanded = 'false'
   @property({ type: String, attribute: 'aria-controls' }) ariaControls: string | null = null
-  @property({ type: Boolean, reflect: true }) disabled = false
+  @property({ type: Boolean }) disabled = false
 
   static styles = css`
     :host {

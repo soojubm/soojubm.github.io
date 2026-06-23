@@ -12,7 +12,7 @@ import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
 export class BookmarkButton extends LitElement {
   @property({ type: Boolean, reflect: true }) selected = false
   @property({ type: String }) value = ''
-  @property({ type: Boolean, reflect: true }) disabled = false
+  @property({ type: Boolean }) disabled = false
   /** star | bookmark | heart */
   @property({ type: String }) shape: 'star' | 'bookmark' | 'heart' = 'star'
 

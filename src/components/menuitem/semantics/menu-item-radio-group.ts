@@ -6,7 +6,7 @@ import './menu-item-group'
 @customElement('mm-menu-item-radio-group')
 export class MenuItemRadioGroup extends LitElement {
   @property({ type: String }) name = ''
-  @property({ type: String, reflect: true }) value = ''
+  @property({ type: String }) value = ''
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = ''
 
   @queryAssignedElements({ selector: 'mm-menu-item-radio', flatten: true })

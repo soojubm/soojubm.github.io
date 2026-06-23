@@ -12,7 +12,7 @@ export class Textarea extends LitElement {
   @property({ type: String }) placeholder = ''
   @property({ type: String, attribute: 'aria-describedby' }) ariaDescribedBy: string | null = null
   @property({ type: Number }) rows = 3
-  @property({ type: Boolean, reflect: true }) disabled = false
+  @property({ type: Boolean }) disabled = false
   @property({ type: String, attribute: 'aria-invalid' }) ariaInvalid: string | null = null
 
   @query('textarea') protected _textarea!: HTMLTextAreaElement

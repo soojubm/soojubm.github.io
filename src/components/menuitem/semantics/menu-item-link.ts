@@ -14,7 +14,7 @@ export class MenuItemLink extends LitElement {
   @property({ type: String }) emoji = ''
   @property({ type: String, attribute: 'avatar-src' }) avatarSrc = ''
   @property({ type: String, attribute: 'avatar-variant' }) avatarVariant = 'tertiary'
-  @property({ type: Boolean, reflect: true }) disabled = false
+  @property({ type: Boolean }) disabled = false
   @property({ type: String }) href = ''
   @property({ type: String }) target = '_blank'
   @property({ type: Boolean, attribute: 'hidden-trailing' }) hiddenTrailing = false

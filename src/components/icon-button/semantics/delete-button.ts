@@ -11,7 +11,7 @@ export class DeleteButton extends LitElement {
   @property({ type: String, attribute: 'confirm-message' })
   confirmMessage = '정말 삭제하시겠어요?'
 
-  @property({ type: Boolean, reflect: true }) disabled = false
+  @property({ type: Boolean }) disabled = false
 
   static styles = css`
     :host {

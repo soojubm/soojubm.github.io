@@ -6,7 +6,7 @@ type ViewMode = 'grid' | 'list'
 
 @customElement('mm-view-mode-switcher')
 export class ViewModeSwitcher extends LitElement {
-  @property({ type: String, reflect: true }) value: ViewMode = 'grid'
+  @property({ type: String }) value: ViewMode = 'grid'
 
   private readonly options = JSON.stringify([
     { value: 'grid', icon: ICON_NAMES.GRID_VIEW, ariaLabel: '그리드 보기' },

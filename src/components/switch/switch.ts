@@ -6,8 +6,8 @@ import { switchStyles } from './switch.styles'
 export class Switch extends LitElement {
   @property({ type: String }) name = ''
   @property({ type: String }) size = ''
-  @property({ type: Boolean, reflect: true }) checked = false
-  @property({ type: Boolean, reflect: true }) disabled = false
+  @property({ type: Boolean }) checked = false
+  @property({ type: Boolean }) disabled = false
 
   static styles = [switchStyles]
 

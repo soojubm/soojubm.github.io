@@ -8,7 +8,7 @@ import '../icon-button'
  */
 @customElement('mm-dismiss-button')
 export class DismissButton extends LitElement {
-  @property({ type: Boolean, reflect: true }) disabled = false
+  @property({ type: Boolean }) disabled = false
 
   static styles = css`
     :host {
