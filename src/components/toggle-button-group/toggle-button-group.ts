@@ -1,5 +1,5 @@
 import { LitElement, css, html, nothing } from 'lit'
-import { customElement, property, state } from 'lit/decorators.js'
+import { customElement, property } from 'lit/decorators.js'
 import { repeat } from 'lit/directives/repeat.js'
 import type { IconName } from '../icon-button/semantics/icon-names'
 import '../button/button-group'
@@ -20,21 +20,7 @@ interface OptionItem {
 export class ToggleButtonGroup extends LitElement {
   @property({ type: String }) options = '[]'
   @property({ type: Boolean, reflect: true }) stretch = false
-  @state() private currentIndex = 0
-
-  private _selectedIndex = 0
-
-  @property({ type: Number, attribute: 'selected-index' })
-  get selectedIndex() {
-    return this._selectedIndex
-  }
-
-  set selectedIndex(value: number) {
-    const oldValue = this._selectedIndex
-    this._selectedIndex = value
-    this.currentIndex = value
-    this.requestUpdate('selectedIndex', oldValue)
-  }
+  @property({ type: Number, attribute: 'selected-index' }) selectedIndex = 0
 
   static styles = css`
     :host {
@@ -80,7 +66,7 @@ export class ToggleButtonGroup extends LitElement {
     event.stopPropagation()
     if (option.disabled) return
 
-    this.currentIndex = index
+    this.selectedIndex = index
 
     this.dispatchEvent(
       new CustomEvent('change', {
@@ -101,7 +87,7 @@ export class ToggleButtonGroup extends LitElement {
           this.parsedOptions,
           option => option.value,
           (option, index) => {
-            const isSelected = index === this.currentIndex
+            const isSelected = index === this.selectedIndex
 
             return html`
               <mm-toggle-button
