@@ -54,9 +54,6 @@ export const componentPropsStyles = [
       right: 0;
       bottom: 0;
     }
-    ::slotted(mm-text[size='18']) {
-      display: none;
-    }
     .component-props.is-opened {
       height: auto;
       cursor: default;
