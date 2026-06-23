@@ -105,7 +105,7 @@ export class CheckboxGroup extends LitElement {
 
   private _dispatchValueChange() {
     this.dispatchEvent(
-      new CustomEvent('value-change', {
+      new CustomEvent('change', {
         bubbles: true,
         composed: true,
         detail: {

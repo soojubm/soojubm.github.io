@@ -6,16 +6,16 @@ import type Sheet from '../../../src/components/sheet/sheet'
 import './profile.css'
 
 type PortfolioItemOpenEvent = CustomEvent<{ modal: string }>
-type ViewModeChangeEvent = CustomEvent<{ value: 'grid' | 'list' }>
-type SortChangeEvent = CustomEvent<{ value: 'latest' | 'oldest' }>
+type ViewModeEvent = CustomEvent<{ value: 'grid' | 'list' }>
+type SortEvent = CustomEvent<{ value: 'latest' | 'oldest' }>
 
 document.addEventListener('DOMContentLoaded', () => {
   document.body.innerHTML = renderLayout(main, { closeSidebar: true })
   hideNavbar()
 
   setupPortfolioModal()
-  document.addEventListener('view-mode-change', handleViewModeChange)
-  document.addEventListener('sort-change', handleSortChange)
+  document.querySelector('mm-view-mode-switcher')?.addEventListener('change', handleViewMode)
+  document.querySelector('mm-sort-dropdown')?.addEventListener('change', handleSort)
 })
 
 /** mm-portfolio-item의 portfolio-item-open 이벤트를 mm-sheet 컴포넌트 open()에 연결한다. */
@@ -27,9 +27,9 @@ function setupPortfolioModal() {
   })
 }
 
-function handleViewModeChange(event: Event) {
+function handleViewMode(event: Event) {
   const target = event.target as HTMLElement
-  const viewModeEvent = event as ViewModeChangeEvent
+  const viewModeEvent = event as ViewModeEvent
   const containerElement = target.closest<HTMLElement>('.profile-body')
   const isList = viewModeEvent.detail.value === 'list'
 
@@ -39,9 +39,9 @@ function handleViewModeChange(event: Event) {
   })
 }
 
-function handleSortChange(event: Event) {
+function handleSort(event: Event) {
   const target = event.target as HTMLElement
-  const sortEvent = event as SortChangeEvent
+  const sortEvent = event as SortEvent
   const containerElement = target.closest<HTMLElement>('.profile-body')
 
   containerElement?.querySelectorAll<HTMLElement>('mm-grid').forEach(gridElement => {

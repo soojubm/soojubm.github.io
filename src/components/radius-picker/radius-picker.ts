@@ -77,7 +77,7 @@ export class RadiusPicker extends LitElement {
         <mm-toggle-button-group
           options=${SHAPE_OPTIONS}
           .selectedIndex=${this.shape === 'square' ? 1 : 0}
-          @option-change=${this.handleShapeChange}
+          @change=${this.handleShapeChange}
         ></mm-toggle-button-group>
 
         <div class="divider"></div>
@@ -85,7 +85,7 @@ export class RadiusPicker extends LitElement {
         <mm-toggle-button-group
           options=${COLOR_OPTIONS}
           .selectedIndex=${this.color === 'black' ? 1 : 0}
-          @option-change=${this.handleColorChange}
+          @change=${this.handleColorChange}
         ></mm-toggle-button-group>
       </div>
     `

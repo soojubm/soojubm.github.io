@@ -77,6 +77,7 @@
 ## 코드 정리
 
 - CustomEvent 이름은 `kebab-case`로 작성하며, 같은 의미의 camelCase 호환 이벤트를 중복 발행하지 않는다.
+- 값 변경 이벤트는 `input`·`change`를 우선하고, 행동 이벤트만 구체 이름을 사용한다.
 - CustomEvent detail의 단일 값은 `value`, 복수 값은 `values`로 전달한다.
 - boolean 상태는 실제 상태명과 같은 key로 전달한다.
 - Lit의 `render()`는 순수하게 유지하고, 부수효과는 handler나 lifecycle에서 처리한다.

@@ -31,7 +31,7 @@ export class ViewModeSwitcher extends LitElement {
     this.value = mode
 
     this.dispatchEvent(
-      new CustomEvent('view-mode-change', {
+      new CustomEvent('change', {
         detail: { value: this.value },
         bubbles: true,
         composed: true,
@@ -65,7 +65,7 @@ export class ViewModeSwitcher extends LitElement {
         .options=${this.options}
         .selectedIndex=${this.selectedIndex}
         @click=${this.handleClick}
-        @option-change=${this.handleOptionChange}
+        @change=${this.handleOptionChange}
       ></mm-toggle-button-group>
     `
   }

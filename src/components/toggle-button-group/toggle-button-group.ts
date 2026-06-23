@@ -83,7 +83,7 @@ export class ToggleButtonGroup extends LitElement {
     this.currentIndex = index
 
     this.dispatchEvent(
-      new CustomEvent('option-change', {
+      new CustomEvent('change', {
         detail: {
           index,
           value: option.value,

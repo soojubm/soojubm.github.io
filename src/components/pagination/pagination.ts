@@ -64,8 +64,8 @@ export class Pagination extends LitElement {
 
     this.currentPage = nextPage
     this.dispatchEvent(
-      new CustomEvent('page-change', {
-        detail: { page: nextPage },
+      new CustomEvent('change', {
+        detail: { value: nextPage },
         bubbles: true,
         composed: true,
       }),

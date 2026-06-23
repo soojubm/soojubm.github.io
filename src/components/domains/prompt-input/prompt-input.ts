@@ -98,10 +98,11 @@ export class PromptInput extends LitElement {
   }
 
   private _handleTextareaInput(e: CustomEvent<{ value: string }>) {
+    e.stopPropagation()
     this.value = e.detail.value
     this._queueSingleLineSync()
     this.dispatchEvent(
-      new CustomEvent('value-change', {
+      new CustomEvent('input', {
         detail: { value: this.value },
         bubbles: true,
         composed: true,
