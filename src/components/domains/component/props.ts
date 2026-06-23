@@ -3,6 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 import { state } from 'lit/decorators/state.js'
 import '../../button/semantics/read-more-button'
 import { componentPropsStyles, propStyles } from './props.styles'
+import { uniqueId } from '../../../utils/unique-id'
 
 /**
  * 1. 자식 컴포넌트: <mm-prop>
@@ -39,7 +40,7 @@ export class ComponentProps extends LitElement {
   // 💡 1. 컴포넌트 내부에서만 사용할 '열림 상태' 변수를 정의합니다.
   @state() private _isOpened = false
 
-  private readonly _propsId = `component-props-${crypto.randomUUID()}`
+  private readonly _propsId = uniqueId('component-props')
 
   static styles = componentPropsStyles
 

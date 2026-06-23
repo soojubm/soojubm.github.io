@@ -2,6 +2,7 @@ import { LitElement, html } from 'lit'
 import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
 import { Radio } from '../radio'
 import { radioGroupStyles } from '../radio.styles' // 🔥 외부 스타일 임포트
+import { emit } from '../../../utils/emit'
 
 @customElement('mm-radio-group')
 export class RadioGroup extends LitElement {
@@ -42,13 +43,7 @@ export class RadioGroup extends LitElement {
 
       this.value = newValue
 
-      this.dispatchEvent(
-        new CustomEvent('change', {
-          bubbles: true,
-          composed: true,
-          detail: { value: this.value, name: this.name },
-        }),
-      )
+      emit(this, 'change', { value: this.value, name: this.name })
     }
   }
 

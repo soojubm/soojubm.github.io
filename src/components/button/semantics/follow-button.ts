@@ -2,6 +2,7 @@ import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { resetStyles } from '../../../stylesheets/shared/reset.styles'
 import '../button'
+import { emit } from '../../../utils/emit'
 
 /**
  * 팔로우 토글 버튼.
@@ -31,13 +32,7 @@ export class FollowButton extends LitElement {
   private handleClick() {
     if (this.disabled) return
     this.selected = !this.selected
-    this.dispatchEvent(
-      new CustomEvent('change', {
-        detail: { selected: this.selected, value: this.value },
-        bubbles: true,
-        composed: true,
-      }),
-    )
+    emit(this, 'change', { selected: this.selected, value: this.value })
   }
 
   render() {

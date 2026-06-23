@@ -5,6 +5,7 @@ import type { IconName } from '../icon-button/semantics/icon-names'
 import '../button/button-group'
 import '../button/semantics/toggle-button'
 import './semantics/view-mode-switcher'
+import { emit } from '../../utils/emit'
 
 interface OptionItem {
   value: string
@@ -68,16 +69,10 @@ export class ToggleButtonGroup extends LitElement {
 
     this.selectedIndex = index
 
-    this.dispatchEvent(
-      new CustomEvent('change', {
-        detail: {
-          index,
-          value: option.value,
-        },
-        bubbles: true,
-        composed: true,
-      }),
-    )
+    emit(this, 'change', {
+      index,
+      value: option.value,
+    })
   }
 
   render() {

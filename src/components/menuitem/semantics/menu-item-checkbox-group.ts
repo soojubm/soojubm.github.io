@@ -2,6 +2,7 @@ import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
 import type { MenuItemCheckbox } from './menu-item-checkbox'
 import './menu-item-group'
+import { emit } from '../../../utils/emit'
 
 /**
  * mm-menu-item-checkbox를 묶는 다중 선택 그룹.
@@ -38,13 +39,7 @@ export class MenuItemCheckboxGroup extends LitElement {
       cb.checked = this.values.includes(cb.value)
     })
 
-    this.dispatchEvent(
-      new CustomEvent('change', {
-        detail: { values: this.values },
-        bubbles: true,
-        composed: true,
-      }),
-    )
+    emit(this, 'change', { values: this.values })
   }
 
   private handleSlotChange() {

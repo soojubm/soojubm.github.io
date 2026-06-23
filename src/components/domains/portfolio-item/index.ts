@@ -2,6 +2,7 @@ import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { resetStyles } from '../../../stylesheets/shared/reset.styles'
 import '../../icon-button/semantics/more-button'
+import { emit } from '../../../utils/emit'
 
 @customElement('mm-portfolio-item')
 export class PortfolioItem extends LitElement {
@@ -90,13 +91,7 @@ export class PortfolioItem extends LitElement {
   private open() {
     if (!this.modal) return
 
-    this.dispatchEvent(
-      new CustomEvent('portfolio-item-open', {
-        detail: { modal: this.modal },
-        bubbles: true,
-        composed: true,
-      }),
-    )
+    emit(this, 'portfolio-item-open', { modal: this.modal })
   }
 
   private handleKeyDown(event: KeyboardEvent) {

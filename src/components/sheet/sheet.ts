@@ -1,6 +1,7 @@
 import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { sheetStyles } from './sheet.styles'
+import { emit } from '../../utils/emit'
 export type SheetVariant = 'center' | 'bottom' | 'left' | 'right' | 'inline'
 export type SheetWidth = 'small' | 'medium' | 'large' | 'full'
 
@@ -84,7 +85,7 @@ class Sheet extends LitElement {
   }
 
   private requestClose() {
-    this.dispatchEvent(new CustomEvent('sheetclose', { bubbles: true, composed: true }))
+    emit(this, 'sheetclose')
   }
 
   private get _isModal() {

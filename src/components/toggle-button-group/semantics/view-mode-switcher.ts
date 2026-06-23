@@ -1,6 +1,7 @@
 import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
+import { emit } from '../../../utils/emit'
 
 type ViewMode = 'grid' | 'list'
 
@@ -30,13 +31,7 @@ export class ViewModeSwitcher extends LitElement {
   private updateMode(mode: ViewMode) {
     this.value = mode
 
-    this.dispatchEvent(
-      new CustomEvent('change', {
-        detail: { value: this.value },
-        bubbles: true,
-        composed: true,
-      }),
-    )
+    emit(this, 'change', { value: this.value })
   }
 
   private handleClick(event: MouseEvent) {

@@ -3,6 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 import type { IconName } from '../../icon-button/semantics/icon-names'
 import { menuItemStyles } from '../menuitem.styles'
 import { renderMenuItemContent } from '../menuitem.utils'
+import { emit } from '../../../utils/emit'
 
 @customElement('mm-menu-item-checkbox')
 export class MenuItemCheckbox extends LitElement {
@@ -23,13 +24,7 @@ export class MenuItemCheckbox extends LitElement {
   private commitChecked(checked: boolean) {
     if (this.disabled) return
     this.checked = checked
-    this.dispatchEvent(
-      new CustomEvent('change', {
-        detail: { checked: this.checked, value: this.value },
-        bubbles: true,
-        composed: true,
-      }),
-    )
+    emit(this, 'change', { checked: this.checked, value: this.value })
   }
 
   private _handleRowClick = () => {

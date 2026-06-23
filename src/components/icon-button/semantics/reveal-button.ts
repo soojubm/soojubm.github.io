@@ -2,6 +2,7 @@ import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { iconButtonStyles } from '../icon-button.styles'
 import { ICON_NAMES } from './icon-names'
+import { emit } from '../../../utils/emit'
 
 /**
  * 비밀번호 등 가려진 입력값의 노출 여부를 토글하는 버튼.
@@ -27,13 +28,7 @@ export class RevealButton extends LitElement {
   private _handleClick = () => {
     if (this.disabled) return
     this.revealed = !this.revealed
-    this.dispatchEvent(
-      new CustomEvent('reveal-toggle', {
-        detail: { revealed: this.revealed },
-        bubbles: true,
-        composed: true,
-      }),
-    )
+    emit(this, 'reveal-toggle', { revealed: this.revealed })
   }
 
   render() {

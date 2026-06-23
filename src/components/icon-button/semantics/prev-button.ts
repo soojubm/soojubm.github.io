@@ -2,6 +2,7 @@ import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { ICON_NAMES } from './icon-names'
 import '../icon-button'
+import { emit } from '../../../utils/emit'
 
 @customElement('mm-prev-button')
 export class PrevButton extends LitElement {
@@ -25,7 +26,7 @@ export class PrevButton extends LitElement {
 
   private _handleClick = () => {
     if (this.disabled) return
-    this.dispatchEvent(new CustomEvent('prev', { bubbles: true, composed: true }))
+    emit(this, 'prev')
   }
 
   render() {

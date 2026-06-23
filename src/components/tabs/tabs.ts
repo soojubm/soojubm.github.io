@@ -3,10 +3,11 @@ import { customElement, property, queryAssignedElements } from 'lit/decorators.j
 import TabList from './tab-list'
 import Tab from './tab'
 import TabPanel from './tab-panel'
+import { uniqueId } from '../../utils/unique-id'
 
 @customElement('mm-tabs')
 export class Tabs extends LitElement {
-  private readonly _tabsId = `tabs-${crypto.randomUUID()}`
+  private readonly _tabsId = uniqueId('tabs')
 
   static styles = css`
     :host {

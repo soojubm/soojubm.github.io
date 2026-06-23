@@ -1,10 +1,11 @@
-import { LitElement, html } from 'lit'
+import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { repeat } from 'lit/directives/repeat.js'
 import '../icon-button/semantics/prev-button'
 import '../icon-button/semantics/next-button'
 import '../icon-button/semantics/page-button'
 import { paginationStyles } from './pagination.styles'
+import { emit } from '../../utils/emit'
 
 type PaginationItem = number | 'ellipsis'
 
@@ -63,13 +64,7 @@ export class Pagination extends LitElement {
     if (nextPage === this.safeCurrentPage) return
 
     this.currentPage = nextPage
-    this.dispatchEvent(
-      new CustomEvent('change', {
-        detail: { value: nextPage },
-        bubbles: true,
-        composed: true,
-      }),
-    )
+    emit(this, 'change', { value: nextPage })
   }
 
   private renderPage(item: PaginationItem) {

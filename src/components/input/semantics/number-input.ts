@@ -4,6 +4,8 @@ import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
 import { textfieldStyles } from './textfield.styles'
 import '../../icon-button/icon-button'
 import '../input'
+import { emit } from '../../../utils/emit'
+import { uniqueId } from '../../../utils/unique-id'
 
 @customElement('mm-number-input')
 export class NumberInput extends LitElement {
@@ -24,7 +26,7 @@ export class NumberInput extends LitElement {
 
   static styles = textfieldStyles
 
-  private inputId = `input-${crypto?.randomUUID?.() || Math.random().toString(36).slice(2)}`
+  private inputId = uniqueId('input')
 
   render() {
     return html`
@@ -104,12 +106,8 @@ export class NumberInput extends LitElement {
 
   private _commit(value: number) {
     this.value = String(this._clamp(value))
-    this.dispatchEvent(
-      new CustomEvent('input', { bubbles: true, composed: true, detail: { value: this.value } }),
-    )
-    this.dispatchEvent(
-      new CustomEvent('change', { bubbles: true, composed: true, detail: { value: this.value } }),
-    )
+    emit(this, 'input', { value: this.value })
+    emit(this, 'change', { value: this.value })
   }
 
   private _decrement() {
@@ -125,9 +123,7 @@ export class NumberInput extends LitElement {
   private _handleInput(event: Event) {
     const target = event.target as HTMLInputElement
     this.value = target.value
-    this.dispatchEvent(
-      new CustomEvent('input', { bubbles: true, composed: true, detail: { value: this.value } }),
-    )
+    emit(this, 'input', { value: this.value })
   }
 }
 

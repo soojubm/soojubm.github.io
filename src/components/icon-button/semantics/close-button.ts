@@ -2,6 +2,7 @@ import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { ICON_NAMES } from './icon-names'
 import '../icon-button'
+import { emit } from '../../../utils/emit'
 
 /**
  * 모달, 패널, 시트 등 레이어를 닫는 버튼.
@@ -27,7 +28,7 @@ export class CloseButton extends LitElement {
   }
 
   private _handleClick = () => {
-    this.dispatchEvent(new CustomEvent('close', { bubbles: true, composed: true }))
+    emit(this, 'close')
   }
 
   render() {

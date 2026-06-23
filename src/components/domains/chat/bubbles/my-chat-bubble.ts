@@ -5,6 +5,7 @@ import { chatBubbleStyles } from '../chat.styles'
 import { myChatBubbleStyles } from './styles'
 import { ICON_NAMES } from '../../../icon-button/semantics/icon-names'
 import '../../../text/text'
+import { emit } from '../../../../utils/emit'
 
 /**
  * 내가 보낸 메시지 버블. 우측 정렬 + primary 색상.
@@ -40,7 +41,7 @@ export class MyChatBubble extends LitElement {
   }
 
   private handleRetry() {
-    this.dispatchEvent(new CustomEvent('retry', { bubbles: true, composed: true }))
+    emit(this, 'retry')
   }
 
   private renderBubbleBody() {

@@ -5,6 +5,7 @@ import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
 import '../../text/text'
 import '../../icon-button/icon-button'
 import '../../button/button-group'
+import { emit } from '../../../utils/emit'
 
 @customElement('mm-ai-chat-message')
 export class AiChatMessage extends LitElement {
@@ -27,13 +28,7 @@ export class AiChatMessage extends LitElement {
   ]
 
   private _emitReaction(reaction: string) {
-    this.dispatchEvent(
-      new CustomEvent('chat-reaction', {
-        detail: { reaction },
-        bubbles: true,
-        composed: true,
-      }),
-    )
+    emit(this, 'chat-reaction', { reaction })
   }
 
   private renderReactions() {

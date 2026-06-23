@@ -5,6 +5,7 @@ import { inputStyles } from '../../input/input.styles'
 import '../../input/textarea'
 import { Textarea } from '../../input/textarea'
 import '../textfield-action-bar'
+import { emit } from '../../../utils/emit'
 
 @customElement('mm-comment-input')
 export class CommentInput extends LitElement {
@@ -32,15 +33,9 @@ export class CommentInput extends LitElement {
   private _submitComment(event?: Event) {
     event?.preventDefault()
 
-    this.dispatchEvent(
-      new CustomEvent('submit', {
-        bubbles: true,
-        composed: true,
-        detail: {
-          value: this._textarea?.value ?? '',
-        },
-      }),
-    )
+    emit(this, 'submit', {
+      value: this._textarea?.value ?? '',
+    })
   }
 
   private _handleTextareaKeydown(event: KeyboardEvent) {

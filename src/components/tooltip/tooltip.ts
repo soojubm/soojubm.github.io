@@ -1,6 +1,7 @@
 import { LitElement, html } from 'lit'
 import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
 import { tooltipStyles } from './tooltip.styles'
+import { uniqueId } from '../../utils/unique-id'
 
 @customElement('mm-tooltip')
 class Tooltip extends LitElement {
@@ -11,7 +12,7 @@ class Tooltip extends LitElement {
   @queryAssignedElements({ slot: 'trigger', flatten: true })
   private _triggerElements!: Element[]
 
-  private readonly _contentId = `tooltip-${crypto.randomUUID()}`
+  private readonly _contentId = uniqueId('tooltip')
   private _descriptionTargets = new Set<HTMLElement>()
 
   static styles = [tooltipStyles]

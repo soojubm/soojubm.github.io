@@ -1,5 +1,6 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { emit } from '../../../utils/emit'
 
 @customElement('mm-sheet-header')
 class SheetHeader extends LitElement {
@@ -19,7 +20,7 @@ class SheetHeader extends LitElement {
   `
 
   private handleClose = () => {
-    this.dispatchEvent(new CustomEvent('sheetclose', { bubbles: true, composed: true }))
+    emit(this, 'sheetclose')
   }
 
   render() {

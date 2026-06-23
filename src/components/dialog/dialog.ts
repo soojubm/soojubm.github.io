@@ -6,6 +6,7 @@ import '../sheet/semantics/sheet-body'
 import '../sheet/semantics/sheet-footer'
 import '../text/semantics/paragraph'
 import type Sheet from '../sheet/sheet'
+import { emit } from '../../utils/emit'
 
 @customElement('mm-dialog')
 export class Dialog extends LitElement {
@@ -50,15 +51,15 @@ export class Dialog extends LitElement {
 
   private handleSheetClose() {
     this.open = false
-    this.dispatchEvent(new CustomEvent('dialog-close', { bubbles: true, composed: true }))
+    emit(this, 'dialog-close')
   }
 
   private handlePrimaryClick() {
-    this.dispatchEvent(new CustomEvent('primary-click', { bubbles: true, composed: true }))
+    emit(this, 'primary-click')
   }
 
   private handleSecondaryClick() {
-    this.dispatchEvent(new CustomEvent('secondary-click', { bubbles: true, composed: true }))
+    emit(this, 'secondary-click')
   }
 
   render() {

@@ -3,6 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 import type { IconName } from '../../icon-button/semantics/icon-names'
 import { menuItemStyles } from '../menuitem.styles'
 import { renderMenuItemContent } from '../menuitem.utils'
+import { emit } from '../../../utils/emit'
 
 @customElement('mm-menu-item-radio')
 export class MenuItemRadio extends LitElement {
@@ -25,13 +26,7 @@ export class MenuItemRadio extends LitElement {
     if (this.disabled) return
     if (this.checked) return
     this.checked = true
-    this.dispatchEvent(
-      new CustomEvent('change', {
-        detail: { checked: this.checked, value: this.value, name: this.name },
-        bubbles: true,
-        composed: true,
-      }),
-    )
+    emit(this, 'change', { checked: this.checked, value: this.value, name: this.name })
   }
 
   private handleControlChange(e: Event) {

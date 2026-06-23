@@ -1,6 +1,8 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { switchStyles } from './switch.styles'
+import { emit } from '../../utils/emit'
+import { uniqueId } from '../../utils/unique-id'
 
 @customElement('mm-switch')
 export class Switch extends LitElement {
@@ -11,19 +13,13 @@ export class Switch extends LitElement {
 
   static styles = [switchStyles]
 
-  private inputId = `switch-${crypto.randomUUID()}`
+  private inputId = uniqueId('switch')
 
   private _onChange(event: Event) {
     const target = event.target as HTMLInputElement
     this.checked = target.checked
 
-    this.dispatchEvent(
-      new CustomEvent('change', {
-        bubbles: true,
-        composed: true,
-        detail: { checked: this.checked },
-      }),
-    )
+    emit(this, 'change', { checked: this.checked })
   }
 
   render() {

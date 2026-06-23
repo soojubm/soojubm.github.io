@@ -2,6 +2,7 @@ import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { ICON_NAMES } from '../icon-button/semantics/icon-names'
 import { topBarStyles } from './top-bar.styles'
+import { emit } from '../../utils/emit'
 
 @customElement('mm-top-bar')
 class TopBar extends LitElement {
@@ -11,7 +12,7 @@ class TopBar extends LitElement {
   static styles = [topBarStyles]
 
   private handleNavClick = () => {
-    this.dispatchEvent(new CustomEvent('navclick', { bubbles: true, composed: true }))
+    emit(this, 'navclick')
   }
 
   render() {

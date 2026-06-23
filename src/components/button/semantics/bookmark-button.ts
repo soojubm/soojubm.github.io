@@ -3,6 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 import { resetStyles } from '../../../stylesheets/shared/reset.styles'
 import '../../icon-button/icon-button'
 import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
+import { emit } from '../../../utils/emit'
 
 /**
  * 북마크/즐겨찾기 토글 버튼.
@@ -55,13 +56,7 @@ export class BookmarkButton extends LitElement {
   private handleClick() {
     if (this.disabled) return
     this.selected = !this.selected
-    this.dispatchEvent(
-      new CustomEvent('change', {
-        detail: { selected: this.selected, value: this.value },
-        bubbles: true,
-        composed: true,
-      }),
-    )
+    emit(this, 'change', { selected: this.selected, value: this.value })
   }
 
   render() {

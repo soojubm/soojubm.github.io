@@ -2,6 +2,7 @@ import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { resetStyles } from '../../../stylesheets/shared/reset.styles'
 import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
+import { emit } from '../../../utils/emit'
 
 /**
  * 더보기/접기 토글 버튼.
@@ -33,13 +34,7 @@ export class ShowMoreButton extends LitElement {
 
   private handleClick() {
     this.ariaExpanded = this.ariaExpanded === 'true' ? 'false' : 'true'
-    this.dispatchEvent(
-      new CustomEvent('change', {
-        detail: { expanded: this.ariaExpanded === 'true' },
-        bubbles: true,
-        composed: true,
-      }),
-    )
+    emit(this, 'change', { expanded: this.ariaExpanded === 'true' })
   }
 
   render() {

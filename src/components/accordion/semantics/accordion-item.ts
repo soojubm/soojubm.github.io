@@ -2,6 +2,8 @@ import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { resetStyles } from '../../../stylesheets/shared/reset.styles'
 import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
+import { emit } from '../../../utils/emit'
+import { uniqueId } from '../../../utils/unique-id'
 
 /**
  * 개별 아코디언 항목.
@@ -16,7 +18,7 @@ export class AccordionItem extends LitElement {
   /** 비활성 상태 */
   @property({ type: Boolean }) disabled = false
 
-  private readonly _panelId = `accordion-panel-${crypto.randomUUID()}`
+  private readonly _panelId = uniqueId('accordion-panel')
 
   static styles = [
     resetStyles,
@@ -105,13 +107,7 @@ export class AccordionItem extends LitElement {
   private _toggle() {
     if (this.disabled) return
     this.open = !this.open
-    this.dispatchEvent(
-      new CustomEvent('accordion-toggle', {
-        detail: { open: this.open },
-        bubbles: true,
-        composed: true,
-      }),
-    )
+    emit(this, 'accordion-toggle', { open: this.open })
   }
 
   render() {

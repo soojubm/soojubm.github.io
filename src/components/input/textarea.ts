@@ -1,6 +1,7 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property, query, state } from 'lit/decorators.js'
 import { inputStyles } from './input.styles'
+import { emit } from '../../utils/emit'
 
 let uniqueIdCounter = 0
 
@@ -79,13 +80,7 @@ export class Textarea extends LitElement {
   protected _onKeyDown(_event: KeyboardEvent) {}
 
   private _dispatchInputEvent(value: string) {
-    this.dispatchEvent(
-      new CustomEvent('input', {
-        detail: { value },
-        bubbles: true,
-        composed: true,
-      }),
-    )
+    emit(this, 'input', { value })
   }
 
   static styles = inputStyles

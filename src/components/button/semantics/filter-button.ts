@@ -2,6 +2,7 @@ import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { resetStyles } from '../../../stylesheets/shared/reset.styles'
 import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
+import { emit } from '../../../utils/emit'
 
 /**
  * 콘텐츠 필터링 옵션 버튼. mm-button(size=small)을 합성합니다.
@@ -41,13 +42,11 @@ export class FilterButton extends LitElement {
 
   private _handleClick() {
     if (this.disabled) return
-    this.dispatchEvent(
-      new CustomEvent('filter-toggle', {
-        detail: { value: this.value, selected: !this.selected, selectAll: this.selectAll },
-        bubbles: true,
-        composed: true,
-      }),
-    )
+    emit(this, 'filter-toggle', {
+      value: this.value,
+      selected: !this.selected,
+      selectAll: this.selectAll,
+    })
   }
 
   render() {

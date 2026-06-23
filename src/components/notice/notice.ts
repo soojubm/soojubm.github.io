@@ -2,6 +2,7 @@ import { LitElement, html } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 import { ICON_NAMES } from '../icon-button/semantics/icon-names'
 import { noticeStyles } from './notice.styles'
+import { emit } from '../../utils/emit'
 
 const VARIANT_ICONS: Record<string, string> = {
   success: ICON_NAMES.SUCCESS,
@@ -26,7 +27,7 @@ class Notice extends LitElement {
 
   private dismiss() {
     this.dismissed = true
-    this.dispatchEvent(new CustomEvent('mm-dismiss', { bubbles: true, composed: true }))
+    emit(this, 'mm-dismiss')
   }
 
   render() {

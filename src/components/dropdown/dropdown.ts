@@ -7,6 +7,7 @@ import '../button/button'
 import { ICON_NAMES, type IconName } from '../icon-button/semantics/icon-names'
 import '../menuitem/semantics/menu-item-action'
 import '../menuitem/semantics/menu-item-checkbox'
+import { emit } from '../../utils/emit'
 
 type DropdownPlacement = 'bottom-left' | 'bottom-right' | 'top-left' | 'top-right'
 
@@ -180,13 +181,7 @@ export class Dropdown extends LitElement {
   }
 
   protected emitSelectChange(option: DropdownOption) {
-    this.dispatchEvent(
-      new CustomEvent('change', {
-        detail: { type: 'select', value: option.value },
-        bubbles: true,
-        composed: true,
-      }),
-    )
+    emit(this, 'change', { type: 'select', value: option.value })
   }
 
   // 체크박스 아이템 변경 시: 데이터 상태만 업데이트 (드롭다운을 닫지 않음)
@@ -201,18 +196,12 @@ export class Dropdown extends LitElement {
     )
 
     // 외부로 이벤트 전파
-    this.dispatchEvent(
-      new CustomEvent('change', {
-        detail: {
-          type: 'checkbox',
-          value: option.value,
-          checked: isChecked,
-          values: this.options.filter(o => o.checked).map(o => o.value),
-        },
-        bubbles: true,
-        composed: true,
-      }),
-    )
+    emit(this, 'change', {
+      type: 'checkbox',
+      value: option.value,
+      checked: isChecked,
+      values: this.options.filter(o => o.checked).map(o => o.value),
+    })
   }
 
   // 트리거: 소비자가 slot="trigger"로 커스텀 트리거(아이콘 버튼 등)를 끼워 넣을 수 있다.

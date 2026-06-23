@@ -1,6 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import '../../dropdown/dropdown'
+import { emit } from '../../../utils/emit'
 
 type SortOrder = 'latest' | 'oldest'
 
@@ -25,13 +26,7 @@ export class SortDropdown extends LitElement {
     const next = e.detail.value as SortOrder
     this.value = next
 
-    this.dispatchEvent(
-      new CustomEvent('change', {
-        detail: { value: next },
-        bubbles: true,
-        composed: true,
-      }),
-    )
+    emit(this, 'change', { value: next })
   }
 
   render() {

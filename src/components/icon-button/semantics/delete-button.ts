@@ -2,6 +2,7 @@ import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { ICON_NAMES } from './icon-names'
 import '../icon-button'
+import { emit } from '../../../utils/emit'
 
 /**
  * 아이템·데이터를 영구 삭제하는 파괴적 액션 버튼.
@@ -31,7 +32,7 @@ export class DeleteButton extends LitElement {
 
   private _handleClick = () => {
     if (!window.confirm(this.confirmMessage)) return
-    this.dispatchEvent(new CustomEvent('delete', { bubbles: true, composed: true }))
+    emit(this, 'delete')
   }
 
   render() {

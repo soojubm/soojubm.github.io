@@ -2,6 +2,7 @@ import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { checkboxStyles } from '../checkbox.styles'
 import type { Checkbox } from '../checkbox'
+import { uniqueId } from '../../../utils/unique-id'
 
 @customElement('mm-master-checkbox')
 export class MasterCheckbox extends LitElement {
@@ -12,9 +13,7 @@ export class MasterCheckbox extends LitElement {
 
   static styles = [checkboxStyles]
 
-  private _inputId = `master-checkbox-${
-    crypto?.randomUUID?.() || Math.random().toString(36).substring(2, 9)
-  }`
+  private _inputId = uniqueId('master-checkbox')
 
   private _controlledElement?: HTMLElement | null
 

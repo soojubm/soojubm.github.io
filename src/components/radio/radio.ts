@@ -1,6 +1,8 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { radioStyles } from './radio.styles'
+import { emit } from '../../utils/emit'
+import { uniqueId } from '../../utils/unique-id'
 
 @customElement('mm-radio')
 export class Radio extends LitElement {
@@ -13,20 +15,14 @@ export class Radio extends LitElement {
   static styles = [radioStyles]
 
   // 인스턴스 생성 시 단 한 번만 고유 ID 발급
-  private _uniqueId = `radio-${crypto.randomUUID()}`
+  private _uniqueId = uniqueId('radio')
 
   private _onChange(event: Event) {
     event.stopPropagation() // 네이티브 이벤트 전파 차단
 
     this.checked = (event.target as HTMLInputElement).checked
 
-    this.dispatchEvent(
-      new CustomEvent('change', {
-        bubbles: true,
-        composed: true,
-        detail: { checked: this.checked, value: this.value },
-      }),
-    )
+    emit(this, 'change', { checked: this.checked, value: this.value })
   }
 
   render() {

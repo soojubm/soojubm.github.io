@@ -1,6 +1,7 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, query, state } from 'lit/decorators.js'
 import { repeat } from 'lit/directives/repeat.js'
+import { emit } from '../../../utils/emit'
 
 @customElement('mm-file-upload-button')
 export class FileUploadButton extends LitElement {
@@ -74,13 +75,7 @@ export class FileUploadButton extends LitElement {
     const input = event.target as HTMLInputElement
     this.files = Array.from(input.files ?? [])
 
-    this.dispatchEvent(
-      new CustomEvent('files-change', {
-        detail: { files: this.files },
-        bubbles: true,
-        composed: true,
-      }),
-    )
+    emit(this, 'files-change', { files: this.files })
   }
 
   private openFilePicker() {
@@ -90,13 +85,7 @@ export class FileUploadButton extends LitElement {
   private removeFile(index: number) {
     this.files = this.files.filter((_, fileIndex) => fileIndex !== index)
 
-    this.dispatchEvent(
-      new CustomEvent('files-change', {
-        detail: { files: this.files },
-        bubbles: true,
-        composed: true,
-      }),
-    )
+    emit(this, 'files-change', { files: this.files })
   }
 
   private formatFileSize(size: number) {

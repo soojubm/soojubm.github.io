@@ -1,5 +1,6 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { emit } from '../../../utils/emit'
 
 export interface SheetAction {
   label: string
@@ -18,11 +19,11 @@ class SheetFooter extends LitElement {
   `
 
   private handlePrimaryClick = () => {
-    this.dispatchEvent(new CustomEvent('primary-click'))
+    emit(this, 'primary-click')
   }
 
   private handleSecondaryClick = () => {
-    this.dispatchEvent(new CustomEvent('secondary-click'))
+    emit(this, 'secondary-click')
   }
 
   render() {

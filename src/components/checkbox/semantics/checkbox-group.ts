@@ -3,6 +3,7 @@ import { customElement, property, queryAssignedElements } from 'lit/decorators.j
 import { checkboxGroupStyles } from '../checkbox.styles'
 
 import type { Checkbox } from '../checkbox'
+import { emit } from '../../../utils/emit'
 
 type CheckboxChangeDetail = {
   checked: boolean
@@ -106,15 +107,9 @@ export class CheckboxGroup extends LitElement {
   }
 
   private _dispatchValueChange() {
-    this.dispatchEvent(
-      new CustomEvent('change', {
-        bubbles: true,
-        composed: true,
-        detail: {
-          values: this.value,
-        },
-      }),
-    )
+    emit(this, 'change', {
+      values: this.value,
+    })
   }
 
   render() {

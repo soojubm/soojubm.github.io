@@ -2,6 +2,7 @@ import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { textfieldStyles } from './textfield.styles'
 import '../textarea'
+import { uniqueId } from '../../../utils/unique-id'
 
 @customElement('mm-textarea-field')
 export class TextareaField extends LitElement {
@@ -17,7 +18,7 @@ export class TextareaField extends LitElement {
 
   static styles = textfieldStyles
 
-  private inputId = `mm-textarea-${crypto?.randomUUID?.() || Math.random().toString(36).slice(2)}`
+  private inputId = uniqueId('mm-textarea')
   private get helperId() {
     return `${this.inputId}-helper`
   }

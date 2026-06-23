@@ -8,6 +8,7 @@ import '../../button/button-group'
 import '../../icon/icon'
 import '../../text/text'
 import '../../text/semantics/paragraph'
+import { emit } from '../../../utils/emit'
 
 /**
  * AI 응답 출처 소스 칩. 클릭 시 inline sheet로 상세 정보를 표시합니다.
@@ -56,13 +57,7 @@ export class ChatSource extends LitElement {
 
   private _handleClick(e: Event) {
     e.stopPropagation()
-    this.dispatchEvent(
-      new CustomEvent('source-toggle', {
-        detail: { source: this, open: !this._open },
-        bubbles: true,
-        composed: true,
-      }),
-    )
+    emit(this, 'source-toggle', { source: this, open: !this._open })
   }
 
   render() {

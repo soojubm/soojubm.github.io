@@ -1,5 +1,6 @@
 import { LitElement, html, css } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { emit } from '../../utils/emit'
 
 @customElement('mm-tab')
 export default class Tab extends LitElement {
@@ -52,13 +53,7 @@ export default class Tab extends LitElement {
   `
 
   public select() {
-    this.dispatchEvent(
-      new CustomEvent('tab-select', {
-        detail: { value: this.value },
-        bubbles: true,
-        composed: true,
-      }),
-    )
+    emit(this, 'tab-select', { value: this.value })
   }
 
   private handleClick = () => {

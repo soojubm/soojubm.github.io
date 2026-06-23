@@ -4,6 +4,7 @@ import '../../icon-button/icon-button'
 import { inputStyles } from '../../input/input.styles'
 import { Textarea } from '../../input/textarea'
 import './attachment-dropdown'
+import { emit } from '../../../utils/emit'
 
 @customElement('mm-prompt-input')
 export class PromptInput extends LitElement {
@@ -101,13 +102,7 @@ export class PromptInput extends LitElement {
     e.stopPropagation()
     this.value = e.detail.value
     this._queueSingleLineSync()
-    this.dispatchEvent(
-      new CustomEvent('input', {
-        detail: { value: this.value },
-        bubbles: true,
-        composed: true,
-      }),
-    )
+    emit(this, 'input', { value: this.value })
   }
 
   private _queueSingleLineSync() {
@@ -133,13 +128,7 @@ export class PromptInput extends LitElement {
 
   private _submit() {
     if (!this.isLoading && this.value.trim()) {
-      this.dispatchEvent(
-        new CustomEvent('submit', {
-          detail: { value: this.value, model: this.model },
-          bubbles: true,
-          composed: true,
-        }),
-      )
+      emit(this, 'submit', { value: this.value, model: this.model })
     }
   }
 

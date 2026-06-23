@@ -2,6 +2,7 @@ import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { ICON_NAMES } from './icon-names'
 import '../icon-button'
+import { emit } from '../../../utils/emit'
 
 /**
  * 배너, 알림, 토스트 등 비파괴적 해제 버튼.
@@ -27,7 +28,7 @@ export class DismissButton extends LitElement {
   }
 
   private _handleClick = () => {
-    this.dispatchEvent(new CustomEvent('dismiss', { bubbles: true, composed: true }))
+    emit(this, 'dismiss')
   }
 
   render() {

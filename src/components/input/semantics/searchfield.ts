@@ -3,6 +3,8 @@ import { customElement, property } from 'lit/decorators.js'
 import { inputStyles } from '../input.styles'
 import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
 import '../input'
+import { emit } from '../../../utils/emit'
+import { uniqueId } from '../../../utils/unique-id'
 
 @customElement('mm-searchfield')
 class SearchField extends LitElement {
@@ -13,7 +15,7 @@ class SearchField extends LitElement {
 
   static styles = [inputStyles]
 
-  private inputId = `input-${crypto?.randomUUID?.() || Math.random().toString(36).slice(2)}`
+  private inputId = uniqueId('input')
 
   render() {
     const hasValue = this.value.length > 0
@@ -42,18 +44,14 @@ class SearchField extends LitElement {
   private _handleInput(event: Event) {
     const target = event.target as HTMLInputElement
     this.value = target.value
-    this.dispatchEvent(
-      new CustomEvent('input', { bubbles: true, composed: true, detail: { value: this.value } }),
-    )
+    emit(this, 'input', { value: this.value })
   }
 
   private _clear(event: Event) {
     event.stopPropagation()
     if (this.disabled || !this.value) return
     this.value = ''
-    this.dispatchEvent(
-      new CustomEvent('input', { bubbles: true, composed: true, detail: { value: '' } }),
-    )
+    emit(this, 'input', { value: '' })
   }
 }
 

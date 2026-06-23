@@ -2,6 +2,7 @@ import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 import { ICON_NAMES, type IconName } from '../icon-button/semantics/icon-names'
 import '../text/semantics/caption'
+import { emit } from '../../utils/emit'
 
 interface BottomBarItem {
   label: string
@@ -78,9 +79,7 @@ class BottomBar extends LitElement {
   private handleItemClick(e: Event, index: number) {
     e.preventDefault()
     this.selectedIndex = index
-    this.dispatchEvent(
-      new CustomEvent('change', { detail: { index }, bubbles: true, composed: true }),
-    )
+    emit(this, 'change', { index })
   }
 
   private get parsedItems() {

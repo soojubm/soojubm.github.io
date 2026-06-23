@@ -2,6 +2,7 @@ import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 import { resetStyles } from '../../../stylesheets/shared/reset.styles'
 import '../../button/semantics/read-more-button'
+import { uniqueId } from '../../../utils/unique-id'
 
 @customElement('mm-read-more-paragraph')
 export class ReadMoreParagraph extends LitElement {
@@ -10,7 +11,7 @@ export class ReadMoreParagraph extends LitElement {
 
   @state() private expanded = false
 
-  private readonly _contentId = `read-more-content-${crypto.randomUUID()}`
+  private readonly _contentId = uniqueId('read-more-content')
 
   static styles = [
     resetStyles,

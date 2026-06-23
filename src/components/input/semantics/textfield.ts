@@ -2,6 +2,8 @@ import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { textfieldStyles } from './textfield.styles'
 import '../input'
+import { emit } from '../../../utils/emit'
+import { uniqueId } from '../../../utils/unique-id'
 
 @customElement('mm-textfield')
 export class Textfield extends LitElement {
@@ -21,14 +23,12 @@ export class Textfield extends LitElement {
 
   static styles = textfieldStyles
 
-  private inputId = `input-${crypto?.randomUUID?.() || Math.random().toString(36).slice(2)}`
+  private inputId = uniqueId('input')
 
   private _handleInput(event: Event) {
     const target = event.target as HTMLInputElement
     this.value = target.value
-    this.dispatchEvent(
-      new CustomEvent('input', { bubbles: true, composed: true, detail: { value: this.value } }),
-    )
+    emit(this, 'input', { value: this.value })
   }
 
   render() {

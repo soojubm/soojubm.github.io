@@ -4,6 +4,7 @@ import { resetStyles } from '../../../stylesheets/shared/reset.styles'
 import '../../button/button'
 import '../../notice/notice'
 import '../../text/text'
+import { emit } from '../../../utils/emit'
 
 export type ConfirmationStatus = 'pending' | 'accepted' | 'rejected'
 
@@ -45,12 +46,12 @@ export class ChatConfirmation extends LitElement {
 
   private _approve() {
     this.status = 'accepted'
-    this.dispatchEvent(new CustomEvent('confirmation-approve', { bubbles: true, composed: true }))
+    emit(this, 'confirmation-approve')
   }
 
   private _reject() {
     this.status = 'rejected'
-    this.dispatchEvent(new CustomEvent('confirmation-reject', { bubbles: true, composed: true }))
+    emit(this, 'confirmation-reject')
   }
 
   render() {

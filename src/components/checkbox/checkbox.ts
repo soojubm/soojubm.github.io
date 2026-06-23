@@ -1,6 +1,8 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { checkboxStyles } from './checkbox.styles'
+import { emit } from '../../utils/emit'
+import { uniqueId } from '../../utils/unique-id'
 
 @customElement('mm-checkbox')
 export class Checkbox extends LitElement {
@@ -27,24 +29,16 @@ export class Checkbox extends LitElement {
   static styles = [checkboxStyles]
 
   // SSR 환경 및 crypto가 없는 구형 환경에서도 터지지 않도록 고유 ID 생성을 보장합니다.
-  private _inputId = `checkbox-${
-    crypto?.randomUUID?.() || Math.random().toString(36).substring(2, 9)
-  }`
+  private _inputId = uniqueId('checkbox')
 
   private _commitChecked(checked: boolean) {
     this.checked = checked
     this.indeterminate = false
 
-    this.dispatchEvent(
-      new CustomEvent('change', {
-        bubbles: true,
-        composed: true,
-        detail: {
-          checked: this.checked,
-          value: this.value || '', // 부모 컴포넌트와의 타입 동기화를 위해 항상 string을 보장합니다.
-        },
-      }),
-    )
+    emit(this, 'change', {
+      checked: this.checked,
+      value: this.value || '', // 부모 컴포넌트와의 타입 동기화를 위해 항상 string을 보장합니다.
+    })
   }
 
   private _onChange = (event: Event) => {

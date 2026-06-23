@@ -2,6 +2,7 @@ import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { ICON_NAMES } from './icon-names'
 import '../icon-button'
+import { emit } from '../../../utils/emit'
 
 @customElement('mm-next-button')
 export class NextButton extends LitElement {
@@ -25,7 +26,7 @@ export class NextButton extends LitElement {
 
   private _handleClick = () => {
     if (this.disabled) return
-    this.dispatchEvent(new CustomEvent('next', { bubbles: true, composed: true }))
+    emit(this, 'next')
   }
 
   render() {

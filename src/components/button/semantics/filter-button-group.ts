@@ -2,6 +2,7 @@ import { LitElement, css, html } from 'lit'
 import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
 import { resetStyles } from '../../../stylesheets/shared/reset.styles'
 import type { FilterButton } from './filter-button'
+import { emit } from '../../../utils/emit'
 
 /**
  * mm-filter-button을 묶는 그룹.
@@ -71,13 +72,7 @@ export class FilterButtonGroup extends LitElement {
     }
 
     this._syncButtons()
-    this.dispatchEvent(
-      new CustomEvent('change', {
-        detail: { values: this.selected },
-        bubbles: true,
-        composed: true,
-      }),
-    )
+    emit(this, 'change', { values: this.selected })
   }
 
   private _syncButtons() {

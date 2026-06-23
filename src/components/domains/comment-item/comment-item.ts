@@ -3,6 +3,8 @@ import { customElement, property, state } from 'lit/decorators.js'
 import '../../button/button'
 import '../../icon-button/semantics/more-button'
 import '../../menuitem/semantics/menu-item-action'
+import { emit } from '../../../utils/emit'
+import { uniqueId } from '../../../utils/unique-id'
 
 /**
  * 댓글 목록의 개별 항목.
@@ -11,7 +13,7 @@ import '../../menuitem/semantics/menu-item-action'
  */
 @customElement('mm-comment-item')
 export class CommentItem extends LitElement {
-  private readonly _menuId = `comment-menu-${crypto.randomUUID()}`
+  private readonly _menuId = uniqueId('comment-menu')
   @property({ type: String }) author = ''
   @property({ type: String }) datetime = ''
   @property({ type: String, attribute: 'avatar-src' }) avatarSrc = ''
@@ -93,7 +95,7 @@ export class CommentItem extends LitElement {
   `
 
   private _emit(type: string) {
-    this.dispatchEvent(new CustomEvent(type, { bubbles: true, composed: true }))
+    emit(this, type)
   }
 
   private _toggleMenu() {

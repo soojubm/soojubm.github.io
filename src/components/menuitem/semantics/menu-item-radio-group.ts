@@ -2,6 +2,7 @@ import { LitElement, html, css, nothing } from 'lit'
 import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
 import { MenuItemRadio } from './menu-item-radio'
 import './menu-item-group'
+import { emit } from '../../../utils/emit'
 
 @customElement('mm-menu-item-radio-group')
 export class MenuItemRadioGroup extends LitElement {
@@ -36,13 +37,7 @@ export class MenuItemRadioGroup extends LitElement {
     })
 
     // 최종적으로 그룹 차원의 change 이벤트를 외부에 발생시킵니다.
-    this.dispatchEvent(
-      new CustomEvent('change', {
-        detail: { value: this.value, name: this.name },
-        bubbles: true,
-        composed: true,
-      }),
-    )
+    emit(this, 'change', { value: this.value, name: this.name })
   }
 
   // 처음에 마크업으로 들어온 자식 노드들에게 name 속성과 초기 checked 값을 동기화합니다.
