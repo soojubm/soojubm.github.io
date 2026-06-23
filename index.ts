@@ -2,7 +2,6 @@ import './src/components'
 
 import { initializeNavbar } from './src/utils/navbar'
 import scrollAnimation from './src/utils/scroll-animation'
-import scrollspy from './src/utils/scrollspy'
 import { stopAnimation } from './src/utils/optimization-utils'
 
 const MOBILE_NAVBAR_QUERY = '(max-width: 1080px)'
@@ -51,5 +50,4 @@ function initializeResponsiveNavbar() {
 
 function initializeScrollEffects() {
   scrollAnimation({ selector: '.js-observer' })
-  scrollspy({ menusSelector: '.js-scrollspy-trigger', sectionsSelector: '.js-scrollspy-section' })
 }

@@ -2,6 +2,8 @@ import { LitElement, css, html, nothing } from 'lit'
 import { customElement, query, queryAll, state } from 'lit/decorators.js'
 import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
 import { resetStyles } from '../../../stylesheets/shared/reset.styles'
+import { ScrollSpyController } from '../../../controllers/scroll-spy-controller'
+import { copyToClipboard } from '../../../utils/clipboard'
 import '../indicators/selection-indicator'
 import '../../icon-button/icon-button'
 import '../../button/button-group'
@@ -21,7 +23,9 @@ export class TableOfContents extends LitElement {
   private _setupFrame = 0
   private _indicatorFrame = 0
   private _copyTimer = 0
-  private _scrollSpy?: IntersectionObserver
+  private _scrollSpy = new ScrollSpyController(this, {
+    onActiveChange: id => (this.activeId = id),
+  })
 
   @query('.toc-list') private _list?: HTMLElement
   @query('mm-selection-indicator') private _indicator?: HTMLElement
@@ -112,8 +116,6 @@ export class TableOfContents extends LitElement {
     this._setupFrame = 0
     this._indicatorFrame = 0
     this._copyTimer = 0
-    this._scrollSpy?.disconnect()
-    this._scrollSpy = undefined
     super.disconnectedCallback()
   }
 
@@ -164,27 +166,10 @@ export class TableOfContents extends LitElement {
   }
 
   private setupScrollSpy() {
-    this._scrollSpy?.disconnect()
-    if (!this.items.length) return
-
-    this._scrollSpy = new IntersectionObserver(
-      entries => {
-        // 가장 위에 있는 보이는 섹션을 active로
-        const visible = entries
-          .filter(e => e.isIntersecting)
-          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)
-
-        if (visible.length) {
-          this.activeId = visible[0].target.id
-        }
-      },
-      { rootMargin: '0px 0px -70% 0px' },
-    )
-
-    this.items.forEach(({ id }) => {
-      const el = document.getElementById(id)
-      if (el) this._scrollSpy?.observe(el)
-    })
+    const targets = this.items
+      .map(({ id }) => document.getElementById(id))
+      .filter((el): el is HTMLElement => el !== null)
+    this._scrollSpy.observe(targets)
   }
 
   private updateIndicatorPosition = () => {
@@ -240,17 +225,7 @@ export class TableOfContents extends LitElement {
   }
 
   private async copyShareUrl() {
-    try {
-      await navigator.clipboard.writeText(this.shareUrl)
-    } catch {
-      const textarea = document.createElement('textarea')
-      textarea.value = this.shareUrl
-      textarea.setAttribute('readonly', '')
-      document.body.append(textarea)
-      textarea.select()
-      document.execCommand('copy')
-      textarea.remove()
-    }
+    await copyToClipboard(this.shareUrl)
 
     this.copied = true
     if (this._copyTimer) window.clearTimeout(this._copyTimer)

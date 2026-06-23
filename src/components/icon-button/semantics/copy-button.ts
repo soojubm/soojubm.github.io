@@ -2,6 +2,8 @@ import { LitElement, css, html } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 import { iconButtonStyles } from '../icon-button.styles'
 import { ICON_NAMES } from './icon-names'
+import { emit } from '../../../utils/emit'
+import { copyToClipboard } from '../../../utils/clipboard'
 
 /**
  * 텍스트를 클립보드에 복사하는 버튼.
@@ -30,16 +32,11 @@ export class CopyButton extends LitElement {
 
   private _handleClick = async () => {
     const text = this.value || this.textContent?.trim() || ''
-    try {
-      await navigator.clipboard.writeText(text)
-      this.copied = true
-      this.dispatchEvent(
-        new CustomEvent('copy', { detail: { value: text }, bubbles: true, composed: true }),
-      )
-      setTimeout(() => (this.copied = false), 1500)
-    } catch {
-      // 클립보드 접근 실패 시 무시
-    }
+    if (!(await copyToClipboard(text))) return
+
+    this.copied = true
+    emit(this, 'copy', { value: text })
+    setTimeout(() => (this.copied = false), 1500)
   }
 
   render() {
