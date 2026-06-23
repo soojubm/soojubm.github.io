@@ -11,7 +11,7 @@ export const buttonVariants = {
   },
   secondary: {
     '--button-border': 'var(--border-transparent)',
-    '--button-color': 'var(--color-primary-subtle)',
+    '--button-background-color': 'var(--color-primary-subtle)',
     '--button-text-color': 'var(--color-primary)',
   },
   tertiary: {
@@ -19,11 +19,11 @@ export const buttonVariants = {
   },
   ghost: {
     '--button-border': 'var(--border-transparent)',
-    '--button-color': 'transparent',
+    '--button-background-color': 'transparent',
     '--button-text-color': 'var(--color-primary)',
   },
   destructive: {
-    '--button-color': 'var(--color-danger)',
+    '--button-background-color': 'var(--color-danger)',
     '--button-text-color': 'var(--color-foreground-on-solid)',
   },
 } as const

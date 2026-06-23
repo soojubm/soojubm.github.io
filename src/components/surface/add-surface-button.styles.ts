@@ -3,7 +3,7 @@ import { css } from 'lit'
 export const addSurfaceButtonStyles = css`
   :host {
     --add-surface-button-size: var(--size-medium);
-    --add-surface-button-color: var(--color-foreground);
+    --add-surface-button-text-color: var(--color-foreground);
     --add-surface-button-radius: var(--radius);
     --add-surface-button-hover-bg: var(--color-background-subtle);
   }
@@ -18,7 +18,7 @@ export const addSurfaceButtonStyles = css`
     padding: 0 var(--space-3);
     border: var(--border);
     border-radius: var(--add-surface-button-radius);
-    color: var(--add-surface-button-color);
+    color: var(--add-surface-button-text-color);
     box-shadow: var(--shadow);
     font-family: var(--font-family);
     box-sizing: border-box;

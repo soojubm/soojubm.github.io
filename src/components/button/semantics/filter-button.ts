@@ -28,7 +28,7 @@ export class FilterButton extends LitElement {
       }
 
       :host([selected]) mm-button {
-        --button-checked-color: var(--filter-button-selected-color);
+        --button-checked-background-color: var(--filter-button-selected-color);
         --button-checked-border-color: var(--filter-button-selected-border-color);
         --button-checked-text-color: var(--filter-button-selected-text-color);
         --button-checked-icon-color: var(--selection-foreground);

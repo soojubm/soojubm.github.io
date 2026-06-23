@@ -6,7 +6,7 @@ export const buttonStyles = css`
     --button-min-width: 5rem;
     --button-padding-inline: var(--space-3);
     --button-border: var(--border-transparent);
-    --button-color: var(--color-background-subtle);
+    --button-background-color: var(--color-background-subtle);
     --button-radius: var(--radius);
     --button-text-color: var(--color-foreground);
     --button-text-size: inherit;
@@ -19,12 +19,12 @@ export const buttonStyles = css`
 
   :host([variant='primary']) {
     --button-border: var(--border-transparent);
-    --button-color: var(--color-primary);
+    --button-background-color: var(--color-primary);
     --button-text-color: var(--color-foreground-on-solid);
   }
   :host([variant='secondary']) {
     --button-border: var(--border-transparent);
-    --button-color: var(--color-primary-subtle);
+    --button-background-color: var(--color-primary-subtle);
     --button-text-color: var(--color-primary);
   }
   :host([variant='tertiary']) {
@@ -32,11 +32,11 @@ export const buttonStyles = css`
   }
   :host([variant='ghost']) {
     --button-border: var(--border-transparent);
-    --button-color: transparent;
+    --button-background-color: transparent;
     --button-text-color: var(--color-primary);
   }
   :host([variant='destructive']) {
-    --button-color: var(--color-danger);
+    --button-background-color: var(--color-danger);
     --button-text-color: var(--color-foreground-on-solid);
   }
 
@@ -58,7 +58,7 @@ export const buttonStyles = css`
   button[aria-checked='true'] {
     border: var(--border-width) solid
       var(--button-checked-border-color, var(--color-background-strong));
-    background: var(--button-checked-color, var(--button-color));
+    background: var(--button-checked-background-color, var(--button-background-color));
     color: var(--button-checked-text-color, var(--button-text-color));
 
     mm-icon {
@@ -77,7 +77,7 @@ export const buttonStyles = css`
     padding: 0 var(--button-padding-inline);
     border: var(--button-border);
     border-radius: var(--button-radius);
-    background: var(--button-color);
+    background: var(--button-background-color);
     box-sizing: border-box;
 
     font-family: var(--font-family);

@@ -2,7 +2,7 @@ import { css } from 'lit'
 
 export const linkStyles = css`
   :host {
-    --link-color: var(--color-primary);
+    --link-text-color: var(--color-primary);
     --link-gap: var(--space-1);
   }
 
@@ -13,6 +13,6 @@ export const linkStyles = css`
     text-decoration: underline;
     text-decoration-skip-ink: auto;
     line-height: inherit;
-    color: var(--link-color);
+    color: var(--link-text-color);
   }
 `

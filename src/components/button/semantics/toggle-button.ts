@@ -28,7 +28,7 @@ export class ToggleButton extends LitElement {
 
       :host([selected]) mm-button {
         --button-border: var(--border-width) solid var(--selection-indicator-color);
-        --button-color: var(--selection-background);
+        --button-background-color: var(--selection-background);
         --button-text-color: var(--selection-foreground);
       }
     `,

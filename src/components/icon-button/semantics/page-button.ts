@@ -18,7 +18,7 @@ export class PageButton extends LitElement {
     iconButtonStyles,
     css`
       :host {
-        --icon-button-color: transparent;
+        --icon-button-background-color: transparent;
       }
 
       button[aria-current='page'] {

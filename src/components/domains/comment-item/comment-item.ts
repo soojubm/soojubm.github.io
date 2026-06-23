@@ -42,7 +42,7 @@ export class CommentItem extends LitElement {
     mm-button.reply {
       align-self: flex-start;
 
-      --button-color: transparent;
+      --button-background-color: transparent;
       --button-padding-inline: 0;
       --button-text-color: var(--comment-item-reply-color);
     }

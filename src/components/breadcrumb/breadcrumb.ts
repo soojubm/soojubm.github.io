@@ -21,9 +21,9 @@ export class Breadcrumb extends LitElement {
     :host {
       display: block;
 
-      --breadcrumb-item-color: var(--color-primary);
-      --breadcrumb-item-color-current: var(--color-foreground);
-      --breadcrumb-divider-color: var(--color-border);
+      --breadcrumb-item-text-color: var(--color-primary);
+      --breadcrumb-item-text-color-current: var(--color-foreground);
+      --breadcrumb-divider-text-color: var(--color-border);
       --breadcrumb-divider-space: var(--space-3);
     }
 
@@ -36,17 +36,17 @@ export class Breadcrumb extends LitElement {
 
     .breadcrumb-divider {
       margin: 0 var(--breadcrumb-divider-space);
-      color: var(--breadcrumb-divider-color);
+      color: var(--breadcrumb-divider-text-color);
       font-style: normal;
     }
 
     .breadcrumb-item {
-      color: var(--breadcrumb-item-color);
+      color: var(--breadcrumb-item-text-color);
       text-decoration: none;
       white-space: nowrap;
 
       &[aria-current='page'] {
-        color: var(--breadcrumb-item-color-current);
+        color: var(--breadcrumb-item-text-color-current);
       }
     }
   `

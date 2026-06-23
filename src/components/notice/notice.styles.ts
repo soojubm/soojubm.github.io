@@ -13,7 +13,7 @@ export const noticeStyles = css`
 
     /* semantic color — default (info) */
     --notice-accent: var(--color-foreground-light);
-    --notice-color: var(--color-foreground);
+    --notice-text-color: var(--color-foreground);
     --notice-bg: transparent;
     --notice-border-color: var(--color-border);
   }
@@ -27,27 +27,27 @@ export const noticeStyles = css`
     border: var(--notice-border-width) solid var(--notice-border-color);
     border-radius: var(--notice-radius);
     background: var(--notice-bg);
-    color: var(--notice-color);
+    color: var(--notice-text-color);
     position: relative;
   }
 
   :host([variant='success']) {
     --notice-accent: var(--color-success);
-    --notice-color: var(--color-success-foreground);
+    --notice-text-color: var(--color-success-foreground);
     --notice-bg: var(--color-success-subtle);
     --notice-border-color: var(--color-success-border);
   }
 
   :host([variant='warning']) {
     --notice-accent: var(--color-warning);
-    --notice-color: var(--color-warning-foreground);
+    --notice-text-color: var(--color-warning-foreground);
     --notice-bg: var(--color-warning-subtle);
     --notice-border-color: var(--color-warning-border);
   }
 
   :host([variant='danger']) {
     --notice-accent: var(--color-danger);
-    --notice-color: var(--color-danger-foreground);
+    --notice-text-color: var(--color-danger-foreground);
     --notice-bg: var(--color-danger-subtle);
     --notice-border-color: var(--color-danger-border);
   }
