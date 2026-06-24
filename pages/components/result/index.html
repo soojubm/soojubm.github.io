@@ -8,15 +8,15 @@
 
   <mm-component-example>
     <mm-result
+      id="result-primary-action-example"
       avatar-icon="clipboard-check"
       heading="주문을 확인해주세요."
       description="헌법재판소 재판관의 임기는 6년으로 하며, 법률이 정하는 바에 의하여 연임할 수 있다."
     >
-      <!-- <mm-avatar slot="avatar" variant="secondary" size="huge" icon="clipboard-check"></mm-avatar> -->
-      <!-- <mm-meta-item label="주문일자" value="2019.08.10."> </mm-meta-item>
-      <mm-meta-item label="결제금액" value="₩ 54,000"> </mm-meta-item> -->
+      <mm-avatar slot="avatar" variant="secondary" size="huge" icon="clipboard-check"></mm-avatar>
+      <mm-meta-item label="주문일자" value="2019.08.10."></mm-meta-item>
+      <mm-meta-item label="결제금액" value="₩ 54,000"></mm-meta-item>
       <mm-button slot="action" variant="tertiary" size="large">홈으로</mm-button>
-      <mm-button slot="action" variant="primary" size="large">주문내역 보기</mm-button>
     </mm-result>
   </mm-component-example>
 
@@ -24,6 +24,7 @@
     <mm-prop name="avatar-icon" type="IconName" optional></mm-prop>
     <mm-prop name="heading" type="string"></mm-prop>
     <mm-prop name="description" type="string" optional></mm-prop>
+    <mm-prop name="primaryAction" type="ActionConfig" optional></mm-prop>
     <mm-prop name="slot: avatar" type="HTMLElement" optional></mm-prop>
     <mm-prop name="slot: default" type="HTMLElement" optional></mm-prop>
     <mm-prop name="slot: action" type="HTMLButtonElement" optional></mm-prop>

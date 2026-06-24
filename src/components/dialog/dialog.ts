@@ -54,11 +54,11 @@ export class Dialog extends LitElement {
     emit(this, 'dialog-close')
   }
 
-  private handlePrimaryClick() {
+  private handlePrimaryClick = () => {
     emit(this, 'primary-click')
   }
 
-  private handleSecondaryClick() {
+  private handleSecondaryClick = () => {
     emit(this, 'secondary-click')
   }
 
@@ -77,10 +77,18 @@ export class Dialog extends LitElement {
         </mm-sheet-body>
 
         <mm-sheet-footer
-          primary-label=${this.primaryLabel}
-          secondary-label=${this.secondaryLabel}
-          @primary-click=${this.handlePrimaryClick}
-          @secondary-click=${this.handleSecondaryClick}
+          .primaryAction=${this.primaryLabel
+            ? {
+                label: this.primaryLabel,
+                onClick: this.handlePrimaryClick,
+              }
+            : undefined}
+          .secondaryAction=${this.secondaryLabel
+            ? {
+                label: this.secondaryLabel,
+                onClick: this.handleSecondaryClick,
+              }
+            : undefined}
         ></mm-sheet-footer>
       </mm-sheet>
     `

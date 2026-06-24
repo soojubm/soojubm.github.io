@@ -6,13 +6,17 @@ import { fileURLToPath } from 'url'
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, '..')
 
-// pages/ 폴더에서 id → HTML 파일 경로 매핑
-function findPageHtml(id) {
+// pages/ 폴더에서 id → 페이지 소스 파일 경로 매핑
+function findPageSource(id) {
   const candidates = [
     join(ROOT, 'pages', 'components', id, 'index.html'),
+    join(ROOT, 'pages', 'components', id, `${id}.ts`),
     join(ROOT, 'pages', 'patterns', id, 'index.html'),
+    join(ROOT, 'pages', 'patterns', id, `${id}.ts`),
     join(ROOT, 'pages', 'home', 'index.html'), // index
+    join(ROOT, 'pages', 'home', 'home.ts'), // index
     join(ROOT, 'pages', id, 'index.html'),
+    join(ROOT, 'pages', id, `${id}.ts`),
   ]
   return candidates.find(existsSync) ?? null
 }
@@ -24,7 +28,7 @@ function extractPageMeta(html) {
   if (!tagMatch) return { title: '', description: '' }
 
   const tag = tagMatch[1]
-  const titleMatch = tag.match(/\btitle="([^"]*)"/)
+  const titleMatch = tag.match(/\b(?:title|heading)="([^"]*)"/)
   const descMatch = tag.match(/\bdescription="([^"]*)"/)
   return {
     title: (titleMatch?.[1] ?? '').trim(),
@@ -47,13 +51,13 @@ async function main() {
   let indexed = 0
 
   for (const id of pageIds) {
-    const htmlPath = findPageHtml(id)
-    if (!htmlPath) {
-      console.warn(`  skip: ${id} (HTML not found)`)
+    const sourcePath = findPageSource(id)
+    if (!sourcePath) {
+      console.warn(`  skip: ${id} (page source not found)`)
       continue
     }
 
-    const html = readFileSync(htmlPath, 'utf-8')
+    const html = readFileSync(sourcePath, 'utf-8')
     const { title, description } = extractPageMeta(html)
 
     if (!title && !description) {

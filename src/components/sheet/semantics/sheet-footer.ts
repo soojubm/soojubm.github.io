@@ -1,16 +1,12 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { emit } from '../../../utils/emit'
-
-export interface SheetAction {
-  label: string
-  onClick: () => void
-}
+import type { ActionConfig } from '../../action-config'
 
 @customElement('mm-sheet-footer')
 class SheetFooter extends LitElement {
-  @property({ type: String, attribute: 'primary-label' }) primaryLabel = ''
-  @property({ type: String, attribute: 'secondary-label' }) secondaryLabel = ''
+  @property({ attribute: false }) primaryAction?: ActionConfig
+  @property({ attribute: false }) secondaryAction?: ActionConfig
 
   static styles = css`
     :host {
@@ -19,27 +15,39 @@ class SheetFooter extends LitElement {
   `
 
   private handlePrimaryClick = () => {
+    this.primaryAction?.onClick?.()
     emit(this, 'primary-click')
   }
 
   private handleSecondaryClick = () => {
+    this.secondaryAction?.onClick?.()
     emit(this, 'secondary-click')
   }
 
   render() {
     return html`
       <mm-button-group justify-content="end">
-        ${this.secondaryLabel
+        ${this.secondaryAction
           ? html`
-              <mm-button variant="tertiary" size="medium" @click=${this.handleSecondaryClick}>
-                ${this.secondaryLabel}
+              <mm-button
+                variant="tertiary"
+                size="medium"
+                ?disabled=${this.secondaryAction.disabled}
+                @click=${this.handleSecondaryClick}
+              >
+                ${this.secondaryAction.label}
               </mm-button>
             `
           : ''}
-        ${this.primaryLabel
+        ${this.primaryAction
           ? html`
-              <mm-button variant="primary" size="medium" @click=${this.handlePrimaryClick}>
-                ${this.primaryLabel}
+              <mm-button
+                variant="primary"
+                size="medium"
+                ?disabled=${this.primaryAction.disabled}
+                @click=${this.handlePrimaryClick}
+              >
+                ${this.primaryAction.label}
               </mm-button>
             `
           : ''}

@@ -1,7 +1,9 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 import type { IconName } from '../icon-button/semantics/icon-names'
+import '../button/button'
 import '../button/button-group'
+import type { ActionConfig } from '../action-config'
 import { resultStyles } from './result.styles'
 
 @customElement('mm-result')
@@ -9,6 +11,7 @@ class Result extends LitElement {
   @property({ type: String, attribute: 'avatar-icon' }) avatarIcon?: IconName
   @property({ type: String }) heading = ''
   @property({ type: String }) description = ''
+  @property({ attribute: false }) primaryAction?: ActionConfig
   @state() private hasDefaultContent = false
   @state() private hasActionContent = false
 
@@ -28,7 +31,13 @@ class Result extends LitElement {
     if (kind === 'action') this.hasActionContent = hasContent
   }
 
+  private handlePrimaryActionClick() {
+    this.primaryAction?.onClick?.()
+  }
+
   render() {
+    const hasActions = this.hasActionContent || this.primaryAction
+
     return html`
       <div role="status" class="result">
         <slot name="avatar">
@@ -51,8 +60,20 @@ class Result extends LitElement {
           class="result-actions"
           justify-content="center"
           wrap
-          ?hidden=${!this.hasActionContent}
+          ?hidden=${!hasActions}
         >
+          ${this.primaryAction
+            ? html`
+                <mm-button
+                  variant="primary"
+                  size="large"
+                  ?disabled=${this.primaryAction.disabled}
+                  @click=${this.handlePrimaryActionClick}
+                >
+                  ${this.primaryAction.label}
+                </mm-button>
+              `
+            : nothing}
           <slot
             name="action"
             @slotchange=${(event: Event) => this.handleSlotChange('action', event)}
