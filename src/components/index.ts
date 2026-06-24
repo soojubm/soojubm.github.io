@@ -35,7 +35,7 @@ import './button'
 import './navbar/theme-switcher'
 import './icon-button'
 
-import './toggle-button-group'
+import './toggle-button'
 
 import './checkbox'
 

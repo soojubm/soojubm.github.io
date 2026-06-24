@@ -1,8 +1,7 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { interactiveControlStyles } from '../../stylesheets/shared/interactive-control.styles'
 import type { IconName } from '../icon-button/semantics/icon-names'
-import { buttonStyles } from './button.styles'
+import { buttonBaseStyles, buttonSizeStyles, buttonVariantStyles } from './button.styles'
 
 export type ButtonVariant = 'primary' | 'secondary' | 'tertiary' | 'ghost' | 'destructive'
 export type ButtonSize = 'huge' | 'large' | 'medium' | 'small'
@@ -26,7 +25,7 @@ export class Button extends LitElement {
   @property({ type: String, attribute: 'aria-haspopup' }) ariaHasPopup: string | null = null
   @property({ type: String, attribute: 'aria-describedby' }) ariaDescribedBy: string | null = null
 
-  static styles = [interactiveControlStyles, buttonStyles]
+  static styles = [buttonBaseStyles, buttonSizeStyles, buttonVariantStyles]
 
   private _handleClick(event: Event) {
     if (this.disabled) {

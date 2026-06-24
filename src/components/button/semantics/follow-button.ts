@@ -1,7 +1,6 @@
-import { LitElement, css, html } from 'lit'
+import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { resetStyles } from '../../../stylesheets/shared/reset.styles'
-import '../button'
+import { buttonBaseStyles, followButtonStyles, buttonSelectedStyles } from '../button.styles'
 import { toggleSelection } from '../button.utils'
 
 @customElement('mm-follow-button')
@@ -10,20 +9,7 @@ export class FollowButton extends LitElement {
   @property({ type: String }) value = ''
   @property({ type: Boolean }) disabled = false
 
-  static styles = [
-    resetStyles,
-    css`
-      :host {
-        display: inline-flex;
-      }
-
-      :host([selected]) mm-button {
-        --button-background-color: var(--selection-background);
-        --button-border: var(--border-width) solid var(--selection-indicator-color);
-        --button-text-color: var(--selection-foreground);
-      }
-    `,
-  ]
+  static styles = [buttonBaseStyles, followButtonStyles, buttonSelectedStyles]
 
   private handleClick() {
     toggleSelection(this)
@@ -31,14 +17,14 @@ export class FollowButton extends LitElement {
 
   render() {
     return html`
-      <mm-button
-        variant=${this.selected ? 'tertiary' : 'primary'}
+      <button
+        type="button"
         ?disabled=${this.disabled}
         aria-pressed=${String(this.selected)}
         @click=${this.handleClick}
       >
         ${this.selected ? '팔로우 중' : '팔로우'}
-      </mm-button>
+      </button>
     `
   }
 }

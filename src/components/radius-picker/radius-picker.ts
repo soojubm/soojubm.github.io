@@ -1,6 +1,6 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, state } from 'lit/decorators.js'
-import '../toggle-button-group'
+import '../toggle-button/semantics/toggle-button-group'
 
 const SQUARE_CLASS = 'shape-square'
 const COLOR_CLASSES = ['color-black', 'color-green']

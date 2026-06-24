@@ -1,11 +1,11 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { repeat } from 'lit/directives/repeat.js'
-import type { IconName } from '../icon-button/semantics/icon-names'
-import '../button/button-group'
-import '../button/semantics/toggle-button'
-import './semantics/view-mode-switcher'
-import { emit } from '../../utils/emit'
+import type { IconName } from '../../icon-button/semantics/icon-names'
+import '../../button/button-group'
+import '../toggle-button'
+import './view-mode-switcher'
+import { emit } from '../../../utils/emit'
 
 interface OptionItem {
   value: string
