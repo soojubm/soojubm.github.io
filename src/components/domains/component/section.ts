@@ -15,7 +15,7 @@ class ComponentSection extends LitElement {
       display: flex;
       flex-direction: column;
       gap: var(--space-2);
-      margin-top: 4rem;
+      margin-top: var(--space-section);
     }
 
     .content {
@@ -26,8 +26,8 @@ class ComponentSection extends LitElement {
       display: block;
       border: var(--border-stronger);
       border-radius: var(--radius-large);
-      margin: 0.5rem 0 0 calc(-5vw + 1rem);
-      padding: 2rem calc(var(--layout-padding-inline) - 1rem);
+      margin: var(--space-2) 0 0 calc(var(--layout-padding-inline) * -1 + var(--space-4));
+      padding: var(--space-8) calc(var(--layout-padding-inline) - var(--space-4));
     }
 
     @media ${MEDIA.small} {

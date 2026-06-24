@@ -8,13 +8,13 @@ class ComponentGuide extends LitElement {
       display: flex;
       flex-direction: column;
       gap: var(--space-4);
-      padding: 4rem 0 0;
+      padding: var(--space-section) 0 0;
     }
 
     .slot-container {
       display: flex;
       flex-direction: column;
-      gap: 2rem;
+      gap: var(--space-8);
     }
   `
 

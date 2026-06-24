@@ -10,8 +10,8 @@ export const componentExampleStyles = [
     }
 
     .component-example {
-      margin: 2.5rem 0 1rem calc(-5vw + 1rem);
-      padding: 2rem calc(var(--layout-padding-inline) - 1rem);
+      margin: 2.5rem 0 var(--space-4) calc(var(--layout-padding-inline) * -1 + var(--space-4));
+      padding: var(--space-8) calc(var(--layout-padding-inline) - var(--space-4));
       border: var(--border-stronger);
       border-left-color: var(--text-color);
       border-radius: var(--radius-large);

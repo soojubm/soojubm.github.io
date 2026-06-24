@@ -20,8 +20,6 @@ export const resultStyles = css`
   }
 
   .result-actions {
-    margin: 1rem 0 0 0;
-
     &[hidden] {
       display: none;
     }

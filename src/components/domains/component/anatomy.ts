@@ -33,7 +33,7 @@ export class ComponentAnatomy extends LitElement {
         display: flex;
         flex-direction: column;
         gap: var(--space-3);
-        margin-top: 4rem;
+        margin-top: var(--space-section);
       }
       .stage {
         display: flex;

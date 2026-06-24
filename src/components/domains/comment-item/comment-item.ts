@@ -48,8 +48,8 @@ export class CommentItem extends LitElement {
     }
 
     .replies {
-      margin: 1rem 0 0;
-      padding-left: 1rem;
+      margin: var(--space-4) 0 0;
+      padding-left: var(--space-4);
       position: relative;
     }
 

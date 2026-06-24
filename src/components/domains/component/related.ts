@@ -13,7 +13,7 @@ export class ComponentRelated extends LitElement {
     .component-related {
       display: flex;
       flex-direction: column;
-      padding: 4rem 0;
+      padding: var(--space-section) 0;
       gap: var(--space-3);
     }
   `
