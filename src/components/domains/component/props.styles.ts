@@ -37,8 +37,8 @@ export const componentPropsStyles = [
     .component-props {
       height: 12rem;
       overflow: hidden;
-      margin: 0 0 0 calc(-5vw + 1rem);
-      padding: 1.5rem calc(var(--layout-padding-inline) - 1rem);
+      margin: 0 0 0 calc(var(--layout-padding-inline) * -1 + var(--space-4));
+      padding: var(--space-4) calc(var(--layout-padding-inline) - var(--space-4));
       background-color: var(--color-background-subtle);
       border: var(--component-props-border, none);
       border-radius: var(--radius-large);

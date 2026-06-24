@@ -27,7 +27,7 @@ export const componentTokensStyles = [
 
     .component-tokens {
       margin: var(--space-4) 0 0 calc(var(--layout-padding-inline) * -1 + var(--space-4));
-      padding: 1.5rem calc(var(--layout-padding-inline) - var(--space-4));
+      padding: var(--space-4) calc(var(--layout-padding-inline) - var(--space-4));
       border: var(--border-stronger);
       border-radius: var(--radius-large);
     }
@@ -35,7 +35,7 @@ export const componentTokensStyles = [
     dl {
       display: grid;
       grid-template-columns: auto 1fr;
-      gap: var(--space-2) 1.5rem;
+      gap: var(--space-2) var(--space-4);
       margin: 0;
     }
 
