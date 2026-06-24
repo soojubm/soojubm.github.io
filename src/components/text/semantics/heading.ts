@@ -1,4 +1,4 @@
-import { LitElement, html } from 'lit'
+import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import '../text'
 import type { TextSize } from '../text.styles'
@@ -20,6 +20,12 @@ const LEVEL_SIZE: Record<HeadingLevel, TextSize> = {
  */
 @customElement('mm-heading')
 export class Heading extends LitElement {
+  static styles = css`
+    :host {
+      display: block;
+    }
+  `
+
   @property({ type: Number, reflect: true }) level: HeadingLevel = 2
 
   render() {
