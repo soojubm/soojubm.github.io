@@ -11,7 +11,6 @@ export class Footer extends LitElement {
   render() {
     return html`
       <footer class="footer js-observer" id="footer" role="contentinfo">
-        <div class="footer-background"></div>
         <figure hidden></figure>
         <mm-user-snippet
           name="수줍이"

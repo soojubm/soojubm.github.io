@@ -18,17 +18,6 @@ export const footerStyles = css`
     );
   }
 
-  .footer-background {
-    display: none;
-    margin: 0 -50vw;
-    border-top: var(--border);
-    position: absolute;
-    inset: 0;
-    left: 50%;
-    right: 50%;
-    z-index: -1;
-  }
-
   .footer address mm-paragraph {
     margin: var(--space-4) 0;
     font-size: var(--font-size-18);

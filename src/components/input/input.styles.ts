@@ -21,10 +21,6 @@ export const inputStyles = css`
     --input-padding-inline: var(--space-2);
   }
 
-  // :host-context([data-theme='brutal']) {
-  //   --input-color-border-hover: var(--brutal-border-color);
-  // }
-
   .textfield-control,
   .textarea-control {
     display: flex;
