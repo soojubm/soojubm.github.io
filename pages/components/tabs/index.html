@@ -6,8 +6,8 @@
 
   <mm-component-example>
     <mm-flex direction="column" gap="4">
-      <mm-tabs value="menu1" variant="line">
-        <mm-tab-list>
+      <mm-flex direction="column" gap="3">
+        <mm-tab-list value="menu1" variant="line">
           <mm-tab value="menu1">첫 번째 메뉴</mm-tab>
           <mm-tab value="menu2">두 번째 메뉴</mm-tab>
           <mm-tab value="menu3">세 번째 메뉴</mm-tab>
@@ -16,10 +16,10 @@
         <mm-tab-panel value="menu1">🍎 1번 콘텐츠 영역입니다.</mm-tab-panel>
         <mm-tab-panel value="menu2">🍌 2번 콘텐츠 영역입니다.</mm-tab-panel>
         <mm-tab-panel value="menu3">🍇 3번 콘텐츠 영역입니다.</mm-tab-panel>
-      </mm-tabs>
+      </mm-flex>
 
-      <mm-tabs value="daily" variant="pill">
-        <mm-tab-list>
+      <mm-flex direction="column" gap="3">
+        <mm-tab-list value="daily" variant="pill">
           <mm-tab value="daily">일간</mm-tab>
           <mm-tab value="weekly">주간</mm-tab>
           <mm-tab value="monthly">월간</mm-tab>
@@ -28,14 +28,14 @@
         <mm-tab-panel value="daily">📅 오늘 생성된 데이터...</mm-tab-panel>
         <mm-tab-panel value="weekly">🗓️ 이번 주 누적 데이터...</mm-tab-panel>
         <mm-tab-panel value="monthly">📊 이번 달 정산 데이터...</mm-tab-panel>
-      </mm-tabs>
+      </mm-flex>
     </mm-flex>
     <!-- // iOS isTranslucent: Bool -->
   </mm-component-example>
 
   <mm-component-props>
-    <mm-prop name="value" type="string"></mm-prop>
-    <mm-prop name="variant" type="'line' | 'pill' = 'line'"></mm-prop>
+    <mm-prop name="tab-list value" type="string"></mm-prop>
+    <mm-prop name="tab-list variant" type="'line' | 'pill' = 'line'"></mm-prop>
     <mm-prop name="tab value" type="string"></mm-prop>
     <mm-prop name="panel value" type="string"></mm-prop>
     <mm-prop name="tab-select" type="CustomEvent value" kind="event"></mm-prop>
