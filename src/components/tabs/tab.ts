@@ -24,16 +24,21 @@ export default class Tab extends LitElement {
       position: relative;
       display: inline-flex;
       z-index: 1; /* pill indicator 위에 텍스트가 렌더링되도록 stacking context 생성 */
+
+      --tab-height: var(--size-medium);
+      --tab-padding-inline: var(--space-3);
+      --tab-font-size: var(--font-size-14);
+      --tab-text-color: var(--color-foreground-light);
     }
 
     .tab-content {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      height: var(--size-medium);
-      padding: 0 var(--space-3);
-      font-size: 14px;
-      color: var(--color-foreground-light);
+      height: var(--tab-height);
+      padding: 0 var(--tab-padding-inline);
+      font-size: var(--tab-font-size);
+      color: var(--tab-text-color);
       cursor: pointer;
       user-select: none;
       transition: color 0.25s ease, font-weight 0.25s ease;

@@ -54,7 +54,7 @@ export class RadiusPicker extends LitElement {
     }
 
     .label {
-      font-size: 12px;
+      font-size: var(--font-size-12);
       color: var(--color-foreground-light);
       white-space: nowrap;
     }
