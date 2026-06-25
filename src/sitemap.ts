@@ -85,6 +85,7 @@ export const SITEMAP: SitemapNode[] = [
       { id: 'top-bar', name: 'top bar' },
       { id: 'bottom-bar', name: 'bottom bar' },
       { id: 'breadcrumb', name: 'breadcrumb', badge: '' },
+      { id: 'step', name: 'step', hidden: true },
     ],
   },
   {
