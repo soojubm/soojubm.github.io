@@ -131,6 +131,7 @@
   --space-3: 0.75rem;
   --space-4: 1rem;
   --space-8: 2rem;
+  --space-12: 3rem;
   --space-16: 64px;
   --space-section: var(--space-16);
   --space-1-minus: calc(var(--space-1) * -1);
