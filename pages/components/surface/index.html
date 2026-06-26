@@ -257,6 +257,56 @@
     </section>
   </mm-component-section>
 
+  <mm-component-section
+    heading="ScrollTile"
+    description="가로로 넘치는 surface 카드를 mm-scroll로 스크롤합니다."
+  >
+    <mm-scroll gap="3" hide-scrollbar>
+      <mm-surface variant="plain" class="scroll-tile">
+        <mm-flex direction="column" gap="2" align-items="center">
+          <mm-avatar size="huge" fallback="🌏"></mm-avatar>
+          <mm-text weight="bold">Explore</mm-text>
+          <mm-paragraph>세계 곳곳을 둘러보세요.</mm-paragraph>
+        </mm-flex>
+      </mm-surface>
+      <mm-surface variant="plain" class="scroll-tile">
+        <mm-flex direction="column" gap="2" align-items="center">
+          <mm-avatar size="huge" fallback="💀"></mm-avatar>
+          <mm-text weight="bold">Danger</mm-text>
+          <mm-paragraph>위험한 구역을 표시합니다.</mm-paragraph>
+        </mm-flex>
+      </mm-surface>
+      <mm-surface variant="plain" class="scroll-tile">
+        <mm-flex direction="column" gap="2" align-items="center">
+          <mm-avatar size="huge" fallback="🍔"></mm-avatar>
+          <mm-text weight="bold">Eat</mm-text>
+          <mm-paragraph>맛있는 한 끼를 즐기세요.</mm-paragraph>
+        </mm-flex>
+      </mm-surface>
+      <mm-surface variant="plain" class="scroll-tile">
+        <mm-flex direction="column" gap="2" align-items="center">
+          <mm-avatar size="huge" fallback="🎧"></mm-avatar>
+          <mm-text weight="bold">Listen</mm-text>
+          <mm-paragraph>좋아하는 음악을 들어보세요.</mm-paragraph>
+        </mm-flex>
+      </mm-surface>
+      <mm-surface variant="plain" class="scroll-tile">
+        <mm-flex direction="column" gap="2" align-items="center">
+          <mm-avatar size="huge" fallback="📷"></mm-avatar>
+          <mm-text weight="bold">Capture</mm-text>
+          <mm-paragraph>순간을 기록하세요.</mm-paragraph>
+        </mm-flex>
+      </mm-surface>
+    </mm-scroll>
+
+    <style>
+      .scroll-tile {
+        flex: 0 0 200px;
+        text-align: center;
+      }
+    </style>
+  </mm-component-section>
+
   <!-- <mm-component-section heading="RatingTile" description="">
     <mm-surfacebar heading="Ratings"></mm-surfacebar>
     <div aria-label="별점 5개 만점에 3.9개를 받았습니다." style="text-align: center">
