@@ -5,24 +5,48 @@
   ></mm-page-header>
 
   <mm-component-example>
-    <mm-button-group>
-      <mm-button variant="primary" size="large">primary</mm-button>
-      <mm-button variant="secondary" size="large">secondary</mm-button>
-      <mm-button variant="tertiary" size="large">tertiary</mm-button>
-      <mm-button variant="destructive" size="large" aria-label="danger">destructive</mm-button>
-      <mm-button variant="ghost" size="large">ghost</mm-button>
-    </mm-button-group>
-    <mm-separator></mm-separator>
-    <mm-button-group>
-      <mm-button variant="primary" size="large">large</mm-button>
-      <mm-button variant="primary">small</mm-button>
-    </mm-button-group>
-    <mm-separator></mm-separator>
-    <mm-button-group>
-      <mm-button variant="tertiary">hovered</mm-button>
-      <mm-button variant="tertiary">focused</mm-button>
-      <mm-button variant="tertiary" disabled>disabled</mm-button>
-    </mm-button-group>
+    <mm-flex direction="column" gap="6" align-items="center">
+      <mm-button id="playground-button" variant="primary" size="large">버튼</mm-button>
+
+      <mm-flex direction="column" gap="3">
+        <mm-flex direction="column" gap="1.5">
+          <mm-paragraph size="small">variant</mm-paragraph>
+          <mm-toggle-button-group
+            id="variant-control"
+            options='[
+              {"label":"primary","value":"primary"},
+              {"label":"secondary","value":"secondary"},
+              {"label":"tertiary","value":"tertiary"},
+              {"label":"ghost","value":"ghost"},
+              {"label":"destructive","value":"destructive"}
+            ]'
+          ></mm-toggle-button-group>
+        </mm-flex>
+
+        <mm-flex direction="column" gap="1.5">
+          <mm-paragraph size="small">size</mm-paragraph>
+          <mm-toggle-button-group
+            id="size-control"
+            selected-index="1"
+            options='[
+              {"label":"medium","value":"medium"},
+              {"label":"large","value":"large"}
+            ]'
+          ></mm-toggle-button-group>
+        </mm-flex>
+
+        <mm-flex direction="column" gap="1.5">
+          <mm-paragraph size="small">disabled</mm-paragraph>
+          <mm-toggle-button-group
+            id="disabled-control"
+            options='[
+              {"label":"false","value":"false"},
+              {"label":"true","value":"true"}
+            ]'
+          ></mm-toggle-button-group>
+        </mm-flex>
+      </mm-flex>
+    </mm-flex>
   </mm-component-example>
 
   <mm-component-props>

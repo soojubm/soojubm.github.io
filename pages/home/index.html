@@ -30,6 +30,32 @@
     texts='["Web Component - Lit", "Github Actions", "Constraint-driven design"]'
   ></mm-text-list>
 
+  <section class="carousel js-carousel">
+    <nav role="tablist">
+      <mm-flex gap="3">
+        <mm-avatar slot="avatar" size="huge" fallback="+"></mm-avatar>
+        <mm-avatar slot="avatar" size="huge" fallback="🌏"></mm-avatar>
+        <mm-avatar slot="avatar" size="huge" fallback="💀"></mm-avatar>
+        <mm-avatar slot="avatar" size="huge" fallback="🍔"></mm-avatar>
+      </mm-flex>
+    </nav>
+    <nav class="carousel-arrows">
+      <mm-icon-button
+        variant="secondary"
+        icon="arrow-left"
+        class="js-carousel-prev"
+        aria-label="이전"
+      ></mm-icon-button>
+      <mm-icon-button
+        variant="secondary"
+        icon="arrow-right"
+        class="js-carousel-next"
+        aria-label="다음"
+      ></mm-icon-button>
+    </nav>
+    <mm-flex class="js-carousel-viewer"></mm-flex>
+  </section>
+
   <!-- <mm-surface variant="plain">
     <mm-flex direction="column" gap="2">
       <mm-avatar variant="secondary" size="large" icon="constrained-surface"></mm-avatar>
