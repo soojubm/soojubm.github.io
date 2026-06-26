@@ -53,7 +53,51 @@
         aria-label="다음"
       ></mm-icon-button>
     </nav>
-    <mm-flex class="js-carousel-viewer"></mm-flex>
+    <!-- 스크롤 컨테이너 자체여야 하므로 mm-flex 대신 직접 제어하는 div를 사용한다. -->
+    <div class="carousel-viewer js-carousel-viewer">
+      <mm-surface class="carousel-slide" variant="plain">
+        <mm-flex direction="column" gap="3" align-items="center">
+          <mm-avatar size="huge" fallback="+"></mm-avatar>
+          <mm-text weight="bold">New</mm-text>
+          <mm-paragraph>새 슬라이드를 추가하세요.</mm-paragraph>
+        </mm-flex>
+      </mm-surface>
+      <mm-surface class="carousel-slide" variant="plain">
+        <mm-flex direction="column" gap="3" align-items="center">
+          <mm-avatar size="huge" fallback="🌏"></mm-avatar>
+          <mm-text weight="bold">Explore</mm-text>
+          <mm-paragraph>세계 곳곳을 둘러보세요.</mm-paragraph>
+        </mm-flex>
+      </mm-surface>
+      <mm-surface class="carousel-slide" variant="plain">
+        <mm-flex direction="column" gap="3" align-items="center">
+          <mm-avatar size="huge" fallback="💀"></mm-avatar>
+          <mm-text weight="bold">Danger</mm-text>
+          <mm-paragraph>위험한 구역을 표시합니다.</mm-paragraph>
+        </mm-flex>
+      </mm-surface>
+      <mm-surface class="carousel-slide" variant="plain">
+        <mm-flex direction="column" gap="3" align-items="center">
+          <mm-avatar size="huge" fallback="🍔"></mm-avatar>
+          <mm-text weight="bold">Eat</mm-text>
+          <mm-paragraph>맛있는 한 끼를 즐기세요.</mm-paragraph>
+        </mm-flex>
+      </mm-surface>
+      <mm-surface class="carousel-slide" variant="plain">
+        <mm-flex direction="column" gap="3" align-items="center">
+          <mm-avatar size="huge" fallback="🎧"></mm-avatar>
+          <mm-text weight="bold">Listen</mm-text>
+          <mm-paragraph>좋아하는 음악을 들어보세요.</mm-paragraph>
+        </mm-flex>
+      </mm-surface>
+      <mm-surface class="carousel-slide" variant="plain">
+        <mm-flex direction="column" gap="3" align-items="center">
+          <mm-avatar size="huge" fallback="📷"></mm-avatar>
+          <mm-text weight="bold">Capture</mm-text>
+          <mm-paragraph>순간을 기록하세요.</mm-paragraph>
+        </mm-flex>
+      </mm-surface>
+    </div>
   </section>
 
   <!-- <mm-surface variant="plain">
