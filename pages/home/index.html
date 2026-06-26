@@ -53,8 +53,7 @@
         aria-label="다음"
       ></mm-icon-button>
     </nav>
-    <!-- 스크롤 컨테이너 자체여야 하므로 mm-flex 대신 직접 제어하는 div를 사용한다. -->
-    <div class="carousel-viewer js-carousel-viewer">
+    <mm-scroll class="js-carousel-viewer" gap="3" hide-scrollbar>
       <mm-surface class="carousel-slide" variant="plain">
         <mm-flex direction="column" gap="3" align-items="center">
           <mm-avatar size="huge" fallback="+"></mm-avatar>
@@ -97,7 +96,7 @@
           <mm-paragraph>순간을 기록하세요.</mm-paragraph>
         </mm-flex>
       </mm-surface>
-    </div>
+    </mm-scroll>
   </section>
 
   <!-- <mm-surface variant="plain">

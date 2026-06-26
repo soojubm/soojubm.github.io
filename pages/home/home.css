@@ -1,15 +1,8 @@
 .carousel {
   position: relative;
 }
-.carousel-viewer {
-  display: flex;
-  gap: var(--space-3);
-  overflow-x: auto;
+.js-carousel-viewer {
   scroll-behavior: smooth;
-  scrollbar-width: none;
-}
-.carousel-viewer::-webkit-scrollbar {
-  display: none;
 }
 .carousel-slide {
   flex: 0 0 220px;
