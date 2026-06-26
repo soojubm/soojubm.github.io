@@ -36,6 +36,10 @@ export const listRowStyles = css`
     flex-direction: column;
   }
 
+  .list-row-description {
+    margin-top: -0.125rem;
+  }
+
   .list-row-emoji {
     display: inline-flex;
     align-items: center;

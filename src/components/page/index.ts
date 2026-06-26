@@ -29,11 +29,13 @@ export class Page extends LitElement {
 
     :host([width='small']) {
       max-width: var(--layout-width-small);
+      margin: 0 auto;
       box-sizing: content-box;
     }
 
     :host([width='medium']) {
       max-width: calc(var(--layout-width-small) + var(--space-4) * 10);
+      margin: 0 auto;
       box-sizing: content-box;
     }
 
