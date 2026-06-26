@@ -72,7 +72,7 @@ export class Dropdown extends LitElement {
         max-height: var(--dropdown-max-height);
 
         padding: var(--space-1);
-        border: var(--border-stronger);
+        border: var(--border);
         border-radius: var(--radius);
         background: var(--color-background);
         box-shadow: var(--shadow);

@@ -186,7 +186,7 @@ function sheetPageTemplate() {
 
       <mm-component-section
         heading="mm-sheet-header"
-        description="타이틀과 닫기 버튼을 제공합니다. sheetclose 이벤트를 버블링합니다."
+        description="타이틀과 선택적인 닫기 버튼을 제공합니다. 닫기 버튼은 sheetclose 이벤트를 버블링합니다."
       >
         <mm-sheet-header heading="Sheet Title"></mm-sheet-header>
       </mm-component-section>

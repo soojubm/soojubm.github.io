@@ -34,7 +34,7 @@ export class AccordionItem extends LitElement {
 
       /* brutal */
       :host-context([data-theme='brutal']) {
-        --accordion-border: var(--border-stronger);
+        --accordion-border: var(--border);
       }
 
       .accordion {

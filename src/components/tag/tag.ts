@@ -13,7 +13,10 @@ export const getMappedTone = <Value extends string>(
 ) => toneByValue[value] ?? fallback
 
 export const renderTag = (tone: TagTone, fallback?: unknown, icon?: IconName) => html`
-  <mm-tag tone=${tone} icon=${icon}><slot>${fallback}</slot></mm-tag>
+  <mm-tag tone=${tone} icon=${icon}>
+    <slot name="icon" slot="icon"></slot>
+    <slot>${fallback}</slot>
+  </mm-tag>
 `
 
 export const renderMappedTag = <Value extends string>(
@@ -42,7 +45,9 @@ export class Tag extends LitElement {
           ? html`
               <mm-icon name=${this.icon}></mm-icon>
             `
-          : nothing}
+          : html`
+              <slot name="icon"></slot>
+            `}
         ${this.renderDefaultSlot()}
       </span>
     `

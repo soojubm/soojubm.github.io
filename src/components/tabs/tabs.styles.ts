@@ -19,8 +19,8 @@ export const tabsStyles = css`
      line·pill 모두 토큰 재정의만으로 처리한다(상속). */
   :host-context([data-theme='brutal']) {
     --tabs-line-color: var(--brutal-border-color);
-    --tabs-pill-border: var(--border-stronger);
-    --tabs-pill-indicator-border: var(--border-stronger);
+    --tabs-pill-border: var(--border);
+    --tabs-pill-indicator-border: var(--border);
     --tabs-pill-indicator-shadow: none;
   }
 

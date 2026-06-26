@@ -42,7 +42,7 @@ export class ComponentAnatomy extends LitElement {
         gap: var(--space-4);
         flex-wrap: wrap;
         padding: var(--space-8) var(--space-8) var(--space-12);
-        border: var(--border-stronger);
+        border: var(--border);
         border-radius: var(--radius-large);
         background: var(--color-background-subtle);
       }

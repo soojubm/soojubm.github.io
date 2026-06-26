@@ -23,10 +23,20 @@ export class ListRow extends LitElement {
   static styles = [listRowStyles]
 
   @state() private hasTrailing = false
+  @state() private hasAvatar = false
+
+  private handleAvatarSlotChange(event: Event) {
+    const slot = event.target as HTMLSlotElement
+    this.hasAvatar = this.hasAssignedContent(slot)
+  }
 
   private handleTrailingSlotChange(event: Event) {
     const slot = event.target as HTMLSlotElement
-    this.hasTrailing = slot
+    this.hasTrailing = this.hasAssignedContent(slot)
+  }
+
+  private hasAssignedContent(slot: HTMLSlotElement) {
+    return slot
       .assignedNodes({ flatten: true })
       .some(
         node =>
@@ -36,7 +46,7 @@ export class ListRow extends LitElement {
   }
 
   render() {
-    const hasLeading = !!(this.icon || this.avatarSrc || this.emoji)
+    const hasLeading = !!(this.icon || this.avatarSrc || this.emoji || this.hasAvatar)
 
     return html`
       <div class="list-row">
@@ -46,6 +56,10 @@ export class ListRow extends LitElement {
                 ${this.emoji
                   ? html`
                       <span class="list-row-emoji" aria-hidden="true">${this.emoji}</span>
+                    `
+                  : this.hasAvatar
+                  ? html`
+                      <slot name="avatar" @slotchange=${this.handleAvatarSlotChange}></slot>
                     `
                   : html`
                       <mm-avatar
@@ -57,7 +71,9 @@ export class ListRow extends LitElement {
                     `}
               </span>
             `
-          : nothing}
+          : html`
+              <slot name="avatar" hidden @slotchange=${this.handleAvatarSlotChange}></slot>
+            `}
         <span class="list-row-content">
           ${this.label
             ? html`

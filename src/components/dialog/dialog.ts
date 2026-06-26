@@ -7,14 +7,15 @@ import '../sheet/semantics/sheet-footer'
 import '../text/semantics/paragraph'
 import type Sheet from '../sheet/sheet'
 import { emit } from '../../utils/emit'
+import type { ActionConfig } from '../action-config'
 
 @customElement('mm-dialog')
 export class Dialog extends LitElement {
   @property({ type: Boolean, reflect: true }) open = false
   @property({ type: String }) heading = ''
   @property({ type: String }) description = ''
-  @property({ type: String, attribute: 'primary-label' }) primaryLabel = ''
-  @property({ type: String, attribute: 'secondary-label' }) secondaryLabel = ''
+  @property({ attribute: false }) primaryAction?: ActionConfig
+  @property({ attribute: false }) secondaryAction?: ActionConfig
 
   @query('mm-sheet') private _sheet?: Sheet
 
@@ -54,18 +55,10 @@ export class Dialog extends LitElement {
     emit(this, 'dialog-close')
   }
 
-  private handlePrimaryClick = () => {
-    emit(this, 'primary-click')
-  }
-
-  private handleSecondaryClick = () => {
-    emit(this, 'secondary-click')
-  }
-
   render() {
     return html`
       <mm-sheet variant="center" width="small" @sheetclose=${this.handleSheetClose}>
-        <mm-sheet-header heading=${this.heading}></mm-sheet-header>
+        <mm-sheet-header heading=${this.heading} .closeButton=${false}></mm-sheet-header>
 
         <mm-sheet-body>
           ${this.description
@@ -77,18 +70,8 @@ export class Dialog extends LitElement {
         </mm-sheet-body>
 
         <mm-sheet-footer
-          .primaryAction=${this.primaryLabel
-            ? {
-                label: this.primaryLabel,
-                onClick: this.handlePrimaryClick,
-              }
-            : undefined}
-          .secondaryAction=${this.secondaryLabel
-            ? {
-                label: this.secondaryLabel,
-                onClick: this.handleSecondaryClick,
-              }
-            : undefined}
+          .primaryAction=${this.primaryAction}
+          .secondaryAction=${this.secondaryAction}
         ></mm-sheet-footer>
       </mm-sheet>
     `

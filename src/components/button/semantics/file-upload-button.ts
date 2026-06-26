@@ -25,6 +25,9 @@ export class FileUploadButton extends LitElement {
       gap: var(--space-2);
     }
 
+    figure {
+      margin: 0;
+    }
     input {
       position: absolute;
       width: 1px;

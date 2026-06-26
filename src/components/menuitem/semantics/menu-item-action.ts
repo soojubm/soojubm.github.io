@@ -44,7 +44,9 @@ export class MenuItemAction extends LitElement {
             ? html`
                 <mm-icon slot="trailing" name=${this.trailingIcon}></mm-icon>
               `
-            : nothing,
+            : html`
+                <slot name="trailing" slot="trailing"></slot>
+              `,
         )}
       </button>
     `

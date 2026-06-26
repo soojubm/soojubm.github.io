@@ -40,6 +40,20 @@
           description="강조 표현2. 클릭할 수 있다."
         ></mm-text-block>
       </mm-surface>
+      <mm-surface radius="default">
+        <mm-text-block
+          level="3"
+          heading="default radius"
+          description="기본 radius 토큰을 적용합니다."
+        ></mm-text-block>
+      </mm-surface>
+      <mm-surface radius="large">
+        <mm-text-block
+          level="3"
+          heading="large radius"
+          description="큰 radius 토큰을 적용합니다."
+        ></mm-text-block>
+      </mm-surface>
     </mm-flex>
   </mm-component-example>
 
@@ -50,6 +64,7 @@
       optional
     ></mm-prop>
     <mm-prop name="size" type="string" optional></mm-prop>
+    <mm-prop name="radius" type="'default' | 'large'" optional></mm-prop>
     <mm-prop name="height" type="string" optional></mm-prop>
   </mm-component-props>
 
@@ -87,15 +102,15 @@
     </mm-feature-group>
     <mm-text-list
       texts='[
-          "타일 내부 leading, tailing 컴포넌트에 따라 시각보정이 필요할 수 있습니다.",
+          "surface 내부 leading, tailing 컴포넌트에 따라 시각보정이 필요할 수 있습니다.",
           "inset이 너무 커지면 물리적 화면 크기에 따라 inset의 변경이 필요할 수 있다. 콘텐츠 모듈을 가운데 정렬로 해결할 수 있다."
         ]'
     ></mm-text-list>
-    <!-- "foundation :: elevated는 타일 전체가 하나의 클릭 가능한 컴포넌트이거나 타일 내부에 클릭 가능한
+    <!-- "foundation :: elevated는 surface 전체가 하나의 클릭 가능한 컴포넌트이거나 surface 내부에 클릭 가능한
     컴포넌트를 포함.", -->
-    <!-- "transparented tile 을 정의하여 모든 contentbox가 tile이 되는 것은 어떤가? 비어있는
-    컴포넌트(Box, Row, div)와는 어떤 차이가 있나? row는 레이아웃 컴포넌트, tile은 형태 컴포넌트이다.
-    tile에 과도한 책임을 부여하지 말 것.", => transparent 필요. 배경있는 상황 -->
+    <!-- "transparent surface를 정의하여 모든 contentbox가 surface가 되는 것은 어떤가? 비어있는
+    컴포넌트(Box, Row, div)와는 어떤 차이가 있나? row는 레이아웃 컴포넌트, surface는 형태 컴포넌트이다.
+    surface에 과도한 책임을 부여하지 말 것.", => transparent 필요. 배경있는 상황 -->
 
     <mm-paragraph>
       At its core, Card is a Box with specific styling attributes and more explicit use cases that
@@ -142,7 +157,7 @@
     /> -->
   </mm-paragraph-group>
 
-  <mm-component-section heading="PricingTile" description="">
+  <mm-component-section heading="PricingSurface" description="">
     <div style="position: relative">
       <!-- <mm-tag style="position: absolute; left: -0.25rem; top: var(--space-3)"> -->
       <mm-tag>🔥 Most Popular</mm-tag>
@@ -167,7 +182,7 @@
     </div>
   </mm-component-section>
 
-  <mm-component-section heading="FeedTile" description="">
+  <mm-component-section heading="FeedSurface" description="">
     <section role="feed" aria-busy="false">
       <article class="feed" aria-setsize="3" aria-posinset="1">
         <header class="feed-header">
@@ -180,7 +195,7 @@
           ></mm-menu-item-action>
         </header>
         <div class="feed-body">
-          <mm-thumbnail ratio="16:9" src="/src/images/springsteen.jpg" alt=""></mm-thumbnail>
+          <mm-thumbnail ratio="16:9" src="/src/images/soojubm.png" alt=""></mm-thumbnail>
           <mm-paragraph>
             Monotonectally productivate progressive human capital without user friendly portals.
             Globally benchmark top-line ideas with distributed catalysts for change. Authoritatively
@@ -258,56 +273,66 @@
   </mm-component-section>
 
   <mm-component-section
-    heading="ScrollTile"
-    description="가로로 넘치는 surface 카드를 mm-scroll로 스크롤합니다."
+    heading="ScrollSurface"
+    description="custom scrollbar styles를 가진 스크롤 컨테이너에 surface를 배치합니다."
   >
-    <mm-scroll gap="3" hide-scrollbar>
-      <mm-surface variant="plain" class="scroll-tile">
-        <mm-flex direction="column" gap="2" align-items="center">
-          <mm-avatar size="huge" fallback="🌏"></mm-avatar>
-          <mm-text weight="bold">Explore</mm-text>
-          <mm-paragraph>세계 곳곳을 둘러보세요.</mm-paragraph>
-        </mm-flex>
+    <mm-scroll direction="column" gap="3" class="scroll-surface-container">
+      <mm-surface class="scroll-surface">
+        <mm-text weight="bold">Surface 1</mm-text>
       </mm-surface>
-      <mm-surface variant="plain" class="scroll-tile">
-        <mm-flex direction="column" gap="2" align-items="center">
-          <mm-avatar size="huge" fallback="💀"></mm-avatar>
-          <mm-text weight="bold">Danger</mm-text>
-          <mm-paragraph>위험한 구역을 표시합니다.</mm-paragraph>
-        </mm-flex>
+      <mm-surface class="scroll-surface">
+        <mm-text weight="bold">Surface 2</mm-text>
       </mm-surface>
-      <mm-surface variant="plain" class="scroll-tile">
-        <mm-flex direction="column" gap="2" align-items="center">
-          <mm-avatar size="huge" fallback="🍔"></mm-avatar>
-          <mm-text weight="bold">Eat</mm-text>
-          <mm-paragraph>맛있는 한 끼를 즐기세요.</mm-paragraph>
-        </mm-flex>
+      <mm-surface class="scroll-surface">
+        <mm-text weight="bold">Surface 3</mm-text>
       </mm-surface>
-      <mm-surface variant="plain" class="scroll-tile">
-        <mm-flex direction="column" gap="2" align-items="center">
-          <mm-avatar size="huge" fallback="🎧"></mm-avatar>
-          <mm-text weight="bold">Listen</mm-text>
-          <mm-paragraph>좋아하는 음악을 들어보세요.</mm-paragraph>
-        </mm-flex>
+      <mm-surface class="scroll-surface">
+        <mm-text weight="bold">Surface 4</mm-text>
       </mm-surface>
-      <mm-surface variant="plain" class="scroll-tile">
-        <mm-flex direction="column" gap="2" align-items="center">
-          <mm-avatar size="huge" fallback="📷"></mm-avatar>
-          <mm-text weight="bold">Capture</mm-text>
-          <mm-paragraph>순간을 기록하세요.</mm-paragraph>
-        </mm-flex>
+      <mm-surface class="scroll-surface">
+        <mm-text weight="bold">Surface 5</mm-text>
       </mm-surface>
     </mm-scroll>
 
     <style>
-      .scroll-tile {
-        flex: 0 0 200px;
-        text-align: center;
+      .scroll-surface-container {
+        max-height: 240px;
+      }
+
+      .scroll-surface {
+        flex: 0 0 auto;
+      }
+    </style>
+
+    <pre
+      class="surface-code"
+    ><code>&lt;mm-scroll direction="column" gap="3" class="scroll-surface-container"&gt;
+  &lt;mm-surface&gt;
+    &lt;mm-text weight="bold"&gt;Surface 1&lt;/mm-text&gt;
+  &lt;/mm-surface&gt;
+  &lt;mm-surface&gt;
+    &lt;mm-text weight="bold"&gt;Surface 2&lt;/mm-text&gt;
+  &lt;/mm-surface&gt;
+&lt;/mm-scroll&gt;
+
+&lt;style&gt;
+  .scroll-surface-container {
+    max-height: 240px;
+  }
+&lt;/style&gt;</code></pre>
+
+    <style>
+      .surface-code {
+        overflow: auto;
+        margin: var(--space-3) 0 0;
+        padding: var(--space-3);
+        border-radius: var(--radius);
+        background: var(--color-background-subtle);
       }
     </style>
   </mm-component-section>
 
-  <!-- <mm-component-section heading="RatingTile" description="">
+  <!-- <mm-component-section heading="RatingSurface" description="">
     <mm-surfacebar heading="Ratings"></mm-surfacebar>
     <div aria-label="별점 5개 만점에 3.9개를 받았습니다." style="text-align: center">
       <mm-paragraph color="light">리뷰 116만개</mm-paragraph>

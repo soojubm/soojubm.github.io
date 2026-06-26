@@ -17,23 +17,15 @@
       id="dialog-alert"
       heading="Alert Dialog"
       description="부끄러우니까 보지마요!"
-      primary-label="확인"
     ></mm-dialog>
 
     <mm-dialog
       id="dialog-confirm"
       heading="페이지를 나가시겠어요?"
       description="저장되지 않은 변경 사항이 있습니다. 이 페이지에서 나가면 변경 사항이 취소됩니다."
-      primary-label="계속 수정하기"
-      secondary-label="나가기"
     ></mm-dialog>
 
-    <mm-dialog
-      id="dialog-cookie"
-      heading="쿠키 사용 안내"
-      primary-label="Cookie Settings"
-      secondary-label="Accept Cookie"
-    >
+    <mm-dialog id="dialog-cookie" heading="쿠키 사용 안내">
       <mm-paragraph>
         By clicking "Accept Cookies", you agree to the storing of cookies on your device to enhance
         site navigation, analyze site usage, and assist in our marketing efforts. View our Cookie
@@ -46,12 +38,16 @@
     <mm-prop name="open" type="boolean"></mm-prop>
     <mm-prop name="heading" type="string"></mm-prop>
     <mm-prop name="description" type="string"></mm-prop>
-    <mm-prop name="primary-label" type="string"></mm-prop>
-    <mm-prop name="secondary-label" type="string"></mm-prop>
+    <mm-prop
+      name="primaryAction"
+      type="{ label: string; onClick?: () => void; disabled?: boolean }"
+    ></mm-prop>
+    <mm-prop
+      name="secondaryAction"
+      type="{ label: string; onClick?: () => void; disabled?: boolean }"
+    ></mm-prop>
     <mm-prop name="slot='footer'" type="actions"></mm-prop>
     <mm-prop name="dialog-close" type="CustomEvent" kind="event"></mm-prop>
-    <mm-prop name="primary-click" type="CustomEvent" kind="event"></mm-prop>
-    <mm-prop name="secondary-click" type="CustomEvent" kind="event"></mm-prop>
   </mm-component-props>
 
   <mm-component-guide>

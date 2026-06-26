@@ -14,7 +14,7 @@ export class ComponentReferences extends LitElement {
       display: flex;
       flex-direction: column;
       padding: var(--space-section) 0;
-      gap: var(--space-3);
+      gap: var(--space-2);
     }
   `
 

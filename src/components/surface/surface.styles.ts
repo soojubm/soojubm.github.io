@@ -29,9 +29,19 @@ export const SIZES = {
   `,
 }
 
+export const RADII = {
+  default: css`
+    --surface-radius: var(--radius);
+  `,
+  large: css`
+    --surface-radius: var(--radius-large);
+  `,
+}
+
 // 2. 타입 정의도 공통 명칭으로 추출
 export type Variant = keyof typeof VARIANTS
 export type Size = keyof typeof SIZES
+export type Radius = keyof typeof RADII
 
 export const variantStyles = [
   css`
@@ -65,6 +75,19 @@ export const sizeStyles = [
   css`
     :host([size='medium']) .surface {
       ${SIZES.medium}
+    }
+  `,
+]
+
+export const radiusStyles = [
+  css`
+    :host([radius='default']) {
+      ${RADII.default}
+    }
+  `,
+  css`
+    :host([radius='large']) {
+      ${RADII.large}
     }
   `,
 ]

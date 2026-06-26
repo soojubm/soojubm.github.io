@@ -46,6 +46,7 @@ export class Textfield extends LitElement {
               <mm-textfield-helper>${this.helper}</mm-textfield-helper>
             `
           : nothing}
+        <slot name="link"></slot>
         <div class="textfield-control">
           <slot name="leading"></slot>
           <mm-input

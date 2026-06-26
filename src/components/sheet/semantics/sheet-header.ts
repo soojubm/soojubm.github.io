@@ -1,10 +1,11 @@
-import { LitElement, css, html } from 'lit'
+import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { emit } from '../../../utils/emit'
 
 @customElement('mm-sheet-header')
 class SheetHeader extends LitElement {
   @property({ type: String }) heading = ''
+  @property({ type: Boolean, attribute: 'close-button' }) closeButton = true
 
   static styles = css`
     header {
@@ -27,7 +28,11 @@ class SheetHeader extends LitElement {
     return html`
       <header role="navigation">
         <mm-paragraph size="large">${this.heading}</mm-paragraph>
-        <mm-close-button @close=${this.handleClose}></mm-close-button>
+        ${this.closeButton
+          ? html`
+              <mm-close-button @close=${this.handleClose}></mm-close-button>
+            `
+          : nothing}
       </header>
     `
   }

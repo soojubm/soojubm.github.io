@@ -23,9 +23,11 @@ export function renderMenuItemContent(props: MenuItemProps, action: unknown) {
       avatar-src=${props.avatarSrc || nothing}
       avatar-variant=${props.avatarVariant}
     >
+      <slot name="avatar" slot="avatar"></slot>
       ${props.label
         ? nothing
         : html`
+            <slot name="text"></slot>
             <slot></slot>
           `}
       ${action}

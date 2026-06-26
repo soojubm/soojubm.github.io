@@ -18,7 +18,7 @@ export class TokenStage extends LitElement {
         align-items: center;
         justify-content: center;
         padding: var(--space-8);
-        border: var(--border-stronger);
+        border: var(--border);
         border-radius: var(--radius-large);
         background: var(--color-background-subtle);
       }

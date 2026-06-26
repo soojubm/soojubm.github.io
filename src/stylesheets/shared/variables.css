@@ -137,8 +137,7 @@
   --space-1-minus: calc(var(--space-1) * -1);
 
   --border-width: 1px;
-  --border: var(--border-width) solid var(--color-border);
-  --border-stronger: var(--border-width) solid var(--color-border-strong);
+  --border: var(--border-width) solid var(--color-border-strong);
   --border-transparent: var(--border-width) solid transparent;
   --border-active: 1px solid var(--color-primary);
 
@@ -248,8 +247,7 @@
   --color-border-strong: #5f6964;
   --color-border-hover: var(--gray0);
 
-  --border: 1px solid var(--color-border);
-  --border-stronger: var(--border-width) solid var(--color-border-strong);
+  --border: var(--border-width) solid var(--color-border-strong);
 
   --status-hover: 0 0 0 2px rgba(255, 255, 255, 0.25);
 
@@ -267,11 +265,10 @@
   --border: var(--border-width) solid var(--brutal-border-color);
   --border-transparent: var(--border-width) solid var(--brutal-border-color);
 
-  --border-stronger: var(--border-width) solid var(--brutal-border-color);
   --border-active: var(--border-width) solid var(--brutal-border-color);
 
-  --component-props-border: var(--border-stronger);
-  --component-tokens-border: var(--border-stronger);
+  --component-props-border: var(--border);
+  --component-tokens-border: var(--border);
   --input-border-color: var(--brutal-border-color);
-  --bubble-border: var(--border-stronger);
+  --bubble-border: var(--border);
 }
