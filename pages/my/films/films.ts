@@ -1,6 +1,6 @@
 import { renderLayout } from '../../../layouts/base-layouts'
 import main from './index.html'
-import { renderList, getCountries, PAGE_SIZE } from '../../components/_list-page'
+import { renderList, getCountries, loadJson, mediaCard } from '../../components/_list-page'
 
 interface Film {
   id: number
@@ -20,18 +20,17 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 async function initPage() {
-  const films = await loadFilms()
+  const films = await loadJson<Film>('/pages/my/films/films.json')
   if (!films?.length) return
 
   const state: FilterState = { decade: '', country: '' }
+  const rerender = () => renderList(getFiltered(films, state), mediaCard)
 
-  renderFilters(films, state)
-  renderList(getFiltered(films, state), 0, filmCard, next =>
-    renderList(getFiltered(films, state), next, filmCard, () => {}),
-  )
+  renderFilters(films, state, rerender)
+  rerender()
 }
 
-function renderFilters(films: Film[], state: FilterState) {
+function renderFilters(films: Film[], state: FilterState, rerender: () => void) {
   const container = document.querySelector<HTMLElement>('.js-filters')
   if (!container) return
 
@@ -55,11 +54,6 @@ function renderFilters(films: Film[], state: FilterState) {
     </mm-flex>
   `
 
-  const rerender = () =>
-    renderList(getFiltered(films, state), 0, filmCard, next =>
-      renderList(getFiltered(films, state), next, filmCard, () => {}),
-    )
-
   container.querySelector('.js-decade-filter')?.addEventListener('change', e => {
     state.decade = (e as CustomEvent<{ values: string[] }>).detail.values[0] ?? ''
     rerender()
@@ -69,30 +63,6 @@ function renderFilters(films: Film[], state: FilterState) {
     state.country = (e as CustomEvent<{ values: string[] }>).detail.values[0] ?? ''
     rerender()
   })
-}
-
-function filmCard(f: Film) {
-  return `
-    <article style="border:var(--border);padding:var(--space-3);border-radius:var(--radius)">
-      <mm-flex direction="column" gap="1">
-        <mm-flex justify-content="space-between" align-items="center" gap="2">
-          <time style="font-size:var(--font-size-12);color:var(--color-foreground-light)">${
-            f.releasedate
-          }</time>
-          <span style="font-size:var(--font-size-12);color:var(--color-foreground-light)">${
-            f.country ?? ''
-          }</span>
-        </mm-flex>
-        <mm-paragraph style="margin:0;font-weight:var(--font-weight-bold);line-height:1.3">${
-          f.titlekorean
-        }</mm-paragraph>
-        <mm-paragraph style="margin:0;font-size:var(--font-size-12);color:var(--color-foreground-light)">${
-          f.titleenglish
-        }</mm-paragraph>
-        <mm-paragraph style="margin:0;font-size:var(--font-size-14)">${f.director}</mm-paragraph>
-      </mm-flex>
-    </article>
-  `
 }
 
 function getFiltered(films: Film[], state: FilterState) {
@@ -111,13 +81,4 @@ function getDecades(films: Film[]) {
     films.filter(f => f.releasedate >= 1880).map(f => String(Math.floor(f.releasedate / 10) * 10)),
   )
   return [...set].sort()
-}
-
-async function loadFilms(): Promise<Film[] | null> {
-  try {
-    const res = await fetch('/pages/my/films/films.json')
-    return await res.json()
-  } catch {
-    return null
-  }
 }

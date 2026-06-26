@@ -1,6 +1,6 @@
 import { renderLayout } from '../../../layouts/base-layouts'
 import main from './index.html'
-import { renderList, getCountries } from '../../components/_list-page'
+import { renderList, getCountries, loadJson, mediaCard } from '../../components/_list-page'
 
 interface Book {
   releasedate: number
@@ -19,18 +19,17 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 async function initPage() {
-  const books = await loadBooks()
+  const books = await loadJson<Book>('/pages/my/books/books.json')
   if (!books?.length) return
 
   const state: FilterState = { country: '' }
+  const rerender = () => renderList(getFiltered(books, state), mediaCard)
 
-  renderFilters(books, state)
-  renderList(getFiltered(books, state), 0, bookCard, next =>
-    renderList(getFiltered(books, state), next, bookCard, () => {}),
-  )
+  renderFilters(books, state, rerender)
+  rerender()
 }
 
-function renderFilters(books: Book[], state: FilterState) {
+function renderFilters(books: Book[], state: FilterState, rerender: () => void) {
   const container = document.querySelector<HTMLElement>('.js-filters')
   if (!container) return
 
@@ -47,34 +46,8 @@ function renderFilters(books: Book[], state: FilterState) {
 
   container.querySelector('.js-country-filter')?.addEventListener('change', e => {
     state.country = (e as CustomEvent<{ values: string[] }>).detail.values[0] ?? ''
-    renderList(getFiltered(books, state), 0, bookCard, next =>
-      renderList(getFiltered(books, state), next, bookCard, () => {}),
-    )
+    rerender()
   })
-}
-
-function bookCard(b: Book) {
-  return `
-    <article style="border:var(--border);padding:var(--space-3);border-radius:var(--radius)">
-      <mm-flex direction="column" gap="1">
-        <mm-flex justify-content="space-between" align-items="center" gap="2">
-          <time style="font-size:var(--font-size-12);color:var(--color-foreground-light)">${
-            b.releasedate ?? ''
-          }</time>
-          <span style="font-size:var(--font-size-12);color:var(--color-foreground-light)">${
-            b.country ?? ''
-          }</span>
-        </mm-flex>
-        <mm-paragraph style="margin:0;font-weight:var(--font-weight-bold);line-height:1.3">${
-          b.titlekorean
-        }</mm-paragraph>
-        <mm-paragraph style="margin:0;font-size:var(--font-size-12);color:var(--color-foreground-light)">${
-          b.titleenglish
-        }</mm-paragraph>
-        <mm-paragraph style="margin:0;font-size:var(--font-size-14)">${b.director}</mm-paragraph>
-      </mm-flex>
-    </article>
-  `
 }
 
 function getFiltered(books: Book[], state: FilterState) {
@@ -82,13 +55,4 @@ function getFiltered(books: Book[], state: FilterState) {
     if (state.country && b.country !== state.country) return false
     return true
   })
-}
-
-async function loadBooks(): Promise<Book[] | null> {
-  try {
-    const res = await fetch('/pages/my/books/books.json')
-    return await res.json()
-  } catch {
-    return null
-  }
 }

@@ -3,50 +3,37 @@
  * films·books처럼 "필터 + 페이지네이션 목록" 구조를 공유합니다.
  */
 
-export const PAGE_SIZE = 60
+const PAGE_SIZE = 60
 
 /**
  * 아이템 목록을 렌더링하고 "더 보기" 버튼을 연결합니다.
- * @param items   전체 필터링된 배열
- * @param offset  현재까지 표시된 개수 (0이면 새 렌더, 양수면 추가)
- * @param toCard  아이템 → HTML 문자열 변환 함수
- * @param onMore  다음 offset으로 재호출하는 콜백
+ * offset 관리와 추가 로딩은 내부에서 처리하므로, 필터가 바뀔 때마다 다시 호출하면 됩니다.
  */
-export function renderList<T>(
-  items: T[],
-  offset: number,
-  toCard: (item: T) => string,
-  onMore: (nextOffset: number) => void,
-) {
+export function renderList<T>(items: T[], toCard: (item: T) => string) {
   const listEl = document.querySelector<HTMLElement>('.js-list')
   const countEl = document.querySelector<HTMLElement>('.js-count')
   const moreWrap = document.querySelector<HTMLElement>('.js-more')
   const moreBtn = document.querySelector<HTMLElement>('.js-more-btn')
   if (!listEl || !countEl || !moreWrap) return
 
-  const slice = items.slice(0, offset + PAGE_SIZE)
   countEl.textContent = String(items.length)
+  listEl.innerHTML = ''
+  let shown = 0
 
-  if (offset === 0) {
-    listEl.innerHTML = slice.map(toCard).join('')
-  } else {
-    listEl.insertAdjacentHTML(
-      'beforeend',
-      items
-        .slice(offset, offset + PAGE_SIZE)
-        .map(toCard)
-        .join(''),
-    )
+  const showMore = () => {
+    const slice = items.slice(shown, shown + PAGE_SIZE)
+    listEl.insertAdjacentHTML('beforeend', slice.map(toCard).join(''))
+    shown += slice.length
+    moreWrap.style.display = shown < items.length ? '' : 'none'
   }
 
-  const hasMore = slice.length < items.length
-  moreWrap.style.display = hasMore ? '' : 'none'
+  showMore()
 
-  if (hasMore && moreBtn) {
-    const nextOffset = offset + PAGE_SIZE
-    const newBtn = moreBtn.cloneNode(true) as HTMLElement
-    moreBtn.replaceWith(newBtn)
-    newBtn.addEventListener('click', () => onMore(nextOffset))
+  if (moreBtn) {
+    // 필터 재렌더 시 이전 리스너가 남지 않도록 버튼을 교체하고 다시 연결한다.
+    const freshBtn = moreBtn.cloneNode(true) as HTMLElement
+    moreBtn.replaceWith(freshBtn)
+    freshBtn.addEventListener('click', showMore)
   }
 }
 
@@ -65,4 +52,47 @@ export function getCountries<T extends { country?: string }>(
     .filter(([, n]) => n >= minCount)
     .sort((a, b) => b[1] - a[1])
     .map(([c]) => c)
+}
+
+/** films·books 공통 JSON 로더. 실패 시 null을 반환합니다. */
+export async function loadJson<T>(url: string): Promise<T[] | null> {
+  try {
+    const res = await fetch(url)
+    return await res.json()
+  } catch {
+    return null
+  }
+}
+
+export interface MediaItem {
+  releasedate?: number
+  titlekorean: string
+  titleenglish: string
+  director: string
+  country?: string
+}
+
+/** films·books가 공유하는 카드 마크업. */
+export function mediaCard(item: MediaItem): string {
+  return `
+    <article style="border:var(--border);padding:var(--space-3);border-radius:var(--radius)">
+      <mm-flex direction="column" gap="1">
+        <mm-flex justify-content="space-between" align-items="center" gap="2">
+          <time style="font-size:var(--font-size-12);color:var(--color-foreground-light)">${
+            item.releasedate ?? ''
+          }</time>
+          <span style="font-size:var(--font-size-12);color:var(--color-foreground-light)">${
+            item.country ?? ''
+          }</span>
+        </mm-flex>
+        <mm-paragraph style="margin:0;font-weight:var(--font-weight-bold);line-height:1.3">${
+          item.titlekorean
+        }</mm-paragraph>
+        <mm-paragraph style="margin:0;font-size:var(--font-size-12);color:var(--color-foreground-light)">${
+          item.titleenglish
+        }</mm-paragraph>
+        <mm-paragraph style="margin:0;font-size:var(--font-size-14)">${item.director}</mm-paragraph>
+      </mm-flex>
+    </article>
+  `
 }
