@@ -10,6 +10,7 @@
     "build": "webpack --mode=production && node scripts/build-search-index.mjs",
     "remove": "rm -r node_modules",
     "stat": "npx webpack --mode production --json artifacts/webpack-stats.json",
+    "lint": "eslint \"{src,pages,layouts,scripts}/**/*.{js,ts}\" index.ts webpack.config.js",
     "lint:css": "stylelint \"src/**/*.css\" \"src/**/*.ts\""
   },
   "repository": {
@@ -26,7 +27,12 @@
   },
   "homepage": "https://github.com/soojubm/soojubm.github.io#readme",
   "devDependencies": {
+    "@typescript-eslint/parser": "^6.15.0",
     "css-loader": "^6.7.2",
+    "eslint": "^8.57.1",
+    "eslint-plugin-lit": "^2.3.1",
+    "eslint-plugin-lit-a11y": "^4.1.4",
+    "eslint-plugin-wc": "^3.1.0",
     "html-loader": "^4.2.0",
     "html-webpack-plugin": "^5.6.7",
     "mini-css-extract-plugin": "^2.10.2",
