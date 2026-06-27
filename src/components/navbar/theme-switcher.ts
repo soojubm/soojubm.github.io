@@ -1,19 +1,76 @@
-import { LitElement, css, html } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
-import '@/components/dropdown/dropdown'
+import { LitElement, css, html, nothing } from 'lit'
+import { customElement, property, state } from 'lit/decorators.js'
 import '@/components/icon-button/icon-button'
+import '@/components/menuitem/semantics/menu-item-action'
+import '@/components/radius-picker/radius-picker'
+import '@/components/separator/separator'
 import { getPreferredTheme, saveTheme, THEMES, type Theme } from '@/utils/theme'
 import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
+import { OutsideClickController } from '@/controllers/outside-click-controller'
 
 @customElement('mm-theme-switcher')
 export class ThemeSwitcher extends LitElement {
   static styles = css`
     :host {
       display: inline-flex;
+      position: relative;
+    }
+
+    .theme-switcher {
+      position: relative;
+    }
+
+    .panel {
+      display: flex;
+      flex-direction: column;
+
+      min-width: calc(var(--width-small) - var(--space-4) * 5);
+      max-height: var(--width-small);
+
+      padding: var(--space-1);
+      border: var(--border);
+      border-radius: var(--radius);
+      background: var(--color-background);
+      box-shadow: var(--shadow);
+
+      position: absolute;
+      top: calc(100% + var(--space-1));
+      right: 0;
+      z-index: var(--zindex-loader);
+
+      overflow-y: auto;
+      box-sizing: border-box;
+
+      opacity: 0;
+      transform: translateY(var(--space-1-minus)) scale(0.98);
+      transform-origin: top right;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 120ms ease, transform 180ms cubic-bezier(0.2, 0.8, 0.2, 1),
+        visibility 0s linear 180ms;
+    }
+
+    .panel[open] {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      visibility: visible;
+      pointer-events: auto;
+      transition: opacity 120ms ease, transform 220ms cubic-bezier(0.18, 1.25, 0.4, 1),
+        visibility 0s;
+    }
+
+    mm-menu-item-action[aria-current='true'] {
+      color: var(--selection-foreground);
     }
   `
 
   @property({ type: String }) value: Theme = 'light'
+  @state() private isOpen = false
+
+  private outsideClick = new OutsideClickController(this, () => (this.isOpen = false), {
+    event: 'click',
+    isActive: () => this.isOpen,
+  })
 
   connectedCallback(): void {
     super.connectedCallback()
@@ -24,26 +81,44 @@ export class ThemeSwitcher extends LitElement {
     return THEMES.find(theme => theme.value === this.value)?.icon ?? ICON_NAMES.LIGHT_MODE
   }
 
+  private toggleOpen() {
+    this.isOpen = !this.isOpen
+  }
+
   // 선택 시 테마를 저장하고 현재 값을 동기화
-  private handleChange(e: CustomEvent) {
-    this.value = saveTheme(e.detail.value as Theme)
+  private handleThemeChange(theme: Theme, event: Event) {
+    event.stopPropagation()
+    this.value = saveTheme(theme)
+    this.isOpen = false
   }
 
   render() {
     return html`
-      <mm-dropdown .value=${this.value} placement="bottom-right" @change=${this.handleChange}>
+      <div class="theme-switcher">
         <mm-icon-button
-          slot="trigger"
           variant="ghost"
-          icon="${this.currentIcon}"
+          icon=${this.currentIcon}
           aria-label="테마 변경"
+          aria-haspopup="menu"
+          aria-expanded=${String(this.isOpen)}
+          @click=${this.toggleOpen}
         ></mm-icon-button>
-        ${THEMES.map(
-          theme => html`
-            <option value=${theme.value} icon=${theme.icon}>${theme.label}</option>
-          `,
-        )}
-      </mm-dropdown>
+        <div class="panel" ?open=${this.isOpen} role="menu" aria-hidden=${String(!this.isOpen)}>
+          ${THEMES.map(
+            theme => html`
+              <mm-menu-item-action
+                icon=${theme.icon}
+                aria-current=${theme.value === this.value ? 'true' : nothing}
+                @click=${(event: Event) => this.handleThemeChange(theme.value, event)}
+              >
+                ${theme.label}
+              </mm-menu-item-action>
+            `,
+          )}
+          <mm-separator spacing="small"></mm-separator>
+          <mm-radius-picker></mm-radius-picker>
+        </div>
+      </div>
     `
   }
 }

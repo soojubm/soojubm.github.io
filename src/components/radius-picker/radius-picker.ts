@@ -22,38 +22,16 @@ const COLOR_OPTIONS = [
 export class RadiusPicker extends LitElement {
   static styles = css`
     :host {
-      position: fixed;
-      bottom: 1.5rem;
-      left: 0;
-      width: 100vw;
       display: flex;
-      justify-content: center;
-      pointer-events: none;
-      z-index: 9999;
+      flex-direction: column;
+      gap: var(--space-2);
     }
 
     .bar {
-      pointer-events: auto;
-      display: inline-flex;
-      align-items: center;
-      gap: var(--space-3);
-      padding: var(--space-2) var(--space-3);
-      background: var(--color-background);
-      border: var(--border);
-      border-radius: var(--radius-large);
-      box-shadow: var(--shadow);
-    }
-
-    .divider {
-      width: 1px;
-      height: 1.25rem;
-      background: var(--color-border);
-    }
-
-    .label {
-      font-size: var(--font-size-12);
-      color: var(--color-foreground-light);
-      white-space: nowrap;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+      padding: var(--space-1);
     }
   `
 
@@ -75,14 +53,14 @@ export class RadiusPicker extends LitElement {
     return html`
       <div class="bar">
         <mm-toggle-button-group
+          stretch
           .options=${SHAPE_OPTIONS}
           .selectedIndex=${this.shape === 'square' ? 1 : 0}
           @change=${this.handleShapeChange}
         ></mm-toggle-button-group>
 
-        <div class="divider"></div>
-
         <mm-toggle-button-group
+          stretch
           .options=${COLOR_OPTIONS}
           .selectedIndex=${this.color === 'black' ? 1 : 0}
           @change=${this.handleColorChange}
