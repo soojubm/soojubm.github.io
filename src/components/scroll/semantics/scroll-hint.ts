@@ -1,4 +1,4 @@
-import { LitElement, css, html } from 'lit'
+import { LitElement, css } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
 
@@ -23,6 +23,7 @@ export class ScrollHint extends LitElement {
         right: -1px;
         z-index: 1;
         pointer-events: none;
+        background: var(--gradient-scroll-hint-end);
       }
 
       :host([placement='start']) {
@@ -31,21 +32,12 @@ export class ScrollHint extends LitElement {
         margin-left: 0;
         left: 0;
         right: auto;
+        background: var(--gradient-scroll-hint-start);
       }
 
       :host([hidden]) {
         opacity: 0;
         visibility: hidden;
-      }
-
-      .hint {
-        width: 100%;
-        height: 100%;
-        background: var(--gradient-scroll-hint-end);
-      }
-
-      :host([placement='start']) .hint {
-        background: var(--gradient-scroll-hint-start);
       }
     `,
   ]
@@ -55,14 +47,9 @@ export class ScrollHint extends LitElement {
   private scrollRoot?: HTMLElement
   private resizeObserver?: ResizeObserver
 
-  render() {
-    return html`
-      <div class="hint" aria-hidden="true"></div>
-    `
-  }
-
   connectedCallback() {
     super.connectedCallback()
+    this.setAttribute('aria-hidden', 'true')
     this.scrollRoot = this.parentElement ?? undefined
     this.scrollRoot?.addEventListener('scroll', this.syncVisibility)
     this.resizeObserver = new ResizeObserver(this.syncVisibility)

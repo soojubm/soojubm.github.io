@@ -1,18 +1,10 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { styleMap } from 'lit/directives/style-map.js'
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
+import '@/components/flex/flex'
 
 type Direction = 'row' | 'column'
 type Justify = 'start' | 'center' | 'end' | 'between' | 'around'
-
-const justifyMap: Record<Justify, string> = {
-  start: 'flex-start',
-  center: 'center',
-  end: 'flex-end',
-  between: 'space-between',
-  around: 'space-around',
-}
 
 @customElement('mm-button-group')
 export class ButtonGroup extends LitElement {
@@ -21,14 +13,6 @@ export class ButtonGroup extends LitElement {
     css`
       :host {
         display: flex;
-
-        --button-group-gap: var(--space-2);
-      }
-
-      .flex {
-        display: flex;
-        width: 100%;
-        gap: var(--button-group-gap);
       }
 
       :host([stretch]) slot::slotted(*) {
@@ -44,17 +28,17 @@ export class ButtonGroup extends LitElement {
   @property({ type: Boolean, reflect: true }) stretch = false
 
   render() {
-    const styles = {
-      flexDirection: this.direction,
-      justifyContent: justifyMap[this.justifyContent] ?? 'flex-start',
-      alignItems: 'center',
-      flexWrap: this.wrap ? 'wrap' : 'nowrap',
-    }
-
     return html`
-      <div class="flex" role="group" style=${styleMap(styles)}>
+      <mm-flex
+        direction=${this.direction}
+        justify-content=${this.justifyContent}
+        align-items="center"
+        gap="2"
+        ?wrap=${this.wrap}
+        ?stretch=${this.stretch}
+      >
         <slot></slot>
-      </div>
+      </mm-flex>
     `
   }
 }

@@ -161,7 +161,7 @@ export class ChatSourceGroup extends LitElement {
   render() {
     const src = this.activeSource
     return html`
-      <mm-button-group gap="1" wrap @source-toggle=${this.handleToggle}>
+      <mm-button-group wrap @source-toggle=${this.handleToggle}>
         <slot></slot>
       </mm-button-group>
 

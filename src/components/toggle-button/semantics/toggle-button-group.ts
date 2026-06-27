@@ -2,7 +2,7 @@ import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { repeat } from 'lit/directives/repeat.js'
 import type { IconName } from '@/components/icon-button/semantics/icon-names'
-import '@/components/button/button-group'
+import '@/components/flex/flex'
 import '@/components/toggle-button/toggle-button'
 import '@/components/toggle-button/semantics/view-mode-switcher'
 import { emit } from '@/utils/emit'
@@ -25,8 +25,7 @@ export class ToggleButtonGroup extends LitElement {
       --toggle-radius: var(--radius);
     }
 
-    mm-button-group {
-      --button-group-gap: 0;
+    mm-flex {
       border-radius: var(--toggle-radius);
     }
 
@@ -46,7 +45,7 @@ export class ToggleButtonGroup extends LitElement {
       --toggle-button-radius: var(--toggle-radius);
     }
 
-    :host([stretch]) mm-button-group {
+    :host([stretch]) mm-flex {
       width: 100%;
     }
   `
@@ -61,7 +60,7 @@ export class ToggleButtonGroup extends LitElement {
 
   render() {
     return html`
-      <mm-button-group ?stretch=${this.stretch}>
+      <mm-flex align-items="center" gap="0" ?stretch=${this.stretch}>
         ${repeat(
           this.options,
           option => option.value,
@@ -82,7 +81,7 @@ export class ToggleButtonGroup extends LitElement {
             `
           },
         )}
-      </mm-button-group>
+      </mm-flex>
     `
   }
 
