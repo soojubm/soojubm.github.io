@@ -8,6 +8,7 @@ export const scrollStyles = [
   css`
     :host {
       display: flex;
+      gap: var(--scroll-gap, 0);
       min-width: 0;
       max-width: 100%;
     }

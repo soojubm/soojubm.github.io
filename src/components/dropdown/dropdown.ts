@@ -168,7 +168,7 @@ export class Dropdown extends LitElement {
     )
   }
 
-  protected toggleOpen() {
+  protected toggleOpen = () => {
     this.popup.toggle()
   }
 
@@ -207,7 +207,7 @@ export class Dropdown extends LitElement {
   // 슬롯에 click을 위임하므로 끼워 넣은 요소든 기본 버튼이든 클릭하면 펼쳐진다.
   protected renderTrigger() {
     return html`
-      <slot name="trigger" @click="${this.toggleOpen}" @slotchange=${this.popup.syncTrigger}>
+      <slot name="trigger" @click=${this.toggleOpen} @slotchange=${this.popup.syncTrigger}>
         <mm-button
           class="dropdown-button"
           size="small"
@@ -268,7 +268,7 @@ export class Dropdown extends LitElement {
       <mm-menu-item-action
         icon=${option.icon || nothing}
         aria-current=${option.value === this.value ? 'true' : nothing}
-        @click="${() => this.selectOption(option)}"
+        @click=${() => this.selectOption(option)}
       >
         ${option.label}
       </mm-menu-item-action>

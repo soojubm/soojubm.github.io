@@ -12,26 +12,26 @@ class Tooltip extends LitElement {
   @property({ type: Boolean, reflect: true }) open = false
 
   @queryAssignedElements({ slot: 'trigger', flatten: true })
-  private _triggerElements!: Element[]
+  private triggerElements!: Element[]
 
-  private readonly _contentId = uniqueId('tooltip')
-  private _descriptionTargets = new Set<HTMLElement>()
+  private readonly contentId = uniqueId('tooltip')
+  private descriptionTargets = new Set<HTMLElement>()
 
-  private show() {
-    this._syncDescription()
+  private show = () => {
+    this.syncDescription()
     this.open = true
   }
 
-  private hide() {
+  private hide = () => {
     this.open = false
   }
 
   disconnectedCallback() {
-    this._clearDescriptionTargets()
+    this.clearDescriptionTargets()
     super.disconnectedCallback()
   }
 
-  private _findDescriptionTarget(element: Element): HTMLElement | null {
+  private findDescriptionTarget(element: Element): HTMLElement | null {
     const focusableSelector =
       'button, a[href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
 
@@ -40,7 +40,7 @@ class Tooltip extends LitElement {
     const roots = [element.shadowRoot, element].filter(Boolean) as (ShadowRoot | Element)[]
     for (const root of roots) {
       for (const child of root.children) {
-        const target = this._findDescriptionTarget(child)
+        const target = this.findDescriptionTarget(child)
         if (target) return target
       }
     }
@@ -48,11 +48,11 @@ class Tooltip extends LitElement {
     return null
   }
 
-  private _clearDescriptionTargets() {
-    this._descriptionTargets.forEach(target => {
+  private clearDescriptionTargets() {
+    this.descriptionTargets.forEach(target => {
       const descriptions = (target.getAttribute('aria-describedby') || '')
         .split(/\s+/)
-        .filter(id => id && id !== this._contentId)
+        .filter(id => id && id !== this.contentId)
 
       if (descriptions.length) {
         target.setAttribute('aria-describedby', descriptions.join(' '))
@@ -60,22 +60,22 @@ class Tooltip extends LitElement {
         target.removeAttribute('aria-describedby')
       }
     })
-    this._descriptionTargets.clear()
+    this.descriptionTargets.clear()
   }
 
-  private _syncDescription() {
-    this._clearDescriptionTargets()
+  private syncDescription = () => {
+    this.clearDescriptionTargets()
 
-    this._triggerElements.forEach(element => {
-      const target = this._findDescriptionTarget(element)
+    this.triggerElements.forEach(element => {
+      const target = this.findDescriptionTarget(element)
       if (!target) return
 
       const descriptions = new Set(
         (target.getAttribute('aria-describedby') || '').split(/\s+/).filter(Boolean),
       )
-      descriptions.add(this._contentId)
+      descriptions.add(this.contentId)
       target.setAttribute('aria-describedby', [...descriptions].join(' '))
-      this._descriptionTargets.add(target)
+      this.descriptionTargets.add(target)
     })
   }
 
@@ -83,13 +83,13 @@ class Tooltip extends LitElement {
     return html`
       <div
         class="tooltip"
-        @mouseover="${this.show}"
-        @mouseout="${this.hide}"
-        @focusin="${this.show}"
-        @focusout="${this.hide}"
+        @mouseover=${this.show}
+        @mouseout=${this.hide}
+        @focusin=${this.show}
+        @focusout=${this.hide}
       >
-        <slot class="tooltip-trigger" name="trigger" @slotchange=${this._syncDescription}></slot>
-        <div id=${this._contentId} class="tooltip-content" role="tooltip">${this.content}</div>
+        <slot class="tooltip-trigger" name="trigger" @slotchange=${this.syncDescription}></slot>
+        <div id=${this.contentId} class="tooltip-content" role="tooltip">${this.content}</div>
       </div>
     `
   }

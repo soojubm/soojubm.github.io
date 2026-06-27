@@ -57,22 +57,22 @@ export class Table extends LitElement {
     `
   }
 
+  private renderColumn(column: TableColumn) {
+    const columnStyles = {
+      width: column.width ?? null,
+    }
+
+    return html`
+      <col style=${styleMap(columnStyles)} />
+    `
+  }
+
   render() {
     return html`
       <div class="table-container">
         <table>
           <caption hidden>${this.caption}</caption>
-          <colgroup>
-            ${this.columns.map(column => {
-              const columnStyles = {
-                width: column.width ?? null,
-              }
-
-              return html`
-                <col style=${styleMap(columnStyles)} />
-              `
-            })}
-          </colgroup>
+          <colgroup>${this.columns.map(column => this.renderColumn(column))}</colgroup>
           <thead>
             <tr>${this.columns.map(column => this.renderHeader(column))}</tr>
           </thead>

@@ -78,61 +78,61 @@ export class PromptInput extends LitElement {
   @property({ type: Boolean, attribute: 'is-loading' }) isLoading = false
   @property({ type: Boolean, attribute: 'hidden-attachment' }) hiddenAttachment = false
 
-  @query('mm-textarea') private _textarea?: Textarea
+  @query('mm-textarea') private textarea?: Textarea
 
-  @state() private _isSingleLine = true
+  @state() private isSingleLine = true
 
   protected firstUpdated() {
-    this._syncSingleLineState()
+    this.syncSingleLineState()
   }
 
   protected updated(changedProperties: Map<string, unknown>) {
     if (changedProperties.has('value')) {
-      this._syncTextareaValue()
-      this._queueSingleLineSync()
+      this.syncTextareaValue()
+      this.queueSingleLineSync()
     }
   }
 
-  private _syncTextareaValue() {
-    if (!this._textarea || this._textarea.value === this.value) return
-    this._textarea.value = this.value
+  private syncTextareaValue() {
+    if (!this.textarea || this.textarea.value === this.value) return
+    this.textarea.value = this.value
   }
 
-  private _handleTextareaInput(e: CustomEvent<{ value: string }>) {
+  private handleTextareaInput = (e: CustomEvent<{ value: string }>) => {
     e.stopPropagation()
     this.value = e.detail.value
-    this._queueSingleLineSync()
+    this.queueSingleLineSync()
     emit(this, 'input', { value: this.value })
   }
 
-  private _queueSingleLineSync() {
+  private queueSingleLineSync() {
     window.requestAnimationFrame(() => {
-      this._syncSingleLineState()
+      this.syncSingleLineState()
     })
   }
 
-  private _syncSingleLineState() {
-    if (!this._textarea) return
+  private syncSingleLineState() {
+    if (!this.textarea) return
 
-    this._textarea.resizeToContent()
-    this._isSingleLine = this._textarea.isSingleLine
+    this.textarea.resizeToContent()
+    this.isSingleLine = this.textarea.isSingleLine
   }
 
-  private _handleTextareaKeydown(e: KeyboardEvent) {
+  private handleTextareaKeydown = (e: KeyboardEvent) => {
     if (e.isComposing) return
     if (e.key !== 'Enter' || e.shiftKey) return
 
     e.preventDefault()
-    this._submit()
+    this.submit()
   }
 
-  private _submit() {
+  private submit = () => {
     if (!this.isLoading && this.value.trim()) {
       emit(this, 'submit', { value: this.value, model: this.model })
     }
   }
 
-  private _renderStartActions() {
+  private renderStartActions() {
     return html`
       <div class="start-actions">
         ${this.hiddenAttachment
@@ -146,7 +146,7 @@ export class PromptInput extends LitElement {
     `
   }
 
-  private _renderEndActions() {
+  private renderEndActions() {
     return html`
       <div class="end-actions">
         <slot name="trailing-actions"></slot>
@@ -155,7 +155,7 @@ export class PromptInput extends LitElement {
           icon="send-diagonal"
           aria-label=${this.submitLabel}
           ?disabled=${this.isLoading}
-          @click=${this._submit}
+          @click=${this.submit}
         ></mm-icon-button>
       </div>
     `
@@ -164,22 +164,22 @@ export class PromptInput extends LitElement {
   render() {
     return html`
       <form>
-        <div class=${this._isSingleLine ? 'chat-input is-single-line' : 'chat-input'}>
+        <div class=${this.isSingleLine ? 'chat-input is-single-line' : 'chat-input'}>
           <mm-textarea
             .value=${this.value}
             .name=${this.name}
             .placeholder=${this.placeholder}
             .rows=${1}
             ?disabled=${this.isLoading}
-            @input=${this._handleTextareaInput}
-            @keydown=${this._handleTextareaKeydown}
+            @input=${this.handleTextareaInput}
+            @keydown=${this.handleTextareaKeydown}
           ></mm-textarea>
-          ${this._isSingleLine
+          ${this.isSingleLine
             ? html`
-                ${this._renderStartActions()} ${this._renderEndActions()}
+                ${this.renderStartActions()} ${this.renderEndActions()}
               `
             : html`
-                <div class="actions">${this._renderStartActions()} ${this._renderEndActions()}</div>
+                <div class="actions">${this.renderStartActions()} ${this.renderEndActions()}</div>
               `}
         </div>
       </form>

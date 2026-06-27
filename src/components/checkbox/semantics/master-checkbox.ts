@@ -14,86 +14,84 @@ export class MasterCheckbox extends LitElement {
   @property({ type: Boolean }) checked = false
   @property({ type: Boolean, reflect: true }) indeterminate = false
 
-  private _inputId = uniqueId('master-checkbox')
+  private inputId = uniqueId('master-checkbox')
 
-  private _controlledElement?: HTMLElement | null
+  private controlledElement?: HTMLElement | null
 
   connectedCallback() {
     super.connectedCallback()
-    document.addEventListener('change', this._syncFromControlledCheckboxes)
+    document.addEventListener('change', this.syncFromControlledCheckboxes)
   }
 
   disconnectedCallback() {
-    document.removeEventListener('change', this._syncFromControlledCheckboxes)
+    document.removeEventListener('change', this.syncFromControlledCheckboxes)
     super.disconnectedCallback()
   }
 
   firstUpdated() {
-    this._controlledElement = this.ariaControls ? document.getElementById(this.ariaControls) : null
-    this._syncFromControlledCheckboxes()
+    this.controlledElement = this.ariaControls ? document.getElementById(this.ariaControls) : null
+    this.syncFromControlledCheckboxes()
   }
 
   updated(changed: Map<string, unknown>) {
     if (changed.has('ariaControls')) {
-      this._controlledElement = this.ariaControls
-        ? document.getElementById(this.ariaControls)
-        : null
-      this._syncFromControlledCheckboxes()
+      this.controlledElement = this.ariaControls ? document.getElementById(this.ariaControls) : null
+      this.syncFromControlledCheckboxes()
     }
   }
 
-  private get _controlledCheckboxes() {
-    if (!this._controlledElement) return []
+  private get controlledCheckboxes() {
+    if (!this.controlledElement) return []
 
-    return Array.from(this._controlledElement.querySelectorAll<Checkbox>('mm-checkbox')).filter(
+    return Array.from(this.controlledElement.querySelectorAll<Checkbox>('mm-checkbox')).filter(
       checkbox => !checkbox.disabled,
     )
   }
 
-  private _setControlledCheckboxes(checked: boolean) {
-    this._controlledCheckboxes.forEach(checkbox => {
+  private setControlledCheckboxes(checked: boolean) {
+    this.controlledCheckboxes.forEach(checkbox => {
       checkbox.checked = checked
       checkbox.indeterminate = false
     })
   }
 
-  private _syncFromControlledCheckboxes = () => {
-    const checkboxes = this._controlledCheckboxes
+  private syncFromControlledCheckboxes = () => {
+    const checkboxes = this.controlledCheckboxes
     const checkedCount = checkboxes.filter(checkbox => checkbox.checked).length
 
     this.checked = checkboxes.length > 0 && checkedCount === checkboxes.length
     this.indeterminate = checkedCount > 0 && checkedCount < checkboxes.length
   }
 
-  private _setChecked(checked: boolean) {
+  private setChecked(checked: boolean) {
     this.checked = checked
     this.indeterminate = false
-    this._setControlledCheckboxes(checked)
+    this.setControlledCheckboxes(checked)
   }
 
-  private _onInputChange = (event: Event) => {
-    this._setChecked((event.target as HTMLInputElement).checked)
+  private onInputChange = (event: Event) => {
+    this.setChecked((event.target as HTMLInputElement).checked)
   }
 
-  private _onPointerDown = (event: Event) => {
+  private onPointerDown = (event: Event) => {
     event.preventDefault()
-    this._setChecked(!this.checked)
+    this.setChecked(!this.checked)
   }
 
   render() {
     return html`
       <mm-surface variant="elevated" size="medium">
-        <div @pointerdown=${this._onPointerDown}>
+        <div @pointerdown=${this.onPointerDown}>
           <input
             type="checkbox"
-            id=${this._inputId}
+            id=${this.inputId}
             .checked=${this.checked}
             .indeterminate=${this.indeterminate}
             aria-controls=${this.ariaControls ?? nothing}
-            @change=${this._onInputChange}
+            @change=${this.onInputChange}
           />
 
-          <label for=${this._inputId}>
+          <label for=${this.inputId}>
             <span class="indicator"></span>
             <slot>
               <mm-paragraph>모두 동의합니다 (선택동의 포함)</mm-paragraph>

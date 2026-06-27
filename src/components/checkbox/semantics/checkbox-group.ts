@@ -24,32 +24,32 @@ export class CheckboxGroup extends LitElement {
   value: string[] = []
 
   @queryAssignedElements({ selector: 'mm-checkbox' })
-  private _checkboxes!: Checkbox[]
+  private checkboxes!: Checkbox[]
 
-  private _isInitialized = false
+  private isInitialized = false
 
   connectedCallback() {
     super.connectedCallback()
-    this.addEventListener('change', this._onCheckboxChange)
+    this.addEventListener('change', this.onCheckboxChange)
   }
 
   disconnectedCallback() {
     super.disconnectedCallback()
-    this.removeEventListener('change', this._onCheckboxChange)
+    this.removeEventListener('change', this.onCheckboxChange)
   }
 
   updated(changed: Map<string, unknown>) {
     // [수정] 최초 렌더링 시점(초기화 전)에는 외부 value가 자식 상태를 덮어쓰지 않도록
-    // _isInitialized가 true일 때만 실행되게 제어합니다.
-    if (this._isInitialized && (changed.has('value') || changed.has('name'))) {
-      this._syncCheckboxes()
+    // isInitialized가 true일 때만 실행되게 제어합니다.
+    if (this.isInitialized && (changed.has('value') || changed.has('name'))) {
+      this.syncCheckboxes()
     }
   }
 
-  private _onSlotChange() {
+  private onSlotChange = () => {
     // 첫 로드 시점에 그룹의 value가 비어있다면 자식들의 초기 checked 상태를 수집합니다.
-    if (!this._isInitialized && this.value.length === 0) {
-      const initialCheckedValues = this._checkboxes
+    if (!this.isInitialized && this.value.length === 0) {
+      const initialCheckedValues = this.checkboxes
         .filter(checkbox => {
           // [안정성 보완] 컴포넌트가 미처 업그레이드되지 않았을 때를 대비해 하이브리드로 체크 상태를 확인합니다.
           return checkbox.checked || checkbox.hasAttribute('checked')
@@ -64,14 +64,14 @@ export class CheckboxGroup extends LitElement {
       }
     }
 
-    this._isInitialized = true
-    this._syncCheckboxes()
+    this.isInitialized = true
+    this.syncCheckboxes()
   }
 
-  private _syncCheckboxes() {
-    if (!this._checkboxes) return
+  private syncCheckboxes() {
+    if (!this.checkboxes) return
 
-    this._checkboxes.forEach(checkbox => {
+    this.checkboxes.forEach(checkbox => {
       // 동기화 시점에도 안전하게 프로퍼티와 어트리뷰트를 모두 지원합니다.
       const value = checkbox.value || checkbox.getAttribute('value') || ''
 
@@ -83,7 +83,7 @@ export class CheckboxGroup extends LitElement {
     })
   }
 
-  private _onCheckboxChange = (event: Event) => {
+  private onCheckboxChange = (event: Event) => {
     const target = event.target
 
     if (!(target instanceof HTMLElement) || target.tagName !== 'MM-CHECKBOX') return
@@ -103,10 +103,10 @@ export class CheckboxGroup extends LitElement {
       this.value = this.value.filter(item => item !== value)
     }
 
-    this._dispatchValueChange()
+    this.dispatchValueChange()
   }
 
-  private _dispatchValueChange() {
+  private dispatchValueChange() {
     emit(this, 'change', {
       values: this.value,
     })
@@ -122,7 +122,7 @@ export class CheckboxGroup extends LitElement {
               </legend>
             `
           : nothing}
-        <slot @slotchange=${this._onSlotChange}></slot>
+        <slot @slotchange=${this.onSlotChange}></slot>
       </fieldset>
     `
   }

@@ -87,53 +87,71 @@ export class Marquee extends LitElement {
   @property({ type: Number }) speed = 80
   @property({ type: Boolean, reflect: true, attribute: 'pause-on-hover' }) pauseOnHover = false
 
-  @state() private _copyCount = 1
-  @state() private _distance = 0
-  @state() private _duration = 1
+  @state() private copyCount = 1
+  @state() private distance = 0
+  @state() private duration = 1
 
-  @query('.source') private _sourceElement?: HTMLElement
+  @query('.source') private sourceElement?: HTMLElement
+  @query('slot') private slotElement?: HTMLSlotElement
 
-  private _resizeObserver?: ResizeObserver
-  private _measureFrame = 0
+  private resizeObserver?: ResizeObserver
+  private measureFrame = 0
 
   connectedCallback() {
     super.connectedCallback()
-    this._resizeObserver = new ResizeObserver(() => this._queueMeasure())
+    this.resizeObserver = new ResizeObserver(() => this.queueMeasure())
   }
 
   firstUpdated() {
-    if (this._sourceElement) this._resizeObserver?.observe(this._sourceElement)
-    this._resizeObserver?.observe(this)
-    this._queueMeasure()
+    if (this.sourceElement) this.resizeObserver?.observe(this.sourceElement)
+    this.resizeObserver?.observe(this)
+    this.queueMeasure()
   }
 
   updated(changed: PropertyValues) {
-    this.style.setProperty('--marquee-gap', this._resolveGap(this.gap))
-    this.style.setProperty('--marquee-distance', `${this._distance}px`)
-    this.style.setProperty('--marquee-duration', `${this._duration}s`)
-    this._syncClones()
+    if (changed.has('gap')) {
+      this.style.setProperty('--marquee-gap', this.resolveGap(this.gap))
+      this.queueMeasure()
+    }
 
-    if (changed.has('gap') || changed.has('speed')) this._queueMeasure()
+    if (changed.has('speed')) {
+      this.queueMeasure()
+    }
+
+    if (changed.has('distance')) {
+      this.style.setProperty('--marquee-distance', `${this.distance}px`)
+    }
+
+    if (changed.has('duration')) {
+      this.style.setProperty('--marquee-duration', `${this.duration}s`)
+    }
+
+    if (changed.has('copyCount')) {
+      this.syncClones()
+    }
   }
 
   disconnectedCallback() {
     super.disconnectedCallback()
-    this._resizeObserver?.disconnect()
-    cancelAnimationFrame(this._measureFrame)
+    this.resizeObserver?.disconnect()
+    cancelAnimationFrame(this.measureFrame)
   }
 
-  private _handleSlotChange() {
-    this._queueMeasure()
-    this.updateComplete.then(() => this._syncClones())
+  private handleSlotChange = () => {
+    this.queueMeasure()
+    this.updateComplete.then(() => this.syncClones())
   }
 
-  private _queueMeasure() {
-    cancelAnimationFrame(this._measureFrame)
-    this._measureFrame = requestAnimationFrame(() => this._measure())
+  private queueMeasure() {
+    cancelAnimationFrame(this.measureFrame)
+    this.measureFrame = requestAnimationFrame(() => {
+      this.measureFrame = 0
+      this.measure()
+    })
   }
 
-  private _measure() {
-    const source = this._sourceElement
+  private measure() {
+    const source = this.sourceElement
     if (!source) return
 
     const distance = Math.ceil(source.getBoundingClientRect().width)
@@ -143,13 +161,13 @@ export class Marquee extends LitElement {
     const copyCount = Math.max(2, Math.ceil((viewportWidth + distance) / distance) + 1)
     const duration = Math.max(1, distance / Math.max(1, this.speed))
 
-    this._distance = distance
-    this._copyCount = copyCount
-    this._duration = duration
+    this.distance = distance
+    this.copyCount = copyCount
+    this.duration = duration
   }
 
-  private _syncClones() {
-    const nodes = this._assignedNodes()
+  private syncClones() {
+    const nodes = this.assignedNodes()
     const clones = this.renderRoot.querySelectorAll<HTMLElement>('.clone')
 
     clones.forEach(container => {
@@ -157,28 +175,27 @@ export class Marquee extends LitElement {
     })
   }
 
-  private _assignedNodes() {
-    const slot = this.renderRoot.querySelector('slot')
+  private assignedNodes() {
     return (
-      slot?.assignedNodes({ flatten: true }).filter(node => {
+      this.slotElement?.assignedNodes({ flatten: true }).filter(node => {
         return node.nodeType !== Node.TEXT_NODE || Boolean(node.textContent?.trim())
       }) ?? []
     )
   }
 
-  private _resolveGap(value: string) {
+  private resolveGap(value: string) {
     if (!value) return '0px'
     return /^\d+$/.test(value) ? `var(--space-${value})` : value
   }
 
   render() {
-    const cloneIndexes = Array.from({ length: this._copyCount - 1 }, (_, index) => index)
+    const cloneIndexes = Array.from({ length: this.copyCount - 1 }, (_, index) => index)
 
     return html`
       <div class="viewport">
         <div class="track">
           <div class="group source">
-            <slot @slotchange=${this._handleSlotChange}></slot>
+            <slot @slotchange=${this.handleSlotChange}></slot>
           </div>
           ${repeat(
             cloneIndexes,

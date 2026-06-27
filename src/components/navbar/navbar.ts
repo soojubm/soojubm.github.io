@@ -10,6 +10,10 @@ type Pagefind = {
   search: (q: string) => Promise<{ results: { data: () => Promise<PagefindResult> }[] }>
 }
 
+function hasValue(target: EventTarget | null): target is HTMLInputElement | HTMLTextAreaElement {
+  return target instanceof HTMLInputElement || target instanceof HTMLTextAreaElement
+}
+
 @customElement('mm-navbar')
 export class Navbar extends LitElement {
   @state() private searchOpen = false
@@ -19,6 +23,7 @@ export class Navbar extends LitElement {
 
   private pagefind: Pagefind | null = null
   private debounceTimer: ReturnType<typeof setTimeout> | null = null
+  private searchRequestId = 0
 
   @query('.js-search-sheet') private searchSheet?: Sheet
   @query('.js-search-sheet mm-searchfield') private searchField?: HTMLElement
@@ -47,7 +52,7 @@ export class Navbar extends LitElement {
     }
   }
 
-  private toggleSearch() {
+  private toggleSearch = () => {
     this.searchOpen = !this.searchOpen
     if (this.searchSheet) this.searchOpen ? this.searchSheet.open() : this.searchSheet.close()
     if (this.searchOpen) {
@@ -58,14 +63,19 @@ export class Navbar extends LitElement {
     } else {
       this.query = ''
       this.results = []
+      this.searching = false
+      this.searchRequestId++
     }
   }
 
-  private onInput(e: Event) {
-    this.query = (e as CustomEvent).detail?.value ?? (e.target as any)?.value ?? ''
+  private onInput = (e: Event) => {
+    const detailValue = e instanceof CustomEvent ? e.detail?.value : undefined
+    this.query = detailValue ?? (hasValue(e.target) ? e.target.value : '')
     if (this.debounceTimer) clearTimeout(this.debounceTimer)
     if (!this.query.trim()) {
+      this.searchRequestId++
       this.results = []
+      this.searching = false
       return
     }
     this.debounceTimer = setTimeout(() => {
@@ -75,16 +85,33 @@ export class Navbar extends LitElement {
   }
 
   private async search(query: string) {
+    const searchId = ++this.searchRequestId
+    const searchQuery = query.trim()
+    if (!searchQuery) return
+
     await this.loadPagefind()
-    if (!this.pagefind) return
+    if (!this.isCurrentSearch(searchId, searchQuery)) return
+    if (!this.pagefind) {
+      this.searching = false
+      return
+    }
+
     this.searching = true
     try {
-      const { results } = await this.pagefind.search(query)
+      const { results } = await this.pagefind.search(searchQuery)
       const data = await Promise.all(results.slice(0, 8).map(r => r.data()))
+      if (!this.isCurrentSearch(searchId, searchQuery)) return
+
       this.results = data
     } finally {
-      this.searching = false
+      if (this.isCurrentSearch(searchId, searchQuery)) {
+        this.searching = false
+      }
     }
+  }
+
+  private isCurrentSearch(searchId: number, query: string) {
+    return this.searchOpen && searchId === this.searchRequestId && this.query.trim() === query
   }
 
   private renderDefault() {

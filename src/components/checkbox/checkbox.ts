@@ -27,9 +27,9 @@ export class Checkbox extends LitElement {
   indeterminate = false
 
   // SSR 환경 및 crypto가 없는 구형 환경에서도 터지지 않도록 고유 ID 생성을 보장합니다.
-  private _inputId = uniqueId('checkbox')
+  private inputId = uniqueId('checkbox')
 
-  private _commitChecked(checked: boolean) {
+  private commitChecked(checked: boolean) {
     this.checked = checked
     this.indeterminate = false
 
@@ -39,38 +39,38 @@ export class Checkbox extends LitElement {
     })
   }
 
-  private _onChange = (event: Event) => {
+  private onChange = (event: Event) => {
     const target = event.target as HTMLInputElement
 
-    this._commitChecked(target.checked)
+    this.commitChecked(target.checked)
   }
 
-  private _onLabelClick = (event: Event) => {
+  private onLabelClick = (event: Event) => {
     event.preventDefault()
 
     if (this.disabled) return
 
-    this._commitChecked(!this.checked)
+    this.commitChecked(!this.checked)
   }
 
   render() {
     // 가독성을 위한 구조 분해 할당
-    const { name, value, checked, disabled, indeterminate, _inputId } = this
+    const { name, value, checked, disabled, indeterminate, inputId } = this
 
     return html`
       <div>
         <input
           type="checkbox"
-          id=${_inputId}
+          id=${inputId}
           name=${name || nothing}
           .value=${value || ''}
           .checked=${checked}
           .indeterminate=${indeterminate}
           ?disabled=${disabled}
-          @change=${this._onChange}
+          @change=${this.onChange}
         />
 
-        <label for=${_inputId} @click=${this._onLabelClick}>
+        <label for=${inputId} @click=${this.onLabelClick}>
           <span class="indicator"></span>
           <mm-paragraph>
             <slot></slot>
