@@ -5,7 +5,7 @@ import type { IconName } from '@/components/icon-button/semantics/icon-names'
 @customElement('mm-link-prompt')
 export class LinkPrompt extends LitElement {
   static styles = css`
-    .link-prompt {
+    :host {
       display: inline-flex;
       align-items: center;
       gap: var(--space-1);
@@ -18,22 +18,24 @@ export class LinkPrompt extends LitElement {
   `
 
   @property({ type: String }) message = ''
-  @property({ type: String, attribute: 'action-label' }) actionLabel = ''
+  @property({ type: String, attribute: 'link-label' }) linkLabel = ''
   @property({ type: String }) href = ''
   @property({ type: String }) icon?: IconName
   @property({ type: Boolean }) external = false
 
   render() {
+    const hasIcon = Boolean(this.icon)
+
     return html`
-      <span class="link-prompt">
-        ${this.icon
-          ? html`
-              <mm-icon name=${this.icon}></mm-icon>
-            `
-          : nothing}
-        <mm-paragraph>${this.message}</mm-paragraph>
-        <mm-link href=${this.href} ?external=${this.external}>${this.actionLabel}</mm-link>
-      </span>
+      ${hasIcon
+        ? html`
+            <mm-icon name=${this.icon} aria-hidden="true"></mm-icon>
+          `
+        : nothing}
+
+      <mm-paragraph>${this.message}</mm-paragraph>
+
+      <mm-link href=${this.href} ?external=${this.external}>${this.linkLabel}</mm-link>
     `
   }
 }
