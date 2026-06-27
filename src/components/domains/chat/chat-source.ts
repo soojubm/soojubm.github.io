@@ -183,7 +183,7 @@ export class ChatSourceGroup extends LitElement {
                             <mm-icon class="sheet-icon" name=${src.icon}></mm-icon>
                           `
                         : ''}
-                      <span class="sheet-domain">${this.domain}</span>
+                      <mm-text class="sheet-domain" size="12" color="light">${this.domain}</mm-text>
                     </mm-flex>
                   `
                 : ''}

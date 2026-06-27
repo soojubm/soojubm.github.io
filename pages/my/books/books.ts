@@ -37,7 +37,7 @@ function renderFilters(books: Book[], state: FilterState, rerender: () => void) 
 
   container.innerHTML = `
     <mm-flex align-items="flex-start" gap="3">
-      <span style="min-width:2rem;padding-top:6px;font-size:var(--font-size-12);color:var(--color-foreground-light)">국가</span>
+      <mm-text size="12" color="light" style="min-width:2rem;padding-top:6px">국가</mm-text>
       <mm-filter-button-group class="js-country-filter" mode="single" style="flex:1;flex-wrap:wrap">
         ${countries.map(c => `<mm-filter-button value="${c}">${c}</mm-filter-button>`).join('')}
       </mm-filter-button-group>

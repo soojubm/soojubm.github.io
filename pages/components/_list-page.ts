@@ -81,9 +81,7 @@ export function mediaCard(item: MediaItem): string {
           <time style="font-size:var(--font-size-12);color:var(--color-foreground-light)">${
             item.releasedate ?? ''
           }</time>
-          <span style="font-size:var(--font-size-12);color:var(--color-foreground-light)">${
-            item.country ?? ''
-          }</span>
+          <mm-text size="12" color="light">${item.country ?? ''}</mm-text>
         </mm-flex>
         <mm-paragraph style="margin:0;font-weight:var(--font-weight-bold);line-height:1.3">${
           item.titlekorean

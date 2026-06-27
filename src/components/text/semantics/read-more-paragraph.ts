@@ -2,6 +2,7 @@ import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
 import '@/components/button/semantics/read-more-button'
+import '@/components/text/text'
 import { uniqueId } from '@/utils/unique-id'
 
 @customElement('mm-read-more-paragraph')
@@ -16,6 +17,10 @@ export class ReadMoreParagraph extends LitElement {
       mm-read-more-button {
         margin: 0;
         margin-left: var(--space-1);
+      }
+
+      .content {
+        display: inline;
       }
     `,
   ]
@@ -36,7 +41,7 @@ export class ReadMoreParagraph extends LitElement {
 
     return html`
       <mm-paragraph>
-        <span id=${this.contentId}>${displayText}</span>
+        <mm-text id=${this.contentId} class="content">${displayText}</mm-text>
         ${truncated
           ? html`
               <mm-read-more-button

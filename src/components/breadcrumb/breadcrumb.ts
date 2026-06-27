@@ -1,6 +1,7 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { arrayAttributeConverter } from '@/utils/property-converters'
+import '@/components/text/text'
 
 interface BreadcrumbItem {
   label: string
@@ -73,9 +74,9 @@ export class Breadcrumb extends LitElement {
                   </a>
                 `
               : html`
-                  <span class="breadcrumb-item" aria-current=${isLast ? 'page' : nothing}>
+                  <mm-text class="breadcrumb-item" aria-current=${isLast ? 'page' : nothing}>
                     ${item.label}
-                  </span>
+                  </mm-text>
                 `
 
           return html`

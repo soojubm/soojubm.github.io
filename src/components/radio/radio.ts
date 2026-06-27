@@ -3,6 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 import { radioStyles } from '@/components/radio/radio.styles'
 import { emit } from '@/utils/emit'
 import { uniqueId } from '@/utils/unique-id'
+import '@/components/text/text'
 
 @customElement('mm-radio')
 export class Radio extends LitElement {
@@ -34,7 +35,7 @@ export class Radio extends LitElement {
         />
         <label for=${inputId}>
           <span></span>
-          <span><slot></slot></span>
+          <mm-text><slot></slot></mm-text>
         </label>
       </div>
     `

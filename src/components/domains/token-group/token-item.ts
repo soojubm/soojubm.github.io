@@ -2,6 +2,7 @@ import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
 import '@/components/domains/indicators/list-marker'
+import '@/components/text/text'
 
 @customElement('mm-token-item')
 export class TokenItem extends LitElement {
@@ -28,12 +29,12 @@ export class TokenItem extends LitElement {
           : nothing}
         ${this.key
           ? html`
-              <span>${this.key}</span>
+              <mm-text>${this.key}</mm-text>
             `
           : nothing}
         ${this.value
           ? html`
-              <span>${this.value}</span>
+              <mm-text>${this.value}</mm-text>
             `
           : nothing}
       </mm-flex>

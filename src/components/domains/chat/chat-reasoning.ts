@@ -3,6 +3,7 @@ import { customElement, property, queryAssignedElements } from 'lit/decorators.j
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
 import { ICON_NAMES, type IconName } from '@/components/icon-button/semantics/icon-names'
 import '@/components/icon/icon'
+import '@/components/text/text'
 
 export type ChatReasoningFlowTone = 'thinking' | 'searching' | 'reading' | 'writing'
 
@@ -91,15 +92,15 @@ export class ChatReasoningFlow extends LitElement {
         <span class="content">
           ${this.label
             ? html`
-                <span class="label">${this.label}</span>
+                <mm-text class="label">${this.label}</mm-text>
               `
             : nothing}
           ${this.description
             ? html`
-                <span class="description">${this.description}</span>
+                <mm-text class="description">${this.description}</mm-text>
               `
             : nothing}
-          <span class="slot"><slot></slot></span>
+          <mm-text class="slot"><slot></slot></mm-text>
         </span>
       </span>
     `
@@ -192,7 +193,7 @@ export class ChatReasoning extends LitElement {
           ${this.duration
             ? html`
                 <span class="meta">
-                  <span class="duration">${this.duration}</span>
+                  <mm-text class="duration">${this.duration}</mm-text>
                 </span>
               `
             : nothing}

@@ -1,6 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
+import '@/components/text/text'
 
 @customElement('mm-spinner')
 export class Spinner extends LitElement {
@@ -56,7 +57,7 @@ export class Spinner extends LitElement {
     return html`
       <span class="spinner" role="status" aria-label=${this.label}></span>
       <slot>
-        <span class="label">${this.label}</span>
+        <mm-text class="label">${this.label}</mm-text>
       </slot>
     `
   }

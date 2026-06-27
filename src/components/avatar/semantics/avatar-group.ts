@@ -3,6 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
 import { arrayAttributeConverter } from '@/utils/property-converters'
 import '@/components/flex/flex'
+import '@/components/text/text'
 
 @customElement('mm-avatar-group')
 export class AvatarGroup extends LitElement {
@@ -70,7 +71,7 @@ export class AvatarGroup extends LitElement {
         </div>
         ${this.label
           ? html`
-              <span class="label">${this.label}</span>
+              <mm-text class="label">${this.label}</mm-text>
             `
           : nothing}
       </mm-flex>

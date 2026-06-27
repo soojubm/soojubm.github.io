@@ -54,7 +54,7 @@ export class MyChatBubble extends LitElement {
         <slot></slot>
         ${this.status && !this.failed
           ? html`
-              <span class="status" role="status">${this.status}</span>
+              <mm-text class="status" role="status">${this.status}</mm-text>
             `
           : ''}
       </div>
