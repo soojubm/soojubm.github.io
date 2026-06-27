@@ -24,18 +24,6 @@ export class MenuItemLink extends LitElement {
   @property({ type: String, attribute: 'aria-current', reflect: true }) ariaCurrent: AriaCurrent =
     null
 
-  private renderAction() {
-    if (this.hiddenTrailing) return html``
-
-    const trailingIcon = this.target === '_blank' ? ICON_NAMES.SHARE : ICON_NAMES.FORWARD
-
-    return html`
-      <span slot="trailing">
-        <mm-icon name=${trailingIcon} size="small"></mm-icon>
-      </span>
-    `
-  }
-
   render() {
     return html`
       <a
@@ -50,6 +38,18 @@ export class MenuItemLink extends LitElement {
       >
         ${renderMenuItemContent(this, this.renderAction())}
       </a>
+    `
+  }
+
+  private renderAction() {
+    if (this.hiddenTrailing) return html``
+
+    const trailingIcon = this.target === '_blank' ? ICON_NAMES.SHARE : ICON_NAMES.FORWARD
+
+    return html`
+      <span slot="trailing">
+        <mm-icon name=${trailingIcon} size="small"></mm-icon>
+      </span>
     `
   }
 }

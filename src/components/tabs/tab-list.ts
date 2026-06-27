@@ -18,6 +18,15 @@ export default class TabList extends LitElement {
   @query('.indicator') private indicator!: HTMLDivElement
   @query('.tablist-container') private tablistContainer!: HTMLDivElement
 
+  render() {
+    return html`
+      <div class="tablist-container" role="tablist">
+        <slot @slotchange=${this.handleSlotChange}></slot>
+        <div class="indicator"></div>
+      </div>
+    `
+  }
+
   private get tabs(): Tab[] {
     return this.assignedElements.filter((element): element is Tab => element instanceof Tab)
   }
@@ -152,14 +161,5 @@ export default class TabList extends LitElement {
       this.indicator.style.transform = `translateX(${tabRect.left - containerRect.left}px)`
       this.indicator.style.width = `${tabRect.width}px`
     })
-  }
-
-  render() {
-    return html`
-      <div class="tablist-container" role="tablist">
-        <slot @slotchange=${this.handleSlotChange}></slot>
-        <div class="indicator"></div>
-      </div>
-    `
   }
 }

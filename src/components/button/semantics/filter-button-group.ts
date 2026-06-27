@@ -26,6 +26,14 @@ export class FilterButtonGroup extends LitElement {
   @queryAssignedElements({ selector: 'mm-filter-button', flatten: true })
   private buttons!: FilterButton[]
 
+  render() {
+    return html`
+      <mm-flex gap="2" role=${this.isMultiple ? 'group' : 'radiogroup'}>
+        <slot @slotchange=${this.adoptInitialSelection}></slot>
+      </mm-flex>
+    `
+  }
+
   private get isMultiple() {
     return this.mode === 'multiple'
   }
@@ -83,14 +91,6 @@ export class FilterButtonGroup extends LitElement {
 
   firstUpdated() {
     this.adoptInitialSelection()
-  }
-
-  render() {
-    return html`
-      <mm-flex gap="2" role=${this.isMultiple ? 'group' : 'radiogroup'}>
-        <slot @slotchange=${this.adoptInitialSelection}></slot>
-      </mm-flex>
-    `
   }
 }
 

@@ -73,26 +73,6 @@ export class ThemeSwitcher extends LitElement {
     getTrigger: () => this.trigger,
   })
 
-  connectedCallback(): void {
-    super.connectedCallback()
-    this.value = getPreferredTheme()
-  }
-
-  private get currentIcon(): string {
-    return THEMES.find(theme => theme.value === this.value)?.icon ?? ICON_NAMES.LIGHT_MODE
-  }
-
-  private toggleOpen() {
-    this.popup.toggle()
-  }
-
-  // 선택 시 테마를 저장하고 현재 값을 동기화
-  private handleThemeChange(theme: Theme, event: Event) {
-    event.stopPropagation()
-    this.value = saveTheme(theme)
-    this.popup.close()
-  }
-
   render() {
     return html`
       <div class="theme-switcher">
@@ -127,6 +107,26 @@ export class ThemeSwitcher extends LitElement {
         </div>
       </div>
     `
+  }
+
+  connectedCallback(): void {
+    super.connectedCallback()
+    this.value = getPreferredTheme()
+  }
+
+  private get currentIcon(): string {
+    return THEMES.find(theme => theme.value === this.value)?.icon ?? ICON_NAMES.LIGHT_MODE
+  }
+
+  private toggleOpen() {
+    this.popup.toggle()
+  }
+
+  // 선택 시 테마를 저장하고 현재 값을 동기화
+  private handleThemeChange(theme: Theme, event: Event) {
+    event.stopPropagation()
+    this.value = saveTheme(theme)
+    this.popup.close()
   }
 }
 

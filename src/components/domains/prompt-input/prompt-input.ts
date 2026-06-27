@@ -73,6 +73,33 @@ export class PromptInput extends LitElement {
 
   @state() private isSingleLine = true
 
+  render() {
+    return html`
+      <form>
+        <div class=${this.isSingleLine ? 'chat-input is-single-line' : 'chat-input'}>
+          <mm-textarea
+            .value=${this.value}
+            .name=${this.name}
+            .placeholder=${this.placeholder}
+            .rows=${1}
+            ?disabled=${this.isLoading}
+            @input=${this.handleTextareaInput}
+            @keydown=${this.handleTextareaKeydown}
+          ></mm-textarea>
+          ${this.isSingleLine
+            ? html`
+                ${this.renderStartActions()} ${this.renderEndActions()}
+              `
+            : html`
+                <mm-flex class="actions" gap="2" align-items="center" justify-content="between">
+                  ${this.renderStartActions()} ${this.renderEndActions()}
+                </mm-flex>
+              `}
+        </div>
+      </form>
+    `
+  }
+
   protected firstUpdated() {
     this.syncSingleLineState()
   }
@@ -149,33 +176,6 @@ export class PromptInput extends LitElement {
           @click=${this.submit}
         ></mm-icon-button>
       </mm-flex>
-    `
-  }
-
-  render() {
-    return html`
-      <form>
-        <div class=${this.isSingleLine ? 'chat-input is-single-line' : 'chat-input'}>
-          <mm-textarea
-            .value=${this.value}
-            .name=${this.name}
-            .placeholder=${this.placeholder}
-            .rows=${1}
-            ?disabled=${this.isLoading}
-            @input=${this.handleTextareaInput}
-            @keydown=${this.handleTextareaKeydown}
-          ></mm-textarea>
-          ${this.isSingleLine
-            ? html`
-                ${this.renderStartActions()} ${this.renderEndActions()}
-              `
-            : html`
-                <mm-flex class="actions" gap="2" align-items="center" justify-content="between">
-                  ${this.renderStartActions()} ${this.renderEndActions()}
-                </mm-flex>
-              `}
-        </div>
-      </form>
     `
   }
 }

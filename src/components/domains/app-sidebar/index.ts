@@ -12,52 +12,6 @@ export class Sidebar extends LitElement {
     SITEMAP.filter(node => node.type === 'group').map(node => node.id),
   )
 
-  // 💡 중요: 기존 전역 CSS(.sidebar-menu, .is-open 등)를 그대로 상속받아 쓰기 위해
-  // Shadow DOM을 끄고 Light DOM 영역에 렌더링하도록 설정합니다.
-  createRenderRoot() {
-    return this
-  }
-
-  firstUpdated() {
-    this.restoreScrollPosition()
-  }
-
-  connectedCallback() {
-    super.connectedCallback()
-    const currentPath = window.location.pathname.split('/').pop() || 'index.html'
-    this.currentPageId = currentPath.replace('.html', '') || 'index'
-  }
-
-  private restoreScrollPosition() {
-    const saved = localStorage.getItem('sidebarScroll')
-    if (saved) this.scrollTop = Number(saved)
-  }
-
-  private handleStandaloneClick(pageId: string) {
-    this.saveScrollPosition()
-    window.location.href = `${pageId}.html`
-  }
-
-  private handleGroupToggle(groupId: string) {
-    const nextOpenGroupIds = new Set(this.openGroupIds)
-
-    if (nextOpenGroupIds.has(groupId)) {
-      nextOpenGroupIds.delete(groupId)
-    } else {
-      nextOpenGroupIds.add(groupId)
-    }
-
-    this.openGroupIds = nextOpenGroupIds
-  }
-
-  private saveScrollPosition() {
-    localStorage.setItem('sidebarScroll', String(this.scrollTop))
-  }
-
-  private isCurrentPage(pageId: string) {
-    return this.currentPageId === pageId
-  }
-
   render() {
     return html`
       <nav class="sidebar-menu">
@@ -121,6 +75,52 @@ export class Sidebar extends LitElement {
         )}
       </nav>
     `
+  }
+
+  // 💡 중요: 기존 전역 CSS(.sidebar-menu, .is-open 등)를 그대로 상속받아 쓰기 위해
+  // Shadow DOM을 끄고 Light DOM 영역에 렌더링하도록 설정합니다.
+  createRenderRoot() {
+    return this
+  }
+
+  firstUpdated() {
+    this.restoreScrollPosition()
+  }
+
+  connectedCallback() {
+    super.connectedCallback()
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html'
+    this.currentPageId = currentPath.replace('.html', '') || 'index'
+  }
+
+  private restoreScrollPosition() {
+    const saved = localStorage.getItem('sidebarScroll')
+    if (saved) this.scrollTop = Number(saved)
+  }
+
+  private handleStandaloneClick(pageId: string) {
+    this.saveScrollPosition()
+    window.location.href = `${pageId}.html`
+  }
+
+  private handleGroupToggle(groupId: string) {
+    const nextOpenGroupIds = new Set(this.openGroupIds)
+
+    if (nextOpenGroupIds.has(groupId)) {
+      nextOpenGroupIds.delete(groupId)
+    } else {
+      nextOpenGroupIds.add(groupId)
+    }
+
+    this.openGroupIds = nextOpenGroupIds
+  }
+
+  private saveScrollPosition() {
+    localStorage.setItem('sidebarScroll', String(this.scrollTop))
+  }
+
+  private isCurrentPage(pageId: string) {
+    return this.currentPageId === pageId
   }
 }
 

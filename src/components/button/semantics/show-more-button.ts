@@ -33,11 +33,6 @@ export class ShowMoreButton extends LitElement {
   @property({ type: String, attribute: 'more-label' }) moreLabel = 'Show more'
   @property({ type: String, attribute: 'less-label' }) lessLabel = 'Show less'
 
-  private handleClick() {
-    this.ariaExpanded = this.ariaExpanded === 'true' ? 'false' : 'true'
-    emit(this, 'change', { expanded: this.ariaExpanded === 'true' })
-  }
-
   render() {
     return html`
       <mm-flex justify-content="center">
@@ -52,6 +47,11 @@ export class ShowMoreButton extends LitElement {
         </mm-button>
       </mm-flex>
     `
+  }
+
+  private handleClick() {
+    this.ariaExpanded = this.ariaExpanded === 'true' ? 'false' : 'true'
+    emit(this, 'change', { expanded: this.ariaExpanded === 'true' })
   }
 }
 

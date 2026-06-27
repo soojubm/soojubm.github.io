@@ -13,6 +13,17 @@ export class AiChatBubble extends LitElement {
   @property({ type: Boolean }) typing = false
   @property({ type: String }) src = ''
 
+  render() {
+    if (this.typing) return this.renderTyping()
+    if (this.src) return this.renderImage()
+
+    return html`
+      <div class="bubble">
+        <slot></slot>
+      </div>
+    `
+  }
+
   private renderTyping() {
     return html`
       <div class="bubble">
@@ -29,17 +40,6 @@ export class AiChatBubble extends LitElement {
     return html`
       <div class="bubble is-image">
         <mm-thumbnail src=${this.src} alt="" ratio="4:3"></mm-thumbnail>
-      </div>
-    `
-  }
-
-  render() {
-    if (this.typing) return this.renderTyping()
-    if (this.src) return this.renderImage()
-
-    return html`
-      <div class="bubble">
-        <slot></slot>
       </div>
     `
   }

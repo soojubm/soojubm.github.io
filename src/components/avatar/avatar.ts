@@ -18,6 +18,17 @@ export class Avatar extends LitElement {
   // Slot 콘텐츠 존재 여부를 추적하기 위한 내부 상태
   @state() private hasSlottedContent = false
 
+  render() {
+    const isLargeIcon = this.size === 'large' || this.size === 'huge'
+    const iconSize = isLargeIcon ? 'large' : 'medium'
+
+    return html`
+      <figure role="img" aria-label=${this.ariaLabel || 'avatar'}>
+        ${this.renderAvatarContent(iconSize)}
+      </figure>
+    `
+  }
+
   // Slot 내용이 변경될 때마다 호출되어 상태를 업데이트합니다.
   private handleSlotChange(e: Event) {
     const slot = e.target as HTMLSlotElement
@@ -29,17 +40,6 @@ export class Avatar extends LitElement {
         (node.nodeType === Node.TEXT_NODE && node.textContent?.trim() !== '') ||
         node.nodeType === Node.ELEMENT_NODE,
     )
-  }
-
-  render() {
-    const isLargeIcon = this.size === 'large' || this.size === 'huge'
-    const iconSize = isLargeIcon ? 'large' : 'medium'
-
-    return html`
-      <figure role="img" aria-label=${this.ariaLabel || 'avatar'}>
-        ${this.renderAvatarContent(iconSize)}
-      </figure>
-    `
   }
 
   // 복잡한 조건부 렌더링을 별도의 헬퍼 메서드로 분리하여 가독성 향상

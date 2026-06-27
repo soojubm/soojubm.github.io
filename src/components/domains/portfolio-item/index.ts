@@ -81,23 +81,6 @@ export class PortfolioItem extends LitElement {
   })
   keywords: string[] = []
 
-  private open() {
-    if (!this.modal) return
-
-    emit(this, 'portfolio-item-open', { modal: this.modal })
-  }
-
-  private handleKeyDown(event: KeyboardEvent) {
-    if (event.key !== 'Enter' && event.key !== ' ') return
-    event.preventDefault()
-    this.open()
-  }
-
-  private get formattedDatetime() {
-    if (!this.datetime) return ''
-    return this.datetime.replaceAll('-', '. ')
-  }
-
   render() {
     return html`
       <article
@@ -146,6 +129,23 @@ export class PortfolioItem extends LitElement {
         </mm-flex>
       </article>
     `
+  }
+
+  private open() {
+    if (!this.modal) return
+
+    emit(this, 'portfolio-item-open', { modal: this.modal })
+  }
+
+  private handleKeyDown(event: KeyboardEvent) {
+    if (event.key !== 'Enter' && event.key !== ' ') return
+    event.preventDefault()
+    this.open()
+  }
+
+  private get formattedDatetime() {
+    if (!this.datetime) return ''
+    return this.datetime.replaceAll('-', '. ')
   }
 }
 

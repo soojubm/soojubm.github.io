@@ -30,6 +30,21 @@ export class CommentInput extends LitElement {
 
   @query('mm-textarea') private textarea!: Textarea
 
+  render() {
+    return html`
+      <form @submit=${this.submitComment}>
+        <mm-textarea
+          name=${this.name}
+          placeholder=${this.placeholder}
+          @keydown=${this.handleTextareaKeydown}
+        ></mm-textarea>
+        <mm-textfield-action-bar>
+          <mm-button variant="primary" @click=${this.submitComment}>${this.submitLabel}</mm-button>
+        </mm-textfield-action-bar>
+      </form>
+    `
+  }
+
   private submitComment(event?: Event) {
     event?.preventDefault()
 
@@ -44,21 +59,6 @@ export class CommentInput extends LitElement {
 
     event.preventDefault()
     this.submitComment()
-  }
-
-  render() {
-    return html`
-      <form @submit=${this.submitComment}>
-        <mm-textarea
-          name=${this.name}
-          placeholder=${this.placeholder}
-          @keydown=${this.handleTextareaKeydown}
-        ></mm-textarea>
-        <mm-textfield-action-bar>
-          <mm-button variant="primary" @click=${this.submitComment}>${this.submitLabel}</mm-button>
-        </mm-textfield-action-bar>
-      </form>
-    `
   }
 }
 

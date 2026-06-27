@@ -133,6 +133,13 @@ export class Dropdown extends LitElement {
     getTrigger: () => this.triggerElements[0],
   })
 
+  render() {
+    return html`
+      <div class="dropdown">${this.renderTrigger()} ${this.renderList()}</div>
+      <slot hidden @slotchange=${this.syncOptions}></slot>
+    `
+  }
+
   firstUpdated() {
     this.syncOptions()
   }
@@ -272,13 +279,6 @@ export class Dropdown extends LitElement {
       >
         ${option.label}
       </mm-menu-item-action>
-    `
-  }
-
-  render() {
-    return html`
-      <div class="dropdown">${this.renderTrigger()} ${this.renderList()}</div>
-      <slot hidden @slotchange=${this.syncOptions}></slot>
     `
   }
 }

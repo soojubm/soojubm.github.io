@@ -16,14 +16,14 @@ export default class TabPanel extends LitElement {
   @property({ type: Boolean, reflect: true }) active = false
   @property({ type: String, reflect: true }) role = 'tabpanel'
 
-  connectedCallback() {
-    super.connectedCallback()
-    this.tabIndex = 0
-  }
-
   render() {
     return html`
       <slot></slot>
     `
+  }
+
+  connectedCallback() {
+    super.connectedCallback()
+    this.tabIndex = 0
   }
 }

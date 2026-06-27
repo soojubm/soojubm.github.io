@@ -20,6 +20,14 @@ export class Accordion extends LitElement {
   @queryAssignedElements({ selector: 'mm-accordion-item', flatten: true })
   private items!: AccordionItem[]
 
+  render() {
+    return html`
+      <mm-flex direction="column" gap="1">
+        <slot></slot>
+      </mm-flex>
+    `
+  }
+
   connectedCallback() {
     super.connectedCallback()
     this.addEventListener('accordion-toggle', this.handleToggle)
@@ -38,14 +46,6 @@ export class Accordion extends LitElement {
     this.items.forEach(item => {
       if (item !== opened) item.open = false
     })
-  }
-
-  render() {
-    return html`
-      <mm-flex direction="column" gap="1">
-        <slot></slot>
-      </mm-flex>
-    `
   }
 }
 

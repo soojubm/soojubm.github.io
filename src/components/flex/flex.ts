@@ -65,20 +65,6 @@ export class Flex extends LitElement {
   @property({ type: Boolean }) wrap = false
   @property({ type: Boolean, reflect: true }) stretch = false
 
-  private get styles() {
-    const gap =
-      gapMap[this.gap as GapAlias] ??
-      (/^\d+$/.test(this.gap) ? `var(--space-${this.gap})` : this.gap)
-
-    return {
-      flexDirection: this.direction,
-      justifyContent: justifyMap[this.justifyContent as JustifyAlias] ?? this.justifyContent,
-      alignItems: alignMap[this.alignItems as AlignAlias] ?? this.alignItems,
-      gap,
-      flexWrap: this.wrap ? 'wrap' : 'nowrap',
-    }
-  }
-
   render() {
     const styles = styleMap(this.styles)
     const content = html`
@@ -112,6 +98,20 @@ export class Flex extends LitElement {
     return html`
       <div class="flex" role="group" style=${styles}>${content}</div>
     `
+  }
+
+  private get styles() {
+    const gap =
+      gapMap[this.gap as GapAlias] ??
+      (/^\d+$/.test(this.gap) ? `var(--space-${this.gap})` : this.gap)
+
+    return {
+      flexDirection: this.direction,
+      justifyContent: justifyMap[this.justifyContent as JustifyAlias] ?? this.justifyContent,
+      alignItems: alignMap[this.alignItems as AlignAlias] ?? this.alignItems,
+      gap,
+      flexWrap: this.wrap ? 'wrap' : 'nowrap',
+    }
   }
 }
 

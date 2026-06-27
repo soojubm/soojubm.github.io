@@ -59,18 +59,6 @@ export class ToggleButtonGroup extends LitElement {
   @property({ type: Boolean, reflect: true }) stretch = false
   @property({ type: Number, attribute: 'selected-index' }) selectedIndex = 0
 
-  private onButtonClick(index: number, option: OptionItem, event: Event) {
-    event.stopPropagation()
-    if (option.disabled) return
-
-    this.selectedIndex = index
-
-    emit(this, 'change', {
-      index,
-      value: option.value,
-    })
-  }
-
   render() {
     return html`
       <mm-button-group ?stretch=${this.stretch}>
@@ -96,6 +84,18 @@ export class ToggleButtonGroup extends LitElement {
         )}
       </mm-button-group>
     `
+  }
+
+  private onButtonClick(index: number, option: OptionItem, event: Event) {
+    event.stopPropagation()
+    if (option.disabled) return
+
+    this.selectedIndex = index
+
+    emit(this, 'change', {
+      index,
+      value: option.value,
+    })
   }
 }
 

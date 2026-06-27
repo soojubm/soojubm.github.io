@@ -22,15 +22,6 @@ class Notice extends LitElement {
 
   @state() private dismissed = false
 
-  private get icon() {
-    return VARIANT_ICONS[this.variant] ?? ICON_NAMES.INFO
-  }
-
-  private dismiss() {
-    this.dismissed = true
-    emit(this, 'mm-dismiss')
-  }
-
   render() {
     if (this.dismissed) return html``
 
@@ -59,6 +50,15 @@ class Notice extends LitElement {
           : ''}
       </mm-flex>
     `
+  }
+
+  private get icon() {
+    return VARIANT_ICONS[this.variant] ?? ICON_NAMES.INFO
+  }
+
+  private dismiss() {
+    this.dismissed = true
+    emit(this, 'mm-dismiss')
   }
 }
 

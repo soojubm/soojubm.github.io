@@ -34,17 +34,6 @@ export class RadiusPicker extends LitElement {
   @state() private shape: Shape = 'circle'
   @state() private color: Color = 'green'
 
-  private handleShapeChange(e: CustomEvent) {
-    this.shape = e.detail.value as Shape
-    document.documentElement.classList.toggle(SQUARE_CLASS, this.shape === 'square')
-  }
-
-  private handleColorChange(e: CustomEvent) {
-    this.color = e.detail.value as Color
-    COLOR_CLASSES.forEach(c => document.documentElement.classList.remove(c))
-    document.documentElement.classList.add(`color-${this.color}`)
-  }
-
   render() {
     return html`
       <mm-flex class="bar" direction="column" gap="2">
@@ -63,6 +52,17 @@ export class RadiusPicker extends LitElement {
         ></mm-toggle-button-group>
       </mm-flex>
     `
+  }
+
+  private handleShapeChange(e: CustomEvent) {
+    this.shape = e.detail.value as Shape
+    document.documentElement.classList.toggle(SQUARE_CLASS, this.shape === 'square')
+  }
+
+  private handleColorChange(e: CustomEvent) {
+    this.color = e.detail.value as Color
+    COLOR_CLASSES.forEach(c => document.documentElement.classList.remove(c))
+    document.documentElement.classList.add(`color-${this.color}`)
   }
 }
 

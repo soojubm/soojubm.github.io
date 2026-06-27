@@ -38,24 +38,6 @@ export class ChatSource extends LitElement {
 
   @state() private open = false
 
-  setOpen(open: boolean) {
-    this.open = open
-  }
-
-  private get domain() {
-    if (this.label) return this.label
-    try {
-      return new URL(this.href).hostname.replace(/^www\./, '')
-    } catch {
-      return this.href
-    }
-  }
-
-  private handleClick(e: Event) {
-    e.stopPropagation()
-    emit(this, 'source-toggle', { source: this, open: !this.open })
-  }
-
   render() {
     return html`
       <mm-button
@@ -73,6 +55,24 @@ export class ChatSource extends LitElement {
         ${this.domain}
       </mm-button>
     `
+  }
+
+  setOpen(open: boolean) {
+    this.open = open
+  }
+
+  private get domain() {
+    if (this.label) return this.label
+    try {
+      return new URL(this.href).hostname.replace(/^www\./, '')
+    } catch {
+      return this.href
+    }
+  }
+
+  private handleClick(e: Event) {
+    e.stopPropagation()
+    emit(this, 'source-toggle', { source: this, open: !this.open })
   }
 }
 
@@ -158,35 +158,6 @@ export class ChatSourceGroup extends LitElement {
     { isActive: () => this.activeSource !== null },
   )
 
-  private handleToggle(e: CustomEvent) {
-    const source = e.detail.source as ChatSource
-    const opening = e.detail.open as boolean
-
-    if (!opening) {
-      source.setOpen(false)
-      this.activeSource = null
-      return
-    }
-
-    // Close previously open source
-    if (this.activeSource && this.activeSource !== source) {
-      this.activeSource.setOpen(false)
-    }
-
-    source.setOpen(true)
-    this.activeSource = source
-  }
-
-  private get domain() {
-    if (!this.activeSource) return ''
-    if (this.activeSource.label) return this.activeSource.label
-    try {
-      return new URL(this.activeSource.href).hostname.replace(/^www\./, '')
-    } catch {
-      return this.activeSource.href
-    }
-  }
-
   render() {
     const src = this.activeSource
     return html`
@@ -242,6 +213,35 @@ export class ChatSourceGroup extends LitElement {
           `
         : ''}
     `
+  }
+
+  private handleToggle(e: CustomEvent) {
+    const source = e.detail.source as ChatSource
+    const opening = e.detail.open as boolean
+
+    if (!opening) {
+      source.setOpen(false)
+      this.activeSource = null
+      return
+    }
+
+    // Close previously open source
+    if (this.activeSource && this.activeSource !== source) {
+      this.activeSource.setOpen(false)
+    }
+
+    source.setOpen(true)
+    this.activeSource = source
+  }
+
+  private get domain() {
+    if (!this.activeSource) return ''
+    if (this.activeSource.label) return this.activeSource.label
+    try {
+      return new URL(this.activeSource.href).hostname.replace(/^www\./, '')
+    } catch {
+      return this.activeSource.href
+    }
   }
 }
 

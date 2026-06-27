@@ -36,16 +36,6 @@ export class ChatConfirmation extends LitElement {
   @property({ type: String, attribute: 'approve-label' }) approveLabel = '승인'
   @property({ type: String, attribute: 'reject-label' }) rejectLabel = '거부'
 
-  private approve() {
-    this.status = 'accepted'
-    emit(this, 'confirmation-approve')
-  }
-
-  private reject() {
-    this.status = 'rejected'
-    emit(this, 'confirmation-reject')
-  }
-
   render() {
     if (this.status === 'accepted') {
       return html`
@@ -78,6 +68,16 @@ export class ChatConfirmation extends LitElement {
         </mm-button-group>
       </mm-notice>
     `
+  }
+
+  private approve() {
+    this.status = 'accepted'
+    emit(this, 'confirmation-approve')
+  }
+
+  private reject() {
+    this.status = 'rejected'
+    emit(this, 'confirmation-reject')
   }
 }
 

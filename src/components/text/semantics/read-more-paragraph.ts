@@ -27,10 +27,6 @@ export class ReadMoreParagraph extends LitElement {
 
   private readonly contentId = uniqueId('read-more-content')
 
-  private toggle() {
-    this.expanded = !this.expanded
-  }
-
   render() {
     const truncated = this.content.length > this.limit
     const displayText =
@@ -52,6 +48,10 @@ export class ReadMoreParagraph extends LitElement {
           : nothing}
       </mm-paragraph>
     `
+  }
+
+  private toggle() {
+    this.expanded = !this.expanded
   }
 }
 

@@ -26,6 +26,20 @@ export class AiChatMessage extends LitElement {
   @property({ type: String }) datetime = ''
   @property({ type: Boolean, attribute: 'hidden-reactions' }) hiddenReactions = false
 
+  render() {
+    return html`
+      <mm-flex direction="column" gap="2">
+        <slot></slot>
+        ${this.datetime
+          ? html`
+              <mm-text class="time" as="time" size="12" weight="medium">${this.datetime}</mm-text>
+            `
+          : nothing}
+        ${this.renderReactions()}
+      </mm-flex>
+    `
+  }
+
   private emitReaction(reaction: string) {
     emit(this, 'chat-reaction', { reaction })
   }
@@ -57,20 +71,6 @@ export class AiChatMessage extends LitElement {
           @click=${() => this.emitReaction('dislike')}
         ></mm-icon-button>
       </mm-button-group>
-    `
-  }
-
-  render() {
-    return html`
-      <mm-flex direction="column" gap="2">
-        <slot></slot>
-        ${this.datetime
-          ? html`
-              <mm-text class="time" as="time" size="12" weight="medium">${this.datetime}</mm-text>
-            `
-          : nothing}
-        ${this.renderReactions()}
-      </mm-flex>
     `
   }
 }

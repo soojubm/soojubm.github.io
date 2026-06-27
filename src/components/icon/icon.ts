@@ -41,6 +41,22 @@ class Icon extends LitElement {
 
   @state() private useStylesheetLink = false
 
+  render() {
+    const iconClassName = this.name ? `iconoir-${this.name}` : ''
+    const iconStyle = {
+      color: this.color || null,
+    }
+
+    return html`
+      ${this.useStylesheetLink
+        ? html`
+            <link rel="stylesheet" href=${ICONOIR_STYLESHEET_URL} />
+          `
+        : ''}
+      <i class="icon ${iconClassName}" style=${styleMap(iconStyle)}></i>
+    `
+  }
+
   protected firstUpdated() {
     void this.adoptIconoirStylesheet()
   }
@@ -57,22 +73,6 @@ class Icon extends LitElement {
     if (this.renderRoot.adoptedStyleSheets.includes(stylesheet)) return
 
     this.renderRoot.adoptedStyleSheets = [...this.renderRoot.adoptedStyleSheets, stylesheet]
-  }
-
-  render() {
-    const iconClassName = this.name ? `iconoir-${this.name}` : ''
-    const iconStyle = {
-      color: this.color || null,
-    }
-
-    return html`
-      ${this.useStylesheetLink
-        ? html`
-            <link rel="stylesheet" href=${ICONOIR_STYLESHEET_URL} />
-          `
-        : ''}
-      <i class="icon ${iconClassName}" style=${styleMap(iconStyle)}></i>
-    `
   }
 }
 

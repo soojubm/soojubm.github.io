@@ -98,6 +98,39 @@ export class TableOfContents extends LitElement {
   @query('mm-selection-indicator') private indicator?: HTMLElement
   @queryAll('.toc-link') private links!: NodeListOf<HTMLElement>
 
+  render() {
+    if (!this.items.length) return nothing
+    const listStyles = {
+      '--selection-indicator-y': `${this.indicatorY}px`,
+    }
+
+    return html`
+      <nav aria-label="On this page">
+        <mm-text weight="bold" color="light" class="toc-title" aria-hidden="true">
+          On this page
+        </mm-text>
+        <div class="toc-list" style=${styleMap(listStyles)}>
+          <mm-selection-indicator position="absolute" aria-hidden="true"></mm-selection-indicator>
+          ${this.items.map(
+            item => html`
+              <button
+                class="toc-link"
+                type="button"
+                data-toc-id=${item.id}
+                ?data-active=${item.id === this.activeId}
+                aria-current=${item.id === this.activeId ? 'true' : nothing}
+                @click=${() => this.scrollToItem(item.id)}
+              >
+                ${item.label}
+              </button>
+            `,
+          )}
+        </div>
+      </nav>
+      ${this.renderShareSection()}
+    `
+  }
+
   connectedCallback() {
     super.connectedCallback()
     window.addEventListener('resize', this.updateIndicatorPosition)
@@ -258,39 +291,6 @@ export class TableOfContents extends LitElement {
           ></mm-icon-button>
         </mm-button-group>
       </section>
-    `
-  }
-
-  render() {
-    if (!this.items.length) return nothing
-    const listStyles = {
-      '--selection-indicator-y': `${this.indicatorY}px`,
-    }
-
-    return html`
-      <nav aria-label="On this page">
-        <mm-text weight="bold" color="light" class="toc-title" aria-hidden="true">
-          On this page
-        </mm-text>
-        <div class="toc-list" style=${styleMap(listStyles)}>
-          <mm-selection-indicator position="absolute" aria-hidden="true"></mm-selection-indicator>
-          ${this.items.map(
-            item => html`
-              <button
-                class="toc-link"
-                type="button"
-                data-toc-id=${item.id}
-                ?data-active=${item.id === this.activeId}
-                aria-current=${item.id === this.activeId ? 'true' : nothing}
-                @click=${() => this.scrollToItem(item.id)}
-              >
-                ${item.label}
-              </button>
-            `,
-          )}
-        </div>
-      </nav>
-      ${this.renderShareSection()}
     `
   }
 }

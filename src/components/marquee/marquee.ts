@@ -97,6 +97,27 @@ export class Marquee extends LitElement {
   private resizeObserver?: ResizeObserver
   private measureFrame = 0
 
+  render() {
+    const cloneIndexes = Array.from({ length: this.copyCount - 1 }, (_, index) => index)
+
+    return html`
+      <div class="viewport">
+        <div class="track">
+          <div class="group source">
+            <slot @slotchange=${this.handleSlotChange}></slot>
+          </div>
+          ${repeat(
+            cloneIndexes,
+            index => index,
+            () => html`
+              <div class="group clone" aria-hidden="true" inert></div>
+            `,
+          )}
+        </div>
+      </div>
+    `
+  }
+
   connectedCallback() {
     super.connectedCallback()
     this.resizeObserver = new ResizeObserver(() => this.queueMeasure())
@@ -186,27 +207,6 @@ export class Marquee extends LitElement {
   private resolveGap(value: string) {
     if (!value) return '0px'
     return /^\d+$/.test(value) ? `var(--space-${value})` : value
-  }
-
-  render() {
-    const cloneIndexes = Array.from({ length: this.copyCount - 1 }, (_, index) => index)
-
-    return html`
-      <div class="viewport">
-        <div class="track">
-          <div class="group source">
-            <slot @slotchange=${this.handleSlotChange}></slot>
-          </div>
-          ${repeat(
-            cloneIndexes,
-            index => index,
-            () => html`
-              <div class="group clone" aria-hidden="true" inert></div>
-            `,
-          )}
-        </div>
-      </div>
-    `
   }
 }
 

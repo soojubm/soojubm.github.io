@@ -20,6 +20,29 @@ export class MyChatBubble extends LitElement {
   @property({ type: String }) status = ''
   @property({ type: Boolean, reflect: true }) failed = false
 
+  render() {
+    if (this.typing) return this.renderTyping()
+    if (this.src) return this.renderImage()
+
+    if (this.failed) {
+      return html`
+        ${this.renderBubbleBody()}
+        <div class="failed-row">
+          <mm-text class="failed-status" size="12" role="alert">전송 실패</mm-text>
+          <mm-icon-button
+            size="small"
+            variant="ghost"
+            icon=${ICON_NAMES.RETRY}
+            aria-label="재전송"
+            @click=${this.handleRetry}
+          ></mm-icon-button>
+        </div>
+      `
+    }
+
+    return this.renderBubbleBody()
+  }
+
   private renderTyping() {
     return html`
       <div class="bubble">
@@ -55,29 +78,6 @@ export class MyChatBubble extends LitElement {
           : ''}
       </div>
     `
-  }
-
-  render() {
-    if (this.typing) return this.renderTyping()
-    if (this.src) return this.renderImage()
-
-    if (this.failed) {
-      return html`
-        ${this.renderBubbleBody()}
-        <div class="failed-row">
-          <mm-text class="failed-status" size="12" role="alert">전송 실패</mm-text>
-          <mm-icon-button
-            size="small"
-            variant="ghost"
-            icon=${ICON_NAMES.RETRY}
-            aria-label="재전송"
-            @click=${this.handleRetry}
-          ></mm-icon-button>
-        </div>
-      `
-    }
-
-    return this.renderBubbleBody()
   }
 }
 

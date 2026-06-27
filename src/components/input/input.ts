@@ -111,13 +111,6 @@ export class Input extends LitElement {
   @property({ type: Number }) max?: number
   @property({ type: Number }) step?: number
 
-  private handleInput(event: Event) {
-    const target = event.target as HTMLInputElement
-    this.value = target.value
-    event.stopPropagation()
-    this.dispatchEvent(new Event('input', { bubbles: true, composed: true }))
-  }
-
   override render() {
     return html`
       <input
@@ -136,6 +129,13 @@ export class Input extends LitElement {
         @input=${this.handleInput}
       />
     `
+  }
+
+  private handleInput(event: Event) {
+    const target = event.target as HTMLInputElement
+    this.value = target.value
+    event.stopPropagation()
+    this.dispatchEvent(new Event('input', { bubbles: true, composed: true }))
   }
 }
 

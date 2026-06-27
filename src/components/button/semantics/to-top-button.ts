@@ -7,10 +7,6 @@ import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
 export class ToTopButton extends LitElement {
   static styles = [resetStyles]
 
-  private handleClick() {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }
-
   render() {
     return html`
       <mm-icon-button
@@ -20,6 +16,10 @@ export class ToTopButton extends LitElement {
         @click=${this.handleClick}
       ></mm-icon-button>
     `
+  }
+
+  private handleClick() {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 }
 

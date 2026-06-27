@@ -21,6 +21,21 @@ export class MenuItemCheckbox extends LitElement {
   @property({ type: Boolean }) checked = false
   @property({ type: String }) value = ''
 
+  render() {
+    return html`
+      <div
+        class="item"
+        role="menuitemcheckbox"
+        data-interactive
+        aria-disabled=${this.disabled ? 'true' : nothing}
+        aria-checked=${String(this.checked)}
+        @click=${this.handleRowClick}
+      >
+        ${renderMenuItemContent(this, this.renderAction())}
+      </div>
+    `
+  }
+
   private commitChecked(checked: boolean) {
     if (this.disabled) return
     this.checked = checked
@@ -45,21 +60,6 @@ export class MenuItemCheckbox extends LitElement {
         ?disabled=${this.disabled}
         @change=${this.handleControlChange}
       ></mm-checkbox>
-    `
-  }
-
-  render() {
-    return html`
-      <div
-        class="item"
-        role="menuitemcheckbox"
-        data-interactive
-        aria-disabled=${this.disabled ? 'true' : nothing}
-        aria-checked=${String(this.checked)}
-        @click=${this.handleRowClick}
-      >
-        ${renderMenuItemContent(this, this.renderAction())}
-      </div>
     `
   }
 }

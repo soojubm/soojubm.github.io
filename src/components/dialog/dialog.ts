@@ -29,6 +29,28 @@ export class Dialog extends LitElement {
 
   @query('mm-sheet') private sheet?: Sheet
 
+  render() {
+    return html`
+      <mm-sheet variant="center" width="small" @sheetclose=${this.handleSheetClose}>
+        <mm-sheet-header heading=${this.heading} .closeButton=${false}></mm-sheet-header>
+
+        <mm-sheet-body>
+          ${this.description
+            ? html`
+                <mm-paragraph>${this.description}</mm-paragraph>
+              `
+            : nothing}
+          <slot></slot>
+        </mm-sheet-body>
+
+        <mm-sheet-footer
+          .primaryAction=${this.primaryAction}
+          .secondaryAction=${this.secondaryAction}
+        ></mm-sheet-footer>
+      </mm-sheet>
+    `
+  }
+
   show() {
     this.open = true
     this.sheet?.open()
@@ -53,28 +75,6 @@ export class Dialog extends LitElement {
   private handleSheetClose() {
     this.open = false
     emit(this, 'dialog-close')
-  }
-
-  render() {
-    return html`
-      <mm-sheet variant="center" width="small" @sheetclose=${this.handleSheetClose}>
-        <mm-sheet-header heading=${this.heading} .closeButton=${false}></mm-sheet-header>
-
-        <mm-sheet-body>
-          ${this.description
-            ? html`
-                <mm-paragraph>${this.description}</mm-paragraph>
-              `
-            : nothing}
-          <slot></slot>
-        </mm-sheet-body>
-
-        <mm-sheet-footer
-          .primaryAction=${this.primaryAction}
-          .secondaryAction=${this.secondaryAction}
-        ></mm-sheet-footer>
-      </mm-sheet>
-    `
   }
 }
 

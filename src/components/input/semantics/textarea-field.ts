@@ -20,9 +20,6 @@ export class TextareaField extends LitElement {
   @property({ type: String, attribute: 'aria-invalid' }) ariaInvalid: AriaInvalid = null
 
   private inputId = uniqueId('mm-textarea')
-  private get helperId() {
-    return `${this.inputId}-helper`
-  }
 
   render() {
     return html`
@@ -52,6 +49,9 @@ export class TextareaField extends LitElement {
           : nothing}
       </div>
     `
+  }
+  private get helperId() {
+    return `${this.inputId}-helper`
   }
 
   private syncValue(event: CustomEvent<{ value: string }>) {

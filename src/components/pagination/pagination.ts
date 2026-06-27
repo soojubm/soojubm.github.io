@@ -18,6 +18,30 @@ export class Pagination extends LitElement {
   @property({ type: Number, attribute: 'sibling-count' }) siblingCount = 1
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = 'pagination'
 
+  render() {
+    const currentPage = this.safeCurrentPage
+
+    return html`
+      <nav class="pagination" aria-label=${this.ariaLabel}>
+        <mm-prev-button
+          aria-label="이전 페이지로 이동"
+          ?disabled=${currentPage === 1}
+          @click=${() => this.setPage(currentPage - 1)}
+        ></mm-prev-button>
+        ${repeat(
+          this.pages,
+          (item, index) => (item === 'ellipsis' ? `ellipsis-${index}` : item),
+          item => this.renderPage(item),
+        )}
+        <mm-next-button
+          aria-label="다음 페이지로 이동"
+          ?disabled=${currentPage === this.safePageCount}
+          @click=${() => this.setPage(currentPage + 1)}
+        ></mm-next-button>
+      </nav>
+    `
+  }
+
   private get safePageCount() {
     return Math.max(1, Math.floor(this.pageCount))
   }
@@ -82,30 +106,6 @@ export class Pagination extends LitElement {
         aria-current=${isCurrent ? 'page' : nothing}
         @click=${() => this.setPage(item)}
       ></mm-page-button>
-    `
-  }
-
-  render() {
-    const currentPage = this.safeCurrentPage
-
-    return html`
-      <nav class="pagination" aria-label=${this.ariaLabel}>
-        <mm-prev-button
-          aria-label="이전 페이지로 이동"
-          ?disabled=${currentPage === 1}
-          @click=${() => this.setPage(currentPage - 1)}
-        ></mm-prev-button>
-        ${repeat(
-          this.pages,
-          (item, index) => (item === 'ellipsis' ? `ellipsis-${index}` : item),
-          item => this.renderPage(item),
-        )}
-        <mm-next-button
-          aria-label="다음 페이지로 이동"
-          ?disabled=${currentPage === this.safePageCount}
-          @click=${() => this.setPage(currentPage + 1)}
-        ></mm-next-button>
-      </nav>
     `
   }
 }

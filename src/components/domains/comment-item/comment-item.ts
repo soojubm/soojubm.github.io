@@ -92,24 +92,6 @@ export class CommentItem extends LitElement {
   @state() private menuOpen = false
   @state() private hasReplies = false
 
-  private emitAction(type: string) {
-    emit(this, type)
-  }
-
-  private toggleMenu() {
-    this.menuOpen = !this.menuOpen
-  }
-
-  private onMenuAction(type: 'edit' | 'delete') {
-    this.menuOpen = false
-    this.emitAction(type)
-  }
-
-  private onRepliesSlotChange(event: Event) {
-    const slot = event.target as HTMLSlotElement
-    this.hasReplies = slot.assignedElements().length > 0
-  }
-
   render() {
     return html`
       <article class="item">
@@ -162,6 +144,24 @@ export class CommentItem extends LitElement {
         </div>
       </article>
     `
+  }
+
+  private emitAction(type: string) {
+    emit(this, type)
+  }
+
+  private toggleMenu() {
+    this.menuOpen = !this.menuOpen
+  }
+
+  private onMenuAction(type: 'edit' | 'delete') {
+    this.menuOpen = false
+    this.emitAction(type)
+  }
+
+  private onRepliesSlotChange(event: Event) {
+    const slot = event.target as HTMLSlotElement
+    this.hasReplies = slot.assignedElements().length > 0
   }
 }
 

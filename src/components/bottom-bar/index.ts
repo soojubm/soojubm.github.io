@@ -82,12 +82,6 @@ class BottomBar extends LitElement {
 
   @state() private selectedIndex: number | null = null
 
-  private handleItemClick(e: Event, index: number) {
-    e.preventDefault()
-    this.selectedIndex = index
-    emit(this, 'change', { index })
-  }
-
   render() {
     const items = this.items.length ? this.items : defaultItems
     const defaultActive = items.findIndex(item => item.active)
@@ -121,6 +115,12 @@ class BottomBar extends LitElement {
         )}
       </nav>
     `
+  }
+
+  private handleItemClick(e: Event, index: number) {
+    e.preventDefault()
+    this.selectedIndex = index
+    emit(this, 'change', { index })
   }
 }
 

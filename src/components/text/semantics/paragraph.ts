@@ -81,14 +81,14 @@ export class Paragraph extends LitElement {
   @property({ type: String, reflect: true }) truncate: ParagraphTruncate = ''
   @property({ type: Boolean, reflect: true }) centered = false
 
-  private get customColorStyle() {
-    const isKeyword = this.color === 'inherit' || this.color === 'light' || this.color === 'danger'
-    return { color: isKeyword ? undefined : this.color }
-  }
-
   render() {
     return html`
       <p style=${styleMap(this.customColorStyle)}><slot></slot></p>
     `
+  }
+
+  private get customColorStyle() {
+    const isKeyword = this.color === 'inherit' || this.color === 'light' || this.color === 'danger'
+    return { color: isKeyword ? undefined : this.color }
   }
 }

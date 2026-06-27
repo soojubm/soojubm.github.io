@@ -55,6 +55,12 @@ export class ScrollHint extends LitElement {
   private scrollRoot?: HTMLElement
   private resizeObserver?: ResizeObserver
 
+  render() {
+    return html`
+      <div class="hint" aria-hidden="true"></div>
+    `
+  }
+
   connectedCallback() {
     super.connectedCallback()
     this.scrollRoot = this.parentElement ?? undefined
@@ -86,12 +92,6 @@ export class ScrollHint extends LitElement {
     const isAtEnd = scrollLeft >= maxScrollLeft - 1
 
     this.toggleAttribute('hidden', !canScroll || (this.placement === 'start' ? isAtStart : isAtEnd))
-  }
-
-  render() {
-    return html`
-      <div class="hint" aria-hidden="true"></div>
-    `
   }
 }
 

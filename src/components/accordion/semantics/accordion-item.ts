@@ -101,12 +101,6 @@ export class AccordionItem extends LitElement {
 
   private readonly panelId = uniqueId('accordion-panel')
 
-  private toggle() {
-    if (this.disabled) return
-    this.open = !this.open
-    emit(this, 'accordion-toggle', { open: this.open })
-  }
-
   render() {
     return html`
       <div class="accordion">
@@ -128,6 +122,12 @@ export class AccordionItem extends LitElement {
         </div>
       </div>
     `
+  }
+
+  private toggle() {
+    if (this.disabled) return
+    this.open = !this.open
+    emit(this, 'accordion-toggle', { open: this.open })
   }
 }
 

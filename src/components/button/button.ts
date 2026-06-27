@@ -30,21 +30,6 @@ export class Button extends LitElement {
   @property({ type: String, attribute: 'aria-expanded' }) ariaExpanded: AriaBoolean = null
   @property({ type: String, attribute: 'aria-haspopup' }) ariaHasPopup: AriaHasPopup = null
 
-  private handleClick(event: Event) {
-    if (this.disabled) {
-      event.preventDefault()
-      event.stopPropagation()
-    }
-  }
-
-  private renderIcon(position: ButtonIconPosition) {
-    return this.icon && this.iconPosition === position
-      ? html`
-          <mm-icon name=${this.icon}></mm-icon>
-        `
-      : nothing
-  }
-
   render() {
     return html`
       <button
@@ -60,6 +45,21 @@ export class Button extends LitElement {
         ${this.renderIcon('trailing')}
       </button>
     `
+  }
+
+  private handleClick(event: Event) {
+    if (this.disabled) {
+      event.preventDefault()
+      event.stopPropagation()
+    }
+  }
+
+  private renderIcon(position: ButtonIconPosition) {
+    return this.icon && this.iconPosition === position
+      ? html`
+          <mm-icon name=${this.icon}></mm-icon>
+        `
+      : nothing
   }
 }
 

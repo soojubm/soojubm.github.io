@@ -20,12 +20,6 @@ export class HamburgerButton extends LitElement {
   @property({ type: String, attribute: 'aria-expanded' }) ariaExpanded: AriaBoolean = 'false'
   @property({ type: String, attribute: 'aria-controls' }) ariaControls: AriaIdRef = null
 
-  connectedCallback() {
-    super.connectedCallback()
-    // navbar.ts의 toggleNavbarMenu가 .js-navbar-toggle을 selector로 사용
-    this.classList.add('js-navbar-toggle')
-  }
-
   render() {
     return html`
       <mm-icon-button
@@ -36,6 +30,12 @@ export class HamburgerButton extends LitElement {
         aria-controls=${this.ariaControls ?? nothing}
       ></mm-icon-button>
     `
+  }
+
+  connectedCallback() {
+    super.connectedCallback()
+    // navbar.ts의 toggleNavbarMenu가 .js-navbar-toggle을 selector로 사용
+    this.classList.add('js-navbar-toggle')
   }
 }
 

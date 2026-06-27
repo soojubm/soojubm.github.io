@@ -33,6 +33,19 @@ export class BookmarkButton extends LitElement {
   @property({ type: Boolean }) disabled = false
   @property({ type: String }) shape: 'star' | 'bookmark' | 'heart' = 'star'
 
+  render() {
+    return html`
+      <mm-icon-button
+        variant="ghost"
+        icon=${this.iconName}
+        aria-pressed=${String(this.selected)}
+        aria-label=${this.actionLabel}
+        ?disabled=${this.disabled}
+        @click=${this.handleClick}
+      ></mm-icon-button>
+    `
+  }
+
   private get iconName() {
     const filled = {
       star: ICON_NAMES.FAVORITE_SELECTED,
@@ -54,19 +67,6 @@ export class BookmarkButton extends LitElement {
 
   private handleClick() {
     toggleSelection(this)
-  }
-
-  render() {
-    return html`
-      <mm-icon-button
-        variant="ghost"
-        icon=${this.iconName}
-        aria-pressed=${String(this.selected)}
-        aria-label=${this.actionLabel}
-        ?disabled=${this.disabled}
-        @click=${this.handleClick}
-      ></mm-icon-button>
-    `
   }
 }
 

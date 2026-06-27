@@ -25,6 +25,21 @@ export class Table extends LitElement {
   })
   columns: TableColumn[] = []
 
+  render() {
+    return html`
+      <div class="table-container">
+        <table>
+          <caption hidden>${this.caption}</caption>
+          <colgroup>${this.columns.map(column => this.renderColumn(column))}</colgroup>
+          <thead>
+            <tr>${this.columns.map(column => this.renderHeader(column))}</tr>
+          </thead>
+          <tbody>${this.rows}</tbody>
+        </table>
+      </div>
+    `
+  }
+
   private renderHeader(column: TableColumn) {
     const headerStyles = {
       textAlign: column.textAlign ?? null,
@@ -64,21 +79,6 @@ export class Table extends LitElement {
 
     return html`
       <col style=${styleMap(columnStyles)} />
-    `
-  }
-
-  render() {
-    return html`
-      <div class="table-container">
-        <table>
-          <caption hidden>${this.caption}</caption>
-          <colgroup>${this.columns.map(column => this.renderColumn(column))}</colgroup>
-          <thead>
-            <tr>${this.columns.map(column => this.renderHeader(column))}</tr>
-          </thead>
-          <tbody>${this.rows}</tbody>
-        </table>
-      </div>
     `
   }
 }

@@ -19,6 +19,18 @@ export class MenuItemRadioGroup extends LitElement {
   @queryAssignedElements({ selector: 'mm-menu-item-radio', flatten: true })
   private radios!: MenuItemRadio[]
 
+  render() {
+    return html`
+      <mm-menu-item-group
+        role="radiogroup"
+        aria-label=${this.ariaLabel || nothing}
+        @change=${this.handleRadioChange}
+      >
+        <slot @slotchange=${this.handleSlotChange}></slot>
+      </mm-menu-item-group>
+    `
+  }
+
   // 하위 mm-menu-item-radio에서 올라오는 이벤트를 가로챕니다.
   private handleRadioChange(e: Event) {
     const target = e.target as HTMLElement
@@ -48,18 +60,6 @@ export class MenuItemRadioGroup extends LitElement {
         radio.checked = true
       }
     })
-  }
-
-  render() {
-    return html`
-      <mm-menu-item-group
-        role="radiogroup"
-        aria-label=${this.ariaLabel || nothing}
-        @change=${this.handleRadioChange}
-      >
-        <slot @slotchange=${this.handleSlotChange}></slot>
-      </mm-menu-item-group>
-    `
   }
 }
 

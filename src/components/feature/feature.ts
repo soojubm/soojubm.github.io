@@ -62,23 +62,6 @@ export class Feature extends LitElement {
   @property({ type: String }) description = ''
   @property({ type: Boolean, reflect: true }) centered = false
 
-  private renderVisual() {
-    if (this.emoji) {
-      return html`
-        <mm-avatar variant="secondary" size="large">
-          <span class="feature-emoji" aria-hidden="true">${this.emoji}</span>
-        </mm-avatar>
-      `
-    }
-    const icon = this.icon || HEADING_ICON_MAP[this.heading] || ''
-    const iconName = ICON_MAP[icon] ?? icon
-    return html`
-      <mm-avatar variant="secondary" size="large">
-        <mm-icon size="large" name="${iconName}"></mm-icon>
-      </mm-avatar>
-    `
-  }
-
   render() {
     return html`
       <mm-flex
@@ -98,6 +81,23 @@ export class Feature extends LitElement {
 
         <slot></slot>
       </mm-flex>
+    `
+  }
+
+  private renderVisual() {
+    if (this.emoji) {
+      return html`
+        <mm-avatar variant="secondary" size="large">
+          <span class="feature-emoji" aria-hidden="true">${this.emoji}</span>
+        </mm-avatar>
+      `
+    }
+    const icon = this.icon || HEADING_ICON_MAP[this.heading] || ''
+    const iconName = ICON_MAP[icon] ?? icon
+    return html`
+      <mm-avatar variant="secondary" size="large">
+        <mm-icon size="large" name="${iconName}"></mm-icon>
+      </mm-avatar>
     `
   }
 }

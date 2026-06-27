@@ -26,12 +26,6 @@ export class Textfield extends LitElement {
 
   private inputId = uniqueId('input')
 
-  private handleInput(event: Event) {
-    const target = event.target as HTMLInputElement
-    this.value = target.value
-    emit(this, 'input', { value: this.value })
-  }
-
   render() {
     return html`
       <div class="textfield" ?data-invalid=${this.ariaInvalid === 'true'}>
@@ -73,6 +67,12 @@ export class Textfield extends LitElement {
           : nothing}
       </div>
     `
+  }
+
+  private handleInput(event: Event) {
+    const target = event.target as HTMLInputElement
+    this.value = target.value
+    emit(this, 'input', { value: this.value })
   }
 }
 

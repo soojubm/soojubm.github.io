@@ -17,24 +17,6 @@ class Result extends LitElement {
   @state() private hasDefaultContent = false
   @state() private hasActionContent = false
 
-  private handleSlotChange(kind: 'default' | 'action', event: Event) {
-    const slot = event.target as HTMLSlotElement
-    const hasContent = slot
-      .assignedNodes({ flatten: true })
-      .some(
-        node =>
-          (node.nodeType === Node.TEXT_NODE && node.textContent?.trim() !== '') ||
-          node.nodeType === Node.ELEMENT_NODE,
-      )
-
-    if (kind === 'default') this.hasDefaultContent = hasContent
-    if (kind === 'action') this.hasActionContent = hasContent
-  }
-
-  private handlePrimaryActionClick() {
-    this.primaryAction?.onClick?.()
-  }
-
   render() {
     const hasActions = this.hasActionContent || this.primaryAction
 
@@ -81,6 +63,24 @@ class Result extends LitElement {
         </mm-button-group>
       </div>
     `
+  }
+
+  private handleSlotChange(kind: 'default' | 'action', event: Event) {
+    const slot = event.target as HTMLSlotElement
+    const hasContent = slot
+      .assignedNodes({ flatten: true })
+      .some(
+        node =>
+          (node.nodeType === Node.TEXT_NODE && node.textContent?.trim() !== '') ||
+          node.nodeType === Node.ELEMENT_NODE,
+      )
+
+    if (kind === 'default') this.hasDefaultContent = hasContent
+    if (kind === 'action') this.hasActionContent = hasContent
+  }
+
+  private handlePrimaryActionClick() {
+    this.primaryAction?.onClick?.()
   }
 }
 

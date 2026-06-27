@@ -17,6 +17,15 @@ export class RadioGroup extends LitElement {
   @queryAssignedElements({ selector: 'mm-radio', flatten: true })
   private radios!: Radio[]
 
+  render() {
+    return html`
+      <fieldset class="radio-group" ?disabled=${this.disabled} @change=${this.handleRadioChange}>
+        <legend class="visually-hidden">${this.label}</legend>
+        <slot @slotchange=${this.syncChildren}></slot>
+      </fieldset>
+    `
+  }
+
   protected updated(changedProperties: Map<string, unknown>) {
     if (changedProperties.has('value') || changedProperties.has('disabled')) {
       this.syncChildren()
@@ -45,15 +54,6 @@ export class RadioGroup extends LitElement {
 
       emit(this, 'change', { value: this.value, name: this.name })
     }
-  }
-
-  render() {
-    return html`
-      <fieldset class="radio-group" ?disabled=${this.disabled} @change=${this.handleRadioChange}>
-        <legend class="visually-hidden">${this.label}</legend>
-        <slot @slotchange=${this.syncChildren}></slot>
-      </fieldset>
-    `
   }
 }
 

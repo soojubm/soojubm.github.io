@@ -39,6 +39,13 @@ export class ListMarker extends LitElement {
   @property({ type: String }) variant: Variant = 'number'
   @property({ type: Number }) value = 1
 
+  render() {
+    if (this.variant === 'check') return this.renderCheck()
+    return html`
+      ${this.value}
+    `
+  }
+
   private renderCheck() {
     return svg`
       <svg viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -50,13 +57,6 @@ export class ListMarker extends LitElement {
           stroke-linejoin="round"
         />
       </svg>
-    `
-  }
-
-  render() {
-    if (this.variant === 'check') return this.renderCheck()
-    return html`
-      ${this.value}
     `
   }
 }

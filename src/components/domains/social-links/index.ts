@@ -36,6 +36,11 @@ export class SocialLinks extends LitElement {
 
   @property({ type: Boolean }) compact = false
 
+  render() {
+    if (!this.activeLinks.length) return nothing
+    return this.compact ? this.renderCompact() : this.renderDefault()
+  }
+
   private get activeLinks() {
     return PLATFORMS.flatMap(({ key, label, icon }) => {
       const href = this[key as PlatformKey]
@@ -68,11 +73,6 @@ export class SocialLinks extends LitElement {
         )}
       </mm-flex>
     `
-  }
-
-  render() {
-    if (!this.activeLinks.length) return nothing
-    return this.compact ? this.renderCompact() : this.renderDefault()
   }
 }
 

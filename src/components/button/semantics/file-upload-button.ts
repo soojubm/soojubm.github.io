@@ -62,61 +62,6 @@ export class FileUploadButton extends LitElement {
 
   private previewUrls = new Map<File, string>()
 
-  disconnectedCallback() {
-    this.revokePreviewUrls()
-    super.disconnectedCallback()
-  }
-
-  private handleChange(event: Event) {
-    const input = event.target as HTMLInputElement
-    this.setFiles(Array.from(input.files ?? []))
-
-    emit(this, 'files-change', { files: this.files })
-  }
-
-  private openFilePicker() {
-    this.input.click()
-  }
-
-  private removeFile(index: number) {
-    this.setFiles(this.files.filter((_, fileIndex) => fileIndex !== index))
-
-    emit(this, 'files-change', { files: this.files })
-  }
-
-  private setFiles(files: File[]) {
-    const nextFiles = new Set(files)
-
-    for (const [file, previewUrl] of this.previewUrls) {
-      if (!nextFiles.has(file)) {
-        URL.revokeObjectURL(previewUrl)
-        this.previewUrls.delete(file)
-      }
-    }
-
-    for (const file of files) {
-      if (file.type.startsWith('image/') && !this.previewUrls.has(file)) {
-        this.previewUrls.set(file, URL.createObjectURL(file))
-      }
-    }
-
-    this.files = files
-  }
-
-  private revokePreviewUrls() {
-    for (const previewUrl of this.previewUrls.values()) {
-      URL.revokeObjectURL(previewUrl)
-    }
-
-    this.previewUrls.clear()
-  }
-
-  private formatFileSize(size: number) {
-    if (size < 1024) return `${size} bytes`
-    if (size < 1024 * 1024) return `${(size / 1024).toFixed(1)} KB`
-    return `${(size / 1024 / 1024).toFixed(1)} MB`
-  }
-
   render() {
     return html`
       <mm-flex class="field" direction="column" gap="2">
@@ -173,6 +118,61 @@ export class FileUploadButton extends LitElement {
           : ''}
       </mm-flex>
     `
+  }
+
+  disconnectedCallback() {
+    this.revokePreviewUrls()
+    super.disconnectedCallback()
+  }
+
+  private handleChange(event: Event) {
+    const input = event.target as HTMLInputElement
+    this.setFiles(Array.from(input.files ?? []))
+
+    emit(this, 'files-change', { files: this.files })
+  }
+
+  private openFilePicker() {
+    this.input.click()
+  }
+
+  private removeFile(index: number) {
+    this.setFiles(this.files.filter((_, fileIndex) => fileIndex !== index))
+
+    emit(this, 'files-change', { files: this.files })
+  }
+
+  private setFiles(files: File[]) {
+    const nextFiles = new Set(files)
+
+    for (const [file, previewUrl] of this.previewUrls) {
+      if (!nextFiles.has(file)) {
+        URL.revokeObjectURL(previewUrl)
+        this.previewUrls.delete(file)
+      }
+    }
+
+    for (const file of files) {
+      if (file.type.startsWith('image/') && !this.previewUrls.has(file)) {
+        this.previewUrls.set(file, URL.createObjectURL(file))
+      }
+    }
+
+    this.files = files
+  }
+
+  private revokePreviewUrls() {
+    for (const previewUrl of this.previewUrls.values()) {
+      URL.revokeObjectURL(previewUrl)
+    }
+
+    this.previewUrls.clear()
+  }
+
+  private formatFileSize(size: number) {
+    if (size < 1024) return `${size} bytes`
+    if (size < 1024 * 1024) return `${(size / 1024).toFixed(1)} KB`
+    return `${(size / 1024 / 1024).toFixed(1)} MB`
   }
 }
 

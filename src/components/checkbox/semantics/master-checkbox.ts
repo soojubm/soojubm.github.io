@@ -18,6 +18,30 @@ export class MasterCheckbox extends LitElement {
 
   private controlledElement?: HTMLElement | null
 
+  render() {
+    return html`
+      <mm-surface variant="elevated" size="medium">
+        <div @pointerdown=${this.onPointerDown}>
+          <input
+            type="checkbox"
+            id=${this.inputId}
+            .checked=${this.checked}
+            .indeterminate=${this.indeterminate}
+            aria-controls=${this.ariaControls ?? nothing}
+            @change=${this.onInputChange}
+          />
+
+          <label for=${this.inputId}>
+            <span class="indicator"></span>
+            <slot>
+              <mm-paragraph>모두 동의합니다 (선택동의 포함)</mm-paragraph>
+            </slot>
+          </label>
+        </div>
+      </mm-surface>
+    `
+  }
+
   connectedCallback() {
     super.connectedCallback()
     document.addEventListener('change', this.syncFromControlledCheckboxes)
@@ -76,30 +100,6 @@ export class MasterCheckbox extends LitElement {
   private onPointerDown = (event: Event) => {
     event.preventDefault()
     this.setChecked(!this.checked)
-  }
-
-  render() {
-    return html`
-      <mm-surface variant="elevated" size="medium">
-        <div @pointerdown=${this.onPointerDown}>
-          <input
-            type="checkbox"
-            id=${this.inputId}
-            .checked=${this.checked}
-            .indeterminate=${this.indeterminate}
-            aria-controls=${this.ariaControls ?? nothing}
-            @change=${this.onInputChange}
-          />
-
-          <label for=${this.inputId}>
-            <span class="indicator"></span>
-            <slot>
-              <mm-paragraph>모두 동의합니다 (선택동의 포함)</mm-paragraph>
-            </slot>
-          </label>
-        </div>
-      </mm-surface>
-    `
   }
 }
 

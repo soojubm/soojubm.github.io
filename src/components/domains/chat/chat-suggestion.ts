@@ -22,17 +22,17 @@ export class ChatSuggestion extends LitElement {
   @property({ type: String }) value = ''
   @property({ type: String }) icon?: IconName
 
-  private handleClick() {
-    const value = this.value || this.textContent?.trim() || ''
-    emit(this, 'chat-suggestion-select', { value })
-  }
-
   render() {
     return html`
       <mm-button variant="tertiary" size="small" icon=${this.icon} @click=${this.handleClick}>
         <slot></slot>
       </mm-button>
     `
+  }
+
+  private handleClick() {
+    const value = this.value || this.textContent?.trim() || ''
+    emit(this, 'chat-suggestion-select', { value })
   }
 }
 

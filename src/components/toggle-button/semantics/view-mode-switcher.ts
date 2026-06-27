@@ -14,6 +14,16 @@ export class ViewModeSwitcher extends LitElement {
     { value: 'list', icon: ICON_NAMES.LIST_VIEW, ariaLabel: '목록 보기' },
   ]
 
+  render() {
+    return html`
+      <mm-toggle-button-group
+        .options=${this.options}
+        .selectedIndex=${this.selectedIndex}
+        @change=${this.handleOptionChange}
+      ></mm-toggle-button-group>
+    `
+  }
+
   private get selectedIndex() {
     return this.value === 'list' ? 1 : 0
   }
@@ -27,16 +37,6 @@ export class ViewModeSwitcher extends LitElement {
   private handleOptionChange(event: CustomEvent<{ value: ViewMode }>) {
     event.stopPropagation()
     this.updateMode(event.detail.value)
-  }
-
-  render() {
-    return html`
-      <mm-toggle-button-group
-        .options=${this.options}
-        .selectedIndex=${this.selectedIndex}
-        @change=${this.handleOptionChange}
-      ></mm-toggle-button-group>
-    `
   }
 }
 

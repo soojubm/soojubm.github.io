@@ -44,13 +44,6 @@ export class ComponentProps extends LitElement {
 
   private readonly propsId = uniqueId('component-props')
 
-  // 💡 3. 클릭되었을 때 상태를 true로 바꾸는 핸들러 함수
-  private handleClick() {
-    this.isOpened = true
-    // 만약 클릭할 때마다 열고 닫히는 '토글'을 원하시면 아래처럼 작성하세요.
-    // this.isOpened = !this.isOpened;
-  }
-
   render() {
     return html`
       <section
@@ -73,6 +66,13 @@ export class ComponentProps extends LitElement {
         </div>
       </section>
     `
+  }
+
+  // 💡 3. 클릭되었을 때 상태를 true로 바꾸는 핸들러 함수
+  private handleClick() {
+    this.isOpened = true
+    // 만약 클릭할 때마다 열고 닫히는 '토글'을 원하시면 아래처럼 작성하세요.
+    // this.isOpened = !this.isOpened;
   }
 }
 

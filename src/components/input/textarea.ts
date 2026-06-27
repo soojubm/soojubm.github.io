@@ -23,6 +23,10 @@ export class Textarea extends LitElement {
 
   @state() protected defaultTextareaId = `mm-textarea-${uniqueIdCounter++}`
 
+  render() {
+    return this.renderTextarea()
+  }
+
   protected get textareaId() {
     return this.inputId || this.defaultTextareaId
   }
@@ -103,10 +107,6 @@ export class Textarea extends LitElement {
         ></textarea>
       </div>
     `
-  }
-
-  render() {
-    return this.renderTextarea()
   }
 }
 

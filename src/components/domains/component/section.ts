@@ -30,11 +30,6 @@ class ComponentSection extends LitElement {
 
   @state() private hasContent = false
 
-  private onSlotChange(e: Event) {
-    const slot = e.target as HTMLSlotElement
-    this.hasContent = slot.assignedElements().length > 0
-  }
-
   render() {
     return html`
       <mm-flex as="section" class="component-section" direction="column" gap="2">
@@ -50,6 +45,11 @@ class ComponentSection extends LitElement {
         </div>
       </mm-flex>
     `
+  }
+
+  private onSlotChange(e: Event) {
+    const slot = e.target as HTMLSlotElement
+    this.hasContent = slot.assignedElements().length > 0
   }
 }
 

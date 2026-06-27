@@ -23,6 +23,18 @@ export class MenuItemCheckboxGroup extends LitElement {
   @queryAssignedElements({ selector: 'mm-menu-item-checkbox', flatten: true })
   private checkboxes!: MenuItemCheckbox[]
 
+  render() {
+    return html`
+      <mm-menu-item-group
+        role="group"
+        aria-label=${this.ariaLabel || nothing}
+        @change=${this.handleChange}
+      >
+        <slot @slotchange=${this.handleSlotChange}></slot>
+      </mm-menu-item-group>
+    `
+  }
+
   private handleChange(e: Event) {
     const target = e.target as HTMLElement
     if (target.tagName.toLowerCase() !== 'mm-menu-item-checkbox') return
@@ -50,18 +62,6 @@ export class MenuItemCheckboxGroup extends LitElement {
     this.checkboxes.forEach(cb => {
       cb.checked = this.values.includes(cb.value)
     })
-  }
-
-  render() {
-    return html`
-      <mm-menu-item-group
-        role="group"
-        aria-label=${this.ariaLabel || nothing}
-        @change=${this.handleChange}
-      >
-        <slot @slotchange=${this.handleSlotChange}></slot>
-      </mm-menu-item-group>
-    `
   }
 }
 

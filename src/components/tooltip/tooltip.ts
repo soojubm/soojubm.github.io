@@ -26,6 +26,21 @@ class Tooltip extends LitElement {
     this.open = false
   }
 
+  render() {
+    return html`
+      <div
+        class="tooltip"
+        @mouseover=${this.show}
+        @mouseout=${this.hide}
+        @focusin=${this.show}
+        @focusout=${this.hide}
+      >
+        <slot class="tooltip-trigger" name="trigger" @slotchange=${this.syncDescription}></slot>
+        <div id=${this.contentId} class="tooltip-content" role="tooltip">${this.content}</div>
+      </div>
+    `
+  }
+
   disconnectedCallback() {
     this.clearDescriptionTargets()
     super.disconnectedCallback()
@@ -77,21 +92,6 @@ class Tooltip extends LitElement {
       target.setAttribute('aria-describedby', [...descriptions].join(' '))
       this.descriptionTargets.add(target)
     })
-  }
-
-  render() {
-    return html`
-      <div
-        class="tooltip"
-        @mouseover=${this.show}
-        @mouseout=${this.hide}
-        @focusin=${this.show}
-        @focusout=${this.hide}
-      >
-        <slot class="tooltip-trigger" name="trigger" @slotchange=${this.syncDescription}></slot>
-        <div id=${this.contentId} class="tooltip-content" role="tooltip">${this.content}</div>
-      </div>
-    `
   }
 }
 

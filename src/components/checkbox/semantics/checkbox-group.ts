@@ -28,6 +28,21 @@ export class CheckboxGroup extends LitElement {
 
   private isInitialized = false
 
+  render() {
+    return html`
+      <fieldset>
+        ${this.legend
+          ? html`
+              <legend>
+                <mm-text size="12" color="light">${this.legend}</mm-text>
+              </legend>
+            `
+          : nothing}
+        <slot @slotchange=${this.onSlotChange}></slot>
+      </fieldset>
+    `
+  }
+
   connectedCallback() {
     super.connectedCallback()
     this.addEventListener('change', this.onCheckboxChange)
@@ -110,21 +125,6 @@ export class CheckboxGroup extends LitElement {
     emit(this, 'change', {
       values: this.value,
     })
-  }
-
-  render() {
-    return html`
-      <fieldset>
-        ${this.legend
-          ? html`
-              <legend>
-                <mm-text size="12" color="light">${this.legend}</mm-text>
-              </legend>
-            `
-          : nothing}
-        <slot @slotchange=${this.onSlotChange}></slot>
-      </fieldset>
-    `
   }
 }
 

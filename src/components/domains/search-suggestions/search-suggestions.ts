@@ -53,16 +53,16 @@ export class SearchSuggestions extends LitElement {
   @property({ type: Boolean, reflect: true }) fade = false
   @property({ type: String, reflect: true }) role = 'group'
 
-  updated(changed: Map<string, unknown>) {
-    if (changed.has('bleed')) {
-      this.style.setProperty('--_bleed', this.bleed ?? '0px')
-    }
-  }
-
   render() {
     return html`
       <slot></slot>
     `
+  }
+
+  updated(changed: Map<string, unknown>) {
+    if (changed.has('bleed')) {
+      this.style.setProperty('--_bleed', this.bleed ?? '0px')
+    }
   }
 }
 

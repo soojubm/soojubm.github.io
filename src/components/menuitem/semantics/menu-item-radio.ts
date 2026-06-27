@@ -34,19 +34,6 @@ export class MenuItemRadio extends LitElement {
     this.handleSelect()
   }
 
-  private renderAction() {
-    return html`
-      <mm-radio
-        slot="trailing"
-        .name=${this.name}
-        .value=${this.value}
-        .checked=${this.checked}
-        ?disabled=${this.disabled}
-        @change=${this.handleControlChange}
-      ></mm-radio>
-    `
-  }
-
   render() {
     return html`
       <div
@@ -59,6 +46,19 @@ export class MenuItemRadio extends LitElement {
       >
         ${renderMenuItemContent(this, this.renderAction())}
       </div>
+    `
+  }
+
+  private renderAction() {
+    return html`
+      <mm-radio
+        slot="trailing"
+        .name=${this.name}
+        .value=${this.value}
+        .checked=${this.checked}
+        ?disabled=${this.disabled}
+        @change=${this.handleControlChange}
+      ></mm-radio>
     `
   }
 }

@@ -42,10 +42,6 @@ export class ComponentAnatomy extends LitElement {
   })
   parts: string[] = []
 
-  private get normalizedParts() {
-    return Array.isArray(this.parts) ? this.parts : []
-  }
-
   render() {
     return html`
       <mm-flex direction="column" gap="3">
@@ -60,6 +56,10 @@ export class ComponentAnatomy extends LitElement {
           : nothing}
       </mm-flex>
     `
+  }
+
+  private get normalizedParts() {
+    return Array.isArray(this.parts) ? this.parts : []
   }
 }
 

@@ -22,15 +22,6 @@ export class FilterButton extends LitElement {
   @property({ type: Boolean, attribute: 'select-all' }) selectAll = false
   @property({ type: Boolean }) disabled = false
 
-  private handleClick() {
-    if (this.disabled) return
-    emit(this, 'filter-toggle', {
-      value: this.value,
-      selected: !this.selected,
-      selectAll: this.selectAll,
-    })
-  }
-
   render() {
     return html`
       <button
@@ -48,6 +39,15 @@ export class FilterButton extends LitElement {
         <slot></slot>
       </button>
     `
+  }
+
+  private handleClick() {
+    if (this.disabled) return
+    emit(this, 'filter-toggle', {
+      value: this.value,
+      selected: !this.selected,
+      selectAll: this.selectAll,
+    })
   }
 }
 

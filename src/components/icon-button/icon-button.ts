@@ -24,6 +24,16 @@ class IconButton extends LitElement {
   @property({ type: String, attribute: 'aria-expanded' }) ariaExpanded: AriaBoolean = null
   @property({ type: String, attribute: 'aria-controls' }) ariaControls: AriaIdRef = null
 
+  render() {
+    const control = this.renderControl()
+
+    if (!this.tooltip) return control
+
+    return html`
+      <mm-tooltip content=${this.tooltip} placement=${this.tooltipPlacement}>${control}</mm-tooltip>
+    `
+  }
+
   protected get accessibilityLabel(): string {
     return this.ariaLabel || this.tooltip || this.icon || ''
   }
@@ -42,16 +52,6 @@ class IconButton extends LitElement {
       >
         <mm-icon name="${this.icon}"></mm-icon>
       </button>
-    `
-  }
-
-  render() {
-    const control = this.renderControl()
-
-    if (!this.tooltip) return control
-
-    return html`
-      <mm-tooltip content=${this.tooltip} placement=${this.tooltipPlacement}>${control}</mm-tooltip>
     `
   }
 }

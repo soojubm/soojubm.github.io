@@ -185,6 +185,25 @@ export class ChatReasoning extends LitElement {
   private flowIndex = 0
   private intervalId = 0
 
+  render() {
+    return html`
+      <div class="trend" role="status" aria-live="polite">
+        <span class="content">
+          ${this.duration
+            ? html`
+                <span class="meta">
+                  <span class="duration">${this.duration}</span>
+                </span>
+              `
+            : nothing}
+          <span class="flows">
+            <slot @slotchange=${this.syncFlows}></slot>
+          </span>
+        </span>
+      </div>
+    `
+  }
+
   firstUpdated() {
     this.syncFlows()
   }
@@ -240,25 +259,6 @@ export class ChatReasoning extends LitElement {
 
     window.clearInterval(this.intervalId)
     this.intervalId = 0
-  }
-
-  render() {
-    return html`
-      <div class="trend" role="status" aria-live="polite">
-        <span class="content">
-          ${this.duration
-            ? html`
-                <span class="meta">
-                  <span class="duration">${this.duration}</span>
-                </span>
-              `
-            : nothing}
-          <span class="flows">
-            <slot @slotchange=${this.syncFlows}></slot>
-          </span>
-        </span>
-      </div>
-    `
   }
 }
 

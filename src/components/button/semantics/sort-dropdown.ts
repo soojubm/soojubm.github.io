@@ -20,15 +20,6 @@ export class SortDropdown extends LitElement {
 
   @property({ type: String }) value: SortOrder = 'latest'
 
-  private handleChange(e: CustomEvent) {
-    e.stopPropagation()
-
-    const next = e.detail.value as SortOrder
-    this.value = next
-
-    emit(this, 'change', { value: next })
-  }
-
   render() {
     return html`
       <mm-dropdown .value=${this.value} @change=${this.handleChange}>
@@ -39,6 +30,15 @@ export class SortDropdown extends LitElement {
         )}
       </mm-dropdown>
     `
+  }
+
+  private handleChange(e: CustomEvent) {
+    e.stopPropagation()
+
+    const next = e.detail.value as SortOrder
+    this.value = next
+
+    emit(this, 'change', { value: next })
   }
 }
 

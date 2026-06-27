@@ -23,6 +23,23 @@ class Sheet extends LitElement {
     this.close()
   }
 
+  render() {
+    const sheetStyle = {
+      height: this.height ?? null,
+    }
+
+    return html`
+      <aside
+        class="sheet"
+        variant=${this.variant}
+        ?open=${this.isOpen}
+        style=${styleMap(sheetStyle)}
+      >
+        <slot></slot>
+      </aside>
+    `
+  }
+
   connectedCallback() {
     super.connectedCallback()
     this.addEventListener('sheetclose', this.handleSheetClose)
@@ -57,23 +74,6 @@ class Sheet extends LitElement {
 
   private syncScrollLock() {
     this.scrollLock.set(this.isOpen && this.isModal)
-  }
-
-  render() {
-    const sheetStyle = {
-      height: this.height ?? null,
-    }
-
-    return html`
-      <aside
-        class="sheet"
-        variant=${this.variant}
-        ?open=${this.isOpen}
-        style=${styleMap(sheetStyle)}
-      >
-        <slot></slot>
-      </aside>
-    `
   }
 
   open() {

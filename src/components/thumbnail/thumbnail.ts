@@ -78,10 +78,6 @@ export class Thumbnail extends LitElement {
   private fallbackImage =
     "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Crect width='300' height='300' fill='%23e0e0e0'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='14' fill='%23999'%3ENo Image%3C/text%3E%3C/svg%3E"
 
-  private handleImageError() {
-    this.hasError = true
-  }
-
   render() {
     const displaySrc = this.hasError ? this.fallbackImage : this.src || this.fallbackImage
     const ratioMap = { '1:1': '1 / 1', '16:9': '16 / 9', '4:3': '4 / 3' }
@@ -132,6 +128,10 @@ export class Thumbnail extends LitElement {
           : ''}
       </figure>
     `
+  }
+
+  private handleImageError() {
+    this.hasError = true
   }
 }
 

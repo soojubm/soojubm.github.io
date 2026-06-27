@@ -18,6 +18,12 @@ export class Scroll extends LitElement {
   @property({ type: String }) gap = ''
   @property({ type: Boolean, reflect: true, attribute: 'hide-scrollbar' }) hideScrollbar = false
 
+  render() {
+    return html`
+      <slot></slot>
+    `
+  }
+
   updated(changed: PropertyValues) {
     if (changed.has('gap')) {
       const gap = this.gap ? (/^\d+$/.test(this.gap) ? `var(--space-${this.gap})` : this.gap) : ''
@@ -28,12 +34,6 @@ export class Scroll extends LitElement {
         this.style.removeProperty('--scroll-gap')
       }
     }
-  }
-
-  render() {
-    return html`
-      <slot></slot>
-    `
   }
 }
 

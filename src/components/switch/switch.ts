@@ -15,13 +15,6 @@ export class Switch extends LitElement {
 
   private inputId = uniqueId('switch')
 
-  private onChange(event: Event) {
-    const target = event.target as HTMLInputElement
-    this.checked = target.checked
-
-    emit(this, 'change', { checked: this.checked })
-  }
-
   render() {
     return html`
       <div>
@@ -37,6 +30,13 @@ export class Switch extends LitElement {
         <label for=${this.inputId}><slot></slot></label>
       </div>
     `
+  }
+
+  private onChange(event: Event) {
+    const target = event.target as HTMLInputElement
+    this.checked = target.checked
+
+    emit(this, 'change', { checked: this.checked })
   }
 }
 

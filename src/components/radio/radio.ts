@@ -17,14 +17,6 @@ export class Radio extends LitElement {
   // 인스턴스 생성 시 단 한 번만 고유 ID 발급
   private generatedId = uniqueId('radio')
 
-  private onChange(event: Event) {
-    event.stopPropagation() // 네이티브 이벤트 전파 차단
-
-    this.checked = (event.target as HTMLInputElement).checked
-
-    emit(this, 'change', { checked: this.checked, value: this.value })
-  }
-
   render() {
     // 외부에서 지정한 id가 있으면 쓰고, 없으면 자동 생성된 고유 ID 사용
     const inputId = this.id || this.generatedId
@@ -46,6 +38,14 @@ export class Radio extends LitElement {
         </label>
       </div>
     `
+  }
+
+  private onChange(event: Event) {
+    event.stopPropagation() // 네이티브 이벤트 전파 차단
+
+    this.checked = (event.target as HTMLInputElement).checked
+
+    emit(this, 'change', { checked: this.checked, value: this.value })
   }
 }
 

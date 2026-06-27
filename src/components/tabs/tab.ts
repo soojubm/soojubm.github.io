@@ -49,6 +49,14 @@ export default class Tab extends LitElement {
   @property({ type: String, attribute: 'aria-selected', reflect: true }) ariaSelected: AriaBoolean =
     'false'
 
+  render() {
+    return html`
+      <div class="tab-content" @click=${this.handleClick}>
+        <slot></slot>
+      </div>
+    `
+  }
+
   public select() {
     emit(this, 'tab-select', { value: this.value })
   }
@@ -63,13 +71,5 @@ export default class Tab extends LitElement {
 
     this.ariaSelected = this.active ? 'true' : 'false'
     this.tabIndex = this.active ? 0 : -1
-  }
-
-  render() {
-    return html`
-      <div class="tab-content" @click=${this.handleClick}>
-        <slot></slot>
-      </div>
-    `
   }
 }

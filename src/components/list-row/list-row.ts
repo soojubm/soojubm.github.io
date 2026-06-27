@@ -25,26 +25,6 @@ export class ListRow extends LitElement {
   @state() private hasTrailing = false
   @state() private hasAvatar = false
 
-  private handleAvatarSlotChange(event: Event) {
-    const slot = event.target as HTMLSlotElement
-    this.hasAvatar = this.hasAssignedContent(slot)
-  }
-
-  private handleTrailingSlotChange(event: Event) {
-    const slot = event.target as HTMLSlotElement
-    this.hasTrailing = this.hasAssignedContent(slot)
-  }
-
-  private hasAssignedContent(slot: HTMLSlotElement) {
-    return slot
-      .assignedNodes({ flatten: true })
-      .some(
-        node =>
-          (node.nodeType === Node.TEXT_NODE && node.textContent?.trim() !== '') ||
-          node.nodeType === Node.ELEMENT_NODE,
-      )
-  }
-
   render() {
     const hasLeading = !!(this.icon || this.avatarSrc || this.emoji || this.hasAvatar)
 
@@ -97,6 +77,26 @@ export class ListRow extends LitElement {
         </span>
       </div>
     `
+  }
+
+  private handleAvatarSlotChange(event: Event) {
+    const slot = event.target as HTMLSlotElement
+    this.hasAvatar = this.hasAssignedContent(slot)
+  }
+
+  private handleTrailingSlotChange(event: Event) {
+    const slot = event.target as HTMLSlotElement
+    this.hasTrailing = this.hasAssignedContent(slot)
+  }
+
+  private hasAssignedContent(slot: HTMLSlotElement) {
+    return slot
+      .assignedNodes({ flatten: true })
+      .some(
+        node =>
+          (node.nodeType === Node.TEXT_NODE && node.textContent?.trim() !== '') ||
+          node.nodeType === Node.ELEMENT_NODE,
+      )
   }
 }
 

@@ -29,30 +29,6 @@ export class Checkbox extends LitElement {
   // SSR 환경 및 crypto가 없는 구형 환경에서도 터지지 않도록 고유 ID 생성을 보장합니다.
   private inputId = uniqueId('checkbox')
 
-  private commitChecked(checked: boolean) {
-    this.checked = checked
-    this.indeterminate = false
-
-    emit(this, 'change', {
-      checked: this.checked,
-      value: this.value || '', // 부모 컴포넌트와의 타입 동기화를 위해 항상 string을 보장합니다.
-    })
-  }
-
-  private onChange = (event: Event) => {
-    const target = event.target as HTMLInputElement
-
-    this.commitChecked(target.checked)
-  }
-
-  private onLabelClick = (event: Event) => {
-    event.preventDefault()
-
-    if (this.disabled) return
-
-    this.commitChecked(!this.checked)
-  }
-
   render() {
     // 가독성을 위한 구조 분해 할당
     const { name, value, checked, disabled, indeterminate, inputId } = this
@@ -78,6 +54,30 @@ export class Checkbox extends LitElement {
         </label>
       </div>
     `
+  }
+
+  private commitChecked(checked: boolean) {
+    this.checked = checked
+    this.indeterminate = false
+
+    emit(this, 'change', {
+      checked: this.checked,
+      value: this.value || '', // 부모 컴포넌트와의 타입 동기화를 위해 항상 string을 보장합니다.
+    })
+  }
+
+  private onChange = (event: Event) => {
+    const target = event.target as HTMLInputElement
+
+    this.commitChecked(target.checked)
+  }
+
+  private onLabelClick = (event: Event) => {
+    event.preventDefault()
+
+    if (this.disabled) return
+
+    this.commitChecked(!this.checked)
   }
 }
 

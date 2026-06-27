@@ -32,12 +32,6 @@ export class Tag extends LitElement {
   @property({ type: String, reflect: true }) tone: TagTone = 'default'
   @property({ type: String }) icon?: IconName
 
-  protected renderDefaultSlot() {
-    return html`
-      <slot></slot>
-    `
-  }
-
   render() {
     return html`
       <span>
@@ -50,6 +44,12 @@ export class Tag extends LitElement {
             `}
         ${this.renderDefaultSlot()}
       </span>
+    `
+  }
+
+  protected renderDefaultSlot() {
+    return html`
+      <slot></slot>
     `
   }
 }

@@ -15,10 +15,6 @@ export class FollowButton extends LitElement {
   @property({ type: String }) value = ''
   @property({ type: Boolean }) disabled = false
 
-  private handleClick() {
-    toggleSelection(this)
-  }
-
   render() {
     return html`
       <button
@@ -30,6 +26,10 @@ export class FollowButton extends LitElement {
         ${this.selected ? '팔로우 중' : '팔로우'}
       </button>
     `
+  }
+
+  private handleClick() {
+    toggleSelection(this)
   }
 }
 
