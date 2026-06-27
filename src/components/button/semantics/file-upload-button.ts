@@ -74,9 +74,16 @@ export class FileUploadButton extends LitElement {
   @state() private files: File[] = []
   @query('input') private input!: HTMLInputElement
 
+  private previewUrls = new Map<File, string>()
+
+  disconnectedCallback() {
+    this.revokePreviewUrls()
+    super.disconnectedCallback()
+  }
+
   private handleChange(event: Event) {
     const input = event.target as HTMLInputElement
-    this.files = Array.from(input.files ?? [])
+    this.setFiles(Array.from(input.files ?? []))
 
     emit(this, 'files-change', { files: this.files })
   }
@@ -86,9 +93,36 @@ export class FileUploadButton extends LitElement {
   }
 
   private removeFile(index: number) {
-    this.files = this.files.filter((_, fileIndex) => fileIndex !== index)
+    this.setFiles(this.files.filter((_, fileIndex) => fileIndex !== index))
 
     emit(this, 'files-change', { files: this.files })
+  }
+
+  private setFiles(files: File[]) {
+    const nextFiles = new Set(files)
+
+    for (const [file, previewUrl] of this.previewUrls) {
+      if (!nextFiles.has(file)) {
+        URL.revokeObjectURL(previewUrl)
+        this.previewUrls.delete(file)
+      }
+    }
+
+    for (const file of files) {
+      if (file.type.startsWith('image/') && !this.previewUrls.has(file)) {
+        this.previewUrls.set(file, URL.createObjectURL(file))
+      }
+    }
+
+    this.files = files
+  }
+
+  private revokePreviewUrls() {
+    for (const previewUrl of this.previewUrls.values()) {
+      URL.revokeObjectURL(previewUrl)
+    }
+
+    this.previewUrls.clear()
   }
 
   private formatFileSize(size: number) {
@@ -131,9 +165,9 @@ export class FileUploadButton extends LitElement {
                   file => file,
                   (file, index) => html`
                     <figure class="attachment">
-                      ${file.type.startsWith('image/')
+                      ${this.previewUrls.has(file)
                         ? html`
-                            <img src=${URL.createObjectURL(file)} alt=${file.name} />
+                            <img src=${this.previewUrls.get(file)} alt=${file.name} />
                           `
                         : ''}
                       <figcaption>

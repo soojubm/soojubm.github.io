@@ -1,5 +1,6 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, query, queryAll, state } from 'lit/decorators.js'
+import { styleMap } from 'lit/directives/style-map.js'
 import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
 import { ScrollSpyController } from '@/controllers/scroll-spy-controller'
@@ -262,13 +263,16 @@ export class TableOfContents extends LitElement {
 
   render() {
     if (!this.items.length) return nothing
+    const listStyles = {
+      '--selection-indicator-y': `${this.indicatorY}px`,
+    }
 
     return html`
       <nav aria-label="On this page">
         <mm-text weight="bold" color="light" class="toc-title" aria-hidden="true">
           On this page
         </mm-text>
-        <div class="toc-list" style=${`--selection-indicator-y: ${this.indicatorY}px`}>
+        <div class="toc-list" style=${styleMap(listStyles)}>
           <mm-selection-indicator position="absolute" aria-hidden="true"></mm-selection-indicator>
           ${this.items.map(
             item => html`

@@ -1,12 +1,12 @@
 import { LitElement, css, html, nothing } from 'lit'
-import { customElement, property, state } from 'lit/decorators.js'
+import { customElement, property, query } from 'lit/decorators.js'
 import '@/components/icon-button/icon-button'
 import '@/components/menuitem/semantics/menu-item-action'
 import '@/components/radius-picker/radius-picker'
 import '@/components/separator/separator'
 import { getPreferredTheme, saveTheme, THEMES, type Theme } from '@/utils/theme'
 import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
-import { OutsideClickController } from '@/controllers/outside-click-controller'
+import { PopupController } from '@/controllers/popup-controller'
 
 @customElement('mm-theme-switcher')
 export class ThemeSwitcher extends LitElement {
@@ -65,11 +65,12 @@ export class ThemeSwitcher extends LitElement {
   `
 
   @property({ type: String }) value: Theme = 'light'
-  @state() private isOpen = false
 
-  private outsideClick = new OutsideClickController(this, () => (this.isOpen = false), {
+  @query('.js-theme-trigger') private trigger?: HTMLElement
+
+  private popup = new PopupController(this, {
     event: 'click',
-    isActive: () => this.isOpen,
+    getTrigger: () => this.trigger,
   })
 
   connectedCallback(): void {
@@ -82,28 +83,34 @@ export class ThemeSwitcher extends LitElement {
   }
 
   private toggleOpen() {
-    this.isOpen = !this.isOpen
+    this.popup.toggle()
   }
 
   // 선택 시 테마를 저장하고 현재 값을 동기화
   private handleThemeChange(theme: Theme, event: Event) {
     event.stopPropagation()
     this.value = saveTheme(theme)
-    this.isOpen = false
+    this.popup.close()
   }
 
   render() {
     return html`
       <div class="theme-switcher">
         <mm-icon-button
+          class="js-theme-trigger"
           variant="ghost"
           icon=${this.currentIcon}
           aria-label="테마 변경"
           aria-haspopup="menu"
-          aria-expanded=${String(this.isOpen)}
+          aria-expanded=${String(this.popup.open)}
           @click=${this.toggleOpen}
         ></mm-icon-button>
-        <div class="panel" ?open=${this.isOpen} role="menu" aria-hidden=${String(!this.isOpen)}>
+        <div
+          class="panel"
+          ?open=${this.popup.open}
+          role="menu"
+          aria-hidden=${String(!this.popup.open)}
+        >
           ${THEMES.map(
             theme => html`
               <mm-menu-item-action

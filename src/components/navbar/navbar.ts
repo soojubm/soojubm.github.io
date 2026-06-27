@@ -12,16 +12,16 @@ type Pagefind = {
 
 @customElement('mm-navbar')
 export class Navbar extends LitElement {
-  @state() private _searchOpen = false
-  @state() private _query = ''
-  @state() private _results: PagefindResult[] = []
-  @state() private _searching = false
+  @state() private searchOpen = false
+  @state() private query = ''
+  @state() private results: PagefindResult[] = []
+  @state() private searching = false
 
-  private _pagefind: Pagefind | null = null
-  private _debounceTimer: ReturnType<typeof setTimeout> | null = null
+  private pagefind: Pagefind | null = null
+  private debounceTimer: ReturnType<typeof setTimeout> | null = null
 
-  @query('.js-search-sheet') private _searchSheet?: Sheet
-  @query('.js-search-sheet mm-searchfield') private _searchField?: HTMLElement
+  @query('.js-search-sheet') private searchSheet?: Sheet
+  @query('.js-search-sheet mm-searchfield') private searchField?: HTMLElement
 
   // 전역 navbar.css와 body의 메뉴 상태 선택자가 내부 구조에 접근해야 하므로 Light DOM을 유지한다.
   createRenderRoot() {
@@ -29,65 +29,65 @@ export class Navbar extends LitElement {
   }
 
   disconnectedCallback() {
-    if (this._debounceTimer) {
-      clearTimeout(this._debounceTimer)
-      this._debounceTimer = null
+    if (this.debounceTimer) {
+      clearTimeout(this.debounceTimer)
+      this.debounceTimer = null
     }
     super.disconnectedCallback()
   }
 
-  private async _loadPagefind() {
-    if (this._pagefind) return
+  private async loadPagefind() {
+    if (this.pagefind) return
     try {
       // webpack이 번들링하지 않도록 Function constructor로 동적 import
       const dynamicImport = new Function('url', 'return import(url)')
-      this._pagefind = (await dynamicImport('/pagefind/pagefind.js')) as Pagefind
+      this.pagefind = (await dynamicImport('/pagefind/pagefind.js')) as Pagefind
     } catch {
       console.warn('Pagefind not available. Run npm run build first.')
     }
   }
 
-  private _toggleSearch() {
-    this._searchOpen = !this._searchOpen
-    if (this._searchSheet) this._searchOpen ? this._searchSheet.open() : this._searchSheet.close()
-    if (this._searchOpen) {
-      this._loadPagefind()
+  private toggleSearch() {
+    this.searchOpen = !this.searchOpen
+    if (this.searchSheet) this.searchOpen ? this.searchSheet.open() : this.searchSheet.close()
+    if (this.searchOpen) {
+      this.loadPagefind()
       requestAnimationFrame(() => {
-        this._searchField?.focus()
+        this.searchField?.focus()
       })
     } else {
-      this._query = ''
-      this._results = []
+      this.query = ''
+      this.results = []
     }
   }
 
-  private _onInput(e: Event) {
-    this._query = (e as CustomEvent).detail?.value ?? (e.target as any)?.value ?? ''
-    if (this._debounceTimer) clearTimeout(this._debounceTimer)
-    if (!this._query.trim()) {
-      this._results = []
+  private onInput(e: Event) {
+    this.query = (e as CustomEvent).detail?.value ?? (e.target as any)?.value ?? ''
+    if (this.debounceTimer) clearTimeout(this.debounceTimer)
+    if (!this.query.trim()) {
+      this.results = []
       return
     }
-    this._debounceTimer = setTimeout(() => {
-      this._debounceTimer = null
-      this._search(this._query)
+    this.debounceTimer = setTimeout(() => {
+      this.debounceTimer = null
+      this.search(this.query)
     }, 200)
   }
 
-  private async _search(query: string) {
-    await this._loadPagefind()
-    if (!this._pagefind) return
-    this._searching = true
+  private async search(query: string) {
+    await this.loadPagefind()
+    if (!this.pagefind) return
+    this.searching = true
     try {
-      const { results } = await this._pagefind.search(query)
+      const { results } = await this.pagefind.search(query)
       const data = await Promise.all(results.slice(0, 8).map(r => r.data()))
-      this._results = data
+      this.results = data
     } finally {
-      this._searching = false
+      this.searching = false
     }
   }
 
-  private _renderDefault() {
+  private renderDefault() {
     return html`
       <mm-search-suggestions bleed="var(--space-4)" fade aria-label="추천 검색어">
         <mm-search-suggestion>아파트열쇠를빌려드립니다</mm-search-suggestion>
@@ -106,29 +106,29 @@ export class Navbar extends LitElement {
     `
   }
 
-  private _renderResults() {
-    if (this._searching) {
+  private renderResults() {
+    if (this.searching) {
       return html`
         <mm-paragraph color="light">검색 중...</mm-paragraph>
       `
     }
-    if (this._results.length === 0) {
+    if (this.results.length === 0) {
       return html`
-        <mm-paragraph color="light">'${this._query}'에 대한 결과가 없습니다.</mm-paragraph>
+        <mm-paragraph color="light">'${this.query}'에 대한 결과가 없습니다.</mm-paragraph>
       `
     }
     return html`
       <mm-menu-item-group aria-label="검색 결과">
         <mm-paragraph color="light">검색 결과</mm-paragraph>
         ${repeat(
-          this._results,
+          this.results,
           result => result.url,
           result => html`
             <mm-menu-item-action
               icon=${ICON_NAMES.SEARCH}
               label=${result.meta.title || result.url}
               description=${result.excerpt ? result.excerpt.replace(/<[^>]*>/g, '') : nothing}
-              @click=${() => this._handleResultClick(result.url)}
+              @click=${() => this.handleResultClick(result.url)}
             ></mm-menu-item-action>
           `,
         )}
@@ -136,7 +136,7 @@ export class Navbar extends LitElement {
     `
   }
 
-  private _handleResultClick(url: string) {
+  private handleResultClick(url: string) {
     window.location.href = url
   }
 
@@ -156,8 +156,8 @@ export class Navbar extends LitElement {
           <mm-icon-button
             icon=${ICON_NAMES.SEARCH}
             aria-label="검색"
-            aria-expanded=${String(this._searchOpen)}
-            @click=${this._toggleSearch}
+            aria-expanded=${String(this.searchOpen)}
+            @click=${this.toggleSearch}
           ></mm-icon-button>
           <div style="position: relative">
             <mm-icon-button
@@ -216,10 +216,10 @@ export class Navbar extends LitElement {
             <mm-flex direction="column" gap="2">
               <mm-searchfield
                 placeholder="컴포넌트, 패턴을 검색하세요"
-                .value=${this._query}
-                @input=${this._onInput}
+                .value=${this.query}
+                @input=${this.onInput}
               ></mm-searchfield>
-              ${this._query ? this._renderResults() : this._renderDefault()}
+              ${this.query ? this.renderResults() : this.renderDefault()}
             </mm-flex>
           </form>
         </mm-sheet-body>

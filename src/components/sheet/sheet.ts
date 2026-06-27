@@ -37,7 +37,7 @@ class Sheet extends LitElement {
 
   /** modal variant: 호스트(backdrop) 영역 클릭 시 닫는다 */
   private handleBackdropClick = (e: MouseEvent) => {
-    if (!this._isModal || !this.isOpen) return
+    if (!this.isModal || !this.isOpen) return
     if (e.target === this) this.requestClose()
   }
 
@@ -45,7 +45,7 @@ class Sheet extends LitElement {
     emit(this, 'sheetclose')
   }
 
-  private get _isModal() {
+  private get isModal() {
     return this.variant !== 'inline'
   }
 
@@ -56,7 +56,7 @@ class Sheet extends LitElement {
   }
 
   private syncScrollLock() {
-    this.scrollLock.set(this.isOpen && this._isModal)
+    this.scrollLock.set(this.isOpen && this.isModal)
   }
 
   render() {

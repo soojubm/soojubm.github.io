@@ -1,5 +1,6 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { styleMap } from 'lit/directives/style-map.js'
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
 
 type Direction = 'row' | 'column'
@@ -43,15 +44,15 @@ export class ButtonGroup extends LitElement {
   @property({ type: Boolean, reflect: true }) stretch = false
 
   render() {
-    const styles = [
-      `flex-direction: ${this.direction}`,
-      `justify-content: ${justifyMap[this.justifyContent] ?? 'flex-start'}`,
-      `align-items: center`,
-      `flex-wrap: ${this.wrap ? 'wrap' : 'nowrap'}`,
-    ].join('; ')
+    const styles = {
+      flexDirection: this.direction,
+      justifyContent: justifyMap[this.justifyContent] ?? 'flex-start',
+      alignItems: 'center',
+      flexWrap: this.wrap ? 'wrap' : 'nowrap',
+    }
 
     return html`
-      <div class="flex" role="group" style=${styles}>
+      <div class="flex" role="group" style=${styleMap(styles)}>
         <slot></slot>
       </div>
     `

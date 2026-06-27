@@ -1,5 +1,6 @@
 import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { styleMap } from 'lit/directives/style-map.js'
 import { gridStyles } from '@/components/grid/grid.styles'
 
 type Columns = 1 | 2 | 3 | 4
@@ -16,12 +17,14 @@ export class Grid extends LitElement {
 
   render() {
     const gap = /^\d+$/.test(this.gap) ? `var(--space-${this.gap})` : this.gap
-    const styles = [`gap: ${gap}`]
-    if (this.columnMaxWidth)
-      styles.push(`--_col-max: ${this.columnMaxWidth}; justify-content: space-between`)
+    const styles = {
+      '--_col-max': this.columnMaxWidth ?? null,
+      gap,
+      justifyContent: this.columnMaxWidth ? 'space-between' : null,
+    }
 
     return html`
-      <div class="grid" style=${styles.join('; ')}><slot></slot></div>
+      <div class="grid" style=${styleMap(styles)}><slot></slot></div>
     `
   }
 }

@@ -1,5 +1,6 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { styleMap } from 'lit/directives/style-map.js'
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
 import { arrayAttributeConverter } from '@/utils/property-converters'
 
@@ -25,6 +26,9 @@ export class Table extends LitElement {
   columns: TableColumn[] = []
 
   private renderHeader(column: TableColumn) {
+    const headerStyles = {
+      textAlign: column.textAlign ?? null,
+    }
     const content = column.sortable
       ? html`
           <mm-flex
@@ -46,7 +50,7 @@ export class Table extends LitElement {
       <th
         scope="col"
         aria-sort=${column.sortable ? 'none' : nothing}
-        style=${column.textAlign ? `text-align: ${column.textAlign}` : nothing}
+        style=${styleMap(headerStyles)}
       >
         ${content}
       </th>
@@ -59,12 +63,15 @@ export class Table extends LitElement {
         <table>
           <caption hidden>${this.caption}</caption>
           <colgroup>
-            ${this.columns.map(
-              column =>
-                html`
-                  <col style=${column.width ? `width: ${column.width}` : nothing} />
-                `,
-            )}
+            ${this.columns.map(column => {
+              const columnStyles = {
+                width: column.width ?? null,
+              }
+
+              return html`
+                <col style=${styleMap(columnStyles)} />
+              `
+            })}
           </colgroup>
           <thead>
             <tr>${this.columns.map(column => this.renderHeader(column))}</tr>

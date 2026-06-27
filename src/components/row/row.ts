@@ -1,5 +1,6 @@
 import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { styleMap } from 'lit/directives/style-map.js'
 import { rowStyles } from '@/components/row/row.styles'
 
 @customElement('mm-row')
@@ -11,9 +12,12 @@ class Row extends LitElement {
 
   render() {
     const gap = /^\d+$/.test(this.gap) ? `var(--space-${this.gap})` : this.gap
+    const styles = {
+      gap: gap || null,
+    }
 
     return html`
-      <div class="row" style=${gap ? `gap: ${gap}` : ''}><slot></slot></div>
+      <div class="row" style=${styleMap(styles)}><slot></slot></div>
     `
   }
 }

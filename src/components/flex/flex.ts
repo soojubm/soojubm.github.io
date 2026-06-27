@@ -1,5 +1,6 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { styleMap } from 'lit/directives/style-map.js'
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
 
 type Direction = 'row' | 'column'
@@ -66,16 +67,16 @@ export class Flex extends LitElement {
     const gap =
       gapMap[this.gap as GapAlias] ??
       (/^\d+$/.test(this.gap) ? `var(--space-${this.gap})` : this.gap)
-    const styles = [
-      `flex-direction: ${this.direction}`,
-      `justify-content: ${justifyMap[this.justifyContent as JustifyAlias] ?? this.justifyContent}`,
-      `align-items: ${alignMap[this.alignItems as AlignAlias] ?? this.alignItems}`,
-      `gap: ${gap}`,
-      `flex-wrap: ${this.wrap ? 'wrap' : 'nowrap'}`,
-    ].join('; ')
+    const styles = {
+      flexDirection: this.direction,
+      justifyContent: justifyMap[this.justifyContent as JustifyAlias] ?? this.justifyContent,
+      alignItems: alignMap[this.alignItems as AlignAlias] ?? this.alignItems,
+      gap,
+      flexWrap: this.wrap ? 'wrap' : 'nowrap',
+    }
 
     return html`
-      <div class="flex" role="group" style=${styles}>
+      <div class="flex" role="group" style=${styleMap(styles)}>
         <slot></slot>
       </div>
     `

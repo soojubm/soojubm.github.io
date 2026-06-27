@@ -1,8 +1,9 @@
-import { LitElement, css, html, nothing, type PropertyValues } from 'lit'
+import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, queryAssignedElements, state } from 'lit/decorators.js'
 import { repeat } from 'lit/directives/repeat.js'
+import { styleMap } from 'lit/directives/style-map.js'
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
-import { OutsideClickController } from '@/controllers/outside-click-controller'
+import { PopupController } from '@/controllers/popup-controller'
 import '@/components/button/button'
 import { ICON_NAMES, type IconName } from '@/components/icon-button/semantics/icon-names'
 import '@/components/menuitem/semantics/menu-item-action'
@@ -120,18 +121,16 @@ export class Dropdown extends LitElement {
   @property({ type: String }) placement: DropdownPlacement = 'bottom-left'
   @property({ type: Boolean, reflect: true }) inline = false
   @property({ type: String, attribute: 'list-min-width' }) listMinWidth = ''
-  @state() protected isOpen = false
   @state() protected options: DropdownOption[] = []
 
   @queryAssignedElements({ selector: 'option', flatten: true })
-  private _optionElements!: HTMLOptionElement[]
+  private optionElements!: HTMLOptionElement[]
   @queryAssignedElements({ slot: 'trigger', flatten: true })
-  private _triggerElements!: HTMLElement[]
+  private triggerElements!: HTMLElement[]
 
-  // 바깥 클릭 시 닫기. document 리스너 등록/해제는 컨트롤러가 대칭으로 관리한다.
-  private _outsideClick = new OutsideClickController(this, () => (this.isOpen = false), {
+  private popup = new PopupController(this, {
     event: 'click',
-    isActive: () => this.isOpen,
+    getTrigger: () => this.triggerElements[0],
   })
 
   firstUpdated() {
@@ -149,7 +148,7 @@ export class Dropdown extends LitElement {
 
   // light DOM의 <option> 요소를 DropdownOption 데이터로 변환
   private parseLightDomOptions(): DropdownOption[] {
-    return this._optionElements.map(option => ({
+    return this.optionElements.map(option => ({
       label: option.textContent || '',
       value: option.value,
       type: (option.getAttribute('type') as 'default' | 'checkbox') || 'default',
@@ -170,13 +169,13 @@ export class Dropdown extends LitElement {
   }
 
   protected toggleOpen() {
-    this.isOpen = !this.isOpen
+    this.popup.toggle()
   }
 
   // 일반 아이템 클릭 시: 선택 라벨 변경 후 드롭다운 닫기
   protected selectOption(option: DropdownOption) {
     this.value = option.value
-    this.isOpen = false
+    this.popup.close()
     this.emitSelectChange(option)
   }
 
@@ -208,12 +207,12 @@ export class Dropdown extends LitElement {
   // 슬롯에 click을 위임하므로 끼워 넣은 요소든 기본 버튼이든 클릭하면 펼쳐진다.
   protected renderTrigger() {
     return html`
-      <slot name="trigger" @click="${this.toggleOpen}">
+      <slot name="trigger" @click="${this.toggleOpen}" @slotchange=${this.popup.syncTrigger}>
         <mm-button
           class="dropdown-button"
           size="small"
           aria-haspopup="true"
-          aria-expanded=${String(this.isOpen)}
+          aria-expanded=${String(this.popup.open)}
         >
           ${this.resolveSelectedLabel()}
           <mm-icon name=${ICON_NAMES.EXPAND}></mm-icon>
@@ -223,13 +222,17 @@ export class Dropdown extends LitElement {
   }
 
   protected renderList() {
+    const listStyles = {
+      minWidth: this.listMinWidth || null,
+    }
+
     return html`
       <div
         class="dropdown-list"
-        ?open=${this.isOpen}
+        ?open=${this.popup.open}
         placement=${this.placement}
         ?inline=${this.inline}
-        style=${this.listMinWidth ? `min-width: ${this.listMinWidth}` : nothing}
+        style=${styleMap(listStyles)}
         role="menu"
       >
         ${repeat(
@@ -270,21 +273,6 @@ export class Dropdown extends LitElement {
         ${option.label}
       </mm-menu-item-action>
     `
-  }
-
-  // 펼침 상태는 실제 트리거 요소가 소유하므로 네이티브 attribute를 직접 갱신한다.
-  private _updateTriggerAria() {
-    const trigger = this._triggerElements[0]
-    if (!trigger) return
-
-    trigger.setAttribute('aria-haspopup', 'true')
-    trigger.setAttribute('aria-expanded', String(this.isOpen))
-  }
-
-  protected updated(changed: PropertyValues) {
-    if (changed.has('isOpen')) {
-      this._updateTriggerAria()
-    }
   }
 
   render() {
