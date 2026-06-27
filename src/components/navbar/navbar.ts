@@ -169,12 +169,12 @@ export class Navbar extends LitElement {
             <div hidden>
               <mm-surface variant="elevated" size="medium">
                 <mm-user-snippet
+                  size="huge"
                   name="수줍이"
                   email="soojubm@gmail.com"
                   phone="010 3121 7045"
                   description="UI Designer"
                   avatar-src=${soojubmImage}
-                  size="large"
                   avatar-variant="secondary"
                   tag-label="접속 중"
                   tag-variant="primary"
@@ -198,7 +198,7 @@ export class Navbar extends LitElement {
                   label="로그아웃"
                 ></mm-menu-item-action>
                 <mm-separator spacing="small"></mm-separator>
-                <mm-flex style="margin-top: -0.25rem">
+                <mm-flex>
                   <mm-link variant="secondary" href="#">개인정보처리방침</mm-link>
                   <mm-link variant="secondary" href="#">서비스 약관</mm-link>
                 </mm-flex>

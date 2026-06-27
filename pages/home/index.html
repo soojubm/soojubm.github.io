@@ -62,6 +62,78 @@
   </mm-surface>
 
   <mm-surface variant="plain">
+    <mm-flex direction="column" gap="4">
+      <mm-text size="24" weight="bold" as="h2">Scroll Spy Controller Sampler</mm-text>
+      <div class="scroll-spy-sampler js-scroll-spy-sampler">
+        <nav class="scroll-spy-sampler-nav" aria-label="Scroll spy sampler">
+          <button
+            class="scroll-spy-sampler-tab is-active"
+            type="button"
+            aria-current="true"
+            data-scroll-spy-target="sampler-intent"
+          >
+            Intent
+          </button>
+          <button
+            class="scroll-spy-sampler-tab"
+            type="button"
+            aria-current="false"
+            data-scroll-spy-target="sampler-root"
+          >
+            Root
+          </button>
+          <button
+            class="scroll-spy-sampler-tab"
+            type="button"
+            aria-current="false"
+            data-scroll-spy-target="sampler-update"
+          >
+            Update
+          </button>
+          <button
+            class="scroll-spy-sampler-tab"
+            type="button"
+            aria-current="false"
+            data-scroll-spy-target="sampler-cleanup"
+          >
+            Cleanup
+          </button>
+        </nav>
+        <div class="scroll-spy-sampler-body js-scroll-spy-body" tabindex="0">
+          <section id="sampler-intent" class="scroll-spy-sampler-section" data-scroll-spy-section>
+            <mm-text size="18" weight="bold" as="h3">Observe visible sections</mm-text>
+            <mm-paragraph>
+              The controller owns IntersectionObserver setup and updates the active section as the
+              panel scrolls.
+            </mm-paragraph>
+          </section>
+          <section id="sampler-root" class="scroll-spy-sampler-section" data-scroll-spy-section>
+            <mm-text size="18" weight="bold" as="h3">Use a local scroll root</mm-text>
+            <mm-paragraph>
+              This sampler passes its inner scroll area as the observer root, so the behavior stays
+              contained in the page sample.
+            </mm-paragraph>
+          </section>
+          <section id="sampler-update" class="scroll-spy-sampler-section" data-scroll-spy-section>
+            <mm-text size="18" weight="bold" as="h3">Refresh targets after render</mm-text>
+            <mm-paragraph>
+              The page setup reads target elements after the HTML is rendered and lets the
+              controller observe those sections.
+            </mm-paragraph>
+          </section>
+          <section id="sampler-cleanup" class="scroll-spy-sampler-section" data-scroll-spy-section>
+            <mm-text size="18" weight="bold" as="h3">Keep document scroll stable</mm-text>
+            <mm-paragraph>
+              Trigger buttons scroll only this inner panel, so clicking Intent, Root, Update, or
+              Cleanup does not move the document.
+            </mm-paragraph>
+          </section>
+        </div>
+      </div>
+    </mm-flex>
+  </mm-surface>
+
+  <mm-surface variant="plain">
     <mm-flex direction="column" gap="3">
       <mm-text size="24" weight="bold" as="h2">TODO</mm-text>
       <mm-text-list
@@ -93,14 +165,13 @@
   ></mm-text-list>
 
   <section class="carousel js-carousel">
-    <nav role="tablist">
-      <mm-flex gap="3">
-        <mm-avatar size="huge" fallback="+"></mm-avatar>
-        <mm-avatar size="huge" fallback="🌏"></mm-avatar>
-        <mm-avatar size="huge" fallback="💀"></mm-avatar>
-        <mm-avatar size="huge" fallback="🍔"></mm-avatar>
-      </mm-flex>
-    </nav>
+    <mm-flex direction="column" gap="1">
+      <mm-text size="24" weight="bold" as="h2">Scroll Hint</mm-text>
+      <mm-paragraph>
+        bleed 없이 프레임 안에서 가로 스크롤을 보여줄 때, 오른쪽 끝의 흐림 레이어로 숨은 콘텐츠가 더
+        있음을 암시합니다.
+      </mm-paragraph>
+    </mm-flex>
     <nav class="carousel-arrows">
       <mm-icon-button
         variant="secondary"
@@ -116,48 +187,44 @@
       ></mm-icon-button>
     </nav>
     <mm-scroll class="js-carousel-viewer" gap="3" hide-scrollbar>
-      <mm-surface class="carousel-slide" variant="plain">
-        <mm-flex direction="column" gap="3" align-items="center">
-          <mm-avatar size="huge" fallback="+"></mm-avatar>
-          <mm-text weight="bold">New</mm-text>
-          <mm-paragraph>새 슬라이드를 추가하세요.</mm-paragraph>
-        </mm-flex>
-      </mm-surface>
-      <mm-surface class="carousel-slide" variant="plain">
-        <mm-flex direction="column" gap="3" align-items="center">
-          <mm-avatar size="huge" fallback="🌏"></mm-avatar>
-          <mm-text weight="bold">Explore</mm-text>
-          <mm-paragraph>세계 곳곳을 둘러보세요.</mm-paragraph>
-        </mm-flex>
-      </mm-surface>
-      <mm-surface class="carousel-slide" variant="plain">
-        <mm-flex direction="column" gap="3" align-items="center">
-          <mm-avatar size="huge" fallback="💀"></mm-avatar>
-          <mm-text weight="bold">Danger</mm-text>
-          <mm-paragraph>위험한 구역을 표시합니다.</mm-paragraph>
-        </mm-flex>
-      </mm-surface>
-      <mm-surface class="carousel-slide" variant="plain">
-        <mm-flex direction="column" gap="3" align-items="center">
-          <mm-avatar size="huge" fallback="🍔"></mm-avatar>
-          <mm-text weight="bold">Eat</mm-text>
-          <mm-paragraph>맛있는 한 끼를 즐기세요.</mm-paragraph>
-        </mm-flex>
-      </mm-surface>
-      <mm-surface class="carousel-slide" variant="plain">
-        <mm-flex direction="column" gap="3" align-items="center">
-          <mm-avatar size="huge" fallback="🎧"></mm-avatar>
-          <mm-text weight="bold">Listen</mm-text>
-          <mm-paragraph>좋아하는 음악을 들어보세요.</mm-paragraph>
-        </mm-flex>
-      </mm-surface>
-      <mm-surface class="carousel-slide" variant="plain">
-        <mm-flex direction="column" gap="3" align-items="center">
-          <mm-avatar size="huge" fallback="📷"></mm-avatar>
-          <mm-text weight="bold">Capture</mm-text>
-          <mm-paragraph>순간을 기록하세요.</mm-paragraph>
-        </mm-flex>
-      </mm-surface>
+      <mm-scroll-hint placement="start"></mm-scroll-hint>
+      <mm-scroll-hint></mm-scroll-hint>
+      <mm-thumbnail
+        class="carousel-slide"
+        ratio="1:1"
+        src="/src/images/temp.png"
+        alt="풍경 샘플"
+      ></mm-thumbnail>
+      <mm-thumbnail
+        class="carousel-slide"
+        ratio="1:1"
+        src="/src/images/soojubm.png"
+        alt="프로필 샘플"
+      ></mm-thumbnail>
+      <mm-thumbnail
+        class="carousel-slide"
+        ratio="1:1"
+        src="/src/images/work-studium.jpg"
+        alt="작업 샘플"
+      ></mm-thumbnail>
+      <mm-thumbnail
+        class="carousel-slide"
+        ratio="1:1"
+        src="/src/images/cake_gosum.jpg"
+        alt="고슴이 샘플"
+      ></mm-thumbnail>
+      <mm-thumbnail
+        class="carousel-slide"
+        ratio="1:1"
+        src="/src/images/work-famus.jpg"
+        alt="작업 샘플"
+      ></mm-thumbnail>
+      <mm-thumbnail
+        class="carousel-slide"
+        ratio="1:1"
+        src="/src/images/prometheus.jpg"
+        alt="영화 샘플"
+      ></mm-thumbnail>
     </mm-scroll>
   </section>
 

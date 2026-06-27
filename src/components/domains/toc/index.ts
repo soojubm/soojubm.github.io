@@ -89,6 +89,7 @@ export class TableOfContents extends LitElement {
   private _indicatorFrame = 0
   private _copyTimer = 0
   private _scrollSpy = new ScrollSpyController(this, {
+    getTargets: () => this.resolveScrollSpyTargets(),
     onActiveChange: id => (this.activeId = id),
   })
 
@@ -103,7 +104,6 @@ export class TableOfContents extends LitElement {
     this._setupFrame = requestAnimationFrame(() => {
       this._setupFrame = 0
       this.buildItems()
-      this.setupScrollSpy()
       this.updateIndicatorPosition()
     })
   }
@@ -165,11 +165,10 @@ export class TableOfContents extends LitElement {
     if (items.length) this.activeId = items[0].id
   }
 
-  private setupScrollSpy() {
-    const targets = this.items
+  private resolveScrollSpyTargets() {
+    return this.items
       .map(({ id }) => document.getElementById(id))
       .filter((el): el is HTMLElement => el !== null)
-    this._scrollSpy.observe(targets)
   }
 
   private updateIndicatorPosition = () => {

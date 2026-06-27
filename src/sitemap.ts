@@ -15,15 +15,15 @@ interface SitemapStandaloneNode {
   icon: IconName
 }
 
-interface SitemapCategoryNode {
-  type: 'category'
+interface SitemapGroupNode {
+  type: 'group'
   id: string
   title: string
   icon: IconName
   items: SitemapItem[]
 }
 
-type SitemapNode = SitemapStandaloneNode | SitemapCategoryNode
+type SitemapNode = SitemapStandaloneNode | SitemapGroupNode
 
 export const SITEMAP: SitemapNode[] = [
   // 1. 상단 독립 메뉴 (Top-level Links)
@@ -46,9 +46,9 @@ export const SITEMAP: SitemapNode[] = [
     icon: ICON_NAMES.DESIGN,
   },
 
-  // 2. 카테고리 그룹 메뉴 (Dropdown Categories)
+  // 2. 접고 펼치는 메뉴 그룹
   {
-    type: 'category',
+    type: 'group',
     id: 'visual-information',
     title: 'Visual Information',
     icon: ICON_NAMES.FLOWER,
@@ -64,7 +64,7 @@ export const SITEMAP: SitemapNode[] = [
     ],
   },
   {
-    type: 'category',
+    type: 'group',
     id: 'actions',
     title: 'Actions',
     icon: ICON_NAMES.MOUSE_BUTTON,
@@ -77,7 +77,7 @@ export const SITEMAP: SitemapNode[] = [
     ],
   },
   {
-    type: 'category',
+    type: 'group',
     id: 'navigations',
     title: 'Navigations',
     icon: ICON_NAMES.SITEMAP,
@@ -90,7 +90,7 @@ export const SITEMAP: SitemapNode[] = [
     ],
   },
   {
-    type: 'category',
+    type: 'group',
     id: 'forms',
     title: 'Forms',
     icon: ICON_NAMES.FIELD,
@@ -103,7 +103,7 @@ export const SITEMAP: SitemapNode[] = [
     ],
   },
   {
-    type: 'category',
+    type: 'group',
     id: 'feedbacks',
     title: 'Feedbacks',
     icon: ICON_NAMES.REPLY,
@@ -116,7 +116,7 @@ export const SITEMAP: SitemapNode[] = [
     ],
   },
   {
-    type: 'category',
+    type: 'group',
     id: 'patterns',
     title: 'Patterns',
     icon: ICON_NAMES.PLACE,

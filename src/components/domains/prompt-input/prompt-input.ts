@@ -181,7 +181,6 @@ export class PromptInput extends LitElement {
             : html`
                 <div class="actions">${this._renderStartActions()} ${this._renderEndActions()}</div>
               `}
-          }
         </div>
       </form>
     `

@@ -1,4 +1,7 @@
 .carousel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
   position: relative;
 }
 .js-carousel-viewer {
@@ -6,13 +9,81 @@
 }
 .carousel-slide {
   flex: 0 0 220px;
-  text-align: center;
 }
+
+.scroll-spy-sampler {
+  display: grid;
+  grid-template-columns: minmax(9rem, 0.4fr) minmax(0, 1fr);
+  gap: var(--space-4);
+  min-height: 24rem;
+  padding: var(--space-4);
+  border-radius: var(--radius);
+  background: var(--color-background-subtle);
+}
+
+.scroll-spy-sampler-nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  align-self: start;
+  position: sticky;
+  top: var(--space-4);
+}
+
+.scroll-spy-sampler-tab {
+  width: 100%;
+  padding: var(--space-2) var(--space-3);
+  border: 0;
+  border-radius: var(--radius);
+  background: transparent;
+  font: inherit;
+  color: var(--color-foreground-light);
+  text-align: left;
+  cursor: pointer;
+}
+
+.scroll-spy-sampler-tab.is-active {
+  background: var(--selection-background);
+  color: var(--selection-foreground);
+}
+
+.scroll-spy-sampler-body {
+  max-height: 24rem;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--space-4);
+}
+
+.scroll-spy-sampler-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: 18rem;
+  padding: var(--space-4);
+  border-radius: var(--radius);
+  background: var(--color-background);
+}
+
+.scroll-spy-sampler-section + .scroll-spy-sampler-section {
+  margin-top: var(--space-3);
+}
+
 @media (max-width: 1100px) {
   .carousel-arrows {
     display: none;
   }
   .carousel:hover .carousel-arrows {
     display: block;
+  }
+}
+
+@media (max-width: 720px) {
+  .scroll-spy-sampler {
+    grid-template-columns: 1fr;
+  }
+
+  .scroll-spy-sampler-nav {
+    position: static;
   }
 }

@@ -14,7 +14,7 @@ SITEMAP.forEach(node => {
     if (node.id !== 'index') {
       ALL_PAGES.push({ id: node.id, subDir: 'patterns' })
     }
-  } else if (node.type === 'category') {
+  } else if (node.type === 'group') {
     const subDir = node.id === 'patterns' ? 'patterns' : 'components'
     node.items.forEach(item => {
       ALL_PAGES.push({ id: item.id, subDir: item.subDir || subDir })
