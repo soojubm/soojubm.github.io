@@ -21,7 +21,7 @@ export class Surface extends LitElement {
 
   render() {
     return html`
-      <div class="surface"><slot></slot></div>
+      <slot></slot>
     `
   }
 }

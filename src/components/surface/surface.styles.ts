@@ -45,22 +45,22 @@ export type Radius = keyof typeof RADII
 
 export const variantStyles = [
   css`
-    :host([variant='transparent']) .surface {
+    :host([variant='transparent']) {
       ${VARIANTS.transparent}
     }
   `,
   css`
-    :host([variant='plain']) .surface {
+    :host([variant='plain']) {
       ${VARIANTS.plain}
     }
   `,
   css`
-    :host([variant='subtle']) .surface {
+    :host([variant='subtle']) {
       ${VARIANTS.subtle}
     }
   `,
   css`
-    :host([variant='elevated']) .surface {
+    :host([variant='elevated']) {
       ${VARIANTS.elevated}
     }
   `,
@@ -68,12 +68,12 @@ export const variantStyles = [
 
 export const sizeStyles = [
   css`
-    :host([size='small']) .surface {
+    :host([size='small']) {
       ${SIZES.small}
     }
   `,
   css`
-    :host([size='medium']) .surface {
+    :host([size='medium']) {
       ${SIZES.medium}
     }
   `,
@@ -94,18 +94,15 @@ export const radiusStyles = [
 
 export const styles = css`
   :host {
-    display: block;
     --surface-height: auto;
     --surface-padding: var(--space-4);
     --surface-border: var(--border);
     --surface-radius: var(--radius);
     --surface-color: var(--color-background);
-  }
 
-  .surface {
-    height: var(--xsurface-height);
     display: flex;
     flex-direction: column;
+    height: var(--surface-height);
     width: 100%;
     padding: var(--surface-padding);
     border: var(--surface-border);
