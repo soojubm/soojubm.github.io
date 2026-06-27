@@ -9,6 +9,8 @@ export type IconButtonSize = 'small' | 'medium'
 
 @customElement('mm-icon-button')
 class IconButton extends LitElement {
+  static styles = [interactiveControlStyles, iconButtonStyles]
+
   @property({ type: String }) icon?: IconName
   @property({ type: String, reflect: true }) variant: IconButtonVariant = 'tertiary'
   @property({ type: String, reflect: true }) size: IconButtonSize = 'medium'
@@ -23,8 +25,6 @@ class IconButton extends LitElement {
   @property({ type: String, attribute: 'aria-checked' }) ariaChecked: string | null = null
   @property({ type: String, attribute: 'aria-controls' }) ariaControls: string | null = null
   @property({ type: String, attribute: 'aria-describedby' }) ariaDescribedBy: string | null = null
-
-  static styles = [interactiveControlStyles, iconButtonStyles]
 
   protected get _accessibilityLabel(): string {
     return this.ariaLabel || this.tooltip || this.icon || ''

@@ -6,6 +6,8 @@ import { renderMenuItemContent } from '../menuitem.utils'
 
 @customElement('mm-menu-item-link')
 export class MenuItemLink extends LitElement {
+  static styles = [menuItemStyles]
+
   @property({ type: String, reflect: true }) size = 'medium'
   @property({ type: String, reflect: true }) tone = ''
   @property({ type: String }) label = ''
@@ -20,8 +22,6 @@ export class MenuItemLink extends LitElement {
   @property({ type: Boolean, attribute: 'hidden-trailing' }) hiddenTrailing = false
   @property({ type: String, attribute: 'aria-current', reflect: true }) ariaCurrent: string | null =
     null
-
-  static styles = [menuItemStyles]
 
   private renderAction() {
     if (this.hiddenTrailing) return html``

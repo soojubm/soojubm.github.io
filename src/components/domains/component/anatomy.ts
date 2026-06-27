@@ -15,17 +15,6 @@ import { componentContentFrameStyles, componentStageFrameStyles } from './compon
  */
 @customElement('mm-component-anatomy')
 export class ComponentAnatomy extends LitElement {
-  @property({ type: String }) heading = 'Anatomy'
-  @property({
-    attribute: 'parts',
-    converter: arrayAttributeConverter<string>(),
-  })
-  parts: string[] = []
-
-  private get normalizedParts() {
-    return Array.isArray(this.parts) ? this.parts : []
-  }
-
   static styles = [
     resetStyles,
     componentContentFrameStyles,
@@ -43,6 +32,17 @@ export class ComponentAnatomy extends LitElement {
       }
     `,
   ]
+
+  @property({ type: String }) heading = 'Anatomy'
+  @property({
+    attribute: 'parts',
+    converter: arrayAttributeConverter<string>(),
+  })
+  parts: string[] = []
+
+  private get normalizedParts() {
+    return Array.isArray(this.parts) ? this.parts : []
+  }
 
   render() {
     return html`

@@ -11,17 +11,17 @@ import { emit } from '../../../utils/emit'
  */
 @customElement('mm-menu-item-checkbox-group')
 export class MenuItemCheckboxGroup extends LitElement {
-  @property({ type: String, attribute: 'aria-label' }) ariaLabel = ''
-  @property({ type: Array }) values: string[] = []
-
-  @queryAssignedElements({ selector: 'mm-menu-item-checkbox', flatten: true })
-  private checkboxes!: MenuItemCheckbox[]
-
   static styles = css`
     :host {
       display: block;
     }
   `
+
+  @property({ type: String, attribute: 'aria-label' }) ariaLabel = ''
+  @property({ type: Array }) values: string[] = []
+
+  @queryAssignedElements({ selector: 'mm-menu-item-checkbox', flatten: true })
+  private checkboxes!: MenuItemCheckbox[]
 
   private handleChange(e: Event) {
     const target = e.target as HTMLElement

@@ -6,13 +6,13 @@ type Columns = 1 | 2 | 3 | 4
 
 @customElement('mm-grid')
 export class Grid extends LitElement {
+  static styles = gridStyles
+
   @property({ type: Number, reflect: true }) columns: Columns = 2
 
   @property({ attribute: 'column-max-width' }) columnMaxWidth?: string
 
   @property({ type: String }) gap = '4'
-
-  static styles = gridStyles
 
   render() {
     const gap = /^\d+$/.test(this.gap) ? `var(--space-${this.gap})` : this.gap

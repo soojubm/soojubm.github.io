@@ -7,6 +7,8 @@ import { renderMenuItemContent } from '../menuitem.utils'
 
 @customElement('mm-menu-item-action')
 export class MenuItemAction extends LitElement {
+  static styles = [menuItemStyles]
+
   @property({ type: String, reflect: true }) size = 'medium'
   @property({ type: String, reflect: true }) tone = ''
   @property({ type: String }) label = ''
@@ -22,8 +24,6 @@ export class MenuItemAction extends LitElement {
   @property({ type: String, attribute: 'aria-expanded' }) ariaExpanded: string | null = null
   @property({ type: String, attribute: 'aria-haspopup' }) ariaHasPopup: string | null = null
   @property({ type: String, attribute: 'aria-current' }) ariaCurrent: string | null = null
-
-  static styles = [menuItemStyles]
 
   render() {
     return html`

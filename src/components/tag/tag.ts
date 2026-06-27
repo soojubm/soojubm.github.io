@@ -27,10 +27,10 @@ export const renderMappedTag = <Value extends string>(
 
 @customElement('mm-tag')
 export class Tag extends LitElement {
+  static styles = [tagStyles]
+
   @property({ type: String, reflect: true }) tone: TagTone = 'default'
   @property({ type: String }) icon?: IconName
-
-  static styles = [tagStyles]
 
   protected renderDefaultSlot() {
     return html`

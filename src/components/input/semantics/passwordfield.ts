@@ -4,6 +4,12 @@ import './textfield'
 
 @customElement('mm-passwordfield')
 class PasswordField extends LitElement {
+  static styles = css`
+    :host {
+      display: block;
+    }
+  `
+
   @property({ type: String }) value = ''
   @property({ type: String }) name = ''
   @property({ type: String }) placeholder = ''
@@ -17,12 +23,6 @@ class PasswordField extends LitElement {
   @property({ type: String, attribute: 'aria-invalid' }) ariaInvalid: string | null = null
 
   @state() private revealed = false
-
-  static styles = css`
-    :host {
-      display: block;
-    }
-  `
 
   render() {
     return html`

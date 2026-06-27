@@ -9,6 +9,8 @@ import { uniqueId } from '../../../utils/unique-id'
 
 @customElement('mm-number-input')
 export class NumberInput extends LitElement {
+  static styles = textfieldStyles
+
   @property({ type: String }) value = ''
   @property({ type: String }) name = ''
   @property({ type: String }) placeholder = ''
@@ -23,8 +25,6 @@ export class NumberInput extends LitElement {
   @property({ type: Number }) min?: number
   @property({ type: Number }) max?: number
   @property({ type: Number }) step = 1
-
-  static styles = textfieldStyles
 
   private inputId = uniqueId('input')
 

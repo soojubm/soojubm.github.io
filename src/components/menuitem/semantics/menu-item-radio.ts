@@ -7,6 +7,8 @@ import { emit } from '../../../utils/emit'
 
 @customElement('mm-menu-item-radio')
 export class MenuItemRadio extends LitElement {
+  static styles = [menuItemStyles]
+
   @property({ type: String, reflect: true }) size = 'medium'
   @property({ type: String, reflect: true }) tone = ''
   @property({ type: String }) label = ''
@@ -19,8 +21,6 @@ export class MenuItemRadio extends LitElement {
   @property({ type: Boolean }) checked = false
   @property({ type: String }) value = ''
   @property({ type: String }) name = ''
-
-  static styles = [menuItemStyles]
 
   private handleSelect = () => {
     if (this.disabled) return

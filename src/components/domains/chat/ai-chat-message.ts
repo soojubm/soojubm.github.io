@@ -9,9 +9,6 @@ import { emit } from '../../../utils/emit'
 
 @customElement('mm-ai-chat-message')
 export class AiChatMessage extends LitElement {
-  @property({ type: String }) datetime = ''
-  @property({ type: Boolean, attribute: 'hidden-reactions' }) hiddenReactions = false
-
   static styles = [
     resetStyles,
     css`
@@ -26,6 +23,9 @@ export class AiChatMessage extends LitElement {
       }
     `,
   ]
+
+  @property({ type: String }) datetime = ''
+  @property({ type: Boolean, attribute: 'hidden-reactions' }) hiddenReactions = false
 
   private _emitReaction(reaction: string) {
     emit(this, 'chat-reaction', { reaction })

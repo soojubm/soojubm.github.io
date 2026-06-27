@@ -8,16 +8,16 @@ import '../icon-button'
  */
 @customElement('mm-more-button')
 export class MoreButton extends LitElement {
-  @property({ type: String, attribute: 'aria-label' }) ariaLabel = '더보기'
-  @property({ type: String, attribute: 'aria-expanded' }) ariaExpanded = 'false'
-  @property({ type: String, attribute: 'aria-controls' }) ariaControls: string | null = null
-  @property({ type: Boolean }) disabled = false
-
   static styles = css`
     :host {
       display: inline-flex;
     }
   `
+
+  @property({ type: String, attribute: 'aria-label' }) ariaLabel = '더보기'
+  @property({ type: String, attribute: 'aria-expanded' }) ariaExpanded = 'false'
+  @property({ type: String, attribute: 'aria-controls' }) ariaControls: string | null = null
+  @property({ type: Boolean }) disabled = false
 
   render() {
     return html`

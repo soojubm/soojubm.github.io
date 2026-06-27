@@ -6,13 +6,13 @@ import { emit } from '../../../utils/emit'
 
 @customElement('mm-prev-button')
 export class PrevButton extends LitElement {
-  @property({ type: Boolean }) disabled = false
-
   static styles = css`
     :host {
       display: inline-flex;
     }
   `
+
+  @property({ type: Boolean }) disabled = false
 
   private _handleClick = () => {
     if (this.disabled) return

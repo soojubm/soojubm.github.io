@@ -11,14 +11,6 @@ import type { ActionConfig } from '../action-config'
 
 @customElement('mm-dialog')
 export class Dialog extends LitElement {
-  @property({ type: Boolean, reflect: true }) open = false
-  @property({ type: String }) heading = ''
-  @property({ type: String }) description = ''
-  @property({ attribute: false }) primaryAction?: ActionConfig
-  @property({ attribute: false }) secondaryAction?: ActionConfig
-
-  @query('mm-sheet') private _sheet?: Sheet
-
   static styles = css`
     :host {
       display: block;
@@ -28,6 +20,14 @@ export class Dialog extends LitElement {
       --sheet-width-small: 320px;
     }
   `
+
+  @property({ type: Boolean, reflect: true }) open = false
+  @property({ type: String }) heading = ''
+  @property({ type: String }) description = ''
+  @property({ attribute: false }) primaryAction?: ActionConfig
+  @property({ attribute: false }) secondaryAction?: ActionConfig
+
+  @query('mm-sheet') private _sheet?: Sheet
 
   show() {
     this.open = true

@@ -7,6 +7,8 @@ import { emit } from '../../../utils/emit'
 
 @customElement('mm-menu-item-checkbox')
 export class MenuItemCheckbox extends LitElement {
+  static styles = [menuItemStyles]
+
   @property({ type: String, reflect: true }) size = 'medium'
   @property({ type: String, reflect: true }) tone = ''
   @property({ type: String }) label = ''
@@ -18,8 +20,6 @@ export class MenuItemCheckbox extends LitElement {
   @property({ type: Boolean }) disabled = false
   @property({ type: Boolean }) checked = false
   @property({ type: String }) value = ''
-
-  static styles = [menuItemStyles]
 
   private commitChecked(checked: boolean) {
     if (this.disabled) return

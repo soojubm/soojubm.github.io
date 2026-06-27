@@ -8,12 +8,12 @@ import { uniqueId } from '../../../utils/unique-id'
 
 @customElement('mm-searchfield')
 class SearchField extends LitElement {
+  static styles = [inputStyles]
+
   @property({ type: String }) value = ''
   @property({ type: String }) placeholder = ''
   @property({ type: Boolean }) disabled = false
   @property({ type: String, reflect: true }) size: 'small' | '' = ''
-
-  static styles = [inputStyles]
 
   private inputId = uniqueId('input')
 

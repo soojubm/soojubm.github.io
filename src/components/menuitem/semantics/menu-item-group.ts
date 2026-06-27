@@ -4,8 +4,6 @@ import { resetStyles } from '../../../stylesheets/shared/reset.styles'
 
 @customElement('mm-menu-item-group')
 export class MenuItemGroup extends LitElement {
-  @property({ type: String, reflect: true }) role = 'menu'
-
   static styles = [
     resetStyles,
     css`
@@ -19,6 +17,8 @@ export class MenuItemGroup extends LitElement {
       }
     `,
   ]
+
+  @property({ type: String, reflect: true }) role = 'menu'
 
   render() {
     return html`

@@ -8,19 +8,6 @@ import { customElement, property } from 'lit/decorators.js'
  */
 @customElement('mm-input')
 export class Input extends LitElement {
-  @property({ attribute: 'input-id' }) inputId = ''
-  @property() type = 'text'
-  @property() value = ''
-  @property() name = ''
-  @property() placeholder = ''
-  @property({ type: String, attribute: 'aria-label' }) ariaLabel = ''
-  @property({ type: Boolean }) disabled = false
-  @property({ type: String, attribute: 'aria-invalid' }) ariaInvalid: string | null = null
-  @property({ attribute: 'aria-describedby' }) ariaDescribedBy: string | null = null
-  @property({ type: Number }) min?: number
-  @property({ type: Number }) max?: number
-  @property({ type: Number }) step?: number
-
   static styles = css`
     :host {
       display: flex;
@@ -109,6 +96,19 @@ export class Input extends LitElement {
       }
     }
   `
+
+  @property({ attribute: 'input-id' }) inputId = ''
+  @property() type = 'text'
+  @property() value = ''
+  @property() name = ''
+  @property() placeholder = ''
+  @property({ type: String, attribute: 'aria-label' }) ariaLabel = ''
+  @property({ type: Boolean }) disabled = false
+  @property({ type: String, attribute: 'aria-invalid' }) ariaInvalid: string | null = null
+  @property({ attribute: 'aria-describedby' }) ariaDescribedBy: string | null = null
+  @property({ type: Number }) min?: number
+  @property({ type: Number }) max?: number
+  @property({ type: Number }) step?: number
 
   private handleInput(event: Event) {
     const target = event.target as HTMLInputElement

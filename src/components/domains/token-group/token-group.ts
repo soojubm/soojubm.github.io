@@ -4,9 +4,6 @@ import { resetStyles } from '../../../stylesheets/shared/reset.styles'
 
 @customElement('mm-token-group')
 export class TokenGroup extends LitElement {
-  @queryAssignedElements({ selector: 'mm-token-item', flatten: true })
-  private _items!: HTMLElement[]
-
   static styles = [
     resetStyles,
     css`
@@ -16,6 +13,9 @@ export class TokenGroup extends LitElement {
       }
     `,
   ]
+
+  @queryAssignedElements({ selector: 'mm-token-item', flatten: true })
+  private _items!: HTMLElement[]
 
   private _assignIndices = () => {
     this._items.forEach((item, index) => item.setAttribute('index', String(index + 1)))

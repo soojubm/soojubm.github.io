@@ -14,14 +14,6 @@ interface BreadcrumbItem {
  */
 @customElement('mm-breadcrumb')
 export class Breadcrumb extends LitElement {
-  @property({
-    attribute: 'items',
-    converter: arrayAttributeConverter<BreadcrumbItem>(),
-  })
-  items: BreadcrumbItem[] = []
-  @property({ type: String, attribute: 'aria-label' }) ariaLabel = 'breadcrumb'
-  @property({ type: String }) divider = '/'
-
   static styles = css`
     :host {
       display: block;
@@ -55,6 +47,14 @@ export class Breadcrumb extends LitElement {
       }
     }
   `
+
+  @property({
+    attribute: 'items',
+    converter: arrayAttributeConverter<BreadcrumbItem>(),
+  })
+  items: BreadcrumbItem[] = []
+  @property({ type: String, attribute: 'aria-label' }) ariaLabel = 'breadcrumb'
+  @property({ type: String }) divider = '/'
 
   render() {
     const items = this.items

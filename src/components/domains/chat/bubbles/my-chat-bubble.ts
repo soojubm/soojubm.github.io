@@ -13,12 +13,12 @@ import { emit } from '../../../../utils/emit'
  */
 @customElement('mm-my-chat-bubble')
 export class MyChatBubble extends LitElement {
+  static styles = [resetStyles, chatBubbleStyles, myChatBubbleStyles]
+
   @property({ type: Boolean }) typing = false
   @property({ type: String }) src = ''
   @property({ type: String }) status = ''
   @property({ type: Boolean, reflect: true }) failed = false
-
-  static styles = [resetStyles, chatBubbleStyles, myChatBubbleStyles]
 
   private renderTyping() {
     return html`

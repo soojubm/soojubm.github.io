@@ -12,6 +12,8 @@ export interface TableColumn {
 
 @customElement('mm-table')
 export class Table extends LitElement {
+  static styles = [resetStyles]
+
   @property({ type: String }) caption = ''
 
   @property({ attribute: false }) rows: unknown = nothing
@@ -21,8 +23,6 @@ export class Table extends LitElement {
     converter: arrayAttributeConverter<TableColumn>(),
   })
   columns: TableColumn[] = []
-
-  static styles = [resetStyles]
 
   private renderHeader(column: TableColumn) {
     const content = column.sortable

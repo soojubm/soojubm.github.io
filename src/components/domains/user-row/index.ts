@@ -9,13 +9,6 @@ import '../../list-row/list-row'
  */
 @customElement('mm-user-row')
 export class UserRow extends LitElement {
-  @property({ type: String }) size = 'medium'
-  @property({ type: String }) label = ''
-  @property({ type: String }) description = ''
-  @property({ type: String }) icon?: IconName
-  @property({ type: String, attribute: 'avatar-src' }) avatarSrc = ''
-  @property({ type: String, attribute: 'avatar-variant' }) avatarVariant = 'tertiary'
-
   static styles = [
     css`
       :host {
@@ -23,6 +16,13 @@ export class UserRow extends LitElement {
       }
     `,
   ]
+
+  @property({ type: String }) size = 'medium'
+  @property({ type: String }) label = ''
+  @property({ type: String }) description = ''
+  @property({ type: String }) icon?: IconName
+  @property({ type: String, attribute: 'avatar-src' }) avatarSrc = ''
+  @property({ type: String, attribute: 'avatar-variant' }) avatarVariant = 'tertiary'
 
   render() {
     return html`

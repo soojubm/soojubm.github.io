@@ -3,11 +3,6 @@ import { customElement, property } from 'lit/decorators.js'
 
 @customElement('mm-page')
 export class Page extends LitElement {
-  @property({ type: String, reflect: true }) width: 'small' | 'medium' | '' = ''
-  @property({ type: String, reflect: true }) layout: 'chat' | '' = ''
-  @property({ type: String, reflect: true }) background: 'subtle' | '' = ''
-  @property({ type: Boolean, attribute: 'full-width', reflect: true }) fullWidth = false
-
   static styles = css`
     :host {
       display: block;
@@ -58,6 +53,11 @@ export class Page extends LitElement {
       min-height: 0;
     }
   `
+
+  @property({ type: String, reflect: true }) width: 'small' | 'medium' | '' = ''
+  @property({ type: String, reflect: true }) layout: 'chat' | '' = ''
+  @property({ type: String, reflect: true }) background: 'subtle' | '' = ''
+  @property({ type: Boolean, attribute: 'full-width', reflect: true }) fullWidth = false
 
   render() {
     return html`

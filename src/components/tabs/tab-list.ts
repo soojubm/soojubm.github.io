@@ -7,6 +7,8 @@ import { tabsStyles } from './tabs.styles'
 
 @customElement('mm-tab-list')
 export default class TabList extends LitElement {
+  static styles = [tabsStyles]
+
   private readonly _tabsId = uniqueId('tabs')
 
   @property({ type: String }) value = ''
@@ -15,8 +17,6 @@ export default class TabList extends LitElement {
   @queryAssignedElements({ flatten: true }) private _assignedElements!: HTMLElement[]
   @query('.indicator') private indicator!: HTMLDivElement
   @query('.tablist-container') private tablistContainer!: HTMLDivElement
-
-  static styles = [tabsStyles]
 
   private get _tabs(): Tab[] {
     return this._assignedElements.filter((element): element is Tab => element instanceof Tab)

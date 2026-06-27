@@ -8,10 +8,6 @@ import { resetStyles } from '../../../../stylesheets/shared/reset.styles'
  */
 @customElement('mm-product-price')
 export class ProductPrice extends LitElement {
-  @property({ type: String }) price = ''
-  @property({ type: String, attribute: 'original-price' }) originalPrice = ''
-  @property({ type: String }) discount = ''
-
   static styles = [
     resetStyles,
     css`
@@ -24,6 +20,10 @@ export class ProductPrice extends LitElement {
       }
     `,
   ]
+
+  @property({ type: String }) price = ''
+  @property({ type: String, attribute: 'original-price' }) originalPrice = ''
+  @property({ type: String }) discount = ''
 
   render() {
     return html`

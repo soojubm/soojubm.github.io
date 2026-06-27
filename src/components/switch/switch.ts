@@ -6,12 +6,12 @@ import { uniqueId } from '../../utils/unique-id'
 
 @customElement('mm-switch')
 export class Switch extends LitElement {
+  static styles = [switchStyles]
+
   @property({ type: String }) name = ''
   @property({ type: String }) size = ''
   @property({ type: Boolean }) checked = false
   @property({ type: Boolean }) disabled = false
-
-  static styles = [switchStyles]
 
   private inputId = uniqueId('switch')
 

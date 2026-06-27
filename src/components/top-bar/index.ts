@@ -6,10 +6,10 @@ import { emit } from '../../utils/emit'
 
 @customElement('mm-top-bar')
 class TopBar extends LitElement {
+  static styles = [topBarStyles]
+
   @property({ type: String }) heading = ''
   @property({ type: String }) nav: 'back' | 'close' | '' = 'back'
-
-  static styles = [topBarStyles]
 
   private handleNavClick = () => {
     emit(this, 'navclick')

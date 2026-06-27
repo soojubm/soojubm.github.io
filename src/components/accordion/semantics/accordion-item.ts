@@ -11,12 +11,6 @@ import { uniqueId } from '../../../utils/unique-id'
  */
 @customElement('mm-accordion-item')
 export class AccordionItem extends LitElement {
-  @property({ type: String }) summary = ''
-  @property({ type: Boolean, reflect: true }) open = false
-  @property({ type: Boolean }) disabled = false
-
-  private readonly _panelId = uniqueId('accordion-panel')
-
   static styles = [
     resetStyles,
     css`
@@ -100,6 +94,12 @@ export class AccordionItem extends LitElement {
       }
     `,
   ]
+
+  @property({ type: String }) summary = ''
+  @property({ type: Boolean, reflect: true }) open = false
+  @property({ type: Boolean }) disabled = false
+
+  private readonly _panelId = uniqueId('accordion-panel')
 
   private _toggle() {
     if (this.disabled) return

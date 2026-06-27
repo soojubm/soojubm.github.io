@@ -12,6 +12,8 @@ type CheckboxChangeDetail = {
 
 @customElement('mm-checkbox-group')
 export class CheckboxGroup extends LitElement {
+  static styles = [checkboxGroupStyles]
+
   @property({ type: String })
   name?: string
 
@@ -20,8 +22,6 @@ export class CheckboxGroup extends LitElement {
 
   @property({ type: Array })
   value: string[] = []
-
-  static styles = [checkboxGroupStyles]
 
   @queryAssignedElements({ selector: 'mm-checkbox' })
   private _checkboxes!: Checkbox[]

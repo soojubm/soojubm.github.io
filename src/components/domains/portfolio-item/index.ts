@@ -7,19 +7,6 @@ import { arrayAttributeConverter } from '../../../utils/property-converters'
 
 @customElement('mm-portfolio-item')
 export class PortfolioItem extends LitElement {
-  @property({ type: String }) label = ''
-  @property({ type: String }) description = ''
-  @property({ type: String }) src = ''
-  @property({ type: String }) alt = ''
-  @property({ type: String }) badge = ''
-  @property({ type: String }) modal = ''
-  @property({ type: String }) datetime = ''
-  @property({
-    attribute: 'keywords',
-    converter: arrayAttributeConverter<string>(),
-  })
-  keywords: string[] = []
-
   static styles = [
     resetStyles,
     css`
@@ -81,6 +68,19 @@ export class PortfolioItem extends LitElement {
       }
     `,
   ]
+
+  @property({ type: String }) label = ''
+  @property({ type: String }) description = ''
+  @property({ type: String }) src = ''
+  @property({ type: String }) alt = ''
+  @property({ type: String }) badge = ''
+  @property({ type: String }) modal = ''
+  @property({ type: String }) datetime = ''
+  @property({
+    attribute: 'keywords',
+    converter: arrayAttributeConverter<string>(),
+  })
+  keywords: string[] = []
 
   private open() {
     if (!this.modal) return

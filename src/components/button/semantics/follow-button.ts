@@ -5,11 +5,11 @@ import { toggleSelection } from '../button.utils'
 
 @customElement('mm-follow-button')
 export class FollowButton extends LitElement {
+  static styles = [buttonBaseStyles, followButtonStyles, buttonSelectedStyles]
+
   @property({ type: Boolean, reflect: true }) selected = false
   @property({ type: String }) value = ''
   @property({ type: Boolean }) disabled = false
-
-  static styles = [buttonBaseStyles, followButtonStyles, buttonSelectedStyles]
 
   private handleClick() {
     toggleSelection(this)

@@ -8,10 +8,10 @@ import { chatBubbleStyles } from '../chat.styles'
  */
 @customElement('mm-ai-chat-bubble')
 export class AiChatBubble extends LitElement {
+  static styles = [resetStyles, chatBubbleStyles]
+
   @property({ type: Boolean }) typing = false
   @property({ type: String }) src = ''
-
-  static styles = [resetStyles, chatBubbleStyles]
 
   private renderTyping() {
     return html`

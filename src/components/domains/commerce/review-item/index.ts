@@ -10,11 +10,6 @@ import { ICON_NAMES } from '../../../icon-button/semantics/icon-names'
  */
 @customElement('mm-review-item')
 export class ReviewItem extends LitElement {
-  @property({ type: Number }) rating = 5
-  @property({ type: String }) content = ''
-  @property({ type: String }) author = ''
-  @property({ type: String }) datetime = ''
-
   static styles = [
     resetStyles,
     css`
@@ -29,6 +24,11 @@ export class ReviewItem extends LitElement {
       }
     `,
   ]
+
+  @property({ type: Number }) rating = 5
+  @property({ type: String }) content = ''
+  @property({ type: String }) author = ''
+  @property({ type: String }) datetime = ''
 
   render() {
     return html`

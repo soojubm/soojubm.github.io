@@ -22,15 +22,6 @@ const defaultItems: BottomBarItem[] = [
 
 @customElement('mm-bottom-bar')
 class BottomBar extends LitElement {
-  @property({
-    attribute: 'items',
-    converter: arrayAttributeConverter<BottomBarItem>(defaultItems),
-  })
-  items: BottomBarItem[] = defaultItems
-  @property({ type: String, attribute: 'aria-label' }) ariaLabel = '하단 내비게이션'
-
-  @state() private selectedIndex: number | null = null
-
   static styles = css`
     :host {
       --bottom-bar-item-height: calc(var(--size-medium) + var(--font-line-height-24));
@@ -81,6 +72,15 @@ class BottomBar extends LitElement {
       pointer-events: none;
     }
   `
+
+  @property({
+    attribute: 'items',
+    converter: arrayAttributeConverter<BottomBarItem>(defaultItems),
+  })
+  items: BottomBarItem[] = defaultItems
+  @property({ type: String, attribute: 'aria-label' }) ariaLabel = '하단 내비게이션'
+
+  @state() private selectedIndex: number | null = null
 
   private handleItemClick(e: Event, index: number) {
     e.preventDefault()

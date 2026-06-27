@@ -20,14 +20,6 @@ interface OptionItem {
 
 @customElement('mm-toggle-button-group')
 export class ToggleButtonGroup extends LitElement {
-  @property({
-    attribute: 'options',
-    converter: arrayAttributeConverter<OptionItem>(),
-  })
-  options: OptionItem[] = []
-  @property({ type: Boolean, reflect: true }) stretch = false
-  @property({ type: Number, attribute: 'selected-index' }) selectedIndex = 0
-
   static styles = css`
     :host {
       --toggle-radius: var(--radius);
@@ -58,6 +50,14 @@ export class ToggleButtonGroup extends LitElement {
       width: 100%;
     }
   `
+
+  @property({
+    attribute: 'options',
+    converter: arrayAttributeConverter<OptionItem>(),
+  })
+  options: OptionItem[] = []
+  @property({ type: Boolean, reflect: true }) stretch = false
+  @property({ type: Number, attribute: 'selected-index' }) selectedIndex = 0
 
   private onButtonClick(index: number, option: OptionItem, event: Event) {
     event.stopPropagation()

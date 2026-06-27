@@ -11,11 +11,11 @@ import { uniqueId } from '../../../utils/unique-id'
  */
 @customElement('mm-prop')
 export class Prop extends LitElement {
+  static styles = propStyles
+
   @property({ type: String }) name = ''
   @property({ type: String }) type = ''
   @property({ type: Boolean }) optional = false
-
-  static styles = propStyles
 
   render() {
     return html`
@@ -37,12 +37,12 @@ export class Prop extends LitElement {
  */
 @customElement('mm-component-props')
 export class ComponentProps extends LitElement {
+  static styles = componentPropsStyles
+
   // 💡 1. 컴포넌트 내부에서만 사용할 '열림 상태' 변수를 정의합니다.
   @state() private _isOpened = false
 
   private readonly _propsId = uniqueId('component-props')
-
-  static styles = componentPropsStyles
 
   // 💡 3. 클릭되었을 때 상태를 true로 바꾸는 핸들러 함수
   private _handleClick() {

@@ -5,14 +5,14 @@ import type { ActionConfig } from '../../action-config'
 
 @customElement('mm-sheet-footer')
 class SheetFooter extends LitElement {
-  @property({ attribute: false }) primaryAction?: ActionConfig
-  @property({ attribute: false }) secondaryAction?: ActionConfig
-
   static styles = css`
     :host {
       padding: var(--sheet-section-padding-block, var(--space-3)) 0;
     }
   `
+
+  @property({ attribute: false }) primaryAction?: ActionConfig
+  @property({ attribute: false }) secondaryAction?: ActionConfig
 
   private handlePrimaryClick = () => {
     this.primaryAction?.onClick?.()

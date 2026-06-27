@@ -4,12 +4,6 @@ import { componentContentFrameStyles } from './component.styles'
 
 @customElement('mm-component-section')
 class ComponentSection extends LitElement {
-  @property({ type: String }) heading = ''
-  @property({ type: String }) description = ''
-  @property({ type: String }) level: 'semantic' | 'domain' = 'semantic'
-
-  @state() private _hasContent = false
-
   static styles = [
     componentContentFrameStyles,
     css`
@@ -31,6 +25,12 @@ class ComponentSection extends LitElement {
       }
     `,
   ]
+
+  @property({ type: String }) heading = ''
+  @property({ type: String }) description = ''
+  @property({ type: String }) level: 'semantic' | 'domain' = 'semantic'
+
+  @state() private _hasContent = false
 
   private _onSlotChange(e: Event) {
     const slot = e.target as HTMLSlotElement

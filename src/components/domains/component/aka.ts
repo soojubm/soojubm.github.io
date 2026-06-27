@@ -5,12 +5,6 @@ import { arrayAttributeConverter } from '../../../utils/property-converters'
 
 @customElement('mm-component-aka')
 export class ComponentAka extends LitElement {
-  @property({
-    attribute: 'items',
-    converter: arrayAttributeConverter<string>(),
-  })
-  items: string[] = []
-
   static styles = [
     resetStyles,
     css`
@@ -19,6 +13,12 @@ export class ComponentAka extends LitElement {
       }
     `,
   ]
+
+  @property({
+    attribute: 'items',
+    converter: arrayAttributeConverter<string>(),
+  })
+  items: string[] = []
 
   render() {
     if (!this.items.length) return nothing

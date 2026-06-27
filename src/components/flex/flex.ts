@@ -36,14 +36,6 @@ const gapMap: Record<GapAlias, string> = {
  */
 @customElement('mm-flex')
 export class Flex extends LitElement {
-  @property({ type: String }) direction: Direction = 'row'
-  @property({ type: String, attribute: 'justify-content' }) justifyContent: JustifyContent =
-    'flex-start'
-  @property({ type: String, attribute: 'align-items' }) alignItems: AlignItems = 'stretch'
-  @property({ type: String }) gap = '2'
-  @property({ type: Boolean }) wrap = false
-  @property({ type: Boolean, reflect: true }) stretch = false
-
   static styles = [
     resetStyles,
     css`
@@ -61,6 +53,14 @@ export class Flex extends LitElement {
       }
     `,
   ]
+
+  @property({ type: String }) direction: Direction = 'row'
+  @property({ type: String, attribute: 'justify-content' }) justifyContent: JustifyContent =
+    'flex-start'
+  @property({ type: String, attribute: 'align-items' }) alignItems: AlignItems = 'stretch'
+  @property({ type: String }) gap = '2'
+  @property({ type: Boolean }) wrap = false
+  @property({ type: Boolean, reflect: true }) stretch = false
 
   render() {
     const gap =

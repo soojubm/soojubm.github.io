@@ -5,15 +5,6 @@ import { emit } from '../../../utils/emit'
 
 @customElement('mm-file-upload-button')
 export class FileUploadButton extends LitElement {
-  @property({ type: String }) label = '파일 업로드'
-  @property({ type: String }) helper = ''
-  @property({ type: String }) accept = ''
-  @property({ type: Boolean }) multiple = false
-  @property({ type: Boolean }) capture = false
-
-  @state() private files: File[] = []
-  @query('input') private input!: HTMLInputElement
-
   static styles = css`
     :host {
       display: block;
@@ -73,6 +64,15 @@ export class FileUploadButton extends LitElement {
       top: var(--space-1);
     }
   `
+
+  @property({ type: String }) label = '파일 업로드'
+  @property({ type: String }) helper = ''
+  @property({ type: String }) accept = ''
+  @property({ type: Boolean }) multiple = false
+  @property({ type: Boolean }) capture = false
+
+  @state() private files: File[] = []
+  @query('input') private input!: HTMLInputElement
 
   private handleChange(event: Event) {
     const input = event.target as HTMLInputElement

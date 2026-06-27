@@ -3,8 +3,6 @@ import { customElement, property } from 'lit/decorators.js'
 
 @customElement('mm-backdrop')
 export class Backdrop extends LitElement {
-  @property({ type: Boolean, reflect: true }) open = false
-
   static styles = css`
     :host {
       display: block;
@@ -26,6 +24,8 @@ export class Backdrop extends LitElement {
       transition: opacity 180ms ease, visibility 0s;
     }
   `
+
+  @property({ type: Boolean, reflect: true }) open = false
 
   render() {
     return html`

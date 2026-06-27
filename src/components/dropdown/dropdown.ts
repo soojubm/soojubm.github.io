@@ -22,18 +22,6 @@ export interface DropdownOption {
 
 @customElement('mm-dropdown')
 export class Dropdown extends LitElement {
-  @property({ type: String }) value = ''
-  @property({ type: String }) placement: DropdownPlacement = 'bottom-left'
-  @property({ type: Boolean, reflect: true }) inline = false
-  @property({ type: String, attribute: 'list-min-width' }) listMinWidth = ''
-  @state() protected isOpen = false
-  @state() protected options: DropdownOption[] = []
-
-  @queryAssignedElements({ selector: 'option', flatten: true })
-  private _optionElements!: HTMLOptionElement[]
-  @queryAssignedElements({ slot: 'trigger', flatten: true })
-  private _triggerElements!: HTMLElement[]
-
   static styles = [
     resetStyles,
     css`
@@ -127,6 +115,18 @@ export class Dropdown extends LitElement {
       }
     `,
   ]
+
+  @property({ type: String }) value = ''
+  @property({ type: String }) placement: DropdownPlacement = 'bottom-left'
+  @property({ type: Boolean, reflect: true }) inline = false
+  @property({ type: String, attribute: 'list-min-width' }) listMinWidth = ''
+  @state() protected isOpen = false
+  @state() protected options: DropdownOption[] = []
+
+  @queryAssignedElements({ selector: 'option', flatten: true })
+  private _optionElements!: HTMLOptionElement[]
+  @queryAssignedElements({ slot: 'trigger', flatten: true })
+  private _triggerElements!: HTMLElement[]
 
   // 바깥 클릭 시 닫기. document 리스너 등록/해제는 컨트롤러가 대칭으로 관리한다.
   private _outsideClick = new OutsideClickController(this, () => (this.isOpen = false), {

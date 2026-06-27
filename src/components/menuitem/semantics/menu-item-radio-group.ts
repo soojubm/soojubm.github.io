@@ -6,18 +6,18 @@ import { emit } from '../../../utils/emit'
 
 @customElement('mm-menu-item-radio-group')
 export class MenuItemRadioGroup extends LitElement {
+  static styles = css`
+    :host {
+      display: block;
+    }
+  `
+
   @property({ type: String }) name = ''
   @property({ type: String }) value = ''
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = ''
 
   @queryAssignedElements({ selector: 'mm-menu-item-radio', flatten: true })
   private radios!: MenuItemRadio[]
-
-  static styles = css`
-    :host {
-      display: block;
-    }
-  `
 
   // 하위 mm-menu-item-radio에서 올라오는 이벤트를 가로챕니다.
   private handleRadioChange(e: Event) {

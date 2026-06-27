@@ -4,8 +4,6 @@ import { resetStyles } from '../../../stylesheets/shared/reset.styles'
 
 @customElement('mm-chat-date')
 export class ChatDate extends LitElement {
-  @property({ type: String }) label = ''
-
   static styles = [
     resetStyles,
     css`
@@ -15,6 +13,8 @@ export class ChatDate extends LitElement {
       }
     `,
   ]
+
+  @property({ type: String }) label = ''
 
   render() {
     return html`

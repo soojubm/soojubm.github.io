@@ -3,9 +3,6 @@ import { customElement, property } from 'lit/decorators.js'
 
 @customElement('mm-textfield-label')
 export class TextfieldLabel extends LitElement {
-  @property({ type: String, attribute: 'for' }) htmlFor = ''
-  @property({ type: Boolean }) optional = false
-
   static styles = css`
     label {
       display: block;
@@ -16,6 +13,9 @@ export class TextfieldLabel extends LitElement {
       color: var(--color-foreground-light);
     }
   `
+
+  @property({ type: String, attribute: 'for' }) htmlFor = ''
+  @property({ type: Boolean }) optional = false
 
   render() {
     return html`

@@ -9,12 +9,6 @@ import { emit } from '../../../utils/emit'
 
 @customElement('mm-comment-input')
 export class CommentInput extends LitElement {
-  @property({ type: String }) name = 'comment'
-  @property({ type: String }) placeholder = ''
-  @property({ type: String, attribute: 'submit-label' }) submitLabel = '댓글 게시'
-
-  @query('mm-textarea') private _textarea!: Textarea
-
   static styles = [
     inputStyles,
     css`
@@ -29,6 +23,12 @@ export class CommentInput extends LitElement {
       }
     `,
   ]
+
+  @property({ type: String }) name = 'comment'
+  @property({ type: String }) placeholder = ''
+  @property({ type: String, attribute: 'submit-label' }) submitLabel = '댓글 게시'
+
+  @query('mm-textarea') private _textarea!: Textarea
 
   private _submitComment(event?: Event) {
     event?.preventDefault()

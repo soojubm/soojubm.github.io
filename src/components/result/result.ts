@@ -8,14 +8,14 @@ import { resultStyles } from './result.styles'
 
 @customElement('mm-result')
 class Result extends LitElement {
+  static styles = [resultStyles]
+
   @property({ type: String, attribute: 'avatar-icon' }) avatarIcon?: IconName
   @property({ type: String }) heading = ''
   @property({ type: String }) description = ''
   @property({ attribute: false }) primaryAction?: ActionConfig
   @state() private hasDefaultContent = false
   @state() private hasActionContent = false
-
-  static styles = [resultStyles]
 
   private handleSlotChange(kind: 'default' | 'action', event: Event) {
     const slot = event.target as HTMLSlotElement

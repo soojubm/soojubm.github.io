@@ -4,9 +4,6 @@ import { emit } from '../../../utils/emit'
 
 @customElement('mm-sheet-header')
 class SheetHeader extends LitElement {
-  @property({ type: String }) heading = ''
-  @property({ type: Boolean, attribute: 'close-button' }) closeButton = true
-
   static styles = css`
     header {
       display: flex;
@@ -19,6 +16,9 @@ class SheetHeader extends LitElement {
       box-sizing: border-box;
     }
   `
+
+  @property({ type: String }) heading = ''
+  @property({ type: Boolean, attribute: 'close-button' }) closeButton = true
 
   private handleClose = () => {
     emit(this, 'sheetclose')

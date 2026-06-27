@@ -3,8 +3,6 @@ import { customElement, property } from 'lit/decorators.js'
 
 @customElement('mm-component-related')
 export class ComponentRelated extends LitElement {
-  @property({ type: String }) heading = 'Related Components'
-
   static styles = css`
     :host {
       display: block;
@@ -17,6 +15,8 @@ export class ComponentRelated extends LitElement {
       gap: var(--space-3);
     }
   `
+
+  @property({ type: String }) heading = 'Related Components'
 
   render() {
     return html`

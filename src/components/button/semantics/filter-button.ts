@@ -10,13 +10,13 @@ import '../../icon/icon'
  */
 @customElement('mm-filter-button')
 export class FilterButton extends LitElement {
+  static styles = [buttonBaseStyles, filterButtonStyles, buttonSelectedStyles]
+
   @property({ type: String }) value = ''
   @property({ type: Boolean, reflect: true }) selected = false
   @property({ type: String }) mode: 'single' | 'multiple' = 'single'
   @property({ type: Boolean, attribute: 'select-all' }) selectAll = false
   @property({ type: Boolean }) disabled = false
-
-  static styles = [buttonBaseStyles, filterButtonStyles, buttonSelectedStyles]
 
   private _handleClick() {
     if (this.disabled) return

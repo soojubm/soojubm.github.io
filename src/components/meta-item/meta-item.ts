@@ -4,13 +4,13 @@ import { metaItemStyles } from './meta-item.styles'
 
 @customElement('mm-meta-item')
 class MetaItem extends LitElement {
+  static styles = [metaItemStyles]
+
   @property({ type: String, reflect: true }) layout: 'horizontal' | 'stacked' | 'inline' =
     'horizontal'
   @property({ type: String }) label = ''
   @property({ type: String }) value = ''
   @property({ type: String, attribute: 'value-size' }) valueSize: 'medium' | 'large' = 'medium'
-
-  static styles = [metaItemStyles]
 
   render() {
     return html`

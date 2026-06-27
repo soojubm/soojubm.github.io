@@ -6,13 +6,13 @@ import { uniqueId } from '../../utils/unique-id'
 
 @customElement('mm-radio')
 export class Radio extends LitElement {
+  static styles = [radioStyles]
+
   // 인스턴스 전역 내장 프로퍼티인 id 오버라이드 데코레이터 제거
   @property({ type: String }) name = ''
   @property({ type: String }) value = ''
   @property({ type: Boolean }) checked = false
   @property({ type: Boolean }) disabled = false
-
-  static styles = [radioStyles]
 
   // 인스턴스 생성 시 단 한 번만 고유 ID 발급
   private _uniqueId = uniqueId('radio')

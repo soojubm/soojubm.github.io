@@ -7,13 +7,13 @@ import { ICON_NAMES } from '../icon-button/semantics/icon-names'
 
 @customElement('mm-theme-switcher')
 export class ThemeSwitcher extends LitElement {
-  @property({ type: String }) value: Theme = 'light'
-
   static styles = css`
     :host {
       display: inline-flex;
     }
   `
+
+  @property({ type: String }) value: Theme = 'light'
 
   connectedCallback(): void {
     super.connectedCallback()

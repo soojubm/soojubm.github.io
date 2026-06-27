@@ -10,10 +10,10 @@ import { emit } from '../../../utils/emit'
  */
 @customElement('mm-reveal-button')
 export class RevealButton extends LitElement {
+  static styles = [iconButtonStyles]
+
   @property({ type: Boolean }) revealed = false
   @property({ type: Boolean }) disabled = false
-
-  static styles = [iconButtonStyles]
 
   private _handleClick = () => {
     if (this.disabled) return

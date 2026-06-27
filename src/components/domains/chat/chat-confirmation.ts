@@ -16,11 +16,6 @@ export type ConfirmationStatus = 'pending' | 'accepted' | 'rejected'
  */
 @customElement('mm-chat-confirmation')
 export class ChatConfirmation extends LitElement {
-  @property({ type: String }) status: ConfirmationStatus = 'pending'
-  @property({ type: String }) message = ''
-  @property({ type: String, attribute: 'approve-label' }) approveLabel = '승인'
-  @property({ type: String, attribute: 'reject-label' }) rejectLabel = '거부'
-
   static styles = [
     resetStyles,
     css`
@@ -39,6 +34,11 @@ export class ChatConfirmation extends LitElement {
       }
     `,
   ]
+
+  @property({ type: String }) status: ConfirmationStatus = 'pending'
+  @property({ type: String }) message = ''
+  @property({ type: String, attribute: 'approve-label' }) approveLabel = '승인'
+  @property({ type: String, attribute: 'reject-label' }) rejectLabel = '거부'
 
   private _approve() {
     this.status = 'accepted'

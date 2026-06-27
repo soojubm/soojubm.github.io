@@ -6,12 +6,12 @@ import { uniqueId } from '../../../utils/unique-id'
 
 @customElement('mm-master-checkbox')
 export class MasterCheckbox extends LitElement {
+  static styles = [checkboxStyles]
+
   @property({ type: String, attribute: 'aria-controls' }) ariaControls: string | null = null
   @property({ type: String, reflect: true }) size = 'large'
   @property({ type: Boolean }) checked = false
   @property({ type: Boolean, reflect: true }) indeterminate = false
-
-  static styles = [checkboxStyles]
 
   private _inputId = uniqueId('master-checkbox')
 

@@ -7,6 +7,8 @@ import { uniqueId } from '../../../utils/unique-id'
 
 @customElement('mm-textfield')
 export class Textfield extends LitElement {
+  static styles = textfieldStyles
+
   @property({ type: String }) type = 'text'
   @property({ type: String }) value = ''
   @property({ type: String }) name = ''
@@ -20,8 +22,6 @@ export class Textfield extends LitElement {
   @property({ type: Boolean, attribute: 'hidden-label', reflect: true }) hiddenLabel = false
   @property({ type: Boolean }) disabled = false
   @property({ type: String, attribute: 'aria-invalid' }) ariaInvalid: string | null = null
-
-  static styles = textfieldStyles
 
   private inputId = uniqueId('input')
 

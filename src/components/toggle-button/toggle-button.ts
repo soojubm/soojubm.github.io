@@ -7,13 +7,13 @@ import '../icon/icon'
 
 @customElement('mm-toggle-button')
 export class ToggleButton extends LitElement {
+  static styles = [buttonBaseStyles, toggleButtonStyles, buttonSelectedStyles]
+
   @property({ type: Boolean, reflect: true }) selected = false
   @property({ type: String }) value = ''
   @property({ type: String }) icon?: IconName
   @property({ type: Boolean }) disabled = false
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = ''
-
-  static styles = [buttonBaseStyles, toggleButtonStyles, buttonSelectedStyles]
 
   protected handleClick = (event: Event) => {
     event.stopPropagation()

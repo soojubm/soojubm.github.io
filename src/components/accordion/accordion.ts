@@ -8,11 +8,6 @@ import type { AccordionItem } from './semantics/accordion-item'
  */
 @customElement('mm-accordion')
 export class Accordion extends LitElement {
-  @property({ type: Boolean }) exclusive = false
-
-  @queryAssignedElements({ selector: 'mm-accordion-item', flatten: true })
-  private _items!: AccordionItem[]
-
   static styles = css`
     :host {
       display: flex;
@@ -20,6 +15,11 @@ export class Accordion extends LitElement {
       gap: var(--space-1);
     }
   `
+
+  @property({ type: Boolean }) exclusive = false
+
+  @queryAssignedElements({ selector: 'mm-accordion-item', flatten: true })
+  private _items!: AccordionItem[]
 
   connectedCallback() {
     super.connectedCallback()

@@ -16,6 +16,19 @@ import { emit } from '../../../utils/emit'
  */
 @customElement('mm-chat-source')
 export class ChatSource extends LitElement {
+  static styles = [
+    resetStyles,
+    css`
+      :host {
+        display: inline-block;
+      }
+
+      mm-icon {
+        font-size: 0.875rem;
+      }
+    `,
+  ]
+
   @property({ type: String }) href = ''
   @property({ type: String }) heading = ''
   @property({ type: String }) description = ''
@@ -36,19 +49,6 @@ export class ChatSource extends LitElement {
       return this.href
     }
   }
-
-  static styles = [
-    resetStyles,
-    css`
-      :host {
-        display: inline-block;
-      }
-
-      mm-icon {
-        font-size: 0.875rem;
-      }
-    `,
-  ]
 
   private _handleClick(e: Event) {
     e.stopPropagation()
@@ -82,37 +82,6 @@ export class ChatSource extends LitElement {
  */
 @customElement('mm-chat-source-group')
 export class ChatSourceGroup extends LitElement {
-  @state() private _activeSource: ChatSource | null = null
-
-  // 바깥을 누르면 열려 있는 소스 시트를 닫는다.
-  private _outsideClick = new OutsideClickController(
-    this,
-    () => {
-      this._activeSource?._setOpen(false)
-      this._activeSource = null
-    },
-    { isActive: () => this._activeSource !== null },
-  )
-
-  private _handleToggle(e: CustomEvent) {
-    const source = e.detail.source as ChatSource
-    const opening = e.detail.open as boolean
-
-    if (!opening) {
-      source._setOpen(false)
-      this._activeSource = null
-      return
-    }
-
-    // Close previously open source
-    if (this._activeSource && this._activeSource !== source) {
-      this._activeSource._setOpen(false)
-    }
-
-    source._setOpen(true)
-    this._activeSource = source
-  }
-
   static styles = [
     resetStyles,
     css`
@@ -184,6 +153,37 @@ export class ChatSourceGroup extends LitElement {
       }
     `,
   ]
+
+  @state() private _activeSource: ChatSource | null = null
+
+  // 바깥을 누르면 열려 있는 소스 시트를 닫는다.
+  private _outsideClick = new OutsideClickController(
+    this,
+    () => {
+      this._activeSource?._setOpen(false)
+      this._activeSource = null
+    },
+    { isActive: () => this._activeSource !== null },
+  )
+
+  private _handleToggle(e: CustomEvent) {
+    const source = e.detail.source as ChatSource
+    const opening = e.detail.open as boolean
+
+    if (!opening) {
+      source._setOpen(false)
+      this._activeSource = null
+      return
+    }
+
+    // Close previously open source
+    if (this._activeSource && this._activeSource !== source) {
+      this._activeSource._setOpen(false)
+    }
+
+    source._setOpen(true)
+    this._activeSource = source
+  }
 
   private get _domain() {
     if (!this._activeSource) return ''

@@ -6,6 +6,8 @@ import { uniqueId } from '../../utils/unique-id'
 
 @customElement('mm-checkbox')
 export class Checkbox extends LitElement {
+  static styles = [checkboxStyles]
+
   @property({ type: String })
   name?: string
 
@@ -25,8 +27,6 @@ export class Checkbox extends LitElement {
   indeterminate = false
 
   @property({ type: String, attribute: 'aria-controls' }) ariaControls: string | null = null
-
-  static styles = [checkboxStyles]
 
   // SSR 환경 및 crypto가 없는 구형 환경에서도 터지지 않도록 고유 ID 생성을 보장합니다.
   private _inputId = uniqueId('checkbox')

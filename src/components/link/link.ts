@@ -5,11 +5,11 @@ import { linkStyles } from './link.styles'
 
 @customElement('mm-link')
 class Link extends LitElement {
+  static styles = [linkStyles]
+
   @property({ type: String }) href = ''
   @property({ type: String }) target = ''
   @property({ type: Boolean }) external = false
-
-  static styles = [linkStyles]
 
   render() {
     const tempTarget = this.external ? '_blank' : '_self'

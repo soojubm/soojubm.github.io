@@ -15,15 +15,6 @@ type DisableableElement = HTMLElement & { disabled?: boolean }
  */
 @customElement('mm-setting-item')
 export class SettingItem extends LitElement {
-  @property({ type: String }) label = ''
-  @property({ type: String }) description = ''
-  @property({ type: String }) icon?: IconName
-
-  @property({ type: Boolean, reflect: true }) disabled = false
-
-  @queryAssignedElements({ slot: 'action', flatten: true })
-  private _actions!: DisableableElement[]
-
   static styles = css`
     :host {
       display: block;
@@ -34,6 +25,15 @@ export class SettingItem extends LitElement {
       pointer-events: none;
     }
   `
+
+  @property({ type: String }) label = ''
+  @property({ type: String }) description = ''
+  @property({ type: String }) icon?: IconName
+
+  @property({ type: Boolean, reflect: true }) disabled = false
+
+  @queryAssignedElements({ slot: 'action', flatten: true })
+  private _actions!: DisableableElement[]
 
   render() {
     return html`

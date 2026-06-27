@@ -4,9 +4,6 @@ import { resetStyles } from '../../stylesheets/shared/reset.styles'
 
 @customElement('mm-spinner')
 export class Spinner extends LitElement {
-  @property({ type: String, reflect: true }) size: 'small' | 'medium' | 'large' = 'medium'
-  @property({ type: String }) label = '로딩 중'
-
   static styles = [
     resetStyles,
     css`
@@ -51,6 +48,9 @@ export class Spinner extends LitElement {
       }
     `,
   ]
+
+  @property({ type: String, reflect: true }) size: 'small' | 'medium' | 'large' = 'medium'
+  @property({ type: String }) label = '로딩 중'
 
   render() {
     return html`

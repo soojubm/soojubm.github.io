@@ -7,6 +7,8 @@ let uniqueIdCounter = 0
 
 @customElement('mm-textarea')
 export class Textarea extends LitElement {
+  static styles = inputStyles
+
   @property({ type: String, attribute: 'input-id' }) inputId = ''
   @property({ type: String }) value = ''
   @property({ type: String }) name = ''
@@ -82,8 +84,6 @@ export class Textarea extends LitElement {
   private _dispatchInputEvent(value: string) {
     emit(this, 'input', { value })
   }
-
-  static styles = inputStyles
 
   protected renderTextarea() {
     return html`

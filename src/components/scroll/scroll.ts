@@ -12,11 +12,11 @@ type Direction = 'row' | 'column'
  */
 @customElement('mm-scroll')
 export class Scroll extends LitElement {
+  static styles = scrollStyles
+
   @property({ type: String, reflect: true }) direction: Direction = 'row'
   @property({ type: String }) gap = ''
   @property({ type: Boolean, reflect: true, attribute: 'hide-scrollbar' }) hideScrollbar = false
-
-  static styles = scrollStyles
 
   updated(changed: PropertyValues) {
     if (changed.has('gap')) {

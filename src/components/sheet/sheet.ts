@@ -9,6 +9,8 @@ export type SheetWidth = 'small' | 'medium' | 'large' | 'full'
 
 @customElement('mm-sheet')
 class Sheet extends LitElement {
+  static styles = sheetStyles
+
   @property({ type: String, reflect: true }) variant: SheetVariant = 'center'
   @property({ type: String, reflect: true }) width: SheetWidth = 'medium'
   @property({ type: String }) height?: string
@@ -56,8 +58,6 @@ class Sheet extends LitElement {
   private syncScrollLock() {
     this.scrollLock.set(this.isOpen && this._isModal)
   }
-
-  static styles = sheetStyles
 
   render() {
     const sheetStyle = {

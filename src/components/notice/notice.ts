@@ -12,14 +12,14 @@ const VARIANT_ICONS: Record<string, string> = {
 
 @customElement('mm-notice')
 class Notice extends LitElement {
+  static styles = [noticeStyles]
+
   @property({ type: String }) heading = ''
   @property({ type: String }) description = ''
   @property({ type: String, reflect: true }) variant = ''
   @property({ type: Boolean }) dismissible = false
 
   @state() private dismissed = false
-
-  static styles = [noticeStyles]
 
   private get icon() {
     return VARIANT_ICONS[this.variant] ?? ICON_NAMES.INFO

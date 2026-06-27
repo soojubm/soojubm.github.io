@@ -8,11 +8,6 @@ type ParagraphTruncate = '' | '1' | '2' | '3'
 
 @customElement('mm-paragraph')
 export class Paragraph extends LitElement {
-  @property({ type: String, reflect: true }) size: ParagraphSize = 'medium'
-  @property({ type: String, reflect: true }) color = 'inherit'
-  @property({ type: String, reflect: true }) truncate: ParagraphTruncate = ''
-  @property({ type: Boolean, reflect: true }) centered = false
-
   static styles = [
     resetStyles,
     css`
@@ -80,6 +75,11 @@ export class Paragraph extends LitElement {
       }
     `,
   ]
+
+  @property({ type: String, reflect: true }) size: ParagraphSize = 'medium'
+  @property({ type: String, reflect: true }) color = 'inherit'
+  @property({ type: String, reflect: true }) truncate: ParagraphTruncate = ''
+  @property({ type: Boolean, reflect: true }) centered = false
 
   private get customColorStyle() {
     const isKeyword = this.color === 'inherit' || this.color === 'light' || this.color === 'danger'

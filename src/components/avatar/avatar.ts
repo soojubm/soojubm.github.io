@@ -5,6 +5,8 @@ import { avatarStyles } from './avatar.styles'
 
 @customElement('mm-avatar')
 export class Avatar extends LitElement {
+  static styles = [avatarStyles]
+
   @property({ type: String, reflect: true }) variant = 'primary'
   @property({ type: String, reflect: true }) size = 'medium'
   @property({ type: String, reflect: true }) shape: 'circle' | 'square' = 'square'
@@ -12,8 +14,6 @@ export class Avatar extends LitElement {
   @property({ type: String }) icon?: IconName
 
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = ''
-
-  static styles = [avatarStyles]
 
   // Slot 콘텐츠 존재 여부를 추적하기 위한 내부 상태
   @state() private hasSlottedContent = false

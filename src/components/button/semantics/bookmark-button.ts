@@ -11,11 +11,6 @@ import { toggleSelection } from '../button.utils'
  */
 @customElement('mm-bookmark-button')
 export class BookmarkButton extends LitElement {
-  @property({ type: Boolean, reflect: true }) selected = false
-  @property({ type: String }) value = ''
-  @property({ type: Boolean }) disabled = false
-  @property({ type: String }) shape: 'star' | 'bookmark' | 'heart' = 'star'
-
   static styles = [
     resetStyles,
     css`
@@ -32,6 +27,11 @@ export class BookmarkButton extends LitElement {
       }
     `,
   ]
+
+  @property({ type: Boolean, reflect: true }) selected = false
+  @property({ type: String }) value = ''
+  @property({ type: Boolean }) disabled = false
+  @property({ type: String }) shape: 'star' | 'bookmark' | 'heart' = 'star'
 
   private get iconName() {
     const filled = {

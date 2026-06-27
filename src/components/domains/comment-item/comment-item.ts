@@ -13,16 +13,6 @@ import { uniqueId } from '../../../utils/unique-id'
  */
 @customElement('mm-comment-item')
 export class CommentItem extends LitElement {
-  private readonly _menuId = uniqueId('comment-menu')
-  @property({ type: String }) author = ''
-  @property({ type: String }) datetime = ''
-  @property({ type: String, attribute: 'avatar-src' }) avatarSrc = ''
-  @property({ type: String, attribute: 'reply-label' }) replyLabel = ''
-  @property({ type: Boolean }) editable = false
-
-  @state() private _menuOpen = false
-  @state() private _hasReplies = false
-
   static styles = css`
     :host {
       display: block;
@@ -91,6 +81,16 @@ export class CommentItem extends LitElement {
       width: 100%;
     }
   `
+
+  private readonly _menuId = uniqueId('comment-menu')
+  @property({ type: String }) author = ''
+  @property({ type: String }) datetime = ''
+  @property({ type: String, attribute: 'avatar-src' }) avatarSrc = ''
+  @property({ type: String, attribute: 'reply-label' }) replyLabel = ''
+  @property({ type: Boolean }) editable = false
+
+  @state() private _menuOpen = false
+  @state() private _hasReplies = false
 
   private _emit(type: string) {
     emit(this, type)

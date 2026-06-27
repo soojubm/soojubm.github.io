@@ -15,11 +15,6 @@ import { resetStyles } from '../../../stylesheets/shared/reset.styles'
  */
 @customElement('mm-search-suggestions')
 export class SearchSuggestions extends LitElement {
-  @property({ type: String }) bleed?: string
-
-  @property({ type: Boolean, reflect: true }) fade = false
-  @property({ type: String, reflect: true }) role = 'group'
-
   static styles = [
     resetStyles,
     css`
@@ -52,6 +47,11 @@ export class SearchSuggestions extends LitElement {
       }
     `,
   ]
+
+  @property({ type: String }) bleed?: string
+
+  @property({ type: Boolean, reflect: true }) fade = false
+  @property({ type: String, reflect: true }) role = 'group'
 
   updated(changed: Map<string, unknown>) {
     if (changed.has('bleed')) {

@@ -6,13 +6,13 @@ import { textStyles, type TextColor, type TextSize, type TextWeight } from './te
 
 @customElement('mm-text')
 export class Text extends LitElement {
+  static styles = [resetStyles, textStyles]
+
   @property({ type: String }) as = 'span'
   @property({ type: String, reflect: true }) size: TextSize = '14'
   @property({ type: String, reflect: true }) weight: TextWeight = 'medium'
   @property({ type: String, reflect: true }) color: TextColor = 'inherit'
   @property({ type: Boolean, reflect: true }) centered = false
-
-  static styles = [resetStyles, textStyles]
 
   render() {
     const tag = unsafeStatic(this.as)

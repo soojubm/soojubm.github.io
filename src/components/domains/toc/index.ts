@@ -15,22 +15,6 @@ interface TocItem {
 
 @customElement('mm-toc')
 export class TableOfContents extends LitElement {
-  @state() private items: TocItem[] = []
-  @state() private activeId = ''
-  @state() private copied = false
-  @state() private indicatorY = 0
-
-  private _setupFrame = 0
-  private _indicatorFrame = 0
-  private _copyTimer = 0
-  private _scrollSpy = new ScrollSpyController(this, {
-    onActiveChange: id => (this.activeId = id),
-  })
-
-  @query('.toc-list') private _list?: HTMLElement
-  @query('mm-selection-indicator') private _indicator?: HTMLElement
-  @queryAll('.toc-link') private _links!: NodeListOf<HTMLElement>
-
   static styles = [
     resetStyles,
     css`
@@ -95,6 +79,22 @@ export class TableOfContents extends LitElement {
       }
     `,
   ]
+
+  @state() private items: TocItem[] = []
+  @state() private activeId = ''
+  @state() private copied = false
+  @state() private indicatorY = 0
+
+  private _setupFrame = 0
+  private _indicatorFrame = 0
+  private _copyTimer = 0
+  private _scrollSpy = new ScrollSpyController(this, {
+    onActiveChange: id => (this.activeId = id),
+  })
+
+  @query('.toc-list') private _list?: HTMLElement
+  @query('mm-selection-indicator') private _indicator?: HTMLElement
+  @queryAll('.toc-link') private _links!: NodeListOf<HTMLElement>
 
   connectedCallback() {
     super.connectedCallback()

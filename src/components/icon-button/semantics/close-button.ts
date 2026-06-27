@@ -9,13 +9,13 @@ import { emit } from '../../../utils/emit'
  */
 @customElement('mm-close-button')
 export class CloseButton extends LitElement {
-  @property({ type: Boolean }) disabled = false
-
   static styles = css`
     :host {
       display: inline-flex;
     }
   `
+
+  @property({ type: Boolean }) disabled = false
 
   private _handleClick = () => {
     emit(this, 'close')

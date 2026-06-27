@@ -10,10 +10,6 @@ import { emit } from '../../../utils/emit'
  */
 @customElement('mm-show-more-button')
 export class ShowMoreButton extends LitElement {
-  @property({ type: String, attribute: 'aria-expanded' }) ariaExpanded = 'false'
-  @property({ type: String, attribute: 'more-label' }) moreLabel = 'Show more'
-  @property({ type: String, attribute: 'less-label' }) lessLabel = 'Show less'
-
   static styles = [
     resetStyles,
     css`
@@ -31,6 +27,10 @@ export class ShowMoreButton extends LitElement {
       }
     `,
   ]
+
+  @property({ type: String, attribute: 'aria-expanded' }) ariaExpanded = 'false'
+  @property({ type: String, attribute: 'more-label' }) moreLabel = 'Show more'
+  @property({ type: String, attribute: 'less-label' }) lessLabel = 'Show less'
 
   private handleClick() {
     this.ariaExpanded = this.ariaExpanded === 'true' ? 'false' : 'true'

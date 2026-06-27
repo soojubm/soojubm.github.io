@@ -5,6 +5,8 @@ import { arrayAttributeConverter } from '../../../utils/property-converters'
 
 @customElement('mm-keyword-tag-group')
 export class KeywordTagGroup extends LitElement {
+  static styles = [resetStyles]
+
   @property({ type: String }) heading = ''
 
   @property({
@@ -12,8 +14,6 @@ export class KeywordTagGroup extends LitElement {
     converter: arrayAttributeConverter<string>(),
   })
   keywords: string[] = []
-
-  static styles = [resetStyles]
 
   render() {
     if (!this.keywords.length) return nothing

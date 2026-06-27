@@ -10,6 +10,27 @@ import '../../tag/tag'
  */
 @customElement('mm-text-block')
 class TextBlock extends LitElement {
+  static styles = [
+    resetStyles,
+    css`
+      :host {
+        display: block;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      :host([centered]) .container {
+        align-items: center;
+      }
+      /* Level 1 전용 본문 최대 너비 제한 (가독성 최적화) */
+      :host([level='1']) .container mm-paragraph {
+        max-width: 720px;
+      }
+    `,
+  ]
+
   @property({ type: String }) eyebrow = ''
   @property({ type: String }) heading = ''
   @property({ type: String }) description = ''
@@ -34,27 +55,6 @@ class TextBlock extends LitElement {
       gap: 'var(--space-2)',
     },
   }
-
-  static styles = [
-    resetStyles,
-    css`
-      :host {
-        display: block;
-      }
-      .container {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      :host([centered]) .container {
-        align-items: center;
-      }
-      /* Level 1 전용 본문 최대 너비 제한 (가독성 최적화) */
-      :host([level='1']) .container mm-paragraph {
-        max-width: 720px;
-      }
-    `,
-  ]
 
   render() {
     const variant =

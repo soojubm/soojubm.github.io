@@ -5,18 +5,6 @@ import { arrayAttributeConverter } from '../../../utils/property-converters'
 
 @customElement('mm-avatar-group')
 export class AvatarGroup extends LitElement {
-  @property({
-    attribute: 'avatars',
-    converter: arrayAttributeConverter<string>(),
-  })
-  avatars: string[] = []
-
-  @property({ type: String }) label = ''
-  @property({ type: String }) size = 'small'
-
-  /** 노출할 최대 아바타 수 (나머지는 +N으로 묶음) */
-  private readonly maxVisible = 3
-
   static styles = [
     resetStyles,
     css`
@@ -47,6 +35,18 @@ export class AvatarGroup extends LitElement {
       }
     `,
   ]
+
+  @property({
+    attribute: 'avatars',
+    converter: arrayAttributeConverter<string>(),
+  })
+  avatars: string[] = []
+
+  @property({ type: String }) label = ''
+  @property({ type: String }) size = 'small'
+
+  /** 노출할 최대 아바타 수 (나머지는 +N으로 묶음) */
+  private readonly maxVisible = 3
 
   render() {
     const visible = this.avatars.slice(0, this.maxVisible)

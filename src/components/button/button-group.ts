@@ -15,11 +15,6 @@ const justifyMap: Record<Justify, string> = {
 
 @customElement('mm-button-group')
 export class ButtonGroup extends LitElement {
-  @property({ type: String }) direction: Direction = 'row'
-  @property({ type: String, attribute: 'justify-content' }) justifyContent: Justify = 'start'
-  @property({ type: Boolean }) wrap = false
-  @property({ type: Boolean, reflect: true }) stretch = false
-
   static styles = [
     resetStyles,
     css`
@@ -41,6 +36,11 @@ export class ButtonGroup extends LitElement {
       }
     `,
   ]
+
+  @property({ type: String }) direction: Direction = 'row'
+  @property({ type: String, attribute: 'justify-content' }) justifyContent: Justify = 'start'
+  @property({ type: Boolean }) wrap = false
+  @property({ type: Boolean, reflect: true }) stretch = false
 
   render() {
     const styles = [

@@ -4,10 +4,6 @@ import { resetStyles } from '../../../stylesheets/shared/reset.styles'
 
 @customElement('mm-page-header')
 export class PageHeader extends LitElement {
-  @property({ type: String }) heading = ''
-  @property({ type: String }) description = ''
-  @property({ type: Boolean, reflect: true }) centered = false
-
   static styles = [
     resetStyles,
     css`
@@ -26,6 +22,10 @@ export class PageHeader extends LitElement {
       }
     `,
   ]
+
+  @property({ type: String }) heading = ''
+  @property({ type: String }) description = ''
+  @property({ type: Boolean, reflect: true }) centered = false
 
   render() {
     return html`

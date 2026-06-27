@@ -5,9 +5,6 @@ import '../../icon-button/icon-button'
 
 @customElement('mm-clear-button')
 class ClearButton extends LitElement {
-  @property({ type: String, attribute: 'aria-label' }) ariaLabel = ''
-  @property({ type: Boolean }) disabled = false
-
   static styles = css`
     :host {
       display: inline-flex;
@@ -19,6 +16,9 @@ class ClearButton extends LitElement {
       --icon-button-background-color: var(--color-background);
     }
   `
+
+  @property({ type: String, attribute: 'aria-label' }) ariaLabel = ''
+  @property({ type: Boolean }) disabled = false
 
   render() {
     return html`

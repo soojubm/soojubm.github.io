@@ -22,12 +22,6 @@ const toneIconMap: Record<ChatReasoningFlowTone, IconName> = {
  */
 @customElement('mm-chat-reasoning-flow')
 export class ChatReasoningFlow extends LitElement {
-  @property({ type: Boolean, reflect: true }) active = false
-  @property({ type: String }) tone: ChatReasoningFlowTone = 'thinking'
-  @property({ type: String }) label = ''
-  @property({ type: String }) description = ''
-  @property({ type: String }) icon?: IconName
-
   static styles = [
     resetStyles,
     css`
@@ -82,6 +76,12 @@ export class ChatReasoningFlow extends LitElement {
     `,
   ]
 
+  @property({ type: Boolean, reflect: true }) active = false
+  @property({ type: String }) tone: ChatReasoningFlowTone = 'thinking'
+  @property({ type: String }) label = ''
+  @property({ type: String }) description = ''
+  @property({ type: String }) icon?: IconName
+
   render() {
     return html`
       <span class="flow">
@@ -116,16 +116,6 @@ export class ChatReasoningFlow extends LitElement {
  */
 @customElement('mm-chat-reasoning')
 export class ChatReasoning extends LitElement {
-  @property({ type: Boolean }) thinking = false
-  @property({ type: String }) duration = ''
-  @property({ type: Number }) interval = 2200
-
-  @queryAssignedElements({ selector: 'mm-chat-reasoning-flow', flatten: true })
-  private _assignedFlows!: ChatReasoningFlow[]
-
-  private _flowIndex = 0
-  private _intervalId = 0
-
   static styles = [
     resetStyles,
     css`
@@ -184,6 +174,16 @@ export class ChatReasoning extends LitElement {
       }
     `,
   ]
+
+  @property({ type: Boolean }) thinking = false
+  @property({ type: String }) duration = ''
+  @property({ type: Number }) interval = 2200
+
+  @queryAssignedElements({ selector: 'mm-chat-reasoning-flow', flatten: true })
+  private _assignedFlows!: ChatReasoningFlow[]
+
+  private _flowIndex = 0
+  private _intervalId = 0
 
   firstUpdated() {
     this._syncFlows()

@@ -6,6 +6,9 @@ import { emit } from '../../../utils/emit'
 
 @customElement('mm-radio-group')
 export class RadioGroup extends LitElement {
+  // 🔥 분리한 스타일 지정
+  static styles = [radioGroupStyles]
+
   @property({ type: String }) value = ''
   @property({ type: String }) name = ''
   @property({ type: Boolean }) disabled = false
@@ -13,9 +16,6 @@ export class RadioGroup extends LitElement {
 
   @queryAssignedElements({ selector: 'mm-radio', flatten: true })
   private _radios!: Radio[]
-
-  // 🔥 분리한 스타일 지정
-  static styles = [radioGroupStyles]
 
   protected updated(changedProperties: Map<string, any>) {
     if (changedProperties.has('value') || changedProperties.has('disabled')) {

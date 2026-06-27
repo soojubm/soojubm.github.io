@@ -12,20 +12,6 @@ type MarqueeDirection = 'left' | 'right'
  */
 @customElement('mm-marquee')
 export class Marquee extends LitElement {
-  @property({ type: String, reflect: true }) direction: MarqueeDirection = 'left'
-  @property({ type: String }) gap = '4'
-  @property({ type: Number }) speed = 80
-  @property({ type: Boolean, reflect: true, attribute: 'pause-on-hover' }) pauseOnHover = false
-
-  @state() private _copyCount = 1
-  @state() private _distance = 0
-  @state() private _duration = 1
-
-  @query('.source') private _sourceElement?: HTMLElement
-
-  private _resizeObserver?: ResizeObserver
-  private _measureFrame = 0
-
   static styles = [
     resetStyles,
     css`
@@ -95,6 +81,20 @@ export class Marquee extends LitElement {
       }
     `,
   ]
+
+  @property({ type: String, reflect: true }) direction: MarqueeDirection = 'left'
+  @property({ type: String }) gap = '4'
+  @property({ type: Number }) speed = 80
+  @property({ type: Boolean, reflect: true, attribute: 'pause-on-hover' }) pauseOnHover = false
+
+  @state() private _copyCount = 1
+  @state() private _distance = 0
+  @state() private _duration = 1
+
+  @query('.source') private _sourceElement?: HTMLElement
+
+  private _resizeObserver?: ResizeObserver
+  private _measureFrame = 0
 
   connectedCallback() {
     super.connectedCallback()

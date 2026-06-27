@@ -5,10 +5,6 @@ import '../../domains/indicators/list-marker'
 
 @customElement('mm-token-item')
 export class TokenItem extends LitElement {
-  @property({ type: String }) key = ''
-  @property({ type: String }) value = ''
-  @property({ type: Number }) index = 0
-
   static styles = [
     resetStyles,
     css`
@@ -18,6 +14,10 @@ export class TokenItem extends LitElement {
       }
     `,
   ]
+
+  @property({ type: String }) key = ''
+  @property({ type: String }) value = ''
+  @property({ type: Number }) index = 0
 
   render() {
     return html`

@@ -5,21 +5,6 @@ import '../text/semantics/caption'
 
 @customElement('mm-thumbnail')
 export class Thumbnail extends LitElement {
-  @property({ type: String }) src = ''
-  @property({ type: String }) alt = ''
-  @property({ type: String }) ratio: '1:1' | '16:9' | '4:3' = '16:9'
-  @property({ type: String }) loading: 'eager' | 'lazy' = 'lazy'
-  @property({ type: String, attribute: 'fetchpriority' }) fetchPriority: 'high' | 'low' | 'auto' =
-    'auto'
-
-  @property({ type: String }) href = ''
-  @property({ type: Boolean }) clickable = false
-  @property({ type: String }) caption = ''
-
-  @state() private _hasError = false
-  private _fallbackImage =
-    "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Crect width='300' height='300' fill='%23e0e0e0'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='14' fill='%23999'%3ENo Image%3C/text%3E%3C/svg%3E"
-
   static styles = css`
     :host {
       display: block;
@@ -77,6 +62,21 @@ export class Thumbnail extends LitElement {
       margin-top: var(--space-2, 8px);
     }
   `
+
+  @property({ type: String }) src = ''
+  @property({ type: String }) alt = ''
+  @property({ type: String }) ratio: '1:1' | '16:9' | '4:3' = '16:9'
+  @property({ type: String }) loading: 'eager' | 'lazy' = 'lazy'
+  @property({ type: String, attribute: 'fetchpriority' }) fetchPriority: 'high' | 'low' | 'auto' =
+    'auto'
+
+  @property({ type: String }) href = ''
+  @property({ type: Boolean }) clickable = false
+  @property({ type: String }) caption = ''
+
+  @state() private _hasError = false
+  private _fallbackImage =
+    "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Crect width='300' height='300' fill='%23e0e0e0'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='14' fill='%23999'%3ENo Image%3C/text%3E%3C/svg%3E"
 
   private _handleImageError() {
     this._hasError = true

@@ -6,8 +6,6 @@ import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
 
 @customElement('mm-model-selector')
 export class ModelSelector extends LitElement {
-  @property({ type: String }) value = 'claude-sonnet'
-
   static styles = css`
     :host {
       display: inline-flex;
@@ -25,6 +23,8 @@ export class ModelSelector extends LitElement {
       transform: rotate(180deg);
     }
   `
+
+  @property({ type: String }) value = 'claude-sonnet'
 
   render() {
     return html`

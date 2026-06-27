@@ -8,18 +8,6 @@ import { emit } from '../../../utils/emit'
 
 @customElement('mm-prompt-input')
 export class PromptInput extends LitElement {
-  @property({ type: String }) value = ''
-  @property({ type: String }) name = ''
-  @property({ type: String }) placeholder = 'Ask me anything...'
-  @property({ type: String }) model = 'claude-sonnet'
-  @property({ type: String, attribute: 'submit-label' }) submitLabel = '전송'
-  @property({ type: Boolean, attribute: 'is-loading' }) isLoading = false
-  @property({ type: Boolean, attribute: 'hidden-attachment' }) hiddenAttachment = false
-
-  @query('mm-textarea') private _textarea?: Textarea
-
-  @state() private _isSingleLine = true
-
   static styles = [
     inputStyles,
     css`
@@ -81,6 +69,18 @@ export class PromptInput extends LitElement {
       }
     `,
   ]
+
+  @property({ type: String }) value = ''
+  @property({ type: String }) name = ''
+  @property({ type: String }) placeholder = 'Ask me anything...'
+  @property({ type: String }) model = 'claude-sonnet'
+  @property({ type: String, attribute: 'submit-label' }) submitLabel = '전송'
+  @property({ type: Boolean, attribute: 'is-loading' }) isLoading = false
+  @property({ type: Boolean, attribute: 'hidden-attachment' }) hiddenAttachment = false
+
+  @query('mm-textarea') private _textarea?: Textarea
+
+  @state() private _isSingleLine = true
 
   protected firstUpdated() {
     this._syncSingleLineState()

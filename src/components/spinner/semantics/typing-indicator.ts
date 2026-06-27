@@ -9,9 +9,6 @@ import { resetStyles } from '../../../stylesheets/shared/reset.styles'
  */
 @customElement('mm-typing-indicator')
 export class TypingIndicator extends LitElement {
-  @property({ type: String }) color = 'var(--color-foreground)'
-  @property({ type: String, attribute: 'aria-label' }) ariaLabel = '입력 중'
-
   static styles = [
     resetStyles,
     css`
@@ -53,6 +50,9 @@ export class TypingIndicator extends LitElement {
       }
     `,
   ]
+
+  @property({ type: String }) color = 'var(--color-foreground)'
+  @property({ type: String, attribute: 'aria-label' }) ariaLabel = '입력 중'
 
   render() {
     const dotsStyle = {

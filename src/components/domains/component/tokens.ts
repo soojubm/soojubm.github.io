@@ -9,10 +9,10 @@ import { componentTokensStyles, tokenStyles } from './tokens.styles'
  */
 @customElement('mm-token')
 export class Token extends LitElement {
+  static styles = tokenStyles
+
   @property({ type: String }) name = ''
   @property({ type: String }) default = ''
-
-  static styles = tokenStyles
 
   render() {
     return html`

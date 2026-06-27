@@ -10,9 +10,6 @@ import { emit } from '../../../utils/emit'
  */
 @customElement('mm-chat-suggestion')
 export class ChatSuggestion extends LitElement {
-  @property({ type: String }) value = ''
-  @property({ type: String }) icon?: IconName
-
   static styles = [
     resetStyles,
     css`
@@ -21,6 +18,9 @@ export class ChatSuggestion extends LitElement {
       }
     `,
   ]
+
+  @property({ type: String }) value = ''
+  @property({ type: String }) icon?: IconName
 
   private handleClick() {
     const value = this.value || this.textContent?.trim() || ''

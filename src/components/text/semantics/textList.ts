@@ -8,13 +8,6 @@ type Variant = 'check' | 'number'
 
 @customElement('mm-text-list')
 class TextList extends LitElement {
-  @property({
-    attribute: 'texts',
-    converter: arrayAttributeConverter<string>(),
-  })
-  texts: string[] = []
-  @property({ type: String }) variant: Variant = 'check'
-
   static styles = [
     textStyles,
     css`
@@ -36,6 +29,13 @@ class TextList extends LitElement {
       }
     `,
   ]
+
+  @property({
+    attribute: 'texts',
+    converter: arrayAttributeConverter<string>(),
+  })
+  texts: string[] = []
+  @property({ type: String }) variant: Variant = 'check'
 
   render() {
     const tag = this.variant === 'number' ? 'ol' : 'ul'

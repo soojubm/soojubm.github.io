@@ -4,6 +4,8 @@ import { entityStyles } from './user-snippet.styles'
 
 @customElement('mm-user-snippet')
 class UserSnippet extends LitElement {
+  static styles = [entityStyles]
+
   @property({ type: String }) size = 'medium'
   @property({ type: String }) name = ''
   @property({ type: String }) phone = ''
@@ -13,8 +15,6 @@ class UserSnippet extends LitElement {
   @property({ type: String, attribute: 'avatar-size' }) avatarSize = ''
   @property({ type: String, attribute: 'avatar-variant' }) avatarVariant = 'primary'
   @property({ type: String, attribute: 'tag-label' }) tagLabel = ''
-
-  static styles = [entityStyles]
 
   render() {
     const avatarSize = this.avatarSize || this.size

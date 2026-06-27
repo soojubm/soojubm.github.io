@@ -11,9 +11,6 @@ import { copyToClipboard } from '../../../utils/clipboard'
  */
 @customElement('mm-copy-button')
 export class CopyButton extends LitElement {
-  @property({ type: String }) value = ''
-  @state() private copied = false
-
   static styles = [
     iconButtonStyles,
     css`
@@ -29,6 +26,9 @@ export class CopyButton extends LitElement {
       }
     `,
   ]
+
+  @property({ type: String }) value = ''
+  @state() private copied = false
 
   private _handleClick = async () => {
     const text = this.value || this.textContent?.trim() || ''

@@ -51,6 +51,8 @@ const HEADING_ICON_MAP: Record<string, IconName> = {
 
 @customElement('mm-feature')
 export class Feature extends LitElement {
+  static styles = [featureStyles]
+
   @property({ type: String }) icon?: IconName
   @property({ type: String }) emoji = ''
 
@@ -58,8 +60,6 @@ export class Feature extends LitElement {
 
   @property({ type: String }) description = ''
   @property({ type: Boolean, reflect: true }) centered = false
-
-  static styles = [featureStyles]
 
   private renderVisual() {
     if (this.emoji) {

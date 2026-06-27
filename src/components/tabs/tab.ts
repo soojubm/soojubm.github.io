@@ -4,11 +4,6 @@ import { emit } from '../../utils/emit'
 
 @customElement('mm-tab')
 export default class Tab extends LitElement {
-  @property({ type: String }) value = ''
-  @property({ type: Boolean, reflect: true }) active = false
-  @property({ type: String, reflect: true }) role = 'tab'
-  @property({ type: String, attribute: 'aria-selected', reflect: true }) ariaSelected = 'false'
-
   static styles = css`
     :host {
       position: relative;
@@ -46,6 +41,11 @@ export default class Tab extends LitElement {
     /* 부모 탭리스트가 pill 형태일 때 활성화된 글자 색상을 커스텀하고 싶다면 하단 주석 해제 */
     /* :host-context(mm-tab-list[variant="pill"])[active] { color: var(--selection-foreground); } */
   `
+
+  @property({ type: String }) value = ''
+  @property({ type: Boolean, reflect: true }) active = false
+  @property({ type: String, reflect: true }) role = 'tab'
+  @property({ type: String, attribute: 'aria-selected', reflect: true }) ariaSelected = 'false'
 
   public select() {
     emit(this, 'tab-select', { value: this.value })

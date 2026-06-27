@@ -6,9 +6,6 @@ type Variant = 'number' | 'check'
 
 @customElement('mm-list-marker')
 export class ListMarker extends LitElement {
-  @property({ type: String }) variant: Variant = 'number'
-  @property({ type: Number }) value = 1
-
   static styles = [
     resetStyles,
     css`
@@ -38,6 +35,9 @@ export class ListMarker extends LitElement {
       }
     `,
   ]
+
+  @property({ type: String }) variant: Variant = 'number'
+  @property({ type: Number }) value = 1
 
   private renderCheck() {
     return svg`

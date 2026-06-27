@@ -6,13 +6,6 @@ import { uniqueId } from '../../../utils/unique-id'
 
 @customElement('mm-read-more-paragraph')
 export class ReadMoreParagraph extends LitElement {
-  @property({ type: String }) content = ''
-  @property({ type: Number }) limit = 100
-
-  @state() private expanded = false
-
-  private readonly _contentId = uniqueId('read-more-content')
-
   static styles = [
     resetStyles,
     css`
@@ -26,6 +19,13 @@ export class ReadMoreParagraph extends LitElement {
       }
     `,
   ]
+
+  @property({ type: String }) content = ''
+  @property({ type: Number }) limit = 100
+
+  @state() private expanded = false
+
+  private readonly _contentId = uniqueId('read-more-content')
 
   private toggle() {
     this.expanded = !this.expanded

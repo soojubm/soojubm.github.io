@@ -11,6 +11,8 @@ import '../avatar/avatar'
  */
 @customElement('mm-list-row')
 export class ListRow extends LitElement {
+  static styles = [listRowStyles]
+
   @property({ type: String, reflect: true }) size = 'medium'
   @property({ type: String }) label = ''
   @property({ type: String }) description = ''
@@ -19,8 +21,6 @@ export class ListRow extends LitElement {
   @property({ type: String }) emoji = ''
   @property({ type: String, attribute: 'avatar-src' }) avatarSrc = ''
   @property({ type: String, attribute: 'avatar-variant' }) avatarVariant = 'tertiary'
-
-  static styles = [listRowStyles]
 
   @state() private hasTrailing = false
   @state() private hasAvatar = false

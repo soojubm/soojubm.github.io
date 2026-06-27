@@ -13,16 +13,6 @@ type FilterMode = 'single' | 'multiple'
 
 @customElement('mm-filter-button-group')
 export class FilterButtonGroup extends LitElement {
-  @property({ type: String }) mode: FilterMode = 'single'
-  @property({ type: Array }) selected: string[] = []
-
-  @queryAssignedElements({ selector: 'mm-filter-button', flatten: true })
-  private _buttons!: FilterButton[]
-
-  private get _isMultiple() {
-    return this.mode === 'multiple'
-  }
-
   static styles = [
     resetStyles,
     css`
@@ -36,6 +26,16 @@ export class FilterButtonGroup extends LitElement {
       }
     `,
   ]
+
+  @property({ type: String }) mode: FilterMode = 'single'
+  @property({ type: Array }) selected: string[] = []
+
+  @queryAssignedElements({ selector: 'mm-filter-button', flatten: true })
+  private _buttons!: FilterButton[]
+
+  private get _isMultiple() {
+    return this.mode === 'multiple'
+  }
 
   connectedCallback() {
     super.connectedCallback()

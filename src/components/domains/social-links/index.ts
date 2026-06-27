@@ -16,15 +16,6 @@ type PlatformKey = typeof PLATFORMS[number]['key']
 
 @customElement('mm-social-links')
 export class SocialLinks extends LitElement {
-  @property({ type: String }) github = ''
-  @property({ type: String }) pinterest = ''
-  @property({ type: String }) facebook = ''
-  @property({ type: String }) twitter = ''
-  @property({ type: String }) instagram = ''
-  @property({ type: String }) notion = ''
-
-  @property({ type: Boolean }) compact = false
-
   static styles = [
     resetStyles,
     css`
@@ -39,6 +30,15 @@ export class SocialLinks extends LitElement {
       }
     `,
   ]
+
+  @property({ type: String }) github = ''
+  @property({ type: String }) pinterest = ''
+  @property({ type: String }) facebook = ''
+  @property({ type: String }) twitter = ''
+  @property({ type: String }) instagram = ''
+  @property({ type: String }) notion = ''
+
+  @property({ type: Boolean }) compact = false
 
   private get activeLinks() {
     return PLATFORMS.flatMap(({ key, label, icon }) => {

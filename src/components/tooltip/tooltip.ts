@@ -5,6 +5,8 @@ import { uniqueId } from '../../utils/unique-id'
 
 @customElement('mm-tooltip')
 class Tooltip extends LitElement {
+  static styles = [tooltipStyles]
+
   @property({ type: String }) content = ''
   @property({ type: String, reflect: true }) placement = ''
   @property({ type: Boolean, reflect: true }) open = false
@@ -14,8 +16,6 @@ class Tooltip extends LitElement {
 
   private readonly _contentId = uniqueId('tooltip')
   private _descriptionTargets = new Set<HTMLElement>()
-
-  static styles = [tooltipStyles]
 
   private show() {
     this._syncDescription()

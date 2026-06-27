@@ -20,9 +20,6 @@ const COLOR_OPTIONS = [
 
 @customElement('mm-radius-picker')
 export class RadiusPicker extends LitElement {
-  @state() private shape: Shape = 'circle'
-  @state() private color: Color = 'green'
-
   static styles = css`
     :host {
       position: fixed;
@@ -59,6 +56,9 @@ export class RadiusPicker extends LitElement {
       white-space: nowrap;
     }
   `
+
+  @state() private shape: Shape = 'circle'
+  @state() private color: Color = 'green'
 
   private handleShapeChange(e: CustomEvent) {
     this.shape = e.detail.value as Shape

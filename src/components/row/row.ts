@@ -4,10 +4,10 @@ import { rowStyles } from './row.styles'
 
 @customElement('mm-row')
 class Row extends LitElement {
+  static styles = [rowStyles]
+
   @property({ type: String }) gap = ''
   @property({ type: String, attribute: 'justify-content', reflect: true }) justifyContent = ''
-
-  static styles = [rowStyles]
 
   render() {
     const gap = /^\d+$/.test(this.gap) ? `var(--space-${this.gap})` : this.gap

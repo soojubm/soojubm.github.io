@@ -3,10 +3,6 @@ import { customElement, property } from 'lit/decorators.js'
 
 @customElement('mm-ui-placeholder')
 export class UiPlaceholder extends LitElement {
-  @property({ type: String }) color = 'var(--color-primary-subtle)'
-  @property({ type: String }) height = '4rem'
-  @property({ type: String }) radius = 'var(--radius-large)'
-
   static styles = css`
     :host {
       display: block;
@@ -20,6 +16,10 @@ export class UiPlaceholder extends LitElement {
       border-radius: var(--ui-placeholder-radius);
     }
   `
+
+  @property({ type: String }) color = 'var(--color-primary-subtle)'
+  @property({ type: String }) height = '4rem'
+  @property({ type: String }) radius = 'var(--radius-large)'
 
   render() {
     const style = `
