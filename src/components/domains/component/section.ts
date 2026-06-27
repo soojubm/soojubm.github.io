@@ -24,15 +24,15 @@ class ComponentSection extends LitElement {
 
     .content.has-content {
       display: block;
+      margin: var(--space-2) 0 0 var(--component-content-offset-inline-start);
+      padding: var(--component-content-padding-block) var(--component-content-padding-inline);
       border: var(--border);
       border-radius: var(--radius-large);
-      margin: var(--space-2) 0 0 calc(var(--layout-padding-inline) * -1 + var(--space-4));
-      padding: var(--space-8) calc(var(--layout-padding-inline) - var(--space-4));
     }
 
     @media ${MEDIA.small} {
       .content.has-content {
-        margin-inline: calc(var(--layout-padding-inline) * -1);
+        margin-inline: var(--component-content-bleed-inline);
         padding-inline: var(--layout-padding-inline);
         border-inline: 0;
         border-radius: 0;

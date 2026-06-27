@@ -134,6 +134,10 @@
   --space-12: 3rem;
   --space-16: 64px;
   --space-section: var(--space-16);
+  --component-content-offset-inline-start: calc(var(--layout-padding-inline) * -1 + var(--space-4));
+  --component-content-padding-block: var(--space-8);
+  --component-content-padding-inline: calc(var(--layout-padding-inline) - var(--space-4));
+  --component-content-bleed-inline: calc(var(--layout-padding-inline) * -1);
   --space-1-minus: calc(var(--space-1) * -1);
 
   --border-width: 1px;
