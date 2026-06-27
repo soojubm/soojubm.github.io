@@ -22,26 +22,16 @@ export class MenuItemRadio extends LitElement {
 
   static styles = [menuItemStyles]
 
-  private handleSelect() {
+  private handleSelect = () => {
     if (this.disabled) return
     if (this.checked) return
     this.checked = true
     emit(this, 'change', { checked: this.checked, value: this.value, name: this.name })
   }
 
-  private handleControlChange(e: Event) {
+  private handleControlChange = (e: Event) => {
     e.stopPropagation()
     this.handleSelect()
-  }
-
-  connectedCallback() {
-    super.connectedCallback()
-    this.addEventListener('click', this.handleSelect)
-  }
-
-  disconnectedCallback() {
-    super.disconnectedCallback()
-    this.removeEventListener('click', this.handleSelect)
   }
 
   private renderAction() {
@@ -65,6 +55,7 @@ export class MenuItemRadio extends LitElement {
         data-interactive
         aria-disabled=${this.disabled ? 'true' : nothing}
         aria-checked=${String(this.checked)}
+        @click=${this.handleSelect}
       >
         ${renderMenuItemContent(this, this.renderAction())}
       </div>

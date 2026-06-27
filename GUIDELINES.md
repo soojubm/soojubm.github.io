@@ -93,6 +93,7 @@
 - 전역 이벤트와 연결 중 생성한 자원은 lifecycle에서 대칭적으로 정리한다.
 - 외부 API는 `@property`, 내부 반응형 상태는 `@state`로 구분한다.
 - 고정된 내부 DOM 조회는 Lit query decorator를 우선 사용한다.
+- 비공개 멤버는 `private`로 표시하고 언더스코어 prefix를 붙이지 않는다.
 - 작업 후 Prettier를 실행한다.
 
 ## 컴포넌트 페이지 구조

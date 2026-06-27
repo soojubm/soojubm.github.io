@@ -27,7 +27,7 @@ export class MenuItemCheckbox extends LitElement {
     emit(this, 'change', { checked: this.checked, value: this.value })
   }
 
-  private _handleRowClick = () => {
+  private handleRowClick = () => {
     this.commitChecked(!this.checked)
   }
 
@@ -35,16 +35,6 @@ export class MenuItemCheckbox extends LitElement {
     e.stopPropagation()
     const { checked } = (e as CustomEvent<{ checked: boolean }>).detail
     this.commitChecked(checked)
-  }
-
-  connectedCallback() {
-    super.connectedCallback()
-    this.addEventListener('click', this._handleRowClick)
-  }
-
-  disconnectedCallback() {
-    super.disconnectedCallback()
-    this.removeEventListener('click', this._handleRowClick)
   }
 
   private renderAction() {
@@ -66,6 +56,7 @@ export class MenuItemCheckbox extends LitElement {
         data-interactive
         aria-disabled=${this.disabled ? 'true' : nothing}
         aria-checked=${String(this.checked)}
+        @click=${this.handleRowClick}
       >
         ${renderMenuItemContent(this, this.renderAction())}
       </div>

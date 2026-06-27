@@ -15,7 +15,7 @@ export class MenuItemCheckboxGroup extends LitElement {
   @property({ type: Array }) values: string[] = []
 
   @queryAssignedElements({ selector: 'mm-menu-item-checkbox', flatten: true })
-  private _checkboxes!: MenuItemCheckbox[]
+  private checkboxes!: MenuItemCheckbox[]
 
   static styles = css`
     :host {
@@ -33,7 +33,7 @@ export class MenuItemCheckboxGroup extends LitElement {
     this.values = checked ? [...this.values, value] : this.values.filter(v => v !== value)
 
     // 자식 동기화
-    this._checkboxes.forEach(cb => {
+    this.checkboxes.forEach(cb => {
       cb.checked = this.values.includes(cb.value)
     })
 
@@ -42,12 +42,12 @@ export class MenuItemCheckboxGroup extends LitElement {
 
   private handleSlotChange() {
     // 마크업의 초기 checked 상태를 values로 흡수
-    const preselected = this._checkboxes.filter(cb => cb.checked).map(cb => cb.value)
+    const preselected = this.checkboxes.filter(cb => cb.checked).map(cb => cb.value)
     if (preselected.length && !this.values.length) {
       this.values = preselected
     }
     // values 기준으로 동기화
-    this._checkboxes.forEach(cb => {
+    this.checkboxes.forEach(cb => {
       cb.checked = this.values.includes(cb.value)
     })
   }
