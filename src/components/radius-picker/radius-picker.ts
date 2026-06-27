@@ -8,15 +8,15 @@ const COLOR_CLASSES = ['color-black', 'color-green']
 type Shape = 'circle' | 'square'
 type Color = 'green' | 'black'
 
-const SHAPE_OPTIONS = JSON.stringify([
+const SHAPE_OPTIONS = [
   { value: 'circle', label: 'Circle' },
   { value: 'square', label: 'Square' },
-])
+]
 
-const COLOR_OPTIONS = JSON.stringify([
+const COLOR_OPTIONS = [
   { value: 'green', label: 'Green' },
   { value: 'black', label: 'Black' },
-])
+]
 
 @customElement('mm-radius-picker')
 export class RadiusPicker extends LitElement {
@@ -75,7 +75,7 @@ export class RadiusPicker extends LitElement {
     return html`
       <div class="bar">
         <mm-toggle-button-group
-          options=${SHAPE_OPTIONS}
+          .options=${SHAPE_OPTIONS}
           .selectedIndex=${this.shape === 'square' ? 1 : 0}
           @change=${this.handleShapeChange}
         ></mm-toggle-button-group>
@@ -83,7 +83,7 @@ export class RadiusPicker extends LitElement {
         <div class="divider"></div>
 
         <mm-toggle-button-group
-          options=${COLOR_OPTIONS}
+          .options=${COLOR_OPTIONS}
           .selectedIndex=${this.color === 'black' ? 1 : 0}
           @change=${this.handleColorChange}
         ></mm-toggle-button-group>

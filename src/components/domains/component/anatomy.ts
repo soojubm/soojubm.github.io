@@ -4,6 +4,15 @@ import { resetStyles } from '../../../stylesheets/shared/reset.styles'
 import '../../text/semantics/textList'
 import { componentContentFrameStyles, componentStageFrameStyles } from './component.styles'
 
+const parseParts = (value: string | null): string[] => {
+  try {
+    const parsed = JSON.parse(value || '[]')
+    return Array.isArray(parsed) ? parsed : []
+  } catch {
+    return []
+  }
+}
+
 /**
  * 컴포넌트 해부도(Anatomy) 섹션.
  * 슬롯에 시연 대상을 넣고, parts 배열로 번호 매긴 구성요소 범례를 표시합니다.
@@ -16,16 +25,17 @@ import { componentContentFrameStyles, componentStageFrameStyles } from './compon
 export class ComponentAnatomy extends LitElement {
   @property({ type: String }) heading = 'Anatomy'
   @property({
-    type: Array,
-    converter: value => {
-      try {
-        return JSON.parse(value || '[]')
-      } catch {
-        return []
-      }
+    attribute: 'parts',
+    converter: {
+      fromAttribute: parseParts,
+      toAttribute: value => JSON.stringify(value),
     },
   })
   parts: string[] = []
+
+  private get normalizedParts() {
+    return Array.isArray(this.parts) ? this.parts : []
+  }
 
   static styles = [
     resetStyles,
@@ -51,9 +61,9 @@ export class ComponentAnatomy extends LitElement {
       <div class="stage component-content-frame component-stage-frame">
         <slot></slot>
       </div>
-      ${this.parts.length
+      ${this.normalizedParts.length
         ? html`
-            <mm-text-list variant="number" texts=${JSON.stringify(this.parts)}></mm-text-list>
+            <mm-text-list variant="number" .texts=${this.normalizedParts}></mm-text-list>
           `
         : nothing}
     `

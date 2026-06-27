@@ -9,16 +9,6 @@ export default class Tab extends LitElement {
   @property({ type: String, reflect: true }) role = 'tab'
   @property({ type: String, attribute: 'aria-selected', reflect: true }) ariaSelected = 'false'
 
-  connectedCallback() {
-    super.connectedCallback()
-    this.addEventListener('click', this.handleClick)
-  }
-
-  disconnectedCallback() {
-    this.removeEventListener('click', this.handleClick)
-    super.disconnectedCallback()
-  }
-
   static styles = css`
     :host {
       position: relative;
@@ -75,7 +65,7 @@ export default class Tab extends LitElement {
 
   render() {
     return html`
-      <div class="tab-content">
+      <div class="tab-content" @click=${this.handleClick}>
         <slot></slot>
       </div>
     `

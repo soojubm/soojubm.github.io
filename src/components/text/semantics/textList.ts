@@ -5,9 +5,25 @@ import '../../domains/indicators/list-marker'
 
 type Variant = 'check' | 'number'
 
+const parseTexts = (value: string | null): string[] => {
+  try {
+    const parsed = JSON.parse(value || '[]')
+    return Array.isArray(parsed) ? parsed : []
+  } catch {
+    return []
+  }
+}
+
 @customElement('mm-text-list')
 class TextList extends LitElement {
-  @property({ type: String }) texts = '[]'
+  @property({
+    attribute: 'texts',
+    converter: {
+      fromAttribute: parseTexts,
+      toAttribute: value => JSON.stringify(value),
+    },
+  })
+  texts: string[] = []
   @property({ type: String }) variant: Variant = 'check'
 
   static styles = [
@@ -32,19 +48,9 @@ class TextList extends LitElement {
     `,
   ]
 
-  private _parseTexts() {
-    try {
-      const parsed = JSON.parse(this.texts)
-      return Array.isArray(parsed) ? parsed : []
-    } catch {
-      return []
-    }
-  }
-
   render() {
-    const items = this._parseTexts()
     const tag = this.variant === 'number' ? 'ol' : 'ul'
-    const list = items.map(
+    const list = this.texts.map(
       (text: string, index: number) => html`
         <li>
           <mm-list-marker variant=${this.variant} value=${index + 1}></mm-list-marker>

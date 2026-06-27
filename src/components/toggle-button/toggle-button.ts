@@ -15,16 +15,6 @@ export class ToggleButton extends LitElement {
 
   static styles = [buttonBaseStyles, toggleButtonStyles, buttonSelectedStyles]
 
-  connectedCallback() {
-    super.connectedCallback()
-    this.addEventListener('click', this.handleClick)
-  }
-
-  disconnectedCallback() {
-    this.removeEventListener('click', this.handleClick)
-    super.disconnectedCallback()
-  }
-
   protected handleClick = (event: Event) => {
     event.stopPropagation()
     toggleSelection(this)
@@ -37,6 +27,7 @@ export class ToggleButton extends LitElement {
         ?disabled=${this.disabled}
         aria-pressed=${String(this.selected)}
         aria-label=${this.ariaLabel || nothing}
+        @click=${this.handleClick}
       >
         ${this.icon
           ? html`

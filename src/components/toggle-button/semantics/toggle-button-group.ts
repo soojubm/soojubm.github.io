@@ -17,9 +17,25 @@ interface OptionItem {
   disabled?: boolean
 }
 
+const parseOptions = (value: string | null): OptionItem[] => {
+  try {
+    const parsed = JSON.parse(value || '[]')
+    return Array.isArray(parsed) ? parsed : []
+  } catch {
+    return []
+  }
+}
+
 @customElement('mm-toggle-button-group')
 export class ToggleButtonGroup extends LitElement {
-  @property({ type: String }) options = '[]'
+  @property({
+    attribute: 'options',
+    converter: {
+      fromAttribute: parseOptions,
+      toAttribute: value => JSON.stringify(value),
+    },
+  })
+  options: OptionItem[] = []
   @property({ type: Boolean, reflect: true }) stretch = false
   @property({ type: Number, attribute: 'selected-index' }) selectedIndex = 0
 
@@ -54,15 +70,6 @@ export class ToggleButtonGroup extends LitElement {
     }
   `
 
-  private get parsedOptions(): OptionItem[] {
-    try {
-      const parsed = JSON.parse(this.options)
-      return Array.isArray(parsed) ? parsed : []
-    } catch {
-      return []
-    }
-  }
-
   private onButtonClick(index: number, option: OptionItem, event: Event) {
     event.stopPropagation()
     if (option.disabled) return
@@ -79,7 +86,7 @@ export class ToggleButtonGroup extends LitElement {
     return html`
       <mm-button-group ?stretch=${this.stretch}>
         ${repeat(
-          this.parsedOptions,
+          this.options,
           option => option.value,
           (option, index) => {
             const isSelected = index === this.selectedIndex
