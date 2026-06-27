@@ -2,6 +2,7 @@ import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
 import { chatBubbleStyles } from '@/components/domains/chat/chat.styles'
+import { renderImageBubble, renderTypingBubble } from '@/components/domains/chat/bubbles/renderers'
 
 /**
  * 상대방/AI가 보낸 메시지 버블. 좌측 정렬.
@@ -14,32 +15,12 @@ export class AiChatBubble extends LitElement {
   @property({ type: String }) src = ''
 
   render() {
-    if (this.typing) return this.renderTyping()
-    if (this.src) return this.renderImage()
+    if (this.typing) return renderTypingBubble()
+    if (this.src) return renderImageBubble(this.src)
 
     return html`
       <div class="bubble">
         <slot></slot>
-      </div>
-    `
-  }
-
-  private renderTyping() {
-    return html`
-      <div class="bubble">
-        <div class="typing">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </div>
-    `
-  }
-
-  private renderImage() {
-    return html`
-      <div class="bubble is-image">
-        <mm-thumbnail src=${this.src} alt="" ratio="4:3"></mm-thumbnail>
       </div>
     `
   }

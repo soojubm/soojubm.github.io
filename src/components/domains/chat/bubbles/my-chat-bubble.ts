@@ -3,6 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
 import { chatBubbleStyles } from '@/components/domains/chat/chat.styles'
 import { myChatBubbleStyles } from '@/components/domains/chat/bubbles/styles'
+import { renderImageBubble, renderTypingBubble } from '@/components/domains/chat/bubbles/renderers'
 import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
 import '@/components/text/text'
 import { emit } from '@/utils/emit'
@@ -21,8 +22,8 @@ export class MyChatBubble extends LitElement {
   @property({ type: Boolean, reflect: true }) failed = false
 
   render() {
-    if (this.typing) return this.renderTyping()
-    if (this.src) return this.renderImage()
+    if (this.typing) return renderTypingBubble()
+    if (this.src) return renderImageBubble(this.src)
 
     if (this.failed) {
       return html`
@@ -41,26 +42,6 @@ export class MyChatBubble extends LitElement {
     }
 
     return this.renderBubbleBody()
-  }
-
-  private renderTyping() {
-    return html`
-      <div class="bubble">
-        <div class="typing">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </div>
-    `
-  }
-
-  private renderImage() {
-    return html`
-      <div class="bubble is-image">
-        <mm-thumbnail src=${this.src} alt="" ratio="4:3"></mm-thumbnail>
-      </div>
-    `
   }
 
   private handleRetry() {
