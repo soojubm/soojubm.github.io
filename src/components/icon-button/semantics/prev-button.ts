@@ -14,16 +14,6 @@ export class PrevButton extends LitElement {
     }
   `
 
-  connectedCallback() {
-    super.connectedCallback()
-    this.addEventListener('click', this._handleClick)
-  }
-
-  disconnectedCallback() {
-    super.disconnectedCallback()
-    this.removeEventListener('click', this._handleClick)
-  }
-
   private _handleClick = () => {
     if (this.disabled) return
     emit(this, 'prev')
@@ -36,6 +26,7 @@ export class PrevButton extends LitElement {
         variant="secondary"
         aria-label="이전"
         ?disabled=${this.disabled}
+        @click=${this._handleClick}
       ></mm-icon-button>
     `
   }

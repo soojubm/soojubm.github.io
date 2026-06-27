@@ -14,16 +14,6 @@ export class NextButton extends LitElement {
     }
   `
 
-  connectedCallback() {
-    super.connectedCallback()
-    this.addEventListener('click', this._handleClick)
-  }
-
-  disconnectedCallback() {
-    super.disconnectedCallback()
-    this.removeEventListener('click', this._handleClick)
-  }
-
   private _handleClick = () => {
     if (this.disabled) return
     emit(this, 'next')
@@ -36,6 +26,7 @@ export class NextButton extends LitElement {
         variant="secondary"
         aria-label="다음"
         ?disabled=${this.disabled}
+        @click=${this._handleClick}
       ></mm-icon-button>
     `
   }

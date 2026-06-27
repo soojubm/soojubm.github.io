@@ -15,16 +15,6 @@ export class RevealButton extends LitElement {
 
   static styles = [iconButtonStyles]
 
-  connectedCallback() {
-    super.connectedCallback()
-    this.addEventListener('click', this._handleClick)
-  }
-
-  disconnectedCallback() {
-    super.disconnectedCallback()
-    this.removeEventListener('click', this._handleClick)
-  }
-
   private _handleClick = () => {
     if (this.disabled) return
     this.revealed = !this.revealed
@@ -38,6 +28,7 @@ export class RevealButton extends LitElement {
         aria-pressed=${String(this.revealed)}
         aria-label=${this.revealed ? '비밀번호 숨기기' : '비밀번호 보기'}
         ?disabled=${this.disabled}
+        @click=${this._handleClick}
       >
         <mm-icon name=${this.revealed ? ICON_NAMES.HIDE : ICON_NAMES.REVEAL}></mm-icon>
       </button>

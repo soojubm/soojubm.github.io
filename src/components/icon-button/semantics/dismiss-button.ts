@@ -17,17 +17,8 @@ export class DismissButton extends LitElement {
     }
   `
 
-  connectedCallback() {
-    super.connectedCallback()
-    this.addEventListener('click', this._handleClick)
-  }
-
-  disconnectedCallback() {
-    super.disconnectedCallback()
-    this.removeEventListener('click', this._handleClick)
-  }
-
   private _handleClick = () => {
+    if (this.disabled) return
     emit(this, 'dismiss')
   }
 
@@ -39,6 +30,7 @@ export class DismissButton extends LitElement {
         icon=${ICON_NAMES.DISMISS}
         aria-label="닫기"
         ?disabled=${this.disabled}
+        @click=${this._handleClick}
       ></mm-icon-button>
     `
   }

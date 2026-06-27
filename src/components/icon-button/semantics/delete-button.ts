@@ -20,17 +20,8 @@ export class DeleteButton extends LitElement {
     }
   `
 
-  connectedCallback() {
-    super.connectedCallback()
-    this.addEventListener('click', this._handleClick)
-  }
-
-  disconnectedCallback() {
-    super.disconnectedCallback()
-    this.removeEventListener('click', this._handleClick)
-  }
-
   private _handleClick = () => {
+    if (this.disabled) return
     if (!window.confirm(this.confirmMessage)) return
     emit(this, 'delete')
   }
@@ -42,6 +33,7 @@ export class DeleteButton extends LitElement {
         variant="destructive"
         aria-label="삭제"
         ?disabled=${this.disabled}
+        @click=${this._handleClick}
       ></mm-icon-button>
     `
   }
