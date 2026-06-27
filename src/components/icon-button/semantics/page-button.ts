@@ -1,6 +1,7 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { iconButtonStyles } from '../icon-button.styles'
+import type { AriaCurrent } from '../../../types/aria'
 
 /**
  * 페이지네이션 번호 버튼.
@@ -24,7 +25,7 @@ export class PageButton extends LitElement {
   ]
 
   @property({ type: Number }) page = 1
-  @property({ type: String, attribute: 'aria-current', reflect: true }) ariaCurrent: string | null =
+  @property({ type: String, attribute: 'aria-current', reflect: true }) ariaCurrent: AriaCurrent =
     null
   @property({ type: Boolean }) disabled = false
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = ''

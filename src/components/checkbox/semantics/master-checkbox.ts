@@ -3,12 +3,13 @@ import { customElement, property } from 'lit/decorators.js'
 import { checkboxStyles } from '../checkbox.styles'
 import type { Checkbox } from '../checkbox'
 import { uniqueId } from '../../../utils/unique-id'
+import type { AriaIdRef } from '../../../types/aria'
 
 @customElement('mm-master-checkbox')
 export class MasterCheckbox extends LitElement {
   static styles = [checkboxStyles]
 
-  @property({ type: String, attribute: 'aria-controls' }) ariaControls: string | null = null
+  @property({ type: String, attribute: 'aria-controls' }) ariaControls: AriaIdRef = null
   @property({ type: String, reflect: true }) size = 'large'
   @property({ type: Boolean }) checked = false
   @property({ type: Boolean, reflect: true }) indeterminate = false

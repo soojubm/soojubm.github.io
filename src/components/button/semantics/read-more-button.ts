@@ -1,5 +1,6 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import type { AriaBoolean, AriaIdRef } from '../../../types/aria'
 
 /**
  * 인라인 "더 보기 / 접기" 토글 버튼.
@@ -26,8 +27,8 @@ export class ReadMoreButton extends LitElement {
     }
   `
 
-  @property({ type: String, attribute: 'aria-expanded' }) ariaExpanded = 'false'
-  @property({ type: String, attribute: 'aria-controls' }) ariaControls: string | null = null
+  @property({ type: String, attribute: 'aria-expanded' }) ariaExpanded: AriaBoolean = 'false'
+  @property({ type: String, attribute: 'aria-controls' }) ariaControls: AriaIdRef = null
   @property({ type: String, attribute: 'more-label' }) moreLabel = '더 보기'
   @property({ type: String, attribute: 'less-label' }) lessLabel = '접기'
 

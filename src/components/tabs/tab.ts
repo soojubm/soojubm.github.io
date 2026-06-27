@@ -1,6 +1,7 @@
 import { LitElement, html, css } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { emit } from '../../utils/emit'
+import type { AriaBoolean } from '../../types/aria'
 
 @customElement('mm-tab')
 export default class Tab extends LitElement {
@@ -45,7 +46,8 @@ export default class Tab extends LitElement {
   @property({ type: String }) value = ''
   @property({ type: Boolean, reflect: true }) active = false
   @property({ type: String, reflect: true }) role = 'tab'
-  @property({ type: String, attribute: 'aria-selected', reflect: true }) ariaSelected = 'false'
+  @property({ type: String, attribute: 'aria-selected', reflect: true }) ariaSelected: AriaBoolean =
+    'false'
 
   public select() {
     emit(this, 'tab-select', { value: this.value })
@@ -59,7 +61,7 @@ export default class Tab extends LitElement {
   protected updated(changedProperties: Map<string, unknown>) {
     if (!changedProperties.has('active')) return
 
-    this.ariaSelected = String(this.active)
+    this.ariaSelected = this.active ? 'true' : 'false'
     this.tabIndex = this.active ? 0 : -1
   }
 

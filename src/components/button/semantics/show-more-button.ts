@@ -1,6 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { resetStyles } from '../../../stylesheets/shared/reset.styles'
+import type { AriaBoolean } from '../../../types/aria'
 import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
 import { emit } from '../../../utils/emit'
 
@@ -28,7 +29,7 @@ export class ShowMoreButton extends LitElement {
     `,
   ]
 
-  @property({ type: String, attribute: 'aria-expanded' }) ariaExpanded = 'false'
+  @property({ type: String, attribute: 'aria-expanded' }) ariaExpanded: AriaBoolean = 'false'
   @property({ type: String, attribute: 'more-label' }) moreLabel = 'Show more'
   @property({ type: String, attribute: 'less-label' }) lessLabel = 'Show less'
 

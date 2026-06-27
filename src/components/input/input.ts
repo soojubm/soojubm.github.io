@@ -1,5 +1,6 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import type { AriaIdRef, AriaInvalid } from '../../types/aria'
 
 /**
  * <mm-input>
@@ -104,8 +105,8 @@ export class Input extends LitElement {
   @property() placeholder = ''
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = ''
   @property({ type: Boolean }) disabled = false
-  @property({ type: String, attribute: 'aria-invalid' }) ariaInvalid: string | null = null
-  @property({ attribute: 'aria-describedby' }) ariaDescribedBy: string | null = null
+  @property({ type: String, attribute: 'aria-invalid' }) ariaInvalid: AriaInvalid = null
+  @property({ attribute: 'aria-describedby' }) ariaDescribedBy: AriaIdRef = null
   @property({ type: Number }) min?: number
   @property({ type: Number }) max?: number
   @property({ type: Number }) step?: number

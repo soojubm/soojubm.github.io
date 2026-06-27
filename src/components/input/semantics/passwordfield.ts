@@ -1,5 +1,6 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
+import type { AriaInvalid } from '../../../types/aria'
 import './textfield'
 
 @customElement('mm-passwordfield')
@@ -20,7 +21,7 @@ class PasswordField extends LitElement {
   @property({ type: Boolean }) optional = false
   @property({ type: Boolean, attribute: 'hidden-label', reflect: true }) hiddenLabel = false
   @property({ type: Boolean }) disabled = false
-  @property({ type: String, attribute: 'aria-invalid' }) ariaInvalid: string | null = null
+  @property({ type: String, attribute: 'aria-invalid' }) ariaInvalid: AriaInvalid = null
 
   @state() private revealed = false
 

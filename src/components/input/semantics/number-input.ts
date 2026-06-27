@@ -1,5 +1,6 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import type { AriaInvalid } from '../../../types/aria'
 import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
 import { textfieldStyles } from './textfield.styles'
 import '../../icon-button/icon-button'
@@ -21,7 +22,7 @@ export class NumberInput extends LitElement {
   @property({ type: Boolean }) optional = false
   @property({ type: Boolean, attribute: 'hidden-label', reflect: true }) hiddenLabel = false
   @property({ type: Boolean }) disabled = false
-  @property({ type: String, attribute: 'aria-invalid' }) ariaInvalid: string | null = null
+  @property({ type: String, attribute: 'aria-invalid' }) ariaInvalid: AriaInvalid = null
   @property({ type: Number }) min?: number
   @property({ type: Number }) max?: number
   @property({ type: Number }) step = 1

@@ -1,5 +1,6 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import type { AriaInvalid } from '../../../types/aria'
 import { textfieldStyles } from './textfield.styles'
 import '../input'
 import { emit } from '../../../utils/emit'
@@ -21,7 +22,7 @@ export class Textfield extends LitElement {
   @property({ type: Boolean }) optional = false
   @property({ type: Boolean, attribute: 'hidden-label', reflect: true }) hiddenLabel = false
   @property({ type: Boolean }) disabled = false
-  @property({ type: String, attribute: 'aria-invalid' }) ariaInvalid: string | null = null
+  @property({ type: String, attribute: 'aria-invalid' }) ariaInvalid: AriaInvalid = null
 
   private inputId = uniqueId('input')
 

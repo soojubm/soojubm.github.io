@@ -4,6 +4,7 @@ import '../../icon/icon'
 import type { IconName } from '../../icon-button/semantics/icon-names'
 import { menuItemStyles } from '../menuitem.styles'
 import { renderMenuItemContent } from '../menuitem.utils'
+import type { AriaCurrent } from '../../../types/aria'
 
 @customElement('mm-menu-item-action')
 export class MenuItemAction extends LitElement {
@@ -20,10 +21,7 @@ export class MenuItemAction extends LitElement {
   @property({ type: String, attribute: 'avatar-variant' }) avatarVariant = 'tertiary'
   @property({ type: Boolean }) disabled = false
   @property({ type: String }) role = 'menuitem'
-  @property({ type: String, attribute: 'aria-controls' }) ariaControls: string | null = null
-  @property({ type: String, attribute: 'aria-expanded' }) ariaExpanded: string | null = null
-  @property({ type: String, attribute: 'aria-haspopup' }) ariaHasPopup: string | null = null
-  @property({ type: String, attribute: 'aria-current' }) ariaCurrent: string | null = null
+  @property({ type: String, attribute: 'aria-current' }) ariaCurrent: AriaCurrent = null
 
   render() {
     return html`
@@ -33,9 +31,6 @@ export class MenuItemAction extends LitElement {
         role=${this.role}
         data-interactive
         ?disabled=${this.disabled}
-        aria-controls=${this.ariaControls ?? nothing}
-        aria-expanded=${this.ariaExpanded ?? nothing}
-        aria-haspopup=${this.ariaHasPopup ?? nothing}
         aria-current=${this.ariaCurrent ?? nothing}
       >
         ${renderMenuItemContent(

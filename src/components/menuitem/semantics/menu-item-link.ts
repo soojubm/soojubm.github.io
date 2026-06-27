@@ -3,6 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 import { ICON_NAMES, type IconName } from '../../icon-button/semantics/icon-names'
 import { menuItemStyles } from '../menuitem.styles'
 import { renderMenuItemContent } from '../menuitem.utils'
+import type { AriaCurrent } from '../../../types/aria'
 
 @customElement('mm-menu-item-link')
 export class MenuItemLink extends LitElement {
@@ -20,7 +21,7 @@ export class MenuItemLink extends LitElement {
   @property({ type: String }) href = ''
   @property({ type: String }) target = '_blank'
   @property({ type: Boolean, attribute: 'hidden-trailing' }) hiddenTrailing = false
-  @property({ type: String, attribute: 'aria-current', reflect: true }) ariaCurrent: string | null =
+  @property({ type: String, attribute: 'aria-current', reflect: true }) ariaCurrent: AriaCurrent =
     null
 
   private renderAction() {

@@ -1,5 +1,6 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property, query, state } from 'lit/decorators.js'
+import type { AriaIdRef, AriaInvalid } from '../../types/aria'
 import { inputStyles } from './input.styles'
 import { emit } from '../../utils/emit'
 
@@ -13,10 +14,10 @@ export class Textarea extends LitElement {
   @property({ type: String }) value = ''
   @property({ type: String }) name = ''
   @property({ type: String }) placeholder = ''
-  @property({ type: String, attribute: 'aria-describedby' }) ariaDescribedBy: string | null = null
+  @property({ type: String, attribute: 'aria-describedby' }) ariaDescribedBy: AriaIdRef = null
   @property({ type: Number }) rows = 3
   @property({ type: Boolean }) disabled = false
-  @property({ type: String, attribute: 'aria-invalid' }) ariaInvalid: string | null = null
+  @property({ type: String, attribute: 'aria-invalid' }) ariaInvalid: AriaInvalid = null
 
   @query('textarea') protected _textarea!: HTMLTextAreaElement
 

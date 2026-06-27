@@ -1,6 +1,7 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { ICON_NAMES } from './icon-names'
+import type { AriaBoolean, AriaIdRef } from '../../../types/aria'
 import '../icon-button'
 
 /**
@@ -16,8 +17,8 @@ export class HamburgerButton extends LitElement {
   `
 
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = '전체 메뉴'
-  @property({ type: String, attribute: 'aria-expanded' }) ariaExpanded = 'false'
-  @property({ type: String, attribute: 'aria-controls' }) ariaControls: string | null = null
+  @property({ type: String, attribute: 'aria-expanded' }) ariaExpanded: AriaBoolean = 'false'
+  @property({ type: String, attribute: 'aria-controls' }) ariaControls: AriaIdRef = null
 
   connectedCallback() {
     super.connectedCallback()

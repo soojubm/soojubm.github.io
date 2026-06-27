@@ -26,8 +26,6 @@ export class Checkbox extends LitElement {
   @property({ type: Boolean, reflect: true })
   indeterminate = false
 
-  @property({ type: String, attribute: 'aria-controls' }) ariaControls: string | null = null
-
   // SSR 환경 및 crypto가 없는 구형 환경에서도 터지지 않도록 고유 ID 생성을 보장합니다.
   private _inputId = uniqueId('checkbox')
 
@@ -69,7 +67,6 @@ export class Checkbox extends LitElement {
           .checked=${checked}
           .indeterminate=${indeterminate}
           ?disabled=${disabled}
-          aria-controls=${this.ariaControls ?? nothing}
           @change=${this._onChange}
         />
 
