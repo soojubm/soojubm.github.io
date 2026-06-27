@@ -1,5 +1,6 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
+import { styleMap } from 'lit/directives/style-map.js'
 import { ICON_NAMES, type IconName } from '../icon-button/semantics/icon-names'
 import '../text/semantics/caption'
 import { emit } from '../../utils/emit'
@@ -97,17 +98,19 @@ class BottomBar extends LitElement {
     const items = this.parsedItems
     const defaultActive = items.findIndex(item => item.active)
     const activeIndex = this.selectedIndex ?? (defaultActive >= 0 ? defaultActive : null)
+    const bottomBarStyle = {
+      '--bottom-bar-count': String(items.length),
+    }
+    const indicatorStyle = {
+      '--bottom-bar-transform': `translateX(${(activeIndex ?? 0) * 100}%)`,
+    }
 
     return html`
-      <nav
-        class="bottom-bar"
-        aria-label=${this.ariaLabel}
-        style="--bottom-bar-count: ${items.length}"
-      >
+      <nav class="bottom-bar" aria-label=${this.ariaLabel} style=${styleMap(bottomBarStyle)}>
         <span
           class="bottom-bar-indicator"
           aria-hidden="true"
-          style="--bottom-bar-transform: translateX(${(activeIndex ?? 0) * 100}%)"
+          style=${styleMap(indicatorStyle)}
         ></span>
         ${items.map(
           (item, index) => html`

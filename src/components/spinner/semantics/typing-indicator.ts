@@ -1,5 +1,6 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { styleMap } from 'lit/directives/style-map.js'
 import { resetStyles } from '../../../stylesheets/shared/reset.styles'
 
 /**
@@ -54,13 +55,12 @@ export class TypingIndicator extends LitElement {
   ]
 
   render() {
+    const dotsStyle = {
+      '--typing-color': this.color,
+    }
+
     return html`
-      <div
-        class="dots"
-        role="status"
-        aria-label=${this.ariaLabel}
-        style="--typing-color: ${this.color}"
-      >
+      <div class="dots" role="status" aria-label=${this.ariaLabel} style=${styleMap(dotsStyle)}>
         <span></span>
         <span></span>
         <span></span>
