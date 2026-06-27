@@ -2,6 +2,7 @@ import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { resetStyles } from '../../../stylesheets/shared/reset.styles'
 import '../../text/semantics/textList'
+import { componentContentFrameStyles, componentStageFrameStyles } from './component.styles'
 
 /**
  * 컴포넌트 해부도(Anatomy) 섹션.
@@ -28,23 +29,14 @@ export class ComponentAnatomy extends LitElement {
 
   static styles = [
     resetStyles,
+    componentContentFrameStyles,
+    componentStageFrameStyles,
     css`
       :host {
         display: flex;
         flex-direction: column;
         gap: var(--space-3);
         margin-top: var(--space-section);
-      }
-      .stage {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: var(--space-4);
-        flex-wrap: wrap;
-        padding: var(--space-8) var(--space-8) var(--space-12);
-        border: var(--border);
-        border-radius: var(--radius-large);
-        background: var(--color-background-subtle);
       }
       .stage slot {
         display: block;
@@ -56,7 +48,7 @@ export class ComponentAnatomy extends LitElement {
   render() {
     return html`
       <mm-text size="24" weight="bold" as="h3">${this.heading}</mm-text>
-      <div class="stage">
+      <div class="stage component-content-frame component-stage-frame">
         <slot></slot>
       </div>
       ${this.parts.length

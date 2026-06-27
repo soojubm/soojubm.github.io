@@ -1,6 +1,6 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
-import { MEDIA } from '../../../stylesheets/shared/breakpoints'
+import { componentContentFrameStyles } from './component.styles'
 
 @customElement('mm-component-section')
 class ComponentSection extends LitElement {
@@ -10,35 +10,27 @@ class ComponentSection extends LitElement {
 
   @state() private _hasContent = false
 
-  static styles = css`
-    .component-section {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-2);
-      margin-top: var(--space-section);
-    }
-
-    .content {
-      display: none;
-    }
-
-    .content.has-content {
-      display: block;
-      margin: var(--space-2) 0 0 var(--component-content-offset-inline-start);
-      padding: var(--component-content-padding-block) var(--component-content-padding-inline);
-      border: var(--border);
-      border-radius: var(--radius-large);
-    }
-
-    @media ${MEDIA.small} {
-      .content.has-content {
-        margin-inline: var(--component-content-bleed-inline);
-        padding-inline: var(--layout-padding-inline);
-        border-inline: 0;
-        border-radius: 0;
+  static styles = [
+    componentContentFrameStyles,
+    css`
+      .component-section {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-2);
+        margin-top: var(--space-section);
       }
-    }
-  `
+
+      .content {
+        display: none;
+      }
+
+      .content.has-content {
+        display: block;
+        --component-content-frame-margin: var(--space-2) 0 0
+          var(--component-content-offset-inline-start);
+      }
+    `,
+  ]
 
   private _onSlotChange(e: Event) {
     const slot = e.target as HTMLSlotElement
@@ -55,7 +47,7 @@ class ComponentSection extends LitElement {
               <mm-paragraph>${this.description}</mm-paragraph>
             `
           : nothing}
-        <div class="content ${this._hasContent ? 'has-content' : ''}">
+        <div class="content component-content-frame ${this._hasContent ? 'has-content' : ''}">
           <slot @slotchange=${this._onSlotChange}></slot>
         </div>
       </section>

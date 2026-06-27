@@ -1,6 +1,6 @@
 import { css } from 'lit'
-import { MEDIA } from '../../../stylesheets/shared/breakpoints'
 import { resetStyles } from '../../../stylesheets/shared/reset.styles'
+import { componentContentFrameStyles } from './component.styles'
 
 export const tokenStyles = [
   resetStyles,
@@ -20,16 +20,15 @@ export const tokenStyles = [
 
 export const componentTokensStyles = [
   resetStyles,
+  componentContentFrameStyles,
   css`
     :host {
       display: block;
     }
 
     .component-tokens {
-      margin: var(--space-4) 0 0 var(--component-content-offset-inline-start);
-      padding: var(--component-content-padding-block) var(--component-content-padding-inline);
-      border: var(--border);
-      border-radius: var(--radius-large);
+      --component-content-frame-margin: var(--space-4) 0 0
+        var(--component-content-offset-inline-start);
     }
 
     dl {
@@ -37,15 +36,6 @@ export const componentTokensStyles = [
       grid-template-columns: auto 1fr;
       gap: var(--space-2) var(--space-4);
       margin: 0;
-    }
-
-    @media ${MEDIA.small} {
-      .component-tokens {
-        margin-inline: var(--component-content-bleed-inline);
-        padding-inline: var(--layout-padding-inline);
-        border-inline: 0;
-        border-radius: 0;
-      }
     }
   `,
 ]

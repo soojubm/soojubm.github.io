@@ -1,6 +1,6 @@
 import { css } from 'lit'
-import { MEDIA } from '../../../stylesheets/shared/breakpoints'
 import { resetStyles } from '../../../stylesheets/shared/reset.styles'
+import { componentContentFrameStyles } from './component.styles'
 
 export const propStyles = [
   resetStyles,
@@ -30,6 +30,7 @@ export const propStyles = [
 
 export const componentPropsStyles = [
   resetStyles,
+  componentContentFrameStyles,
   css`
     :host {
       display: block;
@@ -37,13 +38,10 @@ export const componentPropsStyles = [
     .component-props {
       height: 12rem;
       overflow: hidden;
-      margin: 0 0 0 calc(var(--layout-padding-inline) * -1 + var(--space-4));
-      padding: var(--space-8) calc(var(--layout-padding-inline) - var(--space-4));
       background-color: var(--color-background-subtle);
-      border: var(--component-props-border, none);
-      border-radius: var(--radius-large);
       position: relative;
       cursor: pointer;
+      --component-content-frame-border: var(--component-props-border, none);
     }
     .component-props-more {
       display: flex;
@@ -60,18 +58,6 @@ export const componentPropsStyles = [
     }
     .component-props.is-opened .component-props-more {
       display: none;
-    }
-
-    @media ${MEDIA.small} {
-      .component-props {
-        margin-inline: calc(var(--layout-padding-inline) * -1);
-        padding-inline: var(--layout-padding-inline);
-        border-inline: 0;
-        border-radius: 0;
-      }
-      .component-props-more {
-        padding-inline: var(--layout-padding-inline);
-      }
     }
   `,
 ]

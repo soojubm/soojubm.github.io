@@ -10,7 +10,7 @@ class SheetFooter extends LitElement {
 
   static styles = css`
     :host {
-      padding: var(--space-3) 0;
+      padding: var(--sheet-section-padding-block, var(--space-3)) 0;
     }
   `
 

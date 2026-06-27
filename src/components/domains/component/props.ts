@@ -54,14 +54,17 @@ export class ComponentProps extends LitElement {
   render() {
     return html`
       <section
-        class="component-props ${this._isOpened ? 'is-opened' : ''}"
+        class="component-props component-content-frame ${this._isOpened ? 'is-opened' : ''}"
         @click=${this._handleClick}
       >
         <div hidden><mm-text as="h2">Props</mm-text></div>
         <dl id=${this._propsId}>
           <slot></slot>
         </dl>
-        <div class="component-props-more" aria-hidden=${this._isOpened ? 'true' : 'false'}>
+        <div
+          class="component-props-more component-content-responsive-padding-inline"
+          aria-hidden=${this._isOpened ? 'true' : 'false'}
+        >
           <mm-read-more-button
             more-label="...펼쳐서 더보기"
             aria-controls=${this._propsId}

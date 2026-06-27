@@ -8,7 +8,7 @@ export class ComponentExample extends LitElement {
 
   render() {
     return html`
-      <section class="component-example">
+      <section class="component-example component-content-frame">
         <slot></slot>
       </section>
     `
