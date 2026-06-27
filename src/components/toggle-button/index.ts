@@ -1,6 +1,6 @@
-import './toggle-button'
+import '@/components/toggle-button/toggle-button'
 
-import './semantics/toggle-button-group'
-import './semantics/view-mode-switcher'
+import '@/components/toggle-button/semantics/toggle-button-group'
+import '@/components/toggle-button/semantics/view-mode-switcher'
 
 export {}

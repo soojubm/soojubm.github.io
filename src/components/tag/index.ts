@@ -1,10 +1,10 @@
-import './tag'
+import '@/components/tag/tag'
 
-import './semantics/keyword-tag'
-import './semantics/keyword-tag-group'
-import './semantics/tag-group'
-import './semantics/accent-tag'
-import './semantics/status-tag'
-import './semantics/category-tag'
+import '@/components/tag/semantics/keyword-tag'
+import '@/components/tag/semantics/keyword-tag-group'
+import '@/components/tag/semantics/tag-group'
+import '@/components/tag/semantics/accent-tag'
+import '@/components/tag/semantics/status-tag'
+import '@/components/tag/semantics/category-tag'
 
 export {}

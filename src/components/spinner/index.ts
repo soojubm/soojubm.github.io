@@ -1,5 +1,5 @@
-import './spinner'
+import '@/components/spinner/spinner'
 
-import './semantics/typing-indicator'
+import '@/components/spinner/semantics/typing-indicator'
 
 export {}

@@ -1,6 +1,6 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, queryAssignedElements } from 'lit/decorators.js'
-import { resetStyles } from '../../../stylesheets/shared/reset.styles'
+import { resetStyles } from '@/stylesheets/shared/reset.styles'
 
 @customElement('mm-token-group')
 export class TokenGroup extends LitElement {

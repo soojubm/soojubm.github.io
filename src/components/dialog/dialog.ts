@@ -1,13 +1,13 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, query } from 'lit/decorators.js'
-import '../sheet'
-import '../sheet/semantics/sheet-header'
-import '../sheet/semantics/sheet-body'
-import '../sheet/semantics/sheet-footer'
-import '../text/semantics/paragraph'
-import type Sheet from '../sheet/sheet'
-import { emit } from '../../utils/emit'
-import type { ActionConfig } from '../action-config'
+import '@/components/sheet'
+import '@/components/sheet/semantics/sheet-header'
+import '@/components/sheet/semantics/sheet-body'
+import '@/components/sheet/semantics/sheet-footer'
+import '@/components/text/semantics/paragraph'
+import type Sheet from '@/components/sheet/sheet'
+import { emit } from '@/utils/emit'
+import type { ActionConfig } from '@/components/action-config'
 
 @customElement('mm-dialog')
 export class Dialog extends LitElement {

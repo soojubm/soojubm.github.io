@@ -1,3 +1,3 @@
-import './comment-input'
+import '@/components/domains/comment-input/comment-input'
 
 export {}

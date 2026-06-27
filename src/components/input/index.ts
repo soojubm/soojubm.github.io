@@ -1,13 +1,13 @@
-import './input'
+import '@/components/input/input'
 
-import './semantics/textfield'
-import './semantics/textfield-helper'
-import './semantics/textfield-label'
-import './semantics/textfield-validation'
-import './semantics/searchfield'
-import './semantics/passwordfield'
-import './semantics/number-input'
-import './textarea'
-import './semantics/textarea-field'
+import '@/components/input/semantics/textfield'
+import '@/components/input/semantics/textfield-helper'
+import '@/components/input/semantics/textfield-label'
+import '@/components/input/semantics/textfield-validation'
+import '@/components/input/semantics/searchfield'
+import '@/components/input/semantics/passwordfield'
+import '@/components/input/semantics/number-input'
+import '@/components/input/textarea'
+import '@/components/input/semantics/textarea-field'
 
 export {}

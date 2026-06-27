@@ -1,3 +1,3 @@
-import './row'
+import '@/components/row/row'
 
 export {}

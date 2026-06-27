@@ -2,6 +2,7 @@ import { css } from 'lit'
 
 export const iconStyles = css`
   :host {
+    display: inline-flex;
     --button-text-color: inherit;
   }
 

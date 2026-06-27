@@ -1,7 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import '../../dropdown/dropdown'
-import { emit } from '../../../utils/emit'
+import '@/components/dropdown/dropdown'
+import { emit } from '@/utils/emit'
 
 type SortOrder = 'latest' | 'oldest'
 

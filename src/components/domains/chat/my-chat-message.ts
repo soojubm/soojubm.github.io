@@ -1,7 +1,7 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { resetStyles } from '../../../stylesheets/shared/reset.styles'
-import '../../text/text'
+import { resetStyles } from '@/stylesheets/shared/reset.styles'
+import '@/components/text/text'
 
 @customElement('mm-my-chat-message')
 export class MyChatMessage extends LitElement {

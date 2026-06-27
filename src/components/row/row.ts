@@ -1,6 +1,6 @@
 import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { rowStyles } from './row.styles'
+import { rowStyles } from '@/components/row/row.styles'
 
 @customElement('mm-row')
 class Row extends LitElement {

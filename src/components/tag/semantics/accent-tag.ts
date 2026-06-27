@@ -1,8 +1,8 @@
 import { LitElement } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import type { IconName } from '../../icon-button/semantics/icon-names'
-import { renderTag } from '../tag'
-import type { TagTone } from '../tag.styles'
+import type { IconName } from '@/components/icon-button/semantics/icon-names'
+import { renderTag } from '@/components/tag/tag'
+import type { TagTone } from '@/components/tag/tag.styles'
 
 @customElement('mm-accent-tag')
 export class AccentTag extends LitElement {

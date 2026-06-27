@@ -1,3 +1,3 @@
-import './tooltip'
+import '@/components/tooltip/tooltip'
 
 export {}

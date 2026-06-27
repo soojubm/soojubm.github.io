@@ -1,3 +1,3 @@
-import './separator'
+import '@/components/separator/separator'
 
 export {}

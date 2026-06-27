@@ -1,14 +1,14 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
-import { resetStyles } from '../../../stylesheets/shared/reset.styles'
-import { OutsideClickController } from '../../../controllers/outside-click-controller'
-import type { IconName } from '../../icon-button/semantics/icon-names'
-import '../../button/button'
-import '../../button/button-group'
-import '../../icon/icon'
-import '../../text/text'
-import '../../text/semantics/paragraph'
-import { emit } from '../../../utils/emit'
+import { resetStyles } from '@/stylesheets/shared/reset.styles'
+import { OutsideClickController } from '@/controllers/outside-click-controller'
+import type { IconName } from '@/components/icon-button/semantics/icon-names'
+import '@/components/button/button'
+import '@/components/button/button-group'
+import '@/components/icon/icon'
+import '@/components/text/text'
+import '@/components/text/semantics/paragraph'
+import { emit } from '@/utils/emit'
 
 /**
  * AI 응답 출처 소스 칩. 클릭 시 inline sheet로 상세 정보를 표시합니다.

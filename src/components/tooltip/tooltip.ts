@@ -1,7 +1,7 @@
 import { LitElement, html } from 'lit'
 import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
-import { tooltipStyles } from './tooltip.styles'
-import { uniqueId } from '../../utils/unique-id'
+import { tooltipStyles } from '@/components/tooltip/tooltip.styles'
+import { uniqueId } from '@/utils/unique-id'
 
 @customElement('mm-tooltip')
 class Tooltip extends LitElement {

@@ -1,8 +1,8 @@
 import { LitElement, css, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
-import '../../dropdown/dropdown'
-import '../../icon-button/icon-button'
-import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
+import '@/components/dropdown/dropdown'
+import '@/components/icon-button/icon-button'
+import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
 
 @customElement('mm-attachment-dropdown')
 export class AttachmentDropdown extends LitElement {

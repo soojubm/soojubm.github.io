@@ -1,5 +1,5 @@
 import { css } from 'lit'
-import { MEDIA } from '../../../stylesheets/shared/breakpoints'
+import { MEDIA } from '@/stylesheets/shared/breakpoints'
 
 export const componentContentFrameStyles = css`
   .component-content-frame {

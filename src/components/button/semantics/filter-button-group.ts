@@ -1,8 +1,8 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
-import { resetStyles } from '../../../stylesheets/shared/reset.styles'
-import type { FilterButton } from './filter-button'
-import { emit } from '../../../utils/emit'
+import { resetStyles } from '@/stylesheets/shared/reset.styles'
+import type { FilterButton } from '@/components/button/semantics/filter-button'
+import { emit } from '@/utils/emit'
 
 /**
  * mm-filter-button을 묶는 그룹.

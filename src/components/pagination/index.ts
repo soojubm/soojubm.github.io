@@ -1,3 +1,3 @@
-import './pagination'
+import '@/components/pagination/pagination'
 
 export {}

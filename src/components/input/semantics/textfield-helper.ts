@@ -1,6 +1,6 @@
 import { LitElement, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
-import '../../text/text'
+import '@/components/text/text'
 
 /**
  * <mm-textfield-helper>

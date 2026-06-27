@@ -1,10 +1,10 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import type { AriaInvalid } from '../../../types/aria'
-import { textfieldStyles } from './textfield.styles'
-import '../input'
-import { emit } from '../../../utils/emit'
-import { uniqueId } from '../../../utils/unique-id'
+import type { AriaInvalid } from '@/types/aria'
+import { textfieldStyles } from '@/components/input/semantics/textfield.styles'
+import '@/components/input/input'
+import { emit } from '@/utils/emit'
+import { uniqueId } from '@/utils/unique-id'
 
 @customElement('mm-textfield')
 export class Textfield extends LitElement {

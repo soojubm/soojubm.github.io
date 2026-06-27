@@ -1,6 +1,6 @@
-import applyTheme from './theme'
+import applyTheme from '@/utils/theme'
 
-import '../components/navbar/navbar.css'
+import '@/components/navbar/navbar.css'
 
 const OPENED_MENU_CLASSNAME = 'is-menu-opened'
 const isOpendNavbarMenu = () => document.body.classList.contains(OPENED_MENU_CLASSNAME)

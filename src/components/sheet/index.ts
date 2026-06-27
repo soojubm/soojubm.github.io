@@ -1,7 +1,7 @@
-import './sheet'
+import '@/components/sheet/sheet'
 
-import './semantics/sheet-header'
-import './semantics/sheet-body'
-import './semantics/sheet-footer'
+import '@/components/sheet/semantics/sheet-header'
+import '@/components/sheet/semantics/sheet-body'
+import '@/components/sheet/semantics/sheet-footer'
 
 export {}

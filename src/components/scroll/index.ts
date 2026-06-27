@@ -1,3 +1,3 @@
-import './scroll'
+import '@/components/scroll/scroll'
 
 export {}

@@ -1,4 +1,4 @@
-import './surface'
-import './add-surface-button'
+import '@/components/surface/surface'
+import '@/components/surface/add-surface-button'
 
 export {}

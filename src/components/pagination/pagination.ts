@@ -1,11 +1,11 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { repeat } from 'lit/directives/repeat.js'
-import '../icon-button/semantics/prev-button'
-import '../icon-button/semantics/next-button'
-import '../icon-button/semantics/page-button'
-import { paginationStyles } from './pagination.styles'
-import { emit } from '../../utils/emit'
+import '@/components/icon-button/semantics/prev-button'
+import '@/components/icon-button/semantics/next-button'
+import '@/components/icon-button/semantics/page-button'
+import { paginationStyles } from '@/components/pagination/pagination.styles'
+import { emit } from '@/utils/emit'
 
 type PaginationItem = number | 'ellipsis'
 

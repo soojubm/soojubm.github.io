@@ -1,9 +1,9 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import type { AriaInvalid } from '../../../types/aria'
-import { textfieldStyles } from './textfield.styles'
-import '../textarea'
-import { uniqueId } from '../../../utils/unique-id'
+import type { AriaInvalid } from '@/types/aria'
+import { textfieldStyles } from '@/components/input/semantics/textfield.styles'
+import '@/components/input/textarea'
+import { uniqueId } from '@/utils/unique-id'
 
 @customElement('mm-textarea-field')
 export class TextareaField extends LitElement {

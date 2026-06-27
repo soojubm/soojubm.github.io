@@ -1,4 +1,4 @@
-import { emit } from '../../utils/emit'
+import { emit } from '@/utils/emit'
 
 export interface SelectableHost extends HTMLElement {
   disabled: boolean

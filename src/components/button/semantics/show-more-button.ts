@@ -1,9 +1,9 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { resetStyles } from '../../../stylesheets/shared/reset.styles'
-import type { AriaBoolean } from '../../../types/aria'
-import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
-import { emit } from '../../../utils/emit'
+import { resetStyles } from '@/stylesheets/shared/reset.styles'
+import type { AriaBoolean } from '@/types/aria'
+import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
+import { emit } from '@/utils/emit'
 
 /**
  * 더보기/접기 토글 버튼.

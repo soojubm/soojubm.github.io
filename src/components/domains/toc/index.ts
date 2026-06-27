@@ -1,12 +1,12 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, query, queryAll, state } from 'lit/decorators.js'
-import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
-import { resetStyles } from '../../../stylesheets/shared/reset.styles'
-import { ScrollSpyController } from '../../../controllers/scroll-spy-controller'
-import { copyToClipboard } from '../../../utils/clipboard'
-import '../indicators/selection-indicator'
-import '../../icon-button/icon-button'
-import '../../button/button-group'
+import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
+import { resetStyles } from '@/stylesheets/shared/reset.styles'
+import { ScrollSpyController } from '@/controllers/scroll-spy-controller'
+import { copyToClipboard } from '@/utils/clipboard'
+import '@/components/domains/indicators/selection-indicator'
+import '@/components/icon-button/icon-button'
+import '@/components/button/button-group'
 
 interface TocItem {
   id: string

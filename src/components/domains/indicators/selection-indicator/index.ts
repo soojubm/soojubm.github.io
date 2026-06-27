@@ -1,6 +1,6 @@
 import { LitElement, css, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
-import { resetStyles } from '../../../../stylesheets/shared/reset.styles'
+import { resetStyles } from '@/stylesheets/shared/reset.styles'
 
 @customElement('mm-selection-indicator')
 export class SelectionIndicator extends LitElement {

@@ -1,4 +1,4 @@
-import { ICON_NAMES, type IconName } from '../components/icon-button/semantics/icon-names'
+import { ICON_NAMES, type IconName } from '@/components/icon-button/semantics/icon-names'
 
 export type Theme = 'light' | 'dark' | 'brutal'
 

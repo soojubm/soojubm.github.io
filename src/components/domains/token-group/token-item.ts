@@ -1,7 +1,7 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { resetStyles } from '../../../stylesheets/shared/reset.styles'
-import '../../domains/indicators/list-marker'
+import { resetStyles } from '@/stylesheets/shared/reset.styles'
+import '@/components/domains/indicators/list-marker'
 
 @customElement('mm-token-item')
 export class TokenItem extends LitElement {

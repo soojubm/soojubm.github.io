@@ -1,7 +1,7 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { resetStyles } from '../../../stylesheets/shared/reset.styles'
-import '../../tag/tag'
+import { resetStyles } from '@/stylesheets/shared/reset.styles'
+import '@/components/tag/tag'
 
 /**
  * mm-text-block

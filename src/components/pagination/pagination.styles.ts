@@ -1,5 +1,5 @@
 import { css } from 'lit'
-import { MEDIA } from '../../stylesheets/shared/breakpoints'
+import { MEDIA } from '@/stylesheets/shared/breakpoints'
 
 export const paginationStyles = css`
   :host {

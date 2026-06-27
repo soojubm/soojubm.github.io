@@ -1,10 +1,10 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property, query, state } from 'lit/decorators.js'
-import '../../icon-button/icon-button'
-import { inputStyles } from '../../input/input.styles'
-import { Textarea } from '../../input/textarea'
-import './attachment-dropdown'
-import { emit } from '../../../utils/emit'
+import '@/components/icon-button/icon-button'
+import { inputStyles } from '@/components/input/input.styles'
+import { Textarea } from '@/components/input/textarea'
+import '@/components/domains/prompt-input/attachment-dropdown'
+import { emit } from '@/utils/emit'
 
 @customElement('mm-prompt-input')
 export class PromptInput extends LitElement {

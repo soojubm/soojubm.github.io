@@ -1,8 +1,8 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { textStyles } from '../text.styles'
-import '../../domains/indicators/list-marker'
-import { arrayAttributeConverter } from '../../../utils/property-converters'
+import { textStyles } from '@/components/text/text.styles'
+import '@/components/domains/indicators/list-marker'
+import { arrayAttributeConverter } from '@/utils/property-converters'
 
 type Variant = 'check' | 'number'
 

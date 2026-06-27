@@ -1,3 +1,3 @@
-import './notice'
+import '@/components/notice/notice'
 
 export {}

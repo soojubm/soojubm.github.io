@@ -1,8 +1,8 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
-import { resetStyles } from '../../../stylesheets/shared/reset.styles'
-import '../../button/semantics/read-more-button'
-import { uniqueId } from '../../../utils/unique-id'
+import { resetStyles } from '@/stylesheets/shared/reset.styles'
+import '@/components/button/semantics/read-more-button'
+import { uniqueId } from '@/utils/unique-id'
 
 @customElement('mm-read-more-paragraph')
 export class ReadMoreParagraph extends LitElement {

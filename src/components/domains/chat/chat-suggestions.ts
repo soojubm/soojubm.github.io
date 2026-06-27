@@ -1,6 +1,6 @@
 import { LitElement, css, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
-import { resetStyles } from '../../../stylesheets/shared/reset.styles'
+import { resetStyles } from '@/stylesheets/shared/reset.styles'
 
 /**
  * 채팅 입력 추천 버튼 그룹. 가로 스크롤 가능한 quick-reply 영역.

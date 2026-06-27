@@ -1,4 +1,4 @@
-import './link'
-import './semantics'
+import '@/components/link/link'
+import '@/components/link/semantics'
 
 export {}

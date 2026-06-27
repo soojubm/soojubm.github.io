@@ -1,8 +1,8 @@
 import { LitElement, html } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
-import { ICON_NAMES } from '../icon-button/semantics/icon-names'
-import { noticeStyles } from './notice.styles'
-import { emit } from '../../utils/emit'
+import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
+import { noticeStyles } from '@/components/notice/notice.styles'
+import { emit } from '@/utils/emit'
 
 const VARIANT_ICONS: Record<string, string> = {
   success: ICON_NAMES.SUCCESS,

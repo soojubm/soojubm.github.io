@@ -1,7 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { emit } from '../../../utils/emit'
-import type { ActionConfig } from '../../action-config'
+import { emit } from '@/utils/emit'
+import type { ActionConfig } from '@/components/action-config'
 
 @customElement('mm-sheet-footer')
 class SheetFooter extends LitElement {

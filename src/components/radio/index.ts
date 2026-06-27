@@ -1,5 +1,5 @@
-import './radio'
+import '@/components/radio/radio'
 
-import './semantics/radio-group'
+import '@/components/radio/semantics/radio-group'
 
 export {}

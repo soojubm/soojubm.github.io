@@ -1,8 +1,8 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import type { IconName } from '../../icon-button/semantics/icon-names'
-import '../../list-row/list-row'
+import type { IconName } from '@/components/icon-button/semantics/icon-names'
+import '@/components/list-row/list-row'
 
 /**
  * avatar를 leading으로 가지는 표현 전용 행.

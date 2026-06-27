@@ -1,7 +1,7 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
-import { ICON_NAMES, type IconName } from '../icon-button/semantics/icon-names'
-import { avatarStyles } from './avatar.styles'
+import { ICON_NAMES, type IconName } from '@/components/icon-button/semantics/icon-names'
+import { avatarStyles } from '@/components/avatar/avatar.styles'
 
 @customElement('mm-avatar')
 export class Avatar extends LitElement {

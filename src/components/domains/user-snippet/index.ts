@@ -1,6 +1,6 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { entityStyles } from './user-snippet.styles'
+import { entityStyles } from '@/components/domains/user-snippet/user-snippet.styles'
 
 @customElement('mm-user-snippet')
 class UserSnippet extends LitElement {

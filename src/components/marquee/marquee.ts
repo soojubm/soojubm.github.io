@@ -2,7 +2,7 @@ import { LitElement, css, html } from 'lit'
 import type { PropertyValues } from 'lit'
 import { customElement, property, query, state } from 'lit/decorators.js'
 import { repeat } from 'lit/directives/repeat.js'
-import { resetStyles } from '../../stylesheets/shared/reset.styles'
+import { resetStyles } from '@/stylesheets/shared/reset.styles'
 
 type MarqueeDirection = 'left' | 'right'
 

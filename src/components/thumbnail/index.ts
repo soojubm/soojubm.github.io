@@ -1,3 +1,3 @@
-import './thumbnail'
+import '@/components/thumbnail/thumbnail'
 
 export {}

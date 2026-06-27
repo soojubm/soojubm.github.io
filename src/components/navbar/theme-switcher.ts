@@ -1,9 +1,9 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import '../dropdown/dropdown'
-import '../icon-button/icon-button'
-import { getPreferredTheme, saveTheme, THEMES, type Theme } from '../../utils/theme'
-import { ICON_NAMES } from '../icon-button/semantics/icon-names'
+import '@/components/dropdown/dropdown'
+import '@/components/icon-button/icon-button'
+import { getPreferredTheme, saveTheme, THEMES, type Theme } from '@/utils/theme'
+import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
 
 @customElement('mm-theme-switcher')
 export class ThemeSwitcher extends LitElement {

@@ -1,9 +1,13 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
-import type { IconName } from '../icon-button/semantics/icon-names'
-import type { AriaBoolean, AriaHasPopup } from '../../types/aria'
-import { buttonBaseStyles, buttonSizeStyles, buttonVariantStyles } from './button.styles'
+import type { IconName } from '@/components/icon-button/semantics/icon-names'
+import type { AriaBoolean, AriaHasPopup } from '@/types/aria'
+import {
+  buttonBaseStyles,
+  buttonSizeStyles,
+  buttonVariantStyles,
+} from '@/components/button/button.styles'
 
 export type ButtonVariant = 'primary' | 'secondary' | 'tertiary' | 'ghost' | 'destructive'
 export type ButtonSize = 'huge' | 'large' | 'medium' | 'small'

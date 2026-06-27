@@ -1,5 +1,5 @@
-import './accordion'
+import '@/components/accordion/accordion'
 
-import './semantics/accordion-item'
+import '@/components/accordion/semantics/accordion-item'
 
 export {}

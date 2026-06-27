@@ -1,10 +1,10 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 import { styleMap } from 'lit/directives/style-map.js'
-import { ICON_NAMES, type IconName } from '../icon-button/semantics/icon-names'
-import '../text/semantics/caption'
-import { emit } from '../../utils/emit'
-import { arrayAttributeConverter } from '../../utils/property-converters'
+import { ICON_NAMES, type IconName } from '@/components/icon-button/semantics/icon-names'
+import '@/components/text/semantics/caption'
+import { emit } from '@/utils/emit'
+import { arrayAttributeConverter } from '@/utils/property-converters'
 
 interface BottomBarItem {
   label: string

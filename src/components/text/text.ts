@@ -1,8 +1,13 @@
 import { LitElement } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { html, unsafeStatic } from 'lit/static-html.js'
-import { resetStyles } from '../../stylesheets/shared/reset.styles'
-import { textStyles, type TextColor, type TextSize, type TextWeight } from './text.styles'
+import { resetStyles } from '@/stylesheets/shared/reset.styles'
+import {
+  textStyles,
+  type TextColor,
+  type TextSize,
+  type TextWeight,
+} from '@/components/text/text.styles'
 
 @customElement('mm-text')
 export class Text extends LitElement {

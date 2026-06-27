@@ -1,8 +1,8 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { checkboxStyles } from './checkbox.styles'
-import { emit } from '../../utils/emit'
-import { uniqueId } from '../../utils/unique-id'
+import { checkboxStyles } from '@/components/checkbox/checkbox.styles'
+import { emit } from '@/utils/emit'
+import { uniqueId } from '@/utils/unique-id'
 
 @customElement('mm-checkbox')
 export class Checkbox extends LitElement {

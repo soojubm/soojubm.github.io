@@ -1,8 +1,8 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import '../../dropdown/dropdown'
-import '../../button/button'
-import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
+import '@/components/dropdown/dropdown'
+import '@/components/button/button'
+import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
 
 @customElement('mm-model-selector')
 export class ModelSelector extends LitElement {

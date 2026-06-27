@@ -1,9 +1,9 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import type { IconName } from '../../icon-button/semantics/icon-names'
-import { menuItemStyles } from '../menuitem.styles'
-import { renderMenuItemContent } from '../menuitem.utils'
-import { emit } from '../../../utils/emit'
+import type { IconName } from '@/components/icon-button/semantics/icon-names'
+import { menuItemStyles } from '@/components/menuitem/menuitem.styles'
+import { renderMenuItemContent } from '@/components/menuitem/menuitem.utils'
+import { emit } from '@/utils/emit'
 
 @customElement('mm-menu-item-radio')
 export class MenuItemRadio extends LitElement {

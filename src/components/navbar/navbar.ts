@@ -1,9 +1,9 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, query, state } from 'lit/decorators.js'
 import { repeat } from 'lit/directives/repeat.js'
-import { ICON_NAMES } from '../icon-button/semantics/icon-names'
-import soojubmImage from '../../images/soojubm.png'
-import type Sheet from '../sheet/sheet'
+import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
+import soojubmImage from '@/images/soojubm.png'
+import type Sheet from '@/components/sheet/sheet'
 
 type PagefindResult = { url: string; meta: { title: string }; excerpt: string }
 type Pagefind = {

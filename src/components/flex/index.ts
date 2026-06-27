@@ -1,3 +1,3 @@
-import './flex'
+import '@/components/flex/flex'
 
 export {}

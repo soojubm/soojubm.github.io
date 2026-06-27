@@ -1,6 +1,6 @@
 import { LitElement, css, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
-import { resetStyles } from '../../../stylesheets/shared/reset.styles'
+import { resetStyles } from '@/stylesheets/shared/reset.styles'
 
 /**
  * 채팅 화면 레이아웃 컨테이너

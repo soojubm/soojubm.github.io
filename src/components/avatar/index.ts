@@ -1,5 +1,5 @@
-import './avatar'
+import '@/components/avatar/avatar'
 
-import './semantics/avatar-group'
+import '@/components/avatar/semantics/avatar-group'
 
 export {}

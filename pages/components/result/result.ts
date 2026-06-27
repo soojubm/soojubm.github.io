@@ -1,6 +1,6 @@
 import { renderDocumentLayout } from '../../../layouts/document-layout'
 import main from './index.html'
-import type { ActionConfig } from '../../../src/components/action-config'
+import type { ActionConfig } from '@/components/action-config'
 
 type ResultElement = HTMLElement & {
   primaryAction?: ActionConfig

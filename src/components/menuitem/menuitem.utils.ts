@@ -1,6 +1,6 @@
 import { html, nothing } from 'lit'
-import type { IconName } from '../icon-button/semantics/icon-names'
-import '../list-row/list-row'
+import type { IconName } from '@/components/icon-button/semantics/icon-names'
+import '@/components/list-row/list-row'
 
 export interface MenuItemProps {
   size: string

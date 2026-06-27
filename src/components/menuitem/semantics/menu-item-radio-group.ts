@@ -1,8 +1,8 @@
 import { LitElement, html, css, nothing } from 'lit'
 import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
-import { MenuItemRadio } from './menu-item-radio'
-import './menu-item-group'
-import { emit } from '../../../utils/emit'
+import { MenuItemRadio } from '@/components/menuitem/semantics/menu-item-radio'
+import '@/components/menuitem/semantics/menu-item-group'
+import { emit } from '@/utils/emit'
 
 @customElement('mm-menu-item-radio-group')
 export class MenuItemRadioGroup extends LitElement {

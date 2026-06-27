@@ -1,7 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import '../text'
-import type { TextSize } from '../text.styles'
+import '@/components/text/text'
+import type { TextSize } from '@/components/text/text.styles'
 
 export type HeadingLevel = 1 | 2 | 3 | 4
 

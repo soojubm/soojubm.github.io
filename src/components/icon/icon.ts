@@ -1,7 +1,7 @@
 import { LitElement, html } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 import { styleMap } from 'lit/directives/style-map.js'
-import { iconStyles } from './icon.styles'
+import { iconStyles } from '@/components/icon/icon.styles'
 
 const ICONOIR_STYLESHEET_URL =
   'https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css'

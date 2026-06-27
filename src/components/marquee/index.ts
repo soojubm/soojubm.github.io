@@ -1,3 +1,3 @@
-import './marquee'
+import '@/components/marquee/marquee'
 
 export {}

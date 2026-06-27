@@ -1,9 +1,9 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { ICON_NAMES, type IconName } from '../../icon-button/semantics/icon-names'
-import { menuItemStyles } from '../menuitem.styles'
-import { renderMenuItemContent } from '../menuitem.utils'
-import type { AriaCurrent } from '../../../types/aria'
+import { ICON_NAMES, type IconName } from '@/components/icon-button/semantics/icon-names'
+import { menuItemStyles } from '@/components/menuitem/menuitem.styles'
+import { renderMenuItemContent } from '@/components/menuitem/menuitem.utils'
+import type { AriaCurrent } from '@/types/aria'
 
 @customElement('mm-menu-item-link')
 export class MenuItemLink extends LitElement {

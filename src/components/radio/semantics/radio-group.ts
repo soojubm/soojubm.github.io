@@ -1,8 +1,8 @@
 import { LitElement, html } from 'lit'
 import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
-import { Radio } from '../radio'
-import { radioGroupStyles } from '../radio.styles' // 🔥 외부 스타일 임포트
-import { emit } from '../../../utils/emit'
+import { Radio } from '@/components/radio/radio'
+import { radioGroupStyles } from '@/components/radio/radio.styles' // 🔥 외부 스타일 임포트
+import { emit } from '@/utils/emit'
 
 @customElement('mm-radio-group')
 export class RadioGroup extends LitElement {

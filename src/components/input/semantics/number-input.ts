@@ -1,12 +1,12 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import type { AriaInvalid } from '../../../types/aria'
-import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
-import { textfieldStyles } from './textfield.styles'
-import '../../icon-button/icon-button'
-import '../input'
-import { emit } from '../../../utils/emit'
-import { uniqueId } from '../../../utils/unique-id'
+import type { AriaInvalid } from '@/types/aria'
+import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
+import { textfieldStyles } from '@/components/input/semantics/textfield.styles'
+import '@/components/icon-button/icon-button'
+import '@/components/input/input'
+import { emit } from '@/utils/emit'
+import { uniqueId } from '@/utils/unique-id'
 
 @customElement('mm-number-input')
 export class NumberInput extends LitElement {

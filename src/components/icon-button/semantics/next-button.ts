@@ -1,8 +1,8 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { ICON_NAMES } from './icon-names'
-import '../icon-button'
-import { emit } from '../../../utils/emit'
+import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
+import '@/components/icon-button/icon-button'
+import { emit } from '@/utils/emit'
 
 @customElement('mm-next-button')
 export class NextButton extends LitElement {

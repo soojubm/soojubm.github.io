@@ -1,7 +1,7 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { resetStyles } from '../../../stylesheets/shared/reset.styles'
-import { arrayAttributeConverter } from '../../../utils/property-converters'
+import { resetStyles } from '@/stylesheets/shared/reset.styles'
+import { arrayAttributeConverter } from '@/utils/property-converters'
 
 @customElement('mm-keyword-tag-group')
 export class KeywordTagGroup extends LitElement {

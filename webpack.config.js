@@ -78,6 +78,9 @@ module.exports = (env, argv) => {
 
     resolve: {
       extensions: ['.ts', '.js'],
+      alias: {
+        '@': path.resolve(__dirname, 'src'),
+      },
     },
 
     module: {

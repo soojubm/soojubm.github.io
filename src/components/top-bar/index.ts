@@ -1,8 +1,8 @@
 import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { ICON_NAMES } from '../icon-button/semantics/icon-names'
-import { topBarStyles } from './top-bar.styles'
-import { emit } from '../../utils/emit'
+import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
+import { topBarStyles } from '@/components/top-bar/top-bar.styles'
+import { emit } from '@/utils/emit'
 
 @customElement('mm-top-bar')
 class TopBar extends LitElement {

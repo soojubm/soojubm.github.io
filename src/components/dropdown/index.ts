@@ -1,3 +1,3 @@
-import './dropdown'
+import '@/components/dropdown/dropdown'
 
 export {}

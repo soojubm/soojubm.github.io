@@ -1,8 +1,8 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { ICON_NAMES } from './icon-names'
-import type { AriaBoolean, AriaIdRef } from '../../../types/aria'
-import '../icon-button'
+import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
+import type { AriaBoolean, AriaIdRef } from '@/types/aria'
+import '@/components/icon-button/icon-button'
 
 /**
  * 사이드바/내비게이션 메뉴를 여닫는 햄버거 버튼.

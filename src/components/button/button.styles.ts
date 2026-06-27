@@ -1,5 +1,5 @@
 import { css } from 'lit'
-import { interactiveControlStyles } from '../../stylesheets/shared/interactive-control.styles'
+import { interactiveControlStyles } from '@/stylesheets/shared/interactive-control.styles'
 
 /**
  * 모든 버튼형 컴포넌트가 공유하는 기반 스타일.

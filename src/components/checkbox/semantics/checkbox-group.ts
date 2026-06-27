@@ -1,9 +1,9 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
-import { checkboxGroupStyles } from '../checkbox.styles'
+import { checkboxGroupStyles } from '@/components/checkbox/checkbox.styles'
 
-import type { Checkbox } from '../checkbox'
-import { emit } from '../../../utils/emit'
+import type { Checkbox } from '@/components/checkbox/checkbox'
+import { emit } from '@/utils/emit'
 
 type CheckboxChangeDetail = {
   checked: boolean

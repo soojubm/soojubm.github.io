@@ -1,8 +1,8 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import type { IconName } from '../icon-button/semantics/icon-names'
-import '../icon/icon'
-import { tagStyles, type TagTone } from './tag.styles'
+import type { IconName } from '@/components/icon-button/semantics/icon-names'
+import '@/components/icon/icon'
+import { tagStyles, type TagTone } from '@/components/tag/tag.styles'
 
 export type TagToneMap<Value extends string> = Record<Value, TagTone>
 

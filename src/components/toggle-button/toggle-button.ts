@@ -1,9 +1,13 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import type { IconName } from '../icon-button/semantics/icon-names'
-import { buttonBaseStyles, toggleButtonStyles, buttonSelectedStyles } from '../button/button.styles'
-import { toggleSelection } from '../button/button.utils'
-import '../icon/icon'
+import type { IconName } from '@/components/icon-button/semantics/icon-names'
+import {
+  buttonBaseStyles,
+  toggleButtonStyles,
+  buttonSelectedStyles,
+} from '@/components/button/button.styles'
+import { toggleSelection } from '@/components/button/button.utils'
+import '@/components/icon/icon'
 
 @customElement('mm-toggle-button')
 export class ToggleButton extends LitElement {

@@ -1,5 +1,5 @@
-import '../../../src/components/pagination'
-import '../../../src/components/table'
+import '@/components/pagination'
+import '@/components/table'
 import { html } from 'lit'
 import { renderLayout } from '../../../layouts/base-layouts'
 import main from './index.html'

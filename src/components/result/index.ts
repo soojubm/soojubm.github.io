@@ -1,3 +1,3 @@
-import './result'
+import '@/components/result/result'
 
 export {}

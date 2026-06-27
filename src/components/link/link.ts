@@ -1,7 +1,7 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { ICON_NAMES } from '../icon-button/semantics/icon-names'
-import { linkStyles } from './link.styles'
+import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
+import { linkStyles } from '@/components/link/link.styles'
 
 @customElement('mm-link')
 class Link extends LitElement {

@@ -1,7 +1,7 @@
 import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { resetStyles } from '../../../../stylesheets/shared/reset.styles'
-import { chatBubbleStyles } from '../chat.styles'
+import { resetStyles } from '@/stylesheets/shared/reset.styles'
+import { chatBubbleStyles } from '@/components/domains/chat/chat.styles'
 
 /**
  * 상대방/AI가 보낸 메시지 버블. 좌측 정렬.

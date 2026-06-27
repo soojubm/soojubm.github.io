@@ -1,10 +1,10 @@
 import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { inputStyles } from '../input.styles'
-import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
-import '../input'
-import { emit } from '../../../utils/emit'
-import { uniqueId } from '../../../utils/unique-id'
+import { inputStyles } from '@/components/input/input.styles'
+import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
+import '@/components/input/input'
+import { emit } from '@/utils/emit'
+import { uniqueId } from '@/utils/unique-id'
 
 @customElement('mm-searchfield')
 class SearchField extends LitElement {

@@ -1,6 +1,6 @@
-import './checkbox'
+import '@/components/checkbox/checkbox'
 
-import './semantics/checkbox-group'
-import './semantics/master-checkbox'
+import '@/components/checkbox/semantics/checkbox-group'
+import '@/components/checkbox/semantics/master-checkbox'
 
 export {}

@@ -1,11 +1,11 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { resetStyles } from '../../../stylesheets/shared/reset.styles'
-import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
-import '../../text/text'
-import '../../icon-button/icon-button'
-import '../../button/button-group'
-import { emit } from '../../../utils/emit'
+import { resetStyles } from '@/stylesheets/shared/reset.styles'
+import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
+import '@/components/text/text'
+import '@/components/icon-button/icon-button'
+import '@/components/button/button-group'
+import { emit } from '@/utils/emit'
 
 @customElement('mm-ai-chat-message')
 export class AiChatMessage extends LitElement {

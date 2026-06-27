@@ -1,9 +1,9 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { resetStyles } from '../../../stylesheets/shared/reset.styles'
-import '../../icon-button/semantics/more-button'
-import { emit } from '../../../utils/emit'
-import { arrayAttributeConverter } from '../../../utils/property-converters'
+import { resetStyles } from '@/stylesheets/shared/reset.styles'
+import '@/components/icon-button/semantics/more-button'
+import { emit } from '@/utils/emit'
+import { arrayAttributeConverter } from '@/utils/property-converters'
 
 @customElement('mm-portfolio-item')
 export class PortfolioItem extends LitElement {

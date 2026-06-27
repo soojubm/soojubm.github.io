@@ -1,10 +1,10 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { resetStyles } from '../../../stylesheets/shared/reset.styles'
-import '../../button/button'
-import '../../notice/notice'
-import '../../text/text'
-import { emit } from '../../../utils/emit'
+import { resetStyles } from '@/stylesheets/shared/reset.styles'
+import '@/components/button/button'
+import '@/components/notice/notice'
+import '@/components/text/text'
+import { emit } from '@/utils/emit'
 
 export type ConfirmationStatus = 'pending' | 'accepted' | 'rejected'
 

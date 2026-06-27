@@ -1,9 +1,9 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 
-import { listRowStyles } from './list-row.styles'
-import type { IconName } from '../icon-button/semantics/icon-names'
-import '../avatar/avatar'
+import { listRowStyles } from '@/components/list-row/list-row.styles'
+import type { IconName } from '@/components/icon-button/semantics/icon-names'
+import '@/components/avatar/avatar'
 
 /**
  * leading(아바타·아이콘) + content(title/description) + trailing 한 줄을 구성하는 표현 전용 primitive.

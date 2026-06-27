@@ -1,6 +1,6 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import type { AriaBoolean, AriaIdRef } from '../../../types/aria'
+import type { AriaBoolean, AriaIdRef } from '@/types/aria'
 
 /**
  * 인라인 "더 보기 / 접기" 토글 버튼.

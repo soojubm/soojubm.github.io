@@ -1,8 +1,8 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { resetStyles } from '../../../stylesheets/shared/reset.styles'
-import type { IconName } from '../../icon-button/semantics/icon-names'
-import { emit } from '../../../utils/emit'
+import { resetStyles } from '@/stylesheets/shared/reset.styles'
+import type { IconName } from '@/components/icon-button/semantics/icon-names'
+import { emit } from '@/utils/emit'
 
 /**
  * 채팅 입력 추천 버튼. mm-button(size=small)을 베이스로 합니다.

@@ -1,2 +1,2 @@
-import './backdrop'
+import '@/components/backdrop/backdrop'
 export {}

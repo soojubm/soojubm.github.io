@@ -1,3 +1,4 @@
+// webpack.config.js가 ts-node로 직접 로드하므로 @/ alias 대신 상대경로를 유지한다.
 import { ICON_NAMES, type IconName } from './components/icon-button/semantics/icon-names'
 
 interface SitemapItem {

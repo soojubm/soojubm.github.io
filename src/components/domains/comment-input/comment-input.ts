@@ -1,11 +1,11 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property, query } from 'lit/decorators.js'
-import '../../button'
-import { inputStyles } from '../../input/input.styles'
-import '../../input/textarea'
-import { Textarea } from '../../input/textarea'
-import '../textfield-action-bar'
-import { emit } from '../../../utils/emit'
+import '@/components/button'
+import { inputStyles } from '@/components/input/input.styles'
+import '@/components/input/textarea'
+import { Textarea } from '@/components/input/textarea'
+import '@/components/domains/textfield-action-bar'
+import { emit } from '@/utils/emit'
 
 @customElement('mm-comment-input')
 export class CommentInput extends LitElement {

@@ -1,2 +1,2 @@
-import './search-suggestions'
-import './search-suggestion'
+import '@/components/domains/search-suggestions/search-suggestions'
+import '@/components/domains/search-suggestions/search-suggestion'

@@ -1,8 +1,8 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
-import type { MenuItemCheckbox } from './menu-item-checkbox'
-import './menu-item-group'
-import { emit } from '../../../utils/emit'
+import type { MenuItemCheckbox } from '@/components/menuitem/semantics/menu-item-checkbox'
+import '@/components/menuitem/semantics/menu-item-group'
+import { emit } from '@/utils/emit'
 
 /**
  * mm-menu-item-checkbox를 묶는 다중 선택 그룹.

@@ -1,9 +1,9 @@
 import { LitElement, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
-import { ICON_NAMES } from '../icon-button/semantics/icon-names'
-import '../icon/icon'
-import './surface'
-import { addSurfaceButtonStyles } from './add-surface-button.styles'
+import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
+import '@/components/icon/icon'
+import '@/components/surface/surface'
+import { addSurfaceButtonStyles } from '@/components/surface/add-surface-button.styles'
 
 @customElement('mm-add-surface-button')
 export class AddSurfaceButton extends LitElement {

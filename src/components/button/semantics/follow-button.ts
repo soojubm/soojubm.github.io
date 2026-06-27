@@ -1,7 +1,11 @@
 import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { buttonBaseStyles, followButtonStyles, buttonSelectedStyles } from '../button.styles'
-import { toggleSelection } from '../button.utils'
+import {
+  buttonBaseStyles,
+  followButtonStyles,
+  buttonSelectedStyles,
+} from '@/components/button/button.styles'
+import { toggleSelection } from '@/components/button/button.utils'
 
 @customElement('mm-follow-button')
 export class FollowButton extends LitElement {

@@ -1,7 +1,7 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, query, state } from 'lit/decorators.js'
 import { repeat } from 'lit/directives/repeat.js'
-import { emit } from '../../../utils/emit'
+import { emit } from '@/utils/emit'
 
 @customElement('mm-file-upload-button')
 export class FileUploadButton extends LitElement {

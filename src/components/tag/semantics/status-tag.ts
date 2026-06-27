@@ -1,8 +1,8 @@
 import { LitElement } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import type { IconName } from '../../icon-button/semantics/icon-names'
-import { renderMappedTag } from '../tag'
-import { statusToneMap, type StatusVariant } from '../tag.styles'
+import type { IconName } from '@/components/icon-button/semantics/icon-names'
+import { renderMappedTag } from '@/components/tag/tag'
+import { statusToneMap, type StatusVariant } from '@/components/tag/tag.styles'
 
 @customElement('mm-status-tag')
 export class StatusTag extends LitElement {

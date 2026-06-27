@@ -1,4 +1,4 @@
-import './feature'
-import './feature-group'
+import '@/components/feature/feature'
+import '@/components/feature/feature-group'
 
 export {}

@@ -1,7 +1,7 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, queryAll, state } from 'lit/decorators.js'
-import { SITEMAP } from '../../../sitemap'
-import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
+import { SITEMAP } from '@/sitemap'
+import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
 
 @customElement('mm-sidebar')
 export class Sidebar extends LitElement {

@@ -1,3 +1,3 @@
-import './switch'
+import '@/components/switch/switch'
 
 export {}

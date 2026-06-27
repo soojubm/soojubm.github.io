@@ -1,6 +1,6 @@
 import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { separatorStyles } from './separator.styles'
+import { separatorStyles } from '@/components/separator/separator.styles'
 
 type SeparatorSpacing = 'small' | 'medium'
 

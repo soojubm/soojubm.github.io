@@ -1,11 +1,11 @@
-import './text'
+import '@/components/text/text'
 
-import './semantics/paragraph'
-import './semantics/paragraph-group'
-import './semantics/read-more-paragraph'
-import './semantics/heading'
-import './semantics/caption'
-import './semantics/textList'
-import './semantics/text-block'
+import '@/components/text/semantics/paragraph'
+import '@/components/text/semantics/paragraph-group'
+import '@/components/text/semantics/read-more-paragraph'
+import '@/components/text/semantics/heading'
+import '@/components/text/semantics/caption'
+import '@/components/text/semantics/textList'
+import '@/components/text/semantics/text-block'
 
 export {}

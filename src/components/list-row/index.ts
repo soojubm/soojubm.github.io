@@ -1,3 +1,3 @@
-import './list-row'
+import '@/components/list-row/list-row'
 
 export {}

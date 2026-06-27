@@ -1,10 +1,10 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
-import type { IconName } from '../icon-button/semantics/icon-names'
-import '../button/button'
-import '../button/button-group'
-import type { ActionConfig } from '../action-config'
-import { resultStyles } from './result.styles'
+import type { IconName } from '@/components/icon-button/semantics/icon-names'
+import '@/components/button/button'
+import '@/components/button/button-group'
+import type { ActionConfig } from '@/components/action-config'
+import { resultStyles } from '@/components/result/result.styles'
 
 @customElement('mm-result')
 class Result extends LitElement {

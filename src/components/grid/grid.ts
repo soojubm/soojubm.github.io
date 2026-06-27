@@ -1,6 +1,6 @@
 import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { gridStyles } from './grid.styles'
+import { gridStyles } from '@/components/grid/grid.styles'
 
 type Columns = 1 | 2 | 3 | 4
 

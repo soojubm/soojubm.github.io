@@ -1,6 +1,6 @@
 import { LitElement, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
-import '../../text/semantics/paragraph'
+import '@/components/text/semantics/paragraph'
 
 @customElement('mm-textfield-validation')
 export class TextfieldValidation extends LitElement {

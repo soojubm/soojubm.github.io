@@ -1,9 +1,13 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
-import { buttonBaseStyles, filterButtonStyles, buttonSelectedStyles } from '../button.styles'
-import { emit } from '../../../utils/emit'
-import '../../icon/icon'
+import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
+import {
+  buttonBaseStyles,
+  filterButtonStyles,
+  buttonSelectedStyles,
+} from '@/components/button/button.styles'
+import { emit } from '@/utils/emit'
+import '@/components/icon/icon'
 
 /**
  * 콘텐츠 필터링 옵션 버튼. 선택 시 체크 아이콘을 표시하고 selected 상태를 반영합니다.

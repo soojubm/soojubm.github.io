@@ -9,7 +9,7 @@ import {
   type Variant,
   type Size,
   type Radius,
-} from './surface.styles'
+} from '@/components/surface/surface.styles'
 
 @customElement('mm-surface')
 export class Surface extends LitElement {

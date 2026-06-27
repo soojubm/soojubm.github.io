@@ -1,9 +1,12 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { resetStyles } from '../../../stylesheets/shared/reset.styles'
-import { arrayAttributeConverter } from '../../../utils/property-converters'
-import '../../text/semantics/textList'
-import { componentContentFrameStyles, componentStageFrameStyles } from './component.styles'
+import { resetStyles } from '@/stylesheets/shared/reset.styles'
+import { arrayAttributeConverter } from '@/utils/property-converters'
+import '@/components/text/semantics/textList'
+import {
+  componentContentFrameStyles,
+  componentStageFrameStyles,
+} from '@/components/domains/component/component.styles'
 
 /**
  * 컴포넌트 해부도(Anatomy) 섹션.

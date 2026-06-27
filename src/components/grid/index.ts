@@ -1,3 +1,3 @@
-import './grid'
+import '@/components/grid/grid'
 
 export {}

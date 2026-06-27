@@ -1,3 +1,3 @@
-import './footer'
+import '@/components/footer/footer'
 
 export {}

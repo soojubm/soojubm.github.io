@@ -1,5 +1,5 @@
 import { css } from 'lit'
-import { inputStyles } from '../input.styles'
+import { inputStyles } from '@/components/input/input.styles'
 
 export const textfieldStyles = [
   inputStyles,

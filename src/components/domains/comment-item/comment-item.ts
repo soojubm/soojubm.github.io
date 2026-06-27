@@ -1,10 +1,10 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
-import '../../button/button'
-import '../../icon-button/semantics/more-button'
-import '../../menuitem/semantics/menu-item-action'
-import { emit } from '../../../utils/emit'
-import { uniqueId } from '../../../utils/unique-id'
+import '@/components/button/button'
+import '@/components/icon-button/semantics/more-button'
+import '@/components/menuitem/semantics/menu-item-action'
+import { emit } from '@/utils/emit'
+import { uniqueId } from '@/utils/unique-id'
 
 /**
  * 댓글 목록의 개별 항목.

@@ -1,7 +1,7 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { iconButtonStyles } from '../icon-button.styles'
-import type { AriaCurrent } from '../../../types/aria'
+import { iconButtonStyles } from '@/components/icon-button/icon-button.styles'
+import type { AriaCurrent } from '@/types/aria'
 
 /**
  * 페이지네이션 번호 버튼.

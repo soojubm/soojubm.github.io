@@ -1,9 +1,9 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { resetStyles } from '../../../stylesheets/shared/reset.styles'
-import '../../icon-button/icon-button'
-import { ICON_NAMES } from '../../icon-button/semantics/icon-names'
-import { toggleSelection } from '../button.utils'
+import { resetStyles } from '@/stylesheets/shared/reset.styles'
+import '@/components/icon-button/icon-button'
+import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
+import { toggleSelection } from '@/components/button/button.utils'
 
 /**
  * 북마크/즐겨찾기 토글 버튼.

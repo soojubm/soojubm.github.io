@@ -1,3 +1,3 @@
-import './token-group'
-import './token-item'
-import './token-stage'
+import '@/components/domains/token-group/token-group'
+import '@/components/domains/token-group/token-item'
+import '@/components/domains/token-group/token-stage'

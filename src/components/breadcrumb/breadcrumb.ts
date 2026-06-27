@@ -1,6 +1,6 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { arrayAttributeConverter } from '../../utils/property-converters'
+import { arrayAttributeConverter } from '@/utils/property-converters'
 
 interface BreadcrumbItem {
   label: string
