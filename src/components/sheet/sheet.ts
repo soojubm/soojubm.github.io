@@ -1,5 +1,6 @@
 import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { styleMap } from 'lit/directives/style-map.js'
 import { sheetStyles } from './sheet.styles'
 import { emit } from '../../utils/emit'
 export type SheetVariant = 'center' | 'bottom' | 'left' | 'right' | 'inline'
@@ -124,9 +125,17 @@ class Sheet extends LitElement {
   static styles = sheetStyles
 
   render() {
-    const heightStyle = this.height ? `height:${this.height};` : ''
+    const sheetStyle = {
+      height: this.height ?? null,
+    }
+
     return html`
-      <aside class="sheet" variant=${this.variant} ?open=${this.isOpen} style="${heightStyle}">
+      <aside
+        class="sheet"
+        variant=${this.variant}
+        ?open=${this.isOpen}
+        style=${styleMap(sheetStyle)}
+      >
         <slot></slot>
       </aside>
     `
