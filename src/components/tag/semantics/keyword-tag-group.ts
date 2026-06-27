@@ -1,21 +1,15 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { resetStyles } from '../../../stylesheets/shared/reset.styles'
+import { arrayAttributeConverter } from '../../../utils/property-converters'
 
 @customElement('mm-keyword-tag-group')
 export class KeywordTagGroup extends LitElement {
   @property({ type: String }) heading = ''
 
   @property({
-    type: Array,
-    converter: value => {
-      if (!value) return []
-      try {
-        return JSON.parse(value)
-      } catch {
-        return []
-      }
-    },
+    attribute: 'keywords',
+    converter: arrayAttributeConverter<string>(),
   })
   keywords: string[] = []
 

@@ -1,6 +1,7 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { resetStyles } from '../../stylesheets/shared/reset.styles'
+import { arrayAttributeConverter } from '../../utils/property-converters'
 
 export interface TableColumn {
   label: string
@@ -16,17 +17,8 @@ export class Table extends LitElement {
   @property({ attribute: false }) rows: unknown = nothing
 
   @property({
-    type: Array,
-    converter: value => {
-      if (!value) return []
-
-      try {
-        const columns = JSON.parse(value)
-        return Array.isArray(columns) ? columns : []
-      } catch {
-        return []
-      }
-    },
+    attribute: 'columns',
+    converter: arrayAttributeConverter<TableColumn>(),
   })
   columns: TableColumn[] = []
 

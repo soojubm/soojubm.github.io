@@ -1,17 +1,9 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { resetStyles } from '../../../stylesheets/shared/reset.styles'
+import { arrayAttributeConverter } from '../../../utils/property-converters'
 import '../../text/semantics/textList'
 import { componentContentFrameStyles, componentStageFrameStyles } from './component.styles'
-
-const parseParts = (value: string | null): string[] => {
-  try {
-    const parsed = JSON.parse(value || '[]')
-    return Array.isArray(parsed) ? parsed : []
-  } catch {
-    return []
-  }
-}
 
 /**
  * 컴포넌트 해부도(Anatomy) 섹션.
@@ -26,10 +18,7 @@ export class ComponentAnatomy extends LitElement {
   @property({ type: String }) heading = 'Anatomy'
   @property({
     attribute: 'parts',
-    converter: {
-      fromAttribute: parseParts,
-      toAttribute: value => JSON.stringify(value),
-    },
+    converter: arrayAttributeConverter<string>(),
   })
   parts: string[] = []
 

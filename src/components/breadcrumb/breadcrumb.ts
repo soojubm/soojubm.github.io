@@ -1,5 +1,6 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { arrayAttributeConverter } from '../../utils/property-converters'
 
 interface BreadcrumbItem {
   label: string
@@ -13,7 +14,11 @@ interface BreadcrumbItem {
  */
 @customElement('mm-breadcrumb')
 export class Breadcrumb extends LitElement {
-  @property({ type: String }) items = '[]'
+  @property({
+    attribute: 'items',
+    converter: arrayAttributeConverter<BreadcrumbItem>(),
+  })
+  items: BreadcrumbItem[] = []
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = 'breadcrumb'
   @property({ type: String }) divider = '/'
 
@@ -51,17 +56,8 @@ export class Breadcrumb extends LitElement {
     }
   `
 
-  private get parsedItems(): BreadcrumbItem[] {
-    try {
-      const parsed = JSON.parse(this.items)
-      return Array.isArray(parsed) ? parsed : []
-    } catch {
-      return []
-    }
-  }
-
   render() {
-    const items = this.parsedItems
+    const items = this.items
 
     return html`
       <nav class="breadcrumb" aria-label=${this.ariaLabel}>

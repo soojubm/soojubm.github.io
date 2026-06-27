@@ -1,19 +1,13 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { resetStyles } from '../../../stylesheets/shared/reset.styles'
+import { arrayAttributeConverter } from '../../../utils/property-converters'
 
 @customElement('mm-avatar-group')
 export class AvatarGroup extends LitElement {
   @property({
-    type: Array,
-    converter: value => {
-      if (!value) return []
-      try {
-        return JSON.parse(value)
-      } catch {
-        return []
-      }
-    },
+    attribute: 'avatars',
+    converter: arrayAttributeConverter<string>(),
   })
   avatars: string[] = []
 

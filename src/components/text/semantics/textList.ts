@@ -2,26 +2,15 @@ import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { textStyles } from '../text.styles'
 import '../../domains/indicators/list-marker'
+import { arrayAttributeConverter } from '../../../utils/property-converters'
 
 type Variant = 'check' | 'number'
-
-const parseTexts = (value: string | null): string[] => {
-  try {
-    const parsed = JSON.parse(value || '[]')
-    return Array.isArray(parsed) ? parsed : []
-  } catch {
-    return []
-  }
-}
 
 @customElement('mm-text-list')
 class TextList extends LitElement {
   @property({
     attribute: 'texts',
-    converter: {
-      fromAttribute: parseTexts,
-      toAttribute: value => JSON.stringify(value),
-    },
+    converter: arrayAttributeConverter<string>(),
   })
   texts: string[] = []
   @property({ type: String }) variant: Variant = 'check'

@@ -4,6 +4,7 @@ import { styleMap } from 'lit/directives/style-map.js'
 import { ICON_NAMES, type IconName } from '../icon-button/semantics/icon-names'
 import '../text/semantics/caption'
 import { emit } from '../../utils/emit'
+import { arrayAttributeConverter } from '../../utils/property-converters'
 
 interface BottomBarItem {
   label: string
@@ -21,7 +22,11 @@ const defaultItems: BottomBarItem[] = [
 
 @customElement('mm-bottom-bar')
 class BottomBar extends LitElement {
-  @property({ type: String }) items = ''
+  @property({
+    attribute: 'items',
+    converter: arrayAttributeConverter<BottomBarItem>(defaultItems),
+  })
+  items: BottomBarItem[] = defaultItems
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = '하단 내비게이션'
 
   @state() private selectedIndex: number | null = null
@@ -83,19 +88,8 @@ class BottomBar extends LitElement {
     emit(this, 'change', { index })
   }
 
-  private get parsedItems() {
-    if (!this.items) return defaultItems
-
-    try {
-      const parsed = JSON.parse(this.items)
-      return Array.isArray(parsed) ? parsed : defaultItems
-    } catch {
-      return defaultItems
-    }
-  }
-
   render() {
-    const items = this.parsedItems
+    const items = this.items.length ? this.items : defaultItems
     const defaultActive = items.findIndex(item => item.active)
     const activeIndex = this.selectedIndex ?? (defaultActive >= 0 ? defaultActive : null)
     const bottomBarStyle = {

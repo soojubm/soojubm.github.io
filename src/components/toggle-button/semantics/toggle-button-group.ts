@@ -6,6 +6,7 @@ import '../../button/button-group'
 import '../toggle-button'
 import './view-mode-switcher'
 import { emit } from '../../../utils/emit'
+import { arrayAttributeConverter } from '../../../utils/property-converters'
 
 interface OptionItem {
   value: string
@@ -17,23 +18,11 @@ interface OptionItem {
   disabled?: boolean
 }
 
-const parseOptions = (value: string | null): OptionItem[] => {
-  try {
-    const parsed = JSON.parse(value || '[]')
-    return Array.isArray(parsed) ? parsed : []
-  } catch {
-    return []
-  }
-}
-
 @customElement('mm-toggle-button-group')
 export class ToggleButtonGroup extends LitElement {
   @property({
     attribute: 'options',
-    converter: {
-      fromAttribute: parseOptions,
-      toAttribute: value => JSON.stringify(value),
-    },
+    converter: arrayAttributeConverter<OptionItem>(),
   })
   options: OptionItem[] = []
   @property({ type: Boolean, reflect: true }) stretch = false
