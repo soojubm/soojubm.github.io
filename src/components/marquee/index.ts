@@ -1,0 +1,3 @@
+import './marquee'
+
+export {}

@@ -101,7 +101,7 @@
   transform: translate(-50%, -50%) rotate(-3.75deg);
 }
 
-.marquee {
+mm-marquee {
   width: 100%;
   border: var(--border);
   border-top: 0;
