@@ -2,6 +2,7 @@ import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
 import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
+import '@/components/flex/flex'
 
 /**
  * mm-review-item
@@ -14,12 +15,11 @@ export class ReviewItem extends LitElement {
     resetStyles,
     css`
       :host {
-        display: flex;
+        display: block;
         width: 100%;
       }
 
       .rating {
-        display: flex;
         color: var(--color-accent);
       }
     `,
@@ -34,14 +34,14 @@ export class ReviewItem extends LitElement {
     return html`
       <mm-surface variant="flat">
         <mm-flex direction="column" gap="3">
-          <div class="rating" role="img" aria-label="${this.rating}점">
+          <mm-flex class="rating" role="img" aria-label="${this.rating}점">
             ${Array.from(
               { length: this.rating },
               () => html`
                 <mm-icon name=${ICON_NAMES.FAVORITE_SELECTED}></mm-icon>
               `,
             )}
-          </div>
+          </mm-flex>
 
           <mm-paragraph>${this.content}</mm-paragraph>
           ${this.author || this.datetime

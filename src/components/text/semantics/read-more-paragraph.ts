@@ -25,7 +25,7 @@ export class ReadMoreParagraph extends LitElement {
 
   @state() private expanded = false
 
-  private readonly _contentId = uniqueId('read-more-content')
+  private readonly contentId = uniqueId('read-more-content')
 
   private toggle() {
     this.expanded = !this.expanded
@@ -40,12 +40,12 @@ export class ReadMoreParagraph extends LitElement {
 
     return html`
       <mm-paragraph>
-        <span id=${this._contentId}>${displayText}</span>
+        <span id=${this.contentId}>${displayText}</span>
         ${truncated
           ? html`
               <mm-read-more-button
                 aria-expanded=${String(this.expanded)}
-                aria-controls=${this._contentId}
+                aria-controls=${this.contentId}
                 @click=${this.toggle}
               ></mm-read-more-button>
             `

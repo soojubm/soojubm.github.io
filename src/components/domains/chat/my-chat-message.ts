@@ -2,6 +2,7 @@ import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
 import '@/components/text/text'
+import '@/components/flex/flex'
 
 @customElement('mm-my-chat-message')
 export class MyChatMessage extends LitElement {
@@ -9,10 +10,7 @@ export class MyChatMessage extends LitElement {
     resetStyles,
     css`
       :host {
-        display: flex;
-        flex-direction: column;
-        gap: var(--space-2);
-        align-items: flex-end;
+        display: block;
       }
 
       .time {
@@ -30,12 +28,14 @@ export class MyChatMessage extends LitElement {
 
   render() {
     return html`
-      <slot></slot>
-      ${this.datetime
-        ? html`
-            <mm-text class="time" as="time" size="12" weight="medium">${this.datetime}</mm-text>
-          `
-        : nothing}
+      <mm-flex direction="column" gap="2" align-items="end">
+        <slot></slot>
+        ${this.datetime
+          ? html`
+              <mm-text class="time" as="time" size="12" weight="medium">${this.datetime}</mm-text>
+            `
+          : nothing}
+      </mm-flex>
     `
   }
 }

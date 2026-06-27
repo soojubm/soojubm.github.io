@@ -27,25 +27,25 @@ export class Dialog extends LitElement {
   @property({ attribute: false }) primaryAction?: ActionConfig
   @property({ attribute: false }) secondaryAction?: ActionConfig
 
-  @query('mm-sheet') private _sheet?: Sheet
+  @query('mm-sheet') private sheet?: Sheet
 
   show() {
     this.open = true
-    this._sheet?.open()
+    this.sheet?.open()
   }
 
   close() {
     this.open = false
-    this._sheet?.close()
+    this.sheet?.close()
   }
 
   updated(changed: Map<string, unknown>) {
     if (!changed.has('open')) return
     this.updateComplete.then(() => {
       if (this.open) {
-        this._sheet?.open()
+        this.sheet?.open()
       } else {
-        this._sheet?.close()
+        this.sheet?.close()
       }
     })
   }

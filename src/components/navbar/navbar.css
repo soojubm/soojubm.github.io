@@ -38,6 +38,20 @@
   position: relative;
 }
 
+.navbar-user-menu {
+  position: relative;
+}
+
+.navbar-profile-action {
+  margin: var(--space-2) 0 0;
+}
+
+.navbar-profile-tag {
+  position: absolute;
+  right: var(--space-4);
+  top: var(--space-4);
+}
+
 /* PAGE COMPONENT */
 /* page 패딩, article에 패딩. 마이너스 마진. page size="" */
 /* ReactNative safeAreaView, scrollView */

@@ -1,6 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, queryAssignedElements } from 'lit/decorators.js'
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
+import '@/components/flex/flex'
 
 @customElement('mm-token-group')
 export class TokenGroup extends LitElement {
@@ -8,22 +9,23 @@ export class TokenGroup extends LitElement {
     resetStyles,
     css`
       :host {
-        display: grid;
-        gap: var(--space-2);
+        display: block;
       }
     `,
   ]
 
   @queryAssignedElements({ selector: 'mm-token-item', flatten: true })
-  private _items!: HTMLElement[]
+  private items!: HTMLElement[]
 
-  private _assignIndices = () => {
-    this._items.forEach((item, index) => item.setAttribute('index', String(index + 1)))
+  private assignIndices = () => {
+    this.items.forEach((item, index) => item.setAttribute('index', String(index + 1)))
   }
 
   render() {
     return html`
-      <slot @slotchange=${this._assignIndices}></slot>
+      <mm-flex direction="column" gap="2">
+        <slot @slotchange=${this.assignIndices}></slot>
+      </mm-flex>
     `
   }
 }

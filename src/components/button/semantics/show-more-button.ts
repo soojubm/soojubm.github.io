@@ -4,6 +4,7 @@ import { resetStyles } from '@/stylesheets/shared/reset.styles'
 import type { AriaBoolean } from '@/types/aria'
 import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
 import { emit } from '@/utils/emit'
+import '@/components/flex/flex'
 
 /**
  * 더보기/접기 토글 버튼.
@@ -15,8 +16,7 @@ export class ShowMoreButton extends LitElement {
     resetStyles,
     css`
       :host {
-        display: flex;
-        justify-content: center;
+        display: block;
       }
 
       mm-icon {
@@ -40,15 +40,17 @@ export class ShowMoreButton extends LitElement {
 
   render() {
     return html`
-      <mm-button
-        variant="tertiary"
-        icon=${ICON_NAMES.EXPAND}
-        icon-position="trailing"
-        @click=${this.handleClick}
-        aria-expanded=${this.ariaExpanded}
-      >
-        ${this.ariaExpanded === 'true' ? this.lessLabel : this.moreLabel}
-      </mm-button>
+      <mm-flex justify-content="center">
+        <mm-button
+          variant="tertiary"
+          icon=${ICON_NAMES.EXPAND}
+          icon-position="trailing"
+          @click=${this.handleClick}
+          aria-expanded=${this.ariaExpanded}
+        >
+          ${this.ariaExpanded === 'true' ? this.lessLabel : this.moreLabel}
+        </mm-button>
+      </mm-flex>
     `
   }
 }

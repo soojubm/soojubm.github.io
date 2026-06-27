@@ -2,6 +2,7 @@ import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { ICON_NAMES, type IconName } from '@/components/icon-button/semantics/icon-names'
 import { featureStyles } from '@/components/feature/feature.styles'
+import '@/components/flex/flex'
 
 // 컴포넌트 외부로 상수 데이터를 분리하여 메모리 재할당 방지
 const ICON_MAP: Record<string, IconName> = {
@@ -65,7 +66,7 @@ export class Feature extends LitElement {
     if (this.emoji) {
       return html`
         <mm-avatar variant="secondary" size="large">
-          <span aria-hidden="true" style="font-size: var(--font-size-24)">${this.emoji}</span>
+          <span class="feature-emoji" aria-hidden="true">${this.emoji}</span>
         </mm-avatar>
       `
     }
@@ -80,7 +81,12 @@ export class Feature extends LitElement {
 
   render() {
     return html`
-      <div>
+      <mm-flex
+        class="feature"
+        direction="column"
+        gap="3"
+        align-items=${this.centered ? 'center' : 'start'}
+      >
         ${this.renderVisual()}
 
         <mm-text-block
@@ -91,7 +97,7 @@ export class Feature extends LitElement {
         ></mm-text-block>
 
         <slot></slot>
-      </div>
+      </mm-flex>
     `
   }
 }

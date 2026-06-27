@@ -9,21 +9,21 @@ import { tabsStyles } from '@/components/tabs/tabs.styles'
 export default class TabList extends LitElement {
   static styles = [tabsStyles]
 
-  private readonly _tabsId = uniqueId('tabs')
+  private readonly tabsId = uniqueId('tabs')
 
   @property({ type: String }) value = ''
   @property({ type: String, reflect: true }) variant = 'line'
 
-  @queryAssignedElements({ flatten: true }) private _assignedElements!: HTMLElement[]
+  @queryAssignedElements({ flatten: true }) private assignedElements!: HTMLElement[]
   @query('.indicator') private indicator!: HTMLDivElement
   @query('.tablist-container') private tablistContainer!: HTMLDivElement
 
-  private get _tabs(): Tab[] {
-    return this._assignedElements.filter((element): element is Tab => element instanceof Tab)
+  private get tabs(): Tab[] {
+    return this.assignedElements.filter((element): element is Tab => element instanceof Tab)
   }
 
   /** 같은 부모에서 다음 mm-tab-list 전까지 이어지는 형제 패널을 이 탭리스트의 패널로 본다. */
-  private get _panels(): TabPanel[] {
+  private get panels(): TabPanel[] {
     const panels: TabPanel[] = []
     let sibling = this.nextElementSibling
     while (sibling) {
@@ -36,42 +36,42 @@ export default class TabList extends LitElement {
 
   connectedCallback() {
     super.connectedCallback()
-    this.addEventListener('tab-select', this._handleTabSelect)
-    this.addEventListener('keydown', this._handleKeydown)
+    this.addEventListener('tab-select', this.handleTabSelect)
+    this.addEventListener('keydown', this.handleKeydown)
   }
 
   disconnectedCallback() {
-    this.removeEventListener('tab-select', this._handleTabSelect)
-    this.removeEventListener('keydown', this._handleKeydown)
+    this.removeEventListener('tab-select', this.handleTabSelect)
+    this.removeEventListener('keydown', this.handleKeydown)
     super.disconnectedCallback()
   }
 
   protected firstUpdated() {
-    this._sync()
+    this.sync()
   }
 
   protected updated(changedProperties: Map<string, unknown>) {
     if (changedProperties.has('value') || changedProperties.has('variant')) {
-      this._sync()
+      this.sync()
     }
   }
 
-  private _handleSlotChange = () => {
-    this._sync()
+  private handleSlotChange = () => {
+    this.sync()
   }
 
-  private _handleTabSelect = (event: Event) => {
+  private handleTabSelect = (event: Event) => {
     const customEvent = event as CustomEvent<{ value: string }>
     this.value = customEvent.detail.value
   }
 
-  private _handleKeydown = (event: KeyboardEvent) => {
+  private handleKeydown = (event: KeyboardEvent) => {
     const currentTab = event.composedPath().find(element => element instanceof Tab) as
       | Tab
       | undefined
     if (!currentTab) return
 
-    const tabs = this._tabs
+    const tabs = this.tabs
     const currentIndex = tabs.indexOf(currentTab)
     if (currentIndex < 0) return
 
@@ -105,9 +105,9 @@ export default class TabList extends LitElement {
   }
 
   /** 선택값 기준으로 탭·패널의 active와 ARIA 관계를 맞추고 인디케이터를 정렬한다. */
-  private _sync() {
-    const tabs = this._tabs
-    const panels = this._panels
+  private sync() {
+    const tabs = this.tabs
+    const panels = this.panels
 
     const selectedValue = tabs.some(tab => tab.value === this.value)
       ? this.value
@@ -116,11 +116,11 @@ export default class TabList extends LitElement {
 
     tabs.forEach((tab, index) => {
       const panel = panels.find(candidate => candidate.value === tab.value)
-      if (!tab.id) tab.id = `${this._tabsId}-tab-${index + 1}`
+      if (!tab.id) tab.id = `${this.tabsId}-tab-${index + 1}`
 
       tab.active = tab.value === selectedValue
       if (panel) {
-        if (!panel.id) panel.id = `${this._tabsId}-panel-${index + 1}`
+        if (!panel.id) panel.id = `${this.tabsId}-panel-${index + 1}`
         tab.setAttribute('aria-controls', panel.id)
         panel.setAttribute('aria-labelledby', tab.id)
       } else {
@@ -135,12 +135,12 @@ export default class TabList extends LitElement {
       }
     })
 
-    this._moveIndicator()
+    this.moveIndicator()
   }
 
-  private _moveIndicator() {
+  private moveIndicator() {
     requestAnimationFrame(() => {
-      const activeTab = this._tabs.find(tab => tab.hasAttribute('active'))
+      const activeTab = this.tabs.find(tab => tab.hasAttribute('active'))
       if (!activeTab) {
         if (this.indicator) this.indicator.style.width = '0px'
         return
@@ -157,7 +157,7 @@ export default class TabList extends LitElement {
   render() {
     return html`
       <div class="tablist-container" role="tablist">
-        <slot @slotchange=${this._handleSlotChange}></slot>
+        <slot @slotchange=${this.handleSlotChange}></slot>
         <div class="indicator"></div>
       </div>
     `

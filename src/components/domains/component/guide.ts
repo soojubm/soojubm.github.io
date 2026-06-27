@@ -1,28 +1,25 @@
 import { LitElement, css, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
+import '@/components/flex/flex'
 
 @customElement('mm-component-guide')
 class ComponentGuide extends LitElement {
   static styles = css`
     :host {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-4);
+      display: block;
       padding: var(--space-section) 0 0;
-    }
-
-    .slot-container {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-8);
     }
   `
 
   render() {
-    return html`<div>
-      <div hidden><mm-text as="h2"">Component Guide</mm-text></div>
-     <div class="slot-container"> <slot></slot></div>
-    </div>`
+    return html`
+      <mm-flex direction="column" gap="4">
+        <div hidden><mm-text as="h2">Component Guide</mm-text></div>
+        <mm-flex direction="column" gap="8">
+          <slot></slot>
+        </mm-flex>
+      </mm-flex>
+    `
   }
 }
 

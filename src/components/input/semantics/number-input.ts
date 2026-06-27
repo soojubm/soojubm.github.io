@@ -58,7 +58,7 @@ export class NumberInput extends LitElement {
             ?disabled=${this.disabled}
             aria-invalid=${this.ariaInvalid ?? nothing}
             aria-describedby=${this.validationText ? `${this.inputId}-validation` : nothing}
-            @input=${this._handleInput}
+            @input=${this.handleInput}
           ></mm-input>
           <mm-icon-button
             variant="ghost"
@@ -68,7 +68,7 @@ export class NumberInput extends LitElement {
             tooltip="감소"
             tooltip-placement="center"
             ?disabled=${this.disabled}
-            @click=${this._decrement}
+            @click=${this.decrement}
           ></mm-icon-button>
           <mm-icon-button
             variant="ghost"
@@ -78,7 +78,7 @@ export class NumberInput extends LitElement {
             tooltip="증가"
             tooltip-placement="center"
             ?disabled=${this.disabled}
-            @click=${this._increment}
+            @click=${this.increment}
           ></mm-icon-button>
         </div>
         ${this.validationText
@@ -92,36 +92,36 @@ export class NumberInput extends LitElement {
     `
   }
 
-  private get _numericValue() {
+  private get numericValue() {
     const parsed = Number(this.value)
     if (Number.isFinite(parsed)) return parsed
     if (typeof this.min === 'number') return this.min
     return 0
   }
 
-  private _clamp(value: number) {
+  private clamp(value: number) {
     if (typeof this.min === 'number' && value < this.min) return this.min
     if (typeof this.max === 'number' && value > this.max) return this.max
     return value
   }
 
-  private _commit(value: number) {
-    this.value = String(this._clamp(value))
+  private commit(value: number) {
+    this.value = String(this.clamp(value))
     emit(this, 'input', { value: this.value })
     emit(this, 'change', { value: this.value })
   }
 
-  private _decrement() {
+  private decrement() {
     if (this.disabled) return
-    this._commit(this._numericValue - this.step)
+    this.commit(this.numericValue - this.step)
   }
 
-  private _increment() {
+  private increment() {
     if (this.disabled) return
-    this._commit(this._numericValue + this.step)
+    this.commit(this.numericValue + this.step)
   }
 
-  private _handleInput(event: Event) {
+  private handleInput(event: Event) {
     const target = event.target as HTMLInputElement
     this.value = target.value
     emit(this, 'input', { value: this.value })

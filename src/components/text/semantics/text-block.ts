@@ -2,6 +2,7 @@ import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
 import '@/components/tag/tag'
+import '@/components/flex/flex'
 
 /**
  * mm-text-block
@@ -15,14 +16,6 @@ class TextBlock extends LitElement {
     css`
       :host {
         display: block;
-      }
-      .container {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      :host([centered]) .container {
-        align-items: center;
       }
       /* Level 1 전용 본문 최대 너비 제한 (가독성 최적화) */
       :host([level='1']) .container mm-paragraph {
@@ -42,17 +35,17 @@ class TextBlock extends LitElement {
     '1': {
       headingSize: '32',
       descriptionSize: '18',
-      gap: 'var(--space-3)',
+      gap: '3',
     },
     '2': {
       headingSize: '24',
       descriptionSize: '14',
-      gap: 'var(--space-2)',
+      gap: '2',
     },
     '3': {
       headingSize: '18',
       descriptionSize: '14',
-      gap: 'var(--space-2)',
+      gap: '2',
     },
   }
 
@@ -64,7 +57,12 @@ class TextBlock extends LitElement {
     const isLevel1 = this.level === '1'
 
     return html`
-      <div class="container" style="gap:${variant.gap}">
+      <mm-flex
+        class="container"
+        direction="column"
+        gap=${variant.gap}
+        align-items=${this.centered ? 'center' : 'start'}
+      >
         ${this.eyebrow
           ? html`
               <mm-tag tone="purple">${this.eyebrow}</mm-tag>
@@ -94,7 +92,7 @@ class TextBlock extends LitElement {
               </mm-text>
             `
           : nothing}
-      </div>
+      </mm-flex>
     `
   }
 }

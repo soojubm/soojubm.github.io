@@ -17,7 +17,7 @@ export class CloseButton extends LitElement {
 
   @property({ type: Boolean }) disabled = false
 
-  private _handleClick = () => {
+  private handleClick = () => {
     emit(this, 'close')
   }
 
@@ -28,7 +28,7 @@ export class CloseButton extends LitElement {
         variant="secondary"
         aria-label="닫기"
         ?disabled=${this.disabled}
-        @click=${this._handleClick}
+        @click=${this.handleClick}
       ></mm-icon-button>
     `
   }

@@ -22,12 +22,12 @@ export class Footer extends LitElement {
           avatar-variant="secondary"
         ></mm-user-snippet>
 
-        <div style="max-width: 240px; margin: 0.75rem 0 1.5rem">
+        <div class="footer-social-links">
           <mm-social-links
             notion="https://soojubm.notion.site/UI-Designer-9c18f4dd39eb4181b9f9c2ee76896618"
             github="https://github.com/soojubm"
           ></mm-social-links>
-          <mm-flex gap="2" style="display:none;margin: var(--space-4) 0 0 0">
+          <mm-flex class="footer-hidden-links" gap="2">
             <mm-link href="/my/films/">영화감상 목록</mm-link>
             <mm-link href="/my/books/">독서 목록</mm-link>
           </mm-flex>
@@ -37,7 +37,7 @@ export class Footer extends LitElement {
           <dd>주식회사 수줍당</dd>
           <dt>대표이사</dt>
           <dd>수줍이</dd>
-          <span style="width: 100%"></span>
+          <span class="footer-address-break"></span>
           <dt>사업자등록번호</dt>
           <dd>888-88-88888</dd>
           <dt>주소</dt>
@@ -48,14 +48,12 @@ export class Footer extends LitElement {
           <dd>2018-서울강서구-1234</dd>
           <abbr title="phone"></abbr>
         </dl>
-        <small class="footer-copyright" style="margin: var(--space-3) 0 0 0">
-          © 2019 soojubm. All rights reserved.
-        </small>
+        <small class="footer-copyright">© 2019 soojubm. All rights reserved.</small>
         <address>
           <mm-paragraph>Making things better.</mm-paragraph>
         </address>
 
-        <aside style="margin: 1.5rem 0 0 0">
+        <aside class="footer-to-top">
           <mm-to-top-button></mm-to-top-button>
         </aside>
       </footer>

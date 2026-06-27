@@ -31,6 +31,10 @@ export const componentTokensStyles = [
         var(--component-content-offset-inline-start);
     }
 
+    .component-tokens-title {
+      display: none;
+    }
+
     dl {
       display: grid;
       grid-template-columns: auto 1fr;

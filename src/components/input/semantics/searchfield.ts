@@ -30,24 +30,24 @@ class SearchField extends LitElement {
           .placeholder=${this.placeholder}
           aria-label=${this.placeholder || '검색'}
           ?disabled=${this.disabled}
-          @input=${this._handleInput}
+          @input=${this.handleInput}
         ></mm-input>
         ${hasValue && !this.disabled
           ? html`
-              <mm-clear-button aria-label="검색어 지우기" @click=${this._clear}></mm-clear-button>
+              <mm-clear-button aria-label="검색어 지우기" @click=${this.clear}></mm-clear-button>
             `
           : null}
       </div>
     `
   }
 
-  private _handleInput(event: Event) {
+  private handleInput(event: Event) {
     const target = event.target as HTMLInputElement
     this.value = target.value
     emit(this, 'input', { value: this.value })
   }
 
-  private _clear(event: Event) {
+  private clear(event: Event) {
     event.stopPropagation()
     if (this.disabled || !this.value) return
     this.value = ''

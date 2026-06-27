@@ -1,6 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
+import '@/components/flex/flex'
 
 @customElement('mm-chat-feed')
 export class ChatFeed extends LitElement {
@@ -8,21 +9,21 @@ export class ChatFeed extends LitElement {
     resetStyles,
     css`
       :host {
-        display: flex;
-        flex-direction: column;
+        display: block;
         flex: none;
         width: 100%;
         max-width: 800px;
         margin: var(--space-8) auto;
         box-sizing: border-box;
-        gap: var(--space-section);
       }
     `,
   ]
 
   render() {
     return html`
-      <slot></slot>
+      <mm-flex direction="column" gap="section">
+        <slot></slot>
+      </mm-flex>
     `
   }
 }

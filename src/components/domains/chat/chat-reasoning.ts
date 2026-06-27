@@ -180,66 +180,66 @@ export class ChatReasoning extends LitElement {
   @property({ type: Number }) interval = 2200
 
   @queryAssignedElements({ selector: 'mm-chat-reasoning-flow', flatten: true })
-  private _assignedFlows!: ChatReasoningFlow[]
+  private assignedFlows!: ChatReasoningFlow[]
 
-  private _flowIndex = 0
-  private _intervalId = 0
+  private flowIndex = 0
+  private intervalId = 0
 
   firstUpdated() {
-    this._syncFlows()
+    this.syncFlows()
   }
 
   updated(changed: Map<string, unknown>) {
     if (changed.has('thinking') || changed.has('interval')) {
-      this._syncFlows()
+      this.syncFlows()
     }
   }
 
   disconnectedCallback() {
-    this._stopTransition()
+    this.stopTransition()
     super.disconnectedCallback()
   }
 
-  private _getFlows() {
-    return this._assignedFlows.filter(flow => !flow.hidden)
+  private getFlows() {
+    return this.assignedFlows.filter(flow => !flow.hidden)
   }
 
-  private _syncFlows = () => {
-    const flows = this._getFlows()
+  private syncFlows = () => {
+    const flows = this.getFlows()
     if (!flows.length) {
-      this._stopTransition()
+      this.stopTransition()
       return
     }
 
-    if (this._flowIndex >= flows.length) {
-      this._flowIndex = 0
+    if (this.flowIndex >= flows.length) {
+      this.flowIndex = 0
     }
 
-    this._activateFlow(flows)
-    this._stopTransition()
+    this.activateFlow(flows)
+    this.stopTransition()
 
     if (!this.thinking || flows.length < 2) return
 
-    this._intervalId = window.setInterval(() => {
-      const currentFlows = this._getFlows()
+    this.intervalId = window.setInterval(() => {
+      const currentFlows = this.getFlows()
       if (!currentFlows.length) return
 
-      this._flowIndex = (this._flowIndex + 1) % currentFlows.length
-      this._activateFlow(currentFlows)
+      this.flowIndex = (this.flowIndex + 1) % currentFlows.length
+      this.activateFlow(currentFlows)
     }, this.interval)
   }
 
-  private _activateFlow(flows: ChatReasoningFlow[]) {
+  private activateFlow(flows: ChatReasoningFlow[]) {
     flows.forEach((flow, index) => {
-      flow.active = index === this._flowIndex
+      flow.active = index === this.flowIndex
     })
   }
 
-  private _stopTransition() {
-    if (!this._intervalId) return
+  private stopTransition() {
+    if (!this.intervalId) return
 
-    window.clearInterval(this._intervalId)
-    this._intervalId = 0
+    window.clearInterval(this.intervalId)
+    this.intervalId = 0
   }
 
   render() {
@@ -254,7 +254,7 @@ export class ChatReasoning extends LitElement {
               `
             : nothing}
           <span class="flows">
-            <slot @slotchange=${this._syncFlows}></slot>
+            <slot @slotchange=${this.syncFlows}></slot>
           </span>
         </span>
       </div>

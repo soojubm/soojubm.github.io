@@ -22,7 +22,7 @@ export class FilterButton extends LitElement {
   @property({ type: Boolean, attribute: 'select-all' }) selectAll = false
   @property({ type: Boolean }) disabled = false
 
-  private _handleClick() {
+  private handleClick() {
     if (this.disabled) return
     emit(this, 'filter-toggle', {
       value: this.value,
@@ -38,7 +38,7 @@ export class FilterButton extends LitElement {
         ?disabled=${this.disabled}
         role=${this.mode === 'multiple' ? 'checkbox' : 'radio'}
         aria-checked=${String(this.selected)}
-        @click=${this._handleClick}
+        @click=${this.handleClick}
       >
         ${this.selected
           ? html`

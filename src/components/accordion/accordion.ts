@@ -1,6 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
 import type { AccordionItem } from '@/components/accordion/semantics/accordion-item'
+import '@/components/flex/flex'
 
 /**
  * mm-accordion-item을 묶는 그룹 컨테이너.
@@ -10,39 +11,40 @@ import type { AccordionItem } from '@/components/accordion/semantics/accordion-i
 export class Accordion extends LitElement {
   static styles = css`
     :host {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-1);
+      display: block;
     }
   `
 
   @property({ type: Boolean }) exclusive = false
 
   @queryAssignedElements({ selector: 'mm-accordion-item', flatten: true })
-  private _items!: AccordionItem[]
+  private items!: AccordionItem[]
 
   connectedCallback() {
     super.connectedCallback()
-    this.addEventListener('accordion-toggle', this._handleToggle as EventListener)
+    this.addEventListener('accordion-toggle', this.handleToggle)
   }
 
   disconnectedCallback() {
     super.disconnectedCallback()
-    this.removeEventListener('accordion-toggle', this._handleToggle as EventListener)
+    this.removeEventListener('accordion-toggle', this.handleToggle)
   }
 
-  private _handleToggle = (e: CustomEvent<{ open: boolean }>) => {
-    if (!this.exclusive || !e.detail.open) return
+  private handleToggle = (event: Event) => {
+    const customEvent = event as CustomEvent<{ open: boolean }>
+    if (!this.exclusive || !customEvent.detail.open) return
 
-    const opened = e.target as AccordionItem
-    this._items.forEach(item => {
+    const opened = event.target as AccordionItem
+    this.items.forEach(item => {
       if (item !== opened) item.open = false
     })
   }
 
   render() {
     return html`
-      <slot></slot>
+      <mm-flex direction="column" gap="1">
+        <slot></slot>
+      </mm-flex>
     `
   }
 }

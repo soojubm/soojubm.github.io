@@ -30,7 +30,7 @@ export class CopyButton extends LitElement {
   @property({ type: String }) value = ''
   @state() private copied = false
 
-  private _handleClick = async () => {
+  private handleClick = async () => {
     const text = this.value || this.textContent?.trim() || ''
     if (!(await copyToClipboard(text))) return
 
@@ -46,7 +46,7 @@ export class CopyButton extends LitElement {
         class="plain"
         ?data-copied=${this.copied}
         aria-label=${this.copied ? '복사됨' : '복사'}
-        @click=${this._handleClick}
+        @click=${this.handleClick}
       >
         <mm-icon name=${this.copied ? ICON_NAMES.COPY_SUCCESS : ICON_NAMES.COPY}></mm-icon>
       </button>

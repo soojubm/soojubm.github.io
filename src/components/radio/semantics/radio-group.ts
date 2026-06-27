@@ -15,23 +15,23 @@ export class RadioGroup extends LitElement {
   @property({ type: String }) label = ''
 
   @queryAssignedElements({ selector: 'mm-radio', flatten: true })
-  private _radios!: Radio[]
+  private radios!: Radio[]
 
-  protected updated(changedProperties: Map<string, any>) {
+  protected updated(changedProperties: Map<string, unknown>) {
     if (changedProperties.has('value') || changedProperties.has('disabled')) {
-      this._syncChildren()
+      this.syncChildren()
     }
   }
 
-  private _syncChildren() {
-    this._radios.forEach(radio => {
+  private syncChildren() {
+    this.radios.forEach(radio => {
       if (this.name) radio.name = this.name
       radio.disabled = this.disabled
       radio.checked = radio.value === this.value
     })
   }
 
-  private _handleRadioChange(e: Event) {
+  private handleRadioChange(e: Event) {
     const target = e.target as Radio
     if (target.tagName.toLowerCase() !== 'mm-radio') return
 
@@ -49,9 +49,9 @@ export class RadioGroup extends LitElement {
 
   render() {
     return html`
-      <fieldset class="radio-group" ?disabled=${this.disabled} @change=${this._handleRadioChange}>
+      <fieldset class="radio-group" ?disabled=${this.disabled} @change=${this.handleRadioChange}>
         <legend class="visually-hidden">${this.label}</legend>
-        <slot @slotchange=${this._syncChildren}></slot>
+        <slot @slotchange=${this.syncChildren}></slot>
       </fieldset>
     `
   }

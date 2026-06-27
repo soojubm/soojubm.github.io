@@ -24,7 +24,7 @@ class IconButton extends LitElement {
   @property({ type: String, attribute: 'aria-expanded' }) ariaExpanded: AriaBoolean = null
   @property({ type: String, attribute: 'aria-controls' }) ariaControls: AriaIdRef = null
 
-  protected get _accessibilityLabel(): string {
+  protected get accessibilityLabel(): string {
     return this.ariaLabel || this.tooltip || this.icon || ''
   }
 
@@ -34,7 +34,7 @@ class IconButton extends LitElement {
         slot="trigger"
         type="button"
         role=${this.role || nothing}
-        aria-label="${this._accessibilityLabel}"
+        aria-label="${this.accessibilityLabel}"
         ?disabled="${this.disabled}"
         aria-haspopup=${this.ariaHasPopup ?? nothing}
         aria-expanded=${this.ariaExpanded ?? nothing}

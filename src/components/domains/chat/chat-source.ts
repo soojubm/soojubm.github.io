@@ -5,6 +5,7 @@ import { OutsideClickController } from '@/controllers/outside-click-controller'
 import type { IconName } from '@/components/icon-button/semantics/icon-names'
 import '@/components/button/button'
 import '@/components/button/button-group'
+import '@/components/flex/flex'
 import '@/components/icon/icon'
 import '@/components/text/text'
 import '@/components/text/semantics/paragraph'
@@ -35,13 +36,13 @@ export class ChatSource extends LitElement {
   @property({ type: String }) label = ''
   @property({ type: String }) icon?: IconName
 
-  @state() private _open = false
+  @state() private open = false
 
-  _setOpen(open: boolean) {
-    this._open = open
+  setOpen(open: boolean) {
+    this.open = open
   }
 
-  private get _domain() {
+  private get domain() {
     if (this.label) return this.label
     try {
       return new URL(this.href).hostname.replace(/^www\./, '')
@@ -50,9 +51,9 @@ export class ChatSource extends LitElement {
     }
   }
 
-  private _handleClick(e: Event) {
+  private handleClick(e: Event) {
     e.stopPropagation()
-    emit(this, 'source-toggle', { source: this, open: !this._open })
+    emit(this, 'source-toggle', { source: this, open: !this.open })
   }
 
   render() {
@@ -60,16 +61,16 @@ export class ChatSource extends LitElement {
       <mm-button
         variant="tertiary"
         size="small"
-        aria-expanded=${String(this._open)}
+        aria-expanded=${String(this.open)}
         aria-haspopup="dialog"
-        @click=${this._handleClick}
+        @click=${this.handleClick}
       >
         ${this.icon
           ? html`
               <mm-icon name=${this.icon}></mm-icon>
             `
           : ''}
-        ${this._domain}
+        ${this.domain}
       </mm-button>
     `
   }
@@ -97,9 +98,6 @@ export class ChatSourceGroup extends LitElement {
         border-radius: var(--radius);
         box-shadow: var(--shadow);
         padding: var(--space-3);
-        display: flex;
-        flex-direction: column;
-        gap: var(--space-2);
 
         transform: translateY(-4px);
         opacity: 0;
@@ -109,12 +107,6 @@ export class ChatSourceGroup extends LitElement {
       .sheet[data-open] {
         transform: translateY(0);
         opacity: 1;
-      }
-
-      .sheet-header {
-        display: flex;
-        align-items: center;
-        gap: var(--space-2);
       }
 
       .sheet-icon {
@@ -154,67 +146,74 @@ export class ChatSourceGroup extends LitElement {
     `,
   ]
 
-  @state() private _activeSource: ChatSource | null = null
+  @state() private activeSource: ChatSource | null = null
 
   // 바깥을 누르면 열려 있는 소스 시트를 닫는다.
-  private _outsideClick = new OutsideClickController(
+  private outsideClick = new OutsideClickController(
     this,
     () => {
-      this._activeSource?._setOpen(false)
-      this._activeSource = null
+      this.activeSource?.setOpen(false)
+      this.activeSource = null
     },
-    { isActive: () => this._activeSource !== null },
+    { isActive: () => this.activeSource !== null },
   )
 
-  private _handleToggle(e: CustomEvent) {
+  private handleToggle(e: CustomEvent) {
     const source = e.detail.source as ChatSource
     const opening = e.detail.open as boolean
 
     if (!opening) {
-      source._setOpen(false)
-      this._activeSource = null
+      source.setOpen(false)
+      this.activeSource = null
       return
     }
 
     // Close previously open source
-    if (this._activeSource && this._activeSource !== source) {
-      this._activeSource._setOpen(false)
+    if (this.activeSource && this.activeSource !== source) {
+      this.activeSource.setOpen(false)
     }
 
-    source._setOpen(true)
-    this._activeSource = source
+    source.setOpen(true)
+    this.activeSource = source
   }
 
-  private get _domain() {
-    if (!this._activeSource) return ''
-    if (this._activeSource.label) return this._activeSource.label
+  private get domain() {
+    if (!this.activeSource) return ''
+    if (this.activeSource.label) return this.activeSource.label
     try {
-      return new URL(this._activeSource.href).hostname.replace(/^www\./, '')
+      return new URL(this.activeSource.href).hostname.replace(/^www\./, '')
     } catch {
-      return this._activeSource.href
+      return this.activeSource.href
     }
   }
 
   render() {
-    const src = this._activeSource
+    const src = this.activeSource
     return html`
-      <mm-button-group gap="1" wrap @source-toggle=${this._handleToggle}>
+      <mm-button-group gap="1" wrap @source-toggle=${this.handleToggle}>
         <slot></slot>
       </mm-button-group>
 
       ${src
         ? html`
-            <div class="sheet" data-open role="dialog" aria-label="${src.heading || this._domain}">
+            <mm-flex
+              class="sheet"
+              data-open
+              direction="column"
+              gap="2"
+              role="dialog"
+              aria-label=${src.heading || this.domain}
+            >
               ${src.href
                 ? html`
-                    <div class="sheet-header">
+                    <mm-flex class="sheet-header" gap="2" align-items="center">
                       ${src.icon
                         ? html`
                             <mm-icon class="sheet-icon" name=${src.icon}></mm-icon>
                           `
                         : ''}
-                      <span class="sheet-domain">${this._domain}</span>
-                    </div>
+                      <span class="sheet-domain">${this.domain}</span>
+                    </mm-flex>
                   `
                 : ''}
               ${src.heading
@@ -239,7 +238,7 @@ export class ChatSourceGroup extends LitElement {
                     </a>
                   `
                 : ''}
-            </div>
+            </mm-flex>
           `
         : ''}
     `

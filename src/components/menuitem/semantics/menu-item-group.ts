@@ -1,6 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
+import '@/components/flex/flex'
 
 @customElement('mm-menu-item-group')
 export class MenuItemGroup extends LitElement {
@@ -10,11 +11,6 @@ export class MenuItemGroup extends LitElement {
       :host {
         display: block;
       }
-      :host > div {
-        display: flex;
-        flex-direction: column;
-        gap: var(--space-2);
-      }
     `,
   ]
 
@@ -22,9 +18,9 @@ export class MenuItemGroup extends LitElement {
 
   render() {
     return html`
-      <div>
+      <mm-flex direction="column" gap="2">
         <slot></slot>
-      </div>
+      </mm-flex>
     `
   }
 }

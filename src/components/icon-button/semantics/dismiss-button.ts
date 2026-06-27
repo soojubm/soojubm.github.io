@@ -17,7 +17,7 @@ export class DismissButton extends LitElement {
 
   @property({ type: Boolean }) disabled = false
 
-  private _handleClick = () => {
+  private handleClick = () => {
     if (this.disabled) return
     emit(this, 'dismiss')
   }
@@ -30,7 +30,7 @@ export class DismissButton extends LitElement {
         icon=${ICON_NAMES.DISMISS}
         aria-label="닫기"
         ?disabled=${this.disabled}
-        @click=${this._handleClick}
+        @click=${this.handleClick}
       ></mm-icon-button>
     `
   }

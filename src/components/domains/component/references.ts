@@ -1,5 +1,6 @@
 import { LitElement, html, css } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import '@/components/flex/flex'
 
 @customElement('mm-component-references')
 export class ComponentReferences extends LitElement {
@@ -9,10 +10,7 @@ export class ComponentReferences extends LitElement {
     }
 
     .component-references {
-      display: flex;
-      flex-direction: column;
       padding: var(--space-section) 0;
-      gap: var(--space-2);
     }
   `
 
@@ -20,10 +18,10 @@ export class ComponentReferences extends LitElement {
 
   render() {
     return html`
-      <section class="component-references">
+      <mm-flex as="section" class="component-references" direction="column" gap="2">
         <mm-paragraph size="large">${this.heading}</mm-paragraph>
         <slot></slot>
-      </section>
+      </mm-flex>
     `
   }
 }

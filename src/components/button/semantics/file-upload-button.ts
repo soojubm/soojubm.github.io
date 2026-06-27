@@ -2,18 +2,13 @@ import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, query, state } from 'lit/decorators.js'
 import { repeat } from 'lit/directives/repeat.js'
 import { emit } from '@/utils/emit'
+import '@/components/flex/flex'
 
 @customElement('mm-file-upload-button')
 export class FileUploadButton extends LitElement {
   static styles = css`
     :host {
       display: block;
-    }
-
-    .field {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-2);
     }
 
     figure {
@@ -29,16 +24,7 @@ export class FileUploadButton extends LitElement {
     }
 
     .attachments {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-2);
       margin-top: var(--space-4);
-    }
-
-    .attachment-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--space-2);
     }
 
     .attachment {
@@ -133,7 +119,7 @@ export class FileUploadButton extends LitElement {
 
   render() {
     return html`
-      <div class="field">
+      <mm-flex class="field" direction="column" gap="2">
         <mm-button @click=${this.openFilePicker}>${this.label}</mm-button>
         <input
           type="file"
@@ -147,9 +133,9 @@ export class FileUploadButton extends LitElement {
               <mm-text size="12">${this.helper}</mm-text>
             `
           : ''}
-      </div>
+      </mm-flex>
 
-      <div class="attachments">
+      <mm-flex class="attachments" direction="column" gap="2">
         <mm-paragraph color="light">첨부한 파일</mm-paragraph>
         <mm-paragraph role="status">
           ${this.files.length
@@ -159,7 +145,7 @@ export class FileUploadButton extends LitElement {
 
         ${this.files.length
           ? html`
-              <div class="attachment-list">
+              <mm-flex class="attachment-list" gap="2" wrap>
                 ${repeat(
                   this.files,
                   file => file,
@@ -182,10 +168,10 @@ export class FileUploadButton extends LitElement {
                     </figure>
                   `,
                 )}
-              </div>
+              </mm-flex>
             `
           : ''}
-      </div>
+      </mm-flex>
     `
   }
 }

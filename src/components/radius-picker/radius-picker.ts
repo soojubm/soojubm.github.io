@@ -1,5 +1,6 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, state } from 'lit/decorators.js'
+import '@/components/flex/flex'
 import '@/components/toggle-button/semantics/toggle-button-group'
 
 const SQUARE_CLASS = 'shape-square'
@@ -22,15 +23,10 @@ const COLOR_OPTIONS = [
 export class RadiusPicker extends LitElement {
   static styles = css`
     :host {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-2);
+      display: block;
     }
 
     .bar {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-2);
       padding: var(--space-1);
     }
   `
@@ -51,7 +47,7 @@ export class RadiusPicker extends LitElement {
 
   render() {
     return html`
-      <div class="bar">
+      <mm-flex class="bar" direction="column" gap="2">
         <mm-toggle-button-group
           stretch
           .options=${SHAPE_OPTIONS}
@@ -65,7 +61,7 @@ export class RadiusPicker extends LitElement {
           .selectedIndex=${this.color === 'black' ? 1 : 0}
           @change=${this.handleColorChange}
         ></mm-toggle-button-group>
-      </div>
+      </mm-flex>
     `
   }
 }

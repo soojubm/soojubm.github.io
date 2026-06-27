@@ -1,8 +1,8 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
-import { resetStyles } from '@/stylesheets/shared/reset.styles'
 import type { FilterButton } from '@/components/button/semantics/filter-button'
 import { emit } from '@/utils/emit'
+import '@/components/flex/flex'
 
 /**
  * mm-filter-button을 묶는 그룹.
@@ -10,101 +10,86 @@ import { emit } from '@/utils/emit'
  * 레이아웃은 host가 담당하고, 선택 방식의 role은 내부 그룹에 명시합니다.
  */
 type FilterMode = 'single' | 'multiple'
+type FilterToggleDetail = { value: string; selected: boolean; selectAll?: boolean }
 
 @customElement('mm-filter-button-group')
 export class FilterButtonGroup extends LitElement {
-  static styles = [
-    resetStyles,
-    css`
-      :host {
-        display: block;
-      }
-
-      .filter-button-group {
-        display: flex;
-        gap: var(--space-2);
-      }
-    `,
-  ]
+  static styles = css`
+    :host {
+      display: block;
+    }
+  `
 
   @property({ type: String }) mode: FilterMode = 'single'
   @property({ type: Array }) selected: string[] = []
 
   @queryAssignedElements({ selector: 'mm-filter-button', flatten: true })
-  private _buttons!: FilterButton[]
+  private buttons!: FilterButton[]
 
-  private get _isMultiple() {
+  private get isMultiple() {
     return this.mode === 'multiple'
   }
 
   connectedCallback() {
     super.connectedCallback()
-    this.addEventListener('filter-toggle', this._onToggle as EventListener)
+    this.addEventListener('filter-toggle', this.onToggle)
   }
 
   disconnectedCallback() {
     super.disconnectedCallback()
-    this.removeEventListener('filter-toggle', this._onToggle as EventListener)
+    this.removeEventListener('filter-toggle', this.onToggle)
   }
 
-  /** "전체" 옵션을 제외한 일반 옵션 버튼 */
-  private get _optionButtons() {
-    return this._buttons.filter(b => !b.selectAll)
-  }
-
-  private get _selectAllButton() {
-    return this._buttons.find(b => b.selectAll)
-  }
-
-  private _onToggle = (
-    e: CustomEvent<{ value: string; selected: boolean; selectAll?: boolean }>,
-  ) => {
-    const { value, selected, selectAll } = e.detail
+  private onToggle = (event: Event) => {
+    const { value, selected, selectAll } = (event as CustomEvent<FilterToggleDetail>).detail
 
     if (selectAll) {
-      this.selected = selected ? this._optionButtons.map(b => b.value) : []
-    } else if (this._isMultiple) {
+      this.selected = selected
+        ? this.buttons.filter(button => !button.selectAll).map(button => button.value)
+        : []
+    } else if (this.isMultiple) {
       this.selected = selected ? [...this.selected, value] : this.selected.filter(v => v !== value)
     } else {
       this.selected = selected ? [value] : []
     }
 
-    this._syncButtons()
+    this.syncButtons()
     emit(this, 'change', { values: this.selected })
   }
 
-  private _syncButtons() {
-    this._optionButtons.forEach(btn => {
-      btn.selected = this.selected.includes(btn.value)
-      btn.mode = this.mode
+  private syncButtons() {
+    const selected = new Set(this.selected)
+    const options = this.buttons.filter(button => !button.selectAll)
+    const selectAll = this.buttons.find(button => button.selectAll)
+
+    options.forEach(button => {
+      button.selected = selected.has(button.value)
+      button.mode = this.mode
     })
-    const allBtn = this._selectAllButton
-    if (allBtn) {
-      const allSelected =
-        this._optionButtons.length > 0 &&
-        this._optionButtons.every(b => this.selected.includes(b.value))
-      allBtn.selected = allSelected
-      allBtn.mode = this.mode
+
+    if (selectAll) {
+      selectAll.selected = options.length > 0 && options.every(button => selected.has(button.value))
+      selectAll.mode = this.mode
     }
   }
 
-  private _adoptInitialSelection = () => {
-    const preselected = this._buttons.filter(b => b.selected).map(b => b.value)
+  private adoptInitialSelection = () => {
+    const preselected = this.buttons.filter(button => button.selected).map(button => button.value)
     if (preselected.length) {
-      this.selected = this._isMultiple ? preselected : preselected.slice(0, 1)
+      this.selected = this.isMultiple ? preselected : preselected.slice(0, 1)
     }
-    this._syncButtons()
+    this.syncButtons()
   }
 
   firstUpdated() {
-    this._adoptInitialSelection()
+    this.adoptInitialSelection()
   }
 
   render() {
     return html`
-      <div class="filter-button-group" role=${this._isMultiple ? 'group' : 'radiogroup'}>
-        <slot @slotchange=${this._adoptInitialSelection}></slot>
-      </div>
+      <mm-flex gap="2" role=${this.isMultiple ? 'group' : 'radiogroup'}>
+        <slot @slotchange=${this.adoptInitialSelection}></slot>
+      </mm-flex>
     `
   }
 }

@@ -1,6 +1,7 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { entityStyles } from '@/components/domains/user-snippet/user-snippet.styles'
+import '@/components/flex/flex'
 
 @customElement('mm-user-snippet')
 class UserSnippet extends LitElement {
@@ -20,7 +21,7 @@ class UserSnippet extends LitElement {
     const avatarSize = this.avatarSize || this.size
 
     return html`
-      <div class="entity">
+      <mm-flex class="entity" direction="column" gap="2">
         <mm-avatar
           size=${avatarSize}
           variant=${this.avatarVariant}
@@ -31,17 +32,17 @@ class UserSnippet extends LitElement {
               <mm-accent-tag class="entity-tag">${this.tagLabel}</mm-accent-tag>
             `
           : nothing}
-        <div class="entity-content">
+        <mm-flex class="entity-content" direction="column">
           <mm-paragraph size="large">${this.name}</mm-paragraph>
           ${this.description
             ? html`
-                <mm-paragraph style="margin-top:-.125rem">${this.description}</mm-paragraph>
+                <mm-paragraph class="entity-description">${this.description}</mm-paragraph>
               `
             : nothing}
           <mm-text size="12">${this.email}</mm-text>
           <mm-text size="12">${this.phone}</mm-text>
-        </div>
-      </div>
+        </mm-flex>
+      </mm-flex>
     `
   }
 }

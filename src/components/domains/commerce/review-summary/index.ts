@@ -2,6 +2,7 @@ import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
 import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
+import '@/components/flex/flex'
 
 /**
  * mm-review-summary
@@ -17,7 +18,6 @@ export class ReviewSummary extends LitElement {
       }
 
       .stars {
-        display: flex;
         color: var(--color-accent);
       }
     `,
@@ -32,7 +32,7 @@ export class ReviewSummary extends LitElement {
 
     return html`
       <mm-flex align-items="center" gap="2">
-        <div class="stars" role="img" aria-label="5점 만점에 ${rating}점">
+        <mm-flex class="stars" role="img" aria-label="5점 만점에 ${rating}점">
           ${Array.from(
             { length: 5 },
             (_, index) => html`
@@ -41,7 +41,7 @@ export class ReviewSummary extends LitElement {
               ></mm-icon>
             `,
           )}
-        </div>
+        </mm-flex>
         <mm-text weight="bold">${rating.toFixed(1)}</mm-text>
         <mm-text>리뷰 ${this.reviewCount.toLocaleString('ko-KR')}개</mm-text>
       </mm-flex>

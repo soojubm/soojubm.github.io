@@ -1,6 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
+import '@/components/flex/flex'
 
 @customElement('mm-token-stage')
 export class TokenStage extends LitElement {
@@ -8,15 +9,10 @@ export class TokenStage extends LitElement {
     resetStyles,
     css`
       :host {
-        display: flex;
-        flex-direction: column;
-        gap: var(--space-3);
+        display: block;
       }
 
       .stage {
-        display: flex;
-        align-items: center;
-        justify-content: center;
         padding: var(--space-8);
         border: var(--border);
         border-radius: var(--radius-large);
@@ -31,10 +27,12 @@ export class TokenStage extends LitElement {
 
   render() {
     return html`
-      <div class="stage">
-        <slot></slot>
-      </div>
-      <slot name="tokens"></slot>
+      <mm-flex direction="column" gap="3">
+        <mm-flex class="stage" align-items="center" justify-content="center">
+          <slot></slot>
+        </mm-flex>
+        <slot name="tokens"></slot>
+      </mm-flex>
     `
   }
 }

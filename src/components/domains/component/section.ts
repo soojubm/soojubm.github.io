@@ -1,6 +1,7 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 import { componentContentFrameStyles } from '@/components/domains/component/component.styles'
+import '@/components/flex/flex'
 
 @customElement('mm-component-section')
 class ComponentSection extends LitElement {
@@ -8,9 +9,6 @@ class ComponentSection extends LitElement {
     componentContentFrameStyles,
     css`
       .component-section {
-        display: flex;
-        flex-direction: column;
-        gap: var(--space-2);
         margin-top: var(--space-section);
       }
 
@@ -30,16 +28,16 @@ class ComponentSection extends LitElement {
   @property({ type: String }) description = ''
   @property({ type: String }) level: 'semantic' | 'domain' = 'semantic'
 
-  @state() private _hasContent = false
+  @state() private hasContent = false
 
-  private _onSlotChange(e: Event) {
+  private onSlotChange(e: Event) {
     const slot = e.target as HTMLSlotElement
-    this._hasContent = slot.assignedElements().length > 0
+    this.hasContent = slot.assignedElements().length > 0
   }
 
   render() {
     return html`
-      <section class="component-section">
+      <mm-flex as="section" class="component-section" direction="column" gap="2">
         <div hidden><mm-tag>${this.level === 'domain' ? 'Domain' : 'Semantic'}</mm-tag></div>
         <mm-text size="24" weight="bold" as="h3">${this.heading}</mm-text>
         ${this.description
@@ -47,10 +45,10 @@ class ComponentSection extends LitElement {
               <mm-paragraph>${this.description}</mm-paragraph>
             `
           : nothing}
-        <div class="content component-content-frame ${this._hasContent ? 'has-content' : ''}">
-          <slot @slotchange=${this._onSlotChange}></slot>
+        <div class="content component-content-frame ${this.hasContent ? 'has-content' : ''}">
+          <slot @slotchange=${this.onSlotChange}></slot>
         </div>
-      </section>
+      </mm-flex>
     `
   }
 }

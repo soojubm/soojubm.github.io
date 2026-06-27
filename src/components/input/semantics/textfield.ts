@@ -26,7 +26,7 @@ export class Textfield extends LitElement {
 
   private inputId = uniqueId('input')
 
-  private _handleInput(event: Event) {
+  private handleInput(event: Event) {
     const target = event.target as HTMLInputElement
     this.value = target.value
     emit(this, 'input', { value: this.value })
@@ -60,7 +60,7 @@ export class Textfield extends LitElement {
             ?disabled=${this.disabled}
             aria-invalid=${this.ariaInvalid ?? nothing}
             aria-describedby=${this.validationText ? `${this.inputId}-validation` : nothing}
-            @input=${this._handleInput}
+            @input=${this.handleInput}
           ></mm-input>
           <slot name="trailing"></slot>
         </div>

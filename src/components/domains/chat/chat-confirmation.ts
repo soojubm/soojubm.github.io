@@ -2,6 +2,7 @@ import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
 import '@/components/button/button'
+import '@/components/button/button-group'
 import '@/components/notice/notice'
 import '@/components/text/text'
 import { emit } from '@/utils/emit'
@@ -27,11 +28,6 @@ export class ChatConfirmation extends LitElement {
       mm-notice > mm-paragraph {
         flex: 1;
       }
-
-      .actions {
-        display: flex;
-        gap: var(--space-2);
-      }
     `,
   ]
 
@@ -40,12 +36,12 @@ export class ChatConfirmation extends LitElement {
   @property({ type: String, attribute: 'approve-label' }) approveLabel = '승인'
   @property({ type: String, attribute: 'reject-label' }) rejectLabel = '거부'
 
-  private _approve() {
+  private approve() {
     this.status = 'accepted'
     emit(this, 'confirmation-approve')
   }
 
-  private _reject() {
+  private reject() {
     this.status = 'rejected'
     emit(this, 'confirmation-reject')
   }
@@ -72,14 +68,14 @@ export class ChatConfirmation extends LitElement {
                 <slot></slot>
               `}
         </mm-paragraph>
-        <div class="actions">
-          <mm-button variant="tertiary" size="medium" @click=${this._reject}>
+        <mm-button-group>
+          <mm-button variant="tertiary" size="medium" @click=${this.reject}>
             ${this.rejectLabel}
           </mm-button>
-          <mm-button variant="tertiary" size="medium" @click=${this._approve}>
+          <mm-button variant="tertiary" size="medium" @click=${this.approve}>
             ${this.approveLabel}
           </mm-button>
-        </div>
+        </mm-button-group>
       </mm-notice>
     `
   }

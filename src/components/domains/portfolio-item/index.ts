@@ -2,6 +2,7 @@ import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
 import '@/components/icon-button/semantics/more-button'
+import '@/components/flex/flex'
 import { emit } from '@/utils/emit'
 import { arrayAttributeConverter } from '@/utils/property-converters'
 
@@ -46,10 +47,8 @@ export class PortfolioItem extends LitElement {
         right: var(--space-2);
       }
 
-      .content {
-        display: flex;
-        flex-direction: column;
-        gap: var(--space-1);
+      .keyword-tags {
+        margin-top: var(--space-2);
       }
 
       time {
@@ -119,7 +118,7 @@ export class PortfolioItem extends LitElement {
               <mm-thumbnail src=${this.src} alt=${this.alt}></mm-thumbnail>
             `
           : nothing}
-        <div class="content">
+        <mm-flex class="content" direction="column" gap="1">
           ${this.label
             ? html`
                 <mm-heading level="3">${this.label}</mm-heading>
@@ -138,13 +137,13 @@ export class PortfolioItem extends LitElement {
           ${this.keywords.length
             ? html`
                 <mm-keyword-tag-group
+                  class="keyword-tags"
                   .keywords=${this.keywords}
-                  style="margin-top: var(--space-2);"
                 ></mm-keyword-tag-group>
               `
             : nothing}
           <slot></slot>
-        </div>
+        </mm-flex>
       </article>
     `
   }

@@ -28,34 +28,34 @@ export class CommentInput extends LitElement {
   @property({ type: String }) placeholder = ''
   @property({ type: String, attribute: 'submit-label' }) submitLabel = '댓글 게시'
 
-  @query('mm-textarea') private _textarea!: Textarea
+  @query('mm-textarea') private textarea!: Textarea
 
-  private _submitComment(event?: Event) {
+  private submitComment(event?: Event) {
     event?.preventDefault()
 
     emit(this, 'submit', {
-      value: this._textarea?.value ?? '',
+      value: this.textarea?.value ?? '',
     })
   }
 
-  private _handleTextareaKeydown(event: KeyboardEvent) {
+  private handleTextareaKeydown(event: KeyboardEvent) {
     if (event.isComposing) return
     if (event.key !== 'Enter' || event.shiftKey) return
 
     event.preventDefault()
-    this._submitComment()
+    this.submitComment()
   }
 
   render() {
     return html`
-      <form @submit=${this._submitComment}>
+      <form @submit=${this.submitComment}>
         <mm-textarea
           name=${this.name}
           placeholder=${this.placeholder}
-          @keydown=${this._handleTextareaKeydown}
+          @keydown=${this.handleTextareaKeydown}
         ></mm-textarea>
         <mm-textfield-action-bar>
-          <mm-button variant="primary" @click=${this._submitComment}>${this.submitLabel}</mm-button>
+          <mm-button variant="primary" @click=${this.submitComment}>${this.submitLabel}</mm-button>
         </mm-textfield-action-bar>
       </form>
     `

@@ -1,6 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
+import '@/components/flex/flex'
 
 @customElement('mm-page-header')
 export class PageHeader extends LitElement {
@@ -10,14 +11,7 @@ export class PageHeader extends LitElement {
       :host {
         display: block;
       }
-      .page-header {
-        display: flex;
-        flex-direction: column;
-        gap: var(--space-3);
-        align-items: flex-start;
-      }
       :host([centered]) .page-header {
-        align-items: center;
         text-align: center;
       }
     `,
@@ -29,7 +23,13 @@ export class PageHeader extends LitElement {
 
   render() {
     return html`
-      <header class="page-header">
+      <mm-flex
+        as="header"
+        class="page-header"
+        direction="column"
+        gap="3"
+        align-items=${this.centered ? 'center' : 'start'}
+      >
         <mm-text as="h1" size="32" weight="bold">${this.heading}</mm-text>
         ${this.description
           ? html`
@@ -38,7 +38,7 @@ export class PageHeader extends LitElement {
               </mm-paragraph>
             `
           : null}
-      </header>
+      </mm-flex>
     `
   }
 }

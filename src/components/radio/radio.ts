@@ -15,9 +15,9 @@ export class Radio extends LitElement {
   @property({ type: Boolean }) disabled = false
 
   // 인스턴스 생성 시 단 한 번만 고유 ID 발급
-  private _uniqueId = uniqueId('radio')
+  private generatedId = uniqueId('radio')
 
-  private _onChange(event: Event) {
+  private onChange(event: Event) {
     event.stopPropagation() // 네이티브 이벤트 전파 차단
 
     this.checked = (event.target as HTMLInputElement).checked
@@ -27,7 +27,7 @@ export class Radio extends LitElement {
 
   render() {
     // 외부에서 지정한 id가 있으면 쓰고, 없으면 자동 생성된 고유 ID 사용
-    const inputId = this.id || this._uniqueId
+    const inputId = this.id || this.generatedId
 
     return html`
       <div>
@@ -38,7 +38,7 @@ export class Radio extends LitElement {
           .value=${this.value || ''}
           .checked=${this.checked}
           ?disabled=${this.disabled}
-          @change=${this._onChange}
+          @change=${this.onChange}
         />
         <label for=${inputId}>
           <span></span>

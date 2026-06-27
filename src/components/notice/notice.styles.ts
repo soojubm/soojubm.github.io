@@ -6,7 +6,6 @@ export const noticeStyles = css`
     width: 100%;
 
     /* structure */
-    --notice-gap: var(--space-2);
     --notice-padding: var(--space-3);
     --notice-radius: var(--radius);
     --notice-border-width: var(--border-width);
@@ -19,10 +18,6 @@ export const noticeStyles = css`
   }
 
   .notice {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--notice-gap);
     padding: var(--notice-padding);
     border: var(--notice-border-width) solid var(--notice-border-color);
     border-radius: var(--notice-radius);
@@ -55,6 +50,10 @@ export const noticeStyles = css`
   .notice-icon {
     flex-shrink: 0;
     color: var(--notice-accent);
+  }
+
+  .notice-heading {
+    margin-bottom: calc(var(--space-2) * -1);
   }
 
   .notice-dismiss {

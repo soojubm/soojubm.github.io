@@ -39,18 +39,18 @@ class Icon extends LitElement {
   @property({ type: String, reflect: true }) size = ''
   @property({ type: String }) color = ''
 
-  @state() private _useStylesheetLink = false
+  @state() private useStylesheetLink = false
 
   protected firstUpdated() {
-    void this._adoptIconoirStylesheet()
+    void this.adoptIconoirStylesheet()
   }
 
-  private async _adoptIconoirStylesheet() {
+  private async adoptIconoirStylesheet() {
     const stylesheet = await loadIconoirStylesheet()
 
     // constructable stylesheet를 쓸 수 없거나 CDN fetch가 실패하면 기존 link 방식으로 돌아간다.
     if (!stylesheet || !(this.renderRoot instanceof ShadowRoot)) {
-      this._useStylesheetLink = true
+      this.useStylesheetLink = true
       return
     }
 
@@ -66,7 +66,7 @@ class Icon extends LitElement {
     }
 
     return html`
-      ${this._useStylesheetLink
+      ${this.useStylesheetLink
         ? html`
             <link rel="stylesheet" href=${ICONOIR_STYLESHEET_URL} />
           `

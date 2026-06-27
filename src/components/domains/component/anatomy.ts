@@ -3,6 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
 import { arrayAttributeConverter } from '@/utils/property-converters'
 import '@/components/text/semantics/textList'
+import '@/components/flex/flex'
 import {
   componentContentFrameStyles,
   componentStageFrameStyles,
@@ -24,9 +25,7 @@ export class ComponentAnatomy extends LitElement {
     componentStageFrameStyles,
     css`
       :host {
-        display: flex;
-        flex-direction: column;
-        gap: var(--space-3);
+        display: block;
         margin-top: var(--space-section);
       }
       .stage slot {
@@ -49,15 +48,17 @@ export class ComponentAnatomy extends LitElement {
 
   render() {
     return html`
-      <mm-text size="24" weight="bold" as="h3">${this.heading}</mm-text>
-      <div class="stage component-content-frame component-stage-frame">
-        <slot></slot>
-      </div>
-      ${this.normalizedParts.length
-        ? html`
-            <mm-text-list variant="number" .texts=${this.normalizedParts}></mm-text-list>
-          `
-        : nothing}
+      <mm-flex direction="column" gap="3">
+        <mm-text size="24" weight="bold" as="h3">${this.heading}</mm-text>
+        <div class="stage component-content-frame component-stage-frame">
+          <slot></slot>
+        </div>
+        ${this.normalizedParts.length
+          ? html`
+              <mm-text-list variant="number" .texts=${this.normalizedParts}></mm-text-list>
+            `
+          : nothing}
+      </mm-flex>
     `
   }
 }

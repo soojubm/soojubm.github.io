@@ -40,23 +40,23 @@ class PasswordField extends LitElement {
         ?hidden-label=${this.hiddenLabel}
         ?disabled=${this.disabled}
         aria-invalid=${this.ariaInvalid ?? nothing}
-        @input=${this._syncValue}
+        @input=${this.syncValue}
       >
         <mm-reveal-button
           slot="trailing"
           .revealed=${this.revealed}
           ?disabled=${this.disabled}
-          @reveal-toggle=${this._handleReveal}
+          @reveal-toggle=${this.handleReveal}
         ></mm-reveal-button>
       </mm-textfield>
     `
   }
 
-  private _syncValue(event: CustomEvent<{ value: string }>) {
+  private syncValue(event: CustomEvent<{ value: string }>) {
     this.value = event.detail.value
   }
 
-  private _handleReveal(event: CustomEvent<{ revealed: boolean }>) {
+  private handleReveal(event: CustomEvent<{ revealed: boolean }>) {
     event.stopPropagation()
     this.revealed = event.detail.revealed
   }

@@ -2,15 +2,11 @@ import { css } from 'lit'
 
 export const entityStyles = css`
   .entity {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-2);
     position: relative;
   }
 
-  .entity-content {
-    display: flex;
-    flex-direction: column;
+  .entity-description {
+    margin-top: calc(var(--space-05) * -1);
   }
 
   .entity-tag {

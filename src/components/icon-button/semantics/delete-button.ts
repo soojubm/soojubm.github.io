@@ -20,7 +20,7 @@ export class DeleteButton extends LitElement {
 
   @property({ type: Boolean }) disabled = false
 
-  private _handleClick = () => {
+  private handleClick = () => {
     if (this.disabled) return
     if (!window.confirm(this.confirmMessage)) return
     emit(this, 'delete')
@@ -33,7 +33,7 @@ export class DeleteButton extends LitElement {
         variant="destructive"
         aria-label="삭제"
         ?disabled=${this.disabled}
-        @click=${this._handleClick}
+        @click=${this.handleClick}
       ></mm-icon-button>
     `
   }

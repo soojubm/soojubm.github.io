@@ -9,8 +9,7 @@ export class TokenItem extends LitElement {
     resetStyles,
     css`
       :host {
-        display: flex;
-        flex-direction: column;
+        display: block;
       }
     `,
   ]

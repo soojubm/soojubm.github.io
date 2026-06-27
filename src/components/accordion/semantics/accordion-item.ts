@@ -99,9 +99,9 @@ export class AccordionItem extends LitElement {
   @property({ type: Boolean, reflect: true }) open = false
   @property({ type: Boolean }) disabled = false
 
-  private readonly _panelId = uniqueId('accordion-panel')
+  private readonly panelId = uniqueId('accordion-panel')
 
-  private _toggle() {
+  private toggle() {
     if (this.disabled) return
     this.open = !this.open
     emit(this, 'accordion-toggle', { open: this.open })
@@ -113,15 +113,15 @@ export class AccordionItem extends LitElement {
         <button
           class="summary-btn"
           aria-expanded=${this.open ? 'true' : 'false'}
-          aria-controls=${this._panelId}
+          aria-controls=${this.panelId}
           ?disabled=${this.disabled}
-          @click=${this._toggle}
+          @click=${this.toggle}
         >
           <slot name="summary">${this.summary}</slot>
           <mm-icon class="icon" name=${ICON_NAMES.SITEMAP}></mm-icon>
         </button>
 
-        <div id=${this._panelId} class="panel" aria-hidden=${this.open ? 'false' : 'true'}>
+        <div id=${this.panelId} class="panel" aria-hidden=${this.open ? 'false' : 'true'}>
           <div class="panel-inner">
             <slot></slot>
           </div>

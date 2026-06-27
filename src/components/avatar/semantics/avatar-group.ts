@@ -2,6 +2,7 @@ import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
 import { arrayAttributeConverter } from '@/utils/property-converters'
+import '@/components/flex/flex'
 
 @customElement('mm-avatar-group')
 export class AvatarGroup extends LitElement {
@@ -9,9 +10,7 @@ export class AvatarGroup extends LitElement {
     resetStyles,
     css`
       :host {
-        display: flex;
-        align-items: center;
-        gap: var(--space-2);
+        display: block;
       }
 
       .avatars {
@@ -53,26 +52,28 @@ export class AvatarGroup extends LitElement {
     const overflowCount = this.avatars.length - this.maxVisible
 
     return html`
-      <div class="avatars">
-        ${visible.map(
-          src =>
-            html`
-              <mm-avatar size=${this.size} .src=${src || undefined}></mm-avatar>
-            `,
-        )}
-        ${overflowCount > 0
+      <mm-flex gap="2" align-items="center">
+        <div class="avatars">
+          ${visible.map(
+            src =>
+              html`
+                <mm-avatar size=${this.size} .src=${src || undefined}></mm-avatar>
+              `,
+          )}
+          ${overflowCount > 0
+            ? html`
+                <mm-avatar size=${this.size}>
+                  <mm-text size="12">+${overflowCount}</mm-text>
+                </mm-avatar>
+              `
+            : nothing}
+        </div>
+        ${this.label
           ? html`
-              <mm-avatar size=${this.size}>
-                <mm-text size="12">+${overflowCount}</mm-text>
-              </mm-avatar>
+              <span class="label">${this.label}</span>
             `
           : nothing}
-      </div>
-      ${this.label
-        ? html`
-            <span class="label">${this.label}</span>
-          `
-        : nothing}
+      </mm-flex>
     `
   }
 }

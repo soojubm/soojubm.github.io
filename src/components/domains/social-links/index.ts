@@ -2,6 +2,7 @@ import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
+import '@/components/flex/flex'
 
 const PLATFORMS = [
   { key: 'github', label: 'Github', icon: ICON_NAMES.GITHUB },
@@ -19,11 +20,6 @@ export class SocialLinks extends LitElement {
   static styles = [
     resetStyles,
     css`
-      .compact {
-        display: flex;
-        gap: var(--space-2);
-      }
-
       .compact a {
         text-decoration: none;
         color: inherit;
@@ -62,7 +58,7 @@ export class SocialLinks extends LitElement {
 
   private renderCompact() {
     return html`
-      <div class="compact">
+      <mm-flex class="compact" gap="2">
         ${this.activeLinks.map(
           ({ label, icon, href }) => html`
             <a href=${href} target="_blank" rel="noopener noreferrer" aria-label=${label}>
@@ -70,7 +66,7 @@ export class SocialLinks extends LitElement {
             </a>
           `,
         )}
-      </div>
+      </mm-flex>
     `
   }
 

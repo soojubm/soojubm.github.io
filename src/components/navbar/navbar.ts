@@ -186,7 +186,7 @@ export class Navbar extends LitElement {
             aria-expanded=${String(this.searchOpen)}
             @click=${this.toggleSearch}
           ></mm-icon-button>
-          <div style="position: relative">
+          <div class="navbar-user-menu">
             <mm-icon-button
               icon=${ICON_NAMES.PROFILE}
               class="navbar-user-trigger js-navbar-user-trigger"
@@ -206,10 +206,10 @@ export class Navbar extends LitElement {
                   tag-label="접속 중"
                   tag-variant="primary"
                 ></mm-user-snippet>
-                <div style="margin: var(--space-2) 0 0">
+                <div class="navbar-profile-action">
                   <mm-button>내 프로필 관리</mm-button>
                 </div>
-                <div style="position: absolute; right: var(--space-4); top: var(--space-4)">
+                <div class="navbar-profile-tag">
                   <mm-tag variant="primary" size="large">샘플 유아이</mm-tag>
                 </div>
                 <mm-separator spacing="small"></mm-separator>

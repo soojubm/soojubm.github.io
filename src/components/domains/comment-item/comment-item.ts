@@ -82,32 +82,32 @@ export class CommentItem extends LitElement {
     }
   `
 
-  private readonly _menuId = uniqueId('comment-menu')
+  private readonly menuId = uniqueId('comment-menu')
   @property({ type: String }) author = ''
   @property({ type: String }) datetime = ''
   @property({ type: String, attribute: 'avatar-src' }) avatarSrc = ''
   @property({ type: String, attribute: 'reply-label' }) replyLabel = ''
   @property({ type: Boolean }) editable = false
 
-  @state() private _menuOpen = false
-  @state() private _hasReplies = false
+  @state() private menuOpen = false
+  @state() private hasReplies = false
 
-  private _emit(type: string) {
+  private emitAction(type: string) {
     emit(this, type)
   }
 
-  private _toggleMenu() {
-    this._menuOpen = !this._menuOpen
+  private toggleMenu() {
+    this.menuOpen = !this.menuOpen
   }
 
-  private _onMenuAction(type: 'edit' | 'delete') {
-    this._menuOpen = false
-    this._emit(type)
+  private onMenuAction(type: 'edit' | 'delete') {
+    this.menuOpen = false
+    this.emitAction(type)
   }
 
-  private _onRepliesSlotChange(event: Event) {
+  private onRepliesSlotChange(event: Event) {
     const slot = event.target as HTMLSlotElement
-    this._hasReplies = slot.assignedElements().length > 0
+    this.hasReplies = slot.assignedElements().length > 0
   }
 
   render() {
@@ -119,9 +119,9 @@ export class CommentItem extends LitElement {
                 <mm-more-button
                   slot="trailing"
                   aria-label="댓글 메뉴"
-                  aria-controls=${this._menuId}
-                  aria-expanded=${String(this._menuOpen)}
-                  @click=${this._toggleMenu}
+                  aria-controls=${this.menuId}
+                  aria-expanded=${String(this.menuOpen)}
+                  @click=${this.toggleMenu}
                 ></mm-more-button>
               `
             : ''}
@@ -135,7 +135,7 @@ export class CommentItem extends LitElement {
                 class="reply"
                 variant="ghost"
                 size="small"
-                @click=${() => this._emit('reply')}
+                @click=${() => this.emitAction('reply')}
               >
                 ${this.replyLabel}
               </mm-button>
@@ -143,22 +143,22 @@ export class CommentItem extends LitElement {
           : ''}
         ${this.editable
           ? html`
-              <menu id=${this._menuId} class="menu" data-open=${this._menuOpen ? 'true' : 'false'}>
+              <menu id=${this.menuId} class="menu" data-open=${this.menuOpen ? 'true' : 'false'}>
                 <mm-menu-item-action
                   label="수정"
-                  @click=${() => this._onMenuAction('edit')}
+                  @click=${() => this.onMenuAction('edit')}
                 ></mm-menu-item-action>
                 <mm-menu-item-action
                   label="삭제"
                   tone="danger"
-                  @click=${() => this._onMenuAction('delete')}
+                  @click=${() => this.onMenuAction('delete')}
                 ></mm-menu-item-action>
               </menu>
             `
           : ''}
 
-        <div class="replies" ?hidden=${!this._hasReplies}>
-          <slot name="replies" @slotchange=${this._onRepliesSlotChange}></slot>
+        <div class="replies" ?hidden=${!this.hasReplies}>
+          <slot name="replies" @slotchange=${this.onRepliesSlotChange}></slot>
         </div>
       </article>
     `

@@ -5,6 +5,7 @@ import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
 import '@/components/text/text'
 import '@/components/icon-button/icon-button'
 import '@/components/button/button-group'
+import '@/components/flex/flex'
 import { emit } from '@/utils/emit'
 
 @customElement('mm-ai-chat-message')
@@ -13,9 +14,7 @@ export class AiChatMessage extends LitElement {
     resetStyles,
     css`
       :host {
-        display: flex;
-        flex-direction: column;
-        gap: var(--space-2);
+        display: block;
       }
 
       .time {
@@ -27,7 +26,7 @@ export class AiChatMessage extends LitElement {
   @property({ type: String }) datetime = ''
   @property({ type: Boolean, attribute: 'hidden-reactions' }) hiddenReactions = false
 
-  private _emitReaction(reaction: string) {
+  private emitReaction(reaction: string) {
     emit(this, 'chat-reaction', { reaction })
   }
 
@@ -41,21 +40,21 @@ export class AiChatMessage extends LitElement {
           variant="ghost"
           icon=${ICON_NAMES.COPY}
           aria-label="복사"
-          @click=${() => this._emitReaction('copy')}
+          @click=${() => this.emitReaction('copy')}
         ></mm-icon-button>
         <mm-icon-button
           size="small"
           variant="ghost"
           icon=${ICON_NAMES.THUMBS_UP}
           aria-label="좋아요"
-          @click=${() => this._emitReaction('like')}
+          @click=${() => this.emitReaction('like')}
         ></mm-icon-button>
         <mm-icon-button
           size="small"
           variant="ghost"
           icon=${ICON_NAMES.DISLIKE}
           aria-label="싫어요"
-          @click=${() => this._emitReaction('dislike')}
+          @click=${() => this.emitReaction('dislike')}
         ></mm-icon-button>
       </mm-button-group>
     `
@@ -63,13 +62,15 @@ export class AiChatMessage extends LitElement {
 
   render() {
     return html`
-      <slot></slot>
-      ${this.datetime
-        ? html`
-            <mm-text class="time" as="time" size="12" weight="medium">${this.datetime}</mm-text>
-          `
-        : nothing}
-      ${this.renderReactions()}
+      <mm-flex direction="column" gap="2">
+        <slot></slot>
+        ${this.datetime
+          ? html`
+              <mm-text class="time" as="time" size="12" weight="medium">${this.datetime}</mm-text>
+            `
+          : nothing}
+        ${this.renderReactions()}
+      </mm-flex>
     `
   }
 }

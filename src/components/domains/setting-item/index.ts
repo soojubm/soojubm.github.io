@@ -33,22 +33,22 @@ export class SettingItem extends LitElement {
   @property({ type: Boolean, reflect: true }) disabled = false
 
   @queryAssignedElements({ slot: 'action', flatten: true })
-  private _actions!: DisableableElement[]
+  private actions!: DisableableElement[]
 
   render() {
     return html`
       <mm-list-row icon=${this.icon || nothing} label=${this.label} description=${this.description}>
-        <slot name="action" slot="trailing" @slotchange=${this._syncActions}></slot>
+        <slot name="action" slot="trailing" @slotchange=${this.syncActions}></slot>
       </mm-list-row>
     `
   }
 
   protected updated(changed: Map<string, unknown>) {
-    if (changed.has('disabled')) this._syncActions()
+    if (changed.has('disabled')) this.syncActions()
   }
 
-  private _syncActions() {
-    this._actions.forEach(action => {
+  private syncActions() {
+    this.actions.forEach(action => {
       if ('disabled' in action) {
         action.disabled = this.disabled
       }

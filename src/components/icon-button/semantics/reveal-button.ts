@@ -15,7 +15,7 @@ export class RevealButton extends LitElement {
   @property({ type: Boolean }) revealed = false
   @property({ type: Boolean }) disabled = false
 
-  private _handleClick = () => {
+  private handleClick = () => {
     if (this.disabled) return
     this.revealed = !this.revealed
     emit(this, 'reveal-toggle', { revealed: this.revealed })
@@ -28,7 +28,7 @@ export class RevealButton extends LitElement {
         aria-pressed=${String(this.revealed)}
         aria-label=${this.revealed ? '비밀번호 숨기기' : '비밀번호 보기'}
         ?disabled=${this.disabled}
-        @click=${this._handleClick}
+        @click=${this.handleClick}
       >
         <mm-icon name=${this.revealed ? ICON_NAMES.HIDE : ICON_NAMES.REVEAL}></mm-icon>
       </button>

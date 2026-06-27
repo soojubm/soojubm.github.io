@@ -1,6 +1,7 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
+import '@/components/flex/flex'
 
 /**
  * mm-product-price
@@ -12,7 +13,7 @@ export class ProductPrice extends LitElement {
     resetStyles,
     css`
       :host {
-        gap: var(--space-2);
+        display: block;
       }
 
       del {
@@ -27,21 +28,23 @@ export class ProductPrice extends LitElement {
 
   render() {
     return html`
-      <mm-flex>
-        ${this.originalPrice
-          ? html`
-              <del>
-                <mm-text size="18" color="light">${this.originalPrice}</mm-text>
-              </del>
-            `
-          : nothing}
-        ${this.discount
-          ? html`
-              <mm-text size="18">(${this.discount})</mm-text>
-            `
-          : nothing}
+      <mm-flex direction="column" gap="2">
+        <mm-flex gap="2">
+          ${this.originalPrice
+            ? html`
+                <del>
+                  <mm-text size="18" color="light">${this.originalPrice}</mm-text>
+                </del>
+              `
+            : nothing}
+          ${this.discount
+            ? html`
+                <mm-text size="18">(${this.discount})</mm-text>
+              `
+            : nothing}
+        </mm-flex>
+        <mm-text size="24" weight="bold">${this.price}</mm-text>
       </mm-flex>
-      <mm-text size="24" weight="bold">${this.price}</mm-text>
     `
   }
 }

@@ -1,6 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property, query, state } from 'lit/decorators.js'
 import '@/components/icon-button/icon-button'
+import '@/components/flex/flex'
 import { inputStyles } from '@/components/input/input.styles'
 import { Textarea } from '@/components/input/textarea'
 import '@/components/domains/prompt-input/attachment-dropdown'
@@ -44,27 +45,17 @@ export class PromptInput extends LitElement {
       }
 
       .actions {
-        display: flex;
         grid-area: actions;
-        align-items: center;
-        justify-content: space-between;
-        gap: var(--space-2);
         min-width: 0;
       }
 
       .start-actions {
-        display: flex;
         grid-area: attach;
-        align-items: center;
-        gap: var(--space-1);
         min-width: 0;
       }
 
       .end-actions {
-        display: flex;
         grid-area: submit;
-        align-items: center;
-        gap: var(--space-1);
         justify-self: end;
       }
     `,
@@ -134,7 +125,7 @@ export class PromptInput extends LitElement {
 
   private renderStartActions() {
     return html`
-      <div class="start-actions">
+      <mm-flex class="start-actions" gap="1" align-items="center">
         ${this.hiddenAttachment
           ? ''
           : html`
@@ -142,13 +133,13 @@ export class PromptInput extends LitElement {
             `}
         <slot name="leading-actions"></slot>
         <!-- <mm-model-selector></mm-model-selector> -->
-      </div>
+      </mm-flex>
     `
   }
 
   private renderEndActions() {
     return html`
-      <div class="end-actions">
+      <mm-flex class="end-actions" gap="1" align-items="center">
         <slot name="trailing-actions"></slot>
         <mm-icon-button
           variant="primary"
@@ -157,7 +148,7 @@ export class PromptInput extends LitElement {
           ?disabled=${this.isLoading}
           @click=${this.submit}
         ></mm-icon-button>
-      </div>
+      </mm-flex>
     `
   }
 
@@ -179,7 +170,9 @@ export class PromptInput extends LitElement {
                 ${this.renderStartActions()} ${this.renderEndActions()}
               `
             : html`
-                <div class="actions">${this.renderStartActions()} ${this.renderEndActions()}</div>
+                <mm-flex class="actions" gap="2" align-items="center" justify-content="between">
+                  ${this.renderStartActions()} ${this.renderEndActions()}
+                </mm-flex>
               `}
         </div>
       </form>

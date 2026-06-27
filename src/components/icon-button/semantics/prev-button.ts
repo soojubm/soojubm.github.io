@@ -14,7 +14,7 @@ export class PrevButton extends LitElement {
 
   @property({ type: Boolean }) disabled = false
 
-  private _handleClick = () => {
+  private handleClick = () => {
     if (this.disabled) return
     emit(this, 'prev')
   }
@@ -26,7 +26,7 @@ export class PrevButton extends LitElement {
         variant="secondary"
         aria-label="이전"
         ?disabled=${this.disabled}
-        @click=${this._handleClick}
+        @click=${this.handleClick}
       ></mm-icon-button>
     `
   }

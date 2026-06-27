@@ -9,6 +9,7 @@ type AlignAlias = 'start' | 'center' | 'end' | 'stretch' | 'baseline'
 type GapAlias = 'section'
 type JustifyContent = JustifyAlias | 'flex-start' | 'flex-end' | 'space-between' | 'space-around'
 type AlignItems = AlignAlias | 'flex-start' | 'flex-end'
+type FlexAs = 'div' | 'header' | 'section' | 'footer' | 'nav'
 
 const justifyMap: Record<JustifyAlias, string> = {
   start: 'flex-start',
@@ -60,25 +61,56 @@ export class Flex extends LitElement {
     'flex-start'
   @property({ type: String, attribute: 'align-items' }) alignItems: AlignItems = 'stretch'
   @property({ type: String }) gap = '2'
+  @property({ type: String }) as: FlexAs = 'div'
   @property({ type: Boolean }) wrap = false
   @property({ type: Boolean, reflect: true }) stretch = false
 
-  render() {
+  private get styles() {
     const gap =
       gapMap[this.gap as GapAlias] ??
       (/^\d+$/.test(this.gap) ? `var(--space-${this.gap})` : this.gap)
-    const styles = {
+
+    return {
       flexDirection: this.direction,
       justifyContent: justifyMap[this.justifyContent as JustifyAlias] ?? this.justifyContent,
       alignItems: alignMap[this.alignItems as AlignAlias] ?? this.alignItems,
       gap,
       flexWrap: this.wrap ? 'wrap' : 'nowrap',
     }
+  }
+
+  render() {
+    const styles = styleMap(this.styles)
+    const content = html`
+      <slot></slot>
+    `
+
+    if (this.as === 'header') {
+      return html`
+        <header class="flex" style=${styles}>${content}</header>
+      `
+    }
+
+    if (this.as === 'section') {
+      return html`
+        <section class="flex" style=${styles}>${content}</section>
+      `
+    }
+
+    if (this.as === 'footer') {
+      return html`
+        <footer class="flex" style=${styles}>${content}</footer>
+      `
+    }
+
+    if (this.as === 'nav') {
+      return html`
+        <nav class="flex" style=${styles}>${content}</nav>
+      `
+    }
 
     return html`
-      <div class="flex" role="group" style=${styleMap(styles)}>
-        <slot></slot>
-      </div>
+      <div class="flex" role="group" style=${styles}>${content}</div>
     `
   }
 }
