@@ -1,5 +1,6 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { styleMap } from 'lit/directives/style-map.js'
 
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
 
@@ -134,11 +135,6 @@ export class Flex extends LitElement {
 
       .flex {
         display: flex;
-        flex-direction: var(--flex-direction, row);
-        justify-content: var(--flex-justify-content, flex-start);
-        align-items: var(--flex-align-items, stretch);
-        gap: var(--flex-gap, var(--space-2));
-        flex-wrap: var(--flex-wrap, nowrap);
         width: 100%;
       }
     `,
@@ -161,26 +157,28 @@ export class Flex extends LitElement {
 
     if (this.as === 'div') return content
 
+    const styles = styleMap(this.layoutStyles)
+
     if (this.as === 'header') {
       return html`
-        <header class="flex">${content}</header>
+        <header class="flex" style=${styles}>${content}</header>
       `
     }
 
     if (this.as === 'section') {
       return html`
-        <section class="flex">${content}</section>
+        <section class="flex" style=${styles}>${content}</section>
       `
     }
 
     if (this.as === 'footer') {
       return html`
-        <footer class="flex">${content}</footer>
+        <footer class="flex" style=${styles}>${content}</footer>
       `
     }
 
     return html`
-      <nav class="flex">${content}</nav>
+      <nav class="flex" style=${styles}>${content}</nav>
     `
   }
 
@@ -188,12 +186,10 @@ export class Flex extends LitElement {
   protected willUpdate() {
     if (this.as === 'div') {
       this.setAttribute('role', 'group')
-      this.removeLayoutProperties()
       return
     }
 
     this.removeAttribute('role')
-    this.updateLayoutProperties()
   }
 
   private get gapValue() {
@@ -203,26 +199,15 @@ export class Flex extends LitElement {
     )
   }
 
-  private updateLayoutProperties() {
-    this.style.setProperty('--flex-direction', this.direction)
-    this.style.setProperty(
-      '--flex-justify-content',
-      justifyMap[this.justifyContent as JustifyAlias] ?? this.justifyContent,
-    )
-    this.style.setProperty(
-      '--flex-align-items',
-      alignMap[this.alignItems as AlignAlias] ?? this.alignItems,
-    )
-    this.style.setProperty('--flex-gap', this.gapValue)
-    this.style.setProperty('--flex-wrap', this.wrap ? 'wrap' : 'nowrap')
-  }
-
-  private removeLayoutProperties() {
-    this.style.removeProperty('--flex-direction')
-    this.style.removeProperty('--flex-justify-content')
-    this.style.removeProperty('--flex-align-items')
-    this.style.removeProperty('--flex-gap')
-    this.style.removeProperty('--flex-wrap')
+  /** 시멘틱 래퍼(as !== 'div')의 내부 flex 요소에만 사용하는 레이아웃 스타일. */
+  private get layoutStyles() {
+    return {
+      flexDirection: this.direction,
+      justifyContent: justifyMap[this.justifyContent as JustifyAlias] ?? this.justifyContent,
+      alignItems: alignMap[this.alignItems as AlignAlias] ?? this.alignItems,
+      gap: this.gapValue,
+      flexWrap: this.wrap ? 'wrap' : 'nowrap',
+    }
   }
 }
 

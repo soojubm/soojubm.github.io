@@ -1,6 +1,7 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, query, queryAll, state } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
+import { styleMap } from 'lit/directives/style-map.js'
 
 import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
 import { ScrollSpyController } from '@/controllers/scroll-spy-controller'
@@ -35,7 +36,6 @@ export class TableOfContents extends LitElement {
         position: sticky;
         top: calc(var(--space-4) * 4);
         overflow-y: auto;
-        --selection-indicator-y: 0px;
       }
 
       .toc-title {
@@ -108,23 +108,22 @@ export class TableOfContents extends LitElement {
 
   render() {
     if (!this.items.length) return nothing
+    const listStyles = {
+      '--selection-indicator-y': `${this.indicatorY}px`,
+    }
 
     return html`
       <nav aria-label="On this page">
         <mm-text weight="bold" color="light" class="toc-title" aria-hidden="true">
           On this page
         </mm-text>
-        <div class="toc-list">
+        <div class="toc-list" style=${styleMap(listStyles)}>
           <mm-selection-indicator position="absolute" aria-hidden="true"></mm-selection-indicator>
           ${this.renderTocItems()}
         </div>
       </nav>
       ${this.renderShareSection()}
     `
-  }
-
-  protected willUpdate() {
-    this.style.setProperty('--selection-indicator-y', `${this.indicatorY}px`)
   }
 
   private renderTocItems() {
