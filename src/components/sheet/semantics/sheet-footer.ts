@@ -9,7 +9,8 @@ import { emit } from '@/utils/emit'
 class SheetFooter extends LitElement {
   static styles = css`
     :host {
-      padding: var(--sheet-section-padding-block, var(--space-3)) 0;
+      padding: var(--sheet-section-padding-block, var(--space-3)) 0
+        calc(var(--sheet-section-padding-block, var(--space-3)) + env(safe-area-inset-bottom));
     }
   `
 
@@ -30,7 +31,7 @@ class SheetFooter extends LitElement {
     return html`
       <mm-button
         variant="tertiary"
-        size="medium"
+        size="large"
         ?disabled=${this.secondaryAction.disabled}
         @click=${this.handleSecondaryClick}
       >
@@ -45,7 +46,7 @@ class SheetFooter extends LitElement {
     return html`
       <mm-button
         variant="primary"
-        size="medium"
+        size="large"
         ?disabled=${this.primaryAction.disabled}
         @click=${this.handlePrimaryClick}
       >
