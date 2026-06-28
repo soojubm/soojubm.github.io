@@ -10,9 +10,7 @@ export const tabsStyles = css`
     --tabs-indicator-color: var(--selection-indicator-color);
     --tabs-line-color: var(--color-border);
     --tabs-line-width: var(--border-width);
-    --tabs-pill-background: var(--color-background-subtle);
     --tabs-pill-indicator-background: var(--selection-background);
-    --tabs-pill-radius: var(--radius);
     --tabs-pill-border: none;
     --tabs-pill-indicator-border: none;
     --tabs-pill-indicator-shadow: var(--shadow);
@@ -53,9 +51,9 @@ export const tabsStyles = css`
      2) Pill 형태 (알약/배경 상자 스타일)
      ========================================================== */
   :host([variant='pill']) {
-    background-color: var(--tabs-pill-background);
+    background-color: var(--color-background-subtle);
     border: var(--tabs-pill-border);
-    border-radius: var(--tabs-pill-radius);
+    border-radius: var(--radius);
     padding: var(--space-1);
 
     & .indicator {
