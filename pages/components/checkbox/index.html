@@ -81,37 +81,28 @@
   </mm-component-guide>
 
   <mm-component-section heading="MasterCheckbox" description="TermsAllCheckbox, TermsCheckboxGroup">
-    <div>
-      <mm-master-checkbox aria-controls="main-terms-group">
-        <mm-paragraph>모두 동의합니다 (선택동의 포함)</mm-paragraph>
-      </mm-master-checkbox>
+    <mm-master-checkbox aria-controls="main-terms-group">
+      <mm-paragraph>모두 동의합니다 (선택동의 포함)</mm-paragraph>
+    </mm-master-checkbox>
 
-      <mm-checkbox-group id="main-terms-group" name="terms">
-        <div>
-          <mm-flex align-items="center" gap="1">
-            <mm-checkbox value="terms5" size="large">이용약관 동의 (필수)</mm-checkbox>
-            <mm-icon-button
-              variant="secondary"
-              size="small"
-              aria-label="이용약관 바로가기"
-              href="#"
-              icon="arrow-up-right"
-            ></mm-icon-button>
-          </mm-flex>
+    <mm-checkbox-group id="main-terms-group" name="terms">
+      <mm-checkbox value="terms5" size="large">이용약관 동의 (필수)</mm-checkbox>
+      <mm-icon-button
+        variant="secondary"
+        size="small"
+        aria-label="이용약관 바로가기"
+        href="#"
+        icon="arrow-up-right"
+      ></mm-icon-button>
 
-          <mm-surface variant="subtle" style="width: 100%; margin-top: var(--space-1)">
-            <mm-checkbox-group name="terms-detail">
-              <mm-checkbox value="gender" size="small">성별</mm-checkbox>
-              <mm-checkbox value="birth" size="small">생년월일</mm-checkbox>
-            </mm-checkbox-group>
-          </mm-surface>
-        </div>
-
-        <mm-checkbox value="terms6" size="large">개인정보 수집/이용 동의</mm-checkbox>
-
-        <mm-checkbox value="terms7" size="large">개인정보 제3자 제공 동의</mm-checkbox>
+      <mm-checkbox-group name="terms-detail">
+        <mm-checkbox value="gender" size="small">성별</mm-checkbox>
+        <mm-checkbox value="birth" size="small">생년월일</mm-checkbox>
       </mm-checkbox-group>
-    </div>
+
+      <mm-checkbox value="terms6" size="large">개인정보 수집/이용 동의</mm-checkbox>
+      <mm-checkbox value="terms7" size="large">개인정보 제3자 제공 동의</mm-checkbox>
+    </mm-checkbox-group>
   </mm-component-section>
 
   <mm-component-section heading="Sampler" description="연습">

@@ -30,7 +30,7 @@ export class TextfieldLabel extends LitElement {
     if (!this.optional) return nothing
 
     return html`
-      <small>선택입력</small>
+      <mm-caption>선택입력</mm-caption>
     `
   }
 }

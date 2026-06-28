@@ -60,19 +60,19 @@ export class Breadcrumb extends LitElement {
   @property({ type: String }) divider = '/'
 
   render() {
-    const items = this.items
-
     return html`
-      <nav class="breadcrumb" aria-label=${this.ariaLabel}>
-        ${items.map((item, index) => {
-          const isLast = index === items.length - 1
-
-          return html`
-            ${this.renderItem(item, isLast)}${this.renderDivider(isLast)}
-          `
-        })}
-      </nav>
+      <nav class="breadcrumb" aria-label=${this.ariaLabel}>${this.renderItems()}</nav>
     `
+  }
+
+  private renderItems() {
+    return this.items.map((item, index) => this.renderListItem(item, index))
+  }
+
+  private renderListItem(item: BreadcrumbItem, index: number) {
+    const isLast = index === this.items.length - 1
+
+    return [this.renderItem(item, isLast), this.renderDivider(isLast)]
   }
 
   private renderItem(item: BreadcrumbItem, isLast: boolean) {

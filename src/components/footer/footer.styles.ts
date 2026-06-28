@@ -48,11 +48,6 @@ export const footerStyles = css`
     color: var(--color-foreground-light);
   }
 
-  .footer-copyright {
-    display: block;
-    margin: var(--space-3) 0 0;
-  }
-
   .footer-to-top {
     margin: var(--space-5) 0 0;
   }

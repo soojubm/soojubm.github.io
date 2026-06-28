@@ -26,12 +26,20 @@ export class SortDropdown extends LitElement {
     return html`
       <mm-dropdown .value=${this.value} @change=${this.handleChange}>
         <mm-button slot="trigger" size="small">${this.selectedLabel}</mm-button>
-        ${SORT_OPTIONS.map(
-          opt => html`
-            <option value=${opt.value} ?selected=${this.value === opt.value}>${opt.label}</option>
-          `,
-        )}
+        ${this.renderSortOptions()}
       </mm-dropdown>
+    `
+  }
+
+  private renderSortOptions() {
+    return SORT_OPTIONS.map(option => this.renderOption(option))
+  }
+
+  private renderOption(option: typeof SORT_OPTIONS[number]) {
+    return html`
+      <option value=${option.value} ?selected=${this.value === option.value}>
+        ${option.label}
+      </option>
     `
   }
 

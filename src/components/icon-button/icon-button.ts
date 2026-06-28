@@ -46,9 +46,9 @@ class IconButton extends LitElement {
         type="button"
         aria-label=${this.accessibilityLabel}
         ?disabled=${this.disabled}
-        aria-haspopup=${this.ariaHasPopup ?? nothing}
-        aria-expanded=${this.ariaExpanded ?? nothing}
-        aria-controls=${this.ariaControls ?? nothing}
+        aria-haspopup=${ifDefined(this.ariaHasPopup ?? undefined)}
+        aria-expanded=${ifDefined(this.ariaExpanded ?? undefined)}
+        aria-controls=${ifDefined(this.ariaControls ?? undefined)}
       >
         <mm-icon name=${this.icon}></mm-icon>
       </button>

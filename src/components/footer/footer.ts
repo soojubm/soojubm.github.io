@@ -49,7 +49,7 @@ export class Footer extends LitElement {
           <dd>2018-서울강서구-1234</dd>
           <abbr title="phone"></abbr>
         </dl>
-        <small class="footer-copyright">© 2019 soojubm. All rights reserved.</small>
+        <mm-caption>© 2019 soojubm. All rights reserved.</mm-caption>
         <address>
           <mm-paragraph>Making things better.</mm-paragraph>
         </address>

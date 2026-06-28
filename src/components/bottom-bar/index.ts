@@ -102,20 +102,26 @@ class BottomBar extends LitElement {
           aria-hidden="true"
           style=${styleMap(indicatorStyle)}
         ></span>
-        ${items.map(
-          (item, index) => html`
-            <a
-              class="bottom-bar-item"
-              href=${item.href ?? '#'}
-              aria-current=${ifDefined(activeIndex === index ? 'page' : undefined)}
-              @click=${(e: Event) => this.handleItemClick(e, index)}
-            >
-              <mm-avatar variant="tertiary" icon=${item.icon ?? ICON_NAMES.HOME}></mm-avatar>
-              <mm-caption>${item.label}</mm-caption>
-            </a>
-          `,
-        )}
+        ${this.renderItems(items, activeIndex)}
       </nav>
+    `
+  }
+
+  private renderItems(items: BottomBarItem[], activeIndex: number | null) {
+    return items.map((item, index) => this.renderItem(item, index, activeIndex))
+  }
+
+  private renderItem(item: BottomBarItem, index: number, activeIndex: number | null) {
+    return html`
+      <a
+        class="bottom-bar-item"
+        href=${item.href ?? '#'}
+        aria-current=${ifDefined(activeIndex === index ? 'page' : undefined)}
+        @click=${(e: Event) => this.handleItemClick(e, index)}
+      >
+        <mm-avatar variant="tertiary" icon=${item.icon ?? ICON_NAMES.HOME}></mm-avatar>
+        <mm-caption>${item.label}</mm-caption>
+      </a>
     `
   }
 

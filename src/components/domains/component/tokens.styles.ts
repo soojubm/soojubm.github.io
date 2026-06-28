@@ -7,14 +7,18 @@ export const tokenStyles = [
   resetStyles,
   css`
     :host {
-      display: grid;
-      grid-column: 1 / -1;
-      grid-template-columns: subgrid;
-    }
-
-    .meta {
       display: flex;
       flex-direction: column;
+    }
+
+    dt {
+      color: var(--color-foreground-light);
+      line-height: 1.2;
+    }
+
+    .value {
+      display: flex;
+      margin-bottom: var(--space-3);
     }
   `,
 ]
@@ -25,22 +29,11 @@ export const componentTokensStyles = [
   css`
     :host {
       display: block;
-    }
-
-    .component-tokens {
-      --component-content-frame-margin: var(--space-4) 0 0
-        var(--component-content-offset-inline-start);
+      margin-top: var(--space-4);
     }
 
     .component-tokens-title {
       display: none;
-    }
-
-    dl {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: var(--space-2) var(--space-4);
-      margin: 0;
     }
   `,
 ]

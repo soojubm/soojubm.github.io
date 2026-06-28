@@ -40,13 +40,21 @@ export class Table extends LitElement {
     return html`
       <table>
         <caption hidden>${this.caption}</caption>
-        <colgroup>${this.columns.map(column => this.renderColumn(column))}</colgroup>
+        <colgroup>${this.renderColumns()}</colgroup>
         <thead>
-          <tr>${this.columns.map(column => this.renderHeader(column))}</tr>
+          <tr>${this.renderHeaders()}</tr>
         </thead>
         <tbody>${this.rows}</tbody>
       </table>
     `
+  }
+
+  private renderColumns() {
+    return this.columns.map(column => this.renderColumn(column))
+  }
+
+  private renderHeaders() {
+    return this.columns.map(column => this.renderHeader(column))
   }
 
   private renderHeader(column: TableColumn) {

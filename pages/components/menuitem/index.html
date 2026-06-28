@@ -123,6 +123,32 @@
     </mm-menu-item-radio-group>
   </mm-component-section>
 
+  <mm-component-section heading="Access 권한" description="">
+    <div>
+      <mm-top-bar heading="공개 대상 선택"></mm-top-bar>
+      <mm-menu-item-radio-group name="access" value="public">
+        <mm-menu-item-radio
+          icon="group"
+          label="전체공개"
+          description="모든 Facebook 사용자"
+          value="public"
+        ></mm-menu-item-radio>
+        <mm-menu-item-radio
+          icon="group"
+          label="친구만"
+          description="회원님의 Facebook 친구"
+          value="friends"
+        ></mm-menu-item-radio>
+        <mm-menu-item-radio
+          icon="lock"
+          label="나만 보기"
+          description="부끄러우니까 보지마요"
+          value="private"
+        ></mm-menu-item-radio>
+      </mm-menu-item-radio-group>
+    </div>
+  </mm-component-section>
+
   <mm-component-section heading="MenuItemRadioSwitch">
     <mm-menu-item-switch icon="wifi" label="Wi-Fi" value="wifi"></mm-menu-item-switch>
   </mm-component-section>
@@ -130,24 +156,11 @@
   <mm-component-section heading="MenuItemLink">
     <mm-menu-item-group>
       <mm-menu-item-link
-        icon="book"
-        label="Link 컴포넌트"
-        href="link.html"
-        target="_self"
-        description="내부 링크"
-      ></mm-menu-item-link>
-      <mm-menu-item-link
         icon="open-in-browser"
         label="MDN Web Docs"
         href="https://developer.mozilla.org"
-        description="외부 링크"
-      ></mm-menu-item-link>
-      <mm-menu-item-link
-        icon="menu"
-        label="MenuItem 문서"
-        href="menuitem.html"
         target="_self"
-        description="내부 링크"
+        description="외부 링크"
       ></mm-menu-item-link>
       <mm-menu-item-link
         icon="github"

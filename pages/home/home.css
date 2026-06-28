@@ -12,9 +12,7 @@
 }
 
 .scroll-spy-sampler-nav {
-  flex: 0 0 9rem;
-  position: sticky;
-  top: var(--space-4);
+  display: flex;
 }
 
 .scroll-spy-sampler-tab {

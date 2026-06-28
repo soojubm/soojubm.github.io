@@ -15,6 +15,12 @@ const PLATFORMS = [
 ] as const
 
 type PlatformKey = typeof PLATFORMS[number]['key']
+type SocialLink = {
+  key: PlatformKey
+  label: string
+  icon: typeof ICON_NAMES[keyof typeof ICON_NAMES]
+  href: string
+}
 
 @customElement('mm-social-links')
 export class SocialLinks extends LitElement {
@@ -52,27 +58,35 @@ export class SocialLinks extends LitElement {
 
   private renderDefault() {
     return html`
-      <mm-menu-item-group>
-        ${this.activeLinks.map(
-          ({ label, icon, href }) => html`
-            <mm-menu-item-link label=${label} icon=${icon} href=${href}></mm-menu-item-link>
-          `,
-        )}
-      </mm-menu-item-group>
+      <mm-menu-item-group>${this.renderDefaultLinks()}</mm-menu-item-group>
     `
   }
 
   private renderCompact() {
     return html`
-      <mm-flex class="compact" gap="2">
-        ${this.activeLinks.map(
-          ({ label, icon, href }) => html`
-            <a href=${href} target="_blank" rel="noopener noreferrer" aria-label=${label}>
-              <mm-avatar variant="primary" icon=${icon}></mm-avatar>
-            </a>
-          `,
-        )}
-      </mm-flex>
+      <mm-flex class="compact" gap="2">${this.renderCompactLinks()}</mm-flex>
+    `
+  }
+
+  private renderDefaultLinks() {
+    return this.activeLinks.map(link => this.renderDefaultLink(link))
+  }
+
+  private renderDefaultLink({ label, icon, href }: SocialLink) {
+    return html`
+      <mm-menu-item-link label=${label} icon=${icon} href=${href}></mm-menu-item-link>
+    `
+  }
+
+  private renderCompactLinks() {
+    return this.activeLinks.map(link => this.renderCompactLink(link))
+  }
+
+  private renderCompactLink({ label, icon, href }: SocialLink) {
+    return html`
+      <a href=${href} target="_blank" rel="noopener noreferrer" aria-label=${label}>
+        <mm-avatar variant="primary" icon=${icon}></mm-avatar>
+      </a>
     `
   }
 }

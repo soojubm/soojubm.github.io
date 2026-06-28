@@ -19,16 +19,12 @@ export class KeywordTagGroup extends LitElement {
   render() {
     if (!this.keywords.length) return nothing
     return html`
-      <mm-tag-group>
-        ${this.renderHeading()}
-        ${this.keywords.map(
-          k =>
-            html`
-              <mm-keyword-tag>${k}</mm-keyword-tag>
-            `,
-        )}
-      </mm-tag-group>
+      <mm-tag-group>${this.renderContent()}</mm-tag-group>
     `
+  }
+
+  private renderContent() {
+    return [this.renderHeading(), this.renderKeywords()]
   }
 
   private renderHeading() {
@@ -36,6 +32,16 @@ export class KeywordTagGroup extends LitElement {
 
     return html`
       <mm-accent-tag>${this.heading}</mm-accent-tag>
+    `
+  }
+
+  private renderKeywords() {
+    return this.keywords.map(keyword => this.renderKeyword(keyword))
+  }
+
+  private renderKeyword(keyword: string) {
+    return html`
+      <mm-keyword-tag>${keyword}</mm-keyword-tag>
     `
   }
 }

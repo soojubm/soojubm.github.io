@@ -39,16 +39,20 @@ class TextList extends LitElement {
   @property({ type: String }) variant: Variant = 'check'
 
   render() {
-    const list = this.texts.map(
-      (text: string, index: number) => html`
-        <li>
-          <mm-list-marker variant=${this.variant} value=${index + 1}></mm-list-marker>
-          ${text}
-        </li>
-      `,
-    )
+    return this.renderList(this.renderItems())
+  }
 
-    return this.renderList(list)
+  private renderItems() {
+    return this.texts.map((text, index) => this.renderItem(text, index))
+  }
+
+  private renderItem(text: string, index: number) {
+    return html`
+      <li>
+        <mm-list-marker variant=${this.variant} value=${index + 1}></mm-list-marker>
+        ${text}
+      </li>
+    `
   }
 
   private renderList(list: unknown[]) {

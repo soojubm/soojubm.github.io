@@ -50,22 +50,27 @@ export class AvatarGroup extends LitElement {
   private readonly maxVisible = 3
 
   render() {
-    const visible = this.avatars.slice(0, this.maxVisible)
     const overflowCount = this.avatars.length - this.maxVisible
 
     return html`
       <mm-flex gap="2" align-items="center">
-        <div class="avatars">
-          ${visible.map(
-            src =>
-              html`
-                <mm-avatar size=${this.size} .src=${src || undefined}></mm-avatar>
-              `,
-          )}
-          ${this.renderOverflow(overflowCount)}
-        </div>
+        <div class="avatars">${this.renderAvatarList(overflowCount)}</div>
         ${this.renderLabel()}
       </mm-flex>
+    `
+  }
+
+  private renderAvatarList(overflowCount: number) {
+    return [this.renderAvatars(), this.renderOverflow(overflowCount)]
+  }
+
+  private renderAvatars() {
+    return this.avatars.slice(0, this.maxVisible).map(src => this.renderAvatar(src))
+  }
+
+  private renderAvatar(src: string) {
+    return html`
+      <mm-avatar size=${this.size} .src=${src || undefined}></mm-avatar>
     `
   }
 

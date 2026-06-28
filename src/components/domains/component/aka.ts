@@ -26,13 +26,18 @@ export class ComponentAka extends LitElement {
     return html`
       <dl>
         <dt>a.k.a.</dt>
-        ${this.items.map(
-          item =>
-            html`
-              <dd>${item}</dd>
-            `,
-        )}
+        ${this.renderItems()}
       </dl>
+    `
+  }
+
+  private renderItems() {
+    return this.items.map(item => this.renderItem(item))
+  }
+
+  private renderItem(item: string) {
+    return html`
+      <dd>${item}</dd>
     `
   }
 }

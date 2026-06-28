@@ -18,7 +18,7 @@ export class Token extends LitElement {
   render() {
     return html`
       <dt>${this.name}</dt>
-      <dd class="meta">${this.renderDefaultValue()}</dd>
+      <dd class="value">${this.renderDefaultValue()}</dd>
     `
   }
 
@@ -41,12 +41,12 @@ export class ComponentTokens extends LitElement {
 
   render() {
     return html`
-      <div class="component-tokens">
+      <section class="component-tokens">
         <mm-heading class="component-tokens-title">Component Tokens</mm-heading>
         <dl>
           <slot></slot>
         </dl>
-      </div>
+      </section>
     `
   }
 }

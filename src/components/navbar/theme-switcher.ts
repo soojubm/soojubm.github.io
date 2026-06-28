@@ -93,21 +93,27 @@ export class ThemeSwitcher extends LitElement {
           role="menu"
           aria-hidden=${this.popup.open ? 'false' : 'true'}
         >
-          ${THEMES.map(
-            theme => html`
-              <mm-menu-item-action
-                icon=${theme.icon}
-                aria-current=${ifDefined(theme.value === this.value ? 'true' : undefined)}
-                @click=${(event: Event) => this.handleThemeChange(theme.value, event)}
-              >
-                ${theme.label}
-              </mm-menu-item-action>
-            `,
-          )}
+          ${this.renderThemeOptions()}
           <mm-separator spacing="small"></mm-separator>
           <mm-radius-picker></mm-radius-picker>
         </div>
       </div>
+    `
+  }
+
+  private renderThemeOptions() {
+    return THEMES.map(theme => this.renderThemeOption(theme))
+  }
+
+  private renderThemeOption(theme: typeof THEMES[number]) {
+    return html`
+      <mm-menu-item-action
+        icon=${theme.icon}
+        aria-current=${ifDefined(theme.value === this.value ? 'true' : undefined)}
+        @click=${(event: Event) => this.handleThemeChange(theme.value, event)}
+      >
+        ${theme.label}
+      </mm-menu-item-action>
     `
   }
 

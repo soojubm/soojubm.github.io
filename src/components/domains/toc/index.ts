@@ -16,6 +16,12 @@ interface TocItem {
   label: string
 }
 
+interface ShareLink {
+  href: string
+  icon: string
+  label: string
+}
+
 @customElement('mm-toc')
 export class TableOfContents extends LitElement {
   static styles = [
@@ -113,23 +119,29 @@ export class TableOfContents extends LitElement {
         </mm-text>
         <div class="toc-list" style=${styleMap(listStyles)}>
           <mm-selection-indicator position="absolute" aria-hidden="true"></mm-selection-indicator>
-          ${this.items.map(
-            item => html`
-              <button
-                class="toc-link"
-                type="button"
-                data-toc-id=${item.id}
-                ?data-active=${item.id === this.activeId}
-                aria-current=${ifDefined(item.id === this.activeId ? 'true' : undefined)}
-                @click=${() => this.scrollToItem(item.id)}
-              >
-                ${item.label}
-              </button>
-            `,
-          )}
+          ${this.renderTocItems()}
         </div>
       </nav>
       ${this.renderShareSection()}
+    `
+  }
+
+  private renderTocItems() {
+    return this.items.map(item => this.renderTocItem(item))
+  }
+
+  private renderTocItem(item: TocItem) {
+    return html`
+      <button
+        class="toc-link"
+        type="button"
+        data-toc-id=${item.id}
+        ?data-active=${item.id === this.activeId}
+        aria-current=${ifDefined(item.id === this.activeId ? 'true' : undefined)}
+        @click=${() => this.scrollToItem(item.id)}
+      >
+        ${item.label}
+      </button>
     `
   }
 
@@ -273,16 +285,7 @@ export class TableOfContents extends LitElement {
       <section class="share" aria-label="Share on">
         <mm-text weight="bold" color="light" class="toc-title" aria-hidden="true">Share on</mm-text>
         <mm-button-group>
-          ${this.shareLinks.map(
-            ({ href, icon, label }) => html`
-              <mm-icon-button
-                icon=${icon}
-                variant="tertiary"
-                aria-label=${label}
-                @click=${() => window.open(href, '_blank', 'noopener,noreferrer')}
-              ></mm-icon-button>
-            `,
-          )}
+          ${this.renderShareLinks()}
           <mm-icon-button
             icon=${this.copied ? ICON_NAMES.COPY_SUCCESS : ICON_NAMES.LINK}
             variant="tertiary"
@@ -291,6 +294,21 @@ export class TableOfContents extends LitElement {
           ></mm-icon-button>
         </mm-button-group>
       </section>
+    `
+  }
+
+  private renderShareLinks() {
+    return this.shareLinks.map(link => this.renderShareLink(link))
+  }
+
+  private renderShareLink({ href, icon, label }: ShareLink) {
+    return html`
+      <mm-icon-button
+        icon=${icon}
+        variant="tertiary"
+        aria-label=${label}
+        @click=${() => window.open(href, '_blank', 'noopener,noreferrer')}
+      ></mm-icon-button>
     `
   }
 }
