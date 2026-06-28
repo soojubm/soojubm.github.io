@@ -165,12 +165,6 @@ q:before {
   line-height: 1rem;
 }
 
-.table-container {
-  height: 320px;
-  background-color: var(--color-background-subtle);
-  overflow-x: auto;
-}
-
 table {
   --table-lineheight: 1.6;
   --table-row-border: var(--border);

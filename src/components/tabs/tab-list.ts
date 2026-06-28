@@ -16,14 +16,11 @@ export default class TabList extends LitElement {
 
   @queryAssignedElements({ flatten: true }) private assignedElements!: HTMLElement[]
   @query('.indicator') private indicator!: HTMLDivElement
-  @query('.tablist-container') private tablistContainer!: HTMLDivElement
 
   render() {
     return html`
-      <div class="tablist-container" role="tablist">
-        <slot @slotchange=${this.handleSlotChange}></slot>
-        <div class="indicator"></div>
-      </div>
+      <slot @slotchange=${this.handleSlotChange}></slot>
+      <div class="indicator"></div>
     `
   }
 
@@ -45,6 +42,7 @@ export default class TabList extends LitElement {
 
   connectedCallback() {
     super.connectedCallback()
+    this.setAttribute('role', 'tablist')
     this.addEventListener('tab-select', this.handleTabSelect)
     this.addEventListener('keydown', this.handleKeydown)
   }
@@ -155,9 +153,9 @@ export default class TabList extends LitElement {
         return
       }
 
-      // indicator는 .tablist-container 기준 absolute이므로 container rect 기준으로 연산
+      // indicator는 host 기준 absolute이므로 host rect 기준으로 연산
       const tabRect = activeTab.getBoundingClientRect()
-      const containerRect = this.tablistContainer.getBoundingClientRect()
+      const containerRect = this.getBoundingClientRect()
       this.indicator.style.transform = `translateX(${tabRect.left - containerRect.left}px)`
       this.indicator.style.width = `${tabRect.width}px`
     })

@@ -1,5 +1,6 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { ifDefined } from 'lit/directives/if-defined.js'
 import { repeat } from 'lit/directives/repeat.js'
 import '@/components/icon-button/semantics/prev-button'
 import '@/components/icon-button/semantics/next-button'
@@ -103,7 +104,7 @@ export class Pagination extends LitElement {
     return html`
       <mm-page-button
         .page=${item}
-        aria-current=${isCurrent ? 'page' : nothing}
+        aria-current=${ifDefined(isCurrent ? 'page' : undefined)}
         @click=${() => this.setPage(item)}
       ></mm-page-button>
     `

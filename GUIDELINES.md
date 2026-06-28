@@ -90,6 +90,7 @@
 - boolean 상태는 실제 상태명과 같은 key로 전달한다.
 - Lit의 `render()`는 순수하게 유지하고, 부수효과는 handler나 lifecycle에서 처리한다.
 - Lit 클래스 멤버는 `static styles`, reactive property, `render()`, 메서드 순으로 배치한다.
+- 함수 내부에서 조건을 분기할 때는 삼항식보다 early return을 우선한다.
 - Lit 바인딩은 attribute, property, Boolean attribute의 역할에 맞게 구분해 사용한다.
 - 단일 표현식 바인딩은 따옴표 없이 쓰고, 정적 문자열과 표현식을 섞을 때만 따옴표로 묶는다.
 - `reflect: true`는 외부 CSS 선택자나 DOM attribute 조회가 필요한 공개 상태에만 사용한다.

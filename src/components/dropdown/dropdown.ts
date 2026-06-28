@@ -1,13 +1,15 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, queryAssignedElements, state } from 'lit/decorators.js'
+import { ifDefined } from 'lit/directives/if-defined.js'
 import { repeat } from 'lit/directives/repeat.js'
 import { styleMap } from 'lit/directives/style-map.js'
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
 import { PopupController } from '@/controllers/popup-controller'
-import '@/components/button/button'
-import { ICON_NAMES, type IconName } from '@/components/icon-button/semantics/icon-names'
+import type { IconName } from '@/components/icon-button/semantics/icon-names'
 import '@/components/menuitem/semantics/menu-item-action'
 import '@/components/menuitem/semantics/menu-item-checkbox'
+import '@/components/sheet/sheet'
+import '@/components/sheet/semantics/sheet-body'
 import { emit } from '@/utils/emit'
 
 type DropdownPlacement = 'bottom-left' | 'bottom-right' | 'top-left' | 'top-right'
@@ -28,69 +30,26 @@ export class Dropdown extends LitElement {
     css`
       :host {
         --dropdown-offset: var(--space-1);
-        --dropdown-z-index: var(--zindex-loader);
         --dropdown-min-width: calc(var(--width-small) - var(--space-4) * 5);
         --dropdown-max-height: var(--width-small);
-      }
-
-      .dropdown {
+        display: block;
         position: relative;
         width: 100%;
       }
 
-      :host([inline]) .dropdown {
+      :host([inline]) {
         width: auto;
       }
 
-      .dropdown-button {
-        // TODO component and state
-        mm-icon {
-          transition: transform 160ms ease;
-        }
-
-        &[aria-expanded='true'] mm-icon {
-          transform: rotate(180deg);
-        }
-      }
-
       .dropdown-list {
-        display: flex;
-        flex-direction: column;
-
+        --sheet-padding-inline: var(--space-1);
+        --sheet-max-height: var(--dropdown-max-height);
         min-width: var(--dropdown-min-width);
-        max-height: var(--dropdown-max-height);
-
-        padding: var(--space-1);
-        border: var(--border);
-        border-radius: var(--radius);
-        background: var(--color-background);
-        box-shadow: var(--shadow);
 
         position: absolute;
         top: calc(100% + var(--dropdown-offset));
         left: 0;
         right: 0;
-        z-index: var(--dropdown-z-index);
-
-        overflow-y: auto;
-        box-sizing: border-box;
-
-        opacity: 0;
-        transform: translateY(var(--space-1-minus)) scale(0.98);
-        transform-origin: top left;
-        visibility: hidden;
-        pointer-events: none;
-        transition: opacity 120ms ease, transform 180ms cubic-bezier(0.2, 0.8, 0.2, 1),
-          visibility 0s linear 180ms;
-
-        &[open] {
-          opacity: 1;
-          transform: translateY(0) scale(1);
-          visibility: visible;
-          pointer-events: auto;
-          transition: opacity 120ms ease, transform 220ms cubic-bezier(0.18, 1.25, 0.4, 1),
-            visibility 0s;
-        }
 
         &[placement='bottom-right'],
         &[placement='top-right'] {
@@ -107,7 +66,6 @@ export class Dropdown extends LitElement {
         &[placement='top-right'] {
           top: auto;
           bottom: calc(100% + var(--dropdown-offset));
-          transform-origin: bottom center;
         }
       }
 
@@ -135,7 +93,7 @@ export class Dropdown extends LitElement {
 
   render() {
     return html`
-      <div class="dropdown">${this.renderTrigger()} ${this.renderList()}</div>
+      ${this.renderTrigger()} ${this.renderList()}
       <slot hidden @slotchange=${this.syncOptions}></slot>
     `
   }
@@ -163,16 +121,6 @@ export class Dropdown extends LitElement {
       selected: option.hasAttribute('selected'),
       icon: (option.getAttribute('icon') as IconName | null) ?? undefined,
     }))
-  }
-
-  // value > selected > 첫 default 옵션 순으로 표시 라벨 결정
-  private resolveSelectedLabel(): string {
-    return (
-      this.options.find(option => option.value === this.value)?.label ??
-      this.options.find(option => option.selected)?.label ??
-      this.options.find(option => option.type === 'default')?.label ??
-      'Select an option'
-    )
   }
 
   protected toggleOpen = () => {
@@ -210,21 +158,10 @@ export class Dropdown extends LitElement {
     })
   }
 
-  // 트리거: 소비자가 slot="trigger"로 커스텀 트리거(아이콘 버튼 등)를 끼워 넣을 수 있다.
-  // 슬롯에 click을 위임하므로 끼워 넣은 요소든 기본 버튼이든 클릭하면 펼쳐진다.
+  // 트리거 스타일은 slot="trigger"로 들어온 외부 요소가 책임진다.
   protected renderTrigger() {
     return html`
-      <slot name="trigger" @click=${this.toggleOpen} @slotchange=${this.popup.syncTrigger}>
-        <mm-button
-          class="dropdown-button"
-          size="small"
-          aria-haspopup="true"
-          aria-expanded=${String(this.popup.open)}
-        >
-          ${this.resolveSelectedLabel()}
-          <mm-icon name=${ICON_NAMES.EXPAND}></mm-icon>
-        </mm-button>
-      </slot>
+      <slot name="trigger" @click=${this.toggleOpen} @slotchange=${this.popup.syncTrigger}></slot>
     `
   }
 
@@ -234,20 +171,22 @@ export class Dropdown extends LitElement {
     }
 
     return html`
-      <div
+      <mm-sheet
         class="dropdown-list"
+        variant="inline"
         ?open=${this.popup.open}
         placement=${this.placement}
         ?inline=${this.inline}
         style=${styleMap(listStyles)}
-        role="menu"
       >
-        ${repeat(
-          this.options,
-          option => option.value,
-          option => this.renderOption(option),
-        )}
-      </div>
+        <mm-sheet-body role="menu">
+          ${repeat(
+            this.options,
+            option => option.value,
+            option => this.renderOption(option),
+          )}
+        </mm-sheet-body>
+      </mm-sheet>
     `
   }
 
@@ -274,7 +213,7 @@ export class Dropdown extends LitElement {
     return html`
       <mm-menu-item-action
         icon=${option.icon || nothing}
-        aria-current=${option.value === this.value ? 'true' : nothing}
+        aria-current=${ifDefined(option.value === this.value ? 'true' : undefined)}
         @click=${() => this.selectOption(option)}
       >
         ${option.label}

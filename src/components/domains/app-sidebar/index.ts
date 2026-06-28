@@ -1,6 +1,7 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, state } from 'lit/decorators.js'
 import { classMap } from 'lit/directives/class-map.js'
+import { ifDefined } from 'lit/directives/if-defined.js'
 import { repeat } from 'lit/directives/repeat.js'
 import { SITEMAP } from '@/sitemap'
 import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
@@ -60,7 +61,9 @@ export class Sidebar extends LitElement {
                           label="${item.name}${item.badge ? ` ${item.badge}` : ''}"
                           target="_self"
                           hidden-trailing
-                          aria-current=${this.isCurrentPage(item.id) ? 'page' : nothing}
+                          aria-current=${ifDefined(
+                            this.isCurrentPage(item.id) ? 'page' : undefined,
+                          )}
                           @click=${this.saveScrollPosition}
                         ></mm-menu-item-link>
                       `,

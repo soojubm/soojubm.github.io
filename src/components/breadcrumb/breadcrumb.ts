@@ -1,5 +1,6 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { ifDefined } from 'lit/directives/if-defined.js'
 import { arrayAttributeConverter } from '@/utils/property-converters'
 import '@/components/text/text'
 
@@ -74,7 +75,10 @@ export class Breadcrumb extends LitElement {
                   </a>
                 `
               : html`
-                  <mm-text class="breadcrumb-item" aria-current=${isLast ? 'page' : nothing}>
+                  <mm-text
+                    class="breadcrumb-item"
+                    aria-current=${ifDefined(isLast ? 'page' : undefined)}
+                  >
                     ${item.label}
                   </mm-text>
                 `

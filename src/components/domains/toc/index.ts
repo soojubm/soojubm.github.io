@@ -1,5 +1,6 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, query, queryAll, state } from 'lit/decorators.js'
+import { ifDefined } from 'lit/directives/if-defined.js'
 import { styleMap } from 'lit/directives/style-map.js'
 import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
@@ -118,7 +119,7 @@ export class TableOfContents extends LitElement {
                 type="button"
                 data-toc-id=${item.id}
                 ?data-active=${item.id === this.activeId}
-                aria-current=${item.id === this.activeId ? 'true' : nothing}
+                aria-current=${ifDefined(item.id === this.activeId ? 'true' : undefined)}
                 @click=${() => this.scrollToItem(item.id)}
               >
                 ${item.label}

@@ -1,5 +1,6 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { ifDefined } from 'lit/directives/if-defined.js'
 import { iconButtonStyles } from '@/components/icon-button/icon-button.styles'
 import type { AriaCurrent } from '@/types/aria'
 
@@ -35,7 +36,7 @@ export class PageButton extends LitElement {
       <button
         type="button"
         aria-label=${this.ariaLabel || `${this.page} 페이지로 이동`}
-        aria-current=${this.ariaCurrent ?? nothing}
+        aria-current=${ifDefined(this.ariaCurrent ?? undefined)}
         ?disabled="${this.disabled}"
       >
         ${this.page}

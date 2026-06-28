@@ -1,5 +1,6 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
+import { ifDefined } from 'lit/directives/if-defined.js'
 import { styleMap } from 'lit/directives/style-map.js'
 import { ICON_NAMES, type IconName } from '@/components/icon-button/semantics/icon-names'
 import '@/components/text/semantics/caption'
@@ -105,7 +106,7 @@ class BottomBar extends LitElement {
             <a
               class="bottom-bar-item"
               href=${item.href ?? '#'}
-              aria-current=${activeIndex === index ? 'page' : nothing}
+              aria-current=${ifDefined(activeIndex === index ? 'page' : undefined)}
               @click=${(e: Event) => this.handleItemClick(e, index)}
             >
               <mm-avatar variant="tertiary" icon=${item.icon ?? ICON_NAMES.HOME}></mm-avatar>

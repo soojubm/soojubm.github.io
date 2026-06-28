@@ -5,7 +5,9 @@ const sheetElementStyles = css`
   .sheet {
     display: flex;
     flex-direction: column;
-    background: var(--color-background);
+    border: var(--sheet-border);
+    background: var(--sheet-background);
+    box-shadow: var(--sheet-shadow);
     box-sizing: border-box;
     overflow: hidden;
     position: relative;
@@ -17,6 +19,9 @@ export const sheetStyles = [
     :host {
       --sheet-z-index: var(--zindex-sheet);
       --sheet-backdrop-color: var(--color-backdrop);
+      --sheet-background: var(--color-background);
+      --sheet-border: 0;
+      --sheet-shadow: none;
       --sheet-radius: var(--radius-large);
       --sheet-padding-inline: var(--space-4);
       --sheet-section-padding-block: var(--space-3);
@@ -153,6 +158,10 @@ export const sheetStyles = [
 
     /* inline */
     :host([variant='inline']) {
+      width: auto;
+      height: auto;
+      justify-content: flex-start;
+      align-items: stretch;
       position: relative;
       inset: auto; /* base의 inset: 0 리셋 */
       background: transparent;

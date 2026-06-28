@@ -1,5 +1,6 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, query } from 'lit/decorators.js'
+import { ifDefined } from 'lit/directives/if-defined.js'
 import '@/components/icon-button/icon-button'
 import '@/components/menuitem/semantics/menu-item-action'
 import '@/components/radius-picker/radius-picker'
@@ -95,7 +96,7 @@ export class ThemeSwitcher extends LitElement {
             theme => html`
               <mm-menu-item-action
                 icon=${theme.icon}
-                aria-current=${theme.value === this.value ? 'true' : nothing}
+                aria-current=${ifDefined(theme.value === this.value ? 'true' : undefined)}
                 @click=${(event: Event) => this.handleThemeChange(theme.value, event)}
               >
                 ${theme.label}

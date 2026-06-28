@@ -1,5 +1,6 @@
-import { LitElement, html, nothing } from 'lit'
+import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { ifDefined } from 'lit/directives/if-defined.js'
 import { checkboxStyles } from '@/components/checkbox/checkbox.styles'
 import { emit } from '@/utils/emit'
 import { uniqueId } from '@/utils/unique-id'
@@ -38,7 +39,7 @@ export class Checkbox extends LitElement {
         <input
           type="checkbox"
           id=${inputId}
-          name=${name || nothing}
+          name=${ifDefined(name)}
           .value=${value || ''}
           .checked=${checked}
           .indeterminate=${indeterminate}

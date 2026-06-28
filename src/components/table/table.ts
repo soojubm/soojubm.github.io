@@ -1,4 +1,4 @@
-import { LitElement, html, nothing } from 'lit'
+import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { styleMap } from 'lit/directives/style-map.js'
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
@@ -13,7 +13,17 @@ export interface TableColumn {
 
 @customElement('mm-table')
 export class Table extends LitElement {
-  static styles = [resetStyles]
+  static styles = [
+    resetStyles,
+    css`
+      :host {
+        display: block;
+        height: 320px;
+        background-color: var(--color-background-subtle);
+        overflow-x: auto;
+      }
+    `,
+  ]
 
   @property({ type: String }) caption = ''
 
@@ -27,16 +37,14 @@ export class Table extends LitElement {
 
   render() {
     return html`
-      <div class="table-container">
-        <table>
-          <caption hidden>${this.caption}</caption>
-          <colgroup>${this.columns.map(column => this.renderColumn(column))}</colgroup>
-          <thead>
-            <tr>${this.columns.map(column => this.renderHeader(column))}</tr>
-          </thead>
-          <tbody>${this.rows}</tbody>
-        </table>
-      </div>
+      <table>
+        <caption hidden>${this.caption}</caption>
+        <colgroup>${this.columns.map(column => this.renderColumn(column))}</colgroup>
+        <thead>
+          <tr>${this.columns.map(column => this.renderHeader(column))}</tr>
+        </thead>
+        <tbody>${this.rows}</tbody>
+      </table>
     `
   }
 

@@ -55,11 +55,13 @@ export class Button extends LitElement {
   }
 
   private renderIcon(position: ButtonIconPosition) {
-    return this.icon && this.iconPosition === position
-      ? html`
-          <mm-icon name=${this.icon}></mm-icon>
-        `
-      : nothing
+    if (!this.icon || this.iconPosition !== position) {
+      return nothing
+    }
+
+    return html`
+      <mm-icon name=${this.icon}></mm-icon>
+    `
   }
 }
 

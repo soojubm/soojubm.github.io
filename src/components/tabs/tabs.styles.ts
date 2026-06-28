@@ -2,7 +2,10 @@ import { css } from 'lit'
 
 export const tabsStyles = css`
   :host {
-    display: block;
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: max-content;
 
     --tabs-indicator-color: var(--selection-indicator-color);
     --tabs-line-color: var(--color-border);
@@ -24,13 +27,6 @@ export const tabsStyles = css`
     --tabs-pill-indicator-shadow: none;
   }
 
-  .tablist-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-    width: max-content;
-  }
-
   .indicator {
     position: absolute;
     left: 0;
@@ -43,10 +39,9 @@ export const tabsStyles = css`
      1) Line 형태 (하단 선 스타일)
      ========================================================== */
   :host([variant='line']) {
-    & .tablist-container {
-      border-bottom: var(--tabs-line-width) solid var(--tabs-line-color);
-      width: 100%;
-    }
+    border-bottom: var(--tabs-line-width) solid var(--tabs-line-color);
+    width: 100%;
+
     & .indicator {
       bottom: calc(var(--tabs-line-width) * -1); /* 부모 보더선과 정밀하게 겹치도록 설정 */
       height: var(--tabs-line-width);
@@ -58,12 +53,11 @@ export const tabsStyles = css`
      2) Pill 형태 (알약/배경 상자 스타일)
      ========================================================== */
   :host([variant='pill']) {
-    & .tablist-container {
-      background-color: var(--tabs-pill-background);
-      border: var(--tabs-pill-border);
-      border-radius: var(--tabs-pill-radius);
-      padding: var(--space-1);
-    }
+    background-color: var(--tabs-pill-background);
+    border: var(--tabs-pill-border);
+    border-radius: var(--tabs-pill-radius);
+    padding: var(--space-1);
+
     & .indicator {
       height: var(--size-medium);
       top: var(--space-1);

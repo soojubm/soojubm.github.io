@@ -1,5 +1,6 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import '@/components/button/button'
 import '@/components/dropdown/dropdown'
 import { emit } from '@/utils/emit'
 
@@ -23,6 +24,7 @@ export class SortDropdown extends LitElement {
   render() {
     return html`
       <mm-dropdown .value=${this.value} @change=${this.handleChange}>
+        <mm-button slot="trigger" size="small">${this.selectedLabel}</mm-button>
         ${SORT_OPTIONS.map(
           opt => html`
             <option value=${opt.value} ?selected=${this.value === opt.value}>${opt.label}</option>
@@ -30,6 +32,10 @@ export class SortDropdown extends LitElement {
         )}
       </mm-dropdown>
     `
+  }
+
+  private get selectedLabel() {
+    return SORT_OPTIONS.find(opt => opt.value === this.value)?.label ?? SORT_OPTIONS[0].label
   }
 
   private handleChange(e: CustomEvent) {
