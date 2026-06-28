@@ -32,7 +32,7 @@ export class Heading extends LitElement {
   render() {
     const size = LEVEL_SIZE[this.level] ?? '18'
     return html`
-      <mm-text as="h${this.level}" size="${size}" weight="bold">
+      <mm-text as="h${this.level}" size=${size} weight="bold">
         <slot></slot>
       </mm-text>
     `

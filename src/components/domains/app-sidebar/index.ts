@@ -24,8 +24,8 @@ export class Sidebar extends LitElement {
             if (node.type === 'standalone') {
               return html`
                 <mm-menu-item-action
-                  label="${node.title}"
-                  icon="${node.icon}"
+                  label=${node.title}
+                  icon=${node.icon}
                   class=${this.isCurrentPage(node.id) ? 'is-active' : nothing}
                   @click=${() => this.handleStandaloneClick(node.id)}
                 ></mm-menu-item-action>

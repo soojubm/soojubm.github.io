@@ -77,16 +77,16 @@ class TextBlock extends LitElement {
   private renderContent(variant: typeof TextBlock.variants[keyof typeof TextBlock.variants]) {
     if (this.level === '1') {
       return html`
-        <mm-text size="32" weight="bold" ?centered="${this.centered}">${this.heading}</mm-text>
-        <mm-paragraph size="large" ?centered="${this.centered}">${this.description}</mm-paragraph>
+        <mm-text size="32" weight="bold" ?centered=${this.centered}>${this.heading}</mm-text>
+        <mm-paragraph size="large" ?centered=${this.centered}>${this.description}</mm-paragraph>
       `
     }
 
     return html`
-      <mm-text size="${variant.headingSize}" weight="bold" ?centered="${this.centered}">
+      <mm-text size=${variant.headingSize} weight="bold" ?centered=${this.centered}>
         ${this.heading}
       </mm-text>
-      <mm-text size="${variant.descriptionSize}" ?centered="${this.centered}">
+      <mm-text size=${variant.descriptionSize} ?centered=${this.centered}>
         ${this.description}
       </mm-text>
     `
@@ -96,7 +96,7 @@ class TextBlock extends LitElement {
     if (!this.caption) return nothing
 
     return html`
-      <mm-text size="12" color="light" ?centered="${this.centered}">${this.caption}</mm-text>
+      <mm-text size="12" color="light" ?centered=${this.centered}>${this.caption}</mm-text>
     `
   }
 }

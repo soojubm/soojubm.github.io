@@ -89,11 +89,11 @@ export class Thumbnail extends LitElement {
     const innerTemplate = html`
       <div class="image-wrapper" style=${styleMap(imageWrapperStyle)}>
         <img
-          src="${displaySrc}"
-          alt="${this.alt}"
-          loading="${this.loading}"
+          src=${displaySrc}
+          alt=${this.alt}
+          loading=${this.loading}
           decoding="async"
-          fetchpriority="${this.fetchPriority}"
+          fetchpriority=${this.fetchPriority}
           @error=${this.handleImageError}
         />
       </div>
@@ -103,7 +103,7 @@ export class Thumbnail extends LitElement {
     if (this.href) {
       // 1. 이동할 주소(href)가 있다면 <a> 태그로 출력
       media = html`
-        <a href="${this.href}" class="thumbnail-media interactive">${innerTemplate}</a>
+        <a href=${this.href} class="thumbnail-media interactive">${innerTemplate}</a>
       `
     } else if (this.clickable) {
       // 2. 주소는 없지만 클릭 동작(clickable)이 필요하다면 <button> 태그로 출력

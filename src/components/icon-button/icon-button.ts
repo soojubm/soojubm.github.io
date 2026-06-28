@@ -43,13 +43,13 @@ class IconButton extends LitElement {
       <button
         slot="trigger"
         type="button"
-        aria-label="${this.accessibilityLabel}"
-        ?disabled="${this.disabled}"
+        aria-label=${this.accessibilityLabel}
+        ?disabled=${this.disabled}
         aria-haspopup=${this.ariaHasPopup ?? nothing}
         aria-expanded=${this.ariaExpanded ?? nothing}
         aria-controls=${this.ariaControls ?? nothing}
       >
-        <mm-icon name="${this.icon}"></mm-icon>
+        <mm-icon name=${this.icon}></mm-icon>
       </button>
     `
   }

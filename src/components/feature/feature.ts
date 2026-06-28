@@ -77,7 +77,7 @@ export class Feature extends LitElement {
           level="3"
           ?centered=${this.centered}
           .heading=${this.heading}
-          .description="${this.description}"
+          .description=${this.description}
         ></mm-text-block>
 
         <slot></slot>
@@ -97,7 +97,7 @@ export class Feature extends LitElement {
     const iconName = ICON_MAP[icon] ?? icon
     return html`
       <mm-avatar variant="secondary" size="large">
-        <mm-icon size="large" name="${iconName}"></mm-icon>
+        <mm-icon size="large" name=${iconName}></mm-icon>
       </mm-avatar>
     `
   }
