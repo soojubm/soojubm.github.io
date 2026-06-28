@@ -1,24 +1,20 @@
 import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-// 파일명이 바뀌어도 import 구조는 깨지지 않음
 import {
-  styles,
-  variantStyles,
-  sizeStyles,
-  radiusStyles,
-  type Variant,
-  type Size,
-  type Radius,
+  surfaceStyles,
+  type SurfaceVariant,
+  type SurfaceSize,
+  type SurfaceRadius,
 } from '@/components/surface/surface.styles'
 
 @customElement('mm-surface')
 export class Surface extends LitElement {
-  static styles = [styles, ...variantStyles, ...sizeStyles, ...radiusStyles]
+  static styles = surfaceStyles
 
-  @property({ type: String, reflect: true }) variant?: Variant
-  @property({ type: String, reflect: true }) size?: Size
-  @property({ type: String, reflect: true }) radius?: Radius
+  @property({ type: String, reflect: true }) variant?: SurfaceVariant
+  @property({ type: String, reflect: true }) size?: SurfaceSize
+  @property({ type: String, reflect: true }) radius?: SurfaceRadius
 
   render() {
     return html`

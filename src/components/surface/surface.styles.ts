@@ -1,98 +1,10 @@
 import { css } from 'lit'
 
-// 1. 컴포넌트 이름에 종속되지 않는 일반적인 명칭 사용
-export const VARIANTS = {
-  transparent: css`
-    border: var(--border-transparent);
-    background: none;
-  `,
-  plain: css`
-    padding: 0;
-    border: 0;
-    background: none;
-  `,
-  subtle: css`
-    background-color: var(--color-background-subtle);
-  `,
-  elevated: css`
-    box-shadow: var(--shadow);
-  `,
-}
+export type SurfaceVariant = 'transparent' | 'plain' | 'subtle' | 'elevated'
+export type SurfaceSize = 'small' | 'medium'
+export type SurfaceRadius = 'default' | 'large'
 
-export const SIZES = {
-  small: css`
-    padding: var(--space-2);
-  `,
-  medium: css`
-    width: 100%;
-    max-width: var(--width-medium);
-  `,
-}
-
-export const RADII = {
-  default: css`
-    --surface-radius: var(--radius);
-  `,
-  large: css`
-    --surface-radius: var(--radius-large);
-  `,
-}
-
-// 2. 타입 정의도 공통 명칭으로 추출
-export type Variant = keyof typeof VARIANTS
-export type Size = keyof typeof SIZES
-export type Radius = keyof typeof RADII
-
-export const variantStyles = [
-  css`
-    :host([variant='transparent']) {
-      ${VARIANTS.transparent}
-    }
-  `,
-  css`
-    :host([variant='plain']) {
-      ${VARIANTS.plain}
-    }
-  `,
-  css`
-    :host([variant='subtle']) {
-      ${VARIANTS.subtle}
-    }
-  `,
-  css`
-    :host([variant='elevated']) {
-      ${VARIANTS.elevated}
-    }
-  `,
-]
-
-export const sizeStyles = [
-  css`
-    :host([size='small']) {
-      ${SIZES.small}
-    }
-  `,
-  css`
-    :host([size='medium']) {
-      ${SIZES.medium}
-    }
-  `,
-]
-
-export const radiusStyles = [
-  css`
-    :host([radius='default']) {
-      ${RADII.default}
-    }
-  `,
-  css`
-    :host([radius='large']) {
-      ${RADII.large}
-    }
-  `,
-]
-
-export const styles = css`
+export const surfaceStyles = css`
   :host {
     --surface-height: auto;
     --surface-padding: var(--space-4);
@@ -114,10 +26,39 @@ export const styles = css`
     transition: box-shadow 0.2s ease-in-out;
   }
 
-  /* 슬롯 래퍼(Wrapper) 스타일 - ::slotted 대신 이 방식을 권장 */
-  .thumbnail-wrapper {
-    max-height: 200px;
-    border-radius: var(--radius);
-    overflow: hidden;
+  :host([variant='transparent']) {
+    border: var(--border-transparent);
+    background: none;
+  }
+
+  :host([variant='plain']) {
+    padding: 0;
+    border: 0;
+    background: none;
+  }
+
+  :host([variant='subtle']) {
+    background-color: var(--color-background-subtle);
+  }
+
+  :host([variant='elevated']) {
+    box-shadow: var(--shadow);
+  }
+
+  :host([size='small']) {
+    padding: var(--space-2);
+  }
+
+  :host([size='medium']) {
+    width: 100%;
+    max-width: var(--width-medium);
+  }
+
+  :host([radius='default']) {
+    --surface-radius: var(--radius);
+  }
+
+  :host([radius='large']) {
+    --surface-radius: var(--radius-large);
   }
 `
