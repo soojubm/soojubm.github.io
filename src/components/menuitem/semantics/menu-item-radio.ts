@@ -2,6 +2,7 @@ import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import type { IconName } from '@/components/icon-button/semantics/icon-names'
+import type { AriaTriState } from '@/types/aria'
 
 import { menuItemStyles } from '@/components/menuitem/menuitem.styles'
 import { renderMenuItemContent } from '@/components/menuitem/menuitem.utils'
@@ -24,6 +25,23 @@ export class MenuItemRadio extends LitElement {
   @property({ type: String }) value = ''
   @property({ type: String }) name = ''
 
+  render() {
+    const ariaChecked: AriaTriState = this.checked ? 'true' : 'false'
+
+    return html`
+      <div
+        class="item"
+        role="menuitemradio"
+        data-interactive
+        aria-disabled=${this.disabled ? 'true' : nothing}
+        aria-checked=${ariaChecked}
+        @click=${this.handleSelect}
+      >
+        ${renderMenuItemContent(this, this.renderAction())}
+      </div>
+    `
+  }
+
   private handleSelect = () => {
     if (this.disabled) return
     if (this.checked) return
@@ -34,21 +52,6 @@ export class MenuItemRadio extends LitElement {
   private handleControlChange = (e: Event) => {
     e.stopPropagation()
     this.handleSelect()
-  }
-
-  render() {
-    return html`
-      <div
-        class="item"
-        role="menuitemradio"
-        data-interactive
-        aria-disabled=${this.disabled ? 'true' : nothing}
-        aria-checked=${this.checked ? 'true' : 'false'}
-        @click=${this.handleSelect}
-      >
-        ${renderMenuItemContent(this, this.renderAction())}
-      </div>
-    `
   }
 
   private renderAction() {

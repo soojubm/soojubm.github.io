@@ -1,6 +1,8 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
+import type { AriaTriState } from '@/types/aria'
+
 import { switchStyles } from '@/components/switch/switch.styles'
 import { emit } from '@/utils/emit'
 import { uniqueId } from '@/utils/unique-id'
@@ -17,6 +19,8 @@ export class Switch extends LitElement {
   private inputId = uniqueId('switch')
 
   render() {
+    const ariaChecked: AriaTriState = this.checked ? 'true' : 'false'
+
     return html`
       <div>
         <input
@@ -24,6 +28,7 @@ export class Switch extends LitElement {
           name=${this.name || nothing}
           type="checkbox"
           role="switch"
+          aria-checked=${ariaChecked}
           .checked=${this.checked}
           ?disabled=${this.disabled}
           @change=${this.onChange}

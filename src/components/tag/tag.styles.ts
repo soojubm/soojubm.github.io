@@ -148,11 +148,6 @@ export const tagStyles = css`
     font-weight: var(--font-weight);
     line-height: 1;
   }
-  // slot[name='icon']::slotted(*) {
-  //   inline-size: 0.875rem;
-  //   block-size: 0.875rem;
-  //   flex-shrink: 0;
-  // }
 
   ${unsafeCSS(toneCss)}
 

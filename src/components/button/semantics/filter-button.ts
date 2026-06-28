@@ -1,6 +1,8 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
+import type { AriaTriState } from '@/types/aria'
+
 import { buttonBaseStyles, buttonSelectedStyles } from '@/components/button/button.styles'
 import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
 import { emit } from '@/utils/emit'
@@ -20,12 +22,14 @@ export class FilterButton extends LitElement {
   @property({ type: Boolean }) disabled = false
 
   render() {
+    const ariaChecked: AriaTriState = this.selected ? 'true' : 'false'
+
     return html`
       <button
         type="button"
         ?disabled=${this.disabled}
         role=${this.mode === 'multiple' ? 'checkbox' : 'radio'}
-        aria-checked=${this.selected ? 'true' : 'false'}
+        aria-checked=${ariaChecked}
         @click=${this.handleClick}
       >
         ${this.selected

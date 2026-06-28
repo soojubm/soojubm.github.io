@@ -1,23 +1,30 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { ifDefined } from 'lit/directives/if-defined.js'
 
 import type { IconName } from '@/components/icon-button/semantics/icon-names'
 
 import '@/components/icon/icon'
 import { tagStyles, type TagTone } from '@/components/tag/tag.styles'
 
-export type TagToneMap<Value extends string> = Record<Value, TagTone>
+export type TagToneMap<Value extends string> = Partial<Record<Value, TagTone>>
 
 export const getMappedTone = <Value extends string>(
   value: Value,
   toneByValue: TagToneMap<Value>,
-  fallback: TagTone = 'default',
-) => toneByValue[value] ?? fallback
+  fallbackTone: TagTone = 'default',
+): TagTone => {
+  return toneByValue[value] ?? fallbackTone
+}
 
-export const renderTag = (tone: TagTone, fallback?: unknown, icon?: IconName) => html`
-  <mm-tag tone=${tone} icon=${icon}>
-    <slot name="icon" slot="icon"></slot>
-    <slot>${fallback}</slot>
+export const renderTag = (tone: TagTone, fallbackContent?: unknown, icon?: IconName) => html`
+  <mm-tag tone=${tone} icon=${ifDefined(icon)}>
+    ${icon
+      ? nothing
+      : html`
+          <slot name="icon" slot="icon"></slot>
+        `}
+    <slot>${fallbackContent}</slot>
   </mm-tag>
 `
 
@@ -25,33 +32,35 @@ export const renderMappedTag = <Value extends string>(
   value: Value,
   toneByValue: TagToneMap<Value>,
   icon?: IconName,
-) => renderTag(getMappedTone(value, toneByValue), value, icon)
+) => {
+  return renderTag(getMappedTone(value, toneByValue), value, icon)
+}
 
 @customElement('mm-tag')
 export class Tag extends LitElement {
   static styles = [tagStyles]
 
-  @property({ type: String, reflect: true }) tone: TagTone = 'default'
+  @property({ type: String, reflect: true, useDefault: true }) tone: TagTone = 'default'
   @property({ type: String }) icon?: IconName
 
   render() {
     return html`
-      <span>
-        ${this.icon
-          ? html`
-              <mm-icon name=${this.icon}></mm-icon>
-            `
-          : html`
-              <slot name="icon"></slot>
-            `}
-        ${this.renderDefaultSlot()}
+      <span part="base">
+        ${this.renderIcon()}
+        <slot></slot>
       </span>
     `
   }
 
-  protected renderDefaultSlot() {
+  private renderIcon() {
+    if (this.icon) {
+      return html`
+        <mm-icon part="icon" name=${this.icon}></mm-icon>
+      `
+    }
+
     return html`
-      <slot></slot>
+      <slot name="icon"></slot>
     `
   }
 }

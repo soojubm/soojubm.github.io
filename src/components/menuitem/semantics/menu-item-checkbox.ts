@@ -2,6 +2,7 @@ import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import type { IconName } from '@/components/icon-button/semantics/icon-names'
+import type { AriaTriState } from '@/types/aria'
 
 import { menuItemStyles } from '@/components/menuitem/menuitem.styles'
 import { renderMenuItemContent } from '@/components/menuitem/menuitem.utils'
@@ -24,13 +25,15 @@ export class MenuItemCheckbox extends LitElement {
   @property({ type: String }) value = ''
 
   render() {
+    const ariaChecked: AriaTriState = this.checked ? 'true' : 'false'
+
     return html`
       <div
         class="item"
         role="menuitemcheckbox"
         data-interactive
         aria-disabled=${this.disabled ? 'true' : nothing}
-        aria-checked=${this.checked ? 'true' : 'false'}
+        aria-checked=${ariaChecked}
         @click=${this.handleRowClick}
       >
         ${renderMenuItemContent(this, this.renderAction())}
