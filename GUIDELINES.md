@@ -27,6 +27,8 @@
 
 - 색상, 간격, radius는 CSS 토큰을 사용하고 하드코딩하지 않는다.
 - 토큰을 계산해 새 값을 만들지 않고, 필요한 의미에 가장 가까운 기존 토큰을 사용한다.
+- 테마 분기처럼 재정의할 목적이 없으면 기존 토큰을 컴포넌트 지역 변수로 다시 감싸지 않고 그대로 사용한다.
+- 테마별로 달라지는 값은 컴포넌트에서 `:host-context([data-theme])`로 분기하지 않고 variables.css의 테마 블록에서 토큰으로 재정의하며, 컴포넌트는 의미 토큰만 소비한다.
 - width·height처럼 요소 자체의 고정 치수는 간격 토큰이 아니라 size 토큰을 우선 사용한다.
 
 ## 레이아웃
@@ -81,6 +83,7 @@
 - Shadow DOM 내부 구조는 외부 스타일 API로 노출하지 않고, 스타일 변형은 prop, token, CSS custom property로만 제공한다.
 - 스타일 적용만을 위해 새 보조 class를 만들지 않고, 기존 의미 class나 컴포넌트 selector에 스타일을 둔다.
 - 공유 스타일은 DOM 보조 class를 요구하지 않고, `static styles`에서 의미 selector에 조합한다.
+- 상속되는 텍스트·아이콘 색은 `color`/`currentColor`로 흐르게 하고, 같은 색 의미를 별도 custom property 채널로 이중화하지 않는다.
 - Lit 컴포넌트의 host 상태 선택자는 `:host` 내부에 중첩하지 않고 최상위 `:host([attr])`, `:host(:state)` 형태로 작성한다.
 - `display: contents`는 사용하지 않고, 호스트에는 역할에 맞는 박스를 명시한다.
 - Light DOM은 외부 스타일 참여가 반드시 필요한 컴포넌트로 제한하고 이유를 남긴다.
