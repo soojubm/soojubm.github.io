@@ -1,6 +1,5 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { styleMap } from 'lit/directives/style-map.js'
 
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
 
@@ -15,6 +14,7 @@ export class TypingIndicator extends LitElement {
     css`
       :host {
         display: inline-flex;
+        --typing-color: var(--color-foreground);
       }
 
       .dots {
@@ -56,17 +56,19 @@ export class TypingIndicator extends LitElement {
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = '입력 중'
 
   render() {
-    const dotsStyle = {
-      '--typing-color': this.color,
-    }
-
     return html`
-      <div class="dots" role="status" aria-label=${this.ariaLabel} style=${styleMap(dotsStyle)}>
+      <div class="dots" role="status" aria-label=${this.ariaLabel}>
         <span></span>
         <span></span>
         <span></span>
       </div>
     `
+  }
+
+  protected updated(changedProperties: Map<string, unknown>) {
+    if (!changedProperties.has('color')) return
+
+    this.style.setProperty('--typing-color', this.color)
   }
 }
 

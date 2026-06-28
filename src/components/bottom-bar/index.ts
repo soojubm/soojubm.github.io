@@ -1,7 +1,6 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
-import { styleMap } from 'lit/directives/style-map.js'
 
 import { ICON_NAMES, type IconName } from '@/components/icon-button/semantics/icon-names'
 import '@/components/text/semantics/caption'
@@ -27,6 +26,8 @@ class BottomBar extends LitElement {
   static styles = css`
     :host {
       --bottom-bar-item-height: calc(var(--size-medium) + var(--font-line-height-24));
+      --bottom-bar-count: 3;
+      --bottom-bar-transform: translateX(0%);
     }
 
     .bottom-bar {
@@ -88,23 +89,22 @@ class BottomBar extends LitElement {
     const items = this.items.length ? this.items : defaultItems
     const defaultActive = items.findIndex(item => item.active)
     const activeIndex = this.selectedIndex ?? (defaultActive >= 0 ? defaultActive : null)
-    const bottomBarStyle = {
-      '--bottom-bar-count': String(items.length),
-    }
-    const indicatorStyle = {
-      '--bottom-bar-transform': `translateX(${(activeIndex ?? 0) * 100}%)`,
-    }
 
     return html`
-      <nav class="bottom-bar" aria-label=${this.ariaLabel} style=${styleMap(bottomBarStyle)}>
-        <span
-          class="bottom-bar-indicator"
-          aria-hidden="true"
-          style=${styleMap(indicatorStyle)}
-        ></span>
+      <nav class="bottom-bar" aria-label=${this.ariaLabel}>
+        <span class="bottom-bar-indicator" aria-hidden="true"></span>
         ${this.renderItems(items, activeIndex)}
       </nav>
     `
+  }
+
+  protected willUpdate() {
+    const items = this.items.length ? this.items : defaultItems
+    const defaultActive = items.findIndex(item => item.active)
+    const activeIndex = this.selectedIndex ?? (defaultActive >= 0 ? defaultActive : null)
+
+    this.style.setProperty('--bottom-bar-count', String(items.length))
+    this.style.setProperty('--bottom-bar-transform', `translateX(${(activeIndex ?? 0) * 100}%)`)
   }
 
   private renderItems(items: BottomBarItem[], activeIndex: number | null) {

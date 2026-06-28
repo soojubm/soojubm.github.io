@@ -1,6 +1,5 @@
 import { LitElement, html, css } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
-import { styleMap } from 'lit/directives/style-map.js'
 import '@/components/text/semantics/caption'
 
 @customElement('mm-thumbnail')
@@ -36,7 +35,16 @@ export class Thumbnail extends LitElement {
     .image-wrapper {
       position: relative;
       width: 100%;
+      aspect-ratio: 16 / 9;
       background-color: var(--thumbnail-color-empty);
+    }
+
+    :host([ratio='1:1']) .image-wrapper {
+      aspect-ratio: 1 / 1;
+    }
+
+    :host([ratio='4:3']) .image-wrapper {
+      aspect-ratio: 4 / 3;
     }
     img {
       width: 100%;
@@ -65,7 +73,7 @@ export class Thumbnail extends LitElement {
 
   @property({ type: String }) src = ''
   @property({ type: String }) alt = ''
-  @property({ type: String }) ratio: '1:1' | '16:9' | '4:3' = '16:9'
+  @property({ type: String, reflect: true }) ratio: '1:1' | '16:9' | '4:3' = '16:9'
   @property({ type: String }) loading: 'eager' | 'lazy' = 'lazy'
   @property({ type: String, attribute: 'fetchpriority' }) fetchPriority: 'high' | 'low' | 'auto' =
     'auto'
@@ -80,14 +88,10 @@ export class Thumbnail extends LitElement {
 
   render() {
     const displaySrc = this.hasError ? this.fallbackImage : this.src || this.fallbackImage
-    const ratioMap = { '1:1': '1 / 1', '16:9': '16 / 9', '4:3': '4 / 3' }
-    const imageWrapperStyle = {
-      aspectRatio: ratioMap[this.ratio],
-    }
 
     // 내부 알맹이(이미지 틀)를 변수로 분리하여 코드 중복을 최소화합니다.
     const innerTemplate = html`
-      <div class="image-wrapper" style=${styleMap(imageWrapperStyle)}>
+      <div class="image-wrapper">
         <img
           src=${displaySrc}
           alt=${this.alt}

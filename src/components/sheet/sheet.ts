@@ -1,6 +1,5 @@
 import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { styleMap } from 'lit/directives/style-map.js'
 
 import { sheetStyles } from '@/components/sheet/sheet.styles'
 import { ScrollLockController } from '@/controllers/scroll-lock-controller'
@@ -25,17 +24,8 @@ class Sheet extends LitElement {
   }
 
   render() {
-    const sheetStyle = {
-      height: this.height ?? null,
-    }
-
     return html`
-      <aside
-        class="sheet"
-        variant=${this.variant}
-        ?open=${this.isOpen}
-        style=${styleMap(sheetStyle)}
-      >
+      <aside class="sheet" variant=${this.variant} ?open=${this.isOpen}>
         <slot></slot>
       </aside>
     `
@@ -68,7 +58,17 @@ class Sheet extends LitElement {
   }
 
   protected updated(changedProperties: Map<string, unknown>) {
+    if (changedProperties.has('height')) this.syncHeight()
     if (changedProperties.has('isOpen') || changedProperties.has('variant')) this.syncScrollLock()
+  }
+
+  private syncHeight() {
+    if (!this.height) {
+      this.style.removeProperty('--sheet-height')
+      return
+    }
+
+    this.style.setProperty('--sheet-height', this.height)
   }
 
   private syncScrollLock() {

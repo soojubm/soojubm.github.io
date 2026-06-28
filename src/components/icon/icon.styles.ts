@@ -4,6 +4,7 @@ export const iconStyles = css`
   :host {
     display: inline-flex;
     --button-text-color: inherit;
+    --icon-color: var(--button-text-color);
   }
 
   i {
@@ -15,7 +16,7 @@ export const iconStyles = css`
     align-items: center;
     justify-content: center;
     font-size: 1rem;
-    color: var(--button-text-color);
+    color: var(--icon-color);
   }
 
   :host([size='tiny']) .icon {

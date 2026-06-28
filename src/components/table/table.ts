@@ -1,6 +1,6 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { styleMap } from 'lit/directives/style-map.js'
+import { ifDefined } from 'lit/directives/if-defined.js'
 
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
 import { arrayAttributeConverter } from '@/utils/property-converters'
@@ -22,6 +22,14 @@ export class Table extends LitElement {
         height: 320px;
         background-color: var(--color-background-subtle);
         overflow-x: auto;
+      }
+
+      th[data-align='center'] {
+        text-align: center;
+      }
+
+      th[data-align='right'] {
+        text-align: right;
       }
     `,
   ]
@@ -58,15 +66,11 @@ export class Table extends LitElement {
   }
 
   private renderHeader(column: TableColumn) {
-    const headerStyles = {
-      textAlign: column.textAlign ?? null,
-    }
-
     return html`
       <th
         scope="col"
         aria-sort=${column.sortable ? 'none' : nothing}
-        style=${styleMap(headerStyles)}
+        data-align=${ifDefined(column.textAlign)}
       >
         ${this.renderHeaderContent(column)}
       </th>
@@ -93,12 +97,8 @@ export class Table extends LitElement {
   }
 
   private renderColumn(column: TableColumn) {
-    const columnStyles = {
-      width: column.width ?? null,
-    }
-
     return html`
-      <col style=${styleMap(columnStyles)} />
+      <col width=${ifDefined(column.width)} />
     `
   }
 }

@@ -1,6 +1,5 @@
 import { LitElement, html } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
-import { styleMap } from 'lit/directives/style-map.js'
 
 import { iconStyles } from '@/components/icon/icon.styles'
 
@@ -43,13 +42,9 @@ class Icon extends LitElement {
   @state() private useStylesheetLink = false
 
   render() {
-    const iconStyle = {
-      color: this.color || null,
-    }
-
     return html`
       ${this.renderStylesheetLink()}
-      <i class=${this.iconClassName} style=${styleMap(iconStyle)}></i>
+      <i class=${this.iconClassName}></i>
     `
   }
 
@@ -69,6 +64,17 @@ class Icon extends LitElement {
 
   protected firstUpdated() {
     void this.adoptIconoirStylesheet()
+  }
+
+  protected updated(changedProperties: Map<string, unknown>) {
+    if (!changedProperties.has('color')) return
+
+    if (!this.color) {
+      this.style.removeProperty('--icon-color')
+      return
+    }
+
+    this.style.setProperty('--icon-color', this.color)
   }
 
   private async adoptIconoirStylesheet() {

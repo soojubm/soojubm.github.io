@@ -22,18 +22,21 @@ export class Marquee extends LitElement {
         max-width: 100%;
         overflow: hidden;
         --marquee-gap: var(--space-4);
+        --marquee-height: auto;
         --marquee-distance: 0px;
         --marquee-duration: 1s;
       }
 
       .viewport {
         width: 100%;
+        height: var(--marquee-height);
         overflow: hidden;
       }
 
       .track {
         display: flex;
         width: max-content;
+        height: 100%;
         animation: marquee-scroll var(--marquee-duration) linear infinite;
         transform: translate3d(0, 0, 0);
         will-change: transform;
@@ -52,6 +55,7 @@ export class Marquee extends LitElement {
         flex: 0 0 auto;
         align-items: center;
         gap: var(--marquee-gap);
+        height: 100%;
         padding-inline-end: var(--marquee-gap);
         box-sizing: border-box;
       }
@@ -86,6 +90,7 @@ export class Marquee extends LitElement {
 
   @property({ type: String, reflect: true }) direction: MarqueeDirection = 'left'
   @property({ type: String }) gap = '4'
+  @property({ type: String }) height?: string
   @property({ type: Number }) speed = 80
   @property({ type: Boolean, reflect: true, attribute: 'pause-on-hover' }) pauseOnHover = false
 
@@ -136,6 +141,8 @@ export class Marquee extends LitElement {
       this.style.setProperty('--marquee-gap', this.resolveGap(this.gap))
       this.queueMeasure()
     }
+
+    if (changed.has('height')) this.updateHeight()
 
     if (changed.has('speed')) this.queueMeasure()
 
@@ -201,6 +208,15 @@ export class Marquee extends LitElement {
   private resolveGap(value: string) {
     if (!value) return '0px'
     return /^\d+$/.test(value) ? `var(--space-${value})` : value
+  }
+
+  private updateHeight() {
+    if (!this.height) {
+      this.style.removeProperty('--marquee-height')
+      return
+    }
+
+    this.style.setProperty('--marquee-height', this.height)
   }
 }
 

@@ -2,7 +2,6 @@ import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, queryAssignedElements, state } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 import { repeat } from 'lit/directives/repeat.js'
-import { styleMap } from 'lit/directives/style-map.js'
 
 import type { IconName } from '@/components/icon-button/semantics/icon-names'
 
@@ -168,10 +167,6 @@ export class Dropdown extends LitElement {
   }
 
   protected renderList() {
-    const listStyles = {
-      minWidth: this.listMinWidth || null,
-    }
-
     return html`
       <mm-sheet
         class="dropdown-list"
@@ -179,7 +174,6 @@ export class Dropdown extends LitElement {
         ?open=${this.popup.open}
         placement=${this.placement}
         ?inline=${this.inline}
-        style=${styleMap(listStyles)}
       >
         <mm-sheet-body role="menu">
           ${repeat(
@@ -190,6 +184,17 @@ export class Dropdown extends LitElement {
         </mm-sheet-body>
       </mm-sheet>
     `
+  }
+
+  protected updated(changedProperties: Map<string, unknown>) {
+    if (!changedProperties.has('listMinWidth')) return
+
+    if (!this.listMinWidth) {
+      this.style.removeProperty('--dropdown-min-width')
+      return
+    }
+
+    this.style.setProperty('--dropdown-min-width', this.listMinWidth)
   }
 
   protected renderOption(option: DropdownOption) {

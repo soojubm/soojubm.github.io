@@ -79,6 +79,7 @@ export const sheetStyles = [
 
     .sheet {
       width: 100%;
+      height: var(--sheet-height, auto);
       max-height: var(--sheet-max-height);
       padding: 0 var(--sheet-padding-inline);
       border-radius: var(--sheet-radius);

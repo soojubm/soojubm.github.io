@@ -1,12 +1,14 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { styleMap } from 'lit/directives/style-map.js'
 
 @customElement('mm-ui-placeholder')
 export class UiPlaceholder extends LitElement {
   static styles = css`
     :host {
       display: block;
+      --ui-placeholder-color: var(--color-primary-subtle);
+      --ui-placeholder-height: 4rem;
+      --ui-placeholder-radius: var(--radius-large);
     }
 
     .placeholder {
@@ -23,15 +25,15 @@ export class UiPlaceholder extends LitElement {
   @property({ type: String }) radius = 'var(--radius-large)'
 
   render() {
-    const style = {
-      '--ui-placeholder-color': this.color,
-      '--ui-placeholder-height': this.height,
-      '--ui-placeholder-radius': this.radius,
-    }
-
     return html`
-      <div class="placeholder" style=${styleMap(style)} aria-hidden="true"></div>
+      <div class="placeholder" aria-hidden="true"></div>
     `
+  }
+
+  protected willUpdate() {
+    this.style.setProperty('--ui-placeholder-color', this.color)
+    this.style.setProperty('--ui-placeholder-height', this.height)
+    this.style.setProperty('--ui-placeholder-radius', this.radius)
   }
 }
 
