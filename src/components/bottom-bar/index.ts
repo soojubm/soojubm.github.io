@@ -13,7 +13,6 @@ interface BottomBarItem {
   href?: string
   icon?: IconName
   active?: boolean
-  // badge?: boolean
 }
 
 const defaultItems: BottomBarItem[] = [

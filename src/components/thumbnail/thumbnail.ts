@@ -139,26 +139,3 @@ export class Thumbnail extends LitElement {
     this.hasError = true
   }
 }
-
-// .media {
-//   padding-top: 50%;
-//   overflow: hidden;
-//   border-radius: var(--radius);
-//   border: var(--border);
-//   box-sizing: border-box;
-//   position: relative;
-// }
-
-// .media img {
-//   display: block;
-//   width: auto;
-//   height: auto;
-//   max-width: 100%;
-//   max-height: 130%;
-//   margin: auto;
-//   position: absolute;
-//   left: -1px;
-//   right: -1px;
-//   top: -1px;
-//   bottom: -1px;
-// }
