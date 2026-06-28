@@ -20,13 +20,13 @@ class Avatar extends LitElement {
   @property({ type: String, reflect: true, useDefault: true }) shape: AvatarShape = 'square'
   @property({ type: String }) src?: string
   @property({ type: String }) icon?: IconName
-  @property({ type: String, attribute: 'aria-label' }) ariaLabel?: string
+  @property({ type: String, attribute: 'aria-label' }) ariaLabel = ''
 
   render() {
     return html`
       <figure
         role=${ifDefined(this.ariaLabel ? 'img' : undefined)}
-        aria-label=${ifDefined(this.ariaLabel)}
+        aria-label=${ifDefined(this.ariaLabel || undefined)}
       >
         ${this.renderContent()}
       </figure>

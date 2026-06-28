@@ -50,7 +50,7 @@ function setupScrollSpySampler() {
     trigger.addEventListener('click', () => {
       const id = trigger.dataset.scrollSpyTarget
       const target = id ? document.getElementById(id) : null
-      if (!target) return
+      if (!id || !target) return
 
       setActive(id)
 

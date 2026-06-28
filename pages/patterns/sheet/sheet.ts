@@ -10,7 +10,7 @@ type SheetElement = HTMLElement & {
 document.addEventListener('DOMContentLoaded', () => {
   document.body.innerHTML = renderLayout('<div id="sheet-page-root"></div>', { closeSidebar: true })
 
-  const root = document.querySelector('#sheet-page-root')
+  const root = document.querySelector<HTMLElement>('#sheet-page-root')
   if (root) render(sheetPageTemplate(), root)
 
   setupSheetTriggers()

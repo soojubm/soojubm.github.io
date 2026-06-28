@@ -312,25 +312,21 @@
     description="콘텐츠 필터링을 위한 옵션 버튼. size=small의 mm-button을 합성하며 선택 시 체크 아이콘을 표시합니다. 그룹으로 묶어 단일 선택 또는 다중 선택을 지원합니다."
   >
     <mm-flex direction="column" gap="4">
-      <div>
-        <mm-paragraph>Single selection (라디오형)</mm-paragraph>
-        <mm-filter-button-group mode="single" style="margin-top: var(--space-2)">
-          <mm-filter-button value="all" selected>전체</mm-filter-button>
-          <mm-filter-button value="deposit">입금확인</mm-filter-button>
-          <mm-filter-button value="paid">결제완료</mm-filter-button>
-          <mm-filter-button value="shipping">배송중</mm-filter-button>
-        </mm-filter-button-group>
-      </div>
+      <mm-text>Single selection (라디오형)</mm-text>
+      <mm-filter-button-group mode="single">
+        <mm-filter-button value="all" selected>전체</mm-filter-button>
+        <mm-filter-button value="deposit">입금확인</mm-filter-button>
+        <mm-filter-button value="paid">결제완료</mm-filter-button>
+        <mm-filter-button value="shipping">배송중</mm-filter-button>
+      </mm-filter-button-group>
 
-      <div>
-        <mm-paragraph>Multiple selection (체크박스형)</mm-paragraph>
-        <mm-filter-button-group mode="multiple" style="margin-top: var(--space-2)">
-          <mm-filter-button value="novel" selected>소설</mm-filter-button>
-          <mm-filter-button value="movie" selected>영화</mm-filter-button>
-          <mm-filter-button value="typo">타이포그래피</mm-filter-button>
-          <mm-filter-button value="music">음악</mm-filter-button>
-        </mm-filter-button-group>
-      </div>
+      <mm-text>Multiple selection (체크박스형)</mm-text>
+      <mm-filter-button-group mode="multiple">
+        <mm-filter-button value="novel" selected>소설</mm-filter-button>
+        <mm-filter-button value="movie" selected>영화</mm-filter-button>
+        <mm-filter-button value="typo">타이포그래피</mm-filter-button>
+        <mm-filter-button value="music">음악</mm-filter-button>
+      </mm-filter-button-group>
     </mm-flex>
   </mm-component-section>
   <mm-component-section
