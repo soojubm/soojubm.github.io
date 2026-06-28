@@ -293,4 +293,8 @@
   --component-tokens-border: var(--border);
   --input-border-color: var(--brutal-border-color);
   --bubble-border: var(--border);
+  --accordion-border: var(--border);
+  --tabs-pill-border: var(--border);
+  --tabs-pill-indicator-border: var(--border);
+  --tabs-pill-indicator-shadow: none;
 }

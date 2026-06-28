@@ -11,18 +11,6 @@ export const tabsStyles = css`
     --tabs-line-color: var(--color-border);
     --tabs-line-width: var(--border-width);
     --tabs-pill-indicator-background: var(--selection-background);
-    --tabs-pill-border: none;
-    --tabs-pill-indicator-border: none;
-    --tabs-pill-indicator-shadow: var(--shadow);
-  }
-
-  /* brutal: 회색 하단선·부드러운 그림자 대신 brutal border로 전환.
-     line·pill 모두 토큰 재정의만으로 처리한다(상속). */
-  :host-context([data-theme='brutal']) {
-    --tabs-line-color: var(--brutal-border-color);
-    --tabs-pill-border: var(--border);
-    --tabs-pill-indicator-border: var(--border);
-    --tabs-pill-indicator-shadow: none;
   }
 
   .indicator {
@@ -52,7 +40,7 @@ export const tabsStyles = css`
      ========================================================== */
   :host([variant='pill']) {
     background-color: var(--color-background-subtle);
-    border: var(--tabs-pill-border);
+    border: var(--tabs-pill-border, none);
     border-radius: var(--radius);
     padding: var(--space-1);
 
@@ -60,9 +48,9 @@ export const tabsStyles = css`
       height: var(--size-medium);
       top: var(--space-1);
       background-color: var(--tabs-pill-indicator-background);
-      border: var(--tabs-pill-indicator-border);
+      border: var(--tabs-pill-indicator-border, none);
       border-radius: var(--radius);
-      box-shadow: var(--tabs-pill-indicator-shadow);
+      box-shadow: var(--tabs-pill-indicator-shadow, var(--shadow));
       z-index: 0; /* 탭 텍스트 뒤로 배치 */
     }
   }
