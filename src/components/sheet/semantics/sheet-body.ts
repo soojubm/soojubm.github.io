@@ -11,7 +11,8 @@ class SheetBody extends LitElement {
       :host {
         flex: 1 1 auto;
         min-height: 0;
-        padding: 0 0 var(--sheet-body-padding-block-end, var(--space-4)) 0;
+        padding: 0 0
+          calc(var(--sheet-body-padding-block-end, var(--space-4)) + env(safe-area-inset-bottom)) 0;
         overflow-y: auto;
         overflow-x: hidden;
       }

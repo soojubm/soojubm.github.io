@@ -26,12 +26,12 @@ const defaultItems: BottomBarItem[] = [
 class BottomBar extends LitElement {
   static styles = css`
     :host {
-      --bottom-bar-item-height: calc(var(--size-medium) + var(--font-line-height-24));
+      --bottom-bar-item-height: calc(var(--size-medium) + var(--font-line-height-16));
     }
 
     .bottom-bar {
       display: flex;
-      padding: var(--space-2) 0 calc(env(safe-area-inset-bottom) + var(--space-2));
+      padding: 0 0 calc(env(safe-area-inset-bottom));
       background: var(--color-background);
       position: relative;
     }
@@ -67,7 +67,8 @@ class BottomBar extends LitElement {
       border-radius: var(--radius-large);
       background: var(--selection-background);
       position: absolute;
-      top: var(--space-2);
+      top: 0;
+      bottom: 0;
       left: 0;
       transform: var(--bottom-bar-transform, translateX(0%));
       transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);

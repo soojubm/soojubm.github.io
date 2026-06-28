@@ -11,6 +11,8 @@ export class FixedBottom extends LitElement {
     :host {
       display: block;
       width: 100%;
+      padding-bottom: env(safe-area-inset-bottom);
+      box-sizing: border-box;
       position: fixed;
       right: 0;
       bottom: 0;

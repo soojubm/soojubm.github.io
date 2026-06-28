@@ -3,8 +3,7 @@ import { css } from 'lit'
 export const iconStyles = css`
   :host {
     display: inline-flex;
-    --button-text-color: inherit;
-    --icon-color: var(--button-text-color);
+    --icon-color: currentColor;
   }
 
   i {

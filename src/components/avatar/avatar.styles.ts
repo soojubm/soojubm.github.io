@@ -25,7 +25,7 @@ export const avatarStyles = css`
     box-sizing: border-box;
     position: relative;
     box-shadow: 0 0 0 1px var(--avatar-border-color);
-    --button-text-color: var(--avatar-icon-color);
+    color: var(--avatar-icon-color);
   }
 
   :host([shape='circle']) {
