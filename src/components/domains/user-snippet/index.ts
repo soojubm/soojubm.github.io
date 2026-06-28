@@ -28,22 +28,30 @@ class UserSnippet extends LitElement {
           variant=${this.avatarVariant}
           src=${this.avatarSrc || nothing}
         ></mm-avatar>
-        ${this.tagLabel
-          ? html`
-              <mm-accent-tag class="entity-tag">${this.tagLabel}</mm-accent-tag>
-            `
-          : nothing}
+        ${this.renderTag()}
         <mm-flex class="entity-content" direction="column">
           <mm-paragraph size="large">${this.name}</mm-paragraph>
-          ${this.description
-            ? html`
-                <mm-paragraph class="entity-description">${this.description}</mm-paragraph>
-              `
-            : nothing}
+          ${this.renderDescription()}
           <mm-text size="12">${this.email}</mm-text>
           <mm-text size="12">${this.phone}</mm-text>
         </mm-flex>
       </mm-flex>
+    `
+  }
+
+  private renderTag() {
+    if (!this.tagLabel) return nothing
+
+    return html`
+      <mm-accent-tag class="entity-tag">${this.tagLabel}</mm-accent-tag>
+    `
+  }
+
+  private renderDescription() {
+    if (!this.description) return nothing
+
+    return html`
+      <mm-paragraph class="entity-description">${this.description}</mm-paragraph>
     `
   }
 }

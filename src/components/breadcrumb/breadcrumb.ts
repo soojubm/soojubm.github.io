@@ -66,33 +66,36 @@ export class Breadcrumb extends LitElement {
       <nav class="breadcrumb" aria-label=${this.ariaLabel}>
         ${items.map((item, index) => {
           const isLast = index === items.length - 1
-          const isHome = index === 0
-
-          const node =
-            item.href && !isLast
-              ? html`
-                  <a class="breadcrumb-item ${isHome ? 'breadcrumb-home' : ''}" href=${item.href}>
-                    ${item.label}
-                  </a>
-                `
-              : html`
-                  <mm-text
-                    class="breadcrumb-item"
-                    aria-current=${ifDefined(isLast ? 'page' : undefined)}
-                  >
-                    ${item.label}
-                  </mm-text>
-                `
 
           return html`
-            ${node}${isLast
-              ? nothing
-              : html`
-                  <i class="breadcrumb-divider" aria-hidden="true">${this.divider}</i>
-                `}
+            ${this.renderItem(item, index, isLast)}${this.renderDivider(isLast)}
           `
         })}
       </nav>
+    `
+  }
+
+  private renderItem(item: BreadcrumbItem, index: number, isLast: boolean) {
+    if (item.href && !isLast) {
+      return html`
+        <a class="breadcrumb-item ${index === 0 ? 'breadcrumb-home' : ''}" href=${item.href}>
+          ${item.label}
+        </a>
+      `
+    }
+
+    return html`
+      <mm-text class="breadcrumb-item" aria-current=${ifDefined(isLast ? 'page' : undefined)}>
+        ${item.label}
+      </mm-text>
+    `
+  }
+
+  private renderDivider(isLast: boolean) {
+    if (isLast) return nothing
+
+    return html`
+      <i class="breadcrumb-divider" aria-hidden="true">${this.divider}</i>
     `
   }
 }

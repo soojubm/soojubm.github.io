@@ -32,13 +32,17 @@ export class FilterButton extends LitElement {
         aria-checked=${ariaChecked}
         @click=${this.handleClick}
       >
-        ${this.selected
-          ? html`
-              <mm-icon name=${ICON_NAMES.CHECK}></mm-icon>
-            `
-          : nothing}
+        ${this.renderCheckIcon()}
         <slot></slot>
       </button>
+    `
+  }
+
+  private renderCheckIcon() {
+    if (!this.selected) return nothing
+
+    return html`
+      <mm-icon name=${ICON_NAMES.CHECK}></mm-icon>
     `
   }
 

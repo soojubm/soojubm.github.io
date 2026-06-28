@@ -1,8 +1,4 @@
 /* stylelint-disable color-no-hex -- 토큰 정의 파일이므로 hex 값 허용 */
-@custom-media --large (max-width: 1560px);
-@custom-media --small (max-width: 1100px);
-@custom-media --tiny (max-width: 880px);
-
 :root {
   color-scheme: light dark;
   --font-family: 'Alan Sans', 'Gothic A1', system-ui, sans-serif;
@@ -154,7 +150,6 @@
   --component-content-padding-block: var(--space-8);
   --component-content-padding-inline: calc(var(--layout-padding-inline) - var(--space-4));
   --component-content-bleed-inline: calc(var(--layout-padding-inline) * -1);
-  --component-content-responsive-padding-inline: var(--layout-padding-inline);
   --space-1-minus: calc(var(--space-1) * -1);
 
   --border-width: 1px;
@@ -202,6 +197,12 @@
   --zindex-fixed-bottom: 100;
 
   --color-backdrop: rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 1100px) {
+  :root {
+    --component-content-padding-inline: var(--layout-padding-inline);
+  }
 }
 
 .shape-square {

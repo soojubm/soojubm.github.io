@@ -52,6 +52,8 @@ export default [
       // Lit 템플릿 안의 ARIA, 키보드 이벤트, 접근 가능한 이름 등 접근성 규칙을 검사한다.
       ...warnRules(litA11yRecommended.rules),
 
+      curly: ['error', 'multi-or-nest', 'consistent'],
+      'nonblock-statement-body-position': ['error', 'beside'],
       'import/order': [
         'error',
         {

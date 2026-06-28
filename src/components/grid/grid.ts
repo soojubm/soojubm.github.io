@@ -24,11 +24,8 @@ export class Grid extends LitElement {
   protected willUpdate() {
     const gap = /^\d+$/.test(this.gap) ? `var(--space-${this.gap})` : this.gap
 
-    if (gap) {
-      this.style.setProperty('--_grid-gap', gap)
-    } else {
-      this.style.removeProperty('--_grid-gap')
-    }
+    if (gap) this.style.setProperty('--_grid-gap', gap)
+    else this.style.removeProperty('--_grid-gap')
 
     if (this.columnMaxWidth) {
       this.style.setProperty('--_col-max', this.columnMaxWidth)

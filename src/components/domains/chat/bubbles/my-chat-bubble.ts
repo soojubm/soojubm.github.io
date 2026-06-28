@@ -1,4 +1,4 @@
-import { LitElement, html } from 'lit'
+import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import { renderImageBubble, renderTypingBubble } from '@/components/domains/chat/bubbles/renderers'
@@ -26,40 +26,46 @@ export class MyChatBubble extends LitElement {
     if (this.typing) return renderTypingBubble()
     if (this.src) return renderImageBubble(this.src)
 
-    if (this.failed) {
-      return html`
-        ${this.renderBubbleBody()}
-        <div class="failed-row">
-          <mm-text class="failed-status" size="12" role="alert">전송 실패</mm-text>
-          <mm-icon-button
-            size="small"
-            variant="ghost"
-            icon=${ICON_NAMES.RETRY}
-            aria-label="재전송"
-            @click=${this.handleRetry}
-          ></mm-icon-button>
-        </div>
-      `
-    }
+    if (this.failed) return this.renderFailedBubble()
 
     return this.renderBubbleBody()
   }
 
-  private handleRetry() {
-    emit(this, 'retry')
+  private renderFailedBubble() {
+    return html`
+      ${this.renderBubbleBody()}
+      <div class="failed-row">
+        <mm-text class="failed-status" size="12" role="alert">전송 실패</mm-text>
+        <mm-icon-button
+          size="small"
+          variant="ghost"
+          icon=${ICON_NAMES.RETRY}
+          aria-label="재전송"
+          @click=${this.handleRetry}
+        ></mm-icon-button>
+      </div>
+    `
   }
 
   private renderBubbleBody() {
     return html`
       <div class="bubble is-my">
         <slot></slot>
-        ${this.status && !this.failed
-          ? html`
-              <mm-text class="status" role="status">${this.status}</mm-text>
-            `
-          : ''}
+        ${this.renderStatus()}
       </div>
     `
+  }
+
+  private renderStatus() {
+    if (!this.status || this.failed) return nothing
+
+    return html`
+      <mm-text class="status" role="status">${this.status}</mm-text>
+    `
+  }
+
+  private handleRetry() {
+    emit(this, 'retry')
   }
 }
 

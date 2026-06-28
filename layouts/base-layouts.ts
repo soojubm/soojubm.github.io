@@ -8,9 +8,7 @@ export const renderLayout = (
   content: string,
   options: { footer?: boolean; closeSidebar?: boolean } = {},
 ) => {
-  if (options.closeSidebar) {
-    document.body.classList.remove('is-menu-opened')
-  }
+  if (options.closeSidebar) document.body.classList.remove('is-menu-opened')
 
   return `
     <mm-navbar></mm-navbar>

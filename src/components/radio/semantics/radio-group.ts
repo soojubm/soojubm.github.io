@@ -28,9 +28,7 @@ export class RadioGroup extends LitElement {
   }
 
   protected updated(changedProperties: Map<string, unknown>) {
-    if (changedProperties.has('value') || changedProperties.has('disabled')) {
-      this.syncChildren()
-    }
+    if (changedProperties.has('value') || changedProperties.has('disabled')) this.syncChildren()
   }
 
   private syncChildren() {

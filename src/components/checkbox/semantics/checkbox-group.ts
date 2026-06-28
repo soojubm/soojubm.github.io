@@ -32,15 +32,19 @@ export class CheckboxGroup extends LitElement {
   render() {
     return html`
       <fieldset>
-        ${this.legend
-          ? html`
-              <legend>
-                <mm-text size="12" color="light">${this.legend}</mm-text>
-              </legend>
-            `
-          : nothing}
+        ${this.renderLegend()}
         <slot @slotchange=${this.onSlotChange}></slot>
       </fieldset>
+    `
+  }
+
+  private renderLegend() {
+    if (!this.legend) return nothing
+
+    return html`
+      <legend>
+        <mm-text size="12" color="light">${this.legend}</mm-text>
+      </legend>
     `
   }
 
@@ -57,9 +61,7 @@ export class CheckboxGroup extends LitElement {
   updated(changed: Map<string, unknown>) {
     // [수정] 최초 렌더링 시점(초기화 전)에는 외부 value가 자식 상태를 덮어쓰지 않도록
     // isInitialized가 true일 때만 실행되게 제어합니다.
-    if (this.isInitialized && (changed.has('value') || changed.has('name'))) {
-      this.syncCheckboxes()
-    }
+    if (this.isInitialized && (changed.has('value') || changed.has('name'))) this.syncCheckboxes()
   }
 
   private onSlotChange = () => {
@@ -75,9 +77,7 @@ export class CheckboxGroup extends LitElement {
           return checkbox.value || checkbox.getAttribute('value') || ''
         })
 
-      if (initialCheckedValues.length > 0) {
-        this.value = initialCheckedValues
-      }
+      if (initialCheckedValues.length > 0) this.value = initialCheckedValues
     }
 
     this.isInitialized = true
@@ -91,9 +91,7 @@ export class CheckboxGroup extends LitElement {
       // 동기화 시점에도 안전하게 프로퍼티와 어트리뷰트를 모두 지원합니다.
       const value = checkbox.value || checkbox.getAttribute('value') || ''
 
-      if (this.name) {
-        checkbox.name = this.name
-      }
+      if (this.name) checkbox.name = this.name
 
       checkbox.checked = this.value.includes(value)
     })
@@ -112,12 +110,8 @@ export class CheckboxGroup extends LitElement {
     if (!value) return
 
     if (checked) {
-      if (!this.value.includes(value)) {
-        this.value = [...this.value, value]
-      }
-    } else {
-      this.value = this.value.filter(item => item !== value)
-    }
+      if (!this.value.includes(value)) this.value = [...this.value, value]
+    } else {this.value = this.value.filter(item => item !== value)}
 
     this.dispatchValueChange()
   }

@@ -58,9 +58,7 @@ export class Textarea extends LitElement {
   }
 
   protected updated(changedProperties: Map<string, unknown>) {
-    if (changedProperties.has('value')) {
-      this.autoResize()
-    }
+    if (changedProperties.has('value')) this.autoResize()
   }
 
   protected autoResize() {

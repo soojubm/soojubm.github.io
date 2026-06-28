@@ -62,77 +62,95 @@
   </mm-surface>
 
   <mm-surface variant="plain">
-    <mm-flex direction="column" gap="4">
-      <mm-text size="24" weight="bold" as="h2">Scroll Spy Controller Sampler</mm-text>
-      <div class="scroll-spy-sampler js-scroll-spy-sampler">
+    <mm-text size="24" weight="bold" as="h2">Scroll Spy Controller Sampler</mm-text>
+    <mm-surface variant="subtle" class="scroll-spy-sampler js-scroll-spy-sampler">
+      <mm-flex gap="4" align-items="start" wrap>
         <nav class="scroll-spy-sampler-nav" aria-label="Scroll spy sampler">
-          <button
-            class="scroll-spy-sampler-tab is-active"
-            type="button"
-            aria-current="true"
-            data-scroll-spy-target="sampler-intent"
-          >
-            Intent
-          </button>
-          <button
-            class="scroll-spy-sampler-tab"
-            type="button"
-            aria-current="false"
-            data-scroll-spy-target="sampler-root"
-          >
-            Root
-          </button>
-          <button
-            class="scroll-spy-sampler-tab"
-            type="button"
-            aria-current="false"
-            data-scroll-spy-target="sampler-update"
-          >
-            Update
-          </button>
-          <button
-            class="scroll-spy-sampler-tab"
-            type="button"
-            aria-current="false"
-            data-scroll-spy-target="sampler-cleanup"
-          >
-            Cleanup
-          </button>
+          <mm-flex direction="column" gap="1">
+            <button
+              class="scroll-spy-sampler-tab is-active"
+              type="button"
+              aria-current="true"
+              data-scroll-spy-target="sampler-intent"
+            >
+              Intent
+            </button>
+            <button
+              class="scroll-spy-sampler-tab"
+              type="button"
+              aria-current="false"
+              data-scroll-spy-target="sampler-root"
+            >
+              Root
+            </button>
+            <button
+              class="scroll-spy-sampler-tab"
+              type="button"
+              aria-current="false"
+              data-scroll-spy-target="sampler-update"
+            >
+              Update
+            </button>
+            <button
+              class="scroll-spy-sampler-tab"
+              type="button"
+              aria-current="false"
+              data-scroll-spy-target="sampler-cleanup"
+            >
+              Cleanup
+            </button>
+          </mm-flex>
         </nav>
-        <div class="scroll-spy-sampler-body js-scroll-spy-body" tabindex="0">
-          <section id="sampler-intent" class="scroll-spy-sampler-section" data-scroll-spy-section>
-            <mm-text size="18" weight="bold" as="h3">Observe visible sections</mm-text>
-            <mm-paragraph>
-              The controller owns IntersectionObserver setup and updates the active section as the
-              panel scrolls.
-            </mm-paragraph>
-          </section>
-          <section id="sampler-root" class="scroll-spy-sampler-section" data-scroll-spy-section>
-            <mm-text size="18" weight="bold" as="h3">Use a local scroll root</mm-text>
-            <mm-paragraph>
-              This sampler passes its inner scroll area as the observer root, so the behavior stays
-              contained in the page sample.
-            </mm-paragraph>
-          </section>
-          <section id="sampler-update" class="scroll-spy-sampler-section" data-scroll-spy-section>
-            <mm-text size="18" weight="bold" as="h3">Refresh targets after render</mm-text>
-            <mm-paragraph>
-              The page setup reads target elements after the HTML is rendered and lets the
-              controller observe those sections.
-            </mm-paragraph>
-          </section>
-          <section id="sampler-cleanup" class="scroll-spy-sampler-section" data-scroll-spy-section>
-            <mm-text size="18" weight="bold" as="h3">Keep document scroll stable</mm-text>
-            <mm-paragraph>
-              Trigger buttons scroll only this inner panel, so clicking Intent, Root, Update, or
-              Cleanup does not move the document.
-            </mm-paragraph>
-          </section>
-        </div>
-      </div>
-    </mm-flex>
+        <mm-scroll
+          direction="column"
+          gap="3"
+          class="scroll-spy-sampler-body js-scroll-spy-body"
+          tabindex="0"
+        >
+          <mm-surface
+            id="sampler-intent"
+            class="scroll-spy-sampler-section"
+            data-scroll-spy-section
+          >
+            <mm-text-block
+              level="3"
+              heading="Observe visible sections"
+              description="The controller owns IntersectionObserver setup and updates the active section as the panel scrolls."
+            ></mm-text-block>
+          </mm-surface>
+          <mm-surface id="sampler-root" class="scroll-spy-sampler-section" data-scroll-spy-section>
+            <mm-text-block
+              level="3"
+              heading="Use a local scroll root"
+              description="This sampler passes its inner scroll area as the observer root, so the behavior stays contained in the page sample."
+            ></mm-text-block>
+          </mm-surface>
+          <mm-surface
+            id="sampler-update"
+            class="scroll-spy-sampler-section"
+            data-scroll-spy-section
+          >
+            <mm-text-block
+              level="3"
+              heading="Refresh targets after render"
+              description="The page setup reads target elements after the HTML is rendered and lets the controller observe those sections."
+            ></mm-text-block>
+          </mm-surface>
+          <mm-surface
+            id="sampler-cleanup"
+            class="scroll-spy-sampler-section"
+            data-scroll-spy-section
+          >
+            <mm-text-block
+              level="3"
+              heading="Keep document scroll stable"
+              description="Trigger buttons scroll only this inner panel, so clicking Intent, Root, Update, or Cleanup does not move the document."
+            ></mm-text-block>
+          </mm-surface>
+        </mm-scroll>
+      </mm-flex>
+    </mm-surface>
   </mm-surface>
-
   <mm-surface variant="plain">
     <mm-flex direction="column" gap="3">
       <mm-text size="24" weight="bold" as="h2">TODO</mm-text>

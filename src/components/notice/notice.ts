@@ -29,27 +29,38 @@ class Notice extends LitElement {
     return html`
       <mm-flex class="notice" direction="column" gap="2" align-items="start">
         <mm-icon name=${this.icon} class="notice-icon"></mm-icon>
-        ${this.heading
-          ? html`
-              <div class="notice-heading">
-                <mm-heading level="3">${this.heading}</mm-heading>
-              </div>
-            `
-          : ''}
-        ${this.description
-          ? html`
-              <mm-paragraph>${this.description}</mm-paragraph>
-            `
-          : ''}
+        ${this.renderHeading()} ${this.renderDescription()}
         <slot></slot>
-        ${this.dismissible
-          ? html`
-              <div class="notice-dismiss">
-                <mm-dismiss-button @click=${this.dismiss}></mm-dismiss-button>
-              </div>
-            `
-          : ''}
+        ${this.renderDismissButton()}
       </mm-flex>
+    `
+  }
+
+  private renderHeading() {
+    if (!this.heading) return ''
+
+    return html`
+      <div class="notice-heading">
+        <mm-heading level="3">${this.heading}</mm-heading>
+      </div>
+    `
+  }
+
+  private renderDescription() {
+    if (!this.description) return ''
+
+    return html`
+      <mm-paragraph>${this.description}</mm-paragraph>
+    `
+  }
+
+  private renderDismissButton() {
+    if (!this.dismissible) return ''
+
+    return html`
+      <div class="notice-dismiss">
+        <mm-dismiss-button @click=${this.dismiss}></mm-dismiss-button>
+      </div>
     `
   }
 

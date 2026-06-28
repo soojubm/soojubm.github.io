@@ -1,4 +1,4 @@
-import { LitElement, css, html } from 'lit'
+import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import type { ActionConfig } from '@/components/action-config'
@@ -16,6 +16,44 @@ class SheetFooter extends LitElement {
   @property({ attribute: false }) primaryAction?: ActionConfig
   @property({ attribute: false }) secondaryAction?: ActionConfig
 
+  render() {
+    return html`
+      <mm-button-group justify-content="end">
+        ${this.renderSecondaryAction()} ${this.renderPrimaryAction()}
+      </mm-button-group>
+    `
+  }
+
+  private renderSecondaryAction() {
+    if (!this.secondaryAction) return nothing
+
+    return html`
+      <mm-button
+        variant="tertiary"
+        size="medium"
+        ?disabled=${this.secondaryAction.disabled}
+        @click=${this.handleSecondaryClick}
+      >
+        ${this.secondaryAction.label}
+      </mm-button>
+    `
+  }
+
+  private renderPrimaryAction() {
+    if (!this.primaryAction) return nothing
+
+    return html`
+      <mm-button
+        variant="primary"
+        size="medium"
+        ?disabled=${this.primaryAction.disabled}
+        @click=${this.handlePrimaryClick}
+      >
+        ${this.primaryAction.label}
+      </mm-button>
+    `
+  }
+
   private handlePrimaryClick = () => {
     this.primaryAction?.onClick?.()
     emit(this, 'primary-click')
@@ -24,37 +62,6 @@ class SheetFooter extends LitElement {
   private handleSecondaryClick = () => {
     this.secondaryAction?.onClick?.()
     emit(this, 'secondary-click')
-  }
-
-  render() {
-    return html`
-      <mm-button-group justify-content="end">
-        ${this.secondaryAction
-          ? html`
-              <mm-button
-                variant="tertiary"
-                size="medium"
-                ?disabled=${this.secondaryAction.disabled}
-                @click=${this.handleSecondaryClick}
-              >
-                ${this.secondaryAction.label}
-              </mm-button>
-            `
-          : ''}
-        ${this.primaryAction
-          ? html`
-              <mm-button
-                variant="primary"
-                size="medium"
-                ?disabled=${this.primaryAction.disabled}
-                @click=${this.handlePrimaryClick}
-              >
-                ${this.primaryAction.label}
-              </mm-button>
-            `
-          : ''}
-      </mm-button-group>
-    `
   }
 }
 

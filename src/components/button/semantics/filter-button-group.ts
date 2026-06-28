@@ -52,13 +52,16 @@ export class FilterButtonGroup extends LitElement {
 
   private onToggle = (event: Event) => {
     const { value, selected, selectAll } = (event as CustomEvent<FilterToggleDetail>).detail
+    const selectedValues = selected
+      ? [...this.selected, value]
+      : this.selected.filter(v => v !== value)
 
     if (selectAll) {
       this.selected = selected
         ? this.buttons.filter(button => !button.selectAll).map(button => button.value)
         : []
     } else if (this.isMultiple) {
-      this.selected = selected ? [...this.selected, value] : this.selected.filter(v => v !== value)
+      this.selected = selectedValues
     } else {
       this.selected = selected ? [value] : []
     }
@@ -85,9 +88,8 @@ export class FilterButtonGroup extends LitElement {
 
   private adoptInitialSelection = () => {
     const preselected = this.buttons.filter(button => button.selected).map(button => button.value)
-    if (preselected.length) {
-      this.selected = this.isMultiple ? preselected : preselected.slice(0, 1)
-    }
+    if (preselected.length) this.selected = this.isMultiple ? preselected : preselected.slice(0, 1)
+
     this.syncButtons()
   }
 

@@ -91,19 +91,26 @@ export class ChatReasoningFlow extends LitElement {
           <mm-icon name=${this.icon || toneIconMap[this.tone] || ICON_NAMES.SPARKS}></mm-icon>
         </span>
         <span class="content">
-          ${this.label
-            ? html`
-                <mm-text class="label">${this.label}</mm-text>
-              `
-            : nothing}
-          ${this.description
-            ? html`
-                <mm-text class="description">${this.description}</mm-text>
-              `
-            : nothing}
+          ${this.renderLabel()} ${this.renderDescription()}
           <mm-text class="slot"><slot></slot></mm-text>
         </span>
       </span>
+    `
+  }
+
+  private renderLabel() {
+    if (!this.label) return nothing
+
+    return html`
+      <mm-text class="label">${this.label}</mm-text>
+    `
+  }
+
+  private renderDescription() {
+    if (!this.description) return nothing
+
+    return html`
+      <mm-text class="description">${this.description}</mm-text>
     `
   }
 }
@@ -191,13 +198,7 @@ export class ChatReasoning extends LitElement {
     return html`
       <div class="trend" role="status" aria-live="polite">
         <span class="content">
-          ${this.duration
-            ? html`
-                <span class="meta">
-                  <mm-text class="duration">${this.duration}</mm-text>
-                </span>
-              `
-            : nothing}
+          ${this.renderDuration()}
           <span class="flows">
             <slot @slotchange=${this.syncFlows}></slot>
           </span>
@@ -206,14 +207,22 @@ export class ChatReasoning extends LitElement {
     `
   }
 
+  private renderDuration() {
+    if (!this.duration) return nothing
+
+    return html`
+      <span class="meta">
+        <mm-text class="duration">${this.duration}</mm-text>
+      </span>
+    `
+  }
+
   firstUpdated() {
     this.syncFlows()
   }
 
   updated(changed: Map<string, unknown>) {
-    if (changed.has('thinking') || changed.has('interval')) {
-      this.syncFlows()
-    }
+    if (changed.has('thinking') || changed.has('interval')) this.syncFlows()
   }
 
   disconnectedCallback() {
@@ -232,9 +241,7 @@ export class ChatReasoning extends LitElement {
       return
     }
 
-    if (this.flowIndex >= flows.length) {
-      this.flowIndex = 0
-    }
+    if (this.flowIndex >= flows.length) this.flowIndex = 0
 
     this.activateFlow(flows)
     this.stopTransition()

@@ -45,13 +45,17 @@ export class ReviewItem extends LitElement {
           </mm-flex>
 
           <mm-paragraph>${this.content}</mm-paragraph>
-          ${this.author || this.datetime
-            ? html`
-                <mm-list-row label=${this.author} description=${this.datetime}></mm-list-row>
-              `
-            : nothing}
+          ${this.renderMeta()}
         </mm-flex>
       </mm-surface>
+    `
+  }
+
+  private renderMeta() {
+    if (!this.author && !this.datetime) return nothing
+
+    return html`
+      <mm-list-row label=${this.author} description=${this.datetime}></mm-list-row>
     `
   }
 }

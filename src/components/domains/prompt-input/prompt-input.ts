@@ -87,15 +87,7 @@ export class PromptInput extends LitElement {
             @input=${this.handleTextareaInput}
             @keydown=${this.handleTextareaKeydown}
           ></mm-textarea>
-          ${this.isSingleLine
-            ? html`
-                ${this.renderStartActions()} ${this.renderEndActions()}
-              `
-            : html`
-                <mm-flex class="actions" gap="2" align-items="center" justify-content="between">
-                  ${this.renderStartActions()} ${this.renderEndActions()}
-                </mm-flex>
-              `}
+          ${this.renderActions()}
         </div>
       </form>
     `
@@ -146,22 +138,40 @@ export class PromptInput extends LitElement {
   }
 
   private submit = () => {
-    if (!this.isLoading && this.value.trim()) {
-      emit(this, 'submit', { value: this.value, model: this.model })
-    }
+    if (this.isLoading || !this.value.trim()) return
+
+    emit(this, 'submit', { value: this.value, model: this.model })
   }
 
   private renderStartActions() {
     return html`
       <mm-flex class="start-actions" gap="1" align-items="center">
-        ${this.hiddenAttachment
-          ? ''
-          : html`
-              <mm-attachment-dropdown></mm-attachment-dropdown>
-            `}
+        ${this.renderAttachmentAction()}
         <slot name="leading-actions"></slot>
         <!-- <mm-model-selector></mm-model-selector> -->
       </mm-flex>
+    `
+  }
+
+  private renderActions() {
+    if (this.isSingleLine) {
+      return html`
+        ${this.renderStartActions()} ${this.renderEndActions()}
+      `
+    }
+
+    return html`
+      <mm-flex class="actions" gap="2" align-items="center" justify-content="between">
+        ${this.renderStartActions()} ${this.renderEndActions()}
+      </mm-flex>
+    `
+  }
+
+  private renderAttachmentAction() {
+    if (this.hiddenAttachment) return ''
+
+    return html`
+      <mm-attachment-dropdown></mm-attachment-dropdown>
     `
   }
 

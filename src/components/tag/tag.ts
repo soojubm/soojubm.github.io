@@ -19,14 +19,18 @@ export const getMappedTone = <Value extends string>(
 
 export const renderTag = (tone: TagTone, fallbackContent?: unknown, icon?: IconName) => html`
   <mm-tag tone=${tone} icon=${ifDefined(icon)}>
-    ${icon
-      ? nothing
-      : html`
-          <slot name="icon" slot="icon"></slot>
-        `}
+    ${renderTagIconSlot(icon)}
     <slot>${fallbackContent}</slot>
   </mm-tag>
 `
+
+const renderTagIconSlot = (icon?: IconName) => {
+  if (icon) return nothing
+
+  return html`
+    <slot name="icon" slot="icon"></slot>
+  `
+}
 
 export const renderMappedTag = <Value extends string>(
   value: Value,

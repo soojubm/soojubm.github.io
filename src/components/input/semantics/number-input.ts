@@ -34,18 +34,7 @@ export class NumberInput extends LitElement {
   render() {
     return html`
       <div class="textfield" ?data-invalid=${this.ariaInvalid === 'true'}>
-        ${this.label
-          ? html`
-              <mm-textfield-label for=${this.inputId} ?optional=${this.optional}>
-                ${this.label}
-              </mm-textfield-label>
-            `
-          : nothing}
-        ${this.helper
-          ? html`
-              <mm-textfield-helper>${this.helper}</mm-textfield-helper>
-            `
-          : nothing}
+        ${this.renderLabel()} ${this.renderHelper()}
         <div class="textfield-control">
           <mm-input
             input-id=${this.inputId}
@@ -83,14 +72,36 @@ export class NumberInput extends LitElement {
             @click=${this.increment}
           ></mm-icon-button>
         </div>
-        ${this.validationText
-          ? html`
-              <mm-textfield-validation id=${`${this.inputId}-validation`}>
-                ${this.validationText}
-              </mm-textfield-validation>
-            `
-          : nothing}
+        ${this.renderValidation()}
       </div>
+    `
+  }
+
+  private renderLabel() {
+    if (!this.label) return nothing
+
+    return html`
+      <mm-textfield-label for=${this.inputId} ?optional=${this.optional}>
+        ${this.label}
+      </mm-textfield-label>
+    `
+  }
+
+  private renderHelper() {
+    if (!this.helper) return nothing
+
+    return html`
+      <mm-textfield-helper>${this.helper}</mm-textfield-helper>
+    `
+  }
+
+  private renderValidation() {
+    if (!this.validationText) return nothing
+
+    return html`
+      <mm-textfield-validation id=${`${this.inputId}-validation`}>
+        ${this.validationText}
+      </mm-textfield-validation>
     `
   }
 

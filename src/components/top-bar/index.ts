@@ -12,35 +12,43 @@ class TopBar extends LitElement {
   @property({ type: String }) heading = ''
   @property({ type: String }) nav: 'back' | 'close' | '' = 'back'
 
-  private handleNavClick = () => {
-    emit(this, 'navclick')
-  }
-
   render() {
     return html`
       <header role="navigation" class="top-bar">
-        ${this.nav === 'back'
-          ? html`
-              <mm-icon-button
-                variant="secondary"
-                icon=${ICON_NAMES.BACK}
-                @click=${this.handleNavClick}
-              ></mm-icon-button>
-            `
-          : ''}
+        ${this.renderBackButton()}
         <mm-paragraph size="large">${this.heading}</mm-paragraph>
         <slot name="action"></slot>
-        ${this.nav === 'close'
-          ? html`
-              <mm-icon-button
-                variant="secondary"
-                icon=${ICON_NAMES.CLOSE}
-                @click=${this.handleNavClick}
-              ></mm-icon-button>
-            `
-          : ''}
+        ${this.renderCloseButton()}
       </header>
     `
+  }
+
+  private renderBackButton() {
+    if (this.nav !== 'back') return ''
+
+    return html`
+      <mm-icon-button
+        variant="secondary"
+        icon=${ICON_NAMES.BACK}
+        @click=${this.handleNavClick}
+      ></mm-icon-button>
+    `
+  }
+
+  private renderCloseButton() {
+    if (this.nav !== 'close') return ''
+
+    return html`
+      <mm-icon-button
+        variant="secondary"
+        icon=${ICON_NAMES.CLOSE}
+        @click=${this.handleNavClick}
+      ></mm-icon-button>
+    `
+  }
+
+  private handleNavClick = () => {
+    emit(this, 'navclick')
   }
 }
 

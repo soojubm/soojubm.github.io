@@ -20,14 +20,16 @@ export class Prop extends LitElement {
 
   render() {
     return html`
-      <dt>
-        ${this.name}${this.optional
-          ? html`
-              <attr>?</attr>
-            `
-          : null}
-      </dt>
+      <dt>${this.name}${this.renderOptionalMarker()}</dt>
       <dd>${this.type}</dd>
+    `
+  }
+
+  private renderOptionalMarker() {
+    if (!this.optional) return null
+
+    return html`
+      <attr>?</attr>
     `
   }
 }

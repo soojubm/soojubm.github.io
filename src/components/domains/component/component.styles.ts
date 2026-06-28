@@ -16,13 +16,12 @@ export const componentContentFrameStyles = css`
   @media ${MEDIA.small} {
     .component-content-frame {
       margin-inline: var(--component-content-bleed-inline);
-      padding-inline: var(--component-content-responsive-padding-inline);
       border-inline: 0;
       border-radius: 0;
     }
 
     .component-content-responsive-padding-inline {
-      padding-inline: var(--component-content-responsive-padding-inline);
+      padding-inline: var(--component-content-padding-inline);
     }
   }
 `

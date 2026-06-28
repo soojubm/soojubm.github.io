@@ -25,10 +25,6 @@ export class ChatConfirmation extends LitElement {
         display: block;
         max-width: min(85%, 480px);
       }
-
-      mm-notice > mm-paragraph {
-        flex: 1;
-      }
     `,
   ]
 
@@ -52,13 +48,7 @@ export class ChatConfirmation extends LitElement {
 
     return html`
       <mm-notice heading="승인 요청">
-        <mm-paragraph>
-          ${this.message
-            ? this.message
-            : html`
-                <slot></slot>
-              `}
-        </mm-paragraph>
+        <mm-paragraph>${this.renderMessage()}</mm-paragraph>
         <mm-button-group>
           <mm-button variant="tertiary" size="medium" @click=${this.reject}>
             ${this.rejectLabel}
@@ -68,6 +58,14 @@ export class ChatConfirmation extends LitElement {
           </mm-button>
         </mm-button-group>
       </mm-notice>
+    `
+  }
+
+  private renderMessage() {
+    if (this.message) return this.message
+
+    return html`
+      <slot></slot>
     `
   }
 

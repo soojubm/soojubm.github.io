@@ -195,9 +195,7 @@ export class Navbar extends LitElement {
 
       this.results = data
     } finally {
-      if (this.isCurrentSearch(searchId, searchQuery)) {
-        this.searching = false
-      }
+      if (this.isCurrentSearch(searchId, searchQuery)) this.searching = false
     }
   }
 

@@ -119,14 +119,15 @@ export class Thumbnail extends LitElement {
 
     // thumbnail 자체가 <figure>이며, caption 값이 있으면 내부에 캡션을 함께 렌더링합니다.
     return html`
-      <figure class="thumbnail-root">
-        ${media}
-        ${this.caption
-          ? html`
-              <mm-caption as="figcaption" class="thumbnail-caption">${this.caption}</mm-caption>
-            `
-          : ''}
-      </figure>
+      <figure class="thumbnail-root">${media} ${this.renderCaption()}</figure>
+    `
+  }
+
+  private renderCaption() {
+    if (!this.caption) return ''
+
+    return html`
+      <mm-caption as="figcaption" class="thumbnail-caption">${this.caption}</mm-caption>
     `
   }
 

@@ -49,13 +49,16 @@ export class ChatSource extends LitElement {
         aria-haspopup="dialog"
         @click=${this.handleClick}
       >
-        ${this.icon
-          ? html`
-              <mm-icon name=${this.icon}></mm-icon>
-            `
-          : ''}
-        ${this.domain}
+        ${this.renderIcon()} ${this.domain}
       </mm-button>
+    `
+  }
+
+  private renderIcon() {
+    if (!this.icon) return ''
+
+    return html`
+      <mm-icon name=${this.icon}></mm-icon>
     `
   }
 
@@ -161,59 +164,80 @@ export class ChatSourceGroup extends LitElement {
   )
 
   render() {
-    const src = this.activeSource
     return html`
       <mm-button-group wrap @source-toggle=${this.handleToggle}>
         <slot></slot>
       </mm-button-group>
 
-      ${src
-        ? html`
-            <mm-flex
-              class="sheet"
-              data-open
-              direction="column"
-              gap="2"
-              role="dialog"
-              aria-label=${src.heading || this.domain}
-            >
-              ${src.href
-                ? html`
-                    <mm-flex class="sheet-header" gap="2" align-items="center">
-                      ${src.icon
-                        ? html`
-                            <mm-icon class="sheet-icon" name=${src.icon}></mm-icon>
-                          `
-                        : ''}
-                      <mm-text class="sheet-domain" size="12" color="light">${this.domain}</mm-text>
-                    </mm-flex>
-                  `
-                : ''}
-              ${src.heading
-                ? html`
-                    <mm-paragraph>${src.heading}</mm-paragraph>
-                  `
-                : ''}
-              ${src.description
-                ? html`
-                    <mm-paragraph size="small">${src.description}</mm-paragraph>
-                  `
-                : ''}
-              ${src.href
-                ? html`
-                    <a
-                      class="sheet-link"
-                      href=${src.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      방문하기 ↗
-                    </a>
-                  `
-                : ''}
-            </mm-flex>
-          `
-        : ''}
+      ${this.renderSheet()}
+    `
+  }
+
+  private renderSheet() {
+    if (!this.activeSource) return ''
+
+    return html`
+      <mm-flex
+        class="sheet"
+        data-open
+        direction="column"
+        gap="2"
+        role="dialog"
+        aria-label=${this.activeSource.heading || this.domain}
+      >
+        ${this.renderSheetHeader()} ${this.renderSheetHeading()} ${this.renderSheetDescription()}
+        ${this.renderSheetLink()}
+      </mm-flex>
+    `
+  }
+
+  private renderSheetHeader() {
+    if (!this.activeSource?.href) return ''
+
+    return html`
+      <mm-flex class="sheet-header" gap="2" align-items="center">
+        ${this.renderSheetIcon()}
+        <mm-text class="sheet-domain" size="12" color="light">${this.domain}</mm-text>
+      </mm-flex>
+    `
+  }
+
+  private renderSheetIcon() {
+    if (!this.activeSource?.icon) return ''
+
+    return html`
+      <mm-icon class="sheet-icon" name=${this.activeSource.icon}></mm-icon>
+    `
+  }
+
+  private renderSheetHeading() {
+    if (!this.activeSource?.heading) return ''
+
+    return html`
+      <mm-paragraph>${this.activeSource.heading}</mm-paragraph>
+    `
+  }
+
+  private renderSheetDescription() {
+    if (!this.activeSource?.description) return ''
+
+    return html`
+      <mm-paragraph size="small">${this.activeSource.description}</mm-paragraph>
+    `
+  }
+
+  private renderSheetLink() {
+    if (!this.activeSource?.href) return ''
+
+    return html`
+      <a
+        class="sheet-link"
+        href=${this.activeSource.href}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        방문하기 ↗
+      </a>
     `
   }
 
@@ -228,9 +252,7 @@ export class ChatSourceGroup extends LitElement {
     }
 
     // Close previously open source
-    if (this.activeSource && this.activeSource !== source) {
-      this.activeSource.setOpen(false)
-    }
+    if (this.activeSource && this.activeSource !== source) this.activeSource.setOpen(false)
 
     source.setOpen(true)
     this.activeSource = source

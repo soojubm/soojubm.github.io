@@ -25,18 +25,20 @@ export class LinkPrompt extends LitElement {
   @property({ type: Boolean }) external = false
 
   render() {
-    const hasIcon = Boolean(this.icon)
-
     return html`
-      ${hasIcon
-        ? html`
-            <mm-icon name=${this.icon} aria-hidden="true"></mm-icon>
-          `
-        : nothing}
+      ${this.renderIcon()}
 
       <mm-paragraph>${this.message}</mm-paragraph>
 
       <mm-link href=${this.href} ?external=${this.external}>${this.linkLabel}</mm-link>
+    `
+  }
+
+  private renderIcon() {
+    if (!this.icon) return nothing
+
+    return html`
+      <mm-icon name=${this.icon} aria-hidden="true"></mm-icon>
     `
   }
 }

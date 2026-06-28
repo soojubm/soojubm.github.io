@@ -6,7 +6,7 @@ import '@/components/icon/icon'
 import { avatarStyles } from '@/components/avatar/avatar.styles'
 import { ICON_NAMES, type IconName } from '@/components/icon-button/semantics/icon-names'
 
-export type AvatarVariant = 'primary' | 'secondary'
+export type AvatarVariant = 'primary' | 'secondary' | 'tertiary'
 export type AvatarSize = 'huge' | 'large' | 'medium' | 'small'
 export type AvatarShape = 'circle' | 'square'
 export type AvatarIconSize = 'large' | 'medium'

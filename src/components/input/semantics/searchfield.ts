@@ -19,8 +19,6 @@ class SearchField extends LitElement {
   private inputId = uniqueId('input')
 
   render() {
-    const hasValue = this.value.length > 0
-
     return html`
       <div class="textfield-control">
         <mm-icon name=${ICON_NAMES.SEARCH}></mm-icon>
@@ -33,12 +31,16 @@ class SearchField extends LitElement {
           ?disabled=${this.disabled}
           @input=${this.handleInput}
         ></mm-input>
-        ${hasValue && !this.disabled
-          ? html`
-              <mm-clear-button aria-label="검색어 지우기" @click=${this.clear}></mm-clear-button>
-            `
-          : null}
+        ${this.renderClearButton()}
       </div>
+    `
+  }
+
+  private renderClearButton() {
+    if (!this.value || this.disabled) return null
+
+    return html`
+      <mm-clear-button aria-label="검색어 지우기" @click=${this.clear}></mm-clear-button>
     `
   }
 

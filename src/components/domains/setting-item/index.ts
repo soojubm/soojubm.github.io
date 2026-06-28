@@ -50,9 +50,7 @@ export class SettingItem extends LitElement {
 
   private syncActions() {
     this.actions.forEach(action => {
-      if ('disabled' in action) {
-        action.disabled = this.disabled
-      }
+      if ('disabled' in action) action.disabled = this.disabled
     })
   }
 }

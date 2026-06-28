@@ -50,12 +50,16 @@ export class ComponentAnatomy extends LitElement {
         <div class="stage component-content-frame component-stage-frame">
           <slot></slot>
         </div>
-        ${this.normalizedParts.length
-          ? html`
-              <mm-text-list variant="number" .texts=${this.normalizedParts}></mm-text-list>
-            `
-          : nothing}
+        ${this.renderParts()}
       </mm-flex>
+    `
+  }
+
+  private renderParts() {
+    if (!this.normalizedParts.length) return nothing
+
+    return html`
+      <mm-text-list variant="number" .texts=${this.normalizedParts}></mm-text-list>
     `
   }
 

@@ -4,8 +4,8 @@ import { customElement, property } from 'lit/decorators.js'
 import type { IconName } from '@/components/icon-button/semantics/icon-names'
 import type { AriaBoolean, AriaHasPopup, AriaIdRef } from '@/types/aria'
 
+import { interactiveControlStyles } from '@/components/button/button.styles'
 import { iconButtonStyles } from '@/components/icon-button/icon-button.styles'
-import { interactiveControlStyles } from '@/stylesheets/shared/interactive-control.styles'
 
 export type IconButtonVariant = 'primary' | 'secondary' | 'tertiary' | 'ghost' | 'destructive'
 export type IconButtonSize = 'small' | 'medium'
@@ -21,14 +21,12 @@ class IconButton extends LitElement {
   @property({ type: String }) tooltip = ''
   @property({ type: String, attribute: 'tooltip-placement' }) tooltipPlacement = ''
   @property({ type: Boolean }) disabled = false
-  @property({ type: String }) role = ''
   @property({ type: String, attribute: 'aria-haspopup' }) ariaHasPopup: AriaHasPopup = null
   @property({ type: String, attribute: 'aria-expanded' }) ariaExpanded: AriaBoolean = null
   @property({ type: String, attribute: 'aria-controls' }) ariaControls: AriaIdRef = null
 
   render() {
     const control = this.renderControl()
-
     if (!this.tooltip) return control
 
     return html`
@@ -45,7 +43,6 @@ class IconButton extends LitElement {
       <button
         slot="trigger"
         type="button"
-        role=${this.role || nothing}
         aria-label="${this.accessibilityLabel}"
         ?disabled="${this.disabled}"
         aria-haspopup=${this.ariaHasPopup ?? nothing}

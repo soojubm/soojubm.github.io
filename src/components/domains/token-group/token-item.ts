@@ -23,23 +23,33 @@ export class TokenItem extends LitElement {
   render() {
     return html`
       <mm-flex gap="2" wrap>
-        ${this.index
-          ? html`
-              <mm-list-marker value=${this.index}></mm-list-marker>
-            `
-          : nothing}
-        ${this.key
-          ? html`
-              <mm-text>${this.key}</mm-text>
-            `
-          : nothing}
-        ${this.value
-          ? html`
-              <mm-text>${this.value}</mm-text>
-            `
-          : nothing}
+        ${this.renderMarker()} ${this.renderKey()} ${this.renderValue()}
       </mm-flex>
       <slot></slot>
+    `
+  }
+
+  private renderMarker() {
+    if (!this.index) return nothing
+
+    return html`
+      <mm-list-marker value=${this.index}></mm-list-marker>
+    `
+  }
+
+  private renderKey() {
+    if (!this.key) return nothing
+
+    return html`
+      <mm-text>${this.key}</mm-text>
+    `
+  }
+
+  private renderValue() {
+    if (!this.value) return nothing
+
+    return html`
+      <mm-text>${this.value}</mm-text>
     `
   }
 }

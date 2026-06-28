@@ -43,16 +43,20 @@ export class ReadMoreParagraph extends LitElement {
     return html`
       <mm-paragraph>
         <mm-text id=${this.contentId} class="content">${displayText}</mm-text>
-        ${truncated
-          ? html`
-              <mm-read-more-button
-                aria-expanded=${this.expanded ? 'true' : 'false'}
-                aria-controls=${this.contentId}
-                @click=${this.toggle}
-              ></mm-read-more-button>
-            `
-          : nothing}
+        ${this.renderToggleButton(truncated)}
       </mm-paragraph>
+    `
+  }
+
+  private renderToggleButton(truncated: boolean) {
+    if (!truncated) return nothing
+
+    return html`
+      <mm-read-more-button
+        aria-expanded=${this.expanded ? 'true' : 'false'}
+        aria-controls=${this.contentId}
+        @click=${this.toggle}
+      ></mm-read-more-button>
     `
   }
 

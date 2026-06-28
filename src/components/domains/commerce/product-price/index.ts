@@ -30,22 +30,27 @@ export class ProductPrice extends LitElement {
   render() {
     return html`
       <mm-flex direction="column" gap="2">
-        <mm-flex gap="2">
-          ${this.originalPrice
-            ? html`
-                <del>
-                  <mm-text size="18" color="light">${this.originalPrice}</mm-text>
-                </del>
-              `
-            : nothing}
-          ${this.discount
-            ? html`
-                <mm-text size="18">(${this.discount})</mm-text>
-              `
-            : nothing}
-        </mm-flex>
+        <mm-flex gap="2">${this.renderOriginalPrice()} ${this.renderDiscount()}</mm-flex>
         <mm-text size="24" weight="bold">${this.price}</mm-text>
       </mm-flex>
+    `
+  }
+
+  private renderOriginalPrice() {
+    if (!this.originalPrice) return nothing
+
+    return html`
+      <del>
+        <mm-text size="18" color="light">${this.originalPrice}</mm-text>
+      </del>
+    `
+  }
+
+  private renderDiscount() {
+    if (!this.discount) return nothing
+
+    return html`
+      <mm-text size="18">(${this.discount})</mm-text>
     `
   }
 }

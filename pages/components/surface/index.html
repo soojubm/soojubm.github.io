@@ -12,65 +12,51 @@
 
   <mm-component-example>
     <mm-flex direction="column" gap="3">
-      <mm-flex direction="column" gap="3">
+      <mm-surface variant="transparent">
         <mm-text-block
           level="3"
-          heading="Variant"
-          description="맥락의 강조 수준과 상호작용 가능성을 표현합니다."
+          heading="transparent"
+          description="투명한 배경. 클릭할 수 없다."
         ></mm-text-block>
-        <mm-surface variant="transparent">
-          <mm-text-block
-            level="3"
-            heading="transparent"
-            description="투명한 배경. 클릭할 수 없다."
-          ></mm-text-block>
-        </mm-surface>
-        <mm-surface variant="flat">
-          <mm-text-block
-            level="3"
-            heading="flat"
-            description="단순 구획을 표현. 클릭할 수 없다."
-          ></mm-text-block>
-        </mm-surface>
-        <mm-surface variant="subtle">
-          <mm-text-block
-            level="3"
-            heading="subtle"
-            description="내부에 클릭 가능한 액션이 있는 강조 표현."
-          ></mm-text-block>
-        </mm-surface>
-        <mm-surface variant="elevated">
-          <mm-text-block
-            level="3"
-            heading="elevated"
-            description="강조 표현2. 클릭할 수 있다."
-          ></mm-text-block>
-        </mm-surface>
-      </mm-flex>
+      </mm-surface>
+      <mm-surface variant="flat">
+        <mm-text-block
+          level="3"
+          heading="flat"
+          description="단순 구획을 표현. 클릭할 수 없다."
+        ></mm-text-block>
+      </mm-surface>
+      <mm-surface variant="subtle">
+        <mm-text-block
+          level="3"
+          heading="subtle"
+          description="내부에 클릭 가능한 액션이 있는 강조 표현."
+        ></mm-text-block>
+      </mm-surface>
+      <mm-surface variant="elevated">
+        <mm-text-block
+          level="3"
+          heading="elevated"
+          description="강조 표현2. 클릭할 수 있다."
+        ></mm-text-block>
+      </mm-surface>
 
       <mm-separator></mm-separator>
 
-      <mm-flex direction="column" gap="3">
+      <mm-surface radius="default">
         <mm-text-block
           level="3"
-          heading="Radius"
-          description="콘텐츠의 규모와 표면의 성격에 맞춰 모서리 값을 선택합니다."
+          heading="default radius"
+          description="기본 radius 토큰을 적용합니다."
         ></mm-text-block>
-        <mm-surface radius="default">
-          <mm-text-block
-            level="3"
-            heading="default radius"
-            description="기본 radius 토큰을 적용합니다."
-          ></mm-text-block>
-        </mm-surface>
-        <mm-surface radius="large">
-          <mm-text-block
-            level="3"
-            heading="large radius"
-            description="큰 radius 토큰을 적용합니다."
-          ></mm-text-block>
-        </mm-surface>
-      </mm-flex>
+      </mm-surface>
+      <mm-surface radius="large">
+        <mm-text-block
+          level="3"
+          heading="large radius"
+          description="큰 radius 토큰을 적용합니다."
+        ></mm-text-block>
+      </mm-surface>
     </mm-flex>
   </mm-component-example>
 

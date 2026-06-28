@@ -53,22 +53,6 @@ export class Table extends LitElement {
     const headerStyles = {
       textAlign: column.textAlign ?? null,
     }
-    const content = column.sortable
-      ? html`
-          <mm-flex
-            align-items="center"
-            justify-content=${column.textAlign === 'center'
-              ? 'center'
-              : column.textAlign === 'right'
-              ? 'flex-end'
-              : 'flex-start'}
-            gap="1"
-          >
-            ${column.label}
-            <mm-icon name="arrow-separate-vertical" size="tiny"></mm-icon>
-          </mm-flex>
-        `
-      : column.label
 
     return html`
       <th
@@ -76,8 +60,27 @@ export class Table extends LitElement {
         aria-sort=${column.sortable ? 'none' : nothing}
         style=${styleMap(headerStyles)}
       >
-        ${content}
+        ${this.renderHeaderContent(column)}
       </th>
+    `
+  }
+
+  private renderHeaderContent(column: TableColumn) {
+    if (!column.sortable) return column.label
+
+    return html`
+      <mm-flex
+        align-items="center"
+        justify-content=${column.textAlign === 'center'
+          ? 'center'
+          : column.textAlign === 'right'
+          ? 'flex-end'
+          : 'flex-start'}
+        gap="1"
+      >
+        ${column.label}
+        <mm-icon name="arrow-separate-vertical" size="tiny"></mm-icon>
+      </mm-flex>
     `
   }
 

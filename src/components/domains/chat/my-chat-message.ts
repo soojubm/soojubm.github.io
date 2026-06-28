@@ -31,12 +31,16 @@ export class MyChatMessage extends LitElement {
     return html`
       <mm-flex direction="column" gap="2" align-items="end">
         <slot></slot>
-        ${this.datetime
-          ? html`
-              <mm-text class="time" as="time" size="12" weight="medium">${this.datetime}</mm-text>
-            `
-          : nothing}
+        ${this.renderTime()}
       </mm-flex>
+    `
+  }
+
+  private renderTime() {
+    if (!this.datetime) return nothing
+
+    return html`
+      <mm-text class="time" as="time" size="12" weight="medium">${this.datetime}</mm-text>
     `
   }
 }

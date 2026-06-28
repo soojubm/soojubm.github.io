@@ -30,13 +30,17 @@ export class ToggleButton extends LitElement {
         aria-label=${this.ariaLabel || nothing}
         @click=${this.handleClick}
       >
-        ${this.icon
-          ? html`
-              <mm-icon name=${this.icon}></mm-icon>
-            `
-          : nothing}
+        ${this.renderIcon()}
         <slot></slot>
       </button>
+    `
+  }
+
+  private renderIcon() {
+    if (!this.icon) return nothing
+
+    return html`
+      <mm-icon name=${this.icon}></mm-icon>
     `
   }
 

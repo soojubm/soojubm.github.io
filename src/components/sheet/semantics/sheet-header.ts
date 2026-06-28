@@ -21,21 +21,25 @@ class SheetHeader extends LitElement {
   @property({ type: String }) heading = ''
   @property({ type: Boolean, attribute: 'close-button' }) closeButton = true
 
-  private handleClose = () => {
-    emit(this, 'sheetclose')
-  }
-
   render() {
     return html`
       <header role="navigation">
         <mm-paragraph size="large">${this.heading}</mm-paragraph>
-        ${this.closeButton
-          ? html`
-              <mm-close-button @close=${this.handleClose}></mm-close-button>
-            `
-          : nothing}
+        ${this.renderCloseButton()}
       </header>
     `
+  }
+
+  private renderCloseButton() {
+    if (!this.closeButton) return nothing
+
+    return html`
+      <mm-close-button @close=${this.handleClose}></mm-close-button>
+    `
+  }
+
+  private handleClose = () => {
+    emit(this, 'sheetclose')
   }
 }
 

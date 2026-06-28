@@ -36,6 +36,10 @@ const gapMap: Record<GapAlias, string> = {
  * 범용 flexbox 레이아웃 프리미티브.
  * 의미별 그룹핑(button/tag/avatar 등)은 각 시멘틱 컴포넌트가 담당하고,
  * mm-flex 는 순수 레이아웃만 책임진다.
+ *
+ * 기본(as="div")은 host 자체가 flex 컨테이너이며, 레이아웃은 reflect된 attribute를
+ * 받는 :host 셀렉터로 적용한다(인라인 스타일 없음). gap만 임의 값이라 custom property로 넘긴다.
+ * 시멘틱 랜드마크가 필요한 경우(as="section" 등)에만 내부 요소를 컨테이너로 사용한다.
  */
 @customElement('mm-flex')
 export class Flex extends LitElement {
@@ -44,33 +48,88 @@ export class Flex extends LitElement {
     css`
       :host {
         display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: stretch;
+        gap: var(--_flex-gap, var(--space-2));
+      }
+
+      /* 시멘틱 래퍼를 쓰는 경우 host는 단순 박스이고 내부 요소가 flex 컨테이너다. */
+      :host([as='header']),
+      :host([as='section']),
+      :host([as='footer']),
+      :host([as='nav']) {
+        display: block;
+      }
+
+      :host([direction='column']) {
+        flex-direction: column;
+      }
+
+      :host([wrap]) {
+        flex-wrap: wrap;
+      }
+
+      :host([justify-content='center']) {
+        justify-content: center;
+      }
+      :host([justify-content='end']),
+      :host([justify-content='flex-end']) {
+        justify-content: flex-end;
+      }
+      :host([justify-content='between']),
+      :host([justify-content='space-between']) {
+        justify-content: space-between;
+      }
+      :host([justify-content='around']),
+      :host([justify-content='space-around']) {
+        justify-content: space-around;
+      }
+
+      :host([align-items='center']) {
+        align-items: center;
+      }
+      :host([align-items='start']),
+      :host([align-items='flex-start']) {
+        align-items: flex-start;
+      }
+      :host([align-items='end']),
+      :host([align-items='flex-end']) {
+        align-items: flex-end;
+      }
+      :host([align-items='baseline']) {
+        align-items: baseline;
+      }
+
+      :host([stretch]) ::slotted(*) {
+        flex: 1;
       }
 
       .flex {
         display: flex;
         width: 100%;
       }
-
-      :host([stretch]) .flex ::slotted(*) {
-        flex: 1;
-      }
     `,
   ]
 
-  @property({ type: String }) direction: Direction = 'row'
-  @property({ type: String, attribute: 'justify-content' }) justifyContent: JustifyContent =
-    'flex-start'
-  @property({ type: String, attribute: 'align-items' }) alignItems: AlignItems = 'stretch'
+  @property({ type: String, reflect: true }) direction: Direction = 'row'
+  @property({ type: String, attribute: 'justify-content', reflect: true })
+  justifyContent: JustifyContent = 'flex-start'
+  @property({ type: String, attribute: 'align-items', reflect: true }) alignItems: AlignItems =
+    'stretch'
   @property({ type: String }) gap = '2'
-  @property({ type: String }) as: FlexAs = 'div'
-  @property({ type: Boolean }) wrap = false
+  @property({ type: String, reflect: true }) as: FlexAs = 'div'
+  @property({ type: Boolean, reflect: true }) wrap = false
   @property({ type: Boolean, reflect: true }) stretch = false
 
   render() {
-    const styles = styleMap(this.styles)
     const content = html`
       <slot></slot>
     `
+
+    if (this.as === 'div') return content
+
+    const styles = styleMap(this.layoutStyles)
 
     if (this.as === 'header') {
       return html`
@@ -90,27 +149,42 @@ export class Flex extends LitElement {
       `
     }
 
-    if (this.as === 'nav') {
-      return html`
-        <nav class="flex" style=${styles}>${content}</nav>
-      `
-    }
-
     return html`
-      <div class="flex" role="group" style=${styles}>${content}</div>
+      <nav class="flex" style=${styles}>${content}</nav>
     `
   }
 
-  private get styles() {
-    const gap =
+  /** 기본 as="div"는 host가 flex 컨테이너이므로 group role과 gap만 host에 부여한다. */
+  protected willUpdate() {
+    if (this.as !== 'div') {
+      this.removeAttribute('role')
+      this.style.removeProperty('--_flex-gap')
+      return
+    }
+
+    this.setAttribute('role', 'group')
+
+    if (this.gap === '2') {
+      this.style.removeProperty('--_flex-gap')
+      return
+    }
+    this.style.setProperty('--_flex-gap', this.gapValue)
+  }
+
+  private get gapValue() {
+    return (
       gapMap[this.gap as GapAlias] ??
       (/^\d+$/.test(this.gap) ? `var(--space-${this.gap})` : this.gap)
+    )
+  }
 
+  /** 시멘틱 래퍼(as !== 'div')의 내부 flex 요소에만 사용하는 레이아웃 스타일. */
+  private get layoutStyles() {
     return {
       flexDirection: this.direction,
       justifyContent: justifyMap[this.justifyContent as JustifyAlias] ?? this.justifyContent,
       alignItems: alignMap[this.alignItems as AlignAlias] ?? this.alignItems,
-      gap,
+      gap: this.gapValue,
       flexWrap: this.wrap ? 'wrap' : 'nowrap',
     }
   }

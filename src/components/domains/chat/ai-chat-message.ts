@@ -31,18 +31,17 @@ export class AiChatMessage extends LitElement {
     return html`
       <mm-flex direction="column" gap="2">
         <slot></slot>
-        ${this.datetime
-          ? html`
-              <mm-text class="time" as="time" size="12" weight="medium">${this.datetime}</mm-text>
-            `
-          : nothing}
-        ${this.renderReactions()}
+        ${this.renderTime()} ${this.renderReactions()}
       </mm-flex>
     `
   }
 
-  private emitReaction(reaction: string) {
-    emit(this, 'chat-reaction', { reaction })
+  private renderTime() {
+    if (!this.datetime) return nothing
+
+    return html`
+      <mm-text class="time" as="time" size="12" weight="medium">${this.datetime}</mm-text>
+    `
   }
 
   private renderReactions() {
@@ -73,6 +72,10 @@ export class AiChatMessage extends LitElement {
         ></mm-icon-button>
       </mm-button-group>
     `
+  }
+
+  private emitReaction(reaction: string) {
+    emit(this, 'chat-reaction', { reaction })
   }
 }
 

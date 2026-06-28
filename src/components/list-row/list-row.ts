@@ -27,57 +27,76 @@ export class ListRow extends LitElement {
   @state() private hasAvatar = false
 
   render() {
-    const hasLeading = !!(this.icon || this.avatarSrc || this.emoji || this.hasAvatar)
-
     return html`
       <div class="list-row">
-        ${hasLeading
-          ? html`
-              <span class="list-row-leading">
-                ${this.emoji
-                  ? html`
-                      <span class="list-row-emoji" aria-hidden="true">${this.emoji}</span>
-                    `
-                  : this.hasAvatar
-                  ? html`
-                      <slot name="avatar" @slotchange=${this.handleAvatarSlotChange}></slot>
-                    `
-                  : html`
-                      <mm-avatar
-                        size=${this.size}
-                        variant=${this.avatarVariant}
-                        icon=${this.icon || nothing}
-                        src=${this.avatarSrc || nothing}
-                      ></mm-avatar>
-                    `}
-              </span>
-            `
-          : html`
-              <slot name="avatar" hidden @slotchange=${this.handleAvatarSlotChange}></slot>
-            `}
-        <span class="list-row-content">
-          ${this.label
-            ? html`
-                <mm-text size=${this.size === 'large' || this.size === 'huge' ? '18' : '14'}>
-                  ${this.label}
-                </mm-text>
-              `
-            : html`
-                <slot></slot>
-              `}
-          ${this.description
-            ? html`
-                <mm-text class="list-row-description" size="14" color="light">
-                  ${this.description}
-                </mm-text>
-              `
-            : nothing}
-        </span>
+        ${this.renderLeading()}
+        <span class="list-row-content">${this.renderLabel()} ${this.renderDescription()}</span>
         <span class="list-row-trailing" ?hidden=${!this.hasTrailing}>
           <slot name="trailing" @slotchange=${this.handleTrailingSlotChange}></slot>
         </span>
       </div>
     `
+  }
+
+  private renderLeading() {
+    if (!this.hasLeading) {
+      return html`
+        <slot name="avatar" hidden @slotchange=${this.handleAvatarSlotChange}></slot>
+      `
+    }
+
+    return html`
+      <span class="list-row-leading">${this.renderLeadingContent()}</span>
+    `
+  }
+
+  private renderLeadingContent() {
+    if (this.emoji) {
+      return html`
+        <span class="list-row-emoji" aria-hidden="true">${this.emoji}</span>
+      `
+    }
+
+    if (this.hasAvatar) {
+      return html`
+        <slot name="avatar" @slotchange=${this.handleAvatarSlotChange}></slot>
+      `
+    }
+
+    return html`
+      <mm-avatar
+        size=${this.size}
+        variant=${this.avatarVariant}
+        icon=${this.icon || nothing}
+        src=${this.avatarSrc || nothing}
+      ></mm-avatar>
+    `
+  }
+
+  private renderLabel() {
+    if (!this.label) {
+      return html`
+        <slot></slot>
+      `
+    }
+
+    return html`
+      <mm-text size=${this.size === 'large' || this.size === 'huge' ? '18' : '14'}>
+        ${this.label}
+      </mm-text>
+    `
+  }
+
+  private renderDescription() {
+    if (!this.description) return nothing
+
+    return html`
+      <mm-text class="list-row-description" size="14" color="light">${this.description}</mm-text>
+    `
+  }
+
+  private get hasLeading() {
+    return !!(this.icon || this.avatarSrc || this.emoji || this.hasAvatar)
   }
 
   private handleAvatarSlotChange(event: Event) {

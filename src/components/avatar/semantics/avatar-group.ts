@@ -62,20 +62,28 @@ export class AvatarGroup extends LitElement {
                 <mm-avatar size=${this.size} .src=${src || undefined}></mm-avatar>
               `,
           )}
-          ${overflowCount > 0
-            ? html`
-                <mm-avatar size=${this.size}>
-                  <mm-text size="12">+${overflowCount}</mm-text>
-                </mm-avatar>
-              `
-            : nothing}
+          ${this.renderOverflow(overflowCount)}
         </div>
-        ${this.label
-          ? html`
-              <mm-text class="label">${this.label}</mm-text>
-            `
-          : nothing}
+        ${this.renderLabel()}
       </mm-flex>
+    `
+  }
+
+  private renderOverflow(overflowCount: number) {
+    if (overflowCount <= 0) return nothing
+
+    return html`
+      <mm-avatar size=${this.size}>
+        <mm-text size="12">+${overflowCount}</mm-text>
+      </mm-avatar>
+    `
+  }
+
+  private renderLabel() {
+    if (!this.label) return nothing
+
+    return html`
+      <mm-text class="label">${this.label}</mm-text>
     `
   }
 }

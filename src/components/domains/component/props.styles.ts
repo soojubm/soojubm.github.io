@@ -46,7 +46,7 @@ export const componentPropsStyles = [
     }
     .component-props-more {
       display: flex;
-      padding: 0.75rem 2rem 2rem calc(var(--layout-padding-inline) - 1rem);
+      padding: 0.75rem var(--component-content-padding-inline) 2rem;
       background-color: inherit;
       position: absolute;
       left: 0;

@@ -68,9 +68,7 @@ class Sheet extends LitElement {
   }
 
   protected updated(changedProperties: Map<string, unknown>) {
-    if (changedProperties.has('isOpen') || changedProperties.has('variant')) {
-      this.syncScrollLock()
-    }
+    if (changedProperties.has('isOpen') || changedProperties.has('variant')) this.syncScrollLock()
   }
 
   private syncScrollLock() {

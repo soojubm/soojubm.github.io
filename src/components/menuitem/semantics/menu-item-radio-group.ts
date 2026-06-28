@@ -44,9 +44,7 @@ export class MenuItemRadioGroup extends LitElement {
 
     // 그룹 내의 모든 라디오 버튼을 찾아 현재 선택된 것 외에는 전부 체크 해제합니다.
     this.radios.forEach(radio => {
-      if (radio !== target) {
-        radio.checked = false
-      }
+      if (radio !== target) radio.checked = false
     })
 
     // 최종적으로 그룹 차원의 change 이벤트를 외부에 발생시킵니다.
@@ -57,9 +55,7 @@ export class MenuItemRadioGroup extends LitElement {
   private handleSlotChange() {
     this.radios.forEach(radio => {
       if (this.name) radio.name = this.name
-      if (this.value && radio.value === this.value) {
-        radio.checked = true
-      }
+      if (this.value && radio.value === this.value) radio.checked = true
     })
   }
 }

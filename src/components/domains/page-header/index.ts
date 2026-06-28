@@ -32,14 +32,16 @@ export class PageHeader extends LitElement {
         align-items=${this.centered ? 'center' : 'start'}
       >
         <mm-text as="h1" size="32" weight="bold">${this.heading}</mm-text>
-        ${this.description
-          ? html`
-              <mm-paragraph size="large" ?centered=${this.centered}>
-                ${this.description}
-              </mm-paragraph>
-            `
-          : null}
+        ${this.renderDescription()}
       </mm-flex>
+    `
+  }
+
+  private renderDescription() {
+    if (!this.description) return null
+
+    return html`
+      <mm-paragraph size="large" ?centered=${this.centered}>${this.description}</mm-paragraph>
     `
   }
 }

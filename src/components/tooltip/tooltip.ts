@@ -70,11 +70,8 @@ class Tooltip extends LitElement {
         .split(/\s+/)
         .filter(id => id && id !== this.contentId)
 
-      if (descriptions.length) {
-        target.setAttribute('aria-describedby', descriptions.join(' '))
-      } else {
-        target.removeAttribute('aria-describedby')
-      }
+      if (descriptions.length) target.setAttribute('aria-describedby', descriptions.join(' '))
+      else target.removeAttribute('aria-describedby')
     })
     this.descriptionTargets.clear()
   }

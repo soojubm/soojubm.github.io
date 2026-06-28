@@ -25,13 +25,16 @@ export function renderMenuItemContent(props: MenuItemProps, action: unknown) {
       avatar-variant=${props.avatarVariant}
     >
       <slot name="avatar" slot="avatar"></slot>
-      ${props.label
-        ? nothing
-        : html`
-            <slot name="text"></slot>
-            <slot></slot>
-          `}
-      ${action}
+      ${renderTextSlots(props)} ${action}
     </mm-list-row>
+  `
+}
+
+function renderTextSlots(props: MenuItemProps) {
+  if (props.label) return nothing
+
+  return html`
+    <slot name="text"></slot>
+    <slot></slot>
   `
 }

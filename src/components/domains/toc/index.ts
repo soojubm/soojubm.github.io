@@ -219,9 +219,7 @@ export class TableOfContents extends LitElement {
     const indicatorRect = indicator.getBoundingClientRect()
     const nextY = itemRect.top - listRect.top + itemRect.height / 2 - indicatorRect.height / 2
 
-    if (this.indicatorY !== nextY) {
-      this.indicatorY = nextY
-    }
+    if (this.indicatorY !== nextY) this.indicatorY = nextY
   }
 
   private scrollToItem(id: string) {

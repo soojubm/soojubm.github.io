@@ -137,21 +137,13 @@ export class Marquee extends LitElement {
       this.queueMeasure()
     }
 
-    if (changed.has('speed')) {
-      this.queueMeasure()
-    }
+    if (changed.has('speed')) this.queueMeasure()
 
-    if (changed.has('distance')) {
-      this.style.setProperty('--marquee-distance', `${this.distance}px`)
-    }
+    if (changed.has('distance')) this.style.setProperty('--marquee-distance', `${this.distance}px`)
 
-    if (changed.has('duration')) {
-      this.style.setProperty('--marquee-duration', `${this.duration}s`)
-    }
+    if (changed.has('duration')) this.style.setProperty('--marquee-duration', `${this.duration}s`)
 
-    if (changed.has('copyCount')) {
-      this.syncClones()
-    }
+    if (changed.has('copyCount')) this.syncClones()
   }
 
   disconnectedCallback() {

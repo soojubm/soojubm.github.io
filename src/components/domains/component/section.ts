@@ -36,15 +36,19 @@ class ComponentSection extends LitElement {
       <mm-flex as="section" class="component-section" direction="column" gap="2">
         <div hidden><mm-tag>${this.level === 'domain' ? 'Domain' : 'Semantic'}</mm-tag></div>
         <mm-text size="24" weight="bold" as="h3">${this.heading}</mm-text>
-        ${this.description
-          ? html`
-              <mm-paragraph>${this.description}</mm-paragraph>
-            `
-          : nothing}
+        ${this.renderDescription()}
         <div class="content component-content-frame ${this.hasContent ? 'has-content' : ''}">
           <slot @slotchange=${this.onSlotChange}></slot>
         </div>
       </mm-flex>
+    `
+  }
+
+  private renderDescription() {
+    if (!this.description) return nothing
+
+    return html`
+      <mm-paragraph>${this.description}</mm-paragraph>
     `
   }
 

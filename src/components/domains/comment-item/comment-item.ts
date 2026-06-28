@@ -97,53 +97,64 @@ export class CommentItem extends LitElement {
     return html`
       <article class="item">
         <mm-user-row label=${this.author} description=${this.datetime} avatar-src=${this.avatarSrc}>
-          ${this.editable
-            ? html`
-                <mm-more-button
-                  slot="trailing"
-                  aria-label="댓글 메뉴"
-                  aria-controls=${this.menuId}
-                  aria-expanded=${this.menuOpen ? 'true' : 'false'}
-                  @click=${this.toggleMenu}
-                ></mm-more-button>
-              `
-            : ''}
+          ${this.renderMenuTrigger()}
         </mm-user-row>
 
         <slot></slot>
 
-        ${this.replyLabel
-          ? html`
-              <mm-button
-                class="reply"
-                variant="ghost"
-                size="small"
-                @click=${() => this.emitAction('reply')}
-              >
-                ${this.replyLabel}
-              </mm-button>
-            `
-          : ''}
-        ${this.editable
-          ? html`
-              <menu id=${this.menuId} class="menu" data-open=${this.menuOpen ? 'true' : 'false'}>
-                <mm-menu-item-action
-                  label="수정"
-                  @click=${() => this.onMenuAction('edit')}
-                ></mm-menu-item-action>
-                <mm-menu-item-action
-                  label="삭제"
-                  tone="danger"
-                  @click=${() => this.onMenuAction('delete')}
-                ></mm-menu-item-action>
-              </menu>
-            `
-          : ''}
+        ${this.renderReplyButton()} ${this.renderMenu()}
 
         <div class="replies" ?hidden=${!this.hasReplies}>
           <slot name="replies" @slotchange=${this.onRepliesSlotChange}></slot>
         </div>
       </article>
+    `
+  }
+
+  private renderMenuTrigger() {
+    if (!this.editable) return ''
+
+    return html`
+      <mm-more-button
+        slot="trailing"
+        aria-label="댓글 메뉴"
+        aria-controls=${this.menuId}
+        aria-expanded=${this.menuOpen ? 'true' : 'false'}
+        @click=${this.toggleMenu}
+      ></mm-more-button>
+    `
+  }
+
+  private renderReplyButton() {
+    if (!this.replyLabel) return ''
+
+    return html`
+      <mm-button
+        class="reply"
+        variant="ghost"
+        size="small"
+        @click=${() => this.emitAction('reply')}
+      >
+        ${this.replyLabel}
+      </mm-button>
+    `
+  }
+
+  private renderMenu() {
+    if (!this.editable) return ''
+
+    return html`
+      <menu id=${this.menuId} class="menu" data-open=${this.menuOpen ? 'true' : 'false'}>
+        <mm-menu-item-action
+          label="수정"
+          @click=${() => this.onMenuAction('edit')}
+        ></mm-menu-item-action>
+        <mm-menu-item-action
+          label="삭제"
+          tone="danger"
+          @click=${() => this.onMenuAction('delete')}
+        ></mm-menu-item-action>
+      </menu>
     `
   }
 

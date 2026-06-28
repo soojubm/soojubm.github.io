@@ -91,44 +91,63 @@ export class PortfolioItem extends LitElement {
         @click=${this.open}
         @keydown=${this.handleKeyDown}
       >
-        ${this.badge
-          ? html`
-              <mm-accent-tag class="badge">${this.badge}</mm-accent-tag>
-            `
-          : nothing}
+        ${this.renderBadge()}
         <mm-more-button class="action"></mm-more-button>
-        ${this.src
-          ? html`
-              <mm-thumbnail src=${this.src} alt=${this.alt}></mm-thumbnail>
-            `
-          : nothing}
+        ${this.renderThumbnail()}
         <mm-flex class="content" direction="column" gap="1">
-          ${this.label
-            ? html`
-                <mm-heading level="3">${this.label}</mm-heading>
-              `
-            : nothing}
-          ${this.description
-            ? html`
-                <mm-paragraph>${this.description}</mm-paragraph>
-              `
-            : nothing}
-          ${this.datetime
-            ? html`
-                <time hidden datetime=${this.datetime}>${this.formattedDatetime}</time>
-              `
-            : nothing}
-          ${this.keywords.length
-            ? html`
-                <mm-keyword-tag-group
-                  class="keyword-tags"
-                  .keywords=${this.keywords}
-                ></mm-keyword-tag-group>
-              `
-            : nothing}
+          ${this.renderHeading()} ${this.renderDescription()} ${this.renderDatetime()}
+          ${this.renderKeywords()}
           <slot></slot>
         </mm-flex>
       </article>
+    `
+  }
+
+  private renderBadge() {
+    if (!this.badge) return nothing
+
+    return html`
+      <mm-accent-tag class="badge">${this.badge}</mm-accent-tag>
+    `
+  }
+
+  private renderThumbnail() {
+    if (!this.src) return nothing
+
+    return html`
+      <mm-thumbnail src=${this.src} alt=${this.alt}></mm-thumbnail>
+    `
+  }
+
+  private renderHeading() {
+    if (!this.label) return nothing
+
+    return html`
+      <mm-heading level="3">${this.label}</mm-heading>
+    `
+  }
+
+  private renderDescription() {
+    if (!this.description) return nothing
+
+    return html`
+      <mm-paragraph>${this.description}</mm-paragraph>
+    `
+  }
+
+  private renderDatetime() {
+    if (!this.datetime) return nothing
+
+    return html`
+      <time hidden datetime=${this.datetime}>${this.formattedDatetime}</time>
+    `
+  }
+
+  private renderKeywords() {
+    if (!this.keywords.length) return nothing
+
+    return html`
+      <mm-keyword-tag-group class="keyword-tags" .keywords=${this.keywords}></mm-keyword-tag-group>
     `
   }
 

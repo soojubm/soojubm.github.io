@@ -57,9 +57,8 @@ export class MenuItemCheckboxGroup extends LitElement {
   private handleSlotChange() {
     // 마크업의 초기 checked 상태를 values로 흡수
     const preselected = this.checkboxes.filter(cb => cb.checked).map(cb => cb.value)
-    if (preselected.length && !this.values.length) {
-      this.values = preselected
-    }
+    if (preselected.length && !this.values.length) this.values = preselected
+
     // values 기준으로 동기화
     this.checkboxes.forEach(cb => {
       cb.checked = this.values.includes(cb.value)

@@ -37,11 +37,7 @@ export class Dialog extends LitElement {
         <mm-sheet-header heading=${this.heading} .closeButton=${false}></mm-sheet-header>
 
         <mm-sheet-body>
-          ${this.description
-            ? html`
-                <mm-paragraph>${this.description}</mm-paragraph>
-              `
-            : nothing}
+          ${this.renderDescription()}
           <slot></slot>
         </mm-sheet-body>
 
@@ -50,6 +46,14 @@ export class Dialog extends LitElement {
           .secondaryAction=${this.secondaryAction}
         ></mm-sheet-footer>
       </mm-sheet>
+    `
+  }
+
+  private renderDescription() {
+    if (!this.description) return nothing
+
+    return html`
+      <mm-paragraph>${this.description}</mm-paragraph>
     `
   }
 
@@ -66,11 +70,8 @@ export class Dialog extends LitElement {
   updated(changed: Map<string, unknown>) {
     if (!changed.has('open')) return
     this.updateComplete.then(() => {
-      if (this.open) {
-        this.sheet?.open()
-      } else {
-        this.sheet?.close()
-      }
+      if (this.open) this.sheet?.open()
+      else this.sheet?.close()
     })
   }
 

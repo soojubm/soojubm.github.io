@@ -110,11 +110,8 @@ export class Sidebar extends LitElement {
   private handleGroupToggle(groupId: string) {
     const nextOpenGroupIds = new Set(this.openGroupIds)
 
-    if (nextOpenGroupIds.has(groupId)) {
-      nextOpenGroupIds.delete(groupId)
-    } else {
-      nextOpenGroupIds.add(groupId)
-    }
+    if (nextOpenGroupIds.has(groupId)) nextOpenGroupIds.delete(groupId)
+    else nextOpenGroupIds.add(groupId)
 
     this.openGroupIds = nextOpenGroupIds
   }

@@ -247,43 +247,41 @@
     heading="Button Group"
     description="버튼 그룹은 관련된 액션을 묶어 사용자가 선택할 수 있도록 합니다. 항상primary action에 먼저 포커스되어야 합니다. tabindex는 불필요. 마크업 순서와 정렬 스타일링으로 해결."
   >
-    <div>
-      <mm-paragraph-group>
-        <dl>
-          <dt>primaryAction</dt>
-          <dd>{label: string, onClick: () => void}</dd>
-          <dt>secondaryAction</dt>
-          <dd>{label: string, onClick: () => void}</dd>
-        </dl>
-      </mm-paragraph-group>
-      <mm-flex direction="column" gap="1.5rem">
-        <mm-button-group>
-          <mm-button variant="tertiary" size="large">취소</mm-button>
-          <mm-button variant="primary" size="large">저장</mm-button>
-        </mm-button-group>
-        <mm-button-group>
-          <mm-button variant="ghost" size="large">건너뛰기</mm-button>
-          <mm-button variant="secondary" size="large">다음</mm-button>
-        </mm-button-group>
-        <mm-button-group>
-          <mm-button variant="tertiary" size="large">이전</mm-button>
-          <mm-button variant="secondary" size="large">다음</mm-button>
-        </mm-button-group>
-        <mm-button-group class="hero-actions">
-          <mm-button variant="primary" size="large" href="#components">지금 가입하기</mm-button>
-          <mm-button variant="ghost" size="large">더 알아보기</mm-button>
-        </mm-button-group>
-      </mm-flex>
-      <mm-surface>
-        <mm-paragraph>이 문서가 도움이 되었나요?</mm-paragraph>
-        <small heading="17 out of 439 found this helpful">417명 중 349명이 도움을 받았어요.</small>
-        <div style="height: 1rem"></div>
-        <mm-button-group>
-          <mm-button>도움이 됐어요</mm-button>
-          <mm-button>부족해요</mm-button>
-        </mm-button-group>
-      </mm-surface>
-    </div>
+    <mm-paragraph-group>
+      <dl>
+        <dt>primaryAction</dt>
+        <dd>{label: string, onClick: () => void}</dd>
+        <dt>secondaryAction</dt>
+        <dd>{label: string, onClick: () => void}</dd>
+      </dl>
+    </mm-paragraph-group>
+    <mm-flex direction="column" gap="1.5rem">
+      <mm-button-group>
+        <mm-button variant="tertiary" size="large">취소</mm-button>
+        <mm-button variant="primary" size="large">저장</mm-button>
+      </mm-button-group>
+      <mm-button-group>
+        <mm-button variant="ghost" size="large">건너뛰기</mm-button>
+        <mm-button variant="secondary" size="large">다음</mm-button>
+      </mm-button-group>
+      <mm-button-group>
+        <mm-button variant="tertiary" size="large">이전</mm-button>
+        <mm-button variant="secondary" size="large">다음</mm-button>
+      </mm-button-group>
+      <mm-button-group class="hero-actions">
+        <mm-button variant="primary" size="large" href="#components">지금 가입하기</mm-button>
+        <mm-button variant="ghost" size="large">더 알아보기</mm-button>
+      </mm-button-group>
+    </mm-flex>
+    <mm-surface>
+      <mm-paragraph>이 문서가 도움이 되었나요?</mm-paragraph>
+      <small heading="17 out of 439 found this helpful">417명 중 349명이 도움을 받았어요.</small>
+      <div style="height: 1rem"></div>
+      <mm-button-group>
+        <mm-button>도움이 됐어요</mm-button>
+        <mm-button>부족해요</mm-button>
+      </mm-button-group>
+    </mm-surface>
   </mm-component-section>
 
   <mm-component-section
@@ -340,28 +338,24 @@
     description="목록의 재정렬Sort을 위한 옵션 목록을 group으로 제공하지 마세요. 현재 정렬 상태만 요약 표기하고
     확장가능한 메뉴로 정렬 목록을 제공하세요. (bad case: 2022.04 구글 지도 바뀐 것)"
   >
-    <div>
-      <mm-paragraph>TODO fit-content/full-width</mm-paragraph>
-      <mm-dropdown id="my-dropdown">
-        <mm-button slot="trigger" size="small">최신순</mm-button>
-        <option value="profile">최신순</option>
-        <option value="settings">오래된순</option>
-        <option value="notice" type="checkbox" checked>공지사항 알림 받기</option>
-        <option value="marketing" type="checkbox">마케팅 정보 수신 동의</option>
-      </mm-dropdown>
-    </div>
+    <mm-paragraph>TODO fit-content/full-width</mm-paragraph>
+    <mm-dropdown id="my-dropdown">
+      <mm-button slot="trigger" size="small">최신순</mm-button>
+      <option value="profile">최신순</option>
+      <option value="settings">오래된순</option>
+      <option value="notice" type="checkbox" checked>공지사항 알림 받기</option>
+      <option value="marketing" type="checkbox">마케팅 정보 수신 동의</option>
+    </mm-dropdown>
   </mm-component-section>
 
   <mm-component-section heading="FileUpload Button" description="이미지 업로드와 파일 업로드 구분">
-    <div>
-      <mm-file-upload-button
-        label="사진 업로드. 여기로 드래그 하셔도 되어요."
-        helper="Only .jpg and .png files. 500kb max file size."
-        accept=".jpg,.png"
-        capture
-        multiple
-      ></mm-file-upload-button>
-    </div>
+    <mm-file-upload-button
+      label="사진 업로드. 여기로 드래그 하셔도 되어요."
+      helper="Only .jpg and .png files. 500kb max file size."
+      accept=".jpg,.png"
+      capture
+      multiple
+    ></mm-file-upload-button>
   </mm-component-section>
 
   <mm-component-section heading="ToTopButton" description="페이지 최상단으로 스크롤합니다.">

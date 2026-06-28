@@ -59,9 +59,7 @@ export default class TabList extends LitElement {
   }
 
   protected updated(changedProperties: Map<string, unknown>) {
-    if (changedProperties.has('value') || changedProperties.has('variant')) {
-      this.sync()
-    }
+    if (changedProperties.has('value') || changedProperties.has('variant')) this.sync()
   }
 
   private handleSlotChange = () => {
@@ -131,16 +129,12 @@ export default class TabList extends LitElement {
         if (!panel.id) panel.id = `${this.tabsId}-panel-${index + 1}`
         tab.setAttribute('aria-controls', panel.id)
         panel.setAttribute('aria-labelledby', tab.id)
-      } else {
-        tab.removeAttribute('aria-controls')
-      }
+      } else {tab.removeAttribute('aria-controls')}
     })
 
     panels.forEach(panel => {
       panel.active = panel.value === selectedValue
-      if (!tabs.some(tab => tab.value === panel.value)) {
-        panel.removeAttribute('aria-labelledby')
-      }
+      if (!tabs.some(tab => tab.value === panel.value)) panel.removeAttribute('aria-labelledby')
     })
 
     this.moveIndicator()

@@ -58,9 +58,7 @@ export class Pagination extends LitElement {
     const siblingCount = Math.max(0, Math.floor(this.siblingCount))
     const totalNumbers = siblingCount * 2 + 5
 
-    if (pageCount <= totalNumbers) {
-      return Array.from({ length: pageCount }, (_, index) => index + 1)
-    }
+    if (pageCount <= totalNumbers) return Array.from({ length: pageCount }, (_, index) => index + 1)
 
     const leftSibling = Math.max(currentPage - siblingCount, 1)
     const rightSibling = Math.min(currentPage + siblingCount, pageCount)

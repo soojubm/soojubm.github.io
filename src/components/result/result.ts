@@ -25,13 +25,7 @@ class Result extends LitElement {
 
     return html`
       <div role="status" class="result">
-        <slot name="avatar">
-          ${this.avatarIcon
-            ? html`
-                <mm-avatar size="huge" variant="secondary" icon=${this.avatarIcon}></mm-avatar>
-              `
-            : nothing}
-        </slot>
+        <slot name="avatar">${this.renderAvatar()}</slot>
         <mm-text-block
           level="3"
           heading=${this.heading}
@@ -47,24 +41,36 @@ class Result extends LitElement {
           wrap
           ?hidden=${!hasActions}
         >
-          ${this.primaryAction
-            ? html`
-                <mm-button
-                  variant="primary"
-                  size="large"
-                  ?disabled=${this.primaryAction.disabled}
-                  @click=${this.handlePrimaryActionClick}
-                >
-                  ${this.primaryAction.label}
-                </mm-button>
-              `
-            : nothing}
+          ${this.renderPrimaryAction()}
           <slot
             name="action"
             @slotchange=${(event: Event) => this.handleSlotChange('action', event)}
           ></slot>
         </mm-button-group>
       </div>
+    `
+  }
+
+  private renderAvatar() {
+    if (!this.avatarIcon) return nothing
+
+    return html`
+      <mm-avatar size="huge" variant="secondary" icon=${this.avatarIcon}></mm-avatar>
+    `
+  }
+
+  private renderPrimaryAction() {
+    if (!this.primaryAction) return nothing
+
+    return html`
+      <mm-button
+        variant="primary"
+        size="large"
+        ?disabled=${this.primaryAction.disabled}
+        @click=${this.handlePrimaryActionClick}
+      >
+        ${this.primaryAction.label}
+      </mm-button>
     `
   }
 

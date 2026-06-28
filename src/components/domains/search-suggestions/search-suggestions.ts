@@ -61,9 +61,7 @@ export class SearchSuggestions extends LitElement {
   }
 
   updated(changed: Map<string, unknown>) {
-    if (changed.has('bleed')) {
-      this.style.setProperty('--_bleed', this.bleed ?? '0px')
-    }
+    if (changed.has('bleed')) this.style.setProperty('--_bleed', this.bleed ?? '0px')
   }
 }
 

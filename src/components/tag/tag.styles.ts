@@ -104,6 +104,7 @@ export const tagStyles = css`
     --tag-size: var(--size-small);
     --tag-padding-inline: var(--space-2);
     --tag-gap: var(--space-1);
+    --tag-border: var(--border);
     --tag-radius: var(--radius);
     --tag-font-size: var(--font-size-12);
 
@@ -137,23 +138,16 @@ export const tagStyles = css`
   time {
     display: inline-flex;
     align-items: center;
-    gap: var(--tag-gap);
     min-height: var(--tag-size);
+    gap: var(--tag-gap);
     padding-inline: var(--tag-padding-inline);
     border-radius: var(--tag-radius);
-    border: var(--border-transparent);
+    border: var(--tag-border);
     box-sizing: border-box;
     white-space: nowrap;
     font-size: var(--tag-font-size);
-    font-weight: var(--font-weight);
     line-height: 1;
   }
 
   ${unsafeCSS(toneCss)}
-
-  /* brutal: 톤별 색상 보더를 --brutal-border-color(#000)로 통일 */
-  :host-context([data-theme='brutal']) span,
-  :host-context([data-theme='brutal']) time {
-    border-color: var(--brutal-border-color);
-  }
 `

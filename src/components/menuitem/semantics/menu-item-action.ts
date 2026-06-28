@@ -36,17 +36,20 @@ export class MenuItemAction extends LitElement {
         ?disabled=${this.disabled}
         aria-current=${ifDefined(this.ariaCurrent ?? undefined)}
       >
-        ${renderMenuItemContent(
-          this,
-          this.trailingIcon
-            ? html`
-                <mm-icon slot="trailing" name=${this.trailingIcon}></mm-icon>
-              `
-            : html`
-                <slot name="trailing" slot="trailing"></slot>
-              `,
-        )}
+        ${renderMenuItemContent(this, this.renderTrailing())}
       </button>
+    `
+  }
+
+  private renderTrailing() {
+    if (!this.trailingIcon) {
+      return html`
+        <slot name="trailing" slot="trailing"></slot>
+      `
+    }
+
+    return html`
+      <mm-icon slot="trailing" name=${this.trailingIcon}></mm-icon>
     `
   }
 }

@@ -49,12 +49,16 @@ class Icon extends LitElement {
     }
 
     return html`
-      ${this.useStylesheetLink
-        ? html`
-            <link rel="stylesheet" href=${ICONOIR_STYLESHEET_URL} />
-          `
-        : ''}
+      ${this.renderStylesheetLink()}
       <i class="icon ${iconClassName}" style=${styleMap(iconStyle)}></i>
+    `
+  }
+
+  private renderStylesheetLink() {
+    if (!this.useStylesheetLink) return ''
+
+    return html`
+      <link rel="stylesheet" href=${ICONOIR_STYLESHEET_URL} />
     `
   }
 

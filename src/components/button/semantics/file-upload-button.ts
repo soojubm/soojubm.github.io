@@ -74,11 +74,7 @@ export class FileUploadButton extends LitElement {
           capture=${this.capture ? 'camera' : nothing}
           @change=${this.handleChange}
         />
-        ${this.helper
-          ? html`
-              <mm-text size="12">${this.helper}</mm-text>
-            `
-          : ''}
+        ${this.renderHelper()}
       </mm-flex>
 
       <mm-flex class="attachments" direction="column" gap="2">
@@ -89,35 +85,53 @@ export class FileUploadButton extends LitElement {
             : 'No files currently selected for upload.'}
         </mm-paragraph>
 
-        ${this.files.length
-          ? html`
-              <mm-flex class="attachment-list" gap="2" wrap>
-                ${repeat(
-                  this.files,
-                  file => file,
-                  (file, index) => html`
-                    <figure class="attachment">
-                      ${this.previewUrls.has(file)
-                        ? html`
-                            <img src=${this.previewUrls.get(file)} alt=${file.name} />
-                          `
-                        : ''}
-                      <figcaption>
-                        <mm-paragraph>${file.name}</mm-paragraph>
-                        <mm-text size="12">${this.formatFileSize(file.size)}</mm-text>
-                      </figcaption>
-                      <div class="remove">
-                        <mm-clear-button @click=${() => this.removeFile(index)}>
-                          삭제
-                        </mm-clear-button>
-                      </div>
-                    </figure>
-                  `,
-                )}
-              </mm-flex>
-            `
-          : ''}
+        ${this.renderAttachments()}
       </mm-flex>
+    `
+  }
+
+  private renderHelper() {
+    if (!this.helper) return ''
+
+    return html`
+      <mm-text size="12">${this.helper}</mm-text>
+    `
+  }
+
+  private renderAttachments() {
+    if (!this.files.length) return ''
+
+    return html`
+      <mm-flex class="attachment-list" gap="2" wrap>
+        ${repeat(
+          this.files,
+          file => file,
+          (file, index) => this.renderAttachment(file, index),
+        )}
+      </mm-flex>
+    `
+  }
+
+  private renderAttachment(file: File, index: number) {
+    return html`
+      <figure class="attachment">
+        ${this.renderPreview(file)}
+        <figcaption>
+          <mm-paragraph>${file.name}</mm-paragraph>
+          <mm-text size="12">${this.formatFileSize(file.size)}</mm-text>
+        </figcaption>
+        <div class="remove">
+          <mm-clear-button @click=${() => this.removeFile(index)}>삭제</mm-clear-button>
+        </div>
+      </figure>
+    `
+  }
+
+  private renderPreview(file: File) {
+    if (!this.previewUrls.has(file)) return ''
+
+    return html`
+      <img src=${this.previewUrls.get(file)} alt=${file.name} />
     `
   }
 
@@ -154,18 +168,16 @@ export class FileUploadButton extends LitElement {
     }
 
     for (const file of files) {
-      if (file.type.startsWith('image/') && !this.previewUrls.has(file)) {
-        this.previewUrls.set(file, URL.createObjectURL(file))
-      }
+      if (!file.type.startsWith('image/') || this.previewUrls.has(file)) continue
+
+      this.previewUrls.set(file, URL.createObjectURL(file))
     }
 
     this.files = files
   }
 
   private revokePreviewUrls() {
-    for (const previewUrl of this.previewUrls.values()) {
-      URL.revokeObjectURL(previewUrl)
-    }
+    for (const previewUrl of this.previewUrls.values()) URL.revokeObjectURL(previewUrl)
 
     this.previewUrls.clear()
   }

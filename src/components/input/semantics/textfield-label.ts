@@ -21,12 +21,16 @@ export class TextfieldLabel extends LitElement {
     return html`
       <label for=${this.htmlFor || nothing}>
         <slot></slot>
-        ${this.optional
-          ? html`
-              <small>선택입력</small>
-            `
-          : nothing}
+        ${this.renderOptionalText()}
       </label>
+    `
+  }
+
+  private renderOptionalText() {
+    if (!this.optional) return nothing
+
+    return html`
+      <small>선택입력</small>
     `
   }
 }

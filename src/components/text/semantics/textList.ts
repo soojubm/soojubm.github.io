@@ -39,7 +39,6 @@ class TextList extends LitElement {
   @property({ type: String }) variant: Variant = 'check'
 
   render() {
-    const tag = this.variant === 'number' ? 'ol' : 'ul'
     const list = this.texts.map(
       (text: string, index: number) => html`
         <li>
@@ -49,17 +48,23 @@ class TextList extends LitElement {
       `,
     )
 
-    return tag === 'ol'
-      ? html`
-          <ol class="list">
-            ${list}
-          </ol>
-        `
-      : html`
-          <ul class="list">
-            ${list}
-          </ul>
-        `
+    return this.renderList(list)
+  }
+
+  private renderList(list: unknown[]) {
+    if (this.variant === 'number') {
+      return html`
+        <ol class="list">
+          ${list}
+        </ol>
+      `
+    }
+
+    return html`
+      <ul class="list">
+        ${list}
+      </ul>
+    `
   }
 }
 

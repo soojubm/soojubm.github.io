@@ -54,9 +54,6 @@ class TextBlock extends LitElement {
     const variant =
       TextBlock.variants[this.level as keyof typeof TextBlock.variants] ?? TextBlock.variants['1']
 
-    // Level 1은 특별한 시멘틱 패턴을 가집니다.
-    const isLevel1 = this.level === '1'
-
     return html`
       <mm-flex
         class="container"
@@ -64,36 +61,42 @@ class TextBlock extends LitElement {
         gap=${variant.gap}
         align-items=${this.centered ? 'center' : 'start'}
       >
-        ${this.eyebrow
-          ? html`
-              <mm-tag tone="purple">${this.eyebrow}</mm-tag>
-            `
-          : nothing}
-        ${isLevel1
-          ? html`
-              <mm-text size="32" weight="bold" ?centered="${this.centered}">
-                ${this.heading}
-              </mm-text>
-              <mm-paragraph size="large" ?centered="${this.centered}">
-                ${this.description}
-              </mm-paragraph>
-            `
-          : html`
-              <mm-text size="${variant.headingSize}" weight="bold" ?centered="${this.centered}">
-                ${this.heading}
-              </mm-text>
-              <mm-text size="${variant.descriptionSize}" ?centered="${this.centered}">
-                ${this.description}
-              </mm-text>
-            `}
-        ${this.caption
-          ? html`
-              <mm-text size="12" color="light" ?centered="${this.centered}">
-                ${this.caption}
-              </mm-text>
-            `
-          : nothing}
+        ${this.renderEyebrow()} ${this.renderContent(variant)} ${this.renderCaption()}
       </mm-flex>
+    `
+  }
+
+  private renderEyebrow() {
+    if (!this.eyebrow) return nothing
+
+    return html`
+      <mm-tag tone="purple">${this.eyebrow}</mm-tag>
+    `
+  }
+
+  private renderContent(variant: typeof TextBlock.variants[keyof typeof TextBlock.variants]) {
+    if (this.level === '1') {
+      return html`
+        <mm-text size="32" weight="bold" ?centered="${this.centered}">${this.heading}</mm-text>
+        <mm-paragraph size="large" ?centered="${this.centered}">${this.description}</mm-paragraph>
+      `
+    }
+
+    return html`
+      <mm-text size="${variant.headingSize}" weight="bold" ?centered="${this.centered}">
+        ${this.heading}
+      </mm-text>
+      <mm-text size="${variant.descriptionSize}" ?centered="${this.centered}">
+        ${this.description}
+      </mm-text>
+    `
+  }
+
+  private renderCaption() {
+    if (!this.caption) return nothing
+
+    return html`
+      <mm-text size="12" color="light" ?centered="${this.centered}">${this.caption}</mm-text>
     `
   }
 }

@@ -25,7 +25,6 @@ export class ButtonGroup extends LitElement {
 
   @property({ type: String }) direction: Direction = 'row'
   @property({ type: String, attribute: 'justify-content' }) justifyContent: Justify = 'start'
-  @property({ type: Boolean }) wrap = false
   @property({ type: Boolean, reflect: true }) stretch = false
 
   render() {
@@ -34,8 +33,8 @@ export class ButtonGroup extends LitElement {
         direction=${this.direction}
         justify-content=${this.justifyContent}
         align-items="center"
+        wrap
         gap="2"
-        ?wrap=${this.wrap}
         ?stretch=${this.stretch}
       >
         <slot></slot>
