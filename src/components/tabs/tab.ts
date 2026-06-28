@@ -1,7 +1,9 @@
 import { LitElement, html, css } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { emit } from '@/utils/emit'
+
 import type { AriaBoolean } from '@/types/aria'
+
+import { emit } from '@/utils/emit'
 
 @customElement('mm-tab')
 export default class Tab extends LitElement {

@@ -1,5 +1,6 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+
 import { switchStyles } from '@/components/switch/switch.styles'
 import { emit } from '@/utils/emit'
 import { uniqueId } from '@/utils/unique-id'

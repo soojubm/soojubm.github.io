@@ -1,5 +1,6 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
+
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
 import '@/components/button/semantics/read-more-button'
 import '@/components/text/text'

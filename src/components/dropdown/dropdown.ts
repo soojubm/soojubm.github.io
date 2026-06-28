@@ -3,9 +3,11 @@ import { customElement, property, queryAssignedElements, state } from 'lit/decor
 import { ifDefined } from 'lit/directives/if-defined.js'
 import { repeat } from 'lit/directives/repeat.js'
 import { styleMap } from 'lit/directives/style-map.js'
-import { resetStyles } from '@/stylesheets/shared/reset.styles'
-import { PopupController } from '@/controllers/popup-controller'
+
 import type { IconName } from '@/components/icon-button/semantics/icon-names'
+
+import { PopupController } from '@/controllers/popup-controller'
+import { resetStyles } from '@/stylesheets/shared/reset.styles'
 import '@/components/menuitem/semantics/menu-item-action'
 import '@/components/menuitem/semantics/menu-item-checkbox'
 import '@/components/sheet/sheet'

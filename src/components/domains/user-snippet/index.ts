@@ -1,5 +1,6 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+
 import { entityStyles } from '@/components/domains/user-snippet/user-snippet.styles'
 import '@/components/flex/flex'
 

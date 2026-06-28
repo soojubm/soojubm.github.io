@@ -1,9 +1,10 @@
 import { LitElement, html } from 'lit'
 import { customElement, property, query, queryAssignedElements } from 'lit/decorators.js'
+
 import Tab from '@/components/tabs/tab'
 import TabPanel from '@/components/tabs/tab-panel'
-import { uniqueId } from '@/utils/unique-id'
 import { tabsStyles } from '@/components/tabs/tabs.styles'
+import { uniqueId } from '@/utils/unique-id'
 
 @customElement('mm-tab-list')
 export default class TabList extends LitElement {

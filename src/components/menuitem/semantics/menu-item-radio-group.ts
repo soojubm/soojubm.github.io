@@ -1,5 +1,6 @@
 import { LitElement, html, css, nothing } from 'lit'
 import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
+
 import { MenuItemRadio } from '@/components/menuitem/semantics/menu-item-radio'
 import '@/components/menuitem/semantics/menu-item-group'
 import { emit } from '@/utils/emit'

@@ -1,7 +1,8 @@
 import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { inputStyles } from '@/components/input/input.styles'
+
 import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
+import { inputStyles } from '@/components/input/input.styles'
 import '@/components/input/input'
 import { emit } from '@/utils/emit'
 import { uniqueId } from '@/utils/unique-id'

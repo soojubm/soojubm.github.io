@@ -1,4 +1,5 @@
 import tsParser from '@typescript-eslint/parser'
+import importPlugin from 'eslint-plugin-import'
 import litPlugin from 'eslint-plugin-lit'
 import litA11yPlugin from 'eslint-plugin-lit-a11y'
 import wcPlugin from 'eslint-plugin-wc'
@@ -33,9 +34,13 @@ export default [
       },
     },
     plugins: {
+      import: importPlugin,
       lit: litPlugin,
       'lit-a11y': litA11yPlugin,
       wc: wcPlugin,
+    },
+    settings: {
+      'import/internal-regex': '^@/',
     },
     rules: {
       // Lit 템플릿 문법, 바인딩 위치, 중복 바인딩처럼 Lit 사용 중 실수하기 쉬운 패턴을 검사한다.
@@ -46,6 +51,18 @@ export default [
 
       // Lit 템플릿 안의 ARIA, 키보드 이벤트, 접근 가능한 이름 등 접근성 규칙을 검사한다.
       ...warnRules(litA11yRecommended.rules),
+
+      'import/order': [
+        'error',
+        {
+          groups: ['builtin', 'external', 'type', 'internal', ['parent', 'sibling', 'index']],
+          alphabetize: {
+            order: 'asc',
+            caseInsensitive: true,
+          },
+          'newlines-between': 'always',
+        },
+      ],
     },
   },
 ]

@@ -1,11 +1,13 @@
 import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
+
 import '@/components/icon/icon'
 import type { IconName } from '@/components/icon-button/semantics/icon-names'
+import type { AriaCurrent } from '@/types/aria'
+
 import { menuItemStyles } from '@/components/menuitem/menuitem.styles'
 import { renderMenuItemContent } from '@/components/menuitem/menuitem.utils'
-import type { AriaCurrent } from '@/types/aria'
 
 @customElement('mm-menu-item-action')
 export class MenuItemAction extends LitElement {

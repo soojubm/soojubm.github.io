@@ -1,5 +1,5 @@
-import { renderLayout } from '../../../layouts/base-layouts'
 import main from './index.html'
+import { renderLayout } from '../../../layouts/base-layouts'
 import { renderList, getCountries, loadJson, mediaCard } from '../../components/_list-page'
 
 interface Book {

@@ -1,8 +1,9 @@
 import './post.css'
 
-import { renderLayout } from '../../../layouts/base-layouts'
 import { hideNavbar } from '@/utils/navbar'
+
 import main from './index.html'
+import { renderLayout } from '../../../layouts/base-layouts'
 
 document.addEventListener('DOMContentLoaded', () => {
   document.body.innerHTML = renderLayout(main, { closeSidebar: true })

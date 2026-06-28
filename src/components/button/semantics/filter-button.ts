@@ -1,11 +1,12 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
+
 import {
   buttonBaseStyles,
   filterButtonStyles,
   buttonSelectedStyles,
 } from '@/components/button/button.styles'
+import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
 import { emit } from '@/utils/emit'
 import '@/components/icon/icon'
 
@@ -14,7 +15,7 @@ import '@/components/icon/icon'
  */
 @customElement('mm-filter-button')
 export class FilterButton extends LitElement {
-  static styles = [buttonBaseStyles, filterButtonStyles, buttonSelectedStyles]
+  static styles = [buttonBaseStyles, buttonSelectedStyles]
 
   @property({ type: String }) value = ''
   @property({ type: Boolean, reflect: true }) selected = false

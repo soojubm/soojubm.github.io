@@ -1,6 +1,7 @@
-import { renderDocumentLayout } from '../../../layouts/document-layout'
-import main from './index.html'
 import type { ActionConfig } from '@/components/action-config'
+
+import main from './index.html'
+import { renderDocumentLayout } from '../../../layouts/document-layout'
 
 type DialogElement = HTMLElement & {
   open: boolean

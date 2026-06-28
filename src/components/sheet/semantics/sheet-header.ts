@@ -1,5 +1,6 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+
 import { emit } from '@/utils/emit'
 
 @customElement('mm-sheet-header')

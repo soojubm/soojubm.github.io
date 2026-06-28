@@ -1,6 +1,7 @@
 import { LitElement, html } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
 import { state } from 'lit/decorators/state.js'
+import { customElement, property } from 'lit/decorators.js'
+
 import '@/components/button/semantics/read-more-button'
 import { componentPropsStyles, propStyles } from '@/components/domains/component/props.styles'
 import { uniqueId } from '@/utils/unique-id'

@@ -1,8 +1,10 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
-import { resetStyles } from '@/stylesheets/shared/reset.styles'
-import { OutsideClickController } from '@/controllers/outside-click-controller'
+
 import type { IconName } from '@/components/icon-button/semantics/icon-names'
+
+import { OutsideClickController } from '@/controllers/outside-click-controller'
+import { resetStyles } from '@/stylesheets/shared/reset.styles'
 import '@/components/button/button'
 import '@/components/button/button-group'
 import '@/components/flex/flex'

@@ -1,8 +1,8 @@
 import './src/components'
 
 import { initializeNavbar } from './src/utils/navbar'
-import scrollAnimation from './src/utils/scroll-animation'
 import { stopAnimation } from './src/utils/optimization-utils'
+import scrollAnimation from './src/utils/scroll-animation'
 
 const MOBILE_NAVBAR_QUERY = '(max-width: 1080px)'
 const WINDOWS_FONT_FAMILY = "'Alan Sans', 'Pretendard', sans-serif"

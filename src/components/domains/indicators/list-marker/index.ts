@@ -1,5 +1,6 @@
 import { LitElement, css, html, svg } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
 
 type Variant = 'number' | 'check'

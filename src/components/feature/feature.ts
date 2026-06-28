@@ -1,7 +1,8 @@
 import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { ICON_NAMES, type IconName } from '@/components/icon-button/semantics/icon-names'
+
 import { featureStyles } from '@/components/feature/feature.styles'
+import { ICON_NAMES, type IconName } from '@/components/icon-button/semantics/icon-names'
 import '@/components/flex/flex'
 
 // 컴포넌트 외부로 상수 데이터를 분리하여 메모리 재할당 방지

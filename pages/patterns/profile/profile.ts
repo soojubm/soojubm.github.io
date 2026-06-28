@@ -1,7 +1,9 @@
-import { renderLayout } from '../../../layouts/base-layouts'
-import { hideNavbar } from '@/utils/navbar'
-import main from './index.html'
 import type Sheet from '@/components/sheet/sheet'
+
+import { hideNavbar } from '@/utils/navbar'
+
+import main from './index.html'
+import { renderLayout } from '../../../layouts/base-layouts'
 
 import './profile.css'
 

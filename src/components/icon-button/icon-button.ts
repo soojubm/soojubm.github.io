@@ -1,9 +1,11 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { interactiveControlStyles } from '@/stylesheets/shared/interactive-control.styles'
+
 import type { IconName } from '@/components/icon-button/semantics/icon-names'
 import type { AriaBoolean, AriaHasPopup, AriaIdRef } from '@/types/aria'
+
 import { iconButtonStyles } from '@/components/icon-button/icon-button.styles'
+import { interactiveControlStyles } from '@/stylesheets/shared/interactive-control.styles'
 
 export type IconButtonVariant = 'primary' | 'secondary' | 'tertiary' | 'ghost' | 'destructive'
 export type IconButtonSize = 'small' | 'medium'

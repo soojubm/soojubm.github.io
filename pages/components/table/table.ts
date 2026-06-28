@@ -1,8 +1,9 @@
 import '@/components/pagination'
 import '@/components/table'
 import { html } from 'lit'
-import { renderLayout } from '../../../layouts/base-layouts'
+
 import main from './index.html'
+import { renderLayout } from '../../../layouts/base-layouts'
 
 document.addEventListener('DOMContentLoaded', () => {
   document.body.innerHTML = renderLayout(main)

@@ -1,7 +1,9 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { repeat } from 'lit/directives/repeat.js'
+
 import type { IconName } from '@/components/icon-button/semantics/icon-names'
+
 import '@/components/flex/flex'
 import '@/components/toggle-button/toggle-button'
 import '@/components/toggle-button/semantics/view-mode-switcher'

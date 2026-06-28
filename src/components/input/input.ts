@@ -1,5 +1,6 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+
 import type { AriaIdRef, AriaInvalid } from '@/types/aria'
 
 /**

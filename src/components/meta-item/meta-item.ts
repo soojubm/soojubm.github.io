@@ -1,5 +1,6 @@
 import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+
 import { metaItemStyles } from '@/components/meta-item/meta-item.styles'
 
 @customElement('mm-meta-item')

@@ -1,5 +1,6 @@
 import { LitElement, css } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
 
 type ScrollHintPlacement = 'start' | 'end'

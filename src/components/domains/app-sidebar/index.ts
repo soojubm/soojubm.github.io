@@ -3,8 +3,9 @@ import { customElement, state } from 'lit/decorators.js'
 import { classMap } from 'lit/directives/class-map.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 import { repeat } from 'lit/directives/repeat.js'
-import { SITEMAP } from '@/sitemap'
+
 import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
+import { SITEMAP } from '@/sitemap'
 
 @customElement('mm-sidebar')
 export class Sidebar extends LitElement {

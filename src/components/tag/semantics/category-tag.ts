@@ -1,6 +1,8 @@
 import { LitElement } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+
 import type { IconName } from '@/components/icon-button/semantics/icon-names'
+
 import { renderMappedTag } from '@/components/tag/tag'
 import { categoryToneMap, type Category } from '@/components/tag/tag.styles'
 

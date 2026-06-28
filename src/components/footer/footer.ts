@@ -1,8 +1,9 @@
 import { LitElement, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
-import soojubmImage from '@/images/soojubm.png'
-import '@/components/text/semantics/paragraph'
+
 import { footerStyles } from '@/components/footer/footer.styles'
+import '@/components/text/semantics/paragraph'
+import soojubmImage from '@/images/soojubm.png'
 
 @customElement('mm-footer')
 export class Footer extends LitElement {

@@ -1,6 +1,6 @@
+import main from './index.html'
 import { renderLayout } from '../../layouts/base-layouts'
 import { ScrollSpyController } from '../../src/controllers/scroll-spy-controller'
-import main from './index.html'
 import './home.css'
 
 document.addEventListener('DOMContentLoaded', () => {

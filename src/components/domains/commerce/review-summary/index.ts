@@ -1,7 +1,8 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { resetStyles } from '@/stylesheets/shared/reset.styles'
+
 import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
+import { resetStyles } from '@/stylesheets/shared/reset.styles'
 import '@/components/flex/flex'
 
 /**

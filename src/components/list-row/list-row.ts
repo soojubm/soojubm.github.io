@@ -1,8 +1,9 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 
-import { listRowStyles } from '@/components/list-row/list-row.styles'
 import type { IconName } from '@/components/icon-button/semantics/icon-names'
+
+import { listRowStyles } from '@/components/list-row/list-row.styles'
 import '@/components/avatar/avatar'
 
 /**

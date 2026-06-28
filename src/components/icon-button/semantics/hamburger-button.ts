@@ -1,7 +1,9 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
+
 import type { AriaBoolean, AriaIdRef } from '@/types/aria'
+
+import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
 import '@/components/icon-button/icon-button'
 
 /**

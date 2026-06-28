@@ -1,5 +1,6 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
+
 import type { AccordionItem } from '@/components/accordion/semantics/accordion-item'
 import '@/components/flex/flex'
 

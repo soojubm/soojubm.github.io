@@ -1,5 +1,6 @@
 import { LitElement, html } from 'lit'
 import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
+
 import { tooltipStyles } from '@/components/tooltip/tooltip.styles'
 import { uniqueId } from '@/utils/unique-id'
 

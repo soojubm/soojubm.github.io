@@ -1,5 +1,6 @@
 import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+
 import '@/components/text/semantics/heading'
 import { componentTokensStyles, tokenStyles } from '@/components/domains/component/tokens.styles'
 

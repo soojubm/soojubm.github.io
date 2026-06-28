@@ -1,6 +1,8 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
+
 import type { MenuItemCheckbox } from '@/components/menuitem/semantics/menu-item-checkbox'
+
 import '@/components/menuitem/semantics/menu-item-group'
 import { emit } from '@/utils/emit'
 

@@ -1,9 +1,11 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { checkboxStyles } from '@/components/checkbox/checkbox.styles'
+
 import type { Checkbox } from '@/components/checkbox/checkbox'
-import { uniqueId } from '@/utils/unique-id'
 import type { AriaIdRef } from '@/types/aria'
+
+import { checkboxStyles } from '@/components/checkbox/checkbox.styles'
+import { uniqueId } from '@/utils/unique-id'
 
 @customElement('mm-master-checkbox')
 export class MasterCheckbox extends LitElement {

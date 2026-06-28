@@ -1,6 +1,8 @@
 import { LitElement, html } from 'lit'
-import type { PropertyValues } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+
+import type { PropertyValues } from 'lit'
+
 import { scrollStyles } from '@/components/scroll/scroll.styles'
 
 type Direction = 'row' | 'column'

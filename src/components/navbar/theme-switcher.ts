@@ -1,13 +1,14 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, query } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
+
 import '@/components/icon-button/icon-button'
 import '@/components/menuitem/semantics/menu-item-action'
 import '@/components/radius-picker/radius-picker'
 import '@/components/separator/separator'
-import { getPreferredTheme, saveTheme, THEMES, type Theme } from '@/utils/theme'
 import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
 import { PopupController } from '@/controllers/popup-controller'
+import { getPreferredTheme, saveTheme, THEMES, type Theme } from '@/utils/theme'
 
 @customElement('mm-theme-switcher')
 export class ThemeSwitcher extends LitElement {
