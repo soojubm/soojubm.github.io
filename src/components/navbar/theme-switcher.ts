@@ -84,14 +84,14 @@ export class ThemeSwitcher extends LitElement {
           icon=${this.currentIcon}
           aria-label="테마 변경"
           aria-haspopup="menu"
-          aria-expanded=${String(this.popup.open)}
+          aria-expanded=${this.popup.open ? 'true' : 'false'}
           @click=${this.toggleOpen}
         ></mm-icon-button>
         <div
           class="panel"
           ?open=${this.popup.open}
           role="menu"
-          aria-hidden=${String(!this.popup.open)}
+          aria-hidden=${this.popup.open ? 'false' : 'true'}
         >
           ${THEMES.map(
             theme => html`

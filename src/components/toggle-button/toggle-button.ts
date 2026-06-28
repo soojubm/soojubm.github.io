@@ -21,17 +21,12 @@ export class ToggleButton extends LitElement {
   @property({ type: Boolean }) disabled = false
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = ''
 
-  protected handleClick = (event: Event) => {
-    event.stopPropagation()
-    toggleSelection(this)
-  }
-
   render() {
     return html`
       <button
         type="button"
         ?disabled=${this.disabled}
-        aria-pressed=${String(this.selected)}
+        aria-pressed=${this.selected ? 'true' : 'false'}
         aria-label=${this.ariaLabel || nothing}
         @click=${this.handleClick}
       >
@@ -43,6 +38,11 @@ export class ToggleButton extends LitElement {
         <slot></slot>
       </button>
     `
+  }
+
+  private handleClick(event: Event) {
+    event.stopPropagation()
+    toggleSelection(this)
   }
 }
 

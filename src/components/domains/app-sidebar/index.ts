@@ -48,7 +48,7 @@ export class Sidebar extends LitElement {
                     trailing-icon=${ICON_NAMES.EXPAND}
                     aria-haspopup="menu"
                     aria-controls="${node.id}-menu"
-                    aria-expanded=${String(isOpen)}
+                    aria-expanded=${isOpen ? 'true' : 'false'}
                     @click=${() => this.handleGroupToggle(node.id)}
                   ></mm-menu-item-action>
 

@@ -21,7 +21,7 @@ export class FollowButton extends LitElement {
       <button
         type="button"
         ?disabled=${this.disabled}
-        aria-pressed=${String(this.selected)}
+        aria-pressed=${this.selected ? 'true' : 'false'}
         @click=${this.handleClick}
       >
         ${this.selected ? '팔로우 중' : '팔로우'}

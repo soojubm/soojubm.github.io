@@ -46,7 +46,7 @@ export class ReadMoreParagraph extends LitElement {
         ${truncated
           ? html`
               <mm-read-more-button
-                aria-expanded=${String(this.expanded)}
+                aria-expanded=${this.expanded ? 'true' : 'false'}
                 aria-controls=${this.contentId}
                 @click=${this.toggle}
               ></mm-read-more-button>

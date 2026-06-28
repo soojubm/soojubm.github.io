@@ -43,7 +43,7 @@ export class MenuItemRadio extends LitElement {
         role="menuitemradio"
         data-interactive
         aria-disabled=${this.disabled ? 'true' : nothing}
-        aria-checked=${String(this.checked)}
+        aria-checked=${this.checked ? 'true' : 'false'}
         @click=${this.handleSelect}
       >
         ${renderMenuItemContent(this, this.renderAction())}

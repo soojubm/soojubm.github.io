@@ -1,11 +1,7 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import {
-  buttonBaseStyles,
-  filterButtonStyles,
-  buttonSelectedStyles,
-} from '@/components/button/button.styles'
+import { buttonBaseStyles, buttonSelectedStyles } from '@/components/button/button.styles'
 import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
 import { emit } from '@/utils/emit'
 import '@/components/icon/icon'
@@ -29,7 +25,7 @@ export class FilterButton extends LitElement {
         type="button"
         ?disabled=${this.disabled}
         role=${this.mode === 'multiple' ? 'checkbox' : 'radio'}
-        aria-checked=${String(this.selected)}
+        aria-checked=${this.selected ? 'true' : 'false'}
         @click=${this.handleClick}
       >
         ${this.selected
