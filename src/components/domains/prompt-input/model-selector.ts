@@ -12,10 +12,6 @@ export class ModelSelector extends LitElement {
       display: inline-flex;
     }
 
-    mm-button {
-      --button-icon-gap: var(--space-1);
-    }
-
     mm-button mm-icon {
       transition: transform 160ms ease;
     }
