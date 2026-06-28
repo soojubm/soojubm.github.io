@@ -2,21 +2,15 @@
   display: flex;
   align-items: center;
   width: 100%;
-
-  /* max-width: var(--layout-width-wide);
-  margin: 0 auto;
-  padding:var(--space-3) 0; */
-
   height: var(--navbar-height);
   padding: var(--space-3) var(--layout-padding-inline);
   box-sizing: border-box;
   background: var(--color-background);
-  /* position:sticky; */
   position: fixed;
   top: 0;
   z-index: calc(var(--zindex-fixed-bottom) + 1);
 }
-/* sticy 위로 스크롤 하면 */
+
 .navbar-logo {
   width: var(--size-medium);
   height: var(--size-medium);
@@ -56,36 +50,22 @@
   top: var(--space-4);
 }
 
-/* PAGE COMPONENT */
-/* page 패딩, article에 패딩. 마이너스 마진. page size="" */
-/* ReactNative safeAreaView, scrollView */
-
 .page {
-  /* width: calc(var(--layout-width-wide) - var(--layout-width-sidebar) - var(--layout-padding-inline)); */
-  /* margin: 0 auto; */
-
   min-height: calc(100vh - var(--navbar-height) - var(--width-small));
   padding: var(--space-4) var(--layout-padding-inline) calc(var(--space-4) * 6);
-  /* padding: var(--space-4) 0 calc(var(--space-4) * 6); */
-  /* padding-left: calc(var(--layout-width-sidebar) + var(--layout-padding-inline)); */
   position: relative;
 }
 
-/* fluid or with sidemenu */
 .page[data-size='fluid'] {
   max-width: 100%;
   padding: 0 0 calc(var(--space-4) * 8);
 }
 
-/* 2. navbar with sidebar fluid layout */
 .page[data-size='wide'] {
   display: flex;
   justify-content: space-between;
 }
-.page[data-size='narrow'] {
-}
 
-/* height를 명시적으로 지정하지 않으면, unpositioning 시 문제 */
 .sidebar-menu {
   display: flex;
   flex-direction: column;
@@ -94,7 +74,6 @@
   gap: var(--space-2);
   padding: var(--space-4) var(--space-3) calc(var(--space-4) + env(safe-area-inset-bottom))
     calc(var(--layout-padding-inline));
-  /* 스크롤 ㄷ할 때 navbar와 충돌 */
   background: var(--color-background);
   scrollbar-gutter: stable;
   transition: transform var(--duration-slowly) cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -102,14 +81,7 @@
   position: fixed;
   top: var(--navbar-height);
   bottom: 0;
-  /* left: 50%;
-  width: var(--layout-width-sidebar);
-  height: 100%; */
-
   overflow-y: auto;
-
-  /* 1200px 전체 중앙 정렬 안에서 왼쪽에 붙이기 */
-  /* transform: translateX(calc(-1 * var(--layout-width-wide) / 2)); */
   z-index: calc(var(--zindex-fixed-bottom) + 1);
 
   &::-webkit-scrollbar {
@@ -137,17 +109,6 @@
     background: var(--color-background-strong);
   }
 }
-
-/* .sidebar-menu > a {
-  display:flex;
-  align-items:center;
-  height: var(--size-medium);
-  gap: var(--space-4);
-  border-left: var(--border);
-  color:var(--color-foreground);
-  text-transform: capitalize;
-  position: relative;
-} */
 
 .sidebar-menu > div {
   display: flex;
@@ -199,7 +160,6 @@
 
 .is-menu-opened .sidebar-menu {
   transform: translateX(0);
-  overflow-y: auto;
   overscroll-behavior: contain;
 }
 .is-menu-opened .page {
@@ -207,10 +167,8 @@
     var(--layout-width-sidebar) + var(--layout-padding-inline) + var(--layout-padding-inline) +
       var(--space-4)
   );
-  /* transform: translateX(calc(var(--layout-padding-inline) + var(--layout-width-sidebar))); */
 }
 
-/* --small */
 @media (max-width: 1100px) {
   .is-menu-opened .page {
     padding-left: var(--layout-padding-inline);
