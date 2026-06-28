@@ -1,6 +1,5 @@
 import { LitElement, html } from 'lit'
 import { customElement, state } from 'lit/decorators.js'
-import { classMap } from 'lit/directives/class-map.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 import { repeat } from 'lit/directives/repeat.js'
 
@@ -26,9 +25,7 @@ export class Sidebar extends LitElement {
                 <mm-menu-item-action
                   label=${node.title}
                   icon=${node.icon}
-                  class=${classMap({
-                    'is-active': this.isCurrentPage(node.id),
-                  })}
+                  aria-current=${ifDefined(this.isCurrentPage(node.id) ? 'page' : undefined)}
                   @click=${() => this.handleStandaloneClick(node.id)}
                 ></mm-menu-item-action>
               `
@@ -41,10 +38,7 @@ export class Sidebar extends LitElement {
                 <div>
                   <mm-menu-item-action
                     id="${node.id}-btn"
-                    class=${classMap({
-                      'sidebar-category-trigger': true,
-                      'is-open': isOpen,
-                    })}
+                    class="sidebar-category-trigger"
                     label=${node.title}
                     icon=${node.icon}
                     trailing-icon=${ICON_NAMES.EXPAND}
@@ -83,7 +77,7 @@ export class Sidebar extends LitElement {
     `
   }
 
-  // 💡 중요: 기존 전역 CSS(.sidebar-menu, .is-open 등)를 그대로 상속받아 쓰기 위해
+  // 💡 중요: 기존 전역 CSS(.sidebar-menu 등)를 그대로 상속받아 쓰기 위해
   // Shadow DOM을 끄고 Light DOM 영역에 렌더링하도록 설정합니다.
   createRenderRoot() {
     return this

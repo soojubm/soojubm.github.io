@@ -1,11 +1,11 @@
 import { css } from 'lit'
 
-import { componentContentFrameStyles } from '@/components/domains/component/component.styles'
+import { componentContentFrameStylesFor } from '@/components/domains/component/component.styles'
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
 
 export const componentExampleStyles = [
   resetStyles,
-  componentContentFrameStyles,
+  componentContentFrameStylesFor('.component-example'),
   css`
     :host {
       display: block;

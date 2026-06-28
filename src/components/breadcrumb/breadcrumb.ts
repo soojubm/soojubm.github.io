@@ -1,6 +1,5 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { classMap } from 'lit/directives/class-map.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
 import { arrayAttributeConverter } from '@/utils/property-converters'
@@ -69,25 +68,17 @@ export class Breadcrumb extends LitElement {
           const isLast = index === items.length - 1
 
           return html`
-            ${this.renderItem(item, index, isLast)}${this.renderDivider(isLast)}
+            ${this.renderItem(item, isLast)}${this.renderDivider(isLast)}
           `
         })}
       </nav>
     `
   }
 
-  private renderItem(item: BreadcrumbItem, index: number, isLast: boolean) {
+  private renderItem(item: BreadcrumbItem, isLast: boolean) {
     if (item.href && !isLast) {
       return html`
-        <a
-          class=${classMap({
-            'breadcrumb-item': true,
-            'breadcrumb-home': index === 0,
-          })}
-          href=${item.href}
-        >
-          ${item.label}
-        </a>
+        <a class="breadcrumb-item" href=${item.href}>${item.label}</a>
       `
     }
 

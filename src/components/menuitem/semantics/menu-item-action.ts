@@ -24,7 +24,8 @@ export class MenuItemAction extends LitElement {
   @property({ type: String, attribute: 'avatar-variant' }) avatarVariant = 'tertiary'
   @property({ type: Boolean }) disabled = false
   @property({ type: String }) role = 'menuitem'
-  @property({ type: String, attribute: 'aria-current' }) ariaCurrent: AriaCurrent = null
+  @property({ type: String, attribute: 'aria-current', reflect: true })
+  ariaCurrent: AriaCurrent = null
 
   render() {
     return html`

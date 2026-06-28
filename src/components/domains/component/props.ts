@@ -1,7 +1,7 @@
 import { LitElement, html } from 'lit'
 import { state } from 'lit/decorators/state.js'
 import { customElement, property } from 'lit/decorators.js'
-import { classMap } from 'lit/directives/class-map.js'
+import { ifDefined } from 'lit/directives/if-defined.js'
 
 import '@/components/button/semantics/read-more-button'
 import { componentPropsStyles, propStyles } from '@/components/domains/component/props.styles'
@@ -51,21 +51,15 @@ export class ComponentProps extends LitElement {
   render() {
     return html`
       <section
-        class=${classMap({
-          'component-props': true,
-          'component-content-frame': true,
-          'is-opened': this.isOpened,
-        })}
+        class="component-props"
+        data-opened=${ifDefined(this.isOpened ? 'true' : undefined)}
         @click=${this.handleClick}
       >
         <div hidden><mm-text as="h2">Props</mm-text></div>
         <dl id=${this.propsId}>
           <slot></slot>
         </dl>
-        <div
-          class="component-props-more component-content-responsive-padding-inline"
-          aria-hidden=${this.isOpened ? 'true' : 'false'}
-        >
+        <div class="component-props-more" aria-hidden=${this.isOpened ? 'true' : 'false'}>
           <mm-read-more-button
             more-label="...펼쳐서 더보기"
             aria-controls=${this.propsId}

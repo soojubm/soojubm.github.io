@@ -9,7 +9,7 @@ export class ComponentExample extends LitElement {
 
   render() {
     return html`
-      <section class="component-example component-content-frame">
+      <section class="component-example">
         <slot></slot>
       </section>
     `

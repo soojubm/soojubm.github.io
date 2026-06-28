@@ -2,7 +2,7 @@ import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import {
-  componentContentFrameStyles,
+  componentContentFrameStylesFor,
   componentStageFrameStyles,
 } from '@/components/domains/component/component.styles'
 import '@/components/flex/flex'
@@ -22,7 +22,7 @@ import { arrayAttributeConverter } from '@/utils/property-converters'
 export class ComponentAnatomy extends LitElement {
   static styles = [
     resetStyles,
-    componentContentFrameStyles,
+    componentContentFrameStylesFor('.stage'),
     componentStageFrameStyles,
     css`
       :host {
@@ -47,7 +47,7 @@ export class ComponentAnatomy extends LitElement {
     return html`
       <mm-flex direction="column" gap="3">
         <mm-text size="24" weight="bold" as="h3">${this.heading}</mm-text>
-        <div class="stage component-content-frame component-stage-frame">
+        <div class="stage component-stage-frame">
           <slot></slot>
         </div>
         ${this.renderParts()}

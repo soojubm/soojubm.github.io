@@ -1,6 +1,6 @@
 import { css } from 'lit'
 
-import { componentContentFrameStyles } from '@/components/domains/component/component.styles'
+import { componentContentFrameStylesFor } from '@/components/domains/component/component.styles'
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
 
 export const tokenStyles = [
@@ -21,7 +21,7 @@ export const tokenStyles = [
 
 export const componentTokensStyles = [
   resetStyles,
-  componentContentFrameStyles,
+  componentContentFrameStylesFor('.component-tokens'),
   css`
     :host {
       display: block;

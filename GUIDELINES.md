@@ -68,6 +68,7 @@
 - 접근성 의미의 소유자는 하나로 유지한다.
 - 호스트가 직접 접근성 의미를 갖는 경우에만 호스트에 `role`·`aria-*`를 적용한다.
 - 접근성을 위한 네이티브 attribute와 ARIA attribute는 별칭 prop으로 우회하지 않고 그대로 공개 API로 사용한다.
+- 상태를 표현하는 표준 네이티브 attribute나 ARIA attribute가 있으면 `classMap`·`styleMap`보다 먼저 사용하고, 스타일도 해당 attribute selector를 기준으로 둔다.
 - Lit 클래스 내부 프로퍼티명도 표준 DOM 프로퍼티 이름을 따른다.
 - 네이티브 폼 상태와 ARIA로 표현하는 상태는 구분한다.
 - host에 role을 두는 컴포넌트는 reflect된 role prop으로 일관되게 선언한다.
@@ -78,6 +79,8 @@
 - 같은 맥락 안에는 구분선을 넣지 않고, 서로 다른 맥락 사이에만 separator 컴포넌트를 사용한다.
 - 콘텐츠나 레이아웃 구획을 위해 CSS `border`를 직접 사용하지 않는다.
 - Shadow DOM 내부 구조는 외부 스타일 API로 노출하지 않고, 스타일 변형은 prop, token, CSS custom property로만 제공한다.
+- 스타일 적용만을 위해 새 보조 class를 만들지 않고, 기존 의미 class나 컴포넌트 selector에 스타일을 둔다.
+- 공유 스타일은 DOM 보조 class를 요구하지 않고, `static styles`에서 의미 selector에 조합한다.
 - Lit 컴포넌트의 host 상태 선택자는 `:host` 내부에 중첩하지 않고 최상위 `:host([attr])`, `:host(:state)` 형태로 작성한다.
 - `display: contents`는 사용하지 않고, 호스트에는 역할에 맞는 박스를 명시한다.
 - Light DOM은 외부 스타일 참여가 반드시 필요한 컴포넌트로 제한하고 이유를 남긴다.
@@ -98,8 +101,10 @@
 - `render()` 안에서 조건부 DOM 조각이 커지면 의도를 드러내는 `render*()` helper로 분리한다.
 - Lit 바인딩은 attribute, property, Boolean attribute의 역할에 맞게 구분해 사용한다.
 - 단일 표현식 바인딩은 따옴표 없이 쓰고, 정적 문자열과 표현식을 섞을 때만 따옴표로 묶는다.
-- 동적 class는 `classMap`, 동적 inline style은 `styleMap` directive로 바인딩한다.
+- 동적 class는 정적 class와 한 바인딩에서 섞지 않고, 상태 스타일은 attribute나 style selector로 표현한다.
+- 동적 inline style은 `styleMap` directive로 바인딩한다.
 - `reflect: true`는 외부 CSS 선택자나 DOM attribute 조회가 필요한 공개 상태에만 사용한다.
+- 내부 상태를 class 대신 host attribute로 노출할 때는 이미 스타일 상태로 DOM에 드러나는 경우로 제한하고, 순수 내부 계산 상태는 `@state`로 유지한다.
 - 조건부 렌더링을 만드는 문자열 prop은 optional로 두고, 단순 값 문자열은 빈 문자열을 기본값으로 둔다.
 - 선택 숫자 prop은 `??` 기준으로 처리한다.
 - 전역 이벤트와 연결 중 생성한 자원은 lifecycle에서 대칭적으로 정리한다.

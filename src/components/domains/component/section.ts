@@ -1,14 +1,13 @@
 import { LitElement, css, html, nothing } from 'lit'
-import { customElement, property, state } from 'lit/decorators.js'
-import { classMap } from 'lit/directives/class-map.js'
+import { customElement, property } from 'lit/decorators.js'
 
-import { componentContentFrameStyles } from '@/components/domains/component/component.styles'
+import { componentContentFrameStylesFor } from '@/components/domains/component/component.styles'
 import '@/components/flex/flex'
 
 @customElement('mm-component-section')
 class ComponentSection extends LitElement {
   static styles = [
-    componentContentFrameStyles,
+    componentContentFrameStylesFor('.content'),
     css`
       .component-section {
         margin-top: var(--space-section);
@@ -18,7 +17,7 @@ class ComponentSection extends LitElement {
         display: none;
       }
 
-      .content.has-content {
+      :host([has-content]) .content {
         display: block;
         --component-content-frame-margin: var(--space-2) 0 0
           var(--component-content-offset-inline-start);
@@ -30,7 +29,8 @@ class ComponentSection extends LitElement {
   @property({ type: String }) description = ''
   @property({ type: String }) level: 'semantic' | 'domain' = 'semantic'
 
-  @state() private hasContent = false
+  @property({ type: Boolean, reflect: true, attribute: 'has-content' })
+  private hasContent = false
 
   render() {
     return html`
@@ -38,13 +38,7 @@ class ComponentSection extends LitElement {
         <div hidden><mm-tag>${this.level === 'domain' ? 'Domain' : 'Semantic'}</mm-tag></div>
         <mm-text size="24" weight="bold" as="h3">${this.heading}</mm-text>
         ${this.renderDescription()}
-        <div
-          class=${classMap({
-            content: true,
-            'component-content-frame': true,
-            'has-content': this.hasContent,
-          })}
-        >
+        <div class="content">
           <slot @slotchange=${this.onSlotChange}></slot>
         </div>
       </mm-flex>

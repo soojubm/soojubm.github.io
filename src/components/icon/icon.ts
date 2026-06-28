@@ -1,6 +1,5 @@
 import { LitElement, html } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
-import { classMap } from 'lit/directives/class-map.js'
 import { styleMap } from 'lit/directives/style-map.js'
 
 import { iconStyles } from '@/components/icon/icon.styles'
@@ -44,21 +43,20 @@ class Icon extends LitElement {
   @state() private useStylesheetLink = false
 
   render() {
-    const iconClassName = this.name ? `iconoir-${this.name}` : ''
     const iconStyle = {
       color: this.color || null,
     }
 
     return html`
       ${this.renderStylesheetLink()}
-      <i
-        class=${classMap({
-          icon: true,
-          [iconClassName]: Boolean(iconClassName),
-        })}
-        style=${styleMap(iconStyle)}
-      ></i>
+      <i class=${this.iconClassName} style=${styleMap(iconStyle)}></i>
     `
+  }
+
+  private get iconClassName() {
+    if (!this.name) return 'icon'
+
+    return `icon iconoir-${this.name}`
   }
 
   private renderStylesheetLink() {

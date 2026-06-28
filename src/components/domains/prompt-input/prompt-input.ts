@@ -1,6 +1,5 @@
 import { LitElement, css, html } from 'lit'
-import { customElement, property, query, state } from 'lit/decorators.js'
-import { classMap } from 'lit/directives/class-map.js'
+import { customElement, property, query } from 'lit/decorators.js'
 
 import '@/components/icon-button/icon-button'
 import '@/components/flex/flex'
@@ -30,13 +29,13 @@ export class PromptInput extends LitElement {
         align-items: center;
       }
 
-      .chat-input.is-single-line {
+      :host([single-line]) .chat-input {
         grid-template-areas: 'attach textarea submit';
         grid-template-rows: var(--input-height);
       }
 
-      .chat-input.is-single-line .start-actions,
-      .chat-input.is-single-line .end-actions {
+      :host([single-line]) .start-actions,
+      :host([single-line]) .end-actions {
         align-self: center;
       }
 
@@ -73,17 +72,13 @@ export class PromptInput extends LitElement {
 
   @query('mm-textarea') private textarea?: Textarea
 
-  @state() private isSingleLine = true
+  @property({ type: Boolean, reflect: true, attribute: 'single-line' })
+  private isSingleLine = true
 
   render() {
     return html`
       <form>
-        <div
-          class=${classMap({
-            'chat-input': true,
-            'is-single-line': this.isSingleLine,
-          })}
-        >
+        <div class="chat-input">
           <mm-textarea
             .value=${this.value}
             .name=${this.name}

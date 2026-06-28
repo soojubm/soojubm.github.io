@@ -155,10 +155,10 @@
 .sidebar-menu > div .sidebar-category-trigger + menu {
   display: none;
 }
-.sidebar-menu > div .sidebar-category-trigger.is-open + menu {
+.sidebar-menu > div .sidebar-category-trigger[aria-expanded='true'] + menu {
   display: block;
 }
-.sidebar-menu > div .sidebar-category-trigger.is-open > mm-icon {
+.sidebar-menu > div .sidebar-category-trigger[aria-expanded='true'] > mm-icon {
   transform: rotate(180deg);
 }
 .sidebar-menu > div mm-menu-item-link {
