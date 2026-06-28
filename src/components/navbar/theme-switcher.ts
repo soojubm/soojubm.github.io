@@ -38,7 +38,7 @@ export class ThemeSwitcher extends LitElement {
       position: absolute;
       top: calc(100% + var(--space-1));
       right: 0;
-      z-index: var(--zindex-loader);
+      z-index: calc(var(--zindex-fixed-bottom) + 1);
 
       overflow-y: auto;
       box-sizing: border-box;

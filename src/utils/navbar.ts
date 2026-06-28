@@ -6,7 +6,6 @@ const OPENED_MENU_CLASSNAME = 'is-menu-opened'
 const isOpendNavbarMenu = () => document.body.classList.contains(OPENED_MENU_CLASSNAME)
 
 document.addEventListener('click', toggleNavbarMenu)
-document.addEventListener('click', toggleNavbarUserMenu)
 
 document.addEventListener('DOMContentLoaded', () => {
   applyTheme()
@@ -48,35 +47,4 @@ export function toggleNavbarMenu(event) {
   })
 
   function toggleAria(ariaType, force) {}
-}
-
-export function toggleNavbarUserMenu(event) {
-  const trigger = event.target.closest('.js-navbar-user-trigger')
-  const openedTrigger = document.querySelector<HTMLElement>('.js-navbar-user-trigger.is-active')
-
-  if (!trigger) {
-    closeNavbarUserMenu(openedTrigger)
-    return
-  }
-
-  event.preventDefault()
-  const isOpen = trigger.classList.contains('is-active')
-
-  closeNavbarUserMenu(openedTrigger)
-
-  if (isOpen) return
-
-  const menuElement = trigger.nextElementSibling as HTMLElement | null
-  trigger.classList.add('is-active')
-  trigger.setAttribute('aria-expanded', 'true')
-  if (menuElement) menuElement.hidden = false
-}
-
-function closeNavbarUserMenu(trigger?: HTMLElement | null) {
-  if (!trigger) return
-
-  const menuElement = trigger.nextElementSibling as HTMLElement | null
-  trigger.classList.remove('is-active')
-  trigger.setAttribute('aria-expanded', 'false')
-  if (menuElement) menuElement.hidden = true
 }

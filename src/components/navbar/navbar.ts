@@ -5,6 +5,7 @@ import { repeat } from 'lit/directives/repeat.js'
 import type Sheet from '@/components/sheet/sheet'
 
 import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
+import { PopupController } from '@/controllers/popup-controller'
 import soojubmImage from '@/images/soojubm.png'
 
 type PagefindResult = { url: string; meta: { title: string }; excerpt: string }
@@ -29,6 +30,12 @@ export class Navbar extends LitElement {
 
   @query('.js-search-sheet') private searchSheet?: Sheet
   @query('.js-search-sheet mm-searchfield') private searchField?: HTMLElement
+  @query('.navbar-user-trigger') private userMenuTrigger?: HTMLElement
+
+  private userMenu = new PopupController(this, {
+    event: 'click',
+    getTrigger: () => this.userMenuTrigger,
+  })
 
   render() {
     return html`
@@ -52,11 +59,12 @@ export class Navbar extends LitElement {
           <div class="navbar-user-menu">
             <mm-icon-button
               icon=${ICON_NAMES.PROFILE}
-              class="navbar-user-trigger js-navbar-user-trigger"
+              class="navbar-user-trigger"
               aria-haspopup="menu"
-              aria-expanded="false"
+              aria-expanded=${this.userMenu.open ? 'true' : 'false'}
+              @click=${this.toggleUserMenu}
             ></mm-icon-button>
-            <div hidden>
+            <div class="navbar-user-panel" ?hidden=${!this.userMenu.open}>
               <mm-surface variant="elevated" size="medium">
                 <mm-user-snippet
                   size="huge"
@@ -157,6 +165,10 @@ export class Navbar extends LitElement {
       this.searching = false
       this.searchRequestId++
     }
+  }
+
+  private toggleUserMenu = () => {
+    this.userMenu.toggle()
   }
 
   private onInput = (e: Event) => {

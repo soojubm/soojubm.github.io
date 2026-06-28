@@ -14,7 +14,7 @@
   /* position:sticky; */
   position: fixed;
   top: 0;
-  z-index: var(--zindex-menu);
+  z-index: calc(var(--zindex-fixed-bottom) + 1);
 }
 /* sticy 위로 스크롤 하면 */
 .navbar-logo {
@@ -28,6 +28,10 @@
 
 .navbar-backdrop {
   height: var(--navbar-height);
+}
+
+.js-search-sheet {
+  --sheet-z-index: calc(var(--zindex-fixed-bottom) + 2);
 }
 
 .navbar-user {
@@ -104,7 +108,7 @@
 
   /* 1200px 전체 중앙 정렬 안에서 왼쪽에 붙이기 */
   /* transform: translateX(calc(-1 * var(--layout-width-wide) / 2)); */
-  z-index: var(--zindex-menu);
+  z-index: calc(var(--zindex-fixed-bottom) + 1);
 
   &::-webkit-scrollbar {
     width: var(--space-2);
@@ -181,16 +185,14 @@
   cursor: pointer;
 }
 
-.navbar-user-trigger + * {
+.navbar-user-panel {
   width: 100%;
   min-width: calc(var(--width-small) + var(--space-4) * 7.5);
   max-width: calc(var(--width-small) + var(--space-4) * 7.5);
   position: absolute;
   right: 0;
   top: calc(var(--space-4) * 2.5);
-}
-.navbar-user-trigger.is-active + * {
-  display: block;
+  z-index: calc(var(--zindex-fixed-bottom) + 1);
 }
 
 .is-menu-opened .sidebar-menu {
