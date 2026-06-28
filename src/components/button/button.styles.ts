@@ -120,21 +120,8 @@ export const buttonVariantStyles = css`
   }
 `
 
-/** 선택 상태 공통 스킨. toggle·follow·filter가 함께 공유한다. */
+/** 선택 상태 공통 스킨. toggle·follow·filter가 함께 공유한다. 토큰은 variables.css에서 테마별로 할당한다. */
 export const buttonSelectedStyles = css`
-  :host {
-    --button-selected-border-color: var(--selection-indicator-color);
-    --button-selected-background: var(--selection-background);
-    --button-selected-text-color: var(--selection-foreground);
-  }
-
-  /* brutal: 보더가 모두 검정이라 색으로 구분할 수 없어 선택을 채움(반전)으로 표현한다. */
-  :host-context([data-theme='brutal']) {
-    --button-selected-border-color: var(--brutal-border-color);
-    --button-selected-background: var(--selection-indicator-color);
-    --button-selected-text-color: var(--color-foreground-on-solid);
-  }
-
   :host([selected]) button {
     border: var(--border-width) solid var(--button-selected-border-color);
     background: var(--button-selected-background);

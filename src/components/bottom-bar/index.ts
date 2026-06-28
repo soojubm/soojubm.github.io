@@ -1,10 +1,10 @@
 import { LitElement, css, html } from 'lit'
-import { customElement, property, state } from 'lit/decorators.js'
+import { customElement, property, query, state } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
-import { styleMap } from 'lit/directives/style-map.js'
 
 import { ICON_NAMES, type IconName } from '@/components/icon-button/semantics/icon-names'
 import '@/components/text/semantics/caption'
+import { SelectionIndicatorController } from '@/controllers/selection-indicator-controller'
 import { emit } from '@/utils/emit'
 import { arrayAttributeConverter } from '@/utils/property-converters'
 
@@ -62,7 +62,7 @@ class BottomBar extends LitElement {
     }
 
     .bottom-bar-indicator {
-      width: calc(100% / var(--bottom-bar-count, 3));
+      width: 0;
       height: var(--bottom-bar-item-height);
       border-radius: var(--radius-large);
       background: var(--selection-background);
@@ -70,7 +70,7 @@ class BottomBar extends LitElement {
       top: 0;
       bottom: 0;
       left: 0;
-      transform: var(--bottom-bar-transform, translateX(0%));
+      transform: translateX(0);
       transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
       pointer-events: none;
     }
@@ -85,27 +85,44 @@ class BottomBar extends LitElement {
 
   @state() private selectedIndex: number | null = null
 
+  @query('.bottom-bar') private bottomBar?: HTMLElement
+  @query('.bottom-bar-indicator') private indicator?: HTMLElement
+
+  private indicatorPosition = new SelectionIndicatorController(this, {
+    axis: 'x',
+    autoUpdate: true,
+    getContainer: () => this.bottomBar,
+    getIndicator: () => this.indicator,
+    getTarget: () =>
+      this.renderRoot.querySelector<HTMLElement>(".bottom-bar-item[aria-current='page']") ??
+      undefined,
+  })
+
   render() {
-    const items = this.items.length ? this.items : defaultItems
-    const defaultActive = items.findIndex(item => item.active)
-    const activeIndex = this.selectedIndex ?? (defaultActive >= 0 ? defaultActive : null)
-    const bottomBarStyle = {
-      '--bottom-bar-count': String(items.length),
-    }
-    const indicatorStyle = {
-      '--bottom-bar-transform': `translateX(${(activeIndex ?? 0) * 100}%)`,
-    }
+    const items = this.resolvedItems
+    const activeIndex = this.resolveActiveIndex(items)
 
     return html`
-      <nav class="bottom-bar" aria-label=${this.ariaLabel} style=${styleMap(bottomBarStyle)}>
-        <span
-          class="bottom-bar-indicator"
-          aria-hidden="true"
-          style=${styleMap(indicatorStyle)}
-        ></span>
+      <nav class="bottom-bar" aria-label=${this.ariaLabel}>
+        <span class="bottom-bar-indicator" aria-hidden="true"></span>
         ${this.renderItems(items, activeIndex)}
       </nav>
     `
+  }
+
+  private get resolvedItems() {
+    if (!this.items.length) return defaultItems
+
+    return this.items
+  }
+
+  private resolveActiveIndex(items: BottomBarItem[]) {
+    if (this.selectedIndex !== null) return this.selectedIndex
+
+    const activeIndex = items.findIndex(item => item.active)
+    if (activeIndex < 0) return null
+
+    return activeIndex
   }
 
   private renderItems(items: BottomBarItem[], activeIndex: number | null) {

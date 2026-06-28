@@ -4,6 +4,7 @@ import { customElement, property, query, queryAssignedElements } from 'lit/decor
 import Tab from '@/components/tabs/tab'
 import TabPanel from '@/components/tabs/tab-panel'
 import { tabsStyles } from '@/components/tabs/tabs.styles'
+import { SelectionIndicatorController } from '@/controllers/selection-indicator-controller'
 import { uniqueId } from '@/utils/unique-id'
 
 @customElement('mm-tab-list')
@@ -16,7 +17,13 @@ export default class TabList extends LitElement {
   @property({ type: String, reflect: true }) variant = 'line'
 
   @queryAssignedElements({ flatten: true }) private assignedElements!: HTMLElement[]
-  @query('.indicator') private indicator!: HTMLDivElement
+  @query('.indicator') private indicator?: HTMLElement
+
+  private indicatorPosition = new SelectionIndicatorController(this, {
+    axis: 'x',
+    getIndicator: () => this.indicator,
+    getTarget: () => this.querySelector<HTMLElement>('mm-tab[active]') ?? undefined,
+  })
 
   render() {
     return html`
@@ -129,7 +136,9 @@ export default class TabList extends LitElement {
         if (!panel.id) panel.id = `${this.tabsId}-panel-${index + 1}`
         tab.setAttribute('aria-controls', panel.id)
         panel.setAttribute('aria-labelledby', tab.id)
-      } else {tab.removeAttribute('aria-controls')}
+      } else {
+        tab.removeAttribute('aria-controls')
+      }
     })
 
     panels.forEach(panel => {
@@ -137,22 +146,6 @@ export default class TabList extends LitElement {
       if (!tabs.some(tab => tab.value === panel.value)) panel.removeAttribute('aria-labelledby')
     })
 
-    this.moveIndicator()
-  }
-
-  private moveIndicator() {
-    requestAnimationFrame(() => {
-      const activeTab = this.tabs.find(tab => tab.hasAttribute('active'))
-      if (!activeTab) {
-        if (this.indicator) this.indicator.style.width = '0px'
-        return
-      }
-
-      // indicator는 host 기준 absolute이므로 host rect 기준으로 연산
-      const tabRect = activeTab.getBoundingClientRect()
-      const containerRect = this.getBoundingClientRect()
-      this.indicator.style.transform = `translateX(${tabRect.left - containerRect.left}px)`
-      this.indicator.style.width = `${tabRect.width}px`
-    })
+    this.indicatorPosition.update()
   }
 }

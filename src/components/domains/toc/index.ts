@@ -1,9 +1,9 @@
 import { LitElement, css, html, nothing } from 'lit'
-import { customElement, query, queryAll, state } from 'lit/decorators.js'
+import { customElement, query, state } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
-import { styleMap } from 'lit/directives/style-map.js'
 
 import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
+import { SelectionIndicatorController } from '@/controllers/selection-indicator-controller'
 import { ScrollSpyController } from '@/controllers/scroll-spy-controller'
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
 import { copyToClipboard } from '@/utils/clipboard'
@@ -92,32 +92,34 @@ export class TableOfContents extends LitElement {
   @state() private items: TocItem[] = []
   @state() private activeId = ''
   @state() private copied = false
-  @state() private indicatorY = 0
 
   private setupFrame = 0
-  private indicatorFrame = 0
   private copyTimer = 0
   private scrollSpy = new ScrollSpyController(this, {
     getTargets: () => this.resolveScrollSpyTargets(),
     onActiveChange: id => (this.activeId = id),
   })
+  private indicatorPosition = new SelectionIndicatorController(this, {
+    axis: 'y',
+    autoUpdate: true,
+    getContainer: () => this.list,
+    getIndicator: () => this.indicator,
+    getTarget: () =>
+      this.renderRoot.querySelector<HTMLElement>('.toc-link[aria-current="true"]') ?? undefined,
+  })
 
   @query('.toc-list') private list?: HTMLElement
   @query('mm-selection-indicator') private indicator?: HTMLElement
-  @queryAll('.toc-link') private links!: NodeListOf<HTMLElement>
 
   render() {
     if (!this.items.length) return nothing
-    const listStyles = {
-      '--selection-indicator-y': `${this.indicatorY}px`,
-    }
 
     return html`
       <nav aria-label="On this page">
         <mm-text weight="bold" color="light" class="toc-title" aria-hidden="true">
           On this page
         </mm-text>
-        <div class="toc-list" style=${styleMap(listStyles)}>
+        <div class="toc-list">
           <mm-selection-indicator position="absolute" aria-hidden="true"></mm-selection-indicator>
           ${this.renderTocItems()}
         </div>
@@ -152,29 +154,16 @@ export class TableOfContents extends LitElement {
     this.setupFrame = requestAnimationFrame(() => {
       this.setupFrame = 0
       this.buildItems()
-      this.updateIndicatorPosition()
     })
   }
 
   disconnectedCallback() {
     window.removeEventListener('resize', this.updateIndicatorPosition)
     if (this.setupFrame) cancelAnimationFrame(this.setupFrame)
-    if (this.indicatorFrame) cancelAnimationFrame(this.indicatorFrame)
     if (this.copyTimer) window.clearTimeout(this.copyTimer)
     this.setupFrame = 0
-    this.indicatorFrame = 0
     this.copyTimer = 0
     super.disconnectedCallback()
-  }
-
-  updated(changedProps: Map<string, unknown>) {
-    if (changedProps.has('items') || changedProps.has('activeId')) {
-      if (this.indicatorFrame) cancelAnimationFrame(this.indicatorFrame)
-      this.indicatorFrame = requestAnimationFrame(() => {
-        this.indicatorFrame = 0
-        this.updateIndicatorPosition()
-      })
-    }
   }
 
   private buildItems() {
@@ -220,18 +209,7 @@ export class TableOfContents extends LitElement {
   }
 
   private updateIndicatorPosition = () => {
-    const list = this.list
-    const indicator = this.indicator
-    const activeItem = Array.from(this.links).find(link => link.dataset.tocId === this.activeId)
-
-    if (!list || !indicator || !activeItem) return
-
-    const listRect = list.getBoundingClientRect()
-    const itemRect = activeItem.getBoundingClientRect()
-    const indicatorRect = indicator.getBoundingClientRect()
-    const nextY = itemRect.top - listRect.top + itemRect.height / 2 - indicatorRect.height / 2
-
-    if (this.indicatorY !== nextY) this.indicatorY = nextY
+    this.indicatorPosition.update()
   }
 
   private scrollToItem(id: string) {
