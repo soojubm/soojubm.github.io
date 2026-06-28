@@ -1,4 +1,4 @@
-import { LitElement, html, nothing } from 'lit'
+import { LitElement, html } from 'lit'
 import { customElement, state } from 'lit/decorators.js'
 import { classMap } from 'lit/directives/class-map.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
@@ -26,7 +26,9 @@ export class Sidebar extends LitElement {
                 <mm-menu-item-action
                   label=${node.title}
                   icon=${node.icon}
-                  class=${this.isCurrentPage(node.id) ? 'is-active' : nothing}
+                  class=${classMap({
+                    'is-active': this.isCurrentPage(node.id),
+                  })}
                   @click=${() => this.handleStandaloneClick(node.id)}
                 ></mm-menu-item-action>
               `

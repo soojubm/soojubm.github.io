@@ -98,6 +98,7 @@
 - `render()` 안에서 조건부 DOM 조각이 커지면 의도를 드러내는 `render*()` helper로 분리한다.
 - Lit 바인딩은 attribute, property, Boolean attribute의 역할에 맞게 구분해 사용한다.
 - 단일 표현식 바인딩은 따옴표 없이 쓰고, 정적 문자열과 표현식을 섞을 때만 따옴표로 묶는다.
+- 동적 class는 `classMap`, 동적 inline style은 `styleMap` directive로 바인딩한다.
 - `reflect: true`는 외부 CSS 선택자나 DOM attribute 조회가 필요한 공개 상태에만 사용한다.
 - 조건부 렌더링을 만드는 문자열 prop은 optional로 두고, 단순 값 문자열은 빈 문자열을 기본값으로 둔다.
 - 선택 숫자 prop은 `??` 기준으로 처리한다.

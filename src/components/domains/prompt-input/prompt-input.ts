@@ -1,5 +1,6 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property, query, state } from 'lit/decorators.js'
+import { classMap } from 'lit/directives/class-map.js'
 
 import '@/components/icon-button/icon-button'
 import '@/components/flex/flex'
@@ -77,7 +78,12 @@ export class PromptInput extends LitElement {
   render() {
     return html`
       <form>
-        <div class=${this.isSingleLine ? 'chat-input is-single-line' : 'chat-input'}>
+        <div
+          class=${classMap({
+            'chat-input': true,
+            'is-single-line': this.isSingleLine,
+          })}
+        >
           <mm-textarea
             .value=${this.value}
             .name=${this.name}

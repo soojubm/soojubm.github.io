@@ -1,5 +1,6 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
+import { classMap } from 'lit/directives/class-map.js'
 
 import { componentContentFrameStyles } from '@/components/domains/component/component.styles'
 import '@/components/flex/flex'
@@ -37,7 +38,13 @@ class ComponentSection extends LitElement {
         <div hidden><mm-tag>${this.level === 'domain' ? 'Domain' : 'Semantic'}</mm-tag></div>
         <mm-text size="24" weight="bold" as="h3">${this.heading}</mm-text>
         ${this.renderDescription()}
-        <div class="content component-content-frame ${this.hasContent ? 'has-content' : ''}">
+        <div
+          class=${classMap({
+            content: true,
+            'component-content-frame': true,
+            'has-content': this.hasContent,
+          })}
+        >
           <slot @slotchange=${this.onSlotChange}></slot>
         </div>
       </mm-flex>

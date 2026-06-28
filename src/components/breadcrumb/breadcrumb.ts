@@ -1,5 +1,6 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { classMap } from 'lit/directives/class-map.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
 import { arrayAttributeConverter } from '@/utils/property-converters'
@@ -78,7 +79,13 @@ export class Breadcrumb extends LitElement {
   private renderItem(item: BreadcrumbItem, index: number, isLast: boolean) {
     if (item.href && !isLast) {
       return html`
-        <a class="breadcrumb-item ${index === 0 ? 'breadcrumb-home' : ''}" href=${item.href}>
+        <a
+          class=${classMap({
+            'breadcrumb-item': true,
+            'breadcrumb-home': index === 0,
+          })}
+          href=${item.href}
+        >
           ${item.label}
         </a>
       `

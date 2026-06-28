@@ -186,9 +186,10 @@ export class Flex extends LitElement {
   protected willUpdate() {
     if (this.as === 'div') {
       this.setAttribute('role', 'group')
-    } else {
-      this.removeAttribute('role')
+      return
     }
+
+    this.removeAttribute('role')
   }
 
   private get gapValue() {
