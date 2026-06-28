@@ -64,7 +64,7 @@ export class Footer extends LitElement {
 
 /*
         <nav>
-          <mm-flex gap="4rem">
+          <mm-flex gap="16">
             <mm-paragraph hidden aria-hidden="true">사이트맵</mm-paragraph>
             <mm-flex direction="column">
               <mm-paragraph size="large">사이트맵 컴포넌트</mm-paragraph>

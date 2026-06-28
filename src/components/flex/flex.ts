@@ -51,7 +51,7 @@ export class Flex extends LitElement {
         flex-direction: row;
         justify-content: flex-start;
         align-items: stretch;
-        gap: var(--_flex-gap, var(--space-2));
+        gap: var(--space-2);
       }
 
       /* 시멘틱 래퍼를 쓰는 경우 host는 단순 박스이고 내부 요소가 flex 컨테이너다. */
@@ -68,6 +68,34 @@ export class Flex extends LitElement {
 
       :host([wrap]) {
         flex-wrap: wrap;
+      }
+
+      :host([gap='0']) {
+        gap: 0;
+      }
+      :host([gap='05']) {
+        gap: var(--space-05);
+      }
+      :host([gap='1']) {
+        gap: var(--space-1);
+      }
+      :host([gap='3']) {
+        gap: var(--space-3);
+      }
+      :host([gap='4']) {
+        gap: var(--space-4);
+      }
+      :host([gap='8']) {
+        gap: var(--space-8);
+      }
+      :host([gap='12']) {
+        gap: var(--space-12);
+      }
+      :host([gap='16']) {
+        gap: var(--space-16);
+      }
+      :host([gap='section']) {
+        gap: var(--space-section);
       }
 
       :host([justify-content='center']) {
@@ -117,7 +145,7 @@ export class Flex extends LitElement {
   justifyContent: JustifyContent = 'flex-start'
   @property({ type: String, attribute: 'align-items', reflect: true }) alignItems: AlignItems =
     'stretch'
-  @property({ type: String }) gap = '2'
+  @property({ type: String, reflect: true }) gap = '2'
   @property({ type: String, reflect: true }) as: FlexAs = 'div'
   @property({ type: Boolean, reflect: true }) wrap = false
   @property({ type: Boolean, reflect: true }) stretch = false
@@ -154,21 +182,13 @@ export class Flex extends LitElement {
     `
   }
 
-  /** 기본 as="div"는 host가 flex 컨테이너이므로 group role과 gap만 host에 부여한다. */
+  /** 기본 as="div"는 host가 flex 컨테이너이므로 group role을 host에 부여한다. */
   protected willUpdate() {
-    if (this.as !== 'div') {
+    if (this.as === 'div') {
+      this.setAttribute('role', 'group')
+    } else {
       this.removeAttribute('role')
-      this.style.removeProperty('--_flex-gap')
-      return
     }
-
-    this.setAttribute('role', 'group')
-
-    if (this.gap === '2') {
-      this.style.removeProperty('--_flex-gap')
-      return
-    }
-    this.style.setProperty('--_flex-gap', this.gapValue)
   }
 
   private get gapValue() {
