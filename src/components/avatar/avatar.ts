@@ -1,4 +1,4 @@
-import { LitElement, html } from 'lit'
+import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
@@ -28,23 +28,29 @@ class Avatar extends LitElement {
         role=${ifDefined(this.ariaLabel ? 'img' : undefined)}
         aria-label=${ifDefined(this.ariaLabel || undefined)}
       >
-        ${this.renderContent()}
+        ${this.renderImage()} ${this.renderIcon()} ${this.renderFallback()}
       </figure>
     `
   }
 
-  private renderContent() {
-    if (this.src) {
-      return html`
-        <img src=${this.src} alt="" />
-      `
-    }
+  private renderImage() {
+    if (!this.src) return nothing
 
-    if (this.icon) {
-      return html`
-        <mm-icon name=${this.icon} size=${this.iconSize} aria-hidden="true"></mm-icon>
-      `
-    }
+    return html`
+      <img src=${this.src} alt="" />
+    `
+  }
+
+  private renderIcon() {
+    if (this.src || !this.icon) return nothing
+
+    return html`
+      <mm-icon name=${this.icon} size=${this.iconSize} aria-hidden="true"></mm-icon>
+    `
+  }
+
+  private renderFallback() {
+    if (this.src || this.icon) return nothing
 
     return html`
       <slot>

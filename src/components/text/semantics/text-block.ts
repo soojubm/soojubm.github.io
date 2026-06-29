@@ -72,7 +72,8 @@ class TextBlock extends LitElement {
         gap=${variant.gap}
         align-items=${this.centered ? 'center' : 'start'}
       >
-        ${this.renderEyebrow()} ${this.renderContent(variant)} ${this.renderCaption()}
+        ${this.renderEyebrow()} ${this.renderHeading(variant)} ${this.renderDescription(variant)}
+        ${this.renderCaption()}
       </mm-flex>
     `
   }
@@ -85,16 +86,7 @@ class TextBlock extends LitElement {
     `
   }
 
-  private renderContent(variant: typeof TextBlock.variants[keyof typeof TextBlock.variants]) {
-    if (this.level === '1') {
-      return html`
-        <mm-text as=${this.headingTag} size="32" weight="bold" ?centered=${this.centered}>
-          ${this.heading}
-        </mm-text>
-        <mm-paragraph size="large" ?centered=${this.centered}>${this.description}</mm-paragraph>
-      `
-    }
-
+  private renderHeading(variant: typeof TextBlock.variants[keyof typeof TextBlock.variants]) {
     return html`
       <mm-text
         as=${this.headingTag}
@@ -104,6 +96,17 @@ class TextBlock extends LitElement {
       >
         ${this.heading}
       </mm-text>
+    `
+  }
+
+  private renderDescription(variant: typeof TextBlock.variants[keyof typeof TextBlock.variants]) {
+    if (this.level === '1') {
+      return html`
+        <mm-paragraph size="large" ?centered=${this.centered}>${this.description}</mm-paragraph>
+      `
+    }
+
+    return html`
       <mm-text size=${variant.descriptionSize} ?centered=${this.centered}>
         ${this.description}
       </mm-text>

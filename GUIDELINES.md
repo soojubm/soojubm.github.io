@@ -120,7 +120,7 @@
 - Lit 클래스 멤버는 `static styles`, reactive property, `render()`, 메서드 순으로 배치한다.
 - 함수 내부에서 조건을 분기할 때는 삼항식보다 early return을 우선한다.
 - `render()` 안에서 조건부 DOM 조각이 커지면 의도를 드러내는 `render*()` helper로 분리한다.
-- 조건부 렌더 helper는 `renderContent()`처럼 상태를 다시 중계하는 이름보다 `renderImage()`처럼 실제 조각의 의미를 드러내고, 조각 자체가 조건을 처리하게 둔다.
+- 조건부 렌더 helper는 `renderContent()`처럼 상태를 다시 중계하는 이름보다 `renderImage()`처럼 실제 조각의 의미를 드러내고, `render()`에는 각 helper를 직접 나열하며 조건은 helper 내부에서 early return으로 처리한다.
 - Lit 바인딩은 attribute, property, Boolean attribute의 역할에 맞게 구분해 사용한다.
 - 단일 표현식 바인딩은 따옴표 없이 쓰고, 정적 문자열과 표현식을 섞을 때만 따옴표로 묶는다.
 - 동적 class는 정적 class와 한 바인딩에서 섞지 않고, 상태 스타일은 attribute나 style selector로 표현한다.

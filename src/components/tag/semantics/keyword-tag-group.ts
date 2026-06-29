@@ -19,12 +19,8 @@ export class KeywordTagGroup extends LitElement {
   render() {
     if (!this.keywords.length) return nothing
     return html`
-      <mm-tag-group>${this.renderContent()}</mm-tag-group>
+      <mm-tag-group>${this.renderHeading()} ${this.renderKeywords()}</mm-tag-group>
     `
-  }
-
-  private renderContent() {
-    return [this.renderHeading(), this.renderKeywords()]
   }
 
   private renderHeading() {
