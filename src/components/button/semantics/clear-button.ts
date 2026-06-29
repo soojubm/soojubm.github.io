@@ -19,6 +19,8 @@ class ClearButton extends LitElement {
   `
 
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = ''
+  @property({ type: String }) tooltip = ''
+  @property({ type: String, attribute: 'tooltip-placement' }) tooltipPlacement = ''
   @property({ type: Boolean }) disabled = false
 
   render() {
@@ -27,6 +29,8 @@ class ClearButton extends LitElement {
         icon=${ICON_NAMES.CLOSE}
         variant="tertiary"
         aria-label=${this.ariaLabel}
+        tooltip=${this.tooltip}
+        tooltip-placement=${this.tooltipPlacement}
         ?disabled=${this.disabled}
       ></mm-icon-button>
     `

@@ -16,6 +16,8 @@ export class CloseButton extends LitElement {
     }
   `
 
+  @property({ type: String }) tooltip = ''
+  @property({ type: String, attribute: 'tooltip-placement' }) tooltipPlacement = ''
   @property({ type: Boolean }) disabled = false
 
   private handleClick = () => {
@@ -28,6 +30,8 @@ export class CloseButton extends LitElement {
         icon=${ICON_NAMES.CLOSE}
         variant="secondary"
         aria-label="닫기"
+        tooltip=${this.tooltip}
+        tooltip-placement=${this.tooltipPlacement}
         ?disabled=${this.disabled}
         @click=${this.handleClick}
       ></mm-icon-button>

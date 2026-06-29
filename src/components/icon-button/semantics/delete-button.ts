@@ -19,6 +19,8 @@ export class DeleteButton extends LitElement {
   @property({ type: String, attribute: 'confirm-message' })
   confirmMessage = '정말 삭제하시겠어요?'
 
+  @property({ type: String }) tooltip = ''
+  @property({ type: String, attribute: 'tooltip-placement' }) tooltipPlacement = ''
   @property({ type: Boolean }) disabled = false
 
   private handleClick = () => {
@@ -33,6 +35,8 @@ export class DeleteButton extends LitElement {
         icon=${ICON_NAMES.DELETE}
         variant="destructive"
         aria-label="삭제"
+        tooltip=${this.tooltip}
+        tooltip-placement=${this.tooltipPlacement}
         ?disabled=${this.disabled}
         @click=${this.handleClick}
       ></mm-icon-button>

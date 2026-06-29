@@ -13,6 +13,8 @@ export class NextButton extends LitElement {
     }
   `
 
+  @property({ type: String }) tooltip = ''
+  @property({ type: String, attribute: 'tooltip-placement' }) tooltipPlacement = ''
   @property({ type: Boolean }) disabled = false
 
   private handleClick = () => {
@@ -26,6 +28,8 @@ export class NextButton extends LitElement {
         icon=${ICON_NAMES.NEXT}
         variant="secondary"
         aria-label="다음"
+        tooltip=${this.tooltip}
+        tooltip-placement=${this.tooltipPlacement}
         ?disabled=${this.disabled}
         @click=${this.handleClick}
       ></mm-icon-button>

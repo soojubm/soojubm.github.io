@@ -5,7 +5,7 @@
   ></mm-page-header>
 
   <mm-component-example>
-    <mm-flex align-items="center" gap="2">
+    <mm-button-group>
       <mm-icon-button
         variant="primary"
         icon="arrow-right"
@@ -36,65 +36,9 @@
         tooltip="Destructive"
         tooltip-placement="center"
       ></mm-icon-button>
-    </mm-flex>
+    </mm-button-group>
     <mm-separator></mm-separator>
-    <mm-flex>
-      <mm-icon-button
-        variant="primary"
-        icon="arrow-right"
-        tooltip="다음"
-        tooltip-placement="center"
-      ></mm-icon-button>
-      <mm-icon-button
-        variant="primary"
-        icon="arrow-up"
-        tooltip="위로"
-        tooltip-placement="center"
-      ></mm-icon-button>
-      <mm-icon-button
-        variant="primary"
-        size="small"
-        icon="arrow-right"
-        tooltip="다음"
-        tooltip-placement="center"
-      ></mm-icon-button>
-      <mm-icon-button
-        variant="primary"
-        size="small"
-        icon="arrow-up"
-        tooltip="위로"
-        tooltip-placement="center"
-      ></mm-icon-button>
-    </mm-flex>
-    <mm-separator></mm-separator>
-    <mm-flex align-items="center" gap="2">
-      <mm-icon-button icon="heart" tooltip="좋아요" tooltip-placement="center"></mm-icon-button>
-      <mm-icon-button icon="user" tooltip="로그인" tooltip-placement="center"></mm-icon-button>
-      <mm-icon-button
-        icon="star-solid"
-        tooltip="즐겨찾기됨"
-        tooltip-placement="center"
-      ></mm-icon-button>
-      <mm-icon-button icon="star" tooltip="즐겨찾기" tooltip-placement="center"></mm-icon-button>
-    </mm-flex>
-    <mm-separator></mm-separator>
-    <mm-flex>
-      <mm-icon-button
-        variant="secondary"
-        icon="arrow-left"
-        tooltip="이전"
-        tooltip-placement="center"
-      ></mm-icon-button>
-      <mm-icon-button
-        variant="secondary"
-        icon="arrow-right"
-        color="gold"
-        tooltip="다음"
-        tooltip-placement="center"
-      ></mm-icon-button>
-    </mm-flex>
-    <mm-separator></mm-separator>
-    <mm-flex>
+    <mm-button-group>
       <mm-icon-button
         variant="primary"
         icon="arrow-right"
@@ -115,7 +59,7 @@
         tooltip-placement="center"
         disabled
       ></mm-icon-button>
-    </mm-flex>
+    </mm-button-group>
   </mm-component-example>
   <mm-component-props>
     <mm-prop name="icon" type="IconName"></mm-prop>
@@ -208,116 +152,42 @@
     heading="PrevButton, NextButton"
     description="페이지·캐러셀·단계형 흐름에서 이전/다음 항목으로 이동합니다."
   >
-    <mm-flex align-items="center" gap="4">
-      <mm-tooltip content="이전" placement="center">
-        <mm-prev-button slot="trigger"></mm-prev-button>
-      </mm-tooltip>
-      <mm-tooltip content="다음" placement="center">
-        <mm-next-button slot="trigger"></mm-next-button>
-      </mm-tooltip>
-    </mm-flex>
+    <mm-button-group>
+      <mm-prev-button tooltip="이전" tooltip-placement="center"></mm-prev-button>
+      <mm-next-button tooltip="다음" tooltip-placement="center"></mm-next-button>
+    </mm-button-group>
   </mm-component-section>
 
   <mm-component-section
     heading="Close Button"
     description="모달, 패널, 시트 등 레이어를 닫는 보조 액션 버튼입니다."
   >
-    <mm-flex align-items="center" gap="4">
-      <mm-tooltip content="닫기" placement="center">
-        <mm-close-button slot="trigger"></mm-close-button>
-      </mm-tooltip>
-    </mm-flex>
+    <mm-close-button tooltip="닫기" tooltip-placement="center"></mm-close-button>
   </mm-component-section>
 
   <mm-component-section
     heading="Dismiss Button"
     description="배너, 알림, 토스트 등에서 콘텐츠를 비파괴적으로 해제하는 보조 액션 버튼입니다."
   >
-    <mm-flex align-items="center" gap="4">
-      <mm-tooltip content="해제" placement="center">
-        <mm-dismiss-button slot="trigger"></mm-dismiss-button>
-      </mm-tooltip>
-      <!-- 사용 예: 배너 내부에 배치 -->
-      <div
-        style="
-          display: flex;
-          align-items: center;
-          gap: var(--space-2);
-          padding: var(--space-2) var(--space-3);
-          background: var(--color-background-subtle);
-          border-radius: var(--radius);
-        "
-      >
-        <mm-paragraph>새로운 업데이트가 있습니다.</mm-paragraph>
-        <mm-tooltip content="해제" placement="right">
-          <mm-dismiss-button slot="trigger"></mm-dismiss-button>
-        </mm-tooltip>
-      </div>
-    </mm-flex>
+    <mm-dismiss-button tooltip="닫기" tooltip-placement="center"></mm-dismiss-button>
   </mm-component-section>
 
   <mm-component-section
     heading="Delete Button / Remove Button"
     description="아이템·데이터를 영구 삭제하는 파괴적 액션 버튼. 다이얼로그로 확인하기 때문에 시각적 노이즈 최소화."
   >
-    <mm-flex align-items="center" gap="4">
-      <mm-tooltip content="삭제" placement="center">
-        <mm-delete-button slot="trigger"></mm-delete-button>
-      </mm-tooltip>
-      <!-- 사용 예: 리스트 아이템 내부에 배치 -->
-      <div
-        style="
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          gap: var(--space-2);
-          padding: var(--space-2) var(--space-3);
-          border: var(--border);
-          border-radius: var(--radius);
-          min-width: 200px;
-        "
-      >
-        <mm-paragraph>파일명.pdf</mm-paragraph>
-        <mm-tooltip content="삭제" placement="right">
-          <mm-delete-button slot="trigger"></mm-delete-button>
-        </mm-tooltip>
-      </div>
-    </mm-flex>
+    <mm-delete-button tooltip="삭제" tooltip-placement="center"></mm-delete-button>
   </mm-component-section>
 
   <mm-component-section
     heading="Copy Button"
     description="텍스트를 클립보드에 복사하는 버튼. 복사 성공 시 일시적으로 체크 아이콘으로 전환됩니다."
   >
-    <mm-flex align-items="center" gap="4">
-      <mm-tooltip content="복사" placement="center">
-        <mm-copy-button slot="trigger" value="copied text"></mm-copy-button>
-      </mm-tooltip>
-      <!-- 사용 예: 코드 스니펫·링크와 함께 배치 -->
-      <div
-        style="
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          gap: var(--space-2);
-          padding: var(--space-2) var(--space-3);
-          background: var(--color-background-subtle);
-          border-radius: var(--radius);
-          min-width: 240px;
-        "
-      >
-        <mm-paragraph>https://soojubm.github.io</mm-paragraph>
-        <mm-tooltip content="링크 복사" placement="right">
-          <mm-copy-button slot="trigger" value="https://soojubm.github.io"></mm-copy-button>
-        </mm-tooltip>
-      </div>
-    </mm-flex>
+    <mm-copy-button tooltip="복사" tooltip-placement="center" value="copied text"></mm-copy-button>
   </mm-component-section>
 
   <mm-component-section heading="Clear Button" description="search field에서 사용.">
-    <mm-tooltip content="입력 지우기" placement="center">
-      <mm-clear-button slot="trigger"></mm-clear-button>
-    </mm-tooltip>
+    <mm-clear-button tooltip="입력 지우기" tooltip-placement="center"></mm-clear-button>
   </mm-component-section>
   <mm-component-section heading="Expand Button / Indicator" description="">
     <mm-icon-button

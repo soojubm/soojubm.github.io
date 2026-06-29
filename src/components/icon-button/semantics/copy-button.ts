@@ -1,6 +1,5 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
-import { classMap } from 'lit/directives/class-map.js'
 
 import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
 import '@/components/icon-button/icon-button'
@@ -16,6 +15,8 @@ export class CopyButton extends LitElement {
   static styles = css``
 
   @property({ type: String }) value = ''
+  @property({ type: String }) tooltip = ''
+  @property({ type: String, attribute: 'tooltip-placement' }) tooltipPlacement = ''
   @state() private copied = false
 
   private handleClick = async () => {
@@ -33,6 +34,8 @@ export class CopyButton extends LitElement {
         icon=${this.copied ? ICON_NAMES.COPY_SUCCESS : ICON_NAMES.COPY}
         aria-label=${this.copied ? '복사됨' : '복사'}
         variant="ghost"
+        tooltip=${this.copied && this.tooltip ? '복사됨' : this.tooltip}
+        tooltip-placement=${this.tooltipPlacement}
         @click=${this.handleClick}
       ></mm-icon-button>
     `
