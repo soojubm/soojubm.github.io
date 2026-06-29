@@ -3,6 +3,7 @@ import { customElement, property, queryAssignedElements } from 'lit/decorators.j
 
 import { MenuItemRadio } from '@/components/menuitem/semantics/menu-item-radio'
 import '@/components/menuitem/semantics/menu-item-group'
+import { SelectedValuesController } from '@/controllers/selected-values-controller'
 import { emit } from '@/utils/emit'
 
 @customElement('mm-menu-item-radio-group')
@@ -19,6 +20,19 @@ export class MenuItemRadioGroup extends LitElement {
 
   @queryAssignedElements({ selector: 'mm-menu-item-radio', flatten: true })
   private radios!: MenuItemRadio[]
+
+  private selection = new SelectedValuesController(this, {
+    getMode: () => 'single',
+    getValues: () => (this.value ? [this.value] : []),
+    setValues: values => {
+      this.value = values[0] ?? ''
+    },
+    getOptions: () => this.radios?.map(radio => ({ value: radio.value })) ?? [],
+  })
+
+  protected updated(changedProperties: Map<string, unknown>) {
+    if (changedProperties.has('value') || changedProperties.has('name')) this.syncRadios()
+  }
 
   render() {
     return html`
@@ -40,12 +54,8 @@ export class MenuItemRadioGroup extends LitElement {
     e.stopPropagation() // 개별 아이템 이벤트 전파 중단
 
     const detail = (e as CustomEvent).detail
-    this.value = detail.value
-
-    // 그룹 내의 모든 라디오 버튼을 찾아 현재 선택된 것 외에는 전부 체크 해제합니다.
-    this.radios.forEach(radio => {
-      if (radio !== target) radio.checked = false
-    })
+    this.selection.setSelected({ value: detail.value }, true)
+    this.syncRadios()
 
     // 최종적으로 그룹 차원의 change 이벤트를 외부에 발생시킵니다.
     emit(this, 'change', { value: this.value, name: this.name })
@@ -55,7 +65,14 @@ export class MenuItemRadioGroup extends LitElement {
   private handleSlotChange() {
     this.radios.forEach(radio => {
       if (this.name) radio.name = this.name
-      if (this.value && radio.value === this.value) radio.checked = true
+    })
+    this.syncRadios()
+  }
+
+  private syncRadios() {
+    this.radios.forEach(radio => {
+      if (this.name) radio.name = this.name
+      radio.checked = this.selection.isSelected(radio.value)
     })
   }
 }

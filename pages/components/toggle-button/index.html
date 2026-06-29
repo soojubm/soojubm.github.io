@@ -112,6 +112,37 @@
   </mm-component-section>
 
   <mm-component-section
+    heading="FilterButtonGroup"
+    description="콘텐츠 필터링을 위한 옵션 버튼. ToggleButton 계열로 선택 상태를 표현하며 그룹으로 묶어 단일 선택 또는 다중 선택을 지원합니다."
+  >
+    <mm-flex direction="column" gap="4">
+      <mm-text>Single selection (라디오형)</mm-text>
+      <mm-filter-button-group
+        mode="single"
+        values='["all"]'
+        options='[
+          {"value":"all","label":"전체"},
+          {"value":"deposit","label":"입금확인"},
+          {"value":"paid","label":"결제완료"},
+          {"value":"shipping","label":"배송중"}
+        ]'
+      ></mm-filter-button-group>
+
+      <mm-text>Multiple selection (체크박스형)</mm-text>
+      <mm-filter-button-group
+        mode="multiple"
+        values='["novel","movie"]'
+        options='[
+          {"value":"novel","label":"소설"},
+          {"value":"movie","label":"영화"},
+          {"value":"typo","label":"타이포그래피"},
+          {"value":"music","label":"음악"}
+        ]'
+      ></mm-filter-button-group>
+    </mm-flex>
+  </mm-component-section>
+
+  <mm-component-section
     heading="ThemeSwitcher"
     description="현재 테마를 아이콘 버튼으로 표시하고, 드롭다운에서 테마를 전환합니다."
   >

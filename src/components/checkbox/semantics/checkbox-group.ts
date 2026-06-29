@@ -4,6 +4,7 @@ import { customElement, property, queryAssignedElements } from 'lit/decorators.j
 import type { Checkbox } from '@/components/checkbox/checkbox'
 
 import { checkboxGroupStyles } from '@/components/checkbox/checkbox.styles'
+import { SelectedValuesController } from '@/controllers/selected-values-controller'
 import { emit } from '@/utils/emit'
 
 type CheckboxChangeDetail = {
@@ -26,6 +27,16 @@ export class CheckboxGroup extends LitElement {
 
   @queryAssignedElements({ selector: 'mm-checkbox' })
   private checkboxes!: Checkbox[]
+
+  private selection = new SelectedValuesController(this, {
+    getMode: () => 'multiple',
+    getValues: () => this.value,
+    setValues: values => {
+      this.value = values
+    },
+    getOptions: () =>
+      this.checkboxes?.map(checkbox => ({ value: this.getCheckboxValue(checkbox) })) ?? [],
+  })
 
   private isInitialized = false
 
@@ -79,11 +90,9 @@ export class CheckboxGroup extends LitElement {
     if (!this.checkboxes) return
 
     this.checkboxes.forEach(checkbox => {
-      const value = checkbox.value || checkbox.getAttribute('value') || ''
-
       if (this.name) checkbox.name = this.name
 
-      checkbox.checked = this.value.includes(value)
+      checkbox.checked = this.selection.isSelected(this.getCheckboxValue(checkbox))
     })
   }
 
@@ -99,13 +108,14 @@ export class CheckboxGroup extends LitElement {
 
     if (!value) return
 
-    if (checked) {
-      if (!this.value.includes(value)) this.value = [...this.value, value]
-    } else {
-      this.value = this.value.filter(item => item !== value)
-    }
+    this.selection.setSelected({ value }, checked)
+    this.syncCheckboxes()
 
     this.dispatchValueChange()
+  }
+
+  private getCheckboxValue(checkbox: Checkbox) {
+    return checkbox.value || checkbox.getAttribute('value') || ''
   }
 
   private dispatchValueChange() {

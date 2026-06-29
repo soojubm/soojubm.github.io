@@ -4,6 +4,7 @@ import { customElement, property, queryAssignedElements } from 'lit/decorators.j
 import type { MenuItemCheckbox } from '@/components/menuitem/semantics/menu-item-checkbox'
 
 import '@/components/menuitem/semantics/menu-item-group'
+import { SelectedValuesController } from '@/controllers/selected-values-controller'
 import { emit } from '@/utils/emit'
 
 /**
@@ -25,6 +26,19 @@ export class MenuItemCheckboxGroup extends LitElement {
   @queryAssignedElements({ selector: 'mm-menu-item-checkbox', flatten: true })
   private checkboxes!: MenuItemCheckbox[]
 
+  private selection = new SelectedValuesController(this, {
+    getMode: () => 'multiple',
+    getValues: () => this.values,
+    setValues: values => {
+      this.values = values
+    },
+    getOptions: () => this.checkboxes?.map(checkbox => ({ value: checkbox.value })) ?? [],
+  })
+
+  protected updated(changedProperties: Map<string, unknown>) {
+    if (changedProperties.has('values')) this.syncCheckboxes()
+  }
+
   render() {
     return html`
       <mm-menu-item-group
@@ -44,12 +58,8 @@ export class MenuItemCheckboxGroup extends LitElement {
 
     const { checked, value } = (e as CustomEvent<{ checked: boolean; value: string }>).detail
 
-    this.values = checked ? [...this.values, value] : this.values.filter(v => v !== value)
-
-    // 자식 동기화
-    this.checkboxes.forEach(cb => {
-      cb.checked = this.values.includes(cb.value)
-    })
+    this.selection.setSelected({ value }, checked)
+    this.syncCheckboxes()
 
     emit(this, 'change', { values: this.values })
   }
@@ -59,9 +69,12 @@ export class MenuItemCheckboxGroup extends LitElement {
     const preselected = this.checkboxes.filter(cb => cb.checked).map(cb => cb.value)
     if (preselected.length && !this.values.length) this.values = preselected
 
-    // values 기준으로 동기화
-    this.checkboxes.forEach(cb => {
-      cb.checked = this.values.includes(cb.value)
+    this.syncCheckboxes()
+  }
+
+  private syncCheckboxes() {
+    this.checkboxes.forEach(checkbox => {
+      checkbox.checked = this.selection.isSelected(checkbox.value)
     })
   }
 }

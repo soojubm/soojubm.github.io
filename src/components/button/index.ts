@@ -1,7 +1,6 @@
 import '@/components/button/button'
 import '@/components/button/button-group'
 
-import '@/components/button/semantics/filter-button'
 import '@/components/button/semantics/filter-button-group'
 import '@/components/button/semantics/add-button'
 import '@/components/button/semantics/follow-button'

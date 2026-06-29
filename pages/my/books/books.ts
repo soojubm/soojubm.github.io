@@ -35,13 +35,12 @@ function renderFilters(books: Book[], state: FilterState, rerender: () => void) 
   if (!container) return
 
   const countries = getCountries(books, 5)
+  const countryOptions = toFilterOptions(countries)
 
   container.innerHTML = `
     <mm-flex align-items="flex-start" gap="3">
       <mm-text size="12" color="light" style="min-width:2rem;padding-top:6px">국가</mm-text>
-      <mm-filter-button-group class="js-country-filter" mode="single" style="flex:1;flex-wrap:wrap">
-        ${countries.map(c => `<mm-filter-button value="${c}">${c}</mm-filter-button>`).join('')}
-      </mm-filter-button-group>
+      <mm-filter-button-group class="js-country-filter" mode="single" options='${countryOptions}' style="flex:1"></mm-filter-button-group>
     </mm-flex>
   `
 
@@ -56,4 +55,8 @@ function getFiltered(books: Book[], state: FilterState) {
     if (state.country && b.country !== state.country) return false
     return true
   })
+}
+
+function toFilterOptions(values: string[]) {
+  return JSON.stringify(values.map(value => ({ value, label: value }))).replace(/'/g, '&apos;')
 }

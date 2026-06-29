@@ -12,7 +12,7 @@ function initIconIndicators() {
 
   picker.addEventListener('change', (e: Event) => {
     const detail = (e as CustomEvent).detail
-    const category = detail?.selected?.[0]
+    const category = detail?.values?.[0]
     if (!category) return
 
     document.querySelectorAll<HTMLElement>('[id^="icon-section-"]').forEach(el => {

@@ -55,6 +55,8 @@
   </mm-component-tokens>
 
   <!-- TODO 내부 청결 다른 다른 페이지에서 -->
+  <!-- <dd>{label: string, disabled: boolean, onClick: () => void}</dd> -->
+
   <mm-component-anatomy
     parts='[
       "컨테이너 — variant·size로 형태와 위계를 정의하고 클릭 영역을 만듭니다.",
@@ -94,42 +96,44 @@
       <mm-feature heading="Groupable" subtitle="Easy scanning" description="TODO"></mm-feature>
     </mm-feature-group>
 
-    <!-- <mm-paragraph-group>
-      <mm-paragraph size="large">Changelog</mm-paragraph>
-          <table class="table">
+    <!-- <table class="table">
       <tbody>
         <tr>
           <th>21-07-28</th>
-          <td>chip-label 엘리먼트 항상 사용. space-chip-inset 레이블에 패딩을 주면 아이콘
-            컨트롤이 쉬워짐.</td>
+          <td>
+            chip-label 엘리먼트 항상 사용. space-chip-inset 레이블에 패딩을 주면 아이콘 컨트롤이
+            쉬워짐.
+          </td>
         </tr>
         <tr>
           <th>2022년</th>
           <td>button small 삭제. chip과 형태의 변별력이 없고 용법이 중복.</td>
         </tr>
         <tr>
-          <th style="width:100px;">Aug 2024</th>
-          <td>The stroke color was softened to improve visual hierarchy between chips and
-            buttons. 버튼과의 위계를 위하여 나는, 사이즈 제한으로도 충분하다고 생각</td>
+          <th style="width: 100px">Aug 2024</th>
+          <td>
+            The stroke color was softened to improve visual hierarchy between chips and buttons.
+            버튼과의 위계를 위하여 나는, 사이즈 제한으로도 충분하다고 생각
+          </td>
         </tr>
         <tr>
-          <th style="width:100px;">Nov 2024</th>
-          <td>칩과 통합하고 사이즈 토큰과 동일한 사이즈 프로토콜을 사용한다. 추후 선택 또는 필터링에
-            따른 기능 버튼을 추가한다. 문제. 아이콘 버튼이 필요. 간격. Chip을 제거한 이유. 형태에 기반한
-            액션이라는 것은 둘 다 동일. 게다가 새로운 역할을 부여 받는 버튼은 어차피 새로운 컴포넌트로
-            정의되어야 하는데, filterButton이 filterChip이 되어야 하는 이유를 못 찾겠음. 결론적으로
-            버튼의 형태, 이것은 input과 textfield도 마찬가지로 적용이 되는데, 버튼의 형태는 고유한
-            프리미티브 컴포넌트가 갖고, 도메인에 맞게 역할를 갖는 새로운 컴포넌트를 별도 정의한다.
-            ButtonPrimitive (orbit)</td>
+          <th style="width: 100px">Nov 2024</th>
+          <td>
+            칩과 통합하고 사이즈 토큰과 동일한 사이즈 프로토콜을 사용한다. 추후 선택 또는 필터링에
+            따른 기능 버튼을 추가한다. 문제. 아이콘 버튼이 필요. 간격. Chip을 제거한 이유. 형태에
+            기반한 액션이라는 것은 둘 다 동일. 게다가 새로운 역할을 부여 받는 버튼은 어차피 새로운
+            컴포넌트로 정의되어야 하는데, filterButton이 filterChip이 되어야 하는 이유를 못 찾겠음.
+            결론적으로 버튼의 형태, 이것은 input과 textfield도 마찬가지로 적용이 되는데, 버튼의
+            형태는 고유한 프리미티브 컴포넌트가 갖고, 도메인에 맞게 역할를 갖는 새로운 컴포넌트를
+            별도 정의한다. ButtonPrimitive (orbit)
+          </td>
         </tr>
       </tbody>
-    </table>
-    </mm-paragraph-group> -->
+    </table> -->
 
     <mm-paragraph-group>
       <mm-paragraph size="large">
         사용자 여정을 보조하는 액션입니다. 실행 페이지에서 사용자는 즉각적인 결과를 기대할 수
-        있습니다. icon only chip 링크. 링크 개념 모호. 팝업. 쿼리스트링.
       </mm-paragraph>
 
       <mm-component-aka
@@ -138,22 +142,12 @@
 
       <mm-text-list
         texts='[
-        "menuitem, checkbox로 대체 가능한 selection role. TODO 그렇다면 언제 메뉴아이템과 체크박스를 사용하고 언제 칩그룹을 사용하는지 가이드가 필요하다.",
-        "button과 통합 하느냐 tag와 통합하느냐. 인터렉션을 기준으로 정의할 수 있어 버튼이 유리. 문제는 selected 상태에 관한 스타일은 chip의 고유한 형태. 기능으로 분류하는 것이 중요함. "
-        "chipGroup selected=[] role=listbox aria-orientation="vertical" aria-multiselectable="true",
-        "chip value="" role="option" aria-selected="true" | aria-checked="""
-      ]'
-      ></mm-text-list>
-
-      <mm-text-list
-        texts='[
           "Avoid disabled buttons. Let the user send incomplete form and use error messages to explain what is wrong.",
           "실행 결과를 에측할 수 있는 레이블을 작성하세요. 툴팁으로 부연하거나, 실행을 유도하는 보조 텍스트 또는 실행 결과를 보충하는 보조 텍스트로 버튼 이외의 가이드가 필요하지 않습니다.",
           "동사가 포함된 2자 ~ 8자 한글(!). 레이블 줄임?(truncated) 불가. 사용자 시점 (ex 보내기 => 받기).",
           "맥락이 다른 액션을 그룹으로 제공할 수 있습니다. 이 때 단일선택, 다중선택, 삭제여부, 펼침메뉴 등의 기표를 충분히 제공하세요. ariaHaspopup/ariaSelected",
           "Split button이란? 사용자에게 더 많은 작업을 표시하는 경우 작업을 선택하여 트리거할 수 있도록 선택 + 버튼 조합을 사용. 것이 좋습니다.",
-          "Link Button, Action Button의 구분으로 책임 분리. href / disabled, onClick", "Link 안에 button의 형태를 포함하도록 하는 방법은?",
-          "빈 버튼이 필요한가? 리액트에서 포커싱이 가능한 전체 영역의 버튼. 도는 버튼 내부에서포지셔닝되는 버튼. 시각적으로는 버튼 내부의 버튼이지만 구조적으로 대안이 되는 형태의 버튼",
+          "빈 버튼이 필요한가? 리액트에서 포커싱이 가능한 전체 영역의 버튼. 도는 버튼 내부에서포지셔닝되는 버튼. 시각적으로는 버튼 내부의 버튼이지만 구조적으로 대안이 되는 형태의 버튼"
         ]'
       ></mm-text-list>
 
@@ -216,45 +210,10 @@
     </mm-paragraph-group>
   </mm-component-guide>
 
-  <!-- <mm-component-section
-    heading="ButtonGroup"
-    description="2개 이상의 버튼을 묶는 레이아웃 컨테이너. 방향, 정렬, 간격, flex 분배를 prop으로 제어합니다."
-  >
-    <mm-flex direction="column" gap="4">
-      <mm-button-group>
-        <mm-button variant="tertiary">취소</mm-button>
-        <mm-button variant="primary">저장</mm-button>
-      </mm-button-group>
-
-      <mm-button-group justify-content="between">
-        <mm-button variant="ghost">건너뛰기</mm-button>
-        <mm-button variant="primary">다음</mm-button>
-      </mm-button-group>
-
-      <mm-button-group stretch>
-        <mm-button variant="tertiary">이전</mm-button>
-        <mm-button variant="primary">다음</mm-button>
-      </mm-button-group>
-
-      <mm-button-group direction="column">
-        <mm-button variant="primary" size="large">지금 시작하기</mm-button>
-        <mm-button variant="ghost">더 알아보기</mm-button>
-      </mm-button-group>
-    </mm-flex>
-  </mm-component-section> -->
-
   <mm-component-section
     heading="Button Group"
-    description="버튼 그룹은 관련된 액션을 묶어 사용자가 선택할 수 있도록 합니다. 항상primary action에 먼저 포커스되어야 합니다. tabindex는 불필요. 마크업 순서와 정렬 스타일링으로 해결."
+    description="버튼 그룹은 관련된 액션을 묶어 사용자가 선택할 수 있도록 합니다. 항상primary action에 먼저 포커스되어야 합니다. tabindex는 불필요. 마크업 순서와 정렬 스타일링으로 해결. Reject-Approve Pattern, Confirmation Pattern"
   >
-    <mm-paragraph-group>
-      <dl>
-        <dt>primaryAction</dt>
-        <dd>{label: string, onClick: () => void}</dd>
-        <dt>secondaryAction</dt>
-        <dd>{label: string, onClick: () => void}</dd>
-      </dl>
-    </mm-paragraph-group>
     <mm-flex direction="column" gap="2">
       <mm-button-group>
         <mm-button variant="tertiary" size="large">취소</mm-button>
@@ -268,7 +227,7 @@
         <mm-button variant="tertiary" size="large">이전</mm-button>
         <mm-button variant="secondary" size="large">다음</mm-button>
       </mm-button-group>
-      <mm-button-group class="hero-actions">
+      <mm-button-group>
         <mm-button variant="primary" size="large" href="#components">지금 가입하기</mm-button>
         <mm-button variant="ghost" size="large">더 알아보기</mm-button>
       </mm-button-group>
@@ -308,28 +267,6 @@
     </mm-button-group>
   </mm-component-section>
 
-  <mm-component-section
-    heading="FilterButton"
-    description="콘텐츠 필터링을 위한 옵션 버튼. size=small의 mm-button을 합성하며 선택 시 체크 아이콘을 표시합니다. 그룹으로 묶어 단일 선택 또는 다중 선택을 지원합니다."
-  >
-    <mm-flex direction="column" gap="4">
-      <mm-text>Single selection (라디오형)</mm-text>
-      <mm-filter-button-group mode="single">
-        <mm-filter-button value="all" selected>전체</mm-filter-button>
-        <mm-filter-button value="deposit">입금확인</mm-filter-button>
-        <mm-filter-button value="paid">결제완료</mm-filter-button>
-        <mm-filter-button value="shipping">배송중</mm-filter-button>
-      </mm-filter-button-group>
-
-      <mm-text>Multiple selection (체크박스형)</mm-text>
-      <mm-filter-button-group mode="multiple">
-        <mm-filter-button value="novel" selected>소설</mm-filter-button>
-        <mm-filter-button value="movie" selected>영화</mm-filter-button>
-        <mm-filter-button value="typo">타이포그래피</mm-filter-button>
-        <mm-filter-button value="music">음악</mm-filter-button>
-      </mm-filter-button-group>
-    </mm-flex>
-  </mm-component-section>
   <mm-component-section
     heading="SortButton"
     description="목록의 재정렬Sort을 위한 옵션 목록을 group으로 제공하지 마세요. 현재 정렬 상태만 요약 표기하고

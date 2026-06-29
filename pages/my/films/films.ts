@@ -37,20 +37,18 @@ function renderFilters(films: Film[], state: FilterState, rerender: () => void) 
 
   const decades = getDecades(films)
   const countries = getCountries(films, 20)
+  const decadeOptions = toFilterOptions(decades, value => `${value}s`)
+  const countryOptions = toFilterOptions(countries)
 
   container.innerHTML = `
     <mm-flex direction="column" gap="2">
       <mm-flex align-items="flex-start" gap="3">
         <mm-text size="12" color="light" style="min-width:2rem;padding-top:6px">연대</mm-text>
-        <mm-filter-button-group class="js-decade-filter" mode="single" style="flex:1;flex-wrap:wrap">
-          ${decades.map(d => `<mm-filter-button value="${d}">${d}s</mm-filter-button>`).join('')}
-        </mm-filter-button-group>
+        <mm-filter-button-group class="js-decade-filter" mode="single" options='${decadeOptions}' style="flex:1"></mm-filter-button-group>
       </mm-flex>
       <mm-flex align-items="flex-start" gap="3">
         <mm-text size="12" color="light" style="min-width:2rem;padding-top:6px">국가</mm-text>
-        <mm-filter-button-group class="js-country-filter" mode="single" style="flex:1;flex-wrap:wrap">
-          ${countries.map(c => `<mm-filter-button value="${c}">${c}</mm-filter-button>`).join('')}
-        </mm-filter-button-group>
+        <mm-filter-button-group class="js-country-filter" mode="single" options='${countryOptions}' style="flex:1"></mm-filter-button-group>
       </mm-flex>
     </mm-flex>
   `
@@ -82,4 +80,11 @@ function getDecades(films: Film[]) {
     films.filter(f => f.releasedate >= 1880).map(f => String(Math.floor(f.releasedate / 10) * 10)),
   )
   return [...set].sort()
+}
+
+function toFilterOptions(values: string[], getLabel = (value: string) => value) {
+  return JSON.stringify(values.map(value => ({ value, label: getLabel(value) }))).replace(
+    /'/g,
+    '&apos;',
+  )
 }

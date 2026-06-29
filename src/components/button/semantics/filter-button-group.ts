@@ -1,37 +1,58 @@
-import { LitElement, css, html } from 'lit'
-import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
+import { LitElement, css, html, nothing } from 'lit'
+import { customElement, property } from 'lit/decorators.js'
 
-import type { FilterButton } from '@/components/button/semantics/filter-button'
+import type { IconName } from '@/components/icon-button/semantics/icon-names'
 
+import { buttonBaseStyles } from '@/components/button/button.styles'
+import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
+import { SelectedValuesController } from '@/controllers/selected-values-controller'
 import { emit } from '@/utils/emit'
 import '@/components/flex/flex'
+import '@/components/icon/icon'
 
-/**
- * mm-filter-button을 묶는 그룹.
- * mode 속성으로 다중 선택(체크박스형) / 단일 선택(라디오형)을 전환합니다.
- * 레이아웃은 host가 담당하고, 선택 방식의 role은 내부 그룹에 명시합니다.
- */
 type FilterMode = 'single' | 'multiple'
-type FilterToggleDetail = { value: string; selected: boolean; selectAll?: boolean }
+type FilterOption = {
+  value: string
+  label: string
+  icon?: IconName
+  disabled?: boolean
+  selectAll?: boolean
+}
 
 @customElement('mm-filter-button-group')
 export class FilterButtonGroup extends LitElement {
-  static styles = css`
-    :host {
-      display: block;
-    }
-  `
+  static styles = [
+    buttonBaseStyles,
+    css`
+      :host {
+        display: block;
+      }
+
+      button[aria-checked='true'] {
+        border: var(--border-width) solid var(--button-selected-border-color);
+        background: var(--button-selected-background);
+        color: var(--button-selected-text-color);
+      }
+    `,
+  ]
 
   @property({ type: String }) mode: FilterMode = 'single'
-  @property({ type: Array }) selected: string[] = []
+  @property({ type: Array }) values: string[] = []
+  @property({ type: Array }) options: FilterOption[] = []
 
-  @queryAssignedElements({ selector: 'mm-filter-button', flatten: true })
-  private buttons!: FilterButton[]
+  private selection = new SelectedValuesController(this, {
+    getMode: () => this.mode,
+    getValues: () => this.values,
+    setValues: values => {
+      this.values = values
+    },
+    getOptions: () => this.options,
+  })
 
   render() {
     return html`
-      <mm-flex gap="2" role=${this.isMultiple ? 'group' : 'radiogroup'}>
-        <slot @slotchange=${this.adoptInitialSelection}></slot>
+      <mm-flex gap="2" wrap role=${this.isMultiple ? 'group' : 'radiogroup'}>
+        ${this.options.map(option => this.renderOption(option))}
       </mm-flex>
     `
   }
@@ -40,61 +61,33 @@ export class FilterButtonGroup extends LitElement {
     return this.mode === 'multiple'
   }
 
-  connectedCallback() {
-    super.connectedCallback()
-    this.addEventListener('filter-toggle', this.onToggle)
+  private renderOption(option: FilterOption) {
+    const selected = this.selection.isOptionSelected(option)
+    const iconName = option.icon ?? (selected ? ICON_NAMES.CHECK : undefined)
+
+    return html`
+      <button
+        type="button"
+        ?disabled=${option.disabled}
+        role=${this.isMultiple ? 'checkbox' : 'radio'}
+        aria-checked=${selected ? 'true' : 'false'}
+        @click=${() => this.updateValues(option)}
+      >
+        ${iconName
+          ? html`
+              <mm-icon name=${iconName}></mm-icon>
+            `
+          : nothing}
+        ${option.label}
+      </button>
+    `
   }
 
-  disconnectedCallback() {
-    super.disconnectedCallback()
-    this.removeEventListener('filter-toggle', this.onToggle)
-  }
+  private updateValues(option: FilterOption) {
+    if (option.disabled) return
 
-  private onToggle = (event: Event) => {
-    const { value, selected, selectAll } = (event as CustomEvent<FilterToggleDetail>).detail
-    const selectedValues = selected
-      ? [...this.selected, value]
-      : this.selected.filter(v => v !== value)
-
-    if (selectAll) {
-      this.selected = selected
-        ? this.buttons.filter(button => !button.selectAll).map(button => button.value)
-        : []
-    } else if (this.isMultiple) {
-      this.selected = selectedValues
-    } else {
-      this.selected = selected ? [value] : []
-    }
-
-    this.syncButtons()
-    emit(this, 'change', { values: this.selected })
-  }
-
-  private syncButtons() {
-    const selected = new Set(this.selected)
-    const options = this.buttons.filter(button => !button.selectAll)
-    const selectAll = this.buttons.find(button => button.selectAll)
-
-    options.forEach(button => {
-      button.selected = selected.has(button.value)
-      button.mode = this.mode
-    })
-
-    if (selectAll) {
-      selectAll.selected = options.length > 0 && options.every(button => selected.has(button.value))
-      selectAll.mode = this.mode
-    }
-  }
-
-  private adoptInitialSelection = () => {
-    const preselected = this.buttons.filter(button => button.selected).map(button => button.value)
-    if (preselected.length) this.selected = this.isMultiple ? preselected : preselected.slice(0, 1)
-
-    this.syncButtons()
-  }
-
-  firstUpdated() {
-    this.adoptInitialSelection()
+    this.selection.select(option)
+    emit(this, 'change', { values: this.values })
   }
 }
 

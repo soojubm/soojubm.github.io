@@ -307,11 +307,14 @@ function filterSheetTemplate() {
           <mm-separator></mm-separator>
           <fieldset class="filter-fieldset" role="group">
             <legend class="filter-fieldset-legend">평수</legend>
-            <mm-filter-button-group mode="single">
-              <mm-filter-button value="10">10평 미만</mm-filter-button>
-              <mm-filter-button value="20">20평</mm-filter-button>
-              <mm-filter-button value="30">30평</mm-filter-button>
-            </mm-filter-button-group>
+            <mm-filter-button-group
+              mode="single"
+              .options=${[
+                { value: '10', label: '10평 미만' },
+                { value: '20', label: '20평' },
+                { value: '30', label: '30평' },
+              ]}
+            ></mm-filter-button-group>
           </fieldset>
           <mm-separator></mm-separator>
           <fieldset class="filter-fieldset" role="group">

@@ -48,14 +48,19 @@
 
       ]'
       ></mm-text-list>
-      <mm-filter-button-group id="icon-category-picker" mode="single">
-        <mm-filter-button value="action" selected>Actions</mm-filter-button>
-        <mm-filter-button value="navigation">Navigations</mm-filter-button>
-        <mm-filter-button value="status">Status</mm-filter-button>
-        <mm-filter-button value="selection">Selection</mm-filter-button>
-        <mm-filter-button value="visibility">Visibility</mm-filter-button>
-        <mm-filter-button value="communication">Communication</mm-filter-button>
-      </mm-filter-button-group>
+      <mm-filter-button-group
+        id="icon-category-picker"
+        mode="single"
+        values='["action"]'
+        options='[
+          {"value":"action","label":"Actions"},
+          {"value":"navigation","label":"Navigations"},
+          {"value":"status","label":"Status"},
+          {"value":"selection","label":"Selection"},
+          {"value":"visibility","label":"Visibility"},
+          {"value":"communication","label":"Communication"}
+        ]'
+      ></mm-filter-button-group>
 
       <div id="icon-section-action">
         <mm-grid columns="3">
