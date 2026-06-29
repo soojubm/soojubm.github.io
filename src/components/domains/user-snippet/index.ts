@@ -14,22 +14,19 @@ class UserSnippet extends LitElement {
   @property({ type: String }) email = ''
   @property({ type: String }) description = ''
   @property({ type: String, attribute: 'avatar-src' }) avatarSrc = ''
-  @property({ type: String, attribute: 'avatar-size' }) avatarSize = ''
   @property({ type: String, attribute: 'avatar-variant' }) avatarVariant = 'primary'
   @property({ type: String, attribute: 'tag-label' }) tagLabel = ''
 
   render() {
-    const avatarSize = this.avatarSize || this.size
-
     return html`
       <mm-flex class="entity" direction="column" gap="2">
         <mm-avatar
-          size=${avatarSize}
+          size="huge"
           variant=${this.avatarVariant}
           src=${this.avatarSrc || nothing}
         ></mm-avatar>
         ${this.renderTag()}
-        <mm-flex class="entity-content" direction="column">
+        <mm-flex direction="column">
           <mm-paragraph size="large">${this.name}</mm-paragraph>
           ${this.renderDescription()}
           <mm-text size="12">${this.email}</mm-text>
@@ -51,7 +48,7 @@ class UserSnippet extends LitElement {
     if (!this.description) return nothing
 
     return html`
-      <mm-paragraph class="entity-description">${this.description}</mm-paragraph>
+      <mm-paragraph>${this.description}</mm-paragraph>
     `
   }
 }

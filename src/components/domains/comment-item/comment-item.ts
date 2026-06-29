@@ -4,6 +4,8 @@ import { customElement, property, state } from 'lit/decorators.js'
 import '@/components/button/button'
 import '@/components/icon-button/semantics/more-button'
 import '@/components/menuitem/semantics/menu-item-action'
+import '@/components/sheet/sheet'
+import '@/components/sheet/semantics/sheet-body'
 import { emit } from '@/utils/emit'
 import { uniqueId } from '@/utils/unique-id'
 
@@ -59,26 +61,23 @@ export class CommentItem extends LitElement {
       top: 0;
     }
 
-    .menu {
-      display: none;
+    mm-sheet {
+      --sheet-padding-inline: var(--space-1);
+      --sheet-section-padding-block: 0;
+      --sheet-background: var(--color-background);
+      --sheet-border: var(--border);
+      --sheet-radius: var(--radius);
+      --sheet-shadow: var(--shadow);
+      --sheet-max-height: none;
+
       width: var(--comment-item-menu-width);
-      margin: 0;
-      padding: 0;
-      background: var(--color-background);
-      border: var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
       position: absolute;
       right: 40px;
       top: 0;
       z-index: var(--zindex-default);
     }
 
-    .menu[data-open='true'] {
-      display: block;
-    }
-
-    .menu mm-menu-item-action {
+    mm-menu-item-action {
       width: 100%;
     }
   `
@@ -139,17 +138,19 @@ export class CommentItem extends LitElement {
     if (!this.editable) return nothing
 
     return html`
-      <menu id=${this.menuId} class="menu" data-open=${this.menuOpen ? 'true' : 'false'}>
-        <mm-menu-item-action
-          label="수정"
-          @click=${() => this.onMenuAction('edit')}
-        ></mm-menu-item-action>
-        <mm-menu-item-action
-          label="삭제"
-          tone="danger"
-          @click=${() => this.onMenuAction('delete')}
-        ></mm-menu-item-action>
-      </menu>
+      <mm-sheet id=${this.menuId} variant="inline" ?open=${this.menuOpen}>
+        <mm-sheet-body role="menu">
+          <mm-menu-item-action
+            label="수정"
+            @click=${() => this.onMenuAction('edit')}
+          ></mm-menu-item-action>
+          <mm-menu-item-action
+            label="삭제"
+            tone="danger"
+            @click=${() => this.onMenuAction('delete')}
+          ></mm-menu-item-action>
+        </mm-sheet-body>
+      </mm-sheet>
     `
   }
 

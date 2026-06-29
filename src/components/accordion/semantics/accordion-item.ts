@@ -60,14 +60,14 @@ export class AccordionItem extends LitElement {
       }
 
       /* grid trick: 0fr → 1fr 로 높이 애니메이션 */
-      .panel {
+      [aria-hidden] {
         display: grid;
         grid-template-rows: 0fr;
         overflow: hidden;
         transition: grid-template-rows var(--accordion-transition);
       }
 
-      .panel-inner {
+      [aria-hidden] > div {
         min-height: 0;
         transition: padding var(--accordion-transition);
       }
@@ -76,10 +76,10 @@ export class AccordionItem extends LitElement {
         & .icon {
           transform: rotate(90deg);
         }
-        & .panel {
+        & [aria-hidden] {
           grid-template-rows: 1fr;
         }
-        & .panel-inner {
+        & [aria-hidden] > div {
           padding-top: var(--space-2);
           padding-bottom: var(--space-2);
         }
@@ -106,8 +106,8 @@ export class AccordionItem extends LitElement {
         <mm-icon class="icon" name=${ICON_NAMES.SITEMAP}></mm-icon>
       </button>
 
-      <div id=${this.panelId} class="panel" aria-hidden=${this.open ? 'false' : 'true'}>
-        <div class="panel-inner">
+      <div id=${this.panelId} aria-hidden=${this.open ? 'false' : 'true'}>
+        <div>
           <slot></slot>
         </div>
       </div>

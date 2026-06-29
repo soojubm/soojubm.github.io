@@ -145,7 +145,7 @@ export class Flex extends LitElement {
   justifyContent: JustifyContent = 'flex-start'
   @property({ type: String, attribute: 'align-items', reflect: true }) alignItems: AlignItems =
     'stretch'
-  @property({ type: String, reflect: true }) gap = '2'
+  @property({ type: String, reflect: true }) gap = '0'
   @property({ type: String, reflect: true }) as: FlexAs = 'div'
   @property({ type: Boolean, reflect: true }) wrap = false
   @property({ type: Boolean, reflect: true }) stretch = false

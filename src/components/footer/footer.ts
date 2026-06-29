@@ -23,16 +23,16 @@ export class Footer extends LitElement {
           avatar-variant="secondary"
         ></mm-user-snippet>
 
-        <div class="footer-social-links">
+        <mm-flex direction="column">
           <mm-social-links
             notion="https://soojubm.notion.site/UI-Designer-9c18f4dd39eb4181b9f9c2ee76896618"
             github="https://github.com/soojubm"
           ></mm-social-links>
-          <mm-flex class="footer-hidden-links" gap="2">
+          <mm-flex gap="2">
             <mm-link href="/my/films/">영화감상 목록</mm-link>
             <mm-link href="/my/books/">독서 목록</mm-link>
           </mm-flex>
-        </div>
+        </mm-flex>
 
         <dl class="footer-address-info">
           <dd>주식회사 수줍당</dd>
@@ -54,9 +54,7 @@ export class Footer extends LitElement {
           <mm-paragraph>Making things better.</mm-paragraph>
         </address>
 
-        <aside class="footer-to-top">
-          <mm-to-top-button></mm-to-top-button>
-        </aside>
+        <mm-to-top-button></mm-to-top-button>
       </footer>
     `
   }

@@ -29,12 +29,13 @@ export class MenuItemSwitch extends LitElement {
 
     return html`
       <div
-        class="item"
         role="menuitemcheckbox"
         data-interactive
+        tabindex=${this.disabled ? '-1' : '0'}
         aria-disabled=${this.disabled ? 'true' : nothing}
         aria-checked=${ariaChecked}
         @click=${this.handleRowClick}
+        @keydown=${this.handleRowKeydown}
       >
         ${renderMenuItemContent(this, this.renderAction())}
       </div>
@@ -49,6 +50,12 @@ export class MenuItemSwitch extends LitElement {
 
   private handleRowClick = () => {
     this.commitChecked(!this.checked)
+  }
+
+  private handleRowKeydown = (event: KeyboardEvent) => {
+    if (event.key !== 'Enter' && event.key !== ' ') return
+    event.preventDefault()
+    this.handleRowClick()
   }
 
   protected handleControlChange = (e: Event) => {

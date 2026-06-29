@@ -302,9 +302,4 @@
   --tabs-pill-border: var(--border);
   --tabs-pill-indicator-border: var(--border);
   --tabs-pill-indicator-shadow: none;
-
-  /* 보더가 모두 검정이라 색으로 선택을 구분할 수 없어 채움(반전)으로 표현한다. */
-  --button-selected-border-color: var(--brutal-border-color);
-  --button-selected-background: var(--selection-indicator-color);
-  --button-selected-text-color: var(--color-foreground-on-solid);
 }

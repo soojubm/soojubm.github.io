@@ -24,16 +24,6 @@ export const footerStyles = css`
     letter-spacing: 0.5px;
   }
 
-  .footer-social-links {
-    max-width: var(--width-small);
-    margin: var(--space-3) 0 var(--space-5);
-  }
-
-  .footer-hidden-links {
-    display: none;
-    margin: var(--space-4) 0 0;
-  }
-
   .footer-address-break {
     width: 100%;
   }
@@ -46,10 +36,6 @@ export const footerStyles = css`
 
   .footer-address-info dt {
     color: var(--color-foreground-light);
-  }
-
-  .footer-to-top {
-    margin: var(--space-5) 0 0;
   }
 
   @media (max-width: 1100px) {

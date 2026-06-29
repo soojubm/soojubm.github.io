@@ -30,12 +30,13 @@ export class MenuItemRadio extends LitElement {
 
     return html`
       <div
-        class="item"
         role="menuitemradio"
         data-interactive
+        tabindex=${this.disabled ? '-1' : '0'}
         aria-disabled=${this.disabled ? 'true' : nothing}
         aria-checked=${ariaChecked}
         @click=${this.handleSelect}
+        @keydown=${this.handleRowKeydown}
       >
         ${renderMenuItemContent(this, this.renderAction())}
       </div>
@@ -47,6 +48,12 @@ export class MenuItemRadio extends LitElement {
     if (this.checked) return
     this.checked = true
     emit(this, 'change', { checked: this.checked, value: this.value, name: this.name })
+  }
+
+  private handleRowKeydown = (event: KeyboardEvent) => {
+    if (event.key !== 'Enter' && event.key !== ' ') return
+    event.preventDefault()
+    this.handleSelect()
   }
 
   private handleControlChange = (e: Event) => {

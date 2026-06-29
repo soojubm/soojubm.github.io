@@ -14,15 +14,11 @@ export class TypingIndicator extends LitElement {
     css`
       :host {
         display: inline-flex;
+        gap: var(--space-1);
         --typing-color: var(--color-foreground);
       }
 
-      .dots {
-        display: flex;
-        gap: var(--space-1);
-      }
-
-      .dots span {
+      span {
         display: block;
         width: 4px;
         height: 4px;
@@ -31,10 +27,10 @@ export class TypingIndicator extends LitElement {
         animation: chatting 0.6s 0s ease infinite;
       }
 
-      .dots span:nth-of-type(2) {
+      span:nth-of-type(2) {
         animation-delay: var(--animation-delay-first);
       }
-      .dots span:nth-of-type(3) {
+      span:nth-of-type(3) {
         animation-delay: var(--animation-delay-second);
       }
 
@@ -53,15 +49,14 @@ export class TypingIndicator extends LitElement {
   ]
 
   @property({ type: String }) color = 'var(--color-foreground)'
-  @property({ type: String, attribute: 'aria-label' }) ariaLabel = '입력 중'
+  @property({ type: String, reflect: true }) role = 'status'
+  @property({ type: String, attribute: 'aria-label', reflect: true }) ariaLabel = '입력 중'
 
   render() {
     return html`
-      <div class="dots" role="status" aria-label=${this.ariaLabel}>
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+      <span></span>
+      <span></span>
+      <span></span>
     `
   }
 

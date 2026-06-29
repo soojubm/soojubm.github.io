@@ -5,10 +5,6 @@ export const entityStyles = css`
     position: relative;
   }
 
-  .entity-description {
-    margin-top: calc(var(--space-05) * -1);
-  }
-
   .entity-tag {
     position: absolute;
     left: var(--space-1-minus);

@@ -18,11 +18,7 @@ export class ThemeSwitcher extends LitElement {
       position: relative;
     }
 
-    .theme-switcher {
-      position: relative;
-    }
-
-    .panel {
+    [role='menu'] {
       display: flex;
       flex-direction: column;
 
@@ -52,7 +48,7 @@ export class ThemeSwitcher extends LitElement {
         visibility 0s linear 180ms;
     }
 
-    .panel[open] {
+    [role='menu'][open] {
       opacity: 1;
       transform: translateY(0) scale(1);
       visibility: visible;
@@ -77,26 +73,19 @@ export class ThemeSwitcher extends LitElement {
 
   render() {
     return html`
-      <div class="theme-switcher">
-        <mm-icon-button
-          class="js-theme-trigger"
-          variant="ghost"
-          icon=${this.currentIcon}
-          aria-label="테마 변경"
-          aria-haspopup="menu"
-          aria-expanded=${this.popup.open ? 'true' : 'false'}
-          @click=${this.toggleOpen}
-        ></mm-icon-button>
-        <div
-          class="panel"
-          ?open=${this.popup.open}
-          role="menu"
-          aria-hidden=${this.popup.open ? 'false' : 'true'}
-        >
-          ${this.renderThemeOptions()}
-          <mm-separator spacing="small"></mm-separator>
-          <mm-radius-picker></mm-radius-picker>
-        </div>
+      <mm-icon-button
+        class="js-theme-trigger"
+        variant="ghost"
+        icon=${this.currentIcon}
+        aria-label="테마 변경"
+        aria-haspopup="menu"
+        aria-expanded=${this.popup.open ? 'true' : 'false'}
+        @click=${this.toggleOpen}
+      ></mm-icon-button>
+      <div ?open=${this.popup.open} role="menu" aria-hidden=${this.popup.open ? 'false' : 'true'}>
+        ${this.renderThemeOptions()}
+        <mm-separator spacing="small"></mm-separator>
+        <mm-radius-picker></mm-radius-picker>
       </div>
     `
   }

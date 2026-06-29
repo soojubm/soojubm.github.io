@@ -20,7 +20,7 @@ export class ReadMoreParagraph extends LitElement {
         margin-left: var(--space-1);
       }
 
-      .content {
+      mm-text {
         display: inline;
       }
     `,
@@ -42,7 +42,7 @@ export class ReadMoreParagraph extends LitElement {
 
     return html`
       <mm-paragraph>
-        <mm-text id=${this.contentId} class="content">${displayText}</mm-text>
+        <mm-text id=${this.contentId}>${displayText}</mm-text>
         ${this.renderToggleButton(truncated)}
       </mm-paragraph>
     `
