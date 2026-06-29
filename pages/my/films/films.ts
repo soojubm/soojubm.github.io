@@ -1,6 +1,7 @@
 import main from './index.html'
 import { renderLayout } from '../../../layouts/base-layouts'
-import { renderList, getCountries, loadJson, mediaCard } from '../../components/_list-page'
+import { renderList, getCountries, loadJson } from '../../components/_list-page'
+import { mediaCard } from '../media-card'
 
 interface Film {
   id: number
