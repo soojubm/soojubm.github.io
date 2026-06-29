@@ -4,6 +4,11 @@ import { customElement, property } from 'lit/decorators.js'
 import type { AriaInvalid } from '@/types/aria'
 
 import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
+import {
+  renderFieldHelper,
+  renderFieldLabel,
+  renderFieldValidation,
+} from '@/components/input/semantics/textfield.helpers'
 import { textfieldStyles } from '@/components/input/semantics/textfield.styles'
 import '@/components/icon-button/icon-button'
 import '@/components/input/input'
@@ -34,7 +39,8 @@ export class NumberInput extends LitElement {
   render() {
     return html`
       <div class="textfield" ?data-invalid=${this.ariaInvalid === 'true'}>
-        ${this.renderLabel()} ${this.renderHelper()}
+        ${renderFieldLabel(this.inputId, this.label, this.optional)}
+        ${renderFieldHelper(this.helper)}
         <div class="textfield-control">
           <mm-input
             input-id=${this.inputId}
@@ -72,36 +78,8 @@ export class NumberInput extends LitElement {
             @click=${this.increment}
           ></mm-icon-button>
         </div>
-        ${this.renderValidation()}
+        ${renderFieldValidation(`${this.inputId}-validation`, this.validationText)}
       </div>
-    `
-  }
-
-  private renderLabel() {
-    if (!this.label) return nothing
-
-    return html`
-      <mm-textfield-label for=${this.inputId} ?optional=${this.optional}>
-        ${this.label}
-      </mm-textfield-label>
-    `
-  }
-
-  private renderHelper() {
-    if (!this.helper) return nothing
-
-    return html`
-      <mm-textfield-helper>${this.helper}</mm-textfield-helper>
-    `
-  }
-
-  private renderValidation() {
-    if (!this.validationText) return nothing
-
-    return html`
-      <mm-textfield-validation id=${`${this.inputId}-validation`}>
-        ${this.validationText}
-      </mm-textfield-validation>
     `
   }
 

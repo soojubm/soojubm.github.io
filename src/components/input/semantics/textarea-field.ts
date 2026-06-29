@@ -3,6 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 
 import type { AriaInvalid } from '@/types/aria'
 
+import { renderFieldHelper, renderFieldLabel } from '@/components/input/semantics/textfield.helpers'
 import { textfieldStyles } from '@/components/input/semantics/textfield.styles'
 import '@/components/input/textarea'
 import { uniqueId } from '@/utils/unique-id'
@@ -26,7 +27,7 @@ export class TextareaField extends LitElement {
   render() {
     return html`
       <div class="textfield" ?data-invalid=${this.ariaInvalid === 'true'}>
-        ${this.renderLabel()}
+        ${renderFieldLabel(this.inputId, this.label, this.optional)}
         <mm-textarea
           input-id=${this.inputId}
           .value=${this.value}
@@ -38,26 +39,8 @@ export class TextareaField extends LitElement {
           aria-describedby=${this.helper ? this.helperId : nothing}
           @input=${this.syncValue}
         ></mm-textarea>
-        ${this.renderHelper()}
+        ${renderFieldHelper(this.helper, this.helperId)}
       </div>
-    `
-  }
-
-  private renderLabel() {
-    if (!this.label) return nothing
-
-    return html`
-      <mm-textfield-label for=${this.inputId} ?optional=${this.optional}>
-        ${this.label}
-      </mm-textfield-label>
-    `
-  }
-
-  private renderHelper() {
-    if (!this.helper) return nothing
-
-    return html`
-      <mm-textfield-helper id=${this.helperId}>${this.helper}</mm-textfield-helper>
     `
   }
 

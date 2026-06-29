@@ -3,6 +3,11 @@ import { customElement, property } from 'lit/decorators.js'
 
 import type { AriaInvalid } from '@/types/aria'
 
+import {
+  renderFieldHelper,
+  renderFieldLabel,
+  renderFieldValidation,
+} from '@/components/input/semantics/textfield.helpers'
 import { textfieldStyles } from '@/components/input/semantics/textfield.styles'
 import '@/components/input/input'
 import { emit } from '@/utils/emit'
@@ -31,7 +36,8 @@ export class Textfield extends LitElement {
   render() {
     return html`
       <div class="textfield" ?data-invalid=${this.ariaInvalid === 'true'}>
-        ${this.renderLabel()} ${this.renderHelper()}
+        ${renderFieldLabel(this.inputId, this.label, this.optional)}
+        ${renderFieldHelper(this.helper)}
         <slot name="link"></slot>
         <div class="textfield-control">
           <slot name="leading"></slot>
@@ -49,36 +55,8 @@ export class Textfield extends LitElement {
           ></mm-input>
           <slot name="trailing"></slot>
         </div>
-        ${this.renderValidation()}
+        ${renderFieldValidation(`${this.inputId}-validation`, this.validationText)}
       </div>
-    `
-  }
-
-  private renderLabel() {
-    if (!this.label) return nothing
-
-    return html`
-      <mm-textfield-label for=${this.inputId} ?optional=${this.optional}>
-        ${this.label}
-      </mm-textfield-label>
-    `
-  }
-
-  private renderHelper() {
-    if (!this.helper) return nothing
-
-    return html`
-      <mm-textfield-helper>${this.helper}</mm-textfield-helper>
-    `
-  }
-
-  private renderValidation() {
-    if (!this.validationText) return nothing
-
-    return html`
-      <mm-textfield-validation id=${`${this.inputId}-validation`}>
-        ${this.validationText}
-      </mm-textfield-validation>
     `
   }
 
