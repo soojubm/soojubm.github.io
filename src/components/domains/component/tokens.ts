@@ -1,4 +1,4 @@
-import { LitElement, html } from 'lit'
+import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import '@/components/text/semantics/heading'
@@ -23,7 +23,7 @@ export class Token extends LitElement {
   }
 
   private renderDefaultValue() {
-    if (!this.default) return ''
+    if (!this.default) return nothing
 
     return html`
       <mm-text>${this.default}</mm-text>

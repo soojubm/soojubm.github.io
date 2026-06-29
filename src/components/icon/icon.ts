@@ -1,4 +1,4 @@
-import { LitElement, html } from 'lit'
+import { LitElement, html, nothing } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 
 import { iconStyles } from '@/components/icon/icon.styles'
@@ -55,7 +55,7 @@ class Icon extends LitElement {
   }
 
   private renderStylesheetLink() {
-    if (!this.useStylesheetLink) return ''
+    if (!this.useStylesheetLink) return nothing
 
     return html`
       <link rel="stylesheet" href=${ICONOIR_STYLESHEET_URL} />

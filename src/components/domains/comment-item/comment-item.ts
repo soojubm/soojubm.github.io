@@ -1,4 +1,4 @@
-import { LitElement, css, html } from 'lit'
+import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 
 import '@/components/button/button'
@@ -112,7 +112,7 @@ export class CommentItem extends LitElement {
   }
 
   private renderMenuTrigger() {
-    if (!this.editable) return ''
+    if (!this.editable) return nothing
 
     return html`
       <mm-more-button
@@ -126,7 +126,7 @@ export class CommentItem extends LitElement {
   }
 
   private renderReplyButton() {
-    if (!this.replyLabel) return ''
+    if (!this.replyLabel) return nothing
 
     return html`
       <mm-button
@@ -141,7 +141,7 @@ export class CommentItem extends LitElement {
   }
 
   private renderMenu() {
-    if (!this.editable) return ''
+    if (!this.editable) return nothing
 
     return html`
       <menu id=${this.menuId} class="menu" data-open=${this.menuOpen ? 'true' : 'false'}>

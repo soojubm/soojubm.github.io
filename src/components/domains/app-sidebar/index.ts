@@ -1,4 +1,4 @@
-import { LitElement, html } from 'lit'
+import { LitElement, html, nothing } from 'lit'
 import { customElement, state } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 import { repeat } from 'lit/directives/repeat.js'
@@ -70,7 +70,7 @@ export class Sidebar extends LitElement {
               `
             }
 
-            return ''
+            return nothing
           },
         )}
       </nav>

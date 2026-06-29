@@ -1,4 +1,4 @@
-import { LitElement, html, css } from 'lit'
+import { LitElement, html, css, nothing } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 import '@/components/text/semantics/caption'
 
@@ -128,7 +128,7 @@ export class Thumbnail extends LitElement {
   }
 
   private renderCaption() {
-    if (!this.caption) return ''
+    if (!this.caption) return nothing
 
     return html`
       <mm-caption as="figcaption" class="thumbnail-caption">${this.caption}</mm-caption>

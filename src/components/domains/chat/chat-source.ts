@@ -1,4 +1,4 @@
-import { LitElement, css, html } from 'lit'
+import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 
 import type { IconName } from '@/components/icon-button/semantics/icon-names'
@@ -55,7 +55,7 @@ export class ChatSource extends LitElement {
   }
 
   private renderIcon() {
-    if (!this.icon) return ''
+    if (!this.icon) return nothing
 
     return html`
       <mm-icon name=${this.icon}></mm-icon>
@@ -174,7 +174,7 @@ export class ChatSourceGroup extends LitElement {
   }
 
   private renderSheet() {
-    if (!this.activeSource) return ''
+    if (!this.activeSource) return nothing
 
     return html`
       <mm-flex
@@ -192,7 +192,7 @@ export class ChatSourceGroup extends LitElement {
   }
 
   private renderSheetHeader() {
-    if (!this.activeSource?.href) return ''
+    if (!this.activeSource?.href) return nothing
 
     return html`
       <mm-flex class="sheet-header" gap="2" align-items="center">
@@ -203,7 +203,7 @@ export class ChatSourceGroup extends LitElement {
   }
 
   private renderSheetIcon() {
-    if (!this.activeSource?.icon) return ''
+    if (!this.activeSource?.icon) return nothing
 
     return html`
       <mm-icon class="sheet-icon" name=${this.activeSource.icon}></mm-icon>
@@ -211,7 +211,7 @@ export class ChatSourceGroup extends LitElement {
   }
 
   private renderSheetHeading() {
-    if (!this.activeSource?.heading) return ''
+    if (!this.activeSource?.heading) return nothing
 
     return html`
       <mm-paragraph>${this.activeSource.heading}</mm-paragraph>
@@ -219,7 +219,7 @@ export class ChatSourceGroup extends LitElement {
   }
 
   private renderSheetDescription() {
-    if (!this.activeSource?.description) return ''
+    if (!this.activeSource?.description) return nothing
 
     return html`
       <mm-paragraph size="small">${this.activeSource.description}</mm-paragraph>
@@ -227,7 +227,7 @@ export class ChatSourceGroup extends LitElement {
   }
 
   private renderSheetLink() {
-    if (!this.activeSource?.href) return ''
+    if (!this.activeSource?.href) return nothing
 
     return html`
       <a

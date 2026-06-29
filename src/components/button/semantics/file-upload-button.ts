@@ -91,7 +91,7 @@ export class FileUploadButton extends LitElement {
   }
 
   private renderHint() {
-    if (!this.helper) return ''
+    if (!this.helper) return nothing
 
     return html`
       <mm-text size="12">${this.helper}</mm-text>
@@ -99,7 +99,7 @@ export class FileUploadButton extends LitElement {
   }
 
   private renderAttachments() {
-    if (!this.files.length) return ''
+    if (!this.files.length) return nothing
 
     return html`
       <mm-flex class="attachment-list" gap="2" wrap>
@@ -128,7 +128,7 @@ export class FileUploadButton extends LitElement {
   }
 
   private renderPreview(file: File) {
-    if (!this.previewUrls.has(file)) return ''
+    if (!this.previewUrls.has(file)) return nothing
 
     return html`
       <img src=${this.previewUrls.get(file)} alt=${file.name} />

@@ -1,4 +1,4 @@
-import { LitElement, html } from 'lit'
+import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
@@ -24,7 +24,7 @@ class TopBar extends LitElement {
   }
 
   private renderBackButton() {
-    if (this.nav !== 'back') return ''
+    if (this.nav !== 'back') return nothing
 
     return html`
       <mm-icon-button
@@ -36,7 +36,7 @@ class TopBar extends LitElement {
   }
 
   private renderCloseButton() {
-    if (this.nav !== 'close') return ''
+    if (this.nav !== 'close') return nothing
 
     return html`
       <mm-icon-button

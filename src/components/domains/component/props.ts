@@ -1,4 +1,4 @@
-import { LitElement, html } from 'lit'
+import { LitElement, html, nothing } from 'lit'
 import { state } from 'lit/decorators/state.js'
 import { customElement, property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
@@ -27,7 +27,7 @@ export class Prop extends LitElement {
   }
 
   private renderOptionalMarker() {
-    if (!this.optional) return null
+    if (!this.optional) return nothing
 
     return html`
       <attr>?</attr>

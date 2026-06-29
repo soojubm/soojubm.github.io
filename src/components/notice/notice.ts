@@ -1,4 +1,4 @@
-import { LitElement, html } from 'lit'
+import { LitElement, html, nothing } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 
 import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
@@ -37,7 +37,7 @@ class Notice extends LitElement {
   }
 
   private renderHeading() {
-    if (!this.heading) return ''
+    if (!this.heading) return nothing
 
     return html`
       <div class="notice-heading">
@@ -47,7 +47,7 @@ class Notice extends LitElement {
   }
 
   private renderDescription() {
-    if (!this.description) return ''
+    if (!this.description) return nothing
 
     return html`
       <mm-paragraph>${this.description}</mm-paragraph>
@@ -55,7 +55,7 @@ class Notice extends LitElement {
   }
 
   private renderDismissButton() {
-    if (!this.dismissible) return ''
+    if (!this.dismissible) return nothing
 
     return html`
       <div class="notice-dismiss">

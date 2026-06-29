@@ -1,4 +1,4 @@
-import { LitElement, css, html } from 'lit'
+import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, query } from 'lit/decorators.js'
 
 import '@/components/icon-button/icon-button'
@@ -169,7 +169,7 @@ export class PromptInput extends LitElement {
   }
 
   private renderAttachmentAction() {
-    if (this.hiddenAttachment) return ''
+    if (this.hiddenAttachment) return nothing
 
     return html`
       <mm-attachment-dropdown></mm-attachment-dropdown>

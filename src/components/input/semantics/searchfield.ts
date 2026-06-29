@@ -1,4 +1,4 @@
-import { LitElement, html } from 'lit'
+import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
@@ -37,7 +37,7 @@ class SearchField extends LitElement {
   }
 
   private renderClearButton() {
-    if (!this.value || this.disabled) return null
+    if (!this.value || this.disabled) return nothing
 
     return html`
       <mm-clear-button aria-label="검색어 지우기" @click=${this.clear}></mm-clear-button>
