@@ -21,43 +21,33 @@ export class PromptInput extends LitElement {
       }
 
       .chat-input {
-        display: grid;
-        grid-template-areas:
-          'textarea textarea textarea'
-          'actions actions actions';
-        grid-template-columns: auto minmax(0, 1fr) auto;
+        display: flex;
+        flex-wrap: wrap;
         align-items: center;
       }
 
       :host([single-line]) .chat-input {
-        grid-template-areas: 'attach textarea submit';
-        grid-template-rows: var(--input-height);
+        min-height: var(--input-height);
       }
 
-      :host([single-line]) .start-actions,
-      :host([single-line]) .end-actions {
-        align-self: center;
+      /* 여러 줄: textarea가 위 한 줄을 차지하고 액션은 아래 줄에서 양끝 정렬 */
+      :host(:not([single-line])) .chat-input {
+        justify-content: space-between;
       }
 
       mm-textarea {
-        grid-area: textarea;
         --input-color-border-hover: transparent;
         --input-focus-shadow: none;
       }
 
-      .actions {
-        grid-area: actions;
+      :host([single-line]) mm-textarea {
+        flex: 1;
         min-width: 0;
       }
 
-      .start-actions {
-        grid-area: attach;
-        min-width: 0;
-      }
-
-      .end-actions {
-        grid-area: submit;
-        justify-self: end;
+      :host(:not([single-line])) mm-textarea {
+        order: -1;
+        flex-basis: 100%;
       }
     `,
   ]
@@ -79,6 +69,7 @@ export class PromptInput extends LitElement {
     return html`
       <form>
         <div class="chat-input">
+          ${this.renderStartActions()}
           <mm-textarea
             .value=${this.value}
             .name=${this.name}
@@ -88,7 +79,7 @@ export class PromptInput extends LitElement {
             @input=${this.handleTextareaInput}
             @keydown=${this.handleTextareaKeydown}
           ></mm-textarea>
-          ${this.renderActions()}
+          ${this.renderEndActions()}
         </div>
       </form>
     `
@@ -146,24 +137,10 @@ export class PromptInput extends LitElement {
 
   private renderStartActions() {
     return html`
-      <mm-flex class="start-actions" gap="1" align-items="center">
+      <mm-flex gap="1" align-items="center">
         ${this.renderAttachmentAction()}
         <slot name="leading-actions"></slot>
         <!-- <mm-model-selector></mm-model-selector> -->
-      </mm-flex>
-    `
-  }
-
-  private renderActions() {
-    if (this.isSingleLine) {
-      return html`
-        ${this.renderStartActions()} ${this.renderEndActions()}
-      `
-    }
-
-    return html`
-      <mm-flex class="actions" gap="2" align-items="center" justify-content="between">
-        ${this.renderStartActions()} ${this.renderEndActions()}
       </mm-flex>
     `
   }
@@ -178,7 +155,7 @@ export class PromptInput extends LitElement {
 
   private renderEndActions() {
     return html`
-      <mm-flex class="end-actions" gap="1" align-items="center">
+      <mm-flex gap="1" align-items="center">
         <slot name="trailing-actions"></slot>
         <mm-icon-button
           variant="primary"
