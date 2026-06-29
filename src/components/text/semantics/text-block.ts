@@ -5,6 +5,16 @@ import { resetStyles } from '@/stylesheets/shared/reset.styles'
 import '@/components/tag/tag'
 import '@/components/flex/flex'
 
+// heading-level → 시맨틱 heading 태그. 값이 없거나 미정의 레벨이면 비-heading(span).
+const HEADING_TAGS = {
+  '1': 'h1',
+  '2': 'h2',
+  '3': 'h3',
+  '4': 'h4',
+  '5': 'h5',
+  '6': 'h6',
+} as const
+
 /**
  * mm-text-block
  * 제목과 설명을 결합한 패턴 컴포넌트입니다.
@@ -109,7 +119,7 @@ class TextBlock extends LitElement {
   }
 
   private get headingTag() {
-    return this.headingLevel ? `h${this.headingLevel}` : 'span'
+    return HEADING_TAGS[this.headingLevel as keyof typeof HEADING_TAGS] ?? 'span'
   }
 }
 
