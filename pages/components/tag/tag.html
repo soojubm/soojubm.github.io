@@ -30,7 +30,7 @@
       name="tone"
       type="'default' | 'green' | 'yellow' | 'red' | 'blue' | 'purple' | 'pink' | 'orange' | 'cyan' = 'default'"
     ></mm-prop>
-    <mm-prop name="slot: icon" type="HTMLElement" optional></mm-prop>
+    <mm-prop name="icon" type="IconName" optional></mm-prop>
   </mm-component-props>
 
   <mm-component-tokens>
@@ -44,15 +44,12 @@
   <mm-component-anatomy
     parts='[
       "컨테이너 — tone으로 배경·글자 색상을 정의하는 배지 형태입니다.",
-      "아이콘 — 분류나 상태를 보조하는 선택적 메타포(slot: icon).",
+      "아이콘 — 분류나 상태를 보조하는 선택적 메타포입니다.",
       "레이블 — 분류·상태를 나타내는 짧은 텍스트."
     ]'
   >
     <div style="position: relative; display: inline-block">
-      <mm-tag tone="green">
-        <mm-icon slot="icon" name="check-circle"></mm-icon>
-        승인됨
-      </mm-tag>
+      <mm-tag tone="green" icon="check-circle">승인됨</mm-tag>
 
       <mm-list-marker
         variant="number"
@@ -153,10 +150,7 @@
       <mm-category-tag category="marketing">Branding</mm-category-tag>
       <mm-category-tag category="news">Breaking</mm-category-tag>
       <mm-category-tag category="lifestyle">Wellness</mm-category-tag>
-      <mm-category-tag category="sports">
-        <mm-icon slot="icon" name="graph-up"></mm-icon>
-        Football
-      </mm-category-tag>
+      <mm-category-tag category="sports" icon="graph-up">Football</mm-category-tag>
     </mm-tag-group>
   </mm-component-section>
 

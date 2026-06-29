@@ -82,11 +82,10 @@ export type Category = keyof typeof categoryToneMap
 const toneCss = Object.entries(tagToneStyles)
   .map(
     ([tone, styles]) => `
-    :host([tone='${tone}']) span,
-    :host([tone='${tone}']) time {
-      background: ${styles.background};
-      color: ${styles.color};
-      border-color: ${styles.borderColor};
+    :host([tone='${tone}']) {
+      --tag-background-color: ${styles.background};
+      --tag-color: ${styles.color};
+      --tag-border-color: ${styles.borderColor};
     }
   `,
   )
@@ -100,12 +99,14 @@ const toneCss = Object.entries(tagToneStyles)
 
 export const tagStyles = css`
   :host {
-    display: inline-flex;
     --tag-size: var(--size-small);
     --tag-padding-inline: var(--space-2);
     --tag-gap: var(--space-1);
     --tag-border: var(--border);
+    --tag-border-color: var(--color-border);
     --tag-radius: var(--radius);
+    --tag-background-color: var(--color-background);
+    --tag-color: var(--color-foreground);
     --tag-font-size: var(--font-size-12);
 
     --tag-category-1-bg: var(--color-blue-50);
@@ -132,18 +133,18 @@ export const tagStyles = css`
     --tag-category-8-bg: var(--color-purple-50);
     --tag-category-8-border: var(--color-purple-200);
     --tag-category-8-text: var(--color-purple-700);
-  }
 
-  span,
-  time {
     display: inline-flex;
     align-items: center;
     min-height: var(--tag-size);
     gap: var(--tag-gap);
     padding-inline: var(--tag-padding-inline);
-    border-radius: var(--tag-radius);
     border: var(--tag-border);
+    border-color: var(--tag-border-color);
+    border-radius: var(--tag-radius);
     box-sizing: border-box;
+    background-color: var(--tag-background-color);
+    color: var(--tag-color);
     white-space: nowrap;
     font-size: var(--tag-font-size);
     line-height: 1;

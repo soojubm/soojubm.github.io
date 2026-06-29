@@ -1,10 +1,11 @@
-import { LitElement } from 'lit'
+import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { ifDefined } from 'lit/directives/if-defined.js'
 
 import type { IconName } from '@/components/icon-button/semantics/icon-names'
 import type { TagTone } from '@/components/tag/tag.styles'
 
-import { renderTag } from '@/components/tag/tag'
+import '@/components/tag/tag'
 
 @customElement('mm-accent-tag')
 export class AccentTag extends LitElement {
@@ -12,7 +13,11 @@ export class AccentTag extends LitElement {
   @property({ type: String }) icon?: IconName
 
   render() {
-    return renderTag(this.tone, undefined, this.icon)
+    return html`
+      <mm-tag tone=${this.tone} icon=${ifDefined(this.icon)}>
+        <slot></slot>
+      </mm-tag>
+    `
   }
 }
 

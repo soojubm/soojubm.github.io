@@ -1,9 +1,10 @@
-import { LitElement } from 'lit'
+import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { ifDefined } from 'lit/directives/if-defined.js'
 
 import type { IconName } from '@/components/icon-button/semantics/icon-names'
 
-import { renderMappedTag } from '@/components/tag/tag'
+import '@/components/tag/tag'
 import { statusToneMap, type StatusVariant } from '@/components/tag/tag.styles'
 
 @customElement('mm-status-tag')
@@ -12,7 +13,13 @@ export class StatusTag extends LitElement {
   @property({ type: String }) icon?: IconName
 
   render() {
-    return renderMappedTag(this.variant, statusToneMap, this.icon)
+    const tone = statusToneMap[this.variant] ?? 'default'
+
+    return html`
+      <mm-tag tone=${tone} icon=${ifDefined(this.icon)}>
+        <slot>${this.variant}</slot>
+      </mm-tag>
+    `
   }
 }
 
