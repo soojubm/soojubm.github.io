@@ -24,7 +24,6 @@ export class ListRow extends LitElement {
   @property({ type: String, attribute: 'avatar-src' }) avatarSrc = ''
   @property({ type: String, attribute: 'avatar-variant' }) avatarVariant = 'tertiary'
 
-  @state() private hasTrailing = false
   @state() private hasAvatar = false
 
   render() {
@@ -33,8 +32,8 @@ export class ListRow extends LitElement {
       <mm-flex direction="column" gap="0">
         ${this.renderLabel()} ${this.renderDescription()}
       </mm-flex>
-      <span slot="trailing" ?hidden=${!this.hasTrailing}>
-        <slot name="trailing" @slotchange=${this.handleTrailingSlotChange}></slot>
+      <span slot="trailing">
+        <slot name="trailing"></slot>
       </span>
     `
   }
@@ -103,11 +102,6 @@ export class ListRow extends LitElement {
   private handleAvatarSlotChange(event: Event) {
     const slot = event.target as HTMLSlotElement
     this.hasAvatar = this.hasAssignedContent(slot)
-  }
-
-  private handleTrailingSlotChange(event: Event) {
-    const slot = event.target as HTMLSlotElement
-    this.hasTrailing = this.hasAssignedContent(slot)
   }
 
   private hasAssignedContent(slot: HTMLSlotElement) {

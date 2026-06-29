@@ -1,5 +1,5 @@
 import { LitElement, html, nothing } from 'lit'
-import { customElement, property, state } from 'lit/decorators.js'
+import { customElement, property } from 'lit/decorators.js'
 
 import type { ActionConfig } from '@/components/action-config'
 import type { IconName } from '@/components/icon-button/semantics/icon-names'
@@ -18,12 +18,8 @@ class Result extends LitElement {
   @property({ type: String }) description = ''
   @property({ type: String, reflect: true }) role = 'status'
   @property({ attribute: false }) primaryAction?: ActionConfig
-  @state() private hasDefaultContent = false
-  @state() private hasActionContent = false
 
   render() {
-    const hasActions = this.hasActionContent || this.primaryAction
-
     return html`
       <slot name="avatar">${this.renderAvatar()}</slot>
       <mm-text-block
@@ -32,16 +28,10 @@ class Result extends LitElement {
         description=${this.description}
         centered
       ></mm-text-block>
-      <slot
-        ?hidden=${!this.hasDefaultContent}
-        @slotchange=${(event: Event) => this.handleSlotChange('default', event)}
-      ></slot>
-      <mm-button-group justify-content="center" wrap ?hidden=${!hasActions}>
+      <slot></slot>
+      <mm-button-group justify-content="center" wrap>
         ${this.renderPrimaryAction()}
-        <slot
-          name="action"
-          @slotchange=${(event: Event) => this.handleSlotChange('action', event)}
-        ></slot>
+        <slot name="action"></slot>
       </mm-button-group>
     `
   }
@@ -67,20 +57,6 @@ class Result extends LitElement {
         ${this.primaryAction.label}
       </mm-button>
     `
-  }
-
-  private handleSlotChange(kind: 'default' | 'action', event: Event) {
-    const slot = event.target as HTMLSlotElement
-    const hasContent = slot
-      .assignedNodes({ flatten: true })
-      .some(
-        node =>
-          (node.nodeType === Node.TEXT_NODE && node.textContent?.trim() !== '') ||
-          node.nodeType === Node.ELEMENT_NODE,
-      )
-
-    if (kind === 'default') this.hasDefaultContent = hasContent
-    if (kind === 'action') this.hasActionContent = hasContent
   }
 
   private handlePrimaryActionClick() {

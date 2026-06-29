@@ -59,23 +59,14 @@ export class CheckboxGroup extends LitElement {
   }
 
   updated(changed: Map<string, unknown>) {
-    // [수정] 최초 렌더링 시점(초기화 전)에는 외부 value가 자식 상태를 덮어쓰지 않도록
-    // isInitialized가 true일 때만 실행되게 제어합니다.
     if (this.isInitialized && (changed.has('value') || changed.has('name'))) this.syncCheckboxes()
   }
 
   private onSlotChange = () => {
-    // 첫 로드 시점에 그룹의 value가 비어있다면 자식들의 초기 checked 상태를 수집합니다.
     if (!this.isInitialized && this.value.length === 0) {
       const initialCheckedValues = this.checkboxes
-        .filter(checkbox => {
-          // [안정성 보완] 컴포넌트가 미처 업그레이드되지 않았을 때를 대비해 하이브리드로 체크 상태를 확인합니다.
-          return checkbox.checked || checkbox.hasAttribute('checked')
-        })
-        .map(checkbox => {
-          // [안정성 보완] value 프로퍼티가 없으면 attribute에서 읽어옵니다.
-          return checkbox.value || checkbox.getAttribute('value') || ''
-        })
+        .filter(checkbox => checkbox.checked || checkbox.hasAttribute('checked'))
+        .map(checkbox => checkbox.value || checkbox.getAttribute('value') || '')
 
       if (initialCheckedValues.length > 0) this.value = initialCheckedValues
     }
@@ -88,7 +79,6 @@ export class CheckboxGroup extends LitElement {
     if (!this.checkboxes) return
 
     this.checkboxes.forEach(checkbox => {
-      // 동기화 시점에도 안전하게 프로퍼티와 어트리뷰트를 모두 지원합니다.
       const value = checkbox.value || checkbox.getAttribute('value') || ''
 
       if (this.name) checkbox.name = this.name
@@ -111,7 +101,9 @@ export class CheckboxGroup extends LitElement {
 
     if (checked) {
       if (!this.value.includes(value)) this.value = [...this.value, value]
-    } else {this.value = this.value.filter(item => item !== value)}
+    } else {
+      this.value = this.value.filter(item => item !== value)
+    }
 
     this.dispatchValueChange()
   }

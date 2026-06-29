@@ -9,10 +9,6 @@ export const textfieldStyles = [
       margin: 0;
     }
 
-    .textfield {
-      position: relative;
-    }
-
     mm-textfield-validation {
       margin: var(--space-1) 0 0;
     }

@@ -1,6 +1,6 @@
 import { css } from 'lit'
 
-import { componentContentFrameStylesFor } from '@/components/domains/component/component.styles'
+import { componentContentFrameStyles } from '@/components/domains/component/component.styles'
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
 
 export const propStyles = [
@@ -31,7 +31,7 @@ export const propStyles = [
 
 export const componentPropsStyles = [
   resetStyles,
-  componentContentFrameStylesFor('.component-props'),
+  componentContentFrameStyles,
   css`
     :host {
       display: block;
@@ -53,11 +53,11 @@ export const componentPropsStyles = [
       right: 0;
       bottom: 0;
     }
-    .component-props[data-opened='true'] {
+    .component-props.is-opened {
       height: auto;
       cursor: default;
     }
-    .component-props[data-opened='true'] .component-props-more {
+    .component-props.is-opened .component-props-more {
       display: none;
     }
   `,

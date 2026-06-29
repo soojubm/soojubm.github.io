@@ -17,7 +17,7 @@ export class CommentInput extends LitElement {
         display: block;
       }
 
-      .textfield-control {
+      .textarea-control {
         flex-direction: column;
         align-items: stretch;
         padding-block: var(--input-padding-block);

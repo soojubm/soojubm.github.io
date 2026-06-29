@@ -41,7 +41,7 @@ export class ComponentTokens extends LitElement {
 
   render() {
     return html`
-      <section class="component-tokens">
+      <section class="component-tokens component-content-frame">
         <mm-heading class="component-tokens-title">Component Tokens</mm-heading>
         <dl>
           <slot></slot>

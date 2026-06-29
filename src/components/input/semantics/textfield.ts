@@ -35,28 +35,25 @@ export class Textfield extends LitElement {
 
   render() {
     return html`
-      <div class="textfield" ?data-invalid=${this.ariaInvalid === 'true'}>
-        ${renderFieldLabel(this.inputId, this.label, this.optional)}
-        ${renderFieldHelper(this.helper)}
-        <slot name="link"></slot>
-        <div class="textfield-control">
-          <slot name="leading"></slot>
-          <mm-input
-            input-id=${this.inputId}
-            .type=${this.type}
-            .value=${this.value}
-            .name=${this.name}
-            .placeholder=${this.placeholder}
-            aria-label=${this.label ?? this.placeholder ?? nothing}
-            ?disabled=${this.disabled}
-            aria-invalid=${this.ariaInvalid ?? nothing}
-            aria-describedby=${this.validationText ? `${this.inputId}-validation` : nothing}
-            @input=${this.handleInput}
-          ></mm-input>
-          <slot name="trailing"></slot>
-        </div>
-        ${renderFieldValidation(`${this.inputId}-validation`, this.validationText)}
+      ${renderFieldLabel(this.inputId, this.label, this.optional)} ${renderFieldHelper(this.helper)}
+      <slot name="link"></slot>
+      <div class="textfield-control" ?data-invalid=${this.ariaInvalid === 'true'}>
+        <slot name="leading"></slot>
+        <mm-input
+          input-id=${this.inputId}
+          .type=${this.type}
+          .value=${this.value}
+          .name=${this.name}
+          .placeholder=${this.placeholder}
+          aria-label=${this.label ?? this.placeholder ?? nothing}
+          ?disabled=${this.disabled}
+          aria-invalid=${this.ariaInvalid ?? nothing}
+          aria-describedby=${this.validationText ? `${this.inputId}-validation` : nothing}
+          @input=${this.handleInput}
+        ></mm-input>
+        <slot name="trailing"></slot>
       </div>
+      ${renderFieldValidation(`${this.inputId}-validation`, this.validationText)}
     `
   }
 

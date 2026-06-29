@@ -13,50 +13,39 @@ export const tooltipStyles = css`
     --tooltip-shadow: var(--shadow);
   }
 
-  :host(:hover) .tooltip-content,
-  :host(:focus-within) .tooltip-content {
+  :host(:hover) [role='tooltip'],
+  :host(:focus-within) [role='tooltip'] {
     opacity: 1;
     visibility: visible;
   }
 
-  .tooltip {
-    display: inline-flex;
-    align-items: center;
-    position: relative;
-
-    &:hover .tooltip-content {
-      opacity: 1;
-      visibility: visible;
-    }
-  }
-
-  :host([open]) .tooltip-content {
+  :host([open]) [role='tooltip'] {
     opacity: 1;
     visibility: visible;
   }
 
-  :host([placement='center']) .tooltip-content {
+  :host([placement='center']) [role='tooltip'] {
     white-space: pre;
     left: 50%;
     transform: translateX(-50%);
   }
 
-  :host([placement='left']) .tooltip-content {
+  :host([placement='left']) [role='tooltip'] {
     white-space: pre;
   }
 
-  :host([placement='right']) .tooltip-content {
+  :host([placement='right']) [role='tooltip'] {
     white-space: pre;
     left: auto;
     right: 0;
   }
 
-  .tooltip-trigger {
+  slot[name='trigger'] {
     display: inline-flex;
     align-items: center;
   }
 
-  .tooltip-content {
+  [role='tooltip'] {
     opacity: 0;
     visibility: hidden;
     width: max-content;

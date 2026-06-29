@@ -38,48 +38,45 @@ export class NumberInput extends LitElement {
 
   render() {
     return html`
-      <div class="textfield" ?data-invalid=${this.ariaInvalid === 'true'}>
-        ${renderFieldLabel(this.inputId, this.label, this.optional)}
-        ${renderFieldHelper(this.helper)}
-        <div class="textfield-control">
-          <mm-input
-            input-id=${this.inputId}
-            .type=${'number'}
-            .value=${this.value}
-            .name=${this.name}
-            .placeholder=${this.placeholder}
-            aria-label=${this.label ?? this.placeholder ?? nothing}
-            .min=${this.min}
-            .max=${this.max}
-            .step=${this.step}
-            ?disabled=${this.disabled}
-            aria-invalid=${this.ariaInvalid ?? nothing}
-            aria-describedby=${this.validationText ? `${this.inputId}-validation` : nothing}
-            @input=${this.handleInput}
-          ></mm-input>
-          <mm-icon-button
-            variant="ghost"
-            size="small"
-            icon=${ICON_NAMES.SUBTRACT}
-            aria-label="감소"
-            tooltip="감소"
-            tooltip-placement="center"
-            ?disabled=${this.disabled}
-            @click=${this.decrement}
-          ></mm-icon-button>
-          <mm-icon-button
-            variant="ghost"
-            size="small"
-            icon=${ICON_NAMES.ADD}
-            aria-label="증가"
-            tooltip="증가"
-            tooltip-placement="center"
-            ?disabled=${this.disabled}
-            @click=${this.increment}
-          ></mm-icon-button>
-        </div>
-        ${renderFieldValidation(`${this.inputId}-validation`, this.validationText)}
+      ${renderFieldLabel(this.inputId, this.label, this.optional)} ${renderFieldHelper(this.helper)}
+      <div class="textfield-control" ?data-invalid=${this.ariaInvalid === 'true'}>
+        <mm-input
+          input-id=${this.inputId}
+          .type=${'number'}
+          .value=${this.value}
+          .name=${this.name}
+          .placeholder=${this.placeholder}
+          aria-label=${this.label ?? this.placeholder ?? nothing}
+          .min=${this.min}
+          .max=${this.max}
+          .step=${this.step}
+          ?disabled=${this.disabled}
+          aria-invalid=${this.ariaInvalid ?? nothing}
+          aria-describedby=${this.validationText ? `${this.inputId}-validation` : nothing}
+          @input=${this.handleInput}
+        ></mm-input>
+        <mm-icon-button
+          variant="ghost"
+          size="small"
+          icon=${ICON_NAMES.SUBTRACT}
+          aria-label="감소"
+          tooltip="감소"
+          tooltip-placement="center"
+          ?disabled=${this.disabled}
+          @click=${this.decrement}
+        ></mm-icon-button>
+        <mm-icon-button
+          variant="ghost"
+          size="small"
+          icon=${ICON_NAMES.ADD}
+          aria-label="증가"
+          tooltip="증가"
+          tooltip-placement="center"
+          ?disabled=${this.disabled}
+          @click=${this.increment}
+        ></mm-icon-button>
       </div>
+      ${renderFieldValidation(`${this.inputId}-validation`, this.validationText)}
     `
   }
 

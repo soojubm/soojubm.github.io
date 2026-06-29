@@ -26,21 +26,19 @@ export class TextareaField extends LitElement {
 
   render() {
     return html`
-      <div class="textfield" ?data-invalid=${this.ariaInvalid === 'true'}>
-        ${renderFieldLabel(this.inputId, this.label, this.optional)}
-        <mm-textarea
-          input-id=${this.inputId}
-          .value=${this.value}
-          .name=${this.name}
-          .placeholder=${this.placeholder}
-          .rows=${this.rows}
-          ?disabled=${this.disabled}
-          aria-invalid=${this.ariaInvalid ?? nothing}
-          aria-describedby=${this.helper ? this.helperId : nothing}
-          @input=${this.syncValue}
-        ></mm-textarea>
-        ${renderFieldHelper(this.helper, this.helperId)}
-      </div>
+      ${renderFieldLabel(this.inputId, this.label, this.optional)}
+      <mm-textarea
+        input-id=${this.inputId}
+        .value=${this.value}
+        .name=${this.name}
+        .placeholder=${this.placeholder}
+        .rows=${this.rows}
+        ?disabled=${this.disabled}
+        aria-invalid=${this.ariaInvalid ?? nothing}
+        aria-describedby=${this.helper ? this.helperId : nothing}
+        @input=${this.syncValue}
+      ></mm-textarea>
+      ${renderFieldHelper(this.helper, this.helperId)}
     `
   }
 

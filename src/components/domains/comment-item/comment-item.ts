@@ -40,25 +40,11 @@ export class CommentItem extends LitElement {
       --button-text-color: var(--comment-item-reply-color);
     }
 
-    .replies {
+    slot[name='replies']::slotted(*) {
       margin: var(--space-4) 0 0;
       padding-left: var(--space-4);
+      box-shadow: inset 2px 0 0 var(--color-border);
       position: relative;
-    }
-
-    .replies[hidden] {
-      display: none;
-    }
-
-    .replies::before {
-      content: '';
-      display: block;
-      width: 2px;
-      height: 100%;
-      background-color: var(--color-border);
-      position: absolute;
-      left: 0;
-      top: 0;
     }
 
     mm-sheet {
@@ -90,7 +76,6 @@ export class CommentItem extends LitElement {
   @property({ type: Boolean }) editable = false
 
   @state() private menuOpen = false
-  @state() private hasReplies = false
 
   render() {
     return html`
@@ -103,9 +88,7 @@ export class CommentItem extends LitElement {
 
         ${this.renderReplyButton()} ${this.renderMenu()}
 
-        <div class="replies" ?hidden=${!this.hasReplies}>
-          <slot name="replies" @slotchange=${this.onRepliesSlotChange}></slot>
-        </div>
+        <slot name="replies"></slot>
       </article>
     `
   }
@@ -165,11 +148,6 @@ export class CommentItem extends LitElement {
   private onMenuAction(type: 'edit' | 'delete') {
     this.menuOpen = false
     this.emitAction(type)
-  }
-
-  private onRepliesSlotChange(event: Event) {
-    const slot = event.target as HTMLSlotElement
-    this.hasReplies = slot.assignedElements().length > 0
   }
 }
 

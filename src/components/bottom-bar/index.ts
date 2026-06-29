@@ -28,14 +28,14 @@ class BottomBar extends LitElement {
       --bottom-bar-item-height: calc(var(--size-medium) + var(--font-line-height-16));
     }
 
-    .bottom-bar {
+    nav {
       display: flex;
       padding: 0 0 calc(env(safe-area-inset-bottom));
       background: var(--color-background);
       position: relative;
     }
 
-    .bottom-bar-item {
+    a {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -48,19 +48,19 @@ class BottomBar extends LitElement {
       z-index: 1;
     }
 
-    .bottom-bar-item[aria-current='page'] {
+    a[aria-current='page'] {
       color: var(--selection-foreground);
     }
 
-    .bottom-bar-item[aria-current='page'] mm-avatar {
+    a[aria-current='page'] mm-avatar {
       --avatar-icon-color: var(--selection-foreground);
     }
 
-    .bottom-bar-item[aria-current='page'] mm-caption {
+    a[aria-current='page'] mm-caption {
       --color-foreground-light: var(--selection-foreground);
     }
 
-    .bottom-bar-indicator {
+    .indicator {
       width: 0;
       height: var(--bottom-bar-item-height);
       border-radius: var(--radius-large);
@@ -84,8 +84,8 @@ class BottomBar extends LitElement {
 
   @state() private selectedIndex: number | null = null
 
-  @query('.bottom-bar') private bottomBar?: HTMLElement
-  @query('.bottom-bar-indicator') private indicator?: HTMLElement
+  @query('nav') private bottomBar?: HTMLElement
+  @query('.indicator') private indicator?: HTMLElement
 
   private indicatorPosition = new SelectionIndicatorController(this, {
     axis: 'x',
@@ -93,8 +93,7 @@ class BottomBar extends LitElement {
     getContainer: () => this.bottomBar,
     getIndicator: () => this.indicator,
     getTarget: () =>
-      this.renderRoot.querySelector<HTMLElement>(".bottom-bar-item[aria-current='page']") ??
-      undefined,
+      this.renderRoot.querySelector<HTMLElement>("a[aria-current='page']") ?? undefined,
   })
 
   render() {
@@ -102,8 +101,8 @@ class BottomBar extends LitElement {
     const activeIndex = this.resolveActiveIndex(items)
 
     return html`
-      <nav class="bottom-bar" aria-label=${this.ariaLabel}>
-        <span class="bottom-bar-indicator" aria-hidden="true"></span>
+      <nav aria-label=${this.ariaLabel}>
+        <span class="indicator" aria-hidden="true"></span>
         ${this.renderItems(items, activeIndex)}
       </nav>
     `
@@ -131,7 +130,6 @@ class BottomBar extends LitElement {
   private renderItem(item: BottomBarItem, index: number, activeIndex: number | null) {
     return html`
       <a
-        class="bottom-bar-item"
         href=${item.href ?? '#'}
         aria-current=${ifDefined(activeIndex === index ? 'page' : undefined)}
         @click=${(e: Event) => this.handleItemClick(e, index)}

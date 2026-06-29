@@ -13,26 +13,27 @@ export class Thumbnail extends LitElement {
       --thumbnail-color-empty: var(--color-background-subtle);
     }
 
-    .thumbnail-root {
+    figure {
       display: block;
       width: 100%;
       padding: 0;
       margin: 0;
     }
 
-    .thumbnail-media.interactive {
+    :is(a, button).interactive {
       cursor: pointer;
       transition: all 0.3s ease-in-out;
     }
-    .thumbnail-media.interactive:hover {
+    :is(a, button).interactive:hover {
       transform: scale(1.03);
     }
-    .thumbnail-media:focus-visible {
+    :is(a, button, div):focus-visible {
       outline: 3px solid var(--color-focus, var(--color-primary));
       outline-offset: 2px;
     }
 
     .image-wrapper {
+      display: block;
       position: relative;
       width: 100%;
       aspect-ratio: 16 / 9;
@@ -53,7 +54,7 @@ export class Thumbnail extends LitElement {
       display: block;
     }
 
-    .thumbnail-media {
+    :is(a, button, div) {
       display: block;
       width: 100%;
       padding: 0;
@@ -65,7 +66,7 @@ export class Thumbnail extends LitElement {
       color: inherit;
     }
 
-    .thumbnail-caption {
+    mm-caption {
       display: block;
       margin-top: var(--space-2, 8px);
     }
@@ -87,11 +88,34 @@ export class Thumbnail extends LitElement {
     "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Crect width='300' height='300' fill='%23e0e0e0'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='14' fill='%23999'%3ENo Image%3C/text%3E%3C/svg%3E"
 
   render() {
+    return html`
+      <figure>${this.renderMedia()} ${this.renderCaption()}</figure>
+    `
+  }
+
+  private renderMedia() {
+    if (this.href) {
+      return html`
+        <a href=${this.href} class="interactive">${this.renderImage()}</a>
+      `
+    }
+
+    if (this.clickable) {
+      return html`
+        <button type="button" class="interactive">${this.renderImage()}</button>
+      `
+    }
+
+    return html`
+      ${this.renderImage()}
+    `
+  }
+
+  private renderImage() {
     const displaySrc = this.hasError ? this.fallbackImage : this.src || this.fallbackImage
 
-    // 내부 알맹이(이미지 틀)를 변수로 분리하여 코드 중복을 최소화합니다.
-    const innerTemplate = html`
-      <div class="image-wrapper">
+    return html`
+      <span class="image-wrapper">
         <img
           src=${displaySrc}
           alt=${this.alt}
@@ -100,30 +124,7 @@ export class Thumbnail extends LitElement {
           fetchpriority=${this.fetchPriority}
           @error=${this.handleImageError}
         />
-      </div>
-    `
-    // 미디어(이미지 틀)를 감싸는 요소를 상황에 맞게 결정합니다.
-    let media
-    if (this.href) {
-      // 1. 이동할 주소(href)가 있다면 <a> 태그로 출력
-      media = html`
-        <a href=${this.href} class="thumbnail-media interactive">${innerTemplate}</a>
-      `
-    } else if (this.clickable) {
-      // 2. 주소는 없지만 클릭 동작(clickable)이 필요하다면 <button> 태그로 출력
-      media = html`
-        <button type="button" class="thumbnail-media interactive">${innerTemplate}</button>
-      `
-    } else {
-      // 3. 아무것도 없다면 단순 보기용 <div>로 출력
-      media = html`
-        <div class="thumbnail-media">${innerTemplate}</div>
-      `
-    }
-
-    // thumbnail 자체가 <figure>이며, caption 값이 있으면 내부에 캡션을 함께 렌더링합니다.
-    return html`
-      <figure class="thumbnail-root">${media} ${this.renderCaption()}</figure>
+      </span>
     `
   }
 
@@ -131,7 +132,7 @@ export class Thumbnail extends LitElement {
     if (!this.caption) return nothing
 
     return html`
-      <mm-caption as="figcaption" class="thumbnail-caption">${this.caption}</mm-caption>
+      <mm-caption as="figcaption">${this.caption}</mm-caption>
     `
   }
 

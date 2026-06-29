@@ -29,20 +29,24 @@ class Tooltip extends LitElement {
 
   render() {
     return html`
-      <div
-        class="tooltip"
-        @mouseover=${this.show}
-        @mouseout=${this.hide}
-        @focusin=${this.show}
-        @focusout=${this.hide}
-      >
-        <slot class="tooltip-trigger" name="trigger" @slotchange=${this.syncDescription}></slot>
-        <div id=${this.contentId} class="tooltip-content" role="tooltip">${this.content}</div>
-      </div>
+      <slot name="trigger" @slotchange=${this.syncDescription}></slot>
+      <div id=${this.contentId} role="tooltip" aria-label=${this.content}>${this.content}</div>
     `
   }
 
+  connectedCallback() {
+    super.connectedCallback()
+    this.addEventListener('mouseover', this.show)
+    this.addEventListener('mouseout', this.hide)
+    this.addEventListener('focusin', this.show)
+    this.addEventListener('focusout', this.hide)
+  }
+
   disconnectedCallback() {
+    this.removeEventListener('mouseover', this.show)
+    this.removeEventListener('mouseout', this.hide)
+    this.removeEventListener('focusin', this.show)
+    this.removeEventListener('focusout', this.hide)
     this.clearDescriptionTargets()
     super.disconnectedCallback()
   }
