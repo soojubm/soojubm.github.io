@@ -4,7 +4,6 @@ export const avatarStyles = css`
   :host {
     --avatar-size: var(--size-medium);
     --avatar-background-color: var(--color-background-subtle);
-    --avatar-border: var(--border);
     --avatar-border-color: transparent;
     --avatar-icon-color: var(--color-foreground);
     --avatar-radius: var(--radius);
@@ -21,6 +20,7 @@ export const avatarStyles = css`
     background-repeat: no-repeat;
     background-position: center;
     background-color: var(--avatar-background-color);
+    border: var(--avatar-border, none);
     border-radius: var(--avatar-radius);
     box-sizing: border-box;
     position: relative;
@@ -48,10 +48,7 @@ export const avatarStyles = css`
 
   :host([variant='secondary']) {
     --avatar-background-color: var(--color-background);
-  }
-
-  :host([variant='secondary']) figure {
-    border: var(--border);
+    --avatar-border: var(--border);
   }
 
   :host([variant='tertiary']) {
@@ -59,7 +56,6 @@ export const avatarStyles = css`
   }
 
   :host([variant='tertiary']) figure {
-    border: none;
     box-shadow: none;
   }
 
@@ -68,11 +64,5 @@ export const avatarStyles = css`
     height: inherit;
     border-radius: var(--avatar-radius);
     object-fit: cover;
-  }
-
-  /* brutal: variant가 element-level border를 설정하므로 :host-context로 덮어
-     모든 아바타(figure)에 #000 보더 적용 */
-  :host-context([data-theme='brutal']) figure {
-    border: var(--avatar-border);
   }
 `
