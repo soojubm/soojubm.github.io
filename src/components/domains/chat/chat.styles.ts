@@ -18,13 +18,13 @@ export const chatBubbleStyles = css`
     --thumbnail-radius: var(--bubble-radius);
   }
 
-  :host([data-image]) {
+  :host([image]) {
     padding: 0;
     background: none;
     overflow: hidden;
   }
 
-  :host([data-image]) mm-thumbnail {
+  :host([image]) mm-thumbnail {
     display: block;
     max-width: 240px;
     overflow: hidden;

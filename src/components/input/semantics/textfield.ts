@@ -37,7 +37,7 @@ export class Textfield extends LitElement {
     return html`
       ${renderFieldLabel(this.inputId, this.label, this.optional)} ${renderFieldHelper(this.helper)}
       <slot name="link"></slot>
-      <div class="textfield-control" ?data-invalid=${this.ariaInvalid === 'true'}>
+      <div class="textfield-control" aria-invalid=${this.ariaInvalid ?? nothing}>
         <slot name="leading"></slot>
         <mm-input
           input-id=${this.inputId}

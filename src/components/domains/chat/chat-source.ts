@@ -91,7 +91,6 @@ export class ChatSourceGroup extends LitElement {
         display: block;
       }
 
-      /* inline sheet */
       .sheet {
         margin-top: var(--space-2);
         background: var(--color-background);
@@ -99,15 +98,9 @@ export class ChatSourceGroup extends LitElement {
         border-radius: var(--radius);
         box-shadow: var(--shadow);
         padding: var(--space-3);
-
-        transform: translateY(-4px);
-        opacity: 0;
-        transition: opacity 160ms ease, transform 200ms cubic-bezier(0.18, 1.25, 0.4, 1);
-      }
-
-      .sheet[data-open] {
         transform: translateY(0);
         opacity: 1;
+        transition: opacity 160ms ease, transform 200ms cubic-bezier(0.18, 1.25, 0.4, 1);
       }
 
       .sheet-icon {
@@ -175,7 +168,6 @@ export class ChatSourceGroup extends LitElement {
     return html`
       <mm-flex
         class="sheet"
-        data-open
         direction="column"
         gap="2"
         role="dialog"
@@ -232,7 +224,7 @@ export class ChatSourceGroup extends LitElement {
         target="_blank"
         rel="noopener noreferrer"
       >
-        방문하기 ↗
+        방문하기
       </a>
     `
   }

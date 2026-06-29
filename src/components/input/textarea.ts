@@ -71,7 +71,7 @@ export class Textarea extends LitElement {
 
   protected renderTextarea() {
     return html`
-      <div class="textarea-control" ?data-invalid=${this.ariaInvalid === 'true'}>
+      <div class="textarea-control" aria-invalid=${this.ariaInvalid ?? nothing}>
         <textarea
           id=${this.textareaId}
           rows=${this.rows}

@@ -45,7 +45,7 @@ export class Navbar extends LitElement {
             aria-label="전체메뉴"
             aria-controls="site-sidebar"
           ></mm-hamburger-button>
-          <a class="navbar-logo" href="./index.html"></a>
+          <a class="navbar-logo" href="./index.html" aria-label="홈"></a>
         </mm-flex>
 
         <div class="navbar-user">
@@ -108,7 +108,7 @@ export class Navbar extends LitElement {
       <div class="navbar-backdrop"></div>
 
       <mm-sheet class="js-search-sheet" variant="center" width="medium" backdrop-blur>
-        <mm-top-bar type="back" data-todo="topbar vs sheetheader"></mm-top-bar>
+        <mm-top-bar type="back"></mm-top-bar>
         <mm-sheet-body>
           <form role="search">
             <mm-flex direction="column" gap="2">

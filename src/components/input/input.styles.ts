@@ -42,7 +42,7 @@ export const inputStyles = css`
       box-shadow: var(--input-focus-shadow);
     }
 
-    &[data-invalid] {
+    &[aria-invalid='true'] {
       border-color: var(--color-danger);
     }
   }
@@ -74,7 +74,7 @@ export const inputStyles = css`
     }
   }
 
-  [data-invalid] {
+  [aria-invalid='true'] {
     & .textfield-control,
     & .textarea-control,
     & textarea {

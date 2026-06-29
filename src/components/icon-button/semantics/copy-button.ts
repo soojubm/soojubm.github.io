@@ -1,8 +1,9 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
+import { classMap } from 'lit/directives/class-map.js'
 
-import { iconButtonStyles } from '@/components/icon-button/icon-button.styles'
 import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
+import '@/components/icon-button/icon-button'
 import { copyToClipboard } from '@/utils/clipboard'
 import { emit } from '@/utils/emit'
 
@@ -12,21 +13,7 @@ import { emit } from '@/utils/emit'
  */
 @customElement('mm-copy-button')
 export class CopyButton extends LitElement {
-  static styles = [
-    iconButtonStyles,
-    css`
-      button.plain {
-        color: var(--color-foreground-light);
-      }
-      button.plain:hover {
-        color: var(--color-foreground);
-        background-color: var(--color-background-subtle);
-      }
-      button[data-copied] {
-        color: var(--color-primary);
-      }
-    `,
-  ]
+  static styles = css``
 
   @property({ type: String }) value = ''
   @state() private copied = false
@@ -42,15 +29,12 @@ export class CopyButton extends LitElement {
 
   render() {
     return html`
-      <button
-        type="button"
-        class="plain"
-        ?data-copied=${this.copied}
+      <mm-icon-button
+        icon=${this.copied ? ICON_NAMES.COPY_SUCCESS : ICON_NAMES.COPY}
         aria-label=${this.copied ? '복사됨' : '복사'}
+        variant="ghost"
         @click=${this.handleClick}
-      >
-        <mm-icon name=${this.copied ? ICON_NAMES.COPY_SUCCESS : ICON_NAMES.COPY}></mm-icon>
-      </button>
+      ></mm-icon-button>
     `
   }
 }

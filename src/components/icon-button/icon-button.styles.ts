@@ -26,6 +26,14 @@ export const iconButtonStyles = css`
     cursor: pointer;
   }
 
+  button:hover {
+    background-color: var(
+      --icon-button-background-color-hover,
+      var(--icon-button-background-color)
+    );
+    color: var(--icon-button-text-color-hover, var(--icon-button-text-color));
+  }
+
   :host([variant='primary']) button {
     background-color: var(--color-primary);
     --icon-button-text-color: var(--color-foreground-on-solid);

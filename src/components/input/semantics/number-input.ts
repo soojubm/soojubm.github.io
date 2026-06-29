@@ -39,7 +39,7 @@ export class NumberInput extends LitElement {
   render() {
     return html`
       ${renderFieldLabel(this.inputId, this.label, this.optional)} ${renderFieldHelper(this.helper)}
-      <div class="textfield-control" ?data-invalid=${this.ariaInvalid === 'true'}>
+      <div class="textfield-control" aria-invalid=${this.ariaInvalid ?? nothing}>
         <mm-input
           input-id=${this.inputId}
           .type=${'number'}

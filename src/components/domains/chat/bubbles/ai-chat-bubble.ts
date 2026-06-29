@@ -32,7 +32,7 @@ export class AiChatBubble extends LitElement {
   }
 
   protected willUpdate() {
-    this.toggleAttribute('data-image', isChatBubbleImage(this.src, this.typing))
+    this.toggleAttribute('image', isChatBubbleImage(this.src, this.typing))
   }
 }
 
