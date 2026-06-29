@@ -74,7 +74,7 @@ export class FileUploadButton extends LitElement {
           capture=${this.capture ? 'camera' : nothing}
           @change=${this.handleChange}
         />
-        ${this.renderHelper()}
+        ${this.renderHint()}
       </mm-flex>
 
       <mm-flex class="attachments" direction="column" gap="2">
@@ -90,7 +90,7 @@ export class FileUploadButton extends LitElement {
     `
   }
 
-  private renderHelper() {
+  private renderHint() {
     if (!this.helper) return ''
 
     return html`
