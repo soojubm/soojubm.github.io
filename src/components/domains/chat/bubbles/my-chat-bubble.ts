@@ -27,7 +27,8 @@ export class MyChatBubble extends LitElement {
 
   render() {
     return html`
-      ${renderChatTypingIndicator(this.typing)} ${renderChatBubbleImage(this.src, this.typing)}
+      ${renderChatTypingIndicator(this.typing, 'var(--color-foreground-on-solid)')}
+      ${renderChatBubbleImage(this.src, this.typing)}
       ${this.typing || this.src
         ? nothing
         : html`

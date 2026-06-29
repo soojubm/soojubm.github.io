@@ -17,6 +17,10 @@ export class AccordionItem extends LitElement {
     css`
       :host {
         display: block;
+        padding: var(--accordion-padding-y) var(--accordion-padding-x);
+        background: var(--accordion-background);
+        border: var(--accordion-border, none);
+        border-radius: var(--accordion-radius);
 
         --accordion-padding-x: var(--space-4);
         --accordion-padding-y: var(--space-2);
@@ -24,13 +28,6 @@ export class AccordionItem extends LitElement {
         --accordion-radius: var(--radius);
         --accordion-icon-size: 1.25rem;
         --accordion-transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-
-      .accordion {
-        padding: var(--accordion-padding-y) var(--accordion-padding-x);
-        background: var(--accordion-background);
-        border: var(--accordion-border, none);
-        border-radius: var(--accordion-radius);
       }
 
       .summary-btn {
@@ -98,22 +95,20 @@ export class AccordionItem extends LitElement {
 
   render() {
     return html`
-      <div class="accordion">
-        <button
-          class="summary-btn"
-          aria-expanded=${this.open ? 'true' : 'false'}
-          aria-controls=${this.panelId}
-          ?disabled=${this.disabled}
-          @click=${this.toggle}
-        >
-          <slot name="summary">${this.summary}</slot>
-          <mm-icon class="icon" name=${ICON_NAMES.SITEMAP}></mm-icon>
-        </button>
+      <button
+        class="summary-btn"
+        aria-expanded=${this.open ? 'true' : 'false'}
+        aria-controls=${this.panelId}
+        ?disabled=${this.disabled}
+        @click=${this.toggle}
+      >
+        <slot name="summary">${this.summary}</slot>
+        <mm-icon class="icon" name=${ICON_NAMES.SITEMAP}></mm-icon>
+      </button>
 
-        <div id=${this.panelId} class="panel" aria-hidden=${this.open ? 'false' : 'true'}>
-          <div class="panel-inner">
-            <slot></slot>
-          </div>
+      <div id=${this.panelId} class="panel" aria-hidden=${this.open ? 'false' : 'true'}>
+        <div class="panel-inner">
+          <slot></slot>
         </div>
       </div>
     `

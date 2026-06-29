@@ -2,7 +2,11 @@ import { css } from 'lit'
 
 export const listRowStyles = css`
   :host {
-    display: block;
+    display: flex;
+    align-items: center;
+    min-height: var(--list-row-size);
+    gap: var(--list-row-gap);
+
     --list-row-size: var(--size-medium);
     --list-row-gap: var(--space-2);
   }
@@ -15,32 +19,23 @@ export const listRowStyles = css`
     --list-row-size: var(--size-huge);
   }
 
-  .list-row {
-    display: flex;
-    align-items: center;
-    min-height: var(--list-row-size);
-    gap: var(--list-row-gap);
-  }
-
-  .list-row-leading,
-  .list-row-trailing {
+  [slot='leading'],
+  [slot='trailing'] {
     flex: 0 0 auto;
     display: inline-flex;
     align-items: center;
   }
 
-  .list-row-content {
+  mm-flex {
     min-width: 0;
     flex: 1;
-    display: flex;
-    flex-direction: column;
   }
 
-  .list-row-description {
+  mm-text[color='light'] {
     margin-top: -0.125rem;
   }
 
-  .list-row-emoji {
+  .emoji {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -50,8 +45,8 @@ export const listRowStyles = css`
     line-height: 1;
   }
 
-  :host([size='large']) .list-row-emoji,
-  :host([size='huge']) .list-row-emoji {
+  :host([size='large']) .emoji,
+  :host([size='huge']) .emoji {
     font-size: var(--font-size-24);
   }
 `

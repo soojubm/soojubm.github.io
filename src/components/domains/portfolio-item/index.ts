@@ -18,7 +18,7 @@ export class PortfolioItem extends LitElement {
         cursor: pointer;
       }
 
-      .card {
+      article {
         display: flex;
         flex-direction: column;
         width: 100%;
@@ -27,7 +27,7 @@ export class PortfolioItem extends LitElement {
         position: relative;
       }
 
-      .card:hover {
+      article:hover {
         background-color: var(--color-background-subtle);
         box-shadow: var(--shadow);
       }
@@ -58,7 +58,7 @@ export class PortfolioItem extends LitElement {
         line-height: var(--font-size-12);
       }
 
-      :host-context(.list) .card {
+      :host-context(.list) article {
         flex-direction: row;
       }
 
@@ -85,7 +85,6 @@ export class PortfolioItem extends LitElement {
   render() {
     return html`
       <article
-        class="card"
         role=${this.modal ? 'button' : 'article'}
         tabindex=${this.modal ? '0' : '-1'}
         @click=${this.open}
@@ -94,7 +93,7 @@ export class PortfolioItem extends LitElement {
         ${this.renderBadge()}
         <mm-more-button class="action"></mm-more-button>
         ${this.renderThumbnail()}
-        <mm-flex class="content" direction="column" gap="1">
+        <mm-flex direction="column" gap="1">
           ${this.renderHeading()} ${this.renderDescription()} ${this.renderDatetime()}
           ${this.renderKeywords()}
           <slot></slot>

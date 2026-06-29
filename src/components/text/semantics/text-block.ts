@@ -29,7 +29,7 @@ class TextBlock extends LitElement {
         display: block;
       }
       /* Level 1 전용 본문 최대 너비 제한 (가독성 최적화) */
-      :host([level='1']) .container mm-paragraph {
+      :host([level='1']) mm-paragraph {
         max-width: 720px;
       }
     `,
@@ -67,7 +67,6 @@ class TextBlock extends LitElement {
 
     return html`
       <mm-flex
-        class="container"
         direction="column"
         gap=${variant.gap}
         align-items=${this.centered ? 'center' : 'start'}

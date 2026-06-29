@@ -16,6 +16,7 @@ class Result extends LitElement {
   @property({ type: String, attribute: 'avatar-icon' }) avatarIcon?: IconName
   @property({ type: String }) heading = ''
   @property({ type: String }) description = ''
+  @property({ type: String, reflect: true }) role = 'status'
   @property({ attribute: false }) primaryAction?: ActionConfig
   @state() private hasDefaultContent = false
   @state() private hasActionContent = false
@@ -24,30 +25,24 @@ class Result extends LitElement {
     const hasActions = this.hasActionContent || this.primaryAction
 
     return html`
-      <div role="status" class="result">
-        <slot name="avatar">${this.renderAvatar()}</slot>
-        <mm-text-block
-          level="3"
-          heading=${this.heading}
-          description=${this.description}
-          centered
-        ></mm-text-block>
-        <div class="result-content" ?hidden=${!this.hasDefaultContent}>
-          <slot @slotchange=${(event: Event) => this.handleSlotChange('default', event)}></slot>
-        </div>
-        <mm-button-group
-          class="result-actions"
-          justify-content="center"
-          wrap
-          ?hidden=${!hasActions}
-        >
-          ${this.renderPrimaryAction()}
-          <slot
-            name="action"
-            @slotchange=${(event: Event) => this.handleSlotChange('action', event)}
-          ></slot>
-        </mm-button-group>
-      </div>
+      <slot name="avatar">${this.renderAvatar()}</slot>
+      <mm-text-block
+        level="3"
+        heading=${this.heading}
+        description=${this.description}
+        centered
+      ></mm-text-block>
+      <slot
+        ?hidden=${!this.hasDefaultContent}
+        @slotchange=${(event: Event) => this.handleSlotChange('default', event)}
+      ></slot>
+      <mm-button-group justify-content="center" wrap ?hidden=${!hasActions}>
+        ${this.renderPrimaryAction()}
+        <slot
+          name="action"
+          @slotchange=${(event: Event) => this.handleSlotChange('action', event)}
+        ></slot>
+      </mm-button-group>
     `
   }
 

@@ -1,7 +1,7 @@
 import { css } from 'lit'
 
 export const resultStyles = css`
-  .result {
+  :host {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -11,17 +11,11 @@ export const resultStyles = css`
     margin: 0 auto;
   }
 
-  .result-content {
+  slot:not([name]) {
     width: 100%;
-
-    &[hidden] {
-      display: none;
-    }
   }
 
-  .result-actions {
-    &[hidden] {
-      display: none;
-    }
+  [hidden] {
+    display: none;
   }
 `

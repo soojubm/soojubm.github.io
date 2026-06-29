@@ -29,27 +29,10 @@ export class ChatReasoningFlow extends LitElement {
     resetStyles,
     css`
       :host {
-        display: flex;
-        width: 100%;
-        min-width: 0;
-        gap: var(--space-2);
-        align-items: flex-start;
       }
 
       :host([hidden]) {
         display: none;
-      }
-
-      mm-icon {
-        flex-shrink: 0;
-        width: 1rem;
-        height: 1rem;
-        margin-top: var(--space-05);
-        color: var(--color-primary);
-      }
-
-      mm-flex {
-        min-width: 0;
       }
     `,
   ]
@@ -63,10 +46,8 @@ export class ChatReasoningFlow extends LitElement {
   render() {
     return html`
       <mm-icon name=${this.icon || toneIconMap[this.tone] || ICON_NAMES.SPARKS}></mm-icon>
-      <mm-flex direction="column" gap="05">
-        ${this.renderLabel()} ${this.renderDescription()}
-        <mm-text size="12" color="light"><slot></slot></mm-text>
-      </mm-flex>
+      ${this.renderLabel()} ${this.renderDescription()}
+      <mm-text size="12" color="light"><slot></slot></mm-text>
     `
   }
 
@@ -104,23 +85,6 @@ export class ChatReasoning extends LitElement {
         display: block;
       }
 
-      mm-flex {
-        width: fit-content;
-        max-width: min(85%, 600px);
-        min-width: 0;
-      }
-
-      mm-text {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-      }
-
-      .flows {
-        display: grid;
-        min-width: 0;
-      }
-
       ::slotted(mm-chat-reasoning-flow) {
         grid-area: 1 / 1;
         opacity: 0;
@@ -153,7 +117,7 @@ export class ChatReasoning extends LitElement {
     return html`
       <mm-flex direction="column" gap="1">
         ${this.renderDuration()}
-        <span class="flows">
+        <span>
           <slot @slotchange=${this.syncFlows}></slot>
         </span>
       </mm-flex>

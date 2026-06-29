@@ -11,10 +11,6 @@ export const myChatBubbleStyles = css`
     color: var(--my-chat-bubble-color, var(--color-foreground-on-solid));
   }
 
-  .typing span {
-    background: var(--color-foreground-on-solid);
-  }
-
   .status {
     display: block;
     margin-top: var(--space-1);

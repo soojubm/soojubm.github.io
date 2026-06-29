@@ -23,14 +23,14 @@ export class CommentItem extends LitElement {
       position: relative;
     }
 
-    .item {
+    article {
       display: flex;
       flex-direction: column;
       gap: var(--comment-item-gap);
       position: relative;
     }
 
-    mm-button.reply {
+    mm-button {
       align-self: flex-start;
 
       --button-background-color: transparent;
@@ -95,7 +95,7 @@ export class CommentItem extends LitElement {
 
   render() {
     return html`
-      <article class="item">
+      <article>
         <mm-user-row label=${this.author} description=${this.datetime} avatar-src=${this.avatarSrc}>
           ${this.renderMenuTrigger()}
         </mm-user-row>
@@ -129,12 +129,7 @@ export class CommentItem extends LitElement {
     if (!this.replyLabel) return nothing
 
     return html`
-      <mm-button
-        class="reply"
-        variant="ghost"
-        size="small"
-        @click=${() => this.emitAction('reply')}
-      >
+      <mm-button variant="ghost" size="small" @click=${() => this.emitAction('reply')}>
         ${this.replyLabel}
       </mm-button>
     `

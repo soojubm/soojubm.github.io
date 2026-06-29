@@ -5,6 +5,7 @@ import type { IconName } from '@/components/icon-button/semantics/icon-names'
 
 import { listRowStyles } from '@/components/list-row/list-row.styles'
 import '@/components/avatar/avatar'
+import '@/components/flex/flex'
 
 /**
  * leading(아바타·아이콘) + content(title/description) + trailing 한 줄을 구성하는 표현 전용 primitive.
@@ -28,13 +29,13 @@ export class ListRow extends LitElement {
 
   render() {
     return html`
-      <div class="list-row">
-        ${this.renderLeading()}
-        <span class="list-row-content">${this.renderLabel()} ${this.renderDescription()}</span>
-        <span class="list-row-trailing" ?hidden=${!this.hasTrailing}>
-          <slot name="trailing" @slotchange=${this.handleTrailingSlotChange}></slot>
-        </span>
-      </div>
+      ${this.renderLeading()}
+      <mm-flex direction="column" gap="0">
+        ${this.renderLabel()} ${this.renderDescription()}
+      </mm-flex>
+      <span slot="trailing" ?hidden=${!this.hasTrailing}>
+        <slot name="trailing" @slotchange=${this.handleTrailingSlotChange}></slot>
+      </span>
     `
   }
 
@@ -46,14 +47,14 @@ export class ListRow extends LitElement {
     }
 
     return html`
-      <span class="list-row-leading">${this.renderLeadingContent()}</span>
+      <span slot="leading">${this.renderLeadingContent()}</span>
     `
   }
 
   private renderLeadingContent() {
     if (this.emoji) {
       return html`
-        <span class="list-row-emoji" aria-hidden="true">${this.emoji}</span>
+        <span class="emoji" aria-hidden="true">${this.emoji}</span>
       `
     }
 
@@ -91,7 +92,7 @@ export class ListRow extends LitElement {
     if (!this.description) return nothing
 
     return html`
-      <mm-text class="list-row-description" size="14" color="light">${this.description}</mm-text>
+      <mm-text size="14" color="light">${this.description}</mm-text>
     `
   }
 

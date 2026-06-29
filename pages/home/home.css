@@ -44,15 +44,6 @@
   min-height: 18rem;
 }
 
-@media (max-width: 1100px) {
-  .carousel-arrows {
-    display: none;
-  }
-  .carousel:hover .carousel-arrows {
-    display: block;
-  }
-}
-
 @media (max-width: 720px) {
   .scroll-spy-sampler-nav {
     flex-basis: 100%;

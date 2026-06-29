@@ -5,6 +5,7 @@ import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
 import '@/components/icon-button/icon-button'
 import '@/components/text/text'
 import '@/components/thumbnail/thumbnail'
+import '@/components/spinner/semantics/typing-indicator'
 
 export const isChatBubbleImage = (src: string, typing: boolean) => !!src && !typing
 
@@ -33,15 +34,14 @@ export const renderChatMessageFailedActions = (failed: boolean, onRetry: () => v
   `
 }
 
-export const renderChatTypingIndicator = (typing: boolean) => {
+export const renderChatTypingIndicator = (
+  typing: boolean,
+  color = 'var(--color-foreground-light)',
+) => {
   if (!typing) return nothing
 
   return html`
-    <div class="typing">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
+    <mm-typing-indicator .color=${color}></mm-typing-indicator>
   `
 }
 
