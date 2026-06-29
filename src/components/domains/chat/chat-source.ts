@@ -25,10 +25,6 @@ export class ChatSource extends LitElement {
       :host {
         display: inline-block;
       }
-
-      mm-icon {
-        font-size: 0.875rem;
-      }
     `,
   ]
 

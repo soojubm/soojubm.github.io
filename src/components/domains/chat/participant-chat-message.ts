@@ -29,17 +29,6 @@ export class ParticipantChatMessage extends LitElement {
         grid-row: 1 / span 2;
       }
 
-      .header {
-        display: flex;
-        align-items: baseline;
-        gap: var(--space-2);
-      }
-
-      .name,
-      .time {
-        color: var(--color-foreground-light);
-      }
-
       .bubbles {
         display: flex;
         flex-direction: column;
@@ -64,7 +53,9 @@ export class ParticipantChatMessage extends LitElement {
         ></mm-avatar>
         ${this.name || this.datetime
           ? html`
-              <div class="header">${this.renderName()} ${renderChatMessageTime(this.datetime)}</div>
+              <mm-flex gap="1">
+                ${this.renderName()} ${renderChatMessageTime(this.datetime)}
+              </mm-flex>
             `
           : nothing}
         <div class="bubbles">
@@ -78,7 +69,7 @@ export class ParticipantChatMessage extends LitElement {
     if (!this.name) return nothing
 
     return html`
-      <mm-text class="name" size="12" weight="bold">${this.name}</mm-text>
+      <mm-text class="name" size="12">${this.name}</mm-text>
     `
   }
 }

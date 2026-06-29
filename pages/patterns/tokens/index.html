@@ -6,23 +6,6 @@
     ></mm-page-header>
 
     <style>
-      .token-note {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: var(--space-3);
-      }
-
-      .token-note-item {
-        padding: var(--space-4);
-        border: var(--border);
-        border-radius: var(--radius);
-        background: var(--color-background);
-      }
-
-      .token-swatch-light {
-        color: var(--color-foreground-on-solid);
-      }
-
       .token-color-scale {
         display: flex;
         height: var(--size-large);
@@ -47,178 +30,6 @@
         justify-content: center;
         flex: 1 1 0;
         min-width: var(--size-medium);
-      }
-
-      .token-motion {
-        width: var(--size-large);
-        height: var(--size-large);
-        margin: 0;
-        border-radius: var(--radius);
-        background: var(--color-background-strong);
-      }
-
-      .animation-rotation {
-        animation: rotation 1s var(--bazier) infinite;
-      }
-
-      .animation-fadeup {
-        animation: fadeup var(--animation-duration) var(--bazier) infinite alternate;
-      }
-
-      .delay-second {
-        animation-delay: var(--animation-delay-second);
-      }
-
-      .delay-third {
-        animation-delay: var(--animation-delay-third);
-      }
-
-      .browserWindow_my1Q {
-        width: min(100%, calc(var(--size-huge) * 6));
-        border: var(--border);
-        border-radius: var(--radius-large);
-        background: var(--color-background);
-        overflow: hidden;
-      }
-
-      .browserWindowHeader_jXSR {
-        display: flex;
-        align-items: center;
-        padding: var(--space-2) var(--space-4);
-        background: var(--color-border);
-      }
-
-      .dots {
-        display: flex;
-        align-items: center;
-        gap: var(--space-1);
-      }
-
-      .dot_giz1 {
-        width: var(--space-3);
-        height: var(--space-3);
-        border-radius: var(--radius-round);
-        background-color: var(--color-border-strong);
-      }
-
-      .browserWindowAddressBar_Pd8y {
-        flex: 1 0 0%;
-        margin: 0 var(--space-4);
-        padding: var(--space-1) var(--space-3);
-        border-radius: var(--radius-round);
-        background-color: var(--color-background);
-        user-select: none;
-      }
-
-      .browserWindowBody_Idgs {
-        height: calc(var(--size-huge) * 2.5);
-        padding: var(--space-4);
-        background: var(--color-background);
-        position: relative;
-      }
-
-      .browserWindowMenuIcon_Vhuh {
-        margin-left: auto;
-      }
-
-      .bar_rrRL {
-        display: block;
-        width: var(--size-tiny);
-        height: var(--space-05);
-        margin: var(--space-05) 0;
-        border-radius: var(--radius-round);
-        background-color: var(--color-foreground-light);
-      }
-
-      .zindex-layer {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: var(--border);
-        border-radius: var(--radius);
-        background: var(--color-background-subtle);
-        position: absolute;
-        transition: transform var(--duration-quickly) var(--bazier);
-      }
-
-      .zindex-layer:hover {
-        transform: translateY(calc(var(--space-2) * -1));
-      }
-
-      .zindex-layer.is-default {
-        left: var(--space-4);
-        top: var(--space-4);
-        width: calc(100% - var(--space-4) * 2);
-        height: calc(100% - var(--space-4) * 2);
-        border-style: dashed;
-        z-index: var(--zindex-default);
-      }
-
-      .zindex-layer.is-popover {
-        right: calc(var(--space-4) * 2);
-        top: calc(var(--space-4) * 1.5);
-        width: calc(var(--size-huge) * 1.5);
-        height: var(--size-large);
-        background: var(--selection-background);
-        z-index: var(--zindex-popover);
-      }
-
-      .zindex-layer.is-sheet {
-        left: calc(var(--space-4) * 2);
-        right: calc(var(--space-4) * 2);
-        bottom: calc(var(--size-large) - var(--space-2));
-        height: calc(var(--size-huge) * 1.1);
-        border-radius: var(--radius-large) var(--radius-large) var(--radius) var(--radius);
-        background: var(--color-background);
-        z-index: var(--zindex-sheet);
-      }
-
-      .zindex-layer.is-bottombar {
-        align-items: stretch;
-        justify-content: stretch;
-        left: var(--space-4);
-        right: var(--space-4);
-        bottom: var(--space-4);
-        height: var(--size-large);
-        padding: var(--space-1) var(--space-2);
-        background: var(--color-background-strong);
-        z-index: var(--zindex-bottombar);
-      }
-
-      .zindex-layer.is-bottombar mm-list-marker {
-        --color-background: var(--color-background-strong);
-      }
-
-      .zindex-bottombar-tabs {
-        display: flex;
-        align-items: center;
-        width: 100%;
-        height: 100%;
-        gap: var(--space-1);
-      }
-
-      .zindex-bottombar-tab {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        flex: 1 1 0;
-        gap: var(--space-1);
-      }
-
-      .zindex-bottombar-tab mm-ui-placeholder {
-        width: var(--size-small);
-      }
-
-      .zindex-bottombar-tab mm-ui-placeholder + mm-ui-placeholder {
-        width: var(--size-large);
-      }
-
-      .zindex-bottombar-marker {
-        position: absolute;
-        right: var(--space-2);
-        top: 50%;
-        transform: translateY(-50%);
       }
     </style>
 
@@ -294,309 +105,29 @@
               </i>
             </div>
           </mm-flex>
-          <mm-flex direction="column" gap="2">
-            <div class="token-color-scale" aria-label="selection color tokens">
-              <span
-                class="token-color-swatch"
-                style="background: var(--selection-indicator-color)"
-              ></span>
-              <span
-                class="token-color-swatch"
-                style="background: var(--selection-background)"
-              ></span>
-              <span
-                class="token-color-swatch"
-                style="background: var(--selection-foreground)"
-              ></span>
-            </div>
-            <div class="token-color-markers" aria-hidden="true">
-              <i class="token-color-marker" style="flex: 0; min-width: var(--size-large)">
-                <mm-list-marker variant="number" value="14"></mm-list-marker>
-              </i>
-              <i class="token-color-marker" style="flex: 0; min-width: var(--size-large)">
-                <mm-list-marker variant="number" value="15"></mm-list-marker>
-              </i>
-              <i class="token-color-marker" style="flex: 0; min-width: var(--size-large)">
-                <mm-list-marker variant="number" value="16"></mm-list-marker>
-              </i>
-            </div>
-          </mm-flex>
-          <mm-flex direction="column" gap="2">
-            <div class="token-color-scale" aria-label="semantic brand color tokens">
-              <span class="token-color-swatch" style="background: var(--color-primary)"></span>
-              <span
-                class="token-color-swatch"
-                style="background: var(--color-primary-subtle)"
-              ></span>
-              <span class="token-color-swatch" style="background: var(--color-accent)"></span>
-              <span
-                class="token-color-swatch"
-                style="background: var(--color-accent-border)"
-              ></span>
-            </div>
-            <div class="token-color-markers" aria-hidden="true">
-              <i class="token-color-marker" style="flex: 0; min-width: var(--size-large)">
-                <mm-list-marker variant="number" value="17"></mm-list-marker>
-              </i>
-              <i class="token-color-marker" style="flex: 0; min-width: var(--size-large)">
-                <mm-list-marker variant="number" value="18"></mm-list-marker>
-              </i>
-              <i class="token-color-marker" style="flex: 0; min-width: var(--size-large)">
-                <mm-list-marker variant="number" value="19"></mm-list-marker>
-              </i>
-              <i class="token-color-marker" style="flex: 0; min-width: var(--size-large)">
-                <mm-list-marker variant="number" value="20"></mm-list-marker>
-              </i>
-            </div>
-          </mm-flex>
-          <mm-flex direction="column" gap="2">
-            <div class="token-color-scale" aria-label="semantic status color tokens">
-              <span class="token-color-swatch" style="background: var(--color-success)"></span>
-              <span
-                class="token-color-swatch"
-                style="background: var(--color-success-foreground)"
-              ></span>
-              <span
-                class="token-color-swatch"
-                style="background: var(--color-success-subtle)"
-              ></span>
-              <span
-                class="token-color-swatch"
-                style="background: var(--color-success-border)"
-              ></span>
-              <span class="token-color-swatch" style="background: var(--color-warning)"></span>
-              <span
-                class="token-color-swatch"
-                style="background: var(--color-warning-foreground)"
-              ></span>
-              <span
-                class="token-color-swatch"
-                style="background: var(--color-warning-subtle)"
-              ></span>
-              <span
-                class="token-color-swatch"
-                style="background: var(--color-warning-border)"
-              ></span>
-              <span class="token-color-swatch" style="background: var(--color-danger)"></span>
-              <span
-                class="token-color-swatch"
-                style="background: var(--color-danger-foreground)"
-              ></span>
-              <span
-                class="token-color-swatch"
-                style="background: var(--color-danger-subtle)"
-              ></span>
-              <span
-                class="token-color-swatch"
-                style="background: var(--color-danger-border)"
-              ></span>
-            </div>
-            <div class="token-color-markers" aria-hidden="true">
-              <i class="token-color-marker" style="flex: 0; min-width: var(--size-large)">
-                <mm-list-marker variant="number" value="21"></mm-list-marker>
-              </i>
-              <i class="token-color-marker" style="flex: 0; min-width: var(--size-large)">
-                <mm-list-marker variant="number" value="22"></mm-list-marker>
-              </i>
-              <i class="token-color-marker" style="flex: 0; min-width: var(--size-large)">
-                <mm-list-marker variant="number" value="23"></mm-list-marker>
-              </i>
-              <i class="token-color-marker" style="flex: 0; min-width: var(--size-large)">
-                <mm-list-marker variant="number" value="24"></mm-list-marker>
-              </i>
-              <i class="token-color-marker" style="flex: 0; min-width: var(--size-large)">
-                <mm-list-marker variant="number" value="25"></mm-list-marker>
-              </i>
-              <i class="token-color-marker" style="flex: 0; min-width: var(--size-large)">
-                <mm-list-marker variant="number" value="26"></mm-list-marker>
-              </i>
-              <i class="token-color-marker" style="flex: 0; min-width: var(--size-large)">
-                <mm-list-marker variant="number" value="27"></mm-list-marker>
-              </i>
-              <i class="token-color-marker" style="flex: 0; min-width: var(--size-large)">
-                <mm-list-marker variant="number" value="28"></mm-list-marker>
-              </i>
-              <i class="token-color-marker" style="flex: 0; min-width: var(--size-large)">
-                <mm-list-marker variant="number" value="29"></mm-list-marker>
-              </i>
-              <i class="token-color-marker" style="flex: 0; min-width: var(--size-large)">
-                <mm-list-marker variant="number" value="30"></mm-list-marker>
-              </i>
-              <i class="token-color-marker" style="flex: 0; min-width: var(--size-large)">
-                <mm-list-marker variant="number" value="31"></mm-list-marker>
-              </i>
-              <i class="token-color-marker" style="flex: 0; min-width: var(--size-large)">
-                <mm-list-marker variant="number" value="32"></mm-list-marker>
-              </i>
-            </div>
-          </mm-flex>
-          <mm-flex direction="column" gap="2">
-            <div class="token-color-scale" aria-label="semantic foundation color tokens">
-              <span class="token-color-swatch" style="background: var(--color-background)"></span>
-              <span
-                class="token-color-swatch"
-                style="background: var(--color-background-subtle)"
-              ></span>
-              <span
-                class="token-color-swatch"
-                style="background: var(--color-background-strong)"
-              ></span>
-              <span class="token-color-swatch" style="background: var(--color-border)"></span>
-              <span
-                class="token-color-swatch"
-                style="background: var(--color-border-strong)"
-              ></span>
-              <span class="token-color-swatch" style="background: var(--color-border-hover)"></span>
-              <span class="token-color-swatch" style="background: var(--color-foreground)"></span>
-              <span
-                class="token-color-swatch"
-                style="background: var(--color-foreground-light)"
-              ></span>
-              <span
-                class="token-color-swatch"
-                style="background: var(--color-foreground-on-solid)"
-              ></span>
-            </div>
-            <div class="token-color-markers" aria-hidden="true">
-              <i class="token-color-marker" style="flex: 0; min-width: var(--size-large)">
-                <mm-list-marker variant="number" value="33"></mm-list-marker>
-              </i>
-              <i class="token-color-marker" style="flex: 0; min-width: var(--size-large)">
-                <mm-list-marker variant="number" value="34"></mm-list-marker>
-              </i>
-              <i class="token-color-marker" style="flex: 0; min-width: var(--size-large)">
-                <mm-list-marker variant="number" value="35"></mm-list-marker>
-              </i>
-              <i class="token-color-marker" style="flex: 0; min-width: var(--size-large)">
-                <mm-list-marker variant="number" value="36"></mm-list-marker>
-              </i>
-              <i class="token-color-marker" style="flex: 0; min-width: var(--size-large)">
-                <mm-list-marker variant="number" value="37"></mm-list-marker>
-              </i>
-              <i class="token-color-marker" style="flex: 0; min-width: var(--size-large)">
-                <mm-list-marker variant="number" value="38"></mm-list-marker>
-              </i>
-              <i class="token-color-marker" style="flex: 0; min-width: var(--size-large)">
-                <mm-list-marker variant="number" value="39"></mm-list-marker>
-              </i>
-              <i class="token-color-marker" style="flex: 0; min-width: var(--size-large)">
-                <mm-list-marker variant="number" value="40"></mm-list-marker>
-              </i>
-              <i class="token-color-marker" style="flex: 0; min-width: var(--size-large)">
-                <mm-list-marker variant="number" value="41"></mm-list-marker>
-              </i>
-            </div>
-          </mm-flex>
-          <mm-flex direction="column" gap="2">
-            <div class="token-color-scale" aria-label="semantic interaction color tokens">
-              <span
-                class="token-color-swatch"
-                style="background: var(--color-interaction-focus)"
-              ></span>
-              <span
-                class="token-color-swatch"
-                style="background: var(--color-interaction-active-background)"
-              ></span>
-              <span
-                class="token-color-swatch"
-                style="background: var(--color-interaction-active-border)"
-              ></span>
-              <span
-                class="token-color-swatch"
-                style="background: var(--color-interaction-active-ring)"
-              ></span>
-            </div>
-            <div class="token-color-markers" aria-hidden="true">
-              <i class="token-color-marker" style="flex: 0; min-width: var(--size-large)">
-                <mm-list-marker variant="number" value="42"></mm-list-marker>
-              </i>
-              <i class="token-color-marker" style="flex: 0; min-width: var(--size-large)">
-                <mm-list-marker variant="number" value="43"></mm-list-marker>
-              </i>
-              <i class="token-color-marker" style="flex: 0; min-width: var(--size-large)">
-                <mm-list-marker variant="number" value="44"></mm-list-marker>
-              </i>
-              <i class="token-color-marker" style="flex: 0; min-width: var(--size-large)">
-                <mm-list-marker variant="number" value="45"></mm-list-marker>
-              </i>
-            </div>
-          </mm-flex>
         </mm-flex>
-        <mm-token-group slot="tokens">
-          <mm-token-item key="gray0" value="#fff"></mm-token-item>
-          <mm-token-item key="gray50" value="#fcfdfc"></mm-token-item>
-          <mm-token-item key="gray100" value="#f5f6f5"></mm-token-item>
-          <mm-token-item key="gray200" value="#e9edec"></mm-token-item>
-          <mm-token-item key="gray300" value="#d2d7d5"></mm-token-item>
-          <mm-token-item key="gray400" value="#979d9a"></mm-token-item>
-          <mm-token-item key="gray800" value="#3d4943"></mm-token-item>
-          <mm-token-item key="gray900" value="#1e2321"></mm-token-item>
-          <mm-token-item key="green100" value="rgba(10,160,80,.075)"></mm-token-item>
-          <mm-token-item key="green800" value="#1b995c"></mm-token-item>
-          <mm-token-item key="red100" value="rgba(243,68,97,.06)"></mm-token-item>
-          <mm-token-item key="red800" value="#f02849"></mm-token-item>
-          <mm-token-item key="yellow800" value="gold"></mm-token-item>
-          <mm-token-item
-            key="selection-indicator-color"
-            value="var(--color-primary)"
-          ></mm-token-item>
-          <mm-token-item
-            key="selection-background"
-            value="var(--color-primary-subtle)"
-          ></mm-token-item>
-          <mm-token-item key="selection-foreground" value="var(--color-primary)"></mm-token-item>
-          <mm-token-item key="color-primary" value="var(--green800)"></mm-token-item>
-          <mm-token-item key="color-primary-subtle" value="var(--green100)"></mm-token-item>
-          <mm-token-item key="color-accent" value="var(--yellow800)"></mm-token-item>
-          <mm-token-item
-            key="color-accent-border"
-            value="color-mix(in srgb, var(--color-accent) 30%, transparent)"
-          ></mm-token-item>
-          <mm-token-item key="color-success" value="var(--green800)"></mm-token-item>
-          <mm-token-item key="color-success-foreground" value="#117a45"></mm-token-item>
-          <mm-token-item
-            key="color-success-subtle"
-            value="color-mix(in srgb, var(--color-success) 8%, var(--color-background))"
-          ></mm-token-item>
-          <mm-token-item
-            key="color-success-border"
-            value="color-mix(in srgb, var(--color-success) 30%, transparent)"
-          ></mm-token-item>
-          <mm-token-item key="color-warning" value="var(--orange800)"></mm-token-item>
-          <mm-token-item key="color-warning-foreground" value="#9a4600"></mm-token-item>
-          <mm-token-item
-            key="color-warning-subtle"
-            value="color-mix(in srgb, var(--color-warning) 8%, var(--color-background))"
-          ></mm-token-item>
-          <mm-token-item
-            key="color-warning-border"
-            value="color-mix(in srgb, var(--color-warning) 30%, transparent)"
-          ></mm-token-item>
-          <mm-token-item key="color-danger" value="var(--red800)"></mm-token-item>
-          <mm-token-item key="color-danger-foreground" value="#c51635"></mm-token-item>
-          <mm-token-item
-            key="color-danger-subtle"
-            value="color-mix(in srgb, var(--color-danger) 8%, var(--color-background))"
-          ></mm-token-item>
-          <mm-token-item
-            key="color-danger-border"
-            value="color-mix(in srgb, var(--color-danger) 30%, transparent)"
-          ></mm-token-item>
-          <mm-token-item key="color-background" value="var(--gray0)"></mm-token-item>
-          <mm-token-item key="color-background-subtle" value="var(--gray100)"></mm-token-item>
-          <mm-token-item key="color-background-strong" value="var(--gray800)"></mm-token-item>
-          <mm-token-item key="color-border" value="var(--gray200)"></mm-token-item>
-          <mm-token-item key="color-border-strong" value="var(--gray300)"></mm-token-item>
-          <mm-token-item key="color-border-hover" value="var(--gray800)"></mm-token-item>
-          <mm-token-item key="color-foreground" value="var(--gray900)"></mm-token-item>
-          <mm-token-item key="color-foreground-light" value="var(--gray400)"></mm-token-item>
-          <mm-token-item key="color-foreground-on-solid" value="var(--gray0)"></mm-token-item>
-          <mm-token-item key="color-interaction-focus" value="#007185"></mm-token-item>
-          <mm-token-item key="color-interaction-active-background" value="#f0b800"></mm-token-item>
-          <mm-token-item key="color-interaction-active-border" value="#008296"></mm-token-item>
-          <mm-token-item key="color-interaction-active-ring" value="#c8f3fa"></mm-token-item>
-        </mm-token-group>
       </mm-token-stage>
+      <mm-token-group>
+        <mm-token-item key="gray0" value="#fff"></mm-token-item>
+        <mm-token-item key="gray50" value="#fcfdfc"></mm-token-item>
+        <mm-token-item key="gray100" value="#f5f6f5"></mm-token-item>
+        <mm-token-item key="gray200" value="#e9edec"></mm-token-item>
+        <mm-token-item key="gray300" value="#d2d7d5"></mm-token-item>
+        <mm-token-item key="gray400" value="#979d9a"></mm-token-item>
+        <mm-token-item key="gray800" value="#3d4943"></mm-token-item>
+        <mm-token-item key="gray900" value="#1e2321"></mm-token-item>
+        <mm-token-item key="green100" value="rgba(10,160,80,.075)"></mm-token-item>
+        <mm-token-item key="green800" value="#1b995c"></mm-token-item>
+        <mm-token-item key="red100" value="rgba(243,68,97,.06)"></mm-token-item>
+        <mm-token-item key="red800" value="#f02849"></mm-token-item>
+        <mm-token-item key="yellow800" value="gold"></mm-token-item>
+        <mm-token-item key="selection-indicator-color" value="var(--color-primary)"></mm-token-item>
+        <mm-token-item
+          key="selection-background"
+          value="var(--color-primary-subtle)"
+        ></mm-token-item>
+        <mm-token-item key="selection-foreground" value="var(--color-primary)"></mm-token-item>
+      </mm-token-group>
     </mm-flex>
 
     <mm-flex direction="column" gap="3">
@@ -628,25 +159,25 @@
             <mm-list-marker variant="number" value="5"></mm-list-marker>
           </mm-flex>
         </mm-flex>
-        <mm-token-group slot="tokens">
-          <mm-token-item
-            key="font-family"
-            value="Alan Sans, Gothic A1, system-ui, sans-serif"
-          ></mm-token-item>
-          <mm-token-item key="font-weight-normal" value="500"></mm-token-item>
-          <mm-token-item key="font-weight-bold" value="700"></mm-token-item>
-          <mm-token-item key="font-size-32" value="32px"></mm-token-item>
-          <mm-token-item key="font-size-24" value="24px"></mm-token-item>
-          <mm-token-item key="font-size-18" value="18px"></mm-token-item>
-          <mm-token-item key="font-size-14" value="14px"></mm-token-item>
-          <mm-token-item key="font-size-12" value="12px"></mm-token-item>
-          <mm-token-item key="font-line-height-40" value="40px"></mm-token-item>
-          <mm-token-item key="font-line-height-32" value="32px"></mm-token-item>
-          <mm-token-item key="font-line-height-28" value="28px"></mm-token-item>
-          <mm-token-item key="font-line-height-24" value="24px"></mm-token-item>
-          <mm-token-item key="font-line-height-16" value="16px"></mm-token-item>
-        </mm-token-group>
       </mm-token-stage>
+      <mm-token-group>
+        <mm-token-item
+          key="font-family"
+          value="Alan Sans, Gothic A1, system-ui, sans-serif"
+        ></mm-token-item>
+        <mm-token-item key="font-weight-normal" value="500"></mm-token-item>
+        <mm-token-item key="font-weight-bold" value="700"></mm-token-item>
+        <mm-token-item key="font-size-32" value="32px"></mm-token-item>
+        <mm-token-item key="font-size-24" value="24px"></mm-token-item>
+        <mm-token-item key="font-size-18" value="18px"></mm-token-item>
+        <mm-token-item key="font-size-14" value="14px"></mm-token-item>
+        <mm-token-item key="font-size-12" value="12px"></mm-token-item>
+        <mm-token-item key="font-line-height-40" value="40px"></mm-token-item>
+        <mm-token-item key="font-line-height-32" value="32px"></mm-token-item>
+        <mm-token-item key="font-line-height-28" value="28px"></mm-token-item>
+        <mm-token-item key="font-line-height-24" value="24px"></mm-token-item>
+        <mm-token-item key="font-line-height-16" value="16px"></mm-token-item>
+      </mm-token-group>
     </mm-flex>
 
     <mm-flex direction="column" gap="3">
@@ -718,14 +249,14 @@
             <mm-list-marker variant="number" value="5"></mm-list-marker>
           </mm-flex>
         </mm-flex>
-        <mm-token-group slot="tokens">
-          <mm-token-item key="size-tiny" value="1rem"></mm-token-item>
-          <mm-token-item key="size-small" value="1.5rem"></mm-token-item>
-          <mm-token-item key="size-medium" value="2rem"></mm-token-item>
-          <mm-token-item key="size-large" value="3rem"></mm-token-item>
-          <mm-token-item key="size-huge" value="5rem"></mm-token-item>
-        </mm-token-group>
       </mm-token-stage>
+      <mm-token-group>
+        <mm-token-item key="size-tiny" value="1rem"></mm-token-item>
+        <mm-token-item key="size-small" value="1.5rem"></mm-token-item>
+        <mm-token-item key="size-medium" value="2rem"></mm-token-item>
+        <mm-token-item key="size-large" value="3rem"></mm-token-item>
+        <mm-token-item key="size-huge" value="5rem"></mm-token-item>
+      </mm-token-group>
     </mm-flex>
 
     <mm-flex direction="column" gap="3">
@@ -905,18 +436,18 @@
             <mm-list-marker variant="number" value="7"></mm-list-marker>
           </mm-flex>
         </mm-flex>
-        <mm-token-group slot="tokens">
-          <mm-token-item key="space-05" value=".125rem">
-            <mm-keyword-tag>to be deprecated</mm-keyword-tag>
-          </mm-token-item>
-          <mm-token-item key="space-1" value=".25rem"></mm-token-item>
-          <mm-token-item key="space-2" value=".5rem"></mm-token-item>
-          <mm-token-item key="space-3" value=".75rem"></mm-token-item>
-          <mm-token-item key="space-4" value="1rem"></mm-token-item>
-          <mm-token-item key="space-8" value="2rem"></mm-token-item>
-          <mm-token-item key="space-16" value="64px"></mm-token-item>
-        </mm-token-group>
       </mm-token-stage>
+      <mm-token-group>
+        <mm-token-item key="space-05" value=".125rem">
+          <mm-keyword-tag>to be deprecated</mm-keyword-tag>
+        </mm-token-item>
+        <mm-token-item key="space-1" value=".25rem"></mm-token-item>
+        <mm-token-item key="space-2" value=".5rem"></mm-token-item>
+        <mm-token-item key="space-3" value=".75rem"></mm-token-item>
+        <mm-token-item key="space-4" value="1rem"></mm-token-item>
+        <mm-token-item key="space-8" value="2rem"></mm-token-item>
+        <mm-token-item key="space-16" value="64px"></mm-token-item>
+      </mm-token-group>
     </mm-flex>
 
     <mm-flex direction="column" gap="3">
@@ -940,7 +471,7 @@
       <mm-text-block
         level="2"
         heading="Border"
-        description="테두리는 표면의 경계와 클릭 가능성을 표현합니다."
+        description="테두리는 표면의 경계와 클릭 가능성을 표현합니다. 모서리 곡률은 요소의 성격과 위계를 시각적으로 구분합니다."
       ></mm-text-block>
       <mm-token-stage>
         <mm-flex align-items="flex-end" gap="4">
@@ -996,30 +527,6 @@
             ></div>
             <mm-list-marker variant="number" value="4"></mm-list-marker>
           </mm-flex>
-        </mm-flex>
-        <mm-token-group slot="tokens">
-          <mm-token-item key="border-width" value="1px"></mm-token-item>
-          <mm-token-item
-            key="border"
-            value="var(--border-width) solid var(--color-border-strong)"
-          ></mm-token-item>
-          <mm-token-item key="border-active" value="1px solid var(--color-primary)"></mm-token-item>
-          <mm-token-item
-            key="border-transparent"
-            value="var(--border-width) solid transparent"
-          ></mm-token-item>
-        </mm-token-group>
-      </mm-token-stage>
-    </mm-flex>
-
-    <mm-flex direction="column" gap="3">
-      <mm-text-block
-        level="2"
-        heading="Radius"
-        description="모서리 곡률은 요소의 성격과 위계를 시각적으로 구분합니다."
-      ></mm-text-block>
-      <mm-token-stage>
-        <mm-flex align-items="flex-end" gap="4">
           <mm-flex direction="column" align-items="center" gap="2">
             <div
               style="
@@ -1060,12 +567,22 @@
             <mm-list-marker variant="number" value="3"></mm-list-marker>
           </mm-flex>
         </mm-flex>
-        <mm-token-group slot="tokens">
-          <mm-token-item key="radius" value="6px"></mm-token-item>
-          <mm-token-item key="radius-large" value="1rem"></mm-token-item>
-          <mm-token-item key="radius-round" value="50%"></mm-token-item>
-        </mm-token-group>
       </mm-token-stage>
+      <mm-token-group>
+        <mm-token-item key="border-width" value="1px"></mm-token-item>
+        <mm-token-item
+          key="border"
+          value="var(--border-width) solid var(--color-border-strong)"
+        ></mm-token-item>
+        <mm-token-item key="border-active" value="1px solid var(--color-primary)"></mm-token-item>
+        <mm-token-item
+          key="border-transparent"
+          value="var(--border-width) solid transparent"
+        ></mm-token-item>
+        <mm-token-item key="border-radius" value="6px"></mm-token-item>
+        <mm-token-item key="border-radius-large" value="1rem"></mm-token-item>
+        <mm-token-item key="border-radius-round" value="50%"></mm-token-item>
+      </mm-token-group>
     </mm-flex>
 
     <mm-flex direction="column" gap="3">
@@ -1103,67 +620,15 @@
             <mm-list-marker variant="number" value="2"></mm-list-marker>
           </mm-flex>
         </mm-flex>
-        <mm-token-group slot="tokens">
-          <mm-token-item key="shadow" value="0 0 .25rem rgb(0 0 0 / 7.5%)"></mm-token-item>
-          <mm-token-item
-            key="shadow-tile"
-            value="0 0 0 1px rgb(0 0 0/5%), 0 2px 2px rgb(0 0 0/4%)"
-          ></mm-token-item>
-        </mm-token-group>
       </mm-token-stage>
+      <mm-token-group>
+        <mm-token-item key="shadow" value="0 0 .25rem rgb(0 0 0 / 7.5%)"></mm-token-item>
+        <mm-token-item
+          key="shadow-tile"
+          value="0 0 0 1px rgb(0 0 0/5%), 0 2px 2px rgb(0 0 0/4%)"
+        ></mm-token-item>
+      </mm-token-group>
     </mm-flex>
-
-    <!-- <mm-flex direction="column" gap="3">
-      <mm-text-block
-        level="2"
-        heading="Motion"
-        description="모션 토큰은 화면의 리듬을 맞추되, 콘텐츠보다 움직임이 더 강해지지 않도록 제한합니다."
-      ></mm-text-block>
-      <mm-token-stage>
-        <mm-flex align-items="flex-end" gap="4">
-          <mm-flex direction="column" align-items="center" gap="3">
-            <mm-flex align-items="flex-end" gap="3" style="height: var(--size-huge)">
-              <mm-flex direction="column" align-items="center" gap="2">
-                <figure
-                  class="token-motion animation-fadeup"
-                  style="animation-duration: var(--duration-quickly)"
-                ></figure>
-                <mm-text size="caption" style="opacity: 0.5">quickly</mm-text>
-              </mm-flex>
-              <mm-flex direction="column" align-items="center" gap="2">
-                <figure class="token-motion animation-fadeup"></figure>
-                <mm-text size="caption" style="opacity: 0.5">base</mm-text>
-              </mm-flex>
-              <mm-flex direction="column" align-items="center" gap="2">
-                <figure
-                  class="token-motion animation-fadeup"
-                  style="animation-duration: var(--duration-slowly)"
-                ></figure>
-                <mm-text size="caption" style="opacity: 0.5">slowly</mm-text>
-              </mm-flex>
-            </mm-flex>
-            <mm-list-marker variant="number" value="1"></mm-list-marker>
-          </mm-flex>
-          <mm-flex direction="column" align-items="center" gap="3">
-            <mm-flex align-items="center" style="height: var(--size-huge)">
-              <figure class="token-motion animation-rotation"></figure>
-            </mm-flex>
-            <mm-list-marker variant="number" value="3"></mm-list-marker>
-          </mm-flex>
-        </mm-flex>
-        <mm-token-group slot="tokens">
-          <mm-token-item key="duration-quickly" value=".2s"></mm-token-item>
-          <mm-token-item key="duration" value=".4s"></mm-token-item>
-          <mm-token-item key="duration-slowly" value=".6s"></mm-token-item>
-          <mm-token-item key="bazier" value="cubic-bezier(0.455,0.03,0.515,0.955)"></mm-token-item>
-          <mm-token-item key="transition-base" value="all .4s var(--bazier)"></mm-token-item>
-          <mm-token-item key="animation-duration" value=".4s"></mm-token-item>
-          <mm-token-item key="animation-delay-first" value=".2s"></mm-token-item>
-          <mm-token-item key="animation-delay-second" value=".4s"></mm-token-item>
-          <mm-token-item key="animation-delay-third" value=".6s"></mm-token-item>
-        </mm-token-group>
-      </mm-token-stage>
-    </mm-flex> -->
 
     <mm-flex direction="column" gap="3">
       <mm-text-block
@@ -1171,132 +636,6 @@
         heading="Z-index"
         description="z-index는 레이어의 우선순위를 정의합니다. 같은 레이어군 안에서만 비교되도록 의미 이름을 사용합니다."
       ></mm-text-block>
-      <!-- <mm-token-stage>
-        <style>
-          .browserWindow_my1Q {
-            border: 3px solid #ebedf0;
-            border-radius: var(--radius-large);
-          }
-          .browserWindowHeader_jXSR {
-            background: #ebedf0;
-            align-items: center;
-            padding: 0.5rem 1rem;
-            display: flex;
-          }
-          .dots {
-            display: flex;
-            align-items: center;
-            gap: calc(var(--space-1) + var(--space-05));
-          }
-          .dot_giz1 {
-            background-color: rgb(187, 187, 187);
-            border-radius: 50%;
-            width: 12px;
-            height: 12px;
-          }
-          .browserWindowAddressBar_Pd8y {
-            background-color: #fff;
-            user-select: none;
-            border-radius: 12.5px;
-            flex: 1 0 0%;
-            margin: 0px 1rem;
-            padding: 5px 15px;
-            font: 400 13px Arial, sans-serif;
-          }
-          .browserWindowBody_Idgs {
-            padding: 1rem;
-          }
-          .browserWindowMenuIcon_Vhuh {
-            margin-left: auto;
-          }
-          .bar_rrRL {
-            background-color: rgb(170, 170, 170);
-            width: 17px;
-            height: 3px;
-            margin: 3px 0px;
-            display: block;
-          }
-        </style>
-        <section class="browserWindow_my1Q">
-          <header class="browserWindowHeader_jXSR">
-            <div class="dots">
-              <span class="dot_giz1" style="background: rgb(242, 95, 88)"></span>
-              <span class="dot_giz1" style="background: rgb(251, 190, 60)"></span>
-              <span class="dot_giz1" style="background: rgb(88, 203, 66)"></span>
-            </div>
-            <div class="browserWindowAddressBar_Pd8y text--truncate">
-              <font style="vertical-align: inherit">http://로컬호스트:3000</font>
-            </div>
-            <div class="browserWindowMenuIcon_Vhuh">
-              <span class="bar_rrRL"></span>
-              <span class="bar_rrRL"></span>
-              <span class="bar_rrRL"></span>
-            </div>
-          </header>
-          <article class="browserWindowBody_Idgs">
-            <div class="zindex-layer is-default">
-              <mm-list-marker variant="number" value="1"></mm-list-marker>
-            </div>
-            <div class="zindex-layer is-popover">
-              <mm-list-marker variant="number" value="4"></mm-list-marker>
-            </div>
-            <div class="zindex-layer is-sheet">
-              <mm-list-marker variant="number" value="5"></mm-list-marker>
-            </div>
-            <div class="zindex-layer is-bottombar">
-              <div class="zindex-bottombar-tabs" aria-hidden="true">
-                <div class="zindex-bottombar-tab">
-                  <mm-ui-placeholder
-                    color="var(--color-background)"
-                    height="var(--space-4)"
-                    radius="var(--radius-round)"
-                  ></mm-ui-placeholder>
-                  <mm-ui-placeholder
-                    color="var(--color-background)"
-                    height="var(--space-1)"
-                    radius="var(--radius-round)"
-                  ></mm-ui-placeholder>
-                </div>
-                <div class="zindex-bottombar-tab">
-                  <mm-ui-placeholder
-                    color="var(--color-background)"
-                    height="var(--space-4)"
-                    radius="var(--radius-round)"
-                  ></mm-ui-placeholder>
-                  <mm-ui-placeholder
-                    color="var(--color-background)"
-                    height="var(--space-1)"
-                    radius="var(--radius-round)"
-                  ></mm-ui-placeholder>
-                </div>
-                <div class="zindex-bottombar-tab">
-                  <mm-ui-placeholder
-                    color="var(--color-background)"
-                    height="var(--space-4)"
-                    radius="var(--radius-round)"
-                  ></mm-ui-placeholder>
-                  <mm-ui-placeholder
-                    color="var(--color-background)"
-                    height="var(--space-1)"
-                    radius="var(--radius-round)"
-                  ></mm-ui-placeholder>
-                </div>
-              </div>
-              <mm-list-marker
-                class="zindex-bottombar-marker"
-                variant="number"
-                value="6"
-              ></mm-list-marker>
-            </div>
-            <mm-link
-              href="https://web.dev/articles/custom-elements-best-practices?hl=ko"
-              target="_blank"
-            >
-              맞춤 요소 권장 사항
-            </mm-link>
-          </article>
-        </section>
-      </mm-token-stage> -->
 
       <mm-token-group>
         <mm-token-item key="zindex-default" value="1"></mm-token-item>

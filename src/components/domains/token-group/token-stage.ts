@@ -2,7 +2,7 @@ import { LitElement, css, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
-import '@/components/flex/flex'
+import '@/components/surface/surface'
 
 @customElement('mm-token-stage')
 export class TokenStage extends LitElement {
@@ -14,26 +14,18 @@ export class TokenStage extends LitElement {
       }
 
       .stage {
-        padding: var(--space-8);
-        border: var(--border);
-        border-radius: var(--radius-large);
-        background: var(--color-background-subtle);
-      }
-
-      ::slotted(*) {
-        position: relative;
+        padding: var(--space-8) var(--space-16);
       }
     `,
   ]
 
   render() {
     return html`
-      <mm-flex direction="column" gap="3">
-        <mm-flex class="stage" align-items="center" justify-content="center">
+      <mm-surface variant="flat">
+        <div class="stage">
           <slot></slot>
-        </mm-flex>
-        <slot name="tokens"></slot>
-      </mm-flex>
+        </div>
+      </mm-surface>
     `
   }
 }

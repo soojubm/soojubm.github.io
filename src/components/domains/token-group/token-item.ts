@@ -11,7 +11,8 @@ export class TokenItem extends LitElement {
     resetStyles,
     css`
       :host {
-        display: block;
+        display: inline-flex;
+        gap: var(--space-2);
       }
     `,
   ]
@@ -22,9 +23,7 @@ export class TokenItem extends LitElement {
 
   render() {
     return html`
-      <mm-flex gap="2" wrap>
-        ${this.renderMarker()} ${this.renderKey()} ${this.renderValue()}
-      </mm-flex>
+      ${this.renderMarker()} ${this.renderKey()} ${this.renderValue()}
       <slot></slot>
     `
   }
@@ -41,7 +40,7 @@ export class TokenItem extends LitElement {
     if (!this.key) return nothing
 
     return html`
-      <mm-text>${this.key}</mm-text>
+      <mm-text weight="bold">${this.key}</mm-text>
     `
   }
 

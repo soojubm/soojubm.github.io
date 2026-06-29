@@ -12,7 +12,7 @@ export const renderChatMessageTime = (datetime: string) => {
   if (!datetime) return nothing
 
   return html`
-    <mm-text class="time" as="time" size="12" weight="medium">${datetime}</mm-text>
+    <mm-text as="time" size="12">${datetime}</mm-text>
   `
 }
 
@@ -20,8 +20,8 @@ export const renderChatMessageFailedActions = (failed: boolean, onRetry: () => v
   if (!failed) return nothing
 
   return html`
-    <div class="failed-row">
-      <mm-text class="failed-status" size="12" role="alert">전송 실패</mm-text>
+    <mm-flex gap="1" align-items="center">
+      <mm-text size="12" color="danger" role="alert">전송 실패</mm-text>
       <mm-icon-button
         size="small"
         variant="ghost"
@@ -29,7 +29,7 @@ export const renderChatMessageFailedActions = (failed: boolean, onRetry: () => v
         aria-label="재전송"
         @click=${onRetry}
       ></mm-icon-button>
-    </div>
+    </mm-flex>
   `
 }
 

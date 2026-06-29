@@ -17,10 +17,6 @@ export class MyChatMessage extends LitElement {
         display: block;
       }
 
-      .time {
-        color: var(--color-foreground-light);
-      }
-
       ::slotted(mm-my-chat-bubble) {
         align-self: flex-end;
       }
@@ -33,18 +29,6 @@ export class MyChatMessage extends LitElement {
         );
         --my-chat-bubble-border: 1px solid var(--color-danger);
         --my-chat-bubble-color: var(--color-foreground);
-      }
-
-      .failed-row {
-        display: flex;
-        align-items: center;
-        gap: var(--space-2);
-        justify-content: flex-end;
-      }
-
-      .failed-status {
-        color: var(--color-danger);
-        white-space: nowrap;
       }
     `,
   ]

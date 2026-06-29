@@ -2,7 +2,7 @@ import { css } from 'lit'
 
 export type TextSize = '32' | '24' | '18' | '14' | '12'
 export type TextWeight = 'medium' | 'bold'
-export type TextColor = 'inherit' | 'light'
+export type TextColor = 'inherit' | 'light' | 'danger'
 
 export const textStyles = css`
   :host {
@@ -12,6 +12,9 @@ export const textStyles = css`
 
   :host([color='light']) {
     color: var(--color-foreground-light);
+  }
+  :host([color='danger']) {
+    color: var(--color-danger);
   }
 
   :host([centered]) {

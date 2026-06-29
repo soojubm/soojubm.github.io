@@ -9,28 +9,24 @@ export class ChatHeader extends LitElement {
     resetStyles,
     css`
       :host {
+        display: block;
+        width: 100%;
+        max-width: calc(var(--layout-width-small) + var(--space-4) * 10);
         flex-shrink: 0;
+        margin: 0 auto;
+        padding: var(--space-3) var(--space-4);
+        box-sizing: border-box;
       }
 
       :host(:empty) {
         display: none;
-      }
-
-      .inner {
-        width: 100%;
-        max-width: calc(var(--layout-width-small) + var(--space-4) * 10);
-        margin: 0 auto;
-        padding: var(--space-3) var(--space-4);
-        box-sizing: border-box;
       }
     `,
   ]
 
   render() {
     return html`
-      <div class="inner">
-        <slot></slot>
-      </div>
+      <slot></slot>
     `
   }
 }

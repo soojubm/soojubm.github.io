@@ -2,6 +2,7 @@ import { LitElement, css, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
+import '@/components/flex/flex'
 
 @customElement('mm-chat-footer')
 export class ChatFooter extends LitElement {
@@ -14,7 +15,7 @@ export class ChatFooter extends LitElement {
         background: var(--color-background);
       }
 
-      .inner {
+      mm-flex {
         width: 100%;
         max-width: calc(var(--layout-width-small) + var(--space-4) * 10);
         margin: 0 auto;
@@ -26,9 +27,9 @@ export class ChatFooter extends LitElement {
 
   render() {
     return html`
-      <div class="inner">
+      <mm-flex gap="0">
         <slot></slot>
-      </div>
+      </mm-flex>
     `
   }
 }
