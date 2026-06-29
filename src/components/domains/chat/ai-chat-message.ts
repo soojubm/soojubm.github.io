@@ -3,11 +3,13 @@ import { customElement, property } from 'lit/decorators.js'
 
 import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
-import '@/components/text/text'
+import { emit } from '@/utils/emit'
+
+import { renderChatMessageTime } from './chat.helpers'
+
 import '@/components/icon-button/icon-button'
 import '@/components/button/button-group'
 import '@/components/flex/flex'
-import { emit } from '@/utils/emit'
 
 @customElement('mm-ai-chat-message')
 export class AiChatMessage extends LitElement {
@@ -21,6 +23,10 @@ export class AiChatMessage extends LitElement {
       .time {
         color: var(--color-foreground-light);
       }
+
+      ::slotted(mm-ai-chat-bubble) {
+        align-self: flex-start;
+      }
     `,
   ]
 
@@ -31,16 +37,8 @@ export class AiChatMessage extends LitElement {
     return html`
       <mm-flex direction="column" gap="2">
         <slot></slot>
-        ${this.renderTime()} ${this.renderReactions()}
+        ${renderChatMessageTime(this.datetime)} ${this.renderReactions()}
       </mm-flex>
-    `
-  }
-
-  private renderTime() {
-    if (!this.datetime) return nothing
-
-    return html`
-      <mm-text class="time" as="time" size="12" weight="medium">${this.datetime}</mm-text>
     `
   }
 

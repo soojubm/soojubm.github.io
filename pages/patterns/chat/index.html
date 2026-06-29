@@ -7,7 +7,7 @@
         <mm-flex direction="column" gap="4">
           <mm-chat-date label="2022년 5월 17일"></mm-chat-date>
 
-          <mm-ai-chat-message username="수줍이" datetime="12:00 am">
+          <mm-ai-chat-message datetime="12:00 am">
             <mm-ai-chat-bubble>
               날짜는 버블 밖으로 나와야한다. 리얼타임. 버블의 전송 상태. reaction. iMessage에서
               날짜는 터치 제스쳐. 1:1대화 / 1:n 대화.
@@ -22,12 +22,26 @@
             </mm-my-chat-bubble>
             <mm-my-chat-bubble src="/src/images/prometheus.jpg"></mm-my-chat-bubble>
           </mm-my-chat-message>
+
+          <mm-participant-chat-message
+            name="지현"
+            avatar-src="/src/images/soojubm.png"
+            datetime="12:03 am"
+          >
+            <mm-ai-chat-bubble>
+              다중 채팅에서는 아바타와 이름이 말풍선이 아니라 메시지 묶음의 메타 정보가 되는 게
+              자연스럽습니다.
+            </mm-ai-chat-bubble>
+            <mm-ai-chat-bubble>
+              같은 사람이 연속으로 보낸 버블도 한 메시지 안에서 묶을 수 있어요.
+            </mm-ai-chat-bubble>
+          </mm-participant-chat-message>
         </mm-flex>
 
         <mm-flex direction="column" gap="4">
           <mm-chat-date label="2022년 5월 18일"></mm-chat-date>
 
-          <mm-ai-chat-message username="수줍이">
+          <mm-ai-chat-message>
             <mm-ai-chat-bubble>
               디자인 시스템 토큰은 세 계층으로 구성됩니다. 아래 출처를 참고하세요.
             </mm-ai-chat-bubble>
@@ -83,10 +97,8 @@
             <mm-ai-chat-bubble>안녕하세요 👋 무엇을 도와드릴까요?</mm-ai-chat-bubble>
           </mm-ai-chat-message>
 
-          <mm-my-chat-message>
-            <mm-my-chat-bubble failed>
-              네트워크 오류로 전송에 실패한 메시지입니다.
-            </mm-my-chat-bubble>
+          <mm-my-chat-message failed>
+            <mm-my-chat-bubble>네트워크 오류로 전송에 실패한 메시지입니다.</mm-my-chat-bubble>
           </mm-my-chat-message>
 
           <mm-my-chat-message>
