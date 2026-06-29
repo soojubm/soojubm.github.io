@@ -30,6 +30,7 @@ class TextBlock extends LitElement {
   @property({ type: String }) description = ''
   @property({ type: String }) caption = ''
   @property({ type: String, reflect: true }) level = '1'
+  @property({ type: String, attribute: 'heading-level' }) headingLevel = ''
   @property({ type: Boolean, reflect: true }) centered = false
 
   static variants = {
@@ -77,13 +78,20 @@ class TextBlock extends LitElement {
   private renderContent(variant: typeof TextBlock.variants[keyof typeof TextBlock.variants]) {
     if (this.level === '1') {
       return html`
-        <mm-text size="32" weight="bold" ?centered=${this.centered}>${this.heading}</mm-text>
+        <mm-text as=${this.headingTag} size="32" weight="bold" ?centered=${this.centered}>
+          ${this.heading}
+        </mm-text>
         <mm-paragraph size="large" ?centered=${this.centered}>${this.description}</mm-paragraph>
       `
     }
 
     return html`
-      <mm-text size=${variant.headingSize} weight="bold" ?centered=${this.centered}>
+      <mm-text
+        as=${this.headingTag}
+        size=${variant.headingSize}
+        weight="bold"
+        ?centered=${this.centered}
+      >
         ${this.heading}
       </mm-text>
       <mm-text size=${variant.descriptionSize} ?centered=${this.centered}>
@@ -98,6 +106,10 @@ class TextBlock extends LitElement {
     return html`
       <mm-text size="12" color="light" ?centered=${this.centered}>${this.caption}</mm-text>
     `
+  }
+
+  private get headingTag() {
+    return this.headingLevel ? `h${this.headingLevel}` : 'span'
   }
 }
 
