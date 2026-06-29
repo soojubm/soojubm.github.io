@@ -4,7 +4,7 @@ import { customElement, property, queryAssignedElements } from 'lit/decorators.j
 import type { MenuItemCheckbox } from '@/components/menuitem/semantics/menu-item-checkbox'
 
 import '@/components/menuitem/semantics/menu-item-group'
-import { SelectedValuesController } from '@/controllers/selected-values-controller'
+import { SelectionController } from '@/controllers/selection-controller'
 import { emit } from '@/utils/emit'
 
 /**
@@ -26,7 +26,7 @@ export class MenuItemCheckboxGroup extends LitElement {
   @queryAssignedElements({ selector: 'mm-menu-item-checkbox', flatten: true })
   private checkboxes!: MenuItemCheckbox[]
 
-  private selection = new SelectedValuesController(this, {
+  private selection = new SelectionController(this, {
     getMode: () => 'multiple',
     getValues: () => this.values,
     setValues: values => {
@@ -73,8 +73,8 @@ export class MenuItemCheckboxGroup extends LitElement {
   }
 
   private syncCheckboxes() {
-    this.checkboxes.forEach(checkbox => {
-      checkbox.checked = this.selection.isSelected(checkbox.value)
+    this.selection.sync(this.checkboxes, (checkbox, selected) => {
+      checkbox.checked = selected
     })
   }
 }

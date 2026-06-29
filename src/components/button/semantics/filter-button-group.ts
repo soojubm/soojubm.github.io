@@ -5,13 +5,13 @@ import type { IconName } from '@/components/icon-button/semantics/icon-names'
 
 import { buttonBaseStyles } from '@/components/button/button.styles'
 import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
-import { SelectedValuesController } from '@/controllers/selected-values-controller'
+import { SelectionController } from '@/controllers/selection-controller'
 import { emit } from '@/utils/emit'
 import '@/components/flex/flex'
 import '@/components/icon/icon'
 
 type FilterMode = 'single' | 'multiple'
-type FilterOption = {
+export type FilterOption = {
   value: string
   label: string
   icon?: IconName
@@ -40,7 +40,7 @@ export class FilterButtonGroup extends LitElement {
   @property({ type: Array }) values: string[] = []
   @property({ type: Array }) options: FilterOption[] = []
 
-  private selection = new SelectedValuesController(this, {
+  private selection = new SelectionController(this, {
     getMode: () => this.mode,
     getValues: () => this.values,
     setValues: values => {

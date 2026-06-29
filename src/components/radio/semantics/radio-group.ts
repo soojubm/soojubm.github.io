@@ -3,7 +3,7 @@ import { customElement, property, queryAssignedElements } from 'lit/decorators.j
 
 import { Radio } from '@/components/radio/radio'
 import { radioGroupStyles } from '@/components/radio/radio.styles' // 🔥 외부 스타일 임포트
-import { SelectedValuesController } from '@/controllers/selected-values-controller'
+import { SelectionController } from '@/controllers/selection-controller'
 import { emit } from '@/utils/emit'
 
 @customElement('mm-radio-group')
@@ -19,7 +19,7 @@ export class RadioGroup extends LitElement {
   @queryAssignedElements({ selector: 'mm-radio', flatten: true })
   private radios!: Radio[]
 
-  private selection = new SelectedValuesController(this, {
+  private selection = new SelectionController(this, {
     getMode: () => 'single',
     getValues: () => (this.value ? [this.value] : []),
     setValues: values => {
@@ -42,10 +42,10 @@ export class RadioGroup extends LitElement {
   }
 
   private syncChildren() {
-    this.radios.forEach(radio => {
+    this.selection.sync(this.radios, (radio, selected) => {
       if (this.name) radio.name = this.name
       radio.disabled = this.disabled
-      radio.checked = this.selection.isSelected(radio.value)
+      radio.checked = selected
     })
   }
 

@@ -4,7 +4,7 @@ import { customElement, property, queryAssignedElements } from 'lit/decorators.j
 import type { Checkbox } from '@/components/checkbox/checkbox'
 
 import { checkboxGroupStyles } from '@/components/checkbox/checkbox.styles'
-import { SelectedValuesController } from '@/controllers/selected-values-controller'
+import { SelectionController } from '@/controllers/selection-controller'
 import { emit } from '@/utils/emit'
 
 type CheckboxChangeDetail = {
@@ -23,16 +23,16 @@ export class CheckboxGroup extends LitElement {
   legend?: string
 
   @property({ type: Array })
-  value: string[] = []
+  values: string[] = []
 
   @queryAssignedElements({ selector: 'mm-checkbox' })
   private checkboxes!: Checkbox[]
 
-  private selection = new SelectedValuesController(this, {
+  private selection = new SelectionController(this, {
     getMode: () => 'multiple',
-    getValues: () => this.value,
+    getValues: () => this.values,
     setValues: values => {
-      this.value = values
+      this.values = values
     },
     getOptions: () =>
       this.checkboxes?.map(checkbox => ({ value: this.getCheckboxValue(checkbox) })) ?? [],
@@ -70,16 +70,16 @@ export class CheckboxGroup extends LitElement {
   }
 
   updated(changed: Map<string, unknown>) {
-    if (this.isInitialized && (changed.has('value') || changed.has('name'))) this.syncCheckboxes()
+    if (this.isInitialized && (changed.has('values') || changed.has('name'))) this.syncCheckboxes()
   }
 
   private onSlotChange = () => {
-    if (!this.isInitialized && this.value.length === 0) {
+    if (!this.isInitialized && this.values.length === 0) {
       const initialCheckedValues = this.checkboxes
         .filter(checkbox => checkbox.checked || checkbox.hasAttribute('checked'))
         .map(checkbox => checkbox.value || checkbox.getAttribute('value') || '')
 
-      if (initialCheckedValues.length > 0) this.value = initialCheckedValues
+      if (initialCheckedValues.length > 0) this.values = initialCheckedValues
     }
 
     this.isInitialized = true
@@ -89,11 +89,14 @@ export class CheckboxGroup extends LitElement {
   private syncCheckboxes() {
     if (!this.checkboxes) return
 
-    this.checkboxes.forEach(checkbox => {
-      if (this.name) checkbox.name = this.name
+    this.selection.sync(
+      this.checkboxes.map(checkbox => ({ checkbox, value: this.getCheckboxValue(checkbox) })),
+      ({ checkbox }, selected) => {
+        if (this.name) checkbox.name = this.name
 
-      checkbox.checked = this.selection.isSelected(this.getCheckboxValue(checkbox))
-    })
+        checkbox.checked = selected
+      },
+    )
   }
 
   private onCheckboxChange = (event: Event) => {
@@ -120,7 +123,7 @@ export class CheckboxGroup extends LitElement {
 
   private dispatchValueChange() {
     emit(this, 'change', {
-      values: this.value,
+      values: this.values,
     })
   }
 }
