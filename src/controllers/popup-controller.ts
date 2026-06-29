@@ -1,5 +1,7 @@
 import type { ReactiveController, ReactiveControllerHost } from 'lit'
 
+import { OutsideClickController } from '@/controllers/outside-click-controller'
+
 type Host = ReactiveControllerHost & HTMLElement
 
 interface PopupControllerOptions {
@@ -12,19 +14,15 @@ export class PopupController implements ReactiveController {
   open = false
 
   constructor(private host: Host, private options: PopupControllerOptions = {}) {
+    new OutsideClickController(host, () => this.close(), {
+      event: this.event,
+      isActive: () => this.open,
+    })
     host.addController(this)
   }
 
   private get event() {
     return this.options.event ?? 'pointerdown'
-  }
-
-  hostConnected() {
-    document.addEventListener(this.event, this.handleDocumentEvent)
-  }
-
-  hostDisconnected() {
-    document.removeEventListener(this.event, this.handleDocumentEvent)
   }
 
   hostUpdated() {
@@ -52,10 +50,5 @@ export class PopupController implements ReactiveController {
 
     trigger.setAttribute('aria-haspopup', this.options.ariaHasPopup ?? 'menu')
     trigger.setAttribute('aria-expanded', String(this.open))
-  }
-
-  private handleDocumentEvent = (event: Event) => {
-    if (!this.open) return
-    if (!event.composedPath().includes(this.host)) this.close()
   }
 }
