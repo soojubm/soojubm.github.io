@@ -20,19 +20,8 @@ export class PromptInput extends LitElement {
         border-radius: var(--radius);
       }
 
-      .chat-input {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-      }
-
-      :host([single-line]) .chat-input {
+      :host([single-line]) form > mm-flex {
         min-height: var(--input-height);
-      }
-
-      /* 여러 줄: textarea가 위 한 줄을 차지하고 액션은 아래 줄에서 양끝 정렬 */
-      :host(:not([single-line])) .chat-input {
-        justify-content: space-between;
       }
 
       mm-textarea {
@@ -68,7 +57,12 @@ export class PromptInput extends LitElement {
   render() {
     return html`
       <form>
-        <div class="chat-input">
+        <mm-flex
+          wrap
+          align-items="center"
+          gap="0"
+          justify-content=${this.isSingleLine ? 'start' : 'between'}
+        >
           ${this.renderStartActions()}
           <mm-textarea
             .value=${this.value}
@@ -80,7 +74,7 @@ export class PromptInput extends LitElement {
             @keydown=${this.handleTextareaKeydown}
           ></mm-textarea>
           ${this.renderEndActions()}
-        </div>
+        </mm-flex>
       </form>
     `
   }

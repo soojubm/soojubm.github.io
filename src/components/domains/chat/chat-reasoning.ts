@@ -3,6 +3,7 @@ import { customElement, property, queryAssignedElements } from 'lit/decorators.j
 
 import { ICON_NAMES, type IconName } from '@/components/icon-button/semantics/icon-names'
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
+import '@/components/flex/flex'
 import '@/components/icon/icon'
 import '@/components/text/text'
 
@@ -31,49 +32,24 @@ export class ChatReasoningFlow extends LitElement {
         display: flex;
         width: 100%;
         min-width: 0;
+        gap: var(--space-2);
+        align-items: flex-start;
       }
 
       :host([hidden]) {
         display: none;
       }
 
-      .flow {
-        display: flex;
-        width: 100%;
-        gap: var(--space-2);
-        align-items: flex-start;
-      }
-
-      .icon {
-        display: inline-flex;
+      mm-icon {
         flex-shrink: 0;
-        align-items: center;
-        justify-content: center;
         width: 1rem;
         height: 1rem;
         margin-top: var(--space-05);
         color: var(--color-primary);
       }
 
-      .content {
-        display: flex;
-        flex-direction: column;
-        gap: var(--space-05);
+      mm-flex {
         min-width: 0;
-      }
-
-      .label {
-        font-size: var(--font-size-13, var(--font-size-14));
-        font-weight: var(--font-weight-bold);
-        line-height: var(--line-height-14, 1.5);
-        color: var(--color-foreground);
-      }
-
-      .description,
-      .slot {
-        font-size: var(--font-size-12);
-        line-height: var(--line-height-12, 1.5);
-        color: var(--color-foreground-light);
       }
     `,
   ]
@@ -86,15 +62,11 @@ export class ChatReasoningFlow extends LitElement {
 
   render() {
     return html`
-      <span class="flow">
-        <span class="icon">
-          <mm-icon name=${this.icon || toneIconMap[this.tone] || ICON_NAMES.SPARKS}></mm-icon>
-        </span>
-        <span class="content">
-          ${this.renderLabel()} ${this.renderDescription()}
-          <mm-text class="slot"><slot></slot></mm-text>
-        </span>
-      </span>
+      <mm-icon name=${this.icon || toneIconMap[this.tone] || ICON_NAMES.SPARKS}></mm-icon>
+      <mm-flex direction="column" gap="05">
+        ${this.renderLabel()} ${this.renderDescription()}
+        <mm-text size="12" color="light"><slot></slot></mm-text>
+      </mm-flex>
     `
   }
 
@@ -102,7 +74,7 @@ export class ChatReasoningFlow extends LitElement {
     if (!this.label) return nothing
 
     return html`
-      <mm-text class="label">${this.label}</mm-text>
+      <mm-text size="14" weight="bold">${this.label}</mm-text>
     `
   }
 
@@ -110,7 +82,7 @@ export class ChatReasoningFlow extends LitElement {
     if (!this.description) return nothing
 
     return html`
-      <mm-text class="description">${this.description}</mm-text>
+      <mm-text size="12" color="light">${this.description}</mm-text>
     `
   }
 }
@@ -132,33 +104,14 @@ export class ChatReasoning extends LitElement {
         display: block;
       }
 
-      .trend {
-        display: flex;
+      mm-flex {
         width: fit-content;
         max-width: min(85%, 600px);
-        gap: var(--space-2);
-        align-items: flex-start;
-      }
-
-      .content {
-        display: flex;
-        flex-direction: column;
-        gap: var(--space-1);
         min-width: 0;
       }
 
-      .meta {
-        display: flex;
-        gap: var(--space-2);
-        align-items: baseline;
-        min-width: 0;
-      }
-
-      .duration {
+      mm-text {
         overflow: hidden;
-        font-size: var(--font-size-12);
-        line-height: var(--line-height-12, 1.5);
-        color: var(--color-foreground-light);
         text-overflow: ellipsis;
         white-space: nowrap;
       }
@@ -187,6 +140,8 @@ export class ChatReasoning extends LitElement {
   @property({ type: Boolean }) thinking = false
   @property({ type: String }) duration = ''
   @property({ type: Number }) interval = 2200
+  @property({ type: String, reflect: true }) role = 'status'
+  @property({ type: String, attribute: 'aria-live', reflect: true }) ariaLive = 'polite'
 
   @queryAssignedElements({ selector: 'mm-chat-reasoning-flow', flatten: true })
   private assignedFlows!: ChatReasoningFlow[]
@@ -196,14 +151,12 @@ export class ChatReasoning extends LitElement {
 
   render() {
     return html`
-      <div class="trend" role="status" aria-live="polite">
-        <span class="content">
-          ${this.renderDuration()}
-          <span class="flows">
-            <slot @slotchange=${this.syncFlows}></slot>
-          </span>
+      <mm-flex direction="column" gap="1">
+        ${this.renderDuration()}
+        <span class="flows">
+          <slot @slotchange=${this.syncFlows}></slot>
         </span>
-      </div>
+      </mm-flex>
     `
   }
 
@@ -211,9 +164,7 @@ export class ChatReasoning extends LitElement {
     if (!this.duration) return nothing
 
     return html`
-      <span class="meta">
-        <mm-text class="duration">${this.duration}</mm-text>
-      </span>
+      <mm-text size="12" color="light">${this.duration}</mm-text>
     `
   }
 

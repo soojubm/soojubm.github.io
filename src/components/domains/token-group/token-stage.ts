@@ -13,8 +13,8 @@ export class TokenStage extends LitElement {
         display: block;
       }
 
-      .stage {
-        padding: var(--space-8) var(--space-16);
+      mm-surface {
+        --surface-padding: var(--space-8) var(--space-16);
       }
     `,
   ]
@@ -22,9 +22,7 @@ export class TokenStage extends LitElement {
   render() {
     return html`
       <mm-surface variant="flat">
-        <div class="stage">
-          <slot></slot>
-        </div>
+        <slot></slot>
       </mm-surface>
     `
   }
