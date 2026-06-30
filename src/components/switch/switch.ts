@@ -4,6 +4,7 @@ import { customElement, property } from 'lit/decorators.js'
 import type { AriaTriState } from '@/types/aria'
 
 import { switchStyles } from '@/components/switch/switch.styles'
+import { ToggleController } from '@/controllers/toggle-controller'
 import { emit } from '@/utils/emit'
 import { uniqueId } from '@/utils/unique-id'
 
@@ -17,6 +18,13 @@ export class Switch extends LitElement {
   @property({ type: Boolean }) disabled = false
 
   private inputId = uniqueId('switch')
+  private toggle = new ToggleController(this, {
+    getValue: () => this.checked,
+    setValue: checked => {
+      this.checked = checked
+    },
+    isDisabled: () => this.disabled,
+  })
 
   render() {
     const ariaChecked: AriaTriState = this.checked ? 'true' : 'false'
@@ -40,7 +48,7 @@ export class Switch extends LitElement {
 
   private onChange(event: Event) {
     const target = event.target as HTMLInputElement
-    this.checked = target.checked
+    if (!this.toggle.set(target.checked)) return
 
     emit(this, 'change', { checked: this.checked })
   }

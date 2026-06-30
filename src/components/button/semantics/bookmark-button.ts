@@ -1,10 +1,11 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import { toggleSelection } from '@/components/button/button.utils'
 import '@/components/icon-button/icon-button'
 import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
+import { ToggleController } from '@/controllers/toggle-controller'
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
+import { emit } from '@/utils/emit'
 
 /**
  * 북마크/즐겨찾기 토글 버튼.
@@ -33,6 +34,14 @@ export class BookmarkButton extends LitElement {
   @property({ type: String }) value = ''
   @property({ type: Boolean }) disabled = false
   @property({ type: String }) shape: 'star' | 'bookmark' | 'heart' = 'star'
+
+  private toggle = new ToggleController(this, {
+    getValue: () => this.selected,
+    setValue: selected => {
+      this.selected = selected
+    },
+    isDisabled: () => this.disabled,
+  })
 
   render() {
     return html`
@@ -67,7 +76,9 @@ export class BookmarkButton extends LitElement {
   }
 
   private handleClick() {
-    toggleSelection(this)
+    if (!this.toggle.toggle()) return
+
+    emit(this, 'change', { selected: this.selected, value: this.value })
   }
 }
 

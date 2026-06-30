@@ -8,7 +8,8 @@ import {
   toggleButtonStyles,
   buttonSelectedStyles,
 } from '@/components/button/button.styles'
-import { toggleSelection } from '@/components/button/button.utils'
+import { ToggleController } from '@/controllers/toggle-controller'
+import { emit } from '@/utils/emit'
 import '@/components/icon/icon'
 
 @customElement('mm-toggle-button')
@@ -20,6 +21,14 @@ export class ToggleButton extends LitElement {
   @property({ type: String }) icon?: IconName
   @property({ type: Boolean }) disabled = false
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = ''
+
+  private toggle = new ToggleController(this, {
+    getValue: () => this.selected,
+    setValue: selected => {
+      this.selected = selected
+    },
+    isDisabled: () => this.disabled,
+  })
 
   render() {
     return html`
@@ -46,7 +55,9 @@ export class ToggleButton extends LitElement {
 
   private handleClick(event: Event) {
     event.stopPropagation()
-    toggleSelection(this)
+    if (!this.toggle.toggle()) return
+
+    emit(this, 'change', { selected: this.selected, value: this.value })
   }
 }
 

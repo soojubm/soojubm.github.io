@@ -3,6 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
 import { checkboxStyles } from '@/components/checkbox/checkbox.styles'
+import { ToggleController } from '@/controllers/toggle-controller'
 import { emit } from '@/utils/emit'
 import { uniqueId } from '@/utils/unique-id'
 
@@ -30,6 +31,13 @@ export class Checkbox extends LitElement {
 
   // SSR 환경 및 crypto가 없는 구형 환경에서도 터지지 않도록 고유 ID 생성을 보장합니다.
   private inputId = uniqueId('checkbox')
+  private toggle = new ToggleController(this, {
+    getValue: () => this.checked,
+    setValue: checked => {
+      this.checked = checked
+    },
+    isDisabled: () => this.disabled,
+  })
 
   render() {
     // 가독성을 위한 구조 분해 할당
@@ -59,7 +67,8 @@ export class Checkbox extends LitElement {
   }
 
   private commitChecked(checked: boolean) {
-    this.checked = checked
+    if (!this.toggle.set(checked)) return
+
     this.indeterminate = false
 
     emit(this, 'change', {

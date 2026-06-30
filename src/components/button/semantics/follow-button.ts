@@ -6,7 +6,8 @@ import {
   followButtonStyles,
   buttonSelectedStyles,
 } from '@/components/button/button.styles'
-import { toggleSelection } from '@/components/button/button.utils'
+import { ToggleController } from '@/controllers/toggle-controller'
+import { emit } from '@/utils/emit'
 
 @customElement('mm-follow-button')
 export class FollowButton extends LitElement {
@@ -15,6 +16,14 @@ export class FollowButton extends LitElement {
   @property({ type: Boolean, reflect: true }) selected = false
   @property({ type: String }) value = ''
   @property({ type: Boolean }) disabled = false
+
+  private toggle = new ToggleController(this, {
+    getValue: () => this.selected,
+    setValue: selected => {
+      this.selected = selected
+    },
+    isDisabled: () => this.disabled,
+  })
 
   render() {
     return html`
@@ -30,7 +39,9 @@ export class FollowButton extends LitElement {
   }
 
   private handleClick() {
-    toggleSelection(this)
+    if (!this.toggle.toggle()) return
+
+    emit(this, 'change', { selected: this.selected, value: this.value })
   }
 }
 
