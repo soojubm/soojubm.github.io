@@ -19,7 +19,7 @@ export const menuItemStyles = css`
     box-sizing: border-box;
 
     /* 상호작용 가능한 행(checkbox·radio·switch·link 등)만 hover 강조 */
-    &[data-interactive] {
+    &.interactive {
       cursor: pointer;
 
       &:hover {
@@ -43,7 +43,7 @@ export const menuItemStyles = css`
     color: var(--menuitem-color-danger);
   }
 
-  :host([aria-current='page']) [data-interactive] {
+  :host([aria-current='page']) .interactive {
     background-color: var(--selection-background);
   }
 

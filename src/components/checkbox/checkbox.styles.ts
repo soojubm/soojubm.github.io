@@ -92,13 +92,12 @@ export const checkboxStyles = css`
     transform: rotate(-50deg) scale(1.5);
   }
 
-  input[indeterminate='true'] ~ label:before,
-  input[data-indeterminate='true'] ~ label:before {
+  input[type='checkbox']:indeterminate + label > span {
     border-color: var(--selection-indicator-color);
     background: var(--selection-background);
   }
-  input[indeterminate='true'] ~ label:after,
-  input[data-indeterminate='true'] ~ label:after {
+
+  input[type='checkbox']:indeterminate + label > span::after {
     display: block;
     width: 8px;
     background: var(--selection-indicator-color);

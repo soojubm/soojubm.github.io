@@ -1,5 +1,5 @@
 import { LitElement, css, html, nothing } from 'lit'
-import { customElement, property, query } from 'lit/decorators.js'
+import { customElement, property } from 'lit/decorators.js'
 
 import '@/components/sheet'
 import '@/components/sheet/semantics/sheet-header'
@@ -7,7 +7,6 @@ import '@/components/sheet/semantics/sheet-body'
 import '@/components/sheet/semantics/sheet-footer'
 import '@/components/text/semantics/paragraph'
 import type { ActionConfig } from '@/components/action-config'
-import type Sheet from '@/components/sheet/sheet'
 
 import { emit } from '@/utils/emit'
 
@@ -17,10 +16,6 @@ export class Dialog extends LitElement {
     :host {
       display: block;
     }
-
-    mm-sheet[width='small'] {
-      --sheet-width-small: 320px;
-    }
   `
 
   @property({ type: Boolean, reflect: true }) open = false
@@ -29,11 +24,15 @@ export class Dialog extends LitElement {
   @property({ attribute: false }) primaryAction?: ActionConfig
   @property({ attribute: false }) secondaryAction?: ActionConfig
 
-  @query('mm-sheet') private sheet?: Sheet
-
   render() {
     return html`
-      <mm-sheet variant="center" width="small" @sheetclose=${this.handleSheetClose}>
+      <mm-sheet
+        variant="center"
+        width="small"
+        ?open=${this.open}
+        style="--sheet-width-small: 320px"
+        @sheetclose=${this.handleSheetClose}
+      >
         <mm-sheet-header heading=${this.heading} .closeButton=${false}></mm-sheet-header>
 
         <mm-sheet-body>
@@ -59,20 +58,10 @@ export class Dialog extends LitElement {
 
   show() {
     this.open = true
-    this.sheet?.open()
   }
 
   close() {
     this.open = false
-    this.sheet?.close()
-  }
-
-  updated(changed: Map<string, unknown>) {
-    if (!changed.has('open')) return
-    this.updateComplete.then(() => {
-      if (this.open) this.sheet?.open()
-      else this.sheet?.close()
-    })
   }
 
   private handleSheetClose() {

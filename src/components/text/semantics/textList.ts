@@ -39,7 +39,21 @@ class TextList extends LitElement {
   @property({ type: String }) variant: Variant = 'check'
 
   render() {
-    return this.renderList(this.renderItems())
+    const items = this.renderItems()
+
+    if (this.variant === 'number') {
+      return html`
+        <ol class="list">
+          ${items}
+        </ol>
+      `
+    }
+
+    return html`
+      <ul class="list">
+        ${items}
+      </ul>
+    `
   }
 
   private renderItems() {
@@ -52,22 +66,6 @@ class TextList extends LitElement {
         <mm-list-marker variant=${this.variant} value=${index + 1}></mm-list-marker>
         ${text}
       </li>
-    `
-  }
-
-  private renderList(list: unknown[]) {
-    if (this.variant === 'number') {
-      return html`
-        <ol class="list">
-          ${list}
-        </ol>
-      `
-    }
-
-    return html`
-      <ul class="list">
-        ${list}
-      </ul>
     `
   }
 }

@@ -25,10 +25,6 @@ export class ListMarker extends LitElement {
         font-weight: var(--font-weight-bold);
       }
 
-      :host([variant='number']),
-      :host([variant='check']) {
-      }
-
       svg {
         width: 0.5rem;
         height: 0.5rem;

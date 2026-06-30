@@ -1,4 +1,4 @@
-import { css, unsafeCSS } from 'lit'
+import { css } from 'lit'
 
 type ToneStyle = {
   background: string
@@ -75,24 +75,6 @@ export type Category = keyof typeof categoryToneMap
 
 /**
  * --------------------------------------------------
- * tone css generator
- * --------------------------------------------------
- */
-
-const toneCss = Object.entries(tagToneStyles)
-  .map(
-    ([tone, styles]) => `
-    :host([tone='${tone}']) {
-      --tag-background-color: ${styles.background};
-      --tag-color: ${styles.color};
-      --tag-border-color: ${styles.borderColor};
-    }
-  `,
-  )
-  .join('\n')
-
-/**
- * --------------------------------------------------
  * component styles
  * --------------------------------------------------
  */
@@ -150,5 +132,63 @@ export const tagStyles = css`
     line-height: 1;
   }
 
-  ${unsafeCSS(toneCss)}
+  :host([tone='default']) {
+    --tag-background-color: var(--color-background);
+    --tag-color: var(--color-foreground);
+    --tag-border-color: var(--color-border);
+  }
+
+  :host([tone='gold']) {
+    --tag-background-color: var(--color-accent);
+    --tag-color: var(--color-foreground);
+    --tag-border-color: var(--color-accent-border);
+  }
+
+  :host([tone='green']) {
+    --tag-background-color: var(--tag-category-2-bg);
+    --tag-color: var(--tag-category-2-text);
+    --tag-border-color: var(--tag-category-2-border);
+  }
+
+  :host([tone='yellow']) {
+    --tag-background-color: var(--tag-category-6-bg);
+    --tag-color: var(--tag-category-6-text);
+    --tag-border-color: var(--tag-category-6-border);
+  }
+
+  :host([tone='red']) {
+    --tag-background-color: var(--tag-category-7-bg);
+    --tag-color: var(--tag-category-7-text);
+    --tag-border-color: var(--tag-category-7-border);
+  }
+
+  :host([tone='blue']) {
+    --tag-background-color: var(--tag-category-1-bg);
+    --tag-color: var(--tag-category-1-text);
+    --tag-border-color: var(--tag-category-1-border);
+  }
+
+  :host([tone='purple']) {
+    --tag-background-color: var(--tag-category-8-bg);
+    --tag-color: var(--tag-category-8-text);
+    --tag-border-color: var(--tag-category-8-border);
+  }
+
+  :host([tone='pink']) {
+    --tag-background-color: var(--tag-category-3-bg);
+    --tag-color: var(--tag-category-3-text);
+    --tag-border-color: var(--tag-category-3-border);
+  }
+
+  :host([tone='orange']) {
+    --tag-background-color: var(--tag-category-4-bg);
+    --tag-color: var(--tag-category-4-text);
+    --tag-border-color: var(--tag-category-4-border);
+  }
+
+  :host([tone='cyan']) {
+    --tag-background-color: var(--tag-category-5-bg);
+    --tag-color: var(--tag-category-5-text);
+    --tag-border-color: var(--tag-category-5-border);
+  }
 `

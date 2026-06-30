@@ -1,5 +1,6 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { classMap } from 'lit/directives/class-map.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
@@ -24,11 +25,11 @@ export class Table extends LitElement {
         overflow-x: auto;
       }
 
-      th[data-align='center'] {
+      th.align-center {
         text-align: center;
       }
 
-      th[data-align='right'] {
+      th.align-right {
         text-align: right;
       }
     `,
@@ -68,9 +69,12 @@ export class Table extends LitElement {
   private renderHeader(column: TableColumn) {
     return html`
       <th
+        class=${classMap({
+          'align-center': column.textAlign === 'center',
+          'align-right': column.textAlign === 'right',
+        })}
         scope="col"
         aria-sort=${column.sortable ? 'none' : nothing}
-        data-align=${ifDefined(column.textAlign)}
       >
         ${this.renderHeaderContent(column)}
       </th>
@@ -81,15 +85,7 @@ export class Table extends LitElement {
     if (!column.sortable) return column.label
 
     return html`
-      <mm-flex
-        align-items="center"
-        justify-content=${column.textAlign === 'center'
-          ? 'center'
-          : column.textAlign === 'right'
-          ? 'flex-end'
-          : 'flex-start'}
-        gap="1"
-      >
+      <mm-flex align-items="center" justify-content=${this.getHeaderJustifyContent(column)} gap="1">
         ${column.label}
         <mm-icon name="arrow-separate-vertical" size="tiny"></mm-icon>
       </mm-flex>
@@ -100,6 +96,12 @@ export class Table extends LitElement {
     return html`
       <col width=${ifDefined(column.width)} />
     `
+  }
+
+  private getHeaderJustifyContent(column: TableColumn) {
+    if (column.textAlign === 'center') return 'center'
+    if (column.textAlign === 'right') return 'flex-end'
+    return 'flex-start'
   }
 }
 

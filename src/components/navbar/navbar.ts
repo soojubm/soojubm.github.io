@@ -28,9 +28,15 @@ export class Navbar extends LitElement {
   private debounceTimer: ReturnType<typeof setTimeout> | null = null
   private searchRequestId = 0
 
-  @query('.js-search-sheet') private searchSheet?: Sheet
-  @query('.js-search-sheet mm-searchfield') private searchField?: HTMLElement
   @query('.navbar-user-trigger') private userMenuTrigger?: HTMLElement
+
+  // 검색 시트는 열릴 때 portal로 document.body로 이동하므로 renderRoot가 아닌 document에서 찾는다.
+  private get searchSheet() {
+    return document.querySelector<Sheet>('.js-search-sheet') ?? undefined
+  }
+  private get searchField() {
+    return document.querySelector<HTMLElement>('.js-search-sheet mm-searchfield') ?? undefined
+  }
 
   private userMenu = new PopupController(this, {
     event: 'click',

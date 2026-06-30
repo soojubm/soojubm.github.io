@@ -30,8 +30,8 @@ export class MenuItemRadio extends LitElement {
 
     return html`
       <div
+        class="interactive"
         role="menuitemradio"
-        data-interactive
         tabindex=${this.disabled ? '-1' : '0'}
         aria-disabled=${this.disabled ? 'true' : nothing}
         aria-checked=${ariaChecked}

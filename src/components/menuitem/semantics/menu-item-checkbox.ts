@@ -6,6 +6,7 @@ import type { AriaTriState } from '@/types/aria'
 
 import { menuItemStyles } from '@/components/menuitem/menuitem.styles'
 import { renderMenuItemContent } from '@/components/menuitem/menuitem.utils'
+import { ToggleController } from '@/controllers/toggle-controller'
 import { emit } from '@/utils/emit'
 
 @customElement('mm-menu-item-checkbox')
@@ -24,13 +25,21 @@ export class MenuItemCheckbox extends LitElement {
   @property({ type: Boolean }) checked = false
   @property({ type: String }) value = ''
 
+  private toggle = new ToggleController(this, {
+    getValue: () => this.checked,
+    setValue: checked => {
+      this.checked = checked
+    },
+    isDisabled: () => this.disabled,
+  })
+
   render() {
     const ariaChecked: AriaTriState = this.checked ? 'true' : 'false'
 
     return html`
       <div
+        class="interactive"
         role="menuitemcheckbox"
-        data-interactive
         tabindex=${this.disabled ? '-1' : '0'}
         aria-disabled=${this.disabled ? 'true' : nothing}
         aria-checked=${ariaChecked}
@@ -43,8 +52,8 @@ export class MenuItemCheckbox extends LitElement {
   }
 
   private commitChecked(checked: boolean) {
-    if (this.disabled) return
-    this.checked = checked
+    if (!this.toggle.set(checked)) return
+
     emit(this, 'change', { checked: this.checked, value: this.value })
   }
 

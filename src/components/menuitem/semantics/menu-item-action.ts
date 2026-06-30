@@ -31,8 +31,8 @@ export class MenuItemAction extends LitElement {
     return html`
       <button
         type="button"
+        class="interactive"
         role=${this.role}
-        data-interactive
         ?disabled=${this.disabled}
         aria-current=${ifDefined(this.ariaCurrent ?? undefined)}
       >

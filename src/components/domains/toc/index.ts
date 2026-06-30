@@ -70,7 +70,7 @@ export class TableOfContents extends LitElement {
         color: var(--color-foreground);
       }
 
-      .toc-link[data-active] {
+      .toc-link[aria-current='true'] {
         color: var(--selection-foreground);
       }
 
@@ -137,8 +137,6 @@ export class TableOfContents extends LitElement {
       <button
         class="toc-link"
         type="button"
-        data-toc-id=${item.id}
-        ?data-active=${item.id === this.activeId}
         aria-current=${ifDefined(item.id === this.activeId ? 'true' : undefined)}
         @click=${() => this.scrollToItem(item.id)}
       >
