@@ -111,19 +111,18 @@
         <mm-button slot="action" variant="ghost">새 컬렉션</mm-button>
       </mm-top-bar>
       <mm-menu-item-checkbox-group aria-label="컬렉션 선택">
-        <mm-menu-item-checkbox value="euljiro-1" label="을지로 맛집" description="test" checked>
-          <mm-avatar slot="avatar" size="large" style="font-size: 1.5rem; overflow: hidden">
-            💳
-          </mm-avatar>
-        </mm-menu-item-checkbox>
-        <mm-menu-item-checkbox value="euljiro-2" label="을지로 맛집">
-          <mm-avatar
-            slot="avatar"
-            size="large"
-            fallback="💳"
-            style="background: var(--color-background-subtle); font-size: 1.5rem"
-          ></mm-avatar>
-        </mm-menu-item-checkbox>
+        <mm-menu-item-checkbox
+          value="euljiro-1"
+          label="을지로 맛집"
+          description="test"
+          emoji="💳"
+          checked
+        ></mm-menu-item-checkbox>
+        <mm-menu-item-checkbox
+          value="euljiro-2"
+          label="을지로 맛집"
+          emoji="💳"
+        ></mm-menu-item-checkbox>
       </mm-menu-item-checkbox-group>
       <mm-separator></mm-separator>
       <mm-top-bar heading="새 컬렉션">

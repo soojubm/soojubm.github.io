@@ -45,7 +45,9 @@
     <mm-prop name="icon" type="IconName" optional></mm-prop>
     <mm-prop name="trailing-icon" type="IconName" optional></mm-prop>
     <mm-prop name="slot='trailing'" type="HTMLElement" optional></mm-prop>
+    <mm-prop name="emoji" type="string" optional></mm-prop>
     <mm-prop name="avatar-src" type="string" optional></mm-prop>
+    <mm-prop name="avatar-variant" type="string = 'tertiary'" optional></mm-prop>
     <mm-prop name="tone" type="'danger' | string" optional></mm-prop>
     <mm-prop name="disabled" type="boolean" optional></mm-prop>
   </mm-component-props>
@@ -67,7 +69,7 @@
     <mm-text-list
       texts='[
         "role=menu 는 명령 실행 목록. role=listbox 는 폼 내 선택 목록. 컨텍스트에 따라 구분합니다.",
-        "아이콘은 icon prop으로, 이미지는 avatar-src prop으로 전달합니다. 이모지·커스텀 콘텐츠만 slot=\"avatar\"를 사용합니다."
+        "아이콘은 icon prop, 이미지는 avatar-src prop, 이모지는 emoji prop으로 전달합니다."
       ]'
     ></mm-text-list>
   </mm-component-guide>

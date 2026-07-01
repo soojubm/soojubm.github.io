@@ -1,4 +1,5 @@
 import { html, nothing } from 'lit'
+import { ifDefined } from 'lit/directives/if-defined.js'
 
 import type { IconName } from '@/components/icon-button/semantics/icon-names'
 import '@/components/list-row/list-row'
@@ -13,19 +14,18 @@ export interface MenuItemProps {
   avatarVariant: string
 }
 
-export function renderMenuItemContent(props: MenuItemProps, action: unknown) {
+export function renderMenuItemContent(props: MenuItemProps, trailing: unknown) {
   return html`
     <mm-list-row
       size=${props.size}
       label=${props.label}
       description=${props.description}
-      icon=${props.icon || nothing}
-      emoji=${props.emoji || nothing}
-      avatar-src=${props.avatarSrc || nothing}
+      icon=${ifDefined(props.icon)}
+      emoji=${ifDefined(props.emoji || undefined)}
+      avatar-src=${ifDefined(props.avatarSrc || undefined)}
       avatar-variant=${props.avatarVariant}
     >
-      <slot name="avatar" slot="avatar"></slot>
-      ${renderTextSlots(props)} ${action}
+      ${renderTextSlots(props)} ${trailing}
     </mm-list-row>
   `
 }
