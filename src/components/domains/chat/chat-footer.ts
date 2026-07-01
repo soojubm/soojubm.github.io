@@ -10,26 +10,17 @@ export class ChatFooter extends LitElement {
     resetStyles,
     css`
       :host {
-        flex-shrink: 0;
-        border-top: var(--border);
-        background: var(--color-background);
-      }
-
-      mm-flex {
-        width: 100%;
-        max-width: calc(var(--layout-width-small) + var(--space-4) * 10);
-        margin: 0 auto;
-        padding: var(--space-3) var(--space-4);
-        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-3);
+        padding: var(--space-4);
       }
     `,
   ]
 
   render() {
     return html`
-      <mm-flex gap="0">
-        <slot></slot>
-      </mm-flex>
+      <slot></slot>
     `
   }
 }

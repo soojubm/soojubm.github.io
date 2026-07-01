@@ -128,24 +128,25 @@
 .sidebar-menu > div .sidebar-category-trigger[aria-expanded='true'] > mm-icon {
   transform: rotate(180deg);
 }
+
 .sidebar-menu > div mm-menu-item-link {
   --menuitem-radius: 0 var(--radius) var(--radius) 0;
-  --menuitem-padding-inline-start: calc(var(--space-4) + var(--space-2));
+  --menuitem-padding-inline-start: calc(var(--space-4) + var(--space-1));
 
-  display: flex;
-  align-items: center;
-  height: var(--size-medium);
+  display: block;
   margin: 0 0 0 var(--space-4);
+
   border-left: var(--border);
-  color: var(--color-foreground);
-  text-transform: capitalize;
   position: relative;
+}
+
+.sidebar-menu > div mm-menu-item-link mm-list-row {
+  margin-left: 1rem;
 }
 
 .sidebar-menu > div mm-menu-item-link:hover,
 .sidebar-menu > div mm-menu-item-link[aria-current='page'] {
   border-color: var(--color-primary);
-  cursor: pointer;
 }
 
 .navbar-user-panel {

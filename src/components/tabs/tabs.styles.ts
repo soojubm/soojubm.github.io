@@ -10,7 +10,7 @@ export const tabsStyles = css`
     --tabs-indicator-color: var(--selection-indicator-color);
     --tabs-line-color: var(--color-border);
     --tabs-line-width: var(--border-width);
-    --tabs-pill-indicator-background: var(--selection-background);
+    --tabs-pill-indicator-background: var(--color-background);
   }
 
   .indicator {

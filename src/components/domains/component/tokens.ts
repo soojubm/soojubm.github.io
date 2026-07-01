@@ -17,9 +17,20 @@ export class Token extends LitElement {
 
   render() {
     return html`
-      <dt>${this.name}</dt>
+      <dt>${this.renderName()}</dt>
       <dd class="value">${this.renderDefaultValue()}</dd>
     `
+  }
+
+  // 토큰 이름을 dash 단위로 나눠 단어마다 색을 순환 적용해 네이밍 구조를 드러낸다.
+  // span 사이 공백이 생기지 않도록 템플릿을 한 줄로 유지한다.
+  private renderName() {
+    return this.name
+      .split('-')
+      .map((word, index) => {
+        const dash = index > 0 ? html`<span class="dash">-</span>` : nothing
+        return html`${dash}<span class=word-${index % 8}>${word}</span>`
+      })
   }
 
   private renderDefaultValue() {

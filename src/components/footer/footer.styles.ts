@@ -34,6 +34,10 @@ export const footerStyles = css`
     column-gap: var(--space-2);
   }
 
+  dd {
+    margin: 0;
+  }
+
   .footer-address-info dt {
     color: var(--color-foreground-light);
   }

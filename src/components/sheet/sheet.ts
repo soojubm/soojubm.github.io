@@ -2,6 +2,7 @@ import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import { sheetStyles } from '@/components/sheet/sheet.styles'
+import { PortalController } from '@/controllers/portal-controller'
 import { ScrollLockController } from '@/controllers/scroll-lock-controller'
 import { emit } from '@/utils/emit'
 export type SheetVariant = 'center' | 'bottom' | 'left' | 'right' | 'inline'
@@ -18,6 +19,7 @@ class Sheet extends LitElement {
   @property({ type: Boolean, reflect: true, attribute: 'backdrop-blur' }) backdropBlur = false
 
   private scrollLock = new ScrollLockController(this)
+  private portal = new PortalController(this, { isActive: () => this.isOpen && this.isModal })
 
   private handleSheetClose = () => {
     this.close()
@@ -59,7 +61,7 @@ class Sheet extends LitElement {
 
   protected updated(changedProperties: Map<string, unknown>) {
     if (changedProperties.has('height')) this.syncHeight()
-    if (changedProperties.has('isOpen') || changedProperties.has('variant')) this.syncScrollLock()
+    if (changedProperties.has('isOpen') || changedProperties.has('variant')) this.syncModal()
   }
 
   private syncHeight() {
@@ -71,18 +73,28 @@ class Sheet extends LitElement {
     this.style.setProperty('--sheet-height', this.height)
   }
 
-  private syncScrollLock() {
-    this.scrollLock.set(this.isOpen && this.isModal)
+  // portal과 스크롤 잠금을 함께 동기화한다.
+  // host를 portal로 옮기면 lifecycle이 재실행되며 스크롤 잠금이 풀리므로,
+  // 열 때는 portal 이후에 잠그고 닫을 때는 잠금을 푼 뒤 복원한다.
+  private syncModal() {
+    if (this.isOpen && this.isModal) {
+      this.portal.sync()
+      this.scrollLock.set(true)
+      return
+    }
+
+    this.scrollLock.set(false)
+    this.portal.sync()
   }
 
   open() {
     this.isOpen = true
-    this.syncScrollLock()
+    this.syncModal()
   }
 
   close() {
     this.isOpen = false
-    this.syncScrollLock()
+    this.syncModal()
   }
 
   toggle() {

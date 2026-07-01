@@ -17,6 +17,7 @@ export const menuItemStyles = css`
     color: inherit;
     text-decoration: none;
     box-sizing: border-box;
+    text-transform: capitalize;
 
     /* 상호작용 가능한 행(checkbox·radio·switch·link 등)만 hover 강조 */
     &.interactive {

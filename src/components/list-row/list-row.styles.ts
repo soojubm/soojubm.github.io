@@ -8,11 +8,13 @@ export const listRowStyles = css`
     gap: var(--list-row-gap);
 
     --list-row-size: var(--size-medium);
-    --list-row-gap: var(--space-2);
+    --list-row-gap: var(--space-1);
   }
 
   :host([size='large']) {
+    height: var(--list-row-size);
     --list-row-size: var(--size-large);
+    --list-row-gap: var(--space-2);
   }
 
   :host([size='huge']) {

@@ -8,17 +8,42 @@ export const tokenStyles = [
   css`
     :host {
       display: flex;
-      flex-direction: column;
+      align-items: center;
+      gap: var(--space-2);
     }
 
     dt {
-      color: var(--color-foreground-light);
-      line-height: 1.2;
+      font-weight: var(--font-weight-bold);
     }
 
-    .value {
-      display: flex;
-      margin-bottom: var(--space-3);
+    dd {
+      margin: 0;
+    }
+
+    .dash {
+    }
+
+    .word-0 {
+      color: var(--gray800);
+    }
+    .word-1 {
+    }
+    .word-2 {
+    }
+    .word-3 {
+      color: var(--color-orange-700);
+    }
+    .word-4 {
+      color: var(--color-cyan-700);
+    }
+    .word-5 {
+      color: var(--color-yellow-700);
+    }
+    .word-6 {
+      color: var(--color-red-700);
+    }
+    .word-7 {
+      color: var(--color-purple-700);
     }
   `,
 ]

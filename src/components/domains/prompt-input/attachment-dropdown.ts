@@ -18,7 +18,7 @@ export class AttachmentDropdown extends LitElement {
       <mm-dropdown inline placement="top-left" list-min-width="160px">
         <mm-icon-button
           slot="trigger"
-          icon=${ICON_NAMES.ADD}
+          icon="plus-circle-solid"
           aria-label="이미지 첨부"
         ></mm-icon-button>
         <option value="upload" icon="import">이미지 업로드</option>

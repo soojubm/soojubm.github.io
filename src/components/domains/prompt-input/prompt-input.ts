@@ -57,12 +57,7 @@ export class PromptInput extends LitElement {
   render() {
     return html`
       <form>
-        <mm-flex
-          wrap
-          align-items="center"
-          gap="0"
-          justify-content=${this.isSingleLine ? 'start' : 'between'}
-        >
+        <mm-flex wrap justify-content=${this.isSingleLine ? 'start' : 'between'}>
           ${this.renderStartActions()}
           <mm-textarea
             .value=${this.value}
@@ -153,7 +148,7 @@ export class PromptInput extends LitElement {
         <slot name="trailing-actions"></slot>
         <mm-icon-button
           variant="primary"
-          icon="send-diagonal"
+          icon="arrow-up"
           aria-label=${this.submitLabel}
           ?disabled=${this.isLoading}
           @click=${this.submit}

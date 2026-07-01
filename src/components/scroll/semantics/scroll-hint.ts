@@ -11,7 +11,7 @@ export class ScrollHint extends LitElement {
     resetStyles,
     css`
       :host {
-        --scroll-hint-width: var(--size-huge);
+        --scroll-hint-width: var(--size-large);
         --scroll-hint-gap: 0px;
 
         display: block;

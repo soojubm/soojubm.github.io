@@ -32,6 +32,7 @@ class SheetFooter extends LitElement {
       <mm-button
         variant="tertiary"
         size="large"
+        full-width
         ?disabled=${this.secondaryAction.disabled}
         @click=${this.handleSecondaryClick}
       >
@@ -47,6 +48,7 @@ class SheetFooter extends LitElement {
       <mm-button
         variant="primary"
         size="large"
+        full-width
         ?disabled=${this.primaryAction.disabled}
         @click=${this.handlePrimaryClick}
       >

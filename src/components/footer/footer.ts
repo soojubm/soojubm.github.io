@@ -23,16 +23,18 @@ export class Footer extends LitElement {
           avatar-variant="secondary"
         ></mm-user-snippet>
 
-        <mm-flex direction="column">
-          <mm-social-links
-            notion="https://soojubm.notion.site/UI-Designer-9c18f4dd39eb4181b9f9c2ee76896618"
-            github="https://github.com/soojubm"
-          ></mm-social-links>
-          <mm-flex gap="2">
-            <mm-link href="/my/films/">영화감상 목록</mm-link>
-            <mm-link href="/my/books/">독서 목록</mm-link>
+        <div style="max-width:320px;margin: var(--space-4) 0">
+          <mm-flex direction="column">
+            <mm-social-links
+              notion="https://soojubm.notion.site/UI-Designer-9c18f4dd39eb4181b9f9c2ee76896618"
+              github="https://github.com/soojubm"
+            ></mm-social-links>
+            <!-- <mm-flex gap="2">
+              <mm-link href="/my/films/">영화감상 목록</mm-link>
+              <mm-link href="/my/books/">독서 목록</mm-link>
+            </mm-flex> -->
           </mm-flex>
-        </mm-flex>
+        </div>
 
         <dl class="footer-address-info">
           <dd>주식회사 수줍당</dd>
