@@ -88,6 +88,7 @@ export class Marquee extends LitElement {
     `,
   ]
 
+  @property({ type: String, reflect: true }) role = 'marquee'
   @property({ type: String, reflect: true }) direction: MarqueeDirection = 'left'
   @property({ type: String }) gap = '4'
   @property({ type: String }) height?: string

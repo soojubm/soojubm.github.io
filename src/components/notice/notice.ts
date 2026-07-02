@@ -16,6 +16,7 @@ const VARIANT_ICONS: Record<string, string> = {
 class Notice extends LitElement {
   static styles = [noticeStyles]
 
+  @property({ type: String, reflect: true }) role = 'note'
   @property({ type: String }) heading = ''
   @property({ type: String }) description = ''
   @property({ type: String, reflect: true }) variant = ''
