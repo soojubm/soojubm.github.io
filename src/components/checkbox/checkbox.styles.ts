@@ -1,5 +1,7 @@
 import { css } from 'lit'
 
+import { focusRing } from '@/stylesheets/shared/focus-ring.styles'
+
 export const checkboxGroupStyles = css`
   fieldset {
     all: unset;
@@ -81,9 +83,8 @@ export const checkboxStyles = css`
     transform: rotate(-50deg) scale(1);
   }
 
-  input:focus + label::before {
-    outline: 2px solid var(--color-interaction-focus);
-    outline-offset: 2px;
+  input:focus-visible + label > span {
+    ${focusRing}
   }
 
   :host([size='large']) input[type='checkbox']:checked + label > span::after {

@@ -1,5 +1,7 @@
 import { css } from 'lit'
 
+import { focusRing } from '@/stylesheets/shared/focus-ring.styles'
+
 export const switchStyles = css`
   :host {
     --switch-width: 2rem;
@@ -10,10 +12,10 @@ export const switchStyles = css`
     display: block;
     height: var(--switch-height);
     position: relative;
+  }
 
-    &:focus-within label:before {
-      outline: 3px solid var(--color-interaction-focus);
-    }
+  input:focus-visible + label:before {
+    ${focusRing}
   }
 
   input {

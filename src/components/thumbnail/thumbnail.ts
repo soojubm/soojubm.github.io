@@ -1,6 +1,8 @@
 import { LitElement, html, css, nothing } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
+
 import '@/components/text/semantics/caption'
+import { focusRing } from '@/stylesheets/shared/focus-ring.styles'
 
 @customElement('mm-thumbnail')
 export class Thumbnail extends LitElement {
@@ -28,8 +30,7 @@ export class Thumbnail extends LitElement {
       transform: scale(1.03);
     }
     :is(a, button, div):focus-visible {
-      outline: 3px solid var(--color-focus, var(--color-primary));
-      outline-offset: 2px;
+      ${focusRing}
     }
 
     .image-wrapper {

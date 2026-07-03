@@ -13,6 +13,8 @@ export class ToggleController implements ReactiveController {
     host.addController(this)
   }
 
+  hostConnected() {}
+
   toggle() {
     return this.set(!this.value)
   }

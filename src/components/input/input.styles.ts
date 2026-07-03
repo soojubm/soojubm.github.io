@@ -8,7 +8,7 @@ export const inputStyles = css`
     --input-border-radius: var(--radius);
     --input-border: var(--border-transparent);
     --input-border-color-hover: var(--color-border-hover);
-    --input-focus-shadow: var(--status-hover);
+    --input-focus-outline: var(--interaction-focus-outline);
     --input-padding-block: var(--space-3);
     --input-padding-inline: var(--space-4);
   }
@@ -39,7 +39,8 @@ export const inputStyles = css`
       border-color: var(--input-border-color-hover);
     }
     &:focus-within {
-      box-shadow: var(--input-focus-shadow);
+      outline: var(--input-focus-outline);
+      outline-offset: 2px;
     }
 
     &[aria-invalid='true'] {

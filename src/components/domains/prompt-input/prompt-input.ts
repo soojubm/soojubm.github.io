@@ -26,7 +26,7 @@ export class PromptInput extends LitElement {
 
       mm-textarea {
         --input-border-color-hover: transparent;
-        --input-focus-shadow: none;
+        --input-focus-outline: none;
       }
 
       :host([single-line]) mm-textarea {

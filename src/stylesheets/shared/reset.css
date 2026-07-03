@@ -148,7 +148,6 @@ q:before {
 }
 
 table {
-  --table-lineheight: 1.6;
   --table-row-border: var(--border);
   --table-cell-padding: var(--space-2) 0;
   --table-cell-padding-inline: var(--space-2);
@@ -179,13 +178,11 @@ table thead tr th {
   padding: var(--space-1) 0;
   padding-inline: var(--table-cell-padding-inline);
   font-size: var(--font-size-12);
-  line-height: var(--table-lineheight);
   color: var(--color-foreground-light);
   text-align: left;
 }
 table tbody tr {
   border-bottom: var(--table-row-border);
-  line-height: var(--table-lineheight);
   position: relative;
 }
 table tbody tr:hover {
@@ -294,7 +291,7 @@ li::marker {
 a:focus-visible,
 button:focus-visible,
 menu-item:focus-visible {
-  outline: 2px solid var(--color-interaction-focus);
+  outline: var(--interaction-focus-outline);
   outline-offset: 2px;
 }
 

@@ -1,11 +1,10 @@
-import { LitElement, html, nothing } from 'lit'
+import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import type { IconName } from '@/components/icon-button/semantics/icon-names'
-import type { AriaTriState } from '@/types/aria'
 
 import { menuItemStyles } from '@/components/menuitem/menuitem.styles'
-import { renderMenuItemContent } from '@/components/menuitem/menuitem.utils'
+import { renderMenuItemContent, renderMenuItemRow } from '@/components/menuitem/menuitem.utils'
 import { ToggleController } from '@/controllers/toggle-controller'
 import { emit } from '@/utils/emit'
 
@@ -34,21 +33,15 @@ export class MenuItemCheckbox extends LitElement {
   })
 
   render() {
-    const ariaChecked: AriaTriState = this.checked ? 'true' : 'false'
-
-    return html`
-      <div
-        class="interactive"
-        role="menuitemcheckbox"
-        tabindex=${this.disabled ? '-1' : '0'}
-        aria-disabled=${this.disabled ? 'true' : nothing}
-        aria-checked=${ariaChecked}
-        @click=${this.handleRowClick}
-        @keydown=${this.handleRowKeydown}
-      >
-        ${renderMenuItemContent(this, this.renderAction())}
-      </div>
-    `
+    return renderMenuItemRow(
+      {
+        role: 'menuitemcheckbox',
+        disabled: this.disabled,
+        ariaChecked: this.checked ? 'true' : 'false',
+        onActivate: this.activate,
+      },
+      renderMenuItemContent(this, this.renderAction()),
+    )
   }
 
   private commitChecked(checked: boolean) {
@@ -57,29 +50,19 @@ export class MenuItemCheckbox extends LitElement {
     emit(this, 'change', { checked: this.checked, value: this.value })
   }
 
-  private handleRowClick = () => {
+  private activate = () => {
     this.commitChecked(!this.checked)
   }
 
-  private handleRowKeydown = (event: KeyboardEvent) => {
-    if (event.key !== 'Enter' && event.key !== ' ') return
-    event.preventDefault()
-    this.handleRowClick()
-  }
-
-  protected handleControlChange = (e: Event) => {
-    e.stopPropagation()
-    const { checked } = (e as CustomEvent<{ checked: boolean }>).detail
-    this.commitChecked(checked)
-  }
-
   private renderAction() {
+    // 행(row)이 role·상태·상호작용을 소유하므로 내부 컨트롤은 시각 표시 전용(inert)이다.
     return html`
       <mm-checkbox
         slot="trailing"
+        inert
+        aria-hidden="true"
         .checked=${this.checked}
         ?disabled=${this.disabled}
-        @change=${this.handleControlChange}
       ></mm-checkbox>
     `
   }

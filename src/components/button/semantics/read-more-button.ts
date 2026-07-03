@@ -3,6 +3,8 @@ import { customElement, property } from 'lit/decorators.js'
 
 import type { AriaBoolean, AriaIdRef } from '@/types/aria'
 
+import { focusRing } from '@/stylesheets/shared/focus-ring.styles'
+
 /**
  * 인라인 "더 보기 / 접기" 토글 버튼.
  * 고정 크기 없이 주변 텍스트에 녹아든다.
@@ -22,8 +24,7 @@ export class ReadMoreButton extends LitElement {
       cursor: pointer;
 
       &:focus-visible {
-        outline: 2px solid var(--color-primary);
-        outline-offset: 2px;
+        ${focusRing}
       }
     }
   `

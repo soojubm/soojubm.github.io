@@ -1,5 +1,7 @@
 import { css } from 'lit'
 
+import { focusRing } from '@/stylesheets/shared/focus-ring.styles'
+
 export const radioGroupStyles = css`
   fieldset {
     border: none;
@@ -34,7 +36,8 @@ export const radioStyles = css`
     --radio-border-color: var(--color-border-strong);
     --radio-border: 1px solid var(--radio-border-color);
     --radio-border-radius: 50%;
-    --radio-color-checked: var(--selection-indicator-color);
+    --radio-background-color-checked: var(--selection-indicator-color);
+    --radio-border-color-checked: var(--selection-indicator-color);
     position: relative;
   }
 
@@ -62,9 +65,13 @@ export const radioStyles = css`
     position: absolute;
     left: 0;
 
+    &:focus-visible + label > span:first-child {
+      ${focusRing}
+    }
+
     &:checked + label > span:first-child {
-      background: var(--radio-color-checked);
-      border-color: var(--radio-color-checked);
+      background: var(--radio-background-color-checked);
+      border-color: var(--radio-border-color-checked);
       animation: radiomark var(--animation-input, 0.2s) ease-out;
       box-shadow: 0 0 0 4px var(--color-background) inset;
     }

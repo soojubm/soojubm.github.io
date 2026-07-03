@@ -812,7 +812,7 @@
     <mm-text size="18" weight="bold" as="h3">Interaction States</mm-text>
     <!-- <mm-paragraph>입력에 대한 반응과 사용 가능 여부.</mm-paragraph> -->
 
-    <!-- <mm-grid columns="4" gap="4">
+    <mm-grid columns="4" gap="4">
       <style>
         .demo-btn {
           display: inline-flex;
@@ -835,14 +835,8 @@
           border-color: var(--color-background-strong);
         }
 
-        .demo-btn.is-focus {
-          outline: 3px solid var(--color-interaction-focus);
-          outline-offset: 2px;
-        }
-
         .demo-btn.is-active {
           background: var(--color-interaction-active-background);
-          border-color: var(--color-interaction-active-border);
           box-shadow: 0 0 0 3px var(--color-interaction-active-ring),
             inset 0 0 0 2px var(--color-foreground-on-solid);
         }
@@ -903,11 +897,11 @@
       </mm-flex>
       <mm-flex direction="column" gap="3">
         <button class="demo-btn">
-        <mm-text>Loading</mm-text>
+          <mm-text>Loading</mm-text>
         </button>
         <mm-typing-indicator color="var(--color-background-strong)"></mm-typing-indicator>
       </mm-flex>
-    </mm-grid> -->
+    </mm-grid>
   </mm-flex>
 
   <mm-flex direction="column" gap="3">

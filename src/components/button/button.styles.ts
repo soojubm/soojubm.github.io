@@ -1,28 +1,20 @@
 import { css } from 'lit'
 
-export const interactiveControlStyles = css`
-  :host {
-    --control-color-focus: var(--color-interaction-focus);
-    --control-color-active-bg: var(--color-interaction-active-background);
-    --control-color-active-border: var(--color-interaction-active-border);
-    --control-color-active-ring: var(--color-interaction-active-ring);
-  }
+import { focusRing } from '@/stylesheets/shared/focus-ring.styles'
 
+export const interactiveControlStyles = css`
   button {
     &:hover {
       border-color: var(--color-background-strong);
     }
 
-    &:focus {
-      outline: var(--space-1) solid var(--control-color-focus);
-      outline-offset: var(--space-05);
+    &:focus-visible {
+      ${focusRing}
     }
 
     &:enabled:active {
-      background: var(--control-color-active-bg);
-      border-color: var(--control-color-active-border);
-      box-shadow: 0 0 0 var(--space-1) var(--control-color-active-ring),
-        inset 0 0 0 var(--space-05) var(--color-foreground-on-solid);
+      background: var(--color-interaction-active-background);
+      box-shadow: var(--interaction-active-shadow);
     }
 
     &:disabled {

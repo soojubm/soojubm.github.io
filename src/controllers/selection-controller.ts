@@ -19,6 +19,8 @@ export class SelectionController implements ReactiveController {
     host.addController(this)
   }
 
+  hostConnected() {}
+
   select(option: SelectionOption) {
     this.options.setValues(this.getNextValues(option))
     this.host.requestUpdate()

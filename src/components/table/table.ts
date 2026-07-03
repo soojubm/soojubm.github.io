@@ -1,7 +1,7 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { classMap } from 'lit/directives/class-map.js'
-import { ifDefined } from 'lit/directives/if-defined.js'
+import { styleMap } from 'lit/directives/style-map.js'
 
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
 import { arrayAttributeConverter } from '@/utils/property-converters'
@@ -94,7 +94,7 @@ export class Table extends LitElement {
 
   private renderColumn(column: TableColumn) {
     return html`
-      <col width=${ifDefined(column.width)} />
+      <col style=${styleMap(column.width ? { width: column.width } : {})} />
     `
   }
 
