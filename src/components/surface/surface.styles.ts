@@ -1,6 +1,6 @@
 import { css } from 'lit'
 
-export type SurfaceVariant = 'transparent' | 'flat' | 'plain' | 'subtle' | 'elevated'
+export type SurfaceVariant = 'ghost' | 'flat' | 'plain' | 'subtle' | 'elevated'
 export type SurfaceSize = 'small' | 'medium'
 export type SurfaceRadius = 'default' | 'large'
 
@@ -26,7 +26,7 @@ export const surfaceStyles = css`
     transition: box-shadow 0.2s ease-in-out;
   }
 
-  :host([variant='transparent']) {
+  :host([variant='ghost']) {
     border: var(--border-transparent);
     background: none;
   }
@@ -38,6 +38,7 @@ export const surfaceStyles = css`
   }
 
   :host([variant='subtle']) {
+    border: var(--border-transparent);
     background-color: var(--color-background-subtle);
   }
 

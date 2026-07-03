@@ -12,10 +12,10 @@
 
   <mm-component-example>
     <mm-flex direction="column" gap="3">
-      <mm-surface variant="transparent">
+      <mm-surface variant="ghost">
         <mm-text-block
           level="3"
-          heading="transparent"
+          heading="ghost"
           description="투명한 배경. 클릭할 수 없다."
         ></mm-text-block>
       </mm-surface>
@@ -63,7 +63,7 @@
   <mm-component-props>
     <mm-prop
       name="variant"
-      type="'transparent' | 'flat' | 'plain' | 'subtle' | 'elevated'"
+      type="'ghost' | 'flat' | 'plain' | 'subtle' | 'elevated'"
       optional
     ></mm-prop>
     <mm-prop name="size" type="string" optional></mm-prop>
@@ -90,17 +90,7 @@
     <mm-feature-group columns="2">
       <mm-feature
         heading="Structural"
-        description="연독립된 배경 영역을 제공하여 화면을 논리적인 단위로 분리하고 관련 정보를 하나로 묶어, 전체 레이아웃의 시각적 구조를 잡아줍니다."
-      ></mm-feature>
-      <mm-feature
-        heading="Dimensional"
-        subtitle="notification, status, informational"
-        description="명도 대비나 음영(Shadow)을 통해 화면에 시각적인 깊이감(Depth)을 부여하고, 정보 레이어 간의 상하 관계를 직관적으로 인지하도록 돕습니다."
-      ></mm-feature>
-
-      <mm-feature
-        heading="Indicative"
-        description="고유한 배경색(Color)과 깊이감(Depth)의 조합 및 변화를 활용하여, 해당 영역이 사용자가 누를 수 있는(Clickable) 대상인지 아닌지를 직관적으로 식별하게 만드는 기표 역할을 합니다."
+        description="독립된 배경 영역으로 화면을 논리적인 단위로 분리하고 관련 정보를 하나로 묶습니다. 명도 대비와 음영(Shadow)의 깊이감으로 정보 레이어의 상하 관계까지 드러내며, 이 배경색·깊이의 변화가 해당 영역의 클릭 가능 여부를 식별하는 기표로도 작동합니다."
       ></mm-feature>
     </mm-feature-group>
     <mm-text-list
