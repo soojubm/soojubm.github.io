@@ -4,9 +4,9 @@ export const switchStyles = css`
   :host {
     --switch-width: 2rem;
     --switch-height: 16px;
-    --switch-radius: var(--radius);
-    --switch-color: var(--color-border);
-    --switch-color-checked: var(--selection-indicator-color);
+    --switch-border-radius: var(--radius);
+    --switch-background-color: var(--color-border);
+    --switch-background-color-checked: var(--selection-indicator-color);
     display: block;
     height: var(--switch-height);
     position: relative;
@@ -27,7 +27,7 @@ export const switchStyles = css`
 
     &:checked + label {
       &:before {
-        background: var(--switch-color-checked);
+        background: var(--switch-background-color-checked);
       }
       &:after {
         transform: translateX(calc(var(--switch-width) - 16px));
@@ -51,9 +51,9 @@ export const switchStyles = css`
       display: block;
       width: var(--switch-width);
       height: var(--switch-height);
-      border-radius: var(--switch-radius);
+      border-radius: var(--switch-border-radius);
       box-sizing: border-box;
-      background: var(--switch-color);
+      background: var(--switch-background-color);
       transition: all 0.25s;
     }
 
@@ -63,7 +63,7 @@ export const switchStyles = css`
       width: var(--switch-height);
       height: var(--switch-height);
       border: var(--border);
-      border-radius: var(--switch-radius);
+      border-radius: var(--switch-border-radius);
       box-sizing: border-box;
       background: var(--color-background);
       box-shadow: var(--shadow);

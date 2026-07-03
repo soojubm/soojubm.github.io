@@ -81,15 +81,15 @@ export type Category = keyof typeof categoryToneMap
 
 export const tagStyles = css`
   :host {
-    --tag-size: var(--size-small);
+    --tag-height: var(--size-small);
     --tag-padding-inline: var(--space-2);
     --tag-gap: var(--space-1);
     --tag-border: var(--border);
     --tag-border-color: var(--color-border);
-    --tag-radius: var(--radius);
+    --tag-border-radius: var(--radius);
     --tag-background-color: var(--color-background);
     --tag-color: var(--color-foreground);
-    --tag-font-size: var(--font-size-12);
+    --tag-text-size: var(--font-size-12);
 
     --tag-category-1-bg: var(--color-blue-50);
     --tag-category-1-border: var(--color-blue-200);
@@ -118,17 +118,17 @@ export const tagStyles = css`
 
     display: inline-flex;
     align-items: center;
-    min-height: var(--tag-size);
+    min-height: var(--tag-height);
     gap: var(--tag-gap);
     padding-inline: var(--tag-padding-inline);
     border: var(--tag-border);
     border-color: var(--tag-border-color);
-    border-radius: var(--tag-radius);
+    border-radius: var(--tag-border-radius);
     box-sizing: border-box;
     background-color: var(--tag-background-color);
     color: var(--tag-color);
     white-space: nowrap;
-    font-size: var(--tag-font-size);
+    font-size: var(--tag-text-size);
     line-height: 1;
   }
 

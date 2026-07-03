@@ -37,21 +37,29 @@
   <mm-component-tokens>
     <mm-token name="notice-gap" default="var(--space-2)"></mm-token>
     <mm-token name="notice-padding" default="var(--space-3)"></mm-token>
-    <mm-token name="notice-radius" default="var(--radius)"></mm-token>
+    <mm-token name="notice-border-radius" default="var(--radius)"></mm-token>
     <mm-token name="notice-border-width" default="var(--border-width)"></mm-token>
     <mm-token name="notice-accent" default="var(--color-foreground-light)"></mm-token>
     <mm-token name="notice-text-color" default="var(--color-foreground)"></mm-token>
-    <mm-token name="notice-bg" default="transparent"></mm-token>
+    <mm-token name="notice-background-color" default="transparent"></mm-token>
     <mm-token name="notice-border-color" default="var(--color-border)"></mm-token>
   </mm-component-tokens>
 
   <mm-component-guide>
+    <mm-feature-group columns="2">
+      <mm-feature
+        heading="Statusful"
+        description="성공·경고·오류·정보 등 의미 상태를 variant 톤으로 전달합니다. 색상만으로 의미를 전달하지 않고 아이콘·텍스트를 함께 제공합니다."
+      ></mm-feature>
+      <mm-feature
+        heading="Dismissible"
+        description="사용자가 확인한 알림을 직접 닫아 치울 수 있습니다. 닫기 버튼은 dismissible 속성으로 제공하고, mm-dismiss 이벤트로 닫힘 시점을 감지합니다."
+      ></mm-feature>
+    </mm-feature-group>
     <mm-text-list
       texts='[
         "role=\"alert\" 속성이 있는 요소는 브라우저가 즉시 사용자에게 읽습니다. 긴급도가 낮은 알림에는 role=\"status\"를 사용하세요.",
-        "사용자 귀책이 아닌 경우 단순 \"오류\" 대신 \"시스템 오류\"처럼 책임 소재를 명확히 해 사용자가 위축되지 않도록 합니다.",
-        "독립적인 on/off가 아닌 단일 선택 그룹에는 variant를 사용합니다. 색상만으로 의미를 전달하지 않고 아이콘을 함께 제공합니다.",
-        "닫기 버튼이 필요한 경우 dismissible 속성을 사용합니다. mm-dismiss 이벤트로 닫힘 시점을 감지할 수 있습니다."
+        "사용자 귀책이 아닌 경우 단순 \"오류\" 대신 \"시스템 오류\"처럼 책임 소재를 명확히 해 사용자가 위축되지 않도록 합니다."
       ]'
     ></mm-text-list>
   </mm-component-guide>

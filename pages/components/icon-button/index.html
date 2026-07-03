@@ -79,9 +79,9 @@
   </mm-component-props>
 
   <mm-component-tokens>
-    <mm-token name="button-size" default="var(--size-medium)"></mm-token>
+    <mm-token name="button-height" default="var(--size-medium)"></mm-token>
     <mm-token name="button-background-color" default="var(--color-background-subtle)"></mm-token>
-    <mm-token name="button-radius" default="var(--radius)"></mm-token>
+    <mm-token name="button-border-radius" default="var(--radius)"></mm-token>
     <mm-token name="button-text-color" default="var(--color-foreground)"></mm-token>
   </mm-component-tokens>
 
@@ -127,6 +127,12 @@
   </mm-component-anatomy>
 
   <mm-component-guide>
+    <mm-feature-group columns="2">
+      <mm-feature
+        heading="Groupable"
+        description="연속된 아이콘 버튼은 button-group으로 묶어 하나의 도구 단위로 제시합니다. 간격과 정렬은 그룹이 소유합니다."
+      ></mm-feature>
+    </mm-feature-group>
     <mm-paragraph>
       Toggled states. Buttons can swap icons based on data states.
       <br />

@@ -7,8 +7,8 @@ export const tooltipStyles = css`
 
     --tooltip-max-width: 320px;
     --tooltip-padding: 0.5rem var(--space-3);
-    --tooltip-radius: var(--radius);
-    --tooltip-color: var(--color-background-strong);
+    --tooltip-border-radius: var(--radius);
+    --tooltip-background-color: var(--color-background-strong);
     --tooltip-text-color: var(--color-foreground-on-solid);
     --tooltip-shadow: var(--shadow);
   }
@@ -51,8 +51,8 @@ export const tooltipStyles = css`
     width: max-content;
     max-width: var(--tooltip-max-width);
     padding: var(--tooltip-padding);
-    border-radius: var(--tooltip-radius);
-    background: var(--tooltip-color);
+    border-radius: var(--tooltip-border-radius);
+    background: var(--tooltip-background-color);
     box-shadow: var(--tooltip-shadow);
     color: var(--tooltip-text-color);
     position: absolute;

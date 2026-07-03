@@ -8,9 +8,9 @@ export class Thumbnail extends LitElement {
     :host {
       display: block;
       width: 100%;
-      --thumbnail-radius: var(--radius);
+      --thumbnail-border-radius: var(--radius);
       --thumbnail-border: var(--border);
-      --thumbnail-color-empty: var(--color-background-subtle);
+      --thumbnail-background-color-empty: var(--color-background-subtle);
     }
 
     figure {
@@ -37,7 +37,7 @@ export class Thumbnail extends LitElement {
       position: relative;
       width: 100%;
       aspect-ratio: 16 / 9;
-      background-color: var(--thumbnail-color-empty);
+      background-color: var(--thumbnail-background-color-empty);
     }
 
     :host([ratio='1:1']) .image-wrapper {
@@ -61,7 +61,7 @@ export class Thumbnail extends LitElement {
       border: var(--thumbnail-border, none);
       background: none;
       overflow: hidden;
-      border-radius: var(--thumbnail-radius);
+      border-radius: var(--thumbnail-border-radius);
       text-decoration: none;
       color: inherit;
     }

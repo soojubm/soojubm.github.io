@@ -31,9 +31,9 @@ export const radioGroupStyles = css`
 export const radioStyles = css`
   :host {
     --radio-size: var(--size-tiny);
-    --radio-color: var(--color-border-strong);
-    --radio-border: 1px solid var(--radio-color);
-    --radio-radius: 50%;
+    --radio-border-color: var(--color-border-strong);
+    --radio-border: 1px solid var(--radio-border-color);
+    --radio-border-radius: 50%;
     --radio-color-checked: var(--selection-indicator-color);
     position: relative;
   }
@@ -47,7 +47,7 @@ export const radioStyles = css`
       width: var(--radio-size);
       height: var(--radio-size);
       border: var(--radio-border);
-      border-radius: var(--radio-radius);
+      border-radius: var(--radio-border-radius);
       box-shadow: var(--shadow);
       box-sizing: border-box;
     }

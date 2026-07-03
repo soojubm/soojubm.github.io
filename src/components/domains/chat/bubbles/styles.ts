@@ -2,10 +2,11 @@ import { css } from 'lit'
 
 export const myChatBubbleStyles = css`
   :host {
-    --bubble-radius: var(--radius-large) var(--radius) var(--radius-large) var(--radius-large);
-    --thumbnail-radius: var(--bubble-radius);
+    --bubble-border-radius: var(--radius-large) var(--radius) var(--radius-large)
+      var(--radius-large);
+    --thumbnail-border-radius: var(--bubble-border-radius);
 
-    border-radius: var(--bubble-radius);
+    border-radius: var(--bubble-border-radius);
     border: var(--my-chat-bubble-border, var(--bubble-border, none));
     background: var(--my-chat-bubble-background, var(--color-primary));
     color: var(--my-chat-bubble-color, var(--color-foreground-on-solid));

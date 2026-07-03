@@ -5,11 +5,11 @@ import { MEDIA } from '@/stylesheets/shared/breakpoints'
 export const sheetStyles = css`
   :host {
     --sheet-z-index: var(--zindex-sheet);
-    --sheet-backdrop-color: var(--color-backdrop);
+    --sheet-backdrop-background-color: var(--color-backdrop);
     --sheet-background: var(--color-background);
     --sheet-border: 0;
     --sheet-shadow: none;
-    --sheet-radius: var(--radius-large);
+    --sheet-border-radius: var(--radius-large);
     --sheet-padding-inline: var(--space-4);
     --sheet-section-padding-block: var(--space-3);
     --sheet-body-padding-block-end: var(--space-4);
@@ -35,7 +35,7 @@ export const sheetStyles = css`
     height: var(--sheet-viewport-height);
     justify-content: center;
     align-items: center;
-    background: var(--sheet-backdrop-color);
+    background: var(--sheet-backdrop-background-color);
 
     opacity: 0;
     visibility: hidden;
@@ -71,7 +71,7 @@ export const sheetStyles = css`
     max-height: var(--sheet-max-height);
     padding: 0 var(--sheet-padding-inline);
     border: var(--sheet-border);
-    border-radius: var(--sheet-radius);
+    border-radius: var(--sheet-border-radius);
     background: var(--sheet-background);
     box-shadow: var(--sheet-shadow);
     box-sizing: border-box;
@@ -116,8 +116,8 @@ export const sheetStyles = css`
   /* bottom */
   :host([variant='bottom']) .sheet {
     max-width: var(--sheet-bottom-max-width);
-    border-bottom-left-radius: var(--sheet-radius);
-    border-bottom-right-radius: var(--sheet-radius);
+    border-bottom-left-radius: var(--sheet-border-radius);
+    border-bottom-right-radius: var(--sheet-border-radius);
     margin-top: auto;
     transform: translateY(100%);
   }

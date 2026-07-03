@@ -2,9 +2,9 @@ import { css } from 'lit'
 
 export const addButtonStyles = css`
   :host {
-    --add-button-size: var(--size-medium);
+    --add-button-height: var(--size-medium);
     --add-button-text-color: var(--color-foreground);
-    --add-button-radius: var(--radius);
+    --add-button-border-radius: var(--radius);
     --add-button-hover-bg: var(--color-background-subtle);
   }
 
@@ -14,10 +14,10 @@ export const addButtonStyles = css`
     align-items: center;
     gap: var(--space-2);
     width: 100%;
-    height: var(--add-button-size);
+    height: var(--add-button-height);
     padding: 0 var(--space-3);
     border: var(--border);
-    border-radius: var(--add-button-radius);
+    border-radius: var(--add-button-border-radius);
     color: var(--add-button-text-color);
     box-shadow: var(--shadow);
     font-family: var(--font-family);

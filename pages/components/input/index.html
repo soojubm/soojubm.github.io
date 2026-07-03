@@ -1,36 +1,4 @@
 <main class="page">
-  <style>
-    .test {
-      position: relative;
-    }
-    .test:after {
-      animation: spinAround 0.5s linear infinite;
-      border-bottom: 2px solid var(--color-foreground);
-      border-left: 2px solid var(--color-foreground);
-      border-radius: var(--bulma-radius-rounded);
-      border-right: 2px solid transparent;
-      border-top: 2px solid transparent;
-      content: '';
-      display: block;
-      height: 1em;
-      position: relative;
-      width: 1em;
-
-      inset-inline-end: 0.75em;
-      position: absolute !important;
-      top: 0.75em;
-      z-index: 4;
-    }
-
-    @keyframes spinAround {
-      0% {
-        transform: rotate(0deg);
-      }
-      100% {
-        transform: rotate(359deg);
-      }
-    }
-  </style>
   <!-- Dropdown(*Menu, Contextual Menu)*
     displays a list of actions, options or links.
     It is triggered when a user interacts with a Button, Textfield or other control.
@@ -95,8 +63,8 @@
     <mm-token name="input-height" default="var(--size-large)"></mm-token>
     <mm-token name="input-background-color" default="var(--color-background-subtle)"></mm-token>
     <mm-token name="input-border-color" default="transparent"></mm-token>
-    <mm-token name="input-radius" default="var(--radius)"></mm-token>
-    <mm-token name="input-color-border-hover" default="var(--color-border-hover)"></mm-token>
+    <mm-token name="input-border-radius" default="var(--radius)"></mm-token>
+    <mm-token name="input-border-color-hover" default="var(--color-border-hover)"></mm-token>
     <mm-token name="input-text-color" default="var(--color-foreground)"></mm-token>
   </mm-component-tokens>
 
@@ -153,14 +121,12 @@
   <mm-component-guide>
     <mm-feature-group columns="2">
       <mm-feature
-        heading="Inputtable"
-        description="사용자 여정에 허들이 될 수 있는 불필요한 정보 입력을 유도하지 마세요. 다시 말해 모든 텍스트필드는 필수 입력입니다. 사용자 정보를 수집하여 사용자 또는 비즈니스에 명확한 이점이 있는 경우 선택 필드를 제안할 수 있습니다. 이 때 선택 입력 필드는 '선택입력' 텍스트로 가이드합니다."
+        heading="Freeform"
+        description="제한된 선택지가 아니라 자유 형식 값을 받습니다. 사용자 여정에 허들이 될 수 있는 불필요한 정보 입력을 유도하지 마세요 — 모든 텍스트필드는 필수 입력이며, 명확한 이점이 있는 경우에만 '선택입력' 텍스트와 함께 선택 필드를 제안합니다."
       ></mm-feature>
       <mm-feature
-        heading="eye"
-        description="레이블을 텍스트필드 왼쪽에 배치하지 마세요. 아이콘은 텍스트 레이블을 대체할 수 있습니다.
-          텍스트 레이블 대신 아이콘 레이블을 사용하는 예시. 이메일 주소로 사용자를 추가하는
-          케이스에서 입력 정보를 아이콘으로 단순화 및 직관화. 이메일, 패스워드 등의 특수한 텍스트필드 타입은 기본 텍스트필드와의 구별을 위해 시각적인 단서를 제공하세요."
+        heading="Validatable"
+        description="입력값 자체의 규칙 위반을 검증하고 오류를 표시합니다. 오류 메시지는 영향을 받는 필드와 연결해 제공합니다."
       ></mm-feature>
     </mm-feature-group>
   </mm-component-guide>

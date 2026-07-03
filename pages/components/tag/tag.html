@@ -34,11 +34,11 @@
   </mm-component-props>
 
   <mm-component-tokens>
-    <mm-token name="tag-size" default="var(--size-small)"></mm-token>
+    <mm-token name="tag-height" default="var(--size-small)"></mm-token>
     <mm-token name="tag-padding-inline" default="var(--space-2)"></mm-token>
     <mm-token name="tag-gap" default="var(--space-1)"></mm-token>
-    <mm-token name="tag-radius" default="var(--radius)"></mm-token>
-    <mm-token name="tag-font-size" default="var(--font-size-12)"></mm-token>
+    <mm-token name="tag-border-radius" default="var(--radius)"></mm-token>
+    <mm-token name="tag-text-size" default="var(--font-size-12)"></mm-token>
   </mm-component-tokens>
 
   <mm-component-anatomy
@@ -74,15 +74,19 @@
       <mm-feature
         heading="Glanceable"
         subtitle="notification, status, informational"
-        description="컬러와 아이콘 등의 시각적 요소를 활용하여 시스템의 상태(Status)나 긴급도를 사용자가 화면을 훑는 것만으로도 한눈에 파악할 수 있게 합니다. (e.g., 진행 중, 승인 대기, 위험)"
+        description="클릭이나 삭제 같은 인터랙션 없이(Read-only), 컬러·아이콘 등의 시각적 단서로 상태·긴급도나 부가 메타 정보를 화면을 훑는 것만으로 한눈에 파악하게 합니다. (e.g., 진행 중, 승인 대기, 배송비 무료, NEW)"
       ></mm-feature>
       <mm-feature
         heading="Categorical"
         description="방대한 데이터 속에서 콘텐츠의 분류(Category)나 공통 속성(Property)을 명확하게 묶어 화면을 구조화하고, 사용자가 원하는 정보를 빠르게 탐색하도록 돕습니다. (e.g., 부서명, 기획전, 문서 유형)"
       ></mm-feature>
       <mm-feature
-        heading="Informational"
-        description="클릭이나 삭제 등의 별도 인터랙션(Non-interactive) 없이, 객체의 부가적인 속성이나 메타 정보를 읽기 전용(Read-only) 형태로 안전하고 콤팩트하게 전달합니다. (e.g., 배송비 무료, NEW, 추천)"
+        heading="Statusful"
+        description="상태·긴급도의 의미를 variant 색과 톤으로 담습니다. 색상만으로 구분하지 않고 아이콘·레이블을 함께 제공합니다."
+      ></mm-feature>
+      <mm-feature
+        heading="Groupable"
+        description="여러 태그는 tag-group으로 묶어 나열합니다. 간격과 줄바꿈은 그룹이 소유합니다."
       ></mm-feature>
     </mm-feature-group>
   </mm-component-guide>

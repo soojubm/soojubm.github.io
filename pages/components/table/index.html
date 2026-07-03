@@ -16,7 +16,7 @@
       </mm-button-group>
     </header>
 
-    <mm-flex gap="2" wrap>
+    <mm-flex gap="2" wrap="wrap">
       <mm-toggle-button-group
         id="button-list"
         options='[
@@ -49,13 +49,13 @@
       id="product-table"
       caption="히라가나 오십음도"
       columns='[
-        {"label": "선택", "width": "var(--col-checkbox)"},
+        {"label": "", "width": "var(--col-checkbox)"},
         {"label": "Name", "width": "80px", "sortable": true},
         {"label": "Title", "width": "240px"},
         {"label": "Link", "width": "80px"},
         {"label": "Status", "width": "80px"},
         {"label": "Age", "width": "80px", "textAlign": "right"},
-        {"label": "액션", "width": "160px", "textAlign": "right"}
+        {"label": "", "width": "160px", "textAlign": "right"}
       ]'
     ></mm-table>
     <mm-pagination current-page="7" page-count="50"></mm-pagination>
@@ -113,6 +113,12 @@
   </mm-component-tokens>
 
   <mm-component-guide>
+    <mm-feature-group columns="2">
+      <mm-feature
+        heading="Structural"
+        description="행과 열의 격자로 데이터의 구조를 잡아 값을 비교하고 탐색하기 쉽게 만듭니다."
+      ></mm-feature>
+    </mm-feature-group>
     <mm-text-list
       texts='[
         "첫 페이지와 마지막 페이지에 더블 화살표 아이콘을 사용하지 마세요. 최초 페이지와 최종 페이지 넘버를 제공하면 사용자는 대략적인 콘텐츠 수량을 파악할 수 있습니다.",

@@ -52,7 +52,7 @@ export class CommentItem extends LitElement {
       --sheet-section-padding-block: 0;
       --sheet-background: var(--color-background);
       --sheet-border: var(--border);
-      --sheet-radius: var(--radius);
+      --sheet-border-radius: var(--radius);
       --sheet-shadow: var(--shadow);
       --sheet-max-height: none;
 

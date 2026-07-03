@@ -2,7 +2,7 @@ import { css } from 'lit'
 
 export const menuItemStyles = css`
   :host {
-    --menuitem-radius: var(--radius);
+    --menuitem-border-radius: var(--radius);
     --menuitem-color-hover: var(--color-background-subtle);
     --menuitem-color-danger: var(--color-danger);
     --menuitem-padding-inline-start: 0;
@@ -12,7 +12,7 @@ export const menuItemStyles = css`
     display: flex;
     align-items: center;
     width: 100%;
-    border-radius: var(--menuitem-radius);
+    border-radius: var(--menuitem-border-radius);
     padding-inline-start: var(--menuitem-padding-inline-start);
     color: inherit;
     text-decoration: none;

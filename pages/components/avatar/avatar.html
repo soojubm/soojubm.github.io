@@ -34,7 +34,7 @@
     <mm-token name="avatar-size" default="var(--size-medium)"></mm-token>
     <mm-token name="avatar-background-color" default="var(--color-background-subtle)"></mm-token>
     <mm-token name="avatar-border" default="var(--border)"></mm-token>
-    <mm-token name="avatar-radius" default="var(--radius)"></mm-token>
+    <mm-token name="avatar-border-radius" default="var(--radius)"></mm-token>
   </mm-component-tokens>
 
   <mm-component-anatomy
@@ -67,11 +67,11 @@
     <mm-feature-group columns="2">
       <mm-feature
         heading="Representative"
-        description="사용자, 브랜드, 혹은 특정 객체를 시각적으로 대변합니다. 이미지 프로필을 최우선으로 보여주며, 이미지가 없을 경우 이름의 이니셜이나 기본 아이콘으로 대체(Fallback)하여 고유의 정체성을 유지합니다."
+        description="사용자·브랜드·객체를 시각적으로 대변합니다. 이미지 프로필을 최우선으로 보여주고, 없으면 이니셜이나 기본 아이콘으로 대체(Fallback)해 고유의 정체성을 유지합니다. 식별 정보에 상태 메타 데이터를 결합하면 하나의 독립된 정보 노출 단위로도 기능합니다."
       ></mm-feature>
       <mm-feature
-        heading="Informational"
-        description="객체의 고유 데이터(식별 정보)와 유기적인 메타 데이터(상태 정보)를 결합하여, 화면 내에서 하나의 독립된 정보 노출 단위로 기능합니다."
+        heading="Groupable"
+        description="여러 아바타는 avatar-group으로 겹쳐 묶어 참여자 무리를 압축해 보여줍니다. 겹침 간격과 초과 인원 표시는 그룹이 소유합니다."
       ></mm-feature>
     </mm-feature-group>
     <mm-text-list

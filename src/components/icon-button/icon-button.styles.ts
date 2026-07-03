@@ -5,7 +5,7 @@ export const iconButtonStyles = css`
     display: inline-flex;
     --icon-button-size: var(--size-medium);
     --icon-button-background-color: var(--color-background-subtle);
-    --icon-button-radius: var(--radius);
+    --icon-button-border-radius: var(--radius);
     --icon-button-border: var(--border-transparent);
     --icon-button-text-color: var(--color-foreground);
   }
@@ -18,7 +18,7 @@ export const iconButtonStyles = css`
     width: var(--icon-button-size);
     height: var(--icon-button-size);
     border: var(--icon-button-border);
-    border-radius: var(--icon-button-radius);
+    border-radius: var(--icon-button-border-radius);
     background: var(--icon-button-background-color);
     color: var(--icon-button-text-color);
     font-family: var(--font-family);

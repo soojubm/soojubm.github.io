@@ -7,7 +7,7 @@ export const tabsStyles = css`
     align-items: center;
     width: max-content;
 
-    --tabs-indicator-color: var(--selection-indicator-color);
+    --tabs-indicator-background-color: var(--selection-indicator-color);
     --tabs-line-color: var(--color-border);
     --tabs-line-width: var(--border-width);
     --tabs-pill-indicator-background: var(--color-background);
@@ -31,7 +31,7 @@ export const tabsStyles = css`
     & .indicator {
       bottom: calc(var(--tabs-line-width) * -1); /* 부모 보더선과 정밀하게 겹치도록 설정 */
       height: var(--tabs-line-width);
-      background-color: var(--tabs-indicator-color);
+      background-color: var(--tabs-indicator-background-color);
     }
   }
 

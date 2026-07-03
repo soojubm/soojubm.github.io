@@ -108,17 +108,14 @@
   <mm-component-guide>
     <mm-feature-group columns="2">
       <mm-feature
-        heading="Hierarchical"
-        description="글꼴의 크기(Size), 두께(Weight), 행간(Line-height)의 규칙을 활용해 정보의 우선순위를 시각적으로 구조화하고, 사용자의 읽기 흐름(Reading Order)을 안내합니다."
-      ></mm-feature>
-      <mm-feature
-        heading="Semantic"
-        description="추상적인 시각 요소(컬러, 아이콘 등)와 달리, 가공되지 않은 문자 그대로의 값을 노출하여 정보의 모호함을 없애고 메시지를 가장 정확하게 전달합니다."
+        heading="Groupable"
+        description="텍스트가 2개 이상이면 그룹 컴포넌트로 묶습니다. 제목과 설명은 text block으로, 연관 메타 정보는 메타 그룹으로 묶어 간격과 구조를 그룹이 소유합니다."
       ></mm-feature>
     </mm-feature-group>
     <br />
     <mm-text-list
       texts='[
+        "추상적인 시각 요소(컬러, 아이콘 등)와 달리, 가공되지 않은 문자 그대로의 값을 노출하여 정보의 모호함을 없애고 메시지를 가장 정확하게 전달합니다.",
         "피그마에서 소숫점 올림한다. line height를 고정값을 사용하는 것이 토큰화에도 좋다. (TODO 아이콘과 텍스트의 가운데 정렬 문제에 대하여)",
         "텍스트 목록을 2 댑스(nested)로 제공하지 마세요. 중첩된 목록은 콘텐츠를 읽기 어렵게 하며 작은 화면에 적합하지 않다. 약관에서는 사용해야 할 수도.",
         "태그라인은 작은 화면에서도 임팩트를 줄 수 있도록 작성 단계에서 행갈이를 고려하세요. 글자 또는 단어의 수를 제한하고 개행 조건을 정의하세요.",
@@ -252,49 +249,47 @@
     heading="Meta Item Group"
     description="연관된 메타 정보를 Flex와 기본 gap 4로 묶습니다. direction으로 가로 또는 세로 배치를 선택합니다."
   >
-    <mm-flex direction="column" gap="8">
-      <mm-meta-item label="keyvalue key text" value="keyvalue value text"></mm-meta-item>
+    <mm-meta-item label="keyvalue key text" value="keyvalue value text"></mm-meta-item>
 
-      <mm-meta-item-group>
-        <mm-meta-item layout="stacked" label="사이즈" value="보통"></mm-meta-item>
-        <mm-meta-item layout="stacked" label="한글" value="작은 거 필요하나"></mm-meta-item>
-        <mm-meta-item layout="stacked" label="Move" value="562 kcal"></mm-meta-item>
-      </mm-meta-item-group>
+    <mm-meta-item-group>
+      <mm-meta-item layout="stacked" label="사이즈" value="보통"></mm-meta-item>
+      <mm-meta-item layout="stacked" label="한글" value="작은 거 필요하나"></mm-meta-item>
+      <mm-meta-item layout="stacked" label="Move" value="562 kcal"></mm-meta-item>
+    </mm-meta-item-group>
 
-      <mm-meta-item-group>
-        <mm-meta-item layout="inline" label="국가" value="미국"></mm-meta-item>
-        <mm-meta-item layout="inline" label="언어" value="영어"></mm-meta-item>
-        <mm-meta-item layout="inline" label="장르" value="드라마"></mm-meta-item>
-        <mm-meta-item layout="inline" label="러닝타임" value="103분"></mm-meta-item>
-      </mm-meta-item-group>
+    <mm-meta-item-group>
+      <mm-meta-item layout="inline" label="국가" value="미국"></mm-meta-item>
+      <mm-meta-item layout="inline" label="언어" value="영어"></mm-meta-item>
+      <mm-meta-item layout="inline" label="장르" value="드라마"></mm-meta-item>
+      <mm-meta-item layout="inline" label="러닝타임" value="103분"></mm-meta-item>
+    </mm-meta-item-group>
 
-      <mm-meta-item-group>
-        <mm-meta-item
-          layout="stacked"
-          label="리뷰 116개"
-          value="⭐ 4.8"
-          value-size="large"
-        ></mm-meta-item>
-        <mm-meta-item
-          layout="stacked"
-          label="Tomatometer"
-          value="🍅 97%"
-          value-size="large"
-        ></mm-meta-item>
-        <mm-meta-item
-          layout="stacked"
-          label="등급"
-          value="18세 이상"
-          value-size="large"
-        ></mm-meta-item>
-      </mm-meta-item-group>
+    <mm-meta-item-group>
+      <mm-meta-item
+        layout="stacked"
+        label="리뷰 116개"
+        value="⭐ 4.8"
+        value-size="large"
+      ></mm-meta-item>
+      <mm-meta-item
+        layout="stacked"
+        label="Tomatometer"
+        value="🍅 97%"
+        value-size="large"
+      ></mm-meta-item>
+      <mm-meta-item
+        layout="stacked"
+        label="등급"
+        value="18세 이상"
+        value-size="large"
+      ></mm-meta-item>
+    </mm-meta-item-group>
 
-      <mm-meta-item-group>
-        <mm-meta-item label="상품 금액" value="₩ 16,000"></mm-meta-item>
-        <mm-meta-item label="배송비" value="무료"></mm-meta-item>
-        <mm-meta-item label="총 결제 금액" value="₩ 16,000"></mm-meta-item>
-      </mm-meta-item-group>
-    </mm-flex>
+    <mm-meta-item-group>
+      <mm-meta-item label="상품 금액" value="₩ 16,000"></mm-meta-item>
+      <mm-meta-item label="배송비" value="무료"></mm-meta-item>
+      <mm-meta-item label="총 결제 금액" value="₩ 16,000"></mm-meta-item>
+    </mm-meta-item-group>
   </mm-component-section>
 
   <mm-component-section

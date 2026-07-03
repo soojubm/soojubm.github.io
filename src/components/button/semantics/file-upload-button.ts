@@ -102,7 +102,7 @@ export class FileUploadButton extends LitElement {
     if (!this.files.length) return nothing
 
     return html`
-      <mm-flex class="attachment-list" gap="2" wrap>
+      <mm-flex class="attachment-list" gap="2" wrap="wrap">
         ${repeat(
           this.files,
           file => file,

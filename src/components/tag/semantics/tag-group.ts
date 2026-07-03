@@ -17,7 +17,7 @@ export class TagGroup extends LitElement {
 
   render() {
     return html`
-      <mm-flex gap="2" wrap>
+      <mm-flex gap="2" wrap="wrap">
         <slot></slot>
       </mm-flex>
     `

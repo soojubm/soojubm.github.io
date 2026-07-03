@@ -35,7 +35,7 @@ export const paginationStyles = css`
     mm-prev-button,
     mm-next-button,
     mm-page-button {
-      --button-size: var(--size-small);
+      --button-height: var(--size-small);
     }
 
     .pagination-ellipsis {

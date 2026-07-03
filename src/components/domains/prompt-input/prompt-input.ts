@@ -25,7 +25,7 @@ export class PromptInput extends LitElement {
       }
 
       mm-textarea {
-        --input-color-border-hover: transparent;
+        --input-border-color-hover: transparent;
         --input-focus-shadow: none;
       }
 
@@ -57,7 +57,7 @@ export class PromptInput extends LitElement {
   render() {
     return html`
       <form>
-        <mm-flex wrap justify-content=${this.isSingleLine ? 'start' : 'between'}>
+        <mm-flex wrap="wrap" justify-content=${this.isSingleLine ? 'start' : 'between'}>
           ${this.renderStartActions()}
           <mm-textarea
             .value=${this.value}

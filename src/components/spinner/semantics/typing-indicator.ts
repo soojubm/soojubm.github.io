@@ -15,7 +15,7 @@ export class TypingIndicator extends LitElement {
       :host {
         display: inline-flex;
         gap: var(--space-1);
-        --typing-color: var(--color-foreground);
+        --typing-background-color: var(--color-foreground);
       }
 
       span {
@@ -23,7 +23,7 @@ export class TypingIndicator extends LitElement {
         width: 4px;
         height: 4px;
         border-radius: 50%;
-        background: var(--typing-color, var(--color-foreground));
+        background: var(--typing-background-color, var(--color-foreground));
         animation: chatting 0.6s 0s ease infinite;
       }
 
@@ -63,7 +63,7 @@ export class TypingIndicator extends LitElement {
   protected updated(changedProperties: Map<string, unknown>) {
     if (!changedProperties.has('color')) return
 
-    this.style.setProperty('--typing-color', this.color)
+    this.style.setProperty('--typing-background-color', this.color)
   }
 }
 

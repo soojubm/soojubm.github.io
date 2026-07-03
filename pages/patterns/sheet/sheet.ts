@@ -206,7 +206,7 @@ function sheetPageTemplate() {
 
       <mm-component-section
         heading="mm-backdrop"
-        description="레이어 뒤에 표시되는 반투명 Backdrop. open prop으로 표시하며 --backdrop-color로 색상을 재정의할 수 있습니다."
+        description="레이어 뒤에 표시되는 반투명 Backdrop. open prop으로 표시하며 --backdrop-background-color로 색상을 재정의할 수 있습니다."
       >
         <div style="position: relative; height: 120px; border-radius: 12px; overflow: hidden">
           <mm-paragraph>배경 콘텐츠</mm-paragraph>

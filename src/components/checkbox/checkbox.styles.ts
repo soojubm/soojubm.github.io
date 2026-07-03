@@ -17,10 +17,10 @@ export const checkboxGroupStyles = css`
 export const checkboxStyles = css`
   :host {
     --checkbox-size: var(--size-tiny);
-    --checkbox-radius: 4px;
-    --checkbox-color: var(--color-border-strong);
-    --checkbox-color-background: var(--color-background);
-    --checkbox-color-checked: var(--selection-indicator-color);
+    --checkbox-border-radius: 4px;
+    --checkbox-border-color: var(--color-border-strong);
+    --checkbox-background-color: var(--color-background);
+    --checkbox-border-color-checked: var(--selection-indicator-color);
     gap: var(--space-2);
   }
 
@@ -56,10 +56,10 @@ export const checkboxStyles = css`
     width: var(--checkbox-size);
     height: var(--checkbox-size);
     border: var(--border);
-    border-color: var(--checkbox-color);
+    border-color: var(--checkbox-border-color);
     box-sizing: border-box;
-    border-radius: var(--checkbox-radius);
-    background: var(--checkbox-color-background);
+    border-radius: var(--checkbox-border-radius);
+    background: var(--checkbox-background-color);
   }
 
   input[type='checkbox'] + label > span::after {
@@ -77,7 +77,7 @@ export const checkboxStyles = css`
   }
 
   input[type='checkbox']:checked + label > span::after {
-    border-color: var(--checkbox-color-checked);
+    border-color: var(--checkbox-border-color-checked);
     transform: rotate(-50deg) scale(1);
   }
 

@@ -130,8 +130,8 @@
 }
 
 .sidebar-menu > div mm-menu-item-link {
-  --menuitem-radius: 0 var(--radius) var(--radius) 0;
-  --menuitem-padding-inline-start: calc(var(--space-4) + var(--space-1));
+  --menuitem-border-radius: 0 var(--radius) var(--radius) 0;
+  --menuitem-padding-inline-start: calc(var(--space-4) + var(--space-2));
 
   display: block;
   margin: 0 0 0 var(--space-4);

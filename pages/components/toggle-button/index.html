@@ -24,16 +24,20 @@
   </mm-component-props>
 
   <mm-component-tokens>
-    <mm-token name="toggle-button-radius" default="var(--radius)"></mm-token>
+    <mm-token name="toggle-button-border-radius" default="var(--radius)"></mm-token>
   </mm-component-tokens>
 
   <mm-component-guide>
-    <mm-text-list
-      texts='[
-        "독립 on/off에는 ToggleButton, 단일 선택(세그먼트)에는 ToggleButtonGroup을 사용합니다.",
-        "옵션 개수가 4~5개 이상이거나 화면 공간이 좁고 옵션을 숨겨야 할 때는 Dropdown/Select를 고려합니다."
-      ]'
-    ></mm-text-list>
+    <mm-feature-group columns="2">
+      <mm-feature
+        heading="Interactive - selection"
+        description="누를 때마다 누름(pressed) 상태가 토글되어 선택 여부를 드러내고, 그룹에서는 단일 선택으로 동작합니다."
+      ></mm-feature>
+      <mm-feature
+        heading="Groupable"
+        description="독립 on/off에는 ToggleButton을 단독으로, 세그먼트(단일/다중)에는 toggle-button-group을 사용합니다. 선택 규칙과 간격은 그룹이 소유합니다."
+      ></mm-feature>
+    </mm-feature-group>
   </mm-component-guide>
 
   <mm-component-anatomy

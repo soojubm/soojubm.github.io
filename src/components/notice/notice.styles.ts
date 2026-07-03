@@ -7,21 +7,21 @@ export const noticeStyles = css`
 
     /* structure */
     --notice-padding: var(--space-3);
-    --notice-radius: var(--radius);
+    --notice-border-radius: var(--radius);
     --notice-border-width: var(--border-width);
 
     /* semantic color — default (info) */
     --notice-accent: var(--color-foreground-light);
     --notice-text-color: var(--color-foreground);
-    --notice-bg: transparent;
+    --notice-background-color: transparent;
     --notice-border-color: var(--color-border);
   }
 
   .notice {
     padding: var(--notice-padding);
     border: var(--notice-border-width) solid var(--notice-border-color);
-    border-radius: var(--notice-radius);
-    background: var(--notice-bg);
+    border-radius: var(--notice-border-radius);
+    background: var(--notice-background-color);
     color: var(--notice-text-color);
     position: relative;
   }
@@ -29,21 +29,21 @@ export const noticeStyles = css`
   :host([variant='success']) {
     --notice-accent: var(--color-success);
     --notice-text-color: var(--color-success-foreground);
-    --notice-bg: var(--color-success-subtle);
+    --notice-background-color: var(--color-success-subtle);
     --notice-border-color: var(--color-success-border);
   }
 
   :host([variant='warning']) {
     --notice-accent: var(--color-warning);
     --notice-text-color: var(--color-warning-foreground);
-    --notice-bg: var(--color-warning-subtle);
+    --notice-background-color: var(--color-warning-subtle);
     --notice-border-color: var(--color-warning-border);
   }
 
   :host([variant='danger']) {
     --notice-accent: var(--color-danger);
     --notice-text-color: var(--color-danger-foreground);
-    --notice-bg: var(--color-danger-subtle);
+    --notice-background-color: var(--color-danger-subtle);
     --notice-border-color: var(--color-danger-border);
   }
 

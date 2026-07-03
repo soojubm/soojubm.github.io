@@ -14,36 +14,22 @@ export const tokenStyles = [
 
     dt {
       font-weight: var(--font-weight-bold);
+      line-height: var(--size-medium);
     }
 
     dd {
       margin: 0;
+      line-height: var(--size-medium);
     }
 
     .dash {
     }
 
-    .word-0 {
-      color: var(--gray800);
-    }
-    .word-1 {
-    }
-    .word-2 {
-    }
-    .word-3 {
+    .word-state {
       color: var(--color-orange-700);
     }
-    .word-4 {
+    .word-property {
       color: var(--color-cyan-700);
-    }
-    .word-5 {
-      color: var(--color-yellow-700);
-    }
-    .word-6 {
-      color: var(--color-red-700);
-    }
-    .word-7 {
-      color: var(--color-purple-700);
     }
   `,
 ]

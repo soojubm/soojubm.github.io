@@ -6,17 +6,17 @@ export class UiPlaceholder extends LitElement {
   static styles = css`
     :host {
       display: block;
-      --ui-placeholder-color: var(--color-primary-subtle);
+      --ui-placeholder-background-color: var(--color-primary-subtle);
       --ui-placeholder-height: 4rem;
-      --ui-placeholder-radius: var(--radius-large);
+      --ui-placeholder-border-radius: var(--radius-large);
     }
 
     .placeholder {
       width: 100%;
-      background: var(--ui-placeholder-color);
+      background: var(--ui-placeholder-background-color);
       border: 1px solid var(--brutal-border-color);
       height: var(--ui-placeholder-height);
-      border-radius: var(--ui-placeholder-radius);
+      border-radius: var(--ui-placeholder-border-radius);
     }
   `
 
@@ -31,9 +31,9 @@ export class UiPlaceholder extends LitElement {
   }
 
   protected willUpdate() {
-    this.style.setProperty('--ui-placeholder-color', this.color)
+    this.style.setProperty('--ui-placeholder-background-color', this.color)
     this.style.setProperty('--ui-placeholder-height', this.height)
-    this.style.setProperty('--ui-placeholder-radius', this.radius)
+    this.style.setProperty('--ui-placeholder-border-radius', this.radius)
   }
 }
 

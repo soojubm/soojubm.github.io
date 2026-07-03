@@ -11,6 +11,7 @@ type GapAlias = 'section'
 type JustifyContent = JustifyAlias | 'flex-start' | 'flex-end' | 'space-between' | 'space-around'
 type AlignItems = AlignAlias | 'flex-start' | 'flex-end'
 type FlexAs = 'div' | 'header' | 'section' | 'footer' | 'nav'
+type FlexWrap = 'nowrap' | 'wrap' | 'wrap-reverse'
 
 const justifyMap: Record<JustifyAlias, string> = {
   start: 'flex-start',
@@ -66,8 +67,11 @@ export class Flex extends LitElement {
         flex-direction: column;
       }
 
-      :host([wrap]) {
+      :host([wrap='wrap']) {
         flex-wrap: wrap;
+      }
+      :host([wrap='wrap-reverse']) {
+        flex-wrap: wrap-reverse;
       }
 
       :host([gap='0']) {
@@ -147,7 +151,7 @@ export class Flex extends LitElement {
     'stretch'
   @property({ type: String, reflect: true }) gap = '0'
   @property({ type: String, reflect: true }) as: FlexAs = 'div'
-  @property({ type: Boolean, reflect: true }) wrap = false
+  @property({ type: String, reflect: true }) wrap: FlexWrap = 'nowrap'
   @property({ type: Boolean, reflect: true }) stretch = false
 
   render() {
@@ -206,7 +210,7 @@ export class Flex extends LitElement {
       justifyContent: justifyMap[this.justifyContent as JustifyAlias] ?? this.justifyContent,
       alignItems: alignMap[this.alignItems as AlignAlias] ?? this.alignItems,
       gap: this.gapValue,
-      flexWrap: this.wrap ? 'wrap' : 'nowrap',
+      flexWrap: this.wrap,
     }
   }
 }

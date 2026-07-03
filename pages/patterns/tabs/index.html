@@ -42,7 +42,10 @@
   </mm-component-props>
 
   <mm-component-tokens>
-    <mm-token name="tabs-indicator-color" default="var(--selection-indicator-color)"></mm-token>
+    <mm-token
+      name="tabs-indicator-background-color"
+      default="var(--selection-indicator-color)"
+    ></mm-token>
     <mm-token name="tabs-line-color" default="var(--color-border)"></mm-token>
     <mm-token name="tabs-line-width" default="2px"></mm-token>
     <mm-token name="tabs-pill-background" default="var(--color-background-subtle)"></mm-token>
@@ -50,19 +53,18 @@
       name="tabs-pill-indicator-background"
       default="var(--selection-background)"
     ></mm-token>
-    <mm-token name="tabs-pill-radius" default="var(--radius)"></mm-token>
+    <mm-token name="tabs-pill-border-radius" default="var(--radius)"></mm-token>
   </mm-component-tokens>
 
   <mm-component-guide>
     <mm-feature-group columns="2">
       <mm-feature
-        heading="Interactive - content switching"
+        heading="Interactive - selection"
         subtitle="Easy scanning"
-        description="페이지 링크, 콘텐츠 정렬, 콘텐츠 필터 또는 탭투스크롤로 사용하지 마세요. 좌우 방향키로 탭을 이동하고 Home·End로 처음·마지막 탭을 선택합니다."
+        description="여러 탭 중 현재 보고 있는 탭 하나를 aria-selected 상태로 드러냅니다. 페이지 링크, 콘텐츠 정렬, 콘텐츠 필터 또는 탭투스크롤로 사용하지 마세요. 좌우 방향키로 탭을 이동하고 Home·End로 처음·마지막 탭을 선택합니다."
       ></mm-feature>
       <mm-feature
-        heading="Easy scanning"
-        subtitle="Easy scanning"
+        heading="Glanceable"
         description="최대 2단어를 넘지 않도록 작성하고 두 줄이 되지 않도록 작성합니다. (그러나 폴더블과 워치 이후 말 줄임표나 두 줄 레이블을 허용해야 하는가)"
       ></mm-feature>
     </mm-feature-group>

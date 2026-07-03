@@ -20,12 +20,12 @@ export class AccordionItem extends LitElement {
         padding: var(--accordion-padding-y) var(--accordion-padding-x);
         background: var(--accordion-background);
         border: var(--accordion-border, none);
-        border-radius: var(--accordion-radius);
+        border-radius: var(--accordion-border-radius);
 
         --accordion-padding-x: var(--space-4);
         --accordion-padding-y: var(--space-2);
         --accordion-background: var(--color-background-subtle);
-        --accordion-radius: var(--radius);
+        --accordion-border-radius: var(--radius);
         --accordion-icon-size: 1.25rem;
         --accordion-transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
       }

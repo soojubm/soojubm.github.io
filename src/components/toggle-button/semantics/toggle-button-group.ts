@@ -24,27 +24,27 @@ interface OptionItem {
 export class ToggleButtonGroup extends LitElement {
   static styles = css`
     :host {
-      --toggle-radius: var(--radius);
+      --toggle-border-radius: var(--radius);
     }
 
     mm-flex {
-      border-radius: var(--toggle-radius);
+      border-radius: var(--toggle-border-radius);
     }
 
     mm-toggle-button {
-      --toggle-button-radius: 0;
+      --toggle-button-border-radius: 0;
     }
 
     mm-toggle-button:first-child {
-      --toggle-button-radius: var(--toggle-radius) 0 0 var(--toggle-radius);
+      --toggle-button-border-radius: var(--toggle-border-radius) 0 0 var(--toggle-border-radius);
     }
 
     mm-toggle-button:last-child {
-      --toggle-button-radius: 0 var(--toggle-radius) var(--toggle-radius) 0;
+      --toggle-button-border-radius: 0 var(--toggle-border-radius) var(--toggle-border-radius) 0;
     }
 
     mm-toggle-button:only-child {
-      --toggle-button-radius: var(--toggle-radius);
+      --toggle-button-border-radius: var(--toggle-border-radius);
     }
 
     :host([stretch]) mm-flex {

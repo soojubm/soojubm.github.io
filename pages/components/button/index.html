@@ -43,12 +43,12 @@
   </mm-component-props>
 
   <mm-component-tokens>
-    <mm-token name="button-size" default="var(--size-medium)"></mm-token>
+    <mm-token name="button-height" default="var(--size-medium)"></mm-token>
     <mm-token name="button-min-width" default="5rem"></mm-token>
     <mm-token name="button-padding-inline" default="var(--space-3)"></mm-token>
     <mm-token name="button-background-color" default="var(--color-background-subtle)"></mm-token>
     <mm-token name="button-border" default="1px solid var(--button-background-color)"></mm-token>
-    <mm-token name="button-radius" default="var(--radius)"></mm-token>
+    <mm-token name="button-border-radius" default="var(--radius)"></mm-token>
     <mm-token name="button-text-color" default="var(--color-foreground)"></mm-token>
     <mm-token name="button-text-size" default="inherit"></mm-token>
     <mm-token name="button-text-weight" default="var(--font-weight-bold)"></mm-token>
@@ -85,15 +85,17 @@
   <mm-component-guide>
     <mm-feature-group columns="2">
       <mm-feature
-        heading="Actionable"
+        heading="Interactive - action"
         description="버튼은 페이지 내에서 여러 번 반복될 수 없는 최종적인 인터렉션입니다. 단, 전송이 실패하는 경우 여러 번 반복해서 실행할 수 있습니다."
       ></mm-feature>
       <mm-feature
-        heading="Feedback needed"
-        subtitle="Easy scanning"
+        heading="Feedback"
         description="물리적인 인터페이스의 출현만이 수행 결과의 피드백이 아닙니다. 예측할 수 있는 페이지 이동이나 페이지 새로고침, 정보 구조의 변화도 피드백으로 취급될 수 있습니다. (ex bad case: 인스타그램 앱에서 로그인되었다는 toast. 홈으로 이동과 피드 노출만으로 로그인 상태를 인지할수 있다.)"
       ></mm-feature>
-      <mm-feature heading="Groupable" subtitle="Easy scanning" description="TODO"></mm-feature>
+      <mm-feature
+        heading="Groupable"
+        description="관련된 액션은 button-group으로 묶어 하나의 단위로 제시합니다. 정렬·간격과 버튼 사이의 관계는 그룹이 소유합니다."
+      ></mm-feature>
     </mm-feature-group>
 
     <!-- <table class="table">

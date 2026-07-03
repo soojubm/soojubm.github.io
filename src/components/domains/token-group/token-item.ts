@@ -13,6 +13,7 @@ export class TokenItem extends LitElement {
       :host {
         display: inline-flex;
         gap: var(--space-2);
+        line-height: var(--size-medium);
       }
     `,
   ]

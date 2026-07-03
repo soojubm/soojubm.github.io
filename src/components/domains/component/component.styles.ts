@@ -10,7 +10,7 @@ export const componentContentFrameStyles = css`
     );
     padding: var(--component-content-padding-block) var(--component-content-padding-inline);
     border: var(--component-content-frame-border, var(--border));
-    border-radius: var(--component-content-frame-radius, var(--radius-large));
+    border-radius: var(--component-content-frame-border-radius, var(--radius-large));
   }
 
   @media ${MEDIA.small} {

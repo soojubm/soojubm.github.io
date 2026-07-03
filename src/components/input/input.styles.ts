@@ -5,9 +5,9 @@ export const inputStyles = css`
     position: relative;
     --input-height: var(--size-large);
     --input-background-color: var(--color-background-subtle);
-    --input-radius: var(--radius);
+    --input-border-radius: var(--radius);
     --input-border: var(--border-transparent);
-    --input-color-border-hover: var(--color-border-hover);
+    --input-border-color-hover: var(--color-border-hover);
     --input-focus-shadow: var(--status-hover);
     --input-padding-block: var(--space-3);
     --input-padding-inline: var(--space-4);
@@ -29,14 +29,14 @@ export const inputStyles = css`
     gap: var(--space-2);
     padding-inline: var(--input-padding-inline);
     border: var(--input-border);
-    border-radius: var(--input-radius);
+    border-radius: var(--input-border-radius);
     box-sizing: border-box;
     background: var(--input-background-color);
     /* 기본 transparent, brutal 테마에서 --input-border-color 주입(상속)으로 #000.
        hover/invalid가 element-level border-color로 덮으므로 상태는 그대로 우선. */
 
     &:hover {
-      border-color: var(--input-color-border-hover);
+      border-color: var(--input-border-color-hover);
     }
     &:focus-within {
       box-shadow: var(--input-focus-shadow);

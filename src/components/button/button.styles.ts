@@ -40,11 +40,11 @@ export const buttonBaseStyles = [
   interactiveControlStyles,
   css`
     :host {
-      --button-size: var(--size-medium);
+      --button-height: var(--size-medium);
       --button-min-width: 5rem;
       --button-border: var(--border-transparent);
       --button-padding-inline: var(--space-3);
-      --button-radius: var(--radius);
+      --button-border-radius: var(--radius);
       --button-background-color: var(--color-background-subtle);
       --button-text-size: inherit;
       --button-text-weight: var(--font-weight-normal);
@@ -62,10 +62,10 @@ export const buttonBaseStyles = [
       /* max-content for trailing icons */
       width: var(--button-width, max-content);
       gap: var(--space-2);
-      height: var(--button-size);
+      height: var(--button-height);
       padding: 0 var(--button-padding-inline);
       border: var(--button-border);
-      border-radius: var(--button-radius);
+      border-radius: var(--button-border-radius);
       background: var(--button-background-color);
       box-sizing: border-box;
 
@@ -83,16 +83,16 @@ export const buttonBaseStyles = [
 /** mm-button 크기 변형. */
 export const buttonSizeStyles = css`
   :host([size='huge']) button {
-    --button-size: var(--size-huge);
+    --button-height: var(--size-huge);
     --button-text-size: var(--font-size-18);
     padding-bottom: 5px;
   }
   :host([size='large']) button {
-    --button-size: var(--size-large);
+    --button-height: var(--size-large);
     min-width: var(--button-min-width);
   }
   :host([size='small']) button {
-    --button-size: var(--size-medium);
+    --button-height: var(--size-medium);
     min-width: 0;
   }
 `
@@ -134,12 +134,12 @@ export const toggleButtonStyles = css`
   :host {
     display: inline-flex;
 
-    --toggle-button-radius: var(--radius);
+    --toggle-button-border-radius: var(--radius);
   }
 
   button {
     width: 100%;
-    border-radius: var(--toggle-button-radius);
+    border-radius: var(--toggle-button-border-radius);
   }
 `
 

@@ -9,8 +9,8 @@ export const surfaceStyles = css`
     --surface-height: auto;
     --surface-padding: var(--space-4);
     --surface-border: var(--border);
-    --surface-radius: var(--radius);
-    --surface-color: var(--color-background);
+    --surface-border-radius: var(--radius);
+    --surface-background-color: var(--color-background);
 
     display: flex;
     flex-direction: column;
@@ -18,9 +18,9 @@ export const surfaceStyles = css`
     width: 100%;
     padding: var(--surface-padding);
     border: var(--surface-border);
-    border-radius: var(--surface-radius);
+    border-radius: var(--surface-border-radius);
     box-sizing: border-box;
-    background: var(--surface-color);
+    background: var(--surface-background-color);
     position: relative;
     z-index: 1;
     transition: box-shadow 0.2s ease-in-out;
@@ -56,10 +56,10 @@ export const surfaceStyles = css`
   }
 
   :host([radius='default']) {
-    --surface-radius: var(--radius);
+    --surface-border-radius: var(--radius);
   }
 
   :host([radius='large']) {
-    --surface-radius: var(--radius-large);
+    --surface-border-radius: var(--radius-large);
   }
 `

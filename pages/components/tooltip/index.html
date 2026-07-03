@@ -82,8 +82,8 @@ type Placement = Side | `${Side}-${Align}`;> -->
   <mm-component-tokens>
     <mm-token name="tooltip-max-width" default="320px"></mm-token>
     <mm-token name="tooltip-padding" default="0.5rem var(--space-3)"></mm-token>
-    <mm-token name="tooltip-radius" default="var(--radius)"></mm-token>
-    <mm-token name="tooltip-color" default="var(--color-background-strong)"></mm-token>
+    <mm-token name="tooltip-border-radius" default="var(--radius)"></mm-token>
+    <mm-token name="tooltip-background-color" default="var(--color-background-strong)"></mm-token>
     <mm-token name="tooltip-text-color" default="var(--color-foreground-on-solid)"></mm-token>
     <mm-token name="tooltip-shadow" default="var(--shadow)"></mm-token>
   </mm-component-tokens>
@@ -95,14 +95,18 @@ type Placement = Side | `${Side}-${Align}`;> -->
         description="작은 화면에서 바텀 시트나 팝오버로 제공하는 것이 좋다. 사용자가 반드시 숙지해야 하는 중요한 정보를 툴팁으로 제공하지 마세요."
       ></mm-feature>
       <mm-feature
-        heading="Not Recommended"
-        subtitle="Easy scanning"
-        description="설명이 필요없는 플로우와 인터페이스를 만들어라.. 툴팁은 없을수록 좋다. 접근성을 위한 최소한의 설명만 제공"
+        heading="Transient"
+        description="hover나 포커스가 벗어나면 스스로 사라져 흔적을 남기지 않습니다. 사라져도 흐름에 지장 없는 정보만 담습니다."
       ></mm-feature>
-      <mm-feature heading="Aids accessibility" description="TODO"></mm-feature>
+      <mm-feature
+        heading="Anchored"
+        description="화면 좌표가 아니라 트리거 요소가 위치를 결정합니다. 방향과 정렬은 placement prop 하나로 지정합니다."
+      ></mm-feature>
     </mm-feature-group>
     <mm-text-list
       texts='[
+        "설명이 필요 없는 플로우와 인터페이스를 우선하세요. 툴팁은 없을수록 좋으며, 접근성을 위한 최소한의 설명만 제공합니다.",
+        "내용은 보조기술이 읽을 수 있도록 대상 요소의 설명으로 연결하고, hover뿐 아니라 키보드 포커스로도 열 수 있어야 합니다.",
         "아코디언도 마찬가지. 중요한 액션을 요할 때는 cognitive? button이나 text link 등 충분히 강조되고 눈에 띄는 컴포넌트를 사용.",
         "short text, long form text. MD3 rich tooltip(title, description, actions-link/button) / plain tooltip",
         "useFloating, "

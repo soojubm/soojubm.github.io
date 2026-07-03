@@ -53,7 +53,7 @@
   </mm-component-props>
 
   <mm-component-tokens>
-    <mm-token name="menuitem-radius" default="var(--radius)"></mm-token>
+    <mm-token name="menuitem-border-radius" default="var(--radius)"></mm-token>
     <mm-token name="menuitem-color-hover" default="var(--color-background-subtle)"></mm-token>
     <mm-token name="menuitem-color-danger" default="var(--color-danger)"></mm-token>
   </mm-component-tokens>
@@ -66,6 +66,20 @@
   패턴. 사용자 인터렉션 방식에 가까움. listbox는 기본적으로 드롭다운 목록을 제공하지않는다.", -->
 
   <mm-component-guide>
+    <mm-feature-group columns="2">
+      <mm-feature
+        heading="Interactive - action"
+        description="hover·포커스·키보드 탐색과 명령 실행 상호작용을 항목이 소유합니다. 표현만 필요하면 list-row를 사용하세요."
+      ></mm-feature>
+      <mm-feature
+        heading="Interactive - selection"
+        description="menuitemcheckbox·menuitemradio 항목이 체크 상태를 소유해 선택 여부를 드러냅니다."
+      ></mm-feature>
+      <mm-feature
+        heading="Groupable"
+        description="항목은 단독이 아니라 메뉴 그룹 안에서 역할(menu·listbox)을 얻습니다. 체크 계열 항목은 항상 그룹으로 묶습니다."
+      ></mm-feature>
+    </mm-feature-group>
     <mm-text-list
       texts='[
         "role=menu 는 명령 실행 목록. role=listbox 는 폼 내 선택 목록. 컨텍스트에 따라 구분합니다.",

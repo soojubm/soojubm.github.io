@@ -73,6 +73,94 @@
     ></mm-text-list>
   </mm-flex>
 
+  <mm-flex direction="column" gap="4">
+    <mm-text size="24" weight="bold" as="h2">Component Traits</mm-text>
+    <mm-paragraph>
+      컴포넌트 특성 어휘입니다. 설명은 그 특성을 전시하는 페이지이며, 통합·개명 이력을 함께
+      적었습니다. 각 컴포넌트 페이지에 배포 완료된 상태로, 어휘를 바꾸면 페이지와 함께 수정합니다.
+    </mm-paragraph>
+
+    <mm-feature-group columns="3">
+      <mm-feature
+        heading="Glanceable"
+        description="tag · checkbox · radio · tabs — Easy scanning, tag의 Informational 통합"
+      ></mm-feature>
+      <mm-feature heading="Categorical" description="tag"></mm-feature>
+      <mm-feature heading="Representative" description="avatar · thumbnail"></mm-feature>
+      <mm-feature
+        heading="Structural"
+        description="separator · surface · list-row · table"
+      ></mm-feature>
+      <mm-feature
+        heading="Groupable"
+        description="avatar · text · tag · button · icon-button · toggle-button · menuitem · checkbox · radio · input"
+      ></mm-feature>
+      <mm-feature
+        heading="Interactive - action"
+        description="button · dialog · link · menuitem — 누르면 동작이 실행되는 상호작용. Actionable 통합"
+      ></mm-feature>
+      <mm-feature
+        heading="Interactive - selection"
+        description="checkbox · radio · tabs · toggle-button · switch · menuitem — 선택 상태(checked·selected·pressed)를 남기는 상호작용. Interactive - choice 개명, Interactive - content switching·Selectable 통합"
+      ></mm-feature>
+      <mm-feature
+        heading="Freeform"
+        description="input · textarea — Inputtable 대체. 제한된 선택지가 아니라 자유 형식 값을 받는 특성"
+      ></mm-feature>
+      <mm-feature
+        heading="Immediate"
+        description="switch — Behavior- instantly action 개명. 조작 즉시 실행되는 특성"
+      ></mm-feature>
+      <mm-feature
+        heading="Feedback"
+        description="button · dialog · loading · result — Feedback needed 통합"
+      ></mm-feature>
+      <mm-feature heading="Dismissible" description="notice · dialog"></mm-feature>
+      <mm-feature
+        heading="Transient"
+        description="tooltip · loading — 조건이 끝나면 스스로 사라지는 특성. Dismissible(사용자가 닫음)과 대비"
+      ></mm-feature>
+      <mm-feature
+        heading="Anchored"
+        description="tooltip — 화면 좌표가 아니라 트리거 요소에 붙어 뜨는 특성. 방향·정렬은 placement prop 하나로 지정"
+      ></mm-feature>
+      <mm-feature
+        heading="Validatable"
+        description="input · textarea — 입력값 자체의 규칙 검증과 오류 표시를 소유. Feedback은 행동·시스템 상태의 결과, Validatable은 값의 규칙 위반"
+      ></mm-feature>
+      <mm-feature
+        heading="Persistent"
+        description="top-bar · bottom-bar — 스크롤과 화면 이동에도 자리를 지키는 특성. Transient·Dismissible과 함께 머무름의 축을 구성"
+      ></mm-feature>
+      <mm-feature
+        heading="Statusful"
+        description="notice · result · tag — 성공·경고·오류·정보 등 의미 상태를 톤으로 담고 색상만으로 전달하지 않는 특성. Feedback은 결과 자체, Statusful은 그 의미 톤과 색 접근성"
+      ></mm-feature>
+      <mm-feature heading="Supplementary" description="tooltip"></mm-feature>
+    </mm-feature-group>
+
+    <mm-text-list
+      texts='[
+        "제외 — Semantic·Hierarchical(text): Semantic은 마크업 설명, Hierarchical은 타이포 규칙이라 컴포넌트 특성 어휘에서 제외",
+        "제외 — eye(input): 특성이 아니라 아이콘 이름",
+        "제외 — Not Recommended(tooltip): do/don&#39;t 가이드 성격이라 특성 어휘와 분리",
+        "통합 — Dimensional·Indicative: surface의 Structural에 흡수(깊이감으로 층위를 드러내고, 그 깊이가 곧 클릭 가능성 기표)",
+        "통합 — Selectable: Interactive를 action·selection 두 축으로 분리하면서 Interactive - selection에 흡수",
+        "통합 — Informational: tag는 Glanceable로, avatar는 Representative로 흡수하여 특성 어휘에서 제거",
+        "아이콘 매핑(HEADING_ICON_MAP)은 재배포와 함께 정리 완료 — 특성 어휘 외에는 signifier·문서 원칙 페이지 항목만 유지"
+      ]'
+    ></mm-text-list>
+
+    <mm-text size="18" weight="bold" as="h3">제안</mm-text>
+    <mm-feature-group columns="3">
+      <mm-feature
+        icon="nav-arrow-right"
+        heading="Navigational"
+        description="제안 — 현재 위치를 알리고 다른 화면으로 이동시키는 특성. breadcrumb · link · top-bar · bottom-bar 후보"
+      ></mm-feature>
+    </mm-feature-group>
+  </mm-flex>
+
   <main class="terms" style="max-width: var(--layout-width-small); margin: 0 auto">
     <style>
       .terms {
@@ -1274,3 +1362,128 @@
     </mm-surface>
   </section> -->
 </main>
+
+<main class="contact">
+  <header class="contact-head">
+    <mm-heading level="1">이곳으로 오십시오.</mm-heading>
+    <div style="width: 100%; overflow: hidden">
+      <mm-paragraph>
+        저희가 하는 일이나 저희 팀에 궁금한 점이 있으면 언제든 연락주세요. 부끄러우니까
+        연락하지마요.
+      </mm-paragraph>
+      <div class="contact-head-phone">
+        대구광역시 달서구
+        <br />
+        죽전동 268-8
+        <br />
+        강남빌라 500호
+      </div>
+      <div class="contact-head-address">
+        <div>E. soojubm@gmail.com</div>
+        <div>T. +357 22 875996</div>
+        <div>F. +357 22 875996</div>
+      </div>
+    </div>
+    <mm-grid columns="4">
+      <mm-list-row
+        label="Email"
+        description="hello@mantine.dev"
+        size="large"
+        avatar-variant="secondary"
+        icon="people-tag"
+      ></mm-list-row>
+      <mm-list-row
+        label="Phone"
+        description="+49 (800) 335 35 35"
+        size="large"
+        avatar-variant="secondary"
+        icon="people-tag"
+      ></mm-list-row>
+      <mm-list-row
+        label="Address"
+        description="844 Morris Park avenue"
+        size="large"
+        avatar-variant="secondary"
+        icon="people-tag"
+      ></mm-list-row>
+      <mm-list-row
+        label="Working hours"
+        description="8 a.m. – 11 p.m."
+        size="large"
+        avatar-variant="secondary"
+        icon="people-tag"
+      ></mm-list-row>
+    </mm-grid>
+  </header>
+
+  <section class="contact-map">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.492719612198!2d121.55932191500658!3d25.051283883964214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442ab94e6c63c77%3A0xb57fea257fc2bff2!2z7LmY7JWE642UIO2OkeumrOyImA!5e0!3m2!1sko!2skr!4v1553940621738!5m2!1sko!2skr"
+      allowfullscreen
+    ></iframe>
+  </section>
+</main>
+
+<style>
+  .contact {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--layout-padding-inline);
+  }
+  .contact-head {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 4rem 0 0;
+    position: relative;
+  }
+  .contact-head > div > mm-paragraph {
+    float: left;
+    width: 50%;
+    padding: 0 64px 0 0;
+    box-sizing: border-box;
+  }
+  .contact-head-phone {
+    float: left;
+    width: 25%;
+    box-sizing: border-box;
+  }
+  .contact-head-address {
+    float: left;
+    width: 25%;
+    box-sizing: border-box;
+  }
+  .contact-map {
+    height: 320px;
+    overflow: hidden;
+    margin: 4rem auto 20rem;
+    position: relative;
+  }
+  .contact-map iframe {
+    height: 320px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+  }
+
+  @media (max-width: 1100px) {
+    .contact-head {
+      padding: 80px 0px;
+    }
+    .contact-head > div > mm-paragraph {
+      width: 100%;
+      margin: 0 0 2rem 0;
+    }
+    .contact-head-phone {
+      width: 50%;
+    }
+    .contact-head-address {
+      width: 50%;
+    }
+
+    .contact-map {
+      max-width: 100%;
+      margin: calc(var(--space-section) * -1) auto 0;
+      padding: 0;
+    }
+  }
+</style>

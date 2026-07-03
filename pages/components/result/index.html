@@ -14,8 +14,10 @@
       description="헌법재판소 재판관의 임기는 6년으로 하며, 법률이 정하는 바에 의하여 연임할 수 있다."
     >
       <mm-avatar slot="avatar" variant="secondary" size="huge" icon="clipboard-check"></mm-avatar>
-      <mm-meta-item label="주문일자" value="2019.08.10."></mm-meta-item>
-      <mm-meta-item label="결제금액" value="₩ 54,000"></mm-meta-item>
+      <div>
+        <mm-meta-item label="주문일자" value="2019.08.10."></mm-meta-item>
+        <mm-meta-item label="결제금액" value="₩ 54,000"></mm-meta-item>
+      </div>
       <mm-button slot="action" variant="tertiary" size="large">홈으로</mm-button>
     </mm-result>
   </mm-component-example>
@@ -31,6 +33,16 @@
   </mm-component-props>
 
   <mm-component-guide>
+    <mm-feature-group columns="2">
+      <mm-feature
+        heading="Feedback"
+        description="완료·오류·빈 상태처럼 사용자 행동이나 시스템 상태의 결과를 명확하게 전달합니다."
+      ></mm-feature>
+      <mm-feature
+        heading="Statusful"
+        description="완료·오류·빈 상태 등 결과의 의미를 톤으로 구분합니다. 색상에만 의존하지 않고 아이콘과 메시지를 함께 제공합니다."
+      ></mm-feature>
+    </mm-feature-group>
     <mm-paragraph-group>
       <mm-paragraph>You're done!</mm-paragraph>
       <mm-paragraph>

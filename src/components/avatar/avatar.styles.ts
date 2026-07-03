@@ -6,7 +6,7 @@ export const avatarStyles = css`
     --avatar-background-color: var(--color-background-subtle);
     --avatar-border-color: transparent;
     --avatar-icon-color: var(--color-foreground);
-    --avatar-radius: var(--radius);
+    --avatar-border-radius: var(--radius);
     display: inline-flex;
   }
 
@@ -21,7 +21,7 @@ export const avatarStyles = css`
     background-position: center;
     background-color: var(--avatar-background-color);
     border: var(--avatar-border, none);
-    border-radius: var(--avatar-radius);
+    border-radius: var(--avatar-border-radius);
     box-sizing: border-box;
     position: relative;
     box-shadow: 0 0 0 1px var(--avatar-border-color);
@@ -29,7 +29,7 @@ export const avatarStyles = css`
   }
 
   :host([shape='circle']) {
-    --avatar-radius: var(--radius-round);
+    --avatar-border-radius: var(--radius-round);
   }
 
   :host([size='huge']) {
@@ -62,7 +62,7 @@ export const avatarStyles = css`
   img {
     width: 100%;
     height: inherit;
-    border-radius: var(--avatar-radius);
+    border-radius: var(--avatar-border-radius);
     object-fit: cover;
   }
 `

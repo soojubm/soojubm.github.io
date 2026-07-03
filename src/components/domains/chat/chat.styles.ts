@@ -8,14 +8,15 @@ export const chatBubbleStyles = css`
     max-width: min(85%, 600px);
     padding: var(--space-3) var(--space-4);
     border: var(--bubble-border, none);
-    border-radius: var(--bubble-radius);
+    border-radius: var(--bubble-border-radius);
     background-color: var(--color-background-subtle);
     box-sizing: border-box;
     font-size: var(--font-size-14);
     line-height: var(--line-height-14);
 
-    --bubble-radius: var(--radius) var(--radius-large) var(--radius-large) var(--radius-large);
-    --thumbnail-radius: var(--bubble-radius);
+    --bubble-border-radius: var(--radius) var(--radius-large) var(--radius-large)
+      var(--radius-large);
+    --thumbnail-border-radius: var(--bubble-border-radius);
   }
 
   :host([image]) {
