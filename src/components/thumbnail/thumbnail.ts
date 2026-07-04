@@ -16,7 +16,9 @@ export class Thumbnail extends LitElement {
     }
 
     figure {
-      display: block;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
       width: 100%;
       padding: 0;
       margin: 0;
@@ -28,10 +30,10 @@ export class Thumbnail extends LitElement {
       display: block;
     }
 
-    :is(a, button):hover {
+    a:hover {
       transform: scale(1.03);
     }
-    /* :is(a, button):focus-visible {
+    /* a:focus-visible {
       ${focusRing}
     } */
 
@@ -52,7 +54,14 @@ export class Thumbnail extends LitElement {
       aspect-ratio: 4 / 3;
     }
 
-    :is(a, button) {
+    :host([ratio='full']) .image-wrapper {
+      aspect-ratio: auto;
+    }
+    :host([ratio='full']) img {
+      height: auto;
+    }
+
+    a {
       display: block;
       width: 100%;
       padding: 0;
@@ -61,22 +70,16 @@ export class Thumbnail extends LitElement {
       cursor: pointer;
       transition: all 0.3s ease-in-out;
     }
-
-    mm-caption {
-      display: block;
-      margin-top: var(--space-2, 8px);
-    }
   `
 
   @property({ type: String }) src = ''
   @property({ type: String }) alt = ''
-  @property({ type: String, reflect: true }) ratio: '1:1' | '16:9' | '4:3' = '16:9'
+  @property({ type: String, reflect: true }) ratio: '1:1' | '16:9' | '4:3' | 'full' = '16:9'
   @property({ type: String }) loading: 'eager' | 'lazy' = 'lazy'
   @property({ type: String, attribute: 'fetchpriority' }) fetchPriority: 'high' | 'low' | 'auto' =
     'auto'
 
   @property({ type: String }) href = ''
-  @property({ type: Boolean }) clickable = false
   @property({ type: String }) caption = ''
 
   @state() private hasError = false
@@ -85,32 +88,13 @@ export class Thumbnail extends LitElement {
 
   render() {
     return html`
-      <figure>${this.renderMedia()} ${this.renderCaption()}</figure>
-    `
-  }
-
-  private renderMedia() {
-    if (this.href) {
-      return html`
-        <a href=${this.href}>${this.renderImage()}</a>
-      `
-    }
-
-    if (this.clickable) {
-      return html`
-        <button type="button">${this.renderImage()}</button>
-      `
-    }
-
-    return html`
-      ${this.renderImage()}
+      <figure>${this.renderImage()} ${this.renderCaption()}</figure>
     `
   }
 
   private renderImage() {
     const displaySrc = this.hasError ? this.fallbackImage : this.src || this.fallbackImage
-
-    return html`
+    const image = html`
       <div class="image-wrapper">
         <img
           src=${displaySrc}
@@ -122,6 +106,14 @@ export class Thumbnail extends LitElement {
         />
       </div>
     `
+
+    if (this.href) {
+      return html`
+        <a href=${this.href}>${image}</a>
+      `
+    }
+
+    return image
   }
 
   private renderCaption() {
