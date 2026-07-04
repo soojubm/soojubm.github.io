@@ -19,7 +19,10 @@ class Sheet extends LitElement {
   @property({ type: Boolean, reflect: true, attribute: 'backdrop-blur' }) backdropBlur = false
 
   private scrollLock = new ScrollLockController(this)
-  private portal = new PortalController(this, { isActive: () => this.isOpen && this.isModal })
+  private portal = new PortalController(this, {
+    isActive: () => this.isOpen && this.isModal,
+    root: () => document.getElementById('sheet-page-root') ?? document.body,
+  })
 
   private handleSheetClose = () => {
     this.close()

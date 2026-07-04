@@ -127,14 +127,17 @@ const spacingTokens = [
 ]
 
 const zindexTokens = [
-  { name: '--zindex-deepdive', value: '-1' },
   { name: '--zindex-default', value: '1' },
-  { name: '--z-index-popover', value: '6' },
-  { name: '--zindex-sticky', value: '7' },
-  { name: '--zindex-navigation', value: '7' },
-  { name: '--zindex-modal', value: '7' },
-  { name: '--zindex-toast', value: '8' },
-  { name: '--zindex-skipmenu', value: '9' },
+  { name: '--zindex-tooltip', value: '2' },
+  { name: '--zindex-menu', value: '2' },
+  { name: '--zindex-popover', value: '5' },
+  { name: '--zindex-bottombar', value: '8' },
+  { name: '--zindex-fixed-bottom', value: '100' },
+  { name: '--zindex-backdrop', value: '200' },
+  { name: '--zindex-sheet', value: '210' },
+  { name: '--zindex-modal', value: '220' },
+  { name: '--zindex-toast', value: '230' },
+  { name: '--zindex-loader', value: '240' },
 ]
 
 const positioningTokens = []

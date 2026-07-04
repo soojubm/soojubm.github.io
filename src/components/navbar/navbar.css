@@ -24,10 +24,6 @@
   height: var(--navbar-height);
 }
 
-.js-search-sheet {
-  --sheet-z-index: calc(var(--zindex-fixed-bottom) + 2);
-}
-
 .navbar-user {
   display: flex;
   align-items: center;

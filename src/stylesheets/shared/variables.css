@@ -190,17 +190,20 @@
   --animation-delay-second: 0.4s;
   --animation-delay-third: 0.6s;
 
+  /* 페이지 내부 컴포넌트 레이어 */
   --zindex-default: 1;
   --zindex-tooltip: 2;
   --zindex-menu: 2;
   --zindex-popover: 5;
-  --zindex-backdrop: 6;
-  --zindex-sheet: 7;
   --zindex-bottombar: 8;
-  --zindex-modal: 8;
-  --zindex-toast: 9;
-  --zindex-loader: 10;
+  /* 고정 크롬(navbar는 +1로 이 위) */
   --zindex-fixed-bottom: 100;
+  /* 오버레이 레이어: 고정 크롬 위에 쌓인다 */
+  --zindex-backdrop: 200;
+  --zindex-sheet: 210;
+  --zindex-modal: 220;
+  --zindex-toast: 230;
+  --zindex-loader: 240;
 
   --color-backdrop: rgba(0, 0, 0, 0.1);
 }
