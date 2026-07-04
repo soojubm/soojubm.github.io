@@ -8,29 +8,25 @@ export class LinkPrompt extends LitElement {
   static styles = css`
     :host {
       display: inline-flex;
+      flex-wrap: wrap;
       align-items: center;
       gap: var(--space-1);
-      color: var(--color-foreground);
-    }
-
-    mm-icon {
-      flex: 0 0 auto;
     }
   `
 
+  @property({ type: String }) icon?: IconName
   @property({ type: String }) message = ''
   @property({ type: String, attribute: 'link-label' }) linkLabel = ''
   @property({ type: String }) href = ''
-  @property({ type: String }) icon?: IconName
   @property({ type: Boolean }) external = false
 
   render() {
     return html`
       ${this.renderIcon()}
-
-      <mm-paragraph>${this.message}</mm-paragraph>
-
-      <mm-link href=${this.href} ?external=${this.external}>${this.linkLabel}</mm-link>
+      <mm-paragraph>
+        ${this.message}
+        <mm-link href=${this.href} ?external=${this.external}>${this.linkLabel}</mm-link>
+      </mm-paragraph>
     `
   }
 

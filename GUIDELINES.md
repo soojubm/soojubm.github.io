@@ -90,6 +90,7 @@
 - 테마 분기처럼 재정의할 목적이 없으면 기존 토큰을 컴포넌트 지역 변수로 다시 감싸지 않고 그대로 사용한다.
 - 테마별로 달라지는 값은 컴포넌트에서 `:host-context([data-theme])`로 분기하지 않고 variables.css의 테마 블록에서 토큰으로 재정의하며, 컴포넌트는 의미 토큰만 소비한다.
 - width·height처럼 요소 자체의 고정 치수는 간격 토큰이 아니라 size 토큰을 우선 사용한다.
+- 컴포넌트 토큰은 소비하는 CSS 속성 이름으로 짓는다(`background`→`-background-color`, `border-radius`→`-border-radius`, `color:`→`-text-color`, `height`→`-height`). 한 값이 여러 속성을 먹이면 특정 속성명으로 좁히지 않고 제네릭 이름을 유지한다.
 
 ### 스타일시트
 

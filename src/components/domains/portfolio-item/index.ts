@@ -2,6 +2,7 @@ import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
+import { focusRing } from '@/stylesheets/shared/focus-ring.styles'
 import '@/components/icon-button/semantics/more-button'
 import '@/components/flex/flex'
 import { emit } from '@/utils/emit'
@@ -30,6 +31,10 @@ export class PortfolioItem extends LitElement {
       article:hover {
         background-color: var(--color-background-subtle);
         box-shadow: var(--shadow);
+      }
+
+      article:focus-visible {
+        ${focusRing}
       }
 
       .badge,

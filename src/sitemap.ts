@@ -133,7 +133,7 @@ export const SITEMAP: SitemapNode[] = [
       { id: 'sheet', name: 'sheet' },
       { id: 'product', name: 'Product' },
       // { id: 'auth', name: 'auth' },
-      // { id: 'post', name: 'post' },
+      { id: 'post', name: 'post', hidden: true },
       // { id: 'checkout', name: 'Checkout' },
     ],
   },

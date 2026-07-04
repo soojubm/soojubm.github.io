@@ -32,20 +32,6 @@
   position: relative;
 }
 
-.navbar-user-menu {
-  position: relative;
-}
-
-.navbar-profile-action {
-  margin: var(--space-2) 0 0;
-}
-
-.navbar-profile-tag {
-  position: absolute;
-  right: var(--space-4);
-  top: var(--space-4);
-}
-
 .page {
   min-height: calc(100vh - var(--navbar-height) - var(--width-small));
   padding: var(--space-4) var(--layout-padding-inline) calc(var(--space-4) * 6);

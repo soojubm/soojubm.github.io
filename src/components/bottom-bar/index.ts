@@ -4,6 +4,7 @@ import { ifDefined } from 'lit/directives/if-defined.js'
 
 import { ICON_NAMES, type IconName } from '@/components/icon-button/semantics/icon-names'
 import '@/components/text/semantics/caption'
+import { focusRing } from '@/stylesheets/shared/focus-ring.styles'
 import { SelectionIndicatorController } from '@/controllers/selection-indicator-controller'
 import { emit } from '@/utils/emit'
 import { arrayAttributeConverter } from '@/utils/property-converters'
@@ -42,10 +43,15 @@ class BottomBar extends LitElement {
       flex: 1;
       min-width: var(--size-large);
       height: var(--bottom-bar-item-height);
+      border-radius: var(--radius);
       color: var(--color-foreground);
       text-decoration: none;
       position: relative;
       z-index: 1;
+    }
+
+    a:focus-visible {
+      ${focusRing}
     }
 
     a[aria-current='page'] {

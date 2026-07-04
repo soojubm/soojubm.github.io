@@ -3,7 +3,6 @@ import { css } from 'lit'
 export const metaItemStyles = css`
   :host {
     display: flex;
-    width: 100%;
     justify-content: space-between;
   }
 

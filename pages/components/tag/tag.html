@@ -3,7 +3,6 @@
     heading="Tag"
     description="인접 요소나 부모 요소를 부연하는 시각 정보입니다. 상태, 카테고리, 키워드로 강조된 시각 정보는 사용자가 복잡한 정보 더미에서 중요한 정보를 우선적으로 파악하도록 돕습니다."
   ></mm-page-header>
-  <!-- "아바타, 바텀 네비게이션, 탭에서 일관되게 사용되는가?" -->
 
   <!-- Badge intent="info" -->
   <mm-component-aka
@@ -12,7 +11,6 @@
 
   <mm-component-example>
     <mm-tag-group>
-      <!-- primitive -->
       <mm-tag tone="default">default</mm-tag>
       <mm-tag tone="green">green</mm-tag>
       <mm-tag tone="yellow">yellow</mm-tag>
@@ -108,35 +106,13 @@
         </tbody>
       </table>
     </mm-paragraph-group> -->
-  <mm-component-section
-    heading="Dot badge"
-    description="Live badge, New badge, Unread badge.A dot badge notifies the user that something is new or updated without showing a count."
-  >
-    <div>
-      <style>
-        .dot-badge {
-          display: inline-flex;
-          width: 0.5rem;
-          height: 0.5rem;
-          margin-right: var(--space-2);
-          background: crimson;
-          border-radius: 50%;
-        }
-      </style>
-      <em class="dot-badge"></em>
-    </div>
-  </mm-component-section>
 
   <mm-component-section heading="MostPopularTag" description="구체 레벨. 가장 인기있는 태그">
     <mm-tag>🔥 Most Popular</mm-tag>
   </mm-component-section>
 
-  <mm-component-section heading="KeywordTag" description="">
-    <mm-tag-group>
-      <mm-status-tag variant="neutral">keyword1</mm-status-tag>
-      <mm-status-tag variant="neutral">keyword2</mm-status-tag>
-      <mm-status-tag variant="neutral">keyword3</mm-status-tag>
-    </mm-tag-group>
+  <mm-component-section heading="KeywordTagGroup" description="">
+    <mm-keyword-tag-group keywords='["keyword1", "keyword2", "keyword3"]'></mm-keyword-tag-group>
   </mm-component-section>
 
   <mm-component-section heading="AccentTag" description="TODO accent color">

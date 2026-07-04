@@ -18,6 +18,7 @@ export class ReadMoreButton extends LitElement {
 
     button {
       all: unset;
+      border-radius: var(--radius);
       font: inherit;
       font-weight: var(--font-weight-bold);
       color: var(--color-foreground);

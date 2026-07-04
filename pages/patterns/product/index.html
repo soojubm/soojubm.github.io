@@ -1,4 +1,47 @@
 <main class="product">
+  <style>
+    .product {
+      padding: 0 var(--layout-padding-inline);
+    }
+    .product-image {
+      padding: 10%;
+      box-sizing: border-box;
+      border-radius: var(--radius);
+      background: var(--color-background-subtle);
+      position: relative;
+    }
+
+    .product-story-bleed {
+      width: 100vw;
+      margin-left: 50%;
+      padding-block: var(--space-section);
+      background: var(--color-background-subtle);
+      transform: translateX(-50%);
+    }
+
+    .product-quick {
+      display: flex;
+      align-items: center;
+      height: var(--size-huge);
+      padding: 0 var(--layout-padding-inline);
+      background: var(--color-background-subtle);
+    }
+    .product-quick-head {
+      width: 35%;
+      position: relative;
+    }
+    .product-quick-total {
+      margin: 0 2rem 0 auto;
+      text-align: right;
+      position: relative;
+    }
+    .product-quick-total-price {
+      vertical-align: middle;
+    }
+    .product-quick-controls {
+      position: relative;
+    }
+  </style>
   <mm-button>Back to Home</mm-button>
 
   <mm-grid columns="2" gap="8" class="product-head" style="margin-top: var(--space-4)">
@@ -8,12 +51,9 @@
         alt="제품 이미지"
         ratio="1:1"
       ></mm-thumbnail>
-      <nav>
-        <button></button>
-      </nav>
     </section>
 
-    <section class="product-info">
+    <mm-flex direction="column" gap="section">
       <mm-flex direction="column" gap="3">
         <mm-paragraph
           style="
@@ -25,7 +65,7 @@
             font-weight: var(--font-weight-bold);
           "
         >
-          <a href="#" style="color: var(--color-primary)">Hachimitsupai</a>
+          <a href="#">Hachimitsupai</a>
         </mm-paragraph>
         <mm-heading level="1">センチメンタル通り</mm-heading>
         <mm-product-price
@@ -44,21 +84,14 @@
         <mm-flex direction="column" gap="2">
           <mm-number-input value="1" min="1" max="99" label="수량"></mm-number-input>
 
-          <mm-button data-open-cart variant="primary" size="large" full-width>
-            Add to Cart
-          </mm-button>
-
-          <mm-button-group stretch>
-            <mm-button variant="tertiary">Add to wishlist</mm-button>
-            <mm-icon-button
-              variant="tertiary"
-              icon="arrow-up-right"
-              aria-label="Share"
-              tooltip="Share"
-              tooltip-placement="center"
-            ></mm-icon-button>
+          <mm-button-group>
+            <mm-button data-open-cart variant="primary" size="large" full-width>
+              Add to Cart
+            </mm-button>
+            <mm-icon-button variant="ghost" icon="star"></mm-icon-button>
           </mm-button-group>
 
+          <!-- TODO text-list -->
           <div>
             <mm-flex align-items="center" gap="1">
               <mm-icon name="delivery-truck"></mm-icon>
@@ -71,10 +104,10 @@
           </div>
         </mm-flex>
       </form>
-    </section>
+    </mm-flex>
   </mm-grid>
 
-  <section class="product-detail" style="margin: 4rem auto 0">
+  <section style="margin: 4rem auto 0">
     <mm-fixed-bottom>
       <aside class="product-quick is-visible">
         <mm-list-row
@@ -99,16 +132,14 @@
 
     <mm-flex direction="column" gap="section">
       <!-- 마케팅 스토리: 중앙 정렬 + 특징 -->
-      <mm-grid columns="1" gap="4" class="product-story">
-        <div class="product-story-body">
-          <mm-text-block
-            centered
-            level="1"
-            eyebrow="Why prebiotics?"
-            heading="Prebiotics are fibers that feed good bacteria"
-            description="And good bacteria creates a healthy oral environment. In addition to positively impacting the things you can taste and feel, like fresher breath and less sensitive teeth, a balanced oral environment is directly linked to cardiovascular, respiratory, and immune health."
-          ></mm-text-block>
-        </div>
+      <mm-grid columns="1" gap="4">
+        <mm-text-block
+          centered
+          level="1"
+          eyebrow="Why prebiotics?"
+          heading="Prebiotics are fibers that feed good bacteria"
+          description="And good bacteria creates a healthy oral environment. In addition to positively impacting the things you can taste and feel, like fresher breath and less sensitive teeth, a balanced oral environment is directly linked to cardiovascular, respiratory, and immune health."
+        ></mm-text-block>
         <mm-feature-group columns="4">
           <mm-feature
             centered
@@ -138,21 +169,19 @@
       </mm-grid>
 
       <!-- 마케팅 스토리: 이미지 + 텍스트 -->
-      <mm-grid columns="2" gap="8" class="product-story product-story--reverse">
-        <mm-thumbnail class="product-story-media" ratio="1:1"></mm-thumbnail>
-        <div class="product-story-body">
-          <mm-text-block
-            level="1"
-            eyebrow="Why prebiotics?"
-            heading="Prebiotics are fibers that feed good bacteria"
-            description="And good bacteria creates a healthy oral environment. In addition to positively impacting the things you can taste and feel, like fresher breath and less sensitive teeth, a balanced oral environment is directly linked to cardiovascular, respiratory, and immune health."
-          ></mm-text-block>
-        </div>
+      <mm-grid columns="2" gap="8">
+        <mm-text-block
+          level="1"
+          eyebrow="Why prebiotics?"
+          heading="Prebiotics are fibers that feed good bacteria"
+          description="And good bacteria creates a healthy oral environment. In addition to positively impacting the things you can taste and feel, like fresher breath and less sensitive teeth, a balanced oral environment is directly linked to cardiovascular, respiratory, and immune health."
+        ></mm-text-block>
+        <mm-thumbnail ratio="1:1"></mm-thumbnail>
       </mm-grid>
 
       <!-- 마케팅 스토리: bleed 배경 + 특징 -->
       <section class="product-story-bleed">
-        <mm-grid columns="1" gap="4" class="product-story">
+        <mm-grid columns="1" gap="4">
           <mm-text-block
             centered
             level="1"
@@ -190,20 +219,18 @@
       </section>
 
       <!-- 마케팅 스토리: 이미지 + 텍스트 -->
-      <mm-grid columns="2" gap="8" class="product-story">
-        <mm-thumbnail class="product-story-media" ratio="1:1"></mm-thumbnail>
-        <div class="product-story-body">
-          <mm-text-block
-            level="1"
-            eyebrow="Why prebiotics?"
-            heading="Prebiotics are fibers that feed good bacteria"
-            description="And good bacteria creates a healthy oral environment. In addition to positively impacting the things you can taste and feel, like fresher breath and less sensitive teeth, a balanced oral environment is directly linked to cardiovascular, respiratory, and immune health."
-          ></mm-text-block>
-        </div>
+      <mm-grid columns="2" gap="8">
+        <mm-thumbnail ratio="1:1"></mm-thumbnail>
+        <mm-text-block
+          level="1"
+          eyebrow="Why prebiotics?"
+          heading="Prebiotics are fibers that feed good bacteria"
+          description="And good bacteria creates a healthy oral environment. In addition to positively impacting the things you can taste and feel, like fresher breath and less sensitive teeth, a balanced oral environment is directly linked to cardiovascular, respiratory, and immune health."
+        ></mm-text-block>
       </mm-grid>
 
       <!-- 리뷰 -->
-      <section class="product-review">
+      <section>
         <mm-text-block
           centered
           level="1"

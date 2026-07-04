@@ -21,20 +21,27 @@ export class Thumbnail extends LitElement {
       padding: 0;
       margin: 0;
     }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
 
     :is(a, button):hover {
       transform: scale(1.03);
     }
-    :is(a, button):focus-visible {
+    /* :is(a, button):focus-visible {
       ${focusRing}
-    }
+    } */
 
     .image-wrapper {
-      display: block;
-      position: relative;
       width: 100%;
+      position: relative;
       aspect-ratio: 16 / 9;
+      border-radius: var(--thumbnail-border-radius);
       background-color: var(--thumbnail-background-color-empty);
+      overflow: hidden;
     }
 
     :host([ratio='1:1']) .image-wrapper {
@@ -44,21 +51,11 @@ export class Thumbnail extends LitElement {
     :host([ratio='4:3']) .image-wrapper {
       aspect-ratio: 4 / 3;
     }
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
 
     :is(a, button) {
       display: block;
       width: 100%;
       padding: 0;
-      border: var(--thumbnail-border, none);
-      background: none;
-      overflow: hidden;
-      border-radius: var(--thumbnail-border-radius);
       text-decoration: none;
       color: inherit;
       cursor: pointer;
@@ -114,7 +111,7 @@ export class Thumbnail extends LitElement {
     const displaySrc = this.hasError ? this.fallbackImage : this.src || this.fallbackImage
 
     return html`
-      <span class="image-wrapper">
+      <div class="image-wrapper">
         <img
           src=${displaySrc}
           alt=${this.alt}
@@ -123,7 +120,7 @@ export class Thumbnail extends LitElement {
           fetchpriority=${this.fetchPriority}
           @error=${this.handleImageError}
         />
-      </span>
+      </div>
     `
   }
 

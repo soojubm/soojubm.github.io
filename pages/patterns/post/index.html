@@ -22,12 +22,6 @@
         avatar-src="/src/images/soojubm.png"
         size="medium"
       ></mm-user-row>
-
-      <div>
-        <mm-paragraph>2022년 4월 9일</mm-paragraph>
-        <mm-paragraph>약 40초 분량</mm-paragraph>
-        <div class="post-head-progress" role="progressbar" aria-valuenow=""></div>
-      </div>
     </mm-paragraph-group>
   </header>
 
@@ -46,64 +40,65 @@
       </ol>
     </nav>
 
-    <mm-paragraph>
-      title / kicker / published date / thumbnail image / images / subhead - paragraph / text list /
-      byline / share actions / comment /
-    </mm-paragraph>
+    <mm-paragraph-group>
+      <mm-paragraph>
+        title / kicker / published date / thumbnail image / images / subhead - paragraph / text list
+        / byline / share actions / comment /
+      </mm-paragraph>
 
-    <mm-paragraph size="large">
-      An ecosystem of content that celebrates inclusion and diversity
-    </mm-paragraph>
-    <div style="height: 0.75rem"></div>
-    <mm-paragraph size="large">
-      콘텐츠가 다른 플랫폼에 공유되는 횟수가 많다면 페이지의 상단에 byline을 보여주는 것이 좋다.
-      byline은 상단 고정되지 않기 때문에 byline에 작성 시간과 리딩 시간 등을 포함하는 것이 좋다.
-    </mm-paragraph>
-    <mm-paragraph size="large">
-      무제한(스트리밍) / 1개 무제한(미디엄) / 여러 개 중 1개 (총 1 페이스북) / 여러 개 중 여러 개에
-      각 1번 (깃허브)
-    </mm-paragraph>
-    <mm-paragraph size="large">
-      Vertical scroll progressbar 유행 지난 듯. 전체 윈도우 영영 혹은 본문 영역track, media,
-      supporting text(supporter), elevated (hover), 도어메트 네비게이션, 유틸리티 링크(네비게이션)
-    </mm-paragraph>
+      <mm-paragraph size="large">
+        An ecosystem of content that celebrates inclusion and diversity
+      </mm-paragraph>
+      <mm-paragraph size="large">
+        콘텐츠가 다른 플랫폼에 공유되는 횟수가 많다면 페이지의 상단에 byline을 보여주는 것이 좋다.
+        byline은 상단 고정되지 않기 때문에 byline에 작성 시간과 리딩 시간 등을 포함하는 것이 좋다.
+      </mm-paragraph>
+      <mm-paragraph size="large">
+        무제한(스트리밍) / 1개 무제한(미디엄) / 여러 개 중 1개 (총 1 페이스북) / 여러 개 중 여러
+        개에 각 1번 (깃허브)
+      </mm-paragraph>
+      <mm-paragraph size="large">
+        Vertical scroll progressbar 유행 지난 듯. 전체 윈도우 영영 혹은 본문 영역track, media,
+        supporting text(supporter), elevated (hover), 도어메트 네비게이션, 유틸리티 링크(네비게이션)
+      </mm-paragraph>
 
-    <q
-      style="
-        display: block;
-        font-style: italic;
-        margin: 4rem 0;
-        font-size: var(--font-size-18);
-        line-height: 2;
-      "
-    >
-      Luxury brands around the world have been connecting with their ideal audience on Pinterest:
-      one that is coming to the platform with intent, looking for inspiration to curate ideas and
-      refine their taste for which luxury brands to invest in. With 3 in 5 luxury shoppers saying
-      they use Pinterest to research luxury brands and products, these brands have the opportunity
-      to reach this highly engaged audience the moment they form an opinion and make a purchase
-      decision.
-      <br />
-      <address><b>Kelly Emanuelli, Head of Luxury at Pinterest</b></address>
-    </q>
+      <q
+        style="
+          display: block;
+          font-style: italic;
+          margin: 4rem 0;
+          font-size: var(--font-size-18);
+          line-height: 2;
+        "
+      >
+        Luxury brands around the world have been connecting with their ideal audience on Pinterest:
+        one that is coming to the platform with intent, looking for inspiration to curate ideas and
+        refine their taste for which luxury brands to invest in. With 3 in 5 luxury shoppers saying
+        they use Pinterest to research luxury brands and products, these brands have the opportunity
+        to reach this highly engaged audience the moment they form an opinion and make a purchase
+        decision.
+        <br />
+        <address><b>Kelly Emanuelli, Head of Luxury at Pinterest</b></address>
+      </q>
 
-    <mm-paragraph size="large">
-      포스트를 수정하고 삭제하기 위한 버튼이 필요하다. 신고를 위한 버튼은 처음부터 필요한 기능은
-      아니기 때문에 뺀다. 작성자에게만 필요한 버튼은 콘텐츠 내부가 아닌 브라우저의 구석에 눈에 띄게
-      배치한다. Input zooming on iOS devices :: iOS devices will slightly zoom into the input when
-      the font size is less than 16px.
-    </mm-paragraph>
-    <mm-paragraph size="large" type="1">
-      leading, name, trailing는 언더스코어(_)로 구분합니다. direction / shape / status / color /
-      size trailing에서는 direction, shape, status, color, size 등의 요소를 정의합니다. 2개 이상의
-      trailing가 사용되는 경우 direction, shape, status, color, size의 순서로 작성합니다.
-      trailing에서는 단어를 축약하지 않습니다. status는 에셋의 동작에 따른 상태를 정의합니다. size는
-      셋의 크기를 숫자와 단위를 조합하여 작성합니다. 단위는 플랫폼에 맞춰서 작성합니다. 예시)
-      android → dp, iOS → px, web → px size는 가로를 기준으로 작성하고 세로는 표기하지 않습니다.
-      해상도별로 구분해야 하는 경우 1x, 2x를 사용합니다. 제플린과 같이 프로그램에 의해 자동으로
-      trailing가 붙는 경우는 1x, 2x 가이드를 따르지 않아도 됩니다. 이미 배포되어 적용된 에셋에서
-      trailing가 추가되는 경우, 기존 에셋을 변형하지 않고 구별자를 추가합니다.
-    </mm-paragraph>
+      <mm-paragraph size="large">
+        포스트를 수정하고 삭제하기 위한 버튼이 필요하다. 신고를 위한 버튼은 처음부터 필요한 기능은
+        아니기 때문에 뺀다. 작성자에게만 필요한 버튼은 콘텐츠 내부가 아닌 브라우저의 구석에 눈에
+        띄게 배치한다. Input zooming on iOS devices :: iOS devices will slightly zoom into the input
+        when the font size is less than 16px.
+      </mm-paragraph>
+      <mm-paragraph size="large">
+        leading, name, trailing는 언더스코어(_)로 구분합니다. direction / shape / status / color /
+        size trailing에서는 direction, shape, status, color, size 등의 요소를 정의합니다. 2개 이상의
+        trailing가 사용되는 경우 direction, shape, status, color, size의 순서로 작성합니다.
+        trailing에서는 단어를 축약하지 않습니다. status는 에셋의 동작에 따른 상태를 정의합니다.
+        size는 셋의 크기를 숫자와 단위를 조합하여 작성합니다. 단위는 플랫폼에 맞춰서 작성합니다.
+        예시) android → dp, iOS → px, web → px size는 가로를 기준으로 작성하고 세로는 표기하지
+        않습니다. 해상도별로 구분해야 하는 경우 1x, 2x를 사용합니다. 제플린과 같이 프로그램에 의해
+        자동으로 trailing가 붙는 경우는 1x, 2x 가이드를 따르지 않아도 됩니다. 이미 배포되어 적용된
+        에셋에서 trailing가 추가되는 경우, 기존 에셋을 변형하지 않고 구별자를 추가합니다.
+      </mm-paragraph>
+    </mm-paragraph-group>
   </section>
 
   <mm-button-group>

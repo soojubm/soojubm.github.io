@@ -843,6 +843,11 @@
           border-color: var(--color-background-strong);
         }
 
+        .demo-btn.is-focus {
+          outline: var(--interaction-focus-outline);
+          outline-offset: 2px;
+        }
+
         .demo-btn.is-active {
           background: var(--color-interaction-active-background);
           box-shadow: 0 0 0 3px var(--color-interaction-active-ring),
@@ -904,29 +909,71 @@
         <button class="demo-btn is-dragged">Button</button>
       </mm-flex>
       <mm-flex direction="column" gap="3">
+        <mm-text>Loading</mm-text>
         <button class="demo-btn">
-          <mm-text>Loading</mm-text>
+          <mm-typing-indicator color="var(--color-background-strong)"></mm-typing-indicator>
         </button>
-        <mm-typing-indicator color="var(--color-background-strong)"></mm-typing-indicator>
       </mm-flex>
     </mm-grid>
   </mm-flex>
 
-  <mm-flex direction="column" gap="3">
+  <mm-flex direction="column" gap="4">
     <mm-text size="18" weight="bold" as="h3">Selection States</mm-text>
     <mm-paragraph>WCAG - 색상만으로 상태를 전달하지 말 것</mm-paragraph>
 
-    <!-- <mm-list-row
-      label="Selected"
-      description="여러 선택지 중 선택된 항목입니다. Tabs :: aria-selected"
-    ></mm-list-row>
-    <mm-list-row label="Current" description="현재 위치나 현재 보고 있는 항목입니다."></mm-list-row>
-    <mm-list-row label="Active" description="현재 활성화되어 있는 항목입니다."></mm-list-row>
-    <mm-list-row
-      label="Checked"
-      description="체크박스, 라디오, 메뉴 옵션의 체크 상태입니다."
-    ></mm-list-row>
-    <mm-list-row label="Pressed" description="토글 버튼이 눌린 상태입니다."></mm-list-row> -->
+    <mm-grid columns="4" gap="4">
+      <mm-flex direction="column" gap="3">
+        <mm-text>Selected</mm-text>
+        <mm-tab-list value="a" variant="line">
+          <mm-tab value="a">Selected</mm-tab>
+          <mm-tab value="b">Other</mm-tab>
+        </mm-tab-list>
+      </mm-flex>
+      <mm-flex direction="column" gap="3">
+        <mm-text>Current</mm-text>
+        <mm-flex gap="1">
+          <mm-page-button page="1" aria-current="page"></mm-page-button>
+          <mm-page-button page="2"></mm-page-button>
+        </mm-flex>
+      </mm-flex>
+      <mm-flex direction="column" gap="3">
+        <mm-text>Checked</mm-text>
+        <mm-checkbox checked>Checked</mm-checkbox>
+      </mm-flex>
+      <mm-flex direction="column" gap="3">
+        <mm-text>Pressed</mm-text>
+        <mm-toggle-button-group
+          selected-index="0"
+          options='[{"value":"on","label":"On"},{"value":"off","label":"Off"}]'
+        ></mm-toggle-button-group>
+      </mm-flex>
+    </mm-grid>
+
+    <style>
+      .swatch-chip {
+        height: var(--size-large);
+        border: var(--border);
+        border-radius: var(--radius);
+      }
+    </style>
+
+    <mm-flex direction="column" gap="3">
+      <mm-text weight="bold">Selection tokens</mm-text>
+      <mm-grid columns="3" gap="3">
+        <mm-flex direction="column" gap="2">
+          <div class="swatch-chip" style="background: var(--selection-background)"></div>
+          <mm-caption>--selection-background</mm-caption>
+        </mm-flex>
+        <mm-flex direction="column" gap="2">
+          <div class="swatch-chip" style="background: var(--selection-foreground)"></div>
+          <mm-caption>--selection-foreground</mm-caption>
+        </mm-flex>
+        <mm-flex direction="column" gap="2">
+          <div class="swatch-chip" style="background: var(--selection-indicator-color)"></div>
+          <mm-caption>--selection-indicator-color</mm-caption>
+        </mm-flex>
+      </mm-grid>
+    </mm-flex>
   </mm-flex>
 
   <mm-flex direction="column" gap="3">

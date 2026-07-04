@@ -3,6 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
 import { arrayAttributeConverter } from '@/utils/property-converters'
+import { focusRing } from '@/stylesheets/shared/focus-ring.styles'
 import '@/components/text/text'
 
 interface BreadcrumbItem {
@@ -31,7 +32,9 @@ export class Breadcrumb extends LitElement {
       display: flex;
       align-items: center;
       width: 100%;
-      overflow: hidden;
+      /* 가로만 잘라 긴 경로를 truncate하고, focus 링이 위아래로 잘리지 않게 세로는 연다. */
+      overflow-x: clip;
+      overflow-y: visible;
     }
 
     .breadcrumb-divider {
@@ -41,12 +44,17 @@ export class Breadcrumb extends LitElement {
     }
 
     .breadcrumb-item {
+      border-radius: var(--radius);
       color: var(--breadcrumb-item-text-color);
       text-decoration: none;
       white-space: nowrap;
 
       &[aria-current='page'] {
         color: var(--breadcrumb-item-text-color-current);
+      }
+
+      &:focus-visible {
+        ${focusRing}
       }
     }
   `
