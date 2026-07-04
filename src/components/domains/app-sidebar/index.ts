@@ -91,6 +91,9 @@ export class Sidebar extends LitElement {
     super.connectedCallback()
     const currentPath = window.location.pathname.split('/').pop() || 'index.html'
     this.currentPageId = currentPath.replace('.html', '') || 'index'
+    // 닫힌 사이드바로 포커스가 들어가지 않도록 열림 상태에 맞춰 초기 inert를 맞춘다.
+    // 이후 열고 닫는 토글은 navbar.ts의 syncNavbarMenu가 관리한다.
+    this.inert = !document.body.classList.contains('is-menu-opened')
   }
 
   private restoreScrollPosition() {

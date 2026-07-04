@@ -125,7 +125,7 @@ export class Navbar extends LitElement {
         </mm-sheet-body>
       </mm-sheet>
 
-      <mm-sidebar id="site-sidebar" inert></mm-sidebar>
+      <mm-sidebar id="site-sidebar"></mm-sidebar>
     `
   }
 
