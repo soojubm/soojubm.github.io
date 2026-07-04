@@ -88,6 +88,10 @@
       <mm-feature heading="Categorical" description="tag"></mm-feature>
       <mm-feature heading="Representative" description="avatar · thumbnail"></mm-feature>
       <mm-feature
+        heading="Fallback"
+        description="avatar · thumbnail — 콘텐츠 부재·로드 실패에도 대체 표현으로 형태와 의미를 유지하는 특성. 향후 스켈레톤 등 로딩 대체 표현으로 확장 후보"
+      ></mm-feature>
+      <mm-feature
         heading="Structural"
         description="separator · surface · list-row · table"
       ></mm-feature>
@@ -137,6 +141,10 @@
         description="notice · result · tag — 성공·경고·오류·정보 등 의미 상태를 톤으로 담고 색상만으로 전달하지 않는 특성. Feedback은 결과 자체, Statusful은 그 의미 톤과 색 접근성"
       ></mm-feature>
       <mm-feature heading="Supplementary" description="tooltip"></mm-feature>
+      <mm-feature
+        heading="Disclosure (점진적 공개)"
+        description="tooltip · text(read-more) · accordion 패턴 — 부가 정보를 숨겼다가 필요할 때 그 자리에서 펼치는 특성. 별도 작업 레이어로 전환하는 sheet·dialog는 이 축이 아님"
+      ></mm-feature>
     </mm-feature-group>
 
     <mm-text-list
@@ -151,12 +159,12 @@
       ]'
     ></mm-text-list>
 
-    <mm-text size="18" weight="bold" as="h3">제안</mm-text>
+    <mm-text size="18" weight="bold" as="h3">보류</mm-text>
     <mm-feature-group columns="3">
       <mm-feature
         icon="nav-arrow-right"
         heading="Navigational"
-        description="제안 — 현재 위치를 알리고 다른 화면으로 이동시키는 특성. breadcrumb · link · top-bar · bottom-bar 후보"
+        description="보류 — 현재 위치를 알리고 이동시키는 특성(breadcrumb · link · top-bar · bottom-bar 후보). Sequential(step)과 함께, 사이트맵 구조가 이미 내비 분류를 소유하고 있어 보류"
       ></mm-feature>
     </mm-feature-group>
   </mm-flex>

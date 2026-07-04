@@ -67,7 +67,11 @@
     <mm-feature-group columns="2">
       <mm-feature
         heading="Representative"
-        description="사용자·브랜드·객체를 시각적으로 대변합니다. 이미지 프로필을 최우선으로 보여주고, 없으면 이니셜이나 기본 아이콘으로 대체(Fallback)해 고유의 정체성을 유지합니다. 식별 정보에 상태 메타 데이터를 결합하면 하나의 독립된 정보 노출 단위로도 기능합니다."
+        description="사용자·브랜드·객체를 시각적으로 대변합니다. 이미지 프로필을 최우선으로 보여주며, 식별 정보에 상태 메타 데이터를 결합하면 하나의 독립된 정보 노출 단위로도 기능합니다."
+      ></mm-feature>
+      <mm-feature
+        heading="Fallback"
+        description="이미지가 없거나 로드에 실패해도 이니셜 → 아이콘 → 기본 아이콘 순으로 대체해 형태와 정체성을 유지합니다. alt 텍스트 또는 aria-label을 반드시 제공하세요."
       ></mm-feature>
       <mm-feature
         heading="Groupable"
@@ -76,7 +80,6 @@
     </mm-feature-group>
     <mm-text-list
       texts='[
-        "이미지가 없을 때 이니셜·아이콘·기본 아이콘 순으로 폴백합니다. alt 텍스트 또는 aria-label을 반드시 제공하세요.",
         "shape=circle은 사람(사용자)을 나타낼 때, square는 브랜드·조직·콘텐츠에 사용합니다.",
         "size는 인접한 텍스트 위계와 맞춥니다. 18px 본문 옆에는 medium, 섹션 헤더 옆에는 large를 권장합니다."
       ]'

@@ -37,6 +37,8 @@ const HEADING_ICON_MAP: Record<string, IconName> = {
   Validatable: ICON_NAMES.DOCUMENT_CHECK,
   Persistent: ICON_NAMES.APP_WINDOW,
   Statusful: ICON_NAMES.ANNOUNCEMENT,
+  'Disclosure (점진적 공개)': ICON_NAMES.EXPAND,
+  Fallback: ICON_NAMES.EMPTY,
   '타겟의 명료 (Clarity of Audience)': 'archery',
   '용도의 분명 (Explicit Intent)': 'cube-scan',
   '규모의 약속 (Controlled Scope)': 'compress',
