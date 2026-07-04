@@ -62,7 +62,7 @@ export class Navbar extends LitElement {
             aria-expanded=${this.searchOpen ? 'true' : 'false'}
             @click=${this.toggleSearch}
           ></mm-icon-button>
-          <div class="navbar-user-menu">
+          <div>
             <mm-icon-button
               icon=${ICON_NAMES.PROFILE}
               class="navbar-user-trigger"
@@ -72,37 +72,33 @@ export class Navbar extends LitElement {
             ></mm-icon-button>
             <div class="navbar-user-panel" ?hidden=${!this.userMenu.open}>
               <mm-surface variant="elevated" size="medium">
-                <mm-user-snippet
-                  size="huge"
-                  name="수줍이"
-                  email="soojubm@gmail.com"
-                  phone="010 3121 7045"
-                  description="UI Designer"
-                  avatar-src=${soojubmImage}
-                  avatar-variant="secondary"
-                  tag-label="접속 중"
-                  tag-variant="primary"
-                ></mm-user-snippet>
-                <div class="navbar-profile-action">
+                <mm-flex gap="2">
+                  <mm-user-snippet
+                    size="huge"
+                    name="수줍이"
+                    email="soojubm@gmail.com"
+                    phone="010 3121 7045"
+                    description="UI Designer"
+                    avatar-src=${soojubmImage}
+                    avatar-variant="secondary"
+                    tag-label="접속 중"
+                    tag-variant="primary"
+                  ></mm-user-snippet>
                   <mm-button>내 프로필 관리</mm-button>
-                </div>
-                <div class="navbar-profile-tag">
-                  <mm-tag variant="primary" size="large">샘플 유아이</mm-tag>
-                </div>
-                <mm-separator spacing="small"></mm-separator>
+                </mm-flex>
+                <mm-separator></mm-separator>
                 <mm-menu-item-group>
                   <mm-menu-item-action
                     icon=${ICON_NAMES.ANNOUNCEMENT}
                     label="고객센터 및 도움말"
                   ></mm-menu-item-action>
+                  <mm-menu-item-action
+                    icon=${ICON_NAMES.LOG_OUT}
+                    label="로그아웃"
+                  ></mm-menu-item-action>
                 </mm-menu-item-group>
-                <mm-separator spacing="small"></mm-separator>
-                <mm-menu-item-action
-                  icon=${ICON_NAMES.LOG_OUT}
-                  label="로그아웃"
-                ></mm-menu-item-action>
-                <mm-separator spacing="small"></mm-separator>
-                <mm-flex>
+                <mm-separator></mm-separator>
+                <mm-flex gap="2">
                   <mm-link variant="secondary" href="#">개인정보처리방침</mm-link>
                   <mm-link variant="secondary" href="#">서비스 약관</mm-link>
                 </mm-flex>
@@ -129,7 +125,7 @@ export class Navbar extends LitElement {
         </mm-sheet-body>
       </mm-sheet>
 
-      <mm-sidebar id="site-sidebar" aria-hidden="true"></mm-sidebar>
+      <mm-sidebar id="site-sidebar" inert></mm-sidebar>
     `
   }
 

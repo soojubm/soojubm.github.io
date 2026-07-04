@@ -12,15 +12,13 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 export function hideNavbar() {
-  document.body.classList.remove('is-menu-opened')
+  document.body.classList.remove(OPENED_MENU_CLASSNAME)
+  syncNavbarMenu()
 }
 
 export function initializeNavbar() {
-  const navigationTrigger = document.querySelector<HTMLElement>('.js-navbar-toggle')
-  navigationTrigger?.setAttribute('aria-expanded', 'false')
-  const menuElement = getControlledElement(navigationTrigger)
-  menuElement?.setAttribute('aria-hidden', 'true')
   document.body.classList.remove(OPENED_MENU_CLASSNAME)
+  syncNavbarMenu()
 }
 
 function getControlledElement(trigger?: HTMLElement | null) {
@@ -32,19 +30,18 @@ export function toggleNavbarMenu(event) {
   const trigger = event.target.closest('.js-navbar-toggle')
   if (!trigger) return
 
-  const menuElement = getControlledElement(trigger)
-  if (!menuElement) return
-
   document.body.classList.toggle(OPENED_MENU_CLASSNAME, !isOpendNavbarMenu())
+  syncNavbarMenu()
+}
 
-  trigger.setAttribute('aria-expanded', String(isOpendNavbarMenu()))
-  menuElement.setAttribute('aria-hidden', String(!isOpendNavbarMenu()))
+// 열림 상태를 트리거의 aria-expanded와 사이드바의 inert에 반영한다.
+// 닫혔을 때 inert로 두면 화면 밖 메뉴 내부로 포커스가 들어가지 않는다.
+function syncNavbarMenu() {
+  const trigger = document.querySelector<HTMLElement>('.js-navbar-toggle')
+  const open = isOpendNavbarMenu()
 
-  const tabIndex = String(isOpendNavbarMenu() ? '0' : '-1')
+  trigger?.setAttribute('aria-expanded', String(open))
 
-  menuElement.querySelectorAll('a').forEach(element => {
-    element.setAttribute('tabindex', tabIndex)
-  })
-
-  function toggleAria(ariaType, force) {}
+  const menuElement = getControlledElement(trigger)
+  if (menuElement) menuElement.inert = !open
 }
