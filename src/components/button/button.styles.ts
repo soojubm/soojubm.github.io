@@ -112,9 +112,12 @@ export const buttonVariantStyles = css`
   }
 `
 
-/** 선택 상태 공통 스킨. toggle·follow·filter가 함께 공유한다. 토큰은 variables.css에서 테마별로 할당한다. */
+/**
+ * 선택 상태 공통 스킨. toggle·follow·filter가 함께 공유한다. 토큰은 variables.css에서 테마별로 할당한다.
+ * 누름 상태는 표준 aria-pressed로 표현하므로, 스킨도 해당 attribute selector를 단일 기준으로 둔다.
+ */
 export const buttonSelectedStyles = css`
-  :host([selected]) button {
+  button[aria-pressed='true'] {
     border: var(--border-width) solid var(--button-selected-border-color);
     background: var(--button-selected-background);
     color: var(--button-selected-text-color);

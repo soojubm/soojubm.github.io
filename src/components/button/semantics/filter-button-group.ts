@@ -2,9 +2,11 @@ import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import type { IconName } from '@/components/icon-button/semantics/icon-names'
+import type { Orientation } from '@/controllers/roving-focus-controller'
 
-import { buttonBaseStyles } from '@/components/button/button.styles'
+import { buttonBaseStyles, buttonSelectedStyles } from '@/components/button/button.styles'
 import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
+import { RovingFocusController } from '@/controllers/roving-focus-controller'
 import { SelectionController } from '@/controllers/selection-controller'
 import { emit } from '@/utils/emit'
 import '@/components/flex/flex'
@@ -23,15 +25,10 @@ export type FilterOption = {
 export class FilterButtonGroup extends LitElement {
   static styles = [
     buttonBaseStyles,
+    buttonSelectedStyles,
     css`
       :host {
         display: block;
-      }
-
-      button[aria-selected='true'] {
-        border: var(--border-width) solid var(--button-selected-border-color);
-        background: var(--button-selected-background);
-        color: var(--button-selected-text-color);
       }
     `,
   ]
@@ -39,6 +36,8 @@ export class FilterButtonGroup extends LitElement {
   @property({ type: String }) mode: FilterMode = 'single'
   @property({ type: Array }) values: string[] = []
   @property({ type: Array }) options: FilterOption[] = []
+  @property({ type: String, reflect: true }) role = 'group'
+  @property({ type: String }) orientation: Orientation = 'horizontal'
 
   private selection = new SelectionController(this, {
     getMode: () => this.mode,
@@ -49,22 +48,19 @@ export class FilterButtonGroup extends LitElement {
     getOptions: () => this.options,
   })
 
+  // 포커스 이동은 컨트롤러가, 선택은 네이티브 버튼 클릭이 담당한다.
+  private rovingFocus = new RovingFocusController(this, {
+    getItems: () => Array.from(this.renderRoot.querySelectorAll('button')),
+    orientation: () => this.orientation,
+    getActiveIndex: () => this.options.findIndex(option => this.selection.isOptionSelected(option)),
+  })
+
   render() {
     return html`
-      <mm-flex
-        gap="2"
-        wrap="wrap"
-        role="listbox"
-        aria-orientation="horizontal"
-        aria-multiselectable=${this.isMultiple ? 'true' : 'false'}
-      >
+      <mm-flex gap="2" wrap="wrap">
         ${this.options.map(option => this.renderOption(option))}
       </mm-flex>
     `
-  }
-
-  private get isMultiple() {
-    return this.mode === 'multiple'
   }
 
   private renderOption(option: FilterOption) {
@@ -75,8 +71,7 @@ export class FilterButtonGroup extends LitElement {
       <button
         type="button"
         ?disabled=${option.disabled}
-        role="option"
-        aria-selected=${selected ? 'true' : 'false'}
+        aria-pressed=${selected ? 'true' : 'false'}
         @click=${() => this.updateValues(option)}
       >
         ${iconName
