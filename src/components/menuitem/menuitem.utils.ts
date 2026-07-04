@@ -22,7 +22,6 @@ export function renderMenuItemRow(options: MenuItemRowOptions, content: unknown)
 
   return html`
     <div
-      class="interactive"
       role=${options.role}
       tabindex=${options.disabled ? '-1' : '0'}
       aria-disabled=${options.disabled ? 'true' : nothing}

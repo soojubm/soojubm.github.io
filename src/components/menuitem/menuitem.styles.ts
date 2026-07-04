@@ -18,23 +18,19 @@ export const menuItemStyles = css`
     text-decoration: none;
     box-sizing: border-box;
     text-transform: capitalize;
+    cursor: pointer;
 
-    /* 상호작용 가능한 행(checkbox·radio·switch·link 등)만 hover 강조 */
-    &.interactive {
-      cursor: pointer;
+    &:hover {
+      background-color: var(--menuitem-background-color-hover);
+    }
 
-      &:hover {
-        background-color: var(--menuitem-background-color-hover);
-      }
+    &:focus-visible {
+      outline: var(--interaction-focus-outline);
+      outline-offset: -1px;
+    }
 
-      &:focus-visible {
-        outline: var(--interaction-focus-outline);
-        outline-offset: -1px;
-      }
-
-      &[aria-current='page'] {
-        background-color: var(--selection-background);
-      }
+    &[aria-current='page'] {
+      background-color: var(--selection-background);
     }
 
     &[disabled],
@@ -47,10 +43,6 @@ export const menuItemStyles = css`
   /* tone=danger: color를 행에 지정하면 list-row 내부 텍스트·아이콘이 상속받는다 */
   :host([tone='danger']) :is(button, a, [role^='menuitem']) {
     color: var(--menuitem-text-color-danger);
-  }
-
-  :host([aria-current='page']) .interactive {
-    background-color: var(--selection-background);
   }
 
   mm-list-row {

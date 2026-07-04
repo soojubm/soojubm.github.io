@@ -22,14 +22,10 @@ export class Thumbnail extends LitElement {
       margin: 0;
     }
 
-    :is(a, button).interactive {
-      cursor: pointer;
-      transition: all 0.3s ease-in-out;
-    }
-    :is(a, button).interactive:hover {
+    :is(a, button):hover {
       transform: scale(1.03);
     }
-    :is(a, button, div):focus-visible {
+    :is(a, button):focus-visible {
       ${focusRing}
     }
 
@@ -55,7 +51,7 @@ export class Thumbnail extends LitElement {
       display: block;
     }
 
-    :is(a, button, div) {
+    :is(a, button) {
       display: block;
       width: 100%;
       padding: 0;
@@ -65,6 +61,8 @@ export class Thumbnail extends LitElement {
       border-radius: var(--thumbnail-border-radius);
       text-decoration: none;
       color: inherit;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
     }
 
     mm-caption {
@@ -97,13 +95,13 @@ export class Thumbnail extends LitElement {
   private renderMedia() {
     if (this.href) {
       return html`
-        <a href=${this.href} class="interactive">${this.renderImage()}</a>
+        <a href=${this.href}>${this.renderImage()}</a>
       `
     }
 
     if (this.clickable) {
       return html`
-        <button type="button" class="interactive">${this.renderImage()}</button>
+        <button type="button">${this.renderImage()}</button>
       `
     }
 
