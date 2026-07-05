@@ -41,6 +41,7 @@ export const ICON_NAMES = {
   SUCCESS: 'check-circle',
   WARNING: 'warning-triangle',
   FAILURE: 'xmark-circle',
+  IDLE: 'circle',
 
   // Selection
   BOOKMARK: 'bookmark',

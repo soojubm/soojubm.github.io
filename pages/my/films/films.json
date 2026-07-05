@@ -1,6 +1,33 @@
 [
   {
     "id": 202606,
+    "releasedate": 1915,
+    "titlekorean": "은행",
+    "titleenglish": "The Bank",
+    "director": "찰리 채플린",
+    "country": "미국",
+    "etc": "무성, 단편"
+  },
+  {
+    "id": 202607,
+    "releasedate": 1962,
+    "titlekorean": "13 고스트",
+    "titleenglish": "The Outcast",
+    "director": "이치가와 곤",
+    "country": "미국",
+    "etc": ""
+  },
+  {
+    "id": 202606,
+    "releasedate": 1962,
+    "titlekorean": "비열한 거리",
+    "titleenglish": "The Outcast",
+    "director": "이치가와 곤",
+    "country": "미국",
+    "etc": ""
+  },
+  {
+    "id": 202606,
     "releasedate": 1962,
     "titlekorean": "아노라",
     "titleenglish": "The Outcast",

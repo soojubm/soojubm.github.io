@@ -816,8 +816,7 @@
     </mm-grid>
   </mm-flex>
 
-  <mm-flex direction="column" gap="4">
-    <mm-text size="18" weight="bold" as="h3">Interaction States</mm-text>
+  <mm-content-section heading="Interaction States">
     <!-- <mm-paragraph>입력에 대한 반응과 사용 가능 여부.</mm-paragraph> -->
 
     <mm-grid columns="4" gap="4">
@@ -915,12 +914,25 @@
         </button>
       </mm-flex>
     </mm-grid>
-  </mm-flex>
+  </mm-content-section>
 
-  <mm-flex direction="column" gap="4">
-    <mm-text size="18" weight="bold" as="h3">Selection States</mm-text>
+  <mm-content-section heading="Selection States">
     <mm-paragraph>WCAG - 색상만으로 상태를 전달하지 말 것</mm-paragraph>
-
+    <mm-grid columns="3" gap="3">
+      <mm-flex direction="column" gap="2">
+        <div class="swatch-chip" style="background: var(--selection-background)"></div>
+        <mm-caption>--selection-background</mm-caption>
+      </mm-flex>
+      <mm-flex direction="column" gap="2">
+        <div class="swatch-chip" style="background: var(--selection-foreground)"></div>
+        <mm-caption>--selection-foreground</mm-caption>
+      </mm-flex>
+      <mm-flex direction="column" gap="2">
+        <div class="swatch-chip" style="background: var(--selection-indicator-color)"></div>
+        <mm-caption>--selection-indicator-color</mm-caption>
+      </mm-flex>
+    </mm-grid>
+    <br />
     <mm-grid columns="4" gap="4">
       <mm-flex direction="column" gap="3">
         <mm-text>Selected</mm-text>
@@ -956,29 +968,10 @@
         border-radius: var(--radius);
       }
     </style>
+  </mm-content-section>
 
-    <mm-flex direction="column" gap="3">
-      <mm-text weight="bold">Selection tokens</mm-text>
-      <mm-grid columns="3" gap="3">
-        <mm-flex direction="column" gap="2">
-          <div class="swatch-chip" style="background: var(--selection-background)"></div>
-          <mm-caption>--selection-background</mm-caption>
-        </mm-flex>
-        <mm-flex direction="column" gap="2">
-          <div class="swatch-chip" style="background: var(--selection-foreground)"></div>
-          <mm-caption>--selection-foreground</mm-caption>
-        </mm-flex>
-        <mm-flex direction="column" gap="2">
-          <div class="swatch-chip" style="background: var(--selection-indicator-color)"></div>
-          <mm-caption>--selection-indicator-color</mm-caption>
-        </mm-flex>
-      </mm-grid>
-    </mm-flex>
-  </mm-flex>
-
-  <mm-flex direction="column" gap="3">
-    <mm-text size="18" weight="bold">Feedback States</mm-text>
-    <!-- <mm-paragraph>
+  <mm-content-section heading="Status States">
+    <mm-paragraph>
       사용자의 행동이나 시스템 상태에 대한 결과를 전달합니다. 사용자가 문제의 원인과 영향을 받는
       대상을 명확히 이해할 수 있도록 제공해야 합니다. 색상만으로 에러 상태를 전달하지 말고, 에러 톤,
       명시적인 메시지, 영향을 받는 필드 또는 영역, 그리고 접근 가능한 관계를 함께 제공해야 합니다.
@@ -994,47 +987,72 @@
     <mm-flex direction="column" gap="3">
       <mm-list-row
         icon="check-circle"
-        size="large"
+        size="medium"
         label="Success"
         description="작업이 성공적으로 완료되었음을 나타냅니다."
       ></mm-list-row>
       <mm-list-row
         icon="info-circle"
-        size="large"
+        size="medium"
         label="Info"
         description="사용자에게 참고 가능한 보조 정보를 제공합니다."
       ></mm-list-row>
       <mm-list-row
         icon="warning-triangle"
-        size="large"
+        size="medium"
         label="Warning"
         description="진행 전에 사용자의 주의가 필요한 상태입니다."
       ></mm-list-row>
 
       <mm-list-row
         icon="xmark-circle"
-        size="large"
+        size="medium"
         label="Error"
         description="오류, 실패, 수정이 필요한 상태를 나타냅니다."
       ></mm-list-row>
+    </mm-flex>
+  </mm-content-section>
+
+  <mm-content-section heading="Data/Async States">
+    <mm-paragraph>
+      비동기 데이터 흐름의 상태. 실패는 Error 대신 Rejected/Failed로 부른다.
+    </mm-paragraph>
+
+    <mm-flex direction="column" gap="3">
       <mm-list-row
-        icon="glass-empty"
-        size="large"
-        label="Empty"
-        description="데이터나 결과가 없는 상태를 설명합니다."
+        icon="circle"
+        size="medium"
+        label="Idle"
+        description="아직 아무 요청도 하지 않은 대기·초기 상태입니다."
       ></mm-list-row>
       <mm-list-row
         icon="refresh"
-        size="large"
-        label="Progress"
-        description="작업이 진행 중이며 결과를 기다리는 상태입니다. Page loading / Form submitting / Data fetching"
+        size="medium"
+        label="Pending / Fetching"
+        description="데이터를 가져오는 중입니다. 스켈레톤이나 스피너를 노출합니다."
       ></mm-list-row>
-    </mm-flex> -->
-  </mm-flex>
+      <mm-list-row
+        icon="check-circle"
+        size="medium"
+        label="Resolved / Success"
+        description="데이터를 성공적으로 가져와 정상 UI를 노출합니다."
+      ></mm-list-row>
+      <mm-list-row
+        icon="xmark-circle"
+        size="medium"
+        label="Rejected / Failed"
+        description="데이터를 가져오는 데 실패해 에러 화면을 노출합니다."
+      ></mm-list-row>
+      <mm-list-row
+        icon="glass-empty"
+        size="medium"
+        label="Empty"
+        description="완료되었으나 데이터가 0건일 때 빈 화면을 노출합니다."
+      ></mm-list-row>
+    </mm-flex>
+  </mm-content-section>
 
-  <mm-flex direction="column" gap="3">
-    <mm-text size="18" weight="bold">Icons</mm-text>
-  </mm-flex>
+  <mm-content-section heading="Icons"></mm-content-section>
 
   <mm-component-references>
     <mm-link href="https://m3.material.io/foundations/layout/breakpoints/overview">

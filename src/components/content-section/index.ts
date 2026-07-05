@@ -25,7 +25,7 @@ export class ContentSection extends LitElement {
 
   render() {
     return html`
-      <mm-flex as="section" direction="column" gap="4">
+      <mm-flex as="section" direction="column" gap="3">
         <mm-heading level="2">${this.heading}</mm-heading>
         <slot></slot>
       </mm-flex>

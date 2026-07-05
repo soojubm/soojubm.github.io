@@ -1,6 +1,6 @@
 import { css } from 'lit'
 
-export type SurfaceVariant = 'ghost' | 'flat' | 'plain' | 'subtle' | 'elevated'
+export type SurfaceVariant = 'ghost' | 'outlined' | 'plain' | 'subtle' | 'elevated'
 export type SurfaceSize = 'small' | 'medium'
 export type SurfaceRadius = 'default' | 'large'
 

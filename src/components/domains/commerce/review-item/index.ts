@@ -33,7 +33,7 @@ export class ReviewItem extends LitElement {
 
   render() {
     return html`
-      <mm-surface variant="flat">
+      <mm-surface variant="outlined">
         <mm-flex direction="column" gap="3">
           <mm-flex class="rating" role="img" aria-label="${this.rating}점">
             ${Array.from(
