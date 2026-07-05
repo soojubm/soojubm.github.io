@@ -24,6 +24,13 @@ class Sheet extends LitElement {
     root: () => document.getElementById('sheet-page-root') ?? document.body,
   })
 
+  // 리스너 대상이 호스트 자신이라 portal 이동에도 유지되므로 생성자에서 한 번만 등록한다.
+  constructor() {
+    super()
+    this.addEventListener('sheetclose', this.handleSheetClose)
+    this.addEventListener('click', this.handleBackdropClick)
+  }
+
   private handleSheetClose = () => {
     this.close()
   }
@@ -36,26 +43,10 @@ class Sheet extends LitElement {
     `
   }
 
-  connectedCallback() {
-    super.connectedCallback()
-    this.addEventListener('sheetclose', this.handleSheetClose)
-    this.addEventListener('click', this.handleBackdropClick)
-  }
-
-  disconnectedCallback() {
-    this.removeEventListener('sheetclose', this.handleSheetClose)
-    this.removeEventListener('click', this.handleBackdropClick)
-    super.disconnectedCallback()
-  }
-
   /** 호스트(backdrop) 영역 클릭 시 닫는다 */
   private handleBackdropClick = (e: MouseEvent) => {
     if (!this.isOpen) return
-    if (e.target === this) this.requestClose()
-  }
-
-  private requestClose() {
-    emit(this, 'sheetclose')
+    if (e.target === this) emit(this, 'sheetclose')
   }
 
   protected updated(changedProperties: Map<string, unknown>) {
@@ -97,7 +88,12 @@ class Sheet extends LitElement {
   }
 
   toggle() {
-    this.isOpen ? this.close() : this.open()
+    if (this.isOpen) {
+      this.close()
+      return
+    }
+
+    this.open()
   }
 }
 export default Sheet

@@ -10,6 +10,7 @@ import { MEDIA_QUERY } from '@/stylesheets/shared/breakpoints'
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
 import '@/components/menuitem/semantics/menu-item-action'
 import '@/components/menuitem/semantics/menu-item-checkbox'
+import '@/components/menuitem/semantics/menu-item-group'
 import '@/components/popover/popover'
 import '@/components/sheet/sheet'
 import '@/components/sheet/semantics/sheet-body'
@@ -48,7 +49,7 @@ export class Select extends LitElement {
         width: auto;
       }
 
-      .select-list {
+      mm-popover {
         --popover-max-height: var(--select-max-height);
         min-width: var(--select-min-width);
 
@@ -141,18 +142,10 @@ export class Select extends LitElement {
     }))
   }
 
-  private toggleOpen = () => {
-    this.popup.toggle()
-  }
-
   // 일반 아이템 클릭 시: 선택 라벨 변경 후 목록 닫기
   private selectOption(option: SelectOption) {
     this.value = option.value
     this.popup.close()
-    this.emitSelectChange(option)
-  }
-
-  private emitSelectChange(option: SelectOption) {
     emit(this, 'change', { type: 'select', value: option.value })
   }
 
@@ -179,7 +172,11 @@ export class Select extends LitElement {
   // 트리거 스타일은 slot="trigger"로 들어온 외부 요소가 책임진다.
   private renderTrigger() {
     return html`
-      <slot name="trigger" @click=${this.toggleOpen} @slotchange=${this.popup.syncTrigger}></slot>
+      <slot
+        name="trigger"
+        @click=${() => this.popup.toggle()}
+        @slotchange=${this.popup.syncTrigger}
+      ></slot>
     `
   }
 
@@ -187,14 +184,8 @@ export class Select extends LitElement {
     if (this.isPhoneViewport) return nothing
 
     return html`
-      <mm-popover
-        class="select-list"
-        role="menu"
-        ?open=${this.popup.open}
-        placement=${this.placement}
-        ?inline=${this.inline}
-      >
-        ${this.renderOptionItems()}
+      <mm-popover ?open=${this.popup.open} placement=${this.placement} ?inline=${this.inline}>
+        <mm-menu-item-group>${this.renderOptionItems()}</mm-menu-item-group>
       </mm-popover>
     `
   }
@@ -209,20 +200,14 @@ export class Select extends LitElement {
       <mm-sheet
         placement="bottom"
         ?open=${this.popup.open}
-        @sheetclose=${this.handleSheetClose}
-        @pointerdown=${this.stopSheetPointerdown}
+        @sheetclose=${() => this.popup.close()}
+        @pointerdown=${(e: Event) => e.stopPropagation()}
       >
-        <mm-sheet-body role="menu">${this.renderOptionItems()}</mm-sheet-body>
+        <mm-sheet-body>
+          <mm-menu-item-group>${this.renderOptionItems()}</mm-menu-item-group>
+        </mm-sheet-body>
       </mm-sheet>
     `
-  }
-
-  private handleSheetClose = () => {
-    this.popup.close()
-  }
-
-  private stopSheetPointerdown = (e: Event) => {
-    e.stopPropagation()
   }
 
   protected updated(changedProperties: Map<string, unknown>) {

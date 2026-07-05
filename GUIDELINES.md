@@ -138,6 +138,10 @@
 
 ## 컴포넌트별 규칙
 
+### mm-menu-item-group
+
+- 여러 `mm-menu-item-*`를 묶어 보여줄 때는 role과 항목 간 gap을 컨테이너에서 직접 재현하지 않고 `mm-menu-item-group`으로 감싼다.
+
 ### mm-sheet
 
 - 시트 높이와 스크롤 책임은 sheet 컴포넌트 계층에서 일관되게 관리한다.
