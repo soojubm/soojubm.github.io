@@ -8,7 +8,7 @@ type SheetElement = HTMLElement & {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  document.body.innerHTML = renderLayout('<div id="sheet-page-root"></div>', { closeSidebar: true })
+  document.body.innerHTML = renderLayout('<div id="sheet-page-root"></div>')
 
   const root = document.querySelector<HTMLElement>('#sheet-page-root')
   if (root) render(sheetPageTemplate(), root)
@@ -35,7 +35,7 @@ function setupSheetTriggers() {
   document.querySelectorAll<HTMLElement>('[data-open-sheet]').forEach(trigger => {
     trigger.addEventListener('click', () => {
       const value = trigger.dataset.openSheet ?? ''
-      const selector = /^[#.]/.test(value) ? value : `mm-sheet[variant="${value}"]`
+      const selector = /^[#.]/.test(value) ? value : `mm-sheet[placement="${value}"]`
       const sheet = document.querySelector<SheetElement>(selector)
       if (!sheet) return
 
@@ -54,7 +54,7 @@ function sheetPageTemplate() {
     <main class="page">
       <mm-page-header
         heading="Sheet"
-        description="콘텐츠나 작업을 레이어 위에 표시합니다. 위치와 모달리티에 따라 center·bottom·left·right variant로 구분됩니다."
+        description="콘텐츠나 작업을 viewport 기준 modal 레이어 위에 표시합니다. 위치는 center·bottom·left·right placement로 지정합니다. anchor 기반 non-modal 레이어는 mm-popover가 담당합니다."
       ></mm-page-header>
 
       <mm-component-aka
@@ -65,7 +65,10 @@ function sheetPageTemplate() {
 
       <mm-component-props>
         <mm-prop name="open" type="boolean"></mm-prop>
-        <mm-prop name="variant" type="'center' | 'bottom' | 'left' | 'right' = 'center'"></mm-prop>
+        <mm-prop
+          name="placement"
+          type="'center' | 'bottom' | 'left' | 'right' = 'center'"
+        ></mm-prop>
         <mm-prop
           name="width"
           type="'small' | 'medium' | 'large' | 'full' = 'medium'"
@@ -151,19 +154,22 @@ function sheetPageTemplate() {
           ])}
         ></mm-text-list>
 
-        <mm-text size="16">Sheet variant별 분류</mm-text>
+        <mm-text size="16">레이어 프리미티브 분리</mm-text>
+        <mm-paragraph>
+          두 프리미티브는 포지셔닝 모델과 모달리티로 나뉜다. 시각적 형태(dialog·drawer·bottom
+          sheet·dropdown)는 이 두 프리미티브 위에서 placement와 콘텐츠 조합으로 만든다.
+        </mm-paragraph>
         <mm-text-list
           texts=${JSON.stringify([
-            'Modal — center: Backdrop + focus trap. 사용자 확인이 필요한 작업.',
-            'Non-modal — bottom: 컨텍스트 확장. 배경 스크롤 허용 여부는 콘텐츠 성격에 따라 결정.',
-            'Non-modal — left / right: 사이드 패널. 페이지 맥락을 유지한 채 추가 정보 탐색.',
+            'mm-sheet — viewport 기준 modal 레이어. backdrop·portal·스크롤 잠금을 소유하며 placement로 위치를 지정한다. dialog(center), bottom sheet(bottom), drawer(left/right)를 커버한다.',
+            'mm-popover — anchor 기준 non-modal 레이어. 트리거를 소유한 컴포넌트가 좌표와 열림 상태를 제어하고, popover는 떠 있는 패널 표면만 책임진다. dropdown·메뉴를 커버한다.',
           ])}
         ></mm-text-list>
 
         <mm-text-block
           level="2"
           heading="Changelog"
-          description="Anchor variant를 제거하고 dropdown이 레이어 스타일을 직접 소유하도록 변경했습니다. 향후 범용 anchored layer가 필요하면 별도 mm-popover로 분리합니다."
+          description="variant를 placement로 이름을 바꾸고 inline variant를 제거했습니다. mm-sheet는 항상 modal이며, anchor 기반 non-modal 레이어는 별도 프리미티브 mm-popover가 담당합니다."
         ></mm-text-block>
 
         <mm-component-references>
@@ -231,7 +237,7 @@ function sheetExampleTemplate() {
       <mm-button @click=${() => openSheet('right-sheet')}>Right</mm-button>
     </mm-button-group>
 
-    <mm-sheet id="center-sheet" variant="center" width="medium">
+    <mm-sheet id="center-sheet" placement="center" width="medium">
       <mm-sheet-header heading="Center Sheet"></mm-sheet-header>
       <mm-sheet-body><mm-paragraph>중앙 모달 콘텐츠</mm-paragraph></mm-sheet-body>
       <mm-sheet-footer
@@ -239,7 +245,7 @@ function sheetExampleTemplate() {
         .secondaryAction=${{ label: '닫기', onClick: () => {} }}
       ></mm-sheet-footer>
     </mm-sheet>
-    <mm-sheet id="bottom-sheet" variant="bottom" height="360px">
+    <mm-sheet id="bottom-sheet" placement="bottom" height="360px">
       <mm-sheet-header heading="Bottom Sheet"></mm-sheet-header>
       <mm-sheet-body>
         <mm-menu-item-group>
@@ -261,7 +267,7 @@ function sheetExampleTemplate() {
         .secondaryAction=${{ label: '취소', onClick: () => {} }}
       ></mm-sheet-footer>
     </mm-sheet>
-    <mm-sheet id="left-sheet" variant="left">
+    <mm-sheet id="left-sheet" placement="left">
       <mm-sheet-header heading="Left Sheet"></mm-sheet-header>
       <mm-sheet-body><mm-paragraph>왼쪽 패널 콘텐츠</mm-paragraph></mm-sheet-body>
       <mm-sheet-footer
@@ -269,7 +275,7 @@ function sheetExampleTemplate() {
         .secondaryAction=${{ label: '닫기', onClick: () => {} }}
       ></mm-sheet-footer>
     </mm-sheet>
-    <mm-sheet id="right-sheet" variant="right">
+    <mm-sheet id="right-sheet" placement="right">
       <mm-sheet-header heading="Right Sheet"></mm-sheet-header>
       <mm-sheet-body><mm-paragraph>오른쪽 패널 콘텐츠</mm-paragraph></mm-sheet-body>
       <mm-sheet-footer
@@ -283,7 +289,7 @@ function sheetExampleTemplate() {
 function filterSheetTemplate() {
   return html`
     <mm-icon-button icon="filter" data-open-sheet="#filter-sheet"></mm-icon-button>
-    <mm-sheet variant="bottom" id="filter-sheet">
+    <mm-sheet placement="bottom" id="filter-sheet">
       <mm-sheet-header heading="필터"></mm-sheet-header>
       <mm-sheet-body>
         <form class="filter">
@@ -355,12 +361,12 @@ function filterSheetTemplate() {
           <mm-separator></mm-separator>
           <fieldset class="filter-fieldset" role="group">
             <legend class="filter-fieldset-legend">릴리스 채널</legend>
-            <mm-dropdown>
+            <mm-select>
               <mm-button slot="trigger" size="small">Stable</mm-button>
               <option value="stable">Stable</option>
               <option value="beta">Beta</option>
               <option value="canary">Canary</option>
-            </mm-dropdown>
+            </mm-select>
           </fieldset>
           <mm-separator></mm-separator>
           <fieldset class="filter-fieldset" role="group">

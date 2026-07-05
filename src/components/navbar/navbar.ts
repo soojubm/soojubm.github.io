@@ -72,7 +72,7 @@ export class Navbar extends LitElement {
             ></mm-icon-button>
             <div class="navbar-user-panel" ?hidden=${!this.userMenu.open}>
               <mm-surface variant="elevated" size="medium">
-                <mm-flex gap="2">
+                <mm-flex gap="2" justify-content="space-between">
                   <mm-user-snippet
                     size="huge"
                     name="수줍이"
@@ -109,7 +109,7 @@ export class Navbar extends LitElement {
       </nav>
       <div class="navbar-backdrop"></div>
 
-      <mm-sheet class="js-search-sheet" variant="center" width="medium" backdrop-blur>
+      <mm-sheet class="js-search-sheet" placement="center" width="medium" backdrop-blur>
         <mm-top-bar type="back"></mm-top-bar>
         <mm-sheet-body>
           <form role="search">

@@ -27,7 +27,7 @@ export class Dialog extends LitElement {
   render() {
     return html`
       <mm-sheet
-        variant="center"
+        placement="center"
         width="small"
         ?open=${this.open}
         style="--sheet-width-small: 320px"

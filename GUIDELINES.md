@@ -141,7 +141,6 @@
 ### mm-sheet
 
 - 시트 높이와 스크롤 책임은 sheet 컴포넌트 계층에서 일관되게 관리한다.
-- sheet 패턴은 sitemap의 patterns 카테고리에 둔다.
 
 ### mm-surface
 

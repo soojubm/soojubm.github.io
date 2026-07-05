@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   setupPortfolioModal()
   document.querySelector('mm-view-mode-switcher')?.addEventListener('change', handleViewMode)
-  document.querySelector('mm-sort-dropdown')?.addEventListener('change', handleSort)
+  document.querySelector('mm-sort-picker')?.addEventListener('change', handleSort)
 })
 
 /** mm-portfolio-item의 portfolio-item-open 이벤트를 mm-sheet 컴포넌트 open()에 연결한다. */

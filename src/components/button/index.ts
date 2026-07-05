@@ -9,7 +9,7 @@ import '@/components/button/semantics/file-upload-button'
 import '@/components/button/semantics/read-more-button'
 import '@/components/button/semantics/show-more-button'
 import '@/components/button/semantics/clear-button'
-import '@/components/button/semantics/sort-dropdown'
+import '@/components/button/semantics/sort-picker'
 import '@/components/button/semantics/to-top-button'
 
 export {}

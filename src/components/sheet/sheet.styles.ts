@@ -81,40 +81,37 @@ export const sheetStyles = css`
     transition: transform var(--sheet-transition-duration) cubic-bezier(0.2, 0.8, 0.2, 1);
   }
 
-  :host([open][variant='center']) .sheet {
+  :host([open][placement='center']) .sheet {
     transform: scale(1);
     transition: transform var(--sheet-transition-duration-emphasis) cubic-bezier(0.18, 1.25, 0.4, 1);
   }
 
-  :host([open][variant='bottom']) .sheet {
+  :host([open][placement='bottom']) .sheet {
     transform: translateY(0);
   }
-  :host([open][variant='left']) .sheet {
+  :host([open][placement='left']) .sheet {
     transform: translateX(0);
   }
-  :host([open][variant='right']) .sheet {
+  :host([open][placement='right']) .sheet {
     transform: translateX(0);
-  }
-  :host([open][variant='inline']) .sheet {
-    transform: translateY(0);
   }
 
   /* center + width */
-  :host([variant='center']) .sheet {
+  :host([placement='center']) .sheet {
     max-width: var(--sheet-width-medium);
   }
-  :host([variant='center'][width='small']) .sheet {
+  :host([placement='center'][width='small']) .sheet {
     max-width: var(--sheet-width-small);
   }
-  :host([variant='center'][width='large']) .sheet {
+  :host([placement='center'][width='large']) .sheet {
     max-width: var(--sheet-width-large);
   }
-  :host([variant='center'][width='full']) .sheet {
+  :host([placement='center'][width='full']) .sheet {
     max-width: var(--sheet-width-full);
   }
 
   /* bottom */
-  :host([variant='bottom']) .sheet {
+  :host([placement='bottom']) .sheet {
     max-width: var(--sheet-bottom-max-width);
     border-bottom-left-radius: var(--sheet-border-radius);
     border-bottom-right-radius: var(--sheet-border-radius);
@@ -123,7 +120,7 @@ export const sheetStyles = css`
   }
 
   /* left */
-  :host([variant='left']) .sheet {
+  :host([placement='left']) .sheet {
     margin-right: auto;
     max-width: var(--sheet-side-max-width);
     height: var(--sheet-height-full);
@@ -134,7 +131,7 @@ export const sheetStyles = css`
   }
 
   /* right */
-  :host([variant='right']) .sheet {
+  :host([placement='right']) .sheet {
     margin-left: auto;
     max-width: var(--sheet-side-max-width);
     height: var(--sheet-height-full);
@@ -145,24 +142,9 @@ export const sheetStyles = css`
   }
 
   @media ${MEDIA.small} {
-    :host([variant='left']) .sheet,
-    :host([variant='right']) .sheet {
+    :host([placement='left']) .sheet,
+    :host([placement='right']) .sheet {
       max-width: var(--sheet-side-responsive-max-width);
-    }
-  }
-
-  /* inline */
-  :host([variant='inline']) {
-    width: auto;
-    height: auto;
-    justify-content: flex-start;
-    align-items: stretch;
-    position: relative;
-    inset: auto; /* base의 inset: 0 리셋 */
-    background: transparent;
-
-    & .sheet {
-      transform: translateY(var(--space-1-minus));
     }
   }
 `

@@ -4,8 +4,7 @@ import { customElement, property, state } from 'lit/decorators.js'
 import '@/components/button/button'
 import '@/components/icon-button/semantics/more-button'
 import '@/components/menuitem/semantics/menu-item-action'
-import '@/components/sheet/sheet'
-import '@/components/sheet/semantics/sheet-body'
+import '@/components/popover/popover'
 import { emit } from '@/utils/emit'
 import { uniqueId } from '@/utils/unique-id'
 
@@ -47,20 +46,10 @@ export class CommentItem extends LitElement {
       position: relative;
     }
 
-    mm-sheet {
-      --sheet-padding-inline: var(--space-1);
-      --sheet-section-padding-block: 0;
-      --sheet-background: var(--color-background);
-      --sheet-border: var(--border);
-      --sheet-border-radius: var(--radius);
-      --sheet-shadow: var(--shadow);
-      --sheet-max-height: none;
-
+    mm-popover {
       width: var(--comment-item-menu-width);
-      position: absolute;
       right: 40px;
       top: 0;
-      z-index: var(--zindex-default);
     }
 
     mm-menu-item-action {
@@ -121,19 +110,17 @@ export class CommentItem extends LitElement {
     if (!this.editable) return nothing
 
     return html`
-      <mm-sheet id=${this.menuId} variant="inline" ?open=${this.menuOpen}>
-        <mm-sheet-body role="menu">
-          <mm-menu-item-action
-            label="수정"
-            @click=${() => this.onMenuAction('edit')}
-          ></mm-menu-item-action>
-          <mm-menu-item-action
-            label="삭제"
-            tone="danger"
-            @click=${() => this.onMenuAction('delete')}
-          ></mm-menu-item-action>
-        </mm-sheet-body>
-      </mm-sheet>
+      <mm-popover id=${this.menuId} role="menu" ?open=${this.menuOpen}>
+        <mm-menu-item-action
+          label="수정"
+          @click=${() => this.onMenuAction('edit')}
+        ></mm-menu-item-action>
+        <mm-menu-item-action
+          label="삭제"
+          tone="danger"
+          @click=${() => this.onMenuAction('delete')}
+        ></mm-menu-item-action>
+      </mm-popover>
     `
   }
 

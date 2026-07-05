@@ -5,7 +5,7 @@ import '@/components/icon-button/icon-button'
 import '@/components/flex/flex'
 import { inputStyles } from '@/components/input/input.styles'
 import { Textarea } from '@/components/input/textarea'
-import '@/components/domains/prompt-input/attachment-dropdown'
+import '@/components/popover/semantics/select'
 import { emit } from '@/utils/emit'
 
 @customElement('mm-prompt-input')
@@ -138,7 +138,16 @@ export class PromptInput extends LitElement {
     if (this.hiddenAttachment) return nothing
 
     return html`
-      <mm-attachment-dropdown></mm-attachment-dropdown>
+      <mm-select inline placement="top-left" list-min-width="160px">
+        <mm-icon-button
+          slot="trigger"
+          icon="plus-circle-solid"
+          aria-label="이미지 첨부"
+        ></mm-icon-button>
+        <option value="upload" icon="import">이미지 업로드</option>
+        <option value="camera" icon="camera">카메라 촬영</option>
+        <option value="url" icon="link">URL로 추가</option>
+      </mm-select>
     `
   }
 

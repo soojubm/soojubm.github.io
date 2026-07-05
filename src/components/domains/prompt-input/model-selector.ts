@@ -1,7 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import '@/components/dropdown/dropdown'
+import '@/components/popover/semantics/select'
 import '@/components/button/button'
 import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
 
@@ -25,7 +25,7 @@ export class ModelSelector extends LitElement {
 
   render() {
     return html`
-      <mm-dropdown .value=${this.value} inline placement="top-left">
+      <mm-select .value=${this.value} inline placement="top-left">
         <mm-button
           slot="trigger"
           variant="tertiary"
@@ -38,7 +38,7 @@ export class ModelSelector extends LitElement {
         <option value="claude-opus">Claude Opus</option>
         <option value="claude-sonnet" selected>Claude Sonnet</option>
         <option value="claude-haiku">Claude Haiku</option>
-      </mm-dropdown>
+      </mm-select>
     `
   }
 }

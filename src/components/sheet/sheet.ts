@@ -5,14 +5,14 @@ import { sheetStyles } from '@/components/sheet/sheet.styles'
 import { PortalController } from '@/controllers/portal-controller'
 import { ScrollLockController } from '@/controllers/scroll-lock-controller'
 import { emit } from '@/utils/emit'
-export type SheetVariant = 'center' | 'bottom' | 'left' | 'right' | 'inline'
+export type SheetPlacement = 'center' | 'bottom' | 'left' | 'right'
 export type SheetWidth = 'small' | 'medium' | 'large' | 'full'
 
 @customElement('mm-sheet')
 class Sheet extends LitElement {
   static styles = sheetStyles
 
-  @property({ type: String, reflect: true }) variant: SheetVariant = 'center'
+  @property({ type: String, reflect: true }) placement: SheetPlacement = 'center'
   @property({ type: String, reflect: true }) width: SheetWidth = 'medium'
   @property({ type: String }) height?: string
   @property({ type: Boolean, reflect: true, attribute: 'open' }) isOpen = false
@@ -20,7 +20,7 @@ class Sheet extends LitElement {
 
   private scrollLock = new ScrollLockController(this)
   private portal = new PortalController(this, {
-    isActive: () => this.isOpen && this.isModal,
+    isActive: () => this.isOpen,
     root: () => document.getElementById('sheet-page-root') ?? document.body,
   })
 
@@ -30,7 +30,7 @@ class Sheet extends LitElement {
 
   render() {
     return html`
-      <aside class="sheet" variant=${this.variant} ?open=${this.isOpen}>
+      <aside class="sheet" ?open=${this.isOpen}>
         <slot></slot>
       </aside>
     `
@@ -48,9 +48,9 @@ class Sheet extends LitElement {
     super.disconnectedCallback()
   }
 
-  /** modal variant: 호스트(backdrop) 영역 클릭 시 닫는다 */
+  /** 호스트(backdrop) 영역 클릭 시 닫는다 */
   private handleBackdropClick = (e: MouseEvent) => {
-    if (!this.isModal || !this.isOpen) return
+    if (!this.isOpen) return
     if (e.target === this) this.requestClose()
   }
 
@@ -58,13 +58,9 @@ class Sheet extends LitElement {
     emit(this, 'sheetclose')
   }
 
-  private get isModal() {
-    return this.variant !== 'inline'
-  }
-
   protected updated(changedProperties: Map<string, unknown>) {
     if (changedProperties.has('height')) this.syncHeight()
-    if (changedProperties.has('isOpen') || changedProperties.has('variant')) this.syncModal()
+    if (changedProperties.has('isOpen')) this.syncModal()
   }
 
   private syncHeight() {
@@ -80,7 +76,7 @@ class Sheet extends LitElement {
   // host를 portal로 옮기면 lifecycle이 재실행되며 스크롤 잠금이 풀리므로,
   // 열 때는 portal 이후에 잠그고 닫을 때는 잠금을 푼 뒤 복원한다.
   private syncModal() {
-    if (this.isOpen && this.isModal) {
+    if (this.isOpen) {
       this.portal.sync()
       this.scrollLock.set(true)
       return

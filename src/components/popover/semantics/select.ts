@@ -6,16 +6,18 @@ import { repeat } from 'lit/directives/repeat.js'
 import type { IconName } from '@/components/icon-button/semantics/icon-names'
 
 import { PopupController } from '@/controllers/popup-controller'
+import { MEDIA_QUERY } from '@/stylesheets/shared/breakpoints'
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
 import '@/components/menuitem/semantics/menu-item-action'
 import '@/components/menuitem/semantics/menu-item-checkbox'
+import '@/components/popover/popover'
 import '@/components/sheet/sheet'
 import '@/components/sheet/semantics/sheet-body'
 import { emit } from '@/utils/emit'
 
-type DropdownPlacement = 'bottom-left' | 'bottom-right' | 'top-left' | 'top-right'
+type SelectPlacement = 'bottom-left' | 'bottom-right' | 'top-left' | 'top-right'
 
-export interface DropdownOption {
+export interface SelectOption {
   label: string
   value: string
   type: 'default' | 'checkbox'
@@ -24,15 +26,19 @@ export interface DropdownOption {
   icon?: IconName
 }
 
-@customElement('mm-dropdown')
-export class Dropdown extends LitElement {
+/**
+ * popover를 프리미티브로 하는 선택 입력.
+ * phone 뷰포트에서는 같은 옵션 목록을 bottom sheet(mm-sheet)로 전환해 표시한다.
+ */
+@customElement('mm-select')
+export class Select extends LitElement {
   static styles = [
     resetStyles,
     css`
       :host {
-        --dropdown-offset: var(--space-1);
-        --dropdown-min-width: calc(var(--width-small) - var(--space-4) * 5);
-        --dropdown-max-height: var(--width-small);
+        --select-offset: var(--space-1);
+        --select-min-width: calc(var(--width-small) - var(--space-4) * 5);
+        --select-max-height: var(--width-small);
         display: block;
         position: relative;
         width: 100%;
@@ -42,13 +48,11 @@ export class Dropdown extends LitElement {
         width: auto;
       }
 
-      .dropdown-list {
-        --sheet-padding-inline: var(--space-1);
-        --sheet-max-height: var(--dropdown-max-height);
-        min-width: var(--dropdown-min-width);
+      .select-list {
+        --popover-max-height: var(--select-max-height);
+        min-width: var(--select-min-width);
 
-        position: absolute;
-        top: calc(100% + var(--dropdown-offset));
+        top: calc(100% + var(--select-offset));
         left: 0;
         right: 0;
 
@@ -66,7 +70,7 @@ export class Dropdown extends LitElement {
         &[placement='top-left'],
         &[placement='top-right'] {
           top: auto;
-          bottom: calc(100% + var(--dropdown-offset));
+          bottom: calc(100% + var(--select-offset));
         }
       }
 
@@ -77,15 +81,18 @@ export class Dropdown extends LitElement {
   ]
 
   @property({ type: String }) value = ''
-  @property({ type: String }) placement: DropdownPlacement = 'bottom-left'
+  @property({ type: String }) placement: SelectPlacement = 'bottom-left'
   @property({ type: Boolean, reflect: true }) inline = false
   @property({ type: String, attribute: 'list-min-width' }) listMinWidth = ''
-  @state() protected options: DropdownOption[] = []
+  @state() private options: SelectOption[] = []
+  @state() private isPhoneViewport = false
 
   @queryAssignedElements({ selector: 'option', flatten: true })
   private optionElements!: HTMLOptionElement[]
   @queryAssignedElements({ slot: 'trigger', flatten: true })
   private triggerElements!: HTMLElement[]
+
+  private phoneMedia = window.matchMedia(MEDIA_QUERY.phone)
 
   private popup = new PopupController(this, {
     event: 'click',
@@ -94,26 +101,36 @@ export class Dropdown extends LitElement {
 
   render() {
     return html`
-      ${this.renderTrigger()} ${this.renderList()}
+      ${this.renderTrigger()} ${this.renderPopoverList()} ${this.renderSheetList()}
       <slot hidden @slotchange=${this.syncOptions}></slot>
     `
+  }
+
+  connectedCallback() {
+    super.connectedCallback()
+    this.phoneMedia.addEventListener('change', this.syncViewport)
+    this.syncViewport()
+  }
+
+  disconnectedCallback() {
+    this.phoneMedia.removeEventListener('change', this.syncViewport)
+    super.disconnectedCallback()
   }
 
   firstUpdated() {
     this.syncOptions()
   }
 
-  protected get defaultOptions(): DropdownOption[] {
-    return []
+  private syncViewport = () => {
+    this.isPhoneViewport = this.phoneMedia.matches
   }
 
-  protected syncOptions() {
-    const lightDomOptions = this.parseLightDomOptions()
-    this.options = lightDomOptions.length > 0 ? lightDomOptions : this.defaultOptions
+  private syncOptions() {
+    this.options = this.parseLightDomOptions()
   }
 
-  // light DOM의 <option> 요소를 DropdownOption 데이터로 변환
-  private parseLightDomOptions(): DropdownOption[] {
+  // light DOM의 <option> 요소를 SelectOption 데이터로 변환
+  private parseLightDomOptions(): SelectOption[] {
     return this.optionElements.map(option => ({
       label: option.textContent || '',
       value: option.value,
@@ -124,23 +141,23 @@ export class Dropdown extends LitElement {
     }))
   }
 
-  protected toggleOpen = () => {
+  private toggleOpen = () => {
     this.popup.toggle()
   }
 
-  // 일반 아이템 클릭 시: 선택 라벨 변경 후 드롭다운 닫기
-  protected selectOption(option: DropdownOption) {
+  // 일반 아이템 클릭 시: 선택 라벨 변경 후 목록 닫기
+  private selectOption(option: SelectOption) {
     this.value = option.value
     this.popup.close()
     this.emitSelectChange(option)
   }
 
-  protected emitSelectChange(option: DropdownOption) {
+  private emitSelectChange(option: SelectOption) {
     emit(this, 'change', { type: 'select', value: option.value })
   }
 
-  // 체크박스 아이템 변경 시: 데이터 상태만 업데이트 (드롭다운을 닫지 않음)
-  protected handleCheckboxChange(option: DropdownOption, e: CustomEvent) {
+  // 체크박스 아이템 변경 시: 데이터 상태만 업데이트 (목록을 닫지 않음)
+  private handleCheckboxChange(option: SelectOption, e: CustomEvent) {
     e.stopPropagation()
 
     const isChecked = e.detail.checked
@@ -160,51 +177,81 @@ export class Dropdown extends LitElement {
   }
 
   // 트리거 스타일은 slot="trigger"로 들어온 외부 요소가 책임진다.
-  protected renderTrigger() {
+  private renderTrigger() {
     return html`
       <slot name="trigger" @click=${this.toggleOpen} @slotchange=${this.popup.syncTrigger}></slot>
     `
   }
 
-  protected renderList() {
+  private renderPopoverList() {
+    if (this.isPhoneViewport) return nothing
+
     return html`
-      <mm-sheet
-        class="dropdown-list"
-        variant="inline"
+      <mm-popover
+        class="select-list"
+        role="menu"
         ?open=${this.popup.open}
         placement=${this.placement}
         ?inline=${this.inline}
       >
-        <mm-sheet-body role="menu">
-          ${repeat(
-            this.options,
-            option => option.value,
-            option => this.renderOption(option),
-          )}
-        </mm-sheet-body>
+        ${this.renderOptionItems()}
+      </mm-popover>
+    `
+  }
+
+  // phone 뷰포트: 앵커 대신 bottom sheet로 같은 옵션 목록을 전시한다.
+  // sheet는 열릴 때 body로 portal되어 host 바깥으로 나가므로,
+  // 내부 pointerdown이 outside-click으로 오인되지 않게 전파를 끊는다.
+  private renderSheetList() {
+    if (!this.isPhoneViewport) return nothing
+
+    return html`
+      <mm-sheet
+        placement="bottom"
+        ?open=${this.popup.open}
+        @sheetclose=${this.handleSheetClose}
+        @pointerdown=${this.stopSheetPointerdown}
+      >
+        <mm-sheet-body role="menu">${this.renderOptionItems()}</mm-sheet-body>
       </mm-sheet>
     `
+  }
+
+  private handleSheetClose = () => {
+    this.popup.close()
+  }
+
+  private stopSheetPointerdown = (e: Event) => {
+    e.stopPropagation()
   }
 
   protected updated(changedProperties: Map<string, unknown>) {
     if (!changedProperties.has('listMinWidth')) return
 
     if (!this.listMinWidth) {
-      this.style.removeProperty('--dropdown-min-width')
+      this.style.removeProperty('--select-min-width')
       return
     }
 
-    this.style.setProperty('--dropdown-min-width', this.listMinWidth)
+    this.style.setProperty('--select-min-width', this.listMinWidth)
   }
 
-  protected renderOption(option: DropdownOption) {
+  private renderOptionItems() {
+    return repeat(
+      this.options,
+      option => option.value,
+      option => this.renderOption(option),
+    )
+  }
+
+  private renderOption(option: SelectOption) {
     return option.type === 'checkbox'
       ? this.renderCheckboxOption(option)
       : this.renderDefaultOption(option)
   }
 
   // 체크박스 옵션: 클릭해도 닫히지 않고 체크 상태만 토글
-  protected renderCheckboxOption(option: DropdownOption) {
+  private renderCheckboxOption(option: SelectOption) {
     return html`
       <mm-menu-item-checkbox
         .checked=${option.checked}
@@ -216,7 +263,7 @@ export class Dropdown extends LitElement {
   }
 
   // 일반 옵션: 선택 시 닫히며 현재 value면 aria-current로 강조
-  protected renderDefaultOption(option: DropdownOption) {
+  private renderDefaultOption(option: SelectOption) {
     return html`
       <mm-menu-item-action
         icon=${option.icon || nothing}
@@ -229,4 +276,4 @@ export class Dropdown extends LitElement {
   }
 }
 
-export default Dropdown
+export default Select
