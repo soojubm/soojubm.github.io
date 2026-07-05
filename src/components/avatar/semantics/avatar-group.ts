@@ -3,7 +3,6 @@ import { customElement, property } from 'lit/decorators.js'
 
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
 import { arrayAttributeConverter } from '@/utils/property-converters'
-import '@/components/flex/flex'
 import '@/components/text/text'
 
 @customElement('mm-avatar-group')
@@ -12,7 +11,9 @@ export class AvatarGroup extends LitElement {
     resetStyles,
     css`
       :host {
-        display: block;
+        display: flex;
+        align-items: center;
+        gap: var(--space-2);
       }
 
       .avatars {
@@ -53,10 +54,8 @@ export class AvatarGroup extends LitElement {
     const overflowCount = this.avatars.length - this.maxVisible
 
     return html`
-      <mm-flex gap="2" align-items="center">
-        <div class="avatars">${this.renderAvatarList(overflowCount)}</div>
-        ${this.renderLabel()}
-      </mm-flex>
+      <div class="avatars">${this.renderAvatarList(overflowCount)}</div>
+      ${this.renderLabel()}
     `
   }
 

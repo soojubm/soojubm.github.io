@@ -3,7 +3,6 @@ import { customElement, property } from 'lit/decorators.js'
 
 import { featureStyles } from '@/components/feature/feature.styles'
 import { ICON_NAMES, type IconName } from '@/components/icon-button/semantics/icon-names'
-import '@/components/flex/flex'
 
 // 컴포넌트 외부로 상수 데이터를 분리하여 메모리 재할당 방지
 const ICON_MAP: Record<string, IconName> = {
@@ -61,23 +60,16 @@ export class Feature extends LitElement {
 
   render() {
     return html`
-      <mm-flex
-        class="feature"
-        direction="column"
-        gap="3"
-        align-items=${this.centered ? 'center' : 'start'}
-      >
-        ${this.renderVisual()}
+      ${this.renderVisual()}
 
-        <mm-text-block
-          level="3"
-          ?centered=${this.centered}
-          .heading=${this.heading}
-          .description=${this.description}
-        ></mm-text-block>
+      <mm-text-block
+        level="3"
+        ?centered=${this.centered}
+        .heading=${this.heading}
+        .description=${this.description}
+      ></mm-text-block>
 
-        <slot></slot>
-      </mm-flex>
+      <slot></slot>
     `
   }
 

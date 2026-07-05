@@ -1,13 +1,25 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import '@/components/flex/flex'
 
 @customElement('mm-textfield-action-bar')
 export class TextfieldActionBar extends LitElement {
   static styles = css`
     :host {
-      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: var(--space-2);
       width: 100%;
+    }
+
+    :host([justify-content='start']) {
+      justify-content: flex-start;
+    }
+    :host([justify-content='center']) {
+      justify-content: center;
+    }
+    :host([justify-content='between']) {
+      justify-content: space-between;
     }
   `
 
@@ -16,9 +28,7 @@ export class TextfieldActionBar extends LitElement {
 
   render() {
     return html`
-      <mm-flex gap="2" align-items="center" justify-content=${this.justifyContent}>
-        <slot></slot>
-      </mm-flex>
+      <slot></slot>
     `
   }
 }

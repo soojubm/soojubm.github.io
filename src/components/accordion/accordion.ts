@@ -2,7 +2,6 @@ import { LitElement, css, html } from 'lit'
 import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
 
 import type { AccordionItem } from '@/components/accordion/semantics/accordion-item'
-import '@/components/flex/flex'
 
 /**
  * mm-accordion-item을 묶는 그룹 컨테이너.
@@ -12,7 +11,9 @@ import '@/components/flex/flex'
 export class Accordion extends LitElement {
   static styles = css`
     :host {
-      display: block;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-1);
     }
   `
 
@@ -23,9 +24,7 @@ export class Accordion extends LitElement {
 
   render() {
     return html`
-      <mm-flex direction="column" gap="1">
-        <slot></slot>
-      </mm-flex>
+      <slot></slot>
     `
   }
 

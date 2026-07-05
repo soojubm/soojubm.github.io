@@ -9,7 +9,6 @@ import { buttonBaseStyles, buttonSelectedStyles } from '@/components/button/butt
 import { RovingFocusController } from '@/controllers/roving-focus-controller'
 import { emit } from '@/utils/emit'
 import { arrayAttributeConverter } from '@/utils/property-converters'
-import '@/components/flex/flex'
 import '@/components/icon/icon'
 import '@/components/toggle-button/semantics/view-mode-switcher'
 
@@ -35,6 +34,7 @@ export class ToggleButtonGroup extends LitElement {
     css`
       :host {
         display: inline-flex;
+        align-items: center;
       }
 
       button {
@@ -55,10 +55,6 @@ export class ToggleButtonGroup extends LitElement {
 
       :host([stretch]) {
         display: flex;
-      }
-
-      :host([stretch]) mm-flex {
-        width: 100%;
       }
 
       :host([stretch]) button {
@@ -85,13 +81,11 @@ export class ToggleButtonGroup extends LitElement {
 
   render() {
     return html`
-      <mm-flex align-items="center" gap="0" ?stretch=${this.stretch}>
-        ${repeat(
-          this.options,
-          option => option.value,
-          (option, index) => this.renderOption(option, index),
-        )}
-      </mm-flex>
+      ${repeat(
+        this.options,
+        option => option.value,
+        (option, index) => this.renderOption(option, index),
+      )}
     `
   }
 

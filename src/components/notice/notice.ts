@@ -4,7 +4,6 @@ import { customElement, property, state } from 'lit/decorators.js'
 import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
 import { noticeStyles } from '@/components/notice/notice.styles'
 import { emit } from '@/utils/emit'
-import '@/components/flex/flex'
 
 const VARIANT_ICONS: Record<string, string> = {
   success: ICON_NAMES.SUCCESS,
@@ -28,12 +27,10 @@ class Notice extends LitElement {
     if (this.dismissed) return html``
 
     return html`
-      <mm-flex class="notice" direction="column" gap="2" align-items="start">
-        <mm-icon name=${this.icon} class="notice-icon"></mm-icon>
-        ${this.renderHeading()} ${this.renderDescription()}
-        <slot></slot>
-        ${this.renderDismissButton()}
-      </mm-flex>
+      <mm-icon name=${this.icon} class="notice-icon"></mm-icon>
+      ${this.renderHeading()} ${this.renderDescription()}
+      <slot></slot>
+      ${this.renderDismissButton()}
     `
   }
 

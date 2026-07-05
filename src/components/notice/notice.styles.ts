@@ -2,8 +2,17 @@ import { css } from 'lit'
 
 export const noticeStyles = css`
   :host {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
     width: 100%;
+    padding: var(--notice-padding);
+    border: var(--notice-border-width) solid var(--notice-border-color);
+    border-radius: var(--notice-border-radius);
+    background: var(--notice-background-color);
+    color: var(--notice-text-color);
+    position: relative;
 
     /* structure */
     --notice-padding: var(--space-3);
@@ -15,15 +24,6 @@ export const noticeStyles = css`
     --notice-text-color: var(--color-foreground);
     --notice-background-color: transparent;
     --notice-border-color: var(--color-border);
-  }
-
-  .notice {
-    padding: var(--notice-padding);
-    border: var(--notice-border-width) solid var(--notice-border-color);
-    border-radius: var(--notice-border-radius);
-    background: var(--notice-background-color);
-    color: var(--notice-text-color);
-    position: relative;
   }
 
   :host([variant='success']) {

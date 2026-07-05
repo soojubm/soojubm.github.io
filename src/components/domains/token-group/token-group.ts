@@ -2,7 +2,6 @@ import { LitElement, css, html } from 'lit'
 import { customElement, queryAssignedElements } from 'lit/decorators.js'
 
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
-import '@/components/flex/flex'
 
 @customElement('mm-token-group')
 export class TokenGroup extends LitElement {
@@ -10,7 +9,9 @@ export class TokenGroup extends LitElement {
     resetStyles,
     css`
       :host {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-2);
       }
     `,
   ]
@@ -24,9 +25,7 @@ export class TokenGroup extends LitElement {
 
   render() {
     return html`
-      <mm-flex direction="column" gap="2">
-        <slot @slotchange=${this.assignIndices}></slot>
-      </mm-flex>
+      <slot @slotchange=${this.assignIndices}></slot>
     `
   }
 }

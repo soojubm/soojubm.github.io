@@ -3,7 +3,6 @@ import { customElement, property } from 'lit/decorators.js'
 
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
 import '@/components/tag/tag'
-import '@/components/flex/flex'
 
 // heading-level → 시맨틱 heading 태그. 값이 없거나 미정의 레벨이면 비-heading(span).
 const HEADING_TAGS = {
@@ -26,7 +25,16 @@ class TextBlock extends LitElement {
     resetStyles,
     css`
       :host {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-2);
+      }
+      :host([level='1']) {
+        gap: var(--space-3);
+      }
+      :host([centered]) {
+        align-items: center;
       }
       /* Level 1 전용 본문 최대 너비 제한 (가독성 최적화) */
       :host([level='1']) mm-paragraph {
@@ -66,14 +74,8 @@ class TextBlock extends LitElement {
       TextBlock.variants[this.level as keyof typeof TextBlock.variants] ?? TextBlock.variants['1']
 
     return html`
-      <mm-flex
-        direction="column"
-        gap=${variant.gap}
-        align-items=${this.centered ? 'center' : 'start'}
-      >
-        ${this.renderEyebrow()} ${this.renderHeading(variant)} ${this.renderDescription(variant)}
-        ${this.renderCaption()}
-      </mm-flex>
+      ${this.renderEyebrow()} ${this.renderHeading(variant)} ${this.renderDescription(variant)}
+      ${this.renderCaption()}
     `
   }
 

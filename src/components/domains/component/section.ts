@@ -1,7 +1,6 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import '@/components/flex/flex'
 import { componentExampleStyles } from './example.styles'
 
 @customElement('mm-component-section')
@@ -9,7 +8,10 @@ class ComponentSection extends LitElement {
   static styles = [
     componentExampleStyles,
     css`
-      .component-section {
+      :host {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-2);
         margin-top: var(--space-section);
       }
 
@@ -24,13 +26,11 @@ class ComponentSection extends LitElement {
 
   render() {
     return html`
-      <mm-flex class="component-section" direction="column" gap="2">
-        <mm-text size="24" weight="bold" as="h3">${this.heading}</mm-text>
-        ${this.renderDescription()}
-        <div class="component-content-frame">
-          <slot></slot>
-        </div>
-      </mm-flex>
+      <mm-text size="24" weight="bold" as="h3">${this.heading}</mm-text>
+      ${this.renderDescription()}
+      <div class="component-content-frame">
+        <slot></slot>
+      </div>
     `
   }
 

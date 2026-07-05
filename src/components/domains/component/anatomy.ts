@@ -5,7 +5,6 @@ import {
   componentContentFrameStyles,
   componentStageFrameStyles,
 } from '@/components/domains/component/component.styles'
-import '@/components/flex/flex'
 import '@/components/text/semantics/textList'
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
 import { arrayAttributeConverter } from '@/utils/property-converters'
@@ -26,7 +25,9 @@ export class ComponentAnatomy extends LitElement {
     componentStageFrameStyles,
     css`
       :host {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-3);
         margin-top: var(--space-section);
       }
       .stage slot {
@@ -45,13 +46,11 @@ export class ComponentAnatomy extends LitElement {
 
   render() {
     return html`
-      <mm-flex direction="column" gap="3">
-        <mm-text size="24" weight="bold" as="h3">${this.heading}</mm-text>
-        <div class="stage component-content-frame component-stage-frame">
-          <slot></slot>
-        </div>
-        ${this.renderParts()}
-      </mm-flex>
+      <mm-text size="24" weight="bold" as="h3">${this.heading}</mm-text>
+      <div class="stage component-content-frame component-stage-frame">
+        <slot></slot>
+      </div>
+      ${this.renderParts()}
     `
   }
 

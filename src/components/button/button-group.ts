@@ -2,7 +2,6 @@ import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
-import '@/components/flex/flex'
 
 type Direction = 'row' | 'column'
 type Justify = 'start' | 'center' | 'end' | 'between' | 'around'
@@ -14,31 +13,45 @@ export class ButtonGroup extends LitElement {
     css`
       :host {
         display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: center;
+        gap: var(--space-2);
       }
 
-      :host([stretch]) slot::slotted(*) {
+      :host([direction='column']) {
+        flex-direction: column;
+      }
+
+      :host([justify-content='center']) {
+        justify-content: center;
+      }
+      :host([justify-content='end']) {
+        justify-content: flex-end;
+      }
+      :host([justify-content='between']) {
+        justify-content: space-between;
+      }
+      :host([justify-content='around']) {
+        justify-content: space-around;
+      }
+
+      :host([stretch]) ::slotted(*) {
         flex: 1;
         --button-width: 100%;
       }
     `,
   ]
 
-  @property({ type: String }) direction: Direction = 'row'
-  @property({ type: String, attribute: 'justify-content' }) justifyContent: Justify = 'start'
+  @property({ type: String, reflect: true }) direction: Direction = 'row'
+  @property({ type: String, attribute: 'justify-content', reflect: true })
+  justifyContent: Justify = 'start'
   @property({ type: Boolean, reflect: true }) stretch = false
 
   render() {
     return html`
-      <mm-flex
-        direction=${this.direction}
-        justify-content=${this.justifyContent}
-        align-items="center"
-        wrap
-        gap="2"
-        ?stretch=${this.stretch}
-      >
-        <slot></slot>
-      </mm-flex>
+      <slot></slot>
     `
   }
 }

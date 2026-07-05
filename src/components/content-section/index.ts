@@ -2,7 +2,6 @@ import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
-import '@/components/flex/flex'
 import '@/components/text/semantics/heading'
 
 /**
@@ -18,6 +17,12 @@ export class ContentSection extends LitElement {
       :host {
         display: block;
       }
+
+      section {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-3);
+      }
     `,
   ]
 
@@ -25,10 +30,10 @@ export class ContentSection extends LitElement {
 
   render() {
     return html`
-      <mm-flex as="section" direction="column" gap="3">
+      <section>
         <mm-heading level="2">${this.heading}</mm-heading>
         <slot></slot>
-      </mm-flex>
+      </section>
     `
   }
 }

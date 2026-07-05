@@ -9,7 +9,6 @@ import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
 import { RovingFocusController } from '@/controllers/roving-focus-controller'
 import { SelectionController } from '@/controllers/selection-controller'
 import { emit } from '@/utils/emit'
-import '@/components/flex/flex'
 import '@/components/icon/icon'
 
 type FilterMode = 'single' | 'multiple'
@@ -28,7 +27,9 @@ export class FilterButtonGroup extends LitElement {
     buttonSelectedStyles,
     css`
       :host {
-        display: block;
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-2);
       }
     `,
   ]
@@ -57,9 +58,7 @@ export class FilterButtonGroup extends LitElement {
 
   render() {
     return html`
-      <mm-flex gap="2" wrap="wrap">
-        ${this.options.map(option => this.renderOption(option))}
-      </mm-flex>
+      ${this.options.map(option => this.renderOption(option))}
     `
   }
 

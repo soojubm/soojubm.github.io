@@ -2,7 +2,6 @@ import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
-import '@/components/flex/flex'
 
 @customElement('mm-chat-date')
 export class ChatDate extends LitElement {
@@ -10,7 +9,8 @@ export class ChatDate extends LitElement {
     resetStyles,
     css`
       :host {
-        display: block;
+        display: flex;
+        justify-content: center;
       }
     `,
   ]
@@ -19,12 +19,10 @@ export class ChatDate extends LitElement {
 
   render() {
     return html`
-      <mm-flex justify-content="center">
-        <mm-tag>
-          ${this.label}
-          <slot></slot>
-        </mm-tag>
-      </mm-flex>
+      <mm-tag>
+        ${this.label}
+        <slot></slot>
+      </mm-tag>
     `
   }
 }
