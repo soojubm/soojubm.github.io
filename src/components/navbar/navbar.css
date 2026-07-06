@@ -131,16 +131,6 @@
   border-color: var(--color-primary);
 }
 
-.navbar-user-panel {
-  width: 100%;
-  min-width: calc(var(--width-small) + var(--space-4) * 7.5);
-  max-width: calc(var(--width-small) + var(--space-4) * 7.5);
-  position: absolute;
-  right: 0;
-  top: calc(var(--space-4) * 2.5);
-  z-index: calc(var(--zindex-fixed-bottom) + 1);
-}
-
 .is-menu-opened .sidebar-menu {
   transform: translateX(0);
   overscroll-behavior: contain;

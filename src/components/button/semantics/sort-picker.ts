@@ -24,7 +24,9 @@ export class SortPicker extends LitElement {
   render() {
     return html`
       <mm-select .value=${this.value} @change=${this.syncValue}>
-        <mm-button slot="trigger" size="small">${this.selectedLabel}</mm-button>
+        <mm-button slot="trigger" size="small" trailing-icon="nav-arrow-down">
+          ${this.selectedLabel}
+        </mm-button>
         ${SORT_OPTIONS.map(
           option => html`
             <option value=${option.value}>${option.label}</option>

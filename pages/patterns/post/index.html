@@ -1,4 +1,4 @@
-<mm-page width="small">
+<mm-page>
   <style>
     mm-text[variant='subhead'] + mm-text[variant='body-large'],
     mm-text[variant='body-large'] + mm-text[variant='body-large'] {
@@ -25,9 +25,7 @@
     </mm-paragraph-group>
   </header>
 
-  <figure class="post-body-image" style="margin: 2rem 0">
-    <mm-text as="figcaption">image caption</mm-text>
-  </figure>
+  <mm-thumbnail src="/src/images/soojubm.png" ratio="16:9"></mm-thumbnail>
 
   <section class="post-body">
     <nav>
@@ -39,6 +37,11 @@
         <li>Decline every meeting</li>
       </ol>
     </nav>
+
+    <mm-notice
+      variant="warning"
+      description="바시니의 작품은 페라라 부르주아사회의 유대인 박해라는 깊은 상처에 기인한다는 점에서 정치적이다."
+    ></mm-notice>
 
     <mm-paragraph-group>
       <mm-paragraph>

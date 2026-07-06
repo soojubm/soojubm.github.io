@@ -5,14 +5,14 @@ import { sheetStyles } from '@/components/sheet/sheet.styles'
 import { PortalController } from '@/controllers/portal-controller'
 import { ScrollLockController } from '@/controllers/scroll-lock-controller'
 import { emit } from '@/utils/emit'
-export type SheetPlacement = 'center' | 'bottom' | 'left' | 'right'
+export type SheetVariant = 'center' | 'bottom' | 'left' | 'right'
 export type SheetWidth = 'small' | 'medium' | 'large' | 'full'
 
 @customElement('mm-sheet')
 class Sheet extends LitElement {
   static styles = sheetStyles
 
-  @property({ type: String, reflect: true }) placement: SheetPlacement = 'center'
+  @property({ type: String, reflect: true }) variant: SheetVariant = 'center'
   @property({ type: String, reflect: true }) width: SheetWidth = 'medium'
   @property({ type: String }) height?: string
   @property({ type: Boolean, reflect: true, attribute: 'open' }) isOpen = false

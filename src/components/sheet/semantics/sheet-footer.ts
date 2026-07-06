@@ -19,7 +19,7 @@ class SheetFooter extends LitElement {
 
   render() {
     return html`
-      <mm-button-group justify-content="end">
+      <mm-button-group justify-content="end" stretch>
         ${this.renderSecondaryAction()} ${this.renderPrimaryAction()}
       </mm-button-group>
     `

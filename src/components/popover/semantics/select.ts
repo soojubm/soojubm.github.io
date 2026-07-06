@@ -4,6 +4,7 @@ import { ifDefined } from 'lit/directives/if-defined.js'
 import { repeat } from 'lit/directives/repeat.js'
 
 import type { IconName } from '@/components/icon-button/semantics/icon-names'
+import type { PopoverPlacement } from '@/components/popover/popover'
 
 import { PopupController } from '@/controllers/popup-controller'
 import { MEDIA_QUERY } from '@/stylesheets/shared/breakpoints'
@@ -15,8 +16,6 @@ import '@/components/popover/popover'
 import '@/components/sheet/sheet'
 import '@/components/sheet/semantics/sheet-body'
 import { emit } from '@/utils/emit'
-
-type SelectPlacement = 'bottom-left' | 'bottom-right' | 'top-left' | 'top-right'
 
 export interface SelectOption {
   label: string
@@ -37,7 +36,6 @@ export class Select extends LitElement {
     resetStyles,
     css`
       :host {
-        --select-offset: var(--space-1);
         --select-min-width: calc(var(--width-small) - var(--space-4) * 5);
         --select-max-height: var(--width-small);
         display: block;
@@ -53,25 +51,9 @@ export class Select extends LitElement {
         --popover-max-height: var(--select-max-height);
         min-width: var(--select-min-width);
 
-        top: calc(100% + var(--select-offset));
-        left: 0;
-        right: 0;
-
-        &[placement='bottom-right'],
-        &[placement='top-right'] {
-          left: auto;
-          right: 0;
-        }
-
         &[placement='bottom-left'][inline],
         &[placement='top-left'][inline] {
           right: auto;
-        }
-
-        &[placement='top-left'],
-        &[placement='top-right'] {
-          top: auto;
-          bottom: calc(100% + var(--select-offset));
         }
       }
 
@@ -82,7 +64,7 @@ export class Select extends LitElement {
   ]
 
   @property({ type: String }) value = ''
-  @property({ type: String }) placement: SelectPlacement = 'bottom-left'
+  @property({ type: String }) placement: PopoverPlacement = 'bottom-left'
   @property({ type: Boolean, reflect: true }) inline = false
   @property({ type: String, attribute: 'list-min-width' }) listMinWidth = ''
   @state() private options: SelectOption[] = []

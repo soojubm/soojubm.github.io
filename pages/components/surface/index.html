@@ -43,20 +43,22 @@
 
       <mm-separator></mm-separator>
 
-      <mm-surface radius="default">
-        <mm-text-block
-          level="3"
-          heading="default radius"
-          description="기본 radius 토큰을 적용합니다."
-        ></mm-text-block>
-      </mm-surface>
-      <mm-surface radius="large">
-        <mm-text-block
-          level="3"
-          heading="large radius"
-          description="큰 radius 토큰을 적용합니다."
-        ></mm-text-block>
-      </mm-surface>
+      <mm-grid columns="2">
+        <mm-surface radius="default">
+          <mm-text-block
+            level="3"
+            heading="default radius"
+            description="기본 radius 토큰을 적용합니다."
+          ></mm-text-block>
+        </mm-surface>
+        <mm-surface radius="large">
+          <mm-text-block
+            level="3"
+            heading="large radius"
+            description="큰 radius 토큰을 적용합니다."
+          ></mm-text-block>
+        </mm-surface>
+      </mm-grid>
     </mm-flex>
   </mm-component-example>
 
@@ -151,16 +153,17 @@
   </mm-paragraph-group>
 
   <mm-component-section heading="PricingSurface" description="">
-    <div style="position: relative">
-      <!-- <mm-tag style="position: absolute; left: -0.25rem; top: var(--space-3)"> -->
+    <mm-flex direction="column" gap="4" style="max-width: 400px">
       <mm-tag>🔥 Most Popular</mm-tag>
-      <div style="height: 1rem"></div>
-      <mm-paragraph size="large">Standard</mm-paragraph>
-      <mm-paragraph>대법원장은 국회의 동의를 얻어 대통령이 임명한다.</mm-paragraph>
-      <div style="margin: var(--space-3) 0 1.5rem 0">
+      <div>
+        <mm-paragraph size="large">Standard</mm-paragraph>
+        <mm-text>리서치, 정리, 낮은 한도</mm-text>
+      </div>
+      <div>
         <mm-text size="32" weight="bold">₩ 6,800</mm-text>
         <mm-text color="light">한 달에 한 번</mm-text>
       </div>
+      <mm-button variant="primary" size="large" full-width>업그레이드</mm-button>
       <mm-text-list
         texts='[
         "스토리지 2TB",
@@ -168,11 +171,7 @@
         "회원을 위한 추가 혜택"
         ]'
       ></mm-text-list>
-      <br />
-      <mm-flex>
-        <mm-button variant="primary" size="large" full-width>업그레이드</mm-button>
-      </mm-flex>
-    </div>
+    </ㅡ>
   </mm-component-section>
 
   <mm-component-section heading="FeedSurface" description="">

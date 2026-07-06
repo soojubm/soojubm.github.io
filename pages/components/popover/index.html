@@ -1,7 +1,7 @@
 <main class="page">
   <mm-page-header
     heading="Popover"
-    description="anchor 기준 non-modal 레이어 프리미티브입니다. 트리거를 소유한 컴포넌트가 좌표와 열림 상태를 제어하고, popover는 떠 있는 패널 표면만 책임집니다."
+    description="anchor 기준 non-modal 레이어 프리미티브입니다. 트리거를 소유한 컴포넌트가 열림 상태를 제어하고, 좌표(placement)와 너비(width)는 popover 자신이 책임집니다."
   ></mm-page-header>
 
   <mm-component-aka items='["Flyout", "Dropdown Panel", "Menu Surface"]'></mm-component-aka>
@@ -11,7 +11,7 @@
       <mm-button id="popover-trigger" aria-controls="demo-popover" aria-expanded="false">
         메뉴 열기
       </mm-button>
-      <mm-popover id="demo-popover" role="menu">
+      <mm-popover id="demo-popover" role="menu" width="var(--width-small)">
         <mm-menu-item-action label="복제"></mm-menu-item-action>
         <mm-menu-item-action label="이름 변경"></mm-menu-item-action>
         <mm-menu-item-action label="삭제" tone="danger"></mm-menu-item-action>
@@ -23,15 +23,16 @@
       display: inline-block;
       position: relative;
     }
-    .popover-demo mm-popover {
-      min-width: var(--width-small);
-      top: calc(100% + var(--space-1));
-      left: 0;
-    }
   </style>
 
   <mm-component-props>
     <mm-prop name="open" type="boolean"></mm-prop>
+    <mm-prop
+      name="placement"
+      type="'bottom-left' | 'bottom-right' | 'top-left' | 'top-right' = 'bottom-left'"
+    ></mm-prop>
+    <mm-prop name="width" type="string" optional></mm-prop>
+    <mm-prop name="padding" type="string" optional></mm-prop>
   </mm-component-props>
 
   <mm-component-tokens>
@@ -41,6 +42,8 @@
     <mm-token name="popover-background-color" default="var(--color-background)"></mm-token>
     <mm-token name="popover-shadow" default="var(--shadow)"></mm-token>
     <mm-token name="popover-max-height" default="none"></mm-token>
+    <mm-token name="popover-width" default="auto"></mm-token>
+    <mm-token name="popover-offset" default="var(--space-1)"></mm-token>
   </mm-component-tokens>
 
   <mm-component-guide>
@@ -51,8 +54,8 @@
     </mm-paragraph>
     <mm-text-list
       texts='[
-        "위치는 popover가 정하지 않는다. anchor를 소유한 컴포넌트가 positioned 조상과 좌표를 제공하고, popover는 position: absolute로 그 안에 뜬다.",
-        "열림 상태도 소비자가 제어한다. 트리거 클릭·외부 클릭·ESC 처리는 dropdown처럼 트리거를 소유한 쪽의 책임이다.",
+        "anchor를 소유한 컴포넌트는 positioned 조상만 제공한다. popover는 그 안에서 position: absolute로 뜨며, 좌표는 placement prop, 너비는 width prop으로 스스로 정한다.",
+        "열림 상태는 소비자가 제어한다. 트리거 클릭·외부 클릭·ESC 처리는 dropdown처럼 트리거를 소유한 쪽의 책임이다.",
         "콘텐츠 의미는 ARIA attribute로 그대로 선언한다. 메뉴라면 role=menu를 popover 요소에 직접 지정한다.",
         "용례: select, 컨텍스트 메뉴, 댓글 항목의 수정·삭제 메뉴."
       ]'

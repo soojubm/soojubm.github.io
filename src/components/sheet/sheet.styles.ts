@@ -18,7 +18,7 @@ export const sheetStyles = css`
     --sheet-bottom-max-width: calc(var(--layout-width-small) + var(--space-4) * 10);
     --sheet-side-max-width: 50vw;
     --sheet-side-responsive-max-width: 100vw;
-    --sheet-width-small: var(--layout-width-tiny);
+    --sheet-width-small: 320px;
     --sheet-width-medium: var(--layout-width-tiny);
     --sheet-width-large: var(--layout-width-wide);
     --sheet-width-full: 100%;
@@ -81,37 +81,37 @@ export const sheetStyles = css`
     transition: transform var(--sheet-transition-duration) cubic-bezier(0.2, 0.8, 0.2, 1);
   }
 
-  :host([open][placement='center']) .sheet {
+  :host([open][variant='center']) .sheet {
     transform: scale(1);
     transition: transform var(--sheet-transition-duration-emphasis) cubic-bezier(0.18, 1.25, 0.4, 1);
   }
 
-  :host([open][placement='bottom']) .sheet {
+  :host([open][variant='bottom']) .sheet {
     transform: translateY(0);
   }
-  :host([open][placement='left']) .sheet {
+  :host([open][variant='left']) .sheet {
     transform: translateX(0);
   }
-  :host([open][placement='right']) .sheet {
+  :host([open][variant='right']) .sheet {
     transform: translateX(0);
   }
 
   /* center + width */
-  :host([placement='center']) .sheet {
+  :host([variant='center']) .sheet {
     max-width: var(--sheet-width-medium);
   }
-  :host([placement='center'][width='small']) .sheet {
+  :host([variant='center'][width='small']) .sheet {
     max-width: var(--sheet-width-small);
   }
-  :host([placement='center'][width='large']) .sheet {
+  :host([variant='center'][width='large']) .sheet {
     max-width: var(--sheet-width-large);
   }
-  :host([placement='center'][width='full']) .sheet {
+  :host([variant='center'][width='full']) .sheet {
     max-width: var(--sheet-width-full);
   }
 
   /* bottom */
-  :host([placement='bottom']) .sheet {
+  :host([variant='bottom']) .sheet {
     max-width: var(--sheet-bottom-max-width);
     border-bottom-left-radius: var(--sheet-border-radius);
     border-bottom-right-radius: var(--sheet-border-radius);
@@ -120,7 +120,7 @@ export const sheetStyles = css`
   }
 
   /* left */
-  :host([placement='left']) .sheet {
+  :host([variant='left']) .sheet {
     margin-right: auto;
     max-width: var(--sheet-side-max-width);
     height: var(--sheet-height-full);
@@ -131,7 +131,7 @@ export const sheetStyles = css`
   }
 
   /* right */
-  :host([placement='right']) .sheet {
+  :host([variant='right']) .sheet {
     margin-left: auto;
     max-width: var(--sheet-side-max-width);
     height: var(--sheet-height-full);
@@ -142,8 +142,8 @@ export const sheetStyles = css`
   }
 
   @media ${MEDIA.small} {
-    :host([placement='left']) .sheet,
-    :host([placement='right']) .sheet {
+    :host([variant='left']) .sheet,
+    :host([variant='right']) .sheet {
       max-width: var(--sheet-side-responsive-max-width);
     }
   }
