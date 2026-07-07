@@ -7,6 +7,8 @@ interface OutsideClickOptions {
   event?: 'click' | 'pointerdown'
   /** 활성 상태일 때만 콜백을 실행한다 (닫혀 있으면 바깥 클릭을 무시) */
   isActive?: () => boolean
+  /** host 밖이지만 바깥으로 치지 않을 요소들 (예: 열림을 토글하는 트리거) */
+  getSafeElements?: () => Array<EventTarget | null | undefined>
 }
 
 /**
@@ -40,6 +42,10 @@ export class OutsideClickController implements ReactiveController {
 
   private handleEvent = (e: Event) => {
     if (this.options.isActive && !this.options.isActive()) return
-    if (!e.composedPath().includes(this.host)) this.onOutside()
+    const path = e.composedPath()
+    if (path.includes(this.host)) return
+    const safe = this.options.getSafeElements?.() ?? []
+    if (safe.some(el => el != null && path.includes(el))) return
+    this.onOutside()
   }
 }

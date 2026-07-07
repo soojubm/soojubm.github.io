@@ -1,5 +1,7 @@
 import { LitElement, css, html, nothing } from 'lit'
-import { customElement, property, state } from 'lit/decorators.js'
+import { customElement, property, query } from 'lit/decorators.js'
+
+import type Popover from '@/components/popover/popover'
 
 import '@/components/button/button'
 import '@/components/icon-button/semantics/more-button'
@@ -64,7 +66,7 @@ export class CommentItem extends LitElement {
   @property({ type: String, attribute: 'reply-label' }) replyLabel = ''
   @property({ type: Boolean }) editable = false
 
-  @state() private menuOpen = false
+  @query('mm-popover') private menu?: Popover
 
   render() {
     return html`
@@ -90,8 +92,7 @@ export class CommentItem extends LitElement {
         slot="trailing"
         aria-label="댓글 메뉴"
         aria-controls=${this.menuId}
-        aria-expanded=${this.menuOpen ? 'true' : 'false'}
-        @click=${this.toggleMenu}
+        @click=${() => this.menu?.toggle()}
       ></mm-more-button>
     `
   }
@@ -110,7 +111,7 @@ export class CommentItem extends LitElement {
     if (!this.editable) return nothing
 
     return html`
-      <mm-popover id=${this.menuId} role="menu" ?open=${this.menuOpen}>
+      <mm-popover id=${this.menuId} role="menu">
         <mm-menu-item-action
           label="수정"
           @click=${() => this.onMenuAction('edit')}
@@ -128,12 +129,8 @@ export class CommentItem extends LitElement {
     emit(this, type)
   }
 
-  private toggleMenu() {
-    this.menuOpen = !this.menuOpen
-  }
-
   private onMenuAction(type: 'edit' | 'delete') {
-    this.menuOpen = false
+    this.menu?.close()
     this.emitAction(type)
   }
 }

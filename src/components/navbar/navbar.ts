@@ -2,7 +2,7 @@ import { LitElement, html, nothing } from 'lit'
 import { customElement, query, state } from 'lit/decorators.js'
 import { repeat } from 'lit/directives/repeat.js'
 
-import type Sheet from '@/components/sheet/sheet'
+import type Popover from '@/components/popover/popover'
 
 import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
 import { PopupController } from '@/controllers/popup-controller'
@@ -19,7 +19,6 @@ function hasValue(target: EventTarget | null): target is HTMLInputElement | HTML
 
 @customElement('mm-navbar')
 export class Navbar extends LitElement {
-  @state() private searchOpen = false
   @state() private query = ''
   @state() private results: PagefindResult[] = []
   @state() private searching = false
@@ -28,20 +27,14 @@ export class Navbar extends LitElement {
   private debounceTimer: ReturnType<typeof setTimeout> | null = null
   private searchRequestId = 0
 
-  @query('.navbar-user-trigger') private userMenuTrigger?: HTMLElement
+  @query('#navbar-user-menu') private userMenu?: Popover
 
   // 검색 시트는 열릴 때 portal로 document.body로 이동하므로 renderRoot가 아닌 document에서 찾는다.
-  private get searchSheet() {
-    return document.querySelector<Sheet>('.js-search-sheet') ?? undefined
-  }
   private get searchField() {
     return document.querySelector<HTMLElement>('.js-search-sheet mm-searchfield') ?? undefined
   }
 
-  private userMenu = new PopupController(this, {
-    event: 'click',
-    getTrigger: () => this.userMenuTrigger,
-  })
+  private searchMenu = new PopupController(this, { event: 'click' })
 
   render() {
     return html`
@@ -59,16 +52,17 @@ export class Navbar extends LitElement {
           <mm-icon-button
             icon=${ICON_NAMES.SEARCH}
             aria-label="검색"
-            aria-expanded=${this.searchOpen ? 'true' : 'false'}
+            aria-expanded=${this.searchMenu.open ? 'true' : 'false'}
             @click=${this.toggleSearch}
           ></mm-icon-button>
           <mm-icon-button
             icon=${ICON_NAMES.PROFILE}
-            class="navbar-user-trigger"
+            aria-label="내 메뉴"
+            aria-controls="navbar-user-menu"
             @click=${this.toggleUserMenu}
           ></mm-icon-button>
           <mm-popover
-            ?open=${this.userMenu.open}
+            id="navbar-user-menu"
             placement="bottom-right"
             width="320px"
             padding="var(--space-4)"
@@ -108,7 +102,15 @@ export class Navbar extends LitElement {
       </nav>
       <div class="navbar-backdrop"></div>
 
-      <mm-sheet class="js-search-sheet" variant="center" width="medium" backdrop-blur>
+      <mm-sheet
+        class="js-search-sheet"
+        variant="center"
+        width="medium"
+        backdrop-blur
+        ?open=${this.searchMenu.open}
+        @sheetclose=${() => this.searchMenu.close()}
+        @pointerdown=${(e: Event) => e.stopPropagation()}
+      >
         <mm-top-bar type="back"></mm-top-bar>
         <mm-sheet-body>
           <form role="search">
@@ -153,9 +155,8 @@ export class Navbar extends LitElement {
   }
 
   private toggleSearch = () => {
-    this.searchOpen = !this.searchOpen
-    if (this.searchSheet) this.searchOpen ? this.searchSheet.open() : this.searchSheet.close()
-    if (this.searchOpen) {
+    this.searchMenu.toggle()
+    if (this.searchMenu.open) {
       this.loadPagefind()
       requestAnimationFrame(() => {
         this.searchField?.focus()
@@ -169,7 +170,7 @@ export class Navbar extends LitElement {
   }
 
   private toggleUserMenu = () => {
-    this.userMenu.toggle()
+    this.userMenu?.toggle()
   }
 
   private onInput = (e: Event) => {
@@ -213,7 +214,7 @@ export class Navbar extends LitElement {
   }
 
   private isCurrentSearch(searchId: number, query: string) {
-    return this.searchOpen && searchId === this.searchRequestId && this.query.trim() === query
+    return this.searchMenu.open && searchId === this.searchRequestId && this.query.trim() === query
   }
 
   private renderDefault() {

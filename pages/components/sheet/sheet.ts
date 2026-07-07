@@ -134,7 +134,7 @@ function sheetPageTemplate() {
         <mm-text-list
           texts=${JSON.stringify([
             'mm-sheet — viewport 기준 modal 레이어. backdrop·portal·스크롤 잠금을 소유하며 variant로 형태를 지정한다. dialog(center), bottom sheet(bottom), drawer(left/right)를 커버한다.',
-            'mm-popover — anchor 기준 non-modal 레이어. 트리거를 소유한 컴포넌트가 좌표와 열림 상태를 제어하고, popover는 떠 있는 패널 표면만 책임진다. dropdown·메뉴를 커버한다.',
+            'mm-popover — anchor 기준 non-modal 레이어. 트리거는 aria-controls로 연결하고, popover가 열림 상태·외부 클릭·ESC 닫기와 좌표를 소유한다. dropdown·메뉴를 커버한다.',
           ])}
         ></mm-text-list>
 

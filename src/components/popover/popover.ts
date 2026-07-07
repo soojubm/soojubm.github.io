@@ -1,7 +1,9 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
+import { OutsideClickController } from '@/controllers/outside-click-controller'
 import { scrollbarStyles } from '@/stylesheets/shared/scrollbar.styles'
+import { emit } from '@/utils/emit'
 
 export type PopoverPlacement = 'bottom-left' | 'bottom-right' | 'top-left' | 'top-right'
 
@@ -9,8 +11,10 @@ export type PopoverPlacement = 'bottom-left' | 'bottom-right' | 'top-left' | 'to
  * anchor 기반 non-modal 레이어 프리미티브.
  * viewport 기준 modal 레이어인 mm-sheet와 달리 backdrop·portal·스크롤 잠금 없이
  * 가장 가까운 positioned 조상을 기준으로 떠 있는 패널 표면만 책임집니다.
- * 열림 상태는 anchor(트리거)를 소유한 컴포넌트가 제어하고, 좌표(placement)와 너비(width)는
- * popover 자신이 책임집니다.
+ * mm-sheet와 동일하게 열림 상태(open/close/toggle)와 외부 클릭·ESC 닫기를 스스로 소유하고,
+ * 트리거는 aria-controls로 popover를 가리켜 클릭 시 toggle()만 호출하면 됩니다.
+ * aria-controls로 연결된 트리거가 없으면(예: mm-select) 소비자가 open을 제어하는 표면으로만 동작합니다.
+ * 좌표(placement)와 너비(width)도 popover 자신이 책임집니다.
  */
 @customElement('mm-popover')
 class Popover extends LitElement {
@@ -78,10 +82,32 @@ class Popover extends LitElement {
     `,
   ]
 
-  @property({ type: Boolean, reflect: true }) open = false
+  @property({ type: Boolean, reflect: true, attribute: 'open' }) isOpen = false
   @property({ type: String, reflect: true }) placement: PopoverPlacement = 'bottom-left'
   @property({ type: String }) width = ''
   @property({ type: String }) padding = ''
+
+  // 자기 상태를 소유한 트리거만 바깥 클릭으로 닫고, 트리거 자신의 클릭은 예외로 둔다.
+  private outsideClick = new OutsideClickController(this, () => this.dismiss(), {
+    isActive: () => this.isOpen && !!this.trigger,
+    getSafeElements: () => [this.trigger],
+  })
+
+  private get trigger() {
+    if (!this.id) return undefined
+    const root = this.getRootNode() as Document | ShadowRoot
+    return root.querySelector<HTMLElement>(`[aria-controls="${this.id}"]`) ?? undefined
+  }
+
+  connectedCallback() {
+    super.connectedCallback()
+    document.addEventListener('keydown', this.handleKeydown)
+  }
+
+  disconnectedCallback() {
+    document.removeEventListener('keydown', this.handleKeydown)
+    super.disconnectedCallback()
+  }
 
   render() {
     return html`
@@ -90,8 +116,40 @@ class Popover extends LitElement {
   }
 
   protected updated(changedProperties: Map<string, unknown>) {
+    if (changedProperties.has('isOpen')) this.syncTriggerExpanded()
     if (changedProperties.has('width')) this.syncWidth()
     if (changedProperties.has('padding')) this.syncPadding()
+  }
+
+  open() {
+    this.isOpen = true
+  }
+
+  close() {
+    this.isOpen = false
+  }
+
+  toggle() {
+    this.isOpen = !this.isOpen
+  }
+
+  // 스스로 닫으면서 소비자가 포커스 복원 등에 반응할 수 있도록 close 이벤트를 알린다.
+  private dismiss() {
+    this.close()
+    emit(this, 'popoverclose')
+  }
+
+  private handleKeydown = (e: KeyboardEvent) => {
+    if (e.key !== 'Escape' || !this.isOpen || !this.trigger) return
+    this.dismiss()
+  }
+
+  private syncTriggerExpanded() {
+    const trigger = this.trigger
+    if (!trigger) return
+
+    trigger.setAttribute('aria-expanded', String(this.isOpen))
+    trigger.setAttribute('aria-haspopup', this.getAttribute('role') ?? 'true')
   }
 
   private syncWidth() {

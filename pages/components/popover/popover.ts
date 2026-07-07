@@ -2,7 +2,7 @@ import main from './index.html'
 import { renderDocumentLayout } from '../../../layouts/document-layout'
 
 type PopoverElement = HTMLElement & {
-  open: boolean
+  toggle(): void
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -10,29 +10,11 @@ document.addEventListener('DOMContentLoaded', () => {
   setupPopoverDemo()
 })
 
+// 트리거는 popover를 여는 책임만 갖고, 외부 클릭·ESC 닫기와 aria-expanded 반영은 popover가 소유한다.
 function setupPopoverDemo() {
   const trigger = document.querySelector<HTMLElement>('#popover-trigger')
   const popover = document.querySelector<PopoverElement>('#demo-popover')
   if (!trigger || !popover) return
 
-  const setOpen = (open: boolean) => {
-    popover.open = open
-    trigger.setAttribute('aria-expanded', String(open))
-  }
-
-  trigger.addEventListener('click', () => {
-    setOpen(!popover.open)
-  })
-
-  document.addEventListener('click', e => {
-    if (!popover.open) return
-    if (e.composedPath().includes(trigger)) return
-    if (e.composedPath().includes(popover)) return
-    setOpen(false)
-  })
-
-  document.addEventListener('keydown', e => {
-    if (e.key !== 'Escape' || !popover.open) return
-    setOpen(false)
-  })
+  trigger.addEventListener('click', () => popover.toggle())
 }
