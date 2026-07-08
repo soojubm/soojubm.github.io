@@ -5,215 +5,129 @@
     justify-content="space-between"
     wrap="wrap"
   >
-    <mm-page-header
-      heading="운영 대시보드"
-      description="오늘의 비즈니스 흐름과 처리할 업무를 확인하세요."
-    ></mm-page-header>
-    <mm-button-group>
+    <mm-page-header heading="Dashboard" description="한국 증시"></mm-page-header>
+    <!-- <mm-button-group>
       <mm-button variant="tertiary" icon="calendar">최근 7일</mm-button>
       <mm-button variant="primary" icon="plus">새 보고서</mm-button>
-    </mm-button-group>
+    </mm-button-group> -->
   </mm-flex>
 
-  <!-- <header class="dashboard-head"></header> -->
-  <section class="dashboard-section" aria-label="핵심 지표">
-    <mm-grid columns="4">
-      <mm-surface>
-        <article class="metric-card">
-          <mm-flex align-items="center" justify-content="space-between">
-            <mm-avatar icon="credit-card" variant="tertiary"></mm-avatar>
-            <mm-tag tone="green">+12.5%</mm-tag>
-          </mm-flex>
-          <!-- <mm-tag style="position: absolute; right: 1rem; top: 0.875rem">태그</mm-tag> -->
-          <mm-paragraph-group>
-            <mm-paragraph>총 매출</mm-paragraph>
-            <mm-text size="32">₩18,420,000</mm-text>
-            <mm-text>지난주보다 ₩2,046,000 증가</mm-text>
-          </mm-paragraph-group>
-        </article>
-      </mm-surface>
-      <mm-surface>
-        <article class="metric-card">
-          <mm-flex align-items="center" justify-content="space-between">
-            <mm-avatar icon="delivery-truck" variant="tertiary"></mm-avatar>
-            <mm-tag tone="blue">진행 중</mm-tag>
-          </mm-flex>
-          <!-- <mm-tag style="position: absolute; right: 1rem; top: 0.875rem">태그</mm-tag> -->
-          <mm-paragraph-group>
-            <mm-paragraph>신규 주문</mm-paragraph>
-            <mm-text size="32">284</mm-text>
-            <mm-text>배송 준비 38건 · 배송 중 72건</mm-text>
-          </mm-paragraph-group>
-        </article>
-      </mm-surface>
-      <mm-surface>
-        <article class="metric-card">
-          <mm-flex align-items="center" justify-content="space-between">
-            <mm-avatar icon="group" variant="tertiary"></mm-avatar>
-            <mm-tag tone="green">+8.2%</mm-tag>
-          </mm-flex>
-          <!-- <mm-tag style="position: absolute; right: 1rem; top: 0.875rem">태그</mm-tag> -->
-          <mm-paragraph-group>
-            <mm-paragraph>신규 고객</mm-paragraph>
-            <mm-text size="32">1,508</mm-text>
-            <mm-text>첫 구매 전환율 24.8%</mm-text>
-          </mm-paragraph-group>
-        </article>
-      </mm-surface>
-      <mm-surface>
-        <article class="metric-card">
-          <mm-flex align-items="center" justify-content="space-between">
-            <mm-avatar icon="message" variant="tertiary"></mm-avatar>
-            <mm-tag tone="yellow">확인 필요</mm-tag>
-          </mm-flex>
-          <mm-paragraph-group>
-            <mm-paragraph>미응답 문의</mm-paragraph>
-            <mm-text size="32">17</mm-text>
-            <mm-text>평균 응답 시간 12분</mm-text>
-          </mm-paragraph-group>
-        </article>
-      </mm-surface>
-    </mm-grid>
-  </section>
+  <mm-flex direction="column" gap="3">
+    <mm-tab-list value="daily" variant="pill">
+      <mm-tab value="daily">일간</mm-tab>
+      <mm-tab value="weekly">주간</mm-tab>
+      <mm-tab value="monthly">월간</mm-tab>
+    </mm-tab-list>
 
-  <section class="dashboard-section dashboard-overview">
-    <mm-surface class="revenue-card">
-      <mm-flex class="card-header" align-items="center" justify-content="space-between">
-        <mm-text-block
-          level="2"
-          heading="주간 매출"
-          description="요일별 결제 완료 금액"
-        ></mm-text-block>
-        <mm-flex class="chart-legend" align-items="center" gap="2">
-          <span class="legend-dot"></span>
-          <mm-text>이번 주</mm-text>
-        </mm-flex>
-      </mm-flex>
-      <div class="revenue-chart" aria-label="월요일부터 일요일까지의 주간 매출 막대그래프">
-        <div class="chart-item">
-          <div class="chart-bar" style="height: 42%"></div>
-          <mm-text>월</mm-text>
-        </div>
-        <div class="chart-item">
-          <div class="chart-bar" style="height: 58%"></div>
-          <mm-text>화</mm-text>
-        </div>
-        <div class="chart-item">
-          <div class="chart-bar" style="height: 48%"></div>
-          <mm-text>수</mm-text>
-        </div>
-        <div class="chart-item">
-          <div class="chart-bar" style="height: 76%"></div>
-          <mm-text>목</mm-text>
-        </div>
-        <div class="chart-item">
-          <div class="chart-bar" style="height: 68%"></div>
-          <mm-text>금</mm-text>
-        </div>
-        <div class="chart-item">
-          <div class="chart-bar" style="height: 92%"></div>
-          <mm-text>토</mm-text>
-        </div>
-        <div class="chart-item">
-          <div class="chart-bar" style="height: 82%"></div>
-          <mm-text>일</mm-text>
-        </div>
+    <!-- <mm-tab-panel value="daily">📅 오늘 생성된 데이터...</mm-tab-panel>
+        <mm-tab-panel value="weekly">🗓️ 이번 주 누적 데이터...</mm-tab-panel>
+        <mm-tab-panel value="monthly">📊 이번 달 정산 데이터...</mm-tab-panel> -->
+  </mm-flex>
+
+  <mm-grid columns="3" gap="4">
+    <mm-surface variant="subtle">
+      <mm-avatar variant="secondary" icon="graph-down"></mm-avatar>
+      <div style="height: var(--space-3)"></div>
+      <mm-text size="12">코스피</mm-text>
+      <mm-heading>2999.55p</mm-heading>
+      <div style="margin-top: var(--space-1)"></div>
+      <mm-tag variant="up" tone="blue">4.33% 하락</mm-tag>
+      <div style="margin-top: var(--space-3)">
+        <mm-text size="12" color="light">10분 지연. live</mm-text>
+        <mm-text size="12" color="light">현지 시간 기준 10.27. 01:27</mm-text>
       </div>
     </mm-surface>
-
-    <mm-surface class="task-card">
-      <mm-flex class="card-header" align-items="center" justify-content="space-between">
-        <mm-text-block
-          level="2"
-          heading="오늘 할 일"
-          description="마감이 가까운 업무부터 확인하세요."
-        ></mm-text-block>
-        <mm-tag tone="red">3건</mm-tag>
-      </mm-flex>
-      <mm-menu-item-group>
-        <mm-menu-item-action
-          emoji="📦"
-          trailing-icon="arrow-right"
-          label="출고 지연 주문 확인"
-          description="오늘 오전 11:00까지"
-        ></mm-menu-item-action>
-        <mm-menu-item-action
-          emoji="💬"
-          trailing-icon="arrow-right"
-          label="고객 문의 답변"
-          description="미응답 문의 17건"
-        ></mm-menu-item-action>
-        <mm-menu-item-action
-          emoji="📊"
-          trailing-icon="arrow-right"
-          label="주간 성과 보고서 공유"
-          description="오늘 오후 4:00까지"
-        ></mm-menu-item-action>
-      </mm-menu-item-group>
+    <mm-surface variant="subtle">
+      <mm-avatar variant="secondary" icon="graph-up"></mm-avatar>
+      <div style="height: var(--space-3)"></div>
+      <mm-text size="12">코스닥</mm-text>
+      <mm-heading>2999.55p</mm-heading>
+      <div style="margin-top: var(--space-1)"></div>
+      <mm-tag variant="up" tone="red">4.33% 상승</mm-tag>
+      <div style="margin-top: var(--space-3)">
+        <mm-text size="12" color="light">10분 지연. live</mm-text>
+        <mm-text size="12" color="light">현지 시간 기준 10.27. 01:27</mm-text>
+      </div>
     </mm-surface>
-  </section>
-
-  <section class="dashboard-section">
-    <mm-surface>
-      <mm-flex class="card-header" align-items="center" justify-content="space-between">
-        <mm-text-block
-          level="2"
-          heading="최근 주문"
-          description="가장 최근에 접수된 주문 내역입니다."
-        ></mm-text-block>
-        <mm-button variant="ghost" icon="arrow-right">전체 보기</mm-button>
-      </mm-flex>
-      <mm-menu-item-group class="order-list">
-        <mm-menu-item-action
-          size="large"
-          emoji="👟"
-          trailing-icon="arrow-right"
-          label="에브리데이 러너 스니커즈"
-          description="#MM-2048 · 김민지 · ₩128,000 · 결제 완료 · 2분 전"
-        ></mm-menu-item-action>
-        <mm-menu-item-action
-          size="large"
-          emoji="🧢"
-          trailing-icon="arrow-right"
-          label="클래식 로고 캡"
-          description="#MM-2047 · 박서준 · ₩42,000 · 상품 준비 · 8분 전"
-        ></mm-menu-item-action>
-        <mm-menu-item-action
-          size="large"
-          emoji="🎒"
-          trailing-icon="arrow-right"
-          label="데일리 유틸리티 백팩"
-          description="#MM-2046 · 이지우 · ₩96,000 · 배송 시작 · 14분 전"
-        ></mm-menu-item-action>
-      </mm-menu-item-group>
+    <mm-surface variant="outlined">
+      <mm-avatar variant="secondary">
+        <mm-icon name="graph-up"></mm-icon>
+      </mm-avatar>
+      <div style="height: var(--space-3)"></div>
+      <mm-text size="12">상해종합주가지수</mm-text>
+      <mm-heading>2999.55p</mm-heading>
+      <div style="margin-top: var(--space-1)"></div>
+      <mm-tag variant="up" tone="red">4.33% 상승</mm-tag>
+      <div style="margin-top: var(--space-3)">
+        <mm-text size="12" color="light">10분 지연. live</mm-text>
+        <mm-text size="12" color="light">현지 시간 기준 10.27. 01:27</mm-text>
+      </div>
     </mm-surface>
-  </section>
+  </mm-grid>
 
-  <section class="dashboard-section dashboard-filter" aria-label="주문 검색 및 필터">
-    <mm-surface>
-      <mm-grid columns="4">
-        <mm-textfield
-          size="small"
-          name="keyword"
-          label="검색어"
-          placeholder="상품명 또는 주문번호"
-        ></mm-textfield>
-        <mm-textfield
-          size="small"
-          name="customer"
-          label="고객명"
-          placeholder="고객 이름"
-        ></mm-textfield>
-        <mm-textfield
-          size="small"
-          name="order-status"
-          label="주문 상태"
-          placeholder="결제 완료, 배송 중"
-        ></mm-textfield>
-        <mm-textfield size="small" type="date" name="order-date" label="주문일"></mm-textfield>
-      </mm-grid>
-    </mm-surface>
-  </section>
+  <br />
+  <mm-flex direction="column" align-items="center" gap="3">
+    <mm-text centered>
+      1월 26일
+      <b>컴퓨터통신 분야</b>
+      에서는
+      <br />
+      <b>7백명의 지식iN</b>
+      들이 답변하셨습니다.
+    </mm-text>
+    <mm-flex direction="row" gap="2" justify-content="center">
+      <div class="graph-item">
+        <span class="graph-item-value">40%</span>
+        <div class="graph-item-bar"></div>
+        <span class="graph-item-label">10대</span>
+      </div>
+      <div class="graph-item">
+        <span class="graph-item-value">30%</span>
+        <div class="graph-item-bar"></div>
+        <span class="graph-item-label">20대</span>
+      </div>
+      <div class="graph-item">
+        <span class="graph-item-value">20%</span>
+        <div class="graph-item-bar"></div>
+        <span class="graph-item-label">30대</span>
+      </div>
+      <div class="graph-item">
+        <span class="graph-item-value">10%</span>
+        <div class="graph-item-bar"></div>
+        <span class="graph-item-label">40대</span>
+      </div>
+    </mm-flex>
+  </mm-flex>
+
+  <br />
+  <mm-flex direction="column" gap="2">
+    <mm-tag tone="red">3건</mm-tag>
+    <mm-text-block
+      level="3"
+      heading="오늘 할 일"
+      description="마감이 가까운 업무부터 확인하세요."
+    ></mm-text-block>
+    <mm-menu-item-group>
+      <mm-menu-item-action
+        emoji="📦"
+        trailing-icon="arrow-right"
+        label="출고 지연 주문 확인"
+        description="오늘 오전 11:00까지"
+      ></mm-menu-item-action>
+      <mm-menu-item-action
+        emoji="💬"
+        trailing-icon="arrow-right"
+        label="고객 문의 답변"
+        description="미응답 문의 17건"
+      ></mm-menu-item-action>
+      <mm-menu-item-action
+        emoji="📊"
+        trailing-icon="arrow-right"
+        label="주간 성과 보고서 공유"
+        description="오늘 오후 4:00까지"
+      ></mm-menu-item-action>
+    </mm-menu-item-group>
+  </mm-flex>
 </main>
 
 <!-- <article class="meter" style="max-width: 400px; margin: 0 auto">
@@ -241,34 +155,3 @@
     </div>
   </div>
 </article> -->
-
-<!-- <div class="graph">
-  <div class="graph-title">
-    1월 26일
-    <em>컴퓨터통신 분야</em>
-    에서는
-    <br />
-    <em>7백명의 지식iN</em>
-    들이 답변하셨습니다.
-  </div>
-  <div class="graph-item">
-    <span class="graph-item-value">40%</span>
-    <div class="graph-item-bar"></div>
-    <span class="graph-item-label">10대</span>
-  </div>
-  <div class="graph-item">
-    <span class="graph-item-value">30%</span>
-    <div class="graph-item-bar"></div>
-    <span class="graph-item-label">20대</span>
-  </div>
-  <div class="graph-item">
-    <span class="graph-item-value">20%</span>
-    <div class="graph-item-bar"></div>
-    <span class="graph-item-label">30대</span>
-  </div>
-  <div class="graph-item">
-    <span class="graph-item-value">10%</span>
-    <div class="graph-item-bar"></div>
-    <span class="graph-item-label">40대</span>
-  </div>
-</div> -->

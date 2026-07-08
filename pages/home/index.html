@@ -73,7 +73,7 @@
     ></mm-text-list>
   </mm-flex>
 
-  <mm-flex direction="column" gap="4">
+  <!-- <mm-flex direction="column" gap="4">
     <mm-text size="24" weight="bold" as="h2">Component Traits</mm-text>
     <mm-paragraph>
       컴포넌트 특성 어휘입니다. 설명은 그 특성을 전시하는 페이지이며, 통합·개명 이력을 함께
@@ -167,7 +167,7 @@
         description="보류 — 현재 위치를 알리고 이동시키는 특성(breadcrumb · link · top-bar · bottom-bar 후보). Sequential(step)과 함께, 사이트맵 구조가 이미 내비 분류를 소유하고 있어 보류"
       ></mm-feature>
     </mm-feature-group>
-  </mm-flex>
+  </mm-flex> -->
 
   <main class="terms" style="max-width: var(--layout-width-small); margin: 0 auto">
     <style>
@@ -708,7 +708,6 @@
 
   <mm-flex direction="column" gap="4">
     <mm-text size="24" weight="bold">Layout Modules</mm-text>
-    <!-- <mm-caption>Page Context Contrast</mm-caption> -->
     <mm-paragraph>
       레이아웃 모듈로 컨테이너 너비, 표면 처리, 배경 대비는 페이지가 집중형, 에디토리얼형, 관리형,
       탐색형 등 성격을 나타내는 단서로 사용합니다.
@@ -977,13 +976,6 @@
       명시적인 메시지, 영향을 받는 필드 또는 영역, 그리고 접근 가능한 관계를 함께 제공해야 합니다.
     </mm-paragraph>
 
-    <mm-text-list
-      texts='[
-      "Global feedbacks -인터넷연결오류: toast + callout (blocking / detour)",
-      "Local feedbacks - reload - refresh - redirect / result 컴포넌트 / inline error, callout error"
-      ]'
-    ></mm-text-list>
-
     <mm-flex direction="column" gap="3">
       <mm-list-row
         icon="check-circle"
@@ -1015,7 +1007,8 @@
 
   <mm-content-section heading="Data/Async States">
     <mm-paragraph>
-      비동기 데이터 흐름의 상태. 실패는 Error 대신 Rejected/Failed로 부른다.
+      비동기 데이터 흐름의 상태. Status Error와 부분하기 위해 실패는 Error를 Rejected/Failed로
+      부른다.
     </mm-paragraph>
 
     <mm-flex direction="column" gap="3">
@@ -1430,7 +1423,7 @@
   </section> -->
 </main>
 
-<main class="contact">
+<!-- <main class="contact">
   <header class="contact-head">
     <mm-heading level="1">이곳으로 오십시오.</mm-heading>
     <div style="width: 100%; overflow: hidden">
@@ -1489,7 +1482,7 @@
       allowfullscreen
     ></iframe>
   </section>
-</main>
+</main> -->
 
 <style>
   .contact {

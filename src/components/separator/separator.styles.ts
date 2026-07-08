@@ -6,9 +6,8 @@ export const separatorStyles = css`
     --separator-border: var(--border);
     --separator-text-color: var(--color-foreground-light);
     --separator-text-background: var(--color-background);
-    /* 가운데 텍스트 레이블 공통 토큰 */
-    --separator-label-width: 4rem;
-    --separator-label-line-height: 24px;
+
+    position: relative;
   }
 
   :host([spacing='small']) {
@@ -19,46 +18,24 @@ export const separatorStyles = css`
     --separator-spacing: var(--space-4);
   }
 
-  hr {
-    margin: 0;
+  hr[role='separator'] {
+    width: 100%;
+    margin: var(--separator-spacing) 0;
     border: 0;
+    border-top: var(--separator-border);
     position: relative;
-
-    &[role='separator'] {
-      width: 100%;
-      margin: var(--separator-spacing) 0;
-      border-top: var(--separator-border);
-      text-align: center;
-      position: relative;
-      z-index: var(--zindex-default);
-
-      /* 텍스트 없을 때: ::after로 배경 박스만 그려 선을 가림 */
-      &::after {
-        content: '';
-        width: var(--separator-label-width);
-        line-height: var(--separator-label-line-height);
-        background: var(--separator-text-background);
-        font-size: var(--font-size-12);
-        color: var(--separator-text-color);
-        text-align: center;
-        position: absolute;
-        left: 50%;
-        top: 0;
-        transform: translateX(-50%);
-      }
-    }
+    z-index: var(--zindex-default);
   }
 
-  /* 텍스트 있을 때: slot 요소가 ::after 위에 올라와 선을 가리고 텍스트를 표시 */
-  ::slotted([slot='text']) {
-    width: var(--separator-label-width);
-    line-height: var(--separator-label-line-height);
+  /* 가운데 레이블 박스: 텍스트가 없으면 ::after가 선을 가리고, 있으면 slot 요소가 표시 */
+  mm-caption {
+    display: block;
+    padding: 0 var(--separator-spacing);
     background: var(--separator-text-background);
-    font-size: var(--font-size-12);
-    color: var(--separator-text-color);
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    z-index: 2;
   }
 `

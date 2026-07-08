@@ -5,17 +5,35 @@
   ></mm-page-header>
 
   <mm-component-example>
-    <mm-ui-placeholder
-      height="var(--size-huge)"
-      color="var(--color-primary-subtle)"
-      radius="var(--radius-large)"
-    ></mm-ui-placeholder>
-    <mm-separator></mm-separator>
-    <mm-ui-placeholder
-      height="var(--size-huge)"
-      color="var(--color-primary-subtle)"
-      radius="var(--radius-large)"
-    ></mm-ui-placeholder>
+    <mm-grid columns="2">
+      <div>
+        <mm-ui-placeholder
+          height="var(--size-huge)"
+          color="var(--color-primary-subtle)"
+          radius="var(--radius-large)"
+        ></mm-ui-placeholder>
+        <mm-separator></mm-separator>
+        <mm-ui-placeholder
+          height="var(--size-huge)"
+          color="var(--color-primary-subtle)"
+          radius="var(--radius-large)"
+        ></mm-ui-placeholder>
+      </div>
+
+      <div>
+        <mm-ui-placeholder
+          height="var(--size-huge)"
+          color="var(--color-primary-subtle)"
+          radius="var(--radius-large)"
+        ></mm-ui-placeholder>
+        <mm-separator>또는</mm-separator>
+        <mm-ui-placeholder
+          height="var(--size-huge)"
+          color="var(--color-primary-subtle)"
+          radius="var(--radius-large)"
+        ></mm-ui-placeholder>
+      </div>
+    </mm-grid>
   </mm-component-example>
 
   <mm-component-props>
@@ -26,8 +44,6 @@
   <mm-component-tokens>
     <mm-token name="separator-spacing" default="var(--space-4)"></mm-token>
     <mm-token name="separator-border" default="var(--border)"></mm-token>
-    <mm-token name="separator-text-color" default="var(--color-foreground-light)"></mm-token>
-    <mm-token name="separator-text-background" default="var(--color-background)"></mm-token>
   </mm-component-tokens>
 
   <mm-component-guide>

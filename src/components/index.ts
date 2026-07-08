@@ -26,6 +26,7 @@ import '@/components/feature'
 import '@/components/meta-item'
 import '@/components/backdrop'
 import '@/components/sheet'
+import '@/components/toast'
 import '@/components/dialog'
 
 import '@/components/thumbnail/thumbnail'

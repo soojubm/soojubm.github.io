@@ -6,10 +6,10 @@ export class Backdrop extends LitElement {
   static styles = css`
     :host {
       display: block;
-      position: var(--backdrop-position, fixed);
+      position: fixed;
       inset: 0;
-      background: var(--backdrop-background-color, var(--color-backdrop));
-      z-index: var(--backdrop-z-index, var(--zindex-backdrop));
+      background: var(--color-backdrop);
+      z-index: var(--zindex-backdrop);
 
       opacity: 0;
       visibility: hidden;

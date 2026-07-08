@@ -1,9 +1,12 @@
-import './sheet.css'
 import { html, render } from 'lit'
 
 import { renderLayout } from '../../../layouts/base-layouts'
 
 type SheetElement = HTMLElement & {
+  open(): void
+}
+
+type ToastElement = HTMLElement & {
   open(): void
 }
 
@@ -17,18 +20,13 @@ document.addEventListener('DOMContentLoaded', () => {
   setupToastTrigger()
 })
 
+// 자동 닫힘·재시작 타이머는 mm-toast가 소유하므로 트리거는 open()만 호출한다.
 function setupToastTrigger() {
   const trigger = document.querySelector<HTMLElement>('[data-open-toast]')
-  const toast = document.querySelector<HTMLElement>('.toast')
+  const toast = document.querySelector<ToastElement>('.js-demo-toast')
   if (!trigger || !toast) return
 
-  let hideTimer: ReturnType<typeof setTimeout>
-
-  trigger.addEventListener('click', () => {
-    clearTimeout(hideTimer)
-    toast.classList.add('is-visible')
-    hideTimer = setTimeout(() => toast.classList.remove('is-visible'), 3000)
-  })
+  trigger.addEventListener('click', () => toast.open())
 }
 
 function setupSheetTriggers() {
@@ -54,7 +52,7 @@ function sheetPageTemplate() {
     <main class="page">
       <mm-page-header
         heading="Sheet"
-        description="콘텐츠나 작업을 viewport 기준 modal 레이어 위에 표시합니다. 형태는 center·bottom·left·right variant로 지정합니다. anchor 기반 non-modal 레이어는 mm-popover가 담당합니다."
+        description="viewport 기준 modal 레이어 위에 표시합니다."
       ></mm-page-header>
 
       <mm-component-aka
@@ -88,90 +86,61 @@ function sheetPageTemplate() {
       ></mm-component-anatomy>
 
       <mm-component-guide>
-        <mm-paragraph size="large">Modal vs Non-modal</mm-paragraph>
-        <mm-paragraph>
-          Presentation 레이어는 사용자의 주의를 얼마나 차단하느냐에 따라 두 가지로 나뉜다. 이 기준은
-          시각적 형태(Sheet, Dialog 등)가 아니라
-          <strong>배경과의 상호작용 허용 여부</strong>
-          로 결정된다.
-        </mm-paragraph>
+        <mm-paragraph-group>
+          <mm-paragraph>
+            시각적 형태(Sheet, Dialog 등)가 아니라 배경과의 상호작용 허용 여부로 구분.
+          </mm-paragraph>
 
-        <mm-text size="16">Modal</mm-text>
-        <mm-paragraph>
-          배경과의 상호작용을 차단하고 사용자의 즉각적인 응답을 요구한다. Backdrop(dim)이 뒤를 덮고,
-          포커스는 레이어 내부에 갇힌다(focus trap). 닫기는 명시적인 버튼 액션으로만 허용하는 것이
-          원칙이며, 배경 클릭으로 닫는 기능은 중요도가 낮은 작업에서만 예외적으로 허용한다.
-        </mm-paragraph>
-        <mm-text-list
-          texts=${JSON.stringify([
-            '배경 클릭·스크롤 불가.',
-            '포커스 트랩 — Tab 키가 레이어 내부를 순환한다.',
-            'ESC 키 닫기는 데이터 손실 위험이 없는 경우에만 허용.',
-            'aria-modal="true", role="dialog" 명시.',
-            '용례: 삭제 확인, 중요 정보 입력, 오류 처리, 결제 흐름.',
-          ])}
-        ></mm-text-list>
+          <mm-heading level="2">Modal</mm-heading>
+          <mm-paragraph>
+            배경과의 상호작용을 차단하고 사용자의 즉각적인 응답을 요구한다. Backdrop(dim)이 뒤를
+            덮고, 포커스는 레이어 내부에 갇힌다(focus trap). 닫기는 명시적인 버튼 액션으로만
+            허용하는 것이 원칙이며, 배경 클릭으로 닫는 기능은 중요도가 낮은 작업에서만 예외적으로
+            허용한다.
+          </mm-paragraph>
+          <mm-text-list
+            texts=${JSON.stringify([
+              '배경 클릭 불가·스크롤 불가.',
+              '포커스 트랩 — Tab 키가 레이어 내부를 순환한다.',
+              'ESC 키 닫기는 데이터 손실 위험이 없는 경우에만 허용.',
+              'aria-modal="true", role="dialog" 명시.',
+              '용례: 삭제 확인, 중요 정보 입력, 오류 처리, 결제 흐름.',
+            ])}
+          ></mm-text-list>
 
-        <mm-text size="16">Non-modal</mm-text>
-        <mm-paragraph>
-          배경과의 상호작용을 허용한다. 현재 작업 맥락을 유지하면서 부가 정보나 서브태스크를 제공할
-          때 사용한다. 포커스 트랩이 없고, 외부 클릭·ESC로 언제든 닫을 수 있다.
-        </mm-paragraph>
-        <mm-text-list
-          texts=${JSON.stringify([
-            '배경 클릭·스크롤 가능.',
-            '포커스 트랩 없음 — Tab 키가 페이지 전체를 순환한다.',
-            '외부 클릭 또는 ESC로 닫힌다.',
-            '용례: Dropdown, Tooltip, Toast, 사이드 패널, Popover.',
-          ])}
-        ></mm-text-list>
+          <mm-heading>Non-modal</mm-heading>
+          <mm-paragraph>
+            배경과의 상호작용을 허용한다. 현재 작업 맥락을 유지하면서 부가 정보나 서브태스크를
+            제공할 때 사용한다. 포커스 트랩이 없고, 외부 클릭·ESC로 언제든 닫을 수 있다.
+          </mm-paragraph>
+          <mm-text-list
+            texts=${JSON.stringify([
+              '배경 클릭 불가·스크롤 가능.',
+              '포커스 트랩 없음 — Tab 키가 페이지 전체를 순환한다.',
+              '외부 클릭 또는 ESC로 닫힌다.',
+              '용례: Dropdown, Tooltip, Toast, 사이드 패널, Popover.',
+            ])}
+          ></mm-text-list>
 
-        <mm-text size="16">레이어 프리미티브 분리</mm-text>
-        <mm-paragraph>
-          두 프리미티브는 포지셔닝 모델과 모달리티로 나뉜다. 시각적 형태(dialog·drawer·bottom
-          sheet·dropdown)는 이 두 프리미티브 위에서 variant와 콘텐츠 조합으로 만든다.
-        </mm-paragraph>
-        <mm-text-list
-          texts=${JSON.stringify([
-            'mm-sheet — viewport 기준 modal 레이어. backdrop·portal·스크롤 잠금을 소유하며 variant로 형태를 지정한다. dialog(center), bottom sheet(bottom), drawer(left/right)를 커버한다.',
-            'mm-popover — anchor 기준 non-modal 레이어. 트리거는 aria-controls로 연결하고, popover가 열림 상태·외부 클릭·ESC 닫기와 좌표를 소유한다. dropdown·메뉴를 커버한다.',
-          ])}
-        ></mm-text-list>
-
-        <mm-text-block
-          level="2"
-          heading="Changelog"
-          description="placement를 variant로 이름을 바꿨습니다. anchor 기준으로 좌우를 가리키는 popover의 placement와 의미가 겹쳐 혼동을 줄 수 있어, viewport 가장자리에 고정된 형태를 가리키는 variant로 분리했습니다."
-        ></mm-text-block>
-
-        <mm-component-references>
-          <mm-link external href="https://developer.mozilla.org/ko/docs/Web/API/Popover_API">
-            Mozilla Popover API
-          </mm-link>
-          <mm-link
-            external
-            href="https://developer.apple.com/design/human-interface-guidelines/components/presentation/action-sheets"
-          >
-            HIG action-sheets
-          </mm-link>
-          <mm-link
-            external
-            href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alertdialog_role"
-          >
-            alertdialog role
-          </mm-link>
-        </mm-component-references>
+          <mm-heading>레이어 프리미티브 분리</mm-heading>
+          <mm-text-list
+            texts=${JSON.stringify([
+              'mm-sheet — viewport 기준 modal 레이어. backdrop·portal·스크롤 잠금을 소유하며 variant로 형태를 지정한다. dialog(center), bottom sheet(bottom), drawer(left/right)를 커버한다.',
+              'mm-popover — anchor 기준 non-modal 레이어. 트리거는 aria-controls로 연결하고, popover가 열림 상태·외부 클릭·ESC 닫기와 좌표를 소유한다. dropdown·메뉴를 커버한다.',
+            ])}
+          ></mm-text-list>
+        </mm-paragraph-group>
       </mm-component-guide>
 
       <mm-component-section
-        heading="mm-sheet-header"
+        heading="Sheet Header"
         description="타이틀과 선택적인 닫기 버튼을 제공합니다. 닫기 버튼은 sheetclose 이벤트를 버블링합니다."
       >
         <mm-sheet-header heading="Sheet Title"></mm-sheet-header>
       </mm-component-section>
 
       <mm-component-section
-        heading="mm-sheet-body"
+        heading="Sheet Body"
         description="스크롤 가능한 콘텐츠 영역. flex: 1 1 auto로 header·footer를 제외한 나머지를 채웁니다."
       >
         <mm-sheet-body>
@@ -183,17 +152,37 @@ function sheetPageTemplate() {
       </mm-component-section>
 
       <mm-component-section
-        heading="mm-backdrop"
-        description="레이어 뒤에 표시되는 반투명 Backdrop. open prop으로 표시하며 --backdrop-background-color로 색상을 재정의할 수 있습니다."
+        heading="Backdrop"
+        description="레이어 뒤에 표시되는 반투명 Backdrop. onClose prop으로 배경 클릭 시."
       >
-        <div style="position: relative; height: 120px; border-radius: 12px; overflow: hidden">
-          <mm-paragraph>배경 콘텐츠</mm-paragraph>
-          <mm-backdrop
-            open
-            style="--backdrop-position: absolute; --backdrop-z-index: 1; border-radius: 12px"
-          ></mm-backdrop>
-        </div>
+        <!-- <mm-backdrop open></mm-backdrop> -->
       </mm-component-section>
+
+      <mm-component-section
+        heading="Toast"
+        description="화면 하단 중앙에 잠깐 떠올랐다 약 3초 후 스스로 사라지는 transient non-modal 레이어입니다. open()으로 띄우며, 열려 있을 때 다시 호출하면 남은 시간이 초기화됩니다."
+      >
+        <mm-button data-open-toast>토스트 띄우기</mm-button>
+        <mm-toast class="js-demo-toast">저장되었습니다.</mm-toast>
+      </mm-component-section>
+
+      <mm-component-references>
+        <mm-link external href="https://developer.mozilla.org/ko/docs/Web/API/Popover_API">
+          Mozilla Popover API
+        </mm-link>
+        <mm-link
+          external
+          href="https://developer.apple.com/design/human-interface-guidelines/components/presentation/action-sheets"
+        >
+          HIG action-sheets
+        </mm-link>
+        <mm-link
+          external
+          href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alertdialog_role"
+        >
+          alertdialog role
+        </mm-link>
+      </mm-component-references>
 
       ${filterSheetTemplate()}
     </main>
@@ -224,10 +213,6 @@ function sheetExampleTemplate() {
           <mm-menu-item-action size="large" label="검색"></mm-menu-item-action>
           <mm-menu-item-action size="large" label="저장"></mm-menu-item-action>
           <mm-menu-item-action size="large" label="공유"></mm-menu-item-action>
-          <mm-menu-item-action size="large" label="복사"></mm-menu-item-action>
-          <mm-menu-item-action size="large" label="이름 변경"></mm-menu-item-action>
-          <mm-menu-item-action size="large" label="즐겨찾기"></mm-menu-item-action>
-          <mm-menu-item-action size="large" label="알림 설정"></mm-menu-item-action>
           <mm-menu-item-action size="large" label="보관"></mm-menu-item-action>
           <mm-menu-item-action size="large" label="숨기기"></mm-menu-item-action>
           <mm-menu-item-action size="large" label="신고"></mm-menu-item-action>
@@ -317,13 +302,8 @@ function filterSheetTemplate() {
           <fieldset class="filter-fieldset" role="group">
             <legend class="filter-fieldset-legend">빠른 작업</legend>
             <mm-menu-item-group aria-label="빠른 작업">
+              <mm-menu-item-action icon="search" label="저장된 검색 불러오기"></mm-menu-item-action>
               <mm-menu-item-action
-                size="large"
-                icon="search"
-                label="저장된 검색 불러오기"
-              ></mm-menu-item-action>
-              <mm-menu-item-action
-                size="large"
                 icon="trash"
                 label="필터 초기화"
                 tone="danger"

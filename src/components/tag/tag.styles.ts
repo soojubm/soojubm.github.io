@@ -118,6 +118,7 @@ export const tagStyles = css`
 
     display: inline-flex;
     align-items: center;
+    width: fit-content;
     min-height: var(--tag-height);
     gap: var(--tag-gap);
     padding-inline: var(--tag-padding-inline);

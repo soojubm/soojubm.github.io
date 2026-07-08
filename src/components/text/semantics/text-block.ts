@@ -65,7 +65,7 @@ class TextBlock extends LitElement {
     '3': {
       headingSize: '18',
       descriptionSize: '14',
-      gap: '2',
+      gap: '1',
     },
   }
 

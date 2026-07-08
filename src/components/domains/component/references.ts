@@ -21,7 +21,7 @@ export class ComponentReferences extends LitElement {
   render() {
     return html`
       <section class="component-references">
-        <mm-paragraph size="large">${this.heading}</mm-paragraph>
+        <mm-heading>${this.heading}</mm-heading>
         <slot></slot>
       </section>
     `

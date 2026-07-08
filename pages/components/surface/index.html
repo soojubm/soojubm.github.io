@@ -285,7 +285,6 @@
         <mm-text weight="bold">Surface 5</mm-text>
       </mm-surface>
     </mm-scroll>
-
     <style>
       .scroll-surface-container {
         max-height: 240px;
@@ -296,32 +295,6 @@
       }
     </style>
 
-    <pre
-      class="surface-code"
-    ><code>&lt;mm-scroll direction="column" gap="3" class="scroll-surface-container"&gt;
-  &lt;mm-surface&gt;
-    &lt;mm-text weight="bold"&gt;Surface 1&lt;/mm-text&gt;
-  &lt;/mm-surface&gt;
-  &lt;mm-surface&gt;
-    &lt;mm-text weight="bold"&gt;Surface 2&lt;/mm-text&gt;
-  &lt;/mm-surface&gt;
-&lt;/mm-scroll&gt;
-
-&lt;style&gt;
-  .scroll-surface-container {
-    max-height: 240px;
-  }
-&lt;/style&gt;</code></pre>
-
-    <style>
-      .surface-code {
-        overflow: auto;
-        margin: var(--space-3) 0 0;
-        padding: var(--space-3);
-        border-radius: var(--radius);
-        background: var(--color-background-subtle);
-      }
-    </style>
   </mm-component-section>
 
   <!-- <mm-component-section heading="RatingSurface" description="">
@@ -378,34 +351,5 @@
       </article>
     </section>
   </mm-component-section> -->
-
-  <!-- <mm-surface variant="outlined">
-    <mm-avatar>
-      <mm-icon name="graph-up"></mm-icon>
-    </mm-avatar>
-    <div style="height: var(--space-3)"></div>
-    <mm-text size="12" weight="bold">상해종합주가지수</mm-text>
-    <mm-paragraph>2999.55p</mm-paragraph>
-    <div style="margin-top: var(--space-1)"></div>
-    <mm-tag variant="up">4.33% 상승</mm-tag>
-    <div style="margin-top: var(--space-3)">
-      <mm-text size="12">
-        <span style="color: var(--color-foreground-light)">10분 지연. live</span>
-      </mm-text>
-      <mm-text size="12">
-        <span style="color: var(--color-foreground-light)">현지 시간 기준 10.27. 01:27</span>
-      </mm-text>
-    </div>
-  </mm-surface>
-  <mm-surface>
-    <q>
-      I'm impressed by how GitHub Copilot seems to know exactly what I want to type next. GitHub
-      Copilot is particularly helpful when working on React components, where it makes eerily
-      accurate predictions. GitHub Copilot has become an indispensable part of my programmer
-      toolbelt.
-    </q>
-    <figcaption style="margin: var(--space-3) 0 0 0">
-      <mm-paragraph color="light">Byline</mm-paragraph>
-    </figcaption>
-  </mm-surface> -->
+  </mm-grid>
 </main>

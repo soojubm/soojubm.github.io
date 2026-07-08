@@ -66,7 +66,6 @@ export class Select extends LitElement {
   @property({ type: String }) value = ''
   @property({ type: String }) placement: PopoverPlacement = 'bottom-left'
   @property({ type: Boolean, reflect: true }) inline = false
-  @property({ type: String, attribute: 'list-min-width' }) listMinWidth = ''
   @state() private options: SelectOption[] = []
   @state() private isPhoneViewport = false
 
@@ -190,17 +189,6 @@ export class Select extends LitElement {
         </mm-sheet-body>
       </mm-sheet>
     `
-  }
-
-  protected updated(changedProperties: Map<string, unknown>) {
-    if (!changedProperties.has('listMinWidth')) return
-
-    if (!this.listMinWidth) {
-      this.style.removeProperty('--select-min-width')
-      return
-    }
-
-    this.style.setProperty('--select-min-width', this.listMinWidth)
   }
 
   private renderOptionItems() {

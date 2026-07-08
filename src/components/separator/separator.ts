@@ -14,7 +14,7 @@ export class Separator extends LitElement {
   render() {
     return html`
       <hr role="separator" />
-      <slot name="text"></slot>
+      <mm-caption><slot></slot></mm-caption>
     `
   }
 }

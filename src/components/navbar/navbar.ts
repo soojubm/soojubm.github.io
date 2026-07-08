@@ -1,8 +1,6 @@
 import { LitElement, html, nothing } from 'lit'
-import { customElement, query, state } from 'lit/decorators.js'
+import { customElement, state } from 'lit/decorators.js'
 import { repeat } from 'lit/directives/repeat.js'
-
-import type Popover from '@/components/popover/popover'
 
 import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
 import { PopupController } from '@/controllers/popup-controller'
@@ -26,8 +24,6 @@ export class Navbar extends LitElement {
   private pagefind: Pagefind | null = null
   private debounceTimer: ReturnType<typeof setTimeout> | null = null
   private searchRequestId = 0
-
-  @query('#navbar-user-menu') private userMenu?: Popover
 
   // 검색 시트는 열릴 때 portal로 document.body로 이동하므로 renderRoot가 아닌 document에서 찾는다.
   private get searchField() {
@@ -59,14 +55,8 @@ export class Navbar extends LitElement {
             icon=${ICON_NAMES.PROFILE}
             aria-label="내 메뉴"
             aria-controls="navbar-user-menu"
-            @click=${this.toggleUserMenu}
           ></mm-icon-button>
-          <mm-popover
-            id="navbar-user-menu"
-            placement="bottom-right"
-            width="320px"
-            padding="var(--space-4)"
-          >
+          <mm-popover id="navbar-user-menu" placement="bottom-right" width="320px">
             <mm-flex gap="2" justify-content="space-between">
               <mm-user-snippet
                 size="huge"
@@ -167,10 +157,6 @@ export class Navbar extends LitElement {
       this.searching = false
       this.searchRequestId++
     }
-  }
-
-  private toggleUserMenu = () => {
-    this.userMenu?.toggle()
   }
 
   private onInput = (e: Event) => {
