@@ -11,7 +11,7 @@ interface DisclosureOptions {
   isOpen: () => boolean
   /** 호스트에 열림 상태 변경을 요청한다 */
   setOpen: (open: boolean) => void
-  /** 토글 트리거. 기본값은 host.id를 aria-controls로 가리키는 요소를 찾는다 */
+  /** 토글 트리거. 반환값이 없으면 host.id를 aria-controls로 가리키는 요소로 폴백한다 */
   getTrigger?: () => HTMLElement | undefined
   /** 스스로 닫히는 조건 (기본 없음) */
   dismissOn?: DismissOn[]
@@ -64,7 +64,8 @@ export class DisclosureController implements ReactiveController {
   }
 
   private get trigger() {
-    if (this.options.getTrigger) return this.options.getTrigger()
+    const explicit = this.options.getTrigger?.()
+    if (explicit) return explicit
     if (!this.host.id) return undefined
 
     const root = this.host.getRootNode() as Document | ShadowRoot

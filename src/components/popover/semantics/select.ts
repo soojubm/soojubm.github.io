@@ -10,7 +10,6 @@ import { PopupController } from '@/controllers/popup-controller'
 import { MEDIA_QUERY } from '@/stylesheets/shared/breakpoints'
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
 import '@/components/menuitem/semantics/menu-item-action'
-import '@/components/menuitem/semantics/menu-item-checkbox'
 import '@/components/menuitem/semantics/menu-item-group'
 import '@/components/popover/popover'
 import '@/components/sheet/sheet'
@@ -20,8 +19,6 @@ import { emit } from '@/utils/emit'
 export interface SelectOption {
   label: string
   value: string
-  type: 'default' | 'checkbox'
-  checked: boolean
   selected: boolean
   icon?: IconName
 }
@@ -39,21 +36,21 @@ export class Select extends LitElement {
         --select-min-width: auto;
         display: block;
         position: relative;
-        width: 100%;
-      }
-
-      :host([inline]) {
-        width: auto;
+        width: var(--select-width, auto);
       }
 
       mm-popover {
         --popover-max-height: var(--select-max-height);
-        min-width: var(--select-min-width);
+      }
 
-        &[placement='bottom-left'][inline],
-        &[placement='top-left'][inline] {
-          right: auto;
-        }
+      mm-popover::part(panel) {
+        min-width: var(--select-min-width);
+      }
+
+      /* full(100%)이 아니면 호스트가 트리거 폭이므로, 좌측 placement는 트리거 왼쪽에 앵커해 오른쪽으로 자란다. */
+      :host(:not([width='100%'])) mm-popover[placement='bottom-left']::part(panel),
+      :host(:not([width='100%'])) mm-popover[placement='top-left']::part(panel) {
+        right: auto;
       }
 
       mm-menu-item-action[aria-current='true'] {
@@ -64,7 +61,8 @@ export class Select extends LitElement {
 
   @property({ type: String }) value = ''
   @property({ type: String }) placement: PopoverPlacement = 'bottom-left'
-  @property({ type: Boolean, reflect: true }) inline = false
+  /** 호스트 폭. 기본은 트리거 콘텐츠 폭(auto)이며, `240px`·`100%` 등 임의 CSS 폭 값을 받는다. */
+  @property({ type: String, reflect: true }) width = 'auto'
   @state() private options: SelectOption[] = []
   @state() private isPhoneViewport = false
 
@@ -102,12 +100,18 @@ export class Select extends LitElement {
     this.syncOptions()
   }
 
+  protected updated(changedProperties: Map<string, unknown>) {
+    if (changedProperties.has('width')) this.style.setProperty('--select-width', this.width)
+  }
+
   private syncViewport = () => {
     this.isPhoneViewport = this.phoneMedia.matches
   }
 
+  // 네이티브 select처럼 value가 비어 있으면 selected 옵션에서 초기값을 채운다.
   private syncOptions() {
     this.options = this.parseLightDomOptions()
+    if (!this.value) this.value = this.options.find(option => option.selected)?.value ?? ''
   }
 
   // light DOM의 <option> 요소를 SelectOption 데이터로 변환
@@ -115,38 +119,16 @@ export class Select extends LitElement {
     return this.optionElements.map(option => ({
       label: option.textContent || '',
       value: option.value,
-      type: (option.getAttribute('type') as 'default' | 'checkbox') || 'default',
-      checked: option.hasAttribute('checked'),
       selected: option.hasAttribute('selected'),
       icon: (option.getAttribute('icon') as IconName | null) ?? undefined,
     }))
   }
 
-  // 일반 아이템 클릭 시: 선택 라벨 변경 후 목록 닫기
+  // 옵션 클릭 시: 값 반영 후 목록 닫기
   private selectOption(option: SelectOption) {
     this.value = option.value
     this.popup.close()
-    emit(this, 'change', { type: 'select', value: option.value })
-  }
-
-  // 체크박스 아이템 변경 시: 데이터 상태만 업데이트 (목록을 닫지 않음)
-  private handleCheckboxChange(option: SelectOption, e: CustomEvent) {
-    e.stopPropagation()
-
-    const isChecked = e.detail.checked
-
-    // 내부 state 업데이트 (불변성 유지)
-    this.options = this.options.map(o =>
-      o.value === option.value ? { ...o, checked: isChecked } : o,
-    )
-
-    // 외부로 이벤트 전파
-    emit(this, 'change', {
-      type: 'checkbox',
-      value: option.value,
-      checked: isChecked,
-      values: this.options.filter(o => o.checked).map(o => o.value),
-    })
+    emit(this, 'change', { value: option.value })
   }
 
   // 트리거 스타일은 slot="trigger"로 들어온 외부 요소가 책임진다.
@@ -164,8 +146,8 @@ export class Select extends LitElement {
     if (this.isPhoneViewport) return nothing
 
     return html`
-      <mm-popover ?open=${this.popup.open} placement=${this.placement} ?inline=${this.inline}>
-        <mm-menu-item-group>${this.renderOptionItems()}</mm-menu-item-group>
+      <mm-popover ?open=${this.popup.open} placement=${this.placement}>
+        ${this.renderOptionList()}
       </mm-popover>
     `
   }
@@ -178,50 +160,37 @@ export class Select extends LitElement {
 
     return html`
       <mm-sheet
-        placement="bottom"
+        variant="bottom"
         ?open=${this.popup.open}
         @sheetclose=${() => this.popup.close()}
         @pointerdown=${(e: Event) => e.stopPropagation()}
       >
-        <mm-sheet-body>
-          <mm-menu-item-group>${this.renderOptionItems()}</mm-menu-item-group>
-        </mm-sheet-body>
+        <mm-sheet-body>${this.renderOptionList()}</mm-sheet-body>
       </mm-sheet>
     `
   }
 
-  private renderOptionItems() {
-    return repeat(
-      this.options,
-      option => option.value,
-      option => this.renderOption(option),
-    )
-  }
-
-  private renderOption(option: SelectOption) {
-    return option.type === 'checkbox'
-      ? this.renderCheckboxOption(option)
-      : this.renderDefaultOption(option)
-  }
-
-  // 체크박스 옵션: 클릭해도 닫히지 않고 체크 상태만 토글
-  private renderCheckboxOption(option: SelectOption) {
+  // popover·sheet가 공유하는 옵션 목록. 그룹 시맨틱은 목록 전체에 한 번만 적용한다.
+  private renderOptionList() {
     return html`
-      <mm-menu-item-checkbox
-        .checked=${option.checked}
-        @change=${(e: CustomEvent) => this.handleCheckboxChange(option, e)}
-      >
-        ${option.label}
-      </mm-menu-item-checkbox>
+      <mm-menu-item-group>
+        ${repeat(
+          this.options,
+          option => option.value,
+          option => this.renderOption(option),
+        )}
+      </mm-menu-item-group>
     `
   }
 
-  // 일반 옵션: 선택 시 닫히며 현재 value면 aria-current로 강조
-  private renderDefaultOption(option: SelectOption) {
+  // 옵션: 선택 시 닫히며 현재 선택된 옵션은 aria-current로 강조
+  private renderOption(option: SelectOption) {
+    const isSelected = option.value === this.value
+
     return html`
       <mm-menu-item-action
         icon=${option.icon || nothing}
-        aria-current=${ifDefined(option.value === this.value ? 'true' : undefined)}
+        aria-current=${ifDefined(isSelected ? 'true' : undefined)}
         @click=${() => this.selectOption(option)}
       >
         ${option.label}

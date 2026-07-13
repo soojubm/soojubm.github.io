@@ -25,7 +25,7 @@ export class ModelSelector extends LitElement {
 
   render() {
     return html`
-      <mm-select .value=${this.value} inline placement="top-left">
+      <mm-select .value=${this.value} placement="top-left">
         <mm-button
           slot="trigger"
           variant="tertiary"

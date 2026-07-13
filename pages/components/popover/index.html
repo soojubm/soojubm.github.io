@@ -7,22 +7,11 @@
   <mm-component-aka items='["Flyout", "Dropdown Panel", "Menu Surface"]'></mm-component-aka>
 
   <mm-component-example>
-    <div class="popover-demo">
-      <mm-button id="popover-trigger" aria-controls="demo-popover" aria-expanded="false">
-        메뉴 열기
-      </mm-button>
-      <mm-popover id="demo-popover" role="menu">
-        <mm-menu-item-action label="이름 변경"></mm-menu-item-action>
-        <mm-menu-item-action label="삭제" tone="danger"></mm-menu-item-action>
-      </mm-popover>
-    </div>
+    <mm-popover width="200px">
+      <mm-button slot="trigger">팝오버 열기</mm-button>
+      <mm-paragraph>트리거에 앵커되는 non-modal 레이어 표면입니다.</mm-paragraph>
+    </mm-popover>
   </mm-component-example>
-  <style>
-    .popover-demo {
-      display: inline-block;
-      position: relative;
-    }
-  </style>
 
   <mm-component-props>
     <mm-prop name="open" type="boolean"></mm-prop>
@@ -30,6 +19,7 @@
       name="placement"
       type="'bottom-left' | 'bottom-right' | 'top-left' | 'top-right' = 'bottom-left'"
     ></mm-prop>
+    <mm-prop name="width" type="string = 'auto'"></mm-prop>
     <mm-prop name="popoverclose" type="CustomEvent" kind="event"></mm-prop>
   </mm-component-props>
 
@@ -52,8 +42,9 @@
     </mm-paragraph>
     <mm-text-list
       texts='[
-        "열림 상태는 popover가 소유한다. 트리거는 aria-controls로 popover를 가리키고 클릭으로 toggle()만 호출하면, 외부 클릭·ESC 닫기와 aria-expanded 반영은 popover가 처리한다.",
-        "aria-controls로 연결된 트리거가 없으면 popover는 소비자가 open을 제어하는 표면으로만 동작한다(예: mm-select의 반응형 popover·sheet 전환).",
+        "열림 상태는 popover가 소유한다. 트리거를 slot=trigger로 넣으면 popover가 스스로 positioned 앵커가 되어 별도 래퍼가 필요 없고, 클릭 토글·외부 클릭·ESC 닫기·aria-expanded 반영까지 자동으로 연결된다.",
+        "트리거가 밖에 있으면 aria-controls로 popover를 가리킨다. 이때 패널은 가장 가까운 positioned 조상에 앵커되며, 패널 지오메트리는 ::part(panel)로 다듬는다.",
+        "연결된 트리거가 없으면 popover는 소비자가 open을 제어하는 표면으로만 동작한다(예: mm-select의 반응형 popover·sheet 전환).",
         "role=menu/listbox를 popover 요소에 직접 지정한다.",
         "용례: select, 컨텍스트 메뉴, 댓글 항목의 수정·삭제 메뉴."
       ]'
@@ -61,10 +52,10 @@
   </mm-component-guide>
 
   <mm-component-section
-    heading="mm-select"
+    heading="Select"
     description="popover를 프리미티브로 하는 선택 입력입니다. 트리거·옵션 파싱·선택 상태를 소유하고, 목록 표면은 popover에 맡깁니다. phone 뷰포트(480px 이하)에서는 같은 옵션 목록을 bottom sheet(mm-sheet)로 전환해 표시합니다."
   >
-    <mm-select inline value="stable">
+    <mm-select width="200px" value="stable">
       <mm-button slot="trigger" size="small">릴리스 채널</mm-button>
       <option value="stable" selected>Stable</option>
       <option value="beta">Beta</option>

@@ -21,7 +21,6 @@ export class CommentItem extends LitElement {
     :host {
       display: block;
       --comment-item-gap: var(--space-2);
-      --comment-item-menu-width: var(--width-tiny);
       --comment-item-reply-color: var(--color-foreground);
       position: relative;
     }
@@ -48,8 +47,8 @@ export class CommentItem extends LitElement {
       position: relative;
     }
 
-    mm-popover {
-      width: var(--comment-item-menu-width);
+    mm-popover::part(panel) {
+      width: 240px;
       right: 40px;
       top: 0;
     }
