@@ -74,8 +74,6 @@ const colorTokens = [
   { name: '--color-background-subtle', value: 'var(--gray100)', cases: [] },
   { name: '--color-background-strong', value: 'var(--gray800)', cases: [] },
   { name: '--color-border', value: 'var(--gray200)', cases: [] },
-  { name: '--color-border-strong', value: 'var(--gray300)', cases: [] },
-  { name: '--color-border-hover', value: 'var(--gray800)', cases: [] },
   { name: '--color-foreground', value: 'var(--gray900)', cases: [] },
   { name: '--color-foreground-light', value: 'var(--gray400)', cases: [] },
   { name: '--color-foreground-on-solid', value: 'var(--gray0)', cases: [] },

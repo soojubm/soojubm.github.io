@@ -22,9 +22,6 @@ export class ThemeSwitcher extends LitElement {
       display: flex;
       flex-direction: column;
 
-      min-width: calc(var(--width-small) - var(--space-4) * 5);
-      max-height: var(--width-small);
-
       padding: var(--space-1);
       border: var(--border);
       border-radius: var(--radius);

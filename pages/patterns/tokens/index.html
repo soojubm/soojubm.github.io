@@ -6,20 +6,6 @@
     ></mm-page-header>
 
     <style>
-      .token-color-scale {
-        display: flex;
-        height: var(--size-large);
-        overflow: hidden;
-        border: var(--border);
-        border-radius: var(--radius);
-        background: var(--color-background);
-      }
-
-      .token-color-swatch {
-        min-width: var(--size-large);
-        transition: transform var(--duration-quickly) var(--bazier);
-      }
-
       .token-color-markers {
         display: flex;
         width: min(100%, calc(var(--size-huge) * 6));
@@ -33,101 +19,182 @@
       }
     </style>
 
-    <mm-flex direction="column" gap="3">
+    <mm-flex direction="column" gap="0">
       <mm-text-block
         level="2"
         heading="Color"
         description="용도와 의미에 따라 색상을 사용하도록..."
       ></mm-text-block>
-      <mm-token-stage>
-        <mm-flex direction="column" gap="4">
-          <mm-flex direction="column" gap="2">
-            <div class="token-color-scale" aria-label="grayscale color tokens">
-              <span class="token-color-swatch" style="background: var(--gray0)"></span>
-              <span class="token-color-swatch" style="background: var(--gray50)"></span>
-              <span class="token-color-swatch" style="background: var(--gray100)"></span>
-              <span class="token-color-swatch" style="background: var(--gray200)"></span>
-              <span class="token-color-swatch" style="background: var(--gray300)"></span>
-              <span class="token-color-swatch" style="background: var(--gray400)"></span>
-              <span class="token-color-swatch" style="background: var(--gray800)"></span>
-              <span class="token-color-swatch" style="background: var(--gray900)"></span>
-            </div>
-            <div class="token-color-markers" aria-hidden="true">
-              <i class="token-color-marker">
-                <mm-list-marker variant="number" value="1"></mm-list-marker>
-              </i>
-              <i class="token-color-marker">
-                <mm-list-marker variant="number" value="2"></mm-list-marker>
-              </i>
-              <i class="token-color-marker">
-                <mm-list-marker variant="number" value="3"></mm-list-marker>
-              </i>
-              <i class="token-color-marker">
-                <mm-list-marker variant="number" value="4"></mm-list-marker>
-              </i>
-              <i class="token-color-marker">
-                <mm-list-marker variant="number" value="5"></mm-list-marker>
-              </i>
-              <i class="token-color-marker">
-                <mm-list-marker variant="number" value="6"></mm-list-marker>
-              </i>
-              <i class="token-color-marker">
-                <mm-list-marker variant="number" value="7"></mm-list-marker>
-              </i>
-              <i class="token-color-marker">
-                <mm-list-marker variant="number" value="8"></mm-list-marker>
-              </i>
-            </div>
-          </mm-flex>
-          <mm-flex direction="column" gap="2">
-            <div class="token-color-scale" aria-label="color tokens">
-              <span class="token-color-swatch" style="background: var(--green100)"></span>
-              <span class="token-color-swatch" style="background: var(--green800)"></span>
-              <span class="token-color-swatch" style="background: var(--red100)"></span>
-              <span class="token-color-swatch" style="background: var(--red800)"></span>
-              <span class="token-color-swatch" style="background: var(--yellow800)"></span>
-            </div>
-            <div class="token-color-markers" aria-hidden="true">
-              <i class="token-color-marker" style="flex: 0; min-width: var(--size-large)">
-                <mm-list-marker variant="number" value="9"></mm-list-marker>
-              </i>
-              <i class="token-color-marker" style="flex: 0; min-width: var(--size-large)">
-                <mm-list-marker variant="number" value="10"></mm-list-marker>
-              </i>
-              <i class="token-color-marker" style="flex: 0; min-width: var(--size-large)">
-                <mm-list-marker variant="number" value="11"></mm-list-marker>
-              </i>
-              <i class="token-color-marker" style="flex: 0; min-width: var(--size-large)">
-                <mm-list-marker variant="number" value="12"></mm-list-marker>
-              </i>
-              <i class="token-color-marker" style="flex: 0; min-width: var(--size-large)">
-                <mm-list-marker variant="number" value="13"></mm-list-marker>
-              </i>
-            </div>
-          </mm-flex>
+
+      <style>
+        .color-chip {
+          border: var(--border);
+          border-radius: var(--radius) var(--radius) var(--radius-large) var(--radius-large);
+          overflow: hidden;
+        }
+        .color-token-item {
+          display: inline-flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          width: 100%;
+          min-height: 56px;
+          padding: var(--space-3) var(--space-4);
+          box-sizing: border-box;
+        }
+        .color-chip figcaption {
+          padding-bottom: var(--space-3);
+          margin-left: var(--space-4);
+          margin-top: var(--space-2);
+        }
+      </style>
+      <mm-component-example>
+        <mm-flex style="border-radius: var(--radius-large); overflow: hidden">
+          <span class="color-token-item" style="width: 80px; background: var(--gray0)"></span>
+          <span class="color-token-item" style="width: 80px; background: var(--gray50)"></span>
+          <span class="color-token-item" style="width: 80px; background: var(--gray100)"></span>
+          <span class="color-token-item" style="width: 80px; background: var(--gray200)"></span>
+          <span class="color-token-item" style="width: 80px; background: var(--gray400)"></span>
+          <span class="color-token-item" style="width: 80px; background: var(--gray800)"></span>
+          <span class="color-token-item" style="width: 80px; background: var(--gray900)"></span>
         </mm-flex>
-      </mm-token-stage>
-      <mm-token-group>
-        <mm-token-item key="gray0" value="#fff"></mm-token-item>
-        <mm-token-item key="gray50" value="#fcfdfc"></mm-token-item>
-        <mm-token-item key="gray100" value="#f5f6f5"></mm-token-item>
-        <mm-token-item key="gray200" value="#e9edec"></mm-token-item>
-        <mm-token-item key="gray300" value="#d2d7d5"></mm-token-item>
-        <mm-token-item key="gray400" value="#979d9a"></mm-token-item>
-        <mm-token-item key="gray800" value="#3d4943"></mm-token-item>
-        <mm-token-item key="gray900" value="#1e2321"></mm-token-item>
-        <mm-token-item key="green100" value="rgba(10,160,80,.075)"></mm-token-item>
-        <mm-token-item key="green800" value="#1b995c"></mm-token-item>
-        <mm-token-item key="red100" value="rgba(243,68,97,.06)"></mm-token-item>
-        <mm-token-item key="red800" value="#f02849"></mm-token-item>
-        <mm-token-item key="yellow800" value="gold"></mm-token-item>
+        <mm-flex>
+          <span class="color-token-item" style="width: 80px; background: var(--green100)"></span>
+          <span class="color-token-item" style="width: 80px; background: var(--green800)"></span>
+          <span class="color-token-item" style="width: 80px; background: var(--red100)"></span>
+          <span class="color-token-item" style="width: 80px; background: var(--red800)"></span>
+        </mm-flex>
+
+        <mm-separator></mm-separator>
+        <mm-grid columns="4" aria-label="grayscale color tokens">
+          <div class="color-chip">
+            <figure class="color-token-item" style="background: var(--color-primary)">
+              <mm-text size="12" weight="bold" style="color: var(--color-foreground-on-primary)">
+                on primary
+              </mm-text>
+            </figure>
+            <figcaption>
+              <mm-text size="12" weight="bold" style="color: var(--gray800)">
+                primary: green800
+              </mm-text>
+            </figcaption>
+          </div>
+          <div class="color-chip">
+            <figure class="color-token-item" style="background: var(--green100)">
+              <mm-text size="12" weight="bold" style="color: var(--color-foreground)">
+                on primary-light
+              </mm-text>
+            </figure>
+            <figcaption>
+              <mm-text size="12" weight="bold" style="color: var(--gray800)">
+                primary-light: green400
+              </mm-text>
+            </figcaption>
+          </div>
+          <!-- warning -->
+          <div class="color-chip">
+            <figure class="color-token-item" style="background: var(--red100)">
+              <mm-text size="12" weight="bold" style="color: var(--color-foreground-on-warning)">
+                on warning-light
+              </mm-text>
+            </figure>
+            <figcaption>
+              <mm-text size="12" weight="bold" style="color: var(--gray800)">
+                warning-light: red100
+              </mm-text>
+            </figcaption>
+          </div>
+          <div class="color-chip">
+            <figure class="color-token-item" style="background: var(--red800)">
+              <mm-text size="12" weight="bold" style="color: var(--color-foreground-on-solid)">
+                on warning
+              </mm-text>
+            </figure>
+            <figcaption>
+              <mm-text size="12" weight="bold" style="color: var(--gray800)">
+                warning: red800
+              </mm-text>
+            </figcaption>
+          </div>
+
+          <!-- <figure class="color-token-item" style="background: var(--yellow800)">
+            <mm-text size="12" weight="bold" style="color: var(--color-foreground)">
+              on yellow800
+            </mm-text>
+          </figure>
+          <figure class="color-token-item" style="background: var(--red100)">
+            <mm-text size="12" weight="bold" style="color: var(--color-foreground)">
+              on red100
+            </mm-text>
+          </figure>
+          <figure class="color-token-item" style="background: var(--red800)">
+            <mm-text size="12" weight="bold" style="color: var(--color-foreground)">
+              on red800
+            </mm-text>
+          </figure> -->
+        </mm-grid>
+
+        <mm-grid columns="4" style="margin-top: var(--space-3)">
+          <div class="color-chip">
+            <figure class="color-token-item" style="background: var(--gray0)">
+              <mm-text size="12" weight="bold" style="color: var(--color-foreground)">
+                on background
+              </mm-text>
+            </figure>
+            <figcaption>
+              <mm-text size="12" weight="bold" style="color: var(--gray800)">
+                background: #fff
+              </mm-text>
+            </figcaption>
+          </div>
+
+          <!-- <div class="color-chip">
+            <figure class="color-token-item" style="background: var(--gray50)">
+              <mm-text size="12" weight="bold" style="color: var(--color-foreground)">
+                on gray50
+              </mm-text>
+            </figure>
+            <figcaption>
+              <mm-text size="12" weight="bold" style="color: var(--gray800)">
+                gray50: #fcfdfc
+              </mm-text>
+            </figcaption>
+          </div> -->
+
+          <div class="color-chip">
+            <figure class="color-token-item" style="background: var(--gray100)">
+              <mm-text size="12" weight="bold" style="color: var(--color-foreground)">
+                on background-subtle
+              </mm-text>
+            </figure>
+            <figcaption>
+              <mm-text size="12" weight="bold" style="color: var(--gray800)">
+                background-subtle: #f5f6f5
+              </mm-text>
+            </figcaption>
+          </div>
+          <div class="color-chip">
+            <figure class="color-token-item" style="background: var(--gray900)">
+              <mm-text size="12" weight="bold" style="color: var(--color-foreground-on-solid)">
+                on background-strong
+              </mm-text>
+            </figure>
+            <figcaption>
+              <mm-text size="12" weight="bold" style="color: var(--gray800)">
+                background-strong: #212529
+              </mm-text>
+            </figcaption>
+          </div>
+        </mm-grid>
+      </mm-component-example>
+
+      <!-- <mm-token-group>
         <mm-token-item key="selection-indicator-color" value="var(--color-primary)"></mm-token-item>
         <mm-token-item
           key="selection-background"
           value="var(--color-primary-subtle)"
         ></mm-token-item>
         <mm-token-item key="selection-foreground" value="var(--color-primary)"></mm-token-item>
-      </mm-token-group>
+      </mm-token-group> -->
     </mm-flex>
 
     <mm-flex direction="column" gap="3">
@@ -136,42 +203,111 @@
         heading="Typography"
         description="타이포그래피 토큰은 크기와 고정 행간을 함께 사용합니다. 행간은 컴포넌트의 역할에 맞춰 조합합니다."
       ></mm-text-block>
-      <mm-token-stage>
-        <mm-flex align-items="end" gap="4">
-          <mm-flex direction="column" align-items="center" gap="2">
-            <mm-text size="32" weight="bold">Ag</mm-text>
-            <mm-list-marker variant="number" value="1"></mm-list-marker>
-          </mm-flex>
-          <mm-flex direction="column" align-items="center" gap="2">
-            <mm-text size="24" weight="bold">Ag</mm-text>
-            <mm-list-marker variant="number" value="2"></mm-list-marker>
-          </mm-flex>
-          <mm-flex direction="column" align-items="center" gap="2">
-            <mm-text size="18">Ag</mm-text>
-            <mm-list-marker variant="number" value="3"></mm-list-marker>
-          </mm-flex>
-          <mm-flex direction="column" align-items="center" gap="2">
-            <mm-text size="14">Ag</mm-text>
-            <mm-list-marker variant="number" value="4"></mm-list-marker>
-          </mm-flex>
-          <mm-flex direction="column" align-items="center" gap="2">
-            <mm-text size="12">Ag</mm-text>
-            <mm-list-marker variant="number" value="5"></mm-list-marker>
-          </mm-flex>
+      <mm-component-example>
+        <mm-flex direction="column" gap="4">
+          <mm-marquee gap="4" speed="80" pause-on-hover>
+            <mm-text size="32" weight="bold">
+              font-family: Alan Sans, Gothic A1, system-ui, sans-serif
+            </mm-text>
+            <mm-text size="32" weight="bold">font-size: 32px</mm-text>
+            <mm-text size="32" weight="bold">line-height: 40px</mm-text>
+          </mm-marquee>
+          <mm-separator></mm-separator>
+          <mm-marquee gap="4" speed="64" pause-on-hover>
+            <mm-text size="24" weight="bold">
+              font-family: Alan Sans, Gothic A1, system-ui, sans-serif
+            </mm-text>
+            <mm-text size="24" weight="bold">font-size: 24px</mm-text>
+            <mm-text size="24" weight="bold">line-height: 32px</mm-text>
+          </mm-marquee>
+          <mm-separator></mm-separator>
+          <mm-marquee gap="4" speed="64" pause-on-hover>
+            <mm-text size="18" weight="bold">
+              font-family: Alan Sans, Gothic A1, system-ui, sans-serif
+            </mm-text>
+            <mm-text size="18" weight="bold">font-size: 18px</mm-text>
+            <mm-text size="18" weight="bold">line-height: 24px</mm-text>
+          </mm-marquee>
+          <mm-surface variant="outlined" radius="large">
+            <mm-marquee gap="4" speed="64" pause-on-hover>
+              <mm-text size="14" weight="bold">
+                font-family: Alan Sans, Gothic A1, system-ui, sans-serif
+              </mm-text>
+              <mm-text size="14" weight="bold">font-size: 14px</mm-text>
+              <mm-text size="14" weight="bold">line-height: 20px</mm-text>
+            </mm-marquee>
+          </mm-surface>
+          <mm-surface variant="outlined" radius="large">
+            <mm-marquee gap="4" speed="64" pause-on-hover>
+              <mm-text size="12" weight="bold">
+                font-family: Alan Sans, Gothic A1, system-ui, sans-serif
+              </mm-text>
+              <mm-text size="12" weight="bold">font-size: 12px</mm-text>
+              <mm-text size="12" weight="bold">line-height: 16px</mm-text>
+            </mm-marquee>
+          </mm-surface>
         </mm-flex>
-      </mm-token-stage>
+      </mm-component-example>
+
+      <!-- <mm-flex align-items="end" gap="4">
+        <mm-flex direction="column" align-items="center" gap="2">
+          <mm-text size="32" weight="bold">Ag</mm-text>
+          <mm-list-marker variant="number" value="1"></mm-list-marker>
+        </mm-flex>
+        <mm-flex direction="column" align-items="center" gap="2">
+          <mm-text size="24" weight="bold">Ag</mm-text>
+          <mm-list-marker variant="number" value="2"></mm-list-marker>
+        </mm-flex>
+        <mm-flex direction="column" align-items="center" gap="2">
+          <mm-text size="18">Ag</mm-text>
+          <mm-list-marker variant="number" value="3"></mm-list-marker>
+        </mm-flex>
+        <mm-flex direction="column" align-items="center" gap="2">
+          <mm-text size="14">Ag</mm-text>
+          <mm-list-marker variant="number" value="4"></mm-list-marker>
+        </mm-flex>
+        <mm-flex direction="column" align-items="center" gap="2">
+          <mm-text size="12">Ag</mm-text>
+          <mm-list-marker variant="number" value="5"></mm-list-marker>
+        </mm-flex>
+      </mm-flex> -->
+
       <mm-token-group>
+        <mm-token-item
+          key="font family"
+          value=""
+          style="border-color: #000; font-weight: var(--font-weight-bold)"
+        ></mm-token-item>
         <mm-token-item
           key="font-family"
           value="Alan Sans, Gothic A1, system-ui, sans-serif"
         ></mm-token-item>
+        <mm-token-item
+          key="font weight"
+          value=""
+          style="border-color: #000; font-weight: var(--font-weight-bold)"
+        ></mm-token-item>
         <mm-token-item key="font-weight-normal" value="500"></mm-token-item>
         <mm-token-item key="font-weight-bold" value="700"></mm-token-item>
+        <mm-token-item
+          key="font size"
+          value=""
+          style="
+            border-color: #000;
+            font-weight: var(--font-weight-bold);
+            font-size: var(--font-size-18);
+          "
+        ></mm-token-item>
         <mm-token-item key="font-size-32" value="32px"></mm-token-item>
         <mm-token-item key="font-size-24" value="24px"></mm-token-item>
         <mm-token-item key="font-size-18" value="18px"></mm-token-item>
         <mm-token-item key="font-size-14" value="14px"></mm-token-item>
         <mm-token-item key="font-size-12" value="12px"></mm-token-item>
+        <mm-token-item
+          key="font line height"
+          value=""
+          style="border-color: #000; font-weight: var(--font-weight-bold)"
+        ></mm-token-item>
         <mm-token-item key="font-line-height-40" value="40px"></mm-token-item>
         <mm-token-item key="font-line-height-32" value="32px"></mm-token-item>
         <mm-token-item key="font-line-height-28" value="28px"></mm-token-item>
@@ -277,9 +413,7 @@
                   border-radius: var(--radius);
                 "
               ></div>
-              <div
-                style="width: var(--space-05); height: 4px; background: var(--color-primary)"
-              ></div>
+              <div style="width: 2px; height: 4px; background: var(--color-primary)"></div>
               <div
                 style="
                   width: 2px;
@@ -438,9 +572,6 @@
         </mm-flex>
       </mm-token-stage>
       <mm-token-group>
-        <mm-token-item key="space-05" value=".125rem">
-          <mm-keyword-tag>to be deprecated</mm-keyword-tag>
-        </mm-token-item>
         <mm-token-item key="space-1" value=".25rem"></mm-token-item>
         <mm-token-item key="space-2" value=".5rem"></mm-token-item>
         <mm-token-item key="space-3" value=".75rem"></mm-token-item>
@@ -462,7 +593,6 @@
         <mm-token-item key="layout-width-tiny" value="480px"></mm-token-item>
         <mm-token-item key="layout-width-narrow" value="400px"></mm-token-item>
         <mm-token-item key="layout-width-sidebar" value="16rem"></mm-token-item>
-        <mm-token-item key="width-small" value="200px"></mm-token-item>
         <mm-token-item key="layout-padding-inline" value="5vw"></mm-token-item>
       </mm-token-group>
     </mm-flex>
@@ -570,18 +700,15 @@
       </mm-token-stage>
       <mm-token-group>
         <mm-token-item key="border-width" value="1px"></mm-token-item>
-        <mm-token-item
-          key="border"
-          value="var(--border-width) solid var(--color-border-strong)"
-        ></mm-token-item>
+
         <mm-token-item key="border-active" value="1px solid var(--color-primary)"></mm-token-item>
         <mm-token-item
           key="border-transparent"
           value="var(--border-width) solid transparent"
         ></mm-token-item>
-        <mm-token-item key="radius" value="6px"></mm-token-item>
-        <mm-token-item key="radius-large" value="1rem"></mm-token-item>
-        <mm-token-item key="radius-round" value="50%"></mm-token-item>
+        <mm-token-item key="border-radius" value="6px"></mm-token-item>
+        <mm-token-item key="border-radius-large" value="1rem"></mm-token-item>
+        <mm-token-item key="border-radius-round" value="50%"></mm-token-item>
       </mm-token-group>
     </mm-flex>
 

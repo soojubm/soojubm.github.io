@@ -244,7 +244,6 @@ li::marker {
 }
 
 .offline {
-  max-width: var(--width-medium);
   margin: 0 auto;
   padding: 0.5rem 1rem;
   border-radius: var(--radius);

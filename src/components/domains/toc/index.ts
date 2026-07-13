@@ -29,7 +29,6 @@ export class TableOfContents extends LitElement {
     css`
       :host {
         display: block;
-        width: var(--width-small);
         max-height: calc(100vh - var(--size-huge));
         padding: var(--space-4) 0 0;
         flex-shrink: 0;
@@ -45,14 +44,13 @@ export class TableOfContents extends LitElement {
       .toc-list {
         display: flex;
         flex-direction: column;
-        gap: var(--space-05);
         position: relative;
       }
 
       .toc-link {
         display: block;
         width: 100%;
-        padding: var(--space-05) var(--space-2);
+        padding: 0 var(--space-2);
         border: 0;
         border-radius: var(--radius);
         background: transparent;

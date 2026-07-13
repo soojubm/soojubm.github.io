@@ -6,7 +6,7 @@ export class Page extends LitElement {
   static styles = css`
     :host {
       display: block;
-      min-height: calc(100vh - var(--navbar-height) - var(--width-small));
+      min-height: calc(100vh - var(--navbar-height));
       padding: var(--space-4) var(--layout-padding-inline) calc(var(--space-4) * 6);
       position: relative;
     }

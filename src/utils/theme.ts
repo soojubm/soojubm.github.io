@@ -1,11 +1,12 @@
 import { ICON_NAMES, type IconName } from '@/components/icon-button/semantics/icon-names'
 
-export type Theme = 'light' | 'dark' | 'brutal'
+export type Theme = 'light' | 'dark' | 'brutal' | 'glass'
 
 export const THEMES: { value: Theme; icon: IconName; label: string }[] = [
   { value: 'light', icon: ICON_NAMES.LIGHT_MODE, label: 'Day' },
   { value: 'dark', icon: ICON_NAMES.DARK_MODE, label: 'Night' },
   { value: 'brutal', icon: ICON_NAMES.THEME, label: 'Brutal' },
+  { value: 'glass', icon: ICON_NAMES.THEME, label: 'Glass' },
 ]
 
 const THEME_STORAGE_KEY = 'theme'

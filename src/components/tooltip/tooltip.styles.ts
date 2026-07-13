@@ -25,17 +25,14 @@ export const tooltipStyles = css`
   }
 
   :host([placement='center']) [role='tooltip'] {
-    white-space: pre;
     left: 50%;
     transform: translateX(-50%);
   }
 
   :host([placement='left']) [role='tooltip'] {
-    white-space: pre;
   }
 
   :host([placement='right']) [role='tooltip'] {
-    white-space: pre;
     left: auto;
     right: 0;
   }

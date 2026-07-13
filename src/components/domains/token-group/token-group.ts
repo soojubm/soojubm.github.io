@@ -10,7 +10,7 @@ export class TokenGroup extends LitElement {
     css`
       :host {
         display: flex;
-        flex-direction: column;
+        flex-wrap: wrap;
         gap: var(--space-2);
       }
     `,

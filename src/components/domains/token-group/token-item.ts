@@ -12,8 +12,12 @@ export class TokenItem extends LitElement {
     css`
       :host {
         display: inline-flex;
-        gap: var(--space-2);
+        flex-direction: column;
+        gap: var(--space-1);
+        padding: var(--space-3) var(--space-4);
         line-height: var(--size-medium);
+        border: var(--border);
+        border-radius: var(--radius-large);
       }
     `,
   ]
@@ -24,7 +28,8 @@ export class TokenItem extends LitElement {
 
   render() {
     return html`
-      ${this.renderMarker()} ${this.renderKey()} ${this.renderValue()}
+      <!-- ${this.renderMarker()} -->
+      ${this.renderKey()} ${this.renderValue()}
       <slot></slot>
     `
   }
@@ -41,7 +46,7 @@ export class TokenItem extends LitElement {
     if (!this.key) return nothing
 
     return html`
-      <mm-text weight="bold">${this.key}</mm-text>
+      <mm-text>${this.key}</mm-text>
     `
   }
 
@@ -49,7 +54,7 @@ export class TokenItem extends LitElement {
     if (!this.value) return nothing
 
     return html`
-      <mm-text>${this.value}</mm-text>
+      <mm-text weight="bold">${this.value}</mm-text>
     `
   }
 }

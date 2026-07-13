@@ -18,6 +18,7 @@ export const listRowStyles = css`
 
   :host([size='huge']) {
     --list-row-size: var(--size-huge);
+    --list-row-gap: var(--space-3);
   }
 
   [slot='leading'],

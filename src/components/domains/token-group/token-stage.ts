@@ -21,7 +21,7 @@ export class TokenStage extends LitElement {
 
   render() {
     return html`
-      <mm-surface variant="outlined">
+      <mm-surface variant="outlined" radius="large">
         <slot></slot>
       </mm-surface>
     `

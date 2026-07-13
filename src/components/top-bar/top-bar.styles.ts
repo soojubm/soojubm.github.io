@@ -5,7 +5,7 @@ export const topBarStyles = css`
     display: flex;
     align-items: center;
     gap: var(--space-2);
-    padding-block: var(--space-4);
+    padding-block: var(--space-2);
     position: relative;
   }
 

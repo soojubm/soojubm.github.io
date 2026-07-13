@@ -19,7 +19,7 @@ export const sheetStyles = css`
     --sheet-side-max-width: 50vw;
     --sheet-side-responsive-max-width: 100vw;
     --sheet-width-small: 320px;
-    --sheet-width-medium: var(--layout-width-tiny);
+    --sheet-width-medium: var(--layout-width-narrow);
     --sheet-width-large: var(--layout-width-wide);
     --sheet-width-full: 100%;
     --sheet-height-full: 100%;

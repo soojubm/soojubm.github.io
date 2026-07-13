@@ -18,6 +18,9 @@ export class PromptInput extends LitElement {
         padding-inline: var(--space-2);
         background: var(--input-background-color);
         border-radius: var(--radius);
+
+        backdrop-filter: var(--backdrop-filter, none);
+        -webkit-backdrop-filter: var(--backdrop-filter, none);
       }
 
       :host([single-line]) form > mm-flex {

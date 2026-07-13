@@ -7,7 +7,6 @@ export const inputStyles = css`
     --input-background-color: var(--color-background-subtle);
     --input-border-radius: var(--radius);
     --input-border: var(--border-transparent);
-    --input-border-color-hover: var(--color-border-hover);
     --input-focus-outline: var(--interaction-focus-outline);
     --input-padding-block: var(--space-3);
     --input-padding-inline: var(--space-4);

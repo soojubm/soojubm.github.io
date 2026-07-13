@@ -10,7 +10,7 @@ export class SelectionIndicator extends LitElement {
     css`
       :host {
         display: block;
-        width: var(--selection-indicator-width, var(--space-05));
+        width: var(--selection-indicator-width, 2px);
         height: var(--selection-indicator-height, var(--selection-indicator-size));
         flex-shrink: 0;
         border-radius: var(--radius);

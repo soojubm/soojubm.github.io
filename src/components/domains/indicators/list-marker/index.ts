@@ -15,8 +15,8 @@ export class ListMarker extends LitElement {
         align-items: center;
         justify-content: center;
         flex-shrink: 0;
-        background: var(--color-foreground);
-        color: var(--color-background);
+        background: var(--gray800);
+        color: var(--color-foreground-on-solid);
         border-radius: 50%;
         width: var(--size-tiny);
         height: var(--size-tiny);

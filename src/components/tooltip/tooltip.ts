@@ -30,7 +30,9 @@ class Tooltip extends LitElement {
   render() {
     return html`
       <slot name="trigger" @slotchange=${this.syncDescription}></slot>
-      <div id=${this.contentId} role="tooltip" aria-label=${this.content}>${this.content}</div>
+      <div id=${this.contentId} role="tooltip" aria-label=${this.content}>
+        <mm-text size="12">${this.content}</mm-text>
+      </div>
     `
   }
 

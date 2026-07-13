@@ -21,14 +21,3 @@ export const componentContentFrameStyles = css`
     }
   }
 `
-
-export const componentStageFrameStyles = css`
-  .component-stage-frame {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--space-4);
-    flex-wrap: wrap;
-    background: var(--color-background-subtle);
-  }
-`

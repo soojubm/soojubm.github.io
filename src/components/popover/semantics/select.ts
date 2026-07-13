@@ -36,8 +36,7 @@ export class Select extends LitElement {
     resetStyles,
     css`
       :host {
-        --select-min-width: calc(var(--width-small) - var(--space-4) * 5);
-        --select-max-height: var(--width-small);
+        --select-min-width: auto;
         display: block;
         position: relative;
         width: 100%;

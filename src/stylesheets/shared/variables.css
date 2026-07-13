@@ -3,39 +3,48 @@
   color-scheme: light dark;
   --font-family: 'Alan Sans', 'Gothic A1', system-ui, sans-serif;
 
+  --gradient-scroll-hint-start: linear-gradient(
+    to right,
+    var(--color-background) 0%,
+    var(--color-background) 42%,
+    color-mix(in srgb, var(--color-background) 96%, transparent) 58%,
+    color-mix(in srgb, var(--color-background) 72%, transparent) 78%,
+    transparent 100%
+  );
+  --gradient-scroll-hint-end: linear-gradient(
+    to right,
+    transparent 0%,
+    color-mix(in srgb, var(--color-background) 72%, transparent) 22%,
+    color-mix(in srgb, var(--color-background) 96%, transparent) 42%,
+    var(--color-background) 58%,
+    var(--color-background) 100%
+  );
+
   --font-size-32: 32px;
   --font-size-24: 24px;
   --font-size-18: 18px;
   --font-size-14: 14px;
   --font-size-12: 12px;
-
   --font-line-height-40: 40px;
   --font-line-height-32: 32px;
   --font-line-height-28: 28px;
   --font-line-height-24: 24px;
   --font-line-height-16: 16px;
-
   --font-weight-normal: 500;
   --font-weight-bold: 700;
 
-  --navbar-height: calc(32px + 1.5rem);
+  --navbar-height: calc(var(--size-medium) + 1.5rem);
 
   --layout-width-wide: 1280px;
-  --layout-width-narrow: 400px;
   --layout-width-small: 640px;
-  --layout-width-tiny: 480px;
-
+  --layout-width-narrow: 400px;
   --layout-width-sidebar: 16rem;
-  --width-medium: 25rem;
-  --width-small: 200px;
-
   --layout-padding-inline: 5vw;
 
   --gray0: #fff;
   --gray50: #fcfdfc;
   --gray100: #f5f6f5;
-  --gray200: #e9edec;
-  --gray300: #d2d7d5;
+  --gray200: #d2d7d5;
   --gray400: #979d9a;
   --gray800: #3d4943;
   --gray900: #1e2321;
@@ -100,56 +109,38 @@
   --color-background: var(--gray0);
   --color-background-subtle: var(--gray100);
   --color-background-strong: var(--gray800);
-  --gradient-scroll-hint-start: linear-gradient(
-    to right,
-    var(--color-background) 0%,
-    var(--color-background) 42%,
-    color-mix(in srgb, var(--color-background) 96%, transparent) 58%,
-    color-mix(in srgb, var(--color-background) 72%, transparent) 78%,
-    transparent 100%
-  );
-  --gradient-scroll-hint-end: linear-gradient(
-    to right,
-    transparent 0%,
-    color-mix(in srgb, var(--color-background) 72%, transparent) 22%,
-    color-mix(in srgb, var(--color-background) 96%, transparent) 42%,
-    var(--color-background) 58%,
-    var(--color-background) 100%
-  );
-
   --color-border: var(--gray200);
-  --color-border-strong: var(--gray300);
-  --color-border-hover: var(--gray800);
 
   --color-interaction-focus: var(--gray900);
   --color-interaction-active-background: var(--color-accent);
   --color-interaction-active-ring: #c8f3fa;
 
-  /* 모든 버튼·액션 요소가 공유하는 상호작용 상태 값 */
-  --interaction-focus-outline: 1px solid var(--color-interaction-focus);
+  --interaction-focus-outline: 2px solid var(--color-interaction-focus);
   --interaction-active-shadow: 0 0 0 2px var(--color-interaction-active-ring),
     inset 0 0 0 2px var(--color-foreground-on-solid);
 
   --color-foreground: var(--gray900);
   --color-foreground-light: var(--gray400);
   --color-foreground-on-solid: var(--gray0);
+  --color-foreground-on-warning: var(--red800);
 
-  /* size => square */
-  --size-huge: 5rem;
-  --size-large: 3rem;
-  --size-medium: 2rem;
-  --size-small: 1.5rem;
-  --size-tiny: 1rem;
+  --color-foreground-on-primary: var(--gray0);
 
-  --space-05: 0.125rem;
-  --space-1: 0.25rem;
-  --space-2: 0.5rem;
-  --space-3: 0.75rem;
-  --space-4: 1rem;
-  --space-8: 2rem;
-  --space-12: 3rem;
+  --size-huge: 80px;
+  --size-large: 48px;
+  --size-medium: 32px;
+  --size-small: 24px;
+  --size-tiny: 16px;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-8: 32px;
+  --space-12: 48px;
   --space-16: 64px;
   --space-section: var(--space-16);
+
   --component-content-offset-inline-start: calc(var(--layout-padding-inline) * -1 + var(--space-4));
   --component-content-padding-block: var(--space-8);
   --component-content-padding-inline: calc(var(--layout-padding-inline) - var(--space-4));
@@ -157,7 +148,7 @@
   --space-1-minus: calc(var(--space-1) * -1);
 
   --border-width: 1px;
-  --border: var(--border-width) solid var(--color-border-strong);
+  --border: var(--border-width) solid var(--color-border);
   --border-transparent: var(--border-width) solid transparent;
   --border-active: 1px solid var(--color-primary);
 
@@ -272,13 +263,13 @@
   --color-background-subtle: #292f2c;
   --color-background-strong: var(--gray0);
 
+  --color-background-section: var(--gray0);
+
   --color-foreground-on-solid: var(--color-foreground);
 
   --color-border: var(--gray800);
-  --color-border-strong: #5f6964;
-  --color-border-hover: var(--gray0);
 
-  --border: var(--border-width) solid var(--color-border-strong);
+  --border: var(--border-width) solid var(--color-border);
 
   --shadow: 0px 0px 2rem rgba(0, 0, 0, 0.25);
   --shadow-tile: 0 2px 0 1px #343c38, 0 1px 6px rgba(0, 0, 0, 0.4);
@@ -288,8 +279,6 @@
   --brutal-border-color: #000;
 
   --color-border: var(--brutal-border-color);
-  --color-border-strong: var(--brutal-border-color);
-  --color-border-hover: var(--brutal-border-color);
 
   --border: var(--border-width) solid var(--brutal-border-color);
   --border-transparent: var(--border-width) solid var(--brutal-border-color);
@@ -305,4 +294,26 @@
   --tabs-pill-border: var(--border);
   --tabs-pill-indicator-border: var(--border);
   --tabs-pill-indicator-shadow: none;
+}
+
+:root [data-theme='glass'] {
+  --backdrop-filter: blur(2px);
+  --border-radius: var(--radius-large);
+  /* --color-background-subtle: rgba(255, 255, 255, 0.3); */
+  --shadow-surface: 0 8px 32px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+
+  /* system */
+
+  /* background와 surface-background ? 의 구분이 필요한가. 어차피 surface token이나 component를 사용한다면 컴포넌트 토큰으로?? */
+  --color-background: rgb(255 255 255 / 12%);
+  --color-background-section: rgb(245 245 245 / 40%);
+
+  /* surface rgba(220,220,220, .2 */
+  --area-padding: var(--space-1) var(--space-2);
+  --area-border: rgb(255 255 255 / 50%);
+  --area-border-radius: var(--radius-large);
+  --area-shadow: var(--shadow-surface);
+  --area-background-section: var(--color-background-section);
+
+  --area-edge-end: linear-gradient(to bottom, rgb(255 255 255 / 15%), transparent);
 }

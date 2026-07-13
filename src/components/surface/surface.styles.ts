@@ -11,6 +11,7 @@ export const surfaceStyles = css`
     --surface-border: var(--border);
     --surface-border-radius: var(--radius);
     --surface-background-color: var(--color-background);
+    --surface-backdrop-filter: var(--backdrop-filter, none);
 
     display: flex;
     flex-direction: column;
@@ -21,6 +22,10 @@ export const surfaceStyles = css`
     border-radius: var(--surface-border-radius);
     box-sizing: border-box;
     background: var(--surface-background-color);
+    /* backdrop-filter: var(--surface-backdrop-filter, none);
+    -webkit-backdrop-filter: var(--surface-backdrop-filter, none); */
+    /* box-shadow: var(--shadow-surface); */
+
     position: relative;
     z-index: 1;
     transition: box-shadow 0.2s ease-in-out;
@@ -52,7 +57,6 @@ export const surfaceStyles = css`
 
   :host([size='medium']) {
     width: 100%;
-    max-width: var(--width-medium);
   }
 
   :host([radius='default']) {

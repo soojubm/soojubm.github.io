@@ -33,7 +33,7 @@ export const radioGroupStyles = css`
 export const radioStyles = css`
   :host {
     --radio-size: var(--size-tiny);
-    --radio-border-color: var(--color-border-strong);
+    --radio-border-color: var(--color-border);
     --radio-border: 1px solid var(--radio-border-color);
     --radio-border-radius: 50%;
     --radio-background-color-checked: var(--selection-indicator-color);

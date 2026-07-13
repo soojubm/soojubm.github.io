@@ -77,9 +77,6 @@ export class Flex extends LitElement {
       :host([gap='0']) {
         gap: 0;
       }
-      :host([gap='05']) {
-        gap: var(--space-05);
-      }
       :host([gap='1']) {
         gap: var(--space-1);
       }
