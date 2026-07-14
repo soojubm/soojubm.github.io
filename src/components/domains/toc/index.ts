@@ -2,7 +2,7 @@ import { LitElement, css, html, nothing } from 'lit'
 import { customElement, query, state } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
-import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
+import { ICON_NAMES, type IconName } from '@/components/icon-button/semantics/icon-names'
 import { ScrollSpyController } from '@/controllers/scroll-spy-controller'
 import { SelectionIndicatorController } from '@/controllers/selection-indicator-controller'
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
@@ -18,7 +18,7 @@ interface TocItem {
 
 interface ShareLink {
   href: string
-  icon: string
+  icon: IconName
   label: string
 }
 

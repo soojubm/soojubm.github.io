@@ -1,5 +1,6 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, query, state } from 'lit/decorators.js'
+import { ifDefined } from 'lit/directives/if-defined.js'
 import { repeat } from 'lit/directives/repeat.js'
 
 import { emit } from '@/utils/emit'
@@ -69,7 +70,7 @@ export class FileUploadButton extends LitElement {
         <mm-button @click=${this.openFilePicker}>${this.label}</mm-button>
         <input
           type="file"
-          accept=${this.accept || nothing}
+          accept=${ifDefined(this.accept || undefined)}
           ?multiple=${this.multiple}
           capture=${this.capture ? 'camera' : nothing}
           @change=${this.handleChange}

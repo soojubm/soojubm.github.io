@@ -1,6 +1,8 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { ifDefined } from 'lit/directives/if-defined.js'
 
+import type { AvatarVariant } from '@/components/avatar/avatar'
 import { entityStyles } from '@/components/domains/user-snippet/user-snippet.styles'
 import '@/components/flex/flex'
 
@@ -14,7 +16,7 @@ class UserSnippet extends LitElement {
   @property({ type: String }) email = ''
   @property({ type: String }) description = ''
   @property({ type: String, attribute: 'avatar-src' }) avatarSrc = ''
-  @property({ type: String, attribute: 'avatar-variant' }) avatarVariant = 'primary'
+  @property({ type: String, attribute: 'avatar-variant' }) avatarVariant: AvatarVariant = 'primary'
   @property({ type: String, attribute: 'tag-label' }) tagLabel = ''
 
   render() {
@@ -23,7 +25,7 @@ class UserSnippet extends LitElement {
         <mm-avatar
           size="huge"
           variant=${this.avatarVariant}
-          src=${this.avatarSrc || nothing}
+          src=${ifDefined(this.avatarSrc || undefined)}
         ></mm-avatar>
         ${this.renderTag()}
         <mm-flex direction="column">

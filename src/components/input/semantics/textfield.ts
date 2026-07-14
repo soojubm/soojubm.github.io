@@ -1,7 +1,9 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { ifDefined } from 'lit/directives/if-defined.js'
 
 import type { AriaInvalid } from '@/types/aria'
+import type { InputType } from '@/components/input/input'
 
 import {
   renderFieldHelper,
@@ -17,7 +19,7 @@ import { uniqueId } from '@/utils/unique-id'
 export class Textfield extends LitElement {
   static styles = textfieldStyles
 
-  @property({ type: String }) type = 'text'
+  @property({ type: String }) type: InputType = 'text'
   @property({ type: String }) value = ''
   @property({ type: String }) name = ''
   @property({ type: String }) placeholder = ''
@@ -37,7 +39,7 @@ export class Textfield extends LitElement {
     return html`
       ${renderFieldLabel(this.inputId, this.label, this.optional)} ${renderFieldHelper(this.helper)}
       <slot name="link"></slot>
-      <div class="textfield-control" aria-invalid=${this.ariaInvalid ?? nothing}>
+      <div class="textfield-control" aria-invalid=${ifDefined(this.ariaInvalid ?? undefined)}>
         <slot name="leading"></slot>
         <mm-input
           input-id=${this.inputId}
@@ -47,7 +49,7 @@ export class Textfield extends LitElement {
           .placeholder=${this.placeholder}
           aria-label=${this.label ?? this.placeholder ?? nothing}
           ?disabled=${this.disabled}
-          aria-invalid=${this.ariaInvalid ?? nothing}
+          aria-invalid=${ifDefined(this.ariaInvalid ?? undefined)}
           aria-describedby=${this.validationText ? `${this.inputId}-validation` : nothing}
           @input=${this.handleInput}
         ></mm-input>

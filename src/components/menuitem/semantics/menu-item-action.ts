@@ -4,6 +4,7 @@ import { ifDefined } from 'lit/directives/if-defined.js'
 
 import '@/components/icon/icon'
 import type { IconName } from '@/components/icon-button/semantics/icon-names'
+import type { AvatarSize, AvatarVariant } from '@/components/avatar/avatar'
 import type { AriaCurrent } from '@/types/aria'
 
 import { menuItemStyles } from '@/components/menuitem/menuitem.styles'
@@ -13,7 +14,7 @@ import { renderMenuItemContent } from '@/components/menuitem/menuitem.utils'
 export class MenuItemAction extends LitElement {
   static styles = [menuItemStyles]
 
-  @property({ type: String, reflect: true }) size = 'medium'
+  @property({ type: String, reflect: true }) size: AvatarSize = 'medium'
   @property({ type: String, reflect: true }) tone = ''
   @property({ type: String }) label = ''
   @property({ type: String }) description = ''
@@ -21,9 +22,10 @@ export class MenuItemAction extends LitElement {
   @property({ type: String, attribute: 'trailing-icon' }) trailingIcon?: IconName
   @property({ type: String }) emoji = ''
   @property({ type: String, attribute: 'avatar-src' }) avatarSrc = ''
-  @property({ type: String, attribute: 'avatar-variant' }) avatarVariant = 'tertiary'
+  @property({ type: String, attribute: 'avatar-variant' }) avatarVariant: AvatarVariant = 'tertiary'
   @property({ type: Boolean }) disabled = false
-  @property({ type: String }) role = 'menuitem'
+  @property({ type: String }) role: 'menuitem' | 'menuitemcheckbox' | 'menuitemradio' | 'option' =
+    'menuitem'
   @property({ type: String, attribute: 'aria-current', reflect: true })
   ariaCurrent: AriaCurrent = null
 

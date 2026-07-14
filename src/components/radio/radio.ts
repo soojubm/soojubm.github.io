@@ -1,5 +1,6 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { ifDefined } from 'lit/directives/if-defined.js'
 
 import { radioStyles } from '@/components/radio/radio.styles'
 import { emit } from '@/utils/emit'
@@ -28,7 +29,7 @@ export class Radio extends LitElement {
         <input
           type="radio"
           id=${inputId}
-          name=${this.name || nothing}
+          name=${ifDefined(this.name || undefined)}
           .value=${this.value || ''}
           .checked=${this.checked}
           ?disabled=${this.disabled}

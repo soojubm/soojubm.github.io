@@ -1,5 +1,6 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { ifDefined } from 'lit/directives/if-defined.js'
 
 import type { AriaInvalid } from '@/types/aria'
 
@@ -39,7 +40,7 @@ export class NumberInput extends LitElement {
   render() {
     return html`
       ${renderFieldLabel(this.inputId, this.label, this.optional)} ${renderFieldHelper(this.helper)}
-      <div class="textfield-control" aria-invalid=${this.ariaInvalid ?? nothing}>
+      <div class="textfield-control" aria-invalid=${ifDefined(this.ariaInvalid ?? undefined)}>
         <mm-input
           input-id=${this.inputId}
           .type=${'number'}
@@ -51,7 +52,7 @@ export class NumberInput extends LitElement {
           .max=${this.max}
           .step=${this.step}
           ?disabled=${this.disabled}
-          aria-invalid=${this.ariaInvalid ?? nothing}
+          aria-invalid=${ifDefined(this.ariaInvalid ?? undefined)}
           aria-describedby=${this.validationText ? `${this.inputId}-validation` : nothing}
           @input=${this.handleInput}
         ></mm-input>

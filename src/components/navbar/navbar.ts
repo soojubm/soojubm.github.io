@@ -1,5 +1,6 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, state } from 'lit/decorators.js'
+import { ifDefined } from 'lit/directives/if-defined.js'
 import { repeat } from 'lit/directives/repeat.js'
 
 import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
@@ -243,7 +244,9 @@ export class Navbar extends LitElement {
             <mm-menu-item-action
               icon=${ICON_NAMES.SEARCH}
               label=${result.meta.title || result.url}
-              description=${result.excerpt ? result.excerpt.replace(/<[^>]*>/g, '') : nothing}
+              description=${ifDefined(
+                result.excerpt ? result.excerpt.replace(/<[^>]*>/g, '') : undefined,
+              )}
               @click=${() => this.handleResultClick(result.url)}
             ></mm-menu-item-action>
           `,

@@ -3,6 +3,7 @@ import { customElement, property, state } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
 import type { IconName } from '@/components/icon-button/semantics/icon-names'
+import type { AvatarSize, AvatarVariant } from '@/components/avatar/avatar'
 
 import { listRowStyles } from '@/components/list-row/list-row.styles'
 import '@/components/avatar/avatar'
@@ -16,14 +17,14 @@ import '@/components/flex/flex'
 export class ListRow extends LitElement {
   static styles = [listRowStyles]
 
-  @property({ type: String, reflect: true }) size = 'medium'
+  @property({ type: String, reflect: true }) size: AvatarSize = 'medium'
   @property({ type: String }) label = ''
   @property({ type: String }) description = ''
 
   @property({ type: String }) icon?: IconName
   @property({ type: String }) emoji = ''
   @property({ type: String, attribute: 'avatar-src' }) avatarSrc = ''
-  @property({ type: String, attribute: 'avatar-variant' }) avatarVariant = 'tertiary'
+  @property({ type: String, attribute: 'avatar-variant' }) avatarVariant: AvatarVariant = 'tertiary'
 
   @state() private hasAvatar = false
 

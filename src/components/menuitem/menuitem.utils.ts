@@ -2,11 +2,12 @@ import { html, nothing } from 'lit'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
 import type { IconName } from '@/components/icon-button/semantics/icon-names'
+import type { AvatarSize, AvatarVariant } from '@/components/avatar/avatar'
 import type { AriaTriState } from '@/types/aria'
 import '@/components/list-row/list-row'
 
 export interface MenuItemRowOptions {
-  role: string
+  role: 'menuitemcheckbox' | 'menuitemradio' | 'menuitem' | 'option'
   disabled: boolean
   ariaChecked: AriaTriState
   onActivate: () => void
@@ -24,7 +25,7 @@ export function renderMenuItemRow(options: MenuItemRowOptions, content: unknown)
     <div
       role=${options.role}
       tabindex=${options.disabled ? '-1' : '0'}
-      aria-disabled=${options.disabled ? 'true' : nothing}
+      aria-disabled=${ifDefined(options.disabled ? 'true' : undefined)}
       aria-checked=${options.ariaChecked}
       @click=${options.onActivate}
       @keydown=${handleKeydown}
@@ -35,13 +36,13 @@ export function renderMenuItemRow(options: MenuItemRowOptions, content: unknown)
 }
 
 export interface MenuItemProps {
-  size: string
+  size: AvatarSize
   label: string
   description: string
   icon?: IconName
   emoji: string
   avatarSrc: string
-  avatarVariant: string
+  avatarVariant: AvatarVariant
 }
 
 export function renderMenuItemContent(props: MenuItemProps, trailing: unknown) {

@@ -6,7 +6,7 @@ import '@/components/icon-button/icon-button'
 import '@/components/menuitem/semantics/menu-item-action'
 import '@/components/radius-picker/radius-picker'
 import '@/components/separator/separator'
-import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
+import { ICON_NAMES, type IconName } from '@/components/icon-button/semantics/icon-names'
 import { PopupController } from '@/controllers/popup-controller'
 import { getPreferredTheme, saveTheme, THEMES, type Theme } from '@/utils/theme'
 
@@ -108,7 +108,7 @@ export class ThemeSwitcher extends LitElement {
     this.value = getPreferredTheme()
   }
 
-  private get currentIcon(): string {
+  private get currentIcon(): IconName {
     return THEMES.find(theme => theme.value === this.value)?.icon ?? ICON_NAMES.LIGHT_MODE
   }
 

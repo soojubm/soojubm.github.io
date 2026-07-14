@@ -1,5 +1,6 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { ifDefined } from 'lit/directives/if-defined.js'
 
 @customElement('mm-textfield-label')
 export class TextfieldLabel extends LitElement {
@@ -19,7 +20,7 @@ export class TextfieldLabel extends LitElement {
 
   render() {
     return html`
-      <label for=${this.htmlFor || nothing}>
+      <label for=${ifDefined(this.htmlFor || undefined)}>
         <slot></slot>
         ${this.renderOptionalText()}
       </label>

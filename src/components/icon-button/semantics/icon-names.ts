@@ -1,6 +1,7 @@
 export const ICON_NAMES = {
   // Action
   ADD: 'plus',
+  ADD_CIRCLE: 'plus-circle-solid',
   CLOSE: 'xmark',
   COPY: 'copy',
   COPY_SUCCESS: 'check',

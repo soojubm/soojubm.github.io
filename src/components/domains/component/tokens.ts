@@ -49,7 +49,7 @@ export class Token extends LitElement {
 
   private wordClass(word: string) {
     const category = WORD_CATEGORIES.find(({ words }) => words.some(name => word.includes(name)))
-    if (!category) return nothing
+    if (!category) return ''
 
     return `word-${category.name}`
   }

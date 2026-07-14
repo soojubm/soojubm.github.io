@@ -3,6 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
 import type { AriaCurrent } from '@/types/aria'
+import type { AvatarSize, AvatarVariant } from '@/components/avatar/avatar'
 
 import { ICON_NAMES, type IconName } from '@/components/icon-button/semantics/icon-names'
 import { menuItemStyles } from '@/components/menuitem/menuitem.styles'
@@ -12,14 +13,14 @@ import { renderMenuItemContent } from '@/components/menuitem/menuitem.utils'
 export class MenuItemLink extends LitElement {
   static styles = [menuItemStyles]
 
-  @property({ type: String, reflect: true }) size = 'medium'
+  @property({ type: String, reflect: true }) size: AvatarSize = 'medium'
   @property({ type: String, reflect: true }) tone = ''
   @property({ type: String }) label = ''
   @property({ type: String }) description = ''
   @property({ type: String }) icon?: IconName
   @property({ type: String }) emoji = ''
   @property({ type: String, attribute: 'avatar-src' }) avatarSrc = ''
-  @property({ type: String, attribute: 'avatar-variant' }) avatarVariant = 'tertiary'
+  @property({ type: String, attribute: 'avatar-variant' }) avatarVariant: AvatarVariant = 'tertiary'
   @property({ type: Boolean }) disabled = false
   @property({ type: String }) href = ''
   @property({ type: String }) target = '_blank'
@@ -30,9 +31,9 @@ export class MenuItemLink extends LitElement {
   render() {
     return html`
       <a
-        href=${this.disabled ? nothing : this.href}
+        href=${ifDefined(this.disabled ? undefined : this.href)}
         role="menuitem"
-        aria-disabled=${this.disabled ? 'true' : nothing}
+        aria-disabled=${ifDefined(this.disabled ? 'true' : undefined)}
         aria-current=${ifDefined(this.ariaCurrent ?? undefined)}
         target=${this.target || nothing}
         rel=${this.target === '_blank' ? 'noopener noreferrer' : nothing}
