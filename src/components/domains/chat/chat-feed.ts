@@ -15,6 +15,7 @@ export class ChatFeed extends LitElement {
         width: 100%;
         max-width: 800px;
         margin: var(--space-8) auto;
+        padding: 0 var(--space-4);
         box-sizing: border-box;
       }
     `,

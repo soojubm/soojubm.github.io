@@ -5,7 +5,7 @@
 
 .page,
 .footer {
-  transition: all 0.6s ease;
+  transition: padding-left 0.6s ease;
 }
 
 progress[value] {
