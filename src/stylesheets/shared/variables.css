@@ -297,10 +297,13 @@
 }
 
 :root [data-theme='glass'] {
-  --backdrop-filter: blur(2px);
-  --border-radius: var(--radius-large);
-  /* --color-background-subtle: rgba(255, 255, 255, 0.3); */
+  --backdrop-filter: blur(12px) saturate(1.4);
+  --radius: var(--radius-large);
+  --color-background-subtle: rgb(255 255 255 / 30%);
   --shadow-surface: 0 8px 32px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+
+  --prompt-input-border: var(--area-border);
+  --prompt-input-shadow: var(--area-shadow);
 
   /* system */
 
@@ -310,10 +313,10 @@
 
   /* surface rgba(220,220,220, .2 */
   --area-padding: var(--space-1) var(--space-2);
-  --area-border: rgb(255 255 255 / 50%);
+  --area-border: var(--border-width) solid rgb(255 255 255 / 50%);
   --area-border-radius: var(--radius-large);
   --area-shadow: var(--shadow-surface);
   --area-background-section: var(--color-background-section);
 
-  --area-edge-end: linear-gradient(to bottom, rgb(255 255 255 / 15%), transparent);
+  --area-edge-start: linear-gradient(to bottom, rgb(255 255 255 / 15%), transparent);
 }

@@ -7,6 +7,7 @@ import type { IconName } from '@/components/icon-button/semantics/icon-names'
 import { listRowStyles } from '@/components/list-row/list-row.styles'
 import '@/components/avatar/avatar'
 import '@/components/flex/flex'
+import '@/components/text/semantics/caption'
 
 /**
  * leading(아바타·아이콘) + content(title/description) + trailing 한 줄을 구성하는 표현 전용 primitive.
@@ -90,6 +91,12 @@ export class ListRow extends LitElement {
 
   private renderDescription() {
     if (!this.description) return nothing
+
+    if (this.size === 'medium') {
+      return html`
+        <mm-caption>${this.description}</mm-caption>
+      `
+    }
 
     return html`
       <mm-text size="14" color="light">${this.description}</mm-text>

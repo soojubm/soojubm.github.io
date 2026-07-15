@@ -12,7 +12,7 @@ export class Page extends LitElement {
     }
 
     :host([background='subtle']) {
-      background-color: var(--color-background-subtle);
+      background-color: var(--gray50);
       box-shadow: 0 0 0 100vmax var(--color-background-subtle);
       clip-path: inset(0 -100vmax);
     }
