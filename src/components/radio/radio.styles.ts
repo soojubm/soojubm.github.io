@@ -13,7 +13,7 @@ export const radioGroupStyles = css`
   .radio-group {
     display: flex;
     flex-direction: column;
-    gap: var(--space-4);
+    gap: var(--space-2);
   }
 
   /* 스크린 리더 전용 숨김 스타일 */
@@ -33,57 +33,65 @@ export const radioGroupStyles = css`
 export const radioStyles = css`
   :host {
     --radio-size: var(--size-tiny);
-    --radio-border-color: var(--color-border);
-    --radio-border: 1px solid var(--radio-border-color);
     --radio-border-radius: 50%;
-    --radio-background-color-checked: var(--selection-indicator-color);
+    --radio-border-color: var(--color-border);
+    --radio-background-color: var(--color-background);
     --radio-border-color-checked: var(--selection-indicator-color);
-    position: relative;
-  }
-
-  label {
-    display: flex;
+    --radio-background-color-checked: var(--selection-indicator-color);
     gap: var(--space-2);
-    line-height: var(--radio-size);
-
-    & > span:first-child {
-      width: var(--radio-size);
-      height: var(--radio-size);
-      border: var(--radio-border);
-      border-radius: var(--radio-border-radius);
-      box-shadow: var(--shadow);
-      box-sizing: border-box;
-    }
   }
 
   input {
-    margin: 0;
-    background-color: var(--color-background);
+    cursor: pointer;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
     position: absolute;
-    left: 0;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
 
-    &:focus-visible + label > span:first-child {
-      ${focusRing}
-    }
+  label {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+  }
 
-    &:checked + label > span:first-child {
-      background: var(--radio-background-color-checked);
-      border-color: var(--radio-border-color-checked);
-      animation: radiomark var(--animation-input, 0.2s) ease-out;
-      box-shadow: 0 0 0 4px var(--color-background) inset;
-    }
+  label > span {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+    width: var(--radio-size);
+    height: var(--radio-size);
+    border: var(--border);
+    border-color: var(--radio-border-color);
+    box-sizing: border-box;
+    border-radius: var(--radio-border-radius);
+    background: var(--radio-background-color);
+    box-shadow: var(--shadow);
+  }
 
-    &:disabled {
-      opacity: 0.4;
-      cursor: not-allowed;
+  input[type='radio']:checked + label > span {
+    background: var(--radio-background-color-checked);
+    border-color: var(--radio-border-color-checked);
+    animation: radiomark var(--animation-input, 0.2s) ease-out;
+    box-shadow: 0 0 0 4px var(--color-background) inset;
+  }
 
-      & + label {
-        opacity: 0.6;
-        cursor: not-allowed;
-      }
-    }
+  input:focus-visible + label > span {
+    ${focusRing}
+  }
+
+  input:disabled ~ label {
+    opacity: 0.5;
+    cursor: not-allowed;
   }
 `

@@ -92,28 +92,25 @@ type Placement = Side | `${Side}-${Align}`;> -->
     <mm-feature-group columns="2">
       <mm-feature
         heading="Supplementary"
-        description="작은 화면에서 바텀 시트나 팝오버로 제공하는 것이 좋다. 사용자가 반드시 숙지해야 하는 중요한 정보를 툴팁으로 제공하지 마세요."
+        description="설명이 필요 없는 플로우와 인터페이스를 우선하세요. 툴팁은 없을수록 좋으며, 접근성을 위한 최소한의 설명만 제공합니다.작은 화면에서 바텀 시트나 팝오버로 제공하는 것이 좋다. 사용자가 반드시 숙지해야 하는 중요한 정보를 툴팁으로 제공하지 마세요."
       ></mm-feature>
-      <mm-feature
+      <!-- <mm-feature
         heading="Disclosure (점진적 공개)"
         description="부가 정보를 기본으로 숨겨 두고 hover·포커스에 응답해 그 자리에서 펼쳐 보입니다. 같은 흐름 안의 공개이며, 별도 레이어로 작업을 옮기는 sheet와는 다릅니다."
-      ></mm-feature>
-      <mm-feature
+      ></mm-feature> -->
+      <!-- <mm-feature
         heading="Transient"
         description="hover나 포커스가 벗어나면 스스로 사라져 흔적을 남기지 않습니다. 사라져도 흐름에 지장 없는 정보만 담습니다."
-      ></mm-feature>
+      ></mm-feature> -->
       <mm-feature
         heading="Anchored"
-        description="화면 좌표가 아니라 트리거 요소가 위치를 결정합니다. 방향과 정렬은 placement prop 하나로 지정합니다."
+        description="화면 좌표가 아니라 트리거 요소가 위치를 결정합니다. 방향과 정렬은 placement prop 하나로 지정합니다. useFloating"
       ></mm-feature>
     </mm-feature-group>
     <mm-text-list
       texts='[
-        "설명이 필요 없는 플로우와 인터페이스를 우선하세요. 툴팁은 없을수록 좋으며, 접근성을 위한 최소한의 설명만 제공합니다.",
         "내용은 보조기술이 읽을 수 있도록 대상 요소의 설명으로 연결하고, hover뿐 아니라 키보드 포커스로도 열 수 있어야 합니다.",
-        "아코디언도 마찬가지. 중요한 액션을 요할 때는 cognitive? button이나 text link 등 충분히 강조되고 눈에 띄는 컴포넌트를 사용.",
         "short text, long form text. MD3 rich tooltip(title, description, actions-link/button) / plain tooltip",
-        "useFloating, "
       ]'
     ></mm-text-list>
 
@@ -127,10 +124,15 @@ Short형 (액션 보완형): 텍스트가 한 줄로 짧게 끝나며 말줄임 
 
 Long형 (정보 설명형): 설명이 길어질 수 있으므로 최대 너비(max-width: 240px 등)가 지정되어 있고 자동 줄바꿈(Wrap)이 지원되는 크기. -->
 
-    > 💡 **접근성 팁 (Accessibility Notes)** > - **액션 보완형:** 아이콘 버튼의 실질적인 이름을
-    대체하므로, 버튼의 `aria-label` 값과 툴팁 텍스트를 일치시키거나 `aria-labelledby`로 강하게
-    연결합니다. > - **정보 설명형:** 이미 존재하는 텍스트의 부가 설명이므로, `aria-describedby`를
-    사용해 참고용 설명임을 브라우저에 알립니다.
+    💡 **접근성 팁 (Accessibility Notes)**
+    <p>
+      - **액션 보완형:** 아이콘 버튼의 실질적인 이름을 대체하므로, 버튼의 `aria-label` 값과 툴팁
+      텍스트를 일치시키거나 `aria-labelledby`로 강하게 연결합니다.
+    </p>
+    <p>
+      - *정보 설명형:** 이미 존재하는 텍스트의 부가 설명이므로, `aria-describedby`를 사용해 참고용
+      설명임을 브라우저에 알립니다.
+    </p>
   </mm-component-guide>
 
   <mm-component-section

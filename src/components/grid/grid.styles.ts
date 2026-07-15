@@ -33,6 +33,10 @@ export const gridStyles = [
       grid-template-columns: repeat(4, minmax(0, var(--_col-max, 1fr)));
     }
 
+    :host([columns='6']) {
+      grid-template-columns: repeat(6, minmax(0, var(--_col-max, 1fr)));
+    }
+
     @media ${MEDIA.narrow} {
       :host([columns='3']),
       :host([columns='4']) {

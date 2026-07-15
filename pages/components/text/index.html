@@ -111,12 +111,7 @@
         heading="Groupable"
         description="텍스트가 2개 이상이면 그룹 컴포넌트로 묶습니다. 제목과 설명은 text block으로, 연관 메타 정보는 메타 그룹으로 묶어 간격과 구조를 그룹이 소유합니다."
       ></mm-feature>
-      <mm-feature
-        heading="Disclosure (점진적 공개)"
-        description="긴 본문은 read-more-paragraph로 접어 두고 사용자가 원할 때 그 자리에서 펼칩니다. 반드시 읽어야 하는 내용은 접지 않습니다."
-      ></mm-feature>
     </mm-feature-group>
-    <br />
     <mm-text-list
       texts='[
         "피그마에서 소숫점 올림한다. line height를 고정값을 사용하는 것이 토큰화에도 좋다. (TODO 아이콘과 텍스트의 가운데 정렬 문제에 대하여)",
@@ -159,7 +154,7 @@
   </mm-component-section>
 
   <mm-component-section
-    heading="Paragraph"
+    heading="Paragraph / ParagraphGroup"
     description="본문(Body). label, help text, caption / kicker/overline/eyebrow"
   >
     <mm-paragraph-group>
@@ -188,14 +183,6 @@
         자르면 맥락이 사라지는 소개글이나 요약문에 적합합니다. 화면 안의 리듬은 유지하면서도 충분한
         정보를 제공해야 할 때 사용합니다.
       </mm-paragraph>
-    </mm-paragraph-group>
-  </mm-component-section>
-
-  <mm-component-section
-    heading="ParagraphGroup"
-    description="문단 사이의 간격을 정의. ContentGroup, TextStack"
-  >
-    <mm-paragraph-group>
       <mm-paragraph>
         첫 번째 문단입니다. Paragraph medium은 font-size-14를 기준으로 하며, 일반적인 UI 본문에
         사용됩니다. 레이아웃에서 여러 문단이 이어질 때 ParagraphGroup으로 묶어 일관된 간격을
@@ -225,27 +212,25 @@
     heading="Text Block"
     description="KeyValue(LabelDescription/DescriptionList),Question-Answer Pair,  Translation Pair, Dialogue Pair "
   >
-    <div>
-      <mm-text-block
-        level="1"
-        eyebrow="Eyebrow"
-        heading="Level 1 Title"
-        description="이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에 부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은 침묵에 잠겼다. "
-      ></mm-text-block>
-      <mm-separator></mm-separator>
-      <mm-text-block
-        level="2"
-        heading="Level 2 Title"
-        description="이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에 부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은 침묵에 잠겼다. "
-      ></mm-text-block>
-      <mm-separator></mm-separator>
-      <mm-text-block
-        level="3"
-        heading="Level 3 Title"
-        description="이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에 부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은 침묵에 잠겼다. "
-        caption="Optional caption text"
-      ></mm-text-block>
-    </div>
+    <mm-text-block
+      level="1"
+      eyebrow="Eyebrow"
+      heading="Level 1 Title"
+      description="이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에 부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은 침묵에 잠겼다. "
+    ></mm-text-block>
+    <mm-separator></mm-separator>
+    <mm-text-block
+      level="2"
+      heading="Level 2 Title"
+      description="이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에 부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은 침묵에 잠겼다. "
+    ></mm-text-block>
+    <mm-separator></mm-separator>
+    <mm-text-block
+      level="3"
+      heading="Level 3 Title"
+      description="이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에 부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은 침묵에 잠겼다. "
+      caption="Optional caption text"
+    ></mm-text-block>
   </mm-component-section>
 
   <mm-component-section
