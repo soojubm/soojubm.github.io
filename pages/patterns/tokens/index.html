@@ -26,48 +26,22 @@
         description="용도와 의미에 따라 색상을 사용하도록..."
       ></mm-text-block>
 
-      <style>
-        .color-token-item {
-          display: inline-flex;
-          flex-direction: column;
-          justify-content: flex-end;
-          width: 100%;
-          min-height: 56px;
-          padding: var(--space-3) var(--space-4);
-          box-sizing: border-box;
-        }
-      </style>
       <mm-component-example>
-        <mm-flex
-          style="
-            display: inline-flex;
-            gap: 2px;
-            border-radius: var(--radius-large);
-            overflow: hidden;
-          "
-        >
-          <span class="color-token-item" style="width: 80px; background: var(--gray0)"></span>
-          <span class="color-token-item" style="width: 80px; background: var(--gray50)"></span>
-          <span class="color-token-item" style="width: 80px; background: var(--gray100)"></span>
-          <span class="color-token-item" style="width: 80px; background: var(--gray200)"></span>
-          <span class="color-token-item" style="width: 80px; background: var(--gray400)"></span>
-          <span class="color-token-item" style="width: 80px; background: var(--gray800)"></span>
-          <span class="color-token-item" style="width: 80px; background: var(--gray900)"></span>
-        </mm-flex>
-        <br />
-        <mm-flex
-          style="
-            display: inline-flex;
-            gap: 2px;
-            border-radius: var(--radius-large);
-            overflow: hidden;
-          "
-        >
-          <span class="color-token-item" style="width: 80px; background: var(--green100)"></span>
-          <span class="color-token-item" style="width: 80px; background: var(--green800)"></span>
-          <span class="color-token-item" style="width: 80px; background: var(--red100)"></span>
-          <span class="color-token-item" style="width: 80px; background: var(--red800)"></span>
-        </mm-flex>
+        <mm-grid columns="4">
+          <mm-color-token color="var(--gray0)" token="gray0: #fff"></mm-color-token>
+          <mm-color-token color="var(--gray50)" token="gray50: #fcfdfc"></mm-color-token>
+          <mm-color-token color="var(--gray100)" token="gray100: #f5f6f5"></mm-color-token>
+          <mm-color-token color="var(--gray200)" token="gray200: #d2d7d5"></mm-color-token>
+          <mm-color-token color="var(--gray400)" token="gray400: #979d9a"></mm-color-token>
+          <mm-color-token color="var(--gray800)" token="gray800: #3d4943"></mm-color-token>
+          <mm-color-token color="var(--gray900)" token="gray900: #1e2321"></mm-color-token>
+        </mm-grid>
+        <mm-grid columns="4" style="margin-top: var(--space-3)" aria-label="semantic color tokens">
+          <mm-color-token color="var(--green100)" token="green100: green tint"></mm-color-token>
+          <mm-color-token color="var(--green800)" token="green800: #1b995c"></mm-color-token>
+          <mm-color-token color="var(--red100)" token="red100: red tint"></mm-color-token>
+          <mm-color-token color="var(--red800)" token="red800: #f02849"></mm-color-token>
+        </mm-grid>
 
         <mm-separator></mm-separator>
         <mm-grid columns="4" aria-label="grayscale color tokens">

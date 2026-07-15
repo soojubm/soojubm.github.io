@@ -18,6 +18,7 @@ export class ChatRoom extends LitElement {
     resetStyles,
     css`
       :host {
+        position: relative;
         display: flex;
         flex-direction: column;
         height: 100%;

@@ -5,7 +5,7 @@ import { ifDefined } from 'lit/directives/if-defined.js'
 import { radioStyles } from '@/components/radio/radio.styles'
 import { emit } from '@/utils/emit'
 import { uniqueId } from '@/utils/unique-id'
-import '@/components/text/text'
+import '@/components/text/semantics/paragraph'
 
 @customElement('mm-radio')
 export class Radio extends LitElement {
@@ -36,8 +36,10 @@ export class Radio extends LitElement {
           @change=${this.onChange}
         />
         <label for=${inputId}>
-          <span></span>
-          <mm-text><slot></slot></mm-text>
+          <span class="indicator"></span>
+          <mm-paragraph>
+            <slot></slot>
+          </mm-paragraph>
         </label>
       </div>
     `

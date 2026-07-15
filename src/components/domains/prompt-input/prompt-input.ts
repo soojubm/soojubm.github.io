@@ -17,7 +17,9 @@ export class PromptInput extends LitElement {
         display: block;
         padding-inline: var(--space-2);
         background: var(--input-background-color);
+        border: var(--prompt-input-border, none);
         border-radius: var(--radius);
+        box-shadow: var(--prompt-input-shadow, none);
 
         backdrop-filter: var(--backdrop-filter, none);
         -webkit-backdrop-filter: var(--backdrop-filter, none);
@@ -28,6 +30,8 @@ export class PromptInput extends LitElement {
       }
 
       mm-textarea {
+        /* 배경은 호스트가 칠한다. 반투명 테마에서 이중 레이어 방지 */
+        --input-background-color: transparent;
         --input-border-color-hover: transparent;
         --input-focus-outline: none;
       }
