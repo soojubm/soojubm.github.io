@@ -21,12 +21,13 @@ function getStoredTheme(): Theme | null {
   return isTheme(theme) ? theme : null
 }
 
-function getSystemTheme(): Theme {
-  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : DEFAULT_THEME
-}
+// 시스템 설정(prefers-color-scheme)에 따른 다크모드는 일단 적용하지 않는다.
+// function getSystemTheme(): Theme {
+//   return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : DEFAULT_THEME
+// }
 
 export function getPreferredTheme(): Theme {
-  return getStoredTheme() ?? getSystemTheme()
+  return getStoredTheme() ?? DEFAULT_THEME
 }
 
 export function applyTheme(theme = getPreferredTheme()) {
