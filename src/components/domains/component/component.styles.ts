@@ -13,7 +13,7 @@ export const componentContentFrameStyles = css`
     border-radius: var(--component-content-frame-border-radius, var(--radius-large));
   }
 
-  @media ${MEDIA.small} {
+  @media ${MEDIA.default} {
     .component-content-frame {
       margin-inline: var(--component-content-bleed-inline);
       border-inline: 0;

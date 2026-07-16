@@ -71,7 +71,7 @@ export class Select extends LitElement {
   @queryAssignedElements({ slot: 'trigger', flatten: true })
   private triggerElements!: HTMLElement[]
 
-  private phoneMedia = window.matchMedia(MEDIA_QUERY.phone)
+  private phoneMedia = window.matchMedia(MEDIA_QUERY.compact)
 
   private popup = new PopupController(this, {
     event: 'click',

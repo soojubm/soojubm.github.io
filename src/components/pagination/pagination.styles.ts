@@ -27,7 +27,7 @@ export const paginationStyles = css`
     user-select: none;
   }
 
-  @media ${MEDIA.phone} {
+  @media ${MEDIA.compact} {
     .pagination {
       gap: 0;
     }

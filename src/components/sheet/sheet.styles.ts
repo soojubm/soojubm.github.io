@@ -143,7 +143,7 @@ export const sheetStyles = css`
     transform: translateX(100%);
   }
 
-  @media ${MEDIA.small} {
+  @media ${MEDIA.default} {
     :host([variant='left']) .sheet,
     :host([variant='right']) .sheet {
       max-width: var(--sheet-side-responsive-max-width);
