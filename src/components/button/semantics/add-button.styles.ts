@@ -19,7 +19,7 @@ export const addButtonStyles = css`
     border: var(--border);
     border-radius: var(--add-button-border-radius);
     color: var(--add-button-text-color);
-    box-shadow: var(--shadow);
+    box-shadow: var(--material-shadow);
     font-family: var(--font-family);
     box-sizing: border-box;
     cursor: pointer;

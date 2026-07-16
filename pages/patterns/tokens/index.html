@@ -635,7 +635,7 @@
                 height: var(--size-large);
                 border-radius: var(--radius);
                 background: var(--color-background);
-                box-shadow: var(--shadow);
+                box-shadow: var(--material-shadow-base);
                 flex-shrink: 0;
               "
             ></div>
@@ -648,20 +648,123 @@
                 height: var(--size-large);
                 border-radius: var(--radius);
                 background: var(--color-background);
-                box-shadow: var(--shadow-tile);
+                box-shadow: var(--material-shadow-high);
                 flex-shrink: 0;
               "
             ></div>
             <mm-list-marker variant="number" value="2"></mm-list-marker>
           </mm-flex>
+          <mm-flex direction="column" align-items="center" gap="2">
+            <div
+              style="
+                width: var(--size-large);
+                height: var(--size-large);
+                border-radius: var(--radius);
+                background: var(--color-background);
+                box-shadow: var(--material-shadow-higher);
+                flex-shrink: 0;
+              "
+            ></div>
+            <mm-list-marker variant="number" value="3"></mm-list-marker>
+          </mm-flex>
         </mm-flex>
       </mm-token-stage>
-      <mm-token-group>
-        <mm-token-item key="shadow" value="0 0 .25rem rgb(0 0 0 / 7.5%)"></mm-token-item>
+      <mm-token-group aria-label="shadow primitive tokens">
         <mm-token-item
-          key="shadow-tile"
-          value="0 0 0 1px rgb(0 0 0/5%), 0 2px 2px rgb(0 0 0/4%)"
+          key="material-shadow-base"
+          value="0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.08)"
         ></mm-token-item>
+        <mm-token-item
+          key="material-shadow-high"
+          value="0 4px 12px rgba(0,0,0,.15)"
+        ></mm-token-item>
+        <mm-token-item
+          key="material-shadow-higher"
+          value="0 16px 32px rgba(0,0,0,.2)"
+        ></mm-token-item>
+      </mm-token-group>
+
+      <mm-separator></mm-separator>
+    </mm-flex>
+
+    <mm-flex direction="column" gap="3">
+      <mm-text-block
+        level="2"
+        heading="TODO Material"
+        description="material은 뒤 배경을 얼마나 흐리고 덮을지 정하는 blur·opacity 쌍입니다. 단계가 오를수록 더 흐리고 더 불투명해집니다."
+      ></mm-text-block>
+      <mm-token-stage>
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            width: 100%;
+            height: 100px;
+            border-radius: var(--radius-large);
+            overflow: hidden;
+            background: linear-gradient(
+              135deg,
+              var(--color-primary) 0%,
+              var(--color-accent) 50%,
+              var(--color-danger) 100%
+            );
+          "
+        >
+          <mm-flex gap="4">
+            <mm-flex direction="column" align-items="center" gap="2">
+              <div
+                style="
+                  width: var(--size-large);
+                  height: var(--size-large);
+                  border-radius: var(--radius);
+                  background: rgb(255 255 255 / var(--material-thin-opacity));
+                  backdrop-filter: blur(var(--material-thin-blur));
+                  -webkit-backdrop-filter: blur(var(--material-thin-blur));
+                  flex-shrink: 0;
+                "
+              ></div>
+              <mm-list-marker variant="number" value="1"></mm-list-marker>
+            </mm-flex>
+            <mm-flex direction="column" align-items="center" gap="2">
+              <div
+                style="
+                  width: var(--size-large);
+                  height: var(--size-large);
+                  border-radius: var(--radius);
+                  background: rgb(255 255 255 / var(--material-regular-opacity));
+                  backdrop-filter: blur(var(--material-regular-blur));
+                  -webkit-backdrop-filter: blur(var(--material-regular-blur));
+                  flex-shrink: 0;
+                "
+              ></div>
+              <mm-list-marker variant="number" value="2"></mm-list-marker>
+            </mm-flex>
+            <mm-flex direction="column" align-items="center" gap="2">
+              <div
+                style="
+                  width: var(--size-large);
+                  height: var(--size-large);
+                  border-radius: var(--radius);
+                  background: rgb(255 255 255 / var(--material-thick-opacity));
+                  backdrop-filter: blur(var(--material-thick-blur));
+                  -webkit-backdrop-filter: blur(var(--material-thick-blur));
+                  flex-shrink: 0;
+                "
+              ></div>
+              <mm-list-marker variant="number" value="3"></mm-list-marker>
+            </mm-flex>
+          </mm-flex>
+        </div>
+      </mm-token-stage>
+      <mm-token-group aria-label="material primitive tokens">
+        <mm-token-item key="material-thin-blur" value="10px"></mm-token-item>
+        <mm-token-item key="material-thin-opacity" value="0.35"></mm-token-item>
+        <mm-token-item key="material-regular-blur" value="20px"></mm-token-item>
+        <mm-token-item key="material-regular-opacity" value="0.55"></mm-token-item>
+        <mm-token-item key="material-thick-blur" value="30px"></mm-token-item>
+        <mm-token-item key="material-thick-opacity" value="0.8"></mm-token-item>
       </mm-token-group>
     </mm-flex>
 
@@ -673,17 +776,24 @@
       ></mm-text-block>
 
       <mm-token-group>
-        <mm-token-item key="zindex-default" value="1"></mm-token-item>
-        <mm-token-item key="zindex-tooltip" value="2"></mm-token-item>
-        <mm-token-item key="zindex-popover" value="5"></mm-token-item>
-        <mm-token-item key="zindex-bottombar" value="8"></mm-token-item>
-        <mm-token-item key="zindex-fixed-bottom" value="100"></mm-token-item>
-        <mm-token-item key="zindex-backdrop" value="200"></mm-token-item>
-        <mm-token-item key="zindex-sheet" value="210"></mm-token-item>
-        <mm-token-item key="zindex-modal" value="220"></mm-token-item>
-        <mm-token-item key="zindex-toast" value="230"></mm-token-item>
-        <mm-token-item key="zindex-loader" value="240"></mm-token-item>
+        <mm-token-item key="material-zindex-base" value="0"></mm-token-item>
+        <mm-token-item key="material-zindex-raised" value="10"></mm-token-item>
+        <mm-token-item key="material-zindex-overlay" value="100"></mm-token-item>
+        <mm-token-item key="material-zindex-modal" value="1000"></mm-token-item>
+        <mm-token-item key="material-zindex-chrome" value="1100"></mm-token-item>
+        <mm-token-item key="material-zindex-toast" value="9000"></mm-token-item>
       </mm-token-group>
+
+      <mm-text-list
+        texts='[
+          "base — mm-separator의 구분선, 배경 위에 놓는 텍스트처럼 형제 요소 위에 그리기 위한 로컬 컨텍스트",
+          "raised — 목록·그룹 안에서 형제보다 살짝 뜨는 요소. 예: mm-hamburger-button",
+          "overlay — 드롭다운·팝오버·툴팁류. 예: mm-tooltip, mm-popover(mm-select 등 드롭다운의 기반)",
+          "modal — 화면을 덮는 대화형 표면. 예: mm-backdrop, mm-sheet, 긴급 배너",
+          "chrome — 화면에 고정된 내비게이션·툴바. 예: mm-navbar(및 사이드 메뉴), mm-top-bar(sticky 상태), mm-fixed-bottom(mm-bottom-bar가 이 안에 놓여 함께 뜬다)",
+          "toast — 알림, 스낵바처럼 항상 다른 모든 레이어 위에 있어야 하는 요소. 예: mm-toast, 건너뛰기(skip) 링크"
+        ]'
+      ></mm-text-list>
     </mm-flex>
 
     <mm-component-references>

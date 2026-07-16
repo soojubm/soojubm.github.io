@@ -799,7 +799,7 @@
           는 클릭할 수 있다. 또는 오브젝트 내부에 클릭할 수 있는 요소가 존재한다.
         </mm-paragraph>
       </mm-surface>
-      <mm-surface variant="subtle">
+      <mm-surface variant="filled">
         <mm-paragraph>
           <b>연한 회색 배경의 오브젝트</b>
           내부에는 클릭 가능한 액션이 존재한다.
@@ -859,7 +859,7 @@
 
         .demo-btn.is-dragged {
           opacity: 0.6;
-          box-shadow: var(--shadow);
+          box-shadow: var(--material-shadow);
           cursor: grabbing;
         }
 
@@ -1172,7 +1172,7 @@
     </mm-grid>
   </mm-paragraph-group> -->
 
-  <!-- <mm-surface variant="subtle">
+  <!-- <mm-surface variant="filled">
     <mm-paragraph-group>
       <mm-text as="h2" size="24" weight="bold">summary? overview?</mm-text>
 
@@ -1292,7 +1292,7 @@
       추상에서 구체로. 아래로 내려갈수록 도메인에 가까워지고, 재사용 범위는 좁아진다.
     </mm-paragraph>
 
-    <mm-surface variant="subtle" style="margin: var(--space-4) 0 var(--space-8)">
+    <mm-surface variant="filled" style="margin: var(--space-4) 0 var(--space-8)">
       <mm-flex direction="column" gap="2">
         <mm-text size="12" color="light">레이어 판단 기준</mm-text>
         <mm-paragraph>
@@ -1417,6 +1417,86 @@
       </mm-flex>
     </mm-surface>
   </section> -->
+
+  <section>
+    <mm-text as="h1" size="32" weight="bold">Level: 콘텐츠/시스템, 엘리먼트/섹션</mm-text>
+    <mm-paragraph>
+      layer(z-index)와 surface는 같은 질문에서 출발한다 — 이 요소가 콘텐츠 안에 머무는가, 화면 위로
+      뜨는가. radius만 예외적으로 콘텐츠 내부의 크기 위계(엘리먼트/섹션)를 다룬다.
+    </mm-paragraph>
+
+    <mm-flex direction="column" gap="2">
+      <mm-text size="12" color="light">LAYER — 콘텐츠 레벨 / 시스템 레벨</mm-text>
+      <mm-paragraph>
+        <strong>콘텐츠 레벨</strong>
+        —
+        <code>--material-zindex-base</code>
+        (문서, 리스트, 배경),
+        <code>--material-zindex-raised</code>
+        (카드, 패널)처럼 페이지 본문 안에서 쌓이는 요소.
+      </mm-paragraph>
+      <mm-paragraph>
+        <strong>시스템 레벨</strong>
+        —
+        <code>--material-zindex-overlay</code>
+        (드롭다운, 툴팁, 팝오버),
+        <code>--material-zindex-modal</code>
+        (모달, 시트),
+        <code>--material-zindex-chrome</code>
+        (내비게이션, 툴바),
+        <code>--material-zindex-toast</code>
+        (알림)처럼 콘텐츠 위로 떠서 화면 전체 기준으로 쌓이는 요소.
+      </mm-paragraph>
+    </mm-flex>
+
+    <mm-flex direction="column" gap="2">
+      <mm-text size="12" color="light">SURFACE — 콘텐츠 레벨 / 시스템 레벨</mm-text>
+      <mm-paragraph>
+        <strong>콘텐츠 레벨</strong>
+        —
+        <code>ghost</code>
+        (배경 없이 묶기),
+        <code>outlined</code>
+        (테두리로 구획),
+        <code>filled</code>
+        (내부에 클릭 가능한 액션이 있을 때 배경으로 강조)까지 페이지 본문 안에 놓인다.
+      </mm-paragraph>
+      <mm-paragraph>
+        <strong>시스템 레벨</strong>
+        —
+        <code>elevated</code>
+        는 화면 위에 떠 있는 요소를 그림자로 강조한다. layer의 overlay·modal·chrome처럼 콘텐츠
+        바깥에서 동작하는 표면과 짝을 이룬다.
+      </mm-paragraph>
+    </mm-flex>
+
+    <mm-flex direction="column" gap="2">
+      <mm-text size="12" color="light">RADIUS — 엘리먼트 레벨 / 섹션 레벨</mm-text>
+      <mm-paragraph>
+        layer·surface의 콘텐츠/시스템 축과 달리, radius는 콘텐츠 내부의 크기 위계를 다룬다.
+      </mm-paragraph>
+      <mm-paragraph>
+        <strong>엘리먼트 레벨</strong>
+        —
+        <code>default radius</code>
+        . 본문 안에서 반복되는 개별 항목의 경계.
+      </mm-paragraph>
+      <mm-paragraph>
+        <strong>섹션 레벨</strong>
+        —
+        <code>large radius</code>
+        . 여러 콘텐츠를 하나로 묶는 상위 영역의 경계.
+      </mm-paragraph>
+    </mm-flex>
+
+    <mm-surface variant="filled" style="margin-top: var(--space-4)">
+      <mm-paragraph color="light">
+        아직 확정 전. surface의 시스템 레벨(elevated)이 layer의 시스템 레벨(overlay 이상)과 항상
+        짝을 이루는지, 아니면 elevated가 콘텐츠 안에서도 쓰일 수 있는지는 사용례가 더 쌓인 뒤
+        판단한다.
+      </mm-paragraph>
+    </mm-surface>
+  </section>
 </main>
 
 <!-- <main class="contact">
@@ -1518,7 +1598,7 @@
   .contact-map iframe {
     height: 320px;
     border-radius: var(--radius);
-    box-shadow: var(--shadow);
+    box-shadow: var(--material-shadow);
   }
 
   @media (max-width: 1100px) {

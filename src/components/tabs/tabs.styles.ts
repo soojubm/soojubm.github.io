@@ -50,7 +50,7 @@ export const tabsStyles = css`
       background-color: var(--tabs-pill-indicator-background);
       border: var(--tabs-pill-indicator-border, none);
       border-radius: var(--radius);
-      box-shadow: var(--tabs-pill-indicator-shadow, var(--shadow));
+      box-shadow: var(--tabs-pill-indicator-shadow, var(--material-shadow));
       z-index: 0; /* 탭 텍스트 뒤로 배치 */
     }
   }

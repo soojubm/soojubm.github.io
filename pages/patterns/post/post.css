@@ -17,7 +17,7 @@
   left: 0;
   right: 0;
   top: 0;
-  z-index: var(--zindex-menu);
+  z-index: var(--material-zindex-chrome);
 }
 .is-sticky-post-head .post-head-category {
   display: none;

@@ -17,9 +17,10 @@ export const topBarStyles = css`
     & .top-bar {
       position: fixed;
       top: 0;
+      z-index: var(--material-zindex-chrome);
     }
     & .top-bar-background {
-      box-shadow: var(--shadow);
+      box-shadow: var(--material-shadow);
     }
   }
 

@@ -255,7 +255,7 @@ li::marker {
   left: 10%;
   right: 10%;
   top: 45%;
-  z-index: var(--zindex-modal);
+  z-index: var(--material-zindex-modal);
 }
 
 .skip {
@@ -263,7 +263,7 @@ li::marker {
   left: 0;
   right: 0;
   top: 0;
-  z-index: var(--zindex-toast);
+  z-index: var(--material-zindex-toast);
 }
 .skip-link {
   display: block;

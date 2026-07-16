@@ -10,7 +10,7 @@ export const tooltipStyles = css`
     --tooltip-border-radius: var(--radius);
     --tooltip-background-color: var(--color-background-strong);
     --tooltip-text-color: var(--color-foreground-on-solid);
-    --tooltip-shadow: var(--shadow);
+    --tooltip-shadow: var(--material-shadow);
   }
 
   :host(:hover) [role='tooltip'],
@@ -55,7 +55,7 @@ export const tooltipStyles = css`
     position: absolute;
     left: 0;
     top: calc(100% + var(--space-1));
-    z-index: 6;
+    z-index: var(--material-zindex-overlay);
     pointer-events: none;
     transition: opacity 0.15s linear, visibility 0.15s linear;
 

@@ -22,7 +22,7 @@ export class MasterCheckbox extends LitElement {
 
   render() {
     return html`
-      <mm-surface variant="elevated" size="medium">
+      <mm-surface variant="elevated">
         <div @pointerdown=${this.onPointerDown}>
           <input
             type="checkbox"

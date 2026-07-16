@@ -68,7 +68,7 @@ export const switchStyles = css`
       border-radius: var(--switch-border-radius);
       box-sizing: border-box;
       background: var(--color-background);
-      box-shadow: var(--shadow);
+      box-shadow: var(--material-shadow);
       position: absolute;
       left: 0;
       top: 0;

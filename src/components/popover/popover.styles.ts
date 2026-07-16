@@ -6,7 +6,7 @@ export const popoverStyles = css`
     --popover-border: var(--border);
     --popover-border-radius: var(--radius);
     --popover-background-color: var(--color-background);
-    --popover-shadow: var(--shadow);
+    --popover-shadow: var(--material-shadow);
     --popover-max-height: none;
     --popover-width: auto;
     --popover-offset: var(--space-1);
@@ -39,7 +39,7 @@ export const popoverStyles = css`
     top: calc(100% + var(--popover-offset));
     left: 0;
     right: 0;
-    z-index: var(--zindex-popover);
+    z-index: var(--material-zindex-overlay);
 
     opacity: 0;
     visibility: hidden;
