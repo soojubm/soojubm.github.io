@@ -1,5 +1,6 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { ifDefined } from 'lit/directives/if-defined.js'
 import { classMap } from 'lit/directives/class-map.js'
 import { styleMap } from 'lit/directives/style-map.js'
 
@@ -74,7 +75,7 @@ export class Table extends LitElement {
           'align-right': column.textAlign === 'right',
         })}
         scope="col"
-        aria-sort=${column.sortable ? 'none' : nothing}
+        aria-sort=${ifDefined(column.sortable ? 'none' : undefined)}
       >
         ${this.renderHeaderContent(column)}
       </th>

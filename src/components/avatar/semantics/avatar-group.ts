@@ -3,6 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
 import { arrayAttributeConverter } from '@/utils/property-converters'
+import type { AvatarSize } from '@/components/avatar/avatar'
 import '@/components/text/text'
 
 @customElement('mm-avatar-group')
@@ -45,7 +46,7 @@ export class AvatarGroup extends LitElement {
   avatars: string[] = []
 
   @property({ type: String }) label = ''
-  @property({ type: String }) size = 'small'
+  @property({ type: String }) size: AvatarSize = 'small'
 
   /** 노출할 최대 아바타 수 (나머지는 +N으로 묶음) */
   private readonly maxVisible = 3

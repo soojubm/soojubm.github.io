@@ -7,23 +7,19 @@ import type { IconName } from '@/components/icon-button/semantics/icon-names'
 import type { AriaCurrent } from '@/types/aria'
 
 import { menuItemStyles } from '@/components/menuitem/menuitem.styles'
-import { renderMenuItemContent } from '@/components/menuitem/menuitem.utils'
+import {
+  renderMenuItemContent,
+  withMenuItemPresentation,
+} from '@/components/menuitem/menuitem.utils'
 
 @customElement('mm-menu-item-action')
-export class MenuItemAction extends LitElement {
+export class MenuItemAction extends withMenuItemPresentation(LitElement) {
   static styles = [menuItemStyles]
 
-  @property({ type: String, reflect: true }) size = 'medium'
-  @property({ type: String, reflect: true }) tone = ''
-  @property({ type: String }) label = ''
-  @property({ type: String }) description = ''
-  @property({ type: String }) icon?: IconName
   @property({ type: String, attribute: 'trailing-icon' }) trailingIcon?: IconName
-  @property({ type: String }) emoji = ''
-  @property({ type: String, attribute: 'avatar-src' }) avatarSrc = ''
-  @property({ type: String, attribute: 'avatar-variant' }) avatarVariant = 'tertiary'
   @property({ type: Boolean }) disabled = false
-  @property({ type: String }) role = 'menuitem'
+  @property({ type: String }) role: 'menuitem' | 'menuitemcheckbox' | 'menuitemradio' | 'option' =
+    'menuitem'
   @property({ type: String, attribute: 'aria-current', reflect: true })
   ariaCurrent: AriaCurrent = null
 

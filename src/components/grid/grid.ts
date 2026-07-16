@@ -13,6 +13,8 @@ export class Grid extends LitElement {
 
   @property({ attribute: 'column-max-width' }) columnMaxWidth?: string
 
+  @property({ attribute: 'column-min-width' }) columnMinWidth?: string
+
   @property({ type: String }) gap = '4'
 
   render() {
@@ -26,6 +28,9 @@ export class Grid extends LitElement {
 
     if (gap) this.style.setProperty('--_grid-gap', gap)
     else this.style.removeProperty('--_grid-gap')
+
+    if (this.columnMinWidth) this.style.setProperty('--_col-min', this.columnMinWidth)
+    else this.style.removeProperty('--_col-min')
 
     if (this.columnMaxWidth) {
       this.style.setProperty('--_col-max', this.columnMaxWidth)

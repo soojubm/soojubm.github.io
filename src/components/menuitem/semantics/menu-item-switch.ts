@@ -1,25 +1,19 @@
 import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import type { IconName } from '@/components/icon-button/semantics/icon-names'
-
 import { menuItemStyles } from '@/components/menuitem/menuitem.styles'
-import { renderMenuItemContent, renderMenuItemRow } from '@/components/menuitem/menuitem.utils'
+import {
+  renderMenuItemContent,
+  renderMenuItemRow,
+  withMenuItemPresentation,
+} from '@/components/menuitem/menuitem.utils'
 import { ToggleController } from '@/controllers/toggle-controller'
 import { emit } from '@/utils/emit'
 
 @customElement('mm-menu-item-switch')
-export class MenuItemSwitch extends LitElement {
+export class MenuItemSwitch extends withMenuItemPresentation(LitElement) {
   static styles = [menuItemStyles]
 
-  @property({ type: String, reflect: true }) size = 'medium'
-  @property({ type: String, reflect: true }) tone = ''
-  @property({ type: String }) label = ''
-  @property({ type: String }) description = ''
-  @property({ type: String }) icon?: IconName
-  @property({ type: String }) emoji = ''
-  @property({ type: String, attribute: 'avatar-src' }) avatarSrc = ''
-  @property({ type: String, attribute: 'avatar-variant' }) avatarVariant = 'tertiary'
   @property({ type: Boolean }) disabled = false
   @property({ type: Boolean }) checked = false
   @property({ type: String }) value = ''

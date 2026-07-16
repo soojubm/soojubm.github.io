@@ -67,7 +67,7 @@ class TextBlock extends LitElement {
       descriptionSize: '14',
       gap: '1',
     },
-  }
+  } as const
 
   render() {
     const variant =

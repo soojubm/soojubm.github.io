@@ -16,6 +16,9 @@ export class ChatFooter extends LitElement {
         z-index: 1;
         display: flex;
         flex-direction: column;
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
         gap: var(--space-3);
         padding: var(--space-4);
         box-sizing: border-box;

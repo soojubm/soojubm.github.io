@@ -1,5 +1,6 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property, query, state } from 'lit/decorators.js'
+import { ifDefined } from 'lit/directives/if-defined.js'
 
 import type { AriaIdRef, AriaInvalid } from '@/types/aria'
 
@@ -71,15 +72,15 @@ export class Textarea extends LitElement {
 
   protected renderTextarea() {
     return html`
-      <div class="textarea-control" aria-invalid=${this.ariaInvalid ?? nothing}>
+      <div class="textarea-control" aria-invalid=${ifDefined(this.ariaInvalid ?? undefined)}>
         <textarea
           id=${this.textareaId}
           rows=${this.rows}
           .value=${this.value}
-          name=${this.name || nothing}
-          placeholder=${this.placeholder || nothing}
+          name=${ifDefined(this.name || undefined)}
+          placeholder=${ifDefined(this.placeholder || undefined)}
           ?disabled=${this.disabled}
-          aria-invalid=${this.ariaInvalid ?? nothing}
+          aria-invalid=${ifDefined(this.ariaInvalid ?? undefined)}
           aria-describedby=${this.textareaDescribedBy || nothing}
           @input=${this.onInput}
           @keydown=${this.onKeyDown}

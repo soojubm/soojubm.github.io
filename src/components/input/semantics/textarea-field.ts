@@ -1,5 +1,6 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { ifDefined } from 'lit/directives/if-defined.js'
 
 import type { AriaInvalid } from '@/types/aria'
 
@@ -34,7 +35,7 @@ export class TextareaField extends LitElement {
         .placeholder=${this.placeholder}
         .rows=${this.rows}
         ?disabled=${this.disabled}
-        aria-invalid=${this.ariaInvalid ?? nothing}
+        aria-invalid=${ifDefined(this.ariaInvalid ?? undefined)}
         aria-describedby=${this.helper ? this.helperId : nothing}
         @input=${this.syncValue}
       ></mm-textarea>

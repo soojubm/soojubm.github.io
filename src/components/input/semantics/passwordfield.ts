@@ -1,5 +1,6 @@
-import { LitElement, css, html, nothing } from 'lit'
+import { LitElement, css, html } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
+import { ifDefined } from 'lit/directives/if-defined.js'
 
 import type { AriaInvalid } from '@/types/aria'
 import '@/components/input/semantics/textfield'
@@ -40,7 +41,7 @@ class PasswordField extends LitElement {
         ?optional=${this.optional}
         ?hidden-label=${this.hiddenLabel}
         ?disabled=${this.disabled}
-        aria-invalid=${this.ariaInvalid ?? nothing}
+        aria-invalid=${ifDefined(this.ariaInvalid ?? undefined)}
         @input=${this.syncValue}
       >
         <mm-reveal-button

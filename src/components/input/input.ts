@@ -1,7 +1,24 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { ifDefined } from 'lit/directives/if-defined.js'
 
 import type { AriaIdRef, AriaInvalid } from '@/types/aria'
+
+export type InputType =
+  | 'text'
+  | 'search'
+  | 'tel'
+  | 'url'
+  | 'email'
+  | 'password'
+  | 'number'
+  | 'date'
+  | 'time'
+  | 'datetime-local'
+  | 'month'
+  | 'week'
+  | 'color'
+  | 'hidden'
 
 /**
  * <mm-input>
@@ -100,7 +117,7 @@ export class Input extends LitElement {
   `
 
   @property({ attribute: 'input-id' }) inputId = ''
-  @property() type = 'text'
+  @property() type: InputType = 'text'
   @property() value = ''
   @property() name = ''
   @property() placeholder = ''
@@ -115,17 +132,17 @@ export class Input extends LitElement {
   override render() {
     return html`
       <input
-        id=${this.inputId || nothing}
+        id=${ifDefined(this.inputId || undefined)}
         type=${this.type}
         .value=${this.value}
-        name=${this.name || nothing}
-        placeholder=${this.placeholder || nothing}
+        name=${ifDefined(this.name || undefined)}
+        placeholder=${ifDefined(this.placeholder || undefined)}
         aria-label=${this.ariaLabel || nothing}
-        min=${this.min ?? nothing}
-        max=${this.max ?? nothing}
-        step=${this.step ?? nothing}
+        min=${ifDefined(this.min)}
+        max=${ifDefined(this.max)}
+        step=${ifDefined(this.step)}
         ?disabled=${this.disabled}
-        aria-invalid=${this.ariaInvalid ?? nothing}
+        aria-invalid=${ifDefined(this.ariaInvalid ?? undefined)}
         aria-describedby=${this.ariaDescribedBy ?? nothing}
         @input=${this.handleInput}
       />

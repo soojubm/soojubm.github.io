@@ -189,7 +189,7 @@ export class Select extends LitElement {
 
     return html`
       <mm-menu-item-action
-        icon=${option.icon || nothing}
+        icon=${ifDefined(option.icon)}
         aria-current=${ifDefined(isSelected ? 'true' : undefined)}
         @click=${() => this.selectOption(option)}
       >

@@ -1,5 +1,6 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { ifDefined } from 'lit/directives/if-defined.js'
 
 import type { AriaTriState } from '@/types/aria'
 
@@ -33,7 +34,7 @@ export class Switch extends LitElement {
       <div>
         <input
           id=${this.inputId}
-          name=${this.name || nothing}
+          name=${ifDefined(this.name || undefined)}
           type="checkbox"
           role="switch"
           aria-checked=${ariaChecked}
