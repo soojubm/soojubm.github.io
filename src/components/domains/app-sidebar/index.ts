@@ -1,17 +1,32 @@
 import { LitElement, html, nothing } from 'lit'
-import { customElement, state } from 'lit/decorators.js'
+import { customElement, property, state } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 import { repeat } from 'lit/directives/repeat.js'
 
 import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
+import { DisclosureController } from '@/controllers/disclosure-controller'
 import { SITEMAP } from '@/sitemap'
+
+const MOBILE_QUERY = '(max-width: 1080px)'
 
 @customElement('mm-sidebar')
 export class Sidebar extends LitElement {
+  @property({ type: Boolean, reflect: true, attribute: 'open' }) isOpen = false
+
   @state() private currentPageId = 'index'
   @state() private openGroupIds = new Set(
     SITEMAP.filter(node => node.type === 'group').map(node => node.id),
   )
+
+  private mobileQuery = window.matchMedia(MOBILE_QUERY)
+
+  private disclosure = new DisclosureController(this, {
+    isOpen: () => this.isOpen,
+    setOpen: open => {
+      this.isOpen = open
+    },
+    dismissOn: ['escape'],
+  })
 
   render() {
     return html`
@@ -91,9 +106,35 @@ export class Sidebar extends LitElement {
     super.connectedCallback()
     const currentPath = window.location.pathname.split('/').pop() || 'index.html'
     this.currentPageId = currentPath.replace('.html', '') || 'index'
-    // 닫힌 사이드바로 포커스가 들어가지 않도록 열림 상태에 맞춰 초기 inert를 맞춘다.
-    // 이후 열고 닫는 토글은 navbar.ts의 syncNavbarMenu가 관리한다.
-    this.inert = !document.body.classList.contains('is-menu-opened')
+
+    if (this.mobileQuery.matches) this.isOpen = false
+    this.mobileQuery.addEventListener('change', this.handleMobileChange)
+  }
+
+  disconnectedCallback() {
+    this.mobileQuery.removeEventListener('change', this.handleMobileChange)
+    super.disconnectedCallback()
+  }
+
+  protected updated(changedProperties: Map<string, unknown>) {
+    // 닫힌 사이드바로 포커스가 들어가지 않도록 열림 상태에 맞춰 inert를 맞춘다.
+    if (changedProperties.has('isOpen')) this.inert = !this.isOpen
+  }
+
+  open() {
+    this.isOpen = true
+  }
+
+  close() {
+    this.isOpen = false
+  }
+
+  toggle() {
+    this.disclosure.toggle()
+  }
+
+  private handleMobileChange = (e: MediaQueryListEvent) => {
+    if (e.matches) this.close()
   }
 
   private restoreScrollPosition() {

@@ -11,7 +11,7 @@ export const footerStyles = css`
     position: relative;
   }
 
-  :host-context(.is-menu-opened) .footer {
+  :host-context(body:has(mm-sidebar[open])) .footer {
     padding-left: calc(
       var(--layout-width-sidebar) + var(--layout-padding-inline) + var(--layout-padding-inline) +
         var(--space-4)
@@ -43,7 +43,7 @@ export const footerStyles = css`
   }
 
   @media (max-width: 1100px) {
-    :host-context(.is-menu-opened) .footer {
+    :host-context(body:has(mm-sidebar[open])) .footer {
       padding-left: var(--layout-padding-inline);
       transform: translateX(0);
     }

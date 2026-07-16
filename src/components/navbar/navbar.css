@@ -153,11 +153,11 @@
   border-color: var(--color-primary);
 }
 
-.is-menu-opened .sidebar-menu {
+mm-sidebar[open] .sidebar-menu {
   transform: translateX(0);
   overscroll-behavior: contain;
 }
-.is-menu-opened .page {
+body:has(mm-sidebar[open]) .page {
   padding-left: calc(
     var(--layout-width-sidebar) + var(--layout-padding-inline) + var(--layout-padding-inline) +
       var(--space-4)
@@ -165,7 +165,7 @@
 }
 
 @media (max-width: 1100px) {
-  .is-menu-opened .page {
+  body:has(mm-sidebar[open]) .page {
     padding-left: var(--layout-padding-inline);
   }
 }

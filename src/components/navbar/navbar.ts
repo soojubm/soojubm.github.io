@@ -1,5 +1,5 @@
 import { LitElement, html, nothing } from 'lit'
-import { customElement, state } from 'lit/decorators.js'
+import { customElement, property, state } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 import { repeat } from 'lit/directives/repeat.js'
 
@@ -18,6 +18,9 @@ function hasValue(target: EventTarget | null): target is HTMLInputElement | HTML
 
 @customElement('mm-navbar')
 export class Navbar extends LitElement {
+  @property({ type: Boolean, reflect: true, attribute: 'sidebar-collapsed' }) sidebarCollapsed =
+    false
+
   @state() private query = ''
   @state() private results: PagefindResult[] = []
   @state() private searching = false
@@ -117,7 +120,7 @@ export class Navbar extends LitElement {
         </mm-sheet-body>
       </mm-sheet>
 
-      <mm-sidebar id="site-sidebar"></mm-sidebar>
+      <mm-sidebar id="site-sidebar" ?open=${!this.sidebarCollapsed}></mm-sidebar>
     `
   }
 

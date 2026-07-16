@@ -1,7 +1,5 @@
 import type Sheet from '@/components/sheet/sheet'
 
-import { hideNavbar } from '@/utils/navbar'
-
 import main from './index.html'
 import { renderLayout } from '../../../layouts/base-layouts'
 
@@ -13,7 +11,6 @@ type SortEvent = CustomEvent<{ value: 'latest' | 'oldest' }>
 
 document.addEventListener('DOMContentLoaded', () => {
   document.body.innerHTML = renderLayout(main, { closeSidebar: true })
-  hideNavbar()
 
   setupPortfolioModal()
   document.querySelector('mm-view-mode-switcher')?.addEventListener('change', handleViewMode)

@@ -1,7 +1,5 @@
 import './post.css'
 
-import { hideNavbar } from '@/utils/navbar'
-
 import main from './index.html'
 import { renderLayout } from '../../../layouts/base-layouts'
 
@@ -10,8 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 document.addEventListener('DOMContentLoaded', () => {
-  hideNavbar()
-
   function scrollProgress() {
     const containerElement = document.querySelector<HTMLElement>('.post')
     const progressBar = document.querySelector<HTMLElement>('.post-head-progress')

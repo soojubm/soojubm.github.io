@@ -33,12 +33,6 @@ export class HamburgerButton extends LitElement {
       ></mm-icon-button>
     `
   }
-
-  connectedCallback() {
-    super.connectedCallback()
-    // navbar.ts의 toggleNavbarMenu가 .js-navbar-toggle을 selector로 사용
-    this.classList.add('js-navbar-toggle')
-  }
 }
 
 declare global {
