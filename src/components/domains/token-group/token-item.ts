@@ -17,7 +17,7 @@ export class TokenItem extends LitElement {
         padding: var(--space-3) var(--space-4);
         line-height: var(--size-medium);
         border: var(--border);
-        border-radius: var(--radius-large);
+        border-radius: var(--radius);
       }
     `,
   ]

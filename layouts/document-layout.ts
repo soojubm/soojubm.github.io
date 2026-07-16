@@ -3,35 +3,10 @@ import '../src/components/footer/footer'
 
 import '../src/stylesheets/shared.css'
 
-const layoutStyles = `
-  <style>
-    .document-layout {
-      display: flex;
-      align-items: flex-start;
-    }
-    .document-layout > main {
-      flex: 1;
-      min-width: 0;
-    }
-    mm-toc {
-    display: none;
-    }
-    @media (min-width: 1280px) {
-      mm-toc {
-        display: none;
-      }
-    }
-  </style>
-`
-
 export const renderDocumentLayout = (content: string, options: { footer?: boolean } = {}) => {
   return `
     <mm-navbar></mm-navbar>
-    ${layoutStyles}
-    <div class="document-layout">
-      ${content}
-      <mm-toc></mm-toc>
-    </div>
+    ${content}
     ${options.footer ? '<mm-footer></mm-footer>' : ''}
   `
 }

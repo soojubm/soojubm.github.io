@@ -60,7 +60,7 @@ export function renderMenuItemRow(options: MenuItemRowOptions, content: unknown)
       role=${options.role}
       tabindex=${options.disabled ? '-1' : '0'}
       aria-disabled=${ifDefined(options.disabled ? 'true' : undefined)}
-      aria-checked=${options.ariaChecked}
+      aria-checked=${ifDefined(options.ariaChecked ?? undefined)}
       @click=${options.onActivate}
       @keydown=${handleKeydown}
     >

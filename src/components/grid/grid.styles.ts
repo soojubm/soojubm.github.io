@@ -49,6 +49,10 @@ export const gridStyles = [
       --_col-count: 4;
     }
 
+    :host([columns='6']) {
+      --_col-count: 6;
+    }
+
     /* column-max-width 그리드는 auto-fill로 열 수를 파생하면 상한(columns)을 넘을 수
        있어 고정 열 수를 유지하고, 뷰포트 미디어 쿼리로만 줄인다. */
     :host([column-max-width][columns='1']) {
@@ -67,13 +71,20 @@ export const gridStyles = [
       grid-template-columns: repeat(4, minmax(0, var(--_col-max, 1fr)));
     }
 
-    :host([columns='6']) {
+    :host([column-max-width][columns='6']) {
       grid-template-columns: repeat(6, minmax(0, var(--_col-max, 1fr)));
+    }
+
+    @media ${MEDIA.wide} {
+      :host([column-max-width][columns='6']) {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
     }
 
     @media ${MEDIA.narrow} {
       :host([column-max-width][columns='3']),
-      :host([column-max-width][columns='4']) {
+      :host([column-max-width][columns='4']),
+      :host([column-max-width][columns='6']) {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
@@ -81,7 +92,8 @@ export const gridStyles = [
     @media ${MEDIA.compact} {
       :host([column-max-width][columns='2']),
       :host([column-max-width][columns='3']),
-      :host([column-max-width][columns='4']) {
+      :host([column-max-width][columns='4']),
+      :host([column-max-width][columns='6']) {
         grid-template-columns: 1fr;
       }
     }

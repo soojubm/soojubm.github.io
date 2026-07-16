@@ -18,7 +18,7 @@ export class ColorToken extends LitElement {
       :host {
         display: block;
         border: var(--border);
-        border-radius: var(--radius) var(--radius) var(--radius-large) var(--radius-large);
+        border-radius: var(--radius);
         overflow: hidden;
       }
 

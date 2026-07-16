@@ -42,7 +42,6 @@
   --layout-padding-inline: 5vw;
 
   --gray0: #fff;
-  --gray50: #fcfdfc;
   --gray100: #f5f6f5;
   --gray200: #d2d7d5;
   --gray400: #979d9a;
@@ -316,7 +315,9 @@
    * 작고 내용 밀도가 높아 thick으로 — 텍스트 가독성과 포커스가 우선이라 더 강하게 가린다.
    * 즉 중첩될수록 약해지는 게 아니라 강해진다: thin(바깥) → thick(중첩된 포커스 레이어).
    */
-  --radius: var(--radius-large);
+  /* --radius: var(--radius-large); */
+  /* --color-background-subtle: rgb(255 255 255 / 30%); */
+  --shadow-surface: 0 8px 32px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.2);
 
   /* 테두리·그림자는 thin/regular/thick 세기와 무관하게 모든 glass 표면이 공유하는 마감이다 */
   --material-glass-border: var(--border-width) solid rgb(255 255 255 / 50%);
@@ -325,9 +326,9 @@
   --material-chrome-background: rgb(255 255 255 / var(--material-thin-opacity));
   --material-chrome-background-strong: rgb(255 255 255 / var(--material-thick-opacity));
 
-  --material-chrome-backdrop-filter: blur(var(--material-thin-blur)) saturate(1.4);
-  --material-chrome-backdrop-filter-strong: blur(var(--material-thick-blur)) saturate(1.4);
-  --material-chrome-edge-start: linear-gradient(to bottom, rgb(255 255 255 / 15%), transparent);
+  /* background와 surface-background ? 의 구분이 필요한가. 어차피 surface token이나 component를 사용한다면 컴포넌트 토큰으로?? */
+  /* --color-background: rgb(255 255 255 / 12%); */
+  --color-background-section: rgb(245 245 245 / 40%);
 
   --prompt-input-background: var(--material-chrome-background);
   --prompt-input-border: var(--material-glass-border);
