@@ -7,16 +7,13 @@ export const avatarStyles = css`
     --avatar-border-color: transparent;
     --avatar-icon-color: var(--color-foreground);
     --avatar-border-radius: var(--radius);
-    display: inline-flex;
-  }
 
-  figure {
-    margin: 0;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     width: var(--avatar-size);
     height: var(--avatar-size);
+    max-height: var(--avatar-size);
     background-repeat: no-repeat;
     background-position: center;
     background-color: var(--avatar-background-color);
@@ -53,9 +50,6 @@ export const avatarStyles = css`
 
   :host([variant='tertiary']) {
     --avatar-background-color: transparent;
-  }
-
-  :host([variant='tertiary']) figure {
     box-shadow: none;
   }
 

@@ -1,6 +1,5 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { ifDefined } from 'lit/directives/if-defined.js'
 
 import '@/components/icon/icon'
 import { avatarStyles } from '@/components/avatar/avatar.styles'
@@ -24,13 +23,18 @@ class Avatar extends LitElement {
 
   render() {
     return html`
-      <figure
-        role=${ifDefined(this.ariaLabel ? 'img' : undefined)}
-        aria-label=${ifDefined(this.ariaLabel || undefined)}
-      >
-        ${this.renderImage()} ${this.renderIcon()} ${this.renderFallback()}
-      </figure>
+      ${this.renderImage()} ${this.renderIcon()} ${this.renderFallback()}
     `
+  }
+
+  protected updated(changedProperties: Map<string, unknown>) {
+    if (!changedProperties.has('ariaLabel')) return
+
+    if (this.ariaLabel) {
+      this.setAttribute('role', 'img')
+    } else {
+      this.removeAttribute('role')
+    }
   }
 
   private renderImage() {
