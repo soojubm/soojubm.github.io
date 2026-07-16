@@ -17,7 +17,7 @@ export class FixedBottom extends LitElement {
       right: 0;
       bottom: 0;
       left: 0;
-      z-index: var(--zindex-fixed-bottom);
+      z-index: var(--material-zindex-chrome);
     }
   `
 

@@ -14,7 +14,7 @@ export class HamburgerButton extends LitElement {
   static styles = css`
     :host {
       display: inline-flex;
-      z-index: calc(var(--zindex-menu) + 1);
+      z-index: calc(var(--material-zindex-raised) + 1);
     }
   `
 

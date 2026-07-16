@@ -84,7 +84,7 @@ const colorTokens = [
   { name: '--skeleton-sample', value: '', cases: [''] },
   { name: '--gradient-transparnet', value: '', cases: [''] },
   { name: '--radius', value: '', cases: [''] },
-  { name: '--shadow', value: '0 0 .5rem rgb(0 0 0 / 7.5%)', cases: [''] },
+  { name: '--material-shadow', value: '0 0 .5rem rgb(0 0 0 / 7.5%)', cases: [''] },
 ]
 
 const typographyTokens = [
@@ -124,18 +124,13 @@ const spacingTokens = [
   { name: '--layout-padding-inline', value: '5vw' },
 ]
 
-const zindexTokens = [
-  { name: '--zindex-default', value: '1' },
-  { name: '--zindex-tooltip', value: '2' },
-  { name: '--zindex-menu', value: '2' },
-  { name: '--zindex-popover', value: '5' },
-  { name: '--zindex-bottombar', value: '8' },
-  { name: '--zindex-fixed-bottom', value: '100' },
-  { name: '--zindex-backdrop', value: '200' },
-  { name: '--zindex-sheet', value: '210' },
-  { name: '--zindex-modal', value: '220' },
-  { name: '--zindex-toast', value: '230' },
-  { name: '--zindex-loader', value: '240' },
+const layerTokens = [
+  { name: '--material-zindex-base', value: '0' },
+  { name: '--material-zindex-raised', value: '10' },
+  { name: '--material-zindex-overlay', value: '100' },
+  { name: '--material-zindex-modal', value: '1000' },
+  { name: '--material-zindex-chrome', value: '1100' },
+  { name: '--material-zindex-toast', value: '9000' },
 ]
 
 const positioningTokens = []
@@ -204,7 +199,7 @@ const article = [
     kicker: '활자의 위계와 배치.',
     description:
       '폰트마다 baseline이 다르기 때문에 폰트 변경 시 내부 텍스트의 상하 간격이 안 맞을 수 있다. 폰트를 변경하지 않고 대응하려면? 텍스트노드(레이블 역할)의 상단 패딩에 변수를 하나 추가해둔다.',
-    tokens: [...zindexTokens],
+    tokens: [...layerTokens],
   },
   {
     title: 'Opacity 🚧',

@@ -9,7 +9,7 @@ export class Backdrop extends LitElement {
       position: fixed;
       inset: 0;
       background: var(--color-backdrop);
-      z-index: var(--zindex-backdrop);
+      z-index: var(--material-zindex-modal);
 
       opacity: 0;
       visibility: hidden;

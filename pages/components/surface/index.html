@@ -23,21 +23,21 @@
         <mm-text-block
           level="3"
           heading="outlined"
-          description="단순 구획을 표현. 클릭할 수 없다."
+          description="콘텐츠 레벨에서 테두리로 영역을 구획할 때 사용한다. 클릭할 수 없다."
         ></mm-text-block>
       </mm-surface>
-      <mm-surface variant="subtle">
+      <mm-surface variant="filled">
         <mm-text-block
           level="3"
-          heading="subtle"
-          description="내부에 클릭 가능한 액션이 있는 강조 표현."
+          heading="filled"
+          description="콘텐츠 레벨에서 내부에 클릭 가능한 액션이 있을 때 배경으로 강조한다."
         ></mm-text-block>
       </mm-surface>
       <mm-surface variant="elevated">
         <mm-text-block
           level="3"
           heading="elevated"
-          description="강조 표현2. 클릭할 수 있다."
+          description="시스템 레벨에서 화면 위에 떠 있는 요소를 그림자로 강조할 때 사용한다."
         ></mm-text-block>
       </mm-surface>
 
@@ -48,14 +48,14 @@
           <mm-text-block
             level="3"
             heading="default radius"
-            description="기본 radius 토큰을 적용합니다."
+            description="엘리먼트 레벨에서 사용한다. 본문 안에서 반복되는 개별 항목의 경계를 표현한다."
           ></mm-text-block>
         </mm-surface>
         <mm-surface radius="large">
           <mm-text-block
             level="3"
             heading="large radius"
-            description="큰 radius 토큰을 적용합니다."
+            description="섹션 레벨에서 사용한다. 여러 콘텐츠를 하나로 묶는 상위 영역의 경계를 표현한다."
           ></mm-text-block>
         </mm-surface>
       </mm-grid>
@@ -65,10 +65,9 @@
   <mm-component-props>
     <mm-prop
       name="variant"
-      type="'ghost' | 'outlined' | 'plain' | 'subtle' | 'elevated'"
+      type="'ghost' | 'outlined' | 'plain' | 'filled' | 'elevated'"
       optional
     ></mm-prop>
-    <mm-prop name="size" type="string" optional></mm-prop>
     <mm-prop name="radius" type="'default' | 'large'" optional></mm-prop>
     <mm-prop name="height" type="string" optional></mm-prop>
   </mm-component-props>

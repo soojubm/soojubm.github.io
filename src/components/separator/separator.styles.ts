@@ -24,7 +24,7 @@ export const separatorStyles = css`
     border: 0;
     border-top: var(--separator-border);
     position: relative;
-    z-index: var(--zindex-default);
+    z-index: var(--material-zindex-base);
   }
 
   /* 가운데 레이블 박스: 텍스트가 없으면 ::after가 선을 가리고, 있으면 slot 요소가 표시 */

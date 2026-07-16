@@ -4,7 +4,7 @@ import { MEDIA } from '@/stylesheets/shared/breakpoints'
 
 export const sheetStyles = css`
   :host {
-    --sheet-z-index: var(--zindex-sheet);
+    --sheet-z-index: var(--material-zindex-modal);
     --sheet-backdrop-background-color: var(--color-backdrop);
     --sheet-background: var(--color-background);
     --sheet-border: 0;
@@ -70,10 +70,12 @@ export const sheetStyles = css`
     height: var(--sheet-height, auto);
     max-height: var(--sheet-max-height);
     padding: 0 var(--sheet-padding-inline);
-    border: var(--sheet-border);
+    border: var(--sheet-glass-border, var(--sheet-border));
     border-radius: var(--sheet-border-radius);
-    background: var(--sheet-background);
-    box-shadow: var(--sheet-shadow);
+    background: var(--sheet-glass-background, var(--sheet-background));
+    box-shadow: var(--sheet-glass-shadow, var(--sheet-shadow));
+    backdrop-filter: var(--sheet-glass-backdrop-filter, none);
+    -webkit-backdrop-filter: var(--sheet-glass-backdrop-filter, none);
     box-sizing: border-box;
     overflow: hidden;
     position: relative;

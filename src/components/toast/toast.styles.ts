@@ -20,7 +20,7 @@ export const toastStyles = css`
     position: fixed;
     bottom: var(--toast-offset);
     left: 50%;
-    z-index: var(--zindex-toast);
+    z-index: var(--material-zindex-toast);
 
     opacity: 0;
     visibility: hidden;

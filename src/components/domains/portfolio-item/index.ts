@@ -30,7 +30,7 @@ export class PortfolioItem extends LitElement {
 
       article:hover {
         background-color: var(--color-background-subtle);
-        box-shadow: var(--shadow);
+        box-shadow: var(--material-shadow);
       }
 
       article:focus-visible {
