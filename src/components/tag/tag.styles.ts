@@ -91,31 +91,6 @@ export const tagStyles = css`
     --tag-color: var(--color-foreground);
     --tag-text-size: var(--font-size-12);
 
-    --tag-category-1-bg: var(--color-blue-50);
-    --tag-category-1-border: var(--color-blue-200);
-    --tag-category-1-text: var(--color-blue-700);
-    --tag-category-2-bg: var(--color-green-50);
-    --tag-category-2-border: var(--color-green-200);
-    --tag-category-2-text: var(--color-green-700);
-    --tag-category-3-bg: var(--color-pink-50);
-    --tag-category-3-border: var(--color-pink-200);
-    --tag-category-3-text: var(--color-pink-700);
-    --tag-category-4-bg: var(--color-orange-50);
-    --tag-category-4-border: var(--color-orange-200);
-    --tag-category-4-text: var(--color-orange-700);
-    --tag-category-5-bg: var(--color-cyan-50);
-    --tag-category-5-border: var(--color-cyan-200);
-    --tag-category-5-text: var(--color-cyan-700);
-    --tag-category-6-bg: var(--color-yellow-50);
-    --tag-category-6-border: var(--color-yellow-200);
-    --tag-category-6-text: var(--color-yellow-700);
-    --tag-category-7-bg: var(--color-red-50);
-    --tag-category-7-border: var(--color-red-200);
-    --tag-category-7-text: var(--color-red-700);
-    --tag-category-8-bg: var(--color-purple-50);
-    --tag-category-8-border: var(--color-purple-200);
-    --tag-category-8-text: var(--color-purple-700);
-
     display: inline-flex;
     align-items: center;
     width: fit-content;

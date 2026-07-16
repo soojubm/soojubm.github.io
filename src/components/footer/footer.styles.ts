@@ -7,15 +7,9 @@ export const footerStyles = css`
 
   .footer {
     padding: 2rem var(--layout-padding-inline);
+    padding-left: var(--sidebar-content-shift, var(--layout-padding-inline));
     margin: 0 auto;
     position: relative;
-  }
-
-  :host-context(body:has(mm-sidebar[open])) .footer {
-    padding-left: calc(
-      var(--layout-width-sidebar) + var(--layout-padding-inline) + var(--layout-padding-inline) +
-        var(--space-4)
-    );
   }
 
   .footer address mm-paragraph {
@@ -40,12 +34,5 @@ export const footerStyles = css`
 
   .footer-address-info dt {
     color: var(--color-foreground-light);
-  }
-
-  @media (max-width: 1100px) {
-    :host-context(body:has(mm-sidebar[open])) .footer {
-      padding-left: var(--layout-padding-inline);
-      transform: translateX(0);
-    }
   }
 `

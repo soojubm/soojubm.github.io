@@ -74,7 +74,7 @@ const colorTokens = [
   { name: '--color-background-subtle', value: 'var(--gray100)', cases: [] },
   { name: '--color-background-strong', value: 'var(--gray800)', cases: [] },
   { name: '--color-border', value: 'var(--gray200)', cases: [] },
-  { name: '--color-foreground', value: 'var(--gray900)', cases: [] },
+  { name: '--color-foreground', value: 'var(--gray800)', cases: [] },
   { name: '--color-foreground-light', value: 'var(--gray400)', cases: [] },
   { name: '--color-foreground-on-solid', value: 'var(--gray0)', cases: [] },
   { name: '--color-interaction-focus', value: '#007185', cases: [] },
@@ -99,21 +99,22 @@ const typographyTokens = [
 ]
 
 const sizeTokens = [
-  { name: '--size-huge', value: '5rem', cases: ['--avatar-huge'] },
+  { name: '--size-80', value: '80px', cases: ['--avatar-huge'] },
   {
-    name: '--size-large',
-    value: '3rem / 48px',
+    name: '--size-48',
+    value: '48px',
     cases: ['--avatar-large', '--button-height', '--input-height'],
   },
-  { name: '--size-medium', value: '2rem / 32px', cases: ['--avatar-medium', '--chip-height'] },
+  { name: '--size-40', value: '40px', cases: ['--avatar-medium'] },
+  { name: '--size-32', value: '32px', cases: ['--avatar-small', '--chip-height'] },
   {
-    name: '--size-small',
-    value: '1.5rem',
-    cases: ['--avatar-small', '--tag-height', '--indicator-height'],
+    name: '--size-24',
+    value: '24px',
+    cases: ['--tag-height', '--indicator-height'],
   },
   {
-    name: '--size-tiny',
-    value: '1rem',
+    name: '--size-16',
+    value: '16px',
     cases: ['checkbox-height', '--radio-height', '--switch-height'],
   },
 ]

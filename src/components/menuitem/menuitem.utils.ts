@@ -26,7 +26,7 @@ export type MenuItemPresentation = Pick<
  */
 export const withMenuItemPresentation = <T extends Constructor<LitElement>>(Base: T) => {
   class MenuItemPresentationElement extends Base {
-    @property({ type: String, reflect: true }) size: AvatarSize = 'medium'
+    @property({ type: String, reflect: true }) size: AvatarSize = '32'
     @property({ type: String, reflect: true }) tone = ''
     @property({ type: String }) label = ''
     @property({ type: String }) description = ''

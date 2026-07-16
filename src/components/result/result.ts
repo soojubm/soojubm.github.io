@@ -40,7 +40,7 @@ class Result extends LitElement {
     if (!this.avatarIcon) return nothing
 
     return html`
-      <mm-avatar size="huge" variant="secondary" icon=${this.avatarIcon}></mm-avatar>
+      <mm-avatar size="80" variant="secondary" icon=${this.avatarIcon}></mm-avatar>
     `
   }
 

@@ -26,10 +26,10 @@ export const tokenStyles = [
     }
 
     .word-state {
-      color: var(--color-orange-700);
+      color: var(--token-word-state-color);
     }
     .word-property {
-      color: var(--color-cyan-700);
+      color: var(--token-word-property-color);
     }
   `,
 ]

@@ -18,7 +18,7 @@ export class UserRow extends LitElement {
     `,
   ]
 
-  @property({ type: String }) size: AvatarSize = 'medium'
+  @property({ type: String }) size: AvatarSize = '40'
   @property({ type: String }) label = ''
   @property({ type: String }) description = ''
   @property({ type: String }) icon?: IconName

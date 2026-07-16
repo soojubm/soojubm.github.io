@@ -2,7 +2,7 @@ import { css } from 'lit'
 
 export const avatarStyles = css`
   :host {
-    --avatar-size: var(--size-medium);
+    --avatar-size: var(--size-40);
     --avatar-background-color: var(--color-background-subtle);
     --avatar-border-color: transparent;
     --avatar-icon-color: var(--color-foreground);
@@ -29,18 +29,18 @@ export const avatarStyles = css`
     --avatar-border-radius: var(--radius-round);
   }
 
-  :host([size='huge']) {
+  :host([size='80']) {
     --avatar-size: var(--size-huge);
     font-size: var(--font-size-huge);
   }
 
-  :host([size='large']) {
+  :host([size='48']) {
     --avatar-size: var(--size-large);
     font-size: var(--font-size-large);
   }
 
-  :host([size='small']) {
-    --avatar-size: var(--size-small);
+  :host([size='32']) {
+    --avatar-size: var(--size-medium);
   }
 
   :host([variant='secondary']) {

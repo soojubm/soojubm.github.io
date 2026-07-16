@@ -15,6 +15,9 @@ export class AvatarGroup extends LitElement {
         display: flex;
         align-items: center;
         gap: var(--space-2);
+        border: var(--border);
+        padding: var(--space-1);
+        border-radius: var(--radius);
       }
 
       .avatars {
@@ -46,7 +49,7 @@ export class AvatarGroup extends LitElement {
   avatars: string[] = []
 
   @property({ type: String }) label = ''
-  @property({ type: String }) size: AvatarSize = 'small'
+  @property({ type: String }) size: AvatarSize = '32'
 
   /** 노출할 최대 아바타 수 (나머지는 +N으로 묶음) */
   private readonly maxVisible = 3

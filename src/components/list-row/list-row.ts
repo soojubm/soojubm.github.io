@@ -18,7 +18,7 @@ import '@/components/text/semantics/caption'
 export class ListRow extends LitElement {
   static styles = [listRowStyles]
 
-  @property({ type: String, reflect: true }) size: AvatarSize = 'medium'
+  @property({ type: String, reflect: true }) size: AvatarSize = '40'
   @property({ type: String }) label = ''
   @property({ type: String }) description = ''
 
@@ -84,7 +84,7 @@ export class ListRow extends LitElement {
     }
 
     return html`
-      <mm-text size=${this.size === 'large' || this.size === 'huge' ? '18' : '14'}>
+      <mm-text size=${this.size === '48' || this.size === '80' ? '18' : '14'}>
         ${this.label}
       </mm-text>
     `
@@ -93,7 +93,7 @@ export class ListRow extends LitElement {
   private renderDescription() {
     if (!this.description) return nothing
 
-    if (this.size === 'medium') {
+    if (this.size === '40') {
       return html`
         <mm-caption>${this.description}</mm-caption>
       `

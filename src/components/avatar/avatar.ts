@@ -6,7 +6,7 @@ import { avatarStyles } from '@/components/avatar/avatar.styles'
 import { ICON_NAMES, type IconName } from '@/components/icon-button/semantics/icon-names'
 
 export type AvatarVariant = 'primary' | 'secondary' | 'tertiary'
-export type AvatarSize = 'huge' | 'large' | 'medium' | 'small'
+export type AvatarSize = '80' | '48' | '40' | '32'
 export type AvatarShape = 'circle' | 'square'
 export type AvatarIconSize = 'large' | 'medium'
 
@@ -15,7 +15,7 @@ class Avatar extends LitElement {
   static styles = [avatarStyles]
 
   @property({ type: String, reflect: true, useDefault: true }) variant: AvatarVariant = 'primary'
-  @property({ type: String, reflect: true, useDefault: true }) size: AvatarSize = 'medium'
+  @property({ type: String, reflect: true, useDefault: true }) size: AvatarSize = '40'
   @property({ type: String, reflect: true, useDefault: true }) shape: AvatarShape = 'square'
   @property({ type: String }) src?: string
   @property({ type: String }) icon?: IconName
@@ -64,7 +64,7 @@ class Avatar extends LitElement {
   }
 
   private get iconSize(): AvatarIconSize {
-    return this.size === 'large' || this.size === 'huge' ? 'large' : 'medium'
+    return this.size === '48' || this.size === '80' ? 'large' : 'medium'
   }
 }
 

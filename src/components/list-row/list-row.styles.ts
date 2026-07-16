@@ -11,12 +11,12 @@ export const listRowStyles = css`
     --list-row-gap: var(--space-2);
   }
 
-  :host([size='large']) {
+  :host([size='48']) {
     height: var(--list-row-size);
     --list-row-size: var(--size-large);
   }
 
-  :host([size='huge']) {
+  :host([size='80']) {
     --list-row-size: var(--size-huge);
     --list-row-gap: var(--space-3);
   }
@@ -47,8 +47,8 @@ export const listRowStyles = css`
     line-height: 1;
   }
 
-  :host([size='large']) .emoji,
-  :host([size='huge']) .emoji {
+  :host([size='48']) .emoji,
+  :host([size='80']) .emoji {
     font-size: var(--font-size-24);
   }
 `

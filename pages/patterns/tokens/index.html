@@ -33,7 +33,6 @@
           <mm-color-token color="var(--gray200)" token="gray200: #d2d7d5"></mm-color-token>
           <mm-color-token color="var(--gray400)" token="gray400: #979d9a"></mm-color-token>
           <mm-color-token color="var(--gray800)" token="gray800: #3d4943"></mm-color-token>
-          <mm-color-token color="var(--gray900)" token="gray900: #1e2321"></mm-color-token>
           <mm-color-token color="var(--green100)" token="green100: green tint"></mm-color-token>
           <mm-color-token color="var(--green800)" token="green800: #1b995c"></mm-color-token>
           <mm-color-token color="var(--red100)" token="red100: red tint"></mm-color-token>
@@ -89,7 +88,7 @@
             token="background-subtle: #f5f6f5"
           ></mm-color-token>
           <mm-color-token
-            color="var(--gray900)"
+            color="var(--gray800)"
             on-color="var(--color-foreground-on-solid)"
             label="on background-strong"
             token="background-strong: #212529"
@@ -273,6 +272,18 @@
           <mm-flex direction="column" align-items="center" gap="2">
             <div
               style="
+                width: var(--size-40);
+                height: var(--size-40);
+                background: var(--color-background-strong);
+                border-radius: var(--radius);
+                flex-shrink: 0;
+              "
+            ></div>
+            <mm-list-marker variant="number" value="4"></mm-list-marker>
+          </mm-flex>
+          <mm-flex direction="column" align-items="center" gap="2">
+            <div
+              style="
                 width: var(--size-large);
                 height: var(--size-large);
                 background: var(--color-background-strong);
@@ -280,7 +291,7 @@
                 flex-shrink: 0;
               "
             ></div>
-            <mm-list-marker variant="number" value="4"></mm-list-marker>
+            <mm-list-marker variant="number" value="5"></mm-list-marker>
           </mm-flex>
           <mm-flex direction="column" align-items="center" gap="2">
             <div
@@ -292,16 +303,17 @@
                 flex-shrink: 0;
               "
             ></div>
-            <mm-list-marker variant="number" value="5"></mm-list-marker>
+            <mm-list-marker variant="number" value="6"></mm-list-marker>
           </mm-flex>
         </mm-flex>
       </mm-token-stage>
       <mm-token-group>
-        <mm-token-item key="size-tiny" value="1rem"></mm-token-item>
-        <mm-token-item key="size-small" value="1.5rem"></mm-token-item>
-        <mm-token-item key="size-medium" value="2rem"></mm-token-item>
-        <mm-token-item key="size-large" value="3rem"></mm-token-item>
-        <mm-token-item key="size-huge" value="5rem"></mm-token-item>
+        <mm-token-item key="size-16" value="16px"></mm-token-item>
+        <mm-token-item key="size-24" value="24px"></mm-token-item>
+        <mm-token-item key="size-32" value="32px"></mm-token-item>
+        <mm-token-item key="size-40" value="40px"></mm-token-item>
+        <mm-token-item key="size-48" value="48px"></mm-token-item>
+        <mm-token-item key="size-80" value="80px"></mm-token-item>
       </mm-token-group>
     </mm-flex>
 

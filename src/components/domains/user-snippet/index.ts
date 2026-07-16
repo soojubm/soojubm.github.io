@@ -23,7 +23,7 @@ class UserSnippet extends LitElement {
     return html`
       <mm-flex class="entity" direction="column" gap="2">
         <mm-avatar
-          size="huge"
+          size="80"
           variant=${this.avatarVariant}
           src=${ifDefined(this.avatarSrc || undefined)}
         ></mm-avatar>

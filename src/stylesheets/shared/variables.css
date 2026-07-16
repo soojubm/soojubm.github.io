@@ -44,9 +44,8 @@
   --gray0: #fff;
   --gray100: #f5f6f5;
   --gray200: #d2d7d5;
-  --gray400: #979d9a;
-  --gray800: #3d4943;
-  --gray900: #1e2321;
+  --gray400: #8a908d;
+  --gray800: #303b35;
 
   --green100: rgba(10, 160, 80, 0.075);
   --green800: #1b995c;
@@ -55,31 +54,35 @@
   --yellow800: gold;
   --orange800: #fb7800;
 
-  /* Tag category palette */
-  --color-blue-50: #dbeafe;
-  --color-blue-200: #93c5fd;
-  --color-blue-700: #1d4ed8;
-  --color-green-50: #dcfce7;
-  --color-green-200: #86efac;
-  --color-green-700: #166534;
-  --color-pink-50: #fce7f3;
-  --color-pink-200: #f9a8d4;
-  --color-pink-700: #be185d;
-  --color-orange-50: #ffedd5;
-  --color-orange-200: #fdba74;
-  --color-orange-700: #c2410c;
-  --color-cyan-50: #cffafe;
-  --color-cyan-200: #67e8f9;
-  --color-cyan-700: #0e7490;
-  --color-yellow-50: #fef3c7;
-  --color-yellow-200: #fcd34d;
-  --color-yellow-700: #92400e;
-  --color-red-50: #fee2e2;
-  --color-red-200: #fca5a5;
-  --color-red-700: #991b1b;
-  --color-purple-50: #f3e8ff;
-  --color-purple-200: #d8b4fe;
-  --color-purple-700: #7e22ce;
+  /* mm-tag 카테고리 팔레트: tag 전용 소유 토큰 (다른 컴포넌트가 재사용할 범용 색상 스케일이 아님) */
+  --tag-category-1-bg: #dbeafe;
+  --tag-category-1-border: #93c5fd;
+  --tag-category-1-text: #1d4ed8;
+  --tag-category-2-bg: #dcfce7;
+  --tag-category-2-border: #86efac;
+  --tag-category-2-text: #166534;
+  --tag-category-3-bg: #fce7f3;
+  --tag-category-3-border: #f9a8d4;
+  --tag-category-3-text: #be185d;
+  --tag-category-4-bg: #ffedd5;
+  --tag-category-4-border: #fdba74;
+  --tag-category-4-text: #c2410c;
+  --tag-category-5-bg: #cffafe;
+  --tag-category-5-border: #67e8f9;
+  --tag-category-5-text: #0e7490;
+  --tag-category-6-bg: #fef3c7;
+  --tag-category-6-border: #fcd34d;
+  --tag-category-6-text: #92400e;
+  --tag-category-7-bg: #fee2e2;
+  --tag-category-7-border: #fca5a5;
+  --tag-category-7-text: #991b1b;
+  --tag-category-8-bg: #f3e8ff;
+  --tag-category-8-border: #d8b4fe;
+  --tag-category-8-text: #7e22ce;
+
+  /* mm-component-tokens 이름 강조색: 컴포넌트 전용 소유 토큰 */
+  --token-word-state-color: #c2410c;
+  --token-word-property-color: #0e7490;
 
   --color-primary: var(--green800);
   --color-primary-subtle: var(--green100);
@@ -110,7 +113,7 @@
   --color-background-strong: var(--gray800);
   --color-border: var(--gray200);
 
-  --color-interaction-focus: var(--gray900);
+  --color-interaction-focus: var(--gray800);
   --color-interaction-active-background: var(--color-accent);
   --color-interaction-active-ring: #c8f3fa;
 
@@ -118,7 +121,7 @@
   --interaction-active-shadow: 0 0 0 2px var(--color-interaction-active-ring),
     inset 0 0 0 2px var(--color-foreground-on-solid);
 
-  --color-foreground: var(--gray900);
+  --color-foreground: var(--gray800);
   --color-foreground-light: var(--gray400);
   --color-foreground-on-solid: var(--gray0);
   --color-foreground-on-warning: var(--red800);
@@ -127,6 +130,7 @@
 
   --size-huge: 80px;
   --size-large: 48px;
+  --size-40: 40px;
   --size-medium: 32px;
   --size-small: 24px;
   --size-tiny: 16px;
@@ -231,31 +235,35 @@
 :root [data-theme='dark'] {
   --gray200: #252d29;
 
-  /* Tag category palette: dark theme */
-  --color-blue-50: #172554;
-  --color-blue-200: #1e40af;
-  --color-blue-700: #93c5fd;
-  --color-green-50: #052e16;
-  --color-green-200: #166534;
-  --color-green-700: #86efac;
-  --color-pink-50: #500724;
-  --color-pink-200: #9d174d;
-  --color-pink-700: #f9a8d4;
-  --color-orange-50: #431407;
-  --color-orange-200: #9a3412;
-  --color-orange-700: #fdba74;
-  --color-cyan-50: #083344;
-  --color-cyan-200: #155e75;
-  --color-cyan-700: #67e8f9;
-  --color-yellow-50: #422006;
-  --color-yellow-200: #854d0e;
-  --color-yellow-700: #fcd34d;
-  --color-red-50: #450a0a;
-  --color-red-200: #991b1b;
-  --color-red-700: #fca5a5;
-  --color-purple-50: #3b0764;
-  --color-purple-200: #6b21a8;
-  --color-purple-700: #d8b4fe;
+  /* mm-tag 카테고리 팔레트: dark theme (같은 이름을 그대로 재정의) */
+  --tag-category-1-bg: #172554;
+  --tag-category-1-border: #1e40af;
+  --tag-category-1-text: #93c5fd;
+  --tag-category-2-bg: #052e16;
+  --tag-category-2-border: #166534;
+  --tag-category-2-text: #86efac;
+  --tag-category-3-bg: #500724;
+  --tag-category-3-border: #9d174d;
+  --tag-category-3-text: #f9a8d4;
+  --tag-category-4-bg: #431407;
+  --tag-category-4-border: #9a3412;
+  --tag-category-4-text: #fdba74;
+  --tag-category-5-bg: #083344;
+  --tag-category-5-border: #155e75;
+  --tag-category-5-text: #67e8f9;
+  --tag-category-6-bg: #422006;
+  --tag-category-6-border: #854d0e;
+  --tag-category-6-text: #fcd34d;
+  --tag-category-7-bg: #450a0a;
+  --tag-category-7-border: #991b1b;
+  --tag-category-7-text: #fca5a5;
+  --tag-category-8-bg: #3b0764;
+  --tag-category-8-border: #6b21a8;
+  --tag-category-8-text: #d8b4fe;
+
+  /* mm-component-tokens 이름 강조색: dark theme (같은 이름을 그대로 재정의) */
+  --token-word-state-color: #fdba74;
+  --token-word-property-color: #67e8f9;
 
   --color-success-foreground: #86efac;
   --color-warning-foreground: #fdba74;
@@ -325,6 +333,8 @@
 
   --material-chrome-background: rgb(255 255 255 / var(--material-thin-opacity));
   --material-chrome-background-strong: rgb(255 255 255 / var(--material-thick-opacity));
+  --material-chrome-backdrop-filter: blur(var(--material-thin-blur)) saturate(1.4);
+  --material-chrome-backdrop-filter-strong: blur(var(--material-thick-blur)) saturate(1.4);
 
   /* background와 surface-background ? 의 구분이 필요한가. 어차피 surface token이나 component를 사용한다면 컴포넌트 토큰으로?? */
   /* --color-background: rgb(255 255 255 / 12%); */

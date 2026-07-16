@@ -5,23 +5,12 @@ export const topBarStyles = css`
     display: flex;
     align-items: center;
     gap: var(--space-2);
-    padding-block: var(--space-2);
+    padding-block: var(--space-3);
     position: relative;
   }
 
   .top-bar > mm-paragraph {
     flex: 1;
-  }
-
-  .is-sticky-top-bar {
-    & .top-bar {
-      position: fixed;
-      top: 0;
-      z-index: var(--material-zindex-chrome);
-    }
-    & .top-bar-background {
-      box-shadow: var(--material-shadow);
-    }
   }
 
   ::slotted([slot='action']) {

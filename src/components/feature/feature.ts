@@ -76,7 +76,7 @@ export class Feature extends LitElement {
   private renderVisual() {
     if (this.emoji) {
       return html`
-        <mm-avatar variant="secondary" size="large">
+        <mm-avatar variant="secondary" size="48">
           <span class="feature-emoji" aria-hidden="true">${this.emoji}</span>
         </mm-avatar>
       `
@@ -84,7 +84,7 @@ export class Feature extends LitElement {
     const icon = this.icon || HEADING_ICON_MAP[this.heading] || ''
     const iconName = ICON_MAP[icon] ?? icon
     return html`
-      <mm-avatar variant="secondary" size="large">
+      <mm-avatar variant="secondary" size="48">
         <mm-icon size="large" name=${iconName}></mm-icon>
       </mm-avatar>
     `
