@@ -305,9 +305,9 @@
 :root [data-theme='glass'] {
   /*
    * glass는 body/surface/input 등 앱 전역 토큰(--color-background*)은 건드리지 않는다.
-   * navbar, navbar-user pill, prompt-input처럼 화면 위에 떠 있는(floating) 조각만
-   * 아래 --floating-*, --area-*, --prompt-input-*, --theme-switcher-menu-* 토큰을 통해
-   * 반투명+blur 처리한다.
+   * navbar, navbar-user pill, prompt-input처럼 화면 위에 떠 있는 chrome 조각만
+   * 아래 --material-chrome-*, --control-*, --prompt-input-*, --theme-switcher-menu-* 토큰을
+   * 통해 반투명+blur 처리한다.
    *
    * material 세기는 "바깥쪽 바 vs 그 위에 얹힌 레이어" 관계로 정한다. 바깥쪽 chrome 바(navbar,
    * prompt-input 본체)는 면적이 넓고 배경 역할이라 thin으로 가볍게 — 뒤 콘텐츠가 은은하게
@@ -316,32 +316,33 @@
    * 작고 내용 밀도가 높아 thick으로 — 텍스트 가독성과 포커스가 우선이라 더 강하게 가린다.
    * 즉 중첩될수록 약해지는 게 아니라 강해진다: thin(바깥) → thick(중첩된 포커스 레이어).
    */
-  --backdrop-filter: blur(var(--material-thin-blur)) saturate(1.4);
   --radius: var(--radius-large);
-  --shadow-surface: 0 8px 32px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.2);
 
-  --floating-background: rgb(255 255 255 / var(--material-thin-opacity));
-  --floating-backdrop-filter-strong: blur(var(--material-thick-blur)) saturate(1.4);
-  --floating-background-strong: rgb(255 255 255 / var(--material-thick-opacity));
-  --floating-border: var(--border-width) solid rgb(255 255 255 / 50%);
-  --floating-shadow: var(--shadow-surface);
-  --floating-edge-start: linear-gradient(to bottom, rgb(255 255 255 / 15%), transparent);
+  /* 테두리·그림자는 thin/regular/thick 세기와 무관하게 모든 glass 표면이 공유하는 마감이다 */
+  --material-glass-border: var(--border-width) solid rgb(255 255 255 / 50%);
+  --material-glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.2);
 
-  --prompt-input-background: var(--floating-background);
-  --prompt-input-border: var(--floating-border);
-  --prompt-input-shadow: var(--floating-shadow);
+  --material-chrome-background: rgb(255 255 255 / var(--material-thin-opacity));
+  --material-chrome-background-strong: rgb(255 255 255 / var(--material-thick-opacity));
 
-  --theme-switcher-menu-background: var(--floating-background-strong);
-  --theme-switcher-menu-backdrop-filter: var(--floating-backdrop-filter-strong);
-  --theme-switcher-menu-border: var(--floating-border);
+  --material-chrome-backdrop-filter: blur(var(--material-thin-blur)) saturate(1.4);
+  --material-chrome-backdrop-filter-strong: blur(var(--material-thick-blur)) saturate(1.4);
+  --material-chrome-edge-start: linear-gradient(to bottom, rgb(255 255 255 / 15%), transparent);
 
-  --area-padding: var(--space-1) var(--space-2);
-  --area-border: var(--floating-border);
-  --area-border-radius: var(--radius-large);
-  --area-backdrop-filter: var(--floating-backdrop-filter-strong);
-  --area-shadow: var(--floating-shadow);
-  --area-background-section: var(--floating-background-strong);
-  --area-edge-start: var(--floating-edge-start);
+  --prompt-input-background: var(--material-chrome-background);
+  --prompt-input-border: var(--material-glass-border);
+  --prompt-input-shadow: var(--material-glass-shadow);
+
+  --theme-switcher-menu-background: var(--material-chrome-background-strong);
+  --theme-switcher-menu-backdrop-filter: var(--material-chrome-backdrop-filter-strong);
+  --theme-switcher-menu-border: var(--material-glass-border);
+
+  --control-padding: var(--space-1) var(--space-2);
+  --control-border: var(--material-glass-border);
+  --control-border-radius: var(--radius-large);
+  --control-backdrop-filter: var(--material-chrome-backdrop-filter-strong);
+  --control-shadow: var(--material-glass-shadow);
+  --control-background: var(--material-chrome-background-strong);
 
   /*
    * mm-dialog(mm-sheet variant="center")는 다른 chrome 위에 얹히는 게 아니라 화면 위에
@@ -352,11 +353,11 @@
    */
   --sheet-glass-background: rgb(255 255 255 / var(--material-regular-opacity));
   --sheet-glass-backdrop-filter: blur(var(--material-regular-blur)) saturate(1.4);
-  --sheet-glass-border: var(--floating-border);
-  --sheet-glass-shadow: var(--shadow-surface);
+  --sheet-glass-border: var(--material-glass-border);
+  --sheet-glass-shadow: var(--material-glass-shadow);
 
   /* .sidebar-menu도 dialog와 같은 1-depth 표면(regular 세기 하나)이라 같은 판단을 따른다 */
   --sidebar-menu-background: rgb(255 255 255 / var(--material-regular-opacity));
   --sidebar-menu-backdrop-filter: blur(var(--material-regular-blur)) saturate(1.4);
-  --sidebar-menu-shadow: var(--shadow-surface);
+  --sidebar-menu-shadow: var(--material-glass-shadow);
 }

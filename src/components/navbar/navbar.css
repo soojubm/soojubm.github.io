@@ -5,8 +5,8 @@
   height: var(--navbar-height);
   padding: var(--space-3) var(--layout-padding-inline);
   box-sizing: border-box;
-  background: var(--floating-background, var(--color-background));
-  backdrop-filter: var(--backdrop-filter, none);
+  background: var(--material-chrome-background, var(--color-background));
+  backdrop-filter: var(--material-chrome-backdrop-filter, none);
 
   position: fixed;
   top: 0;
@@ -20,7 +20,7 @@
   height: 12px;
   inset-inline: 0;
   inset-block-end: -12px;
-  background: var(--area-edge-start);
+  background: var(--material-chrome-edge-start, transparent);
 }
 
 .navbar-logo {
@@ -43,13 +43,13 @@
   margin: 0 0 0 auto;
   position: relative;
 
-  background: var(--area-background-section);
-  border: var(--area-border);
-  border-radius: var(--area-border-radius);
-  padding: var(--area-padding);
-  backdrop-filter: var(--area-backdrop-filter, none);
-  box-shadow: var(--area-shadow);
-  -webkit-backdrop-filter: var(--area-backdrop-filter, none);
+  background: var(--control-background);
+  border: var(--control-border);
+  border-radius: var(--control-border-radius);
+  padding: var(--control-padding);
+  backdrop-filter: var(--control-backdrop-filter, none);
+  box-shadow: var(--control-shadow);
+  -webkit-backdrop-filter: var(--control-backdrop-filter, none);
 }
 
 .page {

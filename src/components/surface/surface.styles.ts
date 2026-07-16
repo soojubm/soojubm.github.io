@@ -46,7 +46,7 @@ export const surfaceBaseStyles = css`
     --surface-border-radius: var(--radius);
     --surface-background-color: var(--color-background);
     --surface-shadow: none;
-    --surface-backdrop-filter: var(--backdrop-filter, none);
+    --surface-backdrop-filter: var(--material-chrome-backdrop-filter, none);
 
     display: flex;
     flex-direction: column;
