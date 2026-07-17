@@ -18,7 +18,7 @@ import '@/components/text/semantics/caption'
 export class ListItem extends LitElement {
   static styles = [listItemStyles]
 
-  @property({ type: String, reflect: true }) size: AvatarSize = '40'
+  @property({ type: String, reflect: true }) size: AvatarSize = '32'
   @property({ type: String }) label = ''
   @property({ type: String }) description = ''
 
@@ -29,13 +29,26 @@ export class ListItem extends LitElement {
   @property({ type: String, attribute: 'avatar-shape' }) avatarShape: AvatarShape = 'square'
 
   @state() private hasAvatar = false
+  @state() private hasTrailing = false
 
   render() {
     return html`
       ${this.renderLeading()}
       <div class="content">${this.renderLabel()} ${this.renderDescription()}</div>
+      ${this.renderTrailing()}
+    `
+  }
+
+  private renderTrailing() {
+    if (!this.hasTrailing) {
+      return html`
+        <slot name="trailing" hidden @slotchange=${this.handleTrailingSlotChange}></slot>
+      `
+    }
+
+    return html`
       <span slot="trailing">
-        <slot name="trailing"></slot>
+        <slot name="trailing" @slotchange=${this.handleTrailingSlotChange}></slot>
       </span>
     `
   }
@@ -111,6 +124,11 @@ export class ListItem extends LitElement {
   private handleAvatarSlotChange(event: Event) {
     const slot = event.target as HTMLSlotElement
     this.hasAvatar = this.hasAssignedContent(slot)
+  }
+
+  private handleTrailingSlotChange(event: Event) {
+    const slot = event.target as HTMLSlotElement
+    this.hasTrailing = this.hasAssignedContent(slot)
   }
 
   private hasAssignedContent(slot: HTMLSlotElement) {
