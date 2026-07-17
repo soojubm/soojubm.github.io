@@ -98,12 +98,8 @@
     <mm-prop name="size" type="'32' | '24' | '18' | '14' | '12' = '14'"></mm-prop>
     <mm-prop name="weight" type="'medium' | 'bold' = 'medium'"></mm-prop>
     <mm-prop name="color" type="'inherit' | 'light' | 'danger' = 'inherit'"></mm-prop>
-    <mm-prop name="truncate" type="'1' | '2' | '3'" optional></mm-prop>
+    <mm-prop name="maxLength" type="'1' | '2' | '3'" optional></mm-prop>
   </mm-component-props>
-
-  <mm-component-tokens>
-    <mm-token name="text-color" default="inherit"></mm-token>
-  </mm-component-tokens>
 
   <mm-component-guide>
     <mm-component-feature-list>
@@ -318,6 +314,26 @@
         <em>(30%)</em>
       </div>
     </div>
+  </mm-component-section>
+
+  <mm-component-section
+    heading="Text Max Length"
+    description="지정한 줄 수에서 말줄임표로 잘립니다."
+  >
+    <mm-flex direction="column" gap="4">
+      <mm-text max-length="1">
+        한 줄에서 말줄임되는 텍스트입니다. 카드나 리스트처럼 공간이 좁은 곳에서 긴 제목을 간결하게
+        보여줄 때 사용합니다.
+      </mm-text>
+      <mm-text max-length="2">
+        두 줄까지 노출되는 텍스트입니다. 사용자는 핵심 내용을 빠르게 훑을 수 있고, 반복되는 목록
+        안에서 길이가 제각각일 때 유용합니다.
+      </mm-text>
+      <mm-text max-length="3">
+        세 줄까지 노출되는 텍스트입니다. 너무 짧게 자르면 맥락이 사라지는 소개글이나 요약문에
+        적합하며, 화면 안의 리듬은 유지하면서도 충분한 정보를 제공해야 할 때 사용합니다.
+      </mm-text>
+    </mm-flex>
   </mm-component-section>
 
   <mm-component-references>

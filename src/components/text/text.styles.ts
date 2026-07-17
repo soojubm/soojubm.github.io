@@ -3,6 +3,7 @@ import { css } from 'lit'
 export type TextSize = '32' | '24' | '18' | '14' | '12'
 export type TextWeight = 'medium' | 'bold'
 export type TextColor = 'inherit' | 'light' | 'danger'
+export type TextMaxLength = '' | '1' | '2' | '3'
 
 export const textStyles = css`
   :host {
@@ -45,6 +46,30 @@ export const textStyles = css`
 
   :host([weight='bold']) {
     font-weight: var(--font-weight-bold);
+  }
+
+  :host([max-length]) > * {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  :host([max-length='1']) > * {
+    white-space: nowrap;
+  }
+
+  :host([max-length='2']) > *,
+  :host([max-length='3']) > * {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+  }
+
+  :host([max-length='2']) > * {
+    -webkit-line-clamp: 2;
+  }
+
+  :host([max-length='3']) > * {
+    -webkit-line-clamp: 3;
   }
 
   h1,
