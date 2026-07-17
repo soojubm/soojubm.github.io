@@ -55,7 +55,7 @@ export class ReviewItem extends LitElement {
     if (!this.author && !this.datetime) return nothing
 
     return html`
-      <mm-list-row label=${this.author} description=${this.datetime}></mm-list-row>
+      <mm-list-item label=${this.author} description=${this.datetime}></mm-list-item>
     `
   }
 }

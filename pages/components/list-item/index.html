@@ -1,6 +1,6 @@
 <main class="page">
   <mm-page-header
-    heading="List Row"
+    heading="List Item"
     description="leading(아바타·아이콘) + 본문(제목·설명) + trailing(액션) 한 줄을 구성하는 표현 전용 primitive. 상호작용 의미가 필요하면 menuItem을 사용합니다."
   ></mm-page-header>
 
@@ -8,45 +8,57 @@
 
   <mm-component-example>
     <mm-flex direction="column" gap="2">
-      <mm-list-row label="아바타 없고 사이즈 미디엄" description="Youtube Subscriber"></mm-list-row>
-      <mm-list-row
-        label="사이즈 미디엄"
+      <mm-menu-item-group>
+        <mm-list-item size="32" label="32 사이즈"></mm-list-item>
+        <mm-list-item
+          size="32"
+          label="32 사이즈"
+          avatar-variant="secondary"
+          avatar-src="/src/images/soojubm.png"
+        ></mm-list-item>
+      </mm-menu-item-group>
+      <mm-separator spacing="small"></mm-separator>
+      <mm-menu-item-group>
+        <mm-list-item
+          label="40 사이즈 / 아바타 없음"
+          description="Youtube Subscriber"
+        ></mm-list-item>
+        <mm-list-item
+          label="40 사이즈"
+          description="Youtube Subscriber"
+          avatar-variant="secondary"
+          avatar-src="/src/images/soojubm.png"
+        ></mm-list-item>
+      </mm-menu-item-group>
+      <mm-separator spacing="small"></mm-separator>
+      <mm-list-item label="48 사이즈" description="Youtube Subscriber" size="48"></mm-list-item>
+      <mm-list-item
+        label="48 사이즈"
         description="Youtube Subscriber"
-        avatar-variant="secondary"
-        avatar-src="/src/images/soojubm.png"
-      ></mm-list-row>
-      <mm-list-row
-        label="사이즈 라지 단일 라벨"
         size="48"
         avatar-variant="secondary"
         avatar-src="/src/images/soojubm.png"
-      ></mm-list-row>
-      <mm-separator></mm-separator>
-      <mm-list-row label="사이즈 라지" description="Youtube Subscriber" size="48"></mm-list-row>
-      <mm-list-row
-        label="사이즈 라지"
-        description="Youtube Subscriber"
-        size="48"
-        avatar-variant="secondary"
-        avatar-src="/src/images/soojubm.png"
-      ></mm-list-row>
-      <mm-list-row
-        label="사이즈 휴즈"
+      ></mm-list-item>
+      <mm-separator spacing="small"></mm-separator>
+      <mm-list-item
+        label="80 사이즈 용도 없음"
         description="Youtube Subscriber"
         size="80"
+        avatar-shape="circle"
         avatar-variant="secondary"
         avatar-src="/src/images/soojubm.png"
-      ></mm-list-row>
+      ></mm-list-item>
     </mm-flex>
   </mm-component-example>
 
   <mm-component-props>
-    <mm-prop name="size" type="'40' | '48' | '80' = '40'" optional></mm-prop>
+    <mm-prop name="size" type="'32' | '40' | '48' | '80' = '40'" optional></mm-prop>
     <mm-prop name="label" type="string" optional></mm-prop>
     <mm-prop name="description" type="string" optional></mm-prop>
     <mm-prop name="icon" type="IconName" optional></mm-prop>
     <mm-prop name="avatar-src" type="string" optional></mm-prop>
     <mm-prop name="avatar-variant" type="string" optional></mm-prop>
+    <mm-prop name="avatar-shape" type="'circle' | 'square' = 'square'" optional></mm-prop>
     <mm-prop name="slot: default" type="HTMLElement" optional></mm-prop>
     <mm-prop name="slot: trailing" type="HTMLElement" optional></mm-prop>
   </mm-component-props>
@@ -58,7 +70,7 @@
       "trailing — 오른쪽에 배치되는 선택적 슬롯. 액션 버튼·뱃지·메타 텍스트 등을 넣습니다."
     ]'
   >
-    <mm-list-row
+    <mm-list-item
       label="수줍이"
       description="바보"
       size="48"
@@ -66,7 +78,7 @@
       style="width: 100%"
     >
       <mm-follow-button slot="trailing"></mm-follow-button>
-    </mm-list-row>
+    </mm-list-item>
     <mm-list-marker
       variant="number"
       value="1"
@@ -85,24 +97,12 @@
   </mm-component-anatomy>
 
   <mm-component-guide>
-    <mm-feature-group columns="2">
+    <mm-feature-group columns="4">
       <mm-feature
         heading="Structural"
         description="leading·content·trailing의 고정된 골격으로 반복되는 행의 구조를 잡습니다. 상호작용 없이 레이아웃만 담당하는 표현 전용 행입니다."
       ></mm-feature>
     </mm-feature-group>
-    <mm-paragraph-group>
-      <mm-text weight="bold">언제 사용하나요</mm-text>
-      <mm-paragraph>
-        리스트의 한 항목, 사용자 정보 행, 설정 행처럼 "아이콘/아바타 + 텍스트 + 액션"이 가로로
-        나열되는 모든 곳의 기본 골격입니다. mm-user-row가 이 위에 아바타 기본값을 얹어 만들어집니다.
-      </mm-paragraph>
-      <mm-text weight="bold">menuItem과는 어떤 차이가 있나요?</mm-text>
-      <mm-paragraph>
-        list-row는 레이아웃만 담당하며 role·hover·키보드 같은 상호작용을 포함하지 않습니다. 클릭
-        가능한 메뉴 항목이 필요하면 menuItem 계열을 사용하세요.
-      </mm-paragraph>
-    </mm-paragraph-group>
   </mm-component-guide>
 
   <mm-component-section heading="UserRow" description="사용자 맥락">
@@ -130,4 +130,23 @@
     <mm-link href="avatar.html">Avatar</mm-link>
     <mm-link href="menuitem.html">menuItem</mm-link>
   </mm-component-related>
+
+  <mm-component-references>
+    <mm-link external href="https://developer.apple.com/documentation/SwiftUI/List">
+      SwiftUI - List
+    </mm-link>
+    <mm-link
+      external
+      href="https://developer.apple.com/design/human-interface-guidelines/lists-and-tables"
+    >
+      HIG Lists and Tables
+    </mm-link>
+    <mm-link external href="https://m3.material.io/components/lists/overview">MD3 Lists</mm-link>
+    <mm-link external href="https://reactnativeelements.com/docs/components/listitem">
+      React Native Elements - ListItem
+    </mm-link>
+    <mm-link external href="https://api.flutter.dev/flutter/material/ListTile-class.html">
+      Flutter - ListTile
+    </mm-link>
+  </mm-component-references>
 </main>

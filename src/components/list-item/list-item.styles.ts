@@ -1,24 +1,30 @@
 import { css } from 'lit'
 
-export const listRowStyles = css`
+export const listItemStyles = css`
   :host {
     display: flex;
     align-items: center;
-    min-height: var(--list-row-size);
-    gap: var(--list-row-gap);
+    min-height: var(--list-item-size);
+    gap: var(--list-item-gap);
 
-    --list-row-size: var(--size-medium);
-    --list-row-gap: var(--space-2);
+    --list-item-size: var(--size-medium);
+    --list-item-gap: var(--space-2);
+  }
+
+  /* :host([size='32']) {
+  } */
+
+  :host([size='40']) {
   }
 
   :host([size='48']) {
-    height: var(--list-row-size);
-    --list-row-size: var(--size-large);
+    --list-item-gap: var(--space-2);
+    --list-item-size: var(--size-large);
   }
 
   :host([size='80']) {
-    --list-row-size: var(--size-huge);
-    --list-row-gap: var(--space-3);
+    --list-item-size: var(--size-huge);
+    --list-item-gap: var(--space-3);
   }
 
   [slot='leading'],
@@ -28,7 +34,7 @@ export const listRowStyles = css`
     align-items: center;
   }
 
-  mm-flex {
+  .content {
     min-width: 0;
     flex: 1;
   }
@@ -41,8 +47,8 @@ export const listRowStyles = css`
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: var(--list-row-size);
-    height: var(--list-row-size);
+    width: var(--list-item-size);
+    height: var(--list-item-size);
     font-size: var(--font-size-18);
     line-height: 1;
   }

@@ -2,12 +2,12 @@ import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
 
 import type { IconName } from '@/components/icon-button/semantics/icon-names'
-import '@/components/list-row/list-row'
+import '@/components/list-item/list-item'
 
 type DisableableElement = HTMLElement & { disabled?: boolean }
 
 /**
- * 설정 화면의 한 행. mm-list-row를 합성하고
+ * 설정 화면의 한 행. mm-list-item을 합성하고
  * setting 고유의 패딩·구분선을 입힙니다.
  *
  * <mm-setting-item icon="bell" label="알림" description="...">
@@ -38,9 +38,9 @@ export class SettingItem extends LitElement {
 
   render() {
     return html`
-      <mm-list-row icon=${this.icon || nothing} label=${this.label} description=${this.description}>
+      <mm-list-item icon=${this.icon || nothing} label=${this.label} description=${this.description}>
         <slot name="action" slot="trailing" @slotchange=${this.syncActions}></slot>
-      </mm-list-row>
+      </mm-list-item>
     `
   }
 

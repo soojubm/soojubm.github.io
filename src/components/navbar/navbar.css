@@ -135,7 +135,7 @@
 
 .sidebar-menu > div mm-menu-item-link {
   --menuitem-border-radius: 0 var(--radius) var(--radius) 0;
-  --menuitem-padding-inline-start: calc(var(--space-4) + var(--space-2));
+  --menuitem-padding-inline: calc(var(--space-4) + var(--space-2));
 
   display: block;
   margin: 0 0 0 var(--space-4);
@@ -144,7 +144,7 @@
   position: relative;
 }
 
-.sidebar-menu > div mm-menu-item-link mm-list-row {
+.sidebar-menu > div mm-menu-item-link mm-list-item {
   margin-left: 1rem;
 }
 

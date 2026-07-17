@@ -14,25 +14,26 @@
           label="로그아웃 (비활성)"
           disabled
         ></mm-menu-item-action>
-      </mm-menu-item-group>
-      <mm-menu-item-group aria-label="액션 메뉴">
         <mm-menu-item-action
+          size="40"
           icon="app-window"
           trailing-icon="arrow-right"
           label="수줍이 앱"
           description="앱에서 게시물을 엽니다."
         ></mm-menu-item-action>
-        <mm-separator></mm-separator>
+      </mm-menu-item-group>
+      <mm-separator></mm-separator>
+      <mm-menu-item-group aria-label="액션 메뉴">
         <mm-menu-item-action
+          size="48"
           label="Personal License"
           description="1 user"
-          size="48"
         ></mm-menu-item-action>
         <mm-menu-item-action
+          size="48"
           icon="group"
           label="Frontend Group"
           description="프론트엔드 개발자 모임"
-          size="48"
         ></mm-menu-item-action>
       </mm-menu-item-group>
     </mm-flex>
@@ -48,6 +49,7 @@
     <mm-prop name="emoji" type="string" optional></mm-prop>
     <mm-prop name="avatar-src" type="string" optional></mm-prop>
     <mm-prop name="avatar-variant" type="string = 'tertiary'" optional></mm-prop>
+    <mm-prop name="avatar-shape" type="'circle' | 'square' = 'square'" optional></mm-prop>
     <mm-prop name="tone" type="'danger' | string" optional></mm-prop>
     <mm-prop name="disabled" type="boolean" optional></mm-prop>
   </mm-component-props>
@@ -71,7 +73,7 @@
     <mm-feature-group columns="2">
       <mm-feature
         heading="Interactive - action"
-        description="hover·포커스·키보드 탐색과 명령 실행 상호작용을 항목이 소유합니다. 표현만 필요하면 list-row를 사용하세요."
+        description="hover·포커스·키보드 탐색과 명령 실행 상호작용을 항목이 소유합니다. 표현만 필요하면 list-item을 사용하세요."
       ></mm-feature>
       <mm-feature
         heading="Interactive - selection"

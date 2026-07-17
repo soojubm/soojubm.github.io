@@ -3,9 +3,9 @@ import { customElement, property, state } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
 import type { IconName } from '@/components/icon-button/semantics/icon-names'
-import type { AvatarSize, AvatarVariant } from '@/components/avatar/avatar'
+import type { AvatarShape, AvatarSize, AvatarVariant } from '@/components/avatar/avatar'
 
-import { listRowStyles } from '@/components/list-row/list-row.styles'
+import { listItemStyles } from '@/components/list-item/list-item.styles'
 import '@/components/avatar/avatar'
 import '@/components/flex/flex'
 import '@/components/text/semantics/caption'
@@ -14,9 +14,9 @@ import '@/components/text/semantics/caption'
  * leading(아바타·아이콘) + content(title/description) + trailing 한 줄을 구성하는 표현 전용 primitive.
  * 상호작용(role, hover 등)은 포함하지 않는다. 메뉴 의미가 필요하면 mm-menu-item-action을 쓴다.
  */
-@customElement('mm-list-row')
-export class ListRow extends LitElement {
-  static styles = [listRowStyles]
+@customElement('mm-list-item')
+export class ListItem extends LitElement {
+  static styles = [listItemStyles]
 
   @property({ type: String, reflect: true }) size: AvatarSize = '40'
   @property({ type: String }) label = ''
@@ -26,15 +26,14 @@ export class ListRow extends LitElement {
   @property({ type: String }) emoji = ''
   @property({ type: String, attribute: 'avatar-src' }) avatarSrc = ''
   @property({ type: String, attribute: 'avatar-variant' }) avatarVariant: AvatarVariant = 'tertiary'
+  @property({ type: String, attribute: 'avatar-shape' }) avatarShape: AvatarShape = 'square'
 
   @state() private hasAvatar = false
 
   render() {
     return html`
       ${this.renderLeading()}
-      <mm-flex direction="column" gap="0">
-        ${this.renderLabel()} ${this.renderDescription()}
-      </mm-flex>
+      <div class="content">${this.renderLabel()} ${this.renderDescription()}</div>
       <span slot="trailing">
         <slot name="trailing"></slot>
       </span>
@@ -70,6 +69,7 @@ export class ListRow extends LitElement {
       <mm-avatar
         size=${this.size}
         variant=${this.avatarVariant}
+        shape=${this.avatarShape}
         icon=${ifDefined(this.icon)}
         src=${ifDefined(this.avatarSrc || undefined)}
       ></mm-avatar>
@@ -124,4 +124,4 @@ export class ListRow extends LitElement {
   }
 }
 
-export default ListRow
+export default ListItem

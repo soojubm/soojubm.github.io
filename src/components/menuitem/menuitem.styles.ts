@@ -4,7 +4,7 @@ export const menuItemStyles = css`
   :host {
     --menuitem-border-radius: var(--radius);
     --menuitem-background-color-hover: var(--color-background-subtle);
-    --menuitem-padding-inline-start: 0;
+    --menuitem-padding-inline: var(--space-2);
   }
 
   :is(button, a, [role^='menuitem']) {
@@ -12,7 +12,7 @@ export const menuItemStyles = css`
     align-items: center;
     width: 100%;
     border-radius: var(--menuitem-border-radius);
-    padding-inline-start: var(--menuitem-padding-inline-start);
+    padding-inline: var(--menuitem-padding-inline);
     color: inherit;
     text-decoration: none;
     box-sizing: border-box;
@@ -39,12 +39,12 @@ export const menuItemStyles = css`
     }
   }
 
-  /* tone=danger: color를 행에 지정하면 list-row 내부 텍스트·아이콘이 상속받는다 */
+  /* tone=danger: color를 행에 지정하면 list-item 내부 텍스트·아이콘이 상속받는다 */
   :host([tone='danger']) :is(button, a, [role^='menuitem']) {
     color: var(--color-danger);
   }
 
-  mm-list-row {
+  mm-list-item {
     flex: 1;
   }
 

@@ -93,7 +93,7 @@
       ></mm-feature>
       <mm-feature
         heading="Structural"
-        description="separator · surface · list-row · table"
+        description="separator · surface · list-item · table"
       ></mm-feature>
       <mm-feature
         heading="Groupable"
@@ -748,24 +748,24 @@
         줍니다.
       </mm-paragraph>
       <mm-grid columns="3">
-        <mm-list-row
+        <mm-list-item
           icon="group"
           size="48"
           label="Relationship"
           description="인접성, 정렬, 포함 관계는 요소 간 관계를 나타냅니다."
-        ></mm-list-row>
-        <mm-list-row
+        ></mm-list-item>
+        <mm-list-item
           icon="group"
           size="48"
           label="Separation"
           description="구분선, 간격, 배경 차이는 항목이나 섹션의 경계를 나타냅니다."
-        ></mm-list-row>
-        <mm-list-row
+        ></mm-list-item>
+        <mm-list-item
           icon="group"
           size="48"
           label="Density as meaning"
           description="높은 밀도는 관리형/목록형 인터페이스를, 낮은 밀도는 탐색형/강조형 인터페이스를 암시할 수 있습니다."
-        ></mm-list-row>
+        ></mm-list-item>
       </mm-grid>
     </mm-flex> -->
 
@@ -975,31 +975,31 @@
     </mm-paragraph>
 
     <mm-flex direction="column" gap="3">
-      <mm-list-row
+      <mm-list-item
         icon="check-circle"
         size="40"
         label="Success"
         description="작업이 성공적으로 완료되었음을 나타냅니다."
-      ></mm-list-row>
-      <mm-list-row
+      ></mm-list-item>
+      <mm-list-item
         icon="info-circle"
         size="40"
         label="Info"
         description="사용자에게 참고 가능한 보조 정보를 제공합니다."
-      ></mm-list-row>
-      <mm-list-row
+      ></mm-list-item>
+      <mm-list-item
         icon="warning-triangle"
         size="40"
         label="Warning"
         description="진행 전에 사용자의 주의가 필요한 상태입니다."
-      ></mm-list-row>
+      ></mm-list-item>
 
-      <mm-list-row
+      <mm-list-item
         icon="xmark-circle"
         size="40"
         label="Error"
         description="오류, 실패, 수정이 필요한 상태를 나타냅니다."
-      ></mm-list-row>
+      ></mm-list-item>
     </mm-flex>
   </mm-content-section>
 
@@ -1010,36 +1010,36 @@
     </mm-paragraph>
 
     <mm-flex direction="column" gap="3">
-      <mm-list-row
+      <mm-list-item
         icon="circle"
         size="40"
         label="Idle"
         description="아직 아무 요청도 하지 않은 대기·초기 상태입니다."
-      ></mm-list-row>
-      <mm-list-row
+      ></mm-list-item>
+      <mm-list-item
         icon="refresh"
         size="40"
         label="Pending / Fetching"
         description="데이터를 가져오는 중입니다. 스켈레톤이나 스피너를 노출합니다."
-      ></mm-list-row>
-      <mm-list-row
+      ></mm-list-item>
+      <mm-list-item
         icon="check-circle"
         size="40"
         label="Resolved / Success"
         description="데이터를 성공적으로 가져와 정상 UI를 노출합니다."
-      ></mm-list-row>
-      <mm-list-row
+      ></mm-list-item>
+      <mm-list-item
         icon="xmark-circle"
         size="40"
         label="Rejected / Failed"
         description="데이터를 가져오는 데 실패해 에러 화면을 노출합니다."
-      ></mm-list-row>
-      <mm-list-row
+      ></mm-list-item>
+      <mm-list-item
         icon="glass-empty"
         size="40"
         label="Empty"
         description="완료되었으나 데이터가 0건일 때 빈 화면을 노출합니다."
-      ></mm-list-row>
+      ></mm-list-item>
     </mm-flex>
   </mm-content-section>
 
@@ -1489,34 +1489,34 @@
       </div>
     </div>
     <mm-grid columns="4">
-      <mm-list-row
+      <mm-list-item
         label="Email"
         description="hello@mantine.dev"
         size="48"
         avatar-variant="secondary"
         icon="people-tag"
-      ></mm-list-row>
-      <mm-list-row
+      ></mm-list-item>
+      <mm-list-item
         label="Phone"
         description="+49 (800) 335 35 35"
         size="48"
         avatar-variant="secondary"
         icon="people-tag"
-      ></mm-list-row>
-      <mm-list-row
+      ></mm-list-item>
+      <mm-list-item
         label="Address"
         description="844 Morris Park avenue"
         size="48"
         avatar-variant="secondary"
         icon="people-tag"
-      ></mm-list-row>
-      <mm-list-row
+      ></mm-list-item>
+      <mm-list-item
         label="Working hours"
         description="8 a.m. – 11 p.m."
         size="48"
         avatar-variant="secondary"
         icon="people-tag"
-      ></mm-list-row>
+      ></mm-list-item>
     </mm-grid>
   </header>
 
