@@ -4,7 +4,7 @@ import { customElement, property } from 'lit/decorators.js'
 import { classMap } from 'lit/directives/class-map.js'
 
 import '@/components/button/semantics/read-more-button'
-import { componentPropsStyles, propStyles } from '@/components/domains/component/props.styles'
+import { componentPropsStyles, propStyles } from '@/components/domains/component/component-props.styles'
 import { uniqueId } from '@/utils/unique-id'
 
 /**
