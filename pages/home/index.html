@@ -1,5 +1,5 @@
 <main class="page" style="display: flex; flex-direction: column; gap: var(--space-section)">
-  <!-- <section class="carousel js-carousel">
+  <section class="carousel js-carousel">
     <mm-flex direction="column" gap="1">
       <mm-text size="24" weight="bold" as="h2">Scroll Hint</mm-text>
       <mm-paragraph>
@@ -61,7 +61,7 @@
         alt="영화 샘플"
       ></mm-thumbnail>
     </mm-scroll>
-  </section> -->
+  </section>
   <mm-flex gap="8" direction="column">
     <mm-heading level="1" weight="bold" as="h1">
       디자인 시스템
@@ -72,102 +72,6 @@
       texts='["Web Component - Lit", "Github Actions", "Constraint-driven design"]'
     ></mm-text-list>
   </mm-flex>
-
-  <!-- <mm-flex direction="column" gap="4">
-    <mm-text size="24" weight="bold" as="h2">Component Traits</mm-text>
-    <mm-paragraph>
-      컴포넌트 특성 어휘입니다. 설명은 그 특성을 전시하는 페이지이며, 통합·개명 이력을 함께
-      적었습니다. 각 컴포넌트 페이지에 배포 완료된 상태로, 어휘를 바꾸면 페이지와 함께 수정합니다.
-    </mm-paragraph>
-
-    <mm-feature-group columns="3">
-      <mm-feature
-        heading="Glanceable"
-        description="tag · checkbox · radio · tabs — Easy scanning, tag의 Informational 통합"
-      ></mm-feature>
-      <mm-feature heading="Categorical" description="tag"></mm-feature>
-      <mm-feature heading="Representative" description="avatar · thumbnail"></mm-feature>
-      <mm-feature
-        heading="Fallback"
-        description="avatar · thumbnail — 콘텐츠 부재·로드 실패에도 대체 표현으로 형태와 의미를 유지하는 특성. 향후 스켈레톤 등 로딩 대체 표현으로 확장 후보"
-      ></mm-feature>
-      <mm-feature
-        heading="Structural"
-        description="separator · surface · list-item · table"
-      ></mm-feature>
-      <mm-feature
-        heading="Groupable"
-        description="avatar · text · tag · button · icon-button · toggle-button · menuitem · checkbox · radio · input"
-      ></mm-feature>
-      <mm-feature
-        heading="Interactive - action"
-        description="button · dialog · link · menuitem — 누르면 동작이 실행되는 상호작용. Actionable 통합"
-      ></mm-feature>
-      <mm-feature
-        heading="Interactive - selection"
-        description="checkbox · radio · tabs · toggle-button · switch · menuitem — 선택 상태(checked·selected·pressed)를 남기는 상호작용. Interactive - choice 개명, Interactive - content switching·Selectable 통합"
-      ></mm-feature>
-      <mm-feature
-        heading="Freeform"
-        description="input · textarea — Inputtable 대체. 제한된 선택지가 아니라 자유 형식 값을 받는 특성"
-      ></mm-feature>
-      <mm-feature
-        heading="Immediate"
-        description="switch — Behavior- instantly action 개명. 조작 즉시 실행되는 특성"
-      ></mm-feature>
-      <mm-feature
-        heading="Feedback"
-        description="button · dialog · loading · result — Feedback needed 통합"
-      ></mm-feature>
-      <mm-feature heading="Dismissible" description="notice · dialog"></mm-feature>
-      <mm-feature
-        heading="Transient"
-        description="tooltip · loading — 조건이 끝나면 스스로 사라지는 특성. Dismissible(사용자가 닫음)과 대비"
-      ></mm-feature>
-      <mm-feature
-        heading="Anchored"
-        description="tooltip — 화면 좌표가 아니라 트리거 요소에 붙어 뜨는 특성. 방향·정렬은 placement prop 하나로 지정"
-      ></mm-feature>
-      <mm-feature
-        heading="Validatable"
-        description="input · textarea — 입력값 자체의 규칙 검증과 오류 표시를 소유. Feedback은 행동·시스템 상태의 결과, Validatable은 값의 규칙 위반"
-      ></mm-feature>
-      <mm-feature
-        heading="Persistent"
-        description="top-bar · bottom-bar — 스크롤과 화면 이동에도 자리를 지키는 특성. Transient·Dismissible과 함께 머무름의 축을 구성"
-      ></mm-feature>
-      <mm-feature
-        heading="Statusful"
-        description="notice · result · tag — 성공·경고·오류·정보 등 의미 상태를 톤으로 담고 색상만으로 전달하지 않는 특성. Feedback은 결과 자체, Statusful은 그 의미 톤과 색 접근성"
-      ></mm-feature>
-      <mm-feature heading="Supplementary" description="tooltip"></mm-feature>
-      <mm-feature
-        heading="Disclosure (점진적 공개)"
-        description="tooltip · text(read-more) · accordion 패턴 — 부가 정보를 숨겼다가 필요할 때 그 자리에서 펼치는 특성. 별도 작업 레이어로 전환하는 sheet·dialog는 이 축이 아님"
-      ></mm-feature>
-    </mm-feature-group>
-
-    <mm-text-list
-      texts='[
-        "제외 — Semantic·Hierarchical(text): Semantic은 마크업 설명, Hierarchical은 타이포 규칙이라 컴포넌트 특성 어휘에서 제외",
-        "제외 — eye(input): 특성이 아니라 아이콘 이름",
-        "제외 — Not Recommended(tooltip): do/don&#39;t 가이드 성격이라 특성 어휘와 분리",
-        "통합 — Dimensional·Indicative: surface의 Structural에 흡수(깊이감으로 층위를 드러내고, 그 깊이가 곧 클릭 가능성 기표)",
-        "통합 — Selectable: Interactive를 action·selection 두 축으로 분리하면서 Interactive - selection에 흡수",
-        "통합 — Informational: tag는 Glanceable로, avatar는 Representative로 흡수하여 특성 어휘에서 제거",
-        "아이콘 매핑(HEADING_ICON_MAP)은 재배포와 함께 정리 완료 — 특성 어휘 외에는 signifier·문서 원칙 페이지 항목만 유지"
-      ]'
-    ></mm-text-list>
-
-    <mm-text size="18" weight="bold" as="h3">보류</mm-text>
-    <mm-feature-group columns="3">
-      <mm-feature
-        icon="nav-arrow-right"
-        heading="Navigational"
-        description="보류 — 현재 위치를 알리고 이동시키는 특성(breadcrumb · link · top-bar · bottom-bar 후보). Sequential(step)과 함께, 사이트맵 구조가 이미 내비 분류를 소유하고 있어 보류"
-      ></mm-feature>
-    </mm-feature-group>
-  </mm-flex> -->
 
   <main class="terms" style="max-width: var(--layout-width-small); margin: 0 auto">
     <style>
@@ -510,53 +414,6 @@
       <p>• 영상정보처리기기 설치·운영</p>
     </section> -->
   </main>
-
-  <!-- <mm-surface variant="plain">
-    <mm-flex direction="column" gap="4">
-      <mm-text size="24" weight="bold" as="h2">Marquee Samples</mm-text>
-
-      <mm-marquee gap="6" speed="64" pause-on-hover>
-        <mm-paragraph>짧은 문장</mm-paragraph>
-        <mm-paragraph>
-          길이가 서로 다른 콘텐츠도 같은 트랙 안에서 자연스럽게 반복됩니다.
-        </mm-paragraph>
-        <mm-paragraph>콘텐츠 폭을 기준으로 이동 거리를 계산합니다.</mm-paragraph>
-        <mm-paragraph>화면 폭이 달라져도 필요한 복제 수를 다시 맞춥니다.</mm-paragraph>
-      </mm-marquee>
-      <mm-marquee direction="right" gap="4" speed="48" pause-on-hover>
-        <mm-tag>Right direction</mm-tag>
-        <mm-tag>Speed 48</mm-tag>
-        <mm-tag>Slow and steady</mm-tag>
-        <mm-tag>Reverse flow</mm-tag>
-      </mm-marquee>
-      <mm-marquee gap="3" height="120px" speed="72" pause-on-hover>
-        <mm-thumbnail
-          style="width: 120px"
-          ratio="1:1"
-          src="/src/images/temp.png"
-          alt="풍경 샘플"
-        ></mm-thumbnail>
-        <mm-thumbnail
-          style="width: 120px"
-          ratio="1:1"
-          src="/src/images/soojubm.png"
-          alt="프로필 샘플"
-        ></mm-thumbnail>
-        <mm-thumbnail
-          style="width: 120px"
-          ratio="1:1"
-          src="/src/images/work-studium.jpg"
-          alt="작업 샘플"
-        ></mm-thumbnail>
-        <mm-thumbnail
-          style="width: 120px"
-          ratio="1:1"
-          src="/src/images/cake_gosum.jpg"
-          alt="고슴이 샘플"
-        ></mm-thumbnail>
-      </mm-marquee>
-    </mm-flex>
-  </mm-surface> -->
   <div hidden>
     <mm-surface variant="plain">
       <mm-text size="24" weight="bold" as="h2">Scroll Spy Controller Sampler</mm-text>
@@ -661,18 +518,10 @@
     </mm-surface>
   </div>
 
-  <!-- "상태 인지성(state perception) / affordance / 접근성 / 시스템 일관성", -->
+  "상태 인지성(state perception) / affordance / 접근성 / 시스템 일관성",
 
-  <!-- <section class="hero" style="padding: var(--space-16) 0">
-    <mm-text-block
-      level="1"
-      heading="The aim is to reduce 'decision fatigue'"
-      description=" 고민은 시스템이, 실행은 당신이. 결정 피로도를 최소화하여 아이디어를 가장 빠른 속도로 제품화합니다.."
-    ></mm-text-block>
-    <div style="height: var(--space-8)"></div>
-  </section> -->
 
-  <!-- <mm-surface variant="plain">
+  <mm-surface variant="plain">
     <mm-flex direction="column" gap="2">
       <mm-avatar variant="secondary" size="48" icon="constrained-surface"></mm-avatar>
       <mm-heading level="2">Constraint-driven Design</mm-heading>
@@ -687,24 +536,19 @@
         👉 핵심: 좋은 디자인을 선택하는 것이 아니라, 잘못된 디자인을 불가능하게 만든다
       </mm-text>
     </mm-paragraph-group>
-  </mm-surface> -->
-  <!-- <section>
-    <mm-grid columns="2" gap="8">
-      <mm-surface variant="plain">
-        <mm-flex gap="3">
-          <mm-avatar variant="secondary" size="80"></mm-avatar>
-          <mm-flex direction="column" gap="1">
-            <mm-text size="18" weight="bold">Progressive & Scalable</mm-text>
-            <mm-text>단순하게 시작하고, 점진적으로 확장한다.</mm-text>
-          </mm-flex>
-        </mm-flex>
+  </mm-surface>
+
+  <mm-surface variant="plain">
+          <mm-flex direction="column" gap="2">
+      <mm-avatar variant="secondary" size="48" icon="constrained-surface"></mm-avatar>
+      <mm-heading level="2">Progressive & Scalable</mm-heading>
+      <mm-text>단순하게 시작하고, 점진적으로 확장한다.</mm-text>
+    </mm-flex>
         <br />
         <mm-text-list
-          texts='["초기에는 최소 구조로 설계한다", "필요에 따라 기능과 표현을 확장한다", "모든 경우를 사전에 정의하지 않는다", "조합 가능한 구조를 우선한다"]'
+          texts='["초기에는 최소 구조로 설계하고 기능과 표현을 확장한다", "모든 경우를 나열하지 않는다", "조합 가능한 구조를 우선한다"]'
         ></mm-text-list>
-      </mm-surface>
-    </mm-grid>
-  </section> -->
+  </section>
 
   <mm-flex direction="column" gap="4">
     <mm-text size="24" weight="bold">Layout Modules</mm-text>
@@ -741,7 +585,7 @@
       ></mm-text-block>
     </mm-grid>
 
-    <!-- <mm-flex direction="column" gap="3">
+    <mm-flex direction="column" gap="3">
       <mm-text size="24" weight="bold" as="h3">Structure &amp; Grouping</mm-text>
       <mm-paragraph>
         레이아웃과 구조는 콘텐츠의 우선순위를 정하고, 사용자가 콘텐츠를 인지하고 이해하는 데 도움을
@@ -767,7 +611,7 @@
           description="높은 밀도는 관리형/목록형 인터페이스를, 낮은 밀도는 탐색형/강조형 인터페이스를 암시할 수 있습니다."
         ></mm-list-item>
       </mm-grid>
-    </mm-flex> -->
+    </mm-flex>
 
     <mm-text-list
       texts='[
@@ -1092,15 +936,16 @@
     </mm-link>
   </mm-component-references>
 
-  <!-- <mm-paragraph-group>
+  <mm-paragraph-group>
     <mm-text as="h1" size="32" weight="bold">Typography</mm-text>
 
-    <mm-text>
+    <mm-paragraph>
       사용자는 디스크립션을 자세히 읽기를 원하지 않으므로, 필요한 내용을 빠르게 캐치할 수 있도록
-      간결하게 쓰는 게 좋다. 한 줄에 50자, 세 줄 이하로 쓸 것을 권장하고 있다. 텍스트를 간결하게
+      간결하게 쓰는 게 좋다. 한 줄에 50자, 세 줄 이하로 쓸 것을 권장하고 있다.
+    </mm-paragraph>
+    <mm-paragraph>텍스트를 간결하게
       유지하고 전달할 내용을 스캐너블한 덩어리로 나누는 것은, 유저들이 그들의 이해도와 이 서비스를
-      활용하는 능력에 대해 신뢰를 갖게 만든다. (Easy scanning)
-    </mm-text>
+      활용하는 능력에 대해 신뢰를 갖게 만든다. (Easy scanning)</mm-paragraph>
     <mm-grid columns="2" gap="8">
       <div>
         <mm-text as="h2" size="24" weight="bold">Alignment</mm-text>
@@ -1117,7 +962,7 @@
           일관성을 해치지 않는지?
         </mm-paragraph>
 
-        <mm-text-list texts='["Result component", "Empty state", "Success message"]'></mm-text-list>
+        <mm-keyword-tag-group keywords='["Result component", "Empty state", "Success message"]'></mm-keyword-tag-group>
       </div>
 
       <div>
@@ -1134,20 +979,12 @@
         <mm-text as="h2" size="24" weight="bold">Optical Alignment</mm-text>
 
         <mm-text-list
-          texts='["폰트마다 기준선, x-height, cap-height가 다르므로 시각적 균형이 달라질 수 있습니다.", "아이콘과 텍스트 baseline 조정", "버튼 내부 수직 정렬 보정", "숫자와 한글 혼합 시 line-height 보정", "배경 또는 테두리가 포함된 박스 안에서의 상하 간격 보정"]'
+          texts='["아이콘과 텍스트 baseline 조정", "버튼 내부 수직 정렬 보정", "숫자와 한글 혼합 시 line-height 보정(폰트마다 기준선, x-height, cap-height가 다름)", "배경 또는 테두리가 포함된 박스 안에서의 상하 간격 보정"]'
         ></mm-text-list>
       </div>
 
       <div>
         <mm-text as="h2" size="24" weight="bold">Emphasis</mm-text>
-
-        <mm-paragraph>
-          underline 및 primary color는 인터랙션 가능한 요소에만 사용합니다.
-        </mm-paragraph>
-
-        <mm-paragraph>
-          텍스트 강조를 위해 clickable affordance를 재사용하지 않습니다.
-        </mm-paragraph>
 
         <div>
           <mm-paragraph size="large">Incorrect Usage</mm-paragraph>
@@ -1172,7 +1009,7 @@
         ></mm-text-list>
       </div>
     </mm-grid>
-  </mm-paragraph-group> -->
+  </mm-paragraph-group>
 
   <mm-surface variant="filled">
     <mm-paragraph-group>
@@ -1182,7 +1019,7 @@
         동일한 문제는 동일한 방식으로 해결한다. 패턴의 반복이 일관성을 만든다.
       </mm-text>
       <mm-text-list
-        texts='["설명하지 말고 판단 기준을 제공한다", "모호함을 제거하고 역할을 고정한다", "정의보다 복잡도 관리에 집중한다", "정보 밀도를 높인다", "존재 이유 없는 문장을 제거한다", "문서는 항상 변한다"]'
+        texts='["설명하지 말고 판단 기준을 제공한다", "모호함을 제거하고 역할을 고정한다", "정의보다 복잡도 관리에 집중한다", "문서는 항상 변한다"]'
       ></mm-text-list>
     </mm-paragraph-group>
   </mm-surface>
@@ -1255,9 +1092,7 @@
       <mm-paragraph>&loz; 우리의 제품에 이렇게 많은 컬러 쉐이드가 필요한가요?</mm-paragraph>
       <mm-paragraph>&loz; 언제 컴포넌트로 만드나요?</mm-paragraph>
       <mm-paragraph>
-        &loz; 일어날 법 하지 않는 don't 케이스를 가정하고 있지는 않나요? dos / don'ts 케이스는
-        이미지 없이 간결하게 서술합니다. 유아이는 계속 변경되는데 이미지로 인한 문서 관리 비용을
-        관리.
+        &loz; 일어날 법 하지 않는 don't 케이스를 가정하고 있지는 않나요?
       </mm-paragraph>
       <mm-paragraph>&loz; 너무 기본적인 내용을 서술하고 있지는 않나요?</mm-paragraph>
       <mm-paragraph>&loz; 용법을 특정할 수 없는 용어를 사용하고 있지는 않나요?</mm-paragraph>
@@ -1287,138 +1122,6 @@
       ></mm-text-list>
     </mm-paragraph-group>
   </article>
-
-  <section>
-    <mm-text as="h1" size="32" weight="bold">Architecture Layers</mm-text>
-    <mm-paragraph>
-      추상에서 구체로. 아래로 내려갈수록 도메인에 가까워지고, 재사용 범위는 좁아진다.
-    </mm-paragraph>
-
-    <mm-surface variant="filled" style="margin: var(--space-4) 0 var(--space-8)">
-      <mm-flex direction="column" gap="2">
-        <mm-text size="12" color="light">레이어 판단 기준</mm-text>
-        <mm-paragraph>
-          <strong>다른 도메인이나 서비스에서도 쓸 수 있는가?</strong>
-          → Semantic. 이 서비스에만 존재하는 개념인가? → Concrete.
-        </mm-paragraph>
-        <mm-paragraph color="light">
-          폴더 구조가 이 경계를 구조적으로 강제한다.
-          <code>semantics/</code>
-          = 도메인 독립,
-          <code>domains/</code>
-          = 도메인 종속.
-        </mm-paragraph>
-      </mm-flex>
-    </mm-surface>
-
-    <div>
-      <mm-flex direction="column">
-        <mm-text size="12" color="light">LAYER 1</mm-text>
-        <mm-paragraph size="large">Abstract</mm-paragraph>
-        <mm-paragraph>
-          HTML 요소 수준의 가장 작은 단위. 의도 없이 props로만 변형되는 범용 빌딩 블록.
-        </mm-paragraph>
-        <div>
-          <mm-paragraph>
-            <code>mm-button</code>
-            <code>mm-text</code>
-            <code>mm-tag</code>
-            <code>mm-icon-button</code>
-          </mm-paragraph>
-          <mm-paragraph color="light" style="margin-top: var(--space-1)">
-            src/components/{name}/
-          </mm-paragraph>
-        </div>
-      </mm-flex>
-
-      <mm-flex direction="column">
-        <mm-text size="12" color="light">
-          ↓ extends — Semantic은 Abstract를 상속해 역할을 고정한다
-        </mm-text>
-        <div>
-          <mm-text size="12" color="light">LAYER 2</mm-text>
-          <mm-paragraph size="large">Semantic</mm-paragraph>
-        </div>
-        <mm-paragraph>
-          의미가 있고 도메인에 독립적인 단위. 어떤 서비스에서도 쓸 수 있는 개념. variant 대신 이름이
-          용도를 표현.
-        </mm-paragraph>
-        <div>
-          <mm-paragraph>
-            <code>mm-read-more-button</code>
-            <code>mm-close-button</code>
-            <code>mm-caption</code>
-            <code>mm-accent-tag</code>
-          </mm-paragraph>
-          <mm-paragraph color="light" style="margin-top: var(--space-1)">
-            src/components/{name}/semantics/
-          </mm-paragraph>
-        </div>
-      </mm-flex>
-
-      <mm-flex direction="column">
-        <mm-text size="12" color="light">
-          ↓ composes — Concrete는 Abstract·Semantic 컴포넌트를 조합해 완성한다
-        </mm-text>
-        <div>
-          <mm-text size="12" color="light">LAYER 3</mm-text>
-          <mm-paragraph size="large">Concrete</mm-paragraph>
-        </div>
-        <mm-paragraph>
-          특정 도메인·서비스에 종속된 조합. 다른 서비스에서 그대로 가져다 쓸 수 없는 것.
-        </mm-paragraph>
-        <div>
-          <mm-paragraph>
-            <code>mm-comment-input</code>
-            <code>mm-user-row</code>
-            <code>mm-prompt-input</code>
-          </mm-paragraph>
-          <mm-paragraph color="light" style="margin-top: var(--space-1)">
-            src/components/domains/
-          </mm-paragraph>
-        </div>
-      </mm-flex>
-    </div>
-
-    <mm-surface>
-      <mm-flex direction="column" gap="3">
-        <mm-paragraph size="large">이 방법론의 한계</mm-paragraph>
-
-        <mm-flex direction="column" gap="2">
-          <mm-paragraph>
-            "다른 서비스에서 쓸 수 있는가"의 판단은 여전히 주관적이다
-          </mm-paragraph>
-          <mm-paragraph>
-            <code>mm-search-suggestions</code>
-            는 어떤 서비스에나 있는 검색 UI다 — Semantic인가? 아니면 이 서비스의 검색 동작에
-            종속된다 — Concrete인가? 기준이 명확해도 경계 사례에서는 판단이 갈린다. 폴더 구조가
-            강제할 수 있는 건 배치 이후다. 배치 전 판단은 사람이 한다.
-          </mm-paragraph>
-        </mm-flex>
-
-        <mm-flex direction="column" gap="2">
-          <mm-paragraph>
-            Concrete가 도메인을 넘어 재사용되면 레이어가 흔들린다
-          </mm-paragraph>
-          <mm-paragraph>
-            <code>mm-comment-input</code>
-            이 댓글과 DM 두 화면에서 모두 쓰인다면? 처음엔 도메인 특화였다가 점점 범용이 된다.
-            Concrete를 Semantic으로 격상하는 시점과 기준이 없으면 domains/ 안에 사실상 Semantic인
-            컴포넌트가 쌓이기 시작한다.
-          </mm-paragraph>
-        </mm-flex>
-
-        <mm-flex direction="column" gap="2">
-          <mm-paragraph>Semantic 레이어가 팽창하기 쉽다</mm-paragraph>
-          <mm-paragraph>
-            "도메인 무관"의 기준이 느슨하면 모든 컴포넌트가 Semantic 후보가 된다. 작은 변형마다
-            새로운 Semantic 컴포넌트가 추가되면 semantics/ 디렉토리가 비대해지고, Abstract
-            컴포넌트의 variant로 충분히 해결할 수 있는 것들이 별도 클래스로 분산된다.
-          </mm-paragraph>
-        </mm-flex>
-      </mm-flex>
-    </mm-surface>
-  </section>
 
   <section>
     <mm-text as="h1" size="32" weight="bold">Depth: 콘텐츠/시스템</mm-text>

@@ -303,7 +303,7 @@
   --component-props-border: var(--border);
   --component-tokens-border: var(--border);
   --input-border-color: var(--brutal-border-color);
-  --avatar-border: var(--border);
+  /* --avatar-border: var(--border); */
   --bubble-border: var(--border);
   --accordion-border: var(--border);
   --tabs-pill-border: var(--border);

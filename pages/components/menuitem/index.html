@@ -14,13 +14,6 @@
           label="로그아웃 (비활성)"
           disabled
         ></mm-menu-item-action>
-        <mm-menu-item-action
-          size="40"
-          icon="app-window"
-          trailing-icon="arrow-right"
-          label="수줍이 앱"
-          description="앱에서 게시물을 엽니다."
-        ></mm-menu-item-action>
       </mm-menu-item-group>
       <mm-separator></mm-separator>
       <mm-menu-item-group aria-label="액션 메뉴">
@@ -128,45 +121,27 @@
 
     <mm-menu-item-radio-group name="access" value="public" aria-label="공개 범위">
       <mm-menu-item-radio
+        size="40"
         value="public"
         icon="group"
         label="전체공개"
         description="모든 사용자"
       ></mm-menu-item-radio>
       <mm-menu-item-radio
+        size="40"
         value="friends"
         icon="group"
         label="친구만"
         description="회원님의 친구"
       ></mm-menu-item-radio>
-      <mm-menu-item-radio value="private" icon="lock" label="나만 보기"></mm-menu-item-radio>
+      <mm-menu-item-radio
+        size="40"
+        icon="lock"
+        label="나만 보기"
+        description="부끄러우니까 보지마요"
+        value="private"
+      ></mm-menu-item-radio>
     </mm-menu-item-radio-group>
-  </mm-component-section>
-
-  <mm-component-section heading="Access 권한" description="">
-    <div>
-      <mm-top-bar heading="공개 대상 선택"></mm-top-bar>
-      <mm-menu-item-radio-group name="access" value="public">
-        <mm-menu-item-radio
-          icon="group"
-          label="전체공개"
-          description="모든 Facebook 사용자"
-          value="public"
-        ></mm-menu-item-radio>
-        <mm-menu-item-radio
-          icon="group"
-          label="친구만"
-          description="회원님의 Facebook 친구"
-          value="friends"
-        ></mm-menu-item-radio>
-        <mm-menu-item-radio
-          icon="lock"
-          label="나만 보기"
-          description="부끄러우니까 보지마요"
-          value="private"
-        ></mm-menu-item-radio>
-      </mm-menu-item-radio-group>
-    </div>
   </mm-component-section>
 
   <mm-component-section heading="MenuItemRadioSwitch">
@@ -176,13 +151,21 @@
   <mm-component-section heading="MenuItemLink">
     <mm-menu-item-group>
       <mm-menu-item-link
+        size="40"
+        icon="app-window"
+        label="수줍이 앱"
+        target="_self"
+        description="앱에서 게시물을 엽니다."
+      ></mm-menu-item-link>
+      <mm-menu-item-link
+        size="40"
         icon="open-in-browser"
         label="MDN Web Docs"
         href="https://developer.mozilla.org"
-        target="_self"
         description="외부 링크"
       ></mm-menu-item-link>
       <mm-menu-item-link
+        size="40"
         icon="github"
         label="GitHub"
         href="https://github.com"

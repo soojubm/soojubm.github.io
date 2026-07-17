@@ -28,18 +28,21 @@ export class MyChatBubble extends LitElement {
   render() {
     return html`
       ${renderChatTypingIndicator(this.typing, 'var(--color-foreground-on-solid)')}
-      ${renderChatBubbleImage(this.src, this.typing)}
-      ${this.typing || this.src
-        ? nothing
-        : html`
-            <slot></slot>
-            ${this.renderStatus()}
-          `}
+      ${renderChatBubbleImage(this.src, this.typing)} ${this.renderMessage()}
     `
   }
 
   protected willUpdate() {
     this.toggleAttribute('image', isChatBubbleImage(this.src, this.typing))
+  }
+
+  private renderMessage() {
+    if (this.typing || this.src) return nothing
+
+    return html`
+      <slot></slot>
+      ${this.renderStatus()}
+    `
   }
 
   private renderStatus() {

@@ -7,6 +7,7 @@ export const avatarStyles = css`
     --avatar-border-color: transparent;
     --avatar-icon-color: var(--color-foreground);
     --avatar-border-radius: var(--radius);
+    --avatar-border: var(--border);
 
     display: inline-flex;
     align-items: center;

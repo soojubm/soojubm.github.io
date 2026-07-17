@@ -9,22 +9,26 @@ export const listItemStyles = css`
 
     --list-item-size: var(--size-medium);
     --list-item-gap: var(--space-2);
+    --list-item-font-size: var(--font-size-14);
   }
 
   /* :host([size='32']) {
   } */
 
   :host([size='40']) {
+    --list-item-font-size: 20px;
   }
 
   :host([size='48']) {
-    --list-item-gap: var(--space-2);
     --list-item-size: var(--size-large);
+    --list-item-gap: var(--space-2);
+    --list-item-font-size: var(--font-size-24);
   }
 
   :host([size='80']) {
     --list-item-size: var(--size-huge);
     --list-item-gap: var(--space-3);
+    --list-item-font-size: var(--font-size-24);
   }
 
   [slot='leading'],
@@ -49,12 +53,7 @@ export const listItemStyles = css`
     justify-content: center;
     width: var(--list-item-size);
     height: var(--list-item-size);
-    font-size: var(--font-size-18);
+    font-size: var(--list-item-font-size);
     line-height: 1;
-  }
-
-  :host([size='48']) .emoji,
-  :host([size='80']) .emoji {
-    font-size: var(--font-size-24);
   }
 `

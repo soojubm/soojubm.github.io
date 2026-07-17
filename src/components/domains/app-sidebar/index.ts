@@ -50,38 +50,34 @@ export class Sidebar extends LitElement {
               const isOpen = this.openGroupIds.has(node.id)
 
               return html`
-                <div>
-                  <mm-menu-item-action
-                    id="${node.id}-btn"
-                    class="sidebar-category-trigger"
-                    label=${node.title}
-                    icon=${node.icon}
-                    trailing-icon=${ICON_NAMES.EXPAND}
-                    aria-haspopup="menu"
-                    aria-controls="${node.id}-menu"
-                    aria-expanded=${isOpen ? 'true' : 'false'}
-                    @click=${() => this.handleGroupToggle(node.id)}
-                  ></mm-menu-item-action>
+                <mm-list-item
+                  id="${node.id}-btn"
+                  label=${node.title}
+                  icon=${node.icon}
+                  trailing-icon=${ICON_NAMES.EXPAND}
+                  aria-haspopup="menu"
+                  aria-controls="${node.id}-menu"
+                  aria-expanded=${isOpen ? 'true' : 'false'}
+                  @click=${() => this.handleGroupToggle(node.id)}
+                ></mm-list-item>
 
-                  <menu id="${node.id}-menu" aria-labelledby="${node.id}-btn">
-                    ${repeat(
-                      node.items.filter(item => !('hidden' in item && item.hidden)),
-                      item => item.id,
-                      item => html`
-                        <mm-menu-item-link
-                          href="${item.id}.html"
-                          label="${item.name}${item.badge ? ` ${item.badge}` : ''}"
-                          target="_self"
-                          hidden-trailing
-                          aria-current=${ifDefined(
-                            this.isCurrentPage(item.id) ? 'page' : undefined,
-                          )}
-                          @click=${this.saveScrollPosition}
-                        ></mm-menu-item-link>
-                      `,
-                    )}
-                  </menu>
-                </div>
+                <menu id="${node.id}-menu" aria-labelledby="${node.id}-btn">
+                  ${repeat(
+                    node.items.filter(item => !('hidden' in item && item.hidden)),
+                    item => item.id,
+                    item => html`
+                      <mm-menu-item-link
+                        emoji="#"
+                        href="${item.id}.html"
+                        label="${item.name}${item.badge ? ` ${item.badge}` : ''}"
+                        target="_self"
+                        hidden-trailing
+                        aria-current=${ifDefined(this.isCurrentPage(item.id) ? 'page' : undefined)}
+                        @click=${this.saveScrollPosition}
+                      ></mm-menu-item-link>
+                    `,
+                  )}
+                </menu>
               `
             }
 

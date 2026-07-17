@@ -294,6 +294,55 @@
 
   </mm-component-section>
 
+
+
+  <mm-surface variant="plain">
+    <mm-flex direction="column" gap="4">
+      <mm-text size="24" weight="bold" as="h2">Marquee Samples</mm-text>
+
+      <mm-marquee gap="6" speed="64" pause-on-hover>
+        <mm-paragraph>짧은 문장</mm-paragraph>
+        <mm-paragraph>
+          길이가 서로 다른 콘텐츠도 같은 트랙 안에서 자연스럽게 반복됩니다.
+        </mm-paragraph>
+        <mm-paragraph>콘텐츠 폭을 기준으로 이동 거리를 계산합니다.</mm-paragraph>
+        <mm-paragraph>화면 폭이 달라져도 필요한 복제 수를 다시 맞춥니다.</mm-paragraph>
+      </mm-marquee>
+      <mm-marquee direction="right" gap="4" speed="48" pause-on-hover>
+        <mm-tag>Right direction</mm-tag>
+        <mm-tag>Speed 48</mm-tag>
+        <mm-tag>Slow and steady</mm-tag>
+        <mm-tag>Reverse flow</mm-tag>
+      </mm-marquee>
+      <mm-marquee gap="3" height="120px" speed="72" pause-on-hover>
+        <mm-thumbnail
+          style="width: 120px"
+          ratio="1:1"
+          src="/src/images/temp.png"
+          alt="풍경 샘플"
+        ></mm-thumbnail>
+        <mm-thumbnail
+          style="width: 120px"
+          ratio="1:1"
+          src="/src/images/soojubm.png"
+          alt="프로필 샘플"
+        ></mm-thumbnail>
+        <mm-thumbnail
+          style="width: 120px"
+          ratio="1:1"
+          src="/src/images/work-studium.jpg"
+          alt="작업 샘플"
+        ></mm-thumbnail>
+        <mm-thumbnail
+          style="width: 120px"
+          ratio="1:1"
+          src="/src/images/cake_gosum.jpg"
+          alt="고슴이 샘플"
+        ></mm-thumbnail>
+      </mm-marquee>
+    </mm-flex>
+  </mm-surface>
+
   <!-- <mm-component-section heading="RatingSurface" description="">
     <mm-surfacebar heading="Ratings"></mm-surfacebar>
     <div aria-label="별점 5개 만점에 3.9개를 받았습니다." style="text-align: center">

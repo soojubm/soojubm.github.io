@@ -1,6 +1,7 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
+import { participantChatBubbleStyles } from '@/components/domains/chat/bubbles/styles'
 import { chatBubbleStyles } from '@/components/domains/chat/chat.styles'
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
 
@@ -11,11 +12,11 @@ import {
 } from '../chat.helpers'
 
 /**
- * 상대방/AI가 보낸 메시지 버블. 좌측 정렬.
+ * 다중 채팅 참여자가 보낸 메시지 버블. 좌측 정렬 + subtle 배경.
  */
-@customElement('mm-ai-chat-bubble')
-export class AiChatBubble extends LitElement {
-  static styles = [resetStyles, chatBubbleStyles]
+@customElement('mm-participant-chat-bubble')
+export class ParticipantChatBubble extends LitElement {
+  static styles = [resetStyles, chatBubbleStyles, participantChatBubbleStyles]
 
   @property({ type: Boolean }) typing = false
   @property({ type: String }) src = ''
@@ -42,6 +43,6 @@ export class AiChatBubble extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'mm-ai-chat-bubble': AiChatBubble
+    'mm-participant-chat-bubble': ParticipantChatBubble
   }
 }
