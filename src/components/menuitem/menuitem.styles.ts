@@ -4,7 +4,7 @@ export const menuItemStyles = css`
   :host {
     --menuitem-border-radius: var(--radius);
     --menuitem-background-color-hover: var(--color-background-subtle);
-    --menuitem-padding-inline: var(--space-2);
+    --menuitem-padding-inline: var(--space-0);
   }
 
   :is(button, a, [role^='menuitem']) {

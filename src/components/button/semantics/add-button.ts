@@ -1,20 +1,16 @@
 import { LitElement, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 
-import { addButtonStyles } from '@/components/button/semantics/add-button.styles'
 import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
-import '@/components/icon/icon'
+import '@/components/list-item/list-item'
 
 @customElement('mm-add-button')
 export class AddButton extends LitElement {
-  static styles = [addButtonStyles]
-
   render() {
     return html`
-      <button type="button">
-        <mm-icon name=${ICON_NAMES.ADD_CIRCLE}></mm-icon>
+      <mm-menu-item-action icon=${ICON_NAMES.ADD_CIRCLE}>
         <slot></slot>
-      </button>
+      </mm-menu-item-action>
     `
   }
 }
