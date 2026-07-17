@@ -2,8 +2,9 @@ import { css } from 'lit'
 
 import { focusRing } from '@/stylesheets/shared/focus-ring.styles'
 
+/** button 태그뿐 아니라 mm-hashtag-link 등 a 기반 파생 컴포넌트도 같은 스킨을 그대로 가져다 쓸 수 있도록 :is(button, a)로 잡는다. */
 export const interactiveControlStyles = css`
-  button {
+  :is(button, a) {
     &:hover {
       border-color: var(--color-background-strong);
     }
@@ -43,11 +44,11 @@ export const buttonBaseStyles = [
       --button-text-color: var(--color-foreground);
     }
 
-    :host([full-width]) button {
+    :host([full-width]) :is(button, a) {
       width: 100%;
     }
 
-    button {
+    :is(button, a) {
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -74,16 +75,16 @@ export const buttonBaseStyles = [
 
 /** mm-button 크기 변형. */
 export const buttonSizeStyles = css`
-  :host([size='huge']) button {
+  :host([size='huge']) :is(button, a) {
     --button-height: var(--size-huge);
     --button-text-size: var(--font-size-18);
     padding-bottom: 5px;
   }
-  :host([size='large']) button {
+  :host([size='large']) :is(button, a) {
     --button-height: var(--size-large);
     min-width: var(--button-min-width);
   }
-  :host([size='small']) button {
+  :host([size='small']) :is(button, a) {
     --button-height: var(--size-medium);
     min-width: 0;
   }
