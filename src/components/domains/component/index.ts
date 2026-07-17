@@ -7,5 +7,6 @@ import '@/components/domains/component/references'
 import '@/components/domains/component/related'
 import '@/components/domains/component/aka'
 import '@/components/domains/component/guide'
+import '@/components/domains/component/feature-list'
 
 export {}
