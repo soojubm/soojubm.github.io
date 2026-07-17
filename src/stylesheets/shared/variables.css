@@ -82,7 +82,8 @@
 
   /* mm-component-tokens 이름 강조색: 컴포넌트 전용 소유 토큰 */
   --token-word-state-color: #c2410c;
-  --token-word-property-color: #0e7490;
+  --token-word-surface-color: #0e7490;
+  --token-word-dimension-color: #7e22ce;
 
   --color-primary: var(--green800);
   --color-primary-subtle: var(--green100);
@@ -263,7 +264,8 @@
 
   /* mm-component-tokens 이름 강조색: dark theme (같은 이름을 그대로 재정의) */
   --token-word-state-color: #fdba74;
-  --token-word-property-color: #67e8f9;
+  --token-word-surface-color: #67e8f9;
+  --token-word-dimension-color: #d8b4fe;
 
   --color-success-foreground: #86efac;
   --color-warning-foreground: #fdba74;

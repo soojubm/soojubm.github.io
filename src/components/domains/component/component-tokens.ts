@@ -6,14 +6,33 @@ import { componentTokensStyles, tokenStyles } from '@/components/domains/compone
 
 // 토큰 이름의 단어를 의미 그룹으로 묶어 그룹마다 한 색을 준다.
 // 위에서부터 먼저 매칭되는 그룹을 사용하므로 더 구체적인 그룹을 앞에 둔다.
+// state는 dimension·surface에 적용되는 변형이므로 겹치는 단어가 없어 순서와 무관하고,
+// surface는 border-width처럼 dimension 단어(width)를 포함하는 합성어를 갖고 있어 dimension보다 앞에 둔다.
 const WORD_CATEGORIES = [
   {
     name: 'state',
     words: ['hover', 'active', 'focus', 'disabled', 'selected', 'pressed', 'checked'],
   },
   {
-    name: 'property',
-    words: ['border', 'border-radius', 'text-color', 'background-color', 'shadow'],
+    name: 'surface',
+    words: [
+      'border',
+      'border-radius',
+      'border-color',
+      'border-width',
+      'background',
+      'background-color',
+      'text-color',
+      'shadow',
+      'blur',
+      'accent',
+      'line-color',
+      'line-width',
+    ],
+  },
+  {
+    name: 'dimension',
+    words: ['margin', 'padding', 'gap', 'width', 'height', 'size', 'space', 'spacing', 'offset', 'text-size'],
   },
 ] as const
 

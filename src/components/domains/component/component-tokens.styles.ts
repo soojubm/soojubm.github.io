@@ -28,8 +28,11 @@ export const tokenStyles = [
     .word-state {
       color: var(--token-word-state-color);
     }
-    .word-property {
-      color: var(--token-word-property-color);
+    .word-surface {
+      color: var(--token-word-surface-color);
+    }
+    .word-dimension {
+      color: var(--token-word-dimension-color);
     }
   `,
 ]
