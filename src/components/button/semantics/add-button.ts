@@ -12,7 +12,7 @@ export class AddButton extends LitElement {
   render() {
     return html`
       <button type="button">
-        <mm-icon name=${ICON_NAMES.ADD}></mm-icon>
+        <mm-icon name=${ICON_NAMES.ADD_CIRCLE}></mm-icon>
         <slot></slot>
       </button>
     `

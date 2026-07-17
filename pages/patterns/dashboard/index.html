@@ -25,7 +25,7 @@
   </mm-flex>
 
   <mm-grid columns="3" gap="4">
-    <mm-surface variant="filled">
+    <mm-surface variant="outlined">
       <mm-avatar variant="secondary" icon="graph-down"></mm-avatar>
       <div style="height: var(--space-3)"></div>
       <mm-text size="12">코스피</mm-text>
@@ -37,7 +37,7 @@
         <mm-text size="12" color="light">현지 시간 기준 10.27. 01:27</mm-text>
       </div>
     </mm-surface>
-    <mm-surface variant="filled">
+    <mm-surface variant="outlined">
       <mm-avatar variant="secondary" icon="graph-up"></mm-avatar>
       <div style="height: var(--space-3)"></div>
       <mm-text size="12">코스닥</mm-text>
@@ -109,18 +109,21 @@
     ></mm-text-block>
     <mm-menu-item-group>
       <mm-menu-item-action
+        size="40"
         emoji="📦"
         trailing-icon="arrow-right"
         label="출고 지연 주문 확인"
         description="오늘 오전 11:00까지"
       ></mm-menu-item-action>
       <mm-menu-item-action
+        size="40"
         emoji="💬"
         trailing-icon="arrow-right"
         label="고객 문의 답변"
         description="미응답 문의 17건"
       ></mm-menu-item-action>
       <mm-menu-item-action
+        size="40"
         emoji="📊"
         trailing-icon="arrow-right"
         label="주간 성과 보고서 공유"

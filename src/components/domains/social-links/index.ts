@@ -85,7 +85,7 @@ export class SocialLinks extends LitElement {
   private renderCompactLink({ label, icon, href }: SocialLink) {
     return html`
       <a href=${href} target="_blank" rel="noopener noreferrer" aria-label=${label}>
-        <mm-avatar variant="primary" icon=${icon}></mm-avatar>
+        <mm-avatar variant="primary" size="32" icon=${icon}></mm-avatar>
       </a>
     `
   }

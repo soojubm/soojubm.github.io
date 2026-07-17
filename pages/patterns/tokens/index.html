@@ -20,81 +20,75 @@
     </style>
 
     <mm-flex direction="column" gap="0">
-      <mm-text-block
-        level="2"
-        heading="Color"
-        description="용도와 의미에 따라 색상을 사용하도록..."
-      ></mm-text-block>
+      <mm-text-block level="2" heading="Color" description="TODO..."></mm-text-block>
 
-      <mm-component-example>
-        <mm-grid columns="6">
-          <mm-color-token color="var(--gray0)" token="gray0: #fff"></mm-color-token>
-          <mm-color-token color="var(--gray100)" token="gray100: #f5f6f5"></mm-color-token>
-          <mm-color-token color="var(--gray200)" token="gray200: #d2d7d5"></mm-color-token>
-          <mm-color-token color="var(--gray400)" token="gray400: #979d9a"></mm-color-token>
-          <mm-color-token color="var(--gray800)" token="gray800: #3d4943"></mm-color-token>
-          <mm-color-token color="var(--green100)" token="green100: green tint"></mm-color-token>
-          <mm-color-token color="var(--green800)" token="green800: #1b995c"></mm-color-token>
-          <mm-color-token color="var(--red100)" token="red100: red tint"></mm-color-token>
-          <mm-color-token color="var(--red800)" token="red800: #f02849"></mm-color-token>
-        </mm-grid>
-        <!-- <mm-grid
+      <mm-grid columns="6">
+        <mm-color-token color="var(--gray0)" token="gray0: #fff"></mm-color-token>
+        <mm-color-token color="var(--gray100)" token="gray100: #f5f6f5"></mm-color-token>
+        <mm-color-token color="var(--gray200)" token="gray200: #d2d7d5"></mm-color-token>
+        <mm-color-token color="var(--gray400)" token="gray400: #979d9a"></mm-color-token>
+        <mm-color-token color="var(--gray800)" token="gray800: #3d4943"></mm-color-token>
+        <mm-color-token color="var(--green100)" token="green100: green tint"></mm-color-token>
+        <mm-color-token color="var(--green800)" token="green800: #1b995c"></mm-color-token>
+        <mm-color-token color="var(--red100)" token="red100: red tint"></mm-color-token>
+        <mm-color-token color="var(--red800)" token="red800: #f02849"></mm-color-token>
+      </mm-grid>
+      <!-- <mm-grid
           columns="6"
           style="margin-top: var(--space-3)"
           aria-label="semantic color tokens"
         ></mm-grid> -->
 
-        <mm-separator></mm-separator>
-        <mm-grid columns="4" aria-label="grayscale color tokens">
-          <mm-color-token
-            color="var(--color-primary)"
-            on-color="var(--color-foreground-on-primary)"
-            label="on primary"
-            token="primary: green800"
-          ></mm-color-token>
-          <mm-color-token
-            color="var(--green100)"
-            on-color="var(--color-foreground)"
-            label="on primary-light"
-            token="primary-light: green400"
-          ></mm-color-token>
-          <!-- warning -->
-          <mm-color-token
-            color="var(--red100)"
-            on-color="var(--color-foreground-on-warning)"
-            label="on warning-light"
-            token="warning-light: red100"
-          ></mm-color-token>
-          <mm-color-token
-            color="var(--red800)"
-            on-color="var(--color-foreground-on-solid)"
-            label="on warning"
-            token="warning: red800"
-          ></mm-color-token>
-        </mm-grid>
+      <mm-separator></mm-separator>
+      <mm-grid columns="4" aria-label="grayscale color tokens">
+        <mm-color-token
+          color="var(--color-primary)"
+          on-color="var(--color-foreground-on-primary)"
+          label="on primary"
+          token="primary: green800"
+        ></mm-color-token>
+        <mm-color-token
+          color="var(--green100)"
+          on-color="var(--color-foreground)"
+          label="on primary-light"
+          token="primary-light: green400"
+        ></mm-color-token>
+        <!-- warning -->
+        <mm-color-token
+          color="var(--red100)"
+          on-color="var(--color-foreground-on-warning)"
+          label="on warning-light"
+          token="warning-light: red100"
+        ></mm-color-token>
+        <mm-color-token
+          color="var(--red800)"
+          on-color="var(--color-foreground-on-solid)"
+          label="on warning"
+          token="warning: red800"
+        ></mm-color-token>
+      </mm-grid>
 
-        <mm-grid columns="4" style="margin-top: var(--space-3)">
-          <mm-color-token
-            color="var(--gray0)"
-            on-color="var(--color-foreground)"
-            label="on background"
-            token="background: #fff"
-          ></mm-color-token>
+      <mm-grid columns="4" style="margin-top: var(--space-3)">
+        <mm-color-token
+          color="var(--gray0)"
+          on-color="var(--color-foreground)"
+          label="on background"
+          token="background: #fff"
+        ></mm-color-token>
 
-          <mm-color-token
-            color="var(--gray100)"
-            on-color="var(--color-foreground)"
-            label="on background-subtle"
-            token="background-subtle: #f5f6f5"
-          ></mm-color-token>
-          <mm-color-token
-            color="var(--gray800)"
-            on-color="var(--color-foreground-on-solid)"
-            label="on background-strong"
-            token="background-strong: #212529"
-          ></mm-color-token>
-        </mm-grid>
-      </mm-component-example>
+        <mm-color-token
+          color="var(--gray100)"
+          on-color="var(--color-foreground)"
+          label="on background-subtle"
+          token="background-subtle: #f5f6f5"
+        ></mm-color-token>
+        <mm-color-token
+          color="var(--gray800)"
+          on-color="var(--color-foreground-on-solid)"
+          label="on background-strong"
+          token="background-strong: #212529"
+        ></mm-color-token>
+      </mm-grid>
 
       <!-- <mm-token-group>
         <mm-token-item key="selection-indicator-color" value="var(--color-primary)"></mm-token-item>
@@ -112,8 +106,8 @@
         heading="Typography"
         description="타이포그래피 토큰은 크기와 고정 행간을 함께 사용합니다. 행간은 컴포넌트의 역할에 맞춰 조합합니다."
       ></mm-text-block>
-      <mm-component-example>
-        <mm-flex direction="column" gap="4">
+      <mm-flex direction="column" gap="4">
+        <mm-surface variant="outlined" radius="large">
           <mm-marquee gap="4" speed="80" pause-on-hover>
             <mm-text size="32" weight="bold">
               font-family: Alan Sans, Gothic A1, system-ui, sans-serif
@@ -121,7 +115,8 @@
             <mm-text size="32" weight="bold">font-size: 32px</mm-text>
             <mm-text size="32" weight="bold">line-height: 40px</mm-text>
           </mm-marquee>
-          <mm-separator></mm-separator>
+        </mm-surface>
+        <mm-surface variant="outlined" radius="large">
           <mm-marquee gap="4" speed="64" pause-on-hover>
             <mm-text size="24" weight="bold">
               font-family: Alan Sans, Gothic A1, system-ui, sans-serif
@@ -129,7 +124,8 @@
             <mm-text size="24" weight="bold">font-size: 24px</mm-text>
             <mm-text size="24" weight="bold">line-height: 32px</mm-text>
           </mm-marquee>
-          <mm-separator></mm-separator>
+        </mm-surface>
+        <mm-surface variant="outlined" radius="large">
           <mm-marquee gap="4" speed="64" pause-on-hover>
             <mm-text size="18" weight="bold">
               font-family: Alan Sans, Gothic A1, system-ui, sans-serif
@@ -137,26 +133,26 @@
             <mm-text size="18" weight="bold">font-size: 18px</mm-text>
             <mm-text size="18" weight="bold">line-height: 24px</mm-text>
           </mm-marquee>
-          <mm-surface variant="outlined" radius="large">
-            <mm-marquee gap="4" speed="64" pause-on-hover>
-              <mm-text size="14" weight="bold">
-                font-family: Alan Sans, Gothic A1, system-ui, sans-serif
-              </mm-text>
-              <mm-text size="14" weight="bold">font-size: 14px</mm-text>
-              <mm-text size="14" weight="bold">line-height: 20px</mm-text>
-            </mm-marquee>
-          </mm-surface>
-          <mm-surface variant="outlined" radius="large">
-            <mm-marquee gap="4" speed="64" pause-on-hover>
-              <mm-text size="12" weight="bold">
-                font-family: Alan Sans, Gothic A1, system-ui, sans-serif
-              </mm-text>
-              <mm-text size="12" weight="bold">font-size: 12px</mm-text>
-              <mm-text size="12" weight="bold">line-height: 16px</mm-text>
-            </mm-marquee>
-          </mm-surface>
-        </mm-flex>
-      </mm-component-example>
+        </mm-surface>
+        <mm-surface variant="outlined" radius="large">
+          <mm-marquee gap="4" speed="64" pause-on-hover>
+            <mm-text size="14" weight="bold">
+              font-family: Alan Sans, Gothic A1, system-ui, sans-serif
+            </mm-text>
+            <mm-text size="14" weight="bold">font-size: 14px</mm-text>
+            <mm-text size="14" weight="bold">line-height: 20px</mm-text>
+          </mm-marquee>
+        </mm-surface>
+        <mm-surface variant="outlined" radius="large">
+          <mm-marquee gap="4" speed="64" pause-on-hover>
+            <mm-text size="12" weight="bold">
+              font-family: Alan Sans, Gothic A1, system-ui, sans-serif
+            </mm-text>
+            <mm-text size="12" weight="bold">font-size: 12px</mm-text>
+            <mm-text size="12" weight="bold">line-height: 16px</mm-text>
+          </mm-marquee>
+        </mm-surface>
+      </mm-flex>
 
       <!-- <mm-flex align-items="end" gap="4">
         <mm-flex direction="column" align-items="center" gap="2">
@@ -704,7 +700,7 @@
     <mm-flex direction="column" gap="3">
       <mm-text-block
         level="2"
-        heading="TODO Material"
+        heading="Blur & Opacity"
         description="material은 뒤 배경을 얼마나 흐리고 덮을지 정하는 blur·opacity 쌍입니다. 단계가 오를수록 더 흐리고 더 불투명해집니다."
       ></mm-text-block>
       <mm-token-stage>

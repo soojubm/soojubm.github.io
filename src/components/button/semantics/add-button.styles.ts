@@ -2,7 +2,7 @@ import { css } from 'lit'
 
 export const addButtonStyles = css`
   :host {
-    --add-button-height: var(--size-medium);
+    --add-button-height: var(--size-large);
     --add-button-text-color: var(--color-foreground);
     --add-button-border-radius: var(--radius);
     --add-button-hover-bg: var(--color-background-subtle);

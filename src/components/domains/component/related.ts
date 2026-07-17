@@ -1,5 +1,5 @@
 import { LitElement, html, css } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
+import { customElement } from 'lit/decorators.js'
 
 @customElement('mm-component-related')
 export class ComponentRelated extends LitElement {
@@ -16,12 +16,10 @@ export class ComponentRelated extends LitElement {
     }
   `
 
-  @property({ type: String }) heading = 'Related Components'
-
   render() {
     return html`
       <section class="component-related">
-        <mm-paragraph size="large">${this.heading}</mm-paragraph>
+        <mm-heading level="2">Related Components</mm-heading>
         <slot></slot>
       </section>
     `
