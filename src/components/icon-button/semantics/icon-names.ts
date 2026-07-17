@@ -90,6 +90,7 @@ export const ICON_NAMES = {
   BOOK: 'book',
   CODE: 'code',
   DESIGN: 'design-pencil',
+  DOCUMENT: 'page',
   DOCUMENT_CHECK: 'clipboard-check',
   FLOWER: 'flower',
   GRAPH: 'graph-up',
@@ -98,6 +99,7 @@ export const ICON_NAMES = {
   MULTI_WINDOW: 'multi-window',
   TASK_LIST: 'task-list',
   UNDERLINE: 'underline',
+  VIDEO: 'media-video',
 
   // Product
   APP_WINDOW: 'app-window',
