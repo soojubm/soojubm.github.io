@@ -26,7 +26,7 @@ const defaultItems: BottomBarItem[] = [
 class BottomBar extends LitElement {
   static styles = css`
     :host {
-      --bottom-bar-item-height: calc(var(--size-medium) + var(--font-line-height-16));
+      --bottom-bar-item-height: calc(var(--size-32) + var(--font-line-height-16));
     }
 
     nav {
@@ -41,7 +41,7 @@ class BottomBar extends LitElement {
       flex-direction: column;
       align-items: center;
       flex: 1;
-      min-width: var(--size-large);
+      min-width: var(--size-48);
       height: var(--bottom-bar-item-height);
       border-radius: var(--radius);
       color: var(--color-foreground);
@@ -55,22 +55,22 @@ class BottomBar extends LitElement {
     }
 
     a[aria-current='page'] {
-      color: var(--selection-foreground);
+      color: var(--interaction-selected-foreground-color);
     }
 
     a[aria-current='page'] mm-avatar {
-      --avatar-icon-color: var(--selection-foreground);
+      --avatar-icon-color: var(--interaction-selected-foreground-color);
     }
 
     a[aria-current='page'] mm-caption {
-      --color-foreground-light: var(--selection-foreground);
+      --color-foreground-light: var(--interaction-selected-foreground-color);
     }
 
     .indicator {
       width: 0;
       height: var(--bottom-bar-item-height);
       border-radius: var(--radius-large);
-      background: var(--selection-background);
+      background: var(--interaction-selected-background-color);
       position: absolute;
       top: 0;
       bottom: 0;

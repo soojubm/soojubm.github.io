@@ -8,7 +8,7 @@ export const switchStyles = css`
     --switch-height: 16px;
     --switch-border-radius: var(--radius);
     --switch-background-color: var(--color-border);
-    --switch-background-color-checked: var(--selection-indicator-color);
+    --switch-background-color-checked: var(--interaction-selected-background-color);
     display: block;
     height: var(--switch-height);
     position: relative;

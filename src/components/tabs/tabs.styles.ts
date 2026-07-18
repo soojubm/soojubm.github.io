@@ -7,7 +7,7 @@ export const tabsStyles = css`
     align-items: center;
     width: max-content;
 
-    --tabs-indicator-background-color: var(--selection-indicator-color);
+    --tabs-indicator-background-color: var(--interaction-selected-background-color);
     --tabs-line-color: var(--color-border);
     --tabs-line-width: var(--border-width);
     --tabs-pill-indicator-background: var(--color-background);
@@ -47,7 +47,7 @@ export const tabsStyles = css`
     padding: var(--space-1);
 
     & .indicator {
-      height: var(--size-medium);
+      height: var(--size-32);
       top: var(--space-1);
       background-color: var(--tabs-pill-indicator-background);
       border: var(--tabs-pill-indicator-border);

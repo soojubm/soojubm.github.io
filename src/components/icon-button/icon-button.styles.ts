@@ -3,7 +3,7 @@ import { css } from 'lit'
 export const iconButtonStyles = css`
   :host {
     display: inline-flex;
-    --icon-button-size: var(--size-medium);
+    --icon-button-size: var(--size-32);
     --icon-button-background-color: var(--color-background-subtle);
     --icon-button-border-radius: var(--radius);
     --icon-button-border: var(--border-transparent);
@@ -56,6 +56,6 @@ export const iconButtonStyles = css`
   }
 
   :host([size='small']) {
-    --icon-button-size: var(--size-small);
+    --icon-button-size: var(--size-24);
   }
 `

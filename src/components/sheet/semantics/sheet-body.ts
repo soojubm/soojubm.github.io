@@ -6,7 +6,6 @@ import { scrollbarStyles } from '@/stylesheets/shared/scrollbar.styles'
 @customElement('mm-sheet-body')
 class SheetBody extends LitElement {
   static styles = [
-    scrollbarStyles,
     css`
       :host {
         flex: 1 1 auto;
@@ -15,6 +14,8 @@ class SheetBody extends LitElement {
           calc(var(--sheet-body-padding-block-end, var(--space-4)) + env(safe-area-inset-bottom)) 0;
         overflow-y: auto;
         overflow-x: hidden;
+
+        ${scrollbarStyles}
       }
     `,
   ]

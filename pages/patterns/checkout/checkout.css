@@ -6,7 +6,7 @@
   margin: 0 0 var(--space-3) 0;
 }
 .checkout-product-item {
-  height: var(--size-huge);
+  height: var(--size-80);
   position: relative;
 }
 .checkout-product-item-name {

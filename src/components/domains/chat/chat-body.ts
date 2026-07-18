@@ -8,7 +8,6 @@ import { scrollbarStyles } from '@/stylesheets/shared/scrollbar.styles'
 export class ChatBody extends LitElement {
   static styles = [
     resetStyles,
-    scrollbarStyles,
     css`
       :host {
         display: block;
@@ -17,6 +16,8 @@ export class ChatBody extends LitElement {
         box-sizing: border-box;
         overflow-x: hidden;
         overflow-y: auto;
+
+        ${scrollbarStyles}
       }
     `,
   ]

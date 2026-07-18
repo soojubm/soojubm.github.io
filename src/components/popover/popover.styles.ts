@@ -1,5 +1,7 @@
 import { css } from 'lit'
 
+import { scrollbarStyles } from '@/stylesheets/shared/scrollbar.styles'
+
 export const popoverStyles = css`
   :host {
     --popover-padding: var(--space-1);
@@ -7,7 +9,7 @@ export const popoverStyles = css`
     --popover-border-radius: var(--radius);
     --popover-background-color: var(--surface-higher-background-color);
     --popover-backdrop-filter: var(--surface-higher-backdrop-filter);
-    --popover-shadow: var(--shadow);
+    --popover-shadow: var(--surface-higher-shadow);
     --popover-max-height: none;
     --popover-width: auto;
     --popover-offset: var(--space-1);
@@ -52,27 +54,7 @@ export const popoverStyles = css`
       transform var(--popover-transition-duration) cubic-bezier(0.2, 0.8, 0.2, 1),
       visibility 0s linear var(--popover-transition-duration);
 
-    &::-webkit-scrollbar {
-      width: 0.5rem;
-      height: auto;
-      padding: 0.125rem;
-      opacity: 0;
-    }
-    &::-webkit-scrollbar-track {
-      background: inherit;
-    }
-    &::-webkit-scrollbar-thumb {
-      margin: 0.125rem;
-      background: var(--color-background-strong);
-      border-radius: var(--radius);
-    }
-    &::-webkit-scrollbar-button {
-      display: none;
-      background-color: inherit;
-    }
-    &::-webkit-scrollbar-corner {
-      background-color: inherit;
-    }
+    ${scrollbarStyles}
   }
 
   :host([open]) .panel {

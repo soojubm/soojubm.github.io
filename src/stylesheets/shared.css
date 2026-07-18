@@ -32,7 +32,7 @@ progress[value]::-moz-progress-bar {
   width: 100%;
   position: relative;
 
-  --step-icon-size: var(--size-small);
+  --step-icon-size: var(--size-24);
 }
 
 .step-item {

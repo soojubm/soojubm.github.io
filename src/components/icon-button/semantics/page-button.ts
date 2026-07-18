@@ -22,8 +22,8 @@ export class PageButton extends LitElement {
       }
 
       button[aria-current='page'] {
-        border-color: var(--selection-indicator-color);
-        color: var(--selection-foreground);
+        border-color: var(--interaction-selected-border-color);
+        color: var(--interaction-selected-foreground-color);
         font-weight: var(--font-weight-bold);
       }
     `,

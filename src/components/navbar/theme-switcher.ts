@@ -26,7 +26,6 @@ export class ThemeSwitcher extends LitElement {
       border: var(--surface-higher-border);
       border-radius: var(--radius);
       background: var(--surface-higher-background-color);
-      box-shadow: var(--shadow);
       backdrop-filter: var(--surface-higher-backdrop-filter);
       -webkit-backdrop-filter: var(--surface-higher-backdrop-filter);
 
@@ -57,7 +56,7 @@ export class ThemeSwitcher extends LitElement {
     }
 
     mm-menu-item-action[aria-current='true'] {
-      color: var(--selection-foreground);
+      color: var(--interaction-selected-foreground-color);
     }
   `
 

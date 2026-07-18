@@ -29,7 +29,7 @@ export const menuItemStyles = css`
     }
 
     &[aria-current='page'] {
-      background-color: var(--selection-background);
+      background-color: var(--interaction-selected-background-color);
     }
 
     &[disabled],

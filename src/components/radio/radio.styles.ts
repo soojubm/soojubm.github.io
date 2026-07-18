@@ -32,12 +32,12 @@ export const radioGroupStyles = css`
 
 export const radioStyles = css`
   :host {
-    --radio-size: var(--size-tiny);
+    --radio-size: var(--size-16);
     --radio-border-radius: 50%;
     --radio-border-color: var(--color-border);
     --radio-background-color: var(--color-background);
-    --radio-border-color-checked: var(--selection-indicator-color);
-    --radio-background-color-checked: var(--selection-indicator-color);
+    --radio-border-color-checked: var(--interaction-selected-border-color);
+    --radio-background-color-checked: var(--interaction-selected-background-color);
     gap: var(--space-2);
   }
 

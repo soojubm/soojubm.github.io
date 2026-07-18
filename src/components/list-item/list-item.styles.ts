@@ -7,7 +7,7 @@ export const listItemStyles = css`
     min-height: var(--list-item-size);
     gap: var(--list-item-gap);
 
-    --list-item-size: var(--size-medium);
+    --list-item-size: var(--size-32);
     --list-item-gap: var(--space-2);
     --list-item-font-size: var(--font-size-14);
   }
@@ -20,13 +20,13 @@ export const listItemStyles = css`
   }
 
   :host([size='48']) {
-    --list-item-size: var(--size-large);
+    --list-item-size: var(--size-48);
     --list-item-gap: var(--space-2);
     --list-item-font-size: var(--font-size-24);
   }
 
   :host([size='80']) {
-    --list-item-size: var(--size-huge);
+    --list-item-size: var(--size-80);
     --list-item-gap: var(--space-3);
     --list-item-font-size: var(--font-size-24);
   }

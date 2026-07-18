@@ -3,7 +3,7 @@ import { css } from 'lit'
 export const inputStyles = css`
   :host {
     position: relative;
-    --input-height: var(--size-large);
+    --input-height: var(--size-48);
     --input-background-color: var(--color-background-subtle);
     --input-border-radius: var(--radius);
     --input-border: var(--border-transparent);
@@ -13,7 +13,7 @@ export const inputStyles = css`
   }
 
   :host([size='small']) {
-    --input-height: var(--size-medium);
+    --input-height: var(--size-32);
     --input-padding-block: 0;
     --input-padding-inline: var(--space-2);
   }

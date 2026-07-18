@@ -2,7 +2,7 @@
   display: flex;
   width: 100%;
   max-width: 1480px;
-  gap: var(--size-large);
+  gap: var(--size-48);
   margin: 0 auto;
   padding: 2rem var(--layout-padding-inline) 8rem;
   box-sizing: border-box;
@@ -55,5 +55,5 @@
 }
 .list mm-media {
   width: 120px;
-  height: var(--size-huge);
+  height: var(--size-80);
 }

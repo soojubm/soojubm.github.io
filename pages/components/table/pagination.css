@@ -12,8 +12,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: var(--size-medium);
-  height: var(--size-medium);
+  width: var(--size-32);
+  height: var(--size-32);
   border-radius: var(--radius);
 }
 .pagination-link.is-current {
@@ -24,8 +24,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: var(--size-medium);
-  height: var(--size-medium);
+  width: var(--size-32);
+  height: var(--size-32);
   border-radius: var(--radius);
   color: var(--color-foreground-light);
   letter-spacing: 1px;

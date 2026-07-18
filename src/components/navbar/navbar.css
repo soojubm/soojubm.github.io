@@ -24,8 +24,8 @@
 }
 
 .navbar-logo {
-  width: var(--size-medium);
-  height: var(--size-medium);
+  width: var(--size-32);
+  height: var(--size-32);
   background: url('../../images/soojubm.png') no-repeat center;
   background-size: cover;
   background-color: var(--color-background-strong);

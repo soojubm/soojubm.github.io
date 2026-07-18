@@ -14,7 +14,7 @@ export default class Tab extends LitElement {
       display: inline-flex;
       z-index: 1; /* pill indicator 위에 텍스트가 렌더링되도록 stacking context 생성 */
 
-      --tab-height: var(--size-medium);
+      --tab-height: var(--size-32);
       --tab-padding-inline: var(--space-3);
       --tab-text-size: var(--font-size-14);
       --tab-text-color: var(--color-foreground-light);
@@ -34,7 +34,7 @@ export default class Tab extends LitElement {
     }
 
     :host([aria-selected='true']) .tab-content {
-      color: var(--selection-foreground);
+      color: var(--interaction-selected-foreground-color);
     }
 
     :host(:focus-visible) {
@@ -42,7 +42,7 @@ export default class Tab extends LitElement {
     }
 
     /* 부모 탭리스트가 pill 형태일 때 활성화된 글자 색상을 커스텀하고 싶다면 하단 주석 해제 */
-    /* :host-context(mm-tab-list[variant="pill"])[active] { color: var(--selection-foreground); } */
+    /* :host-context(mm-tab-list[variant="pill"])[active] { color: var(--interaction-selected-foreground-color); } */
   `
 
   @property({ type: String }) value = ''

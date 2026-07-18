@@ -36,7 +36,7 @@ export class AvatarGroup extends LitElement {
 
       .label {
         font-size: var(--font-size-14);
-        line-height: var(--size-small);
+        line-height: var(--size-24);
         color: var(--color-foreground);
       }
     `,

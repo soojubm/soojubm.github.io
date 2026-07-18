@@ -82,7 +82,7 @@ export class Input extends LitElement {
 
       &[type='date'] {
         display: block;
-        max-height: var(--size-large);
+        max-height: var(--size-48);
 
         &::-webkit-calendar-picker-indicator {
           width: 100%;

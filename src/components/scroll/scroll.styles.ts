@@ -5,13 +5,14 @@ import { scrollbarStyles } from '@/stylesheets/shared/scrollbar.styles'
 
 export const scrollStyles = [
   resetStyles,
-  scrollbarStyles,
   css`
     :host {
       display: flex;
       gap: var(--scroll-gap, 0);
       min-width: 0;
       max-width: 100%;
+
+      ${scrollbarStyles}
     }
 
     :host([direction='row']) {

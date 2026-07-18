@@ -37,7 +37,7 @@ export class AccordionItem extends LitElement {
         justify-content: space-between;
         gap: var(--space-2);
         width: 100%;
-        height: var(--size-medium);
+        height: var(--size-32);
         padding: 0;
         background: none;
         border: none;

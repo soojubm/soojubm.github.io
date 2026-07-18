@@ -18,11 +18,11 @@ export const checkboxGroupStyles = css`
 
 export const checkboxStyles = css`
   :host {
-    --checkbox-size: var(--size-tiny);
+    --checkbox-size: var(--size-16);
     --checkbox-border-radius: 4px;
     --checkbox-border-color: var(--color-border);
     --checkbox-background-color: var(--color-background);
-    --checkbox-border-color-checked: var(--selection-indicator-color);
+    --checkbox-border-color-checked: var(--interaction-selected-border-color);
     gap: var(--space-2);
   }
 
@@ -94,14 +94,14 @@ export const checkboxStyles = css`
   }
 
   input[type='checkbox']:indeterminate + label > span {
-    border-color: var(--selection-indicator-color);
-    background: var(--selection-background);
+    border-color: var(--interaction-selected-border-color);
+    background: var(--interaction-selected-background-color);
   }
 
   input[type='checkbox']:indeterminate + label > span::after {
     display: block;
     width: 8px;
-    background: var(--selection-indicator-color);
+    background: var(--interaction-selected-background-color);
     border: none;
     left: 4px;
     top: 48%;
@@ -126,6 +126,6 @@ export const checkboxStyles = css`
   }
 
   :host([size='large']) {
-    --checkbox-size: var(--size-small);
+    --checkbox-size: var(--size-24);
   }
 `

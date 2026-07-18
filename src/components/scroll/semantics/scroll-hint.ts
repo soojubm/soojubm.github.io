@@ -11,14 +11,30 @@ export class ScrollHint extends LitElement {
     resetStyles,
     css`
       :host {
-        --scroll-hint-width: var(--size-large);
+        --scroll-hint-width: var(--size-48);
         --scroll-hint-gap: 0px;
+        --gradient-scroll-hint-start: linear-gradient(
+          to right,
+          var(--color-background) 0%,
+          var(--color-background) 42%,
+          color-mix(in srgb, var(--color-background) 96%, transparent) 58%,
+          color-mix(in srgb, var(--color-background) 72%, transparent) 78%,
+          transparent 100%
+        );
+        --gradient-scroll-hint-end: linear-gradient(
+          to right,
+          transparent 0%,
+          color-mix(in srgb, var(--color-background) 72%, transparent) 22%,
+          color-mix(in srgb, var(--color-background) 96%, transparent) 42%,
+          var(--color-background) 58%,
+          var(--color-background) 100%
+        );
 
         display: block;
         flex: 0 0 var(--scroll-hint-width);
         order: 999;
         align-self: stretch;
-        min-height: var(--size-medium);
+        min-height: var(--size-32);
         margin-left: calc((var(--scroll-hint-width) + var(--scroll-hint-gap)) * -1);
         position: sticky;
         right: -1px;

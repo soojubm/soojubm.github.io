@@ -12,17 +12,28 @@
       따라 적용되는 State로 나뉘며, Base는 다시 크기·간격의 Dimension과 재질·표면의 Surface로
       구분됩니다."
     ></mm-text-block>
+
+    <mm-text-block
+      level="3"
+      heading="토큰 구조"
+      description="토큰은 프리미티브와 시멘틱 계층으로 구성됩니다. 프리미티브 토큰은 디자인의 기본 값을
+    정의하고, 시멘틱 토큰은 이를 인터페이스의 역할에 매핑합니다. 프리미티브 토큰은 color-, size-,
+    space-와 같이 값의 종류를 기준으로 명명하며, 시멘틱 토큰은 background-color, border-color,
+    body-font-size처럼 역할과 용도를 기준으로 명명합니다. 이를 통해 토큰의 출처와 목적을 명확하게
+    구분할 수 있습니다."
+    ></mm-text-block>
+
     <style>
       .token-color-markers {
         display: flex;
-        width: min(100%, calc(var(--size-huge) * 6));
+        width: min(100%, calc(var(--size-80) * 6));
       }
 
       .token-color-marker {
         display: flex;
         justify-content: center;
         flex: 1 1 0;
-        min-width: var(--size-medium);
+        min-width: var(--size-32);
       }
     </style>
 
@@ -239,8 +250,8 @@
           <mm-flex direction="column" align-items="center" gap="2">
             <div
               style="
-                width: var(--size-tiny);
-                height: var(--size-tiny);
+                width: var(--size-16);
+                height: var(--size-16);
                 background: var(--color-background-strong);
                 border-radius: var(--radius);
                 flex-shrink: 0;
@@ -251,8 +262,8 @@
           <mm-flex direction="column" align-items="center" gap="2">
             <div
               style="
-                width: var(--size-small);
-                height: var(--size-small);
+                width: var(--size-24);
+                height: var(--size-24);
                 background: var(--color-background-strong);
                 border-radius: var(--radius);
                 flex-shrink: 0;
@@ -263,8 +274,8 @@
           <mm-flex direction="column" align-items="center" gap="2">
             <div
               style="
-                width: var(--size-medium);
-                height: var(--size-medium);
+                width: var(--size-32);
+                height: var(--size-32);
                 background: var(--color-background-strong);
                 border-radius: var(--radius);
                 flex-shrink: 0;
@@ -287,8 +298,8 @@
           <mm-flex direction="column" align-items="center" gap="2">
             <div
               style="
-                width: var(--size-large);
-                height: var(--size-large);
+                width: var(--size-48);
+                height: var(--size-48);
                 background: var(--color-background-strong);
                 border-radius: var(--radius);
                 flex-shrink: 0;
@@ -299,8 +310,8 @@
           <mm-flex direction="column" align-items="center" gap="2">
             <div
               style="
-                width: var(--size-huge);
-                height: var(--size-huge);
+                width: var(--size-80);
+                height: var(--size-80);
                 background: var(--color-background-strong);
                 border-radius: var(--radius);
                 flex-shrink: 0;
@@ -333,7 +344,7 @@
               <div
                 style="
                   width: 2px;
-                  height: var(--size-medium);
+                  height: var(--size-32);
                   background: var(--color-background-strong);
                   border-radius: var(--radius);
                 "
@@ -342,7 +353,7 @@
               <div
                 style="
                   width: 2px;
-                  height: var(--size-medium);
+                  height: var(--size-32);
                   background: var(--color-background-strong);
                   border-radius: var(--radius);
                 "
@@ -355,7 +366,7 @@
               <div
                 style="
                   width: 2px;
-                  height: var(--size-medium);
+                  height: var(--size-32);
                   background: var(--color-background-strong);
                   border-radius: var(--radius);
                 "
@@ -366,7 +377,7 @@
               <div
                 style="
                   width: 2px;
-                  height: var(--size-medium);
+                  height: var(--size-32);
                   background: var(--color-background-strong);
                   border-radius: var(--radius);
                 "
@@ -379,7 +390,7 @@
               <div
                 style="
                   width: 2px;
-                  height: var(--size-medium);
+                  height: var(--size-32);
                   background: var(--color-background-strong);
                   border-radius: var(--radius);
                 "
@@ -390,7 +401,7 @@
               <div
                 style="
                   width: 2px;
-                  height: var(--size-medium);
+                  height: var(--size-32);
                   background: var(--color-background-strong);
                   border-radius: var(--radius);
                 "
@@ -403,7 +414,7 @@
               <div
                 style="
                   width: 2px;
-                  height: var(--size-medium);
+                  height: var(--size-32);
                   background: var(--color-background-strong);
                   border-radius: var(--radius);
                 "
@@ -414,7 +425,7 @@
               <div
                 style="
                   width: 2px;
-                  height: var(--size-medium);
+                  height: var(--size-32);
                   background: var(--color-background-strong);
                   border-radius: var(--radius);
                 "
@@ -427,7 +438,7 @@
               <div
                 style="
                   width: 2px;
-                  height: var(--size-medium);
+                  height: var(--size-32);
                   background: var(--color-background-strong);
                   border-radius: var(--radius);
                 "
@@ -438,7 +449,7 @@
               <div
                 style="
                   width: 2px;
-                  height: var(--size-medium);
+                  height: var(--size-32);
                   background: var(--color-background-strong);
                   border-radius: var(--radius);
                 "
@@ -451,7 +462,7 @@
               <div
                 style="
                   width: 2px;
-                  height: var(--size-medium);
+                  height: var(--size-32);
                   background: var(--color-background-strong);
                   border-radius: var(--radius);
                 "
@@ -462,7 +473,7 @@
               <div
                 style="
                   width: 2px;
-                  height: var(--size-medium);
+                  height: var(--size-32);
                   background: var(--color-background-strong);
                   border-radius: var(--radius);
                 "
@@ -475,7 +486,7 @@
               <div
                 style="
                   width: 2px;
-                  height: var(--size-medium);
+                  height: var(--size-32);
                   background: var(--color-background-strong);
                   border-radius: var(--radius);
                 "
@@ -486,7 +497,7 @@
               <div
                 style="
                   width: 2px;
-                  height: var(--size-medium);
+                  height: var(--size-32);
                   background: var(--color-background-strong);
                   border-radius: var(--radius);
                 "
@@ -533,8 +544,8 @@
           <mm-flex direction="column" align-items="center" gap="2">
             <div
               style="
-                width: var(--size-large);
-                height: var(--size-large);
+                width: var(--size-48);
+                height: var(--size-48);
                 border: var(--border);
                 border-radius: var(--radius);
                 background: var(--color-background);
@@ -546,8 +557,8 @@
           <mm-flex direction="column" align-items="center" gap="2">
             <div
               style="
-                width: var(--size-large);
-                height: var(--size-large);
+                width: var(--size-48);
+                height: var(--size-48);
                 border: var(--border);
                 border-radius: var(--radius);
                 background: var(--color-background);
@@ -559,9 +570,9 @@
           <mm-flex direction="column" align-items="center" gap="2">
             <div
               style="
-                width: var(--size-large);
-                height: var(--size-large);
-                border: var(--border-active);
+                width: var(--size-48);
+                height: var(--size-48);
+                border: var(--interaction-selected-border-color);
                 border-radius: var(--radius);
                 background: var(--color-background);
                 flex-shrink: 0;
@@ -572,8 +583,8 @@
           <mm-flex direction="column" align-items="center" gap="2">
             <div
               style="
-                width: var(--size-large);
-                height: var(--size-large);
+                width: var(--size-48);
+                height: var(--size-48);
                 border: var(--border-transparent);
                 border-radius: var(--radius);
                 background: var(--color-background-subtle);
@@ -585,8 +596,8 @@
           <mm-flex direction="column" align-items="center" gap="2">
             <div
               style="
-                width: var(--size-large);
-                height: var(--size-large);
+                width: var(--size-48);
+                height: var(--size-48);
                 border: var(--border);
                 border-radius: var(--radius);
                 background: var(--color-background);
@@ -598,8 +609,8 @@
           <mm-flex direction="column" align-items="center" gap="2">
             <div
               style="
-                width: var(--size-large);
-                height: var(--size-large);
+                width: var(--size-48);
+                height: var(--size-48);
                 border: var(--border);
                 border-radius: var(--radius-large);
                 background: var(--color-background);
@@ -611,8 +622,8 @@
           <mm-flex direction="column" align-items="center" gap="2">
             <div
               style="
-                width: var(--size-large);
-                height: var(--size-large);
+                width: var(--size-48);
+                height: var(--size-48);
                 border: var(--border);
                 border-radius: var(--radius-round);
                 background: var(--color-background);
@@ -648,11 +659,11 @@
           <mm-flex direction="column" align-items="center" gap="2">
             <div
               style="
-                width: var(--size-large);
-                height: var(--size-large);
+                width: var(--size-48);
+                height: var(--size-48);
                 border-radius: var(--radius);
                 background: var(--color-background);
-                box-shadow: var(--shadow);
+                box-shadow: var(--surface-base-shadow);
                 flex-shrink: 0;
               "
             ></div>
@@ -661,11 +672,11 @@
           <mm-flex direction="column" align-items="center" gap="2">
             <div
               style="
-                width: var(--size-large);
-                height: var(--size-large);
+                width: var(--size-48);
+                height: var(--size-48);
                 border-radius: var(--radius);
                 background: var(--color-background);
-                box-shadow: var(--shadow-high);
+                box-shadow: var(--surface-high-shadow);
                 flex-shrink: 0;
               "
             ></div>
@@ -674,11 +685,11 @@
           <mm-flex direction="column" align-items="center" gap="2">
             <div
               style="
-                width: var(--size-large);
-                height: var(--size-large);
+                width: var(--size-48);
+                height: var(--size-48);
                 border-radius: var(--radius);
                 background: var(--color-background);
-                box-shadow: var(--shadow-higher);
+                box-shadow: var(--surface-higher-shadow);
                 flex-shrink: 0;
               "
             ></div>
@@ -727,8 +738,8 @@
             <mm-flex direction="column" align-items="center" gap="2">
               <div
                 style="
-                  width: var(--size-large);
-                  height: var(--size-large);
+                  width: var(--size-48);
+                  height: var(--size-48);
                   border-radius: var(--radius);
                   background: rgb(255 255 255 / var(--surface-base-opacity));
                   backdrop-filter: blur(var(--surface-base-blur));
@@ -741,8 +752,8 @@
             <mm-flex direction="column" align-items="center" gap="2">
               <div
                 style="
-                  width: var(--size-large);
-                  height: var(--size-large);
+                  width: var(--size-48);
+                  height: var(--size-48);
                   border-radius: var(--radius);
                   background: rgb(255 255 255 / var(--surface-high-opacity));
                   backdrop-filter: blur(var(--surface-high-blur));
@@ -755,8 +766,8 @@
             <mm-flex direction="column" align-items="center" gap="2">
               <div
                 style="
-                  width: var(--size-large);
-                  height: var(--size-large);
+                  width: var(--size-48);
+                  height: var(--size-48);
                   border-radius: var(--radius);
                   background: rgb(255 255 255 / var(--surface-higher-opacity));
                   backdrop-filter: blur(var(--surface-higher-blur));

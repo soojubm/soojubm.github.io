@@ -29,17 +29,17 @@ export const avatarStyles = css`
   }
 
   :host([size='80']) {
-    --avatar-size: var(--size-huge);
+    --avatar-size: var(--size-80);
     font-size: var(--font-size-huge);
   }
 
   :host([size='48']) {
-    --avatar-size: var(--size-large);
+    --avatar-size: var(--size-48);
     font-size: var(--font-size-large);
   }
 
   :host([size='32']) {
-    --avatar-size: var(--size-medium);
+    --avatar-size: var(--size-32);
   }
 
   :host([variant='primary']) {

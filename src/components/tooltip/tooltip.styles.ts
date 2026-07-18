@@ -10,7 +10,7 @@ export const tooltipStyles = css`
     --tooltip-border-radius: var(--radius);
     --tooltip-background-color: var(--color-background-strong);
     --tooltip-text-color: var(--color-foreground-on-solid);
-    --tooltip-shadow: var(--shadow);
+    --tooltip-shadow: var(--surface-higher-shadow);
   }
 
   :host(:hover) [role='tooltip'],

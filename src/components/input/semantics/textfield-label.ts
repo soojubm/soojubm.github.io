@@ -7,7 +7,7 @@ export class TextfieldLabel extends LitElement {
   static styles = css`
     label {
       display: block;
-      line-height: var(--size-small);
+      line-height: var(--size-24);
     }
     small {
       margin: 0 0 0 var(--space-1);

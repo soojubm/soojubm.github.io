@@ -30,7 +30,6 @@ export const tagToneStyles = {
   gold: {
     background: 'var(--color-accent)',
     color: 'var(--color-foreground)',
-    borderColor: 'var(--color-accent-border)',
   },
   green: categoryTone(2),
   yellow: categoryTone(6),
@@ -81,7 +80,7 @@ export type Category = keyof typeof categoryToneMap
 
 export const tagStyles = css`
   :host {
-    --tag-height: var(--size-small);
+    --tag-height: var(--size-24);
     --tag-padding-inline: var(--space-2);
     --tag-gap: var(--space-1);
     --tag-border: var(--border);
@@ -117,7 +116,7 @@ export const tagStyles = css`
   :host([tone='gold']) {
     --tag-background-color: var(--color-accent);
     --tag-color: var(--color-foreground);
-    --tag-border-color: var(--color-accent-border);
+    --tag-border-color: var(--color-accent);
   }
 
   :host([tone='green']) {

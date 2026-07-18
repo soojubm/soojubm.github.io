@@ -7,7 +7,6 @@ import { ScrollSpyController } from '@/controllers/scroll-spy-controller'
 import { SelectionIndicatorController } from '@/controllers/selection-indicator-controller'
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
 import { copyToClipboard } from '@/utils/clipboard'
-import '@/components/domains/indicators/selection-indicator'
 import '@/components/icon-button/icon-button'
 import '@/components/button/button-group'
 
@@ -29,7 +28,7 @@ export class TableOfContents extends LitElement {
     css`
       :host {
         display: block;
-        max-height: calc(100vh - var(--size-huge));
+        max-height: calc(100vh - var(--size-80));
         padding: var(--space-4) 0 0;
         flex-shrink: 0;
         position: sticky;
@@ -45,6 +44,25 @@ export class TableOfContents extends LitElement {
         display: flex;
         flex-direction: column;
         position: relative;
+      }
+
+      .indicator {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 2px;
+        height: 8px;
+        border-radius: var(--radius);
+        background: var(--interaction-selected-background-color);
+        opacity: 1;
+        transform: translateY(var(--selection-indicator-y, 0));
+        transition: opacity 0.16s ease, transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .indicator {
+          transition: none;
+        }
       }
 
       .toc-link {
@@ -69,7 +87,7 @@ export class TableOfContents extends LitElement {
       }
 
       .toc-link[aria-current='true'] {
-        color: var(--selection-foreground);
+        color: var(--interaction-selected-foreground-color);
       }
 
       @media (prefers-reduced-motion: reduce) {
@@ -107,7 +125,7 @@ export class TableOfContents extends LitElement {
   })
 
   @query('.toc-list') private list?: HTMLElement
-  @query('mm-selection-indicator') private indicator?: HTMLElement
+  @query('.indicator') private indicator?: HTMLElement
 
   render() {
     if (!this.items.length) return nothing
@@ -118,7 +136,7 @@ export class TableOfContents extends LitElement {
           On this page
         </mm-text>
         <div class="toc-list">
-          <mm-selection-indicator position="absolute" aria-hidden="true"></mm-selection-indicator>
+          <div class="indicator" aria-hidden="true"></div>
           ${this.renderTocItems()}
         </div>
       </nav>

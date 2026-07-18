@@ -54,7 +54,7 @@ export class Select extends LitElement {
       }
 
       mm-menu-item-action[aria-current='true'] {
-        color: var(--selection-foreground);
+        color: var(--interaction-selected-foreground-color);
       }
     `,
   ]

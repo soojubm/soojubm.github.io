@@ -14,7 +14,7 @@ export const interactiveControlStyles = css`
     }
 
     &:enabled:active {
-      background: var(--color-interaction-active-background);
+      background: var(--interaction-active-background-color);
       box-shadow: var(--interaction-active-shadow);
     }
 
@@ -33,7 +33,7 @@ export const buttonBaseStyles = [
   interactiveControlStyles,
   css`
     :host {
-      --button-height: var(--size-medium);
+      --button-height: var(--size-32);
       --button-min-width: 5rem;
       --button-border: var(--border-transparent);
       --button-padding-inline: var(--space-3);
@@ -76,16 +76,16 @@ export const buttonBaseStyles = [
 /** mm-button 크기 변형. */
 export const buttonSizeStyles = css`
   :host([size='huge']) :is(button, a) {
-    --button-height: var(--size-huge);
+    --button-height: var(--size-80);
     --button-text-size: var(--font-size-18);
     padding-bottom: 5px;
   }
   :host([size='large']) :is(button, a) {
-    --button-height: var(--size-large);
+    --button-height: var(--size-48);
     min-width: var(--button-min-width);
   }
   :host([size='small']) :is(button, a) {
-    --button-height: var(--size-medium);
+    --button-height: var(--size-32);
     min-width: 0;
   }
 `
@@ -116,13 +116,9 @@ export const buttonVariantStyles = css`
 /** 누름 상태는 표준 aria-pressed로 표현하므로, 스킨도 해당 attribute selector를 단일 기준으로 둔다. */
 export const buttonSelectedStyles = css`
   button[aria-pressed='true'] {
-    --button-selected-border-color: var(--selection-indicator-color);
-    --button-selected-background: var(--selection-background);
-    --button-selected-text-color: var(--selection-foreground);
-
-    border: var(--border-width) solid var(--button-selected-border-color);
-    background: var(--button-selected-background);
-    color: var(--button-selected-text-color);
+    border-color: var(--interaction-selected-border-color);
+    background: var(--interaction-selected-background-color);
+    color: var(--interaction-selected-foreground-color);
   }
 `
 

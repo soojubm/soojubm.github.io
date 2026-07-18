@@ -28,8 +28,8 @@
 }
 
 .scroll-spy-sampler-tab.is-active {
-  background: var(--selection-background);
-  color: var(--selection-foreground);
+  background: var(--interaction-selected-background-color);
+  color: var(--interaction-selected-foreground-color);
 }
 
 .scroll-spy-sampler-body {

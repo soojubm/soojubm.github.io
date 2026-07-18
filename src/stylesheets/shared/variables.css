@@ -1,24 +1,8 @@
 /* stylelint-disable color-no-hex -- 토큰 정의 파일이므로 hex 값 허용 */
 :root {
   color-scheme: light dark;
-  --font-family: 'Alan Sans', 'Gothic A1', system-ui, sans-serif;
 
-  --gradient-scroll-hint-start: linear-gradient(
-    to right,
-    var(--color-background) 0%,
-    var(--color-background) 42%,
-    color-mix(in srgb, var(--color-background) 96%, transparent) 58%,
-    color-mix(in srgb, var(--color-background) 72%, transparent) 78%,
-    transparent 100%
-  );
-  --gradient-scroll-hint-end: linear-gradient(
-    to right,
-    transparent 0%,
-    color-mix(in srgb, var(--color-background) 72%, transparent) 22%,
-    color-mix(in srgb, var(--color-background) 96%, transparent) 42%,
-    var(--color-background) 58%,
-    var(--color-background) 100%
-  );
+  --font-family: 'Alan Sans', 'Gothic A1', system-ui, sans-serif;
 
   --font-size-32: 32px;
   --font-size-24: 24px;
@@ -33,7 +17,7 @@
   --font-weight-normal: 500;
   --font-weight-bold: 700;
 
-  --navbar-height: calc(var(--size-medium) + 1.5rem);
+  --navbar-height: calc(var(--size-32) + 1.5rem);
 
   --layout-width-wide: 1280px;
   --layout-width-small: 640px;
@@ -80,56 +64,48 @@
   --tag-category-8-border: #d8b4fe;
   --tag-category-8-text: #7e22ce;
 
-  --color-primary: var(--green800);
-  --color-primary-subtle: var(--green100);
-
-  --color-accent: var(--yellow800);
-  --color-accent-border: color-mix(in srgb, var(--color-accent) 30%, transparent);
-
-  --color-success: var(--green800);
-  --color-success-foreground: #117a45;
-  --color-success-subtle: color-mix(in srgb, var(--color-success) 8%, var(--color-background));
-  --color-success-border: color-mix(in srgb, var(--color-success) 30%, transparent);
-
-  --color-warning: var(--orange800);
-  --color-warning-foreground: #9a4600;
-  --color-warning-subtle: color-mix(in srgb, var(--color-warning) 8%, var(--color-background));
-  --color-warning-border: color-mix(in srgb, var(--color-warning) 30%, transparent);
-
-  --color-danger: var(--red800);
-  --color-danger-foreground: #c51635;
-  --color-danger-subtle: color-mix(in srgb, var(--color-danger) 8%, var(--color-background));
-  --color-danger-border: color-mix(in srgb, var(--color-danger) 30%, transparent);
-
   --color-newneek: #fb7800;
   --color-newneek-gray: #ebebeb;
+
+  /* 시멘틱 컬러 */
+  --interaction-active-background-color: var(--color-accent);
+  --interaction-focus-outline: 2px solid var(--gray800);
+  --interaction-active-shadow: 0 0 0 2px #c8f3fa, inset 0 0 0 2px var(--color-foreground-on-solid);
+  --interaction-selected-background-color: var(--color-primary-subtle);
+  --interaction-selected-foreground-color: var(--color-primary);
+  --interaction-selected-border-color: var(--color-primary);
 
   --color-background: var(--gray0);
   --color-background-subtle: var(--gray100);
   --color-background-strong: var(--gray800);
   --color-border: var(--gray200);
 
-  --color-interaction-focus: var(--gray800);
-  --color-interaction-active-background: var(--color-accent);
-  --color-interaction-active-ring: #c8f3fa;
-
-  --interaction-focus-outline: 2px solid var(--color-interaction-focus);
-  --interaction-active-shadow: 0 0 0 2px var(--color-interaction-active-ring),
-    inset 0 0 0 2px var(--color-foreground-on-solid);
-
   --color-foreground: var(--gray800);
   --color-foreground-light: var(--gray400);
   --color-foreground-on-solid: var(--gray0);
   --color-foreground-on-warning: var(--red800);
-
   --color-foreground-on-primary: var(--gray0);
 
-  --size-huge: 80px;
-  --size-large: 48px;
+  --color-primary: var(--green800);
+  --color-primary-subtle: var(--green100);
+
+  --color-accent: var(--yellow800);
+  --color-success: var(--green800);
+  --color-success-foreground: #117a45;
+  --color-success-background: #fff;
+  --color-warning: var(--orange800);
+  --color-warning-foreground: #9a4600;
+  --color-warning-background: #fff;
+  --color-danger: var(--red800);
+  --color-danger-foreground: #c51635;
+  --color-warning-foreground: #fff;
+
+  --size-80: 80px;
+  --size-48: 48px;
   --size-40: 40px;
-  --size-medium: 32px;
-  --size-small: 24px;
-  --size-tiny: 16px;
+  --size-32: 32px;
+  --size-24: 24px;
+  --size-16: 16px;
 
   --space-1: 4px;
   --space-2: 8px;
@@ -145,59 +121,39 @@
   --border-width: 1px;
   --border: var(--border-width) solid var(--color-border);
   --border-transparent: var(--border-width) solid transparent;
-  --border-active: 1px solid var(--color-primary);
-
-  --selection-indicator-size: var(--space-2);
-  --selection-indicator-gap: var(--space-2);
-  --selection-indicator-color: var(--color-primary);
-  --selection-background: var(--color-primary-subtle);
-  --selection-foreground: var(--color-primary);
 
   --radius: 6px;
   --radius-large: 1rem;
   --radius-round: 50%;
 
-  /* 그림자 원시값: 고도 단계별 값. 의미 부여 없이 그대로 사용하거나 의미 토큰의 재료로 쓴다 */
-  --shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.08);
-  --shadow-high: 0 4px 12px rgba(0, 0, 0, 0.15);
-  --shadow-higher: 0 16px 32px rgba(0, 0, 0, 0.2);
-
-  /* 재질(surface) 원시값: 뒤 배경을 얼마나 흐리고 덮을지 정하는 blur·opacity 쌍. 단계가 오를수록 더 흐리고 더 불투명하다 */
-  --surface-base-blur: 10px;
-  --surface-base-opacity: 0.35;
-  --surface-high-blur: 20px;
-  --surface-high-opacity: 0.55;
-  --surface-higher-blur: 30px;
-  --surface-higher-opacity: 0.8;
-
   /* navbar-user 같은 control pill의 모양 토큰(테마 무관 고정값이라 :root 선언이 안전하다) */
   --control-padding: var(--space-1) var(--space-2);
   --control-border-radius: var(--radius-large);
 
-  /*
-   * 재질(surface) 의미 토큰: 떠 있는 표면이 base/high/higher 3단계 티어로 소비한다.
-   * base는 뎁스가 없는 flush chrome 바용이라 모든 테마에서 재질 효과 없이 항상 비활성이다.
-   * :root에서 테마가 재정의하는 토큰(--color-background 등)을 참조하면 html 시점 값으로
-   * 고정되므로, 절대 재정의되지 않는 원시값(--gray0)을 쓰고 테마 블록이 자기 값으로 재선언한다.
-   */
   /* ===== surface-base ===== */
   --surface-base-background-color: var(--gray0);
   --surface-base-border: none;
   --surface-base-backdrop-filter: none;
-  --surface-base-shadow: none;
+  --surface-base-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.08);
+  --surface-base-blur: 10px;
+  --surface-base-opacity: 0.35;
+  /* --surface-base-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); */
 
   /* ===== surface-high (dialog, sidebar-menu) ===== */
   --surface-high-background-color: var(--gray0);
   --surface-high-border: none;
   --surface-high-backdrop-filter: none;
   --surface-high-shadow: none;
+  --surface-high-blur: 20px;
+  --surface-high-opacity: 0.55;
 
   /* ===== surface-higher (navbar-user pill, dropdown, popover) ===== */
-  /* border는 :root(html) 시점 light 값으로 고정되므로 dark·brutal 블록이 재선언한다 */
   --surface-higher-background-color: var(--gray0);
   --surface-higher-border: var(--border);
   --surface-higher-backdrop-filter: none;
-  --surface-higher-shadow: none;
+  --surface-higher-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
+  --surface-higher-blur: 30px;
+  --surface-higher-opacity: 0.8;
 
   /* z-index: 화면 위 높낮이를 표현하는 값. 같은 그룹 안에서만 값을 비교한다 */
   --material-zindex-base: 0; /* 기본 콘텐츠: 문서, 리스트, 배경 */
@@ -232,12 +188,6 @@
   --color-primary: #1a1a1a;
   --green100: rgba(0, 0, 0, 0.08);
   --color-success: #1a1a1a;
-}
-
-.color-green {
-  --color-primary: var(--green800);
-  --green100: rgba(10, 160, 80, 0.075);
-  --color-success: var(--green800);
 }
 
 :root [data-theme='dark'] {
@@ -298,7 +248,6 @@
 
   --border: var(--brutal-border);
   --border-transparent: var(--brutal-border);
-  --border-active: var(--brutal-border);
   --surface-higher-border: var(--border);
 }
 

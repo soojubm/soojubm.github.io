@@ -16,7 +16,7 @@ export class Spinner extends LitElement {
       }
 
       .spinner {
-        --spinner-size: var(--size-medium);
+        --spinner-size: var(--size-32);
         width: var(--spinner-size);
         height: var(--spinner-size);
         border-radius: 50%;
@@ -27,15 +27,15 @@ export class Spinner extends LitElement {
       }
 
       :host([size='small']) .spinner {
-        --spinner-size: var(--size-small);
+        --spinner-size: var(--size-24);
       }
 
       :host([size='medium']) .spinner {
-        --spinner-size: var(--size-medium);
+        --spinner-size: var(--size-32);
       }
 
       :host([size='large']) .spinner {
-        --spinner-size: var(--size-large);
+        --spinner-size: var(--size-48);
       }
 
       .label {

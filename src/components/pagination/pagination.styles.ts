@@ -19,8 +19,8 @@ export const paginationStyles = css`
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: var(--size-medium);
-    height: var(--size-medium);
+    width: var(--size-32);
+    height: var(--size-32);
     color: var(--color-foreground-light);
     letter-spacing: 1px;
     line-height: 1;
@@ -35,12 +35,12 @@ export const paginationStyles = css`
     mm-prev-button,
     mm-next-button,
     mm-page-button {
-      --button-height: var(--size-small);
+      --button-height: var(--size-24);
     }
 
     .pagination-ellipsis {
-      width: var(--size-small);
-      height: var(--size-small);
+      width: var(--size-24);
+      height: var(--size-24);
     }
   }
 `

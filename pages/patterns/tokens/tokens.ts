@@ -23,24 +23,19 @@ const colorTokens = [
   { name: '--red100', value: '', cases: ['--color-danger-light'] },
   { name: '--red800', value: '', cases: ['--color-danger'] },
   { name: '--yellow800', value: '', cases: ['--color-accent'] },
-  { name: '--selection-indicator-color', value: 'var(--color-primary)', cases: [] },
-  { name: '--selection-background', value: 'var(--color-primary-subtle)', cases: [] },
-  { name: '--selection-foreground', value: 'var(--color-primary)', cases: [] },
+  {
+    name: '--interaction-selected-background-color',
+    value: 'var(--color-primary-subtle)',
+    cases: [],
+  },
+  { name: '--interaction-selected-foreground-color', value: 'var(--color-primary)', cases: [] },
   { name: '--color-primary', value: 'var(--green800)', cases: [] },
   { name: '--color-primary-subtle', value: 'var(--green100)', cases: [] },
   { name: '--color-accent', value: 'var(--yellow800)', cases: [] },
-  {
-    name: '--color-accent-border',
-    value: 'color-mix(in srgb, var(--color-accent) 30%, transparent)',
-    cases: [],
-  },
+
   { name: '--color-success', value: 'var(--green800)', cases: [] },
   { name: '--color-success-foreground', value: '#117a45', cases: [] },
-  {
-    name: '--color-success-subtle',
-    value: 'color-mix(in srgb, var(--color-success) 8%, var(--color-background))',
-    cases: [],
-  },
+
   {
     name: '--color-success-border',
     value: 'color-mix(in srgb, var(--color-success) 30%, transparent)',
@@ -48,28 +43,9 @@ const colorTokens = [
   },
   { name: '--color-warning', value: 'var(--orange800)', cases: [] },
   { name: '--color-warning-foreground', value: '#9a4600', cases: [] },
-  {
-    name: '--color-warning-subtle',
-    value: 'color-mix(in srgb, var(--color-warning) 8%, var(--color-background))',
-    cases: [],
-  },
-  {
-    name: '--color-warning-border',
-    value: 'color-mix(in srgb, var(--color-warning) 30%, transparent)',
-    cases: [],
-  },
   { name: '--color-danger', value: 'var(--red800)', cases: [] },
   { name: '--color-danger-foreground', value: '#c51635', cases: [] },
-  {
-    name: '--color-danger-subtle',
-    value: 'color-mix(in srgb, var(--color-danger) 8%, var(--color-background))',
-    cases: [],
-  },
-  {
-    name: '--color-danger-border',
-    value: 'color-mix(in srgb, var(--color-danger) 30%, transparent)',
-    cases: [],
-  },
+
   { name: '--color-background', value: 'var(--gray0)', cases: [] },
   { name: '--color-background-subtle', value: 'var(--gray100)', cases: [] },
   { name: '--color-background-strong', value: 'var(--gray800)', cases: [] },
@@ -78,7 +54,7 @@ const colorTokens = [
   { name: '--color-foreground-light', value: 'var(--gray400)', cases: [] },
   { name: '--color-foreground-on-solid', value: 'var(--gray0)', cases: [] },
   { name: '--color-interaction-focus', value: '#007185', cases: [] },
-  { name: '--color-interaction-active-background', value: '#f0b800', cases: [] },
+  { name: '--interaction-active-background-color', value: '#f0b800', cases: [] },
   { name: '--color-interaction-active-border', value: '#008296', cases: [] },
   { name: '--color-interaction-active-ring', value: '#c8f3fa', cases: [] },
   { name: '--skeleton-sample', value: '', cases: [''] },
@@ -169,7 +145,7 @@ const article = [
     title: 'Sizing',
     kicker: '요소의 너비와 길이',
     description: [
-      '사이즈 토큰으로 추상화하지 않는 케이스 --navbar-height: var(--size-huge)5rem, --sidenav-width: null',
+      '사이즈 토큰으로 추상화하지 않는 케이스 --navbar-height: var(--size-80)5rem, --sidenav-width: null',
       '예외 케이스 switch height: 20px',
     ],
     tokens: [...sizeTokens],
