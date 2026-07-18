@@ -6,8 +6,7 @@ import { repeat } from 'lit/directives/repeat.js'
 import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
 import { DisclosureController } from '@/controllers/disclosure-controller'
 import { SITEMAP } from '@/sitemap'
-
-const MOBILE_QUERY = '(max-width: 1080px)'
+import { MEDIA_QUERY } from '@/stylesheets/shared/breakpoints'
 
 @customElement('mm-sidebar')
 export class Sidebar extends LitElement {
@@ -18,7 +17,7 @@ export class Sidebar extends LitElement {
     SITEMAP.filter(node => node.type === 'group').map(node => node.id),
   )
 
-  private mobileQuery = window.matchMedia(MOBILE_QUERY)
+  private mobileQuery = window.matchMedia(MEDIA_QUERY.default)
 
   private disclosure = new DisclosureController(this, {
     isOpen: () => this.isOpen,
