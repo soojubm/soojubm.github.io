@@ -22,25 +22,3 @@ export function stopAnimation() {
     }),
   )
 }
-
-// let start = null
-// const element = document.querySelector('.js-navbar')
-
-// function step(timestamp) {
-//   if (!start) start = timestamp
-//   const progress = timestamp - start
-//   element.style.marginLeft = Math.min(progress / 10, 200) + 'px'
-
-//   if (progress >= 5000) return
-//   window.requestAnimationFrame(step)
-// }
-
-// window.requestAnimationFrame(step)
-
-// if (navigator.connection && navigator.connection.effectiveType) {
-//   if (navigator.connection.effectiveType === '4g') {
-//     // Load video
-//   } else {
-//     // Load image
-//   }
-// }
