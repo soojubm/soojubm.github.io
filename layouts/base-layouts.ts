@@ -7,10 +7,12 @@ import '../src/stylesheets/shared.css'
 
 export const renderLayout = (
   content: string,
-  options: { footer?: boolean; closeSidebar?: boolean } = {},
+  options: { footer?: boolean; closeSidebar?: boolean; navbar?: boolean } = {},
 ) => {
+  const navbar = options.navbar ?? true
+
   return `
-    <mm-navbar${options.closeSidebar ? ' sidebar-collapsed' : ''}></mm-navbar>
+    ${navbar ? `<mm-navbar${options.closeSidebar ? ' sidebar-collapsed' : ''}></mm-navbar>` : ''}
     ${content}
     ${options.footer ? '<mm-footer></mm-footer>' : ''}
   `

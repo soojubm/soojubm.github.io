@@ -1,6 +1,6 @@
 import { css, unsafeCSS } from 'lit'
 
-export type SurfaceVariant = 'ghost' | 'outlined' | 'plain' | 'filled' | 'elevated'
+export type SurfaceVariant = 'ghost' | 'paper' | 'outlined' | 'filled' | 'elevated'
 export type SurfaceRadius = 'default' | 'large'
 
 /**
@@ -13,12 +13,11 @@ export const surfaceVariants: Record<SurfaceVariant, Record<string, string>> = {
     '--surface-border': 'var(--border-transparent)',
     '--surface-background-color': 'none',
   },
-  outlined: {},
-  plain: {
-    '--surface-padding': '0',
-    '--surface-border': '0',
-    '--surface-background-color': 'none',
+  paper: {
+    '--surface-border': 'var(--border-transparent)',
+    '--surface-background-color': 'var(--background-color)',
   },
+  outlined: {},
   filled: {
     '--surface-border': 'var(--border-transparent)',
     '--surface-background-color': 'var(--background-subtle-color)',

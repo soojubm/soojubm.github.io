@@ -6,6 +6,8 @@ interface SitemapItem {
   name: string
   badge?: string
   hidden?: boolean
+  /** true면 페이지에서 navbar를 렌더하지 않는다 */
+  hideNavbar?: boolean
 }
 
 interface SitemapStandaloneNode {
@@ -142,7 +144,7 @@ export const SITEMAP: SitemapNode[] = [
     icon: ICON_NAMES.PLACE,
     items: [
       { id: 'profile', name: 'user profile', badge: '🔥' },
-      { id: 'setting', name: 'setting' },
+      { id: 'setting', name: 'setting', hideNavbar: true },
       { id: 'class', name: 'Product 3 - class' },
       { id: 'cake', name: 'movie detail' },
       { id: 'chat', name: 'chat' },
@@ -156,3 +158,12 @@ export const SITEMAP: SitemapNode[] = [
     ],
   },
 ]
+
+export const findSitemapItem = (id: string): SitemapItem | undefined => {
+  for (const node of SITEMAP) {
+    if (node.type !== 'group') continue
+    const item = node.items.find(item => item.id === id)
+    if (item) return item
+  }
+  return undefined
+}

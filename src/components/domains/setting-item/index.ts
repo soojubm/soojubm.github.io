@@ -7,9 +7,6 @@ import '@/components/list-item/list-item'
 type DisableableElement = HTMLElement & { disabled?: boolean }
 
 /**
- * 설정 화면의 한 행. mm-list-item을 합성하고
- * setting 고유의 패딩·구분선을 입힙니다.
- *
  * <mm-setting-item icon="bell" label="알림" description="...">
  *   <mm-switch slot="action"></mm-switch>
  * </mm-setting-item>
@@ -38,7 +35,12 @@ export class SettingItem extends LitElement {
 
   render() {
     return html`
-      <mm-list-item icon=${this.icon || nothing} label=${this.label} description=${this.description}>
+      <mm-list-item
+        size="40"
+        icon=${this.icon || nothing}
+        label=${this.label}
+        description=${this.description}
+      >
         <slot name="action" slot="trailing" @slotchange=${this.syncActions}></slot>
       </mm-list-item>
     `

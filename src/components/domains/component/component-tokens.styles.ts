@@ -50,9 +50,5 @@ export const componentTokensStyles = [
       display: block;
       margin-top: var(--space-4);
     }
-
-    .component-tokens-title {
-      display: none;
-    }
   `,
 ]

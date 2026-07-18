@@ -14,7 +14,6 @@ export const menuItemStyles = css`
     color: inherit;
     text-decoration: none;
     box-sizing: border-box;
-    text-transform: capitalize;
     cursor: pointer;
 
     &:hover {

@@ -4,6 +4,7 @@ import { customElement, property } from 'lit/decorators.js'
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
 import '@/components/tag/tag'
 
+// TODO section 임 text-block은 단독으로 쓰이지 않는다 보통.
 // heading-level → 시맨틱 heading 태그. 값이 없거나 미정의 레벨이면 비-heading(span).
 const HEADING_TAGS = {
   '1': 'h1',
@@ -67,6 +68,11 @@ class TextBlock extends LitElement {
       descriptionSize: '14',
       gap: '1',
     },
+    '4': {
+      headingSize: '14',
+      descriptionSize: '14',
+      gap: '1',
+    },
   } as const
 
   render() {
@@ -76,6 +82,7 @@ class TextBlock extends LitElement {
     return html`
       ${this.renderEyebrow()} ${this.renderHeading(variant)} ${this.renderDescription(variant)}
       ${this.renderCaption()}
+      <slot></slot>
     `
   }
 

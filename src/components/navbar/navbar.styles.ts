@@ -31,7 +31,7 @@ export const navbarStyles = css`
   .navbar-logo {
     width: var(--size-32);
     height: var(--size-32);
-    background: url('../../images/soojubm.png') no-repeat center;
+    background: url('/src/images/soojubm.png') no-repeat center;
     background-size: cover;
     background-color: var(--background-strong-color);
     border-radius: var(--radius-full);
