@@ -143,7 +143,7 @@ export class Navbar extends LitElement {
     )
   }
 
-  // 전역 navbar.css와 body의 메뉴 상태 선택자가 내부 구조에 접근해야 하므로 Light DOM을 유지한다.
+  // 전역 navbar.styles와 body의 메뉴 상태 선택자가 내부 구조에 접근해야 하므로 Light DOM을 유지한다.
   createRenderRoot() {
     return this
   }
