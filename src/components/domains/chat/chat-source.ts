@@ -96,7 +96,7 @@ export class ChatSourceGroup extends LitElement {
         background: var(--color-background);
         border: var(--border);
         border-radius: var(--radius);
-        box-shadow: var(--material-shadow);
+        box-shadow: var(--shadow);
         padding: var(--space-3);
         transform: translateY(0);
         opacity: 1;

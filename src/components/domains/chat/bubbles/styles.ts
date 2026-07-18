@@ -3,6 +3,7 @@ import { css } from 'lit'
 const chatBubbleSurfaceStyles = css`
   :host {
     padding: var(--space-3) var(--space-4);
+    border: var(--border-transparent);
     border-radius: var(--bubble-border-radius);
   }
 `
@@ -15,7 +16,6 @@ export const myChatBubbleStyles = [
         var(--radius-large);
       --thumbnail-border-radius: var(--bubble-border-radius);
 
-      border: var(--my-chat-bubble-border, var(--bubble-border, none));
       background: var(--my-chat-bubble-background, var(--color-primary));
       color: var(--my-chat-bubble-color, var(--color-foreground-on-solid));
     }
@@ -34,7 +34,6 @@ export const participantChatBubbleStyles = [
   chatBubbleSurfaceStyles,
   css`
     :host {
-      border: var(--participant-chat-bubble-border, var(--bubble-border, none));
       background: var(--participant-chat-bubble-background, var(--color-background-subtle));
     }
   `,

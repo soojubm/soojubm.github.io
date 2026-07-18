@@ -101,15 +101,16 @@
 - 색상, 간격, radius는 CSS 토큰을 사용하고 하드코딩하지 않는다.
 - 토큰을 계산해 새 값을 만들지 않고, 필요한 의미에 가장 가까운 기존 토큰을 사용한다.
 - 테마 분기처럼 재정의할 목적이 없으면 기존 토큰을 컴포넌트 지역 변수로 다시 감싸지 않고 그대로 사용한다.
-- 토큰을 특정 컴포넌트 전용으로 좁힐 때 "컴포넌트가 소유한다"는 이름(namespace) 문제이지 값을 선언하는 위치의 문제가 아니다. 모든 테마에서 값이 달라야 하는 토큰은 컴포넌트가 기본값을 스스로 선언하지 않고 variables.css에만 정의해 상속받는다 — 그래야 테마 블록이 같은 이름을 재선언하는 것만으로 자연스럽게 적용되고, 테마마다 전용 fallback 토큰을 따로 만드는 우회가 필요 없다.
+- 컴포넌트 이름이 붙은 토큰(`--avatar-border` 등)은 variables.css에서 재정의하지 않는다. 테마마다 달라져야 할 값이면 컴포넌트가 자기 기본값에서 `--border`·`--border-transparent` 같은 전역 primitive를 그대로 참조하게 하고, 테마 블록은 그 primitive만 재정의한다 — 그래야 컴포넌트 전용 fallback 토큰을 테마마다 따로 만드는 우회가 필요 없다. 단, 이 패턴은 실제 DOM에 렌더되는 요소(컴포넌트 `:host`, `.navbar-user` 같은 plain CSS 클래스)에서만 성립한다. `data-theme`는 `body`에 적용되는데 variables.css의 `:root {}`는 `body`의 조상(`html`)이라, `:root`에 `--token: var(--primitive)`를 선언하면 그 참조는 절대 테마가 적용되지 않는 `html` 시점 값으로 고정되어 버린다. `:root`에서 기본값을 선언해야 하는 토큰은 테마가 재정의하는 primitive 대신 절대 재정의되지 않는 원시값(`--gray0` 등)을 참조한다.
+- `var(--token, fallback)` 형태의 소비처 fallback은 안티패턴이다. 토큰이 모든 테마에서 값을 갖도록 `:root` 기본값 + 테마 블록 재정의로 선언하고, 소비처는 fallback 없이 참조한다.
 - width·height처럼 요소 자체의 고정 치수는 간격 토큰이 아니라 size 토큰을 우선 사용한다.
 - 컴포넌트 토큰은 소비하는 CSS 속성 이름으로 짓는다(`background`→`-background-color`, `border-radius`→`-border-radius`, `color:`→`-text-color`, `height`→`-height`). 한 값이 여러 속성을 먹이면 특정 속성명으로 좁히지 않고 제네릭 이름을 유지한다.
 
 ### 테마
 
-- 투명도·blur 같은 테마 전용 시각 효과는 body·surface·input 등 전역 배경 토큰에 주지 않고, floating UI(예: navbar, 플로팅 입력창)가 소비하는 전용 토큰에만 준다. 그래야 정적 콘텐츠가 테마에 따라 함께 반투명해지지 않는다.
-- floating 전용 토큰은 그 토큰이 필요 없는 테마에서는 정의하지 않고, 소비하는 쪽에서 기존 전역 토큰을 fallback으로 둬 자연히 원래 모습으로 돌아가게 한다.
-- 컴포넌트가 `:host { --token: 기본값; }`처럼 자기 토큰의 기본값을 스스로 선언해두면, 테마 블록이 조상에서 같은 이름을 재정의해도 적용되지 않는다(그 요소 자신에게 이미 선언된 값이 있으면 상속을 타지 않기 때문). 이런 컴포넌트를 테마에서 재정의하려면 별도 이름의 전용 토큰을 만들어 `var(전용-토큰, 기존-토큰)`처럼 소비하는 쪽에서 fallback으로 읽는다. 단 이 우회는 glass처럼 일부 테마만 필요로 하는 예외적인 효과에 한정해서 쓴다. light·dark처럼 모든 기본 테마가 각자 다른 값을 가져야 하는 토큰에 이 패턴을 적용하면 테마마다 전용 토큰이 배로 늘어나므로, 애초에 컴포넌트가 기본값을 선언하지 않는 쪽을 택한다.
+- 투명도·blur 같은 테마 전용 시각 효과는 body·surface·input 등 전역 배경 토큰에 주지 않고, 떠 있는 표면이 소비하는 재질 티어 토큰 `--surface-{base,high,higher}-background-color`·`-backdrop-filter`·`-border`·`-shadow`에만 준다(티어를 접두어로 두고 속성을 이어 붙인다: `--surface-high-shadow`). 그래야 정적 콘텐츠가 테마에 따라 함께 반투명해지지 않는다. 표면별 전용 이름(`--sheet-background` 등)을 새로 만들지 않고 각 표면이 자기 티어 토큰을 직접 소비한다. 뎁스는 high·higher 2단계로만 표현하고, base 티어는 모든 테마에서 재질 효과 없이(불투명 배경·blur 없음·테두리 없음·그림자 없음) 항상 비활성 상태다 — flush chrome 바처럼 뎁스가 없는 표면은 애초에 티어를 갖지 않는다. 같은 표면(같은 CSS 규칙)이 소비하는 배경·테두리·backdrop-filter·그림자는 반드시 같은 티어를 참조한다. 이 재질 티어 토큰은 `mm-surface` 컴포넌트 자신의 `--surface-background-color` 등(티어 접미사 없는 컴포넌트 소유 토큰)과 이름 계열은 같지만 가리키는 대상이 다르므로 혼동하지 않는다. 재질과 무관한 고도(elevation) 그림자는 별도 원시값 `--shadow`(-high/-higher)를 쓰되, 그림자는 표면(카드·팝오버·툴팁 등) 전용이고 radio·switch 같은 일반 컨트롤 요소에는 주지 않는다.
+- 테마 블록이 재정의해야 하는 토큰의 기본값을 컴포넌트가 `:host { --token: 기본값; }`처럼 스스로 선언해두면, 조상에서 같은 이름을 재정의해도 적용되지 않는다(그 요소 자신에게 이미 선언된 값이 있으면 상속을 타지 않기 때문). 별도 이름+fallback으로 우회하지 말고, 애초에 컴포넌트가 그 토큰의 기본값을 선언하지 않는다.
+- `backdrop-filter`를 가진 요소의 자손에서는 backdrop-filter가 페이지 배경을 샘플링하지 못한다. popover처럼 내부에서 glass 표면이 열리는 컨테이너(navbar, control pill 등)는 재질(배경+blur)을 요소 자신이 아니라 `::before` 형제 레이어(absolute, `inset: 0`, `z-index: -1`, 컨테이너에 `isolation: isolate`)에 둔다.
 
 ### 레이어(z-index)
 
@@ -117,7 +118,7 @@
 - base·raised는 콘텐츠 안에서 형제 요소보다 살짝 뜨는 로컬 정도만 표현한다.
 - overlay·modal·chrome·toast는 화면 위로 뜨는 시스템 레벨 요소가 쓴다: 드롭다운·팝오버·툴팁은 overlay, 화면을 덮는 대화형 표면(backdrop·sheet)은 modal, 화면에 고정된 내비게이션·툴바(navbar, 사이드 메뉴, top-bar의 sticky 상태, fixed-bottom 안의 bottom-bar)는 chrome, 항상 최상단이어야 하는 알림은 toast를 쓴다.
 - chrome이 modal보다 높은 값을 갖는다. 고정 내비게이션이 모달·시트보다 위에 남아 있어야 하는 화면이면 이 순서를 그대로 따르고, 모달이 내비게이션까지 덮어야 하는 예외적인 화면에서만 별도로 판단한다.
-- glass처럼 blur·투명도(material)를 쓰는 테마에서, material 세기는 z-index 티어가 아니라 "바깥쪽 배경 역할인가, 그 위에서 실제로 읽고 조작하는 레이어인가"로 정한다. 면적이 넓고 배경처럼 존재하는 바깥쪽 chrome 바(navbar, prompt-input 본체)는 thin으로 가볍게 둬 뒤 콘텐츠가 은은히 비치게 하고, 그 위/안에 얹혀 포커스를 받는 두 번째 레이어(navbar-user pill, 드롭다운, 중첩된 입력 컨트롤)는 thick으로 강하게 가려 가독성을 우선한다. 중첩될수록 약해지는 게 아니라 강해진다.
+- glass처럼 blur·투명도(material)를 쓰는 테마에서, material 세기는 z-index 티어가 아니라 "뎁스가 있는 표면인가, 그 위에서 실제로 읽고 조작하는 레이어인가"로 정한다. 면적이 넓고 배경처럼 존재하는 바깥쪽 chrome 바(navbar, prompt-input 본체)는 뎁스가 없어 재질 효과를 아예 받지 않고, 화면 위에 단독으로 뜨는 1-depth 표면(dialog, sidebar-menu)은 high, 그 위/안에 얹혀 포커스를 받는 레이어(navbar-user pill, 드롭다운, 중첩된 입력 컨트롤)는 higher로 강하게 가려 가독성을 우선한다. 중첩될수록 약해지는 게 아니라 강해진다.
 
 ### 스타일시트
 

@@ -6,14 +6,8 @@ export const sheetStyles = css`
   :host {
     --sheet-z-index: var(--material-zindex-modal);
     --sheet-backdrop-background-color: var(--color-backdrop);
-    --sheet-background: var(--color-background);
-    --sheet-border: 0;
-    --sheet-shadow: none;
     --sheet-border-radius: var(--radius-large);
     --sheet-padding-inline: var(--space-4);
-    --sheet-section-padding-block: var(--space-3);
-    --sheet-body-padding-block-end: var(--space-4);
-    --sheet-header-gap: var(--space-2);
     --sheet-max-height: 90vh;
     --sheet-bottom-max-width: calc(var(--layout-width-small) + var(--space-4) * 10);
     --sheet-side-max-width: 50vw;
@@ -70,12 +64,12 @@ export const sheetStyles = css`
     height: var(--sheet-height, auto);
     max-height: var(--sheet-max-height);
     padding: 0 var(--sheet-padding-inline);
-    border: var(--sheet-glass-border, var(--sheet-border));
+    border: var(--surface-high-border);
     border-radius: var(--sheet-border-radius);
-    background: var(--sheet-glass-background, var(--sheet-background));
-    box-shadow: var(--sheet-glass-shadow, var(--sheet-shadow));
-    backdrop-filter: var(--sheet-glass-backdrop-filter, none);
-    -webkit-backdrop-filter: var(--sheet-glass-backdrop-filter, none);
+    background: var(--surface-high-background-color);
+    box-shadow: var(--surface-high-shadow);
+    backdrop-filter: var(--surface-high-backdrop-filter);
+    -webkit-backdrop-filter: var(--surface-high-backdrop-filter);
     box-sizing: border-box;
     overflow: hidden;
     position: relative;

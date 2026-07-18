@@ -4,10 +4,9 @@ export const avatarStyles = css`
   :host {
     --avatar-size: var(--size-40);
     --avatar-background-color: var(--color-background-subtle);
-    --avatar-border-color: transparent;
     --avatar-icon-color: var(--color-foreground);
+    --avatar-border: var(--border-transparent);
     --avatar-border-radius: var(--radius);
-    --avatar-border: var(--border);
 
     display: inline-flex;
     align-items: center;
@@ -18,11 +17,10 @@ export const avatarStyles = css`
     background-repeat: no-repeat;
     background-position: center;
     background-color: var(--avatar-background-color);
-    border: var(--avatar-border, none);
+    border: var(--avatar-border);
     border-radius: var(--avatar-border-radius);
     box-sizing: border-box;
     position: relative;
-    box-shadow: 0 0 0 1px var(--avatar-border-color);
     color: var(--avatar-icon-color);
   }
 
@@ -44,6 +42,10 @@ export const avatarStyles = css`
     --avatar-size: var(--size-medium);
   }
 
+  :host([variant='primary']) {
+    border: var(--avatar-border);
+  }
+
   :host([variant='secondary']) {
     --avatar-background-color: var(--color-background);
     --avatar-border: var(--border);
@@ -51,6 +53,8 @@ export const avatarStyles = css`
 
   :host([variant='tertiary']) {
     --avatar-background-color: transparent;
+    --avatar-border: var(--border-transparent);
+
     box-shadow: none;
   }
 

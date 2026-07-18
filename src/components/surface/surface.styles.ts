@@ -24,7 +24,7 @@ export const surfaceVariants: Record<SurfaceVariant, Record<string, string>> = {
     '--surface-background-color': 'var(--color-background-subtle)',
   },
   elevated: {
-    '--surface-shadow': 'var(--material-shadow)',
+    '--surface-shadow': 'var(--shadow)',
   },
 }
 
@@ -46,7 +46,7 @@ export const surfaceBaseStyles = css`
     --surface-border-radius: var(--radius);
     --surface-background-color: var(--color-background);
     --surface-shadow: none;
-    --surface-backdrop-filter: var(--material-chrome-backdrop-filter, none);
+    --surface-backdrop-filter: var(--surface-base-backdrop-filter);
 
     display: flex;
     flex-direction: column;

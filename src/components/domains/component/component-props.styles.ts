@@ -42,7 +42,7 @@ export const componentPropsStyles = [
       background-color: var(--color-background-subtle);
       position: relative;
       cursor: pointer;
-      --component-content-frame-border: var(--component-props-border, none);
+      --component-content-frame-border: var(--border-transparent);
     }
     .component-props-more {
       display: flex;

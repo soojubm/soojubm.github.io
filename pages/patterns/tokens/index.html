@@ -652,7 +652,7 @@
                 height: var(--size-large);
                 border-radius: var(--radius);
                 background: var(--color-background);
-                box-shadow: var(--material-shadow-base);
+                box-shadow: var(--shadow);
                 flex-shrink: 0;
               "
             ></div>
@@ -665,7 +665,7 @@
                 height: var(--size-large);
                 border-radius: var(--radius);
                 background: var(--color-background);
-                box-shadow: var(--material-shadow-high);
+                box-shadow: var(--shadow-high);
                 flex-shrink: 0;
               "
             ></div>
@@ -678,7 +678,7 @@
                 height: var(--size-large);
                 border-radius: var(--radius);
                 background: var(--color-background);
-                box-shadow: var(--material-shadow-higher);
+                box-shadow: var(--shadow-higher);
                 flex-shrink: 0;
               "
             ></div>
@@ -688,17 +688,11 @@
       </mm-token-stage>
       <mm-token-group aria-label="shadow primitive tokens">
         <mm-token-item
-          key="material-shadow-base"
+          key="shadow"
           value="0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.08)"
         ></mm-token-item>
-        <mm-token-item
-          key="material-shadow-high"
-          value="0 4px 12px rgba(0,0,0,.15)"
-        ></mm-token-item>
-        <mm-token-item
-          key="material-shadow-higher"
-          value="0 16px 32px rgba(0,0,0,.2)"
-        ></mm-token-item>
+        <mm-token-item key="shadow-high" value="0 4px 12px rgba(0,0,0,.15)"></mm-token-item>
+        <mm-token-item key="shadow-higher" value="0 16px 32px rgba(0,0,0,.2)"></mm-token-item>
       </mm-token-group>
 
       <mm-separator></mm-separator>
@@ -736,9 +730,9 @@
                   width: var(--size-large);
                   height: var(--size-large);
                   border-radius: var(--radius);
-                  background: rgb(255 255 255 / var(--material-thin-opacity));
-                  backdrop-filter: blur(var(--material-thin-blur));
-                  -webkit-backdrop-filter: blur(var(--material-thin-blur));
+                  background: rgb(255 255 255 / var(--surface-base-opacity));
+                  backdrop-filter: blur(var(--surface-base-blur));
+                  -webkit-backdrop-filter: blur(var(--surface-base-blur));
                   flex-shrink: 0;
                 "
               ></div>
@@ -750,9 +744,9 @@
                   width: var(--size-large);
                   height: var(--size-large);
                   border-radius: var(--radius);
-                  background: rgb(255 255 255 / var(--material-regular-opacity));
-                  backdrop-filter: blur(var(--material-regular-blur));
-                  -webkit-backdrop-filter: blur(var(--material-regular-blur));
+                  background: rgb(255 255 255 / var(--surface-high-opacity));
+                  backdrop-filter: blur(var(--surface-high-blur));
+                  -webkit-backdrop-filter: blur(var(--surface-high-blur));
                   flex-shrink: 0;
                 "
               ></div>
@@ -764,9 +758,9 @@
                   width: var(--size-large);
                   height: var(--size-large);
                   border-radius: var(--radius);
-                  background: rgb(255 255 255 / var(--material-thick-opacity));
-                  backdrop-filter: blur(var(--material-thick-blur));
-                  -webkit-backdrop-filter: blur(var(--material-thick-blur));
+                  background: rgb(255 255 255 / var(--surface-higher-opacity));
+                  backdrop-filter: blur(var(--surface-higher-blur));
+                  -webkit-backdrop-filter: blur(var(--surface-higher-blur));
                   flex-shrink: 0;
                 "
               ></div>
@@ -776,12 +770,12 @@
         </div>
       </mm-token-stage>
       <mm-token-group aria-label="material primitive tokens">
-        <mm-token-item key="material-thin-blur" value="10px"></mm-token-item>
-        <mm-token-item key="material-thin-opacity" value="0.35"></mm-token-item>
-        <mm-token-item key="material-regular-blur" value="20px"></mm-token-item>
-        <mm-token-item key="material-regular-opacity" value="0.55"></mm-token-item>
-        <mm-token-item key="material-thick-blur" value="30px"></mm-token-item>
-        <mm-token-item key="material-thick-opacity" value="0.8"></mm-token-item>
+        <mm-token-item key="surface-base-blur" value="10px"></mm-token-item>
+        <mm-token-item key="surface-base-opacity" value="0.35"></mm-token-item>
+        <mm-token-item key="surface-high-blur" value="20px"></mm-token-item>
+        <mm-token-item key="surface-high-opacity" value="0.55"></mm-token-item>
+        <mm-token-item key="surface-higher-blur" value="30px"></mm-token-item>
+        <mm-token-item key="surface-higher-opacity" value="0.8"></mm-token-item>
       </mm-token-group>
     </mm-flex>
 

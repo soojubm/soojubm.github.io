@@ -63,6 +63,8 @@ export class Select extends LitElement {
   @property({ type: String }) placement: PopoverPlacement = 'bottom-left'
   /** 호스트 폭. 기본은 트리거 콘텐츠 폭(auto)이며, `240px`·`100%` 등 임의 CSS 폭 값을 받는다. */
   @property({ type: String, reflect: true }) width = 'auto'
+  /** 옵션 목록 패널의 최소 폭. 트리거보다 좁아지지 않아야 할 때 지정한다. */
+  @property({ type: String, attribute: 'min-width' }) minWidth?: string
   @state() private options: SelectOption[] = []
   @state() private isPhoneViewport = false
 
@@ -102,6 +104,15 @@ export class Select extends LitElement {
 
   protected updated(changedProperties: Map<string, unknown>) {
     if (changedProperties.has('width')) this.style.setProperty('--select-width', this.width)
+    if (changedProperties.has('minWidth')) this.syncMinWidth()
+  }
+
+  private syncMinWidth() {
+    if (this.minWidth) {
+      this.style.setProperty('--select-min-width', this.minWidth)
+    } else {
+      this.style.removeProperty('--select-min-width')
+    }
   }
 
   private syncViewport = () => {

@@ -16,18 +16,8 @@ export class ParticipantChatMessage extends LitElement {
     resetStyles,
     css`
       :host {
-        display: grid;
-        grid-template-columns: var(--size-medium) minmax(0, 1fr);
-        align-items: start;
+        display: flex;
         gap: var(--space-1) var(--space-2);
-      }
-
-      mm-avatar {
-        grid-row: 1 / span 2;
-      }
-
-      mm-flex {
-        min-width: 0;
       }
     `,
   ]
@@ -39,13 +29,15 @@ export class ParticipantChatMessage extends LitElement {
   render() {
     return html`
       <mm-avatar
-        size="40"
+        size="32"
         variant="tertiary"
         src=${ifDefined(this.avatarSrc || undefined)}
       ></mm-avatar>
-      ${this.renderMeta()}
-      <mm-flex direction="column" gap="2" align-items="start">
-        <slot></slot>
+      <mm-flex direction="column" gap="1">
+        ${this.renderMeta()}
+        <mm-flex direction="column" gap="2" align-items="start">
+          <slot></slot>
+        </mm-flex>
       </mm-flex>
     `
   }
@@ -54,15 +46,10 @@ export class ParticipantChatMessage extends LitElement {
     if (!this.name && !this.datetime) return nothing
 
     return html`
-      <mm-flex gap="1">${this.renderName()} ${renderChatMessageTime(this.datetime)}</mm-flex>
-    `
-  }
-
-  private renderName() {
-    if (!this.name) return nothing
-
-    return html`
-      <mm-text class="name" size="12">${this.name}</mm-text>
+      <mm-flex gap="1">
+        <mm-text class="name" size="12">${this.name}</mm-text>
+        ${renderChatMessageTime(this.datetime)}
+      </mm-flex>
     `
   }
 }

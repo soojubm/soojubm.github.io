@@ -16,13 +16,13 @@ export class PromptInput extends LitElement {
       :host {
         display: block;
         padding-inline: var(--space-2);
-        background: var(--prompt-input-background, var(--input-background-color));
-        border: var(--prompt-input-border, none);
+        background: var(--surface-base-background-color);
+        border: var(--surface-base-border);
         border-radius: var(--radius);
-        box-shadow: var(--prompt-input-shadow, none);
+        box-shadow: var(--surface-base-shadow);
 
-        backdrop-filter: var(--material-chrome-backdrop-filter, none);
-        -webkit-backdrop-filter: var(--material-chrome-backdrop-filter, none);
+        backdrop-filter: var(--surface-base-backdrop-filter);
+        -webkit-backdrop-filter: var(--surface-base-backdrop-filter);
       }
 
       :host([single-line]) form > mm-flex {

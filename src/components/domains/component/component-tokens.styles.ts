@@ -10,6 +10,11 @@ export const tokenStyles = [
       display: flex;
       align-items: center;
       gap: var(--space-2);
+
+      /* 이름 강조색: tag 카테고리 팔레트의 text 색과 값을 공유한다(light·dark 모두) */
+      --token-word-state-color: var(--tag-category-4-text);
+      --token-word-surface-color: var(--tag-category-5-text);
+      --token-word-dimension-color: var(--tag-category-8-text);
     }
 
     dt {

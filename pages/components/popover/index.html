@@ -19,16 +19,23 @@
       name="placement"
       type="'bottom-left' | 'bottom-right' | 'top-left' | 'top-right' = 'bottom-left'"
     ></mm-prop>
-    <mm-prop name="width" type="string = 'auto'"></mm-prop>
+    <mm-prop name="width" type="string"></mm-prop>
     <mm-prop name="popoverclose" type="CustomEvent" kind="event"></mm-prop>
   </mm-component-props>
 
   <mm-component-tokens>
     <mm-token name="popover-padding" default="var(--space-1)"></mm-token>
-    <mm-token name="popover-border" default="var(--border)"></mm-token>
+    <mm-token name="popover-border" default="var(--surface-higher-border)"></mm-token>
     <mm-token name="popover-border-radius" default="var(--radius)"></mm-token>
-    <mm-token name="popover-background-color" default="var(--color-background)"></mm-token>
-    <mm-token name="popover-shadow" default="var(--material-shadow)"></mm-token>
+    <mm-token
+      name="popover-background-color"
+      default="var(--surface-higher-background-color)"
+    ></mm-token>
+    <mm-token
+      name="popover-backdrop-filter"
+      default="var(--surface-higher-backdrop-filter)"
+    ></mm-token>
+    <mm-token name="popover-shadow" default="var(--shadow)"></mm-token>
     <mm-token name="popover-max-height" default="none"></mm-token>
     <mm-token name="popover-width" default="auto"></mm-token>
     <mm-token name="popover-offset" default="var(--space-1)"></mm-token>

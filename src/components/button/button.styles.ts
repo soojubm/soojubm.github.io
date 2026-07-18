@@ -116,6 +116,10 @@ export const buttonVariantStyles = css`
 /** 누름 상태는 표준 aria-pressed로 표현하므로, 스킨도 해당 attribute selector를 단일 기준으로 둔다. */
 export const buttonSelectedStyles = css`
   button[aria-pressed='true'] {
+    --button-selected-border-color: var(--selection-indicator-color);
+    --button-selected-background: var(--selection-background);
+    --button-selected-text-color: var(--selection-foreground);
+
     border: var(--border-width) solid var(--button-selected-border-color);
     background: var(--button-selected-background);
     color: var(--button-selected-text-color);

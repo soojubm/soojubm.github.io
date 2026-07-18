@@ -5,22 +5,22 @@
   height: var(--navbar-height);
   padding: var(--space-3) var(--layout-padding-inline);
   box-sizing: border-box;
-  background: var(--material-chrome-background, var(--color-background));
-  backdrop-filter: var(--material-chrome-backdrop-filter, none);
 
   position: fixed;
   top: 0;
   z-index: calc(var(--material-zindex-chrome) + 1);
 }
 
+/* 재질(배경+blur)은 자손이 아닌 ::before 형제 레이어가 소유한다.
+   조상에 backdrop-filter가 있으면 내부 popover 등 자손의 backdrop-filter가 무력화되기 때문. */
 .navbar::before {
   content: '';
   position: absolute;
-  width: 100%;
-  height: 12px;
-  inset-inline: 0;
-  inset-block-end: -12px;
-  background: var(--material-chrome-edge-start, transparent);
+  inset: 0;
+  z-index: -1;
+  /* TODO gradient */
+  background: var(--surface-base-background-color);
+  backdrop-filter: var(--surface-base-backdrop-filter);
 }
 
 .navbar-logo {
@@ -42,14 +42,14 @@
   gap: var(--space-2);
   margin: 0 0 0 auto;
   position: relative;
+  isolation: isolate;
 
-  background: var(--control-background);
-  border: var(--control-border);
+  background: var(--surface-higher-background-color);
+  backdrop-filter: var(--surface-higher-backdrop-filter);
+  border: var(--surface-higher-border);
   border-radius: var(--control-border-radius);
   padding: var(--control-padding);
-  backdrop-filter: var(--control-backdrop-filter, none);
-  box-shadow: var(--control-shadow);
-  -webkit-backdrop-filter: var(--control-backdrop-filter, none);
+  box-shadow: var(--surface-higher-shadow);
 }
 
 .page {
@@ -77,10 +77,10 @@
   gap: var(--space-2);
   padding: var(--space-4) var(--space-3) calc(var(--space-4) + env(safe-area-inset-bottom))
     calc(var(--layout-padding-inline));
-  background: var(--sidebar-menu-background, var(--color-background));
-  box-shadow: var(--sidebar-menu-shadow, none);
-  backdrop-filter: var(--sidebar-menu-backdrop-filter, none);
-  -webkit-backdrop-filter: var(--sidebar-menu-backdrop-filter, none);
+  background: var(--surface-high-background-color);
+  box-shadow: var(--surface-high-shadow);
+  backdrop-filter: var(--surface-high-backdrop-filter);
+  -webkit-backdrop-filter: var(--surface-high-backdrop-filter);
   scrollbar-gutter: stable;
   transition: transform var(--duration-slowly) cubic-bezier(0.165, 0.84, 0.44, 1);
   transform: translateX(-120%);

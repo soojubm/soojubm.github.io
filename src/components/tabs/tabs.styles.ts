@@ -11,6 +11,8 @@ export const tabsStyles = css`
     --tabs-line-color: var(--color-border);
     --tabs-line-width: var(--border-width);
     --tabs-pill-indicator-background: var(--color-background);
+    --tabs-pill-border: var(--border-transparent);
+    --tabs-pill-indicator-border: var(--border-transparent);
   }
 
   .indicator {
@@ -40,7 +42,7 @@ export const tabsStyles = css`
      ========================================================== */
   :host([variant='pill']) {
     background-color: var(--color-background-subtle);
-    border: var(--tabs-pill-border, none);
+    border: var(--tabs-pill-border);
     border-radius: var(--radius);
     padding: var(--space-1);
 
@@ -48,9 +50,8 @@ export const tabsStyles = css`
       height: var(--size-medium);
       top: var(--space-1);
       background-color: var(--tabs-pill-indicator-background);
-      border: var(--tabs-pill-indicator-border, none);
+      border: var(--tabs-pill-indicator-border);
       border-radius: var(--radius);
-      box-shadow: var(--tabs-pill-indicator-shadow, var(--material-shadow));
       z-index: 0; /* 탭 텍스트 뒤로 배치 */
     }
   }

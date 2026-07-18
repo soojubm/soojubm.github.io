@@ -76,7 +76,6 @@ export const radioStyles = css`
     box-sizing: border-box;
     border-radius: var(--radio-border-radius);
     background: var(--radio-background-color);
-    box-shadow: var(--material-shadow);
   }
 
   input[type='radio']:checked + label > span {

@@ -3,10 +3,11 @@ import { css } from 'lit'
 export const popoverStyles = css`
   :host {
     --popover-padding: var(--space-1);
-    --popover-border: var(--border);
+    --popover-border: var(--surface-higher-border);
     --popover-border-radius: var(--radius);
-    --popover-background-color: var(--color-background);
-    --popover-shadow: var(--material-shadow);
+    --popover-background-color: var(--surface-higher-background-color);
+    --popover-backdrop-filter: var(--surface-higher-backdrop-filter);
+    --popover-shadow: var(--shadow);
     --popover-max-height: none;
     --popover-width: auto;
     --popover-offset: var(--space-1);
@@ -32,6 +33,8 @@ export const popoverStyles = css`
     border-radius: var(--popover-border-radius);
     background: var(--popover-background-color);
     box-shadow: var(--popover-shadow);
+    backdrop-filter: var(--popover-backdrop-filter);
+    -webkit-backdrop-filter: var(--popover-backdrop-filter);
     box-sizing: border-box;
     overflow-y: auto;
     overflow-x: hidden;

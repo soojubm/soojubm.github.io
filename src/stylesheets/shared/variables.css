@@ -80,11 +80,6 @@
   --tag-category-8-border: #d8b4fe;
   --tag-category-8-text: #7e22ce;
 
-  /* mm-component-tokens 이름 강조색: 컴포넌트 전용 소유 토큰 */
-  --token-word-state-color: #c2410c;
-  --token-word-surface-color: #0e7490;
-  --token-word-dimension-color: #7e22ce;
-
   --color-primary: var(--green800);
   --color-primary-subtle: var(--green100);
 
@@ -145,10 +140,6 @@
   --space-16: 64px;
   --space-section: var(--space-16);
 
-  --component-content-offset-inline-start: calc(var(--layout-padding-inline) * -1 + var(--space-4));
-  --component-content-padding-block: var(--space-8);
-  --component-content-padding-inline: calc(var(--layout-padding-inline) - var(--space-4));
-  --component-content-bleed-inline: calc(var(--layout-padding-inline) * -1);
   --space-1-minus: calc(var(--space-1) * -1);
 
   --border-width: 1px;
@@ -162,29 +153,51 @@
   --selection-background: var(--color-primary-subtle);
   --selection-foreground: var(--color-primary);
 
-  --button-selected-border-color: var(--selection-indicator-color);
-  --button-selected-background: var(--selection-background);
-  --button-selected-text-color: var(--selection-foreground);
-
   --radius: 6px;
   --radius-large: 1rem;
   --radius-round: 50%;
 
   /* 그림자 원시값: 고도 단계별 값. 의미 부여 없이 그대로 사용하거나 의미 토큰의 재료로 쓴다 */
-  --material-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.08);
-  --material-shadow-high: 0 4px 12px rgba(0, 0, 0, 0.15);
-  --material-shadow-higher: 0 16px 32px rgba(0, 0, 0, 0.2);
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.08);
+  --shadow-high: 0 4px 12px rgba(0, 0, 0, 0.15);
+  --shadow-higher: 0 16px 32px rgba(0, 0, 0, 0.2);
 
-  /* --material-shadow: 0 0 0.25rem rgb(0 0 0 / 7.5%); */
-  /* --shadow-tile: 0 0 0 1px rgb(0 0 0/5%), 0 2px 2px rgb(0 0 0/4%); */
+  /* 재질(surface) 원시값: 뒤 배경을 얼마나 흐리고 덮을지 정하는 blur·opacity 쌍. 단계가 오를수록 더 흐리고 더 불투명하다 */
+  --surface-base-blur: 10px;
+  --surface-base-opacity: 0.35;
+  --surface-high-blur: 20px;
+  --surface-high-opacity: 0.55;
+  --surface-higher-blur: 30px;
+  --surface-higher-opacity: 0.8;
 
-  /* 재질(material) 원시값: 뒤 배경을 얼마나 흐리고 덮을지 정하는 blur·opacity 쌍. 단계가 오를수록 더 흐리고 더 불투명하다 */
-  --material-thin-blur: 10px;
-  --material-thin-opacity: 0.35;
-  --material-regular-blur: 20px;
-  --material-regular-opacity: 0.55;
-  --material-thick-blur: 30px;
-  --material-thick-opacity: 0.8;
+  /* navbar-user 같은 control pill의 모양 토큰(테마 무관 고정값이라 :root 선언이 안전하다) */
+  --control-padding: var(--space-1) var(--space-2);
+  --control-border-radius: var(--radius-large);
+
+  /*
+   * 재질(surface) 의미 토큰: 떠 있는 표면이 base/high/higher 3단계 티어로 소비한다.
+   * base는 뎁스가 없는 flush chrome 바용이라 모든 테마에서 재질 효과 없이 항상 비활성이다.
+   * :root에서 테마가 재정의하는 토큰(--color-background 등)을 참조하면 html 시점 값으로
+   * 고정되므로, 절대 재정의되지 않는 원시값(--gray0)을 쓰고 테마 블록이 자기 값으로 재선언한다.
+   */
+  /* ===== surface-base ===== */
+  --surface-base-background-color: var(--gray0);
+  --surface-base-border: none;
+  --surface-base-backdrop-filter: none;
+  --surface-base-shadow: none;
+
+  /* ===== surface-high (dialog, sidebar-menu) ===== */
+  --surface-high-background-color: var(--gray0);
+  --surface-high-border: none;
+  --surface-high-backdrop-filter: none;
+  --surface-high-shadow: none;
+
+  /* ===== surface-higher (navbar-user pill, dropdown, popover) ===== */
+  /* border는 :root(html) 시점 light 값으로 고정되므로 dark·brutal 블록이 재선언한다 */
+  --surface-higher-background-color: var(--gray0);
+  --surface-higher-border: var(--border);
+  --surface-higher-backdrop-filter: none;
+  --surface-higher-shadow: none;
 
   /* z-index: 화면 위 높낮이를 표현하는 값. 같은 그룹 안에서만 값을 비교한다 */
   --material-zindex-base: 0; /* 기본 콘텐츠: 문서, 리스트, 배경 */
@@ -207,12 +220,6 @@
   --animation-delay-third: 0.6s;
 
   --color-backdrop: rgba(0, 0, 0, 0.1);
-}
-
-@media (max-width: 1100px) {
-  :root {
-    --component-content-padding-inline: var(--layout-padding-inline);
-  }
 }
 
 .shape-square {
@@ -262,11 +269,6 @@
   --tag-category-8-border: #6b21a8;
   --tag-category-8-text: #d8b4fe;
 
-  /* mm-component-tokens 이름 강조색: dark theme (같은 이름을 그대로 재정의) */
-  --token-word-state-color: #fdba74;
-  --token-word-surface-color: #67e8f9;
-  --token-word-dimension-color: #d8b4fe;
-
   --color-success-foreground: #86efac;
   --color-warning-foreground: #fdba74;
   --color-danger-foreground: #fca5a5;
@@ -278,99 +280,49 @@
   --color-background-subtle: #292f2c;
   --color-background-strong: var(--gray0);
 
-  --color-background-section: var(--gray0);
+  --surface-base-background-color: var(--color-background);
+  --surface-high-background-color: var(--color-background);
+  --surface-higher-background-color: var(--color-background);
+  --surface-higher-border: var(--border);
 
   --color-foreground-on-solid: var(--color-foreground);
 
   --color-border: var(--gray800);
 
   --border: var(--border-width) solid var(--color-border);
-
-  --material-shadow: 0px 0px 2rem rgba(0, 0, 0, 0.25);
-  --shadow-tile: 0 2px 0 1px #343c38, 0 1px 6px rgba(0, 0, 0, 0.4);
 }
 
 :root [data-theme='brutal'] {
   --brutal-border-color: #000;
+  --brutal-border: var(--border-width) solid var(--brutal-border-color);
 
-  --color-border: var(--brutal-border-color);
-
-  --border: var(--border-width) solid var(--brutal-border-color);
-  --border-transparent: var(--border-width) solid var(--brutal-border-color);
-
-  --border-active: var(--border-width) solid var(--brutal-border-color);
-
-  --component-props-border: var(--border);
-  --component-tokens-border: var(--border);
-  --input-border-color: var(--brutal-border-color);
-  /* --avatar-border: var(--border); */
-  --bubble-border: var(--border);
-  --accordion-border: var(--border);
-  --tabs-pill-border: var(--border);
-  --tabs-pill-indicator-border: var(--border);
-  --tabs-pill-indicator-shadow: none;
+  --border: var(--brutal-border);
+  --border-transparent: var(--brutal-border);
+  --border-active: var(--brutal-border);
+  --surface-higher-border: var(--border);
 }
 
 :root [data-theme='glass'] {
   /*
-   * glass는 body/surface/input 등 앱 전역 토큰(--color-background*)은 건드리지 않는다.
-   * navbar, navbar-user pill, prompt-input처럼 화면 위에 떠 있는 chrome 조각만
-   * 아래 --material-chrome-*, --control-*, --prompt-input-*, --theme-switcher-menu-* 토큰을
-   * 통해 반투명+blur 처리한다.
-   *
-   * material 세기는 "바깥쪽 바 vs 그 위에 얹힌 레이어" 관계로 정한다. 바깥쪽 chrome 바(navbar,
-   * prompt-input 본체)는 면적이 넓고 배경 역할이라 thin으로 가볍게 — 뒤 콘텐츠가 은은하게
-   * 비쳐야 페이지와 붙어 있는 느낌을 준다. 그 위/안에 얹혀 실제로 읽거나 조작하는 두 번째
-   * 레이어(navbar-user pill, theme-switcher 드롭다운, prompt-input 안의 textarea)는 면적이
-   * 작고 내용 밀도가 높아 thick으로 — 텍스트 가독성과 포커스가 우선이라 더 강하게 가린다.
-   * 즉 중첩될수록 약해지는 게 아니라 강해진다: thin(바깥) → thick(중첩된 포커스 레이어).
+   * glass는 전역 배경 토큰은 건드리지 않고 떠 있는 표면의 재질 티어만 재정의한다.
+   * 뎁스는 high·higher 2단계로만 표현한다(중첩될수록 강해진다: high=단독 1-depth 표면,
+   * higher=위에 얹힌 포커스 레이어). base 티어는 뎁스가 없는 flush chrome 바용이라
+   * 이 테마에서도 재정의하지 않고 :root의 무효과 기본값(불투명 배경·blur 없음·테두리 없음·그림자 없음) 그대로 둔다.
    */
   /* --radius: var(--radius-large); */
   /* --color-background-subtle: rgb(255 255 255 / 30%); */
-  --shadow-surface: 0 8px 32px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.2);
 
-  /* 테두리·그림자는 thin/regular/thick 세기와 무관하게 모든 glass 표면이 공유하는 마감이다 */
-  --material-glass-border: var(--border-width) solid rgb(255 255 255 / 50%);
-  --material-glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  /* ===== surface-high ===== */
+  --surface-high-background-color: rgb(255 255 255 / var(--surface-high-opacity));
+  --surface-high-border: var(--border-width) solid rgb(255 255 255 / 50%);
+  --surface-high-backdrop-filter: blur(var(--surface-high-blur)) saturate(1.4);
+  --surface-high-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.2);
 
-  --material-chrome-background: rgb(255 255 255 / var(--material-thin-opacity));
-  --material-chrome-background-strong: rgb(255 255 255 / var(--material-thick-opacity));
-  --material-chrome-backdrop-filter: blur(var(--material-thin-blur)) saturate(1.4);
-  --material-chrome-backdrop-filter-strong: blur(var(--material-thick-blur)) saturate(1.4);
-
-  /* background와 surface-background ? 의 구분이 필요한가. 어차피 surface token이나 component를 사용한다면 컴포넌트 토큰으로?? */
-  /* --color-background: rgb(255 255 255 / 12%); */
-  --color-background-section: rgb(245 245 245 / 40%);
-
-  --prompt-input-background: var(--material-chrome-background);
-  --prompt-input-border: var(--material-glass-border);
-  --prompt-input-shadow: var(--material-glass-shadow);
-
-  --theme-switcher-menu-background: var(--material-chrome-background-strong);
-  --theme-switcher-menu-backdrop-filter: var(--material-chrome-backdrop-filter-strong);
-  --theme-switcher-menu-border: var(--material-glass-border);
-
-  --control-padding: var(--space-1) var(--space-2);
-  --control-border: var(--material-glass-border);
-  --control-border-radius: var(--radius-large);
-  --control-backdrop-filter: var(--material-chrome-backdrop-filter-strong);
-  --control-shadow: var(--material-glass-shadow);
-  --control-background: var(--material-chrome-background-strong);
-
-  /*
-   * mm-dialog(mm-sheet variant="center")는 다른 chrome 위에 얹히는 게 아니라 화면 위에
-   * 단독으로 뜨는 1-depth 표면이라 thin/thick 관계를 만들 필요가 없다. modal 티어 그대로
-   * regular 세기 하나만 쓴다. --sheet-*는 컴포넌트가 자체 기본값을 갖고 있어 여기서 같은
-   * 이름을 재정의해도 이기지 못하므로, sheet.styles.ts가 var(...,fallback)으로 읽는
-   * --sheet-glass-* 전용 이름으로 둔다.
-   */
-  --sheet-glass-background: rgb(255 255 255 / var(--material-regular-opacity));
-  --sheet-glass-backdrop-filter: blur(var(--material-regular-blur)) saturate(1.4);
-  --sheet-glass-border: var(--material-glass-border);
-  --sheet-glass-shadow: var(--material-glass-shadow);
-
-  /* .sidebar-menu도 dialog와 같은 1-depth 표면(regular 세기 하나)이라 같은 판단을 따른다 */
-  --sidebar-menu-background: rgb(255 255 255 / var(--material-regular-opacity));
-  --sidebar-menu-backdrop-filter: blur(var(--material-regular-blur)) saturate(1.4);
-  --sidebar-menu-shadow: var(--material-glass-shadow);
+  /* ===== surface-higher ===== */
+  --surface-higher-background-color: rgb(255 255 255 / var(--surface-higher-opacity));
+  --surface-higher-border: var(--border-width) solid rgb(255 255 255 / 50%);
+  --surface-higher-backdrop-filter: blur(var(--surface-higher-blur)) saturate(1.4);
+  --surface-higher-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
+
+/* navbar 2px */

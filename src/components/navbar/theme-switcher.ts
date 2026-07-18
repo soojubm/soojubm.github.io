@@ -23,12 +23,12 @@ export class ThemeSwitcher extends LitElement {
       flex-direction: column;
 
       padding: var(--space-1);
-      border: var(--theme-switcher-menu-border, var(--border));
+      border: var(--surface-higher-border);
       border-radius: var(--radius);
-      background: var(--theme-switcher-menu-background, var(--color-background));
-      box-shadow: var(--material-shadow);
-      backdrop-filter: var(--theme-switcher-menu-backdrop-filter, none);
-      -webkit-backdrop-filter: var(--theme-switcher-menu-backdrop-filter, none);
+      background: var(--surface-higher-background-color);
+      box-shadow: var(--shadow);
+      backdrop-filter: var(--surface-higher-backdrop-filter);
+      -webkit-backdrop-filter: var(--surface-higher-backdrop-filter);
 
       position: absolute;
       top: calc(100% + var(--space-1));
