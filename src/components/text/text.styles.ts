@@ -1,4 +1,6 @@
-import { css } from 'lit'
+import { css, unsafeCSS } from 'lit'
+
+import { buildAttributeRules } from '@/utils/attribute-styles'
 
 export type TextSize = '32' | '24' | '18' | '14' | '12'
 export type TextWeight = 'medium' | 'bold'
@@ -31,44 +33,33 @@ export const textMaxLengthStyles = css`
   }
 `
 
+const textColorTokens = {
+  light: { color: 'var(--foreground-subtle-color)' },
+  danger: { color: 'var(--color-danger)' },
+}
+
+const textSizeTokens = {
+  '32': { 'font-size': 'var(--font-size-32)', 'line-height': 'var(--font-line-height-40)' },
+  '24': { 'font-size': 'var(--font-size-24)', 'line-height': 'var(--font-line-height-32)' },
+  '18': { 'font-size': 'var(--font-size-18)', 'line-height': 'var(--font-line-height-28)' },
+  '14': { 'font-size': 'var(--font-size-14)', 'line-height': 'var(--font-line-height-24)' },
+  '12': { 'font-size': 'var(--font-size-12)', 'line-height': 'var(--font-line-height-16)' },
+}
+
 export const textStyles = css`
   :host {
     display: block;
     color: inherit;
   }
 
-  :host([color='light']) {
-    color: var(--foreground-subtle-color);
-  }
-  :host([color='danger']) {
-    color: var(--color-danger);
-  }
+  ${unsafeCSS(buildAttributeRules('color', textColorTokens))}
 
   :host([centered]) {
     display: block;
     text-align: center;
   }
 
-  :host([size='32']) {
-    font-size: var(--font-size-32);
-    line-height: var(--font-line-height-40);
-  }
-  :host([size='24']) {
-    font-size: var(--font-size-24);
-    line-height: var(--font-line-height-32);
-  }
-  :host([size='18']) {
-    font-size: var(--font-size-18);
-    line-height: var(--font-line-height-28);
-  }
-  :host([size='14']) {
-    font-size: var(--font-size-14);
-    line-height: var(--font-line-height-24);
-  }
-  :host([size='12']) {
-    font-size: var(--font-size-12);
-    line-height: var(--font-line-height-16);
-  }
+  ${unsafeCSS(buildAttributeRules('size', textSizeTokens))}
 
   :host([weight='bold']) {
     font-weight: var(--font-weight-bold);

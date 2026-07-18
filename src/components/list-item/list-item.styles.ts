@@ -1,4 +1,20 @@
-import { css } from 'lit'
+import { css, unsafeCSS } from 'lit'
+
+import { buildAttributeRules } from '@/utils/attribute-styles'
+
+const listItemSizeTokens = {
+  '40': { '--list-item-font-size': '20px' },
+  '48': {
+    '--list-item-size': 'var(--size-48)',
+    '--list-item-gap': 'var(--space-2)',
+    '--list-item-font-size': 'var(--font-size-24)',
+  },
+  '80': {
+    '--list-item-size': 'var(--size-80)',
+    '--list-item-gap': 'var(--space-3)',
+    '--list-item-font-size': 'var(--font-size-24)',
+  },
+}
 
 export const listItemStyles = css`
   :host {
@@ -15,21 +31,7 @@ export const listItemStyles = css`
   /* :host([size='32']) {
   } */
 
-  :host([size='40']) {
-    --list-item-font-size: 20px;
-  }
-
-  :host([size='48']) {
-    --list-item-size: var(--size-48);
-    --list-item-gap: var(--space-2);
-    --list-item-font-size: var(--font-size-24);
-  }
-
-  :host([size='80']) {
-    --list-item-size: var(--size-80);
-    --list-item-gap: var(--space-3);
-    --list-item-font-size: var(--font-size-24);
-  }
+  ${unsafeCSS(buildAttributeRules('size', listItemSizeTokens))}
 
   [slot='leading'],
   [slot='trailing'] {

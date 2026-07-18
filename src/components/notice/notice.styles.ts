@@ -1,4 +1,25 @@
-import { css } from 'lit'
+import { css, unsafeCSS } from 'lit'
+
+import { buildAttributeRules } from '@/utils/attribute-styles'
+
+const noticeVariantTokens = {
+  success: {
+    // TODO on-
+    '--notice-foreground-color': 'var(--color-success-foreground)',
+    '--notice-background-color': 'var(--color-warning-background)',
+    '--notice-border-color': 'var(--color-success)',
+  },
+  warning: {
+    '--notice-foreground-color': 'var(--color-warning-foreground)',
+    '--notice-background-color': 'var(--color-warning)',
+    '--notice-border-color': 'var(--color-warning)',
+  },
+  danger: {
+    '--notice-foreground-color': 'var(--color-danger-foreground)',
+    '--notice-background-color': 'var(--color-danger)',
+    '--notice-border-color': 'var(--color-danger)',
+  },
+}
 
 export const noticeStyles = css`
   :host {
@@ -21,24 +42,7 @@ export const noticeStyles = css`
     --notice-border-color: var(--border-color);
   }
 
-  :host([variant='success']) {
-    /* TODO on- */
-    --notice-foreground-color: var(--color-success-foreground);
-    --notice-background-color: var(--color-warning-background);
-    --notice-border-color: var(--color-success);
-  }
-
-  :host([variant='warning']) {
-    --notice-foreground-color: var(--color-warning-foreground);
-    --notice-background-color: var(--color-warning);
-    --notice-border-color: var(--color-warning);
-  }
-
-  :host([variant='danger']) {
-    --notice-foreground-color: var(--color-danger-foreground);
-    --notice-background-color: var(--color-danger);
-    --notice-border-color: var(--color-danger);
-  }
+  ${unsafeCSS(buildAttributeRules('variant', noticeVariantTokens))}
 
   .notice-dismiss {
     position: absolute;

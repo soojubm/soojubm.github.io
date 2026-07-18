@@ -1,6 +1,7 @@
-import { css } from 'lit'
+import { css, unsafeCSS } from 'lit'
 
 import { focusRing } from '@/stylesheets/shared/focus-ring.styles'
+import { buildAttributeRules } from '@/utils/attribute-styles'
 
 /** button 태그뿐 아니라 mm-hashtag-link 등 a 기반 파생 컴포넌트도 같은 스킨을 그대로 가져다 쓸 수 있도록 :is(button, a)로 잡는다. */
 export const interactiveControlStyles = css`
@@ -90,27 +91,31 @@ export const buttonSizeStyles = css`
   }
 `
 
+const buttonVariantTokens = {
+  primary: {
+    '--button-background-color': 'var(--color-primary)',
+    '--button-text-color': 'var(--foreground-color-on-solid)',
+  },
+  secondary: {
+    '--button-background-color': 'var(--color-primary-subtle)',
+    '--button-text-color': 'var(--color-primary)',
+  },
+  tertiary: {
+    '--button-text-color': 'var(--foreground-color)',
+  },
+  ghost: {
+    '--button-background-color': 'transparent',
+    '--button-text-color': 'var(--color-primary)',
+  },
+  destructive: {
+    '--button-background-color': 'var(--color-danger)',
+    '--button-text-color': 'var(--foreground-color-on-solid)',
+  },
+}
+
 /** mm-button 색 변형(variant). */
 export const buttonVariantStyles = css`
-  :host([variant='primary']) {
-    --button-background-color: var(--color-primary);
-    --button-text-color: var(--foreground-color-on-solid);
-  }
-  :host([variant='secondary']) {
-    --button-background-color: var(--color-primary-subtle);
-    --button-text-color: var(--color-primary);
-  }
-  :host([variant='tertiary']) {
-    --button-text-color: var(--foreground-color);
-  }
-  :host([variant='ghost']) {
-    --button-background-color: transparent;
-    --button-text-color: var(--color-primary);
-  }
-  :host([variant='destructive']) {
-    --button-background-color: var(--color-danger);
-    --button-text-color: var(--foreground-color-on-solid);
-  }
+  ${unsafeCSS(buildAttributeRules('variant', buttonVariantTokens))}
 `
 
 /** 누름 상태는 표준 aria-pressed로 표현하므로, 스킨도 해당 attribute selector를 단일 기준으로 둔다. */

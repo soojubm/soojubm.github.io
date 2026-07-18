@@ -1,4 +1,26 @@
-import { css } from 'lit'
+import { css, unsafeCSS } from 'lit'
+
+import { buildAttributeRules } from '@/utils/attribute-styles'
+
+const iconButtonVariantTokens = {
+  primary: {
+    'background-color': 'var(--color-primary)',
+    '--icon-button-text-color': 'var(--foreground-color-on-solid)',
+  },
+  secondary: {
+    border: 'var(--border)',
+    'border-radius': 'var(--radius-full)',
+    'background-color': 'var(--background-color)',
+  },
+  ghost: {
+    'background-color': 'transparent',
+    border: 'none',
+  },
+  destructive: {
+    'background-color': 'var(--color-danger)',
+    '--icon-button-text-color': 'var(--foreground-color-on-solid)',
+  },
+}
 
 export const iconButtonStyles = css`
   :host {
@@ -34,26 +56,7 @@ export const iconButtonStyles = css`
     color: var(--icon-button-text-color-hover, var(--icon-button-text-color));
   }
 
-  :host([variant='primary']) button {
-    background-color: var(--color-primary);
-    --icon-button-text-color: var(--foreground-color-on-solid);
-  }
-
-  :host([variant='secondary']) button {
-    border: var(--border);
-    border-radius: var(--radius-full);
-    background-color: var(--background-color);
-  }
-
-  :host([variant='ghost']) button {
-    background-color: transparent;
-    border: none;
-  }
-
-  :host([variant='destructive']) button {
-    background-color: var(--color-danger);
-    --icon-button-text-color: var(--foreground-color-on-solid);
-  }
+  ${unsafeCSS(buildAttributeRules('variant', iconButtonVariantTokens, 'button'))}
 
   :host([size='small']) {
     --icon-button-size: var(--size-24);

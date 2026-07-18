@@ -1,4 +1,6 @@
-import { css } from 'lit'
+import { css, unsafeCSS } from 'lit'
+
+import { buildAttributeRules } from '@/utils/attribute-styles'
 
 type ToneStyle = {
   background: string
@@ -30,6 +32,7 @@ export const tagToneStyles = {
   gold: {
     background: 'var(--color-accent)',
     color: 'var(--foreground-color)',
+    borderColor: 'var(--color-accent)',
   },
   green: categoryTone(2),
   yellow: categoryTone(6),
@@ -86,6 +89,17 @@ export type DotVariant = keyof typeof dotVariantMap
  * --------------------------------------------------
  */
 
+const tagToneTokens = Object.fromEntries(
+  Object.entries(tagToneStyles).map(([tone, style]) => [
+    tone,
+    {
+      '--tag-background-color': style.background,
+      '--tag-color': style.color,
+      '--tag-border-color': style.borderColor,
+    },
+  ]),
+)
+
 export const tagStyles = css`
   :host {
     --tag-height: var(--size-24);
@@ -115,63 +129,5 @@ export const tagStyles = css`
     line-height: 1;
   }
 
-  :host([tone='default']) {
-    --tag-background-color: var(--background-color);
-    --tag-color: var(--foreground-color);
-    --tag-border-color: var(--border-color);
-  }
-
-  :host([tone='gold']) {
-    --tag-background-color: var(--color-accent);
-    --tag-color: var(--foreground-color);
-    --tag-border-color: var(--color-accent);
-  }
-
-  :host([tone='green']) {
-    --tag-background-color: var(--tag-category-2-bg);
-    --tag-color: var(--tag-category-2-text);
-    --tag-border-color: var(--tag-category-2-border);
-  }
-
-  :host([tone='yellow']) {
-    --tag-background-color: var(--tag-category-6-bg);
-    --tag-color: var(--tag-category-6-text);
-    --tag-border-color: var(--tag-category-6-border);
-  }
-
-  :host([tone='red']) {
-    --tag-background-color: var(--tag-category-7-bg);
-    --tag-color: var(--tag-category-7-text);
-    --tag-border-color: var(--tag-category-7-border);
-  }
-
-  :host([tone='blue']) {
-    --tag-background-color: var(--tag-category-1-bg);
-    --tag-color: var(--tag-category-1-text);
-    --tag-border-color: var(--tag-category-1-border);
-  }
-
-  :host([tone='purple']) {
-    --tag-background-color: var(--tag-category-8-bg);
-    --tag-color: var(--tag-category-8-text);
-    --tag-border-color: var(--tag-category-8-border);
-  }
-
-  :host([tone='pink']) {
-    --tag-background-color: var(--tag-category-3-bg);
-    --tag-color: var(--tag-category-3-text);
-    --tag-border-color: var(--tag-category-3-border);
-  }
-
-  :host([tone='orange']) {
-    --tag-background-color: var(--tag-category-4-bg);
-    --tag-color: var(--tag-category-4-text);
-    --tag-border-color: var(--tag-category-4-border);
-  }
-
-  :host([tone='cyan']) {
-    --tag-background-color: var(--tag-category-5-bg);
-    --tag-color: var(--tag-category-5-text);
-    --tag-border-color: var(--tag-category-5-border);
-  }
+  ${unsafeCSS(buildAttributeRules('tone', tagToneTokens))}
 `

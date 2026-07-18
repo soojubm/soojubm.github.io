@@ -1,4 +1,12 @@
-import { css } from 'lit'
+import { css, unsafeCSS } from 'lit'
+
+import { buildAttributeRules } from '@/utils/attribute-styles'
+
+const iconSizeTokens = {
+  tiny: { 'font-size': '0.75rem' },
+  small: { 'font-size': '0.875rem' },
+  large: { 'font-size': '1.5rem' },
+}
 
 export const iconStyles = css`
   :host {
@@ -18,15 +26,5 @@ export const iconStyles = css`
     color: var(--icon-color);
   }
 
-  :host([size='tiny']) .icon {
-    font-size: 0.75rem;
-  }
-
-  :host([size='small']) .icon {
-    font-size: 0.875rem;
-  }
-
-  :host([size='large']) .icon {
-    font-size: 1.5rem;
-  }
+  ${unsafeCSS(buildAttributeRules('size', iconSizeTokens, '.icon'))}
 `

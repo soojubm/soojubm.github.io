@@ -1,4 +1,25 @@
-import { css } from 'lit'
+import { css, unsafeCSS } from 'lit'
+
+import { buildAttributeRules } from '@/utils/attribute-styles'
+
+const avatarSizeTokens = {
+  '80': { '--avatar-size': 'var(--size-80)', 'font-size': 'var(--font-size-huge)' },
+  '48': { '--avatar-size': 'var(--size-48)', 'font-size': 'var(--font-size-large)' },
+  '32': { '--avatar-size': 'var(--size-32)' },
+}
+
+const avatarVariantTokens = {
+  primary: { border: 'var(--avatar-border)' },
+  secondary: {
+    '--avatar-background-color': 'var(--background-color)',
+    '--avatar-border': 'var(--border)',
+  },
+  tertiary: {
+    '--avatar-background-color': 'transparent',
+    '--avatar-border': 'var(--border-transparent)',
+    'box-shadow': 'none',
+  },
+}
 
 export const avatarStyles = css`
   :host {
@@ -28,35 +49,9 @@ export const avatarStyles = css`
     --avatar-border-radius: var(--radius-full);
   }
 
-  :host([size='80']) {
-    --avatar-size: var(--size-80);
-    font-size: var(--font-size-huge);
-  }
+  ${unsafeCSS(buildAttributeRules('size', avatarSizeTokens))}
 
-  :host([size='48']) {
-    --avatar-size: var(--size-48);
-    font-size: var(--font-size-large);
-  }
-
-  :host([size='32']) {
-    --avatar-size: var(--size-32);
-  }
-
-  :host([variant='primary']) {
-    border: var(--avatar-border);
-  }
-
-  :host([variant='secondary']) {
-    --avatar-background-color: var(--background-color);
-    --avatar-border: var(--border);
-  }
-
-  :host([variant='tertiary']) {
-    --avatar-background-color: transparent;
-    --avatar-border: var(--border-transparent);
-
-    box-shadow: none;
-  }
+  ${unsafeCSS(buildAttributeRules('variant', avatarVariantTokens))}
 
   img {
     width: 100%;
