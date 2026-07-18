@@ -1,6 +1,10 @@
 import { css } from 'lit'
 
 export const topBarStyles = css`
+  :host {
+    display: block;
+  }
+
   .top-bar {
     display: flex;
     align-items: center;
