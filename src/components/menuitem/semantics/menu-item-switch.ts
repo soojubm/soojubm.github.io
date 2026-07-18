@@ -1,51 +1,19 @@
 import { LitElement, html } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
+import { customElement } from 'lit/decorators.js'
 
 import { menuItemStyles } from '@/components/menuitem/menuitem.styles'
 import {
-  renderMenuItemContent,
-  renderMenuItemRow,
+  renderMenuItemToggleRow,
   withMenuItemPresentation,
+  withMenuItemToggleState,
 } from '@/components/menuitem/menuitem.utils'
-import { ToggleController } from '@/controllers/toggle-controller'
-import { emit } from '@/utils/emit'
 
 @customElement('mm-menu-item-switch')
-export class MenuItemSwitch extends withMenuItemPresentation(LitElement) {
+export class MenuItemSwitch extends withMenuItemToggleState(withMenuItemPresentation(LitElement)) {
   static styles = [menuItemStyles]
 
-  @property({ type: Boolean }) disabled = false
-  @property({ type: Boolean }) checked = false
-  @property({ type: String }) value = ''
-
-  private toggle = new ToggleController(this, {
-    getValue: () => this.checked,
-    setValue: checked => {
-      this.checked = checked
-    },
-    isDisabled: () => this.disabled,
-  })
-
   render() {
-    return renderMenuItemRow(
-      {
-        role: 'menuitemcheckbox',
-        disabled: this.disabled,
-        ariaChecked: this.checked ? 'true' : 'false',
-        onActivate: this.activate,
-      },
-      renderMenuItemContent(this, this.renderAction()),
-    )
-  }
-
-  private commitChecked(checked: boolean) {
-    if (!this.toggle.set(checked)) return
-
-    emit(this, 'change', { checked: this.checked, value: this.value })
-  }
-
-  private activate = () => {
-    this.commitChecked(!this.checked)
+    return renderMenuItemToggleRow(this, this.renderAction())
   }
 
   private renderAction() {

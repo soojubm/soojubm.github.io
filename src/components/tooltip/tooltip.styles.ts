@@ -29,9 +29,6 @@ export const tooltipStyles = css`
     transform: translateX(-50%);
   }
 
-  :host([placement='left']) [role='tooltip'] {
-  }
-
   :host([placement='right']) [role='tooltip'] {
     left: auto;
     right: 0;

@@ -7,6 +7,8 @@ import type { AvatarShape, AvatarSize, AvatarVariant } from '@/components/avatar
 import type { AriaTriState } from '@/types/aria'
 import type { ListItem } from '@/components/list-item/list-item'
 import '@/components/list-item/list-item'
+import { ToggleController } from '@/controllers/toggle-controller'
+import { emit } from '@/utils/emit'
 
 type Constructor<T = object> = new (...args: any[]) => T
 
@@ -17,7 +19,14 @@ type Constructor<T = object> = new (...args: any[]) => T
  */
 export type MenuItemPresentation = Pick<
   ListItem,
-  'size' | 'label' | 'description' | 'icon' | 'emoji' | 'avatarSrc' | 'avatarVariant' | 'avatarShape'
+  | 'size'
+  | 'label'
+  | 'description'
+  | 'icon'
+  | 'emoji'
+  | 'avatarSrc'
+  | 'avatarVariant'
+  | 'avatarShape'
 > & { tone: string }
 
 /**
@@ -94,4 +103,55 @@ function renderTextSlots(props: MenuItemPresentation) {
     <slot name="text"></slot>
     <slot></slot>
   `
+}
+
+export interface MenuItemToggleState {
+  disabled: boolean
+  checked: boolean
+  value: string
+  activate: () => void
+}
+
+/**
+ * menu-item-checkbox·menu-item-switch가 공유하는 checked 상태와 토글 배선.
+ * 트레일링 컨트롤(mm-checkbox/mm-switch)만 각 컴포넌트가 소유한다.
+ */
+export const withMenuItemToggleState = <T extends Constructor<LitElement>>(Base: T) => {
+  class MenuItemToggleStateElement extends Base {
+    @property({ type: Boolean }) disabled = false
+    @property({ type: Boolean }) checked = false
+    @property({ type: String }) value = ''
+
+    private toggle = new ToggleController(this, {
+      getValue: () => this.checked,
+      setValue: checked => {
+        this.checked = checked
+      },
+      isDisabled: () => this.disabled,
+    })
+
+    activate = () => {
+      if (!this.toggle.set(!this.checked)) return
+
+      emit(this, 'change', { checked: this.checked, value: this.value })
+    }
+  }
+
+  return MenuItemToggleStateElement as Constructor<MenuItemToggleState> & T
+}
+
+/** checkbox·switch 계열이 공유하는 menuitemcheckbox 행 조립. */
+export function renderMenuItemToggleRow(
+  props: MenuItemPresentation & MenuItemToggleState,
+  trailing: unknown,
+) {
+  return renderMenuItemRow(
+    {
+      role: 'menuitemcheckbox',
+      disabled: props.disabled,
+      ariaChecked: props.checked ? 'true' : 'false',
+      onActivate: props.activate,
+    },
+    renderMenuItemContent(props, trailing),
+  )
 }
