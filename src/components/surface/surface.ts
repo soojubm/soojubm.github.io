@@ -5,6 +5,7 @@ import {
   surfaceStyles,
   type SurfaceVariant,
   type SurfaceRadius,
+  type SurfaceTone,
 } from '@/components/surface/surface.styles'
 
 @customElement('mm-surface')
@@ -13,6 +14,7 @@ export class Surface extends LitElement {
 
   @property({ type: String, reflect: true }) variant?: SurfaceVariant
   @property({ type: String, reflect: true }) radius?: SurfaceRadius
+  @property({ type: String, reflect: true }) tone?: SurfaceTone
 
   render() {
     return html`

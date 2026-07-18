@@ -108,24 +108,24 @@
   </mm-component-guide>
 
   <mm-component-section heading="UserRow" description="사용자 맥락">
-    <mm-user-row
-      label="수줍이"
-      description="UI Designer"
-      avatar-src="/src/images/soojubm.png"
-    ></mm-user-row>
-    <mm-separator></mm-separator>
-    <mm-user-row label="수줍이" description="바보" avatar-src="/src/images/soojubm.png">
-      <mm-follow-button slot="trailing"></mm-follow-button>
-    </mm-user-row>
-    <mm-separator></mm-separator>
-    <mm-user-row
-      label="알 수 없는 사용자"
-      description="아바타 이미지가 없을 때"
-      avatar-variant="secondary"
-      icon="user"
-    >
-      <mm-tag slot="trailing">테스트용 태그</mm-tag>
-    </mm-user-row>
+    <mm-menu-item-group>
+      <mm-user-row
+        label="수줍이"
+        description="UI Designer"
+        avatar-src="/src/images/soojubm.png"
+      ></mm-user-row>
+      <mm-user-row label="수줍이" description="바보" avatar-src="/src/images/soojubm.png">
+        <mm-follow-button slot="trailing"></mm-follow-button>
+      </mm-user-row>
+      <mm-user-row
+        label="알 수 없는 사용자"
+        description="아바타 이미지가 없을 때"
+        avatar-variant="secondary"
+        icon="user"
+      >
+        <mm-tag slot="trailing">테스트용 태그</mm-tag>
+      </mm-user-row>
+    </mm-menu-item-group>
   </mm-component-section>
 
   <mm-component-related>

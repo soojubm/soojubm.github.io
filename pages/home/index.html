@@ -548,7 +548,7 @@
         <mm-text-list
           texts='["초기에는 최소 구조로 설계하고 기능과 표현을 확장한다", "모든 경우를 나열하지 않는다", "조합 가능한 구조를 우선한다"]'
         ></mm-text-list>
-  </section>
+  </mm-surface>
 
   <mm-flex direction="column" gap="4">
     <mm-text size="24" weight="bold">Layout Modules</mm-text>
@@ -788,6 +788,69 @@
         border-radius: var(--radius);
       }
     </style>
+  </mm-content-section>
+
+  <mm-content-section heading="Selection">
+    <mm-paragraph>
+      선택 상호작용을 갖는 컴포넌트는 배타적 단일 선택인지 독립적 다중 선택인지, 그리고 항상 노출되는
+      옵션인지 열어야 보이는 옵션인지로 고릅니다.
+    </mm-paragraph>
+    <mm-grid columns="3" gap="3">
+      <mm-list-item
+        icon="check"
+        size="40"
+        label="Checkbox / Checkbox Group"
+        description="서로 배타적이지 않은 항목을 독립적으로 다중 선택합니다."
+      ></mm-list-item>
+      <mm-list-item
+        icon="circle"
+        size="40"
+        label="Radio / Radio Group"
+        description="여러 옵션 중 하나만 고르며, 모든 옵션이 항상 노출됩니다."
+      ></mm-list-item>
+      <mm-list-item
+        icon="on-tag"
+        size="40"
+        label="Switch"
+        description="옵션 목록 없이 단일 항목의 on/off 상태를 즉시 전환합니다."
+      ></mm-list-item>
+      <mm-list-item
+        icon="interactive"
+        size="40"
+        label="Toggle Button / Toggle Button Group"
+        description="버튼 형태로 선택 상태를 강조해야 하는 단일/다중 선택에 사용합니다."
+      ></mm-list-item>
+      <mm-list-item
+        icon="filter"
+        size="40"
+        label="Filter Button Group"
+        description="선택에 따라 목록 결과가 즉시 필터링되는 다중 선택에 사용합니다."
+      ></mm-list-item>
+      <mm-list-item
+        icon="task-list"
+        size="40"
+        label="Menu Item Checkbox / Group"
+        description="메뉴나 팝오버 안에서 옵션을 열어야 보이는 다중 선택에 사용합니다."
+      ></mm-list-item>
+      <mm-list-item
+        icon="circle"
+        size="40"
+        label="Menu Item Radio / Group"
+        description="메뉴나 팝오버 안에서 옵션을 열어야 보이는 단일 선택에 사용합니다."
+      ></mm-list-item>
+      <mm-list-item
+        icon="view-grid"
+        size="40"
+        label="Tab / Tab List"
+        description="선택된 하나의 뷰만 렌더하는 콘텐츠 전환용 단일 선택입니다."
+      ></mm-list-item>
+      <mm-list-item
+        icon="page"
+        size="40"
+        label="Page Button"
+        description="페이지네이션에서 현재 페이지를 aria-current로 나타내는 전용 선택입니다."
+      ></mm-list-item>
+    </mm-grid>
   </mm-content-section>
 
   <mm-content-section heading="Status States">

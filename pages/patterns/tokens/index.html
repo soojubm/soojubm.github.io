@@ -44,8 +44,8 @@
         <mm-color-token color="var(--gray0)" token="gray0: #fff"></mm-color-token>
         <mm-color-token color="var(--gray100)" token="gray100: #f5f6f5"></mm-color-token>
         <mm-color-token color="var(--gray200)" token="gray200: #d2d7d5"></mm-color-token>
-        <mm-color-token color="var(--gray400)" token="gray400: #979d9a"></mm-color-token>
-        <mm-color-token color="var(--gray800)" token="gray800: #3d4943"></mm-color-token>
+        <mm-color-token color="var(--gray400)" token="gray400: #8a908d"></mm-color-token>
+        <mm-color-token color="var(--gray800)" token="gray800: #303b35"></mm-color-token>
         <mm-color-token color="var(--green100)" token="green100: green tint"></mm-color-token>
         <mm-color-token color="var(--green800)" token="green800: #1b995c"></mm-color-token>
         <mm-color-token color="var(--red100)" token="red100: red tint"></mm-color-token>
@@ -69,7 +69,7 @@
           color="var(--green100)"
           on-color="var(--foreground-color)"
           label="on primary-light"
-          token="primary-light: green400"
+          token="primary-light: green100"
         ></mm-color-token>
         <!-- warning -->
         <mm-color-token
@@ -104,7 +104,7 @@
           color="var(--gray800)"
           on-color="var(--foreground-color-on-solid)"
           label="on background-strong"
-          token="background-strong: #212529"
+          token="background-strong: #303b35"
         ></mm-color-token>
       </mm-grid>
 
@@ -149,7 +149,7 @@
               font-family: Alan Sans, Gothic A1, system-ui, sans-serif
             </mm-text>
             <mm-text size="18" weight="bold">font-size: 18px</mm-text>
-            <mm-text size="18" weight="bold">line-height: 24px</mm-text>
+            <mm-text size="18" weight="bold">line-height: 28px</mm-text>
           </mm-marquee>
         </mm-surface>
         <mm-surface variant="outlined" radius="large">
@@ -158,7 +158,7 @@
               font-family: Alan Sans, Gothic A1, system-ui, sans-serif
             </mm-text>
             <mm-text size="14" weight="bold">font-size: 14px</mm-text>
-            <mm-text size="14" weight="bold">line-height: 20px</mm-text>
+            <mm-text size="14" weight="bold">line-height: 24px</mm-text>
           </mm-marquee>
         </mm-surface>
         <mm-surface variant="outlined" radius="large">
@@ -492,7 +492,7 @@
                 "
               ></div>
               <div
-                style="width: var(--space-16); height: 4px; background: var(--color-primary)"
+                style="width: var(--space-12); height: 4px; background: var(--color-primary)"
               ></div>
               <div
                 style="
@@ -505,14 +505,39 @@
             </mm-flex>
             <mm-list-marker variant="number" value="7"></mm-list-marker>
           </mm-flex>
+          <mm-flex direction="column" align-items="center" gap="2">
+            <mm-flex align-items="center" gap="0">
+              <div
+                style="
+                  width: 2px;
+                  height: var(--size-32);
+                  background: var(--background-strong-color);
+                  border-radius: var(--radius);
+                "
+              ></div>
+              <div
+                style="width: var(--space-16); height: 4px; background: var(--color-primary)"
+              ></div>
+              <div
+                style="
+                  width: 2px;
+                  height: var(--size-32);
+                  background: var(--background-strong-color);
+                  border-radius: var(--radius);
+                "
+              ></div>
+            </mm-flex>
+            <mm-list-marker variant="number" value="8"></mm-list-marker>
+          </mm-flex>
         </mm-flex>
       </mm-token-stage>
       <mm-token-group>
-        <mm-token-item key="space-1" value=".25rem"></mm-token-item>
-        <mm-token-item key="space-2" value=".5rem"></mm-token-item>
-        <mm-token-item key="space-3" value=".75rem"></mm-token-item>
-        <mm-token-item key="space-4" value="1rem"></mm-token-item>
-        <mm-token-item key="space-8" value="2rem"></mm-token-item>
+        <mm-token-item key="space-1" value="4px"></mm-token-item>
+        <mm-token-item key="space-2" value="8px"></mm-token-item>
+        <mm-token-item key="space-3" value="12px"></mm-token-item>
+        <mm-token-item key="space-4" value="16px"></mm-token-item>
+        <mm-token-item key="space-8" value="32px"></mm-token-item>
+        <mm-token-item key="space-12" value="48px"></mm-token-item>
         <mm-token-item key="space-16" value="64px"></mm-token-item>
       </mm-token-group>
     </mm-flex>
@@ -526,7 +551,6 @@
       <mm-token-group>
         <mm-token-item key="layout-width-wide" value="1280px"></mm-token-item>
         <mm-token-item key="layout-width-small" value="640px"></mm-token-item>
-        <mm-token-item key="layout-width-tiny" value="480px"></mm-token-item>
         <mm-token-item key="layout-width-narrow" value="400px"></mm-token-item>
         <mm-token-item key="layout-width-sidebar" value="16rem"></mm-token-item>
         <mm-token-item key="layout-padding-inline" value="5vw"></mm-token-item>
@@ -637,7 +661,7 @@
       <mm-token-group>
         <mm-token-item key="border-width" value="1px"></mm-token-item>
 
-        <mm-token-item key="border-active" value="1px solid var(--color-primary)"></mm-token-item>
+        <mm-token-item key="border" value="1px solid var(--border-color)"></mm-token-item>
         <mm-token-item
           key="border-transparent"
           value="var(--border-width) solid transparent"
@@ -699,11 +723,11 @@
       </mm-token-stage>
       <mm-token-group aria-label="shadow primitive tokens">
         <mm-token-item
-          key="shadow"
+          key="surface-base-shadow"
           value="0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.08)"
         ></mm-token-item>
-        <mm-token-item key="shadow-high" value="0 4px 12px rgba(0,0,0,.15)"></mm-token-item>
-        <mm-token-item key="shadow-higher" value="0 16px 32px rgba(0,0,0,.2)"></mm-token-item>
+        <mm-token-item key="surface-high-shadow" value="none"></mm-token-item>
+        <mm-token-item key="surface-higher-shadow" value="0 16px 32px rgba(0,0,0,.2)"></mm-token-item>
       </mm-token-group>
 
       <mm-separator></mm-separator>

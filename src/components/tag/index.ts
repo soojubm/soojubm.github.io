@@ -6,5 +6,6 @@ import '@/components/tag/semantics/tag-group'
 import '@/components/tag/semantics/accent-tag'
 import '@/components/tag/semantics/status-tag'
 import '@/components/tag/semantics/category-tag'
+import '@/components/tag/semantics/dot'
 
 export {}

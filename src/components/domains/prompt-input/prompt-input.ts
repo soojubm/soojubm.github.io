@@ -146,7 +146,7 @@ export class PromptInput extends LitElement {
     if (this.hiddenAttachment) return nothing
 
     return html`
-      <mm-select placement="top-left" style="--select-min-width: 160px">
+      <mm-select placement="top-left">
         <mm-icon-button
           slot="trigger"
           icon=${ICON_NAMES.ADD_CIRCLE}

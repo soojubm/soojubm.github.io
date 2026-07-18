@@ -72,6 +72,14 @@ export const categoryToneMap = defineToneMap({
 
 export type Category = keyof typeof categoryToneMap
 
+export const dotVariantMap = defineToneMap({
+  live: 'red' as const,
+  new: 'gold' as const,
+  unread: 'blue' as const,
+})
+
+export type DotVariant = keyof typeof dotVariantMap
+
 /**
  * --------------------------------------------------
  * component styles

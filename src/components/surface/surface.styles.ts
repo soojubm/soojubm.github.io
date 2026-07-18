@@ -1,7 +1,10 @@
 import { css, unsafeCSS } from 'lit'
 
+import { buildAttributeRules } from '@/utils/attribute-styles'
+
 export type SurfaceVariant = 'ghost' | 'paper' | 'outlined' | 'filled' | 'elevated'
 export type SurfaceRadius = 'default' | 'large'
+export type SurfaceTone = 'green'
 
 /**
  * variant별로 재정의하는 surface 컴포넌트 토큰. 이 오브젝트가 실제 :host([variant=...]) 규칙을
@@ -27,15 +30,17 @@ export const surfaceVariants: Record<SurfaceVariant, Record<string, string>> = {
   },
 }
 
-const buildVariantRules = (variants: Record<string, Record<string, string>>) =>
-  Object.entries(variants)
-    .map(([variant, tokens]) => {
-      const declarations = Object.entries(tokens)
-        .map(([token, value]) => `${token}: ${value};`)
-        .join(' ')
-      return `:host([variant='${variant}']) { ${declarations} }`
-    })
-    .join('\n')
+/**
+ * tone별로 재정의하는 surface 컴포넌트 토큰. variant와 별개의 축으로,
+ * 의미색(성공 등)을 표현할 때만 사용한다.
+ */
+export const surfaceTones: Record<SurfaceTone, Record<string, string>> = {
+  green: {
+    '--surface-border': 'var(--tag-category-2-border)',
+    '--surface-background-color': 'var(--tag-category-2-bg)',
+    '--surface-text-color': 'var(--tag-category-2-text)',
+  },
+}
 
 export const surfaceBaseStyles = css`
   :host {
@@ -44,6 +49,7 @@ export const surfaceBaseStyles = css`
     --surface-border: var(--border);
     --surface-border-radius: var(--radius);
     --surface-background-color: var(--background-color);
+    --surface-text-color: inherit;
     --surface-shadow: none;
     --surface-backdrop-filter: var(--surface-base-backdrop-filter);
 
@@ -56,6 +62,7 @@ export const surfaceBaseStyles = css`
     border-radius: var(--surface-border-radius);
     box-sizing: border-box;
     background: var(--surface-background-color);
+    color: var(--surface-text-color);
     box-shadow: var(--surface-shadow);
     /* backdrop-filter: var(--surface-backdrop-filter, none);
     -webkit-backdrop-filter: var(--surface-backdrop-filter, none); */
@@ -77,7 +84,16 @@ export const surfaceRadiusStyles = css`
 `
 
 export const surfaceVariantStyles = css`
-  ${unsafeCSS(buildVariantRules(surfaceVariants))}
+  ${unsafeCSS(buildAttributeRules('variant', surfaceVariants))}
 `
 
-export const surfaceStyles = [surfaceBaseStyles, surfaceRadiusStyles, surfaceVariantStyles]
+export const surfaceToneStyles = css`
+  ${unsafeCSS(buildAttributeRules('tone', surfaceTones))}
+`
+
+export const surfaceStyles = [
+  surfaceBaseStyles,
+  surfaceRadiusStyles,
+  surfaceVariantStyles,
+  surfaceToneStyles,
+]

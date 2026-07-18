@@ -12,12 +12,12 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 const colorTokens = [
-  { name: '--gray0', value: '', cases: ['--color-background'] },
-  { name: '--gray100', value: '', cases: ['--color-background-subtle'] },
-  { name: '--gray200', value: '', cases: ['--color-border'] },
-  { name: '--gray400', value: '', cases: ['--color-foreground-light'] },
+  { name: '--gray0', value: '', cases: ['--background-color'] },
+  { name: '--gray100', value: '', cases: ['--background-subtle-color'] },
+  { name: '--gray200', value: '', cases: ['--border-color'] },
+  { name: '--gray400', value: '', cases: ['--foreground-subtle-color'] },
   // { name: '--gray600', value: '' },
-  { name: '--gray800', value: '', cases: ['--color-foreground', '--color-background-strong'] },
+  { name: '--gray800', value: '', cases: ['--foreground-color', '--background-strong-color'] },
   { name: '--green100', value: '', cases: ['--color-primary-subtle'] },
   { name: '--green800', value: '', cases: ['--color-primary'] },
   { name: '--red100', value: '', cases: ['--color-danger-light'] },
@@ -29,6 +29,7 @@ const colorTokens = [
     cases: [],
   },
   { name: '--interaction-selected-foreground-color', value: 'var(--color-primary)', cases: [] },
+  { name: '--interaction-selected-border-color', value: 'var(--color-primary)', cases: [] },
   { name: '--color-primary', value: 'var(--green800)', cases: [] },
   { name: '--color-primary-subtle', value: 'var(--green100)', cases: [] },
   { name: '--color-accent', value: 'var(--yellow800)', cases: [] },
@@ -46,52 +47,69 @@ const colorTokens = [
   { name: '--color-danger', value: 'var(--red800)', cases: [] },
   { name: '--color-danger-foreground', value: '#c51635', cases: [] },
 
-  { name: '--color-background', value: 'var(--gray0)', cases: [] },
-  { name: '--color-background-subtle', value: 'var(--gray100)', cases: [] },
-  { name: '--color-background-strong', value: 'var(--gray800)', cases: [] },
-  { name: '--color-border', value: 'var(--gray200)', cases: [] },
-  { name: '--color-foreground', value: 'var(--gray800)', cases: [] },
-  { name: '--color-foreground-light', value: 'var(--gray400)', cases: [] },
-  { name: '--color-foreground-on-solid', value: 'var(--gray0)', cases: [] },
-  { name: '--color-interaction-focus', value: '#007185', cases: [] },
-  { name: '--interaction-active-background-color', value: '#f0b800', cases: [] },
+  { name: '--background-color', value: 'var(--gray0)', cases: [] },
+  { name: '--background-subtle-color', value: 'var(--gray100)', cases: [] },
+  { name: '--background-strong-color', value: 'var(--gray800)', cases: [] },
+  { name: '--border-color', value: 'var(--gray200)', cases: [] },
+  { name: '--foreground-color', value: 'var(--gray800)', cases: [] },
+  { name: '--foreground-subtle-color', value: 'var(--gray400)', cases: [] },
+  { name: '--foreground-color-on-solid', value: 'var(--gray0)', cases: [] },
+  { name: '--foreground-color-on-warning', value: 'var(--red800)', cases: [] },
+  { name: '--foreground-color-on-primary', value: 'var(--gray0)', cases: [] },
+  { name: '--interaction-focus-outline', value: '2px solid var(--gray800)', cases: [] },
+  { name: '--interaction-active-background-color', value: 'var(--color-accent)', cases: [] },
   { name: '--color-interaction-active-border', value: '#008296', cases: [] },
-  { name: '--color-interaction-active-ring', value: '#c8f3fa', cases: [] },
+  {
+    name: '--interaction-active-shadow',
+    value: '0 0 0 2px #c8f3fa, inset 0 0 0 2px var(--foreground-color-on-solid)',
+    cases: [],
+  },
   { name: '--skeleton-sample', value: '', cases: [''] },
   { name: '--gradient-transparnet', value: '', cases: [''] },
-  { name: '--radius', value: '', cases: [''] },
-  { name: '--material-shadow', value: '0 0 .5rem rgb(0 0 0 / 7.5%)', cases: [''] },
+  { name: '--radius', value: '6px', cases: [''] },
+  { name: '--radius-large', value: '1rem', cases: [''] },
+  { name: '--radius-full', value: '50%', cases: [''] },
+  {
+    name: '--surface-base-shadow',
+    value: '0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.08)',
+    cases: [''],
+  },
 ]
 
 const typographyTokens = [
-  { name: '--font-family', value: '"Quattrocento Sans", "Gothic A1", sans-serif' },
-  { name: '--font-size-32', value: '2rem' },
-  { name: '--font-size-18', value: '1.125rem' },
-  { name: '--font-size-14', value: '.875rem' },
-  { name: '--font-weight-normal', value: '400' },
-  { name: '--font-weight-bold', value: '800' },
-  { name: '--font-line-height', value: '1.4' },
-  { name: '--font-line-height-large', value: '1.8' },
+  { name: '--font-family', value: "'Alan Sans', 'Gothic A1', system-ui, sans-serif" },
+  { name: '--font-size-32', value: '32px' },
+  { name: '--font-size-24', value: '24px' },
+  { name: '--font-size-18', value: '18px' },
+  { name: '--font-size-14', value: '14px' },
+  { name: '--font-size-12', value: '12px' },
+  { name: '--font-line-height-40', value: '40px' },
+  { name: '--font-line-height-32', value: '32px' },
+  { name: '--font-line-height-28', value: '28px' },
+  { name: '--font-line-height-24', value: '24px' },
+  { name: '--font-line-height-16', value: '16px' },
+  { name: '--font-weight-normal', value: '500' },
+  { name: '--font-weight-bold', value: '700' },
 ]
 
 const sizeTokens = [
-  { name: '--size-80', value: '80px', cases: ['--avatar-huge'] },
+  { name: '--size-80', value: '80px', cases: ['--avatar-size', '--list-item-size'] },
   {
     name: '--size-48',
     value: '48px',
-    cases: ['--avatar-large', '--button-height', '--input-height'],
+    cases: ['--avatar-size', '--button-height', '--input-height'],
   },
-  { name: '--size-40', value: '40px', cases: ['--avatar-medium'] },
-  { name: '--size-32', value: '32px', cases: ['--avatar-small', '--chip-height'] },
+  { name: '--size-40', value: '40px', cases: ['--avatar-size'] },
+  { name: '--size-32', value: '32px', cases: ['--avatar-size', '--button-height'] },
   {
     name: '--size-24',
     value: '24px',
-    cases: ['--tag-height', '--indicator-height'],
+    cases: ['--tag-height', '--checkbox-size'],
   },
   {
     name: '--size-16',
     value: '16px',
-    cases: ['checkbox-height', '--radio-height', '--switch-height'],
+    cases: ['--checkbox-size', '--radio-size', '--icon-button-size'],
   },
 ]
 
@@ -99,6 +117,14 @@ const spacingTokens = [
   { name: '--grid-gutter', value: '' },
   { name: '--grid-column', value: '' },
   { name: '--layout-padding-inline', value: '5vw' },
+  { name: '--space-1', value: '4px' },
+  { name: '--space-2', value: '8px' },
+  { name: '--space-3', value: '12px' },
+  { name: '--space-4', value: '16px' },
+  { name: '--space-8', value: '32px' },
+  { name: '--space-12', value: '48px' },
+  { name: '--space-16', value: '64px' },
+  { name: '--space-section', value: 'var(--space-16)' },
 ]
 
 const layerTokens = [
@@ -113,14 +139,14 @@ const layerTokens = [
 const positioningTokens = []
 
 const animationTokens = [
-  { name: '--animation-bazier', value: 'cubic-bezier(0.455, 0.03, 0.515, 0.955)' },
-  { name: '--animation-delay-first', value: '1' },
-  { name: '--animation-delay-second', value: '1' },
-  { name: '--animation-delay-third', value: '1' },
-  { name: '--animation-duration', value: '6' },
+  { name: '--bazier', value: 'cubic-bezier(0.455, 0.03, 0.515, 0.955)' },
+  { name: '--animation-delay-first', value: '0.2s' },
+  { name: '--animation-delay-second', value: '0.4s' },
+  { name: '--animation-delay-third', value: '0.6s' },
+  { name: '--animation-duration', value: '0.4s' },
   { name: '--animation-duration-instant', value: '0s' },
-  { name: '--animation-duration-quick', value: '7' },
-  { name: '--animation-duration-slow', value: '7' },
+  { name: '--duration-quickly', value: '0.2s' },
+  { name: '--duration-slowly', value: '0.6s' },
 ]
 
 const article = [
