@@ -2,17 +2,16 @@ import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import '@/components/icon-button/icon-button'
+import { withToggleSelection } from '@/components/button/button.utils'
 import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
-import { ToggleController } from '@/controllers/toggle-controller'
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
-import { emit } from '@/utils/emit'
 
 /**
  * 북마크/즐겨찾기 토글 버튼.
  * 아이콘 전용이며 선택 시 채워진 아이콘으로 전환됩니다.
  */
 @customElement('mm-bookmark-button')
-export class BookmarkButton extends LitElement {
+export class BookmarkButton extends withToggleSelection(LitElement) {
   static styles = [
     resetStyles,
     css`
@@ -30,18 +29,7 @@ export class BookmarkButton extends LitElement {
     `,
   ]
 
-  @property({ type: Boolean, reflect: true }) selected = false
-  @property({ type: String }) value = ''
-  @property({ type: Boolean }) disabled = false
   @property({ type: String }) shape: 'star' | 'bookmark' | 'heart' = 'star'
-
-  private toggle = new ToggleController(this, {
-    getValue: () => this.selected,
-    setValue: selected => {
-      this.selected = selected
-    },
-    isDisabled: () => this.disabled,
-  })
 
   render() {
     return html`
@@ -51,7 +39,7 @@ export class BookmarkButton extends LitElement {
         aria-pressed=${this.selected ? 'true' : 'false'}
         aria-label=${this.actionLabel}
         ?disabled=${this.disabled}
-        @click=${this.handleClick}
+        @click=${this.handleToggle}
       ></mm-icon-button>
     `
   }
@@ -73,12 +61,6 @@ export class BookmarkButton extends LitElement {
   private get actionLabel() {
     const labels = { star: '즐겨찾기', bookmark: '북마크', heart: '좋아요' }
     return labels[this.shape]
-  }
-
-  private handleClick() {
-    if (!this.toggle.toggle()) return
-
-    emit(this, 'change', { selected: this.selected, value: this.value })
   }
 }
 

@@ -1,8 +1,9 @@
-import { LitElement, css, html } from 'lit'
+import { LitElement, html } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 
-import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
 import '@/components/icon-button/icon-button'
+import { iconButtonActionStyles } from '@/components/icon-button/icon-button.styles'
+import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
 import { copyToClipboard } from '@/utils/clipboard'
 import { emit } from '@/utils/emit'
 
@@ -12,7 +13,7 @@ import { emit } from '@/utils/emit'
  */
 @customElement('mm-copy-button')
 export class CopyButton extends LitElement {
-  static styles = css``
+  static styles = [iconButtonActionStyles]
 
   @property({ type: String }) value = ''
   @property({ type: String }) tooltip = ''
