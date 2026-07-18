@@ -3,8 +3,7 @@ import { property } from 'lit/decorators.js'
 
 import { ToggleController } from '@/controllers/toggle-controller'
 import { emit } from '@/utils/emit'
-
-type Constructor<T = object> = new (...args: any[]) => T
+import { type Constructor } from '@/utils/mixin'
 
 export interface ToggleSelection {
   selected: boolean

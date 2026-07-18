@@ -9,8 +9,7 @@ import type { ListItem } from '@/components/list-item/list-item'
 import '@/components/list-item/list-item'
 import { ToggleController } from '@/controllers/toggle-controller'
 import { emit } from '@/utils/emit'
-
-type Constructor<T = object> = new (...args: any[]) => T
+import { type Constructor } from '@/utils/mixin'
 
 /**
  * menu-item 계열이 공유하는 표시 prop의 공개 인터페이스.

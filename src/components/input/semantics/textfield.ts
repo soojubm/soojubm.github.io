@@ -2,38 +2,22 @@ import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
-import type { AriaInvalid } from '@/types/aria'
 import type { InputType } from '@/components/input/input'
 
 import {
   renderFieldHelper,
   renderFieldLabel,
   renderFieldValidation,
+  withTextfieldState,
 } from '@/components/input/semantics/textfield.helpers'
 import { textfieldStyles } from '@/components/input/semantics/textfield.styles'
 import '@/components/input/input'
-import { emit } from '@/utils/emit'
-import { uniqueId } from '@/utils/unique-id'
 
 @customElement('mm-textfield')
-export class Textfield extends LitElement {
+export class Textfield extends withTextfieldState(LitElement) {
   static styles = textfieldStyles
 
   @property({ type: String }) type: InputType = 'text'
-  @property({ type: String }) value = ''
-  @property({ type: String }) name = ''
-  @property({ type: String }) placeholder = ''
-  @property({ type: String }) label?: string
-  @property({ type: String }) helper?: string
-  @property({ type: String, attribute: 'validation-text' }) validationText?: string
-  @property({ type: String, reflect: true }) size = ''
-
-  @property({ type: Boolean }) optional = false
-  @property({ type: Boolean, attribute: 'hidden-label', reflect: true }) hiddenLabel = false
-  @property({ type: Boolean }) disabled = false
-  @property({ type: String, attribute: 'aria-invalid' }) ariaInvalid: AriaInvalid = null
-
-  private inputId = uniqueId('input')
 
   render() {
     return html`
@@ -57,12 +41,6 @@ export class Textfield extends LitElement {
       </div>
       ${renderFieldValidation(`${this.inputId}-validation`, this.validationText)}
     `
-  }
-
-  private handleInput(event: Event) {
-    const target = event.target as HTMLInputElement
-    this.value = target.value
-    emit(this, 'input', { value: this.value })
   }
 }
 
