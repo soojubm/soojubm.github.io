@@ -167,6 +167,14 @@ function sheetPageTemplate() {
         <mm-toast class="js-demo-toast">저장되었습니다.</mm-toast>
       </mm-component-section>
 
+      <mm-component-related>
+        <mm-button-group>
+          <mm-hashtag-link href="dialog.html">Dialog</mm-hashtag-link>
+          <mm-hashtag-link href="popover.html">Popover</mm-hashtag-link>
+          <mm-hashtag-link href="surface.html">Surface</mm-hashtag-link>
+        </mm-button-group>
+      </mm-component-related>
+
       <mm-component-references>
         <mm-link external href="https://developer.mozilla.org/ko/docs/Web/API/Popover_API">
           Mozilla Popover API
