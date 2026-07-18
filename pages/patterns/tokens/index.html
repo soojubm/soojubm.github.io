@@ -61,7 +61,7 @@
       <mm-grid columns="4" aria-label="grayscale color tokens">
         <mm-color-token
           color="var(--color-primary)"
-          on-color="var(--on-surface-primary-color)"
+          on-color="var(--foreground-color-on-primary)"
           label="on primary"
           token="primary: green800"
         ></mm-color-token>
@@ -625,7 +625,7 @@
                 width: var(--size-48);
                 height: var(--size-48);
                 border: var(--border);
-                border-radius: var(--radius-round);
+                border-radius: var(--radius-full);
                 background: var(--background-color);
                 flex-shrink: 0;
               "
@@ -644,7 +644,7 @@
         ></mm-token-item>
         <mm-token-item key="border-radius" value="6px"></mm-token-item>
         <mm-token-item key="border-radius-large" value="1rem"></mm-token-item>
-        <mm-token-item key="border-radius-round" value="50%"></mm-token-item>
+        <mm-token-item key="border-radius-full" value="50%"></mm-token-item>
       </mm-token-group>
     </mm-flex>
 

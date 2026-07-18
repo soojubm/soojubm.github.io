@@ -25,7 +25,7 @@ export const avatarStyles = css`
   }
 
   :host([shape='circle']) {
-    --avatar-border-radius: var(--radius-round);
+    --avatar-border-radius: var(--radius-full);
   }
 
   :host([size='80']) {

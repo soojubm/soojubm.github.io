@@ -41,7 +41,7 @@ export const iconButtonStyles = css`
 
   :host([variant='secondary']) button {
     border: var(--border);
-    border-radius: var(--radius-round);
+    border-radius: var(--radius-full);
     background-color: var(--background-color);
   }
 

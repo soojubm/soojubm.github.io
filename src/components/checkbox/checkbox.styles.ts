@@ -84,7 +84,7 @@ export const checkboxStyles = css`
   }
 
   input:focus-visible + label > span {
-    ${focusRing}
+    ${focusRing};
   }
 
   :host([size='large']) input[type='checkbox']:checked + label > span::after {

@@ -33,11 +33,11 @@ export const radioGroupStyles = css`
 export const radioStyles = css`
   :host {
     --radio-size: var(--size-16);
-    --radio-border-radius: 50%;
+    --radio-border-radius: var(--radius-full);
     --radio-border-color: var(--border-color);
     --radio-background-color: var(--background-color);
     --radio-border-color-checked: var(--interaction-selected-border-color);
-    --radio-background-color-checked: var(--interaction-selected-background-color);
+    --radio-background-color-checked: var(--interaction-selected-foreground-color);
     gap: var(--space-2);
   }
 
@@ -86,7 +86,7 @@ export const radioStyles = css`
   }
 
   input:focus-visible + label > span {
-    ${focusRing}
+    ${focusRing};
   }
 
   input:disabled ~ label {

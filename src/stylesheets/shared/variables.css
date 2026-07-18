@@ -98,7 +98,7 @@
   --foreground-subtle-color: var(--gray400);
   --foreground-color-on-solid: var(--gray0);
   --foreground-color-on-warning: var(--red800);
-  --on-surface-primary-color: var(--gray0);
+  --foreground-color-on-primary: var(--gray0);
 
   --size-80: 80px;
   --size-48: 48px;
@@ -124,7 +124,7 @@
 
   --radius: 6px;
   --radius-large: 1rem;
-  --radius-round: 50%;
+  --radius-full: 50%;
 
   /* navbar-user 같은 control pill의 모양 토큰(테마 무관 고정값이라 :root 선언이 안전하다) */
   --control-padding: var(--space-1) var(--space-2);
@@ -181,7 +181,7 @@
 .shape-square {
   --radius: 0px;
   --radius-large: 0px;
-  --radius-round: 0%;
+  --radius-full: 0%;
 }
 
 .color-black {

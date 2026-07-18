@@ -36,18 +36,6 @@ function setupDialogActions() {
       onClick: () => confirmDialog.close(),
     }
   }
-
-  const cookieDialog = document.querySelector<DialogElement>('#dialog-cookie')
-  if (cookieDialog) {
-    cookieDialog.primaryAction = {
-      label: 'Cookie Settings',
-      onClick: () => cookieDialog.close(),
-    }
-    cookieDialog.secondaryAction = {
-      label: 'Accept Cookie',
-      onClick: () => cookieDialog.close(),
-    }
-  }
 }
 
 function setupDialogTriggers() {

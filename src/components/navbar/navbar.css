@@ -29,7 +29,7 @@
   background: url('../../images/soojubm.png') no-repeat center;
   background-size: cover;
   background-color: var(--background-strong-color);
-  border-radius: var(--radius-round);
+  border-radius: var(--radius-full);
 }
 
 .navbar-backdrop {
@@ -90,28 +90,7 @@
   overflow-y: auto;
   z-index: calc(var(--material-zindex-chrome) + 1);
 
-  &::-webkit-scrollbar {
-    width: var(--space-2);
-    height: auto;
-    opacity: 0;
-  }
-  &::-webkit-scrollbar-track {
-    background: inherit;
-  }
-  &::-webkit-scrollbar-thumb {
-    background: var(--background-color);
-    border-radius: var(--radius);
-  }
-  &::-webkit-scrollbar-button {
-    display: none;
-    background-color: inherit;
-  }
-  &::-webkit-scrollbar-corner {
-    background-color: inherit;
-  }
-  &:hover::-webkit-scrollbar-thumb {
-    background: var(--background-strong-color);
-  }
+  ${scrollbarStyles};
 }
 
 .sidebar-menu > div mm-menu-item-link:hover,

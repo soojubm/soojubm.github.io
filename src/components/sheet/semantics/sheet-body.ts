@@ -15,7 +15,7 @@ class SheetBody extends LitElement {
         overflow-y: auto;
         overflow-x: hidden;
 
-        ${scrollbarStyles}
+        ${scrollbarStyles};
       }
     `,
   ]
