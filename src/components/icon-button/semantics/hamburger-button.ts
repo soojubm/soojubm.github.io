@@ -3,20 +3,23 @@ import { customElement, property } from 'lit/decorators.js'
 
 import type { AriaBoolean, AriaIdRef } from '@/types/aria'
 
-import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
 import '@/components/icon-button/icon-button'
+import { iconButtonActionStyles } from '@/components/icon-button/icon-button.styles'
+import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
 
 /**
  * 사이드바/내비게이션 메뉴를 여닫는 햄버거 버튼.
  */
 @customElement('mm-hamburger-button')
 export class HamburgerButton extends LitElement {
-  static styles = css`
-    :host {
-      display: inline-flex;
-      z-index: calc(var(--material-zindex-raised) + 1);
-    }
-  `
+  static styles = [
+    iconButtonActionStyles,
+    css`
+      :host {
+        z-index: calc(var(--material-zindex-raised) + 1);
+      }
+    `,
+  ]
 
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = '전체 메뉴'
   @property({ type: String, attribute: 'aria-expanded' }) ariaExpanded: AriaBoolean = 'false'

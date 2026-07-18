@@ -22,6 +22,13 @@ const iconButtonVariantTokens = {
   },
 }
 
+/** icon-button 액션 계열(close/delete/dismiss/hamburger/more/next/prev-button)이 공유하는 host 레이아웃. */
+export const iconButtonActionStyles = css`
+  :host {
+    display: inline-flex;
+  }
+`
+
 export const iconButtonStyles = css`
   :host {
     display: inline-flex;

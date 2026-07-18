@@ -1,17 +1,14 @@
-import { LitElement, css, html } from 'lit'
+import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
 import '@/components/icon-button/icon-button'
+import { iconButtonActionStyles } from '@/components/icon-button/icon-button.styles'
+import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
 import { emit } from '@/utils/emit'
 
 @customElement('mm-next-button')
 export class NextButton extends LitElement {
-  static styles = css`
-    :host {
-      display: inline-flex;
-    }
-  `
+  static styles = [iconButtonActionStyles]
 
   @property({ type: String }) tooltip = ''
   @property({ type: String, attribute: 'tooltip-placement' }) tooltipPlacement = ''
