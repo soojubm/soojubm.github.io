@@ -113,7 +113,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-top: 2px solid var(--color-foreground);
+    border-top: 2px solid var(--foreground-color);
     background: var(--color-newneek);
     position: relative;
   }
@@ -142,9 +142,9 @@
     gap: 1rem;
     width: 100%;
     padding: 0.5rem 0;
-    border-top: 1px solid var(--color-foreground);
-    border-bottom: 2px solid var(--color-foreground);
-    background: var(--color-background);
+    border-top: 1px solid var(--foreground-color);
+    border-bottom: 2px solid var(--foreground-color);
+    background: var(--background-color);
     position: relative;
     z-index: 1;
   }
@@ -172,11 +172,11 @@
   .today-poll div {
     width: 80px;
     margin: 0 0.5rem;
-    background: var(--color-background);
+    background: var(--background-color);
     text-align: center;
   }
   .today-poll div figure {
-    border: 2px solid var(--color-foreground);
+    border: 2px solid var(--foreground-color);
     border-bottom-width: 1px;
   }
   .today-poll div figure span {
@@ -189,9 +189,9 @@
   .today-poll .label {
     display: block;
     padding: 0.25rem 0;
-    border: 2px solid var(--color-foreground);
+    border: 2px solid var(--foreground-color);
     border-top: 0;
-    background: var(--color-background-subtle);
+    background: var(--background-subtle-color);
     font-size: var(--font-size-18);
     font-weight: bold;
   }
@@ -200,7 +200,7 @@
     --zigzag-width: 24px;
     --zigzag-height: 12px;
     --zigzag-gap: 8px;
-    --zigzag-color: var(--color-border);
+    --zigzag-color: var(--border-color);
     position: relative;
     padding-bottom: calc(var(--zigzag-height) + var(--zigzag-gap));
   }

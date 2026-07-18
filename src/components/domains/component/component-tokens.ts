@@ -2,7 +2,10 @@ import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import '@/components/text/semantics/heading'
-import { componentTokensStyles, tokenStyles } from '@/components/domains/component/component-tokens.styles'
+import {
+  componentTokensStyles,
+  tokenStyles,
+} from '@/components/domains/component/component-tokens.styles'
 
 // 토큰 이름의 단어를 의미 그룹으로 묶어 그룹마다 한 색을 준다.
 // 위에서부터 먼저 매칭되는 그룹을 사용하므로 더 구체적인 그룹을 앞에 둔다.
@@ -20,9 +23,8 @@ const WORD_CATEGORIES = [
       'border-radius',
       'border-color',
       'border-width',
-      'background',
       'background-color',
-      'text-color',
+      'backdrop-filter',
       'shadow',
       'blur',
       'accent',
@@ -32,7 +34,22 @@ const WORD_CATEGORIES = [
   },
   {
     name: 'dimension',
-    words: ['margin', 'padding', 'gap', 'width', 'height', 'size', 'space', 'spacing', 'offset', 'text-size'],
+    words: [
+      'width',
+      'min-width',
+      'height',
+      'max-height',
+      'margin',
+      'padding',
+      'gap',
+      'size',
+      'space',
+      'spacing',
+      'offset',
+      'text-size',
+      'text-color',
+      'text-weight',
+    ],
   },
 ] as const
 
@@ -80,7 +97,9 @@ export class Token extends LitElement {
   // 아니라, 인접한 조각들이 각 자리에 정확히 대응하는지로 판단해 엉뚱한 이웃 조각까지
   // 함께 물들지 않게 한다.
   private wordClass(index: number, parts: string[]) {
-    const category = WORD_CATEGORIES.find(({ words }) => words.some(word => this.matchesWord(parts, index, word)))
+    const category = WORD_CATEGORIES.find(({ words }) =>
+      words.some(word => this.matchesWord(parts, index, word)),
+    )
     if (!category) return ''
 
     return `word-${category.name}`
@@ -91,7 +110,8 @@ export class Token extends LitElement {
     const firstStart = Math.max(0, index - wordParts.length + 1)
 
     for (let start = firstStart; start <= index; start++) {
-      if (wordParts.every((wordPart, offset) => parts[start + offset]?.includes(wordPart))) return true
+      if (wordParts.every((wordPart, offset) => parts[start + offset]?.includes(wordPart)))
+        return true
     }
 
     return false

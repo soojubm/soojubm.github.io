@@ -93,7 +93,7 @@ export class ChatSourceGroup extends LitElement {
 
       .sheet {
         margin-top: var(--space-2);
-        background: var(--color-background);
+        background: var(--background-color);
         border: var(--border);
         border-radius: var(--radius);
         box-shadow: var(--surface-base-shadow);
@@ -106,12 +106,12 @@ export class ChatSourceGroup extends LitElement {
       .sheet-icon {
         font-size: 1rem;
         flex-shrink: 0;
-        color: var(--color-foreground-light);
+        color: var(--foreground-subtle-color);
       }
 
       .sheet-domain {
         font-size: var(--font-size-12);
-        color: var(--color-foreground-light);
+        color: var(--foreground-subtle-color);
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;

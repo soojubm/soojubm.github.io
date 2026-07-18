@@ -51,7 +51,7 @@
 }
 .meter-track {
   height: 0.5rem;
-  background-color: var(--color-background-subtle);
+  background-color: var(--background-subtle-color);
   border-radius: var(--radius);
   overflow: hidden;
   flex: auto;
@@ -62,7 +62,7 @@
   display: block;
   width: 90%;
   height: inherit;
-  background: var(--color-background-strong);
+  background: var(--background-strong-color);
 }
 
 .meter-graph {
@@ -71,7 +71,7 @@
 
   padding: var(--space-1);
   border-radius: var(--radius);
-  background: var(--color-background-subtle);
+  background: var(--background-subtle-color);
 
   /* position: absolute;
   left: var(--space-1-minus);
@@ -124,7 +124,7 @@
   height: 100px;
   margin: 0 0.5rem;
   border-radius: var(--radius);
-  background: var(--color-background-subtle);
+  background: var(--background-subtle-color);
   position: relative;
 }
 .graph-item-bar {
@@ -139,7 +139,7 @@
 .graph-item-value {
   font-size: var(--font-size-12);
   text-align: center;
-  color: var(--color-foreground);
+  color: var(--foreground-color);
   position: absolute;
   left: 0;
   right: 0;
@@ -163,5 +163,5 @@
 .graph-value {
   width: 1.75rem;
   text-align: right;
-  color: var(--color-foreground-light);
+  color: var(--foreground-subtle-color);
 }

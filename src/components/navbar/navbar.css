@@ -28,7 +28,7 @@
   height: var(--size-32);
   background: url('../../images/soojubm.png') no-repeat center;
   background-size: cover;
-  background-color: var(--color-background-strong);
+  background-color: var(--background-strong-color);
   border-radius: var(--radius-round);
 }
 
@@ -99,7 +99,7 @@
     background: inherit;
   }
   &::-webkit-scrollbar-thumb {
-    background: var(--color-background);
+    background: var(--background-color);
     border-radius: var(--radius);
   }
   &::-webkit-scrollbar-button {
@@ -110,7 +110,7 @@
     background-color: inherit;
   }
   &:hover::-webkit-scrollbar-thumb {
-    background: var(--color-background-strong);
+    background: var(--background-strong-color);
   }
 }
 

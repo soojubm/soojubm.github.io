@@ -18,7 +18,7 @@
 }
 .pagination-link.is-current {
   background-color: var(--color-primary);
-  color: var(--color-foreground-on-solid);
+  color: var(--foreground-color-on-solid);
 }
 .pagination-ellipsis {
   display: flex;
@@ -27,7 +27,7 @@
   width: var(--size-32);
   height: var(--size-32);
   border-radius: var(--radius);
-  color: var(--color-foreground-light);
+  color: var(--foreground-subtle-color);
   letter-spacing: 1px;
 }
 /* // .pagination-last:before {content:'...';display:block;width:32px;height:32px;cursor:default;} */

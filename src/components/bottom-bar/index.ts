@@ -32,7 +32,7 @@ class BottomBar extends LitElement {
     nav {
       display: flex;
       padding: 0 0 calc(env(safe-area-inset-bottom));
-      background: var(--color-background);
+      background: var(--background-color);
       position: relative;
     }
 
@@ -44,7 +44,7 @@ class BottomBar extends LitElement {
       min-width: var(--size-48);
       height: var(--bottom-bar-item-height);
       border-radius: var(--radius);
-      color: var(--color-foreground);
+      color: var(--foreground-color);
       text-decoration: none;
       position: relative;
       z-index: 1;

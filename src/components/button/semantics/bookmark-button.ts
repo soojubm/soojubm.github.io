@@ -21,7 +21,7 @@ export class BookmarkButton extends LitElement {
       }
 
       mm-icon-button {
-        --icon-button-text-color: var(--color-foreground-light);
+        --icon-button-text-color: var(--foreground-subtle-color);
       }
 
       :host([selected]) mm-icon-button {

@@ -4,7 +4,7 @@ export const inputStyles = css`
   :host {
     position: relative;
     --input-height: var(--size-48);
-    --input-background-color: var(--color-background-subtle);
+    --input-background-color: var(--background-subtle-color);
     --input-border-radius: var(--radius);
     --input-border: var(--border-transparent);
     --input-focus-outline: var(--interaction-focus-outline);
@@ -58,7 +58,7 @@ export const inputStyles = css`
     font: inherit;
     font-family: inherit;
     font-size: inherit;
-    color: var(--color-foreground);
+    color: var(--foreground-color);
     padding: var(--input-padding-block) 0;
     box-sizing: border-box;
     resize: none;
@@ -70,7 +70,7 @@ export const inputStyles = css`
       outline: 0;
     }
     &::placeholder {
-      color: var(--color-foreground-light);
+      color: var(--foreground-subtle-color);
     }
   }
 

@@ -17,15 +17,14 @@ export class AccordionItem extends LitElement {
     css`
       :host {
         display: block;
-        padding: var(--accordion-padding-y) var(--accordion-padding-x);
-        background: var(--accordion-background);
+        padding: var(--accordion-padding);
+        background: var(--accordion-background-color);
         border: var(--accordion-border);
         border-radius: var(--accordion-border-radius);
 
-        --accordion-padding-x: var(--space-4);
-        --accordion-padding-y: var(--space-2);
-        --accordion-background: var(--color-background-subtle);
-        --accordion-border: var(--border);
+        --accordion-padding: var(--space-2) var(--space-4);
+        --accordion-background-color: var(--background-subtle-color);
+        --accordion-border: var(--border-transparent);
         --accordion-border-radius: var(--radius);
         --accordion-icon-size: 1.25rem;
         --accordion-transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);

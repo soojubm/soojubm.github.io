@@ -11,7 +11,7 @@ export const propStyles = [
     }
     dt {
       display: flex;
-      color: var(--color-foreground-light);
+      color: var(--foreground-subtle-color);
       line-height: 20px;
     }
     dt attr {
@@ -39,7 +39,7 @@ export const componentPropsStyles = [
     .component-props {
       height: 13rem;
       overflow: hidden;
-      background-color: var(--color-background-subtle);
+      background-color: var(--background-subtle-color);
       position: relative;
       cursor: pointer;
       --component-content-frame-border: var(--border-transparent);

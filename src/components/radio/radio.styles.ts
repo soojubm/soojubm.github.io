@@ -34,8 +34,8 @@ export const radioStyles = css`
   :host {
     --radio-size: var(--size-16);
     --radio-border-radius: 50%;
-    --radio-border-color: var(--color-border);
-    --radio-background-color: var(--color-background);
+    --radio-border-color: var(--border-color);
+    --radio-background-color: var(--background-color);
     --radio-border-color-checked: var(--interaction-selected-border-color);
     --radio-background-color-checked: var(--interaction-selected-background-color);
     gap: var(--space-2);
@@ -82,7 +82,7 @@ export const radioStyles = css`
     background: var(--radio-background-color-checked);
     border-color: var(--radio-border-color-checked);
     animation: radiomark var(--animation-input, 0.2s) ease-out;
-    box-shadow: 0 0 0 4px var(--color-background) inset;
+    box-shadow: 0 0 0 4px var(--background-color) inset;
   }
 
   input:focus-visible + label > span {

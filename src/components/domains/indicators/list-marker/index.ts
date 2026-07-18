@@ -16,7 +16,7 @@ export class ListMarker extends LitElement {
         justify-content: center;
         flex-shrink: 0;
         background: var(--gray800);
-        color: var(--color-foreground-on-solid);
+        color: var(--foreground-color-on-solid);
         border-radius: 50%;
         width: var(--size-16);
         height: var(--size-16);
@@ -28,7 +28,7 @@ export class ListMarker extends LitElement {
       svg {
         width: 0.5rem;
         height: 0.5rem;
-        color: var(--color-foreground-on-solid);
+        color: var(--foreground-color-on-solid);
       }
     `,
   ]

@@ -6,7 +6,7 @@ import { focusRing } from '@/stylesheets/shared/focus-ring.styles'
 export const interactiveControlStyles = css`
   :is(button, a) {
     &:hover {
-      border-color: var(--color-background-strong);
+      border-color: var(--background-strong-color);
     }
 
     &:focus-visible {
@@ -38,10 +38,10 @@ export const buttonBaseStyles = [
       --button-border: var(--border-transparent);
       --button-padding-inline: var(--space-3);
       --button-border-radius: var(--radius);
-      --button-background-color: var(--color-background-subtle);
+      --button-background-color: var(--background-subtle-color);
       --button-text-size: inherit;
       --button-text-weight: var(--font-weight-normal);
-      --button-text-color: var(--color-foreground);
+      --button-text-color: var(--foreground-color);
     }
 
     :host([full-width]) :is(button, a) {
@@ -94,14 +94,14 @@ export const buttonSizeStyles = css`
 export const buttonVariantStyles = css`
   :host([variant='primary']) {
     --button-background-color: var(--color-primary);
-    --button-text-color: var(--color-foreground-on-solid);
+    --button-text-color: var(--foreground-color-on-solid);
   }
   :host([variant='secondary']) {
     --button-background-color: var(--color-primary-subtle);
     --button-text-color: var(--color-primary);
   }
   :host([variant='tertiary']) {
-    --button-text-color: var(--color-foreground);
+    --button-text-color: var(--foreground-color);
   }
   :host([variant='ghost']) {
     --button-background-color: transparent;
@@ -109,7 +109,7 @@ export const buttonVariantStyles = css`
   }
   :host([variant='destructive']) {
     --button-background-color: var(--color-danger);
-    --button-text-color: var(--color-foreground-on-solid);
+    --button-text-color: var(--foreground-color-on-solid);
   }
 `
 
@@ -144,6 +144,6 @@ export const followButtonStyles = css`
 
   button {
     background: var(--color-primary);
-    color: var(--color-foreground-on-solid);
+    color: var(--foreground-color-on-solid);
   }
 `

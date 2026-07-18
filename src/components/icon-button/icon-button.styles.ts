@@ -4,10 +4,10 @@ export const iconButtonStyles = css`
   :host {
     display: inline-flex;
     --icon-button-size: var(--size-32);
-    --icon-button-background-color: var(--color-background-subtle);
+    --icon-button-background-color: var(--background-subtle-color);
     --icon-button-border-radius: var(--radius);
     --icon-button-border: var(--border-transparent);
-    --icon-button-text-color: var(--color-foreground);
+    --icon-button-text-color: var(--foreground-color);
   }
 
   button {
@@ -36,13 +36,13 @@ export const iconButtonStyles = css`
 
   :host([variant='primary']) button {
     background-color: var(--color-primary);
-    --icon-button-text-color: var(--color-foreground-on-solid);
+    --icon-button-text-color: var(--foreground-color-on-solid);
   }
 
   :host([variant='secondary']) button {
     border: var(--border);
     border-radius: var(--radius-round);
-    background-color: var(--color-background);
+    background-color: var(--background-color);
   }
 
   :host([variant='ghost']) button {
@@ -52,7 +52,7 @@ export const iconButtonStyles = css`
 
   :host([variant='destructive']) button {
     background-color: var(--color-danger);
-    --icon-button-text-color: var(--color-foreground-on-solid);
+    --icon-button-text-color: var(--foreground-color-on-solid);
   }
 
   :host([size='small']) {

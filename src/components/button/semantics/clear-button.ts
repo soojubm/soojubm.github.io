@@ -14,7 +14,7 @@ class ClearButton extends LitElement {
     mm-icon-button {
       --icon-button-size: var(--size-16);
       --icon-button-border-radius: var(--radius-round);
-      --icon-button-background-color: var(--color-background-subtle);
+      --icon-button-background-color: var(--background-subtle-color);
     }
   `
 

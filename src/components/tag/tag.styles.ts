@@ -23,13 +23,13 @@ const defineToneMap = <Map extends Record<string, TagTone>>(map: Map) => map
 
 export const tagToneStyles = {
   default: {
-    background: 'var(--color-background)',
-    color: 'var(--color-foreground)',
-    borderColor: 'var(--color-border)',
+    background: 'var(--background-color)',
+    color: 'var(--foreground-color)',
+    borderColor: 'var(--border-color)',
   },
   gold: {
     background: 'var(--color-accent)',
-    color: 'var(--color-foreground)',
+    color: 'var(--foreground-color)',
   },
   green: categoryTone(2),
   yellow: categoryTone(6),
@@ -84,10 +84,10 @@ export const tagStyles = css`
     --tag-padding-inline: var(--space-2);
     --tag-gap: var(--space-1);
     --tag-border: var(--border);
-    --tag-border-color: var(--color-border);
+    --tag-border-color: var(--border-color);
     --tag-border-radius: var(--radius);
-    --tag-background-color: var(--color-background);
-    --tag-color: var(--color-foreground);
+    --tag-background-color: var(--background-color);
+    --tag-color: var(--foreground-color);
     --tag-text-size: var(--font-size-12);
 
     display: inline-flex;
@@ -108,14 +108,14 @@ export const tagStyles = css`
   }
 
   :host([tone='default']) {
-    --tag-background-color: var(--color-background);
-    --tag-color: var(--color-foreground);
-    --tag-border-color: var(--color-border);
+    --tag-background-color: var(--background-color);
+    --tag-color: var(--foreground-color);
+    --tag-border-color: var(--border-color);
   }
 
   :host([tone='gold']) {
     --tag-background-color: var(--color-accent);
-    --tag-color: var(--color-foreground);
+    --tag-color: var(--foreground-color);
     --tag-border-color: var(--color-accent);
   }
 

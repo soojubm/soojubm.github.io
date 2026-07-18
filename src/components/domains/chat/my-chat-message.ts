@@ -25,10 +25,10 @@ export class MyChatMessage extends LitElement {
         --my-chat-bubble-background: color-mix(
           in srgb,
           var(--color-danger) 12%,
-          var(--color-background)
+          var(--background-color)
         );
         --my-chat-bubble-border: 1px solid var(--color-danger);
-        --my-chat-bubble-color: var(--color-foreground);
+        --my-chat-bubble-color: var(--foreground-color);
       }
     `,
   ]

@@ -29,7 +29,7 @@ export class PortfolioItem extends LitElement {
       }
 
       article:hover {
-        background-color: var(--color-background-subtle);
+        background-color: var(--background-subtle-color);
       }
 
       article:focus-visible {
@@ -57,7 +57,7 @@ export class PortfolioItem extends LitElement {
       }
 
       time {
-        color: var(--color-foreground-light);
+        color: var(--foreground-subtle-color);
         font-size: var(--font-size-12);
         line-height: var(--font-size-12);
       }

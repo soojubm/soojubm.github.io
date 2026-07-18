@@ -21,7 +21,7 @@ export class AiChatMessage extends LitElement {
       }
 
       .time {
-        color: var(--color-foreground-light);
+        color: var(--foreground-subtle-color);
       }
 
       ::slotted(mm-ai-chat-bubble) {

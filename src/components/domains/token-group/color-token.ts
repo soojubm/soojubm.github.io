@@ -29,7 +29,7 @@ export class ColorToken extends LitElement {
         min-height: 56px;
         padding: var(--space-3) var(--space-4);
         background: var(--color-token-surface);
-        color: var(--color-token-on-surface, var(--color-foreground));
+        color: var(--color-token-on-surface, var(--foreground-color));
         box-sizing: border-box;
       }
 
@@ -37,14 +37,13 @@ export class ColorToken extends LitElement {
         padding-bottom: var(--space-3);
         margin-left: var(--space-4);
         margin-top: var(--space-2);
-        color: var(--color-foreground);
+        color: var(--foreground-color);
       }
     `,
   ]
 
   /** surface 배경색 (예: var(--color-primary)) */
   @property({ type: String }) color = ''
-  /** surface 위 대비 색 (예: var(--color-foreground-on-primary)) */
   @property({ type: String, attribute: 'on-color' }) onColor = ''
   /** surface 안에 표시되는 대비 라벨 (예: "on primary") */
   @property({ type: String }) label = ''

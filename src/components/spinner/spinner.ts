@@ -20,7 +20,7 @@ export class Spinner extends LitElement {
         width: var(--spinner-size);
         height: var(--spinner-size);
         border-radius: 50%;
-        border: 2px solid var(--color-border);
+        border: 2px solid var(--border-color);
         border-top-color: var(--color-primary);
         animation: spin 0.8s linear infinite;
         flex-shrink: 0;
@@ -40,7 +40,7 @@ export class Spinner extends LitElement {
 
       .label {
         font-size: var(--font-size-14);
-        color: var(--color-foreground-light);
+        color: var(--foreground-subtle-color);
       }
 
       @keyframes spin {

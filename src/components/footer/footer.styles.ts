@@ -33,6 +33,6 @@ export const footerStyles = css`
   }
 
   .footer-address-info dt {
-    color: var(--color-foreground-light);
+    color: var(--foreground-subtle-color);
   }
 `

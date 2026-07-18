@@ -21,7 +21,7 @@ export const paginationStyles = css`
     justify-content: center;
     width: var(--size-32);
     height: var(--size-32);
-    color: var(--color-foreground-light);
+    color: var(--foreground-subtle-color);
     letter-spacing: 1px;
     line-height: 1;
     user-select: none;

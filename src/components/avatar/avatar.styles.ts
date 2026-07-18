@@ -3,8 +3,8 @@ import { css } from 'lit'
 export const avatarStyles = css`
   :host {
     --avatar-size: var(--size-40);
-    --avatar-background-color: var(--color-background-subtle);
-    --avatar-icon-color: var(--color-foreground);
+    --avatar-background-color: var(--background-subtle-color);
+    --avatar-icon-color: var(--foreground-color);
     --avatar-border: var(--border-transparent);
     --avatar-border-radius: var(--radius);
 
@@ -47,7 +47,7 @@ export const avatarStyles = css`
   }
 
   :host([variant='secondary']) {
-    --avatar-background-color: var(--color-background);
+    --avatar-background-color: var(--background-color);
     --avatar-border: var(--border);
   }
 

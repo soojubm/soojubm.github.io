@@ -2,8 +2,8 @@ import { css } from 'lit'
 
 export const toastStyles = css`
   :host {
-    --toast-background-color: var(--color-background-strong);
-    --toast-text-color: var(--color-foreground-on-solid);
+    --toast-background-color: var(--background-strong-color);
+    --toast-text-color: var(--foreground-color-on-solid);
     --toast-border-radius: var(--radius);
     --toast-padding-block: var(--space-2);
     --toast-padding-inline: var(--space-4);

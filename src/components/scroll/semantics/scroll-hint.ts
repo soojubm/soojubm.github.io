@@ -15,19 +15,19 @@ export class ScrollHint extends LitElement {
         --scroll-hint-gap: 0px;
         --gradient-scroll-hint-start: linear-gradient(
           to right,
-          var(--color-background) 0%,
-          var(--color-background) 42%,
-          color-mix(in srgb, var(--color-background) 96%, transparent) 58%,
-          color-mix(in srgb, var(--color-background) 72%, transparent) 78%,
+          var(--background-color) 0%,
+          var(--background-color) 42%,
+          color-mix(in srgb, var(--background-color) 96%, transparent) 58%,
+          color-mix(in srgb, var(--background-color) 72%, transparent) 78%,
           transparent 100%
         );
         --gradient-scroll-hint-end: linear-gradient(
           to right,
           transparent 0%,
-          color-mix(in srgb, var(--color-background) 72%, transparent) 22%,
-          color-mix(in srgb, var(--color-background) 96%, transparent) 42%,
-          var(--color-background) 58%,
-          var(--color-background) 100%
+          color-mix(in srgb, var(--background-color) 72%, transparent) 22%,
+          color-mix(in srgb, var(--background-color) 96%, transparent) 42%,
+          var(--background-color) 58%,
+          var(--background-color) 100%
         );
 
         display: block;

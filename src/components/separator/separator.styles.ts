@@ -4,8 +4,8 @@ export const separatorStyles = css`
   :host {
     --separator-spacing: var(--space-4);
     --separator-border: var(--border);
-    --separator-text-color: var(--color-foreground-light);
-    --separator-text-background: var(--color-background);
+    --separator-text-color: var(--foreground-subtle-color);
+    --separator-text-background: var(--background-color);
 
     position: relative;
   }

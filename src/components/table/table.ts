@@ -22,7 +22,7 @@ export class Table extends LitElement {
       :host {
         display: block;
         height: 320px;
-        background-color: var(--color-background-subtle);
+        background-color: var(--background-subtle-color);
         overflow-x: auto;
       }
 

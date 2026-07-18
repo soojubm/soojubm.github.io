@@ -21,7 +21,7 @@ export class ReadMoreButton extends LitElement {
       border-radius: var(--radius);
       font: inherit;
       font-weight: var(--font-weight-bold);
-      color: var(--color-foreground);
+      color: var(--foreground-color);
       cursor: pointer;
 
       &:focus-visible {

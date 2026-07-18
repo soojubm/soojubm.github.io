@@ -17,7 +17,7 @@ export default class Tab extends LitElement {
       --tab-height: var(--size-32);
       --tab-padding-inline: var(--space-3);
       --tab-text-size: var(--font-size-14);
-      --tab-text-color: var(--color-foreground-light);
+      --tab-text-color: var(--foreground-subtle-color);
     }
 
     .tab-content {

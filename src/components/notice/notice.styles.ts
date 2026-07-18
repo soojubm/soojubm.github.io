@@ -16,9 +16,9 @@ export const noticeStyles = css`
     --notice-padding: var(--space-3);
     --notice-border-radius: var(--radius);
     --notice-border-width: var(--border-width);
-    --notice-foreground-color: var(--color-foreground);
+    --notice-foreground-color: var(--foreground-color);
     --notice-background-color: transparent;
-    --notice-border-color: var(--color-border);
+    --notice-border-color: var(--border-color);
   }
 
   :host([variant='success']) {

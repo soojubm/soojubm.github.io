@@ -8,8 +8,8 @@ export const tooltipStyles = css`
     --tooltip-max-width: 320px;
     --tooltip-padding: 0.5rem var(--space-3);
     --tooltip-border-radius: var(--radius);
-    --tooltip-background-color: var(--color-background-strong);
-    --tooltip-text-color: var(--color-foreground-on-solid);
+    --tooltip-background-color: var(--background-strong-color);
+    --tooltip-text-color: var(--foreground-color-on-solid);
     --tooltip-shadow: var(--surface-higher-shadow);
   }
 

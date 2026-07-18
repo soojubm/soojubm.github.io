@@ -21,7 +21,7 @@ export const surfaceVariants: Record<SurfaceVariant, Record<string, string>> = {
   },
   filled: {
     '--surface-border': 'var(--border-transparent)',
-    '--surface-background-color': 'var(--color-background-subtle)',
+    '--surface-background-color': 'var(--background-subtle-color)',
   },
   elevated: {
     '--surface-shadow': 'var(--surface-base-shadow)',
@@ -44,7 +44,7 @@ export const surfaceBaseStyles = css`
     --surface-padding: var(--space-4);
     --surface-border: var(--border);
     --surface-border-radius: var(--radius);
-    --surface-background-color: var(--color-background);
+    --surface-background-color: var(--background-color);
     --surface-shadow: none;
     --surface-backdrop-filter: var(--surface-base-backdrop-filter);
 

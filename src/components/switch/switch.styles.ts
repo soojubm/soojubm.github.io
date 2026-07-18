@@ -7,7 +7,7 @@ export const switchStyles = css`
     --switch-width: 2rem;
     --switch-height: 16px;
     --switch-border-radius: var(--radius);
-    --switch-background-color: var(--color-border);
+    --switch-background-color: var(--border-color);
     --switch-background-color-checked: var(--interaction-selected-background-color);
     display: block;
     height: var(--switch-height);
@@ -67,7 +67,7 @@ export const switchStyles = css`
       border: var(--border);
       border-radius: var(--switch-border-radius);
       box-sizing: border-box;
-      background: var(--color-background);
+      background: var(--background-color);
       position: absolute;
       left: 0;
       top: 0;

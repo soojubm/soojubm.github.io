@@ -36,7 +36,7 @@ export const renderChatMessageFailedActions = (failed: boolean, onRetry: () => v
 
 export const renderChatTypingIndicator = (
   typing: boolean,
-  color = 'var(--color-foreground-light)',
+  color = 'var(--foreground-subtle-color)',
 ) => {
   if (!typing) return nothing
 

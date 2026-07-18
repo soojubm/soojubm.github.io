@@ -12,7 +12,7 @@ export const textStyles = css`
   }
 
   :host([color='light']) {
-    color: var(--color-foreground-light);
+    color: var(--foreground-subtle-color);
   }
   :host([color='danger']) {
     color: var(--color-danger);

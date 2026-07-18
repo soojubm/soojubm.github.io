@@ -61,10 +61,10 @@
 
   <mm-component-tokens>
     <mm-token name="input-height" default="var(--size-48)"></mm-token>
-    <mm-token name="input-background-color" default="var(--color-background-subtle)"></mm-token>
+    <mm-token name="input-background-color" default="var(--background-subtle-color)"></mm-token>
     <mm-token name="input-border-color" default="transparent"></mm-token>
     <mm-token name="input-border-radius" default="var(--radius)"></mm-token>
-    <mm-token name="input-text-color" default="var(--color-foreground)"></mm-token>
+    <mm-token name="input-text-color" default="var(--foreground-color)"></mm-token>
   </mm-component-tokens>
 
   <mm-component-anatomy
@@ -146,7 +146,7 @@
         width: 250px;
         --date-width: 32px;
         --date-height: 32px;
-        --date-background: var(--color-background-subtle);
+        --date-background: var(--background-subtle-color);
         position: relative;
       }
       .calendar h3 {
@@ -201,7 +201,7 @@
         cursor: pointer;
         &::hover {
           background: var(--color-primary);
-          color: var(--color-foreground-on-solid);
+          color: var(--foreground-color-on-solid);
         }
       }
     </style>
@@ -293,8 +293,8 @@
     <mm-heading
       level="3"
       style="
-        color: var(--color-foreground-on-solid);
-        background: var(--color-background-strong);
+        color: var(--foreground-color-on-solid);
+        background: var(--background-strong-color);
         display: inline-block;
         position: relative;
         z-index: 1;
@@ -305,16 +305,16 @@
     <br />
     <cite
       style="
-        color: var(--color-foreground-on-solid);
-        background: var(--color-background-strong);
+        color: var(--foreground-color-on-solid);
+        background: var(--background-strong-color);
         display: inline-block;
         margin-top: 0;
         position: relative;
         z-index: 1;
       "
     >
-      <div style="color: var(--color-foreground-on-solid); position: relative">리들리 스콧</div>
-      <time style="color: var(--color-foreground-on-solid); position: relative">2012, 미국</time>
+      <div style="color: var(--foreground-color-on-solid); position: relative">리들리 스콧</div>
+      <time style="color: var(--foreground-color-on-solid); position: relative">2012, 미국</time>
     </cite>
   </div>
 

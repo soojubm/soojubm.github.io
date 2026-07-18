@@ -23,8 +23,8 @@ export class Breadcrumb extends LitElement {
       display: block;
 
       --breadcrumb-item-text-color: var(--color-primary);
-      --breadcrumb-item-text-color-current: var(--color-foreground);
-      --breadcrumb-divider-text-color: var(--color-border);
+      --breadcrumb-item-text-color-current: var(--foreground-color);
+      --breadcrumb-divider-text-color: var(--border-color);
       --breadcrumb-divider-space: var(--space-3);
     }
 

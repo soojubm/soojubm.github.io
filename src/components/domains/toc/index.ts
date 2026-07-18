@@ -75,7 +75,7 @@ export class TableOfContents extends LitElement {
         font-family: var(--font-family);
         font-size: var(--font-size-12);
         line-height: 1.5;
-        color: var(--color-foreground-light);
+        color: var(--foreground-subtle-color);
         text-align: left;
         text-decoration: none;
         cursor: pointer;
@@ -83,7 +83,7 @@ export class TableOfContents extends LitElement {
       }
 
       .toc-link:hover {
-        color: var(--color-foreground);
+        color: var(--foreground-color);
       }
 
       .toc-link[aria-current='true'] {

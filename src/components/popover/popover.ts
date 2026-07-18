@@ -9,8 +9,7 @@ export type PopoverPlacement = 'bottom-left' | 'bottom-right' | 'top-left' | 'to
 
 /**
  * anchor 기반 non-modal 레이어 프리미티브.
- * viewport 기준 modal 레이어인 mm-sheet와 달리 backdrop·portal·스크롤 잠금 없이
- * 트리거에 앵커되어 떠 있는 패널 표면만 책임집니다.
+ * viewport 기준 modal 레이어인 mm-sheet와 달리 backdrop·portal·스크롤 잠금 없이 트리거에 앵커되어 떠 있는 패널 표면만 책임집니다.
  * 트리거를 slot="trigger"로 넣으면 popover가 스스로 positioned 앵커가 되어 별도 래퍼가 필요 없고,
  * 트리거가 없으면 가장 가까운 positioned 조상에 앵커됩니다(외부 트리거는 aria-controls로 연결).
  * 트리거·외부 클릭·ESC 닫기·aria 배관은 DisclosureController가 소유합니다.

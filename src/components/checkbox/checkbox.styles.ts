@@ -20,8 +20,8 @@ export const checkboxStyles = css`
   :host {
     --checkbox-size: var(--size-16);
     --checkbox-border-radius: 4px;
-    --checkbox-border-color: var(--color-border);
-    --checkbox-background-color: var(--color-background);
+    --checkbox-border-color: var(--border-color);
+    --checkbox-background-color: var(--background-color);
     --checkbox-border-color-checked: var(--interaction-selected-border-color);
     gap: var(--space-2);
   }
@@ -71,7 +71,7 @@ export const checkboxStyles = css`
     height: 2px;
     border-left: 1px solid;
     border-bottom: 1px solid;
-    border-color: var(--color-border);
+    border-color: var(--border-color);
     position: absolute;
     left: 4px;
     top: 5px;

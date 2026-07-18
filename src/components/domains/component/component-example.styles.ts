@@ -15,7 +15,7 @@ export const componentExampleStyles = [
       --component-content-frame-margin: var(--space-8) 0 var(--space-4)
         var(--component-content-offset-inline-start);
 
-      border-left-color: var(--color-foreground);
+      border-left-color: var(--foreground-color);
     }
   `,
 ]

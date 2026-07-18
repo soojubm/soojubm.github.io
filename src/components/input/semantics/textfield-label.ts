@@ -11,7 +11,7 @@ export class TextfieldLabel extends LitElement {
     }
     small {
       margin: 0 0 0 var(--space-1);
-      color: var(--color-foreground-light);
+      color: var(--foreground-subtle-color);
     }
   `
 

@@ -22,7 +22,7 @@ export class Paragraph extends LitElement {
       }
 
       :host([color='light']) {
-        color: var(--color-foreground-light);
+        color: var(--foreground-subtle-color);
       }
 
       :host([color='danger']) {

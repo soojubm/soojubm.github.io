@@ -42,18 +42,18 @@ export class Input extends LitElement {
       outline: none;
       background: inherit;
       font: inherit;
-      color: var(--color-foreground);
+      color: var(--foreground-color);
 
       &:focus-visible {
         outline: 0;
       }
 
       &::placeholder {
-        color: var(--color-foreground-light);
+        color: var(--foreground-subtle-color);
       }
 
       &:read-only {
-        color: var(--color-foreground-light);
+        color: var(--foreground-subtle-color);
         cursor: default;
       }
 

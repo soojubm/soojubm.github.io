@@ -15,7 +15,7 @@ export class TypingIndicator extends LitElement {
       :host {
         display: inline-flex;
         gap: var(--space-1);
-        --typing-background-color: var(--color-foreground);
+        --typing-background-color: var(--foreground-color);
       }
 
       span {
@@ -23,7 +23,7 @@ export class TypingIndicator extends LitElement {
         width: 4px;
         height: 4px;
         border-radius: 50%;
-        background: var(--typing-background-color, var(--color-foreground));
+        background: var(--typing-background-color, var(--foreground-color));
         animation: chatting 0.6s 0s ease infinite;
       }
 
@@ -48,7 +48,7 @@ export class TypingIndicator extends LitElement {
     `,
   ]
 
-  @property({ type: String }) color = 'var(--color-foreground)'
+  @property({ type: String }) color = 'var(--foreground-color)'
   @property({ type: String, reflect: true }) role = 'status'
   @property({ type: String, attribute: 'aria-label', reflect: true }) ariaLabel = '입력 중'
 
