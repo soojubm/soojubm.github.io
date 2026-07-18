@@ -1,6 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
+import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
 import '@/components/button/button'
 import '@/components/popover/semantics/select'
 
@@ -24,7 +25,7 @@ export class SortPicker extends LitElement {
   render() {
     return html`
       <mm-select .value=${this.value} @change=${this.syncValue}>
-        <mm-button slot="trigger" size="small" trailing-icon="nav-arrow-down">
+        <mm-button slot="trigger" size="small" icon=${ICON_NAMES.EXPAND} icon-position="trailing">
           ${this.selectedLabel}
         </mm-button>
         ${SORT_OPTIONS.map(
