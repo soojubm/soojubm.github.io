@@ -112,7 +112,6 @@ export const ICON_NAMES = {
   PIPE: 'pipe-3d',
 
   // People
-  ACCESSIBILITY: 'accessibility',
   GROUP: 'group',
   PEOPLE_TAG: 'people-tag',
   PROFILE: 'profile-circle',
@@ -138,10 +137,8 @@ export const ICON_NAMES = {
 
   // Affordance
   CLICK: 'cursor-pointer',
-  CURSOR: 'cursor',
   HELP: 'information-circle',
   HELP_CIRCLE: 'help-circle',
-  INFO_EMPTY: 'info-empty',
   INTERACTIVE: 'interactive',
   MOUSE_BUTTON: 'mouse-button-left',
   ON_TAG: 'on-tag',
@@ -153,11 +150,6 @@ export const ICON_NAMES = {
   CONSTRAINED_SURFACE: 'constrained-surface',
   EMPTY: 'glass-empty',
   FIGMA: 'figma',
-  LULLABY: 'lullaby',
-  MUSIC_DOUBLE_NOTE: 'music-double-note',
-  MUSIC_DOUBLE_NOTE_PLUS: 'music-double-note-plus',
-  MUSIC_NOTE: 'music-note',
-  MUSIC_NOTE_SOLID: 'music-note-solid',
   ARCHERY: 'archery',
   COMPRESS: 'compress',
   STATS_REPORT: 'stats-report',
