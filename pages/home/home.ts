@@ -1,3 +1,6 @@
+import { html, render } from 'lit'
+
+import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
 import main from './index.html'
 import { renderLayout } from '../../layouts/base-layouts'
 import { ScrollSpyController } from '../../src/controllers/scroll-spy-controller'
@@ -8,7 +11,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
   setupScrollSpySampler()
   setupCarousel()
+  setupIconGallery()
 })
+
+// ICON_NAMES를 실제 값으로 렌더해, 시맨틱 이름 추가 시 가이드가 코드와 함께 최신 상태를 유지하게 한다.
+function setupIconGallery() {
+  const gallery = document.querySelector<HTMLElement>('.js-icon-gallery')
+  if (!gallery) return
+
+  render(
+    html`
+      <mm-grid columns="4">
+        ${Object.entries(ICON_NAMES).map(
+          ([name, icon]) => html`
+            <mm-list-item icon=${icon} label=${name} description=${icon}></mm-list-item>
+          `,
+        )}
+      </mm-grid>
+    `,
+    gallery,
+  )
+}
 
 function setupScrollSpySampler() {
   const sampler = document.querySelector<HTMLElement>('.js-scroll-spy-sampler')
