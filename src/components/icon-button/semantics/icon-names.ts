@@ -17,6 +17,7 @@ export const ICON_NAMES = {
   RETRY: 'refresh-double',
   SEND: 'send-diagonal',
   SETTINGS: 'settings',
+  SUBMIT: 'arrow-up',
   SHARE: 'arrow-up-right',
   CAMERA: 'camera',
 

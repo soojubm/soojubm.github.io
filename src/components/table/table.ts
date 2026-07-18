@@ -4,6 +4,7 @@ import { ifDefined } from 'lit/directives/if-defined.js'
 import { classMap } from 'lit/directives/class-map.js'
 import { styleMap } from 'lit/directives/style-map.js'
 
+import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
 import { arrayAttributeConverter } from '@/utils/property-converters'
 
@@ -88,7 +89,7 @@ export class Table extends LitElement {
     return html`
       <mm-flex align-items="center" justify-content=${this.getHeaderJustifyContent(column)} gap="1">
         ${column.label}
-        <mm-icon name="arrow-separate-vertical" size="tiny"></mm-icon>
+        <mm-icon name=${ICON_NAMES.SORT} size="tiny"></mm-icon>
       </mm-flex>
     `
   }

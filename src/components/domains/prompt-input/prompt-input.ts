@@ -1,6 +1,7 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, query } from 'lit/decorators.js'
 
+import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
 import '@/components/icon-button/icon-button'
 import '@/components/flex/flex'
 import { inputStyles } from '@/components/input/input.styles'
@@ -148,12 +149,12 @@ export class PromptInput extends LitElement {
       <mm-select placement="top-left" style="--select-min-width: 160px">
         <mm-icon-button
           slot="trigger"
-          icon="plus-circle-solid"
+          icon=${ICON_NAMES.ADD_CIRCLE}
           aria-label="이미지 첨부"
         ></mm-icon-button>
-        <option value="upload" icon="import">이미지 업로드</option>
-        <option value="camera" icon="camera">카메라 촬영</option>
-        <option value="url" icon="link">URL로 추가</option>
+        <option value="upload" icon=${ICON_NAMES.IMPORT}>이미지 업로드</option>
+        <option value="camera" icon=${ICON_NAMES.CAMERA}>카메라 촬영</option>
+        <option value="url" icon=${ICON_NAMES.LINK}>URL로 추가</option>
       </mm-select>
     `
   }
@@ -164,7 +165,7 @@ export class PromptInput extends LitElement {
         <slot name="trailing-actions"></slot>
         <mm-icon-button
           variant="primary"
-          icon="arrow-up"
+          icon=${ICON_NAMES.SUBMIT}
           aria-label=${this.submitLabel}
           ?disabled=${this.isLoading}
           @click=${this.submit}

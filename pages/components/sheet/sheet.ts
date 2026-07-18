@@ -1,5 +1,6 @@
 import { html, render } from 'lit'
 
+import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
 import { renderLayout } from '../../../layouts/base-layouts'
 
 type SheetElement = HTMLElement & {
@@ -245,14 +246,14 @@ function sheetExampleTemplate() {
 
 function filterSheetTemplate() {
   return html`
-    <mm-icon-button icon="filter" data-open-sheet="#filter-sheet"></mm-icon-button>
+    <mm-icon-button icon=${ICON_NAMES.FILTER} data-open-sheet="#filter-sheet"></mm-icon-button>
     <mm-sheet variant="bottom" id="filter-sheet">
       <mm-sheet-header heading="필터"></mm-sheet-header>
       <mm-sheet-body>
         <form class="filter">
           <fieldset class="filter-fieldset" role="group">
             <mm-menu-item-switch
-              icon="calendar"
+              icon=${ICON_NAMES.DATE}
               label="즉시 예약"
               value="instant"
               description="호스트 승인을 기다릴 필요 없이 예약할 수 있는 숙소"
@@ -302,9 +303,12 @@ function filterSheetTemplate() {
           <fieldset class="filter-fieldset" role="group">
             <legend class="filter-fieldset-legend">빠른 작업</legend>
             <mm-menu-item-group aria-label="빠른 작업">
-              <mm-menu-item-action icon="search" label="저장된 검색 불러오기"></mm-menu-item-action>
               <mm-menu-item-action
-                icon="trash"
+                icon=${ICON_NAMES.SEARCH}
+                label="저장된 검색 불러오기"
+              ></mm-menu-item-action>
+              <mm-menu-item-action
+                icon=${ICON_NAMES.DELETE}
                 label="필터 초기화"
                 tone="danger"
               ></mm-menu-item-action>
