@@ -1,6 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
+import { horizontalScrollRowStyles } from '@/stylesheets/shared/horizontal-scroll-row.styles'
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
 
 /**
@@ -18,24 +19,13 @@ import { resetStyles } from '@/stylesheets/shared/reset.styles'
 export class SearchSuggestions extends LitElement {
   static styles = [
     resetStyles,
+    horizontalScrollRowStyles,
     css`
       :host {
         --_bleed: 0px;
 
-        display: flex;
-        gap: var(--space-2);
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        scroll-behavior: smooth;
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-
         margin-inline: calc(-1 * var(--_bleed));
         padding-inline: var(--_bleed);
-      }
-
-      :host::-webkit-scrollbar {
-        display: none;
       }
 
       :host([fade]) {

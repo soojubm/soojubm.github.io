@@ -1,6 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 
+import { horizontalScrollRowStyles } from '@/stylesheets/shared/horizontal-scroll-row.styles'
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
 
 /**
@@ -15,21 +16,8 @@ import { resetStyles } from '@/stylesheets/shared/reset.styles'
 export class ChatSuggestions extends LitElement {
   static styles = [
     resetStyles,
+    horizontalScrollRowStyles,
     css`
-      :host {
-        display: flex;
-        gap: var(--space-2);
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        scroll-behavior: smooth;
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-
-        &::-webkit-scrollbar {
-          display: none;
-        }
-      }
-
       ::slotted(mm-chat-suggestion) {
         flex-shrink: 0;
       }

@@ -1,8 +1,12 @@
-import { LitElement, css, html } from 'lit'
+import { LitElement } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import type { IconName } from '@/components/icon-button/semantics/icon-names'
 
+import {
+  renderSuggestionButton,
+  suggestionButtonStyles,
+} from '@/components/domains/shared/suggestion-button'
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
 import { emit } from '@/utils/emit'
 
@@ -12,27 +16,16 @@ import { emit } from '@/utils/emit'
  */
 @customElement('mm-chat-suggestion')
 export class ChatSuggestion extends LitElement {
-  static styles = [
-    resetStyles,
-    css`
-      :host {
-        display: inline-flex;
-      }
-    `,
-  ]
+  static styles = [resetStyles, suggestionButtonStyles]
 
   @property({ type: String }) value = ''
   @property({ type: String }) icon?: IconName
 
   render() {
-    return html`
-      <mm-button variant="tertiary" size="small" icon=${this.icon} @click=${this.handleClick}>
-        <slot></slot>
-      </mm-button>
-    `
+    return renderSuggestionButton(this.icon, this.handleClick)
   }
 
-  private handleClick() {
+  private handleClick = () => {
     const value = this.value || this.textContent?.trim() || ''
     emit(this, 'chat-suggestion-select', { value })
   }

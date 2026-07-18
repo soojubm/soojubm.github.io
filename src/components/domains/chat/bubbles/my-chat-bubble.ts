@@ -5,11 +5,7 @@ import { myChatBubbleStyles } from '@/components/domains/chat/bubbles/styles'
 import { chatBubbleStyles } from '@/components/domains/chat/chat.styles'
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
 
-import {
-  isChatBubbleImage,
-  renderChatBubbleImage,
-  renderChatTypingIndicator,
-} from '../chat.helpers'
+import { renderChatBubbleShell, withChatBubbleImage } from '../chat.helpers'
 
 import '@/components/text/text'
 
@@ -18,31 +14,21 @@ import '@/components/text/text'
  * 전송 상태(전송됨/읽음)를 표시합니다.
  */
 @customElement('mm-my-chat-bubble')
-export class MyChatBubble extends LitElement {
+export class MyChatBubble extends withChatBubbleImage(LitElement) {
   static styles = [resetStyles, chatBubbleStyles, myChatBubbleStyles]
 
-  @property({ type: Boolean }) typing = false
-  @property({ type: String }) src = ''
   @property({ type: String }) status = ''
 
   render() {
-    return html`
-      ${renderChatTypingIndicator(this.typing, 'var(--foreground-color-on-solid)')}
-      ${renderChatBubbleImage(this.src, this.typing)} ${this.renderMessage()}
-    `
-  }
-
-  protected willUpdate() {
-    this.toggleAttribute('image', isChatBubbleImage(this.src, this.typing))
-  }
-
-  private renderMessage() {
-    if (this.typing || this.src) return nothing
-
-    return html`
-      <slot></slot>
-      ${this.renderStatus()}
-    `
+    return renderChatBubbleShell(
+      this.typing,
+      this.src,
+      html`
+        <slot></slot>
+        ${this.renderStatus()}
+      `,
+      'var(--foreground-color-on-solid)',
+    )
   }
 
   private renderStatus() {

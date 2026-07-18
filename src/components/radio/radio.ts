@@ -3,13 +3,14 @@ import { customElement, property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
 import { radioStyles } from '@/components/radio/radio.styles'
+import { visuallyHiddenInputStyles } from '@/stylesheets/shared/visually-hidden-input.styles'
 import { emit } from '@/utils/emit'
 import { uniqueId } from '@/utils/unique-id'
 import '@/components/text/semantics/paragraph'
 
 @customElement('mm-radio')
 export class Radio extends LitElement {
-  static styles = [radioStyles]
+  static styles = [visuallyHiddenInputStyles, radioStyles]
 
   // 인스턴스 전역 내장 프로퍼티인 id 오버라이드 데코레이터 제거
   @property({ type: String }) name = ''

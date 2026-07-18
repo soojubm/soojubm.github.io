@@ -73,14 +73,13 @@ export const surfaceBaseStyles = css`
   }
 `
 
-export const surfaceRadiusStyles = css`
-  :host([radius='default']) {
-    --surface-border-radius: var(--radius);
-  }
+const surfaceRadiusTokens = {
+  default: { '--surface-border-radius': 'var(--radius)' },
+  large: { '--surface-border-radius': 'var(--radius-large)' },
+}
 
-  :host([radius='large']) {
-    --surface-border-radius: var(--radius-large);
-  }
+export const surfaceRadiusStyles = css`
+  ${unsafeCSS(buildAttributeRules('radius', surfaceRadiusTokens))}
 `
 
 export const surfaceVariantStyles = css`
