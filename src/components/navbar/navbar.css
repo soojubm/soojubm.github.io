@@ -139,3 +139,13 @@ body:has(mm-sidebar[open]) {
     --sidebar-content-shift: var(--layout-padding-inline);
   }
 }
+
+.site-bottom-bar {
+  display: none;
+}
+
+@media (max-width: 480px) {
+  .site-bottom-bar {
+    display: block;
+  }
+}

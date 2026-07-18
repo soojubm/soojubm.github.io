@@ -6,6 +6,7 @@ import { repeat } from 'lit/directives/repeat.js'
 import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
 import { PopupController } from '@/controllers/popup-controller'
 import soojubmImage from '@/images/soojubm.png'
+import { SITEMAP } from '@/sitemap'
 
 type PagefindResult = { url: string; meta: { title: string }; excerpt: string }
 type Pagefind = {
@@ -121,7 +122,23 @@ export class Navbar extends LitElement {
       </mm-sheet>
 
       <mm-sidebar id="site-sidebar" ?open=${!this.sidebarCollapsed}></mm-sidebar>
+
+      <mm-fixed-bottom class="site-bottom-bar">
+        <mm-bottom-bar .items=${this.bottomBarItems}></mm-bottom-bar>
+      </mm-fixed-bottom>
     `
+  }
+
+  private get bottomBarItems() {
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html'
+    const currentPageId = currentPath.replace('.html', '') || 'index'
+
+    return SITEMAP.filter(node => node.type === 'standalone').map(node => ({
+      label: node.title,
+      href: `${node.id}.html`,
+      icon: node.icon,
+      active: node.id === currentPageId,
+    }))
   }
 
   // 전역 navbar.css와 body의 메뉴 상태 선택자가 내부 구조에 접근해야 하므로 Light DOM을 유지한다.

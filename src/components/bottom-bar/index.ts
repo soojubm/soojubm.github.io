@@ -31,8 +31,14 @@ class BottomBar extends LitElement {
 
     nav {
       display: flex;
-      padding: 0 0 calc(env(safe-area-inset-bottom));
-      background: var(--background-color);
+      margin: 0 var(--space-3) var(--space-3);
+      padding: var(--space-1);
+      border: var(--surface-high-border);
+      border-radius: var(--radius-large);
+      background: var(--surface-high-background-color);
+      box-shadow: var(--surface-high-shadow);
+      backdrop-filter: var(--surface-high-backdrop-filter);
+      -webkit-backdrop-filter: var(--surface-high-backdrop-filter);
       position: relative;
     }
 
@@ -63,7 +69,7 @@ class BottomBar extends LitElement {
     }
 
     a[aria-current='page'] mm-caption {
-      --color-foreground-light: var(--interaction-selected-foreground-color);
+      --foreground-subtle-color: var(--interaction-selected-foreground-color);
     }
 
     .indicator {
@@ -138,7 +144,7 @@ class BottomBar extends LitElement {
       <a
         href=${item.href ?? '#'}
         aria-current=${ifDefined(activeIndex === index ? 'page' : undefined)}
-        @click=${(e: Event) => this.handleItemClick(e, index)}
+        @click=${(e: Event) => this.handleItemClick(e, index, item)}
       >
         <mm-avatar variant="tertiary" icon=${item.icon ?? ICON_NAMES.HOME}></mm-avatar>
         <mm-caption>${item.label}</mm-caption>
@@ -146,8 +152,8 @@ class BottomBar extends LitElement {
     `
   }
 
-  private handleItemClick(e: Event, index: number) {
-    e.preventDefault()
+  private handleItemClick(e: Event, index: number, item: BottomBarItem) {
+    if (!item.href || item.href === '#') e.preventDefault()
     this.selectedIndex = index
     emit(this, 'change', { index })
   }
