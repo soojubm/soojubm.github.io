@@ -1,0 +1,3 @@
+import './fixed-bottom'
+
+export {}

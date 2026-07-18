@@ -1,5 +1,6 @@
 import '../src/components/navbar/navbar'
 import '../src/components/footer/footer'
+import './fixed-bottom'
 
 import '../src/stylesheets/shared.css'
 

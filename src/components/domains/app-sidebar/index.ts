@@ -35,6 +35,8 @@ export class Sidebar extends LitElement {
           node => node.id,
           node => {
             if (node.type === 'standalone') {
+              if (node.hidden) return nothing
+
               return html`
                 <mm-menu-item-action
                   label=${node.title}

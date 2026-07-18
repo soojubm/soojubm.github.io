@@ -13,6 +13,8 @@ interface SitemapStandaloneNode {
   id: string
   title: string
   icon: IconName
+  /** 사이드바 메뉴에서 숨긴다. 페이지는 그대로 빌드된다 */
+  hidden?: boolean
 }
 
 interface SitemapGroupNode {
@@ -23,7 +25,7 @@ interface SitemapGroupNode {
   items: SitemapItem[]
 }
 
-type SitemapNode = SitemapStandaloneNode | SitemapGroupNode
+export type SitemapNode = SitemapStandaloneNode | SitemapGroupNode
 
 export const SITEMAP: SitemapNode[] = [
   // 1. 상단 독립 메뉴 (Top-level Links)
@@ -44,6 +46,13 @@ export const SITEMAP: SitemapNode[] = [
     id: 'signifier',
     title: 'Signifier',
     icon: ICON_NAMES.DESIGN,
+  },
+  {
+    type: 'standalone',
+    id: 'all-menu',
+    title: '전체메뉴',
+    icon: ICON_NAMES.MENU,
+    hidden: true,
   },
 
   // 2. 접고 펼치는 메뉴 그룹
@@ -141,7 +150,7 @@ export const SITEMAP: SitemapNode[] = [
 
       // { id: 'layout', name: 'layout' },
       { id: 'product', name: 'Product' },
-      // { id: 'auth', name: 'auth' },
+      { id: 'auth', name: 'auth', hidden: true },
       { id: 'post', name: 'post', hidden: true },
       // { id: 'checkout', name: 'Checkout' },
     ],

@@ -133,12 +133,14 @@ export class Navbar extends LitElement {
     const currentPath = window.location.pathname.split('/').pop() || 'index.html'
     const currentPageId = currentPath.replace('.html', '') || 'index'
 
-    return SITEMAP.filter(node => node.type === 'standalone').map(node => ({
-      label: node.title,
-      href: `${node.id}.html`,
-      icon: node.icon,
-      active: node.id === currentPageId,
-    }))
+    return SITEMAP.filter(node => node.type === 'standalone' && node.id !== 'signifier').map(
+      node => ({
+        label: node.title,
+        href: `${node.id}.html`,
+        icon: node.icon,
+        active: node.id === currentPageId,
+      }),
+    )
   }
 
   // 전역 navbar.css와 body의 메뉴 상태 선택자가 내부 구조에 접근해야 하므로 Light DOM을 유지한다.

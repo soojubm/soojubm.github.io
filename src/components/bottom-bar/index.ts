@@ -26,13 +26,12 @@ const defaultItems: BottomBarItem[] = [
 class BottomBar extends LitElement {
   static styles = css`
     :host {
-      --bottom-bar-item-height: calc(var(--size-32) + var(--font-line-height-16));
     }
 
     nav {
       display: flex;
-      margin: 0 var(--space-3) var(--space-3);
-      padding: var(--space-1);
+      justify-content: space-around;
+      margin: var(--space-2);
       border: var(--surface-high-border);
       border-radius: var(--radius-large);
       background: var(--surface-high-background-color);
@@ -48,7 +47,7 @@ class BottomBar extends LitElement {
       align-items: center;
       flex: 1;
       min-width: var(--size-48);
-      height: var(--bottom-bar-item-height);
+      padding-bottom: var(--space-1);
       border-radius: var(--radius);
       color: var(--foreground-color);
       text-decoration: none;
@@ -57,7 +56,7 @@ class BottomBar extends LitElement {
     }
 
     a:focus-visible {
-      ${focusRing}
+      ${focusRing};
     }
 
     a[aria-current='page'] {
@@ -146,7 +145,7 @@ class BottomBar extends LitElement {
         aria-current=${ifDefined(activeIndex === index ? 'page' : undefined)}
         @click=${(e: Event) => this.handleItemClick(e, index, item)}
       >
-        <mm-avatar variant="tertiary" icon=${item.icon ?? ICON_NAMES.HOME}></mm-avatar>
+        <mm-avatar variant="tertiary" size="32" icon=${item.icon ?? ICON_NAMES.HOME}></mm-avatar>
         <mm-caption>${item.label}</mm-caption>
       </a>
     `
