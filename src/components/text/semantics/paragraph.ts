@@ -1,15 +1,16 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
+import { textMaxLengthStyles, type TextMaxLength } from '@/components/text/text.styles'
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
 
 type ParagraphSize = 'small' | 'medium' | 'large'
-type ParagraphTruncate = '' | '1' | '2' | '3'
 
 @customElement('mm-paragraph')
 export class Paragraph extends LitElement {
   static styles = [
     resetStyles,
+    textMaxLengthStyles,
     css`
       :host {
         display: block;
@@ -43,29 +44,6 @@ export class Paragraph extends LitElement {
         text-align: center;
       }
 
-      :host([truncate]) p {
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-
-      :host([truncate='1']) p {
-        white-space: nowrap;
-      }
-
-      :host([truncate='2']) p,
-      :host([truncate='3']) p {
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-      }
-
-      :host([truncate='2']) p {
-        -webkit-line-clamp: 2;
-      }
-
-      :host([truncate='3']) p {
-        -webkit-line-clamp: 3;
-      }
-
       p {
         margin: 0;
         font-family: inherit;
@@ -79,7 +57,7 @@ export class Paragraph extends LitElement {
 
   @property({ type: String, reflect: true }) size: ParagraphSize = 'medium'
   @property({ type: String, reflect: true }) color = 'inherit'
-  @property({ type: String, reflect: true }) truncate: ParagraphTruncate = ''
+  @property({ type: String, attribute: 'max-length', reflect: true }) maxLength: TextMaxLength = ''
   @property({ type: Boolean, reflect: true }) centered = false
 
   render() {

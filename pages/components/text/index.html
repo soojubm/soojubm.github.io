@@ -162,18 +162,18 @@
         사용합니다.
       </mm-paragraph>
       <mm-separator></mm-separator>
-      <mm-heading level="4">truncate=1 | 2 | 3</mm-heading>
-      <mm-paragraph truncate="1">
+      <mm-heading level="4">max-length=1 | 2 | 3</mm-heading>
+      <mm-paragraph max-length="1">
         한 줄에서 말줄임되는 문단입니다. 카드나 리스트처럼 공간이 좁은 곳에서 긴 설명을 간결하게
         보여줄 때 사용합니다.
       </mm-paragraph>
-      <mm-paragraph truncate="2">
+      <mm-paragraph max-length="2">
         두 줄까지 노출되는 문단입니다. 사용자는 핵심 내용을 빠르게 훑을 수 있고, 세부 내용은 상세
         화면에서 확인할 수 있습니다. 반복되는 목록 안에서 설명 길이가 제각각일 때 유용합니다.
         사용자는 핵심 내용을 빠르게 훑을 수 있고, 세부 내용은 상세 화면에서 확인할 수 있습니다.
         반복되는 목록 안에서 설명 길이가 제각각일 때 유용합니다.
       </mm-paragraph>
-      <mm-paragraph truncate="3">
+      <mm-paragraph max-length="3">
         세 줄까지 노출되는 문단입니다. 너무 짧게 자르면 맥락이 사라지는 소개글이나 요약문에
         적합합니다. 화면 안의 리듬은 유지하면서도 충분한 정보를 제공해야 할 때 사용합니다. 너무 짧게
         자르면 맥락이 사라지는 소개글이나 요약문에 적합합니다. 화면 안의 리듬은 유지하면서도 충분한
@@ -314,26 +314,6 @@
         <em>(30%)</em>
       </div>
     </div>
-  </mm-component-section>
-
-  <mm-component-section
-    heading="Text Max Length"
-    description="지정한 줄 수에서 말줄임표로 잘립니다."
-  >
-    <mm-flex direction="column" gap="4">
-      <mm-text max-length="1">
-        한 줄에서 말줄임되는 텍스트입니다. 카드나 리스트처럼 공간이 좁은 곳에서 긴 제목을 간결하게
-        보여줄 때 사용합니다.
-      </mm-text>
-      <mm-text max-length="2">
-        두 줄까지 노출되는 텍스트입니다. 사용자는 핵심 내용을 빠르게 훑을 수 있고, 반복되는 목록
-        안에서 길이가 제각각일 때 유용합니다.
-      </mm-text>
-      <mm-text max-length="3">
-        세 줄까지 노출되는 텍스트입니다. 너무 짧게 자르면 맥락이 사라지는 소개글이나 요약문에
-        적합하며, 화면 안의 리듬은 유지하면서도 충분한 정보를 제공해야 할 때 사용합니다.
-      </mm-text>
-    </mm-flex>
   </mm-component-section>
 
   <mm-component-references>

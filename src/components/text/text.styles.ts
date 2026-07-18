@@ -5,6 +5,32 @@ export type TextWeight = 'medium' | 'bold'
 export type TextColor = 'inherit' | 'light' | 'danger'
 export type TextMaxLength = '' | '1' | '2' | '3'
 
+export const textMaxLengthStyles = css`
+  :host([max-length]) > * {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  :host([max-length='1']) > * {
+    white-space: nowrap;
+  }
+
+  :host([max-length='2']) > *,
+  :host([max-length='3']) > * {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+  }
+
+  :host([max-length='2']) > * {
+    -webkit-line-clamp: 2;
+  }
+
+  :host([max-length='3']) > * {
+    -webkit-line-clamp: 3;
+  }
+`
+
 export const textStyles = css`
   :host {
     display: block;
@@ -48,29 +74,7 @@ export const textStyles = css`
     font-weight: var(--font-weight-bold);
   }
 
-  :host([max-length]) > * {
-    display: block;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  :host([max-length='1']) > * {
-    white-space: nowrap;
-  }
-
-  :host([max-length='2']) > *,
-  :host([max-length='3']) > * {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-  }
-
-  :host([max-length='2']) > * {
-    -webkit-line-clamp: 2;
-  }
-
-  :host([max-length='3']) > * {
-    -webkit-line-clamp: 3;
-  }
+  ${textMaxLengthStyles}
 
   h1,
   h2,
