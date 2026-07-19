@@ -24,8 +24,9 @@ export const navbarStyles = css`
     inset: 0;
     z-index: -1;
     /* TODO gradient */
-    background: var(--surface-base-background-color);
-    backdrop-filter: var(--surface-base-backdrop-filter);
+    background: var(--surface-high-background-color);
+    backdrop-filter: var(--surface-high-backdrop-filter);
+    box-shadow: var(--surface-high-shadow);
   }
 
   .navbar-logo {

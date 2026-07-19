@@ -4,14 +4,14 @@ import { scrollbarStyles } from '@/stylesheets/shared/scrollbar.styles'
 
 export const popoverStyles = css`
   :host {
-    --popover-padding: var(--space-1);
+    --popover-width: auto;
+    --popover-max-height: none;
+    --popover-padding: var(--space-2) var(--space-4);
     --popover-border: var(--surface-higher-border);
     --popover-border-radius: var(--radius);
     --popover-background-color: var(--surface-higher-background-color);
     --popover-backdrop-filter: var(--surface-higher-backdrop-filter);
     --popover-shadow: var(--surface-higher-shadow);
-    --popover-max-height: none;
-    --popover-width: auto;
     --popover-offset: var(--space-1);
     --popover-transition-duration: 180ms;
 

@@ -12,7 +12,7 @@ export const scrollbarStyles = css`
   }
   &::-webkit-scrollbar-thumb {
     margin: 0.125rem;
-    background: var(--background-subtle-color);
+    background: var(--background-strong-color);
     border-radius: var(--radius);
   }
   &::-webkit-scrollbar-button {

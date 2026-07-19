@@ -7,6 +7,7 @@ export const sheetStyles = css`
     --sheet-z-index: var(--material-zindex-modal);
     --sheet-backdrop-background-color: var(--color-backdrop);
     --sheet-border-radius: var(--radius-large);
+    --sheet-padding-block: var(--space-3);
     --sheet-padding-inline: var(--space-4);
     --sheet-max-height: 90vh;
     --sheet-bottom-max-width: calc(var(--layout-width-small) + var(--space-4) * 10);
@@ -66,15 +67,27 @@ export const sheetStyles = css`
     padding: 0 var(--sheet-padding-inline);
     border: var(--surface-high-border);
     border-radius: var(--sheet-border-radius);
-    background: var(--surface-high-background-color);
     box-shadow: var(--surface-high-shadow);
-    backdrop-filter: var(--surface-high-backdrop-filter);
-    -webkit-backdrop-filter: var(--surface-high-backdrop-filter);
     box-sizing: border-box;
+    background: var(--background-color);
     overflow: hidden;
     position: relative;
+    isolation: isolate;
     transform: scale(0.96);
     transition: transform var(--sheet-transition-duration) cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  /* 재질(배경+blur)은 .sheet 자신이 아닌 ::before 형제 레이어가 소유한다.
+     .sheet 자신에 backdrop-filter가 있으면 sheet-footer처럼 body 위에 겹쳐 뜨는
+     자손의 backdrop-filter가 무력화되기 때문. */
+  .sheet::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: var(--surface-higher-background-color);
+    backdrop-filter: var(--surface-higher-backdrop-filter);
+    -webkit-backdrop-filter: var(--surface-higher-backdrop-filter);
   }
 
   :host([open][variant='center']) .sheet {
@@ -109,8 +122,8 @@ export const sheetStyles = css`
   /* bottom */
   :host([variant='bottom']) .sheet {
     max-width: var(--sheet-bottom-max-width);
-    border-bottom-left-radius: var(--sheet-border-radius);
-    border-bottom-right-radius: var(--sheet-border-radius);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
     margin-top: auto;
     transform: translateY(100%);
   }

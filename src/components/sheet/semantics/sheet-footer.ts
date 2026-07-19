@@ -9,8 +9,19 @@ import { emit } from '@/utils/emit'
 class SheetFooter extends LitElement {
   static styles = css`
     :host {
-      padding: var(--sheet-section-padding-block, var(--space-3)) 0
-        calc(var(--sheet-section-padding-block, var(--space-3)) + env(safe-area-inset-bottom));
+      display: block;
+      box-sizing: border-box;
+      padding: var(--sheet-padding-block) var(--sheet-padding-inline)
+        calc(var(--sheet-padding-block) + env(safe-area-inset-bottom));
+      border-top: var(--surface-highe-border);
+      background: var(--surface-highe-background-color);
+      backdrop-filter: var(--surface-highe-backdrop-filter);
+      -webkit-backdrop-filter: var(--surface-highe-backdrop-filter);
+
+      position: absolute;
+      inset-inline: 0;
+      bottom: 0;
+      z-index: 1;
     }
   `
 

@@ -24,11 +24,30 @@ class Sheet extends LitElement {
     root: () => document.getElementById('sheet-page-root') ?? document.body,
   })
 
+  // sheet-footer가 body 위에 겹쳐 뜨는 표면이라, body가 그 높이만큼 하단 여백을
+  // 확보하도록 실제 렌더 높이를 --sheet-footer-height로 동기화한다.
+  private footerResize = new ResizeObserver(([entry]) => {
+    const height = entry?.borderBoxSize[0]?.blockSize ?? 0
+    this.style.setProperty('--sheet-footer-height', `${height}px`)
+  })
+  private observedFooter: Element | null = null
+
   // 리스너 대상이 호스트 자신이라 portal 이동에도 유지되므로 생성자에서 한 번만 등록한다.
   constructor() {
     super()
     this.addEventListener('sheetclose', this.handleSheetClose)
     this.addEventListener('click', this.handleBackdropClick)
+  }
+
+  connectedCallback() {
+    super.connectedCallback()
+    this.syncFooterObserver()
+  }
+
+  disconnectedCallback() {
+    super.disconnectedCallback()
+    this.footerResize.disconnect()
+    this.observedFooter = null
   }
 
   private handleSheetClose = () => {
@@ -38,9 +57,20 @@ class Sheet extends LitElement {
   render() {
     return html`
       <aside class="sheet" ?open=${this.isOpen}>
-        <slot></slot>
+        <slot @slotchange=${this.syncFooterObserver}></slot>
       </aside>
     `
+  }
+
+  private syncFooterObserver = () => {
+    const footer = this.querySelector('mm-sheet-footer')
+    if (footer === this.observedFooter) return
+
+    this.footerResize.disconnect()
+    this.style.removeProperty('--sheet-footer-height')
+    this.observedFooter = footer
+
+    if (footer) this.footerResize.observe(footer, { box: 'border-box' })
   }
 
   /** 호스트(backdrop) 영역 클릭 시 닫는다 */

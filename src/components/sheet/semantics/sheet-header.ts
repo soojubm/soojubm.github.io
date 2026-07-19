@@ -11,7 +11,7 @@ class SheetHeader extends LitElement {
       align-items: center;
       justify-content: space-between;
       width: 100%;
-      padding: var(--sheet-section-padding-block, var(--space-3)) 0;
+      padding: var(--sheet-padding-block) 0;
       /* height: var(--size-48); */
       gap: var(--sheet-header-gap, var(--space-2));
       box-sizing: border-box;

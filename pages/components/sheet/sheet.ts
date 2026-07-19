@@ -167,7 +167,7 @@ function sheetPageTemplate() {
         <mm-toast class="js-demo-toast">저장되었습니다.</mm-toast>
       </mm-component-section>
 
-      <mm-component-section heading="Filter" description="TEST">
+      <mm-component-section heading="Filter" description="샘플">
         ${filterSheetTemplate()}
       </mm-component-section>
 
