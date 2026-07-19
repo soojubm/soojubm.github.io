@@ -256,7 +256,7 @@
       ></mm-meta-item>
       <mm-meta-item
         layout="stacked"
-        label="Tomatometer"
+        label="토마토미터"
         value="🍅 97%"
         value-size="large"
       ></mm-meta-item>
@@ -295,12 +295,12 @@
         variant="number"
         texts='["순서가 있는 리스트의 첫 번째 항목", "절차나 우선순위처럼 순서가 의미를 갖는 콘텐츠에 사용합니다.", "마커는 number 변형을 사용합니다."]'
       ></mm-text-list>
-      <mm-separator></mm-separator>
+      <mm-separator scope="element"></mm-separator>
       <mm-text-list
         variant="check"
         texts='["체크리스트 항목", "완료, 충족, 포함 같은 긍정적인 상태를 나타낼 때 사용합니다.", "마커는 check 변형을 사용합니다."]'
       ></mm-text-list>
-      <mm-separator></mm-separator>
+      <mm-separator scope="element"></mm-separator>
       <div role="suggestion">
         <del role="deletion">₩ 30,000</del>
         <b role="insertion">₩ 20,000</b>
@@ -317,8 +317,10 @@
   </mm-component-related>
 
   <mm-component-references>
-    https://design-system.service.gov.uk/components/summary-list/
+    <mm-link href="https://design-system.service.gov.uk/components/summary-list/">
+      Summary list
+    </mm-link>
     <!-- Use a summary list to summarise information, for example, a user’s responses at the end of a form. -->
-    https://en.wikipedia.org/wiki/Adjacency_pairs
+    <mm-link href="https://en.wikipedia.org/wiki/Adjacency_pairs">Adjacency_pairs</mm-link>
   </mm-component-references>
 </main>
