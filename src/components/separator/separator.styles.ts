@@ -10,11 +10,11 @@ export const separatorStyles = css`
     position: relative;
   }
 
-  :host([spacing='small']) {
+  :host([scope='element']) {
     --separator-spacing: var(--space-2);
   }
 
-  :host([spacing='medium']) {
+  :host([scope='section']) {
     --separator-spacing: var(--space-4);
   }
 

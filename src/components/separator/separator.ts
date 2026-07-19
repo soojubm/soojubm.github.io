@@ -3,13 +3,13 @@ import { customElement, property } from 'lit/decorators.js'
 
 import { separatorStyles } from '@/components/separator/separator.styles'
 
-type SeparatorSpacing = 'small' | 'medium'
+type SeparatorScope = 'element' | 'section'
 
 @customElement('mm-separator')
 export class Separator extends LitElement {
   static styles = [separatorStyles]
 
-  @property({ type: String, reflect: true }) spacing: SeparatorSpacing = 'medium'
+  @property({ type: String, reflect: true }) scope: SeparatorScope = 'section'
 
   render() {
     return html`

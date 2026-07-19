@@ -82,7 +82,7 @@ export class ThemeSwitcher extends LitElement {
       ></mm-icon-button>
       <div ?open=${this.popup.open} role="menu" aria-hidden=${this.popup.open ? 'false' : 'true'}>
         ${this.renderThemeOptions()}
-        <mm-separator spacing="small"></mm-separator>
+        <mm-separator scope="element"></mm-separator>
         <mm-radius-picker></mm-radius-picker>
       </div>
     `
