@@ -15,6 +15,7 @@ interface SitemapStandaloneNode {
   id: string
   title: string
   icon: IconName
+  badge?: string
   /** 사이드바 메뉴에서 숨긴다. 페이지는 그대로 빌드된다 */
   hidden?: boolean
 }
@@ -42,12 +43,6 @@ export const SITEMAP: SitemapNode[] = [
     id: 'tokens',
     title: 'Tokens',
     icon: ICON_NAMES.PALETTE,
-  },
-  {
-    type: 'standalone',
-    id: 'signifier',
-    title: 'Signifier',
-    icon: ICON_NAMES.DESIGN,
   },
   {
     type: 'standalone',
@@ -79,8 +74,8 @@ export const SITEMAP: SitemapNode[] = [
       { id: 'surface', name: 'surface' },
       { id: 'separator', name: 'separator' },
       { id: 'list-item', name: 'list item' },
-      { id: 'sheet', name: 'sheet' },
-      { id: 'popover', name: 'popover' },
+      { id: 'sheet', name: 'sheet', badge: 'pattern' },
+      { id: 'popover', name: 'popover', badge: 'pattern' },
       { id: 'table', name: 'table' },
     ],
   },
@@ -95,7 +90,7 @@ export const SITEMAP: SitemapNode[] = [
       { id: 'toggle-button', name: 'toggle button' },
       { id: 'menuitem', name: 'menuItem' },
       { id: 'link', name: 'link' },
-      { id: 'accordion', name: 'accordion' },
+      { id: 'accordion', name: 'accordion', badge: 'pattern' },
     ],
   },
   {
@@ -120,8 +115,8 @@ export const SITEMAP: SitemapNode[] = [
       { id: 'checkbox', name: 'checkbox' },
       { id: 'radio', name: 'radio' },
       { id: 'switch', name: 'switch' },
-      { id: 'input', name: 'Input' },
-      { id: 'textarea', name: 'Textarea' },
+      { id: 'input', name: 'input' },
+      { id: 'textarea', name: 'textarea' },
     ],
   },
   {
@@ -140,22 +135,36 @@ export const SITEMAP: SitemapNode[] = [
   {
     type: 'group',
     id: 'patterns',
-    title: 'Patterns',
+    title: 'Pages',
     icon: ICON_NAMES.PLACE,
     items: [
       { id: 'profile', name: 'user profile', badge: '🔥' },
       { id: 'setting', name: 'setting', hideNavbar: true },
-      { id: 'class', name: 'Product 3 - class' },
-      { id: 'cake', name: 'movie detail' },
+      { id: 'class', name: 'product 3 - class' },
+      { id: 'cake', name: 'movie detail', hidden: true },
       { id: 'chat', name: 'chat' },
       { id: 'dashboard', name: 'dashboard', hidden: true },
-
-      // { id: 'layout', name: 'layout' },
-      { id: 'product', name: 'Product' },
+      { id: 'product', name: 'product' },
       { id: 'auth', name: 'auth', hidden: true },
       { id: 'post', name: 'post', hidden: true },
-      // { id: 'checkout', name: 'Checkout' },
+      { id: 'checkout', name: 'Checkout', hidden: true },
     ],
+  },
+
+  // 3. 하단 독립 메뉴 (작성 중)
+  {
+    type: 'standalone',
+    id: 'signifier',
+    title: 'Foundations',
+    icon: ICON_NAMES.DESIGN,
+    badge: 'draft',
+  },
+  {
+    type: 'standalone',
+    id: 'pattern',
+    title: 'Patterns',
+    icon: ICON_NAMES.GRID_VIEW,
+    badge: 'draft',
   },
 ]
 

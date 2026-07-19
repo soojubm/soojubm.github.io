@@ -21,13 +21,17 @@ function renderMenu() {
 }
 
 function renderStandaloneGroup() {
-  const links = SITEMAP.filter(node => node.type === 'standalone' && !node.hidden)
+  const links = SITEMAP.filter(
+    (node): node is Extract<SitemapNode, { type: 'standalone' }> =>
+      node.type === 'standalone' && !node.hidden,
+  )
     .map(
       node => `
         <mm-menu-item-link
           icon="${node.icon}"
           href="${node.id}.html"
           label="${node.title}"
+          badge="${node.badge ?? ''}"
           target="_self"
           hidden-trailing
         ></mm-menu-item-link>
@@ -48,7 +52,8 @@ function renderGroup(node: SitemapNode) {
         <mm-menu-item-link
           emoji="#"
           href="${item.id}.html"
-          label="${item.name}${item.badge ? ` ${item.badge}` : ''}"
+          label="${item.name}"
+          badge="${item.badge ?? ''}"
           target="_self"
           hidden-trailing
         ></mm-menu-item-link>

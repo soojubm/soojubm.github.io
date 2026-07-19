@@ -3,6 +3,7 @@ import { customElement, property, state } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 import { repeat } from 'lit/directives/repeat.js'
 
+import '@/components/tag/tag'
 import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
 import { DisclosureController } from '@/controllers/disclosure-controller'
 import { SITEMAP } from '@/sitemap'
@@ -43,7 +44,13 @@ export class Sidebar extends LitElement {
                   icon=${node.icon}
                   aria-current=${ifDefined(this.isCurrentPage(node.id) ? 'page' : undefined)}
                   @click=${() => this.handleStandaloneClick(node.id)}
-                ></mm-menu-item-action>
+                >
+                  ${node.badge
+                    ? html`
+                        <mm-tag slot="trailing">${node.badge}</mm-tag>
+                      `
+                    : nothing}
+                </mm-menu-item-action>
               `
             }
 
@@ -70,7 +77,8 @@ export class Sidebar extends LitElement {
                       <mm-menu-item-link
                         emoji="#"
                         href="${item.id}.html"
-                        label="${item.name}${item.badge ? ` ${item.badge}` : ''}"
+                        label="${item.name}"
+                        badge=${ifDefined(item.badge || undefined)}
                         target="_self"
                         hidden-trailing
                         aria-current=${ifDefined(this.isCurrentPage(item.id) ? 'page' : undefined)}

@@ -8,9 +8,11 @@ const iconButtonVariantTokens = {
     '--icon-button-text-color': 'var(--foreground-color-on-solid)',
   },
   secondary: {
-    border: 'var(--border)',
     'border-radius': 'var(--radius-full)',
-    'background-color': 'var(--background-color)',
+    '--icon-button-border': 'var(--surface-higher-border)',
+    '--icon-button-background-color': 'var(--surface-higher-background-color)',
+    '--icon-button-backdrop-filter': 'var(--surface-higher-backdrop-filter)',
+    '--icon-button-shadow': 'var(--surface-higher-shadow)',
   },
   ghost: {
     'background-color': 'transparent',
@@ -37,6 +39,8 @@ export const iconButtonStyles = css`
     --icon-button-border-radius: var(--radius);
     --icon-button-border: var(--border-transparent);
     --icon-button-text-color: var(--foreground-color);
+    --icon-button-shadow: none;
+    --icon-button-backdrop-filter: none;
   }
 
   button {
@@ -49,6 +53,9 @@ export const iconButtonStyles = css`
     border: var(--icon-button-border);
     border-radius: var(--icon-button-border-radius);
     background: var(--icon-button-background-color);
+    box-shadow: var(--icon-button-shadow);
+    backdrop-filter: var(--icon-button-backdrop-filter);
+    -webkit-backdrop-filter: var(--icon-button-backdrop-filter);
     color: var(--icon-button-text-color);
     font-family: var(--font-family);
     font-size: inherit;

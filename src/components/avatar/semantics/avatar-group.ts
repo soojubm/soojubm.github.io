@@ -12,7 +12,7 @@ export class AvatarGroup extends LitElement {
     resetStyles,
     css`
       :host {
-        display: flex;
+        display: inline-flex;
         align-items: center;
         gap: var(--space-2);
         border: var(--border);

@@ -25,7 +25,7 @@ export class DismissButton extends LitElement {
   render() {
     return html`
       <mm-icon-button
-        variant="secondary"
+        variant="tertiary"
         size="small"
         icon=${ICON_NAMES.DISMISS}
         aria-label="닫기"

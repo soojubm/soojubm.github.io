@@ -111,11 +111,9 @@
     <mm-text-list
       texts='[
         "피그마에서 소숫점 올림한다. line height를 고정값을 사용하는 것이 토큰화에도 좋다. (TODO 아이콘과 텍스트의 가운데 정렬 문제에 대하여)",
-        "텍스트 목록을 2 댑스(nested)로 제공하지 마세요. 중첩된 목록은 콘텐츠를 읽기 어렵게 하며 작은 화면에 적합하지 않다. 약관에서는 사용해야 할 수도.",
         "태그라인은 작은 화면에서도 임팩트를 줄 수 있도록 작성 단계에서 행갈이를 고려하세요. 글자 또는 단어의 수를 제한하고 개행 조건을 정의하세요.",
         "제목을 자르는 것을 허용할 수 있나. 점점 더 작아지는 스크린. 폴더블, 와치",
-        "단어(word) → 구(phrase) → 문장(sentence) → 문단(paragraph)",
-        "message: 사용자의 관점, description: 시스템이 주체"
+        "단어(word) → 구(phrase) → 문장(sentence) → 문단(paragraph)"
       ]'
     ></mm-text-list>
     <!-- 텍스트가 굵거나 진하여 낱자의 속 공간이 좁을수록, 더 넓은 줄 간격이 필요하다. -->
@@ -289,7 +287,11 @@
     </section>
   </mm-component-section>
 
-  <mm-component-section heading="Text List" description="TODO 느낌만">
+  <mm-component-section
+    heading="Text List"
+    description="텍스트 목록을 2 댑스(nested)로 제공하지 마세요. 중첩된 목록은 콘텐츠를 읽기 어렵게 하며 작은
+  화면에 적합하지 않다. 약관에서는 사용해야 할 수도."
+  >
     <div>
       <mm-text-list
         variant="number"

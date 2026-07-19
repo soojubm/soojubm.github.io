@@ -291,16 +291,10 @@
         flex: 0 0 auto;
       }
     </style>
-
   </mm-component-section>
 
-
-  <mm-component-section
-    heading="Marquee"
-    description="TODO"
-  >
-      <mm-flex direction="column" gap="4">
-
+  <mm-component-section heading="Marquee" description="TODO">
+    <mm-flex direction="column" gap="4">
       <mm-marquee gap="6" speed="64" pause-on-hover>
         <mm-paragraph>짧은 문장</mm-paragraph>
         <mm-paragraph>
@@ -344,7 +338,68 @@
     </mm-flex>
   </mm-component-section>
 
-
+  <mm-component-section
+    heading="Scroll Hint"
+    description="bleed 없이 프레임 안에서 가로 스크롤을 보여줄 때, 오른쪽 끝의 흐림 레이어로 숨은 콘텐츠가 더
+        있음을 암시합니다."
+  >
+    <section class="carousel js-carousel">
+      <mm-button-group>
+        <mm-icon-button
+          variant="secondary"
+          icon="arrow-left"
+          class="js-carousel-prev"
+          aria-label="이전"
+        ></mm-icon-button>
+        <mm-icon-button
+          variant="secondary"
+          icon="arrow-right"
+          class="js-carousel-next"
+          aria-label="다음"
+        ></mm-icon-button>
+      </mm-button-group>
+      <mm-scroll class="js-carousel-viewer" gap="3" hide-scrollbar>
+        <mm-scroll-hint placement="start"></mm-scroll-hint>
+        <mm-scroll-hint placement="end"></mm-scroll-hint>
+        <mm-thumbnail
+          class="carousel-slide"
+          ratio="1:1"
+          src="/src/images/temp.png"
+          alt="풍경 샘플"
+        ></mm-thumbnail>
+        <mm-thumbnail
+          class="carousel-slide"
+          ratio="1:1"
+          src="/src/images/soojubm.png"
+          alt="프로필 샘플"
+        ></mm-thumbnail>
+        <mm-thumbnail
+          class="carousel-slide"
+          ratio="1:1"
+          src="/src/images/work-studium.jpg"
+          alt="작업 샘플"
+        ></mm-thumbnail>
+        <mm-thumbnail
+          class="carousel-slide"
+          ratio="1:1"
+          src="/src/images/cake_gosum.jpg"
+          alt="고슴이 샘플"
+        ></mm-thumbnail>
+        <mm-thumbnail
+          class="carousel-slide"
+          ratio="1:1"
+          src="/src/images/work-famus.jpg"
+          alt="작업 샘플"
+        ></mm-thumbnail>
+        <mm-thumbnail
+          class="carousel-slide"
+          ratio="1:1"
+          src="/src/images/prometheus.jpg"
+          alt="영화 샘플"
+        ></mm-thumbnail>
+      </mm-scroll>
+    </section>
+  </mm-component-section>
   <!-- <mm-component-section heading="RatingSurface" description="">
     <mm-surfacebar heading="Ratings"></mm-surfacebar>
     <div aria-label="별점 5개 만점에 3.9개를 받았습니다." style="text-align: center">
@@ -399,7 +454,6 @@
       </article>
     </section>
   </mm-component-section> -->
-  </mm-grid>
   <mm-component-related>
     <mm-button-group>
       <mm-hashtag-link href="sheet.html">Sheet</mm-hashtag-link>

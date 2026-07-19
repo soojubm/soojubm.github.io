@@ -22,7 +22,7 @@
   --layout-width-wide: 1280px;
   --layout-width-small: 640px;
   --layout-width-narrow: 400px;
-  --layout-width-sidebar: 16rem;
+  --layout-width-sidebar: calc(16rem + 20px);
   --layout-padding-inline: 5vw;
 
   --gray0: #fff;
