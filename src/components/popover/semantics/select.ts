@@ -61,6 +61,7 @@ export class Select extends LitElement {
 
   @property({ type: String }) value = ''
   @property({ type: String }) placement: PopoverPlacement = 'bottom-left'
+  @property({ type: String }) padding?: string
   /** 호스트 폭. 기본은 트리거 콘텐츠 폭(auto)이며, `240px`·`100%` 등 임의 CSS 폭 값을 받는다. */
   @property({ type: String, reflect: true }) width = 'auto'
   @state() private options: SelectOption[] = []
@@ -146,22 +147,26 @@ export class Select extends LitElement {
     if (this.isPhoneViewport) return nothing
 
     return html`
-      <mm-popover ?open=${this.popup.open} placement=${this.placement}>
+      <mm-popover
+        ?open=${this.popup.open}
+        placement=${this.placement}
+        padding=${ifDefined(this.padding)}
+      >
         ${this.renderOptionList()}
       </mm-popover>
     `
   }
 
   // phone 뷰포트: 앵커 대신 bottom sheet로 같은 옵션 목록을 전시한다.
-  // sheet는 열릴 때 body로 portal되어 host 바깥으로 나가므로,
-  // 내부 pointerdown이 outside-click으로 오인되지 않게 전파를 끊는다.
+  // sheet는 열릴 때 body로 portal되어 host 바깥으로 나가므로, 뷰포트 전환 시
+  // 템플릿에서 통째로 제외하면 portal된 노드가 고아로 남는다. 그래서 sheet는
+  // 항상 렌더링해두고 open만 뷰포트에 따라 여닫는다.
+  // 같은 이유로 내부 pointerdown이 outside-click으로 오인되지 않게 전파를 끊는다.
   private renderSheetList() {
-    if (!this.isPhoneViewport) return nothing
-
     return html`
       <mm-sheet
         variant="bottom"
-        ?open=${this.popup.open}
+        ?open=${this.popup.open && this.isPhoneViewport}
         @sheetclose=${() => this.popup.close()}
         @pointerdown=${(e: Event) => e.stopPropagation()}
       >

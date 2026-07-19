@@ -10,15 +10,18 @@ import '@/components/avatar/avatar'
 import '@/components/flex/flex'
 import '@/components/text/semantics/caption'
 
+export type ListItemSize = 'small' | '48' | '80'
+
 /**
  * leading(아바타·아이콘) + content(title/description) + trailing 한 줄을 구성하는 표현 전용 primitive.
  * 상호작용(role, hover 등)은 포함하지 않는다. 메뉴 의미가 필요하면 mm-menu-item-action을 쓴다.
+ * small 사이즈는 description 유무에 따라 아바타를 32/40으로 내부에서 전환한다.
  */
 @customElement('mm-list-item')
 export class ListItem extends LitElement {
   static styles = [listItemStyles]
 
-  @property({ type: String, reflect: true }) size: AvatarSize = '32'
+  @property({ type: String, reflect: true }) size: ListItemSize = 'small'
   @property({ type: String }) label = ''
   @property({ type: String }) description = ''
 
@@ -80,7 +83,7 @@ export class ListItem extends LitElement {
 
     return html`
       <mm-avatar
-        size=${this.size}
+        size=${this.avatarSize}
         variant=${this.avatarVariant}
         shape=${this.avatarShape}
         icon=${ifDefined(this.icon)}
@@ -106,7 +109,7 @@ export class ListItem extends LitElement {
   private renderDescription() {
     if (!this.description) return nothing
 
-    if (this.size === '40') {
+    if (this.size === 'small') {
       return html`
         <mm-caption>${this.description}</mm-caption>
       `
@@ -115,6 +118,12 @@ export class ListItem extends LitElement {
     return html`
       <mm-text size="14" color="light">${this.description}</mm-text>
     `
+  }
+
+  private get avatarSize(): AvatarSize {
+    if (this.size === 'small') return this.description ? '40' : '32'
+
+    return this.size
   }
 
   private get hasLeading() {

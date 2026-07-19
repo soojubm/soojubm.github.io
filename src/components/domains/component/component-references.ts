@@ -20,10 +20,12 @@ export class ComponentReferences extends LitElement {
 
   render() {
     return html`
-      <mm-surface variant="filled" radius="large" style="padding-inline: 1.25rem">
-        <!-- <mm-heading >${this.heading}</mm-heading> -->
-        <mm-flex gap="4" wrap="wrap" style="row-gap:var(--space-1)"><slot></slot></mm-flex>
-      </mm-surface>
+      <mm-flex direction="column" gap="3">
+        <mm-heading>${this.heading}</mm-heading>
+        <mm-surface variant="filled" radius="large" style="padding-inline: 1.25rem">
+          <mm-flex gap="4" wrap="wrap" style="row-gap:var(--space-1)"><slot></slot></mm-flex>
+        </mm-surface>
+      </mm-flex>
     `
   }
 }

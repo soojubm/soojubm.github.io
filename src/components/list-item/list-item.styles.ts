@@ -3,7 +3,6 @@ import { css, unsafeCSS } from 'lit'
 import { buildAttributeRules } from '@/utils/attribute-styles'
 
 const listItemSizeTokens = {
-  '40': { '--list-item-font-size': '20px' },
   '48': {
     '--list-item-size': 'var(--size-48)',
     '--list-item-gap': 'var(--space-2)',
@@ -27,9 +26,6 @@ export const listItemStyles = css`
     --list-item-gap: var(--space-2);
     --list-item-font-size: var(--font-size-14);
   }
-
-  /* :host([size='32']) {
-  } */
 
   ${unsafeCSS(buildAttributeRules('size', listItemSizeTokens))}
 

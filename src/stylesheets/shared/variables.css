@@ -158,10 +158,10 @@
   /* z-index: 화면 위 높낮이를 표현하는 값. 같은 그룹 안에서만 값을 비교한다 */
   --material-zindex-base: 0; /* 기본 콘텐츠: 문서, 리스트, 배경 */
   --material-zindex-raised: 10; /* 카드, 패널처럼 살짝 뜬 요소 */
-  --material-zindex-overlay: 100; /* 드롭다운, 툴팁, 팝오버 */
-  --material-zindex-modal: 1000; /* 모달, 다이얼로그, 시트 */
-  --material-zindex-chrome: 1100; /* 내비게이션, 툴바 (Apple의 "기능 레이어"에 해당) */
-  --material-zindex-toast: 9000; /* 알림, 스낵바: 항상 최상단 */
+  --material-zindex-overlay: 200; /* 드롭다운, 툴팁, 팝오버 */
+  --material-zindex-modal: 300; /* 모달, 다이얼로그, 시트 */
+  --material-zindex-chrome: 100; /* 내비게이션, 툴바 (Apple의 "기능 레이어"에 해당) */
+  --material-zindex-toast: 1000; /* 알림, 스낵바: 항상 최상단 */
 
   --duration: 0.4s;
   --duration-quickly: 0.2s;

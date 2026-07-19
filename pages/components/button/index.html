@@ -135,7 +135,8 @@
 
     <mm-paragraph-group>
       <mm-paragraph size="large">
-        사용자 여정을 보조하는 액션입니다. 실행 페이지에서 사용자는 즉각적인 결과를 기대할 수
+        chip/button small - 사용자 여정을 보조하는 액션입니다. 사용자는 페이지 내에서 즉각적인
+        결과를 기대할 수 있습니다.
       </mm-paragraph>
 
       <mm-component-aka
@@ -152,63 +153,6 @@
           "빈 버튼이 필요한가? 리액트에서 포커싱이 가능한 전체 영역의 버튼. 도는 버튼 내부에서포지셔닝되는 버튼. 시각적으로는 버튼 내부의 버튼이지만 구조적으로 대안이 되는 형태의 버튼"
         ]'
       ></mm-text-list>
-
-      <table>
-        <caption>Material 2, Material 3, Flutter의 Chip 명칭 비교</caption>
-        <thead>
-          <tr>
-            <th>역할</th>
-            <th>Material 2</th>
-            <th>Material 3</th>
-            <th>Flutter</th>
-            <th>정리</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th>기본 표시</th>
-            <td>Chip</td>
-            <td>타입으로 직접 분류하지 않음</td>
-            <td>Chip / RawChip</td>
-            <td>RawChip은 Flutter의 기반 위젯. 보통 직접 쓰기보다 목적별 Chip을 사용한다.</td>
-          </tr>
-          <tr>
-            <th>입력값 / 엔티티</th>
-            <td>Input chip</td>
-            <td>Input chip</td>
-            <td>InputChip</td>
-            <td>삭제 가능하며, 필요하면 선택 또는 press 동작도 가질 수 있다.</td>
-          </tr>
-          <tr>
-            <th>단일 선택</th>
-            <td>Choice chip</td>
-            <td>Filter chip의 단일 선택 케이스</td>
-            <td>ChoiceChip</td>
-            <td>M3에서도 Flutter는 single-select filter chip을 ChoiceChip으로 구현한다.</td>
-          </tr>
-          <tr>
-            <th>다중 선택 / 필터</th>
-            <td>Filter chip</td>
-            <td>Filter chip</td>
-            <td>FilterChip</td>
-            <td>M2에서는 checkbox 대안, M3/Flutter에서는 다중 선택 filter chip에 대응한다.</td>
-          </tr>
-          <tr>
-            <th>보조 액션</th>
-            <td>Action chip</td>
-            <td>Assist chip</td>
-            <td>ActionChip</td>
-            <td>M2의 Action chip은 toggle이 아니라 관련 액션 실행이다.</td>
-          </tr>
-          <tr>
-            <th>제안 액션</th>
-            <td>Action chip에 가까움</td>
-            <td>Suggestion chip</td>
-            <td>ActionChip</td>
-            <td>Flutter M3에서 ActionChip은 Assist/Suggestion chip 양쪽에 사용된다.</td>
-          </tr>
-        </tbody>
-      </table>
     </mm-paragraph-group>
   </mm-component-guide>
 
@@ -221,6 +165,7 @@
         <mm-button variant="tertiary" size="large">취소</mm-button>
         <mm-button variant="primary" size="large">저장</mm-button>
       </mm-button-group>
+      <mm-separator></mm-separator>
       <mm-button-group>
         <mm-button variant="ghost" size="large">건너뛰기</mm-button>
         <mm-button variant="secondary" size="large">다음</mm-button>
@@ -276,6 +221,18 @@
   <mm-component-section heading="AddButton" description="새 항목을 추가합니다.">
     <mm-add-button>항목 추가</mm-add-button>
   </mm-component-section>
+
+  <mm-table
+    id="chip-naming-table"
+    style="margin-top: var(--space-section)"
+    caption="Material 3, Material 2, Flutter의 Chip 명칭 비교"
+    columns='[
+      {"label": "Material 3"},
+      {"label": "Material 2"},
+      {"label": "Flutter"},
+      {"label": "정리"}
+    ]'
+  ></mm-table>
 
   <mm-component-related>
     <mm-button-group>

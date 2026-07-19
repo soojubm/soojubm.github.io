@@ -11,6 +11,7 @@ export const menuItemStyles = css`
     align-items: center;
     width: 100%;
     padding-inline: var(--menuitem-padding-inline);
+    border-radius: var(--radius);
     color: inherit;
     text-decoration: none;
     box-sizing: border-box;

@@ -36,7 +36,7 @@ export class SettingItem extends LitElement {
   render() {
     return html`
       <mm-list-item
-        size="40"
+        size="small"
         icon=${this.icon || nothing}
         label=${this.label}
         description=${this.description}

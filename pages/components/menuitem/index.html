@@ -33,7 +33,7 @@
   </mm-component-example>
 
   <mm-component-props>
-    <mm-prop name="size" type="'32' | '40' | '48' = '32'" optional></mm-prop>
+    <mm-prop name="size" type="'small' | '48' | '80' = 'small'" optional></mm-prop>
     <mm-prop name="label" type="string"></mm-prop>
     <mm-prop name="description" type="string" optional></mm-prop>
     <mm-prop name="icon" type="IconName" optional></mm-prop>
@@ -120,21 +120,21 @@
 
     <mm-menu-item-radio-group name="access" value="public" aria-label="공개 범위">
       <mm-menu-item-radio
-        size="40"
+        size="small"
         value="public"
         icon="group"
         label="전체공개"
         description="모든 사용자"
       ></mm-menu-item-radio>
       <mm-menu-item-radio
-        size="40"
+        size="small"
         value="friends"
         icon="group"
         label="친구만"
         description="회원님의 친구"
       ></mm-menu-item-radio>
       <mm-menu-item-radio
-        size="40"
+        size="small"
         icon="lock"
         label="나만 보기"
         description="부끄러우니까 보지마요"
@@ -150,21 +150,21 @@
   <mm-component-section heading="MenuItemLink">
     <mm-menu-item-group>
       <mm-menu-item-link
-        size="40"
+        size="small"
         icon="app-window"
         label="수줍이 앱"
         target="_self"
         description="앱에서 게시물을 엽니다."
       ></mm-menu-item-link>
       <mm-menu-item-link
-        size="40"
+        size="small"
         icon="open-in-browser"
         label="MDN Web Docs"
         href="https://developer.mozilla.org"
         description="외부 링크"
       ></mm-menu-item-link>
       <mm-menu-item-link
-        size="40"
+        size="small"
         icon="github"
         label="GitHub"
         href="https://github.com"

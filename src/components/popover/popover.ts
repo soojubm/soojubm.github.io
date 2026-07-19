@@ -14,7 +14,7 @@ export type PopoverPlacement = 'bottom-left' | 'bottom-right' | 'top-left' | 'to
  * 트리거가 없으면 가장 가까운 positioned 조상에 앵커됩니다(외부 트리거는 aria-controls로 연결).
  * 트리거·외부 클릭·ESC 닫기·aria 배관은 DisclosureController가 소유합니다.
  * 연결된 트리거가 없으면(예: mm-select) 소비자가 open을 제어하는 표면으로만 동작합니다.
- * 좌표는 placement prop으로, 폭은 width prop, 여백은 --popover-padding 토큰으로 정합니다.
+ * 좌표는 placement prop으로, 폭은 width prop, 여백은 padding prop으로 정합니다.
  * 패널 지오메트리를 밖에서 다듬을 때는 ::part(panel)을 사용합니다.
  */
 @customElement('mm-popover')
@@ -24,6 +24,7 @@ class Popover extends LitElement {
   @property({ type: Boolean, reflect: true, attribute: 'open' }) isOpen = false
   @property({ type: String, reflect: true }) placement: PopoverPlacement = 'bottom-left'
   @property({ type: String }) width?: string
+  @property({ type: String }) padding?: string
   /** 트리거 슬롯 존재 여부(스스로 앵커 모드). slotchange가 관리하므로 직접 지정하지 않는다. */
   @property({ type: Boolean, reflect: true, attribute: 'with-trigger' }) withTrigger = false
 
@@ -55,11 +56,19 @@ class Popover extends LitElement {
   }
 
   protected updated(changedProperties: Map<string, unknown>) {
-    if (!changedProperties.has('width')) return
-    if (this.width) {
-      this.style.setProperty('--popover-width', this.width)
-    } else {
-      this.style.removeProperty('--popover-width')
+    if (changedProperties.has('width')) {
+      if (this.width) {
+        this.style.setProperty('--popover-width', this.width)
+      } else {
+        this.style.removeProperty('--popover-width')
+      }
+    }
+    if (changedProperties.has('padding')) {
+      if (this.padding) {
+        this.style.setProperty('--popover-padding', this.padding)
+      } else {
+        this.style.removeProperty('--popover-padding')
+      }
     }
   }
 

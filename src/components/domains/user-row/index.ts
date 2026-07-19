@@ -2,7 +2,8 @@ import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import type { IconName } from '@/components/icon-button/semantics/icon-names'
-import type { AvatarShape, AvatarSize, AvatarVariant } from '@/components/avatar/avatar'
+import type { AvatarShape, AvatarVariant } from '@/components/avatar/avatar'
+import type { ListItemSize } from '@/components/list-item/list-item'
 import '@/components/list-item/list-item'
 
 /**
@@ -18,7 +19,7 @@ export class UserRow extends LitElement {
     `,
   ]
 
-  @property({ type: String }) size: AvatarSize = '40'
+  @property({ type: String }) size: ListItemSize = 'small'
   @property({ type: String }) label = ''
   @property({ type: String }) description = ''
   @property({ type: String }) icon?: IconName

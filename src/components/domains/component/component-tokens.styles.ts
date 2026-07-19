@@ -19,12 +19,10 @@ export const tokenStyles = [
 
     dt {
       font-weight: var(--font-weight-bold);
-      line-height: var(--size-32);
     }
 
     dd {
       margin: 0;
-      line-height: var(--size-32);
     }
 
     .dash {

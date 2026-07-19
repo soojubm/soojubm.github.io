@@ -41,6 +41,7 @@ const WORD_CATEGORIES = [
       'max-height',
       'margin',
       'padding',
+      'padding-inline',
       'gap',
       'size',
       'space',

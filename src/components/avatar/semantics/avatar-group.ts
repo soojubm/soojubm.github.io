@@ -27,6 +27,7 @@ export class AvatarGroup extends LitElement {
       .avatars mm-avatar,
       .avatars .overflow {
         margin-left: -6px;
+        outline: 4px solid var(--background-color);
       }
 
       .avatars mm-avatar:first-child,

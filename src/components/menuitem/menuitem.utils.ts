@@ -3,9 +3,9 @@ import { property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
 import type { IconName } from '@/components/icon-button/semantics/icon-names'
-import type { AvatarShape, AvatarSize, AvatarVariant } from '@/components/avatar/avatar'
+import type { AvatarShape, AvatarVariant } from '@/components/avatar/avatar'
 import type { AriaTriState } from '@/types/aria'
-import type { ListItem } from '@/components/list-item/list-item'
+import type { ListItem, ListItemSize } from '@/components/list-item/list-item'
 import '@/components/list-item/list-item'
 import { ToggleController } from '@/controllers/toggle-controller'
 import { emit } from '@/utils/emit'
@@ -34,7 +34,7 @@ export type MenuItemPresentation = Pick<
  */
 export const withMenuItemPresentation = <T extends Constructor<LitElement>>(Base: T) => {
   class MenuItemPresentationElement extends Base {
-    @property({ type: String, reflect: true }) size: AvatarSize = '32'
+    @property({ type: String, reflect: true }) size: ListItemSize = 'small'
     @property({ type: String, reflect: true }) tone = ''
     @property({ type: String }) label = ''
     @property({ type: String }) description = ''
