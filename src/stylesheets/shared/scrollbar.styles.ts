@@ -3,7 +3,7 @@ import { css } from 'lit'
 export const scrollbarStyles = css`
   &::-webkit-scrollbar {
     width: 0.5rem;
-    height: auto;
+    height: 0.5rem;
     padding: 0.125rem;
     opacity: 0;
   }

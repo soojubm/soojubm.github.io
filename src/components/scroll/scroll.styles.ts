@@ -4,7 +4,6 @@ import { resetStyles } from '@/stylesheets/shared/reset.styles'
 import { scrollbarStyles } from '@/stylesheets/shared/scrollbar.styles'
 import { buildAttributeRules } from '@/utils/attribute-styles'
 
-
 // 이게 왜 필요..
 const scrollDirectionTokens = {
   row: { 'flex-direction': 'row', 'overflow-x': 'auto', 'overflow-y': 'hidden' },
@@ -25,7 +24,7 @@ export const scrollStyles = [
       min-width: 0;
       max-width: 100%;
 
-      ${scrollbarStyles}
+      ${scrollbarStyles};
     }
 
     ${unsafeCSS(buildAttributeRules('direction', scrollDirectionTokens))}
