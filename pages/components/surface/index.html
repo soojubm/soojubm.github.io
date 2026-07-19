@@ -262,7 +262,7 @@
   </mm-component-section>
 
   <mm-component-section
-    heading="ScrollSurface"
+    heading="Scroll Area"
     description="custom scrollbar styles를 가진 스크롤 컨테이너에 surface를 배치합니다."
   >
     <mm-scroll direction="column" gap="3" class="scroll-surface-container">
@@ -295,10 +295,11 @@
   </mm-component-section>
 
 
-
-  <mm-surface>
-    <mm-flex direction="column" gap="4">
-      <mm-text size="24" weight="bold" as="h2">Marquee Samples</mm-text>
+  <mm-component-section
+    heading="Marquee"
+    description="TODO"
+  >
+      <mm-flex direction="column" gap="4">
 
       <mm-marquee gap="6" speed="64" pause-on-hover>
         <mm-paragraph>짧은 문장</mm-paragraph>
@@ -341,7 +342,8 @@
         ></mm-thumbnail>
       </mm-marquee>
     </mm-flex>
-  </mm-surface>
+  </mm-component-section>
+
 
   <!-- <mm-component-section heading="RatingSurface" description="">
     <mm-surfacebar heading="Ratings"></mm-surfacebar>

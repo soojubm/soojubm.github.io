@@ -167,6 +167,10 @@ function sheetPageTemplate() {
         <mm-toast class="js-demo-toast">저장되었습니다.</mm-toast>
       </mm-component-section>
 
+      <mm-component-section heading="Filter" description="TEST">
+        ${filterSheetTemplate()}
+      </mm-component-section>
+
       <mm-component-related>
         <mm-button-group>
           <mm-hashtag-link href="dialog.html">Dialog</mm-hashtag-link>
@@ -192,8 +196,6 @@ function sheetPageTemplate() {
           alertdialog role
         </mm-link>
       </mm-component-references>
-
-      ${filterSheetTemplate()}
     </main>
   `
 }
