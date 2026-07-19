@@ -6,6 +6,7 @@ import type { IconName } from '@/components/icon-button/semantics/icon-names'
 
 import '@/components/button/button'
 import '@/components/button/button-group'
+import '@/components/status-message'
 
 import { resultStyles } from '@/components/result/result.styles'
 
@@ -22,12 +23,7 @@ class Result extends LitElement {
   render() {
     return html`
       <slot name="avatar">${this.renderAvatar()}</slot>
-      <mm-text-block
-        level="3"
-        heading=${this.heading}
-        description=${this.description}
-        centered
-      ></mm-text-block>
+      <mm-status-message heading=${this.heading} message=${this.description}></mm-status-message>
       <slot></slot>
       <mm-button-group justify-content="center" wrap>
         ${this.renderPrimaryAction()}

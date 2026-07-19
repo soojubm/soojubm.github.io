@@ -81,7 +81,6 @@ class TextBlock extends LitElement {
 
     return html`
       ${this.renderEyebrow()} ${this.renderHeading(variant)} ${this.renderDescription(variant)}
-      ${this.renderCaption()}
       <slot></slot>
     `
   }
@@ -108,6 +107,8 @@ class TextBlock extends LitElement {
   }
 
   private renderDescription(variant: typeof TextBlock.variants[keyof typeof TextBlock.variants]) {
+    if (!this.description) return nothing
+
     if (this.level === '1') {
       return html`
         <mm-paragraph size="large" ?centered=${this.centered}>${this.description}</mm-paragraph>
@@ -118,14 +119,6 @@ class TextBlock extends LitElement {
       <mm-text size=${variant.descriptionSize} ?centered=${this.centered}>
         ${this.description}
       </mm-text>
-    `
-  }
-
-  private renderCaption() {
-    if (!this.caption) return nothing
-
-    return html`
-      <mm-text size="12" color="light" ?centered=${this.centered}>${this.caption}</mm-text>
     `
   }
 

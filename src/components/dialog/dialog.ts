@@ -1,11 +1,10 @@
-import { LitElement, css, html, nothing } from 'lit'
+import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import '@/components/sheet'
-import '@/components/sheet/semantics/sheet-header'
 import '@/components/sheet/semantics/sheet-body'
 import '@/components/sheet/semantics/sheet-footer'
-import '@/components/text/semantics/paragraph'
+import '@/components/status-message'
 import type { ActionConfig } from '@/components/action-config'
 
 import { emit } from '@/utils/emit'
@@ -32,10 +31,11 @@ export class Dialog extends LitElement {
         ?open=${this.open}
         @sheetclose=${this.handleSheetClose}
       >
-        <mm-sheet-header heading=${this.heading} .closeButton=${false}></mm-sheet-header>
-
         <mm-sheet-body>
-          ${this.renderDescription()}
+          <mm-status-message
+            heading=${this.heading}
+            message=${this.description}
+          ></mm-status-message>
           <slot></slot>
         </mm-sheet-body>
 
@@ -44,14 +44,6 @@ export class Dialog extends LitElement {
           .secondaryAction=${this.secondaryAction}
         ></mm-sheet-footer>
       </mm-sheet>
-    `
-  }
-
-  private renderDescription() {
-    if (!this.description) return nothing
-
-    return html`
-      <mm-paragraph>${this.description}</mm-paragraph>
     `
   }
 
