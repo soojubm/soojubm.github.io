@@ -50,12 +50,12 @@ export const navbarStyles = css`
     position: relative;
     isolation: isolate;
 
-    background: var(--surface-higher-background-color);
-    backdrop-filter: var(--surface-higher-backdrop-filter);
-    border: var(--surface-higher-border);
+    background: var(--surface-high-background-color);
+    backdrop-filter: var(--surface-high-backdrop-filter);
+    border: var(--surface-high-border);
     border-radius: var(--control-border-radius);
     padding: var(--control-padding);
-    box-shadow: var(--surface-higher-shadow);
+    box-shadow: var(--surface-high-shadow);
   }
 
   .page {

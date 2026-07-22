@@ -706,19 +706,6 @@
             ></div>
             <mm-list-marker variant="number" value="2"></mm-list-marker>
           </mm-flex>
-          <mm-flex direction="column" align-items="center" gap="2">
-            <div
-              style="
-                width: var(--size-48);
-                height: var(--size-48);
-                border-radius: var(--radius);
-                background: var(--background-color);
-                box-shadow: var(--surface-higher-shadow);
-                flex-shrink: 0;
-              "
-            ></div>
-            <mm-list-marker variant="number" value="3"></mm-list-marker>
-          </mm-flex>
         </mm-flex>
       </mm-token-stage>
       <mm-token-group aria-label="shadow primitive tokens">
@@ -726,8 +713,7 @@
           key="surface-base-shadow"
           value="0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.08)"
         ></mm-token-item>
-        <mm-token-item key="surface-high-shadow" value="none"></mm-token-item>
-        <mm-token-item key="surface-higher-shadow" value="0 16px 32px rgba(0,0,0,.2)"></mm-token-item>
+        <mm-token-item key="surface-high-shadow" value="0 16px 32px rgba(0,0,0,.2)"></mm-token-item>
       </mm-token-group>
 
       <mm-separator></mm-separator>
@@ -787,20 +773,6 @@
               ></div>
               <mm-list-marker variant="number" value="2"></mm-list-marker>
             </mm-flex>
-            <mm-flex direction="column" align-items="center" gap="2">
-              <div
-                style="
-                  width: var(--size-48);
-                  height: var(--size-48);
-                  border-radius: var(--radius);
-                  background: rgb(255 255 255 / var(--surface-higher-opacity));
-                  backdrop-filter: blur(var(--surface-higher-blur));
-                  -webkit-backdrop-filter: blur(var(--surface-higher-blur));
-                  flex-shrink: 0;
-                "
-              ></div>
-              <mm-list-marker variant="number" value="3"></mm-list-marker>
-            </mm-flex>
           </mm-flex>
         </div>
       </mm-token-stage>
@@ -809,8 +781,6 @@
         <mm-token-item key="surface-base-opacity" value="0.35"></mm-token-item>
         <mm-token-item key="surface-high-blur" value="20px"></mm-token-item>
         <mm-token-item key="surface-high-opacity" value="0.55"></mm-token-item>
-        <mm-token-item key="surface-higher-blur" value="30px"></mm-token-item>
-        <mm-token-item key="surface-higher-opacity" value="0.8"></mm-token-item>
       </mm-token-group>
     </mm-flex>
 

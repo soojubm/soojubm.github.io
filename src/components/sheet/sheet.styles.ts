@@ -189,9 +189,9 @@ export const sheetHeaderStyles = css`
      페이드가 없는 테마에서는 그대로 남아 콘텐츠와의 경계를 유지한다. */
   header::before {
     content: '';
-    border-bottom: var(--surface-higher-border);
-    background: var(--surface-higher-background-color);
-    backdrop-filter: var(--surface-higher-backdrop-filter);
+    border-bottom: var(--surface-high-border);
+    background: var(--surface-high-background-color);
+    backdrop-filter: var(--surface-high-backdrop-filter);
     position: absolute;
     inset: 0;
     z-index: -1;

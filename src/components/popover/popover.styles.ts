@@ -7,11 +7,11 @@ export const popoverStyles = css`
     --popover-width: auto;
     --popover-max-height: none;
     --popover-padding: var(--space-2) var(--space-4);
-    --popover-border: var(--surface-higher-border);
+    --popover-border: var(--surface-high-border);
     --popover-border-radius: var(--radius);
-    --popover-background-color: var(--surface-higher-background-color);
-    --popover-backdrop-filter: var(--surface-higher-backdrop-filter);
-    --popover-shadow: var(--surface-higher-shadow);
+    --popover-background-color: var(--surface-high-background-color);
+    --popover-backdrop-filter: var(--surface-high-backdrop-filter);
+    --popover-shadow: var(--surface-high-shadow);
     --popover-offset: var(--space-1);
     --popover-transition-duration: 180ms;
 
