@@ -50,9 +50,8 @@
     </mm-paragraph>
     <mm-text-list
       texts='[
-        "열림 상태는 popover가 소유한다. 트리거를 slot=trigger로 넣으면 popover가 스스로 positioned 앵커가 되어 별도 래퍼가 필요 없고, 클릭 토글·외부 클릭·ESC 닫기·aria-expanded 반영까지 자동으로 연결된다.",
-        "트리거가 밖에 있으면 aria-controls로 popover를 가리킨다. 이때 패널은 가장 가까운 positioned 조상에 앵커되며, 패널 지오메트리는 ::part(panel)로 다듬는다.",
-        "연결된 트리거가 없으면 popover는 소비자가 open을 제어하는 표면으로만 동작한다(예: mm-select의 반응형 popover·sheet 전환).",
+        "열림 상태는 popover가 소유한다. 트리거는 항상 slot=trigger로 넣으며, popover가 스스로 positioned 앵커가 되어 별도 래퍼가 필요 없고, 클릭 토글·외부 클릭·ESC 닫기·aria-expanded 반영까지 자동으로 연결된다.",
+        "패널 지오메트리를 밖에서 다듬을 때는 ::part(panel)을 사용한다.",
         "role=menu/listbox를 popover 요소에 직접 지정한다.",
         "용례: select, 컨텍스트 메뉴, 댓글 항목의 수정·삭제 메뉴."
       ]'
@@ -62,7 +61,7 @@
   <mm-component-section
     heading="Select"
     badge="pattern"
-    description="popover를 프리미티브로 하는 선택 입력입니다. 트리거·옵션 파싱·선택 상태를 소유하고, 목록 표면은 popover에 맡깁니다. phone 뷰포트(480px 이하)에서는 같은 옵션 목록을 bottom sheet(mm-sheet)로 전환해 표시합니다."
+    description="popover를 프리미티브로 하는 선택 입력입니다. 트리거·옵션 파싱·선택 상태를 소유하고, 목록 표면은 popover에 맡깁니다."
   >
     <mm-select width="200px" value="stable">
       <mm-button slot="trigger" size="small" icon="nav-arrow-down" icon-position="trailing">

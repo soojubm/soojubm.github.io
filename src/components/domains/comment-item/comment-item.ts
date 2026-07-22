@@ -8,7 +8,6 @@ import '@/components/icon-button/semantics/more-button'
 import '@/components/menuitem/semantics/menu-item-action'
 import '@/components/popover/popover'
 import { emit } from '@/utils/emit'
-import { uniqueId } from '@/utils/unique-id'
 
 /**
  * 댓글 목록의 개별 항목.
@@ -47,18 +46,11 @@ export class CommentItem extends LitElement {
       position: relative;
     }
 
-    mm-popover::part(panel) {
-      width: 240px;
-      right: 40px;
-      top: 0;
-    }
-
     mm-menu-item-action {
       width: 100%;
     }
   `
 
-  private readonly menuId = uniqueId('comment-menu')
   @property({ type: String }) author = ''
   @property({ type: String }) datetime = ''
   @property({ type: String, attribute: 'avatar-src' }) avatarSrc = ''
@@ -71,27 +63,15 @@ export class CommentItem extends LitElement {
     return html`
       <article>
         <mm-user-row label=${this.author} description=${this.datetime} avatar-src=${this.avatarSrc}>
-          ${this.renderMenuTrigger()}
+          ${this.renderMenu()}
         </mm-user-row>
 
         <slot></slot>
 
-        ${this.renderReplyButton()} ${this.renderMenu()}
+        ${this.renderReplyButton()}
 
         <slot name="replies"></slot>
       </article>
-    `
-  }
-
-  private renderMenuTrigger() {
-    if (!this.editable) return nothing
-
-    return html`
-      <mm-more-button
-        slot="trailing"
-        aria-label="댓글 메뉴"
-        aria-controls=${this.menuId}
-      ></mm-more-button>
     `
   }
 
@@ -109,7 +89,8 @@ export class CommentItem extends LitElement {
     if (!this.editable) return nothing
 
     return html`
-      <mm-popover id=${this.menuId} role="menu">
+      <mm-popover slot="trailing" role="menu" placement="bottom-right" width="240px">
+        <mm-more-button slot="trigger" aria-label="댓글 메뉴"></mm-more-button>
         <mm-menu-item-action
           label="수정"
           @click=${() => this.onMenuAction('edit')}

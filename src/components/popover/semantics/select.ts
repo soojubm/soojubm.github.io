@@ -1,19 +1,16 @@
-import { LitElement, css, html, nothing } from 'lit'
-import { customElement, property, queryAssignedElements, state } from 'lit/decorators.js'
+import { LitElement, css, html } from 'lit'
+import { customElement, property, query, queryAssignedElements, state } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 import { repeat } from 'lit/directives/repeat.js'
 
 import type { IconName } from '@/components/icon-button/semantics/icon-names'
+import type Popover from '@/components/popover/popover'
 import type { PopoverPlacement } from '@/components/popover/popover'
 
-import { PopupController } from '@/controllers/popup-controller'
-import { MEDIA_QUERY } from '@/stylesheets/shared/breakpoints'
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
 import '@/components/menuitem/semantics/menu-item-action'
 import '@/components/menuitem/semantics/menu-item-group'
 import '@/components/popover/popover'
-import '@/components/sheet/sheet'
-import '@/components/sheet/semantics/sheet-body'
 import { emit } from '@/utils/emit'
 
 export interface SelectOption {
@@ -25,7 +22,6 @@ export interface SelectOption {
 
 /**
  * popover를 프리미티브로 하는 선택 입력.
- * phone 뷰포트에서는 같은 옵션 목록을 bottom sheet(mm-sheet)로 전환해 표시한다.
  */
 @customElement('mm-select')
 export class Select extends LitElement {
@@ -35,7 +31,6 @@ export class Select extends LitElement {
       :host {
         --select-min-width: 160px;
         display: block;
-        position: relative;
         width: var(--select-width, auto);
       }
 
@@ -53,6 +48,10 @@ export class Select extends LitElement {
         right: auto;
       }
 
+      :host([width='100%']) mm-popover {
+        display: block;
+      }
+
       mm-menu-item-action[aria-current='true'] {
         color: var(--interaction-selected-foreground-color);
       }
@@ -65,36 +64,20 @@ export class Select extends LitElement {
   /** 호스트 폭. 기본은 트리거 콘텐츠 폭(auto)이며, `240px`·`100%` 등 임의 CSS 폭 값을 받는다. */
   @property({ type: String, reflect: true }) width = 'auto'
   @state() private options: SelectOption[] = []
-  @state() private isPhoneViewport = false
 
   @queryAssignedElements({ selector: 'option', flatten: true })
   private optionElements!: HTMLOptionElement[]
-  @queryAssignedElements({ slot: 'trigger', flatten: true })
-  private triggerElements!: HTMLElement[]
 
-  private phoneMedia = window.matchMedia(MEDIA_QUERY.compact)
-
-  private popup = new PopupController(this, {
-    event: 'click',
-    getTrigger: () => this.triggerElements[0],
-  })
+  @query('mm-popover') private popoverEl?: Popover
 
   render() {
     return html`
-      ${this.renderTrigger()} ${this.renderPopoverList()} ${this.renderSheetList()}
+      <mm-popover placement=${this.placement} padding=${ifDefined(this.padding)}>
+        <slot name="trigger" slot="trigger"></slot>
+        ${this.renderOptionList()}
+      </mm-popover>
       <slot hidden @slotchange=${this.syncOptions}></slot>
     `
-  }
-
-  connectedCallback() {
-    super.connectedCallback()
-    this.phoneMedia.addEventListener('change', this.syncViewport)
-    this.syncViewport()
-  }
-
-  disconnectedCallback() {
-    this.phoneMedia.removeEventListener('change', this.syncViewport)
-    super.disconnectedCallback()
   }
 
   firstUpdated() {
@@ -103,10 +86,6 @@ export class Select extends LitElement {
 
   protected updated(changedProperties: Map<string, unknown>) {
     if (changedProperties.has('width')) this.style.setProperty('--select-width', this.width)
-  }
-
-  private syncViewport = () => {
-    this.isPhoneViewport = this.phoneMedia.matches
   }
 
   // 네이티브 select처럼 value가 비어 있으면 selected 옵션에서 초기값을 채운다.
@@ -128,54 +107,11 @@ export class Select extends LitElement {
   // 옵션 클릭 시: 값 반영 후 목록 닫기
   private selectOption(option: SelectOption) {
     this.value = option.value
-    this.popup.close()
+    this.popoverEl?.close()
     emit(this, 'change', { value: option.value })
   }
 
-  // 트리거 스타일은 slot="trigger"로 들어온 외부 요소가 책임진다.
-  private renderTrigger() {
-    return html`
-      <slot
-        name="trigger"
-        @click=${() => this.popup.toggle()}
-        @slotchange=${this.popup.syncTrigger}
-      ></slot>
-    `
-  }
-
-  private renderPopoverList() {
-    if (this.isPhoneViewport) return nothing
-
-    return html`
-      <mm-popover
-        ?open=${this.popup.open}
-        placement=${this.placement}
-        padding=${ifDefined(this.padding)}
-      >
-        ${this.renderOptionList()}
-      </mm-popover>
-    `
-  }
-
-  // phone 뷰포트: 앵커 대신 bottom sheet로 같은 옵션 목록을 전시한다.
-  // sheet는 열릴 때 body로 portal되어 host 바깥으로 나가므로, 뷰포트 전환 시
-  // 템플릿에서 통째로 제외하면 portal된 노드가 고아로 남는다. 그래서 sheet는
-  // 항상 렌더링해두고 open만 뷰포트에 따라 여닫는다.
-  // 같은 이유로 내부 pointerdown이 outside-click으로 오인되지 않게 전파를 끊는다.
-  private renderSheetList() {
-    return html`
-      <mm-sheet
-        variant="bottom"
-        ?open=${this.popup.open && this.isPhoneViewport}
-        @sheetclose=${() => this.popup.close()}
-        @pointerdown=${(e: Event) => e.stopPropagation()}
-      >
-        <mm-sheet-body>${this.renderOptionList()}</mm-sheet-body>
-      </mm-sheet>
-    `
-  }
-
-  // popover·sheet가 공유하는 옵션 목록. 그룹 시맨틱은 목록 전체에 한 번만 적용한다.
+  // popover가 옵션 목록 표면을 소유한다. 그룹 시맨틱은 목록 전체에 한 번만 적용한다.
   private renderOptionList() {
     return html`
       <mm-menu-item-group>

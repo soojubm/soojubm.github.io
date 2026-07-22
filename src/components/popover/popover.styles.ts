@@ -15,12 +15,7 @@ export const popoverStyles = css`
     --popover-offset: var(--space-1);
     --popover-transition-duration: 180ms;
 
-    /* 트리거가 없으면 host는 박스를 만들지 않고, 패널은 소비자의 positioned 조상에 앵커된다. */
-    display: contents;
-  }
-
-  /* 트리거를 슬롯으로 받으면 popover가 스스로 앵커(positioned wrapper)를 책임진다. */
-  :host([with-trigger]) {
+    /* 슬롯된 트리거를 감싸 popover 스스로 앵커(positioned wrapper)가 된다. */
     display: inline-block;
     position: relative;
   }
@@ -54,7 +49,7 @@ export const popoverStyles = css`
       transform var(--popover-transition-duration) cubic-bezier(0.2, 0.8, 0.2, 1),
       visibility 0s linear var(--popover-transition-duration);
 
-    ${scrollbarStyles}
+    ${scrollbarStyles};
   }
 
   :host([open]) .panel {

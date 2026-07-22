@@ -56,12 +56,12 @@ export class Navbar extends LitElement {
             aria-expanded=${this.searchMenu.open ? 'true' : 'false'}
             @click=${this.toggleSearch}
           ></mm-icon-button>
-          <mm-icon-button
-            icon=${ICON_NAMES.PROFILE}
-            aria-label="내 메뉴"
-            aria-controls="navbar-user-menu"
-          ></mm-icon-button>
-          <mm-popover id="navbar-user-menu" placement="bottom-right" width="320px">
+          <mm-popover placement="bottom-right" width="320px">
+            <mm-icon-button
+              slot="trigger"
+              icon=${ICON_NAMES.PROFILE}
+              aria-label="내 메뉴"
+            ></mm-icon-button>
             <mm-flex gap="2" justify-content="space-between">
               <mm-user-snippet
                 size="huge"
@@ -101,7 +101,7 @@ export class Navbar extends LitElement {
         class="js-search-sheet"
         variant="center"
         width="medium"
-        backdrop-blur
+        style="--sheet-backdrop-blur: 2px"
         ?open=${this.searchMenu.open}
         @sheetclose=${() => this.searchMenu.close()}
         @pointerdown=${(e: Event) => e.stopPropagation()}

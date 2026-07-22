@@ -127,7 +127,7 @@ function sheetPageTemplate() {
           <mm-text-list
             texts=${JSON.stringify([
               'mm-sheet — viewport 기준 modal 레이어. backdrop·portal·스크롤 잠금을 소유하며 variant로 형태를 지정한다. dialog(center), bottom sheet(bottom), drawer(left/right)를 커버한다.',
-              'mm-popover — anchor 기준 non-modal 레이어. 트리거는 aria-controls로 연결하고, popover가 열림 상태·외부 클릭·ESC 닫기와 좌표를 소유한다. dropdown·메뉴를 커버한다.',
+              'mm-popover — anchor 기준 non-modal 레이어. 트리거는 slot="trigger"로 넣고, popover가 열림 상태·외부 클릭·ESC 닫기와 좌표를 소유한다. dropdown·메뉴를 커버한다.',
             ])}
           ></mm-text-list>
         </mm-paragraph-group>
@@ -308,21 +308,6 @@ function filterSheetTemplate() {
                 label="휠체어 접근 가능 주차 공간"
               ></mm-menu-item-checkbox>
             </mm-menu-item-checkbox-group>
-          </fieldset>
-          <mm-separator></mm-separator>
-          <fieldset class="filter-fieldset" role="group">
-            <legend class="filter-fieldset-legend">빠른 작업</legend>
-            <mm-menu-item-group aria-label="빠른 작업">
-              <mm-menu-item-action
-                icon=${ICON_NAMES.SEARCH}
-                label="저장된 검색 불러오기"
-              ></mm-menu-item-action>
-              <mm-menu-item-action
-                icon=${ICON_NAMES.DELETE}
-                label="필터 초기화"
-                tone="danger"
-              ></mm-menu-item-action>
-            </mm-menu-item-group>
           </fieldset>
           <mm-separator></mm-separator>
           <fieldset class="filter-fieldset" role="group">
