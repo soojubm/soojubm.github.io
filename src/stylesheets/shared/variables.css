@@ -130,19 +130,25 @@
   --control-padding: var(--space-1) var(--space-2);
   --control-border-radius: var(--radius-large);
 
+  /* 잠정 상태: sheet·popover만 surface-high를 쓰고 그 외 뜨는 표면은 모두 surface-base를 쓴다.
+     추후 high·base 같은 레벨 티어가 아니라 --material-zindex-*와 맞춘 역할(overlay/modal/chrome 등)
+     기준으로 재설계할 예정이라, 그때까지의 임시 배치다. */
+
   /* ===== surface-base ===== */
   --surface-base-background-color: var(--gray0);
   --surface-base-border: none;
   --surface-base-backdrop-filter: none;
-  --surface-base-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.08);
+  --surface-base-shadow: none;
+  /* --surface-base-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.08);
   --surface-base-blur: 10px;
-  --surface-base-opacity: 0.35;
+  --surface-base-opacity: 0.35; */
   /* --surface-base-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); */
 
+  /* ===== surface-high (sheet, popover) ===== */
   --surface-high-background-color: var(--gray0);
-  --surface-high-border: none;
+  --surface-high-border: var(--border);
   --surface-high-backdrop-filter: none;
-  --surface-high-shadow: none;
+  --surface-high-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
   --surface-high-blur: 20px;
   --surface-high-opacity: 0.55;
 
@@ -263,14 +269,6 @@
   --surface-high-border: var(--border-width) solid rgb(255 255 255 / 50%);
   --surface-high-backdrop-filter: blur(var(--surface-high-blur)) saturate(1.4);
   --surface-high-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.2);
-
-  /* ===== surface-high (dialog, sidebar-menu, navbar-user pill, dropdown, popover) ===== */
-  /* --surface-high-background-color: var(--gray0);
-  --surface-high-border: var(--border);
-  --surface-high-backdrop-filter: none;
-  --surface-high-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
-  --surface-high-blur: 20px;
-  --surface-high-opacity: 0.55; */
 
   /* 재질이 있으므로 chrome 바 아래쪽을 페이드시켜 스크롤 콘텐츠로 자연스럽게 잇는다 */
   --material-fade-start: 50%;

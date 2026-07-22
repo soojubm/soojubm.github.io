@@ -9,10 +9,10 @@ const iconButtonVariantTokens = {
   },
   secondary: {
     'border-radius': 'var(--radius-full)',
-    '--icon-button-border': 'var(--surface-high-border)',
-    '--icon-button-background-color': 'var(--surface-high-background-color)',
-    '--icon-button-backdrop-filter': 'var(--surface-high-backdrop-filter)',
-    '--icon-button-shadow': 'var(--surface-high-shadow)',
+    '--icon-button-border': 'var(--surface-base-border)',
+    '--icon-button-background-color': 'var(--surface-base-background-color)',
+    '--icon-button-backdrop-filter': 'var(--surface-base-backdrop-filter)',
+    '--icon-button-shadow': 'var(--surface-base-shadow)',
   },
   ghost: {
     'background-color': 'transparent',

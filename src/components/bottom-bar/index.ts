@@ -32,12 +32,12 @@ class BottomBar extends LitElement {
       display: flex;
       justify-content: space-around;
       margin: var(--space-2);
-      border: var(--surface-high-border);
+      border: var(--surface-base-border);
       border-radius: var(--radius-large);
-      background: var(--surface-high-background-color);
-      box-shadow: var(--surface-high-shadow);
-      backdrop-filter: var(--surface-high-backdrop-filter);
-      -webkit-backdrop-filter: var(--surface-high-backdrop-filter);
+      background: var(--surface-base-background-color);
+      box-shadow: var(--surface-base-shadow);
+      backdrop-filter: var(--surface-base-backdrop-filter);
+      -webkit-backdrop-filter: var(--surface-base-backdrop-filter);
       position: relative;
     }
 

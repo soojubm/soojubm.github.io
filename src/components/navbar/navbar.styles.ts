@@ -24,9 +24,9 @@ export const navbarStyles = css`
     inset: 0;
     z-index: -1;
     /* TODO gradient */
-    background: var(--surface-high-background-color);
-    backdrop-filter: var(--surface-high-backdrop-filter);
-    box-shadow: var(--surface-high-shadow);
+    background: var(--surface-base-background-color);
+    backdrop-filter: var(--surface-base-backdrop-filter);
+    box-shadow: var(--surface-base-shadow);
   }
 
   .navbar-logo {
@@ -50,12 +50,12 @@ export const navbarStyles = css`
     position: relative;
     isolation: isolate;
 
-    background: var(--surface-high-background-color);
-    backdrop-filter: var(--surface-high-backdrop-filter);
-    border: var(--surface-high-border);
+    background: var(--surface-base-background-color);
+    backdrop-filter: var(--surface-base-backdrop-filter);
+    border: var(--surface-base-border);
     border-radius: var(--control-border-radius);
     padding: var(--control-padding);
-    box-shadow: var(--surface-high-shadow);
+    box-shadow: var(--surface-base-shadow);
   }
 
   .page {
@@ -83,10 +83,10 @@ export const navbarStyles = css`
     gap: var(--space-2);
     padding: var(--space-4) var(--space-3) calc(var(--space-4) + env(safe-area-inset-bottom))
       calc(var(--layout-padding-inline));
-    background: var(--surface-high-background-color);
-    box-shadow: var(--surface-high-shadow);
-    backdrop-filter: var(--surface-high-backdrop-filter);
-    -webkit-backdrop-filter: var(--surface-high-backdrop-filter);
+    background: var(--surface-base-background-color);
+    box-shadow: var(--surface-base-shadow);
+    backdrop-filter: var(--surface-base-backdrop-filter);
+    -webkit-backdrop-filter: var(--surface-base-backdrop-filter);
     scrollbar-gutter: stable;
     transition: transform var(--duration-slowly) cubic-bezier(0.165, 0.84, 0.44, 1);
     transform: translateX(-120%);

@@ -27,6 +27,7 @@ export class ThemeSwitcher extends LitElement {
       border-radius: var(--radius);
       background: var(--surface-high-background-color);
       backdrop-filter: var(--surface-high-backdrop-filter);
+      box-shadow: var(--surface-high-shadow);
       -webkit-backdrop-filter: var(--surface-high-backdrop-filter);
 
       position: absolute;
