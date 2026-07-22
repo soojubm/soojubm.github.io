@@ -1,6 +1,7 @@
 import '../src/components/navbar/navbar'
 import '../src/components/footer/footer'
 import './fixed-bottom'
+import './fixed-top'
 
 // 컴포넌트 페이지용 임시
 import '../src/stylesheets/shared.css'
