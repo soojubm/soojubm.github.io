@@ -1,5 +1,12 @@
 import { html } from 'lit'
+import type { BreadcrumbItem } from '@/components/breadcrumb/breadcrumb'
 import { renderDocumentLayout } from '../../../layouts/document-layout'
+
+const breadcrumbItems: BreadcrumbItem[] = [
+  { label: '홈', href: '/' },
+  { label: '페이지 이름', href: '#' },
+  { label: '현재 페이지' },
+]
 
 const main = html`
   <main class="page">
@@ -9,13 +16,7 @@ const main = html`
     ></mm-page-header>
 
     <mm-component-example>
-      <mm-breadcrumb
-        items='[
-        { "label": "홈", "href": "/" },
-        { "label": "페이지 이름", "href": "#" },
-        { "label": "현재 페이지" }
-      ]'
-      ></mm-breadcrumb>
+      <mm-breadcrumb .items=${breadcrumbItems}></mm-breadcrumb>
     </mm-component-example>
 
     <mm-component-props>

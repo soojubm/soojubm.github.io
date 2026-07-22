@@ -6,7 +6,7 @@ import { arrayAttributeConverter } from '@/utils/property-converters'
 import { focusRing } from '@/stylesheets/shared/focus-ring.styles'
 import '@/components/text/text'
 
-interface BreadcrumbItem {
+export interface BreadcrumbItem {
   label: string
   href?: string
 }

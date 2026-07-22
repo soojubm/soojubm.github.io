@@ -1,5 +1,13 @@
 import { html } from 'lit'
+import type { FilterOption } from '@/components/button/semantics/filter-button-group'
 import { renderLayout } from '../../../layouts/base-layouts'
+
+const castFilterValues = ['all']
+const castFilterOptions: FilterOption[] = [
+  { value: 'all', label: '모두' },
+  { value: 'actor', label: '배우' },
+  { value: 'staff', label: '스탭' },
+]
 
 const main = html`
   <main class="cake">
@@ -82,12 +90,8 @@ const main = html`
       <mm-content-section heading="출연진">
         <mm-filter-button-group
           mode="single"
-          values='["all"]'
-          options='[
-            {"value":"all","label":"모두"},
-            {"value":"actor","label":"배우"},
-            {"value":"staff","label":"스탭"}
-          ]'
+          .values=${castFilterValues}
+          .options=${castFilterOptions}
         ></mm-filter-button-group>
         <mm-menu-item-group>
           <mm-menu-item-action

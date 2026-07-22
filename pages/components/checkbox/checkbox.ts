@@ -1,5 +1,11 @@
 import { html } from 'lit'
+import type { OptionItem } from '@/components/toggle-button'
 import { renderDocumentLayout } from '../../../layouts/document-layout'
+
+const visibilityOptions: OptionItem[] = [
+  { label: '공개', value: 'apple' },
+  { label: '비공개', value: 'banana' },
+]
 
 const main = html`
   <main class="page">
@@ -141,10 +147,7 @@ const main = html`
         <!-- aira-checked="mixed" aria-controls="1 2" -->
         <mm-toggle-button-group
           id="button-list"
-          options='[
-              {"label": "공개", "value": "apple"},
-              {"label": "비공개", "value": "banana"}
-            ]'
+          .options=${visibilityOptions}
         ></mm-toggle-button-group>
 
         <mm-add-button>이 컬렉션에 멤버 추가</mm-add-button>

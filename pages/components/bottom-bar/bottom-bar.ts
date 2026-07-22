@@ -1,5 +1,12 @@
 import { html } from 'lit'
+import type { BottomBarItem } from '@/components/bottom-bar'
 import { renderDocumentLayout } from '../../../layouts/document-layout'
+
+const navItems: BottomBarItem[] = [
+  { label: '홈', href: '#', icon: 'home-simple-door', active: true },
+  { label: '검색', href: '#', icon: 'search' },
+  { label: '설정', href: '#', icon: 'settings' },
+]
 
 const main = html`
   <main class="page">
@@ -9,13 +16,7 @@ const main = html`
     ></mm-page-header>
 
     <mm-component-example>
-      <mm-bottom-bar
-        items='[
-          { "label": "홈", "href": "#", "icon": "home-simple-door", "active": true },
-          { "label": "검색", "href": "#", "icon": "search", "badge": true },
-          { "label": "설정", "href": "#", "icon": "settings" }
-        ]'
-      ></mm-bottom-bar>
+      <mm-bottom-bar .items=${navItems}></mm-bottom-bar>
     </mm-component-example>
 
     <mm-component-props>

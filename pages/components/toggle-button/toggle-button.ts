@@ -1,5 +1,49 @@
 import { html } from 'lit'
+import type { OptionItem } from '@/components/toggle-button'
+import type { FilterOption } from '@/components/button/semantics/filter-button-group'
 import { renderDocumentLayout } from '../../../layouts/document-layout'
+
+const anatomyViewOptions: OptionItem[] = [
+  { value: 'list', icon: 'table-rows', label: '목록' },
+  { value: 'grid', icon: 'view-grid', label: '그리드' },
+]
+
+const iconOnlyViewOptions: OptionItem[] = [
+  { value: 'grid', icon: 'view-grid', ariaLabel: 'Grid view' },
+  { value: 'list', icon: 'table-rows', ariaLabel: 'List view' },
+]
+
+const labelOnlyViewOptions: OptionItem[] = [
+  { label: 'Grid', value: 'grid' },
+  { label: 'List', value: 'list' },
+]
+
+const labeledIconViewOptions: OptionItem[] = [
+  { label: 'Grid', value: 'grid', icon: 'view-grid' },
+  { label: 'List', value: 'list', icon: 'table-rows' },
+]
+
+const densityOptions: OptionItem[] = [
+  { label: 'Compact', value: 'compact', icon: 'minus' },
+  { label: 'Default', value: 'default', icon: 'circle' },
+  { label: 'Comfortable', value: 'comfortable', icon: 'plus', disabled: true },
+]
+
+const orderStatusValues = ['all']
+const orderStatusOptions: FilterOption[] = [
+  { value: 'all', label: '전체' },
+  { value: 'deposit', label: '입금확인' },
+  { value: 'paid', label: '결제완료' },
+  { value: 'shipping', label: '배송중' },
+]
+
+const genreValues = ['novel', 'movie']
+const genreOptions: FilterOption[] = [
+  { value: 'novel', label: '소설' },
+  { value: 'movie', label: '영화' },
+  { value: 'typo', label: '타이포그래피' },
+  { value: 'music', label: '음악' },
+]
 
 const main = html`
   <main class="page">
@@ -53,12 +97,7 @@ const main = html`
     ]'
     >
       <div style="position: relative; display: inline-block">
-        <mm-toggle-button-group
-          options='[
-          {"value":"list","icon":"list","label":"목록"},
-          {"value":"grid","icon":"view-grid","label":"그리드"}
-        ]'
-        ></mm-toggle-button-group>
+        <mm-toggle-button-group .options=${anatomyViewOptions}></mm-toggle-button-group>
 
         <mm-list-marker
           variant="number"
@@ -88,34 +127,13 @@ const main = html`
       description="여러 ToggleButton을 묶어 단일 선택(세그먼트 컨트롤)으로 동작합니다. 레이블·아이콘·아이콘 전용·disabled 옵션을 지원합니다."
     >
       <mm-flex direction="column" gap="4">
-        <mm-toggle-button-group
-          options='[
-          {"value":"grid","icon":"view-grid","ariaLabel":"Grid view"},
-          {"value":"list","icon":"table-rows","ariaLabel":"List view"}
-        ]'
-        ></mm-toggle-button-group>
+        <mm-toggle-button-group .options=${iconOnlyViewOptions}></mm-toggle-button-group>
 
-        <mm-toggle-button-group
-          options='[
-          {"label":"Grid","value":"grid"},
-          {"label":"List","value":"list"}
-        ]'
-        ></mm-toggle-button-group>
+        <mm-toggle-button-group .options=${labelOnlyViewOptions}></mm-toggle-button-group>
 
-        <mm-toggle-button-group
-          options='[
-          {"label":"Grid","value":"grid","icon":"view-grid"},
-          {"label":"List","value":"list","icon":"list"}
-        ]'
-        ></mm-toggle-button-group>
+        <mm-toggle-button-group .options=${labeledIconViewOptions}></mm-toggle-button-group>
 
-        <mm-toggle-button-group
-          options='[
-          {"label":"Compact","value":"compact","icon":"minus"},
-          {"label":"Default","value":"default","icon":"circle"},
-          {"label":"Comfortable","value":"comfortable","icon":"plus","disabled":true}
-        ]'
-        ></mm-toggle-button-group>
+        <mm-toggle-button-group .options=${densityOptions}></mm-toggle-button-group>
       </mm-flex>
     </mm-component-section>
 
@@ -127,25 +145,15 @@ const main = html`
         <mm-text>Single selection (라디오형)</mm-text>
         <mm-filter-button-group
           mode="single"
-          values='["all"]'
-          options='[
-          {"value":"all","label":"전체"},
-          {"value":"deposit","label":"입금확인"},
-          {"value":"paid","label":"결제완료"},
-          {"value":"shipping","label":"배송중"}
-        ]'
+          .values=${orderStatusValues}
+          .options=${orderStatusOptions}
         ></mm-filter-button-group>
 
         <mm-text>Multiple selection (체크박스형)</mm-text>
         <mm-filter-button-group
           mode="multiple"
-          values='["novel","movie"]'
-          options='[
-          {"value":"novel","label":"소설"},
-          {"value":"movie","label":"영화"},
-          {"value":"typo","label":"타이포그래피"},
-          {"value":"music","label":"음악"}
-        ]'
+          .values=${genreValues}
+          .options=${genreOptions}
         ></mm-filter-button-group>
       </mm-flex>
     </mm-component-section>

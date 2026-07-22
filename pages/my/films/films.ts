@@ -1,4 +1,5 @@
-import { html } from 'lit'
+import { html, render } from 'lit'
+import type { FilterOption } from '@/components/button/semantics/filter-button-group'
 import { renderLayout } from '../../../layouts/base-layouts'
 import { renderList, getCountries, loadJson } from '../../components/_list-page'
 import { mediaCard } from '../media-card'
@@ -63,23 +64,34 @@ function renderFilters(films: Film[], state: FilterState, rerender: () => void) 
   const container = document.querySelector<HTMLElement>('.js-filters')
   if (!container) return
 
-  const decades = getDecades(films)
-  const countries = getCountries(films, 20)
-  const decadeOptions = toFilterOptions(decades, value => `${value}s`)
-  const countryOptions = toFilterOptions(countries)
+  const decadeOptions = toFilterOptions(getDecades(films), value => `${value}s`)
+  const countryOptions = toFilterOptions(getCountries(films, 20))
 
-  container.innerHTML = `
-    <mm-flex direction="column" gap="2">
-      <mm-flex align-items="flex-start" gap="3">
-        <mm-text size="12" color="light" style="min-width:2rem;padding-top:6px">연대</mm-text>
-        <mm-filter-button-group class="js-decade-filter" mode="single" options='${decadeOptions}' style="flex:1"></mm-filter-button-group>
+  render(
+    html`
+      <mm-flex direction="column" gap="2">
+        <mm-flex align-items="flex-start" gap="3">
+          <mm-text size="12" color="light" style="min-width: 2rem; padding-top: 6px">연대</mm-text>
+          <mm-filter-button-group
+            class="js-decade-filter"
+            mode="single"
+            .options=${decadeOptions}
+            style="flex: 1"
+          ></mm-filter-button-group>
+        </mm-flex>
+        <mm-flex align-items="flex-start" gap="3">
+          <mm-text size="12" color="light" style="min-width: 2rem; padding-top: 6px">국가</mm-text>
+          <mm-filter-button-group
+            class="js-country-filter"
+            mode="single"
+            .options=${countryOptions}
+            style="flex: 1"
+          ></mm-filter-button-group>
+        </mm-flex>
       </mm-flex>
-      <mm-flex align-items="flex-start" gap="3">
-        <mm-text size="12" color="light" style="min-width:2rem;padding-top:6px">국가</mm-text>
-        <mm-filter-button-group class="js-country-filter" mode="single" options='${countryOptions}' style="flex:1"></mm-filter-button-group>
-      </mm-flex>
-    </mm-flex>
-  `
+    `,
+    container,
+  )
 
   container.querySelector('.js-decade-filter')?.addEventListener('change', e => {
     state.decade = (e as CustomEvent<{ values: string[] }>).detail.values[0] ?? ''
@@ -110,9 +122,6 @@ function getDecades(films: Film[]) {
   return [...set].sort()
 }
 
-function toFilterOptions(values: string[], getLabel = (value: string) => value) {
-  return JSON.stringify(values.map(value => ({ value, label: getLabel(value) }))).replace(
-    /'/g,
-    '&apos;',
-  )
+function toFilterOptions(values: string[], getLabel = (value: string) => value): FilterOption[] {
+  return values.map(value => ({ value, label: getLabel(value) }))
 }

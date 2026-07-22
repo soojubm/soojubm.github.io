@@ -5,6 +5,8 @@ import { renderLayout } from '../../../layouts/base-layouts'
 
 import './profile.css'
 
+const followerAvatars = ['', '', '', '']
+
 const main = html`
   <main class="profile">
     <section class="profile-user">
@@ -34,7 +36,10 @@ const main = html`
         <mm-meta-item layout="inline" label="팔로워" value="621.1K"></mm-meta-item>
         <mm-meta-item layout="inline" label="팔로우 중" value="1,284"></mm-meta-item>
       </mm-flex>
-      <mm-avatar-group avatars='["","","",""]' label="Followed by 수줍이 외 4명"></mm-avatar-group>
+      <mm-avatar-group
+        .avatars=${followerAvatars}
+        label="Followed by 수줍이 외 4명"
+      ></mm-avatar-group>
       <mm-social-links
         compact
         github="https://github.com/soojubm"

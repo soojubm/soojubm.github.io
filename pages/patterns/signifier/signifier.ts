@@ -1,5 +1,16 @@
 import { html } from 'lit'
+import type { FilterOption } from '@/components/button/semantics/filter-button-group'
 import { renderDocumentLayout } from '../../../layouts/document-layout'
+
+const iconCategoryValues = ['action']
+const iconCategoryOptions: FilterOption[] = [
+  { value: 'action', label: 'Actions' },
+  { value: 'navigation', label: 'Navigations' },
+  { value: 'status', label: 'Status' },
+  { value: 'selection', label: 'Selection' },
+  { value: 'visibility', label: 'Visibility' },
+  { value: 'communication', label: 'Communication' },
+]
 
 const main = html`
   <main class="page">
@@ -195,15 +206,8 @@ const main = html`
       <mm-filter-button-group
         id="icon-category-picker"
         mode="single"
-        values='["action"]'
-        options='[
-          {"value":"action","label":"Actions"},
-          {"value":"navigation","label":"Navigations"},
-          {"value":"status","label":"Status"},
-          {"value":"selection","label":"Selection"},
-          {"value":"visibility","label":"Visibility"},
-          {"value":"communication","label":"Communication"}
-        ]'
+        .values=${iconCategoryValues}
+        .options=${iconCategoryOptions}
       ></mm-filter-button-group>
 
       <div id="icon-section-action">

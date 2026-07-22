@@ -1,6 +1,8 @@
 import { html } from 'lit'
 import { renderDocumentLayout } from '../../../layouts/document-layout'
 
+const groupAvatars = ['', '', '', '']
+
 const main = html`
   <main class="page">
     <mm-page-header
@@ -117,7 +119,7 @@ const main = html`
       heading="AvatarGroup"
       description="최대 3개를 겹쳐 표시하고 초과 인원은 숫자로 대체합니다."
     >
-      <mm-avatar-group avatars='["", "", "", ""]' label="수줍이 외 3명"></mm-avatar-group>
+      <mm-avatar-group .avatars=${groupAvatars} label="수줍이 외 3명"></mm-avatar-group>
     </mm-component-section>
     <mm-component-related>
       <mm-button-group>

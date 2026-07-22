@@ -9,7 +9,7 @@ import { SelectionIndicatorController } from '@/controllers/selection-indicator-
 import { emit } from '@/utils/emit'
 import { arrayAttributeConverter } from '@/utils/property-converters'
 
-interface BottomBarItem {
+export interface BottomBarItem {
   label: string
   href?: string
   icon?: IconName

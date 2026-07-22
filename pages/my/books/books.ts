@@ -1,4 +1,5 @@
-import { html } from 'lit'
+import { html, render } from 'lit'
+import type { FilterOption } from '@/components/button/semantics/filter-button-group'
 import { renderLayout } from '../../../layouts/base-layouts'
 import { renderList, getCountries, loadJson } from '../../components/_list-page'
 import { mediaCard } from '../media-card'
@@ -59,15 +60,22 @@ function renderFilters(books: Book[], state: FilterState, rerender: () => void) 
   const container = document.querySelector<HTMLElement>('.js-filters')
   if (!container) return
 
-  const countries = getCountries(books, 5)
-  const countryOptions = toFilterOptions(countries)
+  const countryOptions = toFilterOptions(getCountries(books, 5))
 
-  container.innerHTML = `
-    <mm-flex align-items="flex-start" gap="3">
-      <mm-text size="12" color="light" style="min-width:2rem;padding-top:6px">국가</mm-text>
-      <mm-filter-button-group class="js-country-filter" mode="single" options='${countryOptions}' style="flex:1"></mm-filter-button-group>
-    </mm-flex>
-  `
+  render(
+    html`
+      <mm-flex align-items="flex-start" gap="3">
+        <mm-text size="12" color="light" style="min-width: 2rem; padding-top: 6px">국가</mm-text>
+        <mm-filter-button-group
+          class="js-country-filter"
+          mode="single"
+          .options=${countryOptions}
+          style="flex: 1"
+        ></mm-filter-button-group>
+      </mm-flex>
+    `,
+    container,
+  )
 
   container.querySelector('.js-country-filter')?.addEventListener('change', e => {
     state.country = (e as CustomEvent<{ values: string[] }>).detail.values[0] ?? ''
@@ -82,6 +90,6 @@ function getFiltered(books: Book[], state: FilterState) {
   })
 }
 
-function toFilterOptions(values: string[]) {
-  return JSON.stringify(values.map(value => ({ value, label: value }))).replace(/'/g, '&apos;')
+function toFilterOptions(values: string[]): FilterOption[] {
+  return values.map(value => ({ value, label: value }))
 }

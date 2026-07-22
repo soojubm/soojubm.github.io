@@ -12,7 +12,7 @@ import { arrayAttributeConverter } from '@/utils/property-converters'
 import '@/components/icon/icon'
 import '@/components/toggle-button/semantics/view-mode-switcher'
 
-interface OptionItem {
+export interface OptionItem {
   value: string
 
   label?: string
