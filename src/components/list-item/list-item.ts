@@ -11,6 +11,7 @@ import '@/components/flex/flex'
 import '@/components/text/semantics/caption'
 
 export type ListItemSize = 'small' | '48' | '80'
+export const LIST_ITEM_SIZE_TYPE_LABEL = "'small' | '48' | '80' = 'small'"
 
 /**
  * leading(아바타·아이콘) + content(title/description) + trailing 한 줄을 구성하는 표현 전용 primitive.

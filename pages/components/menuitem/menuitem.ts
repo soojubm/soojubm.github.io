@@ -1,5 +1,6 @@
 import { html } from 'lit'
-import { AVATAR_SHAPE_TYPE_LABEL } from '@/components/avatar'
+import { AVATAR_SHAPE_TYPE_LABEL, AVATAR_VARIANT_TYPE_UNION } from '@/components/avatar'
+import { LIST_ITEM_SIZE_TYPE_LABEL } from '@/components/list-item'
 import { renderDocumentLayout } from '../../../layouts/document-layout'
 
 const main = html`
@@ -38,7 +39,7 @@ const main = html`
     </mm-component-example>
 
     <mm-component-props>
-      <mm-prop name="size" type="'small' | '48' | '80' = 'small'" optional></mm-prop>
+      <mm-prop name="size" type=${LIST_ITEM_SIZE_TYPE_LABEL} optional></mm-prop>
       <mm-prop name="label" type="string"></mm-prop>
       <mm-prop name="description" type="string" optional></mm-prop>
       <mm-prop name="icon" type="IconName" optional></mm-prop>
@@ -46,7 +47,11 @@ const main = html`
       <mm-prop name="slot='trailing'" type="HTMLElement" optional></mm-prop>
       <mm-prop name="emoji" type="string" optional></mm-prop>
       <mm-prop name="avatar-src" type="string" optional></mm-prop>
-      <mm-prop name="avatar-variant" type="string = 'tertiary'" optional></mm-prop>
+      <mm-prop
+        name="avatar-variant"
+        type="${AVATAR_VARIANT_TYPE_UNION} = 'tertiary'"
+        optional
+      ></mm-prop>
       <mm-prop name="avatar-shape" type=${AVATAR_SHAPE_TYPE_LABEL} optional></mm-prop>
       <mm-prop name="tone" type="'danger' | string" optional></mm-prop>
       <mm-prop name="disabled" type="boolean" optional></mm-prop>
