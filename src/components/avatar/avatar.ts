@@ -8,6 +8,7 @@ import { ICON_NAMES, type IconName } from '@/components/icon-button/semantics/ic
 export type AvatarVariant = 'primary' | 'secondary' | 'tertiary'
 export type AvatarSize = '80' | '48' | '40' | '32'
 export type AvatarShape = 'circle' | 'square'
+export const AVATAR_SHAPE_TYPE_LABEL = "'circle' | 'square' = 'square'"
 export type AvatarIconSize = 'large' | 'medium'
 
 @customElement('mm-avatar')

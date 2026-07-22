@@ -1,6 +1,172 @@
 import { html } from 'lit'
 import { renderDocumentLayout } from '../../../layouts/document-layout'
 
+interface TokenEntry {
+  key: string
+  value: string
+}
+
+interface ColorTokenEntry {
+  color: string
+  token: string
+  onColor?: string
+  label?: string
+}
+
+const renderTokenItems = (entries: TokenEntry[]) =>
+  entries.map(
+    entry =>
+      html`
+        <mm-token-item key=${entry.key} value=${entry.value}></mm-token-item>
+      `,
+  )
+
+const renderColorTokens = (entries: ColorTokenEntry[]) =>
+  entries.map(
+    entry => html`
+      <mm-color-token
+        color=${entry.color}
+        token=${entry.token}
+        on-color=${entry.onColor ?? ''}
+        label=${entry.label ?? ''}
+      ></mm-color-token>
+    `,
+  )
+
+const grayscaleColorTokens: ColorTokenEntry[] = [
+  { color: 'var(--gray0)', token: 'gray0: #fff' },
+  { color: 'var(--gray100)', token: 'gray100: #f5f6f5' },
+  { color: 'var(--gray200)', token: 'gray200: #d2d7d5' },
+  { color: 'var(--gray400)', token: 'gray400: #8a908d' },
+  { color: 'var(--gray800)', token: 'gray800: #303b35' },
+  { color: 'var(--green100)', token: 'green100: green tint' },
+  { color: 'var(--green800)', token: 'green800: #1b995c' },
+  { color: 'var(--red100)', token: 'red100: red tint' },
+  { color: 'var(--red800)', token: 'red800: #f02849' },
+]
+
+const semanticColorTokens: ColorTokenEntry[] = [
+  {
+    color: 'var(--color-primary)',
+    onColor: 'var(--foreground-color-on-primary)',
+    label: 'on primary',
+    token: 'primary: green800',
+  },
+  {
+    color: 'var(--green100)',
+    onColor: 'var(--foreground-color)',
+    label: 'on primary-light',
+    token: 'primary-light: green100',
+  },
+  // warning
+  {
+    color: 'var(--red100)',
+    onColor: 'var(--foreground-color-on-warning)',
+    label: 'on warning-light',
+    token: 'warning-light: red100',
+  },
+  {
+    color: 'var(--red800)',
+    onColor: 'var(--foreground-color-on-solid)',
+    label: 'on warning',
+    token: 'warning: red800',
+  },
+]
+
+const backgroundColorTokens: ColorTokenEntry[] = [
+  {
+    color: 'var(--gray0)',
+    onColor: 'var(--foreground-color)',
+    label: 'on background',
+    token: 'background: #fff',
+  },
+  {
+    color: 'var(--gray100)',
+    onColor: 'var(--foreground-color)',
+    label: 'on background-subtle',
+    token: 'background-subtle: #f5f6f5',
+  },
+  {
+    color: 'var(--gray800)',
+    onColor: 'var(--foreground-color-on-solid)',
+    label: 'on background-strong',
+    token: 'background-strong: #303b35',
+  },
+]
+
+const typographyTokenItems: TokenEntry[] = [
+  { key: 'font-family', value: 'Alan Sans, Gothic A1, system-ui, sans-serif' },
+  { key: 'font-weight-normal', value: '500' },
+  { key: 'font-weight-bold', value: '700' },
+  { key: 'font-size-32', value: '32px' },
+  { key: 'font-size-24', value: '24px' },
+  { key: 'font-size-18', value: '18px' },
+  { key: 'font-size-14', value: '14px' },
+  { key: 'font-size-12', value: '12px' },
+  { key: 'font-line-height-40', value: '40px' },
+  { key: 'font-line-height-32', value: '32px' },
+  { key: 'font-line-height-28', value: '28px' },
+  { key: 'font-line-height-24', value: '24px' },
+  { key: 'font-line-height-16', value: '16px' },
+]
+
+const sizeTokenItems: TokenEntry[] = [
+  { key: 'size-16', value: '16px' },
+  { key: 'size-24', value: '24px' },
+  { key: 'size-32', value: '32px' },
+  { key: 'size-40', value: '40px' },
+  { key: 'size-48', value: '48px' },
+  { key: 'size-80', value: '80px' },
+]
+
+const spaceTokenItems: TokenEntry[] = [
+  { key: 'space-1', value: '4px' },
+  { key: 'space-2', value: '8px' },
+  { key: 'space-3', value: '12px' },
+  { key: 'space-4', value: '16px' },
+  { key: 'space-8', value: '32px' },
+  { key: 'space-12', value: '48px' },
+  { key: 'space-16', value: '64px' },
+]
+
+const layoutTokenItems: TokenEntry[] = [
+  { key: 'layout-width-wide', value: '1280px' },
+  { key: 'layout-width-small', value: '640px' },
+  { key: 'layout-width-narrow', value: '400px' },
+  { key: 'layout-width-sidebar', value: '16rem' },
+  { key: 'layout-padding-inline', value: '5vw' },
+]
+
+const borderTokenItems: TokenEntry[] = [
+  { key: 'border-width', value: '1px' },
+  { key: 'border', value: '1px solid var(--border-color)' },
+  { key: 'border-transparent', value: 'var(--border-width) solid transparent' },
+  { key: 'border-radius', value: '6px' },
+  { key: 'border-radius-large', value: '1rem' },
+  { key: 'border-radius-full', value: '50%' },
+]
+
+const shadowTokenItems: TokenEntry[] = [
+  { key: 'surface-base-shadow', value: '0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.08)' },
+  { key: 'surface-high-shadow', value: '0 16px 32px rgba(0,0,0,.2)' },
+]
+
+const materialTokenItems: TokenEntry[] = [
+  { key: 'surface-base-blur', value: '10px' },
+  { key: 'surface-base-opacity', value: '0.35' },
+  { key: 'surface-high-blur', value: '20px' },
+  { key: 'surface-high-opacity', value: '0.55' },
+]
+
+const zIndexTokenItems: TokenEntry[] = [
+  { key: 'material-zindex-base', value: '0' },
+  { key: 'material-zindex-raised', value: '10' },
+  { key: 'material-zindex-overlay', value: '100' },
+  { key: 'material-zindex-modal', value: '1000' },
+  { key: 'material-zindex-chrome', value: '1100' },
+  { key: 'material-zindex-toast', value: '9000' },
+]
+
 const main = html`
   <main class="page">
     <mm-flex direction="column" gap="16">
@@ -44,17 +210,7 @@ const main = html`
       <mm-flex direction="column" gap="0">
         <mm-text-block level="2" heading="Color" description="TODO..."></mm-text-block>
 
-        <mm-grid columns="6">
-          <mm-color-token color="var(--gray0)" token="gray0: #fff"></mm-color-token>
-          <mm-color-token color="var(--gray100)" token="gray100: #f5f6f5"></mm-color-token>
-          <mm-color-token color="var(--gray200)" token="gray200: #d2d7d5"></mm-color-token>
-          <mm-color-token color="var(--gray400)" token="gray400: #8a908d"></mm-color-token>
-          <mm-color-token color="var(--gray800)" token="gray800: #303b35"></mm-color-token>
-          <mm-color-token color="var(--green100)" token="green100: green tint"></mm-color-token>
-          <mm-color-token color="var(--green800)" token="green800: #1b995c"></mm-color-token>
-          <mm-color-token color="var(--red100)" token="red100: red tint"></mm-color-token>
-          <mm-color-token color="var(--red800)" token="red800: #f02849"></mm-color-token>
-        </mm-grid>
+        <mm-grid columns="6">${renderColorTokens(grayscaleColorTokens)}</mm-grid>
         <!-- <mm-grid
           columns="6"
           style="margin-top: var(--space-3)"
@@ -63,53 +219,11 @@ const main = html`
 
         <mm-separator></mm-separator>
         <mm-grid columns="4" aria-label="grayscale color tokens">
-          <mm-color-token
-            color="var(--color-primary)"
-            on-color="var(--foreground-color-on-primary)"
-            label="on primary"
-            token="primary: green800"
-          ></mm-color-token>
-          <mm-color-token
-            color="var(--green100)"
-            on-color="var(--foreground-color)"
-            label="on primary-light"
-            token="primary-light: green100"
-          ></mm-color-token>
-          <!-- warning -->
-          <mm-color-token
-            color="var(--red100)"
-            on-color="var(--foreground-color-on-warning)"
-            label="on warning-light"
-            token="warning-light: red100"
-          ></mm-color-token>
-          <mm-color-token
-            color="var(--red800)"
-            on-color="var(--foreground-color-on-solid)"
-            label="on warning"
-            token="warning: red800"
-          ></mm-color-token>
+          ${renderColorTokens(semanticColorTokens)}
         </mm-grid>
 
         <mm-grid columns="4" style="margin-top: var(--space-3)">
-          <mm-color-token
-            color="var(--gray0)"
-            on-color="var(--foreground-color)"
-            label="on background"
-            token="background: #fff"
-          ></mm-color-token>
-
-          <mm-color-token
-            color="var(--gray100)"
-            on-color="var(--foreground-color)"
-            label="on background-subtle"
-            token="background-subtle: #f5f6f5"
-          ></mm-color-token>
-          <mm-color-token
-            color="var(--gray800)"
-            on-color="var(--foreground-color-on-solid)"
-            label="on background-strong"
-            token="background-strong: #303b35"
-          ></mm-color-token>
+          ${renderColorTokens(backgroundColorTokens)}
         </mm-grid>
 
         <!-- <mm-token-group>
@@ -199,48 +313,7 @@ const main = html`
         </mm-flex>
       </mm-flex> -->
 
-        <mm-token-group>
-          <!-- <mm-token-item
-          key="font family"
-          value=""
-          style="border-color: #000; font-weight: var(--font-weight-bold)"
-        ></mm-token-item> -->
-          <mm-token-item
-            key="font-family"
-            value="Alan Sans, Gothic A1, system-ui, sans-serif"
-          ></mm-token-item>
-          <!-- <mm-token-item
-          key="font weight"
-          value=""
-          style="border-color: #000; font-weight: var(--font-weight-bold)"
-        ></mm-token-item> -->
-          <mm-token-item key="font-weight-normal" value="500"></mm-token-item>
-          <mm-token-item key="font-weight-bold" value="700"></mm-token-item>
-          <!-- <mm-token-item
-          key="font size"
-          value=""
-          style="
-            border-color: #000;
-            font-weight: var(--font-weight-bold);
-            font-size: var(--font-size-18);
-          "
-        ></mm-token-item> -->
-          <mm-token-item key="font-size-32" value="32px"></mm-token-item>
-          <mm-token-item key="font-size-24" value="24px"></mm-token-item>
-          <mm-token-item key="font-size-18" value="18px"></mm-token-item>
-          <mm-token-item key="font-size-14" value="14px"></mm-token-item>
-          <mm-token-item key="font-size-12" value="12px"></mm-token-item>
-          <!-- <mm-token-item
-          key="font line height"
-          value=""
-          style="border-color: #000; font-weight: var(--font-weight-bold)"
-        ></mm-token-item> -->
-          <mm-token-item key="font-line-height-40" value="40px"></mm-token-item>
-          <mm-token-item key="font-line-height-32" value="32px"></mm-token-item>
-          <mm-token-item key="font-line-height-28" value="28px"></mm-token-item>
-          <mm-token-item key="font-line-height-24" value="24px"></mm-token-item>
-          <mm-token-item key="font-line-height-16" value="16px"></mm-token-item>
-        </mm-token-group>
+        <mm-token-group>${renderTokenItems(typographyTokenItems)}</mm-token-group>
       </mm-flex>
 
       <mm-flex direction="column" gap="3">
@@ -325,14 +398,7 @@ const main = html`
             </mm-flex>
           </mm-flex>
         </mm-token-stage>
-        <mm-token-group>
-          <mm-token-item key="size-16" value="16px"></mm-token-item>
-          <mm-token-item key="size-24" value="24px"></mm-token-item>
-          <mm-token-item key="size-32" value="32px"></mm-token-item>
-          <mm-token-item key="size-40" value="40px"></mm-token-item>
-          <mm-token-item key="size-48" value="48px"></mm-token-item>
-          <mm-token-item key="size-80" value="80px"></mm-token-item>
-        </mm-token-group>
+        <mm-token-group>${renderTokenItems(sizeTokenItems)}</mm-token-group>
       </mm-flex>
 
       <mm-flex direction="column" gap="3">
@@ -535,15 +601,7 @@ const main = html`
             </mm-flex>
           </mm-flex>
         </mm-token-stage>
-        <mm-token-group>
-          <mm-token-item key="space-1" value="4px"></mm-token-item>
-          <mm-token-item key="space-2" value="8px"></mm-token-item>
-          <mm-token-item key="space-3" value="12px"></mm-token-item>
-          <mm-token-item key="space-4" value="16px"></mm-token-item>
-          <mm-token-item key="space-8" value="32px"></mm-token-item>
-          <mm-token-item key="space-12" value="48px"></mm-token-item>
-          <mm-token-item key="space-16" value="64px"></mm-token-item>
-        </mm-token-group>
+        <mm-token-group>${renderTokenItems(spaceTokenItems)}</mm-token-group>
       </mm-flex>
 
       <mm-flex direction="column" gap="3">
@@ -552,13 +610,7 @@ const main = html`
           heading="Layout"
           description="레이아웃 토큰은 페이지, 팝오버, 폼 컨테이너처럼 반복되는 구조의 최대 너비와 여백을 정의합니다."
         ></mm-text-block>
-        <mm-token-group>
-          <mm-token-item key="layout-width-wide" value="1280px"></mm-token-item>
-          <mm-token-item key="layout-width-small" value="640px"></mm-token-item>
-          <mm-token-item key="layout-width-narrow" value="400px"></mm-token-item>
-          <mm-token-item key="layout-width-sidebar" value="16rem"></mm-token-item>
-          <mm-token-item key="layout-padding-inline" value="5vw"></mm-token-item>
-        </mm-token-group>
+        <mm-token-group>${renderTokenItems(layoutTokenItems)}</mm-token-group>
       </mm-flex>
 
       <mm-flex direction="column" gap="3">
@@ -662,18 +714,7 @@ const main = html`
             </mm-flex>
           </mm-flex>
         </mm-token-stage>
-        <mm-token-group>
-          <mm-token-item key="border-width" value="1px"></mm-token-item>
-
-          <mm-token-item key="border" value="1px solid var(--border-color)"></mm-token-item>
-          <mm-token-item
-            key="border-transparent"
-            value="var(--border-width) solid transparent"
-          ></mm-token-item>
-          <mm-token-item key="border-radius" value="6px"></mm-token-item>
-          <mm-token-item key="border-radius-large" value="1rem"></mm-token-item>
-          <mm-token-item key="border-radius-full" value="50%"></mm-token-item>
-        </mm-token-group>
+        <mm-token-group>${renderTokenItems(borderTokenItems)}</mm-token-group>
       </mm-flex>
 
       <mm-flex direction="column" gap="3">
@@ -713,14 +754,7 @@ const main = html`
           </mm-flex>
         </mm-token-stage>
         <mm-token-group aria-label="shadow primitive tokens">
-          <mm-token-item
-            key="surface-base-shadow"
-            value="0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.08)"
-          ></mm-token-item>
-          <mm-token-item
-            key="surface-high-shadow"
-            value="0 16px 32px rgba(0,0,0,.2)"
-          ></mm-token-item>
+          ${renderTokenItems(shadowTokenItems)}
         </mm-token-group>
 
         <mm-separator></mm-separator>
@@ -784,10 +818,7 @@ const main = html`
           </div>
         </mm-token-stage>
         <mm-token-group aria-label="material primitive tokens">
-          <mm-token-item key="surface-base-blur" value="10px"></mm-token-item>
-          <mm-token-item key="surface-base-opacity" value="0.35"></mm-token-item>
-          <mm-token-item key="surface-high-blur" value="20px"></mm-token-item>
-          <mm-token-item key="surface-high-opacity" value="0.55"></mm-token-item>
+          ${renderTokenItems(materialTokenItems)}
         </mm-token-group>
       </mm-flex>
 
@@ -798,14 +829,7 @@ const main = html`
           description="z-index는 레이어의 우선순위를 정의합니다. 같은 레이어군 안에서만 비교되도록 의미 이름을 사용합니다."
         ></mm-text-block>
 
-        <mm-token-group>
-          <mm-token-item key="material-zindex-base" value="0"></mm-token-item>
-          <mm-token-item key="material-zindex-raised" value="10"></mm-token-item>
-          <mm-token-item key="material-zindex-overlay" value="100"></mm-token-item>
-          <mm-token-item key="material-zindex-modal" value="1000"></mm-token-item>
-          <mm-token-item key="material-zindex-chrome" value="1100"></mm-token-item>
-          <mm-token-item key="material-zindex-toast" value="9000"></mm-token-item>
-        </mm-token-group>
+        <mm-token-group>${renderTokenItems(zIndexTokenItems)}</mm-token-group>
 
         <mm-text-list
           texts='[
@@ -855,261 +879,3 @@ document.addEventListener('DOMContentLoaded', () => {
   // renderSidemenu
   // document.querySelector('.page')!.insertAdjacentHTML('afterbegin', sidemenu)
 })
-
-const colorTokens = [
-  { name: '--gray0', value: '', cases: ['--background-color'] },
-  { name: '--gray100', value: '', cases: ['--background-subtle-color'] },
-  { name: '--gray200', value: '', cases: ['--border-color'] },
-  { name: '--gray400', value: '', cases: ['--foreground-subtle-color'] },
-  // { name: '--gray600', value: '' },
-  { name: '--gray800', value: '', cases: ['--foreground-color', '--background-strong-color'] },
-  { name: '--green100', value: '', cases: ['--color-primary-subtle'] },
-  { name: '--green800', value: '', cases: ['--color-primary'] },
-  { name: '--red100', value: '', cases: ['--color-danger-light'] },
-  { name: '--red800', value: '', cases: ['--color-danger'] },
-  { name: '--yellow800', value: '', cases: ['--color-accent'] },
-  {
-    name: '--interaction-selected-background-color',
-    value: 'var(--color-primary-subtle)',
-    cases: [],
-  },
-  { name: '--interaction-selected-foreground-color', value: 'var(--color-primary)', cases: [] },
-  { name: '--interaction-selected-border-color', value: 'var(--color-primary)', cases: [] },
-  { name: '--color-primary', value: 'var(--green800)', cases: [] },
-  { name: '--color-primary-subtle', value: 'var(--green100)', cases: [] },
-  { name: '--color-accent', value: 'var(--yellow800)', cases: [] },
-
-  { name: '--color-success', value: 'var(--green800)', cases: [] },
-  { name: '--color-success-foreground', value: '#117a45', cases: [] },
-
-  {
-    name: '--color-success-border',
-    value: 'color-mix(in srgb, var(--color-success) 30%, transparent)',
-    cases: [],
-  },
-  { name: '--color-warning', value: 'var(--orange800)', cases: [] },
-  { name: '--color-warning-foreground', value: '#9a4600', cases: [] },
-  { name: '--color-danger', value: 'var(--red800)', cases: [] },
-  { name: '--color-danger-foreground', value: '#c51635', cases: [] },
-
-  { name: '--background-color', value: 'var(--gray0)', cases: [] },
-  { name: '--background-subtle-color', value: 'var(--gray100)', cases: [] },
-  { name: '--background-strong-color', value: 'var(--gray800)', cases: [] },
-  { name: '--border-color', value: 'var(--gray200)', cases: [] },
-  { name: '--foreground-color', value: 'var(--gray800)', cases: [] },
-  { name: '--foreground-subtle-color', value: 'var(--gray400)', cases: [] },
-  { name: '--foreground-color-on-solid', value: 'var(--gray0)', cases: [] },
-  { name: '--foreground-color-on-warning', value: 'var(--red800)', cases: [] },
-  { name: '--foreground-color-on-primary', value: 'var(--gray0)', cases: [] },
-  { name: '--interaction-focus-outline', value: '2px solid var(--gray800)', cases: [] },
-  { name: '--interaction-active-background-color', value: 'var(--color-accent)', cases: [] },
-  { name: '--color-interaction-active-border', value: '#008296', cases: [] },
-  {
-    name: '--interaction-active-shadow',
-    value: '0 0 0 2px #c8f3fa, inset 0 0 0 2px var(--foreground-color-on-solid)',
-    cases: [],
-  },
-  { name: '--skeleton-sample', value: '', cases: [''] },
-  { name: '--gradient-transparnet', value: '', cases: [''] },
-  { name: '--radius', value: '6px', cases: [''] },
-  { name: '--radius-large', value: '1rem', cases: [''] },
-  { name: '--radius-full', value: '50%', cases: [''] },
-  {
-    name: '--surface-base-shadow',
-    value: '0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.08)',
-    cases: [''],
-  },
-]
-
-const typographyTokens = [
-  { name: '--font-family', value: "'Alan Sans', 'Gothic A1', system-ui, sans-serif" },
-  { name: '--font-size-32', value: '32px' },
-  { name: '--font-size-24', value: '24px' },
-  { name: '--font-size-18', value: '18px' },
-  { name: '--font-size-14', value: '14px' },
-  { name: '--font-size-12', value: '12px' },
-  { name: '--font-line-height-40', value: '40px' },
-  { name: '--font-line-height-32', value: '32px' },
-  { name: '--font-line-height-28', value: '28px' },
-  { name: '--font-line-height-24', value: '24px' },
-  { name: '--font-line-height-16', value: '16px' },
-  { name: '--font-weight-normal', value: '500' },
-  { name: '--font-weight-bold', value: '700' },
-]
-
-const sizeTokens = [
-  { name: '--size-80', value: '80px', cases: ['--avatar-size', '--list-item-size'] },
-  {
-    name: '--size-48',
-    value: '48px',
-    cases: ['--avatar-size', '--button-height', '--input-height'],
-  },
-  { name: '--size-40', value: '40px', cases: ['--avatar-size'] },
-  { name: '--size-32', value: '32px', cases: ['--avatar-size', '--button-height'] },
-  {
-    name: '--size-24',
-    value: '24px',
-    cases: ['--tag-height', '--checkbox-size'],
-  },
-  {
-    name: '--size-16',
-    value: '16px',
-    cases: ['--checkbox-size', '--radio-size', '--icon-button-size'],
-  },
-]
-
-const spacingTokens = [
-  { name: '--grid-gutter', value: '' },
-  { name: '--grid-column', value: '' },
-  { name: '--layout-padding-inline', value: '5vw' },
-  { name: '--space-1', value: '4px' },
-  { name: '--space-2', value: '8px' },
-  { name: '--space-3', value: '12px' },
-  { name: '--space-4', value: '16px' },
-  { name: '--space-8', value: '32px' },
-  { name: '--space-12', value: '48px' },
-  { name: '--space-16', value: '64px' },
-  { name: '--space-section', value: 'var(--space-16)' },
-]
-
-const layerTokens = [
-  { name: '--material-zindex-base', value: '0' },
-  { name: '--material-zindex-raised', value: '10' },
-  { name: '--material-zindex-overlay', value: '100' },
-  { name: '--material-zindex-modal', value: '1000' },
-  { name: '--material-zindex-chrome', value: '1100' },
-  { name: '--material-zindex-toast', value: '9000' },
-]
-
-const positioningTokens = []
-
-const animationTokens = [
-  { name: '--bazier', value: 'cubic-bezier(0.455, 0.03, 0.515, 0.955)' },
-  { name: '--animation-delay-first', value: '0.2s' },
-  { name: '--animation-delay-second', value: '0.4s' },
-  { name: '--animation-delay-third', value: '0.6s' },
-  { name: '--animation-duration', value: '0.4s' },
-  { name: '--animation-duration-instant', value: '0s' },
-  { name: '--duration-quickly', value: '0.2s' },
-  { name: '--duration-slowly', value: '0.6s' },
-]
-
-const article = [
-  {
-    title: 'Palette',
-    kicker: 'color and surface',
-    description: [
-      'hierarchy. 크기와 비례해서 radius와 shadow 조정이 필요하지만 규칙을 최소화.',
-      'theme. 인버트 컬러셋을 추가로 정의하지 않습니다. 하나의 컬러셋으로 다크 테마에 대응합니다. (쉽지 않음... )',
-      'colour. background/border/text/status',
-    ],
-    tokens: [...colorTokens],
-  },
-  {
-    title: 'Typography',
-    kicker: '활자의 위계와 배치.',
-    description:
-      '폰트마다 baseline이 다르기 때문에 폰트 변경 시 내부 텍스트의 상하 간격이 안 맞을 수 있다. 폰트를 변경하지 않고 대응하려면? 텍스트노드(레이블 역할)의 상단 패딩에 변수를 하나 추가해둔다.',
-    tokens: [...typographyTokens],
-  },
-  {
-    title: 'Sizing',
-    kicker: '요소의 너비와 길이',
-    description: [
-      '사이즈 토큰으로 추상화하지 않는 케이스 --navbar-height: var(--size-80)5rem, --sidenav-width: null',
-      '예외 케이스 switch height: 20px',
-    ],
-    tokens: [...sizeTokens],
-  },
-  {
-    title: 'Spacing',
-    kicker: '요소 사이의 간격. outset과 inset.',
-    description:
-      '폰트마다 baseline이 다르기 때문에 폰트 변경 시 내부 텍스트의 상하 간격이 안 맞을 수 있다. 폰트를 변경하지 않고 대응하려면? 텍스트노드(레이블 역할)의 상단 패딩에 변수를 하나 추가해둔다.',
-    tokens: [...spacingTokens],
-  },
-  {
-    title: 'Layout',
-    kicker: '활자의 위계와 배치.',
-    description:
-      '폰트마다 baseline이 다르기 때문에 폰트 변경 시 내부 텍스트의 상하 간격이 안 맞을 수 있다. 폰트를 변경하지 않고 대응하려면? 텍스트노드(레이블 역할)의 상단 패딩에 변수를 하나 추가해둔다.',
-    tokens: [...colorTokens],
-  },
-  {
-    title: 'Positioning',
-    kicker: '활자의 위계와 배치.',
-    description:
-      '폰트마다 baseline이 다르기 때문에 폰트 변경 시 내부 텍스트의 상하 간격이 안 맞을 수 있다. 폰트를 변경하지 않고 대응하려면? 텍스트노드(레이블 역할)의 상단 패딩에 변수를 하나 추가해둔다.',
-    tokens: [...positioningTokens],
-  },
-  {
-    title: 'Z-index',
-    kicker: '활자의 위계와 배치.',
-    description:
-      '폰트마다 baseline이 다르기 때문에 폰트 변경 시 내부 텍스트의 상하 간격이 안 맞을 수 있다. 폰트를 변경하지 않고 대응하려면? 텍스트노드(레이블 역할)의 상단 패딩에 변수를 하나 추가해둔다.',
-    tokens: [...layerTokens],
-  },
-  {
-    title: 'Opacity 🚧',
-    kicker: '투명도',
-    description: 'disabled state',
-    tokens: [...colorTokens],
-  },
-  {
-    title: 'Animation',
-    kicker: '작성 중. 애니메이션을 위한 유틸리티 클래스?',
-    description:
-      '콘텐츠보다 액션이 강조되지 않도록 뷰포트 내에서 delay를 최대 3개로 제한합니다. inactive로 변경될 때(닫기 등) 즉시(instantly) 실행 합니다.',
-    tokens: [...animationTokens],
-  },
-  { title: 'test', description: 'test test', tokens: [...colorTokens] },
-]
-
-// document.addEventListener('DOMContentLoaded', () => {
-//   article.forEach(item => {
-//     const articleSample = `
-//       <article class="article js-scrollspy-section">
-//         <mm-text size="32">${item.title}</mm-text>
-//         <mm-paragraph size="large">
-//         ${item.kicker}
-//         </mm-paragraph>
-//         <mm-paragraph style="margin:2rem 0">${item.description}</mm-paragraph>
-//         <div class="token-group">
-//           ${item.tokens.map(item => {
-//             return `<article class="token-item tile-flat ${item.name}">
-//               <figure class="token-item-avatar"></figure>
-//               <b>${item.name}</b>
-//               <div>
-//                 <mm-paragraph>--color-background</mm-paragraph>
-//               </div>
-//               <button class="icon-indicator" style="position: absolute; right: 0.5rem; top: 0.5rem">
-//                 <span class="material-symbols-outlined">content_copy</span>
-//               </button>
-//             </article>`
-//           })}
-//         </div>
-//       </article>
-//     `
-
-//     document.querySelector('.tokens-body')!.innerHTML += articleSample
-//   })
-
-// })
-
-// const temp = colorTokens.forEach(token => {
-//   const tokenItem = `
-//   <article class="token-item tile-flat is-gray000">
-//     <figure class="token-item-avatar"></figure>
-//     <b>${token.name}</b>
-//     <div>
-//       <mm-paragraph>--color-background</mm-paragraph>
-//     </div>
-//     <button class="icon-indicator" style="position: absolute; right: 0.5rem; top: 0.5rem">
-//       <span class="material-symbols-outlined">content_copy</span>
-//     </button>
-//   </article>
-//   `
-//   document.querySelector('.tokens-body')!.innerHTML += tokenItem
-// })
-
-function renderComponent() {}

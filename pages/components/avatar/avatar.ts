@@ -1,4 +1,5 @@
 import { html } from 'lit'
+import { AVATAR_SHAPE_TYPE_LABEL } from '@/components/avatar'
 import { renderDocumentLayout } from '../../../layouts/document-layout'
 
 const groupAvatars = ['', '', '', '']
@@ -49,7 +50,7 @@ const main = html`
     <mm-component-props>
       <mm-prop name="variant" type="'primary' | 'secondary' | 'tertiary' = 'primary'"></mm-prop>
       <mm-prop name="size" type="'80' | '48' | '40' | '32' = '40'"></mm-prop>
-      <mm-prop name="shape" type="'circle' | 'square' = 'square'"></mm-prop>
+      <mm-prop name="shape" type=${AVATAR_SHAPE_TYPE_LABEL}></mm-prop>
       <mm-prop name="src" type="string" optional></mm-prop>
       <mm-prop name="icon" type="IconName" optional></mm-prop>
     </mm-component-props>

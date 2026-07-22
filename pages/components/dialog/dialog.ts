@@ -35,14 +35,8 @@ const main = html`
       <mm-prop name="open" type="boolean"></mm-prop>
       <mm-prop name="heading" type="string"></mm-prop>
       <mm-prop name="description" type="string"></mm-prop>
-      <mm-prop
-        name="primaryAction"
-        type="{ label: string; onClick?: () => void; disabled?: boolean }"
-      ></mm-prop>
-      <mm-prop
-        name="secondaryAction"
-        type="{ label: string; onClick?: () => void; disabled?: boolean }"
-      ></mm-prop>
+      <mm-prop name="primaryAction" type="ActionConfig" optional></mm-prop>
+      <mm-prop name="secondaryAction" type="ActionConfig" optional></mm-prop>
       <mm-prop name="slot='footer'" type="actions"></mm-prop>
       <mm-prop name="dialog-close" type="CustomEvent" kind="event"></mm-prop>
     </mm-component-props>

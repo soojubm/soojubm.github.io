@@ -1,4 +1,5 @@
 import { html } from 'lit'
+import { AVATAR_SHAPE_TYPE_LABEL } from '@/components/avatar'
 import { renderDocumentLayout } from '../../../layouts/document-layout'
 
 const main = html`
@@ -62,7 +63,7 @@ const main = html`
       <mm-prop name="icon" type="IconName" optional></mm-prop>
       <mm-prop name="avatar-src" type="string" optional></mm-prop>
       <mm-prop name="avatar-variant" type="string" optional></mm-prop>
-      <mm-prop name="avatar-shape" type="'circle' | 'square' = 'square'" optional></mm-prop>
+      <mm-prop name="avatar-shape" type=${AVATAR_SHAPE_TYPE_LABEL} optional></mm-prop>
       <mm-prop name="slot: default" type="HTMLElement" optional></mm-prop>
       <mm-prop name="slot: trailing" type="HTMLElement" optional></mm-prop>
     </mm-component-props>

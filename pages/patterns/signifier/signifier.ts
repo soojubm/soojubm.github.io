@@ -1,6 +1,106 @@
 import { html } from 'lit'
 import type { FilterOption } from '@/components/button/semantics/filter-button-group'
+import type { IconName } from '@/components/icon-button/semantics/icon-names'
 import { renderDocumentLayout } from '../../../layouts/document-layout'
+
+interface IconListItem {
+  icon: IconName
+  label: string
+  description: string
+}
+
+const renderIconListItems = (items: IconListItem[]) =>
+  items.map(
+    item => html`
+      <mm-list-item
+        icon=${item.icon}
+        size="48"
+        label=${item.label}
+        description=${item.description}
+      ></mm-list-item>
+    `,
+  )
+
+const actionIconItems: IconListItem[] = [
+  { icon: 'plus', label: 'Add', description: '항목을 추가하거나 생성합니다.' },
+  { icon: 'xmark', label: 'Close', description: '대화상자나 패널을 닫습니다.' },
+  { icon: 'copy', label: 'Copy', description: '내용을 클립보드에 복사합니다.' },
+  { icon: 'check', label: 'Copy Success', description: '복사 완료 상태를 나타냅니다.' },
+  { icon: 'trash', label: 'Delete', description: '항목을 영구 삭제합니다.' },
+  { icon: 'xmark', label: 'Dismiss', description: '알림이나 배너를 닫습니다.' },
+  { icon: 'filter', label: 'Filter', description: '목록에 필터를 적용합니다.' },
+  { icon: 'plus', label: 'Increase', description: '값이나 수량을 증가시킵니다.' },
+  { icon: 'import', label: 'Import', description: '파일이나 데이터를 가져옵니다.' },
+  { icon: 'log-out', label: 'Log Out', description: '로그아웃합니다.' },
+  { icon: 'more-vert', label: 'More Actions', description: '추가 액션 메뉴를 표시합니다.' },
+  { icon: 'minus', label: 'Decrease', description: '값이나 수량을 감소시킵니다.' },
+  { icon: 'refresh', label: 'Refresh', description: '화면이나 데이터를 새로고침합니다.' },
+  { icon: 'refresh-double', label: 'Retry', description: '실패한 작업을 재시도합니다.' },
+  { icon: 'send-diagonal', label: 'Send', description: '메시지나 데이터를 전송합니다.' },
+  { icon: 'settings', label: 'Settings', description: '설정 화면으로 이동합니다.' },
+  { icon: 'arrow-up-right', label: 'Share', description: '콘텐츠를 외부로 공유합니다.' },
+]
+
+const navigationIconItems: IconListItem[] = [
+  { icon: 'arrow-left', label: 'Back', description: '이전 화면으로 돌아갑니다.' },
+  { icon: 'nav-arrow-up', label: 'Collapse', description: '펼쳐진 영역을 접습니다.' },
+  { icon: 'nav-arrow-down', label: 'Expand', description: '영역을 펼쳐 내용을 표시합니다.' },
+  { icon: 'arrow-right', label: 'Forward', description: '다음 화면으로 이동합니다.' },
+  { icon: 'menu-scale', label: 'Menu', description: '내비게이션 메뉴를 엽니다.' },
+  { icon: 'arrow-right', label: 'Next', description: '다음 항목으로 이동합니다.' },
+  { icon: 'open-in-browser', label: 'Open External', description: '외부 목적지로 이동합니다.' },
+  { icon: 'arrow-left', label: 'Previous', description: '이전 항목으로 이동합니다.' },
+  { icon: 'arrow-up', label: 'Scroll Top', description: '페이지 상단으로 스크롤합니다.' },
+  { icon: 'nav-arrow-right', label: 'Sitemap', description: '하위 항목이 있음을 나타냅니다.' },
+]
+
+const statusIconItems: IconListItem[] = [
+  { icon: 'warning-circle', label: 'Danger', description: '위험하거나 돌이킬 수 없는 상태입니다.' },
+  { icon: 'check-circle-solid', label: 'Done', description: '작업이 완전히 완료된 상태입니다.' },
+  { icon: 'alert-circle', label: 'Error', description: '오류 또는 실패 상태를 나타냅니다.' },
+  { icon: 'info-circle', label: 'Info', description: '참고 가능한 보조 정보를 제공합니다.' },
+  { icon: 'check-circle', label: 'Success', description: '작업이 성공적으로 완료되었습니다.' },
+  {
+    icon: 'warning-triangle',
+    label: 'Warning',
+    description: '진행 전에 주의가 필요한 상태입니다.',
+  },
+]
+
+const selectionIconItems: IconListItem[] = [
+  { icon: 'bookmark', label: 'Bookmark', description: '저장하지 않은 북마크 상태입니다.' },
+  {
+    icon: 'bookmark-solid',
+    label: 'Bookmark Selected',
+    description: '북마크에 저장된 상태입니다.',
+  },
+  { icon: 'check', label: 'Check', description: '선택됨, 완료됨, 확인됨을 나타냅니다.' },
+  { icon: 'star', label: 'Favorite', description: '즐겨찾기에 추가되지 않은 상태입니다.' },
+  { icon: 'star-solid', label: 'Favorite Selected', description: '즐겨찾기에 추가된 상태입니다.' },
+  { icon: 'heart', label: 'Like', description: '좋아요를 누르지 않은 상태입니다.' },
+  { icon: 'heart-solid', label: 'Like Selected', description: '좋아요를 누른 상태입니다.' },
+]
+
+const visibilityIconItems: IconListItem[] = [
+  { icon: 'eye-closed', label: 'Hide', description: '내용을 숨깁니다.' },
+  { icon: 'eye-solid', label: 'Reveal', description: '숨겨진 내용(예: 비밀번호)을 표시합니다.' },
+  { icon: 'xray-view', label: 'Xray', description: '숨겨진 구조나 레이어를 투시합니다.' },
+]
+
+const communicationIconItems: IconListItem[] = [
+  {
+    icon: 'megaphone',
+    label: 'Announcement',
+    description: '공지사항이나 중요 메시지를 나타냅니다.',
+  },
+  { icon: 'message', label: 'Comment', description: '댓글이나 메모를 작성합니다.' },
+  { icon: 'thumbs-up', label: 'Like', description: '긍정적인 반응을 나타냅니다.' },
+  { icon: 'thumbs-down', label: 'Dislike', description: '부정적인 반응을 나타냅니다.' },
+  { icon: 'mail', label: 'Mail', description: '이메일 또는 메시지를 보냅니다.' },
+  { icon: 'mail-in', label: 'Mail In', description: '받은 메시지를 나타냅니다.' },
+  { icon: 'bell', label: 'Notification', description: '알림 또는 공지를 나타냅니다.' },
+  { icon: 'reply-to-message', label: 'Reply', description: '메시지에 답장합니다.' },
+]
 
 const iconCategoryValues = ['action']
 const iconCategoryOptions: FilterOption[] = [
@@ -211,339 +311,27 @@ const main = html`
       ></mm-filter-button-group>
 
       <div id="icon-section-action">
-        <mm-grid columns="3">
-          <mm-list-item
-            icon="plus"
-            size="48"
-            label="Add"
-            description="항목을 추가하거나 생성합니다."
-          ></mm-list-item>
-          <mm-list-item
-            icon="xmark"
-            size="48"
-            label="Close"
-            description="대화상자나 패널을 닫습니다."
-          ></mm-list-item>
-          <mm-list-item
-            icon="copy"
-            size="48"
-            label="Copy"
-            description="내용을 클립보드에 복사합니다."
-          ></mm-list-item>
-          <mm-list-item
-            icon="check"
-            size="48"
-            label="Copy Success"
-            description="복사 완료 상태를 나타냅니다."
-          ></mm-list-item>
-          <mm-list-item
-            icon="trash"
-            size="48"
-            label="Delete"
-            description="항목을 영구 삭제합니다."
-          ></mm-list-item>
-          <mm-list-item
-            icon="xmark"
-            size="48"
-            label="Dismiss"
-            description="알림이나 배너를 닫습니다."
-          ></mm-list-item>
-          <mm-list-item
-            icon="filter"
-            size="48"
-            label="Filter"
-            description="목록에 필터를 적용합니다."
-          ></mm-list-item>
-          <mm-list-item
-            icon="plus"
-            size="48"
-            label="Increase"
-            description="값이나 수량을 증가시킵니다."
-          ></mm-list-item>
-          <mm-list-item
-            icon="import"
-            size="48"
-            label="Import"
-            description="파일이나 데이터를 가져옵니다."
-          ></mm-list-item>
-          <mm-list-item
-            icon="log-out"
-            size="48"
-            label="Log Out"
-            description="로그아웃합니다."
-          ></mm-list-item>
-          <mm-list-item
-            icon="more-vert"
-            size="48"
-            label="More Actions"
-            description="추가 액션 메뉴를 표시합니다."
-          ></mm-list-item>
-          <mm-list-item
-            icon="minus"
-            size="48"
-            label="Decrease"
-            description="값이나 수량을 감소시킵니다."
-          ></mm-list-item>
-          <mm-list-item
-            icon="refresh"
-            size="48"
-            label="Refresh"
-            description="화면이나 데이터를 새로고침합니다."
-          ></mm-list-item>
-          <mm-list-item
-            icon="refresh-double"
-            size="48"
-            label="Retry"
-            description="실패한 작업을 재시도합니다."
-          ></mm-list-item>
-          <mm-list-item
-            icon="send-diagonal"
-            size="48"
-            label="Send"
-            description="메시지나 데이터를 전송합니다."
-          ></mm-list-item>
-          <mm-list-item
-            icon="settings"
-            size="48"
-            label="Settings"
-            description="설정 화면으로 이동합니다."
-          ></mm-list-item>
-          <mm-list-item
-            icon="arrow-up-right"
-            size="48"
-            label="Share"
-            description="콘텐츠를 외부로 공유합니다."
-          ></mm-list-item>
-        </mm-grid>
+        <mm-grid columns="3">${renderIconListItems(actionIconItems)}</mm-grid>
       </div>
 
       <div id="icon-section-navigation" hidden>
-        <mm-grid columns="3">
-          <mm-list-item
-            icon="arrow-left"
-            size="48"
-            label="Back"
-            description="이전 화면으로 돌아갑니다."
-          ></mm-list-item>
-          <mm-list-item
-            icon="nav-arrow-up"
-            size="48"
-            label="Collapse"
-            description="펼쳐진 영역을 접습니다."
-          ></mm-list-item>
-          <mm-list-item
-            icon="nav-arrow-down"
-            size="48"
-            label="Expand"
-            description="영역을 펼쳐 내용을 표시합니다."
-          ></mm-list-item>
-          <mm-list-item
-            icon="arrow-right"
-            size="48"
-            label="Forward"
-            description="다음 화면으로 이동합니다."
-          ></mm-list-item>
-          <mm-list-item
-            icon="menu-scale"
-            size="48"
-            label="Menu"
-            description="내비게이션 메뉴를 엽니다."
-          ></mm-list-item>
-          <mm-list-item
-            icon="arrow-right"
-            size="48"
-            label="Next"
-            description="다음 항목으로 이동합니다."
-          ></mm-list-item>
-          <mm-list-item
-            icon="open-in-browser"
-            size="48"
-            label="Open External"
-            description="외부 목적지로 이동합니다."
-          ></mm-list-item>
-          <mm-list-item
-            icon="arrow-left"
-            size="48"
-            label="Previous"
-            description="이전 항목으로 이동합니다."
-          ></mm-list-item>
-          <mm-list-item
-            icon="arrow-up"
-            size="48"
-            label="Scroll Top"
-            description="페이지 상단으로 스크롤합니다."
-          ></mm-list-item>
-          <mm-list-item
-            icon="nav-arrow-right"
-            size="48"
-            label="Sitemap"
-            description="하위 항목이 있음을 나타냅니다."
-          ></mm-list-item>
-        </mm-grid>
+        <mm-grid columns="3">${renderIconListItems(navigationIconItems)}</mm-grid>
       </div>
 
       <div id="icon-section-status" hidden>
-        <mm-grid columns="3">
-          <mm-list-item
-            icon="warning-circle"
-            size="48"
-            label="Danger"
-            description="위험하거나 돌이킬 수 없는 상태입니다."
-          ></mm-list-item>
-          <mm-list-item
-            icon="check-circle-solid"
-            size="48"
-            label="Done"
-            description="작업이 완전히 완료된 상태입니다."
-          ></mm-list-item>
-          <mm-list-item
-            icon="alert-circle"
-            size="48"
-            label="Error"
-            description="오류 또는 실패 상태를 나타냅니다."
-          ></mm-list-item>
-          <mm-list-item
-            icon="info-circle"
-            size="48"
-            label="Info"
-            description="참고 가능한 보조 정보를 제공합니다."
-          ></mm-list-item>
-          <mm-list-item
-            icon="check-circle"
-            size="48"
-            label="Success"
-            description="작업이 성공적으로 완료되었습니다."
-          ></mm-list-item>
-          <mm-list-item
-            icon="warning-triangle"
-            size="48"
-            label="Warning"
-            description="진행 전에 주의가 필요한 상태입니다."
-          ></mm-list-item>
-        </mm-grid>
+        <mm-grid columns="3">${renderIconListItems(statusIconItems)}</mm-grid>
       </div>
 
       <div id="icon-section-selection" hidden>
-        <mm-grid columns="3">
-          <mm-list-item
-            icon="bookmark"
-            size="48"
-            label="Bookmark"
-            description="저장하지 않은 북마크 상태입니다."
-          ></mm-list-item>
-          <mm-list-item
-            icon="bookmark-solid"
-            size="48"
-            label="Bookmark Selected"
-            description="북마크에 저장된 상태입니다."
-          ></mm-list-item>
-          <mm-list-item
-            icon="check"
-            size="48"
-            label="Check"
-            description="선택됨, 완료됨, 확인됨을 나타냅니다."
-          ></mm-list-item>
-          <mm-list-item
-            icon="star"
-            size="48"
-            label="Favorite"
-            description="즐겨찾기에 추가되지 않은 상태입니다."
-          ></mm-list-item>
-          <mm-list-item
-            icon="star-solid"
-            size="48"
-            label="Favorite Selected"
-            description="즐겨찾기에 추가된 상태입니다."
-          ></mm-list-item>
-          <mm-list-item
-            icon="heart"
-            size="48"
-            label="Like"
-            description="좋아요를 누르지 않은 상태입니다."
-          ></mm-list-item>
-          <mm-list-item
-            icon="heart-solid"
-            size="48"
-            label="Like Selected"
-            description="좋아요를 누른 상태입니다."
-          ></mm-list-item>
-        </mm-grid>
+        <mm-grid columns="3">${renderIconListItems(selectionIconItems)}</mm-grid>
       </div>
 
       <div id="icon-section-visibility" hidden>
-        <mm-grid columns="3">
-          <mm-list-item
-            icon="eye-closed"
-            size="48"
-            label="Hide"
-            description="내용을 숨깁니다."
-          ></mm-list-item>
-          <mm-list-item
-            icon="eye-solid"
-            size="48"
-            label="Reveal"
-            description="숨겨진 내용(예: 비밀번호)을 표시합니다."
-          ></mm-list-item>
-          <mm-list-item
-            icon="xray-view"
-            size="48"
-            label="Xray"
-            description="숨겨진 구조나 레이어를 투시합니다."
-          ></mm-list-item>
-        </mm-grid>
+        <mm-grid columns="3">${renderIconListItems(visibilityIconItems)}</mm-grid>
       </div>
 
       <div id="icon-section-communication" hidden>
-        <mm-grid columns="3">
-          <mm-list-item
-            icon="megaphone"
-            size="48"
-            label="Announcement"
-            description="공지사항이나 중요 메시지를 나타냅니다."
-          ></mm-list-item>
-          <mm-list-item
-            icon="message"
-            size="48"
-            label="Comment"
-            description="댓글이나 메모를 작성합니다."
-          ></mm-list-item>
-          <mm-list-item
-            icon="thumbs-up"
-            size="48"
-            label="Like"
-            description="긍정적인 반응을 나타냅니다."
-          ></mm-list-item>
-          <mm-list-item
-            icon="thumbs-down"
-            size="48"
-            label="Dislike"
-            description="부정적인 반응을 나타냅니다."
-          ></mm-list-item>
-          <mm-list-item
-            icon="mail"
-            size="48"
-            label="Mail"
-            description="이메일 또는 메시지를 보냅니다."
-          ></mm-list-item>
-          <mm-list-item
-            icon="mail-in"
-            size="48"
-            label="Mail In"
-            description="받은 메시지를 나타냅니다."
-          ></mm-list-item>
-          <mm-list-item
-            icon="bell"
-            size="48"
-            label="Notification"
-            description="알림 또는 공지를 나타냅니다."
-          ></mm-list-item>
-          <mm-list-item
-            icon="reply-to-message"
-            size="48"
-            label="Reply"
-            description="메시지에 답장합니다."
-          ></mm-list-item>
-        </mm-grid>
+        <mm-grid columns="3">${renderIconListItems(communicationIconItems)}</mm-grid>
       </div>
     </mm-flex>
 

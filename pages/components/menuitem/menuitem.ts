@@ -1,4 +1,5 @@
 import { html } from 'lit'
+import { AVATAR_SHAPE_TYPE_LABEL } from '@/components/avatar'
 import { renderDocumentLayout } from '../../../layouts/document-layout'
 
 const main = html`
@@ -46,7 +47,7 @@ const main = html`
       <mm-prop name="emoji" type="string" optional></mm-prop>
       <mm-prop name="avatar-src" type="string" optional></mm-prop>
       <mm-prop name="avatar-variant" type="string = 'tertiary'" optional></mm-prop>
-      <mm-prop name="avatar-shape" type="'circle' | 'square' = 'square'" optional></mm-prop>
+      <mm-prop name="avatar-shape" type=${AVATAR_SHAPE_TYPE_LABEL} optional></mm-prop>
       <mm-prop name="tone" type="'danger' | string" optional></mm-prop>
       <mm-prop name="disabled" type="boolean" optional></mm-prop>
     </mm-component-props>
