@@ -55,23 +55,15 @@ export class FileUploader extends LitElement {
           ?capture=${this.capture}
           @files-change=${this.handleFilesChange}
         ></mm-attachment-button>
-        <mm-keyword-tag-group .keywords=${this.statusKeywords}></mm-keyword-tag-group>
-      </mm-flex>
-
-      <mm-flex direction="column" gap="2">
-        <mm-paragraph color="light">첨부한 파일</mm-paragraph>
-
-        ${this.renderAttachments()}
+        <mm-keyword-tag-group
+          .keywords=${[this.helper, this.filesStatusText].filter(Boolean)}
+        ></mm-keyword-tag-group>
+        <mm-flex direction="column" gap="2">
+          <mm-paragraph color="light">첨부한 파일</mm-paragraph>
+          ${this.renderAttachments()}
+        </mm-flex>
       </mm-flex>
     `
-  }
-
-  private get statusKeywords() {
-    const keywords: string[] = []
-    if (this.helper) keywords.push(this.helper)
-    keywords.push(this.filesStatusText)
-
-    return keywords
   }
 
   private get filesStatusText() {
@@ -88,23 +80,17 @@ export class FileUploader extends LitElement {
         ${repeat(
           this.files,
           file => file,
-          (file, index) => this.renderAttachment(file, index),
+          (file, index) => html`
+            <mm-attachment-item
+              file-name=${file.name}
+              file-size=${this.formatFileSize(file.size)}
+              preview-url=${ifDefined(this.previewUrls.get(file))}
+              type=${file.type}
+              @remove=${() => this.removeFile(index)}
+            ></mm-attachment-item>
+          `,
         )}
       </mm-flex>
-    `
-  }
-
-  private renderAttachment(file: File, index: number) {
-    const previewUrl = this.previewUrls.get(file)
-
-    return html`
-      <mm-attachment-item
-        file-name=${file.name}
-        file-size=${this.formatFileSize(file.size)}
-        preview-url=${ifDefined(previewUrl)}
-        type=${file.type}
-        @remove=${() => this.removeFile(index)}
-      ></mm-attachment-item>
     `
   }
 
