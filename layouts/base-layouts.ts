@@ -1,3 +1,7 @@
+import { html, nothing, render } from 'lit'
+import type { TemplateResult } from 'lit'
+import { unsafeHTML } from 'lit/directives/unsafe-html.js'
+
 import '../src/components/navbar/navbar'
 import '../src/components/footer/footer'
 import './fixed-bottom'
@@ -7,14 +11,26 @@ import './fixed-top'
 import '../src/stylesheets/shared.css'
 
 export const renderLayout = (
-  content: string,
+  content: TemplateResult | string,
   options: { footer?: boolean; closeSidebar?: boolean; navbar?: boolean } = {},
 ) => {
   const navbar = options.navbar ?? true
+  const body = typeof content === 'string' ? unsafeHTML(content) : content
 
-  return `
-    ${navbar ? `<mm-navbar${options.closeSidebar ? ' sidebar-collapsed' : ''}></mm-navbar>` : ''}
-    ${content}
-    ${options.footer ? '<mm-footer></mm-footer>' : ''}
-  `
+  render(
+    html`
+      ${navbar
+        ? html`
+            <mm-navbar ?sidebar-collapsed=${!!options.closeSidebar}></mm-navbar>
+          `
+        : nothing}
+      ${body}
+      ${options.footer
+        ? html`
+            <mm-footer></mm-footer>
+          `
+        : nothing}
+    `,
+    document.body,
+  )
 }

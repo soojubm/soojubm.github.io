@@ -1,7 +1,113 @@
-import main from './index.html'
+import { html } from 'lit'
 import { renderDocumentLayout } from '../../../layouts/document-layout'
+
+const main = html`
+  <main class="page">
+    <mm-page-header
+      heading="Popover"
+      description="anchor 기준 non-modal 레이어 프리미티브입니다. TODO"
+    ></mm-page-header>
+
+    <mm-component-aka items='["Flyout", "Dropdown Panel", "Menu Surface"]'></mm-component-aka>
+
+    <mm-component-example>
+      <mm-popover width="200px">
+        <mm-button slot="trigger">팝오버 열기</mm-button>
+        <mm-paragraph>트리거에 앵커되는 non-modal 레이어 표면입니다.</mm-paragraph>
+      </mm-popover>
+    </mm-component-example>
+
+    <mm-component-props>
+      <mm-prop name="open" type="boolean"></mm-prop>
+      <mm-prop
+        name="placement"
+        type="'bottom-left' | 'bottom-right' | 'top-left' | 'top-right' = 'bottom-left'"
+      ></mm-prop>
+      <mm-prop name="width" type="string"></mm-prop>
+      <mm-prop name="padding" type="string"></mm-prop>
+      <mm-prop name="popoverclose" type="CustomEvent" kind="event"></mm-prop>
+    </mm-component-props>
+
+    <mm-component-tokens>
+      <mm-token name="popover-width" default="auto"></mm-token>
+      <mm-token name="popover-max-height" default="none"></mm-token>
+      <mm-token name="popover-offset" default="var(--space-1)"></mm-token>
+      <mm-token name="popover-padding" default="var(--space-1)"></mm-token>
+      <mm-token name="popover-border" default="var(--surface-high-border)"></mm-token>
+      <mm-token name="popover-border-radius" default="var(--radius)"></mm-token>
+      <mm-token
+        name="popover-background-color"
+        default="var(--surface-high-background-color)"
+      ></mm-token>
+      <mm-token
+        name="popover-backdrop-filter"
+        default="var(--surface-high-backdrop-filter)"
+      ></mm-token>
+      <mm-token name="popover-shadow" default="var(--surface-high-shadow)"></mm-token>
+    </mm-component-tokens>
+
+    <mm-component-guide>
+      <mm-paragraph>
+        레이어 프리미티브는 포지셔닝 모델과 모달리티로 나뉜다. mm-popover는 트리거에 앵커되는
+        non-modal 레이어로, backdrop·portal·스크롤 잠금이 없고 배경과의 상호작용을 허용한다.
+        viewport 기준 modal 레이어는 mm-sheet가 담당한다.
+      </mm-paragraph>
+      <mm-text-list
+        texts='[
+        "열림 상태는 popover가 소유한다. 트리거는 항상 slot=trigger로 넣으며, popover가 스스로 positioned 앵커가 되어 별도 래퍼가 필요 없고, 클릭 토글·외부 클릭·ESC 닫기·aria-expanded 반영까지 자동으로 연결된다.",
+        "패널 지오메트리를 밖에서 다듬을 때는 ::part(panel)을 사용한다.",
+        "role=menu/listbox를 popover 요소에 직접 지정한다.",
+        "용례: select, 컨텍스트 메뉴, 댓글 항목의 수정·삭제 메뉴."
+      ]'
+      ></mm-text-list>
+    </mm-component-guide>
+
+    <mm-component-section
+      heading="Select"
+      badge="pattern"
+      description="popover를 프리미티브로 하는 선택 입력입니다. 트리거·옵션 파싱·선택 상태를 소유하고, 목록 표면은 popover에 맡깁니다."
+    >
+      <mm-select width="200px" value="stable">
+        <mm-button slot="trigger" size="small" icon="nav-arrow-down" icon-position="trailing">
+          릴리스 채널
+        </mm-button>
+        <option value="stable" selected>Stable</option>
+        <option value="beta">Beta</option>
+        <option value="canary">Canary</option>
+      </mm-select>
+    </mm-component-section>
+
+    <mm-component-section
+      heading="ThemeSwitcher"
+      description="현재 테마를 아이콘 버튼으로 표시하고, 드롭다운에서 테마를 전환합니다."
+    >
+      <mm-theme-switcher></mm-theme-switcher>
+    </mm-component-section>
+
+    <mm-component-section
+      heading="SortButton"
+      description="목록의 재정렬Sort을 위한 옵션 목록을 group으로 제공하지 마세요. 현재 정렬 상태만 요약 표기하고
+    확장가능한 메뉴로 정렬 목록을 제공하세요. (bad case: 2022.04 구글 지도 바뀐 것)"
+    >
+      <mm-select id="my-dropdown">
+        <mm-button slot="trigger" size="small" icon="nav-arrow-down" icon-position="trailing">
+          최신순
+        </mm-button>
+        <option value="profile" selected>최신순</option>
+        <option value="settings">오래된순</option>
+      </mm-select>
+    </mm-component-section>
+    <mm-component-related>
+      <mm-button-group>
+        <mm-hashtag-link href="sheet.html">Sheet</mm-hashtag-link>
+        <mm-hashtag-link href="tooltip.html">Tooltip</mm-hashtag-link>
+        <mm-hashtag-link href="menuitem.html">menuItem</mm-hashtag-link>
+      </mm-button-group>
+    </mm-component-related>
+  </main>
+`
 
 // 트리거는 aria-controls로 popover를 가리키기만 하면 되고, 클릭 토글·외부 클릭·ESC 닫기·aria는 popover가 소유한다.
 document.addEventListener('DOMContentLoaded', () => {
-  document.body.innerHTML = renderDocumentLayout(main)
+  renderDocumentLayout(main)
 })

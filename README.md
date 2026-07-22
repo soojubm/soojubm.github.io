@@ -4,6 +4,12 @@
 
 - 설정 : 패키지의 변화가 있을 때 사용한다.
 
+## 페이지 렌더링 구조
+
+- MPA 구조다. `src/sitemap.ts`의 `SITEMAP`을 기준으로 `webpack.config.js`가 페이지마다 별도 entry(`pages/{subDir}/{id}/{id}.ts`)와 `HtmlWebpackPlugin`을 등록해, 빌드 시 페이지 수만큼 독립된 정적 html(`{id}.html`)을 만든다.
+- 페이지 이동은 클라이언트 라우터가 아니라 일반 `<a href>`에 의한 전체 페이지 리로드다. history API나 가상 라우팅은 쓰지 않는다.
+- 각 `{id}.ts`는 `DOMContentLoaded` 시점에 `layouts/base-layouts.ts`의 `renderLayout(content, options)`를 호출해 navbar/footer를 포함한 레이아웃을 `document.body`에 마운트한다. `content`는 문자열(기존 `index.html` fragment를 `unsafeHTML`로 삽입)과 lit `TemplateResult`(prop을 실제 값으로 바인딩하는 신규 페이지) 둘 다 받는다.
+
 ## 웹팩 가이드
 
 - HtmlWebpackPlugin: 번들링된 js 파일을 html에 임포트한다.

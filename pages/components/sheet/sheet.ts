@@ -1,4 +1,4 @@
-import { html, render } from 'lit'
+import { html } from 'lit'
 
 import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
 import { renderLayout } from '../../../layouts/base-layouts'
@@ -12,10 +12,7 @@ type ToastElement = HTMLElement & {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  document.body.innerHTML = renderLayout('<div id="sheet-page-root"></div>')
-
-  const root = document.querySelector<HTMLElement>('#sheet-page-root')
-  if (root) render(sheetPageTemplate(), root)
+  renderLayout(sheetPageTemplate())
 
   setupSheetTriggers()
   setupToastTrigger()

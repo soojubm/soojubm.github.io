@@ -1,6 +1,171 @@
-import main from './index.html'
+import { html } from 'lit'
 import { renderDocumentLayout } from '../../../layouts/document-layout'
 
+const main = html`
+  <main class="page">
+    <mm-page-header
+      heading="Checkbox"
+      description="옵션 목록에서 하나 이상의 옵션을 선택합니다."
+    ></mm-page-header>
+
+    <mm-component-example>
+      <mm-checkbox-group legend="관심 분야" name="interest">
+        <mm-checkbox size="large" value="basic" checked>체크박스 기본</mm-checkbox>
+        <mm-checkbox size="large" value="disabled" disabled>체크박스 비활성</mm-checkbox>
+        <mm-checkbox size="large" value="disabled-checked" checked disabled>
+          체크박스 비활성 체크
+        </mm-checkbox>
+      </mm-checkbox-group>
+    </mm-component-example>
+
+    <mm-component-props>
+      <mm-prop name="name" type="string" optional></mm-prop>
+      <mm-prop name="value" type="string" optional></mm-prop>
+      <mm-prop name="size" type="string" optional></mm-prop>
+      <mm-prop name="checked" type="boolean" optional></mm-prop>
+      <mm-prop name="disabled" type="boolean" optional></mm-prop>
+      <mm-prop name="indeterminate" type="boolean" optional></mm-prop>
+      <mm-prop name="change" type="CustomEvent detail: checked, value" kind="event"></mm-prop>
+    </mm-component-props>
+
+    <mm-component-tokens>
+      <mm-token name="checkbox-size" default="var(--size-16)"></mm-token>
+      <mm-token name="checkbox-border-radius" default="4px"></mm-token>
+      <mm-token name="checkbox-background-color" default="var(--background-color)"></mm-token>
+      <mm-token
+        name="checkbox-border-color-checked"
+        default="var(--interaction-selected-border-color)"
+      ></mm-token>
+    </mm-component-tokens>
+
+    <mm-component-anatomy
+      parts='[
+      "컨트롤(인디케이터) — 체크 여부를 시각적으로 나타내는 사각형 박스입니다.",
+      "체크 표식 — 선택 시 나타나는 체크 아이콘(또는 indeterminate 표식).",
+      "레이블 — 선택지를 설명하는 클릭 가능한 텍스트."
+    ]'
+    >
+      <div style="position: relative; display: inline-block">
+        <mm-checkbox size="large" checked>관심 분야</mm-checkbox>
+
+        <mm-list-marker
+          variant="number"
+          value="1"
+          style="position: absolute; left: -1.75rem; top: 50%; transform: translateY(-50%)"
+        ></mm-list-marker>
+        <mm-list-marker
+          variant="number"
+          value="2"
+          style="position: absolute; left: 0.5rem; bottom: -1.75rem; transform: translateX(-50%)"
+        ></mm-list-marker>
+        <mm-list-marker
+          variant="number"
+          value="3"
+          style="position: absolute; right: -1.75rem; top: 50%; transform: translateY(-50%)"
+        ></mm-list-marker>
+      </div>
+    </mm-component-anatomy>
+
+    <mm-component-guide>
+      <mm-component-feature-list>
+        <mm-feature
+          heading="Interactive - selection"
+          subtitle="Easy scanning"
+          description="여러 선택지에서 복수 선택이 가능하며, 선택 여부는 checked 상태로 드러납니다. 미리 선택된 기본값을 제공하는 것은 편향된 데이터를 수집할 위험이 있습니다."
+        ></mm-feature>
+        <mm-feature
+          heading="Glanceable"
+          description="옵션 목록을 파악하기 쉽게 수직 정렬합니다. 레이블은 최대 2단어로 작성합니다. choice냐 action option(?)이냐. action option일 때는 동사를 포함하여 작성합니다."
+        ></mm-feature>
+        <mm-feature
+          heading="Groupable"
+          subtitle="Easy scanning"
+          description="체크박스 그룹은 관련된 옵션들을 함께 묶어 사용자에게 제공할 수 있습니다. 이 경우, 그룹의 제목(legend)을 명확하게 표시하여 사용자가 옵션들의 맥락을 이해할 수 있도록 합니다."
+        ></mm-feature>
+      </mm-component-feature-list>
+    </mm-component-guide>
+
+    <mm-component-section
+      heading="MasterCheckbox"
+      description="TermsAllCheckbox, TermsCheckboxGroup"
+    >
+      <mm-master-checkbox aria-controls="main-terms-group">
+        <mm-paragraph>모두 동의합니다 (선택동의 포함)</mm-paragraph>
+      </mm-master-checkbox>
+
+      <mm-checkbox-group id="main-terms-group" name="terms">
+        <mm-checkbox value="terms5" size="large">이용약관 동의 (필수)</mm-checkbox>
+        <mm-icon-button
+          variant="secondary"
+          size="small"
+          aria-label="이용약관 바로가기"
+          href="#"
+          icon="arrow-up-right"
+        ></mm-icon-button>
+
+        <mm-checkbox-group name="terms-detail">
+          <mm-checkbox value="gender" size="small">성별</mm-checkbox>
+          <mm-checkbox value="birth" size="small">생년월일</mm-checkbox>
+        </mm-checkbox-group>
+
+        <mm-checkbox value="terms6" size="large">개인정보 수집/이용 동의</mm-checkbox>
+        <mm-checkbox value="terms7" size="large">개인정보 제3자 제공 동의</mm-checkbox>
+      </mm-checkbox-group>
+    </mm-component-section>
+
+    <mm-component-section heading="Sampler" description="연습">
+      <div style="max-width: 400px">
+        <mm-top-bar nav="close" heading="컬렉션에 추가">
+          <mm-button slot="action" variant="ghost">새 컬렉션</mm-button>
+        </mm-top-bar>
+        <mm-menu-item-checkbox-group aria-label="컬렉션 선택">
+          <mm-menu-item-checkbox
+            value="euljiro-1"
+            label="을지로 맛집"
+            description="test"
+            emoji="💳"
+            checked
+          ></mm-menu-item-checkbox>
+          <mm-menu-item-checkbox
+            value="euljiro-2"
+            label="을지로 맛집"
+            emoji="💳"
+          ></mm-menu-item-checkbox>
+        </mm-menu-item-checkbox-group>
+        <mm-separator></mm-separator>
+        <mm-top-bar heading="새 컬렉션">
+          <mm-button slot="action" variant="ghost">완료</mm-button>
+        </mm-top-bar>
+        <mm-textfield label="컬렉션 이름" placeholder="컬렉션 이름"></mm-textfield>
+        <div style="height: 0.75rem"></div>
+        <!-- aira-checked="mixed" aria-controls="1 2" -->
+        <mm-toggle-button-group
+          id="button-list"
+          options='[
+              {"label": "공개", "value": "apple"},
+              {"label": "비공개", "value": "banana"}
+            ]'
+        ></mm-toggle-button-group>
+
+        <mm-add-button>이 컬렉션에 멤버 추가</mm-add-button>
+
+        <mm-separator></mm-separator>
+        <mm-top-bar heading="멤버 추가">
+          <mm-button slot="action" variant="ghost">완료</mm-button>
+        </mm-top-bar>
+        <mm-textfield label="TODO 멤버 검색" placeholder="멤버 이름"></mm-textfield>
+        <div style="height: var(--space-4)"></div>
+      </div>
+    </mm-component-section>
+    <mm-component-related>
+      <mm-button-group>
+        <mm-hashtag-link href="radio.html">Radio</mm-hashtag-link>
+        <mm-hashtag-link href="switch.html">Switch</mm-hashtag-link>
+      </mm-button-group>
+    </mm-component-related>
+  </main>
+`
+
 document.addEventListener('DOMContentLoaded', () => {
-  document.body.innerHTML = renderDocumentLayout(main)
+  renderDocumentLayout(main)
 })

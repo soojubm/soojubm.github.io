@@ -1,8 +1,491 @@
-import main from './index.html'
+import { html } from 'lit'
 import { renderDocumentLayout } from '../../../layouts/document-layout'
 
+const main = html`
+  <main class="page">
+    <mm-page-header
+      heading="Surface"
+      description="콘텐츠가 놓이는 기본 바탕이자, 정보의 논리적 구조를 시각적 깊이로 표현하는 기반입니다. 배경과 대비되는 명도나 그림자(Elevation)를 활용해 요소 간의 층위(Layer)를 형성하며, 사용자는 화면의 입체적인 구조를 직관적으로 이해하고 현재 상호작용 중인 정보의 중요도를 인지하게 됩니다."
+    ></mm-page-header>
+
+    <!-- 추가 콘텐츠에 대한 티저로 사용할 수 있습니다 -->
+    <!-- 세로값을 지정하지 않으면, border-width 만큼 세로 값이 더해진다. -->
+    <mm-component-aka
+      items='["EmphasisBox", "Box", "Card", "Module", "Section", "Container", "Paper", "Building block", "Segment", "Panel"]'
+    ></mm-component-aka>
+
+    <mm-component-example>
+      <mm-flex direction="column" gap="3">
+        <mm-surface variant="ghost">
+          <mm-text-block
+            level="3"
+            heading="ghost"
+            description="투명한 배경. 클릭할 수 없다."
+          ></mm-text-block>
+        </mm-surface>
+        <mm-surface variant="outlined">
+          <mm-text-block
+            level="3"
+            heading="outlined"
+            description="콘텐츠 레벨에서 테두리로 영역을 구획할 때 사용한다. 클릭할 수 없다."
+          ></mm-text-block>
+        </mm-surface>
+        <mm-surface variant="filled">
+          <mm-text-block
+            level="3"
+            heading="filled"
+            description="콘텐츠 레벨에서 내부에 클릭 가능한 액션이 있을 때 배경으로 강조한다."
+          ></mm-text-block>
+        </mm-surface>
+        <mm-surface variant="elevated">
+          <mm-text-block
+            level="3"
+            heading="elevated"
+            description="시스템 레벨에서 화면 위에 떠 있는 요소를 그림자로 강조할 때 사용한다."
+          ></mm-text-block>
+        </mm-surface>
+
+        <mm-separator></mm-separator>
+
+        <mm-grid columns="2">
+          <mm-surface radius="default">
+            <mm-text-block
+              level="3"
+              heading="default radius"
+              description="엘리먼트 레벨에서 사용한다. 본문 안에서 반복되는 개별 항목의 경계를 표현한다."
+            ></mm-text-block>
+          </mm-surface>
+          <mm-surface radius="large">
+            <mm-text-block
+              level="3"
+              heading="large radius"
+              description="섹션 레벨에서 사용한다. 여러 콘텐츠를 하나로 묶는 상위 영역의 경계를 표현한다."
+            ></mm-text-block>
+          </mm-surface>
+        </mm-grid>
+      </mm-flex>
+    </mm-component-example>
+
+    <mm-component-props>
+      <mm-prop
+        name="variant"
+        type="'ghost' | 'outlined' | 'plain' | 'filled' | 'elevated'"
+        optional
+      ></mm-prop>
+      <mm-prop name="radius" type="'default' | 'large'" optional></mm-prop>
+      <mm-prop name="height" type="string" optional></mm-prop>
+    </mm-component-props>
+
+    <!-- <mm-feature-group columns="4">
+      <mm-feature icon="box-iso" heading="컨테이너" description="ㅅㄷㄴㅅ"></mm-feature>
+      <mm-feature icon="box-iso" heading="컨테이너 역할" description="ㅅㄷㄴㅅ"></mm-feature>
+      <mm-feature icon="box-iso" heading="컨테이너 역할" description="ㅅㄷㄴㅅ"></mm-feature>
+      <mm-feature icon="box-iso" heading="컨테이너 역할" description="ㅅㄷㄴㅅ"></mm-feature>
+    </mm-feature-group> -->
+
+    <mm-component-tokens>
+      <mm-token name="surface-height" default="auto"></mm-token>
+      <mm-token name="surface-padding" default="var(--space-4)"></mm-token>
+      <mm-token name="surface-border" default="var(--border)"></mm-token>
+      <mm-token name="surface-border-radius" default="var(--radius)"></mm-token>
+      <mm-token name="surface-background-color" default="var(--background-color)"></mm-token>
+    </mm-component-tokens>
+
+    <mm-component-guide>
+      <mm-component-feature-list>
+        <mm-feature
+          heading="Structural"
+          description="독립된 배경 영역으로 화면을 논리적인 단위로 분리하고 관련 정보를 하나로 묶습니다. 명도 대비와 음영(Shadow)의 깊이감으로 정보 레이어의 상하 관계까지 드러내며, 이 배경색·깊이의 변화가 해당 영역의 클릭 가능 여부를 식별하는 기표로도 작동합니다."
+        ></mm-feature>
+      </mm-component-feature-list>
+      <mm-text-list
+        texts='[
+          "surface 내부 leading, tailing 컴포넌트에 따라 시각보정이 필요할 수 있습니다.",
+          "inset이 너무 커지면 물리적 화면 크기에 따라 inset의 변경이 필요할 수 있다. 콘텐츠 모듈을 가운데 정렬로 해결할 수 있다."
+        ]'
+      ></mm-text-list>
+      <!-- "foundation :: elevated는 surface 전체가 하나의 클릭 가능한 컴포넌트이거나 surface 내부에 클릭 가능한
+    컴포넌트를 포함.", -->
+      <!-- "transparent surface를 정의하여 모든 contentbox가 surface가 되는 것은 어떤가? 비어있는
+    컴포넌트(Box, Row, div)와는 어떤 차이가 있나? row는 레이아웃 컴포넌트, surface는 형태 컴포넌트이다.
+    surface에 과도한 책임을 부여하지 말 것.", => transparent 필요. 배경있는 상황 -->
+
+      <mm-paragraph>
+        At its core, Card is a Box with specific styling attributes and more explicit use cases that
+        you can find in Examples. If you find yourself limited by the default styling and
+        constraints of a Card, you may consider using a Box instead, but first consider bringing the
+        problem you are trying to solve to Design System Office Hours to see if another component or
+        pattern could fit your needs.
+      </mm-paragraph>
+    </mm-component-guide>
+    <mm-paragraph-group>
+      <!-- <aside
+      style="
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 2rem 0;
+        padding: 0.5rem 2rem;
+        border: var(--border);
+        border-radius: 50px;
+      "
+    >
+      <mm-avatar size="48"></mm-avatar>
+      <mm-paragraph size="large"> You can download this product with the All-Access Pass. </mm-paragraph>
+      <mm-button variant="primary">Get All-Access</mm-button>
+    </aside> -->
+
+      <!-- <picture>
+      <source
+        srcset="photo-light.png"
+        media="(prefers-color-scheme: light) or (prefers-color-scheme: no-preference)"
+      />
+      <source srcset="photo-dark.png" media="(prefers-color-scheme: dark)" />
+      <source type="image/svg+xml" srcset="pyramid.svg" />
+      <source type="image/webp" srcset="pyramid.webp" />
+      <source media="(max-width: 799px)" srcset="elva-480w-close-portrait.jpg" />
+      <source media="(min-width: 800px)" srcset="elva-800w.jpg" />
+      <img src="elva-800w.jpg" alt="딸 엘바를 안고 서 있는 크리스" loading="lazy" />
+    </picture> -->
+      <!-- <img
+      srcset="elva-fairy-320w.jpg 320w, elva-fairy-480w.jpg 480w, elva-fairy-640w.jpg 2x, elva-fairy-800w.jpg 800w"
+      sizes="(max-width: 320px) 280px, (max-width: 480px) 440px, 800px"
+      src="elva-fairy-800w.jpg"
+      alt="요정 옷을 입은 엘바"
+    /> -->
+    </mm-paragraph-group>
+
+    <mm-component-section heading="PricingSurface" description="">
+      <mm-flex direction="column" gap="4" style="max-width: 400px">
+        <mm-tag>🔥 Most Popular</mm-tag>
+        <div>
+          <mm-paragraph size="large">Standard</mm-paragraph>
+          <mm-text>리서치, 정리, 낮은 한도</mm-text>
+        </div>
+        <div>
+          <mm-text size="32" weight="bold">₩ 6,800</mm-text>
+          <mm-text color="light">한 달에 한 번</mm-text>
+        </div>
+        <mm-button variant="primary" size="large" full-width>업그레이드</mm-button>
+        <mm-text-list
+          texts='[
+        "스토리지 2TB",
+        "Google 전문가와의 상담",
+        "회원을 위한 추가 혜택"
+        ]'
+        ></mm-text-list>
+      </mm-flex>
+    </mm-component-section>
+
+    <mm-component-section heading="FeedSurface" description="">
+      <section role="feed" aria-busy="false">
+        <article class="feed" aria-setsize="3" aria-posinset="1">
+          <header class="feed-header">
+            <mm-tag>🔥 Most Popular</mm-tag>
+            <mm-menu-item-action
+              size="small"
+              icon="user"
+              label="수줍이"
+              description="2 hour ago"
+            ></mm-menu-item-action>
+          </header>
+          <div class="feed-body">
+            <mm-thumbnail ratio="16:9" src="/src/images/soojubm.png" alt=""></mm-thumbnail>
+            <mm-paragraph>
+              Monotonectally productivate progressive human capital without user friendly portals.
+              Globally benchmark top-line ideas with distributed catalysts for change.
+              Authoritatively restore ubiquitous partnerships vis-a-vis
+              <mm-link href="#feed">synergistic models</mm-link>
+              .
+            </mm-paragraph>
+            <mm-text-list
+              texts='[
+              "원활한 피드 탐색 경험을 위해 모든 피드를 보여주지 않는 것이 좋을 수 있다. 피드가 노출되는 이유를 알려줄 수 있다. 또한 사용자는 보고 싶은 피드와 보고 싶지 않은 피드를 결정할 권리가 있다.",
+              "글줄의 길이를 상대적으로 좁게 짜는 경향이 있다.",
+              "리액션 버튼과 리액션 수치를 각각 제공할 수 있고 따로 제공할 수 있다. 리액션한 사용자 목록을 어떻게 보여줄 것인가. 중복 리액션과 횟수 등 기능 정의. 리액션 => 알림."
+              ]'
+            ></mm-text-list>
+            <mm-keyword-tag-group keywords='["Google", "Meta", "Nvidia"]'></mm-keyword-tag-group>
+            <mm-surface variant="filled">
+              <mm-tag>3월 14일 수정됨</mm-tag>
+              <div style="height: var(--space-2)"></div>
+              <mm-menu-item-group>
+                <mm-menu-item-action
+                  size="small"
+                  label="Kakao"
+                  description="https://www.kakaocorp.com"
+                ></mm-menu-item-action>
+                <mm-menu-item-action
+                  size="small"
+                  label="Naver"
+                  description="https://www.naver.com"
+                ></mm-menu-item-action>
+              </mm-menu-item-group>
+            </mm-surface>
+          </div>
+          <div>
+            <mm-menu-item-action icon="heart" label="192"></mm-menu-item-action>
+          </div>
+        </article>
+
+        <style>
+          .feed {
+            display: flex;
+            flex-direction: column;
+            max-width: 400px;
+            gap: var(--space-3);
+          }
+
+          .feed-header {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-3);
+          }
+          .feed-body {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-3);
+          }
+        </style>
+
+        <script>
+          var form = document.getElementById('subscription-form')
+          form.addEventListener('submit', event => {
+            event.preventDefault()
+            const latestInvoicePaymentIntentStatus = localStorage.getItem(
+              'latestInvoicePaymentIntentStatus',
+            )
+
+            if (latestInvoicePaymentIntentStatus === 'requires_payment_method') {
+              const invoiceId = localStorage.getItem('latestInvoiceId')
+              const isPaymentRetry = true
+            }
+          })
+        </script>
+      </section>
+    </mm-component-section>
+
+    <mm-component-section
+      heading="Scroll Area"
+      description="custom scrollbar styles를 가진 스크롤 컨테이너에 surface를 배치합니다."
+    >
+      <mm-scroll direction="column" gap="3" class="scroll-surface-container">
+        <mm-surface class="scroll-surface">
+          <mm-text weight="bold">Surface 1</mm-text>
+        </mm-surface>
+        <mm-surface class="scroll-surface">
+          <mm-text weight="bold">Surface 2</mm-text>
+        </mm-surface>
+        <mm-surface class="scroll-surface">
+          <mm-text weight="bold">Surface 3</mm-text>
+        </mm-surface>
+        <mm-surface class="scroll-surface">
+          <mm-text weight="bold">Surface 4</mm-text>
+        </mm-surface>
+        <mm-surface class="scroll-surface">
+          <mm-text weight="bold">Surface 5</mm-text>
+        </mm-surface>
+      </mm-scroll>
+      <style>
+        .scroll-surface-container {
+          max-height: 240px;
+        }
+
+        .scroll-surface {
+          flex: 0 0 auto;
+        }
+      </style>
+    </mm-component-section>
+
+    <mm-component-section heading="Marquee" description="TODO">
+      <mm-flex direction="column" gap="4">
+        <mm-marquee gap="6" speed="64" pause-on-hover>
+          <mm-paragraph>짧은 문장</mm-paragraph>
+          <mm-paragraph>
+            길이가 서로 다른 콘텐츠도 같은 트랙 안에서 자연스럽게 반복됩니다.
+          </mm-paragraph>
+          <mm-paragraph>콘텐츠 폭을 기준으로 이동 거리를 계산합니다.</mm-paragraph>
+          <mm-paragraph>화면 폭이 달라져도 필요한 복제 수를 다시 맞춥니다.</mm-paragraph>
+        </mm-marquee>
+        <mm-marquee direction="right" gap="4" speed="48" pause-on-hover>
+          <mm-tag>Right direction</mm-tag>
+          <mm-tag>Speed 48</mm-tag>
+          <mm-tag>Slow and steady</mm-tag>
+          <mm-tag>Reverse flow</mm-tag>
+        </mm-marquee>
+        <mm-marquee gap="3" height="120px" speed="72" pause-on-hover>
+          <mm-thumbnail
+            style="width: 120px"
+            ratio="1:1"
+            src="/src/images/temp.png"
+            alt="풍경 샘플"
+          ></mm-thumbnail>
+          <mm-thumbnail
+            style="width: 120px"
+            ratio="1:1"
+            src="/src/images/soojubm.png"
+            alt="프로필 샘플"
+          ></mm-thumbnail>
+          <mm-thumbnail
+            style="width: 120px"
+            ratio="1:1"
+            src="/src/images/work-studium.jpg"
+            alt="작업 샘플"
+          ></mm-thumbnail>
+          <mm-thumbnail
+            style="width: 120px"
+            ratio="1:1"
+            src="/src/images/cake_gosum.jpg"
+            alt="고슴이 샘플"
+          ></mm-thumbnail>
+        </mm-marquee>
+      </mm-flex>
+    </mm-component-section>
+
+    <mm-component-section
+      heading="Scroll Hint"
+      description="bleed 없이 프레임 안에서 가로 스크롤을 보여줄 때, 오른쪽 끝의 흐림 레이어로 숨은 콘텐츠가 더
+        있음을 암시합니다."
+    >
+      <section class="carousel" data-carousel>
+        <mm-button-group>
+          <mm-icon-button
+            variant="secondary"
+            icon="arrow-left"
+            data-carousel-prev
+            aria-label="이전"
+          ></mm-icon-button>
+          <mm-icon-button
+            variant="secondary"
+            icon="arrow-right"
+            data-carousel-next
+            aria-label="다음"
+          ></mm-icon-button>
+        </mm-button-group>
+        <mm-scroll data-carousel-viewer gap="3" hide-scrollbar>
+          <mm-scroll-hint placement="start"></mm-scroll-hint>
+          <mm-scroll-hint placement="end"></mm-scroll-hint>
+          <mm-thumbnail
+            class="carousel-slide"
+            ratio="1:1"
+            src="/src/images/temp.png"
+            alt="풍경 샘플"
+          ></mm-thumbnail>
+          <mm-thumbnail
+            class="carousel-slide"
+            ratio="1:1"
+            src="/src/images/soojubm.png"
+            alt="프로필 샘플"
+          ></mm-thumbnail>
+          <mm-thumbnail
+            class="carousel-slide"
+            ratio="1:1"
+            src="/src/images/work-studium.jpg"
+            alt="작업 샘플"
+          ></mm-thumbnail>
+          <mm-thumbnail
+            class="carousel-slide"
+            ratio="1:1"
+            src="/src/images/cake_gosum.jpg"
+            alt="고슴이 샘플"
+          ></mm-thumbnail>
+          <mm-thumbnail
+            class="carousel-slide"
+            ratio="1:1"
+            src="/src/images/work-famus.jpg"
+            alt="작업 샘플"
+          ></mm-thumbnail>
+          <mm-thumbnail
+            class="carousel-slide"
+            ratio="1:1"
+            src="/src/images/prometheus.jpg"
+            alt="영화 샘플"
+          ></mm-thumbnail>
+        </mm-scroll>
+      </section>
+      <style>
+        .carousel {
+          display: flex;
+          flex-direction: column;
+          gap: var(--space-3);
+          position: relative;
+        }
+
+        .carousel mm-scroll {
+          scroll-behavior: smooth;
+        }
+
+        .carousel-slide {
+          flex: 0 0 220px;
+        }
+      </style>
+    </mm-component-section>
+    <!-- <mm-component-section heading="RatingSurface" description="">
+    <mm-surfacebar heading="Ratings"></mm-surfacebar>
+    <div aria-label="별점 5개 만점에 3.9개를 받았습니다." style="text-align: center">
+      <mm-paragraph color="light">리뷰 116만개</mm-paragraph>
+      <mm-paragraph size="large">⭐ 4.8</mm-paragraph>
+    </div>
+    <mm-separator></mm-separator>
+    <div class="graph2">
+      <b class="graph-label">5 Stars</b>
+      <span class="graph-value">68%</span>
+      <progress class="progress" value="40" max="100">40%</progress>
+    </div>
+    <div class="graph2">
+      <b class="graph-label">4 Stars</b>
+      <span class="graph-value">24%</span>
+      <progress class="progress" value="40" max="100">40%</progress>
+    </div>
+    <mm-text>별 다섯개에서 점수만큼 채우는 유아이는 최근 잘 보이지 않는다. 구현이 어려움.</mm-text>
+  </mm-component-section>
+  <div class="graph-bar"><b style="width: 68%"></b></div> -->
+
+    <!-- <mm-component-section heading="이 상품을 구매한">
+    <section class="product-recommend">
+      <article class="card">
+        <mm-thumbnail ratio="16:9" src="/src/images/product_sample.png" alt=""></mm-thumbnail>
+        <div
+          class="card-item-price"
+          style="
+            margin: var(--space-3) 0 0;
+            font-size: var(--font-size-18);
+            font-weight: var(--font-weight-bold);
+          "
+        >
+          <em>₩ 16,000</em>
+        </div>
+        <mm-heading level="3" class="card-title" style="padding-top: 0.25rem">가격을 강조하는 카드.</mm-heading>
+        <a
+          href="#"
+          style="
+            display: block;
+            margin: var(--space-3) 0;
+            color: var(--gray800);
+            text-decoration: underline;
+          "
+        >
+          애플
+        </a>
+        <mm-flex>
+          <mm-tag class="card-category">인기있는</mm-tag>
+          <mm-tag class="card-note">무료배송 / 200 포인트 적립</mm-tag>
+        </mm-flex>
+      </article>
+    </section>
+  </mm-component-section> -->
+    <mm-component-related>
+      <mm-button-group>
+        <mm-hashtag-link href="sheet.html">Sheet</mm-hashtag-link>
+        <mm-hashtag-link href="popover.html">Popover</mm-hashtag-link>
+        <mm-hashtag-link href="dialog.html">Dialog</mm-hashtag-link>
+      </mm-button-group>
+    </mm-component-related>
+  </main>
+`
+
 document.addEventListener('DOMContentLoaded', () => {
-  document.body.innerHTML = renderDocumentLayout(main)
+  renderDocumentLayout(main)
 
   setupCarousel()
 })

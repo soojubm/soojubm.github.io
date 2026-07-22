@@ -1,14 +1,85 @@
+import { html } from 'lit'
 import type { ActionConfig } from '@/components/action-config'
 
-import main from './index.html'
 import { renderDocumentLayout } from '../../../layouts/document-layout'
+
+const main = html`
+  <main class="page">
+    <mm-page-header
+      heading="Result"
+      description="실행 결과를 피드백하는 섹션 또는 페이지 단위의 컴포넌트."
+    ></mm-page-header>
+
+    <mm-component-aka items='["EmptyState", "Blankslate"]'></mm-component-aka>
+
+    <mm-component-example>
+      <mm-result
+        id="result-primary-action-example"
+        avatar-icon="clipboard-check"
+        heading="주문을 확인해주세요."
+        description="헌법재판소 재판관의 임기는 6년으로 하며, 법률이 정하는 바에 의하여 연임할 수 있다."
+      >
+        <mm-avatar slot="avatar" variant="secondary" size="80" icon="clipboard-check"></mm-avatar>
+        <div>
+          <mm-meta-item label="주문일자" value="2019.08.10."></mm-meta-item>
+          <mm-meta-item label="결제금액" value="₩ 54,000"></mm-meta-item>
+        </div>
+        <mm-button slot="action" variant="tertiary" size="large">홈으로</mm-button>
+      </mm-result>
+    </mm-component-example>
+
+    <mm-component-props>
+      <mm-prop name="avatar-icon" type="IconName" optional></mm-prop>
+      <mm-prop name="heading" type="string"></mm-prop>
+      <mm-prop name="description" type="string" optional></mm-prop>
+      <mm-prop name="primaryAction" type="ActionConfig" optional></mm-prop>
+      <mm-prop name="slot: avatar" type="HTMLElement" optional></mm-prop>
+      <mm-prop name="slot: default" type="HTMLElement" optional></mm-prop>
+      <mm-prop name="slot: action" type="HTMLButtonElement" optional></mm-prop>
+    </mm-component-props>
+
+    <mm-component-guide>
+      <mm-component-feature-list>
+        <mm-feature
+          heading="Feedback"
+          description="완료·오류·빈 상태처럼 사용자 행동이나 시스템 상태의 결과를 명확하게 전달합니다."
+        ></mm-feature>
+        <mm-feature
+          heading="Statusful"
+          description="완료·오류·빈 상태 등 결과의 의미를 톤으로 구분합니다. 색상에만 의존하지 않고 아이콘과 메시지를 함께 제공합니다."
+        ></mm-feature>
+      </mm-component-feature-list>
+      <mm-paragraph-group>
+        <mm-paragraph>You're done!</mm-paragraph>
+        <mm-paragraph>
+          <!-- 완료Complete. 오류Error. 빈 데이터Empty Data. 비공개. -->
+          empty content, error feedback, Order Completed, Booking Confirmed, Registration Complete,
+          Submission Successful, Payment Successful
+        </mm-paragraph>
+        <mm-paragraph>텍스트 모듈</mm-paragraph>
+        <mm-paragraph>
+          <del>
+            왼쪽 정렬의 기본적인 텍스트 모듈과 대비를 위해 가운데 정렬합니다. foundation:: 콘텐츠
+            모듈로 콘텐츠 간의 맥락 전환을 시각화하는 것이 . 보류
+          </del>
+        </mm-paragraph>
+      </mm-paragraph-group>
+    </mm-component-guide>
+    <mm-component-related>
+      <mm-button-group>
+        <mm-hashtag-link href="notice.html">Notice</mm-hashtag-link>
+        <mm-hashtag-link href="loading.html">Loading</mm-hashtag-link>
+      </mm-button-group>
+    </mm-component-related>
+  </main>
+`
 
 type ResultElement = HTMLElement & {
   primaryAction?: ActionConfig
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  document.body.innerHTML = renderDocumentLayout(main)
+  renderDocumentLayout(main)
 
   const result = document.querySelector<ResultElement>('#result-primary-action-example')
   if (!result) return

@@ -1,6 +1,600 @@
-import main from './index.html'
+import { html } from 'lit'
 import { renderDocumentLayout } from '../../../layouts/document-layout'
 
+const main = html`
+  <main class="page">
+    <!-- Dropdown(*Menu, Contextual Menu)*
+    displays a list of actions, options or links.
+    It is triggered when a user interacts with a Button, Textfield or other control.
+    Dropdown allows for complex functionality that can’t be accomplished with SelectList.
+
+    3개 이상.
+    select보다 복잡한 액션의 조합.
+    immediate action.
+    Place destructive actions at the bottom
+  -->
+    <mm-text-block
+      heading="Input"
+      description="사용자가 정보를 입력하고 제출할 수 있습니다."
+    ></mm-text-block>
+
+    <!-- - 콤보박스 textfield + select -->
+    <mm-component-aka items='["TextInput", "Input"]'></mm-component-aka>
+
+    <mm-component-example>
+      <div style="max-width: 400px">
+        <mm-flex direction="column" gap="3">
+          <mm-textfield placeholder="Placeholder"></mm-textfield>
+          <mm-textfield placeholder="Disabled" disabled></mm-textfield>
+          <mm-textfield
+            value="Invalid"
+            placeholder="Placeholder..."
+            invalid
+            validation-text="이미 등록된 이메일입니다."
+          ></mm-textfield>
+          <mm-separator scope="element"></mm-separator>
+          <mm-textfield label="with label" placeholder="Label"></mm-textfield>
+        </mm-flex>
+      </div>
+    </mm-component-example>
+
+    <!-- <mm-textfield type="text" label="" hidden-label placeholder="Placeholder...">
+    <mm-icon slot="leading" name="xray-view"></mm-icon>
+  </mm-textfield>
+  <mm-textfield type="email" label="" hidden-label placeholder="with Trailing...">
+    <mm-icon slot="trailing" name="xray-view"></mm-icon>
+  </mm-textfield> -->
+    <!-- <mm-paragraph>unit, choose/enter</mm-paragraph> -->
+    <!-- <abbr title="필수입력">*</abbr> -->
+
+    <mm-component-props>
+      <mm-prop name="type" type="string = 'text'"></mm-prop>
+      <mm-prop name="value" type="string" optional></mm-prop>
+      <mm-prop name="name" type="string" optional></mm-prop>
+      <mm-prop name="placeholder" type="string" optional></mm-prop>
+      <mm-prop name="label" type="string" optional></mm-prop>
+      <mm-prop name="helper" type="string" optional></mm-prop>
+      <mm-prop name="validation-text" type="string" optional></mm-prop>
+      <mm-prop name="size" type="string" optional></mm-prop>
+      <mm-prop name="optional" type="boolean" optional></mm-prop>
+      <mm-prop name="hidden-label" type="boolean" optional></mm-prop>
+      <mm-prop name="disabled" type="boolean" optional></mm-prop>
+      <mm-prop name="aria-invalid" type="'true' | 'false'" optional></mm-prop>
+      <mm-prop name="input" type="CustomEvent detail: value" kind="event"></mm-prop>
+    </mm-component-props>
+
+    <mm-component-tokens>
+      <mm-token name="input-height" default="var(--size-48)"></mm-token>
+      <mm-token name="input-background-color" default="var(--background-subtle-color)"></mm-token>
+      <mm-token name="input-border-color" default="transparent"></mm-token>
+      <mm-token name="input-border-radius" default="var(--radius)"></mm-token>
+      <mm-token name="input-text-color" default="var(--foreground-color)"></mm-token>
+    </mm-component-tokens>
+
+    <mm-component-anatomy
+      parts='[
+      "레이블 — 입력 항목의 이름을 나타냅니다(label).",
+      "헬퍼 텍스트 — 레이블 아래에서 입력 형식이나 보조 정보를 안내합니다(helper).",
+      "입력 필드 — 값을 입력·표시하는 영역. placeholder로 입력 형식을 안내합니다.",
+      "접두/접미 요소 — 아이콘·단위·버튼 등 보조 요소(slot: leading / trailing).",
+      "검증 텍스트 — 입력 필드 아래에서 오류나 검증 결과를 전달합니다(validation-text)."
+    ]'
+    >
+      <div style="position: relative; display: inline-block; padding-left: 1.75rem">
+        <mm-textfield
+          label="이메일"
+          placeholder="name@example.com"
+          helper="회사 이메일을 입력하세요."
+          validation-text="올바른 이메일 형식으로 입력하세요."
+          invalid
+          style="width: 280px"
+        >
+          <mm-icon slot="leading" name="mail"></mm-icon>
+        </mm-textfield>
+
+        <!-- 번호 마커 (세로 배치) -->
+        <mm-list-marker
+          variant="number"
+          value="1"
+          style="position: absolute; left: 0; top: 0.25rem"
+        ></mm-list-marker>
+        <mm-list-marker
+          variant="number"
+          value="2"
+          style="position: absolute; left: 0; top: 2rem"
+        ></mm-list-marker>
+        <mm-list-marker
+          variant="number"
+          value="3"
+          style="position: absolute; left: 0; top: 4.25rem"
+        ></mm-list-marker>
+        <mm-list-marker
+          variant="number"
+          value="4"
+          style="position: absolute; left: 2.25rem; top: 4.25rem"
+        ></mm-list-marker>
+        <mm-list-marker
+          variant="number"
+          value="5"
+          style="position: absolute; left: 0; bottom: 0.25rem"
+        ></mm-list-marker>
+      </div>
+    </mm-component-anatomy>
+
+    <mm-component-guide>
+      <mm-component-feature-list>
+        <mm-feature
+          heading="Freeform"
+          description="제한된 선택지가 아니라 자유 형식 값을 받습니다. 사용자 여정에 허들이 될 수 있는 불필요한 정보 입력을 유도하지 마세요 — 모든 텍스트필드는 필수 입력이며, 명확한 이점이 있는 경우에만 '선택입력' 텍스트와 함께 선택 필드를 제안합니다."
+        ></mm-feature>
+        <mm-feature
+          heading="Validatable"
+          description="입력값 자체의 규칙 위반을 검증하고 오류를 표시합니다. 오류 메시지는 영향을 받는 필드와 연결해 제공합니다."
+        ></mm-feature>
+      </mm-component-feature-list>
+    </mm-component-guide>
+
+    <section style="position: relative">
+      <div
+        role="textbox"
+        contenteditable="true"
+        aria-placeholder=""
+        aria-labelledby=""
+        style="padding: 48px var(--space-2) var(--space-1)"
+      ></div>
+    </section>
+
+    <div class="calendar">
+      <style>
+        .calendar {
+          width: 250px;
+          --date-width: 32px;
+          --date-height: 32px;
+          --date-background: var(--background-subtle-color);
+          position: relative;
+        }
+        .calendar h3 {
+          font-size: 1rem;
+          line-height: 32px;
+        }
+        .calendar-navigation {
+          display: flex;
+          position: absolute;
+          right: 0;
+          top: 0;
+        }
+        .calendar-navigation-prev {
+          width: var(--date-width);
+          height: var(--date-width);
+          margin-right: 4px;
+          background: var(--date-background);
+          border-radius: var(--radius);
+        }
+        .calendar-navigation-next {
+          width: var(--date-width);
+          height: var(--date-width);
+          background: var(--date-background);
+          border-radius: var(--radius);
+        }
+        .calendar-head {
+          margin-top: 0.5rem !important;
+          display: grid !important;
+          grid-template-columns: repeat(7, 1fr) !important;
+          gap: var(--space-1) !important;
+        }
+        .calendar-head div {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: var(--date-width);
+          height: var(--date-width);
+          border-radius: var(--radius);
+        }
+        .calendar-body {
+          display: grid !important;
+          grid-template-columns: repeat(7, 1fr) !important;
+          gap: var(--space-1) !important;
+        }
+        .calendar-body-column {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: var(--date-width);
+          height: var(--date-width);
+          border-radius: var(--radius);
+          cursor: pointer;
+          &::hover {
+            background: var(--color-primary);
+            color: var(--foreground-color-on-solid);
+          }
+        }
+      </style>
+      <b>2020년 12월</b>
+      <nav class="calendar-navigation">
+        <button class="calendar-navigation-prev" aria-label="앞으로">
+          <i></i>
+        </button>
+        <button class="calendar-navigation-next" aria-label="뒤로">
+          <i></i>
+        </button>
+      </nav>
+      <div class="calendar-head">
+        <div>일</div>
+        <div>월</div>
+        <div>화</div>
+        <div>수</div>
+        <div>목</div>
+        <div>금</div>
+        <div>토</div>
+      </div>
+      <div class="calendar-body">
+        <div class="calendar-body-column">1</div>
+        <div class="calendar-body-column">2</div>
+        <div class="calendar-body-column">3</div>
+        <div class="calendar-body-column">4</div>
+        <div class="calendar-body-column">5</div>
+        <div class="calendar-body-column">6</div>
+        <div class="calendar-body-column">7</div>
+        <div class="calendar-body-column">1</div>
+        <div class="calendar-body-column">2</div>
+        <div class="calendar-body-column">3</div>
+        <div class="calendar-body-column">4</div>
+        <div class="calendar-body-column">5</div>
+        <div class="calendar-body-column">6</div>
+        <div class="calendar-body-column">7</div>
+        <div class="calendar-body-column">1</div>
+        <div class="calendar-body-column">2</div>
+        <div class="calendar-body-column">3</div>
+        <div class="calendar-body-column">4</div>
+        <div class="calendar-body-column">5</div>
+        <div class="calendar-body-column">6</div>
+        <div class="calendar-body-column">7</div>
+      </div>
+
+      <br />
+      <mm-flex>
+        <div style="flex: 1">
+          <mm-textfield type="date" name="date-start" label="체크인" placeholder="YYYY. MM. DD.">
+            <mm-icon slot="trailing" name="calendar"></mm-icon>
+          </mm-textfield>
+        </div>
+        <div style="flex: 1">
+          <mm-textfield type="date" name="date-end" label="체크아웃" placeholder="YYYY. MM. DD.">
+            <mm-icon slot="trailing" name="calendar"></mm-icon>
+          </mm-textfield>
+        </div>
+      </mm-flex>
+      <br />
+      <mm-flex align-items="flex-end">
+        <mm-textfield label="Length" placeholder="cm unit"></mm-textfield>
+        <mm-icon name="xmark"></mm-icon>
+        <mm-textfield label="Width" placeholder="x means"></mm-textfield>
+        <mm-icon name="xmark"></mm-icon>
+        <mm-textfield label="Height" placeholder="cm"></mm-textfield>
+      </mm-flex>
+    </div>
+
+    <mm-text-list texts="[]">
+      <mm-text-list
+        texts='[
+      "",
+      "url field. www 및 https://",
+      "form 컴포넌트는 간격에 대한 구조 컴포넌트. TODO. FormField, FormLabel, FormControl. formpatterns. FormField label / TextInput 으로 나누는 방안. groupable은 속성. 그래서 컴포넌트 이름은 form layout / fieldset / fieldgroup FormLabel checkbox-label와 input-label을 똑같이 할수 있나? field label : fieldset legend, label - input/textarea 그러면 searchField 등의 대안이될 수 있나?", "field feedback / fieldset feedback(checkbox group, login)", "props: minValue, maxValue, value, onDecreseClick, onIncreseClick",
+      "221021: - + 버튼에 포커스는 필요가 없다. input 키보드 위 아래로?", "장식적인 검색 아이콘과 clickable한 액션. leading는 장식. trailing는 액션? trailing에 유닛이 있을 수도"]'
+      ></mm-text-list>
+    </mm-text-list>
+
+    <div
+      style="
+      width: 20rem;
+      height: 20rem;
+      border-radius: 50%;
+      background-image: url('../src/images/prometheus.jpg');
+      background-size: cover;
+      position: relative;
+    "
+    >
+      <mm-heading
+        level="3"
+        style="
+        color: var(--foreground-color-on-solid);
+        background: var(--background-strong-color);
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+      "
+      >
+        프로메테우스
+      </mm-heading>
+      <br />
+      <cite
+        style="
+        color: var(--foreground-color-on-solid);
+        background: var(--background-strong-color);
+        display: inline-block;
+        margin-top: 0;
+        position: relative;
+        z-index: 1;
+      "
+      >
+        <div style="color: var(--foreground-color-on-solid); position: relative">리들리 스콧</div>
+        <time style="color: var(--foreground-color-on-solid); position: relative">2012, 미국</time>
+      </cite>
+    </div>
+
+    <mm-component-section
+      heading="Input Feedback"
+      description="help message와 feedback message / validation feedback를 구분하기. mui에서는 error prop."
+    ></mm-component-section>
+
+    <mm-component-section
+      heading="RevealButton"
+      description="회원가입 프로세스에서 비밀번호 확인 필드가 존재하는 경우에는
+          제공할 필요가 없다. 비밀번호 확인 필드를 제공하지 않는 것은 국내 서비스에는 익숙하지 않은
+          경험. 비밀번호 입력 필드가 1개만 존재하는 경우 리빌 버튼을 제공할 수 있다"
+    ></mm-component-section>
+
+    <mm-component-section
+      heading="NumberInput"
+      description="숫자 입력 필드. 수량, 가격, step/count 입력에 사용합니다. TODO utilities. 앞자리 0 제거. 숫자만입력3자리마다콤마. 소숫점 컨트롤."
+    >
+      <mm-flex direction="column" gap="3">
+        <mm-number-input
+          label="수량"
+          name="quantity"
+          value="2"
+          min="1"
+          max="20"
+          step="1"
+          helper="1개 이상 20개 이하로 입력하세요."
+        ></mm-number-input>
+
+        <mm-number-input
+          label="가격"
+          name="price"
+          value="30000"
+          min="0"
+          step="1000"
+        ></mm-number-input>
+
+        <mm-number-input label="비활성" value="10" disabled></mm-number-input>
+      </mm-flex>
+    </mm-component-section>
+
+    <mm-component-section
+      heading="PasswordField"
+      description="비밀번호 입력 필드. searchfield처럼 textfield를 확장하며, trailing에 reveal-button을 두어 입력값 노출을 토글합니다."
+    >
+      <mm-flex direction="column" gap="3" style="max-width: 400px">
+        <mm-passwordfield
+          label="비밀번호"
+          placeholder="비밀번호를 입력하세요"
+          helper="8자 이상, 영문·숫자·특수문자를 포함하세요."
+        ></mm-passwordfield>
+
+        <mm-passwordfield label="비밀번호 확인" placeholder="6자리 이상"></mm-passwordfield>
+
+        <mm-passwordfield label="비활성" value="secret123" disabled></mm-passwordfield>
+      </mm-flex>
+    </mm-component-section>
+
+    <mm-component-section
+      heading="SearchField"
+      description="검색 필드. textfield를 확장하며, leading에 검색 아이콘, trailing에 clear 버튼을 제공합니다."
+    >
+      <mm-flex direction="column" gap="3" style="max-width: 400px">
+        <mm-searchfield placeholder="궁금한 인물이나 이슈가 있나요?"></mm-searchfield>
+        <mm-searchfield size="small" placeholder="작은 검색 필드"></mm-searchfield>
+      </mm-flex>
+    </mm-component-section>
+
+    <mm-component-section heading="Newsletter" description="TODO">
+      <form style="max-width: 400px">
+        <mm-text-block
+          level="3"
+          heading="Newsletter subscribe"
+          description="섭스크라이브 유아이 콤포넌트 입니다. 두 줄 단락을 위해 쓰고 있습니다."
+        ></mm-text-block>
+        <div style="height: 1rem"></div>
+        <mm-textfield type="email" placeholder="Enter Your Email..">
+          <mm-icon slot="leading" name="mail"></mm-icon>
+          <mm-button slot="trailing" type="submit" variant="primary" size="medium">
+            뉴스레터 구독
+          </mm-button>
+        </mm-textfield>
+        <!-- 걱정하지 마세요. 스팸은 없습니다! 귀하의 정보는 web.dev 및 Chrome 관련 업데이트에만 사용되며
+      당사에서 보내는 이메일은 일반적으로 한 달에 1-2회를 넘지 않습니다. 언제든지 구독을 취소할 수
+      있습니다. -->
+      </form>
+    </mm-component-section>
+
+    <mm-component-references>
+      <mm-link
+        external
+        href="https://support.google.com/accounts/answer/32040?visit_id=637702064644854938-965259796&p=pw_dont_reuse&hl=ko&rd=1"
+      >
+        구글의 비밀번호 만들기 팁꾸
+      </mm-link>
+    </mm-component-references>
+
+    <mm-component-guide>
+      <section class="step" data-align="vertical" style="margin: 1rem 0">
+        <div class="step-item">
+          <span class="step-item-icon">1</span>
+          <mm-paragraph>검색 인지, 검색 기표</mm-paragraph>
+          <div class="step-item-description">
+            <mm-text-list
+              texts='[
+              "키워드 입력으로 즉시 검색. 추천, 자동완성.",
+              "해시태그 또는 카테고리 목록으로 제안된 인기/추천 키워드로 검색",
+              "searchfield 형태의 버튼을 클릭하여 검색 뷰로 이동"
+            ]'
+            ></mm-text-list>
+          </div>
+        </div>
+        <div class="step-item">
+          <span class="step-item-icon">2</span>
+          <mm-paragraph>onFocus</mm-paragraph>
+          <mm-caption>keyword.length === 0</mm-caption>
+          <div class="step-item-description">
+            <mm-text-list
+              texts='[
+              "이전 검색 내역",
+              "제안Suggestions. 추천 및 인기 또는 개인화 큐레이션"
+            ]'
+            ></mm-text-list>
+          </div>
+        </div>
+        <div class="step-item">
+          <span class="step-item-icon">3</span>
+          <mm-paragraph>onChange</mm-paragraph>
+          <div class="step-item-description">
+            <mm-text-list
+              texts='[
+              "추천/자동완성/필터링",
+              "결과 없음 상태를 사용하지 않는다. 일치하는 결과가 없더라도 유사 콘텐츠 또는 추천 콘텐츠로 대체하여 하나 이상의 결과를 항상 보여주도록 합니다."
+            ]'
+            ></mm-text-list>
+          </div>
+        </div>
+        <div class="step-item">
+          <span class="step-item-icon">4</span>
+          <mm-paragraph>onSubmit (엔터 키 또는 버튼 클릭)</mm-paragraph>
+          <div class="step-item-description">
+            <mm-text-list
+              texts='[
+              "검색 서비스 본문 결과, 전문 검색",
+              "입력한 결과물 노출 또는 바로가기를 최상단에 노출",
+              "일치하는 결과만 표시하고 새로운 검색을 유도"
+            ]'
+            ></mm-text-list>
+          </div>
+        </div>
+      </section>
+
+      <mm-paragraph-group>
+        <mm-paragraph>Checklist</mm-paragraph>
+        <mm-text-list
+          texts='[
+          "검색의 범위. 글로벌, 로컬",
+          "모바일 키보드의 높이를 고려한 쿼리의 적정 갯수",
+          "결과 페이지의 공유",
+          "검색 데이터의 수집",
+          "최근 검색 내역 삭제. 휘발성이 높은 정보이므로 편집 모듈 없이 우측 삭제 버튼으로 개별 삭제 기능을 제공해도 충분하다.",
+          "전체 검색 내역과 최근 검색 내역. 활동 로그. 검색 내역의 삭제는 개인화 콘텐츠에 영향을 주는가?",
+          "tabIndex: back -> input"
+        ]'
+        ></mm-text-list>
+      </mm-paragraph-group>
+    </mm-component-guide>
+
+    <mm-component-section heading="iOS, Android 패턴">
+      <style>
+        .ios .searchfield-input:focus {
+          width: 90%;
+        }
+      </style>
+      <form class="ios" style="max-width: var(--layout-width-narrow)">
+        <label>
+          <mm-icon name="search"></mm-icon>
+        </label>
+        <input class="searchfield-input" type="search" placeholder="iOS pattern" />
+        <mm-clear-button aria-label="검색어 지우기"></mm-clear-button>
+        <button aria-label="취소">
+          <span class="material-symbols-outlined">취소</span>
+        </button>
+      </form>
+      <form style="max-width: var(--layout-width-narrow); position: relative">
+        <div style="position: absolute; left: 0">
+          <mm-icon-button icon="arrow-left" aria-label="뒤로"></mm-icon-button>
+        </div>
+        <input
+          class="searchfield-input"
+          type="search"
+          placeholder="Android pattern"
+          style="padding-left: 3rem"
+        />
+        <div style="position: absolute; right: var(--space-3); top: var(--space-3); z-index: 1">
+          <mm-clear-button aria-label="검색어 지우기"></mm-clear-button>
+        </div>
+      </form>
+    </mm-component-section>
+
+    <mm-component-section heading="No Result" description="일치하는 결과가 없습니다.">
+      <mm-result heading="'[키워드]'와(과) 일치하는 내용이 없습니다.">
+        <mm-button slot="action">검색어 제공</mm-button>
+        <mm-button slot="action">애옹</mm-button>
+      </mm-result>
+    </mm-component-section>
+
+    <mm-component-section heading="Search Suggestion">
+      <mm-menu-item-group aria-label="검색 제안">
+        <mm-menu-item-action icon="search" label="자동완성"></mm-menu-item-action>
+        <mm-menu-item-action icon="search" label="자동완성유아이"></mm-menu-item-action>
+      </mm-menu-item-group>
+    </mm-component-section>
+
+    <mm-component-references>
+      <mm-link external href="https://developer.apple.com/documentation/uikit/uisearchbar">
+        Apple Developer - searchbar
+      </mm-link>
+      <mm-link external href="https://material.io/design/navigation/search.html">MD search</mm-link>
+      <mm-link external href="https://developer.android.com/reference/android/widget/SearchView">
+        android searchview
+      </mm-link>
+    </mm-component-references>
+
+    <!-- <form action="">
+
+      <fieldset disabled>
+    <input type="text" />
+    <input type="text" />
+  </fieldset>
+    <input type="checkbox" />
+    <input type="radio" />
+    <mm-separator></mm-separator>
+    <select name="" id="">
+      <option value=""></option>
+    </select>
+    <input type="text" placeholder="text" />
+    <input type="email" placeholder="email" />
+    <input type="password" placeholder="password" />
+    <input type="url" placeholder="url" />
+    <input type="tel" placeholder="tel" />
+    <input type="date" placeholder="date" />
+    <input type="time" placeholder="time" />
+    <textarea name="" id=""></textarea>
+    <input id="myURL" name="myURL" type="url" list="defaultURLs" />
+    <datalist id="defaultURLs">
+      <option value="https://developer.mozilla.org/"></option>
+      <option value="http://www.google.com/"></option>
+    </datalist>
+    <button type="submit">제출</button>
+  </form> -->
+
+    <!-- Dropdown(*Menu, Contextual Menu)*
+    displays a list of actions, options or links.
+    It is triggered when a user interacts with a Button, Textfield or other control.
+    Dropdown allows for complex functionality that can’t be accomplished with SelectList.
+
+    3개 이상.
+    select보다 복잡한 액션의 조합.
+    immediate action.
+    Place destructive actions at the bottom
+  -->
+
+    <!-- <input type="text" inputmode="numeric" pattern="[0-9]*" />
+<mm-caption id="" aria-live="assertive">pattern="[0-9]+"</mm-caption> -->
+    <!-- <mm-paragraph>DateRangeField / DateField</mm-paragraph> -->
+    <mm-component-related>
+      <mm-button-group>
+        <mm-hashtag-link href="textarea.html">Textarea</mm-hashtag-link>
+        <mm-hashtag-link href="popover.html">Popover</mm-hashtag-link>
+      </mm-button-group>
+    </mm-component-related>
+  </main>
+`
+
 document.addEventListener('DOMContentLoaded', () => {
-  document.body.innerHTML = renderDocumentLayout(main)
+  renderDocumentLayout(main)
 })

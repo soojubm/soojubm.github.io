@@ -1,8 +1,853 @@
-import main from './index.html'
+import { html } from 'lit'
 import { renderDocumentLayout } from '../../../layouts/document-layout'
 
+const main = html`
+  <main class="page">
+    <mm-flex direction="column" gap="16">
+      <mm-page-header
+        heading="Tokens"
+        description="제품의 시각 언어를 구성하는 원자 값입니다. 색상, 글꼴, 간격, 크기, 형태, 레이어, 모션을 토큰으로 관리해 컴포넌트와 패턴이 같은 기준을 공유하게 합니다."
+      ></mm-page-header>
+
+      <mm-text-block
+        level="3"
+        heading="토큰 카테고리: Base(Dimension/Surface) / State"
+        description="토큰은 크게 정적인 값을 담는 Base와 인터랙션에
+      따라 적용되는 State로 나뉘며, Base는 다시 크기·간격의 Dimension과 재질·표면의 Surface로
+      구분됩니다."
+      ></mm-text-block>
+
+      <mm-text-block
+        level="3"
+        heading="토큰 구조"
+        description="토큰은 프리미티브와 시멘틱 계층으로 구성됩니다. 프리미티브 토큰은 디자인의 기본 값을
+    정의하고, 시멘틱 토큰은 이를 인터페이스의 역할에 매핑합니다. 프리미티브 토큰은 color-, size-,
+    space-와 같이 값의 종류를 기준으로 명명하며, 시멘틱 토큰은 background-color, border-color,
+    body-font-size처럼 역할과 용도를 기준으로 명명합니다. 이를 통해 토큰의 출처와 목적을 명확하게
+    구분할 수 있습니다."
+      ></mm-text-block>
+
+      <style>
+        .token-color-markers {
+          display: flex;
+          width: min(100%, calc(var(--size-80) * 6));
+        }
+
+        .token-color-marker {
+          display: flex;
+          justify-content: center;
+          flex: 1 1 0;
+          min-width: var(--size-32);
+        }
+      </style>
+
+      <mm-flex direction="column" gap="0">
+        <mm-text-block level="2" heading="Color" description="TODO..."></mm-text-block>
+
+        <mm-grid columns="6">
+          <mm-color-token color="var(--gray0)" token="gray0: #fff"></mm-color-token>
+          <mm-color-token color="var(--gray100)" token="gray100: #f5f6f5"></mm-color-token>
+          <mm-color-token color="var(--gray200)" token="gray200: #d2d7d5"></mm-color-token>
+          <mm-color-token color="var(--gray400)" token="gray400: #8a908d"></mm-color-token>
+          <mm-color-token color="var(--gray800)" token="gray800: #303b35"></mm-color-token>
+          <mm-color-token color="var(--green100)" token="green100: green tint"></mm-color-token>
+          <mm-color-token color="var(--green800)" token="green800: #1b995c"></mm-color-token>
+          <mm-color-token color="var(--red100)" token="red100: red tint"></mm-color-token>
+          <mm-color-token color="var(--red800)" token="red800: #f02849"></mm-color-token>
+        </mm-grid>
+        <!-- <mm-grid
+          columns="6"
+          style="margin-top: var(--space-3)"
+          aria-label="semantic color tokens"
+        ></mm-grid> -->
+
+        <mm-separator></mm-separator>
+        <mm-grid columns="4" aria-label="grayscale color tokens">
+          <mm-color-token
+            color="var(--color-primary)"
+            on-color="var(--foreground-color-on-primary)"
+            label="on primary"
+            token="primary: green800"
+          ></mm-color-token>
+          <mm-color-token
+            color="var(--green100)"
+            on-color="var(--foreground-color)"
+            label="on primary-light"
+            token="primary-light: green100"
+          ></mm-color-token>
+          <!-- warning -->
+          <mm-color-token
+            color="var(--red100)"
+            on-color="var(--foreground-color-on-warning)"
+            label="on warning-light"
+            token="warning-light: red100"
+          ></mm-color-token>
+          <mm-color-token
+            color="var(--red800)"
+            on-color="var(--foreground-color-on-solid)"
+            label="on warning"
+            token="warning: red800"
+          ></mm-color-token>
+        </mm-grid>
+
+        <mm-grid columns="4" style="margin-top: var(--space-3)">
+          <mm-color-token
+            color="var(--gray0)"
+            on-color="var(--foreground-color)"
+            label="on background"
+            token="background: #fff"
+          ></mm-color-token>
+
+          <mm-color-token
+            color="var(--gray100)"
+            on-color="var(--foreground-color)"
+            label="on background-subtle"
+            token="background-subtle: #f5f6f5"
+          ></mm-color-token>
+          <mm-color-token
+            color="var(--gray800)"
+            on-color="var(--foreground-color-on-solid)"
+            label="on background-strong"
+            token="background-strong: #303b35"
+          ></mm-color-token>
+        </mm-grid>
+
+        <!-- <mm-token-group>
+        <mm-token-item key="selection-indicator-color" value="var(--color-primary)"></mm-token-item>
+        <mm-token-item
+          key="selection-background"
+          value="var(--color-primary-subtle)"
+        ></mm-token-item>
+        <mm-token-item key="selection-foreground" value="var(--color-primary)"></mm-token-item>
+      </mm-token-group> -->
+      </mm-flex>
+
+      <mm-flex direction="column" gap="3">
+        <mm-text-block
+          level="2"
+          heading="Typography"
+          description="타이포그래피 토큰은 크기와 고정 행간을 함께 사용합니다. 행간은 컴포넌트의 역할에 맞춰 조합합니다."
+        ></mm-text-block>
+        <mm-flex direction="column" gap="4">
+          <mm-surface variant="outlined" radius="large">
+            <mm-marquee gap="4" speed="80" pause-on-hover>
+              <mm-text size="32" weight="bold">
+                font-family: Alan Sans, Gothic A1, system-ui, sans-serif
+              </mm-text>
+              <mm-text size="32" weight="bold">font-size: 32px</mm-text>
+              <mm-text size="32" weight="bold">line-height: 40px</mm-text>
+            </mm-marquee>
+          </mm-surface>
+          <mm-surface variant="outlined" radius="large">
+            <mm-marquee gap="4" speed="64" pause-on-hover>
+              <mm-text size="24" weight="bold">
+                font-family: Alan Sans, Gothic A1, system-ui, sans-serif
+              </mm-text>
+              <mm-text size="24" weight="bold">font-size: 24px</mm-text>
+              <mm-text size="24" weight="bold">line-height: 32px</mm-text>
+            </mm-marquee>
+          </mm-surface>
+          <mm-surface variant="outlined" radius="large">
+            <mm-marquee gap="4" speed="64" pause-on-hover>
+              <mm-text size="18" weight="bold">
+                font-family: Alan Sans, Gothic A1, system-ui, sans-serif
+              </mm-text>
+              <mm-text size="18" weight="bold">font-size: 18px</mm-text>
+              <mm-text size="18" weight="bold">line-height: 28px</mm-text>
+            </mm-marquee>
+          </mm-surface>
+          <mm-surface variant="outlined" radius="large">
+            <mm-marquee gap="4" speed="64" pause-on-hover>
+              <mm-text size="14" weight="bold">
+                font-family: Alan Sans, Gothic A1, system-ui, sans-serif
+              </mm-text>
+              <mm-text size="14" weight="bold">font-size: 14px</mm-text>
+              <mm-text size="14" weight="bold">line-height: 24px</mm-text>
+            </mm-marquee>
+          </mm-surface>
+          <mm-surface variant="outlined" radius="large">
+            <mm-marquee gap="4" speed="64" pause-on-hover>
+              <mm-text size="12" weight="bold">
+                font-family: Alan Sans, Gothic A1, system-ui, sans-serif
+              </mm-text>
+              <mm-text size="12" weight="bold">font-size: 12px</mm-text>
+              <mm-text size="12" weight="bold">line-height: 16px</mm-text>
+            </mm-marquee>
+          </mm-surface>
+        </mm-flex>
+
+        <!-- <mm-flex align-items="end" gap="4">
+        <mm-flex direction="column" align-items="center" gap="2">
+          <mm-text size="32" weight="bold">Ag</mm-text>
+          <mm-list-marker variant="number" value="1"></mm-list-marker>
+        </mm-flex>
+        <mm-flex direction="column" align-items="center" gap="2">
+          <mm-text size="24" weight="bold">Ag</mm-text>
+          <mm-list-marker variant="number" value="2"></mm-list-marker>
+        </mm-flex>
+        <mm-flex direction="column" align-items="center" gap="2">
+          <mm-text size="18">Ag</mm-text>
+          <mm-list-marker variant="number" value="3"></mm-list-marker>
+        </mm-flex>
+        <mm-flex direction="column" align-items="center" gap="2">
+          <mm-text size="14">Ag</mm-text>
+          <mm-list-marker variant="number" value="4"></mm-list-marker>
+        </mm-flex>
+        <mm-flex direction="column" align-items="center" gap="2">
+          <mm-text size="12">Ag</mm-text>
+          <mm-list-marker variant="number" value="5"></mm-list-marker>
+        </mm-flex>
+      </mm-flex> -->
+
+        <mm-token-group>
+          <!-- <mm-token-item
+          key="font family"
+          value=""
+          style="border-color: #000; font-weight: var(--font-weight-bold)"
+        ></mm-token-item> -->
+          <mm-token-item
+            key="font-family"
+            value="Alan Sans, Gothic A1, system-ui, sans-serif"
+          ></mm-token-item>
+          <!-- <mm-token-item
+          key="font weight"
+          value=""
+          style="border-color: #000; font-weight: var(--font-weight-bold)"
+        ></mm-token-item> -->
+          <mm-token-item key="font-weight-normal" value="500"></mm-token-item>
+          <mm-token-item key="font-weight-bold" value="700"></mm-token-item>
+          <!-- <mm-token-item
+          key="font size"
+          value=""
+          style="
+            border-color: #000;
+            font-weight: var(--font-weight-bold);
+            font-size: var(--font-size-18);
+          "
+        ></mm-token-item> -->
+          <mm-token-item key="font-size-32" value="32px"></mm-token-item>
+          <mm-token-item key="font-size-24" value="24px"></mm-token-item>
+          <mm-token-item key="font-size-18" value="18px"></mm-token-item>
+          <mm-token-item key="font-size-14" value="14px"></mm-token-item>
+          <mm-token-item key="font-size-12" value="12px"></mm-token-item>
+          <!-- <mm-token-item
+          key="font line height"
+          value=""
+          style="border-color: #000; font-weight: var(--font-weight-bold)"
+        ></mm-token-item> -->
+          <mm-token-item key="font-line-height-40" value="40px"></mm-token-item>
+          <mm-token-item key="font-line-height-32" value="32px"></mm-token-item>
+          <mm-token-item key="font-line-height-28" value="28px"></mm-token-item>
+          <mm-token-item key="font-line-height-24" value="24px"></mm-token-item>
+          <mm-token-item key="font-line-height-16" value="16px"></mm-token-item>
+        </mm-token-group>
+      </mm-flex>
+
+      <mm-flex direction="column" gap="3">
+        <mm-text-block
+          level="2"
+          heading="Size"
+          description="요소의 크기를 결정합니다. 주로 height에 사용하고 정사각형 요소에 한정하여 width에 사용합니다."
+        ></mm-text-block>
+        <mm-token-stage>
+          <mm-flex align-items="flex-end" gap="8">
+            <mm-flex direction="column" align-items="center" gap="2">
+              <div
+                style="
+                width: var(--size-16);
+                height: var(--size-16);
+                background: var(--background-strong-color);
+                border-radius: var(--radius);
+                flex-shrink: 0;
+              "
+              ></div>
+              <mm-list-marker variant="number" value="1"></mm-list-marker>
+            </mm-flex>
+            <mm-flex direction="column" align-items="center" gap="2">
+              <div
+                style="
+                width: var(--size-24);
+                height: var(--size-24);
+                background: var(--background-strong-color);
+                border-radius: var(--radius);
+                flex-shrink: 0;
+              "
+              ></div>
+              <mm-list-marker variant="number" value="2"></mm-list-marker>
+            </mm-flex>
+            <mm-flex direction="column" align-items="center" gap="2">
+              <div
+                style="
+                width: var(--size-32);
+                height: var(--size-32);
+                background: var(--background-strong-color);
+                border-radius: var(--radius);
+                flex-shrink: 0;
+              "
+              ></div>
+              <mm-list-marker variant="number" value="3"></mm-list-marker>
+            </mm-flex>
+            <mm-flex direction="column" align-items="center" gap="2">
+              <div
+                style="
+                width: var(--size-40);
+                height: var(--size-40);
+                background: var(--background-strong-color);
+                border-radius: var(--radius);
+                flex-shrink: 0;
+              "
+              ></div>
+              <mm-list-marker variant="number" value="4"></mm-list-marker>
+            </mm-flex>
+            <mm-flex direction="column" align-items="center" gap="2">
+              <div
+                style="
+                width: var(--size-48);
+                height: var(--size-48);
+                background: var(--background-strong-color);
+                border-radius: var(--radius);
+                flex-shrink: 0;
+              "
+              ></div>
+              <mm-list-marker variant="number" value="5"></mm-list-marker>
+            </mm-flex>
+            <mm-flex direction="column" align-items="center" gap="2">
+              <div
+                style="
+                width: var(--size-80);
+                height: var(--size-80);
+                background: var(--background-strong-color);
+                border-radius: var(--radius);
+                flex-shrink: 0;
+              "
+              ></div>
+              <mm-list-marker variant="number" value="6"></mm-list-marker>
+            </mm-flex>
+          </mm-flex>
+        </mm-token-stage>
+        <mm-token-group>
+          <mm-token-item key="size-16" value="16px"></mm-token-item>
+          <mm-token-item key="size-24" value="24px"></mm-token-item>
+          <mm-token-item key="size-32" value="32px"></mm-token-item>
+          <mm-token-item key="size-40" value="40px"></mm-token-item>
+          <mm-token-item key="size-48" value="48px"></mm-token-item>
+          <mm-token-item key="size-80" value="80px"></mm-token-item>
+        </mm-token-group>
+      </mm-flex>
+
+      <mm-flex direction="column" gap="3">
+        <mm-text-block
+          level="2"
+          heading="Space"
+          description="space는 요소 사이의 거리입니다."
+        ></mm-text-block>
+        <mm-token-stage>
+          <mm-flex align-items="center" gap="8">
+            <mm-flex direction="column" align-items="center" gap="2">
+              <mm-flex align-items="center" gap="0">
+                <div
+                  style="
+                  width: 2px;
+                  height: var(--size-32);
+                  background: var(--background-strong-color);
+                  border-radius: var(--radius);
+                "
+                ></div>
+                <div style="width: 2px; height: 4px; background: var(--color-primary)"></div>
+                <div
+                  style="
+                  width: 2px;
+                  height: var(--size-32);
+                  background: var(--background-strong-color);
+                  border-radius: var(--radius);
+                "
+                ></div>
+              </mm-flex>
+              <mm-list-marker variant="number" value="1"></mm-list-marker>
+            </mm-flex>
+            <mm-flex direction="column" align-items="center" gap="2">
+              <mm-flex align-items="center" gap="0">
+                <div
+                  style="
+                  width: 2px;
+                  height: var(--size-32);
+                  background: var(--background-strong-color);
+                  border-radius: var(--radius);
+                "
+                ></div>
+                <div
+                  style="width: var(--space-1); height: 4px; background: var(--color-primary)"
+                ></div>
+                <div
+                  style="
+                  width: 2px;
+                  height: var(--size-32);
+                  background: var(--background-strong-color);
+                  border-radius: var(--radius);
+                "
+                ></div>
+              </mm-flex>
+              <mm-list-marker variant="number" value="2"></mm-list-marker>
+            </mm-flex>
+            <mm-flex direction="column" align-items="center" gap="2">
+              <mm-flex align-items="center" gap="0">
+                <div
+                  style="
+                  width: 2px;
+                  height: var(--size-32);
+                  background: var(--background-strong-color);
+                  border-radius: var(--radius);
+                "
+                ></div>
+                <div
+                  style="width: var(--space-2); height: 4px; background: var(--color-primary)"
+                ></div>
+                <div
+                  style="
+                  width: 2px;
+                  height: var(--size-32);
+                  background: var(--background-strong-color);
+                  border-radius: var(--radius);
+                "
+                ></div>
+              </mm-flex>
+              <mm-list-marker variant="number" value="3"></mm-list-marker>
+            </mm-flex>
+            <mm-flex direction="column" align-items="center" gap="2">
+              <mm-flex align-items="center" gap="0">
+                <div
+                  style="
+                  width: 2px;
+                  height: var(--size-32);
+                  background: var(--background-strong-color);
+                  border-radius: var(--radius);
+                "
+                ></div>
+                <div
+                  style="width: var(--space-3); height: 4px; background: var(--color-primary)"
+                ></div>
+                <div
+                  style="
+                  width: 2px;
+                  height: var(--size-32);
+                  background: var(--background-strong-color);
+                  border-radius: var(--radius);
+                "
+                ></div>
+              </mm-flex>
+              <mm-list-marker variant="number" value="4"></mm-list-marker>
+            </mm-flex>
+            <mm-flex direction="column" align-items="center" gap="2">
+              <mm-flex align-items="center" gap="0">
+                <div
+                  style="
+                  width: 2px;
+                  height: var(--size-32);
+                  background: var(--background-strong-color);
+                  border-radius: var(--radius);
+                "
+                ></div>
+                <div
+                  style="width: var(--space-4); height: 4px; background: var(--color-primary)"
+                ></div>
+                <div
+                  style="
+                  width: 2px;
+                  height: var(--size-32);
+                  background: var(--background-strong-color);
+                  border-radius: var(--radius);
+                "
+                ></div>
+              </mm-flex>
+              <mm-list-marker variant="number" value="5"></mm-list-marker>
+            </mm-flex>
+            <mm-flex direction="column" align-items="center" gap="2">
+              <mm-flex align-items="center" gap="0">
+                <div
+                  style="
+                  width: 2px;
+                  height: var(--size-32);
+                  background: var(--background-strong-color);
+                  border-radius: var(--radius);
+                "
+                ></div>
+                <div
+                  style="width: var(--space-8); height: 4px; background: var(--color-primary)"
+                ></div>
+                <div
+                  style="
+                  width: 2px;
+                  height: var(--size-32);
+                  background: var(--background-strong-color);
+                  border-radius: var(--radius);
+                "
+                ></div>
+              </mm-flex>
+              <mm-list-marker variant="number" value="6"></mm-list-marker>
+            </mm-flex>
+            <mm-flex direction="column" align-items="center" gap="2">
+              <mm-flex align-items="center" gap="0">
+                <div
+                  style="
+                  width: 2px;
+                  height: var(--size-32);
+                  background: var(--background-strong-color);
+                  border-radius: var(--radius);
+                "
+                ></div>
+                <div
+                  style="width: var(--space-12); height: 4px; background: var(--color-primary)"
+                ></div>
+                <div
+                  style="
+                  width: 2px;
+                  height: var(--size-32);
+                  background: var(--background-strong-color);
+                  border-radius: var(--radius);
+                "
+                ></div>
+              </mm-flex>
+              <mm-list-marker variant="number" value="7"></mm-list-marker>
+            </mm-flex>
+            <mm-flex direction="column" align-items="center" gap="2">
+              <mm-flex align-items="center" gap="0">
+                <div
+                  style="
+                  width: 2px;
+                  height: var(--size-32);
+                  background: var(--background-strong-color);
+                  border-radius: var(--radius);
+                "
+                ></div>
+                <div
+                  style="width: var(--space-16); height: 4px; background: var(--color-primary)"
+                ></div>
+                <div
+                  style="
+                  width: 2px;
+                  height: var(--size-32);
+                  background: var(--background-strong-color);
+                  border-radius: var(--radius);
+                "
+                ></div>
+              </mm-flex>
+              <mm-list-marker variant="number" value="8"></mm-list-marker>
+            </mm-flex>
+          </mm-flex>
+        </mm-token-stage>
+        <mm-token-group>
+          <mm-token-item key="space-1" value="4px"></mm-token-item>
+          <mm-token-item key="space-2" value="8px"></mm-token-item>
+          <mm-token-item key="space-3" value="12px"></mm-token-item>
+          <mm-token-item key="space-4" value="16px"></mm-token-item>
+          <mm-token-item key="space-8" value="32px"></mm-token-item>
+          <mm-token-item key="space-12" value="48px"></mm-token-item>
+          <mm-token-item key="space-16" value="64px"></mm-token-item>
+        </mm-token-group>
+      </mm-flex>
+
+      <mm-flex direction="column" gap="3">
+        <mm-text-block
+          level="2"
+          heading="Layout"
+          description="레이아웃 토큰은 페이지, 팝오버, 폼 컨테이너처럼 반복되는 구조의 최대 너비와 여백을 정의합니다."
+        ></mm-text-block>
+        <mm-token-group>
+          <mm-token-item key="layout-width-wide" value="1280px"></mm-token-item>
+          <mm-token-item key="layout-width-small" value="640px"></mm-token-item>
+          <mm-token-item key="layout-width-narrow" value="400px"></mm-token-item>
+          <mm-token-item key="layout-width-sidebar" value="16rem"></mm-token-item>
+          <mm-token-item key="layout-padding-inline" value="5vw"></mm-token-item>
+        </mm-token-group>
+      </mm-flex>
+
+      <mm-flex direction="column" gap="3">
+        <mm-text-block
+          level="2"
+          heading="Border"
+          description="테두리는 표면의 경계와 클릭 가능성을 표현합니다. 모서리 곡률은 요소의 성격과 위계를 시각적으로 구분합니다."
+        ></mm-text-block>
+        <mm-token-stage>
+          <mm-flex align-items="flex-end" gap="4">
+            <mm-flex direction="column" align-items="center" gap="2">
+              <div
+                style="
+                width: var(--size-48);
+                height: var(--size-48);
+                border: var(--border);
+                border-radius: var(--radius);
+                background: var(--background-color);
+                flex-shrink: 0;
+              "
+              ></div>
+              <mm-list-marker variant="number" value="1"></mm-list-marker>
+            </mm-flex>
+            <mm-flex direction="column" align-items="center" gap="2">
+              <div
+                style="
+                width: var(--size-48);
+                height: var(--size-48);
+                border: var(--border);
+                border-radius: var(--radius);
+                background: var(--background-color);
+                flex-shrink: 0;
+              "
+              ></div>
+              <mm-list-marker variant="number" value="2"></mm-list-marker>
+            </mm-flex>
+            <mm-flex direction="column" align-items="center" gap="2">
+              <div
+                style="
+                width: var(--size-48);
+                height: var(--size-48);
+                border: var(--interaction-selected-border-color);
+                border-radius: var(--radius);
+                background: var(--background-color);
+                flex-shrink: 0;
+              "
+              ></div>
+              <mm-list-marker variant="number" value="3"></mm-list-marker>
+            </mm-flex>
+            <mm-flex direction="column" align-items="center" gap="2">
+              <div
+                style="
+                width: var(--size-48);
+                height: var(--size-48);
+                border: var(--border-transparent);
+                border-radius: var(--radius);
+                background: var(--background-subtle-color);
+                flex-shrink: 0;
+              "
+              ></div>
+              <mm-list-marker variant="number" value="4"></mm-list-marker>
+            </mm-flex>
+            <mm-flex direction="column" align-items="center" gap="2">
+              <div
+                style="
+                width: var(--size-48);
+                height: var(--size-48);
+                border: var(--border);
+                border-radius: var(--radius);
+                background: var(--background-color);
+                flex-shrink: 0;
+              "
+              ></div>
+              <mm-list-marker variant="number" value="1"></mm-list-marker>
+            </mm-flex>
+            <mm-flex direction="column" align-items="center" gap="2">
+              <div
+                style="
+                width: var(--size-48);
+                height: var(--size-48);
+                border: var(--border);
+                border-radius: var(--radius-large);
+                background: var(--background-color);
+                flex-shrink: 0;
+              "
+              ></div>
+              <mm-list-marker variant="number" value="2"></mm-list-marker>
+            </mm-flex>
+            <mm-flex direction="column" align-items="center" gap="2">
+              <div
+                style="
+                width: var(--size-48);
+                height: var(--size-48);
+                border: var(--border);
+                border-radius: var(--radius-full);
+                background: var(--background-color);
+                flex-shrink: 0;
+              "
+              ></div>
+              <mm-list-marker variant="number" value="3"></mm-list-marker>
+            </mm-flex>
+          </mm-flex>
+        </mm-token-stage>
+        <mm-token-group>
+          <mm-token-item key="border-width" value="1px"></mm-token-item>
+
+          <mm-token-item key="border" value="1px solid var(--border-color)"></mm-token-item>
+          <mm-token-item
+            key="border-transparent"
+            value="var(--border-width) solid transparent"
+          ></mm-token-item>
+          <mm-token-item key="border-radius" value="6px"></mm-token-item>
+          <mm-token-item key="border-radius-large" value="1rem"></mm-token-item>
+          <mm-token-item key="border-radius-full" value="50%"></mm-token-item>
+        </mm-token-group>
+      </mm-flex>
+
+      <mm-flex direction="column" gap="3">
+        <mm-text-block
+          level="2"
+          heading="Shadow"
+          description="그림자는 레이어의 고도와 부유감을 표현합니다."
+        ></mm-text-block>
+        <mm-token-stage>
+          <mm-flex align-items="flex-end" gap="4">
+            <mm-flex direction="column" align-items="center" gap="2">
+              <div
+                style="
+                width: var(--size-48);
+                height: var(--size-48);
+                border-radius: var(--radius);
+                background: var(--background-color);
+                box-shadow: var(--surface-base-shadow);
+                flex-shrink: 0;
+              "
+              ></div>
+              <mm-list-marker variant="number" value="1"></mm-list-marker>
+            </mm-flex>
+            <mm-flex direction="column" align-items="center" gap="2">
+              <div
+                style="
+                width: var(--size-48);
+                height: var(--size-48);
+                border-radius: var(--radius);
+                background: var(--background-color);
+                box-shadow: var(--surface-high-shadow);
+                flex-shrink: 0;
+              "
+              ></div>
+              <mm-list-marker variant="number" value="2"></mm-list-marker>
+            </mm-flex>
+          </mm-flex>
+        </mm-token-stage>
+        <mm-token-group aria-label="shadow primitive tokens">
+          <mm-token-item
+            key="surface-base-shadow"
+            value="0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.08)"
+          ></mm-token-item>
+          <mm-token-item
+            key="surface-high-shadow"
+            value="0 16px 32px rgba(0,0,0,.2)"
+          ></mm-token-item>
+        </mm-token-group>
+
+        <mm-separator></mm-separator>
+      </mm-flex>
+
+      <mm-flex direction="column" gap="3">
+        <mm-text-block
+          level="2"
+          heading="Blur & Opacity"
+          description="material은 뒤 배경을 얼마나 흐리고 덮을지 정하는 blur·opacity 쌍입니다. 단계가 오를수록 더 흐리고 더 불투명해집니다."
+        ></mm-text-block>
+        <mm-token-stage>
+          <div
+            style="
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            width: 100%;
+            height: 100px;
+            border-radius: var(--radius-large);
+            overflow: hidden;
+            background: linear-gradient(
+              135deg,
+              var(--color-primary) 0%,
+              var(--color-accent) 50%,
+              var(--color-danger) 100%
+            );
+          "
+          >
+            <mm-flex gap="4">
+              <mm-flex direction="column" align-items="center" gap="2">
+                <div
+                  style="
+                  width: var(--size-48);
+                  height: var(--size-48);
+                  border-radius: var(--radius);
+                  background: rgb(255 255 255 / var(--surface-base-opacity));
+                  backdrop-filter: blur(var(--surface-base-blur));
+                  -webkit-backdrop-filter: blur(var(--surface-base-blur));
+                  flex-shrink: 0;
+                "
+                ></div>
+                <mm-list-marker variant="number" value="1"></mm-list-marker>
+              </mm-flex>
+              <mm-flex direction="column" align-items="center" gap="2">
+                <div
+                  style="
+                  width: var(--size-48);
+                  height: var(--size-48);
+                  border-radius: var(--radius);
+                  background: rgb(255 255 255 / var(--surface-high-opacity));
+                  backdrop-filter: blur(var(--surface-high-blur));
+                  -webkit-backdrop-filter: blur(var(--surface-high-blur));
+                  flex-shrink: 0;
+                "
+                ></div>
+                <mm-list-marker variant="number" value="2"></mm-list-marker>
+              </mm-flex>
+            </mm-flex>
+          </div>
+        </mm-token-stage>
+        <mm-token-group aria-label="material primitive tokens">
+          <mm-token-item key="surface-base-blur" value="10px"></mm-token-item>
+          <mm-token-item key="surface-base-opacity" value="0.35"></mm-token-item>
+          <mm-token-item key="surface-high-blur" value="20px"></mm-token-item>
+          <mm-token-item key="surface-high-opacity" value="0.55"></mm-token-item>
+        </mm-token-group>
+      </mm-flex>
+
+      <mm-flex direction="column" gap="3">
+        <mm-text-block
+          level="2"
+          heading="Z-index"
+          description="z-index는 레이어의 우선순위를 정의합니다. 같은 레이어군 안에서만 비교되도록 의미 이름을 사용합니다."
+        ></mm-text-block>
+
+        <mm-token-group>
+          <mm-token-item key="material-zindex-base" value="0"></mm-token-item>
+          <mm-token-item key="material-zindex-raised" value="10"></mm-token-item>
+          <mm-token-item key="material-zindex-overlay" value="100"></mm-token-item>
+          <mm-token-item key="material-zindex-modal" value="1000"></mm-token-item>
+          <mm-token-item key="material-zindex-chrome" value="1100"></mm-token-item>
+          <mm-token-item key="material-zindex-toast" value="9000"></mm-token-item>
+        </mm-token-group>
+
+        <mm-text-list
+          texts='[
+          "base — mm-separator의 구분선, 배경 위에 놓는 텍스트처럼 형제 요소 위에 그리기 위한 로컬 컨텍스트",
+          "raised — 목록·그룹 안에서 형제보다 살짝 뜨는 요소. 예: mm-hamburger-button",
+          "overlay — 드롭다운·팝오버·툴팁류. 예: mm-tooltip, mm-popover(mm-select 등 드롭다운의 기반)",
+          "modal — 화면을 덮는 대화형 표면. 예: mm-backdrop, mm-sheet, 긴급 배너",
+          "chrome — 화면에 고정된 내비게이션·툴바. 예: mm-navbar(및 사이드 메뉴), mm-top-bar(sticky 상태), mm-fixed-bottom(mm-bottom-bar가 이 안에 놓여 함께 뜬다)",
+          "toast — 알림, 스낵바처럼 항상 다른 모든 레이어 위에 있어야 하는 요소. 예: mm-toast, 건너뛰기(skip) 링크"
+        ]'
+        ></mm-text-list>
+      </mm-flex>
+
+      <mm-component-references>
+        <mm-link external href="https://design-tokens.github.io/community-group/format">
+          Design Tokens Format Module, W3C
+        </mm-link>
+        <mm-link external href="https://docs.specifyapp.com/concepts/token-types">
+          Specify Token Types
+        </mm-link>
+        <mm-link external href="https://www.delldesignsystem.com/foundations/elevation/">
+          Dell Elevation
+        </mm-link>
+        <mm-link external href="https://www.delldesignsystem.com/foundations/typography/">
+          Dell Typography
+        </mm-link>
+        <mm-link external href="https://atlassian.design/components/tokens/all-tokens">
+          Atlassian Tokens
+        </mm-link>
+        <mm-link
+          external
+          href="https://medium.com/eightshapes-llc/size-in-design-systems-64f234aec519"
+        >
+          Size in Design Systems
+        </mm-link>
+      </mm-component-references>
+    </mm-flex>
+  </main>
+`
+
 document.addEventListener('DOMContentLoaded', () => {
-  document.body.innerHTML = renderDocumentLayout(main)
+  renderDocumentLayout(main)
 })
 
 document.addEventListener('DOMContentLoaded', () => {

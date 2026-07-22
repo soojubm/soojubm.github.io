@@ -1,7 +1,32 @@
-import main from './index.html'
+import { html } from 'lit'
 import { renderLayout } from '../../../layouts/base-layouts'
 import { renderList, getCountries, loadJson } from '../../components/_list-page'
 import { mediaCard } from '../media-card'
+
+const main = html`
+  <main class="page">
+    <mm-page-header heading="독서 목록" description="읽은 책을 기록합니다."></mm-page-header>
+
+    <div class="js-filters"></div>
+
+    <mm-paragraph
+      style="
+      margin: var(--space-3) 0;
+      color: var(--foreground-subtle-color);
+      font-size: var(--font-size-14);
+    "
+    >
+      <span class="js-count"></span>
+      권
+    </mm-paragraph>
+
+    <mm-flex class="js-list" gap="3"></mm-flex>
+
+    <div class="js-more" style="margin-top: var(--space-4); display: none">
+      <mm-show-more-button class="js-more-btn" label="더 보기"></mm-show-more-button>
+    </div>
+  </main>
+`
 
 interface Book {
   releasedate: number
@@ -15,7 +40,7 @@ interface Book {
 type FilterState = { country: string }
 
 document.addEventListener('DOMContentLoaded', () => {
-  document.body.innerHTML = renderLayout(main)
+  renderLayout(main)
   initPage()
 })
 

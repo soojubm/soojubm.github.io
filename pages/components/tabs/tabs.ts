@@ -1,6 +1,142 @@
-import main from './index.html'
+import { html } from 'lit'
 import { renderDocumentLayout } from '../../../layouts/document-layout'
 
+const main = html`
+  <main class="page js-tab">
+    <mm-page-header
+      heading="Tabs"
+      description="페이지 내에서 같은 맥락으로 분류된 콘텐츠 뷰를 전환합니다."
+    ></mm-page-header>
+
+    <mm-component-example>
+      <mm-flex direction="column" gap="4">
+        <mm-flex direction="column" gap="3">
+          <mm-tab-list value="menu1" variant="line">
+            <mm-tab value="menu1">첫 번째 메뉴</mm-tab>
+            <mm-tab value="menu2">두 번째 메뉴</mm-tab>
+            <mm-tab value="menu3">세 번째 메뉴</mm-tab>
+          </mm-tab-list>
+
+          <mm-tab-panel value="menu1">🍎 1번 콘텐츠 영역입니다.</mm-tab-panel>
+          <mm-tab-panel value="menu2">🍌 2번 콘텐츠 영역입니다.</mm-tab-panel>
+          <mm-tab-panel value="menu3">🍇 3번 콘텐츠 영역입니다.</mm-tab-panel>
+        </mm-flex>
+
+        <mm-flex direction="column" gap="3">
+          <mm-tab-list value="daily" variant="pill">
+            <mm-tab value="daily">일간</mm-tab>
+            <mm-tab value="weekly">주간</mm-tab>
+            <mm-tab value="monthly">월간</mm-tab>
+          </mm-tab-list>
+
+          <mm-tab-panel value="daily">📅 오늘 생성된 데이터...</mm-tab-panel>
+          <mm-tab-panel value="weekly">🗓️ 이번 주 누적 데이터...</mm-tab-panel>
+          <mm-tab-panel value="monthly">📊 이번 달 정산 데이터...</mm-tab-panel>
+        </mm-flex>
+      </mm-flex>
+      <!-- // iOS isTranslucent: Bool -->
+    </mm-component-example>
+
+    <mm-component-props>
+      <mm-prop name="tab-list value" type="string"></mm-prop>
+      <mm-prop name="tab-list variant" type="'line' | 'pill' = 'line'"></mm-prop>
+      <mm-prop name="tab value" type="string"></mm-prop>
+      <mm-prop name="panel value" type="string"></mm-prop>
+      <mm-prop name="tab-select" type="CustomEvent value" kind="event"></mm-prop>
+    </mm-component-props>
+
+    <mm-component-tokens>
+      <mm-token
+        name="tabs-indicator-background-color"
+        default="var(--interaction-selected-background-color)"
+      ></mm-token>
+      <mm-token name="tabs-line-color" default="var(--border-color)"></mm-token>
+      <mm-token name="tabs-line-width" default="2px"></mm-token>
+      <mm-token name="tabs-pill-background" default="var(--background-subtle-color)"></mm-token>
+      <mm-token
+        name="tabs-pill-indicator-background"
+        default="var(--interaction-selected-background-color)"
+      ></mm-token>
+      <mm-token name="tabs-pill-border-radius" default="var(--radius)"></mm-token>
+    </mm-component-tokens>
+
+    <mm-component-guide>
+      <mm-component-feature-list>
+        <mm-feature
+          heading="Interactive - selection"
+          subtitle="Easy scanning"
+          description="여러 탭 중 현재 보고 있는 탭 하나를 aria-selected 상태로 드러냅니다. 페이지 링크, 콘텐츠 정렬, 콘텐츠 필터 또는 탭투스크롤로 사용하지 마세요. 좌우 방향키로 탭을 이동하고 Home·End로 처음·마지막 탭을 선택합니다."
+        ></mm-feature>
+        <mm-feature
+          heading="Glanceable"
+          description="최대 2단어를 넘지 않도록 작성하고 두 줄이 되지 않도록 작성합니다. (그러나 폴더블과 워치 이후 말 줄임표나 두 줄 레이블을 허용해야 하는가)"
+        ></mm-feature>
+      </mm-component-feature-list>
+    </mm-component-guide>
+
+    <mm-text>
+      Make sure the controls within a pane affect content only in the same pane. Panes are mutually
+      exclusive, so ensure they're fully self-contained. Use a segmented control to provide closely
+      related choices that affect an object, state, or view. For example, a segmented control can
+      help people switch between views in a toolbar. Avoid using a segmented control to offer
+      actions, such as adding, removing, or editing content.
+    </mm-text>
+
+    <!-- 포함 컴포넌트: Tabs, Breadcrumbs(웹), Pagination, Stepper, Bottom Navigation(모바일), Side Drawer -->
+
+    <mm-text-list
+      texts='[
+          "SearchParams과 브라우저 히스토리를 활용할 것인가? (?tab=projects) / url변경 ",
+          "글로벌 네비게이션 패턴인 햄버거 메뉴와 탭(바텀네비게이션, 탭바)을 함께 사용할 수 있는가?",
+          "탭의 가로 스크롤(+ MDI). 탭의 최대 갯수 제한.",
+          "탭의 중첩. 페이지에서 수행하는 과업 중심 플로우 설계. 중첩을 허용한다면 탭의 중첩 패턴을 정의해야 함. Material 3의 primary tabs / secondary tabs 분류 등 참고. 또는 네이버 쇼핑의 4단계 5단계 탭.",
+          "flutter. Scaffold - AppBar - bottom: TabBar - tabs - Tab / Scaffold - body - TabBarView"
+        ]'
+    ></mm-text-list>
+
+    <mm-component-related>
+      <mm-button-group>
+        <mm-hashtag-link href="accordion.html">Accordion</mm-hashtag-link>
+        <mm-hashtag-link href="top-bar.html">Top Bar</mm-hashtag-link>
+      </mm-button-group>
+    </mm-component-related>
+
+    <mm-component-references>
+      <mm-link external href="https://developer.apple.com/documentation/swiftui/navigationstack">
+        swiftui navigationstack
+      </mm-link>
+      <mm-link
+        external
+        href="https://developer.apple.com/design/human-interface-guidelines/tab-views"
+      >
+        HIG tab views
+      </mm-link>
+      <mm-link
+        external
+        href="https://developer.apple.com/design/human-interface-guidelines/components/selection-and-input/segmented-controls/"
+      >
+        HIG Segmented controls
+      </mm-link>
+      <mm-link external href="https://material.io/components/tabs">MD Tabs</mm-link>
+      <mm-link external href="https://m3.material.io/components/top-app-bar/overview">
+        MD3 top app bar
+      </mm-link>
+      <mm-link external href="https://m2.material.io/components/bottom-navigation">
+        M2 Bottom Navigation
+      </mm-link>
+      <mm-link external href="https://m3.material.io/components/navigation-bar/overview">
+        M3 Navigation Bar
+      </mm-link>
+      <mm-link
+        external
+        href="https://developer.apple.com/design/human-interface-guidelines/components/navigation-and-search/tab-bars"
+      >
+        HIG Tab bars
+      </mm-link>
+    </mm-component-references>
+  </main>
+`
+
 document.addEventListener('DOMContentLoaded', () => {
-  document.body.innerHTML = renderDocumentLayout(main)
+  renderDocumentLayout(main)
 })

@@ -1,7 +1,265 @@
+import { html } from 'lit'
 import './class.css'
-import main from './index.html'
 import { renderLayout } from '../../../layouts/base-layouts'
 
+const main = html`
+  <style>
+    :root {
+      --radius: 0;
+      --radius-large: 0;
+
+      mm-paragraph {
+        max-width: 100%;
+      }
+    }
+  </style>
+  <main class="class">
+    <figure class="class-media"><img src="" alt="" /></figure>
+    <header class="class-order">
+      <div>
+        <mm-tag>고슴이 생존기 - 경제 기본기편</mm-tag>
+      </div>
+      <div class="class-order-title">
+        <mm-text size="32">
+          고슴이와 함께
+          <br />
+          경제 기본기 마스터하겠슴?
+        </mm-text>
+      </div>
+      <div class="class-order-description">
+        <mm-paragraph size="large">
+          고슴이 에피소드 읽으면서 쉽고 재밌게
+          <br />
+          하루 5분으로 열흘 만에 경제 기본기를 마스터할 수 있어요.
+        </mm-paragraph>
+      </div>
+      <div class="minicards">
+        <figure class="minicard">
+          <span role="img" aria-label="">⏰</span>
+          <mm-paragraph>하루 5분</mm-paragraph>
+        </figure>
+        <figure class="minicard">
+          <span role="img" aria-label="">📖</span>
+          <mm-paragraph>에피소드 10개</mm-paragraph>
+        </figure>
+        <figure class="minicard">
+          <span role="img" aria-label="">🗓️</span>
+          <mm-paragraph>이용기간 무제한</mm-paragraph>
+        </figure>
+        <figure class="minicard minicard--closed">
+          <span role="img" aria-label="">🤼</span>
+          <mm-paragraph><del>얼리버드 500명</del></mm-paragraph>
+          <mm-paragraph>
+            <mm-tag>✨ 마감 ✨</mm-tag>
+          </mm-paragraph>
+        </figure>
+      </div>
+      <div class="class-order-price" role="suggestion">
+        <del role="deletion">₩ 30,000</del>
+        <b role="insertion">₩ 20,000</b>
+        <em>(30%)</em>
+      </div>
+      <footer class="class-order-action">
+        <button class="class-order-btn">
+          기본기 구매하기
+          <div class="cta-arrow">
+            <div class="line"></div>
+          </div>
+        </button>
+      </footer>
+      <mm-paragraph>
+        더 궁금한 점이 있다면
+        <a href="#" style="text-decoration: underline; font-weight: bold; color: inherit">
+          👉고객센터
+        </a>
+        로 문의해 주세요. 고맙슴!
+      </mm-paragraph>
+    </header>
+
+    <mm-marquee height="80px" pause-on-hover>
+      <mm-paragraph size="large">🦔 고슴이: 지금부터 설명 들어가겠슴!</mm-paragraph>
+      <mm-paragraph size="large">🦔 고슴이: 지금부터 설명 들어가겠슴!</mm-paragraph>
+      <mm-paragraph size="large">🦔 고슴이: 지금부터 설명 들어가겠슴!</mm-paragraph>
+      <mm-paragraph size="large">🦔 고슴이: 지금부터 설명 들어가겠슴!</mm-paragraph>
+      <mm-paragraph size="large">🦔 고슴이: 지금부터 설명 들어가겠슴!</mm-paragraph>
+      <mm-paragraph size="large">🦔 고슴이: 지금부터 설명 들어가겠슴!</mm-paragraph>
+    </mm-marquee>
+
+    <section class="class-intro">
+      <mm-paragraph-group>
+        <mm-text size="32" centered>
+          주식부터 환율까지
+          <br />
+          삶에서 필수적인
+          <br />
+          경제 개념들을 마스터합니다.
+        </mm-text>
+        <mm-paragraph size="large" centered>
+          주제 당 5분 분량의 기사로 구성되어 있으며,
+          <br />
+          경제초보 고슴이의 성장기를 담았답니다.
+        </mm-paragraph>
+      </mm-paragraph-group>
+      <figure class="class-intro-image">
+        <img src="/src/images/cake_gosum.jpg" />
+        <figcaption>🦔 고슴이: 뉴니커만 보고 달려온 2년... 점점 당이 떨어진다....</figcaption>
+      </figure>
+    </section>
+
+    <section class="class-why">
+      <mm-paragraph-group>
+        <mm-text size="32">
+          경제라니...
+          <br />
+          나 좀 머리 아파. 왜 읽어야 해?
+        </mm-text>
+        <mm-feature-group columns="1" style="margin-top: 1.5rem">
+          <mm-feature
+            emoji="🌏"
+            heading="세상을 이해하려면, 경제는 필수니까"
+            description="하지만 학교, 학원, 부모님도 제대로 안 알려준 그것. 경제를 안다는 건 우리 사회가 어떻게 굴러가는지 이해하고 해석하기 위해 꼭 필요한 첫걸음이죠."
+          ></mm-feature>
+          <mm-feature
+            emoji="💰"
+            heading="돈을 다루려면, 경제는 필수니까"
+            description="돈을 모으고, 불리고, 지키는 모든 과정에서 경제를 이해하는 건 필수입니다. 경제를 알아야 돈이 어떻게 움직이는지, 내가 어떤 선택을 해야 하는지 알 수 있죠."
+          ></mm-feature>
+        </mm-feature-group>
+      </mm-paragraph-group>
+    </section>
+
+    <section class="class-feature">
+      <div></div>
+      <div>
+        <mm-paragraph-group>
+          <mm-text size="32">[고슴이 생존기: 경제 기본기편] 은요</mm-text>
+          <mm-paragraph size="large">이런 말이 절로 나오는 사람들!</mm-paragraph>
+          <mm-feature-group columns="1" style="margin-top: 1.5rem">
+            <mm-feature
+              emoji="💁‍♂️"
+              heading="쉽고 재밌어요"
+              description="뉴니커라면 아시죠? 뉴닉이 뉴닉하면 어려운 내용도 얼마나 쉽고 재밌어지는지. 고슴이의 10개의 에피소드를 재밌어서 읽고 나면, 이미 똑똑해져있을 거예요."
+            ></mm-feature>
+            <mm-feature
+              emoji="👩🏻‍🎓"
+              heading="경제 기초를 개괄했어요"
+              description="부분 부분 지식을 알긴 쉽지만, 전체적인 그림을 한 번 훑기는 어렵죠. 뉴닉에서는 [물가, 금리, 주식, 환율, 국제경제] 이 5개의 카테고리를 통해 전체적인 맥락을 모두 짚었습니다."
+            ></mm-feature>
+            <mm-feature
+              emoji="🦔"
+              heading="고슴이가 리마인드 해줘요"
+              description="설레는 마음으로 책 사던 나와는 달리, 이걸 읽는 나는 설레지 않을 수 있다는 거... 이쯤 되면 우리 모두 알잖아요? 이 콘텐츠를 끝까지 재밌게 읽을 수 있도록 고슴이가 리마인드 이메일을 보내 줄 예정."
+            ></mm-feature>
+          </mm-feature-group>
+        </mm-paragraph-group>
+      </div>
+    </section>
+
+    <section class="class-who">
+      <mm-paragraph-group>
+        <mm-text size="32" centered>이건 누가 읽으면 좋아?</mm-text>
+        <mm-paragraph size="large" centered>이런 말이 절로 나오는 사람들!</mm-paragraph>
+      </mm-paragraph-group>
+      <mm-feature-group columns="3" class="class-who-grid">
+        <mm-feature
+          emoji="😱"
+          heading="남들은 재테크 한다는데 나는 금리도 몰라!"
+          description="부동산, 주식 등에 도전하기 전, 기본적인 용어들과 전체 경제의 흐름을 이해할 수 있어요."
+        ></mm-feature>
+        <mm-feature
+          emoji="🤑"
+          heading="전문 용어로 빼곡한 경제 뉴스, 영자신문보다 어려워!"
+          description="기준금리, CPI, 관세가 어쩌구... 뉴닉은 다 쉽게 풀어낼 수 있습니다. 뉴닉이니까요."
+        ></mm-feature>
+        <mm-feature
+          emoji="😵"
+          heading="경제 개론서를 사봤지만 첫 챕터에서 늘 덮게 돼!"
+          description="이미 경제 공부를 혼자 도전했지만 어렵고 지루했다면 고슴이 생존기가 정답!"
+        ></mm-feature>
+      </mm-feature-group>
+      <div class="class-who-note">
+        <mm-surface>
+          <mm-paragraph size="large">그리고 또...</mm-paragraph>
+          <div style="height: var(--space-2)"></div>
+          <mm-text-list
+            texts='["경제 기본기가 아예 없는 사람", "경제 막 공부 시작했는데, 누가 전체적인 그림 한 번 싹 알려주면 좋겠다고 생각한 사람", "주변 사람들 주식하고 부동산 한다는데, 적금길만 걸어온 사람", "고슴이의 생존스토리 궁금한 사람"]'
+          ></mm-text-list>
+        </mm-surface>
+      </div>
+    </section>
+
+    <section class="class-curriculum">
+      <header>
+        <mm-text size="32">에피소드 (관련 도메인에서 주로 커리큘럼)</mm-text>
+      </header>
+      <div>
+        <mm-thumbnail></mm-thumbnail>
+        <div>
+          <mm-tag>물가편</mm-tag>
+          <mm-text size="18" weight="bold">Episode 1. 배추값이 금값이다?</mm-text>
+          <div style="height: var(--space-1)"></div>
+          <mm-paragraph>
+            최애 장바구니 들고 장 보러 간 고슴이. 평소에 좋아하던 배춧국을 끓여먹어려는데, 배추값이
+            금값이다? 마침 틀어져 있는 TV에서도 소비자물가가 올랐다는데... 도대체 물가는 뭐고, 우리
+            경제랑 어떻게 관련이 되는 건지를 알아본다.
+          </mm-paragraph>
+        </div>
+      </div>
+      <div>
+        <mm-thumbnail></mm-thumbnail>
+        <div>
+          <mm-tag>물가편</mm-tag>
+          <mm-text size="18" weight="bold">Episode 1. 배추값이 금값이다?</mm-text>
+          <div style="height: var(--space-1)"></div>
+          <mm-paragraph>
+            최애 장바구니 들고 장 보러 간 고슴이. 평소에 좋아하던 배춧국을 끓여먹어려는데, 배추값이
+            금값이다? 마침 틀어져 있는 TV에서도 소비자물가가 올랐다는데... 도대체 물가는 뭐고, 우리
+            경제랑 어떻게 관련이 되는 건지를 알아본다.
+          </mm-paragraph>
+        </div>
+      </div>
+    </section>
+
+    <section class="products">
+      <div class="products-item">
+        <figure class="products-item-thumbnail"><img src="" alt="" /></figure>
+        <mm-text size="18">샘플 유아이</mm-text>
+        <span class="products-item-price">60,280 円(税込)</span>
+      </div>
+      <div class="products-item">
+        <figure class="products-item-thumbnail"><img src="" alt="" /></figure>
+        <mm-text size="18">샘플 유아이</mm-text>
+        <span class="products-item-price">60,280 円(税込)</span>
+      </div>
+      <div class="products-item">
+        <figure class="products-item-thumbnail"><img src="" alt="" /></figure>
+        <mm-text size="18">샘플 유아이</mm-text>
+        <span class="products-item-price">60,280 円(税込)</span>
+      </div>
+      <div class="products-item">
+        <figure class="products-item-thumbnail"><img src="" alt="" /></figure>
+        <mm-text size="18">リップストップ　キルト作務コート</mm-text>
+        <span class="products-item-price">60,280 円(税込)</span>
+      </div>
+    </section>
+
+    <section class="class-faq">
+      <mm-flex direction="column">
+        <mm-text size="24">Frequently asked questions</mm-text>
+        <mm-text size="32">자주 묻는 질문</mm-text>
+      </mm-flex>
+      <button class="class-faq-item">
+        <mm-paragraph size="large">비전공자 어렵지 않을까요?</mm-paragraph>
+        <mm-icon-button variant="secondary" icon="arrow-down"></mm-icon-button>
+      </button>
+      <button class="class-faq-item">
+        <mm-paragraph size="large">비전공자 어렵지 않을까요?</mm-paragraph>
+        <mm-icon-button variant="secondary" icon="arrow-down"></mm-icon-button>
+      </button>
+    </section>
+  </main>
+`
+
 document.addEventListener('DOMContentLoaded', () => {
-  document.body.innerHTML = renderLayout(main, { closeSidebar: true })
+  renderLayout(main, { closeSidebar: true })
 })

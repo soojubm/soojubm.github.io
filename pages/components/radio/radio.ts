@@ -1,6 +1,108 @@
-import main from './index.html'
+import { html } from 'lit'
 import { renderDocumentLayout } from '../../../layouts/document-layout'
 
+const main = html`
+  <main class="page">
+    <mm-page-header
+      heading="RadioGroup"
+      description="옵션 목록에서 하나의 옵션을 선택합니다."
+    ></mm-page-header>
+
+    <mm-component-example>
+      <fieldset role="radiogroup" style="max-width: 640px">
+        <mm-radio-group id="plan-group" name="membership" value="premium">
+          <mm-radio value="basic">베이직 요금제</mm-radio>
+          <mm-radio value="premium">프리미엄 요금제</mm-radio>
+          <mm-radio value="ultimate" disabled>얼티메이트 요금제</mm-radio>
+        </mm-radio-group>
+      </fieldset>
+    </mm-component-example>
+    <mm-component-props>
+      <mm-prop name="name" type="string" optional></mm-prop>
+      <mm-prop name="value" type="string" optional></mm-prop>
+      <mm-prop name="checked" type="boolean" optional></mm-prop>
+      <mm-prop name="disabled" type="boolean" optional></mm-prop>
+      <mm-prop name="change" type="CustomEvent detail: checked, value" kind="event"></mm-prop>
+    </mm-component-props>
+
+    <mm-component-tokens>
+      <mm-token name="radio-size" default="var(--size-16)"></mm-token>
+      <mm-token name="radio-border" default="var(--border)"></mm-token>
+      <mm-token name="radio-border-radius" default="var(--radius-full)"></mm-token>
+      <mm-token
+        name="radio-background-color-checked"
+        default="var(--interaction-selected-background-color)"
+      ></mm-token>
+      <mm-token
+        name="radio-border-color-checked"
+        default="var(--interaction-selected-border-color)"
+      ></mm-token>
+    </mm-component-tokens>
+
+    <mm-component-anatomy
+      parts='[
+      "컨트롤(인디케이터) — 선택 여부를 나타내는 원형 버튼입니다.",
+      "선택 표식 — 선택 시 원 안에 채워지는 점(dot).",
+      "레이블 — 선택지를 설명하는 클릭 가능한 텍스트."
+    ]'
+    >
+      <div style="position: relative; display: inline-block">
+        <mm-radio value="premium" checked>프리미엄 요금제</mm-radio>
+
+        <mm-list-marker
+          variant="number"
+          value="1"
+          style="position: absolute; left: -1.75rem; top: 50%; transform: translateY(-50%)"
+        ></mm-list-marker>
+        <mm-list-marker
+          variant="number"
+          value="2"
+          style="position: absolute; left: 0.45rem; bottom: -1.75rem; transform: translateX(-50%)"
+        ></mm-list-marker>
+        <mm-list-marker
+          variant="number"
+          value="3"
+          style="position: absolute; right: -1.75rem; top: 50%; transform: translateY(-50%)"
+        ></mm-list-marker>
+      </div>
+    </mm-component-anatomy>
+
+    <mm-component-guide>
+      <mm-component-feature-list>
+        <mm-feature
+          heading="Interactive - selection"
+          subtitle="Easy scanning"
+          description="여러 선택지 중 하나만 선택하며, 그룹이 단일 선택을 보장합니다. 미리 선택된 기본값을 제공하는 것은 편향된 데이터를 수집할 위험이 있습니다. 만약 미리 선택된 값을 적용하는 경우 첫 번째 옵션을 기본 옵션으로."
+        ></mm-feature>
+        <mm-feature
+          heading="Glanceable"
+          description="수직 정렬로 옵션 목록을 쉽게 스캔할 수 있도록 합니다. 최대 5개의 옵션을 제공할 수 있으며, 그 이상의 옵션이 필요하다면 셀렉트Select 또는 가로 스크롤되는 칩Chip으로 제공하세요."
+        ></mm-feature>
+        <mm-feature
+          heading="Groupable"
+          description="라디오는 항상 그룹으로 사용합니다. 그룹이 단일 선택과 간격을 소유하고, 그룹의 제목으로 옵션들의 맥락을 제공합니다."
+        ></mm-feature>
+      </mm-component-feature-list>
+    </mm-component-guide>
+
+    <mm-component-section heading="Tile Radio?" description="">
+      <mm-surface variant="elevated">
+        <mm-radio name="gender" id="option1" value="">
+          <mm-paragraph color="light">Standard License</mm-paragraph>
+          <mm-paragraph>₩ 2,000</mm-paragraph>
+          <mm-tag>460P 적립</mm-tag>
+        </mm-radio>
+      </mm-surface>
+    </mm-component-section>
+    <mm-component-related>
+      <mm-button-group>
+        <mm-hashtag-link href="checkbox.html">Checkbox</mm-hashtag-link>
+        <mm-hashtag-link href="switch.html">Switch</mm-hashtag-link>
+      </mm-button-group>
+    </mm-component-related>
+  </main>
+`
+
 document.addEventListener('DOMContentLoaded', () => {
-  document.body.innerHTML = renderDocumentLayout(main)
+  renderDocumentLayout(main)
 })

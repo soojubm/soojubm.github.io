@@ -1,6 +1,285 @@
-import main from './index.html'
+import { html } from 'lit'
 import { renderDocumentLayout } from '../../../layouts/document-layout'
 
+const main = html`
+  <main class="page">
+    <mm-page-header heading="Step " description="Workflow"></mm-page-header>
+
+    <mm-component-aka items='["Timeline", "Stepper"]'></mm-component-aka>
+
+    <mm-component-example>
+      <section class="step">
+        <div class="step-item is-active" aria-current="step">
+          <span class="step-item-icon">1</span>
+          <b class="step-item-label">장바구니</b>
+        </div>
+        <div class="step-item">
+          <span class="step-item-icon">2</span>
+          <b class="step-item-label">결제</b>
+        </div>
+        <div class="step-item">
+          <span class="step-item-icon">3</span>
+          <b class="step-item-label">주문완료</b>
+        </div>
+        <div>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </section>
+      <div style="height: var(--space-4)"></div>
+      <mm-surface>
+        <header>
+          <mm-paragraph size="large">Tell us about yourself</mm-paragraph>
+          <mm-paragraph>
+            Now that you're all signed up, let's personalize your experience.
+          </mm-paragraph>
+        </header>
+
+        <section class="step" data-align="vertical" style="margin: 1rem 0">
+          <div class="step-item is-active">
+            <span class="step-item-icon" style="color: var(--foreground-color-on-solid)">1</span>
+            <mm-text class="step-item-label">I'm an engineer</mm-text>
+            <mm-paragraph>
+              대통령은 국가의 원수이며, 외국에 대하여 국가를 대표한다. 국가원로자문회의의
+              조직·직무범위 기타 필요한 사항은 법률로 정한다. 국가는 대외무역을 육성하며, 이를
+              규제·조정할 수 있다.
+            </mm-paragraph>
+          </div>
+          <div class="step-item is-active">
+            <span class="step-item-icon" style="color: var(--foreground-color-on-solid)">2</span>
+            <mm-text class="step-item-label">I want to design from scratch</mm-text>
+            <!-- <mm-paragraph>
+            1칼럼(모바일)에서 결제 버튼을 누르기 전 최종 금액을 확인할 수 있는 구조가 되려면 2칼럼에서 우측을 결제를 위한 칼럼을 배치할
+            때(체크아웃페이지의 일반적인 레이아웃) 상품&서머리&결제버튼이 같은 컨테이너로 포함되어야.
+          </mm-paragraph>
+          <mm-paragraph>결제정보 - 결제방법/주문상태/주문접수일시/주문완료일시/배송비/쿠폰사용금액/결제금액</mm-paragraph>
+          <mm-paragraph>주문 정보를 로컬에 저장.</mm-paragraph> -->
+          </div>
+          <div class="step-item">
+            <span class="step-item-icon">3</span>
+            <mm-text class="step-item-label">
+              One last thing ㅡ how will you use your prototpe?
+            </mm-text>
+            <mm-caption>(You can pick more than one)</mm-caption>
+            <div style="height: var(--space-3)"></div>
+            <mm-button-group style="margin-left: 0.75rem">
+              <mm-button>Share for feedback</mm-button>
+              <mm-button>Present live</mm-button>
+              <mm-button>Test with users</mm-button>
+              <mm-button>Collaborate in real time</mm-button>
+              <mm-button>Hand off to developers</mm-button>
+            </mm-button-group>
+          </div>
+        </section>
+        <footer><mm-button variant="primary" size="large">Start creating</mm-button></footer>
+      </mm-surface>
+
+      <mm-separator></mm-separator>
+      <div>
+        <mm-flex align-items="center" gap="3" style="height: 32px">
+          <mm-paragraph size="large">01</mm-paragraph>
+          <mm-paragraph>Choose your platform</mm-paragraph>
+        </mm-flex>
+        <mm-flex align-items="center" gap="3" style="height: 32px">
+          <mm-paragraph size="large">02</mm-paragraph>
+          <mm-paragraph>Set color theme</mm-paragraph>
+        </mm-flex>
+      </div>
+      <mm-separator></mm-separator>
+      <mm-flex>
+        <mm-menu-item-group>
+          <mm-menu-item-action>
+            <mm-avatar slot="avatar" size="40"></mm-avatar>
+            <div slot="text">
+              <mm-paragraph color="light">Step 1</mm-paragraph>
+              <mm-paragraph>UPLOAD 3D FILES</mm-paragraph>
+            </div>
+          </mm-menu-item-action>
+          <mm-menu-item-action>
+            <mm-avatar slot="avatar" size="40"></mm-avatar>
+            <div slot="text">
+              <mm-paragraph color="light">Step 2</mm-paragraph>
+              <mm-paragraph>UPLOAD 3D FILES</mm-paragraph>
+            </div>
+          </mm-menu-item-action>
+        </mm-menu-item-group>
+      </mm-flex>
+    </mm-component-example>
+
+    <mm-component-props>
+      <mm-prop name="aria-current" type="'step'"></mm-prop>
+      <mm-prop name="data-align" type="'vertical'"></mm-prop>
+      <mm-prop name="is-active" type="class"></mm-prop>
+      <mm-prop name="label" type="slot"></mm-prop>
+      <mm-prop name="description" type="slot" optional></mm-prop>
+    </mm-component-props>
+
+    <mm-component-guide>
+      <section class="timeline">
+        <style>
+          .timeline {
+            position: relative;
+          }
+          .timeline:before {
+            content: '';
+            display: block;
+            width: 1px;
+            background: var(--border-color);
+            position: absolute;
+            bottom: 0;
+            left: 15px;
+            top: 0;
+            z-index: -1;
+          }
+          .timeline-item {
+            padding: var(--space-4) 0 0 0;
+          }
+          .timeline-item-panel {
+            display: flex;
+            gap: var(--space-3);
+            margin: var(--space-2) 0 0 0;
+            position: relative;
+          }
+        </style>
+        <div class="timeline-item">
+          <mm-tag datetime="">2022. 11. 4.</mm-tag>
+          <div class="timeline-item-panel">
+            <mm-avatar slot="avatar">
+              <span style="font-size: 0.75rem">🐺</span>
+            </mm-avatar>
+            <div slot="text">
+              <span>폰트 디자인</span>
+              <span>이도타입 / 한동훈</span>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <mm-tag>2020. 02. - 2021. 02</mm-tag>
+          <div class="timeline-item-panel">
+            <mm-avatar>🦔</mm-avatar>
+            <div>
+              <span>뉴닉, 프로덕트 디자이너</span>
+              <mm-text-list
+                texts='["MVP / Feature 일정 산정 및 스펙 정의", "이슈 트래킹, 우선순위 관리를 위한 백로그 구축", "온라인 리서치, VOC 분석을 통한 문제 정의", "프로덕트 디자인 (Userflow / UI / GUI), 프론트엔드 개발", "데이터 트래킹 및 분석 (hotjar, google analytics, google optimize)"]'
+              ></mm-text-list>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <mm-tag>2020</mm-tag>
+          <div class="timeline-item-panel">
+            <mm-avatar slot="avatar">🔢</mm-avatar>
+            <div slot="text">
+              <span>그로스해킹 - 데이터와 실험을 통해 성장하는 서비스를 만드는 방법</span>
+              <span>인프런 양승화</span>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <mm-tag>2019</mm-tag>
+          <div class="timeline-item-panel">
+            <mm-avatar slot="avatar">🔢</mm-avatar>
+            <div slot="text">
+              <span>FE CONF2020 프론트엔드 컨퍼런스</span>
+              <span>롯데타워</span>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <mm-tag>2018.07 ~ 2018.09</mm-tag>
+          <div class="timeline-item-panel">
+            <mm-avatar slot="avatar">🐺</mm-avatar>
+            <span>자바스크립트 기본</span>
+            <span>양재동코드랩 / 서울창업허브 세미나실 3 김영보</span>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <mm-tag>2017.07 ~ 2017.09</mm-tag>
+          <div class="timeline-item-panel">
+            <mm-avatar slot="avatar">🔢</mm-avatar>
+            <div slot="text">
+              <span>글자, 그리고 표현</span>
+              <span>한글타이포그래피학교 현승재</span>
+            </div>
+          </div>
+          <div class="timeline-item-panel">
+            <mm-avatar slot="avatar">🐺</mm-avatar>
+            <div slot="text">
+              <span>GUI 디자인</span>
+              <span>SK 상생협력센터 T아카데미</span>
+            </div>
+          </div>
+          <div class="timeline-item-panel">
+            <mm-avatar slot="avatar">🐺</mm-avatar>
+            <div slot="text">
+              <span>크로스브라우징 디지털 퍼블리싱 4기</span>
+              <span>경원직업전문학교</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <mm-text-list
+        texts='["2022. 12. 17.. line-height 기본값 역전. 단락을 제외하면 모든 케이스에서 line-height-small을
+        선언해야 하기 때문에 defalt / small을 defalt / large로 변경.", "add stack component. chip-group과 tag-group 제거하고 stack으로 통합.", "color gray600 삭제. 본문용으로 야외나 밝은 조명 아래서 가시성이 떨어짐.", "타임라인과 구분. 타임라인은 히스토리 맥락으로 스텝의 역순. 확장, 링크, indentation"]'
+      ></mm-text-list>
+
+      <mm-surface variant="outlined">
+        <mm-flex>
+          <mm-tag style="width: var(--size-48)">포장</mm-tag>
+          <mm-text as="time">2022. 12. 05. 15:32</mm-text>
+          <b style="margin-left: auto">배달완료</b>
+        </mm-flex>
+        <div style="height: var(--space-3)"></div>
+        <mm-menu-item-action>
+          <mm-avatar slot="avatar" size="48"></mm-avatar>
+          <div slot="text">
+            <b>쩜순이네닭강정 요기요st</b>
+            <mm-flex align-items="center">
+              <span>떡볶이</span>
+              <span>x</span>
+              <span>5</span>
+              <span>외 1건</span>
+            </mm-flex>
+          </div>
+        </mm-menu-item-action>
+        <div style="height: var(--space-4)"></div>
+        <div class="step">
+          <div class="step-item is-active">
+            <span class="step-item-icon">1</span>
+            <mm-text class="step-item-label">주문확인</mm-text>
+          </div>
+          <div class="step-item">
+            <span class="step-item-icon">2</span>
+            <mm-text class="step-item-label">조리중</mm-text>
+          </div>
+          <div class="step-item">
+            <span class="step-item-icon">3</span>
+            <mm-text class="step-item-label">배달중</mm-text>
+          </div>
+          <div class="step-item">
+            <span class="step-item-icon">4</span>
+            <mm-text class="step-item-label">배달완료</mm-text>
+          </div>
+        </div>
+        <div style="height: var(--space-4)"></div>
+        <mm-button-group>
+          <mm-button>재주문</mm-button>
+          <mm-button>후기작성</mm-button>
+        </mm-button-group>
+        <!-- <mm-tag>네이버 쇼핑은 왜 주문 내역을 숨길 수 있나?</mm-tag> -->
+      </mm-surface>
+    </mm-component-guide>
+    <mm-component-related>
+      <mm-button-group>
+        <mm-hashtag-link href="breadcrumb.html">Breadcrumb</mm-hashtag-link>
+        <mm-hashtag-link href="loading.html">Loading</mm-hashtag-link>
+      </mm-button-group>
+    </mm-component-related>
+  </main>
+`
+
 document.addEventListener('DOMContentLoaded', () => {
-  document.body.innerHTML = renderDocumentLayout(main)
+  renderDocumentLayout(main)
 })

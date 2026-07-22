@@ -1,10 +1,223 @@
-import main from './index.html'
+import { html } from 'lit'
 import { renderLayout } from '../../../layouts/base-layouts'
 import { findSitemapItem } from '@/sitemap'
 
+const main = html`
+  <mm-fixed-top>
+    <mm-top-bar
+      id="setting-top-bar"
+      heading="설정"
+      style="
+      background: var(--background-subtle-color);
+      padding-block: var(--space-2);
+      padding-inline: 5vw;
+    "
+    ></mm-top-bar>
+  </mm-fixed-top>
+  <mm-page width="small" background="subtle">
+    <mm-flex
+      direction="column"
+      align-items="center"
+      gap="2"
+      style="padding-top: var(--space-4); padding-bottom: var(--space-8)"
+    >
+      <mm-avatar
+        size="80"
+        variant="secondary"
+        shape="circle"
+        src="/src/images/soojubm.png"
+      ></mm-avatar>
+      <mm-paragraph size="large">수줍이님, 어서와요!</mm-paragraph>
+    </mm-flex>
+
+    <mm-flex direction="column" gap="3">
+      <mm-list-item
+        avatar-variant="tertiary"
+        size="48"
+        icon="user-badge-check"
+        label="사용자 정보"
+        description="전자 메일, 일정, 연락처에서 사용하는 계정"
+      ></mm-list-item>
+      <mm-surface variant="paper" radius="large">
+        <mm-flex direction="column" gap="3">
+          <mm-menu-item-group>
+            <mm-menu-item-link
+              icon="mail"
+              label="soojubm@gmail.com"
+              href="#"
+              target="_self"
+            ></mm-menu-item-link>
+            <mm-menu-item-link
+              icon="lock"
+              label="비밀번호 변경"
+              href="#"
+              target="_self"
+            ></mm-menu-item-link>
+            <mm-menu-item-link
+              icon="user"
+              label="닉네임 변경"
+              href="#"
+              target="_self"
+            ></mm-menu-item-link>
+          </mm-menu-item-group>
+        </mm-flex>
+      </mm-surface>
+
+      <mm-surface variant="paper" radius="large">
+        <mm-menu-item-group>
+          <!-- <mm-paragraph size="large">뉴스레터</mm-paragraph> -->
+          <mm-setting-item
+            size="small"
+            label="배송지"
+            description="배송지를 관리하고 기본 배송지를 설정하세요."
+          >
+            <mm-button slot="action">배송지 관리</mm-button>
+          </mm-setting-item>
+          <mm-separator scope="element"></mm-separator>
+          <mm-menu-item-link
+            size="small"
+            label="관심분야"
+            description="문화/예술, 인권, 경제"
+          ></mm-menu-item-link>
+          <mm-menu-item-switch
+            icon="mail-in"
+            label="시사 뉴스레터"
+            value="newsletter"
+          ></mm-menu-item-switch>
+          <mm-caption>
+            관심있는 분야의 콘텐츠를 추천 받으세요. 매주 월요일, 수요일, 금요일 아침에 받아볼 수
+            있어요.
+          </mm-caption>
+        </mm-menu-item-group>
+      </mm-surface>
+
+      <mm-surface variant="paper" radius="large">
+        <mm-flex direction="column" gap="3">
+          <mm-paragraph size="large">개인정보 & 보안</mm-paragraph>
+          <mm-menu-item-group>
+            <mm-setting-item label="이메일 주소" description="soojubm@gmail.com">
+              <mm-button slot="action">변경</mm-button>
+            </mm-setting-item>
+            <mm-setting-item
+              label="계정 비활성화"
+              description="비활성화 페이지에서 할 수 있습니다."
+            >
+              <mm-button slot="action" variant="destructive">영구 비활성화</mm-button>
+            </mm-setting-item>
+          </mm-menu-item-group>
+        </mm-flex>
+      </mm-surface>
+      <mm-link-prompt
+        icon="pipe-3d"
+        message="To delete your account permanently"
+        link-label="로그아웃"
+        href="#"
+      ></mm-link-prompt>
+
+      <br />
+      <mm-list-item
+        avatar-variant="tertiary"
+        size="48"
+        icon="credit-card"
+        label="소셜 네트워크로 로그인"
+        description="전자 메일, 일정, 연락처에서 사용하는 계정"
+      ></mm-list-item>
+      <mm-surface variant="paper" radius="large">
+        <mm-menu-item-group>
+          <mm-setting-item icon="google" label="구글 계정으로 로그인">
+            <mm-button slot="action" disabled>Google 연동해제</mm-button>
+          </mm-setting-item>
+          <mm-setting-item icon="apple" label="애플 계정으로 로그인">
+            <mm-button slot="action">Apple 연동</mm-button>
+          </mm-setting-item>
+          <mm-caption>계정의 비밀번호를 설정한 후 소셜 계정을 연결을 해제하세요.</mm-caption>
+        </mm-menu-item-group>
+      </mm-surface>
+
+      <br />
+      <mm-list-item
+        avatar-variant="tertiary"
+        size="48"
+        icon="credit-card"
+        label="구독 정보"
+        description="멤버십, 결제수단, 청구서 등"
+      ></mm-list-item>
+      <mm-surface variant="paper" radius="large">
+        <mm-flex direction="column" gap="2">
+          <mm-menu-item-group>
+            <mm-setting-item icon="credit-card" label="Premium 개인">
+              <mm-button slot="action" variant="ghost" aria-label="자세히보기">구독 관리</mm-button>
+            </mm-setting-item>
+            <mm-flex direction="column">
+              <mm-meta-item label="다음 결제 예정일" value="2024.04.02."></mm-meta-item>
+              <mm-meta-item label="결제금액" value="매달 46,800원"></mm-meta-item>
+              <mm-meta-item label="결제수단" value="현대카드 ****-****-****-7922"></mm-meta-item>
+            </mm-flex>
+            <mm-button-group>
+              <mm-button icon="arrow-right">결제수단변경</mm-button>
+              <!-- <mm-button variant="ghost">자주묻는질문</mm-button> -->
+            </mm-button-group>
+          </mm-menu-item-group>
+        </mm-flex>
+      </mm-surface>
+
+      <!-- tone -->
+      <mm-surface variant="elevated" tone="green" radius="large">
+        <mm-text-block
+          level="4"
+          heading="iPhone을 백업할 수 없음"
+          description="저장 공간이 부족하여 최근 iPhone 백업이 iCloud에 저장되지 않았습니다. 저장 공간을 추가 또는 관리하여 iPhone 백업을 유지하십시오."
+        >
+          <mm-button variant="ghost">저장 공간 추가</mm-button>
+        </mm-text-block>
+      </mm-surface>
+
+      <mm-surface variant="paper" radius="large">
+        <mm-flex direction="column" gap="3">
+          <mm-top-bar heading="닉네임 변경" role="navigation">
+            <mm-button slot="action" variant="ghost">저장</mm-button>
+          </mm-top-bar>
+          <form>
+            <mm-flex direction="column" gap="3">
+              <mm-paragraph size="large">
+                어떻게
+                <br />
+                불러드릴까요?
+              </mm-paragraph>
+
+              <mm-link-prompt
+                icon=""
+                message="Your name appears on your Profile page, as your byline, and in your responses. It
+                  is a required field. 성별 정보는 Google이 사용자를 지칭하는 방식을 포함해 Google 서비스에서 맞춤설정된
+                  환경을 제공하는 데 사용될 수 있습니다."
+                link-label="더 알아보기"
+                href="#"
+              ></mm-link-prompt>
+              <mm-textfield label="닉네임" placeholder="이름이요."></mm-textfield>
+              <mm-toggle-button-group
+                options='[{"value":"other","label":"기타"},{"value":"female","label":"여성"},{"value":"male","label":"남성"}]'
+                selected-index="0"
+                stretch
+              ></mm-toggle-button-group>
+            </mm-flex>
+          </form>
+        </mm-flex>
+      </mm-surface>
+
+      <blockquote>
+        <mm-text-list
+          texts='[
+            "개인정보와 프로필 정보를 구분한다. 프로필 수정은 프로필 페이지에서 진입할 수 있다."
+          ]'
+        ></mm-text-list>
+      </blockquote>
+    </mm-flex>
+  </mm-page>
+`
+
 document.addEventListener('DOMContentLoaded', () => {
   const page = findSitemapItem('setting')
-  document.body.innerHTML = renderLayout(main, { closeSidebar: true, navbar: !page?.hideNavbar })
+  renderLayout(main, { closeSidebar: true, navbar: !page?.hideNavbar })
 
   document.getElementById('setting-top-bar')?.addEventListener('navclick', () => {
     history.back()
