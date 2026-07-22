@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <td><mm-checkbox></mm-checkbox></td>
       <th scope="row">
         <mm-flex align-items="center" gap="2">
-          <mm-avatar variant="secondary" default="true"></mm-avatar>
+          <mm-avatar variant="secondary" size="32"></mm-avatar>
           Gabriel
         </mm-flex>
       </th>
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <td><mm-checkbox checked></mm-checkbox></td>
       <th scope="row">
         <mm-flex align-items="center" gap="2">
-          <mm-avatar variant="secondary" default="true"></mm-avatar>
+          <mm-avatar variant="secondary" size="32"></mm-avatar>
           Ella
         </mm-flex>
       </th>

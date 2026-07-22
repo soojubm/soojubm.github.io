@@ -147,7 +147,6 @@
         texts='[
           "Avoid disabled buttons. Let the user send incomplete form and use error messages to explain what is wrong.",
           "실행 결과를 에측할 수 있는 레이블을 작성하세요. 툴팁으로 부연하거나, 실행을 유도하는 보조 텍스트 또는 실행 결과를 보충하는 보조 텍스트로 버튼 이외의 가이드가 필요하지 않습니다.",
-          "동사가 포함된 2자 ~ 8자 한글(!). 레이블 줄임?(truncated) 불가. 사용자 시점 (ex 보내기 => 받기).",
           "맥락이 다른 액션을 그룹으로 제공할 수 있습니다. 이 때 단일선택, 다중선택, 삭제여부, 펼침메뉴 등의 기표를 충분히 제공하세요. ariaHaspopup/ariaSelected",
           "Split button이란? 사용자에게 더 많은 작업을 표시하는 경우 작업을 선택하여 트리거할 수 있도록 선택 + 버튼 조합을 사용. 것이 좋습니다.",
           "빈 버튼이 필요한가? 리액트에서 포커싱이 가능한 전체 영역의 버튼. 도는 버튼 내부에서포지셔닝되는 버튼. 시각적으로는 버튼 내부의 버튼이지만 구조적으로 대안이 되는 형태의 버튼"
@@ -165,15 +164,17 @@
         <mm-button variant="tertiary" size="large">취소</mm-button>
         <mm-button variant="primary" size="large">저장</mm-button>
       </mm-button-group>
-      <mm-separator></mm-separator>
+      <mm-separator scope="element"></mm-separator>
       <mm-button-group>
         <mm-button variant="ghost" size="large">건너뛰기</mm-button>
         <mm-button variant="secondary" size="large">다음</mm-button>
       </mm-button-group>
+      <mm-separator scope="element"></mm-separator>
       <mm-button-group>
         <mm-button variant="tertiary" size="large">이전</mm-button>
         <mm-button variant="secondary" size="large">다음</mm-button>
       </mm-button-group>
+      <mm-separator scope="element"></mm-separator>
       <mm-button-group>
         <mm-button variant="primary" size="large" href="#components">지금 가입하기</mm-button>
         <mm-button variant="ghost" size="large">더 알아보기</mm-button>
@@ -204,6 +205,10 @@
     </mm-button-group>
   </mm-component-section>
 
+  <mm-component-section heading="AddButton" description="새 항목을 추가합니다.">
+    <mm-add-button>항목 추가</mm-add-button>
+  </mm-component-section>
+
   <mm-component-section heading="FileUploader" description="이미지 업로드와 파일 업로드 구분">
     <mm-file-uploader
       label="사진 업로드. 여기로 드래그 하셔도 되어요."
@@ -216,10 +221,6 @@
 
   <mm-component-section heading="ToTopButton" description="페이지 최상단으로 스크롤합니다.">
     <mm-to-top-button></mm-to-top-button>
-  </mm-component-section>
-
-  <mm-component-section heading="AddButton" description="새 항목을 추가합니다.">
-    <mm-add-button>항목 추가</mm-add-button>
   </mm-component-section>
 
   <mm-table

@@ -62,7 +62,12 @@ export class ScrollHint extends LitElement {
     this.scrollRoot?.addEventListener('scroll', this.syncVisibility)
     this.resizeObserver = new ResizeObserver(this.syncVisibility)
     this.resizeObserver.observe(this)
-    if (this.scrollRoot) this.resizeObserver.observe(this.scrollRoot)
+    // scrollRoot 자체는 크기가 고정돼 있어도 슬라이드 이미지가 늦게 로드되며 scrollWidth만 늘어날 수 있으므로,
+    // 콘텐츠 자식들도 함께 관찰해야 그 변화를 잡아낸다.
+    if (this.scrollRoot) {
+      this.resizeObserver.observe(this.scrollRoot)
+      Array.from(this.scrollRoot.children).forEach(child => this.resizeObserver!.observe(child))
+    }
     requestAnimationFrame(this.syncVisibility)
   }
 

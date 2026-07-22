@@ -11,6 +11,7 @@ export const componentContentFrameStyles = css`
     --component-content-padding-inline: calc(var(--layout-padding-inline) - var(--space-4));
     --component-content-bleed-inline: calc(var(--layout-padding-inline) * -1);
 
+    position: relative;
     margin: var(
       --component-content-frame-margin,
       0 0 0 var(--component-content-offset-inline-start)

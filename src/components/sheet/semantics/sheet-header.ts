@@ -13,7 +13,7 @@ class SheetHeader extends LitElement {
   render() {
     return html`
       <header role="navigation">
-        <mm-paragraph size="large">${this.heading}</mm-paragraph>
+        <mm-heading level="2">${this.heading}</mm-heading>
         <mm-close-button @close=${this.handleClose}></mm-close-button>
       </header>
     `

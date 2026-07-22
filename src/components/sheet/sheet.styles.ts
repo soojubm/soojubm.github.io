@@ -179,7 +179,7 @@ export const sheetHeaderStyles = css`
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    padding: var(--sheet-padding-block) var(--sheet-padding-inline);
+    padding: var(--sheet-padding-block) 0;
     box-sizing: border-box;
   }
 

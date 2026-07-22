@@ -28,8 +28,10 @@ export class TokenItem extends LitElement {
   render() {
     return html`
       <!-- ${this.renderMarker()} -->
-      ${this.renderKey()} ${this.renderValue()}
-      <slot></slot>
+      <dl>
+        ${this.renderKey()} ${this.renderValue()}
+        <slot></slot>
+      </dl>
     `
   }
 

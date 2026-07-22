@@ -139,9 +139,7 @@ export class ComponentTokens extends LitElement {
     return html`
       <section class="component-content-frame">
         <!-- <mm-heading>Component Tokens</mm-heading> -->
-        <dl>
-          <slot></slot>
-        </dl>
+        <slot></slot>
       </section>
     `
   }

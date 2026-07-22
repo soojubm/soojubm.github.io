@@ -13,14 +13,15 @@ export class AttachmentItem extends LitElement {
     :host {
       display: flex;
       flex-direction: column;
+      width: var(--size-80);
       gap: var(--space-1);
       position: relative;
     }
 
     mm-clear-button {
       position: absolute;
-      right: var(--space-1);
-      top: var(--space-1);
+      right: var(--space-1-minus);
+      top: var(--space-1-minus);
     }
   `
 
@@ -31,21 +32,15 @@ export class AttachmentItem extends LitElement {
 
   render() {
     return html`
-      ${this.renderPreview()}
-      <mm-caption>${this.fileName}</mm-caption>
-      <mm-caption>${this.fileSize}</mm-caption>
-      <mm-clear-button aria-label="삭제" @click=${this.handleRemove}></mm-clear-button>
-    `
-  }
-
-  private renderPreview() {
-    return html`
       <mm-avatar
         shape="square"
         size="80"
         src=${ifDefined(this.previewUrl)}
         icon=${this.fallbackIconName}
       ></mm-avatar>
+      <mm-caption>${this.fileName}</mm-caption>
+      <mm-caption>${this.fileSize}</mm-caption>
+      <mm-clear-button aria-label="삭제" @click=${this.handleRemove}></mm-clear-button>
     `
   }
 

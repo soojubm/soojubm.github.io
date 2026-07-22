@@ -5,18 +5,21 @@ import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
 import { topBarStyles } from '@/components/top-bar/top-bar.styles'
 import { emit } from '@/utils/emit'
 
+// TODO
+// top-bar-titlte / sheet-header-title
+
 @customElement('mm-top-bar')
 class TopBar extends LitElement {
   static styles = [topBarStyles]
 
   @property({ type: String }) heading = ''
-  @property({ type: String }) nav: 'back' | 'close' | '' = 'back'
+  @property({ type: String }) nav: 'back' | 'close' = 'back'
 
   render() {
     return html`
-      <header role="navigation" class="top-bar">
+      <header role="navigation">
         ${this.renderBackButton()}
-        <mm-paragraph size="large">${this.heading}</mm-paragraph>
+        <mm-heading level="2">${this.heading}</mm-heading>
         <slot name="action"></slot>
         ${this.renderCloseButton()}
       </header>
