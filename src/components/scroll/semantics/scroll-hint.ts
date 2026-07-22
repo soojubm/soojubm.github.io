@@ -11,22 +11,13 @@ export class ScrollHint extends LitElement {
     resetStyles,
     css`
       :host {
-        --scroll-hint-width: var(--size-48);
+        --scroll-hint-width: var(--size-80);
         --scroll-hint-gap: 0px;
-        --gradient-scroll-hint-start: linear-gradient(
-          to right,
-          var(--background-color) 0%,
-          var(--background-color) 42%,
-          color-mix(in srgb, var(--background-color) 96%, transparent) 58%,
-          color-mix(in srgb, var(--background-color) 72%, transparent) 78%,
-          transparent 100%
-        );
-        --gradient-scroll-hint-end: linear-gradient(
+        --gradient-scroll-hint: linear-gradient(
           to right,
           transparent 0%,
-          color-mix(in srgb, var(--background-color) 72%, transparent) 22%,
-          color-mix(in srgb, var(--background-color) 96%, transparent) 42%,
-          var(--background-color) 58%,
+          color-mix(in srgb, var(--background-color) 50%, transparent) 55%,
+          color-mix(in srgb, var(--background-color) 82%, transparent) 80%,
           var(--background-color) 100%
         );
 
@@ -40,7 +31,7 @@ export class ScrollHint extends LitElement {
         right: -1px;
         z-index: 1;
         pointer-events: none;
-        background: var(--gradient-scroll-hint-end);
+        background: var(--gradient-scroll-hint);
       }
 
       :host([placement='start']) {
@@ -49,7 +40,7 @@ export class ScrollHint extends LitElement {
         margin-left: 0;
         left: 0;
         right: auto;
-        background: var(--gradient-scroll-hint-start);
+        transform: scaleX(-1);
       }
 
       :host([hidden]) {

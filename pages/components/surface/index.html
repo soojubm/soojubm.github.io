@@ -343,22 +343,22 @@
     description="bleed 없이 프레임 안에서 가로 스크롤을 보여줄 때, 오른쪽 끝의 흐림 레이어로 숨은 콘텐츠가 더
         있음을 암시합니다."
   >
-    <section class="carousel js-carousel">
+    <section class="carousel" data-carousel>
       <mm-button-group>
         <mm-icon-button
           variant="secondary"
           icon="arrow-left"
-          class="js-carousel-prev"
+          data-carousel-prev
           aria-label="이전"
         ></mm-icon-button>
         <mm-icon-button
           variant="secondary"
           icon="arrow-right"
-          class="js-carousel-next"
+          data-carousel-next
           aria-label="다음"
         ></mm-icon-button>
       </mm-button-group>
-      <mm-scroll class="js-carousel-viewer" gap="3" hide-scrollbar>
+      <mm-scroll data-carousel-viewer gap="3" hide-scrollbar>
         <mm-scroll-hint placement="start"></mm-scroll-hint>
         <mm-scroll-hint placement="end"></mm-scroll-hint>
         <mm-thumbnail
@@ -399,6 +399,22 @@
         ></mm-thumbnail>
       </mm-scroll>
     </section>
+    <style>
+      .carousel {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-3);
+        position: relative;
+      }
+
+      .carousel mm-scroll {
+        scroll-behavior: smooth;
+      }
+
+      .carousel-slide {
+        flex: 0 0 220px;
+      }
+    </style>
   </mm-component-section>
   <!-- <mm-component-section heading="RatingSurface" description="">
     <mm-surfacebar heading="Ratings"></mm-surfacebar>
