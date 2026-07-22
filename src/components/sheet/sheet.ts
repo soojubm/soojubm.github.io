@@ -1,22 +1,29 @@
-import { LitElement, html } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
+import { LitElement, html, nothing } from 'lit'
+import { customElement, property, query } from 'lit/decorators.js'
 
-import { sheetStyles } from '@/components/sheet/sheet.styles'
+import { sheetDragHandleStyles, sheetStyles } from '@/components/sheet/sheet.styles'
 import { PortalController } from '@/controllers/portal-controller'
 import { ScrollLockController } from '@/controllers/scroll-lock-controller'
 import { emit } from '@/utils/emit'
 export type SheetVariant = 'center' | 'bottom' | 'left' | 'right'
 export type SheetWidth = 'small' | 'medium' | 'large' | 'full'
 
+// 드래그로 내린 거리가 시트 높이의 이 비율을 넘으면 닫힘으로 판정한다.
+const DRAG_CLOSE_THRESHOLD_RATIO = 0.25
+
 @customElement('mm-sheet')
 class Sheet extends LitElement {
-  static styles = sheetStyles
+  static styles = [sheetStyles, sheetDragHandleStyles]
 
   @property({ type: String, reflect: true }) variant: SheetVariant = 'center'
   @property({ type: String, reflect: true }) width: SheetWidth = 'medium'
   @property({ type: String }) height?: string
   @property({ type: Boolean, reflect: true, attribute: 'open' }) isOpen = false
-  @property({ type: Boolean, reflect: true, attribute: 'backdrop-blur' }) backdropBlur = false
+
+  @query('.sheet') private sheetEl!: HTMLElement
+
+  private dragging = false
+  private dragStartY = 0
 
   private scrollLock = new ScrollLockController(this)
   private portal = new PortalController(this, {
@@ -24,30 +31,11 @@ class Sheet extends LitElement {
     root: () => document.getElementById('sheet-page-root') ?? document.body,
   })
 
-  // sheet-footer가 body 위에 겹쳐 뜨는 표면이라, body가 그 높이만큼 하단 여백을
-  // 확보하도록 실제 렌더 높이를 --sheet-footer-height로 동기화한다.
-  private footerResize = new ResizeObserver(([entry]) => {
-    const height = entry?.borderBoxSize[0]?.blockSize ?? 0
-    this.style.setProperty('--sheet-footer-height', `${height}px`)
-  })
-  private observedFooter: Element | null = null
-
   // 리스너 대상이 호스트 자신이라 portal 이동에도 유지되므로 생성자에서 한 번만 등록한다.
   constructor() {
     super()
     this.addEventListener('sheetclose', this.handleSheetClose)
     this.addEventListener('click', this.handleBackdropClick)
-  }
-
-  connectedCallback() {
-    super.connectedCallback()
-    this.syncFooterObserver()
-  }
-
-  disconnectedCallback() {
-    super.disconnectedCallback()
-    this.footerResize.disconnect()
-    this.observedFooter = null
   }
 
   private handleSheetClose = () => {
@@ -57,20 +45,50 @@ class Sheet extends LitElement {
   render() {
     return html`
       <aside class="sheet" ?open=${this.isOpen}>
-        <slot @slotchange=${this.syncFooterObserver}></slot>
+        ${this.renderDragHandle()}
+        <slot></slot>
       </aside>
     `
   }
 
-  private syncFooterObserver = () => {
-    const footer = this.querySelector('mm-sheet-footer')
-    if (footer === this.observedFooter) return
+  private renderDragHandle() {
+    if (this.variant !== 'bottom') return nothing
 
-    this.footerResize.disconnect()
-    this.style.removeProperty('--sheet-footer-height')
-    this.observedFooter = footer
+    return html`
+      <div
+        class="drag-handle"
+        aria-hidden="true"
+        @pointerdown=${this.handleDragStart}
+        @pointermove=${this.handleDragMove}
+        @pointerup=${this.handleDragEnd}
+        @pointercancel=${this.handleDragEnd}
+      ></div>
+    `
+  }
 
-    if (footer) this.footerResize.observe(footer, { box: 'border-box' })
+  private handleDragStart = (e: PointerEvent) => {
+    ;(e.currentTarget as HTMLElement).setPointerCapture(e.pointerId)
+    this.dragging = true
+    this.dragStartY = e.clientY
+    this.sheetEl.style.transition = 'none'
+  }
+
+  private handleDragMove = (e: PointerEvent) => {
+    if (!this.dragging) return
+
+    const deltaY = Math.max(0, e.clientY - this.dragStartY)
+    this.sheetEl.style.transform = `translateY(${deltaY}px)`
+  }
+
+  private handleDragEnd = (e: PointerEvent) => {
+    if (!this.dragging) return
+    this.dragging = false
+
+    const deltaY = Math.max(0, e.clientY - this.dragStartY)
+    this.sheetEl.style.transition = ''
+    this.sheetEl.style.transform = ''
+
+    if (deltaY > this.sheetEl.offsetHeight * DRAG_CLOSE_THRESHOLD_RATIO) emit(this, 'sheetclose')
   }
 
   /** 호스트(backdrop) 영역 클릭 시 닫는다 */

@@ -1,40 +1,21 @@
-import { LitElement, css, html, nothing } from 'lit'
+import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
+import { sheetHeaderStyles } from '@/components/sheet/sheet.styles'
 import { emit } from '@/utils/emit'
 
 @customElement('mm-sheet-header')
 class SheetHeader extends LitElement {
-  static styles = css`
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-      padding: var(--sheet-padding-block) 0;
-      /* height: var(--size-48); */
-      gap: var(--sheet-header-gap, var(--space-2));
-      box-sizing: border-box;
-    }
-  `
+  static styles = sheetHeaderStyles
 
   @property({ type: String }) heading = ''
-  @property({ type: Boolean, attribute: 'close-button' }) closeButton = true
 
   render() {
     return html`
       <header role="navigation">
         <mm-paragraph size="large">${this.heading}</mm-paragraph>
-        ${this.renderCloseButton()}
+        <mm-close-button @close=${this.handleClose}></mm-close-button>
       </header>
-    `
-  }
-
-  private renderCloseButton() {
-    if (!this.closeButton) return nothing
-
-    return html`
-      <mm-close-button @close=${this.handleClose}></mm-close-button>
     `
   }
 

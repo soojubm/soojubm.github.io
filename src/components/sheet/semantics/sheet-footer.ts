@@ -1,29 +1,14 @@
-import { LitElement, css, html, nothing } from 'lit'
+import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import type { ActionConfig } from '@/components/action-config'
 
+import { sheetFooterStyles } from '@/components/sheet/sheet.styles'
 import { emit } from '@/utils/emit'
 
 @customElement('mm-sheet-footer')
 class SheetFooter extends LitElement {
-  static styles = css`
-    :host {
-      display: block;
-      box-sizing: border-box;
-      padding: var(--sheet-padding-block) var(--sheet-padding-inline)
-        calc(var(--sheet-padding-block) + env(safe-area-inset-bottom));
-      border-top: var(--surface-highe-border);
-      background: var(--surface-highe-background-color);
-      backdrop-filter: var(--surface-highe-backdrop-filter);
-      -webkit-backdrop-filter: var(--surface-highe-backdrop-filter);
-
-      position: absolute;
-      inset-inline: 0;
-      bottom: 0;
-      z-index: 1;
-    }
-  `
+  static styles = sheetFooterStyles
 
   @property({ attribute: false }) primaryAction?: ActionConfig
   @property({ attribute: false }) secondaryAction?: ActionConfig

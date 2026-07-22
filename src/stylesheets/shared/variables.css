@@ -167,6 +167,9 @@
   --duration-quickly: 0.2s;
   --duration-slowly: 0.6s;
 
+  --transition-duration: 180ms;
+  --transition-duration-emphasis: 220ms;
+
   --bazier: cubic-bezier(0.455, 0.03, 0.515, 0.955);
   --transition-base: all 0.4s var(--bazier);
   --animation-duration: 0.4s;

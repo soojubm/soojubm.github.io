@@ -25,8 +25,7 @@
 - 새 컴포넌트와 패턴은 기존 구조·네이밍을 우선 따르고, 꼭 필요할 때만 추가한다.
 - 상속보다 조합/합성을 우선한다.
 - 코드 양을 줄이더라도 읽기 어려운 공통화는 피하고, 기존 컴포넌트로 단순 대체 가능한 반복을 우선 정리한다.
-- 재사용을 위한 공통화는 공통 규칙의 소유자가 명확할 때만 만들고, primitive API를 다시 정의하는 render helper는 피한다.
-- `mm-tag`처럼 primitive 사용법을 숨기는 헬퍼는 제거하고, `menuitem`처럼 계열 컴포넌트의 조립 규칙을 소유하는 내부 헬퍼는 유지할 수 있다.
+- 재사용을 위한 공통화는 공통 규칙의 소유자가 명확할 때만 만들고, primitive 사용법을 숨기는 헬퍼는 피한다. 계열 컴포넌트의 조립 규칙을 소유하는 내부 헬퍼는 유지할 수 있다.
 - 시멘틱 컴포넌트는 이름·이벤트·접근성 의미가 API이므로 구현이 비슷해도 병합하지 않고 내부 반복만 공유한다.
 - 컴포넌트 API를 변경할 때는 구현, 전체 사용처, 예제 페이지, `mm-prop` 문서를 함께 수정한다.
 - 같은 기반 요소를 쓰는 합성 컴포넌트는 공통 상태 스타일도 기반 스타일에서 함께 공유한다.
@@ -82,8 +81,7 @@
 - 제목과 설명이 함께 있으면 text block 컴포넌트로 묶는다.
 - 연관 메타 정보는 메타 그룹 컴포넌트로 묶고 구조를 임의로 변형하지 않는다.
 - 새 콘텐츠에 raw 텍스트 태그를 직접 사용하지 않는다.
-- 정보 위계는 제목, 기본 본문, 핵심 수치처럼 꼭 필요한 최소 단계로 단순하게 구성한다.
-- 텍스트 크기와 색상 단계는 최소한으로 사용한다.
+- 정보 위계, 텍스트 크기·색상 단계는 제목·본문·핵심 수치처럼 꼭 필요한 최소 단계로 단순하게 구성한다.
 
 ### 태그
 
@@ -100,11 +98,12 @@
 
 - 색상, 간격, radius는 CSS 토큰을 사용하고 하드코딩하지 않는다.
 - 토큰을 계산해 새 값을 만들지 않고, 필요한 의미에 가장 가까운 기존 토큰을 사용한다.
-- 테마 분기처럼 재정의할 목적이 없으면 기존 토큰을 컴포넌트 지역 변수로 다시 감싸지 않고 그대로 사용한다.
+- 테마 분기처럼 재정의할 목적이 없으면 토큰을 다른 이름으로 감싸지 않고 그대로 사용한다. 어떤 토큰이 다른 토큰 하나에만 값을 흘려보낼 뿐 따로 쓰이지 않는다면 하나로 합친다.
 - 컴포넌트 이름이 붙은 토큰(`--avatar-border` 등)은 variables.css에서 재정의하지 않는다. 테마마다 달라져야 할 값이면 컴포넌트가 자기 기본값에서 `--border`·`--border-transparent` 같은 전역 primitive를 그대로 참조하게 하고, 테마 블록은 그 primitive만 재정의한다 — 그래야 컴포넌트 전용 fallback 토큰을 테마마다 따로 만드는 우회가 필요 없다. 단, 이 패턴은 실제 DOM에 렌더되는 요소(컴포넌트 `:host`, `.navbar-user` 같은 plain CSS 클래스)에서만 성립한다. `data-theme`는 `body`에 적용되는데 variables.css의 `:root {}`는 `body`의 조상(`html`)이라, `:root`에 `--token: var(--primitive)`를 선언하면 그 참조는 절대 테마가 적용되지 않는 `html` 시점 값으로 고정되어 버린다. `:root`에서 기본값을 선언해야 하는 토큰은 테마가 재정의하는 primitive 대신 절대 재정의되지 않는 원시값(`--gray0` 등)을 참조한다.
 - `var(--token, fallback)` 형태의 소비처 fallback은 안티패턴이다. 토큰이 모든 테마에서 값을 갖도록 `:root` 기본값 + 테마 블록 재정의로 선언하고, 소비처는 fallback 없이 참조한다.
 - width·height처럼 요소 자체의 고정 치수는 간격 토큰이 아니라 size 토큰을 우선 사용한다.
 - 컴포넌트 토큰은 소비하는 CSS 속성 이름으로 짓는다(`background`→`-background-color`, `border-radius`→`-border-radius`, `color:`→`-text-color`, `height`→`-height`). 한 값이 여러 속성을 먹이면 특정 속성명으로 좁히지 않고 제네릭 이름을 유지한다.
+- variant·size 같은 상태에 따라 값이 달라질 때는 속성이나 `--x-small`·`--x-large` 같은 대안 토큰을 상태별로 미리 선언하지 않고, 상태 selector가 실제로 소비되는 토큰 하나에 값을 직접 재할당한다.
 
 ### 테마
 
@@ -126,8 +125,8 @@
 - 같은 맥락 안에는 구분선을 넣지 않고, 서로 다른 맥락 사이에만 separator 컴포넌트를 사용한다.
 - 콘텐츠나 레이아웃 구획을 위해 CSS `border`를 직접 사용하지 않는다.
 - Shadow DOM 내부 구조는 외부 스타일 API로 노출하지 않고, 스타일 변형은 prop, token, CSS custom property로만 제공한다.
-- 스타일 적용만을 위해 새 보조 class를 만들지 않고, 기존 의미 class나 컴포넌트 selector에 스타일을 둔다.
-- 공유 스타일은 DOM 보조 class를 요구하지 않고, `static styles`에서 의미 selector에 조합한다.
+- 시각 효과의 on/off·강도처럼 스타일 목적만 갖는 prop은 선언하지 않는다. 그 값을 담는 CSS custom property를 그대로 공개해 소비자가 직접 설정하게 한다.
+- 스타일 적용만을 위해 새 보조 class를 만들지 않고, 기존 의미 class나 컴포넌트 selector에 스타일을 둔다. 공유 스타일도 마찬가지로 DOM 보조 class 없이 `static styles`에서 의미 selector로 조합한다.
 - 상속되는 텍스트·아이콘 색은 `color`/`currentColor`로 흐르게 하고, 같은 색 의미를 별도 custom property 채널로 이중화하지 않는다.
 - Lit 컴포넌트의 host 상태 선택자는 `:host` 내부에 중첩하지 않고 최상위 `:host([attr])`, `:host(:state)` 형태로 작성한다.
 - `display: contents`는 사용하지 않고, 호스트에는 역할에 맞는 박스를 명시한다.
@@ -148,8 +147,7 @@
 - Lit의 `render()`는 순수하게 유지하고, 부수효과는 handler나 lifecycle에서 처리한다.
 - Lit 클래스 멤버는 `static styles`, reactive property, `render()`, 메서드 순으로 배치한다.
 - 함수 내부에서 조건을 분기할 때는 삼항식보다 early return을 우선한다.
-- `render()` 안에서 조건부 DOM 조각이 커지면 의도를 드러내는 `render*()` helper로 분리한다.
-- 조건부 렌더 helper는 `renderContent()`처럼 상태를 다시 중계하는 이름보다 `renderImage()`처럼 실제 조각의 의미를 드러내고, `render()`에는 각 helper를 직접 나열하며 조건은 helper 내부에서 early return으로 처리한다.
+- `render()` 안에서 조건부 DOM 조각이 커지면 `render*()` helper로 분리한다. helper 이름은 `renderContent()`처럼 상태를 다시 중계하지 않고 `renderImage()`처럼 실제 조각의 의미를 드러내며, `render()`에는 각 helper를 직접 나열한다.
 - Lit 바인딩은 attribute, property, Boolean attribute의 역할에 맞게 구분해 사용한다.
 - 단일 표현식 바인딩은 따옴표 없이 쓰고, 정적 문자열과 표현식을 섞을 때만 따옴표로 묶는다.
 - 동적 class는 정적 class와 한 바인딩에서 섞지 않고, 상태 스타일은 attribute나 style selector로 표현한다.
