@@ -3,22 +3,11 @@ import { renderDocumentLayout } from '../../../layouts/document-layout'
 
 const main = html`
   <main class="page">
-    <!-- Dropdown(*Menu, Contextual Menu)*
-    displays a list of actions, options or links.
-    It is triggered when a user interacts with a Button, Textfield or other control.
-    Dropdown allows for complex functionality that can’t be accomplished with SelectList.
-
-    3개 이상.
-    select보다 복잡한 액션의 조합.
-    immediate action.
-    Place destructive actions at the bottom
-  -->
     <mm-text-block
       heading="Input"
       description="사용자가 정보를 입력하고 제출할 수 있습니다."
     ></mm-text-block>
 
-    <!-- - 콤보박스 textfield + select -->
     <mm-component-aka items='["TextInput", "Input"]'></mm-component-aka>
 
     <mm-component-example>
@@ -37,15 +26,6 @@ const main = html`
         </mm-flex>
       </div>
     </mm-component-example>
-
-    <!-- <mm-textfield type="text" label="" hidden-label placeholder="Placeholder...">
-    <mm-icon slot="leading" name="xray-view"></mm-icon>
-  </mm-textfield>
-  <mm-textfield type="email" label="" hidden-label placeholder="with Trailing...">
-    <mm-icon slot="trailing" name="xray-view"></mm-icon>
-  </mm-textfield> -->
-    <!-- <mm-paragraph>unit, choose/enter</mm-paragraph> -->
-    <!-- <abbr title="필수입력">*</abbr> -->
 
     <mm-component-props>
       <mm-prop name="type" type="string = 'text'"></mm-prop>
@@ -402,9 +382,6 @@ const main = html`
             뉴스레터 구독
           </mm-button>
         </mm-textfield>
-        <!-- 걱정하지 마세요. 스팸은 없습니다! 귀하의 정보는 web.dev 및 Chrome 관련 업데이트에만 사용되며
-      당사에서 보내는 이메일은 일반적으로 한 달에 1-2회를 넘지 않습니다. 언제든지 구독을 취소할 수
-      있습니다. -->
       </form>
     </mm-component-section>
 
@@ -544,48 +521,6 @@ const main = html`
       </mm-link>
     </mm-component-references>
 
-    <!-- <form action="">
-
-      <fieldset disabled>
-    <input type="text" />
-    <input type="text" />
-  </fieldset>
-    <input type="checkbox" />
-    <input type="radio" />
-    <mm-separator></mm-separator>
-    <select name="" id="">
-      <option value=""></option>
-    </select>
-    <input type="text" placeholder="text" />
-    <input type="email" placeholder="email" />
-    <input type="password" placeholder="password" />
-    <input type="url" placeholder="url" />
-    <input type="tel" placeholder="tel" />
-    <input type="date" placeholder="date" />
-    <input type="time" placeholder="time" />
-    <textarea name="" id=""></textarea>
-    <input id="myURL" name="myURL" type="url" list="defaultURLs" />
-    <datalist id="defaultURLs">
-      <option value="https://developer.mozilla.org/"></option>
-      <option value="http://www.google.com/"></option>
-    </datalist>
-    <button type="submit">제출</button>
-  </form> -->
-
-    <!-- Dropdown(*Menu, Contextual Menu)*
-    displays a list of actions, options or links.
-    It is triggered when a user interacts with a Button, Textfield or other control.
-    Dropdown allows for complex functionality that can’t be accomplished with SelectList.
-
-    3개 이상.
-    select보다 복잡한 액션의 조합.
-    immediate action.
-    Place destructive actions at the bottom
-  -->
-
-    <!-- <input type="text" inputmode="numeric" pattern="[0-9]*" />
-<mm-caption id="" aria-live="assertive">pattern="[0-9]+"</mm-caption> -->
-    <!-- <mm-paragraph>DateRangeField / DateField</mm-paragraph> -->
     <mm-component-related>
       <mm-button-group>
         <mm-hashtag-link href="textarea.html">Textarea</mm-hashtag-link>

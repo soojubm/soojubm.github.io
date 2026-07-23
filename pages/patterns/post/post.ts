@@ -146,7 +146,6 @@ const main = html`
     </mm-flex>
 
     <aside style="margin: 2rem 0">
-      <!-- TODO  TOP BLUR -->
       <mm-result
         heading="다음 내용이 궁금하신가요?"
         description="한 달 동안 무료로 모든 콘텐츠를 체험해보세요. 언제든 해지하실 수 있어요."
@@ -185,38 +184,3 @@ const main = html`
 document.addEventListener('DOMContentLoaded', () => {
   renderLayout(main, { closeSidebar: true })
 })
-
-document.addEventListener('DOMContentLoaded', () => {
-  function scrollProgress() {
-    const containerElement = document.querySelector<HTMLElement>('.post')
-    const progressBar = document.querySelector<HTMLElement>('.post-head-progress')
-    if (!containerElement || !progressBar) return
-
-    const scrollPercent = `${
-      (window.pageYOffset / (containerElement.scrollHeight - window.innerHeight)) * 100
-    }%`
-    progressBar.style.width = scrollPercent
-  }
-
-  function focusComment() {
-    const commentWrite = document.querySelector<HTMLElement>('.js-comment-write')
-    const commentTextfield = document.querySelectorAll<HTMLElement>('.js-comment-textfield')
-    if (!commentWrite || !commentTextfield) return
-
-    commentTextfield.forEach(element =>
-      element.addEventListener('focus', () => commentWrite.classList.add('is-focused')),
-    )
-  }
-})
-
-// {
-//   name: 'button',
-//   role: action',
-//   description: '',
-//   aka: ['string', 'string'],
-//   features: [],
-//   bestPractices: [],
-//   props: { name: '', size: ''}
-//   relatedComponents: [],
-//   useCases: [],
-// }

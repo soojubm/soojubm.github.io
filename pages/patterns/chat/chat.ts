@@ -117,20 +117,6 @@ const main = html`
           <mm-chat-suggestion icon="calendar">일정 잡기</mm-chat-suggestion>
           <mm-chat-suggestion>나중에 할게요</mm-chat-suggestion>
         </mm-chat-suggestions>
-        <!-- <mm-surface
-        variant="elevated"
-        style="
-          margin-bottom: -0.75rem;
-          padding-block: var(--space-2);
-          position: relative;
-          z-index: -1;
-        "
-      >
-        <mm-flex align-items="center" justify-content="between" gap="2">
-          <mm-text>오후 10:40까지 무료 메시지를 모두 사용했습니다.</mm-text>
-          <mm-button variant="primary" size="small">업그레이드</mm-button>
-        </mm-flex>
-      </mm-surface> -->
         <mm-prompt-input
           placeholder="메시지를 입력하세요..."
           model="claude-sonnet"

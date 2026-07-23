@@ -144,7 +144,6 @@ const main = html`
         </mm-top-bar>
         <mm-textfield label="컬렉션 이름" placeholder="컬렉션 이름"></mm-textfield>
         <div style="height: 0.75rem"></div>
-        <!-- aira-checked="mixed" aria-controls="1 2" -->
         <mm-toggle-button-group
           id="button-list"
           .options=${visibilityOptions}

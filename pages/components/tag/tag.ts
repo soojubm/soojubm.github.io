@@ -8,7 +8,6 @@ const main = html`
       description="인접 요소나 부모 요소를 부연하는 시각 정보입니다. 상태, 카테고리, 키워드로 강조된 시각 정보는 사용자가 복잡한 정보 더미에서 중요한 정보를 우선적으로 파악하도록 돕습니다."
     ></mm-page-header>
 
-    <!-- Badge intent="info" -->
     <mm-component-aka
       items='["Badge", "Label", "Keyword", "Flag", "activity bar counter (vs code)", "Counter badge (quantity)", "Health", "Status Pill"]'
     ></mm-component-aka>
@@ -78,38 +77,12 @@ const main = html`
           subtitle="notification, status, informational"
           description="클릭이나 삭제 같은 인터랙션 없이(Read-only), 컬러·아이콘 등의 시각적 단서로 상태·긴급도나 부가 메타 정보를 화면을 훑는 것만으로 한눈에 파악하게 합니다. (e.g., 진행 중, 승인 대기, 배송비 무료, NEW)"
         ></mm-feature>
-        <!-- <mm-feature
-        heading="Categorical"
-        description="방대한 데이터 속에서 콘텐츠의 분류(Category)나 공통 속성(Property)을 명확하게 묶어 화면을 구조화하고, 사용자가 원하는 정보를 빠르게 탐색하도록 돕습니다. (e.g., 부서명, 기획전, 문서 유형)"
-      ></mm-feature> -->
-        <!-- <mm-feature
-        heading="Statusful"
-        description="상태·긴급도의 의미를 variant 색과 톤으로 담습니다. 색상만으로 구분하지 않고 아이콘·레이블을 함께 제공합니다."
-      ></mm-feature> -->
         <mm-feature
           heading="Groupable"
           description="여러 태그는 tag-group으로 묶어 나열합니다. 간격과 줄바꿈은 그룹이 소유합니다."
         ></mm-feature>
       </mm-component-feature-list>
     </mm-component-guide>
-
-    <!-- <mm-paragraph-group>
-      <mm-paragraph size="large">Changelog</mm-paragraph>
-      <table>
-        <tbody>
-          <tr>
-            <th>240813</th>
-            <td>
-              indicator 제거. 카테고라이징이나 상태 등의 뱃징이 아님.
-              <del>
-                액션의 기표로 사용할 수 있다. 인접 요소 또는 부모 요소가 클릭할 수 있음을 보조.
-              </del>
-              이렇게 되면 태그의 정의가 복잡해짐. 이 정의는 합성된 컴포넌트가 가져야 함..
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </mm-paragraph-group> -->
 
     <mm-component-section heading="MostPopularTag" description="구체 레벨. 가장 인기있는 태그">
       <mm-tag>🔥 Most Popular</mm-tag>

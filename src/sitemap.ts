@@ -86,7 +86,7 @@ export const SITEMAP: SitemapNode[] = [
     icon: ICON_NAMES.MOUSE_BUTTON,
     items: [
       { id: 'button', name: 'button' },
-      { id: 'icon-button', name: 'icon Button' },
+      { id: 'icon-button', name: 'icon button' },
       { id: 'toggle-button', name: 'toggle button' },
       { id: 'menuitem', name: 'menuItem' },
       { id: 'link', name: 'link' },

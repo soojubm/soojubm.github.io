@@ -33,6 +33,122 @@ const renderColorTokens = (entries: ColorTokenEntry[]) =>
     `,
   )
 
+const renderSizeStage = (sizes: string[]) =>
+  sizes.map(
+    (size, index) => html`
+      <mm-flex direction="column" align-items="center" gap="2">
+        <div
+          style="
+            width: var(--size-${size});
+            height: var(--size-${size});
+            background: var(--background-strong-color);
+            border-radius: var(--radius);
+            flex-shrink: 0;
+          "
+        ></div>
+        <mm-list-marker variant="number" value=${index + 1}></mm-list-marker>
+      </mm-flex>
+    `,
+  )
+
+const renderSpaceStage = (widths: string[]) =>
+  widths.map(
+    (width, index) => html`
+      <mm-flex direction="column" align-items="center" gap="2">
+        <mm-flex align-items="center" gap="0">
+          <div
+            style="
+              width: 2px;
+              height: var(--size-32);
+              background: var(--background-strong-color);
+              border-radius: var(--radius);
+            "
+          ></div>
+          <div style="width: ${width}; height: 4px; background: var(--color-primary)"></div>
+          <div
+            style="
+              width: 2px;
+              height: var(--size-32);
+              background: var(--background-strong-color);
+              border-radius: var(--radius);
+            "
+          ></div>
+        </mm-flex>
+        <mm-list-marker variant="number" value=${index + 1}></mm-list-marker>
+      </mm-flex>
+    `,
+  )
+
+interface BorderSwatch {
+  border: string
+  radius: string
+  background: string
+  marker: number
+}
+
+const renderBorderStage = (swatches: BorderSwatch[]) =>
+  swatches.map(
+    ({ border, radius, background, marker }) => html`
+      <mm-flex direction="column" align-items="center" gap="2">
+        <div
+          style="
+            width: var(--size-48);
+            height: var(--size-48);
+            border: ${border};
+            border-radius: ${radius};
+            background: ${background};
+            flex-shrink: 0;
+          "
+        ></div>
+        <mm-list-marker variant="number" value=${marker}></mm-list-marker>
+      </mm-flex>
+    `,
+  )
+
+const renderShadowStage = (shadows: string[]) =>
+  shadows.map(
+    (shadow, index) => html`
+      <mm-flex direction="column" align-items="center" gap="2">
+        <div
+          style="
+            width: var(--size-48);
+            height: var(--size-48);
+            border-radius: var(--radius);
+            background: var(--background-color);
+            box-shadow: ${shadow};
+            flex-shrink: 0;
+          "
+        ></div>
+        <mm-list-marker variant="number" value=${index + 1}></mm-list-marker>
+      </mm-flex>
+    `,
+  )
+
+interface BlurSwatch {
+  opacity: string
+  blur: string
+}
+
+const renderBlurStage = (swatches: BlurSwatch[]) =>
+  swatches.map(
+    ({ opacity, blur }, index) => html`
+      <mm-flex direction="column" align-items="center" gap="2">
+        <div
+          style="
+            width: var(--size-48);
+            height: var(--size-48);
+            border-radius: var(--radius);
+            background: rgb(255 255 255 / ${opacity});
+            backdrop-filter: blur(${blur});
+            -webkit-backdrop-filter: blur(${blur});
+            flex-shrink: 0;
+          "
+        ></div>
+        <mm-list-marker variant="number" value=${index + 1}></mm-list-marker>
+      </mm-flex>
+    `,
+  )
+
 const grayscaleColorTokens: ColorTokenEntry[] = [
   { color: 'var(--gray0)', token: 'gray0: #fff' },
   { color: 'var(--gray100)', token: 'gray100: #f5f6f5' },
@@ -119,6 +235,8 @@ const sizeTokenItems: TokenEntry[] = [
   { key: 'size-80', value: '80px' },
 ]
 
+const sizeStageValues = ['16', '24', '32', '40', '48', '80']
+
 const spaceTokenItems: TokenEntry[] = [
   { key: 'space-1', value: '4px' },
   { key: 'space-2', value: '8px' },
@@ -127,6 +245,17 @@ const spaceTokenItems: TokenEntry[] = [
   { key: 'space-8', value: '32px' },
   { key: 'space-12', value: '48px' },
   { key: 'space-16', value: '64px' },
+]
+
+const spaceStageWidths = [
+  '2px',
+  'var(--space-1)',
+  'var(--space-2)',
+  'var(--space-3)',
+  'var(--space-4)',
+  'var(--space-8)',
+  'var(--space-12)',
+  'var(--space-16)',
 ]
 
 const layoutTokenItems: TokenEntry[] = [
@@ -151,11 +280,63 @@ const shadowTokenItems: TokenEntry[] = [
   { key: 'surface-high-shadow', value: '0 16px 32px rgba(0,0,0,.2)' },
 ]
 
+const shadowStageValues = ['var(--surface-base-shadow)', 'var(--surface-high-shadow)']
+
 const materialTokenItems: TokenEntry[] = [
   { key: 'surface-base-blur', value: '10px' },
   { key: 'surface-base-opacity', value: '0.35' },
   { key: 'surface-high-blur', value: '20px' },
   { key: 'surface-high-opacity', value: '0.55' },
+]
+
+const blurStageSwatches: BlurSwatch[] = [
+  { opacity: 'var(--surface-base-opacity)', blur: 'var(--surface-base-blur)' },
+  { opacity: 'var(--surface-high-opacity)', blur: 'var(--surface-high-blur)' },
+]
+
+const borderStageSwatches: BorderSwatch[] = [
+  {
+    border: 'var(--border)',
+    radius: 'var(--radius)',
+    background: 'var(--background-color)',
+    marker: 1,
+  },
+  {
+    border: 'var(--border)',
+    radius: 'var(--radius)',
+    background: 'var(--background-color)',
+    marker: 2,
+  },
+  {
+    border: 'var(--interaction-selected-border-color)',
+    radius: 'var(--radius)',
+    background: 'var(--background-color)',
+    marker: 3,
+  },
+  {
+    border: 'var(--border-transparent)',
+    radius: 'var(--radius)',
+    background: 'var(--background-subtle-color)',
+    marker: 4,
+  },
+  {
+    border: 'var(--border)',
+    radius: 'var(--radius)',
+    background: 'var(--background-color)',
+    marker: 1,
+  },
+  {
+    border: 'var(--border)',
+    radius: 'var(--radius-large)',
+    background: 'var(--background-color)',
+    marker: 2,
+  },
+  {
+    border: 'var(--border)',
+    radius: 'var(--radius-full)',
+    background: 'var(--background-color)',
+    marker: 3,
+  },
 ]
 
 const zIndexTokenItems: TokenEntry[] = [
@@ -211,11 +392,6 @@ const main = html`
         <mm-text-block level="2" heading="Color" description="TODO..."></mm-text-block>
 
         <mm-grid columns="6">${renderColorTokens(grayscaleColorTokens)}</mm-grid>
-        <!-- <mm-grid
-          columns="6"
-          style="margin-top: var(--space-3)"
-          aria-label="semantic color tokens"
-        ></mm-grid> -->
 
         <mm-separator></mm-separator>
         <mm-grid columns="4" aria-label="grayscale color tokens">
@@ -226,14 +402,6 @@ const main = html`
           ${renderColorTokens(backgroundColorTokens)}
         </mm-grid>
 
-        <!-- <mm-token-group>
-        <mm-token-item key="selection-indicator-color" value="var(--color-primary)"></mm-token-item>
-        <mm-token-item
-          key="selection-background"
-          value="var(--color-primary-subtle)"
-        ></mm-token-item>
-        <mm-token-item key="selection-foreground" value="var(--color-primary)"></mm-token-item>
-      </mm-token-group> -->
       </mm-flex>
 
       <mm-flex direction="column" gap="3">
@@ -290,29 +458,6 @@ const main = html`
           </mm-surface>
         </mm-flex>
 
-        <!-- <mm-flex align-items="end" gap="4">
-        <mm-flex direction="column" align-items="center" gap="2">
-          <mm-text size="32" weight="bold">Ag</mm-text>
-          <mm-list-marker variant="number" value="1"></mm-list-marker>
-        </mm-flex>
-        <mm-flex direction="column" align-items="center" gap="2">
-          <mm-text size="24" weight="bold">Ag</mm-text>
-          <mm-list-marker variant="number" value="2"></mm-list-marker>
-        </mm-flex>
-        <mm-flex direction="column" align-items="center" gap="2">
-          <mm-text size="18">Ag</mm-text>
-          <mm-list-marker variant="number" value="3"></mm-list-marker>
-        </mm-flex>
-        <mm-flex direction="column" align-items="center" gap="2">
-          <mm-text size="14">Ag</mm-text>
-          <mm-list-marker variant="number" value="4"></mm-list-marker>
-        </mm-flex>
-        <mm-flex direction="column" align-items="center" gap="2">
-          <mm-text size="12">Ag</mm-text>
-          <mm-list-marker variant="number" value="5"></mm-list-marker>
-        </mm-flex>
-      </mm-flex> -->
-
         <mm-token-group>${renderTokenItems(typographyTokenItems)}</mm-token-group>
       </mm-flex>
 
@@ -323,80 +468,7 @@ const main = html`
           description="요소의 크기를 결정합니다. 주로 height에 사용하고 정사각형 요소에 한정하여 width에 사용합니다."
         ></mm-text-block>
         <mm-token-stage>
-          <mm-flex align-items="flex-end" gap="8">
-            <mm-flex direction="column" align-items="center" gap="2">
-              <div
-                style="
-                width: var(--size-16);
-                height: var(--size-16);
-                background: var(--background-strong-color);
-                border-radius: var(--radius);
-                flex-shrink: 0;
-              "
-              ></div>
-              <mm-list-marker variant="number" value="1"></mm-list-marker>
-            </mm-flex>
-            <mm-flex direction="column" align-items="center" gap="2">
-              <div
-                style="
-                width: var(--size-24);
-                height: var(--size-24);
-                background: var(--background-strong-color);
-                border-radius: var(--radius);
-                flex-shrink: 0;
-              "
-              ></div>
-              <mm-list-marker variant="number" value="2"></mm-list-marker>
-            </mm-flex>
-            <mm-flex direction="column" align-items="center" gap="2">
-              <div
-                style="
-                width: var(--size-32);
-                height: var(--size-32);
-                background: var(--background-strong-color);
-                border-radius: var(--radius);
-                flex-shrink: 0;
-              "
-              ></div>
-              <mm-list-marker variant="number" value="3"></mm-list-marker>
-            </mm-flex>
-            <mm-flex direction="column" align-items="center" gap="2">
-              <div
-                style="
-                width: var(--size-40);
-                height: var(--size-40);
-                background: var(--background-strong-color);
-                border-radius: var(--radius);
-                flex-shrink: 0;
-              "
-              ></div>
-              <mm-list-marker variant="number" value="4"></mm-list-marker>
-            </mm-flex>
-            <mm-flex direction="column" align-items="center" gap="2">
-              <div
-                style="
-                width: var(--size-48);
-                height: var(--size-48);
-                background: var(--background-strong-color);
-                border-radius: var(--radius);
-                flex-shrink: 0;
-              "
-              ></div>
-              <mm-list-marker variant="number" value="5"></mm-list-marker>
-            </mm-flex>
-            <mm-flex direction="column" align-items="center" gap="2">
-              <div
-                style="
-                width: var(--size-80);
-                height: var(--size-80);
-                background: var(--background-strong-color);
-                border-radius: var(--radius);
-                flex-shrink: 0;
-              "
-              ></div>
-              <mm-list-marker variant="number" value="6"></mm-list-marker>
-            </mm-flex>
-          </mm-flex>
+          <mm-flex align-items="flex-end" gap="8">${renderSizeStage(sizeStageValues)}</mm-flex>
         </mm-token-stage>
         <mm-token-group>${renderTokenItems(sizeTokenItems)}</mm-token-group>
       </mm-flex>
@@ -408,198 +480,7 @@ const main = html`
           description="space는 요소 사이의 거리입니다."
         ></mm-text-block>
         <mm-token-stage>
-          <mm-flex align-items="center" gap="8">
-            <mm-flex direction="column" align-items="center" gap="2">
-              <mm-flex align-items="center" gap="0">
-                <div
-                  style="
-                  width: 2px;
-                  height: var(--size-32);
-                  background: var(--background-strong-color);
-                  border-radius: var(--radius);
-                "
-                ></div>
-                <div style="width: 2px; height: 4px; background: var(--color-primary)"></div>
-                <div
-                  style="
-                  width: 2px;
-                  height: var(--size-32);
-                  background: var(--background-strong-color);
-                  border-radius: var(--radius);
-                "
-                ></div>
-              </mm-flex>
-              <mm-list-marker variant="number" value="1"></mm-list-marker>
-            </mm-flex>
-            <mm-flex direction="column" align-items="center" gap="2">
-              <mm-flex align-items="center" gap="0">
-                <div
-                  style="
-                  width: 2px;
-                  height: var(--size-32);
-                  background: var(--background-strong-color);
-                  border-radius: var(--radius);
-                "
-                ></div>
-                <div
-                  style="width: var(--space-1); height: 4px; background: var(--color-primary)"
-                ></div>
-                <div
-                  style="
-                  width: 2px;
-                  height: var(--size-32);
-                  background: var(--background-strong-color);
-                  border-radius: var(--radius);
-                "
-                ></div>
-              </mm-flex>
-              <mm-list-marker variant="number" value="2"></mm-list-marker>
-            </mm-flex>
-            <mm-flex direction="column" align-items="center" gap="2">
-              <mm-flex align-items="center" gap="0">
-                <div
-                  style="
-                  width: 2px;
-                  height: var(--size-32);
-                  background: var(--background-strong-color);
-                  border-radius: var(--radius);
-                "
-                ></div>
-                <div
-                  style="width: var(--space-2); height: 4px; background: var(--color-primary)"
-                ></div>
-                <div
-                  style="
-                  width: 2px;
-                  height: var(--size-32);
-                  background: var(--background-strong-color);
-                  border-radius: var(--radius);
-                "
-                ></div>
-              </mm-flex>
-              <mm-list-marker variant="number" value="3"></mm-list-marker>
-            </mm-flex>
-            <mm-flex direction="column" align-items="center" gap="2">
-              <mm-flex align-items="center" gap="0">
-                <div
-                  style="
-                  width: 2px;
-                  height: var(--size-32);
-                  background: var(--background-strong-color);
-                  border-radius: var(--radius);
-                "
-                ></div>
-                <div
-                  style="width: var(--space-3); height: 4px; background: var(--color-primary)"
-                ></div>
-                <div
-                  style="
-                  width: 2px;
-                  height: var(--size-32);
-                  background: var(--background-strong-color);
-                  border-radius: var(--radius);
-                "
-                ></div>
-              </mm-flex>
-              <mm-list-marker variant="number" value="4"></mm-list-marker>
-            </mm-flex>
-            <mm-flex direction="column" align-items="center" gap="2">
-              <mm-flex align-items="center" gap="0">
-                <div
-                  style="
-                  width: 2px;
-                  height: var(--size-32);
-                  background: var(--background-strong-color);
-                  border-radius: var(--radius);
-                "
-                ></div>
-                <div
-                  style="width: var(--space-4); height: 4px; background: var(--color-primary)"
-                ></div>
-                <div
-                  style="
-                  width: 2px;
-                  height: var(--size-32);
-                  background: var(--background-strong-color);
-                  border-radius: var(--radius);
-                "
-                ></div>
-              </mm-flex>
-              <mm-list-marker variant="number" value="5"></mm-list-marker>
-            </mm-flex>
-            <mm-flex direction="column" align-items="center" gap="2">
-              <mm-flex align-items="center" gap="0">
-                <div
-                  style="
-                  width: 2px;
-                  height: var(--size-32);
-                  background: var(--background-strong-color);
-                  border-radius: var(--radius);
-                "
-                ></div>
-                <div
-                  style="width: var(--space-8); height: 4px; background: var(--color-primary)"
-                ></div>
-                <div
-                  style="
-                  width: 2px;
-                  height: var(--size-32);
-                  background: var(--background-strong-color);
-                  border-radius: var(--radius);
-                "
-                ></div>
-              </mm-flex>
-              <mm-list-marker variant="number" value="6"></mm-list-marker>
-            </mm-flex>
-            <mm-flex direction="column" align-items="center" gap="2">
-              <mm-flex align-items="center" gap="0">
-                <div
-                  style="
-                  width: 2px;
-                  height: var(--size-32);
-                  background: var(--background-strong-color);
-                  border-radius: var(--radius);
-                "
-                ></div>
-                <div
-                  style="width: var(--space-12); height: 4px; background: var(--color-primary)"
-                ></div>
-                <div
-                  style="
-                  width: 2px;
-                  height: var(--size-32);
-                  background: var(--background-strong-color);
-                  border-radius: var(--radius);
-                "
-                ></div>
-              </mm-flex>
-              <mm-list-marker variant="number" value="7"></mm-list-marker>
-            </mm-flex>
-            <mm-flex direction="column" align-items="center" gap="2">
-              <mm-flex align-items="center" gap="0">
-                <div
-                  style="
-                  width: 2px;
-                  height: var(--size-32);
-                  background: var(--background-strong-color);
-                  border-radius: var(--radius);
-                "
-                ></div>
-                <div
-                  style="width: var(--space-16); height: 4px; background: var(--color-primary)"
-                ></div>
-                <div
-                  style="
-                  width: 2px;
-                  height: var(--size-32);
-                  background: var(--background-strong-color);
-                  border-radius: var(--radius);
-                "
-                ></div>
-              </mm-flex>
-              <mm-list-marker variant="number" value="8"></mm-list-marker>
-            </mm-flex>
-          </mm-flex>
+          <mm-flex align-items="center" gap="8">${renderSpaceStage(spaceStageWidths)}</mm-flex>
         </mm-token-stage>
         <mm-token-group>${renderTokenItems(spaceTokenItems)}</mm-token-group>
       </mm-flex>
@@ -620,99 +501,7 @@ const main = html`
           description="테두리는 표면의 경계와 클릭 가능성을 표현합니다. 모서리 곡률은 요소의 성격과 위계를 시각적으로 구분합니다."
         ></mm-text-block>
         <mm-token-stage>
-          <mm-flex align-items="flex-end" gap="4">
-            <mm-flex direction="column" align-items="center" gap="2">
-              <div
-                style="
-                width: var(--size-48);
-                height: var(--size-48);
-                border: var(--border);
-                border-radius: var(--radius);
-                background: var(--background-color);
-                flex-shrink: 0;
-              "
-              ></div>
-              <mm-list-marker variant="number" value="1"></mm-list-marker>
-            </mm-flex>
-            <mm-flex direction="column" align-items="center" gap="2">
-              <div
-                style="
-                width: var(--size-48);
-                height: var(--size-48);
-                border: var(--border);
-                border-radius: var(--radius);
-                background: var(--background-color);
-                flex-shrink: 0;
-              "
-              ></div>
-              <mm-list-marker variant="number" value="2"></mm-list-marker>
-            </mm-flex>
-            <mm-flex direction="column" align-items="center" gap="2">
-              <div
-                style="
-                width: var(--size-48);
-                height: var(--size-48);
-                border: var(--interaction-selected-border-color);
-                border-radius: var(--radius);
-                background: var(--background-color);
-                flex-shrink: 0;
-              "
-              ></div>
-              <mm-list-marker variant="number" value="3"></mm-list-marker>
-            </mm-flex>
-            <mm-flex direction="column" align-items="center" gap="2">
-              <div
-                style="
-                width: var(--size-48);
-                height: var(--size-48);
-                border: var(--border-transparent);
-                border-radius: var(--radius);
-                background: var(--background-subtle-color);
-                flex-shrink: 0;
-              "
-              ></div>
-              <mm-list-marker variant="number" value="4"></mm-list-marker>
-            </mm-flex>
-            <mm-flex direction="column" align-items="center" gap="2">
-              <div
-                style="
-                width: var(--size-48);
-                height: var(--size-48);
-                border: var(--border);
-                border-radius: var(--radius);
-                background: var(--background-color);
-                flex-shrink: 0;
-              "
-              ></div>
-              <mm-list-marker variant="number" value="1"></mm-list-marker>
-            </mm-flex>
-            <mm-flex direction="column" align-items="center" gap="2">
-              <div
-                style="
-                width: var(--size-48);
-                height: var(--size-48);
-                border: var(--border);
-                border-radius: var(--radius-large);
-                background: var(--background-color);
-                flex-shrink: 0;
-              "
-              ></div>
-              <mm-list-marker variant="number" value="2"></mm-list-marker>
-            </mm-flex>
-            <mm-flex direction="column" align-items="center" gap="2">
-              <div
-                style="
-                width: var(--size-48);
-                height: var(--size-48);
-                border: var(--border);
-                border-radius: var(--radius-full);
-                background: var(--background-color);
-                flex-shrink: 0;
-              "
-              ></div>
-              <mm-list-marker variant="number" value="3"></mm-list-marker>
-            </mm-flex>
-          </mm-flex>
+          <mm-flex align-items="flex-end" gap="4">${renderBorderStage(borderStageSwatches)}</mm-flex>
         </mm-token-stage>
         <mm-token-group>${renderTokenItems(borderTokenItems)}</mm-token-group>
       </mm-flex>
@@ -724,34 +513,7 @@ const main = html`
           description="그림자는 레이어의 고도와 부유감을 표현합니다."
         ></mm-text-block>
         <mm-token-stage>
-          <mm-flex align-items="flex-end" gap="4">
-            <mm-flex direction="column" align-items="center" gap="2">
-              <div
-                style="
-                width: var(--size-48);
-                height: var(--size-48);
-                border-radius: var(--radius);
-                background: var(--background-color);
-                box-shadow: var(--surface-base-shadow);
-                flex-shrink: 0;
-              "
-              ></div>
-              <mm-list-marker variant="number" value="1"></mm-list-marker>
-            </mm-flex>
-            <mm-flex direction="column" align-items="center" gap="2">
-              <div
-                style="
-                width: var(--size-48);
-                height: var(--size-48);
-                border-radius: var(--radius);
-                background: var(--background-color);
-                box-shadow: var(--surface-high-shadow);
-                flex-shrink: 0;
-              "
-              ></div>
-              <mm-list-marker variant="number" value="2"></mm-list-marker>
-            </mm-flex>
-          </mm-flex>
+          <mm-flex align-items="flex-end" gap="4">${renderShadowStage(shadowStageValues)}</mm-flex>
         </mm-token-stage>
         <mm-token-group aria-label="shadow primitive tokens">
           ${renderTokenItems(shadowTokenItems)}
@@ -785,36 +547,7 @@ const main = html`
             );
           "
           >
-            <mm-flex gap="4">
-              <mm-flex direction="column" align-items="center" gap="2">
-                <div
-                  style="
-                  width: var(--size-48);
-                  height: var(--size-48);
-                  border-radius: var(--radius);
-                  background: rgb(255 255 255 / var(--surface-base-opacity));
-                  backdrop-filter: blur(var(--surface-base-blur));
-                  -webkit-backdrop-filter: blur(var(--surface-base-blur));
-                  flex-shrink: 0;
-                "
-                ></div>
-                <mm-list-marker variant="number" value="1"></mm-list-marker>
-              </mm-flex>
-              <mm-flex direction="column" align-items="center" gap="2">
-                <div
-                  style="
-                  width: var(--size-48);
-                  height: var(--size-48);
-                  border-radius: var(--radius);
-                  background: rgb(255 255 255 / var(--surface-high-opacity));
-                  backdrop-filter: blur(var(--surface-high-blur));
-                  -webkit-backdrop-filter: blur(var(--surface-high-blur));
-                  flex-shrink: 0;
-                "
-                ></div>
-                <mm-list-marker variant="number" value="2"></mm-list-marker>
-              </mm-flex>
-            </mm-flex>
+            <mm-flex gap="4">${renderBlurStage(blurStageSwatches)}</mm-flex>
           </div>
         </mm-token-stage>
         <mm-token-group aria-label="material primitive tokens">
@@ -872,10 +605,4 @@ const main = html`
 
 document.addEventListener('DOMContentLoaded', () => {
   renderDocumentLayout(main)
-})
-
-document.addEventListener('DOMContentLoaded', () => {
-  // document.querySelector('body')!.insertBefore(navbar, );
-  // renderSidemenu
-  // document.querySelector('.page')!.insertAdjacentHTML('afterbegin', sidemenu)
 })

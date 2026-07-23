@@ -8,39 +8,6 @@ const main = html`
       description="정보의 위계를 세우고 핵심 내용을 전달합니다. 크기, 굵기, 행간의 조화를 통해 설계된 타이포그래피는 사용자가 방대한 콘텐츠 속에서도 길을 잃지 않고, 서비스가 의도한 우선순위에 따라 정보를 자연스럽게 습득하도록 돕습니다."
     ></mm-page-header>
 
-    <!-- Truncate for secondary text that isn’t essential to a user’s comprehension of steps to take.
-   Examples include dynamic data ad IDs in tables, lists of user names,
-   and Pin titles that come from outside sources.
-   Use an ellipsis or a link that indicates there is more content available. -->
-
-    <!-- last updates :: multiple summary lists -->
-    <!-- ‘key’ that’s a description or label of a piece of information, like “Name”
-  ‘value’ which is the piece of information itself, such as “John Smith” -->
-
-    <!-- ally -->
-    <!--
-    To give more context, add visually hidden text to the links.
-    This means a screen reader user will hear the row action and the ‘key’ label for the information it will affect,
-    like ‘Change name’ or ‘Change date of birth’.
-   -->
-
-    <!--
-    The value can be:
-    Plain text single line
-    Plain text multiline
-    Array of items, for example lists, categories (tags or badges)
-    Image
-    Video
-    Any generic entity, lists, tables or another key value pair
-    3. Supporting visual
-
-    The font size of a key is never bigger than the value.
-  -->
-    <!-- expressive type  / productive type 표현 영역 -->
-
-    <!-- labels for captions and helper text, as well as legal copy -->
-    <!-- ibm / body / body-compact 2px 차이, Fluid heading styles-->
-
     <style>
       .hero {
         position: relative;
@@ -120,7 +87,6 @@ const main = html`
         "단어(word) → 구(phrase) → 문장(sentence) → 문단(paragraph)"
       ]'
       ></mm-text-list>
-      <!-- 텍스트가 굵거나 진하여 낱자의 속 공간이 좁을수록, 더 넓은 줄 간격이 필요하다. -->
     </mm-component-guide>
 
     <mm-component-section
@@ -326,7 +292,6 @@ const main = html`
       <mm-link href="https://design-system.service.gov.uk/components/summary-list/" external>
         Summary list
       </mm-link>
-      <!-- Use a summary list to summarise information, for example, a user’s responses at the end of a form. -->
       <mm-link href="https://en.wikipedia.org/wiki/Adjacency_pairs" external>
         Adjacency_pairs
       </mm-link>
@@ -336,27 +301,4 @@ const main = html`
 
 document.addEventListener('DOMContentLoaded', () => {
   renderDocumentLayout(main)
-})
-
-document.addEventListener('DOMContentLoaded', () => {
-  countUp({ selector: '.js-counter' })
-
-  function countUp({ selector: selector }) {
-    let element = document.querySelector(selector)
-    if (!element) return
-
-    let number = 0
-    let targetNumber = element.dataset.number || element.getAttribute('data-number')
-
-    let interval = setInterval(() => {
-      renderNumber()
-
-      if (number >= targetNumber) clearInterval(interval)
-    }, 1)
-
-    function renderNumber() {
-      ++number
-      element.textContent = `${number}`
-    }
-  }
 })

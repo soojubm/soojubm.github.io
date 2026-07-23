@@ -152,9 +152,7 @@ function sheetPageTemplate() {
       <mm-component-section
         heading="Backdrop"
         description="레이어 뒤에 표시되는 반투명 Backdrop. onClose prop으로 배경 클릭 시."
-      >
-        <!-- <mm-backdrop open></mm-backdrop> -->
-      </mm-component-section>
+      ></mm-component-section>
 
       <mm-component-section
         heading="Toast"

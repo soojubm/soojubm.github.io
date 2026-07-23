@@ -42,17 +42,6 @@ const main = html`
         "브레드크럼에서 드롭다운으로 페이지 구조를 표현하여 사이트맵의 역할로 확대하지 마세요. 사용자는 브레드크럼을 통해 현재 위치를 파악하고 이전 수준의 페이지로 쉽게 돌아갈 수 있어야 합니다."
       ]'
       ></mm-text-list>
-
-      <!-- <mm-paragraph size="large">Changelog</mm-paragraph>
-      <table>
-        <tr>
-          <th>Jan 2022</th>
-          <td>
-            홈 아이콘을 텍스트로 변경. 페이지에서 상대적으로 중요도가 낮은 정보이기 때문에 주목도를
-            낮춤
-          </td>
-        </tr>
-      </table> -->
     </mm-component-guide>
     <mm-component-related>
       <mm-button-group>

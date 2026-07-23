@@ -64,13 +64,6 @@ const main = html`
       ></mm-token>
     </mm-component-tokens>
 
-    <!-- "flutter. ListView. 스크롤 가능한 뷰 컨테이너. 동적으로 데이터를 랜더링하는 책임까지 포함되어
-  있다. itemBuilder: (context, index) {} / controller: ScrollController(). ListView - SwitchListTile
-  / RadioListTile / 클릭 영역을 타일 전체로 지정하고 있다. 2가지 이상의 액션이 포함되어야 할 때는?",
-  "role=listbox/menu는 항목 선택과 명령 실행 차이. 자식으로 option, menuitemcheckbox 등을 가지는
-  것이 차이. 사용 맥락 또한 listbox는 폼이나 입력. aria-orientation값을 갖습니다 vertical.드롭다운은
-  패턴. 사용자 인터렉션 방식에 가까움. listbox는 기본적으로 드롭다운 목록을 제공하지않는다.", -->
-
     <mm-component-guide>
       <mm-component-feature-list>
         <mm-feature
@@ -224,18 +217,6 @@ const main = html`
   </main>
 `
 
-interface MenuItemRadioGroupChangeDetail {
-  value: string
-  name: string
-}
-
 document.addEventListener('DOMContentLoaded', () => {
   renderDocumentLayout(main)
-
-  const radioGroup = document.querySelector<HTMLElement>('#theme-group')
-
-  radioGroup?.addEventListener('change', event => {
-    const { value } = (event as CustomEvent<MenuItemRadioGroupChangeDetail>).detail
-    document.body.classList.toggle('dark-mode', value === 'dark')
-  })
 })

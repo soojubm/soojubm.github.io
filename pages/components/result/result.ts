@@ -52,7 +52,6 @@ const main = html`
       <mm-paragraph-group>
         <mm-paragraph>You're done!</mm-paragraph>
         <mm-paragraph>
-          <!-- 완료Complete. 오류Error. 빈 데이터Empty Data. 비공개. -->
           empty content, error feedback, Order Completed, Booking Confirmed, Registration Complete,
           Submission Successful, Payment Successful
         </mm-paragraph>

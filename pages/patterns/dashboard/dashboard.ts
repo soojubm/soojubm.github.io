@@ -12,10 +12,6 @@ const main = html`
       wrap="wrap"
     >
       <mm-page-header heading="Dashboard" description="한국 증시"></mm-page-header>
-      <!-- <mm-button-group>
-      <mm-button variant="tertiary" icon="calendar">최근 7일</mm-button>
-      <mm-button variant="primary" icon="plus">새 보고서</mm-button>
-    </mm-button-group> -->
     </mm-flex>
 
     <mm-flex direction="column" gap="3">
@@ -24,10 +20,6 @@ const main = html`
         <mm-tab value="weekly">주간</mm-tab>
         <mm-tab value="monthly">월간</mm-tab>
       </mm-tab-list>
-
-      <!-- <mm-tab-panel value="daily">📅 오늘 생성된 데이터...</mm-tab-panel>
-        <mm-tab-panel value="weekly">🗓️ 이번 주 누적 데이터...</mm-tab-panel>
-        <mm-tab-panel value="monthly">📊 이번 달 정산 데이터...</mm-tab-panel> -->
     </mm-flex>
 
     <mm-grid columns="3" gap="4">
@@ -138,46 +130,8 @@ const main = html`
       </mm-menu-item-group>
     </mm-flex>
   </main>
-
-  <!-- <article class="meter" style="max-width: 400px; margin: 0 auto">
-  <mm-text size="24">200 GB 중 187.23 GB 사용됨</mm-text>
-  <div class="meter-graph">
-    <div class="meter-graph-item" data-type="facebook" style="width: 40%"></div>
-    <div class="meter-graph-item" data-type="twitter" style="width: 30%"></div>
-    <div class="meter-graph-item" data-type="instagram" style="width: 7%"></div>
-  </div>
-  <div class="meter-legend" style="margin: 1rem 0">
-    <div class="meter-legend-item">
-      <mm-avatar size="32" style="background-color: var(--color-facebook)"></mm-avatar>
-      <mm-paragraph>페이스북</mm-paragraph>
-      <mm-paragraph style="margin-left: auto">800,000원</mm-paragraph>
-    </div>
-    <div class="meter-legend-item">
-      <mm-avatar size="32" style="background-color: var(--color-twitter)"></mm-avatar>
-      <mm-paragraph color="light">트위터</mm-paragraph>
-      <mm-paragraph style="margin-left: auto">800,000원</mm-paragraph>
-    </div>
-    <div class="meter-legend-item">
-      <mm-avatar size="32" style="background-color: var(--color-pinterest)"></mm-avatar>
-      <mm-paragraph color="light">핀터레스트</mm-paragraph>
-      <mm-paragraph style="margin-left: auto">800,000원</mm-paragraph>
-    </div>
-  </div>
-</article> -->
 `
 
 document.addEventListener('DOMContentLoaded', () => {
   renderLayout(main)
 })
-
-// {
-//   name: 'button',
-//   role: action',
-//   description: '',
-//   aka: ['string', 'string'],
-//   features: [],
-//   bestPractices: [],
-//   props: { name: '', size: ''}
-//   relatedComponents: [],
-//   useCases: [],
-// }

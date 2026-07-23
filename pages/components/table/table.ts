@@ -131,34 +131,6 @@ const main = html`
         .rows=${rows}
       ></mm-table>
       <mm-pagination current-page="7" page-count="50"></mm-pagination>
-      <!-- <div>
-        <style>
-          [role='columnheader'],
-          [role='cell'] {
-            /* width: 25%; */
-          }
-          [role='row'] {
-            display: flex;
-            border-top: var(--border);
-          }
-        </style>
-      </div>
-
-      <div
-        role="table"
-        aria-label="Semantic Elements"
-        aria-describedby="semantic_elements_table_desc"
-        aria-rowcount="81"
-      >
-        <header role="rowgroup">
-          <div role="row">
-            <span role="columnheader" aria-sort="none">#</span>
-          </div>
-        </header>
-        <div role="rowgroup">
-          <div role="row" aria-rowindex="11"></div>
-        </div>
-      </div> -->
     </mm-component-example>
 
     <mm-component-props>
@@ -192,26 +164,6 @@ const main = html`
       <mm-text-list .texts=${guideTexts}></mm-text-list>
     </mm-component-guide>
 
-    <!-- <mm-component-section heading="Paginations" description="">
-      <div>
-        <div role="status">
-            숙소 300개 이상 중
-            <b>281 – 300</b>
-            (airbnb)
-        </div>
-
-        <mm-flex>
-          <mm-text>page</mm-text>
-          <mm-button size="small">
-            <mm-icon size="tiny" name="nav-arrow-down"></mm-icon>
-          </mm-button>
-          <mm-text>of 22</mm-text>
-        </mm-flex>
-        <mm-pagination current-page="2" page-count="22" sibling-count="2"></mm-pagination>
-      </div>
-    </mm-component-section> -->
-
-    <!-- <mm-paragraph>pagination vs more load vs infinite scroll. 느린 탐색 경험이 필요할 때. 게시판이나 상품 목록의 탐색에서 이전에 탐색한 상품의 위치를 찾기 편리함. 최근 본 목록이나 섬네일에서 북마크를 제공한다면?</mm-paragraph> -->
     <mm-component-related>
       <mm-button-group>
         <mm-hashtag-link href="list-item.html">List Item</mm-hashtag-link>

@@ -34,7 +34,6 @@ const main = html`
           <mm-tab-panel value="monthly">📊 이번 달 정산 데이터...</mm-tab-panel>
         </mm-flex>
       </mm-flex>
-      <!-- // iOS isTranslucent: Bool -->
     </mm-component-example>
 
     <mm-component-props>
@@ -81,8 +80,6 @@ const main = html`
       help people switch between views in a toolbar. Avoid using a segmented control to offer
       actions, such as adding, removing, or editing content.
     </mm-text>
-
-    <!-- 포함 컴포넌트: Tabs, Breadcrumbs(웹), Pagination, Stepper, Bottom Navigation(모바일), Side Drawer -->
 
     <mm-text-list
       texts='[

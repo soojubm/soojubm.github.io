@@ -8,8 +8,6 @@ const main = html`
       description="켜고 끄는 옵션입니다. 사용자는 실행한 옵션의 결과를 즉시 확인할 수 있습니다."
     ></mm-page-header>
 
-    <!-- A switch is a visual toggle between two mutually exclusive states — on and off.  -->
-
     <mm-component-aka items='["Toggle"]'></mm-component-aka>
 
     <mm-component-example>

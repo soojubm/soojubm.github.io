@@ -222,45 +222,6 @@ const main = html`
       </mm-flex>
 
       <!-- <mm-paragraph-group>
-      <mm-paragraph>
-        기본 본문은 왼끝 맞추기(left align)를 사용합니다. 오른끝 흘리기(ragged right)를 유지하여
-        자연스러운 읽기 흐름과 가독성을 제공합니다.
-      </mm-paragraph>
-      <mm-heading level="3">Indentation</mm-heading>
-      <mm-paragraph>
-        단락 구분은 들여쓰기 대신 단락 간 간격으로 표현합니다. 작은 화면에서는 공간 효율과 스캔
-        효율을 위해 좌측 들여쓰기를 사용하지 않습니다.
-      </mm-paragraph>
-      <div>
-        <mm-heading level="3">Optical Alignment</mm-heading>
-        <mm-text-list
-          texts='["아이콘과 텍스트 baseline 조정", "버튼 내부 수직 정렬 보정", "숫자와 한글 혼합 시 line-height 보정(폰트마다 기준선, x-height, cap-height가 다름)", "배경 또는 테두리가 포함된 박스 안에서의 상하 간격 보정"]'
-        ></mm-text-list>
-
-        <mm-heading level="3">Emphasis</mm-heading>
-        <div>
-          <mm-text-list
-            texts='["본문 강조를 위한 underline", "강조 문장을 primary color로 처리"]'
-          ></mm-text-list>
-        </div>
-
-        <mm-keyword-tag-group
-          heading="Visual Emphasis"
-          keywords='["&lt;mark&gt;", "&lt;b&gt;", "&lt;em&gt;", "&lt;u&gt;"]'
-        ></mm-keyword-tag-group>
-
-        <mm-keyword-tag-group
-          heading="Semantic Emphasis"
-          keywords='["&lt;strong&gt;"]'
-        ></mm-keyword-tag-group>
-
-        <mm-text-list
-          texts='["경고", "법률 문구", "개인정보처리방침", "파괴적 액션 안내"]'
-        ></mm-text-list>
-      </div>
-    </mm-paragraph-group> -->
-
-      <!-- <mm-paragraph-group>
       <mm-caption>
         Signifier 페이지의 목적은 UI의 시각 표현이 어떤 의미, 상태, 행동 가능성을 나타내는지
         일관되게 정의하는 것입니다.

@@ -72,7 +72,6 @@ const main = html`
 
       <mm-surface variant="paper" radius="large">
         <mm-menu-item-group>
-          <!-- <mm-paragraph size="large">뉴스레터</mm-paragraph> -->
           <mm-setting-item
             size="small"
             label="배송지"
@@ -162,7 +161,6 @@ const main = html`
             </mm-flex>
             <mm-button-group>
               <mm-button icon="arrow-right">결제수단변경</mm-button>
-              <!-- <mm-button variant="ghost">자주묻는질문</mm-button> -->
             </mm-button-group>
           </mm-menu-item-group>
         </mm-flex>

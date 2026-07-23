@@ -109,7 +109,6 @@ const main = html`
 
       <section>
         <mm-paragraph size="large">주문상품</mm-paragraph>
-        <!-- portfolio item -->
         <mm-menu-item-action avatar-src="/src/images/cake_gosum.jpg" size="48">
           <mm-flex direction="column">
             <mm-meta-item label="뉴닉이 풀어 쓴 경제상식사전" value="₩ 11,900" />
@@ -257,15 +256,3 @@ const main = html`
 document.addEventListener('DOMContentLoaded', () => {
   renderLayout(main, { closeSidebar: true })
 })
-
-// {
-//   name: 'button',
-//   role: action',
-//   description: '',
-//   aka: ['string', 'string'],
-//   features: [],
-//   bestPractices: [],
-//   props: { name: '', size: ''}
-//   relatedComponents: [],
-//   useCases: [],
-// }

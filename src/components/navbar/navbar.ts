@@ -56,6 +56,7 @@ export class Navbar extends LitElement {
             aria-expanded=${this.searchMenu.open ? 'true' : 'false'}
             @click=${this.toggleSearch}
           ></mm-icon-button>
+          <!-- 
           <mm-popover placement="bottom-right" width="320px">
             <mm-icon-button
               slot="trigger"
@@ -93,6 +94,7 @@ export class Navbar extends LitElement {
               <mm-link variant="secondary" href="#">서비스 약관</mm-link>
             </mm-flex>
           </mm-popover>
+          -->
         </div>
       </nav>
       <div class="navbar-backdrop"></div>

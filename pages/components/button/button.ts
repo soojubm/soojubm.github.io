@@ -60,9 +60,6 @@ const main = html`
       <mm-token name="button-border-radius" default="var(--radius)"></mm-token>
     </mm-component-tokens>
 
-    <!-- TODO 내부 청결 다른 다른 페이지에서 -->
-    <!-- <dd>{label: string, disabled: boolean, onClick: () => void}</dd> -->
-
     <mm-component-anatomy
       parts='[
       "컨테이너 — variant·size로 형태와 위계를 정의하고 클릭 영역을 만듭니다.",
@@ -103,41 +100,6 @@ const main = html`
           description="관련된 액션은 button-group으로 묶어 하나의 단위로 제시합니다. 정렬·간격과 버튼 사이의 관계는 그룹이 소유합니다."
         ></mm-feature>
       </mm-component-feature-list>
-
-      <!-- <table class="table">
-      <tbody>
-        <tr>
-          <th>21-07-28</th>
-          <td>
-            chip-label 엘리먼트 항상 사용. space-chip-inset 레이블에 패딩을 주면 아이콘 컨트롤이
-            쉬워짐.
-          </td>
-        </tr>
-        <tr>
-          <th>2022년</th>
-          <td>button small 삭제. chip과 형태의 변별력이 없고 용법이 중복.</td>
-        </tr>
-        <tr>
-          <th style="width: 100px">Aug 2024</th>
-          <td>
-            The stroke color was softened to improve visual hierarchy between chips and buttons.
-            버튼과의 위계를 위하여 나는, 사이즈 제한으로도 충분하다고 생각
-          </td>
-        </tr>
-        <tr>
-          <th style="width: 100px">Nov 2024</th>
-          <td>
-            칩과 통합하고 사이즈 토큰과 동일한 사이즈 프로토콜을 사용한다. 추후 선택 또는 필터링에
-            따른 기능 버튼을 추가한다. 문제. 아이콘 버튼이 필요. 간격. Chip을 제거한 이유. 형태에
-            기반한 액션이라는 것은 둘 다 동일. 게다가 새로운 역할을 부여 받는 버튼은 어차피 새로운
-            컴포넌트로 정의되어야 하는데, filterButton이 filterChip이 되어야 하는 이유를 못 찾겠음.
-            결론적으로 버튼의 형태, 이것은 input과 textfield도 마찬가지로 적용이 되는데, 버튼의
-            형태는 고유한 프리미티브 컴포넌트가 갖고, 도메인에 맞게 역할를 갖는 새로운 컴포넌트를
-            별도 정의한다. ButtonPrimitive (orbit)
-          </td>
-        </tr>
-      </tbody>
-    </table> -->
 
       <mm-paragraph-group>
         <mm-paragraph size="large">

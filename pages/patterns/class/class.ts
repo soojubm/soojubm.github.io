@@ -2,6 +2,77 @@ import { html } from 'lit'
 import './class.css'
 import { renderLayout } from '../../../layouts/base-layouts'
 
+interface EpisodeItem {
+  tag: string
+  title: string
+  description: string
+}
+
+const episodeItems: EpisodeItem[] = [
+  {
+    tag: '물가편',
+    title: 'Episode 1. 배추값이 금값이다?',
+    description:
+      '최애 장바구니 들고 장 보러 간 고슴이. 평소에 좋아하던 배춧국을 끓여먹어려는데, 배추값이 금값이다? 마침 틀어져 있는 TV에서도 소비자물가가 올랐다는데... 도대체 물가는 뭐고, 우리 경제랑 어떻게 관련이 되는 건지를 알아본다.',
+  },
+  {
+    tag: '물가편',
+    title: 'Episode 1. 배추값이 금값이다?',
+    description:
+      '최애 장바구니 들고 장 보러 간 고슴이. 평소에 좋아하던 배춧국을 끓여먹어려는데, 배추값이 금값이다? 마침 틀어져 있는 TV에서도 소비자물가가 올랐다는데... 도대체 물가는 뭐고, 우리 경제랑 어떻게 관련이 되는 건지를 알아본다.',
+  },
+]
+
+const renderEpisodeItems = (items: EpisodeItem[]) =>
+  items.map(
+    ({ tag, title, description }) => html`
+      <div>
+        <mm-thumbnail></mm-thumbnail>
+        <div>
+          <mm-tag>${tag}</mm-tag>
+          <mm-text size="18" weight="bold">${title}</mm-text>
+          <div style="height: var(--space-1)"></div>
+          <mm-paragraph>${description}</mm-paragraph>
+        </div>
+      </div>
+    `,
+  )
+
+interface ProductItem {
+  title: string
+  price: string
+}
+
+const productItems: ProductItem[] = [
+  { title: '샘플 유아이', price: '60,280 円(税込)' },
+  { title: '샘플 유아이', price: '60,280 円(税込)' },
+  { title: '샘플 유아이', price: '60,280 円(税込)' },
+  { title: 'リップストップ　キルト作務コート', price: '60,280 円(税込)' },
+]
+
+const renderProductItems = (items: ProductItem[]) =>
+  items.map(
+    ({ title, price }) => html`
+      <div class="products-item">
+        <figure class="products-item-thumbnail"><img src="" alt="" /></figure>
+        <mm-text size="18">${title}</mm-text>
+        <span class="products-item-price">${price}</span>
+      </div>
+    `,
+  )
+
+const faqQuestions = ['비전공자 어렵지 않을까요?', '비전공자 어렵지 않을까요?']
+
+const renderFaqItems = (questions: string[]) =>
+  questions.map(
+    question => html`
+      <button class="class-faq-item">
+        <mm-paragraph size="large">${question}</mm-paragraph>
+        <mm-icon-button variant="secondary" icon="arrow-down"></mm-icon-button>
+      </button>
+    `,
+  )
+
 const main = html`
   <style>
     :root {
@@ -192,70 +263,17 @@ const main = html`
       <header>
         <mm-text size="32">에피소드 (관련 도메인에서 주로 커리큘럼)</mm-text>
       </header>
-      <div>
-        <mm-thumbnail></mm-thumbnail>
-        <div>
-          <mm-tag>물가편</mm-tag>
-          <mm-text size="18" weight="bold">Episode 1. 배추값이 금값이다?</mm-text>
-          <div style="height: var(--space-1)"></div>
-          <mm-paragraph>
-            최애 장바구니 들고 장 보러 간 고슴이. 평소에 좋아하던 배춧국을 끓여먹어려는데, 배추값이
-            금값이다? 마침 틀어져 있는 TV에서도 소비자물가가 올랐다는데... 도대체 물가는 뭐고, 우리
-            경제랑 어떻게 관련이 되는 건지를 알아본다.
-          </mm-paragraph>
-        </div>
-      </div>
-      <div>
-        <mm-thumbnail></mm-thumbnail>
-        <div>
-          <mm-tag>물가편</mm-tag>
-          <mm-text size="18" weight="bold">Episode 1. 배추값이 금값이다?</mm-text>
-          <div style="height: var(--space-1)"></div>
-          <mm-paragraph>
-            최애 장바구니 들고 장 보러 간 고슴이. 평소에 좋아하던 배춧국을 끓여먹어려는데, 배추값이
-            금값이다? 마침 틀어져 있는 TV에서도 소비자물가가 올랐다는데... 도대체 물가는 뭐고, 우리
-            경제랑 어떻게 관련이 되는 건지를 알아본다.
-          </mm-paragraph>
-        </div>
-      </div>
+      ${renderEpisodeItems(episodeItems)}
     </section>
 
-    <section class="products">
-      <div class="products-item">
-        <figure class="products-item-thumbnail"><img src="" alt="" /></figure>
-        <mm-text size="18">샘플 유아이</mm-text>
-        <span class="products-item-price">60,280 円(税込)</span>
-      </div>
-      <div class="products-item">
-        <figure class="products-item-thumbnail"><img src="" alt="" /></figure>
-        <mm-text size="18">샘플 유아이</mm-text>
-        <span class="products-item-price">60,280 円(税込)</span>
-      </div>
-      <div class="products-item">
-        <figure class="products-item-thumbnail"><img src="" alt="" /></figure>
-        <mm-text size="18">샘플 유아이</mm-text>
-        <span class="products-item-price">60,280 円(税込)</span>
-      </div>
-      <div class="products-item">
-        <figure class="products-item-thumbnail"><img src="" alt="" /></figure>
-        <mm-text size="18">リップストップ　キルト作務コート</mm-text>
-        <span class="products-item-price">60,280 円(税込)</span>
-      </div>
-    </section>
+    <section class="products">${renderProductItems(productItems)}</section>
 
     <section class="class-faq">
       <mm-flex direction="column">
         <mm-text size="24">Frequently asked questions</mm-text>
         <mm-text size="32">자주 묻는 질문</mm-text>
       </mm-flex>
-      <button class="class-faq-item">
-        <mm-paragraph size="large">비전공자 어렵지 않을까요?</mm-paragraph>
-        <mm-icon-button variant="secondary" icon="arrow-down"></mm-icon-button>
-      </button>
-      <button class="class-faq-item">
-        <mm-paragraph size="large">비전공자 어렵지 않을까요?</mm-paragraph>
-        <mm-icon-button variant="secondary" icon="arrow-down"></mm-icon-button>
-      </button>
+      ${renderFaqItems(faqQuestions)}
     </section>
   </main>
 `

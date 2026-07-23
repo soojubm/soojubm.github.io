@@ -49,12 +49,6 @@ const main = html`
           <div class="step-item is-active">
             <span class="step-item-icon" style="color: var(--foreground-color-on-solid)">2</span>
             <mm-text class="step-item-label">I want to design from scratch</mm-text>
-            <!-- <mm-paragraph>
-            1칼럼(모바일)에서 결제 버튼을 누르기 전 최종 금액을 확인할 수 있는 구조가 되려면 2칼럼에서 우측을 결제를 위한 칼럼을 배치할
-            때(체크아웃페이지의 일반적인 레이아웃) 상품&서머리&결제버튼이 같은 컨테이너로 포함되어야.
-          </mm-paragraph>
-          <mm-paragraph>결제정보 - 결제방법/주문상태/주문접수일시/주문완료일시/배송비/쿠폰사용금액/결제금액</mm-paragraph>
-          <mm-paragraph>주문 정보를 로컬에 저장.</mm-paragraph> -->
           </div>
           <div class="step-item">
             <span class="step-item-icon">3</span>
@@ -268,7 +262,6 @@ const main = html`
           <mm-button>재주문</mm-button>
           <mm-button>후기작성</mm-button>
         </mm-button-group>
-        <!-- <mm-tag>네이버 쇼핑은 왜 주문 내역을 숨길 수 있나?</mm-tag> -->
       </mm-surface>
     </mm-component-guide>
     <mm-component-related>

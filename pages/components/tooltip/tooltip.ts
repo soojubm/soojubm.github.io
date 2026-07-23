@@ -77,11 +77,6 @@ const main = html`
       <mm-prop name="placement" type="string" optional></mm-prop>
       <mm-prop name="slot: trigger" type="HTMLElement"></mm-prop>
     </mm-component-props>
-    <!-- type Side = 'top' | 'bottom' | 'left' | 'right';
-
-type Align = 'start' | 'end';
-
-type Placement = Side | \`\${Side}-\${Align}\`;> -->
 
     <mm-component-tokens>
       <mm-token name="tooltip-max-width" default="320px"></mm-token>
@@ -98,14 +93,6 @@ type Placement = Side | \`\${Side}-\${Align}\`;> -->
           heading="Supplementary"
           description="설명이 필요 없는 플로우와 인터페이스를 우선하세요. 툴팁은 없을수록 좋으며, 접근성을 위한 최소한의 설명만 제공합니다.작은 화면에서 바텀 시트나 팝오버로 제공하는 것이 좋다. 사용자가 반드시 숙지해야 하는 중요한 정보를 툴팁으로 제공하지 마세요."
         ></mm-feature>
-        <!-- <mm-feature
-        heading="Disclosure (점진적 공개)"
-        description="부가 정보를 기본으로 숨겨 두고 hover·포커스에 응답해 그 자리에서 펼쳐 보입니다. 같은 흐름 안의 공개이며, 별도 레이어로 작업을 옮기는 sheet와는 다릅니다."
-      ></mm-feature> -->
-        <!-- <mm-feature
-        heading="Transient"
-        description="hover나 포커스가 벗어나면 스스로 사라져 흔적을 남기지 않습니다. 사라져도 흐름에 지장 없는 정보만 담습니다."
-      ></mm-feature> -->
         <mm-feature
           heading="Anchored"
           description="화면 좌표가 아니라 트리거 요소가 위치를 결정합니다. 방향과 정렬은 placement prop 하나로 지정합니다. useFloating"
@@ -118,25 +105,15 @@ type Placement = Side | \`\${Side}-\${Align}\`;> -->
       ]'
       ></mm-text-list>
 
-      <!-- 방법 A: 가이드라인으로만 분리 (추천)
-
-개발 스펙은 완전히 동일하게 열어두고, 기획자나 디자이너가 쓸 때 "아이콘 버튼에는 10자 이내의 명사형으로 적고, 용어 설명에는 줄바꿈을 허용한다" 같은 글자 수 규칙만 가이드 문서에 명시합니다.
-
-방법 B: 너비(Max-width) 옵션으로 분리
-
-Short형 (액션 보완형): 텍스트가 한 줄로 짧게 끝나며 말줄임 없이 콤팩트한 크기.
-
-Long형 (정보 설명형): 설명이 길어질 수 있으므로 최대 너비(max-width: 240px 등)가 지정되어 있고 자동 줄바꿈(Wrap)이 지원되는 크기. -->
-
-      💡 **접근성 팁 (Accessibility Notes)**
-      <p>
-        - **액션 보완형:** 아이콘 버튼의 실질적인 이름을 대체하므로, 버튼의 \`aria-label\` 값과 툴팁
-        텍스트를 일치시키거나 \`aria-labelledby\`로 강하게 연결합니다.
-      </p>
-      <p>
-        - *정보 설명형:** 이미 존재하는 텍스트의 부가 설명이므로, \`aria-describedby\`를 사용해
-        참고용 설명임을 브라우저에 알립니다.
-      </p>
+      <mm-heading level="3">접근성 팁</mm-heading>
+      <mm-paragraph>
+        액션 보완형: 아이콘 버튼의 실질적인 이름을 대체하므로, 버튼의 aria-label 값과 툴팁 텍스트를
+        일치시키거나 aria-labelledby로 강하게 연결합니다.
+      </mm-paragraph>
+      <mm-paragraph>
+        정보 설명형: 이미 존재하는 텍스트의 부가 설명이므로, aria-describedby를 사용해 참고용
+        설명임을 브라우저에 알립니다.
+      </mm-paragraph>
     </mm-component-guide>
 
     <mm-component-section

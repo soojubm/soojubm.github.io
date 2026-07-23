@@ -22,7 +22,6 @@ const main = html`
       <mm-separator></mm-separator>
       <mm-link href="#" external="true">고래잡이</mm-link>
       <mm-separator></mm-separator>
-      <!-- TODO link, text button일 수도 있다. -->
       <section>
         <mm-flex direction="column" gap="2">
           <mm-link-prompt

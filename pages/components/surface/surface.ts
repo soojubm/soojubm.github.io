@@ -8,8 +8,6 @@ const main = html`
       description="콘텐츠가 놓이는 기본 바탕이자, 정보의 논리적 구조를 시각적 깊이로 표현하는 기반입니다. 배경과 대비되는 명도나 그림자(Elevation)를 활용해 요소 간의 층위(Layer)를 형성하며, 사용자는 화면의 입체적인 구조를 직관적으로 이해하고 현재 상호작용 중인 정보의 중요도를 인지하게 됩니다."
     ></mm-page-header>
 
-    <!-- 추가 콘텐츠에 대한 티저로 사용할 수 있습니다 -->
-    <!-- 세로값을 지정하지 않으면, border-width 만큼 세로 값이 더해진다. -->
     <mm-component-aka
       items='["EmphasisBox", "Box", "Card", "Module", "Section", "Container", "Paper", "Building block", "Segment", "Panel"]'
     ></mm-component-aka>
@@ -76,13 +74,6 @@ const main = html`
       <mm-prop name="height" type="string" optional></mm-prop>
     </mm-component-props>
 
-    <!-- <mm-feature-group columns="4">
-      <mm-feature icon="box-iso" heading="컨테이너" description="ㅅㄷㄴㅅ"></mm-feature>
-      <mm-feature icon="box-iso" heading="컨테이너 역할" description="ㅅㄷㄴㅅ"></mm-feature>
-      <mm-feature icon="box-iso" heading="컨테이너 역할" description="ㅅㄷㄴㅅ"></mm-feature>
-      <mm-feature icon="box-iso" heading="컨테이너 역할" description="ㅅㄷㄴㅅ"></mm-feature>
-    </mm-feature-group> -->
-
     <mm-component-tokens>
       <mm-token name="surface-height" default="auto"></mm-token>
       <mm-token name="surface-padding" default="var(--space-4)"></mm-token>
@@ -104,11 +95,6 @@ const main = html`
           "inset이 너무 커지면 물리적 화면 크기에 따라 inset의 변경이 필요할 수 있다. 콘텐츠 모듈을 가운데 정렬로 해결할 수 있다."
         ]'
       ></mm-text-list>
-      <!-- "foundation :: elevated는 surface 전체가 하나의 클릭 가능한 컴포넌트이거나 surface 내부에 클릭 가능한
-    컴포넌트를 포함.", -->
-      <!-- "transparent surface를 정의하여 모든 contentbox가 surface가 되는 것은 어떤가? 비어있는
-    컴포넌트(Box, Row, div)와는 어떤 차이가 있나? row는 레이아웃 컴포넌트, surface는 형태 컴포넌트이다.
-    surface에 과도한 책임을 부여하지 말 것.", => transparent 필요. 배경있는 상황 -->
 
       <mm-paragraph>
         At its core, Card is a Box with specific styling attributes and more explicit use cases that
@@ -118,42 +104,6 @@ const main = html`
         pattern could fit your needs.
       </mm-paragraph>
     </mm-component-guide>
-    <mm-paragraph-group>
-      <!-- <aside
-      style="
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin: 2rem 0;
-        padding: 0.5rem 2rem;
-        border: var(--border);
-        border-radius: 50px;
-      "
-    >
-      <mm-avatar size="48"></mm-avatar>
-      <mm-paragraph size="large"> You can download this product with the All-Access Pass. </mm-paragraph>
-      <mm-button variant="primary">Get All-Access</mm-button>
-    </aside> -->
-
-      <!-- <picture>
-      <source
-        srcset="photo-light.png"
-        media="(prefers-color-scheme: light) or (prefers-color-scheme: no-preference)"
-      />
-      <source srcset="photo-dark.png" media="(prefers-color-scheme: dark)" />
-      <source type="image/svg+xml" srcset="pyramid.svg" />
-      <source type="image/webp" srcset="pyramid.webp" />
-      <source media="(max-width: 799px)" srcset="elva-480w-close-portrait.jpg" />
-      <source media="(min-width: 800px)" srcset="elva-800w.jpg" />
-      <img src="elva-800w.jpg" alt="딸 엘바를 안고 서 있는 크리스" loading="lazy" />
-    </picture> -->
-      <!-- <img
-      srcset="elva-fairy-320w.jpg 320w, elva-fairy-480w.jpg 480w, elva-fairy-640w.jpg 2x, elva-fairy-800w.jpg 800w"
-      sizes="(max-width: 320px) 280px, (max-width: 480px) 440px, 800px"
-      src="elva-fairy-800w.jpg"
-      alt="요정 옷을 입은 엘바"
-    /> -->
-    </mm-paragraph-group>
 
     <mm-component-section heading="PricingSurface" description="">
       <mm-flex direction="column" gap="4" style="max-width: 400px">
@@ -247,21 +197,6 @@ const main = html`
             gap: var(--space-3);
           }
         </style>
-
-        <script>
-          var form = document.getElementById('subscription-form')
-          form.addEventListener('submit', event => {
-            event.preventDefault()
-            const latestInvoicePaymentIntentStatus = localStorage.getItem(
-              'latestInvoicePaymentIntentStatus',
-            )
-
-            if (latestInvoicePaymentIntentStatus === 'requires_payment_method') {
-              const invoiceId = localStorage.getItem('latestInvoiceId')
-              const isPaymentRetry = true
-            }
-          })
-        </script>
       </section>
     </mm-component-section>
 
@@ -420,60 +355,7 @@ const main = html`
         }
       </style>
     </mm-component-section>
-    <!-- <mm-component-section heading="RatingSurface" description="">
-    <mm-surfacebar heading="Ratings"></mm-surfacebar>
-    <div aria-label="별점 5개 만점에 3.9개를 받았습니다." style="text-align: center">
-      <mm-paragraph color="light">리뷰 116만개</mm-paragraph>
-      <mm-paragraph size="large">⭐ 4.8</mm-paragraph>
-    </div>
-    <mm-separator></mm-separator>
-    <div class="graph2">
-      <b class="graph-label">5 Stars</b>
-      <span class="graph-value">68%</span>
-      <progress class="progress" value="40" max="100">40%</progress>
-    </div>
-    <div class="graph2">
-      <b class="graph-label">4 Stars</b>
-      <span class="graph-value">24%</span>
-      <progress class="progress" value="40" max="100">40%</progress>
-    </div>
-    <mm-text>별 다섯개에서 점수만큼 채우는 유아이는 최근 잘 보이지 않는다. 구현이 어려움.</mm-text>
-  </mm-component-section>
-  <div class="graph-bar"><b style="width: 68%"></b></div> -->
 
-    <!-- <mm-component-section heading="이 상품을 구매한">
-    <section class="product-recommend">
-      <article class="card">
-        <mm-thumbnail ratio="16:9" src="/src/images/product_sample.png" alt=""></mm-thumbnail>
-        <div
-          class="card-item-price"
-          style="
-            margin: var(--space-3) 0 0;
-            font-size: var(--font-size-18);
-            font-weight: var(--font-weight-bold);
-          "
-        >
-          <em>₩ 16,000</em>
-        </div>
-        <mm-heading level="3" class="card-title" style="padding-top: 0.25rem">가격을 강조하는 카드.</mm-heading>
-        <a
-          href="#"
-          style="
-            display: block;
-            margin: var(--space-3) 0;
-            color: var(--gray800);
-            text-decoration: underline;
-          "
-        >
-          애플
-        </a>
-        <mm-flex>
-          <mm-tag class="card-category">인기있는</mm-tag>
-          <mm-tag class="card-note">무료배송 / 200 포인트 적립</mm-tag>
-        </mm-flex>
-      </article>
-    </section>
-  </mm-component-section> -->
     <mm-component-related>
       <mm-button-group>
         <mm-hashtag-link href="sheet.html">Sheet</mm-hashtag-link>
