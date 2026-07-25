@@ -50,10 +50,10 @@ export class ChatConfirmation extends LitElement {
       <mm-notice heading="승인 요청">
         <mm-paragraph>${this.renderMessage()}</mm-paragraph>
         <mm-button-group>
-          <mm-button variant="tertiary" size="medium" @click=${this.reject}>
+          <mm-button variant="tertiary" size="medium" @click=${this.handleRejectClick}>
             ${this.rejectLabel}
           </mm-button>
-          <mm-button variant="tertiary" size="medium" @click=${this.approve}>
+          <mm-button variant="tertiary" size="medium" @click=${this.handleApproveClick}>
             ${this.approveLabel}
           </mm-button>
         </mm-button-group>
@@ -69,12 +69,12 @@ export class ChatConfirmation extends LitElement {
     `
   }
 
-  private approve() {
+  private handleApproveClick() {
     this.status = 'accepted'
     emit(this, 'confirmation-approve')
   }
 
-  private reject() {
+  private handleRejectClick() {
     this.status = 'rejected'
     emit(this, 'confirmation-reject')
   }

@@ -49,11 +49,11 @@ export class RovingFocusController implements ReactiveController {
   }
 
   hostConnected() {
-    this.host.addEventListener('keydown', this.onKeyDown)
+    this.host.addEventListener('keydown', this.handleKeydown)
   }
 
   hostDisconnected() {
-    this.host.removeEventListener('keydown', this.onKeyDown)
+    this.host.removeEventListener('keydown', this.handleKeydown)
   }
 
   // 렌더 후 항목이 갱신되면 tab stop 하나만 tabindex=0으로 유지한다.
@@ -87,7 +87,7 @@ export class RovingFocusController implements ReactiveController {
     return !item.hasAttribute('disabled') && item.getAttribute('aria-disabled') !== 'true'
   }
 
-  private onKeyDown = (event: KeyboardEvent) => {
+  private handleKeydown = (event: KeyboardEvent) => {
     const items = this.options.getItems()
     if (items.length === 0) return
 

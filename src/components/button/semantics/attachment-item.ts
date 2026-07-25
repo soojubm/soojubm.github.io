@@ -40,7 +40,7 @@ export class AttachmentItem extends LitElement {
       ></mm-avatar>
       <mm-caption>${this.fileName}</mm-caption>
       <mm-caption>${this.fileSize}</mm-caption>
-      <mm-clear-button aria-label="삭제" @click=${this.handleRemove}></mm-clear-button>
+      <mm-clear-button aria-label="삭제" @click=${this.handleRemoveClick}></mm-clear-button>
     `
   }
 
@@ -48,7 +48,7 @@ export class AttachmentItem extends LitElement {
     return this.type.startsWith('video/') ? ICON_NAMES.VIDEO : ICON_NAMES.DOCUMENT
   }
 
-  private handleRemove() {
+  private handleRemoveClick() {
     emit(this, 'remove')
   }
 }

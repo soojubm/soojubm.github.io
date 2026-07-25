@@ -66,14 +66,18 @@ export class FileUploader extends LitElement {
     `
   }
 
+  private get hasFiles() {
+    return this.files.length > 0
+  }
+
   private get filesStatusText() {
-    return this.files.length
-      ? `${this.files.length} file${this.files.length > 1 ? 's' : ''} selected.`
-      : 'No files currently selected for upload.'
+    if (!this.hasFiles) return 'No files currently selected for upload.'
+
+    return `${this.files.length} file${this.files.length > 1 ? 's' : ''} selected.`
   }
 
   private renderAttachments() {
-    if (!this.files.length) return nothing
+    if (!this.hasFiles) return nothing
 
     return html`
       <mm-flex gap="2" wrap="wrap">
@@ -86,7 +90,7 @@ export class FileUploader extends LitElement {
               file-size=${this.formatFileSize(file.size)}
               preview-url=${ifDefined(this.previewUrls.get(file))}
               type=${file.type}
-              @remove=${() => this.removeFile(index)}
+              @remove=${() => this.handleRemoveClick(index)}
             ></mm-attachment-item>
           `,
         )}
@@ -100,13 +104,15 @@ export class FileUploader extends LitElement {
   }
 
   private handleFilesChange(event: CustomEvent<{ files: File[] }>) {
-    this.setFiles(event.detail.files)
-
-    emit(this, 'files-change', { files: this.files })
+    this.commitFiles(event.detail.files)
   }
 
-  private removeFile(index: number) {
-    this.setFiles(this.files.filter((_, fileIndex) => fileIndex !== index))
+  private handleRemoveClick(index: number) {
+    this.commitFiles(this.files.filter((_, fileIndex) => fileIndex !== index))
+  }
+
+  private commitFiles(files: File[]) {
+    this.setFiles(files)
 
     emit(this, 'files-change', { files: this.files })
   }

@@ -54,10 +54,10 @@ export class Checkbox extends LitElement {
           .checked=${checked}
           .indeterminate=${indeterminate}
           ?disabled=${disabled}
-          @change=${this.onChange}
+          @change=${this.handleCheckboxChange}
         />
 
-        <label for=${inputId} @click=${this.onLabelClick}>
+        <label for=${inputId} @click=${this.handleLabelClick}>
           <span class="indicator"></span>
           <mm-paragraph>
             <slot></slot>
@@ -78,13 +78,13 @@ export class Checkbox extends LitElement {
     })
   }
 
-  private onChange = (event: Event) => {
+  private handleCheckboxChange = (event: Event) => {
     const target = event.target as HTMLInputElement
 
     this.commitChecked(target.checked)
   }
 
-  private onLabelClick = (event: Event) => {
+  private handleLabelClick = (event: Event) => {
     event.preventDefault()
 
     if (this.disabled) return

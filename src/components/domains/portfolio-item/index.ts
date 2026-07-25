@@ -91,7 +91,7 @@ export class PortfolioItem extends LitElement {
       <article
         role=${this.modal ? 'button' : 'article'}
         tabindex=${this.modal ? '0' : '-1'}
-        @click=${this.open}
+        @click=${this.handleCardClick}
         @keydown=${this.handleKeyDown}
       >
         ${this.renderBadge()}
@@ -154,7 +154,7 @@ export class PortfolioItem extends LitElement {
     `
   }
 
-  private open() {
+  private handleCardClick() {
     if (!this.modal) return
 
     emit(this, 'portfolio-item-open', { modal: this.modal })
@@ -163,7 +163,7 @@ export class PortfolioItem extends LitElement {
   private handleKeyDown(event: KeyboardEvent) {
     if (event.key !== 'Enter' && event.key !== ' ') return
     event.preventDefault()
-    this.open()
+    this.handleCardClick()
   }
 
   private get formattedDatetime() {

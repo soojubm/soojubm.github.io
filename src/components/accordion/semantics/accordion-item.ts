@@ -100,7 +100,7 @@ export class AccordionItem extends LitElement {
         aria-expanded=${this.open ? 'true' : 'false'}
         aria-controls=${this.panelId}
         ?disabled=${this.disabled}
-        @click=${this.toggle}
+        @click=${this.handleSummaryClick}
       >
         <slot name="summary">${this.summary}</slot>
         <mm-icon class="icon" name=${ICON_NAMES.SITEMAP}></mm-icon>
@@ -114,7 +114,7 @@ export class AccordionItem extends LitElement {
     `
   }
 
-  private toggle() {
+  private handleSummaryClick() {
     if (this.disabled) return
     this.open = !this.open
     emit(this, 'accordion-toggle', { open: this.open })

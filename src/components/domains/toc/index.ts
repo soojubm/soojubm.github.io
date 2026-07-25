@@ -163,7 +163,7 @@ export class TableOfContents extends LitElement {
 
   connectedCallback() {
     super.connectedCallback()
-    window.addEventListener('resize', this.updateIndicatorPosition)
+    window.addEventListener('resize', this.handleWindowResize)
     // 커스텀 엘리먼트 업그레이드 후 실행
     this.setupFrame = requestAnimationFrame(() => {
       this.setupFrame = 0
@@ -172,7 +172,7 @@ export class TableOfContents extends LitElement {
   }
 
   disconnectedCallback() {
-    window.removeEventListener('resize', this.updateIndicatorPosition)
+    window.removeEventListener('resize', this.handleWindowResize)
     if (this.setupFrame) cancelAnimationFrame(this.setupFrame)
     if (this.copyTimer) window.clearTimeout(this.copyTimer)
     this.setupFrame = 0
@@ -222,7 +222,7 @@ export class TableOfContents extends LitElement {
       .filter((el): el is HTMLElement => el !== null)
   }
 
-  private updateIndicatorPosition = () => {
+  private handleWindowResize = () => {
     this.indicatorPosition.update()
   }
 
@@ -261,7 +261,7 @@ export class TableOfContents extends LitElement {
     ]
   }
 
-  private copyShareUrl = async () => {
+  private handleCopyClick = async () => {
     await copyToClipboard(this.shareUrl)
 
     this.copied = true
@@ -282,7 +282,7 @@ export class TableOfContents extends LitElement {
             icon=${this.copied ? ICON_NAMES.COPY_SUCCESS : ICON_NAMES.LINK}
             variant="tertiary"
             aria-label=${this.copied ? 'Copied link' : 'Copy link'}
-            @click=${this.copyShareUrl}
+            @click=${this.handleCopyClick}
           ></mm-icon-button>
         </mm-button-group>
       </section>

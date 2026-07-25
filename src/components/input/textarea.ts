@@ -56,7 +56,7 @@ export class Textarea extends LitElement {
     this.autoHeight.resizeToContent()
   }
 
-  protected onInput(event: InputEvent) {
+  protected handleTextareaInput(event: InputEvent) {
     const target = event.target as HTMLTextAreaElement
     event.stopPropagation()
     this.value = target.value
@@ -64,7 +64,7 @@ export class Textarea extends LitElement {
     this.dispatchInputEvent(target.value)
   }
 
-  protected onKeyDown(_event: KeyboardEvent) {}
+  protected handleTextareaKeydown(_event: KeyboardEvent) {}
 
   private dispatchInputEvent(value: string) {
     emit(this, 'input', { value })
@@ -82,8 +82,8 @@ export class Textarea extends LitElement {
           ?disabled=${this.disabled}
           aria-invalid=${ifDefined(this.ariaInvalid ?? undefined)}
           aria-describedby=${this.textareaDescribedBy || nothing}
-          @input=${this.onInput}
-          @keydown=${this.onKeyDown}
+          @input=${this.handleTextareaInput}
+          @keydown=${this.handleTextareaKeydown}
         ></textarea>
       </div>
     `

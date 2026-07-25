@@ -34,7 +34,7 @@ export class Radio extends LitElement {
           .value=${this.value || ''}
           .checked=${this.checked}
           ?disabled=${this.disabled}
-          @change=${this.onChange}
+          @change=${this.handleInputChange}
         />
         <label for=${inputId}>
           <span class="indicator"></span>
@@ -46,7 +46,7 @@ export class Radio extends LitElement {
     `
   }
 
-  private onChange(event: Event) {
+  private handleInputChange(event: Event) {
     event.stopPropagation() // 네이티브 이벤트 전파 차단
 
     this.checked = (event.target as HTMLInputElement).checked

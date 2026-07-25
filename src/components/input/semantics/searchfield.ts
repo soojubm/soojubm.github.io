@@ -40,21 +40,25 @@ class SearchField extends LitElement {
     if (!this.value || this.disabled) return nothing
 
     return html`
-      <mm-clear-button aria-label="검색어 지우기" @click=${this.clear}></mm-clear-button>
+      <mm-clear-button aria-label="검색어 지우기" @click=${this.handleClearClick}></mm-clear-button>
     `
   }
 
   private handleInput(event: Event) {
     const target = event.target as HTMLInputElement
-    this.value = target.value
-    emit(this, 'input', { value: this.value })
+    this.commitValue(target.value)
   }
 
-  private clear(event: Event) {
+  private handleClearClick(event: Event) {
     event.stopPropagation()
     if (this.disabled || !this.value) return
-    this.value = ''
-    emit(this, 'input', { value: '' })
+
+    this.commitValue('')
+  }
+
+  private commitValue(value: string) {
+    this.value = value
+    emit(this, 'input', { value: this.value })
   }
 }
 

@@ -52,7 +52,7 @@ export class Navbar extends LitElement {
             icon=${ICON_NAMES.SEARCH}
             aria-label="검색"
             aria-expanded=${this.searchOpen ? 'true' : 'false'}
-            @click=${this.toggleSearch}
+            @click=${this.handleSearchToggleClick}
           ></mm-icon-button>
           <!-- 
           <mm-popover placement="bottom-right" width="320px">
@@ -114,7 +114,7 @@ export class Navbar extends LitElement {
               <mm-searchfield
                 placeholder="컴포넌트, 패턴을 검색하세요"
                 .value=${this.query}
-                @input=${this.onInput}
+                @input=${this.handleSearchInput}
               ></mm-searchfield>
               ${this.query ? this.renderResults() : this.renderDefault()}
             </mm-flex>
@@ -168,7 +168,7 @@ export class Navbar extends LitElement {
     }
   }
 
-  private toggleSearch = () => {
+  private handleSearchToggleClick = () => {
     this.searchOpen = !this.searchOpen
     if (this.searchOpen) {
       this.loadPagefind()
@@ -183,7 +183,7 @@ export class Navbar extends LitElement {
     }
   }
 
-  private onInput = (e: Event) => {
+  private handleSearchInput = (e: Event) => {
     const detailValue = e instanceof CustomEvent ? e.detail?.value : undefined
     this.query = detailValue ?? (hasValue(e.target) ? e.target.value : '')
     if (this.debounceTimer) clearTimeout(this.debounceTimer)

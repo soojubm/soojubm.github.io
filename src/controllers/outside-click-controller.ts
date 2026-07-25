@@ -33,14 +33,14 @@ export class OutsideClickController implements ReactiveController {
   }
 
   hostConnected() {
-    document.addEventListener(this.event, this.handleEvent)
+    document.addEventListener(this.event, this.handleOutsideEvent)
   }
 
   hostDisconnected() {
-    document.removeEventListener(this.event, this.handleEvent)
+    document.removeEventListener(this.event, this.handleOutsideEvent)
   }
 
-  private handleEvent = (e: Event) => {
+  private handleOutsideEvent = (e: Event) => {
     if (this.options.isActive && !this.options.isActive()) return
     const path = e.composedPath()
     if (path.includes(this.host)) return

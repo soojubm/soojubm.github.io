@@ -40,14 +40,14 @@ export class Switch extends LitElement {
           aria-checked=${ariaChecked}
           .checked=${this.checked}
           ?disabled=${this.disabled}
-          @change=${this.onChange}
+          @change=${this.handleInputChange}
         />
         <label for=${this.inputId}><slot></slot></label>
       </div>
     `
   }
 
-  private onChange(event: Event) {
+  private handleInputChange(event: Event) {
     const target = event.target as HTMLInputElement
     if (!this.toggle.set(target.checked)) return
 

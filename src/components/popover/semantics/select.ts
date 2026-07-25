@@ -76,12 +76,12 @@ export class Select extends LitElement {
         <slot name="trigger" slot="trigger"></slot>
         ${this.renderOptionList()}
       </mm-popover>
-      <slot hidden @slotchange=${this.syncOptions}></slot>
+      <slot hidden @slotchange=${this.handleOptionSlotChange}></slot>
     `
   }
 
   firstUpdated() {
-    this.syncOptions()
+    this.handleOptionSlotChange()
   }
 
   protected updated(changedProperties: Map<string, unknown>) {
@@ -89,7 +89,7 @@ export class Select extends LitElement {
   }
 
   // 네이티브 select처럼 value가 비어 있으면 selected 옵션에서 초기값을 채운다.
-  private syncOptions() {
+  private handleOptionSlotChange() {
     this.options = this.parseLightDomOptions()
     if (!this.value) this.value = this.options.find(option => option.selected)?.value ?? ''
   }

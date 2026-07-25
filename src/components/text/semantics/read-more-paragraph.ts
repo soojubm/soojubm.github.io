@@ -55,12 +55,12 @@ export class ReadMoreParagraph extends LitElement {
       <mm-read-more-button
         aria-expanded=${this.expanded ? 'true' : 'false'}
         aria-controls=${this.contentId}
-        @click=${this.toggle}
+        @click=${this.handleToggleClick}
       ></mm-read-more-button>
     `
   }
 
-  private toggle() {
+  private handleToggleClick() {
     this.expanded = !this.expanded
   }
 }

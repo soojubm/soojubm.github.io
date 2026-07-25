@@ -49,7 +49,7 @@ export class NumberInput extends withTextfieldState(LitElement) {
           tooltip="감소"
           tooltip-placement="center"
           ?disabled=${this.disabled}
-          @click=${this.decrement}
+          @click=${this.handleDecrementClick}
         ></mm-icon-button>
         <mm-icon-button
           variant="ghost"
@@ -59,7 +59,7 @@ export class NumberInput extends withTextfieldState(LitElement) {
           tooltip="증가"
           tooltip-placement="center"
           ?disabled=${this.disabled}
-          @click=${this.increment}
+          @click=${this.handleIncrementClick}
         ></mm-icon-button>
       </div>
       ${renderFieldValidation(`${this.inputId}-validation`, this.validationText)}
@@ -85,12 +85,12 @@ export class NumberInput extends withTextfieldState(LitElement) {
     emit(this, 'change', { value: this.value })
   }
 
-  private decrement() {
+  private handleDecrementClick() {
     if (this.disabled) return
     this.commit(this.numericValue - this.step)
   }
 
-  private increment() {
+  private handleIncrementClick() {
     if (this.disabled) return
     this.commit(this.numericValue + this.step)
   }

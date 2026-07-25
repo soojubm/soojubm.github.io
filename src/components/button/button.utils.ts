@@ -9,7 +9,7 @@ export interface ToggleSelection {
   selected: boolean
   value: string
   disabled: boolean
-  handleToggle(): void
+  handleToggleClick(): void
 }
 
 /**
@@ -30,7 +30,7 @@ export const withToggleSelection = <T extends Constructor<LitElement>>(Base: T) 
       isDisabled: () => this.disabled,
     })
 
-    handleToggle() {
+    handleToggleClick() {
       if (!this.toggle.toggle()) return
 
       emit(this, 'change', { selected: this.selected, value: this.value })

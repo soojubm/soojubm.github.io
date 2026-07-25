@@ -82,7 +82,7 @@ export class Sidebar extends LitElement {
                         target="_self"
                         hidden-trailing
                         aria-current=${ifDefined(this.isCurrentPage(item.id) ? 'page' : undefined)}
-                        @click=${this.saveScrollPosition}
+                        @click=${this.handleMenuItemClick}
                       ></mm-menu-item-link>
                     `,
                   )}
@@ -148,7 +148,7 @@ export class Sidebar extends LitElement {
   }
 
   private handleStandaloneClick(pageId: string) {
-    this.saveScrollPosition()
+    this.handleMenuItemClick()
     window.location.href = `${pageId}.html`
   }
 
@@ -161,7 +161,7 @@ export class Sidebar extends LitElement {
     this.openGroupIds = nextOpenGroupIds
   }
 
-  private saveScrollPosition() {
+  private handleMenuItemClick() {
     localStorage.setItem('sidebarScroll', String(this.scrollTop))
   }
 

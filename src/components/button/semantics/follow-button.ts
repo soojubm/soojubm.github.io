@@ -18,7 +18,7 @@ export class FollowButton extends withToggleSelection(LitElement) {
         type="button"
         ?disabled=${this.disabled}
         aria-pressed=${this.selected ? 'true' : 'false'}
-        @click=${this.handleToggle}
+        @click=${this.handleToggleClick}
       >
         ${this.selected ? '팔로우 중' : '팔로우'}
       </button>

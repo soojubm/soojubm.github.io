@@ -87,15 +87,9 @@ export class PromptInput extends LitElement {
   }
 
   protected updated(changedProperties: Map<string, unknown>) {
-    if (changedProperties.has('value')) {
-      this.syncTextareaValue()
-      this.queueSingleLineSync()
-    }
-  }
+    if (!changedProperties.has('value')) return
 
-  private syncTextareaValue() {
-    if (!this.textarea || this.textarea.value === this.value) return
-    this.textarea.value = this.value
+    this.queueSingleLineSync()
   }
 
   private handleTextareaInput = (e: CustomEvent<{ value: string }>) => {
@@ -123,10 +117,10 @@ export class PromptInput extends LitElement {
     if (e.key !== 'Enter' || e.shiftKey) return
 
     e.preventDefault()
-    this.submit()
+    this.handleSubmitClick()
   }
 
-  private submit = () => {
+  private handleSubmitClick = () => {
     if (this.isLoading || !this.value.trim()) return
 
     emit(this, 'submit', { value: this.value, model: this.model })
@@ -135,27 +129,19 @@ export class PromptInput extends LitElement {
   private renderStartActions() {
     return html`
       <mm-flex gap="1" align-items="center">
-        ${this.renderAttachmentAction()}
+        <mm-select placement="top-left">
+          <mm-icon-button
+            slot="trigger"
+            icon=${ICON_NAMES.ADD_CIRCLE}
+            aria-label="이미지 첨부"
+          ></mm-icon-button>
+          <option value="upload" icon=${ICON_NAMES.IMPORT}>이미지 업로드</option>
+          <option value="camera" icon=${ICON_NAMES.CAMERA}>카메라 촬영</option>
+          <option value="url" icon=${ICON_NAMES.LINK}>URL로 추가</option>
+        </mm-select>
         <slot name="leading-actions"></slot>
         <!-- <mm-model-selector></mm-model-selector> -->
       </mm-flex>
-    `
-  }
-
-  private renderAttachmentAction() {
-    if (this.hiddenAttachment) return nothing
-
-    return html`
-      <mm-select placement="top-left">
-        <mm-icon-button
-          slot="trigger"
-          icon=${ICON_NAMES.ADD_CIRCLE}
-          aria-label="이미지 첨부"
-        ></mm-icon-button>
-        <option value="upload" icon=${ICON_NAMES.IMPORT}>이미지 업로드</option>
-        <option value="camera" icon=${ICON_NAMES.CAMERA}>카메라 촬영</option>
-        <option value="url" icon=${ICON_NAMES.LINK}>URL로 추가</option>
-      </mm-select>
     `
   }
 
@@ -168,7 +154,7 @@ export class PromptInput extends LitElement {
           icon=${ICON_NAMES.SUBMIT}
           aria-label=${this.submitLabel}
           ?disabled=${this.isLoading}
-          @click=${this.submit}
+          @click=${this.handleSubmitClick}
         ></mm-icon-button>
       </mm-flex>
     `

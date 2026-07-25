@@ -140,6 +140,7 @@
 - 값 변경 이벤트는 `input`·`change`를 우선하고, 행동 이벤트만 구체 이름을 사용한다.
 - CustomEvent detail의 단일 값은 `value`, 복수 값은 `values`로 전달한다.
 - boolean 상태는 실제 상태명과 같은 key로 전달한다.
+- 이벤트 핸들러 메서드는 `handle` 뒤에 대상과 이벤트 종류를 이어 붙여 이름 짓는다(예: `handleFilesChange`, `handleRemoveClick`).
 - 작업 후 Prettier를 실행한다.
 
 ### Lit 컨벤션

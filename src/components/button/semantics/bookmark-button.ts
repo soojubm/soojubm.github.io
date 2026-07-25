@@ -39,7 +39,7 @@ export class BookmarkButton extends withToggleSelection(LitElement) {
         aria-pressed=${this.selected ? 'true' : 'false'}
         aria-label=${this.actionLabel}
         ?disabled=${this.disabled}
-        @click=${this.handleToggle}
+        @click=${this.handleToggleClick}
       ></mm-icon-button>
     `
   }

@@ -118,7 +118,7 @@ export class ChatReasoning extends LitElement {
       <mm-flex direction="column" gap="1">
         ${this.renderDuration()}
         <span>
-          <slot @slotchange=${this.syncFlows}></slot>
+          <slot @slotchange=${this.handleFlowSlotChange}></slot>
         </span>
       </mm-flex>
     `
@@ -133,11 +133,11 @@ export class ChatReasoning extends LitElement {
   }
 
   firstUpdated() {
-    this.syncFlows()
+    this.handleFlowSlotChange()
   }
 
   updated(changed: Map<string, unknown>) {
-    if (changed.has('thinking') || changed.has('interval')) this.syncFlows()
+    if (changed.has('thinking') || changed.has('interval')) this.handleFlowSlotChange()
   }
 
   disconnectedCallback() {
@@ -149,7 +149,7 @@ export class ChatReasoning extends LitElement {
     return this.assignedFlows.filter(flow => !flow.hidden)
   }
 
-  private syncFlows = () => {
+  private handleFlowSlotChange = () => {
     const flows = this.getFlows()
     if (!flows.length) {
       this.stopTransition()

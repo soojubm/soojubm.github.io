@@ -31,22 +31,22 @@ export class AttachmentButton extends LitElement {
 
   render() {
     return html`
-      <mm-add-button @click=${this.openFilePicker}>${this.label}</mm-add-button>
+      <mm-add-button @click=${this.handleAddButtonClick}>${this.label}</mm-add-button>
       <input
         type="file"
         accept=${ifDefined(this.accept || undefined)}
         ?multiple=${this.multiple}
         capture=${this.capture ? 'camera' : nothing}
-        @change=${this.handleChange}
+        @change=${this.handleFilesChange}
       />
     `
   }
 
-  private openFilePicker() {
+  private handleAddButtonClick() {
     this.input.click()
   }
 
-  private handleChange(event: Event) {
+  private handleFilesChange(event: Event) {
     const input = event.target as HTMLInputElement
 
     emit(this, 'files-change', { files: Array.from(input.files ?? []) })

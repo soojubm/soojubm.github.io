@@ -23,7 +23,7 @@ export class MenuItemCheckboxGroup extends LitElement {
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = ''
   @property({ type: Array }) values: string[] = []
 
-  @queryAssignedElements({ selector: 'mm-menu-item-checkbox', flatten: true })
+  @queryAssignedElements({ selector: 'mm-menu-item-checkbox' })
   private checkboxes!: MenuItemCheckbox[]
 
   private selection = new MultipleSelectionController(this, {
@@ -31,7 +31,7 @@ export class MenuItemCheckboxGroup extends LitElement {
     setValues: values => {
       this.values = values
     },
-    getOptions: () => this.checkboxes?.map(checkbox => ({ value: checkbox.value })) ?? [],
+    getOptions: () => this.checkboxes.map(checkbox => ({ value: checkbox.value })),
   })
 
   protected updated(changedProperties: Map<string, unknown>) {
@@ -43,20 +43,24 @@ export class MenuItemCheckboxGroup extends LitElement {
       <mm-menu-item-group
         role="group"
         aria-label=${this.ariaLabel || nothing}
-        @change=${this.handleChange}
+        @change=${this.handleCheckboxChange}
       >
         <slot @slotchange=${this.handleSlotChange}></slot>
       </mm-menu-item-group>
     `
   }
 
-  private handleChange(e: Event) {
+  private handleCheckboxChange(e: Event) {
     const target = e.target as HTMLElement
     if (target.tagName.toLowerCase() !== 'mm-menu-item-checkbox') return
     e.stopPropagation()
 
     const { checked, value } = (e as CustomEvent<{ checked: boolean; value: string }>).detail
 
+    this.updateSelection(value, checked)
+  }
+
+  private updateSelection(value: string, checked: boolean) {
     this.selection.setSelected({ value }, checked)
     this.syncCheckboxes()
 

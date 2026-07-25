@@ -23,14 +23,14 @@ export class MasterCheckbox extends LitElement {
   render() {
     return html`
       <mm-surface variant="elevated">
-        <div @pointerdown=${this.onPointerDown}>
+        <div @pointerdown=${this.handleSurfacePointerdown}>
           <input
             type="checkbox"
             id=${this.inputId}
             .checked=${this.checked}
             .indeterminate=${this.indeterminate}
             aria-controls=${this.ariaControls ?? nothing}
-            @change=${this.onInputChange}
+            @change=${this.handleCheckboxInputChange}
           />
 
           <label for=${this.inputId}>
@@ -46,24 +46,27 @@ export class MasterCheckbox extends LitElement {
 
   connectedCallback() {
     super.connectedCallback()
-    document.addEventListener('change', this.syncFromControlledCheckboxes)
+    document.addEventListener('change', this.handleControlledCheckboxesChange)
   }
 
   disconnectedCallback() {
-    document.removeEventListener('change', this.syncFromControlledCheckboxes)
+    document.removeEventListener('change', this.handleControlledCheckboxesChange)
     super.disconnectedCallback()
   }
 
   firstUpdated() {
-    this.controlledElement = this.ariaControls ? document.getElementById(this.ariaControls) : null
-    this.syncFromControlledCheckboxes()
+    this.syncControlledElement()
   }
 
   updated(changed: Map<string, unknown>) {
-    if (changed.has('ariaControls')) {
-      this.controlledElement = this.ariaControls ? document.getElementById(this.ariaControls) : null
-      this.syncFromControlledCheckboxes()
-    }
+    if (!changed.has('ariaControls')) return
+
+    this.syncControlledElement()
+  }
+
+  private syncControlledElement() {
+    this.controlledElement = this.ariaControls ? document.getElementById(this.ariaControls) : null
+    this.handleControlledCheckboxesChange()
   }
 
   private get controlledCheckboxes() {
@@ -81,7 +84,7 @@ export class MasterCheckbox extends LitElement {
     })
   }
 
-  private syncFromControlledCheckboxes = () => {
+  private handleControlledCheckboxesChange = () => {
     const checkboxes = this.controlledCheckboxes
     const checkedCount = checkboxes.filter(checkbox => checkbox.checked).length
 
@@ -95,11 +98,11 @@ export class MasterCheckbox extends LitElement {
     this.setControlledCheckboxes(checked)
   }
 
-  private onInputChange = (event: Event) => {
+  private handleCheckboxInputChange = (event: Event) => {
     this.setChecked((event.target as HTMLInputElement).checked)
   }
 
-  private onPointerDown = (event: Event) => {
+  private handleSurfacePointerdown = (event: Event) => {
     event.preventDefault()
     this.setChecked(!this.checked)
   }

@@ -18,12 +18,12 @@ class Tooltip extends LitElement {
   private readonly contentId = uniqueId('tooltip')
   private descriptionTargets = new Set<HTMLElement>()
 
-  private show = () => {
+  private handleTriggerShow = () => {
     this.syncDescription()
     this.open = true
   }
 
-  private hide = () => {
+  private handleTriggerHide = () => {
     this.open = false
   }
 
@@ -38,17 +38,17 @@ class Tooltip extends LitElement {
 
   connectedCallback() {
     super.connectedCallback()
-    this.addEventListener('mouseover', this.show)
-    this.addEventListener('mouseout', this.hide)
-    this.addEventListener('focusin', this.show)
-    this.addEventListener('focusout', this.hide)
+    this.addEventListener('mouseover', this.handleTriggerShow)
+    this.addEventListener('mouseout', this.handleTriggerHide)
+    this.addEventListener('focusin', this.handleTriggerShow)
+    this.addEventListener('focusout', this.handleTriggerHide)
   }
 
   disconnectedCallback() {
-    this.removeEventListener('mouseover', this.show)
-    this.removeEventListener('mouseout', this.hide)
-    this.removeEventListener('focusin', this.show)
-    this.removeEventListener('focusout', this.hide)
+    this.removeEventListener('mouseover', this.handleTriggerShow)
+    this.removeEventListener('mouseout', this.handleTriggerHide)
+    this.removeEventListener('focusin', this.handleTriggerShow)
+    this.removeEventListener('focusout', this.handleTriggerHide)
     this.clearDescriptionTargets()
     super.disconnectedCallback()
   }

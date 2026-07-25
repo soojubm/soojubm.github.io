@@ -16,14 +16,9 @@ type CheckboxChangeDetail = {
 export class CheckboxGroup extends LitElement {
   static styles = [checkboxGroupStyles]
 
-  @property({ type: String })
-  name?: string
-
-  @property({ type: String })
-  legend?: string
-
-  @property({ type: Array })
-  values: string[] = []
+  @property({ type: String }) name?: string
+  @property({ type: String }) legend?: string
+  @property({ type: Array }) values: string[] = []
 
   @queryAssignedElements({ selector: 'mm-checkbox' })
   private checkboxes!: Checkbox[]
@@ -33,17 +28,16 @@ export class CheckboxGroup extends LitElement {
     setValues: values => {
       this.values = values
     },
-    getOptions: () =>
-      this.checkboxes?.map(checkbox => ({ value: this.getCheckboxValue(checkbox) })) ?? [],
+    getOptions: () => this.checkboxes.map(checkbox => ({ value: this.getCheckboxValue(checkbox) })),
   })
 
   private isInitialized = false
 
   render() {
     return html`
-      <fieldset @change=${this.onCheckboxChange}>
+      <fieldset @change=${this.handleCheckboxChange}>
         ${this.renderLegend()}
-        <slot @slotchange=${this.onSlotChange}></slot>
+        <slot @slotchange=${this.handleSlotChange}></slot>
       </fieldset>
     `
   }
@@ -59,14 +53,17 @@ export class CheckboxGroup extends LitElement {
   }
 
   updated(changed: Map<string, unknown>) {
-    if (this.isInitialized && (changed.has('values') || changed.has('name'))) this.syncCheckboxes()
+    if (!this.isInitialized) return
+    if (!changed.has('values') && !changed.has('name')) return
+
+    this.syncCheckboxes()
   }
 
-  private onSlotChange = () => {
+  private handleSlotChange = () => {
     if (!this.isInitialized && this.values.length === 0) {
       const initialCheckedValues = this.checkboxes
-        .filter(checkbox => checkbox.checked || checkbox.hasAttribute('checked'))
-        .map(checkbox => checkbox.value || checkbox.getAttribute('value') || '')
+        .filter(checkbox => checkbox.checked)
+        .map(checkbox => this.getCheckboxValue(checkbox))
 
       if (initialCheckedValues.length > 0) this.values = initialCheckedValues
     }
@@ -76,8 +73,6 @@ export class CheckboxGroup extends LitElement {
   }
 
   private syncCheckboxes() {
-    if (!this.checkboxes) return
-
     this.selection.sync(
       this.checkboxes.map(checkbox => ({ checkbox, value: this.getCheckboxValue(checkbox) })),
       ({ checkbox }, selected) => {
@@ -88,7 +83,7 @@ export class CheckboxGroup extends LitElement {
     )
   }
 
-  private onCheckboxChange = (event: Event) => {
+  private handleCheckboxChange = (event: Event) => {
     const target = event.target
 
     if (!(target instanceof HTMLElement) || target.tagName !== 'MM-CHECKBOX') return
@@ -100,9 +95,12 @@ export class CheckboxGroup extends LitElement {
 
     if (!value) return
 
+    this.updateSelection(value, checked)
+  }
+
+  private updateSelection(value: string, checked: boolean) {
     this.selection.setSelected({ value }, checked)
     this.syncCheckboxes()
-
     this.dispatchValueChange()
   }
 

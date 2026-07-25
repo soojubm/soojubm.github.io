@@ -57,7 +57,7 @@ class Notice extends LitElement {
 
     return html`
       <div class="notice-dismiss">
-        <mm-dismiss-button @click=${this.dismiss}></mm-dismiss-button>
+        <mm-dismiss-button @click=${this.handleDismissClick}></mm-dismiss-button>
       </div>
     `
   }
@@ -66,7 +66,7 @@ class Notice extends LitElement {
     return VARIANT_ICONS[this.variant] ?? ICON_NAMES.INFO
   }
 
-  private dismiss() {
+  private handleDismissClick() {
     this.dismissed = true
     emit(this, 'mm-dismiss')
   }

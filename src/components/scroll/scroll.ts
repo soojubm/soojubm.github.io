@@ -27,12 +27,12 @@ export class Scroll extends LitElement {
   }
 
   updated(changed: PropertyValues) {
-    if (changed.has('gap')) {
-      const gap = this.gap ? (/^\d+$/.test(this.gap) ? `var(--space-${this.gap})` : this.gap) : ''
+    if (!changed.has('gap')) return
 
-      if (gap) this.style.setProperty('--scroll-gap', gap)
-      else this.style.removeProperty('--scroll-gap')
-    }
+    const gap = this.gap ? (/^\d+$/.test(this.gap) ? `var(--space-${this.gap})` : this.gap) : ''
+
+    if (gap) this.style.setProperty('--scroll-gap', gap)
+    else this.style.removeProperty('--scroll-gap')
   }
 }
 

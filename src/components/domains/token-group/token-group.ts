@@ -19,13 +19,13 @@ export class TokenGroup extends LitElement {
   @queryAssignedElements({ selector: 'mm-token-item', flatten: true })
   private items!: HTMLElement[]
 
-  private assignIndices = () => {
+  private handleItemSlotChange = () => {
     this.items.forEach((item, index) => item.setAttribute('index', String(index + 1)))
   }
 
   render() {
     return html`
-      <slot @slotchange=${this.assignIndices}></slot>
+      <slot @slotchange=${this.handleItemSlotChange}></slot>
     `
   }
 }

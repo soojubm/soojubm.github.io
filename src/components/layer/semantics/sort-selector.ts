@@ -24,7 +24,7 @@ export class SortSelector extends LitElement {
 
   render() {
     return html`
-      <mm-select .value=${this.value} @change=${this.syncValue}>
+      <mm-select .value=${this.value} @change=${this.handleSelectChange}>
         <mm-button slot="trigger" size="small" icon=${ICON_NAMES.EXPAND} icon-position="trailing">
           ${this.selectedLabel}
         </mm-button>
@@ -43,7 +43,7 @@ export class SortSelector extends LitElement {
 
   // select의 change는 이미 bubble/composed로 호스트까지 올라오므로 재발행하지 않고,
   // 트리거 라벨을 다시 그리기 위해 선택값만 반영한다.
-  private syncValue(e: CustomEvent) {
+  private handleSelectChange(e: CustomEvent) {
     this.value = e.detail.value as SortOrder
   }
 }

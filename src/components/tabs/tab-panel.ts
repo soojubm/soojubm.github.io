@@ -21,12 +21,12 @@ export default class TabPanel extends LitElement {
 
   render() {
     return html`
-      <slot @slotchange=${this.updateFocusability}></slot>
+      <slot @slotchange=${this.handleSlotChange}></slot>
     `
   }
 
   // 내부에 포커스 가능한 요소가 없을 때만 패널 자체를 탭 스톱으로 만든다 (ARIA APG tabpanel).
-  private updateFocusability() {
+  private handleSlotChange() {
     requestAnimationFrame(() => {
       this.tabIndex = this.hasFocusableContent(this) ? -1 : 0
     })

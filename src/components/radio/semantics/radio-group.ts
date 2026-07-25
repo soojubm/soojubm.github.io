@@ -14,9 +14,9 @@ export class RadioGroup extends LitElement {
   @property({ type: String }) value = ''
   @property({ type: String }) name = ''
   @property({ type: Boolean }) disabled = false
-  @property({ type: String }) label = ''
+  @property({ type: String }) legend = ''
 
-  @queryAssignedElements({ selector: 'mm-radio', flatten: true })
+  @queryAssignedElements({ selector: 'mm-radio' })
   private radios!: Radio[]
 
   private selection = new SingleSelectionController(this, {
@@ -29,17 +29,23 @@ export class RadioGroup extends LitElement {
   render() {
     return html`
       <fieldset class="radio-group" ?disabled=${this.disabled} @change=${this.handleRadioChange}>
-        <legend class="visually-hidden">${this.label}</legend>
-        <slot @slotchange=${this.syncChildren}></slot>
+        <legend class="visually-hidden">${this.legend}</legend>
+        <slot @slotchange=${this.handleSlotChange}></slot>
       </fieldset>
     `
   }
 
   protected updated(changedProperties: Map<string, unknown>) {
-    if (changedProperties.has('value') || changedProperties.has('disabled')) this.syncChildren()
+    if (!changedProperties.has('value') && !changedProperties.has('disabled')) return
+
+    this.syncRadios()
   }
 
-  private syncChildren() {
+  private handleSlotChange = () => {
+    this.syncRadios()
+  }
+
+  private syncRadios() {
     this.selection.sync(this.radios, (radio, selected) => {
       if (this.name) radio.name = this.name
       radio.disabled = this.disabled
@@ -53,15 +59,19 @@ export class RadioGroup extends LitElement {
 
     e.stopPropagation()
 
-    if (target.checked) {
-      const newValue = target.value || ''
-      if (this.value === newValue) return
+    if (!target.checked) return
 
-      this.selection.setSelected({ value: newValue }, true)
-      this.syncChildren()
+    const newValue = target.value || ''
+    if (this.value === newValue) return
 
-      emit(this, 'change', { value: this.value, name: this.name })
-    }
+    this.commitValue(newValue)
+  }
+
+  private commitValue(value: string) {
+    this.selection.setSelected({ value }, true)
+    this.syncRadios()
+
+    emit(this, 'change', { value: this.value, name: this.name })
   }
 }
 

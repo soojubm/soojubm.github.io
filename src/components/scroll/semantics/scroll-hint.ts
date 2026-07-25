@@ -59,8 +59,8 @@ export class ScrollHint extends LitElement {
     super.connectedCallback()
     this.setAttribute('aria-hidden', 'true')
     this.scrollRoot = this.parentElement ?? undefined
-    this.scrollRoot?.addEventListener('scroll', this.syncVisibility)
-    this.resizeObserver = new ResizeObserver(this.syncVisibility)
+    this.scrollRoot?.addEventListener('scroll', this.handleScrollRootScroll)
+    this.resizeObserver = new ResizeObserver(this.handleScrollRootScroll)
     this.resizeObserver.observe(this)
     // scrollRoot 자체는 크기가 고정돼 있어도 슬라이드 이미지가 늦게 로드되며 scrollWidth만 늘어날 수 있으므로,
     // 콘텐츠 자식들도 함께 관찰해야 그 변화를 잡아낸다.
@@ -68,17 +68,17 @@ export class ScrollHint extends LitElement {
       this.resizeObserver.observe(this.scrollRoot)
       Array.from(this.scrollRoot.children).forEach(child => this.resizeObserver!.observe(child))
     }
-    requestAnimationFrame(this.syncVisibility)
+    requestAnimationFrame(this.handleScrollRootScroll)
   }
 
   disconnectedCallback() {
-    this.scrollRoot?.removeEventListener('scroll', this.syncVisibility)
+    this.scrollRoot?.removeEventListener('scroll', this.handleScrollRootScroll)
     this.resizeObserver?.disconnect()
     this.scrollRoot = undefined
     super.disconnectedCallback()
   }
 
-  private syncVisibility = () => {
+  private handleScrollRootScroll = () => {
     const root = this.scrollRoot
     if (!root) return
 

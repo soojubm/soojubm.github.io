@@ -37,7 +37,7 @@ export class TextareaField extends LitElement {
         ?disabled=${this.disabled}
         aria-invalid=${ifDefined(this.ariaInvalid ?? undefined)}
         aria-describedby=${this.helper ? this.helperId : nothing}
-        @input=${this.syncValue}
+        @input=${this.handleTextareaInput}
       ></mm-textarea>
       ${renderFieldHelper(this.helper, this.helperId)}
     `
@@ -47,7 +47,7 @@ export class TextareaField extends LitElement {
     return `${this.inputId}-helper`
   }
 
-  private syncValue(event: CustomEvent<{ value: string }>) {
+  private handleTextareaInput(event: CustomEvent<{ value: string }>) {
     this.value = event.detail.value
   }
 }

@@ -41,16 +41,16 @@ export class SettingItem extends LitElement {
         label=${this.label}
         description=${this.description}
       >
-        <slot name="action" slot="trailing" @slotchange=${this.syncActions}></slot>
+        <slot name="action" slot="trailing" @slotchange=${this.handleActionSlotChange}></slot>
       </mm-list-item>
     `
   }
 
   protected updated(changed: Map<string, unknown>) {
-    if (changed.has('disabled')) this.syncActions()
+    if (changed.has('disabled')) this.handleActionSlotChange()
   }
 
-  private syncActions() {
+  private handleActionSlotChange() {
     this.actions.forEach(action => {
       if ('disabled' in action) action.disabled = this.disabled
     })

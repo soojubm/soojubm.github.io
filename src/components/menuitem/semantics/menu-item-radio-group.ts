@@ -18,14 +18,12 @@ export class MenuItemRadioGroup extends LitElement {
   @property({ type: String }) value = ''
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = ''
 
-  @queryAssignedElements({ selector: 'mm-menu-item-radio', flatten: true })
+  @queryAssignedElements({ selector: 'mm-menu-item-radio' })
   private radios!: MenuItemRadio[]
 
   private selection = new SingleSelectionController(this, {
     getValue: () => this.value,
-    setValue: value => {
-      this.value = value
-    },
+    setValue: value => (this.value = value),
   })
 
   protected updated(changedProperties: Map<string, unknown>) {
@@ -52,7 +50,11 @@ export class MenuItemRadioGroup extends LitElement {
     e.stopPropagation() // 개별 아이템 이벤트 전파 중단
 
     const detail = (e as CustomEvent).detail
-    this.selection.setSelected({ value: detail.value }, true)
+    this.commitValue(detail.value)
+  }
+
+  private commitValue(value: string) {
+    this.selection.setSelected({ value }, true)
     this.syncRadios()
 
     // 최종적으로 그룹 차원의 change 이벤트를 외부에 발생시킵니다.

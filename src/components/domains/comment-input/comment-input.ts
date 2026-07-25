@@ -33,20 +33,22 @@ export class CommentInput extends LitElement {
 
   render() {
     return html`
-      <form @submit=${this.submitComment}>
+      <form @submit=${this.handleCommentSubmit}>
         <mm-textarea
           name=${this.name}
           placeholder=${this.placeholder}
           @keydown=${this.handleTextareaKeydown}
         ></mm-textarea>
         <mm-textfield-action-bar>
-          <mm-button variant="primary" @click=${this.submitComment}>${this.submitLabel}</mm-button>
+          <mm-button variant="primary" @click=${this.handleCommentSubmit}>
+            ${this.submitLabel}
+          </mm-button>
         </mm-textfield-action-bar>
       </form>
     `
   }
 
-  private submitComment(event?: Event) {
+  private handleCommentSubmit(event?: Event) {
     event?.preventDefault()
 
     emit(this, 'submit', {
@@ -59,7 +61,7 @@ export class CommentInput extends LitElement {
     if (event.key !== 'Enter' || event.shiftKey) return
 
     event.preventDefault()
-    this.submitComment()
+    this.handleCommentSubmit()
   }
 }
 
