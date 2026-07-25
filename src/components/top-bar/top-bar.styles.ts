@@ -8,11 +8,13 @@ export const topBarStyles = css`
   header {
     display: flex;
     align-items: center;
+    width: 100%;
+    padding: var(--space-2) 0;
     gap: var(--space-2);
     position: relative;
   }
 
-  ::slotted([slot='action']) {
+  .trailing-area {
     margin: 0 0 0 auto;
   }
 `

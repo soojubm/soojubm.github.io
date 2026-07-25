@@ -80,32 +80,34 @@ const main = html`
       "trailing — 오른쪽에 배치되는 선택적 슬롯. 액션 버튼·뱃지·메타 텍스트 등을 넣습니다."
     ]'
     >
-      <mm-list-item
-        label="수줍이"
-        description="바보"
-        size="48"
-        avatar-variant="primary"
-        avatar-shape="circle"
-        avatar-src="/src/images/soojubm.png"
-        style="width: 100%"
-      >
-        <mm-follow-button slot="trailing"></mm-follow-button>
-      </mm-list-item>
-      <mm-list-marker
-        variant="number"
-        value="1"
-        style="position: absolute; left: 1.25rem; bottom: -1.75rem; transform: translateX(-50%)"
-      ></mm-list-marker>
-      <mm-list-marker
-        variant="number"
-        value="2"
-        style="position: absolute; left: 50%; bottom: -1.75rem; transform: translateX(-50%)"
-      ></mm-list-marker>
-      <mm-list-marker
-        variant="number"
-        value="3"
-        style="position: absolute; right: 1.25rem; bottom: -1.75rem; transform: translateX(50%)"
-      ></mm-list-marker>
+      <div style="position: relative; width: 320px">
+        <mm-list-item
+          label="수줍이"
+          description="바보"
+          size="48"
+          avatar-variant="primary"
+          avatar-shape="circle"
+          avatar-src="/src/images/soojubm.png"
+          style="width: 100%"
+        >
+          <mm-follow-button slot="trailing"></mm-follow-button>
+        </mm-list-item>
+        <mm-list-marker
+          variant="number"
+          value="1"
+          style="position: absolute; left: 1.5rem; bottom: -1.75rem; transform: translateX(-50%)"
+        ></mm-list-marker>
+        <mm-list-marker
+          variant="number"
+          value="2"
+          style="position: absolute; left: 9.41rem; bottom: -1.75rem; transform: translateX(-50%)"
+        ></mm-list-marker>
+        <mm-list-marker
+          variant="number"
+          value="3"
+          style="position: absolute; right: 2.09rem; bottom: -1.75rem; transform: translateX(50%)"
+        ></mm-list-marker>
+      </div>
     </mm-component-anatomy>
 
     <mm-component-guide>
@@ -113,6 +115,10 @@ const main = html`
         <mm-feature
           heading="Structural"
           description="leading·content·trailing의 고정된 골격으로 반복되는 행의 구조를 잡습니다. 상호작용 없이 레이아웃만 담당하는 표현 전용 행입니다."
+        ></mm-feature>
+        <mm-feature
+          heading="Groupable"
+          description="같은 데이터 집합의 행은 단독으로 나열하지 않고 menu-item-group으로 묶어 하나의 리스트로 제시합니다. role과 행 간 간격은 그룹이 소유합니다."
         ></mm-feature>
       </mm-component-feature-list>
     </mm-component-guide>

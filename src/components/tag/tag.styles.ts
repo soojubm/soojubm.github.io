@@ -106,7 +106,7 @@ export const tagStyles = css`
     --tag-padding-inline: var(--space-2);
     --tag-gap: var(--space-1);
     --tag-border: var(--border);
-    --tag-border-color: var(--border-color);
+    --tag-border-color: var(--tag-border-color);
     --tag-border-radius: var(--radius);
     --tag-background-color: var(--background-color);
     --tag-color: var(--foreground-color);
@@ -119,7 +119,6 @@ export const tagStyles = css`
     gap: var(--tag-gap);
     padding-inline: var(--tag-padding-inline);
     border: var(--tag-border);
-    border-color: var(--tag-border-color);
     border-radius: var(--tag-border-radius);
     box-sizing: border-box;
     background-color: var(--tag-background-color);

@@ -29,7 +29,7 @@ export class ListItem extends LitElement {
   @property({ type: String }) icon?: IconName
   @property({ type: String }) emoji = ''
   @property({ type: String, attribute: 'avatar-src' }) avatarSrc = ''
-  @property({ type: String, attribute: 'avatar-variant' }) avatarVariant: AvatarVariant = 'tertiary'
+  @property({ type: String, attribute: 'avatar-variant' }) avatarVariant: AvatarVariant = 'primary'
   @property({ type: String, attribute: 'avatar-shape' }) avatarShape: AvatarShape = 'square'
 
   @state() private hasAvatar = false

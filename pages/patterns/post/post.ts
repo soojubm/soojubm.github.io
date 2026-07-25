@@ -13,7 +13,7 @@ const main = html`
       }
     </style>
     <header class="post-head">
-      <mm-paragraph-group size="32">
+      <mm-flex direction="column" gap="3">
         <mm-link href="#post">Murmur</mm-link>
         <mm-text size="32">
           Runway enables next-generation content creation with AI and Vercel
@@ -22,19 +22,22 @@ const main = html`
           Pinterest announces industry-first body type technology to increase body representation on
           platform
         </mm-paragraph>
+      </mm-flex>
+      <mm-flex direction="column" gap="4" style="margin-top:var(--space-8)">
         <mm-user-row
+          size="80"
           label="수줍이"
           description="Youtube Subscriber"
+          avatar-variant="secondary"
           avatar-src="/src/images/soojubm.png"
           size="small"
         ></mm-user-row>
-      </mm-paragraph-group>
+        <mm-thumbnail src="/src/images/soojubm.png" ratio="16:9"></mm-thumbnail>
+      </mm-flex>
     </header>
 
-    <mm-thumbnail src="/src/images/soojubm.png" ratio="16:9"></mm-thumbnail>
-
     <section class="post-body">
-      <nav>
+      <!-- <nav>
         <mm-paragraph size="large">Table of contents</mm-paragraph>
         <ol>
           <li>Decline every meeting</li>
@@ -42,7 +45,7 @@ const main = html`
           <li>Decline every meeting</li>
           <li>Decline every meeting</li>
         </ol>
-      </nav>
+      </nav> -->
 
       <mm-notice
         variant="warning"

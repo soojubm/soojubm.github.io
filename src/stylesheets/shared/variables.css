@@ -111,6 +111,7 @@
   --space-2: 8px;
   --space-3: 12px;
   --space-4: 16px;
+  --space-6: 24px;
   --space-8: 32px;
   --space-12: 48px;
   --space-16: 64px;
@@ -151,6 +152,9 @@
   --surface-high-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
   --surface-high-blur: 20px;
   --surface-high-opacity: 0.55;
+  --surface-hight-shadow: none;
+  --surface-high-blur: 0;
+  --surface-high-opacity: 1;
 
   /* 스크롤 콘텐츠 위에 뜬 chrome 바가 재질을 페이드시키기 시작하는 지점.
      재질이 없는 테마는 100%(= 페이드 없음), 재질이 있는 테마만 값을 낮춘다 */
@@ -252,6 +256,8 @@
   --border: var(--brutal-border);
   --border-transparent: var(--brutal-border);
   --surface-high-border: var(--border);
+
+  --surface-high-shadow: none;
 }
 
 :root [data-theme='glass'] {
@@ -265,10 +271,11 @@
   /* --background-subtle-color: rgb(255 255 255 / 30%); */
 
   /* ===== surface-high ===== */
-  --surface-high-background-color: rgb(255 255 255 / var(--surface-high-opacity));
+  --surface-high-background-color: #ffffffb3;
   --surface-high-border: var(--border-width) solid rgb(255 255 255 / 50%);
   --surface-high-backdrop-filter: blur(var(--surface-high-blur)) saturate(1.4);
-  --surface-high-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  --surface-high-backdrop-filter: saturate(180%) blur(20px);
+  --surface-high-shadow: none;
 
   /* 재질이 있으므로 chrome 바 아래쪽을 페이드시켜 스크롤 콘텐츠로 자연스럽게 잇는다 */
   --material-fade-start: 50%;

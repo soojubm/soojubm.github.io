@@ -20,13 +20,17 @@ export const navbarStyles = css`
      조상에 backdrop-filter가 있으면 내부 popover 등 자손의 backdrop-filter가 무력화되기 때문. */
   .navbar::before {
     content: '';
+    height: var(--navbar-height);
+    border-bottom: var(--border-transparent);
+    box-sizing: border-box;
+    background: var(--surface-high-background-color);
+    backdrop-filter: var(--surface-high-backdrop-filter);
+    box-shadow: var(--surface-high-shadow);
+    /* TODO */
+    box-shadow: none;
     position: absolute;
     inset: 0;
     z-index: -1;
-    /* TODO gradient */
-    background: var(--surface-base-background-color);
-    backdrop-filter: var(--surface-base-backdrop-filter);
-    box-shadow: var(--surface-base-shadow);
   }
 
   .navbar-logo {
@@ -60,7 +64,7 @@ export const navbarStyles = css`
 
   .page {
     min-height: calc(100vh - var(--navbar-height));
-    padding: var(--space-4) var(--layout-padding-inline) calc(var(--space-4) * 6);
+    padding: var(--space-6) var(--layout-padding-inline) calc(var(--space-4) * 6);
     box-sizing: border-box;
     position: relative;
   }
@@ -81,12 +85,15 @@ export const navbarStyles = css`
     width: 100%;
     max-width: var(--layout-width-sidebar);
     gap: var(--space-2);
-    padding: var(--space-4) var(--space-3) calc(var(--space-4) + env(safe-area-inset-bottom))
+    padding: var(--space-6) var(--space-3) calc(var(--space-4) + env(safe-area-inset-bottom))
       calc(var(--layout-padding-inline));
-    background: var(--surface-base-background-color);
-    box-shadow: var(--surface-base-shadow);
-    backdrop-filter: var(--surface-base-backdrop-filter);
-    -webkit-backdrop-filter: var(--surface-base-backdrop-filter);
+    background: var(--surface-high-background-color);
+    border-right: var(--border-transparent);
+    box-shadow: var(--surface-high-shadow);
+    /* TODO */
+    box-shadow: none;
+    backdrop-filter: var(--surface-high-backdrop-filter);
+    -webkit-backdrop-filter: var(--surface-high-backdrop-filter);
     scrollbar-gutter: stable;
     transition: transform var(--duration-slowly) cubic-bezier(0.165, 0.84, 0.44, 1);
     transform: translateX(-120%);

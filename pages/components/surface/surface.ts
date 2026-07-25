@@ -89,20 +89,23 @@ const main = html`
           description="독립된 배경 영역으로 화면을 논리적인 단위로 분리하고 관련 정보를 하나로 묶습니다. 명도 대비와 음영(Shadow)의 깊이감으로 정보 레이어의 상하 관계까지 드러내며, 이 배경색·깊이의 변화가 해당 영역의 클릭 가능 여부를 식별하는 기표로도 작동합니다."
         ></mm-feature>
       </mm-component-feature-list>
+
+      <mm-paragraph-group>
+        <mm-heading level="3">언제 사용하나요</mm-heading>
+        <mm-paragraph>
+          관련된 콘텐츠를 하나의 영역으로 묶어 배경과 시각적으로 분리해야 할 때 사용합니다. 명도
+          대비나 그림자로 영역의 층위를 드러내야 하거나, 그 배경 변화 자체가 클릭 가능 여부를 알리는
+          기표로 쓰여야 하는 경우에 적합합니다. 단순히 요소 사이 여백만 필요하다면 surface 대신
+          레이아웃 컴포넌트를 사용하세요.
+        </mm-paragraph>
+      </mm-paragraph-group>
+
       <mm-text-list
         texts='[
           "surface 내부 leading, tailing 컴포넌트에 따라 시각보정이 필요할 수 있습니다.",
           "inset이 너무 커지면 물리적 화면 크기에 따라 inset의 변경이 필요할 수 있다. 콘텐츠 모듈을 가운데 정렬로 해결할 수 있다."
         ]'
       ></mm-text-list>
-
-      <mm-paragraph>
-        At its core, Card is a Box with specific styling attributes and more explicit use cases that
-        you can find in Examples. If you find yourself limited by the default styling and
-        constraints of a Card, you may consider using a Box instead, but first consider bringing the
-        problem you are trying to solve to Design System Office Hours to see if another component or
-        pattern could fit your needs.
-      </mm-paragraph>
     </mm-component-guide>
 
     <mm-component-section heading="PricingSurface" description="">

@@ -3,6 +3,16 @@ import type { ActionConfig } from '@/components/action-config'
 
 import { renderDocumentLayout } from '../../../layouts/document-layout'
 
+const primaryAction: ActionConfig = {
+  label: '주문내역 보기',
+  onClick: () => {},
+}
+
+const secondaryAction: ActionConfig = {
+  label: '홈으로',
+  onClick: () => {},
+}
+
 const main = html`
   <main class="page">
     <mm-page-header
@@ -14,17 +24,16 @@ const main = html`
 
     <mm-component-example>
       <mm-result
-        id="result-primary-action-example"
         avatar-icon="clipboard-check"
         heading="주문을 확인해주세요."
         description="헌법재판소 재판관의 임기는 6년으로 하며, 법률이 정하는 바에 의하여 연임할 수 있다."
+        .primaryAction=${primaryAction}
+        .secondaryAction=${secondaryAction}
       >
-        <mm-avatar slot="avatar" variant="secondary" size="80" icon="clipboard-check"></mm-avatar>
-        <div>
-          <mm-meta-item label="주문일자" value="2019.08.10."></mm-meta-item>
-          <mm-meta-item label="결제금액" value="₩ 54,000"></mm-meta-item>
-        </div>
-        <mm-button slot="action" variant="tertiary" size="large">홈으로</mm-button>
+        <mm-flex direction="column" style="width:100%">
+          <mm-meta-item layout="horizontal" label="주문일자" value="2019.08.10."></mm-meta-item>
+          <mm-meta-item layout="horizontal" label="결제금액" value="₩ 54,000"></mm-meta-item>
+        </mm-flex>
       </mm-result>
     </mm-component-example>
 
@@ -33,6 +42,7 @@ const main = html`
       <mm-prop name="heading" type="string"></mm-prop>
       <mm-prop name="description" type="string" optional></mm-prop>
       <mm-prop name="primaryAction" type="ActionConfig" optional></mm-prop>
+      <mm-prop name="secondaryAction" type="ActionConfig" optional></mm-prop>
       <mm-prop name="slot: avatar" type="HTMLElement" optional></mm-prop>
       <mm-prop name="slot: default" type="HTMLElement" optional></mm-prop>
       <mm-prop name="slot: action" type="HTMLButtonElement" optional></mm-prop>
@@ -73,18 +83,6 @@ const main = html`
   </main>
 `
 
-type ResultElement = HTMLElement & {
-  primaryAction?: ActionConfig
-}
-
 document.addEventListener('DOMContentLoaded', () => {
   renderDocumentLayout(main)
-
-  const result = document.querySelector<ResultElement>('#result-primary-action-example')
-  if (!result) return
-
-  result.primaryAction = {
-    label: '주문내역 보기',
-    onClick: () => {},
-  }
 })

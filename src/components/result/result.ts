@@ -19,6 +19,7 @@ class Result extends LitElement {
   @property({ type: String }) description = ''
   @property({ type: String, reflect: true }) role = 'status'
   @property({ attribute: false }) primaryAction?: ActionConfig
+  @property({ attribute: false }) secondaryAction?: ActionConfig
 
   render() {
     return html`
@@ -26,7 +27,7 @@ class Result extends LitElement {
       <mm-status-message heading=${this.heading} message=${this.description}></mm-status-message>
       <slot></slot>
       <mm-button-group justify-content="center" wrap>
-        ${this.renderPrimaryAction()}
+        ${this.renderSecondaryAction()} ${this.renderPrimaryAction()}
         <slot name="action"></slot>
       </mm-button-group>
     `
@@ -37,6 +38,21 @@ class Result extends LitElement {
 
     return html`
       <mm-avatar size="80" variant="secondary" icon=${this.avatarIcon}></mm-avatar>
+    `
+  }
+
+  private renderSecondaryAction() {
+    if (!this.secondaryAction) return nothing
+
+    return html`
+      <mm-button
+        variant="tertiary"
+        size="large"
+        ?disabled=${this.secondaryAction.disabled}
+        @click=${this.handleSecondaryActionClick}
+      >
+        ${this.secondaryAction.label}
+      </mm-button>
     `
   }
 
@@ -57,6 +73,10 @@ class Result extends LitElement {
 
   private handlePrimaryActionClick() {
     this.primaryAction?.onClick?.()
+  }
+
+  private handleSecondaryActionClick() {
+    this.secondaryAction?.onClick?.()
   }
 }
 
