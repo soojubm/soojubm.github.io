@@ -1,4 +1,4 @@
-import { LitElement, html, nothing } from 'lit'
+import { LitElement, html, css } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import '@/components/text/semantics/heading'
@@ -7,7 +7,7 @@ import {
   tokenStyles,
 } from '@/components/domains/component/component-tokens.styles'
 
-// 토큰 이름의 단어를 의미 그룹으로 묶어 그룹마다 한 색을 준다.
+// 토큰 이름의 단어를 의미 그룹으로 묶어, 서로 다른 그룹의 경계에서만 구분자를 '.'으로 바꿔 구조를 드러낸다.
 // 위에서부터 먼저 매칭되는 그룹을 사용하므로 더 구체적인 그룹을 앞에 둔다.
 // state는 dimension·surface에 적용되는 변형이므로 겹치는 단어가 없어 순서와 무관하고,
 // surface는 border-width처럼 dimension 단어(width)를 포함하는 합성어를 갖고 있어 dimension보다 앞에 둔다.
@@ -60,70 +60,61 @@ const WORD_CATEGORIES = [
  */
 @customElement('mm-token')
 export class Token extends LitElement {
-  static styles = tokenStyles
+  static styles = [tokenStyles]
 
   @property({ type: String }) name = ''
   @property({ type: String }) default = ''
 
   render() {
     return html`
-      <dt>${this.renderName()}</dt>
-      <dd class="value">${this.renderDefaultValue()}</dd>
+      <mm-meta-item
+        layout="stacked"
+        label=${this.formatName()}
+        value=${this.formatDefault()}
+      ></mm-meta-item>
     `
   }
 
-  // 토큰 이름을 dash 단위로 나눠, 상태를 뜻하는 단어에만 색을 입혀 네이밍 구조를 드러낸다.
-  // span 사이 공백이 생기지 않도록 템플릿을 한 줄로 유지한다.
-  private renderName() {
+  // var(--radius-full)처럼 값이 토큰 참조면 var(--...)로 감싼 부분을 걷어내 토큰 이름만 남긴다.
+  private formatDefault() {
+    return this.default.replace(/var\(--([\w-]+)\)/g, '$1')
+  }
+
+  // state/surface/dimension 그룹이 바뀌는 경계에서만 '-'를 '.'으로 바꿔, 같은 그룹의 합성어(border-radius 등)는
+  // 계속 '-'로 붙어 보이게 하면서 그룹 전환은 시각적으로 구분되게 한다.
+  private formatName() {
     const parts = this.name.split('-')
-    const classes = parts.map((_, index) => this.wordClass(index, parts))
-    return parts.map((word, index) => this.renderWord(word, index, classes))
+    const categories = parts.map((_, index) => this.categoryName(index, parts))
+
+    return parts.reduce((result, word, index) => {
+      if (index === 0) return word
+
+      const sameCategory = categories[index] && categories[index] === categories[index - 1]
+      return `${result}${sameCategory ? '-' : '.'}${word}`
+    }, '')
   }
 
-  private renderWord(word: string, index: number, classes: string[]) {
-    const dash = index > 0 ? '-' : ''
-    // prettier-ignore
-    return html`<span class=${this.dashClass(index, classes)}>${dash}</span><span class=${classes[index]}>${word}</span>`
-  }
-
-  // 앞뒤 단어가 같은 카테고리로 물들면 그 사이 dash도 같은 색으로 이어지게 한다.
-  private dashClass(index: number, classes: string[]) {
-    const category = classes[index]
-    if (index > 0 && category && category === classes[index - 1]) return `dash ${category}`
-
-    return 'dash'
+  private categoryName(index: number, parts: string[]) {
+    const category = WORD_CATEGORIES.find(({ words }) =>
+      words.some(word => this.matchesWord(parts, index, word)),
+    )
+    return category?.name ?? ''
   }
 
   // border-radius, background-color처럼 '-'로 이어진 카테고리 단어는 조각을 이어붙인 문자열이
   // 아니라, 인접한 조각들이 각 자리에 정확히 대응하는지로 판단해 엉뚱한 이웃 조각까지
-  // 함께 물들지 않게 한다.
-  private wordClass(index: number, parts: string[]) {
-    const category = WORD_CATEGORIES.find(({ words }) =>
-      words.some(word => this.matchesWord(parts, index, word)),
-    )
-    if (!category) return ''
-
-    return `word-${category.name}`
-  }
-
+  // 함께 묶이지 않게 한다.
   private matchesWord(parts: string[], index: number, word: string) {
     const wordParts = word.split('-')
     const firstStart = Math.max(0, index - wordParts.length + 1)
+    const starts = Array.from(
+      { length: index - firstStart + 1 },
+      (_, offset) => firstStart + offset,
+    )
 
-    for (let start = firstStart; start <= index; start++) {
-      if (wordParts.every((wordPart, offset) => parts[start + offset]?.includes(wordPart)))
-        return true
-    }
-
-    return false
-  }
-
-  private renderDefaultValue() {
-    if (!this.default) return nothing
-
-    return html`
-      <mm-text>${this.default}</mm-text>
-    `
+    return starts.some(start =>
+      wordParts.every((wordPart, offset) => parts[start + offset]?.includes(wordPart)),
+    )
   }
 }
 
@@ -139,7 +130,7 @@ export class ComponentTokens extends LitElement {
     return html`
       <section class="component-content-frame">
         <!-- <mm-heading>Component Tokens</mm-heading> -->
-        <slot></slot>
+        <mm-flex direction="column" gap="2"><slot></slot></mm-flex>
       </section>
     `
   }
