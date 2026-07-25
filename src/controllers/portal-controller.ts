@@ -5,13 +5,11 @@ type Host = ReactiveControllerHost & HTMLElement
 interface PortalControllerOptions {
   /** portal로 띄울 조건. 거짓이면 원래 위치로 복원한다. */
   isActive: () => boolean
-  /** 텔레포트 대상. 기본은 document.body */
-  root?: () => HTMLElement
 }
 
 /**
- * 활성 동안 host를 portal root(기본 document.body)로 옮겨, 조상의
- * transform·contain·stacking context에 갇히지 않게 하는 ReactiveController.
+ * 활성 동안 host를 document.body로 옮겨, 조상의 transform·contain·stacking context에
+ * 갇히지 않게 하는 ReactiveController.
  *
  * React의 createPortal과 같은 역할을 하되 host 노드를 통째로 이동하므로,
  * 이동 중 재실행되는 connected/disconnected lifecycle은 moving 플래그로 무시한다.
@@ -40,15 +38,11 @@ export class PortalController implements ReactiveController {
     else this.deactivate()
   }
 
-  private get root() {
-    return this.options.root?.() ?? document.body
-  }
-
   private activate() {
     if (this.portaled) return
 
     this.host.before(this.anchor)
-    this.move(() => this.root.appendChild(this.host))
+    this.move(() => document.body.appendChild(this.host))
     this.portaled = true
   }
 

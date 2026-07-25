@@ -4,7 +4,6 @@ import { ifDefined } from 'lit/directives/if-defined.js'
 import { repeat } from 'lit/directives/repeat.js'
 
 import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
-import { PopupController } from '@/controllers/popup-controller'
 import soojubmImage from '@/images/soojubm.png'
 import { SITEMAP } from '@/sitemap'
 
@@ -25,6 +24,7 @@ export class Navbar extends LitElement {
   @state() private query = ''
   @state() private results: PagefindResult[] = []
   @state() private searching = false
+  @state() private searchOpen = false
 
   private pagefind: Pagefind | null = null
   private debounceTimer: ReturnType<typeof setTimeout> | null = null
@@ -34,8 +34,6 @@ export class Navbar extends LitElement {
   private get searchField() {
     return document.querySelector<HTMLElement>('.js-search-sheet mm-searchfield') ?? undefined
   }
-
-  private searchMenu = new PopupController(this, { event: 'click' })
 
   render() {
     return html`
@@ -53,7 +51,7 @@ export class Navbar extends LitElement {
           <mm-icon-button
             icon=${ICON_NAMES.SEARCH}
             aria-label="검색"
-            aria-expanded=${this.searchMenu.open ? 'true' : 'false'}
+            aria-expanded=${this.searchOpen ? 'true' : 'false'}
             @click=${this.toggleSearch}
           ></mm-icon-button>
           <!-- 
@@ -104,9 +102,10 @@ export class Navbar extends LitElement {
         placement="center"
         width="medium"
         style="--layer-backdrop-blur: 2px"
-        ?open=${this.searchMenu.open}
-        @layerclose=${() => this.searchMenu.close()}
-        @pointerdown=${(e: Event) => e.stopPropagation()}
+        ?open=${this.searchOpen}
+        @layerclose=${() => {
+          this.searchOpen = false
+        }}
       >
         <mm-top-bar type="back"></mm-top-bar>
         <mm-layer-body>
@@ -170,8 +169,8 @@ export class Navbar extends LitElement {
   }
 
   private toggleSearch = () => {
-    this.searchMenu.toggle()
-    if (this.searchMenu.open) {
+    this.searchOpen = !this.searchOpen
+    if (this.searchOpen) {
       this.loadPagefind()
       requestAnimationFrame(() => {
         this.searchField?.focus()
@@ -225,7 +224,7 @@ export class Navbar extends LitElement {
   }
 
   private isCurrentSearch(searchId: number, query: string) {
-    return this.searchMenu.open && searchId === this.searchRequestId && this.query.trim() === query
+    return this.searchOpen && searchId === this.searchRequestId && this.query.trim() === query
   }
 
   private renderDefault() {

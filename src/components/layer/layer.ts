@@ -31,7 +31,6 @@ class Layer extends LitElement {
   private layer = new LayerController(this, {
     isOpen: () => this.isOpen,
     onDismiss: () => emit(this, 'layerclose'),
-    portalRoot: () => document.getElementById('layer-page-root') ?? document.body,
   })
 
   // 리스너 대상이 호스트 자신이라 portal 이동에도 유지되므로 생성자에서 한 번만 등록한다.

@@ -30,7 +30,6 @@ export class Dialog extends LitElement {
   private layer = new LayerController(this, {
     isOpen: () => this.open,
     onDismiss: () => this.handleDismiss(),
-    portalRoot: () => document.getElementById('layer-page-root') ?? document.body,
   })
 
   render() {

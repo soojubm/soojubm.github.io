@@ -6,12 +6,9 @@ import { ScrollLockController } from '@/controllers/scroll-lock-controller'
 type Host = ReactiveControllerHost & HTMLElement
 
 interface LayerControllerOptions {
-  /** 호스트의 열림 상태를 읽는다 */
   isOpen: () => boolean
   /** 스스로 닫힐 때 호출된다(backdrop 클릭, ESC). 실제 상태 변경은 호스트가 수행한다 */
   onDismiss: () => void
-  /** portal 텔레포트 대상. 기본은 document.body */
-  portalRoot?: () => HTMLElement
 }
 
 /**
@@ -29,7 +26,6 @@ export class LayerController implements ReactiveController {
     this.scrollLock = new ScrollLockController(host)
     this.portal = new PortalController(host, {
       isActive: () => this.options.isOpen(),
-      root: this.options.portalRoot,
     })
 
     host.addController(this)

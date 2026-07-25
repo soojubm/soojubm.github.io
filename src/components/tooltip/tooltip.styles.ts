@@ -13,12 +13,6 @@ export const tooltipStyles = css`
     --tooltip-shadow: var(--surface-base-shadow);
   }
 
-  :host(:hover) [role='tooltip'],
-  :host(:focus-within) [role='tooltip'] {
-    opacity: 1;
-    visibility: visible;
-  }
-
   :host([open]) [role='tooltip'] {
     opacity: 1;
     visibility: visible;
