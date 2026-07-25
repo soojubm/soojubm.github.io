@@ -52,18 +52,12 @@ export class Dialog extends LitElement {
     `
   }
 
-  protected updated(changedProperties: Map<string, unknown>) {
-    if (changedProperties.has('open')) this.layer.sync()
-  }
-
   show() {
     this.open = true
-    this.layer.sync()
   }
 
   close() {
     this.open = false
-    this.layer.sync()
   }
 
   private handleDismiss() {

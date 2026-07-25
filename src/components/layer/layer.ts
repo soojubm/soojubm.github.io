@@ -95,7 +95,6 @@ class Layer extends LitElement {
 
   protected updated(changedProperties: Map<string, unknown>) {
     if (changedProperties.has('height')) this.syncHeight()
-    if (changedProperties.has('isOpen')) this.layer.sync()
   }
 
   private syncHeight() {
@@ -109,12 +108,10 @@ class Layer extends LitElement {
 
   open() {
     this.isOpen = true
-    this.layer.sync()
   }
 
   close() {
     this.isOpen = false
-    this.layer.sync()
   }
 
   toggle() {

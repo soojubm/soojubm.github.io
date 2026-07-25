@@ -45,10 +45,14 @@ export class LayerController implements ReactiveController {
     document.removeEventListener('keydown', this.handleKeydown)
   }
 
+  hostUpdated() {
+    this.sync()
+  }
+
   // portal과 스크롤 잠금을 함께 동기화한다.
   // host를 portal로 옮기면 lifecycle이 재실행되며 스크롤 잠금이 풀리므로,
   // 열 때는 portal 이후에 잠그고 닫을 때는 잠금을 푼 뒤 복원한다.
-  sync() {
+  private sync() {
     if (this.options.isOpen()) {
       this.portal.sync()
       this.scrollLock.set(true)
