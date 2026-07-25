@@ -22,7 +22,6 @@ export const checkboxStyles = css`
     --checkbox-border-radius: 4px;
     --checkbox-border-color: var(--border-color);
     --checkbox-background-color: var(--background-color);
-    --checkbox-border-color-checked: var(--interaction-selected-border-color);
     gap: var(--space-2);
   }
 
@@ -55,15 +54,18 @@ export const checkboxStyles = css`
     height: 2px;
     border-left: 1px solid;
     border-bottom: 1px solid;
-    border-color: var(--border-color);
+    border-color: var(--checkbox-border-color);
     position: absolute;
     left: 4px;
     top: 5px;
     transform: rotate(-50deg) scale(0);
   }
 
+  input[type='checkbox']:checked + label > span {
+    --checkbox-border-color: var(--interaction-selected-border-color);
+  }
+
   input[type='checkbox']:checked + label > span::after {
-    border-color: var(--checkbox-border-color-checked);
     transform: rotate(-50deg) scale(1);
   }
 

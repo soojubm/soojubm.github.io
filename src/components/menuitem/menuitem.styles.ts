@@ -2,7 +2,7 @@ import { css } from 'lit'
 
 export const menuItemStyles = css`
   :host {
-    --menuitem-background-color-hover: var(--interaction-hover-background-color);
+    --menuitem-background-color: transparent;
     --menuitem-padding-inline: var(--space-0);
   }
 
@@ -16,9 +16,10 @@ export const menuItemStyles = css`
     text-decoration: none;
     box-sizing: border-box;
     cursor: pointer;
+    background-color: var(--menuitem-background-color);
 
     &:hover {
-      background-color: var(--menuitem-background-color-hover);
+      --menuitem-background-color: var(--interaction-hover-background-color);
     }
 
     &:focus-visible {
