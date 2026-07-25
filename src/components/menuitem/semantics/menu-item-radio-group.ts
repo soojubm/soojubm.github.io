@@ -3,7 +3,7 @@ import { customElement, property, queryAssignedElements } from 'lit/decorators.j
 
 import { MenuItemRadio } from '@/components/menuitem/semantics/menu-item-radio'
 import '@/components/menuitem/semantics/menu-item-group'
-import { SelectionController } from '@/controllers/selection-controller'
+import { SingleSelectionController } from '@/controllers/single-selection-controller'
 import { emit } from '@/utils/emit'
 
 @customElement('mm-menu-item-radio-group')
@@ -21,13 +21,11 @@ export class MenuItemRadioGroup extends LitElement {
   @queryAssignedElements({ selector: 'mm-menu-item-radio', flatten: true })
   private radios!: MenuItemRadio[]
 
-  private selection = new SelectionController(this, {
-    getMode: () => 'single',
-    getValues: () => (this.value ? [this.value] : []),
-    setValues: values => {
-      this.value = values[0] ?? ''
+  private selection = new SingleSelectionController(this, {
+    getValue: () => this.value,
+    setValue: value => {
+      this.value = value
     },
-    getOptions: () => this.radios?.map(radio => ({ value: radio.value })) ?? [],
   })
 
   protected updated(changedProperties: Map<string, unknown>) {

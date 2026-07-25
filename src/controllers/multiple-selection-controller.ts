@@ -1,29 +1,26 @@
 import type { ReactiveController, ReactiveControllerHost } from 'lit'
 
 type Host = ReactiveControllerHost & HTMLElement
-export type SelectionMode = 'single' | 'multiple'
 export type SelectionOption = {
   value: string
   selectAll?: boolean
 }
 
-interface SelectionControllerOptions {
-  getMode: () => SelectionMode
+interface MultipleSelectionControllerOptions {
   getValues: () => string[]
   setValues: (values: string[]) => void
   getOptions: () => SelectionOption[]
 }
 
-export class SelectionController implements ReactiveController {
-  constructor(private host: Host, private options: SelectionControllerOptions) {
+export class MultipleSelectionController implements ReactiveController {
+  constructor(private host: Host, private options: MultipleSelectionControllerOptions) {
     host.addController(this)
   }
 
   hostConnected() {}
 
   select(option: SelectionOption) {
-    this.options.setValues(this.getNextValues(option))
-    this.host.requestUpdate()
+    this.setSelected(option, !this.isOptionSelected(option))
   }
 
   setSelected(option: SelectionOption, selected: boolean) {
@@ -32,7 +29,7 @@ export class SelectionController implements ReactiveController {
   }
 
   isSelected(value: string) {
-    return this.selectedValues.includes(value)
+    return this.options.getValues().includes(value)
   }
 
   isOptionSelected(option: SelectionOption) {
@@ -47,29 +44,13 @@ export class SelectionController implements ReactiveController {
     })
   }
 
-  get selectedValues() {
-    const values = this.options.getValues()
-    return this.isMultiple ? values : values.slice(0, 1)
-  }
-
-  private getNextValues(option: SelectionOption) {
-    return this.getValuesForState(option, !this.isOptionSelected(option))
-  }
-
   private getValuesForState(option: SelectionOption, selected: boolean) {
     if (option.selectAll) return selected ? this.optionValues : []
 
-    if (this.isMultiple) {
-      if (selected) return [...new Set([...this.selectedValues, option.value])]
+    const values = this.options.getValues()
+    if (selected) return [...new Set([...values, option.value])]
 
-      return this.selectedValues.filter(value => value !== option.value)
-    }
-
-    return selected ? [option.value] : []
-  }
-
-  private get isMultiple() {
-    return this.options.getMode() === 'multiple'
+    return values.filter(value => value !== option.value)
   }
 
   private get optionValues() {

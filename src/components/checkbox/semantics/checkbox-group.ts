@@ -4,7 +4,7 @@ import { customElement, property, queryAssignedElements } from 'lit/decorators.j
 import type { Checkbox } from '@/components/checkbox/checkbox'
 
 import { checkboxGroupStyles } from '@/components/checkbox/checkbox.styles'
-import { SelectionController } from '@/controllers/selection-controller'
+import { MultipleSelectionController } from '@/controllers/multiple-selection-controller'
 import { emit } from '@/utils/emit'
 
 type CheckboxChangeDetail = {
@@ -28,8 +28,7 @@ export class CheckboxGroup extends LitElement {
   @queryAssignedElements({ selector: 'mm-checkbox' })
   private checkboxes!: Checkbox[]
 
-  private selection = new SelectionController(this, {
-    getMode: () => 'multiple',
+  private selection = new MultipleSelectionController(this, {
     getValues: () => this.values,
     setValues: values => {
       this.values = values
@@ -42,7 +41,7 @@ export class CheckboxGroup extends LitElement {
 
   render() {
     return html`
-      <fieldset>
+      <fieldset @change=${this.onCheckboxChange}>
         ${this.renderLegend()}
         <slot @slotchange=${this.onSlotChange}></slot>
       </fieldset>
@@ -57,16 +56,6 @@ export class CheckboxGroup extends LitElement {
         <mm-text size="12" color="light">${this.legend}</mm-text>
       </legend>
     `
-  }
-
-  connectedCallback() {
-    super.connectedCallback()
-    this.addEventListener('change', this.onCheckboxChange)
-  }
-
-  disconnectedCallback() {
-    super.disconnectedCallback()
-    this.removeEventListener('change', this.onCheckboxChange)
   }
 
   updated(changed: Map<string, unknown>) {

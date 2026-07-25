@@ -6,8 +6,9 @@ import type { Orientation } from '@/controllers/roving-focus-controller'
 
 import { buttonBaseStyles, buttonSelectedStyles } from '@/components/button/button.styles'
 import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
+import { MultipleSelectionController } from '@/controllers/multiple-selection-controller'
 import { RovingFocusController } from '@/controllers/roving-focus-controller'
-import { SelectionController } from '@/controllers/selection-controller'
+import { SingleSelectionController } from '@/controllers/single-selection-controller'
 import { emit } from '@/utils/emit'
 import '@/components/icon/icon'
 
@@ -40,8 +41,15 @@ export class FilterButtonGroup extends LitElement {
   @property({ type: String, reflect: true }) role = 'group'
   @property({ type: String }) orientation: Orientation = 'horizontal'
 
-  private selection = new SelectionController(this, {
-    getMode: () => this.mode,
+  // single/multiple 모드가 런타임에 바뀔 수 있어 두 컨트롤러를 모두 들고 mode로 분기한다.
+  private singleSelection = new SingleSelectionController(this, {
+    getValue: () => this.values[0] ?? '',
+    setValue: value => {
+      this.values = value ? [value] : []
+    },
+  })
+
+  private multipleSelection = new MultipleSelectionController(this, {
     getValues: () => this.values,
     setValues: values => {
       this.values = values
@@ -53,7 +61,7 @@ export class FilterButtonGroup extends LitElement {
   private rovingFocus = new RovingFocusController(this, {
     getItems: () => Array.from(this.renderRoot.querySelectorAll('button')),
     orientation: () => this.orientation,
-    getActiveIndex: () => this.options.findIndex(option => this.selection.isOptionSelected(option)),
+    getActiveIndex: () => this.options.findIndex(option => this.isOptionSelected(option)),
   })
 
   render() {
@@ -62,8 +70,19 @@ export class FilterButtonGroup extends LitElement {
     `
   }
 
+  private isOptionSelected(option: FilterOption) {
+    return this.mode === 'multiple'
+      ? this.multipleSelection.isOptionSelected(option)
+      : this.singleSelection.isOptionSelected(option)
+  }
+
+  private select(option: FilterOption) {
+    if (this.mode === 'multiple') this.multipleSelection.select(option)
+    else this.singleSelection.select(option)
+  }
+
   private renderOption(option: FilterOption) {
-    const selected = this.selection.isOptionSelected(option)
+    const selected = this.isOptionSelected(option)
     const iconName = option.icon ?? (selected ? ICON_NAMES.CHECK : undefined)
 
     return html`
@@ -86,7 +105,7 @@ export class FilterButtonGroup extends LitElement {
   private updateValues(option: FilterOption) {
     if (option.disabled) return
 
-    this.selection.select(option)
+    this.select(option)
     emit(this, 'change', { values: this.values })
   }
 }
