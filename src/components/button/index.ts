@@ -9,7 +9,6 @@ import '@/components/button/semantics/file-uploader'
 import '@/components/button/semantics/read-more-button'
 import '@/components/button/semantics/show-more-button'
 import '@/components/button/semantics/clear-button'
-import '@/components/button/semantics/sort-picker'
 import '@/components/button/semantics/to-top-button'
 import '@/components/button/semantics/hashtag-link'
 

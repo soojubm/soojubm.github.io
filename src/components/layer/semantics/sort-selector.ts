@@ -12,8 +12,8 @@ const SORT_OPTIONS = [
   { label: '오래된순', value: 'oldest' },
 ] as const
 
-@customElement('mm-sort-picker')
-export class SortPicker extends LitElement {
+@customElement('mm-sort-selector')
+export class SortSelector extends LitElement {
   static styles = css`
     :host {
       display: inline-flex;
@@ -50,6 +50,6 @@ export class SortPicker extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'mm-sort-picker': SortPicker
+    'mm-sort-selector': SortSelector
   }
 }

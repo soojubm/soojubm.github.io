@@ -10,8 +10,8 @@ import { ICON_NAMES, type IconName } from '@/components/icon-button/semantics/ic
 import { PopupController } from '@/controllers/popup-controller'
 import { getPreferredTheme, saveTheme, THEMES, type Theme } from '@/utils/theme'
 
-@customElement('mm-theme-switcher')
-export class ThemeSwitcher extends LitElement {
+@customElement('mm-theme-selector')
+export class ThemeSelector extends LitElement {
   static styles = css`
     :host {
       display: inline-flex;
@@ -128,6 +128,6 @@ export class ThemeSwitcher extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'mm-theme-switcher': ThemeSwitcher
+    'mm-theme-selector': ThemeSelector
   }
 }
