@@ -8,11 +8,11 @@ import { renderLayout } from '../../../layouts/base-layouts'
 const columns: TableColumn[] = [
   { label: '', width: 'var(--col-checkbox)' },
   { label: 'Name', width: '80px', sortable: true },
-  { label: 'Title', width: '240px' },
-  { label: 'Link', width: '80px' },
+  { label: 'Title', width: '280px' },
+  { label: 'Link', width: '130px' },
   { label: 'Status', width: '80px' },
   { label: 'Age', width: '80px', textAlign: 'right' },
-  { label: '', width: '160px', textAlign: 'right' },
+  { label: '', width: '140px', textAlign: 'right' },
 ]
 
 const statusFilterOptions = [

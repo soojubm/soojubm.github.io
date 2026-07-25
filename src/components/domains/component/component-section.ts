@@ -31,26 +31,16 @@ class ComponentSection extends LitElement {
 
   @property({ type: String }) heading = ''
   @property({ type: String }) description = ''
-  @property({ type: String }) badge = ''
 
   render() {
     return html`
       <div class="component-section-heading">
         <mm-text size="24" weight="bold" as="h3">${this.heading}</mm-text>
-        ${this.renderBadge()}
       </div>
       ${this.renderDescription()}
       <div class="component-content-frame">
         <slot></slot>
       </div>
-    `
-  }
-
-  private renderBadge() {
-    if (!this.badge) return nothing
-
-    return html`
-      <mm-tag>${this.badge}</mm-tag>
     `
   }
 

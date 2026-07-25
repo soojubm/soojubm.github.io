@@ -67,11 +67,15 @@ export class Token extends LitElement {
 
   render() {
     return html`
-      <mm-meta-item
-        layout="stacked"
-        label=${this.formatName()}
-        value=${this.formatDefault()}
-      ></mm-meta-item>
+      <mm-flex align-items="center" gap="3">
+        <!-- category-tag -->
+        <mm-keyword-tag>Dimension</mm-keyword-tag>
+        <mm-meta-item
+          layout="stacked"
+          label=${this.formatName()}
+          value=${this.formatDefault()}
+        ></mm-meta-item>
+      </mm-flex>
     `
   }
 

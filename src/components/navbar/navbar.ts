@@ -49,7 +49,7 @@ export class Navbar extends LitElement {
         </mm-flex>
 
         <div class="navbar-user">
-          <mm-theme-switcher></mm-theme-switcher>
+          <mm-theme-selector></mm-theme-selector>
           <mm-icon-button
             icon=${ICON_NAMES.SEARCH}
             aria-label="검색"

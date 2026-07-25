@@ -17,9 +17,23 @@ export const menuItemStyles = css`
     box-sizing: border-box;
     cursor: pointer;
     background-color: var(--menuitem-background-color);
+    position: relative;
 
     &:hover {
       --menuitem-background-color: var(--interaction-hover-background-color);
+    }
+
+    &:hover::before {
+      content: '';
+      display: block;
+      background-color: var(--menuitem-background-color);
+      border-radius: var(--radius);
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: -0.5rem;
+      right: -0.5rem;
+      z-index: -1;
     }
 
     &:focus-visible {

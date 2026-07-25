@@ -157,7 +157,7 @@ export const layerDragHandleStyles = css`
   /* layer-header의 padding-block 안에 겹쳐, 아래로 끌어 닫는 제스처의 진입점 역할만 한다 */
   :host([placement='bottom']) .drag-handle {
     width: var(--size-48);
-    height: var(--layer-padding-block);
+    height: 4px;
     cursor: grab;
     touch-action: none;
 
@@ -176,8 +176,8 @@ export const layerDragHandleStyles = css`
     content: '';
     width: var(--size-32);
     height: var(--space-1);
-    border-radius: var(--radius-full);
-    background: var(--background-strong-color);
+    border-radius: var(--radius);
+    background: var(--background-subtle-color);
 
     position: absolute;
     top: 50%;

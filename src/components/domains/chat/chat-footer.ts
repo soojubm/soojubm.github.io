@@ -10,9 +10,9 @@ export class ChatFooter extends LitElement {
     resetStyles,
     css`
       :host {
-        position: absolute;
+        /* position: absolute;
         inset-inline: 0;
-        bottom: 0;
+        bottom: 0; */
         z-index: 1;
         display: flex;
         flex-direction: column;

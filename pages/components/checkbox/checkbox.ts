@@ -36,7 +36,7 @@ const main = html`
 
     <mm-component-tokens>
       <mm-token name="checkbox-size" default="var(--size-16)"></mm-token>
-      <mm-token name="checkbox-border-radius" default="4px"></mm-token>
+      <mm-token name="checkbox-border-radius" default="var(--radius)"></mm-token>
       <mm-token name="checkbox-background-color" default="var(--background-color)"></mm-token>
       <mm-token
         name="checkbox-border-color-checked"

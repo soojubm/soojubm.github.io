@@ -19,7 +19,7 @@ export const checkboxGroupStyles = css`
 export const checkboxStyles = css`
   :host {
     --checkbox-size: var(--size-16);
-    --checkbox-border-radius: 4px;
+    --checkbox-border-radius: var(--radius);
     --checkbox-border-color: var(--border-color);
     --checkbox-background-color: var(--background-color);
     gap: var(--space-2);
@@ -57,7 +57,7 @@ export const checkboxStyles = css`
     border-color: var(--checkbox-border-color);
     position: absolute;
     left: 4px;
-    top: 5px;
+    top: 7px;
     transform: rotate(-50deg) scale(0);
   }
 

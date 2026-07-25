@@ -4,14 +4,18 @@ export const toastStyles = css`
   :host {
     --toast-background-color: var(--background-strong-color);
     --toast-text-color: var(--foreground-color-on-solid);
-    --toast-border-radius: var(--radius);
+    --toast-border-radius: var(--radius-large);
     --toast-padding-block: var(--space-2);
     --toast-padding-inline: var(--space-4);
     --toast-offset: var(--space-4);
     --toast-transition-duration: 200ms;
 
     display: flex;
+    min-width: 25vw;
+    align-items: center;
+    min-height: var(--size-48);
     gap: var(--space-2);
+    padding: var(--toast-padding-block) var(--toast-padding-inline);
     border-radius: var(--toast-border-radius);
     background: var(--toast-background-color);
     color: var(--toast-text-color);

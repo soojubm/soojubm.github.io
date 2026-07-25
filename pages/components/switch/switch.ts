@@ -25,8 +25,8 @@ const main = html`
     </mm-component-props>
 
     <mm-component-tokens>
-      <mm-token name="switch-width" default="2rem"></mm-token>
-      <mm-token name="switch-height" default="16px"></mm-token>
+      <mm-token name="switch-width" default="size-32"></mm-token>
+      <mm-token name="switch-height" default="size-16"></mm-token>
       <mm-token name="switch-border-radius" default="var(--radius)"></mm-token>
       <mm-token name="switch-background-color" default="var(--border-color)"></mm-token>
       <mm-token

@@ -131,62 +131,70 @@ function layerPageTemplate() {
       ></mm-component-anatomy>
 
       <mm-component-guide>
-        <mm-paragraph-group>
-          <mm-paragraph>
-            시각적 형태(Layer, Dialog 등)가 아니라 배경과의 상호작용 허용 여부로 구분.
-          </mm-paragraph>
+        <!-- <mm-paragraph>
+            시각적 형태(Dialog, Sheet 등)가 아니라 행동 계약으로 Layer와 AnchoredLayer 둘로 나뉜다.
+            행동(modality·dismiss·reference)은 컨트롤러가 책임지는 별도 관심사고, elevation·
+            background·radius·width·placement 같은 외형은 컨트롤러와 무관하게 구현체가 조합한다.
+            실제 컴포넌트는 두 행동 계약 중 하나를 고르고, 여기에 외형과 자기 고유 로직(폼 상태,
+            액션 등)을 더해 완성된다.
+          </mm-paragraph> -->
 
-          <mm-heading level="2">Modal</mm-heading>
-          <mm-paragraph>
-            배경과의 상호작용을 차단하고 사용자의 즉각적인 응답을 요구한다. Backdrop(dim)이 뒤를
-            덮고, 포커스는 레이어 내부에 갇힌다(focus trap). 닫기는 명시적인 버튼 액션으로만
-            허용하는 것이 원칙이며, 배경 클릭으로 닫는 기능은 중요도가 낮은 작업에서만 예외적으로
-            허용한다.
-          </mm-paragraph>
-          <mm-text-list
-            texts=${JSON.stringify([
-              '배경 클릭 불가·스크롤 불가.',
-              '포커스 트랩 — Tab 키가 레이어 내부를 순환한다.',
-              'ESC 키 닫기는 데이터 손실 위험이 없는 경우에만 허용.',
-              'aria-modal="true", role="dialog" 명시.',
-              '용례: 삭제 확인, 중요 정보 입력, 오류 처리, 결제 흐름.',
-            ])}
-          ></mm-text-list>
+        <mm-grid columns="2" gap="8">
+          <mm-text-block level="2" heading="Level">
+            <mm-paragraph>
+              viewport를 reference로 삼아 화면 중앙·가장자리에 위치하며, 배경과의 상호작용을
+              차단하는 modal 행동 계약. Backdrop(dim)이 뒤를 덮고, 포커스는 레이어 내부에
+              갇힌다(focus trap). 닫기는 명시적인 버튼 액션으로만 허용하는 것이 원칙이며, 배경
+              클릭·ESC로 닫는 기능은 중요도가 낮은 작업에서만 예외적으로 허용한다.
+            </mm-paragraph>
+            <mm-text-list
+              texts=${JSON.stringify([
+                'reference — viewport.',
+                'modality — 배경 클릭 불가·스크롤 불가.',
+                'dismiss — 명시 버튼 우선, 배경 클릭·ESC는 예외적으로만 허용. 포커스 트랩, aria-modal="true".',
+                '구현: mm-layer, mm-dialog(mm-layer와 LayerController 배관 공유).',
+                '용례: 삭제 확인, 중요 정보 입력, 오류 처리, 결제 흐름, bottom sheet/drawer.',
+              ])}
+            ></mm-text-list>
+          </mm-text-block>
+          <mm-thumbnail ratio="1:1">12</mm-thumbnail>
+        </mm-grid>
 
-          <mm-heading>Non-modal</mm-heading>
-          <mm-paragraph>
-            배경과의 상호작용을 허용한다. 현재 작업 맥락을 유지하면서 부가 정보나 서브태스크를
-            제공할 때 사용한다. 포커스 트랩이 없고, 외부 클릭·ESC로 언제든 닫을 수 있다.
-          </mm-paragraph>
-          <mm-text-list
-            texts=${JSON.stringify([
-              '배경 클릭 불가·스크롤 가능.',
-              '포커스 트랩 없음 — Tab 키가 페이지 전체를 순환한다.',
-              '외부 클릭 또는 ESC로 닫힌다.',
-              '용례: Dropdown, Tooltip, Toast, 사이드 패널, Popover.',
-            ])}
-          ></mm-text-list>
+        <mm-heading level="2">AnchoredLayer</mm-heading>
+        <mm-paragraph>
+          트리거를 reference로 삼아 위치하며, 배경과의 상호작용을 허용하는 non-modal 행동 계약. 현재
+          작업 맥락을 유지하면서 부가 정보나 서브태스크를 제공할 때 사용한다. 포커스 트랩이 없고,
+          외부 클릭·ESC로 언제든 닫을 수 있다.
+        </mm-paragraph>
+        <mm-text-list
+          texts=${JSON.stringify([
+            'reference — 트리거.',
+            'modality — 배경 클릭 가능·스크롤 가능.',
+            'dismiss — 외부 클릭 또는 ESC. 포커스 트랩 없음.',
+            '구현: mm-popover. mm-select 등 popover 기반 컴포넌트가 이 계약을 재사용한다.',
+            '용례: Dropdown, Tooltip, 사이드 패널, Select.',
+          ])}
+        ></mm-text-list>
 
-          <mm-heading>레이어 프리미티브 분리</mm-heading>
-          <mm-text-list
-            texts=${JSON.stringify([
-              'mm-layer — viewport 기준 modal 레이어. placement로 bottom sheet(bottom), drawer(left/right), center 형태를 지정한다.',
-              'mm-dialog — viewport 기준 modal 레이어. mm-layer와 backdrop·portal·스크롤 잠금·ESC 닫기 배관(LayerController)을 공유하되, center 고정 크기의 자체 요소로 렌더한다.',
-              'mm-popover — anchor 기준 non-modal 레이어. 트리거는 slot="trigger"로 넣고, popover가 열림 상태·외부 클릭·ESC 닫기와 좌표를 소유한다. dropdown·메뉴를 커버한다.',
-            ])}
-          ></mm-text-list>
+        <mm-heading level="2">외형</mm-heading>
+        <mm-text-list
+          texts=${JSON.stringify([
+            'surface — elevation·background·radius.',
+            'width — 패널 너비.',
+            'placement — 패널 위치. 계약마다 값 집합이 다르다: mm-layer는 center/bottom/left/right, mm-popover는 top-left/top-right/bottom-left/bottom-right.',
+          ])}
+        ></mm-text-list>
 
-          <mm-table
-            id="layer-comparison-table"
-            style="margin-top: var(--space-4)"
-            caption="UI별 modal 여부와 위치 기준 비교"
-            columns='[
+        <mm-table
+          id="layer-comparison-table"
+          style="margin-top: var(--space-4)"
+          caption="UI별 modal 여부와 위치 기준 비교"
+          columns='[
               {"label": "UI"},
               {"label": "Modal"},
               {"label": "Anchor"}
             ]'
-          ></mm-table>
-        </mm-paragraph-group>
+        ></mm-table>
       </mm-component-guide>
 
       <mm-component-section
@@ -194,6 +202,7 @@ function layerPageTemplate() {
         description="타이틀과 선택적인 닫기 버튼을 제공합니다. 닫기 버튼은 layerclose 이벤트를 버블링합니다."
       >
         <mm-layer-header heading="Layer Title"></mm-layer-header>
+        <mm-text>내용</mm-text>
       </mm-component-section>
 
       <mm-component-section
@@ -207,11 +216,6 @@ function layerPageTemplate() {
           </mm-paragraph>
         </mm-layer-body>
       </mm-component-section>
-
-      <mm-component-section
-        heading="Backdrop"
-        description="레이어 뒤에 표시되는 반투명 Backdrop. onClose prop으로 배경 클릭 시."
-      ></mm-component-section>
 
       <mm-component-section
         heading="Toast"

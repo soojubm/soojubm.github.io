@@ -47,11 +47,6 @@ const main = html`
     </mm-component-tokens>
 
     <mm-component-guide>
-      <mm-paragraph>
-        레이어 프리미티브는 포지셔닝 모델과 모달리티로 나뉜다. mm-popover는 트리거에 앵커되는
-        non-modal 레이어로, backdrop·portal·스크롤 잠금이 없고 배경과의 상호작용을 허용한다.
-        viewport 기준 modal 레이어는 mm-layer·mm-dialog가 담당한다.
-      </mm-paragraph>
       <mm-text-list
         texts='[
         "열림 상태는 popover가 소유한다. 트리거는 항상 slot=trigger로 넣으며, popover가 스스로 positioned 앵커가 되어 별도 래퍼가 필요 없고, 클릭 토글·외부 클릭·ESC 닫기·aria-expanded 반영까지 자동으로 연결된다.",
@@ -64,7 +59,6 @@ const main = html`
 
     <mm-component-section
       heading="Select"
-      badge="pattern"
       description="popover를 프리미티브로 하는 선택 입력입니다. 트리거·옵션 파싱·선택 상태를 소유하고, 목록 표면은 popover에 맡깁니다."
     >
       <mm-select width="200px" value="stable">
@@ -78,14 +72,14 @@ const main = html`
     </mm-component-section>
 
     <mm-component-section
-      heading="ThemeSwitcher"
+      heading="ThemeSelector"
       description="현재 테마를 아이콘 버튼으로 표시하고, 드롭다운에서 테마를 전환합니다."
     >
-      <mm-theme-switcher></mm-theme-switcher>
+      <mm-theme-selector></mm-theme-selector>
     </mm-component-section>
 
     <mm-component-section
-      heading="SortButton"
+      heading="SortSelector"
       description="목록의 재정렬Sort을 위한 옵션 목록을 group으로 제공하지 마세요. 현재 정렬 상태만 요약 표기하고
     확장가능한 메뉴로 정렬 목록을 제공하세요. (bad case: 2022.04 구글 지도 바뀐 것)"
     >

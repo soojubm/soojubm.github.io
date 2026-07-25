@@ -11,12 +11,6 @@ export const resetStyles = css`
     color: inherit;
   }
 
-  *,
-  *::before,
-  *::after {
-    box-sizing: inherit;
-  }
-
   body,
   dl,
   dd,

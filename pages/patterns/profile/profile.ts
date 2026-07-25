@@ -59,7 +59,7 @@ const main = html`
         <menu role="menubar">
           <mm-flex justify-content="space-between" gap="2">
             <mm-view-mode-switcher></mm-view-mode-switcher>
-            <mm-sort-picker></mm-sort-picker>
+            <mm-sort-selector></mm-sort-selector>
           </mm-flex>
         </menu>
 
@@ -489,7 +489,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   setupPortfolioModal()
   document.querySelector('mm-view-mode-switcher')?.addEventListener('change', handleViewMode)
-  document.querySelector('mm-sort-picker')?.addEventListener('change', handleSort)
+  document.querySelector('mm-sort-selector')?.addEventListener('change', handleSort)
 })
 
 /** mm-portfolio-item의 portfolio-item-open 이벤트를 mm-layer 컴포넌트 open()에 연결한다. */
