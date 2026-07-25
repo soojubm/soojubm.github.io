@@ -1,21 +1,25 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import '@/components/sheet'
-import '@/components/sheet/semantics/sheet-body'
-import '@/components/sheet/semantics/sheet-footer'
+import '@/components/layer/semantics/layer-body'
+import '@/components/layer/semantics/layer-footer'
 import '@/components/status-message'
 import type { ActionConfig } from '@/components/action-config'
 
+import { layerStyles } from '@/components/layer/layer.styles'
+import { LayerController } from '@/controllers/layer-controller'
 import { emit } from '@/utils/emit'
 
 @customElement('mm-dialog')
 export class Dialog extends LitElement {
-  static styles = css`
-    :host {
-      display: block;
-    }
-  `
+  static styles = [
+    layerStyles,
+    css`
+      :host {
+        --layer-max-width: 320px;
+      }
+    `,
+  ]
 
   @property({ type: Boolean, reflect: true }) open = false
   @property({ type: String }) heading = ''
@@ -23,40 +27,47 @@ export class Dialog extends LitElement {
   @property({ attribute: false }) primaryAction?: ActionConfig
   @property({ attribute: false }) secondaryAction?: ActionConfig
 
+  private layer = new LayerController(this, {
+    isOpen: () => this.open,
+    onDismiss: () => this.handleDismiss(),
+    portalRoot: () => document.getElementById('layer-page-root') ?? document.body,
+  })
+
   render() {
     return html`
-      <mm-sheet
-        variant="center"
-        width="small"
-        ?open=${this.open}
-        @sheetclose=${this.handleSheetClose}
-      >
-        <mm-sheet-body>
+      <div class="layer" ?open=${this.open}>
+        <mm-layer-body>
           <mm-status-message
             heading=${this.heading}
             message=${this.description}
           ></mm-status-message>
           <slot></slot>
-        </mm-sheet-body>
+        </mm-layer-body>
 
-        <mm-sheet-footer
+        <mm-layer-footer
           .primaryAction=${this.primaryAction}
           .secondaryAction=${this.secondaryAction}
-        ></mm-sheet-footer>
-      </mm-sheet>
+        ></mm-layer-footer>
+      </div>
     `
+  }
+
+  protected updated(changedProperties: Map<string, unknown>) {
+    if (changedProperties.has('open')) this.layer.sync()
   }
 
   show() {
     this.open = true
+    this.layer.sync()
   }
 
   close() {
     this.open = false
+    this.layer.sync()
   }
 
-  private handleSheetClose() {
-    this.open = false
+  private handleDismiss() {
+    this.close()
     emit(this, 'dialog-close')
   }
 }

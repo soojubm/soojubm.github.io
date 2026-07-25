@@ -1,12 +1,12 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import { sheetHeaderStyles } from '@/components/sheet/sheet.styles'
+import { layerHeaderStyles } from '@/components/layer/layer.styles'
 import { emit } from '@/utils/emit'
 
-@customElement('mm-sheet-header')
-class SheetHeader extends LitElement {
-  static styles = sheetHeaderStyles
+@customElement('mm-layer-header')
+class LayerHeader extends LitElement {
+  static styles = layerHeaderStyles
 
   @property({ type: String }) heading = ''
 
@@ -20,8 +20,8 @@ class SheetHeader extends LitElement {
   }
 
   private handleClose = () => {
-    emit(this, 'sheetclose')
+    emit(this, 'layerclose')
   }
 }
 
-export default SheetHeader
+export default LayerHeader

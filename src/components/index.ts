@@ -25,7 +25,7 @@ import '@/components/feature'
 import '@/components/status-message'
 import '@/components/meta-item'
 import '@/components/backdrop'
-import '@/components/sheet'
+import '@/components/layer'
 import '@/components/toast'
 import '@/components/dialog'
 

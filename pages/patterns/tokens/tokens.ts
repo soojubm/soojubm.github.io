@@ -401,7 +401,6 @@ const main = html`
         <mm-grid columns="4" style="margin-top: var(--space-3)">
           ${renderColorTokens(backgroundColorTokens)}
         </mm-grid>
-
       </mm-flex>
 
       <mm-flex direction="column" gap="3">
@@ -501,7 +500,9 @@ const main = html`
           description="테두리는 표면의 경계와 클릭 가능성을 표현합니다. 모서리 곡률은 요소의 성격과 위계를 시각적으로 구분합니다."
         ></mm-text-block>
         <mm-token-stage>
-          <mm-flex align-items="flex-end" gap="4">${renderBorderStage(borderStageSwatches)}</mm-flex>
+          <mm-flex align-items="flex-end" gap="4">
+            ${renderBorderStage(borderStageSwatches)}
+          </mm-flex>
         </mm-token-stage>
         <mm-token-group>${renderTokenItems(borderTokenItems)}</mm-token-group>
       </mm-flex>
@@ -569,7 +570,7 @@ const main = html`
           "base — mm-separator의 구분선, 배경 위에 놓는 텍스트처럼 형제 요소 위에 그리기 위한 로컬 컨텍스트",
           "raised — 목록·그룹 안에서 형제보다 살짝 뜨는 요소. 예: mm-hamburger-button",
           "overlay — 드롭다운·팝오버·툴팁류. 예: mm-tooltip, mm-popover(mm-select 등 드롭다운의 기반)",
-          "modal — 화면을 덮는 대화형 표면. 예: mm-backdrop, mm-sheet, 긴급 배너",
+          "modal — 화면을 덮는 대화형 표면. 예: mm-backdrop, mm-layer, mm-dialog, 긴급 배너",
           "chrome — 화면에 고정된 내비게이션·툴바. 예: mm-navbar(및 사이드 메뉴), mm-top-bar(sticky 상태), mm-fixed-bottom(mm-bottom-bar가 이 안에 놓여 함께 뜬다)",
           "toast — 알림, 스낵바처럼 항상 다른 모든 레이어 위에 있어야 하는 요소. 예: mm-toast, 건너뛰기(skip) 링크"
         ]'

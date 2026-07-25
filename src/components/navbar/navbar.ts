@@ -99,17 +99,17 @@ export class Navbar extends LitElement {
       </nav>
       <div class="navbar-backdrop"></div>
 
-      <mm-sheet
+      <mm-layer
         class="js-search-sheet"
-        variant="center"
+        placement="center"
         width="medium"
-        style="--sheet-backdrop-blur: 2px"
+        style="--layer-backdrop-blur: 2px"
         ?open=${this.searchMenu.open}
-        @sheetclose=${() => this.searchMenu.close()}
+        @layerclose=${() => this.searchMenu.close()}
         @pointerdown=${(e: Event) => e.stopPropagation()}
       >
         <mm-top-bar type="back"></mm-top-bar>
-        <mm-sheet-body>
+        <mm-layer-body>
           <form role="search">
             <mm-flex direction="column" gap="2">
               <mm-searchfield
@@ -120,8 +120,8 @@ export class Navbar extends LitElement {
               ${this.query ? this.renderResults() : this.renderDefault()}
             </mm-flex>
           </form>
-        </mm-sheet-body>
-      </mm-sheet>
+        </mm-layer-body>
+      </mm-layer>
 
       <mm-sidebar id="site-sidebar" ?open=${!this.sidebarCollapsed}></mm-sidebar>
 

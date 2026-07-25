@@ -276,14 +276,13 @@ const main = html`
             <mm-meta-item layout="inline" label="문의전화" value="02-000-2000"></mm-meta-item>
           </mm-meta-item-group>
         </section>
-
       </mm-flex>
     </section>
   </main>
 
-  <mm-sheet id="cart-sheet" variant="right" width="medium" style="--sheet-backdrop-blur: 2px">
-    <mm-sheet-header heading="장바구니"></mm-sheet-header>
-    <mm-sheet-body>
+  <mm-layer id="cart-sheet" placement="right" width="medium" style="--layer-backdrop-blur: 2px">
+    <mm-layer-header heading="장바구니"></mm-layer-header>
+    <mm-layer-body>
       <mm-flex direction="column" gap="4">
         <mm-list-item
           size="80"
@@ -317,8 +316,8 @@ const main = html`
         <mm-paragraph>미국 내 $40 이상 주문은 무료로 배송됩니다.</mm-paragraph>
         <mm-button variant="primary" size="large" full-width>결제하기</mm-button>
       </mm-flex>
-    </mm-sheet-body>
-  </mm-sheet>
+    </mm-layer-body>
+  </mm-layer>
 `
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -326,7 +325,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setupCartSheet()
 })
 
-type SheetElement = HTMLElement & {
+type LayerElement = HTMLElement & {
   open(): void
 }
 
@@ -336,7 +335,7 @@ type ValueElement = HTMLElement & {
 
 function setupCartSheet() {
   const triggers = document.querySelectorAll<HTMLElement>('[data-open-cart]')
-  const sheet = document.querySelector<SheetElement>('#cart-sheet')
+  const sheet = document.querySelector<LayerElement>('#cart-sheet')
   const productQuantity = document.querySelector<ValueElement>('.product-info mm-number-input')
   const cartQuantity = document.querySelector<ValueElement>('#cart-quantity')
   const cartTotal = document.querySelector<ValueElement>('#cart-total')

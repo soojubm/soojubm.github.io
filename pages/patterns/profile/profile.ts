@@ -1,5 +1,5 @@
 import { html } from 'lit'
-import type Sheet from '@/components/sheet/sheet'
+import type Layer from '@/components/layer/layer'
 
 import { renderLayout } from '../../../layouts/base-layouts'
 
@@ -231,9 +231,9 @@ const main = html`
     }
   </style>
 
-  <mm-sheet id="sheet-newneek" variant="center" width="large" height="90vh">
-    <mm-sheet-header heading="뉴닉"></mm-sheet-header>
-    <mm-sheet-body class="newneek-sheet-body">
+  <mm-layer id="sheet-newneek" placement="center" width="large" height="90vh">
+    <mm-layer-header heading="뉴닉"></mm-layer-header>
+    <mm-layer-body class="newneek-sheet-body">
       <div class="zigzag-border">Zigzag border</div>
       <div style="max-width: 800px; margin: 4rem auto">
         <div class="home-mangrove">
@@ -341,12 +341,12 @@ const main = html`
       <div style="max-width: 800px; margin: 4rem 0">
         <img src="/src/images/newneek-book.png" alt="" />
       </div>
-    </mm-sheet-body>
-  </mm-sheet>
+    </mm-layer-body>
+  </mm-layer>
 
-  <mm-sheet id="sheet-etc-works" variant="center" width="large" height="90vh">
-    <mm-sheet-header heading="스터디움 프로모션 웹사이트"></mm-sheet-header>
-    <mm-sheet-body>
+  <mm-layer id="sheet-etc-works" placement="center" width="large" height="90vh">
+    <mm-layer-header heading="스터디움 프로모션 웹사이트"></mm-layer-header>
+    <mm-layer-body>
       <figure>
         <img src="/src/images/work-studium.jpg" alt="" style="width: 100%" />
       </figure>
@@ -360,22 +360,22 @@ const main = html`
         <img src="/src/images/arko-main.jpg" alt="" />
         <img src="/src/images/arko-sub.jpg" alt="" />
       </figure>
-    </mm-sheet-body>
-  </mm-sheet>
+    </mm-layer-body>
+  </mm-layer>
 
-  <mm-sheet id="sheet-lettering" variant="center" width="large" height="90vh">
-    <mm-sheet-header heading="레터링"></mm-sheet-header>
-    <mm-sheet-body>
+  <mm-layer id="sheet-lettering" placement="center" width="large" height="90vh">
+    <mm-layer-header heading="레터링"></mm-layer-header>
+    <mm-layer-body>
       <figure>
         <img src="/src/images/budha.png" alt="" />
         <img src="/src/images/lettering.png" alt="" />
       </figure>
-    </mm-sheet-body>
-  </mm-sheet>
+    </mm-layer-body>
+  </mm-layer>
 
-  <mm-sheet id="sheet-flat_sitemap" variant="center" width="large" height="90vh">
-    <mm-sheet-header heading='"Flat" Site Architecture'></mm-sheet-header>
-    <mm-sheet-body>
+  <mm-layer id="sheet-flat_sitemap" placement="center" width="large" height="90vh">
+    <mm-layer-header heading='"Flat" Site Architecture'></mm-layer-header>
+    <mm-layer-body>
       <div>
         <header>
           <mm-heading level="3">사이트맵을 만들고 유지하는 이유는 무엇일까요?</mm-heading>
@@ -471,13 +471,13 @@ const main = html`
           </div>
         </section>
       </div>
-    </mm-sheet-body>
-  </mm-sheet>
+    </mm-layer-body>
+  </mm-layer>
 
-  <mm-sheet id="sheet-woolf" variant="center" width="large" height="90vh">
-    <mm-sheet-header heading="울프"></mm-sheet-header>
-    <mm-sheet-body></mm-sheet-body>
-  </mm-sheet>
+  <mm-layer id="sheet-woolf" placement="center" width="large" height="90vh">
+    <mm-layer-header heading="울프"></mm-layer-header>
+    <mm-layer-body></mm-layer-body>
+  </mm-layer>
 `
 
 type PortfolioItemOpenEvent = CustomEvent<{ modal: string }>
@@ -492,11 +492,11 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelector('mm-sort-picker')?.addEventListener('change', handleSort)
 })
 
-/** mm-portfolio-item의 portfolio-item-open 이벤트를 mm-sheet 컴포넌트 open()에 연결한다. */
+/** mm-portfolio-item의 portfolio-item-open 이벤트를 mm-layer 컴포넌트 open()에 연결한다. */
 function setupPortfolioModal() {
   document.addEventListener('portfolio-item-open', event => {
     const { modal } = (event as PortfolioItemOpenEvent).detail
-    const sheet = document.querySelector<Sheet>(`#sheet-${modal}`)
+    const sheet = document.querySelector<Layer>(`#sheet-${modal}`)
     sheet?.open()
   })
 }

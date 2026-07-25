@@ -130,7 +130,7 @@
   --control-padding: var(--space-1) var(--space-2);
   --control-border-radius: var(--radius-large);
 
-  /* 잠정 상태: sheet·popover만 surface-high를 쓰고 그 외 뜨는 표면은 모두 surface-base를 쓴다.
+  /* 잠정 상태: layer·popover만 surface-high를 쓰고 그 외 뜨는 표면은 모두 surface-base를 쓴다.
      추후 high·base 같은 레벨 티어가 아니라 --material-zindex-*와 맞춘 역할(overlay/modal/chrome 등)
      기준으로 재설계할 예정이라, 그때까지의 임시 배치다. */
 
@@ -144,7 +144,7 @@
   --surface-base-opacity: 0.35; */
   /* --surface-base-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); */
 
-  /* ===== surface-high (sheet, popover) ===== */
+  /* ===== surface-high (layer, popover) ===== */
   --surface-high-background-color: var(--gray0);
   --surface-high-border: var(--border);
   --surface-high-backdrop-filter: none;

@@ -61,7 +61,7 @@ const main = html`
     </mm-component-guide>
     <mm-component-related>
       <mm-button-group>
-        <mm-hashtag-link href="sheet.html">Sheet</mm-hashtag-link>
+        <mm-hashtag-link href="layer.html">Layer</mm-hashtag-link>
         <mm-hashtag-link href="popover.html">Popover</mm-hashtag-link>
         <mm-hashtag-link href="notice.html">Notice</mm-hashtag-link>
       </mm-button-group>

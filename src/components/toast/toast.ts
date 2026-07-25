@@ -8,7 +8,7 @@ const DURATION = 3000
 
 /**
  * 화면 하단 중앙에 잠깐 떠올랐다 스스로 사라지는 transient non-modal 레이어.
- * mm-sheet처럼 열림 상태(open/close)를 스스로 소유하되, backdrop·portal·스크롤 잠금 없이
+ * mm-layer처럼 열림 상태(open/close)를 스스로 소유하되, backdrop·portal·스크롤 잠금 없이
  * 배경 상호작용을 막지 않고, 표시 시간이 지나면 스스로 닫힙니다.
  */
 @customElement('mm-toast')

@@ -50,7 +50,7 @@ const main = html`
       <mm-paragraph>
         레이어 프리미티브는 포지셔닝 모델과 모달리티로 나뉜다. mm-popover는 트리거에 앵커되는
         non-modal 레이어로, backdrop·portal·스크롤 잠금이 없고 배경과의 상호작용을 허용한다.
-        viewport 기준 modal 레이어는 mm-sheet가 담당한다.
+        viewport 기준 modal 레이어는 mm-layer·mm-dialog가 담당한다.
       </mm-paragraph>
       <mm-text-list
         texts='[
@@ -99,7 +99,7 @@ const main = html`
     </mm-component-section>
     <mm-component-related>
       <mm-button-group>
-        <mm-hashtag-link href="sheet.html">Sheet</mm-hashtag-link>
+        <mm-hashtag-link href="layer.html">Layer</mm-hashtag-link>
         <mm-hashtag-link href="tooltip.html">Tooltip</mm-hashtag-link>
         <mm-hashtag-link href="menuitem.html">menuItem</mm-hashtag-link>
       </mm-button-group>

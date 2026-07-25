@@ -74,7 +74,7 @@ export const SITEMAP: SitemapNode[] = [
       { id: 'surface', name: 'Surface' },
       { id: 'separator', name: 'Separator' },
       { id: 'list-item', name: 'List Item' },
-      { id: 'sheet', name: 'Sheet', badge: 'pattern' },
+      { id: 'layer', name: 'Layer', badge: 'pattern' },
       { id: 'popover', name: 'Popover', badge: 'pattern' },
       { id: 'table', name: 'Table' },
     ],

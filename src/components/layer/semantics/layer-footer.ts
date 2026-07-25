@@ -3,12 +3,12 @@ import { customElement, property } from 'lit/decorators.js'
 
 import type { ActionConfig } from '@/components/action-config'
 
-import { sheetFooterStyles } from '@/components/sheet/sheet.styles'
+import { layerFooterStyles } from '@/components/layer/layer.styles'
 import { emit } from '@/utils/emit'
 
-@customElement('mm-sheet-footer')
-class SheetFooter extends LitElement {
-  static styles = sheetFooterStyles
+@customElement('mm-layer-footer')
+class LayerFooter extends LitElement {
+  static styles = layerFooterStyles
 
   @property({ attribute: false }) primaryAction?: ActionConfig
   @property({ attribute: false }) secondaryAction?: ActionConfig
@@ -64,4 +64,4 @@ class SheetFooter extends LitElement {
   }
 }
 
-export default SheetFooter
+export default LayerFooter
