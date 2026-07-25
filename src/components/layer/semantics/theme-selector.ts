@@ -4,10 +4,13 @@ import { ifDefined } from 'lit/directives/if-defined.js'
 
 import '@/components/icon-button/icon-button'
 import '@/components/menuitem/semantics/menu-item-action'
+import '@/components/menuitem/semantics/menu-item-group'
+import '@/components/popover/popover'
 import '@/components/radius-picker/radius-picker'
 import '@/components/separator/separator'
+import type Popover from '@/components/popover/popover'
+
 import { ICON_NAMES, type IconName } from '@/components/icon-button/semantics/icon-names'
-import { PopupController } from '@/controllers/popup-controller'
 import { getPreferredTheme, saveTheme, THEMES, type Theme } from '@/utils/theme'
 
 @customElement('mm-theme-selector')
@@ -15,45 +18,10 @@ export class ThemeSelector extends LitElement {
   static styles = css`
     :host {
       display: inline-flex;
-      position: relative;
     }
 
-    [role='menu'] {
-      display: flex;
-      flex-direction: column;
-
-      padding: var(--space-1);
-      border: var(--surface-high-border);
-      border-radius: var(--radius);
-      background: var(--surface-high-background-color);
-      backdrop-filter: var(--surface-high-backdrop-filter);
-      box-shadow: var(--surface-high-shadow);
-      -webkit-backdrop-filter: var(--surface-high-backdrop-filter);
-
-      position: absolute;
-      top: calc(100% + var(--space-1));
-      right: 0;
-      z-index: calc(var(--material-zindex-chrome) + 1);
-
-      overflow-y: auto;
-      box-sizing: border-box;
-
-      opacity: 0;
-      transform: translateY(var(--space-1-minus)) scale(0.98);
-      transform-origin: top right;
-      visibility: hidden;
-      pointer-events: none;
-      transition: opacity 120ms ease, transform 180ms cubic-bezier(0.2, 0.8, 0.2, 1),
-        visibility 0s linear 180ms;
-    }
-
-    [role='menu'][open] {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-      visibility: visible;
-      pointer-events: auto;
-      transition: opacity 120ms ease, transform 220ms cubic-bezier(0.18, 1.25, 0.4, 1),
-        visibility 0s;
+    mm-popover {
+      --popover-padding: var(--space-1);
     }
 
     mm-menu-item-action[aria-current='true'] {
@@ -63,29 +31,21 @@ export class ThemeSelector extends LitElement {
 
   @property({ type: String }) value: Theme = 'light'
 
-  @query('.js-theme-trigger') private trigger?: HTMLElement
-
-  private popup = new PopupController(this, {
-    event: 'click',
-    getTrigger: () => this.trigger,
-  })
+  @query('mm-popover') private popoverEl?: Popover
 
   render() {
     return html`
-      <mm-icon-button
-        class="js-theme-trigger"
-        variant="ghost"
-        icon=${this.currentIcon}
-        aria-label="테마 변경"
-        aria-haspopup="menu"
-        aria-expanded=${this.popup.open ? 'true' : 'false'}
-        @click=${this.toggleOpen}
-      ></mm-icon-button>
-      <div ?open=${this.popup.open} role="menu" aria-hidden=${this.popup.open ? 'false' : 'true'}>
-        ${this.renderThemeOptions()}
+      <mm-popover role="menu" placement="bottom-right">
+        <mm-icon-button
+          slot="trigger"
+          variant="ghost"
+          icon=${this.currentIcon}
+          aria-label="테마 변경"
+        ></mm-icon-button>
+        <mm-menu-item-group>${this.renderThemeOptions()}</mm-menu-item-group>
         <mm-separator scope="element"></mm-separator>
         <mm-radius-picker></mm-radius-picker>
-      </div>
+      </mm-popover>
     `
   }
 
@@ -98,7 +58,7 @@ export class ThemeSelector extends LitElement {
       <mm-menu-item-action
         icon=${theme.icon}
         aria-current=${ifDefined(theme.value === this.value ? 'true' : undefined)}
-        @click=${(event: Event) => this.handleThemeChange(theme.value, event)}
+        @click=${() => this.handleThemeChange(theme.value)}
       >
         ${theme.label}
       </mm-menu-item-action>
@@ -114,15 +74,10 @@ export class ThemeSelector extends LitElement {
     return THEMES.find(theme => theme.value === this.value)?.icon ?? ICON_NAMES.LIGHT_MODE
   }
 
-  private toggleOpen() {
-    this.popup.toggle()
-  }
-
   // 선택 시 테마를 저장하고 현재 값을 동기화
-  private handleThemeChange(theme: Theme, event: Event) {
-    event.stopPropagation()
+  private handleThemeChange(theme: Theme) {
     this.value = saveTheme(theme)
-    this.popup.close()
+    this.popoverEl?.close()
   }
 }
 
