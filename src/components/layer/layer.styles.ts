@@ -16,9 +16,6 @@ export const layerStyles = css`
     --layer-padding-inline: var(--space-4);
     --layer-padding-block: var(--space-3);
     --layer-max-width: var(--layout-width-narrow);
-    --layer-header-height: calc(var(--size-32) + var(--layer-padding-block) * 2);
-    /* header가 없는 레이어(mm-dialog)의 기본값. header를 겹쳐 띄우는 레이어가 재정의한다 */
-    --layer-body-padding-top: var(--space-4);
 
     display: flex;
     width: 100vw;
@@ -88,8 +85,6 @@ export const layerPlacementStyles = css`
     --layer-viewport-max-height: 100vh;
     /* height prop이 인라인 스타일로 재정의한다 */
     --layer-height: auto;
-    /* header를 body 위로 겹쳐 띄우므로 body가 그만큼 위쪽 여백으로 비켜준다 */
-    --layer-body-padding-top: calc(var(--layer-header-height) + var(--space-4));
   }
 
   .layer {
@@ -193,11 +188,6 @@ export const layerDragHandleStyles = css`
 `
 
 export const layerHeaderStyles = css`
-  :host {
-    z-index: 1;
-    margin-bottom: calc(-1 * var(--layer-header-height));
-  }
-
   header {
     display: flex;
     align-items: center;
@@ -205,15 +195,10 @@ export const layerHeaderStyles = css`
     width: 100%;
     padding: var(--layer-padding-block) 0;
     box-sizing: border-box;
+    position: relative;
   }
-
-  /* 재질을 별도 레이어로 분리해 아래로 갈수록 사라지게 마스킹한다.
-     호스트에 직접 마스크를 걸면 제목·닫기 버튼까지 함께 페이드된다.
-     경계선도 이 레이어에 두어, 페이드가 있는 테마에서는 재질과 함께 사라지고
-     페이드가 없는 테마에서는 그대로 남아 콘텐츠와의 경계를 유지한다. */
   header::before {
     content: '';
-    border-bottom: var(--surface-high-border);
     background: var(--surface-high-background-color);
     backdrop-filter: var(--surface-high-backdrop-filter);
     position: absolute;
@@ -229,13 +214,8 @@ export const layerBodyStyles = css`
     min-height: 0;
   }
 
-  /* 패딩은 스크롤 영역 안쪽에 둔다. host에 두면 위쪽 여백이 스크롤 밖에 고정되어
-     콘텐츠가 header 뒤로 지나가지 못한다. */
   mm-scroll {
-    flex: 1 1 auto;
     width: 100%;
-    min-height: 0;
-    padding: var(--layer-body-padding-top) 0 var(--space-4);
   }
 `
 
