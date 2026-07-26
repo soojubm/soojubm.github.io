@@ -6,7 +6,7 @@ import { repeat } from 'lit/directives/repeat.js'
 import '@/components/tag/tag'
 import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
 import { DisclosureController } from '@/controllers/disclosure-controller'
-import { SITEMAP } from '@/sitemap'
+import { SITEMAP, type SitemapNode } from '@/sitemap'
 import { MEDIA_QUERY } from '@/stylesheets/shared/breakpoints'
 
 @customElement('mm-sidebar')
@@ -30,70 +30,69 @@ export class Sidebar extends LitElement {
 
   render() {
     return html`
-      <nav class="sidebar-menu">
+      <nav class="sidebar-menu">${repeat(SITEMAP, node => node.id, this.renderNode)}</nav>
+    `
+  }
+
+  private renderNode = (node: SitemapNode) => {
+    if (node.type === 'standalone') return this.renderStandalone(node)
+    if (node.type === 'group') return this.renderGroup(node)
+
+    return nothing
+  }
+
+  private renderStandalone(node: Extract<SitemapNode, { type: 'standalone' }>) {
+    if (node.hidden) return nothing
+
+    return html`
+      <mm-menu-item-action
+        label=${node.title}
+        icon=${node.icon}
+        aria-current=${ifDefined(this.isCurrentPage(node.id) ? 'page' : undefined)}
+        @click=${() => this.handleStandaloneClick(node.id)}
+      >
+        ${node.badge
+          ? html`
+              <mm-tag slot="trailing">${node.badge}</mm-tag>
+            `
+          : nothing}
+      </mm-menu-item-action>
+    `
+  }
+
+  private renderGroup(node: Extract<SitemapNode, { type: 'group' }>) {
+    const isOpen = this.openGroupIds.has(node.id)
+
+    return html`
+      <mm-list-item
+        id="${node.id}-btn"
+        label=${node.title}
+        icon=${node.icon}
+        trailing-icon=${ICON_NAMES.EXPAND}
+        aria-haspopup="menu"
+        aria-controls="${node.id}-menu"
+        aria-expanded=${isOpen ? 'true' : 'false'}
+        @click=${() => this.handleGroupToggle(node.id)}
+      ></mm-list-item>
+
+      <menu id="${node.id}-menu" aria-labelledby="${node.id}-btn">
         ${repeat(
-          SITEMAP,
-          node => node.id,
-          node => {
-            if (node.type === 'standalone') {
-              if (node.hidden) return nothing
-
-              return html`
-                <mm-menu-item-action
-                  label=${node.title}
-                  icon=${node.icon}
-                  aria-current=${ifDefined(this.isCurrentPage(node.id) ? 'page' : undefined)}
-                  @click=${() => this.handleStandaloneClick(node.id)}
-                >
-                  ${node.badge
-                    ? html`
-                        <mm-tag slot="trailing">${node.badge}</mm-tag>
-                      `
-                    : nothing}
-                </mm-menu-item-action>
-              `
-            }
-
-            if (node.type === 'group') {
-              const isOpen = this.openGroupIds.has(node.id)
-
-              return html`
-                <mm-list-item
-                  id="${node.id}-btn"
-                  label=${node.title}
-                  icon=${node.icon}
-                  trailing-icon=${ICON_NAMES.EXPAND}
-                  aria-haspopup="menu"
-                  aria-controls="${node.id}-menu"
-                  aria-expanded=${isOpen ? 'true' : 'false'}
-                  @click=${() => this.handleGroupToggle(node.id)}
-                ></mm-list-item>
-
-                <menu id="${node.id}-menu" aria-labelledby="${node.id}-btn">
-                  ${repeat(
-                    node.items.filter(item => !('hidden' in item && item.hidden)),
-                    item => item.id,
-                    item => html`
-                      <mm-menu-item-link
-                        emoji="#"
-                        href="${item.id}.html"
-                        label="${item.name}"
-                        badge=${ifDefined(item.badge || undefined)}
-                        target="_self"
-                        hidden-trailing
-                        aria-current=${ifDefined(this.isCurrentPage(item.id) ? 'page' : undefined)}
-                        @click=${this.handleMenuItemClick}
-                      ></mm-menu-item-link>
-                    `,
-                  )}
-                </menu>
-              `
-            }
-
-            return nothing
-          },
+          node.items.filter(item => !('hidden' in item && item.hidden)),
+          item => item.id,
+          item => html`
+            <mm-menu-item-link
+              emoji="#"
+              href="${item.id}.html"
+              label="${item.name}"
+              badge=${ifDefined(item.badge || undefined)}
+              target="_self"
+              hidden-trailing
+              aria-current=${ifDefined(this.isCurrentPage(item.id) ? 'page' : undefined)}
+              @click=${this.handleMenuItemClick}
+            ></mm-menu-item-link>
+          `,
         )}
-      </nav>
+      </menu>
     `
   }
 
@@ -134,10 +133,6 @@ export class Sidebar extends LitElement {
     this.isOpen = false
   }
 
-  toggle() {
-    this.disclosure.toggle()
-  }
-
   private handleMobileChange = (e: MediaQueryListEvent) => {
     if (e.matches) this.close()
   }
@@ -148,7 +143,11 @@ export class Sidebar extends LitElement {
   }
 
   private handleStandaloneClick(pageId: string) {
-    this.handleMenuItemClick()
+    this.saveScrollPosition()
+    this.navigate(pageId)
+  }
+
+  private navigate(pageId: string) {
     window.location.href = `${pageId}.html`
   }
 
@@ -162,6 +161,10 @@ export class Sidebar extends LitElement {
   }
 
   private handleMenuItemClick() {
+    this.saveScrollPosition()
+  }
+
+  private saveScrollPosition() {
     localStorage.setItem('sidebarScroll', String(this.scrollTop))
   }
 
