@@ -20,13 +20,10 @@ interface LayerControllerOptions {
  */
 export class LayerController implements ReactiveController {
   private scrollLock: ScrollLockController
-  private portal: PortalController
 
   constructor(private host: Host, private options: LayerControllerOptions) {
     this.scrollLock = new ScrollLockController(host)
-    this.portal = new PortalController(host, {
-      isActive: () => this.options.isOpen(),
-    })
+    new PortalController(host)
 
     host.addController(this)
     // 리스너 대상이 host 자신이라 portal 이동에도 유지되므로 생성자에서 한 번만 등록한다.
@@ -42,21 +39,7 @@ export class LayerController implements ReactiveController {
   }
 
   hostUpdated() {
-    this.sync()
-  }
-
-  // portal과 스크롤 잠금을 함께 동기화한다.
-  // host를 portal로 옮기면 lifecycle이 재실행되며 스크롤 잠금이 풀리므로,
-  // 열 때는 portal 이후에 잠그고 닫을 때는 잠금을 푼 뒤 복원한다.
-  private sync() {
-    if (this.options.isOpen()) {
-      this.portal.sync()
-      this.scrollLock.set(true)
-      return
-    }
-
-    this.scrollLock.set(false)
-    this.portal.sync()
+    this.scrollLock.set(this.options.isOpen())
   }
 
   private handleBackdropClick = (e: MouseEvent) => {
