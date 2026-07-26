@@ -18,16 +18,28 @@ const main = html`
     </mm-component-example>
 
     <mm-component-props>
-      <mm-prop name="value" type="string" optional></mm-prop>
-      <mm-prop name="name" type="string" optional></mm-prop>
-      <mm-prop name="placeholder" type="string" optional></mm-prop>
-      <mm-prop name="label" type="string" optional></mm-prop>
-      <mm-prop name="helper" type="string" optional></mm-prop>
-      <mm-prop name="optional" type="boolean" optional></mm-prop>
-      <mm-prop name="disabled" type="boolean" optional></mm-prop>
-      <mm-prop name="aria-invalid" type="'true' | 'false'" optional></mm-prop>
-      <mm-prop name="aria-describedby" type="string" optional></mm-prop>
-      <mm-prop name="input" type="CustomEvent detail: value" kind="event"></mm-prop>
+      <mm-component-prop-item name="value" type="string" optional></mm-component-prop-item>
+      <mm-component-prop-item name="name" type="string" optional></mm-component-prop-item>
+      <mm-component-prop-item name="placeholder" type="string" optional></mm-component-prop-item>
+      <mm-component-prop-item name="label" type="string" optional></mm-component-prop-item>
+      <mm-component-prop-item name="helper" type="string" optional></mm-component-prop-item>
+      <mm-component-prop-item name="optional" type="boolean" optional></mm-component-prop-item>
+      <mm-component-prop-item name="disabled" type="boolean" optional></mm-component-prop-item>
+      <mm-component-prop-item
+        name="aria-invalid"
+        type="'true' | 'false'"
+        optional
+      ></mm-component-prop-item>
+      <mm-component-prop-item
+        name="aria-describedby"
+        type="string"
+        optional
+      ></mm-component-prop-item>
+      <mm-component-prop-item
+        name="input"
+        type="CustomEvent detail: value"
+        kind="event"
+      ></mm-component-prop-item>
     </mm-component-props>
 
     <mm-component-tokens>

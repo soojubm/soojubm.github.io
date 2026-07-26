@@ -62,14 +62,27 @@ const main = html`
       </mm-flex>
     </mm-component-example>
     <mm-component-props>
-      <mm-prop
+      <mm-component-prop-item
         name="as"
         type="'span' | 'p' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' = 'span'"
-      ></mm-prop>
-      <mm-prop name="size" type="'32' | '24' | '18' | '14' | '12' = '14'"></mm-prop>
-      <mm-prop name="weight" type="'medium' | 'bold' = 'medium'"></mm-prop>
-      <mm-prop name="color" type="'inherit' | 'light' | 'danger' = 'inherit'"></mm-prop>
-      <mm-prop name="maxLength" type="'1' | '2' | '3'" optional></mm-prop>
+      ></mm-component-prop-item>
+      <mm-component-prop-item
+        name="size"
+        type="'32' | '24' | '18' | '14' | '12' = '14'"
+      ></mm-component-prop-item>
+      <mm-component-prop-item
+        name="weight"
+        type="'medium' | 'bold' = 'medium'"
+      ></mm-component-prop-item>
+      <mm-component-prop-item
+        name="color"
+        type="'inherit' | 'light' | 'danger' = 'inherit'"
+      ></mm-component-prop-item>
+      <mm-component-prop-item
+        name="maxLength"
+        type="'1' | '2' | '3'"
+        optional
+      ></mm-component-prop-item>
     </mm-component-props>
 
     <mm-component-guide>

@@ -35,19 +35,35 @@ const main = html`
     </mm-component-example>
 
     <mm-component-props>
-      <mm-prop name="mm-accordion" type="group container" optional></mm-prop>
-      <mm-prop name="exclusive" type="boolean = false"></mm-prop>
-      <mm-prop name="mm-accordion-item" type="individual item" optional></mm-prop>
-      <mm-prop name="summary" type="string"></mm-prop>
-      <mm-prop name="open" type="boolean = false"></mm-prop>
-      <mm-prop name="disabled" type="boolean = false"></mm-prop>
-      <mm-prop name="slot: summary" type="HTMLElement (trigger)" optional></mm-prop>
-      <mm-prop name="slot: default" type="HTMLElement (panel content)" optional></mm-prop>
-      <mm-prop
+      <mm-component-prop-item
+        name="mm-accordion"
+        type="group container"
+        optional
+      ></mm-component-prop-item>
+      <mm-component-prop-item name="exclusive" type="boolean = false"></mm-component-prop-item>
+      <mm-component-prop-item
+        name="mm-accordion-item"
+        type="individual item"
+        optional
+      ></mm-component-prop-item>
+      <mm-component-prop-item name="summary" type="string"></mm-component-prop-item>
+      <mm-component-prop-item name="open" type="boolean = false"></mm-component-prop-item>
+      <mm-component-prop-item name="disabled" type="boolean = false"></mm-component-prop-item>
+      <mm-component-prop-item
+        name="slot: summary"
+        type="HTMLElement (trigger)"
+        optional
+      ></mm-component-prop-item>
+      <mm-component-prop-item
+        name="slot: default"
+        type="HTMLElement (panel content)"
+        optional
+      ></mm-component-prop-item>
+      <mm-component-prop-item
         name="event: accordion-toggle"
         type="CustomEvent { open: boolean }"
         optional
-      ></mm-prop>
+      ></mm-component-prop-item>
     </mm-component-props>
 
     <mm-component-tokens>

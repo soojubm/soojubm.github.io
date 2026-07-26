@@ -38,14 +38,34 @@ const main = html`
     </mm-component-example>
 
     <mm-component-props>
-      <mm-prop name="avatar-icon" type="IconName" optional></mm-prop>
-      <mm-prop name="heading" type="string"></mm-prop>
-      <mm-prop name="description" type="string" optional></mm-prop>
-      <mm-prop name="primaryAction" type="ActionConfig" optional></mm-prop>
-      <mm-prop name="secondaryAction" type="ActionConfig" optional></mm-prop>
-      <mm-prop name="slot: avatar" type="HTMLElement" optional></mm-prop>
-      <mm-prop name="slot: default" type="HTMLElement" optional></mm-prop>
-      <mm-prop name="slot: action" type="HTMLButtonElement" optional></mm-prop>
+      <mm-component-prop-item name="avatar-icon" type="IconName" optional></mm-component-prop-item>
+      <mm-component-prop-item name="heading" type="string"></mm-component-prop-item>
+      <mm-component-prop-item name="description" type="string" optional></mm-component-prop-item>
+      <mm-component-prop-item
+        name="primaryAction"
+        type="ActionConfig"
+        optional
+      ></mm-component-prop-item>
+      <mm-component-prop-item
+        name="secondaryAction"
+        type="ActionConfig"
+        optional
+      ></mm-component-prop-item>
+      <mm-component-prop-item
+        name="slot: avatar"
+        type="HTMLElement"
+        optional
+      ></mm-component-prop-item>
+      <mm-component-prop-item
+        name="slot: default"
+        type="HTMLElement"
+        optional
+      ></mm-component-prop-item>
+      <mm-component-prop-item
+        name="slot: action"
+        type="HTMLButtonElement"
+        optional
+      ></mm-component-prop-item>
     </mm-component-props>
 
     <mm-component-guide>

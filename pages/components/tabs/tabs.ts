@@ -37,11 +37,18 @@ const main = html`
     </mm-component-example>
 
     <mm-component-props>
-      <mm-prop name="tab-list value" type="string"></mm-prop>
-      <mm-prop name="tab-list variant" type="'line' | 'pill' = 'line'"></mm-prop>
-      <mm-prop name="tab value" type="string"></mm-prop>
-      <mm-prop name="panel value" type="string"></mm-prop>
-      <mm-prop name="tab-select" type="CustomEvent value" kind="event"></mm-prop>
+      <mm-component-prop-item name="tab-list value" type="string"></mm-component-prop-item>
+      <mm-component-prop-item
+        name="tab-list variant"
+        type="'line' | 'pill' = 'line'"
+      ></mm-component-prop-item>
+      <mm-component-prop-item name="tab value" type="string"></mm-component-prop-item>
+      <mm-component-prop-item name="panel value" type="string"></mm-component-prop-item>
+      <mm-component-prop-item
+        name="tab-select"
+        type="CustomEvent value"
+        kind="event"
+      ></mm-component-prop-item>
     </mm-component-props>
 
     <mm-component-tokens>

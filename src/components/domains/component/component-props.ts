@@ -1,19 +1,22 @@
-import { LitElement, html, nothing } from 'lit'
+import { LitElement, html } from 'lit'
 import { state } from 'lit/decorators/state.js'
 import { customElement, property } from 'lit/decorators.js'
 import { classMap } from 'lit/directives/class-map.js'
 
 import '@/components/button/semantics/read-more-button'
-import { componentPropsStyles, propStyles } from '@/components/domains/component/component-props.styles'
+import {
+  componentPropItemStyles,
+  componentPropsStyles,
+} from '@/components/domains/component/component-props.styles'
 import { uniqueId } from '@/utils/unique-id'
 
 /**
- * 1. 자식 컴포넌트: <mm-prop>
- * 개별 dt와 dd 태그 및 스타일을 완전히 책임집니다.
+ * 1. 자식 컴포넌트: <mm-component-prop-item>
+ * mm-meta-item으로 name/type을 표시합니다.
  */
-@customElement('mm-prop')
-export class Prop extends LitElement {
-  static styles = propStyles
+@customElement('mm-component-prop-item')
+export class ComponentPropItem extends LitElement {
+  static styles = componentPropItemStyles
 
   @property({ type: String }) name = ''
   @property({ type: String }) type = ''
@@ -21,23 +24,18 @@ export class Prop extends LitElement {
 
   render() {
     return html`
-      <dt>${this.name}${this.renderOptionalMarker()}</dt>
-      <dd>${this.type}</dd>
+      <mm-meta-item layout="stacked" label=${this.formatLabel()} value=${this.type}></mm-meta-item>
     `
   }
 
-  private renderOptionalMarker() {
-    if (!this.optional) return nothing
-
-    return html`
-      <attr>?</attr>
-    `
+  private formatLabel() {
+    return `${this.name}${this.optional ? '?' : ''}`
   }
 }
 
 /**
  * 2. 부모 컴포넌트: <mm-component-props>
- * 전체 레이아웃 외곽 틀과 <dl> 그리드 구조만 책임집니다.
+ * 전체 레이아웃 외곽 틀만 책임집니다.
  */
 @customElement('mm-component-props')
 export class ComponentProps extends LitElement {
@@ -58,9 +56,9 @@ export class ComponentProps extends LitElement {
         @click=${this.handleClick}
       >
         <div hidden><mm-text as="h2">Props</mm-text></div>
-        <dl id=${this.propsId}>
+        <div id=${this.propsId}>
           <slot></slot>
-        </dl>
+        </div>
         <div class="component-props-more" aria-hidden=${this.isOpened ? 'true' : 'false'}>
           <mm-read-more-button
             more-label="...펼쳐서 더보기"

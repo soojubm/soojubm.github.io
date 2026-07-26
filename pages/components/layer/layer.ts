@@ -108,20 +108,32 @@ function layerPageTemplate() {
       </mm-component-example>
 
       <mm-component-props>
-        <mm-prop name="open" type="boolean"></mm-prop>
-        <mm-prop
+        <mm-component-prop-item name="open" type="boolean"></mm-component-prop-item>
+        <mm-component-prop-item
           name="placement"
           type="'center' | 'bottom' | 'left' | 'right' = 'center'"
-        ></mm-prop>
-        <mm-prop
+        ></mm-component-prop-item>
+        <mm-component-prop-item
           name="width"
           type="'small' | 'medium' | 'large' | 'full' = 'medium'"
           optional
-        ></mm-prop>
-        <mm-prop name="height" type="string" optional></mm-prop>
-        <mm-prop name="primaryAction" type="ActionConfig" optional></mm-prop>
-        <mm-prop name="secondaryAction" type="ActionConfig" optional></mm-prop>
-        <mm-prop name="layerclose" type="CustomEvent" kind="event"></mm-prop>
+        ></mm-component-prop-item>
+        <mm-component-prop-item name="height" type="string" optional></mm-component-prop-item>
+        <mm-component-prop-item
+          name="primaryAction"
+          type="ActionConfig"
+          optional
+        ></mm-component-prop-item>
+        <mm-component-prop-item
+          name="secondaryAction"
+          type="ActionConfig"
+          optional
+        ></mm-component-prop-item>
+        <mm-component-prop-item
+          name="layerclose"
+          type="CustomEvent"
+          kind="event"
+        ></mm-component-prop-item>
       </mm-component-props>
 
       <!-- <mm-component-anatomy

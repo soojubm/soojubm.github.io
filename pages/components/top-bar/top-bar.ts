@@ -30,9 +30,17 @@ const main = html`
     </mm-component-example>
 
     <mm-component-props>
-      <mm-prop name="heading" type="string"></mm-prop>
-      <mm-prop name="nav" type="'back' | 'close' | '' = 'back'" optional></mm-prop>
-      <mm-prop name="slot='action'" type="HTMLElement" optional></mm-prop>
+      <mm-component-prop-item name="heading" type="string"></mm-component-prop-item>
+      <mm-component-prop-item
+        name="nav"
+        type="'back' | 'close' | '' = 'back'"
+        optional
+      ></mm-component-prop-item>
+      <mm-component-prop-item
+        name="slot='action'"
+        type="HTMLElement"
+        optional
+      ></mm-component-prop-item>
     </mm-component-props>
 
     <mm-component-tokens>

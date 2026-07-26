@@ -41,8 +41,15 @@ const main = html`
     </mm-component-example>
 
     <mm-component-props>
-      <mm-prop name="scope" type="'element' | 'section' = 'section'"></mm-prop>
-      <mm-prop name="slot: text" type="HTMLElement" optional></mm-prop>
+      <mm-component-prop-item
+        name="scope"
+        type="'element' | 'section' = 'section'"
+      ></mm-component-prop-item>
+      <mm-component-prop-item
+        name="slot: text"
+        type="HTMLElement"
+        optional
+      ></mm-component-prop-item>
     </mm-component-props>
 
     <mm-component-tokens>

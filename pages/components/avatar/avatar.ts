@@ -48,11 +48,17 @@ const main = html`
     </mm-component-example>
 
     <mm-component-props>
-      <mm-prop name="variant" type="${AVATAR_VARIANT_TYPE_UNION} = 'primary'"></mm-prop>
-      <mm-prop name="size" type="'80' | '48' | '40' | '32' = '40'"></mm-prop>
-      <mm-prop name="shape" type=${AVATAR_SHAPE_TYPE_LABEL}></mm-prop>
-      <mm-prop name="src" type="string" optional></mm-prop>
-      <mm-prop name="icon" type="IconName" optional></mm-prop>
+      <mm-component-prop-item
+        name="variant"
+        type="${AVATAR_VARIANT_TYPE_UNION} = 'primary'"
+      ></mm-component-prop-item>
+      <mm-component-prop-item
+        name="size"
+        type="'80' | '48' | '40' | '32' = '40'"
+      ></mm-component-prop-item>
+      <mm-component-prop-item name="shape" type=${AVATAR_SHAPE_TYPE_LABEL}></mm-component-prop-item>
+      <mm-component-prop-item name="src" type="string" optional></mm-component-prop-item>
+      <mm-component-prop-item name="icon" type="IconName" optional></mm-component-prop-item>
     </mm-component-props>
 
     <mm-component-tokens>

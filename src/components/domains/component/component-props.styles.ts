@@ -3,27 +3,13 @@ import { css } from 'lit'
 import { componentContentFrameStyles } from '@/components/domains/component/component.styles'
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
 
-export const propStyles = [
+export const componentPropItemStyles = [
   resetStyles,
   css`
     :host {
       display: block;
     }
-    dt {
-      display: flex;
-      color: var(--foreground-subtle-color);
-      line-height: 20px;
-    }
-    dt attr {
-      font-size: var(--font-size-12);
-    }
-
-    dd {
-      font-style: normal;
-      font-weight: var(--font-weight-normal);
-      font-size: var(--font-size-14);
-    }
-    :host(:not(:first-child)) dt {
+    :host(:not(:first-child)) {
       margin-top: var(--space-3);
     }
   `,

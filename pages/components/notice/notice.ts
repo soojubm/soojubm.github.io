@@ -32,10 +32,14 @@ const main = html`
     </mm-component-example>
 
     <mm-component-props>
-      <mm-prop name="heading" type="string" optional></mm-prop>
-      <mm-prop name="description" type="string" optional></mm-prop>
-      <mm-prop name="variant" type='"success" | "warning" | "danger"' optional></mm-prop>
-      <mm-prop name="dismissible" type="boolean" optional></mm-prop>
+      <mm-component-prop-item name="heading" type="string" optional></mm-component-prop-item>
+      <mm-component-prop-item name="description" type="string" optional></mm-component-prop-item>
+      <mm-component-prop-item
+        name="variant"
+        type='"success" | "warning" | "danger"'
+        optional
+      ></mm-component-prop-item>
+      <mm-component-prop-item name="dismissible" type="boolean" optional></mm-component-prop-item>
     </mm-component-props>
 
     <mm-component-tokens>

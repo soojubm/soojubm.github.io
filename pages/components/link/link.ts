@@ -41,12 +41,12 @@ const main = html`
     </mm-component-example>
 
     <mm-component-props>
-      <mm-prop name="href" type="string"></mm-prop>
-      <mm-prop name="target" type="string" optional></mm-prop>
-      <mm-prop name="external" type="boolean" optional></mm-prop>
-      <mm-prop name="message" type="string" optional></mm-prop>
-      <mm-prop name="link-label" type="string" optional></mm-prop>
-      <mm-prop name="icon" type="IconName" optional></mm-prop>
+      <mm-component-prop-item name="href" type="string"></mm-component-prop-item>
+      <mm-component-prop-item name="target" type="string" optional></mm-component-prop-item>
+      <mm-component-prop-item name="external" type="boolean" optional></mm-component-prop-item>
+      <mm-component-prop-item name="message" type="string" optional></mm-component-prop-item>
+      <mm-component-prop-item name="link-label" type="string" optional></mm-component-prop-item>
+      <mm-component-prop-item name="icon" type="IconName" optional></mm-component-prop-item>
     </mm-component-props>
 
     <mm-component-tokens>

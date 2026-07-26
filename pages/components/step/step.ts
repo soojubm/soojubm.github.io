@@ -102,11 +102,11 @@ const main = html`
     </mm-component-example>
 
     <mm-component-props>
-      <mm-prop name="aria-current" type="'step'"></mm-prop>
-      <mm-prop name="data-align" type="'vertical'"></mm-prop>
-      <mm-prop name="is-active" type="class"></mm-prop>
-      <mm-prop name="label" type="slot"></mm-prop>
-      <mm-prop name="description" type="slot" optional></mm-prop>
+      <mm-component-prop-item name="aria-current" type="'step'"></mm-component-prop-item>
+      <mm-component-prop-item name="data-align" type="'vertical'"></mm-component-prop-item>
+      <mm-component-prop-item name="is-active" type="class"></mm-component-prop-item>
+      <mm-component-prop-item name="label" type="slot"></mm-component-prop-item>
+      <mm-component-prop-item name="description" type="slot" optional></mm-component-prop-item>
     </mm-component-props>
 
     <mm-component-guide>

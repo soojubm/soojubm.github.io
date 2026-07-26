@@ -21,8 +21,11 @@ const main = html`
     </mm-component-example>
 
     <mm-component-props>
-      <mm-prop name="size" type="'small' | 'medium' | 'large' = 'medium'"></mm-prop>
-      <mm-prop name="label" type="string = '로딩 중'"></mm-prop>
+      <mm-component-prop-item
+        name="size"
+        type="'small' | 'medium' | 'large' = 'medium'"
+      ></mm-component-prop-item>
+      <mm-component-prop-item name="label" type="string = '로딩 중'"></mm-component-prop-item>
     </mm-component-props>
 
     <mm-component-guide>

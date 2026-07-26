@@ -58,19 +58,34 @@ const main = html`
     </mm-component-example>
 
     <mm-component-props>
-      <mm-prop name="size" type=${LIST_ITEM_SIZE_TYPE_LABEL}></mm-prop>
-      <mm-prop name="label" type="string" optional></mm-prop>
-      <mm-prop name="description" type="string" optional></mm-prop>
-      <mm-prop name="icon" type="IconName" optional></mm-prop>
-      <mm-prop name="avatar-src" type="string" optional></mm-prop>
-      <mm-prop
+      <mm-component-prop-item
+        name="size"
+        type=${LIST_ITEM_SIZE_TYPE_LABEL}
+      ></mm-component-prop-item>
+      <mm-component-prop-item name="label" type="string" optional></mm-component-prop-item>
+      <mm-component-prop-item name="description" type="string" optional></mm-component-prop-item>
+      <mm-component-prop-item name="icon" type="IconName" optional></mm-component-prop-item>
+      <mm-component-prop-item name="avatar-src" type="string" optional></mm-component-prop-item>
+      <mm-component-prop-item
         name="avatar-variant"
         type="${AVATAR_VARIANT_TYPE_UNION} = 'tertiary'"
         optional
-      ></mm-prop>
-      <mm-prop name="avatar-shape" type=${AVATAR_SHAPE_TYPE_LABEL} optional></mm-prop>
-      <mm-prop name="slot: default" type="HTMLElement" optional></mm-prop>
-      <mm-prop name="slot: trailing" type="HTMLElement" optional></mm-prop>
+      ></mm-component-prop-item>
+      <mm-component-prop-item
+        name="avatar-shape"
+        type=${AVATAR_SHAPE_TYPE_LABEL}
+        optional
+      ></mm-component-prop-item>
+      <mm-component-prop-item
+        name="slot: default"
+        type="HTMLElement"
+        optional
+      ></mm-component-prop-item>
+      <mm-component-prop-item
+        name="slot: trailing"
+        type="HTMLElement"
+        optional
+      ></mm-component-prop-item>
     </mm-component-props>
 
     <mm-component-anatomy

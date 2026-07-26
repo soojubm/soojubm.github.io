@@ -64,11 +64,15 @@ const main = html`
     </mm-component-example>
 
     <mm-component-props>
-      <mm-prop name="selected" type="boolean = false"></mm-prop>
-      <mm-prop name="value" type="string"></mm-prop>
-      <mm-prop name="icon" type="IconName" optional></mm-prop>
-      <mm-prop name="disabled" type="boolean = false"></mm-prop>
-      <mm-prop name="change" type="CustomEvent detail: selected, value" kind="event"></mm-prop>
+      <mm-component-prop-item name="selected" type="boolean = false"></mm-component-prop-item>
+      <mm-component-prop-item name="value" type="string"></mm-component-prop-item>
+      <mm-component-prop-item name="icon" type="IconName" optional></mm-component-prop-item>
+      <mm-component-prop-item name="disabled" type="boolean = false"></mm-component-prop-item>
+      <mm-component-prop-item
+        name="change"
+        type="CustomEvent detail: selected, value"
+        kind="event"
+      ></mm-component-prop-item>
     </mm-component-props>
 
     <mm-component-tokens>

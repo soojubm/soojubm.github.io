@@ -134,12 +134,12 @@ const main = html`
     </mm-component-example>
 
     <mm-component-props>
-      <mm-prop name="caption" type="string"></mm-prop>
-      <mm-prop name="rows" type="TemplateResult" optional></mm-prop>
-      <mm-prop
+      <mm-component-prop-item name="caption" type="string"></mm-component-prop-item>
+      <mm-component-prop-item name="rows" type="TemplateResult" optional></mm-component-prop-item>
+      <mm-component-prop-item
         name="columns"
         type="{ label: string; width?: string; sortable?: boolean; textAlign?: 'left' | 'center' | 'right' }[] = []"
-      ></mm-prop>
+      ></mm-component-prop-item>
     </mm-component-props>
 
     <mm-component-tokens>

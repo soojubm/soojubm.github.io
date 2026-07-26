@@ -65,13 +65,17 @@ const main = html`
     </mm-component-example>
 
     <mm-component-props>
-      <mm-prop
+      <mm-component-prop-item
         name="variant"
         type="'ghost' | 'outlined' | 'plain' | 'filled' | 'elevated'"
         optional
-      ></mm-prop>
-      <mm-prop name="radius" type="'default' | 'large'" optional></mm-prop>
-      <mm-prop name="height" type="string" optional></mm-prop>
+      ></mm-component-prop-item>
+      <mm-component-prop-item
+        name="radius"
+        type="'default' | 'large'"
+        optional
+      ></mm-component-prop-item>
+      <mm-component-prop-item name="height" type="string" optional></mm-component-prop-item>
     </mm-component-props>
 
     <mm-component-tokens>

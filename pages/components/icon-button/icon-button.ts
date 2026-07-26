@@ -66,20 +66,31 @@ const main = html`
       </mm-button-group>
     </mm-component-example>
     <mm-component-props>
-      <mm-prop name="icon" type="IconName"></mm-prop>
-      <mm-prop
+      <mm-component-prop-item name="icon" type="IconName"></mm-component-prop-item>
+      <mm-component-prop-item
         name="variant"
         type="'primary' | 'secondary' | 'tertiary' | 'ghost' | 'destructive' = 'tertiary'"
-      ></mm-prop>
-      <mm-prop name="size" type="'small' | 'medium' = 'medium'"></mm-prop>
-      <mm-prop name="tooltip" type="string" optional></mm-prop>
-      <mm-prop name="tooltip-placement" type="'left' | 'center' | 'right'" optional></mm-prop>
-      <mm-prop name="aria-label" type="string" optional></mm-prop>
-      <mm-prop name="role" type="string" optional></mm-prop>
-      <mm-prop name="aria-controls" type="string" optional></mm-prop>
-      <mm-prop name="aria-expanded" type="'true' | 'false'" optional></mm-prop>
-      <mm-prop name="aria-haspopup" type="string" optional></mm-prop>
-      <mm-prop name="disabled" type="boolean" optional></mm-prop>
+      ></mm-component-prop-item>
+      <mm-component-prop-item
+        name="size"
+        type="'small' | 'medium' = 'medium'"
+      ></mm-component-prop-item>
+      <mm-component-prop-item name="tooltip" type="string" optional></mm-component-prop-item>
+      <mm-component-prop-item
+        name="tooltip-placement"
+        type="'left' | 'center' | 'right'"
+        optional
+      ></mm-component-prop-item>
+      <mm-component-prop-item name="aria-label" type="string" optional></mm-component-prop-item>
+      <mm-component-prop-item name="role" type="string" optional></mm-component-prop-item>
+      <mm-component-prop-item name="aria-controls" type="string" optional></mm-component-prop-item>
+      <mm-component-prop-item
+        name="aria-expanded"
+        type="'true' | 'false'"
+        optional
+      ></mm-component-prop-item>
+      <mm-component-prop-item name="aria-haspopup" type="string" optional></mm-component-prop-item>
+      <mm-component-prop-item name="disabled" type="boolean" optional></mm-component-prop-item>
     </mm-component-props>
 
     <mm-component-tokens>

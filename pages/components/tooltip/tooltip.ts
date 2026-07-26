@@ -73,9 +73,9 @@ const main = html`
     </style>
 
     <mm-component-props>
-      <mm-prop name="content" type="string"></mm-prop>
-      <mm-prop name="placement" type="string" optional></mm-prop>
-      <mm-prop name="slot: trigger" type="HTMLElement"></mm-prop>
+      <mm-component-prop-item name="content" type="string"></mm-component-prop-item>
+      <mm-component-prop-item name="placement" type="string" optional></mm-component-prop-item>
+      <mm-component-prop-item name="slot: trigger" type="HTMLElement"></mm-component-prop-item>
     </mm-component-props>
 
     <mm-component-tokens>

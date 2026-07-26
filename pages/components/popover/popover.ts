@@ -18,14 +18,18 @@ const main = html`
     </mm-component-example>
 
     <mm-component-props>
-      <mm-prop name="open" type="boolean"></mm-prop>
-      <mm-prop
+      <mm-component-prop-item name="open" type="boolean"></mm-component-prop-item>
+      <mm-component-prop-item
         name="placement"
         type="'bottom-left' | 'bottom-right' | 'top-left' | 'top-right' = 'bottom-left'"
-      ></mm-prop>
-      <mm-prop name="width" type="string"></mm-prop>
-      <mm-prop name="padding" type="string"></mm-prop>
-      <mm-prop name="popoverclose" type="CustomEvent" kind="event"></mm-prop>
+      ></mm-component-prop-item>
+      <mm-component-prop-item name="width" type="string"></mm-component-prop-item>
+      <mm-component-prop-item name="padding" type="string"></mm-component-prop-item>
+      <mm-component-prop-item
+        name="popoverclose"
+        type="CustomEvent"
+        kind="event"
+      ></mm-component-prop-item>
     </mm-component-props>
 
     <mm-component-tokens>

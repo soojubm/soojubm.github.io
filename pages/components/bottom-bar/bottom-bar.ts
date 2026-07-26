@@ -20,8 +20,12 @@ const main = html`
     </mm-component-example>
 
     <mm-component-props>
-      <mm-prop name="items" type="JSON string" optional></mm-prop>
-      <mm-prop name="label" type="string = '하단 내비게이션'" optional></mm-prop>
+      <mm-component-prop-item name="items" type="JSON string" optional></mm-component-prop-item>
+      <mm-component-prop-item
+        name="label"
+        type="string = '하단 내비게이션'"
+        optional
+      ></mm-component-prop-item>
     </mm-component-props>
 
     <mm-component-tokens>

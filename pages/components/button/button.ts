@@ -32,21 +32,40 @@ const main = html`
     </mm-component-example>
 
     <mm-component-props>
-      <mm-prop
+      <mm-component-prop-item
         name="variant"
         type="'primary' | 'secondary' | 'tertiary' | 'ghost' | 'destructive' = 'tertiary'"
-      ></mm-prop>
-      <mm-prop name="size" type="'medium' | 'large' = 'medium'"></mm-prop>
-      <mm-prop name="full-width" type="boolean" optional></mm-prop>
-      <mm-prop name="disabled" type="boolean" optional></mm-prop>
-      <mm-prop name="icon" type="IconName" optional></mm-prop>
-      <mm-prop name="icon-position" type="'leading' | 'trailing' = 'leading'" optional></mm-prop>
-      <mm-prop name="aria-label" type="string" optional></mm-prop>
-      <mm-prop name="role" type="string" optional></mm-prop>
-      <mm-prop name="aria-expanded" type="'true' | 'false'" optional></mm-prop>
-      <mm-prop name="aria-haspopup" type="string" optional></mm-prop>
-      <mm-prop name="aria-current" type="'true' | 'page' | 'step' | 'location'" optional></mm-prop>
-      <mm-prop name="@click" type="(e: MouseEvent) => void" kind="event"></mm-prop>
+      ></mm-component-prop-item>
+      <mm-component-prop-item
+        name="size"
+        type="'medium' | 'large' = 'medium'"
+      ></mm-component-prop-item>
+      <mm-component-prop-item name="full-width" type="boolean" optional></mm-component-prop-item>
+      <mm-component-prop-item name="disabled" type="boolean" optional></mm-component-prop-item>
+      <mm-component-prop-item name="icon" type="IconName" optional></mm-component-prop-item>
+      <mm-component-prop-item
+        name="icon-position"
+        type="'leading' | 'trailing' = 'leading'"
+        optional
+      ></mm-component-prop-item>
+      <mm-component-prop-item name="aria-label" type="string" optional></mm-component-prop-item>
+      <mm-component-prop-item name="role" type="string" optional></mm-component-prop-item>
+      <mm-component-prop-item
+        name="aria-expanded"
+        type="'true' | 'false'"
+        optional
+      ></mm-component-prop-item>
+      <mm-component-prop-item name="aria-haspopup" type="string" optional></mm-component-prop-item>
+      <mm-component-prop-item
+        name="aria-current"
+        type="'true' | 'page' | 'step' | 'location'"
+        optional
+      ></mm-component-prop-item>
+      <mm-component-prop-item
+        name="@click"
+        type="(e: MouseEvent) => void"
+        kind="event"
+      ></mm-component-prop-item>
     </mm-component-props>
 
     <mm-component-tokens>

@@ -27,11 +27,11 @@ const main = html`
     </mm-component-example>
 
     <mm-component-props>
-      <mm-prop
+      <mm-component-prop-item
         name="tone"
         type="'default' | 'green' | 'yellow' | 'red' | 'blue' | 'purple' | 'pink' | 'orange' | 'cyan' = 'default'"
-      ></mm-prop>
-      <mm-prop name="icon" type="IconName" optional></mm-prop>
+      ></mm-component-prop-item>
+      <mm-component-prop-item name="icon" type="IconName" optional></mm-component-prop-item>
     </mm-component-props>
 
     <mm-component-tokens>
@@ -171,11 +171,15 @@ const main = html`
       </mm-flex>
 
       <mm-component-props>
-        <mm-prop
+        <mm-component-prop-item
           name="tone"
           type="'default' | 'green' | 'yellow' | 'red' | 'blue' | 'purple' | 'pink' | 'orange' | 'cyan' | 'gold' = 'default'"
-        ></mm-prop>
-        <mm-prop name="variant" type="'live' | 'new' | 'unread'" optional></mm-prop>
+        ></mm-component-prop-item>
+        <mm-component-prop-item
+          name="variant"
+          type="'live' | 'new' | 'unread'"
+          optional
+        ></mm-component-prop-item>
       </mm-component-props>
     </mm-component-section>
 

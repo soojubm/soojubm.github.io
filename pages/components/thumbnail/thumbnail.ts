@@ -46,10 +46,14 @@ const main = html`
     </mm-component-example>
 
     <mm-component-props>
-      <mm-prop name="src" type="string"></mm-prop>
-      <mm-prop name="alt" type="string"></mm-prop>
-      <mm-prop name="ratio" type="'1:1' | '16:9' | '4:3' | 'full' = '16:9'" optional></mm-prop>
-      <mm-prop name="caption" type="string" optional></mm-prop>
+      <mm-component-prop-item name="src" type="string"></mm-component-prop-item>
+      <mm-component-prop-item name="alt" type="string"></mm-component-prop-item>
+      <mm-component-prop-item
+        name="ratio"
+        type="'1:1' | '16:9' | '4:3' | 'full' = '16:9'"
+        optional
+      ></mm-component-prop-item>
+      <mm-component-prop-item name="caption" type="string" optional></mm-component-prop-item>
     </mm-component-props>
 
     <mm-component-tokens>

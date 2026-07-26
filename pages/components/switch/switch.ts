@@ -17,11 +17,15 @@ const main = html`
     </mm-component-example>
 
     <mm-component-props>
-      <mm-prop name="name" type="string" optional></mm-prop>
-      <mm-prop name="size" type="string" optional></mm-prop>
-      <mm-prop name="checked" type="boolean" optional></mm-prop>
-      <mm-prop name="disabled" type="boolean" optional></mm-prop>
-      <mm-prop name="change" type="CustomEvent detail: checked, value" kind="event"></mm-prop>
+      <mm-component-prop-item name="name" type="string" optional></mm-component-prop-item>
+      <mm-component-prop-item name="size" type="string" optional></mm-component-prop-item>
+      <mm-component-prop-item name="checked" type="boolean" optional></mm-component-prop-item>
+      <mm-component-prop-item name="disabled" type="boolean" optional></mm-component-prop-item>
+      <mm-component-prop-item
+        name="change"
+        type="CustomEvent detail: checked, value"
+        kind="event"
+      ></mm-component-prop-item>
     </mm-component-props>
 
     <mm-component-tokens>

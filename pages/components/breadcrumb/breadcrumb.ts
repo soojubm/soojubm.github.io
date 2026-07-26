@@ -20,8 +20,11 @@ const main = html`
     </mm-component-example>
 
     <mm-component-props>
-      <mm-prop name="items" type="{ label: string; href?: string }[] (JSON)"></mm-prop>
-      <mm-prop name="divider" type="string = '/'" optional></mm-prop>
+      <mm-component-prop-item
+        name="items"
+        type="{ label: string; href?: string }[] (JSON)"
+      ></mm-component-prop-item>
+      <mm-component-prop-item name="divider" type="string = '/'" optional></mm-component-prop-item>
     </mm-component-props>
 
     <mm-component-tokens>

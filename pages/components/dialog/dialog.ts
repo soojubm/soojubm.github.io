@@ -32,13 +32,25 @@ const main = html`
     </mm-component-example>
 
     <mm-component-props>
-      <mm-prop name="open" type="boolean"></mm-prop>
-      <mm-prop name="heading" type="string"></mm-prop>
-      <mm-prop name="description" type="string"></mm-prop>
-      <mm-prop name="primaryAction" type="ActionConfig" optional></mm-prop>
-      <mm-prop name="secondaryAction" type="ActionConfig" optional></mm-prop>
-      <mm-prop name="slot='footer'" type="actions"></mm-prop>
-      <mm-prop name="dialog-close" type="CustomEvent" kind="event"></mm-prop>
+      <mm-component-prop-item name="open" type="boolean"></mm-component-prop-item>
+      <mm-component-prop-item name="heading" type="string"></mm-component-prop-item>
+      <mm-component-prop-item name="description" type="string"></mm-component-prop-item>
+      <mm-component-prop-item
+        name="primaryAction"
+        type="ActionConfig"
+        optional
+      ></mm-component-prop-item>
+      <mm-component-prop-item
+        name="secondaryAction"
+        type="ActionConfig"
+        optional
+      ></mm-component-prop-item>
+      <mm-component-prop-item name="slot='footer'" type="actions"></mm-component-prop-item>
+      <mm-component-prop-item
+        name="dialog-close"
+        type="CustomEvent"
+        kind="event"
+      ></mm-component-prop-item>
     </mm-component-props>
 
     <mm-component-guide>
