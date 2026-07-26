@@ -1,11 +1,11 @@
 import { LitElement, css, html, nothing } from 'lit'
-import { customElement, property, query } from 'lit/decorators.js'
+import { customElement, property } from 'lit/decorators.js'
 
 import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
 import '@/components/icon-button/icon-button'
 import '@/components/flex/flex'
 import { inputStyles } from '@/components/input/input.styles'
-import { Textarea } from '@/components/input/textarea'
+import '@/components/input/textarea'
 import '@/components/popover/semantics/select'
 import { emit } from '@/utils/emit'
 
@@ -57,8 +57,6 @@ export class PromptInput extends LitElement {
   @property({ type: Boolean, attribute: 'is-loading' }) isLoading = false
   @property({ type: Boolean, attribute: 'hidden-attachment' }) hiddenAttachment = false
 
-  @query('mm-textarea') private textarea?: Textarea
-
   @property({ type: Boolean, reflect: true, attribute: 'single-line' })
   private singleLine = true
 
@@ -75,6 +73,7 @@ export class PromptInput extends LitElement {
             ?disabled=${this.isLoading}
             @input=${this.handleTextareaInput}
             @keydown=${this.handleTextareaKeydown}
+            @single-line-change=${this.handleSingleLineChange}
           ></mm-textarea>
           ${this.renderEndActions()}
         </mm-flex>
@@ -82,34 +81,14 @@ export class PromptInput extends LitElement {
     `
   }
 
-  protected firstUpdated() {
-    this.syncSingleLineState()
-  }
-
-  protected updated(changedProperties: Map<string, unknown>) {
-    if (!changedProperties.has('value')) return
-
-    this.queueSingleLineSync()
-  }
-
   private handleTextareaInput = (e: CustomEvent<{ value: string }>) => {
     e.stopPropagation()
     this.value = e.detail.value
-    this.queueSingleLineSync()
     emit(this, 'input', { value: this.value })
   }
 
-  private queueSingleLineSync() {
-    window.requestAnimationFrame(() => {
-      this.syncSingleLineState()
-    })
-  }
-
-  private syncSingleLineState() {
-    if (!this.textarea) return
-
-    this.textarea.resizeToContent()
-    this.singleLine = this.textarea.isSingleLine
+  private handleSingleLineChange = (e: CustomEvent<{ isSingleLine: boolean }>) => {
+    this.singleLine = e.detail.isSingleLine
   }
 
   private handleTextareaKeydown = (e: KeyboardEvent) => {

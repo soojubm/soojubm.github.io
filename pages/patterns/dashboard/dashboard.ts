@@ -5,25 +5,16 @@ import { renderLayout } from '../../../layouts/base-layouts'
 
 const main = html`
   <main class="page dashboard">
-    <mm-flex
-      class="dashboard-header"
-      align-items="center"
-      justify-content="space-between"
-      wrap="wrap"
-    >
-      <mm-page-header heading="Dashboard" description="한국 증시"></mm-page-header>
-    </mm-flex>
+    <mm-page-header heading="Dashboard" description="한국 증시"></mm-page-header>
 
-    <mm-flex direction="column" gap="3">
-      <mm-tab-list value="daily" variant="pill">
-        <mm-tab value="daily">일간</mm-tab>
-        <mm-tab value="weekly">주간</mm-tab>
-        <mm-tab value="monthly">월간</mm-tab>
-      </mm-tab-list>
-    </mm-flex>
+    <mm-tab-list value="daily" variant="pill">
+      <mm-tab value="daily">일간</mm-tab>
+      <mm-tab value="weekly">주간</mm-tab>
+      <mm-tab value="monthly">월간</mm-tab>
+    </mm-tab-list>
 
     <mm-grid columns="3" gap="4">
-      <mm-surface variant="outlined">
+      <mm-surface variant="outlined" radius="large">
         <mm-avatar variant="secondary" icon="graph-down"></mm-avatar>
         <div style="height: var(--space-3)"></div>
         <mm-text size="12">코스피</mm-text>
@@ -35,7 +26,7 @@ const main = html`
           <mm-text size="12" color="light">현지 시간 기준 10.27. 01:27</mm-text>
         </div>
       </mm-surface>
-      <mm-surface variant="outlined">
+      <mm-surface variant="outlined" radius="large">
         <mm-avatar variant="secondary" icon="graph-up"></mm-avatar>
         <div style="height: var(--space-3)"></div>
         <mm-text size="12">코스닥</mm-text>
@@ -47,7 +38,7 @@ const main = html`
           <mm-text size="12" color="light">현지 시간 기준 10.27. 01:27</mm-text>
         </div>
       </mm-surface>
-      <mm-surface variant="outlined">
+      <mm-surface variant="outlined" radius="large">
         <mm-avatar variant="secondary">
           <mm-icon name="graph-up"></mm-icon>
         </mm-avatar>
@@ -98,37 +89,42 @@ const main = html`
     </mm-flex>
 
     <br />
-    <mm-flex direction="column" gap="2">
-      <mm-tag tone="red">3건</mm-tag>
-      <mm-text-block
-        level="3"
-        heading="오늘 할 일"
-        description="마감이 가까운 업무부터 확인하세요."
-      ></mm-text-block>
-      <mm-menu-item-group>
-        <mm-menu-item-action
-          size="small"
-          emoji="📦"
-          trailing-icon="arrow-right"
-          label="출고 지연 주문 확인"
-          description="오늘 오전 11:00까지"
-        ></mm-menu-item-action>
-        <mm-menu-item-action
-          size="small"
-          emoji="💬"
-          trailing-icon="arrow-right"
-          label="고객 문의 답변"
-          description="미응답 문의 17건"
-        ></mm-menu-item-action>
-        <mm-menu-item-action
-          size="small"
-          emoji="📊"
-          trailing-icon="arrow-right"
-          label="주간 성과 보고서 공유"
-          description="오늘 오후 4:00까지"
-        ></mm-menu-item-action>
-      </mm-menu-item-group>
-    </mm-flex>
+    <mm-grid column="2">
+      <mm-surface variant="outlined" radius="large">
+        <mm-flex direction="column" gap="2">
+          <mm-tag tone="red">3건</mm-tag>
+          <mm-text-block
+            level="3"
+            heading="오늘 할 일"
+            description="마감이 가까운 업무부터 확인하세요."
+          ></mm-text-block>
+          <mm-menu-item-group>
+            <mm-menu-item-action
+              size="small"
+              emoji="📦"
+              trailing-icon="arrow-right"
+              label="출고 지연 주문 확인"
+              description="오늘 오전 11:00까지"
+            ></mm-menu-item-action>
+            <mm-menu-item-action
+              size="small"
+              emoji="💬"
+              trailing-icon="arrow-right"
+              label="고객 문의 답변"
+              description="미응답 문의 17건"
+            ></mm-menu-item-action>
+            <mm-menu-item-action
+              size="small"
+              emoji="📊"
+              trailing-icon="arrow-right"
+              label="주간 성과 보고서 공유"
+              description="오늘 오후 4:00까지"
+            ></mm-menu-item-action>
+          </mm-menu-item-group>
+        </mm-flex>
+      </mm-surface>
+      <mm-surface radius="large" tone="green"></mm-surface>
+    </mm-grid>
   </main>
 `
 

@@ -8,7 +8,6 @@ export const toastStyles = css`
     --toast-padding-block: var(--space-2);
     --toast-padding-inline: var(--space-4);
     --toast-offset: var(--space-4);
-    --toast-transition-duration: 200ms;
 
     display: flex;
     min-width: 25vw;
@@ -30,16 +29,15 @@ export const toastStyles = css`
     visibility: hidden;
     pointer-events: none;
     transform: translateX(-50%) translateY(calc(100% + var(--toast-offset)));
-    transition: opacity var(--toast-transition-duration) ease,
-      transform var(--toast-transition-duration) ease,
-      visibility 0s linear var(--toast-transition-duration);
+    transition: opacity var(--transition-duration) ease, transform var(--transition-duration) ease,
+      visibility 0s linear var(--transition-duration);
   }
 
   :host([open]) {
     opacity: 1;
     visibility: visible;
     transform: translateX(-50%) translateY(0);
-    transition: opacity var(--toast-transition-duration) ease,
-      transform var(--toast-transition-duration) ease, visibility 0s;
+    transition: opacity var(--transition-duration) ease, transform var(--transition-duration) ease,
+      visibility 0s;
   }
 `

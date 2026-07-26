@@ -2,6 +2,7 @@ import { LitElement, html } from 'lit'
 import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
 
 import { popoverStyles } from '@/components/popover/popover.styles'
+import '@/components/scroll/scroll'
 import { DisclosureController } from '@/controllers/disclosure-controller'
 import { emit } from '@/utils/emit'
 
@@ -41,7 +42,9 @@ class Popover extends LitElement {
     return html`
       <slot name="trigger"></slot>
       <div class="panel" part="panel">
-        <slot></slot>
+        <mm-scroll direction="column">
+          <slot></slot>
+        </mm-scroll>
       </div>
     `
   }

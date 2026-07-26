@@ -1,7 +1,5 @@
 import { css } from 'lit'
 
-import { scrollbarStyles } from '@/stylesheets/shared/scrollbar.styles'
-
 export const popoverStyles = css`
   :host {
     --popover-width: auto;
@@ -13,7 +11,6 @@ export const popoverStyles = css`
     --popover-backdrop-filter: var(--surface-overlay-backdrop-filter);
     --popover-shadow: var(--surface-overlay-shadow);
     --popover-offset: var(--space-1);
-    --popover-transition-duration: 180ms;
 
     /* 슬롯된 트리거를 감싸 popover 스스로 앵커(positioned wrapper)가 된다. */
     display: inline-block;
@@ -33,8 +30,6 @@ export const popoverStyles = css`
     backdrop-filter: var(--popover-backdrop-filter);
     -webkit-backdrop-filter: var(--popover-backdrop-filter);
     box-sizing: border-box;
-    overflow-y: auto;
-    overflow-x: hidden;
     position: absolute;
     top: calc(100% + var(--popover-offset));
     left: 0;
@@ -45,11 +40,14 @@ export const popoverStyles = css`
     visibility: hidden;
     pointer-events: none;
     transform: translateY(var(--space-1-minus));
-    transition: opacity var(--popover-transition-duration) ease,
-      transform var(--popover-transition-duration) cubic-bezier(0.2, 0.8, 0.2, 1),
-      visibility 0s linear var(--popover-transition-duration);
+    transition: opacity var(--transition-duration) ease,
+      transform var(--transition-duration) cubic-bezier(0.2, 0.8, 0.2, 1),
+      visibility 0s linear var(--transition-duration);
+  }
 
-    ${scrollbarStyles};
+  .panel mm-scroll {
+    flex: 1 1 auto;
+    min-height: 0;
   }
 
   :host([open]) .panel {
@@ -57,8 +55,8 @@ export const popoverStyles = css`
     visibility: visible;
     pointer-events: auto;
     transform: translateY(0);
-    transition: opacity var(--popover-transition-duration) ease,
-      transform var(--popover-transition-duration) cubic-bezier(0.2, 0.8, 0.2, 1), visibility 0s;
+    transition: opacity var(--transition-duration) ease,
+      transform var(--transition-duration) cubic-bezier(0.2, 0.8, 0.2, 1), visibility 0s;
   }
 
   :host([placement='bottom-right']) .panel,

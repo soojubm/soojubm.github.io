@@ -15,19 +15,12 @@ const main = html`
       id="setting-top-bar"
       heading="설정"
       style="
-      background: var(--background-subtle-color);
-      padding-block: var(--space-2);
       padding-inline: 5vw;
     "
     ></mm-top-bar>
   </mm-fixed-top>
   <mm-page width="small" background="subtle">
-    <mm-flex
-      direction="column"
-      align-items="center"
-      gap="2"
-      style="padding-top: var(--space-4); padding-bottom: var(--space-8)"
-    >
+    <mm-flex direction="column" align-items="center" gap="2" style="padding: var(--space-8)">
       <mm-avatar
         size="80"
         variant="secondary"
@@ -177,37 +170,35 @@ const main = html`
         </mm-text-block>
       </mm-surface>
 
-      <mm-surface variant="paper" radius="large">
-        <mm-flex direction="column" gap="3">
-          <mm-top-bar heading="닉네임 변경" role="navigation">
-            <mm-button slot="action" variant="ghost">저장</mm-button>
-          </mm-top-bar>
-          <form>
-            <mm-flex direction="column" gap="3">
-              <mm-paragraph size="large">
-                어떻게
-                <br />
-                불러드릴까요?
-              </mm-paragraph>
+      <mm-flex direction="column" gap="3">
+        <mm-top-bar heading="닉네임 변경" role="navigation">
+          <mm-button slot="action" variant="ghost">저장</mm-button>
+        </mm-top-bar>
+        <form>
+          <mm-flex direction="column" gap="3">
+            <mm-paragraph size="large">
+              어떻게
+              <br />
+              불러드릴까요?
+            </mm-paragraph>
 
-              <mm-link-prompt
-                icon=""
-                message="Your name appears on your Profile page, as your byline, and in your responses. It
+            <mm-link-prompt
+              icon=""
+              message="Your name appears on your Profile page, as your byline, and in your responses. It
                   is a required field. 성별 정보는 Google이 사용자를 지칭하는 방식을 포함해 Google 서비스에서 맞춤설정된
                   환경을 제공하는 데 사용될 수 있습니다."
-                link-label="더 알아보기"
-                href="#"
-              ></mm-link-prompt>
-              <mm-textfield label="닉네임" placeholder="이름이요."></mm-textfield>
-              <mm-toggle-button-group
-                .options=${genderOptions}
-                selected-index="0"
-                stretch
-              ></mm-toggle-button-group>
-            </mm-flex>
-          </form>
-        </mm-flex>
-      </mm-surface>
+              link-label="더 알아보기"
+              href="#"
+            ></mm-link-prompt>
+            <mm-textfield label="닉네임" placeholder="이름이요."></mm-textfield>
+            <mm-toggle-button-group
+              .options=${genderOptions}
+              selected-index="0"
+              stretch
+            ></mm-toggle-button-group>
+          </mm-flex>
+        </form>
+      </mm-flex>
 
       <blockquote>
         <mm-text-list

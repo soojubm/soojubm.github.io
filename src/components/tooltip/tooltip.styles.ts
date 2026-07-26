@@ -48,7 +48,8 @@ export const tooltipStyles = css`
     top: calc(100% + var(--space-1));
     z-index: var(--material-zindex-overlay);
     pointer-events: none;
-    transition: opacity 0.15s linear, visibility 0.15s linear;
+    transition: opacity var(--transition-duration) linear,
+      visibility var(--transition-duration) linear;
 
     &::before {
       content: '';

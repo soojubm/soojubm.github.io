@@ -30,6 +30,7 @@ export class Textarea extends LitElement {
   private autoHeight = new TextareaAutoHeightController(this, {
     getTextarea: () => this.textarea,
     getMaxVisibleRows: () => this.maxVisibleRows,
+    onSingleLineChange: isSingleLine => emit(this, 'single-line-change', { isSingleLine }),
   })
 
   render() {

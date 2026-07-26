@@ -129,12 +129,18 @@ export class Marquee extends LitElement {
   connectedCallback() {
     super.connectedCallback()
     this.resizeObserver = new ResizeObserver(() => this.queueMeasure())
+    // 최초 연결은 firstUpdated에서 관찰을 시작하고, 이후 재연결(DOM 이동 등)은 여기서 바로 다시 관찰한다.
+    if (this.hasUpdated) this.observeResizeTargets()
   }
 
   firstUpdated() {
+    this.observeResizeTargets()
+    this.queueMeasure()
+  }
+
+  private observeResizeTargets() {
     if (this.sourceElement) this.resizeObserver?.observe(this.sourceElement)
     this.resizeObserver?.observe(this)
-    this.queueMeasure()
   }
 
   updated(changed: PropertyValues) {

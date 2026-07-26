@@ -4,6 +4,7 @@ import { customElement, property, state } from 'lit/decorators.js'
 import '@/components/icon-button/icon-button'
 import { iconButtonActionStyles } from '@/components/icon-button/icon-button.styles'
 import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
+import { TransientFlagController } from '@/controllers/transient-flag-controller'
 import { copyToClipboard } from '@/utils/clipboard'
 import { emit } from '@/utils/emit'
 
@@ -20,13 +21,17 @@ export class CopyButton extends LitElement {
   @property({ type: String, attribute: 'tooltip-placement' }) tooltipPlacement = ''
   @state() private copied = false
 
+  private copiedFlag = new TransientFlagController(this, {
+    duration: 1500,
+    onChange: copied => (this.copied = copied),
+  })
+
   private handleClick = async () => {
     const text = this.value || this.textContent?.trim() || ''
     if (!(await copyToClipboard(text))) return
 
-    this.copied = true
     emit(this, 'copy', { value: text })
-    setTimeout(() => (this.copied = false), 1500)
+    this.copiedFlag.trigger()
   }
 
   render() {

@@ -5,21 +5,15 @@ type Host = ReactiveControllerHost & HTMLElement
 interface TextareaAutoHeightControllerOptions {
   getTextarea: () => HTMLTextAreaElement | undefined
   getMaxVisibleRows: () => number
+  onSingleLineChange?: (isSingleLine: boolean) => void
 }
 
 export class TextareaAutoHeightController implements ReactiveController {
   private resizeFrame = 0
+  isSingleLine = true
 
   constructor(private host: Host, private options: TextareaAutoHeightControllerOptions) {
     host.addController(this)
-  }
-
-  get isSingleLine() {
-    const textarea = this.options.getTextarea()
-    if (!textarea) return true
-
-    const metrics = this.measureTextArea(textarea)
-    return textarea.scrollHeight < metrics.lineHeight * 2 + metrics.paddingBlock
   }
 
   hostUpdated() {
@@ -45,11 +39,21 @@ export class TextareaAutoHeightController implements ReactiveController {
     textarea.style.height = 'auto'
 
     const metrics = this.measureTextArea(textarea)
+    const contentHeight = textarea.scrollHeight
     const maxHeight = metrics.lineHeight * this.options.getMaxVisibleRows() + metrics.paddingBlock
-    const nextHeight = Math.min(textarea.scrollHeight, maxHeight)
+    const nextHeight = Math.min(contentHeight, maxHeight)
 
     textarea.style.height = `${nextHeight}px`
     textarea.style.overflowY = textarea.scrollHeight > maxHeight ? 'auto' : 'hidden'
+
+    this.updateSingleLine(contentHeight < metrics.lineHeight * 2 + metrics.paddingBlock)
+  }
+
+  private updateSingleLine(isSingleLine: boolean) {
+    if (isSingleLine === this.isSingleLine) return
+
+    this.isSingleLine = isSingleLine
+    this.options.onSingleLineChange?.(isSingleLine)
   }
 
   private measureTextArea(textarea: HTMLTextAreaElement) {

@@ -4,6 +4,7 @@ import { ifDefined } from 'lit/directives/if-defined.js'
 
 import { ICON_NAMES, type IconName } from '@/components/icon-button/semantics/icon-names'
 import { ScrollSpyController } from '@/controllers/scroll-spy-controller'
+import { TransientFlagController } from '@/controllers/transient-flag-controller'
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
 import { copyToClipboard } from '@/utils/clipboard'
 import '@/components/icon-button/icon-button'
@@ -44,10 +45,13 @@ export class TableOfContents extends LitElement {
   @state() private copied = false
 
   private setupFrame = 0
-  private copyTimer = 0
   private scrollSpy = new ScrollSpyController(this, {
     getTargets: () => this.resolveScrollSpyTargets(),
     onActiveChange: id => (this.activeId = id),
+  })
+  private copiedFlag = new TransientFlagController(this, {
+    duration: 1600,
+    onChange: copied => (this.copied = copied),
   })
 
   render() {
@@ -90,9 +94,7 @@ export class TableOfContents extends LitElement {
 
   disconnectedCallback() {
     if (this.setupFrame) cancelAnimationFrame(this.setupFrame)
-    if (this.copyTimer) window.clearTimeout(this.copyTimer)
     this.setupFrame = 0
-    this.copyTimer = 0
     super.disconnectedCallback()
   }
 
@@ -175,13 +177,7 @@ export class TableOfContents extends LitElement {
 
   private handleCopyClick = async () => {
     await copyToClipboard(this.shareUrl)
-
-    this.copied = true
-    if (this.copyTimer) window.clearTimeout(this.copyTimer)
-    this.copyTimer = window.setTimeout(() => {
-      this.copyTimer = 0
-      this.copied = false
-    }, 1600)
+    this.copiedFlag.trigger()
   }
 
   private renderShareSection() {

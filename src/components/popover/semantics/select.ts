@@ -74,7 +74,13 @@ export class Select extends LitElement {
     return html`
       <mm-popover placement=${this.placement} padding=${ifDefined(this.padding)}>
         <slot name="trigger" slot="trigger"></slot>
-        ${this.renderOptionList()}
+        <mm-menu-item-group>
+          ${repeat(
+            this.options,
+            option => option.value,
+            option => this.renderOption(option),
+          )}
+        </mm-menu-item-group>
       </mm-popover>
       <slot hidden @slotchange=${this.handleOptionSlotChange}></slot>
     `
@@ -106,22 +112,14 @@ export class Select extends LitElement {
 
   // 옵션 클릭 시: 값 반영 후 목록 닫기
   private selectOption(option: SelectOption) {
+    if (option.value === this.value) {
+      this.popoverEl?.close()
+      return
+    }
+
     this.value = option.value
     this.popoverEl?.close()
     emit(this, 'change', { value: option.value })
-  }
-
-  // popover가 옵션 목록 표면을 소유한다. 그룹 시맨틱은 목록 전체에 한 번만 적용한다.
-  private renderOptionList() {
-    return html`
-      <mm-menu-item-group>
-        ${repeat(
-          this.options,
-          option => option.value,
-          option => this.renderOption(option),
-        )}
-      </mm-menu-item-group>
-    `
   }
 
   // 옵션: 선택 시 닫히며 현재 선택된 옵션은 aria-current로 강조
