@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
 import type { IconName } from '@/components/icon-button/semantics/icon-names'
-import type { AriaBoolean, AriaHasPopup } from '@/types/aria'
+import type { AriaBoolean, AriaCurrent, AriaHasPopup } from '@/types/aria'
 
 import {
   buttonBaseStyles,
@@ -31,6 +31,8 @@ export class Button extends LitElement {
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = ''
   @property({ type: String, attribute: 'aria-expanded' }) ariaExpanded: AriaBoolean = null
   @property({ type: String, attribute: 'aria-haspopup' }) ariaHasPopup: AriaHasPopup = null
+  @property({ type: String, attribute: 'aria-current', reflect: true }) ariaCurrent: AriaCurrent =
+    null
 
   render() {
     return html`
@@ -40,6 +42,7 @@ export class Button extends LitElement {
         aria-label=${this.ariaLabel || nothing}
         aria-expanded=${ifDefined(this.ariaExpanded ?? undefined)}
         aria-haspopup=${ifDefined(this.ariaHasPopup ?? undefined)}
+        aria-current=${ifDefined(this.ariaCurrent ?? undefined)}
         @click=${this.handleClick}
       >
         ${this.renderIcon('leading')}

@@ -17,8 +17,13 @@ export const renderDocumentLayout = (
   render(
     html`
       <mm-navbar></mm-navbar>
+      <!-- <mm-toc></mm-toc> -->
       ${body}
-      ${options.footer ? html`<mm-footer></mm-footer>` : nothing}
+      ${options.footer
+        ? html`
+            <mm-footer></mm-footer>
+          `
+        : nothing}
     `,
     document.body,
   )

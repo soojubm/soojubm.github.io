@@ -45,6 +45,7 @@ const main = html`
       <mm-prop name="role" type="string" optional></mm-prop>
       <mm-prop name="aria-expanded" type="'true' | 'false'" optional></mm-prop>
       <mm-prop name="aria-haspopup" type="string" optional></mm-prop>
+      <mm-prop name="aria-current" type="'true' | 'page' | 'step' | 'location'" optional></mm-prop>
       <mm-prop name="@click" type="(e: MouseEvent) => void" kind="event"></mm-prop>
     </mm-component-props>
 

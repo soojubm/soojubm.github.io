@@ -1,13 +1,13 @@
 import { LitElement, css, html, nothing } from 'lit'
-import { customElement, query, state } from 'lit/decorators.js'
+import { customElement, state } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
 import { ICON_NAMES, type IconName } from '@/components/icon-button/semantics/icon-names'
 import { ScrollSpyController } from '@/controllers/scroll-spy-controller'
-import { SelectionIndicatorController } from '@/controllers/selection-indicator-controller'
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
 import { copyToClipboard } from '@/utils/clipboard'
 import '@/components/icon-button/icon-button'
+import '@/components/button/button'
 import '@/components/button/button-group'
 
 interface TocItem {
@@ -28,74 +28,8 @@ export class TableOfContents extends LitElement {
     css`
       :host {
         display: block;
-        max-height: calc(100vh - var(--size-80));
-        padding: var(--space-4) 0 0;
-        flex-shrink: 0;
         position: sticky;
-        top: calc(var(--space-4) * 4);
-        overflow-y: auto;
       }
-
-      .toc-title {
-        margin: 0 0 var(--space-1) 0;
-      }
-
-      .toc-list {
-        display: flex;
-        flex-direction: column;
-        position: relative;
-      }
-
-      .indicator {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 2px;
-        height: 8px;
-        border-radius: var(--radius);
-        background: var(--interaction-selected-background-color);
-        opacity: 1;
-        transform: translateY(var(--selection-indicator-y, 0));
-        transition: opacity 0.16s ease, transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        .indicator {
-          transition: none;
-        }
-      }
-
-      .toc-link {
-        display: block;
-        width: 100%;
-        padding: 0 var(--space-2);
-        border: 0;
-        border-radius: var(--radius);
-        background: transparent;
-        font-family: var(--font-family);
-        font-size: var(--font-size-12);
-        line-height: 1.5;
-        color: var(--foreground-subtle-color);
-        text-align: left;
-        text-decoration: none;
-        cursor: pointer;
-        transition: color 0.16s ease;
-      }
-
-      .toc-link:hover {
-        color: var(--foreground-color);
-      }
-
-      .toc-link[aria-current='true'] {
-        color: var(--interaction-selected-foreground-color);
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        .toc-link {
-          transition: none;
-        }
-      }
-
       .share {
         display: flex;
         flex-direction: column;
@@ -115,17 +49,6 @@ export class TableOfContents extends LitElement {
     getTargets: () => this.resolveScrollSpyTargets(),
     onActiveChange: id => (this.activeId = id),
   })
-  private indicatorPosition = new SelectionIndicatorController(this, {
-    axis: 'y',
-    autoUpdate: true,
-    getContainer: () => this.list,
-    getIndicator: () => this.indicator,
-    getTarget: () =>
-      this.renderRoot.querySelector<HTMLElement>('.toc-link[aria-current="true"]') ?? undefined,
-  })
-
-  @query('.toc-list') private list?: HTMLElement
-  @query('.indicator') private indicator?: HTMLElement
 
   render() {
     if (!this.items.length) return nothing
@@ -135,10 +58,7 @@ export class TableOfContents extends LitElement {
         <mm-text weight="bold" color="light" class="toc-title" aria-hidden="true">
           On this page
         </mm-text>
-        <div class="toc-list">
-          <div class="indicator" aria-hidden="true"></div>
-          ${this.renderTocItems()}
-        </div>
+        <mm-button-group>${this.renderTocItems()}</mm-button-group>
       </nav>
       ${this.renderShareSection()}
     `
@@ -150,21 +70,18 @@ export class TableOfContents extends LitElement {
 
   private renderTocItem(item: TocItem) {
     return html`
-      <button
-        class="toc-link"
-        type="button"
+      <mm-button
+        size="small"
         aria-current=${ifDefined(item.id === this.activeId ? 'true' : undefined)}
         @click=${() => this.scrollToItem(item.id)}
       >
         ${item.label}
-      </button>
+      </mm-button>
     `
   }
 
   connectedCallback() {
     super.connectedCallback()
-    window.addEventListener('resize', this.handleWindowResize)
-    // 커스텀 엘리먼트 업그레이드 후 실행
     this.setupFrame = requestAnimationFrame(() => {
       this.setupFrame = 0
       this.buildItems()
@@ -172,7 +89,6 @@ export class TableOfContents extends LitElement {
   }
 
   disconnectedCallback() {
-    window.removeEventListener('resize', this.handleWindowResize)
     if (this.setupFrame) cancelAnimationFrame(this.setupFrame)
     if (this.copyTimer) window.clearTimeout(this.copyTimer)
     this.setupFrame = 0
@@ -220,10 +136,6 @@ export class TableOfContents extends LitElement {
     return this.items
       .map(({ id }) => document.getElementById(id))
       .filter((el): el is HTMLElement => el !== null)
-  }
-
-  private handleWindowResize = () => {
-    this.indicatorPosition.update()
   }
 
   private scrollToItem(id: string) {
