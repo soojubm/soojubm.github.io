@@ -281,13 +281,6 @@ const main = html`
       </div>
     </mm-component-section>
 
-    <mm-component-related>
-      <mm-button-group>
-        <mm-hashtag-link href="tag.html">Tag</mm-hashtag-link>
-        <mm-hashtag-link href="link.html">Link</mm-hashtag-link>
-      </mm-button-group>
-    </mm-component-related>
-
     <mm-component-references>
       <mm-link href="https://design-system.service.gov.uk/components/summary-list/" external>
         Summary list

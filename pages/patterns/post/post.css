@@ -1,40 +1,6 @@
 .post-head {
   position: relative;
 }
-.post-head-progress {
-  display: none;
-  height: 2px;
-  background: var(--color-primary);
-  border-radius: var(--radius);
-  position: absolute;
-  bottom: 0;
-}
-
-.is-sticky-post-head .post-head {
-  background: var(--background-color);
-  text-align: left;
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  z-index: var(--material-zindex-chrome);
-}
-.is-sticky-post-head .post-head-category {
-  display: none;
-}
-.is-sticky-post-head .post-head-headline {
-  padding: var(--space-4) var(--layout-padding-inline) 1rem;
-  box-sizing: border-box;
-  font-size: var(--font-size-18);
-  line-height: 32px;
-  text-align: center;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-}
-.is-sticky-post-head .post-head-progress {
-  display: block;
-}
 
 .post-body {
   position: relative;

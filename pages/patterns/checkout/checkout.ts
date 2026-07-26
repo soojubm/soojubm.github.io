@@ -1,5 +1,4 @@
 import { html } from 'lit'
-import './checkout.css'
 import { renderLayout } from '../../../layouts/base-layouts'
 
 const main = html`
