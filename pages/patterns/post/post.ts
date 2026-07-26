@@ -53,11 +53,9 @@ const main = html`
       ></mm-notice>
 
       <mm-paragraph-group>
-        <mm-paragraph>
-          title / kicker / published date / thumbnail image / images / subhead - paragraph / text
-          list / byline / share actions / comment /
-        </mm-paragraph>
-
+        <mm-text-list
+          texts='["title", "kicker", "published date",  "thumbnail", "images", "subhead - paragraph / text list / byline / share actions / comment /]'
+        ></mm-text-list>
         <mm-paragraph size="large">
           An ecosystem of content that celebrates inclusion and diversity
         </mm-paragraph>
@@ -88,10 +86,12 @@ const main = html`
         </q>
 
         <mm-paragraph size="large">
-          포스트를 수정하고 삭제하기 위한 버튼이 필요하다. 신고를 위한 버튼은 처음부터 필요한 기능은
-          아니기 때문에 뺀다. 작성자에게만 필요한 버튼은 콘텐츠 내부가 아닌 브라우저의 구석에 눈에
-          띄게 배치한다. Input zooming on iOS devices :: iOS devices will slightly zoom into the
-          input when the font size is less than 16px.
+          <mm-text size="18" weight="bold" as="span">
+            포스트를 수정하고 삭제하기 위한 버튼이 필요하다.
+          </mm-text>
+          신고를 위한 버튼은 처음부터 필요한 기능은 아니기 때문에 뺀다. 작성자에게만 필요한 버튼은
+          콘텐츠 내부가 아닌 브라우저의 구석에 눈에 띄게 배치한다. Input zooming on iOS devices ::
+          iOS devices will slightly zoom into the input when the font size is less than 16px.
         </mm-paragraph>
         <mm-paragraph size="large">
           leading, name, trailing는 언더스코어(_)로 구분합니다. direction / shape / status / color /
@@ -107,6 +107,8 @@ const main = html`
       </mm-paragraph-group>
     </section>
 
+    <br />
+    <br />
     <mm-button-group>
       <mm-hashtag-link>Webpack</mm-hashtag-link>
       <mm-hashtag-link>HTML5</mm-hashtag-link>

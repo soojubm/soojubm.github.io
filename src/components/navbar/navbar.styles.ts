@@ -23,9 +23,9 @@ export const navbarStyles = css`
     height: var(--navbar-height);
     border-bottom: var(--border-transparent);
     box-sizing: border-box;
-    background: var(--surface-high-background-color);
-    backdrop-filter: var(--surface-high-backdrop-filter);
-    box-shadow: var(--surface-high-shadow);
+    background: var(--surface-chrome-background-color);
+    backdrop-filter: var(--surface-chrome-backdrop-filter);
+    box-shadow: var(--surface-chrome-shadow);
     /* TODO */
     box-shadow: none;
     position: absolute;
@@ -87,13 +87,13 @@ export const navbarStyles = css`
     gap: var(--space-2);
     padding: var(--space-6) var(--space-3) calc(var(--space-4) + env(safe-area-inset-bottom))
       calc(var(--layout-padding-inline));
-    background: var(--surface-high-background-color);
+    background: var(--surface-chrome-background-color);
     border-right: var(--border-transparent);
-    box-shadow: var(--surface-high-shadow);
+    box-shadow: var(--surface-chrome-shadow);
     /* TODO */
     box-shadow: none;
-    backdrop-filter: var(--surface-high-backdrop-filter);
-    -webkit-backdrop-filter: var(--surface-high-backdrop-filter);
+    backdrop-filter: var(--surface-chrome-backdrop-filter);
+    -webkit-backdrop-filter: var(--surface-chrome-backdrop-filter);
     scrollbar-gutter: stable;
     transition: transform var(--duration-slowly) cubic-bezier(0.165, 0.84, 0.44, 1);
     transform: translateX(-120%);

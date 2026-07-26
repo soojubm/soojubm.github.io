@@ -277,21 +277,29 @@ const borderTokenItems: TokenEntry[] = [
 
 const shadowTokenItems: TokenEntry[] = [
   { key: 'surface-base-shadow', value: '0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.08)' },
-  { key: 'surface-high-shadow', value: '0 16px 32px rgba(0,0,0,.2)' },
+  { key: 'surface-chrome-shadow', value: '0 16px 32px rgba(0,0,0,.2)' },
+  { key: 'surface-overlay-shadow', value: '0 24px 48px rgba(0,0,0,.28)' },
 ]
 
-const shadowStageValues = ['var(--surface-base-shadow)', 'var(--surface-high-shadow)']
+const shadowStageValues = [
+  'var(--surface-base-shadow)',
+  'var(--surface-chrome-shadow)',
+  'var(--surface-overlay-shadow)',
+]
 
 const materialTokenItems: TokenEntry[] = [
   { key: 'surface-base-blur', value: '10px' },
   { key: 'surface-base-opacity', value: '0.35' },
-  { key: 'surface-high-blur', value: '20px' },
-  { key: 'surface-high-opacity', value: '0.55' },
+  { key: 'surface-chrome-blur', value: '20px' },
+  { key: 'surface-chrome-opacity', value: '0.55' },
+  { key: 'surface-overlay-blur', value: '28px' },
+  { key: 'surface-overlay-opacity', value: '0.7' },
 ]
 
 const blurStageSwatches: BlurSwatch[] = [
   { opacity: 'var(--surface-base-opacity)', blur: 'var(--surface-base-blur)' },
-  { opacity: 'var(--surface-high-opacity)', blur: 'var(--surface-high-blur)' },
+  { opacity: 'var(--surface-chrome-opacity)', blur: 'var(--surface-chrome-blur)' },
+  { opacity: 'var(--surface-overlay-opacity)', blur: 'var(--surface-overlay-blur)' },
 ]
 
 const borderStageSwatches: BorderSwatch[] = [
@@ -342,10 +350,10 @@ const borderStageSwatches: BorderSwatch[] = [
 const zIndexTokenItems: TokenEntry[] = [
   { key: 'material-zindex-base', value: '0' },
   { key: 'material-zindex-raised', value: '10' },
-  { key: 'material-zindex-overlay', value: '100' },
-  { key: 'material-zindex-modal', value: '1000' },
-  { key: 'material-zindex-chrome', value: '1100' },
-  { key: 'material-zindex-toast', value: '9000' },
+  { key: 'material-zindex-chrome', value: '100' },
+  { key: 'material-zindex-overlay', value: '200' },
+  { key: 'material-zindex-modal', value: '300' },
+  { key: 'material-zindex-toast', value: '1000' },
 ]
 
 const main = html`
@@ -569,9 +577,9 @@ const main = html`
           texts='[
           "base — mm-separator의 구분선, 배경 위에 놓는 텍스트처럼 형제 요소 위에 그리기 위한 로컬 컨텍스트",
           "raised — 목록·그룹 안에서 형제보다 살짝 뜨는 요소. 예: mm-hamburger-button",
+          "chrome — 화면에 고정된 내비게이션·툴바. 예: mm-navbar(및 사이드 메뉴), mm-top-bar(sticky 상태), mm-fixed-bottom(mm-bottom-bar가 이 안에 놓여 함께 뜬다)",
           "overlay — 드롭다운·팝오버·툴팁류. 예: mm-tooltip, mm-popover(mm-select 등 드롭다운의 기반)",
           "modal — 화면을 덮는 대화형 표면. 예: mm-backdrop, mm-layer, mm-dialog, 긴급 배너",
-          "chrome — 화면에 고정된 내비게이션·툴바. 예: mm-navbar(및 사이드 메뉴), mm-top-bar(sticky 상태), mm-fixed-bottom(mm-bottom-bar가 이 안에 놓여 함께 뜬다)",
           "toast — 알림, 스낵바처럼 항상 다른 모든 레이어 위에 있어야 하는 요소. 예: mm-toast, 건너뛰기(skip) 링크"
         ]'
         ></mm-text-list>

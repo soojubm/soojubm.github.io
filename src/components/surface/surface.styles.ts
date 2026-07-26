@@ -26,7 +26,7 @@ export const surfaceVariants: Record<SurfaceVariant, Record<string, string>> = {
     '--surface-background-color': 'var(--background-subtle-color)',
   },
   elevated: {
-    '--surface-shadow': 'var(--surface-high-shadow)',
+    '--surface-shadow': '0 4px 12px rgba(0, 0, 0, 0.15)',
   },
 }
 

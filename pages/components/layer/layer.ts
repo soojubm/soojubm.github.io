@@ -101,7 +101,11 @@ function layerPageTemplate() {
         .items=${['Drawer', 'Panel', 'Bottom Sheet', 'Side Sheet', 'Modal']}
       ></mm-component-aka>
 
-      <mm-component-example>${layerExampleTemplate()}</mm-component-example>
+      <mm-component-example>
+        ${layerExampleTemplate()}
+        <mm-button data-open-toast>토스트 띄우기</mm-button>
+        <mm-toast class="js-demo-toast">저장되었습니다.</mm-toast>
+      </mm-component-example>
 
       <mm-component-props>
         <mm-prop name="open" type="boolean"></mm-prop>
@@ -120,15 +124,15 @@ function layerPageTemplate() {
         <mm-prop name="layerclose" type="CustomEvent" kind="event"></mm-prop>
       </mm-component-props>
 
-      <mm-component-anatomy
+      <!-- <mm-component-anatomy
         .parts=${[
-          'Backdrop — 레이어 뒤 반투명 배경. 배경 클릭 또는 ESC 시 layerclose 이벤트를 발생시킵니다.',
-          '레이어 컨테이너 — flex column 박스. height prop으로 높이 고정, max-height: 90vh 기본값.',
-          'mm-layer-header — 타이틀과 닫기 버튼. layerclose 이벤트를 발생시킵니다.',
-          'mm-layer-body — 스크롤 가능한 콘텐츠 영역. flex: 1 1 auto로 header·footer를 제외한 나머지를 채웁니다.',
-          'mm-layer-footer — 액션 버튼 영역. primaryAction / secondaryAction prop으로 구성합니다.',
-        ]}
-      ></mm-component-anatomy>
+        'Backdrop — 레이어 뒤 반투명 배경. 배경 클릭 또는 ESC 시 layerclose 이벤트를 발생시킵니다.',
+        '레이어 컨테이너 — flex column 박스. height prop으로 높이 고정, max-height: 90vh 기본값.',
+        'mm-layer-header — 타이틀과 닫기 버튼. layerclose 이벤트를 발생시킵니다.',
+        'mm-layer-body — 스크롤 가능한 콘텐츠 영역. flex: 1 1 auto로 header·footer를 제외한 나머지를 채웁니다.',
+        'mm-layer-footer — 액션 버튼 영역. primaryAction / secondaryAction prop으로 구성합니다.',
+      ]}
+      ></mm-component-anatomy> -->
 
       <mm-component-guide>
         <!-- <mm-paragraph>
@@ -215,14 +219,6 @@ function layerPageTemplate() {
             mm-layer에 height를 지정하면 고정 높이 내에서 body가 스크롤됩니다.
           </mm-paragraph>
         </mm-layer-body>
-      </mm-component-section>
-
-      <mm-component-section
-        heading="Toast"
-        description="화면 하단 중앙에 잠깐 떠올랐다 약 3초 후 스스로 사라지는 transient non-modal 레이어입니다. open()으로 띄우며, 열려 있을 때 다시 호출하면 남은 시간이 초기화됩니다."
-      >
-        <mm-button data-open-toast>토스트 띄우기</mm-button>
-        <mm-toast class="js-demo-toast">저장되었습니다.</mm-toast>
       </mm-component-section>
 
       <mm-component-section heading="Filter" description="샘플">

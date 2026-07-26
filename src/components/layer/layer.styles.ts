@@ -51,9 +51,9 @@ export const layerStyles = css`
     max-width: var(--layer-max-width);
     max-height: 90vh;
     padding: 0 var(--layer-padding-inline);
-    border: var(--surface-high-border);
+    border: var(--surface-overlay-border);
     border-radius: var(--layer-border-radius);
-    box-shadow: var(--surface-high-shadow);
+    box-shadow: var(--surface-overlay-shadow);
     box-sizing: border-box;
     background: var(--background-color);
     overflow: hidden;
@@ -68,9 +68,9 @@ export const layerStyles = css`
     position: absolute;
     inset: 0;
     z-index: -1;
-    background: var(--surface-high-background-color);
-    backdrop-filter: var(--surface-high-backdrop-filter);
-    -webkit-backdrop-filter: var(--surface-high-backdrop-filter);
+    background: var(--surface-overlay-background-color);
+    backdrop-filter: var(--surface-overlay-backdrop-filter);
+    -webkit-backdrop-filter: var(--surface-overlay-backdrop-filter);
   }
 
   :host([open]) .layer {
@@ -199,8 +199,8 @@ export const layerHeaderStyles = css`
   }
   header::before {
     content: '';
-    background: var(--surface-high-background-color);
-    backdrop-filter: var(--surface-high-backdrop-filter);
+    background: var(--surface-overlay-background-color);
+    backdrop-filter: var(--surface-overlay-backdrop-filter);
     position: absolute;
     inset: 0;
     z-index: -1;

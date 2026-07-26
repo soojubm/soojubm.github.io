@@ -11,13 +11,13 @@ export const interactiveControlStyles = css`
     }
 
     &:focus-visible {
-      ${focusRing}
+      ${focusRing};
     }
 
-    &:enabled:active {
+    /* &:enabled:active {
       background: var(--interaction-active-background-color);
       box-shadow: var(--interaction-active-shadow);
-    }
+    } */
 
     &:disabled {
       opacity: 0.5;

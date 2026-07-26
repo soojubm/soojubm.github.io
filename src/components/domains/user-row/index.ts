@@ -24,7 +24,6 @@ export class UserRow extends LitElement {
   @property({ type: String }) description = ''
   @property({ type: String }) icon?: IconName
   @property({ type: String, attribute: 'avatar-src' }) avatarSrc = ''
-  @property({ type: String, attribute: 'avatar-variant' }) avatarVariant: AvatarVariant = 'tertiary'
   @property({ type: String, attribute: 'avatar-shape' }) avatarShape: AvatarShape = 'square'
 
   render() {
@@ -34,8 +33,8 @@ export class UserRow extends LitElement {
         label=${this.label}
         description=${this.description}
         icon=${this.icon}
+        avatar-variant="primary"
         avatar-src=${this.avatarSrc}
-        avatar-variant=${this.avatarVariant}
         avatar-shape=${this.avatarShape}
       >
         <slot></slot>

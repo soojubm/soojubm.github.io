@@ -81,8 +81,7 @@ const main = html`
       </mm-component-feature-list>
       <mm-text-list
         texts='[
-        "role=menu 는 명령 실행 목록. role=listbox 는 폼 내 선택 목록. 컨텍스트에 따라 구분합니다.",
-        "아이콘은 icon prop, 이미지는 avatar-src prop, 이모지는 emoji prop으로 전달합니다."
+        "role=menu 는 명령 실행 목록. role=listbox 는 폼 내 선택 목록. 컨텍스트에 따라 구분합니다."
       ]'
       ></mm-text-list>
     </mm-component-guide>

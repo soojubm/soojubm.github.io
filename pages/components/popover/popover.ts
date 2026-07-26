@@ -33,17 +33,17 @@ const main = html`
       <mm-token name="popover-max-height" default="none"></mm-token>
       <mm-token name="popover-offset" default="var(--space-1)"></mm-token>
       <mm-token name="popover-padding" default="var(--space-1)"></mm-token>
-      <mm-token name="popover-border" default="var(--surface-high-border)"></mm-token>
+      <mm-token name="popover-border" default="var(--surface-overlay-border)"></mm-token>
       <mm-token name="popover-border-radius" default="var(--radius)"></mm-token>
       <mm-token
         name="popover-background-color"
-        default="var(--surface-high-background-color)"
+        default="var(--surface-overlay-background-color)"
       ></mm-token>
       <mm-token
         name="popover-backdrop-filter"
-        default="var(--surface-high-backdrop-filter)"
+        default="var(--surface-overlay-backdrop-filter)"
       ></mm-token>
-      <mm-token name="popover-shadow" default="var(--surface-high-shadow)"></mm-token>
+      <mm-token name="popover-shadow" default="var(--surface-overlay-shadow)"></mm-token>
     </mm-component-tokens>
 
     <mm-component-guide>

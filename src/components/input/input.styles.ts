@@ -31,8 +31,6 @@ export const inputStyles = css`
     border-radius: var(--input-border-radius);
     box-sizing: border-box;
     background: var(--input-background-color);
-    /* 기본 transparent, brutal 테마에서 --input-border-color 주입(상속)으로 #000.
-       hover/invalid가 element-level border-color로 덮으므로 상태는 그대로 우선. */
 
     &:hover {
       border-color: var(--input-border-color-hover);
