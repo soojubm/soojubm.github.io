@@ -2,6 +2,7 @@ import { LitElement, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 
 import { layerBodyStyles } from '@/components/layer/layer.styles'
+import '@/components/scroll/scroll'
 
 @customElement('mm-layer-body')
 class LayerBody extends LitElement {
@@ -9,7 +10,9 @@ class LayerBody extends LitElement {
 
   render() {
     return html`
-      <slot></slot>
+      <mm-scroll direction="column">
+        <slot></slot>
+      </mm-scroll>
     `
   }
 }

@@ -1,7 +1,6 @@
 import { css } from 'lit'
 
 import { MEDIA } from '@/stylesheets/shared/breakpoints'
-import { scrollbarStyles } from '@/stylesheets/shared/scrollbar.styles'
 
 /**
  * viewport 기준 modal 레이어(mm-layer, mm-dialog)가 공유하는 배경·패널 골격.
@@ -17,6 +16,9 @@ export const layerStyles = css`
     --layer-padding-inline: var(--space-4);
     --layer-padding-block: var(--space-3);
     --layer-max-width: var(--layout-width-narrow);
+    --layer-header-height: calc(var(--size-32) + var(--layer-padding-block) * 2);
+    /* header가 없는 레이어(mm-dialog)의 기본값. header를 겹쳐 띄우는 레이어가 재정의한다 */
+    --layer-body-padding-top: var(--space-4);
 
     display: flex;
     width: 100vw;
@@ -84,10 +86,14 @@ export const layerStyles = css`
 export const layerPlacementStyles = css`
   :host {
     --layer-viewport-max-height: 100vh;
+    /* height prop이 인라인 스타일로 재정의한다 */
+    --layer-height: auto;
+    /* header를 body 위로 겹쳐 띄우므로 body가 그만큼 위쪽 여백으로 비켜준다 */
+    --layer-body-padding-top: calc(var(--layer-header-height) + var(--space-4));
   }
 
   .layer {
-    height: var(--layer-height, auto);
+    height: var(--layer-height);
   }
 
   /* center + width */
@@ -187,6 +193,11 @@ export const layerDragHandleStyles = css`
 `
 
 export const layerHeaderStyles = css`
+  :host {
+    z-index: 1;
+    margin-bottom: calc(-1 * var(--layer-header-height));
+  }
+
   header {
     display: flex;
     align-items: center;
@@ -213,13 +224,18 @@ export const layerHeaderStyles = css`
 
 export const layerBodyStyles = css`
   :host {
+    display: flex;
     flex: 1 1 auto;
     min-height: 0;
-    padding: var(--space-4) 0;
-    overflow-y: auto;
-    overflow-x: hidden;
+  }
 
-    ${scrollbarStyles};
+  /* 패딩은 스크롤 영역 안쪽에 둔다. host에 두면 위쪽 여백이 스크롤 밖에 고정되어
+     콘텐츠가 header 뒤로 지나가지 못한다. */
+  mm-scroll {
+    flex: 1 1 auto;
+    width: 100%;
+    min-height: 0;
+    padding: var(--layer-body-padding-top) 0 var(--space-4);
   }
 `
 
