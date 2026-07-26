@@ -326,7 +326,7 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 type LayerElement = HTMLElement & {
-  open(): void
+  show(): void
 }
 
 type ValueElement = HTMLElement & {
@@ -351,7 +351,7 @@ function setupCartSheet() {
     trigger.addEventListener('click', () => {
       cartQuantity.value = productQuantity?.value || '1'
       updateTotal()
-      sheet.open()
+      sheet.show()
     })
   })
 

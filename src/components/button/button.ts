@@ -22,7 +22,7 @@ export class Button extends LitElement {
 
   @property({ type: String, reflect: true }) variant: ButtonVariant = 'tertiary'
   @property({ type: String, reflect: true }) size: ButtonSize = 'medium'
-  @property({ type: Boolean, attribute: 'full-width', reflect: true }) isFullWidth = false
+  @property({ type: Boolean, attribute: 'full-width', reflect: true }) fullWidth = false
   @property({ type: String }) type: ButtonType = 'button'
   @property({ type: Boolean }) disabled = false
   @property({ type: String }) icon?: IconName

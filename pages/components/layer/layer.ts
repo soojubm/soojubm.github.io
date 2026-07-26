@@ -5,11 +5,11 @@ import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
 import { renderLayout } from '../../../layouts/base-layouts'
 
 type LayerElement = HTMLElement & {
-  open(): void
+  show(): void
 }
 
 type ToastElement = HTMLElement & {
-  open(): void
+  show(): void
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -62,13 +62,13 @@ function setupComparisonTable() {
   `
 }
 
-// 자동 닫힘·재시작 타이머는 mm-toast가 소유하므로 트리거는 open()만 호출한다.
+// 자동 닫힘·재시작 타이머는 mm-toast가 소유하므로 트리거는 show()만 호출한다.
 function setupToastTrigger() {
   const trigger = document.querySelector<HTMLElement>('[data-open-toast]')
   const toast = document.querySelector<ToastElement>('.js-demo-toast')
   if (!trigger || !toast) return
 
-  trigger.addEventListener('click', () => toast.open())
+  trigger.addEventListener('click', () => toast.show())
 }
 
 function setupLayerTriggers() {
@@ -79,14 +79,14 @@ function setupLayerTriggers() {
       const layer = document.querySelector<LayerElement>(selector)
       if (!layer) return
 
-      layer.open()
+      layer.show()
     })
   })
 }
 
 function openLayer(id: string) {
   const layer = document.querySelector<LayerElement>(`#${id}`)
-  layer?.open()
+  layer?.show()
 }
 
 function layerPageTemplate() {

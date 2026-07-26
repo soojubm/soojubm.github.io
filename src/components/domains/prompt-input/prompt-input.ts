@@ -60,12 +60,12 @@ export class PromptInput extends LitElement {
   @query('mm-textarea') private textarea?: Textarea
 
   @property({ type: Boolean, reflect: true, attribute: 'single-line' })
-  private isSingleLine = true
+  private singleLine = true
 
   render() {
     return html`
       <form>
-        <mm-flex wrap="wrap" justify-content=${this.isSingleLine ? 'start' : 'between'}>
+        <mm-flex wrap="wrap" justify-content=${this.singleLine ? 'start' : 'between'}>
           ${this.renderStartActions()}
           <mm-textarea
             .value=${this.value}
@@ -109,7 +109,7 @@ export class PromptInput extends LitElement {
     if (!this.textarea) return
 
     this.textarea.resizeToContent()
-    this.isSingleLine = this.textarea.isSingleLine
+    this.singleLine = this.textarea.isSingleLine
   }
 
   private handleTextareaKeydown = (e: KeyboardEvent) => {

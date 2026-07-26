@@ -21,7 +21,7 @@ class Layer extends LitElement {
   @property({ type: String, reflect: true }) placement: LayerPlacement = 'center'
   @property({ type: String, reflect: true }) width: LayerWidth = 'medium'
   @property({ type: String }) height?: string
-  @property({ type: Boolean, reflect: true, attribute: 'open' }) isOpen = false
+  @property({ type: Boolean, reflect: true }) open = false
 
   @query('.layer') private layerEl!: HTMLElement
 
@@ -29,7 +29,7 @@ class Layer extends LitElement {
   private dragStartY = 0
 
   private layer = new LayerController(this, {
-    isOpen: () => this.isOpen,
+    isOpen: () => this.open,
     onDismiss: () => emit(this, 'layerclose'),
   })
 
@@ -45,7 +45,7 @@ class Layer extends LitElement {
 
   render() {
     return html`
-      <aside class="layer" ?open=${this.isOpen}>
+      <aside class="layer" ?open=${this.open}>
         ${this.renderDragHandle()}
         <slot></slot>
       </aside>
@@ -105,21 +105,21 @@ class Layer extends LitElement {
     this.style.setProperty('--layer-height', this.height)
   }
 
-  open() {
-    this.isOpen = true
+  show() {
+    this.open = true
   }
 
   close() {
-    this.isOpen = false
+    this.open = false
   }
 
   toggle() {
-    if (this.isOpen) {
+    if (this.open) {
       this.close()
       return
     }
 
-    this.open()
+    this.show()
   }
 }
 export default Layer

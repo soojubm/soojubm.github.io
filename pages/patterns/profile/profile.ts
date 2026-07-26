@@ -492,12 +492,12 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelector('mm-sort-selector')?.addEventListener('change', handleSort)
 })
 
-/** mm-portfolio-item의 portfolio-item-open 이벤트를 mm-layer 컴포넌트 open()에 연결한다. */
+/** mm-portfolio-item의 portfolio-item-open 이벤트를 mm-layer 컴포넌트 show()에 연결한다. */
 function setupPortfolioModal() {
   document.addEventListener('portfolio-item-open', event => {
     const { modal } = (event as PortfolioItemOpenEvent).detail
     const sheet = document.querySelector<Layer>(`#sheet-${modal}`)
-    sheet?.open()
+    sheet?.show()
   })
 }
 

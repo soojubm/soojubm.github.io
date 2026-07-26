@@ -16,7 +16,7 @@ class Toast extends LitElement {
   static styles = toastStyles
 
   @property({ type: String, reflect: true }) role = 'status'
-  @property({ type: Boolean, reflect: true, attribute: 'open' }) isOpen = false
+  @property({ type: Boolean, reflect: true }) open = false
 
   private hideTimer: ReturnType<typeof setTimeout> | null = null
 
@@ -32,14 +32,14 @@ class Toast extends LitElement {
     super.disconnectedCallback()
   }
 
-  open() {
-    this.isOpen = true
+  show() {
+    this.open = true
     this.restartTimer()
   }
 
   close() {
     this.clearTimer()
-    this.isOpen = false
+    this.open = false
   }
 
   // 열려 있을 때 다시 열면 남은 시간을 초기화한다.

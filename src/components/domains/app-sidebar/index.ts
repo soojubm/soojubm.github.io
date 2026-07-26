@@ -12,7 +12,7 @@ import { getCurrentPageId } from '@/utils/current-page'
 
 @customElement('mm-sidebar')
 export class Sidebar extends LitElement {
-  @property({ type: Boolean, reflect: true, attribute: 'open' }) isOpen = false
+  @property({ type: Boolean, reflect: true }) open = false
 
   @state() private currentPageId = 'index'
   @state() private openGroupIds = new Set(
@@ -22,9 +22,9 @@ export class Sidebar extends LitElement {
   private mobileQuery = window.matchMedia(MEDIA_QUERY.default)
 
   private disclosure = new DisclosureController(this, {
-    isOpen: () => this.isOpen,
+    isOpen: () => this.open,
     setOpen: open => {
-      this.isOpen = open
+      this.open = open
     },
     dismissOn: ['escape'],
   })
@@ -111,7 +111,7 @@ export class Sidebar extends LitElement {
     super.connectedCallback()
     this.currentPageId = getCurrentPageId()
 
-    if (this.mobileQuery.matches) this.isOpen = false
+    if (this.mobileQuery.matches) this.open = false
     this.mobileQuery.addEventListener('change', this.handleMobileChange)
   }
 
@@ -122,15 +122,11 @@ export class Sidebar extends LitElement {
 
   protected updated(changedProperties: Map<string, unknown>) {
     // 닫힌 사이드바로 포커스가 들어가지 않도록 열림 상태에 맞춰 inert를 맞춘다.
-    if (changedProperties.has('isOpen')) this.inert = !this.isOpen
-  }
-
-  open() {
-    this.isOpen = true
+    if (changedProperties.has('open')) this.inert = !this.open
   }
 
   close() {
-    this.isOpen = false
+    this.open = false
   }
 
   private handleMobileChange = (e: MediaQueryListEvent) => {
