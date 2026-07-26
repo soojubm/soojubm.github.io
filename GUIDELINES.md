@@ -14,7 +14,6 @@
 
 ### 컴포넌트 페이지 구조
 
-- 컴포넌트 페이지는 정해진 섹션 순서를 따른다.
 - anatomy 표현은 한 곳으로 통일해 중복하지 않는다.
 - sub-component는 별도 열기 흐름 없이 섹션 안에 직접 전시한다.
 
@@ -33,6 +32,7 @@
 - 한 계열의 공유 스타일 모듈은 단일 styles 파일에 named export로 모으고, 파일을 쪼개지 않는다.
 - 자기 문서 페이지를 갖는(API가 구분되는) 컴포넌트만 최상위 폴더로 두고, 부모 페이지의 섹션으로 전시되는 sub-component는 기반 컴포넌트의 semantics 폴더에 둔다.
 - 파일명은 그 파일이 정의하는 컴포넌트명(customElement 태그에서 `mm-` 접두사만 뺀 나머지 전체)과 일치시킨다.
+- 컴포넌트가 소유하는 시각적 규칙(버튼 형태, 시트 크기·위치 등)은 소비처에서 토큰이나 CSS 변수 override로 재정의하지 않고 컴포넌트 기본 규칙을 따른다.
 
 ### 상태 소유
 
@@ -49,23 +49,20 @@
 
 ### 접근성
 
-- 접근성 의미의 소유자는 하나로 유지한다.
 - 호스트가 직접 접근성 의미를 갖는 경우에만 호스트에 `role`·`aria-*`를 적용한다.
-- 접근성을 위한 네이티브 attribute와 ARIA attribute는 별칭 prop으로 우회하지 않고 그대로 공개 API로 사용한다.
+- 접근성을 위한 네이티브 attribute와 ARIA attribute는 별칭 prop으로 우회하지 않고 그대로 공개 API로 사용하며, Lit 클래스 내부 프로퍼티명도 표준 DOM 프로퍼티 이름을 따른다.
 - 상태를 표현하는 표준 네이티브 attribute나 ARIA attribute가 있으면 `classMap`·`styleMap`보다 먼저 사용하고, 스타일도 해당 attribute selector를 기준으로 둔다.
-- Lit 클래스 내부 프로퍼티명도 표준 DOM 프로퍼티 이름을 따른다.
-- 네이티브 폼 상태와 ARIA로 표현하는 상태는 구분한다.
 - host에 role을 두는 컴포넌트는 reflect된 role prop으로 일관되게 선언한다.
 
 ## 레이아웃 & 콘텐츠
 
 ### 레이아웃
 
+- 정해진 역할의 컴포넌트가 있으면(버튼, 헤딩, 태그 등) raw 마크업이나 개별 구현 대신 그 컴포넌트를 사용한다.
+- 동종 항목이 여럿이면 role·간격을 컨테이너에서 직접 재현하지 않고 계열 그룹 컴포넌트로 묶는다(버튼 그룹, 태그 그룹, 메뉴 아이템 그룹 등).
 - 수평·수직 배치는 `mm-flex`를 사용하되, 컴포넌트 shadow DOM 안에서는 `mm-flex`를 중첩하지 않고 host를 직접 flex 컨테이너로 만든다(단일 루트 래퍼는 host로 흡수, 반복/맵 자식은 host의 직접 자식으로 렌더). shadow 깊이를 줄이는 것이 목적이며, `mm-flex`는 페이지·콘텐츠 조립 레이아웃에 사용한다.
-- 버튼 그룹은 `mm-button-group`을 사용한다.
 - 반복 레이아웃은 직접 CSS Grid보다 `mm-grid`를 우선 사용한다.
-- 형제 영역 사이의 간격은 개별 여백보다 부모의 `gap`으로 처리한다.
-- 섹션 간격은 의미 토큰을 사용한다.
+- 형제 영역 사이의 간격은 개별 여백 대신 부모의 `gap`으로 처리하고, 섹션 간격은 의미 토큰을 사용한다.
 
 ### 페이지 헤더
 
@@ -74,23 +71,9 @@
 
 ### 타이포그래피
 
-- 텍스트가 2개 이상일 때는 그룹 컴포넌트로 묶는다.
-- 긴 본문을 접고 펼치는 더 보기 텍스트는 `mm-read-more-paragraph`를 사용한다.
-- 텍스트 성격에 맞는 전용 타이포그래피 컴포넌트를 사용한다.
-- 제목 맥락에는 의미 위계에 맞는 heading 컴포넌트를 사용한다.
-- 제목과 설명이 함께 있으면 text block 컴포넌트로 묶는다.
-- 연관 메타 정보는 메타 그룹 컴포넌트로 묶고 구조를 임의로 변형하지 않는다.
-- 새 콘텐츠에 raw 텍스트 태그를 직접 사용하지 않는다.
+- 텍스트 성격에 맞는 전용 타이포그래피 컴포넌트를 사용하고, 새 콘텐츠에 raw 텍스트 태그를 직접 사용하지 않는다.
+- 제목과 설명이 함께 있으면 text block 컴포넌트로, 연관 메타 정보는 메타 그룹 컴포넌트로 묶고 구조를 임의로 변형하지 않는다.
 - 정보 위계, 텍스트 크기·색상 단계는 제목·본문·핵심 수치처럼 꼭 필요한 최소 단계로 단순하게 구성한다.
-
-### 태그
-
-- 여러 태그는 태그 그룹 컴포넌트로 묶는다.
-
-### 버튼
-
-- 버튼은 항상 `mm-button`을 사용한다.
-- 버튼 형태는 토큰이나 CSS 변수 override보다 컴포넌트 기본 규칙을 따른다.
 
 ## 스타일
 
@@ -99,7 +82,7 @@
 - 색상, 간격, radius는 CSS 토큰을 사용하고 하드코딩하지 않는다.
 - 토큰을 계산해 새 값을 만들지 않고, 필요한 의미에 가장 가까운 기존 토큰을 사용한다.
 - 테마 분기처럼 재정의할 목적이 없으면 토큰을 다른 이름으로 감싸지 않고 그대로 사용한다. 어떤 토큰이 다른 토큰 하나에만 값을 흘려보낼 뿐 따로 쓰이지 않는다면 하나로 합친다.
-- 컴포넌트 이름이 붙은 토큰(`--avatar-border` 등)은 variables.css에서 재정의하지 않는다. 테마마다 달라져야 할 값이면 컴포넌트가 자기 기본값에서 `--border`·`--border-transparent` 같은 전역 primitive를 그대로 참조하게 하고, 테마 블록은 그 primitive만 재정의한다 — 그래야 컴포넌트 전용 fallback 토큰을 테마마다 따로 만드는 우회가 필요 없다. 단, 이 패턴은 실제 DOM에 렌더되는 요소(컴포넌트 `:host`, `.navbar-user` 같은 plain CSS 클래스)에서만 성립한다. `data-theme`는 `body`에 적용되는데 variables.css의 `:root {}`는 `body`의 조상(`html`)이라, `:root`에 `--token: var(--primitive)`를 선언하면 그 참조는 절대 테마가 적용되지 않는 `html` 시점 값으로 고정되어 버린다. `:root`에서 기본값을 선언해야 하는 토큰은 테마가 재정의하는 primitive 대신 절대 재정의되지 않는 원시값(`--gray0` 등)을 참조한다.
+- 컴포넌트 이름이 붙은 토큰(`--avatar-border` 등)은 variables.css에서 재정의하지 않는다. 테마마다 달라져야 할 값이면 컴포넌트가 자기 기본값에서 `--border`·`--border-transparent` 같은 전역 primitive를 그대로 참조하게 하고, 테마 블록은 그 primitive만 재정의한다. 단, 이 패턴은 실제 DOM에 렌더되는 요소(컴포넌트 `:host`, `.navbar-user` 같은 plain CSS 클래스)에서만 성립한다. `data-theme`는 `body`에 적용되는데 variables.css의 `:root {}`는 `body`의 조상(`html`)이라, `:root`에 `--token: var(--primitive)`를 선언하면 그 참조는 절대 테마가 적용되지 않는 `html` 시점 값으로 고정되어 버린다. `:root`에서 기본값을 선언해야 하는 토큰은 테마가 재정의하는 primitive 대신 절대 재정의되지 않는 원시값(`--gray0` 등)을 참조한다.
 - `var(--token, fallback)` 형태의 소비처 fallback은 안티패턴이다. 토큰이 모든 테마에서 값을 갖도록 `:root` 기본값 + 테마 블록 재정의로 선언하고, 소비처는 fallback 없이 참조한다.
 - width·height처럼 요소 자체의 고정 치수는 간격 토큰이 아니라 size 토큰을 우선 사용한다.
 - 컴포넌트 토큰은 소비하는 CSS 속성 이름으로 짓는다(`background`→`-background-color`, `border-radius`→`-border-radius`, `color:`→`-text-color`, `height`→`-height`). 한 값이 여러 속성을 먹이면 특정 속성명으로 좁히지 않고 제네릭 이름을 유지한다.
@@ -107,9 +90,8 @@
 
 ### 테마
 
-- 투명도·blur 같은 테마 전용 시각 효과는 body·surface·input 등 전역 배경 토큰에 주지 않고, 떠 있는 표면이 소비하는 재질 티어 토큰 `--surface-{base,high}-background-color`·`-backdrop-filter`·`-border`·`-shadow`에만 준다(티어를 접두어로 두고 속성을 이어 붙인다: `--surface-high-shadow`). 그래야 정적 콘텐츠가 테마에 따라 함께 반투명해지지 않는다. 표면별 전용 이름(`--sheet-background` 등)을 새로 만들지 않고 각 표면이 자기 티어 토큰을 직접 소비한다. 뎁스는 high 한 단계로만 표현하고(단독으로 뜨는 표면과 그 위/안에 얹힌 포커스 레이어가 모두 이 티어를 쓴다), base 티어는 모든 테마에서 재질 효과 없이(불투명 배경·blur 없음·테두리 없음·그림자 없음) 항상 비활성 상태다 — flush chrome 바처럼 뎁스가 없는 표면은 애초에 티어를 갖지 않는다. 같은 표면(같은 CSS 규칙)이 소비하는 배경·테두리·backdrop-filter·그림자는 반드시 같은 티어를 참조한다. 이 재질 티어 토큰은 `mm-surface` 컴포넌트 자신의 `--surface-background-color` 등(티어 접미사 없는 컴포넌트 소유 토큰)과 이름 계열은 같지만 가리키는 대상이 다르므로 혼동하지 않는다. 재질과 무관한 고도(elevation) 그림자는 별도 원시값 `--shadow-high`를 쓰되, 그림자는 표면(카드·팝오버·툴팁 등) 전용이고 radio·switch 같은 일반 컨트롤 요소에는 주지 않는다.
-- 테마 블록이 재정의해야 하는 토큰의 기본값을 컴포넌트가 `:host { --token: 기본값; }`처럼 스스로 선언해두면, 조상에서 같은 이름을 재정의해도 적용되지 않는다(그 요소 자신에게 이미 선언된 값이 있으면 상속을 타지 않기 때문). 별도 이름+fallback으로 우회하지 말고, 애초에 컴포넌트가 그 토큰의 기본값을 선언하지 않는다.
-- `backdrop-filter`를 가진 요소의 자손에서는 backdrop-filter가 페이지 배경을 샘플링하지 못한다. popover처럼 내부에서 glass 표면이 열리는 컨테이너(navbar, control pill 등)는 재질(배경+blur)을 요소 자신이 아니라 `::before` 형제 레이어(absolute, `inset: 0`, `z-index: -1`, 컨테이너에 `isolation: isolate`)에 둔다.
+- 고도(elevation) 그림자는 원시값 `--shadow-high`를 쓰고, 표면(카드·팝오버·툴팁 등) 전용이며 radio·switch 같은 일반 컨트롤 요소에는 주지 않는다.
+- 테마 블록이 재정의해야 하는 토큰의 기본값을 컴포넌트가 `:host { --token: 기본값; }`처럼 스스로 선언해두면, 조상에서 같은 이름을 재정의해도 적용되지 않는다(그 요소 자신에게 이미 선언된 값이 있으면 상속을 타지 않기 때문). 애초에 컴포넌트가 그 토큰의 기본값을 선언하지 않는다.
 
 ### 레이어(z-index)
 
@@ -117,7 +99,6 @@
 - base·raised는 콘텐츠 안에서 형제 요소보다 살짝 뜨는 로컬 정도만 표현한다.
 - overlay·modal·chrome·toast는 화면 위로 뜨는 시스템 레벨 요소가 쓴다: 드롭다운·팝오버·툴팁은 overlay, 화면을 덮는 대화형 표면(backdrop·sheet)은 modal, 화면에 고정된 내비게이션·툴바(navbar, 사이드 메뉴, top-bar의 sticky 상태, fixed-bottom 안의 bottom-bar)는 chrome, 항상 최상단이어야 하는 알림은 toast를 쓴다.
 - chrome이 modal보다 높은 값을 갖는다. 고정 내비게이션이 모달·시트보다 위에 남아 있어야 하는 화면이면 이 순서를 그대로 따르고, 모달이 내비게이션까지 덮어야 하는 예외적인 화면에서만 별도로 판단한다.
-- glass처럼 blur·투명도(material)를 쓰는 테마에서, material 세기는 z-index 티어가 아니라 "뎁스가 있는 표면인가, 그 위에서 실제로 읽고 조작하는 레이어인가"로 정한다. 면적이 넓고 배경처럼 존재하는 바깥쪽 chrome 바(navbar, prompt-input 본체)는 뎁스가 없어 재질 효과를 아예 받지 않고, 화면 위에 단독으로 뜨는 표면(dialog, sidebar-menu)과 그 위/안에 얹혀 포커스를 받는 레이어(navbar-user pill, 드롭다운, 중첩된 입력 컨트롤)는 모두 high로 가려 가독성을 우선한다.
 
 ### 스타일시트
 
@@ -151,7 +132,7 @@
 - `render()` 안에서 조건부 DOM 조각이 커지면 `render*()` helper로 분리한다. helper 이름은 `renderContent()`처럼 상태를 다시 중계하지 않고 `renderImage()`처럼 실제 조각의 의미를 드러내며, `render()`에는 각 helper를 직접 나열한다.
 - Lit 바인딩은 attribute, property, Boolean attribute의 역할에 맞게 구분해 사용한다.
 - 단일 표현식 바인딩은 따옴표 없이 쓰고, 정적 문자열과 표현식을 섞을 때만 따옴표로 묶는다.
-- 동적 class는 정적 class와 한 바인딩에서 섞지 않고, 상태 스타일은 attribute나 style selector로 표현한다.
+- 동적 class는 정적 class와 한 바인딩에서 섞지 않는다.
 - 여러 조건으로 class가 바뀌면 중첩 삼항식보다 `classMap`으로 상태 이름을 드러낸다.
 - 동적 inline style은 `styleMap` directive로 바인딩한다.
 - `reflect: true`는 외부 CSS 선택자나 DOM attribute 조회가 필요한 공개 상태에만 사용한다.
@@ -165,13 +146,9 @@
 
 ## 컴포넌트별 규칙
 
-### mm-menu-item-group
-
-- 여러 `mm-menu-item-*`를 묶어 보여줄 때는 role과 항목 간 gap을 컨테이너에서 직접 재현하지 않고 `mm-menu-item-group`으로 감싼다.
-
 ### mm-sheet
 
-- 시트의 높이·너비·위치(variant)와 스크롤 책임은 sheet 컴포넌트 계층에서 일관되게 관리하며, 사용처에서 CSS 토큰을 override해 재정의하지 않는다.
+- 시트의 높이·너비·위치(variant)와 스크롤 책임은 sheet 컴포넌트 계층에서 일관되게 관리한다.
 
 ### mm-surface
 
