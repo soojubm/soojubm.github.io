@@ -1,8 +1,7 @@
-import { LitElement, html, css } from 'lit'
+import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import '@/components/text/semantics/heading'
-import '@/components/tag/semantics/tag-group'
 import '@/components/tag/semantics/keyword-tag'
 import {
   componentTokensStyles,
@@ -56,7 +55,7 @@ const WORD_CATEGORIES = [
   },
 ] as const
 
-// state는 surface·dimension 중 하나에 딸린 변형이라 항상 base 카테고리 뒤에 노출한다.
+// state는 dimension·surface에 딸린 변형이라 단독 카테고리가 아니라 base 뒤에 이어 붙인다.
 const CATEGORY_DISPLAY_ORDER = ['dimension', 'surface', 'state'] as const
 
 /**
@@ -73,7 +72,7 @@ export class Token extends LitElement {
   render() {
     return html`
       <mm-flex align-items="center" gap="3">
-        ${this.renderCategoryTags()}
+        ${this.renderCategoryTag()}
         <mm-meta-item
           layout="stacked"
           label=${this.formatName()}
@@ -83,19 +82,14 @@ export class Token extends LitElement {
     `
   }
 
-  private renderCategoryTags() {
-    const categories = this.categories().map(category => this.renderCategoryTag(category))
+  private renderCategoryTag() {
+    const categories = this.categories()
+    if (!categories.length) return nothing
 
-    if (categories.length > 1)
-      return html`
-        <mm-tag-group>${categories}</mm-tag-group>
-      `
-    return categories
-  }
-
-  private renderCategoryTag(category: string) {
     return html`
-      <mm-keyword-tag>${this.capitalize(category)}</mm-keyword-tag>
+      <mm-keyword-tag>
+        ${categories.map(category => this.capitalize(category)).join('-')}
+      </mm-keyword-tag>
     `
   }
 
