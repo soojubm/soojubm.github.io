@@ -2,6 +2,8 @@ import { LitElement, html, css } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import '@/components/text/semantics/heading'
+import '@/components/tag/semantics/tag-group'
+import '@/components/tag/semantics/keyword-tag'
 import {
   componentTokensStyles,
   tokenStyles,
@@ -54,6 +56,9 @@ const WORD_CATEGORIES = [
   },
 ] as const
 
+// state는 surface·dimension 중 하나에 딸린 변형이라 항상 base 카테고리 뒤에 노출한다.
+const CATEGORY_DISPLAY_ORDER = ['dimension', 'surface', 'state'] as const
+
 /**
  * 개별 CSS 커스텀 프로퍼티(토큰) 행.
  * mm-component-tokens 안에서만 사용합니다.
@@ -68,8 +73,7 @@ export class Token extends LitElement {
   render() {
     return html`
       <mm-flex align-items="center" gap="3">
-        <!-- category-tag -->
-        <mm-keyword-tag>Dimension</mm-keyword-tag>
+        ${this.renderCategoryTags()}
         <mm-meta-item
           layout="stacked"
           label=${this.formatName()}
@@ -77,6 +81,34 @@ export class Token extends LitElement {
         ></mm-meta-item>
       </mm-flex>
     `
+  }
+
+  private renderCategoryTags() {
+    const categories = this.categories().map(category => this.renderCategoryTag(category))
+
+    if (categories.length > 1)
+      return html`
+        <mm-tag-group>${categories}</mm-tag-group>
+      `
+    return categories
+  }
+
+  private renderCategoryTag(category: string) {
+    return html`
+      <mm-keyword-tag>${this.capitalize(category)}</mm-keyword-tag>
+    `
+  }
+
+  private capitalize(word: string) {
+    return `${word[0].toUpperCase()}${word.slice(1)}`
+  }
+
+  // 이름을 이루는 단어들이 속한 카테고리를 중복 없이 표시 순서(dimension/surface → state)로 반환한다.
+  private categories() {
+    const parts = this.name.split('-')
+    const found = new Set(parts.map((_, index) => this.categoryName(index, parts)))
+
+    return CATEGORY_DISPLAY_ORDER.filter(category => found.has(category))
   }
 
   // var(--radius-full)처럼 값이 토큰 참조면 var(--...)로 감싼 부분을 걷어내 토큰 이름만 남긴다.
