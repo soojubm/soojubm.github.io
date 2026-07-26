@@ -8,6 +8,7 @@ import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
 import { DisclosureController } from '@/controllers/disclosure-controller'
 import { SITEMAP, type SitemapNode } from '@/sitemap'
 import { MEDIA_QUERY } from '@/stylesheets/shared/breakpoints'
+import { getCurrentPageId } from '@/utils/current-page'
 
 @customElement('mm-sidebar')
 export class Sidebar extends LitElement {
@@ -108,8 +109,7 @@ export class Sidebar extends LitElement {
 
   connectedCallback() {
     super.connectedCallback()
-    const currentPath = window.location.pathname.split('/').pop() || 'index.html'
-    this.currentPageId = currentPath.replace('.html', '') || 'index'
+    this.currentPageId = getCurrentPageId()
 
     if (this.mobileQuery.matches) this.isOpen = false
     this.mobileQuery.addEventListener('change', this.handleMobileChange)
