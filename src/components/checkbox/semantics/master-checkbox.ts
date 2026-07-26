@@ -1,7 +1,7 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import type { Checkbox } from '@/components/checkbox/checkbox'
+import type { CheckboxGroup } from '@/components/checkbox/semantics/checkbox-group'
 import type { AriaIdRef } from '@/types/aria'
 
 import { checkboxStyles } from '@/components/checkbox/checkbox.styles'
@@ -13,16 +13,15 @@ export class MasterCheckbox extends LitElement {
 
   @property({ type: String, attribute: 'aria-controls' }) ariaControls: AriaIdRef = null
   @property({ type: String, reflect: true }) size = 'large'
-  @property({ type: Boolean }) checked = false
-  @property({ type: Boolean, reflect: true }) indeterminate = false
 
   private inputId = uniqueId('master-checkbox')
-
-  private controlledElement?: HTMLElement | null
+  private group: CheckboxGroup | null = null
 
   render() {
     return html`
       <mm-surface variant="elevated">
+        <!-- label 클릭은 라벨 자체 + 연결된 input으로 forwarding되는 클릭까지 두 번 버블링되어
+             @click을 쓰면 두 번 토글된다. pointerdown 한 번만 잡아 기본 동작을 막고 직접 토글한다. -->
         <div @pointerdown=${this.handleSurfacePointerdown}>
           <input
             type="checkbox"
@@ -44,67 +43,51 @@ export class MasterCheckbox extends LitElement {
     `
   }
 
-  connectedCallback() {
-    super.connectedCallback()
-    document.addEventListener('change', this.handleControlledCheckboxesChange)
-  }
-
   disconnectedCallback() {
-    document.removeEventListener('change', this.handleControlledCheckboxesChange)
+    this.group?.removeEventListener('change', this.handleGroupChange)
     super.disconnectedCallback()
   }
 
   firstUpdated() {
-    this.syncControlledElement()
+    this.syncGroup()
   }
 
   updated(changed: Map<string, unknown>) {
     if (!changed.has('ariaControls')) return
 
-    this.syncControlledElement()
+    this.syncGroup()
   }
 
-  private syncControlledElement() {
-    this.controlledElement = this.ariaControls ? document.getElementById(this.ariaControls) : null
-    this.handleControlledCheckboxesChange()
+  private get checked() {
+    return this.group?.checked ?? false
   }
 
-  private get controlledCheckboxes() {
-    if (!this.controlledElement) return []
-
-    return Array.from(this.controlledElement.querySelectorAll<Checkbox>('mm-checkbox')).filter(
-      checkbox => !checkbox.disabled,
-    )
+  private get indeterminate() {
+    return this.group?.indeterminate ?? false
   }
 
-  private setControlledCheckboxes(checked: boolean) {
-    this.controlledCheckboxes.forEach(checkbox => {
-      checkbox.checked = checked
-      checkbox.indeterminate = false
-    })
+  private syncGroup() {
+    this.group?.removeEventListener('change', this.handleGroupChange)
+
+    this.group = this.ariaControls
+      ? (document.getElementById(this.ariaControls) as CheckboxGroup | null)
+      : null
+
+    this.group?.addEventListener('change', this.handleGroupChange)
+    this.requestUpdate()
   }
 
-  private handleControlledCheckboxesChange = () => {
-    const checkboxes = this.controlledCheckboxes
-    const checkedCount = checkboxes.filter(checkbox => checkbox.checked).length
-
-    this.checked = checkboxes.length > 0 && checkedCount === checkboxes.length
-    this.indeterminate = checkedCount > 0 && checkedCount < checkboxes.length
+  private handleGroupChange = () => {
+    this.requestUpdate()
   }
 
-  private setChecked(checked: boolean) {
-    this.checked = checked
-    this.indeterminate = false
-    this.setControlledCheckboxes(checked)
-  }
-
-  private handleCheckboxInputChange = (event: Event) => {
-    this.setChecked((event.target as HTMLInputElement).checked)
+  private handleCheckboxInputChange = () => {
+    this.group?.toggleAll()
   }
 
   private handleSurfacePointerdown = (event: Event) => {
     event.preventDefault()
-    this.setChecked(!this.checked)
+    this.group?.toggleAll()
   }
 }
 

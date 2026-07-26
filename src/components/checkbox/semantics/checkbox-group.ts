@@ -113,6 +113,38 @@ export class CheckboxGroup extends LitElement {
       values: this.values,
     })
   }
+
+  get checked() {
+    const selectable = this.selectableCheckboxes
+    return selectable.length > 0 && selectable.every(checkbox => this.isChecked(checkbox))
+  }
+
+  get indeterminate() {
+    const selectable = this.selectableCheckboxes
+    const checkedCount = selectable.filter(checkbox => this.isChecked(checkbox)).length
+
+    return checkedCount > 0 && checkedCount < selectable.length
+  }
+
+  toggleAll() {
+    const checked = !this.checked
+    const selectableValues = this.selectableCheckboxes.map(checkbox =>
+      this.getCheckboxValue(checkbox),
+    )
+    const otherValues = this.values.filter(value => !selectableValues.includes(value))
+
+    this.values = checked ? [...otherValues, ...selectableValues] : otherValues
+    this.syncCheckboxes()
+    this.dispatchValueChange()
+  }
+
+  private get selectableCheckboxes() {
+    return this.checkboxes.filter(checkbox => !checkbox.disabled)
+  }
+
+  private isChecked(checkbox: Checkbox) {
+    return this.selection.isSelected(this.getCheckboxValue(checkbox))
+  }
 }
 
 export default CheckboxGroup
