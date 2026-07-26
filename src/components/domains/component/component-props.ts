@@ -2,13 +2,22 @@ import { LitElement, html } from 'lit'
 import { state } from 'lit/decorators/state.js'
 import { customElement, property } from 'lit/decorators.js'
 import { classMap } from 'lit/directives/class-map.js'
+import { ifDefined } from 'lit/directives/if-defined.js'
 
 import '@/components/button/semantics/read-more-button'
 import {
   componentPropItemStyles,
   componentPropsStyles,
 } from '@/components/domains/component/component-props.styles'
+import { arrayAttributeConverter } from '@/utils/property-converters'
 import { uniqueId } from '@/utils/unique-id'
+
+export interface ComponentPropItemData {
+  name: string
+  type: string
+  kind?: 'event'
+  optional?: boolean
+}
 
 /**
  * 1. 자식 컴포넌트: <mm-component-prop-item>
@@ -45,6 +54,12 @@ export class ComponentProps extends LitElement {
 
   private readonly propsId = uniqueId('component-props')
 
+  @property({
+    attribute: 'props',
+    converter: arrayAttributeConverter<ComponentPropItemData>(),
+  })
+  props: ComponentPropItemData[] = []
+
   render() {
     return html`
       <section
@@ -56,9 +71,7 @@ export class ComponentProps extends LitElement {
         @click=${this.handleClick}
       >
         <div hidden><mm-text as="h2">Props</mm-text></div>
-        <div id=${this.propsId}>
-          <slot></slot>
-        </div>
+        <div id=${this.propsId}>${this.props.map(prop => this.renderPropItem(prop))}</div>
         <div class="component-props-more" aria-hidden=${this.isOpened ? 'true' : 'false'}>
           <mm-read-more-button
             more-label="...펼쳐서 더보기"
@@ -67,6 +80,17 @@ export class ComponentProps extends LitElement {
           ></mm-read-more-button>
         </div>
       </section>
+    `
+  }
+
+  private renderPropItem(prop: ComponentPropItemData) {
+    return html`
+      <mm-component-prop-item
+        name=${prop.name}
+        type=${prop.type}
+        kind=${ifDefined(prop.kind)}
+        ?optional=${prop.optional}
+      ></mm-component-prop-item>
     `
   }
 

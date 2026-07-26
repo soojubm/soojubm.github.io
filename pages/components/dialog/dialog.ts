@@ -1,7 +1,44 @@
 import { html } from 'lit'
+
 import type { ActionConfig } from '@/components/action-config'
+import type { ComponentFeatureItem } from '@/components/domains/component/component-feature-list'
+import type { ComponentPropItemData } from '@/components/domains/component/component-props'
+import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
 
 import { renderDocumentLayout } from '../../../layouts/document-layout'
+
+const relatedComponents: ComponentRelatedItemData[] = [
+  { href: 'layer.html', label: 'Layer' },
+  { href: 'popover.html', label: 'Popover' },
+  { href: 'notice.html', label: 'Notice' },
+]
+
+const componentProps: ComponentPropItemData[] = [
+  { name: 'open', type: 'boolean' },
+  { name: 'heading', type: 'string' },
+  { name: 'description', type: 'string' },
+  { name: 'primaryAction', type: 'ActionConfig', optional: true },
+  { name: 'secondaryAction', type: 'ActionConfig', optional: true },
+  { name: "slot='footer'", type: 'actions' },
+  { name: 'dialog-close', type: 'CustomEvent', kind: 'event' },
+]
+
+const componentFeatures: ComponentFeatureItem[] = [
+  {
+    heading: 'Feedback',
+    description:
+      '다이얼로그를 닫기 전에는 이전 콘텐츠로 포커스 불가능. 다이얼로그를 닫은 후 열기 버튼으로 포커스 복귀. 레이어를 2개 이상 쌓지 마세요.',
+  },
+  {
+    heading: 'Interactive - action',
+    description:
+      '프라이머리 버튼의 레이블은 다이얼로그 제목의 동사와 페어링되어야 한다. 부정어로 묻지 말 것.',
+  },
+  {
+    heading: 'Dismissible',
+    description: '닫기 버튼과 ESC로 사용자가 언제든 흐름을 중단하고 빠져나갈 수 있어야 합니다.',
+  },
+]
 
 const main = html`
   <main class="page" role="" aria-label="site">
@@ -31,53 +68,12 @@ const main = html`
       ></mm-dialog>
     </mm-component-example>
 
-    <mm-component-props>
-      <mm-component-prop-item name="open" type="boolean"></mm-component-prop-item>
-      <mm-component-prop-item name="heading" type="string"></mm-component-prop-item>
-      <mm-component-prop-item name="description" type="string"></mm-component-prop-item>
-      <mm-component-prop-item
-        name="primaryAction"
-        type="ActionConfig"
-        optional
-      ></mm-component-prop-item>
-      <mm-component-prop-item
-        name="secondaryAction"
-        type="ActionConfig"
-        optional
-      ></mm-component-prop-item>
-      <mm-component-prop-item name="slot='footer'" type="actions"></mm-component-prop-item>
-      <mm-component-prop-item
-        name="dialog-close"
-        type="CustomEvent"
-        kind="event"
-      ></mm-component-prop-item>
-    </mm-component-props>
+    <mm-component-props .props=${componentProps}></mm-component-props>
 
     <mm-component-guide>
-      <mm-component-feature-list>
-        <mm-feature
-          heading="Feedback"
-          subtitle=""
-          description="다이얼로그를 닫기 전에는 이전 콘텐츠로 포커스 불가능. 다이얼로그를 닫은 후 열기 버튼으로 포커스 복귀. 레이어를 2개 이상 쌓지 마세요."
-        ></mm-feature>
-        <mm-feature
-          heading="Interactive - action"
-          subtitle=""
-          description="프라이머리 버튼의 레이블은 다이얼로그 제목의 동사와 페어링되어야 한다. 부정어로 묻지 말 것."
-        ></mm-feature>
-        <mm-feature
-          heading="Dismissible"
-          description="닫기 버튼과 ESC로 사용자가 언제든 흐름을 중단하고 빠져나갈 수 있어야 합니다."
-        ></mm-feature>
-      </mm-component-feature-list>
+      <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
     </mm-component-guide>
-    <mm-component-related>
-      <mm-button-group>
-        <mm-hashtag-link href="layer.html">Layer</mm-hashtag-link>
-        <mm-hashtag-link href="popover.html">Popover</mm-hashtag-link>
-        <mm-hashtag-link href="notice.html">Notice</mm-hashtag-link>
-      </mm-button-group>
-    </mm-component-related>
+    <mm-component-related .items=${relatedComponents}></mm-component-related>
   </main>
 `
 

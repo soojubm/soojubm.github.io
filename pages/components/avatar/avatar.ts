@@ -1,6 +1,51 @@
 import { html } from 'lit'
+
+import type { ComponentFeatureItem } from '@/components/domains/component/component-feature-list'
+import type { ComponentPropItemData } from '@/components/domains/component/component-props'
+import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
+import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
+
 import { AVATAR_SHAPE_TYPE_LABEL, AVATAR_VARIANT_TYPE_UNION } from '@/components/avatar'
+
 import { renderDocumentLayout } from '../../../layouts/document-layout'
+
+const relatedComponents: ComponentRelatedItemData[] = [
+  { href: 'list-item.html', label: 'List Item' },
+  { href: 'thumbnail.html', label: 'Thumbnail' },
+]
+
+const componentProps: ComponentPropItemData[] = [
+  { name: 'variant', type: "${AVATAR_VARIANT_TYPE_UNION} = 'primary'" },
+  { name: 'size', type: "'80' | '48' | '40' | '32' = '40'" },
+  { name: 'shape', type: '' },
+  { name: 'src', type: 'string', optional: true },
+  { name: 'icon', type: 'IconName', optional: true },
+]
+
+const componentTokens: ComponentTokenItemData[] = [
+  { name: 'avatar-size', default: 'var(--size-40)' },
+  { name: 'avatar-background-color', default: 'var(--background-subtle-color)' },
+  { name: 'avatar-border', default: 'var(--border)' },
+  { name: 'avatar-border-radius', default: 'var(--radius)' },
+]
+
+const componentFeatures: ComponentFeatureItem[] = [
+  {
+    heading: 'Representative',
+    description:
+      '사용자·브랜드·객체를 시각적으로 대변합니다. 이미지 프로필을 최우선으로 보여주며, 식별 정보에 상태 메타 데이터를 결합하면 하나의 독립된 정보 노출 단위로도 기능합니다.',
+  },
+  {
+    heading: 'Fallback',
+    description:
+      '이미지가 없거나 로드에 실패해도 이니셜 → 아이콘 → 기본 아이콘 순으로 대체해 형태와 정체성을 유지합니다. alt 텍스트 또는 aria-label을 반드시 제공하세요.',
+  },
+  {
+    heading: 'Groupable',
+    description:
+      '여러 아바타는 avatar-group으로 겹쳐 묶어 참여자 무리를 압축해 보여줍니다. 겹침 간격과 초과 인원 표시는 그룹이 소유합니다.',
+  },
+]
 
 const groupAvatars = ['', '', '', '']
 
@@ -47,26 +92,9 @@ const main = html`
       </mm-flex>
     </mm-component-example>
 
-    <mm-component-props>
-      <mm-component-prop-item
-        name="variant"
-        type="${AVATAR_VARIANT_TYPE_UNION} = 'primary'"
-      ></mm-component-prop-item>
-      <mm-component-prop-item
-        name="size"
-        type="'80' | '48' | '40' | '32' = '40'"
-      ></mm-component-prop-item>
-      <mm-component-prop-item name="shape" type=${AVATAR_SHAPE_TYPE_LABEL}></mm-component-prop-item>
-      <mm-component-prop-item name="src" type="string" optional></mm-component-prop-item>
-      <mm-component-prop-item name="icon" type="IconName" optional></mm-component-prop-item>
-    </mm-component-props>
+    <mm-component-props .props=${componentProps}></mm-component-props>
 
-    <mm-component-tokens>
-      <mm-token name="avatar-size" default="var(--size-40)"></mm-token>
-      <mm-token name="avatar-background-color" default="var(--background-subtle-color)"></mm-token>
-      <mm-token name="avatar-border" default="var(--border)"></mm-token>
-      <mm-token name="avatar-border-radius" default="var(--radius)"></mm-token>
-    </mm-component-tokens>
+    <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
 
     <mm-component-anatomy
       parts='[
@@ -95,20 +123,7 @@ const main = html`
     </mm-component-anatomy>
 
     <mm-component-guide>
-      <mm-component-feature-list>
-        <mm-feature
-          heading="Representative"
-          description="사용자·브랜드·객체를 시각적으로 대변합니다. 이미지 프로필을 최우선으로 보여주며, 식별 정보에 상태 메타 데이터를 결합하면 하나의 독립된 정보 노출 단위로도 기능합니다."
-        ></mm-feature>
-        <mm-feature
-          heading="Fallback"
-          description="이미지가 없거나 로드에 실패해도 이니셜 → 아이콘 → 기본 아이콘 순으로 대체해 형태와 정체성을 유지합니다. alt 텍스트 또는 aria-label을 반드시 제공하세요."
-        ></mm-feature>
-        <mm-feature
-          heading="Groupable"
-          description="여러 아바타는 avatar-group으로 겹쳐 묶어 참여자 무리를 압축해 보여줍니다. 겹침 간격과 초과 인원 표시는 그룹이 소유합니다."
-        ></mm-feature>
-      </mm-component-feature-list>
+      <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
     </mm-component-guide>
 
     <mm-component-section
@@ -128,12 +143,7 @@ const main = html`
     >
       <mm-avatar-group .avatars=${groupAvatars} label="수줍이 외 3명"></mm-avatar-group>
     </mm-component-section>
-    <mm-component-related>
-      <mm-button-group>
-        <mm-hashtag-link href="list-item.html">List Item</mm-hashtag-link>
-        <mm-hashtag-link href="thumbnail.html">Thumbnail</mm-hashtag-link>
-      </mm-button-group>
-    </mm-component-related>
+    <mm-component-related .items=${relatedComponents}></mm-component-related>
   </main>
 `
 

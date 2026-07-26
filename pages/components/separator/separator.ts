@@ -1,5 +1,36 @@
 import { html } from 'lit'
+
+import type { ComponentFeatureItem } from '@/components/domains/component/component-feature-list'
+import type { ComponentPropItemData } from '@/components/domains/component/component-props'
+import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
+import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
+
 import { renderDocumentLayout } from '../../../layouts/document-layout'
+
+const relatedComponents: ComponentRelatedItemData[] = [
+  { href: 'list-item.html', label: 'List Item' },
+  { href: 'surface.html', label: 'Surface' },
+]
+
+const componentProps: ComponentPropItemData[] = [
+  { name: 'scope', type: "'element' | 'section' = 'section'" },
+  { name: 'slot: text', type: 'HTMLElement', optional: true },
+]
+
+const componentTokens: ComponentTokenItemData[] = [
+  { name: 'separator-spacing', default: 'var(--space-4)' },
+  { name: 'separator-border', default: 'var(--border)' },
+]
+
+const componentFeatures: ComponentFeatureItem[] = [
+  {
+    heading: 'Structural',
+    description:
+      '정보와 정보 사이의 시각적 경계를 명확히 하여, 복잡한 화면의 레이아웃을 논리적인 단위로 분리하고 구조화합니다.',
+  },
+  { heading: 'TODO', description: 'TODO' },
+  { heading: 'TODO', description: 'TODO' },
+]
 
 const main = html`
   <main class="page">
@@ -40,31 +71,12 @@ const main = html`
       </mm-grid>
     </mm-component-example>
 
-    <mm-component-props>
-      <mm-component-prop-item
-        name="scope"
-        type="'element' | 'section' = 'section'"
-      ></mm-component-prop-item>
-      <mm-component-prop-item
-        name="slot: text"
-        type="HTMLElement"
-        optional
-      ></mm-component-prop-item>
-    </mm-component-props>
+    <mm-component-props .props=${componentProps}></mm-component-props>
 
-    <mm-component-tokens>
-      <mm-token name="separator-spacing" default="var(--space-4)"></mm-token>
-      <mm-token name="separator-border" default="var(--border)"></mm-token>
-    </mm-component-tokens>
+    <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
 
     <mm-component-guide>
-      <mm-component-feature-list>
-        <mm-feature
-          heading="Structural"
-          subtitle="notification, status, informational"
-          description="정보와 정보 사이의 시각적 경계를 명확히 하여, 복잡한 화면의 레이아웃을 논리적인 단위로 분리하고 구조화합니다."
-        ></mm-feature>
-      </mm-component-feature-list>
+      <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
       <mm-text-list
         texts='[
         "hr 태그를 사용하면 의미론적으로 주제를 분리할 수 있고 컴포넌트의 고유성을 유지할 수 있습니다.",
@@ -74,12 +86,7 @@ const main = html`
       ]'
       ></mm-text-list>
     </mm-component-guide>
-    <mm-component-related>
-      <mm-button-group>
-        <mm-hashtag-link href="list-item.html">List Item</mm-hashtag-link>
-        <mm-hashtag-link href="surface.html">Surface</mm-hashtag-link>
-      </mm-button-group>
-    </mm-component-related>
+    <mm-component-related .items=${relatedComponents}></mm-component-related>
   </main>
 `
 

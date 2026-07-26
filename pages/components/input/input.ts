@@ -1,5 +1,77 @@
 import { html } from 'lit'
+
+import type { ComponentFeatureItem } from '@/components/domains/component/component-feature-list'
+import type { ComponentPropItemData } from '@/components/domains/component/component-props'
+import type { ComponentReferenceItemData } from '@/components/domains/component/component-references'
+import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
+import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
+
 import { renderDocumentLayout } from '../../../layouts/document-layout'
+
+const relatedComponents: ComponentRelatedItemData[] = [
+  { href: 'textarea.html', label: 'Textarea' },
+  { href: 'popover.html', label: 'Popover' },
+]
+
+const componentReferences: ComponentReferenceItemData[] = [
+  {
+    href: 'https://support.google.com/accounts/answer/32040?visit_id=637702064644854938-965259796&p=pw_dont_reuse&hl=ko&rd=1',
+    label: '구글의 비밀번호 만들기 팁꾸',
+    external: true,
+  },
+]
+
+const componentReferences2: ComponentReferenceItemData[] = [
+  {
+    href: 'https://developer.apple.com/documentation/uikit/uisearchbar',
+    label: 'Apple Developer - searchbar',
+    external: true,
+  },
+  { href: 'https://material.io/design/navigation/search.html', label: 'MD search', external: true },
+  {
+    href: 'https://developer.android.com/reference/android/widget/SearchView',
+    label: 'android searchview',
+    external: true,
+  },
+]
+
+const componentProps: ComponentPropItemData[] = [
+  { name: 'type', type: "string = 'text'" },
+  { name: 'value', type: 'string', optional: true },
+  { name: 'name', type: 'string', optional: true },
+  { name: 'placeholder', type: 'string', optional: true },
+  { name: 'label', type: 'string', optional: true },
+  { name: 'helper', type: 'string', optional: true },
+  { name: 'validation-text', type: 'string', optional: true },
+  { name: 'size', type: 'string', optional: true },
+  { name: 'optional', type: 'boolean', optional: true },
+  { name: 'hidden-label', type: 'boolean', optional: true },
+  { name: 'disabled', type: 'boolean', optional: true },
+  { name: 'aria-invalid', type: "'true' | 'false'", optional: true },
+  { name: 'input', type: 'CustomEvent detail: value', kind: 'event' },
+]
+
+const componentTokens: ComponentTokenItemData[] = [
+  { name: 'input-height', default: 'var(--size-48)' },
+  { name: 'input-background-color', default: 'var(--background-subtle-color)' },
+  { name: 'input-border-color', default: 'transparent' },
+  { name: 'input-border-radius', default: 'var(--radius)' },
+  { name: 'input-text-color', default: 'var(--foreground-color)' },
+]
+
+const componentFeatures: ComponentFeatureItem[] = [
+  {
+    heading: 'Freeform',
+    description:
+      '제한된 선택지가 아니라 자유 형식 값을 받습니다. 사용자 여정에 허들이 될 수 있는 불필요한 정보 입력을 유도하지 마세요 — 모든 텍스트필드는 필수 입력이며, 명확한 이점이 있는 경우에만 "선택입력" 텍스트와 함께 선택 필드를 제안합니다.',
+  },
+  {
+    heading: 'Validatable',
+    description:
+      '입력값 자체의 규칙 위반을 검증하고 오류를 표시합니다. 오류 메시지는 영향을 받는 필드와 연결해 제공합니다.',
+  },
+  { heading: 'TODO', description: 'TODO' },
+]
 
 const main = html`
   <main class="page">
@@ -27,41 +99,9 @@ const main = html`
       </div>
     </mm-component-example>
 
-    <mm-component-props>
-      <mm-component-prop-item name="type" type="string = 'text'"></mm-component-prop-item>
-      <mm-component-prop-item name="value" type="string" optional></mm-component-prop-item>
-      <mm-component-prop-item name="name" type="string" optional></mm-component-prop-item>
-      <mm-component-prop-item name="placeholder" type="string" optional></mm-component-prop-item>
-      <mm-component-prop-item name="label" type="string" optional></mm-component-prop-item>
-      <mm-component-prop-item name="helper" type="string" optional></mm-component-prop-item>
-      <mm-component-prop-item
-        name="validation-text"
-        type="string"
-        optional
-      ></mm-component-prop-item>
-      <mm-component-prop-item name="size" type="string" optional></mm-component-prop-item>
-      <mm-component-prop-item name="optional" type="boolean" optional></mm-component-prop-item>
-      <mm-component-prop-item name="hidden-label" type="boolean" optional></mm-component-prop-item>
-      <mm-component-prop-item name="disabled" type="boolean" optional></mm-component-prop-item>
-      <mm-component-prop-item
-        name="aria-invalid"
-        type="'true' | 'false'"
-        optional
-      ></mm-component-prop-item>
-      <mm-component-prop-item
-        name="input"
-        type="CustomEvent detail: value"
-        kind="event"
-      ></mm-component-prop-item>
-    </mm-component-props>
+    <mm-component-props .props=${componentProps}></mm-component-props>
 
-    <mm-component-tokens>
-      <mm-token name="input-height" default="var(--size-48)"></mm-token>
-      <mm-token name="input-background-color" default="var(--background-subtle-color)"></mm-token>
-      <mm-token name="input-border-color" default="transparent"></mm-token>
-      <mm-token name="input-border-radius" default="var(--radius)"></mm-token>
-      <mm-token name="input-text-color" default="var(--foreground-color)"></mm-token>
-    </mm-component-tokens>
+    <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
 
     <mm-component-anatomy
       parts='[
@@ -114,16 +154,7 @@ const main = html`
     </mm-component-anatomy>
 
     <mm-component-guide>
-      <mm-component-feature-list>
-        <mm-feature
-          heading="Freeform"
-          description="제한된 선택지가 아니라 자유 형식 값을 받습니다. 사용자 여정에 허들이 될 수 있는 불필요한 정보 입력을 유도하지 마세요 — 모든 텍스트필드는 필수 입력이며, 명확한 이점이 있는 경우에만 '선택입력' 텍스트와 함께 선택 필드를 제안합니다."
-        ></mm-feature>
-        <mm-feature
-          heading="Validatable"
-          description="입력값 자체의 규칙 위반을 검증하고 오류를 표시합니다. 오류 메시지는 영향을 받는 필드와 연결해 제공합니다."
-        ></mm-feature>
-      </mm-component-feature-list>
+      <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
     </mm-component-guide>
 
     <section style="position: relative">
@@ -397,14 +428,7 @@ const main = html`
       </form>
     </mm-component-section>
 
-    <mm-component-references>
-      <mm-link
-        external
-        href="https://support.google.com/accounts/answer/32040?visit_id=637702064644854938-965259796&p=pw_dont_reuse&hl=ko&rd=1"
-      >
-        구글의 비밀번호 만들기 팁꾸
-      </mm-link>
-    </mm-component-references>
+    <mm-component-references .items=${componentReferences}></mm-component-references>
 
     <mm-component-guide>
       <section class="step" data-align="vertical" style="margin: 1rem 0">
@@ -523,22 +547,9 @@ const main = html`
       </mm-menu-item-group>
     </mm-component-section>
 
-    <mm-component-references>
-      <mm-link external href="https://developer.apple.com/documentation/uikit/uisearchbar">
-        Apple Developer - searchbar
-      </mm-link>
-      <mm-link external href="https://material.io/design/navigation/search.html">MD search</mm-link>
-      <mm-link external href="https://developer.android.com/reference/android/widget/SearchView">
-        android searchview
-      </mm-link>
-    </mm-component-references>
+    <mm-component-references .items=${componentReferences2}></mm-component-references>
 
-    <mm-component-related>
-      <mm-button-group>
-        <mm-hashtag-link href="textarea.html">Textarea</mm-hashtag-link>
-        <mm-hashtag-link href="popover.html">Popover</mm-hashtag-link>
-      </mm-button-group>
-    </mm-component-related>
+    <mm-component-related .items=${relatedComponents}></mm-component-related>
   </main>
 `
 

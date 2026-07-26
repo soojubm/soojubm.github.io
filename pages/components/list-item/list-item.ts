@@ -1,7 +1,69 @@
 import { html } from 'lit'
+
+import type { ComponentFeatureItem } from '@/components/domains/component/component-feature-list'
+import type { ComponentPropItemData } from '@/components/domains/component/component-props'
+import type { ComponentReferenceItemData } from '@/components/domains/component/component-references'
+import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
+
 import { AVATAR_SHAPE_TYPE_LABEL, AVATAR_VARIANT_TYPE_UNION } from '@/components/avatar'
 import { LIST_ITEM_SIZE_TYPE_LABEL } from '@/components/list-item'
+
 import { renderDocumentLayout } from '../../../layouts/document-layout'
+
+const relatedComponents: ComponentRelatedItemData[] = [
+  { href: 'avatar.html', label: 'Avatar' },
+  { href: 'menuitem.html', label: 'menuItem' },
+]
+
+const componentReferences: ComponentReferenceItemData[] = [
+  {
+    href: 'https://developer.apple.com/documentation/SwiftUI/List',
+    label: 'SwiftUI - List',
+    external: true,
+  },
+  {
+    href: 'https://developer.apple.com/design/human-interface-guidelines/lists-and-tables',
+    label: 'HIG Lists and Tables',
+    external: true,
+  },
+  { href: 'https://m3.material.io/components/lists/overview', label: 'MD3 Lists', external: true },
+  {
+    href: 'https://reactnativeelements.com/docs/components/listitem',
+    label: 'React Native Elements - ListItem',
+    external: true,
+  },
+  {
+    href: 'https://api.flutter.dev/flutter/material/ListTile-class.html',
+    label: 'Flutter - ListTile',
+    external: true,
+  },
+]
+
+const componentProps: ComponentPropItemData[] = [
+  { name: 'size', type: '' },
+  { name: 'label', type: 'string', optional: true },
+  { name: 'description', type: 'string', optional: true },
+  { name: 'icon', type: 'IconName', optional: true },
+  { name: 'avatar-src', type: 'string', optional: true },
+  { name: 'avatar-variant', type: "${AVATAR_VARIANT_TYPE_UNION} = 'tertiary'", optional: true },
+  { name: 'avatar-shape', type: '', optional: true },
+  { name: 'slot: default', type: 'HTMLElement', optional: true },
+  { name: 'slot: trailing', type: 'HTMLElement', optional: true },
+]
+
+const componentFeatures: ComponentFeatureItem[] = [
+  {
+    heading: 'Structural',
+    description:
+      'leading·content·trailing의 고정된 골격으로 반복되는 행의 구조를 잡습니다. 상호작용 없이 레이아웃만 담당하는 표현 전용 행입니다.',
+  },
+  {
+    heading: 'Groupable',
+    description:
+      '같은 데이터 집합의 행은 단독으로 나열하지 않고 menu-item-group으로 묶어 하나의 리스트로 제시합니다. role과 행 간 간격은 그룹이 소유합니다.',
+  },
+  { heading: 'TODO', description: 'TODO' },
+]
 
 const main = html`
   <main class="page">
@@ -57,36 +119,7 @@ const main = html`
       </mm-flex>
     </mm-component-example>
 
-    <mm-component-props>
-      <mm-component-prop-item
-        name="size"
-        type=${LIST_ITEM_SIZE_TYPE_LABEL}
-      ></mm-component-prop-item>
-      <mm-component-prop-item name="label" type="string" optional></mm-component-prop-item>
-      <mm-component-prop-item name="description" type="string" optional></mm-component-prop-item>
-      <mm-component-prop-item name="icon" type="IconName" optional></mm-component-prop-item>
-      <mm-component-prop-item name="avatar-src" type="string" optional></mm-component-prop-item>
-      <mm-component-prop-item
-        name="avatar-variant"
-        type="${AVATAR_VARIANT_TYPE_UNION} = 'tertiary'"
-        optional
-      ></mm-component-prop-item>
-      <mm-component-prop-item
-        name="avatar-shape"
-        type=${AVATAR_SHAPE_TYPE_LABEL}
-        optional
-      ></mm-component-prop-item>
-      <mm-component-prop-item
-        name="slot: default"
-        type="HTMLElement"
-        optional
-      ></mm-component-prop-item>
-      <mm-component-prop-item
-        name="slot: trailing"
-        type="HTMLElement"
-        optional
-      ></mm-component-prop-item>
-    </mm-component-props>
+    <mm-component-props .props=${componentProps}></mm-component-props>
 
     <mm-component-anatomy
       parts='[
@@ -126,16 +159,7 @@ const main = html`
     </mm-component-anatomy>
 
     <mm-component-guide>
-      <mm-component-feature-list>
-        <mm-feature
-          heading="Structural"
-          description="leading·content·trailing의 고정된 골격으로 반복되는 행의 구조를 잡습니다. 상호작용 없이 레이아웃만 담당하는 표현 전용 행입니다."
-        ></mm-feature>
-        <mm-feature
-          heading="Groupable"
-          description="같은 데이터 집합의 행은 단독으로 나열하지 않고 menu-item-group으로 묶어 하나의 리스트로 제시합니다. role과 행 간 간격은 그룹이 소유합니다."
-        ></mm-feature>
-      </mm-component-feature-list>
+      <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
     </mm-component-guide>
 
     <mm-component-section heading="UserRow" description="사용자 맥락">
@@ -159,31 +183,9 @@ const main = html`
       </mm-menu-item-group>
     </mm-component-section>
 
-    <mm-component-related>
-      <mm-button-group>
-        <mm-hashtag-link href="avatar.html">Avatar</mm-hashtag-link>
-        <mm-hashtag-link href="menuitem.html">menuItem</mm-hashtag-link>
-      </mm-button-group>
-    </mm-component-related>
+    <mm-component-related .items=${relatedComponents}></mm-component-related>
 
-    <mm-component-references>
-      <mm-link external href="https://developer.apple.com/documentation/SwiftUI/List">
-        SwiftUI - List
-      </mm-link>
-      <mm-link
-        external
-        href="https://developer.apple.com/design/human-interface-guidelines/lists-and-tables"
-      >
-        HIG Lists and Tables
-      </mm-link>
-      <mm-link external href="https://m3.material.io/components/lists/overview">MD3 Lists</mm-link>
-      <mm-link external href="https://reactnativeelements.com/docs/components/listitem">
-        React Native Elements - ListItem
-      </mm-link>
-      <mm-link external href="https://api.flutter.dev/flutter/material/ListTile-class.html">
-        Flutter - ListTile
-      </mm-link>
-    </mm-component-references>
+    <mm-component-references .items=${componentReferences}></mm-component-references>
   </main>
 `
 

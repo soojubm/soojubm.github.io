@@ -1,8 +1,54 @@
 import '@/components/table'
 import { html } from 'lit'
 
+import type { ComponentFeatureItem } from '@/components/domains/component/component-feature-list'
+import type { ComponentPropItemData } from '@/components/domains/component/component-props'
+import type { ComponentReferenceItemData } from '@/components/domains/component/component-references'
+import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
+
 import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
+
 import { renderLayout } from '../../../layouts/base-layouts'
+
+const relatedComponents: ComponentRelatedItemData[] = [
+  { href: 'dialog.html', label: 'Dialog' },
+  { href: 'popover.html', label: 'Popover' },
+  { href: 'surface.html', label: 'Surface' },
+]
+
+const componentReferences: ComponentReferenceItemData[] = [
+  {
+    href: 'https://developer.mozilla.org/ko/docs/Web/API/Popover_API',
+    label: 'Mozilla Popover API',
+    external: true,
+  },
+  {
+    href: 'https://developer.apple.com/design/human-interface-guidelines/components/presentation/action-sheets',
+    label: 'HIG action-sheets',
+    external: true,
+  },
+  {
+    href: 'https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alertdialog_role',
+    label: 'alertdialog role',
+    external: true,
+  },
+]
+
+const componentProps: ComponentPropItemData[] = [
+  { name: 'open', type: 'boolean' },
+  { name: 'placement', type: "'center' | 'bottom' | 'left' | 'right' = 'center'" },
+  { name: 'width', type: "'small' | 'medium' | 'large' | 'full' = 'medium'", optional: true },
+  { name: 'height', type: 'string', optional: true },
+  { name: 'primaryAction', type: 'ActionConfig', optional: true },
+  { name: 'secondaryAction', type: 'ActionConfig', optional: true },
+  { name: 'layerclose', type: 'CustomEvent', kind: 'event' },
+]
+
+const componentFeatures: ComponentFeatureItem[] = [
+  { heading: 'TODO', description: 'TODO' },
+  { heading: 'TODO', description: 'TODO' },
+  { heading: 'TODO', description: 'TODO' },
+]
 
 type LayerElement = HTMLElement & {
   show(): void
@@ -107,34 +153,7 @@ function layerPageTemplate() {
         <mm-toast class="js-demo-toast">저장되었습니다.</mm-toast>
       </mm-component-example>
 
-      <mm-component-props>
-        <mm-component-prop-item name="open" type="boolean"></mm-component-prop-item>
-        <mm-component-prop-item
-          name="placement"
-          type="'center' | 'bottom' | 'left' | 'right' = 'center'"
-        ></mm-component-prop-item>
-        <mm-component-prop-item
-          name="width"
-          type="'small' | 'medium' | 'large' | 'full' = 'medium'"
-          optional
-        ></mm-component-prop-item>
-        <mm-component-prop-item name="height" type="string" optional></mm-component-prop-item>
-        <mm-component-prop-item
-          name="primaryAction"
-          type="ActionConfig"
-          optional
-        ></mm-component-prop-item>
-        <mm-component-prop-item
-          name="secondaryAction"
-          type="ActionConfig"
-          optional
-        ></mm-component-prop-item>
-        <mm-component-prop-item
-          name="layerclose"
-          type="CustomEvent"
-          kind="event"
-        ></mm-component-prop-item>
-      </mm-component-props>
+      <mm-component-props .props=${componentProps}></mm-component-props>
 
       <!-- <mm-component-anatomy
         .parts=${[
@@ -147,6 +166,7 @@ function layerPageTemplate() {
       ></mm-component-anatomy> -->
 
       <mm-component-guide>
+        <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
         <!-- <mm-paragraph>
             시각적 형태(Dialog, Sheet 등)가 아니라 행동 계약으로 Layer와 AnchoredLayer 둘로 나뉜다.
             행동(modality·dismiss·reference)은 컨트롤러가 책임지는 별도 관심사고, elevation·
@@ -237,31 +257,9 @@ function layerPageTemplate() {
         ${filterLayerTemplate()}
       </mm-component-section>
 
-      <mm-component-related>
-        <mm-button-group>
-          <mm-hashtag-link href="dialog.html">Dialog</mm-hashtag-link>
-          <mm-hashtag-link href="popover.html">Popover</mm-hashtag-link>
-          <mm-hashtag-link href="surface.html">Surface</mm-hashtag-link>
-        </mm-button-group>
-      </mm-component-related>
+      <mm-component-related .items=${relatedComponents}></mm-component-related>
 
-      <mm-component-references>
-        <mm-link external href="https://developer.mozilla.org/ko/docs/Web/API/Popover_API">
-          Mozilla Popover API
-        </mm-link>
-        <mm-link
-          external
-          href="https://developer.apple.com/design/human-interface-guidelines/components/presentation/action-sheets"
-        >
-          HIG action-sheets
-        </mm-link>
-        <mm-link
-          external
-          href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alertdialog_role"
-        >
-          alertdialog role
-        </mm-link>
-      </mm-component-references>
+      <mm-component-references .items=${componentReferences}></mm-component-references>
     </main>
   `
 }

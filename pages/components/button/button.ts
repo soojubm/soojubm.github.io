@@ -1,7 +1,95 @@
 import '@/components/table'
 import { html } from 'lit'
 
+import type { ComponentFeatureItem } from '@/components/domains/component/component-feature-list'
+import type { ComponentPropItemData } from '@/components/domains/component/component-props'
+import type { ComponentReferenceItemData } from '@/components/domains/component/component-references'
+import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
+import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
+
 import { renderDocumentLayout } from '../../../layouts/document-layout'
+
+const relatedComponents: ComponentRelatedItemData[] = [
+  { href: 'icon-button.html', label: 'Icon Button' },
+  { href: 'toggle-button.html', label: 'Toggle Button' },
+  { href: 'link.html', label: 'Link' },
+]
+
+const componentReferences: ComponentReferenceItemData[] = [
+  {
+    href: 'https://developer.android.com/reference/android/widget/HorizontalScrollView',
+    label: 'Android - HorizontalScrollView',
+    external: true,
+  },
+  {
+    href: 'https://developer.android.com/reference/com/google/android/material/chip/ChipGroup',
+    label: 'Android - ChipGroup',
+    external: true,
+  },
+  {
+    href: 'https://m3.material.io/components/segmented-buttons/overview',
+    label: 'Segmented buttons',
+    external: true,
+  },
+  {
+    href: 'https://developer.apple.com/design/human-interface-guidelines/segmented-controls',
+    label: 'Segmented controls',
+    external: true,
+  },
+  {
+    href: 'https://www.w3.org/WAI/ARIA/apg/patterns/listbox/',
+    label: 'WAI listbox',
+    external: true,
+  },
+]
+
+const componentProps: ComponentPropItemData[] = [
+  {
+    name: 'variant',
+    type: "'primary' | 'secondary' | 'tertiary' | 'ghost' | 'destructive' = 'tertiary'",
+  },
+  { name: 'size', type: "'medium' | 'large' = 'medium'" },
+  { name: 'full-width', type: 'boolean', optional: true },
+  { name: 'disabled', type: 'boolean', optional: true },
+  { name: 'icon', type: 'IconName', optional: true },
+  { name: 'icon-position', type: "'leading' | 'trailing' = 'leading'", optional: true },
+  { name: 'aria-label', type: 'string', optional: true },
+  { name: 'role', type: 'string', optional: true },
+  { name: 'aria-expanded', type: "'true' | 'false'", optional: true },
+  { name: 'aria-haspopup', type: 'string', optional: true },
+  { name: 'aria-current', type: "'true' | 'page' | 'step' | 'location'", optional: true },
+  { name: '@click', type: '(e: MouseEvent) => void', kind: 'event' },
+]
+
+const componentTokens: ComponentTokenItemData[] = [
+  { name: 'button-height', default: 'var(--size-32)' },
+  { name: 'button-min-width', default: '5rem' },
+  { name: 'button-padding-inline', default: 'var(--space-3)' },
+  { name: 'button-text-color', default: 'var(--foreground-color)' },
+  { name: 'button-text-size', default: 'inherit' },
+  { name: 'button-text-weight', default: 'var(--font-weight-bold)' },
+  { name: 'button-background-color', default: 'var(--background-subtle-color)' },
+  { name: 'button-border', default: '1px solid var(--button-background-color)' },
+  { name: 'button-border-radius', default: 'var(--radius)' },
+]
+
+const componentFeatures: ComponentFeatureItem[] = [
+  {
+    heading: 'Interactive - action',
+    description:
+      '버튼은 페이지 내에서 여러 번 반복될 수 없는 최종적인 인터렉션입니다. 단, 전송이 실패하는 경우 여러 번 반복해서 실행할 수 있습니다.',
+  },
+  {
+    heading: 'Feedback',
+    description:
+      '물리적인 인터페이스의 출현만이 수행 결과의 피드백이 아닙니다. 예측할 수 있는 페이지 이동이나 페이지 새로고침, 정보 구조의 변화도 피드백으로 취급될 수 있습니다. (ex bad case: 인스타그램 앱에서 로그인되었다는 toast. 홈으로 이동과 피드 노출만으로 로그인 상태를 인지할수 있다.)',
+  },
+  {
+    heading: 'Groupable',
+    description:
+      '관련된 액션은 button-group으로 묶어 하나의 단위로 제시합니다. 정렬·간격과 버튼 사이의 관계는 그룹이 소유합니다.',
+  },
+]
 
 const main = html`
   <main class="page js-tab">
@@ -31,54 +119,9 @@ const main = html`
       </mm-button-group>
     </mm-component-example>
 
-    <mm-component-props>
-      <mm-component-prop-item
-        name="variant"
-        type="'primary' | 'secondary' | 'tertiary' | 'ghost' | 'destructive' = 'tertiary'"
-      ></mm-component-prop-item>
-      <mm-component-prop-item
-        name="size"
-        type="'medium' | 'large' = 'medium'"
-      ></mm-component-prop-item>
-      <mm-component-prop-item name="full-width" type="boolean" optional></mm-component-prop-item>
-      <mm-component-prop-item name="disabled" type="boolean" optional></mm-component-prop-item>
-      <mm-component-prop-item name="icon" type="IconName" optional></mm-component-prop-item>
-      <mm-component-prop-item
-        name="icon-position"
-        type="'leading' | 'trailing' = 'leading'"
-        optional
-      ></mm-component-prop-item>
-      <mm-component-prop-item name="aria-label" type="string" optional></mm-component-prop-item>
-      <mm-component-prop-item name="role" type="string" optional></mm-component-prop-item>
-      <mm-component-prop-item
-        name="aria-expanded"
-        type="'true' | 'false'"
-        optional
-      ></mm-component-prop-item>
-      <mm-component-prop-item name="aria-haspopup" type="string" optional></mm-component-prop-item>
-      <mm-component-prop-item
-        name="aria-current"
-        type="'true' | 'page' | 'step' | 'location'"
-        optional
-      ></mm-component-prop-item>
-      <mm-component-prop-item
-        name="@click"
-        type="(e: MouseEvent) => void"
-        kind="event"
-      ></mm-component-prop-item>
-    </mm-component-props>
+    <mm-component-props .props=${componentProps}></mm-component-props>
 
-    <mm-component-tokens>
-      <mm-token name="button-height" default="var(--size-32)"></mm-token>
-      <mm-token name="button-min-width" default="5rem"></mm-token>
-      <mm-token name="button-padding-inline" default="var(--space-3)"></mm-token>
-      <mm-token name="button-text-color" default="var(--foreground-color)"></mm-token>
-      <mm-token name="button-text-size" default="inherit"></mm-token>
-      <mm-token name="button-text-weight" default="var(--font-weight-bold)"></mm-token>
-      <mm-token name="button-background-color" default="var(--background-subtle-color)"></mm-token>
-      <mm-token name="button-border" default="1px solid var(--button-background-color)"></mm-token>
-      <mm-token name="button-border-radius" default="var(--radius)"></mm-token>
-    </mm-component-tokens>
+    <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
 
     <mm-component-anatomy
       parts='[
@@ -106,20 +149,7 @@ const main = html`
     </mm-component-anatomy>
 
     <mm-component-guide>
-      <mm-component-feature-list>
-        <mm-feature
-          heading="Interactive - action"
-          description="버튼은 페이지 내에서 여러 번 반복될 수 없는 최종적인 인터렉션입니다. 단, 전송이 실패하는 경우 여러 번 반복해서 실행할 수 있습니다."
-        ></mm-feature>
-        <mm-feature
-          heading="Feedback"
-          description="물리적인 인터페이스의 출현만이 수행 결과의 피드백이 아닙니다. 예측할 수 있는 페이지 이동이나 페이지 새로고침, 정보 구조의 변화도 피드백으로 취급될 수 있습니다. (ex bad case: 인스타그램 앱에서 로그인되었다는 toast. 홈으로 이동과 피드 노출만으로 로그인 상태를 인지할수 있다.)"
-        ></mm-feature>
-        <mm-feature
-          heading="Groupable"
-          description="관련된 액션은 button-group으로 묶어 하나의 단위로 제시합니다. 정렬·간격과 버튼 사이의 관계는 그룹이 소유합니다."
-        ></mm-feature>
-      </mm-component-feature-list>
+      <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
 
       <mm-paragraph-group>
         <mm-paragraph size="large">
@@ -225,40 +255,9 @@ const main = html`
     ]'
     ></mm-table>
 
-    <mm-component-related>
-      <mm-button-group>
-        <mm-hashtag-link href="icon-button.html">Icon Button</mm-hashtag-link>
-        <mm-hashtag-link href="toggle-button.html">Toggle Button</mm-hashtag-link>
-        <mm-hashtag-link href="link.html">Link</mm-hashtag-link>
-      </mm-button-group>
-    </mm-component-related>
+    <mm-component-related .items=${relatedComponents}></mm-component-related>
 
-    <mm-component-references>
-      <mm-link
-        external
-        href="https://developer.android.com/reference/android/widget/HorizontalScrollView"
-      >
-        Android - HorizontalScrollView
-      </mm-link>
-      <mm-link
-        external
-        href="https://developer.android.com/reference/com/google/android/material/chip/ChipGroup"
-      >
-        Android - ChipGroup
-      </mm-link>
-      <mm-link external href="https://m3.material.io/components/segmented-buttons/overview">
-        Segmented buttons
-      </mm-link>
-      <mm-link
-        external
-        href="https://developer.apple.com/design/human-interface-guidelines/segmented-controls"
-      >
-        Segmented controls
-      </mm-link>
-      <mm-link external href="https://www.w3.org/WAI/ARIA/apg/patterns/listbox/">
-        WAI listbox
-      </mm-link>
-    </mm-component-references>
+    <mm-component-references .items=${componentReferences}></mm-component-references>
   </main>
 `
 

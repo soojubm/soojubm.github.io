@@ -1,5 +1,54 @@
 import { html } from 'lit'
+
+import type { ComponentFeatureItem } from '@/components/domains/component/component-feature-list'
+import type { ComponentPropItemData } from '@/components/domains/component/component-props'
+import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
+import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
+
 import { renderDocumentLayout } from '../../../layouts/document-layout'
+
+const relatedComponents: ComponentRelatedItemData[] = [
+  { href: 'button.html', label: 'Button' },
+  { href: 'toggle-button.html', label: 'Toggle Button' },
+]
+
+const componentProps: ComponentPropItemData[] = [
+  { name: 'icon', type: 'IconName' },
+  {
+    name: 'variant',
+    type: "'primary' | 'secondary' | 'tertiary' | 'ghost' | 'destructive' = 'tertiary'",
+  },
+  { name: 'size', type: "'small' | 'medium' = 'medium'" },
+  { name: 'tooltip', type: 'string', optional: true },
+  { name: 'tooltip-placement', type: "'left' | 'center' | 'right'", optional: true },
+  { name: 'aria-label', type: 'string', optional: true },
+  { name: 'role', type: 'string', optional: true },
+  { name: 'aria-controls', type: 'string', optional: true },
+  { name: 'aria-expanded', type: "'true' | 'false'", optional: true },
+  { name: 'aria-haspopup', type: 'string', optional: true },
+  { name: 'disabled', type: 'boolean', optional: true },
+]
+
+const componentTokens: ComponentTokenItemData[] = [
+  { name: 'button-height', default: 'var(--size-32)' },
+  { name: 'button-text-color', default: 'var(--foreground-color)' },
+  { name: 'button-background-color', default: 'var(--background-subtle-color)' },
+  { name: 'button-border-radius', default: 'var(--radius)' },
+]
+
+const componentFeatures: ComponentFeatureItem[] = [
+  { heading: 'Interactive - action', description: '' },
+  {
+    heading: 'Glanceable',
+    description:
+      '레이블 없이 아이콘 하나로 용도를 즉시 알아볼 수 있어야 합니다. 아이콘만으로 모호하다면 tooltip과 aria-label로 뜻을 보강합니다.',
+  },
+  {
+    heading: 'Groupable',
+    description:
+      '연속된 아이콘 버튼은 button-group으로 묶어 하나의 도구 단위로 제시합니다. 간격과 정렬은 그룹이 소유합니다.',
+  },
+]
 
 const main = html`
   <main class="page js-tab">
@@ -65,40 +114,9 @@ const main = html`
         ></mm-icon-button>
       </mm-button-group>
     </mm-component-example>
-    <mm-component-props>
-      <mm-component-prop-item name="icon" type="IconName"></mm-component-prop-item>
-      <mm-component-prop-item
-        name="variant"
-        type="'primary' | 'secondary' | 'tertiary' | 'ghost' | 'destructive' = 'tertiary'"
-      ></mm-component-prop-item>
-      <mm-component-prop-item
-        name="size"
-        type="'small' | 'medium' = 'medium'"
-      ></mm-component-prop-item>
-      <mm-component-prop-item name="tooltip" type="string" optional></mm-component-prop-item>
-      <mm-component-prop-item
-        name="tooltip-placement"
-        type="'left' | 'center' | 'right'"
-        optional
-      ></mm-component-prop-item>
-      <mm-component-prop-item name="aria-label" type="string" optional></mm-component-prop-item>
-      <mm-component-prop-item name="role" type="string" optional></mm-component-prop-item>
-      <mm-component-prop-item name="aria-controls" type="string" optional></mm-component-prop-item>
-      <mm-component-prop-item
-        name="aria-expanded"
-        type="'true' | 'false'"
-        optional
-      ></mm-component-prop-item>
-      <mm-component-prop-item name="aria-haspopup" type="string" optional></mm-component-prop-item>
-      <mm-component-prop-item name="disabled" type="boolean" optional></mm-component-prop-item>
-    </mm-component-props>
+    <mm-component-props .props=${componentProps}></mm-component-props>
 
-    <mm-component-tokens>
-      <mm-token name="button-height" default="var(--size-32)"></mm-token>
-      <mm-token name="button-text-color" default="var(--foreground-color)"></mm-token>
-      <mm-token name="button-background-color" default="var(--background-subtle-color)"></mm-token>
-      <mm-token name="button-border-radius" default="var(--radius)"></mm-token>
-    </mm-component-tokens>
+    <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
 
     <mm-component-anatomy
       parts='[
@@ -142,17 +160,7 @@ const main = html`
     </mm-component-anatomy>
 
     <mm-component-guide>
-      <mm-component-feature-list>
-        <mm-feature heading="Interactive - action" description=""></mm-feature>
-        <mm-feature
-          heading="Glanceable"
-          description="레이블 없이 아이콘 하나로 용도를 즉시 알아볼 수 있어야 합니다. 아이콘만으로 모호하다면 tooltip과 aria-label로 뜻을 보강합니다."
-        ></mm-feature>
-        <mm-feature
-          heading="Groupable"
-          description="연속된 아이콘 버튼은 button-group으로 묶어 하나의 도구 단위로 제시합니다. 간격과 정렬은 그룹이 소유합니다."
-        ></mm-feature>
-      </mm-component-feature-list>
+      <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
       <mm-paragraph>
         Toggled states. Buttons can swap icons based on data states.
         <br />
@@ -228,12 +236,7 @@ const main = html`
         tooltip-placement="center"
       ></mm-icon-button>
     </mm-component-section>
-    <mm-component-related>
-      <mm-button-group>
-        <mm-hashtag-link href="button.html">Button</mm-hashtag-link>
-        <mm-hashtag-link href="toggle-button.html">Toggle Button</mm-hashtag-link>
-      </mm-button-group>
-    </mm-component-related>
+    <mm-component-related .items=${relatedComponents}></mm-component-related>
   </main>
 `
 

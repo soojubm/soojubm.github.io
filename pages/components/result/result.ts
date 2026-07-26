@@ -1,7 +1,40 @@
 import { html } from 'lit'
+
 import type { ActionConfig } from '@/components/action-config'
+import type { ComponentFeatureItem } from '@/components/domains/component/component-feature-list'
+import type { ComponentPropItemData } from '@/components/domains/component/component-props'
+import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
 
 import { renderDocumentLayout } from '../../../layouts/document-layout'
+
+const relatedComponents: ComponentRelatedItemData[] = [
+  { href: 'notice.html', label: 'Notice' },
+  { href: 'loading.html', label: 'Loading' },
+]
+
+const componentProps: ComponentPropItemData[] = [
+  { name: 'avatar-icon', type: 'IconName', optional: true },
+  { name: 'heading', type: 'string' },
+  { name: 'description', type: 'string', optional: true },
+  { name: 'primaryAction', type: 'ActionConfig', optional: true },
+  { name: 'secondaryAction', type: 'ActionConfig', optional: true },
+  { name: 'slot: avatar', type: 'HTMLElement', optional: true },
+  { name: 'slot: default', type: 'HTMLElement', optional: true },
+  { name: 'slot: action', type: 'HTMLButtonElement', optional: true },
+]
+
+const componentFeatures: ComponentFeatureItem[] = [
+  {
+    heading: 'Feedback',
+    description: '완료·오류·빈 상태처럼 사용자 행동이나 시스템 상태의 결과를 명확하게 전달합니다.',
+  },
+  {
+    heading: 'Statusful',
+    description:
+      '완료·오류·빈 상태 등 결과의 의미를 톤으로 구분합니다. 색상에만 의존하지 않고 아이콘과 메시지를 함께 제공합니다.',
+  },
+  { heading: 'TODO', description: 'TODO' },
+]
 
 const primaryAction: ActionConfig = {
   label: '주문내역 보기',
@@ -37,48 +70,10 @@ const main = html`
       </mm-result>
     </mm-component-example>
 
-    <mm-component-props>
-      <mm-component-prop-item name="avatar-icon" type="IconName" optional></mm-component-prop-item>
-      <mm-component-prop-item name="heading" type="string"></mm-component-prop-item>
-      <mm-component-prop-item name="description" type="string" optional></mm-component-prop-item>
-      <mm-component-prop-item
-        name="primaryAction"
-        type="ActionConfig"
-        optional
-      ></mm-component-prop-item>
-      <mm-component-prop-item
-        name="secondaryAction"
-        type="ActionConfig"
-        optional
-      ></mm-component-prop-item>
-      <mm-component-prop-item
-        name="slot: avatar"
-        type="HTMLElement"
-        optional
-      ></mm-component-prop-item>
-      <mm-component-prop-item
-        name="slot: default"
-        type="HTMLElement"
-        optional
-      ></mm-component-prop-item>
-      <mm-component-prop-item
-        name="slot: action"
-        type="HTMLButtonElement"
-        optional
-      ></mm-component-prop-item>
-    </mm-component-props>
+    <mm-component-props .props=${componentProps}></mm-component-props>
 
     <mm-component-guide>
-      <mm-component-feature-list>
-        <mm-feature
-          heading="Feedback"
-          description="완료·오류·빈 상태처럼 사용자 행동이나 시스템 상태의 결과를 명확하게 전달합니다."
-        ></mm-feature>
-        <mm-feature
-          heading="Statusful"
-          description="완료·오류·빈 상태 등 결과의 의미를 톤으로 구분합니다. 색상에만 의존하지 않고 아이콘과 메시지를 함께 제공합니다."
-        ></mm-feature>
-      </mm-component-feature-list>
+      <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
       <mm-paragraph-group>
         <mm-paragraph>You're done!</mm-paragraph>
         <mm-paragraph>
@@ -94,12 +89,7 @@ const main = html`
         </mm-paragraph>
       </mm-paragraph-group>
     </mm-component-guide>
-    <mm-component-related>
-      <mm-button-group>
-        <mm-hashtag-link href="notice.html">Notice</mm-hashtag-link>
-        <mm-hashtag-link href="loading.html">Loading</mm-hashtag-link>
-      </mm-button-group>
-    </mm-component-related>
+    <mm-component-related .items=${relatedComponents}></mm-component-related>
   </main>
 `
 

@@ -1,6 +1,36 @@
 import { html } from 'lit'
+
 import type { BottomBarItem } from '@/components/bottom-bar'
+import type { ComponentFeatureItem } from '@/components/domains/component/component-feature-list'
+import type { ComponentPropItemData } from '@/components/domains/component/component-props'
+import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
+import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
+
 import { renderDocumentLayout } from '../../../layouts/document-layout'
+
+const relatedComponents: ComponentRelatedItemData[] = [
+  { href: 'top-bar.html', label: 'Top Bar' },
+  { href: 'tabs.html', label: 'Tabs' },
+]
+
+const componentProps: ComponentPropItemData[] = [
+  { name: 'items', type: 'JSON string', optional: true },
+  { name: 'label', type: "string = '하단 내비게이션'", optional: true },
+]
+
+const componentTokens: ComponentTokenItemData[] = [
+  { name: 'bottom-bar-item-height', default: 'calc(var(--size-32) + var(--font-line-height-24))' },
+]
+
+const componentFeatures: ComponentFeatureItem[] = [
+  {
+    heading: 'Persistent',
+    description:
+      '화면 이동과 스크롤에도 하단에 자리를 지켜 주요 목적지로 언제든 이동할 수 있습니다.',
+  },
+  { heading: 'TODO', description: 'TODO' },
+  { heading: 'TODO', description: 'TODO' },
+]
 
 const navItems: BottomBarItem[] = [
   { label: '홈', href: '#', icon: 'home-simple-door', active: true },
@@ -19,36 +49,14 @@ const main = html`
       <mm-bottom-bar .items=${navItems}></mm-bottom-bar>
     </mm-component-example>
 
-    <mm-component-props>
-      <mm-component-prop-item name="items" type="JSON string" optional></mm-component-prop-item>
-      <mm-component-prop-item
-        name="label"
-        type="string = '하단 내비게이션'"
-        optional
-      ></mm-component-prop-item>
-    </mm-component-props>
+    <mm-component-props .props=${componentProps}></mm-component-props>
 
-    <mm-component-tokens>
-      <mm-token
-        name="bottom-bar-item-height"
-        default="calc(var(--size-32) + var(--font-line-height-24))"
-      ></mm-token>
-    </mm-component-tokens>
+    <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
 
     <mm-component-guide>
-      <mm-component-feature-list>
-        <mm-feature
-          heading="Persistent"
-          description="화면 이동과 스크롤에도 하단에 자리를 지켜 주요 목적지로 언제든 이동할 수 있습니다."
-        ></mm-feature>
-      </mm-component-feature-list>
+      <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
     </mm-component-guide>
-    <mm-component-related>
-      <mm-button-group>
-        <mm-hashtag-link href="top-bar.html">Top Bar</mm-hashtag-link>
-        <mm-hashtag-link href="tabs.html">Tabs</mm-hashtag-link>
-      </mm-button-group>
-    </mm-component-related>
+    <mm-component-related .items=${relatedComponents}></mm-component-related>
   </main>
 `
 

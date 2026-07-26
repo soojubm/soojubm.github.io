@@ -1,6 +1,55 @@
 import { html } from 'lit'
 
+import type { ComponentFeatureItem } from '@/components/domains/component/component-feature-list'
+import type { ComponentPropItemData } from '@/components/domains/component/component-props'
+import type { ComponentReferenceItemData } from '@/components/domains/component/component-references'
+import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
+import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
+
 import { renderLayout } from '../../../layouts/base-layouts'
+
+const relatedComponents: ComponentRelatedItemData[] = [
+  { href: 'tabs.html', label: 'Tabs' },
+  { href: 'menuitem.html', label: 'menuItem' },
+]
+
+const componentReferences: ComponentReferenceItemData[] = [
+  {
+    href: 'https://www.w3.org/WAI/ARIA/apg/patterns/accordion/',
+    label: 'WAI-ARIA Accordion Pattern',
+    external: true,
+  },
+  { href: 'https://nuli.navercorp.com/community/article/1132889', label: 'nuli', external: true },
+]
+
+const componentProps: ComponentPropItemData[] = [
+  { name: 'mm-accordion', type: 'group container', optional: true },
+  { name: 'exclusive', type: 'boolean = false' },
+  { name: 'mm-accordion-item', type: 'individual item', optional: true },
+  { name: 'summary', type: 'string' },
+  { name: 'open', type: 'boolean = false' },
+  { name: 'disabled', type: 'boolean = false' },
+  { name: 'slot: summary', type: 'HTMLElement (trigger)', optional: true },
+  { name: 'slot: default', type: 'HTMLElement (panel content)', optional: true },
+  { name: 'event: accordion-toggle', type: 'CustomEvent { open: boolean }', optional: true },
+]
+
+const componentTokens: ComponentTokenItemData[] = [
+  { name: 'accordion-padding', default: 'var(--space-4) var(--space-2)' },
+  { name: 'accordion-background-color', default: 'var(--background-subtle-color)' },
+  { name: 'accordion-border', default: 'var(--border-transparent)' },
+  { name: 'accordion-border-radius', default: 'var(--radius)' },
+]
+
+const componentFeatures: ComponentFeatureItem[] = [
+  {
+    heading: 'Disclosure (점진적 공개)',
+    description:
+      '항목의 상세를 접어 두고 선택적으로 펼쳐 읽게 합니다. 같은 흐름 안의 부가 공개이며(tooltip·본문 접기와 같은 축), 독립된 작업 레이어로 전환하는 layer 패턴과는 구별됩니다. 반드시 읽어야 하는 정보(약관·경고)는 접지 않습니다.',
+  },
+  { heading: 'TODO', description: 'TODO' },
+  { heading: 'TODO', description: 'TODO' },
+]
 
 const main = html`
   <main class="page">
@@ -34,55 +83,12 @@ const main = html`
       </mm-accordion>
     </mm-component-example>
 
-    <mm-component-props>
-      <mm-component-prop-item
-        name="mm-accordion"
-        type="group container"
-        optional
-      ></mm-component-prop-item>
-      <mm-component-prop-item name="exclusive" type="boolean = false"></mm-component-prop-item>
-      <mm-component-prop-item
-        name="mm-accordion-item"
-        type="individual item"
-        optional
-      ></mm-component-prop-item>
-      <mm-component-prop-item name="summary" type="string"></mm-component-prop-item>
-      <mm-component-prop-item name="open" type="boolean = false"></mm-component-prop-item>
-      <mm-component-prop-item name="disabled" type="boolean = false"></mm-component-prop-item>
-      <mm-component-prop-item
-        name="slot: summary"
-        type="HTMLElement (trigger)"
-        optional
-      ></mm-component-prop-item>
-      <mm-component-prop-item
-        name="slot: default"
-        type="HTMLElement (panel content)"
-        optional
-      ></mm-component-prop-item>
-      <mm-component-prop-item
-        name="event: accordion-toggle"
-        type="CustomEvent { open: boolean }"
-        optional
-      ></mm-component-prop-item>
-    </mm-component-props>
+    <mm-component-props .props=${componentProps}></mm-component-props>
 
-    <mm-component-tokens>
-      <mm-token name="accordion-padding" default="var(--space-4) var(--space-2)"></mm-token>
-      <mm-token
-        name="accordion-background-color"
-        default="var(--background-subtle-color)"
-      ></mm-token>
-      <mm-token name="accordion-border" default="var(--border-transparent)"></mm-token>
-      <mm-token name="accordion-border-radius" default="var(--radius)"></mm-token>
-    </mm-component-tokens>
+    <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
 
     <mm-component-guide>
-      <!-- <mm-component-feature-list>
-        <mm-feature
-          heading="Disclosure (점진적 공개)"
-          description="항목의 상세를 접어 두고 선택적으로 펼쳐 읽게 합니다. 같은 흐름 안의 부가 공개이며(tooltip·본문 접기와 같은 축), 독립된 작업 레이어로 전환하는 layer 패턴과는 구별됩니다. 반드시 읽어야 하는 정보(약관·경고)는 접지 않습니다."
-        ></mm-feature>
-      </mm-component-feature-list> -->
+      <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
       <mm-paragraph-group>
         <mm-heading level="3">언제 사용하나요</mm-heading>
         <mm-paragraph>
@@ -99,19 +105,9 @@ const main = html`
       ></mm-text-list>
     </mm-component-guide>
 
-    <mm-component-related>
-      <mm-button-group>
-        <mm-hashtag-link href="tabs.html">Tabs</mm-hashtag-link>
-        <mm-hashtag-link href="menuitem.html">menuItem</mm-hashtag-link>
-      </mm-button-group>
-    </mm-component-related>
+    <mm-component-related .items=${relatedComponents}></mm-component-related>
 
-    <mm-component-references>
-      <mm-link external href="https://www.w3.org/WAI/ARIA/apg/patterns/accordion/">
-        WAI-ARIA Accordion Pattern
-      </mm-link>
-      <mm-link external href="https://nuli.navercorp.com/community/article/1132889">nuli</mm-link>
-    </mm-component-references>
+    <mm-component-references .items=${componentReferences}></mm-component-references>
   </main>
 `
 

@@ -1,5 +1,29 @@
 import { html } from 'lit'
+
+import type { ComponentFeatureItem } from '@/components/domains/component/component-feature-list'
+import type { ComponentPropItemData } from '@/components/domains/component/component-props'
+import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
+
 import { renderDocumentLayout } from '../../../layouts/document-layout'
+
+const relatedComponents: ComponentRelatedItemData[] = [
+  { href: 'breadcrumb.html', label: 'Breadcrumb' },
+  { href: 'loading.html', label: 'Loading' },
+]
+
+const componentProps: ComponentPropItemData[] = [
+  { name: 'aria-current', type: "'step'" },
+  { name: 'data-align', type: "'vertical'" },
+  { name: 'is-active', type: 'class' },
+  { name: 'label', type: 'slot' },
+  { name: 'description', type: 'slot', optional: true },
+]
+
+const componentFeatures: ComponentFeatureItem[] = [
+  { heading: 'TODO', description: 'TODO' },
+  { heading: 'TODO', description: 'TODO' },
+  { heading: 'TODO', description: 'TODO' },
+]
 
 const main = html`
   <main class="page">
@@ -101,15 +125,10 @@ const main = html`
       </mm-flex>
     </mm-component-example>
 
-    <mm-component-props>
-      <mm-component-prop-item name="aria-current" type="'step'"></mm-component-prop-item>
-      <mm-component-prop-item name="data-align" type="'vertical'"></mm-component-prop-item>
-      <mm-component-prop-item name="is-active" type="class"></mm-component-prop-item>
-      <mm-component-prop-item name="label" type="slot"></mm-component-prop-item>
-      <mm-component-prop-item name="description" type="slot" optional></mm-component-prop-item>
-    </mm-component-props>
+    <mm-component-props .props=${componentProps}></mm-component-props>
 
     <mm-component-guide>
+      <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
       <section class="timeline">
         <style>
           .timeline {
@@ -264,12 +283,7 @@ const main = html`
         </mm-button-group>
       </mm-surface>
     </mm-component-guide>
-    <mm-component-related>
-      <mm-button-group>
-        <mm-hashtag-link href="breadcrumb.html">Breadcrumb</mm-hashtag-link>
-        <mm-hashtag-link href="loading.html">Loading</mm-hashtag-link>
-      </mm-button-group>
-    </mm-component-related>
+    <mm-component-related .items=${relatedComponents}></mm-component-related>
   </main>
 `
 

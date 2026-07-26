@@ -2,8 +2,45 @@ import '@/components/pagination'
 import '@/components/table'
 import { html } from 'lit'
 
+import type { ComponentFeatureItem } from '@/components/domains/component/component-feature-list'
+import type { ComponentPropItemData } from '@/components/domains/component/component-props'
+import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
+import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
 import type { TableColumn } from '@/components/table'
+
 import { renderLayout } from '../../../layouts/base-layouts'
+
+const relatedComponents: ComponentRelatedItemData[] = [
+  { href: 'list-item.html', label: 'List Item' },
+  { href: 'surface.html', label: 'Surface' },
+]
+
+const componentProps: ComponentPropItemData[] = [
+  { name: 'caption', type: 'string' },
+  { name: 'rows', type: 'TemplateResult', optional: true },
+  {
+    name: 'columns',
+    type: "{ label: string; width?: string; sortable?: boolean; textAlign?: 'left' | 'center' | 'right' }[] = []",
+  },
+]
+
+const componentTokens: ComponentTokenItemData[] = [
+  { name: 'table-row-border', default: 'var(--border)' },
+  { name: 'table-cell-padding', default: 'var(--space-2) 0' },
+  { name: 'table-cell-padding-inline', default: 'var(--space-2)' },
+  { name: 'table-cell-background', default: 'var(--background-color)' },
+  { name: 'table-cell-background-hover', default: 'var(--background-subtle-color)' },
+  { name: 'col-checkbox', default: '32px' },
+]
+
+const componentFeatures: ComponentFeatureItem[] = [
+  {
+    heading: 'Structural',
+    description: '행과 열의 격자로 데이터의 구조를 잡아 값을 비교하고 탐색하기 쉽게 만듭니다.',
+  },
+  { heading: 'TODO', description: 'TODO' },
+  { heading: 'TODO', description: 'TODO' },
+]
 
 const columns: TableColumn[] = [
   { label: '', width: 'var(--col-checkbox)' },
@@ -133,43 +170,16 @@ const main = html`
       <mm-pagination current-page="7" page-count="50"></mm-pagination>
     </mm-component-example>
 
-    <mm-component-props>
-      <mm-component-prop-item name="caption" type="string"></mm-component-prop-item>
-      <mm-component-prop-item name="rows" type="TemplateResult" optional></mm-component-prop-item>
-      <mm-component-prop-item
-        name="columns"
-        type="{ label: string; width?: string; sortable?: boolean; textAlign?: 'left' | 'center' | 'right' }[] = []"
-      ></mm-component-prop-item>
-    </mm-component-props>
+    <mm-component-props .props=${componentProps}></mm-component-props>
 
-    <mm-component-tokens>
-      <mm-token name="table-row-border" default="var(--border)"></mm-token>
-      <mm-token name="table-cell-padding" default="var(--space-2) 0"></mm-token>
-      <mm-token name="table-cell-padding-inline" default="var(--space-2)"></mm-token>
-      <mm-token name="table-cell-background" default="var(--background-color)"></mm-token>
-      <mm-token
-        name="table-cell-background-hover"
-        default="var(--background-subtle-color)"
-      ></mm-token>
-      <mm-token name="col-checkbox" default="32px"></mm-token>
-    </mm-component-tokens>
+    <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
 
     <mm-component-guide>
-      <mm-component-feature-list>
-        <mm-feature
-          heading="Structural"
-          description="행과 열의 격자로 데이터의 구조를 잡아 값을 비교하고 탐색하기 쉽게 만듭니다."
-        ></mm-feature>
-      </mm-component-feature-list>
+      <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
       <mm-text-list .texts=${guideTexts}></mm-text-list>
     </mm-component-guide>
 
-    <mm-component-related>
-      <mm-button-group>
-        <mm-hashtag-link href="list-item.html">List Item</mm-hashtag-link>
-        <mm-hashtag-link href="surface.html">Surface</mm-hashtag-link>
-      </mm-button-group>
-    </mm-component-related>
+    <mm-component-related .items=${relatedComponents}></mm-component-related>
   </main>
 `
 

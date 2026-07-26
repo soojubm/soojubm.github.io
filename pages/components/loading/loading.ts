@@ -1,5 +1,34 @@
 import { html } from 'lit'
+
+import type { ComponentFeatureItem } from '@/components/domains/component/component-feature-list'
+import type { ComponentPropItemData } from '@/components/domains/component/component-props'
+import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
+
 import { renderDocumentLayout } from '../../../layouts/document-layout'
+
+const relatedComponents: ComponentRelatedItemData[] = [
+  { href: 'result.html', label: 'Result' },
+  { href: 'step.html', label: 'Step' },
+]
+
+const componentProps: ComponentPropItemData[] = [
+  { name: 'size', type: "'small' | 'medium' | 'large' = 'medium'" },
+  { name: 'label', type: "string = '로딩 중'" },
+]
+
+const componentFeatures: ComponentFeatureItem[] = [
+  {
+    heading: 'Feedback',
+    description:
+      '작업이 진행 중이며 시스템이 응답하고 있음을 알립니다. 결과를 기다리는 동안 사용자의 불확실성을 줄입니다.',
+  },
+  {
+    heading: 'Transient',
+    description:
+      '작업이 끝나면 스스로 사라집니다. 사라진 자리는 결과 콘텐츠나 result가 대신합니다.',
+  },
+  { heading: 'TODO', description: 'TODO' },
+]
 
 const main = html`
   <main class="page">
@@ -20,25 +49,10 @@ const main = html`
       </mm-spinner>
     </mm-component-example>
 
-    <mm-component-props>
-      <mm-component-prop-item
-        name="size"
-        type="'small' | 'medium' | 'large' = 'medium'"
-      ></mm-component-prop-item>
-      <mm-component-prop-item name="label" type="string = '로딩 중'"></mm-component-prop-item>
-    </mm-component-props>
+    <mm-component-props .props=${componentProps}></mm-component-props>
 
     <mm-component-guide>
-      <mm-component-feature-list>
-        <mm-feature
-          heading="Feedback"
-          description="작업이 진행 중이며 시스템이 응답하고 있음을 알립니다. 결과를 기다리는 동안 사용자의 불확실성을 줄입니다."
-        ></mm-feature>
-        <mm-feature
-          heading="Transient"
-          description="작업이 끝나면 스스로 사라집니다. 사라진 자리는 결과 콘텐츠나 result가 대신합니다."
-        ></mm-feature>
-      </mm-component-feature-list>
+      <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
     </mm-component-guide>
 
     <mm-component-section
@@ -61,12 +75,7 @@ const main = html`
         <mm-typing-indicator color="var(--foreground-color-on-solid)"></mm-typing-indicator>
       </div>
     </mm-component-section>
-    <mm-component-related>
-      <mm-button-group>
-        <mm-hashtag-link href="result.html">Result</mm-hashtag-link>
-        <mm-hashtag-link href="step.html">Step</mm-hashtag-link>
-      </mm-button-group>
-    </mm-component-related>
+    <mm-component-related .items=${relatedComponents}></mm-component-related>
   </main>
 `
 

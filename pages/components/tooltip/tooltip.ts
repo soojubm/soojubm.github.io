@@ -1,5 +1,45 @@
 import { html } from 'lit'
+
+import type { ComponentFeatureItem } from '@/components/domains/component/component-feature-list'
+import type { ComponentPropItemData } from '@/components/domains/component/component-props'
+import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
+import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
+
 import { renderDocumentLayout } from '../../../layouts/document-layout'
+
+const relatedComponents: ComponentRelatedItemData[] = [
+  { href: 'popover.html', label: 'Popover' },
+  { href: 'notice.html', label: 'Notice' },
+]
+
+const componentProps: ComponentPropItemData[] = [
+  { name: 'content', type: 'string' },
+  { name: 'placement', type: 'string', optional: true },
+  { name: 'slot: trigger', type: 'HTMLElement' },
+]
+
+const componentTokens: ComponentTokenItemData[] = [
+  { name: 'tooltip-max-width', default: '320px' },
+  { name: 'tooltip-padding', default: '0.5rem var(--space-3)' },
+  { name: 'tooltip-border-radius', default: 'var(--radius)' },
+  { name: 'tooltip-background-color', default: 'var(--background-strong-color)' },
+  { name: 'tooltip-text-color', default: 'var(--foreground-color-on-solid)' },
+  { name: 'tooltip-shadow', default: 'var(--surface-base-shadow)' },
+]
+
+const componentFeatures: ComponentFeatureItem[] = [
+  {
+    heading: 'Supplementary',
+    description:
+      '설명이 필요 없는 플로우와 인터페이스를 우선하세요. 툴팁은 없을수록 좋으며, 접근성을 위한 최소한의 설명만 제공합니다.작은 화면에서 바텀 시트나 팝오버로 제공하는 것이 좋다. 사용자가 반드시 숙지해야 하는 중요한 정보를 툴팁으로 제공하지 마세요.',
+  },
+  {
+    heading: 'Anchored',
+    description:
+      '화면 좌표가 아니라 트리거 요소가 위치를 결정합니다. 방향과 정렬은 placement prop 하나로 지정합니다. useFloating',
+  },
+  { heading: 'TODO', description: 'TODO' },
+]
 
 const main = html`
   <main class="page">
@@ -72,32 +112,12 @@ const main = html`
       }
     </style>
 
-    <mm-component-props>
-      <mm-component-prop-item name="content" type="string"></mm-component-prop-item>
-      <mm-component-prop-item name="placement" type="string" optional></mm-component-prop-item>
-      <mm-component-prop-item name="slot: trigger" type="HTMLElement"></mm-component-prop-item>
-    </mm-component-props>
+    <mm-component-props .props=${componentProps}></mm-component-props>
 
-    <mm-component-tokens>
-      <mm-token name="tooltip-max-width" default="320px"></mm-token>
-      <mm-token name="tooltip-padding" default="0.5rem var(--space-3)"></mm-token>
-      <mm-token name="tooltip-border-radius" default="var(--radius)"></mm-token>
-      <mm-token name="tooltip-background-color" default="var(--background-strong-color)"></mm-token>
-      <mm-token name="tooltip-text-color" default="var(--foreground-color-on-solid)"></mm-token>
-      <mm-token name="tooltip-shadow" default="var(--surface-base-shadow)"></mm-token>
-    </mm-component-tokens>
+    <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
 
     <mm-component-guide>
-      <mm-component-feature-list>
-        <mm-feature
-          heading="Supplementary"
-          description="설명이 필요 없는 플로우와 인터페이스를 우선하세요. 툴팁은 없을수록 좋으며, 접근성을 위한 최소한의 설명만 제공합니다.작은 화면에서 바텀 시트나 팝오버로 제공하는 것이 좋다. 사용자가 반드시 숙지해야 하는 중요한 정보를 툴팁으로 제공하지 마세요."
-        ></mm-feature>
-        <mm-feature
-          heading="Anchored"
-          description="화면 좌표가 아니라 트리거 요소가 위치를 결정합니다. 방향과 정렬은 placement prop 하나로 지정합니다. useFloating"
-        ></mm-feature>
-      </mm-component-feature-list>
+      <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
       <mm-text-list
         texts='[
         "내용은 보조기술이 읽을 수 있도록 대상 요소의 설명으로 연결하고, hover뿐 아니라 키보드 포커스로도 열 수 있어야 합니다.",
@@ -122,12 +142,7 @@ const main = html`
     ></mm-component-section>
 
     <mm-component-aka items='["Coachmark"]'></mm-component-aka>
-    <mm-component-related>
-      <mm-button-group>
-        <mm-hashtag-link href="popover.html">Popover</mm-hashtag-link>
-        <mm-hashtag-link href="notice.html">Notice</mm-hashtag-link>
-      </mm-button-group>
-    </mm-component-related>
+    <mm-component-related .items=${relatedComponents}></mm-component-related>
   </main>
 `
 

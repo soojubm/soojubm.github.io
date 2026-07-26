@@ -1,7 +1,70 @@
 import { html } from 'lit'
+
+import type { ComponentFeatureItem } from '@/components/domains/component/component-feature-list'
+import type { ComponentPropItemData } from '@/components/domains/component/component-props'
+import type { ComponentReferenceItemData } from '@/components/domains/component/component-references'
+import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
+import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
+
 import { AVATAR_SHAPE_TYPE_LABEL, AVATAR_VARIANT_TYPE_UNION } from '@/components/avatar'
 import { LIST_ITEM_SIZE_TYPE_LABEL } from '@/components/list-item'
+
 import { renderDocumentLayout } from '../../../layouts/document-layout'
+
+const relatedComponents: ComponentRelatedItemData[] = [
+  { href: 'list-item.html', label: 'List Item' },
+  { href: 'popover.html', label: 'Popover' },
+]
+
+const componentReferences: ComponentReferenceItemData[] = [
+  {
+    href: 'https://www.w3.org/WAI/ARIA/apg/patterns/menubar/',
+    label: 'WAI-ARIA Menubar Pattern',
+    external: true,
+  },
+  {
+    href: 'https://developer.apple.com/design/human-interface-guidelines/menus',
+    label: 'HIG Menus',
+    external: true,
+  },
+  { href: 'https://m3.material.io/components/menus/overview', label: 'MD3 Menus', external: true },
+]
+
+const componentProps: ComponentPropItemData[] = [
+  { name: 'size', type: '', optional: true },
+  { name: 'label', type: 'string' },
+  { name: 'description', type: 'string', optional: true },
+  { name: 'icon', type: 'IconName', optional: true },
+  { name: 'trailing-icon', type: 'IconName', optional: true },
+  { name: "slot='trailing'", type: 'HTMLElement', optional: true },
+  { name: 'emoji', type: 'string', optional: true },
+  { name: 'avatar-src', type: 'string', optional: true },
+  { name: 'avatar-variant', type: "${AVATAR_VARIANT_TYPE_UNION} = 'tertiary'", optional: true },
+  { name: 'avatar-shape', type: '', optional: true },
+  { name: 'tone', type: "'danger' | string", optional: true },
+  { name: 'disabled', type: 'boolean', optional: true },
+]
+
+const componentTokens: ComponentTokenItemData[] = [
+  { name: 'menuitem-background-color-hover', default: 'var(--interaction-hover-background-color)' },
+]
+
+const componentFeatures: ComponentFeatureItem[] = [
+  {
+    heading: 'Interactive - action',
+    description:
+      'hover·포커스·키보드 탐색과 명령 실행 상호작용을 항목이 소유합니다. 표현만 필요하면 list-item을 사용하세요.',
+  },
+  {
+    heading: 'Interactive - selection',
+    description: 'menuitemcheckbox·menuitemradio 항목이 체크 상태를 소유해 선택 여부를 드러냅니다.',
+  },
+  {
+    heading: 'Groupable',
+    description:
+      '항목은 단독이 아니라 메뉴 그룹 안에서 역할(menu·listbox)을 얻습니다. 체크 계열 항목은 항상 그룹으로 묶습니다.',
+  },
+]
 
 const main = html`
   <main class="page">
@@ -38,67 +101,12 @@ const main = html`
       </mm-flex>
     </mm-component-example>
 
-    <mm-component-props>
-      <mm-component-prop-item
-        name="size"
-        type=${LIST_ITEM_SIZE_TYPE_LABEL}
-        optional
-      ></mm-component-prop-item>
-      <mm-component-prop-item name="label" type="string"></mm-component-prop-item>
-      <mm-component-prop-item name="description" type="string" optional></mm-component-prop-item>
-      <mm-component-prop-item name="icon" type="IconName" optional></mm-component-prop-item>
-      <mm-component-prop-item
-        name="trailing-icon"
-        type="IconName"
-        optional
-      ></mm-component-prop-item>
-      <mm-component-prop-item
-        name="slot='trailing'"
-        type="HTMLElement"
-        optional
-      ></mm-component-prop-item>
-      <mm-component-prop-item name="emoji" type="string" optional></mm-component-prop-item>
-      <mm-component-prop-item name="avatar-src" type="string" optional></mm-component-prop-item>
-      <mm-component-prop-item
-        name="avatar-variant"
-        type="${AVATAR_VARIANT_TYPE_UNION} = 'tertiary'"
-        optional
-      ></mm-component-prop-item>
-      <mm-component-prop-item
-        name="avatar-shape"
-        type=${AVATAR_SHAPE_TYPE_LABEL}
-        optional
-      ></mm-component-prop-item>
-      <mm-component-prop-item
-        name="tone"
-        type="'danger' | string"
-        optional
-      ></mm-component-prop-item>
-      <mm-component-prop-item name="disabled" type="boolean" optional></mm-component-prop-item>
-    </mm-component-props>
+    <mm-component-props .props=${componentProps}></mm-component-props>
 
-    <mm-component-tokens>
-      <mm-token
-        name="menuitem-background-color-hover"
-        default="var(--interaction-hover-background-color)"
-      ></mm-token>
-    </mm-component-tokens>
+    <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
 
     <mm-component-guide>
-      <mm-component-feature-list>
-        <mm-feature
-          heading="Interactive - action"
-          description="hover·포커스·키보드 탐색과 명령 실행 상호작용을 항목이 소유합니다. 표현만 필요하면 list-item을 사용하세요."
-        ></mm-feature>
-        <mm-feature
-          heading="Interactive - selection"
-          description="menuitemcheckbox·menuitemradio 항목이 체크 상태를 소유해 선택 여부를 드러냅니다."
-        ></mm-feature>
-        <mm-feature
-          heading="Groupable"
-          description="항목은 단독이 아니라 메뉴 그룹 안에서 역할(menu·listbox)을 얻습니다. 체크 계열 항목은 항상 그룹으로 묶습니다."
-        ></mm-feature>
-      </mm-component-feature-list>
+      <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
       <mm-text-list
         texts='[
         "role=menu 는 명령 실행 목록. role=listbox 는 폼 내 선택 목록. 컨텍스트에 따라 구분합니다."
@@ -217,22 +225,9 @@ const main = html`
       </mm-menu-item-group>
     </mm-component-section>
 
-    <mm-component-related>
-      <mm-button-group>
-        <mm-hashtag-link href="list-item.html">List Item</mm-hashtag-link>
-        <mm-hashtag-link href="popover.html">Popover</mm-hashtag-link>
-      </mm-button-group>
-    </mm-component-related>
+    <mm-component-related .items=${relatedComponents}></mm-component-related>
 
-    <mm-component-references>
-      <mm-link external href="https://www.w3.org/WAI/ARIA/apg/patterns/menubar/">
-        WAI-ARIA Menubar Pattern
-      </mm-link>
-      <mm-link external href="https://developer.apple.com/design/human-interface-guidelines/menus">
-        HIG Menus
-      </mm-link>
-      <mm-link external href="https://m3.material.io/components/menus/overview">MD3 Menus</mm-link>
-    </mm-component-references>
+    <mm-component-references .items=${componentReferences}></mm-component-references>
   </main>
 `
 

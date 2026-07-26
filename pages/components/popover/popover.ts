@@ -1,5 +1,46 @@
 import { html } from 'lit'
+
+import type { ComponentFeatureItem } from '@/components/domains/component/component-feature-list'
+import type { ComponentPropItemData } from '@/components/domains/component/component-props'
+import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
+import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
+
 import { renderDocumentLayout } from '../../../layouts/document-layout'
+
+const relatedComponents: ComponentRelatedItemData[] = [
+  { href: 'layer.html', label: 'Layer' },
+  { href: 'tooltip.html', label: 'Tooltip' },
+  { href: 'menuitem.html', label: 'menuItem' },
+]
+
+const componentProps: ComponentPropItemData[] = [
+  { name: 'open', type: 'boolean' },
+  {
+    name: 'placement',
+    type: "'bottom-left' | 'bottom-right' | 'top-left' | 'top-right' = 'bottom-left'",
+  },
+  { name: 'width', type: 'string' },
+  { name: 'padding', type: 'string' },
+  { name: 'popoverclose', type: 'CustomEvent', kind: 'event' },
+]
+
+const componentTokens: ComponentTokenItemData[] = [
+  { name: 'popover-width', default: 'auto' },
+  { name: 'popover-max-height', default: 'none' },
+  { name: 'popover-offset', default: 'var(--space-1)' },
+  { name: 'popover-padding', default: 'var(--space-1)' },
+  { name: 'popover-border', default: 'var(--surface-overlay-border)' },
+  { name: 'popover-border-radius', default: 'var(--radius)' },
+  { name: 'popover-background-color', default: 'var(--surface-overlay-background-color)' },
+  { name: 'popover-backdrop-filter', default: 'var(--surface-overlay-backdrop-filter)' },
+  { name: 'popover-shadow', default: 'var(--surface-overlay-shadow)' },
+]
+
+const componentFeatures: ComponentFeatureItem[] = [
+  { heading: 'TODO', description: 'TODO' },
+  { heading: 'TODO', description: 'TODO' },
+  { heading: 'TODO', description: 'TODO' },
+]
 
 const main = html`
   <main class="page">
@@ -17,40 +58,12 @@ const main = html`
       </mm-popover>
     </mm-component-example>
 
-    <mm-component-props>
-      <mm-component-prop-item name="open" type="boolean"></mm-component-prop-item>
-      <mm-component-prop-item
-        name="placement"
-        type="'bottom-left' | 'bottom-right' | 'top-left' | 'top-right' = 'bottom-left'"
-      ></mm-component-prop-item>
-      <mm-component-prop-item name="width" type="string"></mm-component-prop-item>
-      <mm-component-prop-item name="padding" type="string"></mm-component-prop-item>
-      <mm-component-prop-item
-        name="popoverclose"
-        type="CustomEvent"
-        kind="event"
-      ></mm-component-prop-item>
-    </mm-component-props>
+    <mm-component-props .props=${componentProps}></mm-component-props>
 
-    <mm-component-tokens>
-      <mm-token name="popover-width" default="auto"></mm-token>
-      <mm-token name="popover-max-height" default="none"></mm-token>
-      <mm-token name="popover-offset" default="var(--space-1)"></mm-token>
-      <mm-token name="popover-padding" default="var(--space-1)"></mm-token>
-      <mm-token name="popover-border" default="var(--surface-overlay-border)"></mm-token>
-      <mm-token name="popover-border-radius" default="var(--radius)"></mm-token>
-      <mm-token
-        name="popover-background-color"
-        default="var(--surface-overlay-background-color)"
-      ></mm-token>
-      <mm-token
-        name="popover-backdrop-filter"
-        default="var(--surface-overlay-backdrop-filter)"
-      ></mm-token>
-      <mm-token name="popover-shadow" default="var(--surface-overlay-shadow)"></mm-token>
-    </mm-component-tokens>
+    <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
 
     <mm-component-guide>
+      <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
       <mm-text-list
         texts='[
         "열림 상태는 popover가 소유한다. 트리거는 항상 slot=trigger로 넣으며, popover가 스스로 positioned 앵커가 되어 별도 래퍼가 필요 없고, 클릭 토글·외부 클릭·ESC 닫기·aria-expanded 반영까지 자동으로 연결된다.",
@@ -95,13 +108,7 @@ const main = html`
         <option value="settings">오래된순</option>
       </mm-select>
     </mm-component-section>
-    <mm-component-related>
-      <mm-button-group>
-        <mm-hashtag-link href="layer.html">Layer</mm-hashtag-link>
-        <mm-hashtag-link href="tooltip.html">Tooltip</mm-hashtag-link>
-        <mm-hashtag-link href="menuitem.html">menuItem</mm-hashtag-link>
-      </mm-button-group>
-    </mm-component-related>
+    <mm-component-related .items=${relatedComponents}></mm-component-related>
   </main>
 `
 

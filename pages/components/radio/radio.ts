@@ -1,5 +1,53 @@
 import { html } from 'lit'
+
+import type { ComponentFeatureItem } from '@/components/domains/component/component-feature-list'
+import type { ComponentPropItemData } from '@/components/domains/component/component-props'
+import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
+import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
+
 import { renderDocumentLayout } from '../../../layouts/document-layout'
+
+const relatedComponents: ComponentRelatedItemData[] = [
+  { href: 'checkbox.html', label: 'Checkbox' },
+  { href: 'switch.html', label: 'Switch' },
+]
+
+const componentProps: ComponentPropItemData[] = [
+  { name: 'name', type: 'string', optional: true },
+  { name: 'value', type: 'string', optional: true },
+  { name: 'checked', type: 'boolean', optional: true },
+  { name: 'disabled', type: 'boolean', optional: true },
+  { name: 'change', type: 'CustomEvent detail: checked, value', kind: 'event' },
+]
+
+const componentTokens: ComponentTokenItemData[] = [
+  { name: 'radio-size', default: 'var(--size-16)' },
+  { name: 'radio-border', default: 'var(--border)' },
+  { name: 'radio-border-radius', default: 'var(--radius-full)' },
+  {
+    name: 'radio-background-color-checked',
+    default: 'var(--interaction-selected-background-color)',
+  },
+  { name: 'radio-border-color-checked', default: 'var(--interaction-selected-border-color)' },
+]
+
+const componentFeatures: ComponentFeatureItem[] = [
+  {
+    heading: 'Interactive - selection',
+    description:
+      '여러 선택지 중 하나만 선택하며, 그룹이 단일 선택을 보장합니다. 미리 선택된 기본값을 제공하는 것은 편향된 데이터를 수집할 위험이 있습니다. 만약 미리 선택된 값을 적용하는 경우 첫 번째 옵션을 기본 옵션으로.',
+  },
+  {
+    heading: 'Glanceable',
+    description:
+      '수직 정렬로 옵션 목록을 쉽게 스캔할 수 있도록 합니다. 최대 5개의 옵션을 제공할 수 있으며, 그 이상의 옵션이 필요하다면 셀렉트Select 또는 가로 스크롤되는 칩Chip으로 제공하세요.',
+  },
+  {
+    heading: 'Groupable',
+    description:
+      '라디오는 항상 그룹으로 사용합니다. 그룹이 단일 선택과 간격을 소유하고, 그룹의 제목으로 옵션들의 맥락을 제공합니다.',
+  },
+]
 
 const main = html`
   <main class="page">
@@ -17,31 +65,9 @@ const main = html`
         </mm-radio-group>
       </fieldset>
     </mm-component-example>
-    <mm-component-props>
-      <mm-component-prop-item name="name" type="string" optional></mm-component-prop-item>
-      <mm-component-prop-item name="value" type="string" optional></mm-component-prop-item>
-      <mm-component-prop-item name="checked" type="boolean" optional></mm-component-prop-item>
-      <mm-component-prop-item name="disabled" type="boolean" optional></mm-component-prop-item>
-      <mm-component-prop-item
-        name="change"
-        type="CustomEvent detail: checked, value"
-        kind="event"
-      ></mm-component-prop-item>
-    </mm-component-props>
+    <mm-component-props .props=${componentProps}></mm-component-props>
 
-    <mm-component-tokens>
-      <mm-token name="radio-size" default="var(--size-16)"></mm-token>
-      <mm-token name="radio-border" default="var(--border)"></mm-token>
-      <mm-token name="radio-border-radius" default="var(--radius-full)"></mm-token>
-      <mm-token
-        name="radio-background-color-checked"
-        default="var(--interaction-selected-background-color)"
-      ></mm-token>
-      <mm-token
-        name="radio-border-color-checked"
-        default="var(--interaction-selected-border-color)"
-      ></mm-token>
-    </mm-component-tokens>
+    <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
 
     <mm-component-anatomy
       parts='[
@@ -72,21 +98,7 @@ const main = html`
     </mm-component-anatomy>
 
     <mm-component-guide>
-      <mm-component-feature-list>
-        <mm-feature
-          heading="Interactive - selection"
-          subtitle="Easy scanning"
-          description="여러 선택지 중 하나만 선택하며, 그룹이 단일 선택을 보장합니다. 미리 선택된 기본값을 제공하는 것은 편향된 데이터를 수집할 위험이 있습니다. 만약 미리 선택된 값을 적용하는 경우 첫 번째 옵션을 기본 옵션으로."
-        ></mm-feature>
-        <mm-feature
-          heading="Glanceable"
-          description="수직 정렬로 옵션 목록을 쉽게 스캔할 수 있도록 합니다. 최대 5개의 옵션을 제공할 수 있으며, 그 이상의 옵션이 필요하다면 셀렉트Select 또는 가로 스크롤되는 칩Chip으로 제공하세요."
-        ></mm-feature>
-        <mm-feature
-          heading="Groupable"
-          description="라디오는 항상 그룹으로 사용합니다. 그룹이 단일 선택과 간격을 소유하고, 그룹의 제목으로 옵션들의 맥락을 제공합니다."
-        ></mm-feature>
-      </mm-component-feature-list>
+      <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
     </mm-component-guide>
 
     <mm-component-section heading="Tile Radio?" description="">
@@ -98,12 +110,7 @@ const main = html`
         </mm-radio>
       </mm-surface>
     </mm-component-section>
-    <mm-component-related>
-      <mm-button-group>
-        <mm-hashtag-link href="checkbox.html">Checkbox</mm-hashtag-link>
-        <mm-hashtag-link href="switch.html">Switch</mm-hashtag-link>
-      </mm-button-group>
-    </mm-component-related>
+    <mm-component-related .items=${relatedComponents}></mm-component-related>
   </main>
 `
 

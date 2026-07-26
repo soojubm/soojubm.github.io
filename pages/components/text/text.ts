@@ -1,5 +1,41 @@
 import { html } from 'lit'
+
+import type { ComponentFeatureItem } from '@/components/domains/component/component-feature-list'
+import type { ComponentPropItemData } from '@/components/domains/component/component-props'
+import type { ComponentReferenceItemData } from '@/components/domains/component/component-references'
+
 import { renderDocumentLayout } from '../../../layouts/document-layout'
+
+const componentReferences: ComponentReferenceItemData[] = [
+  {
+    href: 'https://design-system.service.gov.uk/components/summary-list/',
+    label: 'Summary list',
+    external: true,
+  },
+  {
+    href: 'https://en.wikipedia.org/wiki/Adjacency_pairs',
+    label: 'Adjacency_pairs',
+    external: true,
+  },
+]
+
+const componentProps: ComponentPropItemData[] = [
+  { name: 'as', type: "'span' | 'p' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' = 'span'" },
+  { name: 'size', type: "'32' | '24' | '18' | '14' | '12' = '14'" },
+  { name: 'weight', type: "'medium' | 'bold' = 'medium'" },
+  { name: 'color', type: "'inherit' | 'light' | 'danger' = 'inherit'" },
+  { name: 'maxLength', type: "'1' | '2' | '3'", optional: true },
+]
+
+const componentFeatures: ComponentFeatureItem[] = [
+  {
+    heading: 'Groupable',
+    description:
+      '텍스트가 2개 이상이면 그룹 컴포넌트로 묶습니다. 제목과 설명은 text block으로, 연관 메타 정보는 메타 그룹으로 묶어 간격과 구조를 그룹이 소유합니다.',
+  },
+  { heading: 'TODO', description: 'TODO' },
+  { heading: 'TODO', description: 'TODO' },
+]
 
 const main = html`
   <main class="page">
@@ -61,37 +97,10 @@ const main = html`
         <mm-text weight="bold">font weight bold</mm-text>
       </mm-flex>
     </mm-component-example>
-    <mm-component-props>
-      <mm-component-prop-item
-        name="as"
-        type="'span' | 'p' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' = 'span'"
-      ></mm-component-prop-item>
-      <mm-component-prop-item
-        name="size"
-        type="'32' | '24' | '18' | '14' | '12' = '14'"
-      ></mm-component-prop-item>
-      <mm-component-prop-item
-        name="weight"
-        type="'medium' | 'bold' = 'medium'"
-      ></mm-component-prop-item>
-      <mm-component-prop-item
-        name="color"
-        type="'inherit' | 'light' | 'danger' = 'inherit'"
-      ></mm-component-prop-item>
-      <mm-component-prop-item
-        name="maxLength"
-        type="'1' | '2' | '3'"
-        optional
-      ></mm-component-prop-item>
-    </mm-component-props>
+    <mm-component-props .props=${componentProps}></mm-component-props>
 
     <mm-component-guide>
-      <mm-component-feature-list>
-        <mm-feature
-          heading="Groupable"
-          description="텍스트가 2개 이상이면 그룹 컴포넌트로 묶습니다. 제목과 설명은 text block으로, 연관 메타 정보는 메타 그룹으로 묶어 간격과 구조를 그룹이 소유합니다."
-        ></mm-feature>
-      </mm-component-feature-list>
+      <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
       <mm-text-list
         texts='[
         "피그마에서 소숫점 올림한다. line height를 고정값을 사용하는 것이 토큰화에도 좋다. (TODO 아이콘과 텍스트의 가운데 정렬 문제에 대하여)",
@@ -294,14 +303,7 @@ const main = html`
       </div>
     </mm-component-section>
 
-    <mm-component-references>
-      <mm-link href="https://design-system.service.gov.uk/components/summary-list/" external>
-        Summary list
-      </mm-link>
-      <mm-link href="https://en.wikipedia.org/wiki/Adjacency_pairs" external>
-        Adjacency_pairs
-      </mm-link>
-    </mm-component-references>
+    <mm-component-references .items=${componentReferences}></mm-component-references>
   </main>
 `
 

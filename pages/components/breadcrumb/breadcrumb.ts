@@ -1,6 +1,35 @@
 import { html } from 'lit'
+
 import type { BreadcrumbItem } from '@/components/breadcrumb/breadcrumb'
+import type { ComponentFeatureItem } from '@/components/domains/component/component-feature-list'
+import type { ComponentPropItemData } from '@/components/domains/component/component-props'
+import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
+import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
+
 import { renderDocumentLayout } from '../../../layouts/document-layout'
+
+const relatedComponents: ComponentRelatedItemData[] = [
+  { href: 'link.html', label: 'Link' },
+  { href: 'top-bar.html', label: 'Top Bar' },
+]
+
+const componentProps: ComponentPropItemData[] = [
+  { name: 'items', type: '{ label: string; href?: string }[] (JSON)' },
+  { name: 'divider', type: "string = '/'", optional: true },
+]
+
+const componentTokens: ComponentTokenItemData[] = [
+  { name: 'breadcrumb-item-text-color', default: 'var(--color-primary)' },
+  { name: 'breadcrumb-item-text-color-current', default: 'var(--foreground-color)' },
+  { name: 'breadcrumb-divider-text-color', default: 'var(--border-color)' },
+  { name: 'breadcrumb-divider-space', default: 'var(--space-3)' },
+]
+
+const componentFeatures: ComponentFeatureItem[] = [
+  { heading: 'TODO', description: 'TODO' },
+  { heading: 'TODO', description: 'TODO' },
+  { heading: 'TODO', description: 'TODO' },
+]
 
 const breadcrumbItems: BreadcrumbItem[] = [
   { label: '홈', href: '/' },
@@ -19,25 +48,12 @@ const main = html`
       <mm-breadcrumb .items=${breadcrumbItems}></mm-breadcrumb>
     </mm-component-example>
 
-    <mm-component-props>
-      <mm-component-prop-item
-        name="items"
-        type="{ label: string; href?: string }[] (JSON)"
-      ></mm-component-prop-item>
-      <mm-component-prop-item name="divider" type="string = '/'" optional></mm-component-prop-item>
-    </mm-component-props>
+    <mm-component-props .props=${componentProps}></mm-component-props>
 
-    <mm-component-tokens>
-      <mm-token name="breadcrumb-item-text-color" default="var(--color-primary)"></mm-token>
-      <mm-token
-        name="breadcrumb-item-text-color-current"
-        default="var(--foreground-color)"
-      ></mm-token>
-      <mm-token name="breadcrumb-divider-text-color" default="var(--border-color)"></mm-token>
-      <mm-token name="breadcrumb-divider-space" default="var(--space-3)"></mm-token>
-    </mm-component-tokens>
+    <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
 
     <mm-component-guide>
+      <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
       <mm-text-list
         texts='[
         "flat sitemap 또는 모바일에서의 레이어 구조 때문에 사용빈도가 낮아짐. 네비게이션 바. 대부분의 경우 불필요하다. 도움말, 상품 카테고리 구조에서 제한적으로 사용? (foundation. flat sitemap. 페이지 댑스의 제한). 페이지 제목이 길어지는 케이스.",
@@ -46,12 +62,7 @@ const main = html`
       ]'
       ></mm-text-list>
     </mm-component-guide>
-    <mm-component-related>
-      <mm-button-group>
-        <mm-hashtag-link href="link.html">Link</mm-hashtag-link>
-        <mm-hashtag-link href="top-bar.html">Top Bar</mm-hashtag-link>
-      </mm-button-group>
-    </mm-component-related>
+    <mm-component-related .items=${relatedComponents}></mm-component-related>
   </main>
 `
 

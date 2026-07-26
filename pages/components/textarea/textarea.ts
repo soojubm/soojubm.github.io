@@ -1,5 +1,51 @@
 import { html } from 'lit'
+
+import type { ComponentFeatureItem } from '@/components/domains/component/component-feature-list'
+import type { ComponentPropItemData } from '@/components/domains/component/component-props'
+import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
+import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
+
 import { renderDocumentLayout } from '../../../layouts/document-layout'
+
+const relatedComponents: ComponentRelatedItemData[] = [
+  { href: 'input.html', label: 'Input' },
+  { href: 'button.html', label: 'Button' },
+]
+
+const componentProps: ComponentPropItemData[] = [
+  { name: 'value', type: 'string', optional: true },
+  { name: 'name', type: 'string', optional: true },
+  { name: 'placeholder', type: 'string', optional: true },
+  { name: 'label', type: 'string', optional: true },
+  { name: 'helper', type: 'string', optional: true },
+  { name: 'optional', type: 'boolean', optional: true },
+  { name: 'disabled', type: 'boolean', optional: true },
+  { name: 'aria-invalid', type: "'true' | 'false'", optional: true },
+  { name: 'aria-describedby', type: 'string', optional: true },
+  { name: 'input', type: 'CustomEvent detail: value', kind: 'event' },
+]
+
+const componentTokens: ComponentTokenItemData[] = [
+  { name: 'input-height', default: 'var(--size-48)' },
+  { name: 'input-background-color', default: 'var(--background-subtle-color)' },
+  { name: 'input-border', default: 'var(--border)' },
+  { name: 'input-border-radius', default: 'var(--radius)' },
+  { name: 'input-text-color', default: 'var(--foreground-color)' },
+]
+
+const componentFeatures: ComponentFeatureItem[] = [
+  {
+    heading: 'Freeform',
+    description:
+      '제한된 선택지가 아니라 자유 형식의 긴 텍스트를 받습니다. 여러 줄 입력이 예상되는 맥락에만 사용합니다.',
+  },
+  {
+    heading: 'Validatable',
+    description:
+      '입력값의 규칙 검증과 오류 표시를 소유합니다. 글자 수 제한 같은 규칙은 오류가 나기 전에 미리 알립니다.',
+  },
+  { heading: 'TODO', description: 'TODO' },
+]
 
 const main = html`
   <main class="page">
@@ -17,50 +63,12 @@ const main = html`
       </mm-flex>
     </mm-component-example>
 
-    <mm-component-props>
-      <mm-component-prop-item name="value" type="string" optional></mm-component-prop-item>
-      <mm-component-prop-item name="name" type="string" optional></mm-component-prop-item>
-      <mm-component-prop-item name="placeholder" type="string" optional></mm-component-prop-item>
-      <mm-component-prop-item name="label" type="string" optional></mm-component-prop-item>
-      <mm-component-prop-item name="helper" type="string" optional></mm-component-prop-item>
-      <mm-component-prop-item name="optional" type="boolean" optional></mm-component-prop-item>
-      <mm-component-prop-item name="disabled" type="boolean" optional></mm-component-prop-item>
-      <mm-component-prop-item
-        name="aria-invalid"
-        type="'true' | 'false'"
-        optional
-      ></mm-component-prop-item>
-      <mm-component-prop-item
-        name="aria-describedby"
-        type="string"
-        optional
-      ></mm-component-prop-item>
-      <mm-component-prop-item
-        name="input"
-        type="CustomEvent detail: value"
-        kind="event"
-      ></mm-component-prop-item>
-    </mm-component-props>
+    <mm-component-props .props=${componentProps}></mm-component-props>
 
-    <mm-component-tokens>
-      <mm-token name="input-height" default="var(--size-48)"></mm-token>
-      <mm-token name="input-background-color" default="var(--background-subtle-color)"></mm-token>
-      <mm-token name="input-border" default="var(--border)"></mm-token>
-      <mm-token name="input-border-radius" default="var(--radius)"></mm-token>
-      <mm-token name="input-text-color" default="var(--foreground-color)"></mm-token>
-    </mm-component-tokens>
+    <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
 
     <mm-component-guide>
-      <mm-component-feature-list>
-        <mm-feature
-          heading="Freeform"
-          description="제한된 선택지가 아니라 자유 형식의 긴 텍스트를 받습니다. 여러 줄 입력이 예상되는 맥락에만 사용합니다."
-        ></mm-feature>
-        <mm-feature
-          heading="Validatable"
-          description="입력값의 규칙 검증과 오류 표시를 소유합니다. 글자 수 제한 같은 규칙은 오류가 나기 전에 미리 알립니다."
-        ></mm-feature>
-      </mm-component-feature-list>
+      <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
     </mm-component-guide>
 
     <mm-component-section heading="Comment Input" description="댓글 작성 입력 패턴">
@@ -75,12 +83,7 @@ const main = html`
     <mm-component-section heading="Prompt Input" description="">
       <mm-prompt-input placeholder="Ask me anything..."></mm-prompt-input>
     </mm-component-section>
-    <mm-component-related>
-      <mm-button-group>
-        <mm-hashtag-link href="input.html">Input</mm-hashtag-link>
-        <mm-hashtag-link href="button.html">Button</mm-hashtag-link>
-      </mm-button-group>
-    </mm-component-related>
+    <mm-component-related .items=${relatedComponents}></mm-component-related>
   </main>
 `
 

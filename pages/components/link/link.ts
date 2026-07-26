@@ -1,5 +1,40 @@
 import { html } from 'lit'
+
+import type { ComponentFeatureItem } from '@/components/domains/component/component-feature-list'
+import type { ComponentPropItemData } from '@/components/domains/component/component-props'
+import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
+import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
+
 import { renderDocumentLayout } from '../../../layouts/document-layout'
+
+const relatedComponents: ComponentRelatedItemData[] = [
+  { href: 'button.html', label: 'Button' },
+  { href: 'breadcrumb.html', label: 'Breadcrumb' },
+]
+
+const componentProps: ComponentPropItemData[] = [
+  { name: 'href', type: 'string' },
+  { name: 'target', type: 'string', optional: true },
+  { name: 'external', type: 'boolean', optional: true },
+  { name: 'message', type: 'string', optional: true },
+  { name: 'link-label', type: 'string', optional: true },
+  { name: 'icon', type: 'IconName', optional: true },
+]
+
+const componentTokens: ComponentTokenItemData[] = [
+  { name: 'link-text-color', default: 'var(--color-primary)' },
+  { name: 'link-gap', default: 'var(--space-1)' },
+]
+
+const componentFeatures: ComponentFeatureItem[] = [
+  {
+    heading: 'Interactive - action',
+    description:
+      '누르면 다른 위치로 이동합니다. 상호작용 가능함은 색상·밑줄 같은 일관된 기표로 드러냅니다.',
+  },
+  { heading: 'TODO', description: 'TODO' },
+  { heading: 'TODO', description: 'TODO' },
+]
 
 const main = html`
   <main class="page">
@@ -40,19 +75,9 @@ const main = html`
       </section>
     </mm-component-example>
 
-    <mm-component-props>
-      <mm-component-prop-item name="href" type="string"></mm-component-prop-item>
-      <mm-component-prop-item name="target" type="string" optional></mm-component-prop-item>
-      <mm-component-prop-item name="external" type="boolean" optional></mm-component-prop-item>
-      <mm-component-prop-item name="message" type="string" optional></mm-component-prop-item>
-      <mm-component-prop-item name="link-label" type="string" optional></mm-component-prop-item>
-      <mm-component-prop-item name="icon" type="IconName" optional></mm-component-prop-item>
-    </mm-component-props>
+    <mm-component-props .props=${componentProps}></mm-component-props>
 
-    <mm-component-tokens>
-      <mm-token name="link-text-color" default="var(--color-primary)"></mm-token>
-      <mm-token name="link-gap" default="var(--space-1)"></mm-token>
-    </mm-component-tokens>
+    <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
 
     <mm-component-anatomy
       parts='[
@@ -78,12 +103,7 @@ const main = html`
     </mm-component-anatomy>
 
     <mm-component-guide>
-      <mm-component-feature-list>
-        <mm-feature
-          heading="Interactive - action"
-          description="누르면 다른 위치로 이동합니다. 상호작용 가능함은 색상·밑줄 같은 일관된 기표로 드러냅니다."
-        ></mm-feature>
-      </mm-component-feature-list>
+      <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
       <mm-text-list
         texts='[
           "text button과의 차이. Link는 항상 텍스트 단락과 함께 사용합니다. word, phrase, paragraph와 사용되는 케이스 정의",
@@ -91,12 +111,7 @@ const main = html`
         ]'
       ></mm-text-list>
     </mm-component-guide>
-    <mm-component-related>
-      <mm-button-group>
-        <mm-hashtag-link href="button.html">Button</mm-hashtag-link>
-        <mm-hashtag-link href="breadcrumb.html">Breadcrumb</mm-hashtag-link>
-      </mm-button-group>
-    </mm-component-related>
+    <mm-component-related .items=${relatedComponents}></mm-component-related>
   </main>
 `
 

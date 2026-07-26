@@ -1,7 +1,58 @@
 import { html } from 'lit'
-import type { OptionItem } from '@/components/toggle-button'
+
 import type { FilterOption } from '@/components/button/semantics/filter-button-group'
+import type { ComponentFeatureItem } from '@/components/domains/component/component-feature-list'
+import type { ComponentPropItemData } from '@/components/domains/component/component-props'
+import type { ComponentReferenceItemData } from '@/components/domains/component/component-references'
+import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
+import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
+import type { OptionItem } from '@/components/toggle-button'
+
 import { renderDocumentLayout } from '../../../layouts/document-layout'
+
+const relatedComponents: ComponentRelatedItemData[] = [
+  { href: 'button.html', label: 'Button' },
+  { href: 'switch.html', label: 'Switch' },
+]
+
+const componentReferences: ComponentReferenceItemData[] = [
+  {
+    href: 'https://m3.material.io/components/button-groups/overview',
+    label: 'MD3 Button groups',
+    external: true,
+  },
+  {
+    href: 'https://polaris-react.shopify.com/components/lists/resource-list',
+    label: 'Shopify Resource list',
+    external: true,
+  },
+]
+
+const componentProps: ComponentPropItemData[] = [
+  { name: 'selected', type: 'boolean = false' },
+  { name: 'value', type: 'string' },
+  { name: 'icon', type: 'IconName', optional: true },
+  { name: 'disabled', type: 'boolean = false' },
+  { name: 'change', type: 'CustomEvent detail: selected, value', kind: 'event' },
+]
+
+const componentTokens: ComponentTokenItemData[] = [
+  { name: 'toggle-button-border-radius', default: 'var(--radius)' },
+]
+
+const componentFeatures: ComponentFeatureItem[] = [
+  {
+    heading: 'Interactive - selection',
+    description:
+      '누를 때마다 누름(pressed) 상태가 토글되어 선택 여부를 드러내고, 그룹에서는 단일 선택으로 동작합니다.',
+  },
+  {
+    heading: 'Groupable',
+    description:
+      '독립 on/off에는 ToggleButton을 단독으로, 세그먼트(단일/다중)에는 toggle-button-group을 사용합니다. 선택 규칙과 간격은 그룹이 소유합니다.',
+  },
+  { heading: 'TODO', description: 'TODO' },
+]
 
 const anatomyViewOptions: OptionItem[] = [
   { value: 'list', icon: 'table-rows', label: '목록' },
@@ -63,33 +114,12 @@ const main = html`
       </mm-button-group>
     </mm-component-example>
 
-    <mm-component-props>
-      <mm-component-prop-item name="selected" type="boolean = false"></mm-component-prop-item>
-      <mm-component-prop-item name="value" type="string"></mm-component-prop-item>
-      <mm-component-prop-item name="icon" type="IconName" optional></mm-component-prop-item>
-      <mm-component-prop-item name="disabled" type="boolean = false"></mm-component-prop-item>
-      <mm-component-prop-item
-        name="change"
-        type="CustomEvent detail: selected, value"
-        kind="event"
-      ></mm-component-prop-item>
-    </mm-component-props>
+    <mm-component-props .props=${componentProps}></mm-component-props>
 
-    <mm-component-tokens>
-      <mm-token name="toggle-button-border-radius" default="var(--radius)"></mm-token>
-    </mm-component-tokens>
+    <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
 
     <mm-component-guide>
-      <mm-component-feature-list>
-        <mm-feature
-          heading="Interactive - selection"
-          description="누를 때마다 누름(pressed) 상태가 토글되어 선택 여부를 드러내고, 그룹에서는 단일 선택으로 동작합니다."
-        ></mm-feature>
-        <mm-feature
-          heading="Groupable"
-          description="독립 on/off에는 ToggleButton을 단독으로, 세그먼트(단일/다중)에는 toggle-button-group을 사용합니다. 선택 규칙과 간격은 그룹이 소유합니다."
-        ></mm-feature>
-      </mm-component-feature-list>
+      <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
     </mm-component-guide>
 
     <mm-component-anatomy
@@ -193,21 +223,9 @@ const main = html`
       </mm-button-group>
     </mm-component-section>
 
-    <mm-component-related>
-      <mm-button-group>
-        <mm-hashtag-link href="button.html">Button</mm-hashtag-link>
-        <mm-hashtag-link href="switch.html">Switch</mm-hashtag-link>
-      </mm-button-group>
-    </mm-component-related>
+    <mm-component-related .items=${relatedComponents}></mm-component-related>
 
-    <mm-component-references>
-      <mm-link external href="https://m3.material.io/components/button-groups/overview">
-        MD3 Button groups
-      </mm-link>
-      <mm-link external href="https://polaris-react.shopify.com/components/lists/resource-list">
-        Shopify Resource list
-      </mm-link>
-    </mm-component-references>
+    <mm-component-references .items=${componentReferences}></mm-component-references>
   </main>
 `
 

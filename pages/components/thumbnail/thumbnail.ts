@@ -1,5 +1,41 @@
 import { html } from 'lit'
+
+import type { ComponentFeatureItem } from '@/components/domains/component/component-feature-list'
+import type { ComponentPropItemData } from '@/components/domains/component/component-props'
+import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
+import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
+
 import { renderDocumentLayout } from '../../../layouts/document-layout'
+
+const relatedComponents: ComponentRelatedItemData[] = [
+  { href: 'avatar.html', label: 'Avatar' },
+  { href: 'surface.html', label: 'Surface' },
+]
+
+const componentProps: ComponentPropItemData[] = [
+  { name: 'src', type: 'string' },
+  { name: 'alt', type: 'string' },
+  { name: 'ratio', type: "'1:1' | '16:9' | '4:3' | 'full' = '16:9'", optional: true },
+  { name: 'caption', type: 'string', optional: true },
+]
+
+const componentTokens: ComponentTokenItemData[] = [
+  { name: 'thumbnail-border-radius', default: 'var(--radius-large)' },
+]
+
+const componentFeatures: ComponentFeatureItem[] = [
+  {
+    heading: 'Representative',
+    description:
+      '콘텐츠 본문 대신 그 성격을 대표하는 미리보기 이미지를 보여줍니다. 무엇에 대한 콘텐츠인지 한눈에 알아볼 수 있어야 합니다.',
+  },
+  {
+    heading: 'Fallback',
+    description:
+      '이미지를 불러오지 못하거나 비어 있어도 빈 상태 배경(thumbnail-color-empty)으로 비율과 형태를 유지합니다. alt 텍스트를 반드시 제공하세요.',
+  },
+  { heading: 'TODO', description: 'TODO' },
+]
 
 const main = html`
   <main class="page">
@@ -45,40 +81,15 @@ const main = html`
       </div>
     </mm-component-example>
 
-    <mm-component-props>
-      <mm-component-prop-item name="src" type="string"></mm-component-prop-item>
-      <mm-component-prop-item name="alt" type="string"></mm-component-prop-item>
-      <mm-component-prop-item
-        name="ratio"
-        type="'1:1' | '16:9' | '4:3' | 'full' = '16:9'"
-        optional
-      ></mm-component-prop-item>
-      <mm-component-prop-item name="caption" type="string" optional></mm-component-prop-item>
-    </mm-component-props>
+    <mm-component-props .props=${componentProps}></mm-component-props>
 
-    <mm-component-tokens>
-      <mm-token name="thumbnail-border-radius" default="var(--radius-large)"></mm-token>
-    </mm-component-tokens>
+    <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
 
     <mm-component-guide>
-      <mm-component-feature-list>
-        <mm-feature
-          heading="Representative"
-          description="콘텐츠 본문 대신 그 성격을 대표하는 미리보기 이미지를 보여줍니다. 무엇에 대한 콘텐츠인지 한눈에 알아볼 수 있어야 합니다."
-        ></mm-feature>
-        <mm-feature
-          heading="Fallback"
-          description="이미지를 불러오지 못하거나 비어 있어도 빈 상태 배경(thumbnail-color-empty)으로 비율과 형태를 유지합니다. alt 텍스트를 반드시 제공하세요."
-        ></mm-feature>
-      </mm-component-feature-list>
+      <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
       <mm-paragraph>TODO 고해상도 디바이스를 위한 이미지 가이드.</mm-paragraph>
     </mm-component-guide>
-    <mm-component-related>
-      <mm-button-group>
-        <mm-hashtag-link href="avatar.html">Avatar</mm-hashtag-link>
-        <mm-hashtag-link href="surface.html">Surface</mm-hashtag-link>
-      </mm-button-group>
-    </mm-component-related>
+    <mm-component-related .items=${relatedComponents}></mm-component-related>
   </main>
 `
 

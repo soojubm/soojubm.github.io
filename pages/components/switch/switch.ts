@@ -1,5 +1,48 @@
 import { html } from 'lit'
+
+import type { ComponentFeatureItem } from '@/components/domains/component/component-feature-list'
+import type { ComponentPropItemData } from '@/components/domains/component/component-props'
+import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
+import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
+
 import { renderDocumentLayout } from '../../../layouts/document-layout'
+
+const relatedComponents: ComponentRelatedItemData[] = [
+  { href: 'checkbox.html', label: 'Checkbox' },
+  { href: 'toggle-button.html', label: 'Toggle Button' },
+]
+
+const componentProps: ComponentPropItemData[] = [
+  { name: 'name', type: 'string', optional: true },
+  { name: 'size', type: 'string', optional: true },
+  { name: 'checked', type: 'boolean', optional: true },
+  { name: 'disabled', type: 'boolean', optional: true },
+  { name: 'change', type: 'CustomEvent detail: checked, value', kind: 'event' },
+]
+
+const componentTokens: ComponentTokenItemData[] = [
+  { name: 'switch-width', default: 'size-32' },
+  { name: 'switch-height', default: 'size-16' },
+  { name: 'switch-border-radius', default: 'var(--radius)' },
+  { name: 'switch-background-color', default: 'var(--border-color)' },
+  {
+    name: 'switch-background-color-checked',
+    default: 'var(--interaction-selected-background-color)',
+  },
+]
+
+const componentFeatures: ComponentFeatureItem[] = [
+  {
+    heading: 'Immediate',
+    description:
+      '조작 즉시 실행되므로 저장 버튼과 함께 제공하지 않습니다. 스위치의 왼쪽과 오른쪽에 각각 레이블을 배치하여 콘텐츠를 스위칭하거나 콘텐츠를 필터링하는 맥락으로 사용하지 마세요.',
+  },
+  {
+    heading: 'Interactive - selection',
+    description: '켜짐과 꺼짐 두 상태를 오가는 상호작용 컨트롤입니다.',
+  },
+  { heading: 'TODO', description: 'TODO' },
+]
 
 const main = html`
   <main class="page">
@@ -16,28 +59,9 @@ const main = html`
       <mm-switch name="newsletter" checked disabled>Receive weekly newsletter</mm-switch>
     </mm-component-example>
 
-    <mm-component-props>
-      <mm-component-prop-item name="name" type="string" optional></mm-component-prop-item>
-      <mm-component-prop-item name="size" type="string" optional></mm-component-prop-item>
-      <mm-component-prop-item name="checked" type="boolean" optional></mm-component-prop-item>
-      <mm-component-prop-item name="disabled" type="boolean" optional></mm-component-prop-item>
-      <mm-component-prop-item
-        name="change"
-        type="CustomEvent detail: checked, value"
-        kind="event"
-      ></mm-component-prop-item>
-    </mm-component-props>
+    <mm-component-props .props=${componentProps}></mm-component-props>
 
-    <mm-component-tokens>
-      <mm-token name="switch-width" default="size-32"></mm-token>
-      <mm-token name="switch-height" default="size-16"></mm-token>
-      <mm-token name="switch-border-radius" default="var(--radius)"></mm-token>
-      <mm-token name="switch-background-color" default="var(--border-color)"></mm-token>
-      <mm-token
-        name="switch-background-color-checked"
-        default="var(--interaction-selected-background-color)"
-      ></mm-token>
-    </mm-component-tokens>
+    <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
 
     <mm-component-anatomy
       parts='[
@@ -69,23 +93,9 @@ const main = html`
     </mm-component-anatomy>
 
     <mm-component-guide>
-      <mm-component-feature-list>
-        <mm-feature
-          heading="Immediate"
-          description="조작 즉시 실행되므로 저장 버튼과 함께 제공하지 않습니다. 스위치의 왼쪽과 오른쪽에 각각 레이블을 배치하여 콘텐츠를 스위칭하거나 콘텐츠를 필터링하는 맥락으로 사용하지 마세요."
-        ></mm-feature>
-        <mm-feature
-          heading="Interactive - selection"
-          description="켜짐과 꺼짐 두 상태를 오가는 상호작용 컨트롤입니다."
-        ></mm-feature>
-      </mm-component-feature-list>
+      <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
     </mm-component-guide>
-    <mm-component-related>
-      <mm-button-group>
-        <mm-hashtag-link href="checkbox.html">Checkbox</mm-hashtag-link>
-        <mm-hashtag-link href="toggle-button.html">Toggle Button</mm-hashtag-link>
-      </mm-button-group>
-    </mm-component-related>
+    <mm-component-related .items=${relatedComponents}></mm-component-related>
   </main>
 `
 

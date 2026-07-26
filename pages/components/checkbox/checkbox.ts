@@ -1,6 +1,52 @@
 import { html } from 'lit'
+
+import type { ComponentFeatureItem } from '@/components/domains/component/component-feature-list'
+import type { ComponentPropItemData } from '@/components/domains/component/component-props'
+import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
+import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
 import type { OptionItem } from '@/components/toggle-button'
+
 import { renderDocumentLayout } from '../../../layouts/document-layout'
+
+const relatedComponents: ComponentRelatedItemData[] = [
+  { href: 'radio.html', label: 'Radio' },
+  { href: 'switch.html', label: 'Switch' },
+]
+
+const componentProps: ComponentPropItemData[] = [
+  { name: 'name', type: 'string', optional: true },
+  { name: 'value', type: 'string', optional: true },
+  { name: 'size', type: 'string', optional: true },
+  { name: 'checked', type: 'boolean', optional: true },
+  { name: 'disabled', type: 'boolean', optional: true },
+  { name: 'indeterminate', type: 'boolean', optional: true },
+  { name: 'change', type: 'CustomEvent detail: checked, value', kind: 'event' },
+]
+
+const componentTokens: ComponentTokenItemData[] = [
+  { name: 'checkbox-size', default: 'var(--size-16)' },
+  { name: 'checkbox-border-radius', default: 'var(--radius)' },
+  { name: 'checkbox-background-color', default: 'var(--background-color)' },
+  { name: 'checkbox-border-color-checked', default: 'var(--interaction-selected-border-color)' },
+]
+
+const componentFeatures: ComponentFeatureItem[] = [
+  {
+    heading: 'Interactive - selection',
+    description:
+      '여러 선택지에서 복수 선택이 가능하며, 선택 여부는 checked 상태로 드러납니다. 미리 선택된 기본값을 제공하는 것은 편향된 데이터를 수집할 위험이 있습니다.',
+  },
+  {
+    heading: 'Glanceable',
+    description:
+      '옵션 목록을 파악하기 쉽게 수직 정렬합니다. 레이블은 최대 2단어로 작성합니다. choice냐 action option(?)이냐. action option일 때는 동사를 포함하여 작성합니다.',
+  },
+  {
+    heading: 'Groupable',
+    description:
+      '체크박스 그룹은 관련된 옵션들을 함께 묶어 사용자에게 제공할 수 있습니다. 이 경우, 그룹의 제목(legend)을 명확하게 표시하여 사용자가 옵션들의 맥락을 이해할 수 있도록 합니다.',
+  },
+]
 
 const visibilityOptions: OptionItem[] = [
   { label: '공개', value: 'apple' },
@@ -24,29 +70,9 @@ const main = html`
       </mm-checkbox-group>
     </mm-component-example>
 
-    <mm-component-props>
-      <mm-component-prop-item name="name" type="string" optional></mm-component-prop-item>
-      <mm-component-prop-item name="value" type="string" optional></mm-component-prop-item>
-      <mm-component-prop-item name="size" type="string" optional></mm-component-prop-item>
-      <mm-component-prop-item name="checked" type="boolean" optional></mm-component-prop-item>
-      <mm-component-prop-item name="disabled" type="boolean" optional></mm-component-prop-item>
-      <mm-component-prop-item name="indeterminate" type="boolean" optional></mm-component-prop-item>
-      <mm-component-prop-item
-        name="change"
-        type="CustomEvent detail: checked, value"
-        kind="event"
-      ></mm-component-prop-item>
-    </mm-component-props>
+    <mm-component-props .props=${componentProps}></mm-component-props>
 
-    <mm-component-tokens>
-      <mm-token name="checkbox-size" default="var(--size-16)"></mm-token>
-      <mm-token name="checkbox-border-radius" default="var(--radius)"></mm-token>
-      <mm-token name="checkbox-background-color" default="var(--background-color)"></mm-token>
-      <mm-token
-        name="checkbox-border-color-checked"
-        default="var(--interaction-selected-border-color)"
-      ></mm-token>
-    </mm-component-tokens>
+    <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
 
     <mm-component-anatomy
       parts='[
@@ -77,22 +103,7 @@ const main = html`
     </mm-component-anatomy>
 
     <mm-component-guide>
-      <mm-component-feature-list>
-        <mm-feature
-          heading="Interactive - selection"
-          subtitle="Easy scanning"
-          description="여러 선택지에서 복수 선택이 가능하며, 선택 여부는 checked 상태로 드러납니다. 미리 선택된 기본값을 제공하는 것은 편향된 데이터를 수집할 위험이 있습니다."
-        ></mm-feature>
-        <mm-feature
-          heading="Glanceable"
-          description="옵션 목록을 파악하기 쉽게 수직 정렬합니다. 레이블은 최대 2단어로 작성합니다. choice냐 action option(?)이냐. action option일 때는 동사를 포함하여 작성합니다."
-        ></mm-feature>
-        <mm-feature
-          heading="Groupable"
-          subtitle="Easy scanning"
-          description="체크박스 그룹은 관련된 옵션들을 함께 묶어 사용자에게 제공할 수 있습니다. 이 경우, 그룹의 제목(legend)을 명확하게 표시하여 사용자가 옵션들의 맥락을 이해할 수 있도록 합니다."
-        ></mm-feature>
-      </mm-component-feature-list>
+      <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
     </mm-component-guide>
 
     <mm-component-section
@@ -163,12 +174,7 @@ const main = html`
         <div style="height: var(--space-4)"></div>
       </div>
     </mm-component-section>
-    <mm-component-related>
-      <mm-button-group>
-        <mm-hashtag-link href="radio.html">Radio</mm-hashtag-link>
-        <mm-hashtag-link href="switch.html">Switch</mm-hashtag-link>
-      </mm-button-group>
-    </mm-component-related>
+    <mm-component-related .items=${relatedComponents}></mm-component-related>
   </main>
 `
 

@@ -7,6 +7,12 @@ import {
   componentTokensStyles,
   tokenStyles,
 } from '@/components/domains/component/component-tokens.styles'
+import { arrayAttributeConverter } from '@/utils/property-converters'
+
+export interface ComponentTokenItemData {
+  name: string
+  default: string
+}
 
 // 토큰 이름의 단어를 의미 그룹으로 묶어, 서로 다른 그룹의 경계에서만 구분자를 '.'으로 바꿔 구조를 드러낸다.
 // 위에서부터 먼저 매칭되는 그룹을 사용하므로 더 구체적인 그룹을 앞에 둔다.
@@ -72,7 +78,7 @@ export class Token extends LitElement {
   render() {
     return html`
       <mm-flex align-items="center" gap="3">
-        ${this.renderCategoryTag()}
+        <div style="width:100px">${this.renderCategoryTag()}</div>
         <mm-meta-item
           layout="stacked"
           label=${this.formatName()}
@@ -156,11 +162,24 @@ export class Token extends LitElement {
 export class ComponentTokens extends LitElement {
   static styles = componentTokensStyles
 
+  @property({
+    attribute: 'tokens',
+    converter: arrayAttributeConverter<ComponentTokenItemData>(),
+  })
+  tokens: ComponentTokenItemData[] = []
+
   render() {
     return html`
       <section class="component-content-frame">
         <!-- <mm-heading>Component Tokens</mm-heading> -->
-        <mm-flex direction="column" gap="2"><slot></slot></mm-flex>
+        <mm-flex direction="column" gap="2">
+          ${this.tokens.map(
+            token =>
+              html`
+                <mm-token name=${token.name} default=${token.default}></mm-token>
+              `,
+          )}
+        </mm-flex>
       </section>
     `
   }

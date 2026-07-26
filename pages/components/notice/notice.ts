@@ -1,5 +1,48 @@
 import { html } from 'lit'
+
+import type { ComponentFeatureItem } from '@/components/domains/component/component-feature-list'
+import type { ComponentPropItemData } from '@/components/domains/component/component-props'
+import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
+import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
+
 import { renderDocumentLayout } from '../../../layouts/document-layout'
+
+const relatedComponents: ComponentRelatedItemData[] = [
+  { href: 'dialog.html', label: 'Dialog' },
+  { href: 'result.html', label: 'Result' },
+]
+
+const componentProps: ComponentPropItemData[] = [
+  { name: 'heading', type: 'string', optional: true },
+  { name: 'description', type: 'string', optional: true },
+  { name: 'variant', type: '', optional: true },
+  { name: 'dismissible', type: 'boolean', optional: true },
+]
+
+const componentTokens: ComponentTokenItemData[] = [
+  { name: 'notice-gap', default: 'var(--space-2)' },
+  { name: 'notice-padding', default: 'var(--space-3)' },
+  { name: 'notice-border-radius', default: 'var(--radius)' },
+  { name: 'notice-border-width', default: 'var(--border-width)' },
+  { name: 'notice-accent', default: 'var(--foreground-subtle-color)' },
+  { name: 'notice-text-color', default: 'var(--foreground-color)' },
+  { name: 'notice-background-color', default: 'transparent' },
+  { name: 'notice-border-color', default: 'var(--border-color)' },
+]
+
+const componentFeatures: ComponentFeatureItem[] = [
+  {
+    heading: 'Statusful',
+    description:
+      '성공·경고·오류·정보 등 의미 상태를 variant 톤으로 전달합니다. 색상만으로 의미를 전달하지 않고 아이콘·텍스트를 함께 제공합니다.',
+  },
+  {
+    heading: 'Dismissible',
+    description:
+      '사용자가 확인한 알림을 직접 닫아 치울 수 있습니다. 닫기 버튼은 dismissible 속성으로 제공하고, mm-dismiss 이벤트로 닫힘 시점을 감지합니다.',
+  },
+  { heading: 'TODO', description: 'TODO' },
+]
 
 const main = html`
   <main class="page">
@@ -31,39 +74,12 @@ const main = html`
       </div>
     </mm-component-example>
 
-    <mm-component-props>
-      <mm-component-prop-item name="heading" type="string" optional></mm-component-prop-item>
-      <mm-component-prop-item name="description" type="string" optional></mm-component-prop-item>
-      <mm-component-prop-item
-        name="variant"
-        type='"success" | "warning" | "danger"'
-        optional
-      ></mm-component-prop-item>
-      <mm-component-prop-item name="dismissible" type="boolean" optional></mm-component-prop-item>
-    </mm-component-props>
+    <mm-component-props .props=${componentProps}></mm-component-props>
 
-    <mm-component-tokens>
-      <mm-token name="notice-gap" default="var(--space-2)"></mm-token>
-      <mm-token name="notice-padding" default="var(--space-3)"></mm-token>
-      <mm-token name="notice-border-radius" default="var(--radius)"></mm-token>
-      <mm-token name="notice-border-width" default="var(--border-width)"></mm-token>
-      <mm-token name="notice-accent" default="var(--foreground-subtle-color)"></mm-token>
-      <mm-token name="notice-text-color" default="var(--foreground-color)"></mm-token>
-      <mm-token name="notice-background-color" default="transparent"></mm-token>
-      <mm-token name="notice-border-color" default="var(--border-color)"></mm-token>
-    </mm-component-tokens>
+    <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
 
     <mm-component-guide>
-      <mm-component-feature-list>
-        <mm-feature
-          heading="Statusful"
-          description="성공·경고·오류·정보 등 의미 상태를 variant 톤으로 전달합니다. 색상만으로 의미를 전달하지 않고 아이콘·텍스트를 함께 제공합니다."
-        ></mm-feature>
-        <mm-feature
-          heading="Dismissible"
-          description="사용자가 확인한 알림을 직접 닫아 치울 수 있습니다. 닫기 버튼은 dismissible 속성으로 제공하고, mm-dismiss 이벤트로 닫힘 시점을 감지합니다."
-        ></mm-feature>
-      </mm-component-feature-list>
+      <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
       <mm-text-list
         texts='[
         "role=\\"alert\\" 속성이 있는 요소는 브라우저가 즉시 사용자에게 읽습니다. 긴급도가 낮은 알림에는 role=\\"status\\"를 사용하세요.",
@@ -71,12 +87,7 @@ const main = html`
       ]'
       ></mm-text-list>
     </mm-component-guide>
-    <mm-component-related>
-      <mm-button-group>
-        <mm-hashtag-link href="dialog.html">Dialog</mm-hashtag-link>
-        <mm-hashtag-link href="result.html">Result</mm-hashtag-link>
-      </mm-button-group>
-    </mm-component-related>
+    <mm-component-related .items=${relatedComponents}></mm-component-related>
   </main>
 `
 

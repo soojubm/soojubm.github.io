@@ -1,5 +1,45 @@
 import { html } from 'lit'
+
+import type { ComponentFeatureItem } from '@/components/domains/component/component-feature-list'
+import type { ComponentPropItemData } from '@/components/domains/component/component-props'
+import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
+import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
+
 import { renderDocumentLayout } from '../../../layouts/document-layout'
+
+const relatedComponents: ComponentRelatedItemData[] = [
+  { href: 'layer.html', label: 'Layer' },
+  { href: 'popover.html', label: 'Popover' },
+  { href: 'dialog.html', label: 'Dialog' },
+]
+
+const componentProps: ComponentPropItemData[] = [
+  {
+    name: 'variant',
+    type: "'ghost' | 'outlined' | 'plain' | 'filled' | 'elevated'",
+    optional: true,
+  },
+  { name: 'radius', type: "'default' | 'large'", optional: true },
+  { name: 'height', type: 'string', optional: true },
+]
+
+const componentTokens: ComponentTokenItemData[] = [
+  { name: 'surface-height', default: 'auto' },
+  { name: 'surface-padding', default: 'var(--space-4)' },
+  { name: 'surface-border', default: 'var(--border)' },
+  { name: 'surface-border-radius', default: 'var(--radius)' },
+  { name: 'surface-background-color', default: 'var(--background-color)' },
+]
+
+const componentFeatures: ComponentFeatureItem[] = [
+  {
+    heading: 'Structural',
+    description:
+      '독립된 배경 영역으로 화면을 논리적인 단위로 분리하고 관련 정보를 하나로 묶습니다. 명도 대비와 음영(Shadow)의 깊이감으로 정보 레이어의 상하 관계까지 드러내며, 이 배경색·깊이의 변화가 해당 영역의 클릭 가능 여부를 식별하는 기표로도 작동합니다.',
+  },
+  { heading: 'TODO', description: 'TODO' },
+  { heading: 'TODO', description: 'TODO' },
+]
 
 const main = html`
   <main class="page">
@@ -64,35 +104,12 @@ const main = html`
       </mm-flex>
     </mm-component-example>
 
-    <mm-component-props>
-      <mm-component-prop-item
-        name="variant"
-        type="'ghost' | 'outlined' | 'plain' | 'filled' | 'elevated'"
-        optional
-      ></mm-component-prop-item>
-      <mm-component-prop-item
-        name="radius"
-        type="'default' | 'large'"
-        optional
-      ></mm-component-prop-item>
-      <mm-component-prop-item name="height" type="string" optional></mm-component-prop-item>
-    </mm-component-props>
+    <mm-component-props .props=${componentProps}></mm-component-props>
 
-    <mm-component-tokens>
-      <mm-token name="surface-height" default="auto"></mm-token>
-      <mm-token name="surface-padding" default="var(--space-4)"></mm-token>
-      <mm-token name="surface-border" default="var(--border)"></mm-token>
-      <mm-token name="surface-border-radius" default="var(--radius)"></mm-token>
-      <mm-token name="surface-background-color" default="var(--background-color)"></mm-token>
-    </mm-component-tokens>
+    <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
 
     <mm-component-guide>
-      <mm-component-feature-list>
-        <mm-feature
-          heading="Structural"
-          description="독립된 배경 영역으로 화면을 논리적인 단위로 분리하고 관련 정보를 하나로 묶습니다. 명도 대비와 음영(Shadow)의 깊이감으로 정보 레이어의 상하 관계까지 드러내며, 이 배경색·깊이의 변화가 해당 영역의 클릭 가능 여부를 식별하는 기표로도 작동합니다."
-        ></mm-feature>
-      </mm-component-feature-list>
+      <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
 
       <mm-paragraph-group>
         <mm-heading level="3">언제 사용하나요</mm-heading>
@@ -363,13 +380,11 @@ const main = html`
       </style>
     </mm-component-section>
 
-    <mm-component-related>
-      <mm-button-group>
-        <mm-hashtag-link href="layer.html">Layer</mm-hashtag-link>
-        <mm-hashtag-link href="popover.html">Popover</mm-hashtag-link>
-        <mm-hashtag-link href="dialog.html">Dialog</mm-hashtag-link>
-      </mm-button-group>
-    </mm-component-related>
+    <mm-component-related .items=${relatedComponents}></mm-component-related>
+
+    <mm-component-references>
+      https://getcssscan.com/css-box-shadow-examples
+    </mm-component-references>
   </main>
 `
 

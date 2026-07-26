@@ -1,5 +1,34 @@
 import { html } from 'lit'
+
+import type { ComponentFeatureItem } from '@/components/domains/component/component-feature-list'
+import type { ComponentPropItemData } from '@/components/domains/component/component-props'
+import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
+import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
+
 import { renderDocumentLayout } from '../../../layouts/document-layout'
+
+const relatedComponents: ComponentRelatedItemData[] = [
+  { href: 'bottom-bar.html', label: 'Bottom Bar' },
+  { href: 'tabs.html', label: 'Tabs' },
+]
+
+const componentProps: ComponentPropItemData[] = [
+  { name: 'heading', type: 'string' },
+  { name: 'nav', type: "'back' | 'close' | '' = 'back'", optional: true },
+  { name: "slot='action'", type: 'HTMLElement', optional: true },
+]
+
+const componentTokens: ComponentTokenItemData[] = [{ name: 'top-bar-height', default: '3.5rem' }]
+
+const componentFeatures: ComponentFeatureItem[] = [
+  {
+    heading: 'Persistent',
+    description:
+      '스크롤과 화면 이동에도 상단에 자리를 지켜 제목과 내비게이션에 항상 접근할 수 있습니다.',
+  },
+  { heading: 'TODO', description: 'TODO' },
+  { heading: 'TODO', description: 'TODO' },
+]
 
 const main = html`
   <main class="page">
@@ -29,38 +58,14 @@ const main = html`
       <mm-text>닫기 액션과 보조 액션을 함께 배치할 수 있습니다.</mm-text>
     </mm-component-example>
 
-    <mm-component-props>
-      <mm-component-prop-item name="heading" type="string"></mm-component-prop-item>
-      <mm-component-prop-item
-        name="nav"
-        type="'back' | 'close' | '' = 'back'"
-        optional
-      ></mm-component-prop-item>
-      <mm-component-prop-item
-        name="slot='action'"
-        type="HTMLElement"
-        optional
-      ></mm-component-prop-item>
-    </mm-component-props>
+    <mm-component-props .props=${componentProps}></mm-component-props>
 
-    <mm-component-tokens>
-      <mm-token name="top-bar-height" default="3.5rem"></mm-token>
-    </mm-component-tokens>
+    <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
 
     <mm-component-guide>
-      <mm-component-feature-list>
-        <mm-feature
-          heading="Persistent"
-          description="스크롤과 화면 이동에도 상단에 자리를 지켜 제목과 내비게이션에 항상 접근할 수 있습니다."
-        ></mm-feature>
-      </mm-component-feature-list>
+      <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
     </mm-component-guide>
-    <mm-component-related>
-      <mm-button-group>
-        <mm-hashtag-link href="bottom-bar.html">Bottom Bar</mm-hashtag-link>
-        <mm-hashtag-link href="tabs.html">Tabs</mm-hashtag-link>
-      </mm-button-group>
-    </mm-component-related>
+    <mm-component-related .items=${relatedComponents}></mm-component-related>
   </main>
 `
 

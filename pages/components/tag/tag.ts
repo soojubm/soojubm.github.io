@@ -1,5 +1,53 @@
 import { html } from 'lit'
+
+import type { ComponentFeatureItem } from '@/components/domains/component/component-feature-list'
+import type { ComponentPropItemData } from '@/components/domains/component/component-props'
+import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
+import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
+
 import { renderDocumentLayout } from '../../../layouts/document-layout'
+
+const relatedComponents: ComponentRelatedItemData[] = [
+  { href: 'text.html', label: 'Text' },
+  { href: 'button.html', label: 'Button' },
+]
+
+const componentProps: ComponentPropItemData[] = [
+  {
+    name: 'tone',
+    type: "'default' | 'green' | 'yellow' | 'red' | 'blue' | 'purple' | 'pink' | 'orange' | 'cyan' = 'default'",
+  },
+  { name: 'icon', type: 'IconName', optional: true },
+]
+
+const dotComponentProps: ComponentPropItemData[] = [
+  {
+    name: 'tone',
+    type: "'default' | 'green' | 'yellow' | 'red' | 'blue' | 'purple' | 'pink' | 'orange' | 'cyan' | 'gold' = 'default'",
+  },
+  { name: 'variant', type: "'live' | 'new' | 'unread'", optional: true },
+]
+
+const componentTokens: ComponentTokenItemData[] = [
+  { name: 'tag-height', default: 'var(--size-24)' },
+  { name: 'tag-padding-inline', default: 'var(--space-2)' },
+  { name: 'tag-gap', default: 'var(--space-1)' },
+  { name: 'tag-text-size', default: 'var(--font-size-12)' },
+  { name: 'tag-border-radius', default: 'var(--radius)' },
+]
+
+const componentFeatures: ComponentFeatureItem[] = [
+  {
+    heading: 'Glanceable',
+    description:
+      '클릭이나 삭제 같은 인터랙션 없이(Read-only), 컬러·아이콘 등의 시각적 단서로 상태·긴급도나 부가 메타 정보를 화면을 훑는 것만으로 한눈에 파악하게 합니다. (e.g., 진행 중, 승인 대기, 배송비 무료, NEW)',
+  },
+  {
+    heading: 'Groupable',
+    description: '여러 태그는 tag-group으로 묶어 나열합니다. 간격과 줄바꿈은 그룹이 소유합니다.',
+  },
+  { heading: 'TODO', description: 'TODO' },
+]
 
 const main = html`
   <main class="page">
@@ -26,21 +74,9 @@ const main = html`
       </mm-tag-group>
     </mm-component-example>
 
-    <mm-component-props>
-      <mm-component-prop-item
-        name="tone"
-        type="'default' | 'green' | 'yellow' | 'red' | 'blue' | 'purple' | 'pink' | 'orange' | 'cyan' = 'default'"
-      ></mm-component-prop-item>
-      <mm-component-prop-item name="icon" type="IconName" optional></mm-component-prop-item>
-    </mm-component-props>
+    <mm-component-props .props=${componentProps}></mm-component-props>
 
-    <mm-component-tokens>
-      <mm-token name="tag-height" default="var(--size-24)"></mm-token>
-      <mm-token name="tag-padding-inline" default="var(--space-2)"></mm-token>
-      <mm-token name="tag-gap" default="var(--space-1)"></mm-token>
-      <mm-token name="tag-text-size" default="var(--font-size-12)"></mm-token>
-      <mm-token name="tag-border-radius" default="var(--radius)"></mm-token>
-    </mm-component-tokens>
+    <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
 
     <mm-component-anatomy
       parts='[
@@ -71,17 +107,7 @@ const main = html`
     </mm-component-anatomy>
 
     <mm-component-guide>
-      <mm-component-feature-list>
-        <mm-feature
-          heading="Glanceable"
-          subtitle="notification, status, informational"
-          description="클릭이나 삭제 같은 인터랙션 없이(Read-only), 컬러·아이콘 등의 시각적 단서로 상태·긴급도나 부가 메타 정보를 화면을 훑는 것만으로 한눈에 파악하게 합니다. (e.g., 진행 중, 승인 대기, 배송비 무료, NEW)"
-        ></mm-feature>
-        <mm-feature
-          heading="Groupable"
-          description="여러 태그는 tag-group으로 묶어 나열합니다. 간격과 줄바꿈은 그룹이 소유합니다."
-        ></mm-feature>
-      </mm-component-feature-list>
+      <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
     </mm-component-guide>
 
     <mm-component-section heading="MostPopularTag" description="구체 레벨. 가장 인기있는 태그">
@@ -170,25 +196,10 @@ const main = html`
         </mm-flex>
       </mm-flex>
 
-      <mm-component-props>
-        <mm-component-prop-item
-          name="tone"
-          type="'default' | 'green' | 'yellow' | 'red' | 'blue' | 'purple' | 'pink' | 'orange' | 'cyan' | 'gold' = 'default'"
-        ></mm-component-prop-item>
-        <mm-component-prop-item
-          name="variant"
-          type="'live' | 'new' | 'unread'"
-          optional
-        ></mm-component-prop-item>
-      </mm-component-props>
+      <mm-component-props .props=${dotComponentProps}></mm-component-props>
     </mm-component-section>
 
-    <mm-component-related>
-      <mm-button-group>
-        <mm-hashtag-link href="text.html">Text</mm-hashtag-link>
-        <mm-hashtag-link href="button.html">Button</mm-hashtag-link>
-      </mm-button-group>
-    </mm-component-related>
+    <mm-component-related .items=${relatedComponents}></mm-component-related>
   </main>
 `
 

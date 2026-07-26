@@ -1,9 +1,80 @@
 import { html, render } from 'lit'
 
+import type { ComponentReferenceItemData } from '@/components/domains/component/component-references'
+
 import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
+
 import { renderLayout } from '../../layouts/base-layouts'
 import { ScrollSpyController } from '../../src/controllers/scroll-spy-controller'
 import './home.css'
+
+const componentReferences: ComponentReferenceItemData[] = [
+  {
+    href: 'https://m3.material.io/foundations/layout/breakpoints/overview',
+    label: 'MD3 breakpoints (aka responsive layout)',
+  },
+  {
+    href: 'https://react.dev/learn/preserving-and-resetting-state',
+    label: 'preserving-and-resstting-state',
+  },
+  {
+    href: 'https://developer.apple.com/documentation/technologies',
+    label: 'Apple technologies',
+    external: true,
+  },
+  {
+    href: 'https://developer.android.com/reference',
+    label: 'Android API reference',
+    external: true,
+  },
+  { href: 'https://www.digitala11y.com/', label: 'Digital A11Y', external: true },
+  {
+    href: 'https://www.w3.org/WAI/ARIA/apg/',
+    label: 'ARIA Authoring Practices Guide',
+    external: true,
+  },
+  {
+    href: 'https://en.wikipedia.org/wiki/Universal_design',
+    label: 'Universal design',
+    external: true,
+  },
+  { href: 'https://html.spec.whatwg.org/', label: 'HTME spec', external: true },
+  {
+    href: 'https://www.sitemaps.org/protocol.html',
+    label: 'sitemaps.org/protocol',
+    external: true,
+  },
+  {
+    href: 'https://w3c.github.io/wcag/understanding/target-size-minimum.html ',
+    label: 'w3c - target-size-minimum (desktop 24px 이상)',
+    external: true,
+  },
+  {
+    href: 'https://developer.apple.com/design/human-interface-guidelines/components/layout-and-organization/disclosure-controls',
+    label: 'disclosure-controls',
+    external: true,
+  },
+  {
+    href: 'https://developer.apple.com/kr/design/tips/',
+    label: 'UI 디자인 기본 원칙',
+    external: true,
+  },
+  {
+    href: 'https://m3.material.io/foundations/interaction-states',
+    label: 'MD interaction-states',
+    external: true,
+  },
+  {
+    href: 'https://simplicable.com/new/visual-information',
+    label: 'Visual Information',
+    external: true,
+  },
+  {
+    href: 'https://m3.material.io/blog/building-with-m3-expressive',
+    label: 'Building with M3 Expressive',
+    external: true,
+  },
+]
 
 const main = html`
   <main class="page" style="display: flex; flex-direction: column; gap: var(--space-section)">
@@ -399,53 +470,7 @@ const main = html`
 
     <!-- <mm-content-section heading="Icons" class="js-icon-gallery"></mm-content-section> -->
 
-    <mm-component-references>
-      <mm-link href="https://m3.material.io/foundations/layout/breakpoints/overview">
-        MD3 breakpoints (aka responsive layout)
-      </mm-link>
-      <mm-link href="https://react.dev/learn/preserving-and-resetting-state">
-        preserving-and-resstting-state 상태 보존 key. 이게 트리 구조를 위한 것이지 map 함수를 위한
-        것은 아니었다..
-      </mm-link>
-      <mm-link external href="https://developer.apple.com/documentation/technologies">
-        Apple technologies
-      </mm-link>
-      <mm-link external href="https://developer.android.com/reference">
-        Android API reference
-      </mm-link>
-      <mm-link external href="https://www.digitala11y.com/">Digital A11Y</mm-link>
-      <mm-link external href="https://www.w3.org/WAI/ARIA/apg/">
-        ARIA Authoring Practices Guide
-      </mm-link>
-      <mm-link external href="https://en.wikipedia.org/wiki/Universal_design">
-        Universal design
-      </mm-link>
-      <mm-link external href="https://html.spec.whatwg.org/">HTME spec</mm-link>
-      <mm-link external href="https://www.sitemaps.org/protocol.html">
-        sitemaps.org/protocol
-      </mm-link>
-      <mm-link external href="https://w3c.github.io/wcag/understanding/target-size-minimum.html ">
-        w3c - target-size-minimum (desktop 24px 이상)
-      </mm-link>
-      <mm-link
-        external
-        href="https://developer.apple.com/design/human-interface-guidelines/components/layout-and-organization/disclosure-controls"
-      >
-        disclosure-controls
-      </mm-link>
-      <mm-link external href="https://developer.apple.com/kr/design/tips/">
-        UI 디자인 기본 원칙
-      </mm-link>
-      <mm-link external href="https://m3.material.io/foundations/interaction-states">
-        MD interaction-states
-      </mm-link>
-      <mm-link external href="https://simplicable.com/new/visual-information">
-        Visual Information
-      </mm-link>
-      <mm-link external href="https://m3.material.io/blog/building-with-m3-expressive">
-        Building with M3 Expressive
-      </mm-link>
-    </mm-component-references>
+    <mm-component-references .items=${componentReferences}></mm-component-references>
   </main>
 `
 

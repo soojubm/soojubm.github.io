@@ -1,5 +1,14 @@
 import { LitElement, html, css } from 'lit'
-import { customElement } from 'lit/decorators.js'
+import { customElement, property } from 'lit/decorators.js'
+
+import '@/components/button/button-group'
+import '@/components/button/semantics/hashtag-link'
+import { arrayAttributeConverter } from '@/utils/property-converters'
+
+export interface ComponentRelatedItemData {
+  href: string
+  label: string
+}
 
 @customElement('mm-component-related')
 export class ComponentRelated extends LitElement {
@@ -16,11 +25,24 @@ export class ComponentRelated extends LitElement {
     }
   `
 
+  @property({
+    attribute: 'items',
+    converter: arrayAttributeConverter<ComponentRelatedItemData>(),
+  })
+  items: ComponentRelatedItemData[] = []
+
   render() {
     return html`
       <section class="component-related">
         <mm-heading level="2">Related Components</mm-heading>
-        <slot></slot>
+        <mm-button-group>
+          ${this.items.map(
+            item =>
+              html`
+                <mm-hashtag-link href=${item.href}>${item.label}</mm-hashtag-link>
+              `,
+          )}
+        </mm-button-group>
       </section>
     `
   }

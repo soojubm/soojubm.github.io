@@ -1,5 +1,41 @@
 import { html } from 'lit'
+
+import type { ComponentReferenceItemData } from '@/components/domains/component/component-references'
+
 import { renderDocumentLayout } from '../../../layouts/document-layout'
+
+const componentReferences: ComponentReferenceItemData[] = [
+  {
+    href: 'https://design-tokens.github.io/community-group/format',
+    label: 'Design Tokens Format Module, W3C',
+    external: true,
+  },
+  {
+    href: 'https://docs.specifyapp.com/concepts/token-types',
+    label: 'Specify Token Types',
+    external: true,
+  },
+  {
+    href: 'https://www.delldesignsystem.com/foundations/elevation/',
+    label: 'Dell Elevation',
+    external: true,
+  },
+  {
+    href: 'https://www.delldesignsystem.com/foundations/typography/',
+    label: 'Dell Typography',
+    external: true,
+  },
+  {
+    href: 'https://atlassian.design/components/tokens/all-tokens',
+    label: 'Atlassian Tokens',
+    external: true,
+  },
+  {
+    href: 'https://medium.com/eightshapes-llc/size-in-design-systems-64f234aec519',
+    label: 'Size in Design Systems',
+    external: true,
+  },
+]
 
 interface TokenEntry {
   key: string
@@ -585,29 +621,7 @@ const main = html`
         ></mm-text-list>
       </mm-flex>
 
-      <mm-component-references>
-        <mm-link external href="https://design-tokens.github.io/community-group/format">
-          Design Tokens Format Module, W3C
-        </mm-link>
-        <mm-link external href="https://docs.specifyapp.com/concepts/token-types">
-          Specify Token Types
-        </mm-link>
-        <mm-link external href="https://www.delldesignsystem.com/foundations/elevation/">
-          Dell Elevation
-        </mm-link>
-        <mm-link external href="https://www.delldesignsystem.com/foundations/typography/">
-          Dell Typography
-        </mm-link>
-        <mm-link external href="https://atlassian.design/components/tokens/all-tokens">
-          Atlassian Tokens
-        </mm-link>
-        <mm-link
-          external
-          href="https://medium.com/eightshapes-llc/size-in-design-systems-64f234aec519"
-        >
-          Size in Design Systems
-        </mm-link>
-      </mm-component-references>
+      <mm-component-references .items=${componentReferences}></mm-component-references>
     </mm-flex>
   </main>
 `
