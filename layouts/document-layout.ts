@@ -3,6 +3,7 @@ import type { TemplateResult } from 'lit'
 import { unsafeHTML } from 'lit/directives/unsafe-html.js'
 
 import '../src/components/navbar/navbar'
+import '../src/components/domains/app-sidebar'
 import '../src/components/footer/footer'
 import './fixed-bottom'
 
@@ -17,6 +18,7 @@ export const renderDocumentLayout = (
   render(
     html`
       <mm-navbar></mm-navbar>
+      <mm-sidebar id="site-sidebar"></mm-sidebar>
       <!-- <mm-toc></mm-toc> -->
       ${body}
       ${options.footer

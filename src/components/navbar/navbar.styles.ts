@@ -1,7 +1,5 @@
 import { css } from 'lit'
 
-import { scrollbarStyles } from '@/stylesheets/shared/scrollbar.styles'
-
 export const navbarStyles = css`
   .navbar {
     display: flex;
@@ -79,57 +77,8 @@ export const navbarStyles = css`
     justify-content: space-between;
   }
 
-  .sidebar-menu {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: var(--layout-width-sidebar);
-    gap: var(--space-2);
-    padding: var(--space-6) var(--space-3) calc(var(--space-4) + env(safe-area-inset-bottom))
-      calc(var(--layout-padding-inline));
-    background: var(--surface-chrome-background-color);
-    border-right: var(--border-transparent);
-    box-shadow: var(--surface-chrome-shadow);
-    /* TODO */
-    box-shadow: none;
-    backdrop-filter: var(--surface-chrome-backdrop-filter);
-    -webkit-backdrop-filter: var(--surface-chrome-backdrop-filter);
-    scrollbar-gutter: stable;
-    transition: transform var(--duration-slowly) cubic-bezier(0.165, 0.84, 0.44, 1);
-    transform: translateX(-120%);
-    position: fixed;
-    top: var(--navbar-height);
-    bottom: 0;
-    overflow-y: auto;
-    z-index: calc(var(--material-zindex-chrome) + 1);
-
-    ${scrollbarStyles};
-  }
-
-  .sidebar-menu > div mm-menu-item-link:hover,
-  .sidebar-menu > div mm-menu-item-link[aria-current='page'] {
-    border-color: var(--color-primary);
-  }
-
-  mm-sidebar[open] .sidebar-menu {
-    transform: translateX(0);
-    overscroll-behavior: contain;
-  }
-  body:has(mm-sidebar[open]) {
-    --sidebar-content-shift: calc(
-      var(--layout-width-sidebar) + var(--layout-padding-inline) + var(--layout-padding-inline) +
-        var(--space-4)
-    );
-  }
-
   .page {
     padding-left: var(--sidebar-content-shift, var(--layout-padding-inline));
-  }
-
-  @media (max-width: 1200px) {
-    body:has(mm-sidebar[open]) {
-      --sidebar-content-shift: var(--layout-padding-inline);
-    }
   }
 
   .site-bottom-bar {

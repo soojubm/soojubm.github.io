@@ -1,5 +1,5 @@
 import { LitElement, html } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
+import { customElement } from 'lit/decorators.js'
 
 import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
 import soojubmImage from '@/images/soojubm.png'
@@ -8,9 +8,6 @@ import { getCurrentPageId } from '@/utils/current-page'
 
 @customElement('mm-navbar')
 export class Navbar extends LitElement {
-  @property({ type: Boolean, reflect: true, attribute: 'sidebar-collapsed' }) sidebarCollapsed =
-    false
-
   render() {
     return html`
       <nav class="navbar js-navbar" role="navigation">
@@ -68,8 +65,6 @@ export class Navbar extends LitElement {
       </nav>
       <div class="navbar-backdrop"></div>
 
-      <mm-sidebar id="site-sidebar" ?open=${!this.sidebarCollapsed}></mm-sidebar>
-
       <mm-fixed-bottom class="site-bottom-bar">
         <mm-bottom-bar .items=${this.bottomBarItems}></mm-bottom-bar>
       </mm-fixed-bottom>
@@ -87,7 +82,7 @@ export class Navbar extends LitElement {
     )
   }
 
-  // 전역 navbar.styles와 body의 메뉴 상태 선택자가 내부 구조에 접근해야 하므로 Light DOM을 유지한다.
+  // 전역 navbar.styles가 .navbar-user 등 내부 구조에 접근해야 하므로 Light DOM을 유지한다.
   createRenderRoot() {
     return this
   }

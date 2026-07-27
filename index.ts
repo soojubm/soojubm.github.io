@@ -1,5 +1,6 @@
 import './src/components'
 import './src/utils/navbar'
+import './src/utils/sidebar'
 
 import { stopAnimation } from './src/utils/optimization-utils'
 import scrollAnimation from './src/utils/scroll-animation'
