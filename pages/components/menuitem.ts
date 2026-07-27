@@ -28,6 +28,11 @@ const componentReferences: ComponentReferenceItemData[] = [
     external: true,
   },
   { href: 'https://m3.material.io/components/menus/overview', label: 'MD3 Menus', external: true },
+  {
+    href: 'https://seek-oss.github.io/braid-design-system/components/MenuItemCheckbox/',
+    label: 'Braid - MenuItemCheckbox',
+    external: true,
+  },
 ]
 
 const componentProps: ComponentPropItemData[] = [

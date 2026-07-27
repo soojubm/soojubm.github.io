@@ -23,7 +23,7 @@ export const componentPropsStyles = [
       display: block;
     }
     .component-props {
-      height: 13rem;
+      height: 10rem;
       overflow: hidden;
       background-color: var(--background-subtle-color);
       position: relative;

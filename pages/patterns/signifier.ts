@@ -159,7 +159,7 @@ const main = html`
 
         <mm-grid columns="2">
           <mm-paragraph>
-            <strong>콘텐츠 레벨</strong>
+            <strong>??</strong>
             —
             <code>ghost</code>
             <code>outlined</code>
@@ -171,7 +171,7 @@ const main = html`
             (카드, 패널)처럼 페이지 본문 안에서 쌓이는 요소.
           </mm-paragraph>
           <mm-paragraph>
-            <strong>시스템 레벨</strong>
+            <strong>오버레이</strong>
             —
             <code>elevated</code>
             는 화면 위에 떠 있는 요소를 그림자로 강조한다. layer의 overlay·modal·chrome처럼 콘텐츠

@@ -10,10 +10,11 @@ import { DisclosureController } from '@/controllers/disclosure-controller'
 import { SITEMAP, type SitemapNode } from '@/sitemap'
 import { MEDIA_QUERY } from '@/stylesheets/shared/breakpoints'
 import { getCurrentPageId } from '@/utils/current-page'
+import { resetStyles } from '@/stylesheets/shared/reset.styles'
 
 @customElement('mm-sidebar')
 export class Sidebar extends LitElement {
-  static styles = sidebarStyles
+  static styles = [resetStyles, sidebarStyles]
 
   @property({ type: Boolean, reflect: true }) open = false
 
