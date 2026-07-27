@@ -18,7 +18,7 @@ export const renderDocumentLayout = (
   render(
     html`
       <mm-navbar></mm-navbar>
-      <mm-sidebar id="site-sidebar"></mm-sidebar>
+      <mm-sidebar id="site-sidebar" open></mm-sidebar>
       <!-- <mm-toc></mm-toc> -->
       ${body}
       ${options.footer

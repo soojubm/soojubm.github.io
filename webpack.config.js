@@ -1,5 +1,6 @@
 require('ts-node').register({ transpileOnly: true })
 
+const fs = require('fs')
 const path = require('path')
 
 const HtmlWebpackPlugin = require('html-webpack-plugin')
@@ -26,13 +27,21 @@ const MY_PAGES = [
   { id: 'books', name: '독서 목록' },
 ]
 
+// 페이지 폴더에 파일이 하나뿐이면 상위로 꺼내 평평하게 두므로, 남아있는 폴더만 예외로 처리한다.
+const getPageEntryPath = page => {
+  const nested = `./pages/${page.subDir}/${page.id}/${page.id}.ts`
+  if (fs.existsSync(path.resolve(__dirname, nested))) return nested
+
+  return `./pages/${page.subDir}/${page.id}.ts`
+}
+
 const getEntries = () => {
   const entries = {
     index: ['./pages/home/home.ts', './index.ts'],
   }
 
   ALL_PAGES.forEach(page => {
-    entries[page.id] = [`./pages/${page.subDir}/${page.id}/${page.id}.ts`, './index.ts']
+    entries[page.id] = [getPageEntryPath(page), './index.ts']
   })
 
   MY_PAGES.forEach(page => {
