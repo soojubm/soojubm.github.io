@@ -1,5 +1,9 @@
 import { css } from 'lit'
 
+/**
+ * 채팅 버블(ai/participant/my-chat-bubble)은 말풍선 표면과 내부 상태(typing/image)만
+ * 책임진다. 아바타·이름·시간·정렬 같은 발신자 메타 정보는 message 컴포넌트가 소유한다.
+ */
 export const chatBubbleStyles = css`
   :host {
     display: block;

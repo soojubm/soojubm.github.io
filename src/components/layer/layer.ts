@@ -14,6 +14,10 @@ export type LayerWidth = 'small' | 'medium' | 'large' | 'full'
 // 드래그로 내린 거리가 패널 높이의 이 비율을 넘으면 닫힘으로 판정한다.
 const DRAG_CLOSE_THRESHOLD_RATIO = 0.25
 
+/**
+ * 높이·너비·위치(placement/width/height)와 스크롤 책임(mm-layer-body)을
+ * layer 컴포넌트 계층에서 일관되게 관리한다.
+ */
 @customElement('mm-layer')
 class Layer extends LitElement {
   static styles = [layerStyles, layerPlacementStyles, layerDragHandleStyles]
