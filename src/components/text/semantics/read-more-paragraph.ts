@@ -1,9 +1,10 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 
-import { resetStyles } from '@/stylesheets/shared/reset.styles'
 import '@/components/button/semantics/read-more-button'
 import '@/components/text/text'
+import { DisclosureController } from '@/controllers/disclosure-controller'
+import { resetStyles } from '@/stylesheets/shared/reset.styles'
 import { uniqueId } from '@/utils/unique-id'
 
 @customElement('mm-read-more-paragraph')
@@ -33,6 +34,14 @@ export class ReadMoreParagraph extends LitElement {
 
   private readonly contentId = uniqueId('read-more-content')
 
+  private disclosure = new DisclosureController(this, {
+    isOpen: () => this.expanded,
+    setOpen: open => {
+      this.expanded = open
+    },
+    getTrigger: () => this.shadowRoot?.querySelector('mm-read-more-button') ?? undefined,
+  })
+
   render() {
     const truncated = this.content.length > this.limit
     const displayText =
@@ -52,16 +61,8 @@ export class ReadMoreParagraph extends LitElement {
     if (!truncated) return nothing
 
     return html`
-      <mm-read-more-button
-        aria-expanded=${this.expanded ? 'true' : 'false'}
-        aria-controls=${this.contentId}
-        @click=${this.handleToggleClick}
-      ></mm-read-more-button>
+      <mm-read-more-button aria-controls=${this.contentId}></mm-read-more-button>
     `
-  }
-
-  private handleToggleClick() {
-    this.expanded = !this.expanded
   }
 }
 

@@ -22,10 +22,10 @@ interface DisclosureOptions {
 }
 
 /**
- * 트리거로 열고 스스로 닫히는(dismissable) 레이어형 disclosure의 트리거·닫기·aria 배관을 소유한다.
- * 열림 상태 자체는 공개 API라 호스트의 reflected property로 남기고(컨트롤러는 읽기/쓰기만 위임받는다),
- * aria-controls로 연결된 트리거의 클릭 토글과 aria-expanded·haspopup 동기화, 외부 클릭·ESC 닫기를 담당한다.
- * 트리거가 내부에 있고 닫힘이 없는 제자리(in-place) disclosure(accordion·read-more)는 대상이 아니다.
+ * 열고 닫는 모든 disclosure의 트리거 클릭 토글과 aria-expanded·haspopup 동기화를 소유한다.
+ * 열림 상태 자체는 공개 API라 호스트의 reflected property로 남기고, 컨트롤러는 읽기/쓰기만 위임받는다.
+ * 트리거는 getTrigger로 지정하며, 생략하면 aria-controls로 호스트를 가리키는 외부 요소를 기본값으로 찾는다.
+ * 외부 클릭·ESC로 스스로 닫혀야 하는 dismissable 레이어(popover 등)는 dismissOn에 필요한 조건만 추가로 켠다.
  */
 export class DisclosureController implements ReactiveController {
   private wiredTrigger?: HTMLElement

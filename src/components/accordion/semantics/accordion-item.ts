@@ -2,6 +2,7 @@ import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
+import { DisclosureController } from '@/controllers/disclosure-controller'
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
 import { emit } from '@/utils/emit'
 import { uniqueId } from '@/utils/unique-id'
@@ -93,15 +94,18 @@ export class AccordionItem extends LitElement {
 
   private readonly panelId = uniqueId('accordion-panel')
 
+  private disclosure = new DisclosureController(this, {
+    isOpen: () => this.open,
+    setOpen: open => {
+      this.open = open
+      emit(this, 'accordion-toggle', { open })
+    },
+    getTrigger: () => this.shadowRoot?.querySelector('button.summary-btn') ?? undefined,
+  })
+
   render() {
     return html`
-      <button
-        class="summary-btn"
-        aria-expanded=${this.open ? 'true' : 'false'}
-        aria-controls=${this.panelId}
-        ?disabled=${this.disabled}
-        @click=${this.handleSummaryClick}
-      >
+      <button class="summary-btn" aria-controls=${this.panelId} ?disabled=${this.disabled}>
         <slot name="summary">${this.summary}</slot>
         <mm-icon class="icon" name=${ICON_NAMES.SITEMAP}></mm-icon>
       </button>
@@ -112,12 +116,6 @@ export class AccordionItem extends LitElement {
         </div>
       </div>
     `
-  }
-
-  private handleSummaryClick() {
-    if (this.disabled) return
-    this.open = !this.open
-    emit(this, 'accordion-toggle', { open: this.open })
   }
 }
 
