@@ -312,8 +312,7 @@ const main = html`
 
           .demo-btn.is-active {
             background: var(--interaction-active-background-color);
-            box-shadow: 0 0 0 3px var(--color-interaction-active-ring),
-              inset 0 0 0 2px var(--foreground-color-on-solid);
+            box-shadow: var(--interaction-active-shadow);
           }
 
           .demo-btn.is-disabled {

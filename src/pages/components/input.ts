@@ -200,10 +200,10 @@ const main = html`
           border-radius: var(--radius);
         }
         .calendar-head {
-          margin-top: 0.5rem !important;
-          display: grid !important;
-          grid-template-columns: repeat(7, 1fr) !important;
-          gap: var(--space-1) !important;
+          margin-top: 0.5rem;
+          display: grid;
+          grid-template-columns: repeat(7, 1fr);
+          gap: var(--space-1);
         }
         .calendar-head div {
           display: flex;
@@ -214,9 +214,9 @@ const main = html`
           border-radius: var(--radius);
         }
         .calendar-body {
-          display: grid !important;
-          grid-template-columns: repeat(7, 1fr) !important;
-          gap: var(--space-1) !important;
+          display: grid;
+          grid-template-columns: repeat(7, 1fr);
+          gap: var(--space-1);
         }
         .calendar-body-column {
           display: flex;
@@ -324,7 +324,7 @@ const main = html`
         background: var(--background-strong-color);
         display: inline-block;
         position: relative;
-        z-index: 1;
+        z-index: var(--material-zindex-raised);
       "
       >
         프로메테우스
@@ -337,7 +337,7 @@ const main = html`
         display: inline-block;
         margin-top: 0;
         position: relative;
-        z-index: 1;
+        z-index: var(--material-zindex-raised);
       "
       >
         <div style="color: var(--foreground-color-on-solid); position: relative">리들리 스콧</div>
@@ -527,7 +527,9 @@ const main = html`
           placeholder="Android pattern"
           style="padding-left: 3rem"
         />
-        <div style="position: absolute; right: var(--space-3); top: var(--space-3); z-index: 1">
+        <div
+          style="position: absolute; right: var(--space-3); top: var(--space-3); z-index: var(--material-zindex-raised)"
+        >
           <mm-clear-button aria-label="검색어 지우기"></mm-clear-button>
         </div>
       </form>

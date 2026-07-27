@@ -3,6 +3,7 @@
   color-scheme: light dark;
 
   --font-family: 'Alan Sans', 'Gothic A1', system-ui, sans-serif;
+  --font-family-code: ui-monospace, SFMono-Regular, Menlo, monospace;
 
   --font-size-32: 32px;
   --font-size-24: 24px;

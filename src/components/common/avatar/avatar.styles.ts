@@ -3,8 +3,8 @@ import { css, unsafeCSS } from 'lit'
 import { buildAttributeRules } from '@/utils'
 
 const avatarSizeTokens = {
-  '80': { '--avatar-size': 'var(--size-80)', 'font-size': 'var(--font-size-huge)' },
-  '48': { '--avatar-size': 'var(--size-48)', 'font-size': 'var(--font-size-large)' },
+  '80': { '--avatar-size': 'var(--size-80)', 'font-size': 'var(--font-size-32)' },
+  '48': { '--avatar-size': 'var(--size-48)', 'font-size': 'var(--font-size-24)' },
   '32': { '--avatar-size': 'var(--size-32)' },
 }
 

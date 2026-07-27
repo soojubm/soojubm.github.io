@@ -52,6 +52,9 @@ export const iconButtonStyles = css`
     height: var(--icon-button-size);
     border: var(--icon-button-border);
     border-radius: var(--icon-button-border-radius);
+    --icon-button-background-color-hover: var(--icon-button-background-color);
+    --icon-button-text-color-hover: var(--icon-button-text-color);
+
     background: var(--icon-button-background-color);
     box-shadow: var(--icon-button-shadow);
     backdrop-filter: var(--icon-button-backdrop-filter);
@@ -63,11 +66,8 @@ export const iconButtonStyles = css`
   }
 
   button:hover {
-    background-color: var(
-      --icon-button-background-color-hover,
-      var(--icon-button-background-color)
-    );
-    color: var(--icon-button-text-color-hover, var(--icon-button-text-color));
+    background-color: var(--icon-button-background-color-hover);
+    color: var(--icon-button-text-color-hover);
   }
 
   ${unsafeCSS(buildAttributeRules('variant', iconButtonVariantTokens, 'button'))}

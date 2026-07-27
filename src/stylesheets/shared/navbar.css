@@ -20,8 +20,7 @@
   box-sizing: border-box;
   background: var(--surface-chrome-background-color);
   backdrop-filter: var(--surface-chrome-backdrop-filter);
-  box-shadow: var(--surface-chrome-shadow);
-  /* TODO */
+  /* TODO: chrome 그림자 복구 시 var(--surface-chrome-shadow)로 되돌린다 */
   box-shadow: none;
   position: absolute;
   inset: 0;

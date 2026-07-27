@@ -160,7 +160,7 @@ const main = html`
       border-bottom: 2px solid var(--foreground-color);
       background: var(--background-color);
       position: relative;
-      z-index: 1;
+      z-index: var(--material-zindex-raised);
     }
 
     .home-mangrove:hover .mangrove1 {

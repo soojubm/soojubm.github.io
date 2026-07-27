@@ -8,7 +8,7 @@ export const featureStyles = css`
     gap: var(--space-3);
     width: 100%;
     position: relative;
-    z-index: 1;
+    z-index: var(--material-zindex-raised);
   }
 
   :host([centered]) {

@@ -8,7 +8,7 @@ import '@/components/common/thumbnail/thumbnail'
 import '@/components/common/spinner/semantics/typing-indicator'
 import { type Constructor } from '@/utils'
 
-export const isChatBubbleImage = (src: string, typing: boolean) => !!src && !typing
+const isChatBubbleImage = (src: string, typing: boolean) => !!src && !typing
 
 export const renderChatMessageTime = (datetime: string) => {
   if (!datetime) return nothing
@@ -35,10 +35,7 @@ export const renderChatMessageFailedActions = (failed: boolean, onRetry: () => v
   `
 }
 
-export const renderChatTypingIndicator = (
-  typing: boolean,
-  color = 'var(--foreground-subtle-color)',
-) => {
+const renderChatTypingIndicator = (typing: boolean, color = 'var(--foreground-subtle-color)') => {
   if (!typing) return nothing
 
   return html`
@@ -46,7 +43,7 @@ export const renderChatTypingIndicator = (
   `
 }
 
-export const renderChatBubbleImage = (src: string, typing: boolean) => {
+const renderChatBubbleImage = (src: string, typing: boolean) => {
   if (!isChatBubbleImage(src, typing)) return nothing
 
   return html`

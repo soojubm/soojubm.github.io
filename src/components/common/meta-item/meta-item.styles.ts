@@ -8,7 +8,7 @@ export const metaItemStyles = css`
 
   :host([layout='stacked']) {
     flex-direction: column;
-    gap: var(--space-0);
+    gap: 0;
   }
 
   :host([layout='inline']) {

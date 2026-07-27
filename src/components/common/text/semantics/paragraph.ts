@@ -18,8 +18,7 @@ export class Paragraph extends LitElement {
         max-width: 560px;
         font-size: var(--font-size-14);
         line-height: var(--font-line-height-24);
-        font-weight: var(--font-weight-medium);
-        color: var(--paragraph-color, inherit);
+        font-weight: var(--font-weight-normal);
       }
 
       :host([color='light']) {

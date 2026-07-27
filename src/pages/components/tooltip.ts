@@ -104,7 +104,7 @@ const main = html`
         bottom: auto;
         left: 50%;
         top: 0;
-        z-index: 35;
+        z-index: var(--material-zindex-overlay);
         margin-top: -5px;
         /* margin-bottom: auto; */
         -webkit-transform: translate(-50%, -100%);

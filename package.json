@@ -10,7 +10,7 @@
     "build": "webpack --mode=production && node scripts/build-search-index.mjs",
     "remove": "rm -r node_modules",
     "stat": "npx webpack --mode production --json artifacts/webpack-stats.json",
-    "lint": "eslint \"{src,pages,layouts,scripts}/**/*.{js,ts}\" index.ts webpack.config.js",
+    "lint": "eslint \"{src,scripts}/**/*.{js,ts}\" index.ts webpack.config.js",
     "lint:css": "stylelint \"src/**/*.css\" \"src/**/*.ts\""
   },
   "repository": {

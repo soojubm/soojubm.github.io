@@ -29,7 +29,7 @@ export class ColorToken extends LitElement {
         min-height: 56px;
         padding: var(--space-3) var(--space-4);
         background: var(--color-token-surface);
-        color: var(--color-token-on-surface, var(--foreground-color));
+        color: var(--color-token-on-surface);
         box-sizing: border-box;
       }
 

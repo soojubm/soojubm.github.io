@@ -65,7 +65,7 @@ export const radioStyles = css`
   input[type='radio']:checked + label > span {
     background: var(--radio-background-color-checked);
     border-color: var(--radio-border-color-checked);
-    animation: radiomark var(--animation-input, 0.2s) ease-out;
+    animation: radiomark var(--duration-quickly) ease-out;
     box-shadow: 0 0 0 4px var(--background-color) inset;
   }
 

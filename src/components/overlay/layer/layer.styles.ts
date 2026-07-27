@@ -165,7 +165,7 @@ export const layerDragHandleStyles = css`
     position: absolute;
     top: 0;
     left: 50%;
-    z-index: 2;
+    z-index: var(--material-zindex-raised);
     transform: translateX(-50%);
   }
 

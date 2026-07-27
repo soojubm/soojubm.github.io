@@ -29,7 +29,7 @@ export class ScrollHint extends LitElement {
         margin-left: calc((var(--scroll-hint-width) + var(--scroll-hint-gap)) * -1);
         position: sticky;
         right: -1px;
-        z-index: 1;
+        z-index: var(--material-zindex-raised);
         pointer-events: none;
         background: var(--gradient-scroll-hint);
       }

@@ -30,8 +30,11 @@ export class Select extends LitElement {
     css`
       :host {
         --select-min-width: 160px;
+        --select-width: auto;
+        --select-max-height: none;
+
         display: block;
-        width: var(--select-width, auto);
+        width: var(--select-width);
       }
 
       mm-popover {

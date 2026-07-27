@@ -15,9 +15,13 @@ export const myChatBubbleStyles = [
       --bubble-border-radius: var(--radius-large) var(--radius) var(--radius-large)
         var(--radius-large);
       --thumbnail-border-radius: var(--bubble-border-radius);
+      --my-chat-bubble-background: var(--color-primary);
+      --my-chat-bubble-color: var(--foreground-color-on-solid);
+      --my-chat-bubble-border: var(--border-transparent);
 
-      background: var(--my-chat-bubble-background, var(--color-primary));
-      color: var(--my-chat-bubble-color, var(--foreground-color-on-solid));
+      background: var(--my-chat-bubble-background);
+      color: var(--my-chat-bubble-color);
+      border: var(--my-chat-bubble-border);
     }
 
     .status {
@@ -34,7 +38,7 @@ export const participantChatBubbleStyles = [
   chatBubbleSurfaceStyles,
   css`
     :host {
-      background: var(--participant-chat-bubble-background, var(--background-subtle-color));
+      background: var(--background-subtle-color);
     }
   `,
 ]

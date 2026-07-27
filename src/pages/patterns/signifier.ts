@@ -358,7 +358,7 @@ const main = html`
           }
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 800px) {
           :root {
             --layout-side-padding: var(--space-3);
             --item-min-width: 180px;

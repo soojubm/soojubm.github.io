@@ -43,6 +43,7 @@ export const buttonBaseStyles = [
       --button-text-size: inherit;
       --button-text-weight: var(--font-weight-normal);
       --button-text-color: var(--foreground-color);
+      --button-width: max-content;
     }
 
     :host([full-width]) :is(button, a) {
@@ -54,7 +55,7 @@ export const buttonBaseStyles = [
       align-items: center;
       justify-content: center;
       /* max-content for trailing icons */
-      width: var(--button-width, max-content);
+      width: var(--button-width);
       gap: var(--space-2);
       height: var(--button-height);
       padding: 0 var(--button-padding-inline);

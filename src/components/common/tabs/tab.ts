@@ -12,7 +12,9 @@ export default class Tab extends LitElement {
     :host {
       position: relative;
       display: inline-flex;
-      z-index: 1; /* pill indicator 위에 텍스트가 렌더링되도록 stacking context 생성 */
+      z-index: var(
+        --material-zindex-raised
+      ); /* pill indicator 위에 텍스트가 렌더링되도록 stacking context 생성 */
 
       --tab-height: var(--size-32);
       --tab-padding-inline: var(--space-3);

@@ -1,6 +1,6 @@
 import { unsafeCSS } from 'lit'
 
-export const BREAKPOINT = {
+const BREAKPOINT = {
   wide: '1560px',
   default: '1200px',
   narrow: '800px',

@@ -51,7 +51,7 @@ class BottomBar extends LitElement {
       color: var(--foreground-color);
       text-decoration: none;
       position: relative;
-      z-index: 1;
+      z-index: var(--material-zindex-raised);
     }
 
     a:focus-visible {
@@ -72,7 +72,6 @@ class BottomBar extends LitElement {
 
     .indicator {
       width: 0;
-      height: var(--bottom-bar-item-height);
       border-radius: var(--radius-large);
       background: var(--interaction-selected-background-color);
       position: absolute;

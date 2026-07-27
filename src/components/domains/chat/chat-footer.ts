@@ -13,7 +13,7 @@ export class ChatFooter extends LitElement {
         /* position: absolute;
         inset-inline: 0;
         bottom: 0; */
-        z-index: 1;
+        z-index: var(--material-zindex-raised);
         display: flex;
         flex-direction: column;
         width: 100%;
@@ -28,7 +28,7 @@ export class ChatFooter extends LitElement {
          chat-feed가 그 아래로 깔리고 글래스모피즘이 성립한다. */
       :host > * {
         width: 100%;
-        max-width: var(--layout-width-small, 800px);
+        max-width: var(--layout-width-small);
         margin-inline: auto;
       }
     `,

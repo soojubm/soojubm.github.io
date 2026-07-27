@@ -12,7 +12,7 @@ export const chatBubbleStyles = css`
     max-width: min(85%, 600px);
     box-sizing: border-box;
     font-size: var(--font-size-14);
-    line-height: var(--line-height-14);
+    line-height: var(--font-line-height-24);
 
     --bubble-border-radius: var(--radius) var(--radius-large) var(--radius-large)
       var(--radius-large);

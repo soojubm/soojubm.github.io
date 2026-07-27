@@ -17,8 +17,7 @@ export const sidebarStyles = css`
       calc(var(--layout-padding-inline));
     background: var(--surface-chrome-background-color);
     border-right: var(--border-transparent);
-    box-shadow: var(--surface-chrome-shadow);
-    /* TODO */
+    /* TODO: chrome 그림자 복구 시 var(--surface-chrome-shadow)로 되돌린다 */
     box-shadow: none;
     backdrop-filter: var(--surface-chrome-backdrop-filter);
     -webkit-backdrop-filter: var(--surface-chrome-backdrop-filter);

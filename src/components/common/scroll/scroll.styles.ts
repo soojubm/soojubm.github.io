@@ -18,8 +18,10 @@ export const scrollStyles = [
   resetStyles,
   css`
     :host {
+      --scroll-gap: 0;
+
       display: flex;
-      gap: var(--scroll-gap, 0);
+      gap: var(--scroll-gap);
       min-width: 0;
       max-width: 100%;
 

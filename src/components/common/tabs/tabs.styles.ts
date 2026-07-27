@@ -52,7 +52,7 @@ export const tabsStyles = css`
       background-color: var(--tabs-pill-indicator-background);
       border: var(--tabs-pill-indicator-border);
       border-radius: var(--radius);
-      z-index: 0; /* 탭 텍스트 뒤로 배치 */
+      z-index: var(--material-zindex-base); /* 탭 텍스트 뒤로 배치 */
     }
   }
 `

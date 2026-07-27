@@ -23,7 +23,7 @@ export class TypingIndicator extends LitElement {
         width: 4px;
         height: 4px;
         border-radius: 50%;
-        background: var(--typing-background-color, var(--foreground-color));
+        background: var(--typing-background-color);
         animation: chatting 0.6s 0s ease infinite;
       }
 

@@ -3,7 +3,7 @@ import { css } from 'lit'
 export const menuItemStyles = css`
   :host {
     --menuitem-background-color: transparent;
-    --menuitem-padding-inline: var(--space-0);
+    --menuitem-padding-inline: 0;
   }
 
   :is(button, a, [role^='menuitem']) {

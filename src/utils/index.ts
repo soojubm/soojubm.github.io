@@ -25,7 +25,7 @@ export const emit = <T = unknown>(
 export const uniqueId = (prefix: string): string =>
   `${prefix}-${crypto?.randomUUID?.() ?? Math.random().toString(36).slice(2)}`
 
-export const parseJsonArray = <T>(value: string | null, fallback: T[] = []): T[] => {
+const parseJsonArray = <T>(value: string | null, fallback: T[] = []): T[] => {
   if (!value) return fallback
 
   try {
@@ -101,7 +101,7 @@ export function saveTheme(theme: Theme) {
   return applyTheme(theme)
 }
 
-export function throttle(callback) {
+function throttle(callback) {
   let timer: number | undefined
 
   return function () {
