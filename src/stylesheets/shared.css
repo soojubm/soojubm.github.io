@@ -2,6 +2,8 @@
 @import '/src/stylesheets/shared/webfonts.css';
 @import '/src/stylesheets/shared/reset.css';
 @import '/src/stylesheets/shared/keyframes.css';
+@import '/src/stylesheets/shared/navbar.css';
+@import '/src/stylesheets/shared/sidebar.css';
 
 .page,
 .footer {

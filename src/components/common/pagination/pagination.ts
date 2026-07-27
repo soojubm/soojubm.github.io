@@ -7,7 +7,7 @@ import '@/components/common/icon-button/semantics/prev-button'
 import '@/components/common/icon-button/semantics/next-button'
 import '@/components/common/icon-button/semantics/page-button'
 import { paginationStyles } from '@/components/common/pagination/pagination.styles'
-import { emit } from '@/utils/emit'
+import { emit } from '@/utils'
 
 type PaginationItem = number | 'ellipsis'
 

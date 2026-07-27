@@ -4,7 +4,7 @@ import { customElement, property } from 'lit/decorators.js'
 import { componentContentFrameStyles } from '@/components/domains/component/component.styles'
 import '@/components/common/text/semantics/textList'
 import { resetStyles } from '@/stylesheets/shared.styles'
-import { arrayAttributeConverter } from '@/utils/property-converters'
+import { arrayAttributeConverter } from '@/utils'
 
 /**
  * 컴포넌트 해부도(Anatomy) 섹션.

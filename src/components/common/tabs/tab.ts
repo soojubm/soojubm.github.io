@@ -4,7 +4,7 @@ import { customElement, property } from 'lit/decorators.js'
 import type { AriaBoolean } from '@/types'
 
 import { focusRing } from '@/stylesheets/shared.styles'
-import { emit } from '@/utils/emit'
+import { emit } from '@/utils'
 
 @customElement('mm-tab')
 export default class Tab extends LitElement {

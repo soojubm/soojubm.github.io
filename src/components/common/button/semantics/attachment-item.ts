@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
 import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
-import { emit } from '@/utils/emit'
+import { emit } from '@/utils'
 import '@/components/common/avatar/avatar'
 import '@/components/common/button/semantics/clear-button'
 

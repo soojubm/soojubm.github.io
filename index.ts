@@ -1,9 +1,6 @@
 import './src/components'
-import './src/utils/navbar'
-import './src/utils/sidebar'
 
-import { stopAnimation } from './src/utils/optimization-utils'
-import scrollAnimation from './src/utils/scroll-animation'
+import { applyTheme, scrollAnimation, stopAnimation } from './src/utils'
 
 const WINDOWS_FONT_FAMILY = "'Alan Sans', 'Pretendard', sans-serif"
 
@@ -11,6 +8,7 @@ document.addEventListener('DOMContentLoaded', initializePage)
 stopAnimation()
 
 function initializePage() {
+  applyTheme()
   applyWindowsFont()
   updateDocumentTitle()
   initializeScrollEffects()

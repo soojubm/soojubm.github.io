@@ -4,7 +4,7 @@ import { customElement, property, queryAssignedElements } from 'lit/decorators.j
 import { popoverStyles } from '@/components/overlay/popover/popover.styles'
 import '@/components/common/scroll/scroll'
 import { DisclosureController } from '@/controllers/disclosure-controller'
-import { emit } from '@/utils/emit'
+import { emit } from '@/utils'
 
 export type PopoverPlacement = 'bottom-left' | 'bottom-right' | 'top-left' | 'top-right'
 

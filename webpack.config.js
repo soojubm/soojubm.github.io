@@ -29,15 +29,15 @@ const MY_PAGES = [
 
 // 페이지 폴더에 파일이 하나뿐이면 상위로 꺼내 평평하게 두므로, 남아있는 폴더만 예외로 처리한다.
 const getPageEntryPath = page => {
-  const nested = `./pages/${page.subDir}/${page.id}/${page.id}.ts`
+  const nested = `./src/pages/${page.subDir}/${page.id}/${page.id}.ts`
   if (fs.existsSync(path.resolve(__dirname, nested))) return nested
 
-  return `./pages/${page.subDir}/${page.id}.ts`
+  return `./src/pages/${page.subDir}/${page.id}.ts`
 }
 
 const getEntries = () => {
   const entries = {
-    index: ['./pages/home/home.ts', './index.ts'],
+    index: ['./src/pages/home/home.ts', './index.ts'],
   }
 
   ALL_PAGES.forEach(page => {
@@ -45,7 +45,7 @@ const getEntries = () => {
   })
 
   MY_PAGES.forEach(page => {
-    entries[`my-${page.id}`] = [`./pages/my/${page.id}/${page.id}.ts`, './index.ts']
+    entries[`my-${page.id}`] = [`./src/pages/my/${page.id}/${page.id}.ts`, './index.ts']
   })
 
   return entries

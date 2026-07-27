@@ -1,6 +1,6 @@
 import { css, unsafeCSS } from 'lit'
 
-import { buildAttributeRules } from '@/utils/attribute-styles'
+import { buildAttributeRules } from '@/utils'
 
 export type SurfaceVariant = 'ghost' | 'paper' | 'outlined' | 'filled' | 'elevated'
 export type SurfaceRadius = 'default' | 'large'

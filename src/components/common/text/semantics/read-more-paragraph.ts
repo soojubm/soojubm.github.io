@@ -5,7 +5,7 @@ import '@/components/common/button/semantics/read-more-button'
 import '@/components/common/text/text'
 import { DisclosureController } from '@/controllers/disclosure-controller'
 import { resetStyles } from '@/stylesheets/shared.styles'
-import { uniqueId } from '@/utils/unique-id'
+import { uniqueId } from '@/utils'
 
 @customElement('mm-read-more-paragraph')
 export class ReadMoreParagraph extends LitElement {

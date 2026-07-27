@@ -4,8 +4,8 @@ import { customElement, property } from 'lit/decorators.js'
 import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
 import { DisclosureController } from '@/controllers/disclosure-controller'
 import { resetStyles } from '@/stylesheets/shared.styles'
-import { emit } from '@/utils/emit'
-import { uniqueId } from '@/utils/unique-id'
+import { emit } from '@/utils'
+import { uniqueId } from '@/utils'
 
 /**
  * 개별 아코디언 항목.

@@ -9,7 +9,7 @@ import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names
 import { MultipleSelectionController } from '@/controllers/multiple-selection-controller'
 import { RovingFocusController } from '@/controllers/roving-focus-controller'
 import { SingleSelectionController } from '@/controllers/single-selection-controller'
-import { emit } from '@/utils/emit'
+import { emit } from '@/utils'
 import '@/components/common/icon/icon'
 
 type FilterMode = 'single' | 'multiple'

@@ -1,6 +1,6 @@
 import { css, unsafeCSS } from 'lit'
 
-import { buildAttributeRules } from '@/utils/attribute-styles'
+import { buildAttributeRules } from '@/utils'
 
 type ToneStyle = {
   background: string

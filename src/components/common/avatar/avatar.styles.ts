@@ -1,6 +1,6 @@
 import { css, unsafeCSS } from 'lit'
 
-import { buildAttributeRules } from '@/utils/attribute-styles'
+import { buildAttributeRules } from '@/utils'
 
 const avatarSizeTokens = {
   '80': { '--avatar-size': 'var(--size-80)', 'font-size': 'var(--font-size-huge)' },

@@ -1,6 +1,6 @@
 import { css, unsafeCSS } from 'lit'
 
-import { buildAttributeRules } from '@/utils/attribute-styles'
+import { buildAttributeRules } from '@/utils'
 
 export type TextSize = '32' | '24' | '18' | '14' | '12'
 export type TextWeight = 'medium' | 'bold'

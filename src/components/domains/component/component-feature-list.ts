@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 
 import '@/components/common/feature/feature-group'
 import '@/components/common/feature/feature'
-import { arrayAttributeConverter } from '@/utils/property-converters'
+import { arrayAttributeConverter } from '@/utils'
 
 export interface ComponentFeatureItem {
   heading: string

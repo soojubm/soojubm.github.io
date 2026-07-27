@@ -10,7 +10,7 @@ import { MEDIA_QUERY } from '@/constants'
 import { DisclosureController } from '@/controllers/disclosure-controller'
 import { SITEMAP, type SitemapNode } from '@/sitemap'
 import { resetStyles } from '@/stylesheets/shared.styles'
-import { getCurrentPageId } from '@/utils/current-page'
+import { getCurrentPageId } from '@/utils'
 
 @customElement('mm-sidebar')
 export class Sidebar extends LitElement {

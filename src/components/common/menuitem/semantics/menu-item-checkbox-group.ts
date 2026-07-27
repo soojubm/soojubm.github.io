@@ -5,7 +5,7 @@ import type { MenuItemCheckbox } from '@/components/common/menuitem/semantics/me
 
 import '@/components/common/menuitem/semantics/menu-item-group'
 import { MultipleSelectionController } from '@/controllers/multiple-selection-controller'
-import { emit } from '@/utils/emit'
+import { emit } from '@/utils'
 
 /**
  * mm-menu-item-checkbox를 묶는 다중 선택 그룹.

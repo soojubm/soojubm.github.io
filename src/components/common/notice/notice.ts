@@ -3,7 +3,7 @@ import { customElement, property, state } from 'lit/decorators.js'
 
 import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
 import { noticeStyles } from '@/components/common/notice/notice.styles'
-import { emit } from '@/utils/emit'
+import { emit } from '@/utils'
 
 const VARIANT_ICONS: Record<string, string> = {
   success: ICON_NAMES.SUCCESS,

@@ -4,7 +4,7 @@ import { customElement, property, queryAssignedElements } from 'lit/decorators.j
 import { MenuItemRadio } from '@/components/common/menuitem/semantics/menu-item-radio'
 import '@/components/common/menuitem/semantics/menu-item-group'
 import { SingleSelectionController } from '@/controllers/single-selection-controller'
-import { emit } from '@/utils/emit'
+import { emit } from '@/utils'
 
 @customElement('mm-menu-item-radio-group')
 export class MenuItemRadioGroup extends LitElement {

@@ -6,7 +6,7 @@ import '@/components/common/icon-button/icon-button'
 import '@/components/common/text/text'
 import '@/components/common/thumbnail/thumbnail'
 import '@/components/common/spinner/semantics/typing-indicator'
-import { type Constructor } from '@/utils/mixin'
+import { type Constructor } from '@/utils'
 
 export const isChatBubbleImage = (src: string, typing: boolean) => !!src && !typing
 

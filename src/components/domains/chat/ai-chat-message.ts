@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 
 import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
 import { resetStyles } from '@/stylesheets/shared.styles'
-import { emit } from '@/utils/emit'
+import { emit } from '@/utils'
 
 import { renderChatMessageTime } from './chat.helpers'
 

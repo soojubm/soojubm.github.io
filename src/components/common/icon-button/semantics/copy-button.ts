@@ -5,8 +5,37 @@ import '@/components/common/icon-button/icon-button'
 import { iconButtonActionStyles } from '@/components/common/icon-button/icon-button.styles'
 import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
 import { TransientFlagController } from '@/controllers/transient-flag-controller'
-import { copyToClipboard } from '@/utils/clipboard'
-import { emit } from '@/utils/emit'
+import { emit } from '@/utils'
+
+/**
+ * navigator.clipboard를 우선 사용하고, 실패하면 임시 textarea + execCommand로 폴백한다.
+ * 성공 여부를 boolean으로 반환한다.
+ */
+const copyToClipboard = async (text: string): Promise<boolean> => {
+  try {
+    await navigator.clipboard.writeText(text)
+    return true
+  } catch {
+    return copyWithFallback(text)
+  }
+}
+
+const copyWithFallback = (text: string): boolean => {
+  try {
+    const textarea = document.createElement('textarea')
+    textarea.value = text
+    textarea.setAttribute('readonly', '')
+    textarea.style.position = 'absolute'
+    textarea.style.left = '-9999px'
+    document.body.append(textarea)
+    textarea.select()
+    document.execCommand('copy')
+    textarea.remove()
+    return true
+  } catch {
+    return false
+  }
+}
 
 /**
  * 텍스트를 클립보드에 복사하는 버튼.

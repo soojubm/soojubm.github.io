@@ -2,7 +2,7 @@ import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import { resetStyles } from '@/stylesheets/shared.styles'
-import { arrayAttributeConverter } from '@/utils/property-converters'
+import { arrayAttributeConverter } from '@/utils'
 
 @customElement('mm-component-aka')
 export class ComponentAka extends LitElement {

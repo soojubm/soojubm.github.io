@@ -7,7 +7,7 @@ import {
   type DotVariant,
   type TagTone,
 } from '@/components/common/tag/tag.styles'
-import { buildAttributeRules } from '@/utils/attribute-styles'
+import { buildAttributeRules } from '@/utils'
 
 const toneTokens = Object.fromEntries(
   Object.entries(tagToneStyles)

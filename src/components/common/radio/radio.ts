@@ -4,8 +4,8 @@ import { ifDefined } from 'lit/directives/if-defined.js'
 
 import { visuallyHiddenInputStyles } from '@/components/common/input/input.styles'
 import { radioStyles } from '@/components/common/radio/radio.styles'
-import { emit } from '@/utils/emit'
-import { uniqueId } from '@/utils/unique-id'
+import { emit } from '@/utils'
+import { uniqueId } from '@/utils'
 import '@/components/common/text/semantics/paragraph'
 
 @customElement('mm-radio')

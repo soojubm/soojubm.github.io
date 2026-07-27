@@ -11,7 +11,7 @@ import '@/components/common/flex/flex'
 import '@/components/common/icon/icon'
 import '@/components/common/text/text'
 import '@/components/common/text/semantics/paragraph'
-import { emit } from '@/utils/emit'
+import { emit } from '@/utils'
 
 /**
  * AI 응답 출처 소스 칩. 클릭 시 inline sheet로 상세 정보를 표시합니다.

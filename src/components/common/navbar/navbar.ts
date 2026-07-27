@@ -4,7 +4,7 @@ import { customElement } from 'lit/decorators.js'
 import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
 import soojubmImage from '@/images/soojubm.png'
 import { SITEMAP } from '@/sitemap'
-import { getCurrentPageId } from '@/utils/current-page'
+import { getCurrentPageId } from '@/utils'
 
 @customElement('mm-navbar')
 export class Navbar extends LitElement {

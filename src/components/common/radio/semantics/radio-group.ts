@@ -4,7 +4,7 @@ import { customElement, property, queryAssignedElements } from 'lit/decorators.j
 import { Radio } from '@/components/common/radio/radio'
 import { radioGroupStyles } from '@/components/common/radio/radio.styles' // 🔥 외부 스타일 임포트
 import { SingleSelectionController } from '@/controllers/single-selection-controller'
-import { emit } from '@/utils/emit'
+import { emit } from '@/utils'
 
 @customElement('mm-radio-group')
 export class RadioGroup extends LitElement {

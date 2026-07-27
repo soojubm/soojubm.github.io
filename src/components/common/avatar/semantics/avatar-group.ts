@@ -4,7 +4,7 @@ import { customElement, property } from 'lit/decorators.js'
 import type { AvatarSize } from '@/components/common/avatar/avatar'
 
 import { resetStyles } from '@/stylesheets/shared.styles'
-import { arrayAttributeConverter } from '@/utils/property-converters'
+import { arrayAttributeConverter } from '@/utils'
 import '@/components/common/text/text'
 
 @customElement('mm-avatar-group')

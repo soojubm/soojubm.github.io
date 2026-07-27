@@ -9,8 +9,8 @@ import type { AriaTriState } from '@/types'
 
 import '@/components/common/list-item/list-item'
 import { ToggleController } from '@/controllers/toggle-controller'
-import { emit } from '@/utils/emit'
-import { type Constructor } from '@/utils/mixin'
+import { emit } from '@/utils'
+import { type Constructor } from '@/utils'
 
 /**
  * menu-item 계열이 공유하는 표시 prop의 공개 인터페이스.

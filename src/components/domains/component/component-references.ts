@@ -2,7 +2,7 @@ import { LitElement, html, css } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import '@/components/common/link/link'
-import { arrayAttributeConverter } from '@/utils/property-converters'
+import { arrayAttributeConverter } from '@/utils'
 
 export interface ComponentReferenceItemData {
   href: string

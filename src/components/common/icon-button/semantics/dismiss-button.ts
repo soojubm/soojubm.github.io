@@ -4,7 +4,7 @@ import { customElement, property } from 'lit/decorators.js'
 import '@/components/common/icon-button/icon-button'
 import { iconButtonActionStyles } from '@/components/common/icon-button/icon-button.styles'
 import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
-import { emit } from '@/utils/emit'
+import { emit } from '@/utils'
 
 /**
  * 배너, 알림, 토스트 등 비파괴적 해제 버튼.

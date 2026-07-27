@@ -7,7 +7,7 @@ import '@/components/common/flex/flex'
 import { inputStyles } from '@/components/common/input/input.styles'
 import '@/components/common/input/textarea'
 import '@/components/overlay/popover/semantics/select'
-import { emit } from '@/utils/emit'
+import { emit } from '@/utils'
 
 @customElement('mm-prompt-input')
 export class PromptInput extends LitElement {

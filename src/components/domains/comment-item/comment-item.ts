@@ -7,7 +7,7 @@ import '@/components/common/button/button'
 import '@/components/common/icon-button/semantics/more-button'
 import '@/components/common/menuitem/semantics/menu-item-action'
 import '@/components/overlay/popover/popover'
-import { emit } from '@/utils/emit'
+import { emit } from '@/utils'
 
 /**
  * 댓글 목록의 개별 항목.

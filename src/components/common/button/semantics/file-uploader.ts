@@ -3,7 +3,7 @@ import { customElement, property, state } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 import { repeat } from 'lit/directives/repeat.js'
 
-import { emit } from '@/utils/emit'
+import { emit } from '@/utils'
 import '@/components/common/flex/flex'
 import '@/components/common/button/semantics/attachment-button'
 import '@/components/common/button/semantics/attachment-item'

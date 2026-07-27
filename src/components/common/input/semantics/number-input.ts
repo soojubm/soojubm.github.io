@@ -12,7 +12,7 @@ import {
 import { textfieldStyles } from '@/components/common/input/semantics/textfield.styles'
 import '@/components/common/icon-button/icon-button'
 import '@/components/common/input/input'
-import { emit } from '@/utils/emit'
+import { emit } from '@/utils'
 
 @customElement('mm-number-input')
 export class NumberInput extends withTextfieldState(LitElement) {

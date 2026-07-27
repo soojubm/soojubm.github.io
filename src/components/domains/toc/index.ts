@@ -4,9 +4,7 @@ import { ifDefined } from 'lit/directives/if-defined.js'
 
 import { ICON_NAMES, type IconName } from '@/components/common/icon-button/semantics/icon-names'
 import { ScrollSpyController } from '@/controllers/scroll-spy-controller'
-import { TransientFlagController } from '@/controllers/transient-flag-controller'
 import { resetStyles } from '@/stylesheets/shared.styles'
-import { copyToClipboard } from '@/utils/clipboard'
 import '@/components/common/icon-button/icon-button'
 import '@/components/common/button/button'
 import '@/components/common/button/button-group'
@@ -42,16 +40,11 @@ export class TableOfContents extends LitElement {
 
   @state() private items: TocItem[] = []
   @state() private activeId = ''
-  @state() private copied = false
 
   private setupFrame = 0
   private scrollSpy = new ScrollSpyController(this, {
     getTargets: () => this.resolveScrollSpyTargets(),
     onActiveChange: id => (this.activeId = id),
-  })
-  private copiedFlag = new TransientFlagController(this, {
-    duration: 1600,
-    onChange: copied => (this.copied = copied),
   })
 
   render() {
@@ -175,24 +168,11 @@ export class TableOfContents extends LitElement {
     ]
   }
 
-  private handleCopyClick = async () => {
-    await copyToClipboard(this.shareUrl)
-    this.copiedFlag.trigger()
-  }
-
   private renderShareSection() {
     return html`
       <section class="share" aria-label="Share on">
         <mm-text weight="bold" color="light" class="toc-title" aria-hidden="true">Share on</mm-text>
-        <mm-button-group>
-          ${this.renderShareLinks()}
-          <mm-icon-button
-            icon=${this.copied ? ICON_NAMES.COPY_SUCCESS : ICON_NAMES.LINK}
-            variant="tertiary"
-            aria-label=${this.copied ? 'Copied link' : 'Copy link'}
-            @click=${this.handleCopyClick}
-          ></mm-icon-button>
-        </mm-button-group>
+        <mm-button-group>${this.renderShareLinks()}</mm-button-group>
       </section>
     `
   }

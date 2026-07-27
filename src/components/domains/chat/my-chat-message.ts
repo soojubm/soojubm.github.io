@@ -2,7 +2,7 @@ import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import { resetStyles } from '@/stylesheets/shared.styles'
-import { emit } from '@/utils/emit'
+import { emit } from '@/utils'
 
 import { renderChatMessageFailedActions, renderChatMessageTime } from './chat.helpers'
 

@@ -4,7 +4,7 @@ import { customElement, property } from 'lit/decorators.js'
 import '@/components/common/icon-button/icon-button'
 import { iconButtonActionStyles } from '@/components/common/icon-button/icon-button.styles'
 import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
-import { emit } from '@/utils/emit'
+import { emit } from '@/utils'
 
 /**
  * 모달, 패널, 시트 등 레이어를 닫는 버튼.

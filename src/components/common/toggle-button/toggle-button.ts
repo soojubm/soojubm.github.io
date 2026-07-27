@@ -9,7 +9,7 @@ import {
   buttonSelectedStyles,
 } from '@/components/common/button/button.styles'
 import { ToggleController } from '@/controllers/toggle-controller'
-import { emit } from '@/utils/emit'
+import { emit } from '@/utils'
 import '@/components/common/icon/icon'
 
 @customElement('mm-toggle-button')

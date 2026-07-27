@@ -6,17 +6,17 @@ import { fileURLToPath } from 'url'
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, '..')
 
-// pages/ 폴더에서 id → 페이지 소스 파일 경로 매핑
+// src/pages/ 폴더에서 id → 페이지 소스 파일 경로 매핑
 function findPageSource(id) {
   const candidates = [
-    join(ROOT, 'pages', 'components', id, 'index.html'),
-    join(ROOT, 'pages', 'components', id, `${id}.ts`),
-    join(ROOT, 'pages', 'patterns', id, 'index.html'),
-    join(ROOT, 'pages', 'patterns', id, `${id}.ts`),
-    join(ROOT, 'pages', 'home', 'index.html'), // index
-    join(ROOT, 'pages', 'home', 'home.ts'), // index
-    join(ROOT, 'pages', id, 'index.html'),
-    join(ROOT, 'pages', id, `${id}.ts`),
+    join(ROOT, 'src', 'pages', 'components', id, 'index.html'),
+    join(ROOT, 'src', 'pages', 'components', id, `${id}.ts`),
+    join(ROOT, 'src', 'pages', 'patterns', id, 'index.html'),
+    join(ROOT, 'src', 'pages', 'patterns', id, `${id}.ts`),
+    join(ROOT, 'src', 'pages', 'home', 'index.html'), // index
+    join(ROOT, 'src', 'pages', 'home', 'home.ts'), // index
+    join(ROOT, 'src', 'pages', id, 'index.html'),
+    join(ROOT, 'src', 'pages', id, `${id}.ts`),
   ]
   return candidates.find(existsSync) ?? null
 }

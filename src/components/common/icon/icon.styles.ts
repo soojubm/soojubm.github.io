@@ -1,6 +1,6 @@
 import { css, unsafeCSS } from 'lit'
 
-import { buildAttributeRules } from '@/utils/attribute-styles'
+import { buildAttributeRules } from '@/utils'
 
 const iconSizeTokens = {
   tiny: { 'font-size': '0.75rem' },

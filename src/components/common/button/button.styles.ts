@@ -1,7 +1,7 @@
 import { css, unsafeCSS } from 'lit'
 
 import { focusRing } from '@/stylesheets/shared.styles'
-import { buildAttributeRules } from '@/utils/attribute-styles'
+import { buildAttributeRules } from '@/utils'
 
 /** button 태그뿐 아니라 mm-hashtag-link 등 a 기반 파생 컴포넌트도 같은 스킨을 그대로 가져다 쓸 수 있도록 :is(button, a)로 잡는다. */
 export const interactiveControlStyles = css`

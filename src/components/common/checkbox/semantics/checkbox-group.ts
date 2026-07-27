@@ -5,7 +5,7 @@ import type { Checkbox } from '@/components/common/checkbox/checkbox'
 
 import { checkboxGroupStyles } from '@/components/common/checkbox/checkbox.styles'
 import { MultipleSelectionController } from '@/controllers/multiple-selection-controller'
-import { emit } from '@/utils/emit'
+import { emit } from '@/utils'
 
 type CheckboxChangeDetail = {
   checked: boolean

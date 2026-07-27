@@ -10,7 +10,7 @@ import {
 } from '@/components/common/input/semantics/textfield.helpers'
 import { textfieldStyles } from '@/components/common/input/semantics/textfield.styles'
 import '@/components/common/input/textarea'
-import { uniqueId } from '@/utils/unique-id'
+import { uniqueId } from '@/utils'
 
 @customElement('mm-textarea-field')
 export class TextareaField extends LitElement {

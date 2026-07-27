@@ -6,7 +6,7 @@ import { styleMap } from 'lit/directives/style-map.js'
 
 import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
 import { resetStyles } from '@/stylesheets/shared.styles'
-import { arrayAttributeConverter } from '@/utils/property-converters'
+import { arrayAttributeConverter } from '@/utils'
 
 export interface TableColumn {
   label: string

@@ -11,7 +11,7 @@ import { resetStyles } from '@/stylesheets/shared.styles'
 import '@/components/common/menuitem/semantics/menu-item-action'
 import '@/components/common/menuitem/semantics/menu-item-group'
 import '@/components/overlay/popover/popover'
-import { emit } from '@/utils/emit'
+import { emit } from '@/utils'
 
 export interface SelectOption {
   label: string

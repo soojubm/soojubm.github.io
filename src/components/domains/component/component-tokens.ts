@@ -7,7 +7,7 @@ import {
   componentTokensStyles,
   tokenStyles,
 } from '@/components/domains/component/component-tokens.styles'
-import { arrayAttributeConverter } from '@/utils/property-converters'
+import { arrayAttributeConverter } from '@/utils'
 
 export interface ComponentTokenItemData {
   name: string

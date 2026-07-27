@@ -11,7 +11,7 @@ import '@/components/common/separator/separator'
 import type Popover from '@/components/overlay/popover/popover'
 
 import { ICON_NAMES, type IconName } from '@/components/common/icon-button/semantics/icon-names'
-import { getPreferredTheme, saveTheme, THEMES, type Theme } from '@/utils/theme'
+import { getPreferredTheme, saveTheme, THEMES, type Theme } from '@/utils'
 
 @customElement('mm-theme-selector')
 export class ThemeSelector extends LitElement {

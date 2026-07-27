@@ -1,7 +1,7 @@
 import { css, unsafeCSS } from 'lit'
 
 import { resetStyles, scrollbarStyles } from '@/stylesheets/shared.styles'
-import { buildAttributeRules } from '@/utils/attribute-styles'
+import { buildAttributeRules } from '@/utils'
 
 // 이게 왜 필요..
 const scrollDirectionTokens = {

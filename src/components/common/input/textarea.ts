@@ -6,7 +6,7 @@ import type { AriaIdRef, AriaInvalid } from '@/types'
 
 import { inputStyles } from '@/components/common/input/input.styles'
 import { TextareaAutoHeightController } from '@/controllers/textarea-auto-height-controller'
-import { emit } from '@/utils/emit'
+import { emit } from '@/utils'
 
 let uniqueIdCounter = 0
 

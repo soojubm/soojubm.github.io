@@ -2,7 +2,7 @@ import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
-import { emit } from '@/utils/emit'
+import { emit } from '@/utils'
 
 type ViewMode = 'grid' | 'list'
 

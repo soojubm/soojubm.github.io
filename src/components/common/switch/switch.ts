@@ -6,8 +6,8 @@ import type { AriaTriState } from '@/types'
 
 import { switchStyles } from '@/components/common/switch/switch.styles'
 import { ToggleController } from '@/controllers/toggle-controller'
-import { emit } from '@/utils/emit'
-import { uniqueId } from '@/utils/unique-id'
+import { emit } from '@/utils'
+import { uniqueId } from '@/utils'
 
 @customElement('mm-switch')
 export class Switch extends LitElement {

@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 
 import '@/components/common/button/button-group'
 import '@/components/common/button/semantics/hashtag-link'
-import { arrayAttributeConverter } from '@/utils/property-converters'
+import { arrayAttributeConverter } from '@/utils'
 
 export interface ComponentRelatedItemData {
   href: string

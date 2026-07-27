@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 
 import { iconButtonStyles } from '@/components/common/icon-button/icon-button.styles'
 import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
-import { emit } from '@/utils/emit'
+import { emit } from '@/utils'
 
 /**
  * 비밀번호 등 가려진 입력값의 노출 여부를 토글하는 버튼.

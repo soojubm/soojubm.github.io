@@ -2,7 +2,7 @@ import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, query } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
-import { emit } from '@/utils/emit'
+import { emit } from '@/utils'
 import '@/components/common/button/semantics/add-button'
 
 @customElement('mm-attachment-button')

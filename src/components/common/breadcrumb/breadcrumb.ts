@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
 import { focusRing } from '@/stylesheets/shared.styles'
-import { arrayAttributeConverter } from '@/utils/property-converters'
+import { arrayAttributeConverter } from '@/utils'
 import '@/components/common/text/text'
 
 export interface BreadcrumbItem {

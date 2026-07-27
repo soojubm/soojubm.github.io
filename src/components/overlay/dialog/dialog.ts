@@ -8,7 +8,7 @@ import type { ActionConfig } from '@/types'
 
 import { layerStyles } from '@/components/overlay/layer/layer.styles'
 import { LayerController } from '@/controllers/layer-controller'
-import { emit } from '@/utils/emit'
+import { emit } from '@/utils'
 
 @customElement('mm-dialog')
 export class Dialog extends LitElement {

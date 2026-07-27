@@ -7,7 +7,7 @@ import {
   layerStyles,
 } from '@/components/overlay/layer/layer.styles'
 import { LayerController } from '@/controllers/layer-controller'
-import { emit } from '@/utils/emit'
+import { emit } from '@/utils'
 export type LayerPlacement = 'center' | 'bottom' | 'left' | 'right'
 export type LayerWidth = 'small' | 'medium' | 'large' | 'full'
 

@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 
 import { textStyles } from '@/components/common/text/text.styles'
 import '@/components/domains/indicators/list-marker'
-import { arrayAttributeConverter } from '@/utils/property-converters'
+import { arrayAttributeConverter } from '@/utils'
 
 type Variant = 'check' | 'number'
 
