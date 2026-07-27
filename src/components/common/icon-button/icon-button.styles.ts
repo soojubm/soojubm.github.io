@@ -4,7 +4,7 @@ import { buildAttributeRules } from '@/utils'
 
 const iconButtonVariantTokens = {
   primary: {
-    'background-color': 'var(--color-primary)',
+    '--icon-button-background-color': 'var(--color-primary)',
     '--icon-button-text-color': 'var(--foreground-color-on-solid)',
   },
   secondary: {
@@ -15,11 +15,10 @@ const iconButtonVariantTokens = {
     '--icon-button-shadow': 'var(--surface-base-shadow)',
   },
   ghost: {
-    'background-color': 'transparent',
-    border: 'none',
+    '--icon-button-background-color': 'transparent',
   },
   destructive: {
-    'background-color': 'var(--color-danger)',
+    '--icon-button-background-color': 'var(--color-danger)',
     '--icon-button-text-color': 'var(--foreground-color-on-solid)',
   },
 }
@@ -52,8 +51,6 @@ export const iconButtonStyles = css`
     height: var(--icon-button-size);
     border: var(--icon-button-border);
     border-radius: var(--icon-button-border-radius);
-    --icon-button-background-color-hover: var(--icon-button-background-color);
-    --icon-button-text-color-hover: var(--icon-button-text-color);
 
     background: var(--icon-button-background-color);
     box-shadow: var(--icon-button-shadow);
@@ -63,11 +60,6 @@ export const iconButtonStyles = css`
     font-family: var(--font-family);
     font-size: inherit;
     cursor: pointer;
-  }
-
-  button:hover {
-    background-color: var(--icon-button-background-color-hover);
-    color: var(--icon-button-text-color-hover);
   }
 
   ${unsafeCSS(buildAttributeRules('variant', iconButtonVariantTokens, 'button'))}
