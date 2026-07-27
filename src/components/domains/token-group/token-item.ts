@@ -1,9 +1,8 @@
-import { LitElement, css, html, nothing } from 'lit'
+import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import { resetStyles } from '@/stylesheets/shared/reset.styles'
-import '@/components/domains/indicators/list-marker'
-import '@/components/text/text'
+import '@/components/meta-item/meta-item'
 
 @customElement('mm-token-item')
 export class TokenItem extends LitElement {
@@ -12,9 +11,7 @@ export class TokenItem extends LitElement {
     css`
       :host {
         display: inline-flex;
-        flex-direction: column;
         padding: var(--space-3) var(--space-4);
-        line-height: var(--size-32);
         border: var(--border);
         border-radius: var(--radius);
       }
@@ -27,35 +24,8 @@ export class TokenItem extends LitElement {
 
   render() {
     return html`
-      <!-- ${this.renderMarker()} -->
-      <dl>
-        ${this.renderKey()} ${this.renderValue()}
-        <slot></slot>
-      </dl>
-    `
-  }
-
-  private renderMarker() {
-    if (!this.index) return nothing
-
-    return html`
-      <mm-list-marker value=${this.index}></mm-list-marker>
-    `
-  }
-
-  private renderKey() {
-    if (!this.key) return nothing
-
-    return html`
-      <mm-text>${this.key}</mm-text>
-    `
-  }
-
-  private renderValue() {
-    if (!this.value) return nothing
-
-    return html`
-      <mm-text weight="bold">${this.value}</mm-text>
+      <mm-meta-item layout="stacked" label=${this.key} value=${this.value}></mm-meta-item>
+      <slot></slot>
     `
   }
 }
