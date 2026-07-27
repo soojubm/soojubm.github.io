@@ -1,12 +1,12 @@
 import { html } from 'lit'
 
-import type { FilterOption } from '@/components/button/semantics/filter-button-group'
+import type { FilterOption } from '@/components/common/button/semantics/filter-button-group'
+import type { OptionItem } from '@/components/common/toggle-button'
 import type { ComponentFeatureItem } from '@/components/domains/component/component-feature-list'
 import type { ComponentPropItemData } from '@/components/domains/component/component-props'
 import type { ComponentReferenceItemData } from '@/components/domains/component/component-references'
 import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
 import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
-import type { OptionItem } from '@/components/toggle-button'
 
 import { renderDocumentLayout } from '../../layouts/document-layout'
 

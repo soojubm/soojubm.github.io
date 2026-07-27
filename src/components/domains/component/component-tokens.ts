@@ -1,8 +1,8 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import '@/components/text/semantics/heading'
-import '@/components/tag/semantics/keyword-tag'
+import '@/components/common/text/semantics/heading'
+import '@/components/common/tag/semantics/keyword-tag'
 import {
   componentTokensStyles,
   tokenStyles,

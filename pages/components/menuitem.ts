@@ -6,8 +6,8 @@ import type { ComponentReferenceItemData } from '@/components/domains/component/
 import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
 import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
 
-import { AVATAR_SHAPE_TYPE_LABEL, AVATAR_VARIANT_TYPE_UNION } from '@/components/avatar'
-import { LIST_ITEM_SIZE_TYPE_LABEL } from '@/components/list-item'
+import { AVATAR_SHAPE_TYPE_LABEL, AVATAR_VARIANT_TYPE_UNION } from '@/components/common/avatar'
+import { LIST_ITEM_SIZE_TYPE_LABEL } from '@/components/common/list-item'
 
 import { renderDocumentLayout } from '../../layouts/document-layout'
 

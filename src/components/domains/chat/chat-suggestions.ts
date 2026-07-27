@@ -1,8 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 
-import { horizontalScrollRowStyles } from '@/stylesheets/shared/horizontal-scroll-row.styles'
-import { resetStyles } from '@/stylesheets/shared/reset.styles'
+import { horizontalScrollRowStyles, resetStyles } from '@/stylesheets/shared.styles'
 
 /**
  * 채팅 입력 추천 버튼 그룹. 가로 스크롤 가능한 quick-reply 영역.

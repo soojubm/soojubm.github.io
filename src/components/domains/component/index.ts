@@ -8,5 +8,9 @@ import '@/components/domains/component/component-related'
 import '@/components/domains/component/component-aka'
 import '@/components/domains/component/component-guide'
 import '@/components/domains/component/component-feature-list'
+import '@/components/domains/component/color-token'
+import '@/components/domains/component/token-group'
+import '@/components/domains/component/token-item'
+import '@/components/domains/component/token-stage'
 
 export {}

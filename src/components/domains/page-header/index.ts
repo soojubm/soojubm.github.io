@@ -1,8 +1,8 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import { resetStyles } from '@/stylesheets/shared/reset.styles'
-import '@/components/text/semantics/text-block'
+import { resetStyles } from '@/stylesheets/shared.styles'
+import '@/components/common/text/semantics/text-block'
 
 @customElement('mm-page-header')
 export class PageHeader extends LitElement {

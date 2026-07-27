@@ -1,10 +1,9 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import { resetStyles } from '@/stylesheets/shared/reset.styles'
-import { focusRing } from '@/stylesheets/shared/focus-ring.styles'
-import '@/components/icon-button/semantics/more-button'
-import '@/components/flex/flex'
+import { focusRing, resetStyles } from '@/stylesheets/shared.styles'
+import '@/components/common/icon-button/semantics/more-button'
+import '@/components/common/flex/flex'
 import { emit } from '@/utils/emit'
 import { arrayAttributeConverter } from '@/utils/property-converters'
 

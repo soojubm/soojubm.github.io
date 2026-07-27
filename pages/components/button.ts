@@ -1,4 +1,4 @@
-import '@/components/table'
+import '@/components/common/table'
 import { html } from 'lit'
 
 import type { ComponentFeatureItem } from '@/components/domains/component/component-feature-list'

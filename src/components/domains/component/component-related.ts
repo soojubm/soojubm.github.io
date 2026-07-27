@@ -1,8 +1,8 @@
 import { LitElement, html, css } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import '@/components/button/button-group'
-import '@/components/button/semantics/hashtag-link'
+import '@/components/common/button/button-group'
+import '@/components/common/button/semantics/hashtag-link'
 import { arrayAttributeConverter } from '@/utils/property-converters'
 
 export interface ComponentRelatedItemData {

@@ -1,11 +1,11 @@
 import { LitElement, html, nothing } from 'lit'
 import { property } from 'lit/decorators.js'
 
-import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
-import '@/components/icon-button/icon-button'
-import '@/components/text/text'
-import '@/components/thumbnail/thumbnail'
-import '@/components/spinner/semantics/typing-indicator'
+import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
+import '@/components/common/icon-button/icon-button'
+import '@/components/common/text/text'
+import '@/components/common/thumbnail/thumbnail'
+import '@/components/common/spinner/semantics/typing-indicator'
 import { type Constructor } from '@/utils/mixin'
 
 export const isChatBubbleImage = (src: string, typing: boolean) => !!src && !typing

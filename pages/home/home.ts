@@ -2,7 +2,7 @@ import { html, render } from 'lit'
 
 import type { ComponentReferenceItemData } from '@/components/domains/component/component-references'
 
-import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
+import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
 
 import { renderLayout } from '../../layouts/base-layouts'
 import { ScrollSpyController } from '../../src/controllers/scroll-spy-controller'

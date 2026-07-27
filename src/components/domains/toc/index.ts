@@ -2,14 +2,14 @@ import { LitElement, css, html, nothing } from 'lit'
 import { customElement, state } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
-import { ICON_NAMES, type IconName } from '@/components/icon-button/semantics/icon-names'
+import { ICON_NAMES, type IconName } from '@/components/common/icon-button/semantics/icon-names'
 import { ScrollSpyController } from '@/controllers/scroll-spy-controller'
 import { TransientFlagController } from '@/controllers/transient-flag-controller'
-import { resetStyles } from '@/stylesheets/shared/reset.styles'
+import { resetStyles } from '@/stylesheets/shared.styles'
 import { copyToClipboard } from '@/utils/clipboard'
-import '@/components/icon-button/icon-button'
-import '@/components/button/button'
-import '@/components/button/button-group'
+import '@/components/common/icon-button/icon-button'
+import '@/components/common/button/button'
+import '@/components/common/button/button-group'
 
 interface TocItem {
   id: string

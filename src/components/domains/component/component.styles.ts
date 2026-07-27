@@ -1,6 +1,6 @@
 import { css } from 'lit'
 
-import { MEDIA } from '@/stylesheets/shared/breakpoints'
+import { MEDIA } from '@/constants'
 
 export const componentContentFrameStyles = css`
   .component-content-frame {

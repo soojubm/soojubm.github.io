@@ -1,11 +1,11 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
 
-import { ICON_NAMES, type IconName } from '@/components/icon-button/semantics/icon-names'
-import { resetStyles } from '@/stylesheets/shared/reset.styles'
-import '@/components/flex/flex'
-import '@/components/icon/icon'
-import '@/components/text/text'
+import { ICON_NAMES, type IconName } from '@/components/common/icon-button/semantics/icon-names'
+import { resetStyles } from '@/stylesheets/shared.styles'
+import '@/components/common/flex/flex'
+import '@/components/common/icon/icon'
+import '@/components/common/text/text'
 
 export type ChatReasoningFlowTone = 'thinking' | 'searching' | 'reading' | 'writing'
 

@@ -1,6 +1,6 @@
 import { LitElement, css, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
-import '@/components/flex/flex'
+import '@/components/common/flex/flex'
 
 @customElement('mm-component-guide')
 class ComponentGuide extends LitElement {

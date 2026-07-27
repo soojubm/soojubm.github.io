@@ -1,5 +1,7 @@
 import { html, render } from 'lit'
-import type { FilterOption } from '@/components/button/semantics/filter-button-group'
+
+import type { FilterOption } from '@/components/common/button/semantics/filter-button-group'
+
 import { renderLayout } from '../../../layouts/base-layouts'
 import { renderList, getCountries, loadJson } from '../../components/_list-page'
 import { mediaCard } from '../media-card'

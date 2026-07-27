@@ -3,7 +3,7 @@ import { customElement } from 'lit/decorators.js'
 
 import { participantChatBubbleStyles } from '@/components/domains/chat/bubbles/styles'
 import { chatBubbleStyles } from '@/components/domains/chat/chat.styles'
-import { resetStyles } from '@/stylesheets/shared/reset.styles'
+import { resetStyles } from '@/stylesheets/shared.styles'
 
 import { renderChatBubbleShell, withChatBubbleImage } from '../chat.helpers'
 

@@ -1,12 +1,12 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import { ICON_NAMES } from '@/components/icon-button/semantics/icon-names'
-import '@/components/icon-button/icon-button'
-import '@/components/flex/flex'
-import { inputStyles } from '@/components/input/input.styles'
-import '@/components/input/textarea'
-import '@/components/popover/semantics/select'
+import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
+import '@/components/common/icon-button/icon-button'
+import '@/components/common/flex/flex'
+import { inputStyles } from '@/components/common/input/input.styles'
+import '@/components/common/input/textarea'
+import '@/components/overlay/popover/semantics/select'
 import { emit } from '@/utils/emit'
 
 @customElement('mm-prompt-input')

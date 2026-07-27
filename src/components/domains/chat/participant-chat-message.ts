@@ -2,13 +2,13 @@ import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
-import { resetStyles } from '@/stylesheets/shared/reset.styles'
+import { resetStyles } from '@/stylesheets/shared.styles'
 
 import { renderChatMessageTime } from './chat.helpers'
 
-import '@/components/avatar/avatar'
-import '@/components/flex/flex'
-import '@/components/text/text'
+import '@/components/common/avatar/avatar'
+import '@/components/common/flex/flex'
+import '@/components/common/text/text'
 
 @customElement('mm-participant-chat-message')
 export class ParticipantChatMessage extends LitElement {

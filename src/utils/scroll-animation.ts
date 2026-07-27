@@ -1,4 +1,4 @@
-const ANIMATED_CLASSNAME = 'is-observed'
+import { ANIMATED_CLASSNAME } from '@/constants'
 
 const scrollAnimation = ({ selector: selector }) => {
   if (!('IntersectionObserver' in window)) return

@@ -1,7 +1,7 @@
 import { css } from 'lit'
 
 import { componentContentFrameStyles } from '@/components/domains/component/component.styles'
-import { resetStyles } from '@/stylesheets/shared/reset.styles'
+import { resetStyles } from '@/stylesheets/shared.styles'
 
 export const componentPropItemStyles = [
   resetStyles,

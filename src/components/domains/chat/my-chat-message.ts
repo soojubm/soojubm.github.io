@@ -1,12 +1,12 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import { resetStyles } from '@/stylesheets/shared/reset.styles'
+import { resetStyles } from '@/stylesheets/shared.styles'
 import { emit } from '@/utils/emit'
 
 import { renderChatMessageFailedActions, renderChatMessageTime } from './chat.helpers'
 
-import '@/components/flex/flex'
+import '@/components/common/flex/flex'
 
 @customElement('mm-my-chat-message')
 export class MyChatMessage extends LitElement {

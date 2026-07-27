@@ -2,9 +2,10 @@ import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
-import type { AvatarVariant } from '@/components/avatar/avatar'
+import type { AvatarVariant } from '@/components/common/avatar/avatar'
+
 import { entityStyles } from '@/components/domains/user-snippet/user-snippet.styles'
-import '@/components/flex/flex'
+import '@/components/common/flex/flex'
 
 @customElement('mm-user-snippet')
 class UserSnippet extends LitElement {

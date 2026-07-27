@@ -3,11 +3,11 @@ import { customElement, property } from 'lit/decorators.js'
 
 import { myChatBubbleStyles } from '@/components/domains/chat/bubbles/styles'
 import { chatBubbleStyles } from '@/components/domains/chat/chat.styles'
-import { resetStyles } from '@/stylesheets/shared/reset.styles'
+import { resetStyles } from '@/stylesheets/shared.styles'
 
 import { renderChatBubbleShell, withChatBubbleImage } from '../chat.helpers'
 
-import '@/components/text/text'
+import '@/components/common/text/text'
 
 /**
  * 내가 보낸 메시지 버블. 우측 정렬 + primary 색상.

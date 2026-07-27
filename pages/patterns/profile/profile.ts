@@ -1,5 +1,6 @@
 import { html } from 'lit'
-import type Layer from '@/components/layer/layer'
+
+import type Layer from '@/components/overlay/layer/layer'
 
 import { renderLayout } from '../../../layouts/base-layouts'
 

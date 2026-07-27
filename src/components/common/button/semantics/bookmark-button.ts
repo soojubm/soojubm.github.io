@@ -1,0 +1,71 @@
+import { LitElement, css, html } from 'lit'
+import { customElement, property } from 'lit/decorators.js'
+
+import '@/components/common/icon-button/icon-button'
+import { withToggleSelection } from '@/components/common/button/button.utils'
+import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
+import { resetStyles } from '@/stylesheets/shared.styles'
+
+/**
+ * 북마크/즐겨찾기 토글 버튼.
+ * 아이콘 전용이며 선택 시 채워진 아이콘으로 전환됩니다.
+ */
+@customElement('mm-bookmark-button')
+export class BookmarkButton extends withToggleSelection(LitElement) {
+  static styles = [
+    resetStyles,
+    css`
+      :host {
+        display: inline-flex;
+      }
+
+      mm-icon-button {
+        --icon-button-text-color: var(--foreground-subtle-color);
+      }
+
+      :host([selected]) mm-icon-button {
+        --icon-button-text-color: var(--interaction-selected-foreground-color);
+      }
+    `,
+  ]
+
+  @property({ type: String }) shape: 'star' | 'bookmark' | 'heart' = 'star'
+
+  render() {
+    return html`
+      <mm-icon-button
+        variant="ghost"
+        icon=${this.iconName}
+        aria-pressed=${this.selected ? 'true' : 'false'}
+        aria-label=${this.actionLabel}
+        ?disabled=${this.disabled}
+        @click=${this.handleToggleClick}
+      ></mm-icon-button>
+    `
+  }
+
+  private get iconName() {
+    const filled = {
+      star: ICON_NAMES.FAVORITE_SELECTED,
+      bookmark: ICON_NAMES.BOOKMARK_SELECTED,
+      heart: ICON_NAMES.LIKE_SELECTED,
+    }
+    const outline = {
+      star: ICON_NAMES.FAVORITE,
+      bookmark: ICON_NAMES.BOOKMARK,
+      heart: ICON_NAMES.LIKE,
+    }
+    return this.selected ? filled[this.shape] : outline[this.shape]
+  }
+
+  private get actionLabel() {
+    const labels = { star: '즐겨찾기', bookmark: '북마크', heart: '좋아요' }
+    return labels[this.shape]
+  }
+}
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'mm-bookmark-button': BookmarkButton
+  }
+}

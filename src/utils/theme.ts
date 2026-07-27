@@ -1,4 +1,5 @@
-import { ICON_NAMES, type IconName } from '@/components/icon-button/semantics/icon-names'
+import { ICON_NAMES, type IconName } from '@/components/common/icon-button/semantics/icon-names'
+import { THEME_STORAGE_KEY } from '@/constants'
 
 export type Theme = 'light' | 'dark' | 'brutal' | 'glass'
 
@@ -9,7 +10,6 @@ export const THEMES: { value: Theme; icon: IconName; label: string }[] = [
   { value: 'glass', icon: ICON_NAMES.THEME, label: 'Glass' },
 ]
 
-const THEME_STORAGE_KEY = 'theme'
 const DEFAULT_THEME: Theme = 'light'
 
 function isTheme(value: string | null): value is Theme {

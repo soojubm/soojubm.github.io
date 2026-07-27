@@ -1,7 +1,10 @@
 import { html } from 'lit'
-import type { OptionItem } from '@/components/toggle-button'
-import { renderLayout } from '../../layouts/base-layouts'
+
+import type { OptionItem } from '@/components/common/toggle-button'
+
 import { findSitemapItem } from '@/sitemap'
+
+import { renderLayout } from '../../layouts/base-layouts'
 
 const genderOptions: OptionItem[] = [
   { value: 'other', label: '기타' },

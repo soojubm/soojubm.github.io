@@ -1,8 +1,8 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import '@/components/feature/feature-group'
-import '@/components/feature/feature'
+import '@/components/common/feature/feature-group'
+import '@/components/common/feature/feature'
 import { arrayAttributeConverter } from '@/utils/property-converters'
 
 export interface ComponentFeatureItem {

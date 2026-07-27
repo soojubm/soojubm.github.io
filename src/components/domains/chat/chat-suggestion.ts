@@ -1,13 +1,13 @@
 import { LitElement } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import type { IconName } from '@/components/icon-button/semantics/icon-names'
+import type { IconName } from '@/components/common/icon-button/semantics/icon-names'
 
 import {
   renderSuggestionButton,
   suggestionButtonStyles,
 } from '@/components/domains/shared/suggestion-button'
-import { resetStyles } from '@/stylesheets/shared/reset.styles'
+import { resetStyles } from '@/stylesheets/shared.styles'
 import { emit } from '@/utils/emit'
 
 /**

@@ -1,4 +1,4 @@
-import { navbarStyles } from '@/components/navbar/navbar.styles'
+import { navbarStyles } from '@/components/common/navbar/navbar.styles'
 import applyTheme from '@/utils/theme'
 
 const styleElement = document.createElement('style')

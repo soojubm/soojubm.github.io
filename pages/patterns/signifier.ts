@@ -1,6 +1,8 @@
 import { html } from 'lit'
-import type { FilterOption } from '@/components/button/semantics/filter-button-group'
-import type { IconName } from '@/components/icon-button/semantics/icon-names'
+
+import type { FilterOption } from '@/components/common/button/semantics/filter-button-group'
+import type { IconName } from '@/components/common/icon-button/semantics/icon-names'
+
 import { renderDocumentLayout } from '../../layouts/document-layout'
 
 interface IconListItem {

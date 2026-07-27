@@ -1,12 +1,12 @@
-import '@/components/pagination'
-import '@/components/table'
+import '@/components/common/pagination'
+import '@/components/common/table'
 import { html } from 'lit'
 
+import type { TableColumn } from '@/components/common/table'
 import type { ComponentFeatureItem } from '@/components/domains/component/component-feature-list'
 import type { ComponentPropItemData } from '@/components/domains/component/component-props'
 import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
 import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
-import type { TableColumn } from '@/components/table'
 
 import { renderLayout } from '../../layouts/base-layouts'
 

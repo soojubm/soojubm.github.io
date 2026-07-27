@@ -1,7 +1,7 @@
 import { LitElement, html, css } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import '@/components/link/link'
+import '@/components/common/link/link'
 import { arrayAttributeConverter } from '@/utils/property-converters'
 
 export interface ComponentReferenceItemData {

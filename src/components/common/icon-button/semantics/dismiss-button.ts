@@ -1,0 +1,45 @@
+import { LitElement, html } from 'lit'
+import { customElement, property } from 'lit/decorators.js'
+
+import '@/components/common/icon-button/icon-button'
+import { iconButtonActionStyles } from '@/components/common/icon-button/icon-button.styles'
+import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
+import { emit } from '@/utils/emit'
+
+/**
+ * 배너, 알림, 토스트 등 비파괴적 해제 버튼.
+ */
+@customElement('mm-dismiss-button')
+export class DismissButton extends LitElement {
+  static styles = [iconButtonActionStyles]
+
+  @property({ type: String }) tooltip = ''
+  @property({ type: String, attribute: 'tooltip-placement' }) tooltipPlacement = ''
+  @property({ type: Boolean }) disabled = false
+
+  private handleClick = () => {
+    if (this.disabled) return
+    emit(this, 'dismiss')
+  }
+
+  render() {
+    return html`
+      <mm-icon-button
+        variant="tertiary"
+        size="small"
+        icon=${ICON_NAMES.DISMISS}
+        aria-label="닫기"
+        tooltip=${this.tooltip}
+        tooltip-placement=${this.tooltipPlacement}
+        ?disabled=${this.disabled}
+        @click=${this.handleClick}
+      ></mm-icon-button>
+    `
+  }
+}
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'mm-dismiss-button': DismissButton
+  }
+}

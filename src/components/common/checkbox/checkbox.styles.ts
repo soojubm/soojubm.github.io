@@ -1,0 +1,117 @@
+import { css } from 'lit'
+
+import { focusRing } from '@/stylesheets/shared.styles'
+
+export const checkboxGroupStyles = css`
+  fieldset {
+    all: unset;
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  legend {
+    display: none;
+  }
+`
+
+export const checkboxStyles = css`
+  :host {
+    --checkbox-size: var(--size-16);
+    --checkbox-border-radius: var(--radius);
+    --checkbox-border-color: var(--border-color);
+    --checkbox-background-color: var(--background-color);
+    gap: var(--space-2);
+  }
+
+  label {
+    display: flex;
+    align-items: center;
+    height: var(--checkbox-size);
+    gap: var(--space-2);
+  }
+
+  label > span {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+    width: var(--checkbox-size);
+    height: var(--checkbox-size);
+    border: var(--border);
+    border-color: var(--checkbox-border-color);
+    box-sizing: border-box;
+    border-radius: var(--checkbox-border-radius);
+    background: var(--checkbox-background-color);
+  }
+
+  input[type='checkbox'] + label > span::after {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 2px;
+    border-left: 1px solid;
+    border-bottom: 1px solid;
+    border-color: var(--checkbox-border-color);
+    position: absolute;
+    left: 4px;
+    top: 7px;
+    transform: rotate(-50deg) scale(0);
+  }
+
+  input[type='checkbox']:checked + label > span {
+    --checkbox-border-color: var(--interaction-selected-border-color);
+  }
+
+  input[type='checkbox']:checked + label > span::after {
+    transform: rotate(-50deg) scale(1);
+  }
+
+  input:focus-visible + label > span {
+    ${focusRing};
+  }
+
+  :host([size='large']) input[type='checkbox']:checked + label > span::after {
+    left: 8px;
+    top: 8px;
+    transform: rotate(-50deg) scale(1.5);
+  }
+
+  input[type='checkbox']:indeterminate + label > span {
+    border-color: var(--interaction-selected-border-color);
+    background: var(--interaction-selected-background-color);
+  }
+
+  input[type='checkbox']:indeterminate + label > span::after {
+    display: block;
+    width: 8px;
+    background: var(--interaction-selected-background-color);
+    border: none;
+    left: 4px;
+    top: 48%;
+    transform: rotate(0deg);
+  }
+
+  input:disabled ~ label {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  @keyframes checkmark {
+    0% {
+      background-position-y: 5px;
+    }
+    50% {
+      background-position-y: -2px;
+    }
+    100% {
+      background-position-y: 0;
+    }
+  }
+
+  :host([size='large']) {
+    --checkbox-size: var(--size-24);
+  }
+`

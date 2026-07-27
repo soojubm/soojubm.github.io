@@ -1,4 +1,5 @@
 import { html } from 'lit'
+
 import { renderLayout } from '../../layouts/base-layouts'
 
 interface FaqItem {
@@ -79,9 +80,7 @@ const main = html`
         description="자주 묻는 질문을 모았습니다. 원하는 답을 찾지 못했다면 고객센터로 문의해 주세요."
       ></mm-page-header>
 
-      <mm-flex direction="column" gap="6">
-        ${faqCategories.map(renderFaqCategory)}
-      </mm-flex>
+      <mm-flex direction="column" gap="6">${faqCategories.map(renderFaqCategory)}</mm-flex>
     </mm-flex>
   </mm-page>
 `

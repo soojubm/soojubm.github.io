@@ -1,10 +1,11 @@
 import { html, nothing, render } from 'lit'
-import type { TemplateResult } from 'lit'
 import { unsafeHTML } from 'lit/directives/unsafe-html.js'
 
-import '../src/components/navbar/navbar'
-import '../src/components/domains/app-sidebar'
-import '../src/components/footer/footer'
+import type { TemplateResult } from 'lit'
+
+import '../src/components/common/navbar/navbar'
+import '../src/components/layouts/app-sidebar'
+import '../src/components/common/footer/footer'
 import './fixed-bottom'
 
 import '../src/stylesheets/shared.css'

@@ -1,16 +1,16 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 
-import type { IconName } from '@/components/icon-button/semantics/icon-names'
+import type { IconName } from '@/components/common/icon-button/semantics/icon-names'
 
 import { OutsideClickController } from '@/controllers/outside-click-controller'
-import { resetStyles } from '@/stylesheets/shared/reset.styles'
-import '@/components/button/button'
-import '@/components/button/button-group'
-import '@/components/flex/flex'
-import '@/components/icon/icon'
-import '@/components/text/text'
-import '@/components/text/semantics/paragraph'
+import { resetStyles } from '@/stylesheets/shared.styles'
+import '@/components/common/button/button'
+import '@/components/common/button/button-group'
+import '@/components/common/flex/flex'
+import '@/components/common/icon/icon'
+import '@/components/common/text/text'
+import '@/components/common/text/semantics/paragraph'
 import { emit } from '@/utils/emit'
 
 /**

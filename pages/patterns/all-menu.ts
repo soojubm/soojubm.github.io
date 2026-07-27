@@ -1,4 +1,5 @@
 import { html } from 'lit'
+
 import { renderLayout } from '../../layouts/base-layouts'
 // webpack.config.js가 sitemap을 ts-node로 로드하는 것과 같은 이유로 상대경로를 유지한다.
 import { SITEMAP, type SitemapNode } from '../../src/sitemap'

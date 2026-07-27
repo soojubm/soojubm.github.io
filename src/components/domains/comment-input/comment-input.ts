@@ -1,10 +1,10 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property, query } from 'lit/decorators.js'
 
-import '@/components/button'
-import { inputStyles } from '@/components/input/input.styles'
-import '@/components/input/textarea'
-import { Textarea } from '@/components/input/textarea'
+import '@/components/common/button'
+import { inputStyles } from '@/components/common/input/input.styles'
+import '@/components/common/input/textarea'
+import { Textarea } from '@/components/common/input/textarea'
 import '@/components/domains/textfield-action-bar'
 import { emit } from '@/utils/emit'
 

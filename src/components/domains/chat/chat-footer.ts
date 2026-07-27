@@ -1,8 +1,8 @@
 import { LitElement, css, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 
-import { resetStyles } from '@/stylesheets/shared/reset.styles'
-import '@/components/flex/flex'
+import { resetStyles } from '@/stylesheets/shared.styles'
+import '@/components/common/flex/flex'
 
 @customElement('mm-chat-footer')
 export class ChatFooter extends LitElement {

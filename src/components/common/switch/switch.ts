@@ -1,0 +1,58 @@
+import { LitElement, html, nothing } from 'lit'
+import { customElement, property } from 'lit/decorators.js'
+import { ifDefined } from 'lit/directives/if-defined.js'
+
+import type { AriaTriState } from '@/types'
+
+import { switchStyles } from '@/components/common/switch/switch.styles'
+import { ToggleController } from '@/controllers/toggle-controller'
+import { emit } from '@/utils/emit'
+import { uniqueId } from '@/utils/unique-id'
+
+@customElement('mm-switch')
+export class Switch extends LitElement {
+  static styles = [switchStyles]
+
+  @property({ type: String }) name = ''
+  @property({ type: String }) size = ''
+  @property({ type: Boolean }) checked = false
+  @property({ type: Boolean }) disabled = false
+
+  private inputId = uniqueId('switch')
+  private toggle = new ToggleController(this, {
+    getValue: () => this.checked,
+    setValue: checked => {
+      this.checked = checked
+    },
+    isDisabled: () => this.disabled,
+  })
+
+  render() {
+    const ariaChecked: AriaTriState = this.checked ? 'true' : 'false'
+
+    return html`
+      <div>
+        <input
+          id=${this.inputId}
+          name=${ifDefined(this.name || undefined)}
+          type="checkbox"
+          role="switch"
+          aria-checked=${ariaChecked}
+          .checked=${this.checked}
+          ?disabled=${this.disabled}
+          @change=${this.handleInputChange}
+        />
+        <label for=${this.inputId}><slot></slot></label>
+      </div>
+    `
+  }
+
+  private handleInputChange(event: Event) {
+    const target = event.target as HTMLInputElement
+    if (!this.toggle.set(target.checked)) return
+
+    emit(this, 'change', { checked: this.checked })
+  }
+}
+
+export default Switch

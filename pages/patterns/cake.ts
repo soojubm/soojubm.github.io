@@ -1,5 +1,7 @@
 import { html } from 'lit'
-import type { FilterOption } from '@/components/button/semantics/filter-button-group'
+
+import type { FilterOption } from '@/components/common/button/semantics/filter-button-group'
+
 import { renderLayout } from '../../layouts/base-layouts'
 
 const castFilterValues = ['all']

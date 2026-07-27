@@ -1,12 +1,12 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, query } from 'lit/decorators.js'
 
-import type Popover from '@/components/popover/popover'
+import type Popover from '@/components/overlay/popover/popover'
 
-import '@/components/button/button'
-import '@/components/icon-button/semantics/more-button'
-import '@/components/menuitem/semantics/menu-item-action'
-import '@/components/popover/popover'
+import '@/components/common/button/button'
+import '@/components/common/icon-button/semantics/more-button'
+import '@/components/common/menuitem/semantics/menu-item-action'
+import '@/components/overlay/popover/popover'
 import { emit } from '@/utils/emit'
 
 /**

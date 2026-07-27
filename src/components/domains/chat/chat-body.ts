@@ -1,8 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 
-import { resetStyles } from '@/stylesheets/shared/reset.styles'
-import { scrollbarStyles } from '@/stylesheets/shared/scrollbar.styles'
+import { resetStyles, scrollbarStyles } from '@/stylesheets/shared.styles'
 
 @customElement('mm-chat-body')
 export class ChatBody extends LitElement {

@@ -1,7 +1,7 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import '@/components/tag/tag'
+import '@/components/common/tag/tag'
 
 import { componentExampleStyles } from './component-example.styles'
 

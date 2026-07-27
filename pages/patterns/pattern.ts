@@ -1,4 +1,5 @@
 import { html } from 'lit'
+
 import { renderDocumentLayout } from '../../layouts/document-layout'
 
 const main = html`

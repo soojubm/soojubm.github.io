@@ -1,10 +1,10 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import type { IconName } from '@/components/icon-button/semantics/icon-names'
-import type { AvatarShape, AvatarVariant } from '@/components/avatar/avatar'
-import type { ListItemSize } from '@/components/list-item/list-item'
-import '@/components/list-item/list-item'
+import type { AvatarShape, AvatarVariant } from '@/components/common/avatar/avatar'
+import type { IconName } from '@/components/common/icon-button/semantics/icon-names'
+import type { ListItemSize } from '@/components/common/list-item/list-item'
+import '@/components/common/list-item/list-item'
 
 /**
  * avatar를 leading으로 가지는 표현 전용 행.

@@ -1,10 +1,10 @@
 import { html } from 'lit'
 
+import type { OptionItem } from '@/components/common/toggle-button'
 import type { ComponentFeatureItem } from '@/components/domains/component/component-feature-list'
 import type { ComponentPropItemData } from '@/components/domains/component/component-props'
 import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
 import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
-import type { OptionItem } from '@/components/toggle-button'
 
 import { renderDocumentLayout } from '../../layouts/document-layout'
 
