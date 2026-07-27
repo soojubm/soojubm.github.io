@@ -6,8 +6,7 @@ import { ICON_NAMES, type IconName } from '@/components/common/icon-button/seman
 import '@/components/common/text/semantics/caption'
 import { SelectionIndicatorController } from '@/controllers/selection-indicator-controller'
 import { focusRing } from '@/stylesheets/shared.styles'
-import { emit } from '@/utils'
-import { arrayAttributeConverter } from '@/utils'
+import { arrayAttributeConverter, emit } from '@/utils'
 
 export interface BottomBarItem {
   label: string

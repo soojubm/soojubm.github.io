@@ -4,8 +4,7 @@ import { customElement, property } from 'lit/decorators.js'
 import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
 import { inputStyles } from '@/components/common/input/input.styles'
 import '@/components/common/input/input'
-import { emit } from '@/utils'
-import { uniqueId } from '@/utils'
+import { emit, uniqueId } from '@/utils'
 
 @customElement('mm-searchfield')
 class SearchField extends LitElement {

@@ -7,8 +7,7 @@ import type { Orientation } from '@/controllers/roving-focus-controller'
 
 import { buttonBaseStyles, buttonSelectedStyles } from '@/components/common/button/button.styles'
 import { RovingFocusController } from '@/controllers/roving-focus-controller'
-import { emit } from '@/utils'
-import { arrayAttributeConverter } from '@/utils'
+import { arrayAttributeConverter, emit } from '@/utils'
 import '@/components/common/icon/icon'
 import '@/components/common/toggle-button/semantics/view-mode-switcher'
 

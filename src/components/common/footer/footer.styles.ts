@@ -7,7 +7,7 @@ export const footerStyles = css`
 
   .footer {
     padding: 2rem var(--layout-padding-inline);
-    padding-left: var(--sidebar-content-shift, var(--layout-padding-inline));
+    padding-left: var(--sidebar-content-shift);
     margin: 0 auto;
     position: relative;
   }

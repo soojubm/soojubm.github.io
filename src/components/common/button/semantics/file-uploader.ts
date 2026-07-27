@@ -3,12 +3,12 @@ import { customElement, property, state } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 import { repeat } from 'lit/directives/repeat.js'
 
+import soojubmImage from '@/images/soojubm.png'
 import { emit } from '@/utils'
 import '@/components/common/flex/flex'
 import '@/components/common/button/semantics/attachment-button'
 import '@/components/common/button/semantics/attachment-item'
 import '@/components/common/tag/semantics/keyword-tag-group'
-import soojubmImage from '@/images/soojubm.png'
 
 async function createSampleFiles(): Promise<File[]> {
   const photoBlob = await fetch(soojubmImage).then(response => response.blob())

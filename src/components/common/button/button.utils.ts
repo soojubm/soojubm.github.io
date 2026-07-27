@@ -2,8 +2,7 @@ import { LitElement } from 'lit'
 import { property } from 'lit/decorators.js'
 
 import { ToggleController } from '@/controllers/toggle-controller'
-import { emit } from '@/utils'
-import { type Constructor } from '@/utils'
+import { type Constructor, emit } from '@/utils'
 
 export interface ToggleSelection {
   selected: boolean

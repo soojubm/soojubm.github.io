@@ -60,6 +60,7 @@
 .page {
   min-height: calc(100vh - var(--navbar-height));
   padding: var(--space-6) var(--layout-padding-inline) calc(var(--space-4) * 6);
+  padding-left: var(--sidebar-content-shift);
   box-sizing: border-box;
   position: relative;
 }
@@ -72,10 +73,6 @@
 .page[data-size='wide'] {
   display: flex;
   justify-content: space-between;
-}
-
-.page {
-  padding-left: var(--sidebar-content-shift, var(--layout-padding-inline));
 }
 
 .site-bottom-bar {

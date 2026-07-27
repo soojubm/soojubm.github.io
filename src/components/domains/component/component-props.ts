@@ -9,8 +9,7 @@ import {
   componentPropItemStyles,
   componentPropsStyles,
 } from '@/components/domains/component/component-props.styles'
-import { arrayAttributeConverter } from '@/utils'
-import { uniqueId } from '@/utils'
+import { arrayAttributeConverter, uniqueId } from '@/utils'
 
 export interface ComponentPropItemData {
   name: string
