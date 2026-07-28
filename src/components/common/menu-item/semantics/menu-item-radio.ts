@@ -1,12 +1,12 @@
 import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import { menuItemStyles } from '@/components/common/menuitem/menuitem.styles'
+import { menuItemStyles } from '@/components/common/menu-item/menu-item.styles'
 import {
   renderMenuItemContent,
   renderMenuItemRow,
   withMenuItemPresentation,
-} from '@/components/common/menuitem/menuitem.utils'
+} from '@/components/common/menu-item/menu-item.utils'
 import { emit } from '@/utils'
 
 @customElement('mm-menu-item-radio')

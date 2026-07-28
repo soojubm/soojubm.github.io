@@ -6,11 +6,11 @@ import '@/components/common/icon/icon'
 import type { IconName } from '@/components/common/icon-button/semantics/icon-names'
 import type { AriaCurrent } from '@/types'
 
-import { menuItemStyles } from '@/components/common/menuitem/menuitem.styles'
+import { menuItemStyles } from '@/components/common/menu-item/menu-item.styles'
 import {
   renderMenuItemContent,
   withMenuItemPresentation,
-} from '@/components/common/menuitem/menuitem.utils'
+} from '@/components/common/menu-item/menu-item.utils'
 
 @customElement('mm-menu-item-action')
 export class MenuItemAction extends withMenuItemPresentation(LitElement) {

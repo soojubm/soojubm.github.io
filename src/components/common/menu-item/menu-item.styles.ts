@@ -2,38 +2,40 @@ import { css } from 'lit'
 
 export const menuItemStyles = css`
   :host {
-    --menuitem-background-color: transparent;
-    --menuitem-padding-inline: 0;
+    --menu-item-background-color: transparent;
+    --menu-item-padding-inline: 0;
   }
 
   :is(button, a, [role^='menuitem']) {
     display: flex;
     align-items: center;
     width: 100%;
-    padding-inline: var(--menuitem-padding-inline);
+    padding-inline: var(--menu-item-padding-inline);
     border-radius: var(--radius);
     color: inherit;
     text-decoration: none;
     box-sizing: border-box;
     cursor: pointer;
-    background-color: var(--menuitem-background-color);
+    /* z-index: -1 배경 레이어가 조상 배경 뒤로 빠지지 않도록 행에서 쌓임 맥락을 만든다 */
     position: relative;
+    isolation: isolate;
 
-    &:hover {
-      --menuitem-background-color: var(--interaction-hover-background-color);
-    }
-
-    &:hover::before {
+    /* background state */
+    &::before {
       content: '';
       display: block;
-      background-color: var(--menuitem-background-color);
+      background-color: var(--menu-item-background-color);
       border-radius: var(--radius);
       position: absolute;
       top: 0;
       bottom: 0;
-      left: -0.5rem;
-      right: -0.5rem;
+      left: calc(var(--space-2) * -1);
+      right: calc(var(--space-2) * -1);
       z-index: -1;
+    }
+
+    &:hover {
+      --menu-item-background-color: var(--interaction-hover-background-color);
     }
 
     &:focus-visible {
@@ -41,7 +43,7 @@ export const menuItemStyles = css`
       outline-offset: -1px;
     }
 
-    &[aria-current='page'] {
+    &[aria-current='page']::before {
       background-color: var(--interaction-selected-background-color);
     }
 

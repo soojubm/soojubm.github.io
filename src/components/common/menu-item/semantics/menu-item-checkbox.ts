@@ -1,15 +1,17 @@
 import { LitElement, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 
-import { menuItemStyles } from '@/components/common/menuitem/menuitem.styles'
+import { menuItemStyles } from '@/components/common/menu-item/menu-item.styles'
 import {
   renderMenuItemToggleRow,
   withMenuItemPresentation,
   withMenuItemToggleState,
-} from '@/components/common/menuitem/menuitem.utils'
+} from '@/components/common/menu-item/menu-item.utils'
 
-@customElement('mm-menu-item-switch')
-export class MenuItemSwitch extends withMenuItemToggleState(withMenuItemPresentation(LitElement)) {
+@customElement('mm-menu-item-checkbox')
+export class MenuItemCheckbox extends withMenuItemToggleState(
+  withMenuItemPresentation(LitElement),
+) {
   static styles = [menuItemStyles]
 
   render() {
@@ -19,15 +21,15 @@ export class MenuItemSwitch extends withMenuItemToggleState(withMenuItemPresenta
   private renderAction() {
     // 행(row)이 role·상태·상호작용을 소유하므로 내부 컨트롤은 시각 표시 전용(inert)이다.
     return html`
-      <mm-switch
+      <mm-checkbox
         slot="trailing"
         inert
         aria-hidden="true"
         .checked=${this.checked}
         ?disabled=${this.disabled}
-      ></mm-switch>
+      ></mm-checkbox>
     `
   }
 }
 
-export default MenuItemSwitch
+export default MenuItemCheckbox

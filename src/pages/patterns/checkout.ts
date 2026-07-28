@@ -22,7 +22,7 @@ const main = html`
       </div>
       <mm-separator></mm-separator>
       <footer>
-        <mm-menu-item-group>
+        <mm-flex direction="column" gap="2">
           <mm-meta-item label="총 상품금액" value="₩ 30,000" />
           <mm-meta-item label="배송료" value="₩ 3,000" />
           <mm-meta-item label="할인" value="₩ 2,000" />
@@ -30,7 +30,7 @@ const main = html`
             <mm-paragraph size="large">최종 결제 금액</mm-paragraph>
             <mm-paragraph size="large">₩ 37,000</mm-paragraph>
           </mm-flex>
-        </mm-menu-item-group>
+        </mm-flex>
         <mm-button variant="primary" size="large" full-width>결제</mm-button>
       </footer>
     </mm-flex>

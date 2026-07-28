@@ -5,7 +5,7 @@ import type Popover from '@/components/overlay/popover/popover'
 
 import '@/components/common/button/button'
 import '@/components/common/icon-button/semantics/more-button'
-import '@/components/common/menuitem/semantics/menu-item-action'
+import '@/components/common/menu-item/semantics/menu-item-action'
 import '@/components/overlay/popover/popover'
 import { emit } from '@/utils'
 

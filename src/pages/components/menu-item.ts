@@ -47,10 +47,13 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'avatar-shape', type: '', optional: true },
   { name: 'tone', type: "'danger' | string", optional: true },
   { name: 'disabled', type: 'boolean', optional: true },
+  { name: 'mm-menu-item-group role', type: "'menu' | 'listbox' = 'menu'", optional: true },
+  { name: 'mm-menu-item-group size', type: "'large'", optional: true },
 ]
 
 const componentTokens: ComponentTokenItemData[] = [
-  { name: 'menuitem-background-color-hover', default: 'var(--interaction-hover-background-color)' },
+  { name: 'menu-item-background-color', default: 'transparent' },
+  { name: 'menu-item-padding-inline', default: '0' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [
@@ -89,7 +92,7 @@ const main = html`
           ></mm-menu-item-action>
         </mm-menu-item-group>
         <mm-separator></mm-separator>
-        <mm-menu-item-group aria-label="액션 메뉴">
+        <mm-menu-item-group aria-label="액션 메뉴" size="large">
           <mm-menu-item-action
             size="48"
             label="Personal License"

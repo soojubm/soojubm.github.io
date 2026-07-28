@@ -1,9 +1,9 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
 
-import type { MenuItemCheckbox } from '@/components/common/menuitem/semantics/menu-item-checkbox'
+import type { MenuItemCheckbox } from '@/components/common/menu-item/semantics/menu-item-checkbox'
 
-import '@/components/common/menuitem/semantics/menu-item-group'
+import '@/components/common/menu-item/semantics/menu-item-group'
 import { MultipleSelectionController } from '@/controllers/multiple-selection-controller'
 import { emit } from '@/utils'
 

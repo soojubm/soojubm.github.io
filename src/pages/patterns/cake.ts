@@ -95,7 +95,7 @@ const main = html`
           .values=${castFilterValues}
           .options=${castFilterOptions}
         ></mm-filter-button-group>
-        <mm-menu-item-group>
+        <mm-menu-item-group size="large">
           <mm-menu-item-action
             avatar-src="/src/images/soojubm.png"
             size="80"

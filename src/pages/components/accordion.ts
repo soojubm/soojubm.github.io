@@ -10,7 +10,7 @@ import { renderLayout } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'tabs.html', label: 'Tabs' },
-  { href: 'menuitem.html', label: 'menuItem' },
+  { href: 'menu-item.html', label: 'menuItem' },
 ]
 
 const componentReferences: ComponentReferenceItemData[] = [

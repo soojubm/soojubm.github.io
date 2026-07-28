@@ -10,7 +10,7 @@ import { renderDocumentLayout } from '@/components/layouts/document-layout'
 const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'layer.html', label: 'Layer' },
   { href: 'tooltip.html', label: 'Tooltip' },
-  { href: 'menuitem.html', label: 'menuItem' },
+  { href: 'menu-item.html', label: 'menuItem' },
 ]
 
 const componentProps: ComponentPropItemData[] = [

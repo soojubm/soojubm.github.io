@@ -5,7 +5,6 @@ import type { OptionItem } from '@/components/common/toggle-button'
 import { renderLayout } from '@/components/layouts/base-layouts'
 import { findSitemapItem } from '@/sitemap'
 
-
 const genderOptions: OptionItem[] = [
   { value: 'other', label: '기타' },
   { value: 'female', label: '여성' },
@@ -67,7 +66,7 @@ const main = html`
       </mm-surface>
 
       <mm-surface variant="paper" radius="large">
-        <mm-menu-item-group>
+        <mm-menu-item-group size="large">
           <mm-setting-item
             size="small"
             label="배송지"
@@ -96,7 +95,7 @@ const main = html`
       <mm-surface variant="paper" radius="large">
         <mm-flex direction="column" gap="3">
           <mm-paragraph size="large">개인정보 & 보안</mm-paragraph>
-          <mm-menu-item-group>
+          <mm-menu-item-group size="large">
             <mm-setting-item label="이메일 주소" description="soojubm@gmail.com">
               <mm-button slot="action">변경</mm-button>
             </mm-setting-item>
@@ -125,7 +124,7 @@ const main = html`
         description="전자 메일, 일정, 연락처에서 사용하는 계정"
       ></mm-list-item>
       <mm-surface variant="paper" radius="large">
-        <mm-menu-item-group>
+        <mm-menu-item-group size="large">
           <mm-setting-item icon="google" label="구글 계정으로 로그인">
             <mm-button slot="action" disabled>Google 연동해제</mm-button>
           </mm-setting-item>
@@ -146,7 +145,7 @@ const main = html`
       ></mm-list-item>
       <mm-surface variant="paper" radius="large">
         <mm-flex direction="column" gap="2">
-          <mm-menu-item-group>
+          <mm-menu-item-group size="large">
             <mm-setting-item icon="credit-card" label="Premium 개인">
               <mm-button slot="action" variant="ghost" aria-label="자세히보기">구독 관리</mm-button>
             </mm-setting-item>

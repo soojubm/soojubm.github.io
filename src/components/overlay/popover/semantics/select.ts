@@ -8,8 +8,8 @@ import type Popover from '@/components/overlay/popover/popover'
 import type { PopoverPlacement } from '@/components/overlay/popover/popover'
 
 import { resetStyles } from '@/stylesheets/shared.styles'
-import '@/components/common/menuitem/semantics/menu-item-action'
-import '@/components/common/menuitem/semantics/menu-item-group'
+import '@/components/common/menu-item/semantics/menu-item-action'
+import '@/components/common/menu-item/semantics/menu-item-group'
 import '@/components/overlay/popover/popover'
 import { emit } from '@/utils'
 

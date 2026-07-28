@@ -6,11 +6,11 @@ import type { AriaCurrent } from '@/types'
 
 import '@/components/common/tag/tag'
 import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
-import { menuItemStyles } from '@/components/common/menuitem/menuitem.styles'
+import { menuItemStyles } from '@/components/common/menu-item/menu-item.styles'
 import {
   renderMenuItemContent,
   withMenuItemPresentation,
-} from '@/components/common/menuitem/menuitem.utils'
+} from '@/components/common/menu-item/menu-item.utils'
 
 @customElement('mm-menu-item-link')
 export class MenuItemLink extends withMenuItemPresentation(LitElement) {

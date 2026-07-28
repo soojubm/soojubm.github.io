@@ -88,7 +88,7 @@ export const SITEMAP: SitemapNode[] = [
       { id: 'button', name: 'Button' },
       { id: 'icon-button', name: 'Icon Button' },
       { id: 'toggle-button', name: 'Toggle Button' },
-      { id: 'menuitem', name: 'Menu Item' },
+      { id: 'menu-item', name: 'Menu Item' },
       { id: 'link', name: 'Link' },
       { id: 'accordion', name: 'Accordion', badge: 'pattern' },
     ],

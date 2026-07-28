@@ -1,8 +1,8 @@
 import { LitElement, html, css, nothing } from 'lit'
 import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
 
-import { MenuItemRadio } from '@/components/common/menuitem/semantics/menu-item-radio'
-import '@/components/common/menuitem/semantics/menu-item-group'
+import { MenuItemRadio } from '@/components/common/menu-item/semantics/menu-item-radio'
+import '@/components/common/menu-item/semantics/menu-item-group'
 import { SingleSelectionController } from '@/controllers/single-selection-controller'
 import { emit } from '@/utils'
 

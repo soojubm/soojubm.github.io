@@ -283,7 +283,7 @@ function layerExampleTemplate() {
     <mm-layer id="bottom-layer" placement="bottom" height="360px">
       <mm-layer-header heading="Bottom Layer"></mm-layer-header>
       <mm-layer-body>
-        <mm-menu-item-group>
+        <mm-menu-item-group size="large">
           <mm-menu-item-action size="48" label="검색"></mm-menu-item-action>
           <mm-menu-item-action size="48" label="저장"></mm-menu-item-action>
           <mm-menu-item-action size="48" label="공유"></mm-menu-item-action>
