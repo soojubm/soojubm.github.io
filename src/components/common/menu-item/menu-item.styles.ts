@@ -43,8 +43,8 @@ export const menuItemStyles = css`
       outline-offset: -1px;
     }
 
-    &[aria-current='page']::before {
-      background-color: var(--interaction-selected-background-color);
+    &[aria-current='page'] {
+      --menu-item-background-color: var(--interaction-selected-background-color);
     }
 
     &[disabled],

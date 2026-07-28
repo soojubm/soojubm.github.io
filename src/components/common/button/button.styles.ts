@@ -122,9 +122,9 @@ export const buttonVariantStyles = css`
 /** 누름 상태는 표준 aria-pressed로 표현하므로, 스킨도 해당 attribute selector를 단일 기준으로 둔다. */
 export const buttonSelectedStyles = css`
   button[aria-pressed='true'] {
+    --button-background-color: var(--interaction-selected-background-color);
+    --button-text-color: var(--interaction-selected-foreground-color);
     border-color: var(--interaction-selected-border-color);
-    background: var(--interaction-selected-background-color);
-    color: var(--interaction-selected-foreground-color);
   }
 `
 
@@ -149,7 +149,7 @@ export const followButtonStyles = css`
   }
 
   button {
-    background: var(--color-primary);
-    color: var(--foreground-color-on-solid);
+    --button-background-color: var(--color-primary);
+    --button-text-color: var(--foreground-color-on-solid);
   }
 `

@@ -20,7 +20,7 @@ const componentProps: ComponentPropItemData[] = [
 ]
 
 const componentTokens: ComponentTokenItemData[] = [
-  { name: 'thumbnail-border-radius', default: 'var(--radius-large)' },
+  { name: 'thumbnail-border-radius', default: 'var(--radius)' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [

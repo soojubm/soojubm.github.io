@@ -1,7 +1,9 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
+import { ifDefined } from 'lit/directives/if-defined.js'
 
 import type { MenuItemCheckbox } from '@/components/common/menu-item/semantics/menu-item-checkbox'
+import type { MenuItemGroupSize } from '@/components/common/menu-item/semantics/menu-item-group'
 
 import '@/components/common/menu-item/semantics/menu-item-group'
 import { MultipleSelectionController } from '@/controllers/multiple-selection-controller'
@@ -20,6 +22,7 @@ export class MenuItemCheckboxGroup extends LitElement {
     }
   `
 
+  @property({ type: String }) size: MenuItemGroupSize = ''
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = ''
   @property({ type: Array }) values: string[] = []
 
@@ -42,6 +45,7 @@ export class MenuItemCheckboxGroup extends LitElement {
     return html`
       <mm-menu-item-group
         role="group"
+        size=${ifDefined(this.size || undefined)}
         aria-label=${this.ariaLabel || nothing}
         @change=${this.handleCheckboxChange}
       >

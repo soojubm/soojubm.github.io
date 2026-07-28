@@ -54,9 +54,8 @@ const componentProps: ComponentPropItemData[] = [
 const componentTokens: ComponentTokenItemData[] = [
   { name: 'input-height', default: 'var(--size-48)' },
   { name: 'input-background-color', default: 'var(--background-subtle-color)' },
-  { name: 'input-border-color', default: 'transparent' },
+  { name: 'input-border', default: 'var(--border-transparent)' },
   { name: 'input-border-radius', default: 'var(--radius)' },
-  { name: 'input-text-color', default: 'var(--foreground-color)' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [
@@ -172,7 +171,6 @@ const main = html`
         .calendar {
           width: 250px;
           --date-width: 32px;
-          --date-height: 32px;
           --date-background: var(--background-subtle-color);
           position: relative;
         }

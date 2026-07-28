@@ -33,7 +33,7 @@ export class PromptInput extends LitElement {
       mm-textarea {
         /* 배경은 호스트가 칠한다. 반투명 테마에서 이중 레이어 방지 */
         --input-background-color: transparent;
-        --input-border-color-hover: transparent;
+        --input-border: var(--border-transparent);
         --input-focus-outline: none;
       }
 

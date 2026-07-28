@@ -105,7 +105,6 @@ export const tagStyles = css`
     --tag-height: var(--size-24);
     --tag-padding-inline: var(--space-2);
     --tag-gap: var(--space-1);
-    --tag-border-width: var(--border-width);
     --tag-border-color: var(--border-color);
     --tag-border-radius: var(--radius);
     --tag-background-color: var(--background-color);
@@ -118,7 +117,7 @@ export const tagStyles = css`
     min-height: var(--tag-height);
     gap: var(--tag-gap);
     padding-inline: var(--tag-padding-inline);
-    border: var(--tag-border-width) solid var(--tag-border-color);
+    border: var(--border-width) solid var(--tag-border-color);
     border-radius: var(--tag-border-radius);
     box-sizing: border-box;
     background-color: var(--tag-background-color);

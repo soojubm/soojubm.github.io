@@ -28,9 +28,8 @@ const componentProps: ComponentPropItemData[] = [
 const componentTokens: ComponentTokenItemData[] = [
   { name: 'input-height', default: 'var(--size-48)' },
   { name: 'input-background-color', default: 'var(--background-subtle-color)' },
-  { name: 'input-border', default: 'var(--border)' },
+  { name: 'input-border', default: 'var(--border-transparent)' },
   { name: 'input-border-radius', default: 'var(--radius)' },
-  { name: 'input-text-color', default: 'var(--foreground-color)' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [

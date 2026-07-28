@@ -6,8 +6,6 @@
   margin: 0 auto;
 
   color: var(--foreground-color);
-  --width-section: 60%;
-  --outset-section: 4rem 0;
   --border-width: null;
   --border: var(--border-width) solid var(--foreground-color);
   --section-padding: 4rem;

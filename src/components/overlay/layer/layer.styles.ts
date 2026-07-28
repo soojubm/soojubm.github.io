@@ -10,18 +10,19 @@ import { MEDIA } from '@/constants'
 export const layerStyles = css`
   :host {
     --layer-z-index: var(--material-zindex-modal);
-    --layer-backdrop-background-color: var(--color-backdrop);
+    --layer-backdrop-background-color: 0;
     --layer-backdrop-blur: 0px;
     --layer-border-radius: var(--radius-large);
+    --layer-padding-block: var(--space-4);
     --layer-padding-inline: var(--space-4);
     --layer-padding-block: var(--space-3);
     --layer-max-width: var(--layout-width-narrow);
 
     display: flex;
-    width: 100vw;
-    height: 100dvh;
     justify-content: center;
     align-items: center;
+    width: 100vw;
+    height: 100dvh;
     background: var(--layer-backdrop-background-color);
 
     opacity: 0;
@@ -50,7 +51,7 @@ export const layerStyles = css`
     width: 100%;
     max-width: var(--layer-max-width);
     max-height: 90vh;
-    padding: 0 var(--layer-padding-inline);
+    padding: var(--layer-padding-block) var(--layer-padding-inline);
     border: var(--surface-overlay-border);
     border-radius: var(--layer-border-radius);
     box-shadow: var(--surface-overlay-shadow);
@@ -196,14 +197,15 @@ export const layerHeaderStyles = css`
     padding: var(--layer-padding-block) 0;
     box-sizing: border-box;
     position: relative;
-  }
-  header::before {
-    content: '';
-    background: var(--surface-overlay-background-color);
-    backdrop-filter: var(--surface-overlay-backdrop-filter);
-    position: absolute;
-    inset: 0;
-    z-index: -1;
+
+    &::before {
+      content: '';
+      background: var(--surface-overlay-background-color);
+      backdrop-filter: var(--surface-overlay-backdrop-filter);
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+    }
   }
 `
 
@@ -223,7 +225,6 @@ export const layerFooterStyles = css`
   :host {
     display: block;
     box-sizing: border-box;
-    padding: var(--layer-padding-block) 0
-      calc(var(--layer-padding-block) + env(safe-area-inset-bottom));
+    padding: var(--layer-padding-block) 0 calc(0 + env(safe-area-inset-bottom));
   }
 `

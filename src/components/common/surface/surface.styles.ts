@@ -51,7 +51,6 @@ const surfaceBaseStyles = css`
     --surface-background-color: var(--background-color);
     --surface-text-color: inherit;
     --surface-shadow: none;
-    --surface-backdrop-filter: var(--surface-base-backdrop-filter);
 
     display: flex;
     flex-direction: column;

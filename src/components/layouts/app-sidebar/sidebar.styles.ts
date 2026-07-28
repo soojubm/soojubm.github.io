@@ -37,9 +37,4 @@ export const sidebarStyles = css`
     transform: translateX(0);
     overscroll-behavior: contain;
   }
-
-  mm-menu-item-link:hover,
-  mm-menu-item-link[aria-current='page'] {
-    border-color: var(--color-primary);
-  }
 `

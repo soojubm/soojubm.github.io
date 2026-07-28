@@ -86,6 +86,7 @@
 - width·height처럼 요소 자체의 고정 치수는 간격 토큰이 아니라 size 토큰을 우선 사용한다.
 - 컴포넌트 토큰은 소비하는 CSS 속성 이름으로 짓는다(`background`→`-background-color`, `border-radius`→`-border-radius`, `color:`→`-text-color`, `height`→`-height`). 한 값이 여러 속성을 먹이면 특정 속성명으로 좁히지 않고 제네릭 이름을 유지한다.
 - variant·size 같은 상태에 따라 값이 달라질 때는 속성이나 `--x-small`·`--x-large` 같은 대안 토큰을 상태별로 미리 선언하지 않고, 상태 selector가 실제로 소비되는 토큰 하나에 값을 직접 재할당한다.
+- hover·selected·disabled 같은 상호작용 상태도 같은 규칙을 따른다. 상태 selector에서 `background-color` 같은 속성을 다시 선언하지 않고 그 값을 담은 변수만 재할당하며, 재할당은 변수를 소비하는 pseudo-element가 아니라 상태를 갖는 요소에 둔다. 재할당할 변수가 없다고 해서 새 토큰을 만들지는 않는다.
 
 ### 테마
 

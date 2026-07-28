@@ -31,6 +31,10 @@ export const inputStyles = css`
     --input-padding-inline: var(--space-4);
   }
 
+  :host(:hover) {
+    --input-border: var(--border);
+  }
+
   :host([size='small']) {
     --input-height: var(--size-32);
     --input-padding-block: 0;
@@ -51,9 +55,6 @@ export const inputStyles = css`
     box-sizing: border-box;
     background: var(--input-background-color);
 
-    &:hover {
-      border-color: var(--input-border-color-hover);
-    }
     &:focus-within {
       outline: var(--input-focus-outline);
       outline-offset: 2px;

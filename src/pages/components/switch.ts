@@ -25,10 +25,6 @@ const componentTokens: ComponentTokenItemData[] = [
   { name: 'switch-height', default: 'size-16' },
   { name: 'switch-border-radius', default: 'var(--radius)' },
   { name: 'switch-background-color', default: 'var(--border-color)' },
-  {
-    name: 'switch-background-color-checked',
-    default: 'var(--interaction-selected-background-color)',
-  },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [

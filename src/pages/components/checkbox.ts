@@ -27,7 +27,7 @@ const componentTokens: ComponentTokenItemData[] = [
   { name: 'checkbox-size', default: 'var(--size-16)' },
   { name: 'checkbox-border-radius', default: 'var(--radius)' },
   { name: 'checkbox-background-color', default: 'var(--background-color)' },
-  { name: 'checkbox-border-color-checked', default: 'var(--interaction-selected-border-color)' },
+  { name: 'checkbox-border-color', default: 'var(--border-color)' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [

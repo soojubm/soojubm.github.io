@@ -36,8 +36,6 @@ export const radioStyles = css`
     --radio-border-radius: var(--radius-full);
     --radio-border-color: var(--border-color);
     --radio-background-color: var(--background-color);
-    --radio-border-color-checked: var(--interaction-selected-border-color);
-    --radio-background-color-checked: var(--interaction-selected-foreground-color);
     gap: var(--space-2);
   }
 
@@ -63,8 +61,8 @@ export const radioStyles = css`
   }
 
   input[type='radio']:checked + label > span {
-    background: var(--radio-background-color-checked);
-    border-color: var(--radio-border-color-checked);
+    --radio-background-color: var(--interaction-selected-foreground-color);
+    --radio-border-color: var(--interaction-selected-border-color);
     animation: radiomark var(--duration-quickly) ease-out;
     box-shadow: 0 0 0 4px var(--background-color) inset;
   }

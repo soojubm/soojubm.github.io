@@ -42,7 +42,6 @@ export class Dialog extends LitElement {
           ></mm-status-message>
           <slot></slot>
         </mm-layer-body>
-
         <mm-layer-footer
           .primaryAction=${this.primaryAction}
           .secondaryAction=${this.secondaryAction}

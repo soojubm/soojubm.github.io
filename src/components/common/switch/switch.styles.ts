@@ -8,7 +8,6 @@ export const switchStyles = css`
     --switch-height: 16px;
     --switch-border-radius: var(--radius);
     --switch-background-color: var(--border-color);
-    --switch-background-color-checked: var(--interaction-selected-foreground-color);
     display: block;
     height: var(--switch-height);
     position: relative;
@@ -28,9 +27,8 @@ export const switchStyles = css`
     inline-size: 100%;
 
     &:checked + label {
-      &:before {
-        background: var(--switch-background-color-checked);
-      }
+      --switch-background-color: var(--interaction-selected-foreground-color);
+
       &:after {
         transform: translateX(calc(var(--switch-width) - 16px));
       }

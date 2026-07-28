@@ -49,6 +49,8 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'disabled', type: 'boolean', optional: true },
   { name: 'mm-menu-item-group role', type: "'menu' | 'listbox' = 'menu'", optional: true },
   { name: 'mm-menu-item-group size', type: "'large'", optional: true },
+  { name: 'mm-menu-item-radio-group size', type: "'large'", optional: true },
+  { name: 'mm-menu-item-checkbox-group size', type: "'large'", optional: true },
 ]
 
 const componentTokens: ComponentTokenItemData[] = [
@@ -155,7 +157,7 @@ const main = html`
 
       <mm-separator></mm-separator>
 
-      <mm-menu-item-radio-group name="access" value="public" aria-label="공개 범위">
+      <mm-menu-item-radio-group name="access" value="public" size="large" aria-label="공개 범위">
         <mm-menu-item-radio
           size="small"
           value="public"

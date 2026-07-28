@@ -1,5 +1,8 @@
 import { LitElement, html, css, nothing } from 'lit'
 import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
+import { ifDefined } from 'lit/directives/if-defined.js'
+
+import type { MenuItemGroupSize } from '@/components/common/menu-item/semantics/menu-item-group'
 
 import { MenuItemRadio } from '@/components/common/menu-item/semantics/menu-item-radio'
 import '@/components/common/menu-item/semantics/menu-item-group'
@@ -16,6 +19,7 @@ export class MenuItemRadioGroup extends LitElement {
 
   @property({ type: String }) name = ''
   @property({ type: String }) value = ''
+  @property({ type: String }) size: MenuItemGroupSize = ''
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = ''
 
   @queryAssignedElements({ selector: 'mm-menu-item-radio' })
@@ -34,6 +38,7 @@ export class MenuItemRadioGroup extends LitElement {
     return html`
       <mm-menu-item-group
         role="radiogroup"
+        size=${ifDefined(this.size || undefined)}
         aria-label=${this.ariaLabel || nothing}
         @change=${this.handleRadioChange}
       >

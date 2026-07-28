@@ -22,13 +22,9 @@ const componentProps: ComponentPropItemData[] = [
 
 const componentTokens: ComponentTokenItemData[] = [
   { name: 'radio-size', default: 'var(--size-16)' },
-  { name: 'radio-border', default: 'var(--border)' },
   { name: 'radio-border-radius', default: 'var(--radius-full)' },
-  {
-    name: 'radio-background-color-checked',
-    default: 'var(--interaction-selected-background-color)',
-  },
-  { name: 'radio-border-color-checked', default: 'var(--interaction-selected-border-color)' },
+  { name: 'radio-border-color', default: 'var(--border-color)' },
+  { name: 'radio-background-color', default: 'var(--background-color)' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [

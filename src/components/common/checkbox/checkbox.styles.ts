@@ -80,8 +80,8 @@ export const checkboxStyles = css`
   }
 
   input[type='checkbox']:indeterminate + label > span {
-    border-color: var(--interaction-selected-border-color);
-    background: var(--interaction-selected-background-color);
+    --checkbox-border-color: var(--interaction-selected-border-color);
+    --checkbox-background-color: var(--interaction-selected-background-color);
   }
 
   input[type='checkbox']:indeterminate + label > span::after {

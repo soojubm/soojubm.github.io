@@ -72,7 +72,6 @@
   --color-accent: var(--yellow800);
   --color-success: var(--green800);
   --color-success-foreground: #117a45;
-  --color-success-background: #fff;
   --color-warning: var(--orange800);
   --color-warning-foreground: #9a4600;
   --color-warning-background: #fff;
@@ -80,14 +79,19 @@
   --color-danger-foreground: #c51635;
   --color-warning-foreground: #fff;
 
-  /* 시멘틱 컬러 */
+  /*
+   * 시멘틱 컬러.
+   * data-theme는 body에 붙어 :root(html)의 자손이므로, 여기서 테마가 재정의하는 토큰을 참조하면
+   * 그 참조는 html 시점 값으로 굳는다. 기본값은 테마가 건드리지 않는 원시값으로 두고,
+   * 테마별 값이 필요한 토큰은 각 테마 블록이 같은 이름으로 다시 선언한다.
+   */
   --interaction-active-background-color: var(--color-accent);
   --interaction-focus-outline: 2px solid var(--gray800);
-  --interaction-active-shadow: 0 0 0 2px #c8f3fa, inset 0 0 0 2px var(--foreground-color-on-solid);
+  --interaction-active-shadow: 0 0 0 2px #c8f3fa, inset 0 0 0 2px var(--gray0);
   --interaction-selected-background-color: var(--color-primary-subtle);
   --interaction-selected-foreground-color: var(--color-primary);
   --interaction-selected-border-color: var(--color-primary);
-  --interaction-hover-background-color: var(--background-subtle-color);
+  --interaction-hover-background-color: var(--gray100);
 
   --background-color: var(--gray0);
   --background-subtle-color: var(--gray100);
@@ -163,10 +167,6 @@
   --surface-overlay-blur: 28px;
   --surface-overlay-opacity: 0.7;
 
-  /* 스크롤 콘텐츠 위에 뜬 chrome 바가 재질을 페이드시키기 시작하는 지점.
-     재질이 없는 테마는 100%(= 페이드 없음), 재질이 있는 테마만 값을 낮춘다 */
-  --material-fade-start: 100%;
-
   /* z-index: 화면 위 높낮이를 표현하는 값. 같은 그룹 안에서만 값을 비교한다 */
   --material-zindex-base: 0; /* 기본 콘텐츠: 문서, 리스트, 배경 */
   --material-zindex-raised: 10; /* 카드, 패널처럼 살짝 뜬 요소 */
@@ -175,22 +175,17 @@
   --material-zindex-modal: 300; /* 모달, 다이얼로그, 시트 */
   --material-zindex-toast: 1000; /* 알림, 스낵바: 항상 최상단 */
 
-  --duration: 0.4s;
   --duration-quickly: 0.2s;
   --duration-slowly: 0.6s;
 
   --transition-duration: 180ms;
   --transition-duration-emphasis: 220ms;
 
-  --bazier: cubic-bezier(0.455, 0.03, 0.515, 0.955);
-  --transition-base: all 0.4s var(--bazier);
   --animation-duration: 0.4s;
 
   --animation-delay-first: 0.2s;
   --animation-delay-second: 0.4s;
   --animation-delay-third: 0.6s;
-
-  --color-backdrop: rgba(0, 0, 0, 0.1);
 }
 
 .shape-square {
@@ -253,6 +248,9 @@
 
   --foreground-color-on-solid: var(--foreground-color);
 
+  --interaction-hover-background-color: var(--background-subtle-color);
+  --interaction-active-shadow: 0 0 0 2px #c8f3fa, inset 0 0 0 2px var(--foreground-color-on-solid);
+
   --border-color: var(--gray800);
 
   --border: var(--border-width) solid var(--border-color);
@@ -303,9 +301,6 @@
   --surface-overlay-border: var(--border-width) solid rgb(255 255 255 / 60%);
   --surface-overlay-backdrop-filter: saturate(180%) blur(var(--surface-overlay-blur));
   --surface-overlay-shadow: 0 12px 48px rgba(0, 0, 0, 0.125);
-
-  /* 재질이 있으므로 chrome 바 아래쪽을 페이드시켜 스크롤 콘텐츠로 자연스럽게 잇는다 */
-  --material-fade-start: 50%;
 }
 
 /* navbar 2px */
