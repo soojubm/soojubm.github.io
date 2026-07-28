@@ -262,10 +262,21 @@
   --brutal-border-color: #000;
   --brutal-border: var(--border-width) solid var(--brutal-border-color);
 
+  --border-color: #000;
   --border: var(--brutal-border);
   --border-transparent: var(--brutal-border);
   --surface-chrome-border: var(--border);
   --surface-overlay-border: var(--border);
+
+  /* 테두리는 한 겹 검정으로 통일하므로 카테고리 팔레트도 배경·텍스트만 남기고 테두리는 같은 값을 쓴다 */
+  --tag-category-1-border: var(--border-color);
+  --tag-category-2-border: var(--border-color);
+  --tag-category-3-border: var(--border-color);
+  --tag-category-4-border: var(--border-color);
+  --tag-category-5-border: var(--border-color);
+  --tag-category-6-border: var(--border-color);
+  --tag-category-7-border: var(--border-color);
+  --tag-category-8-border: var(--border-color);
 
   --surface-chrome-shadow: none;
   --surface-overlay-shadow: none;

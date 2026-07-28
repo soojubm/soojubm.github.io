@@ -4,13 +4,13 @@ import { buildAttributeRules } from '@/utils'
 
 type ToneStyle = {
   background: string
-  color: string
+  textColor: string
   borderColor: string
 }
 
 const categoryTone = (token: number): ToneStyle => ({
   background: `var(--tag-category-${token}-bg)`,
-  color: `var(--tag-category-${token}-text)`,
+  textColor: `var(--tag-category-${token}-text)`,
   borderColor: `var(--tag-category-${token}-border)`,
 })
 
@@ -26,12 +26,12 @@ const defineToneMap = <Map extends Record<string, TagTone>>(map: Map) => map
 export const tagToneStyles = {
   default: {
     background: 'var(--background-color)',
-    color: 'var(--foreground-color)',
+    textColor: 'var(--foreground-color)',
     borderColor: 'var(--border-color)',
   },
   gold: {
     background: 'var(--color-accent)',
-    color: 'var(--foreground-color)',
+    textColor: 'var(--foreground-color)',
     borderColor: 'var(--color-accent)',
   },
   green: categoryTone(2),
@@ -94,7 +94,7 @@ const tagToneTokens = Object.fromEntries(
     tone,
     {
       '--tag-background-color': style.background,
-      '--tag-color': style.color,
+      '--tag-text-color': style.textColor,
       '--tag-border-color': style.borderColor,
     },
   ]),
@@ -105,11 +105,11 @@ export const tagStyles = css`
     --tag-height: var(--size-24);
     --tag-padding-inline: var(--space-2);
     --tag-gap: var(--space-1);
-    --tag-border: var(--border);
-    --tag-border-color: var(--tag-border-color);
+    --tag-border-width: var(--border-width);
+    --tag-border-color: var(--border-color);
     --tag-border-radius: var(--radius);
     --tag-background-color: var(--background-color);
-    --tag-color: var(--foreground-color);
+    --tag-text-color: var(--foreground-color);
     --tag-text-size: var(--font-size-12);
 
     display: inline-flex;
@@ -118,11 +118,11 @@ export const tagStyles = css`
     min-height: var(--tag-height);
     gap: var(--tag-gap);
     padding-inline: var(--tag-padding-inline);
-    border: var(--tag-border);
+    border: var(--tag-border-width) solid var(--tag-border-color);
     border-radius: var(--tag-border-radius);
     box-sizing: border-box;
     background-color: var(--tag-background-color);
-    color: var(--tag-color);
+    color: var(--tag-text-color);
     white-space: nowrap;
     font-size: var(--tag-text-size);
     line-height: 1;
