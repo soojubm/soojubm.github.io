@@ -3,10 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 
 import '@/components/common/text/semantics/heading'
 import '@/components/common/tag/semantics/keyword-tag'
-import {
-  componentTokensStyles,
-  tokenStyles,
-} from '@/components/domains/component/component-tokens.styles'
+import { componentTokensStyles, tokenStyles } from '@/components/domains/component/component.styles'
 import { arrayAttributeConverter } from '@/utils'
 
 export interface ComponentTokenItemData {

@@ -8,7 +8,7 @@ import '@/components/common/button/semantics/read-more-button'
 import {
   componentPropItemStyles,
   componentPropsStyles,
-} from '@/components/domains/component/component-props.styles'
+} from '@/components/domains/component/component.styles'
 import { arrayAttributeConverter, uniqueId } from '@/utils'
 
 export interface ComponentPropItemData {
