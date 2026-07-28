@@ -4,7 +4,7 @@ import { ifDefined } from 'lit/directives/if-defined.js'
 
 import '@/components/common/icon-button/icon-button'
 import '@/components/common/menu-item/semantics/menu-item-action'
-import '@/components/common/menu-item/semantics/menu-item-group'
+import '@/components/common/menu-item/menu-item-group'
 import '@/components/overlay/popover/popover'
 import '@/components/common/radius-picker/radius-picker'
 import '@/components/common/separator/separator'

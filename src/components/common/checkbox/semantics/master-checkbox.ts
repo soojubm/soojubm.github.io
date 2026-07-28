@@ -1,7 +1,7 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import type { CheckboxGroup } from '@/components/common/checkbox/semantics/checkbox-group'
+import type { CheckboxGroup } from '@/components/common/checkbox/checkbox-group'
 import type { AriaIdRef } from '@/types'
 
 import { checkboxStyles } from '@/components/common/checkbox/checkbox.styles'

@@ -1,18 +1,24 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import '@/components/overlay/layer/semantics/layer-body'
-import '@/components/overlay/layer/semantics/layer-footer'
+import '@/components/overlay/layer/layer-body'
+import '@/components/overlay/layer/layer-footer'
 import '@/components/common/status-message'
 import type { ActionConfig } from '@/types'
 
-import { layerStyles } from '@/components/overlay/layer/layer.styles'
+import {
+  layerStyles,
+  overlaySurfaceStyles,
+  overlayVisibilityStyles,
+} from '@/components/overlay/overlay.styles'
 import { LayerController } from '@/controllers/layer-controller'
 import { emit } from '@/utils'
 
 @customElement('mm-dialog')
 export class Dialog extends LitElement {
   static styles = [
+    overlayVisibilityStyles,
+    overlaySurfaceStyles,
     layerStyles,
     css`
       :host {
@@ -34,7 +40,7 @@ export class Dialog extends LitElement {
 
   render() {
     return html`
-      <div class="layer" ?open=${this.open}>
+      <div class="panel" ?open=${this.open}>
         <mm-layer-body>
           <mm-status-message
             heading=${this.heading}

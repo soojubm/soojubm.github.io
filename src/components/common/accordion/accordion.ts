@@ -1,7 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
 
-import type { AccordionItem } from '@/components/common/accordion/semantics/accordion-item'
+import type { AccordionItem } from '@/components/common/accordion/accordion-item'
 
 /**
  * mm-accordion-item을 묶는 그룹 컨테이너.

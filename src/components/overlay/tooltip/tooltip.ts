@@ -1,7 +1,7 @@
 import { LitElement, html } from 'lit'
 import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
 
-import { tooltipStyles } from '@/components/overlay/tooltip/tooltip.styles'
+import { tooltipStyles } from '@/components/overlay/overlay.styles'
 import { uniqueId } from '@/utils'
 
 @customElement('mm-tooltip')

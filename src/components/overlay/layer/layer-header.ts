@@ -1,7 +1,7 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import { layerHeaderStyles } from '@/components/overlay/layer/layer.styles'
+import { layerHeaderStyles } from '@/components/overlay/overlay.styles'
 import { emit } from '@/utils'
 
 @customElement('mm-layer-header')

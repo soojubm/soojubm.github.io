@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 
 import type { ActionConfig } from '@/types'
 
-import { layerFooterStyles } from '@/components/overlay/layer/layer.styles'
+import { layerFooterStyles } from '@/components/overlay/overlay.styles'
 import { emit } from '@/utils'
 
 @customElement('mm-layer-footer')

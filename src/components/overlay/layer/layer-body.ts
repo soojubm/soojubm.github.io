@@ -1,7 +1,7 @@
 import { LitElement, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 
-import { layerBodyStyles } from '@/components/overlay/layer/layer.styles'
+import { layerBodyStyles } from '@/components/overlay/overlay.styles'
 import '@/components/common/scroll/scroll'
 
 @customElement('mm-layer-body')

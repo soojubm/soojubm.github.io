@@ -1,7 +1,7 @@
 import { LitElement, html } from 'lit'
 import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
 
-import { popoverStyles } from '@/components/overlay/popover/popover.styles'
+import { overlaySurfaceStyles, popoverStyles } from '@/components/overlay/overlay.styles'
 import '@/components/common/scroll/scroll'
 import { DisclosureController } from '@/controllers/disclosure-controller'
 import { emit } from '@/utils'
@@ -17,7 +17,7 @@ export type PopoverPlacement = 'bottom-left' | 'bottom-right' | 'top-left' | 'to
  */
 @customElement('mm-popover')
 class Popover extends LitElement {
-  static styles = popoverStyles
+  static styles = [overlaySurfaceStyles, popoverStyles]
 
   @property({ type: Boolean, reflect: true }) open = false
   @property({ type: String, reflect: true }) placement: PopoverPlacement = 'bottom-left'

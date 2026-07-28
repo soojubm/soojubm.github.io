@@ -9,7 +9,7 @@ import {
   renderFieldValidation,
   withTextfieldState,
 } from '@/components/common/input/semantics/textfield.helpers'
-import { textfieldStyles } from '@/components/common/input/semantics/textfield.styles'
+import { textfieldStyles } from '@/components/common/input/input.styles'
 import '@/components/common/icon-button/icon-button'
 import '@/components/common/input/input'
 import { emit } from '@/utils'

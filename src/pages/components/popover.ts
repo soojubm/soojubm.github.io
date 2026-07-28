@@ -29,11 +29,7 @@ const componentTokens: ComponentTokenItemData[] = [
   { name: 'popover-max-height', default: 'none' },
   { name: 'popover-offset', default: 'var(--space-1)' },
   { name: 'popover-padding', default: 'var(--space-1)' },
-  { name: 'popover-border', default: 'var(--surface-overlay-border)' },
   { name: 'popover-border-radius', default: 'var(--radius)' },
-  { name: 'popover-background-color', default: 'var(--surface-overlay-background-color)' },
-  { name: 'popover-backdrop-filter', default: 'var(--surface-overlay-backdrop-filter)' },
-  { name: 'popover-shadow', default: 'var(--surface-overlay-shadow)' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [

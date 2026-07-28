@@ -3,9 +3,9 @@ import { customElement, property, queryAssignedElements } from 'lit/decorators.j
 import { ifDefined } from 'lit/directives/if-defined.js'
 
 import type { MenuItemCheckbox } from '@/components/common/menu-item/semantics/menu-item-checkbox'
-import type { MenuItemGroupSize } from '@/components/common/menu-item/semantics/menu-item-group'
+import type { MenuItemGroupSize } from '@/components/common/menu-item/menu-item-group'
 
-import '@/components/common/menu-item/semantics/menu-item-group'
+import '@/components/common/menu-item/menu-item-group'
 import { MultipleSelectionController } from '@/controllers/multiple-selection-controller'
 import { emit } from '@/utils'
 

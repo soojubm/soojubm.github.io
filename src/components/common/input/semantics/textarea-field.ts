@@ -8,7 +8,7 @@ import {
   renderFieldHelper,
   renderFieldLabel,
 } from '@/components/common/input/semantics/textfield.helpers'
-import { textfieldStyles } from '@/components/common/input/semantics/textfield.styles'
+import { textfieldStyles } from '@/components/common/input/input.styles'
 import '@/components/common/input/textarea'
 import { uniqueId } from '@/utils'
 

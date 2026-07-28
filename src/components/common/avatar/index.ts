@@ -1,6 +1,6 @@
 import '@/components/common/avatar/avatar'
 
-import '@/components/common/avatar/semantics/avatar-group'
+import '@/components/common/avatar/avatar-group'
 
 export {
   AVATAR_SHAPE_TYPE_LABEL,

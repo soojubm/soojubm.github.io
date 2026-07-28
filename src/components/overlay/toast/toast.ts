@@ -1,7 +1,7 @@
 import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import { toastStyles } from '@/components/overlay/toast/toast.styles'
+import { overlayVisibilityStyles, toastStyles } from '@/components/overlay/overlay.styles'
 
 // 스스로 닫히기까지의 표시 시간(ms). transient 동작은 내부 책임이라 prop으로 노출하지 않는다.
 const DURATION = 3000
@@ -13,7 +13,7 @@ const DURATION = 3000
  */
 @customElement('mm-toast')
 class Toast extends LitElement {
-  static styles = toastStyles
+  static styles = [overlayVisibilityStyles, toastStyles]
 
   @property({ type: String, reflect: true }) role = 'status'
   @property({ type: Boolean, reflect: true }) open = false

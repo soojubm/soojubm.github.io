@@ -5,7 +5,9 @@ import {
   layerDragHandleStyles,
   layerPlacementStyles,
   layerStyles,
-} from '@/components/overlay/layer/layer.styles'
+  overlaySurfaceStyles,
+  overlayVisibilityStyles,
+} from '@/components/overlay/overlay.styles'
 import { LayerController } from '@/controllers/layer-controller'
 import { emit } from '@/utils'
 export type LayerPlacement = 'center' | 'bottom' | 'left' | 'right'
@@ -20,14 +22,20 @@ const DRAG_CLOSE_THRESHOLD_RATIO = 0.25
  */
 @customElement('mm-layer')
 class Layer extends LitElement {
-  static styles = [layerStyles, layerPlacementStyles, layerDragHandleStyles]
+  static styles = [
+    overlayVisibilityStyles,
+    overlaySurfaceStyles,
+    layerStyles,
+    layerPlacementStyles,
+    layerDragHandleStyles,
+  ]
 
   @property({ type: String, reflect: true }) placement: LayerPlacement = 'center'
   @property({ type: String, reflect: true }) width: LayerWidth = 'medium'
   @property({ type: String }) height?: string
   @property({ type: Boolean, reflect: true }) open = false
 
-  @query('.layer') private layerEl!: HTMLElement
+  @query('.panel') private layerEl!: HTMLElement
 
   private dragging = false
   private dragStartY = 0
@@ -49,7 +57,7 @@ class Layer extends LitElement {
 
   render() {
     return html`
-      <aside class="layer" ?open=${this.open}>
+      <aside class="panel" ?open=${this.open}>
         ${this.renderDragHandle()}
         <slot></slot>
       </aside>
