@@ -112,7 +112,7 @@ export class ListItem extends LitElement {
 
     if (this.size === 'small') {
       return html`
-        <mm-caption>${this.description}</mm-caption>
+        <mm-text size="12" color="light">${this.description}</mm-text>
       `
     }
 

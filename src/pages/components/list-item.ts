@@ -11,7 +11,7 @@ import { renderDocumentLayout } from '@/components/layouts/document-layout'
 
 const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'avatar.html', label: 'Avatar' },
-  { href: 'menuitem.html', label: 'menuItem' },
+  { href: 'menu-item.html', label: 'menuItem' },
 ]
 
 const componentReferences: ComponentReferenceItemData[] = [
@@ -76,10 +76,9 @@ const main = html`
     <mm-component-example>
       <mm-flex direction="column" gap="2">
         <mm-menu-item-group>
-          <mm-list-item size="small" label="small 사이즈 / description 없음 → 32"></mm-list-item>
           <mm-list-item
             size="small"
-            label="small 사이즈 / description 없음 → 32"
+            label="스몰 사이즈 / description 없음 → 32"
             avatar-variant="secondary"
             avatar-src="/src/images/soojubm.png"
           ></mm-list-item>
@@ -87,18 +86,14 @@ const main = html`
         <mm-separator scope="element"></mm-separator>
         <mm-menu-item-group>
           <mm-list-item
-            label="small 사이즈 / description 있음 → 40 / 아바타 없음"
-            description="Youtube Subscriber"
-          ></mm-list-item>
-          <mm-list-item
-            label="small 사이즈 / description 있음 → 40"
+            size="small"
+            label="스몰 사이즈 / description 있음 → 40"
             description="Youtube Subscriber"
             avatar-variant="secondary"
             avatar-src="/src/images/soojubm.png"
           ></mm-list-item>
         </mm-menu-item-group>
         <mm-separator scope="element"></mm-separator>
-        <mm-list-item label="48 사이즈" description="Youtube Subscriber" size="48"></mm-list-item>
         <mm-list-item
           label="48 사이즈"
           description="Youtube Subscriber"

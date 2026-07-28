@@ -432,7 +432,7 @@ const main = html`
         }
       </style>
 
-      <mm-flex direction="column" gap="0">
+      <mm-flex direction="column" gap="6">
         <mm-text-block level="2" heading="Color" description="TODO..."></mm-text-block>
 
         <mm-grid columns="6">${renderColorTokens(grayscaleColorTokens)}</mm-grid>
@@ -447,7 +447,7 @@ const main = html`
         </mm-grid>
       </mm-flex>
 
-      <mm-flex direction="column" gap="3">
+      <mm-flex direction="column" gap="6">
         <mm-text-block
           level="2"
           heading="Typography"
@@ -504,7 +504,7 @@ const main = html`
         <mm-token-group>${renderTokenItems(typographyTokenItems)}</mm-token-group>
       </mm-flex>
 
-      <mm-flex direction="column" gap="3">
+      <mm-flex direction="column" gap="6">
         <mm-text-block
           level="2"
           heading="Size"
@@ -516,7 +516,7 @@ const main = html`
         <mm-token-group>${renderTokenItems(sizeTokenItems)}</mm-token-group>
       </mm-flex>
 
-      <mm-flex direction="column" gap="3">
+      <mm-flex direction="column" gap="6">
         <mm-text-block
           level="2"
           heading="Space"
@@ -528,7 +528,7 @@ const main = html`
         <mm-token-group>${renderTokenItems(spaceTokenItems)}</mm-token-group>
       </mm-flex>
 
-      <mm-flex direction="column" gap="3">
+      <mm-flex direction="column" gap="6">
         <mm-text-block
           level="2"
           heading="Layout"
@@ -537,7 +537,7 @@ const main = html`
         <mm-token-group>${renderTokenItems(layoutTokenItems)}</mm-token-group>
       </mm-flex>
 
-      <mm-flex direction="column" gap="3">
+      <mm-flex direction="column" gap="6">
         <mm-text-block
           level="2"
           heading="Border"
@@ -551,7 +551,7 @@ const main = html`
         <mm-token-group>${renderTokenItems(borderTokenItems)}</mm-token-group>
       </mm-flex>
 
-      <mm-flex direction="column" gap="3">
+      <mm-flex direction="column" gap="6">
         <mm-text-block
           level="2"
           heading="Shadow"
@@ -567,7 +567,7 @@ const main = html`
         <mm-separator></mm-separator>
       </mm-flex>
 
-      <mm-flex direction="column" gap="3">
+      <mm-flex direction="column" gap="6">
         <mm-text-block
           level="2"
           heading="Blur & Opacity"
@@ -600,7 +600,7 @@ const main = html`
         </mm-token-group>
       </mm-flex>
 
-      <mm-flex direction="column" gap="3">
+      <mm-flex direction="column" gap="6">
         <mm-text-block
           level="2"
           heading="Z-index"
