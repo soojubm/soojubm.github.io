@@ -66,7 +66,7 @@ const surfaceBaseStyles = css`
 
     position: relative;
     z-index: var(--material-zindex-raised);
-    transition: box-shadow 0.2s ease-in-out;
+    transition: box-shadow var(--transition-duration) var(--transition-easing);
   }
 `
 

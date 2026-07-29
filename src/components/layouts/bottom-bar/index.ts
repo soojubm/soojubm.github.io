@@ -79,7 +79,7 @@ class BottomBar extends LitElement {
       bottom: 0;
       left: 0;
       transform: translateX(0);
-      transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: transform var(--transition-duration) var(--transition-easing);
       pointer-events: none;
     }
   `

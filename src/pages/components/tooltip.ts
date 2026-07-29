@@ -79,7 +79,8 @@ const main = html`
     </mm-component-example>
     <style>
       [data-tooltip]:not([disabled]).has-tooltip-fade:before {
-        transition: opacity 0.15s linear, visibility 0.15s linear;
+        transition: opacity var(--transition-duration) var(--transition-easing),
+          visibility var(--transition-duration) var(--transition-easing);
       }
       [data-tooltip]:not([disabled]):hover:before {
         opacity: 1;

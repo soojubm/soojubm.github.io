@@ -67,7 +67,7 @@ export class Thumbnail extends LitElement {
       text-decoration: none;
       color: inherit;
       cursor: pointer;
-      transition: all 0.3s ease-in-out;
+      transition: all var(--transition-duration) var(--transition-easing);
     }
   `
 

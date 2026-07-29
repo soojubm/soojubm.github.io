@@ -7,7 +7,7 @@
 
 .page,
 .footer {
-  transition: padding-left 0.6s ease;
+  transition: padding-left var(--transition-duration) var(--transition-easing);
 }
 
 progress[value] {

@@ -54,7 +54,7 @@ export const switchStyles = css`
       border-radius: var(--switch-border-radius);
       box-sizing: border-box;
       background: var(--switch-background-color);
-      transition: all 0.25s;
+      transition: all var(--transition-duration) var(--transition-easing);
     }
 
     &:after {
@@ -69,7 +69,7 @@ export const switchStyles = css`
       position: absolute;
       left: 0;
       top: 0;
-      transition: transform 0.2s;
+      transition: transform var(--transition-duration) var(--transition-easing);
     }
   }
 `

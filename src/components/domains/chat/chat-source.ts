@@ -100,7 +100,8 @@ export class ChatSourceGroup extends LitElement {
         padding: var(--space-3);
         transform: translateY(0);
         opacity: 1;
-        transition: opacity 160ms ease, transform 200ms cubic-bezier(0.18, 1.25, 0.4, 1);
+        transition: opacity var(--transition-duration) var(--transition-easing),
+          transform var(--transition-duration) var(--transition-easing-emphasis);
       }
 
       .sheet-icon {

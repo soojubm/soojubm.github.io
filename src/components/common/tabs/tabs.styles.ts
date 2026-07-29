@@ -19,7 +19,8 @@ export const tabsStyles = css`
     position: absolute;
     left: 0;
     box-sizing: border-box;
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform var(--transition-duration) var(--transition-easing),
+      width var(--transition-duration) var(--transition-easing);
     will-change: transform, width;
   }
 

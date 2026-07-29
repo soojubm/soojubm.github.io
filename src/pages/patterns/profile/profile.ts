@@ -137,7 +137,7 @@ const main = html`
       max-width: 240px;
       margin-top: -140px;
       margin-bottom: 110px;
-      transition: all 0.4s;
+      transition: all var(--transition-duration) var(--transition-easing);
     }
 
     .mangrove2 {
@@ -146,7 +146,7 @@ const main = html`
       margin-left: 2rem;
       position: absolute;
       bottom: 2rem;
-      transition: all 0.4s ease 0.05s;
+      transition: all var(--transition-duration) var(--transition-easing) 0.05s;
     }
 
     .mangrove-foot {

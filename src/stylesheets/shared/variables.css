@@ -176,10 +176,12 @@
   --material-zindex-toast: 1000; /* 알림, 스낵바: 항상 최상단 */
 
   --duration-quickly: 0.2s;
-  --duration-slowly: 0.6s;
 
+  /* 모든 transition은 이 duration 하나를 쓴다.
+     easing만 기본과 오버슈트(등장 강조)로 나뉜다. */
   --transition-duration: 180ms;
-  --transition-duration-emphasis: 220ms;
+  --transition-easing: cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-easing-emphasis: cubic-bezier(0.18, 1.25, 0.4, 1);
 
   --animation-duration: 0.4s;
 

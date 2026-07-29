@@ -22,7 +22,7 @@ export const sidebarStyles = css`
     backdrop-filter: var(--surface-chrome-backdrop-filter);
     -webkit-backdrop-filter: var(--surface-chrome-backdrop-filter);
     scrollbar-gutter: stable;
-    transition: transform var(--duration-slowly) cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: transform var(--transition-duration) var(--transition-easing);
     transform: translateX(-120%);
     position: fixed;
     top: var(--navbar-height);

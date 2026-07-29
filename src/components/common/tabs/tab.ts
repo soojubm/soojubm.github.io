@@ -32,7 +32,8 @@ export default class Tab extends LitElement {
       color: var(--tab-text-color);
       cursor: pointer;
       user-select: none;
-      transition: color 0.25s ease, font-weight 0.25s ease;
+      transition: color var(--transition-duration) var(--transition-easing),
+        font-weight var(--transition-duration) var(--transition-easing);
     }
 
     :host([aria-selected='true']) .tab-content {

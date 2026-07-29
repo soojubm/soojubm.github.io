@@ -13,7 +13,7 @@ export class ModelSelector extends LitElement {
     }
 
     mm-button mm-icon {
-      transition: transform 160ms ease;
+      transition: transform var(--transition-duration) var(--transition-easing);
     }
 
     mm-button[aria-expanded='true'] mm-icon {

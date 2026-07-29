@@ -27,7 +27,7 @@ export class AccordionItem extends LitElement {
         --accordion-border: var(--border-transparent);
         --accordion-border-radius: var(--radius);
         --accordion-icon-size: 1.25rem;
-        --accordion-transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        --accordion-transition: var(--transition-duration) var(--transition-easing);
       }
 
       .summary-btn {

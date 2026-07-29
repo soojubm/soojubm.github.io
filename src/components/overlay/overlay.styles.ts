@@ -69,7 +69,8 @@ export const overlayVisibilityStyles = css`
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transition: opacity var(--transition-duration) ease, transform var(--transition-duration) ease,
+    transition: opacity var(--transition-duration) var(--transition-easing),
+      transform var(--transition-duration) var(--transition-easing),
       visibility 0s linear var(--transition-duration);
   }
 
@@ -77,8 +78,8 @@ export const overlayVisibilityStyles = css`
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
-    transition: opacity var(--transition-duration) ease, transform var(--transition-duration) ease,
-      visibility 0s;
+    transition: opacity var(--transition-duration) var(--transition-easing),
+      transform var(--transition-duration) var(--transition-easing), visibility 0s;
   }
 `
 
@@ -119,14 +120,14 @@ export const layerPositionStyles = css`
 
   .panel {
     transform: scale(0.96);
-    transition: transform var(--transition-duration) cubic-bezier(0.2, 0.8, 0.2, 1);
+    transition: transform var(--transition-duration) var(--transition-easing);
   }
 
   :host([open]) .panel {
     opacity: 1;
     visibility: visible;
     transform: scale(1);
-    transition: transform var(--transition-duration-emphasis) cubic-bezier(0.18, 1.25, 0.4, 1);
+    transition: transform var(--transition-duration) var(--transition-easing-emphasis);
   }
 
   /* center + width */
@@ -288,8 +289,8 @@ export const popoverPositionStyles = css`
     right: 0;
     z-index: var(--material-zindex-overlay);
 
-    transition: opacity var(--transition-duration) ease,
-      transform var(--transition-duration) cubic-bezier(0.2, 0.8, 0.2, 1),
+    transition: opacity var(--transition-duration) var(--transition-easing),
+      transform var(--transition-duration) var(--transition-easing),
       visibility 0s linear var(--transition-duration);
   }
 
@@ -302,8 +303,8 @@ export const popoverPositionStyles = css`
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
-    transition: opacity var(--transition-duration) ease,
-      transform var(--transition-duration) cubic-bezier(0.2, 0.8, 0.2, 1), visibility 0s;
+    transition: opacity var(--transition-duration) var(--transition-easing),
+      transform var(--transition-duration) var(--transition-easing), visibility 0s;
   }
 
   :host([placement='bottom-right']) .panel,
@@ -400,8 +401,8 @@ export const tooltipStyles = css`
     top: calc(100% + var(--space-1));
     z-index: var(--material-zindex-overlay);
     pointer-events: none;
-    transition: opacity var(--transition-duration) linear,
-      visibility var(--transition-duration) linear;
+    transition: opacity var(--transition-duration) var(--transition-easing),
+      visibility var(--transition-duration) var(--transition-easing);
 
     &::before {
       content: '';

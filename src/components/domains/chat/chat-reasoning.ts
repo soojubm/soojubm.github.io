@@ -90,7 +90,8 @@ export class ChatReasoning extends LitElement {
         opacity: 0;
         pointer-events: none;
         transform: translateY(var(--space-1));
-        transition: opacity 240ms ease, transform 240ms ease;
+        transition: opacity var(--transition-duration) var(--transition-easing),
+          transform var(--transition-duration) var(--transition-easing);
       }
 
       ::slotted(mm-chat-reasoning-flow[active]) {

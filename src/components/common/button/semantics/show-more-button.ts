@@ -22,7 +22,7 @@ export class ShowMoreButton extends LitElement {
       }
 
       mm-icon {
-        transition: transform 0.2s ease;
+        transition: transform var(--transition-duration) var(--transition-easing);
       }
 
       mm-button[aria-expanded='true'] mm-icon {
