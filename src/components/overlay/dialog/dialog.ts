@@ -4,7 +4,7 @@ import { customElement, property } from 'lit/decorators.js'
 import '@/components/overlay/backdrop/backdrop'
 import '@/components/overlay/layer/layer-body'
 import '@/components/overlay/layer/layer-footer'
-import '@/components/common/status-message'
+import '@/components/common/text/semantics/status-message'
 import type { ActionConfig } from '@/types'
 
 import { layerPositionStyles, overlaySurfaceStyles } from '@/components/overlay/overlay.styles'

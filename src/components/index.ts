@@ -18,12 +18,12 @@ import '@/components/layouts/top-bar'
 import '@/components/common/page'
 import '@/components/layouts/bottom-bar'
 import '@/components/layouts/app-sidebar'
+import '@/components/layouts/navbar-search'
 import '@/components/common/separator/separator'
 import '@/components/common/surface/surface'
 import '@/components/common/switch/switch'
 import '@/components/common/result/result'
 import '@/components/common/feature'
-import '@/components/common/status-message'
 import '@/components/common/meta-item'
 import '@/components/overlay/layer'
 import '@/components/overlay/toast'
@@ -45,6 +45,8 @@ import '@/components/common/tag'
 import '@/components/common/radio'
 
 import '@/components/common/avatar'
+
+import '@/components/indicators'
 
 // domains
 import '@/components/domains'

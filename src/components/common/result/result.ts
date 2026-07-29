@@ -6,7 +6,7 @@ import type { ActionConfig } from '@/types'
 
 import '@/components/common/button/button'
 import '@/components/common/button/button-group'
-import '@/components/common/status-message'
+import '@/components/common/text/semantics/status-message'
 
 import { resultStyles } from '@/components/common/result/result.styles'
 

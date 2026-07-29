@@ -2,7 +2,7 @@ import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import { textStyles } from '@/components/common/text/text.styles'
-import '@/components/domains/indicators/list-marker'
+import '@/components/indicators/list-marker/list-marker'
 import { arrayAttributeConverter } from '@/utils'
 
 type Variant = 'check' | 'number'

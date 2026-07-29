@@ -7,5 +7,6 @@ import '@/components/common/text/semantics/heading'
 import '@/components/common/text/semantics/caption'
 import '@/components/common/text/semantics/textList'
 import '@/components/common/text/semantics/text-block'
+import '@/components/common/text/semantics/status-message'
 
 export {}
