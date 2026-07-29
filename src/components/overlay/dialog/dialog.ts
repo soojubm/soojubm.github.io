@@ -7,7 +7,11 @@ import '@/components/overlay/layer/layer-footer'
 import '@/components/common/status-message'
 import type { ActionConfig } from '@/types'
 
-import { overlaySurfaceStyles, overlayVisibilityStyles } from '@/components/overlay/overlay.styles'
+import {
+  layerPositionStyles,
+  overlaySurfaceStyles,
+  overlayVisibilityStyles,
+} from '@/components/overlay/overlay.styles'
 import { LayerController } from '@/controllers/layer-controller'
 import { emit } from '@/utils'
 
@@ -16,6 +20,7 @@ export class Dialog extends LitElement {
   static styles = [
     overlayVisibilityStyles,
     overlaySurfaceStyles,
+    layerPositionStyles,
     css`
       :host {
         --layer-max-width: 320px;

@@ -2,7 +2,7 @@ import { LitElement, html, nothing } from 'lit'
 import { customElement, property, query } from 'lit/decorators.js'
 
 import {
-  layerStyles,
+  layerPositionStyles,
   overlaySurfaceStyles,
   overlayVisibilityStyles,
 } from '@/components/overlay/overlay.styles'
@@ -21,7 +21,7 @@ const DRAG_CLOSE_THRESHOLD_RATIO = 0.25
  */
 @customElement('mm-layer')
 class Layer extends LitElement {
-  static styles = [overlaySurfaceStyles, overlayVisibilityStyles, layerStyles]
+  static styles = [overlaySurfaceStyles, overlayVisibilityStyles, layerPositionStyles]
 
   @property({ type: String, reflect: true }) placement: LayerPlacement = 'center'
   @property({ type: String, reflect: true }) width: LayerWidth = 'medium'

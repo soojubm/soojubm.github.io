@@ -19,26 +19,18 @@ export const backdropStyles = css`
 /**
  * 떠 있는 표면 패널(`.panel`)의 재질.
  * backdrop-filter는 조상에 걸리면 자손의 blur가 죽으므로 ::before 레이어에 분리해 깐다.
- * border-radius와 크기·위치는 패널을 소유한 컴포넌트가 각자 정한다.
+ * `--layer-*` 토큰은 여기서 소비만 한다. 기본값은 패널을 소유한 컴포넌트가 `:host`에 선언하며,
+ * 그래야 placement·prop·상위 컴포넌트의 재할당이 상속을 타고 패널까지 내려온다.
  */
 export const overlaySurfaceStyles = css`
   .panel {
-    --layer-max-width: var(--layout-width-narrow);
-    --layer-height: auto;
-    --layer-padding-block: var(--space-4);
-    --layer-padding-inline: var(--space-4);
-
-    --layer-backdrop-background-color: transparent;
-    --layer-backdrop-blur: 0px;
-    --layer-border-radius: var(--radius-large);
-    --layer-z-index: var(--material-zindex-modal);
-
     display: flex;
     flex-direction: column;
     width: 100%;
+    min-width: var(--layer-min-width);
     max-width: var(--layer-max-width);
     height: var(--layer-height);
-    max-height: 90vh;
+    max-height: var(--layer-max-height);
     padding: var(--layer-padding-block) var(--layer-padding-inline);
 
     border: var(--surface-overlay-border);
@@ -48,6 +40,7 @@ export const overlaySurfaceStyles = css`
     box-sizing: border-box;
     overflow: hidden;
 
+    position: relative;
     isolation: isolate;
     opacity: 0;
     visibility: hidden;
@@ -89,10 +82,25 @@ export const overlayVisibilityStyles = css`
   }
 `
 
-export const layerStyles = css`
+/**
+ * viewport 기준 modal 레이어(mm-layer, mm-dialog)의 위치.
+ * 호스트가 패널을 화면 기준으로 앉히는 고정 컨테이너가 되고, placement별로 패널을 어느 변에
+ * 붙일지 정한다. 표면 재질은 overlaySurfaceStyles가, 뒤를 덮는 재질은 mm-backdrop이 맡는다.
+ * `--layer-*` 기본값을 함께 선언하는 이유는 재할당이 `:host`에서 일어나기 때문이다.
+ */
+export const layerPositionStyles = css`
   :host {
-    --layer-viewport-max-height: 100vh;
+    --layer-z-index: var(--material-zindex-modal);
+    --layer-min-width: auto;
+    --layer-max-width: var(--layout-width-narrow);
     --layer-height: auto;
+    --layer-max-height: 90vh;
+    --layer-viewport-max-height: 100vh;
+    --layer-padding-block: var(--space-4);
+    --layer-padding-inline: var(--space-4);
+    --layer-border-radius: var(--radius-large);
+    --layer-backdrop-background-color: transparent;
+    --layer-backdrop-blur: 0px;
 
     display: flex;
     justify-content: center;
@@ -101,6 +109,12 @@ export const layerStyles = css`
     position: fixed;
     inset: 0;
     z-index: var(--layer-z-index);
+  }
+
+  /* backdrop 재질은 mm-backdrop이 소유하고, layer는 자기 공개 knob을 그쪽으로 잇는다. */
+  mm-backdrop {
+    --backdrop-background-color: var(--layer-backdrop-background-color);
+    --backdrop-blur: var(--layer-backdrop-blur);
   }
 
   .panel {
@@ -245,15 +259,29 @@ export const layerFooterStyles = css`
   }
 `
 
-export const popoverStyles = css`
+/**
+ * 트리거에 앵커되는 non-modal 레이어(mm-popover)의 위치.
+ * 호스트가 스스로 positioned 앵커가 되고, placement별로 패널을 트리거의 어느 모서리에 붙일지 정한다.
+ * 표면 재질은 overlaySurfaceStyles가 맡는다.
+ * `--layer-*` 기본값을 함께 선언하는 이유는 재할당이 `:host`에서 일어나기 때문이다.
+ */
+export const popoverPositionStyles = css`
   :host {
+    --layer-min-width: auto;
+    --layer-max-width: auto;
+    --layer-height: auto;
+    --layer-max-height: none;
+    --layer-padding-block: var(--space-2);
+    --layer-padding-inline: var(--space-4);
+    --layer-border-radius: var(--radius);
+    --popover-offset: var(--space-1);
+
+    /* 슬롯된 트리거를 감싸 popover 스스로 앵커(positioned wrapper)가 된다. */
     display: flex;
     position: relative;
   }
-  .panel {
-    --layer-max-width: auto;
-    --popover-offset: var(--space-1);
 
+  .panel {
     position: absolute;
     top: calc(100% + var(--popover-offset));
     left: 0;

@@ -39,8 +39,9 @@ export class Select extends LitElement {
         width: var(--select-width);
       }
 
-      mm-popover::part(panel) {
-        min-width: var(--select-min-width);
+      mm-popover {
+        --layer-min-width: var(--select-min-width);
+        --layer-max-height: var(--select-max-height);
       }
 
       /* full(100%)이 아니면 호스트가 트리거 폭이므로, 좌측 placement는 트리거 왼쪽에 앵커해 오른쪽으로 자란다. */

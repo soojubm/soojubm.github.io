@@ -25,11 +25,12 @@ const componentProps: ComponentPropItemData[] = [
 ]
 
 const componentTokens: ComponentTokenItemData[] = [
-  { name: 'popover-width', default: 'auto' },
+  { name: 'layer-max-width', default: 'auto' },
   { name: 'layer-max-height', default: 'none' },
+  { name: 'layer-padding-block', default: 'var(--space-2)' },
+  { name: 'layer-padding-inline', default: 'var(--space-4)' },
+  { name: 'layer-border-radius', default: 'var(--radius)' },
   { name: 'popover-offset', default: 'var(--space-1)' },
-  { name: 'popover-padding', default: 'var(--space-1)' },
-  { name: 'popover-border-radius', default: 'var(--radius)' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [

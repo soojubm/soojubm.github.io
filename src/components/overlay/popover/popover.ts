@@ -1,7 +1,7 @@
 import { LitElement, html } from 'lit'
 import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
 
-import { overlaySurfaceStyles, popoverStyles } from '@/components/overlay/overlay.styles'
+import { overlaySurfaceStyles, popoverPositionStyles } from '@/components/overlay/overlay.styles'
 import '@/components/common/scroll/scroll'
 import { DisclosureController } from '@/controllers/disclosure-controller'
 import { emit } from '@/utils'
@@ -17,7 +17,7 @@ export type PopoverPlacement = 'bottom-left' | 'bottom-right' | 'top-left' | 'to
  */
 @customElement('mm-popover')
 class Popover extends LitElement {
-  static styles = [overlaySurfaceStyles, popoverStyles]
+  static styles = [overlaySurfaceStyles, popoverPositionStyles]
 
   @property({ type: Boolean, reflect: true }) open = false
   @property({ type: String, reflect: true }) placement: PopoverPlacement = 'bottom-left'
@@ -55,8 +55,13 @@ class Popover extends LitElement {
       else this.style.removeProperty('--layer-max-width')
     }
     if (changedProperties.has('padding')) {
-      if (this.padding) this.style.setProperty('--popover-padding', this.padding)
-      else this.style.removeProperty('--popover-padding')
+      if (this.padding) {
+        this.style.setProperty('--layer-padding-block', this.padding)
+        this.style.setProperty('--layer-padding-inline', this.padding)
+      } else {
+        this.style.removeProperty('--layer-padding-block')
+        this.style.removeProperty('--layer-padding-inline')
+      }
     }
   }
 
