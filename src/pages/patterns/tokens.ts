@@ -383,6 +383,34 @@ const borderStageSwatches: BorderSwatch[] = [
   },
 ]
 
+interface EasingTrack {
+  easing: string
+  label: string
+}
+
+const renderMotionStage = (tracks: EasingTrack[]) =>
+  tracks.map(
+    ({ easing, label }) => html`
+      <mm-flex direction="column" gap="2">
+        <div class="motion-track">
+          <div class="motion-dot" style="transition-timing-function: ${easing}"></div>
+        </div>
+        <mm-caption>${label}</mm-caption>
+      </mm-flex>
+    `,
+  )
+
+const motionTracks: EasingTrack[] = [
+  { easing: 'var(--transition-easing)', label: 'transition-easing' },
+  { easing: 'var(--transition-easing-emphasis)', label: 'transition-easing-emphasis' },
+]
+
+const transitionTokenItems: TokenEntry[] = [
+  { key: 'transition-duration', value: '180ms' },
+  { key: 'transition-easing', value: 'cubic-bezier(0.4, 0, 0.2, 1)' },
+  { key: 'transition-easing-emphasis', value: 'cubic-bezier(0.18, 1.25, 0.4, 1)' },
+]
+
 const zIndexTokenItems: TokenEntry[] = [
   { key: 'material-zindex-base', value: '0' },
   { key: 'material-zindex-raised', value: '10' },
@@ -619,6 +647,44 @@ const main = html`
           "toast — 알림, 스낵바처럼 항상 다른 모든 레이어 위에 있어야 하는 요소. 예: mm-toast, 건너뛰기(skip) 링크"
         ]'
         ></mm-text-list>
+      </mm-flex>
+
+      <style>
+        .motion-track {
+          display: flex;
+          align-items: center;
+          box-sizing: border-box;
+          width: calc(var(--size-80) * 3);
+          height: var(--size-32);
+          padding: 0 var(--space-1);
+          border-radius: var(--radius-full);
+          background: var(--background-subtle-color);
+        }
+
+        .motion-dot {
+          width: var(--size-24);
+          height: var(--size-24);
+          border-radius: var(--radius-full);
+          background: var(--color-primary);
+          transition-property: transform;
+          transition-duration: var(--transition-duration);
+        }
+
+        mm-token-stage:hover .motion-dot {
+          transform: translateX(calc(var(--size-80) * 3 - var(--size-24) - var(--space-2)));
+        }
+      </style>
+
+      <mm-flex direction="column" gap="6">
+        <mm-text-block
+          level="2"
+          heading="Transition"
+          description="모든 transition은 하나의 duration을 공유하고 easing만 기본과 오버슈트(등장 강조)로 나뉩니다. 스테이지에 마우스를 올리면 두 easing의 차이를 볼 수 있습니다."
+        ></mm-text-block>
+        <mm-token-stage>
+          <mm-flex direction="column" gap="4">${renderMotionStage(motionTracks)}</mm-flex>
+        </mm-token-stage>
+        <mm-token-group>${renderTokenItems(transitionTokenItems)}</mm-token-group>
       </mm-flex>
 
       <mm-component-references .items=${componentReferences}></mm-component-references>
