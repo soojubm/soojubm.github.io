@@ -274,11 +274,12 @@ function layerExampleTemplate() {
 
     <mm-layer id="center-layer" placement="center" width="medium">
       <mm-layer-header heading="Center Layer"></mm-layer-header>
-      <mm-layer-body><mm-paragraph>중앙 모달 콘텐츠</mm-paragraph></mm-layer-body>
-      <mm-layer-footer
-        .primaryAction=${{ label: '확인', onClick: () => {} }}
-        .secondaryAction=${{ label: '닫기', onClick: () => {} }}
-      ></mm-layer-footer>
+      <mm-layer-body>
+        <mm-paragraph>
+          이것도 막무가내로 정의하지 말고 필요한 케이스를 정의. 대부분이 다이얼로그로 충분함.
+          페이지에 가까운 레이어만 정의해도 됨.
+        </mm-paragraph>
+      </mm-layer-body>
     </mm-layer>
     <mm-layer id="bottom-layer" placement="bottom" height="360px">
       <mm-layer-header heading="Bottom Layer"></mm-layer-header>

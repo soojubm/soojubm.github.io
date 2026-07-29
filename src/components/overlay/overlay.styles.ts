@@ -283,23 +283,23 @@ export const layerDragHandleStyles = css`
 `
 
 export const layerHeaderStyles = css`
-  header {
+  :host {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    padding: var(--layer-padding-block) 0;
+
     box-sizing: border-box;
     position: relative;
+  }
 
-    &::before {
-      content: '';
-      background: var(--surface-overlay-background-color);
-      backdrop-filter: var(--surface-overlay-backdrop-filter);
-      position: absolute;
-      inset: 0;
-      z-index: -1;
-    }
+  :host::before {
+    content: '';
+    background: var(--surface-overlay-background-color);
+    backdrop-filter: var(--surface-overlay-backdrop-filter);
+    position: absolute;
+    inset: 0;
+    z-index: -1;
   }
 `
 
@@ -308,6 +308,7 @@ export const layerBodyStyles = css`
     display: flex;
     flex: 1 1 auto;
     min-height: 0;
+    padding: var(--layer-padding-block) 0;
   }
 
   mm-scroll {

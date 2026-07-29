@@ -1,4 +1,4 @@
-import { LitElement, html, nothing } from 'lit'
+import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import { layerHeaderStyles } from '@/components/overlay/overlay.styles'
@@ -8,14 +8,13 @@ import { emit } from '@/utils'
 class LayerHeader extends LitElement {
   static styles = layerHeaderStyles
 
+  @property({ type: String, reflect: true }) role = 'navigation'
   @property({ type: String }) heading = ''
 
   render() {
     return html`
-      <header role="navigation">
-        <mm-heading level="2">${this.heading}</mm-heading>
-        <mm-close-button @close=${this.handleClose}></mm-close-button>
-      </header>
+      <mm-heading level="2">${this.heading}</mm-heading>
+      <mm-close-button @close=${this.handleClose}></mm-close-button>
     `
   }
 
