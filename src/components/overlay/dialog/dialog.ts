@@ -7,18 +7,13 @@ import '@/components/overlay/layer/layer-footer'
 import '@/components/common/status-message'
 import type { ActionConfig } from '@/types'
 
-import {
-  layerPositionStyles,
-  overlaySurfaceStyles,
-  overlayVisibilityStyles,
-} from '@/components/overlay/overlay.styles'
+import { layerPositionStyles, overlaySurfaceStyles } from '@/components/overlay/overlay.styles'
 import { LayerController } from '@/controllers/layer-controller'
 import { emit } from '@/utils'
 
 @customElement('mm-dialog')
 export class Dialog extends LitElement {
   static styles = [
-    overlayVisibilityStyles,
     overlaySurfaceStyles,
     layerPositionStyles,
     css`

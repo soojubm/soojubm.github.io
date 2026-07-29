@@ -21,6 +21,7 @@ export const backdropStyles = css`
  * backdrop-filter는 조상에 걸리면 자손의 blur가 죽으므로 ::before 레이어에 분리해 깐다.
  * `--layer-*` 토큰은 여기서 소비만 한다. 기본값은 패널을 소유한 컴포넌트가 `:host`에 선언하며,
  * 그래야 placement·prop·상위 컴포넌트의 재할당이 상속을 타고 패널까지 내려온다.
+ * 열림/닫힘은 각 컴포넌트가 자기 표면을 쥔 요소에서 소유하므로 여기서 다루지 않는다.
  */
 export const overlaySurfaceStyles = css`
   .panel {
@@ -42,9 +43,6 @@ export const overlaySurfaceStyles = css`
 
     position: relative;
     isolation: isolate;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
   }
 
   .panel::before {
@@ -56,30 +54,6 @@ export const overlaySurfaceStyles = css`
     position: absolute;
     inset: 0;
     z-index: -1;
-  }
-`
-
-/**
- * 호스트 자체가 떠 있는 표면인 컴포넌트의 열림/닫힘 전환.
- * 닫힐 때만 visibility 전환을 지연시켜 fade-out이 끝난 뒤 접근성 트리에서 빠지게 한다.
- * transform 같은 방향성 있는 움직임은 소비하는 컴포넌트가 각자 얹는다.
- */
-export const overlayVisibilityStyles = css`
-  :host {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transition: opacity var(--transition-duration) var(--transition-easing),
-      transform var(--transition-duration) var(--transition-easing),
-      visibility 0s linear var(--transition-duration);
-  }
-
-  :host([open]) {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-    transition: opacity var(--transition-duration) var(--transition-easing),
-      transform var(--transition-duration) var(--transition-easing), visibility 0s;
   }
 `
 
@@ -110,6 +84,21 @@ export const layerPositionStyles = css`
     position: fixed;
     inset: 0;
     z-index: var(--layer-z-index);
+
+    /* backdrop과 패널을 한 번에 띄우고 내린다. 닫힐 때만 visibility를 지연시켜
+       fade-out이 끝난 뒤에 접근성 트리와 히트 테스트에서 빠지게 한다. */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity var(--transition-duration) var(--transition-easing),
+      visibility 0s linear var(--transition-duration);
+  }
+
+  :host([open]) {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transition: opacity var(--transition-duration) var(--transition-easing), visibility 0s;
   }
 
   /* backdrop 재질은 mm-backdrop이 소유하고, layer는 자기 공개 knob을 그쪽으로 잇는다. */
@@ -124,8 +113,6 @@ export const layerPositionStyles = css`
   }
 
   :host([open]) .panel {
-    opacity: 1;
-    visibility: visible;
     transform: scale(1);
     transition: transform var(--transition-duration) var(--transition-easing-emphasis);
   }
@@ -183,6 +170,82 @@ export const layerPositionStyles = css`
   }
   :host([open][placement='right']) .panel {
     transform: translateX(0);
+  }
+`
+
+/**
+ * 트리거에 앵커되는 non-modal 레이어(mm-popover)의 위치.
+ * 호스트가 스스로 positioned 앵커가 되고, placement별로 패널을 트리거의 어느 모서리에 붙일지 정한다.
+ * 표면 재질은 overlaySurfaceStyles가 맡는다.
+ * `--layer-*` 기본값을 함께 선언하는 이유는 재할당이 `:host`에서 일어나기 때문이다.
+ */
+export const popoverPositionStyles = css`
+  :host {
+    /* 트리거가 아이콘 버튼처럼 좁아도 패널이 그 폭으로 눌리지 않게 하는 바닥값 */
+    --layer-min-width: 240px;
+    --layer-max-width: auto;
+    --layer-height: auto;
+    --layer-max-height: none;
+    --layer-padding-block: var(--space-2);
+    --layer-padding-inline: var(--space-4);
+    --layer-border-radius: var(--radius);
+    --popover-offset: var(--space-1);
+
+    /* 슬롯된 트리거를 감싸 popover 스스로 앵커(positioned wrapper)가 된다. */
+    display: flex;
+    position: relative;
+  }
+
+  .panel {
+    /* 트리거에 붙은 모서리에서 자라나도록, placement가 원점을 축별로 뒤집는다 */
+    --popover-origin-block: top;
+    --popover-origin-inline: left;
+
+    position: absolute;
+    top: calc(100% + var(--popover-offset));
+    left: 0;
+    right: 0;
+    z-index: var(--material-zindex-overlay);
+
+    /* 호스트는 트리거를 감싸므로 늘 보인다. 뜨고 지는 것은 패널만의 상태다. */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: scale(0.96);
+    transform-origin: var(--popover-origin-block) var(--popover-origin-inline);
+    transition: opacity var(--transition-duration) var(--transition-easing),
+      transform var(--transition-duration) var(--transition-easing),
+      visibility 0s linear var(--transition-duration);
+  }
+
+  .panel mm-scroll {
+    flex: 1 1 auto;
+    min-height: 0;
+  }
+
+  :host([open]) .panel {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: scale(1);
+    transition: opacity var(--transition-duration) var(--transition-easing),
+      transform var(--transition-duration) var(--transition-easing-emphasis), visibility 0s;
+  }
+
+  :host([placement='bottom-right']) .panel,
+  :host([placement='top-right']) .panel {
+    --popover-origin-inline: right;
+
+    left: auto;
+    right: 0;
+  }
+
+  :host([placement='top-left']) .panel,
+  :host([placement='top-right']) .panel {
+    --popover-origin-block: bottom;
+
+    top: auto;
+    bottom: calc(100% + var(--popover-offset));
   }
 `
 
@@ -260,66 +323,6 @@ export const layerFooterStyles = css`
   }
 `
 
-/**
- * 트리거에 앵커되는 non-modal 레이어(mm-popover)의 위치.
- * 호스트가 스스로 positioned 앵커가 되고, placement별로 패널을 트리거의 어느 모서리에 붙일지 정한다.
- * 표면 재질은 overlaySurfaceStyles가 맡는다.
- * `--layer-*` 기본값을 함께 선언하는 이유는 재할당이 `:host`에서 일어나기 때문이다.
- */
-export const popoverPositionStyles = css`
-  :host {
-    --layer-min-width: auto;
-    --layer-max-width: auto;
-    --layer-height: auto;
-    --layer-max-height: none;
-    --layer-padding-block: var(--space-2);
-    --layer-padding-inline: var(--space-4);
-    --layer-border-radius: var(--radius);
-    --popover-offset: var(--space-1);
-
-    /* 슬롯된 트리거를 감싸 popover 스스로 앵커(positioned wrapper)가 된다. */
-    display: flex;
-    position: relative;
-  }
-
-  .panel {
-    position: absolute;
-    top: calc(100% + var(--popover-offset));
-    left: 0;
-    right: 0;
-    z-index: var(--material-zindex-overlay);
-
-    transition: opacity var(--transition-duration) var(--transition-easing),
-      transform var(--transition-duration) var(--transition-easing),
-      visibility 0s linear var(--transition-duration);
-  }
-
-  .panel mm-scroll {
-    flex: 1 1 auto;
-    min-height: 0;
-  }
-
-  :host([open]) .panel {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-    transition: opacity var(--transition-duration) var(--transition-easing),
-      transform var(--transition-duration) var(--transition-easing), visibility 0s;
-  }
-
-  :host([placement='bottom-right']) .panel,
-  :host([placement='top-right']) .panel {
-    left: auto;
-    right: 0;
-  }
-
-  :host([placement='top-left']) .panel,
-  :host([placement='top-right']) .panel {
-    top: auto;
-    bottom: calc(100% + var(--popover-offset));
-  }
-`
-
 export const toastStyles = css`
   :host {
     --toast-background-color: var(--background-strong-color);
@@ -345,11 +348,23 @@ export const toastStyles = css`
     left: 50%;
     z-index: var(--material-zindex-toast);
 
+    /* 호스트가 표면 자체라 여기서 뜨고 진다. 닫힐 때만 visibility를 지연시킨다. */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
     transform: translateX(-50%) translateY(calc(100% + var(--toast-offset)));
+    transition: opacity var(--transition-duration) var(--transition-easing),
+      transform var(--transition-duration) var(--transition-easing),
+      visibility 0s linear var(--transition-duration);
   }
 
   :host([open]) {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
     transform: translateX(-50%) translateY(0);
+    transition: opacity var(--transition-duration) var(--transition-easing),
+      transform var(--transition-duration) var(--transition-easing), visibility 0s;
   }
 `
 

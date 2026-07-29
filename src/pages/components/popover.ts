@@ -25,6 +25,7 @@ const componentProps: ComponentPropItemData[] = [
 ]
 
 const componentTokens: ComponentTokenItemData[] = [
+  { name: 'layer-min-width', default: '240px' },
   { name: 'layer-max-width', default: 'auto' },
   { name: 'layer-max-height', default: 'none' },
   { name: 'layer-padding-block', default: 'var(--space-2)' },
