@@ -2,12 +2,11 @@ import { LitElement, html, nothing } from 'lit'
 import { customElement, property, query } from 'lit/decorators.js'
 
 import {
-  layerDragHandleStyles,
-  layerPlacementStyles,
   layerStyles,
   overlaySurfaceStyles,
   overlayVisibilityStyles,
 } from '@/components/overlay/overlay.styles'
+import '@/components/overlay/backdrop/backdrop'
 import { LayerController } from '@/controllers/layer-controller'
 import { emit } from '@/utils'
 export type LayerPlacement = 'center' | 'bottom' | 'left' | 'right'
@@ -22,13 +21,7 @@ const DRAG_CLOSE_THRESHOLD_RATIO = 0.25
  */
 @customElement('mm-layer')
 class Layer extends LitElement {
-  static styles = [
-    overlayVisibilityStyles,
-    overlaySurfaceStyles,
-    layerStyles,
-    layerPlacementStyles,
-    layerDragHandleStyles,
-  ]
+  static styles = [overlaySurfaceStyles, overlayVisibilityStyles, layerStyles]
 
   @property({ type: String, reflect: true }) placement: LayerPlacement = 'center'
   @property({ type: String, reflect: true }) width: LayerWidth = 'medium'
@@ -57,6 +50,7 @@ class Layer extends LitElement {
 
   render() {
     return html`
+      <mm-backdrop></mm-backdrop>
       <aside class="panel" ?open=${this.open}>
         ${this.renderDragHandle()}
         <slot></slot>

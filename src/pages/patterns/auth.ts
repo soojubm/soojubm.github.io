@@ -98,14 +98,6 @@ const main = html`
             <mm-flex direction="row">
               <mm-textfield label="출생년도" placeholder="출생년도" optional></mm-textfield>
               <mm-select>
-                <mm-button
-                  slot="trigger"
-                  size="small"
-                  icon="nav-arrow-down"
-                  icon-position="trailing"
-                >
-                  기타
-                </mm-button>
                 <option value="other">기타</option>
                 <option value="female">여성</option>
                 <option value="male">남성</option>

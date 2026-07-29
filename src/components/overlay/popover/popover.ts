@@ -51,8 +51,8 @@ class Popover extends LitElement {
 
   protected updated(changedProperties: Map<string, unknown>) {
     if (changedProperties.has('width')) {
-      if (this.width) this.style.setProperty('--popover-width', this.width)
-      else this.style.removeProperty('--popover-width')
+      if (this.width) this.style.setProperty('--layer-max-width', this.width)
+      else this.style.removeProperty('--layer-max-width')
     }
     if (changedProperties.has('padding')) {
       if (this.padding) this.style.setProperty('--popover-padding', this.padding)

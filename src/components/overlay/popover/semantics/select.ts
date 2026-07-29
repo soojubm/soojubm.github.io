@@ -7,7 +7,9 @@ import type { IconName } from '@/components/common/icon-button/semantics/icon-na
 import type Popover from '@/components/overlay/popover/popover'
 import type { PopoverPlacement } from '@/components/overlay/popover/popover'
 
+import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
 import { resetStyles } from '@/stylesheets/shared.styles'
+import '@/components/common/button/button'
 import '@/components/common/menu-item/semantics/menu-item-action'
 import '@/components/common/menu-item/menu-item-group'
 import '@/components/overlay/popover/popover'
@@ -35,10 +37,6 @@ export class Select extends LitElement {
 
         display: block;
         width: var(--select-width);
-      }
-
-      mm-popover {
-        --popover-max-height: var(--select-max-height);
       }
 
       mm-popover::part(panel) {
@@ -76,7 +74,9 @@ export class Select extends LitElement {
   render() {
     return html`
       <mm-popover placement=${this.placement} padding=${ifDefined(this.padding)}>
-        <slot name="trigger" slot="trigger"></slot>
+        <mm-button slot="trigger" size="small" icon=${ICON_NAMES.EXPAND} icon-position="trailing">
+          ${this.currentLabel}
+        </mm-button>
         <mm-menu-item-group>
           ${repeat(
             this.options,
@@ -89,6 +89,10 @@ export class Select extends LitElement {
     `
   }
 
+  private get currentLabel() {
+    return this.options.find(option => option.value === this.value)?.label ?? ''
+  }
+
   firstUpdated() {
     this.handleOptionSlotChange()
   }
@@ -97,10 +101,13 @@ export class Select extends LitElement {
     if (changedProperties.has('width')) this.style.setProperty('--select-width', this.width)
   }
 
-  // 네이티브 select처럼 value가 비어 있으면 selected 옵션에서 초기값을 채운다.
+  // 네이티브 select처럼 value가 비어 있으면 selected 옵션, 그마저 없으면 첫 옵션으로 채운다.
   private handleOptionSlotChange() {
     this.options = this.parseLightDomOptions()
-    if (!this.value) this.value = this.options.find(option => option.selected)?.value ?? ''
+    if (!this.value) {
+      this.value =
+        this.options.find(option => option.selected)?.value ?? this.options[0]?.value ?? ''
+    }
   }
 
   // light DOM의 <option> 요소를 SelectOption 데이터로 변환

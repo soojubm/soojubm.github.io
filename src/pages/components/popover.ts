@@ -26,7 +26,7 @@ const componentProps: ComponentPropItemData[] = [
 
 const componentTokens: ComponentTokenItemData[] = [
   { name: 'popover-width', default: 'auto' },
-  { name: 'popover-max-height', default: 'none' },
+  { name: 'layer-max-height', default: 'none' },
   { name: 'popover-offset', default: 'var(--space-1)' },
   { name: 'popover-padding', default: 'var(--space-1)' },
   { name: 'popover-border-radius', default: 'var(--radius)' },
@@ -75,9 +75,6 @@ const main = html`
       description="popover를 프리미티브로 하는 선택 입력입니다. 트리거·옵션 파싱·선택 상태를 소유하고, 목록 표면은 popover에 맡깁니다."
     >
       <mm-select width="200px" value="stable">
-        <mm-button slot="trigger" size="small" icon="nav-arrow-down" icon-position="trailing">
-          릴리스 채널
-        </mm-button>
         <option value="stable" selected>Stable</option>
         <option value="beta">Beta</option>
         <option value="canary">Canary</option>
@@ -97,9 +94,6 @@ const main = html`
     확장가능한 메뉴로 정렬 목록을 제공하세요. (bad case: 2022.04 구글 지도 바뀐 것)"
     >
       <mm-select id="my-dropdown">
-        <mm-button slot="trigger" size="small" icon="nav-arrow-down" icon-position="trailing">
-          최신순
-        </mm-button>
         <option value="profile" selected>최신순</option>
         <option value="settings">오래된순</option>
       </mm-select>

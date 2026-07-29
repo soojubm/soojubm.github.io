@@ -1,16 +1,13 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
+import '@/components/overlay/backdrop/backdrop'
 import '@/components/overlay/layer/layer-body'
 import '@/components/overlay/layer/layer-footer'
 import '@/components/common/status-message'
 import type { ActionConfig } from '@/types'
 
-import {
-  layerStyles,
-  overlaySurfaceStyles,
-  overlayVisibilityStyles,
-} from '@/components/overlay/overlay.styles'
+import { overlaySurfaceStyles, overlayVisibilityStyles } from '@/components/overlay/overlay.styles'
 import { LayerController } from '@/controllers/layer-controller'
 import { emit } from '@/utils'
 
@@ -19,7 +16,6 @@ export class Dialog extends LitElement {
   static styles = [
     overlayVisibilityStyles,
     overlaySurfaceStyles,
-    layerStyles,
     css`
       :host {
         --layer-max-width: 320px;
@@ -40,6 +36,7 @@ export class Dialog extends LitElement {
 
   render() {
     return html`
+      <mm-backdrop></mm-backdrop>
       <div class="panel" ?open=${this.open}>
         <mm-layer-body>
           <mm-status-message

@@ -376,7 +376,6 @@ function filterLayerTemplate() {
           <fieldset class="filter-fieldset" role="group">
             <legend class="filter-fieldset-legend">릴리스 채널</legend>
             <mm-select>
-              <mm-button slot="trigger" size="small">Stable</mm-button>
               <option value="stable">Stable</option>
               <option value="beta">Beta</option>
               <option value="canary">Canary</option>

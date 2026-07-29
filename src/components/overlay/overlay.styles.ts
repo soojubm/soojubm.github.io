@@ -1,6 +1,20 @@
 import { css } from 'lit'
-
 import { MEDIA } from '@/constants'
+
+/** modal 표면 뒤를 덮는 dim·blur 재질. 표시 상태는 자신을 품은 레이어가 소유한다. */
+export const backdropStyles = css`
+  :host {
+    --backdrop-background-color: transparent;
+    --backdrop-blur: 0px;
+
+    display: block;
+    background: var(--backdrop-background-color);
+    position: fixed;
+    inset: 0;
+    backdrop-filter: blur(var(--backdrop-blur));
+    -webkit-backdrop-filter: blur(var(--backdrop-blur));
+  }
+`
 
 /**
  * 떠 있는 표면 패널(`.panel`)의 재질.
@@ -9,11 +23,35 @@ import { MEDIA } from '@/constants'
  */
 export const overlaySurfaceStyles = css`
   .panel {
+    --layer-max-width: var(--layout-width-narrow);
+    --layer-height: auto;
+    --layer-padding-block: var(--space-4);
+    --layer-padding-inline: var(--space-4);
+
+    --layer-backdrop-background-color: transparent;
+    --layer-backdrop-blur: 0px;
+    --layer-border-radius: var(--radius-large);
+    --layer-z-index: var(--material-zindex-modal);
+
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: var(--layer-max-width);
+    height: var(--layer-height);
+    max-height: 90vh;
+    padding: var(--layer-padding-block) var(--layer-padding-inline);
+
     border: var(--surface-overlay-border);
+    border-radius: var(--layer-border-radius);
     box-shadow: var(--surface-overlay-shadow);
+    background: var(--background-color);
     box-sizing: border-box;
-    position: relative;
+    overflow: hidden;
+
     isolation: isolate;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
   }
 
   .panel::before {
@@ -51,65 +89,30 @@ export const overlayVisibilityStyles = css`
   }
 `
 
-/**
- * viewport 기준 modal 레이어(mm-layer, mm-dialog)가 공유하는 배경·패널 골격.
- * 호스트 자신이 고정 backdrop이 되고, 내부의 `.panel` 요소가 실제 표면 패널이다.
- * placement별 위치·전환(translate 등)과 크기 prop은 이를 소비하는 컴포넌트가 각자 정의한다.
- */
 export const layerStyles = css`
   :host {
-    --layer-z-index: var(--material-zindex-modal);
-    --layer-backdrop-background-color: 0;
-    --layer-backdrop-blur: 0px;
-    --layer-border-radius: var(--radius-large);
-    --layer-padding-block: var(--space-4);
-    --layer-padding-inline: var(--space-4);
-    --layer-padding-block: var(--space-3);
-    --layer-max-width: var(--layout-width-narrow);
+    --layer-viewport-max-height: 100vh;
+    --layer-height: auto;
 
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100vw;
-    height: 100dvh;
-    background: var(--layer-backdrop-background-color);
 
     position: fixed;
     inset: 0;
     z-index: var(--layer-z-index);
-    backdrop-filter: blur(var(--layer-backdrop-blur));
   }
 
   .panel {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: var(--layer-max-width);
-    max-height: 90vh;
-    padding: var(--layer-padding-block) var(--layer-padding-inline);
-    border-radius: var(--layer-border-radius);
-    background: var(--background-color);
-    overflow: hidden;
     transform: scale(0.96);
     transition: transform var(--transition-duration) cubic-bezier(0.2, 0.8, 0.2, 1);
   }
 
   :host([open]) .panel {
+    opacity: 1;
+    visibility: visible;
     transform: scale(1);
     transition: transform var(--transition-duration-emphasis) cubic-bezier(0.18, 1.25, 0.4, 1);
-  }
-`
-
-/** mm-layer 전용: placement(center/bottom/left/right)별 크기·전환. */
-export const layerPlacementStyles = css`
-  :host {
-    --layer-viewport-max-height: 100vh;
-    /* height prop이 인라인 스타일로 재정의한다 */
-    --layer-height: auto;
-  }
-
-  .layer {
-    height: var(--layer-height);
   }
 
   /* center + width */
@@ -127,23 +130,23 @@ export const layerPlacementStyles = css`
   :host([placement='bottom']) {
     --layer-max-width: calc(var(--layout-width-small) + var(--space-4) * 10);
   }
-  :host([placement='bottom']) .layer {
+  :host([placement='bottom']) .panel {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
     margin-top: auto;
     transform: translateY(100%);
   }
-  :host([open][placement='bottom']) .layer {
+  :host([open][placement='bottom']) .panel {
     transform: translateY(0);
   }
 
   /* left/right */
   :host([placement='left']),
   :host([placement='right']) {
-    --layer-max-width: 50vw;
+    --layer-max-width: 640px;
   }
 
-  :host([placement='left']) .layer {
+  :host([placement='left']) .panel {
     margin-right: auto;
     height: 100%;
     max-height: var(--layer-viewport-max-height);
@@ -151,11 +154,11 @@ export const layerPlacementStyles = css`
     border-bottom-left-radius: 0;
     transform: translateX(-100%);
   }
-  :host([open][placement='left']) .layer {
+  :host([open][placement='left']) .panel {
     transform: translateX(0);
   }
 
-  :host([placement='right']) .layer {
+  :host([placement='right']) .panel {
     margin-left: auto;
     height: 100%;
     max-height: var(--layer-viewport-max-height);
@@ -163,15 +166,8 @@ export const layerPlacementStyles = css`
     border-bottom-right-radius: 0;
     transform: translateX(100%);
   }
-  :host([open][placement='right']) .layer {
+  :host([open][placement='right']) .panel {
     transform: translateX(0);
-  }
-
-  @media ${MEDIA.compact} {
-    :host([placement='left']),
-    :host([placement='right']) {
-      --layer-max-width: 100vw;
-    }
   }
 `
 
@@ -251,34 +247,19 @@ export const layerFooterStyles = css`
 
 export const popoverStyles = css`
   :host {
-    --popover-width: auto;
-    --popover-max-height: none;
-    --popover-padding: var(--space-2) var(--space-4);
-    --popover-border-radius: var(--radius);
-    --popover-offset: var(--space-1);
-
-    /* 슬롯된 트리거를 감싸 popover 스스로 앵커(positioned wrapper)가 된다. */
-    display: inline-block;
+    display: flex;
     position: relative;
   }
-
   .panel {
-    display: flex;
-    flex-direction: column;
-    width: var(--popover-width);
-    max-height: var(--popover-max-height);
-    padding: var(--popover-padding);
-    border-radius: var(--popover-border-radius);
+    --layer-max-width: auto;
+    --popover-offset: var(--space-1);
+
     position: absolute;
     top: calc(100% + var(--popover-offset));
     left: 0;
     right: 0;
     z-index: var(--material-zindex-overlay);
 
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transform: translateY(var(--space-1-minus));
     transition: opacity var(--transition-duration) ease,
       transform var(--transition-duration) cubic-bezier(0.2, 0.8, 0.2, 1),
       visibility 0s linear var(--transition-duration);
@@ -293,7 +274,6 @@ export const popoverStyles = css`
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
-    transform: translateY(0);
     transition: opacity var(--transition-duration) ease,
       transform var(--transition-duration) cubic-bezier(0.2, 0.8, 0.2, 1), visibility 0s;
   }
