@@ -8,6 +8,28 @@ import type { ComponentRelatedItemData } from '@/components/domains/component/co
 
 import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
 import { renderLayout } from '@/components/layouts/base-layouts'
+/* Layer/AnchoredLayer 행동 계약 설명 초안.
+ <mm-paragraph>
+            시각적 형태(Dialog, Sheet 등)가 아니라 행동 계약으로 Layer와 AnchoredLayer 둘로 나뉜다.
+            행동(modality·dismiss·reference)은 컨트롤러가 책임지는 별도 관심사고, elevation·
+            background·radius·width·placement 같은 외형은 컨트롤러와 무관하게 구현체가 조합한다.
+            실제 컴포넌트는 두 행동 계약 중 하나를 고르고, 여기에 외형과 자기 고유 로직(폼 상태,
+            액션 등)을 더해 완성된다.
+          </mm-paragraph> 
+*/
+
+/* anatomy 초안. 되살릴 때 템플릿으로 되돌린다.
+   Lit은 HTML 주석 안 바인딩을 지원하지 않아 템플릿에 주석으로 남기지 않는다.
+ <mm-component-anatomy
+        .parts=${[
+        'Backdrop — 레이어 뒤 반투명 배경. 배경 클릭 또는 ESC 시 layerclose 이벤트를 발생시킵니다.',
+        '레이어 컨테이너 — flex column 박스. height prop으로 높이 고정, max-height: 90vh 기본값.',
+        'mm-layer-header — 타이틀과 닫기 버튼. layerclose 이벤트를 발생시킵니다.',
+        'mm-layer-body — 스크롤 가능한 콘텐츠 영역. flex: 1 1 auto로 header·footer를 제외한 나머지를 채웁니다.',
+        'mm-layer-footer — 액션 버튼 영역. primaryAction / secondaryAction prop으로 구성합니다.',
+      ]}
+      ></mm-component-anatomy> 
+*/
 
 const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'dialog.html', label: 'Dialog' },
@@ -154,25 +176,8 @@ function layerPageTemplate() {
 
       <mm-component-props .props=${componentProps}></mm-component-props>
 
-      <!-- <mm-component-anatomy
-        .parts=${[
-        'Backdrop — 레이어 뒤 반투명 배경. 배경 클릭 또는 ESC 시 layerclose 이벤트를 발생시킵니다.',
-        '레이어 컨테이너 — flex column 박스. height prop으로 높이 고정, max-height: 90vh 기본값.',
-        'mm-layer-header — 타이틀과 닫기 버튼. layerclose 이벤트를 발생시킵니다.',
-        'mm-layer-body — 스크롤 가능한 콘텐츠 영역. flex: 1 1 auto로 header·footer를 제외한 나머지를 채웁니다.',
-        'mm-layer-footer — 액션 버튼 영역. primaryAction / secondaryAction prop으로 구성합니다.',
-      ]}
-      ></mm-component-anatomy> -->
-
       <mm-component-guide>
         <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
-        <!-- <mm-paragraph>
-            시각적 형태(Dialog, Sheet 등)가 아니라 행동 계약으로 Layer와 AnchoredLayer 둘로 나뉜다.
-            행동(modality·dismiss·reference)은 컨트롤러가 책임지는 별도 관심사고, elevation·
-            background·radius·width·placement 같은 외형은 컨트롤러와 무관하게 구현체가 조합한다.
-            실제 컴포넌트는 두 행동 계약 중 하나를 고르고, 여기에 외형과 자기 고유 로직(폼 상태,
-            액션 등)을 더해 완성된다.
-          </mm-paragraph> -->
 
         <mm-grid columns="2" gap="8">
           <mm-text-block level="2" heading="Level">

@@ -23,24 +23,19 @@ export class Footer extends LitElement {
           avatar-variant="secondary"
         ></mm-user-snippet>
 
-        <div style="max-width:320px;margin: var(--space-4) 0">
-          <mm-flex direction="column">
-            <mm-social-links
-              notion="https://soojubm.notion.site/UI-Designer-9c18f4dd39eb4181b9f9c2ee76896618"
-              github="https://github.com/soojubm"
-            ></mm-social-links>
-            <!-- <mm-flex gap="2">
-              <mm-link href="/my/films/">영화감상 목록</mm-link>
-              <mm-link href="/my/books/">독서 목록</mm-link>
-            </mm-flex> -->
-          </mm-flex>
+        <div class="footer-links">
+          <mm-social-links
+            notion="https://soojubm.notion.site/UI-Designer-9c18f4dd39eb4181b9f9c2ee76896618"
+            github="https://github.com/soojubm"
+          ></mm-social-links>
         </div>
 
         <dl class="footer-address-info">
+          <dt>상호</dt>
           <dd>주식회사 수줍당</dd>
           <dt>대표이사</dt>
           <dd>수줍이</dd>
-          <span class="footer-address-break"></span>
+          <div class="footer-address-break"></div>
           <dt>사업자등록번호</dt>
           <dd>888-88-88888</dd>
           <dt>주소</dt>
@@ -49,7 +44,6 @@ export class Footer extends LitElement {
           <dd>02-1234-5678</dd>
           <dt>통신판매업신고번호</dt>
           <dd>2018-서울강서구-1234</dd>
-          <abbr title="phone"></abbr>
         </dl>
         <mm-caption>© 2019 soojubm. All rights reserved.</mm-caption>
         <address>

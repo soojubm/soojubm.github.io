@@ -310,7 +310,7 @@ const main = html`
             에 읽을 수 있어요!
           </mm-paragraph>
           <mm-paragraph>
-            ✨
+            <span aria-hidden="true">✨</span>
             <b>305,408명</b>
             이 뉴닉을 읽고 있어요.
           </mm-paragraph>
@@ -322,18 +322,21 @@ const main = html`
 
       <section class="today-poll">
         <mm-text size="18" weight="bold">오늘 기분 어때요?</mm-text>
-        <mm-text centered>🦔고슴이: 고슴이는...!</mm-text>
+        <mm-text centered>
+          <span aria-hidden="true">🦔</span>
+          고슴이: 고슴이는...!
+        </mm-text>
         <mm-flex direction="column" justify-content="center" align-items="center" gap="2">
           <div>
-            <figure><span>🧒</span></figure>
+            <figure><span aria-hidden="true">🧒</span></figure>
             <span class="label">기타</span>
           </div>
           <div>
-            <figure><span>👧</span></figure>
+            <figure><span aria-hidden="true">👧</span></figure>
             <span class="label">여성</span>
           </div>
           <div>
-            <figure><span>👦</span></figure>
+            <figure><span aria-hidden="true">👦</span></figure>
             <span class="label">남성</span>
           </div>
         </mm-flex>

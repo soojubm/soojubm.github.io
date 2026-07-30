@@ -6,15 +6,22 @@ import { emit } from '@/utils'
 
 import { renderChatMessageFailedActions, renderChatMessageTime } from './chat.helpers'
 
-import '@/components/common/flex/flex'
-
 @customElement('mm-my-chat-message')
 export class MyChatMessage extends LitElement {
   static styles = [
     resetStyles,
     css`
       :host {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: var(--space-2);
+      }
+
+      .failed-actions {
+        display: flex;
+        align-items: center;
+        gap: var(--space-1);
       }
 
       ::slotted(mm-my-chat-bubble) {
@@ -38,11 +45,9 @@ export class MyChatMessage extends LitElement {
 
   render() {
     return html`
-      <mm-flex direction="column" gap="2" align-items="end">
-        <slot></slot>
-        ${renderChatMessageFailedActions(this.failed, () => this.handleRetry())}
-        ${renderChatMessageTime(this.datetime)}
-      </mm-flex>
+      <slot></slot>
+      ${renderChatMessageFailedActions(this.failed, () => this.handleRetry())}
+      ${renderChatMessageTime(this.datetime)}
     `
   }
 

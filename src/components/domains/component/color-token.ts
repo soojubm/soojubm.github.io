@@ -6,7 +6,7 @@ import '@/components/common/text/text'
 
 /**
  * 시맨틱 색상 토큰 카드.
- * surface 색(color) 위에 대비쌍(on-color)을 얹어 조합을 시연하고,
+ * surface 색(color) 위에 대비쌍(text-color)을 얹어 조합을 시연하고,
  * 캡션으로 토큰과 원시값 매핑(token)을 문서화한다.
  * 색상 토큰 표를 구성하는 단위로 mm-token-item의 색상 대응물이다.
  */
@@ -44,7 +44,7 @@ export class ColorToken extends LitElement {
 
   /** surface 배경색 (예: var(--color-primary)) */
   @property({ type: String }) color = ''
-  @property({ type: String, attribute: 'on-color' }) onColor = ''
+  @property({ type: String, attribute: 'text-color' }) textColor = ''
   /** surface 안에 표시되는 대비 라벨 (예: "on primary") */
   @property({ type: String }) label = ''
   /** 캡션의 토큰·원시값 매핑 (예: "primary: green800") */
@@ -54,7 +54,7 @@ export class ColorToken extends LitElement {
     return html`
       <figure
         class="swatch"
-        style=${`--color-token-surface: ${this.color}; --color-token-on-surface: ${this.onColor}`}
+        style=${`--color-token-surface: ${this.color}; --color-token-on-surface: ${this.textColor}`}
       >
         <mm-text size="12" weight="bold">${this.label}</mm-text>
       </figure>

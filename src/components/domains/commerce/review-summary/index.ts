@@ -3,7 +3,6 @@ import { customElement, property } from 'lit/decorators.js'
 
 import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
 import { resetStyles } from '@/stylesheets/shared.styles'
-import '@/components/common/flex/flex'
 
 /**
  * mm-review-summary
@@ -15,10 +14,14 @@ export class ReviewSummary extends LitElement {
     resetStyles,
     css`
       :host {
-        display: block;
+        display: flex;
+        align-items: center;
+        gap: var(--space-2);
       }
 
       .stars {
+        display: flex;
+        gap: var(--space-1);
         color: var(--color-accent);
       }
     `,
@@ -32,20 +35,18 @@ export class ReviewSummary extends LitElement {
     const filledStars = Math.round(rating)
 
     return html`
-      <mm-flex align-items="center" gap="2">
-        <mm-flex class="stars" role="img" aria-label="5점 만점에 ${rating}점">
-          ${Array.from(
-            { length: 5 },
-            (_, index) => html`
-              <mm-icon
-                name=${index < filledStars ? ICON_NAMES.FAVORITE_SELECTED : ICON_NAMES.FAVORITE}
-              ></mm-icon>
-            `,
-          )}
-        </mm-flex>
-        <mm-text weight="bold">${rating.toFixed(1)}</mm-text>
-        <mm-text>리뷰 ${this.reviewCount.toLocaleString('ko-KR')}개</mm-text>
-      </mm-flex>
+      <div class="stars" role="img" aria-label="5점 만점에 ${rating}점">
+        ${Array.from(
+          { length: 5 },
+          (_, index) => html`
+            <mm-icon
+              name=${index < filledStars ? ICON_NAMES.FAVORITE_SELECTED : ICON_NAMES.FAVORITE}
+            ></mm-icon>
+          `,
+        )}
+      </div>
+      <mm-text weight="bold">${rating.toFixed(1)}</mm-text>
+      <mm-text>리뷰 ${this.reviewCount.toLocaleString('ko-KR')}개</mm-text>
     `
   }
 }

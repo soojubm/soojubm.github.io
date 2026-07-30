@@ -20,6 +20,12 @@ export class Table extends LitElement {
   static styles = [
     resetStyles,
     css`
+      .header-label {
+        display: flex;
+        align-items: center;
+        gap: var(--space-1);
+      }
+
       :host {
         display: block;
         height: 320px;
@@ -87,10 +93,13 @@ export class Table extends LitElement {
     if (!column.sortable) return column.label
 
     return html`
-      <mm-flex align-items="center" justify-content=${this.getHeaderJustifyContent(column)} gap="1">
+      <span
+        class="header-label"
+        style=${styleMap({ justifyContent: this.getHeaderJustifyContent(column) })}
+      >
         ${column.label}
         <mm-icon name=${ICON_NAMES.SORT} size="tiny"></mm-icon>
-      </mm-flex>
+      </span>
     `
   }
 

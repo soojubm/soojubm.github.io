@@ -298,9 +298,9 @@ const main = html`
           texts='["체크리스트 항목", "완료, 충족, 포함 같은 긍정적인 상태를 나타낼 때 사용합니다.", "마커는 check 변형을 사용합니다."]'
         ></mm-text-list>
         <mm-separator scope="section"></mm-separator>
-        <div role="suggestion">
-          <del role="deletion">₩ 30,000</del>
-          <b role="insertion">₩ 20,000</b>
+        <div>
+          <del>₩ 30,000</del>
+          <ins>₩ 20,000</ins>
           <em>(30%)</em>
         </div>
       </div>

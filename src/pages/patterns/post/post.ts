@@ -30,7 +30,6 @@ const main = html`
           description="Youtube Subscriber"
           avatar-variant="secondary"
           avatar-src="/src/images/soojubm.png"
-          size="small"
         ></mm-user-row>
         <mm-thumbnail src="/src/images/soojubm.png" ratio="16:9"></mm-thumbnail>
       </mm-flex>

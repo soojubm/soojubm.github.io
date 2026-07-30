@@ -21,6 +21,12 @@ function hasValue(target: EventTarget | null): target is HTMLInputElement | HTML
 @customElement('mm-navbar-search')
 export class NavbarSearch extends LitElement {
   static styles = css`
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+    }
+
     :host {
       display: inline-flex;
       align-items: center;
@@ -61,14 +67,12 @@ export class NavbarSearch extends LitElement {
         <mm-top-bar type="back"></mm-top-bar>
         <mm-layer-body>
           <form role="search">
-            <mm-flex direction="column" gap="2">
-              <mm-searchfield
-                placeholder="컴포넌트, 패턴을 검색하세요"
-                .value=${this.query}
-                @input=${this.handleSearchInput}
-              ></mm-searchfield>
-              ${this.query ? this.renderResults() : this.renderDefault()}
-            </mm-flex>
+            <mm-searchfield
+              placeholder="컴포넌트, 패턴을 검색하세요"
+              .value=${this.query}
+              @input=${this.handleSearchInput}
+            ></mm-searchfield>
+            ${this.query ? this.renderResults() : this.renderDefault()}
           </form>
         </mm-layer-body>
       </mm-layer>

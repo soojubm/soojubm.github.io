@@ -5,7 +5,6 @@ import { ifDefined } from 'lit/directives/if-defined.js'
 import type { AvatarVariant } from '@/components/common/avatar/avatar'
 
 import { entityStyles } from '@/components/domains/user-snippet/user-snippet.styles'
-import '@/components/common/flex/flex'
 
 @customElement('mm-user-snippet')
 class UserSnippet extends LitElement {
@@ -22,20 +21,20 @@ class UserSnippet extends LitElement {
 
   render() {
     return html`
-      <mm-flex class="entity" direction="column" gap="2">
+      <div class="entity">
         <mm-avatar
           size="80"
           variant=${this.avatarVariant}
           src=${ifDefined(this.avatarSrc || undefined)}
         ></mm-avatar>
         ${this.renderTag()}
-        <mm-flex direction="column">
+        <div class="entity-detail">
           <mm-paragraph size="large">${this.name}</mm-paragraph>
           ${this.renderDescription()}
           <mm-text size="12">${this.email}</mm-text>
           <mm-text size="12">${this.phone}</mm-text>
-        </mm-flex>
-      </mm-flex>
+        </div>
+      </div>
     `
   }
 

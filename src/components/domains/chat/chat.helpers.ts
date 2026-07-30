@@ -22,7 +22,7 @@ export const renderChatMessageFailedActions = (failed: boolean, onRetry: () => v
   if (!failed) return nothing
 
   return html`
-    <mm-flex gap="1" align-items="center">
+    <span class="failed-actions">
       <mm-text size="12" color="danger" role="alert">전송 실패</mm-text>
       <mm-icon-button
         size="small"
@@ -31,7 +31,7 @@ export const renderChatMessageFailedActions = (failed: boolean, onRetry: () => v
         aria-label="재전송"
         @click=${onRetry}
       ></mm-icon-button>
-    </mm-flex>
+    </span>
   `
 }
 

@@ -3,7 +3,6 @@ import { customElement, property } from 'lit/decorators.js'
 
 import { focusRing, resetStyles } from '@/stylesheets/shared.styles'
 import '@/components/common/icon-button/semantics/more-button'
-import '@/components/common/flex/flex'
 import { arrayAttributeConverter, emit } from '@/utils'
 
 @customElement('mm-portfolio-item')
@@ -48,6 +47,12 @@ export class PortfolioItem extends LitElement {
       .action {
         top: var(--space-2);
         right: var(--space-2);
+      }
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-1);
       }
 
       .keyword-tags {
@@ -95,11 +100,11 @@ export class PortfolioItem extends LitElement {
         ${this.renderBadge()}
         <mm-more-button class="action"></mm-more-button>
         ${this.renderThumbnail()}
-        <mm-flex direction="column" gap="1">
+        <div class="content">
           ${this.renderHeading()} ${this.renderDescription()} ${this.renderDatetime()}
           ${this.renderKeywords()}
           <slot></slot>
-        </mm-flex>
+        </div>
       </article>
     `
   }

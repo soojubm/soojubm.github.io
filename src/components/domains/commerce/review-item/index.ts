@@ -3,7 +3,6 @@ import { customElement, property } from 'lit/decorators.js'
 
 import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
 import { resetStyles } from '@/stylesheets/shared.styles'
-import '@/components/common/flex/flex'
 
 /**
  * mm-review-item
@@ -20,6 +19,16 @@ export class ReviewItem extends LitElement {
         width: 100%;
       }
 
+      .body {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-3);
+      }
+
+      .rating {
+        display: flex;
+      }
+
       .rating {
         color: var(--color-accent);
       }
@@ -34,19 +43,19 @@ export class ReviewItem extends LitElement {
   render() {
     return html`
       <mm-surface variant="outlined">
-        <mm-flex direction="column" gap="3">
-          <mm-flex class="rating" role="img" aria-label="${this.rating}점">
+        <div class="body">
+          <div class="rating" role="img" aria-label="${this.rating}점">
             ${Array.from(
               { length: this.rating },
               () => html`
                 <mm-icon name=${ICON_NAMES.FAVORITE_SELECTED}></mm-icon>
               `,
             )}
-          </mm-flex>
+          </div>
 
           <mm-paragraph>${this.content}</mm-paragraph>
           ${this.renderMeta()}
-        </mm-flex>
+        </div>
       </mm-surface>
     `
   }

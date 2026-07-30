@@ -7,7 +7,6 @@ import { resetStyles } from '@/stylesheets/shared.styles'
 import { renderChatMessageTime } from './chat.helpers'
 
 import '@/components/common/avatar/avatar'
-import '@/components/common/flex/flex'
 import '@/components/common/text/text'
 
 @customElement('mm-participant-chat-message')
@@ -18,6 +17,24 @@ export class ParticipantChatMessage extends LitElement {
       :host {
         display: flex;
         gap: var(--space-1) var(--space-2);
+      }
+
+      .body {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-1);
+      }
+
+      .bubbles {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-2);
+      }
+
+      .meta {
+        display: flex;
+        gap: var(--space-1);
       }
     `,
   ]
@@ -33,12 +50,12 @@ export class ParticipantChatMessage extends LitElement {
         variant="tertiary"
         src=${ifDefined(this.avatarSrc || undefined)}
       ></mm-avatar>
-      <mm-flex direction="column" gap="1">
+      <div class="body">
         ${this.renderMeta()}
-        <mm-flex direction="column" gap="2" align-items="start">
+        <div class="bubbles">
           <slot></slot>
-        </mm-flex>
-      </mm-flex>
+        </div>
+      </div>
     `
   }
 
@@ -46,10 +63,10 @@ export class ParticipantChatMessage extends LitElement {
     if (!this.name && !this.datetime) return nothing
 
     return html`
-      <mm-flex gap="1">
+      <div class="meta">
         <mm-text class="name" size="12">${this.name}</mm-text>
         ${renderChatMessageTime(this.datetime)}
-      </mm-flex>
+      </div>
     `
   }
 }

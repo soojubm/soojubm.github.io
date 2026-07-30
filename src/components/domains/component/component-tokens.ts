@@ -74,14 +74,14 @@ export class Token extends LitElement {
 
   render() {
     return html`
-      <mm-flex align-items="center" gap="3">
-        <div style="width:100px">${this.renderCategoryTag()}</div>
+      <div class="token-row">
+        <div class="token-category">${this.renderCategoryTag()}</div>
         <mm-meta-item
           layout="stacked"
           label=${this.formatName()}
           value=${this.formatDefault()}
         ></mm-meta-item>
-      </mm-flex>
+      </div>
     `
   }
 
@@ -169,14 +169,14 @@ export class ComponentTokens extends LitElement {
     return html`
       <section class="component-content-frame">
         <!-- <mm-heading>Component Tokens</mm-heading> -->
-        <mm-flex direction="column" gap="2">
+        <div class="token-list">
           ${this.tokens.map(
             token =>
               html`
                 <mm-token name=${token.name} default=${token.default}></mm-token>
               `,
           )}
-        </mm-flex>
+        </div>
       </section>
     `
   }

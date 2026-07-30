@@ -96,9 +96,29 @@ export const componentPropsStyles = [
   `,
 ]
 
-export const tokenStyles = [resetStyles]
+export const tokenStyles = [
+  resetStyles,
+  css`
+    .token-row {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+    }
+
+    .token-category {
+      width: 100px;
+    }
+  `,
+]
 
 export const componentTokensStyles = [
+  css`
+    .token-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+    }
+  `,
   resetStyles,
   componentContentFrameStyles,
   css`

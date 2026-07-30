@@ -1,9 +1,10 @@
 import { html } from 'lit'
 
+import { renderDocumentLayout } from '@/components/layouts/document-layout'
+/* Signifier 가이드·아이콘 카탈로그 초안. 되살릴 때 템플릿으로 되돌린다.
+   Lit은 HTML 주석 안 바인딩을 지원하지 않아 템플릿에 주석으로 남기지 않는다.
 import type { FilterOption } from '@/components/common/button/semantics/filter-button-group'
 import type { IconName } from '@/components/common/icon-button/semantics/icon-names'
-
-import { renderDocumentLayout } from '@/components/layouts/document-layout'
 
 interface IconListItem {
   icon: IconName
@@ -114,131 +115,7 @@ const iconCategoryOptions: FilterOption[] = [
   { value: 'communication', label: 'Communication' },
 ]
 
-const main = html`
-  <main class="page">
-    <mm-flex direction="column" gap="16">
-      <!-- <mm-page-header
-        heading="Signifier"
-        description="기표는 사용자가 UI를 보고 해당 요소의 역할, 상태, 가능한 행동을 이해할 수 있도록 하는 시각적 단서입니다. 이 페이지는 디자인 시스템 안에서 특정 시각 표현이 특정 의미에만 사용되도록 제한하는 공통 계약을 정의합니다."
-      ></mm-page-header> -->
-
-      <mm-text-block
-        level="2"
-        heading="Component Level"
-        description="Level은 디자인 시스템 전반에서 요소의 구조적 위계를 정의하는 파운데이션으로, spacing을 비롯한 여러 속성값이 element, group, section 등 단계에 따라 다른 기준을 갖도록 하기 위해 사용합니다. 특정 컴포넌트에 종속되지 않고, spacing 토큰 체계 자체의 축으로 기능합니다."
-      >
-        <mm-grid columns="3">
-          <div>
-            <h3>Element</h3>
-            <p>1</p>
-          </div>
-          <div>
-            <h3>Group</h3>
-            <p>1</p>
-          </div>
-          <div>
-            <h3>Section</h3>
-            <p>1</p>
-          </div>
-        </mm-grid>
-
-        목적: "이 간격이 얼마나 넓어야 하는가"를 개별 컴포넌트마다 판단하지 않고, 소속된 구조적
-        단계(level)에 따라 일관되게 결정하기 위함입니다. Element: 단일 UI 유닛 내부/사이의 가장 좁은
-        간격 (예: 아이콘-텍스트, 버튼 padding). Group: 관련 요소들을 묶는 중간 단위 사이의 간격 (예:
-        폼 필드 그룹, 버튼 그룹). Section: 카드, 블록, 페이지 구획 등 최상위 레이아웃 단위 사이의
-        간격. 적용 방식: spacing 토큰은 --spacing-{level}-{size} 구조를 따르며 (예:
-        --spacing-element-md), 컴포넌트는 자신이 속한 level에 맞는 토큰만 참조합니다. 확장성: 현재는
-        spacing에 적용하지만, 추후 radius, shadow 등 다른 파운데이션에도 동일 level 체계를 확장
-        적용할 수 있습니다.
-      </mm-text-block>
-
-      <section>
-        <mm-text-block
-          level="2"
-          heading="Depth"
-          description="layer(z-index)와 surface는 같은 질문에서 출발한다"
-        ></mm-text-block>
-
-        <mm-grid columns="2">
-          <mm-paragraph>
-            <strong>??</strong>
-            —
-            <code>ghost</code>
-            <code>outlined</code>
-            <code>filled</code>
-            (내부에 클릭 가능한 액션이 있을 때 배경으로 강조)까지 페이지 본문 안에 놓인다. —
-            <code>--material-zindex-base</code>
-            (문서, 리스트, 배경),
-            <code>--material-zindex-raised</code>
-            (카드, 패널)처럼 페이지 본문 안에서 쌓이는 요소.
-          </mm-paragraph>
-          <mm-paragraph>
-            <strong>오버레이</strong>
-            —
-            <code>elevated</code>
-            는 화면 위에 떠 있는 요소를 그림자로 강조한다. layer의 overlay·modal·chrome처럼 콘텐츠
-            바깥에서 동작하는 표면과 짝을 이룬다. —
-            <code>--material-zindex-overlay</code>
-            (드롭다운, 툴팁, 팝오버),
-            <code>--material-zindex-modal</code>
-            (모달, 시트),
-            <code>--material-zindex-chrome</code>
-            (내비게이션, 툴바),
-            <code>--material-zindex-toast</code>
-            (알림)처럼 콘텐츠 위로 떠서 화면 전체 기준으로 쌓이는 요소.
-          </mm-paragraph>
-        </mm-grid>
-
-        <mm-surface variant="filled" style="margin-top: var(--space-4)">
-          <mm-paragraph>
-            아직 확정 전. surface의 시스템 레벨(elevated)이 layer의 시스템 레벨(overlay 이상)과 항상
-            짝을 이루는지, 아니면 elevated가 콘텐츠 안에서도 쓰일 수 있는지는 사용례가 더 쌓인 뒤
-            판단한다.
-          </mm-paragraph>
-        </mm-surface>
-      </section>
-
-      <mm-flex direction="column" gap="4">
-        <mm-text size="24" weight="bold" as="h2">Editorial</mm-text>
-
-        <mm-paragraph>
-          사용자는 디스크립션을 자세히 읽기를 원하지 않으므로, 필요한 내용을 빠르게 캐치할 수 있도록
-          간결하게 쓰는 게 좋다. 한 줄에 50자, 세 줄 이하로 쓸 것을 권장하고 있다. 텍스트를 간결하게
-          유지하고 전달할 내용을 스캐너블한 덩어리로 나누는 것은, 유저들이 그들의 이해도와 이
-          서비스를 활용하는 능력에 대해 신뢰를 갖게 만든다. (Easy scanning)
-        </mm-paragraph>
-
-        <mm-text-block
-          level="4"
-          heading="Message / Description"
-          description="같은 텍스트 슬롯이라도 관점에 따라 이름을 구분합니다. message는 사용자의 관점에서, description은 시스템을 주어로 서술합니다."
-        >
-          예: 다이얼로그의 상태 메시지는 message("확인 후 진행해주세요")로, 컴포넌트 문서의 설명은
-          description("이 컴포넌트는 ~를 수행합니다")으로 표기합니다.
-
-          <mm-paragraph>
-            사용자의 주목이 필요한 경우 콘텐츠 모듈을 가운데 정렬합니다. 이는 상태 변화, 결과, 맥락
-            전환 등의 의미를 전달하기 위한 표현입니다. 고민 지점: 상위 레이어를 생성하는 팝업 자체가
-            이미 높은 주목도를 가진다. 여기에서 콘텐츠 모듈을 가운데 정렬하는 것은 컨텐츠 정렬의
-            일관성을 해치지 않는지?
-          </mm-paragraph>
-
-          <mm-keyword-tag-group
-            keywords='["Result component", "Empty state", "Success message"]'
-          ></mm-keyword-tag-group>
-        </mm-text-block>
-
-        <mm-text-block level="4" heading="Interaction Label">
-          <mm-text-list
-            texts='[
-          "동사가 포함된 2자~8자 한글(!). 레이블 줄임(truncated) 불가. 사용자 시점으로 작성한다 (예: 보내기 → 받기).",
-          "기타"
-        ]'
-          ></mm-text-list>
-        </mm-text-block>
-      </mm-flex>
-
-      <!-- <mm-paragraph-group>
+ <mm-paragraph-group>
       <mm-caption>
         Signifier 페이지의 목적은 UI의 시각 표현이 어떤 의미, 상태, 행동 가능성을 나타내는지
         일관되게 정의하는 것입니다.
@@ -385,7 +262,132 @@ const main = html`
           <div class="item">Item 11</div>
         </div>
       </div>
-    </mm-flex> -->
+    </mm-flex> 
+*/
+
+const main = html`
+  <main class="page">
+    <mm-flex direction="column" gap="16">
+      <!-- <mm-page-header
+        heading="Signifier"
+        description="기표는 사용자가 UI를 보고 해당 요소의 역할, 상태, 가능한 행동을 이해할 수 있도록 하는 시각적 단서입니다. 이 페이지는 디자인 시스템 안에서 특정 시각 표현이 특정 의미에만 사용되도록 제한하는 공통 계약을 정의합니다."
+      ></mm-page-header> -->
+
+      <mm-text-block
+        level="2"
+        heading="Component Level"
+        description="Level은 디자인 시스템 전반에서 요소의 구조적 위계를 정의하는 파운데이션으로, spacing을 비롯한 여러 속성값이 element, group, section 등 단계에 따라 다른 기준을 갖도록 하기 위해 사용합니다. 특정 컴포넌트에 종속되지 않고, spacing 토큰 체계 자체의 축으로 기능합니다."
+      >
+        <mm-grid columns="3">
+          <div>
+            <h3>Element</h3>
+            <p>1</p>
+          </div>
+          <div>
+            <h3>Group</h3>
+            <p>1</p>
+          </div>
+          <div>
+            <h3>Section</h3>
+            <p>1</p>
+          </div>
+        </mm-grid>
+
+        목적: "이 간격이 얼마나 넓어야 하는가"를 개별 컴포넌트마다 판단하지 않고, 소속된 구조적
+        단계(level)에 따라 일관되게 결정하기 위함입니다. Element: 단일 UI 유닛 내부/사이의 가장 좁은
+        간격 (예: 아이콘-텍스트, 버튼 padding). Group: 관련 요소들을 묶는 중간 단위 사이의 간격 (예:
+        폼 필드 그룹, 버튼 그룹). Section: 카드, 블록, 페이지 구획 등 최상위 레이아웃 단위 사이의
+        간격. 적용 방식: spacing 토큰은 --spacing-{level}-{size} 구조를 따르며 (예:
+        --spacing-element-md), 컴포넌트는 자신이 속한 level에 맞는 토큰만 참조합니다. 확장성: 현재는
+        spacing에 적용하지만, 추후 radius, shadow 등 다른 파운데이션에도 동일 level 체계를 확장
+        적용할 수 있습니다.
+      </mm-text-block>
+
+      <section>
+        <mm-text-block
+          level="2"
+          heading="Depth"
+          description="layer(z-index)와 surface는 같은 질문에서 출발한다"
+        ></mm-text-block>
+
+        <mm-grid columns="2">
+          <mm-paragraph>
+            <strong>??</strong>
+            —
+            <code>ghost</code>
+            <code>outlined</code>
+            <code>filled</code>
+            (내부에 클릭 가능한 액션이 있을 때 배경으로 강조)까지 페이지 본문 안에 놓인다. —
+            <code>--material-zindex-base</code>
+            (문서, 리스트, 배경),
+            <code>--material-zindex-raised</code>
+            (카드, 패널)처럼 페이지 본문 안에서 쌓이는 요소.
+          </mm-paragraph>
+          <mm-paragraph>
+            <strong>오버레이</strong>
+            —
+            <code>elevated</code>
+            는 화면 위에 떠 있는 요소를 그림자로 강조한다. layer의 overlay·modal·chrome처럼 콘텐츠
+            바깥에서 동작하는 표면과 짝을 이룬다. —
+            <code>--material-zindex-overlay</code>
+            (드롭다운, 툴팁, 팝오버),
+            <code>--material-zindex-modal</code>
+            (모달, 시트),
+            <code>--material-zindex-chrome</code>
+            (내비게이션, 툴바),
+            <code>--material-zindex-toast</code>
+            (알림)처럼 콘텐츠 위로 떠서 화면 전체 기준으로 쌓이는 요소.
+          </mm-paragraph>
+        </mm-grid>
+
+        <mm-surface variant="filled" style="margin-top: var(--space-4)">
+          <mm-paragraph>
+            아직 확정 전. surface의 시스템 레벨(elevated)이 layer의 시스템 레벨(overlay 이상)과 항상
+            짝을 이루는지, 아니면 elevated가 콘텐츠 안에서도 쓰일 수 있는지는 사용례가 더 쌓인 뒤
+            판단한다.
+          </mm-paragraph>
+        </mm-surface>
+      </section>
+
+      <mm-flex direction="column" gap="4">
+        <mm-text size="24" weight="bold" as="h2">Editorial</mm-text>
+
+        <mm-paragraph>
+          사용자는 디스크립션을 자세히 읽기를 원하지 않으므로, 필요한 내용을 빠르게 캐치할 수 있도록
+          간결하게 쓰는 게 좋다. 한 줄에 50자, 세 줄 이하로 쓸 것을 권장하고 있다. 텍스트를 간결하게
+          유지하고 전달할 내용을 스캐너블한 덩어리로 나누는 것은, 유저들이 그들의 이해도와 이
+          서비스를 활용하는 능력에 대해 신뢰를 갖게 만든다. (Easy scanning)
+        </mm-paragraph>
+
+        <mm-text-block
+          level="4"
+          heading="Message / Description"
+          description="같은 텍스트 슬롯이라도 관점에 따라 이름을 구분합니다. message는 사용자의 관점에서, description은 시스템을 주어로 서술합니다."
+        >
+          예: 다이얼로그의 상태 메시지는 message("확인 후 진행해주세요")로, 컴포넌트 문서의 설명은
+          description("이 컴포넌트는 ~를 수행합니다")으로 표기합니다.
+
+          <mm-paragraph>
+            사용자의 주목이 필요한 경우 콘텐츠 모듈을 가운데 정렬합니다. 이는 상태 변화, 결과, 맥락
+            전환 등의 의미를 전달하기 위한 표현입니다. 고민 지점: 상위 레이어를 생성하는 팝업 자체가
+            이미 높은 주목도를 가진다. 여기에서 콘텐츠 모듈을 가운데 정렬하는 것은 컨텐츠 정렬의
+            일관성을 해치지 않는지?
+          </mm-paragraph>
+
+          <mm-keyword-tag-group
+            keywords='["Result component", "Empty state", "Success message"]'
+          ></mm-keyword-tag-group>
+        </mm-text-block>
+
+        <mm-text-block level="4" heading="Interaction Label">
+          <mm-text-list
+            texts='[
+          "동사가 포함된 2자~8자 한글(!). 레이블 줄임(truncated) 불가. 사용자 시점으로 작성한다 (예: 보내기 → 받기).",
+          "기타"
+        ]'
+          ></mm-text-list>
+        </mm-text-block>
+      </mm-flex>
     </mm-flex>
   </main>
 `

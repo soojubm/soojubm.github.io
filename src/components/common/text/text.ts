@@ -24,6 +24,7 @@ export class Text extends LitElement {
 
   render() {
     const tag = unsafeStatic(this.as)
+    // eslint-disable-next-line lit/binding-positions, lit/no-invalid-html -- lit/static-html의 태그 자리 바인딩이라 정상이다. 규칙이 일반 html 태그만 가정해 오탐한다.
     return html`<${tag}><slot></slot></${tag}>`
   }
 }

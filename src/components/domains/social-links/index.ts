@@ -3,7 +3,6 @@ import { customElement, property } from 'lit/decorators.js'
 
 import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
 import { resetStyles } from '@/stylesheets/shared.styles'
-import '@/components/common/flex/flex'
 
 const PLATFORMS = [
   { key: 'github', label: 'Github', icon: ICON_NAMES.GITHUB },
@@ -27,6 +26,11 @@ export class SocialLinks extends LitElement {
   static styles = [
     resetStyles,
     css`
+      .compact {
+        display: flex;
+        gap: var(--space-2);
+      }
+
       .compact a {
         text-decoration: none;
         color: inherit;
@@ -64,7 +68,7 @@ export class SocialLinks extends LitElement {
 
   private renderCompact() {
     return html`
-      <mm-flex class="compact" gap="2">${this.renderCompactLinks()}</mm-flex>
+      <div class="compact">${this.renderCompactLinks()}</div>
     `
   }
 

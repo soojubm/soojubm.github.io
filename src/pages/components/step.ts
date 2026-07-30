@@ -161,7 +161,7 @@ const main = html`
           <mm-tag datetime="">2022. 11. 4.</mm-tag>
           <div class="timeline-item-panel">
             <mm-avatar slot="avatar">
-              <span style="font-size: 0.75rem">🐺</span>
+              <span style="font-size: 0.75rem" aria-hidden="true">🐺</span>
             </mm-avatar>
             <div slot="text">
               <span>폰트 디자인</span>
@@ -172,7 +172,7 @@ const main = html`
         <div class="timeline-item">
           <mm-tag>2020. 02. - 2021. 02</mm-tag>
           <div class="timeline-item-panel">
-            <mm-avatar>🦔</mm-avatar>
+            <mm-avatar><span aria-hidden="true">🦔</span></mm-avatar>
             <div>
               <span>뉴닉, 프로덕트 디자이너</span>
               <mm-text-list
@@ -184,7 +184,7 @@ const main = html`
         <div class="timeline-item">
           <mm-tag>2020</mm-tag>
           <div class="timeline-item-panel">
-            <mm-avatar slot="avatar">🔢</mm-avatar>
+            <mm-avatar slot="avatar"><span aria-hidden="true">🔢</span></mm-avatar>
             <div slot="text">
               <span>그로스해킹 - 데이터와 실험을 통해 성장하는 서비스를 만드는 방법</span>
               <span>인프런 양승화</span>
@@ -194,7 +194,7 @@ const main = html`
         <div class="timeline-item">
           <mm-tag>2019</mm-tag>
           <div class="timeline-item-panel">
-            <mm-avatar slot="avatar">🔢</mm-avatar>
+            <mm-avatar slot="avatar"><span aria-hidden="true">🔢</span></mm-avatar>
             <div slot="text">
               <span>FE CONF2020 프론트엔드 컨퍼런스</span>
               <span>롯데타워</span>
@@ -204,7 +204,7 @@ const main = html`
         <div class="timeline-item">
           <mm-tag>2018.07 ~ 2018.09</mm-tag>
           <div class="timeline-item-panel">
-            <mm-avatar slot="avatar">🐺</mm-avatar>
+            <mm-avatar slot="avatar"><span aria-hidden="true">🐺</span></mm-avatar>
             <span>자바스크립트 기본</span>
             <span>양재동코드랩 / 서울창업허브 세미나실 3 김영보</span>
           </div>
@@ -212,21 +212,21 @@ const main = html`
         <div class="timeline-item">
           <mm-tag>2017.07 ~ 2017.09</mm-tag>
           <div class="timeline-item-panel">
-            <mm-avatar slot="avatar">🔢</mm-avatar>
+            <mm-avatar slot="avatar"><span aria-hidden="true">🔢</span></mm-avatar>
             <div slot="text">
               <span>글자, 그리고 표현</span>
               <span>한글타이포그래피학교 현승재</span>
             </div>
           </div>
           <div class="timeline-item-panel">
-            <mm-avatar slot="avatar">🐺</mm-avatar>
+            <mm-avatar slot="avatar"><span aria-hidden="true">🐺</span></mm-avatar>
             <div slot="text">
               <span>GUI 디자인</span>
               <span>SK 상생협력센터 T아카데미</span>
             </div>
           </div>
           <div class="timeline-item-panel">
-            <mm-avatar slot="avatar">🐺</mm-avatar>
+            <mm-avatar slot="avatar"><span aria-hidden="true">🐺</span></mm-avatar>
             <div slot="text">
               <span>크로스브라우징 디지털 퍼블리싱 4기</span>
               <span>경원직업전문학교</span>

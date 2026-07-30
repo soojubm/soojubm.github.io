@@ -3,7 +3,6 @@ import { customElement, property, queryAssignedElements } from 'lit/decorators.j
 
 import { ICON_NAMES, type IconName } from '@/components/common/icon-button/semantics/icon-names'
 import { resetStyles } from '@/stylesheets/shared.styles'
-import '@/components/common/flex/flex'
 import '@/components/common/icon/icon'
 import '@/components/common/text/text'
 
@@ -29,6 +28,9 @@ export class ChatReasoningFlow extends LitElement {
     resetStyles,
     css`
       :host {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-1);
       }
 
       :host([hidden]) {
@@ -116,12 +118,10 @@ export class ChatReasoning extends LitElement {
 
   render() {
     return html`
-      <mm-flex direction="column" gap="1">
-        ${this.renderDuration()}
-        <span>
-          <slot @slotchange=${this.handleFlowSlotChange}></slot>
-        </span>
-      </mm-flex>
+      ${this.renderDuration()}
+      <span>
+        <slot @slotchange=${this.handleFlowSlotChange}></slot>
+      </span>
     `
   }
 

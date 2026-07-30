@@ -47,8 +47,8 @@ const main = html`
               "mm-popover — 패널",
               "mm-menu-item-group (role=menu, 기본값)",
               "mm-menu-item-action · mm-menu-item-link — role=menuitem",
-              "mm-menu-item-checkbox-group(role=group) > mm-menu-item-checkbox — role=menuitemcheckbox",
-              "mm-menu-item-radio-group(role=radiogroup) > mm-menu-item-radio — role=menuitemradio"
+              "mm-menu-item-checkbox-group(role=group) &gt; mm-menu-item-checkbox — role=menuitemcheckbox",
+              "mm-menu-item-radio-group(role=radiogroup) &gt; mm-menu-item-radio — role=menuitemradio"
             ]'
             ></mm-text-list>
           </mm-flex>

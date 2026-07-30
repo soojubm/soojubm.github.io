@@ -13,7 +13,11 @@ const main = html`
             <mm-chat-date label="2022년 5월 17일"></mm-chat-date>
 
             <mm-ai-chat-message datetime="12:00 am">
-              <mm-ai-chat-bubble>안녕하세요 👋 무엇을 도와드릴까요?</mm-ai-chat-bubble>
+              <mm-ai-chat-bubble>
+                안녕하세요
+                <span aria-hidden="true">👋</span>
+                무엇을 도와드릴까요?
+              </mm-ai-chat-bubble>
               <mm-ai-chat-bubble><b>소제목</b></mm-ai-chat-bubble>
               <mm-ai-chat-bubble>
                 날짜는 버블 밖으로 나와야한다. 리얼타임. 버블의 전송 상태. reaction. iMessage에서
@@ -113,7 +117,10 @@ const main = html`
 
       <mm-chat-footer>
         <mm-chat-suggestions>
-          <mm-chat-suggestion>네, 좋아요 👍</mm-chat-suggestion>
+          <mm-chat-suggestion>
+            네, 좋아요
+            <span aria-hidden="true">👍</span>
+          </mm-chat-suggestion>
           <mm-chat-suggestion>다시 설명해 주세요</mm-chat-suggestion>
           <mm-chat-suggestion icon="calendar">일정 잡기</mm-chat-suggestion>
           <mm-chat-suggestion>나중에 할게요</mm-chat-suggestion>

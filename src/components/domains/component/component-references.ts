@@ -17,6 +17,18 @@ export class ComponentReferences extends LitElement {
       display: block;
     }
 
+    .references-body {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+    }
+
+    .references-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-1) var(--space-4);
+    }
+
     .component-references {
       display: flex;
       flex-direction: column;
@@ -35,19 +47,19 @@ export class ComponentReferences extends LitElement {
 
   render() {
     return html`
-      <mm-flex direction="column" gap="3">
+      <div class="references-body">
         <mm-heading>${this.heading}</mm-heading>
         <mm-surface variant="filled" radius="large" style="padding-inline: 1.25rem">
-          <mm-flex gap="4" wrap="wrap" style="row-gap:var(--space-1)">
+          <div class="references-links">
             ${this.items.map(
               item =>
                 html`
                   <mm-link ?external=${item.external} href=${item.href}>${item.label}</mm-link>
                 `,
             )}
-          </mm-flex>
+          </div>
         </mm-surface>
-      </mm-flex>
+      </div>
     `
   }
 }

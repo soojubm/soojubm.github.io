@@ -5,7 +5,6 @@ import { repeat } from 'lit/directives/repeat.js'
 
 import soojubmImage from '@/images/soojubm.png'
 import { emit } from '@/utils'
-import '@/components/common/flex/flex'
 import '@/components/common/button/semantics/attachment-button'
 import '@/components/common/button/semantics/attachment-item'
 import '@/components/common/tag/semantics/keyword-tag-group'
@@ -26,7 +25,19 @@ export class FileUploader extends LitElement {
     :host {
       display: flex;
       flex-direction: column;
-      gap: var(--space-4);
+      gap: var(--space-2);
+    }
+
+    .attachments {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+    }
+
+    .attachment-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
     }
   `
 
@@ -47,22 +58,20 @@ export class FileUploader extends LitElement {
 
   render() {
     return html`
-      <mm-flex direction="column" gap="2">
-        <mm-attachment-button
-          label=${this.label}
-          accept=${this.accept}
-          ?multiple=${this.multiple}
-          ?capture=${this.capture}
-          @files-change=${this.handleFilesChange}
-        ></mm-attachment-button>
-        <mm-keyword-tag-group
-          .keywords=${[this.helper, this.filesStatusText].filter(Boolean)}
-        ></mm-keyword-tag-group>
-        <mm-flex direction="column" gap="2">
-          <mm-paragraph color="light">첨부한 파일</mm-paragraph>
-          ${this.renderAttachments()}
-        </mm-flex>
-      </mm-flex>
+      <mm-attachment-button
+        label=${this.label}
+        accept=${this.accept}
+        ?multiple=${this.multiple}
+        ?capture=${this.capture}
+        @files-change=${this.handleFilesChange}
+      ></mm-attachment-button>
+      <mm-keyword-tag-group
+        .keywords=${[this.helper, this.filesStatusText].filter(Boolean)}
+      ></mm-keyword-tag-group>
+      <div class="attachments">
+        <mm-paragraph color="light">첨부한 파일</mm-paragraph>
+        ${this.renderAttachments()}
+      </div>
     `
   }
 
@@ -80,7 +89,7 @@ export class FileUploader extends LitElement {
     if (!this.hasFiles) return nothing
 
     return html`
-      <mm-flex gap="2" wrap="wrap">
+      <div class="attachment-list">
         ${repeat(
           this.files,
           file => file,
@@ -94,7 +103,7 @@ export class FileUploader extends LitElement {
             ></mm-attachment-item>
           `,
         )}
-      </mm-flex>
+      </div>
     `
   }
 

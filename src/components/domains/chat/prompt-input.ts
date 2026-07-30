@@ -3,7 +3,6 @@ import { customElement, property } from 'lit/decorators.js'
 
 import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
 import '@/components/common/icon-button/icon-button'
-import '@/components/common/flex/flex'
 import { inputStyles } from '@/components/common/input/input.styles'
 import '@/components/common/input/textarea'
 import '@/components/overlay/popover/semantics/select'
@@ -26,8 +25,21 @@ export class PromptInput extends LitElement {
         -webkit-backdrop-filter: var(--surface-chrome-backdrop-filter);
       }
 
-      :host([single-line]) form > mm-flex {
+      form {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      :host([single-line]) form {
+        justify-content: flex-start;
         min-height: var(--input-height);
+      }
+
+      .actions {
+        display: flex;
+        align-items: center;
+        gap: var(--space-1);
       }
 
       mm-textarea {
@@ -62,20 +74,18 @@ export class PromptInput extends LitElement {
   render() {
     return html`
       <form>
-        <mm-flex wrap="wrap" justify-content=${this.singleLine ? 'start' : 'between'}>
-          ${this.renderStartActions()}
-          <mm-textarea
-            .value=${this.value}
-            .name=${this.name}
-            .placeholder=${this.placeholder}
-            .rows=${1}
-            ?disabled=${this.isLoading}
-            @input=${this.handleTextareaInput}
-            @keydown=${this.handleTextareaKeydown}
-            @single-line-change=${this.handleSingleLineChange}
-          ></mm-textarea>
-          ${this.renderEndActions()}
-        </mm-flex>
+        ${this.renderStartActions()}
+        <mm-textarea
+          .value=${this.value}
+          .name=${this.name}
+          .placeholder=${this.placeholder}
+          .rows=${1}
+          ?disabled=${this.isLoading}
+          @input=${this.handleTextareaInput}
+          @keydown=${this.handleTextareaKeydown}
+          @single-line-change=${this.handleSingleLineChange}
+        ></mm-textarea>
+        ${this.renderEndActions()}
       </form>
     `
   }
@@ -106,7 +116,7 @@ export class PromptInput extends LitElement {
 
   private renderStartActions() {
     return html`
-      <mm-flex gap="1" align-items="center">
+      <div class="actions">
         <mm-select placement="top-left">
           <mm-icon-button
             slot="trigger"
@@ -119,13 +129,13 @@ export class PromptInput extends LitElement {
         </mm-select>
         <slot name="leading-actions"></slot>
         <!-- <mm-model-selector></mm-model-selector> -->
-      </mm-flex>
+      </div>
     `
   }
 
   private renderEndActions() {
     return html`
-      <mm-flex gap="1" align-items="center">
+      <div class="actions">
         <slot name="trailing-actions"></slot>
         <mm-icon-button
           variant="primary"
@@ -134,7 +144,7 @@ export class PromptInput extends LitElement {
           ?disabled=${this.isLoading}
           @click=${this.handleSubmitClick}
         ></mm-icon-button>
-      </mm-flex>
+      </div>
     `
   }
 }

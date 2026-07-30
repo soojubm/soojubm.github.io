@@ -7,7 +7,6 @@ import { OutsideClickController } from '@/controllers/outside-click-controller'
 import { resetStyles } from '@/stylesheets/shared.styles'
 import '@/components/common/button/button'
 import '@/components/common/button/button-group'
-import '@/components/common/flex/flex'
 import '@/components/common/icon/icon'
 import '@/components/common/text/text'
 import '@/components/common/text/semantics/paragraph'
@@ -167,16 +166,10 @@ export class ChatSourceGroup extends LitElement {
     if (!this.activeSource) return nothing
 
     return html`
-      <mm-flex
-        class="sheet"
-        direction="column"
-        gap="2"
-        role="dialog"
-        aria-label=${this.activeSource.heading || this.domain}
-      >
+      <div class="sheet" role="dialog" aria-label=${this.activeSource.heading || this.domain}>
         ${this.renderSheetHeader()} ${this.renderSheetHeading()} ${this.renderSheetDescription()}
         ${this.renderSheetLink()}
-      </mm-flex>
+      </div>
     `
   }
 
@@ -184,10 +177,10 @@ export class ChatSourceGroup extends LitElement {
     if (!this.activeSource?.href) return nothing
 
     return html`
-      <mm-flex class="sheet-header" gap="2" align-items="center">
+      <div class="sheet-header">
         ${this.renderSheetIcon()}
         <mm-text class="sheet-domain" size="12" color="light">${this.domain}</mm-text>
-      </mm-flex>
+      </div>
     `
   }
 

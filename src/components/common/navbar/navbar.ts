@@ -1,28 +1,13 @@
 import { LitElement, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 
-import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
-import soojubmImage from '@/images/soojubm.png'
 import { SITEMAP } from '@/sitemap'
 import { getCurrentPageId } from '@/utils'
+/* 프로필 메뉴 popover 초안. 되살릴 때 템플릿으로 되돌린다.
+   Lit은 HTML 주석 안 바인딩을 지원하지 않아 템플릿에 주석으로 남기지 않는다.
+import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
+import soojubmImage from '@/images/soojubm.png'
 
-@customElement('mm-navbar')
-export class Navbar extends LitElement {
-  render() {
-    return html`
-      <nav class="navbar js-navbar" role="navigation">
-        <mm-flex gap="2">
-          <mm-hamburger-button
-            aria-label="전체메뉴"
-            aria-controls="site-sidebar"
-          ></mm-hamburger-button>
-          <a class="navbar-logo" href="./index.html" aria-label="홈"></a>
-        </mm-flex>
-
-        <div class="navbar-user">
-          <mm-theme-selector></mm-theme-selector>
-          <mm-navbar-search></mm-navbar-search>
-          <!--
           <mm-popover placement="bottom-right" width="320px">
             <mm-icon-button
               slot="trigger"
@@ -60,7 +45,25 @@ export class Navbar extends LitElement {
               <mm-link variant="secondary" href="#">서비스 약관</mm-link>
             </mm-flex>
           </mm-popover>
-          -->
+          
+*/
+
+@customElement('mm-navbar')
+export class Navbar extends LitElement {
+  render() {
+    return html`
+      <nav class="navbar js-navbar" role="navigation">
+        <mm-flex gap="2">
+          <mm-hamburger-button
+            aria-label="전체메뉴"
+            aria-controls="site-sidebar"
+          ></mm-hamburger-button>
+          <a class="navbar-logo" href="./index.html" aria-label="홈"></a>
+        </mm-flex>
+
+        <div class="navbar-user">
+          <mm-theme-selector></mm-theme-selector>
+          <mm-navbar-search></mm-navbar-search>
         </div>
       </nav>
       <div class="navbar-backdrop"></div>

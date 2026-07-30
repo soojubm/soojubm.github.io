@@ -102,9 +102,18 @@ const main = html`
             <mm-tab value="menu3">세 번째 메뉴</mm-tab>
           </mm-tab-list>
 
-          <mm-tab-panel value="menu1">🍎 1번 콘텐츠 영역입니다.</mm-tab-panel>
-          <mm-tab-panel value="menu2">🍌 2번 콘텐츠 영역입니다.</mm-tab-panel>
-          <mm-tab-panel value="menu3">🍇 3번 콘텐츠 영역입니다.</mm-tab-panel>
+          <mm-tab-panel value="menu1">
+            <span aria-hidden="true">🍎</span>
+            1번 콘텐츠 영역입니다.
+          </mm-tab-panel>
+          <mm-tab-panel value="menu2">
+            <span aria-hidden="true">🍌</span>
+            2번 콘텐츠 영역입니다.
+          </mm-tab-panel>
+          <mm-tab-panel value="menu3">
+            <span aria-hidden="true">🍇</span>
+            3번 콘텐츠 영역입니다.
+          </mm-tab-panel>
         </mm-flex>
 
         <mm-flex direction="column" gap="3">
@@ -114,9 +123,18 @@ const main = html`
             <mm-tab value="monthly">월간</mm-tab>
           </mm-tab-list>
 
-          <mm-tab-panel value="daily">📅 오늘 생성된 데이터...</mm-tab-panel>
-          <mm-tab-panel value="weekly">🗓️ 이번 주 누적 데이터...</mm-tab-panel>
-          <mm-tab-panel value="monthly">📊 이번 달 정산 데이터...</mm-tab-panel>
+          <mm-tab-panel value="daily">
+            <span aria-hidden="true">📅</span>
+            오늘 생성된 데이터...
+          </mm-tab-panel>
+          <mm-tab-panel value="weekly">
+            <span aria-hidden="true">🗓️</span>
+            이번 주 누적 데이터...
+          </mm-tab-panel>
+          <mm-tab-panel value="monthly">
+            <span aria-hidden="true">📊</span>
+            이번 달 정산 데이터...
+          </mm-tab-panel>
         </mm-flex>
       </mm-flex>
     </mm-component-example>

@@ -164,7 +164,7 @@ const main = html`
           ></mm-text-block>
           <br />
           <fieldset class="authentication-fieldset">
-            <mm-passwordfield label="새 비밀번호" autofocus></mm-passwordfield>
+            <mm-passwordfield label="새 비밀번호"></mm-passwordfield>
             <mm-passwordfield label="새 비밀번호 확인"></mm-passwordfield>
           </fieldset>
           <footer class="authentication-foot">

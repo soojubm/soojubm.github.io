@@ -112,7 +112,10 @@ const main = html`
     </mm-component-guide>
 
     <mm-component-section heading="MostPopularTag" description="구체 레벨. 가장 인기있는 태그">
-      <mm-tag>🔥 Most Popular</mm-tag>
+      <mm-tag>
+        <span aria-hidden="true">🔥</span>
+        Most Popular
+      </mm-tag>
     </mm-component-section>
 
     <mm-component-section heading="KeywordTagGroup" description="">

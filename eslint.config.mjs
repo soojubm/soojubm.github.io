@@ -54,6 +54,15 @@ export default [
       // Lit 템플릿 안의 ARIA, 키보드 이벤트, 접근 가능한 이름 등 접근성 규칙을 검사한다.
       ...warnRules(litA11yRecommended.rules),
 
+      // 템플릿이 의도대로 파싱되지 않는 패턴은 렌더 결과가 조용히 달라지므로 error로 막는다.
+      // 중복 attribute는 뒤엣것이 버려지고, 주석 안 바인딩은 평가만 되고 버려지며,
+      // 자기닫힘 커스텀 엘리먼트는 뒤 형제를 자식으로 삼킨다.
+      'lit/binding-positions': 'error',
+      'lit/no-invalid-html': 'error',
+      'lit/no-duplicate-template-bindings': 'error',
+      'lit/no-legacy-template-syntax': 'error',
+      'lit/attribute-value-entities': 'error',
+
       // 죽은 import·지역 변수를 잡는다. 베이스 no-unused-vars는 declare global의 선언 병합과
       // 타입 참조를 이해하지 못해 오탐이 나므로 TypeScript용 규칙을 쓴다.
       // 클래스 필드는 검사 대상이 아니라, host에 스스로 등록하는 컨트롤러 필드는 그대로 남는다.

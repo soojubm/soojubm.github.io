@@ -9,7 +9,6 @@ import { renderChatMessageTime } from './chat.helpers'
 
 import '@/components/common/icon-button/icon-button'
 import '@/components/common/button/button-group'
-import '@/components/common/flex/flex'
 
 @customElement('mm-ai-chat-message')
 export class AiChatMessage extends LitElement {
@@ -17,7 +16,9 @@ export class AiChatMessage extends LitElement {
     resetStyles,
     css`
       :host {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-2);
       }
 
       .time {
@@ -35,10 +36,8 @@ export class AiChatMessage extends LitElement {
 
   render() {
     return html`
-      <mm-flex direction="column" gap="2">
-        <slot></slot>
-        ${renderChatMessageTime(this.datetime)} ${this.renderReactions()}
-      </mm-flex>
+      <slot></slot>
+      ${renderChatMessageTime(this.datetime)} ${this.renderReactions()}
     `
   }
 

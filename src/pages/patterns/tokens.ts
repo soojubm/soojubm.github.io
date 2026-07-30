@@ -45,7 +45,7 @@ interface TokenEntry {
 interface ColorTokenEntry {
   color: string
   token: string
-  onColor?: string
+  textColor?: string
   label?: string
 }
 
@@ -63,7 +63,7 @@ const renderColorTokens = (entries: ColorTokenEntry[]) =>
       <mm-color-token
         color=${entry.color}
         token=${entry.token}
-        on-color=${entry.onColor ?? ''}
+        text-color=${entry.textColor ?? ''}
         label=${entry.label ?? ''}
       ></mm-color-token>
     `,
@@ -200,26 +200,26 @@ const grayscaleColorTokens: ColorTokenEntry[] = [
 const semanticColorTokens: ColorTokenEntry[] = [
   {
     color: 'var(--color-primary)',
-    onColor: 'var(--foreground-color-on-primary)',
+    textColor: 'var(--foreground-color-on-primary)',
     label: 'on primary',
     token: 'primary: green800',
   },
   {
     color: 'var(--green100)',
-    onColor: 'var(--foreground-color)',
+    textColor: 'var(--foreground-color)',
     label: 'on primary-light',
     token: 'primary-light: green100',
   },
   // warning
   {
     color: 'var(--red100)',
-    onColor: 'var(--foreground-color-on-warning)',
+    textColor: 'var(--foreground-color-on-warning)',
     label: 'on warning-light',
     token: 'warning-light: red100',
   },
   {
     color: 'var(--red800)',
-    onColor: 'var(--foreground-color-on-solid)',
+    textColor: 'var(--foreground-color-on-solid)',
     label: 'on warning',
     token: 'warning: red800',
   },
@@ -228,19 +228,19 @@ const semanticColorTokens: ColorTokenEntry[] = [
 const backgroundColorTokens: ColorTokenEntry[] = [
   {
     color: 'var(--gray0)',
-    onColor: 'var(--foreground-color)',
+    textColor: 'var(--foreground-color)',
     label: 'on background',
     token: 'background: #fff',
   },
   {
     color: 'var(--gray100)',
-    onColor: 'var(--foreground-color)',
+    textColor: 'var(--foreground-color)',
     label: 'on background-subtle',
     token: 'background-subtle: #f5f6f5',
   },
   {
     color: 'var(--gray800)',
-    onColor: 'var(--foreground-color-on-solid)',
+    textColor: 'var(--foreground-color-on-solid)',
     label: 'on background-strong',
     token: 'background-strong: #303b35',
   },
@@ -598,7 +598,7 @@ const main = html`
       <mm-flex direction="column" gap="6">
         <mm-text-block
           level="2"
-          heading="Blur & Opacity"
+          heading="Blur &amp; Opacity"
           description="material은 뒤 배경을 얼마나 흐리고 덮을지 정하는 blur·opacity 쌍입니다. 단계가 오를수록 더 흐리고 더 불투명해집니다."
         ></mm-text-block>
         <mm-token-stage>

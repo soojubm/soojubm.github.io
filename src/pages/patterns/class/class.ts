@@ -106,22 +106,26 @@ const main = html`
       </div>
       <div class="minicards">
         <figure class="minicard">
-          <span role="img" aria-label="">⏰</span>
+          <span aria-hidden="true">⏰</span>
           <mm-paragraph>하루 5분</mm-paragraph>
         </figure>
         <figure class="minicard">
-          <span role="img" aria-label="">📖</span>
+          <span aria-hidden="true">📖</span>
           <mm-paragraph>에피소드 10개</mm-paragraph>
         </figure>
         <figure class="minicard">
-          <span role="img" aria-label="">🗓️</span>
+          <span aria-hidden="true">🗓️</span>
           <mm-paragraph>이용기간 무제한</mm-paragraph>
         </figure>
         <figure class="minicard minicard--closed">
-          <span role="img" aria-label="">🤼</span>
+          <span aria-hidden="true">🤼</span>
           <mm-paragraph><del>얼리버드 500명</del></mm-paragraph>
           <mm-paragraph>
-            <mm-tag>✨ 마감 ✨</mm-tag>
+            <mm-tag>
+              <span aria-hidden="true">✨</span>
+              마감
+              <span aria-hidden="true">✨</span>
+            </mm-tag>
           </mm-paragraph>
         </figure>
       </div>
@@ -141,19 +145,38 @@ const main = html`
       <mm-paragraph>
         더 궁금한 점이 있다면
         <a href="#" style="text-decoration: underline; font-weight: bold; color: inherit">
-          👉고객센터
+          <span aria-hidden="true">👉</span>
+          고객센터
         </a>
         로 문의해 주세요. 고맙슴!
       </mm-paragraph>
     </header>
 
     <mm-marquee height="80px" pause-on-hover>
-      <mm-paragraph size="large">🦔 고슴이: 지금부터 설명 들어가겠슴!</mm-paragraph>
-      <mm-paragraph size="large">🦔 고슴이: 지금부터 설명 들어가겠슴!</mm-paragraph>
-      <mm-paragraph size="large">🦔 고슴이: 지금부터 설명 들어가겠슴!</mm-paragraph>
-      <mm-paragraph size="large">🦔 고슴이: 지금부터 설명 들어가겠슴!</mm-paragraph>
-      <mm-paragraph size="large">🦔 고슴이: 지금부터 설명 들어가겠슴!</mm-paragraph>
-      <mm-paragraph size="large">🦔 고슴이: 지금부터 설명 들어가겠슴!</mm-paragraph>
+      <mm-paragraph size="large">
+        <span aria-hidden="true">🦔</span>
+        고슴이: 지금부터 설명 들어가겠슴!
+      </mm-paragraph>
+      <mm-paragraph size="large">
+        <span aria-hidden="true">🦔</span>
+        고슴이: 지금부터 설명 들어가겠슴!
+      </mm-paragraph>
+      <mm-paragraph size="large">
+        <span aria-hidden="true">🦔</span>
+        고슴이: 지금부터 설명 들어가겠슴!
+      </mm-paragraph>
+      <mm-paragraph size="large">
+        <span aria-hidden="true">🦔</span>
+        고슴이: 지금부터 설명 들어가겠슴!
+      </mm-paragraph>
+      <mm-paragraph size="large">
+        <span aria-hidden="true">🦔</span>
+        고슴이: 지금부터 설명 들어가겠슴!
+      </mm-paragraph>
+      <mm-paragraph size="large">
+        <span aria-hidden="true">🦔</span>
+        고슴이: 지금부터 설명 들어가겠슴!
+      </mm-paragraph>
     </mm-marquee>
 
     <section class="class-intro">
@@ -172,8 +195,11 @@ const main = html`
         </mm-paragraph>
       </mm-paragraph-group>
       <figure class="class-intro-image">
-        <img src="/src/images/cake_gosum.jpg" />
-        <figcaption>🦔 고슴이: 뉴니커만 보고 달려온 2년... 점점 당이 떨어진다....</figcaption>
+        <img src="/src/images/cake_gosum.jpg" alt="" />
+        <figcaption>
+          <span aria-hidden="true">🦔</span>
+          고슴이: 뉴니커만 보고 달려온 2년... 점점 당이 떨어진다....
+        </figcaption>
       </figure>
     </section>
 

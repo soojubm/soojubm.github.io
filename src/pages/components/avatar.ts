@@ -98,7 +98,7 @@ const main = html`
     <mm-component-anatomy
       parts='[
       "컨테이너 — variant·size로 형태와 크기·배경을 정의합니다.",
-      "콘텐츠 — 이미지 > 아이콘 > 이니셜 > 기본 아이콘 순서로 폴백합니다."
+      "콘텐츠 — 이미지 &gt; 아이콘 &gt; 이니셜 &gt; 기본 아이콘 순서로 폴백합니다."
     ]'
     >
       <mm-avatar size="80" variant="secondary"></mm-avatar>

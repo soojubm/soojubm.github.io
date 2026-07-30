@@ -159,8 +159,8 @@ const main = html`
       <div
         role="textbox"
         contenteditable="true"
-        aria-placeholder=""
-        aria-labelledby=""
+        aria-label="내용 입력"
+        aria-multiline="true"
         style="padding: 48px var(--space-2) var(--space-1)"
       ></div>
     </section>
@@ -493,7 +493,7 @@ const main = html`
           "검색 데이터의 수집",
           "최근 검색 내역 삭제. 휘발성이 높은 정보이므로 편집 모듈 없이 우측 삭제 버튼으로 개별 삭제 기능을 제공해도 충분하다.",
           "전체 검색 내역과 최근 검색 내역. 활동 로그. 검색 내역의 삭제는 개인화 콘텐츠에 영향을 주는가?",
-          "tabIndex: back -> input"
+          "tabIndex: back -&gt; input"
         ]'
         ></mm-text-list>
       </mm-paragraph-group>

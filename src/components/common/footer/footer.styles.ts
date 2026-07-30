@@ -18,6 +18,13 @@ export const footerStyles = css`
     letter-spacing: 0.5px;
   }
 
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    max-width: 320px;
+    margin: var(--space-4) 0;
+  }
+
   .footer-address-break {
     width: 100%;
   }
