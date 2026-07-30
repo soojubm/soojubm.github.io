@@ -5,8 +5,7 @@ import type { ComponentPropItemData } from '@/components/domains/component/compo
 import type { ComponentReferenceItemData } from '@/components/domains/component/component-references'
 import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
 
-import { AVATAR_SHAPE_TYPE_LABEL, AVATAR_VARIANT_TYPE_UNION } from '@/components/common/avatar'
-import { LIST_ITEM_SIZE_TYPE_LABEL } from '@/components/common/list-item'
+import { AVATAR_VARIANT_TYPE_UNION } from '@/components/common/avatar'
 import { renderDocumentLayout } from '@/components/layouts/document-layout'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -44,7 +43,7 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'description', type: 'string', optional: true },
   { name: 'icon', type: 'IconName', optional: true },
   { name: 'avatar-src', type: 'string', optional: true },
-  { name: 'avatar-variant', type: "${AVATAR_VARIANT_TYPE_UNION} = 'tertiary'", optional: true },
+  { name: 'avatar-variant', type: `${AVATAR_VARIANT_TYPE_UNION} = 'tertiary'`, optional: true },
   { name: 'avatar-shape', type: '', optional: true },
   { name: 'slot: default', type: 'HTMLElement', optional: true },
   { name: 'slot: trailing', type: 'HTMLElement', optional: true },
@@ -116,40 +115,39 @@ const main = html`
     <mm-component-props .props=${componentProps}></mm-component-props>
 
     <mm-component-anatomy
+      style="--component-anatomy-stage-width: 320px"
       parts='[
       "leading — 아이콘 또는 아바타를 담는 선택적 영역. 없으면 content가 왼쪽 끝에서 시작합니다.",
       "content — label과 description으로 구성된 본문. flex: 1로 남은 공간을 채웁니다.",
       "trailing — 오른쪽에 배치되는 선택적 슬롯. 액션 버튼·뱃지·메타 텍스트 등을 넣습니다."
     ]'
     >
-      <div style="position: relative; width: 320px">
-        <mm-list-item
-          label="수줍이"
-          description="바보"
-          size="48"
-          avatar-variant="primary"
-          avatar-shape="circle"
-          avatar-src="/src/images/soojubm.png"
-          style="width: 100%"
-        >
-          <mm-follow-button slot="trailing"></mm-follow-button>
-        </mm-list-item>
-        <mm-list-marker
-          variant="number"
-          value="1"
-          style="position: absolute; left: 1.5rem; bottom: -1.75rem; transform: translateX(-50%)"
-        ></mm-list-marker>
-        <mm-list-marker
-          variant="number"
-          value="2"
-          style="position: absolute; left: 9.41rem; bottom: -1.75rem; transform: translateX(-50%)"
-        ></mm-list-marker>
-        <mm-list-marker
-          variant="number"
-          value="3"
-          style="position: absolute; right: 2.09rem; bottom: -1.75rem; transform: translateX(50%)"
-        ></mm-list-marker>
-      </div>
+      <mm-list-item
+        label="수줍이"
+        description="바보"
+        size="48"
+        avatar-variant="primary"
+        avatar-shape="circle"
+        avatar-src="/src/images/soojubm.png"
+        style="width: 100%"
+      >
+        <mm-follow-button slot="trailing"></mm-follow-button>
+      </mm-list-item>
+      <mm-list-marker
+        variant="number"
+        value="1"
+        style="position: absolute; left: 1.5rem; bottom: -1.75rem; transform: translateX(-50%)"
+      ></mm-list-marker>
+      <mm-list-marker
+        variant="number"
+        value="2"
+        style="position: absolute; left: 9.41rem; bottom: -1.75rem; transform: translateX(-50%)"
+      ></mm-list-marker>
+      <mm-list-marker
+        variant="number"
+        value="3"
+        style="position: absolute; right: 2.09rem; bottom: -1.75rem; transform: translateX(50%)"
+      ></mm-list-marker>
     </mm-component-anatomy>
 
     <mm-component-guide>

@@ -10,7 +10,10 @@ const main = html`
         <mm-avatar size="80">
           <img src="/src/images/product_sample.png" alt="" />
         </mm-avatar>
-        <mm-meta-item label="폰타나 베네치아 로스티드 쉬림프 크림" value="Brown, 3개" />
+        <mm-meta-item
+          label="폰타나 베네치아 로스티드 쉬림프 크림"
+          value="Brown, 3개"
+        ></mm-meta-item>
         <mm-paragraph size="large">₩ 22,500</mm-paragraph>
         <mm-button>수량/옵션 변경</mm-button>
         <mm-separator></mm-separator>
@@ -23,9 +26,9 @@ const main = html`
       <mm-separator></mm-separator>
       <footer>
         <mm-flex direction="column" gap="2">
-          <mm-meta-item label="총 상품금액" value="₩ 30,000" />
-          <mm-meta-item label="배송료" value="₩ 3,000" />
-          <mm-meta-item label="할인" value="₩ 2,000" />
+          <mm-meta-item label="총 상품금액" value="₩ 30,000"></mm-meta-item>
+          <mm-meta-item label="배송료" value="₩ 3,000"></mm-meta-item>
+          <mm-meta-item label="할인" value="₩ 2,000"></mm-meta-item>
           <mm-flex align-items="center" justify-content="between" gap="1">
             <mm-paragraph size="large">최종 결제 금액</mm-paragraph>
             <mm-paragraph size="large">₩ 37,000</mm-paragraph>
@@ -83,54 +86,52 @@ const main = html`
     <mm-flex direction="column" gap="4">
       <mm-top-bar heading="주문/결제"></mm-top-bar>
 
-      <section>
+      <mm-flex as="section" direction="column" gap="3">
         <mm-paragraph size="large">배송지</mm-paragraph>
         <mm-surface>
           <mm-menu-item-radio-group name="shipping" value="default" aria-label="배송지 선택">
             <mm-menu-item-radio value="default">
-              <mm-flex gap="1">
-                <mm-paragraph>수줍이 집</mm-paragraph>
-                <mm-tag>기본배송지</mm-tag>
+              <mm-flex direction="column" gap="1">
+                <mm-flex gap="1">
+                  <mm-paragraph>수줍이 집</mm-paragraph>
+                  <mm-tag>기본배송지</mm-tag>
+                </mm-flex>
+                <mm-paragraph>[07655] 서울특별시 강서구 까치산로 182 1202호</mm-paragraph>
+                <mm-paragraph color="light">010-3121-7045</mm-paragraph>
               </mm-flex>
-              <div style="height: var(--space-1)"></div>
-              <mm-paragraph>[07655] 서울특별시 강서구 까치산로 182 1202호</mm-paragraph>
-              <mm-paragraph color="light">010-3121-7045</mm-paragraph>
             </mm-menu-item-radio>
             <mm-menu-item-radio value="office">
-              <mm-paragraph>회사</mm-paragraph>
-              <div style="height: var(--space-1)"></div>
-              <mm-paragraph>[03925] 서울특별시 마포구 월드컵북로 400 상암동</mm-paragraph>
-              <mm-paragraph color="light">010-9876-5432</mm-paragraph>
+              <mm-flex direction="column" gap="1">
+                <mm-paragraph>회사</mm-paragraph>
+                <mm-paragraph>[03925] 서울특별시 마포구 월드컵북로 400 상암동</mm-paragraph>
+                <mm-paragraph color="light">010-9876-5432</mm-paragraph>
+              </mm-flex>
             </mm-menu-item-radio>
           </mm-menu-item-radio-group>
         </mm-surface>
         <mm-add-button>배송지 변경/추가</mm-add-button>
-      </section>
+      </mm-flex>
 
-      <section>
+      <mm-flex as="section" direction="column" gap="3">
         <mm-paragraph size="large">주문상품</mm-paragraph>
         <mm-menu-item-action avatar-src="/src/images/cake_gosum.jpg" size="48">
-          <mm-flex direction="column">
-            <mm-meta-item label="뉴닉이 풀어 쓴 경제상식사전" value="₩ 11,900" />
-            <div style="height: var(--space-2)"></div>
+          <mm-flex direction="column" gap="2" align-items="flex-start">
+            <mm-meta-item label="뉴닉이 풀어 쓴 경제상식사전" value="₩ 11,900"></mm-meta-item>
             <mm-tag>평생 소장</mm-tag>
           </mm-flex>
         </mm-menu-item-action>
-      </section>
+      </mm-flex>
 
-      <section>
+      <mm-flex as="section" direction="column" gap="3" align-items="flex-start">
         <mm-paragraph size="large">쿠폰 마일리지 할인</mm-paragraph>
-        <div style="height: var(--space-3)"></div>
         <mm-textfield
           label="보너스 쿠폰"
           placeholder="사용 가능한 쿠폰이 없습니다."
           disabled
         ></mm-textfield>
-        <div style="height: var(--space-3)"></div>
         <mm-textfield label="사용 마일리지" placeholder="0 마일리지"></mm-textfield>
-        <div style="height: var(--space-3)"></div>
         <mm-button>보유 마일리지 1,186p 모두사용</mm-button>
-      </section>
+      </mm-flex>
 
       <section>
         <mm-paragraph size="large">결제수단</mm-paragraph>
@@ -174,18 +175,17 @@ const main = html`
         </div>
       </section>
 
-      <section>
+      <mm-flex as="section" direction="column" gap="3">
         <mm-flex justify-content="space-between" gap="0">
           <mm-paragraph size="large">결제상세</mm-paragraph>
           <mm-paragraph size="large">13,980원</mm-paragraph>
         </mm-flex>
-        <div style="height: var(--space-3)"></div>
-        <mm-meta-item label="마일리지 사용" value="980원" />
-        <mm-meta-item label="카드 결제" value="12,980원" />
+        <mm-meta-item label="마일리지 사용" value="980원"></mm-meta-item>
+        <mm-meta-item label="카드 결제" value="12,980원"></mm-meta-item>
         <mm-surface>
           <mm-flex direction="column">
-            <mm-meta-item label="상품 금액" value="₩ 160,000" />
-            <mm-meta-item label="서비스 수수료" value="₩ 3,000" />
+            <mm-meta-item label="상품 금액" value="₩ 160,000"></mm-meta-item>
+            <mm-meta-item label="서비스 수수료" value="₩ 3,000"></mm-meta-item>
             <mm-flex align-items="center" justify-content="between" gap="1">
               <mm-paragraph size="large">총 합계 (KRW)</mm-paragraph>
               <mm-paragraph size="large">₩ 163,000</mm-paragraph>
@@ -195,11 +195,11 @@ const main = html`
             <mm-button variant="primary" size="large" full-width>구매 확정</mm-button>
           </footer>
         </mm-surface>
-      </section>
+      </mm-flex>
     </mm-flex>
 
     <mm-flex direction="column">
-      <section>
+      <mm-flex as="section" direction="column" gap="4">
         <header style="text-align: center; margin: 1.5rem 0">
           <mm-paragraph size="large">주문완료 되었습니다.</mm-paragraph>
           <mm-paragraph size="large">2024.08.19 23:55</mm-paragraph>
@@ -220,35 +220,32 @@ const main = html`
             <mm-paragraph>주문상품 1건</mm-paragraph>
             <mm-paragraph>13:00 까지 결제 시 오늘 발송</mm-paragraph>
             <mm-menu-item-action avatar-src="/src/images/cake_gosum.jpg" size="48">
-              <div>
-                <mm-meta-item label="뉴닉이 풀어 쓴 경제상식사전" value="₩ 11,900" />
-                <div style="height: var(--space-2)"></div>
+              <mm-flex direction="column" gap="2" align-items="flex-start">
+                <mm-meta-item label="뉴닉이 풀어 쓴 경제상식사전" value="₩ 11,900"></mm-meta-item>
                 <mm-tag>평생 소장</mm-tag>
-              </div>
+              </mm-flex>
             </mm-menu-item-action>
           </div>
           <mm-separator></mm-separator>
-          <footer>
+          <mm-flex as="footer" direction="column" gap="4">
             <mm-flex justify-content="space-between" gap="0">
               <mm-paragraph>주문금액</mm-paragraph>
               <mm-paragraph>13,980원</mm-paragraph>
             </mm-flex>
-            <mm-meta-item label="상품금액" value="30,000원" />
-            <mm-meta-item label="배송료" value="3,000원" />
-            <mm-meta-item label="할인" value="2,000원" />
+            <mm-meta-item label="상품금액" value="30,000원"></mm-meta-item>
+            <mm-meta-item label="배송료" value="3,000원"></mm-meta-item>
+            <mm-meta-item label="할인" value="2,000원"></mm-meta-item>
             <mm-separator></mm-separator>
             <mm-paragraph>결제상세</mm-paragraph>
             <mm-text>카드 간편결제</mm-text>
-            <div style="height: var(--space-4)"></div>
             <mm-button variant="secondary" size="large" full-width>주문 상세 보기</mm-button>
-          </footer>
+          </mm-flex>
         </mm-surface>
-        <div style="height: var(--space-4)"></div>
         <mm-surface>
           <mm-paragraph>포인트 혜택</mm-paragraph>
           <mm-paragraph>최대 1,147원</mm-paragraph>
         </mm-surface>
-      </section>
+      </mm-flex>
     </mm-flex>
   </main>
 `

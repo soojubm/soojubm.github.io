@@ -119,6 +119,7 @@ const main = html`
     <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
 
     <mm-component-anatomy
+      style="--component-anatomy-stage-padding: 0 0 3rem"
       parts='[
       "컨테이너 — variant·size로 형태와 클릭 영역을 정의합니다.",
       "아이콘 — 액션을 나타내는 메타포(icon).",
@@ -126,37 +127,35 @@ const main = html`
       "툴팁 — icon-only 버튼의 용도를 보조 설명합니다."
     ]'
     >
-      <div style="position: relative; display: inline-block; padding-bottom: 3rem">
-        <mm-tooltip content="좋아요" placement="center" open>
-          <mm-icon-button
-            slot="trigger"
-            variant="primary"
-            icon="heart"
-            aria-label="좋아요"
-          ></mm-icon-button>
-        </mm-tooltip>
+      <mm-tooltip content="좋아요" placement="center" open>
+        <mm-icon-button
+          slot="trigger"
+          variant="primary"
+          icon="heart"
+          aria-label="좋아요"
+        ></mm-icon-button>
+      </mm-tooltip>
 
-        <mm-list-marker
-          variant="number"
-          value="1"
-          style="position: absolute; left: -1.75rem; top: 50%; transform: translateY(-50%)"
-        ></mm-list-marker>
-        <mm-list-marker
-          variant="number"
-          value="2"
-          style="position: absolute; left: 50%; bottom: -1.75rem; transform: translateX(-50%)"
-        ></mm-list-marker>
-        <mm-list-marker
-          variant="number"
-          value="3"
-          style="position: absolute; right: -1.75rem; top: 50%; transform: translateY(-50%)"
-        ></mm-list-marker>
-        <mm-list-marker
-          variant="number"
-          value="4"
-          style="position: absolute; left: 50%; bottom: 0.5rem; transform: translateX(-50%)"
-        ></mm-list-marker>
-      </div>
+      <mm-list-marker
+        variant="number"
+        value="1"
+        style="position: absolute; left: -1.75rem; top: 50%; transform: translateY(-50%)"
+      ></mm-list-marker>
+      <mm-list-marker
+        variant="number"
+        value="2"
+        style="position: absolute; left: 50%; bottom: -1.75rem; transform: translateX(-50%)"
+      ></mm-list-marker>
+      <mm-list-marker
+        variant="number"
+        value="3"
+        style="position: absolute; right: -1.75rem; top: 50%; transform: translateY(-50%)"
+      ></mm-list-marker>
+      <mm-list-marker
+        variant="number"
+        value="4"
+        style="position: absolute; left: 50%; bottom: 0.5rem; transform: translateX(-50%)"
+      ></mm-list-marker>
     </mm-component-anatomy>
 
     <mm-component-guide>

@@ -15,8 +15,7 @@ export class AiChatBubble extends withChatBubbleImage(LitElement) {
 
   render() {
     return renderChatBubbleShell(
-      this.typing,
-      this.src,
+      this,
       html`
         <slot></slot>
       `,

@@ -35,14 +35,6 @@ export const renderChatMessageFailedActions = (failed: boolean, onRetry: () => v
   `
 }
 
-const renderChatTypingIndicator = (typing: boolean, color = 'var(--foreground-subtle-color)') => {
-  if (!typing) return nothing
-
-  return html`
-    <mm-typing-indicator .color=${color}></mm-typing-indicator>
-  `
-}
-
 const renderChatBubbleImage = (src: string, typing: boolean) => {
   if (!isChatBubbleImage(src, typing)) return nothing
 
@@ -70,13 +62,16 @@ export const withChatBubbleImage = <T extends Constructor<LitElement>>(Base: T) 
   return ChatBubbleImageElement as Constructor<ChatBubbleImage> & T
 }
 
-/** typing 인디케이터·이미지·메시지 슬롯을 순서대로 조립하는 채팅 버블 셸. */
-export const renderChatBubbleShell = (
-  typing: boolean,
-  src: string,
-  message: unknown,
-  typingColor?: string,
-) => html`
-  ${renderChatTypingIndicator(typing, typingColor)} ${renderChatBubbleImage(src, typing)}
-  ${typing || src ? nothing : message}
+/**
+ * typing 인디케이터·이미지·메시지를 순서대로 조립하는 채팅 버블 셸.
+ * 상태는 호스트가 이미 갖고 있으므로 호스트를 그대로 받고, 버블마다 다른 메시지 조각만 따로 받는다.
+ * 인디케이터 색은 버블의 color를 그대로 물려받는다.
+ */
+export const renderChatBubbleShell = (host: ChatBubbleImage, message: unknown) => html`
+  ${host.typing
+    ? html`
+        <mm-typing-indicator></mm-typing-indicator>
+      `
+    : nothing}
+  ${renderChatBubbleImage(host.src, host.typing)} ${host.typing || host.src ? nothing : message}
 `

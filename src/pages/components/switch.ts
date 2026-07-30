@@ -14,15 +14,14 @@ const relatedComponents: ComponentRelatedItemData[] = [
 
 const componentProps: ComponentPropItemData[] = [
   { name: 'name', type: 'string', optional: true },
-  { name: 'size', type: 'string', optional: true },
   { name: 'checked', type: 'boolean', optional: true },
   { name: 'disabled', type: 'boolean', optional: true },
   { name: 'change', type: 'CustomEvent detail: checked, value', kind: 'event' },
 ]
 
 const componentTokens: ComponentTokenItemData[] = [
-  { name: 'switch-width', default: 'size-32' },
-  { name: 'switch-height', default: 'size-16' },
+  { name: 'switch-width', default: 'var(--size-32)' },
+  { name: 'switch-height', default: 'var(--size-16)' },
   { name: 'switch-border-radius', default: 'var(--radius)' },
   { name: 'switch-background-color', default: 'var(--border-color)' },
 ]
@@ -50,9 +49,10 @@ const main = html`
     <mm-component-aka items='["Toggle"]'></mm-component-aka>
 
     <mm-component-example>
-      <mm-switch name="newsletter">뉴스레터 받아보기</mm-switch>
-      <div style="height: var(--space-3)"></div>
-      <mm-switch name="newsletter" checked disabled>Receive weekly newsletter</mm-switch>
+      <mm-flex direction="column" gap="3">
+        <mm-switch name="newsletter">뉴스레터 받아보기</mm-switch>
+        <mm-switch name="newsletter" checked disabled>Receive weekly newsletter</mm-switch>
+      </mm-flex>
     </mm-component-example>
 
     <mm-component-props .props=${componentProps}></mm-component-props>
@@ -66,26 +66,24 @@ const main = html`
       "레이블 — 설정 항목을 설명하는 텍스트."
     ]'
     >
-      <div style="position: relative; display: inline-block">
-        <mm-switch checked>뉴스레터 받아보기</mm-switch>
+      <mm-switch checked>뉴스레터 받아보기</mm-switch>
 
-        <!-- 번호 마커 -->
-        <mm-list-marker
-          variant="number"
-          value="1"
-          style="position: absolute; left: 0.25rem; top: -1.75rem"
-        ></mm-list-marker>
-        <mm-list-marker
-          variant="number"
-          value="2"
-          style="position: absolute; left: 1.25rem; bottom: -1.75rem; transform: translateX(-50%)"
-        ></mm-list-marker>
-        <mm-list-marker
-          variant="number"
-          value="3"
-          style="position: absolute; right: -1.75rem; top: 50%; transform: translateY(-50%)"
-        ></mm-list-marker>
-      </div>
+      <!-- 번호 마커 -->
+      <mm-list-marker
+        variant="number"
+        value="1"
+        style="position: absolute; left: 0.25rem; top: -1.75rem"
+      ></mm-list-marker>
+      <mm-list-marker
+        variant="number"
+        value="2"
+        style="position: absolute; left: 1.25rem; bottom: -1.75rem; transform: translateX(-50%)"
+      ></mm-list-marker>
+      <mm-list-marker
+        variant="number"
+        value="3"
+        style="position: absolute; right: -1.75rem; top: 50%; transform: translateY(-50%)"
+      ></mm-list-marker>
     </mm-component-anatomy>
 
     <mm-component-guide>

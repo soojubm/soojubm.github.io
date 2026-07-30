@@ -1,4 +1,4 @@
-import { LitElement, html, nothing } from 'lit'
+import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
@@ -13,7 +13,6 @@ export class Switch extends LitElement {
   static styles = [switchStyles]
 
   @property({ type: String }) name = ''
-  @property({ type: String }) size = ''
   @property({ type: Boolean }) checked = false
   @property({ type: Boolean }) disabled = false
 

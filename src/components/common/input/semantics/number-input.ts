@@ -3,13 +3,13 @@ import { customElement, property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
 import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
+import { textfieldStyles } from '@/components/common/input/input.styles'
 import {
   renderFieldHelper,
   renderFieldLabel,
   renderFieldValidation,
   withTextfieldState,
 } from '@/components/common/input/semantics/textfield.helpers'
-import { textfieldStyles } from '@/components/common/input/input.styles'
 import '@/components/common/icon-button/icon-button'
 import '@/components/common/input/input'
 import { emit } from '@/utils'

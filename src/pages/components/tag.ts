@@ -88,25 +88,23 @@ const main = html`
       "레이블 — 분류·상태를 나타내는 짧은 텍스트."
     ]'
     >
-      <div style="position: relative; display: inline-block">
-        <mm-tag tone="green" icon="check-circle">승인됨</mm-tag>
+      <mm-tag tone="green" icon="check-circle">승인됨</mm-tag>
 
-        <mm-list-marker
-          variant="number"
-          value="1"
-          style="position: absolute; left: -1.75rem; top: 50%; transform: translateY(-50%)"
-        ></mm-list-marker>
-        <mm-list-marker
-          variant="number"
-          value="2"
-          style="position: absolute; left: 0.75rem; bottom: -1.75rem; transform: translateX(-50%)"
-        ></mm-list-marker>
-        <mm-list-marker
-          variant="number"
-          value="3"
-          style="position: absolute; right: 0.75rem; bottom: -1.75rem; transform: translateX(50%)"
-        ></mm-list-marker>
-      </div>
+      <mm-list-marker
+        variant="number"
+        value="1"
+        style="position: absolute; left: -1.75rem; top: 50%; transform: translateY(-50%)"
+      ></mm-list-marker>
+      <mm-list-marker
+        variant="number"
+        value="2"
+        style="position: absolute; left: 0.75rem; bottom: -1.75rem; transform: translateX(-50%)"
+      ></mm-list-marker>
+      <mm-list-marker
+        variant="number"
+        value="3"
+        style="position: absolute; right: 0.75rem; bottom: -1.75rem; transform: translateX(50%)"
+      ></mm-list-marker>
     </mm-component-anatomy>
 
     <mm-component-guide>
@@ -181,6 +179,8 @@ const main = html`
           <mm-paragraph>unread</mm-paragraph>
         </mm-flex>
       </mm-flex>
+
+      <mm-component-props .props=${dotComponentProps}></mm-component-props>
     </mm-component-section>
 
     <mm-component-related .items=${relatedComponents}></mm-component-related>

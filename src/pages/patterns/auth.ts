@@ -13,7 +13,7 @@ const main = html`
     .authentication-fieldset {
       display: flex;
       flex-direction: column;
-      gap: 0.75rem;
+      gap: var(--space-3);
     }
 
     .authentication-foot {
@@ -107,7 +107,6 @@ const main = html`
 
           <fieldset class="authentication-fieldset">
             <legend hidden>약관 동의</legend>
-            <div style="height: var(--space-2)"></div>
             <strong>
               회원가입 시
               <mm-link href="#">이용약관</mm-link>

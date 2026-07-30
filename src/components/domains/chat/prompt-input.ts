@@ -1,4 +1,4 @@
-import { LitElement, css, html, nothing } from 'lit'
+import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
@@ -55,7 +55,6 @@ export class PromptInput extends LitElement {
   @property({ type: String }) model = 'claude-sonnet'
   @property({ type: String, attribute: 'submit-label' }) submitLabel = '전송'
   @property({ type: Boolean, attribute: 'is-loading' }) isLoading = false
-  @property({ type: Boolean, attribute: 'hidden-attachment' }) hiddenAttachment = false
 
   @property({ type: Boolean, reflect: true, attribute: 'single-line' })
   private singleLine = true

@@ -3,6 +3,37 @@ import './dashboard.css'
 
 import { renderLayout } from '@/components/layouts/base-layouts'
 
+const indexCards = [
+  { icon: 'graph-down', label: '코스피', value: '2999.55p', tone: 'blue', change: '4.33% 하락' },
+  { icon: 'graph-up', label: '코스닥', value: '2999.55p', tone: 'red', change: '4.33% 상승' },
+  {
+    icon: 'graph-up',
+    label: '상해종합주가지수',
+    value: '2999.55p',
+    tone: 'red',
+    change: '4.33% 상승',
+  },
+]
+
+const renderIndexCard = ({ icon, label, value, tone, change }: typeof indexCards[number]) => html`
+  <mm-surface variant="outlined" radius="large">
+    <mm-flex direction="column" gap="3">
+      <mm-avatar variant="secondary" icon=${icon}></mm-avatar>
+      <mm-flex direction="column" gap="1">
+        <mm-flex direction="column" gap="0">
+          <mm-text size="12">${label}</mm-text>
+          <mm-heading>${value}</mm-heading>
+        </mm-flex>
+        <mm-tag variant="up" tone=${tone}>${change}</mm-tag>
+      </mm-flex>
+      <mm-flex direction="column" gap="0">
+        <mm-text size="12" color="light">10분 지연. live</mm-text>
+        <mm-text size="12" color="light">현지 시간 기준 10.27. 01:27</mm-text>
+      </mm-flex>
+    </mm-flex>
+  </mm-surface>
+`
+
 const main = html`
   <main class="page dashboard">
     <mm-page-header heading="Dashboard" description="한국 증시"></mm-page-header>
@@ -13,46 +44,7 @@ const main = html`
       <mm-tab value="monthly">월간</mm-tab>
     </mm-tab-list>
 
-    <mm-grid columns="3" gap="4">
-      <mm-surface variant="outlined" radius="large">
-        <mm-avatar variant="secondary" icon="graph-down"></mm-avatar>
-        <div style="height: var(--space-3)"></div>
-        <mm-text size="12">코스피</mm-text>
-        <mm-heading>2999.55p</mm-heading>
-        <div style="margin-top: var(--space-1)"></div>
-        <mm-tag variant="up" tone="blue">4.33% 하락</mm-tag>
-        <div style="margin-top: var(--space-3)">
-          <mm-text size="12" color="light">10분 지연. live</mm-text>
-          <mm-text size="12" color="light">현지 시간 기준 10.27. 01:27</mm-text>
-        </div>
-      </mm-surface>
-      <mm-surface variant="outlined" radius="large">
-        <mm-avatar variant="secondary" icon="graph-up"></mm-avatar>
-        <div style="height: var(--space-3)"></div>
-        <mm-text size="12">코스닥</mm-text>
-        <mm-heading>2999.55p</mm-heading>
-        <div style="margin-top: var(--space-1)"></div>
-        <mm-tag variant="up" tone="red">4.33% 상승</mm-tag>
-        <div style="margin-top: var(--space-3)">
-          <mm-text size="12" color="light">10분 지연. live</mm-text>
-          <mm-text size="12" color="light">현지 시간 기준 10.27. 01:27</mm-text>
-        </div>
-      </mm-surface>
-      <mm-surface variant="outlined" radius="large">
-        <mm-avatar variant="secondary">
-          <mm-icon name="graph-up"></mm-icon>
-        </mm-avatar>
-        <div style="height: var(--space-3)"></div>
-        <mm-text size="12">상해종합주가지수</mm-text>
-        <mm-heading>2999.55p</mm-heading>
-        <div style="margin-top: var(--space-1)"></div>
-        <mm-tag variant="up" tone="red">4.33% 상승</mm-tag>
-        <div style="margin-top: var(--space-3)">
-          <mm-text size="12" color="light">10분 지연. live</mm-text>
-          <mm-text size="12" color="light">현지 시간 기준 10.27. 01:27</mm-text>
-        </div>
-      </mm-surface>
-    </mm-grid>
+    <mm-grid columns="3" gap="4">${indexCards.map(renderIndexCard)}</mm-grid>
 
     <br />
     <mm-flex direction="column" align-items="center" gap="3">

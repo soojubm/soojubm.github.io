@@ -46,14 +46,15 @@ const main = html`
     <mm-component-aka items='["Anchor"]'></mm-component-aka>
 
     <mm-component-example>
-      <mm-read-more-paragraph
-        limit="120"
-        content="이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에 부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은 침묵에 잠겼다. 그것도 모자라 다들 난감해하는 눈치였다. 아니, 폭풍우가 몰아치는 가운데 엄청나게 큰 고래, 그것도 생전 처음 보는 고래를 수줍은 기색 없이 잡아 올리고 눈도 깜빡하지 않은 채 사투를 벌여서 죽이는 용맹한 바닷사람들이 직업도 똑같고 취향까지 비슷한 사람들이 모여 앉은 아침 식탁에서는 그린 산맥의 목장을 한 번도 떠나 본 적 없는 양 떼마냥 부끄러워하며 서로를 힐끔거릴 뿐이었다. 이 얼마나 희한한 광경인가! 숫기 없는 곰, 소심한 전사 같은 고래잡이들이라니!"
-      ></mm-read-more-paragraph>
-      <div style="height: var(--space-3)"></div>
-      <mm-keyword-tag-group
-        keywords='["이것은헤시태그", "해시태그는클릭할수있다?", "해시태그를통한검색"]'
-      ></mm-keyword-tag-group>
+      <mm-flex direction="column" gap="3">
+        <mm-read-more-paragraph
+          limit="120"
+          content="이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에 부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은 침묵에 잠겼다. 그것도 모자라 다들 난감해하는 눈치였다. 아니, 폭풍우가 몰아치는 가운데 엄청나게 큰 고래, 그것도 생전 처음 보는 고래를 수줍은 기색 없이 잡아 올리고 눈도 깜빡하지 않은 채 사투를 벌여서 죽이는 용맹한 바닷사람들이 직업도 똑같고 취향까지 비슷한 사람들이 모여 앉은 아침 식탁에서는 그린 산맥의 목장을 한 번도 떠나 본 적 없는 양 떼마냥 부끄러워하며 서로를 힐끔거릴 뿐이었다. 이 얼마나 희한한 광경인가! 숫기 없는 곰, 소심한 전사 같은 고래잡이들이라니!"
+        ></mm-read-more-paragraph>
+        <mm-keyword-tag-group
+          keywords='["이것은헤시태그", "해시태그는클릭할수있다?", "해시태그를통한검색"]'
+        ></mm-keyword-tag-group>
+      </mm-flex>
       <mm-separator></mm-separator>
       <mm-link href="#" external="true">고래잡이</mm-link>
       <mm-separator></mm-separator>
@@ -80,26 +81,25 @@ const main = html`
     <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
 
     <mm-component-anatomy
+      style="--component-anatomy-stage-padding: 0.5rem 0"
       parts='[
       "레이블 — 이동할 목적지를 설명하는 클릭 가능한 텍스트입니다.",
       "외부 링크 아이콘 — 새 탭/외부 사이트로 이동함을 나타내는 표식(external)."
     ]'
     >
-      <div style="position: relative; display: inline-block; padding: 0.5rem 0">
-        <mm-link href="https://soojubm.github.io" external>수줍이 디자인 시스템</mm-link>
+      <mm-link href="https://soojubm.github.io" external>수줍이 디자인 시스템</mm-link>
 
-        <!-- 번호 마커 -->
-        <mm-list-marker
-          variant="number"
-          value="1"
-          style="position: absolute; left: 2.5rem; top: -1.5rem; transform: translateX(-50%)"
-        ></mm-list-marker>
-        <mm-list-marker
-          variant="number"
-          value="2"
-          style="position: absolute; right: -1.75rem; top: 50%; transform: translateY(-50%)"
-        ></mm-list-marker>
-      </div>
+      <!-- 번호 마커 -->
+      <mm-list-marker
+        variant="number"
+        value="1"
+        style="position: absolute; left: 2.5rem; top: -1.5rem; transform: translateX(-50%)"
+      ></mm-list-marker>
+      <mm-list-marker
+        variant="number"
+        value="2"
+        style="position: absolute; right: -1.75rem; top: 50%; transform: translateY(-50%)"
+      ></mm-list-marker>
     </mm-component-anatomy>
 
     <mm-component-guide>

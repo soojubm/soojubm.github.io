@@ -72,25 +72,23 @@ const main = html`
       "레이블 — 선택지를 설명하는 클릭 가능한 텍스트."
     ]'
     >
-      <div style="position: relative; display: inline-block">
-        <mm-radio value="premium" checked>프리미엄 요금제</mm-radio>
+      <mm-radio value="premium" checked>프리미엄 요금제</mm-radio>
 
-        <mm-list-marker
-          variant="number"
-          value="1"
-          style="position: absolute; left: -1.75rem; top: 50%; transform: translateY(-50%)"
-        ></mm-list-marker>
-        <mm-list-marker
-          variant="number"
-          value="2"
-          style="position: absolute; left: 0.45rem; bottom: -1.75rem; transform: translateX(-50%)"
-        ></mm-list-marker>
-        <mm-list-marker
-          variant="number"
-          value="3"
-          style="position: absolute; right: -1.75rem; top: 50%; transform: translateY(-50%)"
-        ></mm-list-marker>
-      </div>
+      <mm-list-marker
+        variant="number"
+        value="1"
+        style="position: absolute; left: -1.75rem; top: 50%; transform: translateY(-50%)"
+      ></mm-list-marker>
+      <mm-list-marker
+        variant="number"
+        value="2"
+        style="position: absolute; left: 0.45rem; bottom: -1.75rem; transform: translateX(-50%)"
+      ></mm-list-marker>
+      <mm-list-marker
+        variant="number"
+        value="3"
+        style="position: absolute; right: -1.75rem; top: 50%; transform: translateY(-50%)"
+      ></mm-list-marker>
     </mm-component-anatomy>
 
     <mm-component-guide>

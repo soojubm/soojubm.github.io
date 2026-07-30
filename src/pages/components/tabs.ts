@@ -66,13 +66,10 @@ const componentTokens: ComponentTokenItemData[] = [
     default: 'var(--interaction-selected-background-color)',
   },
   { name: 'tabs-line-color', default: 'var(--border-color)' },
-  { name: 'tabs-line-width', default: '2px' },
-  { name: 'tabs-pill-background', default: 'var(--background-subtle-color)' },
-  {
-    name: 'tabs-pill-indicator-background',
-    default: 'var(--interaction-selected-background-color)',
-  },
-  { name: 'tabs-pill-border-radius', default: 'var(--radius)' },
+  { name: 'tabs-line-width', default: 'var(--border-width)' },
+  { name: 'tabs-pill-border', default: 'var(--border-transparent)' },
+  { name: 'tabs-pill-indicator-background', default: 'var(--background-color)' },
+  { name: 'tabs-pill-indicator-border', default: 'var(--border-transparent)' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [

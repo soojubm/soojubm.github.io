@@ -32,96 +32,98 @@ const main = html`
     <mm-component-aka items='["Timeline", "Stepper"]'></mm-component-aka>
 
     <mm-component-example>
-      <section class="step">
-        <div class="step-item is-active" aria-current="step">
-          <span class="step-item-icon">1</span>
-          <b class="step-item-label">장바구니</b>
-        </div>
-        <div class="step-item">
-          <span class="step-item-icon">2</span>
-          <b class="step-item-label">결제</b>
-        </div>
-        <div class="step-item">
-          <span class="step-item-icon">3</span>
-          <b class="step-item-label">주문완료</b>
-        </div>
-        <div>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </section>
-      <div style="height: var(--space-4)"></div>
-      <mm-surface>
-        <header>
-          <mm-paragraph size="large">Tell us about yourself</mm-paragraph>
-          <mm-paragraph>
-            Now that you're all signed up, let's personalize your experience.
-          </mm-paragraph>
-        </header>
-
-        <section class="step" data-align="vertical" style="margin: 1rem 0">
-          <div class="step-item is-active">
-            <span class="step-item-icon" style="color: var(--foreground-color-on-solid)">1</span>
-            <mm-text class="step-item-label">I'm an engineer</mm-text>
-            <mm-paragraph>
-              대통령은 국가의 원수이며, 외국에 대하여 국가를 대표한다. 국가원로자문회의의
-              조직·직무범위 기타 필요한 사항은 법률로 정한다. 국가는 대외무역을 육성하며, 이를
-              규제·조정할 수 있다.
-            </mm-paragraph>
+      <mm-flex direction="column" gap="4">
+        <section class="step">
+          <div class="step-item is-active" aria-current="step">
+            <span class="step-item-icon">1</span>
+            <b class="step-item-label">장바구니</b>
           </div>
-          <div class="step-item is-active">
-            <span class="step-item-icon" style="color: var(--foreground-color-on-solid)">2</span>
-            <mm-text class="step-item-label">I want to design from scratch</mm-text>
+          <div class="step-item">
+            <span class="step-item-icon">2</span>
+            <b class="step-item-label">결제</b>
           </div>
           <div class="step-item">
             <span class="step-item-icon">3</span>
-            <mm-text class="step-item-label">
-              One last thing ㅡ how will you use your prototpe?
-            </mm-text>
-            <mm-caption>(You can pick more than one)</mm-caption>
-            <div style="height: var(--space-3)"></div>
-            <mm-button-group style="margin-left: 0.75rem">
-              <mm-button>Share for feedback</mm-button>
-              <mm-button>Present live</mm-button>
-              <mm-button>Test with users</mm-button>
-              <mm-button>Collaborate in real time</mm-button>
-              <mm-button>Hand off to developers</mm-button>
-            </mm-button-group>
+            <b class="step-item-label">주문완료</b>
+          </div>
+          <div>
+            <span></span>
+            <span></span>
+            <span></span>
           </div>
         </section>
-        <footer><mm-button variant="primary" size="large">Start creating</mm-button></footer>
-      </mm-surface>
+        <mm-surface>
+          <header>
+            <mm-paragraph size="large">Tell us about yourself</mm-paragraph>
+            <mm-paragraph>
+              Now that you're all signed up, let's personalize your experience.
+            </mm-paragraph>
+          </header>
 
-      <mm-separator></mm-separator>
-      <div>
-        <mm-flex align-items="center" gap="3" style="height: 32px">
-          <mm-paragraph size="large">01</mm-paragraph>
-          <mm-paragraph>Choose your platform</mm-paragraph>
-        </mm-flex>
-        <mm-flex align-items="center" gap="3" style="height: 32px">
-          <mm-paragraph size="large">02</mm-paragraph>
-          <mm-paragraph>Set color theme</mm-paragraph>
-        </mm-flex>
-      </div>
-      <mm-separator></mm-separator>
-      <mm-flex>
-        <mm-menu-item-group>
-          <mm-menu-item-action>
-            <mm-avatar slot="avatar" size="40"></mm-avatar>
-            <div slot="text">
-              <mm-paragraph color="light">Step 1</mm-paragraph>
-              <mm-paragraph>UPLOAD 3D FILES</mm-paragraph>
+          <section class="step" data-align="vertical" style="margin: 1rem 0">
+            <div class="step-item is-active">
+              <span class="step-item-icon" style="color: var(--foreground-color-on-solid)">1</span>
+              <mm-text class="step-item-label">I'm an engineer</mm-text>
+              <mm-paragraph>
+                대통령은 국가의 원수이며, 외국에 대하여 국가를 대표한다. 국가원로자문회의의
+                조직·직무범위 기타 필요한 사항은 법률로 정한다. 국가는 대외무역을 육성하며, 이를
+                규제·조정할 수 있다.
+              </mm-paragraph>
             </div>
-          </mm-menu-item-action>
-          <mm-menu-item-action>
-            <mm-avatar slot="avatar" size="40"></mm-avatar>
-            <div slot="text">
-              <mm-paragraph color="light">Step 2</mm-paragraph>
-              <mm-paragraph>UPLOAD 3D FILES</mm-paragraph>
+            <div class="step-item is-active">
+              <span class="step-item-icon" style="color: var(--foreground-color-on-solid)">2</span>
+              <mm-text class="step-item-label">I want to design from scratch</mm-text>
             </div>
-          </mm-menu-item-action>
-        </mm-menu-item-group>
+            <div class="step-item">
+              <span class="step-item-icon">3</span>
+              <mm-text class="step-item-label">
+                One last thing ㅡ how will you use your prototpe?
+              </mm-text>
+              <mm-flex direction="column" gap="3" align-items="flex-start">
+                <mm-caption>(You can pick more than one)</mm-caption>
+                <mm-button-group style="margin-left: 0.75rem">
+                  <mm-button>Share for feedback</mm-button>
+                  <mm-button>Present live</mm-button>
+                  <mm-button>Test with users</mm-button>
+                  <mm-button>Collaborate in real time</mm-button>
+                  <mm-button>Hand off to developers</mm-button>
+                </mm-button-group>
+              </mm-flex>
+            </div>
+          </section>
+          <footer><mm-button variant="primary" size="large">Start creating</mm-button></footer>
+        </mm-surface>
+
+        <mm-separator></mm-separator>
+        <div>
+          <mm-flex align-items="center" gap="3" style="height: 32px">
+            <mm-paragraph size="large">01</mm-paragraph>
+            <mm-paragraph>Choose your platform</mm-paragraph>
+          </mm-flex>
+          <mm-flex align-items="center" gap="3" style="height: 32px">
+            <mm-paragraph size="large">02</mm-paragraph>
+            <mm-paragraph>Set color theme</mm-paragraph>
+          </mm-flex>
+        </div>
+        <mm-separator></mm-separator>
+        <mm-flex>
+          <mm-menu-item-group>
+            <mm-menu-item-action>
+              <mm-avatar slot="avatar" size="40"></mm-avatar>
+              <div slot="text">
+                <mm-paragraph color="light">Step 1</mm-paragraph>
+                <mm-paragraph>UPLOAD 3D FILES</mm-paragraph>
+              </div>
+            </mm-menu-item-action>
+            <mm-menu-item-action>
+              <mm-avatar slot="avatar" size="40"></mm-avatar>
+              <div slot="text">
+                <mm-paragraph color="light">Step 2</mm-paragraph>
+                <mm-paragraph>UPLOAD 3D FILES</mm-paragraph>
+              </div>
+            </mm-menu-item-action>
+          </mm-menu-item-group>
+        </mm-flex>
       </mm-flex>
     </mm-component-example>
 
@@ -239,48 +241,47 @@ const main = html`
       ></mm-text-list>
 
       <mm-surface variant="outlined">
-        <mm-flex>
-          <mm-tag style="width: var(--size-48)">포장</mm-tag>
-          <mm-text as="time">2022. 12. 05. 15:32</mm-text>
-          <b style="margin-left: auto">배달완료</b>
+        <mm-flex direction="column" gap="4">
+          <mm-flex>
+            <mm-tag style="width: var(--size-48)">포장</mm-tag>
+            <mm-text as="time">2022. 12. 05. 15:32</mm-text>
+            <b style="margin-left: auto">배달완료</b>
+          </mm-flex>
+          <mm-menu-item-action>
+            <mm-avatar slot="avatar" size="48"></mm-avatar>
+            <div slot="text">
+              <b>쩜순이네닭강정 요기요st</b>
+              <mm-flex align-items="center">
+                <span>떡볶이</span>
+                <span>x</span>
+                <span>5</span>
+                <span>외 1건</span>
+              </mm-flex>
+            </div>
+          </mm-menu-item-action>
+          <div class="step">
+            <div class="step-item is-active">
+              <span class="step-item-icon">1</span>
+              <mm-text class="step-item-label">주문확인</mm-text>
+            </div>
+            <div class="step-item">
+              <span class="step-item-icon">2</span>
+              <mm-text class="step-item-label">조리중</mm-text>
+            </div>
+            <div class="step-item">
+              <span class="step-item-icon">3</span>
+              <mm-text class="step-item-label">배달중</mm-text>
+            </div>
+            <div class="step-item">
+              <span class="step-item-icon">4</span>
+              <mm-text class="step-item-label">배달완료</mm-text>
+            </div>
+          </div>
+          <mm-button-group>
+            <mm-button>재주문</mm-button>
+            <mm-button>후기작성</mm-button>
+          </mm-button-group>
         </mm-flex>
-        <div style="height: var(--space-3)"></div>
-        <mm-menu-item-action>
-          <mm-avatar slot="avatar" size="48"></mm-avatar>
-          <div slot="text">
-            <b>쩜순이네닭강정 요기요st</b>
-            <mm-flex align-items="center">
-              <span>떡볶이</span>
-              <span>x</span>
-              <span>5</span>
-              <span>외 1건</span>
-            </mm-flex>
-          </div>
-        </mm-menu-item-action>
-        <div style="height: var(--space-4)"></div>
-        <div class="step">
-          <div class="step-item is-active">
-            <span class="step-item-icon">1</span>
-            <mm-text class="step-item-label">주문확인</mm-text>
-          </div>
-          <div class="step-item">
-            <span class="step-item-icon">2</span>
-            <mm-text class="step-item-label">조리중</mm-text>
-          </div>
-          <div class="step-item">
-            <span class="step-item-icon">3</span>
-            <mm-text class="step-item-label">배달중</mm-text>
-          </div>
-          <div class="step-item">
-            <span class="step-item-icon">4</span>
-            <mm-text class="step-item-label">배달완료</mm-text>
-          </div>
-        </div>
-        <div style="height: var(--space-4)"></div>
-        <mm-button-group>
-          <mm-button>재주문</mm-button>
-          <mm-button>후기작성</mm-button>
-        </mm-button-group>
       </mm-surface>
     </mm-component-guide>
     <mm-component-related .items=${relatedComponents}></mm-component-related>

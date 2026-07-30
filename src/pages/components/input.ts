@@ -103,6 +103,7 @@ const main = html`
     <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
 
     <mm-component-anatomy
+      style="--component-anatomy-stage-padding: 0 0 0 1.75rem"
       parts='[
       "레이블 — 입력 항목의 이름을 나타냅니다(label).",
       "헬퍼 텍스트 — 레이블 아래에서 입력 형식이나 보조 정보를 안내합니다(helper).",
@@ -111,45 +112,43 @@ const main = html`
       "검증 텍스트 — 입력 필드 아래에서 오류나 검증 결과를 전달합니다(validation-text)."
     ]'
     >
-      <div style="position: relative; display: inline-block; padding-left: 1.75rem">
-        <mm-textfield
-          label="이메일"
-          placeholder="name@example.com"
-          helper="회사 이메일을 입력하세요."
-          validation-text="올바른 이메일 형식으로 입력하세요."
-          invalid
-          style="width: 280px"
-        >
-          <mm-icon slot="leading" name="mail"></mm-icon>
-        </mm-textfield>
+      <mm-textfield
+        label="이메일"
+        placeholder="name@example.com"
+        helper="회사 이메일을 입력하세요."
+        validation-text="올바른 이메일 형식으로 입력하세요."
+        invalid
+        style="width: 280px"
+      >
+        <mm-icon slot="leading" name="mail"></mm-icon>
+      </mm-textfield>
 
-        <!-- 번호 마커 (세로 배치) -->
-        <mm-list-marker
-          variant="number"
-          value="1"
-          style="position: absolute; left: 0; top: 0.25rem"
-        ></mm-list-marker>
-        <mm-list-marker
-          variant="number"
-          value="2"
-          style="position: absolute; left: 0; top: 2rem"
-        ></mm-list-marker>
-        <mm-list-marker
-          variant="number"
-          value="3"
-          style="position: absolute; left: 0; top: 4.25rem"
-        ></mm-list-marker>
-        <mm-list-marker
-          variant="number"
-          value="4"
-          style="position: absolute; left: 2.25rem; top: 4.25rem"
-        ></mm-list-marker>
-        <mm-list-marker
-          variant="number"
-          value="5"
-          style="position: absolute; left: 0; bottom: 0.25rem"
-        ></mm-list-marker>
-      </div>
+      <!-- 번호 마커 (세로 배치) -->
+      <mm-list-marker
+        variant="number"
+        value="1"
+        style="position: absolute; left: 0; top: 0.25rem"
+      ></mm-list-marker>
+      <mm-list-marker
+        variant="number"
+        value="2"
+        style="position: absolute; left: 0; top: 2rem"
+      ></mm-list-marker>
+      <mm-list-marker
+        variant="number"
+        value="3"
+        style="position: absolute; left: 0; top: 4.25rem"
+      ></mm-list-marker>
+      <mm-list-marker
+        variant="number"
+        value="4"
+        style="position: absolute; left: 2.25rem; top: 4.25rem"
+      ></mm-list-marker>
+      <mm-list-marker
+        variant="number"
+        value="5"
+        style="position: absolute; left: 0; bottom: 0.25rem"
+      ></mm-list-marker>
     </mm-component-anatomy>
 
     <mm-component-guide>
@@ -411,18 +410,19 @@ const main = html`
 
     <mm-component-section heading="Newsletter" description="TODO">
       <form style="max-width: 400px">
-        <mm-text-block
-          level="3"
-          heading="Newsletter subscribe"
-          description="섭스크라이브 유아이 콤포넌트 입니다. 두 줄 단락을 위해 쓰고 있습니다."
-        ></mm-text-block>
-        <div style="height: 1rem"></div>
-        <mm-textfield type="email" placeholder="Enter Your Email..">
-          <mm-icon slot="leading" name="mail"></mm-icon>
-          <mm-button slot="trailing" type="submit" variant="primary" size="medium">
-            뉴스레터 구독
-          </mm-button>
-        </mm-textfield>
+        <mm-flex direction="column" gap="4">
+          <mm-text-block
+            level="3"
+            heading="Newsletter subscribe"
+            description="섭스크라이브 유아이 콤포넌트 입니다. 두 줄 단락을 위해 쓰고 있습니다."
+          ></mm-text-block>
+          <mm-textfield type="email" placeholder="Enter Your Email..">
+            <mm-icon slot="leading" name="mail"></mm-icon>
+            <mm-button slot="trailing" type="submit" variant="primary" size="medium">
+              뉴스레터 구독
+            </mm-button>
+          </mm-textfield>
+        </mm-flex>
       </form>
     </mm-component-section>
 

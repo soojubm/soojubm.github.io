@@ -1,3 +1,4 @@
+import tsPlugin from '@typescript-eslint/eslint-plugin'
 import tsParser from '@typescript-eslint/parser'
 import importPlugin from 'eslint-plugin-import'
 import litPlugin from 'eslint-plugin-lit'
@@ -19,7 +20,7 @@ const warnRules = rules =>
 
 export default [
   {
-    ignores: ['build/**', 'node_modules/**', '_legacy/**'],
+    ignores: ['build/**', 'node_modules/**'],
   },
   {
     files: ['**/*.{js,mjs,ts}'],
@@ -34,6 +35,7 @@ export default [
       },
     },
     plugins: {
+      '@typescript-eslint': tsPlugin,
       import: importPlugin,
       lit: litPlugin,
       'lit-a11y': litA11yPlugin,
@@ -51,6 +53,11 @@ export default [
 
       // Lit 템플릿 안의 ARIA, 키보드 이벤트, 접근 가능한 이름 등 접근성 규칙을 검사한다.
       ...warnRules(litA11yRecommended.rules),
+
+      // 죽은 import·지역 변수를 잡는다. 베이스 no-unused-vars는 declare global의 선언 병합과
+      // 타입 참조를 이해하지 못해 오탐이 나므로 TypeScript용 규칙을 쓴다.
+      // 클래스 필드는 검사 대상이 아니라, host에 스스로 등록하는 컨트롤러 필드는 그대로 남는다.
+      '@typescript-eslint/no-unused-vars': ['error', { args: 'none' }],
 
       curly: ['error', 'multi-or-nest', 'consistent'],
       'nonblock-statement-body-position': ['error', 'beside'],

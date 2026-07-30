@@ -1,7 +1,9 @@
 /**
- * 공통 리스트 페이지 유틸리티.
- * films·books처럼 "필터 + 페이지네이션 목록" 구조를 공유합니다.
+ * films·books가 공유하는 "필터 + 페이지네이션 목록" 페이지 유틸리티.
  */
+import { render } from 'lit'
+
+import type { TemplateResult } from 'lit'
 
 const PAGE_SIZE = 60
 
@@ -9,7 +11,7 @@ const PAGE_SIZE = 60
  * 아이템 목록을 렌더링하고 "더 보기" 버튼을 연결합니다.
  * offset 관리와 추가 로딩은 내부에서 처리하므로, 필터가 바뀔 때마다 다시 호출하면 됩니다.
  */
-export function renderList<T>(items: T[], toCard: (item: T) => string) {
+export function renderList<T>(items: T[], toCard: (item: T) => TemplateResult) {
   const listEl = document.querySelector<HTMLElement>('.js-list')
   const countEl = document.querySelector<HTMLElement>('.js-count')
   const moreWrap = document.querySelector<HTMLElement>('.js-more')
@@ -17,14 +19,12 @@ export function renderList<T>(items: T[], toCard: (item: T) => string) {
   if (!listEl || !countEl || !moreWrap) return
 
   countEl.textContent = String(items.length)
-  listEl.innerHTML = ''
   let shown = 0
 
   const showMore = () => {
-    const slice = items.slice(shown, shown + PAGE_SIZE)
-    listEl.insertAdjacentHTML('beforeend', slice.map(toCard).join(''))
-    shown += slice.length
-    moreWrap.style.display = shown < items.length ? '' : 'none'
+    shown = Math.min(shown + PAGE_SIZE, items.length)
+    render(items.slice(0, shown).map(toCard), listEl)
+    moreWrap.hidden = shown >= items.length
   }
 
   showMore()
@@ -49,16 +49,16 @@ export function getCountries<T extends { country?: string }>(
     if (item.country) counts[item.country] = (counts[item.country] ?? 0) + 1
   })
   return Object.entries(counts)
-    .filter(([, n]) => n >= minCount)
+    .filter(([, count]) => count >= minCount)
     .sort((a, b) => b[1] - a[1])
-    .map(([c]) => c)
+    .map(([country]) => country)
 }
 
 /** films·books 공통 JSON 로더. 실패 시 null을 반환합니다. */
 export async function loadJson<T>(url: string): Promise<T[] | null> {
   try {
-    const res = await fetch(url)
-    return await res.json()
+    const response = await fetch(url)
+    return await response.json()
   } catch {
     return null
   }

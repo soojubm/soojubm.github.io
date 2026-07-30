@@ -23,6 +23,7 @@ export const ICON_NAMES = {
 
   // Navigation
   BACK: 'arrow-left',
+  COMPASS: 'compass',
   COLLAPSE: 'nav-arrow-up',
   EXPAND: 'nav-arrow-down',
   FORWARD: 'arrow-right',

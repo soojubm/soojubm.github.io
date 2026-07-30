@@ -81,25 +81,23 @@ const main = html`
       "레이블 — 선택지를 설명하는 클릭 가능한 텍스트."
     ]'
     >
-      <div style="position: relative; display: inline-block">
-        <mm-checkbox size="large" checked>관심 분야</mm-checkbox>
+      <mm-checkbox size="large" checked>관심 분야</mm-checkbox>
 
-        <mm-list-marker
-          variant="number"
-          value="1"
-          style="position: absolute; left: -1.75rem; top: 50%; transform: translateY(-50%)"
-        ></mm-list-marker>
-        <mm-list-marker
-          variant="number"
-          value="2"
-          style="position: absolute; left: 0.5rem; bottom: -1.75rem; transform: translateX(-50%)"
-        ></mm-list-marker>
-        <mm-list-marker
-          variant="number"
-          value="3"
-          style="position: absolute; right: -1.75rem; top: 50%; transform: translateY(-50%)"
-        ></mm-list-marker>
-      </div>
+      <mm-list-marker
+        variant="number"
+        value="1"
+        style="position: absolute; left: -1.75rem; top: 50%; transform: translateY(-50%)"
+      ></mm-list-marker>
+      <mm-list-marker
+        variant="number"
+        value="2"
+        style="position: absolute; left: 0.5rem; bottom: -1.75rem; transform: translateX(-50%)"
+      ></mm-list-marker>
+      <mm-list-marker
+        variant="number"
+        value="3"
+        style="position: absolute; right: -1.75rem; top: 50%; transform: translateY(-50%)"
+      ></mm-list-marker>
     </mm-component-anatomy>
 
     <mm-component-guide>
@@ -135,7 +133,7 @@ const main = html`
     </mm-component-section>
 
     <mm-component-section heading="Sampler" description="연습">
-      <div style="max-width: 400px">
+      <mm-flex direction="column" gap="3" style="max-width: 400px">
         <mm-top-bar nav="close" heading="컬렉션에 추가">
           <mm-button slot="action" variant="ghost">새 컬렉션</mm-button>
         </mm-top-bar>
@@ -158,7 +156,6 @@ const main = html`
           <mm-button slot="action" variant="ghost">완료</mm-button>
         </mm-top-bar>
         <mm-textfield label="컬렉션 이름" placeholder="컬렉션 이름"></mm-textfield>
-        <div style="height: 0.75rem"></div>
         <mm-toggle-button-group
           id="button-list"
           .options=${visibilityOptions}
@@ -171,8 +168,7 @@ const main = html`
           <mm-button slot="action" variant="ghost">완료</mm-button>
         </mm-top-bar>
         <mm-textfield label="TODO 멤버 검색" placeholder="멤버 이름"></mm-textfield>
-        <div style="height: var(--space-4)"></div>
-      </div>
+      </mm-flex>
     </mm-component-section>
     <mm-component-related .items=${relatedComponents}></mm-component-related>
   </main>

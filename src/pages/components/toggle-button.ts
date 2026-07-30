@@ -130,30 +130,28 @@ const main = html`
       "구분선 — 옵션 사이의 시각적 경계(선택)."
     ]'
     >
-      <div style="position: relative; display: inline-block">
-        <mm-toggle-button-group .options=${anatomyViewOptions}></mm-toggle-button-group>
+      <mm-toggle-button-group .options=${anatomyViewOptions}></mm-toggle-button-group>
 
-        <mm-list-marker
-          variant="number"
-          value="1"
-          style="position: absolute; left: -1.75rem; top: 50%; transform: translateY(-50%)"
-        ></mm-list-marker>
-        <mm-list-marker
-          variant="number"
-          value="2"
-          style="position: absolute; left: 50%; top: -1.75rem; transform: translateX(-50%)"
-        ></mm-list-marker>
-        <mm-list-marker
-          variant="number"
-          value="3"
-          style="position: absolute; left: 25%; bottom: -1.75rem; transform: translateX(-50%)"
-        ></mm-list-marker>
-        <mm-list-marker
-          variant="number"
-          value="4"
-          style="position: absolute; left: 50%; bottom: -1.75rem; transform: translateX(-50%)"
-        ></mm-list-marker>
-      </div>
+      <mm-list-marker
+        variant="number"
+        value="1"
+        style="position: absolute; left: -1.75rem; top: 50%; transform: translateY(-50%)"
+      ></mm-list-marker>
+      <mm-list-marker
+        variant="number"
+        value="2"
+        style="position: absolute; left: 50%; top: -1.75rem; transform: translateX(-50%)"
+      ></mm-list-marker>
+      <mm-list-marker
+        variant="number"
+        value="3"
+        style="position: absolute; left: 25%; bottom: -1.75rem; transform: translateX(-50%)"
+      ></mm-list-marker>
+      <mm-list-marker
+        variant="number"
+        value="4"
+        style="position: absolute; left: 50%; bottom: -1.75rem; transform: translateX(-50%)"
+      ></mm-list-marker>
     </mm-component-anatomy>
 
     <mm-component-section

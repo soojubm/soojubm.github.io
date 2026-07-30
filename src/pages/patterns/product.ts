@@ -235,14 +235,13 @@ const main = html`
         </mm-grid>
 
         <!-- 리뷰 -->
-        <section>
+        <mm-flex as="section" direction="column" gap="8">
           <mm-text-block
             centered
             level="1"
             heading="Loved By Over +70,000 Smiles!"
             description="Toothpaste so good, you’ll actually look forward to brushing —just ask our customers."
           ></mm-text-block>
-          <div style="height: 2rem"></div>
           <mm-grid column="2" gap="4">
             <mm-review-item
               rating="5"
@@ -257,7 +256,7 @@ const main = html`
               datetime="2020년 12월 1일"
             ></mm-review-item>
           </mm-grid>
-        </section>
+        </mm-flex>
 
         <!-- 상품 상세정보 고지 -->
         <section class="product-detail-summary">

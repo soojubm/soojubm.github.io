@@ -5,7 +5,7 @@ import type { ComponentPropItemData } from '@/components/domains/component/compo
 import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
 import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
 
-import { AVATAR_SHAPE_TYPE_LABEL, AVATAR_VARIANT_TYPE_UNION } from '@/components/common/avatar'
+import { AVATAR_VARIANT_TYPE_UNION } from '@/components/common/avatar'
 import { renderDocumentLayout } from '@/components/layouts/document-layout'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -14,7 +14,7 @@ const relatedComponents: ComponentRelatedItemData[] = [
 ]
 
 const componentProps: ComponentPropItemData[] = [
-  { name: 'variant', type: "${AVATAR_VARIANT_TYPE_UNION} = 'primary'" },
+  { name: 'variant', type: `${AVATAR_VARIANT_TYPE_UNION} = 'primary'` },
   { name: 'size', type: "'80' | '48' | '40' | '32' = '40'" },
   { name: 'shape', type: '' },
   { name: 'src', type: 'string', optional: true },
@@ -101,24 +101,22 @@ const main = html`
       "콘텐츠 — 이미지 > 아이콘 > 이니셜 > 기본 아이콘 순서로 폴백합니다."
     ]'
     >
-      <div style="position: relative; display: inline-block">
-        <mm-avatar size="80" variant="secondary"></mm-avatar>
-        <mm-list-marker
-          variant="number"
-          value="1"
-          style="position: absolute; left: -1.75rem; top: 50%; transform: translateY(-50%)"
-        ></mm-list-marker>
-        <mm-list-marker
-          variant="number"
-          value="2"
-          style="
-          position: absolute;
-          left: 50%;
-          top: calc(50% + 1.25rem);
-          transform: translate(-50%, -50%);
-        "
-        ></mm-list-marker>
-      </div>
+      <mm-avatar size="80" variant="secondary"></mm-avatar>
+      <mm-list-marker
+        variant="number"
+        value="1"
+        style="position: absolute; left: -1.75rem; top: 50%; transform: translateY(-50%)"
+      ></mm-list-marker>
+      <mm-list-marker
+        variant="number"
+        value="2"
+        style="
+        position: absolute;
+        left: 50%;
+        top: calc(50% + 1.25rem);
+        transform: translate(-50%, -50%);
+      "
+      ></mm-list-marker>
     </mm-component-anatomy>
 
     <mm-component-guide>

@@ -1,5 +1,4 @@
 import { css } from 'lit'
-import { MEDIA } from '@/constants'
 
 /** modal 표면 뒤를 덮는 dim·blur 재질. 표시 상태는 자신을 품은 레이어가 소유한다. */
 export const backdropStyles = css`

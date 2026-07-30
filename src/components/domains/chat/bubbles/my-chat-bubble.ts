@@ -1,8 +1,7 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import { myChatBubbleStyles } from '@/components/domains/chat/bubbles/styles'
-import { chatBubbleStyles } from '@/components/domains/chat/chat.styles'
+import { chatBubbleStyles, myChatBubbleStyles } from '@/components/domains/chat/chat.styles'
 import { resetStyles } from '@/stylesheets/shared.styles'
 
 import { renderChatBubbleShell, withChatBubbleImage } from '../chat.helpers'
@@ -21,13 +20,11 @@ export class MyChatBubble extends withChatBubbleImage(LitElement) {
 
   render() {
     return renderChatBubbleShell(
-      this.typing,
-      this.src,
+      this,
       html`
         <slot></slot>
         ${this.renderStatus()}
       `,
-      'var(--foreground-color-on-solid)',
     )
   }
 

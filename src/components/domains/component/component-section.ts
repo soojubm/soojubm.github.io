@@ -1,4 +1,4 @@
-import { LitElement, css, html, nothing } from 'lit'
+import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import '@/components/common/tag/tag'
@@ -32,14 +32,6 @@ class ComponentSection extends LitElement {
       <div class="component-content-frame">
         <slot></slot>
       </div>
-    `
-  }
-
-  private renderDescription() {
-    if (!this.description) return nothing
-
-    return html`
-      <mm-paragraph>${this.description}</mm-paragraph>
     `
   }
 }

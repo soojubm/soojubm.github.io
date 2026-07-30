@@ -163,7 +163,6 @@ const main = html`
         "개인적, 직업적 목표를 달성하세요"
       ]'
         ></mm-text-list>
-        <div style="height: var(--space-1)"></div>
         <mm-button slot="action" variant="primary" size="large">멤버십 가입하기</mm-button>
       </mm-result>
       <div class="post-attract-blur"></div>
@@ -173,13 +172,11 @@ const main = html`
   <nav class="post-pagination" style="margin: 2rem 0">
     <a class="post-pagination-previous" href="#">
       <mm-icon-button variant="secondary" icon="arrow-left"></mm-icon-button>
-      <div style="height: var(--space-3)"></div>
       <mm-paragraph title="prev article" color="light">이전 콘텐츠</mm-paragraph>
       <mm-paragraph size="large">Return to all articles</mm-paragraph>
     </a>
     <a class="post-pagination-next" href="#">
       <mm-icon-button variant="secondary" icon="arrow-right"></mm-icon-button>
-      <div style="height: var(--space-3)"></div>
       <mm-paragraph color="light">다음 콘텐츠</mm-paragraph>
       <mm-paragraph size="large">Avoid invisible text during font loading</mm-paragraph>
     </a>

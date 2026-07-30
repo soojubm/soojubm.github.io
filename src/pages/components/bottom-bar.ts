@@ -3,7 +3,6 @@ import { html } from 'lit'
 import type { ComponentFeatureItem } from '@/components/domains/component/component-feature-list'
 import type { ComponentPropItemData } from '@/components/domains/component/component-props'
 import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
-import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
 import type { BottomBarItem } from '@/components/layouts/bottom-bar'
 
 import { renderDocumentLayout } from '@/components/layouts/document-layout'
@@ -16,10 +15,6 @@ const relatedComponents: ComponentRelatedItemData[] = [
 const componentProps: ComponentPropItemData[] = [
   { name: 'items', type: 'JSON string', optional: true },
   { name: 'label', type: "string = '하단 내비게이션'", optional: true },
-]
-
-const componentTokens: ComponentTokenItemData[] = [
-  { name: 'bottom-bar-item-height', default: 'calc(var(--size-32) + var(--font-line-height-24))' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [
@@ -50,8 +45,6 @@ const main = html`
     </mm-component-example>
 
     <mm-component-props .props=${componentProps}></mm-component-props>
-
-    <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
 
     <mm-component-guide>
       <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>

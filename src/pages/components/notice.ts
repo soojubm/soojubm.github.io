@@ -20,12 +20,10 @@ const componentProps: ComponentPropItemData[] = [
 ]
 
 const componentTokens: ComponentTokenItemData[] = [
-  { name: 'notice-gap', default: 'var(--space-2)' },
   { name: 'notice-padding', default: 'var(--space-3)' },
   { name: 'notice-border-radius', default: 'var(--radius)' },
   { name: 'notice-border-width', default: 'var(--border-width)' },
-  { name: 'notice-accent', default: 'var(--foreground-subtle-color)' },
-  { name: 'notice-text-color', default: 'var(--foreground-color)' },
+  { name: 'notice-foreground-color', default: 'var(--foreground-color)' },
   { name: 'notice-background-color', default: 'transparent' },
   { name: 'notice-border-color', default: 'var(--border-color)' },
 ]

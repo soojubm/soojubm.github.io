@@ -21,6 +21,9 @@ export class ComponentAnatomy extends LitElement {
     componentContentFrameStyles,
     css`
       :host {
+        --component-anatomy-stage-width: auto;
+        --component-anatomy-stage-padding: 0;
+
         display: flex;
         flex-direction: column;
         gap: var(--space-3);
@@ -29,6 +32,14 @@ export class ComponentAnatomy extends LitElement {
       .component-content-frame {
         display: flex;
         justify-content: center;
+      }
+
+      /* 슬롯된 시연 대상과 번호 마커가 함께 앉는 무대.
+         마커는 각 시연에 맞춰 직접 배치되므로, 무대는 그 기준이 되는 위치 맥락만 소유한다. */
+      .stage {
+        width: var(--component-anatomy-stage-width);
+        padding: var(--component-anatomy-stage-padding);
+        position: relative;
       }
     `,
   ]
@@ -44,7 +55,9 @@ export class ComponentAnatomy extends LitElement {
     return html`
       <mm-text size="24" weight="bold" as="h3">${this.heading}</mm-text>
       <div class="component-content-frame">
-        <slot></slot>
+        <div class="stage">
+          <slot></slot>
+        </div>
       </div>
       ${this.renderParts()}
     `

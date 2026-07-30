@@ -4,13 +4,13 @@ import { ifDefined } from 'lit/directives/if-defined.js'
 
 import type { InputType } from '@/components/common/input/input'
 
+import { textfieldStyles } from '@/components/common/input/input.styles'
 import {
   renderFieldHelper,
   renderFieldLabel,
   renderFieldValidation,
   withTextfieldState,
 } from '@/components/common/input/semantics/textfield.helpers'
-import { textfieldStyles } from '@/components/common/input/input.styles'
 import '@/components/common/input/input'
 
 @customElement('mm-textfield')

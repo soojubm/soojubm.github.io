@@ -6,8 +6,7 @@ import type { ComponentReferenceItemData } from '@/components/domains/component/
 import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
 import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
 
-import { AVATAR_SHAPE_TYPE_LABEL, AVATAR_VARIANT_TYPE_UNION } from '@/components/common/avatar'
-import { LIST_ITEM_SIZE_TYPE_LABEL } from '@/components/common/list-item'
+import { AVATAR_VARIANT_TYPE_UNION } from '@/components/common/avatar'
 import { renderDocumentLayout } from '@/components/layouts/document-layout'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -43,7 +42,7 @@ const componentProps: ComponentPropItemData[] = [
   { name: "slot='trailing'", type: 'HTMLElement', optional: true },
   { name: 'emoji', type: 'string', optional: true },
   { name: 'avatar-src', type: 'string', optional: true },
-  { name: 'avatar-variant', type: "${AVATAR_VARIANT_TYPE_UNION} = 'tertiary'", optional: true },
+  { name: 'avatar-variant', type: `${AVATAR_VARIANT_TYPE_UNION} = 'tertiary'`, optional: true },
   { name: 'avatar-shape', type: '', optional: true },
   { name: 'tone', type: "'danger' | string", optional: true },
   { name: 'disabled', type: 'boolean', optional: true },

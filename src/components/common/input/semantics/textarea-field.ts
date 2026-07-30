@@ -4,11 +4,11 @@ import { ifDefined } from 'lit/directives/if-defined.js'
 
 import type { AriaInvalid } from '@/types'
 
+import { textfieldStyles } from '@/components/common/input/input.styles'
 import {
   renderFieldHelper,
   renderFieldLabel,
 } from '@/components/common/input/semantics/textfield.helpers'
-import { textfieldStyles } from '@/components/common/input/input.styles'
 import '@/components/common/input/textarea'
 import { uniqueId } from '@/utils'
 

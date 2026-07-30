@@ -31,3 +31,43 @@ export const chatBubbleStyles = css`
     overflow: hidden;
   }
 `
+
+/** 말풍선 표면을 갖는 버블(내가·참여자가 보낸 쪽)이 공유하는 여백과 모서리. */
+const chatBubbleSurfaceStyles = css`
+  :host {
+    padding: var(--space-3) var(--space-4);
+    border: var(--border-transparent);
+    border-radius: var(--bubble-border-radius);
+  }
+`
+
+export const myChatBubbleStyles = [
+  chatBubbleSurfaceStyles,
+  css`
+    :host {
+      --bubble-border-radius: var(--radius-large) var(--radius) var(--radius-large)
+        var(--radius-large);
+      --thumbnail-border-radius: var(--bubble-border-radius);
+
+      background: var(--color-primary);
+      color: var(--foreground-color-on-solid);
+    }
+
+    .status {
+      display: block;
+      margin-top: var(--space-1);
+      font-size: var(--font-size-12);
+      color: color-mix(in srgb, currentColor 70%, transparent);
+      text-align: right;
+    }
+  `,
+]
+
+export const participantChatBubbleStyles = [
+  chatBubbleSurfaceStyles,
+  css`
+    :host {
+      background: var(--background-subtle-color);
+    }
+  `,
+]

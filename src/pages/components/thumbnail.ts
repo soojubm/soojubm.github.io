@@ -45,40 +45,29 @@ const main = html`
     ></mm-page-header>
 
     <mm-component-example>
-      <div
-        style="
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-        gap: var(--space-4);
-        align-items: start;
-      "
-      >
-        <div>
+      <mm-grid column-min-width="160px" gap="4">
+        <mm-flex direction="column" gap="2">
           <mm-paragraph>1:1</mm-paragraph>
-          <div style="height: var(--space-2)"></div>
           <mm-thumbnail src="/src/images/temp.png" alt="멋진 풍경" ratio="1:1"></mm-thumbnail>
-        </div>
-        <div>
+        </mm-flex>
+        <mm-flex direction="column" gap="2">
           <mm-paragraph>4:3</mm-paragraph>
-          <div style="height: var(--space-2)"></div>
           <mm-thumbnail
             src="/src/images/temp.png"
             alt="멋진 풍경"
             ratio="4:3"
             href="/video/1025"
           ></mm-thumbnail>
-        </div>
-        <div>
+        </mm-flex>
+        <mm-flex direction="column" gap="2">
           <mm-paragraph>16:9</mm-paragraph>
-          <div style="height: var(--space-2)"></div>
           <mm-thumbnail src="/src/images/temp.png" alt="멋진 풍경" ratio="16:9"></mm-thumbnail>
-        </div>
-        <div>
+        </mm-flex>
+        <mm-flex direction="column" gap="2">
           <mm-paragraph>full</mm-paragraph>
-          <div style="height: var(--space-2)"></div>
           <mm-thumbnail src="/src/images/temp.png" alt="멋진 풍경" ratio="full"></mm-thumbnail>
-        </div>
-      </div>
+        </mm-flex>
+      </mm-grid>
     </mm-component-example>
 
     <mm-component-props .props=${componentProps}></mm-component-props>

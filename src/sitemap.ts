@@ -97,7 +97,7 @@ export const SITEMAP: SitemapNode[] = [
     type: 'group',
     id: 'navigations',
     title: 'Navigations',
-    icon: 'compass' as any,
+    icon: ICON_NAMES.COMPASS,
     items: [
       { id: 'tabs', name: 'Tabs' },
       { id: 'top-bar', name: 'Top Bar' },

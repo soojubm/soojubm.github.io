@@ -4,8 +4,8 @@ import { focusRing } from '@/stylesheets/shared.styles'
 
 export const switchStyles = css`
   :host {
-    --switch-width: 2rem;
-    --switch-height: 16px;
+    --switch-width: var(--size-32);
+    --switch-height: var(--size-16);
     --switch-border-radius: var(--radius);
     --switch-background-color: var(--border-color);
     display: block;
@@ -30,7 +30,8 @@ export const switchStyles = css`
       --switch-background-color: var(--interaction-selected-foreground-color);
 
       &:after {
-        transform: translateX(calc(var(--switch-width) - 16px));
+        /* 썸은 트랙 높이만 한 정사각형이라, 이동 거리는 트랙 너비에서 썸 크기를 뺀 값이다. */
+        transform: translateX(calc(var(--switch-width) - var(--switch-height)));
       }
     }
 

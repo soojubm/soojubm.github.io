@@ -87,19 +87,19 @@ const main = html`
     </style>
 
     <mm-component-example>
-      <mm-flex direction="column" gap="0">
-        <mm-text size="32">font size 32px</mm-text>
-        <div style="height: var(--space-1)"></div>
-        <mm-text size="24">font size 24px</mm-text>
-        <div style="height: var(--space-1)"></div>
-        <mm-paragraph size="large">font size 18px</mm-paragraph>
-        <div style="height: var(--space-1)"></div>
-        <mm-paragraph>font size 14px</mm-paragraph>
-        <div style="height: var(--space-1)"></div>
-        <mm-text size="12">font size 12px</mm-text>
+      <mm-flex direction="column" gap="3">
+        <mm-flex direction="column" gap="1">
+          <mm-text size="32">font size 32px</mm-text>
+          <mm-text size="24">font size 24px</mm-text>
+          <mm-paragraph size="large">font size 18px</mm-paragraph>
+          <mm-paragraph>font size 14px</mm-paragraph>
+          <mm-text size="12">font size 12px</mm-text>
+        </mm-flex>
         <mm-separator></mm-separator>
-        <mm-text weight="medium">font weight normal</mm-text>
-        <mm-text weight="bold">font weight bold</mm-text>
+        <mm-flex direction="column" gap="1">
+          <mm-text weight="medium">font weight normal</mm-text>
+          <mm-text weight="bold">font weight bold</mm-text>
+        </mm-flex>
       </mm-flex>
     </mm-component-example>
     <mm-component-props .props=${componentProps}></mm-component-props>
@@ -120,13 +120,10 @@ const main = html`
       heading="Headings"
       description="level(1–4)로 의미 단계(h1–h4)와 크기를 함께 지정하며, 기본값은 2입니다."
     >
-      <mm-flex direction="column" gap="0">
+      <mm-flex direction="column" gap="3">
         <mm-heading level="1">페이지 레벨의 타이틀</mm-heading>
-        <div style="height: 1rem"></div>
         <mm-heading level="2">섹션 레벨의 타이틀</mm-heading>
-        <div style="height: 0.75rem"></div>
         <mm-heading level="3">소제목</mm-heading>
-        <div style="height: 0.75rem"></div>
         <mm-heading level="4">더소제목</mm-heading>
       </mm-flex>
     </mm-component-section>
@@ -269,18 +266,19 @@ const main = html`
       description="A hero section is a large, prominent section at the top of a webpage that typically includes a headline, subheadline, and a call-to-action button."
     >
       <section class="hero">
-        <mm-text-block
-          level="1"
-          heading="Hero Title"
-          description="이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에
+        <mm-flex direction="column" gap="8">
+          <mm-text-block
+            level="1"
+            heading="Hero Title"
+            description="이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에
             부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은 침묵에 잠겼다. 이야기를 들을 기대에
           부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은 침묵에 잠겼다."
-        ></mm-text-block>
-        <div style="height: var(--space-8)"></div>
-        <mm-button-group>
-          <mm-button variant="primary" size="large">콜 투 액션</mm-button>
-          <mm-button variant="ghost" size="large">더 알아보기</mm-button>
-        </mm-button-group>
+          ></mm-text-block>
+          <mm-button-group>
+            <mm-button variant="primary" size="large">콜 투 액션</mm-button>
+            <mm-button variant="ghost" size="large">더 알아보기</mm-button>
+          </mm-button-group>
+        </mm-flex>
       </section>
     </mm-component-section>
 

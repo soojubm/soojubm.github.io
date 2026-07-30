@@ -348,7 +348,9 @@ const main = html`
         <mm-flex direction="column" gap="3">
           <mm-text>Loading</mm-text>
           <button class="demo-btn">
-            <mm-typing-indicator color="var(--background-strong-color)"></mm-typing-indicator>
+            <mm-typing-indicator
+              style="color: var(--background-strong-color)"
+            ></mm-typing-indicator>
           </button>
         </mm-flex>
       </mm-grid>

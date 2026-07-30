@@ -72,7 +72,7 @@ const main = html`
         background: var(--color-primary);
       "
       >
-        <mm-typing-indicator color="var(--foreground-color-on-solid)"></mm-typing-indicator>
+        <mm-typing-indicator style="color: var(--foreground-color-on-solid)"></mm-typing-indicator>
       </div>
     </mm-component-section>
     <mm-component-related .items=${relatedComponents}></mm-component-related>

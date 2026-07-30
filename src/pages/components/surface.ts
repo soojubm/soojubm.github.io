@@ -20,7 +20,7 @@ const componentProps: ComponentPropItemData[] = [
     optional: true,
   },
   { name: 'radius', type: "'default' | 'large'", optional: true },
-  { name: 'height', type: 'string', optional: true },
+  { name: 'tone', type: 'string', optional: true },
 ]
 
 const componentTokens: ComponentTokenItemData[] = [
@@ -181,20 +181,21 @@ const main = html`
             ></mm-text-list>
             <mm-keyword-tag-group keywords='["Google", "Meta", "Nvidia"]'></mm-keyword-tag-group>
             <mm-surface variant="filled">
-              <mm-tag>3월 14일 수정됨</mm-tag>
-              <div style="height: var(--space-2)"></div>
-              <mm-menu-item-group>
-                <mm-menu-item-action
-                  size="small"
-                  label="Kakao"
-                  description="https://www.kakaocorp.com"
-                ></mm-menu-item-action>
-                <mm-menu-item-action
-                  size="small"
-                  label="Naver"
-                  description="https://www.naver.com"
-                ></mm-menu-item-action>
-              </mm-menu-item-group>
+              <mm-flex direction="column" gap="2">
+                <mm-tag>3월 14일 수정됨</mm-tag>
+                <mm-menu-item-group>
+                  <mm-menu-item-action
+                    size="small"
+                    label="Kakao"
+                    description="https://www.kakaocorp.com"
+                  ></mm-menu-item-action>
+                  <mm-menu-item-action
+                    size="small"
+                    label="Naver"
+                    description="https://www.naver.com"
+                  ></mm-menu-item-action>
+                </mm-menu-item-group>
+              </mm-flex>
             </mm-surface>
           </div>
           <div>

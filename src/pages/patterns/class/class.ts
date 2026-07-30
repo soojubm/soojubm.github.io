@@ -29,12 +29,11 @@ const renderEpisodeItems = (items: EpisodeItem[]) =>
     ({ tag, title, description }) => html`
       <div>
         <mm-thumbnail></mm-thumbnail>
-        <div>
+        <mm-flex direction="column" gap="1">
           <mm-tag>${tag}</mm-tag>
           <mm-text size="18" weight="bold">${title}</mm-text>
-          <div style="height: var(--space-1)"></div>
           <mm-paragraph>${description}</mm-paragraph>
-        </div>
+        </mm-flex>
       </div>
     `,
   )
@@ -251,11 +250,12 @@ const main = html`
       </mm-feature-group>
       <div class="class-who-note">
         <mm-surface>
-          <mm-paragraph size="large">그리고 또...</mm-paragraph>
-          <div style="height: var(--space-2)"></div>
-          <mm-text-list
-            texts='["경제 기본기가 아예 없는 사람", "경제 막 공부 시작했는데, 누가 전체적인 그림 한 번 싹 알려주면 좋겠다고 생각한 사람", "주변 사람들 주식하고 부동산 한다는데, 적금길만 걸어온 사람", "고슴이의 생존스토리 궁금한 사람"]'
-          ></mm-text-list>
+          <mm-flex direction="column" gap="2">
+            <mm-paragraph size="large">그리고 또...</mm-paragraph>
+            <mm-text-list
+              texts='["경제 기본기가 아예 없는 사람", "경제 막 공부 시작했는데, 누가 전체적인 그림 한 번 싹 알려주면 좋겠다고 생각한 사람", "주변 사람들 주식하고 부동산 한다는데, 적금길만 걸어온 사람", "고슴이의 생존스토리 궁금한 사람"]'
+            ></mm-text-list>
+          </mm-flex>
         </mm-surface>
       </div>
     </section>

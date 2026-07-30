@@ -3,7 +3,6 @@ import { html } from 'lit'
 import type { ComponentFeatureItem } from '@/components/domains/component/component-feature-list'
 import type { ComponentPropItemData } from '@/components/domains/component/component-props'
 import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
-import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
 
 import { renderDocumentLayout } from '@/components/layouts/document-layout'
 
@@ -17,8 +16,6 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'nav', type: "'back' | 'close' | '' = 'back'", optional: true },
   { name: "slot='action'", type: 'HTMLElement', optional: true },
 ]
-
-const componentTokens: ComponentTokenItemData[] = [{ name: 'top-bar-height', default: '3.5rem' }]
 
 const componentFeatures: ComponentFeatureItem[] = [
   {
@@ -59,8 +56,6 @@ const main = html`
     </mm-component-example>
 
     <mm-component-props .props=${componentProps}></mm-component-props>
-
-    <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
 
     <mm-component-guide>
       <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
