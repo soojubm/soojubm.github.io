@@ -5,12 +5,11 @@ import type { Checkbox } from '@/components/common/checkbox/checkbox'
 
 import { checkboxGroupStyles } from '@/components/common/checkbox/checkbox.styles'
 import { MultipleSelectionController } from '@/controllers/multiple-selection-controller'
+import {
+  SelectionGroupController,
+  selectionItemValue,
+} from '@/controllers/selection-group-controller'
 import { emit } from '@/utils'
-
-type CheckboxChangeDetail = {
-  checked: boolean
-  value?: string
-}
 
 @customElement('mm-checkbox-group')
 export class CheckboxGroup extends LitElement {
@@ -28,16 +27,26 @@ export class CheckboxGroup extends LitElement {
     setValues: values => {
       this.values = values
     },
-    getOptions: () => this.checkboxes.map(checkbox => ({ value: this.getCheckboxValue(checkbox) })),
+    getOptions: () => this.checkboxes.map(checkbox => ({ value: selectionItemValue(checkbox) })),
   })
 
-  private isInitialized = false
+  private group = new SelectionGroupController<Checkbox>(this, {
+    selection: this.selection,
+    getItems: () => this.checkboxes,
+    isEmpty: () => !this.values.length,
+    applyItem: checkbox => {
+      if (this.name) checkbox.name = this.name
+    },
+    onChange: () => {
+      this.dispatchValueChange()
+    },
+  })
 
   render() {
     return html`
-      <fieldset @change=${this.handleCheckboxChange}>
+      <fieldset @change=${this.group.handleItemChange}>
         ${this.renderLegend()}
-        <slot @slotchange=${this.handleSlotChange}></slot>
+        <slot @slotchange=${this.group.handleSlotChange}></slot>
       </fieldset>
     `
   }
@@ -52,60 +61,10 @@ export class CheckboxGroup extends LitElement {
     `
   }
 
-  updated(changed: Map<string, unknown>) {
-    if (!this.isInitialized) return
+  protected updated(changed: Map<string, unknown>) {
     if (!changed.has('values') && !changed.has('name')) return
 
-    this.syncCheckboxes()
-  }
-
-  private handleSlotChange = () => {
-    if (!this.isInitialized && this.values.length === 0) {
-      const initialCheckedValues = this.checkboxes
-        .filter(checkbox => checkbox.checked)
-        .map(checkbox => this.getCheckboxValue(checkbox))
-
-      if (initialCheckedValues.length > 0) this.values = initialCheckedValues
-    }
-
-    this.isInitialized = true
-    this.syncCheckboxes()
-  }
-
-  private syncCheckboxes() {
-    this.selection.sync(
-      this.checkboxes.map(checkbox => ({ checkbox, value: this.getCheckboxValue(checkbox) })),
-      ({ checkbox }, selected) => {
-        if (this.name) checkbox.name = this.name
-
-        checkbox.checked = selected
-      },
-    )
-  }
-
-  private handleCheckboxChange = (event: Event) => {
-    const target = event.target
-
-    if (!(target instanceof HTMLElement) || target.tagName !== 'MM-CHECKBOX') return
-
-    const customEvent = event as CustomEvent<CheckboxChangeDetail>
-    customEvent.stopPropagation()
-
-    const { checked, value } = customEvent.detail
-
-    if (!value) return
-
-    this.updateSelection(value, checked)
-  }
-
-  private updateSelection(value: string, checked: boolean) {
-    this.selection.setSelected({ value }, checked)
-    this.syncCheckboxes()
-    this.dispatchValueChange()
-  }
-
-  private getCheckboxValue(checkbox: Checkbox) {
-    return checkbox.value || checkbox.getAttribute('value') || ''
+    this.group.sync()
   }
 
   private dispatchValueChange() {
@@ -128,13 +87,11 @@ export class CheckboxGroup extends LitElement {
 
   toggleAll() {
     const checked = !this.checked
-    const selectableValues = this.selectableCheckboxes.map(checkbox =>
-      this.getCheckboxValue(checkbox),
-    )
+    const selectableValues = this.selectableCheckboxes.map(checkbox => selectionItemValue(checkbox))
     const otherValues = this.values.filter(value => !selectableValues.includes(value))
 
     this.values = checked ? [...otherValues, ...selectableValues] : otherValues
-    this.syncCheckboxes()
+    this.group.sync()
     this.dispatchValueChange()
   }
 
@@ -143,7 +100,7 @@ export class CheckboxGroup extends LitElement {
   }
 
   private isChecked(checkbox: Checkbox) {
-    return this.selection.isSelected(this.getCheckboxValue(checkbox))
+    return this.selection.isSelected(selectionItemValue(checkbox))
   }
 }
 

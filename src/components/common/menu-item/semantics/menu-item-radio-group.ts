@@ -1,11 +1,12 @@
-import { LitElement, html, css, nothing } from 'lit'
+import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
 import type { MenuItemGroupSize } from '@/components/common/menu-item/menu-item-group'
 
-import { MenuItemRadio } from '@/components/common/menu-item/semantics/menu-item-radio'
 import '@/components/common/menu-item/menu-item-group'
+import { MenuItemRadio } from '@/components/common/menu-item/semantics/menu-item-radio'
+import { SelectionGroupController } from '@/controllers/selection-group-controller'
 import { SingleSelectionController } from '@/controllers/single-selection-controller'
 import { emit } from '@/utils'
 
@@ -27,12 +28,22 @@ export class MenuItemRadioGroup extends LitElement {
 
   private selection = new SingleSelectionController(this, {
     getValue: () => this.value,
-    setValue: value => (this.value = value),
+    setValue: value => {
+      this.value = value
+    },
   })
 
-  protected updated(changedProperties: Map<string, unknown>) {
-    if (changedProperties.has('value') || changedProperties.has('name')) this.syncRadios()
-  }
+  private group = new SelectionGroupController<MenuItemRadio>(this, {
+    selection: this.selection,
+    getItems: () => this.radios,
+    isEmpty: () => !this.value,
+    applyItem: radio => {
+      if (this.name) radio.name = this.name
+    },
+    onChange: () => {
+      emit(this, 'change', { value: this.value, name: this.name })
+    },
+  })
 
   render() {
     return html`
@@ -40,45 +51,17 @@ export class MenuItemRadioGroup extends LitElement {
         role="radiogroup"
         size=${ifDefined(this.size || undefined)}
         aria-label=${this.ariaLabel || nothing}
-        @change=${this.handleRadioChange}
+        @change=${this.group.handleItemChange}
       >
-        <slot @slotchange=${this.handleSlotChange}></slot>
+        <slot @slotchange=${this.group.handleSlotChange}></slot>
       </mm-menu-item-group>
     `
   }
 
-  // 하위 mm-menu-item-radio에서 올라오는 이벤트를 가로챕니다.
-  private handleRadioChange(e: Event) {
-    const target = e.target as HTMLElement
-    if (target.tagName.toLowerCase() !== 'mm-menu-item-radio') return
+  protected updated(changedProperties: Map<string, unknown>) {
+    if (!changedProperties.has('value') && !changedProperties.has('name')) return
 
-    e.stopPropagation() // 개별 아이템 이벤트 전파 중단
-
-    const detail = (e as CustomEvent).detail
-    this.commitValue(detail.value)
-  }
-
-  private commitValue(value: string) {
-    this.selection.setSelected({ value }, true)
-    this.syncRadios()
-
-    // 최종적으로 그룹 차원의 change 이벤트를 외부에 발생시킵니다.
-    emit(this, 'change', { value: this.value, name: this.name })
-  }
-
-  // 처음에 마크업으로 들어온 자식 노드들에게 name 속성과 초기 checked 값을 동기화합니다.
-  private handleSlotChange() {
-    this.radios.forEach(radio => {
-      if (this.name) radio.name = this.name
-    })
-    this.syncRadios()
-  }
-
-  private syncRadios() {
-    this.selection.sync(this.radios, (radio, selected) => {
-      if (this.name) radio.name = this.name
-      radio.checked = selected
-    })
+    this.group.sync()
   }
 }
 

@@ -2,11 +2,15 @@ import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
-import type { MenuItemCheckbox } from '@/components/common/menu-item/semantics/menu-item-checkbox'
 import type { MenuItemGroupSize } from '@/components/common/menu-item/menu-item-group'
+import type { MenuItemCheckbox } from '@/components/common/menu-item/semantics/menu-item-checkbox'
 
 import '@/components/common/menu-item/menu-item-group'
 import { MultipleSelectionController } from '@/controllers/multiple-selection-controller'
+import {
+  SelectionGroupController,
+  selectionItemValue,
+} from '@/controllers/selection-group-controller'
 import { emit } from '@/utils'
 
 /**
@@ -34,12 +38,17 @@ export class MenuItemCheckboxGroup extends LitElement {
     setValues: values => {
       this.values = values
     },
-    getOptions: () => this.checkboxes.map(checkbox => ({ value: checkbox.value })),
+    getOptions: () => this.checkboxes.map(checkbox => ({ value: selectionItemValue(checkbox) })),
   })
 
-  protected updated(changedProperties: Map<string, unknown>) {
-    if (changedProperties.has('values')) this.syncCheckboxes()
-  }
+  private group = new SelectionGroupController<MenuItemCheckbox>(this, {
+    selection: this.selection,
+    getItems: () => this.checkboxes,
+    isEmpty: () => !this.values.length,
+    onChange: () => {
+      emit(this, 'change', { values: this.values })
+    },
+  })
 
   render() {
     return html`
@@ -47,42 +56,17 @@ export class MenuItemCheckboxGroup extends LitElement {
         role="group"
         size=${ifDefined(this.size || undefined)}
         aria-label=${this.ariaLabel || nothing}
-        @change=${this.handleCheckboxChange}
+        @change=${this.group.handleItemChange}
       >
-        <slot @slotchange=${this.handleSlotChange}></slot>
+        <slot @slotchange=${this.group.handleSlotChange}></slot>
       </mm-menu-item-group>
     `
   }
 
-  private handleCheckboxChange(e: Event) {
-    const target = e.target as HTMLElement
-    if (target.tagName.toLowerCase() !== 'mm-menu-item-checkbox') return
-    e.stopPropagation()
+  protected updated(changedProperties: Map<string, unknown>) {
+    if (!changedProperties.has('values')) return
 
-    const { checked, value } = (e as CustomEvent<{ checked: boolean; value: string }>).detail
-
-    this.updateSelection(value, checked)
-  }
-
-  private updateSelection(value: string, checked: boolean) {
-    this.selection.setSelected({ value }, checked)
-    this.syncCheckboxes()
-
-    emit(this, 'change', { values: this.values })
-  }
-
-  private handleSlotChange() {
-    // 마크업의 초기 checked 상태를 values로 흡수
-    const preselected = this.checkboxes.filter(cb => cb.checked).map(cb => cb.value)
-    if (preselected.length && !this.values.length) this.values = preselected
-
-    this.syncCheckboxes()
-  }
-
-  private syncCheckboxes() {
-    this.selection.sync(this.checkboxes, (checkbox, selected) => {
-      checkbox.checked = selected
-    })
+    this.group.sync()
   }
 }
 

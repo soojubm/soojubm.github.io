@@ -2,13 +2,13 @@ import { LitElement, html } from 'lit'
 import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
 
 import { Radio } from '@/components/common/radio/radio'
-import { radioGroupStyles } from '@/components/common/radio/radio.styles' // 🔥 외부 스타일 임포트
+import { radioGroupStyles } from '@/components/common/radio/radio.styles'
+import { SelectionGroupController } from '@/controllers/selection-group-controller'
 import { SingleSelectionController } from '@/controllers/single-selection-controller'
 import { emit } from '@/utils'
 
 @customElement('mm-radio-group')
 export class RadioGroup extends LitElement {
-  // 🔥 분리한 스타일 지정
   static styles = [radioGroupStyles]
 
   @property({ type: String }) value = ''
@@ -26,52 +26,39 @@ export class RadioGroup extends LitElement {
     },
   })
 
+  private group = new SelectionGroupController<Radio>(this, {
+    selection: this.selection,
+    getItems: () => this.radios,
+    isEmpty: () => !this.value,
+    applyItem: radio => {
+      if (this.name) radio.name = this.name
+      // 그룹 disabled는 항목 자신의 disabled를 덮지 않고 더한다.
+      // disabled는 reflect하지 않으므로 attribute가 마크업이 선언한 의도로 남는다.
+      radio.disabled = this.disabled || radio.hasAttribute('disabled')
+    },
+    onChange: () => {
+      emit(this, 'change', { value: this.value, name: this.name })
+    },
+  })
+
   render() {
     return html`
-      <fieldset class="radio-group" ?disabled=${this.disabled} @change=${this.handleRadioChange}>
+      <fieldset
+        class="radio-group"
+        ?disabled=${this.disabled}
+        @change=${this.group.handleItemChange}
+      >
         <legend class="visually-hidden">${this.legend}</legend>
-        <slot @slotchange=${this.handleSlotChange}></slot>
+        <slot @slotchange=${this.group.handleSlotChange}></slot>
       </fieldset>
     `
   }
 
   protected updated(changedProperties: Map<string, unknown>) {
-    if (!changedProperties.has('value') && !changedProperties.has('disabled')) return
+    const syncedProperties = ['value', 'name', 'disabled']
+    if (!syncedProperties.some(propertyName => changedProperties.has(propertyName))) return
 
-    this.syncRadios()
-  }
-
-  private handleSlotChange = () => {
-    this.syncRadios()
-  }
-
-  private syncRadios() {
-    this.selection.sync(this.radios, (radio, selected) => {
-      if (this.name) radio.name = this.name
-      radio.disabled = this.disabled
-      radio.checked = selected
-    })
-  }
-
-  private handleRadioChange(e: Event) {
-    const target = e.target as Radio
-    if (target.tagName.toLowerCase() !== 'mm-radio') return
-
-    e.stopPropagation()
-
-    if (!target.checked) return
-
-    const newValue = target.value || ''
-    if (this.value === newValue) return
-
-    this.commitValue(newValue)
-  }
-
-  private commitValue(value: string) {
-    this.selection.setSelected({ value }, true)
-    this.syncRadios()
-
-    emit(this, 'change', { value: this.value, name: this.name })
+    this.group.sync()
   }
 }
 
