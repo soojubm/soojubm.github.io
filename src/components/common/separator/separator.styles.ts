@@ -17,7 +17,7 @@ export const separatorStyles = css`
     --separator-spacing: var(--space-4);
   }
 
-  hr[role='separator'] {
+  hr {
     width: 100%;
     margin: var(--separator-spacing) 0;
     border: 0;
