@@ -25,7 +25,7 @@ import '@/components/common/switch/switch'
 import '@/components/common/result/result'
 import '@/components/common/feature'
 import '@/components/common/meta-item'
-import '@/components/overlay/layer'
+import '@/components/overlay/sheet'
 import '@/components/overlay/toast'
 import '@/components/overlay/dialog'
 

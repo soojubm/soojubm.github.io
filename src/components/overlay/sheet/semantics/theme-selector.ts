@@ -21,8 +21,8 @@ export class ThemeSelector extends LitElement {
     }
 
     mm-popover {
-      --layer-padding-block: var(--space-1);
-      --layer-padding-inline: var(--space-1);
+      --surface-padding-block: var(--space-1);
+      --surface-padding-inline: var(--space-1);
     }
 
     mm-menu-item-action[aria-current='true'] {

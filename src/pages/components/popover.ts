@@ -8,7 +8,7 @@ import type { ComponentTokenItemData } from '@/components/domains/component/comp
 import { renderDocumentLayout } from '@/components/layouts/document-layout'
 
 const relatedComponents: ComponentRelatedItemData[] = [
-  { href: 'layer.html', label: 'Layer' },
+  { href: 'sheet.html', label: 'Sheet' },
   { href: 'tooltip.html', label: 'Tooltip' },
   { href: 'menu-item.html', label: 'menuItem' },
 ]
@@ -25,12 +25,12 @@ const componentProps: ComponentPropItemData[] = [
 ]
 
 const componentTokens: ComponentTokenItemData[] = [
-  { name: 'layer-min-width', default: '240px' },
-  { name: 'layer-max-width', default: 'auto' },
-  { name: 'layer-max-height', default: 'none' },
-  { name: 'layer-padding-block', default: 'var(--space-2)' },
-  { name: 'layer-padding-inline', default: 'var(--space-4)' },
-  { name: 'layer-border-radius', default: 'var(--radius)' },
+  { name: 'surface-min-width', default: '240px' },
+  { name: 'surface-max-width', default: 'auto' },
+  { name: 'surface-max-height', default: 'none' },
+  { name: 'surface-padding-block', default: 'var(--space-2)' },
+  { name: 'surface-padding-inline', default: 'var(--space-4)' },
+  { name: 'surface-border-radius', default: 'var(--radius)' },
   { name: 'popover-offset', default: 'var(--space-1)' },
 ]
 

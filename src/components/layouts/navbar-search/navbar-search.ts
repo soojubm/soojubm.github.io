@@ -56,16 +56,16 @@ export class NavbarSearch extends LitElement {
         @click=${this.toggleSearch}
       ></mm-icon-button>
 
-      <mm-layer
+      <mm-sheet
         class="js-search-sheet"
         placement="center"
         width="medium"
-        style="--layer-backdrop-blur: 2px"
+        style="--surface-backdrop-blur: 2px"
         ?open=${this.isOpen}
-        @layerclose=${this.closeSearch}
+        @sheet-close=${this.closeSearch}
       >
         <mm-top-bar type="back"></mm-top-bar>
-        <mm-layer-body>
+        <mm-sheet-body>
           <form role="search">
             <mm-searchfield
               placeholder="컴포넌트, 패턴을 검색하세요"
@@ -74,8 +74,8 @@ export class NavbarSearch extends LitElement {
             ></mm-searchfield>
             ${this.query ? this.renderResults() : this.renderDefault()}
           </form>
-        </mm-layer-body>
-      </mm-layer>
+        </mm-sheet-body>
+      </mm-sheet>
     `
   }
 

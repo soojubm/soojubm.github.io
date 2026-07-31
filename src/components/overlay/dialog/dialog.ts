@@ -2,23 +2,23 @@ import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import '@/components/overlay/backdrop/backdrop'
-import '@/components/overlay/layer/layer-body'
-import '@/components/overlay/layer/layer-footer'
+import '@/components/overlay/sheet/sheet-body'
+import '@/components/overlay/sheet/sheet-footer'
 import '@/components/common/text/semantics/status-message'
 import type { ActionConfig } from '@/types'
 
-import { layerPositionStyles, overlaySurfaceStyles } from '@/components/overlay/overlay.styles'
-import { LayerController } from '@/controllers/layer-controller'
+import { sheetPositionStyles, overlaySurfaceStyles } from '@/components/overlay/overlay.styles'
+import { SheetController } from '@/controllers/sheet-controller'
 import { emit } from '@/utils'
 
 @customElement('mm-dialog')
 export class Dialog extends LitElement {
   static styles = [
     overlaySurfaceStyles,
-    layerPositionStyles,
+    sheetPositionStyles,
     css`
       :host {
-        --layer-max-width: 320px;
+        --surface-max-width: 320px;
       }
     `,
   ]
@@ -29,7 +29,7 @@ export class Dialog extends LitElement {
   @property({ attribute: false }) primaryAction?: ActionConfig
   @property({ attribute: false }) secondaryAction?: ActionConfig
 
-  private layer = new LayerController(this, {
+  private sheet = new SheetController(this, {
     isOpen: () => this.open,
     onDismiss: () => this.handleDismiss(),
   })
@@ -38,17 +38,17 @@ export class Dialog extends LitElement {
     return html`
       <mm-backdrop></mm-backdrop>
       <div class="panel" ?open=${this.open}>
-        <mm-layer-body>
+        <mm-sheet-body>
           <mm-status-message
             heading=${this.heading}
             message=${this.description}
           ></mm-status-message>
           <slot></slot>
-        </mm-layer-body>
-        <mm-layer-footer
+        </mm-sheet-body>
+        <mm-sheet-footer
           .primaryAction=${this.primaryAction}
           .secondaryAction=${this.secondaryAction}
-        ></mm-layer-footer>
+        ></mm-sheet-footer>
       </div>
     `
   }

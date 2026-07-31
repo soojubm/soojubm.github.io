@@ -8,7 +8,7 @@ import type { ComponentTokenItemData } from '@/components/domains/component/comp
 import { renderDocumentLayout } from '@/components/layouts/document-layout'
 
 const relatedComponents: ComponentRelatedItemData[] = [
-  { href: 'layer.html', label: 'Layer' },
+  { href: 'sheet.html', label: 'Sheet' },
   { href: 'popover.html', label: 'Popover' },
   { href: 'dialog.html', label: 'Dialog' },
 ]

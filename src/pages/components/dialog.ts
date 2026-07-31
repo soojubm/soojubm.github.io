@@ -8,7 +8,7 @@ import type { ActionConfig } from '@/types'
 import { renderDocumentLayout } from '@/components/layouts/document-layout'
 
 const relatedComponents: ComponentRelatedItemData[] = [
-  { href: 'layer.html', label: 'Layer' },
+  { href: 'sheet.html', label: 'Sheet' },
   { href: 'popover.html', label: 'Popover' },
   { href: 'notice.html', label: 'Notice' },
 ]

@@ -137,7 +137,7 @@
   --control-border-radius: var(--radius-large);
 
   /* surface 재질 티어는 --material-zindex-*의 역할 구분과 맞춘다.
-     navbar·sidebar 같은 고정 내비게이션(chrome)과 popup·select·dialog·layer 같은
+     navbar·sidebar 같은 고정 내비게이션(chrome)과 popup·select·dialog·sheet 같은
      화면 위로 뜨는 시스템 레벨 표면(overlay)을 각자의 티어로 분리하고,
      그 외 콘텐츠 안에서 살짝 뜨는 표면은 surface-base를 쓴다. */
 

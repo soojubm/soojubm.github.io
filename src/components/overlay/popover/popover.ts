@@ -9,7 +9,7 @@ import { emit } from '@/utils'
 export type PopoverPlacement = 'bottom-left' | 'bottom-right' | 'top-left' | 'top-right'
 
 /**
- * viewport 기준 modal 레이어(mm-layer, mm-dialog)와 달리 backdrop·portal·스크롤 잠금 없이 트리거에 앵커되어 떠 있는 패널 표면만 책임집니다.
+ * viewport 기준 modal 표면(mm-sheet, mm-dialog)와 달리 backdrop·portal·스크롤 잠금 없이 트리거에 앵커되어 떠 있는 패널 표면만 책임집니다.
  * 트리거는 slot="trigger"로 넣으며, popover가 스스로 positioned 앵커가 되어 별도 래퍼가 필요 없습니다.
  * 트리거·외부 클릭·ESC 닫기·aria 배관은 DisclosureController가 소유합니다.
  * 좌표는 placement prop으로, 폭은 width prop, 여백은 padding prop으로 정합니다.
@@ -51,16 +51,16 @@ class Popover extends LitElement {
 
   protected updated(changedProperties: Map<string, unknown>) {
     if (changedProperties.has('width')) {
-      if (this.width) this.style.setProperty('--layer-max-width', this.width)
-      else this.style.removeProperty('--layer-max-width')
+      if (this.width) this.style.setProperty('--surface-max-width', this.width)
+      else this.style.removeProperty('--surface-max-width')
     }
     if (changedProperties.has('padding')) {
       if (this.padding) {
-        this.style.setProperty('--layer-padding-block', this.padding)
-        this.style.setProperty('--layer-padding-inline', this.padding)
+        this.style.setProperty('--surface-padding-block', this.padding)
+        this.style.setProperty('--surface-padding-inline', this.padding)
       } else {
-        this.style.removeProperty('--layer-padding-block')
-        this.style.removeProperty('--layer-padding-inline')
+        this.style.removeProperty('--surface-padding-block')
+        this.style.removeProperty('--surface-padding-inline')
       }
     }
   }

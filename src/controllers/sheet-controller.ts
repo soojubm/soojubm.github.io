@@ -5,24 +5,24 @@ import { ScrollLockController } from '@/controllers/scroll-lock-controller'
 
 type Host = ReactiveControllerHost & HTMLElement
 
-interface LayerControllerOptions {
+interface SheetControllerOptions {
   isOpen: () => boolean
   /** 스스로 닫힐 때 호출된다(backdrop 클릭, ESC). 실제 상태 변경은 호스트가 수행한다 */
   onDismiss: () => void
 }
 
 /**
- * viewport 기준 modal 레이어(mm-layer, mm-dialog)가 공통으로 소유하는 portal·스크롤 잠금·닫기 배관을
+ * viewport 기준 modal 표면(mm-sheet, mm-dialog)가 공통으로 소유하는 portal·스크롤 잠금·닫기 배관을
  * 소유하는 ReactiveController. 배경 클릭과 ESC로 스스로 닫히는 처리까지 담당한다.
  * 배경(mm-backdrop)은 호스트의 shadow DOM 안에 있어 클릭이 호스트로 retarget되므로,
  * 닫기 판정은 호스트 자신을 target으로 보는 것으로 충분하다.
  * 열림 상태 자체는 공개 API라 호스트의 reflected property로 남기고, 이 컨트롤러는
  * isOpen/onDismiss로 읽기/알림만 위임받는다.
  */
-export class LayerController implements ReactiveController {
+export class SheetController implements ReactiveController {
   private scrollLock: ScrollLockController
 
-  constructor(private host: Host, private options: LayerControllerOptions) {
+  constructor(private host: Host, private options: SheetControllerOptions) {
     this.scrollLock = new ScrollLockController(host)
     new PortalController(host)
 

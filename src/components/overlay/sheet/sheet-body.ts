@@ -1,12 +1,12 @@
 import { LitElement, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 
-import { layerBodyStyles } from '@/components/overlay/overlay.styles'
+import { sheetBodyStyles } from '@/components/overlay/overlay.styles'
 import '@/components/common/scroll/scroll'
 
-@customElement('mm-layer-body')
-class LayerBody extends LitElement {
-  static styles = layerBodyStyles
+@customElement('mm-sheet-body')
+class SheetBody extends LitElement {
+  static styles = sheetBodyStyles
 
   render() {
     return html`
@@ -17,4 +17,4 @@ class LayerBody extends LitElement {
   }
 }
 
-export default LayerBody
+export default SheetBody

@@ -8,9 +8,9 @@ import type { ComponentRelatedItemData } from '@/components/domains/component/co
 
 import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
 import { renderLayout } from '@/components/layouts/base-layouts'
-/* Layer/AnchoredLayer 행동 계약 설명 초안.
+/* Sheet/AnchoredSheet 행동 계약 설명 초안.
  <mm-paragraph>
-            시각적 형태(Dialog, Sheet 등)가 아니라 행동 계약으로 Layer와 AnchoredLayer 둘로 나뉜다.
+            시각적 형태(Dialog, Sheet 등)가 아니라 행동 계약으로 Sheet와 AnchoredSheet 둘로 나뉜다.
             행동(modality·dismiss·reference)은 컨트롤러가 책임지는 별도 관심사고, elevation·
             background·radius·width·placement 같은 외형은 컨트롤러와 무관하게 구현체가 조합한다.
             실제 컴포넌트는 두 행동 계약 중 하나를 고르고, 여기에 외형과 자기 고유 로직(폼 상태,
@@ -22,11 +22,11 @@ import { renderLayout } from '@/components/layouts/base-layouts'
    Lit은 HTML 주석 안 바인딩을 지원하지 않아 템플릿에 주석으로 남기지 않는다.
  <mm-component-anatomy
         .parts=${[
-        'Backdrop — 레이어 뒤 반투명 배경. 배경 클릭 또는 ESC 시 layerclose 이벤트를 발생시킵니다.',
-        '레이어 컨테이너 — flex column 박스. height prop으로 높이 고정, max-height: 90vh 기본값.',
-        'mm-layer-header — 타이틀과 닫기 버튼. layerclose 이벤트를 발생시킵니다.',
-        'mm-layer-body — 스크롤 가능한 콘텐츠 영역. flex: 1 1 auto로 header·footer를 제외한 나머지를 채웁니다.',
-        'mm-layer-footer — 액션 버튼 영역. primaryAction / secondaryAction prop으로 구성합니다.',
+        'Backdrop — 시트 뒤 반투명 배경. 배경 클릭 또는 ESC 시 sheet-close 이벤트를 발생시킵니다.',
+        '시트 컨테이너 — flex column 박스. height prop으로 높이 고정, max-height: 90vh 기본값.',
+        'mm-sheet-header — 타이틀과 닫기 버튼. sheet-close 이벤트를 발생시킵니다.',
+        'mm-sheet-body — 스크롤 가능한 콘텐츠 영역. flex: 1 1 auto로 header·footer를 제외한 나머지를 채웁니다.',
+        'mm-sheet-footer — 액션 버튼 영역. primaryAction / secondaryAction prop으로 구성합니다.',
       ]}
       ></mm-component-anatomy> 
 */
@@ -62,7 +62,7 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'height', type: 'string', optional: true },
   { name: 'primaryAction', type: 'ActionConfig', optional: true },
   { name: 'secondaryAction', type: 'ActionConfig', optional: true },
-  { name: 'layerclose', type: 'CustomEvent', kind: 'event' },
+  { name: 'sheet-close', type: 'CustomEvent', kind: 'event' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [
@@ -71,7 +71,7 @@ const componentFeatures: ComponentFeatureItem[] = [
   { heading: 'TODO', description: 'TODO' },
 ]
 
-type LayerElement = HTMLElement & {
+type SheetElement = HTMLElement & {
   show(): void
 }
 
@@ -80,16 +80,16 @@ type ToastElement = HTMLElement & {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  renderLayout(layerPageTemplate())
+  renderLayout(sheetPageTemplate())
 
-  setupLayerTriggers()
+  setupSheetTriggers()
   setupToastTrigger()
   setupComparisonTable()
 })
 
 function setupComparisonTable() {
   const table = document.querySelector<HTMLElementTagNameMap['mm-table']>(
-    'mm-table#layer-comparison-table',
+    'mm-table#sheet-comparison-table',
   )
   if (!table) return
 
@@ -138,30 +138,30 @@ function setupToastTrigger() {
   trigger.addEventListener('click', () => toast.show())
 }
 
-function setupLayerTriggers() {
-  document.querySelectorAll<HTMLElement>('[data-open-layer]').forEach(trigger => {
+function setupSheetTriggers() {
+  document.querySelectorAll<HTMLElement>('[data-open-sheet]').forEach(trigger => {
     trigger.addEventListener('click', () => {
-      const value = trigger.dataset.openLayer ?? ''
-      const selector = /^[#.]/.test(value) ? value : `mm-layer[placement="${value}"]`
-      const layer = document.querySelector<LayerElement>(selector)
-      if (!layer) return
+      const value = trigger.dataset.openSheet ?? ''
+      const selector = /^[#.]/.test(value) ? value : `mm-sheet[placement="${value}"]`
+      const sheet = document.querySelector<SheetElement>(selector)
+      if (!sheet) return
 
-      layer.show()
+      sheet.show()
     })
   })
 }
 
-function openLayer(id: string) {
-  const layer = document.querySelector<LayerElement>(`#${id}`)
-  layer?.show()
+function openSheet(id: string) {
+  const sheet = document.querySelector<SheetElement>(`#${id}`)
+  sheet?.show()
 }
 
-function layerPageTemplate() {
+function sheetPageTemplate() {
   return html`
     <main class="page">
       <mm-page-header
-        heading="Layer"
-        description="viewport 기준 modal 레이어 위에 표시합니다."
+        heading="Sheet"
+        description="viewport 기준 modal 시트로 화면 위에 표시합니다."
       ></mm-page-header>
 
       <mm-component-aka
@@ -169,7 +169,7 @@ function layerPageTemplate() {
       ></mm-component-aka>
 
       <mm-component-example>
-        ${layerExampleTemplate()}
+        ${sheetExampleTemplate()}
         <mm-button data-open-toast>토스트 띄우기</mm-button>
         <mm-toast class="js-demo-toast">저장되었습니다.</mm-toast>
       </mm-component-example>
@@ -183,16 +183,16 @@ function layerPageTemplate() {
           <mm-text-block level="2" heading="Level">
             <mm-paragraph>
               viewport를 reference로 삼아 화면 중앙·가장자리에 위치하며, 배경과의 상호작용을
-              차단하는 modal 행동 계약. Backdrop(dim)이 뒤를 덮고, 포커스는 레이어 내부에
-              갇힌다(focus trap). 닫기는 명시적인 버튼 액션으로만 허용하는 것이 원칙이며, 배경
-              클릭·ESC로 닫는 기능은 중요도가 낮은 작업에서만 예외적으로 허용한다.
+              차단하는 modal 행동 계약. Backdrop(dim)이 뒤를 덮고, 포커스는 시트 내부에 갇힌다(focus
+              trap). 닫기는 명시적인 버튼 액션으로만 허용하는 것이 원칙이며, 배경 클릭·ESC로 닫는
+              기능은 중요도가 낮은 작업에서만 예외적으로 허용한다.
             </mm-paragraph>
             <mm-text-list
               texts=${JSON.stringify([
                 'reference — viewport.',
                 'modality — 배경 클릭 불가·스크롤 불가.',
                 'dismiss — 명시 버튼 우선, 배경 클릭·ESC는 예외적으로만 허용. 포커스 트랩, aria-modal="true".',
-                '구현: mm-layer, mm-dialog(mm-layer와 LayerController 배관 공유).',
+                '구현: mm-sheet, mm-dialog(mm-sheet와 SheetController 배관 공유).',
                 '용례: 삭제 확인, 중요 정보 입력, 오류 처리, 결제 흐름, bottom sheet/drawer.',
               ])}
             ></mm-text-list>
@@ -200,7 +200,7 @@ function layerPageTemplate() {
           <mm-thumbnail ratio="1:1">12</mm-thumbnail>
         </mm-grid>
 
-        <mm-heading level="2">AnchoredLayer</mm-heading>
+        <mm-heading level="2">AnchoredSheet</mm-heading>
         <mm-paragraph>
           트리거를 reference로 삼아 위치하며, 배경과의 상호작용을 허용하는 non-modal 행동 계약. 현재
           작업 맥락을 유지하면서 부가 정보나 서브태스크를 제공할 때 사용한다. 포커스 트랩이 없고,
@@ -221,12 +221,12 @@ function layerPageTemplate() {
           texts=${JSON.stringify([
             'surface — elevation·background·radius.',
             'width — 패널 너비.',
-            'placement — 패널 위치. 계약마다 값 집합이 다르다: mm-layer는 center/bottom/left/right, mm-popover는 top-left/top-right/bottom-left/bottom-right.',
+            'placement — 패널 위치. 계약마다 값 집합이 다르다: mm-sheet는 center/bottom/left/right, mm-popover는 top-left/top-right/bottom-left/bottom-right.',
           ])}
         ></mm-text-list>
 
         <mm-table
-          id="layer-comparison-table"
+          id="sheet-comparison-table"
           style="margin-top: var(--space-4)"
           caption="UI별 modal 여부와 위치 기준 비교"
           columns='[
@@ -238,27 +238,27 @@ function layerPageTemplate() {
       </mm-component-guide>
 
       <mm-component-section
-        heading="Layer Header"
-        description="타이틀과 선택적인 닫기 버튼을 제공합니다. 닫기 버튼은 layerclose 이벤트를 버블링합니다."
+        heading="Sheet Header"
+        description="타이틀과 선택적인 닫기 버튼을 제공합니다. 닫기 버튼은 sheet-close 이벤트를 버블링합니다."
       >
-        <mm-layer-header heading="Layer Title"></mm-layer-header>
+        <mm-sheet-header heading="Sheet Title"></mm-sheet-header>
         <mm-text>내용</mm-text>
       </mm-component-section>
 
       <mm-component-section
-        heading="Layer Body"
+        heading="Sheet Body"
         description="스크롤 가능한 콘텐츠 영역. flex: 1 1 auto로 header·footer를 제외한 나머지를 채웁니다."
       >
-        <mm-layer-body>
-          <mm-paragraph>layer-body는 콘텐츠가 넘치면 내부에서 스크롤됩니다.</mm-paragraph>
+        <mm-sheet-body>
+          <mm-paragraph>sheet-body는 콘텐츠가 넘치면 내부에서 스크롤됩니다.</mm-paragraph>
           <mm-paragraph>
-            mm-layer에 height를 지정하면 고정 높이 내에서 body가 스크롤됩니다.
+            mm-sheet에 height를 지정하면 고정 높이 내에서 body가 스크롤됩니다.
           </mm-paragraph>
-        </mm-layer-body>
+        </mm-sheet-body>
       </mm-component-section>
 
       <mm-component-section heading="Filter" description="샘플">
-        ${filterLayerTemplate()}
+        ${filterSheetTemplate()}
       </mm-component-section>
 
       <mm-component-related .items=${relatedComponents}></mm-component-related>
@@ -268,27 +268,27 @@ function layerPageTemplate() {
   `
 }
 
-function layerExampleTemplate() {
+function sheetExampleTemplate() {
   return html`
     <mm-button-group>
-      <mm-button @click=${() => openLayer('center-layer')}>Center</mm-button>
-      <mm-button @click=${() => openLayer('bottom-layer')}>Bottom</mm-button>
-      <mm-button @click=${() => openLayer('left-layer')}>Left</mm-button>
-      <mm-button @click=${() => openLayer('right-layer')}>Right</mm-button>
+      <mm-button @click=${() => openSheet('center-sheet')}>Center</mm-button>
+      <mm-button @click=${() => openSheet('bottom-sheet')}>Bottom</mm-button>
+      <mm-button @click=${() => openSheet('left-sheet')}>Left</mm-button>
+      <mm-button @click=${() => openSheet('right-sheet')}>Right</mm-button>
     </mm-button-group>
 
-    <mm-layer id="center-layer" placement="center" width="medium">
-      <mm-layer-header heading="Center Layer"></mm-layer-header>
-      <mm-layer-body>
+    <mm-sheet id="center-sheet" placement="center" width="medium">
+      <mm-sheet-header heading="Center Sheet"></mm-sheet-header>
+      <mm-sheet-body>
         <mm-paragraph>
           이것도 막무가내로 정의하지 말고 필요한 케이스를 정의. 대부분이 다이얼로그로 충분함.
           페이지에 가까운 레이어만 정의해도 됨.
         </mm-paragraph>
-      </mm-layer-body>
-    </mm-layer>
-    <mm-layer id="bottom-layer" placement="bottom" height="360px">
-      <mm-layer-header heading="Bottom Layer"></mm-layer-header>
-      <mm-layer-body>
+      </mm-sheet-body>
+    </mm-sheet>
+    <mm-sheet id="bottom-sheet" placement="bottom" height="360px">
+      <mm-sheet-header heading="Bottom Sheet"></mm-sheet-header>
+      <mm-sheet-body>
         <mm-menu-item-group size="large">
           <mm-menu-item-action size="48" label="검색"></mm-menu-item-action>
           <mm-menu-item-action size="48" label="저장"></mm-menu-item-action>
@@ -298,37 +298,37 @@ function layerExampleTemplate() {
           <mm-menu-item-action size="48" label="신고"></mm-menu-item-action>
           <mm-menu-item-action size="48" label="삭제" tone="danger"></mm-menu-item-action>
         </mm-menu-item-group>
-      </mm-layer-body>
-      <mm-layer-footer
+      </mm-sheet-body>
+      <mm-sheet-footer
         .primaryAction=${{ label: '저장', onClick: () => {} }}
         .secondaryAction=${{ label: '취소', onClick: () => {} }}
-      ></mm-layer-footer>
-    </mm-layer>
-    <mm-layer id="left-layer" placement="left">
-      <mm-layer-header heading="Left Layer"></mm-layer-header>
-      <mm-layer-body><mm-paragraph>왼쪽 패널 콘텐츠</mm-paragraph></mm-layer-body>
-      <mm-layer-footer
+      ></mm-sheet-footer>
+    </mm-sheet>
+    <mm-sheet id="left-sheet" placement="left">
+      <mm-sheet-header heading="Left Sheet"></mm-sheet-header>
+      <mm-sheet-body><mm-paragraph>왼쪽 패널 콘텐츠</mm-paragraph></mm-sheet-body>
+      <mm-sheet-footer
         .primaryAction=${{ label: '완료', onClick: () => {} }}
         .secondaryAction=${{ label: '닫기', onClick: () => {} }}
-      ></mm-layer-footer>
-    </mm-layer>
-    <mm-layer id="right-layer" placement="right">
-      <mm-layer-header heading="Right Layer"></mm-layer-header>
-      <mm-layer-body><mm-paragraph>오른쪽 패널 콘텐츠</mm-paragraph></mm-layer-body>
-      <mm-layer-footer
+      ></mm-sheet-footer>
+    </mm-sheet>
+    <mm-sheet id="right-sheet" placement="right">
+      <mm-sheet-header heading="Right Sheet"></mm-sheet-header>
+      <mm-sheet-body><mm-paragraph>오른쪽 패널 콘텐츠</mm-paragraph></mm-sheet-body>
+      <mm-sheet-footer
         .primaryAction=${{ label: '완료', onClick: () => {} }}
         .secondaryAction=${{ label: '닫기', onClick: () => {} }}
-      ></mm-layer-footer>
-    </mm-layer>
+      ></mm-sheet-footer>
+    </mm-sheet>
   `
 }
 
-function filterLayerTemplate() {
+function filterSheetTemplate() {
   return html`
-    <mm-icon-button icon=${ICON_NAMES.FILTER} data-open-layer="#filter-layer"></mm-icon-button>
-    <mm-layer placement="bottom" id="filter-layer">
-      <mm-layer-header heading="필터"></mm-layer-header>
-      <mm-layer-body>
+    <mm-icon-button icon=${ICON_NAMES.FILTER} data-open-sheet="#filter-sheet"></mm-icon-button>
+    <mm-sheet placement="bottom" id="filter-sheet">
+      <mm-sheet-header heading="필터"></mm-sheet-header>
+      <mm-sheet-body>
         <form class="filter">
           <fieldset class="filter-fieldset" role="group">
             <mm-menu-item-switch
@@ -404,11 +404,11 @@ function filterLayerTemplate() {
             </mm-menu-item-radio-group>
           </fieldset>
         </form>
-      </mm-layer-body>
-      <mm-layer-footer
+      </mm-sheet-body>
+      <mm-sheet-footer
         .primaryAction=${{ label: '숙소 25개 표시', onClick: () => {} }}
         .secondaryAction=${{ label: '전체 해제', onClick: () => {} }}
-      ></mm-layer-footer>
-    </mm-layer>
+      ></mm-sheet-footer>
+    </mm-sheet>
   `
 }
