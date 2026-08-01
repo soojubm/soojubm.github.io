@@ -99,7 +99,6 @@ export class Input extends LitElement {
       }
 
       &[type='password'] {
-        letter-spacing: 0.25rem;
       }
 
       &[type='search'] {

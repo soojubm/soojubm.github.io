@@ -10,6 +10,7 @@ export class Thumbnail extends LitElement {
     :host {
       display: block;
       width: 100%;
+      --thumbnail-border: var(--border-transparent);
       --thumbnail-border-radius: var(--radius);
       --thumbnail-background-color-empty: var(--background-subtle-color);
     }
@@ -40,6 +41,7 @@ export class Thumbnail extends LitElement {
       width: 100%;
       position: relative;
       aspect-ratio: 16 / 9;
+      border: var(--thumbnail-border);
       border-radius: var(--thumbnail-border-radius);
       background-color: var(--thumbnail-background-color-empty);
       overflow: hidden;

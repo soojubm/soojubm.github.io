@@ -11,6 +11,7 @@ export class PageHeader extends LitElement {
     css`
       :host {
         display: block;
+        padding: var(--space-8) 0;
       }
     `,
   ]

@@ -14,8 +14,6 @@ export const footerStyles = css`
 
   .footer address mm-paragraph {
     margin: var(--space-4) 0;
-    font-size: var(--font-size-18);
-    letter-spacing: 0.5px;
   }
 
   .footer-links {

@@ -20,7 +20,7 @@ class ComponentGuide extends LitElement {
 
   render() {
     return html`
-      <div hidden><mm-text as="h2">Component Guide</mm-text></div>
+      <!-- <div hidden><mm-text as="h2">Component Guide</mm-text></div> -->
       <div>
         <slot></slot>
       </div>

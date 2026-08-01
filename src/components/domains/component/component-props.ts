@@ -5,10 +5,7 @@ import { classMap } from 'lit/directives/class-map.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
 import '@/components/common/button/semantics/read-more-button'
-import {
-  componentPropItemStyles,
-  componentPropsStyles,
-} from '@/components/domains/component/component.styles'
+import { componentPropsStyles } from '@/components/domains/component/component.styles'
 import { arrayAttributeConverter, uniqueId } from '@/utils'
 
 export interface ComponentPropItemData {
@@ -24,8 +21,6 @@ export interface ComponentPropItemData {
  */
 @customElement('mm-component-prop-item')
 export class ComponentPropItem extends LitElement {
-  static styles = componentPropItemStyles
-
   @property({ type: String }) name = ''
   @property({ type: String }) type = ''
   @property({ type: Boolean }) optional = false
@@ -70,7 +65,9 @@ export class ComponentProps extends LitElement {
         @click=${this.handleClick}
       >
         <div hidden><mm-text as="h2">Props</mm-text></div>
-        <div id=${this.propsId}>${this.props.map(prop => this.renderPropItem(prop))}</div>
+        <mm-flex direction="column" gap="3" id=${this.propsId}>
+          ${this.props.map(prop => this.renderPropItem(prop))}
+        </mm-flex>
         <div class="component-props-more" aria-hidden=${this.isOpened ? 'true' : 'false'}>
           <mm-read-more-button
             more-label="...펼쳐서 더보기"

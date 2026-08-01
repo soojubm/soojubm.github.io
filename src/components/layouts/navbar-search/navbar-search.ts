@@ -21,15 +21,14 @@ function hasValue(target: EventTarget | null): target is HTMLInputElement | HTML
 @customElement('mm-navbar-search')
 export class NavbarSearch extends LitElement {
   static styles = css`
+    :host {
+      display: inline-flex;
+    }
+
     form {
       display: flex;
       flex-direction: column;
       gap: var(--space-2);
-    }
-
-    :host {
-      display: inline-flex;
-      align-items: center;
     }
   `
 

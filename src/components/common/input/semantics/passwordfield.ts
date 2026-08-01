@@ -22,7 +22,6 @@ class PasswordField extends LitElement {
   @property({ type: String, reflect: true }) size = ''
   @property({ type: Boolean }) optional = false
   @property({ type: Boolean, attribute: 'hidden-label', reflect: true }) hiddenLabel = false
-  @property({ type: Boolean }) disabled = false
   @property({ type: String, attribute: 'aria-invalid' }) ariaInvalid: AriaInvalid = null
 
   @state() private revealed = false
@@ -40,14 +39,12 @@ class PasswordField extends LitElement {
         .size=${this.size}
         ?optional=${this.optional}
         ?hidden-label=${this.hiddenLabel}
-        ?disabled=${this.disabled}
         aria-invalid=${ifDefined(this.ariaInvalid ?? undefined)}
         @input=${this.handleTextfieldInput}
       >
         <mm-reveal-button
           slot="trailing"
           .revealed=${this.revealed}
-          ?disabled=${this.disabled}
           @reveal-toggle=${this.handleRevealToggle}
         ></mm-reveal-button>
       </mm-textfield>

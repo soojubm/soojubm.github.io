@@ -95,7 +95,7 @@ const main = html`
       description="목록의 재정렬Sort을 위한 옵션 목록을 group으로 제공하지 마세요. 현재 정렬 상태만 요약 표기하고
     확장가능한 메뉴로 정렬 목록을 제공하세요. (bad case: 2022.04 구글 지도 바뀐 것)"
     >
-      <mm-select id="my-dropdown">
+      <mm-select>
         <option value="profile" selected>최신순</option>
         <option value="settings">오래된순</option>
       </mm-select>

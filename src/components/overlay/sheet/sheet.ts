@@ -1,7 +1,11 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property, query } from 'lit/decorators.js'
 
-import { sheetPositionStyles, overlaySurfaceStyles } from '@/components/overlay/overlay.styles'
+import {
+  sheetPositionStyles,
+  overlaySurfaceStyles,
+  sheetDragHandleStyles,
+} from '@/components/overlay/overlay.styles'
 import '@/components/overlay/backdrop/backdrop'
 import { SheetController } from '@/controllers/sheet-controller'
 import { emit } from '@/utils'
@@ -17,7 +21,7 @@ const DRAG_CLOSE_THRESHOLD_RATIO = 0.25
  */
 @customElement('mm-sheet')
 class Sheet extends LitElement {
-  static styles = [overlaySurfaceStyles, sheetPositionStyles]
+  static styles = [overlaySurfaceStyles, sheetPositionStyles, sheetDragHandleStyles]
 
   @property({ type: String, reflect: true }) placement: SheetPlacement = 'center'
   @property({ type: String, reflect: true }) width: SheetWidth = 'medium'

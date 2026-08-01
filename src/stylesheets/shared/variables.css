@@ -127,6 +127,7 @@
   --border-width: 1px;
   --border: var(--border-width) solid var(--border-color);
   --border-transparent: var(--border-width) solid transparent;
+  --border-danger: var(--border-width) solid var(--color-danger);
 
   --radius: 6px;
   --radius-large: 1rem;

@@ -21,7 +21,7 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'size', type: "'small' | 'medium' = 'medium'" },
   { name: 'tooltip', type: 'string', optional: true },
   { name: 'tooltip-placement', type: "'left' | 'center' | 'right'", optional: true },
-  { name: 'aria-label', type: 'string', optional: true },
+  { name: 'aria-label - TODO tooltip과 병합', type: 'string', optional: true },
   { name: 'role', type: 'string', optional: true },
   { name: 'aria-controls', type: 'string', optional: true },
   { name: 'aria-expanded', type: "'true' | 'false'", optional: true },

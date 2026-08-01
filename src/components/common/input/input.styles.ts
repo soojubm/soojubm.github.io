@@ -23,12 +23,12 @@ export const inputStyles = css`
   :host {
     position: relative;
     --input-height: var(--size-48);
+    --input-padding-block: var(--space-3);
+    --input-padding-inline: var(--space-4);
     --input-background-color: var(--background-subtle-color);
     --input-border-radius: var(--radius);
     --input-border: var(--border-transparent);
     --input-focus-outline: var(--interaction-focus-outline);
-    --input-padding-block: var(--space-3);
-    --input-padding-inline: var(--space-4);
   }
 
   :host(:hover) {
@@ -57,11 +57,11 @@ export const inputStyles = css`
 
     &:focus-within {
       outline: var(--input-focus-outline);
-      outline-offset: 2px;
+      /* outline-offset: 2px; */
     }
 
     &[aria-invalid='true'] {
-      border-color: var(--color-danger);
+      --input-border: var(--border-danger);
     }
   }
 

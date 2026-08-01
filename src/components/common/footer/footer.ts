@@ -47,7 +47,7 @@ export class Footer extends LitElement {
         </dl>
         <mm-caption>© 2019 soojubm. All rights reserved.</mm-caption>
         <address>
-          <mm-paragraph>Making things better.</mm-paragraph>
+          <mm-paragraph size="large">Making things better.</mm-paragraph>
         </address>
 
         <mm-to-top-button></mm-to-top-button>

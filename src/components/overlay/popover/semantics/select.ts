@@ -32,14 +32,8 @@ export class Select extends LitElement {
     css`
       :host {
         --select-width: auto;
-        --select-max-height: none;
-
         display: block;
         width: var(--select-width);
-      }
-
-      mm-popover {
-        --surface-max-height: var(--select-max-height);
       }
 
       /* 폭을 명시하면 패널이 트리거와 같은 폭이어야 하므로 popover의 바닥값을 물린다 */

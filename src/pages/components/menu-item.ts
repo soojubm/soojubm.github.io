@@ -122,10 +122,7 @@ const main = html`
       ></mm-text-list>
     </mm-component-guide>
 
-    <mm-component-section
-      heading="MenuItemCheckboxGroup"
-      description="mm-menu-item-checkbox는 항상 그룹 안에서 사용합니다."
-    >
+    <mm-component-section heading="MenuItemCheckboxGroup">
       <mm-menu-item-checkbox-group aria-label="알림 설정">
         <mm-menu-item-checkbox
           icon="bell"
@@ -213,7 +210,7 @@ const main = html`
 
     <mm-component-section
       heading="Setting Item"
-      description="설정 메뉴에 적합한 레이아웃과 상호작용을 가진 MenuItemRow입니다. 토글 스위치와 함께 사용됩니다."
+      description="설정 메뉴에 적합한 레이아웃과 상호작용을 가진 MenuItemRow입니다."
     >
       <mm-menu-item-group>
         <mm-setting-item

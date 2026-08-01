@@ -26,11 +26,12 @@ export const overlaySurfaceStyles = css`
   .panel {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    /* width: 100%; */
     min-width: var(--surface-min-width);
     max-width: var(--surface-max-width);
     height: var(--surface-height);
     max-height: var(--surface-max-height);
+    gap: var(--surface-padding-block);
     padding: var(--surface-padding-block) var(--surface-padding-inline);
 
     border: var(--surface-overlay-border);
@@ -40,7 +41,6 @@ export const overlaySurfaceStyles = css`
     box-sizing: border-box;
     overflow: hidden;
 
-    position: relative;
     isolation: isolate;
   }
 
@@ -130,15 +130,18 @@ export const sheetPositionStyles = css`
   /* bottom */
   :host([placement='bottom']) {
     --surface-max-width: calc(var(--layout-width-small) + var(--space-4) * 10);
+    .panel {
+      width: 100%;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      margin-top: auto;
+      transform: translateY(100%);
+    }
   }
-  :host([placement='bottom']) .panel {
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    margin-top: auto;
-    transform: translateY(100%);
-  }
-  :host([open][placement='bottom']) .panel {
-    transform: translateY(0);
+  :host([open][placement='bottom']) {
+    .panel {
+      transform: translateY(0);
+    }
   }
 
   /* left/right */
@@ -147,19 +150,24 @@ export const sheetPositionStyles = css`
     --surface-max-width: 640px;
   }
 
-  :host([placement='left']) .panel {
-    margin-right: auto;
-    height: 100%;
-    max-height: var(--surface-viewport-max-height);
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-    transform: translateX(-100%);
-  }
-  :host([open][placement='left']) .panel {
-    transform: translateX(0);
+  :host([placement='left']) {
+    .panel {
+      margin-right: auto;
+      height: 100%;
+      max-height: var(--surface-viewport-max-height);
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      transform: translateX(-100%);
+    }
+
+    &[open] {
+      .panel {
+        transform: translateX(0);
+      }
+    }
   }
 
-  :host([placement='right']) .panel {
+  :host([placement='right']) {
     margin-left: auto;
     height: 100%;
     max-height: var(--surface-viewport-max-height);
@@ -186,7 +194,7 @@ export const popoverPositionStyles = css`
     --surface-height: auto;
     --surface-max-height: none;
     --surface-padding-block: var(--space-2);
-    --surface-padding-inline: var(--space-4);
+    --surface-padding-inline: var(--space-2);
     --surface-border-radius: var(--radius);
     --popover-offset: var(--space-1);
 
@@ -250,7 +258,7 @@ export const popoverPositionStyles = css`
 
 export const sheetDragHandleStyles = css`
   /* sheet-header의 padding-block 안에 겹쳐, 아래로 끌어 닫는 제스처의 진입점 역할만 한다 */
-  :host([placement='bottom']) .drag-handle {
+  .drag-handle {
     width: var(--size-48);
     height: 4px;
     cursor: grab;
@@ -263,11 +271,11 @@ export const sheetDragHandleStyles = css`
     transform: translateX(-50%);
   }
 
-  :host([placement='bottom']) .drag-handle:active {
+  .drag-handle:active {
     cursor: grabbing;
   }
 
-  :host([placement='bottom']) .drag-handle::after {
+  .drag-handle::after {
     content: '';
     width: var(--size-32);
     height: var(--space-1);
@@ -307,7 +315,6 @@ export const sheetBodyStyles = css`
     display: flex;
     flex: 1 1 auto;
     min-height: 0;
-    padding: var(--surface-padding-block) 0;
   }
 
   mm-scroll {

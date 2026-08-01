@@ -20,14 +20,6 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'icon', type: 'IconName', optional: true },
 ]
 
-const dotComponentProps: ComponentPropItemData[] = [
-  {
-    name: 'tone',
-    type: "'default' | 'green' | 'yellow' | 'red' | 'blue' | 'purple' | 'pink' | 'orange' | 'cyan' | 'gold' = 'default'",
-  },
-  { name: 'variant', type: "'live' | 'new' | 'unread'", optional: true },
-]
-
 const componentTokens: ComponentTokenItemData[] = [
   { name: 'tag-height', default: 'var(--size-24)' },
   { name: 'tag-padding-inline', default: 'var(--space-2)' },
@@ -153,21 +145,8 @@ const main = html`
     </mm-component-section>
     <mm-component-section
       heading="Dot"
-      description="텍스트 없이 색상만으로 상태를 표시하는 최소 단위의 인디케이터입니다. tag와 같은 컬러 팔레트를 공유합니다."
+      description="텍스트 없이 색상만으로 상태를 표시하는 최소 단위의 인디케이터입니다. tag와 컬러 팔레트를 공유합니다."
     >
-      <mm-flex gap="2" align-items="center">
-        <mm-dot tone="default"></mm-dot>
-        <mm-dot tone="green"></mm-dot>
-        <mm-dot tone="yellow"></mm-dot>
-        <mm-dot tone="red"></mm-dot>
-        <mm-dot tone="blue"></mm-dot>
-        <mm-dot tone="purple"></mm-dot>
-        <mm-dot tone="pink"></mm-dot>
-        <mm-dot tone="orange"></mm-dot>
-        <mm-dot tone="cyan"></mm-dot>
-        <mm-dot tone="gold"></mm-dot>
-      </mm-flex>
-
       <mm-flex gap="4" align-items="center">
         <mm-flex gap="1" align-items="center">
           <mm-dot variant="live"></mm-dot>
@@ -182,8 +161,6 @@ const main = html`
           <mm-paragraph>unread</mm-paragraph>
         </mm-flex>
       </mm-flex>
-
-      <mm-component-props .props=${dotComponentProps}></mm-component-props>
     </mm-component-section>
 
     <mm-component-related .items=${relatedComponents}></mm-component-related>

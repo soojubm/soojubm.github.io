@@ -42,22 +42,10 @@ export const componentExampleStyles = [
     }
 
     .component-example {
-      --component-content-frame-margin: var(--space-8) 0 var(--space-4)
+      --component-content-frame-margin: 0 0 var(--space-4)
         var(--component-content-offset-inline-start);
 
       border-left-color: var(--foreground-color);
-    }
-  `,
-]
-
-export const componentPropItemStyles = [
-  resetStyles,
-  css`
-    :host {
-      display: block;
-    }
-    :host(:not(:first-child)) {
-      margin-top: var(--space-3);
     }
   `,
 ]
@@ -67,7 +55,9 @@ export const componentPropsStyles = [
   componentContentFrameStyles,
   css`
     :host {
-      display: block;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
     }
     .component-props {
       height: 10rem;

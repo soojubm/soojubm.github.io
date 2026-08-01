@@ -167,7 +167,7 @@ export class ComponentTokens extends LitElement {
 
   render() {
     return html`
-      <section class="component-content-frame">
+      <section class="component-content-frame" style="margin-top: var(--space-4)">
         <!-- <mm-heading>Component Tokens</mm-heading> -->
         <div class="token-list">
           ${this.tokens.map(

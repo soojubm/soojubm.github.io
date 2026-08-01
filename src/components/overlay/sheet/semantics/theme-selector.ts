@@ -20,11 +20,6 @@ export class ThemeSelector extends LitElement {
       display: inline-flex;
     }
 
-    mm-popover {
-      --surface-padding-block: var(--space-1);
-      --surface-padding-inline: var(--space-1);
-    }
-
     mm-menu-item-action[aria-current='true'] {
       color: var(--interaction-selected-foreground-color);
     }

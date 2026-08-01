@@ -343,16 +343,12 @@ const main = html`
     </div>
 
     <mm-component-section
-      heading="Input Feedback"
-      description="help message와 feedback message / validation feedback를 구분하기. mui에서는 error prop."
-    ></mm-component-section>
-
-    <mm-component-section
-      heading="RevealButton"
-      description="회원가입 프로세스에서 비밀번호 확인 필드가 존재하는 경우에는
-          제공할 필요가 없다. 비밀번호 확인 필드를 제공하지 않는 것은 국내 서비스에는 익숙하지 않은
-          경험. 비밀번호 입력 필드가 1개만 존재하는 경우 리빌 버튼을 제공할 수 있다"
-    ></mm-component-section>
+      heading="Feedback Message or Validation Message"
+      description="help message와 mui에서는 error prop."
+    >
+      <mm-textfield-helper>help message 이거 맞나</mm-textfield-helper>
+      <mm-textfield-validation>validation message 이거 맞나</mm-textfield-validation>
+    </mm-component-section>
 
     <mm-component-section
       heading="NumberInput"
@@ -383,7 +379,9 @@ const main = html`
 
     <mm-component-section
       heading="PasswordField"
-      description="비밀번호 입력 필드. searchfield처럼 textfield를 확장하며, trailing에 reveal-button을 두어 입력값 노출을 토글합니다."
+      description="searchfield처럼 textfield를 확장하며, trailing에 reveal-button을 두어 입력값 노출을 토글합니다. 회원가입 프로세스에서 비밀번호 확인 필드가 존재하는 경우에는
+          제공할 필요가 없다. 비밀번호 확인 필드를 제공하지 않는 것은 국내 서비스에는 익숙하지 않은
+          경험. 비밀번호 입력 필드가 1개만 존재하는 경우 리빌 버튼을 제공할 수 있다"
     >
       <mm-flex direction="column" gap="3" style="max-width: 400px">
         <mm-passwordfield
@@ -391,16 +389,13 @@ const main = html`
           placeholder="비밀번호를 입력하세요"
           helper="8자 이상, 영문·숫자·특수문자를 포함하세요."
         ></mm-passwordfield>
-
         <mm-passwordfield label="비밀번호 확인" placeholder="6자리 이상"></mm-passwordfield>
-
-        <mm-passwordfield label="비활성" value="secret123" disabled></mm-passwordfield>
       </mm-flex>
     </mm-component-section>
 
     <mm-component-section
       heading="SearchField"
-      description="검색 필드. textfield를 확장하며, leading에 검색 아이콘, trailing에 clear 버튼을 제공합니다."
+      description="textfield를 확장하며, leading에 검색 인디케이터, trailing에 clear 버튼을 제공합니다."
     >
       <mm-flex direction="column" gap="3" style="max-width: 400px">
         <mm-searchfield placeholder="궁금한 인물이나 이슈가 있나요?"></mm-searchfield>

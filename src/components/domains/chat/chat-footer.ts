@@ -10,18 +10,12 @@ export class ChatFooter extends LitElement {
     resetStyles,
     css`
       :host {
-        /* position: absolute;
-        inset-inline: 0;
-        bottom: 0; */
-        z-index: var(--material-zindex-raised);
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        max-width: 800px;
-        margin: 0 auto;
-        gap: var(--space-3);
         padding: var(--space-4);
+        background: var(--surface-chrome-background-color);
+        backdrop-filter: var(--surface-chrome-backdrop-filter);
         box-sizing: border-box;
+
+        z-index: var(--material-zindex-raised);
       }
 
       /* 화면 전체를 덮는 스크롤 위로 프롬프트 입력이 떠서
@@ -31,12 +25,21 @@ export class ChatFooter extends LitElement {
         max-width: var(--layout-width-small);
         margin-inline: auto;
       }
+
+      .inner {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+        gap: var(--space-3);
+      }
     `,
   ]
 
   render() {
     return html`
-      <slot></slot>
+      <div class="inner"><slot></slot></div>
     `
   }
 }

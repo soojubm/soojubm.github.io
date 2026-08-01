@@ -54,7 +54,7 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'icon', type: 'IconName', optional: true },
   { name: 'icon-position', type: "'leading' | 'trailing' = 'leading'", optional: true },
   { name: 'aria-label', type: 'string', optional: true },
-  { name: 'role', type: 'string', optional: true },
+  { name: 'role', type: 'button | tab', optional: true },
   { name: 'aria-expanded', type: "'true' | 'false'", optional: true },
   { name: 'aria-haspopup', type: 'string', optional: true },
   { name: 'aria-current', type: "'true' | 'page' | 'step' | 'location'", optional: true },
@@ -178,7 +178,7 @@ const main = html`
       description="버튼 그룹은 관련된 액션을 묶어 사용자가 선택할 수 있도록 합니다. 항상primary action에 먼저 포커스되어야 합니다. tabindex는 불필요. 마크업 순서와 정렬 스타일링으로 해결. Reject-Approve Pattern, Confirmation Pattern"
     >
       <mm-flex direction="column" gap="2">
-        <mm-button-group>
+        <mm-button-group aria-label="상품 정보 묶음">
           <mm-button variant="tertiary" size="large">취소</mm-button>
           <mm-button variant="primary" size="large">저장</mm-button>
         </mm-button-group>
