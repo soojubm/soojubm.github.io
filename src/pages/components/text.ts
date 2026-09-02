@@ -118,13 +118,14 @@ const main = html`
 
     <mm-component-section
       heading="Headings"
-      description="level(1–4)로 의미 단계(h1–h4)와 크기를 함께 지정하며, 기본값은 2입니다."
+      description="level(1–5)로 의미 단계(h1–h5)와 크기를 함께 지정하며, 기본값은 2입니다."
     >
       <mm-flex direction="column" gap="3">
         <mm-heading level="1">페이지 레벨의 타이틀</mm-heading>
         <mm-heading level="2">섹션 레벨의 타이틀</mm-heading>
         <mm-heading level="3">소제목</mm-heading>
         <mm-heading level="4">더소제목</mm-heading>
+        <mm-heading level="5">가장 낮은 소제목</mm-heading>
       </mm-flex>
     </mm-component-section>
 
