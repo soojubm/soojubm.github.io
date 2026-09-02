@@ -14,7 +14,7 @@ export const sidebarStyles = css`
     max-width: var(--layout-width-sidebar);
     gap: var(--space-2);
     /* margin-top으로 하면 brutal theme border가 연결되지 않음 */
-    padding: var(--layout-content-space-top) var(--space-3)
+    padding: var(--layout-sidebar-space-top) var(--space-3)
       calc(var(--space-4) + env(safe-area-inset-bottom)) calc(var(--layout-padding-inline));
     background: var(--surface-chrome-background-color);
     border-right: var(--border-transparent);
@@ -29,6 +29,11 @@ export const sidebarStyles = css`
     z-index: calc(var(--material-zindex-chrome) + 1);
 
     ${scrollbarStyles};
+  }
+
+  /* 섹션(제목 있는 그룹)은 앞선 항목과 시각적으로 떨어뜨린다 */
+  nav mm-menu-list {
+    margin-top: var(--space-4);
   }
 
   :host([open]) nav {
