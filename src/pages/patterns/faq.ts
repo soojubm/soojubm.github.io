@@ -55,7 +55,7 @@ const faqCategories: FaqCategory[] = [
 const renderFaqCategory = ({ heading, items }: FaqCategory) => html`
   <mm-flex direction="column" gap="3">
     <mm-paragraph size="large">${heading}</mm-paragraph>
-    <mm-accordion exclusive>
+    <mm-accordion>
       ${items.map(
         ({ question, answer }) => html`
           <mm-accordion-item summary=${question}>

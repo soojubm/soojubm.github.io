@@ -24,7 +24,6 @@ const componentReferences: ComponentReferenceItemData[] = [
 
 const componentProps: ComponentPropItemData[] = [
   { name: 'mm-accordion', type: 'group container', optional: true },
-  { name: 'exclusive', type: 'boolean = false' },
   { name: 'mm-accordion-item', type: 'individual item', optional: true },
   { name: 'summary', type: 'string' },
   { name: 'open', type: 'boolean = false' },
@@ -62,7 +61,7 @@ const main = html`
     ></mm-component-aka>
 
     <mm-component-example>
-      <mm-accordion exclusive>
+      <mm-accordion>
         <mm-accordion-item summary="서비스를 탈퇴하고 싶어요." open>
           <mm-paragraph>
             마이페이지 → 계정 설정 → 회원 탈퇴 순서로 진행하시면 됩니다. 탈퇴 후 30일간 데이터가
@@ -93,7 +92,6 @@ const main = html`
       <mm-text-list
         texts='[
           "트리거 텍스트(summary)는 한 문장으로 간결하게 작성하세요.",
-          "exclusive 모드는 FAQ처럼 하나씩 확인하는 패턴에 사용하고, 여러 항목을 동시에 비교해야 할 때는 끄세요.",
           "패널 안에 링크·버튼 등 인터랙션이 있을 경우, 패널 클릭으로 닫히는 동작을 추가하지 마세요."
         ]'
       ></mm-text-list>

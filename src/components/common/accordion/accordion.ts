@@ -1,11 +1,8 @@
 import { LitElement, css, html } from 'lit'
-import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
-
-import type { AccordionItem } from '@/components/common/accordion/accordion-item'
+import { customElement } from 'lit/decorators.js'
 
 /**
  * mm-accordion-item을 묶는 그룹 컨테이너.
- * exclusive 모드에서는 하나의 항목만 펼쳐집니다.
  */
 @customElement('mm-accordion')
 export class Accordion extends LitElement {
@@ -17,35 +14,10 @@ export class Accordion extends LitElement {
     }
   `
 
-  @property({ type: Boolean }) exclusive = false
-
-  @queryAssignedElements({ selector: 'mm-accordion-item', flatten: true })
-  private items!: AccordionItem[]
-
   render() {
     return html`
       <slot></slot>
     `
-  }
-
-  connectedCallback() {
-    super.connectedCallback()
-    this.addEventListener('accordion-toggle', this.handleToggle)
-  }
-
-  disconnectedCallback() {
-    super.disconnectedCallback()
-    this.removeEventListener('accordion-toggle', this.handleToggle)
-  }
-
-  private handleToggle = (event: Event) => {
-    const customEvent = event as CustomEvent<{ open: boolean }>
-    if (!this.exclusive || !customEvent.detail.open) return
-
-    const opened = event.target as AccordionItem
-    this.items.forEach(item => {
-      if (item !== opened) item.open = false
-    })
   }
 }
 
