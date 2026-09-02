@@ -18,6 +18,8 @@ interface SitemapStandaloneNode {
   badge?: string
   /** 사이드바 메뉴에서 숨긴다. 페이지는 그대로 빌드된다 */
   hidden?: boolean
+  /** 사이드바에서 접었다 펴는 하위 페이지 */
+  children?: SitemapItem[]
 }
 
 interface SitemapGroupNode {
@@ -43,6 +45,11 @@ export const SITEMAP: SitemapNode[] = [
     id: 'signifier',
     title: 'Foundations',
     icon: ICON_NAMES.DESIGN,
+    children: [
+      { id: 'signifier', name: 'Overview' },
+      { id: 'elevation', name: 'Elevation' },
+      { id: 'motion', name: 'Motion' },
+    ],
   },
   {
     type: 'standalone',
@@ -171,8 +178,8 @@ export const SITEMAP: SitemapNode[] = [
 
 export const findSitemapItem = (id: string): SitemapItem | undefined => {
   for (const node of SITEMAP) {
-    if (node.type !== 'group') continue
-    const item = node.items.find(item => item.id === id)
+    const items = node.type === 'group' ? node.items : node.children ?? []
+    const item = items.find(item => item.id === id)
     if (item) return item
   }
   return undefined

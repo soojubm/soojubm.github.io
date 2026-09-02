@@ -226,7 +226,10 @@ const main = html`
     <mm-component-section heading="Clear Button" description="search field에서 사용.">
       <mm-clear-button tooltip="입력 지우기" tooltip-placement="center"></mm-clear-button>
     </mm-component-section>
-    <mm-component-section heading="Expand Button / Indicator" description="TODO indicator case">
+    <mm-component-section
+      heading="Expand Button"
+      description="스스로 여닫는 토글 버튼. 클릭 상호작용과 aria-expanded를 직접 소유합니다."
+    >
       <mm-icon-button
         variant="secondary"
         size="small"
@@ -234,6 +237,13 @@ const main = html`
         tooltip="펼치기"
         tooltip-placement="center"
       ></mm-icon-button>
+    </mm-component-section>
+    <mm-component-section
+      heading="Expand Indicator"
+      description="트리거가 따로 있는 곳에서 펼침 상태만 방향으로 반영하는 장식 요소. 상호작용은 갖지 않습니다."
+    >
+      <mm-expand-indicator></mm-expand-indicator>
+      <mm-expand-indicator expanded></mm-expand-indicator>
     </mm-component-section>
     <mm-component-related .items=${relatedComponents}></mm-component-related>
   </main>

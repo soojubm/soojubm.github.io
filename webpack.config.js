@@ -11,13 +11,23 @@ const { SITEMAP } = require('./src/sitemap.ts')
 const HTML_TEMPLATE = './index.html'
 
 const ALL_PAGES = []
+const seenPageIds = new Set()
+const addPage = page => {
+  if (seenPageIds.has(page.id)) return
+  seenPageIds.add(page.id)
+  ALL_PAGES.push(page)
+}
+
 SITEMAP.forEach(node => {
   if (node.type === 'standalone') {
-    if (node.id !== 'index') ALL_PAGES.push({ id: node.id, subDir: 'patterns' })
+    if (node.id !== 'index') addPage({ id: node.id, subDir: 'patterns' })
+    ;(node.children || []).forEach(item => {
+      addPage({ id: item.id, subDir: item.subDir || 'patterns' })
+    })
   } else if (node.type === 'group') {
     const subDir = node.id === 'patterns' ? 'patterns' : 'components'
     node.items.forEach(item => {
-      ALL_PAGES.push({ id: item.id, subDir: item.subDir || subDir })
+      addPage({ id: item.id, subDir: item.subDir || subDir })
     })
   }
 })

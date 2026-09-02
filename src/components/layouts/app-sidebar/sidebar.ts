@@ -48,6 +48,7 @@ export class Sidebar extends LitElement {
 
   private renderStandalone(node: Extract<SitemapNode, { type: 'standalone' }>) {
     if (node.hidden) return nothing
+    if (node.children?.length) return this.renderCollapsibleSection(node)
 
     return html`
       <mm-menu-item-action
@@ -62,6 +63,32 @@ export class Sidebar extends LitElement {
             `
           : nothing} -->
       </mm-menu-item-action>
+    `
+  }
+
+  private renderCollapsibleSection(node: Extract<SitemapNode, { type: 'standalone' }>) {
+    const children = (node.children ?? []).filter(item => !item.hidden)
+    const containsCurrent =
+      this.isCurrentPage(node.id) || children.some(item => this.isCurrentPage(item.id))
+
+    return html`
+      <mm-menu-item-disclosure label=${node.title} icon=${node.icon} ?open=${containsCurrent}>
+        ${repeat(
+          children,
+          item => item.id,
+          item => html`
+            <mm-menu-item-link
+              emoji="#"
+              href="${item.id}.html"
+              label="${item.name}"
+              target="_self"
+              hidden-trailing
+              aria-current=${ifDefined(this.isCurrentPage(item.id) ? 'page' : undefined)}
+              @click=${this.handleMenuItemClick}
+            ></mm-menu-item-link>
+          `,
+        )}
+      </mm-menu-item-disclosure>
     `
   }
 
