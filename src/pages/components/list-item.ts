@@ -114,6 +114,10 @@ const main = html`
 
     <mm-component-props .props=${componentProps}></mm-component-props>
 
+    <mm-component-guide>
+      <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
+    </mm-component-guide>
+
     <mm-component-anatomy
       style="--component-anatomy-stage-width: 320px"
       parts='[
@@ -149,10 +153,6 @@ const main = html`
         style="position: absolute; right: 2.09rem; bottom: -1.75rem; transform: translateX(50%)"
       ></mm-list-marker>
     </mm-component-anatomy>
-
-    <mm-component-guide>
-      <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
-    </mm-component-guide>
 
     <mm-component-section heading="UserRow" description="사용자 맥락">
       <mm-menu-item-group size="large">

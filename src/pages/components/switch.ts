@@ -59,6 +59,10 @@ const main = html`
 
     <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
 
+    <mm-component-guide>
+      <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
+    </mm-component-guide>
+
     <mm-component-anatomy
       parts='[
       "트랙 — on/off 상태를 배경색으로 나타내는 가로 막대입니다.",
@@ -85,10 +89,6 @@ const main = html`
         style="position: absolute; right: -1.75rem; top: 50%; transform: translateY(-50%)"
       ></mm-list-marker>
     </mm-component-anatomy>
-
-    <mm-component-guide>
-      <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
-    </mm-component-guide>
     <mm-component-related .items=${relatedComponents}></mm-component-related>
   </main>
 `

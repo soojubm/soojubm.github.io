@@ -95,6 +95,10 @@ const main = html`
 
     <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
 
+    <mm-component-guide>
+      <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
+    </mm-component-guide>
+
     <mm-component-anatomy
       parts='[
       "컨테이너 — variant·size로 형태와 크기·배경을 정의합니다.",
@@ -119,10 +123,6 @@ const main = html`
       ></mm-list-marker>
       <pre slot="code">&lt;mm-avatar variant="secondary" size="80"&gt;&lt;/mm-avatar&gt;</pre>
     </mm-component-anatomy>
-
-    <mm-component-guide>
-      <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
-    </mm-component-guide>
 
     <mm-component-section
       heading="Fallback"

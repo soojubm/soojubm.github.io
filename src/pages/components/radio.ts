@@ -65,6 +65,10 @@ const main = html`
 
     <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
 
+    <mm-component-guide>
+      <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
+    </mm-component-guide>
+
     <mm-component-anatomy
       parts='[
       "컨트롤(인디케이터) — 선택 여부를 나타내는 원형 버튼입니다.",
@@ -90,10 +94,6 @@ const main = html`
         style="position: absolute; right: -1.75rem; top: 50%; transform: translateY(-50%)"
       ></mm-list-marker>
     </mm-component-anatomy>
-
-    <mm-component-guide>
-      <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
-    </mm-component-guide>
 
     <mm-component-section heading="Tile Radio?" description="">
       <mm-surface variant="elevated">

@@ -80,6 +80,16 @@ const main = html`
 
     <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
 
+    <mm-component-guide>
+      <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
+      <mm-text-list
+        texts='[
+          "text button과의 차이. Link는 항상 텍스트 단락과 함께 사용합니다. word, phrase, paragraph와 사용되는 케이스 정의",
+          "내부 링크와 외부 링크의 구별. 형태적 구별과 코드상 구별 target=_blank rel=noopener noreferrer"
+        ]'
+      ></mm-text-list>
+    </mm-component-guide>
+
     <mm-component-anatomy
       style="--component-anatomy-stage-padding: 0.5rem 0"
       parts='[
@@ -101,16 +111,6 @@ const main = html`
         style="position: absolute; right: -1.75rem; top: 50%; transform: translateY(-50%)"
       ></mm-list-marker>
     </mm-component-anatomy>
-
-    <mm-component-guide>
-      <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
-      <mm-text-list
-        texts='[
-          "text button과의 차이. Link는 항상 텍스트 단락과 함께 사용합니다. word, phrase, paragraph와 사용되는 케이스 정의",
-          "내부 링크와 외부 링크의 구별. 형태적 구별과 코드상 구별 target=_blank rel=noopener noreferrer"
-        ]'
-      ></mm-text-list>
-    </mm-component-guide>
     <mm-component-related .items=${relatedComponents}></mm-component-related>
   </main>
 `

@@ -73,6 +73,10 @@ const main = html`
 
     <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
 
+    <mm-component-guide>
+      <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
+    </mm-component-guide>
+
     <mm-component-anatomy
       parts='[
       "컨테이너 — tone으로 배경·글자 색상을 정의하는 배지 형태입니다.",
@@ -98,10 +102,6 @@ const main = html`
         style="position: absolute; right: 0.75rem; bottom: -1.75rem; transform: translateX(50%)"
       ></mm-list-marker>
     </mm-component-anatomy>
-
-    <mm-component-guide>
-      <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
-    </mm-component-guide>
 
     <mm-component-section heading="MostPopularTag" description="구체 레벨. 가장 인기있는 태그">
       <mm-tag>

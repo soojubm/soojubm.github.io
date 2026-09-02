@@ -133,31 +133,6 @@ const main = html`
 
     <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
 
-    <mm-component-anatomy
-      parts='[
-      "컨테이너 — variant·size로 형태와 위계를 정의하고 클릭 영역을 만듭니다.",
-      "아이콘 — 레이블을 보조하는 선택적 메타포(icon).",
-      "레이블 — 실행 결과를 예측할 수 있는 동사형 텍스트."
-    ]'
-    >
-      <mm-button variant="primary" size="large" icon="send-diagonal">보내기</mm-button>
-      <mm-list-marker
-        variant="number"
-        value="1"
-        style="position: absolute; left: -1.75rem; top: 50%; transform: translateY(-50%)"
-      ></mm-list-marker>
-      <mm-list-marker
-        variant="number"
-        value="2"
-        style="position: absolute; left: 1.75rem; bottom: -1.75rem; transform: translateX(-50%)"
-      ></mm-list-marker>
-      <mm-list-marker
-        variant="number"
-        value="3"
-        style="position: absolute; right: 1.5rem; bottom: -1.75rem; transform: translateX(50%)"
-      ></mm-list-marker>
-    </mm-component-anatomy>
-
     <mm-component-guide>
       <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
 
@@ -182,6 +157,31 @@ const main = html`
         ></mm-text-list>
       </mm-paragraph-group>
     </mm-component-guide>
+
+    <mm-component-anatomy
+      parts='[
+      "컨테이너 — variant·size로 형태와 위계를 정의하고 클릭 영역을 만듭니다.",
+      "아이콘 — 레이블을 보조하는 선택적 메타포(icon).",
+      "레이블 — 실행 결과를 예측할 수 있는 동사형 텍스트."
+    ]'
+    >
+      <mm-button variant="primary" size="large" icon="send-diagonal">보내기</mm-button>
+      <mm-list-marker
+        variant="number"
+        value="1"
+        style="position: absolute; left: -1.75rem; top: 50%; transform: translateY(-50%)"
+      ></mm-list-marker>
+      <mm-list-marker
+        variant="number"
+        value="2"
+        style="position: absolute; left: 1.75rem; bottom: -1.75rem; transform: translateX(-50%)"
+      ></mm-list-marker>
+      <mm-list-marker
+        variant="number"
+        value="3"
+        style="position: absolute; right: 1.5rem; bottom: -1.75rem; transform: translateX(50%)"
+      ></mm-list-marker>
+    </mm-component-anatomy>
 
     <mm-component-section
       heading="Button Group"

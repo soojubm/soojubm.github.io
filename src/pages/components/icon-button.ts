@@ -118,6 +118,16 @@ const main = html`
 
     <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
 
+    <mm-component-guide>
+      <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
+      <mm-paragraph>
+        Toggled states. Buttons can swap icons based on data states.
+        <br />
+        There are several icons within our library that have a “Filled” counterpart to indicate
+        whether a state is toggled on. The “Outlined” version indicates it is toggled off.
+      </mm-paragraph>
+    </mm-component-guide>
+
     <mm-component-anatomy
       style="--component-anatomy-stage-padding: 0 0 3rem"
       parts='[
@@ -157,16 +167,6 @@ const main = html`
         style="position: absolute; left: 50%; bottom: 0.5rem; transform: translateX(-50%)"
       ></mm-list-marker>
     </mm-component-anatomy>
-
-    <mm-component-guide>
-      <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
-      <mm-paragraph>
-        Toggled states. Buttons can swap icons based on data states.
-        <br />
-        There are several icons within our library that have a “Filled” counterpart to indicate
-        whether a state is toggled on. The “Outlined” version indicates it is toggled off.
-      </mm-paragraph>
-    </mm-component-guide>
 
     <mm-component-section
       heading="HamburgerButton"

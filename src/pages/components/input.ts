@@ -102,6 +102,10 @@ const main = html`
 
     <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
 
+    <mm-component-guide>
+      <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
+    </mm-component-guide>
+
     <mm-component-anatomy
       style="--component-anatomy-stage-padding: 0 0 0 1.75rem"
       parts='[
@@ -150,10 +154,6 @@ const main = html`
         style="position: absolute; left: 0; bottom: 0.25rem"
       ></mm-list-marker>
     </mm-component-anatomy>
-
-    <mm-component-guide>
-      <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
-    </mm-component-guide>
 
     <section style="position: relative">
       <div
