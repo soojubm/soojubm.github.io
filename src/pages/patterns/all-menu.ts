@@ -42,11 +42,34 @@ function renderStandaloneGroup() {
           target="_self"
           hidden-trailing
         >${renderBadge(node.badge)}</mm-menu-item-link>
+        ${renderChildLinks(node)}
       `,
     )
     .join('')
 
   return `<mm-menu-item-group aria-label="바로가기">${links}</mm-menu-item-group>`
+}
+
+type StandaloneNode = Extract<SitemapNode, { type: 'standalone' }>
+
+// 부모 링크와 같은 페이지를 가리키는 Overview 항목은 평평한 목록에서 제외한다.
+function renderChildLinks(node: StandaloneNode) {
+  if (!node.children?.length) return ''
+
+  return node.children
+    .filter(item => !item.hidden && item.id !== node.id)
+    .map(
+      item => `
+        <mm-menu-item-link
+          emoji="#"
+          href="${item.id}.html"
+          label="${item.name}"
+          target="_self"
+          hidden-trailing
+        >${renderBadge(item.badge)}</mm-menu-item-link>
+      `,
+    )
+    .join('')
 }
 
 function renderBadge(badge?: string) {
