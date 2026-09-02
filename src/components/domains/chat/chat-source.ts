@@ -57,7 +57,7 @@ export class ChatSource extends LitElement {
     this.open = open
   }
 
-  private get domain() {
+  get domain() {
     if (this.label) return this.label
     try {
       return new URL(this.href).hostname.replace(/^www\./, '')

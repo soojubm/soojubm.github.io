@@ -175,13 +175,7 @@ export class ChatSourceGroup extends LitElement {
   }
 
   private get domain() {
-    if (!this.activeSource) return ''
-    if (this.activeSource.label) return this.activeSource.label
-    try {
-      return new URL(this.activeSource.href).hostname.replace(/^www\./, '')
-    } catch {
-      return this.activeSource.href
-    }
+    return this.activeSource?.domain ?? ''
   }
 }
 

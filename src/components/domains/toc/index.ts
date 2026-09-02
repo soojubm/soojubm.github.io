@@ -8,6 +8,7 @@ import { resetStyles } from '@/stylesheets/shared.styles'
 import '@/components/common/icon-button/icon-button'
 import '@/components/common/button/button'
 import '@/components/common/button/button-group'
+import '@/components/common/text/text'
 
 interface TocItem {
   id: string
@@ -52,9 +53,7 @@ export class TableOfContents extends LitElement {
 
     return html`
       <nav aria-label="On this page">
-        <mm-text weight="bold" color="light" class="toc-title" aria-hidden="true">
-          On this page
-        </mm-text>
+        <mm-text weight="bold" color="light" aria-hidden="true">On this page</mm-text>
         <mm-button-group>${this.renderTocItems()}</mm-button-group>
       </nav>
       ${this.renderShareSection()}
@@ -171,7 +170,7 @@ export class TableOfContents extends LitElement {
   private renderShareSection() {
     return html`
       <section class="share" aria-label="Share on">
-        <mm-text weight="bold" color="light" class="toc-title" aria-hidden="true">Share on</mm-text>
+        <mm-text weight="bold" color="light" aria-hidden="true">Share on</mm-text>
         <mm-button-group>${this.renderShareLinks()}</mm-button-group>
       </section>
     `
