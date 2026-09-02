@@ -483,9 +483,7 @@ const main = html`
         }
       </style>
 
-      <mm-flex direction="column" gap="6">
-        <mm-text-block level="2" heading="Color" description="TODO..."></mm-text-block>
-
+      <mm-token-section heading="Color" description="TODO...">
         <mm-grid columns="6">${renderColorTokens(grayscaleColorTokens)}</mm-grid>
 
         <mm-separator></mm-separator>
@@ -496,14 +494,12 @@ const main = html`
         <mm-grid columns="4" style="margin-top: var(--space-3)">
           ${renderColorTokens(backgroundColorTokens)}
         </mm-grid>
-      </mm-flex>
+      </mm-token-section>
 
-      <mm-flex direction="column" gap="6">
-        <mm-text-block
-          level="2"
-          heading="Typography"
-          description="타이포그래피 토큰은 크기와 고정 행간을 함께 사용합니다. 행간은 컴포넌트의 역할에 맞춰 조합합니다."
-        ></mm-text-block>
+      <mm-token-section
+        heading="Typography"
+        description="타이포그래피 토큰은 크기와 고정 행간을 함께 사용합니다. 행간은 컴포넌트의 역할에 맞춰 조합합니다."
+      >
         <mm-flex direction="column" gap="4">
           <mm-surface variant="outlined" radius="large">
             <mm-marquee gap="4" speed="80" pause-on-hover>
@@ -553,61 +549,48 @@ const main = html`
         </mm-flex>
 
         <mm-token-group>${renderTokenItems(typographyTokenItems)}</mm-token-group>
-      </mm-flex>
+      </mm-token-section>
 
-      <mm-flex direction="column" gap="6">
-        <mm-text-block
-          level="2"
-          heading="Size"
-          description="요소의 크기를 결정합니다. 주로 height에 사용하고 정사각형 요소에 한정하여 width에 사용합니다."
-        ></mm-text-block>
+      <mm-token-section
+        heading="Size"
+        description="요소의 크기를 결정합니다. 주로 height에 사용하고 정사각형 요소에 한정하여 width에 사용합니다."
+      >
         <mm-token-stage>
           <mm-flex align-items="flex-end" gap="8">${renderSizeStage(sizeStageValues)}</mm-flex>
         </mm-token-stage>
         <mm-token-group>${renderTokenItems(sizeTokenItems)}</mm-token-group>
-      </mm-flex>
+      </mm-token-section>
 
-      <mm-flex direction="column" gap="6">
-        <mm-text-block
-          level="2"
-          heading="Space"
-          description="space는 요소 사이의 거리입니다."
-        ></mm-text-block>
+      <mm-token-section heading="Space" description="space는 요소 사이의 거리입니다.">
         <mm-token-stage>
           <mm-flex align-items="center" gap="8">${renderSpaceStage(spaceStageWidths)}</mm-flex>
         </mm-token-stage>
         <mm-token-group>${renderTokenItems(spaceTokenItems)}</mm-token-group>
-      </mm-flex>
+      </mm-token-section>
 
-      <mm-flex direction="column" gap="6">
-        <mm-text-block
-          level="2"
-          heading="Layout"
-          description="레이아웃 토큰은 페이지, 팝오버, 폼 컨테이너처럼 반복되는 구조의 최대 너비와 여백을 정의합니다."
-        ></mm-text-block>
+      <mm-token-section
+        heading="Layout"
+        description="레이아웃 토큰은 페이지, 팝오버, 폼 컨테이너처럼 반복되는 구조의 최대 너비와 여백을 정의합니다."
+      >
         <mm-token-group>${renderTokenItems(layoutTokenItems)}</mm-token-group>
-      </mm-flex>
+      </mm-token-section>
 
-      <mm-flex direction="column" gap="6">
-        <mm-text-block
-          level="2"
-          heading="Border"
-          description="테두리는 표면의 경계와 클릭 가능성을 표현합니다. 모서리 곡률은 요소의 성격과 위계를 시각적으로 구분합니다."
-        ></mm-text-block>
+      <mm-token-section
+        heading="Border"
+        description="테두리는 표면의 경계와 클릭 가능성을 표현합니다. 모서리 곡률은 요소의 성격과 위계를 시각적으로 구분합니다."
+      >
         <mm-token-stage>
           <mm-flex align-items="flex-end" gap="4">
             ${renderBorderStage(borderStageSwatches)}
           </mm-flex>
         </mm-token-stage>
         <mm-token-group>${renderTokenItems(borderTokenItems)}</mm-token-group>
-      </mm-flex>
+      </mm-token-section>
 
-      <mm-flex direction="column" gap="6">
-        <mm-text-block
-          level="2"
-          heading="Shadow"
-          description="그림자는 레이어의 고도와 부유감을 표현합니다."
-        ></mm-text-block>
+      <mm-token-section
+        heading="Shadow"
+        description="그림자는 레이어의 고도와 부유감을 표현합니다."
+      >
         <mm-token-stage>
           <mm-flex align-items="flex-end" gap="4">${renderShadowStage(shadowStageValues)}</mm-flex>
         </mm-token-stage>
@@ -616,14 +599,12 @@ const main = html`
         </mm-token-group>
 
         <mm-separator></mm-separator>
-      </mm-flex>
+      </mm-token-section>
 
-      <mm-flex direction="column" gap="6">
-        <mm-text-block
-          level="2"
-          heading="Blur &amp; Opacity"
-          description="material은 뒤 배경을 얼마나 흐리고 덮을지 정하는 blur·opacity 쌍입니다. 단계가 오를수록 더 흐리고 더 불투명해집니다."
-        ></mm-text-block>
+      <mm-token-section
+        heading="Blur &amp; Opacity"
+        description="material은 뒤 배경을 얼마나 흐리고 덮을지 정하는 blur·opacity 쌍입니다. 단계가 오를수록 더 흐리고 더 불투명해집니다."
+      >
         <mm-token-stage>
           <div
             style="
@@ -649,15 +630,12 @@ const main = html`
         <mm-token-group aria-label="material primitive tokens">
           ${renderTokenItems(materialTokenItems)}
         </mm-token-group>
-      </mm-flex>
+      </mm-token-section>
 
-      <mm-flex direction="column" gap="6">
-        <mm-text-block
-          level="2"
-          heading="Z-index"
-          description="z-index는 레이어의 우선순위를 정의합니다. 같은 레이어군 안에서만 비교되도록 의미 이름을 사용합니다."
-        ></mm-text-block>
-
+      <mm-token-section
+        heading="Z-index"
+        description="z-index는 레이어의 우선순위를 정의합니다. 같은 레이어군 안에서만 비교되도록 의미 이름을 사용합니다."
+      >
         <mm-token-group>${renderTokenItems(zIndexTokenItems)}</mm-token-group>
 
         <mm-text-list
@@ -670,7 +648,7 @@ const main = html`
           "toast — 알림, 스낵바처럼 항상 다른 모든 레이어 위에 있어야 하는 요소. 예: mm-toast, 건너뛰기(skip) 링크"
         ]'
         ></mm-text-list>
-      </mm-flex>
+      </mm-token-section>
 
       <style>
         .motion-track {
@@ -698,17 +676,15 @@ const main = html`
         }
       </style>
 
-      <mm-flex direction="column" gap="6">
-        <mm-text-block
-          level="2"
-          heading="Transition"
-          description="모든 transition은 하나의 duration을 공유하고 easing만 기본과 오버슈트(등장 강조)로 나뉩니다. 스테이지에 마우스를 올리면 두 easing의 차이를 볼 수 있습니다."
-        ></mm-text-block>
+      <mm-token-section
+        heading="Transition"
+        description="모든 transition은 하나의 duration을 공유하고 easing만 기본과 오버슈트(등장 강조)로 나뉩니다. 스테이지에 마우스를 올리면 두 easing의 차이를 볼 수 있습니다."
+      >
         <mm-token-stage>
           <mm-flex direction="column" gap="4">${renderMotionStage(motionTracks)}</mm-flex>
         </mm-token-stage>
         <mm-token-group>${renderTokenItems(transitionTokenItems)}</mm-token-group>
-      </mm-flex>
+      </mm-token-section>
 
       <mm-component-references .items=${componentReferences}></mm-component-references>
     </mm-flex>
