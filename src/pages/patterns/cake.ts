@@ -99,14 +99,12 @@ const main = html`
           <mm-menu-item-action
             avatar-src="/src/images/soojubm.png"
             size="80"
-            avatar-variant="secondary"
             label="스튜어트 로젠버그"
             description="감독"
           ></mm-menu-item-action>
           <mm-menu-item-action
             avatar-src="/src/images/soojubm.png"
             size="80"
-            avatar-variant="secondary"
             label="폴 뉴먼"
             description="주연"
           ></mm-menu-item-action>

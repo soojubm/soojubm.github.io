@@ -56,6 +56,11 @@
   "dependencies": {
     "lit": "^3.3.2"
   },
+  "lit-analyzer": {
+    "rules": {
+      "no-complex-attribute-binding": "off"
+    }
+  },
   "overrides": {
     "sockjs": {
       "uuid": "^11.1.1"

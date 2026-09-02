@@ -1,5 +1,5 @@
 import { LitElement, css, html, nothing } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
+import { customElement, property, state } from 'lit/decorators.js'
 
 import { componentContentFrameStyles } from '@/components/domains/component/component.styles'
 import '@/components/common/text/semantics/textList'
@@ -9,9 +9,11 @@ import { arrayAttributeConverter } from '@/utils'
 /**
  * 컴포넌트 해부도(Anatomy) 섹션.
  * 슬롯에 시연 대상을 넣고, parts 배열로 번호 매긴 구성요소 범례를 표시합니다.
+ * code 슬롯에 조립 마크업을 넣으면 범례 아래에 코드 블록으로 함께 보여줍니다.
  *
  * <mm-component-anatomy parts='["컨테이너", "옵션 버튼", "선택 인디케이터"]'>
  *   < 시연 마크업 />
+ *   <pre slot="code">&lt;mm-select&gt; … &lt;/mm-select&gt;</pre>
  * </mm-component-anatomy>
  */
 @customElement('mm-component-anatomy')
@@ -41,6 +43,18 @@ export class ComponentAnatomy extends LitElement {
         padding: var(--component-anatomy-stage-padding);
         position: relative;
       }
+
+      .code {
+        margin: 0;
+        padding: var(--space-4);
+        border-radius: var(--radius-large);
+        background-color: var(--background-subtle-color);
+        overflow-x: auto;
+        font-family: var(--font-family-code);
+        font-size: var(--font-size-12);
+        line-height: var(--font-line-height-16);
+        white-space: pre;
+      }
     `,
   ]
 
@@ -51,6 +65,8 @@ export class ComponentAnatomy extends LitElement {
   })
   parts: string[] = []
 
+  @state() private hasCode = false
+
   render() {
     return html`
       <mm-text size="24" weight="bold" as="h3">${this.heading}</mm-text>
@@ -59,7 +75,7 @@ export class ComponentAnatomy extends LitElement {
           <slot></slot>
         </div>
       </div>
-      ${this.renderParts()}
+      ${this.renderCode()} ${this.renderParts()}
     `
   }
 
@@ -69,6 +85,20 @@ export class ComponentAnatomy extends LitElement {
     return html`
       <mm-text-list variant="number" .texts=${this.normalizedParts}></mm-text-list>
     `
+  }
+
+  private renderCode() {
+    return html`
+      <pre class="code" ?hidden=${!this.hasCode}><slot
+          name="code"
+          @slotchange=${this.handleCodeSlotChange}
+        ></slot></pre>
+    `
+  }
+
+  private handleCodeSlotChange(event: Event) {
+    const slot = event.target as HTMLSlotElement
+    this.hasCode = slot.assignedNodes({ flatten: true }).some(node => node.textContent?.trim())
   }
 
   private get normalizedParts() {

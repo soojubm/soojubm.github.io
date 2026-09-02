@@ -117,6 +117,7 @@ const main = html`
         transform: translate(-50%, -50%);
       "
       ></mm-list-marker>
+      <pre slot="code">&lt;mm-avatar variant="secondary" size="80"&gt;&lt;/mm-avatar&gt;</pre>
     </mm-component-anatomy>
 
     <mm-component-guide>

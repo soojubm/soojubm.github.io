@@ -11,7 +11,7 @@ export class TagGroup extends LitElement {
       :host {
         display: flex;
         flex-wrap: wrap;
-        gap: var(--space-2);
+        gap: var(--space-1);
       }
     `,
   ]

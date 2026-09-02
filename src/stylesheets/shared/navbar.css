@@ -55,31 +55,3 @@
   padding: var(--control-padding);
   box-shadow: var(--surface-base-shadow);
 }
-
-.page {
-  min-height: calc(100vh - var(--navbar-height));
-  padding: var(--layout-content-space-top) var(--layout-padding-inline) calc(var(--space-4) * 6);
-  padding-left: var(--sidebar-content-shift);
-  box-sizing: border-box;
-  position: relative;
-}
-
-.page[data-size='fluid'] {
-  max-width: 100%;
-  padding: 0 0 calc(var(--space-4) * 8);
-}
-
-.page[data-size='wide'] {
-  display: flex;
-  justify-content: space-between;
-}
-
-.site-bottom-bar {
-  display: none;
-}
-
-@media (max-width: 480px) {
-  .site-bottom-bar {
-    display: block;
-  }
-}

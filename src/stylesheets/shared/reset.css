@@ -67,7 +67,6 @@ a {
 }
 pre {
   margin-block: 0;
-  background-color: var(--background-color);
 }
 code {
   display: block;

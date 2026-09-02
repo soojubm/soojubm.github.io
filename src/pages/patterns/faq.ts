@@ -17,11 +17,6 @@ const faqCategories: FaqCategory[] = [
     heading: '계정',
     items: [
       {
-        question: '비밀번호를 잊어버렸어요.',
-        answer:
-          '로그인 화면의 "비밀번호 찾기"를 통해 가입 이메일로 재설정 링크를 받을 수 있습니다.',
-      },
-      {
         question: '이메일 주소를 변경하고 싶어요.',
         answer: '마이페이지 → 계정 설정 → 이메일 변경에서 인증 후 변경할 수 있습니다.',
       },

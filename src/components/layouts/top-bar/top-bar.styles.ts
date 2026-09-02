@@ -9,7 +9,6 @@ export const topBarStyles = css`
     display: flex;
     align-items: center;
     width: 100%;
-    padding: var(--space-2) 0;
     gap: var(--space-2);
     position: relative;
   }

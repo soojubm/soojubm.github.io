@@ -41,6 +41,16 @@ const componentReferences: ComponentReferenceItemData[] = [
     label: 'WAI listbox',
     external: true,
   },
+  {
+    href: 'https://elements.ai-sdk.dev/components/attachments',
+    label: 'AI SDK Elements - Attachments',
+    external: true,
+  },
+  {
+    href: 'https://seed-design.io/react/components/attachment-display-field',
+    label: 'Seed Design - Attachment Display Field',
+    external: true,
+  },
 ]
 
 const componentProps: ComponentPropItemData[] = [

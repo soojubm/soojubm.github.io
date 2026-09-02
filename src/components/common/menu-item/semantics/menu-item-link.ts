@@ -4,7 +4,7 @@ import { ifDefined } from 'lit/directives/if-defined.js'
 
 import type { AriaCurrent } from '@/types'
 
-import '@/components/common/tag/tag'
+import '@/components/common/icon/icon'
 import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
 import { menuItemStyles } from '@/components/common/menu-item/menu-item.styles'
 import {
@@ -20,7 +20,6 @@ export class MenuItemLink extends withMenuItemPresentation(LitElement) {
   @property({ type: String }) href = ''
   @property({ type: String }) target = '_blank'
   @property({ type: Boolean, attribute: 'hidden-trailing' }) hiddenTrailing = false
-  @property({ type: String }) badge = ''
   @property({ type: String, attribute: 'aria-current', reflect: true }) ariaCurrent: AriaCurrent =
     null
 
@@ -34,28 +33,24 @@ export class MenuItemLink extends withMenuItemPresentation(LitElement) {
         target=${this.target || nothing}
         rel=${this.target === '_blank' ? 'noopener noreferrer' : nothing}
       >
-        ${renderMenuItemContent(this, this.renderAction())}
+        ${renderMenuItemContent(this, this.renderTrailing())}
       </a>
     `
   }
 
-  private renderAction() {
-    if (this.badge) {
-      return html`
-        <span slot="trailing">
-          <mm-tag>${this.badge}</mm-tag>
-        </span>
-      `
-    }
+  private renderTrailing() {
+    return html`
+      <slot name="trailing" slot="trailing">${this.renderDefaultTrailing()}</slot>
+    `
+  }
 
-    if (this.hiddenTrailing) return html``
+  private renderDefaultTrailing() {
+    if (this.hiddenTrailing) return nothing
 
-    const trailingIcon = this.target === '_blank' ? ICON_NAMES.SHARE : ICON_NAMES.FORWARD
+    const name = this.target === '_blank' ? ICON_NAMES.SHARE : ICON_NAMES.FORWARD
 
     return html`
-      <span slot="trailing">
-        <mm-icon name=${trailingIcon} size="small"></mm-icon>
-      </span>
+      <mm-icon name=${name} size="small"></mm-icon>
     `
   }
 }

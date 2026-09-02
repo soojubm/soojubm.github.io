@@ -27,7 +27,8 @@
   --layout-padding-inline: 5vw;
 
   --layout-max-width: 100%;
-  --layout-content-space-top: var(--space-6);
+  --layout-main-space-top: var(--space-2);
+  --layout-sidebar-space-top: var(--space-2);
   /* --content-space-block-start */
 
   --gray0: #fff;

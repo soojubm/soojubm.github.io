@@ -5,7 +5,6 @@ import type { ComponentReferenceItemData } from '@/components/domains/component/
 import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
 import { renderLayout } from '@/components/layouts/base-layouts'
 import { ScrollSpyController } from '@/controllers/scroll-spy-controller'
-import './home.css'
 
 const componentReferences: ComponentReferenceItemData[] = [
   {
@@ -98,7 +97,48 @@ const main = html`
       ></mm-text-list>
     </mm-flex>
 
-    <div hidden>
+    <div>
+      <style>
+        .scroll-spy-sampler-nav {
+          display: flex;
+        }
+
+        .scroll-spy-sampler-tab {
+          width: 100%;
+          padding: var(--space-2) var(--space-3);
+          border: 0;
+          border-radius: var(--radius);
+          background: transparent;
+          font: inherit;
+          color: var(--foreground-subtle-color);
+          text-align: left;
+          cursor: pointer;
+        }
+
+        .scroll-spy-sampler-tab.is-active {
+          background: var(--interaction-selected-background-color);
+          color: var(--interaction-selected-foreground-color);
+        }
+
+        .scroll-spy-sampler-body {
+          flex: 1 1 18rem;
+          min-width: 0;
+          max-height: 24rem;
+          scroll-padding-top: var(--space-4);
+        }
+
+        .scroll-spy-sampler-section {
+          justify-content: center;
+          min-height: 18rem;
+        }
+
+        @media (max-width: 720px) {
+          .scroll-spy-sampler-nav {
+            flex-basis: 100%;
+            position: static;
+          }
+        }
+      </style>
       <mm-surface>
         <mm-text size="24" weight="bold" as="h2">Scroll Spy Controller Sampler</mm-text>
         <div class="scroll-spy-sampler js-scroll-spy-sampler">

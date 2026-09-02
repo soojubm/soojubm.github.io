@@ -153,7 +153,7 @@ const main = html`
 
         <mm-add-button>Add a payment method</mm-add-button>
 
-        <mm-menu-item-action size="80" avatar-variant="primary" icon="people-tag">
+        <mm-menu-item-action size="80" icon="people-tag">
           <div>
             <mm-paragraph size="large">VISA 1988 XXXX 1111</mm-paragraph>
             <mm-text>Expires on 10/23</mm-text>

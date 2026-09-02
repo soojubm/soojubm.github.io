@@ -1,5 +1,6 @@
 import { html } from 'lit'
 
+import '@/components/common/tag/tag'
 import { renderLayout } from '@/components/layouts/base-layouts'
 // webpack.config.js가 sitemap을 ts-node로 로드하는 것과 같은 이유로 상대경로를 유지한다.
 import { SITEMAP, type SitemapNode } from '@/sitemap'
@@ -38,15 +39,20 @@ function renderStandaloneGroup() {
           icon="${node.icon}"
           href="${node.id}.html"
           label="${node.title}"
-          badge="${node.badge ?? ''}"
           target="_self"
           hidden-trailing
-        ></mm-menu-item-link>
+        >${renderBadge(node.badge)}</mm-menu-item-link>
       `,
     )
     .join('')
 
   return `<mm-menu-item-group aria-label="바로가기">${links}</mm-menu-item-group>`
+}
+
+function renderBadge(badge?: string) {
+  if (!badge) return ''
+
+  return `<mm-tag slot="trailing">${badge}</mm-tag>`
 }
 
 function renderGroup(node: SitemapNode) {
@@ -60,10 +66,9 @@ function renderGroup(node: SitemapNode) {
           emoji="#"
           href="${item.id}.html"
           label="${item.name}"
-          badge="${item.badge ?? ''}"
           target="_self"
           hidden-trailing
-        ></mm-menu-item-link>
+        >${renderBadge(item.badge)}</mm-menu-item-link>
       `,
     )
     .join('')

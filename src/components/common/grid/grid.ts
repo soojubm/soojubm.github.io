@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 
 import { gridStyles } from '@/components/common/grid/grid.styles'
 
-type Columns = 1 | 2 | 3 | 4
+type Columns = 1 | 2 | 3 | 4 | 6
 
 @customElement('mm-grid')
 export class Grid extends LitElement {
