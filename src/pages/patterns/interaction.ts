@@ -1,3 +1,4 @@
+import '@/components/common/table'
 import { html } from 'lit'
 
 import { renderDocumentLayout } from '@/components/layouts/document-layout'
@@ -81,8 +82,32 @@ const main = html`
 
       <mm-content-section heading-level="3" heading="Selection">
         <mm-paragraph>
-          선택 상태도 색상만으로 전달하지 않고 아이콘·형태·ARIA와 함께 제공합니다.
+          선택 상태도 색상만으로 전달하지 않고 아이콘·형태·ARIA와 함께 제공합니다. 선택을 아이콘으로
+          나타낼 때는 채운 아이콘이 켜짐, 윤곽 아이콘이 꺼짐을 뜻합니다.
         </mm-paragraph>
+        <mm-paragraph>
+          선택은 값을 남기는 상호작용입니다. 눌러 실행되는 항목이나 보이는 콘텐츠를 바꾸는 탭은
+          결과가 화면 변화로 드러나므로 값을 남기지 않습니다.
+        </mm-paragraph>
+        <mm-paragraph>
+          선택 상태는 항목이 아니라 그룹이 소유합니다. 하나를 고르는 그룹은 value로, 여럿을 고르는
+          그룹은 values로 상태를 두고 바뀌면 change로 알립니다. 여러 항목이 하나의 값을 이룰 때는
+          화살표 키로 항목 사이를 옮기고 Tab은 그룹을 한 번만 지납니다.
+        </mm-paragraph>
+        <mm-paragraph>
+          무엇으로 상태를 표현할지는 역할이 정합니다. 네이티브 요소가 있으면 그 attribute를, 없으면
+          역할에 맞는 ARIA attribute를 쓰고 스킨도 같은 selector를 기준으로 둡니다. 생김새가
+          비슷해도 다른 역할의 attribute를 빌려 쓰지 않습니다.
+        </mm-paragraph>
+        <mm-table
+          id="selection-component-table"
+          caption="선택 컴포넌트의 용도와 상태 attribute"
+          columns='[
+            {"label": "컴포넌트", "width": "260px"},
+            {"label": "언제 쓰나"},
+            {"label": "상태", "width": "140px"}
+          ]'
+        ></mm-table>
         <mm-grid columns="3" gap="3">
           <mm-flex direction="column" gap="2">
             <div
@@ -121,4 +146,48 @@ const main = html`
 
 document.addEventListener('DOMContentLoaded', () => {
   renderDocumentLayout(main)
+  setupSelectionComponentTable()
 })
+
+function setupSelectionComponentTable() {
+  const table = document.querySelector<HTMLElementTagNameMap['mm-table']>(
+    'mm-table#selection-component-table',
+  )
+  if (!table) return
+
+  table.rows = html`
+    <tr>
+      <th scope="row"><code>mm-checkbox-group</code></th>
+      <td>선택지를 모두 펼쳐 두고 여럿을 독립적으로 켤 때.</td>
+      <td><code>checked</code></td>
+    </tr>
+    <tr>
+      <th scope="row"><code>mm-radio-group</code></th>
+      <td>선택지를 나란히 견주며 하나만 고를 때.</td>
+      <td><code>checked</code></td>
+    </tr>
+    <tr>
+      <th scope="row"><code>mm-switch</code></th>
+      <td>저장 없이 즉시 반영되는 켜짐·꺼짐일 때.</td>
+      <td><code>aria-checked</code></td>
+    </tr>
+    <tr>
+      <th scope="row"><code>mm-filter-button-group</code></th>
+      <td>보고 있는 목록을 좁히는 조건을 바로 적용할 때.</td>
+      <td><code>aria-pressed</code></td>
+    </tr>
+    <tr>
+      <th scope="row"><code>mm-select</code></th>
+      <td>선택지가 많아 접어 두고 고른 값만 트리거에 남길 때.</td>
+      <td><code>aria-selected</code></td>
+    </tr>
+    <tr>
+      <th scope="row">
+        <code>mm-menu-item-radio</code>
+        <code>mm-menu-item-checkbox</code>
+      </th>
+      <td>메뉴 안에서 실행 항목과 함께 상태를 유지할 때.</td>
+      <td><code>aria-checked</code></td>
+    </tr>
+  `
+}
