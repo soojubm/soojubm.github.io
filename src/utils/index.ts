@@ -25,6 +25,18 @@ export const emit = <T = unknown>(
 export const uniqueId = (prefix: string): string =>
   `${prefix}-${crypto?.randomUUID?.() ?? Math.random().toString(36).slice(2)}`
 
+/**
+ * gap·간격 prop 문자열을 CSS 길이로 변환한다.
+ * 숫자와 `section`은 `--space-*` 토큰으로, 그 외 값(`1rem` 등)은 그대로 통과시키고,
+ * 빈 값은 빈 문자열을 반환한다.
+ */
+export const resolveSpaceToken = (value: string): string => {
+  if (!value) return ''
+  if (value === '0') return '0'
+  if (value === 'section') return 'var(--space-section)'
+  return /^\d+$/.test(value) ? `var(--space-${value})` : value
+}
+
 const parseJsonArray = <T>(value: string | null, fallback: T[] = []): T[] => {
   if (!value) return fallback
 
@@ -101,7 +113,7 @@ export function saveTheme(theme: Theme) {
   return applyTheme(theme)
 }
 
-function throttle(callback) {
+function throttle(callback: () => void) {
   let timer: number | undefined
 
   return function () {
@@ -111,13 +123,13 @@ function throttle(callback) {
 }
 
 export function stopAnimation() {
-  let resizeTimer
+  let resizeTimer: ReturnType<typeof setTimeout> | undefined
 
   window.addEventListener(
     'resize',
     throttle(() => {
       document.body.classList.add('resize-animation-stopper')
-      clearTimeout(resizeTimer)
+      if (resizeTimer) clearTimeout(resizeTimer)
 
       resizeTimer = setTimeout(() => {
         document.body.classList.remove('resize-animation-stopper')

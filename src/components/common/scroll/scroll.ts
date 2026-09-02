@@ -4,6 +4,7 @@ import { customElement, property } from 'lit/decorators.js'
 import type { PropertyValues } from 'lit'
 
 import { scrollStyles } from '@/components/common/scroll/scroll.styles'
+import { resolveSpaceToken } from '@/utils'
 
 type Direction = 'row' | 'column'
 
@@ -29,7 +30,7 @@ export class Scroll extends LitElement {
   updated(changed: PropertyValues) {
     if (!changed.has('gap')) return
 
-    const gap = this.gap ? (/^\d+$/.test(this.gap) ? `var(--space-${this.gap})` : this.gap) : ''
+    const gap = resolveSpaceToken(this.gap)
 
     if (gap) this.style.setProperty('--scroll-gap', gap)
     else this.style.removeProperty('--scroll-gap')

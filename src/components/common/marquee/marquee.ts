@@ -5,6 +5,7 @@ import { repeat } from 'lit/directives/repeat.js'
 import type { PropertyValues } from 'lit'
 
 import { resetStyles } from '@/stylesheets/shared.styles'
+import { resolveSpaceToken } from '@/utils'
 
 type MarqueeDirection = 'left' | 'right'
 
@@ -145,7 +146,7 @@ export class Marquee extends LitElement {
 
   updated(changed: PropertyValues) {
     if (changed.has('gap')) {
-      this.style.setProperty('--marquee-gap', this.resolveGap(this.gap))
+      this.style.setProperty('--marquee-gap', resolveSpaceToken(this.gap) || '0px')
       this.queueMeasure()
     }
 
@@ -210,11 +211,6 @@ export class Marquee extends LitElement {
         return node.nodeType !== Node.TEXT_NODE || Boolean(node.textContent?.trim())
       }) ?? []
     )
-  }
-
-  private resolveGap(value: string) {
-    if (!value) return '0px'
-    return /^\d+$/.test(value) ? `var(--space-${value})` : value
   }
 
   private updateHeight() {

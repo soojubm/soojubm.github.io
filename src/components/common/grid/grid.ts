@@ -2,6 +2,7 @@ import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import { gridStyles } from '@/components/common/grid/grid.styles'
+import { resolveSpaceToken } from '@/utils'
 
 type Columns = 1 | 2 | 3 | 4 | 6
 
@@ -24,7 +25,7 @@ export class Grid extends LitElement {
   }
 
   protected willUpdate() {
-    const gap = /^\d+$/.test(this.gap) ? `var(--space-${this.gap})` : this.gap
+    const gap = resolveSpaceToken(this.gap)
 
     if (gap) this.style.setProperty('--_grid-gap', gap)
     else this.style.removeProperty('--_grid-gap')
