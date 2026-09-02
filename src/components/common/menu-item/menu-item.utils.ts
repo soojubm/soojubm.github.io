@@ -52,11 +52,12 @@ export const withMenuItemPresentation = <T extends Constructor<LitElement>>(Base
 export interface MenuItemRowOptions {
   role: 'menuitemcheckbox' | 'menuitemradio' | 'menuitem' | 'option'
   disabled: boolean
-  ariaChecked: AriaTriState
+  ariaChecked?: AriaTriState
+  ariaSelected?: 'true' | 'false'
   onActivate: () => void
 }
 
-/** checkbox·radio·switch 계열이 공유하는 선택 가능한 행. role·상태·키보드 활성화를 행이 소유한다. */
+/** checkbox·radio·switch·option 계열이 공유하는 선택 가능한 행. role·상태·키보드 활성화를 행이 소유한다. */
 export function renderMenuItemRow(options: MenuItemRowOptions, content: unknown) {
   const handleKeydown = (event: KeyboardEvent) => {
     if (event.key !== 'Enter' && event.key !== ' ') return
@@ -70,6 +71,7 @@ export function renderMenuItemRow(options: MenuItemRowOptions, content: unknown)
       tabindex=${options.disabled ? '-1' : '0'}
       aria-disabled=${ifDefined(options.disabled ? 'true' : undefined)}
       aria-checked=${ifDefined(options.ariaChecked ?? undefined)}
+      aria-selected=${ifDefined(options.ariaSelected ?? undefined)}
       @click=${options.onActivate}
       @keydown=${handleKeydown}
     >

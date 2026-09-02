@@ -18,8 +18,6 @@ export class MenuItemAction extends withMenuItemPresentation(LitElement) {
 
   @property({ type: String, attribute: 'trailing-icon' }) trailingIcon?: IconName
   @property({ type: Boolean }) disabled = false
-  @property({ type: String }) role: 'menuitem' | 'menuitemcheckbox' | 'menuitemradio' | 'option' =
-    'menuitem'
   @property({ type: String, attribute: 'aria-current', reflect: true })
   ariaCurrent: AriaCurrent = null
 
@@ -27,7 +25,7 @@ export class MenuItemAction extends withMenuItemPresentation(LitElement) {
     return html`
       <button
         type="button"
-        role=${this.role}
+        role="menuitem"
         ?disabled=${this.disabled}
         aria-current=${ifDefined(this.ariaCurrent ?? undefined)}
       >

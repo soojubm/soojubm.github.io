@@ -6,7 +6,7 @@ export const menuItemStyles = css`
     --menu-item-padding-inline: 0;
   }
 
-  :is(button, a, [role^='menuitem']) {
+  :is(button, a, [role^='menuitem'], [role='option']) {
     display: flex;
     align-items: center;
     width: 100%;
@@ -29,8 +29,10 @@ export const menuItemStyles = css`
       position: absolute;
       top: 0;
       bottom: 0;
-      left: calc(var(--space-2) * -1);
-      right: calc(var(--space-2) * -1);
+      /* left: calc(var(--space-2) * -1); */
+      /* right: calc(var(--space-2) * -1); */
+      left: 0;
+      right: 0;
       z-index: -1;
     }
 
@@ -47,6 +49,11 @@ export const menuItemStyles = css`
       --menu-item-background-color: var(--interaction-selected-background-color);
     }
 
+    &[aria-selected='true'] {
+      --menu-item-background-color: var(--interaction-selected-background-color);
+      color: var(--interaction-selected-foreground-color);
+    }
+
     &[disabled],
     &[aria-disabled='true'] {
       opacity: 0.5;
@@ -55,7 +62,7 @@ export const menuItemStyles = css`
   }
 
   /* tone=danger: color를 행에 지정하면 list-item 내부 텍스트·아이콘이 상속받는다 */
-  :host([tone='danger']) :is(button, a, [role^='menuitem']) {
+  :host([tone='danger']) :is(button, a, [role^='menuitem'], [role='option']) {
     color: var(--color-danger);
   }
 

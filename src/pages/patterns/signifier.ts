@@ -498,13 +498,12 @@ const main = html`
           texts='[
               "mm-popover — 패널",
               "mm-menu-item-group role=\\"listbox\\" — Menu와 같은 컨테이너, role만 override",
-              "mm-menu-item-action role=\\"option\\" — role prop이 menuitem 대신 option을 지원한다"
+              "mm-select-option — role=option, 선택 상태는 aria-selected로 유지"
             ]'
         ></mm-text-list>
         <mm-paragraph size="small" color="light">
-          mm-select는 지금 이 조합을 role=menu/menuitem 기본값 그대로 사용해 단일 선택을 흉내내고
-          있습니다. 엄밀한 listbox 시맨틱(aria-selected 등)이 필요해지면, 새 컴포넌트를 만들지 않고
-          같은 조합의 role만 listbox/option으로 바꾸면 됩니다.
+          mm-select가 이 조합을 씁니다. 실행형 항목(mm-menu-item-action, role=menuitem)과 선택형
+          항목(mm-select-option, role=option)은 별도 컴포넌트라 role이 섞이지 않습니다.
         </mm-paragraph>
       </mm-text-block>
     </mm-text-block>

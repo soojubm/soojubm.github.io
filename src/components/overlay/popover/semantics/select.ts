@@ -1,4 +1,4 @@
-import { LitElement, css, html } from 'lit'
+import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, query, queryAssignedElements, state } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 import { repeat } from 'lit/directives/repeat.js'
@@ -10,9 +10,9 @@ import type { PopoverPlacement } from '@/components/overlay/popover/popover'
 import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
 import { resetStyles } from '@/stylesheets/shared.styles'
 import '@/components/common/button/button'
-import '@/components/common/menu-item/semantics/menu-item-action'
 import '@/components/common/menu-item/menu-item-group'
 import '@/components/overlay/popover/popover'
+import '@/components/overlay/popover/semantics/select-option'
 import { emit } from '@/utils'
 
 export interface SelectOption {
@@ -50,16 +50,13 @@ export class Select extends LitElement {
       :host([width='100%']) mm-popover {
         display: block;
       }
-
-      mm-menu-item-action[aria-current='true'] {
-        color: var(--interaction-selected-foreground-color);
-      }
     `,
   ]
 
   @property({ type: String }) value = ''
   @property({ type: String }) placement: PopoverPlacement = 'bottom-left'
   @property({ type: String }) padding?: string
+  @property({ type: String, attribute: 'aria-label' }) ariaLabel = ''
   /** 호스트 폭. 기본은 트리거 콘텐츠 폭(auto)이며, `240px`·`100%` 등 임의 CSS 폭 값을 받는다. */
   @property({ type: String, reflect: true }) width = 'auto'
   @state() private options: SelectOption[] = []
@@ -75,7 +72,11 @@ export class Select extends LitElement {
         <mm-button slot="trigger" size="small" icon=${ICON_NAMES.EXPAND} icon-position="trailing">
           ${this.currentLabel}
         </mm-button>
-        <mm-menu-item-group>
+        <mm-menu-item-group
+          role="listbox"
+          aria-label=${this.ariaLabel || nothing}
+          @input=${this.handleOptionInput}
+        >
           ${repeat(
             this.options,
             option => option.value,
@@ -118,30 +119,25 @@ export class Select extends LitElement {
     }))
   }
 
-  // 옵션 클릭 시: 값 반영 후 목록 닫기
-  private selectOption(option: SelectOption) {
-    if (option.value === this.value) {
-      this.popoverEl?.close()
-      return
-    }
-
-    this.value = option.value
+  // 옵션 활성화 시: 값 반영 후 목록 닫기
+  private handleOptionInput(event: CustomEvent<{ value: string }>) {
     this.popoverEl?.close()
-    emit(this, 'change', { value: option.value })
+    if (event.detail.value === this.value) return
+
+    this.value = event.detail.value
+    emit(this, 'change', { value: this.value })
   }
 
-  // 옵션: 선택 시 닫히며 현재 선택된 옵션은 aria-current로 강조
+  // 옵션: 선택 시 닫히며 현재 선택된 옵션은 aria-selected로 강조
   private renderOption(option: SelectOption) {
-    const isSelected = option.value === this.value
-
     return html`
-      <mm-menu-item-action
+      <mm-select-option
+        .value=${option.value}
         icon=${ifDefined(option.icon)}
-        aria-current=${ifDefined(isSelected ? 'true' : undefined)}
-        @click=${() => this.selectOption(option)}
+        ?selected=${option.value === this.value}
       >
         ${option.label}
-      </mm-menu-item-action>
+      </mm-select-option>
     `
   }
 }
