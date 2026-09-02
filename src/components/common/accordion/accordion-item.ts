@@ -45,11 +45,6 @@ export class AccordionItem extends LitElement {
         font-weight: var(--font-weight-bold);
         color: inherit;
         text-align: left;
-
-        &:disabled {
-          opacity: 0.45;
-          cursor: not-allowed;
-        }
       }
 
       .icon {
@@ -89,7 +84,6 @@ export class AccordionItem extends LitElement {
 
   @property({ type: String }) summary = ''
   @property({ type: Boolean, reflect: true }) open = false
-  @property({ type: Boolean }) disabled = false
 
   private readonly panelId = uniqueId('accordion-panel')
 
@@ -104,7 +98,7 @@ export class AccordionItem extends LitElement {
 
   render() {
     return html`
-      <button class="summary-btn" aria-controls=${this.panelId} ?disabled=${this.disabled}>
+      <button class="summary-btn" aria-controls=${this.panelId}>
         <slot name="summary">${this.summary}</slot>
         <mm-icon class="icon" name=${ICON_NAMES.SITEMAP}></mm-icon>
       </button>

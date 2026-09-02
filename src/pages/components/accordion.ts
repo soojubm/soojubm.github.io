@@ -28,7 +28,6 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'mm-accordion-item', type: 'individual item', optional: true },
   { name: 'summary', type: 'string' },
   { name: 'open', type: 'boolean = false' },
-  { name: 'disabled', type: 'boolean = false' },
   { name: 'slot: summary', type: 'HTMLElement (trigger)', optional: true },
   { name: 'slot: default', type: 'HTMLElement (panel content)', optional: true },
   { name: 'event: accordion-toggle', type: 'CustomEvent { open: boolean }', optional: true },
@@ -70,12 +69,7 @@ const main = html`
             보관되며 이후 완전히 삭제됩니다.
           </mm-paragraph>
         </mm-accordion-item>
-        <mm-accordion-item summary="비밀번호를 잊어버렸어요.">
-          <mm-paragraph>
-            로그인 화면의 "비밀번호 찾기"를 통해 가입 이메일로 재설정 링크를 받을 수 있습니다.
-          </mm-paragraph>
-        </mm-accordion-item>
-        <mm-accordion-item summary="결제 영수증은 어디서 확인하나요?" disabled>
+        <mm-accordion-item summary="결제 영수증은 어디서 확인하나요?">
           <mm-paragraph>
             마이페이지 → 결제 내역에서 영수증을 확인하고 다운로드할 수 있습니다.
           </mm-paragraph>
