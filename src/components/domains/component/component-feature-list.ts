@@ -27,12 +27,18 @@ class ComponentFeatureList extends LitElement {
   })
   features: ComponentFeatureItem[] = []
 
+  @property({ type: Boolean, reflect: true }) centered = true
+
   render() {
     return html`
       <mm-feature-group columns="3">
         ${this.features.map(
           feature => html`
-            <mm-feature heading=${feature.heading} description=${feature.description}></mm-feature>
+            <mm-feature
+              heading=${feature.heading}
+              description=${feature.description}
+              ?centered=${this.centered}
+            ></mm-feature>
           `,
         )}
       </mm-feature-group>
