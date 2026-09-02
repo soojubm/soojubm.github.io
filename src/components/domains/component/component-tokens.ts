@@ -9,6 +9,8 @@ import { arrayAttributeConverter } from '@/utils'
 export interface ComponentTokenItemData {
   name: string
   default: string
+  // 이 토큰 값을 재할당하는 prop. prop 프리셋 밖의 값을 잡을 때 이 토큰을 override 한다.
+  prop?: string
 }
 
 // 토큰 이름의 단어를 의미 그룹으로 묶어, 서로 다른 그룹의 경계에서만 구분자를 '.'으로 바꿔 구조를 드러낸다.
@@ -71,16 +73,24 @@ export class Token extends LitElement {
 
   @property({ type: String }) name = ''
   @property({ type: String }) default = ''
+  @property({ type: String }) prop = ''
 
   render() {
     return html`
       <div class="token-row">
         <div class="token-category">${this.renderCategoryTag()}</div>
-        <mm-meta-item
-          layout="stacked"
-          label=${this.formatName()}
-          value=${this.formatDefault()}
-        ></mm-meta-item>
+        <mm-meta-item layout="stacked" label=${this.formatName()}></mm-meta-item>
+        ${this.renderPropTag()}
+      </div>
+    `
+  }
+
+  private renderPropTag() {
+    if (!this.prop) return nothing
+
+    return html`
+      <div class="token-prop">
+        <mm-keyword-tag icon="arrow-left">${this.prop}</mm-keyword-tag>
       </div>
     `
   }
@@ -173,7 +183,11 @@ export class ComponentTokens extends LitElement {
           ${this.tokens.map(
             token =>
               html`
-                <mm-token name=${token.name} default=${token.default}></mm-token>
+                <mm-token
+                  name=${token.name}
+                  default=${token.default}
+                  prop=${token.prop ?? ''}
+                ></mm-token>
               `,
           )}
         </div>

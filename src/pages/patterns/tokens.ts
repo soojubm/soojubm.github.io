@@ -428,41 +428,30 @@ const main = html`
         description="제품의 시각 언어를 구성하는 원자 값입니다. 색상, 글꼴, 간격, 크기, 형태, 레이어, 모션을 토큰으로 관리해 컴포넌트와 패턴이 같은 기준을 공유하게 합니다."
       ></mm-page-header>
 
-      <mm-paragraph-group>
-        <mm-heading level="2">foreground/background/border - subtle, strong</mm-heading>
-        <mm-heading level="2">name-Base(Dimension/Surface)-State-(on-$priority)</mm-heading>
+      <mm-content-section heading-level="3" heading="계층">
         <mm-paragraph>
-          <b>Base(Dimension/Surface) / State</b>
-          토큰은 크게 정적인 값을 담는 Base와 인터랙션에 따라 적용되는 State로 나뉘며, Base는 다시
-          크기·간격의 Dimension과 재질·표면의 Surface로 구분됩니다.
+          토큰은 계층을 이루며, 소비처에 가까운 단계일수록 구체적입니다. 각 단계는 원칙적으로 바로
+          앞 단계의 토큰을 참조해 값을 물려받고, 소비처는 자신에게 가장 가까운 단계를 참조합니다.
         </mm-paragraph>
-        <mm-paragraph>
-          <b>토큰은 프리미티브와 시멘틱 계층으로 구성됩니다.</b>
-          프리미티브 토큰은 디자인의 기본 값을 정의하고, 시멘틱 토큰은 이를 인터페이스의 역할에
-          매핑합니다.
-        </mm-paragraph>
-        <mm-feature-group>
-          <mm-feature>
-            프리미티브 토큰은 color-, size-, space-와 같이 값의 종류를 기준으로 명명하며, 시멘틱
-            토큰은 background-color, border-color, body-font-size처럼 역할과 용도를 기준으로
-            명명합니다. 이를 통해 토큰의 출처와 목적을 명확하게 구분할 수 있습니다.
-          </mm-feature>
-        </mm-feature-group>
+        <mm-text-list
+          variant="number"
+          texts='[
+            "Primitive — 색·크기·간격의 원시 값. color-, size-, space-처럼 값의 종류로 이름 짓는다.",
+            "System — primitive를 인터페이스의 역할에 매핑한다. background-color, border-color, body-font-size처럼 역할과 용도로 이름 짓는다.",
+            "Component — system을 특정 컴포넌트의 속성에 매핑한다. avatar-border-color, sheet-height처럼 컴포넌트명과 소비하는 속성으로 이름 짓는다."
+          ]'
+        ></mm-text-list>
+      </mm-content-section>
 
-        base — 아무런 추가적인 depth 관계가 없는 기본 surface raised / elevated — 주변보다 한 단계
-        올라온 surface floating — 특정 콘텐츠 흐름에서 분리되어 떠 있는 surface overlay — 다른
-        콘텐츠 위에 겹쳐지는 레이어
-      </mm-paragraph-group>
-
-      <!-- <mm-text-block
-        level="3"
-        heading="토큰 구조"
-        description="토큰은 프리미티브와 시멘틱 계층으로 구성됩니다. 프리미티브 토큰은 디자인의 기본 값을
-    정의하고, 시멘틱 토큰은 이를 인터페이스의 역할에 매핑합니다. 프리미티브 토큰은 color-, size-,
-    space-와 같이 값의 종류를 기준으로 명명하며, 시멘틱 토큰은 background-color, border-color,
-    body-font-size처럼 역할과 용도를 기준으로 명명합니다. 이를 통해 토큰의 출처와 목적을 명확하게
-    구분할 수 있습니다."
-      ></mm-text-block> -->
+      <mm-content-section heading-level="3" heading="이름 규칙">
+        <mm-text-list
+          texts='[
+            "System 토큰 이름은 name-Base-State-(on-priority) 꼴을 따른다.",
+            "Base는 정적인 값으로 크기·간격의 Dimension과 재질·표면의 Surface로 나뉘고, State는 hover·selected처럼 인터랙션에 따라 바뀌는 값이다.",
+            "foreground·background·border 계열은 subtle·strong로 세기를 나누고, 대비 표면 위의 색은 on- 접두사를 붙인다."
+          ]'
+        ></mm-text-list>
+      </mm-content-section>
 
       <style>
         .token-color-markers {

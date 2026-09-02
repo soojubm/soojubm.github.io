@@ -98,6 +98,10 @@ export const tokenStyles = [
     .token-category {
       width: 100px;
     }
+
+    .token-prop {
+      margin-left: auto;
+    }
   `,
 ]
 
