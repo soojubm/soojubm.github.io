@@ -30,6 +30,7 @@ export const avatarStyles = css`
     --avatar-border-radius: var(--radius);
 
     display: inline-flex;
+    flex-shrink: 0;
     align-items: center;
     justify-content: center;
     width: var(--avatar-size);
@@ -55,7 +56,7 @@ export const avatarStyles = css`
 
   img {
     width: 100%;
-    height: inherit;
+    height: 100%;
     border-radius: var(--avatar-border-radius);
     object-fit: cover;
   }
