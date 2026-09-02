@@ -542,9 +542,9 @@ const main = html`
       </mm-menu-item-group>
     </mm-component-section>
 
-    <mm-component-references .items=${componentReferences2}></mm-component-references>
-
     <mm-component-related .items=${relatedComponents}></mm-component-related>
+
+    <mm-component-references .items=${componentReferences2}></mm-component-references>
   </main>
 `
 
