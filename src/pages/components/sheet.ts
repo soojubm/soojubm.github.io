@@ -8,28 +8,6 @@ import type { ComponentRelatedItemData } from '@/components/domains/component/co
 
 import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
 import { renderLayout } from '@/components/layouts/base-layouts'
-/* Sheet/AnchoredSheet 행동 계약 설명 초안.
- <mm-paragraph>
-            시각적 형태(Dialog, Sheet 등)가 아니라 행동 계약으로 Sheet와 AnchoredSheet 둘로 나뉜다.
-            행동(modality·dismiss·reference)은 컨트롤러가 책임지는 별도 관심사고, elevation·
-            background·radius·width·placement 같은 외형은 컨트롤러와 무관하게 구현체가 조합한다.
-            실제 컴포넌트는 두 행동 계약 중 하나를 고르고, 여기에 외형과 자기 고유 로직(폼 상태,
-            액션 등)을 더해 완성된다.
-          </mm-paragraph> 
-*/
-
-/* anatomy 초안. 되살릴 때 템플릿으로 되돌린다.
-   Lit은 HTML 주석 안 바인딩을 지원하지 않아 템플릿에 주석으로 남기지 않는다.
- <mm-component-anatomy
-        .parts=${[
-        'Backdrop — 시트 뒤 반투명 배경. 배경 클릭 또는 ESC 시 sheet-close 이벤트를 발생시킵니다.',
-        '시트 컨테이너 — flex column 박스. height prop으로 높이 고정, max-height: 90vh 기본값.',
-        'mm-sheet-header — 타이틀과 닫기 버튼. sheet-close 이벤트를 발생시킵니다.',
-        'mm-sheet-body — 스크롤 가능한 콘텐츠 영역. flex: 1 1 auto로 header·footer를 제외한 나머지를 채웁니다.',
-        'mm-sheet-footer — 액션 버튼 영역. primaryAction / secondaryAction prop으로 구성합니다.',
-      ]}
-      ></mm-component-anatomy> 
-*/
 
 const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'dialog.html', label: 'Dialog' },
@@ -49,8 +27,23 @@ const componentReferences: ComponentReferenceItemData[] = [
     external: true,
   },
   {
+    href: 'https://developer.apple.com/design/human-interface-guidelines/sheets',
+    label: 'HIG sheets',
+    external: true,
+  },
+  {
     href: 'https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alertdialog_role',
     label: 'alertdialog role',
+    external: true,
+  },
+  {
+    href: 'https://mobbin.com/glossary/bottom-sheet',
+    label: 'moffin - Bottom Sheet',
+    external: true,
+  },
+  {
+    href: 'https://ogp.me/',
+    label: 'Open Graph Protocol',
     external: true,
   },
 ]
@@ -66,7 +59,7 @@ const componentProps: ComponentPropItemData[] = [
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [
-  { heading: 'TODO', description: 'TODO' },
+  { heading: 'Modality', description: 'TODO' },
   { heading: 'TODO', description: 'TODO' },
   { heading: 'TODO', description: 'TODO' },
 ]
@@ -161,7 +154,7 @@ function sheetPageTemplate() {
     <main class="page">
       <mm-page-header
         heading="Sheet"
-        description="viewport 기준 modal 시트로 화면 위에 표시합니다."
+        description="viewport 기준 modal 시트로 화면 위에 표시합니다. center dialog만 써도 충분."
       ></mm-page-header>
 
       <mm-component-aka
@@ -170,7 +163,6 @@ function sheetPageTemplate() {
 
       <mm-component-example>
         ${sheetExampleTemplate()}
-        <mm-button data-open-toast>토스트 띄우기</mm-button>
         <mm-toast class="js-demo-toast">저장되었습니다.</mm-toast>
       </mm-component-example>
 
@@ -178,52 +170,6 @@ function sheetPageTemplate() {
 
       <mm-component-guide>
         <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
-
-        <mm-grid columns="2" gap="8">
-          <mm-text-block level="2" heading="Level">
-            <mm-paragraph>
-              viewport를 reference로 삼아 화면 중앙·가장자리에 위치하며, 배경과의 상호작용을
-              차단하는 modal 행동 계약. Backdrop(dim)이 뒤를 덮고, 포커스는 시트 내부에 갇힌다(focus
-              trap). 닫기는 명시적인 버튼 액션으로만 허용하는 것이 원칙이며, 배경 클릭·ESC로 닫는
-              기능은 중요도가 낮은 작업에서만 예외적으로 허용한다.
-            </mm-paragraph>
-            <mm-text-list
-              texts=${JSON.stringify([
-                'reference — viewport.',
-                'modality — 배경 클릭 불가·스크롤 불가.',
-                'dismiss — 명시 버튼 우선, 배경 클릭·ESC는 예외적으로만 허용. 포커스 트랩, aria-modal="true".',
-                '구현: mm-sheet, mm-dialog(mm-sheet와 SheetController 배관 공유).',
-                '용례: 삭제 확인, 중요 정보 입력, 오류 처리, 결제 흐름, bottom sheet/drawer.',
-              ])}
-            ></mm-text-list>
-          </mm-text-block>
-          <mm-thumbnail ratio="1:1">12</mm-thumbnail>
-        </mm-grid>
-
-        <mm-heading level="2">AnchoredSheet</mm-heading>
-        <mm-paragraph>
-          트리거를 reference로 삼아 위치하며, 배경과의 상호작용을 허용하는 non-modal 행동 계약. 현재
-          작업 맥락을 유지하면서 부가 정보나 서브태스크를 제공할 때 사용한다. 포커스 트랩이 없고,
-          외부 클릭·ESC로 언제든 닫을 수 있다.
-        </mm-paragraph>
-        <mm-text-list
-          texts=${JSON.stringify([
-            'reference — 트리거.',
-            'modality — 배경 클릭 가능·스크롤 가능.',
-            'dismiss — 외부 클릭 또는 ESC. 포커스 트랩 없음.',
-            '구현: mm-popover. mm-select 등 popover 기반 컴포넌트가 이 계약을 재사용한다.',
-            '용례: Dropdown, Tooltip, 사이드 패널, Select.',
-          ])}
-        ></mm-text-list>
-
-        <mm-heading level="2">외형</mm-heading>
-        <mm-text-list
-          texts=${JSON.stringify([
-            'surface — elevation·background·radius.',
-            'width — 패널 너비.',
-            'placement — 패널 위치. 계약마다 값 집합이 다르다: mm-sheet는 center/bottom/left/right, mm-popover는 top-left/top-right/bottom-left/bottom-right.',
-          ])}
-        ></mm-text-list>
 
         <mm-table
           id="sheet-comparison-table"
@@ -242,7 +188,6 @@ function sheetPageTemplate() {
         description="타이틀과 선택적인 닫기 버튼을 제공합니다. 닫기 버튼은 sheet-close 이벤트를 버블링합니다."
       >
         <mm-sheet-header heading="Sheet Title"></mm-sheet-header>
-        <mm-text>내용</mm-text>
       </mm-component-section>
 
       <mm-component-section
@@ -275,6 +220,7 @@ function sheetExampleTemplate() {
       <mm-button @click=${() => openSheet('bottom-sheet')}>Bottom</mm-button>
       <mm-button @click=${() => openSheet('left-sheet')}>Left</mm-button>
       <mm-button @click=${() => openSheet('right-sheet')}>Right</mm-button>
+      <mm-button data-open-toast>토스트 띄우기</mm-button>
     </mm-button-group>
 
     <mm-sheet id="center-sheet" placement="center" width="medium">
@@ -307,18 +253,10 @@ function sheetExampleTemplate() {
     <mm-sheet id="left-sheet" placement="left">
       <mm-sheet-header heading="Left Sheet"></mm-sheet-header>
       <mm-sheet-body><mm-paragraph>왼쪽 패널 콘텐츠</mm-paragraph></mm-sheet-body>
-      <mm-sheet-footer
-        .primaryAction=${{ label: '완료', onClick: () => {} }}
-        .secondaryAction=${{ label: '닫기', onClick: () => {} }}
-      ></mm-sheet-footer>
     </mm-sheet>
     <mm-sheet id="right-sheet" placement="right">
       <mm-sheet-header heading="Right Sheet"></mm-sheet-header>
       <mm-sheet-body><mm-paragraph>오른쪽 패널 콘텐츠</mm-paragraph></mm-sheet-body>
-      <mm-sheet-footer
-        .primaryAction=${{ label: '완료', onClick: () => {} }}
-        .secondaryAction=${{ label: '닫기', onClick: () => {} }}
-      ></mm-sheet-footer>
     </mm-sheet>
   `
 }

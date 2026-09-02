@@ -1,6 +1,60 @@
 [
   {
-    "id": 202606,
+    "id": 202608,
+    "releasedate": 2026,
+    "titlekorean": "스타 이즈 본",
+    "titleenglish": "",
+    "director": "",
+    "country": "미국",
+    "etc": ""
+  },
+  {
+    "id": 202608,
+    "releasedate": 2026,
+    "titlekorean": "살목지",
+    "titleenglish": "",
+    "director": "",
+    "country": "한국",
+    "etc": "호러"
+  },
+  {
+    "id": 202608,
+    "releasedate": 2026,
+    "titlekorean": "오딧세이",
+    "titleenglish": "Odissay TODO",
+    "director": "크리스토퍼 놀란",
+    "country": "미국",
+    "etc": ""
+  },
+  {
+    "id": 202608,
+    "releasedate": 2023,
+    "titlekorean": "추락의 해부",
+    "titleenglish": "Odissay TODO",
+    "director": "크리스토퍼 놀란",
+    "country": "프랑스",
+    "etc": ""
+  },
+  {
+    "id": 202608,
+    "releasedate": 2026,
+    "titlekorean": "300",
+    "titleenglish": "300",
+    "director": "",
+    "country": "미국",
+    "etc": ""
+  },
+  {
+    "id": 202607,
+    "releasedate": 2026,
+    "titlekorean": "만약에 우리",
+    "titleenglish": "If Only We Were",
+    "director": "",
+    "country": "한국",
+    "etc": ""
+  },
+  {
+    "id": 202607,
     "releasedate": 1915,
     "titlekorean": "은행",
     "titleenglish": "The Bank",

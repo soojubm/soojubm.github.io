@@ -58,7 +58,7 @@
 
 .page {
   min-height: calc(100vh - var(--navbar-height));
-  padding: 0 var(--layout-padding-inline) calc(var(--space-4) * 6);
+  padding: var(--layout-content-space-top) var(--layout-padding-inline) calc(var(--space-4) * 6);
   padding-left: var(--sidebar-content-shift);
   box-sizing: border-box;
   position: relative;

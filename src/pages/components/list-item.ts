@@ -155,7 +155,7 @@ const main = html`
     </mm-component-guide>
 
     <mm-component-section heading="UserRow" description="사용자 맥락">
-      <mm-menu-item-group>
+      <mm-menu-item-group size="large">
         <mm-user-row
           label="수줍이"
           description="UI Designer"

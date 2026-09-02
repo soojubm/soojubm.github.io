@@ -106,11 +106,6 @@ export const sheetPositionStyles = css`
     --backdrop-blur: var(--surface-backdrop-blur);
   }
 
-  .panel {
-    transform: scale(0.96);
-    transition: transform var(--transition-duration) var(--transition-easing);
-  }
-
   :host([open]) .panel {
     transform: scale(1);
     transition: transform var(--transition-duration) var(--transition-easing-emphasis);
@@ -159,24 +154,28 @@ export const sheetPositionStyles = css`
       border-bottom-left-radius: 0;
       transform: translateX(-100%);
     }
+  }
 
-    &[open] {
-      .panel {
-        transform: translateX(0);
-      }
+  :host([open][placement='left']) {
+    .panel {
+      transform: translateX(0);
     }
   }
 
   :host([placement='right']) {
-    margin-left: auto;
-    height: 100%;
-    max-height: var(--surface-viewport-max-height);
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    transform: translateX(100%);
+    .panel {
+      margin-left: auto;
+      height: 100%;
+      max-height: var(--surface-viewport-max-height);
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      transform: translateX(100%);
+    }
   }
-  :host([open][placement='right']) .panel {
-    transform: translateX(0);
+  :host([open][placement='right']) {
+    .panel {
+      transform: translateX(0);
+    }
   }
 `
 
@@ -315,6 +314,7 @@ export const sheetBodyStyles = css`
     display: flex;
     flex: 1 1 auto;
     min-height: 0;
+    padding-bottom: var(--space-2);
   }
 
   mm-scroll {

@@ -161,8 +161,7 @@ const main = html`
         </mm-flex>
       </mm-surface>
 
-      <!-- tone -->
-      <mm-surface variant="elevated" tone="green" radius="large">
+      <mm-notice variant="danger">
         <mm-text-block
           level="4"
           heading="iPhone을 백업할 수 없음"
@@ -170,7 +169,7 @@ const main = html`
         >
           <mm-button variant="ghost">저장 공간 추가</mm-button>
         </mm-text-block>
-      </mm-surface>
+      </mm-notice>
 
       <mm-flex direction="column" gap="3">
         <mm-top-bar heading="닉네임 변경" role="navigation">

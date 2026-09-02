@@ -57,7 +57,7 @@ export const checkboxStyles = css`
     border-color: var(--checkbox-border-color);
     position: absolute;
     left: 4px;
-    top: 7px;
+    top: 5px;
     transform: rotate(-50deg) scale(0);
   }
 
@@ -75,7 +75,7 @@ export const checkboxStyles = css`
 
   :host([size='large']) input[type='checkbox']:checked + label > span::after {
     left: 8px;
-    top: 8px;
+    top: 9px;
     transform: rotate(-50deg) scale(1.5);
   }
 

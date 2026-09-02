@@ -4,7 +4,6 @@ import { buildAttributeRules } from '@/utils'
 
 export type SurfaceVariant = 'ghost' | 'paper' | 'outlined' | 'filled' | 'elevated'
 export type SurfaceRadius = 'default' | 'large'
-export type SurfaceTone = 'green'
 
 /**
  * variant별로 재정의하는 surface 컴포넌트 토큰. 이 오브젝트가 실제 :host([variant=...]) 규칙을
@@ -27,18 +26,6 @@ const surfaceVariants: Record<SurfaceVariant, Record<string, string>> = {
   },
   elevated: {
     '--surface-shadow': '0 4px 12px rgba(0, 0, 0, 0.15)',
-  },
-}
-
-/**
- * tone별로 재정의하는 surface 컴포넌트 토큰. variant와 별개의 축으로,
- * 의미색(성공 등)을 표현할 때만 사용한다.
- */
-const surfaceTones: Record<SurfaceTone, Record<string, string>> = {
-  green: {
-    '--surface-border': 'var(--tag-category-2-border)',
-    '--surface-background-color': 'var(--tag-category-2-bg)',
-    '--surface-text-color': 'var(--tag-category-2-text)',
   },
 }
 
@@ -83,13 +70,4 @@ const surfaceVariantStyles = css`
   ${unsafeCSS(buildAttributeRules('variant', surfaceVariants))}
 `
 
-const surfaceToneStyles = css`
-  ${unsafeCSS(buildAttributeRules('tone', surfaceTones))}
-`
-
-export const surfaceStyles = [
-  surfaceBaseStyles,
-  surfaceRadiusStyles,
-  surfaceVariantStyles,
-  surfaceToneStyles,
-]
+export const surfaceStyles = [surfaceBaseStyles, surfaceRadiusStyles, surfaceVariantStyles]

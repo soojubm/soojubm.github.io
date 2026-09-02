@@ -29,7 +29,7 @@ class UserSnippet extends LitElement {
         ></mm-avatar>
         ${this.renderTag()}
         <div class="entity-detail">
-          <mm-paragraph size="large">${this.name}</mm-paragraph>
+          <mm-heading level="2">${this.name}</mm-heading>
           ${this.renderDescription()}
           <mm-text size="12">${this.email}</mm-text>
           <mm-text size="12">${this.phone}</mm-text>

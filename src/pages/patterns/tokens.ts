@@ -428,15 +428,38 @@ const main = html`
         description="제품의 시각 언어를 구성하는 원자 값입니다. 색상, 글꼴, 간격, 크기, 형태, 레이어, 모션을 토큰으로 관리해 컴포넌트와 패턴이 같은 기준을 공유하게 합니다."
       ></mm-page-header>
 
-      <mm-text-block
-        level="3"
-        heading="토큰 카테고리: Base(Dimension/Surface) / State"
-        description="토큰은 크게 정적인 값을 담는 Base와 인터랙션에
-      따라 적용되는 State로 나뉘며, Base는 다시 크기·간격의 Dimension과 재질·표면의 Surface로
-      구분됩니다."
-      ></mm-text-block>
+      <mm-paragraph-group>
+        <mm-heading level="2">foreground/background/border - subtle, strong</mm-heading>
+        <mm-heading level="2">name-Base(Dimension/Surface)-State-(on-$priority)</mm-heading>
+        <mm-paragraph>
+          <b>Base(Dimension/Surface) / State</b>
+          토큰은 크게 정적인 값을 담는 Base와 인터랙션에 따라 적용되는 State로 나뉘며, Base는 다시
+          크기·간격의 Dimension과 재질·표면의 Surface로 구분됩니다.
+        </mm-paragraph>
+        <mm-paragraph>
+          <b>토큰은 프리미티브와 시멘틱 계층으로 구성됩니다.</b>
+          프리미티브 토큰은 디자인의 기본 값을 정의하고, 시멘틱 토큰은 이를 인터페이스의 역할에
+          매핑합니다.
+        </mm-paragraph>
+        <mm-feature-group>
+          <mm-feature>
+            프리미티브 토큰은 color-, size-, space-와 같이 값의 종류를 기준으로 명명하며, 시멘틱
+            토큰은 background-color, border-color, body-font-size처럼 역할과 용도를 기준으로
+            명명합니다. 이를 통해 토큰의 출처와 목적을 명확하게 구분할 수 있습니다.
+          </mm-feature>
+          <mm-feature>
+            프리미티브 토큰은 color-, size-, space-와 같이 값의 종류를 기준으로 명명하며, 시멘틱
+            토큰은 background-color, border-color, body-font-size처럼 역할과 용도를 기준으로
+            명명합니다. 이를 통해 토큰의 출처와 목적을 명확하게 구분할 수 있습니다.
+          </mm-feature>
+        </mm-feature-group>
 
-      <mm-text-block
+        base — 아무런 추가적인 depth 관계가 없는 기본 surface raised / elevated — 주변보다 한 단계
+        올라온 surface floating — 특정 콘텐츠 흐름에서 분리되어 떠 있는 surface overlay — 다른
+        콘텐츠 위에 겹쳐지는 레이어
+      </mm-paragraph-group>
+
+      <!-- <mm-text-block
         level="3"
         heading="토큰 구조"
         description="토큰은 프리미티브와 시멘틱 계층으로 구성됩니다. 프리미티브 토큰은 디자인의 기본 값을
@@ -444,7 +467,7 @@ const main = html`
     space-와 같이 값의 종류를 기준으로 명명하며, 시멘틱 토큰은 background-color, border-color,
     body-font-size처럼 역할과 용도를 기준으로 명명합니다. 이를 통해 토큰의 출처와 목적을 명확하게
     구분할 수 있습니다."
-      ></mm-text-block>
+      ></mm-text-block> -->
 
       <style>
         .token-color-markers {

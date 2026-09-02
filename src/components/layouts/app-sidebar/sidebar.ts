@@ -53,14 +53,15 @@ export class Sidebar extends LitElement {
       <mm-menu-item-action
         label=${node.title}
         icon=${node.icon}
+        avatar-variant="primary"
         aria-current=${ifDefined(this.isCurrentPage(node.id) ? 'page' : undefined)}
         @click=${() => this.handleStandaloneClick(node.id)}
       >
-        ${node.badge
+        <!-- ${node.badge
           ? html`
               <mm-tag slot="trailing">${node.badge}</mm-tag>
             `
-          : nothing}
+          : nothing} -->
       </mm-menu-item-action>
     `
   }
@@ -69,17 +70,20 @@ export class Sidebar extends LitElement {
     const isOpen = this.openGroupIds.has(node.id)
 
     return html`
-      <mm-list-item
+      <!-- <mm-list-item
         id="${node.id}-btn"
         label=${node.title}
         icon=${node.icon}
+        avatar-variant="tertiary"
         trailing-icon=${ICON_NAMES.EXPAND}
         aria-haspopup="menu"
         aria-controls="${node.id}-menu"
         aria-expanded=${isOpen ? 'true' : 'false'}
         @click=${() => this.handleGroupToggle(node.id)}
-      ></mm-list-item>
-
+      ></mm-list-item> -->
+      <div style="margin-top:1rem">
+        <mm-text size="12" color="light" weight="bold">${node.title}</mm-text>
+      </div>
       <menu id="${node.id}-menu" aria-labelledby="${node.id}-btn">
         ${repeat(
           node.items.filter(item => !('hidden' in item && item.hidden)),
@@ -89,7 +93,6 @@ export class Sidebar extends LitElement {
               emoji="#"
               href="${item.id}.html"
               label="${item.name}"
-              badge=${ifDefined(item.badge || undefined)}
               target="_self"
               hidden-trailing
               aria-current=${ifDefined(this.isCurrentPage(item.id) ? 'page' : undefined)}

@@ -45,7 +45,7 @@ const main = html`
     ></mm-page-header>
 
     <mm-component-example>
-      <mm-grid column-min-width="160px" gap="4">
+      <mm-grid columns="4" column-min-width="160px" gap="4">
         <mm-flex direction="column" gap="2">
           <mm-paragraph>1:1</mm-paragraph>
           <mm-thumbnail src="/src/images/temp.png" alt="멋진 풍경" ratio="1:1"></mm-thumbnail>

@@ -40,10 +40,17 @@ export const SITEMAP: SitemapNode[] = [
   },
   {
     type: 'standalone',
+    id: 'signifier',
+    title: 'Foundations',
+    icon: ICON_NAMES.DESIGN,
+  },
+  {
+    type: 'standalone',
     id: 'tokens',
     title: 'Tokens',
     icon: ICON_NAMES.PALETTE,
   },
+
   {
     type: 'standalone',
     id: 'all-menu',
@@ -152,21 +159,13 @@ export const SITEMAP: SitemapNode[] = [
       { id: 'contact', name: 'Contact', hidden: true },
     ],
   },
-
-  // 3. 하단 독립 메뉴 (작성 중)
-  {
-    type: 'standalone',
-    id: 'signifier',
-    title: 'Foundations',
-    icon: ICON_NAMES.DESIGN,
-    badge: 'draft',
-  },
   {
     type: 'standalone',
     id: 'pattern',
     title: 'Patterns',
     icon: ICON_NAMES.GRID_VIEW,
     badge: 'draft',
+    hidden: true,
   },
 ]
 

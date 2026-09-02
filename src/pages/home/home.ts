@@ -73,6 +73,16 @@ const componentReferences: ComponentReferenceItemData[] = [
     label: 'Building with M3 Expressive',
     external: true,
   },
+  {
+    href: 'https://codelabs.developers.google.com/codelabs/the-lit-path?hl=ko#0',
+    label: 'Codelabs - The Lit Path',
+    external: true,
+  },
+  {
+    href: 'https://developer.mozilla.org/ko/docs/Web/Accessibility/Guides/Understanding_WCAG',
+    label: 'Understanding WCAG',
+    external: true,
+  },
 ]
 
 const main = html`

@@ -6,18 +6,12 @@ const noticeVariantTokens = {
   success: {
     // TODO on-
     '--notice-foreground-color': 'var(--color-success-foreground)',
-    '--notice-background-color': 'var(--color-warning-background)',
-    '--notice-border-color': 'var(--color-success)',
   },
   warning: {
     '--notice-foreground-color': 'var(--color-warning-foreground)',
-    '--notice-background-color': 'var(--color-warning)',
-    '--notice-border-color': 'var(--color-warning)',
   },
   danger: {
     '--notice-foreground-color': 'var(--color-danger-foreground)',
-    '--notice-background-color': 'var(--color-danger)',
-    '--notice-border-color': 'var(--color-danger)',
   },
 }
 

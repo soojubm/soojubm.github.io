@@ -4,7 +4,6 @@ import { customElement } from 'lit/decorators.js'
 import { SITEMAP } from '@/sitemap'
 import { getCurrentPageId } from '@/utils'
 /* 프로필 메뉴 popover 초안. 되살릴 때 템플릿으로 되돌린다.
-   Lit은 HTML 주석 안 바인딩을 지원하지 않아 템플릿에 주석으로 남기지 않는다.
 import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
 import soojubmImage from '@/images/soojubm.png'
 

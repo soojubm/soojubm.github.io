@@ -2,7 +2,6 @@ import { html } from 'lit'
 
 import { renderDocumentLayout } from '@/components/layouts/document-layout'
 /* Signifier 가이드·아이콘 카탈로그 초안. 되살릴 때 템플릿으로 되돌린다.
-   Lit은 HTML 주석 안 바인딩을 지원하지 않아 템플릿에 주석으로 남기지 않는다.
 import type { FilterOption } from '@/components/common/button/semantics/filter-button-group'
 import type { IconName } from '@/components/common/icon-button/semantics/icon-names'
 
@@ -267,6 +266,11 @@ const iconCategoryOptions: FilterOption[] = [
 
 const main = html`
   <main class="page">
+
+           <mm-page-header
+      heading="Foundations"
+    ></mm-page-header>
+
     <mm-flex direction="column" gap="16">
       <!-- <mm-page-header
         heading="Signifier"
@@ -278,41 +282,146 @@ const main = html`
         heading="Component Level"
         description="Level은 디자인 시스템 전반에서 요소의 구조적 위계를 정의하는 파운데이션으로, spacing을 비롯한 여러 속성값이 element, group, section 등 단계에 따라 다른 기준을 갖도록 하기 위해 사용합니다. 특정 컴포넌트에 종속되지 않고, spacing 토큰 체계 자체의 축으로 기능합니다."
       >
+
+      <mm-paragraph size="large">What are design tokens?</mm-paragraph>
+      <mm-surface variant="elevated" padding="16">
+              <mm-caption>Section</mm-caption>
+
+
+          <div style="display:flex;align-items:center;justify-content:center;width:200px;height:200px;border-radius:50%;background-color:#bbb;">
+            <mm-caption>Group</mm-caption>
+            <div style="display:flex;align-items:center;justify-content:center;width:100px;height:100px;border-radius:50%;background-color:#ccc;"><mm-caption>Element</mm-caption></div>
+            <div style="display:flex;align-items:center;justify-content:center;width:100px;height:100px;border-radius:50%;background-color:#ccc;"><mm-caption>Element</mm-caption></div>
+          </div>
+
+          <div>overlay</div>
+        </mm-surface>
         <mm-grid columns="3">
           <div>
             <h3>Element</h3>
-            <p>1</p>
+            <p> 단일 UI 유닛 내부/사이의 가장 좁은
+        간격 (예: 아이콘-텍스트, 버튼 padding).</p>
           </div>
           <div>
             <h3>Group</h3>
-            <p>1</p>
+            <p> 관련 요소들을 묶는 중간 단위 사이의 간격 (예: 폼 필드 그룹, 버튼 그룹).</p>
           </div>
           <div>
             <h3>Section</h3>
-            <p>1</p>
+            <p>카드, 블록, 페이지 구획 등 최상위 레이아웃 단위 사이의 간격.</p>
           </div>
         </mm-grid>
 
-        목적: "이 간격이 얼마나 넓어야 하는가"를 개별 컴포넌트마다 판단하지 않고, 소속된 구조적
-        단계(level)에 따라 일관되게 결정하기 위함입니다. Element: 단일 UI 유닛 내부/사이의 가장 좁은
-        간격 (예: 아이콘-텍스트, 버튼 padding). Group: 관련 요소들을 묶는 중간 단위 사이의 간격 (예:
-        폼 필드 그룹, 버튼 그룹). Section: 카드, 블록, 페이지 구획 등 최상위 레이아웃 단위 사이의
-        간격. 적용 방식: spacing 토큰은 --spacing-{level}-{size} 구조를 따르며 (예:
-        --spacing-element-md), 컴포넌트는 자신이 속한 level에 맞는 토큰만 참조합니다. 확장성: 현재는
-        spacing에 적용하지만, 추후 radius, shadow 등 다른 파운데이션에도 동일 level 체계를 확장
-        적용할 수 있습니다.
+        <mm-text weight="bold">왜 사용하나요?</mm-text>
+
+        "이 간격이 얼마나 넓어야 하는가"를 개별 컴포넌트마다 판단하지 않고, 소속된 구조적
+        단계(level)에 따라 일관되게 결정하기 위함입니다. 적용 방식: spacing 토큰은 --spacing-{level}-{size} 구조를 따르며 (예:
+        --spacing-element-md), 컴포넌트는 자신이 속한 level에 맞는 토큰만 참조합니다. 
       </mm-text-block>
 
-      <section>
-        <mm-text-block
-          level="2"
-          heading="Depth"
-          description="layer(z-index)와 surface는 같은 질문에서 출발한다"
-        ></mm-text-block>
+      ├── Spatial Structure
+│   ├── Page / Layout
+│   ├── Surface
+│   └── Overlay
 
-        <mm-grid columns="2">
+
+
+    <mm-text-block level="2" heading="Overlay" description="시각적 형태(Dialog, Sheet 등)가 아니라 행동 계약으로 Fixed Sheet와 Anchored Sheet로 나뉜다.">
+    
+
+    <article class="table" role="table" aria-label="Apple News+ vs Apple News">
+      <div class="row plans-features" role="row">
+        <div class="visuallyhidden title" role="columnheader"><span hidden>Feaures</span></div>
+        <div class="column column-newsplus " role="columnheader">
+          <div role="text">
+            <mm-caption>Anchored</mm-caption>
+            <p class="plans-table-columnheader header-price typography-plans-price" aria-label="$12.99 per month">
+              $12.99/mo.</p>
+          </div>
+        </div>
+        <div class="column column-news large-2 medium-2 small-2" role="columnheader">
+          <div role="text">
+            <mm-caption>Floating</mm-caption>
+            <p class="plans-table-columnheader header-price typography-plans-price">Always free</p>
+          </div>
+        </div>
+      </div>
+       <div role="row" class="row">
+        <div class="column title" role="rowheader">
+          <mm-paragraph size="large">닫기 버튼을 제공하나요?</mm-paragraph>
+        </div>
+        <div class="column large-2 medium-3 small-3 column-newsplus" role="cell">
+          <i role="presentation" class="icon icon-check" aria-hidden="true"></i>
+          <!-- <span role="text" class="visuallyhidden">included</span> -->
+        </div>
+        <div class="column large-2 medium-2 small-2 column-news" role="cell">
+          <!-- <span role="text" class="visuallyhidden">not included</span> -->
+        </div>
+      </div>
+      <div role="row" class="row">
+        <div class="column title" role="rowheader">
+          <mm-paragraph size="large">ESC로 닫을 수 있나요?</mm-paragraph>
+        </div>
+        <div class="column large-2 medium-3 small-3 column-newsplus" role="cell">
+          <i role="presentation" class="icon icon-check" aria-hidden="true"></i>
+          <!-- <span role="text" class="visuallyhidden">included</span> -->
+        </div>
+        <div class="column large-2 medium-2 small-2 column-news" role="cell">
+          <!-- <span role="text" class="visuallyhidden">not included</span> -->
+        </div>
+      </div>
+            <div role="row" class="row">
+        <div class="column title" role="rowheader">
+          <mm-paragraph size="large">modality? 배경을 클릭할 수 있나요?</mm-paragraph>
+        </div>
+        <div class="column large-2 medium-3 small-3 column-newsplus" role="cell">
+          <i role="presentation" class="icon icon-check" aria-hidden="true"></i>
+          <!-- <span role="text" class="visuallyhidden">included</span> -->
+        </div>
+        <div class="column large-2 medium-2 small-2 column-news" role="cell">
+          <!-- <span role="text" class="visuallyhidden">not included</span> -->
+        </div>
+      </div>
+    </article>
+
+    <style>
+      .table {
+        width: 100%;
+      }
+      .row {
+        display: flex;
+        width: 100%;
+        border-bottom: var(--border);
+      }
+      .row .title {
+        width: 66.66667%;
+      }
+
+      .row .column-newsplus, .row .column-news {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 16.66667%;
+      }
+
+      .icon-check:before {
+        content: '✔';
+      }
+    </style>  
+    
+    <p>행동(modality·dismiss·reference)은 컨트롤러가 책임지는 별도 관심사고, 외형(elevation·
+        background·radius·width·placement)은 컨트롤러와 무관하게 구현체가 조합한다.</p>
+      <mm-text-list
+        texts=${JSON.stringify([
+          'surface — elevation·background·radius.',
+          'width — 패널 너비.',
+          'placement — 패널 위치. mm-sheet는 center/bottom/left/right, mm-popover는 top-left/top-right/bottom-left/bottom-right.',
+        ])}
+      ></mm-text-list>
+
+      <mm-grid columns="2">
           <mm-paragraph>
-            <strong>??</strong>
+            <strong>Surface</strong>
             —
             <code>ghost</code>
             <code>outlined</code>
@@ -324,7 +433,7 @@ const main = html`
             (카드, 패널)처럼 페이지 본문 안에서 쌓이는 요소.
           </mm-paragraph>
           <mm-paragraph>
-            <strong>오버레이</strong>
+            <strong>Overlay</strong>
             —
             <code>elevated</code>
             는 화면 위에 떠 있는 요소를 그림자로 강조한다. layer의 overlay·modal·chrome처럼 콘텐츠
@@ -340,25 +449,102 @@ const main = html`
           </mm-paragraph>
         </mm-grid>
 
-        <mm-surface variant="filled" style="margin-top: var(--space-4)">
-          <mm-paragraph>
-            아직 확정 전. surface의 시스템 레벨(elevated)이 layer의 시스템 레벨(overlay 이상)과 항상
-            짝을 이루는지, 아니면 elevated가 콘텐츠 안에서도 쓰일 수 있는지는 사용례가 더 쌓인 뒤
-            판단한다.
-          </mm-paragraph>
-        </mm-surface>
-      </section>
 
-      <mm-flex direction="column" gap="4">
-        <mm-text size="24" weight="bold" as="h2">Editorial</mm-text>
+    <mm-text-block
+      level="2"
+      heading-level="2"
+      heading="Anchored Overlay / Popover"
+      description="트리거에 앵커되어 뜨는 비모달 패널 프리미티브입니다. popover 자신은 role을 갖지 않고, 안에 무엇을 담는지에 따라 Menu·ListBox 같은 접근성 패턴의 컨테이너가 됩니다. 열림·닫힘과 바깥 클릭·ESC 닫힘은 popover가 소유하고, 좌표는 placement, 폭은 width로 정합니다."
+    >
+    </mm-text-block>
 
+
+
+    <mm-text-list
+      texts=${JSON.stringify([
+        'mm-popover — 앵커 패널. 위치·크기·닫힘만 책임진다.',
+        'reference — 트리거.',
+        'modality — 배경 클릭 가능·스크롤 가능.',
+        'dismiss — 외부 클릭 또는 ESC. 포커스 트랩 없음.',
+        '용례: Dropdown, Tooltip, 사이드 패널, Select.',
+      ])}
+    ></mm-text-list>
+
+    <mm-text-block
+      level="3"
+      heading-level="3"
+      heading="Menu"
+      description="트리거를 누르면 뜨는 행동 목록입니다. 누르면 즉시 실행되거나 닫히며, 실행형 액션과 체크박스·라디오형 옵션을 함께 담을 수 있습니다."
+    >
+      <mm-text-list
+        variant="number"
+        texts='[
+              "mm-popover — 패널",
+              "mm-menu-item-group (role=menu, 기본값)",
+              "mm-menu-item-action · mm-menu-item-link — role=menuitem",
+              "mm-menu-item-checkbox-group(role=group) &gt; mm-menu-item-checkbox — role=menuitemcheckbox",
+              "mm-menu-item-radio-group(role=radiogroup) &gt; mm-menu-item-radio — role=menuitemradio"
+            ]'
+      ></mm-text-list>
+
+      <mm-text-block
+        level="3"
+        heading-level="3"
+        heading="ListBox"
+        description="여러 값 중 하나 또는 여러 개를 고르고 그 선택 상태를 유지하는 목록입니다. 고르면 닫히는 Menu와 달리, 지금 무엇이 선택되어 있는지가 핵심입니다."
+      >
+        <mm-text-list
+          variant="number"
+          texts='[
+              "mm-popover — 패널",
+              "mm-menu-item-group role=\\"listbox\\" — Menu와 같은 컨테이너, role만 override",
+              "mm-menu-item-action role=\\"option\\" — role prop이 menuitem 대신 option을 지원한다"
+            ]'
+        ></mm-text-list>
+        <mm-paragraph size="small" color="light">
+          mm-select는 지금 이 조합을 role=menu/menuitem 기본값 그대로 사용해 단일 선택을 흉내내고
+          있습니다. 엄밀한 listbox 시맨틱(aria-selected 등)이 필요해지면, 새 컴포넌트를 만들지 않고
+          같은 조합의 role만 listbox/option으로 바꾸면 됩니다.
+        </mm-paragraph>
+      </mm-text-block>
+    </mm-text-block>
+
+
+
+    <!-- TODO dismissable  -->
+
+
+        
+
+      <mm-text-block level="2" heading="Fixed Overlay">
         <mm-paragraph>
-          사용자는 디스크립션을 자세히 읽기를 원하지 않으므로, 필요한 내용을 빠르게 캐치할 수 있도록
+          viewport를 reference로 삼아 화면 중앙·가장자리에 위치하며, 배경과의 상호작용을 차단하는
+          modal 행동 계약. Backdrop(dim)이 뒤를 덮고, 포커스는 시트 내부에 갇힌다(focus trap).
+          닫기는 명시적인 버튼 액션으로만 허용하는 것이 원칙이며, 배경 클릭·ESC로 닫는 기능은
+          중요도가 낮은 작업에서만 예외적으로 허용한다.
+        </mm-paragraph>
+        <mm-text-list
+          texts=${JSON.stringify([
+            'reference — viewport.',
+            'modality — 배경 클릭 불가·스크롤 불가.',
+            'dismiss — 명시 버튼 우선, 배경 클릭·ESC는 예외적으로만 허용. 포커스 트랩, aria-modal="true".',
+            '구현: mm-sheet, mm-dialog(mm-sheet와 SheetController 배관 공유).',
+            '용례: 삭제 확인, 중요 정보 입력, 오류 처리, 결제 흐름, bottom sheet/drawer.',
+          ])}
+        ></mm-text-list>
+      </mm-text-block>
+
+
+
+      <br />
+
+
+        <mm-text-block heading="Editorial" description="사용자는 디스크립션을 자세히 읽기를 원하지 않으므로, 필요한 내용을 빠르게 캐치할 수 있도록
           간결하게 쓰는 게 좋다. 한 줄에 50자, 세 줄 이하로 쓸 것을 권장하고 있다. 텍스트를 간결하게
           유지하고 전달할 내용을 스캐너블한 덩어리로 나누는 것은, 유저들이 그들의 이해도와 이
-          서비스를 활용하는 능력에 대해 신뢰를 갖게 만든다. (Easy scanning)
-        </mm-paragraph>
-
+          서비스를 활용하는 능력에 대해 신뢰를 갖게 만든다. (Easy scanning)">
+        
+        
         <mm-text-block
           level="4"
           heading="Message / Description"
@@ -386,9 +572,9 @@ const main = html`
           "기타"
         ]'
           ></mm-text-list>
-        </mm-text-block>
-      </mm-flex>
-    </mm-flex>
+        </mm-text-block></mm-text-block>
+
+
   </main>
 `
 
