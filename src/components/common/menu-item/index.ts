@@ -1,4 +1,5 @@
 import '@/components/common/menu-item/menu-item-group'
+import '@/components/common/menu-item/menu-list'
 import '@/components/common/menu-item/semantics/menu-item-checkbox'
 import '@/components/common/menu-item/semantics/menu-item-checkbox-group'
 import '@/components/common/menu-item/semantics/menu-item-link'

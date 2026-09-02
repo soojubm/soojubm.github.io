@@ -24,12 +24,6 @@ export class NavbarSearch extends LitElement {
     :host {
       display: inline-flex;
     }
-
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-2);
-    }
   `
 
   @state() private isOpen = false
@@ -58,14 +52,14 @@ export class NavbarSearch extends LitElement {
       <mm-sheet
         class="js-search-sheet"
         placement="center"
-        width="medium"
+        width="large"
         style="--surface-backdrop-blur: 2px"
         ?open=${this.isOpen}
         @sheet-close=${this.closeSearch}
       >
         <mm-top-bar type="back"></mm-top-bar>
         <mm-sheet-body>
-          <form role="search">
+          <form role="search" style="display: flex; flex-direction: column; gap: var(--space-2)">
             <mm-searchfield
               placeholder="컴포넌트, 패턴을 검색하세요"
               .value=${this.query}
@@ -183,11 +177,10 @@ export class NavbarSearch extends LitElement {
         <mm-search-suggestion>고슴도치</mm-search-suggestion>
       </mm-search-suggestions>
 
-      <mm-menu-item-group aria-label="최근 검색">
-        <mm-paragraph color="light">최근 검색</mm-paragraph>
+      <mm-menu-list heading="최근 검색">
         <mm-menu-item-action label="고슴이" emoji="🦔"></mm-menu-item-action>
         <mm-menu-item-action label="개구리" emoji="🐸"></mm-menu-item-action>
-      </mm-menu-item-group>
+      </mm-menu-list>
     `
   }
 
@@ -203,8 +196,7 @@ export class NavbarSearch extends LitElement {
       `
     }
     return html`
-      <mm-menu-item-group aria-label="검색 결과">
-        <mm-paragraph color="light">검색 결과</mm-paragraph>
+      <mm-menu-list heading="검색 결과">
         ${repeat(
           this.results,
           result => result.url,
@@ -219,7 +211,7 @@ export class NavbarSearch extends LitElement {
             ></mm-menu-item-action>
           `,
         )}
-      </mm-menu-item-group>
+      </mm-menu-list>
     `
   }
 

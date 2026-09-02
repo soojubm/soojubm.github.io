@@ -6,7 +6,6 @@ import type { ComponentReferenceItemData } from '@/components/domains/component/
 import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
 import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
 
-import { AVATAR_VARIANT_TYPE_UNION } from '@/components/common/avatar'
 import { renderDocumentLayout } from '@/components/layouts/document-layout'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -42,12 +41,13 @@ const componentProps: ComponentPropItemData[] = [
   { name: "slot='trailing'", type: 'HTMLElement', optional: true },
   { name: 'emoji', type: 'string', optional: true },
   { name: 'avatar-src', type: 'string', optional: true },
-  { name: 'avatar-variant', type: `${AVATAR_VARIANT_TYPE_UNION} = 'tertiary'`, optional: true },
   { name: 'avatar-shape', type: '', optional: true },
   { name: 'tone', type: "'danger' | string", optional: true },
   { name: 'disabled', type: 'boolean', optional: true },
   { name: 'mm-menu-item-group role', type: "'menu' | 'listbox' = 'menu'", optional: true },
   { name: 'mm-menu-item-group size', type: "'large'", optional: true },
+  { name: 'mm-menu-list heading', type: 'string', optional: true },
+  { name: 'mm-menu-list size', type: "'large'", optional: true },
   { name: 'mm-menu-item-radio-group size', type: "'large'", optional: true },
   { name: 'mm-menu-item-checkbox-group size', type: "'large'", optional: true },
 ]
@@ -122,6 +122,16 @@ const main = html`
       ></mm-text-list>
     </mm-component-guide>
 
+    <mm-component-section
+      heading="MenuList"
+      description="소제목과 메뉴 항목 목록을 한 묶음으로 전시합니다. heading을 제목 요소로 렌더해 목록에 aria-labelledby로 연결합니다."
+    >
+      <mm-menu-list heading="최근 검색">
+        <mm-menu-item-action label="고슴이" emoji="🦔"></mm-menu-item-action>
+        <mm-menu-item-action label="개구리" emoji="🐸"></mm-menu-item-action>
+      </mm-menu-list>
+    </mm-component-section>
+
     <mm-component-section heading="MenuItemCheckboxGroup">
       <mm-menu-item-checkbox-group aria-label="알림 설정">
         <mm-menu-item-checkbox
@@ -183,14 +193,16 @@ const main = html`
     </mm-component-section>
 
     <mm-component-section heading="MenuItemLink">
-      <mm-menu-item-group>
+      <mm-menu-item-group size="large">
         <mm-menu-item-link
           size="small"
           icon="app-window"
           label="수줍이 앱"
           target="_self"
           description="앱에서 게시물을 엽니다."
-        ></mm-menu-item-link>
+        >
+          <mm-accent-tag slot="trailing">신규</mm-accent-tag>
+        </mm-menu-item-link>
         <mm-menu-item-link
           size="small"
           icon="open-in-browser"
@@ -212,7 +224,7 @@ const main = html`
       heading="Setting Item"
       description="설정 메뉴에 적합한 레이아웃과 상호작용을 가진 MenuItemRow입니다."
     >
-      <mm-menu-item-group>
+      <mm-menu-item-group size="large" aria-label="설정 메뉴">
         <mm-setting-item
           icon="code"
           label="철저한 코드 리뷰"

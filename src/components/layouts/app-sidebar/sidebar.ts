@@ -80,10 +80,7 @@ export class Sidebar extends LitElement {
         aria-expanded=${isOpen ? 'true' : 'false'}
         @click=${() => this.handleGroupToggle(node.id)}
       ></mm-list-item> -->
-      <div style="margin-top:1rem">
-        <mm-text size="12" color="light" weight="bold">${node.title}</mm-text>
-      </div>
-      <menu id="${node.id}-menu" aria-labelledby="${node.id}-btn">
+      <mm-menu-list heading=${node.title}>
         ${repeat(
           node.items.filter(item => !('hidden' in item && item.hidden)),
           item => item.id,
@@ -99,7 +96,7 @@ export class Sidebar extends LitElement {
             ></mm-menu-item-link>
           `,
         )}
-      </menu>
+      </mm-menu-list>
     `
   }
 
