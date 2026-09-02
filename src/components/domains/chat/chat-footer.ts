@@ -10,7 +10,6 @@ export class ChatFooter extends LitElement {
     resetStyles,
     css`
       :host {
-        padding: var(--space-4);
         background: var(--surface-chrome-background-color);
         backdrop-filter: var(--surface-chrome-backdrop-filter);
         box-sizing: border-box;
@@ -26,6 +25,7 @@ export class ChatFooter extends LitElement {
         margin-inline: auto;
       }
 
+      /* inner 왜 있어야 되는 거였지 */
       .inner {
         display: flex;
         flex-direction: column;
@@ -33,6 +33,8 @@ export class ChatFooter extends LitElement {
         max-width: 800px;
         margin: 0 auto;
         gap: var(--space-3);
+        padding: var(--space-4) var(--layout-padding-inline);
+        box-sizing: border-box;
       }
     `,
   ]

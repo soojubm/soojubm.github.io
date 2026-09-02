@@ -36,11 +36,6 @@ export class Select extends LitElement {
         width: var(--select-width);
       }
 
-      /* 폭을 명시하면 패널이 트리거와 같은 폭이어야 하므로 popover의 바닥값을 물린다 */
-      :host(:not([width='auto'])) mm-popover {
-        --surface-min-width: 0;
-      }
-
       /* full(100%)이 아니면 호스트가 트리거 폭이므로, 좌측 placement는 트리거 왼쪽에 앵커해 오른쪽으로 자란다. */
       :host(:not([width='100%'])) mm-popover[placement='bottom-left']::part(panel),
       :host(:not([width='100%'])) mm-popover[placement='top-left']::part(panel) {

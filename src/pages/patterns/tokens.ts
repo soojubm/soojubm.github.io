@@ -447,11 +447,6 @@ const main = html`
             토큰은 background-color, border-color, body-font-size처럼 역할과 용도를 기준으로
             명명합니다. 이를 통해 토큰의 출처와 목적을 명확하게 구분할 수 있습니다.
           </mm-feature>
-          <mm-feature>
-            프리미티브 토큰은 color-, size-, space-와 같이 값의 종류를 기준으로 명명하며, 시멘틱
-            토큰은 background-color, border-color, body-font-size처럼 역할과 용도를 기준으로
-            명명합니다. 이를 통해 토큰의 출처와 목적을 명확하게 구분할 수 있습니다.
-          </mm-feature>
         </mm-feature-group>
 
         base — 아무런 추가적인 depth 관계가 없는 기본 surface raised / elevated — 주변보다 한 단계
