@@ -7,7 +7,7 @@ import '@/components/common/text/semantics/heading'
 /**
  * <mm-content-section>
  * 제목과 슬롯 콘텐츠를 한 묶음으로 배치하는 페이지 콘텐츠 섹션입니다.
- * heading이 있으면 level 2 제목으로 렌더하고, 없으면 본문만 묶습니다.
+ * heading이 있으면 heading-level(기본 2) 제목으로 렌더하고, 없으면 본문만 묶습니다.
  */
 @customElement('mm-content-section')
 export class ContentSection extends LitElement {
@@ -27,6 +27,7 @@ export class ContentSection extends LitElement {
   ]
 
   @property({ type: String }) heading = ''
+  @property({ type: Number, attribute: 'heading-level' }) headingLevel = 2
 
   render() {
     return html`
@@ -41,7 +42,7 @@ export class ContentSection extends LitElement {
     if (!this.heading) return nothing
 
     return html`
-      <mm-heading level="2">${this.heading}</mm-heading>
+      <mm-heading level=${this.headingLevel}>${this.heading}</mm-heading>
     `
   }
 }

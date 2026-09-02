@@ -300,7 +300,7 @@ const main = html`
         ></mm-foundation-item>
       </mm-grid>
 
-      <mm-content-section heading="Component Level">
+      <mm-content-section heading-level="3" heading="Component Level">
         <mm-paragraph>
           간격을 비롯한 값은 요소가 속한 구조적 단계에 따라 다른 기준을 갖습니다. 컴포넌트마다
           간격을 따로 판단하지 않고, 소속된 단계에 맞는 토큰만 참조합니다.

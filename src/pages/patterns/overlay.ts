@@ -10,7 +10,7 @@ const main = html`
     ></mm-page-header>
 
     <mm-content-section-list>
-      <mm-content-section heading="Anchored overlay">
+      <mm-content-section heading-level="3" heading="Anchored overlay">
         <mm-text-list
           variant="check"
           texts='[
@@ -37,7 +37,7 @@ const main = html`
         ></mm-keyword-tag-group>
       </mm-content-section>
 
-      <mm-content-section heading="Fixed overlay">
+      <mm-content-section heading-level="3" heading="Fixed overlay">
         <mm-text-list
           variant="check"
           texts='[
@@ -53,7 +53,7 @@ const main = html`
         ></mm-keyword-tag-group>
       </mm-content-section>
 
-      <mm-content-section heading="Stacking">
+      <mm-content-section heading-level="3" heading="Stacking">
         <mm-paragraph>
           겹침 순서는 숫자가 아니라 그룹 토큰으로 정하고, 같은 그룹 안에서만 비교합니다.
         </mm-paragraph>

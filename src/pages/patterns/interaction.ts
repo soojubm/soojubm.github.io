@@ -10,7 +10,7 @@ const main = html`
     ></mm-page-header>
 
     <mm-content-section-list>
-      <mm-content-section heading="Interactive signifiers">
+      <mm-content-section heading-level="3" heading="Interactive signifiers">
         <mm-paragraph>
           클릭 가능성은 형태로 드러냅니다. 이 단서는 장식이나 일반 강조로 쓰지 않습니다.
         </mm-paragraph>
@@ -32,7 +32,7 @@ const main = html`
         </mm-grid>
       </mm-content-section>
 
-      <mm-content-section heading="States">
+      <mm-content-section heading-level="3" heading="States">
         <mm-paragraph>
           상태 표현은 컴포넌트가 소유하고 아래 토큰을 공유합니다. 상태는 색상만으로 전달하지
           않습니다.
@@ -77,7 +77,7 @@ const main = html`
         </mm-flex>
       </mm-content-section>
 
-      <mm-content-section heading="Selection">
+      <mm-content-section heading-level="3" heading="Selection">
         <mm-paragraph>
           선택 상태도 색상만으로 전달하지 않고 아이콘·형태·ARIA와 함께 제공합니다.
         </mm-paragraph>

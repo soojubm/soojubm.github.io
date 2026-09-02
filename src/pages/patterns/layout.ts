@@ -27,7 +27,7 @@ const main = html`
         </mm-feature-group>
       </mm-content-section>
 
-      <mm-content-section heading="컨테이너 너비">
+      <mm-content-section heading-level="3" heading="컨테이너 너비">
         <mm-paragraph>
           너비는 토큰으로 정하고, 페이지 골격은 mm-page의 width로 지정합니다.
         </mm-paragraph>
@@ -47,7 +47,7 @@ const main = html`
         </mm-flex>
       </mm-content-section>
 
-      <mm-content-section heading="주의">
+      <mm-content-section heading-level="3" heading="주의">
         <mm-text-list
           texts='[
             "화면 크기를 고정하지 않습니다. 375px 같은 고정 폭이 아니라 콘텐츠 성격에 맞는 최대 폭 토큰을 쓰고 나머지는 환경에 맡깁니다.",
