@@ -17,7 +17,8 @@ const main = html`
         <mm-grid columns="3">
           <mm-surface variant="elevated">
             <mm-paragraph>
-              떠 있는 표면은 그 자체가 클릭 대상이거나 안에 클릭할 요소를 담습니다.
+              떠 있는 표면은 그 자체가 클릭 대상이거나 안에 클릭할 요소를 담습니다. 표면 자체가
+              대상이면 hover에서 한 단계 더 떠올라 이를 확인시킵니다.
             </mm-paragraph>
           </mm-surface>
           <mm-surface variant="filled">
@@ -42,7 +43,7 @@ const main = html`
             icon="cursor-pointer"
             size="small"
             label="Hover"
-            description="포인터가 올라온 요소를 배경으로 강조합니다."
+            description="포인터가 올라온 요소를 배경으로 강조합니다. 채울 배경이 없는 떠 있는 표면은 대신 살짝 떠오릅니다."
           ></mm-list-item>
           <mm-list-item
             icon="cube-scan"
@@ -72,6 +73,7 @@ const main = html`
         <mm-flex direction="column" gap="2">
           <code>--interaction-focus-outline</code>
           <code>--interaction-hover-background-color</code>
+          <code>--interaction-hover-lift</code>
           <code>--interaction-active-background-color</code>
           <code>--interaction-active-shadow</code>
         </mm-flex>

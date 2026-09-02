@@ -6,7 +6,8 @@ import '@/components/common/text/semantics/text-block'
 
 /**
  * Foundations Overview에서 하위 문서로 이동하는 링크 카드.
- * 제목·설명은 text-block에 위임하고, host는 카드 박스와 링크 동작만 소유한다.
+ * 제목·설명은 text-block에 위임하고, 표면은 elevated surface 스킨(--border·--shadow-high)을
+ * 따르며 hover에서 --interaction-hover-lift만큼 떠오른다.
  */
 @customElement('mm-foundation-item')
 export class FoundationItem extends LitElement {
@@ -18,21 +19,25 @@ export class FoundationItem extends LitElement {
       }
 
       a {
+        --lift: none;
+
         display: flex;
         flex-direction: column;
         height: 100%;
         padding: var(--space-4);
+        border: var(--border);
         border-radius: var(--radius-large);
         box-sizing: border-box;
-        background: var(--background-subtle-color);
+        background: var(--background-color);
+        box-shadow: var(--shadow-high);
         color: inherit;
+        transform: var(--lift);
         transition: box-shadow var(--transition-duration) var(--transition-easing),
           transform var(--transition-duration) var(--transition-easing);
       }
 
       a:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgb(0 0 0 / 0.15);
+        --lift: var(--interaction-hover-lift);
       }
 
       a:focus-visible {
