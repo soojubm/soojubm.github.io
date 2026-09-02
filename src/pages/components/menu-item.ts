@@ -241,8 +241,8 @@ const main = html`
           ></mm-menu-item-link>
           <mm-menu-item-link
             emoji="#"
-            label="Motion"
-            href="motion.html"
+            label="Layout"
+            href="layout.html"
             target="_self"
             hidden-trailing
           ></mm-menu-item-link>

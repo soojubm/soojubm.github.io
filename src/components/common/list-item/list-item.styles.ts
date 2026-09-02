@@ -37,8 +37,16 @@ export const listItemStyles = css`
   }
 
   .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     min-width: 0;
+    min-height: var(--list-item-size);
     flex: 1;
+  }
+
+  :host([size='small'][has-description]) {
+    --list-item-size: var(--size-40);
   }
 
   mm-text[color='light'] {

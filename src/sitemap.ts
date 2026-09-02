@@ -47,8 +47,11 @@ export const SITEMAP: SitemapNode[] = [
     icon: ICON_NAMES.DESIGN,
     children: [
       { id: 'signifier', name: 'Overview' },
+      { id: 'layout', name: 'Layout' },
+      { id: 'interaction', name: 'Interaction' },
+      { id: 'overlay', name: 'Overlay' },
+      { id: 'content', name: 'Content' },
       { id: 'elevation', name: 'Elevation' },
-      { id: 'motion', name: 'Motion' },
     ],
   },
   {

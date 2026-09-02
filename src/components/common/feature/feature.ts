@@ -1,4 +1,4 @@
-import { LitElement, html } from 'lit'
+import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import { featureStyles } from '@/components/common/feature/feature.styles'
@@ -82,6 +82,8 @@ export class Feature extends LitElement {
       `
     }
     const icon = this.icon || HEADING_ICON_MAP[this.heading] || ''
+    if (!icon) return nothing
+
     const iconName = ICON_MAP[icon] ?? icon
     return html`
       <mm-avatar variant="secondary" size="48">

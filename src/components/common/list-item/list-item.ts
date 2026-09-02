@@ -4,6 +4,7 @@ import { ifDefined } from 'lit/directives/if-defined.js'
 
 import type { AvatarShape, AvatarSize, AvatarVariant } from '@/components/common/avatar/avatar'
 import type { IconName } from '@/components/common/icon-button/semantics/icon-names'
+import type { PropertyValues } from 'lit'
 
 import { listItemStyles } from '@/components/common/list-item/list-item.styles'
 import '@/components/common/avatar/avatar'
@@ -34,6 +35,12 @@ export class ListItem extends LitElement {
 
   @state() private hasAvatar = false
   @state() private hasTrailing = false
+
+  protected willUpdate(changed: PropertyValues) {
+    if (!changed.has('description')) return
+
+    this.toggleAttribute('has-description', Boolean(this.description))
+  }
 
   render() {
     return html`
