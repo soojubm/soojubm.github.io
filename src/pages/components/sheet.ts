@@ -1,4 +1,3 @@
-import '@/components/common/table'
 import { html } from 'lit'
 
 import type { ComponentFeatureItem } from '@/components/domains/component/component-feature-list'
@@ -77,50 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   setupSheetTriggers()
   setupToastTrigger()
-  setupComparisonTable()
 })
-
-function setupComparisonTable() {
-  const table = document.querySelector<HTMLElementTagNameMap['mm-table']>(
-    'mm-table#sheet-comparison-table',
-  )
-  if (!table) return
-
-  const yes = html`
-    <span role="img" aria-label="예">✅</span>
-  `
-  const no = html`
-    <span role="img" aria-label="아니오">❌</span>
-  `
-
-  table.rows = html`
-    <tr>
-      <th scope="row">Dialog</th>
-      <td>${yes}</td>
-      <td>Viewport</td>
-    </tr>
-    <tr>
-      <th scope="row">Bottom Sheet</th>
-      <td>${yes}</td>
-      <td>Viewport</td>
-    </tr>
-    <tr>
-      <th scope="row">Popover</th>
-      <td>${no}</td>
-      <td>Trigger</td>
-    </tr>
-    <tr>
-      <th scope="row">Select</th>
-      <td>${no}</td>
-      <td>Trigger</td>
-    </tr>
-    <tr>
-      <th scope="row">Tooltip</th>
-      <td>${no}</td>
-      <td>Trigger</td>
-    </tr>
-  `
-}
 
 // 자동 닫힘·재시작 타이머는 mm-toast가 소유하므로 트리거는 show()만 호출한다.
 function setupToastTrigger() {
@@ -170,17 +126,6 @@ function sheetPageTemplate() {
 
       <mm-component-guide>
         <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
-
-        <mm-table
-          id="sheet-comparison-table"
-          style="margin-top: var(--space-4)"
-          caption="UI별 modal 여부와 위치 기준 비교"
-          columns='[
-              {"label": "UI"},
-              {"label": "Modal"},
-              {"label": "Anchor"}
-            ]'
-        ></mm-table>
       </mm-component-guide>
 
       <mm-component-section

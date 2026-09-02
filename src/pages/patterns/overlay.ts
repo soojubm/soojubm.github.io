@@ -1,3 +1,4 @@
+import '@/components/common/table'
 import { html } from 'lit'
 
 import { renderDocumentLayout } from '@/components/layouts/document-layout'
@@ -10,6 +11,21 @@ const main = html`
     ></mm-page-header>
 
     <mm-content-section-list>
+      <mm-content-section heading-level="3" heading="Modal × Anchor">
+        <mm-paragraph>
+          배경 차단 여부(modal)와 위치 기준(anchor)이 표면의 종류를 가릅니다.
+        </mm-paragraph>
+        <mm-table
+          id="overlay-classification-table"
+          caption="화면 위로 뜨는 표면의 modal 여부와 위치 기준 비교"
+          columns='[
+            {"label": "UI"},
+            {"label": "Modal"},
+            {"label": "Anchor"}
+          ]'
+        ></mm-table>
+      </mm-content-section>
+
       <mm-content-section heading-level="3" heading="Anchored overlay">
         <mm-text-list
           variant="check"
@@ -76,4 +92,47 @@ const main = html`
 
 document.addEventListener('DOMContentLoaded', () => {
   renderDocumentLayout(main)
+  setupClassificationTable()
 })
+
+function setupClassificationTable() {
+  const table = document.querySelector<HTMLElementTagNameMap['mm-table']>(
+    'mm-table#overlay-classification-table',
+  )
+  if (!table) return
+
+  const yes = html`
+    <span role="img" aria-label="예">✅</span>
+  `
+  const no = html`
+    <span role="img" aria-label="아니오">❌</span>
+  `
+
+  table.rows = html`
+    <tr>
+      <th scope="row">Dialog</th>
+      <td>${yes}</td>
+      <td>Viewport</td>
+    </tr>
+    <tr>
+      <th scope="row">Bottom Sheet</th>
+      <td>${yes}</td>
+      <td>Viewport</td>
+    </tr>
+    <tr>
+      <th scope="row">Popover</th>
+      <td>${no}</td>
+      <td>Trigger</td>
+    </tr>
+    <tr>
+      <th scope="row">Select</th>
+      <td>${no}</td>
+      <td>Trigger</td>
+    </tr>
+    <tr>
+      <th scope="row">Tooltip</th>
+      <td>${no}</td>
+      <td>Trigger</td>
+    </tr>
+  `
+}

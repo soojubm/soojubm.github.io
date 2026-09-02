@@ -35,7 +35,7 @@ const componentFeatures: ComponentFeatureItem[] = [
       '프라이머리 버튼의 레이블은 다이얼로그 제목의 동사와 페어링되어야 한다. 부정어로 묻지 말 것.',
   },
   {
-    heading: 'Dismissible',
+    heading: 'Modality',
     description: '닫기 버튼과 ESC로 사용자가 언제든 흐름을 중단하고 빠져나갈 수 있어야 합니다.',
   },
 ]

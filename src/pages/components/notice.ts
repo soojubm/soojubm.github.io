@@ -35,7 +35,7 @@ const componentFeatures: ComponentFeatureItem[] = [
       '성공·경고·오류·정보 등 의미 상태를 variant 톤으로 전달합니다. 색상만으로 의미를 전달하지 않고 아이콘·텍스트를 함께 제공합니다.',
   },
   {
-    heading: 'Dismissible',
+    heading: 'Transient',
     description:
       '사용자가 확인한 알림을 직접 닫아 치울 수 있습니다. 닫기 버튼은 dismissible 속성으로 제공하고, mm-dismiss 이벤트로 닫힘 시점을 감지합니다.',
   },
