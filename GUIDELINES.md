@@ -83,7 +83,8 @@
 
 - 색상, 간격, radius는 CSS 토큰을 사용하고 하드코딩하지 않는다.
 - 새로운 토큰을 만들지 않는다. 필요한 의미에 가장 가까운 기존 토큰을 사용한다.
-- 컴포넌트 이름이 붙은 토큰(`--avatar-border` 등)은 variables.css에서 재정의하지 않는다. 테마마다 달라져야 할 값이면 컴포넌트가 자기 기본값에서 `--border`·`--border-transparent` 같은 전역 primitive를 그대로 참조하게 하고, 테마 블록은 그 primitive만 재정의한다. 단, 이 패턴은 실제 DOM에 렌더되는 요소(컴포넌트 `:host`, `.navbar-user` 같은 plain CSS 클래스)에서만 성립한다. `data-theme`는 `body`에 적용되는데 variables.css의 `:root {}`는 `body`의 조상(`html`)이라, `:root`에 `--token: var(--primitive)`를 선언하면 그 참조는 절대 테마가 적용되지 않는 `html` 시점 값으로 고정되어 버린다. `:root`에서 기본값을 선언해야 하는 토큰은 테마가 재정의하는 primitive 대신 절대 재정의되지 않는 원시값(`--gray0` 등)을 참조한다.
+- 컴포넌트 이름이 붙은 토큰(`--avatar-border` 등)은 variables.css에서 재정의하지 않는다. 테마별로 달라져야 하면 컴포넌트가 자기 기본값에서 `--border` 같은 전역 primitive를 참조하고, 테마 블록은 그 primitive만 재정의한다.
+- 테마가 재정의하는 토큰은 그 값을 소비하는 요소(`:root`든 컴포넌트 `:host`든)가 기본값을 스스로 선언하지 않는다. 조상에 이미 값이 있으면 테마 재정의가 상속되지 않기 때문이다. `:root`에서 기본값이 꼭 필요하면 테마가 건드리지 않는 원시값(`--gray0` 등)을 참조한다(세부 메커니즘은 variables.css 주석).
 - `var(--token, fallback)` 형태의 소비처 fallback은 안티패턴이다. 토큰이 모든 테마에서 값을 갖도록 `:root` 기본값 + 테마 블록 재정의로 선언하고, 소비처는 fallback 없이 참조한다.
 - width·height처럼 요소 자체의 고정 치수는 간격 토큰이 아니라 size 토큰을 우선 사용한다.
 - 컴포넌트 토큰은 소비하는 CSS 속성 이름으로 짓는다(`background`→`-background-color`, `border-radius`→`-border-radius`, `color:`→`-text-color`, `height`→`-height`). 한 값이 여러 속성을 먹이면 특정 속성명으로 좁히지 않고 제네릭 이름을 유지한다.
@@ -93,7 +94,6 @@
 ### 테마
 
 - 고도(elevation) 그림자는 원시값 `--shadow-high`를 쓰고, 표면(카드·팝오버·툴팁 등) 전용이며 radio·switch 같은 일반 컨트롤 요소에는 주지 않는다.
-- 테마 블록이 재정의해야 하는 토큰의 기본값을 컴포넌트가 `:host { --token: 기본값; }`처럼 스스로 선언해두면, 조상에서 같은 이름을 재정의해도 적용되지 않는다(그 요소 자신에게 이미 선언된 값이 있으면 상속을 타지 않기 때문). 애초에 컴포넌트가 그 토큰의 기본값을 선언하지 않는다.
 
 ### 레이어(z-index)
 
