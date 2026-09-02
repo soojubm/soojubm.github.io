@@ -53,7 +53,6 @@ export class Sidebar extends LitElement {
       <mm-menu-item-action
         label=${node.title}
         icon=${node.icon}
-        avatar-variant="primary"
         aria-current=${ifDefined(this.isCurrentPage(node.id) ? 'page' : undefined)}
         @click=${() => this.handleStandaloneClick(node.id)}
       >
