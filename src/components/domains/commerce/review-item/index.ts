@@ -3,6 +3,10 @@ import { customElement, property } from 'lit/decorators.js'
 
 import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
 import { resetStyles } from '@/stylesheets/shared.styles'
+import '@/components/common/surface'
+import '@/components/common/icon'
+import '@/components/common/text/semantics/paragraph'
+import '@/components/common/list-item'
 
 /**
  * mm-review-item

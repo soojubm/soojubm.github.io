@@ -4,6 +4,14 @@ import { ifDefined } from 'lit/directives/if-defined.js'
 import { repeat } from 'lit/directives/repeat.js'
 
 import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
+import '@/components/common/icon-button'
+import '@/components/overlay/sheet'
+import '@/components/layouts/top-bar/index'
+import '@/components/common/input/semantics/searchfield'
+import '@/components/domains/search-suggestions'
+import '@/components/common/menu-item'
+import '@/components/common/menu-item/semantics/menu-item-action'
+import '@/components/common/text/semantics/paragraph'
 
 type PagefindResult = { url: string; meta: { title: string }; excerpt: string }
 type Pagefind = {

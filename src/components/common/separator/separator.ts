@@ -2,6 +2,7 @@ import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import { separatorStyles } from '@/components/common/separator/separator.styles'
+import '@/components/common/text/semantics/caption'
 
 type SeparatorScope = 'element' | 'section'
 

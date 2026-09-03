@@ -3,6 +3,8 @@ import { customElement, property } from 'lit/decorators.js'
 
 import '@/components/common/link/link'
 import { arrayAttributeConverter } from '@/utils'
+import '@/components/common/text/semantics/heading'
+import '@/components/common/surface'
 
 export interface ComponentReferenceItemData {
   href: string

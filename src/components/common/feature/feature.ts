@@ -2,47 +2,10 @@ import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import { featureStyles } from '@/components/common/feature/feature.styles'
-import { ICON_NAMES, type IconName } from '@/components/common/icon-button/semantics/icon-names'
-
-// 컴포넌트 외부로 상수 데이터를 분리하여 메모리 재할당 방지
-const ICON_MAP: Record<string, IconName> = {
-  interactive: ICON_NAMES.CLICK,
-  easyScanning: ICON_NAMES.VIEW,
-  groupable: ICON_NAMES.HELP,
-  check: ICON_NAMES.SUCCESS,
-  warning: ICON_NAMES.WARNING,
-  error: ICON_NAMES.ERROR,
-  user: ICON_NAMES.USER_CIRCLE,
-}
-
-const HEADING_ICON_MAP: Record<string, IconName> = {
-  Glanceable: 'cursor-pointer',
-  Categorical: 'task-list',
-  Groupable: 'multi-window',
-  Structural: 'task-list',
-  Representative: 'profile-circle',
-  Feedback: 'cursor-pointer',
-  'Interactive - action': ICON_NAMES.CLICK,
-  'Interactive - selection': ICON_NAMES.SELECTED,
-  Freeform: ICON_NAMES.FIELD,
-  Immediate: ICON_NAMES.ON_TAG,
-  'One signifier, one primary meaning': 'check',
-  'Do not use interaction cues as decoration': 'interactive',
-  'Do not rely on color alone': ICON_NAMES.VIEW,
-  Transient: ICON_NAMES.SPARKS,
-  Anchored: ICON_NAMES.LINK,
-  Validatable: ICON_NAMES.DOCUMENT_CHECK,
-  Persistent: ICON_NAMES.APP_WINDOW,
-  Statusful: ICON_NAMES.ANNOUNCEMENT,
-  Disclosure: ICON_NAMES.EXPAND,
-  Modality: ICON_NAMES.LOCK,
-  '타겟의 명료 (Clarity of Audience)': 'archery',
-  '용도의 분명 (Explicit Intent)': 'cube-scan',
-  '규모의 약속 (Controlled Scope)': 'compress',
-  '내용의 간결 (Economy of Content)': 'stats-report',
-  '정보의 당위 (Justified Information)': 'ruler-combine',
-  '변화 전제 (Designed for Change)': 'coins-swap',
-}
+import { type IconName } from '@/components/common/icon-button/semantics/icon-names'
+import '@/components/common/text/semantics/text-block'
+import '@/components/common/avatar'
+import '@/components/common/icon'
 
 @customElement('mm-feature')
 export class Feature extends LitElement {
@@ -79,13 +42,11 @@ export class Feature extends LitElement {
         </mm-avatar>
       `
     }
-    const icon = this.icon || HEADING_ICON_MAP[this.heading] || ''
-    if (!icon) return nothing
+    if (!this.icon) return nothing
 
-    const iconName = ICON_MAP[icon] ?? icon
     return html`
       <mm-avatar variant="secondary" size="48">
-        <mm-icon size="large" name=${iconName}></mm-icon>
+        <mm-icon size="large" name=${this.icon}></mm-icon>
       </mm-avatar>
     `
   }

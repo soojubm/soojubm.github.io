@@ -4,6 +4,7 @@ import { customElement, property } from 'lit/decorators.js'
 import '@/components/common/button/button-group'
 import '@/components/common/button/semantics/hashtag-link'
 import { arrayAttributeConverter } from '@/utils'
+import '@/components/common/text/semantics/heading'
 
 export interface ComponentRelatedItemData {
   href: string

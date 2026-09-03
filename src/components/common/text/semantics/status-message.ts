@@ -1,5 +1,6 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import '@/components/common/text/semantics/text-block'
 
 @customElement('mm-status-message')
 class StatusMessage extends LitElement {

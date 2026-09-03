@@ -3,6 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 
 import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
 import { emit } from '@/utils'
+import '@/components/common/toggle-button/toggle-button-group'
 
 type ViewMode = 'grid' | 'list'
 

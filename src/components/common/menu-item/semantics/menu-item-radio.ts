@@ -8,6 +8,7 @@ import {
   withMenuItemPresentation,
 } from '@/components/common/menu-item/menu-item.utils'
 import { emit } from '@/utils'
+import '@/components/common/radio'
 
 @customElement('mm-menu-item-radio')
 export class MenuItemRadio extends withMenuItemPresentation(LitElement) {

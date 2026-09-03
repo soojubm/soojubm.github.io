@@ -9,6 +9,7 @@ import '@/components/common/button/button-group'
 import '@/components/common/text/semantics/status-message'
 
 import { resultStyles } from '@/components/common/result/result.styles'
+import '@/components/common/avatar'
 
 @customElement('mm-result')
 class Result extends LitElement {

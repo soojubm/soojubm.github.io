@@ -4,6 +4,10 @@ import { customElement, property, state } from 'lit/decorators.js'
 import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
 import { noticeStyles } from '@/components/common/notice/notice.styles'
 import { emit } from '@/utils'
+import '@/components/common/icon'
+import '@/components/common/text/semantics/heading'
+import '@/components/common/text/semantics/paragraph'
+import '@/components/common/icon-button/semantics/dismiss-button'
 
 const VARIANT_ICONS: Record<string, string> = {
   success: ICON_NAMES.SUCCESS,

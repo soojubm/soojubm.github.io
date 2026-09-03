@@ -7,6 +7,7 @@ import {
   withMenuItemPresentation,
   withMenuItemToggleState,
 } from '@/components/common/menu-item/menu-item.utils'
+import '@/components/common/checkbox'
 
 @customElement('mm-menu-item-checkbox')
 export class MenuItemCheckbox extends withMenuItemToggleState(

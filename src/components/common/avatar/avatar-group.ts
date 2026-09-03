@@ -5,6 +5,7 @@ import type { AvatarSize } from '@/components/common/avatar/avatar'
 
 import { resetStyles } from '@/stylesheets/shared.styles'
 import { arrayAttributeConverter } from '@/utils'
+import '@/components/common/avatar/avatar'
 import '@/components/common/text/text'
 
 @customElement('mm-avatar-group')

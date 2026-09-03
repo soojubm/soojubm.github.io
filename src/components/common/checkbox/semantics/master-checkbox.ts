@@ -6,6 +6,8 @@ import type { AriaIdRef } from '@/types'
 
 import { checkboxStyles } from '@/components/common/checkbox/checkbox.styles'
 import { uniqueId } from '@/utils'
+import '@/components/common/surface'
+import '@/components/common/text/semantics/paragraph'
 
 @customElement('mm-master-checkbox')
 export class MasterCheckbox extends LitElement {

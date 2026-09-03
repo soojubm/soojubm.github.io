@@ -3,6 +3,7 @@ import { customElement, property, queryAssignedElements } from 'lit/decorators.j
 
 import type { IconName } from '@/components/common/icon-button/semantics/icon-names'
 import '@/components/common/list-item/list-item'
+import '@/components/common/switch'
 
 type DisableableElement = HTMLElement & { disabled?: boolean }
 

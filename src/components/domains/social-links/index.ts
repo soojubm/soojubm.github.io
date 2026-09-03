@@ -3,6 +3,9 @@ import { customElement, property } from 'lit/decorators.js'
 
 import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
 import { resetStyles } from '@/stylesheets/shared.styles'
+import '@/components/common/menu-item'
+import '@/components/common/menu-item/semantics/menu-item-link'
+import '@/components/common/avatar'
 
 const PLATFORMS = [
   { key: 'github', label: 'Github', icon: ICON_NAMES.GITHUB },

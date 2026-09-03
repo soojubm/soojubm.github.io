@@ -1,6 +1,7 @@
 import './src/components'
 
-import { applyTheme, scrollAnimation, stopAnimation } from './src/utils'
+import { scrollAnimation, stopAnimation } from './src/utils/scroll'
+import { applyTheme } from './src/utils/theme'
 
 const WINDOWS_FONT_FAMILY = "'Alan Sans', 'Pretendard', sans-serif"
 

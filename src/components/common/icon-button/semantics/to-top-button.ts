@@ -1,12 +1,13 @@
 import { LitElement, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 
+import '@/components/common/icon-button/icon-button'
+import { iconButtonActionStyles } from '@/components/common/icon-button/icon-button.styles'
 import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
-import { resetStyles } from '@/stylesheets/shared.styles'
 
 @customElement('mm-to-top-button')
 export class ToTopButton extends LitElement {
-  static styles = [resetStyles]
+  static styles = [iconButtonActionStyles]
 
   render() {
     return html`

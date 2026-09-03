@@ -3,6 +3,7 @@ import { customElement } from 'lit/decorators.js'
 
 import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
 import '@/components/common/list-item/list-item'
+import '@/components/common/menu-item/semantics/menu-item-action'
 
 @customElement('mm-add-button')
 export class AddButton extends LitElement {

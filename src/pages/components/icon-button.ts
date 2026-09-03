@@ -18,7 +18,8 @@ const componentProps: ComponentPropItemData[] = [
     name: 'variant',
     type: "'primary' | 'secondary' | 'tertiary' | 'ghost' | 'destructive' = 'tertiary'",
   },
-  { name: 'size', type: "'small' | 'medium' = 'medium'" },
+  { name: 'size', type: "'xsmall' | 'small' | 'medium' = 'medium'" },
+  { name: 'shape', type: "'circle'", optional: true },
   { name: 'tooltip', type: 'string', optional: true },
   { name: 'tooltip-placement', type: "'left' | 'center' | 'right'", optional: true },
   { name: 'aria-label - TODO tooltip과 병합', type: 'string', optional: true },
@@ -30,10 +31,17 @@ const componentProps: ComponentPropItemData[] = [
 ]
 
 const componentTokens: ComponentTokenItemData[] = [
-  { name: 'button-height', default: 'var(--size-32)' },
-  { name: 'button-text-color', default: 'var(--foreground-color)' },
-  { name: 'button-background-color', default: 'var(--background-subtle-color)' },
-  { name: 'button-border-radius', default: 'var(--radius)' },
+  { name: 'icon-button-size', default: 'var(--size-32)', prop: 'size' },
+  { name: 'icon-button-text-color', default: 'var(--foreground-color)', prop: 'variant' },
+  {
+    name: 'icon-button-background-color',
+    default: 'var(--background-subtle-color)',
+    prop: 'variant',
+  },
+  { name: 'icon-button-border', default: 'var(--border-transparent)', prop: 'variant' },
+  { name: 'icon-button-border-radius', default: 'var(--radius)', prop: 'shape' },
+  { name: 'icon-button-shadow', default: 'none', prop: 'variant' },
+  { name: 'icon-button-backdrop-filter', default: 'none', prop: 'variant' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [
@@ -112,6 +120,13 @@ const main = html`
           tooltip-placement="center"
           disabled
         ></mm-icon-button>
+      </mm-button-group>
+      <mm-separator></mm-separator>
+      <mm-button-group>
+        <mm-icon-button icon="xmark" size="medium" aria-label="medium"></mm-icon-button>
+        <mm-icon-button icon="xmark" size="small" aria-label="small"></mm-icon-button>
+        <mm-icon-button icon="xmark" size="xsmall" aria-label="xsmall"></mm-icon-button>
+        <mm-icon-button icon="xmark" shape="circle" aria-label="circle"></mm-icon-button>
       </mm-button-group>
     </mm-component-example>
     <mm-component-props .props=${componentProps}></mm-component-props>

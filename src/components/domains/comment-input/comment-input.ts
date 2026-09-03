@@ -7,6 +7,7 @@ import '@/components/common/input/textarea'
 import { Textarea } from '@/components/common/input/textarea'
 import '@/components/domains/textfield-action-bar'
 import { emit } from '@/utils'
+import '@/components/domains/textfield-action-bar/index'
 
 @customElement('mm-comment-input')
 export class CommentInput extends LitElement {

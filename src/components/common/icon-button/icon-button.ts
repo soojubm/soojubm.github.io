@@ -7,9 +7,12 @@ import type { AriaBoolean, AriaHasPopup, AriaIdRef } from '@/types'
 
 import { interactiveControlStyles } from '@/components/common/button/button.styles'
 import { iconButtonStyles } from '@/components/common/icon-button/icon-button.styles'
+import '@/components/overlay/tooltip'
+import '@/components/common/icon'
 
 export type IconButtonVariant = 'primary' | 'secondary' | 'tertiary' | 'ghost' | 'destructive'
-export type IconButtonSize = 'small' | 'medium'
+export type IconButtonSize = 'xsmall' | 'small' | 'medium'
+export type IconButtonShape = 'circle'
 
 @customElement('mm-icon-button')
 class IconButton extends LitElement {
@@ -18,6 +21,7 @@ class IconButton extends LitElement {
   @property({ type: String }) icon?: IconName
   @property({ type: String, reflect: true }) variant: IconButtonVariant = 'tertiary'
   @property({ type: String, reflect: true }) size: IconButtonSize = 'medium'
+  @property({ type: String, reflect: true }) shape?: IconButtonShape
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = ''
   @property({ type: String }) tooltip = ''
   @property({ type: String, attribute: 'tooltip-placement' }) tooltipPlacement = ''

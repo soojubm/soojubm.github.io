@@ -5,6 +5,7 @@ import '@/components/common/text/semantics/heading'
 import '@/components/common/tag/semantics/keyword-tag'
 import { componentTokensStyles, tokenStyles } from '@/components/domains/component/component.styles'
 import { arrayAttributeConverter } from '@/utils'
+import '@/components/common/meta-item'
 
 export interface ComponentTokenItemData {
   name: string

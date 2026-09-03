@@ -4,6 +4,10 @@ import { customElement } from 'lit/decorators.js'
 import { footerStyles } from '@/components/common/footer/footer.styles'
 import '@/components/common/text/semantics/paragraph'
 import soojubmImage from '@/images/soojubm.png'
+import '@/components/domains/user-snippet/index'
+import '@/components/domains/social-links/index'
+import '@/components/common/text/semantics/caption'
+import '@/components/common/icon-button/semantics/to-top-button'
 
 @customElement('mm-footer')
 export class Footer extends LitElement {

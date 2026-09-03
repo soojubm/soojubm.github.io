@@ -8,7 +8,7 @@ const iconButtonVariantTokens = {
     '--icon-button-text-color': 'var(--foreground-color-on-solid)',
   },
   secondary: {
-    'border-radius': 'var(--radius-full)',
+    '--icon-button-border-radius': 'var(--radius-full)',
     '--icon-button-border': 'var(--border)',
     '--icon-button-background-color': 'var(--surface-base-background-color)',
     '--icon-button-backdrop-filter': 'var(--surface-base-backdrop-filter)',
@@ -27,6 +27,16 @@ const iconButtonVariantTokens = {
 export const iconButtonActionStyles = css`
   :host {
     display: inline-flex;
+  }
+`
+
+/**
+ * 누름 상태는 표준 aria-pressed로 표현하므로, 스킨도 해당 attribute selector를 단일 기준으로 둔다.
+ * 아이콘 버튼은 아이콘 자체가 채워져 선택을 알리므로 색만 바꾼다.
+ */
+export const iconButtonSelectedStyles = css`
+  button[aria-pressed='true'] {
+    --icon-button-text-color: var(--interaction-selected-foreground-color);
   }
 `
 
@@ -66,5 +76,13 @@ export const iconButtonStyles = css`
 
   :host([size='small']) {
     --icon-button-size: var(--size-24);
+  }
+
+  :host([size='xsmall']) {
+    --icon-button-size: var(--size-16);
+  }
+
+  :host([shape='circle']) {
+    --icon-button-border-radius: var(--radius-full);
   }
 `

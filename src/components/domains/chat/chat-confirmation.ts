@@ -7,6 +7,7 @@ import '@/components/common/button/button-group'
 import '@/components/common/notice/notice'
 import '@/components/common/text/text'
 import { emit } from '@/utils'
+import '@/components/common/text/semantics/paragraph'
 
 export type ConfirmationStatus = 'pending' | 'accepted' | 'rejected'
 

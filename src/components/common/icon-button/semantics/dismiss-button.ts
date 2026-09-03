@@ -1,26 +1,17 @@
 import { LitElement, html } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
+import { customElement } from 'lit/decorators.js'
 
 import '@/components/common/icon-button/icon-button'
 import { iconButtonActionStyles } from '@/components/common/icon-button/icon-button.styles'
+import { withIconAction } from '@/components/common/icon-button/icon-button.utils'
 import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
-import { emit } from '@/utils'
 
 /**
  * 배너, 알림, 토스트 등 비파괴적 해제 버튼.
  */
 @customElement('mm-dismiss-button')
-export class DismissButton extends LitElement {
+export class DismissButton extends withIconAction(LitElement, 'dismiss') {
   static styles = [iconButtonActionStyles]
-
-  @property({ type: String }) tooltip = ''
-  @property({ type: String, attribute: 'tooltip-placement' }) tooltipPlacement = ''
-  @property({ type: Boolean }) disabled = false
-
-  private handleClick = () => {
-    if (this.disabled) return
-    emit(this, 'dismiss')
-  }
 
   render() {
     return html`
@@ -32,7 +23,7 @@ export class DismissButton extends LitElement {
         tooltip=${this.tooltip}
         tooltip-placement=${this.tooltipPlacement}
         ?disabled=${this.disabled}
-        @click=${this.handleClick}
+        @click=${this.handleActionClick}
       ></mm-icon-button>
     `
   }

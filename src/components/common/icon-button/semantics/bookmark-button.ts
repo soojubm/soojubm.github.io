@@ -1,10 +1,13 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import '@/components/common/icon-button/icon-button'
 import { withToggleSelection } from '@/components/common/button/button.utils'
+import {
+  iconButtonSelectedStyles,
+  iconButtonStyles,
+} from '@/components/common/icon-button/icon-button.styles'
 import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
-import { resetStyles } from '@/stylesheets/shared.styles'
+import '@/components/common/icon'
 
 /**
  * 북마크/즐겨찾기 토글 버튼.
@@ -13,18 +16,12 @@ import { resetStyles } from '@/stylesheets/shared.styles'
 @customElement('mm-bookmark-button')
 export class BookmarkButton extends withToggleSelection(LitElement) {
   static styles = [
-    resetStyles,
+    iconButtonStyles,
+    iconButtonSelectedStyles,
     css`
       :host {
-        display: inline-flex;
-      }
-
-      mm-icon-button {
+        --icon-button-background-color: transparent;
         --icon-button-text-color: var(--foreground-subtle-color);
-      }
-
-      :host([selected]) mm-icon-button {
-        --icon-button-text-color: var(--interaction-selected-foreground-color);
       }
     `,
   ]
@@ -33,14 +30,15 @@ export class BookmarkButton extends withToggleSelection(LitElement) {
 
   render() {
     return html`
-      <mm-icon-button
-        variant="ghost"
-        icon=${this.iconName}
+      <button
+        type="button"
         aria-pressed=${this.selected ? 'true' : 'false'}
         aria-label=${this.actionLabel}
         ?disabled=${this.disabled}
         @click=${this.handleToggleClick}
-      ></mm-icon-button>
+      >
+        <mm-icon name=${this.iconName}></mm-icon>
+      </button>
     `
   }
 

@@ -7,6 +7,9 @@ import { ifDefined } from 'lit/directives/if-defined.js'
 import '@/components/common/button/semantics/read-more-button'
 import { componentPropsStyles } from '@/components/domains/component/component.styles'
 import { arrayAttributeConverter, uniqueId } from '@/utils'
+import '@/components/common/meta-item'
+import '@/components/common/text'
+import '@/components/common/flex'
 
 export interface ComponentPropItemData {
   name: string

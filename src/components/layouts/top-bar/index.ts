@@ -4,6 +4,8 @@ import { customElement, property } from 'lit/decorators.js'
 import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
 import { topBarStyles } from '@/components/layouts/top-bar/top-bar.styles'
 import { emit } from '@/utils'
+import '@/components/common/text/semantics/heading'
+import '@/components/common/icon-button'
 
 // TODO
 // top-bar-titlte / sheet-header-title

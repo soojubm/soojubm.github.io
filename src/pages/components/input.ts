@@ -89,7 +89,7 @@ const main = html`
           <mm-textfield
             value="Invalid"
             placeholder="Placeholder..."
-            invalid
+            aria-invalid="true"
             validation-text="이미 등록된 이메일입니다."
           ></mm-textfield>
           <mm-separator scope="element"></mm-separator>
@@ -121,7 +121,7 @@ const main = html`
         placeholder="name@example.com"
         helper="회사 이메일을 입력하세요."
         validation-text="올바른 이메일 형식으로 입력하세요."
-        invalid
+        aria-invalid="true"
         style="width: 280px"
       >
         <mm-icon slot="leading" name="mail"></mm-icon>

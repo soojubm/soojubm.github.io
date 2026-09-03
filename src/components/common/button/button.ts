@@ -10,6 +10,7 @@ import {
   buttonSizeStyles,
   buttonVariantStyles,
 } from '@/components/common/button/button.styles'
+import '@/components/common/icon'
 
 export type ButtonVariant = 'primary' | 'secondary' | 'tertiary' | 'ghost' | 'destructive'
 export type ButtonSize = 'huge' | 'large' | 'medium' | 'small'

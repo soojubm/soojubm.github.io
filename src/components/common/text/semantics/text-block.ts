@@ -3,6 +3,8 @@ import { customElement, property } from 'lit/decorators.js'
 
 import { resetStyles } from '@/stylesheets/shared.styles'
 import '@/components/common/tag/tag'
+import '@/components/common/text/text'
+import '@/components/common/text/semantics/paragraph'
 
 // TODO section 임 text-block은 단독으로 쓰이지 않는다 보통.
 // heading-level → 시맨틱 heading 태그. 값이 없거나 미정의 레벨이면 비-heading(span).

@@ -5,6 +5,8 @@ import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names
 import { inputStyles } from '@/components/common/input/input.styles'
 import '@/components/common/input/input'
 import { emit, uniqueId } from '@/utils'
+import '@/components/common/icon'
+import '@/components/common/icon-button/semantics/clear-button'
 
 @customElement('mm-searchfield')
 class SearchField extends LitElement {

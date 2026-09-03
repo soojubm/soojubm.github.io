@@ -5,7 +5,8 @@ import { ifDefined } from 'lit/directives/if-defined.js'
 import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
 import { emit } from '@/utils'
 import '@/components/common/avatar/avatar'
-import '@/components/common/button/semantics/clear-button'
+import '@/components/common/icon-button/semantics/clear-button'
+import '@/components/common/text/semantics/caption'
 
 @customElement('mm-attachment-item')
 export class AttachmentItem extends LitElement {

@@ -1,13 +1,39 @@
-import { LitElement, css, html } from 'lit'
+import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import '@/components/common/feature/feature-group'
 import '@/components/common/feature/feature'
+import { ICON_NAMES, type IconName } from '@/components/common/icon-button/semantics/icon-names'
 import { arrayAttributeConverter } from '@/utils'
 
 export interface ComponentFeatureItem {
   heading: string
   description: string
+  icon?: IconName
+}
+
+/**
+ * 문서에서 컴포넌트 성격을 설명하는 특성 어휘와 그 아이콘.
+ * 어휘 자체는 signifier 문서가 정의하므로, 새 heading은 그 목록에 먼저 추가한다.
+ * 어휘에 없는 일회성 heading은 항목에서 icon을 직접 지정한다.
+ */
+const FEATURE_ICONS: Record<string, IconName> = {
+  Anchored: ICON_NAMES.LINK,
+  Disclosure: ICON_NAMES.EXPAND,
+  Feedback: ICON_NAMES.CLICK,
+  Freeform: ICON_NAMES.FIELD,
+  Glanceable: ICON_NAMES.CLICK,
+  Groupable: 'multi-window',
+  Immediate: ICON_NAMES.ON_TAG,
+  'Interactive - action': ICON_NAMES.CLICK,
+  'Interactive - selection': ICON_NAMES.SELECTED,
+  Modality: ICON_NAMES.LOCK,
+  Persistent: ICON_NAMES.APP_WINDOW,
+  Representative: 'profile-circle',
+  Statusful: ICON_NAMES.ANNOUNCEMENT,
+  Structural: 'task-list',
+  Transient: ICON_NAMES.SPARKS,
+  Validatable: ICON_NAMES.DOCUMENT_CHECK,
 }
 
 /**
@@ -37,6 +63,7 @@ class ComponentFeatureList extends LitElement {
             <mm-feature
               heading=${feature.heading}
               description=${feature.description}
+              icon=${feature.icon ?? FEATURE_ICONS[feature.heading] ?? nothing}
               ?centered=${this.centered}
             ></mm-feature>
           `,

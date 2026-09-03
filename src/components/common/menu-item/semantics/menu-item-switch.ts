@@ -7,6 +7,7 @@ import {
   withMenuItemPresentation,
   withMenuItemToggleState,
 } from '@/components/common/menu-item/menu-item.utils'
+import '@/components/common/switch'
 
 @customElement('mm-menu-item-switch')
 export class MenuItemSwitch extends withMenuItemToggleState(withMenuItemPresentation(LitElement)) {

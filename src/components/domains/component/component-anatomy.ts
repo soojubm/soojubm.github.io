@@ -5,6 +5,7 @@ import { componentContentFrameStyles } from '@/components/domains/component/comp
 import '@/components/common/text/semantics/textList'
 import { resetStyles } from '@/stylesheets/shared.styles'
 import { arrayAttributeConverter } from '@/utils'
+import '@/components/common/text'
 
 /**
  * 컴포넌트 해부도(Anatomy) 섹션.

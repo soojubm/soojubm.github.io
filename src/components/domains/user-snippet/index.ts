@@ -5,6 +5,10 @@ import { ifDefined } from 'lit/directives/if-defined.js'
 import type { AvatarVariant } from '@/components/common/avatar/avatar'
 
 import { entityStyles } from '@/components/domains/user-snippet/user-snippet.styles'
+import '@/components/common/text/semantics/heading'
+import '@/components/common/text'
+import '@/components/common/tag/semantics/accent-tag'
+import '@/components/common/text/semantics/paragraph'
 
 @customElement('mm-user-snippet')
 class UserSnippet extends LitElement {

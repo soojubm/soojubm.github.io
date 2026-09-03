@@ -2,6 +2,7 @@ import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import { metaItemStyles } from '@/components/common/meta-item/meta-item.styles'
+import '@/components/common/text/semantics/paragraph'
 
 @customElement('mm-meta-item')
 class MetaItem extends LitElement {

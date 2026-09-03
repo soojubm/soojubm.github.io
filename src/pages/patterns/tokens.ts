@@ -37,11 +37,6 @@ const componentReferences: ComponentReferenceItemData[] = [
   },
 ]
 
-interface TokenEntry {
-  key: string
-  value: string
-}
-
 interface ColorTokenEntry {
   color: string
   token: string
@@ -49,12 +44,11 @@ interface ColorTokenEntry {
   label?: string
 }
 
-const renderTokenItems = (entries: TokenEntry[]) =>
-  entries.map(
-    entry =>
-      html`
-        <mm-token-item key=${entry.key} value=${entry.value}></mm-token-item>
-      `,
+const renderTokenItems = (keys: string[]) =>
+  keys.map(
+    key => html`
+      <mm-token-item key=${key}></mm-token-item>
+    `,
   )
 
 const renderColorTokens = (entries: ColorTokenEntry[]) =>
@@ -287,15 +281,15 @@ const foregroundColorTokens: ColorTokenEntry[] = [
   },
 ]
 
-const interactionTokenItems: TokenEntry[] = [
-  { key: 'interaction-hover-background-color', value: 'var(--gray100)' },
-  { key: 'interaction-hover-lift', value: 'translateY(-2px)' },
-  { key: 'interaction-selected-background-color', value: 'var(--color-primary-subtle)' },
-  { key: 'interaction-selected-foreground-color', value: 'var(--color-primary)' },
-  { key: 'interaction-selected-border-color', value: 'var(--color-primary)' },
-  { key: 'interaction-active-background-color', value: 'var(--color-accent)' },
-  { key: 'interaction-active-shadow', value: '0 0 0 2px #c8f3fa, inset 0 0 0 2px var(--gray0)' },
-  { key: 'interaction-focus-outline', value: '2px solid var(--gray800)' },
+const interactionTokenItems: string[] = [
+  'interaction-hover-background-color',
+  'interaction-hover-lift',
+  'interaction-selected-background-color',
+  'interaction-selected-foreground-color',
+  'interaction-selected-border-color',
+  'interaction-active-background-color',
+  'interaction-active-shadow',
+  'interaction-focus-outline',
 ]
 
 const backgroundColorTokens: ColorTokenEntry[] = [
@@ -319,45 +313,38 @@ const backgroundColorTokens: ColorTokenEntry[] = [
   },
 ]
 
-const typographyTokenItems: TokenEntry[] = [
-  { key: 'font-family', value: 'Alan Sans, Gothic A1, system-ui, sans-serif' },
-  { key: 'font-family-code', value: 'ui-monospace, SFMono-Regular, Menlo, monospace' },
-  { key: 'font-weight-normal', value: '500' },
-  { key: 'font-weight-bold', value: '700' },
-  { key: 'font-size-32', value: '32px' },
-  { key: 'font-size-24', value: '24px' },
-  { key: 'font-size-18', value: '18px' },
-  { key: 'font-size-14', value: '14px' },
-  { key: 'font-size-12', value: '12px' },
-  { key: 'font-line-height-40', value: '40px' },
-  { key: 'font-line-height-32', value: '32px' },
-  { key: 'font-line-height-28', value: '28px' },
-  { key: 'font-line-height-24', value: '24px' },
-  { key: 'font-line-height-16', value: '16px' },
+const typographyTokenItems: string[] = [
+  'font-family',
+  'font-family-code',
+  'font-weight-normal',
+  'font-weight-bold',
+  'font-size-32',
+  'font-size-24',
+  'font-size-18',
+  'font-size-14',
+  'font-size-12',
+  'font-line-height-40',
+  'font-line-height-32',
+  'font-line-height-28',
+  'font-line-height-24',
+  'font-line-height-16',
 ]
 
-const sizeTokenItems: TokenEntry[] = [
-  { key: 'size-16', value: '16px' },
-  { key: 'size-24', value: '24px' },
-  { key: 'size-32', value: '32px' },
-  { key: 'size-40', value: '40px' },
-  { key: 'size-48', value: '48px' },
-  { key: 'size-80', value: '80px' },
-]
+const sizeTokenItems: string[] = ['size-16', 'size-24', 'size-32', 'size-40', 'size-48', 'size-80']
 
 const sizeStageValues = ['16', '24', '32', '40', '48', '80']
 
-const spaceTokenItems: TokenEntry[] = [
-  { key: 'space-1', value: '4px' },
-  { key: 'space-2', value: '8px' },
-  { key: 'space-3', value: '12px' },
-  { key: 'space-4', value: '16px' },
-  { key: 'space-6', value: '24px' },
-  { key: 'space-8', value: '32px' },
-  { key: 'space-12', value: '48px' },
-  { key: 'space-16', value: '64px' },
-  { key: 'space-section', value: 'var(--space-16)' },
-  { key: 'space-1-minus', value: 'calc(var(--space-1) * -1)' },
+const spaceTokenItems: string[] = [
+  'space-1',
+  'space-2',
+  'space-3',
+  'space-4',
+  'space-6',
+  'space-8',
+  'space-12',
+  'space-16',
+  'space-section',
+  'space-1-minus',
 ]
 
 const spaceStageWidths = [
@@ -372,34 +359,34 @@ const spaceStageWidths = [
   'var(--space-16)',
 ]
 
-const layoutTokenItems: TokenEntry[] = [
-  { key: 'navbar-height', value: 'calc(var(--size-32) + 1.5rem)' },
-  { key: 'layout-width-wide', value: '1280px' },
-  { key: 'layout-width-small', value: '640px' },
-  { key: 'layout-width-narrow', value: '400px' },
-  { key: 'layout-width-sidebar', value: 'calc(14rem + 20px)' },
-  { key: 'layout-max-width', value: '100%' },
-  { key: 'layout-padding-inline', value: '5vw' },
-  { key: 'layout-main-space-top', value: 'var(--space-6)' },
-  { key: 'layout-sidebar-space-top', value: 'var(--space-2)' },
+const layoutTokenItems: string[] = [
+  'navbar-height',
+  'layout-width-wide',
+  'layout-width-small',
+  'layout-width-narrow',
+  'layout-width-sidebar',
+  'layout-max-width',
+  'layout-padding-inline',
+  'layout-main-space-top',
+  'layout-sidebar-space-top',
 ]
 
-const borderTokenItems: TokenEntry[] = [
-  { key: 'border-width', value: '1px' },
-  { key: 'border-color', value: 'var(--gray200)' },
-  { key: 'border', value: 'var(--border-width) solid var(--border-color)' },
-  { key: 'border-transparent', value: 'var(--border-width) solid transparent' },
-  { key: 'border-danger', value: 'var(--border-width) solid var(--color-danger)' },
-  { key: 'radius', value: '6px' },
-  { key: 'radius-large', value: '1rem' },
-  { key: 'radius-full', value: '50%' },
+const borderTokenItems: string[] = [
+  'border-width',
+  'border-color',
+  'border',
+  'border-transparent',
+  'border-danger',
+  'radius',
+  'radius-large',
+  'radius-full',
 ]
 
-const shadowTokenItems: TokenEntry[] = [
-  { key: 'shadow-high', value: '0 4px 12px rgba(0, 0, 0, 0.15)' },
-  { key: 'surface-base-shadow', value: 'none' },
-  { key: 'surface-chrome-shadow', value: '0 16px 32px rgba(0,0,0,.2)' },
-  { key: 'surface-overlay-shadow', value: '0 24px 48px rgba(0,0,0,.28)' },
+const shadowTokenItems: string[] = [
+  'shadow-high',
+  'surface-base-shadow',
+  'surface-chrome-shadow',
+  'surface-overlay-shadow',
 ]
 
 const shadowStageValues = [
@@ -408,11 +395,11 @@ const shadowStageValues = [
   'var(--surface-overlay-shadow)',
 ]
 
-const materialTokenItems: TokenEntry[] = [
-  { key: 'surface-chrome-blur', value: '20px' },
-  { key: 'surface-chrome-opacity', value: '0.55' },
-  { key: 'surface-overlay-blur', value: '28px' },
-  { key: 'surface-overlay-opacity', value: '0.7' },
+const materialTokenItems: string[] = [
+  'surface-chrome-blur',
+  'surface-chrome-opacity',
+  'surface-overlay-blur',
+  'surface-overlay-opacity',
 ]
 
 const blurStageSwatches: BlurSwatch[] = [
@@ -420,16 +407,16 @@ const blurStageSwatches: BlurSwatch[] = [
   { opacity: 'var(--surface-overlay-opacity)', blur: 'var(--surface-overlay-blur)' },
 ]
 
-const surfaceTokenItems: TokenEntry[] = [
-  { key: 'surface-base-background-color', value: 'var(--gray0)' },
-  { key: 'surface-base-border', value: 'none' },
-  { key: 'surface-base-backdrop-filter', value: 'none' },
-  { key: 'surface-chrome-background-color', value: 'var(--gray0)' },
-  { key: 'surface-chrome-border', value: 'var(--border)' },
-  { key: 'surface-chrome-backdrop-filter', value: 'none' },
-  { key: 'surface-overlay-background-color', value: 'var(--gray0)' },
-  { key: 'surface-overlay-border', value: 'var(--border)' },
-  { key: 'surface-overlay-backdrop-filter', value: 'none' },
+const surfaceTokenItems: string[] = [
+  'surface-base-background-color',
+  'surface-base-border',
+  'surface-base-backdrop-filter',
+  'surface-chrome-background-color',
+  'surface-chrome-border',
+  'surface-chrome-backdrop-filter',
+  'surface-overlay-background-color',
+  'surface-overlay-border',
+  'surface-overlay-backdrop-filter',
 ]
 
 const borderStageSwatches: BorderSwatch[] = [
@@ -499,32 +486,29 @@ const motionTracks: EasingTrack[] = [
   { easing: 'var(--transition-easing-emphasis)', label: 'transition-easing-emphasis' },
 ]
 
-const transitionTokenItems: TokenEntry[] = [
-  { key: 'transition-duration', value: '180ms' },
-  { key: 'transition-easing', value: 'cubic-bezier(0.4, 0, 0.2, 1)' },
-  { key: 'transition-easing-emphasis', value: 'cubic-bezier(0.18, 1.25, 0.4, 1)' },
+const transitionTokenItems: string[] = [
+  'transition-duration',
+  'transition-easing',
+  'transition-easing-emphasis',
 ]
 
-const animationTokenItems: TokenEntry[] = [
-  { key: 'duration-quickly', value: '0.2s' },
-  { key: 'animation-duration', value: '0.4s' },
-  { key: 'animation-delay-first', value: '0.2s' },
-  { key: 'animation-delay-second', value: '0.4s' },
-  { key: 'animation-delay-third', value: '0.6s' },
+const animationTokenItems: string[] = [
+  'duration-quickly',
+  'animation-duration',
+  'animation-delay-first',
+  'animation-delay-second',
+  'animation-delay-third',
 ]
 
-const componentTokenItems: TokenEntry[] = [
-  { key: 'control-padding', value: 'var(--space-1) var(--space-2)' },
-  { key: 'control-border-radius', value: 'var(--radius-large)' },
-]
+const componentTokenItems: string[] = ['control-padding', 'control-border-radius']
 
-const zIndexTokenItems: TokenEntry[] = [
-  { key: 'material-zindex-base', value: '0' },
-  { key: 'material-zindex-raised', value: '10' },
-  { key: 'material-zindex-chrome', value: '100' },
-  { key: 'material-zindex-overlay', value: '200' },
-  { key: 'material-zindex-modal', value: '300' },
-  { key: 'material-zindex-toast', value: '1000' },
+const zIndexTokenItems: string[] = [
+  'material-zindex-base',
+  'material-zindex-raised',
+  'material-zindex-chrome',
+  'material-zindex-overlay',
+  'material-zindex-modal',
+  'material-zindex-toast',
 ]
 
 const main = html`

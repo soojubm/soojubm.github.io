@@ -4,6 +4,11 @@ import { customElement, property } from 'lit/decorators.js'
 import { focusRing, resetStyles } from '@/stylesheets/shared.styles'
 import '@/components/common/icon-button/semantics/more-button'
 import { arrayAttributeConverter, emit } from '@/utils'
+import '@/components/common/tag/semantics/accent-tag'
+import '@/components/common/thumbnail'
+import '@/components/common/text/semantics/heading'
+import '@/components/common/text/semantics/paragraph'
+import '@/components/common/tag/semantics/keyword-tag-group'
 
 @customElement('mm-portfolio-item')
 export class PortfolioItem extends LitElement {

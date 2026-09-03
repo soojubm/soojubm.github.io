@@ -7,6 +7,7 @@ import '@/components/common/text/semantics/caption'
 import { SelectionIndicatorController } from '@/controllers/selection-indicator-controller'
 import { focusRing } from '@/stylesheets/shared.styles'
 import { arrayAttributeConverter, emit } from '@/utils'
+import '@/components/common/avatar'
 
 export interface BottomBarItem {
   label: string

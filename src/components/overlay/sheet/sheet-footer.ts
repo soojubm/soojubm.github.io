@@ -5,6 +5,7 @@ import type { ActionConfig } from '@/types'
 
 import { sheetFooterStyles } from '@/components/overlay/overlay.styles'
 import { emit } from '@/utils'
+import '@/components/common/button'
 
 @customElement('mm-sheet-footer')
 class SheetFooter extends LitElement {

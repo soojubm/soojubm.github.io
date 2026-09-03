@@ -1,25 +1,17 @@
 import { LitElement, html } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
+import { customElement } from 'lit/decorators.js'
 
 import '@/components/common/icon-button/icon-button'
 import { iconButtonActionStyles } from '@/components/common/icon-button/icon-button.styles'
+import { withIconAction } from '@/components/common/icon-button/icon-button.utils'
 import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
-import { emit } from '@/utils'
 
 /**
  * 모달, 패널, 시트 등 레이어를 닫는 버튼.
  */
 @customElement('mm-close-button')
-export class CloseButton extends LitElement {
+export class CloseButton extends withIconAction(LitElement, 'close') {
   static styles = [iconButtonActionStyles]
-
-  @property({ type: String }) tooltip = ''
-  @property({ type: String, attribute: 'tooltip-placement' }) tooltipPlacement = ''
-  @property({ type: Boolean }) disabled = false
-
-  private handleClick = () => {
-    emit(this, 'close')
-  }
 
   render() {
     return html`
@@ -30,7 +22,7 @@ export class CloseButton extends LitElement {
         tooltip=${this.tooltip}
         tooltip-placement=${this.tooltipPlacement}
         ?disabled=${this.disabled}
-        @click=${this.handleClick}
+        @click=${this.handleActionClick}
       ></mm-icon-button>
     `
   }

@@ -6,6 +6,7 @@ import type { AriaBoolean } from '@/types'
 import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
 import { resetStyles } from '@/stylesheets/shared.styles'
 import { emit } from '@/utils'
+import '@/components/common/button/button'
 
 /**
  * 더보기/접기 토글 버튼.

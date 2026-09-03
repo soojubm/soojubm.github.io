@@ -4,6 +4,7 @@ import { ifDefined } from 'lit/directives/if-defined.js'
 
 import type { AriaInvalid } from '@/types'
 import '@/components/common/input/semantics/textfield'
+import '@/components/common/icon-button/semantics/reveal-button'
 
 @customElement('mm-passwordfield')
 class PasswordField extends LitElement {

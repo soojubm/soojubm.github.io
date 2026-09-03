@@ -2,11 +2,6 @@ import { html } from 'lit'
 
 import { renderLayout } from '@/components/layouts/base-layouts'
 
-interface FaqItem {
-  question: string
-  answer: string
-}
-
 const main = html`
   <mm-page full-width>
     <mm-flex wrap="wrap" gap="0">

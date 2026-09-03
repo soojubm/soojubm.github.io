@@ -8,6 +8,7 @@ import { emit } from '@/utils'
 import '@/components/common/button/semantics/attachment-button'
 import '@/components/common/button/semantics/attachment-item'
 import '@/components/common/tag/semantics/keyword-tag-group'
+import '@/components/common/text/semantics/paragraph'
 
 async function createSampleFiles(): Promise<File[]> {
   const photoBlob = await fetch(soojubmImage).then(response => response.blob())
