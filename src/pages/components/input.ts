@@ -19,9 +19,6 @@ const componentReferences: ComponentReferenceItemData[] = [
     label: '구글의 비밀번호 만들기 팁꾸',
     external: true,
   },
-]
-
-const componentReferences2: ComponentReferenceItemData[] = [
   {
     href: 'https://developer.apple.com/documentation/uikit/uisearchbar',
     label: 'Apple Developer - searchbar',
@@ -60,24 +57,19 @@ const componentTokens: ComponentTokenItemData[] = [
 
 const componentFeatures: ComponentFeatureItem[] = [
   {
-    heading: 'Freeform',
+    heading: 'Interactive - input',
     description:
-      '제한된 선택지가 아니라 자유 형식 값을 받습니다. 사용자 여정에 허들이 될 수 있는 불필요한 정보 입력을 유도하지 마세요 — 모든 텍스트필드는 필수 입력이며, 명확한 이점이 있는 경우에만 "선택입력" 텍스트와 함께 선택 필드를 제안합니다.',
-  },
-  {
-    heading: 'Validatable',
-    description:
-      '입력값 자체의 규칙 위반을 검증하고 오류를 표시합니다. 오류 메시지는 영향을 받는 필드와 연결해 제공합니다.',
+      '제한된 선택지가 아니라 자유 형식 값을 받고, 입력값의 규칙 위반을 검증해 오류를 표시합니다. 오류 메시지는 영향을 받는 필드와 연결합니다. 사용자 여정에 허들이 될 수 있는 불필요한 정보 입력을 유도하지 마세요 — 모든 텍스트필드는 필수 입력이며, 명확한 이점이 있는 경우에만 "선택입력" 텍스트와 함께 선택 필드를 제안합니다.',
   },
   { heading: 'TODO', description: 'TODO' },
 ]
 
 const main = html`
   <main class="page">
-    <mm-text-block
+    <mm-page-header
       heading="Input"
       description="사용자가 정보를 입력하고 제출할 수 있습니다."
-    ></mm-text-block>
+    ></mm-page-header>
 
     <mm-component-aka items='["TextInput", "Input"]'></mm-component-aka>
 
@@ -421,8 +413,6 @@ const main = html`
       </form>
     </mm-component-section>
 
-    <mm-component-references .items=${componentReferences}></mm-component-references>
-
     <mm-component-guide>
       <section class="step" data-align="vertical" style="margin: 1rem 0">
         <div class="step-item">
@@ -544,7 +534,7 @@ const main = html`
 
     <mm-component-related .items=${relatedComponents}></mm-component-related>
 
-    <mm-component-references .items=${componentReferences2}></mm-component-references>
+    <mm-component-references .items=${componentReferences}></mm-component-references>
   </main>
 `
 

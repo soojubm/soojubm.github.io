@@ -18,22 +18,16 @@ export interface ComponentFeatureItem {
  * 어휘에 없는 일회성 heading은 항목에서 icon을 직접 지정한다.
  */
 const FEATURE_ICONS: Record<string, IconName> = {
-  Anchored: ICON_NAMES.LINK,
   Disclosure: ICON_NAMES.EXPAND,
   Feedback: ICON_NAMES.CLICK,
-  Freeform: ICON_NAMES.FIELD,
   Glanceable: ICON_NAMES.CLICK,
-  Groupable: 'multi-window',
-  Immediate: ICON_NAMES.ON_TAG,
   'Interactive - action': ICON_NAMES.CLICK,
+  'Interactive - input': ICON_NAMES.FIELD,
   'Interactive - selection': ICON_NAMES.SELECTED,
   Modality: ICON_NAMES.LOCK,
-  Persistent: ICON_NAMES.APP_WINDOW,
   Representative: 'profile-circle',
   Statusful: ICON_NAMES.ANNOUNCEMENT,
   Structural: 'task-list',
-  Transient: ICON_NAMES.SPARKS,
-  Validatable: ICON_NAMES.DOCUMENT_CHECK,
 }
 
 /**
@@ -53,7 +47,7 @@ class ComponentFeatureList extends LitElement {
   })
   features: ComponentFeatureItem[] = []
 
-  @property({ type: Boolean, reflect: true }) centered = true
+  @property({ type: Boolean, reflect: true }) centered = false
 
   render() {
     return html`

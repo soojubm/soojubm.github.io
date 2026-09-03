@@ -51,11 +51,6 @@ const componentFeatures: ComponentFeatureItem[] = [
     description:
       '레이블 없이 아이콘 하나로 용도를 즉시 알아볼 수 있어야 합니다. 아이콘만으로 모호하다면 tooltip과 aria-label로 뜻을 보강합니다.',
   },
-  {
-    heading: 'Groupable',
-    description:
-      '연속된 아이콘 버튼은 button-group으로 묶어 하나의 도구 단위로 제시합니다. 간격과 정렬은 그룹이 소유합니다.',
-  },
 ]
 
 const main = html`

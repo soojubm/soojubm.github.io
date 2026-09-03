@@ -33,11 +33,6 @@ const componentProps: ComponentPropItemData[] = [
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [
-  {
-    heading: 'Groupable',
-    description:
-      '텍스트가 2개 이상이면 그룹 컴포넌트로 묶습니다. 제목과 설명은 text block으로, 연관 메타 정보는 메타 그룹으로 묶어 간격과 구조를 그룹이 소유합니다.',
-  },
   { heading: 'TODO', description: 'TODO' },
   { heading: 'TODO', description: 'TODO' },
 ]

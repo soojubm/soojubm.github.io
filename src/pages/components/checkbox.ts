@@ -41,11 +41,6 @@ const componentFeatures: ComponentFeatureItem[] = [
     description:
       '옵션 목록을 파악하기 쉽게 수직 정렬합니다. 레이블은 최대 2단어로 작성합니다. choice냐 action option(?)이냐. action option일 때는 동사를 포함하여 작성합니다.',
   },
-  {
-    heading: 'Groupable',
-    description:
-      '체크박스 그룹은 관련된 옵션들을 함께 묶어 사용자에게 제공할 수 있습니다. 이 경우, 그룹의 제목(legend)을 명확하게 표시하여 사용자가 옵션들의 맥락을 이해할 수 있도록 합니다.',
-  },
 ]
 
 const visibilityOptions: OptionItem[] = [

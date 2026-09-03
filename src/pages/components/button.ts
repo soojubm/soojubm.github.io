@@ -94,11 +94,6 @@ const componentFeatures: ComponentFeatureItem[] = [
     description:
       '물리적인 인터페이스의 출현만이 수행 결과의 피드백이 아닙니다. 예측할 수 있는 페이지 이동이나 페이지 새로고침, 정보 구조의 변화도 피드백으로 취급될 수 있습니다. (ex bad case: 인스타그램 앱에서 로그인되었다는 toast. 홈으로 이동과 피드 노출만으로 로그인 상태를 인지할수 있다.)',
   },
-  {
-    heading: 'Groupable',
-    description:
-      '관련된 액션은 button-group으로 묶어 하나의 단위로 제시합니다. 정렬·간격과 버튼 사이의 관계는 그룹이 소유합니다.',
-  },
 ]
 
 const main = html`

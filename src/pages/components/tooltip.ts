@@ -33,11 +33,6 @@ const componentFeatures: ComponentFeatureItem[] = [
     description:
       '설명이 필요 없는 플로우와 인터페이스를 우선하세요. 툴팁은 없을수록 좋으며, 접근성을 위한 최소한의 설명만 제공합니다. 작은 화면에서 바텀 시트나 팝오버로 제공하는 것이 좋다. 사용자가 반드시 숙지해야 하는 중요한 정보를 툴팁으로 제공하지 마세요.',
   },
-  {
-    heading: 'Anchored',
-    description:
-      '화면 좌표가 아니라 트리거 요소가 위치를 결정합니다. 방향과 정렬은 placement prop 하나로 지정합니다. useFloating',
-  },
   { heading: 'TODO', description: 'TODO' },
 ]
 

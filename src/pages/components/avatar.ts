@@ -34,11 +34,6 @@ const componentFeatures: ComponentFeatureItem[] = [
     description:
       '사용자·브랜드·객체를 시각적으로 대변합니다. 이미지 프로필을 최우선으로 보여주며, 식별 정보에 상태 메타 데이터를 결합하면 하나의 독립된 정보 노출 단위로도 기능합니다. 이미지가 없거나 로드에 실패해도 이니셜 → 아이콘 → 기본 아이콘 순으로 대체해 형태와 정체성을 유지하고, alt 텍스트 또는 aria-label을 반드시 제공합니다.',
   },
-  {
-    heading: 'Groupable',
-    description:
-      '여러 아바타는 avatar-group으로 겹쳐 묶어 참여자 무리를 압축해 보여줍니다. 겹침 간격과 초과 인원 표시는 그룹이 소유합니다.',
-  },
 ]
 
 const groupAvatars = ['', '', '', '']

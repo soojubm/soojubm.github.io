@@ -73,11 +73,6 @@ const componentFeatures: ComponentFeatureItem[] = [
     heading: 'Interactive - selection',
     description: 'menuitemcheckbox·menuitemradio 항목이 체크 상태를 소유해 선택 여부를 드러냅니다.',
   },
-  {
-    heading: 'Groupable',
-    description:
-      '항목은 단독이 아니라 메뉴 그룹 안에서 역할(menu·listbox)을 얻습니다. 체크 계열 항목은 항상 그룹으로 묶습니다.',
-  },
 ]
 
 const main = html`

@@ -55,11 +55,6 @@ const componentFeatures: ComponentFeatureItem[] = [
     description:
       'leading·content·trailing의 고정된 골격으로 반복되는 행의 구조를 잡습니다. 상호작용 없이 레이아웃만 담당하는 표현 전용 행입니다.',
   },
-  {
-    heading: 'Groupable',
-    description:
-      '같은 데이터 집합의 행은 단독으로 나열하지 않고 menu-item-group으로 묶어 하나의 리스트로 제시합니다. role과 행 간 간격은 그룹이 소유합니다.',
-  },
   { heading: 'TODO', description: 'TODO' },
 ]
 

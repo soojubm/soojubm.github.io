@@ -46,11 +46,6 @@ const componentFeatures: ComponentFeatureItem[] = [
     description:
       '누를 때마다 누름(pressed) 상태가 토글되어 선택 여부를 드러내고, 그룹에서는 단일 선택으로 동작합니다.',
   },
-  {
-    heading: 'Groupable',
-    description:
-      '독립 on/off에는 ToggleButton을 단독으로, 세그먼트(단일/다중)에는 toggle-button-group을 사용합니다. 선택 규칙과 간격은 그룹이 소유합니다.',
-  },
   { heading: 'TODO', description: 'TODO' },
 ]
 

@@ -38,11 +38,6 @@ const componentFeatures: ComponentFeatureItem[] = [
     description:
       '수직 정렬로 옵션 목록을 쉽게 스캔할 수 있도록 합니다. 최대 5개의 옵션을 제공할 수 있으며, 그 이상의 옵션이 필요하다면 셀렉트Select 또는 가로 스크롤되는 칩Chip으로 제공하세요.',
   },
-  {
-    heading: 'Groupable',
-    description:
-      '라디오는 항상 그룹으로 사용합니다. 그룹이 단일 선택과 간격을 소유하고, 그룹의 제목으로 옵션들의 맥락을 제공합니다.',
-  },
 ]
 
 const main = html`

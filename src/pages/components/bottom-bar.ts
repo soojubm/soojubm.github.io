@@ -18,11 +18,6 @@ const componentProps: ComponentPropItemData[] = [
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [
-  {
-    heading: 'Persistent',
-    description:
-      '화면 이동과 스크롤에도 하단에 자리를 지켜 주요 목적지로 언제든 이동할 수 있습니다.',
-  },
   { heading: 'TODO', description: 'TODO' },
   { heading: 'TODO', description: 'TODO' },
 ]

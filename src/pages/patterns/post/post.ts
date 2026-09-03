@@ -25,7 +25,7 @@ const main = html`
       </mm-flex>
       <mm-flex direction="column" gap="4" style="margin-top:var(--space-8)">
         <mm-user-row
-          size="80"
+          size="48"
           label="수줍이"
           description="Youtube Subscriber"
           avatar-variant="secondary"

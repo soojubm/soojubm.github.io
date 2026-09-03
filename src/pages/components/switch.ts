@@ -28,13 +28,9 @@ const componentTokens: ComponentTokenItemData[] = [
 
 const componentFeatures: ComponentFeatureItem[] = [
   {
-    heading: 'Immediate',
-    description:
-      '조작 즉시 실행되므로 저장 버튼과 함께 제공하지 않습니다. 스위치의 왼쪽과 오른쪽에 각각 레이블을 배치하여 콘텐츠를 스위칭하거나 콘텐츠를 필터링하는 맥락으로 사용하지 마세요.',
-  },
-  {
     heading: 'Interactive - selection',
-    description: '켜짐과 꺼짐 두 상태를 오가는 상호작용 컨트롤입니다.',
+    description:
+      '켜짐과 꺼짐 두 상태를 오가는 상호작용 컨트롤입니다. 조작 즉시 실행되므로 저장 버튼과 함께 제공하지 않고, 콘텐츠 전환·필터 맥락에 쓰지 않습니다.',
   },
   { heading: 'TODO', description: 'TODO' },
 ]

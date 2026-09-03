@@ -22,11 +22,6 @@ const componentFeatures: ComponentFeatureItem[] = [
     description:
       '작업이 진행 중이며 시스템이 응답하고 있음을 알립니다. 결과를 기다리는 동안 사용자의 불확실성을 줄입니다.',
   },
-  {
-    heading: 'Transient',
-    description:
-      '작업이 끝나면 스스로 사라집니다. 사라진 자리는 결과 콘텐츠나 result가 대신합니다.',
-  },
   { heading: 'TODO', description: 'TODO' },
 ]
 
