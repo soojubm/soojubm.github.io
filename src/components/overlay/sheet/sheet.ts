@@ -104,11 +104,11 @@ class Sheet extends LitElement {
 
   private syncHeight() {
     if (!this.height) {
-      this.style.removeProperty('--surface-height')
+      this.style.removeProperty('--overlay-panel-height')
       return
     }
 
-    this.style.setProperty('--surface-height', this.height)
+    this.style.setProperty('--overlay-panel-height', this.height)
   }
 
   show() {

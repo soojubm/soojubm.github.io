@@ -61,7 +61,7 @@ export class NavbarSearch extends LitElement {
         class="js-search-sheet"
         placement="center"
         width="large"
-        style="--surface-backdrop-blur: 2px"
+        style="--overlay-panel-backdrop-blur: 2px"
         ?open=${this.isOpen}
         @sheet-close=${this.closeSearch}
       >

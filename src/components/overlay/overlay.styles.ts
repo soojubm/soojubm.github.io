@@ -18,7 +18,7 @@ export const backdropStyles = css`
 /**
  * 떠 있는 표면 패널(`.panel`)의 재질.
  * backdrop-filter는 조상에 걸리면 자손의 blur가 죽으므로 ::before 레이어에 분리해 깐다.
- * `--surface-*` 토큰은 여기서 소비만 한다. 기본값은 패널을 소유한 컴포넌트가 `:host`에 선언하며,
+ * `--overlay-panel-*` 토큰은 여기서 소비만 한다. 기본값은 패널을 소유한 컴포넌트가 `:host`에 선언하며,
  * 그래야 placement·prop·상위 컴포넌트의 재할당이 상속을 타고 패널까지 내려온다.
  * 열림/닫힘은 각 컴포넌트가 자기 표면을 쥔 요소에서 소유하므로 여기서 다루지 않는다.
  */
@@ -27,15 +27,15 @@ export const overlaySurfaceStyles = css`
     display: flex;
     flex-direction: column;
     /* width: 100%; */
-    min-width: var(--surface-min-width);
-    max-width: var(--surface-max-width);
-    height: var(--surface-height);
-    max-height: var(--surface-max-height);
-    gap: var(--surface-padding-block);
-    padding: var(--surface-padding-block) var(--surface-padding-inline);
+    min-width: var(--overlay-panel-min-width);
+    max-width: var(--overlay-panel-max-width);
+    height: var(--overlay-panel-height);
+    max-height: var(--overlay-panel-max-height);
+    gap: var(--overlay-panel-padding-block);
+    padding: var(--overlay-panel-padding-block) var(--overlay-panel-padding-inline);
 
     border: var(--surface-overlay-border);
-    border-radius: var(--surface-border-radius);
+    border-radius: var(--overlay-panel-border-radius);
     box-shadow: var(--surface-overlay-shadow);
     background: var(--background-color);
     box-sizing: border-box;
@@ -60,21 +60,21 @@ export const overlaySurfaceStyles = css`
  * viewport 기준 modal 표면(mm-sheet, mm-dialog)의 위치.
  * 호스트가 패널을 화면 기준으로 앉히는 고정 컨테이너가 되고, placement별로 패널을 어느 변에
  * 붙일지 정한다. 표면 재질은 overlaySurfaceStyles가, 뒤를 덮는 재질은 mm-backdrop이 맡는다.
- * `--surface-*` 기본값을 함께 선언하는 이유는 재할당이 `:host`에서 일어나기 때문이다.
+ * `--overlay-panel-*` 기본값을 함께 선언하는 이유는 재할당이 `:host`에서 일어나기 때문이다.
  */
 export const sheetPositionStyles = css`
   :host {
-    --surface-z-index: var(--material-zindex-modal);
-    --surface-min-width: auto;
-    --surface-max-width: var(--layout-width-narrow);
-    --surface-height: auto;
-    --surface-max-height: 90vh;
-    --surface-viewport-max-height: 100vh;
-    --surface-padding-block: var(--space-4);
-    --surface-padding-inline: var(--space-4);
-    --surface-border-radius: var(--radius-large);
-    --surface-backdrop-background-color: transparent;
-    --surface-backdrop-blur: 0px;
+    --overlay-panel-z-index: var(--material-zindex-modal);
+    --overlay-panel-min-width: auto;
+    --overlay-panel-max-width: var(--layout-width-narrow);
+    --overlay-panel-height: auto;
+    --overlay-panel-max-height: 90vh;
+    --overlay-panel-viewport-max-height: 100vh;
+    --overlay-panel-padding-block: var(--space-4);
+    --overlay-panel-padding-inline: var(--space-4);
+    --overlay-panel-border-radius: var(--radius-large);
+    --overlay-panel-backdrop-background-color: transparent;
+    --overlay-panel-backdrop-blur: 0px;
 
     display: flex;
     justify-content: center;
@@ -82,7 +82,7 @@ export const sheetPositionStyles = css`
 
     position: fixed;
     inset: 0;
-    z-index: var(--surface-z-index);
+    z-index: var(--overlay-panel-z-index);
 
     /* backdrop과 패널을 한 번에 띄우고 내린다. 닫힐 때만 visibility를 지연시켜
        fade-out이 끝난 뒤에 접근성 트리와 히트 테스트에서 빠지게 한다. */
@@ -102,8 +102,8 @@ export const sheetPositionStyles = css`
 
   /* backdrop 재질은 mm-backdrop이 소유하고, sheet는 자기 공개 knob을 그쪽으로 잇는다. */
   mm-backdrop {
-    --backdrop-background-color: var(--surface-backdrop-background-color);
-    --backdrop-blur: var(--surface-backdrop-blur);
+    --backdrop-background-color: var(--overlay-panel-backdrop-background-color);
+    --backdrop-blur: var(--overlay-panel-backdrop-blur);
   }
 
   :host([open]) .panel {
@@ -118,18 +118,18 @@ export const sheetPositionStyles = css`
 
   /* center + width */
   :host([placement='center'][width='small']) {
-    --surface-max-width: 320px;
+    --overlay-panel-max-width: 320px;
   }
   :host([placement='center'][width='large']) {
-    --surface-max-width: var(--layout-width-wide);
+    --overlay-panel-max-width: var(--layout-width-wide);
   }
   :host([placement='center'][width='full']) {
-    --surface-max-width: 100%;
+    --overlay-panel-max-width: 100%;
   }
 
   /* bottom */
   :host([placement='bottom']) {
-    --surface-max-width: calc(var(--layout-width-small) + var(--space-4) * 10);
+    --overlay-panel-max-width: calc(var(--layout-width-small) + var(--space-4) * 10);
     .panel {
       width: 100%;
       border-bottom-left-radius: 0;
@@ -147,14 +147,14 @@ export const sheetPositionStyles = css`
   /* left/right */
   :host([placement='left']),
   :host([placement='right']) {
-    --surface-max-width: 640px;
+    --overlay-panel-max-width: 640px;
   }
 
   :host([placement='left']) {
     .panel {
       margin-right: auto;
       height: 100%;
-      max-height: var(--surface-viewport-max-height);
+      max-height: var(--overlay-panel-viewport-max-height);
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
       transform: translateX(-100%);
@@ -171,7 +171,7 @@ export const sheetPositionStyles = css`
     .panel {
       margin-left: auto;
       height: 100%;
-      max-height: var(--surface-viewport-max-height);
+      max-height: var(--overlay-panel-viewport-max-height);
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
       transform: translateX(100%);
@@ -188,18 +188,18 @@ export const sheetPositionStyles = css`
  * 트리거에 앵커되는 non-modal 레이어(mm-popover)의 위치.
  * 호스트가 스스로 positioned 앵커가 되고, placement별로 패널을 트리거의 어느 모서리에 붙일지 정한다.
  * 표면 재질은 overlaySurfaceStyles가 맡는다.
- * `--surface-*` 기본값을 함께 선언하는 이유는 재할당이 `:host`에서 일어나기 때문이다.
+ * `--overlay-panel-*` 기본값을 함께 선언하는 이유는 재할당이 `:host`에서 일어나기 때문이다.
  */
 export const popoverPositionStyles = css`
   :host {
     /* 트리거가 아이콘 버튼처럼 좁아도 패널이 그 폭으로 눌리지 않게 하는 바닥값 */
-    --surface-min-width: 240px;
-    --surface-max-width: auto;
-    --surface-height: auto;
-    --surface-max-height: none;
-    --surface-padding-block: var(--space-2);
-    --surface-padding-inline: var(--space-2);
-    --surface-border-radius: var(--radius);
+    --overlay-panel-min-width: 240px;
+    --overlay-panel-max-width: auto;
+    --overlay-panel-height: auto;
+    --overlay-panel-max-height: none;
+    --overlay-panel-padding-block: var(--space-2);
+    --overlay-panel-padding-inline: var(--space-2);
+    --overlay-panel-border-radius: var(--radius);
     --popover-offset: var(--space-1);
 
     /* 슬롯된 트리거를 감싸 popover 스스로 앵커(positioned wrapper)가 된다. */
@@ -331,7 +331,7 @@ export const sheetFooterStyles = css`
   :host {
     display: block;
     box-sizing: border-box;
-    padding: var(--surface-padding-block) 0 calc(0 + env(safe-area-inset-bottom));
+    padding: var(--overlay-panel-padding-block) 0 calc(0 + env(safe-area-inset-bottom));
   }
 `
 

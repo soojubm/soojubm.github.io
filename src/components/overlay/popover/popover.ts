@@ -51,16 +51,16 @@ class Popover extends LitElement {
 
   protected updated(changedProperties: Map<string, unknown>) {
     if (changedProperties.has('width')) {
-      if (this.width) this.style.setProperty('--surface-max-width', this.width)
-      else this.style.removeProperty('--surface-max-width')
+      if (this.width) this.style.setProperty('--overlay-panel-max-width', this.width)
+      else this.style.removeProperty('--overlay-panel-max-width')
     }
     if (changedProperties.has('padding')) {
       if (this.padding) {
-        this.style.setProperty('--surface-padding-block', this.padding)
-        this.style.setProperty('--surface-padding-inline', this.padding)
+        this.style.setProperty('--overlay-panel-padding-block', this.padding)
+        this.style.setProperty('--overlay-panel-padding-inline', this.padding)
       } else {
-        this.style.removeProperty('--surface-padding-block')
-        this.style.removeProperty('--surface-padding-inline')
+        this.style.removeProperty('--overlay-panel-padding-block')
+        this.style.removeProperty('--overlay-panel-padding-inline')
       }
     }
   }
