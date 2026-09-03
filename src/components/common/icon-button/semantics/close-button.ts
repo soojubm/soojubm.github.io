@@ -1,9 +1,8 @@
-import { LitElement, html } from 'lit'
+import { LitElement } from 'lit'
 import { customElement } from 'lit/decorators.js'
 
-import '@/components/common/icon-button/icon-button'
 import { iconButtonActionStyles } from '@/components/common/icon-button/icon-button.styles'
-import { withIconAction } from '@/components/common/icon-button/icon-button.utils'
+import { renderIconAction, withIconAction } from '@/components/common/icon-button/icon-button.utils'
 import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
 
 /**
@@ -14,17 +13,7 @@ export class CloseButton extends withIconAction(LitElement, 'close') {
   static styles = [iconButtonActionStyles]
 
   render() {
-    return html`
-      <mm-icon-button
-        icon=${ICON_NAMES.CLOSE}
-        variant="secondary"
-        aria-label="닫기"
-        tooltip=${this.tooltip}
-        tooltip-placement=${this.tooltipPlacement}
-        ?disabled=${this.disabled}
-        @click=${this.handleActionClick}
-      ></mm-icon-button>
-    `
+    return renderIconAction(this, { icon: ICON_NAMES.CLOSE, ariaLabel: '닫기' })
   }
 }
 
