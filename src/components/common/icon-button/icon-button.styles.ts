@@ -23,10 +23,17 @@ const iconButtonVariantTokens = {
   },
 }
 
-/** icon-button 액션 계열(close/delete/dismiss/hamburger/more/next/prev-button)이 공유하는 host 레이아웃. */
-export const iconButtonActionStyles = css`
+/**
+ * close/more/next/prev/to-top-button처럼 secondary 스킨을 그대로 쓰는 계열이 공유하는 토큰 오버라이드.
+ * iconButtonStyles의 기본(tertiary)값 위에 얹어 쓴다.
+ */
+export const iconButtonSecondarySkinStyles = css`
   :host {
-    display: inline-flex;
+    --icon-button-border-radius: var(--radius-full);
+    --icon-button-border: var(--border);
+    --icon-button-background-color: var(--surface-base-background-color);
+    --icon-button-backdrop-filter: var(--surface-base-backdrop-filter);
+    --icon-button-shadow: var(--surface-base-shadow);
   }
 `
 

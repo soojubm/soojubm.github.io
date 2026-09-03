@@ -2,12 +2,13 @@ import { LitElement, html } from 'lit'
 import { property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
-import type { IconButtonSize, IconButtonVariant } from '@/components/common/icon-button/icon-button'
 import type { IconName } from '@/components/common/icon-button/semantics/icon-names'
+import type { AriaBoolean, AriaHasPopup, AriaIdRef } from '@/types'
 import type { TemplateResult } from 'lit'
 
 import { type Constructor, emit } from '@/utils'
-import '@/components/common/icon-button/icon-button'
+import '@/components/overlay/tooltip'
+import '@/components/common/icon'
 
 export interface IconAction {
   tooltip: string
@@ -37,29 +38,64 @@ export const withIconAction = <T extends Constructor<LitElement>>(Base: T, event
   return IconActionElement as Constructor<IconAction> & T
 }
 
+/**
+ * tooltip이 있을 때만 mm-tooltip으로 감싼다. icon-button 베이스가 쓰는 조립 규칙.
+ */
+export const renderWithOptionalTooltip = (
+  tooltip: string,
+  tooltipPlacement: string,
+  control: TemplateResult,
+): TemplateResult => {
+  if (!tooltip) return control
+
+  return html`
+    <mm-tooltip content=${tooltip} placement=${tooltipPlacement}>${control}</mm-tooltip>
+  `
+}
+
 export interface IconActionRenderOptions {
   icon: IconName
   ariaLabel: string
-  variant?: IconButtonVariant
-  size?: IconButtonSize
+  tooltip?: string
+  tooltipPlacement?: string
+  disabled?: boolean
+  onClick?: (event: Event) => void
+  ariaHasPopup?: AriaHasPopup
+  ariaExpanded?: AriaBoolean
+  ariaControls?: AriaIdRef
 }
 
 /**
- * withIconAction 계열이 공유하는 mm-icon-button 조립 템플릿.
- * icon·variant·size·aria-label만 컴포넌트별로 다르고 tooltip·disabled·click 배선은 동일하다.
+ * icon-button 계열(아이콘 하나로 동작을 알리는 시맨틱 버튼)이 공유하는 button+아이콘 조립 템플릿.
+ * 아이콘만으로는 의미를 알 수 없으므로 tooltip은 선택이 아니라 항상 보이며,
+ * 따로 지정하지 않으면 aria-label을 그대로 tooltip 내용으로 쓴다.
  */
-export const renderIconAction = (
-  host: IconAction,
-  { icon, ariaLabel, variant = 'secondary', size }: IconActionRenderOptions,
-): TemplateResult => html`
-  <mm-icon-button
-    icon=${icon}
-    variant=${variant}
-    size=${ifDefined(size)}
-    aria-label=${ariaLabel}
-    tooltip=${host.tooltip}
-    tooltip-placement=${host.tooltipPlacement}
-    ?disabled=${host.disabled}
-    @click=${host.handleActionClick}
-  ></mm-icon-button>
-`
+export const renderIconAction = ({
+  icon,
+  ariaLabel,
+  tooltip,
+  tooltipPlacement = '',
+  disabled = false,
+  onClick = () => {},
+  ariaHasPopup,
+  ariaExpanded,
+  ariaControls,
+}: IconActionRenderOptions): TemplateResult =>
+  renderWithOptionalTooltip(
+    tooltip || ariaLabel,
+    tooltipPlacement,
+    html`
+      <button
+        slot="trigger"
+        type="button"
+        aria-label=${ariaLabel}
+        aria-haspopup=${ifDefined(ariaHasPopup ?? undefined)}
+        aria-expanded=${ifDefined(ariaExpanded ?? undefined)}
+        aria-controls=${ifDefined(ariaControls ?? undefined)}
+        ?disabled=${disabled}
+        @click=${onClick}
+      >
+        <mm-icon name=${icon}></mm-icon>
+      </button>
+    `,
+  )

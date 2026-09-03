@@ -1,8 +1,9 @@
-import { LitElement, html } from 'lit'
+import { LitElement, css } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import '@/components/common/icon-button/icon-button'
-import { iconButtonActionStyles } from '@/components/common/icon-button/icon-button.styles'
+import { interactiveControlStyles } from '@/components/common/button/button.styles'
+import { iconButtonStyles } from '@/components/common/icon-button/icon-button.styles'
+import { renderIconAction } from '@/components/common/icon-button/icon-button.utils'
 import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
 
 /**
@@ -10,7 +11,16 @@ import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names
  */
 @customElement('mm-clear-button')
 class ClearButton extends LitElement {
-  static styles = [iconButtonActionStyles]
+  static styles = [
+    interactiveControlStyles,
+    iconButtonStyles,
+    css`
+      :host {
+        --icon-button-size: var(--size-16);
+        --icon-button-border-radius: var(--radius-full);
+      }
+    `,
+  ]
 
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = ''
   @property({ type: String }) tooltip = ''
@@ -18,18 +28,13 @@ class ClearButton extends LitElement {
   @property({ type: Boolean }) disabled = false
 
   render() {
-    return html`
-      <mm-icon-button
-        icon=${ICON_NAMES.CLOSE}
-        variant="tertiary"
-        size="xsmall"
-        shape="circle"
-        aria-label=${this.ariaLabel}
-        tooltip=${this.tooltip}
-        tooltip-placement=${this.tooltipPlacement}
-        ?disabled=${this.disabled}
-      ></mm-icon-button>
-    `
+    return renderIconAction({
+      icon: ICON_NAMES.CLOSE,
+      ariaLabel: this.ariaLabel,
+      tooltip: this.tooltip,
+      tooltipPlacement: this.tooltipPlacement,
+      disabled: this.disabled,
+    })
   }
 }
 

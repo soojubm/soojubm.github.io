@@ -7,7 +7,7 @@ import type { AriaBoolean, AriaHasPopup, AriaIdRef } from '@/types'
 
 import { interactiveControlStyles } from '@/components/common/button/button.styles'
 import { iconButtonStyles } from '@/components/common/icon-button/icon-button.styles'
-import '@/components/overlay/tooltip'
+import { renderWithOptionalTooltip } from '@/components/common/icon-button/icon-button.utils'
 import '@/components/common/icon'
 
 export type IconButtonVariant = 'primary' | 'secondary' | 'tertiary' | 'ghost' | 'destructive'
@@ -31,12 +31,7 @@ class IconButton extends LitElement {
   @property({ type: String, attribute: 'aria-controls' }) ariaControls: AriaIdRef = null
 
   render() {
-    const control = this.renderControl()
-    if (!this.tooltip) return control
-
-    return html`
-      <mm-tooltip content=${this.tooltip} placement=${this.tooltipPlacement}>${control}</mm-tooltip>
-    `
+    return renderWithOptionalTooltip(this.tooltip, this.tooltipPlacement, this.renderControl())
   }
 
   protected get accessibilityLabel(): string {

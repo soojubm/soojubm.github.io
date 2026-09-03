@@ -1,10 +1,11 @@
-import { LitElement, css, html, nothing } from 'lit'
+import { LitElement, css } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import type { AriaBoolean, AriaIdRef } from '@/types'
 
-import '@/components/common/icon-button/icon-button'
-import { iconButtonActionStyles } from '@/components/common/icon-button/icon-button.styles'
+import { interactiveControlStyles } from '@/components/common/button/button.styles'
+import { iconButtonStyles } from '@/components/common/icon-button/icon-button.styles'
+import { renderIconAction } from '@/components/common/icon-button/icon-button.utils'
 import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
 
 /**
@@ -13,10 +14,12 @@ import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names
 @customElement('mm-hamburger-button')
 export class HamburgerButton extends LitElement {
   static styles = [
-    iconButtonActionStyles,
+    interactiveControlStyles,
+    iconButtonStyles,
     css`
       :host {
         z-index: calc(var(--material-zindex-raised) + 1);
+        --icon-button-background-color: transparent;
       }
     `,
   ]
@@ -26,15 +29,12 @@ export class HamburgerButton extends LitElement {
   @property({ type: String, attribute: 'aria-controls' }) ariaControls: AriaIdRef = null
 
   render() {
-    return html`
-      <mm-icon-button
-        icon=${ICON_NAMES.MENU}
-        variant="ghost"
-        aria-label=${this.ariaLabel}
-        aria-expanded=${this.ariaExpanded}
-        aria-controls=${this.ariaControls ?? nothing}
-      ></mm-icon-button>
-    `
+    return renderIconAction({
+      icon: ICON_NAMES.MENU,
+      ariaLabel: this.ariaLabel,
+      ariaExpanded: this.ariaExpanded,
+      ariaControls: this.ariaControls,
+    })
   }
 }
 

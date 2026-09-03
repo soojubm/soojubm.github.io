@@ -1,10 +1,14 @@
-import { LitElement, html, nothing } from 'lit'
+import { LitElement } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import type { AriaBoolean, AriaIdRef } from '@/types'
 
-import '@/components/common/icon-button/icon-button'
-import { iconButtonActionStyles } from '@/components/common/icon-button/icon-button.styles'
+import { interactiveControlStyles } from '@/components/common/button/button.styles'
+import {
+  iconButtonSecondarySkinStyles,
+  iconButtonStyles,
+} from '@/components/common/icon-button/icon-button.styles'
+import { renderIconAction } from '@/components/common/icon-button/icon-button.utils'
 import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
 
 /**
@@ -12,7 +16,7 @@ import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names
  */
 @customElement('mm-more-button')
 export class MoreButton extends LitElement {
-  static styles = [iconButtonActionStyles]
+  static styles = [interactiveControlStyles, iconButtonStyles, iconButtonSecondarySkinStyles]
 
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = '더보기'
   @property({ type: String, attribute: 'aria-expanded' }) ariaExpanded: AriaBoolean = 'false'
@@ -20,19 +24,15 @@ export class MoreButton extends LitElement {
   @property({ type: Boolean }) disabled = false
 
   render() {
-    return html`
-      <mm-icon-button
-        variant="secondary"
-        icon=${ICON_NAMES.MORE_ACTIONS}
-        tooltip="더보기"
-        tooltip-placement="center"
-        aria-label=${this.ariaLabel}
-        aria-haspopup="menu"
-        aria-expanded=${this.ariaExpanded}
-        aria-controls=${this.ariaControls ?? nothing}
-        ?disabled=${this.disabled}
-      ></mm-icon-button>
-    `
+    return renderIconAction({
+      icon: ICON_NAMES.MORE_ACTIONS,
+      ariaLabel: this.ariaLabel,
+      tooltipPlacement: 'center',
+      disabled: this.disabled,
+      ariaHasPopup: 'menu',
+      ariaExpanded: this.ariaExpanded,
+      ariaControls: this.ariaControls,
+    })
   }
 }
 

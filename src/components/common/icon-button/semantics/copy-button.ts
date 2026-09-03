@@ -1,8 +1,9 @@
-import { LitElement, html } from 'lit'
+import { LitElement, css } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 
-import '@/components/common/icon-button/icon-button'
-import { iconButtonActionStyles } from '@/components/common/icon-button/icon-button.styles'
+import { interactiveControlStyles } from '@/components/common/button/button.styles'
+import { iconButtonStyles } from '@/components/common/icon-button/icon-button.styles'
+import { renderIconAction } from '@/components/common/icon-button/icon-button.utils'
 import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
 import { TransientFlagController } from '@/controllers/transient-flag-controller'
 import { emit } from '@/utils'
@@ -43,7 +44,15 @@ const copyWithFallback = (text: string): boolean => {
  */
 @customElement('mm-copy-button')
 export class CopyButton extends LitElement {
-  static styles = [iconButtonActionStyles]
+  static styles = [
+    interactiveControlStyles,
+    iconButtonStyles,
+    css`
+      :host {
+        --icon-button-background-color: transparent;
+      }
+    `,
+  ]
 
   @property({ type: String }) value = ''
   @property({ type: String }) tooltip = ''
@@ -64,16 +73,13 @@ export class CopyButton extends LitElement {
   }
 
   render() {
-    return html`
-      <mm-icon-button
-        icon=${this.copied ? ICON_NAMES.COPY_SUCCESS : ICON_NAMES.COPY}
-        aria-label=${this.copied ? '복사됨' : '복사'}
-        variant="ghost"
-        tooltip=${this.copied && this.tooltip ? '복사됨' : this.tooltip}
-        tooltip-placement=${this.tooltipPlacement}
-        @click=${this.handleClick}
-      ></mm-icon-button>
-    `
+    return renderIconAction({
+      icon: this.copied ? ICON_NAMES.COPY_SUCCESS : ICON_NAMES.COPY,
+      ariaLabel: this.copied ? '복사됨' : '복사',
+      tooltip: this.copied ? '복사됨' : this.tooltip,
+      tooltipPlacement: this.tooltipPlacement,
+      onClick: this.handleClick,
+    })
   }
 }
 

@@ -1,7 +1,8 @@
-import { LitElement } from 'lit'
+import { LitElement, css } from 'lit'
 import { customElement } from 'lit/decorators.js'
 
-import { iconButtonActionStyles } from '@/components/common/icon-button/icon-button.styles'
+import { interactiveControlStyles } from '@/components/common/button/button.styles'
+import { iconButtonStyles } from '@/components/common/icon-button/icon-button.styles'
 import { renderIconAction, withIconAction } from '@/components/common/icon-button/icon-button.utils'
 import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
 
@@ -10,14 +11,24 @@ import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names
  */
 @customElement('mm-dismiss-button')
 export class DismissButton extends withIconAction(LitElement, 'dismiss') {
-  static styles = [iconButtonActionStyles]
+  static styles = [
+    interactiveControlStyles,
+    iconButtonStyles,
+    css`
+      :host {
+        --icon-button-size: var(--size-24);
+      }
+    `,
+  ]
 
   render() {
-    return renderIconAction(this, {
+    return renderIconAction({
       icon: ICON_NAMES.DISMISS,
       ariaLabel: '닫기',
-      variant: 'tertiary',
-      size: 'small',
+      tooltip: this.tooltip,
+      tooltipPlacement: this.tooltipPlacement,
+      disabled: this.disabled,
+      onClick: this.handleActionClick,
     })
   }
 }

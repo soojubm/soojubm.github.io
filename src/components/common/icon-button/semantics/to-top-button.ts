@@ -1,23 +1,24 @@
-import { LitElement, html } from 'lit'
+import { LitElement } from 'lit'
 import { customElement } from 'lit/decorators.js'
 
-import '@/components/common/icon-button/icon-button'
-import { iconButtonActionStyles } from '@/components/common/icon-button/icon-button.styles'
+import { interactiveControlStyles } from '@/components/common/button/button.styles'
+import {
+  iconButtonSecondarySkinStyles,
+  iconButtonStyles,
+} from '@/components/common/icon-button/icon-button.styles'
+import { renderIconAction } from '@/components/common/icon-button/icon-button.utils'
 import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
 
 @customElement('mm-to-top-button')
 export class ToTopButton extends LitElement {
-  static styles = [iconButtonActionStyles]
+  static styles = [interactiveControlStyles, iconButtonStyles, iconButtonSecondarySkinStyles]
 
   render() {
-    return html`
-      <mm-icon-button
-        variant="secondary"
-        icon=${ICON_NAMES.SCROLL_TOP}
-        aria-label="맨 위로"
-        @click=${this.handleClick}
-      ></mm-icon-button>
-    `
+    return renderIconAction({
+      icon: ICON_NAMES.SCROLL_TOP,
+      ariaLabel: '맨 위로',
+      onClick: this.handleClick,
+    })
   }
 
   private handleClick() {
