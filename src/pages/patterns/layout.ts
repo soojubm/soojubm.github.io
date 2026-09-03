@@ -39,6 +39,10 @@ const main = html`
           <mm-surface variant="filled" style="max-width: var(--layout-width-small)">
             <mm-caption>일반 문서 · 에디토리얼</mm-caption>
             <code>--layout-width-small · 640px</code>
+            <mm-flex gap="3">
+              <mm-link href="post.html">Post</mm-link>
+              <mm-link href="setting.html">Setting</mm-link>
+            </mm-flex>
           </mm-surface>
           <mm-surface variant="filled" style="max-width: var(--layout-width-wide)">
             <mm-caption>탐색·관리형 · 목록, 대시보드</mm-caption>

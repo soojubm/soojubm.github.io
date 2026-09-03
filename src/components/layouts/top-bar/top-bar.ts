@@ -21,7 +21,7 @@ class TopBar extends LitElement {
     return html`
       <header role="navigation">
         ${this.renderBackButton()}
-        <mm-heading level="2">${this.heading}</mm-heading>
+        <mm-heading level="3">${this.heading}</mm-heading>
         <div class="trailing-area">
           <slot name="action"></slot>
           ${this.renderCloseButton()}

@@ -4,7 +4,7 @@ import './post.css'
 import { renderLayout } from '@/components/layouts/base-layouts'
 
 const main = html`
-  <mm-page>
+  <mm-page width="small">
     <style>
       mm-text[variant='subhead'] + mm-text[variant='body-large'],
       mm-text[variant='body-large'] + mm-text[variant='body-large'] {
@@ -18,12 +18,6 @@ const main = html`
         <mm-text size="32">
           Runway enables next-generation content creation with AI and Vercel
         </mm-text>
-        <mm-paragraph size="large" hidden>
-          Pinterest announces industry-first body type technology to increase body representation on
-          platform
-        </mm-paragraph>
-      </mm-flex>
-      <mm-flex direction="column" gap="4" style="margin-top:var(--space-8)">
         <mm-user-row
           size="48"
           label="수줍이"
@@ -31,9 +25,10 @@ const main = html`
           avatar-variant="secondary"
           avatar-src="/src/images/soojubm.png"
         ></mm-user-row>
-        <mm-thumbnail src="/src/images/soojubm.png" ratio="16:9"></mm-thumbnail>
       </mm-flex>
     </header>
+
+    <mm-thumbnail src="/src/images/soojubm.png" ratio="16:9"></mm-thumbnail>
 
     <section class="post-body">
       <!-- <nav>
