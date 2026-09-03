@@ -2,7 +2,7 @@ import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 
 import { componentContentFrameStyles } from '@/components/domains/component/component.styles'
-import '@/components/common/text/semantics/textList'
+import '@/components/common/text/semantics/text-list'
 import { resetStyles } from '@/stylesheets/shared.styles'
 import { arrayAttributeConverter } from '@/utils'
 import '@/components/common/text'

@@ -5,9 +5,9 @@ import { classMap } from 'lit/directives/class-map.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
 import '@/components/common/button/semantics/read-more-button'
+import '@/components/domains/component/component-prop-item'
 import { componentPropsStyles } from '@/components/domains/component/component.styles'
 import { arrayAttributeConverter, uniqueId } from '@/utils'
-import '@/components/common/meta-item'
 import '@/components/common/text'
 import '@/components/common/flex'
 
@@ -19,29 +19,8 @@ export interface ComponentPropItemData {
 }
 
 /**
- * 1. 자식 컴포넌트: <mm-component-prop-item>
- * mm-meta-item으로 name/type을 표시합니다.
- */
-@customElement('mm-component-prop-item')
-export class ComponentPropItem extends LitElement {
-  @property({ type: String }) name = ''
-  @property({ type: String }) type = ''
-  @property({ type: Boolean }) optional = false
-
-  render() {
-    return html`
-      <mm-meta-item layout="stacked" label=${this.formatLabel()} value=${this.type}></mm-meta-item>
-    `
-  }
-
-  private formatLabel() {
-    return `${this.name}${this.optional ? '?' : ''}`
-  }
-}
-
-/**
- * 2. 부모 컴포넌트: <mm-component-props>
- * 전체 레이아웃 외곽 틀만 책임집니다.
+ * 컴포넌트 prop 목록. 전체 레이아웃 외곽 틀을 책임지고
+ * 각 prop은 mm-component-prop-item으로 렌더합니다.
  */
 @customElement('mm-component-props')
 export class ComponentProps extends LitElement {
@@ -95,5 +74,11 @@ export class ComponentProps extends LitElement {
 
   private handleClick() {
     this.isOpened = true
+  }
+}
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'mm-component-props': ComponentProps
   }
 }
