@@ -21,10 +21,14 @@ const componentReferences: ComponentReferenceItemData[] = [
   },
   {
     href: 'https://developer.apple.com/design/human-interface-guidelines/lists-and-tables',
-    label: 'HIG Lists and Tables',
+    label: 'Apple HIG - Lists and Tables',
     external: true,
   },
-  { href: 'https://m3.material.io/components/lists/overview', label: 'MD3 Lists', external: true },
+  {
+    href: 'https://m3.material.io/components/lists/overview',
+    label: 'MD3 - Lists',
+    external: true,
+  },
   {
     href: 'https://reactnativeelements.com/docs/components/listitem',
     label: 'React Native Elements - ListItem',

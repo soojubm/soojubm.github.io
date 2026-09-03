@@ -9,82 +9,84 @@ import { ScrollSpyController } from '@/controllers/scroll-spy-controller'
 const componentReferences: ComponentReferenceItemData[] = [
   {
     href: 'https://m3.material.io/foundations/layout/breakpoints/overview',
-    label: 'MD3 breakpoints (aka responsive layout)',
+    label: 'MD3 - Layout Breakpoints',
+    external: true,
   },
   {
     href: 'https://react.dev/learn/preserving-and-resetting-state',
-    label: 'preserving-and-resstting-state',
+    label: 'React - Preserving and Resetting State',
+    external: true,
   },
   {
     href: 'https://developer.apple.com/documentation/technologies',
-    label: 'Apple technologies',
+    label: 'Apple Developer - Technologies',
     external: true,
   },
   {
     href: 'https://developer.android.com/reference',
-    label: 'Android API reference',
+    label: 'Android - API Reference',
     external: true,
   },
   { href: 'https://www.digitala11y.com/', label: 'Digital A11Y', external: true },
   {
     href: 'https://www.w3.org/WAI/ARIA/apg/',
-    label: 'ARIA Authoring Practices Guide',
+    label: 'WAI-ARIA APG',
     external: true,
   },
   {
     href: 'https://en.wikipedia.org/wiki/Universal_design',
-    label: 'Universal design',
+    label: 'Wikipedia - Universal Design',
     external: true,
   },
-  { href: 'https://html.spec.whatwg.org/', label: 'HTME spec', external: true },
+  { href: 'https://html.spec.whatwg.org/', label: 'WHATWG - HTML Spec', external: true },
   {
     href: 'https://www.sitemaps.org/protocol.html',
-    label: 'sitemaps.org/protocol',
+    label: 'Sitemaps.org - Protocol',
     external: true,
   },
   {
-    href: 'https://w3c.github.io/wcag/understanding/target-size-minimum.html ',
-    label: 'w3c - target-size-minimum (desktop 24px 이상)',
+    href: 'https://w3c.github.io/wcag/understanding/target-size-minimum.html',
+    label: 'W3C - Target Size Minimum',
     external: true,
   },
   {
     href: 'https://developer.apple.com/design/human-interface-guidelines/components/layout-and-organization/disclosure-controls',
-    label: 'disclosure-controls',
+    label: 'Apple HIG - Disclosure Controls',
     external: true,
   },
   {
     href: 'https://developer.apple.com/kr/design/tips/',
-    label: 'UI 디자인 기본 원칙',
+    label: 'Apple - Design Tips',
     external: true,
   },
   {
     href: 'https://m3.material.io/foundations/interaction-states',
-    label: 'MD interaction-states',
+    label: 'MD3 - Interaction States',
     external: true,
   },
   {
     href: 'https://simplicable.com/new/visual-information',
-    label: 'Visual Information',
+    label: 'Simplicable - Visual Information',
     external: true,
   },
   {
     href: 'https://m3.material.io/blog/building-with-m3-expressive',
-    label: 'Building with M3 Expressive',
+    label: 'MD3 - Building with M3 Expressive',
     external: true,
   },
   {
     href: 'https://codelabs.developers.google.com/codelabs/the-lit-path?hl=ko#0',
-    label: 'Codelabs - The Lit Path',
+    label: 'Google Codelabs - The Lit Path',
     external: true,
   },
   {
     href: 'https://developer.mozilla.org/ko/docs/Web/Accessibility/Guides/Understanding_WCAG',
-    label: 'Understanding WCAG',
+    label: 'MDN - Understanding WCAG',
     external: true,
   },
   {
     href: 'https://www.atlassian.com/ko/work-management/knowledge-sharing/documentation',
-    label: 'Atlassian - 문서화',
+    label: 'Atlassian - Documentation',
     external: true,
   },
   {
@@ -97,7 +99,7 @@ const componentReferences: ComponentReferenceItemData[] = [
 const supplementaryReferences: ComponentReferenceItemData[] = [
   {
     href: 'https://www.uber.com/us/en/blog/design-system-at-scale/',
-    label: 'Uber - Design system at scale',
+    label: 'Uber - Design System at Scale',
     external: true,
   },
 ]

@@ -28,17 +28,17 @@ const componentReferences: ComponentReferenceItemData[] = [
   },
   {
     href: 'https://m3.material.io/components/segmented-buttons/overview',
-    label: 'Segmented buttons',
+    label: 'MD3 - Segmented Buttons',
     external: true,
   },
   {
     href: 'https://developer.apple.com/design/human-interface-guidelines/segmented-controls',
-    label: 'Segmented controls',
+    label: 'Apple HIG - Segmented Controls',
     external: true,
   },
   {
     href: 'https://www.w3.org/WAI/ARIA/apg/patterns/listbox/',
-    label: 'WAI listbox',
+    label: 'WAI-ARIA APG - Listbox Pattern',
     external: true,
   },
   {

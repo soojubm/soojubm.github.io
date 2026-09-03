@@ -16,18 +16,22 @@ const relatedComponents: ComponentRelatedItemData[] = [
 const componentReferences: ComponentReferenceItemData[] = [
   {
     href: 'https://support.google.com/accounts/answer/32040?visit_id=637702064644854938-965259796&p=pw_dont_reuse&hl=ko&rd=1',
-    label: '구글의 비밀번호 만들기 팁꾸',
+    label: 'Google - Password Tips',
     external: true,
   },
   {
     href: 'https://developer.apple.com/documentation/uikit/uisearchbar',
-    label: 'Apple Developer - searchbar',
+    label: 'Apple Developer - UISearchBar',
     external: true,
   },
-  { href: 'https://material.io/design/navigation/search.html', label: 'MD search', external: true },
+  {
+    href: 'https://material.io/design/navigation/search.html',
+    label: 'Material Design - Search',
+    external: true,
+  },
   {
     href: 'https://developer.android.com/reference/android/widget/SearchView',
-    label: 'android searchview',
+    label: 'Android - SearchView',
     external: true,
   },
 ]

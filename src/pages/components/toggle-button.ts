@@ -18,12 +18,12 @@ const relatedComponents: ComponentRelatedItemData[] = [
 const componentReferences: ComponentReferenceItemData[] = [
   {
     href: 'https://m3.material.io/components/button-groups/overview',
-    label: 'MD3 Button groups',
+    label: 'MD3 - Button Groups',
     external: true,
   },
   {
     href: 'https://polaris-react.shopify.com/components/lists/resource-list',
-    label: 'Shopify Resource list',
+    label: 'Shopify Polaris - Resource List',
     external: true,
   },
 ]

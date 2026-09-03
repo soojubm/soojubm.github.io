@@ -17,27 +17,27 @@ const relatedComponents: ComponentRelatedItemData[] = [
 const componentReferences: ComponentReferenceItemData[] = [
   {
     href: 'https://developer.mozilla.org/ko/docs/Web/API/Popover_API',
-    label: 'Mozilla Popover API',
+    label: 'MDN - Popover API',
     external: true,
   },
   {
     href: 'https://developer.apple.com/design/human-interface-guidelines/components/presentation/action-sheets',
-    label: 'HIG action-sheets',
+    label: 'Apple HIG - Action Sheets',
     external: true,
   },
   {
     href: 'https://developer.apple.com/design/human-interface-guidelines/sheets',
-    label: 'HIG sheets',
+    label: 'Apple HIG - Sheets',
     external: true,
   },
   {
     href: 'https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alertdialog_role',
-    label: 'alertdialog role',
+    label: 'MDN - alertdialog Role',
     external: true,
   },
   {
     href: 'https://mobbin.com/glossary/bottom-sheet',
-    label: 'moffin - Bottom Sheet',
+    label: 'Mobbin - Bottom Sheet',
     external: true,
   },
   {

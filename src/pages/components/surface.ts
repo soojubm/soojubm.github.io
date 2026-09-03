@@ -2,6 +2,7 @@ import { html } from 'lit'
 
 import type { ComponentFeatureItem } from '@/components/domains/component/component-feature-list'
 import type { ComponentPropItemData } from '@/components/domains/component/component-props'
+import type { ComponentReferenceItemData } from '@/components/domains/component/component-references'
 import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
 import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
 
@@ -11,6 +12,36 @@ const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'sheet.html', label: 'Sheet' },
   { href: 'popover.html', label: 'Popover' },
   { href: 'dialog.html', label: 'Dialog' },
+]
+
+const componentReferences: ComponentReferenceItemData[] = [
+  { href: 'https://mui.com/material-ui/react-paper/', label: 'MUI - Paper', external: true },
+  {
+    href: 'https://carbondesignsystem.com/components/tile/usage/',
+    label: 'Carbon Design System - Tile',
+    external: true,
+  },
+  {
+    href: 'https://heroui.com/en/docs/react/components/surface',
+    label: 'HeroUI (React) - Surface',
+    external: true,
+  },
+  {
+    href: 'https://developer.dynatrace.com/design/components/layouts/Surface/',
+    label: 'Dynatrace Design - Surface',
+    external: true,
+  },
+  {
+    href: 'https://heroui.com/en/docs/native/components/surface',
+    label: 'HeroUI (Native) - Surface',
+    external: true,
+  },
+  { href: 'https://ant.design/components/card', label: 'Ant Design - Card', external: true },
+  {
+    href: 'https://getcssscan.com/css-box-shadow-examples',
+    label: 'CSS box-shadow examples',
+    external: true,
+  },
 ]
 
 const componentProps: ComponentPropItemData[] = [
@@ -160,12 +191,7 @@ const main = html`
               <span aria-hidden="true">🔥</span>
               Most Popular
             </mm-tag>
-            <mm-menu-item-action
-              size="small"
-              icon="user"
-              label="수줍이"
-              description="2 hour ago"
-            ></mm-menu-item-action>
+            <mm-user-row icon="user" label="수줍이" description="2 hour ago"></mm-user-row>
           </header>
           <div class="feed-body">
             <mm-thumbnail ratio="16:9" src="/src/images/soojubm.png" alt=""></mm-thumbnail>
@@ -270,12 +296,6 @@ const main = html`
           </mm-paragraph>
           <mm-paragraph>콘텐츠 폭을 기준으로 이동 거리를 계산합니다.</mm-paragraph>
           <mm-paragraph>화면 폭이 달라져도 필요한 복제 수를 다시 맞춥니다.</mm-paragraph>
-        </mm-marquee>
-        <mm-marquee direction="right" gap="4" speed="48" pause-on-hover>
-          <mm-tag>Right direction</mm-tag>
-          <mm-tag>Speed 48</mm-tag>
-          <mm-tag>Slow and steady</mm-tag>
-          <mm-tag>Reverse flow</mm-tag>
         </mm-marquee>
         <mm-marquee gap="3" height="120px" speed="72" pause-on-hover>
           <mm-thumbnail
@@ -387,9 +407,7 @@ const main = html`
 
     <mm-component-related .items=${relatedComponents}></mm-component-related>
 
-    <mm-component-references>
-      https://getcssscan.com/css-box-shadow-examples
-    </mm-component-references>
+    <mm-component-references .items=${componentReferences}></mm-component-references>
   </main>
 `
 

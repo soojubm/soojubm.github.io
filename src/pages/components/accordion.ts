@@ -16,10 +16,14 @@ const relatedComponents: ComponentRelatedItemData[] = [
 const componentReferences: ComponentReferenceItemData[] = [
   {
     href: 'https://www.w3.org/WAI/ARIA/apg/patterns/accordion/',
-    label: 'WAI-ARIA Accordion Pattern',
+    label: 'WAI-ARIA APG - Accordion Pattern',
     external: true,
   },
-  { href: 'https://nuli.navercorp.com/community/article/1132889', label: 'nuli', external: true },
+  {
+    href: 'https://nuli.navercorp.com/community/article/1132889',
+    label: 'NULI - Web Accessibility',
+    external: true,
+  },
 ]
 
 const componentProps: ComponentPropItemData[] = [

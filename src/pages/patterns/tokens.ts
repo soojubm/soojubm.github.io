@@ -7,32 +7,32 @@ import { renderDocumentLayout } from '@/components/layouts/document-layout'
 const componentReferences: ComponentReferenceItemData[] = [
   {
     href: 'https://design-tokens.github.io/community-group/format',
-    label: 'Design Tokens Format Module, W3C',
+    label: 'W3C - Design Tokens Format Module',
     external: true,
   },
   {
     href: 'https://docs.specifyapp.com/concepts/token-types',
-    label: 'Specify Token Types',
+    label: 'Specify - Token Types',
     external: true,
   },
   {
     href: 'https://www.delldesignsystem.com/foundations/elevation/',
-    label: 'Dell Elevation',
+    label: 'Dell Design System - Elevation',
     external: true,
   },
   {
     href: 'https://www.delldesignsystem.com/foundations/typography/',
-    label: 'Dell Typography',
+    label: 'Dell Design System - Typography',
     external: true,
   },
   {
     href: 'https://atlassian.design/components/tokens/all-tokens',
-    label: 'Atlassian Tokens',
+    label: 'Atlassian Design - Tokens',
     external: true,
   },
   {
     href: 'https://medium.com/eightshapes-llc/size-in-design-systems-64f234aec519',
-    label: 'Size in Design Systems',
+    label: 'EightShapes - Size in Design Systems',
     external: true,
   },
 ]

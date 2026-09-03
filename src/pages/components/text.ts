@@ -3,23 +3,33 @@ import { html } from 'lit'
 import type { ComponentFeatureItem } from '@/components/domains/component/component-feature-list'
 import type { ComponentPropItemData } from '@/components/domains/component/component-props'
 import type { ComponentReferenceItemData } from '@/components/domains/component/component-references'
+import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
 
 import { renderDocumentLayout } from '@/components/layouts/document-layout'
+
+const relatedComponents: ComponentRelatedItemData[] = [
+  { href: 'dialog.html', label: 'Dialog' },
+  { href: 'result.html', label: 'Result' },
+  { href: 'notice.html', label: 'Notice' },
+  { href: 'list-item.html', label: 'List Item' },
+  { href: 'menu-item.html', label: 'Menu Item' },
+  { href: 'thumbnail.html', label: 'Thumbnail' },
+]
 
 const componentReferences: ComponentReferenceItemData[] = [
   {
     href: 'https://design-system.service.gov.uk/components/summary-list/',
-    label: 'Summary list',
+    label: 'GOV.UK Design System - Summary List',
     external: true,
   },
   {
     href: 'https://en.wikipedia.org/wiki/Adjacency_pairs',
-    label: 'Adjacency_pairs',
+    label: 'Wikipedia - Adjacency Pairs',
     external: true,
   },
   {
     href: 'https://design.innovaccer.com/components/keyValuePair/usage/',
-    label: 'Key value pair',
+    label: 'Innovaccer Design - Key Value Pair',
     external: true,
   },
 ]
@@ -298,6 +308,8 @@ const main = html`
         </div>
       </div>
     </mm-component-section>
+
+    <mm-component-related .items=${relatedComponents}></mm-component-related>
 
     <mm-component-references .items=${componentReferences}></mm-component-references>
   </main>

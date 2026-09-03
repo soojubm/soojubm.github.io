@@ -16,38 +16,38 @@ const relatedComponents: ComponentRelatedItemData[] = [
 const componentReferences: ComponentReferenceItemData[] = [
   {
     href: 'https://developer.apple.com/documentation/swiftui/navigationstack',
-    label: 'swiftui navigationstack',
+    label: 'SwiftUI - NavigationStack',
     external: true,
   },
   {
     href: 'https://developer.apple.com/design/human-interface-guidelines/tab-views',
-    label: 'HIG tab views',
+    label: 'Apple HIG - Tab Views',
     external: true,
   },
   {
     href: 'https://developer.apple.com/design/human-interface-guidelines/components/selection-and-input/segmented-controls/',
-    label: 'HIG Segmented controls',
+    label: 'Apple HIG - Segmented Controls',
     external: true,
   },
-  { href: 'https://material.io/components/tabs', label: 'MD Tabs', external: true },
+  { href: 'https://material.io/components/tabs', label: 'Material Design - Tabs', external: true },
   {
     href: 'https://m3.material.io/components/top-app-bar/overview',
-    label: 'MD3 top app bar',
+    label: 'MD3 - Top App Bar',
     external: true,
   },
   {
     href: 'https://m2.material.io/components/bottom-navigation',
-    label: 'M2 Bottom Navigation',
+    label: 'MD2 - Bottom Navigation',
     external: true,
   },
   {
     href: 'https://m3.material.io/components/navigation-bar/overview',
-    label: 'M3 Navigation Bar',
+    label: 'MD3 - Navigation Bar',
     external: true,
   },
   {
     href: 'https://developer.apple.com/design/human-interface-guidelines/components/navigation-and-search/tab-bars',
-    label: 'HIG Tab bars',
+    label: 'Apple HIG - Tab Bars',
     external: true,
   },
 ]
