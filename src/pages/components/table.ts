@@ -38,8 +38,6 @@ const componentFeatures: ComponentFeatureItem[] = [
     heading: 'Structural',
     description: '행과 열의 격자로 데이터의 구조를 잡아 값을 비교하고 탐색하기 쉽게 만듭니다.',
   },
-  { heading: 'TODO', description: 'TODO' },
-  { heading: 'TODO', description: 'TODO' },
 ]
 
 const columns: TableColumn[] = [

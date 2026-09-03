@@ -38,7 +38,6 @@ const componentFeatures: ComponentFeatureItem[] = [
     description:
       '제한된 선택지가 아니라 자유 형식의 긴 텍스트를 받고, 규칙 검증과 오류 표시를 소유합니다. 글자 수 제한 같은 규칙은 오류가 나기 전에 미리 알리고, 여러 줄 입력이 예상되는 맥락에만 사용합니다.',
   },
-  { heading: 'TODO', description: 'TODO' },
 ]
 
 const main = html`

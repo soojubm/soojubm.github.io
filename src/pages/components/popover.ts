@@ -34,11 +34,7 @@ const componentTokens: ComponentTokenItemData[] = [
   { name: 'popover-offset', default: 'var(--space-1)' },
 ]
 
-const componentFeatures: ComponentFeatureItem[] = [
-  { heading: 'TODO', description: 'TODO' },
-  { heading: 'TODO', description: 'TODO' },
-  { heading: 'TODO', description: 'TODO' },
-]
+const componentFeatures: ComponentFeatureItem[] = []
 
 const main = html`
   <main class="page">

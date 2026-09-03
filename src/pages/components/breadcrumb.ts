@@ -25,11 +25,7 @@ const componentTokens: ComponentTokenItemData[] = [
   { name: 'breadcrumb-divider-space', default: 'var(--space-3)' },
 ]
 
-const componentFeatures: ComponentFeatureItem[] = [
-  { heading: 'TODO', description: 'TODO' },
-  { heading: 'TODO', description: 'TODO' },
-  { heading: 'TODO', description: 'TODO' },
-]
+const componentFeatures: ComponentFeatureItem[] = []
 
 const breadcrumbItems: BreadcrumbItem[] = [
   { label: '홈', href: '/' },

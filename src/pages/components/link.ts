@@ -32,8 +32,6 @@ const componentFeatures: ComponentFeatureItem[] = [
     description:
       '누르면 다른 위치로 이동합니다. 상호작용 가능함은 색상·밑줄 같은 일관된 기표로 드러냅니다.',
   },
-  { heading: 'TODO', description: 'TODO' },
-  { heading: 'TODO', description: 'TODO' },
 ]
 
 const main = html`

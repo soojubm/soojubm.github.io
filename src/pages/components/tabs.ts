@@ -83,7 +83,6 @@ const componentFeatures: ComponentFeatureItem[] = [
     description:
       '최대 2단어를 넘지 않도록 작성하고 두 줄이 되지 않도록 작성합니다. (그러나 폴더블과 워치 이후 말 줄임표나 두 줄 레이블을 허용해야 하는가)',
   },
-  { heading: 'TODO', description: 'TODO' },
 ]
 
 const main = html`

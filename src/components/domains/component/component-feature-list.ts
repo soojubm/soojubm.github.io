@@ -50,8 +50,10 @@ class ComponentFeatureList extends LitElement {
   @property({ type: Boolean, reflect: true }) centered = false
 
   render() {
+    if (!this.features.length) return nothing
+
     return html`
-      <mm-feature-group columns="3">
+      <mm-feature-group columns="2">
         ${this.features.map(
           feature => html`
             <mm-feature

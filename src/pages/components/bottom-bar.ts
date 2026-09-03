@@ -17,10 +17,7 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'label', type: "string = '하단 내비게이션'", optional: true },
 ]
 
-const componentFeatures: ComponentFeatureItem[] = [
-  { heading: 'TODO', description: 'TODO' },
-  { heading: 'TODO', description: 'TODO' },
-]
+const componentFeatures: ComponentFeatureItem[] = []
 
 const navItems: BottomBarItem[] = [
   { label: '홈', href: '#', icon: 'home-simple-door', active: true },

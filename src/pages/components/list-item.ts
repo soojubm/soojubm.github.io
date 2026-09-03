@@ -55,7 +55,6 @@ const componentFeatures: ComponentFeatureItem[] = [
     description:
       'leading·content·trailing의 고정된 골격으로 반복되는 행의 구조를 잡습니다. 상호작용 없이 레이아웃만 담당하는 표현 전용 행입니다.',
   },
-  { heading: 'TODO', description: 'TODO' },
 ]
 
 const main = html`

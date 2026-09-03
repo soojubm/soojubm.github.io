@@ -33,7 +33,6 @@ const componentFeatures: ComponentFeatureItem[] = [
     description:
       '완료·오류·빈 상태 등 결과의 의미를 톤으로 구분합니다. 색상에만 의존하지 않고 아이콘과 메시지를 함께 제공합니다.',
   },
-  { heading: 'TODO', description: 'TODO' },
 ]
 
 const primaryAction: ActionConfig = {

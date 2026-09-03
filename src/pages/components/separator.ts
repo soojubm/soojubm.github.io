@@ -28,8 +28,6 @@ const componentFeatures: ComponentFeatureItem[] = [
     description:
       '정보와 정보 사이의 시각적 경계를 명확히 하여, 복잡한 화면의 레이아웃을 논리적인 단위로 분리하고 구조화합니다.',
   },
-  { heading: 'TODO', description: 'TODO' },
-  { heading: 'TODO', description: 'TODO' },
 ]
 
 const main = html`

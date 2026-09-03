@@ -29,7 +29,6 @@ const componentFeatures: ComponentFeatureItem[] = [
     description:
       '콘텐츠 본문 대신 그 성격을 대표하는 미리보기 이미지를 보여줍니다. 무엇에 대한 콘텐츠인지 한눈에 알아볼 수 있어야 합니다. 이미지를 불러오지 못하거나 비어 있어도 빈 상태 배경(thumbnail-color-empty)으로 비율과 형태를 유지하고, alt 텍스트를 반드시 제공합니다.',
   },
-  { heading: 'TODO', description: 'TODO' },
 ]
 
 const main = html`

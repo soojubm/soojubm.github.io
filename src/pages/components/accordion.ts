@@ -45,8 +45,6 @@ const componentFeatures: ComponentFeatureItem[] = [
     description:
       '항목의 상세를 접어 두고 선택적으로 펼쳐 읽게 합니다. 같은 흐름 안의 부가 공개이며(tooltip·본문 접기와 같은 축), 독립된 작업 레이어로 전환하는 sheet 패턴과는 구별됩니다. 반드시 읽어야 하는 정보(약관·경고)는 접지 않습니다.',
   },
-  { heading: 'TODO', description: 'TODO' },
-  { heading: 'TODO', description: 'TODO' },
 ]
 
 const main = html`

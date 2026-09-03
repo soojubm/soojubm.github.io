@@ -22,7 +22,6 @@ const componentFeatures: ComponentFeatureItem[] = [
     description:
       '작업이 진행 중이며 시스템이 응답하고 있음을 알립니다. 결과를 기다리는 동안 사용자의 불확실성을 줄입니다.',
   },
-  { heading: 'TODO', description: 'TODO' },
 ]
 
 const main = html`

@@ -33,7 +33,6 @@ const componentFeatures: ComponentFeatureItem[] = [
     description:
       '설명이 필요 없는 플로우와 인터페이스를 우선하세요. 툴팁은 없을수록 좋으며, 접근성을 위한 최소한의 설명만 제공합니다. 작은 화면에서 바텀 시트나 팝오버로 제공하는 것이 좋다. 사용자가 반드시 숙지해야 하는 중요한 정보를 툴팁으로 제공하지 마세요.',
   },
-  { heading: 'TODO', description: 'TODO' },
 ]
 
 const main = html`

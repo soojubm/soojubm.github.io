@@ -19,11 +19,7 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'description', type: 'slot', optional: true },
 ]
 
-const componentFeatures: ComponentFeatureItem[] = [
-  { heading: 'TODO', description: 'TODO' },
-  { heading: 'TODO', description: 'TODO' },
-  { heading: 'TODO', description: 'TODO' },
-]
+const componentFeatures: ComponentFeatureItem[] = []
 
 const main = html`
   <main class="page">

@@ -32,10 +32,7 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'maxLength', type: "'1' | '2' | '3'", optional: true },
 ]
 
-const componentFeatures: ComponentFeatureItem[] = [
-  { heading: 'TODO', description: 'TODO' },
-  { heading: 'TODO', description: 'TODO' },
-]
+const componentFeatures: ComponentFeatureItem[] = []
 
 const main = html`
   <main class="page">

@@ -58,9 +58,11 @@ const componentProps: ComponentPropItemData[] = [
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [
-  { heading: 'Modality', description: 'TODO' },
-  { heading: 'TODO', description: 'TODO' },
-  { heading: 'TODO', description: 'TODO' },
+  {
+    heading: 'Modality',
+    description:
+      '배경 상호작용을 차단하며, backdrop·ESC·닫기 버튼으로 사용자가 흐름을 빠져나갈 수 있어야 합니다.',
+  },
 ]
 
 type SheetElement = HTMLElement & {

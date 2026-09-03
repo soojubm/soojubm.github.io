@@ -46,7 +46,6 @@ const componentFeatures: ComponentFeatureItem[] = [
     description:
       '누를 때마다 누름(pressed) 상태가 토글되어 선택 여부를 드러내고, 그룹에서는 단일 선택으로 동작합니다.',
   },
-  { heading: 'TODO', description: 'TODO' },
 ]
 
 const anatomyViewOptions: OptionItem[] = [

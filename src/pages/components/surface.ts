@@ -37,8 +37,6 @@ const componentFeatures: ComponentFeatureItem[] = [
     description:
       '독립된 배경 영역으로 화면을 논리적인 단위로 분리하고 관련 정보를 하나로 묶습니다. 명도 대비와 음영(Shadow)의 깊이감으로 정보 레이어의 상하 관계까지 드러내며, 이 배경색·깊이의 변화가 해당 영역의 클릭 가능 여부를 식별하는 기표로도 작동합니다.',
   },
-  { heading: 'TODO', description: 'TODO' },
-  { heading: 'TODO', description: 'TODO' },
 ]
 
 const main = html`
