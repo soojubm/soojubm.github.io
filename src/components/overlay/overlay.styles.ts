@@ -111,6 +111,11 @@ export const sheetPositionStyles = css`
     transition: transform var(--transition-duration) var(--transition-easing-emphasis);
   }
 
+  /* center: 패널이 콘텐츠 폭으로 줄지 않고 width prop이 고른 max-width를 채운다 */
+  :host([placement='center']) .panel {
+    width: 100%;
+  }
+
   /* center + width */
   :host([placement='center'][width='small']) {
     --surface-max-width: 320px;

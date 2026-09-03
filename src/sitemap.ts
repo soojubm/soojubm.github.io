@@ -163,7 +163,7 @@ export const SITEMAP: SitemapNode[] = [
       { id: 'dashboard', name: 'Dashboard', hidden: true },
       { id: 'product', name: 'Product' },
       { id: 'auth', name: 'Auth', hidden: true },
-      { id: 'post', name: 'Post', hidden: true },
+      { id: 'post', name: 'Post' },
       { id: 'checkout', name: 'Checkout', hidden: true },
       { id: 'faq', name: 'FAQ', hidden: true },
       { id: 'contact', name: 'Contact', hidden: true },
