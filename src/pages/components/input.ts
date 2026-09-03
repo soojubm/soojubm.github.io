@@ -110,6 +110,14 @@ const main = html`
       "접두/접미 요소 — 아이콘·단위·버튼 등 보조 요소(slot: leading / trailing).",
       "검증 텍스트 — 입력 필드 아래에서 오류나 검증 결과를 전달합니다(validation-text)."
     ]'
+      .code=${`<mm-textfield
+  label="이메일"
+  placeholder="name@example.com"
+  helper="회사 이메일을 입력하세요."
+  validation-text="올바른 이메일 형식으로 입력하세요."
+>
+  <mm-icon slot="leading" name="mail"></mm-icon>
+</mm-textfield>`}
     >
       <mm-textfield
         label="이메일"

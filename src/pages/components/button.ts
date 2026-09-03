@@ -159,6 +159,7 @@ const main = html`
       "아이콘 — 레이블을 보조하는 선택적 메타포(icon).",
       "레이블 — 실행 결과를 예측할 수 있는 동사형 텍스트."
     ]'
+      .code=${'<mm-button variant="primary" size="large" icon="send-diagonal">보내기</mm-button>'}
     >
       <mm-button variant="primary" size="large" icon="send-diagonal">보내기</mm-button>
       <mm-list-marker

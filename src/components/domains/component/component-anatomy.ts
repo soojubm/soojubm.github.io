@@ -1,7 +1,8 @@
 import { LitElement, css, html, nothing } from 'lit'
-import { customElement, property, state } from 'lit/decorators.js'
+import { customElement, property } from 'lit/decorators.js'
 
 import { componentContentFrameStyles } from '@/components/domains/component/component.styles'
+import '@/components/common/code/code'
 import '@/components/common/text/semantics/text-list'
 import { resetStyles } from '@/stylesheets/shared.styles'
 import { arrayAttributeConverter } from '@/utils'
@@ -9,12 +10,12 @@ import '@/components/common/text'
 
 /**
  * 컴포넌트 해부도(Anatomy) 섹션.
- * 슬롯에 시연 대상을 넣고, parts 배열로 번호 매긴 구성요소 범례를 표시합니다.
- * code 슬롯에 조립 마크업을 넣으면 범례 아래에 코드 블록으로 함께 보여줍니다.
+ * 슬롯에 시연 대상을 넣고, code에 조립 마크업을 넘기면 제목 바로 아래에 코드 블록으로 보여줍니다.
+ * parts 배열을 넘기면 번호 매긴 구성요소 범례를 덧붙입니다.
+ * 나눌 구성요소가 없는 단일 요소 컴포넌트는 parts 없이 시연과 코드만 전시합니다.
  *
- * <mm-component-anatomy parts='["컨테이너", "옵션 버튼", "선택 인디케이터"]'>
+ * <mm-component-anatomy parts='["컨테이너", "옵션 버튼", "선택 인디케이터"]' .code=${'<mm-select> … </mm-select>'}>
  *   < 시연 마크업 />
- *   <pre slot="code">&lt;mm-select&gt; … &lt;/mm-select&gt;</pre>
  * </mm-component-anatomy>
  */
 @customElement('mm-component-anatomy')
@@ -44,18 +45,6 @@ export class ComponentAnatomy extends LitElement {
         padding: var(--component-anatomy-stage-padding);
         position: relative;
       }
-
-      .code {
-        margin: 0;
-        padding: var(--space-4);
-        border-radius: var(--radius-large);
-        background-color: var(--background-subtle-color);
-        overflow-x: auto;
-        font-family: var(--font-family-code);
-        font-size: var(--font-size-12);
-        line-height: var(--font-line-height-16);
-        white-space: pre;
-      }
     `,
   ]
 
@@ -65,18 +54,18 @@ export class ComponentAnatomy extends LitElement {
     converter: arrayAttributeConverter<string>(),
   })
   parts: string[] = []
-
-  @state() private hasCode = false
+  @property({ type: String }) code = ''
 
   render() {
     return html`
       <mm-text size="24" weight="bold" as="h3">${this.heading}</mm-text>
+      ${this.renderCode()}
       <div class="component-content-frame">
         <div class="stage">
           <slot></slot>
         </div>
       </div>
-      ${this.renderCode()} ${this.renderParts()}
+      ${this.renderParts()}
     `
   }
 
@@ -89,17 +78,11 @@ export class ComponentAnatomy extends LitElement {
   }
 
   private renderCode() {
-    return html`
-      <pre class="code" ?hidden=${!this.hasCode}><slot
-          name="code"
-          @slotchange=${this.handleCodeSlotChange}
-        ></slot></pre>
-    `
-  }
+    if (!this.code) return nothing
 
-  private handleCodeSlotChange(event: Event) {
-    const slot = event.target as HTMLSlotElement
-    this.hasCode = slot.assignedNodes({ flatten: true }).some(node => node.textContent?.trim())
+    return html`
+      <mm-code .code=${this.code}></mm-code>
+    `
   }
 
   private get normalizedParts() {

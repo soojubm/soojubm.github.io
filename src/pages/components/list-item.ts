@@ -123,6 +123,9 @@ const main = html`
       "content — label과 description으로 구성된 본문. flex: 1로 남은 공간을 채웁니다.",
       "trailing — 오른쪽에 배치되는 선택적 슬롯. 액션 버튼·뱃지·메타 텍스트 등을 넣습니다."
     ]'
+      .code=${`<mm-list-item label="수줍이" description="바보" size="48" avatar-src="...">
+  <mm-follow-button slot="trailing"></mm-follow-button>
+</mm-list-item>`}
     >
       <mm-list-item
         label="수줍이"

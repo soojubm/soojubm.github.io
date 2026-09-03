@@ -79,6 +79,7 @@ const main = html`
       "체크 표식 — 선택 시 나타나는 체크 아이콘(또는 indeterminate 표식).",
       "레이블 — 선택지를 설명하는 클릭 가능한 텍스트."
     ]'
+      .code=${'<mm-checkbox size="large" checked>관심 분야</mm-checkbox>'}
     >
       <mm-checkbox size="large" checked>관심 분야</mm-checkbox>
 

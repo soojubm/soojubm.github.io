@@ -143,6 +143,7 @@ const main = html`
       "접근성 레이블 — 화면에 보이지 않지만 액션을 설명하는 텍스트(aria-label).",
       "툴팁 — icon-only 버튼의 용도를 보조 설명합니다."
     ]'
+      .code=${'<mm-icon-button variant="primary" icon="heart" aria-label="좋아요"></mm-icon-button>'}
     >
       <mm-tooltip content="좋아요" placement="center" open>
         <mm-icon-button

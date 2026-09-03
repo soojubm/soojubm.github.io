@@ -64,6 +64,7 @@ const main = html`
       "썸(Thumb) — 트랙 위를 좌우로 이동하며 상태를 나타내는 손잡이.",
       "레이블 — 설정 항목을 설명하는 텍스트."
     ]'
+      .code=${'<mm-switch checked>뉴스레터 받아보기</mm-switch>'}
     >
       <mm-switch checked>뉴스레터 받아보기</mm-switch>
 

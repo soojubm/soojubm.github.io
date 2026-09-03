@@ -94,6 +94,7 @@ const main = html`
       "컨테이너 — variant·size로 형태와 크기·배경을 정의합니다.",
       "콘텐츠 — 이미지 &gt; 아이콘 &gt; 이니셜 &gt; 기본 아이콘 순서로 폴백합니다."
     ]'
+      .code=${'<mm-avatar variant="secondary" size="80"></mm-avatar>'}
     >
       <mm-avatar size="80" variant="secondary"></mm-avatar>
       <mm-list-marker
@@ -111,7 +112,6 @@ const main = html`
         transform: translate(-50%, -50%);
       "
       ></mm-list-marker>
-      <pre slot="code">&lt;mm-avatar variant="secondary" size="80"&gt;&lt;/mm-avatar&gt;</pre>
     </mm-component-anatomy>
 
     <mm-component-section

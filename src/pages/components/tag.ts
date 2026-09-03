@@ -78,6 +78,7 @@ const main = html`
       "아이콘 — 분류나 상태를 보조하는 선택적 메타포입니다.",
       "레이블 — 분류·상태를 나타내는 짧은 텍스트."
     ]'
+      .code=${'<mm-tag tone="green" icon="check-circle">승인됨</mm-tag>'}
     >
       <mm-tag tone="green" icon="check-circle">승인됨</mm-tag>
 

@@ -118,6 +118,10 @@ const main = html`
       ></mm-text-list>
     </mm-component-guide>
 
+    <mm-component-anatomy .code=${'<mm-text size="24" weight="bold">Text</mm-text>'}>
+      <mm-text size="24" weight="bold">Text</mm-text>
+    </mm-component-anatomy>
+
     <mm-component-section
       heading="Headings"
       description="level(1–5)로 의미 단계(h1–h5)와 크기를 함께 지정하며, 기본값은 2입니다."

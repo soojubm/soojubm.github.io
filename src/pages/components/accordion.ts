@@ -99,6 +99,29 @@ const main = html`
       ></mm-text-list>
     </mm-component-guide>
 
+    <mm-component-anatomy
+      style="--component-anatomy-stage-width: 320px"
+      parts='[
+      "트리거 — summary 텍스트와 펼침 상태를 나타내는 아이콘을 가진 버튼입니다.",
+      "패널 — open일 때 드러나는 콘텐츠 영역."
+    ]'
+      .code=${'<mm-accordion-item summary="질문" open>답변</mm-accordion-item>'}
+    >
+      <mm-accordion-item summary="서비스를 탈퇴하고 싶어요." open style="width: 100%">
+        <mm-paragraph>마이페이지 → 계정 설정 → 회원 탈퇴 순서로 진행하시면 됩니다.</mm-paragraph>
+      </mm-accordion-item>
+      <mm-list-marker
+        variant="number"
+        value="1"
+        style="position: absolute; left: 1.5rem; top: 1.25rem; transform: translateY(-50%)"
+      ></mm-list-marker>
+      <mm-list-marker
+        variant="number"
+        value="2"
+        style="position: absolute; left: 1.5rem; bottom: 0.5rem; transform: translateY(-50%)"
+      ></mm-list-marker>
+    </mm-component-anatomy>
+
     <mm-component-related .items=${relatedComponents}></mm-component-related>
 
     <mm-component-references .items=${componentReferences}></mm-component-references>

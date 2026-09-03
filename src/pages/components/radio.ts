@@ -70,6 +70,7 @@ const main = html`
       "선택 표식 — 선택 시 원 안에 채워지는 점(dot).",
       "레이블 — 선택지를 설명하는 클릭 가능한 텍스트."
     ]'
+      .code=${'<mm-radio value="premium" checked>프리미엄 요금제</mm-radio>'}
     >
       <mm-radio value="premium" checked>프리미엄 요금제</mm-radio>
 

@@ -127,6 +127,32 @@ const main = html`
       ></mm-text-list>
     </mm-component-guide>
 
+    <mm-component-anatomy
+      parts='[
+      "컨테이너 — role=menuitem을 갖는 클릭 가능한 행입니다.",
+      "아이콘 — 액션을 보조하는 선택적 메타포(icon).",
+      "레이블 — 실행 결과를 예측할 수 있는 텍스트."
+    ]'
+      .code=${'<mm-menu-item-action icon="user" label="프로필"></mm-menu-item-action>'}
+    >
+      <mm-menu-item-action icon="user" label="프로필"></mm-menu-item-action>
+      <mm-list-marker
+        variant="number"
+        value="1"
+        style="position: absolute; left: -1.75rem; top: 50%; transform: translateY(-50%)"
+      ></mm-list-marker>
+      <mm-list-marker
+        variant="number"
+        value="2"
+        style="position: absolute; left: 1rem; bottom: -1.75rem; transform: translateX(-50%)"
+      ></mm-list-marker>
+      <mm-list-marker
+        variant="number"
+        value="3"
+        style="position: absolute; left: 3.75rem; bottom: -1.75rem; transform: translateX(-50%)"
+      ></mm-list-marker>
+    </mm-component-anatomy>
+
     <mm-component-section
       heading="MenuList"
       description="소제목과 메뉴 항목 목록을 한 묶음으로 전시합니다. heading을 제목 요소로 렌더해 목록에 aria-labelledby로 연결합니다."

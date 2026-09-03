@@ -32,6 +32,8 @@ import '@/components/overlay/dialog'
 
 import '@/components/common/thumbnail/thumbnail'
 
+import '@/components/common/code'
+
 import '@/components/common/text'
 
 import '@/components/common/button'
