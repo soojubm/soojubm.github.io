@@ -3,7 +3,6 @@ import { customElement, property } from 'lit/decorators.js'
 
 import type { AriaBoolean, AriaIdRef } from '@/types'
 
-import { interactiveControlStyles } from '@/components/common/button/button.styles'
 import {
   iconButtonSecondarySkinStyles,
   iconButtonStyles,
@@ -16,7 +15,7 @@ import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names
  */
 @customElement('mm-more-button')
 export class MoreButton extends LitElement {
-  static styles = [interactiveControlStyles, iconButtonStyles, iconButtonSecondarySkinStyles]
+  static styles = [iconButtonStyles, iconButtonSecondarySkinStyles]
 
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = '더보기'
   @property({ type: String, attribute: 'aria-expanded' }) ariaExpanded: AriaBoolean = 'false'

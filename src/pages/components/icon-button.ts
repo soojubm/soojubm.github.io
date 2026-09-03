@@ -18,8 +18,7 @@ const componentProps: ComponentPropItemData[] = [
     name: 'variant',
     type: "'primary' | 'secondary' | 'tertiary' | 'ghost' | 'destructive' = 'tertiary'",
   },
-  { name: 'size', type: "'xsmall' | 'small' | 'medium' = 'medium'" },
-  { name: 'shape', type: "'circle'", optional: true },
+  { name: 'size', type: "'small' | 'medium' = 'medium'" },
   { name: 'tooltip', type: 'string', optional: true },
   { name: 'tooltip-placement', type: "'left' | 'center' | 'right'", optional: true },
   { name: 'aria-label - TODO tooltip과 병합', type: 'string', optional: true },
@@ -120,8 +119,6 @@ const main = html`
       <mm-button-group>
         <mm-icon-button icon="xmark" size="medium" aria-label="medium"></mm-icon-button>
         <mm-icon-button icon="xmark" size="small" aria-label="small"></mm-icon-button>
-        <mm-icon-button icon="xmark" size="xsmall" aria-label="xsmall"></mm-icon-button>
-        <mm-icon-button icon="xmark" shape="circle" aria-label="circle"></mm-icon-button>
       </mm-button-group>
     </mm-component-example>
     <mm-component-props .props=${componentProps}></mm-component-props>

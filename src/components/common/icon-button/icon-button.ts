@@ -5,23 +5,20 @@ import { ifDefined } from 'lit/directives/if-defined.js'
 import type { IconName } from '@/components/common/icon-button/semantics/icon-names'
 import type { AriaBoolean, AriaHasPopup, AriaIdRef } from '@/types'
 
-import { interactiveControlStyles } from '@/components/common/button/button.styles'
 import { iconButtonStyles } from '@/components/common/icon-button/icon-button.styles'
 import { renderWithOptionalTooltip } from '@/components/common/icon-button/icon-button.utils'
 import '@/components/common/icon'
 
 export type IconButtonVariant = 'primary' | 'secondary' | 'tertiary' | 'ghost' | 'destructive'
-export type IconButtonSize = 'xsmall' | 'small' | 'medium'
-export type IconButtonShape = 'circle'
+export type IconButtonSize = 'small' | 'medium'
 
 @customElement('mm-icon-button')
 class IconButton extends LitElement {
-  static styles = [interactiveControlStyles, iconButtonStyles]
+  static styles = [iconButtonStyles]
 
   @property({ type: String }) icon?: IconName
   @property({ type: String, reflect: true }) variant: IconButtonVariant = 'tertiary'
   @property({ type: String, reflect: true }) size: IconButtonSize = 'medium'
-  @property({ type: String, reflect: true }) shape?: IconButtonShape
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = ''
   @property({ type: String }) tooltip = ''
   @property({ type: String, attribute: 'tooltip-placement' }) tooltipPlacement = ''

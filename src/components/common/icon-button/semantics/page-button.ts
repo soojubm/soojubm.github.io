@@ -4,7 +4,6 @@ import { ifDefined } from 'lit/directives/if-defined.js'
 
 import type { AriaCurrent } from '@/types'
 
-import { interactiveControlStyles } from '@/components/common/button/button.styles'
 import { iconButtonStyles } from '@/components/common/icon-button/icon-button.styles'
 
 /**
@@ -14,7 +13,6 @@ import { iconButtonStyles } from '@/components/common/icon-button/icon-button.st
 @customElement('mm-page-button')
 export class PageButton extends LitElement {
   static styles = [
-    interactiveControlStyles,
     iconButtonStyles,
     css`
       :host {

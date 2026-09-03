@@ -1,7 +1,6 @@
 import { LitElement, css } from 'lit'
 import { customElement } from 'lit/decorators.js'
 
-import { interactiveControlStyles } from '@/components/common/button/button.styles'
 import { iconButtonStyles } from '@/components/common/icon-button/icon-button.styles'
 import { renderIconAction, withIconAction } from '@/components/common/icon-button/icon-button.utils'
 import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
@@ -12,7 +11,6 @@ import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names
 @customElement('mm-dismiss-button')
 export class DismissButton extends withIconAction(LitElement, 'dismiss') {
   static styles = [
-    interactiveControlStyles,
     iconButtonStyles,
     css`
       :host {

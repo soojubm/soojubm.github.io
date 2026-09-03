@@ -1,5 +1,6 @@
 import { css, unsafeCSS } from 'lit'
 
+import { interactiveControlStyles } from '@/components/common/button/button.styles'
 import { buildAttributeRules } from '@/utils'
 
 const iconButtonVariantTokens = {
@@ -47,49 +48,49 @@ export const iconButtonSelectedStyles = css`
   }
 `
 
-export const iconButtonStyles = css`
-  :host {
-    display: inline-flex;
-    --icon-button-size: var(--size-32);
-    --icon-button-background-color: var(--background-subtle-color);
-    --icon-button-border-radius: var(--radius);
-    --icon-button-border: var(--border-transparent);
-    --icon-button-text-color: var(--foreground-color);
-    --icon-button-shadow: none;
-    --icon-button-backdrop-filter: none;
-  }
+/**
+ * icon-button 계열의 기반 스타일.
+ * hover·focus·disabled는 자체 button을 렌더하는 파생 컴포넌트가 빠뜨리기 쉬우므로
+ * buttonBaseStyles와 같이 interactiveControlStyles를 여기 묶어 함께 내보낸다.
+ */
+export const iconButtonStyles = [
+  interactiveControlStyles,
+  css`
+    :host {
+      display: inline-flex;
+      --icon-button-size: var(--size-32);
+      --icon-button-background-color: var(--background-subtle-color);
+      --icon-button-border-radius: var(--radius);
+      --icon-button-border: var(--border-transparent);
+      --icon-button-text-color: var(--foreground-color);
+      --icon-button-shadow: none;
+      --icon-button-backdrop-filter: none;
+    }
 
-  button {
-    padding: 0;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: var(--icon-button-size);
-    height: var(--icon-button-size);
-    border: var(--icon-button-border);
-    border-radius: var(--icon-button-border-radius);
+    button {
+      padding: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: var(--icon-button-size);
+      height: var(--icon-button-size);
+      border: var(--icon-button-border);
+      border-radius: var(--icon-button-border-radius);
 
-    background: var(--icon-button-background-color);
-    box-shadow: var(--icon-button-shadow);
-    backdrop-filter: var(--icon-button-backdrop-filter);
-    -webkit-backdrop-filter: var(--icon-button-backdrop-filter);
-    color: var(--icon-button-text-color);
-    font-family: var(--font-family);
-    font-size: inherit;
-    cursor: pointer;
-  }
+      background: var(--icon-button-background-color);
+      box-shadow: var(--icon-button-shadow);
+      backdrop-filter: var(--icon-button-backdrop-filter);
+      -webkit-backdrop-filter: var(--icon-button-backdrop-filter);
+      color: var(--icon-button-text-color);
+      font-family: var(--font-family);
+      font-size: inherit;
+      cursor: pointer;
+    }
 
-  ${unsafeCSS(buildAttributeRules('variant', iconButtonVariantTokens, 'button'))}
+    ${unsafeCSS(buildAttributeRules('variant', iconButtonVariantTokens, 'button'))}
 
-  :host([size='small']) {
-    --icon-button-size: var(--size-24);
-  }
-
-  :host([size='xsmall']) {
-    --icon-button-size: var(--size-16);
-  }
-
-  :host([shape='circle']) {
-    --icon-button-border-radius: var(--radius-full);
-  }
-`
+    :host([size='small']) {
+      --icon-button-size: var(--size-24);
+    }
+  `,
+]

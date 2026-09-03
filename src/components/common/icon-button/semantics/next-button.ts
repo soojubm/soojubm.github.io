@@ -1,7 +1,6 @@
 import { LitElement } from 'lit'
 import { customElement } from 'lit/decorators.js'
 
-import { interactiveControlStyles } from '@/components/common/button/button.styles'
 import {
   iconButtonSecondarySkinStyles,
   iconButtonStyles,
@@ -11,7 +10,7 @@ import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names
 
 @customElement('mm-next-button')
 export class NextButton extends withIconAction(LitElement, 'next') {
-  static styles = [interactiveControlStyles, iconButtonStyles, iconButtonSecondarySkinStyles]
+  static styles = [iconButtonStyles, iconButtonSecondarySkinStyles]
 
   render() {
     return renderIconAction({
