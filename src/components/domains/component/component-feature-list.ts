@@ -19,8 +19,8 @@ export interface ComponentFeatureItem {
  */
 const FEATURE_ICONS: Record<string, IconName> = {
   Disclosure: ICON_NAMES.EXPAND,
-  Feedback: ICON_NAMES.CLICK,
-  Glanceable: ICON_NAMES.CLICK,
+  Feedback: ICON_NAMES.NOTIFICATION,
+  Glanceable: ICON_NAMES.VIEW,
   'Interactive - action': ICON_NAMES.CLICK,
   'Interactive - input': ICON_NAMES.FIELD,
   'Interactive - selection': ICON_NAMES.SELECTED,
