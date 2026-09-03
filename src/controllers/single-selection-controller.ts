@@ -1,19 +1,15 @@
-import type { ReactiveController, ReactiveControllerHost } from 'lit'
+import type { ReactiveControllerHost } from 'lit'
 
-type Host = ReactiveControllerHost & HTMLElement
-export type SelectionOption = { value: string }
+type Host = ReactiveControllerHost
+type SelectionOption = { value: string }
 
 interface SingleSelectionControllerOptions {
   getValue: () => string
   setValue: (value: string) => void
 }
 
-export class SingleSelectionController implements ReactiveController {
-  constructor(private host: Host, private options: SingleSelectionControllerOptions) {
-    host.addController(this)
-  }
-
-  hostConnected() {}
+export class SingleSelectionController {
+  constructor(private host: Host, private options: SingleSelectionControllerOptions) {}
 
   select(option: SelectionOption) {
     this.setSelected(option, true)

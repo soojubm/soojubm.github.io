@@ -35,7 +35,7 @@ export class ComponentRelated extends LitElement {
   render() {
     return html`
       <section class="component-related">
-        <mm-heading level="2">Related Components</mm-heading>
+        <mm-heading level="2">Related</mm-heading>
         <mm-button-group>
           ${this.items.map(
             item =>

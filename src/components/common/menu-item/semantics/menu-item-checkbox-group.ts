@@ -41,7 +41,7 @@ export class MenuItemCheckboxGroup extends LitElement {
     getOptions: () => this.checkboxes.map(checkbox => ({ value: selectionItemValue(checkbox) })),
   })
 
-  private group = new SelectionGroupController<MenuItemCheckbox>(this, {
+  private group = new SelectionGroupController<MenuItemCheckbox>({
     selection: this.selection,
     getItems: () => this.checkboxes,
     isEmpty: () => !this.values.length,

@@ -1,7 +1,7 @@
-import type { ReactiveController, ReactiveControllerHost } from 'lit'
+import type { ReactiveControllerHost } from 'lit'
 
-type Host = ReactiveControllerHost & HTMLElement
-export type SelectionOption = {
+type Host = ReactiveControllerHost
+type SelectionOption = {
   value: string
   selectAll?: boolean
 }
@@ -12,12 +12,8 @@ interface MultipleSelectionControllerOptions {
   getOptions: () => SelectionOption[]
 }
 
-export class MultipleSelectionController implements ReactiveController {
-  constructor(private host: Host, private options: MultipleSelectionControllerOptions) {
-    host.addController(this)
-  }
-
-  hostConnected() {}
+export class MultipleSelectionController {
+  constructor(private host: Host, private options: MultipleSelectionControllerOptions) {}
 
   select(option: SelectionOption) {
     this.setSelected(option, !this.isOptionSelected(option))

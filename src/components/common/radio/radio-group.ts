@@ -26,7 +26,7 @@ export class RadioGroup extends LitElement {
     },
   })
 
-  private group = new SelectionGroupController<Radio>(this, {
+  private group = new SelectionGroupController<Radio>({
     selection: this.selection,
     getItems: () => this.radios,
     isEmpty: () => !this.value,

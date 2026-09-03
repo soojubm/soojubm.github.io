@@ -1,6 +1,6 @@
-import type { ReactiveController, ReactiveControllerHost } from 'lit'
+import type { ReactiveControllerHost } from 'lit'
 
-type Host = ReactiveControllerHost & HTMLElement
+type Host = ReactiveControllerHost
 
 interface ToggleControllerOptions {
   getValue: () => boolean
@@ -8,12 +8,8 @@ interface ToggleControllerOptions {
   isDisabled?: () => boolean
 }
 
-export class ToggleController implements ReactiveController {
-  constructor(private host: Host, private options: ToggleControllerOptions) {
-    host.addController(this)
-  }
-
-  hostConnected() {}
+export class ToggleController {
+  constructor(private host: Host, private options: ToggleControllerOptions) {}
 
   toggle() {
     return this.set(!this.value)

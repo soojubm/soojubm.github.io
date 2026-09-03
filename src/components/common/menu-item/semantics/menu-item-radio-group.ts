@@ -33,7 +33,7 @@ export class MenuItemRadioGroup extends LitElement {
     },
   })
 
-  private group = new SelectionGroupController<MenuItemRadio>(this, {
+  private group = new SelectionGroupController<MenuItemRadio>({
     selection: this.selection,
     getItems: () => this.radios,
     isEmpty: () => !this.value,

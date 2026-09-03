@@ -72,6 +72,20 @@ const main = html`
       <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
       <mm-paragraph>TODO 고해상도 디바이스를 위한 이미지 가이드.</mm-paragraph>
     </mm-component-guide>
+
+    <mm-component-section
+      heading="Caption"
+      description="이미지 아래에 짧은 설명을 덧붙입니다. 출처나 촬영 정보처럼 이미지를 보조하는 내용만 담고, 본문으로 읽을 텍스트는 담지 않습니다."
+    >
+      <mm-thumbnail
+        src="/src/images/temp.png"
+        alt="노을 지는 협재 해변"
+        ratio="16:9"
+        caption="제주 협재 해변, 2024년 봄"
+        style="max-width: 360px"
+      ></mm-thumbnail>
+    </mm-component-section>
+
     <mm-component-related .items=${relatedComponents}></mm-component-related>
   </main>
 `

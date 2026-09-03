@@ -15,7 +15,7 @@ class SheetHeader extends LitElement {
 
   render() {
     return html`
-      <mm-heading level="2">${this.heading}</mm-heading>
+      <mm-heading level="3">${this.heading}</mm-heading>
       <mm-close-button @close=${this.handleClose}></mm-close-button>
     `
   }

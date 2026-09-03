@@ -1,7 +1,3 @@
-import type { ReactiveController, ReactiveControllerHost } from 'lit'
-
-type Host = ReactiveControllerHost & HTMLElement
-
 /** 선택 값을 소유하는 컨트롤러(Single/MultipleSelectionController)에게서 위임받는 표면. */
 export interface SelectionStore {
   isSelected(value: string): boolean
@@ -33,15 +29,11 @@ interface SelectionGroupOptions<T extends SelectionGroupItem> {
  * 그룹 상태를 항목에 반영 → 항목의 change를 그룹 change로 승격까지의 왕복만 맡는다.
  * checkbox·radio 계열 그룹이 초기화·커밋 순서를 같게 갖는 것이 목적이다.
  */
-export class SelectionGroupController<T extends SelectionGroupItem> implements ReactiveController {
+export class SelectionGroupController<T extends SelectionGroupItem> {
   // 첫 slot 배정 전에는 마크업이 선언한 초기 선택을 아직 읽지 못한 상태다.
   private initialized = false
 
-  constructor(private host: Host, private options: SelectionGroupOptions<T>) {
-    host.addController(this)
-  }
-
-  hostConnected() {}
+  constructor(private options: SelectionGroupOptions<T>) {}
 
   /** slot의 slotchange에 그대로 연결한다. */
   handleSlotChange = () => {
