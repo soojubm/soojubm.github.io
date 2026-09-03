@@ -82,6 +82,24 @@ const componentReferences: ComponentReferenceItemData[] = [
     label: 'Understanding WCAG',
     external: true,
   },
+  {
+    href: 'https://www.atlassian.com/ko/work-management/knowledge-sharing/documentation',
+    label: 'Atlassian - 문서화',
+    external: true,
+  },
+  {
+    href: 'https://getdesign.md/',
+    label: 'Get Design MD',
+    external: true,
+  },
+]
+
+const supplementaryReferences: ComponentReferenceItemData[] = [
+  {
+    href: 'https://www.uber.com/us/en/blog/design-system-at-scale/',
+    label: 'Uber - Design system at scale',
+    external: true,
+  },
 ]
 
 const main = html`
@@ -325,7 +343,25 @@ const main = html`
 
     <!-- <mm-content-section heading="Icons" class="js-icon-gallery"></mm-content-section> -->
 
+    <mm-content-section heading="가이드를 위한 가이드">
+      <mm-paragraph>
+        모든 것을 문서화하지 않는다. 반복해서 참조되고 자주 수행하는 것만 문서로 남긴다.
+      </mm-paragraph>
+
+      <mm-text-list
+        variant="check"
+        texts='[
+          "문서화할 가치가 있다고 판단하려면 특정 횟수(예: 3회)만큼 발생해야 합니까?",
+          "자주(예: 월 1회 이상) 프로세스를 수행해야 합니까?"
+        ]'
+      ></mm-text-list>
+    </mm-content-section>
+
     <mm-component-references .items=${componentReferences}></mm-component-references>
+    <mm-component-references
+      heading="보완 영역"
+      .items=${supplementaryReferences}
+    ></mm-component-references>
   </main>
 `
 
