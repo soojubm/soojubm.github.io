@@ -3,6 +3,10 @@ import { customElement, property } from 'lit/decorators.js'
 
 import { componentTokensStyles } from '@/components/domains/component/component.styles'
 import '@/components/domains/component/token'
+import {
+  tokenCategoryLabel,
+  tokenCategorySortIndex,
+} from '@/components/domains/component/token.utils'
 import { arrayAttributeConverter } from '@/utils'
 
 export interface ComponentTokenItemData {
@@ -27,23 +31,42 @@ export class ComponentTokens extends LitElement {
   tokens: ComponentTokenItemData[] = []
 
   render() {
+    const tokens = this.sortedTokens()
+
     return html`
       <section class="component-content-frame" style="margin-top: var(--space-4)">
         <!-- <mm-heading>Component Tokens</mm-heading> -->
         <div class="token-list">
-          ${this.tokens.map(
-            token =>
+          ${tokens.map(
+            (token, index) =>
               html`
                 <mm-token
                   name=${token.name}
                   default=${token.default}
                   prop=${token.prop ?? ''}
+                  .showCategory=${this.isCategoryStart(tokens, index)}
                 ></mm-token>
               `,
           )}
         </div>
       </section>
     `
+  }
+
+  // 카테고리 태그를 한 번만 보이려면 같은 카테고리 토큰이 서로 붙어 있어야 하므로,
+  // 작성 순서 대신 표시 순서(dimension → surface → state)로 먼저 묶는다.
+  private sortedTokens() {
+    return [...this.tokens].sort(
+      (a, b) => tokenCategorySortIndex(a.name) - tokenCategorySortIndex(b.name),
+    )
+  }
+
+  // 앞선 토큰과 카테고리가 같으면 그 행에서는 태그를 생략해, 같은 분류가 이어지는 구간에서
+  // 맨 위 한 번만 보이게 한다.
+  private isCategoryStart(tokens: ComponentTokenItemData[], index: number) {
+    if (index === 0) return true
+
+    return tokenCategoryLabel(tokens[index].name) !== tokenCategoryLabel(tokens[index - 1].name)
   }
 }
 
