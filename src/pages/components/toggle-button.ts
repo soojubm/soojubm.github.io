@@ -33,6 +33,19 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'value', type: 'string' },
   { name: 'icon', type: 'IconName', optional: true },
   { name: 'disabled', type: 'boolean = false' },
+  { name: 'aria-label', type: 'string', optional: true },
+  {
+    name: 'mm-toggle-button-group options',
+    type: '{ value: string; label?: string; icon?: IconName; disabled?: boolean }[] (JSON)',
+    optional: true,
+  },
+  { name: 'mm-toggle-button-group selected-index', type: 'number = 0', optional: true },
+  { name: 'mm-toggle-button-group stretch', type: 'boolean = false', optional: true },
+  {
+    name: 'mm-toggle-button-group orientation',
+    type: "'horizontal' | 'vertical' = 'horizontal'",
+    optional: true,
+  },
   { name: 'change', type: 'CustomEvent detail: selected, value', kind: 'event' },
 ]
 

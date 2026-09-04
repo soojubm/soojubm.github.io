@@ -3,6 +3,7 @@ import { html } from 'lit'
 import type { ComponentFeatureItem } from '@/components/domains/component/component-feature-list'
 import type { ComponentPropItemData } from '@/components/domains/component/component-props'
 import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
+import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
 import type { ActionConfig } from '@/types'
 
 import { renderDocumentLayout } from '@/components/layouts/document-layout'
@@ -19,8 +20,20 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'description', type: 'string' },
   { name: 'primaryAction', type: 'ActionConfig', optional: true },
   { name: 'secondaryAction', type: 'ActionConfig', optional: true },
-  { name: "slot='footer'", type: 'actions' },
+  { name: 'slot: default', type: 'HTMLElement', optional: true },
   { name: 'dialog-close', type: 'CustomEvent', kind: 'event' },
+]
+
+const componentTokens: ComponentTokenItemData[] = [
+  { name: 'overlay-panel-min-width', default: '320px' },
+  { name: 'overlay-panel-max-width', default: '320px' },
+  { name: 'overlay-panel-height', default: 'auto' },
+  { name: 'overlay-panel-max-height', default: '90vh' },
+  { name: 'overlay-panel-padding-block', default: 'var(--space-4)' },
+  { name: 'overlay-panel-padding-inline', default: 'var(--space-4)' },
+  { name: 'overlay-panel-border-radius', default: 'var(--radius-large)' },
+  { name: 'overlay-panel-backdrop-background-color', default: 'transparent' },
+  { name: 'overlay-panel-backdrop-blur', default: '0px' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [
@@ -69,6 +82,8 @@ const main = html`
     </mm-component-example>
 
     <mm-component-props .props=${componentProps}></mm-component-props>
+
+    <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
 
     <mm-component-guide>
       <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>

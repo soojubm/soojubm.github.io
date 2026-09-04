@@ -53,14 +53,20 @@ const componentReferences: ComponentReferenceItemData[] = [
 ]
 
 const componentProps: ComponentPropItemData[] = [
-  { name: 'tab-list value', type: 'string' },
-  { name: 'tab-list variant', type: "'line' | 'pill' = 'line'" },
-  { name: 'tab value', type: 'string' },
-  { name: 'panel value', type: 'string' },
-  { name: 'tab-select', type: 'CustomEvent value', kind: 'event' },
+  { name: 'mm-tab-list value', type: 'string' },
+  { name: 'mm-tab-list variant', type: "'line' | 'pill' = 'line'" },
+  { name: 'mm-tab value', type: 'string' },
+  { name: 'mm-tab active', type: 'boolean = false', optional: true },
+  { name: 'mm-tab-panel value', type: 'string' },
+  { name: 'mm-tab-panel active', type: 'boolean = false', optional: true },
+  { name: 'tab-select', type: 'CustomEvent detail: value', kind: 'event' },
 ]
 
 const componentTokens: ComponentTokenItemData[] = [
+  { name: 'tab-height', default: 'var(--size-32)' },
+  { name: 'tab-padding-inline', default: 'var(--space-3)' },
+  { name: 'tab-text-size', default: 'var(--font-size-14)' },
+  { name: 'tab-text-color', default: 'var(--foreground-subtle-color)' },
   {
     name: 'tabs-indicator-background-color',
     default: 'var(--interaction-selected-background-color)',

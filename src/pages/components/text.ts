@@ -39,7 +39,8 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'size', type: "'32' | '24' | '18' | '14' | '12' = '14'" },
   { name: 'weight', type: "'medium' | 'bold' = 'medium'" },
   { name: 'color', type: "'inherit' | 'light' | 'danger' = 'inherit'" },
-  { name: 'maxLength', type: "'1' | '2' | '3'", optional: true },
+  { name: 'centered', type: 'boolean = false', optional: true },
+  { name: 'max-length', type: "'1' | '2' | '3'", optional: true },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = []

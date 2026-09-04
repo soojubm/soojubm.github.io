@@ -16,9 +16,10 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'href', type: 'string' },
   { name: 'target', type: 'string', optional: true },
   { name: 'external', type: 'boolean', optional: true },
-  { name: 'message', type: 'string', optional: true },
-  { name: 'link-label', type: 'string', optional: true },
-  { name: 'icon', type: 'IconName', optional: true },
+  { name: 'mm-link-prompt message', type: 'string', optional: true },
+  { name: 'mm-link-prompt link-label', type: 'string', optional: true },
+  { name: 'mm-link-prompt icon', type: 'IconName', optional: true },
+  { name: 'mm-link-prompt href', type: 'string', optional: true },
 ]
 
 const componentTokens: ComponentTokenItemData[] = [

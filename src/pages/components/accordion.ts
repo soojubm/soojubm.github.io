@@ -33,14 +33,16 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'open', type: 'boolean = false' },
   { name: 'slot: summary', type: 'HTMLElement (trigger)', optional: true },
   { name: 'slot: default', type: 'HTMLElement (panel content)', optional: true },
-  { name: 'event: accordion-toggle', type: 'CustomEvent { open: boolean }', optional: true },
+  { name: 'accordion-toggle', type: 'CustomEvent detail: open', kind: 'event' },
 ]
 
 const componentTokens: ComponentTokenItemData[] = [
-  { name: 'accordion-padding', default: 'var(--space-4) var(--space-2)' },
+  { name: 'accordion-padding', default: 'var(--space-2) var(--space-4)' },
   { name: 'accordion-background-color', default: 'var(--background-subtle-color)' },
   { name: 'accordion-border', default: 'var(--border-transparent)' },
   { name: 'accordion-border-radius', default: 'var(--radius)' },
+  { name: 'accordion-icon-size', default: '1.25rem' },
+  { name: 'accordion-transition', default: 'var(--transition-duration) var(--transition-easing)' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [

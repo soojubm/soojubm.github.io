@@ -16,6 +16,7 @@ const relatedComponents: ComponentRelatedItemData[] = [
 const componentProps: ComponentPropItemData[] = [
   { name: 'items', type: '{ label: string; href?: string }[] (JSON)' },
   { name: 'divider', type: "string = '/'", optional: true },
+  { name: 'aria-label', type: "string = 'breadcrumb'", optional: true },
 ]
 
 const componentTokens: ComponentTokenItemData[] = [

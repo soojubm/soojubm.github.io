@@ -13,17 +13,19 @@ const relatedComponents: ComponentRelatedItemData[] = [
 ]
 
 const componentProps: ComponentPropItemData[] = [
+  { name: 'role', type: "string = 'note'", optional: true },
   { name: 'heading', type: 'string', optional: true },
   { name: 'description', type: 'string', optional: true },
-  { name: 'variant', type: '', optional: true },
+  { name: 'variant', type: "'success' | 'warning' | 'danger'", optional: true },
   { name: 'dismissible', type: 'boolean', optional: true },
+  { name: 'dismiss', type: 'CustomEvent', kind: 'event' },
 ]
 
 const componentTokens: ComponentTokenItemData[] = [
   { name: 'notice-padding', default: 'var(--space-3)' },
   { name: 'notice-border-radius', default: 'var(--radius)' },
   { name: 'notice-border-width', default: 'var(--border-width)' },
-  { name: 'notice-foreground-color', default: 'var(--foreground-color)' },
+  { name: 'notice-foreground-color', default: 'var(--foreground-color)', prop: 'variant' },
   { name: 'notice-background-color', default: 'transparent' },
   { name: 'notice-border-color', default: 'var(--border-color)' },
 ]

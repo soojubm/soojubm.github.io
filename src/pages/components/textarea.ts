@@ -18,18 +18,23 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'placeholder', type: 'string', optional: true },
   { name: 'label', type: 'string', optional: true },
   { name: 'helper', type: 'string', optional: true },
+  { name: 'rows', type: 'number = 3', optional: true },
   { name: 'optional', type: 'boolean', optional: true },
   { name: 'disabled', type: 'boolean', optional: true },
   { name: 'aria-invalid', type: "'true' | 'false'", optional: true },
   { name: 'aria-describedby', type: 'string', optional: true },
   { name: 'input', type: 'CustomEvent detail: value', kind: 'event' },
+  { name: 'single-line-change', type: 'CustomEvent detail: isSingleLine', kind: 'event' },
 ]
 
 const componentTokens: ComponentTokenItemData[] = [
-  { name: 'input-height', default: 'var(--size-48)' },
+  { name: 'input-height', default: 'var(--size-48)', prop: 'size' },
+  { name: 'input-padding-block', default: 'var(--space-3)', prop: 'size' },
+  { name: 'input-padding-inline', default: 'var(--space-4)', prop: 'size' },
   { name: 'input-background-color', default: 'var(--background-subtle-color)' },
   { name: 'input-border', default: 'var(--border-transparent)' },
   { name: 'input-border-radius', default: 'var(--radius)' },
+  { name: 'input-focus-outline', default: 'var(--interaction-focus-outline)' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [

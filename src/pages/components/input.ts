@@ -44,7 +44,7 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'label', type: 'string', optional: true },
   { name: 'helper', type: 'string', optional: true },
   { name: 'validation-text', type: 'string', optional: true },
-  { name: 'size', type: 'string', optional: true },
+  { name: 'size', type: "'small'", optional: true },
   { name: 'optional', type: 'boolean', optional: true },
   { name: 'hidden-label', type: 'boolean', optional: true },
   { name: 'disabled', type: 'boolean', optional: true },
@@ -53,10 +53,13 @@ const componentProps: ComponentPropItemData[] = [
 ]
 
 const componentTokens: ComponentTokenItemData[] = [
-  { name: 'input-height', default: 'var(--size-48)' },
+  { name: 'input-height', default: 'var(--size-48)', prop: 'size' },
+  { name: 'input-padding-block', default: 'var(--space-3)', prop: 'size' },
+  { name: 'input-padding-inline', default: 'var(--space-4)', prop: 'size' },
   { name: 'input-background-color', default: 'var(--background-subtle-color)' },
   { name: 'input-border', default: 'var(--border-transparent)' },
   { name: 'input-border-radius', default: 'var(--radius)' },
+  { name: 'input-focus-outline', default: 'var(--interaction-focus-outline)' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [
@@ -228,7 +231,7 @@ const main = html`
           cursor: pointer;
           &::hover {
             background: var(--color-primary);
-            color: var(--foreground-color-on-solid);
+            color: var(--color-foreground-on-solid);
           }
         }
       </style>
@@ -320,7 +323,7 @@ const main = html`
       <mm-heading
         level="3"
         style="
-        color: var(--foreground-color-on-solid);
+        color: var(--color-foreground-on-solid);
         background: var(--background-strong-color);
         display: inline-block;
         position: relative;
@@ -332,7 +335,7 @@ const main = html`
       <br />
       <cite
         style="
-        color: var(--foreground-color-on-solid);
+        color: var(--color-foreground-on-solid);
         background: var(--background-strong-color);
         display: inline-block;
         margin-top: 0;
@@ -340,8 +343,8 @@ const main = html`
         z-index: var(--material-zindex-raised);
       "
       >
-        <div style="color: var(--foreground-color-on-solid); position: relative">리들리 스콧</div>
-        <time style="color: var(--foreground-color-on-solid); position: relative">2012, 미국</time>
+        <div style="color: var(--color-foreground-on-solid); position: relative">리들리 스콧</div>
+        <time style="color: var(--color-foreground-on-solid); position: relative">2012, 미국</time>
       </cite>
     </div>
 

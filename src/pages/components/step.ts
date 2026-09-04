@@ -58,7 +58,7 @@ const main = html`
 
           <section class="step" data-align="vertical" style="margin: 1rem 0">
             <div class="step-item is-active">
-              <span class="step-item-icon" style="color: var(--foreground-color-on-solid)">1</span>
+              <span class="step-item-icon" style="color: var(--color-foreground-on-solid)">1</span>
               <mm-text class="step-item-label">I'm an engineer</mm-text>
               <mm-paragraph>
                 대통령은 국가의 원수이며, 외국에 대하여 국가를 대표한다. 국가원로자문회의의
@@ -67,7 +67,7 @@ const main = html`
               </mm-paragraph>
             </div>
             <div class="step-item is-active">
-              <span class="step-item-icon" style="color: var(--foreground-color-on-solid)">2</span>
+              <span class="step-item-icon" style="color: var(--color-foreground-on-solid)">2</span>
               <mm-text class="step-item-label">I want to design from scratch</mm-text>
             </div>
             <div class="step-item">

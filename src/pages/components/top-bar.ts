@@ -13,8 +13,9 @@ const relatedComponents: ComponentRelatedItemData[] = [
 
 const componentProps: ComponentPropItemData[] = [
   { name: 'heading', type: 'string' },
-  { name: 'nav', type: "'back' | 'close' | '' = 'back'", optional: true },
+  { name: 'nav', type: "'back' | 'close' = 'back'", optional: true },
   { name: "slot='action'", type: 'HTMLElement', optional: true },
+  { name: 'nav-click', type: 'CustomEvent', kind: 'event' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = []

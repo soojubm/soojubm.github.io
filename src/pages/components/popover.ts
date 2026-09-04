@@ -19,14 +19,16 @@ const componentProps: ComponentPropItemData[] = [
     name: 'placement',
     type: "'bottom-left' | 'bottom-right' | 'top-left' | 'top-right' = 'bottom-left'",
   },
-  { name: 'width', type: 'string' },
-  { name: 'padding', type: 'string' },
-  { name: 'popoverclose', type: 'CustomEvent', kind: 'event' },
+  { name: 'width', type: 'string', optional: true },
+  { name: 'padding', type: 'string', optional: true },
+  { name: 'slot: trigger', type: 'HTMLElement' },
+  { name: 'popover-close', type: 'CustomEvent', kind: 'event' },
 ]
 
 const componentTokens: ComponentTokenItemData[] = [
   { name: 'overlay-panel-min-width', default: '240px' },
   { name: 'overlay-panel-max-width', default: 'auto' },
+  { name: 'overlay-panel-height', default: 'auto' },
   { name: 'overlay-panel-max-height', default: 'none' },
   { name: 'overlay-panel-padding-block', default: 'var(--space-2)' },
   { name: 'overlay-panel-padding-inline', default: 'var(--space-2)' },

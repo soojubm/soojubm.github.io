@@ -4,6 +4,7 @@ import type { ComponentFeatureItem } from '@/components/domains/component/compon
 import type { ComponentPropItemData } from '@/components/domains/component/component-props'
 import type { ComponentReferenceItemData } from '@/components/domains/component/component-references'
 import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
+import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
 
 import { AVATAR_VARIANT_TYPE_UNION } from '@/components/common/avatar'
 import { renderDocumentLayout } from '@/components/layouts/document-layout'
@@ -42,15 +43,23 @@ const componentReferences: ComponentReferenceItemData[] = [
 ]
 
 const componentProps: ComponentPropItemData[] = [
-  { name: 'size', type: '' },
+  { name: 'size', type: "'small' | '48' | '80' = 'small'" },
   { name: 'label', type: 'string', optional: true },
   { name: 'description', type: 'string', optional: true },
   { name: 'icon', type: 'IconName', optional: true },
+  { name: 'emoji', type: 'string', optional: true },
   { name: 'avatar-src', type: 'string', optional: true },
-  { name: 'avatar-variant', type: `${AVATAR_VARIANT_TYPE_UNION} = 'tertiary'`, optional: true },
-  { name: 'avatar-shape', type: '', optional: true },
+  { name: 'avatar-variant', type: `${AVATAR_VARIANT_TYPE_UNION} = 'primary'`, optional: true },
+  { name: 'avatar-shape', type: "'circle' | 'square' = 'square'", optional: true },
   { name: 'slot: default', type: 'HTMLElement', optional: true },
+  { name: 'slot: avatar', type: 'HTMLElement', optional: true },
   { name: 'slot: trailing', type: 'HTMLElement', optional: true },
+]
+
+const componentTokens: ComponentTokenItemData[] = [
+  { name: 'list-item-size', default: 'var(--size-32)', prop: 'size' },
+  { name: 'list-item-gap', default: 'var(--space-2)', prop: 'size' },
+  { name: 'list-item-font-size', default: 'var(--font-size-14)', prop: 'size' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [
@@ -111,6 +120,8 @@ const main = html`
     </mm-component-example>
 
     <mm-component-props .props=${componentProps}></mm-component-props>
+
+    <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
 
     <mm-component-guide>
       <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>

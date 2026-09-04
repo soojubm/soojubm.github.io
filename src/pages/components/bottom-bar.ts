@@ -13,8 +13,13 @@ const relatedComponents: ComponentRelatedItemData[] = [
 ]
 
 const componentProps: ComponentPropItemData[] = [
-  { name: 'items', type: 'JSON string', optional: true },
-  { name: 'label', type: "string = '하단 내비게이션'", optional: true },
+  {
+    name: 'items',
+    type: '{ label: string; href?: string; icon?: IconName; active?: boolean }[] (JSON)',
+    optional: true,
+  },
+  { name: 'aria-label', type: "string = '하단 내비게이션'", optional: true },
+  { name: 'change', type: 'CustomEvent detail: index', kind: 'event' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = []

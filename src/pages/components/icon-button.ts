@@ -21,8 +21,7 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'size', type: "'small' | 'medium' = 'medium'" },
   { name: 'tooltip', type: 'string', optional: true },
   { name: 'tooltip-placement', type: "'left' | 'center' | 'right'", optional: true },
-  { name: 'aria-label - TODO tooltip과 병합', type: 'string', optional: true },
-  { name: 'role', type: 'string', optional: true },
+  { name: 'aria-label', type: 'string', optional: true },
   { name: 'aria-controls', type: 'string', optional: true },
   { name: 'aria-expanded', type: "'true' | 'false'", optional: true },
   { name: 'aria-haspopup', type: 'string', optional: true },
@@ -38,7 +37,7 @@ const componentTokens: ComponentTokenItemData[] = [
     prop: 'variant',
   },
   { name: 'icon-button-border', default: 'var(--border-transparent)', prop: 'variant' },
-  { name: 'icon-button-border-radius', default: 'var(--radius)', prop: 'shape' },
+  { name: 'icon-button-border-radius', default: 'var(--radius)', prop: 'variant' },
   { name: 'icon-button-shadow', default: 'none', prop: 'variant' },
   { name: 'icon-button-backdrop-filter', default: 'none', prop: 'variant' },
 ]

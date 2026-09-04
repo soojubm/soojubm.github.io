@@ -17,6 +17,10 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'value', type: 'string', optional: true },
   { name: 'checked', type: 'boolean', optional: true },
   { name: 'disabled', type: 'boolean', optional: true },
+  { name: 'mm-radio-group name', type: 'string', optional: true },
+  { name: 'mm-radio-group value', type: 'string', optional: true },
+  { name: 'mm-radio-group legend', type: 'string', optional: true },
+  { name: 'mm-radio-group disabled', type: 'boolean', optional: true },
   { name: 'change', type: 'CustomEvent detail: checked, value', kind: 'event' },
 ]
 

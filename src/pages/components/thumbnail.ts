@@ -17,10 +17,15 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'alt', type: 'string' },
   { name: 'ratio', type: "'1:1' | '16:9' | '4:3' | 'full' = '16:9'", optional: true },
   { name: 'caption', type: 'string', optional: true },
+  { name: 'href', type: 'string', optional: true },
+  { name: 'loading', type: "'eager' | 'lazy' = 'lazy'", optional: true },
+  { name: 'fetchpriority', type: "'high' | 'low' | 'auto' = 'auto'", optional: true },
 ]
 
 const componentTokens: ComponentTokenItemData[] = [
+  { name: 'thumbnail-border', default: 'var(--border-transparent)' },
   { name: 'thumbnail-border-radius', default: 'var(--radius)' },
+  { name: 'thumbnail-background-color-empty', default: 'var(--background-subtle-color)' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [

@@ -16,18 +16,21 @@ const relatedComponents: ComponentRelatedItemData[] = [
 const componentProps: ComponentPropItemData[] = [
   { name: 'name', type: 'string', optional: true },
   { name: 'value', type: 'string', optional: true },
-  { name: 'size', type: 'string', optional: true },
+  { name: 'size', type: "'large'", optional: true },
   { name: 'checked', type: 'boolean', optional: true },
   { name: 'disabled', type: 'boolean', optional: true },
   { name: 'indeterminate', type: 'boolean', optional: true },
+  { name: 'mm-checkbox-group name', type: 'string', optional: true },
+  { name: 'mm-checkbox-group legend', type: 'string', optional: true },
+  { name: 'mm-checkbox-group values', type: 'string[] = []', optional: true },
   { name: 'change', type: 'CustomEvent detail: checked, value', kind: 'event' },
 ]
 
 const componentTokens: ComponentTokenItemData[] = [
-  { name: 'checkbox-size', default: 'var(--size-16)' },
+  { name: 'checkbox-size', default: 'var(--size-16)', prop: 'size' },
   { name: 'checkbox-border-radius', default: 'var(--radius)' },
-  { name: 'checkbox-background-color', default: 'var(--background-color)' },
   { name: 'checkbox-border-color', default: 'var(--border-color)' },
+  { name: 'checkbox-background-color', default: 'var(--background-color)' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [

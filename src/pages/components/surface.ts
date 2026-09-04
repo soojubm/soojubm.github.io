@@ -47,19 +47,20 @@ const componentReferences: ComponentReferenceItemData[] = [
 const componentProps: ComponentPropItemData[] = [
   {
     name: 'variant',
-    type: "'ghost' | 'outlined' | 'plain' | 'filled' | 'elevated'",
+    type: "'ghost' | 'paper' | 'outlined' | 'filled' | 'elevated'",
     optional: true,
   },
   { name: 'radius', type: "'default' | 'large'", optional: true },
-  { name: 'tone', type: 'string', optional: true },
 ]
 
 const componentTokens: ComponentTokenItemData[] = [
   { name: 'surface-height', default: 'auto' },
   { name: 'surface-padding', default: 'var(--space-4)' },
-  { name: 'surface-border', default: 'var(--border)' },
-  { name: 'surface-border-radius', default: 'var(--radius)' },
-  { name: 'surface-background-color', default: 'var(--background-color)' },
+  { name: 'surface-border', default: 'var(--border)', prop: 'variant' },
+  { name: 'surface-border-radius', default: 'var(--radius)', prop: 'radius' },
+  { name: 'surface-background-color', default: 'var(--background-color)', prop: 'variant' },
+  { name: 'surface-text-color', default: 'inherit' },
+  { name: 'surface-shadow', default: 'none', prop: 'variant' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [

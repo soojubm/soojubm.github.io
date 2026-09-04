@@ -4,6 +4,7 @@ import type { ComponentFeatureItem } from '@/components/domains/component/compon
 import type { ComponentPropItemData } from '@/components/domains/component/component-props'
 import type { ComponentReferenceItemData } from '@/components/domains/component/component-references'
 import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
+import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
 
 import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
 import { renderLayout } from '@/components/layouts/base-layouts'
@@ -52,9 +53,23 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'placement', type: "'center' | 'bottom' | 'left' | 'right' = 'center'" },
   { name: 'width', type: "'small' | 'medium' | 'large' | 'full' = 'medium'", optional: true },
   { name: 'height', type: 'string', optional: true },
-  { name: 'primaryAction', type: 'ActionConfig', optional: true },
-  { name: 'secondaryAction', type: 'ActionConfig', optional: true },
+  { name: 'mm-sheet-header heading', type: 'string', optional: true },
+  { name: 'mm-sheet-footer primaryAction', type: 'ActionConfig', optional: true },
+  { name: 'mm-sheet-footer secondaryAction', type: 'ActionConfig', optional: true },
   { name: 'sheet-close', type: 'CustomEvent', kind: 'event' },
+]
+
+const componentTokens: ComponentTokenItemData[] = [
+  { name: 'overlay-panel-min-width', default: 'auto' },
+  { name: 'overlay-panel-max-width', default: 'var(--layout-width-narrow)', prop: 'width' },
+  { name: 'overlay-panel-height', default: 'auto' },
+  { name: 'overlay-panel-max-height', default: '90vh' },
+  { name: 'overlay-panel-viewport-max-height', default: '100vh' },
+  { name: 'overlay-panel-padding-block', default: 'var(--space-4)' },
+  { name: 'overlay-panel-padding-inline', default: 'var(--space-4)' },
+  { name: 'overlay-panel-border-radius', default: 'var(--radius-large)' },
+  { name: 'overlay-panel-backdrop-background-color', default: 'transparent' },
+  { name: 'overlay-panel-backdrop-blur', default: '0px' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [
@@ -125,6 +140,8 @@ function sheetPageTemplate() {
       </mm-component-example>
 
       <mm-component-props .props=${componentProps}></mm-component-props>
+
+      <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
 
       <mm-component-guide>
         <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>

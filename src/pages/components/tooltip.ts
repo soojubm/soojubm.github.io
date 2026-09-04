@@ -14,7 +14,8 @@ const relatedComponents: ComponentRelatedItemData[] = [
 
 const componentProps: ComponentPropItemData[] = [
   { name: 'content', type: 'string' },
-  { name: 'placement', type: 'string', optional: true },
+  { name: 'placement', type: "'left' | 'center' | 'right'", optional: true },
+  { name: 'open', type: 'boolean = false', optional: true },
   { name: 'slot: trigger', type: 'HTMLElement' },
 ]
 
@@ -23,7 +24,7 @@ const componentTokens: ComponentTokenItemData[] = [
   { name: 'tooltip-padding', default: '0.5rem var(--space-3)' },
   { name: 'tooltip-border-radius', default: 'var(--radius)' },
   { name: 'tooltip-background-color', default: 'var(--background-strong-color)' },
-  { name: 'tooltip-text-color', default: 'var(--foreground-color-on-solid)' },
+  { name: 'tooltip-text-color', default: 'var(--background-color)' },
   { name: 'tooltip-shadow', default: 'var(--surface-base-shadow)' },
 ]
 

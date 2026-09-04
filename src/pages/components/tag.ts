@@ -25,9 +25,9 @@ const componentTokens: ComponentTokenItemData[] = [
   { name: 'tag-padding-inline', default: 'var(--space-2)' },
   { name: 'tag-gap', default: 'var(--space-1)' },
   { name: 'tag-text-size', default: 'var(--font-size-12)' },
-  { name: 'tag-text-color', default: 'var(--foreground-color)' },
-  { name: 'tag-background-color', default: 'var(--background-color)' },
-  { name: 'tag-border-color', default: 'var(--border-color)' },
+  { name: 'tag-text-color', default: 'var(--foreground-color)', prop: 'tone' },
+  { name: 'tag-background-color', default: 'var(--background-color)', prop: 'tone' },
+  { name: 'tag-border-color', default: 'var(--border-color)', prop: 'tone' },
   { name: 'tag-border-radius', default: 'var(--radius)' },
 ]
 
