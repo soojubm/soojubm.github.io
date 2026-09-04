@@ -207,23 +207,28 @@ const main = html`
               texts='[
               "원활한 피드 탐색 경험을 위해 모든 피드를 보여주지 않는 것이 좋을 수 있다. 피드가 노출되는 이유를 알려줄 수 있다. 또한 사용자는 보고 싶은 피드와 보고 싶지 않은 피드를 결정할 권리가 있다.",
               "글줄의 길이를 상대적으로 좁게 짜는 경향이 있다.",
-              "리액션 버튼과 리액션 수치를 각각 제공할 수 있고 따로 제공할 수 있다. 리액션한 사용자 목록을 어떻게 보여줄 것인가. 중복 리액션과 횟수 등 기능 정의. 리액션 =&gt; 알림."
+              "리액션 버튼과 리액션 수치를 각각 제공할 수 있고 따로 제공할 수 있다.",
+              "리액션한 사용자 목록을 어떻게 보여줄 것인가.",
+              "중복 리액션과 횟수 등 기능 정의.",
+              "리액션 =&gt; 알림."
               ]'
             ></mm-text-list>
             <mm-keyword-tag-group keywords='["Google", "Meta", "Nvidia"]'></mm-keyword-tag-group>
-            <mm-surface variant="filled">
+            <mm-surface variant="filled" style="--surface-padding: var(--space-3)">
               <mm-flex direction="column" gap="2">
                 <mm-tag>3월 14일 수정됨</mm-tag>
-                <mm-menu-item-group>
+                <mm-menu-item-group size="large">
                   <mm-menu-item-action
                     size="small"
                     label="Kakao"
                     description="https://www.kakaocorp.com"
+                    avatar-src="/src/images/soojubm.png"
                   ></mm-menu-item-action>
                   <mm-menu-item-action
                     size="small"
                     label="Naver"
                     description="https://www.naver.com"
+                    avatar-src="/src/images/soojubm.png"
                   ></mm-menu-item-action>
                 </mm-menu-item-group>
               </mm-flex>
