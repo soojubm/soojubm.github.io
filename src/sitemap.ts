@@ -5,7 +5,6 @@ interface SitemapItem {
   id: string
   name: string
   badge?: string
-  hidden?: boolean
   /** true면 페이지에서 navbar를 렌더하지 않는다 */
   hideNavbar?: boolean
 }
@@ -16,8 +15,6 @@ interface SitemapStandaloneNode {
   title: string
   icon: IconName
   badge?: string
-  /** 사이드바 메뉴에서 숨긴다. 페이지는 그대로 빌드된다 */
-  hidden?: boolean
   /** 사이드바에서 접었다 펴는 하위 페이지 */
   children?: SitemapItem[]
 }
@@ -59,14 +56,6 @@ export const SITEMAP: SitemapNode[] = [
     id: 'tokens',
     title: 'Tokens',
     icon: ICON_NAMES.PALETTE,
-  },
-
-  {
-    type: 'standalone',
-    id: 'all-menu',
-    title: '전체메뉴',
-    icon: ICON_NAMES.MENU,
-    hidden: true,
   },
 
   // 2. 접고 펼치는 메뉴 그룹
@@ -120,7 +109,7 @@ export const SITEMAP: SitemapNode[] = [
       { id: 'top-bar', name: 'Top Bar' },
       { id: 'bottom-bar', name: 'Bottom Bar' },
       { id: 'breadcrumb', name: 'Breadcrumb', badge: '' },
-      { id: 'step', name: 'Step', hidden: true },
+      { id: 'step', name: 'Step' },
     ],
   },
   {
@@ -158,24 +147,16 @@ export const SITEMAP: SitemapNode[] = [
       { id: 'profile', name: 'User Profile', badge: '🔥' },
       { id: 'setting', name: 'Setting', hideNavbar: true },
       { id: 'class', name: 'Product 3 - Class' },
-      { id: 'cake', name: 'Movie Detail', hidden: true },
+      { id: 'cake', name: 'Movie Detail' },
       { id: 'chat', name: 'Chat' },
-      { id: 'dashboard', name: 'Dashboard', hidden: true },
+      { id: 'dashboard', name: 'Dashboard' },
       { id: 'product', name: 'Product' },
-      { id: 'auth', name: 'Auth', hidden: true },
+      { id: 'auth', name: 'Auth' },
       { id: 'post', name: 'Post' },
-      { id: 'checkout', name: 'Checkout', hidden: true },
-      { id: 'faq', name: 'FAQ', hidden: true },
-      { id: 'contact', name: 'Contact', hidden: true },
+      { id: 'checkout', name: 'Checkout' },
+      { id: 'faq', name: 'FAQ' },
+      { id: 'contact', name: 'Contact' },
     ],
-  },
-  {
-    type: 'standalone',
-    id: 'pattern',
-    title: 'Patterns',
-    icon: ICON_NAMES.GRID_VIEW,
-    badge: 'draft',
-    hidden: true,
   },
 ]
 

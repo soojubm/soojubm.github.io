@@ -30,8 +30,7 @@ function renderMenu() {
 
 function renderStandaloneGroup() {
   const links = SITEMAP.filter(
-    (node): node is Extract<SitemapNode, { type: 'standalone' }> =>
-      node.type === 'standalone' && !node.hidden,
+    (node): node is Extract<SitemapNode, { type: 'standalone' }> => node.type === 'standalone',
   )
     .map(
       node => `
@@ -57,7 +56,7 @@ function renderChildLinks(node: StandaloneNode) {
   if (!node.children?.length) return ''
 
   return node.children
-    .filter(item => !item.hidden && item.id !== node.id)
+    .filter(item => item.id !== node.id)
     .map(
       item => `
         <mm-menu-item-link
@@ -82,7 +81,6 @@ function renderGroup(node: SitemapNode) {
   if (node.type !== 'group') return ''
 
   const links = node.items
-    .filter(item => !item.hidden)
     .map(
       item => `
         <mm-menu-item-link
