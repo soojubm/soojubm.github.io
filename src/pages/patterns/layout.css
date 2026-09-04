@@ -1,0 +1,45 @@
+.app-shell {
+  display: grid;
+  grid-template-columns: minmax(var(--size-80), 0.3fr) minmax(0, 1fr);
+  grid-template-rows: auto minmax(calc(var(--size-80) * 2), 1fr) auto;
+  grid-template-areas:
+    'topbar topbar'
+    'sidebar content'
+    'bottombar bottombar';
+  gap: var(--space-1);
+  width: 100%;
+  padding: var(--space-1);
+  border-radius: var(--radius-large);
+  background: var(--background-subtle-color);
+}
+
+.app-shell mm-surface {
+  --surface-padding: var(--space-3);
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.app-shell-topbar {
+  grid-area: topbar;
+}
+
+.app-shell-sidebar {
+  grid-area: sidebar;
+}
+
+.app-shell-content {
+  grid-area: content;
+  position: relative;
+}
+
+.app-shell-bottombar {
+  grid-area: bottombar;
+}
+
+.app-shell-overlay {
+  width: min(60%, calc(var(--size-80) * 3));
+  position: absolute;
+  right: var(--space-4);
+  bottom: var(--space-4);
+  z-index: var(--material-zindex-overlay);
+}

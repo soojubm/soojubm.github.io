@@ -1,4 +1,5 @@
 import { html } from 'lit'
+import './layout.css'
 
 import { renderDocumentLayout } from '@/components/layouts/document-layout'
 
@@ -25,6 +26,35 @@ const main = html`
             description="폼·카드·편집 영역처럼 독립적으로 다루는 묶음은 표면으로 올려 주변 콘텐츠와 분리합니다."
           ></mm-feature>
         </mm-feature-group>
+      </mm-content-section>
+
+      <mm-content-section heading-level="3" heading="앱 셸 영역">
+        <mm-paragraph>
+          화면에 고정된 내비게이션(chrome)이 콘텐츠(base)를 감싸고, 드롭다운·팝오버처럼 잠깐 뜨는
+          표면(overlay)은 그 위로 겹칩니다. 겹침 순서는 --material-zindex-* 그룹 토큰이 정합니다.
+        </mm-paragraph>
+        <div class="app-shell">
+          <mm-surface variant="outlined" class="app-shell-topbar">
+            <mm-caption>Top Bar · chrome</mm-caption>
+          </mm-surface>
+          <mm-surface variant="outlined" class="app-shell-sidebar">
+            <mm-caption>Sidebar · chrome</mm-caption>
+          </mm-surface>
+          <mm-surface variant="ghost" class="app-shell-content">
+            <mm-caption>Content · base</mm-caption>
+            <mm-surface variant="elevated" class="app-shell-overlay">
+              <mm-caption>Overlay · overlay</mm-caption>
+            </mm-surface>
+          </mm-surface>
+          <mm-surface variant="outlined" class="app-shell-bottombar">
+            <mm-caption>Bottom Bar · chrome</mm-caption>
+          </mm-surface>
+        </div>
+        <mm-flex direction="column" gap="2">
+          <code>--material-zindex-chrome</code>
+          <code>--material-zindex-overlay</code>
+          <code>--material-zindex-base</code>
+        </mm-flex>
       </mm-content-section>
 
       <mm-content-section heading-level="3" heading="컨테이너 너비">
