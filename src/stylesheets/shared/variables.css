@@ -257,10 +257,8 @@
   --surface-overlay-background-color: var(--background-color);
   --surface-overlay-border: var(--border);
 
-  --foreground-color-on-solid: var(--foreground-color);
-
   --interaction-hover-background-color: var(--background-subtle-color);
-  --interaction-active-shadow: 0 0 0 2px #c8f3fa, inset 0 0 0 2px var(--foreground-color-on-solid);
+  --interaction-active-shadow: 0 0 0 2px #c8f3fa, inset 0 0 0 2px var(--background-color);
 
   --border-color: var(--gray800);
 

@@ -338,7 +338,7 @@ export const sheetFooterStyles = css`
 export const toastStyles = css`
   :host {
     --toast-background-color: var(--background-strong-color);
-    --toast-text-color: var(--foreground-color-on-solid);
+    --toast-text-color: var(--background-color);
     --toast-border-radius: var(--radius-large);
     --toast-padding-block: var(--space-2);
     --toast-padding-inline: var(--space-4);
@@ -389,7 +389,7 @@ export const tooltipStyles = css`
     --tooltip-padding: 0.5rem var(--space-3);
     --tooltip-border-radius: var(--radius);
     --tooltip-background-color: var(--background-strong-color);
-    --tooltip-text-color: var(--foreground-color-on-solid);
+    --tooltip-text-color: var(--background-color);
     --tooltip-shadow: var(--surface-base-shadow);
   }
 

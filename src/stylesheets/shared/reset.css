@@ -265,7 +265,7 @@ li::marker {
 .skip-link {
   display: block;
   background: var(--background-strong-color);
-  color: var(--foreground-color-on-solid);
+  color: var(--background-color);
   text-align: center;
   height: 0;
   font-size: 0;

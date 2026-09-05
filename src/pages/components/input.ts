@@ -323,7 +323,7 @@ const main = html`
       <mm-heading
         level="3"
         style="
-        color: var(--color-foreground-on-solid);
+        color: var(--background-color);
         background: var(--background-strong-color);
         display: inline-block;
         position: relative;
@@ -335,7 +335,7 @@ const main = html`
       <br />
       <cite
         style="
-        color: var(--color-foreground-on-solid);
+        color: var(--background-color);
         background: var(--background-strong-color);
         display: inline-block;
         margin-top: 0;
@@ -343,8 +343,8 @@ const main = html`
         z-index: var(--material-zindex-raised);
       "
       >
-        <div style="color: var(--color-foreground-on-solid); position: relative">리들리 스콧</div>
-        <time style="color: var(--color-foreground-on-solid); position: relative">2012, 미국</time>
+        <div style="color: var(--background-color); position: relative">리들리 스콧</div>
+        <time style="color: var(--background-color); position: relative">2012, 미국</time>
       </cite>
     </div>
 
