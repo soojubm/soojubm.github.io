@@ -95,7 +95,7 @@ const main = html`
       ></mm-list-marker>
     </mm-component-anatomy>
 
-    <mm-component-section heading="Tile Radio?" description="">
+    <mm-component-section heading="Radio?" description="">
       <mm-surface variant="elevated">
         <mm-radio name="gender" id="option1" value="">
           <mm-paragraph color="light">Standard License</mm-paragraph>

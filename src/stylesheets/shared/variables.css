@@ -43,6 +43,7 @@
   --red800: #f02849;
   --yellow800: gold;
   --orange800: #fb7800;
+  --blue800: #1d4ed8;
 
   /* mm-tag 카테고리 팔레트: tag 전용 소유 토큰 (다른 컴포넌트가 재사용할 범용 색상 스케일이 아님) */
   --tag-category-1-bg: #dbeafe;
@@ -75,8 +76,8 @@
   --color-primary: var(--green800);
   --color-primary-subtle: var(--green100);
   --color-accent: var(--yellow800);
-  --color-success: var(--green800);
-  --color-success-foreground: #117a45;
+  --color-success: var(--blue800);
+  --color-success-foreground: #1e40af;
   --color-warning: var(--orange800);
   --color-warning-foreground: #9a4600;
   --color-danger: var(--red800);
@@ -101,14 +102,16 @@
   --background-color: var(--gray0);
   --background-subtle-color: var(--gray100);
   --background-strong-color: var(--gray800);
+  --background-primary: var(--color-primary);
+  --background-warning: var(--color-warning);
 
   --border-color: var(--gray200);
 
   --foreground-color: var(--gray800);
   --foreground-subtle-color: var(--gray400);
-  --foreground-color-on-solid: var(--gray0);
-  --foreground-color-on-warning: var(--red800);
-  --foreground-color-on-primary: var(--gray0);
+  --foreground-on-solid: var(--gray0);
+  --foreground-on-warning: var(--red800);
+  --foreground-on-primary: var(--gray0);
 
   --size-80: 80px;
   --size-48: 48px;
@@ -240,7 +243,7 @@
   --tag-category-8-border: #6b21a8;
   --tag-category-8-text: #d8b4fe;
 
-  --color-success-foreground: #86efac;
+  --color-success-foreground: #93c5fd;
   --color-warning-foreground: #fdba74;
   --color-danger-foreground: #fca5a5;
 

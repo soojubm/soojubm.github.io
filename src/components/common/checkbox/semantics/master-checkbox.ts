@@ -22,9 +22,7 @@ export class MasterCheckbox extends LitElement {
   render() {
     return html`
       <mm-surface variant="elevated">
-        <!-- label 클릭은 라벨 자체 + 연결된 input으로 forwarding되는 클릭까지 두 번 버블링되어
-             @click을 쓰면 두 번 토글된다. pointerdown 한 번만 잡아 기본 동작을 막고 직접 토글한다. -->
-        <div @pointerdown=${this.handleSurfacePointerdown}>
+        <div>
           <input
             type="checkbox"
             id=${this.inputId}
@@ -84,11 +82,6 @@ export class MasterCheckbox extends LitElement {
   }
 
   private handleCheckboxInputChange = () => {
-    this.group?.toggleAll()
-  }
-
-  private handleSurfacePointerdown = (event: Event) => {
-    event.preventDefault()
     this.group?.toggleAll()
   }
 }

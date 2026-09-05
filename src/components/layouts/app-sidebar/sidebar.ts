@@ -52,7 +52,6 @@ export class Sidebar extends LitElement {
   }
 
   private renderStandalone(node: Extract<SitemapNode, { type: 'standalone' }>) {
-    if (node.hidden) return nothing
     if (node.children?.length) return this.renderCollapsibleSection(node)
 
     return html`
@@ -72,7 +71,7 @@ export class Sidebar extends LitElement {
   }
 
   private renderCollapsibleSection(node: Extract<SitemapNode, { type: 'standalone' }>) {
-    const children = (node.children ?? []).filter(item => !item.hidden)
+    const children = node.children ?? []
     const containsCurrent =
       this.isCurrentPage(node.id) || children.some(item => this.isCurrentPage(item.id))
 
@@ -114,7 +113,7 @@ export class Sidebar extends LitElement {
       ></mm-list-item> -->
       <mm-menu-list heading=${node.title}>
         ${repeat(
-          node.items.filter(item => !('hidden' in item && item.hidden)),
+          node.items,
           item => item.id,
           item => html`
             <mm-menu-item-link

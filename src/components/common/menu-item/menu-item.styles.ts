@@ -1,12 +1,14 @@
 import { css } from 'lit'
 
+import { interactiveElement } from '@/stylesheets/shared.styles'
+
 export const menuItemStyles = css`
   :host {
     --menu-item-background-color: transparent;
     --menu-item-padding-inline: 0;
   }
 
-  :is(button, a, [role^='menuitem'], [role='option']) {
+  ${interactiveElement} {
     display: flex;
     align-items: center;
     width: 100%;
@@ -62,7 +64,7 @@ export const menuItemStyles = css`
   }
 
   /* tone=danger: color를 행에 지정하면 list-item 내부 텍스트·아이콘이 상속받는다 */
-  :host([tone='danger']) :is(button, a, [role^='menuitem'], [role='option']) {
+  :host([tone='danger']) ${interactiveElement} {
     color: var(--color-danger);
   }
 

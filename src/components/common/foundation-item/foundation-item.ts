@@ -1,7 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import { resetStyles } from '@/stylesheets/shared.styles'
+import { interactiveElement, resetStyles } from '@/stylesheets/shared.styles'
 import '@/components/common/text/semantics/text-block'
 
 /**
@@ -36,11 +36,11 @@ export class FoundationItem extends LitElement {
           transform var(--transition-duration) var(--transition-easing);
       }
 
-      a:hover {
+      ${interactiveElement}:hover {
         --lift: var(--interaction-hover-lift);
       }
 
-      a:focus-visible {
+      ${interactiveElement}:focus-visible {
         outline: var(--interaction-focus-outline);
         outline-offset: 2px;
       }

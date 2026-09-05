@@ -1,7 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import { withToggleSelection } from '@/components/common/button/button.utils'
+import { withTogglePressed } from '@/components/common/button/button.utils'
 import {
   iconButtonSelectedStyles,
   iconButtonStyles,
@@ -14,7 +14,7 @@ import '@/components/common/icon'
  * 아이콘 전용이며 선택 시 채워진 아이콘으로 전환됩니다.
  */
 @customElement('mm-bookmark-button')
-export class BookmarkButton extends withToggleSelection(LitElement) {
+export class BookmarkButton extends withTogglePressed(LitElement) {
   static styles = [
     iconButtonStyles,
     iconButtonSelectedStyles,
@@ -32,7 +32,7 @@ export class BookmarkButton extends withToggleSelection(LitElement) {
     return html`
       <button
         type="button"
-        aria-pressed=${this.selected ? 'true' : 'false'}
+        aria-pressed=${this.pressed ? 'true' : 'false'}
         aria-label=${this.actionLabel}
         ?disabled=${this.disabled}
         @click=${this.handleToggleClick}
@@ -53,7 +53,7 @@ export class BookmarkButton extends withToggleSelection(LitElement) {
       bookmark: ICON_NAMES.BOOKMARK,
       heart: ICON_NAMES.LIKE,
     }
-    return this.selected ? filled[this.shape] : outline[this.shape]
+    return this.pressed ? filled[this.shape] : outline[this.shape]
   }
 
   private get actionLabel() {

@@ -81,7 +81,7 @@ export class ComponentAnatomy extends LitElement {
     if (!this.code) return nothing
 
     return html`
-      <mm-code .code=${this.code}></mm-code>
+      <div class="component-content-frame"><mm-code .code=${this.code}></mm-code></div>
     `
   }
 }

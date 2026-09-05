@@ -59,6 +59,36 @@ const main = html`
             description="누르는 순간의 눌림 피드백입니다."
           ></mm-list-item>
           <mm-list-item
+            icon="check-square"
+            size="small"
+            label="Pressed"
+            description="그룹 없이 스스로 눌림 상태를 유지하는 컨트롤입니다."
+          ></mm-list-item>
+          <mm-list-item
+            icon="check-circle"
+            size="small"
+            label="Selection"
+            description="선택은 그룹이 소유하며 값을 남기는 상태입니다."
+          ></mm-list-item>
+          <mm-list-item
+            icon="map-pin"
+            size="small"
+            label="Current"
+            description="지금 위치한 곳을 내비게이션에서 표시합니다."
+          ></mm-list-item>
+          <mm-list-item
+            icon="nav-arrow-down"
+            size="small"
+            label="Expanded"
+            description="펼침·접힘 여부를 토글 대상에 표시합니다."
+          ></mm-list-item>
+          <mm-list-item
+            icon="warning-triangle"
+            size="small"
+            label="Invalid"
+            description="입력값이 유효하지 않을 때 오류로 표시합니다."
+          ></mm-list-item>
+          <mm-list-item
             icon="lock"
             size="small"
             label="Disabled"
@@ -77,6 +107,9 @@ const main = html`
           <code>--interaction-hover-lift</code>
           <code>--interaction-active-background-color</code>
           <code>--interaction-active-shadow</code>
+          <code>--interaction-selected-background-color</code>
+          <code>--interaction-selected-foreground-color</code>
+          <code>--interaction-selected-border-color</code>
         </mm-flex>
       </mm-content-section>
 
@@ -99,31 +132,31 @@ const main = html`
         ></mm-table>
         <mm-paragraph>
           <code>mm-marquee</code>
-          의 <code>pause-on-hover</code>는 상태 표현이 아니라 포인터가 있는 동안만 애니메이션을
-          멈추는 기능이라 위 표에 포함하지 않습니다.
+          의
+          <code>pause-on-hover</code>
+          는 상태 표현이 아니라 포인터가 있는 동안만 애니메이션을 멈추는 기능이라 위 표에 포함하지
+          않습니다.
         </mm-paragraph>
       </mm-content-section>
       <mm-content-section heading-level="3" heading="Selection">
         <mm-paragraph>
-          선택은 값을 남기는 상호작용으로, 색상 외의 단서와 그룹 단위 소유·표현 규칙을 함께
-          따릅니다.
+          선택은 값을 남기는 상호작용으로, 그룹 단위 소유·표현 규칙을 따릅니다.
         </mm-paragraph>
         <mm-text-list
           variant="check"
           texts='[
-            "색상만이 아니라 아이콘·형태·ARIA로 함께 전달하고, 아이콘은 채우면 켜짐·윤곽이면 꺼짐을 뜻한다.",
             "눌러 실행되는 항목이나 화면을 바꾸는 탭처럼 결과가 화면 변화로 드러나는 상호작용은 값을 남기지 않는다.",
             "선택 상태는 항목이 아니라 그룹이 소유하며, 하나를 고르면 value·여럿을 고르면 values로 두고 바뀌면 change로 알린다. 하나의 값을 이루는 항목 사이는 화살표 키로 옮기고 Tab은 그룹을 한 번만 지난다.",
-            "네이티브 요소가 있으면 그 attribute를, 없으면 역할에 맞는 ARIA attribute를 쓰고 스킨도 같은 selector를 기준으로 두며, 생김새가 비슷해도 다른 역할의 attribute를 빌려 쓰지 않는다."
+            "네이티브 attribute가 있으면 그것을, 없으면 역할에 맞는 ARIA attribute를 쓰고 스킨도 같은 selector를 기준으로 둔다."
           ]'
         ></mm-text-list>
         <mm-table
           id="selection-component-table"
           caption="선택 컴포넌트의 용도와 상태 attribute"
+          style="--table-width: fit-content"
           columns='[
-            {"label": "컴포넌트", "width": "260px"},
-            {"label": "언제 쓰나"},
-            {"label": "상태", "width": "140px"}
+            {"label": "컴포넌트", "width": "220px"},
+            {"label": "상태"}
           ]'
         ></mm-table>
         <mm-grid columns="3" gap="3">
@@ -158,6 +191,61 @@ const main = html`
           }
         </style>
       </mm-content-section>
+
+      <mm-content-section heading-level="3" heading="Pressed">
+        <mm-paragraph>
+          그룹 없이 스스로 눌림 상태를 유지하는 컨트롤은
+          <code>aria-pressed</code>
+          로 표현하고, Selection과 같은 강조 토큰을 공유합니다.
+        </mm-paragraph>
+        <mm-table
+          id="pressed-component-table"
+          caption="Pressed 컴포넌트의 소유 방식"
+          style="--table-width: fit-content"
+          columns='[
+            {"label": "컴포넌트", "width": "220px"},
+            {"label": "소유"}
+          ]'
+        ></mm-table>
+      </mm-content-section>
+
+      <mm-content-section heading-level="3" heading="Current">
+        <mm-paragraph>
+          지금 위치한 곳을
+          <code>aria-current</code>
+          로 표시합니다. 페이지·라우트를 가리키면
+          <code>page</code>
+          , 그 외 항목을 가리키면
+          <code>true</code>
+          를 씁니다.
+        </mm-paragraph>
+        <mm-table
+          id="current-component-table"
+          caption="Current 컴포넌트와 값"
+          style="--table-width: fit-content"
+          columns='[
+            {"label": "컴포넌트", "width": "180px"},
+            {"label": "값", "width": "100px"}
+          ]'
+        ></mm-table>
+      </mm-content-section>
+
+      <mm-content-section heading-level="3" heading="Expanded">
+        <mm-paragraph>
+          펼침·접힘 여부는
+          <code>aria-expanded</code>
+          로 표시합니다.
+        </mm-paragraph>
+        <mm-table
+          id="expanded-component-table"
+          caption="Expanded 컴포넌트와 펼치는 대상"
+          style="--table-width: fit-content"
+          columns='[
+            {"label": "컴포넌트", "width": "220px"},
+            {"label": "펼치는 대상"}
+          ]'
+        ></mm-table>
+      </mm-content-section>
     </mm-content-section-list>
   </main>
 `
@@ -166,6 +254,9 @@ document.addEventListener('DOMContentLoaded', () => {
   renderDocumentLayout(main)
   setupSelectionComponentTable()
   setupHoverTable()
+  setupPressedComponentTable()
+  setupCurrentComponentTable()
+  setupExpandedComponentTable()
 })
 
 function setupSelectionComponentTable() {
@@ -177,27 +268,22 @@ function setupSelectionComponentTable() {
   table.rows = html`
     <tr>
       <th scope="row"><code>mm-checkbox-group</code></th>
-      <td>선택지를 모두 펼쳐 두고 여럿을 독립적으로 켤 때.</td>
       <td><code>checked</code></td>
     </tr>
     <tr>
       <th scope="row"><code>mm-radio-group</code></th>
-      <td>선택지를 나란히 견주며 하나만 고를 때.</td>
       <td><code>checked</code></td>
     </tr>
     <tr>
       <th scope="row"><code>mm-switch</code></th>
-      <td>저장 없이 즉시 반영되는 켜짐·꺼짐일 때.</td>
       <td><code>aria-checked</code></td>
     </tr>
     <tr>
       <th scope="row"><code>mm-filter-button-group</code></th>
-      <td>보고 있는 목록을 좁히는 조건을 바로 적용할 때.</td>
       <td><code>aria-pressed</code></td>
     </tr>
     <tr>
       <th scope="row"><code>mm-select</code></th>
-      <td>선택지가 많아 접어 두고 고른 값만 트리거에 남길 때.</td>
       <td><code>aria-selected</code></td>
     </tr>
     <tr>
@@ -205,8 +291,121 @@ function setupSelectionComponentTable() {
         <code>mm-menu-item-radio</code>
         <code>mm-menu-item-checkbox</code>
       </th>
-      <td>메뉴 안에서 실행 항목과 함께 상태를 유지할 때.</td>
       <td><code>aria-checked</code></td>
+    </tr>
+  `
+}
+
+function setupPressedComponentTable() {
+  const table = document.querySelector<HTMLElementTagNameMap['mm-table']>(
+    'mm-table#pressed-component-table',
+  )
+  if (!table) return
+
+  table.rows = html`
+    <tr>
+      <th scope="row"><code>mm-toggle-button</code></th>
+      <td>단독</td>
+    </tr>
+    <tr>
+      <th scope="row"><code>mm-follow-button</code></th>
+      <td>단독</td>
+    </tr>
+    <tr>
+      <th scope="row"><code>mm-bookmark-button</code></th>
+      <td>단독</td>
+    </tr>
+    <tr>
+      <th scope="row"><code>mm-reveal-button</code></th>
+      <td>단독</td>
+    </tr>
+    <tr>
+      <th scope="row"><code>mm-toggle-button-group</code></th>
+      <td>그룹</td>
+    </tr>
+    <tr>
+      <th scope="row"><code>mm-filter-button-group</code></th>
+      <td>그룹</td>
+    </tr>
+  `
+}
+
+function setupCurrentComponentTable() {
+  const table = document.querySelector<HTMLElementTagNameMap['mm-table']>(
+    'mm-table#current-component-table',
+  )
+  if (!table) return
+
+  table.rows = html`
+    <tr>
+      <th scope="row"><code>mm-breadcrumb</code></th>
+      <td><code>page</code></td>
+    </tr>
+    <tr>
+      <th scope="row"><code>mm-pagination</code></th>
+      <td><code>page</code></td>
+    </tr>
+    <tr>
+      <th scope="row"><code>mm-page-button</code></th>
+      <td><code>page</code></td>
+    </tr>
+    <tr>
+      <th scope="row"><code>mm-bottom-bar</code></th>
+      <td><code>page</code></td>
+    </tr>
+    <tr>
+      <th scope="row"><code>mm-app-sidebar</code></th>
+      <td><code>page</code></td>
+    </tr>
+    <tr>
+      <th scope="row"><code>mm-toc</code></th>
+      <td><code>true</code></td>
+    </tr>
+    <tr>
+      <th scope="row">theme-selector</th>
+      <td><code>true</code></td>
+    </tr>
+  `
+}
+
+function setupExpandedComponentTable() {
+  const table = document.querySelector<HTMLElementTagNameMap['mm-table']>(
+    'mm-table#expanded-component-table',
+  )
+  if (!table) return
+
+  table.rows = html`
+    <tr>
+      <th scope="row"><code>mm-show-more-button</code></th>
+      <td>잘린 텍스트</td>
+    </tr>
+    <tr>
+      <th scope="row"><code>mm-read-more-button</code></th>
+      <td>잘린 텍스트</td>
+    </tr>
+    <tr>
+      <th scope="row"><code>mm-hamburger-button</code></th>
+      <td>내비게이션 메뉴</td>
+    </tr>
+    <tr>
+      <th scope="row"><code>mm-more-button</code></th>
+      <td>오버플로 메뉴</td>
+    </tr>
+    <tr>
+      <th scope="row"><code>mm-app-sidebar</code></th>
+      <td>하위 트리</td>
+    </tr>
+    <tr>
+      <th scope="row">navbar-search</th>
+      <td>검색 패널</td>
+    </tr>
+    <tr>
+      <th scope="row">chat-source</th>
+      <td>출처 상세</td>
+    </tr>
+    <tr>
+      <th scope="row">model-selector</th>
+      <td>모델 목록</td>
     </tr>
   `
 }
@@ -263,7 +462,7 @@ function setupHoverTable() {
       <td>테두리 드러내기</td>
       <td>평소 테두리를 감춰 둔 컨트롤일 때.</td>
       <td><code>\${interactiveElement}:hover</code></td>
-      <td><code>border-color: var(--background-strong-color)</code></td>
+      <td><code>border-color: var(--border-color)</code></td>
     </tr>
     <tr>
       <th scope="row"><code>mm-input</code></th>

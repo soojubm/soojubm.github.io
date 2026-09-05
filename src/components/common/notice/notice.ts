@@ -61,7 +61,7 @@ class Notice extends LitElement {
 
     return html`
       <div class="notice-dismiss">
-        <mm-dismiss-button @click=${this.handleDismissClick}></mm-dismiss-button>
+        <mm-dismiss-button @dismiss=${this.handleDismiss}></mm-dismiss-button>
       </div>
     `
   }
@@ -70,9 +70,12 @@ class Notice extends LitElement {
     return VARIANT_ICONS[this.variant] ?? ICON_NAMES.INFO
   }
 
-  private handleDismissClick() {
+  // 버튼의 dismiss는 여기서 멈추고, notice 자신의 dismiss로 바꿔 알린다.
+  private handleDismiss(event: Event) {
+    event.stopPropagation()
+
     this.dismissed = true
-    emit(this, 'mm-dismiss')
+    emit(this, 'dismiss')
   }
 }
 

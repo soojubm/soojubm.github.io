@@ -7,13 +7,14 @@ export const codeStyles = css`
 
   pre {
     margin: 0;
-    overflow-x: auto;
   }
 
   code {
-    font-size: var(--font-size-12);
+    font-family: var(--font-family);
+    font-size: var(--font-size-14);
     line-height: var(--font-line-height-16);
-    white-space: pre;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
   }
 
   /* Prism이 붙이는 토큰 클래스. 테마마다 값이 정의된 색만 사용해 테마 전환을 그대로 따른다. */

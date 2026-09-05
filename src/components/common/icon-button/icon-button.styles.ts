@@ -6,7 +6,7 @@ import { buildAttributeRules } from '@/utils'
 const iconButtonVariantTokens = {
   primary: {
     '--icon-button-background-color': 'var(--color-primary)',
-    '--icon-button-text-color': 'var(--foreground-color-on-solid)',
+    '--icon-button-text-color': 'var(--foreground-on-solid)',
   },
   secondary: {
     '--icon-button-border-radius': 'var(--radius-full)',
@@ -20,7 +20,7 @@ const iconButtonVariantTokens = {
   },
   destructive: {
     '--icon-button-background-color': 'var(--color-danger)',
-    '--icon-button-text-color': 'var(--foreground-color-on-solid)',
+    '--icon-button-text-color': 'var(--foreground-on-solid)',
   },
 }
 

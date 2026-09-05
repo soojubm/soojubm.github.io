@@ -55,7 +55,7 @@ class TopBar extends LitElement {
   }
 
   private handleNavClick = () => {
-    emit(this, 'navclick')
+    emit(this, 'nav-click')
   }
 }
 

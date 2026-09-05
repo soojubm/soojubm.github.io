@@ -216,7 +216,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const page = findSitemapItem('setting')
   renderLayout(main, { closeSidebar: true, navbar: !page?.hideNavbar })
 
-  document.getElementById('setting-top-bar')?.addEventListener('navclick', () => {
+  document.getElementById('setting-top-bar')?.addEventListener('nav-click', () => {
     history.back()
   })
 })

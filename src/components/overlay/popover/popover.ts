@@ -35,7 +35,7 @@ class Popover extends LitElement {
     getTrigger: () => this.triggerElements[0],
     dismissOn: ['outside', 'escape'],
     hasPopup: () => this.getAttribute('role') ?? 'true',
-    onDismiss: () => emit(this, 'popoverclose'),
+    onDismiss: () => emit(this, 'popover-close'),
   })
 
   render() {

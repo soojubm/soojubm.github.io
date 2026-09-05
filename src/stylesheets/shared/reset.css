@@ -69,12 +69,9 @@ pre {
   margin-block: 0;
 }
 code {
-  display: block;
+  display: inline-block;
   font-family: var(--font-family-code);
   font-size: var(--font-size-12);
-}
-svg {
-  color: var(--foreground-color);
 }
 
 select {
@@ -150,7 +147,6 @@ table {
   --table-cell-padding: var(--space-2) 0;
   --table-cell-padding-inline: var(--space-2);
   --table-cell-background: var(--background-color);
-  --table-cell-background-hover: var(--background-subtle-color);
 
   border-collapse: collapse;
   border-spacing: 0;
@@ -180,10 +176,11 @@ table thead tr th {
 }
 table tbody tr {
   border-bottom: var(--table-row-border);
+  background: var(--table-cell-background);
   position: relative;
 }
 table tbody tr:hover {
-  background-color: var(--table-cell-background-hover);
+  --table-cell-background: var(--interaction-hover-background-color);
 }
 table tbody tr th {
   padding-inline: var(--table-cell-padding-inline);
@@ -245,7 +242,7 @@ li::marker {
   padding: 0.5rem 1rem;
   border-radius: var(--radius);
   background: var(--color-danger);
-  color: var(--foreground-color-on-solid);
+  color: var(--foreground-on-solid);
   text-align: center;
 
   position: fixed;
@@ -275,12 +272,6 @@ li::marker {
   height: 50px;
   line-height: 50px;
   font-size: 14px;
-}
-
-.is-hovered {
-  box-shadow: 0 0 0 2px var(--background-subtle-color);
-  background: var(--background-subtle-color);
-  border-radius: 4px;
 }
 
 .is-focused,
@@ -326,5 +317,5 @@ menu-item:focus-visible {
   transform-origin: bottom right;
 }
 .cta-arrow.theme-white .line {
-  background: var(--foreground-color-on-solid);
+  background: var(--foreground-on-solid);
 }

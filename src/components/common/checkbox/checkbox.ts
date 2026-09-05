@@ -57,7 +57,7 @@ export class Checkbox extends LitElement {
           @change=${this.handleCheckboxChange}
         />
 
-        <label for=${inputId} @click=${this.handleLabelClick}>
+        <label for=${inputId}>
           <span class="indicator"></span>
           <mm-paragraph>
             <slot></slot>
@@ -82,14 +82,6 @@ export class Checkbox extends LitElement {
     const target = event.target as HTMLInputElement
 
     this.commitChecked(target.checked)
-  }
-
-  private handleLabelClick = (event: Event) => {
-    event.preventDefault()
-
-    if (this.disabled) return
-
-    this.commitChecked(!this.checked)
   }
 }
 

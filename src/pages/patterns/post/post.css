@@ -13,7 +13,7 @@
 }
 .post-body-code {
   display: block;
-  margin: 0 0 2rem 0;
+  margin: 0 0 var(--space-8) 0;
 }
 .post-body pre {
   margin: 0;
@@ -32,11 +32,11 @@
 /* // line-height 때무네 space로 간격을 주지 않고 1rem을 줌. */
 .comment-write-name {
   display: none;
-  margin: 0 0 1rem 0;
+  margin: 0 0 var(--space-4) 0;
 }
 .comment-write-password {
   display: none;
-  margin: 0 0 1rem 0;
+  margin: 0 0 var(--space-4) 0;
 }
 
 .is-focused .comment-write-name {
@@ -51,7 +51,7 @@
   display: flex;
   justify-content: space-between;
   gap: var(--space-4);
-  padding: 2rem var(--layout-padding-inline);
+  padding: var(--space-8) var(--layout-padding-inline);
 }
 .post-pagination-previous {
   display: flex;
@@ -65,14 +65,14 @@
   position: relative;
 }
 .post-pagination-previous:hover {
-  background-color: var(--background-subtle-color);
+  background-color: var(--interaction-hover-background-color);
 }
 .post-pagination-previous-media {
   display: block;
-  margin-bottom: 1rem;
+  margin-bottom: var(--space-4);
 }
 .post-pagination-previous-label {
-  margin: 0 0 0.25rem 0;
+  margin: 0 0 var(--space-1) 0;
   font-size: var(--font-size-14);
   font-weight: normal;
   color: var(--foreground-subtle-color);
@@ -91,15 +91,15 @@
   position: relative;
 }
 .post-pagination-next:hover {
-  background-color: var(--background-subtle-color);
+  background-color: var(--interaction-hover-background-color);
 }
 .post-pagination-next-media {
   display: block;
-  margin-bottom: 1rem;
+  margin-bottom: var(--space-4);
   margin-left: auto;
 }
 .post-pagination-next-label {
-  margin: 0 0 0.25rem 0;
+  margin: 0 0 var(--space-1) 0;
   font-size: var(--font-size-14);
   font-weight: normal;
   color: var(--foreground-subtle-color);

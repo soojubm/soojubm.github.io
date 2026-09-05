@@ -28,8 +28,12 @@ export class Table extends LitElement {
       }
 
       :host {
+        --table-height: 320px;
+        --table-width: 100%;
+
         display: block;
-        height: 320px;
+        width: var(--table-width);
+        height: var(--table-height);
         background-color: var(--background-subtle-color);
         overflow-x: auto;
       }

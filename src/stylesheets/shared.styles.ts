@@ -38,6 +38,15 @@ export const resetStyles = css`
   }
 `
 
+/**
+ * 컴포넌트가 shadow root 안에 렌더하는 상호작용 요소.
+ * hover·focus·disabled 상태 선택자는 컴포넌트마다 태그를 다시 적지 않고 이 선택자로 잡는다.
+ * 구조 규칙은 그대로 태그·class로 두고, 상태만 여기에 모은다.
+ */
+export const interactiveElement = unsafeCSS(
+  ":is(button, a, [role='button'], [role^='menuitem'], [role='option'])",
+)
+
 /** 공유 focus 링 선언. --interaction-focus-outline 토큰을 소비하는 선택자 안에 펼쳐 쓴다. */
 export const focusRing = css`
   outline: var(--interaction-focus-outline);

@@ -42,6 +42,8 @@ interface ColorTokenEntry {
   token: string
   textColor?: string
   label?: string
+  contrast?: string
+  tags?: string
 }
 
 const renderTokenItems = (keys: string[]) =>
@@ -59,6 +61,8 @@ const renderColorTokens = (entries: ColorTokenEntry[]) =>
         token=${entry.token}
         text-color=${entry.textColor ?? ''}
         label=${entry.label ?? ''}
+        contrast=${entry.contrast ?? ''}
+        tags=${entry.tags ?? ''}
       ></mm-color-token>
     `,
   )
@@ -185,131 +189,78 @@ const grayscaleColorTokens: ColorTokenEntry[] = [
   { color: 'var(--gray200)', token: 'gray200: #d2d7d5' },
   { color: 'var(--gray400)', token: 'gray400: #8a908d' },
   { color: 'var(--gray800)', token: 'gray800: #303b35' },
-  { color: 'var(--green100)', token: 'green100: green tint' },
-  { color: 'var(--green800)', token: 'green800: #1b995c' },
+  { color: 'var(--green100)', token: 'green100: green tint', tags: 'primary-subtle' },
+  { color: 'var(--green800)', token: 'green800: #1b995c', tags: 'primary' },
   { color: 'var(--red100)', token: 'red100: red tint' },
-  { color: 'var(--red800)', token: 'red800: #f02849' },
-]
-
-const semanticColorTokens: ColorTokenEntry[] = [
-  {
-    color: 'var(--color-primary)',
-    textColor: 'var(--foreground-color-on-primary)',
-    label: 'on primary',
-    token: 'primary: green800',
-  },
-  {
-    color: 'var(--color-primary-subtle)',
-    textColor: 'var(--color-primary)',
-    label: 'on primary-subtle',
-    token: 'primary-subtle: green100',
-  },
-  {
-    color: 'var(--color-accent)',
-    textColor: 'var(--foreground-color)',
-    label: 'on accent',
-    token: 'accent: yellow800',
-  },
-  {
-    color: 'var(--color-success)',
-    textColor: 'var(--foreground-color-on-solid)',
-    label: 'on success',
-    token: 'success: green800',
-  },
-  {
-    color: 'var(--color-warning)',
-    textColor: 'var(--foreground-color-on-solid)',
-    label: 'on warning',
-    token: 'warning: orange800',
-  },
-  {
-    color: 'var(--color-danger)',
-    textColor: 'var(--foreground-color-on-solid)',
-    label: 'on danger',
-    token: 'danger: red800',
-  },
-]
-
-const foregroundColorTokens: ColorTokenEntry[] = [
-  {
-    color: 'var(--background-color)',
-    textColor: 'var(--foreground-color)',
-    label: 'foreground',
-    token: 'foreground: gray800',
-  },
-  {
-    color: 'var(--background-color)',
-    textColor: 'var(--foreground-subtle-color)',
-    label: 'foreground-subtle',
-    token: 'foreground-subtle: gray400',
-  },
-  {
-    color: 'var(--background-strong-color)',
-    textColor: 'var(--foreground-color-on-solid)',
-    label: 'foreground on-solid',
-    token: 'foreground-color-on-solid: gray0',
-  },
-  {
-    color: 'var(--color-primary)',
-    textColor: 'var(--foreground-color-on-primary)',
-    label: 'foreground on-primary',
-    token: 'foreground-color-on-primary: gray0',
-  },
-  {
-    color: 'var(--color-warning)',
-    textColor: 'var(--foreground-color-on-warning)',
-    label: 'foreground on-warning',
-    token: 'foreground-color-on-warning: red800',
-  },
-  {
-    color: 'var(--background-color)',
-    textColor: 'var(--color-success-foreground)',
-    label: 'success-foreground',
-    token: 'success-foreground',
-  },
-  {
-    color: 'var(--background-color)',
-    textColor: 'var(--color-warning-foreground)',
-    label: 'warning-foreground',
-    token: 'warning-foreground',
-  },
-  {
-    color: 'var(--background-color)',
-    textColor: 'var(--color-danger-foreground)',
-    label: 'danger-foreground',
-    token: 'danger-foreground',
-  },
-]
-
-const interactionTokenItems: string[] = [
-  'interaction-hover-background-color',
-  'interaction-hover-lift',
-  'interaction-selected-background-color',
-  'interaction-selected-foreground-color',
-  'interaction-selected-border-color',
-  'interaction-active-background-color',
-  'interaction-active-shadow',
-  'interaction-focus-outline',
+  { color: 'var(--red800)', token: 'red800: #f02849', tags: 'danger' },
+  { color: 'var(--yellow800)', token: 'yellow800: gold', tags: 'accent' },
+  { color: 'var(--orange800)', token: 'orange800: #fb7800', tags: 'warning' },
+  { color: 'var(--blue800)', token: 'blue800: #1d4ed8', tags: 'success' },
 ]
 
 const backgroundColorTokens: ColorTokenEntry[] = [
   {
     color: 'var(--gray0)',
     textColor: 'var(--foreground-color)',
-    label: 'on background',
+    label: 'foreground',
+    contrast: '11.7:1',
+    token: 'background: #fff',
+  },
+  {
+    color: 'var(--gray0)',
+    textColor: 'var(--foreground-subtle-color)',
+    label: 'foreground-subtle',
+    contrast: '3.3:1',
+    token: 'background: #fff',
+  },
+  {
+    color: 'var(--gray0)',
+    textColor: 'var(--color-success-foreground)',
+    label: 'success-foreground',
+    contrast: '8.7:1',
+    token: 'background: #fff',
+  },
+  {
+    color: 'var(--gray0)',
+    textColor: 'var(--color-warning-foreground)',
+    label: 'warning-foreground',
+    contrast: '6.5:1',
+    token: 'background: #fff',
+  },
+  {
+    color: 'var(--gray0)',
+    textColor: 'var(--color-danger-foreground)',
+    label: 'danger-foreground',
+    contrast: '5.9:1',
     token: 'background: #fff',
   },
   {
     color: 'var(--gray100)',
     textColor: 'var(--foreground-color)',
-    label: 'on background-subtle',
+    label: 'foreground',
+    contrast: '10.8:1',
     token: 'background-subtle: #f5f6f5',
   },
   {
     color: 'var(--gray800)',
-    textColor: 'var(--foreground-color-on-solid)',
-    label: 'on background-strong',
+    textColor: 'var(--foreground-on-solid)',
+    label: 'foreground-on-solid',
+    contrast: '11.7:1',
     token: 'background-strong: #303b35',
+  },
+  {
+    color: 'var(--background-primary)',
+    textColor: 'var(--foreground-on-primary)',
+    label: 'foreground-on-primary',
+    contrast: '3.6:1',
+    token: 'background-primary',
+  },
+  {
+    color: 'var(--background-warning)',
+    textColor: 'var(--foreground-on-warning)',
+    label: 'foreground-on-warning',
+    contrast: '1.5:1',
+    token: 'background-warning',
   },
 ]
 
@@ -562,37 +513,14 @@ const main = html`
 
       <mm-token-section
         heading="Color"
-        description="색상 토큰은 원시 팔레트를 인터페이스 역할에 매핑합니다. surface 색 위에 대비쌍을 얹어 조합을 확인합니다."
+        description="원시 팔레트에 그 색을 참조하는 시맨틱 토큰을 태그로 붙입니다. background 역할 토큰은 대비쌍을 얹어 명도 대비를 함께 확인합니다."
       >
         <mm-grid columns="6">${renderColorTokens(grayscaleColorTokens)}</mm-grid>
 
         <mm-separator scope="section"></mm-separator>
-        <mm-grid columns="4" aria-label="semantic color tokens">
-          ${renderColorTokens(semanticColorTokens)}
-        </mm-grid>
-
-        <mm-grid
-          columns="4"
-          style="margin-top: var(--space-3)"
-          aria-label="foreground color tokens"
-        >
-          ${renderColorTokens(foregroundColorTokens)}
-        </mm-grid>
-
-        <mm-grid
-          columns="4"
-          style="margin-top: var(--space-3)"
-          aria-label="background color tokens"
-        >
+        <mm-grid columns="4" aria-label="background color tokens">
           ${renderColorTokens(backgroundColorTokens)}
         </mm-grid>
-      </mm-token-section>
-
-      <mm-token-section
-        heading="Interaction"
-        description="인터랙션 토큰은 hover·selected·active·focus처럼 상태에 따라 바뀌는 값입니다. 상태를 갖는 요소가 이 변수만 재할당하고, 스타일은 그대로 상속됩니다."
-      >
-        <mm-token-group>${renderTokenItems(interactionTokenItems)}</mm-token-group>
       </mm-token-section>
 
       <mm-token-section

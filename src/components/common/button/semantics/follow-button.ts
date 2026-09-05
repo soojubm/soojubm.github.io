@@ -6,10 +6,10 @@ import {
   followButtonStyles,
   buttonSelectedStyles,
 } from '@/components/common/button/button.styles'
-import { withToggleSelection } from '@/components/common/button/button.utils'
+import { withTogglePressed } from '@/components/common/button/button.utils'
 
 @customElement('mm-follow-button')
-export class FollowButton extends withToggleSelection(LitElement) {
+export class FollowButton extends withTogglePressed(LitElement) {
   static styles = [buttonBaseStyles, followButtonStyles, buttonSelectedStyles]
 
   render() {
@@ -17,10 +17,10 @@ export class FollowButton extends withToggleSelection(LitElement) {
       <button
         type="button"
         ?disabled=${this.disabled}
-        aria-pressed=${this.selected ? 'true' : 'false'}
+        aria-pressed=${this.pressed ? 'true' : 'false'}
         @click=${this.handleToggleClick}
       >
-        ${this.selected ? '팔로우 중' : '팔로우'}
+        ${this.pressed ? '팔로우 중' : '팔로우'}
       </button>
     `
   }

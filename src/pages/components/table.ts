@@ -29,7 +29,6 @@ const componentTokens: ComponentTokenItemData[] = [
   { name: 'table-cell-padding', default: 'var(--space-2) 0' },
   { name: 'table-cell-padding-inline', default: 'var(--space-2)' },
   { name: 'table-cell-background', default: 'var(--background-color)' },
-  { name: 'table-cell-background-hover', default: 'var(--background-subtle-color)' },
   { name: 'col-checkbox', default: '32px' },
 ]
 

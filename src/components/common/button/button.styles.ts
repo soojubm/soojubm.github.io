@@ -1,13 +1,13 @@
 import { css, unsafeCSS } from 'lit'
 
-import { focusRing } from '@/stylesheets/shared.styles'
+import { focusRing, interactiveElement } from '@/stylesheets/shared.styles'
 import { buildAttributeRules } from '@/utils'
 
-/** button 태그뿐 아니라 mm-hashtag-link 등 a 기반 파생 컴포넌트도 같은 스킨을 그대로 가져다 쓸 수 있도록 :is(button, a)로 잡는다. */
+/** button 태그뿐 아니라 mm-hashtag-link 등 a 기반 파생 컴포넌트도 같은 스킨을 그대로 가져다 쓰도록 공용 상호작용 선택자로 잡는다. */
 export const interactiveControlStyles = css`
-  :is(button, a) {
+  ${interactiveElement} {
     &:hover {
-      border-color: var(--background-strong-color);
+      border-color: var(--border-color);
     }
 
     &:focus-visible {
@@ -90,7 +90,7 @@ export const buttonSizeStyles = css`
 const buttonVariantTokens = {
   primary: {
     '--button-background-color': 'var(--color-primary)',
-    '--button-text-color': 'var(--foreground-color-on-solid)',
+    '--button-text-color': 'var(--foreground-on-solid)',
   },
   secondary: {
     '--button-background-color': 'var(--color-primary-subtle)',
@@ -105,7 +105,7 @@ const buttonVariantTokens = {
   },
   destructive: {
     '--button-background-color': 'var(--color-danger)',
-    '--button-text-color': 'var(--foreground-color-on-solid)',
+    '--button-text-color': 'var(--foreground-on-solid)',
   },
 }
 
@@ -145,6 +145,6 @@ export const followButtonStyles = css`
 
   button {
     --button-background-color: var(--color-primary);
-    --button-text-color: var(--foreground-color-on-solid);
+    --button-text-color: var(--foreground-on-solid);
   }
 `

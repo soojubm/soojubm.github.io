@@ -229,9 +229,8 @@ const main = html`
           height: var(--date-width);
           border-radius: var(--radius);
           cursor: pointer;
-          &::hover {
-            background: var(--color-primary);
-            color: var(--color-foreground-on-solid);
+          &:hover {
+            background: var(--interaction-hover-background-color);
           }
         }
       </style>

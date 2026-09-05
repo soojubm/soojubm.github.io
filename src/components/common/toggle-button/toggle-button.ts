@@ -16,16 +16,16 @@ import '@/components/common/icon/icon'
 export class ToggleButton extends LitElement {
   static styles = [buttonBaseStyles, toggleButtonStyles, buttonSelectedStyles]
 
-  @property({ type: Boolean, reflect: true }) selected = false
+  @property({ type: Boolean, reflect: true }) pressed = false
   @property({ type: String }) value = ''
   @property({ type: String }) icon?: IconName
   @property({ type: Boolean }) disabled = false
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = ''
 
   private toggle = new ToggleController(this, {
-    getValue: () => this.selected,
-    setValue: selected => {
-      this.selected = selected
+    getValue: () => this.pressed,
+    setValue: pressed => {
+      this.pressed = pressed
     },
     isDisabled: () => this.disabled,
   })
@@ -35,7 +35,7 @@ export class ToggleButton extends LitElement {
       <button
         type="button"
         ?disabled=${this.disabled}
-        aria-pressed=${this.selected ? 'true' : 'false'}
+        aria-pressed=${this.pressed ? 'true' : 'false'}
         aria-label=${this.ariaLabel || nothing}
         @click=${this.handleClick}
       >
@@ -57,7 +57,7 @@ export class ToggleButton extends LitElement {
     event.stopPropagation()
     if (!this.toggle.toggle()) return
 
-    emit(this, 'change', { selected: this.selected, value: this.value })
+    emit(this, 'change', { pressed: this.pressed, value: this.value })
   }
 }
 

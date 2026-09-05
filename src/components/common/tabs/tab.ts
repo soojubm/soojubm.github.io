@@ -56,10 +56,21 @@ export default class Tab extends LitElement {
 
   render() {
     return html`
-      <div class="tab-content" @click=${this.handleClick}>
+      <div class="tab-content">
         <slot></slot>
       </div>
     `
+  }
+
+  // role·tabindex·focus를 host가 가지므로 클릭도 host에서 받는다.
+  connectedCallback() {
+    super.connectedCallback()
+    this.addEventListener('click', this.handleClick)
+  }
+
+  disconnectedCallback() {
+    this.removeEventListener('click', this.handleClick)
+    super.disconnectedCallback()
   }
 
   public select() {

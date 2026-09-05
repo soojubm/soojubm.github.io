@@ -15,7 +15,7 @@ export class DeleteButton extends withIconAction(LitElement, 'delete') {
     css`
       :host {
         --icon-button-background-color: var(--color-danger);
-        --icon-button-text-color: var(--foreground-color-on-solid);
+        --icon-button-text-color: var(--foreground-on-solid);
       }
     `,
   ]

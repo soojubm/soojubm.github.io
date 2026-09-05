@@ -29,7 +29,7 @@ const componentReferences: ComponentReferenceItemData[] = [
 ]
 
 const componentProps: ComponentPropItemData[] = [
-  { name: 'selected', type: 'boolean = false' },
+  { name: 'pressed', type: 'boolean = false' },
   { name: 'value', type: 'string' },
   { name: 'icon', type: 'IconName', optional: true },
   { name: 'disabled', type: 'boolean = false' },
@@ -46,7 +46,7 @@ const componentProps: ComponentPropItemData[] = [
     type: "'horizontal' | 'vertical' = 'horizontal'",
     optional: true,
   },
-  { name: 'change', type: 'CustomEvent detail: selected, value', kind: 'event' },
+  { name: 'change', type: 'CustomEvent detail: pressed, value', kind: 'event' },
 ]
 
 const componentTokens: ComponentTokenItemData[] = [
@@ -114,7 +114,7 @@ const main = html`
 
     <mm-component-example>
       <mm-button-group>
-        <mm-toggle-button value="bold" icon="bold" selected>굵게</mm-toggle-button>
+        <mm-toggle-button value="bold" icon="bold" pressed>굵게</mm-toggle-button>
         <mm-toggle-button value="italic" icon="italic">기울임</mm-toggle-button>
         <mm-toggle-button value="underline" icon="underline">밑줄</mm-toggle-button>
         <mm-toggle-button value="disabled" disabled>비활성</mm-toggle-button>
@@ -213,7 +213,7 @@ const main = html`
     >
       <mm-button-group>
         <mm-follow-button></mm-follow-button>
-        <mm-follow-button selected></mm-follow-button>
+        <mm-follow-button pressed></mm-follow-button>
       </mm-button-group>
     </mm-component-section>
 
@@ -223,11 +223,11 @@ const main = html`
     >
       <mm-button-group>
         <mm-bookmark-button shape="star"></mm-bookmark-button>
-        <mm-bookmark-button shape="star" selected></mm-bookmark-button>
+        <mm-bookmark-button shape="star" pressed></mm-bookmark-button>
         <mm-bookmark-button shape="bookmark"></mm-bookmark-button>
-        <mm-bookmark-button shape="bookmark" selected></mm-bookmark-button>
+        <mm-bookmark-button shape="bookmark" pressed></mm-bookmark-button>
         <mm-bookmark-button shape="heart"></mm-bookmark-button>
-        <mm-bookmark-button shape="heart" selected></mm-bookmark-button>
+        <mm-bookmark-button shape="heart" pressed></mm-bookmark-button>
       </mm-button-group>
     </mm-component-section>
 
