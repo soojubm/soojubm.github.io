@@ -3,10 +3,10 @@ import { customElement, property } from 'lit/decorators.js'
 
 import { componentContentFrameStyles } from '@/components/domains/component/component.styles'
 import '@/components/common/code/code'
+import '@/components/common/text/semantics/heading'
 import '@/components/common/text/semantics/text-list'
 import { resetStyles } from '@/stylesheets/shared.styles'
 import { arrayAttributeConverter } from '@/utils'
-import '@/components/common/text'
 
 /**
  * 컴포넌트 해부도(Anatomy) 섹션.
@@ -58,7 +58,7 @@ export class ComponentAnatomy extends LitElement {
 
   render() {
     return html`
-      <mm-text size="24" weight="bold" as="h3">${this.heading}</mm-text>
+      <mm-heading level="2">${this.heading}</mm-heading>
       ${this.renderCode()}
       <div class="component-content-frame">
         <div class="stage">
@@ -70,10 +70,10 @@ export class ComponentAnatomy extends LitElement {
   }
 
   private renderParts() {
-    if (!this.normalizedParts.length) return nothing
+    if (!this.parts.length) return nothing
 
     return html`
-      <mm-text-list variant="number" .texts=${this.normalizedParts}></mm-text-list>
+      <mm-text-list variant="number" .texts=${this.parts}></mm-text-list>
     `
   }
 
@@ -83,10 +83,6 @@ export class ComponentAnatomy extends LitElement {
     return html`
       <mm-code .code=${this.code}></mm-code>
     `
-  }
-
-  private get normalizedParts() {
-    return Array.isArray(this.parts) ? this.parts : []
   }
 }
 
