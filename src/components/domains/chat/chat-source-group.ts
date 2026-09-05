@@ -67,10 +67,6 @@ export class ChatSourceGroup extends LitElement {
         text-decoration: none;
         margin-top: var(--space-1);
       }
-
-      .sheet-link:hover {
-        text-decoration: underline;
-      }
     `,
   ]
 

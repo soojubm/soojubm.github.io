@@ -2,7 +2,7 @@ import { LitElement, html, css, nothing } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 
 import '@/components/common/text/semantics/caption'
-import { focusRing } from '@/stylesheets/shared.styles'
+import { focusRing, interactiveElement } from '@/stylesheets/shared.styles'
 
 @customElement('mm-thumbnail')
 export class Thumbnail extends LitElement {
@@ -30,8 +30,8 @@ export class Thumbnail extends LitElement {
       display: block;
     }
 
-    a:hover {
-      transform: scale(1.03);
+    ${interactiveElement}:hover .image-wrapper {
+      --thumbnail-border: var(--border);
     }
     /* a:focus-visible {
       ${focusRing}

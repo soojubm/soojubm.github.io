@@ -28,13 +28,6 @@ export class ListMarker extends LitElement {
         font-weight: var(--font-weight-bold);
       }
 
-      /* check는 완료·긍정 상태를 나타내므로 표면 반전 대신 primary 고정색을 쓴다.
-         반전 표면은 다크에서 순백으로 뒤집혀 지나치게 튀어 보인다. */
-      :host([variant='check']) {
-        --list-marker-background-color: var(--color-primary);
-        --list-marker-text-color: var(--foreground-on-solid);
-      }
-
       svg {
         width: 0.5rem;
         height: 0.5rem;

@@ -1,7 +1,7 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import { focusRing, resetStyles } from '@/stylesheets/shared.styles'
+import { focusRing, interactiveElement, resetStyles } from '@/stylesheets/shared.styles'
 import '@/components/common/icon-button/semantics/more-button'
 import { arrayAttributeConverter, emit } from '@/utils'
 import '@/components/common/tag/semantics/accent-tag'
@@ -22,19 +22,22 @@ export class PortfolioItem extends LitElement {
       }
 
       article {
+        --lift: none;
+
         display: flex;
         flex-direction: column;
         width: 100%;
         gap: var(--space-3);
-        border-radius: var(--radius);
         position: relative;
+        transform: var(--lift);
+        transition: transform var(--transition-duration) var(--transition-easing);
       }
 
-      article:hover {
-        background-color: var(--background-subtle-color);
+      ${interactiveElement}:hover {
+        --lift: var(--interaction-hover-lift);
       }
 
-      article:focus-visible {
+      ${interactiveElement}:focus-visible {
         ${focusRing}
       }
 

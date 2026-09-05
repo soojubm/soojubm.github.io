@@ -44,7 +44,7 @@ const main = html`
             icon="cursor-pointer"
             size="small"
             label="Hover"
-            description="포인터가 올라온 요소를 배경으로 강조합니다. 채울 배경이 없는 떠 있는 표면은 대신 살짝 떠오릅니다."
+            description="포인터가 올라온 요소를 강조합니다."
           ></mm-list-item>
           <mm-list-item
             icon="cube-scan"
@@ -80,25 +80,43 @@ const main = html`
         </mm-flex>
       </mm-content-section>
 
+      <mm-content-section heading-level="3" heading="Hover">
+        <mm-paragraph>
+          hover 처리는 요소가 무엇을 가졌는지에 따라 정해집니다. 상태 selector에서 속성을 다시
+          선언하지 않고, 평소 값을 담고 있는 컴포넌트 토큰에 아래 값을 재할당합니다.
+        </mm-paragraph>
+        <mm-table
+          id="hover-table"
+          caption="컴포넌트별 hover 처리와 재할당 값"
+          style="--table-height: auto"
+          columns='[
+            {"label": "컴포넌트", "width": "200px"},
+            {"label": "처리", "width": "120px"},
+            {"label": "언제", "width": "260px"},
+            {"label": "Selector", "width": "220px"},
+            {"label": "변경 값"}
+          ]'
+        ></mm-table>
+        <mm-paragraph>
+          <code>mm-marquee</code>
+          의 <code>pause-on-hover</code>는 상태 표현이 아니라 포인터가 있는 동안만 애니메이션을
+          멈추는 기능이라 위 표에 포함하지 않습니다.
+        </mm-paragraph>
+      </mm-content-section>
       <mm-content-section heading-level="3" heading="Selection">
         <mm-paragraph>
-          선택 상태도 색상만으로 전달하지 않고 아이콘·형태·ARIA와 함께 제공합니다. 선택을 아이콘으로
-          나타낼 때는 채운 아이콘이 켜짐, 윤곽 아이콘이 꺼짐을 뜻합니다.
+          선택은 값을 남기는 상호작용으로, 색상 외의 단서와 그룹 단위 소유·표현 규칙을 함께
+          따릅니다.
         </mm-paragraph>
-        <mm-paragraph>
-          선택은 값을 남기는 상호작용입니다. 눌러 실행되는 항목이나 보이는 콘텐츠를 바꾸는 탭은
-          결과가 화면 변화로 드러나므로 값을 남기지 않습니다.
-        </mm-paragraph>
-        <mm-paragraph>
-          선택 상태는 항목이 아니라 그룹이 소유합니다. 하나를 고르는 그룹은 value로, 여럿을 고르는
-          그룹은 values로 상태를 두고 바뀌면 change로 알립니다. 여러 항목이 하나의 값을 이룰 때는
-          화살표 키로 항목 사이를 옮기고 Tab은 그룹을 한 번만 지납니다.
-        </mm-paragraph>
-        <mm-paragraph>
-          무엇으로 상태를 표현할지는 역할이 정합니다. 네이티브 요소가 있으면 그 attribute를, 없으면
-          역할에 맞는 ARIA attribute를 쓰고 스킨도 같은 selector를 기준으로 둡니다. 생김새가
-          비슷해도 다른 역할의 attribute를 빌려 쓰지 않습니다.
-        </mm-paragraph>
+        <mm-text-list
+          variant="check"
+          texts='[
+            "색상만이 아니라 아이콘·형태·ARIA로 함께 전달하고, 아이콘은 채우면 켜짐·윤곽이면 꺼짐을 뜻한다.",
+            "눌러 실행되는 항목이나 화면을 바꾸는 탭처럼 결과가 화면 변화로 드러나는 상호작용은 값을 남기지 않는다.",
+            "선택 상태는 항목이 아니라 그룹이 소유하며, 하나를 고르면 value·여럿을 고르면 values로 두고 바뀌면 change로 알린다. 하나의 값을 이루는 항목 사이는 화살표 키로 옮기고 Tab은 그룹을 한 번만 지난다.",
+            "네이티브 요소가 있으면 그 attribute를, 없으면 역할에 맞는 ARIA attribute를 쓰고 스킨도 같은 selector를 기준으로 두며, 생김새가 비슷해도 다른 역할의 attribute를 빌려 쓰지 않는다."
+          ]'
+        ></mm-text-list>
         <mm-table
           id="selection-component-table"
           caption="선택 컴포넌트의 용도와 상태 attribute"
@@ -147,6 +165,7 @@ const main = html`
 document.addEventListener('DOMContentLoaded', () => {
   renderDocumentLayout(main)
   setupSelectionComponentTable()
+  setupHoverTable()
 })
 
 function setupSelectionComponentTable() {
@@ -188,6 +207,84 @@ function setupSelectionComponentTable() {
       </th>
       <td>메뉴 안에서 실행 항목과 함께 상태를 유지할 때.</td>
       <td><code>aria-checked</code></td>
+    </tr>
+  `
+}
+
+function setupHoverTable() {
+  const table = document.querySelector<HTMLElementTagNameMap['mm-table']>('mm-table#hover-table')
+  if (!table) return
+
+  table.rows = html`
+    <tr>
+      <th scope="row">
+        <code>mm-menu-item</code>
+      </th>
+      <td>배경 채움</td>
+      <td>배경을 가진 행·항목·카드처럼 채울 면이 있을 때.</td>
+      <td><code>\${interactiveElement}:hover</code></td>
+      <td>
+        <code>--menu-item-background-color: var(--interaction-hover-background-color)</code>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">
+        <code>mm-table</code>
+        <br />
+        (reset.css 전역 규칙)
+      </th>
+      <td>배경 채움</td>
+      <td>배경을 가진 행·항목·카드처럼 채울 면이 있을 때.</td>
+      <td><code>table tbody tr:hover</code></td>
+      <td>
+        <code>--table-cell-background: var(--interaction-hover-background-color)</code>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row"><code>mm-portfolio-item</code></th>
+      <td>떠오름</td>
+      <td>채울 배경이 없는 떠 있는 표면일 때.</td>
+      <td><code>\${interactiveElement}:hover</code></td>
+      <td><code>--lift: var(--interaction-hover-lift)</code></td>
+    </tr>
+    <tr>
+      <th scope="row"><code>mm-foundation-item</code></th>
+      <td>떠오름</td>
+      <td>채울 배경이 없는 떠 있는 표면일 때.</td>
+      <td><code>\${interactiveElement}:hover</code></td>
+      <td><code>--lift: var(--interaction-hover-lift)</code></td>
+    </tr>
+    <tr>
+      <th scope="row">
+        <code>mm-button</code>
+        <br />
+        (icon-button·toggle-button·follow-button·hashtag-link 등 파생 포함)
+      </th>
+      <td>테두리 드러내기</td>
+      <td>평소 테두리를 감춰 둔 컨트롤일 때.</td>
+      <td><code>\${interactiveElement}:hover</code></td>
+      <td><code>border-color: var(--background-strong-color)</code></td>
+    </tr>
+    <tr>
+      <th scope="row"><code>mm-input</code></th>
+      <td>테두리 드러내기</td>
+      <td>평소 테두리를 감춰 둔 컨트롤일 때.</td>
+      <td><code>:host(:hover)</code></td>
+      <td><code>--input-border: var(--border)</code></td>
+    </tr>
+    <tr>
+      <th scope="row"><code>mm-thumbnail</code></th>
+      <td>테두리 드러내기</td>
+      <td>평소 테두리를 감춰 둔 컨트롤일 때.</td>
+      <td><code>\${interactiveElement}:hover .image-wrapper</code></td>
+      <td><code>--thumbnail-border: var(--border)</code></td>
+    </tr>
+    <tr>
+      <th scope="row">커스텀 스크롤바</th>
+      <td>기능</td>
+      <td></td>
+      <td><code>:hover::-webkit-scrollbar-thumb</code></td>
+      <td><code>background: var(--background-strong-color)</code></td>
     </tr>
   `
 }
