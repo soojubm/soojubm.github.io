@@ -23,6 +23,8 @@ const DRAG_CLOSE_THRESHOLD_RATIO = 0.25
 class Sheet extends LitElement {
   static styles = [overlaySurfaceStyles, sheetPositionStyles, sheetDragHandleStyles]
 
+  @property({ type: String, reflect: true }) role = 'dialog'
+  @property({ type: String, attribute: 'aria-modal', reflect: true }) ariaModal = 'true'
   @property({ type: String, reflect: true }) placement: SheetPlacement = 'center'
   @property({ type: String, reflect: true }) width: SheetWidth = 'medium'
   @property({ type: String }) height?: string

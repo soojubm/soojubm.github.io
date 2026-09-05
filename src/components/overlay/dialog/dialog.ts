@@ -24,6 +24,8 @@ export class Dialog extends LitElement {
     `,
   ]
 
+  @property({ type: String, reflect: true }) role = 'dialog'
+  @property({ type: String, attribute: 'aria-modal', reflect: true }) ariaModal = 'true'
   @property({ type: Boolean, reflect: true }) open = false
   @property({ type: String }) heading = ''
   @property({ type: String }) description = ''

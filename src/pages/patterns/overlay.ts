@@ -1,4 +1,5 @@
 import '@/components/common/table'
+import '@/components/common/link/link'
 import { html } from 'lit'
 
 import { renderDocumentLayout } from '@/components/layouts/document-layout'
@@ -13,15 +14,18 @@ const main = html`
     <mm-content-section-list>
       <mm-content-section heading-level="3" heading="Modal × Anchor">
         <mm-paragraph>
-          배경 차단 여부(modal)와 위치 기준(anchor)이 표면의 종류를 가릅니다.
+          배경 차단 여부(modal)와 위치 기준(anchor)이 표면의 종류를 가르고, 노출하는 role은 표면이
+          감싸는 내용에서 나옵니다.
         </mm-paragraph>
         <mm-table
           id="overlay-classification-table"
-          caption="화면 위로 뜨는 표면의 modal 여부와 위치 기준 비교"
+          caption="화면 위로 뜨는 표면의 modal 여부·위치 기준·노출 role·레이어 비교"
           columns='[
             {"label": "UI"},
             {"label": "Modal"},
-            {"label": "Anchor"}
+            {"label": "Anchor"},
+            {"label": "Role"},
+            {"label": "z-index"}
           ]'
         ></mm-table>
       </mm-content-section>
@@ -53,12 +57,12 @@ const main = html`
         ></mm-keyword-tag-group>
       </mm-content-section>
 
-      <mm-content-section heading-level="3" heading="Fixed overlay">
+      <mm-content-section heading-level="3" heading="Viewport overlay">
         <mm-text-list
           variant="check"
           texts='[
             "viewport를 기준으로 화면 중앙·가장자리에 뜨며 배경 상호작용을 차단한다",
-            "Backdrop이 뒤를 덮고 포커스는 내부에 갇힌다",
+            "표면이 dialog role과 aria-modal을 스스로 갖고, Backdrop이 뒤를 덮으며 포커스는 내부에 갇힌다",
             "닫기는 명시 버튼을 우선하고, 배경 클릭·ESC는 중요도가 낮은 작업에서만 허용한다"
           ]'
         ></mm-text-list>
@@ -85,6 +89,13 @@ const main = html`
             description="드롭다운, 시트, 고정 내비게이션, 알림처럼 화면 위로 뜨는 요소."
           ></mm-list-item>
         </mm-flex>
+        <mm-paragraph>
+          여기서 정하는 건 paint order뿐입니다. 표면이 떠 보이게 하는 그림자·대비는
+          <mm-link href="./elevation.html">Elevation</mm-link>
+          이, chrome 레이어를 쓰는 고정 내비게이션은
+          <mm-link href="./layout.html">Layout</mm-link>
+          이 다룹니다.
+        </mm-paragraph>
       </mm-content-section>
     </mm-content-section-list>
   </main>
@@ -110,29 +121,53 @@ function setupClassificationTable() {
 
   table.rows = html`
     <tr>
-      <th scope="row">Dialog</th>
+      <th scope="row"><mm-link href="./dialog.html">Dialog</mm-link></th>
       <td>${yes}</td>
       <td>Viewport</td>
+      <td>dialog</td>
+      <td>modal</td>
     </tr>
     <tr>
-      <th scope="row">Bottom Sheet</th>
+      <th scope="row"><mm-link href="./sheet.html">Bottom Sheet</mm-link></th>
       <td>${yes}</td>
       <td>Viewport</td>
+      <td>dialog</td>
+      <td>modal</td>
     </tr>
     <tr>
-      <th scope="row">Popover</th>
+      <th scope="row">Backdrop</th>
+      <td>${yes}</td>
+      <td>Viewport</td>
+      <td>없음</td>
+      <td>modal</td>
+    </tr>
+    <tr>
+      <th scope="row"><mm-link href="./popover.html">Popover</mm-link></th>
       <td>${no}</td>
       <td>Trigger</td>
+      <td>없음</td>
+      <td>overlay</td>
     </tr>
     <tr>
       <th scope="row">Select</th>
       <td>${no}</td>
       <td>Trigger</td>
+      <td>listbox</td>
+      <td>overlay</td>
     </tr>
     <tr>
-      <th scope="row">Tooltip</th>
+      <th scope="row"><mm-link href="./tooltip.html">Tooltip</mm-link></th>
       <td>${no}</td>
       <td>Trigger</td>
+      <td>tooltip</td>
+      <td>overlay</td>
+    </tr>
+    <tr>
+      <th scope="row">Toast</th>
+      <td>${no}</td>
+      <td>Viewport</td>
+      <td>status</td>
+      <td>toast</td>
     </tr>
   `
 }
