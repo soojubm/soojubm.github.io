@@ -10,6 +10,8 @@ import '@/components/common/text/semantics/heading'
 import '@/components/common/text/semantics/paragraph'
 import '@/components/common/tag/semantics/keyword-tag-group'
 
+export type PortfolioItemLayout = 'grid' | 'list'
+
 @customElement('mm-portfolio-item')
 export class PortfolioItem extends LitElement {
   static styles = [
@@ -72,9 +74,19 @@ export class PortfolioItem extends LitElement {
         font-size: var(--font-size-12);
         line-height: var(--font-size-12);
       }
+
+      :host([layout='list']) article {
+        flex-direction: row;
+      }
+
+      :host([layout='list']) mm-thumbnail {
+        width: 156px;
+        flex: none;
+      }
     `,
   ]
 
+  @property({ type: String, reflect: true }) layout: PortfolioItemLayout = 'grid'
   @property({ type: String }) label = ''
   @property({ type: String }) description = ''
   @property({ type: String }) src = ''

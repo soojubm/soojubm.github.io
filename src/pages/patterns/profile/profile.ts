@@ -1,5 +1,6 @@
 import { html } from 'lit'
 
+import type { PortfolioItem } from '@/components/domains/portfolio-item/portfolio-item'
 import type Sheet from '@/components/overlay/sheet/sheet'
 
 import { renderLayout } from '@/components/layouts/base-layouts'
@@ -511,11 +512,13 @@ function handleViewMode(event: Event) {
   const target = event.target as HTMLElement
   const viewModeEvent = event as ViewModeEvent
   const containerElement = target.closest<HTMLElement>('.profile-body')
-  const isList = viewModeEvent.detail.value === 'list'
+  const layout = viewModeEvent.detail.value
 
-  containerElement?.classList.toggle('list', isList)
+  containerElement?.querySelectorAll<PortfolioItem>('mm-portfolio-item').forEach(item => {
+    item.layout = layout
+  })
   containerElement?.querySelectorAll('mm-grid').forEach(gridElement => {
-    gridElement.setAttribute('columns', isList ? '1' : '3')
+    gridElement.setAttribute('columns', layout === 'list' ? '1' : '3')
   })
 }
 
