@@ -52,7 +52,7 @@ export class ShowMoreButton extends LitElement {
 
   private handleClick() {
     this.ariaExpanded = this.ariaExpanded === 'true' ? 'false' : 'true'
-    emit(this, 'change', { expanded: this.ariaExpanded === 'true' })
+    emit(this, 'toggle', { expanded: this.ariaExpanded === 'true' })
   }
 }
 

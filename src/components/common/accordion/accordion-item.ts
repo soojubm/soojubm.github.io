@@ -92,7 +92,7 @@ export class AccordionItem extends LitElement {
     isOpen: () => this.open,
     setOpen: open => {
       this.open = open
-      emit(this, 'accordion-toggle', { open })
+      emit(this, 'toggle', { open })
     },
     getTrigger: () => this.shadowRoot?.querySelector('button.summary-btn') ?? undefined,
   })

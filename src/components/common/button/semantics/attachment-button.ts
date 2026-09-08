@@ -45,7 +45,7 @@ export class AttachmentButton extends LitElement {
   private handleFilesChange(event: Event) {
     const input = event.target as HTMLInputElement
 
-    emit(this, 'files-change', { files: Array.from(input.files ?? []) })
+    emit(this, 'change', { files: Array.from(input.files ?? []) })
   }
 }
 

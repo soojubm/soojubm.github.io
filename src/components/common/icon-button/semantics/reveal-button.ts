@@ -34,7 +34,7 @@ export class RevealButton extends LitElement {
   private handleClick() {
     if (this.disabled) return
     this.revealed = !this.revealed
-    emit(this, 'reveal-toggle', { revealed: this.revealed })
+    emit(this, 'toggle', { revealed: this.revealed })
   }
 }
 

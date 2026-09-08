@@ -68,7 +68,7 @@ export class ChatSource extends LitElement {
 
   private handleClick(e: Event) {
     e.stopPropagation()
-    emit(this, 'source-toggle', { source: this, open: !this.open })
+    emit(this, 'toggle', { open: !this.open })
   }
 }
 

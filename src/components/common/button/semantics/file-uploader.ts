@@ -64,7 +64,7 @@ export class FileUploader extends LitElement {
         accept=${this.accept}
         ?multiple=${this.multiple}
         ?capture=${this.capture}
-        @files-change=${this.handleFilesChange}
+        @change=${this.handleFilesChange}
       ></mm-attachment-button>
       <mm-keyword-tag-group
         .keywords=${[this.helper, this.filesStatusText].filter(Boolean)}
@@ -114,6 +114,9 @@ export class FileUploader extends LitElement {
   }
 
   private handleFilesChange(event: CustomEvent<{ files: File[] }>) {
+    // 첨부 버튼 단위 이벤트는 여기서 끊고 uploader 단위 change로 승격한다.
+    event.stopPropagation()
+
     this.commitFiles(event.detail.files)
   }
 
@@ -124,7 +127,7 @@ export class FileUploader extends LitElement {
   private commitFiles(files: File[]) {
     this.setFiles(files)
 
-    emit(this, 'files-change', { files: this.files })
+    emit(this, 'change', { files: this.files })
   }
 
   private setFiles(files: File[]) {

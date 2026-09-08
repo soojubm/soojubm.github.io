@@ -84,7 +84,7 @@ export class ChatSourceGroup extends LitElement {
 
   render() {
     return html`
-      <mm-button-group wrap @source-toggle=${this.handleSourceToggle}>
+      <mm-button-group wrap @toggle=${this.handleSourceToggle}>
         <slot></slot>
       </mm-button-group>
 
@@ -154,7 +154,7 @@ export class ChatSourceGroup extends LitElement {
   }
 
   private handleSourceToggle(e: CustomEvent) {
-    const source = e.detail.source as ChatSource
+    const source = e.target as ChatSource
     const opening = e.detail.open as boolean
 
     if (!opening) {

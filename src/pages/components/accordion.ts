@@ -33,7 +33,7 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'open', type: 'boolean = false' },
   { name: 'slot: summary', type: 'HTMLElement (trigger)', optional: true },
   { name: 'slot: default', type: 'HTMLElement (panel content)', optional: true },
-  { name: 'accordion-toggle', type: 'CustomEvent detail: open', kind: 'event' },
+  { name: 'toggle', type: 'CustomEvent detail: open', kind: 'event' },
 ]
 
 const componentTokens: ComponentTokenItemData[] = [

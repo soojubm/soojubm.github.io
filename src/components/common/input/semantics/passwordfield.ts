@@ -46,7 +46,7 @@ class PasswordField extends LitElement {
         <mm-reveal-button
           slot="trailing"
           .revealed=${this.revealed}
-          @reveal-toggle=${this.handleRevealToggle}
+          @toggle=${this.handleRevealToggle}
         ></mm-reveal-button>
       </mm-textfield>
     `
