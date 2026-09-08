@@ -1,7 +1,7 @@
 import { html } from 'lit'
 
 import './class.css'
-import { renderLayout } from '@/components/layouts/base-layouts'
+import { renderPage } from '@/components/layouts/base-layouts'
 
 interface EpisodeItem {
   tag: string
@@ -204,13 +204,15 @@ const main = html`
     </section>
 
     <section class="class-why">
-      <mm-paragraph-group>
-        <mm-text size="32">
-          경제라니...
-          <br />
-          나 좀 머리 아파. 왜 읽어야 해?
-        </mm-text>
-        <mm-feature-group columns="1" style="margin-top: 1.5rem">
+      <mm-flex direction="column" gap="8">
+        <mm-paragraph-group>
+          <mm-text size="32">
+            경제라니...
+            <br />
+            나 좀 머리 아파. 왜 읽어야 해?
+          </mm-text>
+        </mm-paragraph-group>
+        <mm-feature-group columns="1">
           <mm-feature
             emoji="🌏"
             heading="세상을 이해하려면, 경제는 필수니까"
@@ -222,16 +224,18 @@ const main = html`
             description="돈을 모으고, 불리고, 지키는 모든 과정에서 경제를 이해하는 건 필수입니다. 경제를 알아야 돈이 어떻게 움직이는지, 내가 어떤 선택을 해야 하는지 알 수 있죠."
           ></mm-feature>
         </mm-feature-group>
-      </mm-paragraph-group>
+      </mm-flex>
     </section>
 
     <section class="class-feature">
       <div></div>
       <div>
-        <mm-paragraph-group>
-          <mm-text size="32">[고슴이 생존기: 경제 기본기편] 은요</mm-text>
-          <mm-paragraph size="large">이런 말이 절로 나오는 사람들!</mm-paragraph>
-          <mm-feature-group columns="1" style="margin-top: 1.5rem">
+        <mm-flex direction="column" gap="8">
+          <mm-paragraph-group>
+            <mm-text size="32">[고슴이 생존기: 경제 기본기편] 은요</mm-text>
+            <mm-paragraph size="large">이런 말이 절로 나오는 사람들!</mm-paragraph>
+          </mm-paragraph-group>
+          <mm-feature-group columns="1">
             <mm-feature
               emoji="💁‍♂️"
               heading="쉽고 재밌어요"
@@ -248,7 +252,7 @@ const main = html`
               description="설레는 마음으로 책 사던 나와는 달리, 이걸 읽는 나는 설레지 않을 수 있다는 거... 이쯤 되면 우리 모두 알잖아요? 이 콘텐츠를 끝까지 재밌게 읽을 수 있도록 고슴이가 리마인드 이메일을 보내 줄 예정."
             ></mm-feature>
           </mm-feature-group>
-        </mm-paragraph-group>
+        </mm-flex>
       </div>
     </section>
 
@@ -305,6 +309,4 @@ const main = html`
   </mm-page>
 `
 
-document.addEventListener('DOMContentLoaded', () => {
-  renderLayout(main, { closeSidebar: true })
-})
+renderPage(main, { closeSidebar: true })

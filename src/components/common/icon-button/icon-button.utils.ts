@@ -2,7 +2,7 @@ import { LitElement, html } from 'lit'
 import { property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
-import type { IconName } from '@/components/common/icon-button/semantics/icon-names'
+import type { IconName } from '@/components/common/icon/icon-names'
 import type { AriaBoolean, AriaHasPopup, AriaIdRef } from '@/types'
 import type { TemplateResult } from 'lit'
 

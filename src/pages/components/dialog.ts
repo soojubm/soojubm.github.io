@@ -6,7 +6,7 @@ import type { ComponentRelatedItemData } from '@/components/domains/component/co
 import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
 import type { ActionConfig } from '@/types'
 
-import { renderLayout } from '@/components/layouts/base-layouts'
+import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'sheet.html', label: 'Sheet' },
@@ -99,10 +99,7 @@ type DialogElement = HTMLElement & {
   secondaryAction?: ActionConfig
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  renderLayout(main)
-  setupDialogActions()
-})
+renderPage(main, { initialize: setupDialogActions })
 
 function setupDialogActions() {
   const alertDialog = document.querySelector<DialogElement>('#dialog-alert')

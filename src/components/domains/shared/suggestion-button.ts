@@ -1,6 +1,6 @@
 import { css, html } from 'lit'
 
-import type { IconName } from '@/components/common/icon-button/semantics/icon-names'
+import type { IconName } from '@/components/common/icon/icon-names'
 
 /** chat-suggestion·search-suggestion이 공유하는 host 레이아웃. */
 export const suggestionButtonStyles = css`

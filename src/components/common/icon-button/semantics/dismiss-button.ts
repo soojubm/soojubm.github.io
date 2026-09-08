@@ -1,9 +1,9 @@
 import { LitElement, css } from 'lit'
 import { customElement } from 'lit/decorators.js'
 
+import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import { iconButtonStyles } from '@/components/common/icon-button/icon-button.styles'
 import { renderIconAction, withIconAction } from '@/components/common/icon-button/icon-button.utils'
-import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
 
 /**
  * 배너, 알림, 토스트 등 비파괴적 해제 버튼.

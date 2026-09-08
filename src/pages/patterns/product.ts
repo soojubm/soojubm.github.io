@@ -1,6 +1,6 @@
 import { html } from 'lit'
 
-import { renderLayout } from '@/components/layouts/base-layouts'
+import { renderPage } from '@/components/layouts/base-layouts'
 
 const main = html`
   <mm-page class="product">
@@ -327,10 +327,7 @@ const main = html`
   </mm-sheet>
 `
 
-document.addEventListener('DOMContentLoaded', () => {
-  renderLayout(main, { closeSidebar: true })
-  setupCartSheet()
-})
+renderPage(main, { closeSidebar: true, initialize: setupCartSheet })
 
 type ValueElement = HTMLElement & {
   value: string

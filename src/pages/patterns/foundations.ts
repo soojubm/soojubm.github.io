@@ -1,9 +1,9 @@
 import { html } from 'lit'
 
-import { renderLayout } from '@/components/layouts/base-layouts'
+import { renderPage } from '@/components/layouts/base-layouts'
 /* Signifier 가이드·아이콘 카탈로그 초안. 되살릴 때 템플릿으로 되돌린다.
 import type { FilterOption } from '@/components/common/button/semantics/filter-button-group'
-import type { IconName } from '@/components/common/icon-button/semantics/icon-names'
+import type { IconName } from '@/components/common/icon/icon-names'
 
 interface IconListItem {
   icon: IconName
@@ -420,10 +420,7 @@ const main = html`
   </mm-page>
 `
 
-document.addEventListener('DOMContentLoaded', () => {
-  renderLayout(main)
-  initIconIndicators()
-})
+renderPage(main, { initialize: initIconIndicators })
 
 function initIconIndicators() {
   const picker = document.getElementById('icon-category-picker')

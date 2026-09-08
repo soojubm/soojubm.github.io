@@ -1,6 +1,6 @@
-import type { IconName } from '@/components/common/icon-button/semantics/icon-names'
+import type { IconName } from '@/components/common/icon/icon-names'
 
-import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
+import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import { THEME_STORAGE_KEY } from '@/constants'
 
 export type Theme = 'light' | 'dark' | 'brutal' | 'glass'

@@ -1,9 +1,9 @@
 import { LitElement, css } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
+import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import { iconButtonStyles } from '@/components/common/icon-button/icon-button.styles'
 import { renderIconAction, withIconAction } from '@/components/common/icon-button/icon-button.utils'
-import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
 
 /**
  * 아이템·데이터를 영구 삭제하는 파괴적 액션 버튼.

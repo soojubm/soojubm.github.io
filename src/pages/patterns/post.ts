@@ -1,6 +1,6 @@
 import { html } from 'lit'
 
-import { renderLayout } from '@/components/layouts/base-layouts'
+import { renderPage } from '@/components/layouts/base-layouts'
 
 import '@/components/domains/post'
 
@@ -23,27 +23,19 @@ const [featured, ...rest] = posts
 
 const main = html`
   <mm-page width="small">
-    <style>
-      .post-feature {
-        display: block;
-        color: inherit;
-      }
-    </style>
-
-    <mm-flex direction="column" gap="10">
+    <mm-flex direction="column" gap="12">
       <mm-page-header
         heading="Latest updates"
         description="팀이 직접 전하는 최신 소식을 확인하세요."
       ></mm-page-header>
 
-      <a class="post-feature" href=${DETAIL_HREF}>
-        <mm-flex direction="column" gap="3">
-          <mm-thumbnail src="/src/images/soojubm.png" ratio="16:9"></mm-thumbnail>
-          <mm-text as="time" size="12" color="light">${featured.date}</mm-text>
-          <mm-text size="24" weight="bold">${featured.title}</mm-text>
-          <mm-paragraph color="light">${featured.description}</mm-paragraph>
-        </mm-flex>
-      </a>
+      <mm-post-feature
+        href=${DETAIL_HREF}
+        thumbnail="/src/images/soojubm.png"
+        title=${featured.title}
+        description=${featured.description}
+        date=${featured.date}
+      ></mm-post-feature>
 
       <mm-flex direction="column" gap="2">
         ${rest.map(
@@ -62,6 +54,4 @@ const main = html`
   </mm-page>
 `
 
-document.addEventListener('DOMContentLoaded', () => {
-  renderLayout(main, { closeSidebar: true })
-})
+renderPage(main, { closeSidebar: true })

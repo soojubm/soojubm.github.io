@@ -2,7 +2,7 @@ import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import { featureStyles } from '@/components/common/feature/feature.styles'
-import { type IconName } from '@/components/common/icon-button/semantics/icon-names'
+import { type IconName } from '@/components/common/icon/icon-names'
 import '@/components/common/text/semantics/text-block'
 import '@/components/common/avatar'
 import '@/components/common/icon'

@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 
 import '@/components/overlay/popover/semantics/select'
 import '@/components/common/button/button'
-import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
+import { ICON_NAMES } from '@/components/common/icon/icon-names'
 
 @customElement('mm-model-selector')
 export class ModelSelector extends LitElement {

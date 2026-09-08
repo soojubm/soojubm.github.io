@@ -1,7 +1,7 @@
 import { LitElement } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import type { IconName } from '@/components/common/icon-button/semantics/icon-names'
+import type { IconName } from '@/components/common/icon/icon-names'
 
 import '@/components/common/tag/tag'
 import { statusToneMap, type StatusVariant } from '@/components/common/tag/tag.styles'

@@ -2,8 +2,8 @@ import { html, render } from 'lit'
 
 import type { ComponentReferenceItemData } from '@/components/domains/component/component-references'
 
-import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
-import { renderLayout } from '@/components/layouts/base-layouts'
+import { ICON_NAMES } from '@/components/common/icon/icon-names'
+import { renderPage } from '@/components/layouts/base-layouts'
 import { ScrollSpyController } from '@/controllers/scroll-spy-controller'
 
 const componentReferences: ComponentReferenceItemData[] = [
@@ -290,11 +290,12 @@ const main = html`
   </mm-page>
 `
 
-document.addEventListener('DOMContentLoaded', () => {
-  renderLayout(main, { footer: true })
-
-  setupScrollSpySampler()
-  setupIconGallery()
+renderPage(main, {
+  footer: true,
+  initialize: () => {
+    setupScrollSpySampler()
+    setupIconGallery()
+  },
 })
 
 // ICON_NAMES를 실제 값으로 렌더해, 시맨틱 이름 추가 시 가이드가 코드와 함께 최신 상태를 유지하게 한다.

@@ -5,7 +5,7 @@ import type { ComponentPropItemData } from '@/components/domains/component/compo
 import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
 import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
 
-import { renderLayout } from '@/components/layouts/base-layouts'
+import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'sheet.html', label: 'Sheet' },
@@ -103,6 +103,4 @@ const main = html`
 `
 
 // 트리거는 aria-controls로 popover를 가리키기만 하면 되고, 클릭 토글·외부 클릭·ESC 닫기·aria는 popover가 소유한다.
-document.addEventListener('DOMContentLoaded', () => {
-  renderLayout(main)
-})
+renderPage(main)

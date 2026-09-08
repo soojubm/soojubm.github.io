@@ -3,7 +3,7 @@ import { customElement, state } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 import { repeat } from 'lit/directives/repeat.js'
 
-import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
+import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import '@/components/common/icon-button'
 import '@/components/overlay/sheet'
 import '@/components/layouts/top-bar/index'

@@ -1,7 +1,7 @@
 import { html } from 'lit'
 import './dashboard.css'
 
-import { renderLayout } from '@/components/layouts/base-layouts'
+import { renderPage } from '@/components/layouts/base-layouts'
 
 const indexCards = [
   { icon: 'graph-down', label: '코스피', value: '2999.55p', tone: 'blue', change: '4.33% 하락' },
@@ -120,6 +120,4 @@ const main = html`
   </mm-page>
 `
 
-document.addEventListener('DOMContentLoaded', () => {
-  renderLayout(main)
-})
+renderPage(main)

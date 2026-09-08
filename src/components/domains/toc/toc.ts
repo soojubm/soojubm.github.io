@@ -2,7 +2,7 @@ import { LitElement, css, html, nothing } from 'lit'
 import { customElement, state } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
-import { ICON_NAMES, type IconName } from '@/components/common/icon-button/semantics/icon-names'
+import { ICON_NAMES, type IconName } from '@/components/common/icon/icon-names'
 import { ScrollSpyController } from '@/controllers/scroll-spy-controller'
 import { resetStyles } from '@/stylesheets/shared.styles'
 import '@/components/common/icon-button/icon-button'

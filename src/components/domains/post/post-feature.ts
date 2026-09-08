@@ -5,14 +5,14 @@ import { postLinkStyles } from '@/components/domains/post/post.styles'
 import { resetStyles } from '@/stylesheets/shared.styles'
 import '@/components/common/thumbnail/thumbnail'
 import '@/components/common/text/text'
-import '@/components/common/text/semantics/text-block'
+import '@/components/common/text/semantics/paragraph'
 
 /**
- * 블로그 글 목록의 한 행. 썸네일을 leading으로 두고 제목·설명·날짜를 세로로 쌓는다.
- * href가 있으면 행 전체가 링크가 되고 hover 배경을 표시한다.
+ * 목록 맨 위에서 한 편을 크게 내세우는 글 카드.
+ * post-item과 같은 링크 표면을 쓰되 썸네일을 넓게 두고 제목·설명을 아래로 쌓는다.
  */
-@customElement('mm-post-item')
-export class PostItem extends LitElement {
+@customElement('mm-post-feature')
+export class PostFeature extends LitElement {
   static styles = [
     resetStyles,
     postLinkStyles,
@@ -22,18 +22,8 @@ export class PostItem extends LitElement {
       }
 
       .link {
+        flex-direction: column;
         gap: var(--space-3);
-
-        --post-link-inset: var(--space-3);
-      }
-
-      mm-thumbnail {
-        flex: 0 0 auto;
-        width: var(--size-80);
-      }
-
-      mm-text-block {
-        min-width: 0;
       }
     `,
   ]
@@ -46,10 +36,10 @@ export class PostItem extends LitElement {
 
   render() {
     const body = html`
-      <mm-thumbnail src=${this.thumbnail} ratio="1:1"></mm-thumbnail>
-      <mm-text-block level="3" heading=${this.title} description=${this.description}>
-        <mm-text as="time" size="12" color="light">${this.date}</mm-text>
-      </mm-text-block>
+      <mm-thumbnail src=${this.thumbnail} ratio="16:9"></mm-thumbnail>
+      <mm-text as="time" size="12" color="light">${this.date}</mm-text>
+      <mm-text size="24" weight="bold">${this.title}</mm-text>
+      <mm-paragraph color="light">${this.description}</mm-paragraph>
     `
 
     if (!this.href) {
@@ -66,8 +56,8 @@ export class PostItem extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'mm-post-item': PostItem
+    'mm-post-feature': PostFeature
   }
 }
 
-export default PostItem
+export default PostFeature

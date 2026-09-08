@@ -5,7 +5,7 @@ import type { ComponentPropItemData } from '@/components/domains/component/compo
 import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
 import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
 
-import { renderLayout } from '@/components/layouts/base-layouts'
+import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'popover.html', label: 'Popover' },
@@ -42,6 +42,8 @@ const main = html`
       heading="Tooltip"
       description="용어를 설명하거나 정보의 근거를 보충합니다."
     ></mm-page-header>
+
+    <mm-component-aka items='["Coachmark"]'></mm-component-aka>
 
     <mm-component-example>
       <mm-flex gap="2">
@@ -137,11 +139,8 @@ const main = html`
       description="arrow tooltip, tourtip, coachmark, 로딩 시점에 이미 열려 있다. doorhanger/pointing arrow."
     ></mm-component-section>
 
-    <mm-component-aka items='["Coachmark"]'></mm-component-aka>
     <mm-component-related .items=${relatedComponents}></mm-component-related>
   </mm-page>
 `
 
-document.addEventListener('DOMContentLoaded', () => {
-  renderLayout(main)
-})
+renderPage(main)

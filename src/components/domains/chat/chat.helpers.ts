@@ -1,7 +1,7 @@
 import { LitElement, html, nothing } from 'lit'
 import { property } from 'lit/decorators.js'
 
-import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
+import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import '@/components/common/icon-button/icon-button'
 import '@/components/common/text/text'
 import '@/components/common/thumbnail/thumbnail'

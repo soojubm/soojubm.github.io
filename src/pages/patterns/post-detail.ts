@@ -1,7 +1,7 @@
 import { html } from 'lit'
 import './post-detail.css'
 
-import { renderLayout } from '@/components/layouts/base-layouts'
+import { renderPage } from '@/components/layouts/base-layouts'
 
 const main = html`
   <mm-page width="small">
@@ -172,6 +172,4 @@ const main = html`
   </nav>
 `
 
-document.addEventListener('DOMContentLoaded', () => {
-  renderLayout(main, { closeSidebar: true })
-})
+renderPage(main, { closeSidebar: true })

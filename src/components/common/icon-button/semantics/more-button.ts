@@ -3,12 +3,12 @@ import { customElement, property } from 'lit/decorators.js'
 
 import type { AriaBoolean, AriaIdRef } from '@/types'
 
+import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import {
   iconButtonSecondarySkinStyles,
   iconButtonStyles,
 } from '@/components/common/icon-button/icon-button.styles'
 import { renderIconAction } from '@/components/common/icon-button/icon-button.utils'
-import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
 
 /**
  * 추가 액션 메뉴를 여는 버튼.

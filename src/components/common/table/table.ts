@@ -4,7 +4,7 @@ import { classMap } from 'lit/directives/class-map.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 import { styleMap } from 'lit/directives/style-map.js'
 
-import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
+import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import { resetStyles } from '@/stylesheets/shared.styles'
 import { arrayAttributeConverter } from '@/utils'
 import '@/components/common/icon'

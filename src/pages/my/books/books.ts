@@ -2,7 +2,7 @@ import { html, render } from 'lit'
 
 import type { FilterOption } from '@/components/common/button/semantics/filter-button-group'
 
-import { renderLayout } from '@/components/layouts/base-layouts'
+import { renderPage } from '@/components/layouts/base-layouts'
 import '@/components/domains/media-card'
 
 import { renderList, getCountries, loadJson } from '../list-page'
@@ -39,10 +39,7 @@ interface Book {
 
 type FilterState = { country: string }
 
-document.addEventListener('DOMContentLoaded', () => {
-  renderLayout(main)
-  initPage()
-})
+renderPage(main, { initialize: initPage })
 
 async function initPage() {
   const books = await loadJson<Book>('/src/pages/my/books/books.json')

@@ -1,6 +1,6 @@
 import { html } from 'lit'
 
-import { renderLayout } from '@/components/layouts/base-layouts'
+import { renderPage } from '@/components/layouts/base-layouts'
 
 interface FaqItem {
   question: string
@@ -80,6 +80,4 @@ const main = html`
   </mm-page>
 `
 
-document.addEventListener('DOMContentLoaded', () => {
-  renderLayout(main, { closeSidebar: true })
-})
+renderPage(main, { closeSidebar: true })

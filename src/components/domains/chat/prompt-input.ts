@@ -1,7 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
+import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import '@/components/common/icon-button/icon-button'
 import { inputStyles } from '@/components/common/input/input.styles'
 import '@/components/common/input/textarea'

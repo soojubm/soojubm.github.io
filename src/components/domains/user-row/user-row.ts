@@ -2,7 +2,7 @@ import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import type { AvatarShape } from '@/components/common/avatar/avatar'
-import type { IconName } from '@/components/common/icon-button/semantics/icon-names'
+import type { IconName } from '@/components/common/icon/icon-names'
 import type { ListItemSize } from '@/components/common/list-item/list-item'
 import '@/components/common/list-item/list-item'
 

@@ -3,7 +3,7 @@ import { customElement, property, state } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
 import type { AvatarShape, AvatarSize, AvatarVariant } from '@/components/common/avatar/avatar'
-import type { IconName } from '@/components/common/icon-button/semantics/icon-names'
+import type { IconName } from '@/components/common/icon/icon-names'
 import type { PropertyValues } from 'lit'
 
 import { listItemStyles } from '@/components/common/list-item/list-item.styles'

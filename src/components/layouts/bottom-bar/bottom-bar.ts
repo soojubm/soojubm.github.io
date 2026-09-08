@@ -2,7 +2,7 @@ import { LitElement, css, html } from 'lit'
 import { customElement, property, query, state } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
-import { ICON_NAMES, type IconName } from '@/components/common/icon-button/semantics/icon-names'
+import { ICON_NAMES, type IconName } from '@/components/common/icon/icon-names'
 import '@/components/common/text/semantics/caption'
 import { SelectionIndicatorController } from '@/controllers/selection-indicator-controller'
 import { focusRing } from '@/stylesheets/shared.styles'

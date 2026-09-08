@@ -1,9 +1,9 @@
 import { LitElement, css } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 
+import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import { iconButtonStyles } from '@/components/common/icon-button/icon-button.styles'
 import { renderIconAction } from '@/components/common/icon-button/icon-button.utils'
-import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
 import { TransientFlagController } from '@/controllers/transient-flag-controller'
 import { emit } from '@/utils'
 

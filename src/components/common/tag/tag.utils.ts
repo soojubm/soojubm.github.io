@@ -1,7 +1,7 @@
 import { html } from 'lit'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
-import type { IconName } from '@/components/common/icon-button/semantics/icon-names'
+import type { IconName } from '@/components/common/icon/icon-names'
 import type { TagTone } from '@/components/common/tag/tag.styles'
 
 /** tag 계열이 공유하는 mm-tag 조립 규칙. tone·icon·slot 기본값 매핑은 각 시맨틱 컴포넌트가 소유한다. */

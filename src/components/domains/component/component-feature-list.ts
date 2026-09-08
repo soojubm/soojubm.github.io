@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 
 import '@/components/common/feature/feature-group'
 import '@/components/common/feature/feature'
-import { ICON_NAMES, type IconName } from '@/components/common/icon-button/semantics/icon-names'
+import { ICON_NAMES, type IconName } from '@/components/common/icon/icon-names'
 import { arrayAttributeConverter } from '@/utils'
 
 export interface ComponentFeatureItem {
@@ -25,9 +25,9 @@ const FEATURE_ICONS: Record<string, IconName> = {
   'Interactive - input': ICON_NAMES.FIELD,
   'Interactive - selection': ICON_NAMES.SELECTED,
   Modality: ICON_NAMES.LOCK,
-  Representative: 'profile-circle',
+  Representative: ICON_NAMES.PROFILE,
   Statusful: ICON_NAMES.ANNOUNCEMENT,
-  Structural: 'task-list',
+  Structural: ICON_NAMES.TASK_LIST,
 }
 
 /**

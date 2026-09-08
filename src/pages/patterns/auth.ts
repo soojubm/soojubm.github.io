@@ -1,6 +1,6 @@
 import { html } from 'lit'
 
-import { renderLayout } from '@/components/layouts/base-layouts'
+import { renderPage } from '@/components/layouts/base-layouts'
 
 const codeInputs = [1, 2, 3, 4]
 
@@ -192,6 +192,4 @@ const main = html`
   </mm-page>
 `
 
-document.addEventListener('DOMContentLoaded', () => {
-  renderLayout(main, { closeSidebar: true })
-})
+renderPage(main, { closeSidebar: true })

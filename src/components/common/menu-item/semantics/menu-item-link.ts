@@ -5,7 +5,7 @@ import { ifDefined } from 'lit/directives/if-defined.js'
 import type { AriaCurrent } from '@/types'
 
 import '@/components/common/icon/icon'
-import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
+import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import { menuItemStyles } from '@/components/common/menu-item/menu-item.styles'
 import {
   renderMenuItemContent,

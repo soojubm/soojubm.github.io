@@ -1,7 +1,7 @@
 import { html } from 'lit'
 
 import '@/components/common/tag/tag'
-import { renderLayout } from '@/components/layouts/base-layouts'
+import { renderPage } from '@/components/layouts/base-layouts'
 // webpack.config.js가 sitemap을 ts-node로 로드하는 것과 같은 이유로 상대경로를 유지한다.
 import { SITEMAP, type SitemapNode } from '@/sitemap'
 
@@ -11,10 +11,7 @@ const main = html`
   </mm-page>
 `
 
-document.addEventListener('DOMContentLoaded', () => {
-  renderLayout(main, { closeSidebar: true })
-  renderMenu()
-})
+renderPage(main, { closeSidebar: true, initialize: renderMenu })
 
 function renderMenu() {
   const container = document.querySelector('.js-all-menu')

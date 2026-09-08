@@ -2,7 +2,7 @@ import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { repeat } from 'lit/directives/repeat.js'
 
-import type { IconName } from '@/components/common/icon-button/semantics/icon-names'
+import type { IconName } from '@/components/common/icon/icon-names'
 import type { Orientation } from '@/controllers/roving-focus-controller'
 
 import { buttonBaseStyles, buttonSelectedStyles } from '@/components/common/button/button.styles'

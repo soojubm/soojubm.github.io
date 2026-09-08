@@ -3,7 +3,7 @@ import { html } from 'lit'
 import type { PortfolioItem } from '@/components/domains/portfolio-item/portfolio-item'
 import type Sheet from '@/components/overlay/sheet/sheet'
 
-import { renderLayout } from '@/components/layouts/base-layouts'
+import { renderPage } from '@/components/layouts/base-layouts'
 
 import './profile.css'
 
@@ -491,12 +491,13 @@ type PortfolioItemOpenEvent = CustomEvent<{ modal: string }>
 type ViewModeEvent = CustomEvent<{ value: 'grid' | 'list' }>
 type SortEvent = CustomEvent<{ value: 'latest' | 'oldest' }>
 
-document.addEventListener('DOMContentLoaded', () => {
-  renderLayout(main, { closeSidebar: true })
-
-  setupPortfolioModal()
-  document.querySelector('mm-view-mode-switcher')?.addEventListener('change', handleViewMode)
-  document.querySelector('mm-sort-selector')?.addEventListener('change', handleSort)
+renderPage(main, {
+  closeSidebar: true,
+  initialize: () => {
+    setupPortfolioModal()
+    document.querySelector('mm-view-mode-switcher')?.addEventListener('change', handleViewMode)
+    document.querySelector('mm-sort-selector')?.addEventListener('change', handleSort)
+  },
 })
 
 /** mm-portfolio-item의 portfolio-item-open 이벤트를 mm-sheet 컴포넌트 show()에 연결한다. */

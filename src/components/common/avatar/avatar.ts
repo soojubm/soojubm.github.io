@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 
 import '@/components/common/icon/icon'
 import { avatarStyles } from '@/components/common/avatar/avatar.styles'
-import { ICON_NAMES, type IconName } from '@/components/common/icon-button/semantics/icon-names'
+import { ICON_NAMES, type IconName } from '@/components/common/icon/icon-names'
 
 export type AvatarVariant = 'primary' | 'secondary' | 'tertiary'
 export const AVATAR_VARIANT_TYPE_UNION = "'primary' | 'secondary' | 'tertiary'"

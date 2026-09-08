@@ -2,11 +2,11 @@ import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import { withTogglePressed } from '@/components/common/button/button.utils'
+import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import {
   iconButtonSelectedStyles,
   iconButtonStyles,
 } from '@/components/common/icon-button/icon-button.styles'
-import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
 import '@/components/common/icon'
 
 /**

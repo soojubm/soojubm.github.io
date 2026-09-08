@@ -3,7 +3,7 @@ import { property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
 import type { AvatarShape } from '@/components/common/avatar/avatar'
-import type { IconName } from '@/components/common/icon-button/semantics/icon-names'
+import type { IconName } from '@/components/common/icon/icon-names'
 import type { ListItem, ListItemSize } from '@/components/common/list-item/list-item'
 import type { AriaTriState } from '@/types'
 

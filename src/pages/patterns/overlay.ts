@@ -2,7 +2,7 @@ import '@/components/common/table'
 import '@/components/common/link/link'
 import { html } from 'lit'
 
-import { renderLayout } from '@/components/layouts/base-layouts'
+import { renderPage } from '@/components/layouts/base-layouts'
 
 const yes = html`
   <span role="img" aria-label="예">✅</span>
@@ -160,6 +160,4 @@ const main = html`
   </mm-page>
 `
 
-document.addEventListener('DOMContentLoaded', () => {
-  renderLayout(main)
-})
+renderPage(main)

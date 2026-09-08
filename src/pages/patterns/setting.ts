@@ -1,6 +1,6 @@
 import { html } from 'lit'
 
-import { renderLayout } from '@/components/layouts/base-layouts'
+import { renderPage } from '@/components/layouts/base-layouts'
 import { findSitemapItem } from '@/sitemap'
 
 const main = html`
@@ -202,11 +202,14 @@ const main = html`
   </mm-page>
 `
 
-document.addEventListener('DOMContentLoaded', () => {
-  const page = findSitemapItem('setting')
-  renderLayout(main, { closeSidebar: true, navbar: !page?.hideNavbar })
+const settingPage = findSitemapItem('setting')
 
-  document.getElementById('setting-top-bar')?.addEventListener('nav-click', () => {
-    history.back()
-  })
+renderPage(main, {
+  closeSidebar: true,
+  navbar: !settingPage?.hideNavbar,
+  initialize: () => {
+    document.getElementById('setting-top-bar')?.addEventListener('nav-click', () => {
+      history.back()
+    })
+  },
 })
