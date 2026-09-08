@@ -164,6 +164,7 @@ export const SITEMAP: SitemapNode[] = [
       { id: 'product', name: 'Product' },
       { id: 'auth', name: 'Auth' },
       { id: 'post', name: 'Post' },
+      { id: 'post-detail', name: 'Post Detail' },
       { id: 'checkout', name: 'Checkout' },
       { id: 'faq', name: 'FAQ' },
       { id: 'contact', name: 'Contact' },

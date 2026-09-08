@@ -1,5 +1,5 @@
 import { html } from 'lit'
-import './post.css'
+import './post-detail.css'
 
 import { renderLayout } from '@/components/layouts/base-layouts'
 
@@ -15,9 +15,9 @@ const main = html`
     <header class="post-head">
       <mm-flex direction="column" gap="3">
         <mm-link href="#post">Murmur</mm-link>
-        <mm-text size="32">
+        <mm-heading level="1">
           Runway enables next-generation content creation with AI and Vercel
-        </mm-text>
+        </mm-heading>
         <mm-user-row
           size="48"
           label="수줍이"
@@ -40,11 +40,6 @@ const main = html`
           <li>Decline every meeting</li>
         </ol>
       </nav> -->
-
-      <mm-notice
-        variant="warning"
-        description="바시니의 작품은 페라라 부르주아사회의 유대인 박해라는 깊은 상처에 기인한다는 점에서 정치적이다."
-      ></mm-notice>
 
       <mm-paragraph-group>
         <mm-text-list
@@ -164,9 +159,9 @@ const main = html`
   </mm-page>
 
   <nav class="post-pagination" style="margin: 2rem 0">
-    <a class="post-pagination-previous" href="#">
+    <a class="post-pagination-previous" href="post.html">
       <mm-icon-button variant="secondary" icon="arrow-left"></mm-icon-button>
-      <mm-paragraph title="prev article" color="light">이전 콘텐츠</mm-paragraph>
+      <mm-paragraph title="prev article" color="light">목록으로</mm-paragraph>
       <mm-paragraph size="large">Return to all articles</mm-paragraph>
     </a>
     <a class="post-pagination-next" href="#">
