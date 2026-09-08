@@ -3,49 +3,6 @@ import { customElement } from 'lit/decorators.js'
 
 import { SITEMAP } from '@/sitemap'
 import { getCurrentPageId } from '@/utils'
-/* 프로필 메뉴 popover 초안. 되살릴 때 템플릿으로 되돌린다.
-import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names'
-import soojubmImage from '@/images/soojubm.png'
-
-          <mm-popover placement="bottom-right" width="320px">
-            <mm-icon-button
-              slot="trigger"
-              icon=${ICON_NAMES.PROFILE}
-              aria-label="내 메뉴"
-            ></mm-icon-button>
-            <mm-flex gap="2" justify-content="space-between">
-              <mm-user-snippet
-                size="huge"
-                name="수줍이"
-                email="soojubm@gmail.com"
-                phone="010 3121 7045"
-                description="UI Designer"
-                avatar-src=${soojubmImage}
-                avatar-variant="secondary"
-                tag-label="접속 중"
-                tag-variant="primary"
-              ></mm-user-snippet>
-              <mm-button>내 프로필 관리</mm-button>
-            </mm-flex>
-            <mm-separator></mm-separator>
-            <mm-menu-item-group>
-              <mm-menu-item-action
-                icon=${ICON_NAMES.ANNOUNCEMENT}
-                label="고객센터 및 도움말"
-              ></mm-menu-item-action>
-              <mm-menu-item-action
-                icon=${ICON_NAMES.LOG_OUT}
-                label="로그아웃"
-              ></mm-menu-item-action>
-            </mm-menu-item-group>
-            <mm-separator></mm-separator>
-            <mm-flex gap="2">
-              <mm-link variant="secondary" href="#">개인정보처리방침</mm-link>
-              <mm-link variant="secondary" href="#">서비스 약관</mm-link>
-            </mm-flex>
-          </mm-popover>
-          
-*/
 
 @customElement('mm-navbar')
 export class Navbar extends LitElement {

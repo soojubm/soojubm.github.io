@@ -32,12 +32,22 @@ export const chatBubbleStyles = css`
   }
 `
 
-/** 말풍선 표면을 갖는 버블(내가·참여자가 보낸 쪽)이 공유하는 여백과 모서리. */
+/**
+ * 말풍선 표면을 갖는 버블(내가·참여자가 보낸 쪽)이 공유하는 여백·경계·색.
+ * 표면 색은 토큰으로만 소비하므로, 발신자별 스킨과 message가 소유하는 상태(실패 등)가
+ * 속성을 다시 선언하지 않고 같은 토큰을 재할당해 덮는다.
+ */
 const chatBubbleSurfaceStyles = css`
   :host {
+    --chat-bubble-background-color: none;
+    --chat-bubble-text-color: inherit;
+    --chat-bubble-border: var(--border-transparent);
+
     padding: var(--space-3) var(--space-4);
-    border: var(--border-transparent);
+    border: var(--chat-bubble-border);
     border-radius: var(--bubble-border-radius);
+    background: var(--chat-bubble-background-color);
+    color: var(--chat-bubble-text-color);
   }
 `
 
@@ -48,9 +58,8 @@ export const myChatBubbleStyles = [
       --bubble-border-radius: var(--radius-large) var(--radius) var(--radius-large)
         var(--radius-large);
       --thumbnail-border-radius: var(--bubble-border-radius);
-
-      background: var(--color-primary);
-      color: var(--foreground-on-solid);
+      --chat-bubble-background-color: var(--color-primary);
+      --chat-bubble-text-color: var(--foreground-on-solid);
     }
 
     .status {
@@ -67,7 +76,7 @@ export const participantChatBubbleStyles = [
   chatBubbleSurfaceStyles,
   css`
     :host {
-      background: var(--background-subtle-color);
+      --chat-bubble-background-color: var(--background-subtle-color);
     }
   `,
 ]

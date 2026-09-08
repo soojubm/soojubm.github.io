@@ -21,10 +21,6 @@ export class AiChatMessage extends LitElement {
         gap: var(--space-2);
       }
 
-      .time {
-        color: var(--foreground-subtle-color);
-      }
-
       ::slotted(mm-ai-chat-bubble) {
         align-self: flex-start;
       }

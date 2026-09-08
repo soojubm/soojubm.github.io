@@ -60,29 +60,6 @@ export class Footer extends LitElement {
   }
 }
 
-/*
-        <nav>
-          <mm-flex gap="16">
-            <mm-paragraph hidden aria-hidden="true">사이트맵</mm-paragraph>
-            <mm-flex direction="column">
-              <mm-paragraph size="large">사이트맵 컴포넌트</mm-paragraph>
-              <mm-paragraph href="#" color="light">샘플</mm-paragraph>
-              <mm-paragraph href="#" color="light">사이트맵</mm-paragraph>
-              <mm-paragraph href="#" color="light">
-                사이트맵 샘플
-              </mm-paragraph>
-              <mm-paragraph href="#" color="light">
-                사이트맵 컴포넌트 샘플
-              </mm-paragraph>
-            </mm-flex>
-            <mm-flex direction="column">
-              <mm-paragraph size="large">꺼이꺼이</mm-paragraph>
-              <mm-paragraph size="large">호이호이</mm-paragraph>
-            </mm-flex>
-          </mm-flex>
-        </nav>
-*/
-
 declare global {
   interface HTMLElementTagNameMap {
     'mm-footer': Footer

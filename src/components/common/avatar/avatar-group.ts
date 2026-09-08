@@ -24,14 +24,12 @@ export class AvatarGroup extends LitElement {
         display: flex;
       }
 
-      .avatars mm-avatar,
-      .avatars .overflow {
+      .avatars mm-avatar {
         margin-left: -6px;
         outline: 4px solid var(--background-color);
       }
 
-      .avatars mm-avatar:first-child,
-      .avatars .overflow:first-child {
+      .avatars mm-avatar:first-child {
         margin-left: 0;
       }
 

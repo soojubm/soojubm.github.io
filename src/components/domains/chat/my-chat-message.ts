@@ -29,13 +29,13 @@ export class MyChatMessage extends LitElement {
       }
 
       :host([failed]) ::slotted(mm-my-chat-bubble) {
-        --my-chat-bubble-background: color-mix(
+        --chat-bubble-background-color: color-mix(
           in srgb,
           var(--color-danger) 12%,
           var(--background-color)
         );
-        --my-chat-bubble-border: 1px solid var(--color-danger);
-        --my-chat-bubble-color: var(--foreground-color);
+        --chat-bubble-border: var(--border-danger);
+        --chat-bubble-text-color: var(--foreground-color);
       }
     `,
   ]
