@@ -34,19 +34,19 @@ const main = html`
           표면(overlay)은 그 위로 겹칩니다. 겹침 순서는 --material-zindex-* 그룹 토큰이 정합니다.
         </mm-paragraph>
         <div class="app-shell">
-          <mm-surface variant="outlined" class="app-shell-topbar">
+          <mm-surface variant="outlined" density="compact" class="app-shell-topbar">
             <mm-caption>Top Bar · chrome</mm-caption>
           </mm-surface>
-          <mm-surface variant="outlined" class="app-shell-sidebar">
+          <mm-surface variant="outlined" density="compact" class="app-shell-sidebar">
             <mm-caption>Sidebar · chrome</mm-caption>
           </mm-surface>
-          <mm-surface variant="ghost" class="app-shell-content">
+          <mm-surface variant="ghost" density="compact" class="app-shell-content">
             <mm-caption>Content · base</mm-caption>
-            <mm-surface variant="elevated" class="app-shell-overlay">
+            <mm-surface variant="elevated" density="compact" class="app-shell-overlay">
               <mm-caption>Overlay · overlay</mm-caption>
             </mm-surface>
           </mm-surface>
-          <mm-surface variant="outlined" class="app-shell-bottombar">
+          <mm-surface variant="outlined" density="compact" class="app-shell-bottombar">
             <mm-caption>Bottom Bar · chrome</mm-caption>
           </mm-surface>
         </div>

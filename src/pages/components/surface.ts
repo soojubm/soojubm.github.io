@@ -51,11 +51,12 @@ const componentProps: ComponentPropItemData[] = [
     optional: true,
   },
   { name: 'radius', type: "'default' | 'large'", optional: true },
+  { name: 'density', type: "'default' | 'compact'", optional: true },
 ]
 
 const componentTokens: ComponentTokenItemData[] = [
   { name: 'surface-height', default: 'auto' },
-  { name: 'surface-padding', default: 'var(--space-4)' },
+  { name: 'surface-padding', default: 'var(--space-4)', prop: 'density' },
   { name: 'surface-border', default: 'var(--border)', prop: 'variant' },
   { name: 'surface-border-radius', default: 'var(--radius)', prop: 'radius' },
   { name: 'surface-background-color', default: 'var(--background-color)', prop: 'variant' },
@@ -128,6 +129,25 @@ const main = html`
               level="3"
               heading="large radius"
               description="섹션 레벨에서 사용한다. 여러 콘텐츠를 하나로 묶는 상위 영역의 경계를 표현한다."
+            ></mm-text-block>
+          </mm-surface>
+        </mm-grid>
+
+        <mm-separator></mm-separator>
+
+        <mm-grid columns="2">
+          <mm-surface density="default">
+            <mm-text-block
+              level="3"
+              heading="default density"
+              description="본문 콘텐츠를 담는 표면의 기본 여백이다."
+            ></mm-text-block>
+          </mm-surface>
+          <mm-surface density="compact">
+            <mm-text-block
+              level="3"
+              heading="compact density"
+              description="한 줄짜리 항목처럼 내부 콘텐츠가 얕을 때 사용한다."
             ></mm-text-block>
           </mm-surface>
         </mm-grid>
@@ -214,7 +234,7 @@ const main = html`
               ]'
             ></mm-text-list>
             <mm-keyword-tag-group keywords='["Google", "Meta", "Nvidia"]'></mm-keyword-tag-group>
-            <mm-surface variant="elevated" style="--surface-padding: var(--space-3)">
+            <mm-surface variant="elevated" density="compact">
               <mm-flex direction="column" gap="2">
                 <mm-tag>3월 14일 수정됨</mm-tag>
                 <mm-menu-item-group size="large">

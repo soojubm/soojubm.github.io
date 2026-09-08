@@ -14,7 +14,6 @@
 }
 
 .app-shell mm-surface {
-  --surface-padding: var(--space-3);
   align-items: flex-start;
   justify-content: center;
 }

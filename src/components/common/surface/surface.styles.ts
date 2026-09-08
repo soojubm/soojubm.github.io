@@ -4,6 +4,7 @@ import { buildAttributeRules } from '@/utils'
 
 export type SurfaceVariant = 'ghost' | 'paper' | 'outlined' | 'filled' | 'elevated'
 export type SurfaceRadius = 'default' | 'large'
+export type SurfaceDensity = 'default' | 'compact'
 
 /**
  * variant별로 재정의하는 surface 컴포넌트 토큰. 이 오브젝트가 실제 :host([variant=...]) 규칙을
@@ -66,8 +67,22 @@ const surfaceRadiusStyles = css`
   ${unsafeCSS(buildAttributeRules('radius', surfaceRadiusTokens))}
 `
 
+const surfaceDensityTokens = {
+  default: { '--surface-padding': 'var(--space-4)' },
+  compact: { '--surface-padding': 'var(--space-1)' },
+}
+
+const surfaceDensityStyles = css`
+  ${unsafeCSS(buildAttributeRules('density', surfaceDensityTokens))}
+`
+
 const surfaceVariantStyles = css`
   ${unsafeCSS(buildAttributeRules('variant', surfaceVariants))}
 `
 
-export const surfaceStyles = [surfaceBaseStyles, surfaceRadiusStyles, surfaceVariantStyles]
+export const surfaceStyles = [
+  surfaceBaseStyles,
+  surfaceRadiusStyles,
+  surfaceDensityStyles,
+  surfaceVariantStyles,
+]

@@ -22,6 +22,7 @@ export const noticeStyles = css`
     gap: var(--space-1);
     width: 100%;
     padding: var(--notice-padding);
+    box-sizing: border-box;
     border: var(--notice-border-width) solid var(--notice-border-color);
     border-radius: var(--notice-border-radius);
     background: var(--notice-background-color);
