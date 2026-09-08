@@ -74,6 +74,12 @@ const main = html`
               <mm-chat-confirmation
                 message="example.txt 파일을 삭제하려고 합니다. 이 작업을 승인하시겠어요?"
               ></mm-chat-confirmation>
+
+              <mm-surface variant="elevated" style="--surface-padding: var(--space-3)">
+                <mm-menu-item-action icon="page" label="design-tokens.md" description="정리 완료 · 12KB">
+                  <mm-button slot="trailing" variant="tertiary" size="small">열기</mm-button>
+                </mm-menu-item-action>
+              </mm-surface>
             </mm-ai-chat-message>
 
             <mm-my-chat-message failed>

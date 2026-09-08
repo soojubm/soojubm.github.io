@@ -214,7 +214,7 @@ const main = html`
               ]'
             ></mm-text-list>
             <mm-keyword-tag-group keywords='["Google", "Meta", "Nvidia"]'></mm-keyword-tag-group>
-            <mm-surface variant="filled" style="--surface-padding: var(--space-3)">
+            <mm-surface variant="elevated" style="--surface-padding: var(--space-3)">
               <mm-flex direction="column" gap="2">
                 <mm-tag>3월 14일 수정됨</mm-tag>
                 <mm-menu-item-group size="large">
