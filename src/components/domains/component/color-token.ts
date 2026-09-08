@@ -40,7 +40,7 @@ export class ColorToken extends LitElement {
       /* 시맨틱 토큰 태그: 칩 좌상단에 얹는다. */
       .tags {
         position: absolute;
-        top: var(--space-2);
+        top: var(--space-3);
         left: var(--space-3);
       }
 
@@ -93,6 +93,12 @@ export class ColorToken extends LitElement {
     if (!this.tags) return nothing
 
     const names = this.tags.split(' ').filter(Boolean)
+
+    if (names.length === 1) {
+      return html`
+        <mm-tag class="tags">${names[0]}</mm-tag>
+      `
+    }
 
     return html`
       <mm-tag-group class="tags">
