@@ -1,6 +1,6 @@
 import { html } from 'lit'
 
-import { renderDocumentLayout } from '@/components/layouts/document-layout'
+import { renderLayout } from '@/components/layouts/base-layouts'
 /* Signifier 가이드·아이콘 카탈로그 초안. 되살릴 때 템플릿으로 되돌린다.
 import type { FilterOption } from '@/components/common/button/semantics/filter-button-group'
 import type { IconName } from '@/components/common/icon-button/semantics/icon-names'
@@ -416,7 +416,7 @@ const main = html`
 `
 
 document.addEventListener('DOMContentLoaded', () => {
-  renderDocumentLayout(main)
+  renderLayout(main)
   initIconIndicators()
 })
 

@@ -6,7 +6,7 @@ import type { ComponentReferenceItemData } from '@/components/domains/component/
 import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
 import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
 
-import { renderDocumentLayout } from '@/components/layouts/document-layout'
+import { renderLayout } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'accordion.html', label: 'Accordion' },
@@ -74,7 +74,7 @@ const componentTokens: ComponentTokenItemData[] = [
   { name: 'tabs-line-color', default: 'var(--border-color)' },
   { name: 'tabs-line-width', default: 'var(--border-width)' },
   { name: 'tabs-pill-border', default: 'var(--border-transparent)' },
-  { name: 'tabs-pill-indicator-background', default: 'var(--background-color)' },
+  { name: 'tabs-pill-indicator-background-color', default: 'var(--background-color)' },
   { name: 'tabs-pill-indicator-border', default: 'var(--border-transparent)' },
 ]
 
@@ -177,5 +177,5 @@ const main = html`
 `
 
 document.addEventListener('DOMContentLoaded', () => {
-  renderDocumentLayout(main)
+  renderLayout(main)
 })

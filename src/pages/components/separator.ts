@@ -5,7 +5,7 @@ import type { ComponentPropItemData } from '@/components/domains/component/compo
 import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
 import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
 
-import { renderDocumentLayout } from '@/components/layouts/document-layout'
+import { renderLayout } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'list-item.html', label: 'List Item' },
@@ -20,7 +20,7 @@ const componentProps: ComponentPropItemData[] = [
 const componentTokens: ComponentTokenItemData[] = [
   { name: 'separator-spacing', default: 'var(--space-4)', prop: 'scope' },
   { name: 'separator-border', default: 'var(--border)' },
-  { name: 'separator-text-background', default: 'var(--background-color)' },
+  { name: 'separator-text-background-color', default: 'var(--background-color)' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [
@@ -41,31 +41,15 @@ const main = html`
     <mm-component-example>
       <mm-grid columns="2">
         <div>
-          <mm-ui-placeholder
-            height="var(--size-80)"
-            color="var(--color-primary-subtle)"
-            radius="var(--radius-large)"
-          ></mm-ui-placeholder>
+          <mm-ui-placeholder></mm-ui-placeholder>
           <mm-separator></mm-separator>
-          <mm-ui-placeholder
-            height="var(--size-80)"
-            color="var(--color-primary-subtle)"
-            radius="var(--radius-large)"
-          ></mm-ui-placeholder>
+          <mm-ui-placeholder></mm-ui-placeholder>
         </div>
 
         <div>
-          <mm-ui-placeholder
-            height="var(--size-80)"
-            color="var(--color-primary-subtle)"
-            radius="var(--radius-large)"
-          ></mm-ui-placeholder>
+          <mm-ui-placeholder></mm-ui-placeholder>
           <mm-separator>또는</mm-separator>
-          <mm-ui-placeholder
-            height="var(--size-80)"
-            color="var(--color-primary-subtle)"
-            radius="var(--radius-large)"
-          ></mm-ui-placeholder>
+          <mm-ui-placeholder></mm-ui-placeholder>
         </div>
       </mm-grid>
     </mm-component-example>
@@ -90,5 +74,5 @@ const main = html`
 `
 
 document.addEventListener('DOMContentLoaded', () => {
-  renderDocumentLayout(main)
+  renderLayout(main)
 })

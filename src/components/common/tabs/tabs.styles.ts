@@ -10,7 +10,7 @@ export const tabsStyles = css`
     --tabs-indicator-background-color: var(--interaction-selected-background-color);
     --tabs-line-color: var(--border-color);
     --tabs-line-width: var(--border-width);
-    --tabs-pill-indicator-background: var(--background-color);
+    --tabs-pill-indicator-background-color: var(--background-color);
     --tabs-pill-border: var(--border-transparent);
     --tabs-pill-indicator-border: var(--border-transparent);
   }
@@ -50,7 +50,7 @@ export const tabsStyles = css`
     & .indicator {
       height: var(--size-32);
       top: var(--space-1);
-      background-color: var(--tabs-pill-indicator-background);
+      background-color: var(--tabs-pill-indicator-background-color);
       border: var(--tabs-pill-indicator-border);
       border-radius: var(--radius);
       z-index: var(--material-zindex-base); /* 탭 텍스트 뒤로 배치 */

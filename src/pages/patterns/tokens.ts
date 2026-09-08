@@ -2,7 +2,7 @@ import { html } from 'lit'
 
 import type { ComponentReferenceItemData } from '@/components/domains/component/component-references'
 
-import { renderDocumentLayout } from '@/components/layouts/document-layout'
+import { renderLayout } from '@/components/layouts/base-layouts'
 
 const componentReferences: ComponentReferenceItemData[] = [
   {
@@ -742,5 +742,5 @@ const main = html`
 `
 
 document.addEventListener('DOMContentLoaded', () => {
-  renderDocumentLayout(main)
+  renderLayout(main)
 })

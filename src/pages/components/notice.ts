@@ -5,7 +5,7 @@ import type { ComponentPropItemData } from '@/components/domains/component/compo
 import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
 import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
 
-import { renderDocumentLayout } from '@/components/layouts/document-layout'
+import { renderLayout } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'dialog.html', label: 'Dialog' },
@@ -25,7 +25,7 @@ const componentTokens: ComponentTokenItemData[] = [
   { name: 'notice-padding', default: 'var(--space-3)' },
   { name: 'notice-border-radius', default: 'var(--radius)' },
   { name: 'notice-border-width', default: 'var(--border-width)' },
-  { name: 'notice-foreground-color', default: 'var(--foreground-color)', prop: 'variant' },
+  { name: 'notice-text-color', default: 'var(--foreground-color)', prop: 'variant' },
   { name: 'notice-background-color', default: 'transparent' },
   { name: 'notice-border-color', default: 'var(--border-color)' },
 ]
@@ -86,5 +86,5 @@ const main = html`
 `
 
 document.addEventListener('DOMContentLoaded', () => {
-  renderDocumentLayout(main)
+  renderLayout(main)
 })

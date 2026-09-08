@@ -72,15 +72,6 @@ export class PortfolioItem extends LitElement {
         font-size: var(--font-size-12);
         line-height: var(--font-size-12);
       }
-
-      :host-context(.list) article {
-        flex-direction: row;
-      }
-
-      :host-context(.list) mm-thumbnail {
-        width: 156px;
-        flex: none;
-      }
     `,
   ]
 

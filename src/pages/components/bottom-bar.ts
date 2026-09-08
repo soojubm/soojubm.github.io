@@ -5,7 +5,7 @@ import type { ComponentPropItemData } from '@/components/domains/component/compo
 import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
 import type { BottomBarItem } from '@/components/layouts/bottom-bar'
 
-import { renderDocumentLayout } from '@/components/layouts/document-layout'
+import { renderLayout } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'top-bar.html', label: 'Top Bar' },
@@ -51,5 +51,5 @@ const main = html`
 `
 
 document.addEventListener('DOMContentLoaded', () => {
-  renderDocumentLayout(main)
+  renderLayout(main)
 })

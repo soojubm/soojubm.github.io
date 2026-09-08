@@ -67,6 +67,11 @@ export const componentPropsStyles = [
       cursor: pointer;
       --component-content-frame-border: var(--border-transparent);
     }
+    .component-props-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+    }
     .component-props-more {
       display: flex;
       padding: 0.75rem var(--component-content-padding-inline) 2rem;
@@ -76,11 +81,11 @@ export const componentPropsStyles = [
       right: 0;
       bottom: 0;
     }
-    .component-props.is-opened {
+    :host([open]) .component-props {
       height: auto;
       cursor: default;
     }
-    .component-props.is-opened .component-props-more {
+    :host([open]) .component-props-more {
       display: none;
     }
   `,

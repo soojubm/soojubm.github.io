@@ -21,7 +21,7 @@ export class CommentItem extends LitElement {
     :host {
       display: block;
       --comment-item-gap: var(--space-2);
-      --comment-item-reply-color: var(--foreground-color);
+      --comment-item-reply-text-color: var(--foreground-color);
       position: relative;
     }
 
@@ -37,7 +37,7 @@ export class CommentItem extends LitElement {
 
       --button-background-color: transparent;
       --button-padding-inline: 0;
-      --button-text-color: var(--comment-item-reply-color);
+      --button-text-color: var(--comment-item-reply-text-color);
     }
 
     slot[name='replies']::slotted(*) {

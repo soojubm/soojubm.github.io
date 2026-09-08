@@ -146,7 +146,7 @@ table {
   --table-row-border: var(--border);
   --table-cell-padding: var(--space-2) 0;
   --table-cell-padding-inline: var(--space-2);
-  --table-cell-background: var(--background-color);
+  --table-cell-background-color: var(--background-color);
 
   border-collapse: collapse;
   border-spacing: 0;
@@ -158,7 +158,7 @@ table {
   min-width: 100%;
   table-layout: fixed;
 
-  background: var(--table-cell-background);
+  background: var(--table-cell-background-color);
 
   --col-checkbox: 32px;
 }
@@ -176,11 +176,11 @@ table thead tr th {
 }
 table tbody tr {
   border-bottom: var(--table-row-border);
-  background: var(--table-cell-background);
+  background: var(--table-cell-background-color);
   position: relative;
 }
 table tbody tr:hover {
-  --table-cell-background: var(--interaction-hover-background-color);
+  --table-cell-background-color: var(--interaction-hover-background-color);
 }
 table tbody tr th {
   padding-inline: var(--table-cell-padding-inline);

@@ -1,7 +1,7 @@
 import '@/components/common/table'
 import { html } from 'lit'
 
-import { renderDocumentLayout } from '@/components/layouts/document-layout'
+import { renderLayout } from '@/components/layouts/base-layouts'
 
 const main = html`
   <main class="page">
@@ -251,7 +251,7 @@ const main = html`
 `
 
 document.addEventListener('DOMContentLoaded', () => {
-  renderDocumentLayout(main)
+  renderLayout(main)
   setupSelectionComponentTable()
   setupHoverTable()
   setupPressedComponentTable()
@@ -436,7 +436,7 @@ function setupHoverTable() {
       <td>배경을 가진 행·항목·카드처럼 채울 면이 있을 때.</td>
       <td><code>table tbody tr:hover</code></td>
       <td>
-        <code>--table-cell-background: var(--interaction-hover-background-color)</code>
+        <code>--table-cell-background-color: var(--interaction-hover-background-color)</code>
       </td>
     </tr>
     <tr>

@@ -5,7 +5,7 @@ import type { ComponentPropItemData } from '@/components/domains/component/compo
 import type { ComponentReferenceItemData } from '@/components/domains/component/component-references'
 import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
 
-import { renderDocumentLayout } from '@/components/layouts/document-layout'
+import { renderLayout } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'dialog.html', label: 'Dialog' },
@@ -321,5 +321,5 @@ const main = html`
 `
 
 document.addEventListener('DOMContentLoaded', () => {
-  renderDocumentLayout(main)
+  renderLayout(main)
 })

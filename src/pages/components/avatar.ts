@@ -6,7 +6,7 @@ import type { ComponentRelatedItemData } from '@/components/domains/component/co
 import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
 
 import { AVATAR_VARIANT_TYPE_UNION } from '@/components/common/avatar'
-import { renderDocumentLayout } from '@/components/layouts/document-layout'
+import { renderLayout } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'list-item.html', label: 'List Item' },
@@ -141,5 +141,5 @@ const main = html`
 `
 
 document.addEventListener('DOMContentLoaded', () => {
-  renderDocumentLayout(main)
+  renderLayout(main)
 })

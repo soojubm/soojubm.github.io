@@ -6,7 +6,7 @@ import type { ComponentRelatedItemData } from '@/components/domains/component/co
 import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
 import type { ActionConfig } from '@/types'
 
-import { renderDocumentLayout } from '@/components/layouts/document-layout'
+import { renderLayout } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'sheet.html', label: 'Sheet' },
@@ -100,7 +100,7 @@ type DialogElement = HTMLElement & {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  renderDocumentLayout(main)
+  renderLayout(main)
   setupDialogActions()
   setupDialogTriggers()
 })

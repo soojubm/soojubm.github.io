@@ -67,7 +67,7 @@ export class PromptInput extends LitElement {
   @property({ type: String }) placeholder = 'Ask me anything...'
   @property({ type: String }) model = 'claude-sonnet'
   @property({ type: String, attribute: 'submit-label' }) submitLabel = '전송'
-  @property({ type: Boolean, attribute: 'is-loading' }) isLoading = false
+  @property({ type: Boolean }) loading = false
 
   @property({ type: Boolean, reflect: true, attribute: 'single-line' })
   private singleLine = true
@@ -81,7 +81,7 @@ export class PromptInput extends LitElement {
           .name=${this.name}
           .placeholder=${this.placeholder}
           .rows=${1}
-          ?disabled=${this.isLoading}
+          ?disabled=${this.loading}
           @input=${this.handleTextareaInput}
           @keydown=${this.handleTextareaKeydown}
           @single-line-change=${this.handleSingleLineChange}
@@ -110,7 +110,7 @@ export class PromptInput extends LitElement {
   }
 
   private handleSubmitClick = () => {
-    if (this.isLoading || !this.value.trim()) return
+    if (this.loading || !this.value.trim()) return
 
     emit(this, 'submit', { value: this.value, model: this.model })
   }
@@ -142,7 +142,7 @@ export class PromptInput extends LitElement {
           variant="primary"
           icon=${ICON_NAMES.SUBMIT}
           aria-label=${this.submitLabel}
-          ?disabled=${this.isLoading}
+          ?disabled=${this.loading}
           @click=${this.handleSubmitClick}
         ></mm-icon-button>
       </div>

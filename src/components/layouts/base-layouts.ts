@@ -9,9 +9,12 @@ import '@/components/common/footer/footer'
 import './fixed-bottom'
 import './fixed-top'
 
-// 컴포넌트 페이지용 임시
 import '@/stylesheets/shared.css'
 
+/**
+ * 모든 페이지가 공유하는 셸(navbar·sidebar·footer)을 document.body에 렌더한다.
+ * 문서 페이지는 사이드바를 연 기본값을 그대로 쓰고, 패턴 페이지는 closeSidebar로 접는다.
+ */
 export const renderLayout = (
   content: TemplateResult | string,
   options: { footer?: boolean; closeSidebar?: boolean; navbar?: boolean } = {},

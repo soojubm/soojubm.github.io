@@ -6,7 +6,7 @@ import type { ComponentReferenceItemData } from '@/components/domains/component/
 import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
 import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
 
-import { renderDocumentLayout } from '@/components/layouts/document-layout'
+import { renderLayout } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'textarea.html', label: 'Textarea' },
@@ -176,7 +176,7 @@ const main = html`
         .calendar {
           width: 250px;
           --date-width: 32px;
-          --date-background: var(--background-subtle-color);
+          --date-background-color: var(--background-subtle-color);
           position: relative;
         }
         .calendar h3 {
@@ -193,13 +193,13 @@ const main = html`
           width: var(--date-width);
           height: var(--date-width);
           margin-right: 4px;
-          background: var(--date-background);
+          background: var(--date-background-color);
           border-radius: var(--radius);
         }
         .calendar-navigation-next {
           width: var(--date-width);
           height: var(--date-width);
-          background: var(--date-background);
+          background: var(--date-background-color);
           border-radius: var(--radius);
         }
         .calendar-head {
@@ -552,5 +552,5 @@ const main = html`
 `
 
 document.addEventListener('DOMContentLoaded', () => {
-  renderDocumentLayout(main)
+  renderLayout(main)
 })

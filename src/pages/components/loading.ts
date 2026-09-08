@@ -4,7 +4,7 @@ import type { ComponentFeatureItem } from '@/components/domains/component/compon
 import type { ComponentPropItemData } from '@/components/domains/component/component-props'
 import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
 
-import { renderDocumentLayout } from '@/components/layouts/document-layout'
+import { renderLayout } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'result.html', label: 'Result' },
@@ -74,5 +74,5 @@ const main = html`
 `
 
 document.addEventListener('DOMContentLoaded', () => {
-  renderDocumentLayout(main)
+  renderLayout(main)
 })

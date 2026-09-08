@@ -1,7 +1,7 @@
 import { html } from 'lit'
 import './layout.css'
 
-import { renderDocumentLayout } from '@/components/layouts/document-layout'
+import { renderLayout } from '@/components/layouts/base-layouts'
 
 const main = html`
   <main class="page">
@@ -95,5 +95,5 @@ const main = html`
 `
 
 document.addEventListener('DOMContentLoaded', () => {
-  renderDocumentLayout(main)
+  renderLayout(main)
 })

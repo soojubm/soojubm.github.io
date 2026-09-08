@@ -4,7 +4,7 @@ export const separatorStyles = css`
   :host {
     --separator-spacing: var(--space-4);
     --separator-border: var(--border);
-    --separator-text-background: var(--background-color);
+    --separator-text-background-color: var(--background-color);
 
     position: relative;
   }
@@ -30,7 +30,7 @@ export const separatorStyles = css`
   mm-caption {
     display: block;
     padding: 0 var(--separator-spacing);
-    background: var(--separator-text-background);
+    background: var(--separator-text-background-color);
     position: absolute;
     left: 50%;
     top: 50%;

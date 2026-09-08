@@ -5,13 +5,13 @@ import { buildAttributeRules } from '@/utils'
 const noticeVariantTokens = {
   success: {
     // TODO on-
-    '--notice-foreground-color': 'var(--color-success-foreground)',
+    '--notice-text-color': 'var(--color-success-foreground)',
   },
   warning: {
-    '--notice-foreground-color': 'var(--color-warning-foreground)',
+    '--notice-text-color': 'var(--color-warning-foreground)',
   },
   danger: {
-    '--notice-foreground-color': 'var(--color-danger-foreground)',
+    '--notice-text-color': 'var(--color-danger-foreground)',
   },
 }
 
@@ -25,13 +25,13 @@ export const noticeStyles = css`
     border: var(--notice-border-width) solid var(--notice-border-color);
     border-radius: var(--notice-border-radius);
     background: var(--notice-background-color);
-    color: var(--notice-foreground-color);
+    color: var(--notice-text-color);
     position: relative;
 
     --notice-padding: var(--space-3);
     --notice-border-radius: var(--radius);
     --notice-border-width: var(--border-width);
-    --notice-foreground-color: var(--foreground-color);
+    --notice-text-color: var(--foreground-color);
     --notice-background-color: transparent;
     --notice-border-color: var(--border-color);
   }
