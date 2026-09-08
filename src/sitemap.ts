@@ -135,6 +135,7 @@ export const SITEMAP: SitemapNode[] = [
       { id: 'switch', name: 'Switch' },
       { id: 'input', name: 'Input' },
       { id: 'textarea', name: 'Textarea' },
+      { id: 'file-uploader', name: 'File Uploader' },
     ],
   },
   {

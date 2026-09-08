@@ -5,8 +5,8 @@ import { repeat } from 'lit/directives/repeat.js'
 
 import soojubmImage from '@/images/soojubm.png'
 import { emit } from '@/utils'
-import '@/components/common/button/semantics/attachment-button'
-import '@/components/common/button/semantics/attachment-item'
+import '@/components/common/file-uploader/semantics/attachment-button'
+import '@/components/common/file-uploader/semantics/attachment-item'
 import '@/components/common/tag/semantics/keyword-tag-group'
 import '@/components/common/text/semantics/paragraph'
 

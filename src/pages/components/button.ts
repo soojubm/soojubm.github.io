@@ -41,16 +41,6 @@ const componentReferences: ComponentReferenceItemData[] = [
     label: 'WAI-ARIA APG - Listbox Pattern',
     external: true,
   },
-  {
-    href: 'https://elements.ai-sdk.dev/components/attachments',
-    label: 'AI SDK Elements - Attachments',
-    external: true,
-  },
-  {
-    href: 'https://seed-design.io/react/components/attachment-display-field',
-    label: 'Seed Design - Attachment Display Field',
-    external: true,
-  },
 ]
 
 const componentProps: ComponentPropItemData[] = [
@@ -275,16 +265,6 @@ const main = html`
 
     <mm-component-section heading="AddButton" description="새 항목을 추가합니다.">
       <mm-add-button>항목 추가</mm-add-button>
-    </mm-component-section>
-
-    <mm-component-section heading="FileUploader" description="이미지 업로드와 파일 업로드 구분">
-      <mm-file-uploader
-        label="사진 업로드. 여기로 드래그 하셔도 되어요."
-        helper="Only .jpg and .png files. 500kb max file size."
-        accept=".jpg,.png"
-        capture
-        multiple
-      ></mm-file-uploader>
     </mm-component-section>
 
     <mm-component-section heading="ToTopButton" description="페이지 최상단으로 스크롤합니다.">

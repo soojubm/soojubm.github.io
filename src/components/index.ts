@@ -38,6 +38,7 @@ import '@/components/common/text'
 
 import '@/components/common/button'
 import '@/components/common/icon-button'
+import '@/components/common/file-uploader'
 
 import '@/components/common/toggle-button'
 
