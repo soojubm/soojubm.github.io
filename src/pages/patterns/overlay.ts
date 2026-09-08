@@ -55,7 +55,7 @@ const classificationRows = html`
     <td>overlay</td>
   </tr>
   <tr>
-    <th scope="row">Toast</th>
+    <th scope="row"><mm-link href="./toast.html">Toast</mm-link></th>
     <td>${no}</td>
     <td>Viewport</td>
     <td>status</td>

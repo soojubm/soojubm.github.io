@@ -74,16 +74,27 @@ export const SITEMAP: SitemapNode[] = [
   },
   {
     type: 'group',
-    id: 'structure',
-    title: 'Structure',
+    id: 'structures',
+    title: 'Structures',
     icon: ICON_NAMES.BOX,
     items: [
       { id: 'surface', name: 'Surface' },
       { id: 'separator', name: 'Separator' },
       { id: 'list-item', name: 'List Item' },
-      { id: 'sheet', name: 'Sheet', badge: 'pattern' },
-      { id: 'popover', name: 'Popover', badge: 'pattern' },
       { id: 'table', name: 'Table' },
+    ],
+  },
+  {
+    type: 'group',
+    id: 'overlays',
+    title: 'Overlays',
+    icon: ICON_NAMES.MULTI_WINDOW,
+    items: [
+      { id: 'tooltip', name: 'Tooltip' },
+      { id: 'popover', name: 'Popover', badge: 'pattern' },
+      { id: 'sheet', name: 'Sheet', badge: 'pattern' },
+      { id: 'dialog', name: 'Dialog' },
+      { id: 'toast', name: 'Toast' },
     ],
   },
   {
@@ -132,8 +143,6 @@ export const SITEMAP: SitemapNode[] = [
     title: 'Feedbacks',
     icon: ICON_NAMES.REPLY,
     items: [
-      { id: 'tooltip', name: 'Tooltip' },
-      { id: 'dialog', name: 'Dialog' },
       { id: 'notice', name: 'Notice' },
       { id: 'loading', name: 'Loading' },
       { id: 'result', name: 'Result' },

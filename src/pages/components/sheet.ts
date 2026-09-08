@@ -80,24 +80,9 @@ const componentFeatures: ComponentFeatureItem[] = [
   },
 ]
 
-type ToastElement = HTMLElement & {
-  show(): void
-}
-
 document.addEventListener('DOMContentLoaded', () => {
   renderLayout(sheetPageTemplate())
-
-  setupToastTrigger()
 })
-
-// 자동 닫힘·재시작 타이머는 mm-toast가 소유하므로 트리거는 show()만 호출한다.
-function setupToastTrigger() {
-  const trigger = document.querySelector<HTMLElement>('[data-open-toast]')
-  const toast = document.querySelector<ToastElement>('.js-demo-toast')
-  if (!trigger || !toast) return
-
-  trigger.addEventListener('click', () => toast.show())
-}
 
 function sheetPageTemplate() {
   return html`
@@ -111,10 +96,7 @@ function sheetPageTemplate() {
         .items=${['Drawer', 'Panel', 'Bottom Sheet', 'Side Sheet', 'Modal']}
       ></mm-component-aka>
 
-      <mm-component-example>
-        ${sheetExampleTemplate()}
-        <mm-toast class="js-demo-toast">저장되었습니다.</mm-toast>
-      </mm-component-example>
+      <mm-component-example>${sheetExampleTemplate()}</mm-component-example>
 
       <mm-component-props .props=${componentProps}></mm-component-props>
 
@@ -161,7 +143,6 @@ function sheetExampleTemplate() {
       <mm-button aria-controls="bottom-sheet">Bottom</mm-button>
       <mm-button aria-controls="left-sheet">Left</mm-button>
       <mm-button aria-controls="right-sheet">Right</mm-button>
-      <mm-button data-open-toast>토스트 띄우기</mm-button>
     </mm-button-group>
 
     <mm-sheet id="center-sheet" placement="center" width="medium">
