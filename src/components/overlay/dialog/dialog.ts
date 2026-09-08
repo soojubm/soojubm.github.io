@@ -34,6 +34,9 @@ export class Dialog extends LitElement {
 
   private sheet = new SheetController(this, {
     isOpen: () => this.open,
+    setOpen: open => {
+      this.open = open
+    },
     onDismiss: () => this.handleDismiss(),
   })
 

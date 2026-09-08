@@ -90,7 +90,7 @@ const main = html`
             <mm-number-input value="1" min="1" max="99" label="수량"></mm-number-input>
 
             <mm-button-group>
-              <mm-button data-open-cart variant="primary" size="large" full-width>
+              <mm-button aria-controls="cart-sheet" variant="primary" size="large" full-width>
                 Add to Cart
               </mm-button>
               <mm-icon-button variant="ghost" icon="star"></mm-icon-button>
@@ -130,7 +130,9 @@ const main = html`
             </span>
           </section>
           <footer class="product-quick-controls">
-            <mm-button data-open-cart variant="primary" size="large">Add to Cart</mm-button>
+            <mm-button aria-controls="cart-sheet" variant="primary" size="large">
+              Add to Cart
+            </mm-button>
           </footer>
         </aside>
       </mm-fixed-bottom>
@@ -330,22 +332,18 @@ document.addEventListener('DOMContentLoaded', () => {
   setupCartSheet()
 })
 
-type SheetElement = HTMLElement & {
-  show(): void
-}
-
 type ValueElement = HTMLElement & {
   value: string
 }
 
+// 여는 동작은 aria-controls를 통해 mm-sheet가 소유한다. 여기서는 담을 수량만 시트로 옮긴다.
 function setupCartSheet() {
-  const triggers = document.querySelectorAll<HTMLElement>('[data-open-cart]')
-  const sheet = document.querySelector<SheetElement>('#cart-sheet')
+  const triggers = document.querySelectorAll<HTMLElement>('[aria-controls="cart-sheet"]')
   const productQuantity = document.querySelector<ValueElement>('.product-info mm-number-input')
   const cartQuantity = document.querySelector<ValueElement>('#cart-quantity')
   const cartTotal = document.querySelector<ValueElement>('#cart-total')
 
-  if (!triggers.length || !sheet || !cartQuantity || !cartTotal) return
+  if (!triggers.length || !cartQuantity || !cartTotal) return
 
   const updateTotal = () => {
     const quantity = Math.max(1, Number(cartQuantity.value) || 1)
@@ -356,7 +354,6 @@ function setupCartSheet() {
     trigger.addEventListener('click', () => {
       cartQuantity.value = productQuantity?.value || '1'
       updateTotal()
-      sheet.show()
     })
   })
 

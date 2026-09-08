@@ -64,8 +64,8 @@ const main = html`
 
     <mm-component-example>
       <mm-button-group>
-        <mm-button data-open-dialog="alert">Alert</mm-button>
-        <mm-button data-open-dialog="confirm">Confirm</mm-button>
+        <mm-button aria-controls="dialog-alert">Alert</mm-button>
+        <mm-button aria-controls="dialog-confirm">Confirm</mm-button>
       </mm-button-group>
 
       <mm-dialog
@@ -102,7 +102,6 @@ type DialogElement = HTMLElement & {
 document.addEventListener('DOMContentLoaded', () => {
   renderLayout(main)
   setupDialogActions()
-  setupDialogTriggers()
 })
 
 function setupDialogActions() {
@@ -125,16 +124,4 @@ function setupDialogActions() {
       onClick: () => confirmDialog.close(),
     }
   }
-}
-
-function setupDialogTriggers() {
-  document.addEventListener('click', e => {
-    const trigger = (e.composedPath() as Element[]).find(
-      el => el instanceof HTMLElement && el.dataset?.openDialog,
-    ) as HTMLElement | undefined
-    if (!trigger) return
-    const key = trigger.dataset.openDialog ?? ''
-    const dialog = document.querySelector<DialogElement>(`#dialog-${key}`)
-    if (dialog) dialog.open = true
-  })
 }

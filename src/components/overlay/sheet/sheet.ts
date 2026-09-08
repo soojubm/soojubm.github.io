@@ -37,6 +37,9 @@ class Sheet extends LitElement {
 
   private sheet = new SheetController(this, {
     isOpen: () => this.open,
+    setOpen: open => {
+      this.open = open
+    },
     onDismiss: () => emit(this, 'sheet-close'),
   })
 

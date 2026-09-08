@@ -80,10 +80,6 @@ const componentFeatures: ComponentFeatureItem[] = [
   },
 ]
 
-type SheetElement = HTMLElement & {
-  show(): void
-}
-
 type ToastElement = HTMLElement & {
   show(): void
 }
@@ -91,7 +87,6 @@ type ToastElement = HTMLElement & {
 document.addEventListener('DOMContentLoaded', () => {
   renderLayout(sheetPageTemplate())
 
-  setupSheetTriggers()
   setupToastTrigger()
 })
 
@@ -102,24 +97,6 @@ function setupToastTrigger() {
   if (!trigger || !toast) return
 
   trigger.addEventListener('click', () => toast.show())
-}
-
-function setupSheetTriggers() {
-  document.querySelectorAll<HTMLElement>('[data-open-sheet]').forEach(trigger => {
-    trigger.addEventListener('click', () => {
-      const value = trigger.dataset.openSheet ?? ''
-      const selector = /^[#.]/.test(value) ? value : `mm-sheet[placement="${value}"]`
-      const sheet = document.querySelector<SheetElement>(selector)
-      if (!sheet) return
-
-      sheet.show()
-    })
-  })
-}
-
-function openSheet(id: string) {
-  const sheet = document.querySelector<SheetElement>(`#${id}`)
-  sheet?.show()
 }
 
 function sheetPageTemplate() {
@@ -180,10 +157,10 @@ function sheetPageTemplate() {
 function sheetExampleTemplate() {
   return html`
     <mm-button-group>
-      <mm-button @click=${() => openSheet('center-sheet')}>Center</mm-button>
-      <mm-button @click=${() => openSheet('bottom-sheet')}>Bottom</mm-button>
-      <mm-button @click=${() => openSheet('left-sheet')}>Left</mm-button>
-      <mm-button @click=${() => openSheet('right-sheet')}>Right</mm-button>
+      <mm-button aria-controls="center-sheet">Center</mm-button>
+      <mm-button aria-controls="bottom-sheet">Bottom</mm-button>
+      <mm-button aria-controls="left-sheet">Left</mm-button>
+      <mm-button aria-controls="right-sheet">Right</mm-button>
       <mm-button data-open-toast>토스트 띄우기</mm-button>
     </mm-button-group>
 
@@ -227,7 +204,7 @@ function sheetExampleTemplate() {
 
 function filterSheetTemplate() {
   return html`
-    <mm-icon-button icon=${ICON_NAMES.FILTER} data-open-sheet="#filter-sheet"></mm-icon-button>
+    <mm-icon-button icon=${ICON_NAMES.FILTER} aria-controls="filter-sheet"></mm-icon-button>
     <mm-sheet placement="bottom" id="filter-sheet">
       <mm-sheet-header heading="필터"></mm-sheet-header>
       <mm-sheet-body>
