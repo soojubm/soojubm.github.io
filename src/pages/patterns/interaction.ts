@@ -3,6 +3,198 @@ import { html } from 'lit'
 
 import { renderLayout } from '@/components/layouts/base-layouts'
 
+const selectionComponentRows = html`
+  <tr>
+    <th scope="row"><code>mm-checkbox-group</code></th>
+    <td><code>checked</code></td>
+  </tr>
+  <tr>
+    <th scope="row"><code>mm-radio-group</code></th>
+    <td><code>checked</code></td>
+  </tr>
+  <tr>
+    <th scope="row"><code>mm-switch</code></th>
+    <td><code>aria-checked</code></td>
+  </tr>
+  <tr>
+    <th scope="row"><code>mm-filter-button-group</code></th>
+    <td><code>aria-pressed</code></td>
+  </tr>
+  <tr>
+    <th scope="row"><code>mm-select</code></th>
+    <td><code>aria-selected</code></td>
+  </tr>
+  <tr>
+    <th scope="row">
+      <code>mm-menu-item-radio</code>
+      <code>mm-menu-item-checkbox</code>
+    </th>
+    <td><code>aria-checked</code></td>
+  </tr>
+`
+const pressedComponentRows = html`
+  <tr>
+    <th scope="row"><code>mm-toggle-button</code></th>
+    <td>단독</td>
+  </tr>
+  <tr>
+    <th scope="row"><code>mm-follow-button</code></th>
+    <td>단독</td>
+  </tr>
+  <tr>
+    <th scope="row"><code>mm-bookmark-button</code></th>
+    <td>단독</td>
+  </tr>
+  <tr>
+    <th scope="row"><code>mm-reveal-button</code></th>
+    <td>단독</td>
+  </tr>
+  <tr>
+    <th scope="row"><code>mm-toggle-button-group</code></th>
+    <td>그룹</td>
+  </tr>
+  <tr>
+    <th scope="row"><code>mm-filter-button-group</code></th>
+    <td>그룹</td>
+  </tr>
+`
+const currentComponentRows = html`
+  <tr>
+    <th scope="row"><code>mm-breadcrumb</code></th>
+    <td><code>page</code></td>
+  </tr>
+  <tr>
+    <th scope="row"><code>mm-pagination</code></th>
+    <td><code>page</code></td>
+  </tr>
+  <tr>
+    <th scope="row"><code>mm-page-button</code></th>
+    <td><code>page</code></td>
+  </tr>
+  <tr>
+    <th scope="row"><code>mm-bottom-bar</code></th>
+    <td><code>page</code></td>
+  </tr>
+  <tr>
+    <th scope="row"><code>mm-app-sidebar</code></th>
+    <td><code>page</code></td>
+  </tr>
+  <tr>
+    <th scope="row"><code>mm-toc</code></th>
+    <td><code>true</code></td>
+  </tr>
+  <tr>
+    <th scope="row">theme-selector</th>
+    <td><code>true</code></td>
+  </tr>
+`
+const expandedComponentRows = html`
+  <tr>
+    <th scope="row"><code>mm-show-more-button</code></th>
+    <td>잘린 텍스트</td>
+  </tr>
+  <tr>
+    <th scope="row"><code>mm-read-more-button</code></th>
+    <td>잘린 텍스트</td>
+  </tr>
+  <tr>
+    <th scope="row"><code>mm-hamburger-button</code></th>
+    <td>내비게이션 메뉴</td>
+  </tr>
+  <tr>
+    <th scope="row"><code>mm-more-button</code></th>
+    <td>오버플로 메뉴</td>
+  </tr>
+  <tr>
+    <th scope="row"><code>mm-app-sidebar</code></th>
+    <td>하위 트리</td>
+  </tr>
+  <tr>
+    <th scope="row">navbar-search</th>
+    <td>검색 패널</td>
+  </tr>
+  <tr>
+    <th scope="row">chat-source</th>
+    <td>출처 상세</td>
+  </tr>
+  <tr>
+    <th scope="row">model-selector</th>
+    <td>모델 목록</td>
+  </tr>
+`
+const hoverRows = html`
+  <tr>
+    <th scope="row">
+      <code>mm-menu-item</code>
+    </th>
+    <td>배경 채움</td>
+    <td>배경을 가진 행·항목·카드처럼 채울 면이 있을 때.</td>
+    <td><code>\${interactiveElement}:hover</code></td>
+    <td>
+      <code>--menu-item-background-color: var(--interaction-hover-background-color)</code>
+    </td>
+  </tr>
+  <tr>
+    <th scope="row">
+      <code>mm-table</code>
+      <br />
+      (reset.css 전역 규칙)
+    </th>
+    <td>배경 채움</td>
+    <td>배경을 가진 행·항목·카드처럼 채울 면이 있을 때.</td>
+    <td><code>table tbody tr:hover</code></td>
+    <td>
+      <code>--table-cell-background-color: var(--interaction-hover-background-color)</code>
+    </td>
+  </tr>
+  <tr>
+    <th scope="row"><code>mm-portfolio-item</code></th>
+    <td>떠오름</td>
+    <td>채울 배경이 없는 떠 있는 표면일 때.</td>
+    <td><code>\${interactiveElement}:hover</code></td>
+    <td><code>--lift: var(--interaction-hover-lift)</code></td>
+  </tr>
+  <tr>
+    <th scope="row"><code>mm-foundation-item</code></th>
+    <td>떠오름</td>
+    <td>채울 배경이 없는 떠 있는 표면일 때.</td>
+    <td><code>\${interactiveElement}:hover</code></td>
+    <td><code>--lift: var(--interaction-hover-lift)</code></td>
+  </tr>
+  <tr>
+    <th scope="row">
+      <code>mm-button</code>
+      <br />
+      (icon-button·toggle-button·follow-button·hashtag-link 등 파생 포함)
+    </th>
+    <td>테두리 드러내기</td>
+    <td>평소 테두리를 감춰 둔 컨트롤일 때.</td>
+    <td><code>\${interactiveElement}:hover</code></td>
+    <td><code>border-color: var(--border-color)</code></td>
+  </tr>
+  <tr>
+    <th scope="row"><code>mm-input</code></th>
+    <td>테두리 드러내기</td>
+    <td>평소 테두리를 감춰 둔 컨트롤일 때.</td>
+    <td><code>:host(:hover)</code></td>
+    <td><code>--input-border: var(--border)</code></td>
+  </tr>
+  <tr>
+    <th scope="row"><code>mm-thumbnail</code></th>
+    <td>테두리 드러내기</td>
+    <td>평소 테두리를 감춰 둔 컨트롤일 때.</td>
+    <td><code>\${interactiveElement}:hover .image-wrapper</code></td>
+    <td><code>--thumbnail-border: var(--border)</code></td>
+  </tr>
+  <tr>
+    <th scope="row">커스텀 스크롤바</th>
+    <td>기능</td>
+    <td></td>
+    <td><code>:hover::-webkit-scrollbar-thumb</code></td>
+    <td><code>background: var(--background-strong-color)</code></td>
+  </tr>
+`
+
 const main = html`
   <main class="page">
     <mm-page-header
@@ -119,7 +311,7 @@ const main = html`
           선언하지 않고, 평소 값을 담고 있는 컴포넌트 토큰에 아래 값을 재할당합니다.
         </mm-paragraph>
         <mm-table
-          id="hover-table"
+          .rows=${hoverRows}
           caption="컴포넌트별 hover 처리와 재할당 값"
           style="--table-height: auto"
           columns='[
@@ -151,7 +343,7 @@ const main = html`
           ]'
         ></mm-text-list>
         <mm-table
-          id="selection-component-table"
+          .rows=${selectionComponentRows}
           caption="선택 컴포넌트의 용도와 상태 attribute"
           style="--table-width: fit-content"
           columns='[
@@ -199,7 +391,7 @@ const main = html`
           로 표현하고, Selection과 같은 강조 토큰을 공유합니다.
         </mm-paragraph>
         <mm-table
-          id="pressed-component-table"
+          .rows=${pressedComponentRows}
           caption="Pressed 컴포넌트의 소유 방식"
           style="--table-width: fit-content"
           columns='[
@@ -220,7 +412,7 @@ const main = html`
           를 씁니다.
         </mm-paragraph>
         <mm-table
-          id="current-component-table"
+          .rows=${currentComponentRows}
           caption="Current 컴포넌트와 값"
           style="--table-width: fit-content"
           columns='[
@@ -237,7 +429,7 @@ const main = html`
           로 표시합니다.
         </mm-paragraph>
         <mm-table
-          id="expanded-component-table"
+          .rows=${expandedComponentRows}
           caption="Expanded 컴포넌트와 펼치는 대상"
           style="--table-width: fit-content"
           columns='[
@@ -252,238 +444,4 @@ const main = html`
 
 document.addEventListener('DOMContentLoaded', () => {
   renderLayout(main)
-  setupSelectionComponentTable()
-  setupHoverTable()
-  setupPressedComponentTable()
-  setupCurrentComponentTable()
-  setupExpandedComponentTable()
 })
-
-function setupSelectionComponentTable() {
-  const table = document.querySelector<HTMLElementTagNameMap['mm-table']>(
-    'mm-table#selection-component-table',
-  )
-  if (!table) return
-
-  table.rows = html`
-    <tr>
-      <th scope="row"><code>mm-checkbox-group</code></th>
-      <td><code>checked</code></td>
-    </tr>
-    <tr>
-      <th scope="row"><code>mm-radio-group</code></th>
-      <td><code>checked</code></td>
-    </tr>
-    <tr>
-      <th scope="row"><code>mm-switch</code></th>
-      <td><code>aria-checked</code></td>
-    </tr>
-    <tr>
-      <th scope="row"><code>mm-filter-button-group</code></th>
-      <td><code>aria-pressed</code></td>
-    </tr>
-    <tr>
-      <th scope="row"><code>mm-select</code></th>
-      <td><code>aria-selected</code></td>
-    </tr>
-    <tr>
-      <th scope="row">
-        <code>mm-menu-item-radio</code>
-        <code>mm-menu-item-checkbox</code>
-      </th>
-      <td><code>aria-checked</code></td>
-    </tr>
-  `
-}
-
-function setupPressedComponentTable() {
-  const table = document.querySelector<HTMLElementTagNameMap['mm-table']>(
-    'mm-table#pressed-component-table',
-  )
-  if (!table) return
-
-  table.rows = html`
-    <tr>
-      <th scope="row"><code>mm-toggle-button</code></th>
-      <td>단독</td>
-    </tr>
-    <tr>
-      <th scope="row"><code>mm-follow-button</code></th>
-      <td>단독</td>
-    </tr>
-    <tr>
-      <th scope="row"><code>mm-bookmark-button</code></th>
-      <td>단독</td>
-    </tr>
-    <tr>
-      <th scope="row"><code>mm-reveal-button</code></th>
-      <td>단독</td>
-    </tr>
-    <tr>
-      <th scope="row"><code>mm-toggle-button-group</code></th>
-      <td>그룹</td>
-    </tr>
-    <tr>
-      <th scope="row"><code>mm-filter-button-group</code></th>
-      <td>그룹</td>
-    </tr>
-  `
-}
-
-function setupCurrentComponentTable() {
-  const table = document.querySelector<HTMLElementTagNameMap['mm-table']>(
-    'mm-table#current-component-table',
-  )
-  if (!table) return
-
-  table.rows = html`
-    <tr>
-      <th scope="row"><code>mm-breadcrumb</code></th>
-      <td><code>page</code></td>
-    </tr>
-    <tr>
-      <th scope="row"><code>mm-pagination</code></th>
-      <td><code>page</code></td>
-    </tr>
-    <tr>
-      <th scope="row"><code>mm-page-button</code></th>
-      <td><code>page</code></td>
-    </tr>
-    <tr>
-      <th scope="row"><code>mm-bottom-bar</code></th>
-      <td><code>page</code></td>
-    </tr>
-    <tr>
-      <th scope="row"><code>mm-app-sidebar</code></th>
-      <td><code>page</code></td>
-    </tr>
-    <tr>
-      <th scope="row"><code>mm-toc</code></th>
-      <td><code>true</code></td>
-    </tr>
-    <tr>
-      <th scope="row">theme-selector</th>
-      <td><code>true</code></td>
-    </tr>
-  `
-}
-
-function setupExpandedComponentTable() {
-  const table = document.querySelector<HTMLElementTagNameMap['mm-table']>(
-    'mm-table#expanded-component-table',
-  )
-  if (!table) return
-
-  table.rows = html`
-    <tr>
-      <th scope="row"><code>mm-show-more-button</code></th>
-      <td>잘린 텍스트</td>
-    </tr>
-    <tr>
-      <th scope="row"><code>mm-read-more-button</code></th>
-      <td>잘린 텍스트</td>
-    </tr>
-    <tr>
-      <th scope="row"><code>mm-hamburger-button</code></th>
-      <td>내비게이션 메뉴</td>
-    </tr>
-    <tr>
-      <th scope="row"><code>mm-more-button</code></th>
-      <td>오버플로 메뉴</td>
-    </tr>
-    <tr>
-      <th scope="row"><code>mm-app-sidebar</code></th>
-      <td>하위 트리</td>
-    </tr>
-    <tr>
-      <th scope="row">navbar-search</th>
-      <td>검색 패널</td>
-    </tr>
-    <tr>
-      <th scope="row">chat-source</th>
-      <td>출처 상세</td>
-    </tr>
-    <tr>
-      <th scope="row">model-selector</th>
-      <td>모델 목록</td>
-    </tr>
-  `
-}
-
-function setupHoverTable() {
-  const table = document.querySelector<HTMLElementTagNameMap['mm-table']>('mm-table#hover-table')
-  if (!table) return
-
-  table.rows = html`
-    <tr>
-      <th scope="row">
-        <code>mm-menu-item</code>
-      </th>
-      <td>배경 채움</td>
-      <td>배경을 가진 행·항목·카드처럼 채울 면이 있을 때.</td>
-      <td><code>\${interactiveElement}:hover</code></td>
-      <td>
-        <code>--menu-item-background-color: var(--interaction-hover-background-color)</code>
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">
-        <code>mm-table</code>
-        <br />
-        (reset.css 전역 규칙)
-      </th>
-      <td>배경 채움</td>
-      <td>배경을 가진 행·항목·카드처럼 채울 면이 있을 때.</td>
-      <td><code>table tbody tr:hover</code></td>
-      <td>
-        <code>--table-cell-background-color: var(--interaction-hover-background-color)</code>
-      </td>
-    </tr>
-    <tr>
-      <th scope="row"><code>mm-portfolio-item</code></th>
-      <td>떠오름</td>
-      <td>채울 배경이 없는 떠 있는 표면일 때.</td>
-      <td><code>\${interactiveElement}:hover</code></td>
-      <td><code>--lift: var(--interaction-hover-lift)</code></td>
-    </tr>
-    <tr>
-      <th scope="row"><code>mm-foundation-item</code></th>
-      <td>떠오름</td>
-      <td>채울 배경이 없는 떠 있는 표면일 때.</td>
-      <td><code>\${interactiveElement}:hover</code></td>
-      <td><code>--lift: var(--interaction-hover-lift)</code></td>
-    </tr>
-    <tr>
-      <th scope="row">
-        <code>mm-button</code>
-        <br />
-        (icon-button·toggle-button·follow-button·hashtag-link 등 파생 포함)
-      </th>
-      <td>테두리 드러내기</td>
-      <td>평소 테두리를 감춰 둔 컨트롤일 때.</td>
-      <td><code>\${interactiveElement}:hover</code></td>
-      <td><code>border-color: var(--border-color)</code></td>
-    </tr>
-    <tr>
-      <th scope="row"><code>mm-input</code></th>
-      <td>테두리 드러내기</td>
-      <td>평소 테두리를 감춰 둔 컨트롤일 때.</td>
-      <td><code>:host(:hover)</code></td>
-      <td><code>--input-border: var(--border)</code></td>
-    </tr>
-    <tr>
-      <th scope="row"><code>mm-thumbnail</code></th>
-      <td>테두리 드러내기</td>
-      <td>평소 테두리를 감춰 둔 컨트롤일 때.</td>
-      <td><code>\${interactiveElement}:hover .image-wrapper</code></td>
-      <td><code>--thumbnail-border: var(--border)</code></td>
-    </tr>
-    <tr>
-      <th scope="row">커스텀 스크롤바</th>
-      <td>기능</td>
-      <td></td>
-      <td><code>:hover::-webkit-scrollbar-thumb</code></td>
-      <td><code>background: var(--background-strong-color)</code></td>
-    </tr>
-  `
-}

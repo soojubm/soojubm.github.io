@@ -4,6 +4,65 @@ import { html } from 'lit'
 
 import { renderLayout } from '@/components/layouts/base-layouts'
 
+const yes = html`
+  <span role="img" aria-label="예">✅</span>
+`
+const no = html`
+  <span role="img" aria-label="아니오">❌</span>
+`
+
+const classificationRows = html`
+  <tr>
+    <th scope="row"><mm-link href="./dialog.html">Dialog</mm-link></th>
+    <td>${yes}</td>
+    <td>Viewport</td>
+    <td>dialog</td>
+    <td>modal</td>
+  </tr>
+  <tr>
+    <th scope="row"><mm-link href="./sheet.html">Bottom Sheet</mm-link></th>
+    <td>${yes}</td>
+    <td>Viewport</td>
+    <td>dialog</td>
+    <td>modal</td>
+  </tr>
+  <tr>
+    <th scope="row">Backdrop</th>
+    <td>${yes}</td>
+    <td>Viewport</td>
+    <td>없음</td>
+    <td>modal</td>
+  </tr>
+  <tr>
+    <th scope="row"><mm-link href="./popover.html">Popover</mm-link></th>
+    <td>${no}</td>
+    <td>Trigger</td>
+    <td>없음</td>
+    <td>overlay</td>
+  </tr>
+  <tr>
+    <th scope="row">Select</th>
+    <td>${no}</td>
+    <td>Trigger</td>
+    <td>listbox</td>
+    <td>overlay</td>
+  </tr>
+  <tr>
+    <th scope="row"><mm-link href="./tooltip.html">Tooltip</mm-link></th>
+    <td>${no}</td>
+    <td>Trigger</td>
+    <td>tooltip</td>
+    <td>overlay</td>
+  </tr>
+  <tr>
+    <th scope="row">Toast</th>
+    <td>${no}</td>
+    <td>Viewport</td>
+    <td>status</td>
+    <td>toast</td>
+  </tr>
+`
+
 const main = html`
   <main class="page">
     <mm-page-header
@@ -18,7 +77,7 @@ const main = html`
           감싸는 내용에서 나옵니다.
         </mm-paragraph>
         <mm-table
-          id="overlay-classification-table"
+          .rows=${classificationRows}
           caption="화면 위로 뜨는 표면의 modal 여부·위치 기준·노출 role·레이어 비교"
           columns='[
             {"label": "UI"},
@@ -103,71 +162,4 @@ const main = html`
 
 document.addEventListener('DOMContentLoaded', () => {
   renderLayout(main)
-  setupClassificationTable()
 })
-
-function setupClassificationTable() {
-  const table = document.querySelector<HTMLElementTagNameMap['mm-table']>(
-    'mm-table#overlay-classification-table',
-  )
-  if (!table) return
-
-  const yes = html`
-    <span role="img" aria-label="예">✅</span>
-  `
-  const no = html`
-    <span role="img" aria-label="아니오">❌</span>
-  `
-
-  table.rows = html`
-    <tr>
-      <th scope="row"><mm-link href="./dialog.html">Dialog</mm-link></th>
-      <td>${yes}</td>
-      <td>Viewport</td>
-      <td>dialog</td>
-      <td>modal</td>
-    </tr>
-    <tr>
-      <th scope="row"><mm-link href="./sheet.html">Bottom Sheet</mm-link></th>
-      <td>${yes}</td>
-      <td>Viewport</td>
-      <td>dialog</td>
-      <td>modal</td>
-    </tr>
-    <tr>
-      <th scope="row">Backdrop</th>
-      <td>${yes}</td>
-      <td>Viewport</td>
-      <td>없음</td>
-      <td>modal</td>
-    </tr>
-    <tr>
-      <th scope="row"><mm-link href="./popover.html">Popover</mm-link></th>
-      <td>${no}</td>
-      <td>Trigger</td>
-      <td>없음</td>
-      <td>overlay</td>
-    </tr>
-    <tr>
-      <th scope="row">Select</th>
-      <td>${no}</td>
-      <td>Trigger</td>
-      <td>listbox</td>
-      <td>overlay</td>
-    </tr>
-    <tr>
-      <th scope="row"><mm-link href="./tooltip.html">Tooltip</mm-link></th>
-      <td>${no}</td>
-      <td>Trigger</td>
-      <td>tooltip</td>
-      <td>overlay</td>
-    </tr>
-    <tr>
-      <th scope="row">Toast</th>
-      <td>${no}</td>
-      <td>Viewport</td>
-      <td>status</td>
-      <td>toast</td>
-    </tr>
-  `
-}
