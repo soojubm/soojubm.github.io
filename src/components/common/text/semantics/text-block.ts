@@ -7,15 +7,6 @@ import '@/components/common/text/text'
 import '@/components/common/text/semantics/paragraph'
 
 // TODO section 임 text-block은 단독으로 쓰이지 않는다 보통.
-// heading-level → 시맨틱 heading 태그. 값이 없거나 미정의 레벨이면 비-heading(span).
-const HEADING_TAGS = {
-  '1': 'h1',
-  '2': 'h2',
-  '3': 'h3',
-  '4': 'h4',
-  '5': 'h5',
-  '6': 'h6',
-} as const
 
 /**
  * mm-text-block
@@ -51,7 +42,6 @@ class TextBlock extends LitElement {
   @property({ type: String }) description = ''
   @property({ type: String }) caption = ''
   @property({ type: String, reflect: true }) level = '1'
-  @property({ type: String, attribute: 'heading-level' }) headingLevel = ''
   @property({ type: Boolean, reflect: true }) centered = false
 
   static variants = {
@@ -96,13 +86,10 @@ class TextBlock extends LitElement {
   }
 
   private renderHeading(variant: typeof TextBlock.variants[keyof typeof TextBlock.variants]) {
+    if (!this.heading) return nothing
+
     return html`
-      <mm-text
-        as=${this.headingTag}
-        size=${variant.headingSize}
-        weight="bold"
-        ?centered=${this.centered}
-      >
+      <mm-text size=${variant.headingSize} weight="bold" ?centered=${this.centered}>
         ${this.heading}
       </mm-text>
     `
@@ -122,10 +109,6 @@ class TextBlock extends LitElement {
         ${this.description}
       </mm-text>
     `
-  }
-
-  private get headingTag() {
-    return HEADING_TAGS[this.headingLevel as keyof typeof HEADING_TAGS] ?? 'span'
   }
 }
 

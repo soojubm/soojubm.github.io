@@ -24,7 +24,6 @@ export class PageHeader extends LitElement {
     return html`
       <header>
         <mm-text-block
-          heading-level="1"
           heading=${this.heading}
           description=${this.description}
           ?centered=${this.centered}

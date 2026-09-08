@@ -5,8 +5,7 @@ import { ICON_NAMES } from '@/components/common/icon-button/semantics/icon-names
 import { noticeStyles } from '@/components/common/notice/notice.styles'
 import { emit } from '@/utils'
 import '@/components/common/icon'
-import '@/components/common/text/semantics/heading'
-import '@/components/common/text/semantics/paragraph'
+import '@/components/common/text/semantics/text-block'
 import '@/components/common/icon-button/semantics/dismiss-button'
 
 const VARIANT_ICONS: Record<string, string> = {
@@ -32,27 +31,21 @@ class Notice extends LitElement {
 
     return html`
       <mm-icon name=${this.icon} class="notice-icon"></mm-icon>
-      ${this.renderHeading()} ${this.renderDescription()}
+      ${this.renderTextBlock()}
       <slot></slot>
       ${this.renderDismissButton()}
     `
   }
 
-  private renderHeading() {
-    if (!this.heading) return nothing
+  private renderTextBlock() {
+    if (!this.heading && !this.description) return nothing
 
     return html`
-      <div class="notice-heading">
-        <mm-heading level="3">${this.heading}</mm-heading>
-      </div>
-    `
-  }
-
-  private renderDescription() {
-    if (!this.description) return nothing
-
-    return html`
-      <mm-paragraph>${this.description}</mm-paragraph>
+      <mm-text-block
+        level="4"
+        heading=${this.heading}
+        description=${this.description}
+      ></mm-text-block>
     `
   }
 
