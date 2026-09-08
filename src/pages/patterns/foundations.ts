@@ -287,6 +287,11 @@ const main = html`
           description="상호작용할 수 있는 요소와 그 반응 상태를 정의합니다."
         ></mm-foundation-item>
         <mm-foundation-item
+          href="./feedback.html"
+          heading="Feedback"
+          description="행동·시스템 결과를 알리는 상태와 비동기 데이터 흐름을 정의합니다."
+        ></mm-foundation-item>
+        <mm-foundation-item
           href="./overlay.html"
           heading="Overlay"
           description="화면 위로 뜨는 표면의 행동 계약과 겹침 순서를 정의합니다."

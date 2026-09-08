@@ -14,7 +14,7 @@ export interface ComponentFeatureItem {
 
 /**
  * 문서에서 컴포넌트 성격을 설명하는 특성 어휘와 그 아이콘.
- * 어휘 자체는 signifier 문서가 정의하므로, 새 heading은 그 목록에 먼저 추가한다.
+ * 어휘 자체는 foundations 문서가 정의하므로, 새 heading은 그 목록에 먼저 추가한다.
  * 어휘에 없는 일회성 heading은 항목에서 icon을 직접 지정한다.
  */
 const FEATURE_ICONS: Record<string, IconName> = {

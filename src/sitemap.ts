@@ -39,13 +39,14 @@ export const SITEMAP: SitemapNode[] = [
   },
   {
     type: 'standalone',
-    id: 'signifier',
+    id: 'foundations',
     title: 'Foundations',
     icon: ICON_NAMES.DESIGN,
     children: [
-      { id: 'signifier', name: 'Overview' },
+      { id: 'foundations', name: 'Overview' },
       { id: 'layout', name: 'Layout' },
       { id: 'interaction', name: 'Interaction' },
+      { id: 'feedback', name: 'Feedback' },
       { id: 'overlay', name: 'Overlay' },
       { id: 'content', name: 'Content' },
       { id: 'elevation', name: 'Elevation' },

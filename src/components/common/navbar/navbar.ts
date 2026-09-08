@@ -31,7 +31,7 @@ export class Navbar extends LitElement {
   }
 
   private get bottomBarItems() {
-    return SITEMAP.filter(node => node.type === 'standalone' && node.id !== 'signifier').map(
+    return SITEMAP.filter(node => node.type === 'standalone' && node.id !== 'foundations').map(
       node => ({
         label: node.title,
         href: `${node.id}.html`,
