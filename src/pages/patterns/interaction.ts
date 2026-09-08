@@ -1,9 +1,29 @@
 import '@/components/common/table'
 import { html } from 'lit'
 
+import type { ComponentReferenceItemData } from '@/components/domains/component/component-references'
+
 import { renderLayout } from '@/components/layouts/base-layouts'
 
-const selectionComponentRows = html`
+const componentReferences: ComponentReferenceItemData[] = [
+  {
+    href: 'https://m3.material.io/foundations/interaction/states/state-layers',
+    label: 'MD3 - State Layers',
+    external: true,
+  },
+  {
+    href: 'https://spectrum.adobe.com/page/states/',
+    label: 'Adobe Spectrum - States',
+    external: true,
+  },
+  {
+    href: 'https://carbondesignsystem.com/patterns/read-only-states-pattern/',
+    label: 'Carbon - Read-only States',
+    external: true,
+  },
+]
+
+const checkedComponentRows = html`
   <tr>
     <th scope="row"><code>mm-checkbox-group</code></th>
     <td><code>checked</code></td>
@@ -17,45 +37,11 @@ const selectionComponentRows = html`
     <td><code>aria-checked</code></td>
   </tr>
   <tr>
-    <th scope="row"><code>mm-filter-button-group</code></th>
-    <td><code>aria-pressed</code></td>
-  </tr>
-  <tr>
-    <th scope="row"><code>mm-select</code></th>
-    <td><code>aria-selected</code></td>
-  </tr>
-  <tr>
     <th scope="row">
       <code>mm-menu-item-radio</code>
       <code>mm-menu-item-checkbox</code>
     </th>
     <td><code>aria-checked</code></td>
-  </tr>
-`
-const pressedComponentRows = html`
-  <tr>
-    <th scope="row"><code>mm-toggle-button</code></th>
-    <td>단독</td>
-  </tr>
-  <tr>
-    <th scope="row"><code>mm-follow-button</code></th>
-    <td>단독</td>
-  </tr>
-  <tr>
-    <th scope="row"><code>mm-bookmark-button</code></th>
-    <td>단독</td>
-  </tr>
-  <tr>
-    <th scope="row"><code>mm-reveal-button</code></th>
-    <td>단독</td>
-  </tr>
-  <tr>
-    <th scope="row"><code>mm-toggle-button-group</code></th>
-    <td>그룹</td>
-  </tr>
-  <tr>
-    <th scope="row"><code>mm-filter-button-group</code></th>
-    <td>그룹</td>
   </tr>
 `
 const currentComponentRows = html`
@@ -199,7 +185,7 @@ const main = html`
   <main class="page">
     <mm-page-header
       heading="Interaction"
-      description="어떤 요소가 상호작용할 수 있는지, 그리고 상호작용할 때 어떻게 반응하는지를 일관된 시각 언어로 정의합니다."
+      description="어떤 요소가 상호작용할 수 있는지, 그리고 상호작용할 때 어떻게 반응하는지를 일관된 시각 언어로 정의합니다. 상태는 색상만으로 전달하지 않습니다."
     ></mm-page-header>
 
     <mm-content-section-list>
@@ -226,132 +212,41 @@ const main = html`
         </mm-grid>
       </mm-content-section>
 
-      <mm-content-section heading-level="3" heading="States">
+      <mm-content-section heading-level="3" heading="Interaction tokens">
         <mm-paragraph>
-          상태 표현은 컴포넌트가 소유하고 아래 토큰을 공유합니다. 상태는 색상만으로 전달하지
-          않습니다.
+          상호작용 상태가 공유하는 토큰입니다. 상태 selector에서 속성을 다시 선언하지 않고 이 토큰을
+          재할당합니다.
         </mm-paragraph>
-        <mm-flex direction="column" gap="3">
-          <mm-list-item
-            icon="cursor-pointer"
-            size="small"
-            label="Hover"
-            description="포인터가 올라온 요소를 강조합니다."
-          ></mm-list-item>
-          <mm-list-item
-            icon="cube-scan"
-            size="small"
-            label="Focus"
-            description="키보드 위치를 항상 보이는 outline으로 표시합니다."
-          ></mm-list-item>
-          <mm-list-item
-            icon="mouse-button-left"
-            size="small"
-            label="Active"
-            description="누르는 순간의 눌림 피드백입니다."
-          ></mm-list-item>
-          <mm-list-item
-            icon="check-square"
-            size="small"
-            label="Pressed"
-            description="그룹 없이 스스로 눌림 상태를 유지하는 컨트롤입니다."
-          ></mm-list-item>
-          <mm-list-item
-            icon="check-circle"
-            size="small"
-            label="Selection"
-            description="선택은 그룹이 소유하며 값을 남기는 상태입니다."
-          ></mm-list-item>
-          <mm-list-item
-            icon="map-pin"
-            size="small"
-            label="Current"
-            description="지금 위치한 곳을 내비게이션에서 표시합니다."
-          ></mm-list-item>
-          <mm-list-item
-            icon="nav-arrow-down"
-            size="small"
-            label="Expanded"
-            description="펼침·접힘 여부를 토글 대상에 표시합니다."
-          ></mm-list-item>
-          <mm-list-item
-            icon="warning-triangle"
-            size="small"
-            label="Invalid"
-            description="입력값이 유효하지 않을 때 오류로 표시합니다."
-          ></mm-list-item>
-          <mm-list-item
-            icon="lock"
-            size="small"
-            label="Disabled"
-            description="투명도만이 아니라 커서와 동작 차단을 함께 줍니다."
-          ></mm-list-item>
-          <mm-list-item
-            icon="refresh"
-            size="small"
-            label="진행 중"
-            description="결과가 올 때까지 재실행을 막고 로딩을 노출합니다."
-          ></mm-list-item>
-        </mm-flex>
-        <mm-flex direction="column" gap="2">
-          <code>--interaction-focus-outline</code>
-          <code>--interaction-hover-background-color</code>
-          <code>--interaction-hover-lift</code>
-          <code>--interaction-active-background-color</code>
-          <code>--interaction-active-shadow</code>
-          <code>--interaction-selected-background-color</code>
-          <code>--interaction-selected-foreground-color</code>
-          <code>--interaction-selected-border-color</code>
-        </mm-flex>
-      </mm-content-section>
-
-      <mm-content-section heading-level="3" heading="Hover">
-        <mm-paragraph>
-          hover 처리는 요소가 무엇을 가졌는지에 따라 정해집니다. 상태 selector에서 속성을 다시
-          선언하지 않고, 평소 값을 담고 있는 컴포넌트 토큰에 아래 값을 재할당합니다.
-        </mm-paragraph>
-        <mm-table
-          .rows=${hoverRows}
-          caption="컴포넌트별 hover 처리와 재할당 값"
-          style="--table-height: auto"
-          columns='[
-            {"label": "컴포넌트", "width": "200px"},
-            {"label": "처리", "width": "120px"},
-            {"label": "언제", "width": "260px"},
-            {"label": "Selector", "width": "220px"},
-            {"label": "변경 값"}
-          ]'
-        ></mm-table>
-        <mm-paragraph>
-          <code>mm-marquee</code>
-          의
-          <code>pause-on-hover</code>
-          는 상태 표현이 아니라 포인터가 있는 동안만 애니메이션을 멈추는 기능이라 위 표에 포함하지
-          않습니다.
-        </mm-paragraph>
-      </mm-content-section>
-      <mm-content-section heading-level="3" heading="Selection">
-        <mm-paragraph>
-          선택은 값을 남기는 상호작용으로, 그룹 단위 소유·표현 규칙을 따릅니다.
-        </mm-paragraph>
-        <mm-text-list
-          variant="check"
-          texts='[
-            "눌러 실행되는 항목이나 화면을 바꾸는 탭처럼 결과가 화면 변화로 드러나는 상호작용은 값을 남기지 않는다.",
-            "선택 상태는 항목이 아니라 그룹이 소유하며, 하나를 고르면 value·여럿을 고르면 values로 두고 바뀌면 change로 알린다. 하나의 값을 이루는 항목 사이는 화살표 키로 옮기고 Tab은 그룹을 한 번만 지난다.",
-            "네이티브 attribute가 있으면 그것을, 없으면 역할에 맞는 ARIA attribute를 쓰고 스킨도 같은 selector를 기준으로 둔다."
-          ]'
-        ></mm-text-list>
-        <mm-table
-          .rows=${selectionComponentRows}
-          caption="선택 컴포넌트의 용도와 상태 attribute"
-          style="--table-width: fit-content"
-          columns='[
-            {"label": "컴포넌트", "width": "220px"},
-            {"label": "상태"}
-          ]'
-        ></mm-table>
         <mm-grid columns="3" gap="3">
+          <mm-flex direction="column" gap="2">
+            <div
+              class="swatch-chip"
+              style="outline: var(--interaction-focus-outline); outline-offset: -4px"
+            ></div>
+            <mm-caption>--interaction-focus-outline</mm-caption>
+          </mm-flex>
+          <mm-flex direction="column" gap="2">
+            <div
+              class="swatch-chip"
+              style="background: var(--interaction-hover-background-color)"
+            ></div>
+            <mm-caption>--interaction-hover-background-color</mm-caption>
+          </mm-flex>
+          <mm-flex direction="column" gap="2">
+            <div class="swatch-chip"></div>
+            <mm-caption>--interaction-hover-lift</mm-caption>
+          </mm-flex>
+          <mm-flex direction="column" gap="2">
+            <div
+              class="swatch-chip"
+              style="background: var(--interaction-active-background-color)"
+            ></div>
+            <mm-caption>--interaction-active-background-color</mm-caption>
+          </mm-flex>
+          <mm-flex direction="column" gap="2">
+            <div class="swatch-chip" style="box-shadow: var(--interaction-active-shadow)"></div>
+            <mm-caption>--interaction-active-shadow</mm-caption>
+          </mm-flex>
           <mm-flex direction="column" gap="2">
             <div
               class="swatch-chip"
@@ -384,21 +279,185 @@ const main = html`
         </style>
       </mm-content-section>
 
-      <mm-content-section heading-level="3" heading="Pressed">
+      <mm-content-section heading-level="3" heading="States">
         <mm-paragraph>
-          그룹 없이 스스로 눌림 상태를 유지하는 컨트롤은
-          <code>aria-pressed</code>
-          로 표현하고, Selection과 같은 강조 토큰을 공유합니다.
+          상태 표현은 각 컴포넌트가 소유하며, Interaction tokens를 상태별로 재할당해 나타냅니다.
         </mm-paragraph>
+        <mm-flex direction="column" gap="3">
+          <mm-list-item
+            icon="cursor-pointer"
+            size="small"
+            label="Hover"
+            description="포인터가 올라와 있다는 표시입니다."
+          ></mm-list-item>
+          <mm-list-item
+            icon="cube-scan"
+            size="small"
+            label="Focus"
+            description="키보드가 지금 이 요소에 있다는 표시입니다."
+          ></mm-list-item>
+          <mm-list-item
+            icon="mouse-button-left"
+            size="small"
+            label="Active"
+            description="지금 누르고 있다는 표시입니다."
+          ></mm-list-item>
+          <mm-list-item
+            icon="check-square"
+            size="small"
+            label="Pressed"
+            description="그룹 없이 스스로 눌린 상태를 유지한다는 표시입니다."
+          ></mm-list-item>
+          <mm-list-item
+            icon="check"
+            size="small"
+            label="Checked"
+            description="컨트롤의 on/off 값이 켜져 있다는 표시입니다."
+          ></mm-list-item>
+          <mm-list-item
+            icon="check-circle"
+            size="small"
+            label="Selected"
+            description="목록에서 고른 항목이라는 표시입니다."
+          ></mm-list-item>
+          <mm-list-item
+            icon="map-pin"
+            size="small"
+            label="Current"
+            description="내비게이션에서 지금 위치한 곳이라는 표시입니다."
+          ></mm-list-item>
+          <mm-list-item
+            icon="nav-arrow-down"
+            size="small"
+            label="Expanded"
+            description="토글 대상이 펼쳐져 있다는 표시입니다."
+          ></mm-list-item>
+          <mm-list-item
+            icon="warning-triangle"
+            size="small"
+            label="Invalid"
+            description="입력값이 유효하지 않다는 표시입니다."
+          ></mm-list-item>
+          <mm-list-item
+            icon="lock"
+            size="small"
+            label="Disabled"
+            description="지금은 조작을 받지 않는다는 표시입니다."
+          ></mm-list-item>
+          <mm-list-item
+            icon="eye-circle"
+            size="small"
+            label="Read-only (보류)"
+            description="disabled와 달리 이동·낭독은 되고 수정만 막힌다는 표시입니다."
+          ></mm-list-item>
+          <mm-list-item
+            icon="refresh"
+            size="small"
+            label="진행 중"
+            description="결과가 올 때까지 다시 실행할 수 없다는 표시입니다."
+          ></mm-list-item>
+        </mm-flex>
+      </mm-content-section>
+
+      <mm-content-section heading-level="3" heading="Hover">
+        <mm-paragraph>
+          hover 처리는 요소가 무엇을 가졌는지에 따라 정해집니다. 상태 selector에서 속성을 다시
+          선언하지 않고, 평소 값을 담고 있는 컴포넌트 토큰에 아래 값을 재할당합니다.
+        </mm-paragraph>
+        <mm-surface variant="filled">
+          <mm-grid columns="3" gap="4">
+            <mm-flex direction="column" gap="2">
+              <mm-menu-item-action icon="folder" label="배경 채움"></mm-menu-item-action>
+              <mm-caption>
+                배경을 가진 면이면 hover에 --interaction-hover-background-color로 채운다.
+              </mm-caption>
+            </mm-flex>
+            <mm-flex direction="column" gap="2">
+              <mm-foundation-item
+                href="#"
+                heading="떠오름"
+                description="채울 배경이 없는 떠 있는 표면."
+              ></mm-foundation-item>
+              <mm-caption>hover에 --interaction-hover-lift만큼 떠오른다.</mm-caption>
+            </mm-flex>
+            <mm-flex direction="column" gap="2">
+              <mm-button variant="tertiary">테두리 드러내기</mm-button>
+              <mm-caption>
+                평소 테두리를 감춘 컨트롤이면 hover에 border-color를 드러낸다.
+              </mm-caption>
+            </mm-flex>
+          </mm-grid>
+        </mm-surface>
         <mm-table
-          .rows=${pressedComponentRows}
-          caption="Pressed 컴포넌트의 소유 방식"
-          style="--table-width: fit-content"
+          .rows=${hoverRows}
+          caption="컴포넌트별 hover 처리와 재할당 값"
+          style="--table-height: auto"
           columns='[
-            {"label": "컴포넌트", "width": "220px"},
-            {"label": "소유"}
+            {"label": "컴포넌트", "width": "200px"},
+            {"label": "처리", "width": "120px"},
+            {"label": "언제", "width": "260px"},
+            {"label": "Selector", "width": "220px"},
+            {"label": "변경 값"}
           ]'
         ></mm-table>
+        <mm-paragraph>
+          <code>mm-marquee</code>
+          의
+          <code>pause-on-hover</code>
+          는 상태 표현이 아니라 포인터가 있는 동안만 애니메이션을 멈추는 기능이라 위 표에 포함하지
+          않습니다.
+        </mm-paragraph>
+      </mm-content-section>
+      <mm-content-section heading-level="3" heading="Pressed">
+        <mm-paragraph>
+          스스로 눌림 상태를 유지하는 컨트롤은
+          <code>aria-pressed</code>
+          로 표현하고, 선택 상태와 같은 강조 토큰을 공유합니다.
+          <code>mm-toggle-button</code>
+          과 그 시맨틱 컴포넌트(follow·bookmark·reveal), toggle·filter 버튼 그룹이 씁니다.
+        </mm-paragraph>
+      </mm-content-section>
+
+      <mm-content-section heading-level="3" heading="Checked">
+        <mm-paragraph>
+          컨트롤 자체의 on/off 값입니다. 네이티브
+          <code>checked</code>
+          가 있으면 그것을, 없으면
+          <code>aria-checked</code>
+          를 씁니다.
+        </mm-paragraph>
+        <mm-text-list
+          variant="check"
+          texts='[
+            "눌러 실행되는 항목이나 화면을 바꾸는 탭처럼 결과가 화면 변화로 드러나는 상호작용은 값을 남기지 않는다.",
+            "상태는 항목이 아니라 그룹이 소유하며, 하나를 고르면 value·여럿을 고르면 values로 두고 바뀌면 change로 알린다. 하나의 값을 이루는 항목 사이는 화살표 키로 옮기고 Tab은 그룹을 한 번만 지난다.",
+            "스킨은 상태 attribute selector를 기준으로 두고, 강조에는 --interaction-selected-* 토큰을 함께 쓴다."
+          ]'
+        ></mm-text-list>
+        <mm-table
+          .rows=${checkedComponentRows}
+          caption="Checked 컴포넌트와 상태 attribute"
+          columns='[
+            {"label": "컴포넌트", "width": "220px"},
+            {"label": "상태"}
+          ]'
+        ></mm-table>
+      </mm-content-section>
+
+      <mm-content-section heading-level="3" heading="Selected">
+        <mm-paragraph>
+          컬렉션에서 고른 항목입니다.
+          <code>mm-select</code>
+          의 옵션이
+          <code>aria-selected</code>
+          로 고른 값을 나타내며, 그룹 소유·키보드·강조 토큰 규칙은 Checked와 같습니다.
+        </mm-paragraph>
+        <mm-paragraph>
+          <code>mm-tab</code>
+          도
+          <code>aria-selected</code>
+          로 활성 탭을 나타내지만, 폼 값이 아니라 지금 보이는 패널을 가리킵니다.
+        </mm-paragraph>
       </mm-content-section>
 
       <mm-content-section heading-level="3" heading="Current">
@@ -414,7 +473,6 @@ const main = html`
         <mm-table
           .rows=${currentComponentRows}
           caption="Current 컴포넌트와 값"
-          style="--table-width: fit-content"
           columns='[
             {"label": "컴포넌트", "width": "180px"},
             {"label": "값", "width": "100px"}
@@ -431,7 +489,6 @@ const main = html`
         <mm-table
           .rows=${expandedComponentRows}
           caption="Expanded 컴포넌트와 펼치는 대상"
-          style="--table-width: fit-content"
           columns='[
             {"label": "컴포넌트", "width": "220px"},
             {"label": "펼치는 대상"}
@@ -439,6 +496,8 @@ const main = html`
         ></mm-table>
       </mm-content-section>
     </mm-content-section-list>
+
+    <mm-component-references .items=${componentReferences}></mm-component-references>
   </main>
 `
 
