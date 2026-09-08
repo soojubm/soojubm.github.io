@@ -53,6 +53,22 @@ export const focusRing = css`
   outline-offset: 2px;
 `
 
+/**
+ * 화면에서만 감추고 접근성 트리에는 남기는 선언. 감출 요소의 선택자 안에 펼쳐 쓴다.
+ * display·visibility로 감추면 스크린리더에서도 사라지므로 클립으로 밀어낸다.
+ */
+export const visuallyHidden = css`
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+`
+
 export const scrollbarStyles = css`
   &::-webkit-scrollbar {
     width: 0.5rem;

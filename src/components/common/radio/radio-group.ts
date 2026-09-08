@@ -48,7 +48,7 @@ export class RadioGroup extends LitElement {
         ?disabled=${this.disabled}
         @change=${this.group.handleItemChange}
       >
-        <legend class="visually-hidden">${this.legend}</legend>
+        <legend>${this.legend}</legend>
         <slot @slotchange=${this.group.handleSlotChange}></slot>
       </fieldset>
     `

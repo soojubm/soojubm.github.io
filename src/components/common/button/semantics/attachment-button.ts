@@ -2,6 +2,7 @@ import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, query } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
+import { visuallyHidden } from '@/stylesheets/shared.styles'
 import { emit } from '@/utils'
 import '@/components/common/button/semantics/add-button'
 
@@ -13,12 +14,7 @@ export class AttachmentButton extends LitElement {
     }
 
     input {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
+      ${visuallyHidden};
     }
   `
 
