@@ -97,7 +97,7 @@ const main = html`
 
     <mm-component-section heading="Radio?" description="">
       <mm-surface variant="elevated">
-        <mm-radio name="gender" id="option1" value="">
+        <mm-radio name="gender" value="">
           <mm-paragraph color="light">Standard License</mm-paragraph>
           <mm-paragraph>₩ 2,000</mm-paragraph>
           <mm-tag>460P 적립</mm-tag>

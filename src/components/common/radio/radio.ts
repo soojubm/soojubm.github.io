@@ -4,6 +4,7 @@ import { ifDefined } from 'lit/directives/if-defined.js'
 
 import { visuallyHiddenInputStyles } from '@/components/common/input/input.styles'
 import { radioStyles } from '@/components/common/radio/radio.styles'
+import { ToggleController } from '@/controllers/toggle-controller'
 import { emit, uniqueId } from '@/utils'
 import '@/components/common/text/semantics/paragraph'
 
@@ -11,31 +12,34 @@ import '@/components/common/text/semantics/paragraph'
 export class Radio extends LitElement {
   static styles = [visuallyHiddenInputStyles, radioStyles]
 
-  // 인스턴스 전역 내장 프로퍼티인 id 오버라이드 데코레이터 제거
   @property({ type: String }) name = ''
   @property({ type: String }) value = ''
   @property({ type: Boolean }) checked = false
   @property({ type: Boolean }) disabled = false
 
-  // 인스턴스 생성 시 단 한 번만 고유 ID 발급
-  private generatedId = uniqueId('radio')
+  // shadow 안에서만 쓰는 label 연결용 id라 호스트의 id와 섞지 않는다.
+  private inputId = uniqueId('radio')
+  private toggle = new ToggleController(this, {
+    getValue: () => this.checked,
+    setValue: checked => {
+      this.checked = checked
+    },
+    isDisabled: () => this.disabled,
+  })
 
   render() {
-    // 외부에서 지정한 id가 있으면 쓰고, 없으면 자동 생성된 고유 ID 사용
-    const inputId = this.id || this.generatedId
-
     return html`
       <div>
         <input
           type="radio"
-          id=${inputId}
+          id=${this.inputId}
           name=${ifDefined(this.name || undefined)}
           .value=${this.value || ''}
           .checked=${this.checked}
           ?disabled=${this.disabled}
           @change=${this.handleInputChange}
         />
-        <label for=${inputId}>
+        <label for=${this.inputId}>
           <span class="indicator"></span>
           <mm-paragraph>
             <slot></slot>
@@ -48,7 +52,8 @@ export class Radio extends LitElement {
   private handleInputChange(event: Event) {
     event.stopPropagation() // 네이티브 이벤트 전파 차단
 
-    this.checked = (event.target as HTMLInputElement).checked
+    const target = event.target as HTMLInputElement
+    if (!this.toggle.set(target.checked)) return
 
     emit(this, 'change', { checked: this.checked, value: this.value })
   }
