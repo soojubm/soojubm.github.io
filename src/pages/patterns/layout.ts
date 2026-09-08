@@ -4,7 +4,7 @@ import './layout.css'
 import { renderLayout } from '@/components/layouts/base-layouts'
 
 const main = html`
-  <main class="page">
+  <mm-page>
     <mm-page-header
       heading="Layout"
       description="컨테이너 너비, 배경 대비, 표면 대비는 장식이 아니라 페이지의 성격과 작업 맥락을 담는 신호입니다. 사용자가 의식적으로 알아차리지는 못하지만, 일관되게 쓰면 맥락이 달라졌다는 미묘한 감각을 전달합니다."
@@ -91,7 +91,7 @@ const main = html`
         ></mm-text-list>
       </mm-content-section>
     </mm-content-section-list>
-  </main>
+  </mm-page>
 `
 
 document.addEventListener('DOMContentLoaded', () => {

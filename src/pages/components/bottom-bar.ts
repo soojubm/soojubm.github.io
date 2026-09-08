@@ -31,7 +31,7 @@ const navItems: BottomBarItem[] = [
 ]
 
 const main = html`
-  <main class="page">
+  <mm-page>
     <mm-page-header
       heading="Bottom Bar"
       description="작은 화면 하단에서 주요 목적지 사이를 이동하는 내비게이션입니다."
@@ -47,7 +47,7 @@ const main = html`
       <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
     </mm-component-guide>
     <mm-component-related .items=${relatedComponents}></mm-component-related>
-  </main>
+  </mm-page>
 `
 
 document.addEventListener('DOMContentLoaded', () => {

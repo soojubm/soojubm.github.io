@@ -47,7 +47,7 @@ const secondaryAction: ActionConfig = {
 }
 
 const main = html`
-  <main class="page">
+  <mm-page>
     <mm-page-header
       heading="Result"
       description="실행 결과를 피드백하는 섹션 또는 페이지 단위의 컴포넌트."
@@ -90,7 +90,7 @@ const main = html`
       </mm-paragraph-group>
     </mm-component-guide>
     <mm-component-related .items=${relatedComponents}></mm-component-related>
-  </main>
+  </mm-page>
 `
 
 document.addEventListener('DOMContentLoaded', () => {

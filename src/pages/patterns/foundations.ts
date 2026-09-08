@@ -268,7 +268,7 @@ const iconCategoryOptions: FilterOption[] = [
 */
 
 const main = html`
-  <main class="page">
+  <mm-page>
     <mm-page-header
       heading="Foundations"
       description="제품 전체가 공유하는 시각 언어의 기본 축입니다. 각 문서가 하나의 축을 정의합니다."
@@ -417,7 +417,7 @@ const main = html`
         </mm-paragraph>
       </mm-content-section>
     </mm-flex>
-  </main>
+  </mm-page>
 `
 
 document.addEventListener('DOMContentLoaded', () => {

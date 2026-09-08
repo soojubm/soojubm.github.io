@@ -44,7 +44,7 @@ const componentFeatures: ComponentFeatureItem[] = [
 const groupAvatars = ['', '', '', '']
 
 const main = html`
-  <main class="page">
+  <mm-page>
     <mm-page-header
       heading="Avatar"
       description="사용자나 회사 등 개체를 대표하는 시각 정보입니다. 정보 더미의 주체로서 인접한 정보 더미 중 최상위 위계를 갖습니다."
@@ -100,23 +100,9 @@ const main = html`
       "콘텐츠 — 이미지 &gt; 아이콘 &gt; 이니셜 &gt; 기본 아이콘 순서로 폴백합니다."
     ]'
       .code=${'<mm-avatar variant="secondary" size="80"></mm-avatar>'}
+      .markers=${[{ placement: 'inline-start' }, { placement: 'block-end', inset: true }]}
     >
       <mm-avatar size="80" variant="secondary"></mm-avatar>
-      <mm-list-marker
-        variant="number"
-        value="1"
-        style="position: absolute; left: -1.75rem; top: 50%; transform: translateY(-50%)"
-      ></mm-list-marker>
-      <mm-list-marker
-        variant="number"
-        value="2"
-        style="
-        position: absolute;
-        left: 50%;
-        top: calc(50% + 1.25rem);
-        transform: translate(-50%, -50%);
-      "
-      ></mm-list-marker>
     </mm-component-anatomy>
 
     <mm-component-section
@@ -137,7 +123,7 @@ const main = html`
       <mm-avatar-group .avatars=${groupAvatars} label="수줍이 외 3명"></mm-avatar-group>
     </mm-component-section>
     <mm-component-related .items=${relatedComponents}></mm-component-related>
-  </main>
+  </mm-page>
 `
 
 document.addEventListener('DOMContentLoaded', () => {

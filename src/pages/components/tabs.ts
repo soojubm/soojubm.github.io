@@ -92,7 +92,7 @@ const componentFeatures: ComponentFeatureItem[] = [
 ]
 
 const main = html`
-  <main class="page js-tab">
+  <mm-page>
     <mm-page-header
       heading="Tabs"
       description="페이지 내에서 같은 맥락으로 분류된 콘텐츠 뷰를 전환합니다."
@@ -173,7 +173,7 @@ const main = html`
     <mm-component-related .items=${relatedComponents}></mm-component-related>
 
     <mm-component-references .items=${componentReferences}></mm-component-references>
-  </main>
+  </mm-page>
 `
 
 document.addEventListener('DOMContentLoaded', () => {

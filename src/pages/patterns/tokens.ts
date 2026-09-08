@@ -463,7 +463,7 @@ const zIndexTokenItems: string[] = [
 ]
 
 const main = html`
-  <main class="page">
+  <mm-page>
     <mm-flex direction="column" gap="16">
       <mm-page-header
         heading="Tokens"
@@ -738,7 +738,7 @@ const main = html`
 
       <mm-component-references .items=${componentReferences}></mm-component-references>
     </mm-flex>
-  </main>
+  </mm-page>
 `
 
 document.addEventListener('DOMContentLoaded', () => {

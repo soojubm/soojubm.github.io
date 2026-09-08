@@ -35,7 +35,7 @@ const componentFeatures: ComponentFeatureItem[] = [
 ]
 
 const main = html`
-  <main class="page">
+  <mm-page>
     <mm-page-header
       heading="Switch"
       description="켜고 끄는 옵션입니다. 사용자는 실행한 옵션의 결과를 즉시 확인할 수 있습니다."
@@ -65,28 +65,16 @@ const main = html`
       "레이블 — 설정 항목을 설명하는 텍스트."
     ]'
       .code=${'<mm-switch checked>뉴스레터 받아보기</mm-switch>'}
+      .markers=${[
+        { placement: 'block-start', offset: '0.75rem' },
+        { placement: 'block-end', offset: '1.25rem' },
+        { placement: 'inline-end' },
+      ]}
     >
       <mm-switch checked>뉴스레터 받아보기</mm-switch>
-
-      <!-- 번호 마커 -->
-      <mm-list-marker
-        variant="number"
-        value="1"
-        style="position: absolute; left: 0.25rem; top: -1.75rem"
-      ></mm-list-marker>
-      <mm-list-marker
-        variant="number"
-        value="2"
-        style="position: absolute; left: 1.25rem; bottom: -1.75rem; transform: translateX(-50%)"
-      ></mm-list-marker>
-      <mm-list-marker
-        variant="number"
-        value="3"
-        style="position: absolute; right: -1.75rem; top: 50%; transform: translateY(-50%)"
-      ></mm-list-marker>
     </mm-component-anatomy>
     <mm-component-related .items=${relatedComponents}></mm-component-related>
-  </main>
+  </mm-page>
 `
 
 document.addEventListener('DOMContentLoaded', () => {

@@ -8,7 +8,7 @@ import '@/components/domains/media-card'
 import { renderList, getCountries, loadJson } from '../list-page'
 
 const main = html`
-  <main class="page">
+  <mm-page>
     <mm-flex direction="column" gap="4">
       <mm-page-header heading="독서 목록" description="읽은 책을 기록합니다."></mm-page-header>
 
@@ -25,7 +25,7 @@ const main = html`
         <mm-show-more-button class="js-more-btn" label="더 보기"></mm-show-more-button>
       </div>
     </mm-flex>
-  </main>
+  </mm-page>
 `
 
 interface Book {

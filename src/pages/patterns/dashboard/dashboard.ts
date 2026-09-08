@@ -35,7 +35,7 @@ const renderIndexCard = ({ icon, label, value, tone, change }: typeof indexCards
 `
 
 const main = html`
-  <main class="page dashboard">
+  <mm-page class="dashboard">
     <mm-page-header heading="Dashboard" description="한국 증시"></mm-page-header>
 
     <mm-tab-list value="daily" variant="pill">
@@ -117,7 +117,7 @@ const main = html`
       </mm-surface>
       <mm-surface radius="large" tone="green"></mm-surface>
     </mm-grid>
-  </main>
+  </mm-page>
 `
 
 document.addEventListener('DOMContentLoaded', () => {

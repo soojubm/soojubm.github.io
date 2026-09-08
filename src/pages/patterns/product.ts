@@ -3,7 +3,7 @@ import { html } from 'lit'
 import { renderLayout } from '@/components/layouts/base-layouts'
 
 const main = html`
-  <main class="product">
+  <mm-page class="product">
     <style>
       .product {
         padding: 0 var(--layout-padding-inline);
@@ -280,7 +280,7 @@ const main = html`
         </section>
       </mm-flex>
     </section>
-  </main>
+  </mm-page>
 
   <mm-sheet
     id="cart-sheet"

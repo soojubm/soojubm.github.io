@@ -1,4 +1,4 @@
-/* 사이드바가 열렸을 때 콘텐츠(.page)와 mm-footer가 밀려나는 폭은
+/* 사이드바가 열렸을 때 mm-page와 mm-footer가 밀려나는 폭은
    body에 노출하는 이 전역 변수로만 전달한다. */
 body {
   --sidebar-content-shift: var(--layout-padding-inline);

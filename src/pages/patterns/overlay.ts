@@ -64,7 +64,7 @@ const classificationRows = html`
 `
 
 const main = html`
-  <main class="page">
+  <mm-page>
     <mm-page-header
       heading="Overlay"
       description="화면 위로 뜨는 표면은 시각적 형태가 아니라 행동 계약으로 구분합니다. 행동(modality·dismiss·reference)은 컨트롤러가 소유하고, 외형(surface·width·placement)은 각 컴포넌트가 조합합니다."
@@ -157,7 +157,7 @@ const main = html`
         </mm-paragraph>
       </mm-content-section>
     </mm-content-section-list>
-  </main>
+  </mm-page>
 `
 
 document.addEventListener('DOMContentLoaded', () => {

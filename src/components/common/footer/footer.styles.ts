@@ -10,6 +10,7 @@ export const footerStyles = css`
     padding-left: var(--sidebar-content-shift);
     margin: 0 auto;
     position: relative;
+    transition: padding-left var(--transition-duration) var(--transition-easing);
   }
 
   .footer address mm-paragraph {

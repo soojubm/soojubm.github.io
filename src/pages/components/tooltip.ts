@@ -37,7 +37,7 @@ const componentFeatures: ComponentFeatureItem[] = [
 ]
 
 const main = html`
-  <main class="page">
+  <mm-page>
     <mm-page-header
       heading="Tooltip"
       description="용어를 설명하거나 정보의 근거를 보충합니다."
@@ -139,7 +139,7 @@ const main = html`
 
     <mm-component-aka items='["Coachmark"]'></mm-component-aka>
     <mm-component-related .items=${relatedComponents}></mm-component-related>
-  </main>
+  </mm-page>
 `
 
 document.addEventListener('DOMContentLoaded', () => {

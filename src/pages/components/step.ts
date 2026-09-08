@@ -22,7 +22,7 @@ const componentProps: ComponentPropItemData[] = [
 const componentFeatures: ComponentFeatureItem[] = []
 
 const main = html`
-  <main class="page">
+  <mm-page>
     <mm-page-header heading="Step " description="Workflow"></mm-page-header>
 
     <mm-component-aka items='["Timeline", "Stepper"]'></mm-component-aka>
@@ -281,7 +281,7 @@ const main = html`
       </mm-surface>
     </mm-component-guide>
     <mm-component-related .items=${relatedComponents}></mm-component-related>
-  </main>
+  </mm-page>
 `
 
 document.addEventListener('DOMContentLoaded', () => {

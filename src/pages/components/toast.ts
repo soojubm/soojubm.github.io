@@ -49,7 +49,7 @@ function setupToastTrigger() {
 }
 
 const main = html`
-  <main class="page">
+  <mm-page>
     <mm-page-header
       heading="Toast"
       description="작업 결과를 확인 없이 알리고 스스로 사라지는 transient non-modal 레이어입니다."
@@ -75,7 +75,7 @@ const main = html`
     </mm-component-guide>
 
     <mm-component-related .items=${relatedComponents}></mm-component-related>
-  </main>
+  </mm-page>
 `
 
 document.addEventListener('DOMContentLoaded', () => {

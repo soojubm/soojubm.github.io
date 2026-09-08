@@ -129,7 +129,7 @@ const chipNamingRows = html`
 `
 
 const main = html`
-  <main class="page js-tab">
+  <mm-page>
     <mm-page-header
       heading="Button"
       description="페이지 이동이나 양식 제출 등 사용자 여정의 핵심 과업입니다. (이 디스크립션은 칩이 있었을 때 유효)"
@@ -192,23 +192,13 @@ const main = html`
       "레이블 — 실행 결과를 예측할 수 있는 동사형 텍스트."
     ]'
       .code=${'<mm-button variant="primary" size="large" icon="send-diagonal">보내기</mm-button>'}
+      .markers=${[
+        { placement: 'inline-start' },
+        { placement: 'block-end', offset: '1.75rem' },
+        { placement: 'block-end', offset: 'calc(100% - 1.5rem)' },
+      ]}
     >
       <mm-button variant="primary" size="large" icon="send-diagonal">보내기</mm-button>
-      <mm-list-marker
-        variant="number"
-        value="1"
-        style="position: absolute; left: -1.75rem; top: 50%; transform: translateY(-50%)"
-      ></mm-list-marker>
-      <mm-list-marker
-        variant="number"
-        value="2"
-        style="position: absolute; left: 1.75rem; bottom: -1.75rem; transform: translateX(-50%)"
-      ></mm-list-marker>
-      <mm-list-marker
-        variant="number"
-        value="3"
-        style="position: absolute; right: 1.5rem; bottom: -1.75rem; transform: translateX(50%)"
-      ></mm-list-marker>
     </mm-component-anatomy>
 
     <mm-component-section
@@ -286,7 +276,7 @@ const main = html`
     <mm-component-related .items=${relatedComponents}></mm-component-related>
 
     <mm-component-references .items=${componentReferences}></mm-component-references>
-  </main>
+  </mm-page>
 `
 
 document.addEventListener('DOMContentLoaded', () => {

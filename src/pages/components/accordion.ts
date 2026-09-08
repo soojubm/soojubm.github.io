@@ -54,7 +54,7 @@ const componentFeatures: ComponentFeatureItem[] = [
 ]
 
 const main = html`
-  <main class="page">
+  <mm-page>
     <mm-page-header
       heading="Accordion"
       description="콘텐츠를 펼치거나 접어 필요한 정보만 선택적으로 볼 수 있게 합니다. 반드시 숙지해야 할 중요 정보에는 사용하지 않아야 합니다."
@@ -108,26 +108,20 @@ const main = html`
       "패널 — open일 때 드러나는 콘텐츠 영역."
     ]'
       .code=${'<mm-accordion-item summary="질문" open>답변</mm-accordion-item>'}
+      .markers=${[
+        { placement: 'inline-start', offset: '1.25rem' },
+        { placement: 'inline-start', offset: 'calc(100% - 0.5rem)' },
+      ]}
     >
       <mm-accordion-item summary="서비스를 탈퇴하고 싶어요." open style="width: 100%">
         <mm-paragraph>마이페이지 → 계정 설정 → 회원 탈퇴 순서로 진행하시면 됩니다.</mm-paragraph>
       </mm-accordion-item>
-      <mm-list-marker
-        variant="number"
-        value="1"
-        style="position: absolute; left: 1.5rem; top: 1.25rem; transform: translateY(-50%)"
-      ></mm-list-marker>
-      <mm-list-marker
-        variant="number"
-        value="2"
-        style="position: absolute; left: 1.5rem; bottom: 0.5rem; transform: translateY(-50%)"
-      ></mm-list-marker>
     </mm-component-anatomy>
 
     <mm-component-related .items=${relatedComponents}></mm-component-related>
 
     <mm-component-references .items=${componentReferences}></mm-component-references>
-  </main>
+  </mm-page>
 `
 
 document.addEventListener('DOMContentLoaded', () => {

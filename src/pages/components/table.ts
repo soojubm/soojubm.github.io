@@ -121,7 +121,7 @@ const rows = html`
 `
 
 const main = html`
-  <main class="page" aria-label="site">
+  <mm-page>
     <mm-page-header heading="Table" description="표와 관련된 컴포넌트 및 패턴들."></mm-page-header>
     <mm-component-example>
       <header
@@ -177,7 +177,7 @@ const main = html`
     </mm-component-guide>
 
     <mm-component-related .items=${relatedComponents}></mm-component-related>
-  </main>
+  </mm-page>
 `
 
 document.addEventListener('DOMContentLoaded', () => {

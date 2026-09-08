@@ -6,9 +6,9 @@ import { renderLayout } from '@/components/layouts/base-layouts'
 import { SITEMAP, type SitemapNode } from '@/sitemap'
 
 const main = html`
-  <main class="page">
+  <mm-page>
     <nav class="js-all-menu" aria-label="전체메뉴"></nav>
-  </main>
+  </mm-page>
 `
 
 document.addEventListener('DOMContentLoaded', () => {

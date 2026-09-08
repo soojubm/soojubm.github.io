@@ -104,7 +104,7 @@ const genreOptions: FilterOption[] = [
 ]
 
 const main = html`
-  <main class="page">
+  <mm-page>
     <mm-page-header
       heading="ToggleButton"
       description="클릭하면 선택/비선택 상태가 전환되는 버튼입니다. 독립적인 on/off 토글과, 단일 선택 세그먼트(ToggleButtonGroup)로 확장됩니다."
@@ -139,29 +139,14 @@ const main = html`
       .code=${`<mm-toggle-button-group
   options='[{"value":"list","icon":"table-rows","label":"목록"},{"value":"grid","icon":"view-grid","label":"그리드"}]'
 ></mm-toggle-button-group>`}
+      .markers=${[
+        { placement: 'inline-start' },
+        { placement: 'block-start' },
+        { placement: 'block-end', offset: '25%' },
+        { placement: 'block-end' },
+      ]}
     >
       <mm-toggle-button-group .options=${anatomyViewOptions}></mm-toggle-button-group>
-
-      <mm-list-marker
-        variant="number"
-        value="1"
-        style="position: absolute; left: -1.75rem; top: 50%; transform: translateY(-50%)"
-      ></mm-list-marker>
-      <mm-list-marker
-        variant="number"
-        value="2"
-        style="position: absolute; left: 50%; top: -1.75rem; transform: translateX(-50%)"
-      ></mm-list-marker>
-      <mm-list-marker
-        variant="number"
-        value="3"
-        style="position: absolute; left: 25%; bottom: -1.75rem; transform: translateX(-50%)"
-      ></mm-list-marker>
-      <mm-list-marker
-        variant="number"
-        value="4"
-        style="position: absolute; left: 50%; bottom: -1.75rem; transform: translateX(-50%)"
-      ></mm-list-marker>
     </mm-component-anatomy>
 
     <mm-component-section
@@ -234,7 +219,7 @@ const main = html`
     <mm-component-related .items=${relatedComponents}></mm-component-related>
 
     <mm-component-references .items=${componentReferences}></mm-component-references>
-  </main>
+  </mm-page>
 `
 
 document.addEventListener('DOMContentLoaded', () => {

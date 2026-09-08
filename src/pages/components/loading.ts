@@ -25,7 +25,7 @@ const componentFeatures: ComponentFeatureItem[] = [
 ]
 
 const main = html`
-  <main class="page">
+  <mm-page>
     <mm-page-header
       heading="Loading"
       description="비동기 작업의 진행 중 상태를 나타냅니다."
@@ -70,7 +70,7 @@ const main = html`
       </div>
     </mm-component-section>
     <mm-component-related .items=${relatedComponents}></mm-component-related>
-  </main>
+  </mm-page>
 `
 
 document.addEventListener('DOMContentLoaded', () => {

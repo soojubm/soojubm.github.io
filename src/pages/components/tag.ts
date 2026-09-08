@@ -40,7 +40,7 @@ const componentFeatures: ComponentFeatureItem[] = [
 ]
 
 const main = html`
-  <main class="page">
+  <mm-page>
     <mm-page-header
       heading="Tag"
       description="인접 요소나 부모 요소를 부연하는 시각 정보입니다. 상태, 카테고리, 키워드로 강조된 시각 정보는 사용자가 복잡한 정보 더미에서 중요한 정보를 우선적으로 파악하도록 돕습니다."
@@ -79,24 +79,13 @@ const main = html`
       "레이블 — 분류·상태를 나타내는 짧은 텍스트."
     ]'
       .code=${'<mm-tag tone="green" icon="check-circle">승인됨</mm-tag>'}
+      .markers=${[
+        { placement: 'inline-start' },
+        { placement: 'block-end', offset: '0.75rem' },
+        { placement: 'block-end', offset: 'calc(100% - 0.75rem)' },
+      ]}
     >
       <mm-tag tone="green" icon="check-circle">승인됨</mm-tag>
-
-      <mm-list-marker
-        variant="number"
-        value="1"
-        style="position: absolute; left: -1.75rem; top: 50%; transform: translateY(-50%)"
-      ></mm-list-marker>
-      <mm-list-marker
-        variant="number"
-        value="2"
-        style="position: absolute; left: 0.75rem; bottom: -1.75rem; transform: translateX(-50%)"
-      ></mm-list-marker>
-      <mm-list-marker
-        variant="number"
-        value="3"
-        style="position: absolute; right: 0.75rem; bottom: -1.75rem; transform: translateX(50%)"
-      ></mm-list-marker>
     </mm-component-anatomy>
 
     <mm-component-section heading="MostPopularTag" description="구체 레벨. 가장 인기있는 태그">
@@ -160,7 +149,7 @@ const main = html`
     </mm-component-section>
 
     <mm-component-related .items=${relatedComponents}></mm-component-related>
-  </main>
+  </mm-page>
 `
 
 document.addEventListener('DOMContentLoaded', () => {

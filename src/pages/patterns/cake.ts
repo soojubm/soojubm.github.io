@@ -12,7 +12,7 @@ const castFilterOptions: FilterOption[] = [
 ]
 
 const main = html`
-  <main class="cake">
+  <mm-page class="cake">
     <style>
       .cake {
         padding: 0 var(--layout-padding-inline) var(--space-section);
@@ -131,7 +131,7 @@ const main = html`
         <mm-button variant="tertiary">Read More Reviews</mm-button>
       </mm-content-section>
     </mm-flex>
-  </main>
+  </mm-page>
 `
 
 document.addEventListener('DOMContentLoaded', () => {

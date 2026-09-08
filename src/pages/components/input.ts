@@ -71,7 +71,7 @@ const componentFeatures: ComponentFeatureItem[] = [
 ]
 
 const main = html`
-  <main class="page">
+  <mm-page>
     <mm-page-header
       heading="Input"
       description="사용자가 정보를 입력하고 제출할 수 있습니다."
@@ -105,7 +105,6 @@ const main = html`
     </mm-component-guide>
 
     <mm-component-anatomy
-      style="--component-anatomy-stage-padding: 0 0 0 1.75rem"
       parts='[
       "레이블 — 입력 항목의 이름을 나타냅니다(label).",
       "헬퍼 텍스트 — 레이블 아래에서 입력 형식이나 보조 정보를 안내합니다(helper).",
@@ -121,6 +120,13 @@ const main = html`
 >
   <mm-icon slot="leading" name="mail"></mm-icon>
 </mm-textfield>`}
+      .markers=${[
+        { placement: 'inline-start', offset: '0.75rem' },
+        { placement: 'inline-start', offset: '2.5rem' },
+        { placement: 'inline-start', offset: '4.75rem' },
+        { placement: 'inline-start', offset: '4.75rem', inset: true },
+        { placement: 'inline-start', offset: 'calc(100% - 0.75rem)' },
+      ]}
     >
       <mm-textfield
         label="이메일"
@@ -132,33 +138,6 @@ const main = html`
       >
         <mm-icon slot="leading" name="mail"></mm-icon>
       </mm-textfield>
-
-      <!-- 번호 마커 (세로 배치) -->
-      <mm-list-marker
-        variant="number"
-        value="1"
-        style="position: absolute; left: 0; top: 0.25rem"
-      ></mm-list-marker>
-      <mm-list-marker
-        variant="number"
-        value="2"
-        style="position: absolute; left: 0; top: 2rem"
-      ></mm-list-marker>
-      <mm-list-marker
-        variant="number"
-        value="3"
-        style="position: absolute; left: 0; top: 4.25rem"
-      ></mm-list-marker>
-      <mm-list-marker
-        variant="number"
-        value="4"
-        style="position: absolute; left: 2.25rem; top: 4.25rem"
-      ></mm-list-marker>
-      <mm-list-marker
-        variant="number"
-        value="5"
-        style="position: absolute; left: 0; bottom: 0.25rem"
-      ></mm-list-marker>
     </mm-component-anatomy>
 
     <section style="position: relative">
@@ -573,7 +552,7 @@ const main = html`
     <mm-component-related .items=${relatedComponents}></mm-component-related>
 
     <mm-component-references .items=${componentReferences}></mm-component-references>
-  </main>
+  </mm-page>
 `
 
 document.addEventListener('DOMContentLoaded', () => {

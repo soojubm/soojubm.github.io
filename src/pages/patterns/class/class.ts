@@ -84,7 +84,7 @@ const main = html`
       }
     }
   </style>
-  <main class="class">
+  <mm-page class="class">
     <figure class="class-media"><img src="" alt="" /></figure>
     <header class="class-order">
       <div>
@@ -302,7 +302,7 @@ const main = html`
       </mm-flex>
       ${renderFaqItems(faqQuestions)}
     </section>
-  </main>
+  </mm-page>
 `
 
 document.addEventListener('DOMContentLoaded', () => {

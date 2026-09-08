@@ -20,7 +20,7 @@ const main = html`
     }
   </style>
 
-  <main class="page">
+  <mm-page>
     <mm-flex class="checkout" direction="column" gap="section">
       <!-- 장바구니 -->
       <mm-flex as="section" direction="column" gap="4">
@@ -268,7 +268,7 @@ const main = html`
         </mm-surface>
       </mm-flex>
     </mm-flex>
-  </main>
+  </mm-page>
 `
 
 document.addEventListener('DOMContentLoaded', () => {

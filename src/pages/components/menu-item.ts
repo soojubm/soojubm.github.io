@@ -91,7 +91,7 @@ const componentFeatures: ComponentFeatureItem[] = [
 ]
 
 const main = html`
-  <main class="page">
+  <mm-page>
     <mm-page-header
       heading="MenuItem"
       description="사용자가 수행할 수 있는 행동 목록입니다. 단일 액션 또는 선택 액션을 포함할 수 있습니다"
@@ -145,23 +145,13 @@ const main = html`
       "레이블 — 실행 결과를 예측할 수 있는 텍스트."
     ]'
       .code=${'<mm-menu-item-action icon="user" label="프로필"></mm-menu-item-action>'}
+      .markers=${[
+        { placement: 'inline-start' },
+        { placement: 'block-end', offset: '1rem' },
+        { placement: 'block-end', offset: '3.75rem' },
+      ]}
     >
       <mm-menu-item-action icon="user" label="프로필"></mm-menu-item-action>
-      <mm-list-marker
-        variant="number"
-        value="1"
-        style="position: absolute; left: -1.75rem; top: 50%; transform: translateY(-50%)"
-      ></mm-list-marker>
-      <mm-list-marker
-        variant="number"
-        value="2"
-        style="position: absolute; left: 1rem; bottom: -1.75rem; transform: translateX(-50%)"
-      ></mm-list-marker>
-      <mm-list-marker
-        variant="number"
-        value="3"
-        style="position: absolute; left: 3.75rem; bottom: -1.75rem; transform: translateX(-50%)"
-      ></mm-list-marker>
     </mm-component-anatomy>
 
     <mm-component-section
@@ -311,7 +301,7 @@ const main = html`
     <mm-component-related .items=${relatedComponents}></mm-component-related>
 
     <mm-component-references .items=${componentReferences}></mm-component-references>
-  </main>
+  </mm-page>
 `
 
 document.addEventListener('DOMContentLoaded', () => {

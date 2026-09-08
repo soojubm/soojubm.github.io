@@ -6,11 +6,6 @@
 @import '/src/stylesheets/shared/page.css';
 @import '/src/stylesheets/shared/sidebar.css';
 
-.page,
-.footer {
-  transition: padding-left var(--transition-duration) var(--transition-easing);
-}
-
 progress[value] {
   border: 0;
   background-color: var(--border-color);

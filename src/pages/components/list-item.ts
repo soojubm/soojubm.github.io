@@ -71,7 +71,7 @@ const componentFeatures: ComponentFeatureItem[] = [
 ]
 
 const main = html`
-  <main class="page">
+  <mm-page>
     <mm-page-header
       heading="List Item"
       description="leading(아바타·아이콘) + 본문(제목·설명) + trailing(액션) 한 줄을 구성하는 표현 전용 primitive. 상호작용 의미가 필요하면 menuItem을 사용합니다."
@@ -137,6 +137,11 @@ const main = html`
       .code=${`<mm-list-item label="수줍이" description="바보" size="48" avatar-src="...">
   <mm-follow-button slot="trailing"></mm-follow-button>
 </mm-list-item>`}
+      .markers=${[
+        { placement: 'block-end', offset: '1.5rem' },
+        { placement: 'block-end', offset: '9.41rem' },
+        { placement: 'block-end', offset: 'calc(100% - 2.09rem)' },
+      ]}
     >
       <mm-list-item
         label="수줍이"
@@ -149,21 +154,6 @@ const main = html`
       >
         <mm-follow-button slot="trailing"></mm-follow-button>
       </mm-list-item>
-      <mm-list-marker
-        variant="number"
-        value="1"
-        style="position: absolute; left: 1.5rem; bottom: -1.75rem; transform: translateX(-50%)"
-      ></mm-list-marker>
-      <mm-list-marker
-        variant="number"
-        value="2"
-        style="position: absolute; left: 9.41rem; bottom: -1.75rem; transform: translateX(-50%)"
-      ></mm-list-marker>
-      <mm-list-marker
-        variant="number"
-        value="3"
-        style="position: absolute; right: 2.09rem; bottom: -1.75rem; transform: translateX(50%)"
-      ></mm-list-marker>
     </mm-component-anatomy>
 
     <mm-component-section heading="UserRow" description="사용자 맥락">
@@ -190,7 +180,7 @@ const main = html`
     <mm-component-related .items=${relatedComponents}></mm-component-related>
 
     <mm-component-references .items=${componentReferences}></mm-component-references>
-  </main>
+  </mm-page>
 `
 
 document.addEventListener('DOMContentLoaded', () => {

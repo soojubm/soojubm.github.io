@@ -33,7 +33,7 @@ const main = html`
     }
   </style>
 
-  <main class="page">
+  <mm-page>
     <mm-flex direction="column" gap="12">
       <!-- 로그인 -->
       <form class="authentication" name="login" novalidate>
@@ -189,7 +189,7 @@ const main = html`
         </mm-flex>
       </form>
     </mm-flex>
-  </main>
+  </mm-page>
 `
 
 document.addEventListener('DOMContentLoaded', () => {

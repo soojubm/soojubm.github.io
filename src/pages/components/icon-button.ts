@@ -52,7 +52,7 @@ const componentFeatures: ComponentFeatureItem[] = [
 ]
 
 const main = html`
-  <main class="page js-tab">
+  <mm-page>
     <mm-page-header
       heading="Icon Button"
       description="레이블 없이 메타포 아이콘만 사용하는 간결한 액션 버튼입니다. 사용자에게 툴팁으로 버튼의 용도를 명확히 전달합니다."
@@ -143,6 +143,12 @@ const main = html`
       "툴팁 — icon-only 버튼의 용도를 보조 설명합니다."
     ]'
       .code=${'<mm-icon-button variant="primary" icon="heart" aria-label="좋아요"></mm-icon-button>'}
+      .markers=${[
+        { placement: 'inline-start' },
+        { placement: 'block-end' },
+        { placement: 'inline-end' },
+        { placement: 'block-end', inset: true },
+      ]}
     >
       <mm-tooltip content="좋아요" placement="center" open>
         <mm-icon-button
@@ -152,27 +158,6 @@ const main = html`
           aria-label="좋아요"
         ></mm-icon-button>
       </mm-tooltip>
-
-      <mm-list-marker
-        variant="number"
-        value="1"
-        style="position: absolute; left: -1.75rem; top: 50%; transform: translateY(-50%)"
-      ></mm-list-marker>
-      <mm-list-marker
-        variant="number"
-        value="2"
-        style="position: absolute; left: 50%; bottom: -1.75rem; transform: translateX(-50%)"
-      ></mm-list-marker>
-      <mm-list-marker
-        variant="number"
-        value="3"
-        style="position: absolute; right: -1.75rem; top: 50%; transform: translateY(-50%)"
-      ></mm-list-marker>
-      <mm-list-marker
-        variant="number"
-        value="4"
-        style="position: absolute; left: 50%; bottom: 0.5rem; transform: translateX(-50%)"
-      ></mm-list-marker>
     </mm-component-anatomy>
 
     <mm-component-section
@@ -253,7 +238,7 @@ const main = html`
       <mm-expand-indicator expanded></mm-expand-indicator>
     </mm-component-section>
     <mm-component-related .items=${relatedComponents}></mm-component-related>
-  </main>
+  </mm-page>
 `
 
 document.addEventListener('DOMContentLoaded', () => {

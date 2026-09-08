@@ -105,7 +105,7 @@ const supplementaryReferences: ComponentReferenceItemData[] = [
 ]
 
 const main = html`
-  <main class="page" style="display: flex; flex-direction: column; gap: var(--space-section)">
+  <mm-page style="display: flex; flex-direction: column; gap: var(--space-section)">
     <mm-flex gap="8" direction="column">
       <mm-heading level="1" weight="bold" as="h1">
         디자인 시스템
@@ -287,7 +287,7 @@ const main = html`
       heading="보완 영역"
       .items=${supplementaryReferences}
     ></mm-component-references>
-  </main>
+  </mm-page>
 `
 
 document.addEventListener('DOMContentLoaded', () => {

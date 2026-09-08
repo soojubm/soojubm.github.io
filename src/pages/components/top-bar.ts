@@ -21,7 +21,7 @@ const componentProps: ComponentPropItemData[] = [
 const componentFeatures: ComponentFeatureItem[] = []
 
 const main = html`
-  <main class="page">
+  <mm-page>
     <mm-page-header
       heading="Top Bar"
       description="화면 상단에서 현재 위치와 주요 내비게이션 액션을 제공합니다."
@@ -54,7 +54,7 @@ const main = html`
       <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
     </mm-component-guide>
     <mm-component-related .items=${relatedComponents}></mm-component-related>
-  </main>
+  </mm-page>
 `
 
 document.addEventListener('DOMContentLoaded', () => {

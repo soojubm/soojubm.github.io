@@ -3,7 +3,7 @@ import { html } from 'lit'
 import { renderLayout } from '@/components/layouts/base-layouts'
 
 const main = html`
-  <main class="page">
+  <mm-page>
     <mm-page-header
       heading="Content"
       description="같은 텍스트 슬롯이라도 관점에 따라 이름과 어조를 구분하고, 사용자가 빠르게 스캔할 수 있도록 씁니다."
@@ -59,7 +59,7 @@ const main = html`
         </mm-content-section>
       </mm-content-section>
     </mm-content-section-list>
-  </main>
+  </mm-page>
 `
 
 document.addEventListener('DOMContentLoaded', () => {

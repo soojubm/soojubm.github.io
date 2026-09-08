@@ -36,7 +36,7 @@ const componentFeatures: ComponentFeatureItem[] = [
 ]
 
 const main = html`
-  <main class="page">
+  <mm-page>
     <mm-page-header
       heading="Link"
       description="사용자 여정 목적지. 페이지 이동. destination that can be bookmarked."
@@ -96,23 +96,12 @@ const main = html`
       "외부 링크 아이콘 — 새 탭/외부 사이트로 이동함을 나타내는 표식(external)."
     ]'
       .code=${'<mm-link href="https://soojubm.github.io" external>수줍이 디자인 시스템</mm-link>'}
+      .markers=${[{ placement: 'block-start', offset: '2.5rem' }, { placement: 'inline-end' }]}
     >
       <mm-link href="https://soojubm.github.io" external>수줍이 디자인 시스템</mm-link>
-
-      <!-- 번호 마커 -->
-      <mm-list-marker
-        variant="number"
-        value="1"
-        style="position: absolute; left: 2.5rem; top: -1.5rem; transform: translateX(-50%)"
-      ></mm-list-marker>
-      <mm-list-marker
-        variant="number"
-        value="2"
-        style="position: absolute; right: -1.75rem; top: 50%; transform: translateY(-50%)"
-      ></mm-list-marker>
     </mm-component-anatomy>
     <mm-component-related .items=${relatedComponents}></mm-component-related>
-  </main>
+  </mm-page>
 `
 
 document.addEventListener('DOMContentLoaded', () => {

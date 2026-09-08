@@ -3,7 +3,7 @@ import { html } from 'lit'
 import { renderLayout } from '@/components/layouts/base-layouts'
 
 const main = html`
-  <main class="page">
+  <mm-page>
     <mm-page-header
       heading="Feedback"
       description="사용자 행동이나 시스템 상태의 결과를 알립니다. 사용자 귀책이 아닌 실패는 책임 소재를 문구에 드러냅니다."
@@ -85,7 +85,7 @@ const main = html`
         </mm-flex>
       </mm-content-section>
     </mm-content-section-list>
-  </main>
+  </mm-page>
 `
 
 document.addEventListener('DOMContentLoaded', () => {

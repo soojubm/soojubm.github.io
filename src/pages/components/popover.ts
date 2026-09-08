@@ -39,7 +39,7 @@ const componentTokens: ComponentTokenItemData[] = [
 const componentFeatures: ComponentFeatureItem[] = []
 
 const main = html`
-  <main class="page">
+  <mm-page>
     <mm-page-header
       heading="Popover"
       description="anchor 기준 non-modal 레이어 프리미티브입니다. TODO"
@@ -99,7 +99,7 @@ const main = html`
       </mm-select>
     </mm-component-section>
     <mm-component-related .items=${relatedComponents}></mm-component-related>
-  </main>
+  </mm-page>
 `
 
 // 트리거는 aria-controls로 popover를 가리키기만 하면 되고, 클릭 토글·외부 클릭·ESC 닫기·aria는 popover가 소유한다.

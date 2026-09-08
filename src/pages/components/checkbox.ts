@@ -52,7 +52,7 @@ const visibilityOptions: OptionItem[] = [
 ]
 
 const main = html`
-  <main class="page">
+  <mm-page>
     <mm-page-header
       heading="Checkbox"
       description="옵션 목록에서 하나 이상의 옵션을 선택합니다."
@@ -83,24 +83,13 @@ const main = html`
       "레이블 — 선택지를 설명하는 클릭 가능한 텍스트."
     ]'
       .code=${'<mm-checkbox size="large" checked>관심 분야</mm-checkbox>'}
+      .markers=${[
+        { placement: 'inline-start' },
+        { placement: 'block-end', offset: '0.5rem' },
+        { placement: 'inline-end' },
+      ]}
     >
       <mm-checkbox size="large" checked>관심 분야</mm-checkbox>
-
-      <mm-list-marker
-        variant="number"
-        value="1"
-        style="position: absolute; left: -1.75rem; top: 50%; transform: translateY(-50%)"
-      ></mm-list-marker>
-      <mm-list-marker
-        variant="number"
-        value="2"
-        style="position: absolute; left: 0.5rem; bottom: -1.75rem; transform: translateX(-50%)"
-      ></mm-list-marker>
-      <mm-list-marker
-        variant="number"
-        value="3"
-        style="position: absolute; right: -1.75rem; top: 50%; transform: translateY(-50%)"
-      ></mm-list-marker>
     </mm-component-anatomy>
 
     <mm-component-section
@@ -170,7 +159,7 @@ const main = html`
       </mm-flex>
     </mm-component-section>
     <mm-component-related .items=${relatedComponents}></mm-component-related>
-  </main>
+  </mm-page>
 `
 
 document.addEventListener('DOMContentLoaded', () => {

@@ -3,7 +3,7 @@ import { html } from 'lit'
 import { renderLayout } from '@/components/layouts/base-layouts'
 
 const main = html`
-  <main class="page">
+  <mm-page>
     <mm-page-header
       heading="Elevation"
       description="표면이 배경에서 얼마나 떠 있는지를 명도 대비와 그림자로 나타냅니다. 카드·팝오버·툴팁 같은 표면에만 쓰고 일반 컨트롤에는 주지 않습니다."
@@ -67,7 +67,7 @@ const main = html`
         ></mm-text-list>
       </mm-content-section>
     </mm-content-section-list>
-  </main>
+  </mm-page>
 `
 
 document.addEventListener('DOMContentLoaded', () => {

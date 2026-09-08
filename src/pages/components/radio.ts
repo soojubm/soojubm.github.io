@@ -45,7 +45,7 @@ const componentFeatures: ComponentFeatureItem[] = [
 ]
 
 const main = html`
-  <main class="page">
+  <mm-page>
     <mm-page-header
       heading="RadioGroup"
       description="옵션 목록에서 하나의 옵션을 선택합니다."
@@ -75,24 +75,13 @@ const main = html`
       "레이블 — 선택지를 설명하는 클릭 가능한 텍스트."
     ]'
       .code=${'<mm-radio value="premium" checked>프리미엄 요금제</mm-radio>'}
+      .markers=${[
+        { placement: 'inline-start' },
+        { placement: 'block-end', offset: '0.45rem' },
+        { placement: 'inline-end' },
+      ]}
     >
       <mm-radio value="premium" checked>프리미엄 요금제</mm-radio>
-
-      <mm-list-marker
-        variant="number"
-        value="1"
-        style="position: absolute; left: -1.75rem; top: 50%; transform: translateY(-50%)"
-      ></mm-list-marker>
-      <mm-list-marker
-        variant="number"
-        value="2"
-        style="position: absolute; left: 0.45rem; bottom: -1.75rem; transform: translateX(-50%)"
-      ></mm-list-marker>
-      <mm-list-marker
-        variant="number"
-        value="3"
-        style="position: absolute; right: -1.75rem; top: 50%; transform: translateY(-50%)"
-      ></mm-list-marker>
     </mm-component-anatomy>
 
     <mm-component-section heading="Radio?" description="">
@@ -105,7 +94,7 @@ const main = html`
       </mm-surface>
     </mm-component-section>
     <mm-component-related .items=${relatedComponents}></mm-component-related>
-  </main>
+  </mm-page>
 `
 
 document.addEventListener('DOMContentLoaded', () => {
