@@ -7,12 +7,10 @@ import '@/components/common/text/semantics/caption'
 export class TextfieldLabel extends LitElement {
   static styles = css`
     label {
-      display: block;
+      display: flex;
+      align-items: baseline;
+      gap: var(--space-1);
       line-height: var(--size-24);
-    }
-    small {
-      margin: 0 0 0 var(--space-1);
-      color: var(--foreground-subtle-color);
     }
   `
 

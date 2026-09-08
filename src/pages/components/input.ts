@@ -408,6 +408,31 @@ const main = html`
       </mm-flex>
     </mm-component-section>
 
+    <mm-component-section
+      heading="FormField"
+      description="textfield가 아닌 컨트롤에 레이블·헬퍼·검증 텍스트를 같은 규칙으로 붙이는 래퍼입니다. 컨트롤은 slot으로 받고, 필드는 레이블이 붙은 role=group이 됩니다."
+    >
+      <mm-flex direction="column" gap="3" style="max-width: 400px">
+        <mm-form-field label="성별">
+          <mm-gender-selector stretch></mm-gender-selector>
+        </mm-form-field>
+        <mm-form-field label="관심 주제" optional helper="여러 개를 선택할 수 있습니다.">
+          <mm-checkbox-group name="topics">
+            <mm-checkbox value="tech">기술</mm-checkbox>
+            <mm-checkbox value="design">디자인</mm-checkbox>
+            <mm-checkbox value="biz">비즈니스</mm-checkbox>
+          </mm-checkbox-group>
+        </mm-form-field>
+        <mm-form-field label="국가" helper="배송 가능한 국가만 표시됩니다.">
+          <mm-select>
+            <option value="kr">대한민국</option>
+            <option value="jp">일본</option>
+            <option value="us">미국</option>
+          </mm-select>
+        </mm-form-field>
+      </mm-flex>
+    </mm-component-section>
+
     <mm-component-section heading="Newsletter" description="TODO">
       <form style="max-width: 400px">
         <mm-flex direction="column" gap="4">

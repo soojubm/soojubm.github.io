@@ -1,15 +1,7 @@
 import { html } from 'lit'
 
-import type { OptionItem } from '@/components/common/toggle-button'
-
 import { renderLayout } from '@/components/layouts/base-layouts'
 import { findSitemapItem } from '@/sitemap'
-
-const genderOptions: OptionItem[] = [
-  { value: 'other', label: '기타' },
-  { value: 'female', label: '여성' },
-  { value: 'male', label: '남성' },
-]
 
 const main = html`
   <mm-fixed-top>
@@ -192,11 +184,9 @@ const main = html`
               href="#"
             ></mm-link-prompt>
             <mm-textfield label="닉네임" placeholder="이름이요."></mm-textfield>
-            <mm-toggle-button-group
-              .options=${genderOptions}
-              selected-index="0"
-              stretch
-            ></mm-toggle-button-group>
+            <mm-form-field label="성별">
+              <mm-gender-selector stretch></mm-gender-selector>
+            </mm-form-field>
           </mm-flex>
         </form>
       </mm-flex>

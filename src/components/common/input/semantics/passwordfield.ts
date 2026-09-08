@@ -43,6 +43,7 @@ class PasswordField extends LitElement {
         aria-invalid=${ifDefined(this.ariaInvalid ?? undefined)}
         @input=${this.handleTextfieldInput}
       >
+        <slot name="link" slot="link"></slot>
         <mm-reveal-button
           slot="trailing"
           .revealed=${this.revealed}
