@@ -2,7 +2,7 @@ import { css } from 'lit'
 
 export const separatorStyles = css`
   :host {
-    --separator-spacing: var(--space-2);
+    --separator-spacing: var(--space-3);
     --separator-border: var(--border);
     --separator-text-background-color: var(--background-color);
 

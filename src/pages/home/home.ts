@@ -7,15 +7,10 @@ import { renderPage } from '@/components/layouts/base-layouts'
 import { ScrollSpyController } from '@/controllers/scroll-spy-controller'
 import './home.css'
 
-const componentReferences: ComponentReferenceItemData[] = [
+const platformReferences: ComponentReferenceItemData[] = [
   {
-    href: 'https://m3.material.io/foundations/layout/breakpoints/overview',
-    label: 'MD3 - Layout Breakpoints',
-    external: true,
-  },
-  {
-    href: 'https://react.dev/learn/preserving-and-resetting-state',
-    label: 'React - Preserving and Resetting State',
+    href: 'https://developer.apple.com/design/human-interface-guidelines/components/layout-and-organization/disclosure-controls',
+    label: 'Apple HIG - Disclosure Controls',
     external: true,
   },
   {
@@ -24,8 +19,36 @@ const componentReferences: ComponentReferenceItemData[] = [
     external: true,
   },
   {
+    href: 'https://developer.apple.com/kr/design/tips/',
+    label: 'Apple - Design Tips',
+    external: true,
+  },
+  {
     href: 'https://developer.android.com/reference',
     label: 'Android - API Reference',
+    external: true,
+  },
+  {
+    href: 'https://m3.material.io/foundations/layout/breakpoints/overview',
+    label: 'MD3 - Layout Breakpoints',
+    external: true,
+  },
+  {
+    href: 'https://m3.material.io/foundations/interaction-states',
+    label: 'MD3 - Interaction States',
+    external: true,
+  },
+  {
+    href: 'https://m3.material.io/blog/building-with-m3-expressive',
+    label: 'MD3 - Building with M3 Expressive',
+    external: true,
+  },
+]
+
+const generalReferences: ComponentReferenceItemData[] = [
+  {
+    href: 'https://react.dev/learn/preserving-and-resetting-state',
+    label: 'React - Preserving and Resetting State',
     external: true,
   },
   { href: 'https://www.digitala11y.com/', label: 'Digital A11Y', external: true },
@@ -51,28 +74,8 @@ const componentReferences: ComponentReferenceItemData[] = [
     external: true,
   },
   {
-    href: 'https://developer.apple.com/design/human-interface-guidelines/components/layout-and-organization/disclosure-controls',
-    label: 'Apple HIG - Disclosure Controls',
-    external: true,
-  },
-  {
-    href: 'https://developer.apple.com/kr/design/tips/',
-    label: 'Apple - Design Tips',
-    external: true,
-  },
-  {
-    href: 'https://m3.material.io/foundations/interaction-states',
-    label: 'MD3 - Interaction States',
-    external: true,
-  },
-  {
     href: 'https://simplicable.com/new/visual-information',
     label: 'Simplicable - Visual Information',
-    external: true,
-  },
-  {
-    href: 'https://m3.material.io/blog/building-with-m3-expressive',
-    label: 'MD3 - Building with M3 Expressive',
     external: true,
   },
   {
@@ -96,6 +99,8 @@ const componentReferences: ComponentReferenceItemData[] = [
     external: true,
   },
 ]
+
+const componentReferences: ComponentReferenceItemData[][] = [platformReferences, generalReferences]
 
 const supplementaryReferences: ComponentReferenceItemData[] = [
   {
