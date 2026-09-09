@@ -15,7 +15,7 @@ const relatedComponents: ComponentRelatedItemData[] = [
 const componentProps: ComponentPropItemData[] = [
   {
     name: 'items',
-    type: '{ label: string; href?: string; icon?: IconName; active?: boolean }[] (JSON)',
+    type: '{ label: string; href?: string; icon?: IconName; active?: boolean }[]',
     optional: true,
   },
   { name: 'aria-label', type: "string = '하단 내비게이션'", optional: true },

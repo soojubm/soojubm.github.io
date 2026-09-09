@@ -14,7 +14,6 @@ const relatedComponents: ComponentRelatedItemData[] = [
 
 const componentProps: ComponentPropItemData[] = [
   { name: 'open', type: 'boolean = false' },
-  { name: 'role', type: "'status' = 'status'", optional: true },
   { name: 'show()', type: 'method' },
   { name: 'close()', type: 'method' },
 ]

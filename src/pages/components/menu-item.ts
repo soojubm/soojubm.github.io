@@ -44,7 +44,7 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'emoji', type: 'string', optional: true },
   { name: 'avatar-src', type: 'string', optional: true },
   { name: 'avatar-shape', type: "'circle' | 'square' = 'square'", optional: true },
-  { name: 'tone', type: "'danger' | string", optional: true },
+  { name: 'tone', type: "'danger'", optional: true },
   { name: 'disabled', type: 'boolean', optional: true },
   { name: "slot='trailing'", type: 'HTMLElement', optional: true },
   { name: 'mm-menu-item-action trailing-icon', type: 'IconName', optional: true },

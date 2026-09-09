@@ -27,11 +27,11 @@ const componentReferences: ComponentReferenceItemData[] = [
 ]
 
 const componentProps: ComponentPropItemData[] = [
-  { name: 'summary', type: 'string' },
-  { name: 'open', type: 'boolean = false' },
-  { name: 'slot: summary', type: 'HTMLElement', optional: true },
-  { name: 'slot: default', type: 'HTMLElement', optional: true },
-  { name: 'toggle', type: 'CustomEvent detail: open', kind: 'event' },
+  { name: 'mm-accordion-item summary', type: 'string' },
+  { name: 'mm-accordion-item open', type: 'boolean = false' },
+  { name: 'mm-accordion-item slot: summary', type: 'HTMLElement', optional: true },
+  { name: 'mm-accordion-item slot: default', type: 'HTMLElement', optional: true },
+  { name: 'mm-accordion-item toggle', type: 'CustomEvent detail: open', kind: 'event' },
 ]
 
 const componentTokens: ComponentTokenItemData[] = [

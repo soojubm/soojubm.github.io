@@ -16,7 +16,7 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'name', type: 'string', optional: true },
   { name: 'checked', type: 'boolean', optional: true },
   { name: 'disabled', type: 'boolean', optional: true },
-  { name: 'change', type: 'CustomEvent detail: checked, value', kind: 'event' },
+  { name: 'change', type: 'CustomEvent detail: checked', kind: 'event' },
 ]
 
 const componentTokens: ComponentTokenItemData[] = [

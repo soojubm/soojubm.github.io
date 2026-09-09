@@ -36,7 +36,7 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'aria-label', type: 'string', optional: true },
   {
     name: 'mm-toggle-button-group options',
-    type: '{ value: string; label?: string; icon?: IconName; disabled?: boolean }[] (JSON)',
+    type: '{ value: string; label?: string; icon?: IconName; disabled?: boolean }[] = []',
     optional: true,
   },
   { name: 'mm-toggle-button-group selected-index', type: 'number = 0', optional: true },

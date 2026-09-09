@@ -12,7 +12,7 @@ export interface BreadcrumbItem {
 
 /**
  * 현재 위치를 계층 구조로 보여주는 내비게이션.
- * items를 JSON 문자열로 받아 링크/현재 페이지·구분자를 렌더한다.
+ * items로 링크/현재 페이지·구분자를 렌더한다.
  * 마지막 항목은 현재 페이지(aria-current="page")로 처리한다.
  */
 @customElement('mm-breadcrumb')

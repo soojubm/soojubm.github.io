@@ -20,7 +20,7 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'src', type: 'string', optional: true },
   { name: 'icon', type: 'IconName', optional: true },
   { name: 'aria-label', type: 'string', optional: true },
-  { name: 'mm-avatar-group avatars', type: 'string[] (JSON)', optional: true },
+  { name: 'mm-avatar-group avatars', type: 'string[] = []', optional: true },
   { name: 'mm-avatar-group label', type: 'string', optional: true },
   { name: 'mm-avatar-group size', type: "'80' | '48' | '40' | '32' = '32'", optional: true },
 ]
