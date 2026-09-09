@@ -18,7 +18,7 @@ const main = html`
 
         <fieldset>
           <mm-button size="large" full-width>페이스북으로 시작</mm-button>
-          <mm-separator scope="element">
+          <mm-separator>
             <mm-paragraph slot="text">또는</mm-paragraph>
           </mm-separator>
           <mm-textfield type="email" label="이메일" placeholder="soojubm@gmail.com"></mm-textfield>

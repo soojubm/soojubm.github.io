@@ -39,7 +39,7 @@ export class ThemeSelector extends LitElement {
           aria-label="테마 변경"
         ></mm-icon-button>
         <mm-menu-item-group>${this.renderThemeOptions()}</mm-menu-item-group>
-        <mm-separator scope="element"></mm-separator>
+        <mm-separator></mm-separator>
         <mm-radius-picker></mm-radius-picker>
       </mm-popover>
     `

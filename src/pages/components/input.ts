@@ -91,7 +91,7 @@ const main = html`
             aria-invalid="true"
             validation-text="이미 등록된 이메일입니다."
           ></mm-textfield>
-          <mm-separator scope="element"></mm-separator>
+          <mm-separator></mm-separator>
           <mm-textfield label="with label" placeholder="Label"></mm-textfield>
         </mm-flex>
       </div>

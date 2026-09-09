@@ -89,7 +89,7 @@ const main = html`
             avatar-src="/src/images/soojubm.png"
           ></mm-list-item>
         </mm-menu-item-group>
-        <mm-separator scope="element"></mm-separator>
+        <mm-separator></mm-separator>
         <mm-menu-item-group>
           <mm-list-item
             size="small"
@@ -99,7 +99,7 @@ const main = html`
             avatar-src="/src/images/soojubm.png"
           ></mm-list-item>
         </mm-menu-item-group>
-        <mm-separator scope="element"></mm-separator>
+        <mm-separator></mm-separator>
         <mm-list-item
           label="48 사이즈"
           description="Youtube Subscriber"
@@ -107,7 +107,7 @@ const main = html`
           avatar-variant="secondary"
           avatar-src="/src/images/soojubm.png"
         ></mm-list-item>
-        <mm-separator scope="element"></mm-separator>
+        <mm-separator></mm-separator>
         <mm-list-item
           label="80 사이즈 용도 없음"
           description="Youtube Subscriber"

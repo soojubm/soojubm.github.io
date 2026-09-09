@@ -486,7 +486,7 @@ const main = html`
       >
         <mm-grid columns="6">${renderColorTokens(grayscaleColorTokens)}</mm-grid>
 
-        <mm-separator scope="section"></mm-separator>
+        <mm-separator variant="section"></mm-separator>
         <mm-grid columns="4" aria-label="background color tokens">
           ${renderColorTokens(backgroundColorTokens)}
         </mm-grid>

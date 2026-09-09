@@ -197,20 +197,20 @@ const main = html`
       <mm-meta-item label="상품 금액" value="₩ 16,000"></mm-meta-item>
       <mm-meta-item label="배송비" value="무료"></mm-meta-item>
       <mm-meta-item label="총 결제 금액" value="₩ 16,000"></mm-meta-item>
-      <mm-separator scope="element"></mm-separator>
+      <mm-separator></mm-separator>
       <mm-meta-item-group>
         <mm-meta-item layout="inline" label="국가" value="미국"></mm-meta-item>
         <mm-meta-item layout="inline" label="언어" value="영어"></mm-meta-item>
         <mm-meta-item layout="inline" label="장르" value="드라마"></mm-meta-item>
         <mm-meta-item layout="inline" label="러닝타임" value="103분"></mm-meta-item>
       </mm-meta-item-group>
-      <mm-separator scope="element"></mm-separator>
+      <mm-separator></mm-separator>
       <mm-meta-item-group>
         <mm-meta-item layout="stacked" label="사이즈" value="보통"></mm-meta-item>
         <mm-meta-item layout="stacked" label="한글" value="작은 거 필요하나"></mm-meta-item>
         <mm-meta-item layout="stacked" label="Move" value="562 kcal"></mm-meta-item>
       </mm-meta-item-group>
-      <mm-separator scope="element"></mm-separator>
+      <mm-separator></mm-separator>
       <mm-meta-item-group>
         <mm-meta-item
           layout="stacked"
@@ -264,12 +264,12 @@ const main = html`
           variant="number"
           texts='["순서가 있는 리스트의 첫 번째 항목", "절차나 우선순위처럼 순서가 의미를 갖는 콘텐츠에 사용합니다.", "마커는 number 변형을 사용합니다."]'
         ></mm-text-list>
-        <mm-separator scope="section"></mm-separator>
+        <mm-separator variant="section"></mm-separator>
         <mm-text-list
           variant="check"
           texts='["체크리스트 항목", "완료, 충족, 포함 같은 긍정적인 상태를 나타낼 때 사용합니다.", "마커는 check 변형을 사용합니다."]'
         ></mm-text-list>
-        <mm-separator scope="section"></mm-separator>
+        <mm-separator variant="section"></mm-separator>
         <div>
           <del>₩ 30,000</del>
           <ins>₩ 20,000</ins>

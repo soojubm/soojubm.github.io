@@ -66,7 +66,7 @@ const main = html`
           >
             <mm-button slot="action">배송지 관리</mm-button>
           </mm-setting-item>
-          <mm-separator scope="element"></mm-separator>
+          <mm-separator></mm-separator>
           <mm-menu-item-link
             size="small"
             label="관심분야"

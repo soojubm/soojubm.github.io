@@ -210,17 +210,17 @@ const main = html`
           <mm-button variant="tertiary" size="large">취소</mm-button>
           <mm-button variant="primary" size="large">저장</mm-button>
         </mm-button-group>
-        <mm-separator scope="element"></mm-separator>
+        <mm-separator></mm-separator>
         <mm-button-group>
           <mm-button variant="ghost" size="large">건너뛰기</mm-button>
           <mm-button variant="secondary" size="large">다음</mm-button>
         </mm-button-group>
-        <mm-separator scope="element"></mm-separator>
+        <mm-separator></mm-separator>
         <mm-button-group>
           <mm-button variant="tertiary" size="large">이전</mm-button>
           <mm-button variant="secondary" size="large">다음</mm-button>
         </mm-button-group>
-        <mm-separator scope="element"></mm-separator>
+        <mm-separator></mm-separator>
         <mm-button-group>
           <mm-button variant="primary" size="large" href="#components">지금 가입하기</mm-button>
           <mm-button variant="ghost" size="large">더 알아보기</mm-button>

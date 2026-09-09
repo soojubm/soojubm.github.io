@@ -2,18 +2,14 @@ import { css } from 'lit'
 
 export const separatorStyles = css`
   :host {
-    --separator-spacing: var(--space-4);
+    --separator-spacing: var(--space-2);
     --separator-border: var(--border);
     --separator-text-background-color: var(--background-color);
 
     position: relative;
   }
 
-  :host([scope='element']) {
-    --separator-spacing: var(--space-2);
-  }
-
-  :host([scope='section']) {
+  :host([variant='section']) {
     --separator-spacing: var(--space-4);
   }
 

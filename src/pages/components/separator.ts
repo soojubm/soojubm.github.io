@@ -13,12 +13,12 @@ const relatedComponents: ComponentRelatedItemData[] = [
 ]
 
 const componentProps: ComponentPropItemData[] = [
-  { name: 'scope', type: "'element' | 'section' = 'section'" },
+  { name: 'variant', type: "'element' | 'section' = 'element'" },
   { name: 'slot: default', type: 'HTMLElement', optional: true },
 ]
 
 const componentTokens: ComponentTokenItemData[] = [
-  { name: 'separator-spacing', default: 'var(--space-4)', prop: 'scope' },
+  { name: 'separator-spacing', default: 'var(--space-2)', prop: 'variant' },
   { name: 'separator-border', default: 'var(--border)' },
   { name: 'separator-text-background-color', default: 'var(--background-color)' },
 ]
