@@ -43,11 +43,6 @@ const componentFeatures: ComponentFeatureItem[] = [
       '다이얼로그를 닫기 전에는 이전 콘텐츠로 포커스 불가능. 다이얼로그를 닫은 후 열기 버튼으로 포커스 복귀. 레이어를 2개 이상 쌓지 마세요.',
   },
   {
-    heading: 'Interactive - action',
-    description:
-      '프라이머리 버튼의 레이블은 다이얼로그 제목의 동사와 페어링되어야 한다. 부정어로 묻지 말 것.',
-  },
-  {
     heading: 'Modality',
     description: '닫기 버튼과 ESC로 사용자가 언제든 흐름을 중단하고 빠져나갈 수 있어야 합니다.',
   },
@@ -87,6 +82,12 @@ const main = html`
 
     <mm-component-guide>
       <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
+      <mm-text-list
+        texts='[
+        "프라이머리 버튼 레이블은 다이얼로그 제목의 동사와 페어링합니다.",
+        "질문은 부정어로 만들지 않습니다."
+      ]'
+      ></mm-text-list>
     </mm-component-guide>
     <mm-component-related .items=${relatedComponents}></mm-component-related>
   </mm-page>
