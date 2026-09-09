@@ -10,9 +10,11 @@ export const codeStyles = css`
   }
 
   code {
+    display: block;
+    padding-left: var(--space-4);
     font-family: var(--font-family);
     font-size: var(--font-size-14);
-    line-height: var(--font-line-height-16);
+    line-height: var(--font-line-height-24);
     white-space: pre-wrap;
     overflow-wrap: anywhere;
   }
@@ -24,14 +26,14 @@ export const codeStyles = css`
   }
 
   .token.tag {
-    color: var(--color-danger-foreground);
+    color: color-mix(in srgb, var(--color-foreground-danger) 85%, transparent);
   }
 
   .token.attr-name {
-    color: var(--color-warning-foreground);
+    color: color-mix(in srgb, var(--color-foreground-warning) 85%, transparent);
   }
 
   .token.attr-value {
-    color: var(--color-success-foreground);
+    color: color-mix(in srgb, var(--color-foreground-success) 85%, transparent);
   }
 `
