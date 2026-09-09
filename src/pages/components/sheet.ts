@@ -187,27 +187,23 @@ function filterSheetTemplate() {
     <mm-sheet placement="bottom" id="filter-sheet">
       <mm-sheet-header heading="필터"></mm-sheet-header>
       <mm-sheet-body>
-        <form class="filter">
-          <fieldset class="filter-fieldset" role="group">
-            <mm-menu-item-switch
-              icon=${ICON_NAMES.DATE}
-              label="즉시 예약"
-              value="instant"
-              description="호스트 승인을 기다릴 필요 없이 예약할 수 있는 숙소"
-            ></mm-menu-item-switch>
-          </fieldset>
+        <form>
+          <mm-menu-item-switch
+            icon=${ICON_NAMES.DATE}
+            label="즉시 예약"
+            value="instant"
+            description="호스트 승인을 기다릴 필요 없이 예약할 수 있는 숙소"
+          ></mm-menu-item-switch>
           <mm-separator></mm-separator>
-          <fieldset class="filter-fieldset" role="group">
-            <legend class="filter-fieldset-legend">예산</legend>
+          <mm-form-field label="예산">
             <mm-menu-item-radio-group name="budget" aria-label="예산">
               <mm-menu-item-radio value="50000" label="50,000원 미만"></mm-menu-item-radio>
               <mm-menu-item-radio value="100000" label="100,000원 미만"></mm-menu-item-radio>
               <mm-menu-item-radio value="150000" label="150,000원 미만"></mm-menu-item-radio>
             </mm-menu-item-radio-group>
-          </fieldset>
+          </mm-form-field>
           <mm-separator></mm-separator>
-          <fieldset class="filter-fieldset" role="group">
-            <legend class="filter-fieldset-legend">평수</legend>
+          <mm-form-field label="평수">
             <mm-filter-button-group
               mode="single"
               .options=${[
@@ -216,11 +212,12 @@ function filterSheetTemplate() {
                 { value: '30', label: '30평' },
               ]}
             ></mm-filter-button-group>
-          </fieldset>
+          </mm-form-field>
           <mm-separator></mm-separator>
-          <fieldset class="filter-fieldset" role="group">
-            <legend class="filter-fieldset-legend">접근성 편의</legend>
-            <mm-paragraph>호스트가 제공하고 에어비앤비에서 검토한 정보입니다.</mm-paragraph>
+          <mm-form-field
+            label="접근성 편의"
+            helper="호스트가 제공하고 에어비앤비에서 검토한 정보입니다."
+          >
             <mm-menu-item-checkbox-group aria-label="접근성 편의">
               <mm-menu-item-checkbox
                 value="no-stairs"
@@ -235,19 +232,17 @@ function filterSheetTemplate() {
                 label="휠체어 접근 가능 주차 공간"
               ></mm-menu-item-checkbox>
             </mm-menu-item-checkbox-group>
-          </fieldset>
+          </mm-form-field>
           <mm-separator></mm-separator>
-          <fieldset class="filter-fieldset" role="group">
-            <legend class="filter-fieldset-legend">릴리스 채널</legend>
+          <mm-form-field label="릴리스 채널">
             <mm-select>
               <option value="stable">Stable</option>
               <option value="beta">Beta</option>
               <option value="canary">Canary</option>
             </mm-select>
-          </fieldset>
+          </mm-form-field>
           <mm-separator></mm-separator>
-          <fieldset class="filter-fieldset" role="group">
-            <legend class="filter-fieldset-legend">데스크톱에서 활성 상태가 아닌 경우...</legend>
+          <mm-form-field label="데스크톱에서 활성 상태가 아닌 경우...">
             <mm-menu-item-switch
               value="email-notify"
               label="멘션 및 다이렉트 메시지에 대한 이메일 알림 받기"
@@ -260,7 +255,7 @@ function filterSheetTemplate() {
               <mm-menu-item-radio value="15min" label="15분 마다 한 번"></mm-menu-item-radio>
               <mm-menu-item-radio value="1hour" label="한 시간에 한 번"></mm-menu-item-radio>
             </mm-menu-item-radio-group>
-          </fieldset>
+          </mm-form-field>
         </form>
       </mm-sheet-body>
       <mm-sheet-footer
