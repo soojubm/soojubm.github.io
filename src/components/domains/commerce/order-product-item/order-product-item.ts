@@ -25,7 +25,7 @@ export class OrderProductItem extends LitElement {
   render() {
     return html`
       <mm-list-item
-        size="48"
+        size="80"
         label=${this.name}
         description=${this.option}
         avatar-src=${this.imageSrc}
