@@ -244,7 +244,7 @@ const main = html`
         <mm-foundation-item
           href="./content.html"
           heading="Content"
-          description="텍스트 슬롯의 이름과 어조, 스캔 가능한 문구 원칙입니다."
+          description="텍스트 슬롯의 이름과 어조, 아이콘의 의미, 스캔 가능한 문구 원칙입니다."
         ></mm-foundation-item>
         <mm-foundation-item
           href="./elevation.html"
@@ -355,6 +355,17 @@ const main = html`
           heading="Section 컴포넌트"
           keywords='["mm-content-section", "mm-page-header"]'
         ></mm-keyword-tag-group>
+        <mm-keyword-tag-group
+          heading="Field 컴포넌트"
+          keywords='["mm-form-field", "mm-textfield", "mm-passwordfield", "mm-searchfield", "mm-textarea-field"]'
+        ></mm-keyword-tag-group>
+
+        <mm-paragraph>
+          Section과 Field 컴포넌트는 정해진 조립을 이름으로 감싼 시멘틱 표면입니다. Section은 제목
+          heading 요소와 본문 슬롯을, Field는 레이블·헬퍼·검증 텍스트와 컨트롤 슬롯을 묶습니다. 같은
+          제목·설명 묶음이라도 실제 heading 없이 텍스트 쌍만 표현하는 mm-text-block은 이 계층이
+          아니라 상위 컴포넌트의 내부 부품이며, 문서 구획으로 세울 때는 mm-content-section을 씁니다.
+        </mm-paragraph>
 
         <mm-paragraph>
           구획을 세로로 쌓는 페이지 조립 레이아웃(mm-flex)은 element·group·section 계층 밖의 별도

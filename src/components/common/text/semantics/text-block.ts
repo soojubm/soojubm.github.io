@@ -4,6 +4,7 @@ import { customElement, property } from 'lit/decorators.js'
 import { resetStyles } from '@/stylesheets/shared.styles'
 import '@/components/common/tag/tag'
 import '@/components/common/text/text'
+import '@/components/common/text/semantics/heading'
 import '@/components/common/text/semantics/paragraph'
 
 // TODO section 임 text-block은 단독으로 쓰이지 않는다 보통.
@@ -30,6 +31,9 @@ class TextBlock extends LitElement {
       :host([centered]) {
         align-items: center;
       }
+      :host([centered]) mm-heading {
+        text-align: center;
+      }
       /* Level 1 전용 본문 최대 너비 제한 (가독성 최적화) */
       :host([level='1']) mm-paragraph {
         max-width: 720px;
@@ -44,35 +48,9 @@ class TextBlock extends LitElement {
   @property({ type: String, reflect: true }) level = '1'
   @property({ type: Boolean, reflect: true }) centered = false
 
-  static variants = {
-    '1': {
-      headingSize: '32',
-      descriptionSize: '18',
-      gap: '3',
-    },
-    '2': {
-      headingSize: '24',
-      descriptionSize: '14',
-      gap: '3',
-    },
-    '3': {
-      headingSize: '18',
-      descriptionSize: '14',
-      gap: '1',
-    },
-    '4': {
-      headingSize: '14',
-      descriptionSize: '14',
-      gap: '1',
-    },
-  } as const
-
   render() {
-    const variant =
-      TextBlock.variants[this.level as keyof typeof TextBlock.variants] ?? TextBlock.variants['1']
-
     return html`
-      ${this.renderEyebrow()} ${this.renderHeading(variant)} ${this.renderDescription(variant)}
+      ${this.renderEyebrow()} ${this.renderHeading()} ${this.renderDescription()}
       <slot></slot>
     `
   }
@@ -85,17 +63,15 @@ class TextBlock extends LitElement {
     `
   }
 
-  private renderHeading(variant: typeof TextBlock.variants[keyof typeof TextBlock.variants]) {
+  private renderHeading() {
     if (!this.heading) return nothing
 
     return html`
-      <mm-text size=${variant.headingSize} weight="bold" ?centered=${this.centered}>
-        ${this.heading}
-      </mm-text>
+      <mm-heading level=${Number(this.level)}>${this.heading}</mm-heading>
     `
   }
 
-  private renderDescription(variant: typeof TextBlock.variants[keyof typeof TextBlock.variants]) {
+  private renderDescription() {
     if (!this.description) return nothing
 
     if (this.level === '1') {
@@ -105,9 +81,7 @@ class TextBlock extends LitElement {
     }
 
     return html`
-      <mm-text size=${variant.descriptionSize} ?centered=${this.centered}>
-        ${this.description}
-      </mm-text>
+      <mm-text size="14" ?centered=${this.centered}>${this.description}</mm-text>
     `
   }
 }
