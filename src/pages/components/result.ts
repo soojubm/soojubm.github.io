@@ -13,7 +13,7 @@ const relatedComponents: ComponentRelatedItemData[] = [
 ]
 
 const componentProps: ComponentPropItemData[] = [
-  { name: 'role', type: "string = 'status'", optional: true },
+  { name: 'role', type: "'alert' | 'status' = 'status'", optional: true },
   { name: 'avatar-icon', type: 'IconName', optional: true },
   { name: 'heading', type: 'string' },
   { name: 'description', type: 'string', optional: true },

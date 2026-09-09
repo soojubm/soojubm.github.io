@@ -6,6 +6,7 @@ import type { ComponentReferenceItemData } from '@/components/domains/component/
 import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
 import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
 
+import { INPUT_TYPE_UNION } from '@/components/common/input/input'
 import { renderPage } from '@/components/layouts/base-layouts'
 import './input.css'
 
@@ -38,7 +39,7 @@ const componentReferences: ComponentReferenceItemData[] = [
 ]
 
 const componentProps: ComponentPropItemData[] = [
-  { name: 'type', type: "string = 'text'" },
+  { name: 'type', type: `${INPUT_TYPE_UNION} = 'text'` },
   { name: 'value', type: 'string', optional: true },
   { name: 'name', type: 'string', optional: true },
   { name: 'placeholder', type: 'string', optional: true },

@@ -20,6 +20,9 @@ export type InputType =
   | 'color'
   | 'hidden'
 
+export const INPUT_TYPE_UNION =
+  "'text' | 'search' | 'tel' | 'url' | 'email' | 'password' | 'number' | 'date' | 'time' | 'datetime-local' | 'month' | 'week' | 'color' | 'hidden'"
+
 /**
  * <mm-input>
  * 공용 input 요소 컴포넌트. textfield 및 파생 컴포넌트(number-input 등)가 공유한다.
@@ -155,11 +158,3 @@ export class Input extends LitElement {
     this.dispatchEvent(new Event('input', { bubbles: true, composed: true }))
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-input': Input
-  }
-}
-
-export default Input
