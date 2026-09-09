@@ -1,5 +1,6 @@
 /* stylelint-disable color-no-hex -- 브라우저 리셋 파일이므로 hex 값 허용 */
-body,
+/* 문서와 컴포넌트 shadow root가 함께 쓰는 엘리먼트 리셋.
+   html·body처럼 shadow 안에서 매치될 수 없는 규칙은 document.css가 갖는다. */
 dl,
 dd,
 figure,
@@ -105,25 +106,6 @@ button:focus-visible {
   outline: none;
 }
 
-html {
-  min-width: 320px;
-  height: 100%;
-  overflow-x: hidden;
-  font-family: var(--font-family);
-  font-size: 16px;
-  line-height: var(--font-line-height-24);
-  -webkit-text-size-adjust: 100%;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  overscroll-behavior: contain;
-}
-body {
-  background: var(--background-color);
-  color: var(--foreground-color);
-  font-weight: var(--font-weight-normal);
-  font-size: 0.875rem;
-}
-
 blockquote {
   padding: var(--space-4);
   border: var(--border);
@@ -140,73 +122,6 @@ q:before {
   font-size: 48px;
   font-weight: var(--font-weight-bold);
   line-height: 1rem;
-}
-
-table {
-  --table-row-border: var(--border);
-  --table-cell-padding: var(--space-2) 0;
-  --table-cell-padding-inline: var(--space-2);
-  --table-cell-background-color: var(--background-color);
-
-  border-collapse: collapse;
-  border-spacing: 0;
-  border-left-style: hidden;
-  border-right-style: hidden;
-  font-size: inherit;
-
-  width: max-content;
-  min-width: 100%;
-  table-layout: fixed;
-
-  background: var(--table-cell-background-color);
-
-  --col-checkbox: 32px;
-}
-table caption {
-  padding: 0.5rem 0;
-  font-size: var(--font-size-12);
-  text-align: left;
-}
-table thead tr th {
-  padding: var(--space-1) 0;
-  padding-inline: var(--table-cell-padding-inline);
-  font-size: var(--font-size-12);
-  color: var(--foreground-subtle-color);
-  text-align: left;
-}
-table tbody tr {
-  border-bottom: var(--table-row-border);
-  background: var(--table-cell-background-color);
-  position: relative;
-}
-table tbody tr:hover {
-  --table-cell-background-color: var(--interaction-hover-background-color);
-}
-table tbody tr th {
-  padding-inline: var(--table-cell-padding-inline);
-  text-align: left;
-}
-table tbody tr td {
-  padding: var(--table-cell-padding);
-  padding-inline: var(--table-cell-padding-inline);
-}
-table .table-cell-ellipsis {
-  flex: 1;
-  width: 0;
-  min-width: 0;
-  max-width: 240px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-table .right {
-  text-align: right;
-}
-table tbody[role='rowgroup'] tr th {
-  width: 25%;
-}
-table tbody[role='rowgroup'] tr th + th {
-  width: auto;
 }
 
 ul,
@@ -227,95 +142,8 @@ li::marker {
   color: var(--foreground-subtle-color);
 }
 
-@media print {
-  a::after {
-    content: '(' attr(href) ')';
-  }
-}
-
-.lock-scroll {
-  overflow: hidden;
-}
-
-.offline {
-  margin: 0 auto;
-  padding: 0.5rem 1rem;
-  border-radius: var(--radius);
-  background: var(--color-danger);
-  color: var(--foreground-on-solid);
-  text-align: center;
-
-  position: fixed;
-  left: 10%;
-  right: 10%;
-  top: 45%;
-  z-index: var(--material-zindex-modal);
-}
-
-.skip {
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  z-index: var(--material-zindex-toast);
-}
-.skip-link {
-  display: block;
-  background: var(--background-strong-color);
-  color: var(--background-color);
-  text-align: center;
-  height: 0;
-  font-size: 0;
-}
-.skip-link:focus {
-  display: block;
-  height: 50px;
-  line-height: 50px;
-  font-size: 14px;
-}
-
-.is-focused,
 a:focus-visible,
-button:focus-visible,
-menu-item:focus-visible {
+button:focus-visible {
   outline: var(--interaction-focus-outline);
   outline-offset: 2px;
-}
-
-.cta-arrow {
-  max-width: 67px;
-  flex-grow: 1;
-  margin-left: 11px;
-  margin-right: 3px;
-  padding: 17px 0;
-}
-.cta-arrow .line {
-  width: 100%;
-  height: 2px;
-  background: var(--foreground-color);
-  position: relative;
-}
-.cta-arrow .line:before {
-  -webkit-transform: rotate(-50deg);
-  transform: rotate(-50deg);
-  -webkit-transform-origin: top right;
-  transform-origin: top right;
-}
-.cta-arrow .line:after,
-.cta-arrow .line:before {
-  background: inherit;
-  position: absolute;
-  width: 12px;
-  height: 2px;
-  content: '';
-  right: 0;
-}
-.cta-arrow .line:after {
-  -webkit-transform: rotate(50deg);
-  transform: rotate(50deg);
-  -webkit-transform-origin: bottom right;
-  transform-origin: bottom right;
-}
-.cta-arrow.theme-white .line {
-  background: var(--foreground-on-solid);
 }

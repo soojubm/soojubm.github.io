@@ -1,0 +1,4 @@
+.checkout {
+  max-width: var(--layout-width-small);
+  margin: 0 auto;
+}

@@ -6,6 +6,7 @@ import type { ComponentRelatedItemData } from '@/components/domains/component/co
 import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
 
 import { renderPage } from '@/components/layouts/base-layouts'
+import './tooltip.css'
 
 const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'popover.html', label: 'Popover' },
@@ -74,42 +75,6 @@ const main = html`
         Any element
       </span>
     </mm-component-example>
-    <style>
-      [data-tooltip]:not([disabled]).has-tooltip-fade:before {
-        transition: opacity var(--transition-duration) var(--transition-easing),
-          visibility var(--transition-duration) var(--transition-easing);
-      }
-      [data-tooltip]:not([disabled]):hover:before {
-        opacity: 1;
-        visibility: visible;
-      }
-      [data-tooltip]:not([disabled]):before {
-        display: inline-block;
-        /* hyphens: auto; */
-        content: attr(data-tooltip);
-        opacity: 0;
-        font-size: 12px;
-        overflow: hidden;
-        pointer-events: none;
-        visibility: hidden;
-        background: goldenrod;
-        border-radius: var(--radius);
-        padding: var(--space-1) var(--space-2);
-        text-overflow: ellipsis;
-        white-space: pre;
-        position: absolute;
-        right: auto;
-        bottom: auto;
-        left: 50%;
-        top: 0;
-        z-index: var(--material-zindex-overlay);
-        margin-top: -5px;
-        /* margin-bottom: auto; */
-        -webkit-transform: translate(-50%, -100%);
-        transform: translate(-50%, -100%);
-      }
-    </style>
-
     <mm-component-props .props=${componentProps}></mm-component-props>
 
     <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>

@@ -1,9 +1,0 @@
-.site-bottom-bar {
-  display: none;
-}
-
-@media (max-width: 480px) {
-  .site-bottom-bar {
-    display: block;
-  }
-}

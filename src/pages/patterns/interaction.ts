@@ -4,6 +4,7 @@ import { html } from 'lit'
 import type { ComponentReferenceItemData } from '@/components/domains/component/component-references'
 
 import { renderPage } from '@/components/layouts/base-layouts'
+import './interaction.css'
 
 const componentReferences: ComponentReferenceItemData[] = [
   {
@@ -270,13 +271,6 @@ const main = html`
           </mm-flex>
         </mm-grid>
 
-        <style>
-          .swatch-chip {
-            height: var(--size-48);
-            border: var(--border);
-            border-radius: var(--radius);
-          }
-        </style>
       </mm-content-section>
 
       <mm-content-section heading-level="3" heading="States">

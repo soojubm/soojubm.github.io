@@ -1,10 +1,11 @@
-import { html, render } from 'lit'
+import { html } from 'lit'
 
+import type { ToggleButtonGroup } from '@/components/common/toggle-button/toggle-button-group'
 import type { ComponentReferenceItemData } from '@/components/domains/component/component-references'
 
-import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import { renderPage } from '@/components/layouts/base-layouts'
 import { ScrollSpyController } from '@/controllers/scroll-spy-controller'
+import './home.css'
 
 const componentReferences: ComponentReferenceItemData[] = [
   {
@@ -104,6 +105,46 @@ const supplementaryReferences: ComponentReferenceItemData[] = [
   },
 ]
 
+interface SamplerSection {
+  id: string
+  label: string
+  heading: string
+  description: string
+}
+
+const samplerSections: SamplerSection[] = [
+  {
+    id: 'sampler-intent',
+    label: 'Intent',
+    heading: 'Observe visible sections',
+    description:
+      'The controller owns IntersectionObserver setup and updates the active section as the panel scrolls.',
+  },
+  {
+    id: 'sampler-root',
+    label: 'Root',
+    heading: 'Use a local scroll root',
+    description:
+      'This sampler passes its inner scroll area as the observer root, so the behavior stays contained in the page sample.',
+  },
+  {
+    id: 'sampler-update',
+    label: 'Update',
+    heading: 'Refresh targets after render',
+    description:
+      'The page setup reads target elements after the HTML is rendered and lets the controller observe those sections.',
+  },
+  {
+    id: 'sampler-cleanup',
+    label: 'Cleanup',
+    heading: 'Keep document scroll stable',
+    description:
+      'Trigger buttons scroll only this inner panel, so clicking Intent, Root, Update, or Cleanup does not move the document.',
+  },
+]
+
+const samplerOptions = samplerSections.map(({ id, label }) => ({ value: id, label }))
+
 const main = html`
   <mm-page style="display: flex; flex-direction: column; gap: var(--space-section)">
     <mm-flex gap="8" direction="column">
@@ -118,134 +159,37 @@ const main = html`
     </mm-flex>
 
     <div hidden>
-      <style>
-        .scroll-spy-sampler-nav {
-          display: flex;
-        }
-
-        .scroll-spy-sampler-tab {
-          width: 100%;
-          padding: var(--space-2) var(--space-3);
-          border: 0;
-          border-radius: var(--radius);
-          background: transparent;
-          font: inherit;
-          color: var(--foreground-subtle-color);
-          text-align: left;
-          cursor: pointer;
-        }
-
-        .scroll-spy-sampler-tab.is-active {
-          background: var(--interaction-selected-background-color);
-          color: var(--interaction-selected-foreground-color);
-        }
-
-        .scroll-spy-sampler-body {
-          flex: 1 1 18rem;
-          min-width: 0;
-          max-height: 24rem;
-          scroll-padding-top: var(--space-4);
-        }
-
-        .scroll-spy-sampler-section {
-          justify-content: center;
-          min-height: 18rem;
-        }
-
-        @media (max-width: 720px) {
-          .scroll-spy-sampler-nav {
-            flex-basis: 100%;
-            position: static;
-          }
-        }
-      </style>
       <mm-surface>
         <mm-text size="24" weight="bold" as="h2">Scroll Spy Controller Sampler</mm-text>
         <div class="scroll-spy-sampler js-scroll-spy-sampler">
-          <nav class="scroll-spy-sampler-nav" aria-label="Scroll spy sampler">
-            <button
-              class="scroll-spy-sampler-tab is-active"
-              type="button"
-              aria-current="true"
-              data-scroll-spy-target="sampler-intent"
-            >
-              Intent
-            </button>
-            <button
-              class="scroll-spy-sampler-tab"
-              type="button"
-              aria-current="false"
-              data-scroll-spy-target="sampler-root"
-            >
-              Root
-            </button>
-            <button
-              class="scroll-spy-sampler-tab"
-              type="button"
-              aria-current="false"
-              data-scroll-spy-target="sampler-update"
-            >
-              Update
-            </button>
-            <button
-              class="scroll-spy-sampler-tab"
-              type="button"
-              aria-current="false"
-              data-scroll-spy-target="sampler-cleanup"
-            >
-              Cleanup
-            </button>
-          </nav>
+          <mm-toggle-button-group
+            class="js-scroll-spy-nav"
+            aria-label="Scroll spy sampler"
+            orientation="vertical"
+            stretch
+            .options=${samplerOptions}
+          ></mm-toggle-button-group>
           <mm-scroll
             direction="column"
             gap="3"
             class="scroll-spy-sampler-body js-scroll-spy-body"
             tabindex="0"
           >
-            <mm-surface
-              id="sampler-intent"
-              class="scroll-spy-sampler-section"
-              data-scroll-spy-section
-            >
-              <mm-text-block
-                level="3"
-                heading="Observe visible sections"
-                description="The controller owns IntersectionObserver setup and updates the active section as the panel scrolls."
-              ></mm-text-block>
-            </mm-surface>
-            <mm-surface
-              id="sampler-root"
-              class="scroll-spy-sampler-section"
-              data-scroll-spy-section
-            >
-              <mm-text-block
-                level="3"
-                heading="Use a local scroll root"
-                description="This sampler passes its inner scroll area as the observer root, so the behavior stays contained in the page sample."
-              ></mm-text-block>
-            </mm-surface>
-            <mm-surface
-              id="sampler-update"
-              class="scroll-spy-sampler-section"
-              data-scroll-spy-section
-            >
-              <mm-text-block
-                level="3"
-                heading="Refresh targets after render"
-                description="The page setup reads target elements after the HTML is rendered and lets the controller observe those sections."
-              ></mm-text-block>
-            </mm-surface>
-            <mm-surface
-              id="sampler-cleanup"
-              class="scroll-spy-sampler-section"
-              data-scroll-spy-section
-            >
-              <mm-text-block
-                level="3"
-                heading="Keep document scroll stable"
-                description="Trigger buttons scroll only this inner panel, so clicking Intent, Root, Update, or Cleanup does not move the document."
-              ></mm-text-block>
-            </mm-surface>
+            ${samplerSections.map(
+              section => html`
+                <mm-surface
+                  id=${section.id}
+                  class="scroll-spy-sampler-section"
+                  data-scroll-spy-section
+                >
+                  <mm-text-block
+                    level="3"
+                    heading=${section.heading}
+                    description=${section.description}
+                  ></mm-text-block>
+                </mm-surface>
+              `,
+            )}
           </mm-scroll>
         </div>
       </mm-surface>
@@ -265,8 +209,6 @@ const main = html`
         </mm-flex>
       </mm-surface>
     </div>
-
-    <!-- <mm-content-section heading="Icons" class="js-icon-gallery"></mm-content-section> -->
 
     <mm-content-section heading="가이드를 위한 가이드">
       <mm-paragraph>
@@ -294,48 +236,18 @@ renderPage(main, {
   footer: true,
   initialize: () => {
     setupScrollSpySampler()
-    setupIconGallery()
   },
 })
-
-// ICON_NAMES를 실제 값으로 렌더해, 시맨틱 이름 추가 시 가이드가 코드와 함께 최신 상태를 유지하게 한다.
-function setupIconGallery() {
-  const gallery = document.querySelector<HTMLElement>('.js-icon-gallery')
-  if (!gallery) return
-
-  render(
-    html`
-      <mm-grid columns="4">
-        ${Object.entries(ICON_NAMES).map(
-          ([name, icon]) => html`
-            <mm-list-item icon=${icon} label=${name} description=${icon}></mm-list-item>
-          `,
-        )}
-      </mm-grid>
-    `,
-    gallery,
-  )
-}
 
 function setupScrollSpySampler() {
   const sampler = document.querySelector<HTMLElement>('.js-scroll-spy-sampler')
   if (!sampler) return
 
   const scrollRoot = sampler.querySelector<HTMLElement>('.js-scroll-spy-body')
-  const triggers = Array.from(
-    sampler.querySelectorAll<HTMLButtonElement>('[data-scroll-spy-target]'),
-  )
+  const nav = sampler.querySelector<ToggleButtonGroup>('.js-scroll-spy-nav')
   const targets = Array.from(sampler.querySelectorAll<HTMLElement>('[data-scroll-spy-section]'))
 
-  if (!scrollRoot || !triggers.length || !targets.length) return
-
-  const setActive = (id: string) => {
-    triggers.forEach(trigger => {
-      const isActive = trigger.dataset.scrollSpyTarget === id
-      trigger.classList.toggle('is-active', isActive)
-      trigger.setAttribute('aria-current', String(isActive))
-    })
-  }
+  if (!scrollRoot || !nav || !targets.length) return
 
   const host = {
     addController: () => {},
@@ -347,24 +259,21 @@ function setupScrollSpySampler() {
   const scrollSpy = new ScrollSpyController(host, {
     root: scrollRoot,
     rootMargin: '0px 0px -55% 0px',
-    onActiveChange: setActive,
+    onActiveChange: id => {
+      nav.selectedIndex = samplerSections.findIndex(section => section.id === id)
+    },
   })
 
   scrollSpy.observe(targets)
-  setActive(targets[0].id)
 
-  triggers.forEach(trigger => {
-    trigger.addEventListener('click', () => {
-      const id = trigger.dataset.scrollSpyTarget
-      const target = id ? document.getElementById(id) : null
-      if (!id || !target) return
+  nav.addEventListener('change', event => {
+    const target = document.getElementById((event as CustomEvent<{ value: string }>).detail.value)
+    if (!target) return
 
-      setActive(id)
-
-      const rootRect = scrollRoot.getBoundingClientRect()
-      const targetRect = target.getBoundingClientRect()
-      const top = targetRect.top - rootRect.top + scrollRoot.scrollTop
-      scrollRoot.scrollTo({ top, behavior: 'smooth' })
-    })
+    const top =
+      target.getBoundingClientRect().top -
+      scrollRoot.getBoundingClientRect().top +
+      scrollRoot.scrollTop
+    scrollRoot.scrollTo({ top, behavior: 'smooth' })
   })
 }

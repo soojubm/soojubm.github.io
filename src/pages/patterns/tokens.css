@@ -1,0 +1,35 @@
+.token-color-markers {
+  display: flex;
+  width: min(100%, calc(var(--size-80) * 6));
+}
+
+.token-color-marker {
+  display: flex;
+  justify-content: center;
+  flex: 1 1 0;
+  min-width: var(--size-32);
+}
+
+.motion-track {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  width: calc(var(--size-80) * 3);
+  height: var(--size-32);
+  padding: 0 var(--space-1);
+  border-radius: var(--radius-full);
+  background: var(--background-subtle-color);
+}
+
+.motion-dot {
+  width: var(--size-24);
+  height: var(--size-24);
+  border-radius: var(--radius-full);
+  background: var(--color-primary);
+  transition-property: transform;
+  transition-duration: var(--transition-duration);
+}
+
+mm-token-stage:hover .motion-dot {
+  transform: translateX(calc(var(--size-80) * 3 - var(--size-24) - var(--space-2)));
+}

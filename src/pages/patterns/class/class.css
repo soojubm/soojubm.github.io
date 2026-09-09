@@ -50,6 +50,46 @@
   border-top: var(--border);
 }
 
+/* .class-order-btn .line이 버튼 위에서 색을 덮어쓸 수 있도록 먼저 선언한다.
+   두 규칙은 특정도가 같아 순서로 갈린다. */
+.cta-arrow {
+  max-width: 67px;
+  flex-grow: 1;
+  margin-left: 11px;
+  margin-right: 3px;
+  padding: 17px 0;
+}
+.cta-arrow .line {
+  width: 100%;
+  height: 2px;
+  background: var(--foreground-color);
+  position: relative;
+}
+.cta-arrow .line:before {
+  -webkit-transform: rotate(-50deg);
+  transform: rotate(-50deg);
+  -webkit-transform-origin: top right;
+  transform-origin: top right;
+}
+.cta-arrow .line:after,
+.cta-arrow .line:before {
+  background: inherit;
+  position: absolute;
+  width: 12px;
+  height: 2px;
+  content: '';
+  right: 0;
+}
+.cta-arrow .line:after {
+  -webkit-transform: rotate(50deg);
+  transform: rotate(50deg);
+  -webkit-transform-origin: bottom right;
+  transform-origin: bottom right;
+}
+.cta-arrow.theme-white .line {
+  background: var(--foreground-on-solid);
+}
+
 .class-order-btn {
   font-size: inherit;
   display: inline-flex;

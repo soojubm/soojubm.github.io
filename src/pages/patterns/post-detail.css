@@ -133,3 +133,9 @@
   right: 0;
   top: -20rem;
 }
+
+mm-text[variant='subhead'] + mm-text[variant='body-large'],
+mm-text[variant='body-large'] + mm-text[variant='body-large'] {
+  display: block;
+  margin: 2rem 0 0;
+}

@@ -5,6 +5,7 @@ import type { ComponentPropItemData } from '@/components/domains/component/compo
 import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
 
 import { renderPage } from '@/components/layouts/base-layouts'
+import './step.css'
 
 const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'breadcrumb.html', label: 'Breadcrumb' },
@@ -128,31 +129,6 @@ const main = html`
     <mm-component-guide>
       <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
       <section class="timeline">
-        <style>
-          .timeline {
-            position: relative;
-          }
-          .timeline:before {
-            content: '';
-            display: block;
-            width: 1px;
-            background: var(--border-color);
-            position: absolute;
-            bottom: 0;
-            left: 15px;
-            top: 0;
-            z-index: -1;
-          }
-          .timeline-item {
-            padding: var(--space-4) 0 0 0;
-          }
-          .timeline-item-panel {
-            display: flex;
-            gap: var(--space-3);
-            margin: var(--space-2) 0 0 0;
-            position: relative;
-          }
-        </style>
         <div class="timeline-item">
           <mm-tag datetime="">2022. 11. 4.</mm-tag>
           <div class="timeline-item-panel">

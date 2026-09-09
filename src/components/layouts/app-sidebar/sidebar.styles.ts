@@ -26,7 +26,7 @@ export const sidebarStyles = css`
     position: fixed;
     top: var(--navbar-height);
     bottom: 0;
-    z-index: calc(var(--material-zindex-chrome) + 1);
+    z-index: var(--material-zindex-chrome-top);
 
     ${scrollbarStyles};
   }

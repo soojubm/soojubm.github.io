@@ -31,14 +31,15 @@ const main = html`
       <mm-content-section heading-level="3" heading="앱 셸 영역">
         <mm-paragraph>
           화면에 고정된 내비게이션(chrome)이 콘텐츠(base)를 감싸고, 드롭다운·팝오버처럼 잠깐 뜨는
-          표면(overlay)은 그 위로 겹칩니다. 겹침 순서는 --material-zindex-* 그룹 토큰이 정합니다.
+          표면(overlay)은 그 위로 겹칩니다. 전역 내비게이션은 페이지에 고정된 바보다 위에 남아야
+          하므로 chrome-top을 씁니다. 겹침 순서는 --material-zindex-* 그룹 토큰이 정합니다.
         </mm-paragraph>
         <div class="app-shell">
           <mm-surface variant="outlined" density="compact" class="app-shell-topbar">
             <mm-caption>Top Bar · chrome</mm-caption>
           </mm-surface>
           <mm-surface variant="outlined" density="compact" class="app-shell-sidebar">
-            <mm-caption>Sidebar · chrome</mm-caption>
+            <mm-caption>Sidebar · chrome-top</mm-caption>
           </mm-surface>
           <mm-surface variant="ghost" density="compact" class="app-shell-content">
             <mm-caption>Content · base</mm-caption>
@@ -50,11 +51,6 @@ const main = html`
             <mm-caption>Bottom Bar · chrome</mm-caption>
           </mm-surface>
         </div>
-        <mm-flex direction="column" gap="2">
-          <code>--material-zindex-chrome</code>
-          <code>--material-zindex-overlay</code>
-          <code>--material-zindex-base</code>
-        </mm-flex>
       </mm-content-section>
 
       <mm-content-section heading-level="3" heading="컨테이너 너비">

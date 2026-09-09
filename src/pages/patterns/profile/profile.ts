@@ -121,233 +121,103 @@ const main = html`
 
   <!-- 포트폴리오 시트 -->
 
-  <style>
-    .newneek-sheet-body {
-      padding: var(--space-8) var(--layout-padding-inline);
-    }
-
-    .home-mangrove {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      border-top: 2px solid var(--foreground-color);
-      background: var(--color-newneek);
-      position: relative;
-    }
-
-    .mangrove1 {
-      display: block;
-      max-width: 240px;
-      margin-top: -140px;
-      margin-bottom: 110px;
-      transition: all var(--transition-duration) var(--transition-easing);
-    }
-
-    .mangrove2 {
-      display: block;
-      max-width: 230px;
-      margin-left: 2rem;
-      position: absolute;
-      bottom: 2rem;
-      transition: all var(--transition-duration) var(--transition-easing) 0.05s;
-    }
-
-    .mangrove-foot {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
-      width: 100%;
-      padding: 0.5rem 0;
-      border-top: 1px solid var(--foreground-color);
-      border-bottom: 2px solid var(--foreground-color);
-      background: var(--background-color);
-      position: relative;
-      z-index: var(--material-zindex-raised);
-    }
-
-    .home-mangrove:hover .mangrove1 {
-      transform: translateY(-1.5rem);
-    }
-    .home-mangrove:hover .mangrove2 {
-      transform: translateY(-1.05rem);
-    }
-
-    .subscribe-gosum {
-      padding: 2rem 0 3rem;
-      background: var(--color-newneek);
-      box-sizing: border-box;
-    }
-
-    .today-poll {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin: 4rem auto;
-    }
-    .today-poll div {
-      width: 80px;
-      margin: 0 0.5rem;
-      background: var(--background-color);
-      text-align: center;
-    }
-    .today-poll div figure {
-      border: 2px solid var(--foreground-color);
-      border-bottom-width: 1px;
-    }
-    .today-poll div figure span {
-      display: block;
-      margin-top: -3rem;
-      padding: 1.5rem 1.5rem 0.5rem;
-      font-size: 3.5rem;
-      line-height: 1.2;
-    }
-    .today-poll .label {
-      display: block;
-      padding: 0.25rem 0;
-      border: 2px solid var(--foreground-color);
-      border-top: 0;
-      background: var(--background-subtle-color);
-      font-size: var(--font-size-18);
-      font-weight: bold;
-    }
-
-    .zigzag-border {
-      --zigzag-width: 24px;
-      --zigzag-height: 12px;
-      --zigzag-gap: 8px;
-      --zigzag-color: var(--border-color);
-      position: relative;
-      padding-bottom: calc(var(--zigzag-height) + var(--zigzag-gap));
-    }
-    .zigzag-border::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      height: var(--zigzag-height);
-      background-color: var(--zigzag-color);
-      mask-image: url("data:image/svg+xml,%3Csvg width='16' height='8' viewBox='0 0 16 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolyline points='0,1 4,7 8,1 12,7 16,1' fill='none' stroke='black' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-      mask-repeat: repeat-x;
-      mask-size: var(--zigzag-width) var(--zigzag-height);
-    }
-  </style>
-
   <mm-sheet id="sheet-newneek" placement="center" width="large" height="90vh">
     <mm-sheet-header heading="뉴닉"></mm-sheet-header>
     <mm-sheet-body class="newneek-sheet-body">
-      <div class="zigzag-border">Zigzag border</div>
-      <div style="max-width: 800px; margin: 4rem auto">
-        <div class="home-mangrove">
-          <div>
-            <img class="mangrove1" src="/src/images/newneek/home-mangrove1.png" alt="" />
-            <img class="mangrove2" src="/src/images/newneek/home-mangrove2.png" alt="" />
-          </div>
-          <div class="mangrove-foot">
-            <b>고슴이는 집을 찾을 수 있을까요?</b>
+      <mm-flex direction="column" gap="section">
+        <div class="zigzag-border">Zigzag border</div>
+        <div style="max-width: 800px; margin: 4rem auto">
+          <div class="home-mangrove">
+            <div>
+              <img class="mangrove1" src="/src/images/newneek/home-mangrove1.png" alt="" />
+              <img class="mangrove2" src="/src/images/newneek/home-mangrove2.png" alt="" />
+            </div>
+            <div class="mangrove-foot">
+              <b>고슴이는 집을 찾을 수 있을까요?</b>
+            </div>
           </div>
         </div>
-      </div>
 
-      <section style="max-width: 480px; margin: 0 auto">
-        <mm-chat-feed>
-          <mm-participant-chat-message name="신규방문자">
-            <mm-participant-chat-bubble>
-              OOO이 이슈인데 신문은 어렵고 재미없어.
-            </mm-participant-chat-bubble>
-            <mm-participant-chat-bubble>
-              뭐야 이렇게 쉬운 이슈였어? 뉴닉?
-            </mm-participant-chat-bubble>
-            <mm-participant-chat-bubble>이메일로 구독해보자!</mm-participant-chat-bubble>
-          </mm-participant-chat-message>
-          <mm-participant-chat-message name="뉴스레터 구독자">
-            <mm-participant-chat-bubble>
-              예전에 비슷한 이슈가 있었던 것 같은데...
-            </mm-participant-chat-bubble>
-            <mm-participant-chat-bubble>
-              뉴닉이 어떻게 쉽고 재미있게 풀어줬더라?
-            </mm-participant-chat-bubble>
-            <mm-button-group>
-              <mm-button>최신 콘텐츠 탐색</mm-button>
-              <mm-button>관심 분야로 탐색</mm-button>
-              <mm-button>큐레이션 콘텐츠 탐색</mm-button>
-              <mm-button>이슈나 인물로 검색</mm-button>
-              <mm-button>관심 콘텐츠 저장</mm-button>
-            </mm-button-group>
-          </mm-participant-chat-message>
-        </mm-chat-feed>
-      </section>
+        <section style="max-width: 480px; margin: 0 auto">
+          <mm-chat-feed>
+            <mm-participant-chat-message name="신규방문자">
+              <mm-participant-chat-bubble>
+                OOO이 이슈인데 신문은 어렵고 재미없어.
+              </mm-participant-chat-bubble>
+              <mm-participant-chat-bubble>
+                뭐야 이렇게 쉬운 이슈였어? 뉴닉?
+              </mm-participant-chat-bubble>
+              <mm-participant-chat-bubble>이메일로 구독해보자!</mm-participant-chat-bubble>
+            </mm-participant-chat-message>
+            <mm-participant-chat-message name="뉴스레터 구독자">
+              <mm-participant-chat-bubble>
+                예전에 비슷한 이슈가 있었던 것 같은데...
+              </mm-participant-chat-bubble>
+              <mm-participant-chat-bubble>
+                뉴닉이 어떻게 쉽고 재미있게 풀어줬더라?
+              </mm-participant-chat-bubble>
+              <mm-button-group>
+                <mm-button>최신 콘텐츠 탐색</mm-button>
+                <mm-button>관심 분야로 탐색</mm-button>
+                <mm-button>큐레이션 콘텐츠 탐색</mm-button>
+                <mm-button>이슈나 인물로 검색</mm-button>
+                <mm-button>관심 콘텐츠 저장</mm-button>
+              </mm-button-group>
+            </mm-participant-chat-message>
+          </mm-chat-feed>
+        </section>
 
-      <mm-separator></mm-separator>
+        <mm-separator></mm-separator>
 
-      <section style="max-width: 480px; margin: 0 auto">
-        <mm-chat-feed>
-          <mm-my-chat-message>
-            <mm-my-chat-bubble>뉴닉하면 어떤 색이 떠올라요?</mm-my-chat-bubble>
-          </mm-my-chat-message>
-          <mm-participant-chat-message name="찐뉴니커">
-            <mm-participant-chat-bubble>
-              후후.. 역시 뉴닉은 회색이죠! 네? 주황색은 본 적이 없는데...
-            </mm-participant-chat-bubble>
-          </mm-participant-chat-message>
-          <mm-my-chat-message>
-            <mm-my-chat-bubble>As-is 주황을 버튼에만 사용</mm-my-chat-bubble>
-            <mm-my-chat-bubble>
-              To-be 주황을 배경색으로 넓게 사용하여 브랜드 아이덴티티를 강화하고 주황색 배경에
-              검정색 버튼의 고대비로 주목도를 높이자.
-            </mm-my-chat-bubble>
-          </mm-my-chat-message>
-        </mm-chat-feed>
-      </section>
+        <section style="max-width: 480px; margin: 0 auto">
+          <mm-chat-feed>
+            <mm-my-chat-message>
+              <mm-my-chat-bubble>뉴닉하면 어떤 색이 떠올라요?</mm-my-chat-bubble>
+            </mm-my-chat-message>
+            <mm-participant-chat-message name="찐뉴니커">
+              <mm-participant-chat-bubble>
+                후후.. 역시 뉴닉은 회색이죠! 네? 주황색은 본 적이 없는데...
+              </mm-participant-chat-bubble>
+            </mm-participant-chat-message>
+            <mm-my-chat-message>
+              <mm-my-chat-bubble>As-is 주황을 버튼에만 사용</mm-my-chat-bubble>
+              <mm-my-chat-bubble>
+                To-be 주황을 배경색으로 넓게 사용하여 브랜드 아이덴티티를 강화하고 주황색 배경에
+                검정색 버튼의 고대비로 주목도를 높이자.
+              </mm-my-chat-bubble>
+            </mm-my-chat-message>
+          </mm-chat-feed>
+        </section>
 
-      <br />
-      <br />
+        <section class="subscribe-gosum">
+          <mm-flex direction="column" gap="2">
+            <mm-paragraph>
+              지금 구독하면
+              <b>내일 아침</b>
+              에 읽을 수 있어요!
+            </mm-paragraph>
+            <mm-paragraph>
+              <span aria-hidden="true">✨</span>
+              <b>305,408명</b>
+              이 뉴닉을 읽고 있어요.
+            </mm-paragraph>
+            <mm-input placeholder="이메일 주소"></mm-input>
+            <mm-input placeholder="닉네임"></mm-input>
+            <mm-button variant="primary">뉴스레터 무료로 구독하기</mm-button>
+          </mm-flex>
+        </section>
 
-      <section class="subscribe-gosum">
-        <mm-flex direction="column" gap="2">
-          <mm-paragraph>
-            지금 구독하면
-            <b>내일 아침</b>
-            에 읽을 수 있어요!
-          </mm-paragraph>
-          <mm-paragraph>
-            <span aria-hidden="true">✨</span>
-            <b>305,408명</b>
-            이 뉴닉을 읽고 있어요.
-          </mm-paragraph>
-          <mm-input placeholder="이메일 주소"></mm-input>
-          <mm-input placeholder="닉네임"></mm-input>
-          <mm-button variant="primary">뉴스레터 무료로 구독하기</mm-button>
+        <mm-flex direction="column" gap="4">
+          <mm-text size="18" weight="bold">오늘 기분 어때요?</mm-text>
+          <mm-text centered>
+            <span aria-hidden="true">🦔</span>
+            고슴이: 고슴이는...!
+          </mm-text>
+          <mm-gender-selector stretch></mm-gender-selector>
         </mm-flex>
-      </section>
 
-      <section class="today-poll">
-        <mm-text size="18" weight="bold">오늘 기분 어때요?</mm-text>
-        <mm-text centered>
-          <span aria-hidden="true">🦔</span>
-          고슴이: 고슴이는...!
-        </mm-text>
-        <mm-flex direction="column" justify-content="center" align-items="center" gap="2">
-          <div>
-            <figure><span aria-hidden="true">🧒</span></figure>
-            <span class="label">기타</span>
-          </div>
-          <div>
-            <figure><span aria-hidden="true">👧</span></figure>
-            <span class="label">여성</span>
-          </div>
-          <div>
-            <figure><span aria-hidden="true">👦</span></figure>
-            <span class="label">남성</span>
-          </div>
-        </mm-flex>
-      </section>
-
-      <div style="max-width: 800px; margin: 4rem 0">
         <img src="/src/images/newneek-book.png" alt="" />
-      </div>
+      </mm-flex>
     </mm-sheet-body>
   </mm-sheet>
 

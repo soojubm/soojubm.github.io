@@ -1,52 +1,10 @@
 import { html } from 'lit'
 
 import { renderPage } from '@/components/layouts/base-layouts'
+import './product.css'
 
 const main = html`
   <mm-page class="product">
-    <style>
-      .product {
-        padding: 0 var(--layout-padding-inline);
-      }
-      .product-image {
-        padding: 10%;
-        box-sizing: border-box;
-        border-radius: var(--radius);
-        background: var(--background-subtle-color);
-        position: relative;
-      }
-
-      .product-story-bleed {
-        width: 100vw;
-        margin-left: 50%;
-        padding-block: var(--space-section);
-        background: var(--background-subtle-color);
-        transform: translateX(-50%);
-      }
-
-      .product-quick {
-        display: flex;
-        align-items: center;
-        height: var(--size-80);
-        padding: 0 var(--layout-padding-inline);
-        background: var(--background-subtle-color);
-      }
-      .product-quick-head {
-        width: 35%;
-        position: relative;
-      }
-      .product-quick-total {
-        margin: 0 2rem 0 auto;
-        text-align: right;
-        position: relative;
-      }
-      .product-quick-total-price {
-        vertical-align: middle;
-      }
-      .product-quick-controls {
-        position: relative;
-      }
-    </style>
     <mm-button>Back to Home</mm-button>
 
     <mm-grid columns="2" gap="8" class="product-head" style="margin-top: var(--space-4)">

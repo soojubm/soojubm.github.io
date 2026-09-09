@@ -1,6 +1,7 @@
 import { html } from 'lit'
 
 import { renderPage } from '@/components/layouts/base-layouts'
+import './foundations.css'
 /* Signifier 가이드·아이콘 카탈로그 초안. 되살릴 때 템플릿으로 되돌린다.
 import type { FilterOption } from '@/components/common/button/semantics/filter-button-group'
 import type { IconName } from '@/components/common/icon/icon-names'
@@ -193,62 +194,6 @@ const iconCategoryOptions: FilterOption[] = [
     </mm-flex>
 
     <mm-flex direction="column" gap="3">
-      <style>
-        :root {
-          --layout-max-width: 1200px;
-          --layout-side-padding: calc((100vw - var(--layout-max-width)) / 2);
-          --item-min-width: 240px;
-          --item-gap: calc(var(--space-4) + var(--space-1));
-        }
-
-        .scroll-outer {
-          overflow-x: auto;
-          scroll-snap-type: x mandatory;
-          -webkit-overflow-scrolling: touch;
-        }
-
-        .scroll-inner {
-          display: flex;
-          gap: var(--item-gap);
-          padding: var(--space-4) 0;
-          padding-left: var(--layout-side-padding);
-          padding-right: var(--layout-side-padding);
-          min-width: 100vw;
-        }
-
-        .item {
-          min-width: var(--item-min-width);
-          height: 150px;
-          background: var(--background-strong-color);
-          flex-shrink: 0;
-          scroll-snap-align: start;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-weight: bold;
-          border-radius: var(--radius);
-        }
-
-        @media (max-width: 1200px) {
-          :root {
-            --layout-side-padding: var(--space-4);
-            --item-min-width: 200px;
-            --item-gap: var(--space-4);
-          }
-        }
-
-        @media (max-width: 800px) {
-          :root {
-            --layout-side-padding: var(--space-3);
-            --item-min-width: 180px;
-            --item-gap: var(--space-3);
-          }
-
-          .item {
-            height: 120px;
-          }
-        }
-      </style>
       <div class="scroll-outer">
         <div class="scroll-inner">
           <div class="item">Item 1</div>

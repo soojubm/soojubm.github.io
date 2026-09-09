@@ -8,7 +8,7 @@
 
   position: fixed;
   top: 0;
-  z-index: calc(var(--material-zindex-chrome) + 1);
+  z-index: var(--material-zindex-chrome-top);
 }
 
 /* 재질(배경+blur)은 자손이 아닌 ::before 형제 레이어가 소유한다.
@@ -54,4 +54,14 @@
   border-radius: var(--control-border-radius);
   padding: var(--control-padding);
   box-shadow: var(--surface-base-shadow);
+}
+
+.site-bottom-bar {
+  display: none;
+}
+
+@media (max-width: 480px) {
+  .site-bottom-bar {
+    display: block;
+  }
 }

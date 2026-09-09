@@ -5,13 +5,6 @@ import { renderPage } from '@/components/layouts/base-layouts'
 
 const main = html`
   <mm-page width="small">
-    <style>
-      mm-text[variant='subhead'] + mm-text[variant='body-large'],
-      mm-text[variant='body-large'] + mm-text[variant='body-large'] {
-        display: block;
-        margin: 2rem 0 0;
-      }
-    </style>
     <header class="post-head">
       <mm-flex direction="column" gap="3">
         <mm-link href="#post">Murmur</mm-link>
@@ -31,16 +24,6 @@ const main = html`
     <mm-thumbnail src="/src/images/soojubm.png" ratio="16:9"></mm-thumbnail>
 
     <section class="post-body">
-      <!-- <nav>
-        <mm-paragraph size="large">Table of contents</mm-paragraph>
-        <ol>
-          <li>Decline every meeting</li>
-          <li>Take the thrash out of feedback cycles</li>
-          <li>Decline every meeting</li>
-          <li>Decline every meeting</li>
-        </ol>
-      </nav> -->
-
       <mm-paragraph-group>
         <mm-text-list
           texts='["title", "kicker", "published date",  "thumbnail", "images", "subhead - paragraph / text list / byline / share actions / comment /]'

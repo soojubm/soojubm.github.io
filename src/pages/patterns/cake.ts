@@ -3,6 +3,7 @@ import { html } from 'lit'
 import type { FilterOption } from '@/components/common/button/semantics/filter-button-group'
 
 import { renderPage } from '@/components/layouts/base-layouts'
+import './cake.css'
 
 const castFilterValues = ['all']
 const castFilterOptions: FilterOption[] = [
@@ -13,18 +14,6 @@ const castFilterOptions: FilterOption[] = [
 
 const main = html`
   <mm-page class="cake">
-    <style>
-      .cake {
-        padding: 0 var(--layout-padding-inline) var(--space-section);
-      }
-
-      mm-thumbnail {
-        width: 50%;
-        position: absolute;
-        right: 0;
-        top: 0;
-      }
-    </style>
     <mm-thumbnail ratio="" src="/src/images/coolhandluke.jpg" alt="Cool Hand Luke"></mm-thumbnail>
 
     <mm-flex direction="column" gap="section">

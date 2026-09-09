@@ -7,6 +7,7 @@ import type { ComponentRelatedItemData } from '@/components/domains/component/co
 import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
 
 import { renderPage } from '@/components/layouts/base-layouts'
+import './surface.css'
 
 const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'sheet.html', label: 'Sheet' },
@@ -258,26 +259,6 @@ const main = html`
             <mm-menu-item-action icon="heart" label="192"></mm-menu-item-action>
           </div>
         </article>
-
-        <style>
-          .feed {
-            display: flex;
-            flex-direction: column;
-            max-width: 400px;
-            gap: var(--space-3);
-          }
-
-          .feed-header {
-            display: flex;
-            flex-direction: column;
-            gap: var(--space-3);
-          }
-          .feed-body {
-            display: flex;
-            flex-direction: column;
-            gap: var(--space-3);
-          }
-        </style>
       </section>
     </mm-component-section>
 
@@ -302,15 +283,6 @@ const main = html`
           <mm-text weight="bold">Surface 5</mm-text>
         </mm-surface>
       </mm-scroll>
-      <style>
-        .scroll-surface-container {
-          max-height: 240px;
-        }
-
-        .scroll-surface {
-          flex: 0 0 auto;
-        }
-      </style>
     </mm-component-section>
 
     <mm-component-section heading="Marquee" description="TODO">
@@ -413,22 +385,6 @@ const main = html`
           ></mm-thumbnail>
         </mm-scroll>
       </section>
-      <style>
-        .carousel {
-          display: flex;
-          flex-direction: column;
-          gap: var(--space-3);
-          position: relative;
-        }
-
-        .carousel mm-scroll {
-          scroll-behavior: smooth;
-        }
-
-        .carousel-slide {
-          flex: 0 0 220px;
-        }
-      </style>
     </mm-component-section>
 
     <mm-component-related .items=${relatedComponents}></mm-component-related>

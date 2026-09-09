@@ -3,6 +3,7 @@ import { html } from 'lit'
 import type { ComponentReferenceItemData } from '@/components/domains/component/component-references'
 
 import { renderPage } from '@/components/layouts/base-layouts'
+import './tokens.css'
 
 const componentReferences: ComponentReferenceItemData[] = [
   {
@@ -67,14 +68,14 @@ const renderColorTokens = (entries: ColorTokenEntry[]) =>
     `,
   )
 
-const renderSizeStage = (sizes: string[]) =>
-  sizes.map(
-    (size, index) => html`
+const renderSizeStage = (tokens: string[]) =>
+  tokens.map(
+    (token, index) => html`
       <mm-flex direction="column" align-items="center" gap="2">
         <div
           style="
-            width: var(--size-${size});
-            height: var(--size-${size});
+            width: var(--${token});
+            height: var(--${token});
             background: var(--background-strong-color);
             border-radius: var(--radius);
             flex-shrink: 0;
@@ -85,9 +86,9 @@ const renderSizeStage = (sizes: string[]) =>
     `,
   )
 
-const renderSpaceStage = (widths: string[]) =>
-  widths.map(
-    (width, index) => html`
+const renderSpaceStage = (tokens: string[]) =>
+  tokens.map(
+    (token, index) => html`
       <mm-flex direction="column" align-items="center" gap="2">
         <mm-flex align-items="center" gap="0">
           <div
@@ -98,7 +99,7 @@ const renderSpaceStage = (widths: string[]) =>
               border-radius: var(--radius);
             "
           ></div>
-          <div style="width: ${width}; height: 4px; background: var(--color-primary)"></div>
+          <div style="width: var(--${token}); height: 4px; background: var(--color-primary)"></div>
           <div
             style="
               width: 2px;
@@ -139,9 +140,9 @@ const renderBorderStage = (swatches: BorderSwatch[]) =>
     `,
   )
 
-const renderShadowStage = (shadows: string[]) =>
-  shadows.map(
-    (shadow, index) => html`
+const renderShadowStage = (tokens: string[]) =>
+  tokens.map(
+    (token, index) => html`
       <mm-flex direction="column" align-items="center" gap="2">
         <div
           style="
@@ -149,7 +150,7 @@ const renderShadowStage = (shadows: string[]) =>
             height: var(--size-48);
             border-radius: var(--radius);
             background: var(--background-color);
-            box-shadow: ${shadow};
+            box-shadow: var(--${token});
             flex-shrink: 0;
           "
         ></div>
@@ -283,8 +284,6 @@ const typographyTokenItems: string[] = [
 
 const sizeTokenItems: string[] = ['size-16', 'size-24', 'size-32', 'size-40', 'size-48', 'size-80']
 
-const sizeStageValues = ['16', '24', '32', '40', '48', '80']
-
 const spaceTokenItems: string[] = [
   'space-1',
   'space-2',
@@ -298,17 +297,8 @@ const spaceTokenItems: string[] = [
   'space-1-minus',
 ]
 
-const spaceStageWidths = [
-  '2px',
-  'var(--space-1)',
-  'var(--space-2)',
-  'var(--space-3)',
-  'var(--space-4)',
-  'var(--space-6)',
-  'var(--space-8)',
-  'var(--space-12)',
-  'var(--space-16)',
-]
+/** 음수 토큰은 폭으로 그릴 수 없어 스테이지에서 뺀다. 목록 끝에 있으므로 번호는 그대로 맞는다. */
+const spaceStageTokens = spaceTokenItems.filter(name => !name.endsWith('-minus'))
 
 const layoutTokenItems: string[] = [
   'navbar-height',
@@ -338,12 +328,6 @@ const shadowTokenItems: string[] = [
   'surface-base-shadow',
   'surface-chrome-shadow',
   'surface-overlay-shadow',
-]
-
-const shadowStageValues = [
-  'var(--shadow-high)',
-  'var(--surface-chrome-shadow)',
-  'var(--surface-overlay-shadow)',
 ]
 
 const materialTokenItems: string[] = [
@@ -451,12 +435,11 @@ const animationTokenItems: string[] = [
   'animation-delay-third',
 ]
 
-const componentTokenItems: string[] = ['control-padding', 'control-border-radius']
-
 const zIndexTokenItems: string[] = [
   'material-zindex-base',
   'material-zindex-raised',
   'material-zindex-chrome',
+  'material-zindex-chrome-top',
   'material-zindex-overlay',
   'material-zindex-modal',
   'material-zindex-toast',
@@ -496,20 +479,6 @@ const main = html`
           ></mm-text-list>
         </mm-content-section>
       </mm-content-section-list>
-
-      <style>
-        .token-color-markers {
-          display: flex;
-          width: min(100%, calc(var(--size-80) * 6));
-        }
-
-        .token-color-marker {
-          display: flex;
-          justify-content: center;
-          flex: 1 1 0;
-          min-width: var(--size-32);
-        }
-      </style>
 
       <mm-token-section
         heading="Color"
@@ -583,14 +552,14 @@ const main = html`
         description="요소의 크기를 결정합니다. 주로 height에 사용하고 정사각형 요소에 한정하여 width에 사용합니다."
       >
         <mm-token-stage>
-          <mm-flex align-items="flex-end" gap="8">${renderSizeStage(sizeStageValues)}</mm-flex>
+          <mm-flex align-items="flex-end" gap="8">${renderSizeStage(sizeTokenItems)}</mm-flex>
         </mm-token-stage>
         <mm-token-group>${renderTokenItems(sizeTokenItems)}</mm-token-group>
       </mm-token-section>
 
       <mm-token-section heading="Space" description="space는 요소 사이의 거리입니다.">
         <mm-token-stage>
-          <mm-flex align-items="center" gap="8">${renderSpaceStage(spaceStageWidths)}</mm-flex>
+          <mm-flex align-items="center" gap="8">${renderSpaceStage(spaceStageTokens)}</mm-flex>
         </mm-token-stage>
         <mm-token-group>${renderTokenItems(spaceTokenItems)}</mm-token-group>
       </mm-token-section>
@@ -619,7 +588,7 @@ const main = html`
         description="그림자는 레이어의 고도와 부유감을 표현합니다."
       >
         <mm-token-stage>
-          <mm-flex align-items="flex-end" gap="4">${renderShadowStage(shadowStageValues)}</mm-flex>
+          <mm-flex align-items="flex-end" gap="4">${renderShadowStage(shadowTokenItems)}</mm-flex>
         </mm-token-stage>
         <mm-token-group aria-label="shadow primitive tokens">
           ${renderTokenItems(shadowTokenItems)}
@@ -677,40 +646,15 @@ const main = html`
         <mm-text-list
           texts='[
           "base — mm-separator의 구분선, 배경 위에 놓는 텍스트처럼 형제 요소 위에 그리기 위한 로컬 컨텍스트",
-          "raised — 목록·그룹 안에서 형제보다 살짝 뜨는 요소. 예: mm-hamburger-button",
-          "chrome — 화면에 고정된 내비게이션·툴바. 예: mm-navbar(및 사이드 메뉴), mm-top-bar(sticky 상태), mm-fixed-bottom(mm-bottom-bar가 이 안에 놓여 함께 뜬다)",
+          "raised — 목록·그룹 안에서 형제보다 살짝 뜨는 요소. 예: mm-scroll-hint, mm-portfolio-item의 오버레이",
+          "chrome — 화면에 고정된 내비게이션·툴바. 예: mm-top-bar(sticky 상태), mm-fixed-bottom(mm-bottom-bar가 이 안에 놓여 함께 뜬다)",
+          "chrome-top — 그중 화면 전체를 덮는 전역 내비게이션. 페이지 고정 바 위에 남아야 한다. 예: mm-navbar, 사이드 메뉴",
           "overlay — 드롭다운·팝오버·툴팁류. 예: mm-tooltip, mm-popover(mm-select 등 드롭다운의 기반)",
           "modal — 화면을 덮는 대화형 표면. 예: mm-backdrop, mm-sheet, mm-dialog, 긴급 배너",
           "toast — 알림, 스낵바처럼 항상 다른 모든 레이어 위에 있어야 하는 요소. 예: mm-toast, 건너뛰기(skip) 링크"
         ]'
         ></mm-text-list>
       </mm-token-section>
-
-      <style>
-        .motion-track {
-          display: flex;
-          align-items: center;
-          box-sizing: border-box;
-          width: calc(var(--size-80) * 3);
-          height: var(--size-32);
-          padding: 0 var(--space-1);
-          border-radius: var(--radius-full);
-          background: var(--background-subtle-color);
-        }
-
-        .motion-dot {
-          width: var(--size-24);
-          height: var(--size-24);
-          border-radius: var(--radius-full);
-          background: var(--color-primary);
-          transition-property: transform;
-          transition-duration: var(--transition-duration);
-        }
-
-        mm-token-stage:hover .motion-dot {
-          transform: translateX(calc(var(--size-80) * 3 - var(--size-24) - var(--space-2)));
-        }
-      </style>
 
       <mm-token-section
         heading="Transition"
@@ -727,13 +671,6 @@ const main = html`
         description="애니메이션 토큰은 등장·강조 모션의 길이와 순차 등장의 지연을 정의합니다."
       >
         <mm-token-group>${renderTokenItems(animationTokenItems)}</mm-token-group>
-      </mm-token-section>
-
-      <mm-token-section
-        heading="Component"
-        description="컴포넌트 토큰은 시스템 토큰을 특정 컴포넌트 속성에 매핑합니다. 대부분 각 컴포넌트 문서가 소유하고, 아래는 control 계열이 공유하는 모양 토큰입니다."
-      >
-        <mm-token-group>${renderTokenItems(componentTokenItems)}</mm-token-group>
       </mm-token-section>
 
       <mm-component-references .items=${componentReferences}></mm-component-references>

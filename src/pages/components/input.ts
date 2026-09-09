@@ -7,6 +7,7 @@ import type { ComponentRelatedItemData } from '@/components/domains/component/co
 import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
 
 import { renderPage } from '@/components/layouts/base-layouts'
+import './input.css'
 
 const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'textarea.html', label: 'Textarea' },
@@ -151,76 +152,10 @@ const main = html`
     </section>
 
     <div class="calendar">
-      <style>
-        .calendar {
-          width: 250px;
-          --date-width: 32px;
-          --date-background-color: var(--background-subtle-color);
-          position: relative;
-        }
-        .calendar h3 {
-          font-size: 1rem;
-          line-height: 32px;
-        }
-        .calendar-navigation {
-          display: flex;
-          position: absolute;
-          right: 0;
-          top: 0;
-        }
-        .calendar-navigation-prev {
-          width: var(--date-width);
-          height: var(--date-width);
-          margin-right: 4px;
-          background: var(--date-background-color);
-          border-radius: var(--radius);
-        }
-        .calendar-navigation-next {
-          width: var(--date-width);
-          height: var(--date-width);
-          background: var(--date-background-color);
-          border-radius: var(--radius);
-        }
-        .calendar-head {
-          margin-top: 0.5rem;
-          display: grid;
-          grid-template-columns: repeat(7, 1fr);
-          gap: var(--space-1);
-        }
-        .calendar-head div {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: var(--date-width);
-          height: var(--date-width);
-          border-radius: var(--radius);
-        }
-        .calendar-body {
-          display: grid;
-          grid-template-columns: repeat(7, 1fr);
-          gap: var(--space-1);
-        }
-        .calendar-body-column {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: var(--date-width);
-          height: var(--date-width);
-          border-radius: var(--radius);
-          cursor: pointer;
-          &:hover {
-            background: var(--interaction-hover-background-color);
-          }
-        }
-      </style>
       <b>2020년 12월</b>
       <nav class="calendar-navigation">
-        <button class="calendar-navigation-prev" aria-label="앞으로">
-          <i></i>
-        </button>
-        <button class="calendar-navigation-next" aria-label="뒤로">
-          <i></i>
-        </button>
+        <mm-prev-button></mm-prev-button>
+        <mm-next-button></mm-next-button>
       </nav>
       <div class="calendar-head">
         <div>일</div>
@@ -502,20 +437,13 @@ const main = html`
     </mm-component-guide>
 
     <mm-component-section heading="iOS, Android 패턴">
-      <style>
-        .ios .searchfield-input:focus {
-          width: 90%;
-        }
-      </style>
       <form class="ios" style="max-width: var(--layout-width-narrow)">
         <label>
           <mm-icon name="search"></mm-icon>
         </label>
         <input class="searchfield-input" type="search" placeholder="iOS pattern" />
         <mm-clear-button aria-label="검색어 지우기"></mm-clear-button>
-        <button aria-label="취소">
-          <span class="material-symbols-outlined">취소</span>
-        </button>
+        <mm-button variant="tertiary">취소</mm-button>
       </form>
       <form style="max-width: var(--layout-width-narrow); position: relative">
         <div style="position: absolute; left: 0">

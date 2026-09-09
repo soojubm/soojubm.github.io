@@ -27,6 +27,73 @@ export class Table extends LitElement {
         gap: var(--space-1);
       }
 
+      table {
+        --table-row-border: var(--border);
+        --table-cell-padding: var(--space-2) 0;
+        --table-cell-padding-inline: var(--space-2);
+        --table-cell-background-color: var(--background-color);
+
+        border-collapse: collapse;
+        border-spacing: 0;
+        border-left-style: hidden;
+        border-right-style: hidden;
+        font-size: inherit;
+
+        width: max-content;
+        min-width: 100%;
+        table-layout: fixed;
+
+        background: var(--table-cell-background-color);
+
+        --col-checkbox: 32px;
+      }
+      table caption {
+        padding: 0.5rem 0;
+        font-size: var(--font-size-12);
+        text-align: left;
+      }
+      table thead tr th {
+        padding: var(--space-1) 0;
+        padding-inline: var(--table-cell-padding-inline);
+        font-size: var(--font-size-12);
+        color: var(--foreground-subtle-color);
+        text-align: left;
+      }
+      table tbody tr {
+        border-bottom: var(--table-row-border);
+        background: var(--table-cell-background-color);
+        position: relative;
+      }
+      table tbody tr:hover {
+        --table-cell-background-color: var(--interaction-hover-background-color);
+      }
+      table tbody tr th {
+        padding-inline: var(--table-cell-padding-inline);
+        text-align: left;
+      }
+      table tbody tr td {
+        padding: var(--table-cell-padding);
+        padding-inline: var(--table-cell-padding-inline);
+      }
+      table .table-cell-ellipsis {
+        flex: 1;
+        width: 0;
+        min-width: 0;
+        max-width: 240px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      table .right {
+        text-align: right;
+      }
+      table tbody[role='rowgroup'] tr th {
+        width: 25%;
+      }
+      table tbody[role='rowgroup'] tr th + th {
+        width: auto;
+      }
+
       :host {
         --table-height: 320px;
         --table-width: 100%;

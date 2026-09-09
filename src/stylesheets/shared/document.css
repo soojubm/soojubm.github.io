@@ -1,0 +1,69 @@
+/* stylelint-disable color-no-hex -- 브라우저 리셋 파일이므로 hex 값 허용 */
+/* 문서에만 적용되는 규칙. 컴포넌트 shadow root에서는 매치될 수 없으므로
+   shared.styles의 resetStyles에 포함하지 않는다. */
+html {
+  min-width: 320px;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: var(--font-family);
+  font-size: 16px;
+  line-height: var(--font-line-height-24);
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overscroll-behavior: contain;
+}
+
+body {
+  background: var(--background-color);
+  color: var(--foreground-color);
+  font-weight: var(--font-weight-normal);
+  font-size: 0.875rem;
+}
+
+@media print {
+  a::after {
+    content: '(' attr(href) ')';
+  }
+}
+
+.lock-scroll {
+  overflow: hidden;
+}
+
+.offline {
+  margin: 0 auto;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  background: var(--color-danger);
+  color: var(--foreground-on-solid);
+  text-align: center;
+
+  position: fixed;
+  left: 10%;
+  right: 10%;
+  top: 45%;
+  z-index: var(--material-zindex-modal);
+}
+
+.skip {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: var(--material-zindex-toast);
+}
+.skip-link {
+  display: block;
+  background: var(--background-strong-color);
+  color: var(--background-color);
+  text-align: center;
+  height: 0;
+  font-size: 0;
+}
+.skip-link:focus {
+  display: block;
+  height: 50px;
+  line-height: 50px;
+  font-size: 14px;
+}

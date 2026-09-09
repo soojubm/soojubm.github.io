@@ -16,7 +16,6 @@ export class HamburgerButton extends LitElement {
     iconButtonStyles,
     css`
       :host {
-        z-index: calc(var(--material-zindex-raised) + 1);
         --icon-button-background-color: transparent;
       }
     `,

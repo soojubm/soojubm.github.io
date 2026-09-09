@@ -1,0 +1,11 @@
+.scroll-spy-sampler-body {
+  flex: 1 1 18rem;
+  min-width: 0;
+  max-height: 24rem;
+  scroll-padding-top: var(--space-4);
+}
+
+.scroll-spy-sampler-section {
+  justify-content: center;
+  min-height: 18rem;
+}

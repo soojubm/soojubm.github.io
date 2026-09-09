@@ -1,0 +1,10 @@
+.cake {
+  padding: 0 var(--layout-padding-inline) var(--space-section);
+}
+
+mm-thumbnail {
+  width: 50%;
+  position: absolute;
+  right: 0;
+  top: 0;
+}

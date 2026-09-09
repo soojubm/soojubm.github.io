@@ -6,6 +6,7 @@ import type { ComponentReferenceItemData } from '@/components/domains/component/
 import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
 
 import { renderPage } from '@/components/layouts/base-layouts'
+import './text.css'
 
 const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'dialog.html', label: 'Dialog' },
@@ -51,43 +52,6 @@ const main = html`
       heading="Text"
       description="정보의 위계를 세우고 핵심 내용을 전달합니다. 크기, 굵기, 행간의 조화를 통해 설계된 타이포그래피는 사용자가 방대한 콘텐츠 속에서도 길을 잃지 않고, 서비스가 의도한 우선순위에 따라 정보를 자연스럽게 습득하도록 돕습니다."
     ></mm-page-header>
-
-    <style>
-      .hero {
-        position: relative;
-        z-index: var(--material-zindex-base);
-      }
-      .hero-background {
-        background: inherit;
-      }
-      .hero-eyebrow {
-        display: block;
-        margin: 0 0 var(--space-2) 0;
-        font-weight: var(--font-weight-bold);
-        color: var(--color-primary);
-      }
-      .hero-title {
-      }
-      .hero-description {
-        margin: 1rem 0 0 0;
-      }
-
-      .is-observed .hero-eyebrow {
-        animation: fadeup var(--animation-duration) 0.1s backwards;
-      }
-      .is-observed .hero-title {
-        animation: fadeup var(--animation-duration) var(--animation-delay-first) backwards;
-      }
-      .is-observed .hero-description {
-        animation: fadeup var(--animation-duration) var(--animation-delay-second) backwards;
-      }
-      .is-observed .hero-actions {
-        animation: fadeup var(--animation-duration) var(--animation-delay-third) backwards;
-      }
-      .block:not(:last-child) {
-        margin-bottom: 1.5rem;
-      }
-    </style>
 
     <mm-component-example>
       <mm-flex direction="column" gap="3">

@@ -1,38 +1,11 @@
 import { html } from 'lit'
 
 import { renderPage } from '@/components/layouts/base-layouts'
+import './auth.css'
 
 const codeInputs = [1, 2, 3, 4]
 
 const main = html`
-  <style>
-    .authentication {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-6);
-      width: 100%;
-      max-width: var(--layout-width-narrow);
-      margin: 0 auto;
-    }
-
-    .authentication fieldset,
-    .authentication footer {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-3);
-    }
-
-    .authentication footer {
-      gap: var(--space-6);
-    }
-
-    /* 인증 코드 입력은 로그인·가입 흐름과 구분되도록 가운데 정렬한다. */
-    .authentication[name='verify'] {
-      align-items: center;
-      text-align: center;
-    }
-  </style>
-
   <mm-page>
     <mm-flex direction="column" gap="12">
       <!-- 로그인 -->

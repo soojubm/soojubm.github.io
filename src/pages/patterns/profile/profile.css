@@ -57,3 +57,81 @@
   width: 120px;
   height: var(--size-80);
 }
+
+.newneek-sheet-body {
+  padding: var(--space-8) var(--layout-padding-inline);
+}
+
+.home-mangrove {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: 2px solid var(--foreground-color);
+  background: var(--color-newneek);
+  position: relative;
+}
+
+.mangrove1 {
+  display: block;
+  max-width: 240px;
+  margin-top: -140px;
+  margin-bottom: 110px;
+  transition: all var(--transition-duration) var(--transition-easing);
+}
+
+.mangrove2 {
+  display: block;
+  max-width: 230px;
+  margin-left: 2rem;
+  position: absolute;
+  bottom: 2rem;
+  transition: all var(--transition-duration) var(--transition-easing) 0.05s;
+}
+
+.mangrove-foot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  padding: 0.5rem 0;
+  border-top: 1px solid var(--foreground-color);
+  border-bottom: 2px solid var(--foreground-color);
+  background: var(--background-color);
+  position: relative;
+  z-index: var(--material-zindex-raised);
+}
+
+.home-mangrove:hover .mangrove1 {
+  transform: translateY(-1.5rem);
+}
+.home-mangrove:hover .mangrove2 {
+  transform: translateY(-1.05rem);
+}
+
+.subscribe-gosum {
+  padding: 2rem 0 3rem;
+  background: var(--color-newneek);
+  box-sizing: border-box;
+}
+
+.zigzag-border {
+  --zigzag-width: 24px;
+  --zigzag-height: 12px;
+  --zigzag-gap: 8px;
+  --zigzag-color: var(--border-color);
+  position: relative;
+  padding-bottom: calc(var(--zigzag-height) + var(--zigzag-gap));
+}
+.zigzag-border::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: var(--zigzag-height);
+  background-color: var(--zigzag-color);
+  mask-image: url("data:image/svg+xml,%3Csvg width='16' height='8' viewBox='0 0 16 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolyline points='0,1 4,7 8,1 12,7 16,1' fill='none' stroke='black' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  mask-repeat: repeat-x;
+  mask-size: var(--zigzag-width) var(--zigzag-height);
+}

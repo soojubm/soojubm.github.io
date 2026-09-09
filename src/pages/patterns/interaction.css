@@ -1,0 +1,5 @@
+.swatch-chip {
+  height: var(--size-48);
+  border: var(--border);
+  border-radius: var(--radius);
+}

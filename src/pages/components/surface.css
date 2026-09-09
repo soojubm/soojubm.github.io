@@ -1,0 +1,40 @@
+.feed {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  gap: var(--space-3);
+}
+
+.feed-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+.feed-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.scroll-surface-container {
+  max-height: 240px;
+}
+
+.scroll-surface {
+  flex: 0 0 auto;
+}
+
+.carousel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  position: relative;
+}
+
+.carousel mm-scroll {
+  scroll-behavior: smooth;
+}
+
+.carousel-slide {
+  flex: 0 0 220px;
+}

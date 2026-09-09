@@ -1,0 +1,34 @@
+.hero {
+  position: relative;
+  z-index: var(--material-zindex-base);
+}
+.hero-background {
+  background: inherit;
+}
+.hero-eyebrow {
+  display: block;
+  margin: 0 0 var(--space-2) 0;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+}
+.hero-title {
+}
+.hero-description {
+  margin: 1rem 0 0 0;
+}
+
+.is-observed .hero-eyebrow {
+  animation: fadeup var(--animation-duration) 0.1s backwards;
+}
+.is-observed .hero-title {
+  animation: fadeup var(--animation-duration) var(--animation-delay-first) backwards;
+}
+.is-observed .hero-description {
+  animation: fadeup var(--animation-duration) var(--animation-delay-second) backwards;
+}
+.is-observed .hero-actions {
+  animation: fadeup var(--animation-duration) var(--animation-delay-third) backwards;
+}
+.block:not(:last-child) {
+  margin-bottom: 1.5rem;
+}

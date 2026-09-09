@@ -3,12 +3,13 @@ import { customElement } from 'lit/decorators.js'
 
 import { SITEMAP } from '@/sitemap'
 import { getCurrentPageId } from '@/utils'
+import './navbar.css'
 
 @customElement('mm-navbar')
 export class Navbar extends LitElement {
   render() {
     return html`
-      <nav class="navbar js-navbar" role="navigation">
+      <nav class="navbar" role="navigation">
         <mm-flex gap="2">
           <mm-hamburger-button
             aria-label="전체메뉴"
@@ -41,7 +42,11 @@ export class Navbar extends LitElement {
     )
   }
 
-  // 전역 navbar.css가 .navbar-user 등 내부 구조에 접근해야 하므로 Light DOM을 유지한다.
+  /**
+   * Light DOM을 유지한다. 햄버거 버튼이 `aria-controls="site-sidebar"`로 mm-sidebar를 가리키는데,
+   * aria-controls는 shadow 경계를 넘지 못해 shadow root에 두면 사이드바가 트리거를 찾지 못한다.
+   * 따라서 스타일도 shadow에 넣을 수 없어 navbar.css를 컴포넌트 폴더에서 함께 가져온다.
+   */
   createRenderRoot() {
     return this
   }
