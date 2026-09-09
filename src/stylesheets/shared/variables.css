@@ -5,16 +5,16 @@
   --font-family: 'Alan Sans', 'Gothic A1', system-ui, sans-serif;
   --font-family-code: ui-monospace, SFMono-Regular, Menlo, monospace;
 
-  --font-size-32: 32px;
-  --font-size-24: 24px;
-  --font-size-18: 18px;
-  --font-size-14: 14px;
   --font-size-12: 12px;
-  --font-line-height-40: 40px;
-  --font-line-height-32: 32px;
-  --font-line-height-28: 28px;
-  --font-line-height-24: 24px;
+  --font-size-14: 14px;
+  --font-size-18: 18px;
+  --font-size-24: 24px;
+  --font-size-32: 32px;
   --font-line-height-16: 16px;
+  --font-line-height-24: 24px;
+  --font-line-height-28: 28px;
+  --font-line-height-32: 32px;
+  --font-line-height-40: 40px;
   --font-weight-normal: 500;
   --font-weight-bold: 700;
 
@@ -113,12 +113,12 @@
   --foreground-on-warning-color: var(--red800);
   --foreground-on-primary-color: var(--gray0);
 
-  --size-80: 80px;
-  --size-48: 48px;
-  --size-40: 40px;
-  --size-32: 32px;
-  --size-24: 24px;
   --size-16: 16px;
+  --size-24: 24px;
+  --size-32: 32px;
+  --size-40: 40px;
+  --size-48: 48px;
+  --size-80: 80px;
 
   --space-1: 4px;
   --space-2: 8px;

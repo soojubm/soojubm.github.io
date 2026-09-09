@@ -1,5 +1,5 @@
 import { LitElement, css, html } from 'lit'
-import { customElement, queryAssignedElements } from 'lit/decorators.js'
+import { customElement } from 'lit/decorators.js'
 
 import { resetStyles } from '@/stylesheets/shared.styles'
 
@@ -16,16 +16,9 @@ export class TokenGroup extends LitElement {
     `,
   ]
 
-  @queryAssignedElements({ selector: 'mm-token-item', flatten: true })
-  private items!: HTMLElement[]
-
-  private handleItemSlotChange = () => {
-    this.items.forEach((item, index) => item.setAttribute('index', String(index + 1)))
-  }
-
   render() {
     return html`
-      <slot @slotchange=${this.handleItemSlotChange}></slot>
+      <slot></slot>
     `
   }
 }

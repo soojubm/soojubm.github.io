@@ -1,24 +1,24 @@
 import { LitElement, css, html, nothing } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
-import { styleMap } from 'lit/directives/style-map.js'
+import { customElement, property, query, queryAll, state } from 'lit/decorators.js'
 
+import {
+  computedTokenValue,
+  tokenAliases,
+  tokenDisplayName,
+} from '@/components/domains/component/token-values'
+import { ThemeChangeController } from '@/controllers/theme-change-controller'
 import { resetStyles } from '@/stylesheets/shared.styles'
+import { contrastRatio } from '@/utils/color'
 import '@/components/common/text/text'
 import '@/components/common/tag/tag'
 import '@/components/common/tag/tag-group'
 
-/** 한 표면 위에 얹는 전경색·명도 대비 조합. */
-export interface ColorTokenPair {
-  textColor: string
-  label: string
-  contrast?: string
-}
-
 /**
  * 색상 토큰 카드.
- * 원시 색(color)을 스와치로 보여주고, 캡션으로 토큰·값 매핑을 문서화한다.
- * pairs를 주면 그 표면 위에 유효한 전경색 조합을 명도 대비(contrast)와 함께 쌓아 시연하고,
- * tags를 주면 그 원시 색을 참조하는 시맨틱 토큰 이름을 스와치 좌상단에 붙인다.
+ * 토큰 이름만 받아 스와치·캡션·태그·명도 대비를 모두 그 이름에서 끌어낸다.
+ * 값은 자기 자리에서 계산된 스타일로 읽고, 대비는 화면에 실제로 쓰인 두 색을 재서 붙이므로
+ * 색을 바꾸거나 테마를 바꿔도 문서가 따라온다.
+ * pairs에 전경색 토큰을 주면 그 표면 위에 유효한 조합을 쌓아 시연한다.
  * 색상 토큰 표를 구성하는 단위로 mm-token-item의 색상 대응물이다.
  */
 @customElement('mm-color-token')
@@ -26,16 +26,19 @@ export class ColorToken extends LitElement {
   static styles = [
     resetStyles,
     css`
+      /* 그리드 한 줄에서 카드 높이가 맞춰지면 스와치가 남는 높이를 가져간다.
+         태그가 여러 줄로 늘어난 카드 옆에 빈 여백이 남지 않게 한다. */
       :host {
-        display: block;
+        display: flex;
+        flex-direction: column;
         border: var(--border);
         border-radius: var(--radius);
         overflow: hidden;
       }
 
       .swatch {
-        position: relative;
         display: flex;
+        flex: 1;
         flex-direction: column;
         justify-content: flex-end;
         min-height: var(--size-80);
@@ -44,11 +47,10 @@ export class ColorToken extends LitElement {
         box-sizing: border-box;
       }
 
-      /* 시맨틱 토큰 태그: 칩 좌상단에 얹는다. */
+      /* 이 색을 물려받는 상위 토큰 태그: 칩 위쪽에 두고 대비쌍을 아래로 민다.
+         한 원시 색이 여러 역할로 쓰이면 줄바꿈으로 늘어나므로 스와치가 함께 자라야 한다. */
       .tags {
-        position: absolute;
-        top: var(--space-3);
-        left: var(--space-3);
+        margin-bottom: auto;
       }
 
       .label-row {
@@ -72,41 +74,47 @@ export class ColorToken extends LitElement {
     `,
   ]
 
-  /** surface 배경색 (예: var(--primary-color)) */
-  @property({ type: String }) color = ''
-  /** 캡션의 토큰·값 매핑 (예: "gray800: #303b35") */
-  @property({ type: String }) token = ''
-  /** 이 색을 참조하는 시맨틱 토큰 이름, 공백 구분 (예: "primary success") */
-  @property({ type: String }) tags = ''
-  /** surface 위에 얹는 전경색·명도 대비 조합, 위에서 아래로 쌓인다. */
-  @property({ attribute: false }) pairs: ColorTokenPair[] = []
+  private themeChange = new ThemeChangeController(this)
+
+  /** 스와치로 보여줄 색상 토큰 이름 (예: gray800, background-subtle-color) */
+  @property({ type: String }) name = ''
+  /** 이 표면 위에 얹는 전경색 토큰 이름, 위에서 아래로 쌓인다. */
+  @property({ attribute: false }) pairs: string[] = []
+
+  @state() private contrasts: string[] = []
+
+  @query('.swatch') private swatch!: HTMLElement
+  @queryAll('.label-row') private labelRows!: NodeListOf<HTMLElement>
 
   render() {
     return html`
-      <figure class="swatch" style=${styleMap({ '--color-token-background-color': this.color })}>
+      <figure class="swatch" style="--color-token-background-color: var(--${this.name})">
         ${this.renderTags()} ${this.renderPairs()}
       </figure>
       ${this.renderCaption()}
     `
   }
 
+  updated() {
+    this.measureContrasts()
+  }
+
   private renderTags() {
-    if (!this.tags) return nothing
+    const aliases = tokenAliases(this.name).map(tokenDisplayName)
+    if (!aliases.length) return nothing
 
-    const names = this.tags.split(' ').filter(Boolean)
-
-    if (names.length === 1) {
+    if (aliases.length === 1) {
       return html`
-        <mm-tag class="tags">${names[0]}</mm-tag>
+        <mm-tag class="tags">${aliases[0]}</mm-tag>
       `
     }
 
     return html`
       <mm-tag-group class="tags">
-        ${names.map(
-          name =>
+        ${aliases.map(
+          alias =>
             html`
-              <mm-tag>${name}</mm-tag>
+              <mm-tag>${alias}</mm-tag>
             `,
         )}
       </mm-tag-group>
@@ -115,26 +123,36 @@ export class ColorToken extends LitElement {
 
   private renderPairs() {
     return this.pairs.map(
-      pair => html`
-        <div class="label-row" style=${styleMap({ color: pair.textColor })}>
-          <mm-text size="12" weight="bold">${pair.label}</mm-text>
-          ${pair.contrast
-            ? html`
-                <span class="contrast">${pair.contrast}</span>
-              `
-            : nothing}
+      (pair, index) => html`
+        <div class="label-row" style="color: var(--${pair})">
+          <mm-text size="12" weight="bold">${tokenDisplayName(pair)}</mm-text>
+          <span class="contrast">${this.contrasts[index] ?? ''}</span>
         </div>
       `,
     )
   }
 
   private renderCaption() {
-    if (!this.token) return nothing
+    if (!this.name) return nothing
 
     return html`
       <figcaption>
-        <mm-text size="12" weight="bold">${this.token}</mm-text>
+        <mm-text size="12" weight="bold">
+          ${tokenDisplayName(this.name)}: ${computedTokenValue(this.name, this)}
+        </mm-text>
       </figcaption>
     `
+  }
+
+  /** 대비는 브라우저가 실제로 칠한 색끼리 잰다. 토큰이 어떤 단계를 거쳐 왔는지와 무관해진다. */
+  private measureContrasts() {
+    const background = getComputedStyle(this.swatch).backgroundColor
+    const measured = [...this.labelRows].map(row =>
+      contrastRatio(getComputedStyle(row).color, background),
+    )
+
+    if (measured.join() === this.contrasts.join()) return
+
+    this.contrasts = measured
   }
 }

@@ -115,7 +115,7 @@ export const componentTokensStyles = [
     .token-list {
       display: flex;
       flex-direction: column;
-      gap: var(--space-2);
+      gap: var(--space-1);
     }
   `,
   resetStyles,

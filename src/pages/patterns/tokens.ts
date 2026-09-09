@@ -1,7 +1,9 @@
-import { html } from 'lit'
+import { html, nothing } from 'lit'
 
 import type { ComponentReferenceItemData } from '@/components/domains/component/component-references'
 
+import { TEXT_SIZE_TOKENS } from '@/components/common/text/text.styles'
+import { rootTokenNames, rootTokenValue } from '@/components/domains/component/token-values'
 import { renderPage } from '@/components/layouts/base-layouts'
 import './tokens.css'
 
@@ -38,18 +40,55 @@ const componentReferences: ComponentReferenceItemData[] = [
   },
 ]
 
-interface ContrastPair {
-  textColor: string
-  label: string
-  contrast?: string
+/**
+ * 섹션이 소개할 토큰을 이름 규칙으로 고른다. variables.css의 :root 선언 순서가 곧 나열 순서다.
+ * 위에서부터 먼저 걸리는 규칙이 토큰을 가져가므로 더 좁은 규칙을 앞에 둔다.
+ */
+const sectionPatterns = {
+  typography: /^font-/,
+  size: /^size-/,
+  space: /^space-/,
+  layout: /^(navbar-height$|layout-)/,
+  border: /^border/,
+  radius: /^radius/,
+  shadow: /(^shadow-|-shadow$)/,
+  material: /-(blur|opacity)$/,
+  surface: /^surface-/,
+  zIndex: /^material-zindex-/,
+  transition: /^(transition-|animation-delay-)/,
+  palette: /^(gray|green|red|yellow|orange|blue)\d+$/,
+  background: /^background-/,
 }
 
-interface ColorTokenEntry {
-  color: string
-  token: string
-  pairs?: ContrastPair[]
-  tags?: string
+/**
+ * 이 페이지가 다루지 않는 토큰. 소개되는 자리가 따로 있거나 한 컴포넌트가 소유하는 값이다.
+ * 여기에도 없고 어느 섹션에도 걸리지 않는 토큰은 "그 외"로 드러나, 토큰이 늘어도 문서가 조용히 뒤처지지 않는다.
+ */
+const documentedElsewhere = [
+  /^interaction-/, // Interaction 페이지가 상태별로 소개한다
+  /^tag-category-/, // mm-tag가 소유하는 카테고리 팔레트
+  /^(primary|accent|success|warning|danger|foreground)-/, // Color 섹션에 태그·대비쌍으로 나온다
+  /^control-/, // control pill의 모양값
+  /^newneek-/, // 포트폴리오 사례 전용 브랜드 색
+]
+
+const groupedTokens = () => {
+  const patterns = Object.entries(sectionPatterns)
+  const grouped: Record<string, string[]> = {}
+
+  for (const name of rootTokenNames) {
+    if (documentedElsewhere.some(pattern => pattern.test(name))) continue
+
+    const [key] = patterns.find(([, pattern]) => pattern.test(name)) ?? ['other']
+    grouped[key] = [...(grouped[key] ?? []), name]
+  }
+
+  return grouped
 }
+
+const tokensBySection = groupedTokens()
+
+const sectionTokens = (key: keyof typeof sectionPatterns | 'other') => tokensBySection[key] ?? []
 
 const renderTokenItems = (keys: string[]) =>
   keys.map(
@@ -58,33 +97,50 @@ const renderTokenItems = (keys: string[]) =>
     `,
   )
 
-const renderColorTokens = (entries: ColorTokenEntry[]) =>
-  entries.map(
-    entry => html`
-      <mm-color-token
-        color=${entry.color}
-        token=${entry.token}
-        tags=${entry.tags ?? ''}
-        .pairs=${entry.pairs ?? []}
-      ></mm-color-token>
+const renderColorTokens = (names: string[]) =>
+  names.map(
+    name => html`
+      <mm-color-token name=${name}></mm-color-token>
     `,
   )
 
-const renderSizeStage = (tokens: string[]) =>
-  tokens.map(
-    (token, index) => html`
+/**
+ * 스테이지 한 줄. 스와치는 공통 박스를 쓰고, 토큰마다 달라지는 선언만 인라인으로 얹는다.
+ * 번호는 스와치를 가리키는 순번이며, 스테이지는 아래 토큰 목록과 같은 순서로 늘어놓는다.
+ */
+const renderStage = (swatches: string[]) =>
+  swatches.map(
+    (swatch, index) => html`
       <mm-flex direction="column" align-items="center" gap="2">
-        <div
-          style="
-            width: var(--${token});
-            height: var(--${token});
-            background: var(--background-strong-color);
-            border-radius: var(--radius);
-            flex-shrink: 0;
-          "
-        ></div>
+        <div class="token-swatch" style=${swatch}></div>
         <mm-list-marker variant="number" value=${index + 1}></mm-list-marker>
       </mm-flex>
+    `,
+  )
+
+const sizeSwatches = (tokens: string[]) =>
+  tokens.map(
+    token =>
+      `width: var(--${token}); height: var(--${token}); background: var(--background-strong-color)`,
+  )
+
+const shadowSwatches = (tokens: string[]) => tokens.map(token => `box-shadow: var(--${token})`)
+
+/** 큰 글자는 한 바퀴가 길어 같은 속도로는 느리게 읽힌다. 가장 큰 단계만 속도를 올린다. */
+const specimenSpeed = (size: string) => (size === '32' ? '80' : '64')
+
+const renderTypeSpecimens = () =>
+  TEXT_SIZE_TOKENS.map(
+    ({ size, fontSize, lineHeight }) => html`
+      <mm-surface variant="outlined" radius="large">
+        <mm-marquee gap="4" speed=${specimenSpeed(size)} pause-on-hover>
+          <mm-text size=${size} weight="bold">
+            font-family: ${rootTokenValue('font-family')}
+          </mm-text>
+          <mm-text size=${size} weight="bold">font-size: ${rootTokenValue(fontSize)}</mm-text>
+          <mm-text size=${size} weight="bold">line-height: ${rootTokenValue(lineHeight)}</mm-text>
+        </mm-marquee>
+      </mm-surface>
     `,
   )
 
@@ -116,309 +172,59 @@ const renderSpaceStage = (tokens: string[]) =>
     `,
   )
 
-interface BorderSwatch {
-  border: string
-  radius: string
-  background: string
-  marker: number
+/**
+ * 표면 토큰 위에 얹어 시연할 전경색 조합. 어떤 전경색이 그 표면 위에서 읽히는지는
+ * 값에서 나오지 않는 설계 판단이라 여기서만 손으로 쓰고, 값과 명도 대비는 카드가 직접 잰다.
+ * 한 표면에 여러 조합을 보여줘야 하면 카드를 나눠 배열로 쌓는다.
+ */
+const backgroundPairs: Record<string, string[][]> = {
+  'background-color': [
+    ['foreground-color', 'foreground-subtle-color'],
+    ['foreground-success-color'],
+    ['foreground-warning-color'],
+    ['foreground-danger-color'],
+  ],
+  'background-subtle-color': [['foreground-color']],
+  'background-strong-color': [['foreground-on-strong-color']],
+  'background-primary-color': [['foreground-on-primary-color']],
+  'background-warning-color': [['foreground-on-warning-color']],
 }
 
-const renderBorderStage = (swatches: BorderSwatch[]) =>
-  swatches.map(
-    ({ border, radius, background, marker }) => html`
-      <mm-flex direction="column" align-items="center" gap="2">
-        <div
-          style="
-            width: var(--size-48);
-            height: var(--size-48);
-            border: ${border};
-            border-radius: ${radius};
-            background: ${background};
-            flex-shrink: 0;
-          "
-        ></div>
-        <mm-list-marker variant="number" value=${marker}></mm-list-marker>
-      </mm-flex>
-    `,
+const renderBackgroundTokens = (names: string[]) =>
+  names.flatMap(name =>
+    (backgroundPairs[name] ?? [[]]).map(
+      pairs => html`
+        <mm-color-token name=${name} .pairs=${pairs}></mm-color-token>
+      `,
+    ),
   )
-
-const renderShadowStage = (tokens: string[]) =>
-  tokens.map(
-    (token, index) => html`
-      <mm-flex direction="column" align-items="center" gap="2">
-        <div
-          style="
-            width: var(--size-48);
-            height: var(--size-48);
-            border-radius: var(--radius);
-            background: var(--background-color);
-            box-shadow: var(--${token});
-            flex-shrink: 0;
-          "
-        ></div>
-        <mm-list-marker variant="number" value=${index + 1}></mm-list-marker>
-      </mm-flex>
-    `,
-  )
-
-interface BlurSwatch {
-  opacity: string
-  blur: string
-}
-
-const renderBlurStage = (swatches: BlurSwatch[]) =>
-  swatches.map(
-    ({ opacity, blur }, index) => html`
-      <mm-flex direction="column" align-items="center" gap="2">
-        <div
-          style="
-            width: var(--size-48);
-            height: var(--size-48);
-            border-radius: var(--radius);
-            background: rgb(255 255 255 / ${opacity});
-            backdrop-filter: blur(${blur});
-            -webkit-backdrop-filter: blur(${blur});
-            flex-shrink: 0;
-          "
-        ></div>
-        <mm-list-marker variant="number" value=${index + 1}></mm-list-marker>
-      </mm-flex>
-    `,
-  )
-
-const grayscaleColorTokens: ColorTokenEntry[] = [
-  { color: 'var(--gray0)', token: 'gray0: #fff' },
-  { color: 'var(--gray100)', token: 'gray100: #f5f6f5' },
-  { color: 'var(--gray200)', token: 'gray200: #d2d7d5' },
-  { color: 'var(--gray400)', token: 'gray400: #8a908d' },
-  { color: 'var(--gray800)', token: 'gray800: #303b35' },
-  { color: 'var(--green100)', token: 'green100: green tint', tags: 'primary-subtle' },
-  { color: 'var(--green800)', token: 'green800: #1b995c', tags: 'accent' },
-  { color: 'var(--red100)', token: 'red100: red tint' },
-  { color: 'var(--red800)', token: 'red800: #f02849', tags: 'danger' },
-  { color: 'var(--yellow800)', token: 'yellow800: gold', tags: 'accent' },
-  { color: 'var(--orange800)', token: 'orange800: #fb7800', tags: 'warning' },
-  { color: 'var(--blue800)', token: 'blue800: #1d4ed8', tags: 'success' },
-]
-
-const backgroundColorTokens: ColorTokenEntry[] = [
-  {
-    color: 'var(--gray0)',
-    pairs: [
-      { textColor: 'var(--foreground-color)', label: 'foreground', contrast: '11.7:1' },
-      {
-        textColor: 'var(--foreground-subtle-color)',
-        label: 'foreground-subtle',
-        contrast: '3.3:1',
-      },
-    ],
-    token: 'background: #fff',
-  },
-  {
-    color: 'var(--gray0)',
-    pairs: [
-      {
-        textColor: 'var(--foreground-success-color)',
-        label: 'foreground-success',
-        contrast: '8.7:1',
-      },
-    ],
-    token: 'background: #fff',
-  },
-  {
-    color: 'var(--gray0)',
-    pairs: [
-      {
-        textColor: 'var(--foreground-warning-color)',
-        label: 'foreground-warning',
-        contrast: '6.5:1',
-      },
-    ],
-    token: 'background: #fff',
-  },
-  {
-    color: 'var(--gray0)',
-    pairs: [
-      {
-        textColor: 'var(--foreground-danger-color)',
-        label: 'foreground-danger',
-        contrast: '5.9:1',
-      },
-    ],
-    token: 'background: #fff',
-  },
-  {
-    color: 'var(--gray100)',
-    pairs: [{ textColor: 'var(--foreground-color)', label: 'foreground', contrast: '10.8:1' }],
-    token: 'background-subtle: #f5f6f5',
-  },
-  {
-    color: 'var(--gray800)',
-    pairs: [
-      {
-        textColor: 'var(--foreground-on-strong-color)',
-        label: 'foreground-on-strong',
-        contrast: '11.7:1',
-      },
-    ],
-    token: 'background-strong: #303b35',
-  },
-  {
-    color: 'var(--background-primary-color)',
-    pairs: [
-      {
-        textColor: 'var(--foreground-on-primary-color)',
-        label: 'foreground-on-primary',
-        contrast: '3.6:1',
-      },
-    ],
-    token: 'background-primary',
-  },
-  {
-    color: 'var(--background-warning-color)',
-    pairs: [
-      {
-        textColor: 'var(--foreground-on-warning-color)',
-        label: 'foreground-on-warning',
-        contrast: '1.5:1',
-      },
-    ],
-    token: 'background-warning',
-  },
-]
-
-const typographyTokenItems: string[] = [
-  'font-family',
-  'font-family-code',
-  'font-weight-normal',
-  'font-weight-bold',
-  'font-size-32',
-  'font-size-24',
-  'font-size-18',
-  'font-size-14',
-  'font-size-12',
-  'font-line-height-40',
-  'font-line-height-32',
-  'font-line-height-28',
-  'font-line-height-24',
-  'font-line-height-16',
-]
-
-const sizeTokenItems: string[] = ['size-16', 'size-24', 'size-32', 'size-40', 'size-48', 'size-80']
-
-const spaceTokenItems: string[] = [
-  'space-1',
-  'space-2',
-  'space-3',
-  'space-4',
-  'space-6',
-  'space-8',
-  'space-12',
-  'space-16',
-  'space-section',
-  'space-1-minus',
-]
 
 /** 음수 토큰은 폭으로 그릴 수 없어 스테이지에서 뺀다. 목록 끝에 있으므로 번호는 그대로 맞는다. */
-const spaceStageTokens = spaceTokenItems.filter(name => !name.endsWith('-minus'))
+const spaceStageTokens = sectionTokens('space').filter(name => !name.endsWith('-minus'))
 
-const layoutTokenItems: string[] = [
-  'navbar-height',
-  'layout-width-wide',
-  'layout-width-small',
-  'layout-width-narrow',
-  'layout-width-sidebar',
-  'layout-max-width',
-  'layout-padding-inline',
-  'layout-main-space-top',
-  'layout-sidebar-space-top',
+const blurSwatches = ['chrome', 'overlay'].map(
+  tier =>
+    `background: rgb(255 255 255 / var(--surface-${tier}-opacity));
+     backdrop-filter: blur(var(--surface-${tier}-blur));
+     -webkit-backdrop-filter: blur(var(--surface-${tier}-blur))`,
+)
+
+/**
+ * 경계의 역할별 변형. border-color·border-width는 조립 재료라 혼자서는 그릴 수 없어
+ * 이들을 합친 border부터 목록 순서대로 늘어놓고, 상태 경계는 뒤에 붙인다.
+ * 선택 상태 토큰은 색만 담으므로 두께·스타일과 함께 조립한다.
+ */
+const borderSwatches = [
+  'border: var(--border)',
+  'border: var(--border-transparent); background: var(--background-subtle-color)',
+  'border: var(--border-danger)',
+  'border: var(--border-width) solid var(--interaction-selected-border-color)',
 ]
 
-const borderTokenItems: string[] = [
-  'border-width',
-  'border-color',
-  'border',
-  'border-transparent',
-  'border-danger',
-  'radius',
-  'radius-large',
-  'radius-full',
-]
-
-const shadowTokenItems: string[] = [
-  'shadow-high',
-  'surface-base-shadow',
-  'surface-chrome-shadow',
-  'surface-overlay-shadow',
-]
-
-const materialTokenItems: string[] = [
-  'surface-chrome-blur',
-  'surface-chrome-opacity',
-  'surface-overlay-blur',
-  'surface-overlay-opacity',
-]
-
-const blurStageSwatches: BlurSwatch[] = [
-  { opacity: 'var(--surface-chrome-opacity)', blur: 'var(--surface-chrome-blur)' },
-  { opacity: 'var(--surface-overlay-opacity)', blur: 'var(--surface-overlay-blur)' },
-]
-
-const surfaceTokenItems: string[] = [
-  'surface-base-background-color',
-  'surface-base-border',
-  'surface-base-backdrop-filter',
-  'surface-chrome-background-color',
-  'surface-chrome-border',
-  'surface-chrome-backdrop-filter',
-  'surface-overlay-background-color',
-  'surface-overlay-border',
-  'surface-overlay-backdrop-filter',
-]
-
-const borderStageSwatches: BorderSwatch[] = [
-  {
-    border: 'var(--border)',
-    radius: 'var(--radius)',
-    background: 'var(--background-color)',
-    marker: 1,
-  },
-  {
-    border: 'var(--border)',
-    radius: 'var(--radius)',
-    background: 'var(--background-color)',
-    marker: 2,
-  },
-  {
-    border: 'var(--interaction-selected-border-color)',
-    radius: 'var(--radius)',
-    background: 'var(--background-color)',
-    marker: 3,
-  },
-  {
-    border: 'var(--border-transparent)',
-    radius: 'var(--radius)',
-    background: 'var(--background-subtle-color)',
-    marker: 4,
-  },
-  {
-    border: 'var(--border)',
-    radius: 'var(--radius)',
-    background: 'var(--background-color)',
-    marker: 1,
-  },
-  {
-    border: 'var(--border)',
-    radius: 'var(--radius-large)',
-    background: 'var(--background-color)',
-    marker: 2,
-  },
-  {
-    border: 'var(--border)',
-    radius: 'var(--radius-full)',
-    background: 'var(--background-color)',
-    marker: 3,
-  },
+const radiusSwatches = [
+  'border: var(--border)',
+  'border: var(--border); border-radius: var(--radius-large)',
+  'border: var(--border); border-radius: var(--radius-full)',
 ]
 
 interface EasingTrack {
@@ -443,25 +249,23 @@ const motionTracks: EasingTrack[] = [
   { easing: 'var(--transition-easing-emphasis)', label: 'transition-easing-emphasis' },
 ]
 
-const transitionTokenItems: string[] = [
-  'transition-duration',
-  'transition-duration-emphasis',
-  'transition-easing',
-  'transition-easing-emphasis',
-  'animation-delay-first',
-  'animation-delay-second',
-  'animation-delay-third',
-]
+/**
+ * 어느 섹션에도 걸리지 않고 다른 페이지가 맡지도 않은 토큰. 평소에는 비어 있고,
+ * variables.css에 토큰이 늘었는데 문서가 따라오지 못했을 때만 나타난다.
+ */
+const renderUncategorizedSection = () => {
+  const names = sectionTokens('other')
+  if (!names.length) return nothing
 
-const zIndexTokenItems: string[] = [
-  'material-zindex-base',
-  'material-zindex-raised',
-  'material-zindex-chrome',
-  'material-zindex-chrome-top',
-  'material-zindex-overlay',
-  'material-zindex-modal',
-  'material-zindex-toast',
-]
+  return html`
+    <mm-token-section
+      heading="그 외"
+      description="variables.css에 선언되어 있지만 아직 어느 섹션에도 들어가지 않은 토큰입니다. 알맞은 섹션의 이름 규칙에 넣거나, 다른 페이지가 소개한다면 그 사실을 규칙에 남깁니다."
+    >
+      <mm-token-group>${renderTokenItems(names)}</mm-token-group>
+    </mm-token-section>
+  `
+}
 
 const main = html`
   <mm-page>
@@ -503,11 +307,11 @@ const main = html`
         heading="Color"
         description="원시 팔레트에 그 색을 참조하는 시맨틱 토큰을 태그로 붙입니다. background 역할 토큰은 대비쌍을 얹어 명도 대비를 함께 확인합니다."
       >
-        <mm-grid columns="6">${renderColorTokens(grayscaleColorTokens)}</mm-grid>
+        <mm-grid columns="6">${renderColorTokens(sectionTokens('palette'))}</mm-grid>
 
         <mm-separator variant="section"></mm-separator>
         <mm-grid columns="4" aria-label="background color tokens">
-          ${renderColorTokens(backgroundColorTokens)}
+          ${renderBackgroundTokens(sectionTokens('background'))}
         </mm-grid>
       </mm-token-section>
 
@@ -515,55 +319,9 @@ const main = html`
         heading="Typography"
         description="타이포그래피 토큰은 크기와 고정 행간을 함께 사용합니다. 행간은 컴포넌트의 역할에 맞춰 조합합니다."
       >
-        <mm-flex direction="column" gap="4">
-          <mm-surface variant="outlined" radius="large">
-            <mm-marquee gap="4" speed="80" pause-on-hover>
-              <mm-text size="32" weight="bold">
-                font-family: Alan Sans, Gothic A1, system-ui, sans-serif
-              </mm-text>
-              <mm-text size="32" weight="bold">font-size: 32px</mm-text>
-              <mm-text size="32" weight="bold">line-height: 40px</mm-text>
-            </mm-marquee>
-          </mm-surface>
-          <mm-surface variant="outlined" radius="large">
-            <mm-marquee gap="4" speed="64" pause-on-hover>
-              <mm-text size="24" weight="bold">
-                font-family: Alan Sans, Gothic A1, system-ui, sans-serif
-              </mm-text>
-              <mm-text size="24" weight="bold">font-size: 24px</mm-text>
-              <mm-text size="24" weight="bold">line-height: 32px</mm-text>
-            </mm-marquee>
-          </mm-surface>
-          <mm-surface variant="outlined" radius="large">
-            <mm-marquee gap="4" speed="64" pause-on-hover>
-              <mm-text size="18" weight="bold">
-                font-family: Alan Sans, Gothic A1, system-ui, sans-serif
-              </mm-text>
-              <mm-text size="18" weight="bold">font-size: 18px</mm-text>
-              <mm-text size="18" weight="bold">line-height: 28px</mm-text>
-            </mm-marquee>
-          </mm-surface>
-          <mm-surface variant="outlined" radius="large">
-            <mm-marquee gap="4" speed="64" pause-on-hover>
-              <mm-text size="14" weight="bold">
-                font-family: Alan Sans, Gothic A1, system-ui, sans-serif
-              </mm-text>
-              <mm-text size="14" weight="bold">font-size: 14px</mm-text>
-              <mm-text size="14" weight="bold">line-height: 24px</mm-text>
-            </mm-marquee>
-          </mm-surface>
-          <mm-surface variant="outlined" radius="large">
-            <mm-marquee gap="4" speed="64" pause-on-hover>
-              <mm-text size="12" weight="bold">
-                font-family: Alan Sans, Gothic A1, system-ui, sans-serif
-              </mm-text>
-              <mm-text size="12" weight="bold">font-size: 12px</mm-text>
-              <mm-text size="12" weight="bold">line-height: 16px</mm-text>
-            </mm-marquee>
-          </mm-surface>
-        </mm-flex>
+        <mm-flex direction="column" gap="4">${renderTypeSpecimens()}</mm-flex>
 
-        <mm-token-group>${renderTokenItems(typographyTokenItems)}</mm-token-group>
+        <mm-token-group>${renderTokenItems(sectionTokens('typography'))}</mm-token-group>
       </mm-token-section>
 
       <mm-token-section
@@ -571,35 +329,45 @@ const main = html`
         description="요소의 크기를 결정합니다. 주로 height에 사용하고 정사각형 요소에 한정하여 width에 사용합니다."
       >
         <mm-token-stage>
-          <mm-flex align-items="flex-end" gap="8">${renderSizeStage(sizeTokenItems)}</mm-flex>
+          <mm-flex align-items="flex-end" gap="8">
+            ${renderStage(sizeSwatches(sectionTokens('size')))}
+          </mm-flex>
         </mm-token-stage>
-        <mm-token-group>${renderTokenItems(sizeTokenItems)}</mm-token-group>
+        <mm-token-group>${renderTokenItems(sectionTokens('size'))}</mm-token-group>
       </mm-token-section>
 
       <mm-token-section heading="Space" description="space는 요소 사이의 거리입니다.">
         <mm-token-stage>
           <mm-flex align-items="center" gap="8">${renderSpaceStage(spaceStageTokens)}</mm-flex>
         </mm-token-stage>
-        <mm-token-group>${renderTokenItems(spaceTokenItems)}</mm-token-group>
+        <mm-token-group>${renderTokenItems(sectionTokens('space'))}</mm-token-group>
       </mm-token-section>
 
       <mm-token-section
         heading="Layout"
         description="레이아웃 토큰은 페이지, 팝오버, 폼 컨테이너처럼 반복되는 구조의 최대 너비와 여백을 정의합니다."
       >
-        <mm-token-group>${renderTokenItems(layoutTokenItems)}</mm-token-group>
+        <mm-token-group>${renderTokenItems(sectionTokens('layout'))}</mm-token-group>
       </mm-token-section>
 
       <mm-token-section
         heading="Border"
-        description="테두리는 표면의 경계와 클릭 가능성을 표현합니다. 모서리 곡률은 요소의 성격과 위계를 시각적으로 구분합니다."
+        description="테두리는 표면의 경계와 클릭 가능성을 표현합니다."
       >
         <mm-token-stage>
-          <mm-flex align-items="flex-end" gap="4">
-            ${renderBorderStage(borderStageSwatches)}
-          </mm-flex>
+          <mm-flex align-items="flex-end" gap="4">${renderStage(borderSwatches)}</mm-flex>
         </mm-token-stage>
-        <mm-token-group>${renderTokenItems(borderTokenItems)}</mm-token-group>
+        <mm-token-group>${renderTokenItems(sectionTokens('border'))}</mm-token-group>
+      </mm-token-section>
+
+      <mm-token-section
+        heading="Radius"
+        description="모서리 곡률은 요소의 성격과 위계를 시각적으로 구분합니다."
+      >
+        <mm-token-stage>
+          <mm-flex align-items="flex-end" gap="4">${renderStage(radiusSwatches)}</mm-flex>
+        </mm-token-stage>
+        <mm-token-group>${renderTokenItems(sectionTokens('radius'))}</mm-token-group>
       </mm-token-section>
 
       <mm-token-section
@@ -607,13 +375,13 @@ const main = html`
         description="그림자는 레이어의 고도와 부유감을 표현합니다."
       >
         <mm-token-stage>
-          <mm-flex align-items="flex-end" gap="4">${renderShadowStage(shadowTokenItems)}</mm-flex>
+          <mm-flex align-items="flex-end" gap="4">
+            ${renderStage(shadowSwatches(sectionTokens('shadow')))}
+          </mm-flex>
         </mm-token-stage>
         <mm-token-group aria-label="shadow primitive tokens">
-          ${renderTokenItems(shadowTokenItems)}
+          ${renderTokenItems(sectionTokens('shadow'))}
         </mm-token-group>
-
-        <mm-separator></mm-separator>
       </mm-token-section>
 
       <mm-token-section
@@ -621,29 +389,12 @@ const main = html`
         description="material은 뒤 배경을 얼마나 흐리고 덮을지 정하는 blur·opacity 쌍입니다. 단계가 오를수록 더 흐리고 더 불투명해집니다."
       >
         <mm-token-stage>
-          <div
-            style="
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            width: 100%;
-            height: 100px;
-            border-radius: var(--radius-large);
-            overflow: hidden;
-            background: linear-gradient(
-              135deg,
-              var(--primary-color) 0%,
-              var(--accent-color) 50%,
-              var(--danger-color) 100%
-            );
-          "
-          >
-            <mm-flex gap="4">${renderBlurStage(blurStageSwatches)}</mm-flex>
+          <div class="blur-stage">
+            <mm-flex gap="4">${renderStage(blurSwatches)}</mm-flex>
           </div>
         </mm-token-stage>
         <mm-token-group aria-label="material primitive tokens">
-          ${renderTokenItems(materialTokenItems)}
+          ${renderTokenItems(sectionTokens('material'))}
         </mm-token-group>
       </mm-token-section>
 
@@ -652,7 +403,7 @@ const main = html`
         description="surface 재질 티어는 z-index 역할 구분과 맞춰 나뉩니다. 한 티어의 표면 속성은 함께 선언되어 테마별로 교체됩니다."
       >
         <mm-token-group aria-label="surface tier tokens">
-          ${renderTokenItems(surfaceTokenItems)}
+          ${renderTokenItems(sectionTokens('surface'))}
         </mm-token-group>
       </mm-token-section>
 
@@ -660,7 +411,7 @@ const main = html`
         heading="Z-index"
         description="z-index는 레이어의 우선순위를 정의합니다. 같은 레이어군 안에서만 비교되도록 의미 이름을 사용합니다."
       >
-        <mm-token-group>${renderTokenItems(zIndexTokenItems)}</mm-token-group>
+        <mm-token-group>${renderTokenItems(sectionTokens('zIndex'))}</mm-token-group>
 
         <mm-text-list
           .texts=${[
@@ -682,8 +433,10 @@ const main = html`
         <mm-token-stage>
           <mm-flex direction="column" gap="4">${renderMotionStage(motionTracks)}</mm-flex>
         </mm-token-stage>
-        <mm-token-group>${renderTokenItems(transitionTokenItems)}</mm-token-group>
+        <mm-token-group>${renderTokenItems(sectionTokens('transition'))}</mm-token-group>
       </mm-token-section>
+
+      ${renderUncategorizedSection()}
 
       <mm-component-references .items=${componentReferences}></mm-component-references>
     </mm-flex>

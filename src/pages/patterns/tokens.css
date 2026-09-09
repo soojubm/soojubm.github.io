@@ -1,13 +1,26 @@
-.token-color-markers {
-  display: flex;
-  width: min(100%, calc(var(--size-80) * 6));
+.token-swatch {
+  flex-shrink: 0;
+  width: var(--size-48);
+  height: var(--size-48);
+  border-radius: var(--radius);
+  background: var(--background-color);
 }
 
-.token-color-marker {
+/* blur·opacity는 뒤에 무엇이 비치는지 보여야 하므로 색이 변하는 바탕 위에 얹는다. */
+.blur-stage {
   display: flex;
+  align-items: center;
   justify-content: center;
-  flex: 1 1 0;
-  min-width: var(--size-32);
+  width: 100%;
+  height: var(--size-80);
+  border-radius: var(--radius-large);
+  background: linear-gradient(
+    135deg,
+    var(--primary-color) 0%,
+    var(--accent-color) 50%,
+    var(--danger-color) 100%
+  );
+  overflow: hidden;
 }
 
 .motion-track {
