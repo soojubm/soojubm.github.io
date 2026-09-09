@@ -132,18 +132,18 @@ const main = html`
     <mm-component-guide>
       <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
       <mm-text-list
-        texts='[
-        "role=menu 는 명령 실행 목록. role=listbox 는 폼 내 선택 목록. 컨텍스트에 따라 구분합니다."
-      ]'
+        .texts=${[
+          'role=menu 는 명령 실행 목록. role=listbox 는 폼 내 선택 목록. 컨텍스트에 따라 구분합니다.',
+        ]}
       ></mm-text-list>
     </mm-component-guide>
 
     <mm-component-anatomy
-      parts='[
-      "컨테이너 — role=menuitem을 갖는 클릭 가능한 행입니다.",
-      "아이콘 — 액션을 보조하는 선택적 메타포(icon).",
-      "레이블 — 실행 결과를 예측할 수 있는 텍스트."
-    ]'
+      .parts=${[
+        '컨테이너 — role=menuitem을 갖는 클릭 가능한 행입니다.',
+        '아이콘 — 액션을 보조하는 선택적 메타포(icon).',
+        '레이블 — 실행 결과를 예측할 수 있는 텍스트.',
+      ]}
       .code=${'<mm-menu-item-action icon="user" label="프로필"></mm-menu-item-action>'}
       .markers=${[
         { placement: 'inline-start' },

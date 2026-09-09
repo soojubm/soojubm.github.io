@@ -22,7 +22,7 @@ const main = html`
       <mm-grid class="js-list" column-min-width="220px" gap="3"></mm-grid>
 
       <div class="js-more" hidden>
-        <mm-show-more-button class="js-more-btn" label="더 보기"></mm-show-more-button>
+        <mm-show-more-button class="js-more-btn" more-label="더 보기"></mm-show-more-button>
       </div>
     </mm-flex>
   </mm-page>

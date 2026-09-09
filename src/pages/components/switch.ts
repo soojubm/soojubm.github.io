@@ -41,7 +41,7 @@ const main = html`
       description="켜고 끄는 옵션입니다. 사용자는 실행한 옵션의 결과를 즉시 확인할 수 있습니다."
     ></mm-page-header>
 
-    <mm-component-aka items='["Toggle"]'></mm-component-aka>
+    <mm-component-aka .items=${['Toggle']}></mm-component-aka>
 
     <mm-component-example>
       <mm-flex direction="column" gap="3">
@@ -59,11 +59,11 @@ const main = html`
     </mm-component-guide>
 
     <mm-component-anatomy
-      parts='[
-      "트랙 — on/off 상태를 배경색으로 나타내는 가로 막대입니다.",
-      "썸(Thumb) — 트랙 위를 좌우로 이동하며 상태를 나타내는 손잡이.",
-      "레이블 — 설정 항목을 설명하는 텍스트."
-    ]'
+      .parts=${[
+        '트랙 — on/off 상태를 배경색으로 나타내는 가로 막대입니다.',
+        '썸(Thumb) — 트랙 위를 좌우로 이동하며 상태를 나타내는 손잡이.',
+        '레이블 — 설정 항목을 설명하는 텍스트.',
+      ]}
       .code=${'<mm-switch checked>뉴스레터 받아보기</mm-switch>'}
       .markers=${[
         { placement: 'block-start', offset: '0.75rem' },

@@ -9,7 +9,7 @@
   display: block;
   margin: 0 0 var(--space-2) 0;
   font-weight: var(--font-weight-bold);
-  color: var(--color-primary);
+  color: var(--primary-color);
 }
 .hero-title {
 }

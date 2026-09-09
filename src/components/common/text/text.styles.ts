@@ -35,7 +35,7 @@ export const textMaxLengthStyles = css`
 
 const textColorTokens = {
   light: { color: 'var(--foreground-subtle-color)' },
-  danger: { color: 'var(--color-danger)' },
+  danger: { color: 'var(--danger-color)' },
 }
 
 const textSizeTokens = {

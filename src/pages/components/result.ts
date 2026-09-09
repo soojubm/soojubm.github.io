@@ -53,7 +53,7 @@ const main = html`
       description="실행 결과를 피드백하는 섹션 또는 페이지 단위의 컴포넌트."
     ></mm-page-header>
 
-    <mm-component-aka items='["EmptyState", "Blankslate"]'></mm-component-aka>
+    <mm-component-aka .items=${['EmptyState', 'Blankslate']}></mm-component-aka>
 
     <mm-component-example>
       <mm-result

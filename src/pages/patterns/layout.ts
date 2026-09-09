@@ -44,7 +44,7 @@ const main = html`
           <mm-surface variant="ghost" density="compact" class="app-shell-content">
             <mm-caption>Content · base</mm-caption>
             <mm-surface variant="elevated" density="compact" class="app-shell-overlay">
-              <mm-caption>Overlay · overlay</mm-caption>
+              <mm-caption>Overlay · toast</mm-caption>
             </mm-surface>
           </mm-surface>
           <mm-surface variant="outlined" density="compact" class="app-shell-bottombar">
@@ -79,11 +79,11 @@ const main = html`
 
       <mm-content-section heading-level="3" heading="주의">
         <mm-text-list
-          texts='[
-            "화면 크기를 고정하지 않습니다. 375px 같은 고정 폭이 아니라 콘텐츠 성격에 맞는 최대 폭 토큰을 쓰고 나머지는 환경에 맡깁니다.",
-            "한 페이지에서 대비는 한 단계만 씁니다. 배경·표면·컨테이너를 동시에 여러 단계로 겹치면 위계가 무너집니다.",
-            "레이블이 잘리면 말줄임표로 감추지 말고 문구를 다듬습니다. 엄격한 writing 가이드가 툴의 자동 축약보다 우선합니다."
-          ]'
+          .texts=${[
+            '화면 크기를 고정하지 않습니다. 375px 같은 고정 폭이 아니라 콘텐츠 성격에 맞는 최대 폭 토큰을 쓰고 나머지는 환경에 맡깁니다.',
+            '한 페이지에서 대비는 한 단계만 씁니다. 배경·표면·컨테이너를 동시에 여러 단계로 겹치면 위계가 무너집니다.',
+            '레이블이 잘리면 말줄임표로 감추지 말고 문구를 다듬습니다. 엄격한 writing 가이드가 툴의 자동 축약보다 우선합니다.',
+          ]}
         ></mm-text-list>
       </mm-content-section>
     </mm-content-section-list>

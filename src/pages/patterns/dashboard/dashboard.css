@@ -1,8 +1,8 @@
 .dashboard {
   /* 대시보드 데모 전용 소셜 브랜드 컬러 */
-  --color-facebook: hsl(214, 89%, 52%);
-  --color-twitter: rgb(29, 161, 242);
-  --color-pinterest: rgb(230, 0, 35);
+  --facebook-color: hsl(214, 89%, 52%);
+  --twitter-color: rgb(29, 161, 242);
+  --pinterest-color: rgb(230, 0, 35);
 
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -34,7 +34,7 @@
   width: var(--space-2);
   height: var(--space-2);
   border-radius: var(--radius-full);
-  background: var(--color-primary);
+  background: var(--primary-color);
 }
 
 @media (max-width: 640px) {
@@ -104,13 +104,13 @@
 /* .meter-legend-item:before {content:'';display:block;width:100%;border-bottom:1px dotted #ccc;position:absolute;z-index:-1;} */
 
 .meter [data-type='facebook'] {
-  background: var(--color-facebook);
+  background: var(--facebook-color);
 }
 .meter [data-type='twitter'] {
-  background: var(--color-twitter);
+  background: var(--twitter-color);
 }
 .meter [data-type='instagram'] {
-  background: var(--color-pinterest);
+  background: var(--pinterest-color);
 }
 
 .graph {
@@ -130,7 +130,7 @@
 .graph-item-bar {
   height: 30px;
   border-radius: 0 0 var(--radius) var(--radius);
-  background: var(--color-danger);
+  background: var(--danger-color);
   position: absolute;
   left: 0;
   right: 0;

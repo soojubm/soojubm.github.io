@@ -81,7 +81,18 @@ const main = html`
     ></mm-page-header>
 
     <mm-component-aka
-      items='["EmphasisBox", "Box", "Card", "Module", "Section", "Container", "Paper", "Building block", "Segment", "Panel"]'
+      .items=${[
+        'EmphasisBox',
+        'Box',
+        'Card',
+        'Module',
+        'Section',
+        'Container',
+        'Paper',
+        'Building block',
+        'Segment',
+        'Panel',
+      ]}
     ></mm-component-aka>
 
     <mm-component-example>
@@ -173,10 +184,10 @@ const main = html`
       </mm-paragraph-group>
 
       <mm-text-list
-        texts='[
-          "surface 내부 leading, tailing 컴포넌트에 따라 시각보정이 필요할 수 있습니다.",
-          "inset이 너무 커지면 물리적 화면 크기에 따라 inset의 변경이 필요할 수 있다. 콘텐츠 모듈을 가운데 정렬로 해결할 수 있다."
-        ]'
+        .texts=${[
+          'surface 내부 leading, tailing 컴포넌트에 따라 시각보정이 필요할 수 있습니다.',
+          'inset이 너무 커지면 물리적 화면 크기에 따라 inset의 변경이 필요할 수 있다. 콘텐츠 모듈을 가운데 정렬로 해결할 수 있다.',
+        ]}
       ></mm-text-list>
     </mm-component-guide>
 
@@ -196,11 +207,7 @@ const main = html`
         </div>
         <mm-button variant="primary" size="large" full-width>업그레이드</mm-button>
         <mm-text-list
-          texts='[
-        "스토리지 2TB",
-        "Google 전문가와의 상담",
-        "회원을 위한 추가 혜택"
-        ]'
+          .texts=${['스토리지 2TB', 'Google 전문가와의 상담', '회원을 위한 추가 혜택']}
         ></mm-text-list>
       </mm-flex>
     </mm-component-section>
@@ -225,16 +232,16 @@ const main = html`
               .
             </mm-paragraph>
             <mm-text-list
-              texts='[
-              "원활한 피드 탐색 경험을 위해 모든 피드를 보여주지 않는 것이 좋을 수 있다. 피드가 노출되는 이유를 알려줄 수 있다. 또한 사용자는 보고 싶은 피드와 보고 싶지 않은 피드를 결정할 권리가 있다.",
-              "글줄의 길이를 상대적으로 좁게 짜는 경향이 있다.",
-              "리액션 버튼과 리액션 수치를 각각 제공할 수 있고 따로 제공할 수 있다.",
-              "리액션한 사용자 목록을 어떻게 보여줄 것인가.",
-              "중복 리액션과 횟수 등 기능 정의.",
-              "리액션 =&gt; 알림."
-              ]'
+              .texts=${[
+                '원활한 피드 탐색 경험을 위해 모든 피드를 보여주지 않는 것이 좋을 수 있다. 피드가 노출되는 이유를 알려줄 수 있다. 또한 사용자는 보고 싶은 피드와 보고 싶지 않은 피드를 결정할 권리가 있다.',
+                '글줄의 길이를 상대적으로 좁게 짜는 경향이 있다.',
+                '리액션 버튼과 리액션 수치를 각각 제공할 수 있고 따로 제공할 수 있다.',
+                '리액션한 사용자 목록을 어떻게 보여줄 것인가.',
+                '중복 리액션과 횟수 등 기능 정의.',
+                '리액션 =&gt; 알림.',
+              ]}
             ></mm-text-list>
-            <mm-keyword-tag-group keywords='["Google", "Meta", "Nvidia"]'></mm-keyword-tag-group>
+            <mm-keyword-tag-group .keywords=${['Google', 'Meta', 'Nvidia']}></mm-keyword-tag-group>
             <mm-surface variant="elevated" density="compact">
               <mm-flex direction="column" gap="2">
                 <mm-tag>3월 14일 수정됨</mm-tag>

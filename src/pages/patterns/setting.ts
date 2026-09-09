@@ -59,11 +59,7 @@ const main = html`
 
       <mm-surface variant="paper" radius="large">
         <mm-menu-item-group size="large">
-          <mm-setting-item
-            size="small"
-            label="배송지"
-            description="배송지를 관리하고 기본 배송지를 설정하세요."
-          >
+          <mm-setting-item label="배송지" description="배송지를 관리하고 기본 배송지를 설정하세요.">
             <mm-button slot="action">배송지 관리</mm-button>
           </mm-setting-item>
           <mm-separator></mm-separator>
@@ -193,9 +189,9 @@ const main = html`
 
       <blockquote>
         <mm-text-list
-          texts='[
-            "개인정보와 프로필 정보를 구분한다. 프로필 수정은 프로필 페이지에서 진입할 수 있다."
-          ]'
+          .texts=${[
+            '개인정보와 프로필 정보를 구분한다. 프로필 수정은 프로필 페이지에서 진입할 수 있다.',
+          ]}
         ></mm-text-list>
       </blockquote>
     </mm-flex>

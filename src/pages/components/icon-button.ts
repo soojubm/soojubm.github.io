@@ -136,12 +136,12 @@ const main = html`
 
     <mm-component-anatomy
       style="--component-anatomy-stage-padding: 0 0 3rem"
-      parts='[
-      "컨테이너 — variant·size로 형태와 클릭 영역을 정의합니다.",
-      "아이콘 — 액션을 나타내는 메타포(icon).",
-      "접근성 레이블 — 화면에 보이지 않지만 액션을 설명하는 텍스트(aria-label).",
-      "툴팁 — icon-only 버튼의 용도를 보조 설명합니다."
-    ]'
+      .parts=${[
+        '컨테이너 — variant·size로 형태와 클릭 영역을 정의합니다.',
+        '아이콘 — 액션을 나타내는 메타포(icon).',
+        '접근성 레이블 — 화면에 보이지 않지만 액션을 설명하는 텍스트(aria-label).',
+        '툴팁 — icon-only 버튼의 용도를 보조 설명합니다.',
+      ]}
       .code=${'<mm-icon-button variant="primary" icon="heart" aria-label="좋아요"></mm-icon-button>'}
       .markers=${[
         { placement: 'inline-start' },

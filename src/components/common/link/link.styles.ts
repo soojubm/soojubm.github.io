@@ -4,7 +4,7 @@ import { focusRing } from '@/stylesheets/shared.styles'
 
 export const linkStyles = css`
   :host {
-    --link-text-color: var(--color-primary);
+    --link-text-color: var(--primary-color);
     --link-gap: var(--space-1);
   }
 

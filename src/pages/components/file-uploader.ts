@@ -73,20 +73,20 @@ const main = html`
     <mm-component-guide>
       <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
       <mm-text-list
-        texts='[
-        "미리보기가 의미 있는 이미지는 썸네일로, 그 외 파일은 유형과 크기로 표현합니다.",
-        "여러 파일을 받는 맥락에서만 multiple을, 즉석 촬영이 필요한 맥락에서만 capture를 켭니다.",
-        "이미지 업로드와 문서 업로드는 accept와 안내 문구로 구분해 기대를 좁힙니다."
-      ]'
+        .texts=${[
+          '미리보기가 의미 있는 이미지는 썸네일로, 그 외 파일은 유형과 크기로 표현합니다.',
+          '여러 파일을 받는 맥락에서만 multiple을, 즉석 촬영이 필요한 맥락에서만 capture를 켭니다.',
+          '이미지 업로드와 문서 업로드는 accept와 안내 문구로 구분해 기대를 좁힙니다.',
+        ]}
       ></mm-text-list>
     </mm-component-guide>
 
     <mm-component-anatomy
-      parts='[
-      "첨부 버튼 — 파일 선택 대화상자를 여는 트리거(label).",
-      "상태 텍스트 — 허용 조건(helper)과 현재 선택 개수를 함께 전달합니다.",
-      "첨부 목록 — 첨부한 파일을 유형·크기와 함께 보여주고 개별로 제거합니다."
-    ]'
+      .parts=${[
+        '첨부 버튼 — 파일 선택 대화상자를 여는 트리거(label).',
+        '상태 텍스트 — 허용 조건(helper)과 현재 선택 개수를 함께 전달합니다.',
+        '첨부 목록 — 첨부한 파일을 유형·크기와 함께 보여주고 개별로 제거합니다.',
+      ]}
       .code=${'<mm-file-uploader label="사진 업로드" accept=".jpg,.png" multiple></mm-file-uploader>'}
     >
       <mm-file-uploader label="사진 업로드" accept=".jpg,.png" multiple></mm-file-uploader>

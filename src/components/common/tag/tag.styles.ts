@@ -30,9 +30,9 @@ export const tagToneStyles = {
     borderColor: 'var(--border-color)',
   },
   gold: {
-    background: 'var(--color-accent)',
+    background: 'var(--accent-color)',
     textColor: 'var(--gray800)',
-    borderColor: 'var(--color-accent)',
+    borderColor: 'var(--accent-color)',
   },
   green: categoryTone(2),
   yellow: categoryTone(6),

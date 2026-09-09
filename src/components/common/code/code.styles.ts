@@ -26,14 +26,14 @@ export const codeStyles = css`
   }
 
   .token.tag {
-    color: color-mix(in srgb, var(--color-foreground-danger) 85%, transparent);
+    color: color-mix(in srgb, var(--foreground-danger-color) 85%, transparent);
   }
 
   .token.attr-name {
-    color: color-mix(in srgb, var(--color-foreground-warning) 85%, transparent);
+    color: color-mix(in srgb, var(--foreground-warning-color) 85%, transparent);
   }
 
   .token.attr-value {
-    color: color-mix(in srgb, var(--color-foreground-success) 85%, transparent);
+    color: color-mix(in srgb, var(--foreground-success-color) 85%, transparent);
   }
 `

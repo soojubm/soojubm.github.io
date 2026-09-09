@@ -6,7 +6,6 @@ import { styleMap } from 'lit/directives/style-map.js'
 
 import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import { resetStyles } from '@/stylesheets/shared.styles'
-import { arrayAttributeConverter } from '@/utils'
 import '@/components/common/icon'
 
 export interface TableColumn {
@@ -119,11 +118,7 @@ export class Table extends LitElement {
 
   @property({ attribute: false }) rows: unknown = nothing
 
-  @property({
-    attribute: 'columns',
-    converter: arrayAttributeConverter<TableColumn>(),
-  })
-  columns: TableColumn[] = []
+  @property({ attribute: false }) columns: TableColumn[] = []
 
   render() {
     return html`

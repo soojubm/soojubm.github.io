@@ -2,7 +2,6 @@ import { LitElement, html, css } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import '@/components/common/link/link'
-import { arrayAttributeConverter } from '@/utils'
 import '@/components/common/text/semantics/heading'
 import '@/components/common/surface'
 
@@ -41,11 +40,7 @@ export class ComponentReferences extends LitElement {
 
   @property({ type: String }) heading = 'References'
 
-  @property({
-    attribute: 'items',
-    converter: arrayAttributeConverter<ComponentReferenceItemData>(),
-  })
-  items: ComponentReferenceItemData[] = []
+  @property({ attribute: false }) items: ComponentReferenceItemData[] = []
 
   render() {
     return html`

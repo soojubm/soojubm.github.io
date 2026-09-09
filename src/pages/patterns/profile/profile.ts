@@ -18,7 +18,6 @@ const main = html`
         phone="010 3121 7045"
         description="UI Designer"
         avatar-src="/src/images/soojubm.png"
-        avatar-size="huge"
         avatar-variant="secondary"
         tag-label="접속 중"
       ></mm-user-snippet>
@@ -32,7 +31,15 @@ const main = html`
         content="Sometimes at night, I find myself behind the computer. When I finally blink, a mess of code is drawing random structures on the screen. I spend the rest of the night staring. 유아이를 그립니다. 배경을 넣어보았다. 모바일에서 팔로우 버튼을 상단으로 조정해야 한다. 업로드 버튼과 설정 버튼."
       ></mm-read-more-paragraph>
       <mm-keyword-tag-group
-        keywords='["HTML5","VanillaJS","ReactJS","WebComponents","Typescript","GoogleAnalytics","Figma"]'
+        .keywords=${[
+          'HTML5',
+          'VanillaJS',
+          'ReactJS',
+          'WebComponents',
+          'Typescript',
+          'GoogleAnalytics',
+          'Figma',
+        ]}
       ></mm-keyword-tag-group>
       <mm-flex direction="column" gap="1">
         <mm-flex gap="2">
@@ -76,7 +83,7 @@ const main = html`
               src="/src/images/newneek/gosum-spinner.png"
               badge="최신"
               datetime="2024-06-20"
-              keywords='["프로젝트관리","디자인","프론트엔드개발"]'
+              .keywords=${['프로젝트관리', '디자인', '프론트엔드개발']}
             ></mm-portfolio-item>
 
             <mm-portfolio-item
@@ -85,7 +92,7 @@ const main = html`
               description="선별된..."
               src="/src/images/work-studium.jpg"
               datetime="2022-09-12"
-              keywords='["프리랜서","디자인","워드프레스"]'
+              .keywords=${['프리랜서', '디자인', '워드프레스']}
             ></mm-portfolio-item>
 
             <mm-portfolio-item
@@ -94,7 +101,7 @@ const main = html`
               description="취미생활?"
               src="/src/images/budha.png"
               datetime="2021-02-22"
-              keywords='["취미생활","레터링"]'
+              .keywords=${['취미생활', '레터링']}
             ></mm-portfolio-item>
           </mm-grid>
         </mm-tab-panel>
@@ -267,7 +274,11 @@ const main = html`
           <mm-tag>Category Pages</mm-tag>
         </div>
         <mm-text-list
-          texts='["프로젝트에 참여하는 모든 사람이 액세스 할 수 있는 형식으로 사이트 맵 유지", "웹 사이트 구조에서 일어나는 모든 변화를 반영하는 살아있는 문서. 변경이 쉬워야 한다.", "멘탈 모델은 뭔가 현실 세계에서 작동하는 방법에 대한 다른 사람의 생각에 대한 설명입니다."]'
+          .texts=${[
+            '프로젝트에 참여하는 모든 사람이 액세스 할 수 있는 형식으로 사이트 맵 유지',
+            '웹 사이트 구조에서 일어나는 모든 변화를 반영하는 살아있는 문서. 변경이 쉬워야 한다.',
+            '멘탈 모델은 뭔가 현실 세계에서 작동하는 방법에 대한 다른 사람의 생각에 대한 설명입니다.',
+          ]}
         ></mm-text-list>
         <mm-separator></mm-separator>
         <section><mm-heading level="1">Home</mm-heading></section>

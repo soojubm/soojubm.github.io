@@ -59,11 +59,11 @@ const main = html`
 
       <mm-content-section heading-level="3" heading="주의">
         <mm-text-list
-          texts='[
-            "hover에서 잠깐 떠오르는 --interaction-hover-lift는 상호작용 피드백이지 고도 단계가 아닙니다. 정적인 층위와 섞어 쓰지 않습니다.",
-            "한 화면에서 그림자는 한 단계만 씁니다. 배경 대비와 그림자를 동시에 여러 단계로 겹치면 층위가 무너집니다.",
-            "겹침 순서는 --material-zindex-* 그룹 토큰으로 정합니다. 자세한 규칙은 Overlay 문서에 있습니다."
-          ]'
+          .texts=${[
+            'hover에서 잠깐 떠오르는 --interaction-hover-lift는 상호작용 피드백이지 고도 단계가 아닙니다. 정적인 층위와 섞어 쓰지 않습니다.',
+            '한 화면에서 그림자는 한 단계만 씁니다. 배경 대비와 그림자를 동시에 여러 단계로 겹치면 층위가 무너집니다.',
+            '겹침 순서는 --material-zindex-* 그룹 토큰으로 정합니다. 자세한 규칙은 Overlay 문서에 있습니다.',
+          ]}
         ></mm-text-list>
       </mm-content-section>
     </mm-content-section-list>

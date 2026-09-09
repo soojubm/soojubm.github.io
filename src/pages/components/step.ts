@@ -26,7 +26,7 @@ const main = html`
   <mm-page>
     <mm-page-header heading="Step " description="Workflow"></mm-page-header>
 
-    <mm-component-aka items='["Timeline", "Stepper"]'></mm-component-aka>
+    <mm-component-aka .items=${['Timeline', 'Stepper']}></mm-component-aka>
 
     <mm-component-example>
       <mm-flex direction="column" gap="4">
@@ -130,7 +130,7 @@ const main = html`
       <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
       <section class="timeline">
         <div class="timeline-item">
-          <mm-tag datetime="">2022. 11. 4.</mm-tag>
+          <mm-tag>2022. 11. 4.</mm-tag>
           <div class="timeline-item-panel">
             <mm-avatar slot="avatar">
               <span style="font-size: 0.75rem" aria-hidden="true">🐺</span>
@@ -148,7 +148,13 @@ const main = html`
             <div>
               <span>뉴닉, 프로덕트 디자이너</span>
               <mm-text-list
-                texts='["MVP / Feature 일정 산정 및 스펙 정의", "이슈 트래킹, 우선순위 관리를 위한 백로그 구축", "온라인 리서치, VOC 분석을 통한 문제 정의", "프로덕트 디자인 (Userflow / UI / GUI), 프론트엔드 개발", "데이터 트래킹 및 분석 (hotjar, google analytics, google optimize)"]'
+                .texts=${[
+                  'MVP / Feature 일정 산정 및 스펙 정의',
+                  '이슈 트래킹, 우선순위 관리를 위한 백로그 구축',
+                  '온라인 리서치, VOC 분석을 통한 문제 정의',
+                  '프로덕트 디자인 (Userflow / UI / GUI), 프론트엔드 개발',
+                  '데이터 트래킹 및 분석 (hotjar, google analytics, google optimize)',
+                ]}
               ></mm-text-list>
             </div>
           </div>
@@ -208,8 +214,12 @@ const main = html`
       </section>
 
       <mm-text-list
-        texts='["2022. 12. 17.. line-height 기본값 역전. 단락을 제외하면 모든 케이스에서 line-height-small을
-        선언해야 하기 때문에 defalt / small을 defalt / large로 변경.", "add stack component. chip-group과 tag-group 제거하고 stack으로 통합.", "color gray600 삭제. 본문용으로 야외나 밝은 조명 아래서 가시성이 떨어짐.", "타임라인과 구분. 타임라인은 히스토리 맥락으로 스텝의 역순. 확장, 링크, indentation"]'
+        .texts=${[
+          '2022. 12. 17.. line-height 기본값 역전. 단락을 제외하면 모든 케이스에서 line-height-small을 선언해야 하기 때문에 defalt / small을 defalt / large로 변경.',
+          'add stack component. chip-group과 tag-group 제거하고 stack으로 통합.',
+          'color gray600 삭제. 본문용으로 야외나 밝은 조명 아래서 가시성이 떨어짐.',
+          '타임라인과 구분. 타임라인은 히스토리 맥락으로 스텝의 역순. 확장, 링크, indentation',
+        ]}
       ></mm-text-list>
 
       <mm-surface variant="outlined">

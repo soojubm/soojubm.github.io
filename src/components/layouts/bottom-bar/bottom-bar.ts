@@ -6,7 +6,7 @@ import { ICON_NAMES, type IconName } from '@/components/common/icon/icon-names'
 import '@/components/common/text/semantics/caption'
 import { SelectionIndicatorController } from '@/controllers/selection-indicator-controller'
 import { focusRing } from '@/stylesheets/shared.styles'
-import { arrayAttributeConverter, emit } from '@/utils'
+import { emit } from '@/utils'
 import '@/components/common/avatar'
 
 export interface BottomBarItem {
@@ -85,11 +85,7 @@ class BottomBar extends LitElement {
     }
   `
 
-  @property({
-    attribute: 'items',
-    converter: arrayAttributeConverter<BottomBarItem>(defaultItems),
-  })
-  items: BottomBarItem[] = defaultItems
+  @property({ attribute: false }) items: BottomBarItem[] = defaultItems
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = '하단 내비게이션'
 
   @state() private selectedIndex: number | null = null

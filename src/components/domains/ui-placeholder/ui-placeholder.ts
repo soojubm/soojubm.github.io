@@ -14,7 +14,7 @@ export class UiPlaceholder extends LitElement {
     css`
       :host {
         --ui-placeholder-height: var(--size-80);
-        --ui-placeholder-background-color: var(--color-primary-subtle);
+        --ui-placeholder-background-color: var(--primary-subtle-color);
         --ui-placeholder-border-radius: var(--radius-large);
 
         display: block;

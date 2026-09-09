@@ -2,7 +2,6 @@ import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import { resetStyles } from '@/stylesheets/shared.styles'
-import { arrayAttributeConverter } from '@/utils'
 
 @customElement('mm-component-aka')
 export class ComponentAka extends LitElement {
@@ -15,11 +14,7 @@ export class ComponentAka extends LitElement {
     `,
   ]
 
-  @property({
-    attribute: 'items',
-    converter: arrayAttributeConverter<string>(),
-  })
-  items: string[] = []
+  @property({ attribute: false }) items: string[] = []
 
   render() {
     if (!this.items.length) return nothing

@@ -5,8 +5,8 @@ import { buildAttributeRules } from '@/utils'
 
 const iconButtonVariantTokens = {
   primary: {
-    '--icon-button-background-color': 'var(--color-primary)',
-    '--icon-button-text-color': 'var(--foreground-on-solid)',
+    '--icon-button-background-color': 'var(--primary-color)',
+    '--icon-button-text-color': 'var(--foreground-on-strong-color)',
   },
   secondary: {
     '--icon-button-border-radius': 'var(--radius-full)',
@@ -19,8 +19,8 @@ const iconButtonVariantTokens = {
     '--icon-button-background-color': 'transparent',
   },
   destructive: {
-    '--icon-button-background-color': 'var(--color-danger)',
-    '--icon-button-text-color': 'var(--foreground-on-solid)',
+    '--icon-button-background-color': 'var(--danger-color)',
+    '--icon-button-text-color': 'var(--foreground-on-strong-color)',
   },
 }
 
@@ -85,6 +85,10 @@ export const iconButtonStyles = [
       font-family: var(--font-family);
       font-size: inherit;
       cursor: pointer;
+
+      &:hover {
+        --icon-button-border: var(--border);
+      }
     }
 
     ${unsafeCSS(buildAttributeRules('variant', iconButtonVariantTokens, 'button'))}

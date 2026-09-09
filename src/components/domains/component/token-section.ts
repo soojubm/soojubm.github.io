@@ -14,6 +14,12 @@ export class TokenSection extends LitElement {
         flex-direction: column;
         gap: var(--space-6);
       }
+
+      slot {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-4);
+      }
     `,
   ]
 

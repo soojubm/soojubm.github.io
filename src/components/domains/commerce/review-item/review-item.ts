@@ -34,7 +34,7 @@ export class ReviewItem extends LitElement {
       }
 
       .rating {
-        color: var(--color-accent);
+        color: var(--accent-color);
       }
     `,
   ]

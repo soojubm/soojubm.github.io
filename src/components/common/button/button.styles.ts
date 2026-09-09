@@ -6,10 +6,6 @@ import { buildAttributeRules } from '@/utils'
 /** button 태그뿐 아니라 mm-hashtag-link 등 a 기반 파생 컴포넌트도 같은 스킨을 그대로 가져다 쓰도록 공용 상호작용 선택자로 잡는다. */
 export const interactiveControlStyles = css`
   ${interactiveElement} {
-    &:hover {
-      border-color: var(--border-color);
-    }
-
     &:focus-visible {
       ${focusRing};
     }
@@ -66,6 +62,10 @@ export const buttonBaseStyles = [
       text-transform: capitalize;
 
       cursor: pointer;
+
+      &:hover {
+        --button-border: var(--border);
+      }
     }
   `,
 ]
@@ -89,23 +89,23 @@ export const buttonSizeStyles = css`
 
 const buttonVariantTokens = {
   primary: {
-    '--button-background-color': 'var(--color-primary)',
-    '--button-text-color': 'var(--foreground-on-solid)',
+    '--button-background-color': 'var(--primary-color)',
+    '--button-text-color': 'var(--foreground-on-primary-color)',
   },
   secondary: {
-    '--button-background-color': 'var(--color-primary-subtle)',
-    '--button-text-color': 'var(--color-primary)',
+    '--button-background-color': 'var(--primary-subtle-color)',
+    '--button-text-color': 'var(--primary-color)',
   },
   tertiary: {
     '--button-text-color': 'var(--foreground-color)',
   },
   ghost: {
     '--button-background-color': 'transparent',
-    '--button-text-color': 'var(--color-primary)',
+    '--button-text-color': 'var(--primary-color)',
   },
   destructive: {
-    '--button-background-color': 'var(--color-danger)',
-    '--button-text-color': 'var(--foreground-on-solid)',
+    '--button-background-color': 'var(--danger-color)',
+    '--button-text-color': 'var(--foreground-on-strong-color)',
   },
 }
 
@@ -144,7 +144,7 @@ export const followButtonStyles = css`
   }
 
   button {
-    --button-background-color: var(--color-primary);
-    --button-text-color: var(--foreground-on-solid);
+    --button-background-color: var(--primary-color);
+    --button-text-color: var(--foreground-on-strong-color);
   }
 `

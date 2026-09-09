@@ -78,7 +78,7 @@ const main = html`
       description="사용자가 정보를 입력하고 제출할 수 있습니다."
     ></mm-page-header>
 
-    <mm-component-aka items='["TextInput", "Input"]'></mm-component-aka>
+    <mm-component-aka .items=${['TextInput', 'Input']}></mm-component-aka>
 
     <mm-component-example>
       <div style="max-width: 400px">
@@ -106,13 +106,13 @@ const main = html`
     </mm-component-guide>
 
     <mm-component-anatomy
-      parts='[
-      "레이블 — 입력 항목의 이름을 나타냅니다(label).",
-      "헬퍼 텍스트 — 레이블 아래에서 입력 형식이나 보조 정보를 안내합니다(helper).",
-      "입력 필드 — 값을 입력·표시하는 영역. placeholder로 입력 형식을 안내합니다.",
-      "접두/접미 요소 — 아이콘·단위·버튼 등 보조 요소(slot: leading / trailing).",
-      "검증 텍스트 — 입력 필드 아래에서 오류나 검증 결과를 전달합니다(validation-text)."
-    ]'
+      .parts=${[
+        '레이블 — 입력 항목의 이름을 나타냅니다(label).',
+        '헬퍼 텍스트 — 레이블 아래에서 입력 형식이나 보조 정보를 안내합니다(helper).',
+        '입력 필드 — 값을 입력·표시하는 영역. placeholder로 입력 형식을 안내합니다.',
+        '접두/접미 요소 — 아이콘·단위·버튼 등 보조 요소(slot: leading / trailing).',
+        '검증 텍스트 — 입력 필드 아래에서 오류나 검증 결과를 전달합니다(validation-text).',
+      ]}
       .code=${`<mm-textfield
   label="이메일"
   placeholder="name@example.com"
@@ -213,15 +213,17 @@ const main = html`
       </mm-flex>
     </div>
 
-    <mm-text-list texts="[]">
-      <mm-text-list
-        texts='[
-      "",
-      "url field. www 및 https://",
-      "form 컴포넌트는 간격에 대한 구조 컴포넌트. TODO. FormField, FormLabel, FormControl. formpatterns. FormField label / TextInput 으로 나누는 방안. groupable은 속성. 그래서 컴포넌트 이름은 form layout / fieldset / fieldgroup FormLabel checkbox-label와 input-label을 똑같이 할수 있나? field label : fieldset legend, label - input/textarea 그러면 searchField 등의 대안이될 수 있나?", "field feedback / fieldset feedback(checkbox group, login)", "props: minValue, maxValue, value, onDecreseClick, onIncreseClick",
-      "221021: - + 버튼에 포커스는 필요가 없다. input 키보드 위 아래로?", "장식적인 검색 아이콘과 clickable한 액션. leading는 장식. trailing는 액션? trailing에 유닛이 있을 수도"]'
-      ></mm-text-list>
-    </mm-text-list>
+    <mm-text-list
+      .texts=${[
+        '',
+        'url field. www 및 https://',
+        'form 컴포넌트는 간격에 대한 구조 컴포넌트. TODO. FormField, FormLabel, FormControl. formpatterns. FormField label / TextInput 으로 나누는 방안. groupable은 속성. 그래서 컴포넌트 이름은 form layout / fieldset / fieldgroup FormLabel checkbox-label와 input-label을 똑같이 할수 있나? field label : fieldset legend, label - input/textarea 그러면 searchField 등의 대안이될 수 있나?',
+        'field feedback / fieldset feedback(checkbox group, login)',
+        'props: minValue, maxValue, value, onDecreseClick, onIncreseClick',
+        '221021: - + 버튼에 포커스는 필요가 없다. input 키보드 위 아래로?',
+        '장식적인 검색 아이콘과 clickable한 액션. leading는 장식. trailing는 액션? trailing에 유닛이 있을 수도',
+      ]}
+    ></mm-text-list>
 
     <div
       style="
@@ -372,11 +374,11 @@ const main = html`
           <mm-paragraph>검색 인지, 검색 기표</mm-paragraph>
           <div class="step-item-description">
             <mm-text-list
-              texts='[
-              "키워드 입력으로 즉시 검색. 추천, 자동완성.",
-              "해시태그 또는 카테고리 목록으로 제안된 인기/추천 키워드로 검색",
-              "searchfield 형태의 버튼을 클릭하여 검색 뷰로 이동"
-            ]'
+              .texts=${[
+                '키워드 입력으로 즉시 검색. 추천, 자동완성.',
+                '해시태그 또는 카테고리 목록으로 제안된 인기/추천 키워드로 검색',
+                'searchfield 형태의 버튼을 클릭하여 검색 뷰로 이동',
+              ]}
             ></mm-text-list>
           </div>
         </div>
@@ -386,10 +388,7 @@ const main = html`
           <mm-caption>keyword.length === 0</mm-caption>
           <div class="step-item-description">
             <mm-text-list
-              texts='[
-              "이전 검색 내역",
-              "제안Suggestions. 추천 및 인기 또는 개인화 큐레이션"
-            ]'
+              .texts=${['이전 검색 내역', '제안Suggestions. 추천 및 인기 또는 개인화 큐레이션']}
             ></mm-text-list>
           </div>
         </div>
@@ -398,10 +397,10 @@ const main = html`
           <mm-paragraph>onChange</mm-paragraph>
           <div class="step-item-description">
             <mm-text-list
-              texts='[
-              "추천/자동완성/필터링",
-              "결과 없음 상태를 사용하지 않는다. 일치하는 결과가 없더라도 유사 콘텐츠 또는 추천 콘텐츠로 대체하여 하나 이상의 결과를 항상 보여주도록 합니다."
-            ]'
+              .texts=${[
+                '추천/자동완성/필터링',
+                '결과 없음 상태를 사용하지 않는다. 일치하는 결과가 없더라도 유사 콘텐츠 또는 추천 콘텐츠로 대체하여 하나 이상의 결과를 항상 보여주도록 합니다.',
+              ]}
             ></mm-text-list>
           </div>
         </div>
@@ -410,11 +409,11 @@ const main = html`
           <mm-paragraph>onSubmit (엔터 키 또는 버튼 클릭)</mm-paragraph>
           <div class="step-item-description">
             <mm-text-list
-              texts='[
-              "검색 서비스 본문 결과, 전문 검색",
-              "입력한 결과물 노출 또는 바로가기를 최상단에 노출",
-              "일치하는 결과만 표시하고 새로운 검색을 유도"
-            ]'
+              .texts=${[
+                '검색 서비스 본문 결과, 전문 검색',
+                '입력한 결과물 노출 또는 바로가기를 최상단에 노출',
+                '일치하는 결과만 표시하고 새로운 검색을 유도',
+              ]}
             ></mm-text-list>
           </div>
         </div>
@@ -423,15 +422,15 @@ const main = html`
       <mm-paragraph-group>
         <mm-paragraph>Checklist</mm-paragraph>
         <mm-text-list
-          texts='[
-          "검색의 범위. 글로벌, 로컬",
-          "모바일 키보드의 높이를 고려한 쿼리의 적정 갯수",
-          "결과 페이지의 공유",
-          "검색 데이터의 수집",
-          "최근 검색 내역 삭제. 휘발성이 높은 정보이므로 편집 모듈 없이 우측 삭제 버튼으로 개별 삭제 기능을 제공해도 충분하다.",
-          "전체 검색 내역과 최근 검색 내역. 활동 로그. 검색 내역의 삭제는 개인화 콘텐츠에 영향을 주는가?",
-          "tabIndex: back -&gt; input"
-        ]'
+          .texts=${[
+            '검색의 범위. 글로벌, 로컬',
+            '모바일 키보드의 높이를 고려한 쿼리의 적정 갯수',
+            '결과 페이지의 공유',
+            '검색 데이터의 수집',
+            '최근 검색 내역 삭제. 휘발성이 높은 정보이므로 편집 모듈 없이 우측 삭제 버튼으로 개별 삭제 기능을 제공해도 충분하다.',
+            '전체 검색 내역과 최근 검색 내역. 활동 로그. 검색 내역의 삭제는 개인화 콘텐츠에 영향을 주는가?',
+            'tabIndex: back -&gt; input',
+          ]}
         ></mm-text-list>
       </mm-paragraph-group>
     </mm-component-guide>

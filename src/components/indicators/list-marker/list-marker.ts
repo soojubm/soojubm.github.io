@@ -12,7 +12,7 @@ export class ListMarker extends LitElement {
     css`
       :host {
         --list-marker-background-color: var(--background-strong-color);
-        --list-marker-text-color: var(--foreground-on-solid);
+        --list-marker-text-color: var(--foreground-on-strong-color);
 
         display: inline-flex;
         align-items: center;

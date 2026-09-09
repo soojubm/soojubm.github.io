@@ -23,7 +23,6 @@ export class Footer extends LitElement {
           phone="010 3121 7045"
           description="UI Designer"
           avatar-src=${soojubmImage}
-          size="huge"
           avatar-variant="secondary"
         ></mm-user-snippet>
 

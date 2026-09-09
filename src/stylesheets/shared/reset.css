@@ -57,7 +57,7 @@ dfn {
   font-style: normal;
 }
 em {
-  color: var(--color-primary);
+  color: var(--primary-color);
 }
 abbr,
 ins {

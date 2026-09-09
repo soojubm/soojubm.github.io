@@ -110,7 +110,7 @@ const main = html`
       description="클릭하면 선택/비선택 상태가 전환되는 버튼입니다. 독립적인 on/off 토글과, 단일 선택 세그먼트(ToggleButtonGroup)로 확장됩니다."
     ></mm-page-header>
 
-    <mm-component-aka items='["Toggle", "Switch button", "Pressed button"]'></mm-component-aka>
+    <mm-component-aka .items=${['Toggle', 'Switch button', 'Pressed button']}></mm-component-aka>
 
     <mm-component-example>
       <mm-button-group>
@@ -130,14 +130,17 @@ const main = html`
     </mm-component-guide>
 
     <mm-component-anatomy
-      parts='[
-      "컨테이너 — 옵션들을 감싸고 단일 선택 그룹임을 나타냅니다.",
-      "옵션 버튼 — 각 선택지. 아이콘과 레이블을 가질 수 있습니다.",
-      "선택 인디케이터 — 현재 선택된 옵션을 배경·색상으로 표시합니다.",
-      "구분선 — 옵션 사이의 시각적 경계(선택)."
-    ]'
+      .parts=${[
+        '컨테이너 — 옵션들을 감싸고 단일 선택 그룹임을 나타냅니다.',
+        '옵션 버튼 — 각 선택지. 아이콘과 레이블을 가질 수 있습니다.',
+        '선택 인디케이터 — 현재 선택된 옵션을 배경·색상으로 표시합니다.',
+        '구분선 — 옵션 사이의 시각적 경계(선택).',
+      ]}
       .code=${`<mm-toggle-button-group
-  options='[{"value":"list","icon":"table-rows","label":"목록"},{"value":"grid","icon":"view-grid","label":"그리드"}]'
+  .options=${[
+    { value: 'list', icon: 'table-rows', label: '목록' },
+    { value: 'grid', icon: 'view-grid', label: '그리드' },
+  ]}
 ></mm-toggle-button-group>`}
       .markers=${[
         { placement: 'inline-start' },

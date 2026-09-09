@@ -46,7 +46,7 @@ const main = html`
     ></mm-page-header>
 
     <mm-component-aka
-      items='["Alert", "Callout", "Banner", "Inline message", "Feedback"]'
+      .items=${['Alert', 'Callout', 'Banner', 'Inline message', 'Feedback']}
     ></mm-component-aka>
 
     <mm-component-example>
@@ -75,10 +75,10 @@ const main = html`
     <mm-component-guide>
       <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
       <mm-text-list
-        texts='[
-        "role=\\"alert\\" 속성이 있는 요소는 브라우저가 즉시 사용자에게 읽습니다. 긴급도가 낮은 알림에는 role=\\"status\\"를 사용하세요.",
-        "사용자 귀책이 아닌 경우 단순 \\"오류\\" 대신 \\"시스템 오류\\"처럼 책임 소재를 명확히 해 사용자가 위축되지 않도록 합니다."
-      ]'
+        .texts=${[
+          'role="alert" 속성이 있는 요소는 브라우저가 즉시 사용자에게 읽습니다. 긴급도가 낮은 알림에는 role="status"를 사용하세요.',
+          '사용자 귀책이 아닌 경우 단순 "오류" 대신 "시스템 오류"처럼 책임 소재를 명확히 해 사용자가 위축되지 않도록 합니다.',
+        ]}
       ></mm-text-list>
     </mm-component-guide>
     <mm-component-related .items=${relatedComponents}></mm-component-related>

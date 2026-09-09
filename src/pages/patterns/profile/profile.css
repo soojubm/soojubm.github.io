@@ -67,7 +67,7 @@
   flex-direction: column;
   align-items: center;
   border-top: 2px solid var(--foreground-color);
-  background: var(--color-newneek);
+  background: var(--newneek-color);
   position: relative;
 }
 
@@ -111,7 +111,7 @@
 
 .subscribe-gosum {
   padding: 2rem 0 3rem;
-  background: var(--color-newneek);
+  background: var(--newneek-color);
   box-sizing: border-box;
 }
 

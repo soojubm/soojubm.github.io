@@ -49,10 +49,6 @@ export const listItemStyles = css`
     --list-item-size: var(--size-40);
   }
 
-  mm-text[color='light'] {
-    margin-top: -0.125rem;
-  }
-
   .emoji {
     display: inline-flex;
     align-items: center;

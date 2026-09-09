@@ -11,6 +11,7 @@ import '@/components/common/meta-item'
 export class ComponentPropItem extends LitElement {
   @property({ type: String }) name = ''
   @property({ type: String }) type = ''
+  @property({ type: String }) kind?: 'event'
   @property({ type: Boolean }) optional = false
 
   render() {
@@ -20,6 +21,8 @@ export class ComponentPropItem extends LitElement {
   }
 
   private formatLabel() {
+    if (this.kind === 'event') return `@${this.name}`
+
     return `${this.name}${this.optional ? '?' : ''}`
   }
 }

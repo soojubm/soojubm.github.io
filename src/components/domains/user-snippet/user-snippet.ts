@@ -14,7 +14,6 @@ import '@/components/common/text/semantics/paragraph'
 class UserSnippet extends LitElement {
   static styles = [entityStyles]
 
-  @property({ type: String }) size = 'medium'
   @property({ type: String }) name = ''
   @property({ type: String }) phone = ''
   @property({ type: String }) email = ''

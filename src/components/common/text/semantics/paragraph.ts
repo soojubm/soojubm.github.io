@@ -26,7 +26,7 @@ export class Paragraph extends LitElement {
       }
 
       :host([color='danger']) {
-        color: var(--color-danger);
+        color: var(--danger-color);
       }
 
       :host([size='small']) {

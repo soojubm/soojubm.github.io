@@ -7,7 +7,6 @@ import {
   tokenCategoryLabel,
   tokenCategorySortIndex,
 } from '@/components/domains/component/token.utils'
-import { arrayAttributeConverter } from '@/utils'
 
 export interface ComponentTokenItemData {
   name: string
@@ -24,11 +23,7 @@ export interface ComponentTokenItemData {
 export class ComponentTokens extends LitElement {
   static styles = componentTokensStyles
 
-  @property({
-    attribute: 'tokens',
-    converter: arrayAttributeConverter<ComponentTokenItemData>(),
-  })
-  tokens: ComponentTokenItemData[] = []
+  @property({ attribute: false }) tokens: ComponentTokenItemData[] = []
 
   render() {
     const tokens = this.sortedTokens()

@@ -161,13 +161,13 @@ const main = html`
     </mm-text>
 
     <mm-text-list
-      texts='[
-          "SearchParams과 브라우저 히스토리를 활용할 것인가? (?tab=projects) / url변경 ",
-          "글로벌 네비게이션 패턴인 햄버거 메뉴와 탭(바텀네비게이션, 탭바)을 함께 사용할 수 있는가?",
-          "탭의 가로 스크롤(+ MDI). 탭의 최대 갯수 제한.",
-          "탭의 중첩. 페이지에서 수행하는 과업 중심 플로우 설계. 중첩을 허용한다면 탭의 중첩 패턴을 정의해야 함. Material 3의 primary tabs / secondary tabs 분류 등 참고. 또는 네이버 쇼핑의 4단계 5단계 탭.",
-          "flutter. Scaffold - AppBar - bottom: TabBar - tabs - Tab / Scaffold - body - TabBarView"
-        ]'
+      .texts=${[
+        'SearchParams과 브라우저 히스토리를 활용할 것인가? (?tab=projects) / url변경 ',
+        '글로벌 네비게이션 패턴인 햄버거 메뉴와 탭(바텀네비게이션, 탭바)을 함께 사용할 수 있는가?',
+        '탭의 가로 스크롤(+ MDI). 탭의 최대 갯수 제한.',
+        '탭의 중첩. 페이지에서 수행하는 과업 중심 플로우 설계. 중첩을 허용한다면 탭의 중첩 패턴을 정의해야 함. Material 3의 primary tabs / secondary tabs 분류 등 참고. 또는 네이버 쇼핑의 4단계 5단계 탭.',
+        'flutter. Scaffold - AppBar - bottom: TabBar - tabs - Tab / Scaffold - body - TabBarView',
+      ]}
     ></mm-text-list>
 
     <mm-component-related .items=${relatedComponents}></mm-component-related>

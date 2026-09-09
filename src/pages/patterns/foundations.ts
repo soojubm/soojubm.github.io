@@ -121,11 +121,11 @@ const iconCategoryOptions: FilterOption[] = [
         일관되게 정의하는 것입니다.
       </mm-caption>
       <mm-text-list
-        texts='[
+        .texts=${[
         "Do not over signify. 기표는 많을수록 좋은 게 아니라, 사용자의 판단을 도와야 할 때만 사용한다.",
         "상태를 표현하는 시각 언어는 컴포넌트에 종속되지 않고 제품 전체에 일관합니다.",
         "성공적인 상호작용 피드백은 장식적인 것이 아니라 정보를 제공하는 것입니다. 시각적 노이즈나 강렬한 색상 변화를 유발하는 정교한 전환을 피하세요. 주의를 산만하게 하는 애니메이션은 혼란을 야기하고 인터페이스를 사용하기 불편하게 만들 수 있습니다."
-        ]'
+        ]}
       ></mm-text-list>
     </mm-paragraph-group>
 
@@ -155,11 +155,11 @@ const iconCategoryOptions: FilterOption[] = [
         명확히 하기 위해 사용합니다.
       </mm-paragraph>
       <mm-text-list
-        texts='[
+        .texts=${[
         "Indicator Icons (Label) - Decorative Icon",
           "Use only universally recognized icons to represent actions or options."
 
-      ]'
+      ]}
       ></mm-text-list>
       <mm-filter-button-group
         id="icon-category-picker"
@@ -259,14 +259,14 @@ const main = html`
           있습니다.
         </mm-paragraph>
         <mm-text-list
-          texts='[
-            "상호작용 가능성은 형태로 드러낸다. 색·밑줄·표면 같은 기표는 장식이나 일반 강조로 쓰지 않는다. — Interaction",
-            "선택·피드백·오류 상태는 색상만으로 전달하지 않고 아이콘·텍스트·형태·ARIA를 함께 준다. — Interaction",
-            "열기·선택·검증 같은 상호작용 상태와 그 닫힘 처리는 컴포넌트가 소유하고, 트리거는 표준 attribute로 대상을 가리키기만 한다. — Interaction",
-            "동종 항목은 계열 그룹 컴포넌트로 묶고 역할·간격·정렬은 그룹이 소유한다. — Component Level",
-            "같은 텍스트 슬롯도 사용자 시점의 message와 시스템 시점의 description으로 이름을 나누고, 실행 레이블은 동사형으로 줄이지 않고 쓴다. — Content",
-            "화면 위로 뜨는 표면은 외형이 아니라 modality·dismiss·앵커 기준으로 구분하고, 겹침 순서는 그룹 토큰으로 정한다. — Overlay"
-          ]'
+          .texts=${[
+            '상호작용 가능성은 형태로 드러낸다. 색·밑줄·표면 같은 기표는 장식이나 일반 강조로 쓰지 않는다. — Interaction',
+            '선택·피드백·오류 상태는 색상만으로 전달하지 않고 아이콘·텍스트·형태·ARIA를 함께 준다. — Interaction',
+            '열기·선택·검증 같은 상호작용 상태와 그 닫힘 처리는 컴포넌트가 소유하고, 트리거는 표준 attribute로 대상을 가리키기만 한다. — Interaction',
+            '동종 항목은 계열 그룹 컴포넌트로 묶고 역할·간격·정렬은 그룹이 소유한다. — Component Level',
+            '같은 텍스트 슬롯도 사용자 시점의 message와 시스템 시점의 description으로 이름을 나누고, 실행 레이블은 동사형으로 줄이지 않고 쓴다. — Content',
+            '화면 위로 뜨는 표면은 외형이 아니라 modality·dismiss·앵커 기준으로 구분하고, 겹침 순서는 그룹 토큰으로 정한다. — Overlay',
+          ]}
         ></mm-text-list>
       </mm-content-section>
 
@@ -279,12 +279,12 @@ const main = html`
         <mm-content-section heading-level="4" heading="Interaction">
           <mm-paragraph>조작을 받아 상태나 화면을 바꿉니다.</mm-paragraph>
           <mm-text-list
-            texts='[
-              "Interactive - action — 누르면 이동하거나 실행되는 최종 상호작용. 결과는 페이지 이동·정보 구조 변화로도 드러나므로 중복해서 알리지 않는다.",
-              "Interactive - selection — 선택 여부를 상태로 유지한다. 미리 선택된 기본값은 편향된 응답을 부를 수 있어 피한다.",
-              "Interactive - input — 제한된 선택지가 아니라 자유 형식 값을 받고, 입력 규칙 검증과 오류 표시를 소유한다. 오류는 해당 필드와 연결한다.",
-              "Feedback — 사용자 행동이나 시스템 상태의 결과를 알린다. 사용자 귀책이 아닌 실패는 책임 소재를 문구에 드러낸다."
-            ]'
+            .texts=${[
+              'Interactive - action — 누르면 이동하거나 실행되는 최종 상호작용. 결과는 페이지 이동·정보 구조 변화로도 드러나므로 중복해서 알리지 않는다.',
+              'Interactive - selection — 선택 여부를 상태로 유지한다. 미리 선택된 기본값은 편향된 응답을 부를 수 있어 피한다.',
+              'Interactive - input — 제한된 선택지가 아니라 자유 형식 값을 받고, 입력 규칙 검증과 오류 표시를 소유한다. 오류는 해당 필드와 연결한다.',
+              'Feedback — 사용자 행동이나 시스템 상태의 결과를 알린다. 사용자 귀책이 아닌 실패는 책임 소재를 문구에 드러낸다.',
+            ]}
           ></mm-text-list>
         </mm-content-section>
 
@@ -294,13 +294,13 @@ const main = html`
             가집니다. 훑는 것만으로 뜻이 파악되게 하고, 레이블은 짧게 쓰되 줄여 표시하지 않습니다.
           </mm-paragraph>
           <mm-text-list
-            texts='[
-              "Representative — 사용자·브랜드·객체를 대표하는 시각 정보. 원본이 없거나 실패해도 대체 표현과 대체 텍스트로 형태와 정체성을 유지한다.",
-              "Statusful — 의미 상태를 톤으로 구분하되 색상만으로 전달하지 않고 아이콘·텍스트를 함께 준다.",
-              "Structural — 상호작용 없이 반복되는 구조와 경계를 잡는다.",
-              "Disclosure — 부차적인 정보를 접어 두고 필요할 때만 펼친다. 없을수록 좋으며, 약관·경고처럼 반드시 읽어야 하는 정보는 감추지 않는다.",
-              "Modality — 배경 상호작용 차단 여부로 레이어를 규정한다. 레이어는 겹쳐 쌓지 않는다."
-            ]'
+            .texts=${[
+              'Representative — 사용자·브랜드·객체를 대표하는 시각 정보. 원본이 없거나 실패해도 대체 표현과 대체 텍스트로 형태와 정체성을 유지한다.',
+              'Statusful — 의미 상태를 톤으로 구분하되 색상만으로 전달하지 않고 아이콘·텍스트를 함께 준다.',
+              'Structural — 상호작용 없이 반복되는 구조와 경계를 잡는다.',
+              'Disclosure — 부차적인 정보를 접어 두고 필요할 때만 펼친다. 없을수록 좋으며, 약관·경고처럼 반드시 읽어야 하는 정보는 감추지 않는다.',
+              'Modality — 배경 상호작용 차단 여부로 레이어를 규정한다. 레이어는 겹쳐 쌓지 않는다.',
+            ]}
           ></mm-text-list>
         </mm-content-section>
       </mm-content-section>
@@ -334,30 +334,36 @@ const main = html`
 
         <mm-keyword-tag-group
           heading="Group 컴포넌트"
-          keywords='[
-            "mm-button-group",
-            "mm-filter-button-group",
-            "mm-toggle-button-group",
-            "mm-radio-group",
-            "mm-checkbox-group",
-            "mm-avatar-group",
-            "mm-tag-group",
-            "mm-keyword-tag-group",
-            "mm-menu-item-group",
-            "mm-menu-item-radio-group",
-            "mm-menu-item-checkbox-group",
-            "mm-meta-item-group",
-            "mm-feature-group",
-            "mm-paragraph-group"
-          ]'
+          .keywords=${[
+            'mm-button-group',
+            'mm-filter-button-group',
+            'mm-toggle-button-group',
+            'mm-radio-group',
+            'mm-checkbox-group',
+            'mm-avatar-group',
+            'mm-tag-group',
+            'mm-keyword-tag-group',
+            'mm-menu-item-group',
+            'mm-menu-item-radio-group',
+            'mm-menu-item-checkbox-group',
+            'mm-meta-item-group',
+            'mm-feature-group',
+            'mm-paragraph-group',
+          ]}
         ></mm-keyword-tag-group>
         <mm-keyword-tag-group
           heading="Section 컴포넌트"
-          keywords='["mm-content-section", "mm-page-header"]'
+          .keywords=${['mm-content-section', 'mm-page-header']}
         ></mm-keyword-tag-group>
         <mm-keyword-tag-group
           heading="Field 컴포넌트"
-          keywords='["mm-form-field", "mm-textfield", "mm-passwordfield", "mm-searchfield", "mm-textarea-field"]'
+          .keywords=${[
+            'mm-form-field',
+            'mm-textfield',
+            'mm-passwordfield',
+            'mm-searchfield',
+            'mm-textarea-field',
+          ]}
         ></mm-keyword-tag-group>
 
         <mm-paragraph>

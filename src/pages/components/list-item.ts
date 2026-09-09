@@ -77,7 +77,7 @@ const main = html`
       description="leading(아바타·아이콘) + 본문(제목·설명) + trailing(액션) 한 줄을 구성하는 표현 전용 primitive. 상호작용 의미가 필요하면 menuItem을 사용합니다."
     ></mm-page-header>
 
-    <mm-component-aka items='["ListTile", "Media Object"]'></mm-component-aka>
+    <mm-component-aka .items=${['ListTile', 'Media Object']}></mm-component-aka>
 
     <mm-component-example>
       <mm-flex direction="column" gap="2">
@@ -129,11 +129,11 @@ const main = html`
 
     <mm-component-anatomy
       style="--component-anatomy-stage-width: 320px"
-      parts='[
-      "leading — 아이콘 또는 아바타를 담는 선택적 영역. 없으면 content가 왼쪽 끝에서 시작합니다.",
-      "content — label과 description으로 구성된 본문. flex: 1로 남은 공간을 채웁니다.",
-      "trailing — 오른쪽에 배치되는 선택적 슬롯. 액션 버튼·뱃지·메타 텍스트 등을 넣습니다."
-    ]'
+      .parts=${[
+        'leading — 아이콘 또는 아바타를 담는 선택적 영역. 없으면 content가 왼쪽 끝에서 시작합니다.',
+        'content — label과 description으로 구성된 본문. flex: 1로 남은 공간을 채웁니다.',
+        'trailing — 오른쪽에 배치되는 선택적 슬롯. 액션 버튼·뱃지·메타 텍스트 등을 넣습니다.',
+      ]}
       .code=${`<mm-list-item label="수줍이" description="바보" size="48" avatar-src="...">
   <mm-follow-button slot="trailing"></mm-follow-button>
 </mm-list-item>`}
@@ -175,6 +175,24 @@ const main = html`
           <mm-tag slot="trailing">테스트용 태그</mm-tag>
         </mm-user-row>
       </mm-menu-item-group>
+    </mm-component-section>
+
+    <mm-component-section heading="OrderProductItem" description="커머스 맥락">
+      <mm-flex direction="column" gap="2">
+        <mm-order-product-item
+          image-src="/src/images/newneek-book.png"
+          name="뉴닉이 풀어 쓴 경제상식사전"
+          option="평생 소장"
+          price="₩ 11,900"
+        ></mm-order-product-item>
+        <mm-separator></mm-separator>
+        <mm-order-product-item
+          image-src="/src/images/cake_gosum.jpg"
+          name="폰타나 베네치아 로스티드 쉬림프 크림"
+          option="Brown, 3개"
+          price="₩ 22,500"
+        ></mm-order-product-item>
+      </mm-flex>
     </mm-component-section>
 
     <mm-component-related .items=${relatedComponents}></mm-component-related>

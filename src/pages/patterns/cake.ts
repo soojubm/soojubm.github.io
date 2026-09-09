@@ -20,7 +20,7 @@ const main = html`
       <mm-flex direction="column" gap="4">
         <mm-keyword-tag-group
           heading="개봉예정 D-12"
-          keywords='["액션", "모험", "범죄"]'
+          .keywords=${['액션', '모험', '범죄']}
         ></mm-keyword-tag-group>
 
         <mm-flex direction="column">
@@ -103,12 +103,12 @@ const main = html`
 
         <mm-content-section heading="수상내역">
           <mm-text-list
-            texts='[
-            "Best Actor",
-            "Best Supporting Actor",
-            "Best Screenplay – Based on Material from Another Medium",
-            "Best Original Music Score"
-          ]'
+            .texts=${[
+              'Best Actor',
+              'Best Supporting Actor',
+              'Best Screenplay – Based on Material from Another Medium',
+              'Best Original Music Score',
+            ]}
           ></mm-text-list>
         </mm-content-section>
 

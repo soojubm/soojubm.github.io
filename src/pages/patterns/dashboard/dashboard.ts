@@ -24,7 +24,7 @@ const renderIndexCard = ({ icon, label, value, tone, change }: typeof indexCards
           <mm-text size="12">${label}</mm-text>
           <mm-heading>${value}</mm-heading>
         </mm-flex>
-        <mm-tag variant="up" tone=${tone}>${change}</mm-tag>
+        <mm-tag icon=${icon} tone=${tone}>${change}</mm-tag>
       </mm-flex>
       <mm-flex direction="column" gap="0">
         <mm-text size="12" color="light">10분 지연. live</mm-text>
@@ -81,7 +81,7 @@ const main = html`
     </mm-flex>
 
     <br />
-    <mm-grid column="2">
+    <mm-grid columns="2">
       <mm-surface variant="outlined" radius="large">
         <mm-flex direction="column" gap="2">
           <mm-tag tone="red">3건</mm-tag>
@@ -115,7 +115,7 @@ const main = html`
           </mm-menu-item-group>
         </mm-flex>
       </mm-surface>
-      <mm-surface radius="large" tone="green"></mm-surface>
+      <mm-surface radius="large"></mm-surface>
     </mm-grid>
   </mm-page>
 `

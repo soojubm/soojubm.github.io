@@ -4,7 +4,6 @@ import { customElement, property } from 'lit/decorators.js'
 import '@/components/common/feature/feature-group'
 import '@/components/common/feature/feature'
 import { ICON_NAMES, type IconName } from '@/components/common/icon/icon-names'
-import { arrayAttributeConverter } from '@/utils'
 
 export interface ComponentFeatureItem {
   heading: string
@@ -41,11 +40,7 @@ class ComponentFeatureList extends LitElement {
     }
   `
 
-  @property({
-    attribute: 'features',
-    converter: arrayAttributeConverter<ComponentFeatureItem>(),
-  })
-  features: ComponentFeatureItem[] = []
+  @property({ attribute: false }) features: ComponentFeatureItem[] = []
 
   @property({ type: Boolean, reflect: true }) centered = false
 

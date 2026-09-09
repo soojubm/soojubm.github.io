@@ -20,7 +20,7 @@ const componentProps: ComponentPropItemData[] = [
 ]
 
 const componentTokens: ComponentTokenItemData[] = [
-  { name: 'breadcrumb-item-text-color', default: 'var(--color-primary)' },
+  { name: 'breadcrumb-item-text-color', default: 'var(--primary-color)' },
   { name: 'breadcrumb-item-text-color-current', default: 'var(--foreground-color)' },
   { name: 'breadcrumb-divider-text-color', default: 'var(--border-color)' },
   { name: 'breadcrumb-divider-space', default: 'var(--space-3)' },
@@ -52,11 +52,11 @@ const main = html`
     <mm-component-guide>
       <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
       <mm-text-list
-        texts='[
-        "flat sitemap 또는 모바일에서의 레이어 구조 때문에 사용빈도가 낮아짐. 네비게이션 바. 대부분의 경우 불필요하다. 도움말, 상품 카테고리 구조에서 제한적으로 사용? (foundation. flat sitemap. 페이지 댑스의 제한). 페이지 제목이 길어지는 케이스.",
-        "PG 심사 시 카테고리 표현을 위해 요구했던 경험.  프로모션용 랜딩 페이지. 푸터에서 사이트맵과 함께 사용",
-        "브레드크럼에서 드롭다운으로 페이지 구조를 표현하여 사이트맵의 역할로 확대하지 마세요. 사용자는 브레드크럼을 통해 현재 위치를 파악하고 이전 수준의 페이지로 쉽게 돌아갈 수 있어야 합니다."
-      ]'
+        .texts=${[
+          'flat sitemap 또는 모바일에서의 레이어 구조 때문에 사용빈도가 낮아짐. 네비게이션 바. 대부분의 경우 불필요하다. 도움말, 상품 카테고리 구조에서 제한적으로 사용? (foundation. flat sitemap. 페이지 댑스의 제한). 페이지 제목이 길어지는 케이스.',
+          'PG 심사 시 카테고리 표현을 위해 요구했던 경험.  프로모션용 랜딩 페이지. 푸터에서 사이트맵과 함께 사용',
+          '브레드크럼에서 드롭다운으로 페이지 구조를 표현하여 사이트맵의 역할로 확대하지 마세요. 사용자는 브레드크럼을 통해 현재 위치를 파악하고 이전 수준의 페이지로 쉽게 돌아갈 수 있어야 합니다.',
+        ]}
       ></mm-text-list>
     </mm-component-guide>
     <mm-component-related .items=${relatedComponents}></mm-component-related>

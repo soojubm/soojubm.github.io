@@ -3,7 +3,6 @@ import { customElement, property } from 'lit/decorators.js'
 
 import { textStyles } from '@/components/common/text/text.styles'
 import '@/components/indicators/list-marker/list-marker'
-import { arrayAttributeConverter } from '@/utils'
 
 type Variant = 'check' | 'number'
 
@@ -31,11 +30,7 @@ class TextList extends LitElement {
     `,
   ]
 
-  @property({
-    attribute: 'texts',
-    converter: arrayAttributeConverter<string>(),
-  })
-  texts: string[] = []
+  @property({ attribute: false }) texts: string[] = []
   @property({ type: String }) variant: Variant = 'check'
 
   render() {

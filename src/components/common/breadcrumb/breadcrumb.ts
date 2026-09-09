@@ -3,7 +3,6 @@ import { customElement, property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
 import { focusRing } from '@/stylesheets/shared.styles'
-import { arrayAttributeConverter } from '@/utils'
 import '@/components/common/text/text'
 
 export interface BreadcrumbItem {
@@ -22,7 +21,7 @@ export class Breadcrumb extends LitElement {
     :host {
       display: block;
 
-      --breadcrumb-item-text-color: var(--color-primary);
+      --breadcrumb-item-text-color: var(--primary-color);
       --breadcrumb-item-text-color-current: var(--foreground-color);
       --breadcrumb-divider-text-color: var(--border-color);
       --breadcrumb-divider-space: var(--space-3);
@@ -59,11 +58,7 @@ export class Breadcrumb extends LitElement {
     }
   `
 
-  @property({
-    attribute: 'items',
-    converter: arrayAttributeConverter<BreadcrumbItem>(),
-  })
-  items: BreadcrumbItem[] = []
+  @property({ attribute: false }) items: BreadcrumbItem[] = []
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = 'breadcrumb'
   @property({ type: String }) divider = '/'
 

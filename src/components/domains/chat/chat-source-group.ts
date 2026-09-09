@@ -63,7 +63,7 @@ export class ChatSourceGroup extends LitElement {
         align-items: center;
         gap: var(--space-1);
         font-size: var(--font-size-12);
-        color: var(--color-accent);
+        color: var(--accent-color);
         text-decoration: none;
         margin-top: var(--space-1);
       }

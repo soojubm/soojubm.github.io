@@ -7,7 +7,7 @@ import type { Orientation } from '@/controllers/roving-focus-controller'
 
 import { buttonBaseStyles, buttonSelectedStyles } from '@/components/common/button/button.styles'
 import { RovingFocusController } from '@/controllers/roving-focus-controller'
-import { arrayAttributeConverter, emit } from '@/utils'
+import { emit } from '@/utils'
 import '@/components/common/icon/icon'
 import '@/components/common/toggle-button/semantics/view-mode-switcher'
 
@@ -62,11 +62,7 @@ export class ToggleButtonGroup extends LitElement {
     `,
   ]
 
-  @property({
-    attribute: 'options',
-    converter: arrayAttributeConverter<OptionItem>(),
-  })
-  options: OptionItem[] = []
+  @property({ attribute: false }) options: OptionItem[] = []
   @property({ type: Boolean, reflect: true }) stretch = false
   @property({ type: Number, attribute: 'selected-index' }) selectedIndex = 0
   @property({ type: String, reflect: true }) role = 'group'

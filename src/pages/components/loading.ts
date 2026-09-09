@@ -63,10 +63,10 @@ const main = html`
         display: inline-flex;
         padding: var(--space-3) var(--space-4);
         border-radius: var(--radius-large);
-        background: var(--color-primary);
+        background: var(--primary-color);
       "
       >
-        <mm-typing-indicator style="color: var(--foreground-on-solid)"></mm-typing-indicator>
+        <mm-typing-indicator style="color: var(--foreground-on-strong-color)"></mm-typing-indicator>
       </div>
     </mm-component-section>
     <mm-component-related .items=${relatedComponents}></mm-component-related>

@@ -23,7 +23,7 @@
   --layout-width-wide: 1280px;
   --layout-width-small: 640px;
   --layout-width-narrow: 400px;
-  --layout-width-sidebar: calc(14rem + 20px);
+  --layout-width-sidebar: 244px;
   --layout-padding-inline: 5vw;
 
   --layout-max-width: 100%;
@@ -71,17 +71,17 @@
   --tag-category-8-border: #d8b4fe;
   --tag-category-8-text: #7e22ce;
 
-  --color-newneek: #fb7800;
-  --color-newneek-gray: #ebebeb;
-  --color-primary: var(--green800);
-  --color-primary-subtle: var(--green100);
-  --color-accent: var(--yellow800);
-  --color-success: var(--blue800);
-  --color-success-foreground: #1e40af;
-  --color-warning: var(--orange800);
-  --color-warning-foreground: #9a4600;
-  --color-danger: var(--red800);
-  --color-danger-foreground: #c51635;
+  --newneek-color: #fb7800;
+  --newneek-gray-color: #ebebeb;
+  --primary-color: var(--green800);
+  --primary-subtle-color: var(--green100);
+  --accent-color: var(--yellow800);
+  --success-color: var(--blue800);
+  --foreground-success-color: #1e40af;
+  --warning-color: var(--orange800);
+  --foreground-warning-color: #9a4600;
+  --danger-color: var(--red800);
+  --foreground-danger-color: #c51635;
 
   /*
    * 시멘틱 컬러.
@@ -89,12 +89,12 @@
    * 그 참조는 html 시점 값으로 굳는다. 기본값은 테마가 건드리지 않는 원시값으로 두고,
    * 테마별 값이 필요한 토큰은 각 테마 블록이 같은 이름으로 다시 선언한다.
    */
-  --interaction-active-background-color: var(--color-accent);
+  --interaction-active-background-color: var(--accent-color);
   --interaction-focus-outline: 2px solid var(--gray800);
   --interaction-active-shadow: 0 0 0 2px #c8f3fa, inset 0 0 0 2px var(--gray0);
-  --interaction-selected-background-color: var(--color-primary-subtle);
-  --interaction-selected-foreground-color: var(--color-primary);
-  --interaction-selected-border-color: var(--color-primary);
+  --interaction-selected-background-color: var(--primary-subtle-color);
+  --interaction-selected-foreground-color: var(--primary-color);
+  --interaction-selected-border-color: var(--primary-color);
   --interaction-hover-background-color: var(--gray100);
   /* 채울 배경이 없는 클릭 가능한 떠 있는 표면은 hover에서 배경 대신 이 값만큼 떠오른다. */
   --interaction-hover-lift: translateY(-2px);
@@ -102,16 +102,16 @@
   --background-color: var(--gray0);
   --background-subtle-color: var(--gray100);
   --background-strong-color: var(--gray800);
-  --background-primary: var(--color-primary);
-  --background-warning: var(--color-warning);
+  --background-primary-color: var(--primary-color);
+  --background-warning-color: var(--warning-color);
 
   --border-color: var(--gray200);
 
   --foreground-color: var(--gray800);
   --foreground-subtle-color: var(--gray400);
-  --foreground-on-solid: var(--gray0);
-  --foreground-on-warning: var(--red800);
-  --foreground-on-primary: var(--gray0);
+  --foreground-on-strong-color: var(--gray0);
+  --foreground-on-warning-color: var(--red800);
+  --foreground-on-primary-color: var(--gray0);
 
   --size-80: 80px;
   --size-48: 48px;
@@ -135,7 +135,7 @@
   --border-width: 1px;
   --border: var(--border-width) solid var(--border-color);
   --border-transparent: var(--border-width) solid transparent;
-  --border-danger: var(--border-width) solid var(--color-danger);
+  --border-danger: var(--border-width) solid var(--danger-color);
 
   --radius: 6px;
   --radius-large: 1rem;
@@ -210,9 +210,9 @@
 }
 
 .color-black {
-  --color-primary: #1a1a1a;
+  --primary-color: #1a1a1a;
   --green100: rgba(0, 0, 0, 0.08);
-  --color-success: #1a1a1a;
+  --success-color: #1a1a1a;
 }
 
 :root [data-theme='dark'] {
@@ -244,12 +244,14 @@
   --tag-category-8-border: #6b21a8;
   --tag-category-8-text: #d8b4fe;
 
-  --color-success-foreground: #93c5fd;
-  --color-warning-foreground: #fdba74;
-  --color-danger-foreground: #fca5a5;
+  --foreground-success-color: #93c5fd;
+  --foreground-warning-color: #fdba74;
+  --foreground-danger-color: #fca5a5;
 
   --foreground-color: #d3d4d5;
   --foreground-subtle-color: var(--gray400);
+  --foreground-on-strong-color: var(--gray800);
+  --foreground-on-primary-color: var(--gray0);
 
   --background-color: rgb(31, 35, 33);
   --background-subtle-color: #292f2c;

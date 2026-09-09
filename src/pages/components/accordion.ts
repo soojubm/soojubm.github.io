@@ -61,7 +61,7 @@ const main = html`
     ></mm-page-header>
 
     <mm-component-aka
-      items='["Disclosure", "Expand / Collapse", "Details / Summary"]'
+      .items=${['Disclosure', 'Expand / Collapse', 'Details / Summary']}
     ></mm-component-aka>
 
     <mm-component-example>
@@ -94,19 +94,19 @@ const main = html`
         </mm-paragraph>
       </mm-paragraph-group>
       <mm-text-list
-        texts='[
-          "트리거 텍스트(summary)는 한 문장으로 간결하게 작성하세요.",
-          "패널 안에 링크·버튼 등 인터랙션이 있을 경우, 패널 클릭으로 닫히는 동작을 추가하지 마세요."
-        ]'
+        .texts=${[
+          '트리거 텍스트(summary)는 한 문장으로 간결하게 작성하세요.',
+          '패널 안에 링크·버튼 등 인터랙션이 있을 경우, 패널 클릭으로 닫히는 동작을 추가하지 마세요.',
+        ]}
       ></mm-text-list>
     </mm-component-guide>
 
     <mm-component-anatomy
       style="--component-anatomy-stage-width: 320px"
-      parts='[
-      "트리거 — summary 텍스트와 펼침 상태를 나타내는 아이콘을 가진 버튼입니다.",
-      "패널 — open일 때 드러나는 콘텐츠 영역."
-    ]'
+      .parts=${[
+        '트리거 — summary 텍스트와 펼침 상태를 나타내는 아이콘을 가진 버튼입니다.',
+        '패널 — open일 때 드러나는 콘텐츠 영역.',
+      ]}
       .code=${'<mm-accordion-item summary="질문" open>답변</mm-accordion-item>'}
       .markers=${[
         { placement: 'inline-start', offset: '1.25rem' },

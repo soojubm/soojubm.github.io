@@ -23,7 +23,7 @@ const componentProps: ComponentPropItemData[] = [
 ]
 
 const componentTokens: ComponentTokenItemData[] = [
-  { name: 'link-text-color', default: 'var(--color-primary)' },
+  { name: 'link-text-color', default: 'var(--primary-color)' },
   { name: 'link-gap', default: 'var(--space-1)' },
 ]
 
@@ -42,7 +42,7 @@ const main = html`
       description="사용자 여정 목적지. 페이지 이동. destination that can be bookmarked."
     ></mm-page-header>
 
-    <mm-component-aka items='["Anchor"]'></mm-component-aka>
+    <mm-component-aka .items=${['Anchor']}></mm-component-aka>
 
     <mm-component-example>
       <mm-flex direction="column" gap="3">
@@ -51,7 +51,7 @@ const main = html`
           content="이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에 부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은 침묵에 잠겼다. 그것도 모자라 다들 난감해하는 눈치였다. 아니, 폭풍우가 몰아치는 가운데 엄청나게 큰 고래, 그것도 생전 처음 보는 고래를 수줍은 기색 없이 잡아 올리고 눈도 깜빡하지 않은 채 사투를 벌여서 죽이는 용맹한 바닷사람들이 직업도 똑같고 취향까지 비슷한 사람들이 모여 앉은 아침 식탁에서는 그린 산맥의 목장을 한 번도 떠나 본 적 없는 양 떼마냥 부끄러워하며 서로를 힐끔거릴 뿐이었다. 이 얼마나 희한한 광경인가! 숫기 없는 곰, 소심한 전사 같은 고래잡이들이라니!"
         ></mm-read-more-paragraph>
         <mm-keyword-tag-group
-          keywords='["이것은헤시태그", "해시태그는클릭할수있다?", "해시태그를통한검색"]'
+          .keywords=${['이것은헤시태그', '해시태그는클릭할수있다?', '해시태그를통한검색']}
         ></mm-keyword-tag-group>
       </mm-flex>
       <mm-separator></mm-separator>
@@ -82,19 +82,19 @@ const main = html`
     <mm-component-guide>
       <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
       <mm-text-list
-        texts='[
-          "text button과의 차이. Link는 항상 텍스트 단락과 함께 사용합니다. word, phrase, paragraph와 사용되는 케이스 정의",
-          "내부 링크와 외부 링크의 구별. 형태적 구별과 코드상 구별 target=_blank rel=noopener noreferrer"
-        ]'
+        .texts=${[
+          'text button과의 차이. Link는 항상 텍스트 단락과 함께 사용합니다. word, phrase, paragraph와 사용되는 케이스 정의',
+          '내부 링크와 외부 링크의 구별. 형태적 구별과 코드상 구별 target=_blank rel=noopener noreferrer',
+        ]}
       ></mm-text-list>
     </mm-component-guide>
 
     <mm-component-anatomy
       style="--component-anatomy-stage-padding: 0.5rem 0"
-      parts='[
-      "레이블 — 이동할 목적지를 설명하는 클릭 가능한 텍스트입니다.",
-      "외부 링크 아이콘 — 새 탭/외부 사이트로 이동함을 나타내는 표식(external)."
-    ]'
+      .parts=${[
+        '레이블 — 이동할 목적지를 설명하는 클릭 가능한 텍스트입니다.',
+        '외부 링크 아이콘 — 새 탭/외부 사이트로 이동함을 나타내는 표식(external).',
+      ]}
       .code=${'<mm-link href="https://soojubm.github.io" external>수줍이 디자인 시스템</mm-link>'}
       .markers=${[{ placement: 'block-start', offset: '2.5rem' }, { placement: 'inline-end' }]}
     >

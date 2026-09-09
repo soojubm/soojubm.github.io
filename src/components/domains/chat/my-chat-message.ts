@@ -31,7 +31,7 @@ export class MyChatMessage extends LitElement {
       :host([failed]) ::slotted(mm-my-chat-bubble) {
         --chat-bubble-background-color: color-mix(
           in srgb,
-          var(--color-danger) 12%,
+          var(--danger-color) 12%,
           var(--background-color)
         );
         --chat-bubble-border: var(--border-danger);

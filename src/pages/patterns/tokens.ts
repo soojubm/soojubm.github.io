@@ -38,12 +38,16 @@ const componentReferences: ComponentReferenceItemData[] = [
   },
 ]
 
+interface ContrastPair {
+  textColor: string
+  label: string
+  contrast?: string
+}
+
 interface ColorTokenEntry {
   color: string
   token: string
-  textColor?: string
-  label?: string
-  contrast?: string
+  pairs?: ContrastPair[]
   tags?: string
 }
 
@@ -60,10 +64,8 @@ const renderColorTokens = (entries: ColorTokenEntry[]) =>
       <mm-color-token
         color=${entry.color}
         token=${entry.token}
-        text-color=${entry.textColor ?? ''}
-        label=${entry.label ?? ''}
-        contrast=${entry.contrast ?? ''}
         tags=${entry.tags ?? ''}
+        .pairs=${entry.pairs ?? []}
       ></mm-color-token>
     `,
   )
@@ -99,7 +101,7 @@ const renderSpaceStage = (tokens: string[]) =>
               border-radius: var(--radius);
             "
           ></div>
-          <div style="width: var(--${token}); height: 4px; background: var(--color-primary)"></div>
+          <div style="width: var(--${token}); height: 4px; background: var(--primary-color)"></div>
           <div
             style="
               width: 2px;
@@ -191,7 +193,7 @@ const grayscaleColorTokens: ColorTokenEntry[] = [
   { color: 'var(--gray400)', token: 'gray400: #8a908d' },
   { color: 'var(--gray800)', token: 'gray800: #303b35' },
   { color: 'var(--green100)', token: 'green100: green tint', tags: 'primary-subtle' },
-  { color: 'var(--green800)', token: 'green800: #1b995c', tags: 'primary' },
+  { color: 'var(--green800)', token: 'green800: #1b995c', tags: 'accent' },
   { color: 'var(--red100)', token: 'red100: red tint' },
   { color: 'var(--red800)', token: 'red800: #f02849', tags: 'danger' },
   { color: 'var(--yellow800)', token: 'yellow800: gold', tags: 'accent' },
@@ -202,65 +204,85 @@ const grayscaleColorTokens: ColorTokenEntry[] = [
 const backgroundColorTokens: ColorTokenEntry[] = [
   {
     color: 'var(--gray0)',
-    textColor: 'var(--foreground-color)',
-    label: 'foreground',
-    contrast: '11.7:1',
+    pairs: [
+      { textColor: 'var(--foreground-color)', label: 'foreground', contrast: '11.7:1' },
+      {
+        textColor: 'var(--foreground-subtle-color)',
+        label: 'foreground-subtle',
+        contrast: '3.3:1',
+      },
+    ],
     token: 'background: #fff',
   },
   {
     color: 'var(--gray0)',
-    textColor: 'var(--foreground-subtle-color)',
-    label: 'foreground-subtle',
-    contrast: '3.3:1',
+    pairs: [
+      {
+        textColor: 'var(--foreground-success-color)',
+        label: 'foreground-success',
+        contrast: '8.7:1',
+      },
+    ],
     token: 'background: #fff',
   },
   {
     color: 'var(--gray0)',
-    textColor: 'var(--color-success-foreground)',
-    label: 'success-foreground',
-    contrast: '8.7:1',
+    pairs: [
+      {
+        textColor: 'var(--foreground-warning-color)',
+        label: 'foreground-warning',
+        contrast: '6.5:1',
+      },
+    ],
     token: 'background: #fff',
   },
   {
     color: 'var(--gray0)',
-    textColor: 'var(--color-warning-foreground)',
-    label: 'warning-foreground',
-    contrast: '6.5:1',
-    token: 'background: #fff',
-  },
-  {
-    color: 'var(--gray0)',
-    textColor: 'var(--color-danger-foreground)',
-    label: 'danger-foreground',
-    contrast: '5.9:1',
+    pairs: [
+      {
+        textColor: 'var(--foreground-danger-color)',
+        label: 'foreground-danger',
+        contrast: '5.9:1',
+      },
+    ],
     token: 'background: #fff',
   },
   {
     color: 'var(--gray100)',
-    textColor: 'var(--foreground-color)',
-    label: 'foreground',
-    contrast: '10.8:1',
+    pairs: [{ textColor: 'var(--foreground-color)', label: 'foreground', contrast: '10.8:1' }],
     token: 'background-subtle: #f5f6f5',
   },
   {
     color: 'var(--gray800)',
-    textColor: 'var(--foreground-on-solid)',
-    label: 'foreground-on-solid',
-    contrast: '11.7:1',
+    pairs: [
+      {
+        textColor: 'var(--foreground-on-strong-color)',
+        label: 'foreground-on-strong',
+        contrast: '11.7:1',
+      },
+    ],
     token: 'background-strong: #303b35',
   },
   {
-    color: 'var(--background-primary)',
-    textColor: 'var(--foreground-on-primary)',
-    label: 'foreground-on-primary',
-    contrast: '3.6:1',
+    color: 'var(--background-primary-color)',
+    pairs: [
+      {
+        textColor: 'var(--foreground-on-primary-color)',
+        label: 'foreground-on-primary',
+        contrast: '3.6:1',
+      },
+    ],
     token: 'background-primary',
   },
   {
-    color: 'var(--background-warning)',
-    textColor: 'var(--foreground-on-warning)',
-    label: 'foreground-on-warning',
-    contrast: '1.5:1',
+    color: 'var(--background-warning-color)',
+    pairs: [
+      {
+        textColor: 'var(--foreground-on-warning-color)',
+        label: 'foreground-on-warning',
+        contrast: '1.5:1',
+      },
+    ],
     token: 'background-warning',
   },
 ]
@@ -461,21 +483,22 @@ const main = html`
           </mm-paragraph>
           <mm-text-list
             variant="number"
-            texts='[
-              "Primitive — 색·크기·간격의 원시 값. color-, size-, space-처럼 값의 종류로 이름 짓는다.",
-              "System — primitive를 인터페이스의 역할에 매핑한다. background-color, border-color, body-font-size처럼 역할과 용도로 이름 짓는다.",
-              "Component — system을 특정 컴포넌트의 속성에 매핑한다. avatar-border-color, sheet-height처럼 컴포넌트명과 소비하는 속성으로 이름 짓는다."
-            ]'
+            .texts=${[
+              'Primitive — 색·크기·간격의 원시 값. 색은 gray800·green100처럼 색상과 단계로, 크기·간격은 size-, space-처럼 값의 종류로 이름 짓는다.',
+              'System — primitive를 인터페이스의 역할에 매핑한다. background-color, border-color, body-font-size처럼 역할과 용도로 이름 짓는다.',
+              'Component — system을 특정 컴포넌트의 속성에 매핑한다. avatar-border-color, sheet-height처럼 컴포넌트명과 소비하는 속성으로 이름 짓는다.',
+            ]}
           ></mm-text-list>
         </mm-content-section>
 
         <mm-content-section heading-level="3" heading="이름 규칙">
           <mm-text-list
-            texts='[
-              "System 토큰 이름은 name-Base-State-(on-priority) 꼴을 따른다.",
-              "Base는 정적인 값으로 크기·간격의 Dimension과 재질·표면의 Surface로 나뉘고, State는 hover·selected처럼 인터랙션에 따라 바뀌는 값이다.",
-              "foreground·background·border 계열은 subtle·strong로 세기를 나누고, 대비 표면 위의 색은 on- 접두사를 붙인다."
-            ]'
+            .texts=${[
+              'System 토큰 이름은 name-Base-State-(on-priority) 꼴을 따른다.',
+              '값의 종류는 이름 끝에 둔다. 색 토큰은 primary-color처럼 -color로 끝나며, color-를 앞에 붙이지 않는다.',
+              'Base는 정적인 값으로 크기·간격의 Dimension과 재질·표면의 Surface로 나뉘고, State는 hover·selected처럼 인터랙션에 따라 바뀌는 값이다.',
+              'foreground·background·border 계열은 subtle·strong로 세기를 나누고, 대비 표면 위의 색은 on- 접두사를 붙인다.',
+            ]}
           ></mm-text-list>
         </mm-content-section>
       </mm-content-section-list>
@@ -614,9 +637,9 @@ const main = html`
             overflow: hidden;
             background: linear-gradient(
               135deg,
-              var(--color-primary) 0%,
-              var(--color-accent) 50%,
-              var(--color-danger) 100%
+              var(--primary-color) 0%,
+              var(--accent-color) 50%,
+              var(--danger-color) 100%
             );
           "
           >
@@ -644,15 +667,15 @@ const main = html`
         <mm-token-group>${renderTokenItems(zIndexTokenItems)}</mm-token-group>
 
         <mm-text-list
-          texts='[
-          "base — mm-separator의 구분선, 배경 위에 놓는 텍스트처럼 형제 요소 위에 그리기 위한 로컬 컨텍스트",
-          "raised — 목록·그룹 안에서 형제보다 살짝 뜨는 요소. 예: mm-scroll-hint, mm-portfolio-item의 오버레이",
-          "chrome — 화면에 고정된 내비게이션·툴바. 예: mm-top-bar(sticky 상태), mm-fixed-bottom(mm-bottom-bar가 이 안에 놓여 함께 뜬다)",
-          "chrome-top — 그중 화면 전체를 덮는 전역 내비게이션. 페이지 고정 바 위에 남아야 한다. 예: mm-navbar, 사이드 메뉴",
-          "overlay — 드롭다운·팝오버·툴팁류. 예: mm-tooltip, mm-popover(mm-select 등 드롭다운의 기반)",
-          "modal — 화면을 덮는 대화형 표면. 예: mm-backdrop, mm-sheet, mm-dialog, 긴급 배너",
-          "toast — 알림, 스낵바처럼 항상 다른 모든 레이어 위에 있어야 하는 요소. 예: mm-toast, 건너뛰기(skip) 링크"
-        ]'
+          .texts=${[
+            'base — mm-separator의 구분선, 배경 위에 놓는 텍스트처럼 형제 요소 위에 그리기 위한 로컬 컨텍스트',
+            'raised — 목록·그룹 안에서 형제보다 살짝 뜨는 요소. 예: mm-scroll-hint, mm-portfolio-item의 오버레이',
+            'chrome — 화면에 고정된 내비게이션·툴바. 예: mm-top-bar(sticky 상태), mm-fixed-bottom(mm-bottom-bar가 이 안에 놓여 함께 뜬다)',
+            'chrome-top — 그중 화면 전체를 덮는 전역 내비게이션. 페이지 고정 바 위에 남아야 한다. 예: mm-navbar, 사이드 메뉴',
+            'overlay — 드롭다운·팝오버·툴팁류. 예: mm-tooltip, mm-popover(mm-select 등 드롭다운의 기반)',
+            'modal — 화면을 덮는 대화형 표면. 예: mm-backdrop, mm-sheet, mm-dialog, 긴급 배너',
+            'toast — 알림, 스낵바처럼 항상 다른 모든 레이어 위에 있어야 하는 요소. 예: mm-toast, 건너뛰기(skip) 링크',
+          ]}
         ></mm-text-list>
       </mm-token-section>
 

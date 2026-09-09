@@ -202,7 +202,7 @@ const main = html`
             heading="Loved By Over +70,000 Smiles!"
             description="Toothpaste so good, you’ll actually look forward to brushing —just ask our customers."
           ></mm-text-block>
-          <mm-grid column="2" gap="4">
+          <mm-grid columns="2" gap="4">
             <mm-review-item
               rating="5"
               content="I have 2 kids so sleep is hard to come by, these have helped me to wake up feeling more refreshed and ready to start the day"

@@ -4,7 +4,6 @@ import { customElement, property } from 'lit/decorators.js'
 import type { AvatarSize } from '@/components/common/avatar/avatar'
 
 import { resetStyles } from '@/stylesheets/shared.styles'
-import { arrayAttributeConverter } from '@/utils'
 import '@/components/common/avatar/avatar'
 import '@/components/common/text/text'
 
@@ -41,11 +40,7 @@ export class AvatarGroup extends LitElement {
     `,
   ]
 
-  @property({
-    attribute: 'avatars',
-    converter: arrayAttributeConverter<string>(),
-  })
-  avatars: string[] = []
+  @property({ attribute: false }) avatars: string[] = []
 
   @property({ type: String }) label = ''
   @property({ type: String }) size: AvatarSize = '32'

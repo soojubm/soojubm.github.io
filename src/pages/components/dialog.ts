@@ -55,7 +55,7 @@ const main = html`
       description="사용자의 정보나 재산의 변경 또는 삭제 확인."
     ></mm-page-header>
 
-    <mm-component-aka items='["Alert", "Modal", "Prompt"]'></mm-component-aka>
+    <mm-component-aka .items=${['Alert', 'Modal', 'Prompt']}></mm-component-aka>
 
     <mm-component-example>
       <mm-button-group>
@@ -83,10 +83,10 @@ const main = html`
     <mm-component-guide>
       <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
       <mm-text-list
-        texts='[
-        "프라이머리 버튼 레이블은 다이얼로그 제목의 동사와 페어링합니다.",
-        "질문은 부정어로 만들지 않습니다."
-      ]'
+        .texts=${[
+          '프라이머리 버튼 레이블은 다이얼로그 제목의 동사와 페어링합니다.',
+          '질문은 부정어로 만들지 않습니다.',
+        ]}
       ></mm-text-list>
     </mm-component-guide>
     <mm-component-related .items=${relatedComponents}></mm-component-related>

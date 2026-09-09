@@ -24,7 +24,7 @@ export class ReviewSummary extends LitElement {
       .stars {
         display: flex;
         gap: var(--space-1);
-        color: var(--color-accent);
+        color: var(--accent-color);
       }
     `,
   ]

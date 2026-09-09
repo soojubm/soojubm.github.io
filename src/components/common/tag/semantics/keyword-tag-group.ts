@@ -2,7 +2,6 @@ import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import { resetStyles } from '@/stylesheets/shared.styles'
-import { arrayAttributeConverter } from '@/utils'
 import '@/components/common/tag/tag-group'
 import '@/components/common/tag/semantics/accent-tag'
 import '@/components/common/tag/semantics/keyword-tag'
@@ -13,11 +12,7 @@ export class KeywordTagGroup extends LitElement {
 
   @property({ type: String }) heading = ''
 
-  @property({
-    attribute: 'keywords',
-    converter: arrayAttributeConverter<string>(),
-  })
-  keywords: string[] = []
+  @property({ attribute: false }) keywords: string[] = []
 
   render() {
     if (!this.keywords.length) return nothing

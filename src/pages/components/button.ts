@@ -65,7 +65,7 @@ const componentProps: ComponentPropItemData[] = [
     optional: true,
   },
   { name: 'mm-button-group stretch', type: 'boolean = false', optional: true },
-  { name: '@click', type: '(e: MouseEvent) => void', kind: 'event' },
+  { name: 'click', type: '(e: MouseEvent) => void', kind: 'event' },
 ]
 
 const componentTokens: ComponentTokenItemData[] = [
@@ -170,27 +170,27 @@ const main = html`
         </mm-paragraph>
 
         <mm-component-aka
-          items='["Tag", "Pill", "Badge", "Token", "Label", "Pick Button"]'
+          .items=${['Tag', 'Pill', 'Badge', 'Token', 'Label', 'Pick Button']}
         ></mm-component-aka>
 
         <mm-text-list
-          texts='[
-          "Avoid disabled buttons. Let the user send incomplete form and use error messages to explain what is wrong.",
-          "실행 결과를 에측할 수 있는 레이블을 작성하세요. 툴팁으로 부연하거나, 실행을 유도하는 보조 텍스트 또는 실행 결과를 보충하는 보조 텍스트로 버튼 이외의 가이드가 필요하지 않습니다.",
-          "맥락이 다른 액션을 그룹으로 제공할 수 있습니다. 이 때 단일선택, 다중선택, 삭제여부, 펼침메뉴 등의 기표를 충분히 제공하세요. ariaHaspopup/ariaSelected",
-          "Split button이란? 사용자에게 더 많은 작업을 표시하는 경우 작업을 선택하여 트리거할 수 있도록 선택 + 버튼 조합을 사용. 것이 좋습니다.",
-          "빈 버튼이 필요한가? 리액트에서 포커싱이 가능한 전체 영역의 버튼. 도는 버튼 내부에서포지셔닝되는 버튼. 시각적으로는 버튼 내부의 버튼이지만 구조적으로 대안이 되는 형태의 버튼"
-        ]'
+          .texts=${[
+            'Avoid disabled buttons. Let the user send incomplete form and use error messages to explain what is wrong.',
+            '실행 결과를 에측할 수 있는 레이블을 작성하세요. 툴팁으로 부연하거나, 실행을 유도하는 보조 텍스트 또는 실행 결과를 보충하는 보조 텍스트로 버튼 이외의 가이드가 필요하지 않습니다.',
+            '맥락이 다른 액션을 그룹으로 제공할 수 있습니다. 이 때 단일선택, 다중선택, 삭제여부, 펼침메뉴 등의 기표를 충분히 제공하세요. ariaHaspopup/ariaSelected',
+            'Split button이란? 사용자에게 더 많은 작업을 표시하는 경우 작업을 선택하여 트리거할 수 있도록 선택 + 버튼 조합을 사용. 것이 좋습니다.',
+            '빈 버튼이 필요한가? 리액트에서 포커싱이 가능한 전체 영역의 버튼. 도는 버튼 내부에서포지셔닝되는 버튼. 시각적으로는 버튼 내부의 버튼이지만 구조적으로 대안이 되는 형태의 버튼',
+          ]}
         ></mm-text-list>
       </mm-paragraph-group>
     </mm-component-guide>
 
     <mm-component-anatomy
-      parts='[
-      "컨테이너 — variant·size로 형태와 위계를 정의하고 클릭 영역을 만듭니다.",
-      "아이콘 — 레이블을 보조하는 선택적 메타포(icon).",
-      "레이블 — 실행 결과를 예측할 수 있는 동사형 텍스트."
-    ]'
+      .parts=${[
+        '컨테이너 — variant·size로 형태와 위계를 정의하고 클릭 영역을 만듭니다.',
+        '아이콘 — 레이블을 보조하는 선택적 메타포(icon).',
+        '레이블 — 실행 결과를 예측할 수 있는 동사형 텍스트.',
+      ]}
       .code=${'<mm-button variant="primary" size="large" icon="send-diagonal">보내기</mm-button>'}
       .markers=${[
         { placement: 'inline-start' },
@@ -265,12 +265,12 @@ const main = html`
       .rows=${chipNamingRows}
       style="margin-top: var(--space-section)"
       caption="Material 3, Material 2, Flutter의 Chip 명칭 비교"
-      columns='[
-      {"label": "Material 3"},
-      {"label": "Material 2"},
-      {"label": "Flutter"},
-      {"label": "정리"}
-    ]'
+      .columns=${[
+        { label: 'Material 3' },
+        { label: 'Material 2' },
+        { label: 'Flutter' },
+        { label: '정리' },
+      ]}
     ></mm-table>
 
     <mm-component-related .items=${relatedComponents}></mm-component-related>

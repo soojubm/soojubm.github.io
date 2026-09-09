@@ -2,6 +2,7 @@ import { html } from 'lit'
 
 import type { ComponentFeatureItem } from '@/components/domains/component/component-feature-list'
 import type { ComponentPropItemData } from '@/components/domains/component/component-props'
+import type { ComponentReferenceItemData } from '@/components/domains/component/component-references'
 import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
 import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
 
@@ -10,6 +11,29 @@ import { renderPage } from '@/components/layouts/base-layouts'
 const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'avatar.html', label: 'Avatar' },
   { href: 'surface.html', label: 'Surface' },
+]
+
+const componentReferences: ComponentReferenceItemData[] = [
+  {
+    href: 'https://nextjs.org/docs/app/api-reference/components/image',
+    label: 'Next.js - Image',
+    external: true,
+  },
+  {
+    href: 'https://atlassian.design/components/image/examples',
+    label: 'Atlassian Design - Image',
+    external: true,
+  },
+  {
+    href: 'https://mantine.dev/core/image/',
+    label: 'Mantine - Image',
+    external: true,
+  },
+  {
+    href: 'https://mui.com/material-ui/react-image-list/',
+    label: 'MUI - Image List',
+    external: true,
+  },
 ]
 
 const componentProps: ComponentPropItemData[] = [
@@ -79,7 +103,6 @@ const main = html`
     </mm-component-guide>
 
     <mm-component-anatomy
-      style="--component-anatomy-stage-width: 320px"
       .code=${'<mm-thumbnail src="/src/images/temp.png" alt="멋진 풍경" ratio="16:9"></mm-thumbnail>'}
     >
       <mm-thumbnail src="/src/images/temp.png" alt="멋진 풍경" ratio="16:9"></mm-thumbnail>
@@ -99,6 +122,8 @@ const main = html`
     </mm-component-section>
 
     <mm-component-related .items=${relatedComponents}></mm-component-related>
+
+    <mm-component-references .items=${componentReferences}></mm-component-references>
   </mm-page>
 `
 

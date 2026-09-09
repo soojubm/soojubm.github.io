@@ -10,7 +10,7 @@
   --border: var(--border-width) solid var(--foreground-color);
 
   --border: 1px solid;
-  --color-primary: var(--foreground-color);
+  --primary-color: var(--foreground-color);
 }
 
 .class-media {
@@ -18,7 +18,7 @@
   max-width: 50%;
   border: var(--border);
   border-right: 0;
-  background: var(--color-newneek-gray);
+  background: var(--newneek-gray-color);
   box-sizing: border-box;
 }
 .class-order {
@@ -26,7 +26,7 @@
   max-width: 50%;
   border: var(--border);
   box-sizing: border-box;
-  background-color: var(--color-newneek);
+  background-color: var(--newneek-color);
   color: var(--foreground-color);
 }
 .class-order > * {
@@ -87,7 +87,7 @@
   transform-origin: bottom right;
 }
 .cta-arrow.theme-white .line {
-  background: var(--foreground-on-solid);
+  background: var(--foreground-on-strong-color);
 }
 
 .class-order-btn {
@@ -101,15 +101,15 @@
   border: none;
   border-radius: var(--radius);
   box-sizing: border-box;
-  background: var(--color-primary);
-  color: var(--foreground-on-solid);
+  background: var(--primary-color);
+  color: var(--foreground-on-strong-color);
   font-weight: var(--font-weight-bold);
   text-transform: capitalize;
   cursor: pointer;
   width: 50%;
 }
 .class-order-btn .line {
-  background-color: var(--foreground-on-solid);
+  background-color: var(--foreground-on-strong-color);
 }
 
 .minicards {
@@ -171,7 +171,7 @@ mm-marquee {
   padding-bottom: 6rem;
   border: var(--border);
   border-top: 0;
-  background: var(--color-newneek-gray);
+  background: var(--newneek-gray-color);
 }
 
 .class-feature {
@@ -209,7 +209,7 @@ mm-marquee {
   width: 100%;
   border: var(--border);
   border-top: 0;
-  background: var(--color-newneek-gray);
+  background: var(--newneek-gray-color);
 }
 .class-curriculum > * {
   padding: var(--space-8) var(--space-section);
@@ -232,7 +232,7 @@ mm-marquee {
   width: 100%;
   border: var(--border);
   border-top: 0;
-  background-color: var(--color-newneek-gray);
+  background-color: var(--newneek-gray-color);
 }
 .class-faq > * {
   display: block;

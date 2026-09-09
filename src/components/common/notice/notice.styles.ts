@@ -5,13 +5,13 @@ import { buildAttributeRules } from '@/utils'
 const noticeVariantTokens = {
   success: {
     // TODO on-
-    '--notice-text-color': 'var(--color-success-foreground)',
+    '--notice-text-color': 'var(--foreground-success-color)',
   },
   warning: {
-    '--notice-text-color': 'var(--color-warning-foreground)',
+    '--notice-text-color': 'var(--foreground-warning-color)',
   },
   danger: {
-    '--notice-text-color': 'var(--color-danger-foreground)',
+    '--notice-text-color': 'var(--foreground-danger-color)',
   },
 }
 

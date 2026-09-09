@@ -149,15 +149,18 @@ const hoverRows = html`
     <td><code>--lift: var(--interaction-hover-lift)</code></td>
   </tr>
   <tr>
-    <th scope="row">
-      <code>mm-button</code>
-      <br />
-      (icon-button·toggle-button·follow-button·hashtag-link 등 파생 포함)
-    </th>
+    <th scope="row"><code>mm-button</code></th>
     <td>테두리 드러내기</td>
     <td>평소 테두리를 감춰 둔 컨트롤일 때.</td>
-    <td><code>\${interactiveElement}:hover</code></td>
-    <td><code>border-color: var(--border-color)</code></td>
+    <td><code>:is(button, a):hover</code></td>
+    <td><code>--button-border: var(--border)</code></td>
+  </tr>
+  <tr>
+    <th scope="row"><code>mm-icon-button</code></th>
+    <td>테두리 드러내기</td>
+    <td>평소 테두리를 감춰 둔 컨트롤일 때.</td>
+    <td><code>button:hover</code></td>
+    <td><code>--icon-button-border: var(--border)</code></td>
   </tr>
   <tr>
     <th scope="row"><code>mm-input</code></th>
@@ -270,7 +273,6 @@ const main = html`
             <mm-caption>--interaction-selected-border-color</mm-caption>
           </mm-flex>
         </mm-grid>
-
       </mm-content-section>
 
       <mm-content-section heading-level="3" heading="States">
@@ -386,13 +388,13 @@ const main = html`
           .rows=${hoverRows}
           caption="컴포넌트별 hover 처리와 재할당 값"
           style="--table-height: auto"
-          columns='[
-            {"label": "컴포넌트", "width": "200px"},
-            {"label": "처리", "width": "120px"},
-            {"label": "언제", "width": "260px"},
-            {"label": "Selector", "width": "220px"},
-            {"label": "변경 값"}
-          ]'
+          .columns=${[
+            { label: '컴포넌트', width: '200px' },
+            { label: '처리', width: '120px' },
+            { label: '언제', width: '260px' },
+            { label: 'Selector', width: '220px' },
+            { label: '변경 값' },
+          ]}
         ></mm-table>
         <mm-paragraph>
           <code>mm-marquee</code>
@@ -422,19 +424,16 @@ const main = html`
         </mm-paragraph>
         <mm-text-list
           variant="check"
-          texts='[
-            "눌러 실행되는 항목이나 화면을 바꾸는 탭처럼 결과가 화면 변화로 드러나는 상호작용은 값을 남기지 않는다.",
-            "상태는 항목이 아니라 그룹이 소유하며, 하나를 고르면 value·여럿을 고르면 values로 두고 바뀌면 change로 알린다. 하나의 값을 이루는 항목 사이는 화살표 키로 옮기고 Tab은 그룹을 한 번만 지난다.",
-            "스킨은 상태 attribute selector를 기준으로 두고, 강조에는 --interaction-selected-* 토큰을 함께 쓴다."
-          ]'
+          .texts=${[
+            '눌러 실행되는 항목이나 화면을 바꾸는 탭처럼 결과가 화면 변화로 드러나는 상호작용은 값을 남기지 않는다.',
+            '상태는 항목이 아니라 그룹이 소유하며, 하나를 고르면 value·여럿을 고르면 values로 두고 바뀌면 change로 알린다. 하나의 값을 이루는 항목 사이는 화살표 키로 옮기고 Tab은 그룹을 한 번만 지난다.',
+            '스킨은 상태 attribute selector를 기준으로 두고, 강조에는 --interaction-selected-* 토큰을 함께 쓴다.',
+          ]}
         ></mm-text-list>
         <mm-table
           .rows=${checkedComponentRows}
           caption="Checked 컴포넌트와 상태 attribute"
-          columns='[
-            {"label": "컴포넌트", "width": "220px"},
-            {"label": "상태"}
-          ]'
+          .columns=${[{ label: '컴포넌트', width: '220px' }, { label: '상태' }]}
         ></mm-table>
       </mm-content-section>
 
@@ -467,10 +466,10 @@ const main = html`
         <mm-table
           .rows=${currentComponentRows}
           caption="Current 컴포넌트와 값"
-          columns='[
-            {"label": "컴포넌트", "width": "180px"},
-            {"label": "값", "width": "100px"}
-          ]'
+          .columns=${[
+            { label: '컴포넌트', width: '180px' },
+            { label: '값', width: '100px' },
+          ]}
         ></mm-table>
       </mm-content-section>
 
@@ -483,10 +482,7 @@ const main = html`
         <mm-table
           .rows=${expandedComponentRows}
           caption="Expanded 컴포넌트와 펼치는 대상"
-          columns='[
-            {"label": "컴포넌트", "width": "220px"},
-            {"label": "펼치는 대상"}
-          ]'
+          .columns=${[{ label: '컴포넌트', width: '220px' }, { label: '펼치는 대상' }]}
         ></mm-table>
       </mm-content-section>
     </mm-content-section-list>

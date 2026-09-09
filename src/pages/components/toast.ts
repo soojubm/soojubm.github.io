@@ -55,7 +55,7 @@ const main = html`
       description="작업 결과를 확인 없이 알리고 스스로 사라지는 transient non-modal 레이어입니다."
     ></mm-page-header>
 
-    <mm-component-aka items='["Snackbar"]'></mm-component-aka>
+    <mm-component-aka .items=${['Snackbar']}></mm-component-aka>
 
     <mm-component-example>
       <mm-button data-open-toast>토스트 띄우기</mm-button>

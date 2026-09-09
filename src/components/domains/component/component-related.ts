@@ -3,7 +3,6 @@ import { customElement, property } from 'lit/decorators.js'
 
 import '@/components/common/button/button-group'
 import '@/components/common/button/semantics/hashtag-link'
-import { arrayAttributeConverter } from '@/utils'
 import '@/components/common/text/semantics/heading'
 
 export interface ComponentRelatedItemData {
@@ -26,11 +25,7 @@ export class ComponentRelated extends LitElement {
     }
   `
 
-  @property({
-    attribute: 'items',
-    converter: arrayAttributeConverter<ComponentRelatedItemData>(),
-  })
-  items: ComponentRelatedItemData[] = []
+  @property({ attribute: false }) items: ComponentRelatedItemData[] = []
 
   render() {
     return html`

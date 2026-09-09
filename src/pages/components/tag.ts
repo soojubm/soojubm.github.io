@@ -47,7 +47,16 @@ const main = html`
     ></mm-page-header>
 
     <mm-component-aka
-      items='["Badge", "Label", "Keyword", "Flag", "activity bar counter (vs code)", "Counter badge (quantity)", "Health", "Status Pill"]'
+      .items=${[
+        'Badge',
+        'Label',
+        'Keyword',
+        'Flag',
+        'activity bar counter (vs code)',
+        'Counter badge (quantity)',
+        'Health',
+        'Status Pill',
+      ]}
     ></mm-component-aka>
 
     <mm-component-example>
@@ -73,11 +82,11 @@ const main = html`
     </mm-component-guide>
 
     <mm-component-anatomy
-      parts='[
-      "컨테이너 — tone으로 배경·글자 색상을 정의하는 배지 형태입니다.",
-      "아이콘 — 분류나 상태를 보조하는 선택적 메타포입니다.",
-      "레이블 — 분류·상태를 나타내는 짧은 텍스트."
-    ]'
+      .parts=${[
+        '컨테이너 — tone으로 배경·글자 색상을 정의하는 배지 형태입니다.',
+        '아이콘 — 분류나 상태를 보조하는 선택적 메타포입니다.',
+        '레이블 — 분류·상태를 나타내는 짧은 텍스트.',
+      ]}
       .code=${'<mm-tag tone="green" icon="check-circle">승인됨</mm-tag>'}
       .markers=${[
         { placement: 'inline-start' },
@@ -96,7 +105,9 @@ const main = html`
     </mm-component-section>
 
     <mm-component-section heading="KeywordTagGroup" description="">
-      <mm-keyword-tag-group keywords='["keyword1", "keyword2", "keyword3"]'></mm-keyword-tag-group>
+      <mm-keyword-tag-group
+        .keywords=${['keyword1', 'keyword2', 'keyword3']}
+      ></mm-keyword-tag-group>
     </mm-component-section>
 
     <mm-component-section

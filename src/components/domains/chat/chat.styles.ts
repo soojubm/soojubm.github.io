@@ -58,8 +58,8 @@ export const myChatBubbleStyles = [
       --bubble-border-radius: var(--radius-large) var(--radius) var(--radius-large)
         var(--radius-large);
       --thumbnail-border-radius: var(--bubble-border-radius);
-      --chat-bubble-background-color: var(--color-primary);
-      --chat-bubble-text-color: var(--foreground-on-solid);
+      --chat-bubble-background-color: var(--primary-color);
+      --chat-bubble-text-color: var(--foreground-on-strong-color);
     }
 
     .status {

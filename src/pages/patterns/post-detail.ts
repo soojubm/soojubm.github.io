@@ -26,7 +26,14 @@ const main = html`
     <section class="post-body">
       <mm-paragraph-group>
         <mm-text-list
-          texts='["title", "kicker", "published date",  "thumbnail", "images", "subhead - paragraph / text list / byline / share actions / comment /]'
+          .texts=${[
+            'title',
+            'kicker',
+            'published date',
+            'thumbnail',
+            'images',
+            'subhead - paragraph / text list / byline / share actions / comment',
+          ]}
         ></mm-text-list>
         <mm-paragraph size="large">
           An ecosystem of content that celebrates inclusion and diversity
@@ -128,12 +135,12 @@ const main = html`
         description="한 달 동안 무료로 모든 콘텐츠를 체험해보세요. 언제든 해지하실 수 있어요."
       >
         <mm-text-list
-          texts='[
-        "Medium의 모든 회원 전용 스토리에 액세스하세요.",
-        "자신에게 중요한 주제에 대해 더 자세히 알아보세요.",
-        "수천 가지 질문에 답하는 심층 기사를 받아보세요.",
-        "개인적, 직업적 목표를 달성하세요"
-      ]'
+          .texts=${[
+            'Medium의 모든 회원 전용 스토리에 액세스하세요.',
+            '자신에게 중요한 주제에 대해 더 자세히 알아보세요.',
+            '수천 가지 질문에 답하는 심층 기사를 받아보세요.',
+            '개인적, 직업적 목표를 달성하세요',
+          ]}
         ></mm-text-list>
         <mm-button slot="action" variant="primary" size="large">멤버십 가입하기</mm-button>
       </mm-result>
@@ -144,13 +151,19 @@ const main = html`
   <nav class="post-pagination" style="margin: 2rem 0">
     <a class="post-pagination-previous" href="post.html">
       <mm-icon-button variant="secondary" icon="arrow-left"></mm-icon-button>
-      <mm-paragraph title="prev article" color="light">목록으로</mm-paragraph>
-      <mm-paragraph size="large">Return to all articles</mm-paragraph>
+      <mm-text-block
+        level="3"
+        heading="Return to all articles"
+        description="목록으로"
+      ></mm-text-block>
     </a>
     <a class="post-pagination-next" href="#">
       <mm-icon-button variant="secondary" icon="arrow-right"></mm-icon-button>
-      <mm-paragraph color="light">다음 콘텐츠</mm-paragraph>
-      <mm-paragraph size="large">Avoid invisible text during font loading</mm-paragraph>
+      <mm-text-block
+        level="3"
+        heading="Avoid invisible text during font loading"
+        description="다음 콘텐츠"
+      ></mm-text-block>
     </a>
   </nav>
 `

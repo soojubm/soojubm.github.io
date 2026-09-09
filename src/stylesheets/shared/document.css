@@ -35,8 +35,8 @@ body {
   margin: 0 auto;
   padding: 0.5rem 1rem;
   border-radius: var(--radius);
-  background: var(--color-danger);
-  color: var(--foreground-on-solid);
+  background: var(--danger-color);
+  color: var(--foreground-on-strong-color);
   text-align: center;
 
   position: fixed;

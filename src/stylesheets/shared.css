@@ -16,11 +16,11 @@ progress[value]::-webkit-progress-bar {
 }
 
 progress[value]::-webkit-progress-value {
-  background: var(--color-primary);
+  background: var(--primary-color);
 }
 
 progress[value]::-moz-progress-bar {
-  background: var(--color-primary);
+  background: var(--primary-color);
 }
 
 .step {

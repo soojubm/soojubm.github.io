@@ -8,7 +8,6 @@ import '@/components/common/text/semantics/heading'
 import '@/components/common/text/semantics/text-list'
 import '@/components/indicators/list-marker/list-marker'
 import { resetStyles } from '@/stylesheets/shared.styles'
-import { arrayAttributeConverter } from '@/utils'
 
 export type AnatomyMarkerPlacement = 'inline-start' | 'inline-end' | 'block-start' | 'block-end'
 
@@ -29,7 +28,7 @@ export interface AnatomyMarkerData {
  * 나눌 구성요소가 없는 단일 요소 컴포넌트는 parts 없이 시연과 코드만 전시합니다.
  *
  * <mm-component-anatomy
- *   parts='["컨테이너", "옵션 버튼", "선택 인디케이터"]'
+ *   .parts=${["컨테이너", "옵션 버튼", "선택 인디케이터"]}
  *   .markers=${[{ placement: 'inline-start' }, { placement: 'block-end', offset: '25%' }]}
  *   .code=${'<mm-select> … </mm-select>'}
  * >
@@ -59,8 +58,7 @@ export class ComponentAnatomy extends LitElement {
         display: flex;
         flex-direction: column;
         align-items: start;
-        max-width: var(--layout-width-narrow);
-        margin-inline: auto;
+        max-width: var(--layout-width-small);
       }
 
       /* 슬롯된 시연 대상과 번호 마커가 함께 앉는 무대. */
@@ -114,11 +112,7 @@ export class ComponentAnatomy extends LitElement {
   ]
 
   @property({ type: String }) heading = 'Anatomy'
-  @property({
-    attribute: 'parts',
-    converter: arrayAttributeConverter<string>(),
-  })
-  parts: string[] = []
+  @property({ attribute: false }) parts: string[] = []
   @property({ attribute: false }) markers: AnatomyMarkerData[] = []
   @property({ type: String }) code = ''
 

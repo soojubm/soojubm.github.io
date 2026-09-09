@@ -120,8 +120,10 @@ export class Thumbnail extends LitElement {
   private renderCaption() {
     if (!this.caption) return nothing
 
+    // figcaption은 figure의 자식일 때만 캡션으로 매핑된다. mm-caption의 shadow 안쪽에서는
+    // 평탄화 트리상 figure의 자손이 되어버리므로, 같은 shadow root에서 직접 세운다.
     return html`
-      <mm-caption as="figcaption">${this.caption}</mm-caption>
+      <figcaption><mm-caption>${this.caption}</mm-caption></figcaption>
     `
   }
 
