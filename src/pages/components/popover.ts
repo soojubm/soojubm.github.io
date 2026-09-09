@@ -45,7 +45,7 @@ const main = html`
       description="anchor 기준 non-modal 레이어 프리미티브입니다. TODO"
     ></mm-page-header>
 
-    <mm-component-aka items='["Flyout", "Dropdown Panel", "Menu Surface"]'></mm-component-aka>
+    <mm-component-aka .items=${['Flyout', 'Dropdown Panel', 'Menu Surface']}></mm-component-aka>
 
     <mm-component-example>
       <mm-popover width="200px">
@@ -61,12 +61,13 @@ const main = html`
     <mm-component-guide>
       <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
       <mm-text-list
-        texts='[
-        "열림 상태는 popover가 소유한다. 트리거는 항상 slot=trigger로 넣으며, popover가 스스로 positioned 앵커가 되어 별도 래퍼가 필요 없고, 클릭 토글·외부 클릭·ESC 닫기·aria-expanded 반영까지 자동으로 연결된다.",
-        "패널 지오메트리를 밖에서 다듬을 때는 ::part(panel)을 사용한다.",
-        "role=menu/listbox를 popover 요소에 직접 지정한다.",
-        "용례: select, 컨텍스트 메뉴, 댓글 항목의 수정·삭제 메뉴."
-      ]'
+        .texts=${[
+          '열림 상태는 popover가 소유한다. 트리거는 항상 slot=trigger로 넣으며, popover가 스스로 positioned 앵커가 되어 별도 래퍼가 필요 없고, 클릭 토글·외부 클릭·ESC 닫기·aria-expanded 반영까지 자동으로 연결된다.',
+          '패널 지오메트리를 밖에서 다듬을 때는 ::part(panel)을 사용한다.',
+          'role=menu/listbox를 popover 요소에 직접 지정한다.',
+          '트리거를 가리키는 화살표는 두지 않는다. 사용자가 직접 연 표면이라 어디에서 나왔는지 이미 분명하다.',
+          '용례: select, 컨텍스트 메뉴, 댓글 항목의 수정·삭제 메뉴.',
+        ]}
       ></mm-text-list>
     </mm-component-guide>
 

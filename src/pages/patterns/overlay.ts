@@ -79,24 +79,25 @@ const main = html`
         <mm-table
           .rows=${classificationRows}
           caption="화면 위로 뜨는 표면의 modal 여부·위치 기준·노출 role·레이어 비교"
-          columns='[
-            {"label": "UI"},
-            {"label": "Modal"},
-            {"label": "Anchor"},
-            {"label": "Role"},
-            {"label": "z-index"}
-          ]'
+          .columns=${[
+            { label: 'UI' },
+            { label: 'Modal' },
+            { label: 'Anchor' },
+            { label: 'Role' },
+            { label: 'z-index' },
+          ]}
         ></mm-table>
       </mm-content-section>
 
       <mm-content-section heading-level="3" heading="Anchored overlay">
         <mm-text-list
           variant="check"
-          texts='[
-            "트리거에 앵커되어 뜨는 비모달 패널",
-            "패널은 위치·크기·닫힘만 책임지고, role은 담는 내용에 따라 정해진다",
-            "바깥 클릭과 ESC로 닫히며 포커스는 가두지 않는다"
-          ]'
+          .texts=${[
+            '트리거에 앵커되어 뜨는 비모달 패널',
+            '패널은 위치·크기·닫힘만 책임지고, role은 담는 내용에 따라 정해진다',
+            '바깥 클릭과 ESC로 닫히며 포커스는 가두지 않는다',
+            '트리거를 가리키는 화살표는 두지 않는다. 사용자가 포인터나 손가락으로 직접 연 표면이라 어디에서 나왔는지 이미 분명하며, 화살표는 로딩 시점에 스스로 떠서 대상을 지목하는 안내가 쓴다',
+          ]}
         ></mm-text-list>
         <mm-flex direction="column" gap="3">
           <mm-list-item
@@ -112,23 +113,27 @@ const main = html`
         </mm-flex>
         <mm-keyword-tag-group
           heading="용례"
-          keywords='["Dropdown", "Tooltip", "사이드 패널", "Select"]'
+          .keywords=${['Dropdown', 'Tooltip', '사이드 패널', 'Select']}
         ></mm-keyword-tag-group>
       </mm-content-section>
 
       <mm-content-section heading-level="3" heading="Viewport overlay">
         <mm-text-list
           variant="check"
-          texts='[
-            "viewport를 기준으로 화면 중앙·가장자리에 뜨며 배경 상호작용을 차단한다",
-            "표면이 dialog role과 aria-modal을 스스로 갖고, Backdrop이 뒤를 덮으며 포커스는 내부에 갇힌다",
-            "닫기는 명시 버튼을 우선하고, 배경 클릭·ESC는 중요도가 낮은 작업에서만 허용한다"
-          ]'
+          .texts=${[
+            'viewport를 기준으로 화면 중앙·가장자리에 뜨며 배경 상호작용을 차단한다',
+            '표면이 dialog role과 aria-modal을 스스로 갖고, Backdrop이 뒤를 덮으며 포커스는 내부에 갇힌다',
+            '닫기는 명시 버튼을 우선하고, 배경 클릭·ESC는 중요도가 낮은 작업에서만 허용한다',
+          ]}
         ></mm-text-list>
         <mm-paragraph>구현: mm-sheet, mm-dialog.</mm-paragraph>
+        <mm-paragraph size="small">
+          모달 표면은 얕게 유지합니다. 이미 떠 있는 모달 위에 또 모달을 여는 흐름은 피하고, 다음
+          단계는 같은 표면을 교체하거나 흐름을 나눕니다.
+        </mm-paragraph>
         <mm-keyword-tag-group
           heading="용례"
-          keywords='["삭제 확인", "중요 정보 입력", "결제 흐름"]'
+          .keywords=${['삭제 확인', '중요 정보 입력', '결제 흐름']}
         ></mm-keyword-tag-group>
       </mm-content-section>
 
