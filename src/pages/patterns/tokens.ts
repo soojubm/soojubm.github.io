@@ -493,7 +493,7 @@ const main = html`
               'System 토큰 이름은 name-Base-State-(on-priority) 꼴을 따른다.',
               '값의 종류는 이름 끝에 둔다. 색 토큰은 primary-color처럼 -color로 끝나며, color-를 앞에 붙이지 않는다.',
               'Base는 정적인 값으로 크기·간격의 Dimension과 재질·표면의 Surface로 나뉘고, State는 hover·selected처럼 인터랙션에 따라 바뀌는 값이다.',
-              'foreground·background·border 계열은 subtle·strong로 세기를 나누고, 대비 표면 위의 색은 on- 접두사를 붙인다.',
+              '세기 차이는 subtle·strong로 나타내고, 대비 표면 위에 올라가는 색은 on- 접두사를 붙인다.',
             ]}
           ></mm-text-list>
         </mm-content-section>
