@@ -117,9 +117,3 @@ export class ToggleButtonGroup extends LitElement {
     })
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-toggle-button-group': ToggleButtonGroup
-  }
-}

@@ -1,7 +1,7 @@
 import { html } from 'lit'
 
 import type { PortfolioItem } from '@/components/domains/portfolio-item/portfolio-item'
-import type Sheet from '@/components/overlay/sheet/sheet'
+import type { Sheet } from '@/components/overlay/sheet/sheet'
 
 import { renderPage } from '@/components/layouts/base-layouts'
 

@@ -33,9 +33,3 @@ export class ChatRoom extends LitElement {
     `
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-chat-room': ChatRoom
-  }
-}

@@ -6,7 +6,7 @@ import { uniqueId } from '@/utils'
 import '@/components/common/text'
 
 @customElement('mm-tooltip')
-class Tooltip extends LitElement {
+export class Tooltip extends LitElement {
   static styles = [tooltipStyles]
 
   @property({ type: String }) content = ''
@@ -99,5 +99,3 @@ class Tooltip extends LitElement {
     })
   }
 }
-
-export default Tooltip

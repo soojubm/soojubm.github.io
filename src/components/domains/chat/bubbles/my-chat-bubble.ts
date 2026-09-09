@@ -36,9 +36,3 @@ export class MyChatBubble extends withChatBubbleImage(LitElement) {
     `
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-my-chat-bubble': MyChatBubble
-  }
-}

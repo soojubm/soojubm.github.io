@@ -38,5 +38,3 @@ export class SelectOption extends withMenuItemPresentation(LitElement) {
     emit(this, 'input', { value: this.value })
   }
 }
-
-export default SelectOption

@@ -109,9 +109,3 @@ export class Pagination extends LitElement {
     `
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-pagination': Pagination
-  }
-}

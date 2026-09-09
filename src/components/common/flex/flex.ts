@@ -138,9 +138,3 @@ export class Flex extends LitElement {
     this.removeAttribute('role')
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-flex': Flex
-  }
-}

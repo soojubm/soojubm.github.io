@@ -44,5 +44,3 @@ export class UserRow extends LitElement {
     `
   }
 }
-
-export default UserRow

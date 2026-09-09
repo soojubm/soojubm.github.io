@@ -34,9 +34,3 @@ export class HamburgerButton extends LitElement {
     })
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-hamburger-button': HamburgerButton
-  }
-}

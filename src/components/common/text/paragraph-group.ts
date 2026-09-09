@@ -22,9 +22,3 @@ export class ParagraphGroup extends LitElement {
     `
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-paragraph-group': ParagraphGroup
-  }
-}

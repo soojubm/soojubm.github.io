@@ -10,9 +10,3 @@ export class TextfieldValidation extends LitElement {
     `
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-textfield-validation': TextfieldValidation
-  }
-}

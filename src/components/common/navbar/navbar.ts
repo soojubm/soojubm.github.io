@@ -51,9 +51,3 @@ export class Navbar extends LitElement {
     return this
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-navbar': Navbar
-  }
-}

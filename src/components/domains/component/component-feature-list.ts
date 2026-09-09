@@ -33,7 +33,7 @@ const FEATURE_ICONS: Record<string, IconName> = {
  * 컴포넌트 문서 페이지의 mm-feature 목록 칼럼 레이아웃을 소유한다.
  */
 @customElement('mm-component-feature-list')
-class ComponentFeatureList extends LitElement {
+export class ComponentFeatureList extends LitElement {
   static styles = css`
     :host {
       display: block;
@@ -63,5 +63,3 @@ class ComponentFeatureList extends LitElement {
     `
   }
 }
-
-export default ComponentFeatureList

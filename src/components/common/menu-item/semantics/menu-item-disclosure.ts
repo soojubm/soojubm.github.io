@@ -80,9 +80,3 @@ export class MenuItemDisclosure extends withMenuItemPresentation(LitElement) {
     `
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-menu-item-disclosure': MenuItemDisclosure
-  }
-}

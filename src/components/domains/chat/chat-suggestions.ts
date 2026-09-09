@@ -29,9 +29,3 @@ export class ChatSuggestions extends LitElement {
     `
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-chat-suggestions': ChatSuggestions
-  }
-}

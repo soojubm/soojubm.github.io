@@ -138,9 +138,3 @@ export class ColorToken extends LitElement {
     `
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-color-token': ColorToken
-  }
-}

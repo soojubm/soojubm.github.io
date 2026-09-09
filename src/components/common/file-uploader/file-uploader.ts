@@ -161,9 +161,3 @@ export class FileUploader extends LitElement {
     return `${(size / 1024 / 1024).toFixed(1)} MB`
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-file-uploader': FileUploader
-  }
-}

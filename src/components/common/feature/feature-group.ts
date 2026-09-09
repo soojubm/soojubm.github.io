@@ -34,9 +34,3 @@ export class FeatureGroup extends LitElement {
     `
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-feature-group': FeatureGroup
-  }
-}

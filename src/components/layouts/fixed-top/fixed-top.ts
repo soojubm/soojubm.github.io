@@ -27,11 +27,3 @@ export class FixedTop extends LitElement {
     `
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-fixed-top': FixedTop
-  }
-}
-
-export default FixedTop

@@ -63,9 +63,3 @@ export class Spinner extends LitElement {
     `
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-spinner': Spinner
-  }
-}

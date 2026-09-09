@@ -37,9 +37,3 @@ export class RevealButton extends LitElement {
     emit(this, 'toggle', { revealed: this.revealed })
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-reveal-button': RevealButton
-  }
-}

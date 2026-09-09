@@ -72,9 +72,3 @@ export class Dialog extends LitElement {
     emit(this, 'dialog-close')
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-dialog': Dialog
-  }
-}

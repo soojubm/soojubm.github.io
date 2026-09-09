@@ -7,7 +7,7 @@ import '@/components/common/input/semantics/textfield'
 import '@/components/common/icon-button/semantics/reveal-button'
 
 @customElement('mm-passwordfield')
-class PasswordField extends LitElement {
+export class PasswordField extends LitElement {
   static styles = css`
     :host {
       display: block;
@@ -62,5 +62,3 @@ class PasswordField extends LitElement {
     this.revealed = event.detail.revealed
   }
 }
-
-export default PasswordField

@@ -52,5 +52,3 @@ export class Switch extends LitElement {
     emit(this, 'change', { checked: this.checked })
   }
 }
-
-export default Switch

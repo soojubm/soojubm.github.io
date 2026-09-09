@@ -58,9 +58,3 @@ export class TypingIndicator extends LitElement {
     `
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-typing-indicator': TypingIndicator
-  }
-}

@@ -112,9 +112,3 @@ export class AccordionItem extends LitElement {
     `
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-accordion-item': AccordionItem
-  }
-}

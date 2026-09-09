@@ -53,9 +53,3 @@ export class SearchSuggestions extends LitElement {
     if (changed.has('bleed')) this.style.setProperty('--_bleed', this.bleed ?? '0px')
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-search-suggestions': SearchSuggestions
-  }
-}

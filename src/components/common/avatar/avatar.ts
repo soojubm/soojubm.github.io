@@ -13,7 +13,7 @@ export const AVATAR_SHAPE_TYPE_LABEL = "'circle' | 'square' = 'square'"
 export type AvatarIconSize = 'large' | 'medium'
 
 @customElement('mm-avatar')
-class Avatar extends LitElement {
+export class Avatar extends LitElement {
   static styles = [avatarStyles]
 
   @property({ type: String, reflect: true, useDefault: true }) variant: AvatarVariant = 'primary'
@@ -66,5 +66,3 @@ class Avatar extends LitElement {
     return this.size === '48' || this.size === '80' ? 'large' : 'medium'
   }
 }
-
-export default Avatar

@@ -22,9 +22,3 @@ export class AiChatBubble extends withChatBubbleImage(LitElement) {
     )
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-ai-chat-bubble': AiChatBubble
-  }
-}

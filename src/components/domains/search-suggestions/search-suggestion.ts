@@ -30,9 +30,3 @@ export class SearchSuggestion extends LitElement {
     emit(this, 'search-suggestion-select', { value })
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-search-suggestion': SearchSuggestion
-  }
-}

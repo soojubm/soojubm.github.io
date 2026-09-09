@@ -57,9 +57,3 @@ export class SettingItem extends LitElement {
     })
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-setting-item': SettingItem
-  }
-}

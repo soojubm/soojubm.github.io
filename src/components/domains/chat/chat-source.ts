@@ -71,9 +71,3 @@ export class ChatSource extends LitElement {
     emit(this, 'toggle', { open: !this.open })
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-chat-source': ChatSource
-  }
-}

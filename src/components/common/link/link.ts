@@ -6,7 +6,7 @@ import { linkStyles } from '@/components/common/link/link.styles'
 import '@/components/common/icon'
 
 @customElement('mm-link')
-class Link extends LitElement {
+export class Link extends LitElement {
   static styles = [linkStyles]
 
   @property({ type: String }) href = ''
@@ -36,5 +36,3 @@ class Link extends LitElement {
     `
   }
 }
-
-export default Link

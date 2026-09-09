@@ -30,9 +30,3 @@ export class ChatSuggestion extends LitElement {
     emit(this, 'chat-suggestion-select', { value })
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-chat-suggestion': ChatSuggestion
-  }
-}

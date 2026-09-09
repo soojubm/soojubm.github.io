@@ -15,7 +15,7 @@ import '@/components/common/text/semantics/paragraph'
  * Level 1의 경우, 더 높은 시멘틱 강도와 시각적 가중치를 위해 mm-paragraph를 사용합니다.
  */
 @customElement('mm-text-block')
-class TextBlock extends LitElement {
+export class TextBlock extends LitElement {
   static styles = [
     resetStyles,
     css`
@@ -85,5 +85,3 @@ class TextBlock extends LitElement {
     `
   }
 }
-
-export default TextBlock

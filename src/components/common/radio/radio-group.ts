@@ -61,5 +61,3 @@ export class RadioGroup extends LitElement {
     this.group.sync()
   }
 }
-
-export default RadioGroup

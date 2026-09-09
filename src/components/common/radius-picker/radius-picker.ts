@@ -61,9 +61,3 @@ export class RadiusPicker extends LitElement {
     document.documentElement.classList.add(`color-${this.color}`)
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-radius-picker': RadiusPicker
-  }
-}

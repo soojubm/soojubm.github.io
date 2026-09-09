@@ -43,9 +43,3 @@ export class Grid extends LitElement {
     this.style.removeProperty('--_grid-justify-content')
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-grid': Grid
-  }
-}

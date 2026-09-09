@@ -43,5 +43,3 @@ export class ComponentRelated extends LitElement {
     `
   }
 }
-
-export default ComponentRelated

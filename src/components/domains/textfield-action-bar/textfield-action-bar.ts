@@ -32,9 +32,3 @@ export class TextfieldActionBar extends LitElement {
     `
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-textfield-action-bar': TextfieldActionBar
-  }
-}

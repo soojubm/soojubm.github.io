@@ -27,9 +27,3 @@ export class ContentSectionList extends LitElement {
     `
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-content-section-list': ContentSectionList
-  }
-}

@@ -109,9 +109,3 @@ export class FilterButtonGroup extends LitElement {
     emit(this, 'change', { values: this.values })
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-filter-button-group': FilterButtonGroup
-  }
-}

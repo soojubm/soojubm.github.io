@@ -182,9 +182,3 @@ export class Table extends LitElement {
     return 'flex-start'
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-table': Table
-  }
-}

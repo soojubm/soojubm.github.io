@@ -55,9 +55,3 @@ export class ShowMoreButton extends LitElement {
     emit(this, 'toggle', { expanded: this.ariaExpanded === 'true' })
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-show-more-button': ShowMoreButton
-  }
-}

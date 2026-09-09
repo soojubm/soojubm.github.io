@@ -196,9 +196,3 @@ export class Sidebar extends LitElement {
     return this.currentPageId === pageId
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-sidebar': Sidebar
-  }
-}

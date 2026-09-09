@@ -41,9 +41,3 @@ export class LinkPrompt extends LitElement {
     `
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-link-prompt': LinkPrompt
-  }
-}

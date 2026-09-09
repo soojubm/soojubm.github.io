@@ -3,7 +3,7 @@ import { customElement } from 'lit/decorators.js'
 
 /** 컴포넌트 문서에서 특성 목록과 설명 산문을 함께 담는 가이드 영역. */
 @customElement('mm-component-guide')
-class ComponentGuide extends LitElement {
+export class ComponentGuide extends LitElement {
   static styles = css`
     :host {
       display: flex;
@@ -19,5 +19,3 @@ class ComponentGuide extends LitElement {
     `
   }
 }
-
-export default ComponentGuide

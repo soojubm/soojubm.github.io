@@ -58,9 +58,3 @@ export class Footer extends LitElement {
     `
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-footer': Footer
-  }
-}

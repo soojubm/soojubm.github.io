@@ -42,9 +42,3 @@ export class ModelSelector extends LitElement {
     `
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-model-selector': ModelSelector
-  }
-}

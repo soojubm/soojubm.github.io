@@ -46,5 +46,3 @@ export class MenuItemAction extends withMenuItemPresentation(LitElement) {
     `
   }
 }
-
-export default MenuItemAction

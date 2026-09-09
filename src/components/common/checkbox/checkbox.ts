@@ -84,5 +84,3 @@ export class Checkbox extends LitElement {
     this.commitChecked(target.checked)
   }
 }
-
-export default Checkbox

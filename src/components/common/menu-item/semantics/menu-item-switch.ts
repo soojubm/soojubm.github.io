@@ -30,5 +30,3 @@ export class MenuItemSwitch extends withMenuItemToggleState(withMenuItemPresenta
     `
   }
 }
-
-export default MenuItemSwitch

@@ -164,9 +164,3 @@ export class ComponentAnatomy extends LitElement {
     `
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-component-anatomy': ComponentAnatomy
-  }
-}

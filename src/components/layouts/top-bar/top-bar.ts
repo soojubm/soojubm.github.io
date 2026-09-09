@@ -11,7 +11,7 @@ import '@/components/common/icon-button'
 // top-bar-titlte / sheet-header-title
 
 @customElement('mm-top-bar')
-class TopBar extends LitElement {
+export class TopBar extends LitElement {
   static styles = [topBarStyles]
 
   @property({ type: String }) heading = ''
@@ -58,5 +58,3 @@ class TopBar extends LitElement {
     emit(this, 'nav-click')
   }
 }
-
-export default TopBar

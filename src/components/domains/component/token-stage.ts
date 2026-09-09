@@ -34,9 +34,3 @@ export class TokenStage extends LitElement {
     `
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-token-stage': TokenStage
-  }
-}

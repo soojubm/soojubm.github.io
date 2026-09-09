@@ -66,9 +66,3 @@ export class ReadMoreParagraph extends LitElement {
     `
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-read-more-paragraph': ReadMoreParagraph
-  }
-}

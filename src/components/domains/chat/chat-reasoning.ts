@@ -123,9 +123,3 @@ export class ChatReasoning extends LitElement {
     this.intervalId = 0
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-chat-reasoning': ChatReasoning
-  }
-}

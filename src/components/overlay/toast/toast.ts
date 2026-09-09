@@ -12,7 +12,7 @@ const DURATION = 3000
  * 배경 상호작용을 막지 않고, 표시 시간이 지나면 스스로 닫힙니다.
  */
 @customElement('mm-toast')
-class Toast extends LitElement {
+export class Toast extends LitElement {
   static styles = toastStyles
 
   @property({ type: String, reflect: true }) role = 'status'
@@ -54,5 +54,3 @@ class Toast extends LitElement {
     this.hideTimer = null
   }
 }
-
-export default Toast

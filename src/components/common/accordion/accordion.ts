@@ -20,9 +20,3 @@ export class Accordion extends LitElement {
     `
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-accordion': Accordion
-  }
-}

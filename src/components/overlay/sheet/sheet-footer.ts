@@ -8,7 +8,7 @@ import { emit } from '@/utils'
 import '@/components/common/button'
 
 @customElement('mm-sheet-footer')
-class SheetFooter extends LitElement {
+export class SheetFooter extends LitElement {
   static styles = sheetFooterStyles
 
   @property({ attribute: false }) primaryAction?: ActionConfig
@@ -64,5 +64,3 @@ class SheetFooter extends LitElement {
     emit(this, 'secondary-click')
   }
 }
-
-export default SheetFooter

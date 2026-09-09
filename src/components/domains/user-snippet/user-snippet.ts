@@ -11,7 +11,7 @@ import '@/components/common/tag/semantics/accent-tag'
 import '@/components/common/text/semantics/paragraph'
 
 @customElement('mm-user-snippet')
-class UserSnippet extends LitElement {
+export class UserSnippet extends LitElement {
   static styles = [entityStyles]
 
   @property({ type: String }) name = ''
@@ -57,5 +57,3 @@ class UserSnippet extends LitElement {
     `
   }
 }
-
-export default UserSnippet

@@ -65,9 +65,3 @@ export class CommentInput extends LitElement {
     this.handleCommentSubmit()
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-comment-input': CommentInput
-  }
-}

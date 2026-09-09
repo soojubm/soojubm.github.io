@@ -34,5 +34,3 @@ export class TextfieldLabel extends LitElement {
     `
   }
 }
-
-export default TextfieldLabel

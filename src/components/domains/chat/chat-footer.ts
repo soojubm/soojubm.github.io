@@ -45,9 +45,3 @@ export class ChatFooter extends LitElement {
     `
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-chat-footer': ChatFooter
-  }
-}

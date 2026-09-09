@@ -48,9 +48,3 @@ export class AttachmentButton extends LitElement {
     emit(this, 'change', { files: Array.from(input.files ?? []) })
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-attachment-button': AttachmentButton
-  }
-}

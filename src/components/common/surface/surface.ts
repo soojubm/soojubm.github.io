@@ -23,9 +23,3 @@ export class Surface extends LitElement {
     `
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-surface': Surface
-  }
-}

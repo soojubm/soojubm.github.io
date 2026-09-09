@@ -55,9 +55,3 @@ export class MyChatMessage extends LitElement {
     emit(this, 'retry')
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-my-chat-message': MyChatMessage
-  }
-}

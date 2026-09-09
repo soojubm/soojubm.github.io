@@ -32,7 +32,7 @@ const loadIconoirStylesheet = () => {
 }
 
 @customElement('mm-icon')
-class Icon extends LitElement {
+export class Icon extends LitElement {
   static styles = [iconStyles]
 
   @property({ type: String }) name = ''
@@ -91,5 +91,3 @@ class Icon extends LitElement {
     this.renderRoot.adoptedStyleSheets = [...this.renderRoot.adoptedStyleSheets, stylesheet]
   }
 }
-
-export default Icon

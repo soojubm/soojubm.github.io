@@ -69,9 +69,3 @@ export class ChatReasoningFlow extends LitElement {
     `
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-chat-reasoning-flow': ChatReasoningFlow
-  }
-}

@@ -20,7 +20,7 @@ const DRAG_CLOSE_THRESHOLD_RATIO = 0.25
  * sheet 컴포넌트 계층에서 일관되게 관리한다.
  */
 @customElement('mm-sheet')
-class Sheet extends LitElement {
+export class Sheet extends LitElement {
   static styles = [overlaySurfaceStyles, sheetPositionStyles, sheetDragHandleStyles]
 
   @property({ type: String, reflect: true }) role = 'dialog'
@@ -133,4 +133,3 @@ class Sheet extends LitElement {
     this.show()
   }
 }
-export default Sheet

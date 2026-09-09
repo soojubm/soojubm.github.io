@@ -5,7 +5,7 @@ const FOCUSABLE_SELECTOR =
   'a[href], button, input, select, textarea, [tabindex]:not([tabindex="-1"]), audio[controls], video[controls]'
 
 @customElement('mm-tab-panel')
-export default class TabPanel extends LitElement {
+export class TabPanel extends LitElement {
   static styles = css`
     :host {
       display: none;

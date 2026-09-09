@@ -7,7 +7,7 @@ import { focusRing } from '@/stylesheets/shared.styles'
 import { emit } from '@/utils'
 
 @customElement('mm-tab')
-export default class Tab extends LitElement {
+export class Tab extends LitElement {
   static styles = css`
     :host {
       position: relative;

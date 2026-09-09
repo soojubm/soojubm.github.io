@@ -95,11 +95,3 @@ export class NumberInput extends withTextfieldState(LitElement) {
     this.commit(this.numericValue + this.step)
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-number-input': NumberInput
-  }
-}
-
-export default NumberInput

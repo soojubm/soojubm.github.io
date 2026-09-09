@@ -19,5 +19,3 @@ export class Separator extends LitElement {
     `
   }
 }
-
-export default Separator

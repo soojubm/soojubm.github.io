@@ -69,5 +69,3 @@ export class MenuItemCheckboxGroup extends LitElement {
     this.group.sync()
   }
 }
-
-export default MenuItemCheckboxGroup

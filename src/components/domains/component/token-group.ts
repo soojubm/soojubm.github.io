@@ -29,9 +29,3 @@ export class TokenGroup extends LitElement {
     `
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-token-group': TokenGroup
-  }
-}

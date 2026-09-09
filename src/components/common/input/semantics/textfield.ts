@@ -43,5 +43,3 @@ export class Textfield extends withTextfieldState(LitElement) {
     `
   }
 }
-
-export default Textfield

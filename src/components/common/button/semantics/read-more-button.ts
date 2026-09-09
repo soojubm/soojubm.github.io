@@ -47,9 +47,3 @@ export class ReadMoreButton extends LitElement {
     `
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-read-more-button': ReadMoreButton
-  }
-}

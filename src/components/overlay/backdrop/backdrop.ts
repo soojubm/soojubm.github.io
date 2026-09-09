@@ -11,9 +11,3 @@ import { backdropStyles } from '@/components/overlay/overlay.styles'
 export class Backdrop extends LitElement {
   static styles = backdropStyles
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-backdrop': Backdrop
-  }
-}

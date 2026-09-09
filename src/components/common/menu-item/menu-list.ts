@@ -56,9 +56,3 @@ export class MenuList extends LitElement {
     `
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-menu-list': MenuList
-  }
-}

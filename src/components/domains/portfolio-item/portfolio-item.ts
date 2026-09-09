@@ -181,9 +181,3 @@ export class PortfolioItem extends LitElement {
     return this.datetime.replaceAll('-', '. ')
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-portfolio-item': PortfolioItem
-  }
-}

@@ -26,9 +26,3 @@ export class CloseButton extends withIconAction(LitElement, 'close') {
     })
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-close-button': CloseButton
-  }
-}

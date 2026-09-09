@@ -159,5 +159,3 @@ export class ListItem extends LitElement {
       )
   }
 }
-
-export default ListItem

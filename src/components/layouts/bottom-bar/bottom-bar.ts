@@ -23,7 +23,7 @@ const defaultItems: BottomBarItem[] = [
 ]
 
 @customElement('mm-bottom-bar')
-class BottomBar extends LitElement {
+export class BottomBar extends LitElement {
   static styles = css`
     :host {
     }
@@ -150,13 +150,5 @@ class BottomBar extends LitElement {
     if (!item.href || item.href === '#') e.preventDefault()
     this.selectedIndex = index
     emit(this, 'change', { index })
-  }
-}
-
-export default BottomBar
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-bottom-bar': BottomBar
   }
 }

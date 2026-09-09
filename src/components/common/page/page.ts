@@ -82,9 +82,3 @@ export class Page extends LitElement {
     `
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-page': Page
-  }
-}

@@ -47,9 +47,3 @@ export class MetaItemGroup extends LitElement {
     `
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-meta-item-group': MetaItemGroup
-  }
-}

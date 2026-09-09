@@ -104,5 +104,3 @@ export class CheckboxGroup extends LitElement {
     return this.selection.isSelected(selectionItemValue(checkbox))
   }
 }
-
-export default CheckboxGroup

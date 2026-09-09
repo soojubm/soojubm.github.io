@@ -22,9 +22,3 @@ export class TagGroup extends LitElement {
     `
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-tag-group': TagGroup
-  }
-}

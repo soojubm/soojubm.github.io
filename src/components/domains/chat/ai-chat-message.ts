@@ -71,9 +71,3 @@ export class AiChatMessage extends LitElement {
     emit(this, 'chat-reaction', { reaction })
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-ai-chat-message': AiChatMessage
-  }
-}

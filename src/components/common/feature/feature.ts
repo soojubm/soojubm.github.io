@@ -51,5 +51,3 @@ export class Feature extends LitElement {
     `
   }
 }
-
-export default Feature

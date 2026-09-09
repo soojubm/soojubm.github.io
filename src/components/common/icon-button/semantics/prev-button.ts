@@ -23,9 +23,3 @@ export class PrevButton extends withIconAction(LitElement, 'prev') {
     })
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-prev-button': PrevButton
-  }
-}

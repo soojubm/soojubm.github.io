@@ -16,7 +16,7 @@ export type PopoverPlacement = 'bottom-left' | 'bottom-right' | 'top-left' | 'to
  * 패널 지오메트리를 밖에서 다듬을 때는 ::part(panel)을 사용합니다.
  */
 @customElement('mm-popover')
-class Popover extends LitElement {
+export class Popover extends LitElement {
   static styles = [overlaySurfaceStyles, popoverPositionStyles]
 
   @property({ type: Boolean, reflect: true }) open = false
@@ -69,5 +69,3 @@ class Popover extends LitElement {
     this.open = false
   }
 }
-
-export default Popover

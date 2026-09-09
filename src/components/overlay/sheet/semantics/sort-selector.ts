@@ -37,9 +37,3 @@ export class SortSelector extends LitElement {
     this.value = e.detail.value as SortOrder
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-sort-selector': SortSelector
-  }
-}

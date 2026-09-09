@@ -36,9 +36,3 @@ export class Scroll extends LitElement {
     else this.style.removeProperty('--scroll-gap')
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-scroll': Scroll
-  }
-}

@@ -12,7 +12,7 @@ import { resultStyles } from '@/components/common/result/result.styles'
 import '@/components/common/avatar'
 
 @customElement('mm-result')
-class Result extends LitElement {
+export class Result extends LitElement {
   static styles = [resultStyles]
 
   @property({ type: String, attribute: 'avatar-icon' }) avatarIcon?: IconName
@@ -80,5 +80,3 @@ class Result extends LitElement {
     this.secondaryAction?.onClick?.()
   }
 }
-
-export default Result

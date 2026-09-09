@@ -58,5 +58,3 @@ export class Radio extends LitElement {
     emit(this, 'change', { checked: this.checked, value: this.value })
   }
 }
-
-export default Radio

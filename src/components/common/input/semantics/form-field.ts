@@ -75,11 +75,3 @@ export class FormField extends LitElement {
     `
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-form-field': FormField
-  }
-}
-
-export default FormField

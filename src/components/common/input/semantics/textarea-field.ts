@@ -54,11 +54,3 @@ export class TextareaField extends LitElement {
     this.value = event.detail.value
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-textarea-field': TextareaField
-  }
-}
-
-export default TextareaField

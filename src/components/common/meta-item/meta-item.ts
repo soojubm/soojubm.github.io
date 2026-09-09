@@ -5,7 +5,7 @@ import { metaItemStyles } from '@/components/common/meta-item/meta-item.styles'
 import '@/components/common/text/semantics/paragraph'
 
 @customElement('mm-meta-item')
-class MetaItem extends LitElement {
+export class MetaItem extends LitElement {
   static styles = [metaItemStyles]
 
   @property({ type: String, reflect: true }) layout: 'horizontal' | 'stacked' | 'inline' =
@@ -21,5 +21,3 @@ class MetaItem extends LitElement {
     `
   }
 }
-
-export default MetaItem

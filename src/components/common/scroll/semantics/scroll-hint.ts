@@ -94,9 +94,3 @@ export class ScrollHint extends LitElement {
     this.toggleAttribute('hidden', !canScroll || (this.placement === 'start' ? isAtStart : isAtEnd))
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-scroll-hint': ScrollHint
-  }
-}

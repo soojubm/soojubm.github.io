@@ -32,5 +32,3 @@ export class MenuItemCheckbox extends withMenuItemToggleState(
     `
   }
 }
-
-export default MenuItemCheckbox

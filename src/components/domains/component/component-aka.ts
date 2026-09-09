@@ -36,9 +36,3 @@ export class ComponentAka extends LitElement {
     `
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-component-aka': ComponentAka
-  }
-}

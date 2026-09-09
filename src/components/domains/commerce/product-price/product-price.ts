@@ -59,9 +59,3 @@ export class ProductPrice extends LitElement {
     `
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-product-price': ProductPrice
-  }
-}

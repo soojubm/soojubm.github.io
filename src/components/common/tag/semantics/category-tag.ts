@@ -17,5 +17,3 @@ export class CategoryTag extends LitElement {
     return renderTag(tone, this.icon, this.category)
   }
 }
-
-export default CategoryTag

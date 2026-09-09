@@ -44,5 +44,3 @@ export class Dot extends LitElement {
   @property({ type: String, reflect: true, useDefault: true }) tone: TagTone = 'default'
   @property({ type: String, reflect: true }) variant?: DotVariant
 }
-
-export default Dot

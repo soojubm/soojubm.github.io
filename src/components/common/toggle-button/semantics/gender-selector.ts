@@ -52,9 +52,3 @@ export class GenderSelector extends LitElement {
     emit(this, 'change', { value: this.value })
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-gender-selector': GenderSelector
-  }
-}

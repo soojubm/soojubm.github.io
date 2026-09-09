@@ -64,5 +64,3 @@ export class MenuItemRadioGroup extends LitElement {
     this.group.sync()
   }
 }
-
-export default MenuItemRadioGroup

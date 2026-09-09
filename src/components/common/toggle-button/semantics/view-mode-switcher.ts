@@ -41,9 +41,3 @@ export class ViewModeSwitcher extends LitElement {
     this.updateMode(event.detail.value)
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-view-mode-switcher': ViewModeSwitcher
-  }
-}

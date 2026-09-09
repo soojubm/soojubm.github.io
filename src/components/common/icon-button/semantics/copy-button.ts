@@ -80,9 +80,3 @@ export class CopyButton extends LitElement {
     })
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-copy-button': CopyButton
-  }
-}

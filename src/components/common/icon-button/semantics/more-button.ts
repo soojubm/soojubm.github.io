@@ -34,9 +34,3 @@ export class MoreButton extends LitElement {
     })
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-more-button': MoreButton
-  }
-}

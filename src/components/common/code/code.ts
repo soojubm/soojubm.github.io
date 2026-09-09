@@ -33,9 +33,3 @@ export class Code extends LitElement {
     return unsafeHTML(Prism.highlight(this.code, grammar, this.language))
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-code': Code
-  }
-}

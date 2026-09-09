@@ -53,11 +53,3 @@ export class PostFeature extends LitElement {
     `
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-post-feature': PostFeature
-  }
-}
-
-export default PostFeature

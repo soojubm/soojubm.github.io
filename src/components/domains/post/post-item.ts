@@ -63,11 +63,3 @@ export class PostItem extends LitElement {
     `
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-post-item': PostItem
-  }
-}
-
-export default PostItem

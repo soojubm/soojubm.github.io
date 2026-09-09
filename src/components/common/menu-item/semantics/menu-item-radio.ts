@@ -53,5 +53,3 @@ export class MenuItemRadio extends withMenuItemPresentation(LitElement) {
     `
   }
 }
-
-export default MenuItemRadio

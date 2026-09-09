@@ -72,9 +72,3 @@ export class ReviewItem extends LitElement {
     `
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-review-item': ReviewItem
-  }
-}

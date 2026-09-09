@@ -27,11 +27,3 @@ export class FixedBottom extends LitElement {
     `
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-fixed-bottom': FixedBottom
-  }
-}
-
-export default FixedBottom

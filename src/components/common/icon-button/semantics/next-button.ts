@@ -23,9 +23,3 @@ export class NextButton extends withIconAction(LitElement, 'next') {
     })
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-next-button': NextButton
-  }
-}

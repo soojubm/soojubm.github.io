@@ -5,7 +5,7 @@ import { sheetBodyStyles } from '@/components/overlay/overlay.styles'
 import '@/components/common/scroll/scroll'
 
 @customElement('mm-sheet-body')
-class SheetBody extends LitElement {
+export class SheetBody extends LitElement {
   static styles = sheetBodyStyles
 
   render() {
@@ -16,5 +16,3 @@ class SheetBody extends LitElement {
     `
   }
 }
-
-export default SheetBody

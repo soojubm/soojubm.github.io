@@ -31,9 +31,3 @@ export class ChatFeed extends LitElement {
     `
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-chat-feed': ChatFeed
-  }
-}

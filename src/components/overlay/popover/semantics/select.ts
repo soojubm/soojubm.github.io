@@ -4,8 +4,7 @@ import { ifDefined } from 'lit/directives/if-defined.js'
 import { repeat } from 'lit/directives/repeat.js'
 
 import type { IconName } from '@/components/common/icon/icon-names'
-import type Popover from '@/components/overlay/popover/popover'
-import type { PopoverPlacement } from '@/components/overlay/popover/popover'
+import type { Popover, PopoverPlacement } from '@/components/overlay/popover/popover'
 
 import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import { resetStyles } from '@/stylesheets/shared.styles'
@@ -136,5 +135,3 @@ export class Select extends LitElement {
     `
   }
 }
-
-export default Select

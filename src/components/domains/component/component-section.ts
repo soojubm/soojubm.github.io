@@ -7,7 +7,7 @@ import { componentExampleStyles } from './component.styles'
 import '@/components/common/text/semantics/text-block'
 
 @customElement('mm-component-section')
-class ComponentSection extends LitElement {
+export class ComponentSection extends LitElement {
   static styles = [
     componentExampleStyles,
     css`
@@ -36,5 +36,3 @@ class ComponentSection extends LitElement {
     `
   }
 }
-
-export default ComponentSection

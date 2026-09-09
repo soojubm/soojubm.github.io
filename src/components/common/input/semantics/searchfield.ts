@@ -9,7 +9,7 @@ import '@/components/common/icon'
 import '@/components/common/icon-button/semantics/clear-button'
 
 @customElement('mm-searchfield')
-class SearchField extends LitElement {
+export class SearchField extends LitElement {
   static styles = [inputStyles]
 
   @property({ type: String }) value = ''
@@ -62,5 +62,3 @@ class SearchField extends LitElement {
     emit(this, 'input', { value: this.value })
   }
 }
-
-export default SearchField

@@ -25,9 +25,3 @@ export class FollowButton extends withTogglePressed(LitElement) {
     `
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-follow-button': FollowButton
-  }
-}

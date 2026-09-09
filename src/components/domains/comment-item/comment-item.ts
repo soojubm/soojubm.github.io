@@ -1,7 +1,7 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, query } from 'lit/decorators.js'
 
-import type Popover from '@/components/overlay/popover/popover'
+import type { Popover } from '@/components/overlay/popover/popover'
 
 import '@/components/common/button/button'
 import '@/components/common/icon-button/semantics/more-button'
@@ -112,11 +112,5 @@ export class CommentItem extends LitElement {
   private onMenuAction(type: 'edit' | 'delete') {
     this.menu?.close()
     this.emitAction(type)
-  }
-}
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-comment-item': CommentItem
   }
 }

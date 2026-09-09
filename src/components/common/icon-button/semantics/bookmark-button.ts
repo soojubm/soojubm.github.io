@@ -61,9 +61,3 @@ export class BookmarkButton extends withTogglePressed(LitElement) {
     return labels[this.shape]
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-bookmark-button': BookmarkButton
-  }
-}

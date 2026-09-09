@@ -64,9 +64,3 @@ export class ComponentTokens extends LitElement {
     return tokenCategoryLabel(tokens[index].name) !== tokenCategoryLabel(tokens[index - 1].name)
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-component-tokens': ComponentTokens
-  }
-}

@@ -174,9 +174,3 @@ export class ChatSourceGroup extends LitElement {
     return this.activeSource?.domain ?? ''
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-chat-source-group': ChatSourceGroup
-  }
-}

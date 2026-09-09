@@ -16,5 +16,3 @@ export class AccentTag extends LitElement {
     return renderTag(this.tone, this.icon)
   }
 }
-
-export default AccentTag

@@ -97,9 +97,3 @@ export class SocialLinks extends LitElement {
     `
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-social-links': SocialLinks
-  }
-}

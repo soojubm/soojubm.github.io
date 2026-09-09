@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 import '@/components/common/text/semantics/text-block'
 
 @customElement('mm-status-message')
-class StatusMessage extends LitElement {
+export class StatusMessage extends LitElement {
   static styles = css`
     :host {
       display: flex;
@@ -27,5 +27,3 @@ class StatusMessage extends LitElement {
     `
   }
 }
-
-export default StatusMessage

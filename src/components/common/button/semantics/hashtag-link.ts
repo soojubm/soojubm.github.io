@@ -30,9 +30,3 @@ export class HashtagLink extends LitElement {
     `
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-hashtag-link': HashtagLink
-  }
-}

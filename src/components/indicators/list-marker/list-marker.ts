@@ -59,9 +59,3 @@ export class ListMarker extends LitElement {
     `
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-list-marker': ListMarker
-  }
-}

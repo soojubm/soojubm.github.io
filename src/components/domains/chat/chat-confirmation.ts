@@ -80,9 +80,3 @@ export class ChatConfirmation extends LitElement {
     emit(this, 'confirmation-reject')
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-chat-confirmation': ChatConfirmation
-  }
-}

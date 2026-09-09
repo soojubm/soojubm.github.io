@@ -7,7 +7,7 @@ import '@/components/common/text/semantics/heading'
 import '@/components/common/icon-button/semantics/close-button'
 
 @customElement('mm-sheet-header')
-class SheetHeader extends LitElement {
+export class SheetHeader extends LitElement {
   static styles = sheetHeaderStyles
 
   @property({ type: String, reflect: true }) role = 'navigation'
@@ -24,5 +24,3 @@ class SheetHeader extends LitElement {
     emit(this, 'sheet-close')
   }
 }
-
-export default SheetHeader

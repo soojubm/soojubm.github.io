@@ -24,9 +24,3 @@ export class ToTopButton extends LitElement {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-to-top-button': ToTopButton
-  }
-}

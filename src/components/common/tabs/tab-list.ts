@@ -1,14 +1,14 @@
 import { LitElement, html } from 'lit'
 import { customElement, property, query, queryAssignedElements } from 'lit/decorators.js'
 
-import Tab from '@/components/common/tabs/tab'
-import TabPanel from '@/components/common/tabs/tab-panel'
+import { Tab } from '@/components/common/tabs/tab'
+import { TabPanel } from '@/components/common/tabs/tab-panel'
 import { tabsStyles } from '@/components/common/tabs/tabs.styles'
 import { SelectionIndicatorController } from '@/controllers/selection-indicator-controller'
 import { uniqueId } from '@/utils'
 
 @customElement('mm-tab-list')
-export default class TabList extends LitElement {
+export class TabList extends LitElement {
   static styles = [tabsStyles]
 
   private readonly tabsId = uniqueId('tabs')

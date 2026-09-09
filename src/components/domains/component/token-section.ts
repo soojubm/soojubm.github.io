@@ -37,9 +37,3 @@ export class TokenSection extends LitElement {
     `
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-token-section': TokenSection
-  }
-}

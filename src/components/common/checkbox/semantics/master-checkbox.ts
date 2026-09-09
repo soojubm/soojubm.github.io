@@ -86,9 +86,3 @@ export class MasterCheckbox extends LitElement {
     this.group?.toggleAll()
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-master-checkbox': MasterCheckbox
-  }
-}

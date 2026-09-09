@@ -63,9 +63,3 @@ export class FoundationItem extends LitElement {
     `
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-foundation-item': FoundationItem
-  }
-}

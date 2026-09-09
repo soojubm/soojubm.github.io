@@ -37,9 +37,3 @@ export class UiPlaceholder extends LitElement {
     `
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-ui-placeholder': UiPlaceholder
-  }
-}

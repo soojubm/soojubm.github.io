@@ -53,9 +53,3 @@ export class AttachmentItem extends LitElement {
     emit(this, 'remove')
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-attachment-item': AttachmentItem
-  }
-}

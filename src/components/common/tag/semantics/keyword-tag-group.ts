@@ -39,9 +39,3 @@ export class KeywordTagGroup extends LitElement {
     `
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-keyword-tag-group': KeywordTagGroup
-  }
-}

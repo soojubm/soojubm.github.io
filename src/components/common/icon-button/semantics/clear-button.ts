@@ -9,7 +9,7 @@ import { renderIconAction } from '@/components/common/icon-button/icon-button.ut
  * 입력값을 비우는 버튼. 입력 필드 안에 놓이므로 아이콘 버튼 중 가장 작은 크기를 쓴다.
  */
 @customElement('mm-clear-button')
-class ClearButton extends LitElement {
+export class ClearButton extends LitElement {
   static styles = [
     iconButtonStyles,
     css`
@@ -33,13 +33,5 @@ class ClearButton extends LitElement {
       tooltipPlacement: this.tooltipPlacement,
       disabled: this.disabled,
     })
-  }
-}
-
-export default ClearButton
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-clear-button': ClearButton
   }
 }

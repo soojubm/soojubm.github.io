@@ -100,5 +100,3 @@ export class Breadcrumb extends LitElement {
     `
   }
 }
-
-export default Breadcrumb

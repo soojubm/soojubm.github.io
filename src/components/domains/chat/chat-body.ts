@@ -27,9 +27,3 @@ export class ChatBody extends LitElement {
     `
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-chat-body': ChatBody
-  }
-}

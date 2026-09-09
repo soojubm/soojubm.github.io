@@ -14,5 +14,3 @@ export class KeywordTag extends LitElement {
     return renderTag('default', this.icon)
   }
 }
-
-export default KeywordTag

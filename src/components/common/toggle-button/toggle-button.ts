@@ -60,9 +60,3 @@ export class ToggleButton extends LitElement {
     emit(this, 'change', { pressed: this.pressed, value: this.value })
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-toggle-button': ToggleButton
-  }
-}

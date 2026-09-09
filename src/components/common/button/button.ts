@@ -70,5 +70,3 @@ export class Button extends LitElement {
     `
   }
 }
-
-export default Button

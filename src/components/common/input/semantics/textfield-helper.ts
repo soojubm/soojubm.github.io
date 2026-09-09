@@ -16,9 +16,3 @@ export class TextfieldHelper extends LitElement {
     `
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-textfield-helper': TextfieldHelper
-  }
-}

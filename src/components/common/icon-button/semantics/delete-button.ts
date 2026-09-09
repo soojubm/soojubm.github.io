@@ -41,9 +41,3 @@ export class DeleteButton extends withIconAction(LitElement, 'delete') {
     super.handleActionClick()
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-delete-button': DeleteButton
-  }
-}

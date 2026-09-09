@@ -63,9 +63,3 @@ export class ComponentProps extends LitElement {
     this.open = true
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-component-props': ComponentProps
-  }
-}

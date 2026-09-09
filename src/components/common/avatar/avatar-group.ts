@@ -89,9 +89,3 @@ export class AvatarGroup extends LitElement {
     `
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-avatar-group': AvatarGroup
-  }
-}

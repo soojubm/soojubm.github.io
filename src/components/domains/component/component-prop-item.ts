@@ -26,9 +26,3 @@ export class ComponentPropItem extends LitElement {
     return `${this.name}${this.optional ? '?' : ''}`
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-component-prop-item': ComponentPropItem
-  }
-}

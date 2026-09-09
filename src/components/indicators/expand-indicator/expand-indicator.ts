@@ -37,9 +37,3 @@ export class ExpandIndicator extends LitElement {
     `
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-expand-indicator': ExpandIndicator
-  }
-}

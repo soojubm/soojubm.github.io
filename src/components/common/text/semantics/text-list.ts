@@ -7,7 +7,7 @@ import '@/components/indicators/list-marker/list-marker'
 type Variant = 'check' | 'number'
 
 @customElement('mm-text-list')
-class TextList extends LitElement {
+export class TextList extends LitElement {
   static styles = [
     textStyles,
     css`
@@ -64,5 +64,3 @@ class TextList extends LitElement {
     `
   }
 }
-
-export default TextList

@@ -222,9 +222,3 @@ export class Marquee extends LitElement {
     this.style.setProperty('--marquee-height', this.height)
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-marquee': Marquee
-  }
-}

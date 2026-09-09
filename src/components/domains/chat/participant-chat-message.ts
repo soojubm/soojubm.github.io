@@ -70,9 +70,3 @@ export class ParticipantChatMessage extends LitElement {
     `
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-participant-chat-message': ParticipantChatMessage
-  }
-}

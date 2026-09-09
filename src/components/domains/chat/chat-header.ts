@@ -30,9 +30,3 @@ export class ChatHeader extends LitElement {
     `
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-chat-header': ChatHeader
-  }
-}

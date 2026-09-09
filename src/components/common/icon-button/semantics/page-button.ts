@@ -46,9 +46,3 @@ export class PageButton extends LitElement {
     `
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-page-button': PageButton
-  }
-}

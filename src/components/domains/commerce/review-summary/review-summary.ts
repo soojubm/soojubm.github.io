@@ -52,11 +52,3 @@ export class ReviewSummary extends LitElement {
     `
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-review-summary': ReviewSummary
-  }
-}
-
-export default ReviewSummary

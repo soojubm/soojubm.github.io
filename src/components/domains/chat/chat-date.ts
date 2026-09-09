@@ -27,9 +27,3 @@ export class ChatDate extends LitElement {
     `
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-chat-date': ChatDate
-  }
-}

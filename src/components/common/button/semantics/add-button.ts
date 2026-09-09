@@ -24,9 +24,3 @@ export class AddButton extends LitElement {
     `
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-add-button': AddButton
-  }
-}

@@ -55,9 +55,3 @@ export class ButtonGroup extends LitElement {
     `
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-button-group': ButtonGroup
-  }
-}

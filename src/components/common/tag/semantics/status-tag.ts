@@ -17,5 +17,3 @@ export class StatusTag extends LitElement {
     return renderTag(tone, this.icon, this.variant)
   }
 }
-
-export default StatusTag

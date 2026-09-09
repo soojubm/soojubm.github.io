@@ -28,5 +28,3 @@ export class Tag extends LitElement {
     `
   }
 }
-
-export default Tag

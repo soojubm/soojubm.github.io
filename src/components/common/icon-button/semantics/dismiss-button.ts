@@ -30,9 +30,3 @@ export class DismissButton extends withIconAction(LitElement, 'dismiss') {
     })
   }
 }
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'mm-dismiss-button': DismissButton
-  }
-}
