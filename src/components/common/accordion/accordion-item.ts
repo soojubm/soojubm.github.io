@@ -27,8 +27,6 @@ export class AccordionItem extends LitElement {
         --accordion-background-color: var(--background-subtle-color);
         --accordion-border: var(--border-transparent);
         --accordion-border-radius: var(--radius);
-        --accordion-icon-size: 1.25rem;
-        --accordion-transition: var(--transition-duration) var(--transition-easing);
       }
 
       .summary-btn {
@@ -49,10 +47,7 @@ export class AccordionItem extends LitElement {
       }
 
       .icon {
-        flex-shrink: 0;
-        width: var(--accordion-icon-size);
-        height: var(--accordion-icon-size);
-        transition: transform var(--accordion-transition);
+        transition: transform var(--transition-duration) var(--transition-easing);
       }
 
       /* grid trick: 0fr → 1fr 로 높이 애니메이션 */
@@ -60,12 +55,12 @@ export class AccordionItem extends LitElement {
         display: grid;
         grid-template-rows: 0fr;
         overflow: hidden;
-        transition: grid-template-rows var(--accordion-transition);
+        transition: grid-template-rows var(--transition-duration) var(--transition-easing);
       }
 
       [aria-hidden] > div {
         min-height: 0;
-        transition: padding var(--accordion-transition);
+        transition: padding var(--transition-duration) var(--transition-easing);
       }
 
       :host([open]) {

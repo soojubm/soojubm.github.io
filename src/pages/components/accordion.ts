@@ -27,12 +27,10 @@ const componentReferences: ComponentReferenceItemData[] = [
 ]
 
 const componentProps: ComponentPropItemData[] = [
-  { name: 'mm-accordion', type: 'group container', optional: true },
-  { name: 'mm-accordion-item', type: 'individual item', optional: true },
   { name: 'summary', type: 'string' },
   { name: 'open', type: 'boolean = false' },
-  { name: 'slot: summary', type: 'HTMLElement (trigger)', optional: true },
-  { name: 'slot: default', type: 'HTMLElement (panel content)', optional: true },
+  { name: 'slot: summary', type: 'HTMLElement', optional: true },
+  { name: 'slot: default', type: 'HTMLElement', optional: true },
   { name: 'toggle', type: 'CustomEvent detail: open', kind: 'event' },
 ]
 
@@ -41,8 +39,6 @@ const componentTokens: ComponentTokenItemData[] = [
   { name: 'accordion-background-color', default: 'var(--background-subtle-color)' },
   { name: 'accordion-border', default: 'var(--border-transparent)' },
   { name: 'accordion-border-radius', default: 'var(--radius)' },
-  { name: 'accordion-icon-size', default: '1.25rem' },
-  { name: 'accordion-transition', default: 'var(--transition-duration) var(--transition-easing)' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [
