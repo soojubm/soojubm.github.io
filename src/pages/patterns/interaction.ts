@@ -66,10 +66,6 @@ const currentComponentRows = html`
     <th scope="row"><code>mm-app-sidebar</code></th>
     <td><code>page</code></td>
   </tr>
-  <tr>
-    <th scope="row">theme-selector</th>
-    <td><code>true</code></td>
-  </tr>
 `
 const expandedComponentRows = html`
   <tr>
@@ -455,8 +451,6 @@ const main = html`
           <code>aria-current</code>
           로 표시합니다. 페이지·라우트를 가리키면
           <code>page</code>
-          , 그 외 항목을 가리키면
-          <code>true</code>
           를 씁니다.
         </mm-paragraph>
         <mm-table
