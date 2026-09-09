@@ -5,7 +5,7 @@ import { Tab } from '@/components/common/tabs/tab'
 import { TabPanel } from '@/components/common/tabs/tab-panel'
 import { tabsStyles } from '@/components/common/tabs/tabs.styles'
 import { SelectionIndicatorController } from '@/controllers/selection-indicator-controller'
-import { uniqueId } from '@/utils'
+import { emit, uniqueId } from '@/utils'
 
 @customElement('mm-tab-list')
 export class TabList extends LitElement {
@@ -74,8 +74,14 @@ export class TabList extends LitElement {
   }
 
   private handleTabSelect = (event: Event) => {
+    // 탭 단위 이벤트는 여기서 끊고 탭리스트 단위 change로 승격한다.
+    event.stopPropagation()
+
     const customEvent = event as CustomEvent<{ value: string }>
+    if (customEvent.detail.value === this.value) return
+
     this.value = customEvent.detail.value
+    emit(this, 'change', { value: this.value })
   }
 
   private handleKeydown = (event: KeyboardEvent) => {

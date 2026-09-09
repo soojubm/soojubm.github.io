@@ -56,10 +56,8 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'mm-tab-list value', type: 'string' },
   { name: 'mm-tab-list variant', type: "'line' | 'pill' = 'line'" },
   { name: 'mm-tab value', type: 'string' },
-  { name: 'mm-tab active', type: 'boolean = false', optional: true },
   { name: 'mm-tab-panel value', type: 'string' },
-  { name: 'mm-tab-panel active', type: 'boolean = false', optional: true },
-  { name: 'tab-select', type: 'CustomEvent detail: value', kind: 'event' },
+  { name: 'change', type: 'CustomEvent detail: value', kind: 'event' },
 ]
 
 const componentTokens: ComponentTokenItemData[] = [
