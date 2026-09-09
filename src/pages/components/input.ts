@@ -146,69 +146,24 @@ const main = html`
       </mm-textfield>
     </mm-component-anatomy>
 
-    <section style="position: relative">
-      <div
-        role="textbox"
-        contenteditable="true"
-        aria-label="내용 입력"
-        aria-multiline="true"
-        style="padding: 48px var(--space-2) var(--space-1)"
-      ></div>
-    </section>
-
-    <div class="calendar">
-      <b>2020년 12월</b>
-      <nav class="calendar-navigation">
-        <mm-prev-button></mm-prev-button>
-        <mm-next-button></mm-next-button>
-      </nav>
-      <div class="calendar-head">
-        <div>일</div>
-        <div>월</div>
-        <div>화</div>
-        <div>수</div>
-        <div>목</div>
-        <div>금</div>
-        <div>토</div>
-      </div>
-      <div class="calendar-body">
-        <div class="calendar-body-column">1</div>
-        <div class="calendar-body-column">2</div>
-        <div class="calendar-body-column">3</div>
-        <div class="calendar-body-column">4</div>
-        <div class="calendar-body-column">5</div>
-        <div class="calendar-body-column">6</div>
-        <div class="calendar-body-column">7</div>
-        <div class="calendar-body-column">1</div>
-        <div class="calendar-body-column">2</div>
-        <div class="calendar-body-column">3</div>
-        <div class="calendar-body-column">4</div>
-        <div class="calendar-body-column">5</div>
-        <div class="calendar-body-column">6</div>
-        <div class="calendar-body-column">7</div>
-        <div class="calendar-body-column">1</div>
-        <div class="calendar-body-column">2</div>
-        <div class="calendar-body-column">3</div>
-        <div class="calendar-body-column">4</div>
-        <div class="calendar-body-column">5</div>
-        <div class="calendar-body-column">6</div>
-        <div class="calendar-body-column">7</div>
-      </div>
-
-      <br />
+    <mm-component-section
+      heading="Date"
+      description="type=\"date\"는 네이티브 날짜 피커를 씁니다. 기간처럼 짝을 이루는 필드는 나란히 두고 각각 레이블을 답니다."
+    >
       <mm-flex>
-        <div style="flex: 1">
-          <mm-textfield type="date" name="date-start" label="체크인" placeholder="YYYY. MM. DD.">
-            <mm-icon slot="trailing" name="calendar"></mm-icon>
-          </mm-textfield>
-        </div>
-        <div style="flex: 1">
-          <mm-textfield type="date" name="date-end" label="체크아웃" placeholder="YYYY. MM. DD.">
-            <mm-icon slot="trailing" name="calendar"></mm-icon>
-          </mm-textfield>
-        </div>
+        <mm-textfield type="date" name="date-start" label="체크인" placeholder="YYYY. MM. DD.">
+          <mm-icon slot="trailing" name="calendar"></mm-icon>
+        </mm-textfield>
+        <mm-textfield type="date" name="date-end" label="체크아웃" placeholder="YYYY. MM. DD.">
+          <mm-icon slot="trailing" name="calendar"></mm-icon>
+        </mm-textfield>
       </mm-flex>
-      <br />
+    </mm-component-section>
+
+    <mm-component-section
+      heading="단위가 이어지는 필드"
+      description="치수처럼 한 값을 여러 필드로 나눠 받을 때는 필드 사이에 연산 기호를 두어 관계를 드러냅니다."
+    >
       <mm-flex align-items="flex-end">
         <mm-textfield label="Length" placeholder="cm unit"></mm-textfield>
         <mm-icon name="xmark"></mm-icon>
@@ -216,57 +171,7 @@ const main = html`
         <mm-icon name="xmark"></mm-icon>
         <mm-textfield label="Height" placeholder="cm"></mm-textfield>
       </mm-flex>
-    </div>
-
-    <mm-text-list
-      .texts=${[
-        '',
-        'url field. www 및 https://',
-        'form 컴포넌트는 간격에 대한 구조 컴포넌트. TODO. FormField, FormLabel, FormControl. formpatterns. FormField label / TextInput 으로 나누는 방안. groupable은 속성. 그래서 컴포넌트 이름은 form layout / fieldset / fieldgroup FormLabel checkbox-label와 input-label을 똑같이 할수 있나? field label : fieldset legend, label - input/textarea 그러면 searchField 등의 대안이될 수 있나?',
-        'field feedback / fieldset feedback(checkbox group, login)',
-        'props: minValue, maxValue, value, onDecreseClick, onIncreseClick',
-        '221021: - + 버튼에 포커스는 필요가 없다. input 키보드 위 아래로?',
-        '장식적인 검색 아이콘과 clickable한 액션. leading는 장식. trailing는 액션? trailing에 유닛이 있을 수도',
-      ]}
-    ></mm-text-list>
-
-    <div
-      style="
-      width: 20rem;
-      height: 20rem;
-      border-radius: 50%;
-      background-image: url('@/images/prometheus.jpg');
-      background-size: cover;
-      position: relative;
-    "
-    >
-      <mm-heading
-        level="3"
-        style="
-        color: var(--background-color);
-        background: var(--background-strong-color);
-        display: inline-block;
-        position: relative;
-        z-index: var(--material-zindex-raised);
-      "
-      >
-        프로메테우스
-      </mm-heading>
-      <br />
-      <cite
-        style="
-        color: var(--background-color);
-        background: var(--background-strong-color);
-        display: inline-block;
-        margin-top: 0;
-        position: relative;
-        z-index: var(--material-zindex-raised);
-      "
-      >
-        <div style="color: var(--background-color); position: relative">리들리 스콧</div>
-        <time style="color: var(--background-color); position: relative">2012, 미국</time>
-      </cite>
-    </div>
+    </mm-component-section>
 
     <mm-component-section
       heading="Feedback Message or Validation Message"
@@ -278,7 +183,7 @@ const main = html`
 
     <mm-component-section
       heading="NumberInput"
-      description="숫자 입력 필드. 수량, 가격, step/count 입력에 사용합니다. TODO utilities. 앞자리 0 제거. 숫자만입력3자리마다콤마. 소숫점 컨트롤."
+      description="숫자 입력 필드. 수량, 가격, step/count 입력에 사용합니다."
     >
       <mm-flex direction="column" gap="3">
         <mm-number-input
@@ -354,7 +259,7 @@ const main = html`
       </mm-flex>
     </mm-component-section>
 
-    <mm-component-section heading="Newsletter" description="TODO">
+    <mm-component-section heading="Newsletter">
       <form style="max-width: 400px">
         <mm-flex direction="column" gap="4">
           <mm-text-block
