@@ -137,10 +137,10 @@ const main = html`
         '구분선 — 옵션 사이의 시각적 경계(선택).',
       ]}
       .code=${`<mm-toggle-button-group
-  .options=${[
-    { value: 'list', icon: 'table-rows', label: '목록' },
-    { value: 'grid', icon: 'view-grid', label: '그리드' },
-  ]}
+    .options=\${[
+        { value: 'list', icon: 'table-rows', label: '목록' },
+        { value: 'grid', icon: 'view-grid', label: '그리드' },
+    ]}
 ></mm-toggle-button-group>`}
       .markers=${[
         { placement: 'inline-start' },

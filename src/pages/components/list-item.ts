@@ -135,7 +135,7 @@ const main = html`
         'trailing — 오른쪽에 배치되는 선택적 슬롯. 액션 버튼·뱃지·메타 텍스트 등을 넣습니다.',
       ]}
       .code=${`<mm-list-item label="수줍이" description="바보" size="48" avatar-src="...">
-  <mm-follow-button slot="trailing"></mm-follow-button>
+    <mm-follow-button slot="trailing"></mm-follow-button>
 </mm-list-item>`}
       .markers=${[
         { placement: 'block-end', offset: '1.5rem' },

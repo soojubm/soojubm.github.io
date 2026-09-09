@@ -115,12 +115,12 @@ const main = html`
         '검증 텍스트 — 입력 필드 아래에서 오류나 검증 결과를 전달합니다(validation-text).',
       ]}
       .code=${`<mm-textfield
-  label="이메일"
-  placeholder="name@example.com"
-  helper="회사 이메일을 입력하세요."
-  validation-text="올바른 이메일 형식으로 입력하세요."
+    label="이메일"
+    placeholder="name@example.com"
+    helper="회사 이메일을 입력하세요."
+    validation-text="올바른 이메일 형식으로 입력하세요."
 >
-  <mm-icon slot="leading" name="mail"></mm-icon>
+    <mm-icon slot="leading" name="mail"></mm-icon>
 </mm-textfield>`}
       .markers=${[
         { placement: 'inline-start', offset: '0.75rem' },
