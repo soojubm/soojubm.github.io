@@ -67,10 +67,6 @@ const currentComponentRows = html`
     <td><code>page</code></td>
   </tr>
   <tr>
-    <th scope="row"><code>mm-toc</code></th>
-    <td><code>true</code></td>
-  </tr>
-  <tr>
     <th scope="row">theme-selector</th>
     <td><code>true</code></td>
   </tr>
