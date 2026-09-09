@@ -18,16 +18,16 @@
 }
 
 .is-observed .hero-eyebrow {
-  animation: fadeup var(--animation-duration) 0.1s backwards;
+  animation: fadeup var(--transition-duration-emphasis) 0.1s backwards;
 }
 .is-observed .hero-title {
-  animation: fadeup var(--animation-duration) var(--animation-delay-first) backwards;
+  animation: fadeup var(--transition-duration-emphasis) var(--animation-delay-first) backwards;
 }
 .is-observed .hero-description {
-  animation: fadeup var(--animation-duration) var(--animation-delay-second) backwards;
+  animation: fadeup var(--transition-duration-emphasis) var(--animation-delay-second) backwards;
 }
 .is-observed .hero-actions {
-  animation: fadeup var(--animation-duration) var(--animation-delay-third) backwards;
+  animation: fadeup var(--transition-duration-emphasis) var(--animation-delay-third) backwards;
 }
 .block:not(:last-child) {
   margin-bottom: 1.5rem;

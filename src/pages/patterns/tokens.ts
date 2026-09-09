@@ -445,13 +445,9 @@ const motionTracks: EasingTrack[] = [
 
 const transitionTokenItems: string[] = [
   'transition-duration',
+  'transition-duration-emphasis',
   'transition-easing',
   'transition-easing-emphasis',
-]
-
-const animationTokenItems: string[] = [
-  'duration-quickly',
-  'animation-duration',
   'animation-delay-first',
   'animation-delay-second',
   'animation-delay-third',
@@ -681,19 +677,12 @@ const main = html`
 
       <mm-token-section
         heading="Transition"
-        description="모든 transition은 하나의 duration을 공유하고 easing만 기본과 오버슈트(등장 강조)로 나뉩니다. 스테이지에 마우스를 올리면 두 easing의 차이를 볼 수 있습니다."
+        description="기본 모션은 duration과 easing을 하나씩 공유하고, 등장 강조 모션만 더 긴 duration과 오버슈트 easing을 씁니다. 순차 등장은 delay로 시차를 둡니다. 스테이지에 마우스를 올리면 두 easing의 차이를 볼 수 있습니다."
       >
         <mm-token-stage>
           <mm-flex direction="column" gap="4">${renderMotionStage(motionTracks)}</mm-flex>
         </mm-token-stage>
         <mm-token-group>${renderTokenItems(transitionTokenItems)}</mm-token-group>
-      </mm-token-section>
-
-      <mm-token-section
-        heading="Animation"
-        description="애니메이션 토큰은 등장·강조 모션의 길이와 순차 등장의 지연을 정의합니다."
-      >
-        <mm-token-group>${renderTokenItems(animationTokenItems)}</mm-token-group>
       </mm-token-section>
 
       <mm-component-references .items=${componentReferences}></mm-component-references>

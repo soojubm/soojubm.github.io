@@ -188,15 +188,12 @@
   --material-zindex-modal: 300; /* 모달, 다이얼로그, 시트 */
   --material-zindex-toast: 1000; /* 알림, 스낵바: 항상 최상단 */
 
-  --duration-quickly: 0.2s;
-
-  /* 모든 transition은 이 duration 하나를 쓴다.
-     easing만 기본과 오버슈트(등장 강조)로 나뉜다. */
+  /* 기본 모션은 이 duration 하나를 쓰고, 등장 강조 모션만 더 길게 간다.
+     easing도 같은 축으로 기본과 오버슈트(등장 강조)로 나뉜다. */
   --transition-duration: 180ms;
+  --transition-duration-emphasis: 0.4s;
   --transition-easing: cubic-bezier(0.4, 0, 0.2, 1);
   --transition-easing-emphasis: cubic-bezier(0.18, 1.25, 0.4, 1);
-
-  --animation-duration: 0.4s;
 
   --animation-delay-first: 0.2s;
   --animation-delay-second: 0.4s;
