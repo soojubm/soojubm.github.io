@@ -14,8 +14,4 @@ export const resultStyles = css`
   slot:not([name]) {
     width: 100%;
   }
-
-  [hidden] {
-    display: none;
-  }
 `

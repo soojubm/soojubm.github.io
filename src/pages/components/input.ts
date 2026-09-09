@@ -5,10 +5,14 @@ import type { ComponentPropItemData } from '@/components/domains/component/compo
 import type { ComponentReferenceItemData } from '@/components/domains/component/component-references'
 import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
 import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
+import type { ActionConfig } from '@/types'
 
 import { INPUT_TYPE_UNION } from '@/components/common/input/input'
 import { renderPage } from '@/components/layouts/base-layouts'
 import './input.css'
+
+const noResultPrimaryAction: ActionConfig = { label: '검색어 제공' }
+const noResultSecondaryAction: ActionConfig = { label: '애옹' }
 
 const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'textarea.html', label: 'Textarea' },
@@ -464,10 +468,11 @@ const main = html`
     </mm-component-section>
 
     <mm-component-section heading="No Result" description="일치하는 결과가 없습니다.">
-      <mm-result heading="'[키워드]'와(과) 일치하는 내용이 없습니다.">
-        <mm-button slot="action">검색어 제공</mm-button>
-        <mm-button slot="action">애옹</mm-button>
-      </mm-result>
+      <mm-result
+        heading="'[키워드]'와(과) 일치하는 내용이 없습니다."
+        .primaryAction=${noResultPrimaryAction}
+        .secondaryAction=${noResultSecondaryAction}
+      ></mm-result>
     </mm-component-section>
 
     <mm-component-section heading="Search Suggestion">

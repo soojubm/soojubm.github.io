@@ -19,9 +19,7 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'description', type: 'string', optional: true },
   { name: 'primaryAction', type: 'ActionConfig', optional: true },
   { name: 'secondaryAction', type: 'ActionConfig', optional: true },
-  { name: 'slot: avatar', type: 'HTMLElement', optional: true },
   { name: 'slot: default', type: 'HTMLElement', optional: true },
-  { name: 'slot: action', type: 'HTMLButtonElement', optional: true },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [

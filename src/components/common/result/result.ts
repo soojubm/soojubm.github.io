@@ -24,13 +24,10 @@ export class Result extends LitElement {
 
   render() {
     return html`
-      <slot name="avatar">${this.renderAvatar()}</slot>
+      ${this.renderAvatar()}
       <mm-status-message heading=${this.heading} message=${this.description}></mm-status-message>
       <slot></slot>
-      <mm-button-group justify-content="center" wrap>
-        ${this.renderSecondaryAction()} ${this.renderPrimaryAction()}
-        <slot name="action"></slot>
-      </mm-button-group>
+      ${this.renderActions()}
     `
   }
 
@@ -39,6 +36,16 @@ export class Result extends LitElement {
 
     return html`
       <mm-avatar size="80" variant="secondary" icon=${this.avatarIcon}></mm-avatar>
+    `
+  }
+
+  private renderActions() {
+    if (!this.primaryAction && !this.secondaryAction) return nothing
+
+    return html`
+      <mm-button-group justify-content="center">
+        ${this.renderSecondaryAction()} ${this.renderPrimaryAction()}
+      </mm-button-group>
     `
   }
 

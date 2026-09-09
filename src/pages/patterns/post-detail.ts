@@ -1,7 +1,11 @@
 import { html } from 'lit'
 import './post-detail.css'
 
+import type { ActionConfig } from '@/types'
+
 import { renderPage } from '@/components/layouts/base-layouts'
+
+const membershipAction: ActionConfig = { label: '멤버십 가입하기' }
 
 const main = html`
   <mm-page width="small">
@@ -133,6 +137,7 @@ const main = html`
       <mm-result
         heading="다음 내용이 궁금하신가요?"
         description="한 달 동안 무료로 모든 콘텐츠를 체험해보세요. 언제든 해지하실 수 있어요."
+        .primaryAction=${membershipAction}
       >
         <mm-text-list
           .texts=${[
@@ -142,7 +147,6 @@ const main = html`
             '개인적, 직업적 목표를 달성하세요',
           ]}
         ></mm-text-list>
-        <mm-button slot="action" variant="primary" size="large">멤버십 가입하기</mm-button>
       </mm-result>
       <div class="post-attract-blur"></div>
     </aside>
