@@ -18,8 +18,8 @@ const noticeVariantTokens = {
 export const noticeStyles = css`
   :host {
     display: flex;
-    flex-direction: column;
-    gap: var(--space-1);
+    align-items: flex-start;
+    gap: var(--space-2);
     width: 100%;
     padding: var(--notice-padding);
     box-sizing: border-box;
@@ -38,6 +38,18 @@ export const noticeStyles = css`
   }
 
   ${unsafeCSS(buildAttributeRules('variant', noticeVariantTokens))}
+
+  /* 첫 줄 line-box 안에서 아이콘을 텍스트 광학 중심에 맞춘다. */
+  .notice-icon {
+    margin-top: var(--space-1);
+  }
+
+  .notice-content {
+    display: flex;
+    gap: var(--space-2);
+    flex: 1;
+    min-width: 0;
+  }
 
   .notice-dismiss {
     position: absolute;

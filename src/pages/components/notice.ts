@@ -13,11 +13,10 @@ const relatedComponents: ComponentRelatedItemData[] = [
 ]
 
 const componentProps: ComponentPropItemData[] = [
-  { name: 'role', type: "string = 'note'", optional: true },
+  { name: 'role', type: "'alert' | 'note' | 'status' = 'note'", optional: true },
   { name: 'heading', type: 'string', optional: true },
   { name: 'description', type: 'string', optional: true },
   { name: 'variant', type: "'success' | 'warning' | 'danger'", optional: true },
-  { name: 'dismissible', type: 'boolean', optional: true },
   { name: 'dismiss', type: 'CustomEvent', kind: 'event' },
 ]
 
@@ -51,11 +50,11 @@ const main = html`
 
     <mm-component-example>
       <div style="max-width: 480px">
-        <mm-flex direction="column">
+        <mm-flex direction="column" gap="2">
           <mm-notice
             heading="헤딩"
             description="배너. 히어로와 콜아웃의 차이."
-            dismissible
+            @dismiss=${() => {}}
           ></mm-notice>
 
           <mm-notice variant="success" description="좋아요 표시한 동영상에 추가됨"></mm-notice>
@@ -78,6 +77,7 @@ const main = html`
         .texts=${[
           'role="alert" 속성이 있는 요소는 브라우저가 즉시 사용자에게 읽습니다. 긴급도가 낮은 알림에는 role="status"를 사용하세요.',
           '사용자 귀책이 아닌 경우 단순 "오류" 대신 "시스템 오류"처럼 책임 소재를 명확히 해 사용자가 위축되지 않도록 합니다.',
+          '닫기 버튼은 dismiss 이벤트를 구독할 때만 나타납니다.',
         ]}
       ></mm-text-list>
     </mm-component-guide>
