@@ -1,8 +1,13 @@
 import { css } from 'lit'
 
+import { surfaceBaseStyles } from '@/components/common/surface/surface.styles'
 import { focusRing, visuallyHidden } from '@/stylesheets/shared.styles'
 
 export const radioGroupStyles = css`
+  :host {
+    display: block;
+  }
+
   fieldset {
     border: none;
     padding: 0;
@@ -66,5 +71,48 @@ export const radioStyles = css`
   input:disabled ~ label {
     opacity: 0.5;
     cursor: not-allowed;
+  }
+`
+
+export const radioCardStyles = css`
+  :host {
+    display: block;
+  }
+
+  label {
+    ${surfaceBaseStyles};
+    --surface-border-radius: var(--radius-large);
+
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--space-3);
+  }
+
+  label > span {
+    flex-shrink: 0;
+    margin-block-start: var(--space-1);
+  }
+
+  slot {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+
+  input:not(:checked):not(:disabled) + label:hover {
+    --surface-background-color: var(--interaction-hover-background-color);
+  }
+
+  input[type='radio']:checked + label {
+    --surface-border: var(--border-width) solid var(--interaction-selected-border-color);
+    --surface-background-color: var(--interaction-selected-background-color);
+  }
+
+  input:focus-visible + label {
+    ${focusRing};
+  }
+
+  input:focus-visible + label > span {
+    outline: none;
   }
 `

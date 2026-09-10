@@ -1,7 +1,9 @@
 import { LitElement, html } from 'lit'
 import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
 
-import { Radio } from '@/components/common/radio/radio'
+import type { Radio } from '@/components/common/radio/radio'
+import type { RadioCard } from '@/components/common/radio/semantics/radio-card'
+
 import { radioGroupStyles } from '@/components/common/radio/radio.styles'
 import { SelectionGroupController } from '@/controllers/selection-group-controller'
 import { SingleSelectionController } from '@/controllers/single-selection-controller'
@@ -16,8 +18,8 @@ export class RadioGroup extends LitElement {
   @property({ type: Boolean }) disabled = false
   @property({ type: String }) legend = ''
 
-  @queryAssignedElements({ selector: 'mm-radio' })
-  private radios!: Radio[]
+  @queryAssignedElements({ selector: 'mm-radio, mm-radio-card' })
+  private radios!: (Radio | RadioCard)[]
 
   private selection = new SingleSelectionController(this, {
     getValue: () => this.value,
@@ -26,7 +28,7 @@ export class RadioGroup extends LitElement {
     },
   })
 
-  private group = new SelectionGroupController<Radio>({
+  private group = new SelectionGroupController<Radio | RadioCard>({
     selection: this.selection,
     getItems: () => this.radios,
     isEmpty: () => !this.value,

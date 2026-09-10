@@ -30,32 +30,35 @@ const surfaceVariants: Record<SurfaceVariant, Record<string, string>> = {
   },
 }
 
-const surfaceBaseStyles = css`
-  :host {
-    --surface-height: auto;
-    --surface-padding: var(--space-4);
-    --surface-border: var(--border);
-    --surface-border-radius: var(--radius);
-    --surface-background-color: var(--background-color);
-    --surface-text-color: inherit;
-    --surface-shadow: none;
+/**
+ * surface 면 선언. 면을 맡을 선택자는 사용부가 정한다.
+ * 모든 값이 --surface-* 토큰을 거치므로 variant든 선택·hover 상태든
+ * 속성을 다시 선언하지 않고 토큰만 재할당한다.
+ */
+export const surfaceBaseStyles = css`
+  --surface-height: auto;
+  --surface-padding: var(--space-4);
+  --surface-border: var(--border);
+  --surface-border-radius: var(--radius);
+  --surface-background-color: var(--background-color);
+  --surface-text-color: inherit;
+  --surface-shadow: none;
 
-    display: flex;
-    flex-direction: column;
-    height: var(--surface-height);
-    width: 100%;
-    padding: var(--surface-padding);
-    border: var(--surface-border);
-    border-radius: var(--surface-border-radius);
-    box-sizing: border-box;
-    background: var(--surface-background-color);
-    color: var(--surface-text-color);
-    box-shadow: var(--surface-shadow);
+  display: flex;
+  flex-direction: column;
+  height: var(--surface-height);
+  width: 100%;
+  padding: var(--surface-padding);
+  border: var(--surface-border);
+  border-radius: var(--surface-border-radius);
+  box-sizing: border-box;
+  background: var(--surface-background-color);
+  color: var(--surface-text-color);
+  box-shadow: var(--surface-shadow);
 
-    position: relative;
-    z-index: var(--material-zindex-raised);
-    transition: box-shadow var(--transition-duration) var(--transition-easing);
-  }
+  position: relative;
+  z-index: var(--material-zindex-raised);
+  transition: box-shadow var(--transition-duration) var(--transition-easing);
 `
 
 const surfaceRadiusTokens = {
@@ -81,7 +84,11 @@ const surfaceVariantStyles = css`
 `
 
 export const surfaceStyles = [
-  surfaceBaseStyles,
+  css`
+    :host {
+      ${surfaceBaseStyles};
+    }
+  `,
   surfaceRadiusStyles,
   surfaceDensityStyles,
   surfaceVariantStyles,

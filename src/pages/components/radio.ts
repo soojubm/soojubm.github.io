@@ -2,6 +2,7 @@ import { html } from 'lit'
 
 import type { ComponentFeatureItem } from '@/components/domains/component/component-feature-list'
 import type { ComponentPropItemData } from '@/components/domains/component/component-props'
+import type { ComponentReferenceItemData } from '@/components/domains/component/component-references'
 import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
 import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
 
@@ -10,6 +11,25 @@ import { renderPage } from '@/components/layouts/base-layouts'
 const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'checkbox.html', label: 'Checkbox' },
   { href: 'switch.html', label: 'Switch' },
+]
+
+// 카드형 라디오를 별도 페이지로 문서화하는 디자인 시스템.
+const componentReferences: ComponentReferenceItemData[] = [
+  {
+    href: 'https://www.chakra-ui.com/docs/components/radio-card',
+    label: 'Chakra UI - Radio Card',
+    external: true,
+  },
+  {
+    href: 'https://carbondesignsystem.com/components/tile/usage/',
+    label: 'Carbon - Selectable Tile',
+    external: true,
+  },
+  {
+    href: 'https://www.lightningdesignsystem.com/components/visual-picker/',
+    label: 'Lightning - Visual Picker',
+    external: true,
+  },
 ]
 
 const componentProps: ComponentPropItemData[] = [
@@ -82,16 +102,33 @@ const main = html`
       <mm-radio value="premium" checked>프리미엄 요금제</mm-radio>
     </mm-component-anatomy>
 
-    <mm-component-section heading="Radio?" description="">
-      <mm-surface variant="elevated">
-        <mm-radio name="gender" value="">
-          <mm-paragraph color="light">Standard License</mm-paragraph>
-          <mm-paragraph>₩ 2,000</mm-paragraph>
-          <mm-tag>460P 적립</mm-tag>
-        </mm-radio>
-      </mm-surface>
+    <mm-component-section
+      heading="RadioCard"
+      description="레이블만으로 부족해 가격·배지·설명을 담아야 할 때, 면 전체를 선택지로 만듭니다. 그룹·단일 선택 규칙은 라디오와 같아 mm-radio-group으로 묶습니다."
+    >
+      <mm-radio-group name="license" value="standard" style="max-width: 420px">
+        <mm-radio-card value="standard" checked>
+          <mm-text weight="bold">Standard License</mm-text>
+          <mm-paragraph color="light">개인·사내 프로젝트에 사용할 수 있습니다.</mm-paragraph>
+          <mm-flex align-items="center" gap="2">
+            <mm-text>₩ 2,000</mm-text>
+            <mm-tag>460P 적립</mm-tag>
+          </mm-flex>
+        </mm-radio-card>
+        <mm-radio-card value="extended">
+          <mm-text weight="bold">Extended License</mm-text>
+          <mm-paragraph color="light">재판매·배포용 제품에 포함할 수 있습니다.</mm-paragraph>
+          <mm-flex align-items="center" gap="2">
+            <mm-text>₩ 12,000</mm-text>
+            <mm-tag>2,760P 적립</mm-tag>
+          </mm-flex>
+        </mm-radio-card>
+      </mm-radio-group>
     </mm-component-section>
+
     <mm-component-related .items=${relatedComponents}></mm-component-related>
+
+    <mm-component-references .items=${componentReferences}></mm-component-references>
   </mm-page>
 `
 
