@@ -224,7 +224,7 @@ const main = html`
         <mm-foundation-item
           href="./layout.html"
           heading="Layout"
-          description="컨테이너 너비와 대비로 페이지의 성격과 작업 맥락을 담습니다."
+          description="컨테이너 너비와 배경·표면 대비로 페이지의 성격과 작업 맥락을 담습니다."
         ></mm-foundation-item>
         <mm-foundation-item
           href="./interaction.html"
@@ -245,11 +245,6 @@ const main = html`
           href="./content.html"
           heading="Content"
           description="텍스트 슬롯의 이름과 어조, 아이콘의 의미, 스캔 가능한 문구 원칙입니다."
-        ></mm-foundation-item>
-        <mm-foundation-item
-          href="./elevation.html"
-          heading="Elevation"
-          description="표면이 배경에서 얼마나 떠 있는지를 그림자 단계로 나타냅니다."
         ></mm-foundation-item>
       </mm-grid>
 

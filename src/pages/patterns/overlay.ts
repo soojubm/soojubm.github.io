@@ -154,9 +154,8 @@ const main = html`
           ></mm-list-item>
         </mm-flex>
         <mm-paragraph>
-          여기서 정하는 건 paint order뿐입니다. 표면이 떠 보이게 하는 그림자·대비는
-          <mm-link href="./elevation.html">Elevation</mm-link>
-          이, chrome 레이어를 쓰는 고정 내비게이션은
+          여기서 정하는 건 paint order뿐입니다. 표면이 떠 보이게 하는 그림자·대비와 chrome 레이어를
+          쓰는 고정 내비게이션은
           <mm-link href="./layout.html">Layout</mm-link>
           이 다룹니다.
         </mm-paragraph>

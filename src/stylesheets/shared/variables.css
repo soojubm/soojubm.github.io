@@ -141,7 +141,7 @@
   --radius-large: 1rem;
   --radius-full: 50%;
 
-  /* 고도(elevation) 그림자 원시값. 표면(카드·팝오버·툴팁 등) 전용이며 일반 컨트롤에는 주지 않는다. */
+  /* 층위 그림자 원시값. 독립된 배경을 가진 표면 전용이며 컨트롤 요소에는 주지 않는다. */
   --shadow-high: 0 4px 12px rgba(0, 0, 0, 0.15);
 
   /* navbar-user 같은 control pill의 모양 토큰(테마 무관 고정값이라 :root 선언이 안전하다) */

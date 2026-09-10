@@ -94,12 +94,9 @@
 - hover 처리 종류(배경 채움 → `--interaction-hover-background-color`, 떠오름 → `--interaction-hover-lift`, 테두리 드러내기 → `--border`)는 Interaction 문서의 표를 따라 요소가 무엇을 가졌는지로 고른다.
 - hover 배경 채움을 위해 요소에 `padding`·`margin`을 새로 주지 않는다. 레이아웃 박스가 밀린다. 채울 면은 `isolation: isolate`를 준 요소 위에 `position: absolute; inset: 0`인 `::before` 레이어로 깔고, 여백이 필요하면 `inset`을 음수로 바깥으로 흘린다.
 
-### 테마
+### 층위
 
-- 고도(elevation) 그림자는 원시값 `--shadow-high`를 쓰고, 표면(카드·팝오버·툴팁 등) 전용이며 radio·switch 같은 일반 컨트롤 요소에는 주지 않는다.
-
-### 레이어(z-index)
-
+- 층위 그림자는 원시값 `--shadow-high` 하나를 쓰고, 독립된 배경을 가진 표면에만 준다. 배경 안에 놓이는 컨트롤 요소에는 주지 않는다.
 - 겹침 순서가 필요하면 숫자를 직접 쓰지 않고 `--material-zindex-*` 그룹 토큰을 쓴다. 같은 그룹 안에서만 값을 비교하고, 그룹을 벗어난 상대적 크기 비교에 기대지 않는다.
 - base·raised는 콘텐츠 안에서 형제 요소보다 살짝 뜨는 로컬 정도만 표현한다.
 - overlay·modal·chrome·toast는 화면 위로 뜨는 시스템 레벨 요소가 쓴다: 드롭다운·팝오버·툴팁은 overlay, 화면을 덮는 대화형 표면(backdrop·sheet)은 modal, 화면에 고정된 내비게이션·툴바(navbar, 사이드 메뉴, top-bar의 sticky 상태, fixed-bottom 안의 bottom-bar)는 chrome, 항상 최상단이어야 하는 알림은 toast를 쓴다.

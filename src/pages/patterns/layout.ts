@@ -23,16 +23,24 @@ const main = html`
           ></mm-feature>
           <mm-feature
             heading="표면 대비로 작업 단위를 묶는다"
-            description="폼·카드·편집 영역처럼 독립적으로 다루는 묶음은 표면으로 올려 주변 콘텐츠와 분리합니다."
+            description="폼·카드·편집 영역처럼 독립적으로 다루는 묶음은 표면으로 올려 주변 콘텐츠와 분리합니다. 명도 대비가 먼저 층위를 만들고, 그림자는 그 위에서 떠 있는 정도를 더합니다."
           ></mm-feature>
         </mm-feature-group>
       </mm-content-section>
 
-      <mm-content-section heading-level="3" heading="앱 셸 영역">
+      <mm-content-section heading-level="3" heading="층위">
+        <mm-paragraph>
+          독립된 배경을 가진 표면만 떠오릅니다. 배경 안에 놓이는 radio·switch 같은 컨트롤에는
+          그림자를 주지 않습니다. 밝은 테마는 그림자로, 어두운 테마는 배경 대비로, 반투명 테마는
+          blur로 같은 층위를 표현하므로, 표면은 그림자 값을 스스로 선언하지 않고 테마 토큰을
+          참조합니다.
+        </mm-paragraph>
         <mm-paragraph>
           화면에 고정된 내비게이션(chrome)이 콘텐츠(base)를 감싸고, 드롭다운·팝오버처럼 잠깐 뜨는
           표면(overlay)은 그 위로 겹칩니다. 전역 내비게이션은 페이지에 고정된 바보다 위에 남아야
-          하므로 chrome-top을 씁니다. 겹침 순서는 --material-zindex-* 그룹 토큰이 정합니다.
+          하므로 chrome-top을 씁니다. 같은 이름이 그림자 단계이자 겹침 순서이며, paint order 규칙은
+          <mm-link href="./overlay.html">Overlay</mm-link>
+          가 다룹니다.
         </mm-paragraph>
         <div class="app-shell">
           <mm-surface variant="outlined" density="compact" class="app-shell-topbar">
@@ -81,7 +89,8 @@ const main = html`
         <mm-text-list
           .texts=${[
             '화면 크기를 고정하지 않습니다. 375px 같은 고정 폭이 아니라 콘텐츠 성격에 맞는 최대 폭 토큰을 쓰고 나머지는 환경에 맡깁니다.',
-            '한 페이지에서 대비는 한 단계만 씁니다. 배경·표면·컨테이너를 동시에 여러 단계로 겹치면 위계가 무너집니다.',
+            '한 화면에서 대비는 한 단계만 씁니다. 배경·표면·그림자를 동시에 여러 단계로 겹치면 위계가 무너집니다.',
+            'hover에서 잠깐 떠오르는 --interaction-hover-lift는 상호작용 피드백이지 층위가 아닙니다. 정적인 층위와 섞어 쓰지 않습니다.',
             '레이블이 잘리면 말줄임표로 감추지 말고 문구를 다듬습니다. 엄격한 writing 가이드가 툴의 자동 축약보다 우선합니다.',
           ]}
         ></mm-text-list>

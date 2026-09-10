@@ -260,8 +260,8 @@ const main = html`
         <mm-menu-item-disclosure icon="palette" label="Foundations" open>
           <mm-menu-item-link
             emoji="#"
-            label="Elevation"
-            href="elevation.html"
+            label="Interaction"
+            href="interaction.html"
             target="_self"
             hidden-trailing
           ></mm-menu-item-link>
