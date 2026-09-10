@@ -18,13 +18,17 @@ import { horizontalScrollRowStyles, resetStyles } from '@/stylesheets/shared.sty
 export class SearchSuggestions extends LitElement {
   static styles = [
     resetStyles,
-    horizontalScrollRowStyles,
     css`
       :host {
+        ${horizontalScrollRowStyles};
         --_bleed: 0px;
 
         margin-inline: calc(-1 * var(--_bleed));
         padding-inline: var(--_bleed);
+      }
+
+      :host::-webkit-scrollbar {
+        display: none;
       }
 
       :host([fade]) {

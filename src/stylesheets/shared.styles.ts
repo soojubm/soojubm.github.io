@@ -48,7 +48,7 @@ export const interactiveElement = unsafeCSS(
 )
 
 /** 공유 focus 링 선언. --interaction-focus-outline 토큰을 소비하는 선택자 안에 펼쳐 쓴다. */
-export const focusRing = css`
+export const focusRingStyles = css`
   outline: var(--interaction-focus-outline);
   outline-offset: 2px;
 `
@@ -57,7 +57,7 @@ export const focusRing = css`
  * 화면에서만 감추고 접근성 트리에는 남기는 선언. 감출 요소의 선택자 안에 펼쳐 쓴다.
  * display·visibility로 감추면 스크린리더에서도 사라지므로 클립으로 밀어낸다.
  */
-export const visuallyHidden = css`
+export const visuallyHiddenStyles = css`
   position: absolute;
   width: 1px;
   height: 1px;
@@ -97,19 +97,16 @@ export const scrollbarStyles = css`
   }
 `
 
-/** chat-suggestions·search-suggestions처럼 스크롤바 없이 가로로 넘어가는 행이 공유하는 규칙. */
+/**
+ * 스크롤바 없이 가로로 넘어가는 행 선언. 행을 맡을 선택자는 사용부가 정하며,
+ * WebKit 스크롤바는 그 선택자의 ::-webkit-scrollbar에서 함께 감춘다.
+ */
 export const horizontalScrollRowStyles = css`
-  :host {
-    display: flex;
-    gap: var(--space-2);
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-
-  :host::-webkit-scrollbar {
-    display: none;
-  }
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 `

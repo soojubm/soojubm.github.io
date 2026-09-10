@@ -5,7 +5,7 @@ import { ifDefined } from 'lit/directives/if-defined.js'
 import { ICON_NAMES, type IconName } from '@/components/common/icon/icon-names'
 import '@/components/common/text/semantics/caption'
 import { SelectionIndicatorController } from '@/controllers/selection-indicator-controller'
-import { focusRing } from '@/stylesheets/shared.styles'
+import { focusRingStyles } from '@/stylesheets/shared.styles'
 import { emit } from '@/utils'
 import '@/components/common/avatar'
 
@@ -56,7 +56,7 @@ export class BottomBar extends LitElement {
     }
 
     a:focus-visible {
-      ${focusRing};
+      ${focusRingStyles};
     }
 
     a[aria-current='page'] {

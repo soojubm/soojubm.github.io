@@ -1,7 +1,7 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import { focusRing, interactiveElement, resetStyles } from '@/stylesheets/shared.styles'
+import { focusRingStyles, interactiveElement, resetStyles } from '@/stylesheets/shared.styles'
 import '@/components/common/icon-button/semantics/more-button'
 import { emit } from '@/utils'
 import '@/components/common/tag/semantics/accent-tag'
@@ -40,7 +40,7 @@ export class PortfolioItem extends LitElement {
       }
 
       ${interactiveElement}:focus-visible {
-        ${focusRing}
+        ${focusRingStyles}
       }
 
       .badge,

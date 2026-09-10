@@ -1,13 +1,13 @@
 import { css, unsafeCSS } from 'lit'
 
-import { focusRing, interactiveElement } from '@/stylesheets/shared.styles'
+import { focusRingStyles, interactiveElement } from '@/stylesheets/shared.styles'
 import { buildAttributeRules } from '@/utils'
 
 /** button 태그뿐 아니라 mm-hashtag-link 등 a 기반 파생 컴포넌트도 같은 스킨을 그대로 가져다 쓰도록 공용 상호작용 선택자로 잡는다. */
 export const interactiveControlStyles = css`
   ${interactiveElement} {
     &:focus-visible {
-      ${focusRing};
+      ${focusRingStyles};
     }
 
     &:disabled {

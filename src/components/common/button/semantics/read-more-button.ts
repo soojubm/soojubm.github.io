@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 
 import type { AriaBoolean, AriaIdRef } from '@/types'
 
-import { focusRing } from '@/stylesheets/shared.styles'
+import { focusRingStyles } from '@/stylesheets/shared.styles'
 
 /**
  * 인라인 "더 보기 / 접기" 토글 버튼.
@@ -25,7 +25,7 @@ export class ReadMoreButton extends LitElement {
       cursor: pointer;
 
       &:focus-visible {
-        ${focusRing}
+        ${focusRingStyles}
       }
     }
   `

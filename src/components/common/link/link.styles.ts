@@ -1,6 +1,6 @@
 import { css } from 'lit'
 
-import { focusRing } from '@/stylesheets/shared.styles'
+import { focusRingStyles } from '@/stylesheets/shared.styles'
 
 export const linkStyles = css`
   :host {
@@ -20,6 +20,6 @@ export const linkStyles = css`
   }
 
   .link:focus-visible {
-    ${focusRing}
+    ${focusRingStyles}
   }
 `

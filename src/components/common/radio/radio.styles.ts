@@ -1,7 +1,7 @@
 import { css } from 'lit'
 
 import { surfaceBaseStyles } from '@/components/common/surface/surface.styles'
-import { focusRing, visuallyHidden } from '@/stylesheets/shared.styles'
+import { focusRingStyles, visuallyHiddenStyles } from '@/stylesheets/shared.styles'
 
 export const radioGroupStyles = css`
   :host {
@@ -23,7 +23,7 @@ export const radioGroupStyles = css`
 
   /* 그룹 이름은 스크린리더에만 전달한다. */
   legend {
-    ${visuallyHidden};
+    ${visuallyHiddenStyles};
   }
 `
 
@@ -33,7 +33,6 @@ export const radioStyles = css`
     --radio-border-radius: var(--radius-full);
     --radio-border-color: var(--border-color);
     --radio-background-color: var(--background-color);
-    gap: var(--space-2);
   }
 
   label {
@@ -65,7 +64,7 @@ export const radioStyles = css`
   }
 
   input:focus-visible + label > span {
-    ${focusRing};
+    ${focusRingStyles};
   }
 
   input:disabled ~ label {
@@ -109,7 +108,7 @@ export const radioCardStyles = css`
   }
 
   input:focus-visible + label {
-    ${focusRing};
+    ${focusRingStyles};
   }
 
   input:focus-visible + label > span {

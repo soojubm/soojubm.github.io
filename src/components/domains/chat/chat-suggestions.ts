@@ -15,8 +15,15 @@ import { horizontalScrollRowStyles, resetStyles } from '@/stylesheets/shared.sty
 export class ChatSuggestions extends LitElement {
   static styles = [
     resetStyles,
-    horizontalScrollRowStyles,
     css`
+      :host {
+        ${horizontalScrollRowStyles};
+      }
+
+      :host::-webkit-scrollbar {
+        display: none;
+      }
+
       ::slotted(mm-chat-suggestion) {
         flex-shrink: 0;
       }

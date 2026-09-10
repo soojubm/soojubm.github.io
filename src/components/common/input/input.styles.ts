@@ -1,11 +1,11 @@
 import { css } from 'lit'
 
-import { visuallyHidden } from '@/stylesheets/shared.styles'
+import { visuallyHiddenStyles } from '@/stylesheets/shared.styles'
 
 /** radio·checkbox처럼 네이티브 input을 시각적으로 숨기고 label의 인디케이터로 대체하는 컨트롤이 공유하는 규칙. */
 export const visuallyHiddenInputStyles = css`
   input {
-    ${visuallyHidden};
+    ${visuallyHiddenStyles};
     cursor: pointer;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -109,7 +109,7 @@ export const textfieldStyles = [
 
     /* 라벨을 시각적으로만 감추고 스크린리더에는 남김 (for 연결 유지) */
     :host([hidden-label]) mm-textfield-label {
-      ${visuallyHidden};
+      ${visuallyHiddenStyles};
     }
   `,
 ]

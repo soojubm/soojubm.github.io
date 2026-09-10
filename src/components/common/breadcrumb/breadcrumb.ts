@@ -2,7 +2,7 @@ import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
-import { focusRing } from '@/stylesheets/shared.styles'
+import { focusRingStyles } from '@/stylesheets/shared.styles'
 import '@/components/common/text/text'
 
 export interface BreadcrumbItem {
@@ -53,7 +53,7 @@ export class Breadcrumb extends LitElement {
       }
 
       &:focus-visible {
-        ${focusRing}
+        ${focusRingStyles}
       }
     }
   `

@@ -1,6 +1,6 @@
 import { css } from 'lit'
 
-import { focusRing } from '@/stylesheets/shared.styles'
+import { focusRingStyles } from '@/stylesheets/shared.styles'
 
 export const switchStyles = css`
   :host {
@@ -14,7 +14,7 @@ export const switchStyles = css`
   }
 
   input:focus-visible + label:before {
-    ${focusRing};
+    ${focusRingStyles};
   }
 
   input {

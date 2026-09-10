@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 
 import type { AriaBoolean } from '@/types'
 
-import { focusRing } from '@/stylesheets/shared.styles'
+import { focusRingStyles } from '@/stylesheets/shared.styles'
 import { emit } from '@/utils'
 
 @customElement('mm-tab')
@@ -41,7 +41,7 @@ export class Tab extends LitElement {
     }
 
     :host(:focus-visible) {
-      ${focusRing}
+      ${focusRingStyles}
     }
 
     /* 부모 탭리스트가 pill 형태일 때 활성화된 글자 색상을 커스텀하고 싶다면 하단 주석 해제 */
