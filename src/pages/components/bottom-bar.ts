@@ -43,9 +43,7 @@ const main = html`
 
     <mm-component-props .props=${componentProps}></mm-component-props>
 
-    <mm-component-guide>
-      <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
-    </mm-component-guide>
+    <mm-component-guide .features=${componentFeatures}></mm-component-guide>
 
     <mm-component-anatomy
       .code=${`<mm-bottom-bar

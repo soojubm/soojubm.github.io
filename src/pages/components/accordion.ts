@@ -80,8 +80,7 @@ const main = html`
 
     <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
 
-    <mm-component-guide>
-      <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
+    <mm-component-guide .features=${componentFeatures}>
       <mm-paragraph-group>
         <mm-heading level="3">언제 사용하나요</mm-heading>
         <mm-paragraph>

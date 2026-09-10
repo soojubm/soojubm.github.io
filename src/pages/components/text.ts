@@ -71,8 +71,7 @@ const main = html`
     </mm-component-example>
     <mm-component-props .props=${componentProps}></mm-component-props>
 
-    <mm-component-guide>
-      <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
+    <mm-component-guide .features=${componentFeatures}>
       <mm-text-list
         .texts=${[
           '피그마에서 소숫점 올림한다. line height를 고정값을 사용하는 것이 토큰화에도 좋다. (TODO 아이콘과 텍스트의 가운데 정렬 문제에 대하여)',

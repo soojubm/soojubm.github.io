@@ -58,8 +58,7 @@ const main = html`
 
     <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
 
-    <mm-component-guide>
-      <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
+    <mm-component-guide .features=${componentFeatures}>
       <mm-text-list
         .texts=${[
           '열림 상태는 popover가 소유한다. 트리거는 항상 slot=trigger로 넣으며, popover가 스스로 positioned 앵커가 되어 별도 래퍼가 필요 없고, 클릭 토글·외부 클릭·ESC 닫기·aria-expanded 반영까지 자동으로 연결된다.',

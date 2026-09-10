@@ -171,8 +171,7 @@ const main = html`
 
     <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
 
-    <mm-component-guide>
-      <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
+    <mm-component-guide .features=${componentFeatures}>
       <mm-text-list .texts=${guideTexts}></mm-text-list>
     </mm-component-guide>
 

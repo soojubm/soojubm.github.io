@@ -49,8 +49,7 @@ const main = html`
 
     <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
 
-    <mm-component-guide>
-      <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
+    <mm-component-guide .features=${componentFeatures}>
       <mm-text-list
         .texts=${[
           'flat sitemap 또는 모바일에서의 레이어 구조 때문에 사용빈도가 낮아짐. 네비게이션 바. 대부분의 경우 불필요하다. 도움말, 상품 카테고리 구조에서 제한적으로 사용? (foundation. flat sitemap. 페이지 댑스의 제한). 페이지 제목이 길어지는 케이스.',

@@ -70,8 +70,7 @@ const main = html`
 
     <mm-component-props .props=${componentProps}></mm-component-props>
 
-    <mm-component-guide>
-      <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
+    <mm-component-guide .features=${componentFeatures}>
       <mm-text-list
         .texts=${[
           '미리보기가 의미 있는 이미지는 썸네일로, 그 외 파일은 유형과 크기로 표현합니다.',

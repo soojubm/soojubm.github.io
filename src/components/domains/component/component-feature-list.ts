@@ -42,11 +42,7 @@ export class ComponentFeatureList extends LitElement {
 
   @property({ attribute: false }) features: ComponentFeatureItem[] = []
 
-  @property({ type: Boolean, reflect: true }) centered = false
-
   render() {
-    if (!this.features.length) return nothing
-
     return html`
       <mm-feature-group columns="2">
         ${this.features.map(
@@ -55,7 +51,6 @@ export class ComponentFeatureList extends LitElement {
               heading=${feature.heading}
               description=${feature.description}
               icon=${feature.icon ?? FEATURE_ICONS[feature.heading] ?? nothing}
-              ?centered=${this.centered}
             ></mm-feature>
           `,
         )}

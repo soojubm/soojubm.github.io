@@ -143,9 +143,7 @@ const main = html`
 
     <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
 
-    <mm-component-guide>
-      <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
-
+    <mm-component-guide .features=${componentFeatures}>
       <mm-paragraph>
         Make sure the controls within a pane affect content only in the same pane. Panes are
         mutually exclusive, so ensure they're fully self-contained. Use a segmented control to

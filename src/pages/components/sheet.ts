@@ -100,9 +100,7 @@ function sheetPageTemplate() {
 
       <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
 
-      <mm-component-guide>
-        <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
-      </mm-component-guide>
+      <mm-component-guide .features=${componentFeatures}></mm-component-guide>
 
       <mm-component-anatomy
         .code=${`<mm-button aria-controls="filter-sheet">필터</mm-button>

@@ -65,8 +65,7 @@ const main = html`
 
     <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
 
-    <mm-component-guide>
-      <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
+    <mm-component-guide .features=${componentFeatures}>
       <mm-paragraph>
         놓쳐도 되는 정보에만 씁니다. 사용자의 확인이 필요하면 dialog, 화면에 계속 남아야 하면
         notice를 쓰고, role="status"로 두어 스크린리더가 흐름을 끊지 않고 읽게 합니다.

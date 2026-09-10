@@ -160,9 +160,7 @@ const main = html`
 
     <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
 
-    <mm-component-guide>
-      <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
-
+    <mm-component-guide .features=${componentFeatures}>
       <mm-paragraph-group>
         <mm-paragraph size="large">
           chip/button small - 사용자 여정을 보조하는 액션입니다. 사용자는 페이지 내에서 즉각적인
