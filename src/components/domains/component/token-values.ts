@@ -33,8 +33,5 @@ export const tokenAliases = (name: string) => aliasNames.get(name) ?? []
 export const computedTokenValue = (name: string, element: Element) =>
   getComputedStyle(element).getPropertyValue(`--${name}`).trim()
 
-/** :root 자리에서 계산된 토큰 값. 테마와 무관한 값을 문서가 그대로 인용할 때 쓴다. */
-export const rootTokenValue = (name: string) => computedTokenValue(name, document.documentElement)
-
 /** 값의 종류를 나타내는 접미사를 뗀 표시 이름. `background-subtle-color` → `background-subtle` */
 export const tokenDisplayName = (name: string) => name.replace(/-color$/, '')

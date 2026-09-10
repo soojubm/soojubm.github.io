@@ -13,5 +13,6 @@ import '@/components/domains/component/token-group'
 import '@/components/domains/component/token-item'
 import '@/components/domains/component/token-section'
 import '@/components/domains/component/token-stage'
+import '@/components/domains/component/type-specimen'
 
 export {}

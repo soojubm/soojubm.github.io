@@ -2,8 +2,7 @@ import { html, nothing } from 'lit'
 
 import type { ComponentReferenceItemData } from '@/components/domains/component/component-references'
 
-import { TEXT_SIZE_TOKENS } from '@/components/common/text/text.styles'
-import { rootTokenNames, rootTokenValue } from '@/components/domains/component/token-values'
+import { rootTokenNames } from '@/components/domains/component/token-values'
 import { renderPage } from '@/components/layouts/base-layouts'
 import './tokens.css'
 
@@ -90,6 +89,9 @@ const tokensBySection = groupedTokens()
 
 const sectionTokens = (key: keyof typeof sectionPatterns | 'other') => tokensBySection[key] ?? []
 
+/** 타이포그래피 스펙시멘으로 소개할 mm-text의 size 단계. 값과 행간은 스펙시멘이 직접 잰다. */
+const TEXT_SIZES = ['12', '14', '18', '24', '32']
+
 const renderTokenItems = (keys: string[]) =>
   keys.map(
     key => html`
@@ -125,24 +127,6 @@ const sizeSwatches = (tokens: string[]) =>
   )
 
 const shadowSwatches = (tokens: string[]) => tokens.map(token => `box-shadow: var(--${token})`)
-
-/** 큰 글자는 한 바퀴가 길어 같은 속도로는 느리게 읽힌다. 가장 큰 단계만 속도를 올린다. */
-const specimenSpeed = (size: string) => (size === '32' ? '80' : '64')
-
-const renderTypeSpecimens = () =>
-  TEXT_SIZE_TOKENS.map(
-    ({ size, fontSize, lineHeight }) => html`
-      <mm-surface variant="outlined" radius="large">
-        <mm-marquee gap="4" speed=${specimenSpeed(size)} pause-on-hover>
-          <mm-text size=${size} weight="bold">
-            font-family: ${rootTokenValue('font-family')}
-          </mm-text>
-          <mm-text size=${size} weight="bold">font-size: ${rootTokenValue(fontSize)}</mm-text>
-          <mm-text size=${size} weight="bold">line-height: ${rootTokenValue(lineHeight)}</mm-text>
-        </mm-marquee>
-      </mm-surface>
-    `,
-  )
 
 const renderSpaceStage = (tokens: string[]) =>
   tokens.map(
@@ -202,12 +186,15 @@ const renderBackgroundTokens = (names: string[]) =>
 /** 음수 토큰은 폭으로 그릴 수 없어 스테이지에서 뺀다. 목록 끝에 있으므로 번호는 그대로 맞는다. */
 const spaceStageTokens = sectionTokens('space').filter(name => !name.endsWith('-minus'))
 
-const blurSwatches = ['chrome', 'overlay'].map(
-  tier =>
-    `background: rgb(255 255 255 / var(--surface-${tier}-opacity));
-     backdrop-filter: blur(var(--surface-${tier}-blur));
-     -webkit-backdrop-filter: blur(var(--surface-${tier}-blur))`,
-)
+// 티어가 둘뿐이라 토큰 이름을 조립하지 않고 그대로 적는다. 이름이 소스에 남아야 쓰임이 보인다.
+const blurSwatches = [
+  `background: rgb(255 255 255 / var(--surface-chrome-opacity));
+   backdrop-filter: blur(var(--surface-chrome-blur));
+   -webkit-backdrop-filter: blur(var(--surface-chrome-blur))`,
+  `background: rgb(255 255 255 / var(--surface-overlay-opacity));
+   backdrop-filter: blur(var(--surface-overlay-blur));
+   -webkit-backdrop-filter: blur(var(--surface-overlay-blur))`,
+]
 
 /**
  * 경계의 역할별 변형. border-color·border-width는 조립 재료라 혼자서는 그릴 수 없어
@@ -319,7 +306,13 @@ const main = html`
         heading="Typography"
         description="타이포그래피 토큰은 크기와 고정 행간을 함께 사용합니다. 행간은 컴포넌트의 역할에 맞춰 조합합니다."
       >
-        <mm-flex direction="column" gap="4">${renderTypeSpecimens()}</mm-flex>
+        <mm-flex direction="column" gap="4">
+          ${TEXT_SIZES.map(
+            size => html`
+              <mm-type-specimen size=${size}></mm-type-specimen>
+            `,
+          )}
+        </mm-flex>
 
         <mm-token-group>${renderTokenItems(sectionTokens('typography'))}</mm-token-group>
       </mm-token-section>
