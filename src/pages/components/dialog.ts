@@ -89,6 +89,18 @@ const main = html`
         ]}
       ></mm-text-list>
     </mm-component-guide>
+
+    <mm-component-anatomy
+      .code=${`<mm-button aria-controls="confirm-dialog">나가기</mm-button>
+
+<mm-dialog
+    id="confirm-dialog"
+    heading="페이지를 나가시겠어요?"
+    description="저장되지 않은 변경 사항이 있습니다."
+    .primaryAction=\${primaryAction}
+    .secondaryAction=\${secondaryAction}
+></mm-dialog>`}
+    ></mm-component-anatomy>
     <mm-component-related .items=${relatedComponents}></mm-component-related>
   </mm-page>
 `

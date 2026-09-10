@@ -69,6 +69,8 @@ const main = html`
         ]}
       ></mm-text-list>
     </mm-component-guide>
+
+    <mm-component-anatomy .code=${'<mm-separator>또는</mm-separator>'}></mm-component-anatomy>
     <mm-component-related .items=${relatedComponents}></mm-component-related>
   </mm-page>
 `

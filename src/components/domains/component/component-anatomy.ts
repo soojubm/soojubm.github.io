@@ -27,6 +27,9 @@ export interface AnatomyMarkerData {
  * 무대 위에 그 번호를 찍습니다. 번호는 배열 순서에서 나오므로 범례와 어긋날 수 없습니다.
  * 나눌 구성요소가 없는 단일 요소 컴포넌트는 parts 없이 시연과 코드만 전시합니다.
  *
+ * code의 바인딩 표현식 안에 `/`나 `>`가 들어가면 하이라이터가 여는 태그를 못 읽고 색을 잃으므로,
+ * 데이터와 핸들러는 값을 펼치지 말고 이름으로 참조합니다.
+ *
  * <mm-component-anatomy
  *   .parts=${["컨테이너", "옵션 버튼", "선택 인디케이터"]}
  *   .markers=${[{ placement: 'inline-start' }, { placement: 'block-end', offset: '25%' }]}
@@ -59,6 +62,11 @@ export class ComponentAnatomy extends LitElement {
         flex-direction: column;
         align-items: start;
         max-width: var(--layout-width-small);
+      }
+
+      /* 시연 대상 없이 코드만 전시할 때는 빈 무대 프레임을 걷어낸다. */
+      :host(:empty) .component-content-frame:has(.stage) {
+        display: none;
       }
 
       /* 슬롯된 시연 대상과 번호 마커가 함께 앉는 무대. */

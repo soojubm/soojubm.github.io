@@ -49,6 +49,10 @@ const main = html`
       <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
     </mm-component-guide>
 
+    <mm-component-anatomy
+      .code=${'<mm-spinner size="large" label="불러오는 중..."></mm-spinner>'}
+    ></mm-component-anatomy>
+
     <mm-component-section
       heading="TypingIndicator"
       description="입력 중·응답 대기 등 진행 상태를 나타내는 3-dot 모션입니다. 채팅 입력 표시에 사용합니다."

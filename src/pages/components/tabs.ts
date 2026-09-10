@@ -90,7 +90,7 @@ const main = html`
   <mm-page>
     <mm-page-header
       heading="Tabs"
-      description="페이지 내에서 같은 맥락으로 분류된 콘텐츠 뷰를 전환합니다."
+      description="페이지 내에서 콘텐츠 뷰를 전환합니다. 뷰는 서로 같은 맥락에 속하고, 한 번에 하나만 보입니다."
     ></mm-page-header>
 
     <mm-component-example>
@@ -145,25 +145,35 @@ const main = html`
 
     <mm-component-guide>
       <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
+
+      <mm-paragraph>
+        Make sure the controls within a pane affect content only in the same pane. Panes are
+        mutually exclusive, so ensure they're fully self-contained. Use a segmented control to
+        provide closely related choices that affect an object, state, or view. For example, a
+        segmented control can help people switch between views in a toolbar. Avoid using a segmented
+        control to offer actions, such as adding, removing, or editing content.
+      </mm-paragraph>
+
+      <mm-text-list
+        .texts=${[
+          'SearchParams과 브라우저 히스토리를 활용할 것인가? (?tab=projects) / url변경 ',
+          '글로벌 네비게이션 패턴인 햄버거 메뉴와 탭(바텀네비게이션, 탭바)을 함께 사용할 수 있는가?',
+          '탭의 가로 스크롤(+ MDI). 탭의 최대 갯수 제한.',
+          '탭의 중첩. 페이지에서 수행하는 과업 중심 플로우 설계. 중첩을 허용한다면 탭의 중첩 패턴을 정의해야 함. Material 3의 primary tabs / secondary tabs 분류 등 참고. 또는 네이버 쇼핑의 4단계 5단계 탭.',
+          'flutter. Scaffold - AppBar - bottom: TabBar - tabs - Tab / Scaffold - body - TabBarView',
+        ]}
+      ></mm-text-list>
     </mm-component-guide>
 
-    <mm-text>
-      Make sure the controls within a pane affect content only in the same pane. Panes are mutually
-      exclusive, so ensure they're fully self-contained. Use a segmented control to provide closely
-      related choices that affect an object, state, or view. For example, a segmented control can
-      help people switch between views in a toolbar. Avoid using a segmented control to offer
-      actions, such as adding, removing, or editing content.
-    </mm-text>
+    <mm-component-anatomy
+      .code=${`<mm-tab-list value="menu1" variant="line">
+    <mm-tab value="menu1">첫 번째 메뉴</mm-tab>
+    <mm-tab value="menu2">두 번째 메뉴</mm-tab>
+</mm-tab-list>
 
-    <mm-text-list
-      .texts=${[
-        'SearchParams과 브라우저 히스토리를 활용할 것인가? (?tab=projects) / url변경 ',
-        '글로벌 네비게이션 패턴인 햄버거 메뉴와 탭(바텀네비게이션, 탭바)을 함께 사용할 수 있는가?',
-        '탭의 가로 스크롤(+ MDI). 탭의 최대 갯수 제한.',
-        '탭의 중첩. 페이지에서 수행하는 과업 중심 플로우 설계. 중첩을 허용한다면 탭의 중첩 패턴을 정의해야 함. Material 3의 primary tabs / secondary tabs 분류 등 참고. 또는 네이버 쇼핑의 4단계 5단계 탭.',
-        'flutter. Scaffold - AppBar - bottom: TabBar - tabs - Tab / Scaffold - body - TabBarView',
-      ]}
-    ></mm-text-list>
+<mm-tab-panel value="menu1">1번 콘텐츠 영역입니다.</mm-tab-panel>
+<mm-tab-panel value="menu2">2번 콘텐츠 영역입니다.</mm-tab-panel>`}
+    ></mm-component-anatomy>
 
     <mm-component-related .items=${relatedComponents}></mm-component-related>
 

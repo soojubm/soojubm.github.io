@@ -104,6 +104,18 @@ function sheetPageTemplate() {
         <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
       </mm-component-guide>
 
+      <mm-component-anatomy
+        .code=${`<mm-button aria-controls="filter-sheet">필터</mm-button>
+
+<mm-sheet id="filter-sheet" placement="bottom" height="360px">
+    <mm-sheet-header heading="필터"></mm-sheet-header>
+    <mm-sheet-body>
+        <mm-paragraph>넘치는 콘텐츠는 body 안에서 스크롤됩니다.</mm-paragraph>
+    </mm-sheet-body>
+    <mm-sheet-footer .primaryAction=\${primaryAction}></mm-sheet-footer>
+</mm-sheet>`}
+      ></mm-component-anatomy>
+
       <mm-component-section
         heading="Sheet Header"
         description="타이틀과 선택적인 닫기 버튼을 제공합니다. 닫기 버튼은 sheet-close 이벤트를 버블링합니다."

@@ -102,6 +102,12 @@ const main = html`
       ></mm-text-block>
     </mm-component-guide>
 
+    <mm-component-anatomy
+      .code=${`<mm-tooltip content="좋아요" placement="center">
+    <mm-icon-button slot="trigger" icon="heart" aria-label="좋아요"></mm-icon-button>
+</mm-tooltip>`}
+    ></mm-component-anatomy>
+
     <mm-component-section
       heading="GuideTip"
       description="arrow tooltip, tourtip, coachmark, 로딩 시점에 이미 열려 있다. doorhanger/pointing arrow."

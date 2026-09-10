@@ -53,6 +53,12 @@ const main = html`
     <mm-component-guide>
       <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
     </mm-component-guide>
+
+    <mm-component-anatomy
+      .code=${`<mm-top-bar nav="close" heading="컬렉션에 추가">
+    <mm-button slot="action" variant="ghost">완료</mm-button>
+</mm-top-bar>`}
+    ></mm-component-anatomy>
     <mm-component-related .items=${relatedComponents}></mm-component-related>
   </mm-page>
 `

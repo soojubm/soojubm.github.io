@@ -176,6 +176,17 @@ const main = html`
       <mm-text-list .texts=${guideTexts}></mm-text-list>
     </mm-component-guide>
 
+    <mm-component-anatomy
+      .code=${`<mm-table
+    caption="상품 목록"
+    .columns=\${[
+        { label: 'Name', width: '80px', sortable: true },
+        { label: 'Age', width: '80px', textAlign: 'right' },
+    ]}
+    .rows=\${rows}
+></mm-table>`}
+    ></mm-component-anatomy>
+
     <mm-component-related .items=${relatedComponents}></mm-component-related>
   </mm-page>
 `

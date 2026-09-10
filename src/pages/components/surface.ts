@@ -191,6 +191,12 @@ const main = html`
       ></mm-text-list>
     </mm-component-guide>
 
+    <mm-component-anatomy
+      .code=${`<mm-surface variant="filled" radius="default">
+    <mm-text-block level="3" heading="제목" description="설명"></mm-text-block>
+</mm-surface>`}
+    ></mm-component-anatomy>
+
     <mm-component-section heading="PricingSurface" description="">
       <mm-flex direction="column" gap="4" style="max-width: 400px">
         <mm-tag>

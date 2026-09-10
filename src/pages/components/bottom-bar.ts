@@ -46,6 +46,16 @@ const main = html`
     <mm-component-guide>
       <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
     </mm-component-guide>
+
+    <mm-component-anatomy
+      .code=${`<mm-bottom-bar
+    .items=\${[
+        { label: '홈', href: '#', icon: 'home-simple-door', active: true },
+        { label: '검색', href: '#', icon: 'search' },
+        { label: '설정', href: '#', icon: 'settings' },
+    ]}
+></mm-bottom-bar>`}
+    ></mm-component-anatomy>
     <mm-component-related .items=${relatedComponents}></mm-component-related>
   </mm-page>
 `

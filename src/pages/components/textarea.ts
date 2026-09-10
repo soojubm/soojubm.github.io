@@ -69,6 +69,15 @@ const main = html`
       <mm-component-feature-list .features=${componentFeatures}></mm-component-feature-list>
     </mm-component-guide>
 
+    <mm-component-anatomy
+      .code=${`<mm-textarea-field
+    label="자기소개"
+    placeholder="Textarea placeholder..."
+    helper="레이블과 헬퍼 텍스트를 가질 수 있다."
+    rows="3"
+></mm-textarea-field>`}
+    ></mm-component-anatomy>
+
     <mm-component-section heading="Comment Input" description="댓글 작성 입력 패턴">
       <div style="max-width: 480px">
         <mm-comment-input

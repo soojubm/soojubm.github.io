@@ -59,6 +59,10 @@ const main = html`
         ]}
       ></mm-text-list>
     </mm-component-guide>
+
+    <mm-component-anatomy
+      .code=${'<mm-breadcrumb .items=${breadcrumbItems}></mm-breadcrumb>'}
+    ></mm-component-anatomy>
     <mm-component-related .items=${relatedComponents}></mm-component-related>
   </mm-page>
 `

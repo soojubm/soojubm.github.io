@@ -73,6 +73,10 @@ const main = html`
       </mm-paragraph>
     </mm-component-guide>
 
+    <mm-component-anatomy
+      .code=${'<mm-toast open>저장되었습니다.</mm-toast>'}
+    ></mm-component-anatomy>
+
     <mm-component-related .items=${relatedComponents}></mm-component-related>
   </mm-page>
 `

@@ -87,6 +87,17 @@ const main = html`
         </mm-paragraph>
       </mm-paragraph-group>
     </mm-component-guide>
+
+    <mm-component-anatomy
+      .code=${`<mm-result
+    avatar-icon="clipboard-check"
+    heading="주문을 확인해주세요."
+    description="주문 내역은 마이페이지에서 다시 볼 수 있습니다."
+    .primaryAction=\${primaryAction}
+>
+    <mm-meta-item layout="horizontal" label="결제금액" value="₩ 54,000"></mm-meta-item>
+</mm-result>`}
+    ></mm-component-anatomy>
     <mm-component-related .items=${relatedComponents}></mm-component-related>
   </mm-page>
 `

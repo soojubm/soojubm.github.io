@@ -71,6 +71,13 @@ const main = html`
       ></mm-text-list>
     </mm-component-guide>
 
+    <mm-component-anatomy
+      .code=${`<mm-popover width="200px">
+    <mm-button slot="trigger">팝오버 열기</mm-button>
+    <mm-paragraph>트리거에 앵커되는 non-modal 레이어 표면입니다.</mm-paragraph>
+</mm-popover>`}
+    ></mm-component-anatomy>
+
     <mm-component-section
       heading="Select"
       description="popover를 프리미티브로 하는 선택 입력입니다. 트리거·옵션 파싱·선택 상태를 소유하고, 목록 표면은 popover에 맡깁니다."

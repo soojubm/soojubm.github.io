@@ -81,6 +81,15 @@ const main = html`
         ]}
       ></mm-text-list>
     </mm-component-guide>
+
+    <mm-component-anatomy
+      .code=${`<mm-notice
+    variant="warning"
+    heading="구독이 곧 만료됩니다."
+    description="결제 수단을 확인해 주세요."
+    @dismiss=\${handleDismiss}
+></mm-notice>`}
+    ></mm-component-anatomy>
     <mm-component-related .items=${relatedComponents}></mm-component-related>
   </mm-page>
 `
