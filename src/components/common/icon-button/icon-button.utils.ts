@@ -4,8 +4,12 @@ import { ifDefined } from 'lit/directives/if-defined.js'
 
 import type { IconName } from '@/components/common/icon/icon-names'
 import type { AriaBoolean, AriaHasPopup, AriaIdRef } from '@/types'
-import type { TemplateResult } from 'lit'
+import type { CSSResultGroup, TemplateResult } from 'lit'
 
+import {
+  iconButtonSecondarySkinStyles,
+  iconButtonStyles,
+} from '@/components/common/icon-button/icon-button.styles'
 import { type Constructor, emit } from '@/utils'
 import '@/components/overlay/tooltip'
 import '@/components/common/icon'
@@ -99,3 +103,35 @@ export const renderIconAction = ({
       </button>
     `,
   )
+
+export interface IconActionDefinition {
+  /** 이 버튼이 알리는 행동. 이벤트 이름이 된다. */
+  event: string
+  icon: IconName
+  ariaLabel: string
+}
+
+/**
+ * 아이콘 하나로 단일 행동만 알리는 시맨틱 버튼의 기반 클래스를 만든다.
+ * 스타일과 템플릿은 계열이 공유하고, 태그명·행동 이름·레이블은 각 컴포넌트가 자기 API로 갖는다.
+ * 기본 스킨이 아니면 자기 static styles로 덮고, 다른 템플릿이 필요하면
+ * withIconAction으로 상태만 받아 자기 render를 쓴다.
+ */
+export const iconActionElement = ({ event, icon, ariaLabel }: IconActionDefinition) => {
+  class IconActionButton extends withIconAction(LitElement, event) {
+    static styles: CSSResultGroup = [iconButtonStyles, iconButtonSecondarySkinStyles]
+
+    render() {
+      return renderIconAction({
+        icon,
+        ariaLabel,
+        tooltip: this.tooltip,
+        tooltipPlacement: this.tooltipPlacement,
+        disabled: this.disabled,
+        onClick: this.handleActionClick,
+      })
+    }
+  }
+
+  return IconActionButton
+}

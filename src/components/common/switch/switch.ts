@@ -17,13 +17,7 @@ export class Switch extends LitElement {
   @property({ type: Boolean }) disabled = false
 
   private inputId = uniqueId('switch')
-  private toggle = new ToggleController(this, {
-    getValue: () => this.checked,
-    setValue: checked => {
-      this.checked = checked
-    },
-    isDisabled: () => this.disabled,
-  })
+  private toggle = new ToggleController(this, 'checked')
 
   render() {
     const ariaChecked: AriaTriState = this.checked ? 'true' : 'false'

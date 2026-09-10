@@ -5,6 +5,7 @@ import { repeat } from 'lit/directives/repeat.js'
 
 import '@/components/common/tag/tag'
 import { ICON_NAMES } from '@/components/common/icon/icon-names'
+import '@/components/common/menu-item/semantics/menu-item-link'
 import { sidebarStyles } from '@/components/layouts/app-sidebar/sidebar.styles'
 import { MEDIA_QUERY } from '@/constants'
 import { DisclosureController } from '@/controllers/disclosure-controller'
@@ -13,7 +14,6 @@ import { resetStyles } from '@/stylesheets/shared.styles'
 import { getCurrentPageId } from '@/utils'
 import '@/components/common/menu-item/semantics/menu-item-action'
 import '@/components/common/menu-item/semantics/menu-item-disclosure'
-import '@/components/common/menu-item/semantics/menu-item-link'
 import '@/components/common/list-item'
 import '@/components/common/menu-item'
 
@@ -77,24 +77,22 @@ export class Sidebar extends LitElement {
 
     return html`
       <mm-menu-item-disclosure label=${node.title} icon=${node.icon} ?open=${containsCurrent}>
-        ${repeat(
-          children,
-          item => item.id,
-          item => html`
-            <mm-menu-item-link
-              emoji="#"
-              href="${item.id}.html"
-              label="${item.name}"
-              target="_self"
-              hidden-trailing
-              aria-current=${ifDefined(this.isCurrentPage(item.id) ? 'page' : undefined)}
-              @click=${this.handleMenuItemClick}
-            ></mm-menu-item-link>
-          `,
-        )}
+        ${repeat(children, item => item.id, this.renderItemLink)}
       </mm-menu-item-disclosure>
     `
   }
+
+  private renderItemLink = (item: { id: string; name: string }) => html`
+    <mm-menu-item-link
+      emoji="#"
+      href="${item.id}.html"
+      label=${item.name}
+      target="_self"
+      hidden-trailing
+      aria-current=${ifDefined(this.isCurrentPage(item.id) ? 'page' : undefined)}
+      @click=${this.handleMenuItemClick}
+    ></mm-menu-item-link>
+  `
 
   private renderGroup(node: Extract<SitemapNode, { type: 'group' }>) {
     const isOpen = this.openGroupIds.has(node.id)
@@ -112,21 +110,7 @@ export class Sidebar extends LitElement {
         @click=${() => this.handleGroupToggle(node.id)}
       ></mm-list-item> -->
       <mm-menu-list heading=${node.title}>
-        ${repeat(
-          node.items,
-          item => item.id,
-          item => html`
-            <mm-menu-item-link
-              emoji="#"
-              href="${item.id}.html"
-              label="${item.name}"
-              target="_self"
-              hidden-trailing
-              aria-current=${ifDefined(this.isCurrentPage(item.id) ? 'page' : undefined)}
-              @click=${this.handleMenuItemClick}
-            ></mm-menu-item-link>
-          `,
-        )}
+        ${repeat(node.items, item => item.id, this.renderItemLink)}
       </mm-menu-list>
     `
   }

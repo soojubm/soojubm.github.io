@@ -2,6 +2,10 @@ import { html } from 'lit'
 
 import './class.css'
 import { renderPage } from '@/components/layouts/base-layouts'
+import '@/components/common/link/link'
+
+/** 마키는 끊김 없이 흐르도록 같은 문구를 채워 트랙을 채운다. */
+const MARQUEE_REPEAT = 6
 
 interface EpisodeItem {
   tag: string
@@ -147,39 +151,24 @@ const main = html`
       </footer>
       <mm-paragraph>
         더 궁금한 점이 있다면
-        <a href="#" style="text-decoration: underline; font-weight: bold; color: inherit">
+        <mm-link href="#">
           <span aria-hidden="true">👉</span>
           고객센터
-        </a>
+        </mm-link>
         로 문의해 주세요. 고맙슴!
       </mm-paragraph>
     </header>
 
     <mm-marquee height="80px" pause-on-hover>
-      <mm-paragraph size="large">
-        <span aria-hidden="true">🦔</span>
-        고슴이: 지금부터 설명 들어가겠슴!
-      </mm-paragraph>
-      <mm-paragraph size="large">
-        <span aria-hidden="true">🦔</span>
-        고슴이: 지금부터 설명 들어가겠슴!
-      </mm-paragraph>
-      <mm-paragraph size="large">
-        <span aria-hidden="true">🦔</span>
-        고슴이: 지금부터 설명 들어가겠슴!
-      </mm-paragraph>
-      <mm-paragraph size="large">
-        <span aria-hidden="true">🦔</span>
-        고슴이: 지금부터 설명 들어가겠슴!
-      </mm-paragraph>
-      <mm-paragraph size="large">
-        <span aria-hidden="true">🦔</span>
-        고슴이: 지금부터 설명 들어가겠슴!
-      </mm-paragraph>
-      <mm-paragraph size="large">
-        <span aria-hidden="true">🦔</span>
-        고슴이: 지금부터 설명 들어가겠슴!
-      </mm-paragraph>
+      ${Array.from(
+        { length: MARQUEE_REPEAT },
+        () => html`
+          <mm-paragraph size="large">
+            <span aria-hidden="true">🦔</span>
+            고슴이: 지금부터 설명 들어가겠슴!
+          </mm-paragraph>
+        `,
+      )}
     </mm-marquee>
 
     <section class="class-intro">

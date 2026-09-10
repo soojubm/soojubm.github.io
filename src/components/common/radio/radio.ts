@@ -19,13 +19,7 @@ export class Radio extends LitElement {
 
   // shadow 안에서만 쓰는 label 연결용 id라 호스트의 id와 섞지 않는다.
   private inputId = uniqueId('radio')
-  private toggle = new ToggleController(this, {
-    getValue: () => this.checked,
-    setValue: checked => {
-      this.checked = checked
-    },
-    isDisabled: () => this.disabled,
-  })
+  private toggle = new ToggleController(this, 'checked')
 
   render() {
     return html`

@@ -1,29 +1,26 @@
 import type { ReactiveControllerHost } from 'lit'
 
-type Host = ReactiveControllerHost
+type ToggleHost = ReactiveControllerHost & { disabled: boolean }
 
-interface ToggleControllerOptions {
-  getValue: () => boolean
-  setValue: (value: boolean) => void
-  isDisabled?: () => boolean
-}
-
-export class ToggleController {
-  constructor(private host: Host, private options: ToggleControllerOptions) {}
+/**
+ * 켜고 끄는 상태를 다루는 규칙. disabled면 값을 바꾸지 않고 실패를 알린다.
+ * 계열마다 상태를 담는 프로퍼티 이름이 다르므로(checked·pressed) 그 이름만 받는다.
+ */
+export class ToggleController<Key extends string> {
+  constructor(private host: ToggleHost & Record<Key, boolean>, private key: Key) {}
 
   toggle() {
     return this.set(!this.value)
   }
 
   set(value: boolean) {
-    if (this.options.isDisabled?.()) return false
-
-    this.options.setValue(value)
+    if (this.host.disabled) return false
+    ;(this.host as Record<Key, boolean>)[this.key] = value
     this.host.requestUpdate()
     return true
   }
 
-  get value() {
-    return this.options.getValue()
+  get value(): boolean {
+    return this.host[this.key]
   }
 }
