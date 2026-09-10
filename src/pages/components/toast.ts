@@ -51,7 +51,7 @@ const main = html`
   <mm-page>
     <mm-page-header
       heading="Toast"
-      description="작업 결과를 확인 없이 알리고 스스로 사라지는 transient non-modal 레이어입니다."
+      description="하던 일을 멈추지 않고 작업 결과를 잠깐 알려주고, 따로 닫지 않아도 사라집니다."
     ></mm-page-header>
 
     <mm-component-aka .items=${['Snackbar']}></mm-component-aka>

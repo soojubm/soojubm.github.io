@@ -89,15 +89,17 @@ const main = html`
         ]}
       ></mm-text-list>
 
-      <mm-heading level="3">접근성 팁</mm-heading>
-      <mm-paragraph>
-        액션 보완형: 아이콘 버튼의 실질적인 이름을 대체하므로, 버튼의 aria-label 값과 툴팁 텍스트를
-        일치시키거나 aria-labelledby로 강하게 연결합니다.
-      </mm-paragraph>
-      <mm-paragraph>
-        정보 설명형: 이미 존재하는 텍스트의 부가 설명이므로, aria-describedby를 사용해 참고용
-        설명임을 브라우저에 알립니다.
-      </mm-paragraph>
+      <mm-heading level="3">접근성</mm-heading>
+      <mm-text-block
+        level="4"
+        heading="액션 보완형"
+        description="아이콘 버튼의 실질적인 이름을 대체하므로, 버튼의 aria-label 값과 툴팁 텍스트를 일치시키거나 aria-labelledby로 강하게 연결합니다."
+      ></mm-text-block>
+      <mm-text-block
+        level="4"
+        heading="정보 설명형"
+        description="이미 존재하는 텍스트의 부가 설명이므로, aria-describedby를 사용해 참고용 설명임을 브라우저에 알립니다."
+      ></mm-text-block>
     </mm-component-guide>
 
     <mm-component-section
