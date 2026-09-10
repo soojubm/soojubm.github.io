@@ -27,7 +27,7 @@ const componentTokens: ComponentTokenItemData[] = [
   { name: 'tag-text-size', default: 'var(--font-size-12)' },
   { name: 'tag-text-color', default: 'var(--foreground-color)', prop: 'tone' },
   { name: 'tag-background-color', default: 'var(--background-color)', prop: 'tone' },
-  { name: 'tag-border-color', default: 'var(--border-color)', prop: 'tone' },
+  { name: 'tag-border', default: 'var(--border-transparent)', prop: 'tone' },
   { name: 'tag-border-radius', default: 'var(--radius)' },
 ]
 
@@ -146,15 +146,15 @@ const main = html`
       <mm-flex gap="4" align-items="center">
         <mm-flex gap="1" align-items="center">
           <mm-dot variant="live"></mm-dot>
-          <mm-paragraph>live</mm-paragraph>
+          <mm-caption>live</mm-caption>
         </mm-flex>
         <mm-flex gap="1" align-items="center">
           <mm-dot variant="new"></mm-dot>
-          <mm-paragraph>new</mm-paragraph>
+          <mm-caption>new</mm-caption>
         </mm-flex>
         <mm-flex gap="1" align-items="center">
           <mm-dot variant="unread"></mm-dot>
-          <mm-paragraph>unread</mm-paragraph>
+          <mm-caption>unread</mm-caption>
         </mm-flex>
       </mm-flex>
     </mm-component-section>

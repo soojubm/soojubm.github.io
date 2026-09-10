@@ -5,13 +5,13 @@ import { buildAttributeRules } from '@/utils'
 type ToneStyle = {
   background: string
   textColor: string
-  borderColor: string
+  border: string
 }
 
 const categoryTone = (token: number): ToneStyle => ({
   background: `var(--tag-category-${token}-bg)`,
   textColor: `var(--tag-category-${token}-text)`,
-  borderColor: `var(--tag-category-${token}-border)`,
+  border: `var(--border-width) solid var(--tag-category-${token}-border)`,
 })
 
 const defineToneMap = <Map extends Record<string, TagTone>>(map: Map) => map
@@ -27,12 +27,12 @@ export const tagToneStyles = {
   default: {
     background: 'var(--background-color)',
     textColor: 'var(--foreground-color)',
-    borderColor: 'var(--border-color)',
+    border: 'var(--border)',
   },
   gold: {
     background: 'var(--accent-color)',
     textColor: 'var(--gray800)',
-    borderColor: 'var(--accent-color)',
+    border: 'var(--border-transparent)',
   },
   green: categoryTone(2),
   yellow: categoryTone(6),
@@ -95,7 +95,7 @@ const tagToneTokens = Object.fromEntries(
     {
       '--tag-background-color': style.background,
       '--tag-text-color': style.textColor,
-      '--tag-border-color': style.borderColor,
+      '--tag-border': style.border,
     },
   ]),
 )
@@ -105,7 +105,7 @@ export const tagStyles = css`
     --tag-height: var(--size-24);
     --tag-padding-inline: var(--space-2);
     --tag-gap: var(--space-1);
-    --tag-border-color: var(--border-color);
+    --tag-border: var(--border);
     --tag-border-radius: var(--radius);
     --tag-background-color: var(--background-color);
     --tag-text-color: var(--foreground-color);
@@ -117,7 +117,7 @@ export const tagStyles = css`
     min-height: var(--tag-height);
     gap: var(--tag-gap);
     padding-inline: var(--tag-padding-inline);
-    border: var(--border-width) solid var(--tag-border-color);
+    border: var(--tag-border);
     border-radius: var(--tag-border-radius);
     box-sizing: border-box;
     background-color: var(--tag-background-color);
