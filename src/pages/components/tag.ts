@@ -21,14 +21,14 @@ const componentProps: ComponentPropItemData[] = [
 ]
 
 const componentTokens: ComponentTokenItemData[] = [
-  { name: 'tag-height', default: 'var(--size-24)' },
-  { name: 'tag-padding-inline', default: 'var(--space-2)' },
-  { name: 'tag-gap', default: 'var(--space-1)' },
-  { name: 'tag-text-size', default: 'var(--font-size-12)' },
-  { name: 'tag-text-color', default: 'var(--foreground-color)', prop: 'tone' },
-  { name: 'tag-background-color', default: 'var(--background-color)', prop: 'tone' },
-  { name: 'tag-border', default: 'var(--border-transparent)', prop: 'tone' },
-  { name: 'tag-border-radius', default: 'var(--radius)' },
+  { name: 'tag-height' },
+  { name: 'tag-padding-inline' },
+  { name: 'tag-gap' },
+  { name: 'tag-text-size' },
+  { name: 'tag-text-color' },
+  { name: 'tag-background-color' },
+  { name: 'tag-border' },
+  { name: 'tag-border-radius' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [

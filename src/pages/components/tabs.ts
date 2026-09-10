@@ -61,19 +61,16 @@ const componentProps: ComponentPropItemData[] = [
 ]
 
 const componentTokens: ComponentTokenItemData[] = [
-  { name: 'tab-height', default: 'var(--size-32)' },
-  { name: 'tab-padding-inline', default: 'var(--space-3)' },
-  { name: 'tab-text-size', default: 'var(--font-size-14)' },
-  { name: 'tab-text-color', default: 'var(--foreground-subtle-color)' },
-  {
-    name: 'tabs-indicator-background-color',
-    default: 'var(--interaction-selected-background-color)',
-  },
-  { name: 'tabs-line-color', default: 'var(--border-color)' },
-  { name: 'tabs-line-width', default: 'var(--border-width)' },
-  { name: 'tabs-pill-border', default: 'var(--border-transparent)' },
-  { name: 'tabs-pill-indicator-background-color', default: 'var(--background-color)' },
-  { name: 'tabs-pill-indicator-border', default: 'var(--border-transparent)' },
+  { name: 'tab-height' },
+  { name: 'tab-padding-inline' },
+  { name: 'tab-text-size' },
+  { name: 'tab-text-color' },
+  { name: 'tabs-indicator-background-color' },
+  { name: 'tabs-line-color' },
+  { name: 'tabs-line-width' },
+  { name: 'tabs-pill-border' },
+  { name: 'tabs-pill-indicator-background-color' },
+  { name: 'tabs-pill-indicator-border' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [

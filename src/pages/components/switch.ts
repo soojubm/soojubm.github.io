@@ -20,10 +20,10 @@ const componentProps: ComponentPropItemData[] = [
 ]
 
 const componentTokens: ComponentTokenItemData[] = [
-  { name: 'switch-width', default: 'var(--size-32)' },
-  { name: 'switch-height', default: 'var(--size-16)' },
-  { name: 'switch-border-radius', default: 'var(--radius)' },
-  { name: 'switch-background-color', default: 'var(--border-color)' },
+  { name: 'switch-width' },
+  { name: 'switch-height' },
+  { name: 'switch-border-radius' },
+  { name: 'switch-background-color' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [

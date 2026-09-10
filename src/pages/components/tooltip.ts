@@ -21,12 +21,12 @@ const componentProps: ComponentPropItemData[] = [
 ]
 
 const componentTokens: ComponentTokenItemData[] = [
-  { name: 'tooltip-max-width', default: '320px' },
-  { name: 'tooltip-padding', default: '0.5rem var(--space-3)' },
-  { name: 'tooltip-border-radius', default: 'var(--radius)' },
-  { name: 'tooltip-background-color', default: 'var(--background-strong-color)' },
-  { name: 'tooltip-text-color', default: 'var(--background-color)' },
-  { name: 'tooltip-shadow', default: 'var(--surface-base-shadow)' },
+  { name: 'tooltip-max-width' },
+  { name: 'tooltip-padding' },
+  { name: 'tooltip-border-radius' },
+  { name: 'tooltip-background-color' },
+  { name: 'tooltip-text-color' },
+  { name: 'tooltip-shadow' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [

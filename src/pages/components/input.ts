@@ -59,13 +59,13 @@ const componentProps: ComponentPropItemData[] = [
 ]
 
 const componentTokens: ComponentTokenItemData[] = [
-  { name: 'input-height', default: 'var(--size-48)', prop: 'size' },
-  { name: 'input-padding-block', default: 'var(--space-3)', prop: 'size' },
-  { name: 'input-padding-inline', default: 'var(--space-4)', prop: 'size' },
-  { name: 'input-background-color', default: 'var(--background-subtle-color)' },
-  { name: 'input-border', default: 'var(--border-transparent)' },
-  { name: 'input-border-radius', default: 'var(--radius)' },
-  { name: 'input-focus-outline', default: 'var(--interaction-focus-outline)' },
+  { name: 'input-height' },
+  { name: 'input-padding-block' },
+  { name: 'input-padding-inline' },
+  { name: 'input-background-color' },
+  { name: 'input-border' },
+  { name: 'input-border-radius' },
+  { name: 'input-focus-outline' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [

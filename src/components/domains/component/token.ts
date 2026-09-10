@@ -17,8 +17,6 @@ export class Token extends LitElement {
   static styles = [tokenStyles]
 
   @property({ type: String }) name = ''
-  @property({ type: String }) default = ''
-  @property({ type: String }) prop = ''
   @property({ type: Boolean }) showCategory = true
 
   render() {
@@ -26,17 +24,6 @@ export class Token extends LitElement {
       <div class="token-row">
         <div class="token-category">${this.renderCategoryTag()}</div>
         <mm-meta-item layout="stacked" label=${this.formatName()}></mm-meta-item>
-        ${this.renderPropTag()}
-      </div>
-    `
-  }
-
-  private renderPropTag() {
-    if (!this.prop) return nothing
-
-    return html`
-      <div class="token-prop">
-        <mm-keyword-tag icon="arrow-left">${this.prop}</mm-keyword-tag>
       </div>
     `
   }
@@ -48,11 +35,6 @@ export class Token extends LitElement {
     return html`
       <mm-keyword-tag>${label}</mm-keyword-tag>
     `
-  }
-
-  // var(--radius-full)처럼 값이 토큰 참조면 var(--...)로 감싼 부분을 걷어내 토큰 이름만 남긴다.
-  private formatDefault() {
-    return this.default.replace(/var\(--([\w-]+)\)/g, '$1')
   }
 
   // state/surface/dimension 그룹이 바뀌는 경계에서만 '-'를 '.'으로 바꿔, 같은 그룹의 합성어(border-radius 등)는

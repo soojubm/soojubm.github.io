@@ -25,10 +25,10 @@ const componentProps: ComponentPropItemData[] = [
 ]
 
 const componentTokens: ComponentTokenItemData[] = [
-  { name: 'radio-size', default: 'var(--size-16)' },
-  { name: 'radio-border-radius', default: 'var(--radius-full)' },
-  { name: 'radio-border-color', default: 'var(--border-color)' },
-  { name: 'radio-background-color', default: 'var(--background-color)' },
+  { name: 'radio-size' },
+  { name: 'radio-border-radius' },
+  { name: 'radio-border-color' },
+  { name: 'radio-background-color' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [

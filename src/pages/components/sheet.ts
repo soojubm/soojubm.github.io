@@ -60,16 +60,16 @@ const componentProps: ComponentPropItemData[] = [
 ]
 
 const componentTokens: ComponentTokenItemData[] = [
-  { name: 'overlay-panel-min-width', default: 'auto' },
-  { name: 'overlay-panel-max-width', default: 'var(--layout-width-narrow)', prop: 'width' },
-  { name: 'overlay-panel-height', default: 'auto' },
-  { name: 'overlay-panel-max-height', default: '90vh' },
-  { name: 'overlay-panel-viewport-max-height', default: '100vh' },
-  { name: 'overlay-panel-padding-block', default: 'var(--space-4)' },
-  { name: 'overlay-panel-padding-inline', default: 'var(--space-4)' },
-  { name: 'overlay-panel-border-radius', default: 'var(--radius-large)' },
-  { name: 'overlay-panel-backdrop-background-color', default: 'transparent' },
-  { name: 'overlay-panel-backdrop-blur', default: '0px' },
+  { name: 'overlay-panel-min-width' },
+  { name: 'overlay-panel-max-width' },
+  { name: 'overlay-panel-height' },
+  { name: 'overlay-panel-max-height' },
+  { name: 'overlay-panel-viewport-max-height' },
+  { name: 'overlay-panel-padding-block' },
+  { name: 'overlay-panel-padding-inline' },
+  { name: 'overlay-panel-border-radius' },
+  { name: 'overlay-panel-backdrop-background-color' },
+  { name: 'overlay-panel-backdrop-blur' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [

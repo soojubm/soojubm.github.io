@@ -47,9 +47,9 @@ const componentProps: ComponentPropItemData[] = [
 ]
 
 const componentTokens: ComponentTokenItemData[] = [
-  { name: 'thumbnail-border', default: 'var(--border-transparent)' },
-  { name: 'thumbnail-border-radius', default: 'var(--radius)' },
-  { name: 'thumbnail-background-color-empty', default: 'var(--background-subtle-color)' },
+  { name: 'thumbnail-border' },
+  { name: 'thumbnail-border-radius' },
+  { name: 'thumbnail-background-color-empty' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [

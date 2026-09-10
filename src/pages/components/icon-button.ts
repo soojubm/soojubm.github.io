@@ -29,17 +29,13 @@ const componentProps: ComponentPropItemData[] = [
 ]
 
 const componentTokens: ComponentTokenItemData[] = [
-  { name: 'icon-button-size', default: 'var(--size-32)', prop: 'size' },
-  { name: 'icon-button-text-color', default: 'var(--foreground-color)', prop: 'variant' },
-  {
-    name: 'icon-button-background-color',
-    default: 'var(--background-subtle-color)',
-    prop: 'variant',
-  },
-  { name: 'icon-button-border', default: 'var(--border-transparent)', prop: 'variant' },
-  { name: 'icon-button-border-radius', default: 'var(--radius)', prop: 'variant' },
-  { name: 'icon-button-shadow', default: 'none', prop: 'variant' },
-  { name: 'icon-button-backdrop-filter', default: 'none', prop: 'variant' },
+  { name: 'icon-button-size' },
+  { name: 'icon-button-text-color' },
+  { name: 'icon-button-background-color' },
+  { name: 'icon-button-border' },
+  { name: 'icon-button-border-radius' },
+  { name: 'icon-button-shadow' },
+  { name: 'icon-button-backdrop-filter' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [

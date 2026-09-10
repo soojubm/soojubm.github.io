@@ -25,11 +25,11 @@ const componentProps: ComponentPropItemData[] = [
 ]
 
 const componentTokens: ComponentTokenItemData[] = [
-  { name: 'table-row-border', default: 'var(--border)' },
-  { name: 'table-cell-padding', default: 'var(--space-2) 0' },
-  { name: 'table-cell-padding-inline', default: 'var(--space-2)' },
-  { name: 'table-cell-background-color', default: 'var(--background-color)' },
-  { name: 'col-checkbox', default: '32px' },
+  { name: 'table-row-border' },
+  { name: 'table-cell-padding' },
+  { name: 'table-cell-padding-inline' },
+  { name: 'table-cell-background-color' },
+  { name: 'col-checkbox' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [

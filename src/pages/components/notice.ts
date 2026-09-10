@@ -21,12 +21,12 @@ const componentProps: ComponentPropItemData[] = [
 ]
 
 const componentTokens: ComponentTokenItemData[] = [
-  { name: 'notice-padding', default: 'var(--space-3)' },
-  { name: 'notice-border-radius', default: 'var(--radius)' },
-  { name: 'notice-border-width', default: 'var(--border-width)' },
-  { name: 'notice-text-color', default: 'var(--foreground-color)', prop: 'variant' },
-  { name: 'notice-background-color', default: 'transparent' },
-  { name: 'notice-border-color', default: 'var(--border-color)' },
+  { name: 'notice-padding' },
+  { name: 'notice-border-radius' },
+  { name: 'notice-border-width' },
+  { name: 'notice-text-color' },
+  { name: 'notice-background-color' },
+  { name: 'notice-border-color' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [

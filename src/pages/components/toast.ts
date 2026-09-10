@@ -19,12 +19,12 @@ const componentProps: ComponentPropItemData[] = [
 ]
 
 const componentTokens: ComponentTokenItemData[] = [
-  { name: 'toast-background-color', default: 'var(--background-strong-color)' },
-  { name: 'toast-text-color', default: 'var(--background-color)' },
-  { name: 'toast-border-radius', default: 'var(--radius-large)' },
-  { name: 'toast-padding-block', default: 'var(--space-2)' },
-  { name: 'toast-padding-inline', default: 'var(--space-4)' },
-  { name: 'toast-offset', default: 'var(--space-4)' },
+  { name: 'toast-background-color' },
+  { name: 'toast-text-color' },
+  { name: 'toast-border-radius' },
+  { name: 'toast-padding-block' },
+  { name: 'toast-padding-inline' },
+  { name: 'toast-offset' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [

@@ -26,14 +26,14 @@ const componentProps: ComponentPropItemData[] = [
 ]
 
 const componentTokens: ComponentTokenItemData[] = [
-  { name: 'overlay-panel-min-width', default: '240px' },
-  { name: 'overlay-panel-max-width', default: 'auto' },
-  { name: 'overlay-panel-height', default: 'auto' },
-  { name: 'overlay-panel-max-height', default: 'none' },
-  { name: 'overlay-panel-padding-block', default: 'var(--space-2)' },
-  { name: 'overlay-panel-padding-inline', default: 'var(--space-2)' },
-  { name: 'overlay-panel-border-radius', default: 'var(--radius)' },
-  { name: 'popover-offset', default: 'var(--space-1)' },
+  { name: 'overlay-panel-min-width' },
+  { name: 'overlay-panel-max-width' },
+  { name: 'overlay-panel-height' },
+  { name: 'overlay-panel-max-height' },
+  { name: 'overlay-panel-padding-block' },
+  { name: 'overlay-panel-padding-inline' },
+  { name: 'overlay-panel-border-radius' },
+  { name: 'popover-offset' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = []

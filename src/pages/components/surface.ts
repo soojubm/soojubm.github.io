@@ -56,13 +56,13 @@ const componentProps: ComponentPropItemData[] = [
 ]
 
 const componentTokens: ComponentTokenItemData[] = [
-  { name: 'surface-height', default: 'auto' },
-  { name: 'surface-padding', default: 'var(--space-4)', prop: 'density' },
-  { name: 'surface-border', default: 'var(--border)', prop: 'variant' },
-  { name: 'surface-border-radius', default: 'var(--radius)', prop: 'radius' },
-  { name: 'surface-background-color', default: 'var(--background-color)', prop: 'variant' },
-  { name: 'surface-text-color', default: 'inherit' },
-  { name: 'surface-shadow', default: 'none', prop: 'variant' },
+  { name: 'surface-height' },
+  { name: 'surface-padding' },
+  { name: 'surface-border' },
+  { name: 'surface-border-radius' },
+  { name: 'surface-background-color' },
+  { name: 'surface-text-color' },
+  { name: 'surface-shadow' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [

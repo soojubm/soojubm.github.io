@@ -26,11 +26,11 @@ const componentProps: ComponentPropItemData[] = [
 ]
 
 const componentTokens: ComponentTokenItemData[] = [
-  { name: 'avatar-size', default: 'var(--size-40)', prop: 'size' },
-  { name: 'avatar-background-color', default: 'var(--background-subtle-color)', prop: 'variant' },
-  { name: 'avatar-icon-color', default: 'var(--foreground-color)' },
-  { name: 'avatar-border', default: 'var(--border-transparent)', prop: 'variant' },
-  { name: 'avatar-border-radius', default: 'var(--radius)', prop: 'shape' },
+  { name: 'avatar-size' },
+  { name: 'avatar-background-color' },
+  { name: 'avatar-icon-color' },
+  { name: 'avatar-border' },
+  { name: 'avatar-border-radius' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [

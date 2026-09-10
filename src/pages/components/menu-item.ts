@@ -74,8 +74,8 @@ const componentProps: ComponentPropItemData[] = [
 ]
 
 const componentTokens: ComponentTokenItemData[] = [
-  { name: 'menu-item-background-color', default: 'transparent' },
-  { name: 'menu-item-padding-inline', default: '0' },
+  { name: 'menu-item-background-color' },
+  { name: 'menu-item-padding-inline' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [

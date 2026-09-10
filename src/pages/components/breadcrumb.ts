@@ -20,10 +20,10 @@ const componentProps: ComponentPropItemData[] = [
 ]
 
 const componentTokens: ComponentTokenItemData[] = [
-  { name: 'breadcrumb-item-text-color', default: 'var(--primary-color)' },
-  { name: 'breadcrumb-item-text-color-current', default: 'var(--foreground-color)' },
-  { name: 'breadcrumb-divider-text-color', default: 'var(--border-color)' },
-  { name: 'breadcrumb-divider-space', default: 'var(--space-3)' },
+  { name: 'breadcrumb-item-text-color' },
+  { name: 'breadcrumb-item-text-color-current' },
+  { name: 'breadcrumb-divider-text-color' },
+  { name: 'breadcrumb-divider-space' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = []

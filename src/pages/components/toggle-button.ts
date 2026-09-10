@@ -49,9 +49,7 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'change', type: 'CustomEvent detail: pressed, value', kind: 'event' },
 ]
 
-const componentTokens: ComponentTokenItemData[] = [
-  { name: 'toggle-button-border-radius', default: 'var(--radius)' },
-]
+const componentTokens: ComponentTokenItemData[] = [{ name: 'toggle-button-border-radius' }]
 
 const componentFeatures: ComponentFeatureItem[] = [
   {

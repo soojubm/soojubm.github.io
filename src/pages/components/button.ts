@@ -69,16 +69,16 @@ const componentProps: ComponentPropItemData[] = [
 ]
 
 const componentTokens: ComponentTokenItemData[] = [
-  { name: 'button-width', default: 'max-content' },
-  { name: 'button-height', default: 'var(--size-32)', prop: 'size' },
-  { name: 'button-min-width', default: '5rem' },
-  { name: 'button-padding-inline', default: 'var(--space-3)' },
-  { name: 'button-text-color', default: 'var(--foreground-color)', prop: 'variant' },
-  { name: 'button-text-size', default: 'inherit', prop: 'size' },
-  { name: 'button-text-weight', default: 'var(--font-weight-normal)' },
-  { name: 'button-background-color', default: 'var(--background-subtle-color)', prop: 'variant' },
-  { name: 'button-border', default: 'var(--border-transparent)' },
-  { name: 'button-border-radius', default: 'var(--radius)' },
+  { name: 'button-width' },
+  { name: 'button-height' },
+  { name: 'button-min-width' },
+  { name: 'button-padding-inline' },
+  { name: 'button-text-color' },
+  { name: 'button-text-size' },
+  { name: 'button-text-weight' },
+  { name: 'button-background-color' },
+  { name: 'button-border' },
+  { name: 'button-border-radius' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [

@@ -57,9 +57,9 @@ const componentProps: ComponentPropItemData[] = [
 ]
 
 const componentTokens: ComponentTokenItemData[] = [
-  { name: 'list-item-size', default: 'var(--size-32)', prop: 'size' },
-  { name: 'list-item-gap', default: 'var(--space-2)', prop: 'size' },
-  { name: 'list-item-font-size', default: 'var(--font-size-14)', prop: 'size' },
+  { name: 'list-item-size' },
+  { name: 'list-item-gap' },
+  { name: 'list-item-font-size' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [

@@ -23,8 +23,8 @@ const componentProps: ComponentPropItemData[] = [
 ]
 
 const componentTokens: ComponentTokenItemData[] = [
-  { name: 'link-text-color', default: 'var(--primary-color)' },
-  { name: 'link-gap', default: 'var(--space-1)' },
+  { name: 'link-text-color' },
+  { name: 'link-gap' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [

@@ -18,9 +18,9 @@ const componentProps: ComponentPropItemData[] = [
 ]
 
 const componentTokens: ComponentTokenItemData[] = [
-  { name: 'separator-spacing', default: 'var(--space-2)', prop: 'variant' },
-  { name: 'separator-border', default: 'var(--border)' },
-  { name: 'separator-text-background-color', default: 'var(--background-color)' },
+  { name: 'separator-spacing' },
+  { name: 'separator-border' },
+  { name: 'separator-text-background-color' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [

@@ -10,9 +10,6 @@ import {
 
 export interface ComponentTokenItemData {
   name: string
-  default: string
-  // 이 토큰 값을 재할당하는 prop. prop 프리셋 밖의 값을 잡을 때 이 토큰을 override 한다.
-  prop?: string
 }
 
 /**
@@ -37,8 +34,6 @@ export class ComponentTokens extends LitElement {
               html`
                 <mm-token
                   name=${token.name}
-                  default=${token.default}
-                  prop=${token.prop ?? ''}
                   .showCategory=${this.isCategoryStart(tokens, index)}
                 ></mm-token>
               `,
