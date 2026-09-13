@@ -2,7 +2,7 @@ import { html } from 'lit'
 
 import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import { renderPage } from '@/components/layouts/base-layouts'
-import './checkout.css'
+import { findSitemapItem } from '@/sitemap'
 
 // 주문상품 줄은 주문/결제와 주문완료 화면이 같은 형태로 쓴다.
 const orderedProduct = html`
@@ -15,12 +15,19 @@ const orderedProduct = html`
 `
 
 const main = html`
-  <mm-page>
-    <mm-flex class="checkout" direction="column" gap="section">
+  <mm-fixed-top>
+    <mm-top-bar
+      id="checkout-top-bar"
+      heading="결제"
+      style="
+      padding-inline: 5vw;
+    "
+    ></mm-top-bar>
+  </mm-fixed-top>
+  <mm-page width="small" background="subtle">
+    <mm-flex direction="column" gap="section">
       <!-- 장바구니 -->
       <mm-flex as="section" direction="column" gap="6">
-        <mm-top-bar heading="장바구니"></mm-top-bar>
-
         <mm-flex direction="column">
           <mm-flex direction="column" gap="3">
             <mm-order-product-item
@@ -278,4 +285,14 @@ const main = html`
   </mm-page>
 `
 
-renderPage(main, { closeSidebar: true })
+const checkoutPage = findSitemapItem('checkout')
+
+renderPage(main, {
+  closeSidebar: true,
+  navbar: !checkoutPage?.hideNavbar,
+  initialize: () => {
+    document.getElementById('checkout-top-bar')?.addEventListener('nav-click', () => {
+      history.back()
+    })
+  },
+})
