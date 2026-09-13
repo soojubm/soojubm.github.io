@@ -179,6 +179,18 @@ const main = html`
         heading="Level 3 Title"
         description="이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에 부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은 침묵에 잠겼다. "
       ></mm-text-block>
+      <mm-separator></mm-separator>
+      <mm-text-block
+        level="4"
+        heading="Level 4 Title"
+        description="이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에 부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은 침묵에 잠겼다. "
+      ></mm-text-block>
+      <mm-separator></mm-separator>
+      <mm-text-block
+        level="5"
+        heading="Level 5 Title"
+        description="이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에 부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은 침묵에 잠겼다. "
+      ></mm-text-block>
     </mm-component-section>
 
     <mm-component-section

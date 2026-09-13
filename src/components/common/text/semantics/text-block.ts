@@ -25,6 +25,9 @@ export class TextBlock extends LitElement {
     :host([level='1']) {
       gap: var(--space-3);
     }
+    :host([level='5']) {
+      gap: 0;
+    }
     :host([centered]) {
       align-items: center;
     }
@@ -73,6 +76,12 @@ export class TextBlock extends LitElement {
     if (this.level === '1') {
       return html`
         <mm-paragraph size="large" ?centered=${this.centered}>${this.description}</mm-paragraph>
+      `
+    }
+
+    if (this.level === '5') {
+      return html`
+        <mm-text size="14" color="light" ?centered=${this.centered}>${this.description}</mm-text>
       `
     }
 
