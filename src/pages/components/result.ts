@@ -1,8 +1,10 @@
 import { html } from 'lit'
 
-import type { ComponentFeatureItem } from '@/components/domains/component/component-feature-list'
-import type { ComponentPropItemData } from '@/components/domains/component/component-props'
-import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
+import type {
+  ComponentFeatureItem,
+  ComponentPropItemData,
+  ComponentRelatedItemData,
+} from '@/components/domains/component'
 import type { ActionConfig } from '@/types'
 
 import { ICON_NAMES } from '@/components/common/icon/icon-names'

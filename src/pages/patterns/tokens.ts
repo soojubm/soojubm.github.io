@@ -1,6 +1,6 @@
 import { html, nothing } from 'lit'
 
-import type { ComponentReferenceItemData } from '@/components/domains/component/component-references'
+import type { ComponentReferenceItemData } from '@/components/domains/component'
 
 import { referencesOtherTokens, rootTokenNames } from '@/components/domains/component/token-values'
 import { renderPage } from '@/components/layouts/base-layouts'

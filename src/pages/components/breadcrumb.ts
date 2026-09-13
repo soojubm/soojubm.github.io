@@ -1,10 +1,12 @@
 import { html } from 'lit'
 
 import type { BreadcrumbItem } from '@/components/common/breadcrumb/breadcrumb'
-import type { ComponentFeatureItem } from '@/components/domains/component/component-feature-list'
-import type { ComponentPropItemData } from '@/components/domains/component/component-props'
-import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
-import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
+import type {
+  ComponentFeatureItem,
+  ComponentPropItemData,
+  ComponentRelatedItemData,
+  ComponentTokenItemData,
+} from '@/components/domains/component'
 
 import { renderPage } from '@/components/layouts/base-layouts'
 

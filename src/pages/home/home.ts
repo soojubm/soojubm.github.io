@@ -1,7 +1,7 @@
 import { html } from 'lit'
 
 import type { ToggleButtonGroup } from '@/components/common/toggle-button/toggle-button-group'
-import type { ComponentReferenceItemData } from '@/components/domains/component/component-references'
+import type { ComponentReferenceItemData } from '@/components/domains/component'
 
 import { renderPage } from '@/components/layouts/base-layouts'
 import { ScrollSpyController } from '@/controllers/scroll-spy-controller'

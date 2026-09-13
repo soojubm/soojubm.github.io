@@ -1,9 +1,11 @@
 import { html } from 'lit'
 
-import type { ComponentFeatureItem } from '@/components/domains/component/component-feature-list'
-import type { ComponentPropItemData } from '@/components/domains/component/component-props'
-import type { ComponentReferenceItemData } from '@/components/domains/component/component-references'
-import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
+import type {
+  ComponentFeatureItem,
+  ComponentPropItemData,
+  ComponentReferenceItemData,
+  ComponentRelatedItemData,
+} from '@/components/domains/component'
 
 import { renderPage } from '@/components/layouts/base-layouts'
 import './text.css'

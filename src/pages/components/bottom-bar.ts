@@ -1,8 +1,10 @@
 import { html } from 'lit'
 
-import type { ComponentFeatureItem } from '@/components/domains/component/component-feature-list'
-import type { ComponentPropItemData } from '@/components/domains/component/component-props'
-import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
+import type {
+  ComponentFeatureItem,
+  ComponentPropItemData,
+  ComponentRelatedItemData,
+} from '@/components/domains/component'
 import type { BottomBarItem } from '@/components/layouts/bottom-bar'
 
 import { renderPage } from '@/components/layouts/base-layouts'

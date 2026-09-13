@@ -1,9 +1,11 @@
 import { html } from 'lit'
 
-import type { ComponentFeatureItem } from '@/components/domains/component/component-feature-list'
-import type { ComponentPropItemData } from '@/components/domains/component/component-props'
-import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
-import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
+import type {
+  ComponentFeatureItem,
+  ComponentPropItemData,
+  ComponentRelatedItemData,
+  ComponentTokenItemData,
+} from '@/components/domains/component'
 
 import { AVATAR_VARIANT_TYPE_UNION } from '@/components/common/avatar'
 import { ICON_NAMES } from '@/components/common/icon/icon-names'

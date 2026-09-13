@@ -1,7 +1,7 @@
 import '@/components/common/table'
 import { html } from 'lit'
 
-import type { ComponentReferenceItemData } from '@/components/domains/component/component-references'
+import type { ComponentReferenceItemData } from '@/components/domains/component'
 
 import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import { renderPage } from '@/components/layouts/base-layouts'

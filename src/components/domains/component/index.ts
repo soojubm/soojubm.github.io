@@ -15,4 +15,9 @@ import '@/components/domains/component/token-section'
 import '@/components/domains/component/token-stage'
 import '@/components/domains/component/type-specimen'
 
-export {}
+export { FEATURE_ICONS } from '@/components/domains/component/component-feature-list'
+export type { ComponentFeatureItem } from '@/components/domains/component/component-feature-list'
+export type { ComponentPropItemData } from '@/components/domains/component/component-props'
+export type { ComponentReferenceItemData } from '@/components/domains/component/component-references'
+export type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
+export type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'

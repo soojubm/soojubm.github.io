@@ -1,7 +1,7 @@
 import { html, nothing } from 'lit'
 
 import { ICON_CATALOG } from '@/components/common/icon/icon-names'
-import { FEATURE_ICONS } from '@/components/domains/component/component-feature-list'
+import { FEATURE_ICONS } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 /** 브랜드 표기처럼 대소문자가 고정된 이름만 예외로 둔다. */
